@@ -1,0 +1,167 @@
+{
+  "name": "Émilie",
+  "title": "La Estela de Mil Aromas",
+  "description": "Una perfumista de Fontaine que guarda sus secretos en sus frascos.",
+  "constellationName": "Pomum de Ambra",
+  "auto": {
+    "name": "Lanza fantasmal (modificada)",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 ataques rápidos con lanza."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para realizar un ataque hacia arriba."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Colección de fragancias",
+    "description": {
+      "0": "Crea un perfume lumidulce que inflige <dendro>Daño Dendro en el AdE</dendro>.",
+      "1": "<br/>",
+      "2": "<strong>Perfume lumidulce</strong>",
+      "3": [
+        "Cada cierto tiempo, dispara “eau de rosée” a los enemigos cercanos para infligirles <dendro>Daño Dendro</dendro>.",
+        "Cuando un enemigo cercano esté quemado, emitirá una fragancia. Solo se puede crear una fragancia cada 2 s de esta manera. El perfume lumidulce recogerá las fragancias cercanas y, tras recoger dos, subirá de nivel, de manera que al disparar una vez “eau de rosée”, disparará otra adicional y aumentará tanto el daño infligido como el AdE de dichos ataques.",
+        "Solo puede existir un perfume lumidulce creado por Émilie a la vez. El perfume empieza en nivel 1 y puede aumentar hasta el nivel 2. Si un perfume lumidulce activo no recoge ninguna fragancia en 8 s, volverá a nivel 1."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Arjé: pneuma</strong>",
+      "6": "Cuando Émilie crea un perfume lumidulce de esta forma, cada cierto tiempo cae frente a ella misma una espina halitoespiritual que atraviesa a los enemigos y les inflige <dendro>Daño Dendro</dendro> cargado de energía pneuma.",
+      "7": "<br/>",
+      "8": "<i>El mundo consiste en una armonía interminable de fragancias, colores y canciones.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de perfume lumidulce niv. 1",
+      "2": "Daño de perfume lumidulce niv. 2",
+      "3": "Duración de perfume lumidulce",
+      "4": "Daño de espina halitoespiritual",
+      "5": "Intervalo de espina halitoespiritual",
+      "6": "TdE de la habilidad",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Representación perfumada",
+    "description": {
+      "0": "Transforma en energía Dendro pura las fragancias recogidas en su perfume para crear un perfume lumidulce de nivel 3 y guardar el que ya haya creado.",
+      "1": "Mientras el perfume lumidulce de nivel 3 está activo, no recogerá las fragancias cercanas, sino que hará caer continuamente gotas rociofragantes que atacan a los enemigos situados en su AdE para infligirles <dendro>Daño Dendro</dendro>. Mientras este efecto esté activo, cada 0.3 s caerá una gota rociofragante. Un mismo enemigo solo puede ser escogido una vez cada 0.7 s como objetivo de la gota.",
+      "2": "Cuando la duración de este efecto termine, se volverá a crear un perfume lumidulce de nivel 1. Si al usar Representación perfumada se guardó un perfume lumidulce, se colocará el perfume guardado y su duración se reiniciará.",
+      "3": "Mientras <strong>Representación perfumada</strong> esté activa, la Habilidad Elemental, “Colección de fragancias”, no creará perfumes lumidulces.",
+      "4": "<br/>",
+      "5": "<i>Da igual cuál sea el perfume, en cuanto entre en contacto con el aire, su fragancia cambiará con el paso del tiempo hasta fundirse entre los murmullos del viento y las plantas. En cierto sentido, nadie puede apreciar de la misma forma un mismo perfume.",
+      "6": "Lo mismo ocurre con el curso que sigue todo ser vivo. Por tanto, se podría decir que un perfume es una representación de la vida misma.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de perfume lumidulce niv. 3",
+      "1": "Duración de perfume lumidulce niv. 3",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Fragancia persistente",
+    "description": {
+      "0": "Por cada dos <strong>fragancias</strong> recogidas, el perfume lumidulce de nivel 2 las consumirá para liberar una vez “eau de pureté” e infligir a los enemigos <dendro>Daño Dendro en el AdE</dendro> en una cantidad equivalente al 600% del ATQ de Émilie. Este daño no se considera daño de Habilidad Elemental."
+    }
+  },
+  "passive2": {
+    "name": "Rectificación",
+    "description": {
+      "0": "El daño que inflige Émilie contra los enemigos quemados aumenta en un 15% por cada 1000 pts. de ATQ que tenga. Como máximo, dicho daño puede aumentar en un 36% de esta manera."
+    }
+  },
+  "passive3": {
+    "name": "Aroma ambiental",
+    "description": {
+      "0": "Cuando en el campo de batalla haya algún perfume lumidulce creado por Émilie, aumenta en un 85% la <pyro>RES Pyro</pyro> de todos los personajes cercanos del equipo contra el daño de la reacción de Quemadura."
+    }
+  },
+  "constellation1": {
+    "name": "Lixiviación",
+    "description": {
+      "0": "Aumenta en un 20% el daño de <strong>Colección de fragancias</strong> y de “eau de pureté” del talento pasivo “Fragancia persistente”. Para esto último, es necesario desbloquear dicho talento pasivo.",
+      "1": "Además, cuando un personaje cercano del equipo causa una reacción de Quemadura contra un enemigo o inflige <dendro>Daño Dendro</dendro> a un enemigo quemado, se crea una <strong>fragancia</strong> adicional. Este efecto solo puede ocurrir una vez cada 2.9 s."
+    }
+  },
+  "constellation2": {
+    "name": "Mezcla lumilago",
+    "description": {
+      "0": "Al golpear a un enemigo con <strong>Colección de fragancias</strong>, <strong>Representación perfumada</strong> o “eau de pureté” del talento pasivo “Fragancia persistente” (es necesario desbloquear dicho talento), la <dendro>RES Dendro</dendro> de dicho enemigo se reduce en un 30% durante 10 s."
+    }
+  },
+  "constellation3": {
+    "name": "Esencia aromatizante",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Colección de fragancias</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Pasión lumidulce",
+    "description": {
+      "0": "La duración de <strong>Representación perfumada</strong> aumenta en 2 s, y el intervalo por el que cada enemigo puede ser escogido como objetivo de las gotas rociofragantes se reduce en 0.3 s."
+    }
+  },
+  "constellation5": {
+    "name": "Perfume rociopuro",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Representación perfumada</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Sillage jazmimpoluto",
+    "description": {
+      "0": "Al usar <strong>Colección de fragancias</strong> o <strong>Representación perfumada</strong>, Émilie obtiene el efecto de “sillage” durante 5 s.",
+      "1": "Mientras este efecto esté activo, cuando Émilie ejecute un Ataque Normal o Cargado, se crea una fragancia, el daño de sus Ataques Normales y Cargados se transforma en <dendro>Daño Dendro</dendro>, el cual no puede sustituirse imbuyéndose de otro elemento, y el daño infligido aumenta en una cantidad equivalente al 300% del ATQ de Émilie.",
+      "2": "<br/>",
+      "3": "El efecto de sillage se elimina cuando se hayan creado 4 fragancias de esta manera o al terminar su duración, y solo se puede obtener una vez cada 12 s."
+    }
+  }
+}

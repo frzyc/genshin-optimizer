@@ -83,8 +83,8 @@
   "burst": {
     "name": "Super Saturated Syringing",
     "description": {
-      "0": "Take out a special Fortress of Meropide-made syringe and assault the area in front with waves of kindness and medicine, dealing <hydro>AoE Hydro DMG</hydro> based on Sigewinne's max HP.",
-      "1": "In addition, Sigewinne absorbs up to 2 nearby Sourcewater Droplets within a certain range right before using the skill.",
+      "0": "Takes out a special Fortress of Meropide-made syringe and assault the area in front with waves of kindness and medicine, dealing <hydro>AoE Hydro DMG</hydro> based on Sigewinne's max HP.",
+      "1": "In addition, Sigewinne absorbs up to 2 nearby Sourcewater Droplets within a certain range when she uses this skill.",
       "2": "<br/>",
       "3": "<i>\"Hey, overdosing on medicine is no different from poison, you know, it's real dangerous! But patients need care and concern, and nobody can overdose on that!\"</i>"
     },

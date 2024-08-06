@@ -436,6 +436,10 @@
       "icon": "UI_EquipIcon_Pole_BloodMoon",
       "awakenIcon": "UI_EquipIcon_Pole_BloodMoon_Awaken"
     },
+    "LumidouceElegy": {
+      "icon": "UI_EquipIcon_Pole_Muguet",
+      "awakenIcon": "UI_EquipIcon_Pole_Muguet_Awaken"
+    },
     "ApprenticesNotes": {
       "icon": "UI_EquipIcon_Catalyst_Apprentice",
       "awakenIcon": "UI_EquipIcon_Catalyst_Apprentice_Awaken"
@@ -2507,6 +2511,23 @@
       "constellation4": "UI_Talent_S_Clorinde_03",
       "constellation5": "UI_Talent_U_Clorinde_01",
       "constellation6": "UI_Talent_S_Clorinde_04"
+    },
+    "Emilie": {
+      "icon": "UI_AvatarIcon_Emilie",
+      "iconSide": "UI_AvatarIcon_Side_Emilie",
+      "banner": "UI_NameCardPic_Emilie_P",
+      "bar": "UI_NameCardPic_Emilie_Alpha",
+      "skill": "Skill_S_Emilie_01",
+      "burst": "Skill_E_Emilie_01_HD",
+      "passive1": "UI_Talent_S_Emilie_05",
+      "passive2": "UI_Talent_S_Emilie_06",
+      "passive3": "UI_Talent_S_Emilie_07",
+      "constellation1": "UI_Talent_S_Emilie_01",
+      "constellation2": "UI_Talent_S_Emilie_02",
+      "constellation3": "UI_Talent_U_Emilie_01",
+      "constellation4": "UI_Talent_S_Emilie_03",
+      "constellation5": "UI_Talent_U_Emilie_02",
+      "constellation6": "UI_Talent_S_Emilie_04"
     },
     "TravelerAnemo": {
       "skill": "Skill_S_PlayerWind_01",

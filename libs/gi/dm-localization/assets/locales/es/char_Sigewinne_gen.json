@@ -57,7 +57,7 @@
       "12": "Cuando el pacto vital de Sigewinne se elimina, recupera 1 pt. de Energía Elemental por cada 2000 pts. eliminados de dicho pacto vital. Sigewinne puede recuperar un máximo de 5 pts. de Energía Elemental de esta manera.",
       "13": "<br/>",
       "14": "<strong>Arjé: ousía</strong>",
-      "15": "Cada cierto tiempo, el acuaglóbulo revitalizante hará caer en la ubicación golpeada un filo fluyente que inflige <hydro>Daño Hydro</hydro> cargado de energía ousía.",
+      "15": "Cada cierto tiempo, el acuaglóbulo revitalizante hará caer en la ubicación golpeada un filo fluyente que inflige <hydro>Daño Hydro</hydro> cargado de energía ousía en función de la Vida Máx. de Sigewinne.",
       "16": "<br/>",
       "17": "<i>“¿Qué te parece? Este tipo de hidroterapia no solo estimula la circulación y anima a los enfermos que están en recuperación, sino que también hace que puedan dormir un ratito”.</i>"
     },

@@ -197,6 +197,15 @@
   "AnalysisProgress": {
     "name": "Analysefortschritt"
   },
+  "ExcerptsOfBliss": {
+    "name": "Auszug der Glückseligkeit"
+  },
+  "KeyOfEchoes": {
+    "name": "Echoschlüssel"
+  },
+  "StarsailCoin": {
+    "name": "Sternwanderungsmünze"
+  },
   "Primogem": {
     "name": "Urgestein"
   },
@@ -542,6 +551,9 @@
   "Clorinde": {
     "name": "Clorinde"
   },
+  "Emilie": {
+    "name": "Émilie"
+  },
   "KamisatoAyakasStellaFortuna": {
     "name": "Stella Fortuna von Kamisato Ayaka"
   },
@@ -796,6 +808,9 @@
   },
   "ClorindesStellaFortuna": {
     "name": "Stella Fortuna von Clorinde"
+  },
+  "EmiliesStellaFortuna": {
+    "name": "Stella Fortuna von Émilie"
   },
   "GnosticHymnOldNotes": {
     "name": "Gnostiker-Erlebnispass – Erste Aufzeichnungen"
@@ -4958,6 +4973,9 @@
   "SpiritCarp": {
     "name": "Geister-Karpfen"
   },
+  "JubilantFeather": {
+    "name": "Jubelfeder"
+  },
   "Dish": {
     "name": "Gerichte"
   },
@@ -6983,6 +7001,39 @@
   "SuperDeeDuperDeliciousMeatRoll": {
     "name": "Gegrillte ki-ka-köstliche Fleischröllchen"
   },
+  "SuspiciousFricasseeDePoulet": {
+    "name": "Misslungenes Fricassée de poulet"
+  },
+  "FricasseeDePoulet": {
+    "name": "Fricassée de poulet"
+  },
+  "DeliciousFricasseeDePoulet": {
+    "name": "Leckeres Fricassée de poulet"
+  },
+  "AFragrantFeastOfFlavors": {
+    "name": "Ein duftendes Fest der Genüsse"
+  },
+  "SuspiciousBlubbercream": {
+    "name": "Misslungenes Pummeleis"
+  },
+  "Blubbercream": {
+    "name": "Pummeleis"
+  },
+  "DeliciousBlubbercream": {
+    "name": "Leckeres Pummeleis"
+  },
+  "SuspiciousCrispCroissantCombo": {
+    "name": "Misslungene knusprige Croissant-Kombination"
+  },
+  "CrispCroissantCombo": {
+    "name": "Knusprige Croissant-Kombination"
+  },
+  "DeliciousCrispCroissantCombo": {
+    "name": "Leckere knusprige Croissant-Kombination"
+  },
+  "AMagicalMix": {
+    "name": "Eine magische Mischung"
+  },
   "RecipeItem": {
     "name": "Objekt für Rezepte"
   },
@@ -7564,6 +7615,15 @@
   },
   "RecipeBulleSauceDuckBreast": {
     "name": "Rezept: Entenbrust an Blasenmandarinen-Soße"
+  },
+  "RecipeFricasseeDePoulet": {
+    "name": "Rezept: Fricassée de poulet"
+  },
+  "RecipeBlubbercream": {
+    "name": "Rezept: Pummeleis"
+  },
+  "RecipeCrispCroissantCombo": {
+    "name": "Rezept: Knusprige Croissant-Kombination"
   },
   "CraftedItems": {
     "name": "Hergestelltes Produkt"
@@ -10283,6 +10343,12 @@
   "InvitationFromTheAratakiGang": {
     "name": "Einladung von der Arataki-Bande"
   },
+  "WitnessPact": {
+    "name": "Pakt der Zeugen"
+  },
+  "GreatClockworkKey": {
+    "name": "Großartiger Uhrwerkschlüssel"
+  },
   "FelixFelicium": {
     "name": "„Felix Felicium“"
   },
@@ -10334,11 +10400,23 @@
   "DamagedScore": {
     "name": "Beschädigte Partitur"
   },
+  "BrickstacksLongRangeLamp": {
+    "name": "Ziegelstedt-Fernstrahler"
+  },
+  "AWeaponLikeDragonHorn": {
+    "name": "„Waffenähnliches“ Drachenhorn"
+  },
+  "FellDragonsScale": {
+    "name": "Schuppe des bösen Drachen"
+  },
   "CriminalsTestimony": {
     "name": "Geständnisse von Häftlingen"
   },
   "RawatsNotes": {
     "name": "Rawats Notizen"
+  },
+  "ScatteredStar": {
+    "name": "Verstreuter Stern"
   },
   "GroupPhotoFromAnUnknownTime": {
     "name": "Gruppenfoto aus einer nicht näher bekannten Zeit"
@@ -10348,6 +10426,33 @@
   },
   "PagesFromALostScoreII": {
     "name": "Zerrissene Partiturseite II"
+  },
+  "SpecialPickaxe": {
+    "name": "Spezielle Spitzhacke"
+  },
+  "GoddesssManuscriptI": {
+    "name": "Manuskript der Göttin I"
+  },
+  "GoddesssManuscriptII": {
+    "name": "Manuskript der Göttin II"
+  },
+  "GoddesssManuscriptIII": {
+    "name": "Manuskript der Göttin III"
+  },
+  "ShapeOfValor": {
+    "name": "Muster des Mutes"
+  },
+  "ShapeOfWisdom": {
+    "name": "Muster der Weisheit"
+  },
+  "ShapeOfEmpathy": {
+    "name": "Muster der Empathie"
+  },
+  "SecretElixir": {
+    "name": "„Geheimes Elixir“"
+  },
+  "GuardsSpear": {
+    "name": "Speer der Wache"
   },
   "TreasureMapWithTheVaultsLocation": {
     "name": "„Schatzkarte“ mit Standort einer Schatzkammer"
@@ -10435,6 +10540,27 @@
   },
   "TheFelineFirmVIII": {
     "name": "Das Kätzchenbüro – Band VIII"
+  },
+  "ASettingSunThatNeverSets": {
+    "name": "„Eine untergehende Sonne, die niemals versinkt“"
+  },
+  "ADragonThatCannotFly": {
+    "name": "„Ein Fisch, der am Ufer schwimmt“"
+  },
+  "AMoonThatOnlyShinesAtNight": {
+    "name": "„Ein Mond, der nur des Nachts erstrahlt“"
+  },
+  "MagicTonic": {
+    "name": "Zauberwasser"
+  },
+  "FellDragonsPicturebook": {
+    "name": "Bilderbuch des „bösen Drachen“"
+  },
+  "DreamsOfTheAncientCapital": {
+    "name": "„Anekdoten der alten Hauptstadt“"
+  },
+  "AnIncompleteManuscript": {
+    "name": "„Ein unvollendetes Manuskript“"
   },
   "TearsAmongTheStars": {
     "name": "Tränen zwischen den Sternen"
@@ -10678,6 +10804,9 @@
   },
   "WingsOfTransientDreams": {
     "name": "Flügel vergänglicher Träume"
+  },
+  "WingsOfDelicacies": {
+    "name": "Flügel der Köstlichkeit"
   },
   "RadiantSpincrystal1": {
     "name": "Strahlender Drehkristall I"
@@ -11939,6 +12068,30 @@
   "TravelNotesSimulnation": {
     "name": "Erlebnispass – Szenarien"
   },
+  "EmilieBaseNote": {
+    "name": "Émilie – Basisnote"
+  },
+  "TravelNotesFancifulFabrication": {
+    "name": "Erlebnispass – Märchen"
+  },
+  "CelebrationFeastII": {
+    "name": "Feierlichkeit – Gelage II"
+  },
+  "EchoDandelionKnight": {
+    "name": "Echo – Löwenzahnritter"
+  },
+  "EchoIcyResurrection": {
+    "name": "Echo – Eisige Nacht der Wiedergänger"
+  },
+  "EchoEclipsingStar": {
+    "name": "Echo – Verdeckter Mond"
+  },
+  "EchoCatUponTheEaves": {
+    "name": "Echo – Abenteuer über den Dächern"
+  },
+  "EchoDarkSideOfDawn": {
+    "name": "Echo – Dunkle Seite der Dämmerung"
+  },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus-Resonanzstein"
   },
@@ -12185,6 +12338,18 @@
   "Fateometer": {
     "name": "„Indikator des Schicksals“"
   },
+  "JocundLetters": {
+    "name": "Heiterkeitsbrief"
+  },
+  "JoyousLetters": {
+    "name": "Fröhlichkeitsbrief"
+  },
+  "Yelena": {
+    "name": "„Yelena“"
+  },
+  "AsagirisDedicatedFontaineKamera": {
+    "name": "Asagiris angepasster Fotoapparat für Fontaine"
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Erläuterung: Anemoculus-Resonanzstein"
   },
@@ -12386,6 +12551,12 @@
   "LeisureTime": {
     "name": "Freizeit"
   },
+  "CarefulNegotiations": {
+    "name": "Gewissenhafte Verhandlungen"
+  },
+  "FilledWithConfidence": {
+    "name": "Voller Zuversicht"
+  },
   "RhodeiaOfLoch": {
     "name": "Okeanide Rhodeia"
   },
@@ -12454,6 +12625,9 @@
   },
   "GuardianOfApepsOasis": {
     "name": "Beschützer von Apeps Oase"
+  },
+  "FrostOperative": {
+    "name": "Fatui – Frostdienerin"
   },
   "UndividedHeart": {
     "name": "Eintracht"
@@ -12731,6 +12905,15 @@
   "AThousandYoung": {
     "name": "Üppiger Nachwuchs"
   },
+  "VanguardsCoordinatedTactics": {
+    "name": "Koordinierte Taktik der Vorhut"
+  },
+  "UndisclosedDistributionChannels": {
+    "name": "Unbekannte Vertriebskanäle"
+  },
+  "RimeflowRapier": {
+    "name": "Eiskalte Klinge"
+  },
   "MagicGuide": {
     "name": "Magieführer"
   },
@@ -12974,6 +13157,15 @@
   "FlowerOfParadiseLost": {
     "name": "Blumen des verlorenen Paradieses"
   },
+  "UltimateOverlordsMegaMagicSword": {
+    "name": "„Megamagisches Schwert des ultimativen Oberherrn“"
+  },
+  "ProspectorsDrill": {
+    "name": "Erkundungsbohrer"
+  },
+  "GladiatorsTriumphus": {
+    "name": "Triumph des Gladiators"
+  },
   "LiyueHarborWharf": {
     "name": "Hafen von Liyue"
   },
@@ -13117,6 +13309,9 @@
   },
   "SirArthur": {
     "name": "Herr Arthur"
+  },
+  "Serene": {
+    "name": "Serene"
   },
   "ElementalResonanceWovenIce": {
     "name": "Elementarer Einklang – Gebündeltes Eis"
@@ -13295,6 +13490,12 @@
   "CountdownToTheShow3": {
     "name": "Countdown zur Show: 3"
   },
+  "IdRatherLoseMoneyMyself": {
+    "name": "„... wie dieser Taugenichts was verdient!“"
+  },
+  "Tada": {
+    "name": "Tada!"
+  },
   "Origin": {
     "name": "Anbeginn"
   },
@@ -13339,6 +13540,9 @@
   },
   "TheChasmBlueCrystal": {
     "name": "Große Kluft – Blauer Kristall"
+  },
+  "TheChasmCrown": {
+    "name": "Große Kluft – Goldene Krone"
   },
   "BeginnerPlayerBadge": {
     "name": "Kartenspielwappen – Anfänger"
@@ -13405,6 +13609,12 @@
   },
   "BambooRain": {
     "name": "Bambusregen"
+  },
+  "BreezeOfSabaa": {
+    "name": "Atem des Sabaa"
+  },
+  "PhantomInBoots": {
+    "name": "Gestiefeltes Phantom"
   },
   "AdventurerCamp": {
     "name": "Provisorisches Abenteurerlager"
@@ -13843,6 +14053,9 @@
   },
   "MusicTownsStreetlampSafetyLighting": {
     "name": "Straßenlaterne in der Stadt der Musik – „Licht für sichere Wege“"
+  },
+  "GlowingForestFruit": {
+    "name": "„Leuchtende Waldfrucht“"
   },
   "EfflorescentIllumination": {
     "name": "„Mannigfaltiges Licht der Blütenblätter“"
@@ -14984,6 +15197,24 @@
   "SiteOfArtfulAscension": {
     "name": "„Ort der alchimistischen Strategeme“"
   },
+  "MetropoleFunhouseTrumpeter": {
+    "name": "Fantasievolles Gebäude der Metropole – „Trompetenspieler“"
+  },
+  "MetropoleFunhouseCymbalist": {
+    "name": "Fantasievolles Gebäude der Metropole – „Zimbelspieler“"
+  },
+  "MetropoleFunhouseConductor": {
+    "name": "Fantasievolles Gebäude der Metropole – „Dirigent“"
+  },
+  "BoomBoomUnit": {
+    "name": "„Dröhneinheit“"
+  },
+  "DingDongUnit": {
+    "name": "„Klirreinheit“"
+  },
+  "MagicalForestHut": {
+    "name": "Zauberhütte im Wald"
+  },
   "RitualShrine": {
     "name": "„Schrein des Rituals“"
   },
@@ -15367,6 +15598,15 @@
   },
   "LargeShippingPallet": {
     "name": "Große Transportpalette"
+  },
+  "WavesmasherLocomotive": {
+    "name": "„Wellenspalterlok“"
+  },
+  "SnoozyRestCar": {
+    "name": "„Gemütlicher Schlafwagen“"
+  },
+  "BrimmingFreightCar": {
+    "name": "„Vollgestopfter Güterwagen“"
   },
   "AdeptusGate": {
     "name": "Adeptentor"
@@ -15760,6 +16000,18 @@
   },
   "ImprovedCrococannon": {
     "name": "„Verbesserte Krokokanone“"
+  },
+  "OrigamiModelHopSkipAndAJump": {
+    "name": "Papiermodell – „Springfrosch“"
+  },
+  "OrigamiModelRoundRummyTum": {
+    "name": "Papiermodell – „Rundlich“"
+  },
+  "OrigamiModelWhoooosh": {
+    "name": "Papiermodell – „Husch“"
+  },
+  "OrigamiModelHardAsCanBe": {
+    "name": "Papiermodell – „Steinhart“"
   },
   "PottedPlantVerdantVastness": {
     "name": "Topfpflanze – „Kleine Oase“"
@@ -16157,6 +16409,9 @@
   "MusicTownsBreezeBellsCheepingFinches": {
     "name": "Windspiel in der Stadt der Musik – „Spatzengezwitscher“"
   },
+  "ConscientiousWindcatcherSentinel": {
+    "name": "„Gewissenhafte Windfangwache“"
+  },
   "BookshelfFreeReading": {
     "name": "Bücher- und Zeitschriftenregal – „Zur freien Verfügung“"
   },
@@ -16246,6 +16501,18 @@
   },
   "MallowWoodFenceTides": {
     "name": "Zaun „Wellen“ aus Platanenholz"
+  },
+  "PrimordialForestBeauty": {
+    "name": "Ursprüngliche Schönheit des Waldes"
+  },
+  "WindowToProphecy": {
+    "name": "„Fenster zur Prophezeiung“"
+  },
+  "GateOfStars": {
+    "name": "„Tor zu den Sternen“"
+  },
+  "GardenStellarMusicalPillar": {
+    "name": "„Sternenglanz-Klangsäule im Garten“"
   },
   "SmoothWoodenBench": {
     "name": "Glatte Holzbank"
@@ -16355,6 +16622,9 @@
   "MallowWoodRoundTableASharedDrink": {
     "name": "Rundtisch „Gemeinsames Gläschen“ aus Platanenholz"
   },
+  "JoyousForestParty": {
+    "name": "Freudenfest im Wald"
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Weinladen-Theke – „Nach Herzenslust“"
   },
@@ -16390,5 +16660,11 @@
   },
   "SwordBearingStatueAestheticsOfIncompleteness": {
     "name": "Steinstatue mit Schwert – „Die Ästhetik des Unvollkommenen“"
+  },
+  "EasyBreezyShelterCanopy": {
+    "name": "Offener Unterstand für Wartebereiche"
+  },
+  "ScheduleAbidingTrainStationSign": {
+    "name": "Pünktliches Haltestellenschild"
   }
 }

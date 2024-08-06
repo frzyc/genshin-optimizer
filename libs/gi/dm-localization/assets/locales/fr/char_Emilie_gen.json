@@ -1,0 +1,167 @@
+{
+  "name": "Émilie",
+  "title": "Tracé de mille parfums",
+  "description": "Une parfumeuse fontainoise, celle qui embouteille les secrets.",
+  "constellationName": "Pomum de Ambra",
+  "auto": {
+    "name": "Lance d'éclombre (modifiée)",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups de lance."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour déclencher une attaque ascendante."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Extraction de fragrance",
+    "description": {
+      "0": "Crée un flacon de Lumidouce qui inflige des <dendro>DGT Dendro de zone</dendro>.",
+      "1": "<br/>",
+      "2": "<strong>Flacon de Lumidouce</strong>",
+      "3": [
+        " Tire de façon intermittente des bouffées d'aiguail pur sur les ennemis proches, infligeant des <dendro>DGT Dendro</dendro>.",
+        " Tout ennemi brûlé à proximité dégagera de façon intermittente de la senteur, une senteur pouvant être créée de cette manière une fois toutes les 2 s. Le flacon de Lumidouce peut collecter les senteurs à proximité, et après avoir collecté 2 senteurs, il monte d'un niveau pour tirer 1 bouffée d'aiguail pur supplémentaire chaque fois qu'il en tire et augmenter les DGT infligés et la portée de ces bouffées.",
+        " Il ne peut exister qu'un seul flacon de Lumidouce créé par Émilie à la fois. Le flacon de Lumidouce commence au niveau 1 et peut atteindre le niveau 2. Si le flacon ne collecte aucune senteur pendant 8 s alors qu'il est sur le terrain, il passe au niveau 1."
+      ],
+      "4": "<br/>",
+      "5": "<strong>Arkhe : Pneuma</strong>",
+      "6": "Régulièrement, après qu'Émilie a créé un flacon de Lumidouce de cette façon, une épine d'inhalation qui transperce les ennemis descend devant elle pour infliger des <dendro>DGT Dendro</dendro> chargés d'énergie pneuma.",
+      "7": "<br/>",
+      "8": "<i>« Le monde est une harmonie infinie de parfums, de couleurs et de chants. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "DGT flacon de Lumidouce (niveau 1)",
+      "2": "DGT flacon de Lumidouce (niveau 2)",
+      "3": "Durée de flacon de Lumidouce",
+      "4": "DGT épine d'inhalation",
+      "5": "Intervalle d'épine d'inhalation",
+      "6": "Temps de recharge",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Explication de parfum",
+    "description": {
+      "0": "Émilie guide le parfum rassemblé dans le flacon pour le convertir en énergie Dendro pure, créant ainsi un flacon de Lumidouce de niveau 3 et rangeant tout flacon présent.",
+      "1": "Pendant sa durée, le flacon de Lumidouce de niveau 3 ne collecte pas les senteurs à proximité et fait descendre de façon continue de la rosée parfumée pour attaquer les ennemis à portée, infligeant des <dendro>DGT Dendro</dendro>. Pendant sa durée, le flacon de Lumidouce de niveau 3 fait descendre une rosée parfumée toutes les 0,3 s et chaque ennemi peut être ciblé une fois toutes les 0,7 s.",
+      "2": "À la fin de la durée, un flacon de Lumidouce de niveau 1 sera recréé. Si l'utilisation d'Explication de parfum a rangé un flacon de Lumidouce, ce flacon sera déployé à la place et sa durée sera réinitialisée.",
+      "3": "Pendant la durée d'<strong>Explication de parfum</strong>, la compétence élémentaire « Extraction de fragrance » ne crée pas de flacon de Lumidouce.",
+      "4": "<br/>",
+      "5": "<i>Quel que soit le parfum, il commence à changer dès qu'il entre en contact avec l'air, avant de finalement se dissiper au milieu des murmures du vent, des arbres et de l'herbe. Ainsi, personne n'apprécie exactement la même senteur.",
+      "6": "Il en va de même pour les chemins empruntés par tous ceux qui vivent. En ce sens, on peut considérer les parfums comme une analogie de la vie humaine.</i>"
+    },
+    "skillParams": {
+      "0": "DGT flacon de Lumidouce (niveau 3)",
+      "1": "Durée de flacon de Lumidouce (niveau 3)",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Arôme persistant",
+    "description": {
+      "0": "Chaque fois qu'il collecte 2 <strong>senteurs</strong>, un flacon de Lumidouce de niveau 2 consomme ses senteurs pour libérer une cologne d'aiguail clair qui inflige des <dendro>DGT Dendro de zone</dendro> d'une valeur équivalant à 600 % de l'ATQ d'Émilie aux ennemis. Ces DGT ne sont pas considérés comme des DGT de compétence élémentaire."
+    }
+  },
+  "passive2": {
+    "name": "Distillat raffiné",
+    "description": {
+      "0": "Les DGT qu'Émilie inflige aux ennemis brûlés augmentent selon son ATQ : chaque tranche de 1 000 pts d'ATQ augmente les DGT de 15 %, les DGT pouvant être augmentés d'un maximum de 36 % de cette manière."
+    }
+  },
+  "passive3": {
+    "name": "Extraction de senteur",
+    "description": {
+      "0": "Lorsqu'un flacon de Lumidouce créé par Émilie est sur le terrain, tous les personnages de l'équipe à proximité voient leur <pyro>RÉS Pyro</pyro> contre les DGT de Brûlure augmenter de 85 %."
+    }
+  },
+  "constellation1": {
+    "name": "Lessivage d'aromate léger",
+    "description": {
+      "0": "Les DGT infligés par <strong>Extraction de fragrance</strong> et par la cologne d'aiguail clair d'Arôme persistant augmentent de 20 %. L'aptitude passive « Arôme persistant » doit être déjà débloquée pour pouvoir augmenter les DGT infligés par la cologne d'aiguail clair.",
+      "1": "De plus, lorsqu'un membre de l'équipe à proximité déclenche une réaction de Brûlure sur un ennemi ou inflige des <dendro>DGT Dendro</dendro> à un ennemi brûlé, ce dernier dégage une <strong>senteur</strong> supplémentaire. Cet effet peut être déclenché une fois toutes les 2,9 s"
+    }
+  },
+  "constellation2": {
+    "name": "Exhalaison lacmineuse",
+    "description": {
+      "0": "Lorsqu'<strong>Extraction de fragrance</strong>, <strong>Explication de parfum</strong> ou une cologne d'aiguail clair créée par l'aptitude passive « Arôme persistant », cette aptitude devant être déjà débloquée, touche un ennemi, la <dendro>RÉS Dendro</dendro> de ce dernier diminue de 30 % pendant 10 s."
+    }
+  },
+  "constellation3": {
+    "name": "Essence exquise",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Extraction de fragrance</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Extrait de Lumidouce",
+    "description": {
+      "0": "La durée d'<strong>Explication de parfum</strong> augmente de 2 s, et la durée minimum requise pour cibler à nouveau un même ennemi avec une rosée parfumée diminue de 0,3 s."
+    }
+  },
+  "constellation5": {
+    "name": "Effluve d'aiguail pur",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Explication de parfum</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Soupçon de Marcotte",
+    "description": {
+      "0": "En utilisant <strong>Extraction de fragrance</strong> ou <strong>Explication de parfum</strong>, Émilie obtient l'effet Persistance fragrante pendant 5 s.",
+      "1": "Pendant cette durée, Émilie génère une senteur après avoir utilisé une attaque normale ou chargée, et ses attaques normales et chargées sont converties en <dendro>DGT Dendro</dendro> ne pouvant pas être enchantés, les DGT qu'elles infligent étant de plus augmentés d'une valeur équivalant à 300 % de l'ATQ d'Émilie.",
+      "2": "<br/>",
+      "3": "Les effets de la persistance fragrante cessent après la création de 4 senteurs de cette manière ou lorsque sa durée expire. Une persistance fragrante peut être obtenue une fois toutes les 12 s."
+    }
+  }
+}

@@ -106,7 +106,7 @@
   "passive1": {
     "name": "Pénitence retentissante",
     "description": {
-      "0": "Keqing obtient pendant 5 s un <electro>enchantement Électro</electro> lorsqu'une Lame de foudre est active et que <strong>Retour des Étoiles</strong> est lancé à nouveau."
+      "0": "Keqing obtient pendant 5 s un <electro>enchantement Électro</electro> lorsqu'une Lame de foudre est active et que <strong>Retour des étoiles</strong> est lancé à nouveau."
     }
   },
   "passive2": {

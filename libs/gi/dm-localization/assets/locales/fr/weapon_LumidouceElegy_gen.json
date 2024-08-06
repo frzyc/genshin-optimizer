@@ -1,0 +1,24 @@
+{
+  "name": "Élégie de Lumidouce",
+  "description": {
+    "0": "Une magnifique lance ornée de cristal azur. Il paraît qu'il s'agissait du trésor d'une certaine duelliste mandatée légendaire. Et pourtant, elle n'a jamais été utilisée une seule fois..."
+  },
+  "passiveName": "Prélude de l'aube blanche",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente l'ATQ de <cryo>15 %</cryo>. Lorsque le personnage équipé de l'arme déclenche une réaction de Brûlure sur un ennemi ou inflige des DGT Dendro à un ennemi brûlé, les DGT infligés augmentent de <cryo>18 %</cryo> pendant 8 s, cet effet pouvant être cumulé 2 fois maximum. En atteignant 2 cumuls ou lorsque la durée du 2e cumul est actualisée, <cryo>12</cryo> pts d'énergie élémentaires sont restaurés, l'énergie élémentaire pouvant être restaurée une fois toutes les 12 s de cette manière. Les 2 effets susmentionnés peuvent être déclenchés même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "Augmente l'ATQ de <cryo>19 %</cryo>. Lorsque le personnage équipé de l'arme déclenche une réaction de Brûlure sur un ennemi ou inflige des DGT Dendro à un ennemi brûlé, les DGT infligés augmentent de <cryo>23 %</cryo> pendant 8 s, cet effet pouvant être cumulé 2 fois maximum. En atteignant 2 cumuls ou lorsque la durée du 2e cumul est actualisée, <cryo>13</cryo> pts d'énergie élémentaires sont restaurés, l'énergie élémentaire pouvant être restaurée une fois toutes les 12 s de cette manière. Les 2 effets susmentionnés peuvent être déclenchés même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "Augmente l'ATQ de <cryo>23 %</cryo>. Lorsque le personnage équipé de l'arme déclenche une réaction de Brûlure sur un ennemi ou inflige des DGT Dendro à un ennemi brûlé, les DGT infligés augmentent de <cryo>28 %</cryo> pendant 8 s, cet effet pouvant être cumulé 2 fois maximum. En atteignant 2 cumuls ou lorsque la durée du 2e cumul est actualisée, <cryo>14</cryo> pts d'énergie élémentaires sont restaurés, l'énergie élémentaire pouvant être restaurée une fois toutes les 12 s de cette manière. Les 2 effets susmentionnés peuvent être déclenchés même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "Augmente l'ATQ de <cryo>27 %</cryo>. Lorsque le personnage équipé de l'arme déclenche une réaction de Brûlure sur un ennemi ou inflige des DGT Dendro à un ennemi brûlé, les DGT infligés augmentent de <cryo>33 %</cryo> pendant 8 s, cet effet pouvant être cumulé 2 fois maximum. En atteignant 2 cumuls ou lorsque la durée du 2e cumul est actualisée, <cryo>15</cryo> pts d'énergie élémentaires sont restaurés, l'énergie élémentaire pouvant être restaurée une fois toutes les 12 s de cette manière. Les 2 effets susmentionnés peuvent être déclenchés même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "Augmente l'ATQ de <cryo>31 %</cryo>. Lorsque le personnage équipé de l'arme déclenche une réaction de Brûlure sur un ennemi ou inflige des DGT Dendro à un ennemi brûlé, les DGT infligés augmentent de <cryo>38 %</cryo> pendant 8 s, cet effet pouvant être cumulé 2 fois maximum. En atteignant 2 cumuls ou lorsque la durée du 2e cumul est actualisée, <cryo>16</cryo> pts d'énergie élémentaires sont restaurés, l'énergie élémentaire pouvant être restaurée une fois toutes les 12 s de cette manière. Les 2 effets susmentionnés peuvent être déclenchés même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

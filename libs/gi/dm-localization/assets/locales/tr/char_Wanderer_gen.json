@@ -140,7 +140,7 @@
   "constellation2": {
     "name": "Niban: Beyaz Dalgaların Eşiğindeki Ada",
     "description": {
-      "0": "<strong>Akım Harmonisi</strong> durumundayken <strong>Kyougen: Beşli Merasim Oyunu</strong> hasarı, bu beceriyi kullanırken Kuugoryoku Puanı sınırı miktarıyla mevcut Kuugoryoku Puanı miktarı farkının her bir birim değeri için %4 artar.",
+      "0": "<strong>Akım Harmonisi</strong> durumundayken <strong>Kyougen: Beşli Merasim Oyunu</strong> Hasarı, bu beceriyi kullanırken Kuugoryoku Puanı sınırı miktarıyla mevcut Kuugoryoku Puanı miktarı farkının her bir birim değeri için %4 artar.",
       "1": "Bu yöntemle Kyougen: Beşli Merasim Oyununun Hasarı en fazla %200 artırılabilir."
     }
   },

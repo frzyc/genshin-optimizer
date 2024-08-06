@@ -55,7 +55,7 @@
       "11": "Aynı anda en fazla 1 düşman Gölge İşaretine sahip olabilir. Bu düşman, Lynette'ten çok uzaklaşırsa Gölge İşareti kaybolur.",
       "12": "<br/>",
       "13": "<strong>Arkhe: Öz</strong>",
-      "14": "Lynette, Gizem Atılımını kullandıktan sonra belirli aralıklarla Çalkantılı Kılıç saldırısı yaparak Öz tesirli <anemo>Rüzgar Hasarı</anemo> verir.",
+      "14": "Belirli aralıklarla Lynette, Gizem Atılımını kullandıktan sonra Çalkantılı Kılıç saldırısı yaparak Öz tesirli <anemo>Rüzgar Hasarı</anemo> verir.",
       "15": "<br/>",
       "16": "<i>\"Şimdi dikkatini sahneye ver, gösterinin tadını çıkar. Hiç beklemediğin bir yerde belireceğim.\"</i>"
     },
@@ -87,7 +87,7 @@
       "3": [
         "Yakındaki düşmanları kışkırtarak saldırıları kendine çeker.",
         "Belirli aralıklarla yakındaki düşmanlara <anemo>Rüzgar Hasarı</anemo> verir.",
-        "Şaşırtıcı Kedi Kutusu <hydro>Su</hydro>/<pyro>Ateş</pyro>/<cryo>Buz</cryo>/<electro>Elektrik</electro> ile temas ettiğinde element etkisini alır ve ek olarak belirli aralıklarla bu element türünden hasar veren Parlak Atışlar yapar."
+        "Şaşırtıcı Kedi Kutusu <hydro>Su</hydro>/<pyro>Ateş</pyro>/<cryo>Buz</cryo>/<electro>Elektrik</electro> ile temas ettiğinde element etkisini alır ve ek olarak belirli aralıklarla bu element türünden Hasar veren Parlak Atışlar yapar."
       ],
       "4": "Bu türden bir Element Emilimi, bu beceri süresince yalnızca bir defa gerçekleşebilir.",
       "5": "<br/>",

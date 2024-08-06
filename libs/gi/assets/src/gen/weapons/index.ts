@@ -80,6 +80,7 @@ import LionsRoar from './LionsRoar'
 import LithicBlade from './LithicBlade'
 import LithicSpear from './LithicSpear'
 import LostPrayerToTheSacredWinds from './LostPrayerToTheSacredWinds'
+import LumidouceElegy from './LumidouceElegy'
 import LuxuriousSeaLord from './LuxuriousSeaLord'
 import MagicGuide from './MagicGuide'
 import MailedFlower from './MailedFlower'
@@ -268,6 +269,7 @@ const data = {
   LithicBlade,
   LithicSpear,
   LostPrayerToTheSacredWinds,
+  LumidouceElegy,
   LuxuriousSeaLord,
   MagicGuide,
   MailedFlower,
