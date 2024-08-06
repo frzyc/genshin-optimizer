@@ -323,6 +323,15 @@ const sheet: TalentSheet = {
         },
       ],
     },
+    ct.headerTem('constellation4', {
+      fields: [
+        {
+          text: st('durationInc'),
+          value: dm.constellation4.durationInc,
+          unit: 's',
+        },
+      ],
+    }),
   ]),
 
   passive1: ct.talentTem('passive1', [
