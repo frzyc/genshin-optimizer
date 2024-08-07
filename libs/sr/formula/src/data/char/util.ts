@@ -40,17 +40,15 @@ export function getBaseTag(data_gen: CharacterDatum): DmgTag {
  * @returns Object with entry for basic, skill, ult, talent, technique and eidolon scalings. Eidolon contains further entries 1-6 for each eidolon.
  */
 export function scalingParams(data_gen: CharacterDatum) {
-  const [basic, skill, ult, talent, technique] = data_gen.skillTreeList
-    .map((s) => s.skillParamList)
-    .filter((s): s is number[][] => !!s)
+  const { basic, skill, ult, talent, technique } = data_gen.skillTree
   const eidolon = objMap(data_gen.rankMap, (rankInfo) => rankInfo.params)
 
   return {
-    basic,
-    skill,
-    ult,
-    talent,
-    technique,
+    basic: basic.skillParamList,
+    skill: skill.skillParamList,
+    ult: ult.skillParamList,
+    talent: talent.skillParamList,
+    technique: technique.skillParamList,
     eidolon,
   }
 }
@@ -153,8 +151,9 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
   const { eidolon, ascension, lvl, ele, path } = char
   // The "add" only applies to currLvl - 1, since "base" is stat at lvl 1
   const readLvl = sum(constant(-1), lvl)
-  const statBoosts = data_gen.skillTreeList
-    .map((s) => s.levels?.[0]?.stats)
+  const statBoosts = Object.entries(data_gen.skillTree)
+    .filter(([key]) => key.includes('statBoost'))
+    .map(([_, s]) => s.levels?.[0]?.stats)
     .filter((s): s is SkillTreeNodeBonusStat => !!s)
   return [
     ele.add(data_gen.damageType),

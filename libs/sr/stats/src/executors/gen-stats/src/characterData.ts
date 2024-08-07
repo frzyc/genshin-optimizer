@@ -46,8 +46,7 @@ type SkillTree = {
   pointId: string
   anchor: Anchor
   levels?: SkillTreeNode[] | undefined
-  // Indexed by skillId or pointId
-  skillParamList?: Record<number, number[][]> | undefined
+  skillParamList: number[][][]
   pointType: number
 }
 type SkillTreeNode = {
@@ -84,7 +83,7 @@ export default function characterData(): CharacterData {
               const skillParamList =
                 LevelUpSkillID.length > 0
                   ? // Grab from AvatarSkillConfig (non-traces)
-                    objKeyMap(LevelUpSkillID, (skillId) =>
+                    LevelUpSkillID.map((skillId) =>
                       transposeArray(
                         avatarSkillConfig[skillId]!.map(({ ParamList }) =>
                           ParamList.map(({ Value }) => Value)
@@ -92,11 +91,11 @@ export default function characterData(): CharacterData {
                       )
                     )
                   : // Grab from itself (AvatarSkillTreeConfig) (traces)
-                    {
-                      [pointId]: skillTree.map((config) =>
+                    [
+                      skillTree.map((config) =>
                         config.ParamList.map(({ Value }) => Value)
                       ),
-                    }
+                    ]
 
               const levels = skillTree.map(({ StatusAddList }) => {
                 if (!StatusAddList.length) return {}
