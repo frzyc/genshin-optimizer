@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Adivinación Tai Yi",
+        "fullDesc": "Cuando Matriz del Presagio está activa, Fu Xuan recupera adicionalmente {{1}} pts. de energía al usar su habilidad básica.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Adivinación Dun Jia",
+        "fullDesc": "Al usar la habilidad definitiva de Fu Xuan, los demás aliados regeneran una cantidad de PV equivalente al {{1}}% de los PV máx. de Fu Xuan + {{2}}.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Adivinación Liu Ren",
+        "fullDesc": "Si un enemigo intenta aplicar un estado negativo de Control a un aliado mientras Matriz del Presagio está activa, todos los aliados resisten todos los estados negativos de Control del enemigo hasta que finalice la acción. Este efecto solo se puede activar 1 vez. Cuando se vuelve a activar Matriz del Presagio, el número de veces que se puede usar este efecto se reinicia.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

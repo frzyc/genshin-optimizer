@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#じょかん}舒緩{RUBY_E#}",
+        "fullDesc": "戦闘スキルを発動した時、指定した味方単体のデバフを{{1}}つ解除する。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#いしゃ}医者{RUBY_E#}",
+        "fullDesc": "ナターシャの治癒量+{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#せっせい}摂生{RUBY_E#}",
+        "fullDesc": "戦闘スキルの持続回復効果の継続時間+{{1}}ターン。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

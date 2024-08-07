@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Tanz für mich",
+        "fullDesc": "Wenn die Anzahl der Gegner auf dem Kampffeld 5 oder mehr/4/3/2/1 beträgt, wird der von „Backup-Tänzer“ ausgelöste Super-Bruch-SCH um {{1}}%/{{2}}%/{{3}}%/{{4}}%/{{5}}% erhöht.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Folge dem Strom",
+        "fullDesc": "Erhöht beim Einsatz der Fertigkeit den WDS-Reduzierungswert des ersten SCH zusätzlich um {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Theaterhut",
+        "fullDesc": "Verzögert die Aktion der Gegner zusätzlich um {{1}}%, nachdem Verbündete ihnen Schwächebruch zugefügt haben.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

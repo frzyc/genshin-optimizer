@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#ごうちょく}剛直{RUBY_E#}",
+        "fullDesc": "ジェパードが敵に攻撃される確率がアップする。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#とうそつ}統率{RUBY_E#}",
+        "fullDesc": "「不屈の体躯」を発動した後、ジェパードのEPを100%まで回復する。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#せんい}戦意{RUBY_E#}",
+        "fullDesc": "ジェパードの攻撃力が自身の防御力{{1}}%分アップ、ターンが回ってくるたびに更新される。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Frühlingsgeburt",
+        "fullDesc": "Liegt der LP-Prozentsatz bei {{1}}% oder niedriger, sinkt die Chance, von Gegnern angegriffen zu werden.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Zurückschlagen gegen den Feind",
+        "fullDesc": "Für jede ausgelöste „Schwerthaltung“ wird ihr zugefügter SCH um {{1}}% erhöht. Dieser Effekt ist bis zu {{2}}-mal stapelbar.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Sieger",
+        "fullDesc": "Zieht nach dem Einsatz des Standardangriffs oder der Fertigkeit Sushangs Aktion um {{1}}% vor, wenn sich auf dem Feld Gegner mit Schwächebruch befinden.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

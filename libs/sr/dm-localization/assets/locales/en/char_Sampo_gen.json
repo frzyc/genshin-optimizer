@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Trap",
+        "fullDesc": "Extends the duration of Wind Shear caused by Talent by {{1}} turn(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Defensive Position",
+        "fullDesc": "Using Ultimate additionally regenerates {{1}} Energy.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Spice Up",
+        "fullDesc": "Enemies with Wind Shear effect deal {{1}}% less DMG to Sampo.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

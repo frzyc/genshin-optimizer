@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Danse avec moi",
+        "fullDesc": "Lorsqu'il y a 5 ou plus/4/3/2/1 cible(s) ennemie(s) sur le champ de bataille, les DGT de rupture extrême déclenchés par l'effet Soutien sur scène augmentent de {{1}}%/{{2}}%/{{3}}%/{{4}}%/{{5}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Ovation",
+        "fullDesc": "Augmente de {{1}}% la réduction de robustesse de la première instance de DGT en utilisant la compétence.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Chapeau bas",
+        "fullDesc": "Lorsqu'un allié inflige une Rupture de faiblesse à un ennemi, retarde l'action de la cible ennemie de {{1}}% supplémentaires.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

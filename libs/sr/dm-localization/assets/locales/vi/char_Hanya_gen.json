@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm sức bền thuộc tính tương ứng của kẻ địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Lục Sự",
+        "fullDesc": "Tăng {{1}}% Tấn Công cho đồng đội đang kích hoạt hiệu ứng hồi Điểm Chiến Kỹ \"Sức Nặng\", duy trì {{2}} hiệp.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Cõi Âm",
+        "fullDesc": "Khi kẻ địch có \"Sức Nặng\" bị tiêu diệt, nếu số lần kích hoạt \"Sức Nặng\" hồi Điểm Chiến Kỹ cho toàn đội nhỏ hơn hoặc bằng {{1}}, thì sẽ hồi thêm {{2}} Điểm Chiến Kỹ.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Hoàn Dương",
+        "fullDesc": "Khi hiệu ứng hồi Điểm Chiến Kỹ của \"Sức Nặng\" được kích hoạt, bản thân sẽ hồi {{1}} điểm Năng Lượng.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "야행",
+        "fullDesc": "현재 HP 백분율이 {{1}}% 이하인 경우, 적에게 피격될 확률이 감소한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "절단",
+        "fullDesc": "증폭 상태일 때 제레의 양자 속성 저항 관통이 {{1}}% 증가한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "파문",
+        "fullDesc": "일반 공격 발동 후 제레의 다음 행동 게이지가 {{1}}% 증가한다",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

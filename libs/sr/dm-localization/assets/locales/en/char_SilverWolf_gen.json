@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Generate",
+        "fullDesc": "Bug's duration is extended for {{1}} turn(s). Every time an enemy is inflicted with Weakness Break, Silver Wolf has a {{2}}% base chance of implanting a random Bug in the enemy.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Inject",
+        "fullDesc": "The duration of the Weakness implanted by Silver Wolf's Skill increases by {{1}} turn(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Side Note",
+        "fullDesc": "If there are {{1}} or more debuff(s) affecting the enemy when the Skill is used, then the Skill decreases the enemy's All-Type RES by an additional {{2}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

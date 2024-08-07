@@ -35,6 +35,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "岐黃精義",
+        "fullDesc": "白露對我方目標造成過量治療時會提高目標{{1}}%的生命上限，持續{{2}}回合。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "持明龍脈",
+        "fullDesc": "【生息】效果的觸發次數增加{{1}}次。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "鱗淵福澤",
+        "fullDesc": "擁有【生息】的角色受到的傷害降低{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

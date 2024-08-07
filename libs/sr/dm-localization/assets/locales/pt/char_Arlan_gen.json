@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Ressurgimento",
+        "fullDesc": "Se a porcentagem atual dos PV for igual ou inferior a {{1}}% ao derrotar um inimigo, recupera imediatamente PV igual a {{2}}% dos PV máximos.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Resistência",
+        "fullDesc": "A chance de resistir a penalidades de Dano Contínuo aumenta em {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Repulsa",
+        "fullDesc": "Ao entrar na batalha, se os PV de Arlan forem iguais ou inferiores a {{1}}%, ele pode anular todo o Dano recebido até ser atacado, exceto por fontes de Dano Contínuo.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

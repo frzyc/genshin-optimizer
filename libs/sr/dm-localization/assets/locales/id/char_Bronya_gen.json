@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Command",
+        "fullDesc": "CRIT Rate Basic Attack meningkat hingga 100%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Battlefield",
+        "fullDesc": "Meningkatkan {{2}}% DEF seluruh rekan tim selama {{1}} giliran saat pertempuran dimulai.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Military Might",
+        "fullDesc": "Meningkatkan {{1}}% DMG yang diakibatkan seluruh rekan tim saat Bronya berada di medan pertempuran.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Ombre dans la nuit",
+        "fullDesc": "Réduit les chances du personnage d'être attaqué par des ennemis quand son pourcentage de PV est inférieur ou égal à {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Lacération",
+        "fullDesc": "La PÉN de RÉS quantique de Seele augmente de {{1}}% lorsqu'elle est dans l'état amélioré.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Vagues ondulantes",
+        "fullDesc": "Après utilisation de son ATQ normale, l'action suivante de Seele est avancée de {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

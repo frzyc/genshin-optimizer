@@ -40,6 +40,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của kẻ địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Ghost Load",
+        "fullDesc": "Tăng Tỷ Lệ Bạo Kích/Sát Thương Bạo Kích của bản thân, mức tăng bằng {{1}}%/{{3}}% Tấn Công Kích Phá, tối đa khiến Tỷ Lệ Bạo Kích/Sát Thương Bạo Kích tăng {{2}}%/{{4}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Above Snakes",
+        "fullDesc": "Khi Boothill trong Đối Đầu Tuyệt Mệnh, sát thương phải chịu từ mục tiêu không trong trạng thái Đối Đầu Tuyệt Mệnh giảm {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Point Blank",
+        "fullDesc": "Khi trong Đối Đầu Tuyệt Mệnh và nhận Cú Lừa Bỏ Túi sẽ hồi {{1}} Năng Lượng. Hiệu ứng này cũng sẽ kích hoạt khi nhận Cú Lừa Bỏ Túi vượt mức.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

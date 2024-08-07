@@ -35,6 +35,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "襄尺",
+        "fullDesc": "馭空被施加負面效果時可抵抗1次負面效果，該效果在{{1}}回合後可再次觸發。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "遲彝",
+        "fullDesc": "馭空在場時，我方全體造成的虛數屬性傷害提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "氣壯",
+        "fullDesc": "持有【鳴弦號令】時，每當我方目標行動後，馭空將額外恢復{{1}}點能量。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

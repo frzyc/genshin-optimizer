@@ -35,6 +35,27 @@
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "潜龙",
+        "fullDesc": "若当前生命值百分比小于等于{{1}}%，则被敌方目标攻击的概率降低。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "绝影",
+        "fullDesc": "施放攻击后有{{1}}%的固定概率使自身速度提高{{2}}%，持续{{3}}回合。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "罡风",
+        "fullDesc": "普攻对减速状态下的敌方目标造成的伤害提高{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Rồng Ẩn",
+        "fullDesc": "Nếu Phần Trăm HP hiện tại nhỏ hơn hoặc bằng {{1}}%, sẽ giảm xác suất bị kẻ địch tấn công.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Tuyệt Ảnh",
+        "fullDesc": "Sau khi tấn công có {{1}}% xác suất cố định khiến Tốc Độ bản thân tăng {{2}}%, duy trì {{3}} hiệp.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Gió Lốc",
+        "fullDesc": "Sát thương tấn công thường gây ra cho mục tiêu địch đang ở trạng thái giảm tốc tăng {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

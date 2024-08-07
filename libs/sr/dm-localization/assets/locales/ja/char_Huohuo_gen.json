@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#いちぞん}一存{RUBY_E#}では{RUBY_B#うご}動{RUBY_E#}けない",
+        "fullDesc": "戦闘開始時、フォフォは「厄払い」を獲得する、{{1}}ターン継続。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#ていきょう}貞凶{RUBY_E#}の{RUBY_B#めい}命{RUBY_E#}",
+        "fullDesc": "行動制限系デバフに抵抗する確率+{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#おくびょうもの}臆病者{RUBY_E#}のストレス{RUBY_B#はんのう}反応{RUBY_E#}",
+        "fullDesc": "天賦を発動して味方に治癒を行った時、フォフォのEPを{{1}}回復する。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

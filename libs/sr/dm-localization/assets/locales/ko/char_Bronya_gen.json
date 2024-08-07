@@ -35,6 +35,27 @@
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "호령",
+        "fullDesc": "일반 공격의 치명타 확률이 100%까지 증가한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "진영",
+        "fullDesc": "전투 시작 시 모든 아군의 방어력이 {{2}}% 증가한다. 지속 시간: {{1}}턴",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "군세",
+        "fullDesc": "브로냐가 필드에 있으면 모든 아군이 가하는 피해가 {{1}}% 증가한다",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

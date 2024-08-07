@@ -40,6 +40,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Reino da Morte",
+        "fullDesc": "Aumenta a RES a Efeito em {{1}}% enquanto estiver no estado de Transmigração Espectral.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Campeã da Espada",
+        "fullDesc": "Após usar Clarão Transcendente, a próxima ação será Avançada Adiante em {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Ira Gélida",
+        "fullDesc": "Aumenta o Dano da Perícia Suprema em {{1}}% enquanto estiver no estado de Transmigração Espectral.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

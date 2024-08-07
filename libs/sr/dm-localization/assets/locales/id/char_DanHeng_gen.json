@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Hidden Dragon",
+        "fullDesc": "Mengurangi peluang diserang oleh target musuh jika persentase HP saat ini kurang dari atau sama dengan {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Faster Than Light",
+        "fullDesc": "Setelah melancarkan serangan, memiliki {{1}}% peluang tetap untuk meningkatkan {{2}}% SPD diri sendiri selama {{3}} giliran.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "High Gale",
+        "fullDesc": "Meningkatkan {{1}}% DMG yang diakibatkan Basic Attack pada target musuh dengan status Slow.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

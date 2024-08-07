@@ -40,6 +40,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Royaume des morts",
+        "fullDesc": "Augmente la RÉS aux effets de {{1}}% dans l'état Migration spectrale.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Championne de l'épée",
+        "fullDesc": "La prochaine action est avancée de {{1}}% après avoir utilisé Éclair transcendant.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Spectre du froid",
+        "fullDesc": "Augmente les DGT infligés par l'ultime dans l'état Migration spectrale de {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

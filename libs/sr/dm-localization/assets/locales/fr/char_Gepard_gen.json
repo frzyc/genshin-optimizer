@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Intégrité",
+        "fullDesc": "Gepard a de plus grandes chances d'être attaqué par les ennemis.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Commandant",
+        "fullDesc": "Lorsque Volonté inflexible est déclenchée, Gepard régénère toute son énergie.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Esprit combatif",
+        "fullDesc": "L'ATQ de Gepard augmente à hauteur de {{1}}% de sa DÉF actuelle. Cet effet s'actualise au début de chaque tour.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

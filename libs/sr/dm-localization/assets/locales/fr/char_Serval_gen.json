@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Rock 'n' roll",
+        "fullDesc": "Les chances de base de la compétence de stupéfier les ennemis augmentent de {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Vibration des cordes",
+        "fullDesc": "Régénère immédiatement {{1}} points d'énergie en début de combat.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Maniaque",
+        "fullDesc": "L'ATQ augmente de {{1}}% pendant {{2}} tours après avoir vaincu un ennemi.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

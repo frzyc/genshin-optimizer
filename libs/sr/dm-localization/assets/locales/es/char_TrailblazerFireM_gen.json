@@ -40,6 +40,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "El fuerte defiende al débil",
+        "fullDesc": "Tras usar la habilidad básica, el daño que reciben todos los aliados se reduce en un {{2}}% durante {{3}} turno.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Gallardía inquebrantable",
+        "fullDesc": "Cuando {F#la}{M#el} Trazacaminos usa el ATQ básico potenciado, regenera unos PV equivalentes al {{1}}% de sus PV máx.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Más actuar, menos pensar",
+        "fullDesc": "Al comenzar el turno, si {F#la}{M#el} Trazacaminos está protegid{F#a}{M#o} por un escudo, su ATQ aumenta en un {{2}}% y recupera {{1}} pts. de energía hasta que finalice la acción.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

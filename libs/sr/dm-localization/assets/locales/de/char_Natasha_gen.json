@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Beruhigung",
+        "fullDesc": "Entfernt beim Einsatz der Fertigkeit {{1}} Debuff von einem anvisierten Verbündeten.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Heilerin",
+        "fullDesc": "Erhöht Natashas bewirkte Heilung um {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Genesung",
+        "fullDesc": "Verlängert die kontinuierliche Heilung durch die Fertigkeit um {{1}} Rd.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

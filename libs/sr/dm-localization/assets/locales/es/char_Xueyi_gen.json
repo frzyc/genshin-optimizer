@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Telar clarividente",
+        "fullDesc": "Aumenta el daño que inflige en una cantidad equivalente al {{1}}% del efecto de Ruptura. El daño puede aumentar hasta un máximo del {{2}}% mediante este efecto.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Engranajes intrépidos",
+        "fullDesc": "Si la Firmeza del objetivo enemigo es igual o superior al {{1}}% de su Firmeza máxima, el daño de la habilidad definitiva aumenta en un {{2}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Centro de control perspicaz",
+        "fullDesc": "Xueyi registra las acumulaciones de Karma que hayan excedido el límite, hasta un máximo de {{1}}. Cuando se active el talento de Xueyi, obtendrá tantas acumulaciones de Karma como acumulaciones adicionales haya registrado.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

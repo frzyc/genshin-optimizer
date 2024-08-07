@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Hidden Dragon",
+        "fullDesc": "When current HP percentage is {{1}}% or lower, reduces the chance of being attacked by enemies.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Faster Than Light",
+        "fullDesc": "After launching an attack, there is a {{1}}% fixed chance to increase own SPD by {{2}}% for {{3}} turn(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "High Gale",
+        "fullDesc": "Basic ATK deals {{1}}% more DMG to Slowed enemies.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

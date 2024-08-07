@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#ろくじ}録事{RUBY_E#}",
+        "fullDesc": "「承負」によるSP回復効果を発動させた味方の攻撃力+{{1}}%、{{2}}ターン継続。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#ゆうふ}幽府{RUBY_E#}",
+        "fullDesc": "「承負」を持つ敵が倒された時、その敵が持つ「承負」によるSP回復効果の発動回数が{{1}}回以下の場合、さらにSPを{{2}}回復する。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#かんよう}還陽{RUBY_E#}",
+        "fullDesc": "「承負」によるSP回復効果が発動された時、自身のEPを{{1}}回復する。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

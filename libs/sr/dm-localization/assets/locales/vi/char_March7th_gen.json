@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Thuần Khiết",
+        "fullDesc": "Khi thi triển Chiến Kỹ, giải trừ 1 Hiệu Ứng Xấu của 1 đồng đội chỉ định.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Củng Cố",
+        "fullDesc": "Thời gian duy trì của khiên tạo bởi Chiến Kỹ tăng {{1}} hiệp.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Lời Nguyền Băng Giá",
+        "fullDesc": "Khi thi triển Tuyệt Kỹ, xác suất cơ bản đóng băng kẻ địch tăng {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

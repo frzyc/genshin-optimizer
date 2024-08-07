@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Leverage",
+        "fullDesc": "For every 100 of Aventurine's DEF that exceeds {{3}}, increases his own CRIT Rate by {{1}}%, up to a maximum increase of {{2}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Hot Hand",
+        "fullDesc": "When battle starts, grants all allies a Fortified Wager shield, whose Shield effect is equal to {{2}}% of the one provided by the Skill, lasting for {{1}} turn(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Bingo!",
+        "fullDesc": "After an ally with Fortified Wager launches a follow-up attack, Aventurine accumulates 1 Blind Bet point. This effect can trigger up to {{3}} time(s). Its trigger count resets at the start of Aventurine's turn. After Aventurine launches his Talent's follow-up attack, provides all allies with a Fortified Wager that can block DMG equal to {{1}}% of Aventurine's DEF plus {{2}}, and additionally grants a Fortified Wager that can block DMG equal to {{4}}% of Aventurine's DEF plus {{5}} to the ally with the lowest Shield effect, lasting for 3 turns.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

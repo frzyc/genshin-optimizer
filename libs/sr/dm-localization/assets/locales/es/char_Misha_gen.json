@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Lanzamiento",
+        "fullDesc": "Antes de que el primer golpe de la habilidad definitiva alcance a su objetivo, la probabilidad base de congelarlo aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Entrelazamiento",
+        "fullDesc": "Al usar la habilidad definitiva, el acierto de efecto aumenta en un {{1}}% hasta el final de la acción de esta habilidad definitiva.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Transmisión",
+        "fullDesc": "Cuando inflige daño a enemigos congelados, el Daño CRIT aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

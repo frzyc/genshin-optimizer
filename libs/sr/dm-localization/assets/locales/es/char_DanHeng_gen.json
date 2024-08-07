@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Dragón oculto",
+        "fullDesc": "Cuando el porcentaje de PV es igual o inferior al {{1}}%, se reduce la probabilidad de recibir un ataque enemigo.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Sombra de la desesperación",
+        "fullDesc": "Tras atacar, hay una probabilidad fija del {{1}}% de aumentar la VEL propia en un {{2}}% durante {{3}} turnos.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Temporal",
+        "fullDesc": "El ATQ básico inflige un {{1}}% más de daño a los enemigos afectados por Ralentización.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

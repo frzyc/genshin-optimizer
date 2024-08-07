@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Guileless",
+        "fullDesc": "When current HP percentage is {{1}}% or lower, reduces the chance of being attacked by enemies.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Riposte",
+        "fullDesc": "For every Sword Stance triggered, the DMG dealt by Sword Stance increases by {{1}}%. Stacks up to {{2}} time(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Vanquisher",
+        "fullDesc": "After using Basic ATK or Skill, if there are enemies on the field with Weakness Break, Sushang's action is Advanced Forward by {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

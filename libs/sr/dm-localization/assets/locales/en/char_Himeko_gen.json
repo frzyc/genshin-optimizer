@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Starfire",
+        "fullDesc": "After using an attack, there is a {{1}}% base chance to inflict Burn on enemies for {{2}} turn(s).\\nWhen afflicted with Burn, enemies take Fire DoT equal to {{3}}% of Himeko's ATK at the start of each turn.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Magma",
+        "fullDesc": "Skill deals {{1}}% more DMG to enemies currently afflicted with Burn.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Benchmark",
+        "fullDesc": "When current HP percentage is {{1}}% or higher, CRIT Rate increases by {{2}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

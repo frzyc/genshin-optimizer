@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Bẫy",
+        "fullDesc": "Thiên Phú khiến thời gian duy trì trạng thái Bào Mòn của địch kéo dài {{1}} hiệp.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Vị Trí Phòng Thủ",
+        "fullDesc": "Khi thi triển Tuyệt Kỹ sẽ hồi thêm {{1}} Năng Lượng.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Sắc Màu Cuộc Sống",
+        "fullDesc": "Sát thương mà kẻ địch trong trạng thái Bào Mòn gây cho Sampo giảm {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

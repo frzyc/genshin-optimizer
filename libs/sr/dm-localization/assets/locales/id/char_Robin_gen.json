@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Coloratura Cadenza",
+        "fullDesc": "Saat pertempuran dimulai, aksi karakter ini akan didahulukan {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Impromptu Flourish",
+        "fullDesc": "Saat berada dalam status \"Concerto\", CRIT DMG yang diakibatkan seluruh rekan tim saat melancarkan Serangan Lanjutan meningkat {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Sequential Passage",
+        "fullDesc": "Saat melancarkan Skill, akan memulihkan {{1}} Energy tambahan.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

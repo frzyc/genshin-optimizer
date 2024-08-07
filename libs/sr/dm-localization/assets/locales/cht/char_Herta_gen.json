@@ -35,6 +35,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "效率",
+        "fullDesc": "施放戰技時，對目標造成的傷害提高效果額外再提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "人偶",
+        "fullDesc": "抵抗控制類負面狀態的機率提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "冰結",
+        "fullDesc": "施放終結技時，對凍結狀態下的敵人造成的傷害提高{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

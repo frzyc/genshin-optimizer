@@ -40,6 +40,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Envolée gracieuse",
+        "fullDesc": "L'action de March 7th est avancée de {{1}}% en début de combat.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Frappe minutieuse",
+        "fullDesc": "March 7th peut réduire la robustesse des ennemis qui ont une Faiblesse du même type que son Maître. Lorsqu'elle inflige une Rupture de faiblesse, elle déclenche également l'effet de Rupture de faiblesse imaginaire.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Onde de choc de la lame",
+        "fullDesc": "Lorsque March 7th utilise son ATQ normale renforcée, les DGT critiques de son Maître augmentent de {{1}}% et son effet de Rupture augmente de {{2}}% pendant {{3}} tours.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

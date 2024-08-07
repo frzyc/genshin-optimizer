@@ -45,6 +45,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Bereit für den Kampf",
+        "fullDesc": "Stellt zu Beginn des Kampfes unmittelbar {{1}} Pkt. Energie wieder her.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Beharrlichkeit",
+        "fullDesc": "Jede Stapelung des Talents erhöht die VTD um {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Kampfeswille",
+        "fullDesc": "Erhöht beim Einsatz der Fertigkeit oder des Ultimates „Blowout: Todes-Homerun“ den zugefügten SCH am anvisierten Gegner um {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

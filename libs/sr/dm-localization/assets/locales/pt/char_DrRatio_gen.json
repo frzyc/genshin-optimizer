@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Soma",
+        "fullDesc": "Quando o Dr. Ratio usa sua Perícia, para cada penalidade no alvo, aumenta sua Chance de CRIT em {{1}}% e seu Dano CRIT em {{2}}%. Esse efeito pode acumular até {{3}} vez(es).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Inferência",
+        "fullDesc": "Quando a Perícia é utilizada para atacar um inimigo-alvo, há uma chance-base de {{1}}% de reduzir a RES a Efeito do alvo atacado em {{2}}% por {{3}} rodada(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Dedução",
+        "fullDesc": "Ao causar Dano a um alvo que possua {{1}} ou mais penalidades, para cada penalidade que o alvo possua, o Dano causado pelo Dr. Ratio a este alvo aumenta em {{2}}%, até um aumento máximo de {{3}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

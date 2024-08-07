@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Jovialité nourrie",
+        "fullDesc": "La VIT de Tingyun augmente de {{1}}% pendant 1 tour après utilisation de sa compétence.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Subjugation de la peine",
+        "fullDesc": "Augmente les DGT infligés par l'ATQ normale de {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Passage jubilatoire",
+        "fullDesc": "Tingyun régénère immédiatement {{1}} points d'énergie au début de son tour.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

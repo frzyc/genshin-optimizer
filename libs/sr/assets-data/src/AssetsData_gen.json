@@ -420,15 +420,27 @@
   "chars": {
     "March7th": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1001.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconIceAddedRatio.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1001/SkillIcon_1001_Ultra.png",
@@ -438,15 +450,27 @@
     },
     "DanHeng": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1002.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconWindAddedRatio.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1002/SkillIcon_1002_BP.png",
@@ -456,15 +480,27 @@
     },
     "Himeko": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1003.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconFireAddedRatio.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1003/SkillIcon_1003_BP.png",
@@ -474,15 +510,27 @@
     },
     "Welt": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1004.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1004/SkillIcon_1004_BP.png",
@@ -492,15 +540,27 @@
     },
     "Kafka": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1005.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1005/SkillIcon_1005_BP.png",
@@ -510,15 +570,27 @@
     },
     "SilverWolf": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1006.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1006/SkillIcon_1006_BP.png",
@@ -528,15 +600,27 @@
     },
     "Arlan": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1008.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1008/SkillIcon_1008_BP.png",
@@ -546,15 +630,27 @@
     },
     "Asta": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1009.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconFireAddedRatio.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1009/SkillIcon_1009_BP.png",
@@ -564,15 +660,27 @@
     },
     "Herta": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1013.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconIceAddedRatio.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1013/SkillIcon_1013_BP.png",
@@ -582,15 +690,27 @@
     },
     "Bronya": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1101.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconWindAddedRatio.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1101/SkillIcon_1101_Ultra.png",
@@ -600,15 +720,27 @@
     },
     "Seele": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1102.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1102/SkillIcon_1102_BP.png",
@@ -618,15 +750,27 @@
     },
     "Serval": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1103.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconCriticalChance.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1103/SkillIcon_1103_BP.png",
@@ -636,15 +780,27 @@
     },
     "Gepard": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1104.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconIceAddedRatio.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1104/SkillIcon_1104_Ultra.png",
@@ -654,15 +810,27 @@
     },
     "Natasha": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1105.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconMaxHP.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1105/SkillIcon_1105_BP.png",
@@ -672,15 +840,27 @@
     },
     "Pela": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1106.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconIceAddedRatio.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1106/SkillIcon_1106_BP.png",
@@ -690,15 +870,27 @@
     },
     "Clara": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1107.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1107/SkillIcon_1107_BP.png",
@@ -708,15 +900,27 @@
     },
     "Sampo": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1108.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1108/SkillIcon_1108_BP.png",
@@ -726,15 +930,28 @@
     },
     "Hook": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1109.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_BP.png",
+        "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_BP02.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1109/SkillIcon_1109_BP.png",
@@ -744,15 +961,27 @@
     },
     "Lynx": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1110.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconMaxHP.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1110/SkillIcon_1110_BP.png",
@@ -762,15 +991,28 @@
     },
     "Luka": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1111.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_Normal.png",
+        "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_Normal02.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1111/SkillIcon_1111_BP.png",
@@ -780,15 +1022,27 @@
     },
     "TopazAndNumby": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1112.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconFireAddedRatio.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1112/SkillIcon_1112_BP.png",
@@ -798,15 +1052,28 @@
     },
     "Qingque": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1201.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_Normal.png",
+        "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_Normal02.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1201/SkillIcon_1201_Ultra.png",
@@ -816,15 +1083,27 @@
     },
     "Tingyun": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1202.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1202/SkillIcon_1202_Ultra.png",
@@ -834,15 +1113,27 @@
     },
     "Luocha": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1203.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1203/SkillIcon_1203_BP.png",
@@ -852,15 +1143,27 @@
     },
     "JingYuan": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1204.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1204/SkillIcon_1204_Ultra.png",
@@ -870,15 +1173,28 @@
     },
     "Blade": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1205.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconMaxHP.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_Normal.png",
+        "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_Normal02.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1205/SkillIcon_1205_Ultra.png",
@@ -888,15 +1204,27 @@
     },
     "Sushang": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1206.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1206/SkillIcon_1206_Ultra.png",
@@ -906,15 +1234,27 @@
     },
     "Yukong": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1207.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconImaginaryAddedRatio.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1207/SkillIcon_1207_BP.png",
@@ -924,15 +1264,27 @@
     },
     "FuXuan": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1208.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconCriticalChance.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1208/SkillIcon_1208_BP.png",
@@ -942,15 +1294,27 @@
     },
     "Yanqing": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1209.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1209/SkillIcon_1209_BP.png",
@@ -960,15 +1324,27 @@
     },
     "Guinaifen": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1210.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconFireAddedRatio.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1210/SkillIcon_1210_BP.png",
@@ -978,15 +1354,27 @@
     },
     "Bailu": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1211.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconMaxHP.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1211/SkillIcon_1211_BP.png",
@@ -996,15 +1384,28 @@
     },
     "Jingliu": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1212.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconCriticalDamage.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_BP.png",
+        "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_BP02.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1212/SkillIcon_1212_Ultra.png",
@@ -1014,15 +1415,31 @@
     },
     "DanHengImbibitorLunae": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1213.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconImaginaryAddedRatio.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_Normal.png",
+        "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_Normal02.png",
+        "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_Normal03.png",
+        "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_Normal04.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_BP.png",
+        "SpriteOutput/SkillIcons/Com/SkillIcon_CommonReturn.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1213/SkillIcon_1213_BP.png",
@@ -1032,15 +1449,27 @@
     },
     "Xueyi": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1214.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconBreakUp.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1214/SkillIcon_1214_BP.png",
@@ -1050,15 +1479,27 @@
     },
     "Hanya": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1215.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1215/SkillIcon_1215_BP.png",
@@ -1068,15 +1509,27 @@
     },
     "Huohuo": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1217.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconMaxHP.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1217/SkillIcon_1217_Ultra.png",
@@ -1086,15 +1539,27 @@
     },
     "Yunli": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1221.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1221/SkillIcon_1221_Ultra.png",
@@ -1104,15 +1569,28 @@
     },
     "March7thTheHunt": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1224.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_Normal.png",
+        "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_Normal02.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1224/SkillIcon_1224_BP.png",
@@ -1122,15 +1600,28 @@
     },
     "Gallagher": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1301.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconStatusResistance.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_Normal.png",
+        "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_Normal02.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1301/SkillIcon_1301_BP.png",
@@ -1140,15 +1631,28 @@
     },
     "Argenti": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1302.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_Ultra.png",
+        "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_Ultra02.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1302/SkillIcon_1302_BP.png",
@@ -1158,15 +1662,27 @@
     },
     "RuanMei": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1303.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconBreakUp.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1303/SkillIcon_1303_Ultra.png",
@@ -1176,15 +1692,27 @@
     },
     "Aventurine": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1304.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconDefence.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1304/SkillIcon_1304_Ultra.png",
@@ -1194,15 +1722,27 @@
     },
     "DrRatio": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1305.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1305/SkillIcon_1305_Ultra.png",
@@ -1212,15 +1752,27 @@
     },
     "Sparkle": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1306.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconMaxHP.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1306/SkillIcon_1306_BP.png",
@@ -1230,15 +1782,27 @@
     },
     "BlackSwan": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1307.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1307/SkillIcon_1307_BP.png",
@@ -1248,15 +1812,31 @@
     },
     "Acheron": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1308.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_Ultra.png",
+        "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_Ultra.png",
+        "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_Ultra.png",
+        "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_Ultra.png",
+        "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1308/SkillIcon_1308_Ultra.png",
@@ -1266,15 +1846,27 @@
     },
     "Robin": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1309.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1309/SkillIcon_1309_BP.png",
@@ -1284,15 +1876,29 @@
     },
     "Firefly": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1310.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconBreakUp.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_Normal.png",
+        "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_Normal02.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_BP.png",
+        "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_BP02.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_Normal02.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1310/SkillIcon_1310_BP.png",
@@ -1302,15 +1908,27 @@
     },
     "Misha": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1312.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconIceAddedRatio.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1312/SkillIcon_1312_Ultra.png",
@@ -1320,15 +1938,27 @@
     },
     "Jade": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1314.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconQuantumAddedRatio.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1314/SkillIcon_1314_BP.png",
@@ -1338,15 +1968,28 @@
     },
     "Boothill": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/1315.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconBreakUp.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_Normal.png",
+        "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_Normal02.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_MazeNormal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/1315/SkillIcon_1315_Ultra.png",
@@ -1356,15 +1999,29 @@
     },
     "TrailblazerPhysicalM": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/8001.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Ultra.png",
+        "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Normal02.png",
+        "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_BP02.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_BP.png",
@@ -1374,15 +2031,29 @@
     },
     "TrailblazerPhysicalF": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/8002.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconAttack.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Ultra.png",
+        "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Normal02.png",
+        "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_BP02.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/8001/SkillIcon_8001_BP.png",
@@ -1392,15 +2063,28 @@
     },
     "TrailblazerFireM": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/8003.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconDefence.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Normal.png",
+        "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Normal02.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_BP.png",
@@ -1410,15 +2094,28 @@
     },
     "TrailblazerFireF": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/8004.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconDefence.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Normal.png",
+        "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Normal02.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/8003/SkillIcon_8003_BP.png",
@@ -1428,15 +2125,27 @@
     },
     "TrailblazerImaginaryM": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/8005.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconBreakUp.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_BP.png",
@@ -1446,15 +2155,27 @@
     },
     "TrailblazerImaginaryF": {
       "icon": "SpriteOutput/AvatarIcon/Avatar/8006.png",
-      "basic": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Normal.png",
-      "skill": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_BP.png",
-      "ult": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Ultra.png",
-      "talent": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Passive.png",
-      "technique": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Maze.png",
-      "overworld": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_SkillTree1.png",
-      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_SkillTree2.png",
-      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_SkillTree3.png",
-      "bonusAbility3": "SpriteOutput/UI/Avatar/Icon/IconBreakUp.png",
+      "basic": [
+        "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Normal.png"
+      ],
+      "skill": [
+        "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_BP.png"
+      ],
+      "ult": [
+        "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Ultra.png"
+      ],
+      "talent": [
+        "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Passive.png"
+      ],
+      "technique": [
+        "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Maze.png"
+      ],
+      "overworld": [
+        "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Normal.png"
+      ],
+      "bonusAbility1": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_SkillTree1.png",
+      "bonusAbility2": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_SkillTree2.png",
+      "bonusAbility3": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_SkillTree3.png",
       "eidolon1": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Rank1.png",
       "eidolon2": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Rank2.png",
       "eidolon3": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_BP.png",

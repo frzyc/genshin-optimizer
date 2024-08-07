@@ -45,6 +45,27 @@
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "전투 준비",
+        "fullDesc": "전투 시작 시 즉시 에너지를 {{1}}pt 회복한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "강인",
+        "fullDesc": "특성의 효과는 스택마다 동시에 개척자의 방어력을 {{1}}% 증가시킨다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "투지",
+        "fullDesc": "전투 스킬 또는 필살기 [압승•안식 홈런] 발동 시 지정된 적에게 가하는 피해가 {{1}}% 증가한다",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

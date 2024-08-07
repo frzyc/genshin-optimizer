@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Genährte Heiterkeit",
+        "fullDesc": "Erhöht beim Einsatz der Fertigkeit die GES von Tingyun für 1 Rd. um {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Unterdrückung des Unheils",
+        "fullDesc": "Erhöht den durch Standardangriffe verursachten SCH um {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Jubelpassage",
+        "fullDesc": "Stellt zu Beginn von Tingyuns Runde sofort {{1}} Pkt. Energie wieder her.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

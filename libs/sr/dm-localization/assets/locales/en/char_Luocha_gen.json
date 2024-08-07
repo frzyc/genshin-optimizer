@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Cleansing Revival",
+        "fullDesc": "When the Skill's effect is triggered, removes {{1}} debuff(s) from a target ally.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Sanctified",
+        "fullDesc": "When any enemy in the Zone is attacked by an ally, all allies (except the attacker) restore HP equal to {{1}}% of Luocha's ATK plus {{2}}.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Through the Valley",
+        "fullDesc": "The chance to resist Crowd Control debuffs increases by {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Tortura",
+        "fullDesc": "Al usar la habilidad definitiva, los enemigos pasan de recibir el daño provocado por el estado de Electrocución a recibir daño de todos los estados negativos de Daño con el tiempo que tengan en ese momento.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Saqueo",
+        "fullDesc": "Cuando se elimina a un enemigo afectado por Electrocución, Kafka recupera {{1}} pts. de energía adicionales.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Espinas",
+        "fullDesc": "La probabilidad base de que la habilidad definitiva, la técnica o el ataque adicional del talento afecte con Electrocución a los enemigos aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

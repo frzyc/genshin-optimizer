@@ -40,6 +40,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Novel Concoction",
+        "fullDesc": "Meningkatkan Outgoing Healing diri sendiri sebesar {{1}}% dari Break Effect, maksimal meningkat hingga {{2}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Organic Yeast",
+        "fullDesc": "Setelah karakter ini melancarkan Ultimate, aksinya akan segera didahulukan 100%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Bottoms Up",
+        "fullDesc": "Saat Gallagher melancarkan \"Nectar Blitz\" untuk menyerang musuh berstatus \"Besotted\", efek pemulihan HP dari Talent untuk serangan ini juga akan efektif terhadap rekan tim Gallagher.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

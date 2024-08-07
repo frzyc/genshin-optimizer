@@ -55,6 +55,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Star Veil",
+        "fullDesc": "At the start of the battle, immediately regenerates {{1}} Energy.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Aqua Reign",
+        "fullDesc": "Increases the chance to resist Crowd Control debuffs by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Jolt Anew",
+        "fullDesc": "When dealing DMG to enemy targets with Imaginary Weakness, CRIT DMG increases by {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

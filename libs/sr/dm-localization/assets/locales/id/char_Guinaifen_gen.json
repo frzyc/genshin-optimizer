@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "High Poles",
+        "fullDesc": "Basic Attack memiliki {{1}}% peluang dasar untuk membuat target musuh memasuki status Burn yang sama dengan Skill.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Bladed Hoop",
+        "fullDesc": "Saat pertempuran dimulai, aksi Guinaifen akan didahulukan sebesar {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Walking on Knives",
+        "fullDesc": "Meningkatkan {{1}}% DMG yang diakibatkan pada target musuh yang berstatus Burn.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

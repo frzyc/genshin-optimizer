@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Brennende Nabe",
+        "fullDesc": "Nach jedem Einsatz von „Intuition: Abtrennen“ wird beim nächsten Einsatz stattdessen „Intuition: Auslöschen“ ausgelöst.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Dämonenaustreiber",
+        "fullDesc": "Im Status „Parade“ werden Mengenkontrolle-Debuffs abgewehrt und der erlittene SCH um {{1}}% reduziert.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Erzspalter",
+        "fullDesc": "Erhöht beim Einsatz eines Konters den ANG von Yunli für 1 Rd. um {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

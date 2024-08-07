@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Fiery Wheel",
+        "fullDesc": "After each use of \"Intuit: Slash,\" the next \"Intuit: Slash\" will be replaced by \"Intuit: Cull.\"",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Demon Quell",
+        "fullDesc": "While in the Parry state, resists Crowd Control debuffs received and reduces DMG received by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "True Sunder",
+        "fullDesc": "When using a Counter, increases Yunli's ATK by {{1}}%, lasting for 1 turn.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

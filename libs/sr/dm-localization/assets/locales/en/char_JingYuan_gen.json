@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Battalia Crush",
+        "fullDesc": "If the Lightning-Lord's Hits Per Action is greater or equal to {{1}} in the next turn, its CRIT DMG increases by {{2}}% for the next turn.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Savant Providence",
+        "fullDesc": "At the start of the battle, immediately regenerates {{1}} Energy.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "War Marshal",
+        "fullDesc": "After the Skill is used, the CRIT Rate increases by {{1}}% for {{2}} turn(s).",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

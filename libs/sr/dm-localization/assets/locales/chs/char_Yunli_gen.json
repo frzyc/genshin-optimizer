@@ -35,6 +35,27 @@
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "灼毂",
+        "fullDesc": "每发动1次【勘破•斩】后，下一次【勘破•斩】将替换为【勘破•灭】。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "却邪",
+        "fullDesc": "【格挡】状态下抵抗受到的控制类负面效果，并使受到的伤害降低{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "真刚",
+        "fullDesc": "施放反击时，云璃的攻击力提高{{1}}%，持续1回合。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

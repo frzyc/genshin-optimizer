@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Fuego estelar",
+        "fullDesc": "Al lanzar un ataque, hay un {{1}}% de probabilidad base de infligir Quemadura a los objetivos durante {{2}} turnos.\\nLos enemigos afectados por Quemadura reciben al comienzo de cada turno un Daño de Fuego con el tiempo equivalente al {{3}}% del ATQ de Himeko.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Magma",
+        "fullDesc": "El daño que la habilidad básica inflige a los enemigos afectados por Quemadura aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "El estándar",
+        "fullDesc": "Si el porcentaje de PV es igual o superior al {{1}}%, la Prob. CRIT aumenta en un {{2}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

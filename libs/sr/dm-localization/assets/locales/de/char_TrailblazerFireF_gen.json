@@ -40,6 +40,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Die Starken verteidigen die Schwachen",
+        "fullDesc": "Verringert nach dem Einsatz der Fertigkeit den erlittenen SCH aller Verbündeten für {{3}} Rd. um {{2}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Unerschütterliche Tapferkeit",
+        "fullDesc": "Stellt nach dem Einsatz des verstärkten Standardangriffs {{1}}% der max. LP {M#des Trailblazers}{F#der Trailblazer} wieder her.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Handeln ist besser als Nachdenken",
+        "fullDesc": "Wenn {M#der Trailblazer}{F#die Trailblazerin} zu Beginn der Runde einen Schild hat, werden der ANG bis zum Ende der Aktion um {{2}}% erhöht und {{1}} Pkt. Energie wiederhergestellt.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

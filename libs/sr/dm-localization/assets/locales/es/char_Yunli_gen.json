@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Buje incinerado",
+        "fullDesc": "Después de usar 1 vez Capción: Sajadura, la próxima Capción: Sajadura se reemplaza con Capción: Exterminio.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Sometedemonios",
+        "fullDesc": "En el estado de Bloqueo, resiste los estados negativos de Control que reciba y reduce el daño recibido en un {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Hendetierras",
+        "fullDesc": "Al lanzar un contraataque, el ATQ de Yunli aumenta en un {{1}}% durante 1 turno.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

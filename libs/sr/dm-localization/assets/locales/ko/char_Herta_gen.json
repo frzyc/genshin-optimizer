@@ -35,6 +35,27 @@
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "효율",
+        "fullDesc": "전투 스킬 발동 시 적에게 가하는 피해 증가 효과가 추가로 {{1}}% 증가한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "인형",
+        "fullDesc": "제어류 디버프 상태 저항 확률이 {{1}}% 증가한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "빙결",
+        "fullDesc": "필살기 발동 시 빙결 상태의 적에게 가하는 피해가 {{1}}% 증가한다",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

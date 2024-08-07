@@ -10,8 +10,10 @@ import type {
 import {
   avatarConfig,
   avatarRankConfig,
+  avatarSkillConfig,
   avatarSkillTreeConfig,
   characterIdMap,
+  DmAttackTypeMap,
   equipmentConfig,
   lightConeIdMap,
   relicDataInfo,
@@ -24,12 +26,12 @@ import type { GenAssetsDataExecutorSchema } from './schema'
 
 type CharacterIcon = {
   icon: string
-  basic: string
-  skill: string
-  ult: string
-  talent: string
-  technique: string
-  overworld: string
+  basic: string[]
+  skill: string[]
+  ult: string[]
+  talent: string[]
+  technique: string[]
+  overworld: string[]
   bonusAbility1: string
   bonusAbility2: string
   bonusAbility3: string
@@ -84,42 +86,51 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
 
   // parse baseStat/ascension/basic data for characters.
   Object.entries(avatarConfig).forEach(([avatarId, charData]) => {
-    const { DefaultAvatarHeadIconPath } = charData
+    const { DefaultAvatarHeadIconPath, SkillList } = charData
+    const [eidolon1, eidolon2, eidolon3, eidolon4, eidolon5, eidolon6] =
+      Object.values(avatarRankConfig[avatarId]).map((config) => config.IconPath)
+
     const [
-      basic,
-      skill,
-      ult,
-      talent,
-      technique,
-      overworld,
+      _basic,
+      _skill,
+      _ult,
+      _talent,
+      _technique,
       bonusAbility1,
       bonusAbility2,
       bonusAbility3,
     ] = Object.values(avatarSkillTreeConfig[avatarId]).map(
       // Grab the first level; we just need the image names
-      (skillTree) => skillTree[0]
+      (skillTree) => skillTree[0].IconPath
     )
-
-    const [e1, e2, e3, e4, e5, e6] = Object.values(avatarRankConfig[avatarId])
 
     const assets: CharacterIcon = {
       icon: DefaultAvatarHeadIconPath,
-      basic: basic.IconPath,
-      skill: skill.IconPath,
-      ult: ult.IconPath, // TODO: Maybe switch tot
-      talent: talent.IconPath,
-      technique: technique.IconPath,
-      overworld: overworld.IconPath,
-      bonusAbility1: bonusAbility1.IconPath,
-      bonusAbility2: bonusAbility2.IconPath,
-      bonusAbility3: bonusAbility3.IconPath,
-      eidolon1: e1.IconPath,
-      eidolon2: e2.IconPath,
-      eidolon3: e3.IconPath,
-      eidolon4: e4.IconPath,
-      eidolon5: e5.IconPath,
-      eidolon6: e6.IconPath,
+      basic: [],
+      skill: [],
+      ult: [],
+      talent: [],
+      technique: [],
+      overworld: [],
+      bonusAbility1,
+      bonusAbility2,
+      bonusAbility3,
+      eidolon1,
+      eidolon2,
+      eidolon3,
+      eidolon4,
+      eidolon5,
+      eidolon6,
     }
+
+    SkillList.forEach((skillId) => {
+      // Grab the first level; we just need the image names
+      const { AttackType, SkillIcon } = avatarSkillConfig[skillId][0]
+      assets[AttackType ? DmAttackTypeMap[AttackType] : 'talent']?.push(
+        SkillIcon
+      )
+    })
+
     assetData.chars[characterIdMap[avatarId]] = assets
   })
 

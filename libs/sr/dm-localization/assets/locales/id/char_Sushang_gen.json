@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Guileless",
+        "fullDesc": "Mengurangi peluang diserang oleh target musuh jika persentase HP saat ini kurang dari atau sama dengan {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Riposte",
+        "fullDesc": "Untuk setiap \"Sword Stance\" yang dilancarkan, DMG yang diakibatkan \"Sword Stance\" akan meningkat {{1}}%, efek tersebut dapat ditumpuk hingga {{2}} lapis.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Vanquisher",
+        "fullDesc": "Setelah melancarkan Basic Attack atau Skill, jika ada target musuh yang terkena Weakness Break di medan pertempuran, aksi Sushang didahulukan {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

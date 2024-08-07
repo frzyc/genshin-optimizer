@@ -35,6 +35,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "灼轂",
+        "fullDesc": "每發動1次【勘破•斬】後，下一次【勘破•斬】將替換為【勘破•滅】。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "卻邪",
+        "fullDesc": "【格擋】狀態下抵抗受到的控制類負面效果，並使受到的傷害降低{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "真剛",
+        "fullDesc": "發動反擊時，雲璃的攻擊力提高{{1}}%，持續1回合。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -40,6 +40,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Công Thức Mới Mẻ",
+        "fullDesc": "Tăng Lượng Trị Liệu do bản thân cung cấp, mức tăng bằng {{1}}% Tấn Công Kích Phá, tối đa tăng {{2}}% Lượng Trị Liệu cung cấp.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Men Ủ Tự Nhiên",
+        "fullDesc": "Sau khi thi triển Tuyệt Kỹ, sẽ lập tức khiến bản thân Ưu Tiên Hành Động 100%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Xin Mời Cạn Ly",
+        "fullDesc": "Khi Gallagher thi triển \"Hoa Rượu Tuôn Trào\" tấn công mục tiêu trong trạng thái \"Say Mèm\", sẽ khiến hiệu ứng hồi HP do Thiên Phú này cung cấp cũng hiệu lực với đồng đội phe ta trong lần này.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

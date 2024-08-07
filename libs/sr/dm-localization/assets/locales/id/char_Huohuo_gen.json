@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Fearful to Act",
+        "fullDesc": "Saat pertempuran dimulai, Huohuo akan memperoleh \"Divine Provision\", berlangsung selama {{1}} giliran.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "The Cursed One",
+        "fullDesc": "Meningkatkan {{1}}% peluang untuk menahan Crowd Control Debuff.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Stress Reaction to Horror",
+        "fullDesc": "Saat Talent terpicu untuk memulihkan rekan tim, Huohuo akan memulihkan {{1}} Energy.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

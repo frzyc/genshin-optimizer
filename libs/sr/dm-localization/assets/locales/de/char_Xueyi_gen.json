@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Webstuhl der Vorsehung",
+        "fullDesc": "Erhöht den von dieser Einheit zugefügten SCH in Höhe von {{1}}% ihres Brucheffekts. Der SCH kann durch diesen Effekt um bis zu maximal {{2}}% erhöht werden.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Unerbittliches Rotationsgelenk",
+        "fullDesc": "Liegt der WDS des gegnerischen Ziels bei mindestens {{1}}% seines max. WDS, verursacht Xueyi beim Einsatz des Ultimates {{2}}% mehr SCH.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Beobachtung des Verstandes",
+        "fullDesc": "Xueyi wird die Anzahl an überzähligen Stapelungen von „Karma“ zusammenrechnen, bis zu max. {{1}} Stapelungen. Nachdem Xueyis Talent ausgelöst wurde, erhält sie dementsprechend Stapelungen Karma.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

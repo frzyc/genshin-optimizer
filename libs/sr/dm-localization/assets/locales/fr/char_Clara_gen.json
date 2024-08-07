@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Une vraie famille",
+        "fullDesc": "Lorsque le personnage est attaqué, il a {{1}}% de chances fixes de supprimer un malus qu'il subit.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Sous bonne garde",
+        "fullDesc": "Les chances de résister aux malus de contrôle augmentent de {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Vengeance",
+        "fullDesc": "Augmente les DGT de contre de Svarog de {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

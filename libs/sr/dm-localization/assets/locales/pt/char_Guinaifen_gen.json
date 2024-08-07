@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Mastros Altos",
+        "fullDesc": "O ATQ Básico tem {{1}}% de chance-base de infligir Queimadura em um inimigo, equivalente à da Perícia.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Aros com Lâminas",
+        "fullDesc": "No começo da batalha, a ação de Guinaifen é avançada adiante em {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Caminhando em Facas",
+        "fullDesc": "Causa {{1}}% a mais de Dano a inimigos com Queimadura.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

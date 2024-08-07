@@ -35,6 +35,27 @@
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "岐黄精义",
+        "fullDesc": "白露对我方目标造成过量治疗时会提高目标{{1}}%的生命上限，持续{{2}}回合。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "持明龙脉",
+        "fullDesc": "【生息】效果的触发次数增加{{1}}次。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "鳞渊福泽",
+        "fullDesc": "拥有【生息】的角色受到的伤害降低{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

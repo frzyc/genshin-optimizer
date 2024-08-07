@@ -35,6 +35,27 @@
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "摇滚",
+        "fullDesc": "施放战技时，使受到攻击的敌方目标陷入触电状态的基础概率提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "电音",
+        "fullDesc": "战斗开始时，立即恢复{{1}}点能量。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "狂热",
+        "fullDesc": "消灭敌方目标后，攻击力提高{{1}}%，持续{{2}}回合。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

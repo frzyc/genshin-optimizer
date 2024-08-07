@@ -55,6 +55,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#ふくしん}伏辰{RUBY_E#}",
+        "fullDesc": "戦闘開始時、EPを{{1}}回復する。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#しゅうう}修禹{RUBY_E#}",
+        "fullDesc": "行動制限系デバフに抵抗する確率+{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#けいちつ}啓蟄{RUBY_E#}",
+        "fullDesc": "虚数属性が弱点の敵にダメージを与える時、会心ダメージ+{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

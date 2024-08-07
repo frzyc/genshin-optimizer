@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Rock 'n' Roll",
+        "fullDesc": "A Perícia tem um aumento de chance-base de {{1}}% de causar Choque a inimigos.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Vibração das Cordas",
+        "fullDesc": "No início da batalha, regenera {{1}} de Energia imediatamente.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Mania",
+        "fullDesc": "Ao derrotar um inimigo, o ATQ aumenta em {{1}}% por {{2}} rodada(s).",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

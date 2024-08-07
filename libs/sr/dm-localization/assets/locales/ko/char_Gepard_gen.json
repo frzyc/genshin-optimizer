@@ -35,6 +35,27 @@
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "강직",
+        "fullDesc": "게파드가 적에게 피격될 확률이 증가한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "지휘관",
+        "fullDesc": "[불굴의 몸] 발동 후 게파드의 에너지가 즉시 100%까지 회복된다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "전의",
+        "fullDesc": "게파드의 공격력이 현재 방어력의 {{1}}%만큼 증가하며, 턴이 시작될 때마다 갱신된다",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

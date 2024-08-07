@@ -45,6 +45,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#ちからた}力溜{RUBY_E#}め",
+        "fullDesc": "戦闘開始時、EPを{{1}}回復する。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#けんじん}堅靭{RUBY_E#}",
+        "fullDesc": "天賦効果1層につき、開拓者の防御力+{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#とうし}闘志{RUBY_E#}",
+        "fullDesc": "戦闘スキルまたは必殺技「全勝・安息ホームラン」を発動した時、指定した敵に対して与ダメージ+{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

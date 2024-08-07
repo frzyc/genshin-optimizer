@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Vật Thể Đang Thở",
+        "fullDesc": "Tấn Công Kích Phá của toàn bộ phe ta tăng {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Ngày Qua, Tâm Tư Trải Dài",
+        "fullDesc": "Khi hiệp của Ruan Mei bắt đầu, bản thân hồi phục {{1}} điểm Năng Lượng.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Ánh Nến Soi Bóng Nước",
+        "fullDesc": "Khi Tấn Công Kích Phá của Ruan Mei trong chiến đấu lớn hơn {{1}}%, cứ mỗi khi vượt {{2}}%, Chiến Kỹ sẽ khiến hiệu ứng tăng sát thương của toàn bộ phe ta tăng thêm {{3}}%, tối đa không vượt quá {{4}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

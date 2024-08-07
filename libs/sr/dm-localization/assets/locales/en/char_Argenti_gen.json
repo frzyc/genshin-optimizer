@@ -40,6 +40,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Piety",
+        "fullDesc": "At the start of a turn, immediately gains {{1}} stack(s) of Apotheosis.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Generosity",
+        "fullDesc": "When enemy targets enter battle, immediately regenerates {{1}} Energy for self.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Courage",
+        "fullDesc": "Deals {{2}}% more DMG to enemies whose HP percentage is {{1}}% or less.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

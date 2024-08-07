@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Hành Quân Trong Đêm",
+        "fullDesc": "Nếu Phần Trăm HP hiện tại nhỏ hơn hoặc bằng {{1}}%, sẽ giảm xác suất bị kẻ địch tấn công.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Chia Cắt",
+        "fullDesc": "Khi ở trạng thái Buff, Xuyên Kháng Lượng Tử của Seele tăng {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Gợn Sóng",
+        "fullDesc": "Sau khi tấn công thường, lần hành động tiếp theo của Seele sẽ ưu tiên {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

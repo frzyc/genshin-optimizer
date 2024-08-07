@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#かしこし}貸越{RUBY_E#}",
+        "fullDesc": "トパーズが通常攻撃でダメージを与える時、追加攻撃を行うと見なされる。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#きんゆうふあん}金融不安{RUBY_E#}",
+        "fullDesc": "トパーズとカブの、炎属性が弱点の敵に対する与ダメージ+{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#ぎじゅつてきちょうせい}技術的調整{RUBY_E#}",
+        "fullDesc": "「心躍る上昇幅！」状態のカブが攻撃を行った後、さらにトパーズのEPを{{1}}回復する。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

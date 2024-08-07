@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Taiyi et le macrocospique",
+        "fullDesc": "Lorsque Matrice de prémonition est active, Fu Xuan régénère {{1}} points d'énergie supplémentaires lorsqu'elle utilise sa compétence.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Dunjia et la métaphysique",
+        "fullDesc": "Fu Xuan soigne tous les autres alliés à hauteur de {{1}}% de ses PV max + {{2}} lorsqu'elle utilise son ultime.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Liu Ren et le cycle sexagésimal",
+        "fullDesc": "Si un ennemi applique des malus de contrôle aux alliés alors que Matrice de prémonition est active, tous les alliés résistent à tous les malus de contrôle appliqués par la cible ennemie pendant l'action en cours. Cet effet ne peut être déclenché qu'une seule fois. Le nombre de déclenchements de l'effet est réinitialisé lorsque Matrice de prémonition est activée à nouveau.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

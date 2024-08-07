@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Đòn Bẩy",
+        "fullDesc": "Nếu Phòng Thủ của Aventurine cao hơn {{3}} điểm, mỗi 100 điểm Phòng Thủ vượt quá sẽ giúp tăng {{1}}% Tỷ Lệ Bạo Kích của bản thân, tối đa tăng {{2}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Bàn Tay Vàng",
+        "fullDesc": "Khi bắt đầu chiến đấu, sẽ cung cấp Khiên \"Xu Cược Kiên Cố\" cho toàn bộ phe ta, lượng Khiên bằng {{2}}% lượng Khiên mà Chiến Kỹ cung cấp, duy trì {{1}} hiệp.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Bingo!",
+        "fullDesc": "Sau khi đồng đội sở hữu \"Xu Cược Kiên Cố\" phát động Đòn Đánh Theo Sau, sẽ tích lũy 1 điểm \"Cược Mù\" cho Aventurine, hiệu ứng này tối đa kích hoạt {{3}} lần, khi hiệp của Aventurine bắt đầu, sẽ làm mới số lần kích hoạt hiệu ứng này. Sau khi Aventurine phát động Đòn Đánh Theo Sau của Thiên Phú, sẽ cung cấp cho toàn thể phe ta \"Xu Cược Kiên Cố\" có thể triệt tiêu sát thương bằng {{1}}% Phòng Thủ của Aventurine +{{2}}, và cung cấp thêm cho mục tiêu có Khiên thấp nhất phe ta \"Xu Cược Kiên Cố\" có thể triệt tiêu sát thương bằng {{4}}% Phòng Thủ của Aventurine +{{5}}, duy trì 3 hiệp.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

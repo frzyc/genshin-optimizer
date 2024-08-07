@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, vào chiến đấu và làm suy yếu Sức Bền thuộc tính tương ứng của kẻ địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Mua Lại Đảo Ngược",
+        "fullDesc": "Khi kẻ địch vào chiến đấu, Jade nhận {{2}} tầng Vật Thế Chấp. Nhân vật ở trạng thái Người Thu Nợ khi bắt đầu hiệp, sẽ nhận thêm {{1}} tầng Vật Thế Chấp.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Phiếu Thế Chấp",
+        "fullDesc": "Khi bắt đầu trận, Jade sẽ ưu tiên hành động {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Tịch Thu Tài Sản",
+        "fullDesc": "Trong Thiên Phú, mỗi tầng Vật Thế Chấp giúp Tấn Công của Jade tăng thêm {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

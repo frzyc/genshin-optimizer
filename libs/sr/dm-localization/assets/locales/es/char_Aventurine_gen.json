@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Apalancamiento",
+        "fullDesc": "Si la DEF de Aventurino es superior a {{3}}, por cada 100 pts. de DEF que superen ese valor, su Prob. CRIT aumenta en un {{1}}%. Aumento máximo: {{2}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Mano caliente",
+        "fullDesc": "Al comienzo de la batalla, proporciona un escudo Apuesta reforzada a todos los aliados. El efecto de escudo es equivalente al {{2}}% del que proporciona la habilidad básica y dura {{1}} turnos.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "¡Bingo!",
+        "fullDesc": "Cuando un aliado con Apuesta reforzada lanza un ataque adicional, Aventurino acumula 1 pt. de Apuesta ciega. Este efecto se puede activar hasta {{3}} veces y el contador de activaciones se reinicia cuando comienza el turno de Aventurino. Cuando Aventurino activa el ataque adicional del talento, proporciona a todos los aliados un escudo Apuesta reforzada que puede absorber un daño equivalente al {{1}}% de la DEF de Aventurino + {{2}}. Adicionalmente, proporciona al aliado que tenga el menor valor de escudo un escudo Apuesta reforzada que puede absorber un daño equivalente al {{4}}% de la DEF de Aventurino + {{5}}. Dura 3 turnos.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

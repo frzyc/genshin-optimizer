@@ -35,6 +35,27 @@
         "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Kinship",
+        "fullDesc": "เมื่อถูกโจมตี จะมีโอกาสคงที่ {{1}}% ที่จะลบเอฟเฟกต์ Debuff ของตัวเอง 1 เอฟเฟกต์",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Under Protection",
+        "fullDesc": "โอกาสต้านทานสถานะ Debuff ประเภทควบคุมเพิ่มขึ้น {{1}}%",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Revenge",
+        "fullDesc": "DMG ที่เกิดจากการโต้กลับของ Svarog เพิ่มขึ้น {{1}}%",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

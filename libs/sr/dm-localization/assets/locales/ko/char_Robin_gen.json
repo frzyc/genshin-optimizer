@@ -35,6 +35,27 @@
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "콜로라투라 카덴차",
+        "fullDesc": "전투 시작 시 자신의 행동 게이지가 {{1}}% 증가한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "즉흥 꾸밈음",
+        "fullDesc": "[협주] 상태일 시 모든 아군이 추가 공격을 발동하여 가하는 치명타 피해가 {{1}}% 증가한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "시퀀스 악절",
+        "fullDesc": "전투 스킬 발동 시 추가로 에너지를 {{1}}pt 회복한다",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

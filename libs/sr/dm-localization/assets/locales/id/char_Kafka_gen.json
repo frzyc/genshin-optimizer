@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Torture",
+        "fullDesc": "Saat melancarkan Ultimate, target musuh akan mengalami perubahan dari \"segera menerima DMG dari status Shock saat ini\" menjadi \"segera menerima DMG dari semua DoT Debuff saat ini\".",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Plunder",
+        "fullDesc": "Saat target musuh berstatus Shock dikalahkan, Kafka akan memperoleh {{1}} Energy tambahan.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Thorns",
+        "fullDesc": "Peluang dasar dari Ultimate, Technique, dan Serangan Lanjutan yang dipicu Talent untuk membuat target memasuki status Shock meningkat {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

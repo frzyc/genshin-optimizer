@@ -40,6 +40,27 @@
         "fullDesc": "Réduit la robustesse de l'ennemi au type correspondant en entrant en combat après l'avoir attaqué.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Recharge fantôme",
+        "fullDesc": "Augmente les chances de coup critique / DGT critiques du personnage. L'augmentation est équivalente à {{1}}% / {{3}}% de l'effet de Rupture. Les chances de coup critique / DGT critiques peuvent être augmentés au maximum de {{2}}% / {{4}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Panier de crabes",
+        "fullDesc": "Lorsque le Fossoyeur est en état de Confrontation, réduit les DGT qu'il subit de la part des cibles qui ne sont pas en état de Confrontation de {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "À bout portant",
+        "fullDesc": "Lorsque le Fossoyeur gagne Avantage en poche dans l'état Confrontation, il régénère {{1}} points d'énergie. Cet effet peut également se déclencher lors de l'obtention de cumuls d'Avantage en poche qui dépassent le maximum.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Connaissance du terrain",
+        "fullDesc": "Lorsqu'une cible qui bénéficie d'Instinct de survie est touchée, Lynx régénère immédiatement {{1}} points d'énergie.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Techniques d'exploration",
+        "fullDesc": "Augmente les chances de résister aux malus de contrôle de {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Survie en conditions extrêmes",
+        "fullDesc": "Prolonge la durée de l'effet de soins continus accordé par le talent d'{{1}} tour.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

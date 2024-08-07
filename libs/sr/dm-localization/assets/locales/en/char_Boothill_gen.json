@@ -40,6 +40,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Ghost Load",
+        "fullDesc": "Increase this character's CRIT Rate/CRIT DMG, by an amount equal to {{1}}%/{{3}}% of Break Effect, up to a max increase of {{2}}%/{{4}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Above Snakes",
+        "fullDesc": "While Boothill is in the Standoff, reduces the DMG he receives from targets that are not in the Standoff by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Point Blank",
+        "fullDesc": "When in Standoff and gaining Pocket Trickshot, regenerates {{1}} Energy. Can also trigger this effect when gaining Pocket Trickshot stacks that exceed the max limit.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Purificación",
+        "fullDesc": "Al usar la habilidad básica, se elimina 1 estado negativo del objetivo aliado.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Refuerzo",
+        "fullDesc": "La duración del escudo que proporciona la habilidad básica aumenta en {{1}} turno.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Conjuro helado",
+        "fullDesc": "Al usar la habilidad definitiva, la probabilidad base de congelar al objetivo aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

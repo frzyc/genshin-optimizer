@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Overdraft",
+        "fullDesc": "When Topaz uses Basic ATK to deal DMG, it will be considered as a follow-up attack.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Financial Turmoil",
+        "fullDesc": "Increases Topaz & Numby's DMG dealt to enemy targets with Fire Weakness by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Stonks Market",
+        "fullDesc": "After Numby uses an attack while in the Windfall Bonanza! state, Topaz additionally regenerates {{1}} Energy.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Porrazo",
+        "fullDesc": "Inflige un {{1}}% más de daño a los enemigos afectados por estados negativos.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Estrategia secreta",
+        "fullDesc": "Cuando Pela está en la batalla, el acierto de efecto de todos los aliados aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Barrido",
+        "fullDesc": "Cuando la habilidad básica elimina un efecto positivo, el daño del siguiente ataque aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

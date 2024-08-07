@@ -40,6 +40,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Batalha de Peças",
+        "fullDesc": "Restaura 1 Ponto de Perícia ao usar a Perícia. Este efeito só pode ser ativado 1 vez por batalha.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Enrolar",
+        "fullDesc": "Usar a Perícia aumenta o efeito do bônus de Dano dos ataques em {{1}}% extra.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Mão Vitoriosa",
+        "fullDesc": "Aumenta em {{1}}% a VEL de Qingque por 1 rodada após usar o ATQ Básico Aprimorado.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -40,6 +40,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Kinetische Überlastung",
+        "fullDesc": "Entfernt beim Einsatz der Fertigkeit sofort {{1}} Buff von einem Gegner.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Umkreisen",
+        "fullDesc": "Stellt für jede erlangte Stapelung von „Kampfeswille“ zusätzlich {{1}} Pkt. Energie wieder her.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Kampfgeistbrecher",
+        "fullDesc": "Beim Einsatz des verstärkten Standardangriffs hat jeder Treffer mit einem Geraden Haken eine feste Chance von {{1}}%, einen weiteren Treffer zu verursachen. Dieser Effekt wird nicht durch Treffer ausgelöst, die auf diese Weise verursacht wurden.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Jovialidad nutrida",
+        "fullDesc": "La VEL de Tingyun aumenta en un {{1}}% durante 1 turno al usar la habilidad básica.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Represión de la sentencia",
+        "fullDesc": "El daño que inflige el ATQ básico aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Pasaje jubiloso",
+        "fullDesc": "Tingyun recupera {{1}} pts. de energía al comienzo de su turno.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

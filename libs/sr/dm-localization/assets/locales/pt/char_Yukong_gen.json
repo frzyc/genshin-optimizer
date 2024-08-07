@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Aqueronte",
+        "fullDesc": "Yukong pode resistir a 1 aplicação de penalidade por vez. Este efeito pode ser ativado novamente após {{1}} rodada(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Mestre do Arco",
+        "fullDesc": "Quando Yukong está no campo, o Dano Imaginário causado por todos os aliados aumenta em {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Majestas",
+        "fullDesc": "Quando \"Arco Estrondoso\" está ativo, Yukong regenera {{1}} de Energia adicional sempre que um aliado age.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

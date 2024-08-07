@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Revival",
+        "fullDesc": "If the current HP percentage is {{1}}% or lower when defeating an enemy, immediately restores HP equal to {{2}}% of Max HP.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Endurance",
+        "fullDesc": "The chance to resist DoT Debuffs increases by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Repel",
+        "fullDesc": "Upon entering battle, if Arlan's HP is less than or equal to {{1}}%, he can nullify all DMG received except for DoTs until he is attacked.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

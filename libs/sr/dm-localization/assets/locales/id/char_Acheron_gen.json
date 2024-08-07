@@ -55,6 +55,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Red Oni",
+        "fullDesc": "Saat pertempuran dimulai, segera memperoleh {{1}} poin \"Slashed Dream\" dan menambahkan {{1}} lapis \"Crimson Knot\" pada 1 musuh secara acak. Saat \"Slashed Dream\" mencapai batas maksimum, setiap 1 poin \"Slashed Dream\" yang berlebih akan memberikan 1 lapis \"Quadrivalent Ascendance\", dan membuat \"Quadrivalent Ascendance\" dapat ditumpuk hingga {{2}} lapis.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "The Abyss",
+        "fullDesc": "Saat di dalam tim terdapat 1/2 karakter dengan Path \"Nihility\" selain Acheron, maka DMG yang diakibatkan Basic Attack, Skill, dan Ultimate Acheron adalah {{1}}%/{{2}}% dari DMG awalnya.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Thunder Core",
+        "fullDesc": "Saat \"Rainblade\" dari Ultimate mengenai target musuh yang memiliki \"Crimson Knot\", akan meningkatkan {{1}}% DMG yang diakibatkan Acheron, efek ini dapat ditumpuk hingga {{2}} lapis dan berlangsung selama {{3}} giliran, serta mengakibatkan {{4}} kali DMG tambahan saat melancarkan \"Stygian Resurge\", yang masing-masing DMG tersebut mengakibatkan Lightning DMG sebesar {{5}}% ATK Acheron pada musuh secara acak. DMG tersebut akan dianggap sebagai Ultimate DMG.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

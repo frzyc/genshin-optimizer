@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Kinship",
+        "fullDesc": "Memiliki {{1}}% peluang tetap untuk menghapus 1 efek debuff pada diri sendiri saat terkena serangan.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Under Protection",
+        "fullDesc": "Meningkatkan {{1}}% peluang untuk menahan Crowd Control Debuff.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Revenge",
+        "fullDesc": "Meningkatkan {{1}}% DMG dari Serangan Balasan Svarog.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

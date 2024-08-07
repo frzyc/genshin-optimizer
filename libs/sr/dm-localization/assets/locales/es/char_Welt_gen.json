@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Retribución",
+        "fullDesc": "Al usar la habilidad definitiva, hay una probabilidad base del {{1}}% de infligir un {{2}}% más de daño a los objetivos durante {{3}} turnos.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Juicio",
+        "fullDesc": "Al usar la habilidad definitiva, recupera {{1}} pts. de energía adicionales.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Castigo",
+        "fullDesc": "Inflige un {{1}}% más de daño a los enemigos afectados por Ruptura.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

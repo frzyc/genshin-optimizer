@@ -40,6 +40,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Swan Soar",
+        "fullDesc": "Saat pertempuran dimulai, aksi March 7th akan didahulukan sebesar {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Filigree",
+        "fullDesc": "March 7th dapat mengurangi Toughness target musuh yang memiliki Tipe Weakness yang sama dengan Tipe \"Shifu\". Saat mengakibatkan Weakness Break, akan memicu efek Weakness Break Tipe Imaginary.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Tide Tamer",
+        "fullDesc": "Setelah melancarkan Enhanced Basic Attack, akan meningkatkan {{1}}% CRIT DMG \"Shifu\" dan meningkatkan {{2}}% Break Effect \"Shifu\", berlangsung selama {{3}} giliran.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

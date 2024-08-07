@@ -45,6 +45,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Module α: Antilag Outburst",
+        "fullDesc": "Saat dalam status \"Complete Combustion\", menyerang musuh yang tidak memiliki Fire Weakness juga dapat mengakibatkan Pengurangan Toughness, yang efek Pengurangan Toughness-nya adalah {{1}}% dari Pengurangan Toughness asli kemampuan.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Module β: Autoreactive Armor",
+        "fullDesc": "Saat berstatus \"Complete Combustion\", jika Break Effect SAM lebih dari atau sama dengan {{1}}%/{{2}}%, maka setelah menyerang target musuh yang berstatus Weakness Break, akan mengonversi pengurangan Toughness dari serangan kali ini menjadi 1 kali {{3}}%/{{4}}% Super Break DMG.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Module γ: Core Overload",
+        "fullDesc": "Jika ATK SAM lebih dari {{1}}, maka untuk setiap {{2}} ATK yang berlebih akan meningkatkan {{3}}% Break Effect.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

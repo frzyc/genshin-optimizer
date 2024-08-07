@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Renacimiento",
+        "fullDesc": "Si su porcentaje de PV es igual o inferior al {{1}}% cuando elimina a un enemigo, regenera un {{2}}% de sus PV máx.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Constancia",
+        "fullDesc": "La probabilidad de resistir estados negativos de Daño con el tiempo aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Repelencia",
+        "fullDesc": "Al entrar en combate, si el porcentaje de PV de Arlan es igual o inferior al {{1}}%, resiste todo el daño que no sea Daño con el tiempo. Este efecto desaparece después de que Arlan reciba un ataque.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

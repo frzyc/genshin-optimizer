@@ -40,6 +40,27 @@
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "천진",
+        "fullDesc": "특성 발동 시 후크 HP 최대치 {{1}}%만큼의 HP를 회복한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "난만",
+        "fullDesc": "제어류 디버프 상태 저항 확률이 {{1}}% 증가한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "불장난",
+        "fullDesc": "필살기 발동 후 후크의 행동 게이지가 {{2}}% 증가하고, 추가로 에너지를 {{1}}pt 회복한다",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

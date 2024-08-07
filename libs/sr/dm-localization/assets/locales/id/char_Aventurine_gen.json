@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Leverage",
+        "fullDesc": "Jika DEF Aventurine lebih dari {{3}}, maka untuk setiap 100 DEF yang berlebih akan meningkatkan {{1}}% CRIT Rate, maksimal meningkat hingga {{2}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Hot Hand",
+        "fullDesc": "Saat pertempuran dimulai, akan memberikan Shield \"Fortified Wager\" pada seluruh rekan tim. Kekuatan Shield-nya adalah sebesar {{2}}% dari kekuatan Shield yang diberikan Skill Aventurine, berlangsung selama {{1}} giliran.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Bingo!",
+        "fullDesc": "Setelah rekan tim Aventurine yang memiliki \"Fortified Wager\" melancarkan Serangan Lanjutan, Aventurine akan mengakumulasi 1 poin \"Blind Bet\", efek ini dapat dipicu hingga {{3}} kali. Saat giliran Aventurine dimulai, perhitungan jumlah terpicunya efek ini akan di-reset. Setelah Aventurine melancarkan Serangan Lanjutan dari Talent-nya, akan memberikan \"Fortified Wager\" yang dapat menahan DMG pada seluruh rekan tim sebesar {{1}}% DEF Aventurine + {{2}}, serta memberikan ekstra \"Fortified Wager\" pada rekan tim dengan nilai Shield terendah sebesar {{4}}% DEF Aventurine + {{5}}, berlangsung selama {{3}} giliran.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

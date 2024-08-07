@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#じゅんけつ}純潔{RUBY_E#}",
+        "fullDesc": "戦闘スキルを発動した時、指定した味方単体のデバフを1つ解除する。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#かご}加護{RUBY_E#}",
+        "fullDesc": "戦闘スキルで付与したバリアの継続時間+{{1}}ターン。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#ひょうじゅ}氷呪{RUBY_E#}",
+        "fullDesc": "必殺技を発動した時、敵を凍結状態にする基礎確率+{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

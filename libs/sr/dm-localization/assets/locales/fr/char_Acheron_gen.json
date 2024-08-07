@@ -55,6 +55,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Démon écarlate",
+        "fullDesc": "Obtient immédiatement {{1}} points de Rêve flétri en début de combat et applique {{1}} cumuls d'Étreinte écarlate à un ennemi aléatoire. Lorsque Rêve flétri atteint la limite, chaque point de Rêve flétri au-dessus de la limite accorde 1 cumul de Chemin de la réalisation. Permet à Chemin de la réalisation de se cumuler jusqu'à {{2}} fois de cette façon.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Abîme",
+        "fullDesc": "Lorsqu'il y a 1 ou 2 personnages de la Nihilité autres qu'Achéron dans l'équipe, les DGT infligés par l'ATQ normale, la compétence et l'ultime d'Achéron augmentent respectivement à hauteur de {{1}}% ou {{2}}% des DGT initiaux.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Âme de tonnerre",
+        "fullDesc": "Augmente de {{1}}% les DGT d'Achéron lorsque la Lame de pluie de son ultime touche des cibles ennemies affectées par Étreinte écarlate. Cumulable {{2}} fois et dure {{3}} tours. D'autre part, lorsque Vengeance du Styx se déclenche, inflige {{4}} frappes de DGT supplémentaires. Chaque frappe inflige des DGT de foudre équivalents à {{5}}% de l'ATQ d'Achéron à un ennemi unique aléatoire et est considérée comme des DGT d'ultime.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

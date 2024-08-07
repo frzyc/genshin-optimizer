@@ -40,6 +40,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Munição Fantasma",
+        "fullDesc": "Aumenta a Chance de CRIT / o Dano CRIT deste personagem em uma quantidade igual a {{1}}% / {{3}}% do Efeito de Quebra, com um aumento máximo de {{2}}% / {{4}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Sobre as Cobras",
+        "fullDesc": "Enquanto Boothill está em Confronto, diminui o Dano que ele recebe de alvos que não estejam em Confronto em {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "À Queima-Roupa",
+        "fullDesc": "Ao obter Truque de Bolso no Confronto, regenera {{1}} de Energia. Esse efeito também é ativado quando são obtidos acúmulos de Truque de Bolso que excedam o limite máximo.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

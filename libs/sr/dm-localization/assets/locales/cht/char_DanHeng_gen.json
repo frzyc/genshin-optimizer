@@ -35,6 +35,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "潛龍",
+        "fullDesc": "若現有生命值百分比小於等於{{1}}%，則被敵方目標攻擊的機率降低。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "絕影",
+        "fullDesc": "發動攻擊後有{{1}}%的固定機率使自身速度提高{{2}}%，持續{{3}}回合。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "罡風",
+        "fullDesc": "普通攻擊對減速狀態下的敵方目標造成的傷害提高{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

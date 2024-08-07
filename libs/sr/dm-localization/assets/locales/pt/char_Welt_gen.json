@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Retaliação",
+        "fullDesc": "Ao usar a Perícia Suprema, há {{1}}% de chance-base de aumentar o Dano recebido pelos alvos em {{2}}% por {{3}} rodada(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Julgamento",
+        "fullDesc": "Usar a Perícia Suprema regenera um adicional de {{1}} de Energia.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Punição",
+        "fullDesc": "Causa {{1}}% a mais de Dano a inimigos afetados por Quebra de Fraqueza.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

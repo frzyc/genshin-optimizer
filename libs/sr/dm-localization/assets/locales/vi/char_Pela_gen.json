@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Đòn Phủ Đầu",
+        "fullDesc": "Sát thương gây ra cho mục tiêu địch có Hiệu Ứng Xấu tăng {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Kế Sách Bí Mật",
+        "fullDesc": "Khi Pela trong trận, Chính Xác Hiệu Ứng của toàn phe ta tăng {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Truy Kích Và Tiêu Diệt",
+        "fullDesc": "Khi thi triển Chiến Kỹ giải trừ hiệu ứng buff, sát thương gây ra trong lần tấn công kế tiếp tăng {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

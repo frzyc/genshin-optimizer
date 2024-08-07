@@ -40,6 +40,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Novel Concoction",
+        "fullDesc": "Increases this unit's Outgoing Healing by an amount equal to {{1}}% of Break Effect, up to a maximum Outgoing Healing increase of {{2}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Organic Yeast",
+        "fullDesc": "After using the Ultimate, immediately Advances Forward this unit's Action by 100%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Bottoms Up",
+        "fullDesc": "When Gallagher uses Nectar Blitz to attack Besotted enemies, the HP Restore effect of his Talent will also apply to other allies for this time.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

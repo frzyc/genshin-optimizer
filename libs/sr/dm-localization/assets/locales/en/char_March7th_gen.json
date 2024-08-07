@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Purify",
+        "fullDesc": "When using the Skill, removes 1 debuff from a target ally.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Reinforce",
+        "fullDesc": "The duration of the Shield generated from Skill is extended for {{1}} turn(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Ice Spell",
+        "fullDesc": "Increases the Ultimate's base chance to Freeze enemies by {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#じょうせき}襄尺{RUBY_E#}",
+        "fullDesc": "デバフを付与された時、御空はそれを1回抵抗できる。この効果は{{1}}ターン後に再度発動できる。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#ちい}遅彝{RUBY_E#}",
+        "fullDesc": "御空がフィールド上にいる時、味方全体の虚数属性ダメージ+{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#きそう}気壮{RUBY_E#}",
+        "fullDesc": "「鳴弦号令」がある時、味方が行動した後、御空はEPを{{1}}回復する。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

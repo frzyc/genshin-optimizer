@@ -40,6 +40,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Deathrealm",
+        "fullDesc": "Saat berstatus \"Spectral Transmigration\", Effect RES meningkat {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Sword Champion",
+        "fullDesc": "Setelah melancarkan \"Transcendent Flash\", aksi dirinya yang berikutnya akan didahulukan sebesar {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Frost Wraith",
+        "fullDesc": "Saat berstatus \"Spectral Transmigration\", DMG yang diakibatkan Ultimate meningkat {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

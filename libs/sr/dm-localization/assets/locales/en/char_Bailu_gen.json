@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Qihuang Analects",
+        "fullDesc": "When Bailu heals a target ally above their normal Max HP, the target's Max HP increases by {{1}}% for {{2}} turns.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Vidyadhara Ichor Lines",
+        "fullDesc": "Invigoration can trigger {{1}} more time(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Aquatic Benediction",
+        "fullDesc": "Characters with Invigoration receive {{1}}% less DMG.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

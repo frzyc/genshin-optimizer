@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Respiración inerte",
+        "fullDesc": "El efecto de Ruptura de todos los aliados aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Ensoñaciones del pasado",
+        "fullDesc": "Ruan Mei recupera {{1}} pts. de energía al comienzo de su turno.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Velas sobre el agua",
+        "fullDesc": "Durante la batalla, cuando el efecto de Ruptura de Ruan Mei es superior al {{1}}%, por cada {{2}}% de exceso, su habilidad básica aumenta el daño de todos los aliados en un {{3}}% adicional, hasta un máximo del {{4}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

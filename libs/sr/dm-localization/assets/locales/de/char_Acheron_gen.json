@@ -55,6 +55,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Roter Oni",
+        "fullDesc": "Erhält zu Beginn eines Kampfes sofort {{1}} Pkt. „Zerbrochener Traum“ und belegt einen zufälligen Gegner mit {{1}} Stapelungen „Karminroter Knoten“. Wenn Zerbrochener Traum das Maximum erreicht, wird für jeden überschüssigen Pkt. Zerbrochener Traum eine Stapelung „Vier Phasen des Ich“ erhalten. Vier Phasen des Ich ist bis zu {{2}}-fach stapelbar.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Unterwelt",
+        "fullDesc": "Wenn noch 1/2 weitere Figur(en) auf dem Pfad der Nichtigkeit im Team sind, beträgt der verursachte SCH von Acherons Standardangriff, Fertigkeit und Ultimate {{1}}%/{{2}}% des ursprünglichen SCH.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Blitzherz",
+        "fullDesc": "Wenn „Regnerische Klage“ des Ultimates Gegner mit „Karminroter Knoten“ trifft, wird Acherons verursachter SCH für {{3}} Rd. um {{1}}% erhöht. Dieser Effekt ist bis zu {{2}}-fach stapelbar. Fügt außerdem zusätzlich {{4}}-mal SCH zu, wenn „Zurück ins Jenseits“ ausgelöst wird. Jedes Mal wird bei einem zufälligen Gegner Blitz-SCH in Höhe von {{5}}% von Acherons ANG verursacht und dieser SCH wird als Ultimate-SCH betrachtet.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

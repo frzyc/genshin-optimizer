@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Tia Lửa",
+        "fullDesc": "Khi thi triển tấn công thường có {{1}}% xác suất cơ bản khiến kẻ địch rơi vào trạng thái Thiêu Đốt, duy trì {{2}} hiệp.\\nTrong trạng thái Thiêu Đốt, khi bắt đầu mỗi hiệp, kẻ địch chịu Sát Thương Hỏa duy trì tương đương {{3}}% Tấn Công Thường của Asta.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Đốt Cháy",
+        "fullDesc": "Khi Asta trong trận, Sát Thương Hỏa của toàn bộ phe ta tăng {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Chòm Sao",
+        "fullDesc": "Mỗi khi Asta có 1 tầng Tụ Năng, Phòng Thủ của bản thân sẽ tăng {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

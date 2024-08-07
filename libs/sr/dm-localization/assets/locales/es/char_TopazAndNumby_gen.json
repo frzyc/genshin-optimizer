@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Descubierto",
+        "fullDesc": "Cuando Topaz lanza un ATQ básico e inflige daño, se considera como un ataque adicional.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Agitación financiera",
+        "fullDesc": "El daño que Topaz y Conti infligen a los enemigos con Debilidad de Fuego aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Ajustes técnicos",
+        "fullDesc": "Cuando Conti lanza un ataque en el estado Subida increíble, Topaz recupera {{1}} pts. de energía adicionales.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

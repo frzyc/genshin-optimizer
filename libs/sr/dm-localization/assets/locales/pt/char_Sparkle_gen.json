@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Almanaque",
+        "fullDesc": "Ao usar o ATQ Básico, regenera adicionalmente {{1}} de Energia.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Flor Artificial",
+        "fullDesc": "O efeito de Bônus de Dano CRIT fornecido pela Perícia será estendido para durar até o início da próxima rodada do alvo.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Noturna",
+        "fullDesc": "Aumenta o ATQ de todos os aliados em {{4}}%. Quando há 1/2/3 aliado(s) do Tipo Quânticos na equipe, adicionalmente, o ATQ dos aliados é aumentado em {{1}}%/{{2}}%/{{3}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

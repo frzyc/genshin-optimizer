@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Bội Chi",
+        "fullDesc": "Khi Topaz thi triển tấn công thường gây ra sát thương, sẽ được xem là phát động Đòn Đánh Theo Sau.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Khủng Hoảng Tài Chính",
+        "fullDesc": "Sát thương do Topaz và Numby gây ra cho kẻ địch có Điểm Yếu Hỏa tăng {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Điều Chỉnh Kỹ Thuật",
+        "fullDesc": "Sau khi Numby ở trạng thái \"Chồng Chất\" thi triển tấn công, sẽ khiến Topaz hồi phục thêm {{1}} điểm Năng Lượng",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Sombra Noturna",
+        "fullDesc": "Quando os PV atuais forem iguais a {{1}}% ou inferiores, reduz a chance de ser atacada por inimigos.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Laceração",
+        "fullDesc": "Enquanto Seele estiver com Melhoria, a PEN de RES a Dano Quântico dela aumenta em {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Ondulação",
+        "fullDesc": "Após usar um ATQ Básico, a próxima ação de Seele será Avançada Adiante em {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

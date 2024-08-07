@@ -40,6 +40,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Vita Infinita",
+        "fullDesc": "Quando os PV atuais de Blade forem iguais ou inferiores a 50% de seus PV máximos, a Cura Recebida aumenta em {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Mortes Sem Fim",
+        "fullDesc": "Se Blade atingir um inimigo com Quebra de Fraqueza após usar \"Floresta de Espadas\", ele restaura PV igual a {{1}}% dos seus PV máximos + {{2}}.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Ciclone de Destruição",
+        "fullDesc": "O Dano causado por Ataques Extras do Talento aumenta em {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Coloratura de cadenza",
+        "fullDesc": "Al comenzar la batalla, su acción se adelanta un {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Adorno improvisado",
+        "fullDesc": "Cuando está en el estado de Concierto, el Daño CRIT que infligen todos los aliados con sus ataques adicionales aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Pasaje secuencial",
+        "fullDesc": "Al usar la habilidad básica, recupera {{1}} pts. de energía adicionales.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

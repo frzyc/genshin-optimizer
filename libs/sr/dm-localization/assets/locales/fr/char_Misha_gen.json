@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Libération",
+        "fullDesc": "Augmente les chances de base de geler la cible avant que la première frappe de l'ultime ne touche de {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Verrouillage",
+        "fullDesc": "Lors de l'utilisation de l'ultime, augmente de {{1}}% les chances d'appliquer des effets jusqu'à la fin de l'action de l'ultime en cours.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Transmission",
+        "fullDesc": "Augmente les DGT critiques du personnage contre les ennemis gelés de {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

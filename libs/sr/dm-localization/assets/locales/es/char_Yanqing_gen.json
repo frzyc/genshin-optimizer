@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Beneficio congelado",
+        "fullDesc": "Tras lanzar un ataque, los objetivos con Debilidad de Hielo reciben un Daño de Hielo adicional equivalente al {{1}}% del ATQ de Yanqing.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Cabeza alta",
+        "fullDesc": "Cuando Estocada empática está activa, la RES a efecto aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Acero de la estepa",
+        "fullDesc": "Al lograr un Golpe CRIT, la VEL aumenta en un {{1}}% durante {{2}} turnos.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

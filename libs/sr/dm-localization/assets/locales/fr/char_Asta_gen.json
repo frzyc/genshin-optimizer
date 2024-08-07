@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Étincelles",
+        "fullDesc": "L'ATQ normale d'Asta a {{1}}% de chances de base de brûler une cible ennemie pendant {{2}} tours.\\nLes ennemis brûlés subissent des dégâts de feu sur la durée équivalents à {{3}}% des DGT infligés par l'ATQ normale d'Asta au début de chaque tour.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Mettre le feu aux poudres",
+        "fullDesc": "Lorsque Asta est sur le champ de bataille, les DGT de feu de tous les alliés augmentent de {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Constellation",
+        "fullDesc": "La DÉF d'Asta augmente de {{1}}% pour chaque cumul de Chargement.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

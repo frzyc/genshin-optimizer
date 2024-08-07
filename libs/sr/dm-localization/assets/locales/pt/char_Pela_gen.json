@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Pancada",
+        "fullDesc": "Causa {{1}}% a mais de Dano a inimigos com penalidades.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "A Estratégia Secreta",
+        "fullDesc": "Quando Pela está no campo, a Taxa de Acerto de Efeito de todos os aliados aumenta em {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Exterminar",
+        "fullDesc": "Usar a Perícia para remover melhoria(s) aumenta em {{1}}% o Dano do próximo ataque.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

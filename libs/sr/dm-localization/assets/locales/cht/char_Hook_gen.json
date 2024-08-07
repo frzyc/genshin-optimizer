@@ -40,6 +40,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "童真",
+        "fullDesc": "觸發天賦時，回復等同於虎克生命上限{{1}}%的生命值。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "無邪",
+        "fullDesc": "抵抗控制類負面狀態的機率提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "玩火",
+        "fullDesc": "施放終結技後，虎克的行動提前{{2}}%並額外回復{{1}}點能量。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

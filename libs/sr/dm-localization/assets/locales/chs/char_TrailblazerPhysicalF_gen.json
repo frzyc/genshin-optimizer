@@ -45,6 +45,27 @@
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "蓄势",
+        "fullDesc": "战斗开始时，立刻恢复{{1}}点能量。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "坚韧",
+        "fullDesc": "天赋的效果每层同时使开拓者的防御力提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "斗志",
+        "fullDesc": "施放战技或终结技【全胜•安息全垒打】时，对指定敌方目标造成的伤害提高{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

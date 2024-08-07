@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Dance With the One",
+        "fullDesc": "Saat di medan pertempuran ada 5 atau lebih/4/3/2/1 target musuh, Super Break DMG yang dipicu efek \"Backup Dancer\" meningkat {{1}}%/{{2}}%/{{3}}%/{{4}}%/{{5}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Shuffle Along",
+        "fullDesc": "Saat melancarkan Skill, pengurangan nilai Toughness yang diakibatkan DMG pertama akan meningkat ekstra {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Hat of the Theater",
+        "fullDesc": "Saat rekan tim mengakibatkan Weakness Break, penundaan aksi pada target musuh tersebut akan meningkat ekstra {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Reinigende Wiederbelebung",
+        "fullDesc": "Wenn der Effekt der Fertigkeit ausgelöst wird, wird {{1}} Debuff von einem anvisierten Verbündeten entfernt.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Geheiligt",
+        "fullDesc": "Wenn ein Gegner innerhalb des Felds von einem Verbündeten angegriffen wird, werden die LP aller Verbündeten außer dem Angreifer um {{1}}% von Luochas ANG plus {{2}} wiederhergestellt.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Durch das Tal",
+        "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

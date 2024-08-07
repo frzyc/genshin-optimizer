@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Taiyi, the Macrocosmic",
+        "fullDesc": "When Matrix of Prescience is active, Fu Xuan will regenerate {{1}} extra Energy when she uses her Skill.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Dunjia, the Metamystic",
+        "fullDesc": "When Fu Xuan's Ultimate is used, heals all other allies by an amount equal to {{1}}% of Fu Xuan's Max HP plus {{2}}.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Liuren, the Sexagenary",
+        "fullDesc": "If a target enemy applies Crowd Control debuffs to allies while the Matrix of Prescience is active, all allies will resist all Crowd Control debuffs applied by the enemy target during the current action. This effect can only be triggered once. When Matrix of Prescience is activated again, the number of times this effect can be triggered will reset.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#きこうせいぎ}岐黄精義{RUBY_E#}",
+        "fullDesc": "白露が味方に最大HPを超える治癒を行った時、その味方の最大HP+{{1}}%、{{2}}ターン継続。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#じみょう}持明{RUBY_E#}の{RUBY_B#りゅうみゃく}龍脈{RUBY_E#}",
+        "fullDesc": "「生生」効果の発動可能回数+{{1}}。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#りんえん}鱗淵{RUBY_E#}の{RUBY_B#おんたく}恩沢{RUBY_E#}",
+        "fullDesc": "「生生」を付与されたキャラの受けるダメージ-{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

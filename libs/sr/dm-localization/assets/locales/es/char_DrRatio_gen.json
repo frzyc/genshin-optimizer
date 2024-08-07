@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Inducción",
+        "fullDesc": "Al usar la habilidad básica, por cada estado negativo del objetivo, la Prob. CRIT del Dr. Ratio aumenta en un {{1}}% y su Daño CRIT aumenta en un {{2}}%. Este efecto se puede acumular hasta {{3}} veces.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Inferencia",
+        "fullDesc": "Al usar la habilidad básica para atacar a un enemigo, hay un {{1}}% de probabilidad base de reducir la RES a efecto del objetivo en un {{2}}% durante {{3}} turnos.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Deducción",
+        "fullDesc": "Al infligir daño, si el objetivo tiene {{1}} o más estados negativos, el Dr. Ratio le inflige un {{2}}% más de daño por cada estado negativo, hasta un aumento máximo del {{3}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

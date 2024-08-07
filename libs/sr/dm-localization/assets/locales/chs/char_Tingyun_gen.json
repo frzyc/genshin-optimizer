@@ -35,6 +35,27 @@
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "驻晴",
+        "fullDesc": "施放战技时，停云自身速度提高{{1}}%，持续1回合。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "止厄",
+        "fullDesc": "普攻造成的伤害提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "亨通",
+        "fullDesc": "停云的回合开始时，自身立即恢复{{1}}点能量。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -40,6 +40,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "爭台",
+        "fullDesc": "施放戰技時，恢復1個戰技點。該效果單場戰鬥中只能觸發1次。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "聽牌",
+        "fullDesc": "戰技使自身造成的傷害提高效果額外提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "搶槓",
+        "fullDesc": "發動強化普通攻擊後，青雀的速度提高{{1}}%，持續1回合。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

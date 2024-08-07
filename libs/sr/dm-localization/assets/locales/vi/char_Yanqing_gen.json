@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Thưởng Băng",
+        "fullDesc": "Sau khi tấn công, gây cho kẻ địch có Điểm Yếu Băng một lượng Sát Thương Băng kèm theo bằng {{1}}% Tấn Công của Yanqing.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Sương Sớm",
+        "fullDesc": "Khi ở hiệu ứng \"Kiếm Khôn Hiểu Lòng Người\", Kháng Hiệu Ứng tăng {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Âm Thanh Nhẹ Nhàng",
+        "fullDesc": "Khi kích hoạt Bạo Kích, Tốc Độ tăng {{1}}%, duy trì {{2}} hiệp.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

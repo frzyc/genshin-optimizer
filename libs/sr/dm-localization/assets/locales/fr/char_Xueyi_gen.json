@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Présage clairvoyant",
+        "fullDesc": "Augmente les DGT infligés par le personnage à hauteur de {{1}}% de son effet de Rupture, jusqu'à une augmentation maximale de DGT de {{2}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Rouages du destin",
+        "fullDesc": "L'ultime inflige {{2}}% de DGT supplémentaires aux cibles ennemies qui ont {{1}}% ou plus de leur robustesse max.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Intelligence robotique",
+        "fullDesc": "Xueyi enregistre le nombre de cumuls de Karma qui dépassent la limite maximale de cumuls, jusqu'à un maximum de {{1}} cumuls. Lorsque le talent de Xueyi est déclenché, elle gagne le nombre correspondant de cumuls de Karma enregistrés.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Analectas de Qihuang",
+        "fullDesc": "Cuando Bailu cura a un aliado por encima de sus PV máx., los PV máx. del objetivo aumentan en un {{1}}% durante {{2}} turnos.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Líneas de icor vidyadhara",
+        "fullDesc": "La cantidad de veces que se puede activar el efecto de Vigor aumenta en {{1}}.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Bendición acuática",
+        "fullDesc": "El daño que reciben los personajes con Vigor se reduce en un {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

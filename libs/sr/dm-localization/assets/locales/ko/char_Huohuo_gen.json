@@ -35,6 +35,27 @@
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "나서지 못하는 마음",
+        "fullDesc": "전투 시작 시, 곽향이 [양명]을 획득한다. 지속 시간: {{1}}턴",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "불운의 명",
+        "fullDesc": "제어류 디버프 상태 저항 확률이 {{1}}% 증가한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "두려움의 압박",
+        "fullDesc": "특성을 발동해 아군에게 치유 제공 시 곽향이 에너지를 {{1}}pt 회복한다",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "リバースレポ",
+        "fullDesc": "敵が戦闘に入る時、ジェイドは「質草」を{{2}}層獲得する。「債権回収者」状態の味方のターンが回ってくる時、ジェイドは「質草」を{{1}}層獲得する。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#しちふだ}質札{RUBY_E#}",
+        "fullDesc": "戦闘開始時、ジェイドの行動順が{{1}}%早まる。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#なが}流{RUBY_E#}れ{RUBY_B#もの}物{RUBY_E#}",
+        "fullDesc": "「質草」1層につき、ジェイドの攻撃力+{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -55,6 +55,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Red Oni",
+        "fullDesc": "When battle starts, immediately gains {{1}} point(s) of Slashed Dream and applies {{1}} stack(s) of Crimson Knot to a random enemy. When Slashed Dream reaches its upper limit, for every point of Slashed Dream that exceeds the limit, gains 1 stack of Quadrivalent Ascendance. Enables Quadrivalent Ascendance to stack up to {{2}} time(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "The Abyss",
+        "fullDesc": "When there are 1 or 2 Nihility characters other than Acheron in the team, the DMG dealt by Acheron's Basic ATK, Skill, and Ultimate increases to {{1}}% or {{2}}% of the original DMG respectively.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Thunder Core",
+        "fullDesc": "When the Ultimate's Rainblade hits enemy targets that have Crimson Knot, the DMG dealt by Acheron increases by {{1}}%, stacking up to {{2}} time(s) and lasting for {{3}} turn(s). And when Stygian Resurge triggers, additionally deals DMG for {{4}} times. Each time deals Lightning DMG equal to {{5}}% of Acheron's ATK to a single random enemy and is considered as Ultimate DMG.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

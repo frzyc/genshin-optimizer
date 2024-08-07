@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Scharfschützin",
+        "fullDesc": "Wird ein Debuff auf Yukong ausgeübt, kann sie 1-mal dessen Wirkung widerstehen. Dieser Effekt kann nach {{1}} Rd. erneut ausgelöst werden.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Erbin der Bogenkunst",
+        "fullDesc": "Wenn Yukong mitkämpft, verursachen alle Verbündeten {{1}}% mehr imaginären SCH.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Noble Haltung",
+        "fullDesc": "Wenn „Surrende Bogensehnen“ aktiv ist, stellt Yukong bei jeder Aktion von Verbündeten zusätzlich {{1}} Pkt. Energie wieder her.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#こきゅう}呼吸{RUBY_E#}の{RUBY_B#なか}中{RUBY_E#}",
+        "fullDesc": "味方全体の撃破特効+{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#ひろ}広{RUBY_E#}がる{RUBY_B#そうぞう}想像{RUBY_E#}",
+        "fullDesc": "ルアン・メェイのターンが回ってきた時、自身のEPを{{1}}回復する。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#すいめん}水面{RUBY_E#}を{RUBY_B#て}照{RUBY_E#}らす{RUBY_B#しょっか}燭火{RUBY_E#}",
+        "fullDesc": "戦闘中、ルアン・メェイの撃破特効が{{1}}%を超えた時、超過した撃破特効{{2}}%につき、戦闘スキルによる味方全体の与ダメージアップ効果+{{3}}%、最大で+{{4}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

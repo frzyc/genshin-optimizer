@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của kẻ địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Bắn Cung",
+        "fullDesc": "Yukong kháng 1 lần Hiệu Ứng Xấu khi trúng phải, có thể kích hoạt lại sau {{1}} hiệp.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Bậc Thầy Xạ Thủ",
+        "fullDesc": "Khi Yukong trong trận, Sát Thương Số Ảo của toàn phe ta gây ra tăng {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Khí Phách Ngút Trời",
+        "fullDesc": "Khi có Hiệu Lệnh Cung Đàn, sau mỗi lần mục tiêu phe ta hành động, Yukong sẽ hồi thêm {{1}} điểm Năng Lượng.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

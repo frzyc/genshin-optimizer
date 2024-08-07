@@ -40,6 +40,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Geisterladung",
+        "fullDesc": "Erhöht die KRIT-Rate / den KRIT-SCH dieser Einheit. Die Erhöhung beträgt {{1}}%/{{3}}% ihres Brucheffekts. Die KRIT-Rate / der KRIT-SCH kann durch diesen Effekt um bis zu {{2}}%/{{4}}% erhöht werden.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Aufstieg der Schlangen",
+        "fullDesc": "Befindet sich Boothill im Status „Tödliche Konfrontation“, wird sein erlittener SCH durch Ziele, die sich nicht in Tödliche Konfrontation befinden, um {{1}}% reduziert.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Kürzeste Entfernung",
+        "fullDesc": "Stellt beim Erhalt von „Trumpf in der Tasche“ im Status „Tödliche Konfrontation“ {{1}} Pkt. Energie wieder her. Dieser Effekt wird auch ausgelöst, wenn Stapelungen von Trumpf in der Tasche erhalten werden, die die max. Stapelzahl überschreiten.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

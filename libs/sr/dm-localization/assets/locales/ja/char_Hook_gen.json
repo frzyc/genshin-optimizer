@@ -40,6 +40,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#こどもごころ}子供心{RUBY_E#}",
+        "fullDesc": "天賦発動時、フックの最大HP{{1}}%分のHPを回復する。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#むじゃき}無邪気{RUBY_E#}",
+        "fullDesc": "行動制限系デバフに抵抗する確率+{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#ひあそ}火遊{RUBY_E#}び",
+        "fullDesc": "必殺技を発動した後、フックの行動順が{{2}}%早まり、さらにEPを{{1}}回復する。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

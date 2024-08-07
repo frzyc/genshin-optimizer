@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Verborgener Drache",
+        "fullDesc": "Liegt der LP-Prozentsatz bei {{1}}% oder niedriger, sinkt die Chance, von Gegnern angegriffen zu werden.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Schatten der Verzweiflung",
+        "fullDesc": "Nach dem Angriff besteht eine Chance von {{1}}%, die GES für {{3}} Rd. um {{2}}% zu erhöhen.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Heftiger Wind",
+        "fullDesc": "Erhöht den verursachten SCH von Standardangriffen an verlangsamten Gegnern um {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

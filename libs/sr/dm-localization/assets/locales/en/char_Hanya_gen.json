@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Scrivener",
+        "fullDesc": "Allies triggering Burden's Skill Point recovery effect have their ATK increased by {{1}}% for {{2}} turn(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Netherworld",
+        "fullDesc": "If the trigger count for the Burden's Skill Point recovery effect is {{1}} or lower when an enemy with Burden is defeated, then additionally recovers {{2}} Skill Point(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Reanimated",
+        "fullDesc": "When Burden's Skill Point recovery effect is triggered, this character regenerates {{1}} Energy.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

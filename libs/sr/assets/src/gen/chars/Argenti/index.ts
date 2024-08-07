@@ -1,5 +1,5 @@
 // This is a generated index file.
-import basic from './basic.png'
+import basic_0 from './basic_0.png'
 import bonusAbility1 from './bonusAbility1.png'
 import bonusAbility2 from './bonusAbility2.png'
 import bonusAbility3 from './bonusAbility3.png'
@@ -10,14 +10,15 @@ import eidolon4 from './eidolon4.png'
 import eidolon5 from './eidolon5.png'
 import eidolon6 from './eidolon6.png'
 import icon from './icon.png'
-import overworld from './overworld.png'
-import skill from './skill.png'
-import talent from './talent.png'
-import technique from './technique.png'
-import ult from './ult.png'
+import overworld_0 from './overworld_0.png'
+import skill_0 from './skill_0.png'
+import talent_0 from './talent_0.png'
+import technique_0 from './technique_0.png'
+import ult_0 from './ult_0.png'
+import ult_1 from './ult_1.png'
 
 const data = {
-  basic,
+  basic_0,
   bonusAbility1,
   bonusAbility2,
   bonusAbility3,
@@ -28,10 +29,11 @@ const data = {
   eidolon5,
   eidolon6,
   icon,
-  overworld,
-  skill,
-  talent,
-  technique,
-  ult,
+  overworld_0,
+  skill_0,
+  talent_0,
+  technique_0,
+  ult_0,
+  ult_1,
 } as const
 export default data

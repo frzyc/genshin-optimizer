@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "La intranquilidad de las vísceras",
+        "fullDesc": "Tras usar la habilidad básica y golpear a un enemigo afectado por Intemperie, Sangrado, Quemadura o Electrocución, cada uno de esos estados tiene una probabilidad base del {{1}}% de aplicar 1 acumulación adicional de Arcano.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Los posos de la copa",
+        "fullDesc": "Cuando el enemigo entra en combate, hay una probabilidad base del {{1}}% de aplicarle 1 acumulación de Arcano.\\nCada vez que el objetivo enemigo recibe Daño con el tiempo en un ataque de un aliado, hay un {{1}}% de probabilidad base de aplicar 1 acumulación de Arcano. Cada ataque puede aplicar hasta {{2}} acumulaciones como máximo.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "El portento de las llamas",
+        "fullDesc": "Aumenta el daño que inflige en una cantidad equivalente al {{1}}% de su acierto de efecto. El daño puede aumentar hasta un máximo del {{2}}% mediante este efecto.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Cadence colorée",
+        "fullDesc": "L'action de Robin est avancée de {{1}}% lorsque la bataille commence.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Ornement improvisé",
+        "fullDesc": "Lorsque l'état Concerto est actif, les DGT critiques des attaques de suivi de tous les alliés augmentent de {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Passage séquentiel",
+        "fullDesc": "Régénère {{1}} points d'énergie supplémentaires lors de l'utilisation de la compétence.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

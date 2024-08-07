@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Generate",
+        "fullDesc": "Durasi \"Bug\" bertambah {{1}} giliran. Setiap ada target musuh yang mengalami Weakness Break, Silver Wolf memiliki {{2}}% peluang dasar untuk menanamkan 1 jenis \"Bug\" acak pada target tersebut.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Inject",
+        "fullDesc": "Saat melancarkan Skill, durasi Weakness yang diberikan pada target musuh akan bertambah {{1}} giliran.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Side Note",
+        "fullDesc": "Saat melancarkan Skill, jika jumlah Debuff target musuh lebih dari atau sama dengan {{1}}, maka efek dari Skill yang mengurangi RES seluruh tipe target akan berkurang ekstra {{2}}% lagi.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

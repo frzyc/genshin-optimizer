@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Par ricochet",
+        "fullDesc": "Pour chaque tranche de 100 points de DÉF qui dépasse {{3}}, les chances de coup critique d'Aventurine augmentent de {{1}}%, jusqu'à une augmentation maximale de {{2}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "En veine",
+        "fullDesc": "Accorde un bouclier de Mise renforcée à tous les alliés en début de combat, dont la valeur de bouclier est équivalente à {{2}}% de celle accordée par la compétence. Dure {{1}} tours.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Bingo !",
+        "fullDesc": "Aventurine récupère 1 Pari aveugle chaque fois qu'un allié qui bénéficie de Mise renforcée lance une attaque de suivi. Cet effet peut se déclencher jusqu'à {{3}} fois et son nombre de déclenchements se réinitialise au début du tour d'Aventurine. Lorsqu'Aventurine déclenche l'attaque de suivi de son talent, il accorde à tous les alliés un bouclier de Mise renforcée qui peut bloquer des DGT équivalents à {{1}}% de la DÉF d'Aventurine + {{2}} et accorde également une Mise renforcée qui peut bloquer des DGT équivalents à {{4}}% de la DÉF d'Aventurine + {{5}} à l'allié qui a la valeur de bouclier la plus faible pendant 3 tours.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -40,6 +40,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Devoción",
+        "fullDesc": "Al comenzar el turno, obtiene inmediatamente {{1}} acumulación de Elevación.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Generosidad",
+        "fullDesc": "Cuando el enemigo entra en combate, Argenti recupera {{1}} pts. de energía.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Valentía",
+        "fullDesc": "Cuando el objetivo tiene un porcentaje de PV igual o inferior al {{1}}%, recibe un {{2}}% más de daño.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

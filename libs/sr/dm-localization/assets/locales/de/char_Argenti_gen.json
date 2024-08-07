@@ -40,6 +40,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Frömmigkeit",
+        "fullDesc": "Erhält zu Beginn der Runde unmittelbar {{1}}-fach „Apotheose“.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Großmut",
+        "fullDesc": "Tritt ein Gegner in den Kampf ein, stellt Argenti sofort {{1}} Pkt. Energie wieder her.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Tapferkeit",
+        "fullDesc": "Verursacht {{2}}% mehr SCH bei Gegnern mit LP-Prozentsatz von {{1}}% oder weniger.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -40,6 +40,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "The Strong Defend the Weak",
+        "fullDesc": "After using the Skill, the DMG taken by all allies reduces by {{2}}% for {{3}} turn(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Unwavering Gallantry",
+        "fullDesc": "Using Enhanced Basic ATK restores the Trailblazer's HP by {{1}}% of their Max HP.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Action Beats Overthinking",
+        "fullDesc": "When the Trailblazer is protected by a Shield at the beginning of the turn, increases their ATK by {{2}}% and regenerates {{1}} Energy until the action is over.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

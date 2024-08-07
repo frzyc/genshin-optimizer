@@ -35,6 +35,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "剛正",
+        "fullDesc": "傑帕德被敵方攻擊的機率提高。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "統領",
+        "fullDesc": "【不屈之身】觸發後，傑帕德的能量立即回復至100%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "戰意",
+        "fullDesc": "傑帕德提高等同於自身當下防禦力{{1}}%的攻擊力，每回合開始時更新。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Paralysée",
+        "fullDesc": "Huohuo obtient Intervention divine pendant {{1}} tour en début de combat.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Maudite",
+        "fullDesc": "Les chances de résister aux malus de contrôle augmentent de {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Stressée",
+        "fullDesc": "Lorsque le talent de Huohuo se déclenche pour soigner des alliés, elle régénère aussi {{1}} point d'énergie.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -40,6 +40,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#そうはん}争番{RUBY_E#}",
+        "fullDesc": "戦闘スキルを発動した時、SPを1回復する。この効果は一度の戦闘で1回まで発動できる。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#テンパイ}聴牌{RUBY_E#}",
+        "fullDesc": "戦闘スキルによる、自身の与ダメージアップ効果がさらに{{1}}%アップする。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "チャンカン",
+        "fullDesc": "強化通常攻撃を行った後、青雀の速度+{{1}}%、1ターン継続。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

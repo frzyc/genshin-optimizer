@@ -35,6 +35,27 @@
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "释放",
+        "fullDesc": "终结技首段攻击前，使目标陷入冻结状态的基础概率提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "锁接",
+        "fullDesc": "施放终结技时，效果命中提高{{1}}%，持续至本次终结技行动结束。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "传冲",
+        "fullDesc": "对陷入冻结状态的敌方目标造成伤害时，暴击伤害提升{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

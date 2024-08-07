@@ -40,6 +40,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Os Fortes Defendem os Fracos",
+        "fullDesc": "Após usar a Perícia, reduz em {{2}}% o Dano recebido por todos os aliados por {{3}} rodada(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Galanteria Inabalável",
+        "fullDesc": "Usar o ATQ Básico Aprimorado restaura {{1}}% dos PV máximos {F#da}{M#do} Desbrava{M#dor}{F#dora}.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "É Melhor Agir do que Pensar Demais",
+        "fullDesc": "Quando {F#a}{M#o} Desbrava{M#dor}{F#dora} recebe proteção de um Escudo no início da rodada, aumenta seu ATQ em {{2}}% e regenera {{1}} de Energia até a ação ser encerrada.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

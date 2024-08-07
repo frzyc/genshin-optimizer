@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Kommando",
+        "fullDesc": "Erhöht die KRIT-Rate des Standardangriffs auf 100 %.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Schlachtfeld",
+        "fullDesc": "Erhöht zu Beginn des Kampfes die VTD aller Verbündeten für {{1}} Rd. um {{2}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Militärmacht",
+        "fullDesc": "Erhöht den SCH aller Verbündeten um {{1}}%, wenn Bronya mitkämpft.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

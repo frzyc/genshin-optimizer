@@ -35,6 +35,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "夜行",
+        "fullDesc": "若現有生命值百分比小於等於{{1}}%，則被敵方目標攻擊的機率降低。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "割裂",
+        "fullDesc": "增幅狀態下希兒的量子屬性抗性穿透提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "漣漪",
+        "fullDesc": "發動普通攻擊後，希兒的下一次行動提前{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

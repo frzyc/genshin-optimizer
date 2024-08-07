@@ -35,6 +35,27 @@
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "华彩花腔",
+        "fullDesc": "战斗开始时，自身行动提前{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "即兴装饰",
+        "fullDesc": "处于【协奏】状态时，我方全体发动追加攻击造成的暴击伤害提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "模进乐段",
+        "fullDesc": "施放战技时额外恢复{{1}}点能量。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

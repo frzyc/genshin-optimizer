@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Dragão Escondido",
+        "fullDesc": "Quando os PV atuais forem iguais a {{1}}% ou inferiores, reduz a chance de ser atacado por inimigos.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Mais Rápido que a Luz",
+        "fullDesc": "Depois de desferir um ataque, há uma chance fixa de {{1}}% de aumentar a própria VEL em {{2}}% por {{3}} rodada(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Forte Ventania",
+        "fullDesc": "ATQ Básico causa {{1}}% a mais de Dano a inimigos com Lentidão.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

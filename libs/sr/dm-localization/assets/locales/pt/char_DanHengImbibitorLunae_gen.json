@@ -55,6 +55,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Véu Estelar",
+        "fullDesc": "No início da batalha, regenera {{1}} de Energia imediatamente.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Reinado Aquático",
+        "fullDesc": "Aumenta a chance de resistir a penalidades de Controle Negativo em {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Nova Descarga",
+        "fullDesc": "Ao causar Dano a inimigos com Fraqueza contra Imaginário, aumenta o Dano CRIT em {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

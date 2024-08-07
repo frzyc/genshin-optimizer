@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Synthèse",
+        "fullDesc": "Lorsque Dr Ratio utilise sa compétence, ses chances de coup critique augmentent de {{1}}% et ses DGT critiques de {{2}}% pour chaque malus sur la cible. Cet effet peut être cumulé jusqu'à {{3}} fois.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Inférence",
+        "fullDesc": "Lorsque la compétence est utilisée pour attaquer une cible ennemie, il y a {{1}}% de chances de base de réduire la RÉS aux effets de la cible attaquée de {{2}}% pendant {{3}} tours.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Déduction",
+        "fullDesc": "Lorsque Dr Ratio inflige des DGT à une cible ayant au moins {{1}} malus, les DGT infligés par Dr Ratio à cette cible augmentent de {{2}}% pour chaque malus appliqué à la cible, jusqu'à une augmentation maximale de {{3}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

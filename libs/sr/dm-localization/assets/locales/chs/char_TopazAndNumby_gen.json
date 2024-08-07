@@ -35,6 +35,27 @@
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "透支",
+        "fullDesc": "托帕施放普攻造成伤害时，被视为发动了追加攻击。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "金融动荡",
+        "fullDesc": "托帕和账账对拥有火属性弱点的敌方目标造成的伤害提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "技术性调整",
+        "fullDesc": "当账账处于【涨幅惊人！】状态施放攻击后，额外使托帕恢复{{1}}点能量。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "징벌",
+        "fullDesc": "필살기 발동 시 {{1}}%의 기본 확률로 적이 받는 피해가 {{2}}% 증가한다. 지속 시간: {{3}}턴",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "심판",
+        "fullDesc": "필살기 발동 시 추가로 에너지를 {{1}}pt 회복한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "판결",
+        "fullDesc": "약점이 격파된 적에게 가하는 피해가 {{1}}% 증가한다",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

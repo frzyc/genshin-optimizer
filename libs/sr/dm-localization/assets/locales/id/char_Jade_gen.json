@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Reverse Repo",
+        "fullDesc": "Saat target musuh memasuki pertempuran, Jade akan memperoleh {{2}} lapis \"Pawned Asset\". Saat giliran karakter yang berstatus \"Debt Collector\" dimulai, Jade akan memperoleh ekstra {{1}} lapis \"Pawned Asset\".",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Collateral Ticket",
+        "fullDesc": "Saat pertempuran dimulai, aksi Jade akan didahulukan sebesar {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Asset Forfeiture",
+        "fullDesc": "Setiap lapis \"Pawned Asset\" dari Talent akan meningkatkan {{1}}% ATK Jade.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Rock 'n' Roll",
+        "fullDesc": "Khi thi triển Chiến Kỹ sẽ tăng {{1}}% xác suất cơ bản khiến kẻ địch bị tấn công rơi vào trạng thái Sốc Điện.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Điện Âm",
+        "fullDesc": "Khi bắt đầu trận, sẽ hồi ngay {{1}} điểm Năng Lượng.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Cuồng Nhiệt",
+        "fullDesc": "Sau khi tiêu diệt kẻ địch, Tấn Công tăng {{1}}%, duy trì {{2}} hiệp.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

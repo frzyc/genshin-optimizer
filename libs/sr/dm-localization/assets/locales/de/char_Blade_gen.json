@@ -40,6 +40,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Endloses Leben",
+        "fullDesc": "Wenn der aktuelle LP-Prozentsatz von Blade gleich oder niedriger als 50 % seiner max. LP ist, wird erhaltene Heilung um {{1}}% erhöht.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Nie endender Tod",
+        "fullDesc": "Wenn Blades „Schwerterwald“ einen Gegner mit Schwächebruch trifft, erhält er LP in Höhe von {{1}}% seiner max. LP plus {{2}} zurück.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Zyklon der Zerstörung",
+        "fullDesc": "Erhöht den Folgeangriff-SCH des Talents um {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

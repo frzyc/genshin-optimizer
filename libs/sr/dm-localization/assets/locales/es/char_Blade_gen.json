@@ -40,6 +40,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Vida infinita",
+        "fullDesc": "Si el porcentaje de PV de Blade es igual o inferior al 50% de sus PV máx., su curación recibida aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Muertes incesantes",
+        "fullDesc": "Tras usar Bosque de espadas, si Blade golpea a un enemigo afectado por Ruptura de Debilidad, regenera una cantidad de PV equivalente al {{1}}% de sus PV máx. + {{2}}.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Ciclón destructivo",
+        "fullDesc": "El daño de ataque adicional infligido por el talento aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -12,10 +12,11 @@ import {
   type RarityKey,
   type StatKey,
 } from '@genshin-optimizer/sr/consts'
-import type { Anchor, Rank } from '@genshin-optimizer/sr/dm'
+import type { Anchor, Rank, SkillTreeType } from '@genshin-optimizer/sr/dm'
 import {
   DmAttackTypeMap,
   allRanks,
+  allSkillTreeTypes,
   avatarBaseTypeMap,
   avatarConfig,
   avatarDamageTypeMap,
@@ -45,7 +46,7 @@ type SkillTree = {
   pointId: string
   anchor: Anchor
   levels?: SkillTreeNode[] | undefined
-  skillParamList?: Array<number[]> | undefined
+  skillParamList: number[][][]
   pointType: number
 }
 type SkillTreeNode = {
@@ -66,7 +67,7 @@ export type CharacterDatum = {
   damageType: ElementalTypeKey
   path: PathKey
   ascension: Promotion[]
-  skillTreeList: SkillTree[]
+  skillTree: Record<SkillTreeType, SkillTree>
   rankMap: RankInfoMap
 }
 
@@ -75,39 +76,54 @@ export default function characterData(): CharacterData {
   const data = Object.fromEntries(
     Object.entries(avatarConfig).map(
       ([avatarid, { Rarity, DamageType, AvatarBaseType }]) => {
-        const skillTreeList: SkillTree[] = Object.entries(
-          avatarSkillTreeConfig[avatarid]
-        ).map(([pointId, skillTree]) => {
-          const { Anchor, PointType, LevelUpSkillID } = skillTree[0]
-          const skillId = LevelUpSkillID[0]
-          const skillParamList = skillId
-            ? transposeArray(
-                avatarSkillConfig[skillId]!.map(({ ParamList }) =>
-                  ParamList.map(({ Value }) => Value)
+        const skillTree = Object.fromEntries(
+          Object.entries(avatarSkillTreeConfig[avatarid]).map(
+            ([pointId, skillTree], index) => {
+              const { Anchor, PointType, LevelUpSkillID } = skillTree[0]
+              const skillParamList =
+                LevelUpSkillID.length > 0
+                  ? // Grab from AvatarSkillConfig (non-traces)
+                    LevelUpSkillID.map((skillId) =>
+                      transposeArray(
+                        avatarSkillConfig[skillId]!.map(({ ParamList }) =>
+                          ParamList.map(({ Value }) => Value)
+                        )
+                      )
+                    )
+                  : // Grab from itself (AvatarSkillTreeConfig) (traces)
+                    [
+                      skillTree.map((config) =>
+                        config.ParamList.map(({ Value }) => Value)
+                      ),
+                    ]
+
+              const levels = skillTree.map(({ StatusAddList }) => {
+                if (!StatusAddList.length) return {}
+                const stats = Object.fromEntries(
+                  StatusAddList.map(({ PropertyType, Value }) => {
+                    return [statKeyMap[PropertyType], Value.Value]
+                  })
                 )
-              )
-            : undefined
-
-          const levels = skillTree.map(({ StatusAddList }) => {
-            if (!StatusAddList.length) return {}
-            const stats = Object.fromEntries(
-              StatusAddList.map(({ PropertyType, Value }) => {
-                return [statKeyMap[PropertyType], Value.Value]
+                return { stats }
               })
-            )
-            return { stats }
-          })
 
-          return {
-            pointId,
-            anchor: Anchor,
-            levels: levels.every((l) => Object.keys(l).length === 0)
-              ? undefined
-              : levels,
-            pointType: PointType,
-            skillParamList,
-          }
-        })
+              const tuple: [SkillTreeType, SkillTree] = [
+                allSkillTreeTypes[index],
+                {
+                  pointId,
+                  anchor: Anchor,
+                  levels: levels.every((l) => Object.keys(l).length === 0)
+                    ? undefined
+                    : levels,
+                  pointType: PointType,
+                  skillParamList,
+                },
+              ]
+              return tuple
+            }
+          )
+        )
+        verifyObjKeys(skillTree, allSkillTreeTypes)
 
         const ascension = avatarPromotionConfig[avatarid].map(
           ({
@@ -164,7 +180,7 @@ export default function characterData(): CharacterData {
           rarity: avatarRarityMap[Rarity] as RarityKey,
           damageType: avatarDamageTypeMap[DamageType],
           path: avatarBaseTypeMap[AvatarBaseType],
-          skillTreeList,
+          skillTree,
           ascension,
           rankMap,
         }

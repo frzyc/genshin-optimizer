@@ -40,6 +40,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Piety",
+        "fullDesc": "Saat giliran dimulai, segera memperoleh {{1}} lapis \"Apotheosis\".",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Generosity",
+        "fullDesc": "Segera memulihkan {{1}} Energy diri sendiri saat target musuh memasuki pertempuran.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Courage",
+        "fullDesc": "Meningkatkan {{2}}% DMG pada target musuh yang persentase HP-nya kurang dari atau sama dengan {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

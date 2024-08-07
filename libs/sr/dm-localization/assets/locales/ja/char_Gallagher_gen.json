@@ -40,6 +40,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#しん}新{RUBY_E#}レシピ",
+        "fullDesc": "自身の治癒量が、撃破特効{{1}}%分アップする。最大で治癒量+{{2}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#てんねんこうぼ}天然酵母{RUBY_E#}",
+        "fullDesc": "必殺技を発動した後、自身の行動順を100%早める。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#かんぱい}乾杯{RUBY_E#}！",
+        "fullDesc": "ギャラガーが「極上の泡立ち」で「酩酊」状態の敵を攻撃する時、その回の天賦によるHP回復効果は自身以外の味方にも有効になる。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

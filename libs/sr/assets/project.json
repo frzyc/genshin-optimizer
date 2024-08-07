@@ -9,7 +9,7 @@
     "gen-file": {
       "executor": "@genshin-optimizer/sr/assets:gen-assets",
       "options": {
-        "fetchAssets": "none"
+        "fetchAssets": "local"
       },
       "outputs": ["{workspaceRoot}/${projectRoot}/src/gen/**/*"],
       "dependsOn": ["sr-assets-data:gen-file"]

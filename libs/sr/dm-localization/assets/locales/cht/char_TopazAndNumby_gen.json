@@ -35,6 +35,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "透支",
+        "fullDesc": "托帕發動普通攻擊造成傷害時，視為發動了追加攻擊。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "金融動盪",
+        "fullDesc": "托帕和帳帳對擁有火屬性弱點的敵方目標造成的傷害提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "技術性調整",
+        "fullDesc": "當帳帳處於【漲幅驚人！】狀態發動攻擊後，額外使托帕恢復{{1}}點能量。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

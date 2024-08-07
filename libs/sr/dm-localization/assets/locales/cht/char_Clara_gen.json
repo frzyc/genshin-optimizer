@@ -35,6 +35,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "家人",
+        "fullDesc": "受到攻擊時有{{1}}%的固定機率為自身解除1個負面效果。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "守護",
+        "fullDesc": "抵抗控制類負面狀態的機率提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "復仇",
+        "fullDesc": "史瓦羅的反擊傷害提高{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

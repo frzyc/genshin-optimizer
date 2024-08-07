@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Integrity",
+        "fullDesc": "Meningkatkan peluang Gepard diserang oleh musuh.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Commander",
+        "fullDesc": "Segera memulihkan Energy Gepard hingga 100% setelah memicu \"Unyielding Will\".",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Grit",
+        "fullDesc": "Meningkatkan ATK Gepard sebesar {{1}}% DEF-nya saat ini. Efek ini di-refresh setiap gilirannya dimulai.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

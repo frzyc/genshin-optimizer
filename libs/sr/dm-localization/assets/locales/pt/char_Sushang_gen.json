@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Ingenuidade",
+        "fullDesc": "Quando os PV atuais forem iguais a {{1}}% ou inferiores, reduz a chance de ser atacada por inimigos.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Ripostar",
+        "fullDesc": "Para cada Postura da Espada ativada, o Dano causado pela Postura da Espada aumenta em {{1}}%. Acumula até {{2}} vez(es).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Triunfante",
+        "fullDesc": "Após usar o ATQ Básico ou a Perícia, se houver inimigos no campo com Quebra de Fraqueza, a ação de Sushang é Avançada Adiante em {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

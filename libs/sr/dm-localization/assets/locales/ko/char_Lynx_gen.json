@@ -35,6 +35,27 @@
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "사전 탐측",
+        "fullDesc": "[생존 반응]을 보유한 목표가 피격되면 링스는 즉시 에너지를 {{1}}pt 회복한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "탐험 스킬",
+        "fullDesc": "제어류 디버프 상태 저항 확률이 {{1}}% 증가한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "극지 생존",
+        "fullDesc": "특성으로 발동한 지속 회복 효과를 {{1}}턴 연장한다",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

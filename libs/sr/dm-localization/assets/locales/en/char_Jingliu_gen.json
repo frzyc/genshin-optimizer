@@ -40,6 +40,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Deathrealm",
+        "fullDesc": "While in the Spectral Transmigration state, increases Effect RES by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Sword Champion",
+        "fullDesc": "After using Transcendent Flash, the next action will be Advanced Forward by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Frost Wraith",
+        "fullDesc": "While in the Spectral Transmigration state, increases DMG dealt by Ultimate by {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

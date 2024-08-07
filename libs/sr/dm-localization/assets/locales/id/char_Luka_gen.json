@@ -40,6 +40,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Kinetic Overload",
+        "fullDesc": "Saat melancarkan Skill, segera menghapus {{1}} efek Buff target musuh.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Cycle Braking",
+        "fullDesc": "Setiap 1 lapis \"Fighting Will\" yang diperoleh akan memulihkan ekstra {{1}} Energy.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Crush Fighting Will",
+        "fullDesc": "Saat melancarkan Enhanced Basic Attack, setiap 1 serangan dari \"Direct Punch\" memiliki {{1}}% peluang tetap untuk membuat Luka melancarkan 1 serangan tambahan. Efek ini tidak berlaku pada serangan tambahan yang dilancarkan dari efek ini.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

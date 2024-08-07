@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Jovialidade Nutrida",
+        "fullDesc": "Aumenta em {{1}}% a VEL de Tingyun por 1 rodada após usar a Perícia.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Subjugar de Joelhos",
+        "fullDesc": "Aumenta em {{1}}% o Dano do ATQ Básico.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Passagem Jubilante",
+        "fullDesc": "Tingyun regenera imediatamente {{1}} de Energia no início de sua rodada.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

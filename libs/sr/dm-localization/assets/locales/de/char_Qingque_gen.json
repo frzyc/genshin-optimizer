@@ -40,6 +40,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Um einen Stein kämpfen",
+        "fullDesc": "Stellt beim Einsatz der Fertigkeit 1 Fertigkeitspunkt wieder her. Dieser Effekt kann nur 1-mal pro Kampf ausgelöst werden.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Auf eine Farbe warten",
+        "fullDesc": "Die Fertigkeit erhöht den erhöhten SCH zusätzlich um {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Den Kong berauben",
+        "fullDesc": "Erhöht nach dem Einsatz des verstärkten Standardangriffs die GES für 1 Rd. um {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

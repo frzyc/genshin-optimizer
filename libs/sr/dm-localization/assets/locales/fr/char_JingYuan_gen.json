@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Choc de la bataille",
+        "fullDesc": "Si le nombre de frappes par action du Seigneur de la foudre est supérieur ou égal à {{1}} pour le prochain tour, ses DGT critiques augmentent de {{2}}% au prochain tour.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Savante providence",
+        "fullDesc": "Régénère immédiatement {{1}} points d'énergie en début de combat.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Maréchal de guerre",
+        "fullDesc": "Les chances de coup critique augmentent de {{1}}% pendant {{2}} tours après utilisation de la compétence.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

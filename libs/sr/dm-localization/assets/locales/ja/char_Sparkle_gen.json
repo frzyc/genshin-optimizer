@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#さいじき}歳時記{RUBY_E#}",
+        "fullDesc": "通常攻撃を行う時、EPを{{1}}回復する。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#じんぞう}人造{RUBY_E#}の{RUBY_B#はな}花{RUBY_E#}",
+        "fullDesc": "戦闘スキルの会心ダメージアップ効果の継続時間が、ターゲットの次のターンが回ってくるまで延長される。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#やそうきょく}夜想曲{RUBY_E#}",
+        "fullDesc": "味方全体の攻撃力+{{4}}%。パーティに量子属性キャラが1名/2名/3名いる時、さらに味方量子属性キャラの攻撃力+{{1}}%/{{2}}%/{{3}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

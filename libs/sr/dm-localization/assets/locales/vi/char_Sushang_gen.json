@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Xích Tử",
+        "fullDesc": "Nếu Phần Trăm HP hiện tại nhỏ hơn hoặc bằng {{1}}%, sẽ giảm xác suất bị kẻ địch tấn công.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Đẩy Lui Kẻ Thù",
+        "fullDesc": "Mỗi khi kích hoạt 1 lần Kiếm Thế, sát thương do Kiếm Thế gây ra tăng {{1}}%, hiệu ứng này tối đa cộng dồn {{2}} tầng.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Phá Địch",
+        "fullDesc": "Sau khi thi triển Tấn Công Thường hoặc Chiến Kỹ, nếu trong trận có kẻ địch ở trạng thái Phá Vỡ Điểm Yếu thì hành động của Sushang sẽ ưu tiên {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

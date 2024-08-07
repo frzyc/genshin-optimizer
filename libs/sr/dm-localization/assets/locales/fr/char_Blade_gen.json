@@ -40,6 +40,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Ad vitam æternam",
+        "fullDesc": "Lorsque les PV actuels de Blade sont inférieurs ou égaux à 50 %, les soins reçus augmentent de {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Morts sans fin",
+        "fullDesc": "Lorsque Blade touche un ennemi qui subit une Rupture de faiblesse avec Forêt de lames, il restaure {{1}}% de ses PV max + {{2}}.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Cyclone de destruction",
+        "fullDesc": "Augmente les DGT d'attaque de suivi du talent de {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

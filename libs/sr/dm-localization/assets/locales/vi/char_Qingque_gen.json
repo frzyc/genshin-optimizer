@@ -40,6 +40,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Tranh Bài",
+        "fullDesc": "Khi thi triển Chiến Kỹ, sẽ hồi 1 điểm Chiến Kỹ. Hiệu ứng này chỉ có thể kích hoạt 1 lần trong một trận đấu.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Đợi Thời Cơ",
+        "fullDesc": "Chiến Kỹ khiến hiệu ứng tăng sát thương do bản thân gây ra tăng thêm {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Bắt Bài",
+        "fullDesc": "Sau khi thi triển Tấn Công Thường Cường Hóa, tốc độ của Qingque tăng {{1}}%, duy trì 1 hiệp.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

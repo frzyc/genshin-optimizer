@@ -40,6 +40,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm suy yếu Sức Bền thuộc tính tương ứng của kẻ địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Uyển Chuyển",
+        "fullDesc": "Khi bắt đầu trận, March 7th sẽ Ưu Tiên Hành Động {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Hoạt Bát",
+        "fullDesc": "March 7th có thể làm giảm Sức Bền của mục tiêu địch có Điểm Yếu thuộc tính giống với Sư Phụ. Khi phá vỡ điểm yếu, sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu Số Ảo.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Sóng Xoáy",
+        "fullDesc": "Sau khi thi triển Tấn Công Thường Cường Hóa, khiến Sát Thương Bạo Kích của Sư Phụ tăng {{1}}%, Tấn Công Kích Phá tăng {{2}}%, duy trì {{3}} hiệp.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

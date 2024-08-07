@@ -45,6 +45,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Módulo α: Explosão Anti-Lag",
+        "fullDesc": "Durante a Combustão Completa, atacar inimigos que não têm Fraqueza contra Fogo também pode reduzir sua Tenacidade, com o efeito sendo equivalente a {{1}}% da Redução de Tenacidade original das habilidades.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Módulo β: Armadura Auto-Reativa",
+        "fullDesc": "Quando SAM está em Combustão Completa com um Efeito de Quebra que seja igual ou maior a {{1}}%/{{2}}%, atacar um inimigo-alvo afligido com Quebra de Fraqueza converterá a Redução de Tenacidade deste ataque em 1 instância de {{3}}%/{{4}}% Super Dano de Quebra.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Módulo γ: Sobrecarga Nuclear",
+        "fullDesc": "Para cada {{2}} ponto(s) do ATQ de SAM que exceda {{1}}, o Efeito de Quebra da unidade aumenta em {{3}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

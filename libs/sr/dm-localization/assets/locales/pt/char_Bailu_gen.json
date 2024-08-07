@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Analectos de Qihuang",
+        "fullDesc": "Quando Bailu concede uma cura a um aliado-alvo que ultrapasse os PV máximos normais dele, os PV máximos do alvo aumentam em {{1}}% por {{2}} rodada(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Linhas de Icor Vidyadhara",
+        "fullDesc": "O Revigoramento pode ser acionado mais {{1}} vez(es).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Bênção Aquática",
+        "fullDesc": "Personagens com Revigoramento recebem {{1}}% a menos de Dano.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

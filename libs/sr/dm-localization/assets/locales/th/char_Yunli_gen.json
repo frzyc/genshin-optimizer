@@ -35,6 +35,27 @@
         "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภท ที่สอดคล้องกับศัตรูเป้าหมาย",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Fiery Wheel",
+        "fullDesc": "หลังจากปล่อย \"Intuit: Slash\" ทุกๆ 1 ครั้ง \"Intuit: Slash\" ในครั้งต่อไปจะถูกแทนที่ด้วย \"Intuit: Cull\"",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Demon Quell",
+        "fullDesc": "เมื่ออยู่ภายใต้สถานะ \"ปัดป้อง\" จะต้านทานเอฟเฟกต์ Debuff ประเภทควบคุมที่ได้รับ และทำให้ DMG ที่ได้รับลดลง {{1}}%",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "True Sunder",
+        "fullDesc": "หลังจากปล่อยการโต้กลับ ATK ของ Yunli จะเพิ่มขึ้น {{1}}% เป็นเวลา 1 เทิร์น",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

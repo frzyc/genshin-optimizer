@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#かさい}華彩{RUBY_E#}のコロラトゥーラ",
+        "fullDesc": "戦闘開始時、自身の行動順が{{1}}%早まる。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "アドリブの{RUBY_B#そうしょくきょく}装飾曲{RUBY_E#}",
+        "fullDesc": "「協奏」状態の時、味方全体の追加攻撃ダメージの会心ダメージ+{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#はんぷく}反復{RUBY_E#}するピリオド",
+        "fullDesc": "戦闘スキルを発動する時、さらにEPを{{1}}回復する。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

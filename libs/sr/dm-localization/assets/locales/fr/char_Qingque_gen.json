@@ -40,6 +40,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Bataille de tuiles",
+        "fullDesc": "Récupère 1 point de compétence lorsque le personnage utilise sa compétence. Cet effet ne peut être déclenché qu'1 fois par combat.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "En attente d'une combinaison",
+        "fullDesc": "Utiliser la compétence accroît l'effet d'augmentation de DGT des attaques de {{1}}% supplémentaires.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Main gagnante",
+        "fullDesc": "La VIT de Qingque augmente de {{1}}% pendant 1 tour après avoir utilisé l'ATQ normale renforcée.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

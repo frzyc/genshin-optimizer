@@ -55,6 +55,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Star Veil",
+        "fullDesc": "Segera memulihkan {{1}} Energy saat pertempuran dimulai.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Aqua Reign",
+        "fullDesc": "Meningkatkan {{1}}% peluang untuk menahan Crowd Control Debuff.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Jolt Anew",
+        "fullDesc": "Meningkatkan {{1}}% CRIT DMG saat mengakibatkan DMG pada target musuh yang memiliki Imaginary Weakness.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

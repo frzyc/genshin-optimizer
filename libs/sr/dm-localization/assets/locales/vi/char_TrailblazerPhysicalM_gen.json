@@ -45,6 +45,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Sẵn Sàng",
+        "fullDesc": "Khi bắt đầu trận, sẽ hồi ngay {{1}} điểm Năng Lượng.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Sức Bền",
+        "fullDesc": "Mỗi tầng hiệu ứng Thiên Phú cũng khiến Phòng Thủ của Nhà Khai Phá tăng {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Ý Chí Chiến Đấu",
+        "fullDesc": "Khi thi triển Chiến Kỹ hoặc Tuyệt Kỹ \"Toàn Thắng - Trận Chiến Cuối Cùng\", sẽ tăng {{1}}% sát thương gây ra cho kẻ địch chỉ định.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {
