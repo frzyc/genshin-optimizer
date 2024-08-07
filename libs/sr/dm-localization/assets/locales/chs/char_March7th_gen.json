@@ -35,6 +35,27 @@
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "纯洁",
+        "fullDesc": "施放战技时，解除指定我方单体的1个负面效果。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "加护",
+        "fullDesc": "战技提供的护盾持续时间增加{{1}}回合。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "冰咒",
+        "fullDesc": "施放终结技时，冻结敌方目标的基础概率提高{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

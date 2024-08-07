@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của kẻ địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Bảo Vệ Tôi Khiêu Vũ",
+        "fullDesc": "Khi số lượng kẻ địch trong trận bằng 5 (hoặc trên 5)/4/3/2/1, Siêu Sát Thương Phá Vỡ do hiệu ứng Bạn Nhảy kích hoạt sẽ tăng {{1}}%/{{2}}%/{{3}}%/{{4}}%/{{5}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Cuốn Theo Dòng Chảy",
+        "fullDesc": "Khi thi triển Chiến Kỹ, điểm Giảm Sức Bền của sát thương lần đầu tiên sẽ tăng thêm {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Chiếc Mũ Nhà Hát",
+        "fullDesc": "Sau khi mục tiêu phe ta gây Phá Vỡ Điểm Yếu sẽ khiến kẻ địch Trì Hoãn Hành Động thêm {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

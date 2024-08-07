@@ -40,6 +40,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Ghost Load",
+        "fullDesc": "Meningkatkan CRIT Rate/CRIT DMG karakter ini. Peningkatan CRIT Rate/CRIT DMG adalah sebesar {{1}}%/{{3}}% dari Break Effect, peningkatannya maksimal hingga {{2}}%/{{4}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Above Snakes",
+        "fullDesc": "Saat Boothill berada dalam status \"Standoff\", DMG yang diterima Boothill dari target yang tidak berstatus \"Standoff\" berkurang {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Point Blank",
+        "fullDesc": "Saat memperoleh \"Pocket Trickshot\" ketika berada dalam status \"Standoff\", akan memulihkan {{1}} Energy. Efek ini akan tetap terpicu saat memperoleh \"Pocket Trickshot\" yang melebihi batas maksimal.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

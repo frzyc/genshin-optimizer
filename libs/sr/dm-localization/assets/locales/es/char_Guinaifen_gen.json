@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Zancos altos",
+        "fullDesc": "El ATQ básico tiene una probabilidad base del {{1}}% de afectar al enemigo con una Quemadura equivalente a la de la habilidad básica.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Aro afilado",
+        "fullDesc": "Al comenzar la batalla, la acción de Guinaifen se adelanta un {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Andar sobre cuchillos",
+        "fullDesc": "Inflige un {{1}}% más de daño a los enemigos afectados por Quemadura.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

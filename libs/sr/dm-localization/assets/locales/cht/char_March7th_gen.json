@@ -35,6 +35,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "純潔",
+        "fullDesc": "施放戰技時，解除指定我方單體的1個負面效果。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "加護",
+        "fullDesc": "戰技提供的護盾持續時間增加{{1}}回合。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "冰咒",
+        "fullDesc": "施放終結技時，凍結敵方目標的基礎機率提高{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

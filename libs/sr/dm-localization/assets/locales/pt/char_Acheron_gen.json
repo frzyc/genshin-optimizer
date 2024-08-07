@@ -55,6 +55,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Oni Vermelho",
+        "fullDesc": "No início da batalha, ganha imediatamente {{1}} ponto(s) de Sonho Retalhado e aplica {{1}} acúmulo(s) de Nó Rubro em um inimigo aleatório. Quando Sonho Retalhado alcançar seu limite máximo, para cada ponto de Sonho Retalhado que exceder o limite, ganha 1 acúmulo de Ascendência Quadrivalente. Permite que Ascendência Quadrivalente acumule até {{2}} vez(es).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "O Abismo",
+        "fullDesc": "Quando existirem 1 ou 2 personagens seguindo o Caminho da Inexistência na equipe além de Acheron, aumenta o Dano do ATQ Básico, da Perícia e da Perícia Suprema de Acheron em {{1}}% ou {{2}}% do Dano original respectivamente.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Núcleo Trovejante",
+        "fullDesc": "Quando a Lâmina Pluvial da Perícia Suprema atinge os inimigos-alvo com Nó Rubro, o Dano causado por Acheron aumenta em {{1}}%, acumulando até um máximo de {{2}} acúmulo(s) e durando por {{3}} rodada(s). Também causa Dano adicionalmente {{4}} vez(es) quando a Ressurreição Estígia é acionada. Cada golpe causa Dano de Raio igual a {{5}}% do ATQ de Acheron a um único inimigo-alvo aleatório e é considerado como Dano de Perícia Suprema.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

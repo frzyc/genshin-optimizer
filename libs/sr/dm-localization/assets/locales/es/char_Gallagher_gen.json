@@ -40,6 +40,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Brebaje innovador",
+        "fullDesc": "Aumenta su curación realizada en una cantidad equivalente al {{1}}% del efecto de Ruptura. La curación realizada puede aumentar un {{2}}% como máximo.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Fermentación natural",
+        "fullDesc": "Tras lanzar la habilidad definitiva, su acción se adelanta un 100%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "¡Salud!",
+        "fullDesc": "Cuando Gallagher usa Espuma desbordante para atacar a objetivos en el estado de Melopea, el efecto de regeneración de PV del talento de este ataque se aplica también a los demás aliados.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

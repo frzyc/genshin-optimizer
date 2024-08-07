@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Clairvoyant Loom",
+        "fullDesc": "Meningkatkan DMG yang diakibatkan karakter ini sebesar {{1}}% dari Break Effect karakter ini. DMG yang diakibatkan dapat meningkat hingga {{2}}% oleh efek ini.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Intrepid Rollerbearings",
+        "fullDesc": "Saat melancarkan Ultimate, jika Toughness target musuh saat ini lebih dari atau sama dengan {{1}}% Max Toughness dirinya, maka DMG yang diakibatkan Xueyi akan meningkat {{2}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Perspicacious Mainframe",
+        "fullDesc": "Xueyi akan mengakumulasi jumlah lapisan \"Karma\" yang melebihi batas maksimal jumlah lapisan \"Karma\". Maksimal mengakumulasi hingga {{1}} lapis. Setelah Talent Xueyi terpicu, akan memperoleh lapisan \"Karma\" sejumlah akumulasi lapisan \"Karma\" yang berlebih.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

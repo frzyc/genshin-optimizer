@@ -40,6 +40,27 @@
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "사경",
+        "fullDesc": "[전백(轉魄)] 상태일 때 효과 저항이 {{1}}% 증가한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "검술의 일인자",
+        "fullDesc": "[무결의 섬광] 발동 후 다음 행동 게이지가 {{1}}% 증가한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "서리 혼",
+        "fullDesc": "[전백(轉魄)] 상태일 때 필살기가 가하는 피해가 {{1}}% 증가한다",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Viscera's Disquiet",
+        "fullDesc": "Setelah karakter ini melancarkan Skill untuk menyerang musuh, jika musuh yang ditargetkan berstatus Wind Shear/Bleed/Burn/Shock, masing-masing dari status prasyarat tersebut yang ada pada target memiliki {{1}}% Peluang Dasar untuk membuat target memasuki ekstra 1 lapis \"Arcana\".",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Goblet's Dredges",
+        "fullDesc": "Saat target musuh memasuki pertempuran, memiliki {{1}}% Peluang Dasar untuk menambahkan 1 lapis \"Arcana\" padanya.\\nSetiap kali target musuh menerima 1 DoT dalam 1 kali serangan yang dilancarkan rekan tim, musuh tersebut memiliki {{1}}% Peluang Dasar untuk memasuki 1 lapis \"Arcana\", maksimal dapat memasuki {{2}} lapis dalam 1 kali serangan.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Candleflame's Portent",
+        "fullDesc": "Meningkatkan DMG yang diakibatkan diri sendiri, peningkatannya sebesar {{1}}% dari Effect Hit Rate, maksimal meningkat hingga {{2}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

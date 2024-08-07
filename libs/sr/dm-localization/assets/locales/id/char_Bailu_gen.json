@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Qihuang Analects",
+        "fullDesc": "Saat Bailu mengakibatkan pemulihan berlebihan pada rekan tim, akan meningkatkan {{1}}% Max HP target tersebut selama {{2}} giliran.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Vidyadhara Ichor Lines",
+        "fullDesc": "Pemicuan efek \"Invigoration\" bertambah {{1}} kali.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Aquatic Benediction",
+        "fullDesc": "Mengurangi {{1}}% DMG yang diterima karakter berefek \"Invigoration\".",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

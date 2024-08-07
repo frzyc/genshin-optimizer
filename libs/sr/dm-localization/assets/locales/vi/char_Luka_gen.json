@@ -40,6 +40,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Động Năng Quá Tải",
+        "fullDesc": "Khi thi triển Chiến Kỹ, sẽ giải trừ ngay {{1}} Hiệu Ứng Buff của kẻ địch.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Phanh Theo Chu Kỳ",
+        "fullDesc": "Mỗi khi nhận 1 tầng Ý Chí Chiến Đấu sẽ hồi thêm {{1}} điểm năng lượng.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Nghiền Nát Ý Chí",
+        "fullDesc": "Khi thi triển tấn công thường cường hóa, mỗi một đòn tấn công của Nắm Đấm Trực Diện đều có {{1}}% xác suất cố định khiến Luka thi triển thêm 1 đòn tấn công. Hiệu ứng này sẽ không có hiệu lực với tấn công thi triển thêm.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

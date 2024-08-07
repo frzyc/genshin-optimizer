@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Acharnement",
+        "fullDesc": "Il y a {{1}}% de chances de base d'augmenter les DGT subis par les cibles de {{2}}% pendant {{3}} tours lors de l'utilisation de l'ultime.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Jugement",
+        "fullDesc": "Régénère {{1}} points d'énergie supplémentaires lorsque le personnage utilise son ultime.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Châtiment",
+        "fullDesc": "Inflige {{1}}% de DGT supplémentaires aux ennemis qui subissent une Rupture de faiblesse.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

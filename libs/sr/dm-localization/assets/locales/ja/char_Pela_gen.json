@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#つうげき}痛撃{RUBY_E#}",
+        "fullDesc": "デバフ状態の敵に対して与ダメージ+{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#ひさく}秘策{RUBY_E#}",
+        "fullDesc": "ペラがフィールド上にいる時、味方全体の効果命中+{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#ついげきせんめつ}追撃殲滅{RUBY_E#}",
+        "fullDesc": "戦闘スキルを発動してバフを解除した時、次の攻撃の与ダメージ+{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

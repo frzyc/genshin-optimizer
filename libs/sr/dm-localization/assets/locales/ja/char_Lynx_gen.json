@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#じぜんちょうさ}事前調査{RUBY_E#}",
+        "fullDesc": "「サバイバル反応」を持つターゲットが攻撃を受けた後、リンクスはEPを{{1}}回復する。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#たんけん}探検{RUBY_E#}テクニック",
+        "fullDesc": "行動制限系デバフに抵抗する確率+{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "エクストリームサバイバル",
+        "fullDesc": "天賦による持続治癒効果の継続時間+{{1}}ターン。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

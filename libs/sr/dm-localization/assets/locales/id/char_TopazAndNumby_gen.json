@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Overdraft",
+        "fullDesc": "Saat Topaz melancarkan Basic Attack untuk mengakibatkan DMG, serangan tersebut akan dianggap sebagai Serangan Lanjutan.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Financial Turmoil",
+        "fullDesc": "Meningkatkan {{1}}% DMG yang diakibatkan Topaz dan Numby terhadap target musuh dengan Fire Weakness.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Stonks Market",
+        "fullDesc": "Setelah Numby melancarkan serangan saat berstatus \"Windfall Bonanza!\", Topaz akan memulihkan {{1}} Energy tambahan.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

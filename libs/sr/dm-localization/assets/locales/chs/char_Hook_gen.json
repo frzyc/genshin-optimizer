@@ -40,6 +40,27 @@
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "童真",
+        "fullDesc": "触发天赋时，回复等同于虎克生命上限{{1}}%的生命值。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "无邪",
+        "fullDesc": "抵抗控制类负面状态的概率提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "玩火",
+        "fullDesc": "施放终结技后，虎克的行动提前{{2}}%并额外恢复{{1}}点能量。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Bash",
+        "fullDesc": "Meningkatkan {{1}}% DMG yang diakibatkan pada target musuh yang terkena efek Debuff.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "The Secret Strategy",
+        "fullDesc": "Meningkatkan {{1}}% Effect Hit Rate seluruh rekan tim saat Pela berada di medan pertempuran.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Wipe Out",
+        "fullDesc": "Saat melancarkan Skill untuk menghilangkan Buff, DMG serangan Pela selanjutnya akan meningkat {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

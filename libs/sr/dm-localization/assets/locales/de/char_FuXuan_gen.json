@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und reduziert nach Kampfeintritt den Widerstand des gegnerischen Ziels des entsprechenden Typs.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Tai-Yi-Wahrsagung",
+        "fullDesc": "Ist die „Matrix der Voraussicht“ aktiv, stellt Fu Xuan beim Einsatz der Fertigkeit zusätzlich {{1}} Pkt. Energie wieder her.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Dun-Jia-Wahrsagung",
+        "fullDesc": "Beim Einsatz des Ultimates werden die LP aller anderen Verbündeten um {{1}}% der max. LP von Fu Xuan plus {{2}} wiederhergestellt.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Liu-Ren-Wahrsagung",
+        "fullDesc": "Wenn Gegner versuchen, Mengenkontrolle-Debuffs auf Verbündete anzuwenden, während die „Matrix der Voraussicht“ aktiv ist, widerstehen die Verbündeten allen Mengenkontrolle-Debuffs, die das gegnerische Ziel während der aktuellen Aktion anwendet. Dieser Effekt kann nur 1-mal ausgelöst werden. Nach erneuter Aktivierung der „Matrix der Voraussicht“ wird die Auslösungsanzahl dieses Effekts zurückgesetzt.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -40,6 +40,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Tile Battle",
+        "fullDesc": "Restores 1 Skill Point when using the Skill. This effect can only be triggered 1 time per battle.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Bide Time",
+        "fullDesc": "Using the Skill increases DMG Boost effect of attacks by an extra {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Winning Hand",
+        "fullDesc": "Qingque's SPD increases by {{1}}% for 1 turn after using the Enhanced Basic ATK.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

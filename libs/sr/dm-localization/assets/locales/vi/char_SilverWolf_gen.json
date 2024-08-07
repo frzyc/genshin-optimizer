@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Tạo",
+        "fullDesc": "Thời gian duy trì của \"Bug\" tăng {{1}} hiệp. Mỗi khi có điểm yếu của mục tiêu phe địch bị phá vỡ, Sói Bạc có {{2}}% xác suất cơ bản cài cho mục tiêu này 1 \"Bug\" ngẫu nhiên.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Truyền Thụ",
+        "fullDesc": "Thời gian duy trì của Điểm Yếu được thêm cho mục tiêu địch sẽ tăng {{1}} hiệp khi thi triển Chiến Kỹ.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Chú Thích",
+        "fullDesc": "Khi thi triển Chiến Kỹ, nếu số lượng Hiệu Ứng Xấu của kẻ địch nhiều hơn hoặc bằng {{1}}, thì Chiến Kỹ khiến hiệu ứng giảm Kháng Toàn Thuộc Tính của kẻ địch giảm thêm {{2}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

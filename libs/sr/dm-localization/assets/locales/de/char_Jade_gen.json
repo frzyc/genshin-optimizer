@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Invers-Rückkauf",
+        "fullDesc": "Wenn Gegner den Kampf betreten, erhält Jade {{2}} Stapelung „Verpfändung“. Zu Beginn der Runde eines Verbündeten im Status „Schuldeneintreiber“ erhält Jade zusätzlich {{1}} Stapelungen Verpfändung.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Sicherheitsticket",
+        "fullDesc": "Beim Kampfbeginn wird Jades Aktion um {{1}}% vorgezogen.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Vermögensverlust",
+        "fullDesc": "Jede Stapelung von „Verpfändung“ des Talents erhöht Jades ANG zusätzlich um {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

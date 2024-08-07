@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm suy yếu Sức Bền thuộc tính tương ứng của kẻ địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Bánh Xe Lửa",
+        "fullDesc": "Sau mỗi lần phát động Nhìn Thấu - Chém, thì Nhìn Thấu - Chém lần sau sẽ thay thế thành Nhìn Thấu - Diệt.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Khước Tà",
+        "fullDesc": "Trong trạng thái Chống Đỡ, kháng Hiệu Ứng Xấu dạng khống chế và giảm {{1}}% sát thương phải chịu.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Chân Cang",
+        "fullDesc": "Khi thi triển Phản Kích, tấn công của Yunli tăng {{1}}%, duy trì 1 hiệp.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#ごうれい}号令{RUBY_E#}",
+        "fullDesc": "通常攻撃の会心率が100%まで上がる。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#じんち}陣地{RUBY_E#}",
+        "fullDesc": "戦闘開始時、味方全体の防御力+{{2}}%、{{1}}ターン継続。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#ぐんぜい}軍勢{RUBY_E#}",
+        "fullDesc": "ブローニャがフィールド上にいる時、味方全体の与ダメージ+{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

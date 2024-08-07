@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Starr vor Scheu",
+        "fullDesc": "Zu Beginn des Kampfes erhält Huohuo für {{1}} Rd. „Gesegnete Heilung“.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Verfluchtes Schicksal",
+        "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Stressreaktion auf Horror",
+        "fullDesc": "Wenn das Talent ausgelöst wird, um Verbündete zu heilen, erhält Huohuo {{1}} Pkt. Energie zurück.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

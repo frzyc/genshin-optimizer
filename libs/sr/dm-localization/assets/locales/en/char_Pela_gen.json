@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Bash",
+        "fullDesc": "Deals {{1}}% more DMG to debuffed enemies.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "The Secret Strategy",
+        "fullDesc": "When Pela is on the battlefield, all allies' Effect Hit Rate increases by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Wipe Out",
+        "fullDesc": "Using Skill to remove buff(s) increases the DMG of the next attack by {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

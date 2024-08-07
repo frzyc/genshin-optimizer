@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Roda de Chamas",
+        "fullDesc": "Após cada utilização de \"Intuito: Corte\", o próximo \"Intuito: Corte\" será substituído por \"Intuito: Abatedora\".",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Amainar Demoníaco",
+        "fullDesc": "Enquanto está no estado de Apara, resiste a penalidades de Controle Negativo recebidas e reduz o Dano recebido em {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Verdadeira Cisão",
+        "fullDesc": "Ao utilizar um Contra-Ataque, aumenta o ATQ de Yunli em {{1}}%, durando por 1 rodada.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

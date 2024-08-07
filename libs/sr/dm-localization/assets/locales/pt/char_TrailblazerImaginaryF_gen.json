@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e quando a batalha começa, reduz a Tenacidade dele do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Dance Para Mim",
+        "fullDesc": "Quando o número de inimigos-alvo em campo for 5 (ou mais)/4/3/2/1, o Super Dano de Quebra acionado pelo efeito de Dançarino de Apoio aumenta em {{1}}%/{{2}}%/{{3}}%/{{4}}%/{{5}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Siga o Fluxo",
+        "fullDesc": "Ao usar a Perícia, aumenta a Redução de Tenacidade adicionalmente da primeira instância de Dano em {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Chapéu do Teatro",
+        "fullDesc": "Atrasa adicionalmente a ação do inimigo-alvo em {{1}}% quando aliados causam Quebra de Fraqueza.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

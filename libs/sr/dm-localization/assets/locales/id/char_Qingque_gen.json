@@ -40,6 +40,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Tile Battle",
+        "fullDesc": "Memulihkan 1 Poin Skill saat melancarkan Skill. Efek ini hanya dapat dipicu sekali dalam 1 pertempuran.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Bide Time",
+        "fullDesc": "Efek peningkatan DMG dari Skill Qingque meningkat {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Robbing the Kong",
+        "fullDesc": "Meningkatkan {{1}}% SPD Qingque selama 1 giliran setelah melancarkan Enhanced Basic Attack.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

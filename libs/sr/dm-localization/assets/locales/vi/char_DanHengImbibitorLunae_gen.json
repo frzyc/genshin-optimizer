@@ -55,6 +55,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Phục Thần",
+        "fullDesc": "Khi bắt đầu trận, sẽ hồi ngay {{1}} điểm Năng Lượng.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Tu Vũ",
+        "fullDesc": "Tăng {{1}}% xác suất Kháng Hiệu Ứng Xấu dạng Khống Chế.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Khởi Trập",
+        "fullDesc": "Khi gây sát thương cho kẻ địch có Điểm Yếu Số Ảo, Sát Thương Bạo Kích sẽ tăng {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

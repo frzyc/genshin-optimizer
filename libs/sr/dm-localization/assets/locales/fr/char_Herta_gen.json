@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Efficacité",
+        "fullDesc": "L'effet d'augmentation des DGT actif lors de l'utilisation de la compétence est majoré de {{1}}% supplémentaires.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Marionnette",
+        "fullDesc": "Les chances de résister aux malus de contrôle augmentent de {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Glaçage",
+        "fullDesc": "Inflige {{1}}% de DGT supplémentaires aux ennemis gelés lors de l'utilisation de l'ultime.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

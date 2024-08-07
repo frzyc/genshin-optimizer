@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Almanac",
+        "fullDesc": "When using Basic ATK, additionally regenerates {{1}} Energy.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Artificial Flower",
+        "fullDesc": "The CRIT DMG Boost effect provided by the Skill will be extended until the start of the target's next turn.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Nocturne",
+        "fullDesc": "Increases all allies' ATK by {{4}}%. When there are 1/2/3 Quantum-Type allies in the team, additionally increases Quantum-Type allies' ATK by {{1}}%/{{2}}%/{{3}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

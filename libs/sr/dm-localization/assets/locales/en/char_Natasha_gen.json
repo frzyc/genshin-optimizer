@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Soothe",
+        "fullDesc": "The Skill removes {{1}} debuff(s) from a target ally.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Healer",
+        "fullDesc": "Natasha's Outgoing Healing increases by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Recuperation",
+        "fullDesc": "Increases the duration of Skill's continuous healing effect for {{1}} turn(s).",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

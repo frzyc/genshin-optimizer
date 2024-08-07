@@ -35,6 +35,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "緣竿",
+        "fullDesc": "普通攻擊有{{1}}%的基礎機率使敵方目標陷入與戰技相同的灼燒狀態。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "投狹",
+        "fullDesc": "戰鬥開始時，桂乃芬的行動提前{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "逾鋒",
+        "fullDesc": "對陷入灼燒狀態的敵方目標造成的傷害提高{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

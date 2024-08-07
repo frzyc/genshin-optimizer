@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Sparks",
+        "fullDesc": "Asta's Basic ATK has a {{1}}% base chance to Burn an enemy target for {{2}} turn(s).\\nBurned enemies take Fire DoT equal to {{3}}% of DMG dealt by Asta's Basic ATK at the start of each turn.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Ignite",
+        "fullDesc": "When Asta is on the field, all allies' Fire DMG increases by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Constellation",
+        "fullDesc": "Asta's DEF increases by {{1}}% for every current Charging stack she possesses.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

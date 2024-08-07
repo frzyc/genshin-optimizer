@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Chama Estelar",
+        "fullDesc": "Depois de usar um ataque, tem {{1}}% de chance-base de infligir Queimadura a inimigos por {{2}} rodada(s).\\nQuando afligidos por Queimadura, os inimigos recebem Dano de Fogo Contínuo igual a {{3}}% do ATQ de Himeko no início de cada rodada.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Magma",
+        "fullDesc": "A Perícia causa {{1}}% a mais de Dano a inimigos atualmente sob efeito de Queimadura.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Marco",
+        "fullDesc": "Quando os PV estiverem em {{1}}% ou mais, a Chance de CRIT aumenta em {{2}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

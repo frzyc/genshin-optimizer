@@ -45,6 +45,27 @@
         "fullDesc": "Tấn công kẻ địch, vào chiến đấu và làm suy yếu Sức Bền thuộc tính tương ứng của kẻ địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Mô Đun α: Anti-lag Bùng Lửa",
+        "fullDesc": "Ở trạng thái Thiêu Đốt Hoàn Toàn, tấn công kẻ địch không có Điểm Yếu Hỏa cũng có thể làm giảm Sức Bền, hiệu ứng bằng {{1}}% Giảm Sức Bền của kỹ năng vốn có.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Mô Đun β: Chiến Giáp Tự Phản Ứng",
+        "fullDesc": "Ở trạng thái Thiêu Đốt Hoàn Toàn, khi Tấn Công Kích Phá của Chiến Giáp SAM lớn hơn hoặc bằng {{1}}%/{{2}}%, tấn công kẻ địch trong trạng thái Phá Vỡ Điểm Yếu, sẽ khiến Giảm Sức Bền của lần tấn công này chuyển hóa thành 1 lần {{3}}%/{{4}}% Siêu Sát Thương Phá Vỡ.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Mô Đun γ: Lõi Quá Tải",
+        "fullDesc": "Nếu Tấn Công của Chiến Giáp SAM cao hơn {{1}} điểm, mỗi {{2}} điểm Tấn Công vượt quá sẽ khiến Tấn Công Kích Phá của bản thân tăng {{3}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

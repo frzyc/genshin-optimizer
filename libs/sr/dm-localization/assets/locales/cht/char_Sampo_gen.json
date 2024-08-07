@@ -35,6 +35,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "圈套",
+        "fullDesc": "天賦使敵方陷入風化狀態的持續時間延長{{1}}回合。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "後手",
+        "fullDesc": "施放終結技時，額外回復{{1}}點能量。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "加料",
+        "fullDesc": "風化狀態下的敵方目標對桑博造成的傷害降低{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

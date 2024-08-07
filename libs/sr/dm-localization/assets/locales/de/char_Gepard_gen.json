@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Integrität",
+        "fullDesc": "Erhöht die Chance, dass Gepard angegriffen wird.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Kommandant",
+        "fullDesc": "Stellt Gepards Energie auf 100 % wieder her, wenn „Unnachgiebiger Wille“ ausgelöst wird.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Kampfgeist",
+        "fullDesc": "Erhöht Gepards ANG um {{1}}% seiner aktuellen VTD. Dieser Effekt wird zu Beginn jeder Runde aktualisiert.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Taiyi, o Macrocósmico",
+        "fullDesc": "Quando a Matriz de Presciência está ativa, Fu Xuan recuperará {{1}} de Energia extra ao usar sua Perícia.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Dunjia, o Metamístico",
+        "fullDesc": "Quando a Perícia Suprema de Fu Xuan é utilizada, cura todos os aliados em uma quantidade igual a {{1}}% dos PV máximos de Fu Xuan + {{2}}.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Liuren, o Sexagenário",
+        "fullDesc": "Se um inimigo-alvo aplicar penalidades de Controle Negativo a aliados enquanto a Matriz de Presciência estiver ativa, todos os aliados resistirão a todas as penalidades de Controle Negativo aplicadas pelo inimigo-alvo durante a ação atual. Este efeito só pode ser acionado uma única vez. Quando a Matriz de Presciência é reativada, o número de vezes que este efeito pode ser ativado será redefinido.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

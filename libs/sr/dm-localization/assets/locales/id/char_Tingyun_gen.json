@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Nourished Joviality",
+        "fullDesc": "Saat melancarkan Skill, meningkatkan {{1}}% SPD Tingyun selama 1 giliran.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Knell Subdual",
+        "fullDesc": "Meningkatkan {{1}}% DMG yang diakibatkan Basic Attack.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Jubilant Passage",
+        "fullDesc": "Segera memulihkan {{1}} Energy Tingyun saat gilirannya dimulai.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

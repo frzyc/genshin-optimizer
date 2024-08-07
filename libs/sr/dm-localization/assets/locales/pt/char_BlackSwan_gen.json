@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Inquietação das Vísceras",
+        "fullDesc": "Após usar a Perícia para atacar um inimigo afetado por Cisalhamento de Vento, Sangramento, Queimadura e Choque, cada uma dessas penalidades possui uma chance-base de {{1}}% de infligir 1 acúmulo extra de Arcana.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Dragas do Cálice",
+        "fullDesc": "Quando um inimigo-alvo entra em batalha, existe uma chance-base de {{1}}% dele ser afligido com 1 acúmulo de Arcana.\\nCada vez que um inimigo-alvo recebe Dano Contínuo durante um ataque único de um aliado, há uma chance-base de {{1}}% dele ser afligido com 1 acúmulo de Arcana. O número máximo de acúmulos que podem ser infligidos durante 1 único ataque é {{2}}.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Presságio da Chama da Vela",
+        "fullDesc": "Aumenta o Dano desta unidade em uma quantidade igual a {{1}}% da Taxa de Acerto de Efeito, até um aumento máximo de Dano de {{2}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

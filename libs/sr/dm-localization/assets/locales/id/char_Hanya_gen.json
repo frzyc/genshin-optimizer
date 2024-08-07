@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Scrivener",
+        "fullDesc": "Meningkatkan ATK rekan tim yang memicu efek pemulihan Poin Skill \"Burden\" sebesar {{1}}% selama {{2}} giliran.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Netherworld",
+        "fullDesc": "Saat target musuh dengan \"Burden\" dikalahkan, jika jumlah terpicunya efek pemulihan Poin Skill dari \"Burden\" kurang dari atau sama dengan {{1}}, maka akan memulihkan {{2}} Poin Skill.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Reanimated",
+        "fullDesc": "Saat efek pemulihan Poin Skill \"Burden\" terpicu, memulihkan {{1}} Energy karakter ini.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

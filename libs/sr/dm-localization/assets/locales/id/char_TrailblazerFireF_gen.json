@@ -40,6 +40,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "The Strong Defend the Weak",
+        "fullDesc": "Setelah melancarkan Skill, mengurangi {{2}}% DMG yang diterima seluruh rekan tim selama {{3}} giliran.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Unwavering Gallantry",
+        "fullDesc": "Setelah melancarkan Enhanced Basic Attack, HP Trailblazer akan dipulihkan sebesar {{1}}% Max HP-nya.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Action Beats Overthinking",
+        "fullDesc": "Jika Trailblazer dilindungi Shield pada saat gilirannya dimulai, meningkatkan {{2}}% ATK dan memulihkan {{1}} Energy sampai aksinya berakhir.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

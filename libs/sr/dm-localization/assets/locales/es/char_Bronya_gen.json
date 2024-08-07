@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Orden",
+        "fullDesc": "La Prob. CRIT del ATQ básico aumenta hasta el 100%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Campo de batalla",
+        "fullDesc": "Al comenzar la batalla, la DEF de todos los aliados aumenta en un {{2}}% durante {{1}} turnos.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Poder militar",
+        "fullDesc": "Cuando Bronya está en la batalla, el daño que infligen todos los aliados aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

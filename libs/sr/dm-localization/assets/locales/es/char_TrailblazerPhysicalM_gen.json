@@ -45,6 +45,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Ímpetu de batalla",
+        "fullDesc": "Recupera {{1}} pts. de energía al comenzar la batalla.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Perseverancia",
+        "fullDesc": "Cada acumulación del talento aumenta la DEF {F#de la}{M#del} Trazacaminos en un {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Voluntad luchadora",
+        "fullDesc": "Al usar la habilidad básica o Victoria total: Carrera final de la habilidad definitiva, inflige un {{1}}% más de daño a los objetivos.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

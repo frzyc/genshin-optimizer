@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#こうりつ}効率{RUBY_E#}",
+        "fullDesc": "戦闘スキルを発動した時、さらに与ダメージ+{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#にんぎょう}人形{RUBY_E#}",
+        "fullDesc": "行動制限系デバフに抵抗する確率+{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#ひょうけつ}氷結{RUBY_E#}",
+        "fullDesc": "必殺技を発動した時、凍結状態の敵に対する与ダメージ+{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

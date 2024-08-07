@@ -35,6 +35,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "提前勘測",
+        "fullDesc": "當持有【求生反應】的目標受到攻擊後，玲可立即恢復{{1}}點能量。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "探險技術",
+        "fullDesc": "抵抗控制類負面狀態的機率提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "極境求生",
+        "fullDesc": "天賦產生的持續回復效果延長{{1}}回合。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

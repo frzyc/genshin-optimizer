@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Schlägerei",
+        "fullDesc": "Erhöht den SCH an Gegnern mit Debuff um {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Geheimstrategie",
+        "fullDesc": "Erhöht die Effekt-Trefferrate aller Verbündeten um {{1}}%, wenn Pela mitkämpft.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Auslöschung",
+        "fullDesc": "Erhöht den SCH durch den nächsten Angriff um {{1}}%, wenn beim Einsatz der Fertigkeit ein Buff entfernt wird.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Taiyi, the Macrocosmic",
+        "fullDesc": "Saat \"Matrix of Prescience\" aktif, Fu Xuan akan memulihkan {{1}} Energy tambahan saat dirinya melancarkan Skill.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Dunjia, the Metamystic",
+        "fullDesc": "Saat Fu Xuan melancarkan Ultimate, seluruh rekan tim selain dirinya akan memulihkan HP sebesar {{1}}% Max HP Fu Xuan + {{2}}.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Liuren, the Sexagenary",
+        "fullDesc": "Saat \"Matrix of Prescience\" aktif, jika target musuh menambahkan status Crowd Control Debuff pada rekan tim, maka seluruh rekan tim akan menahan semua status Crowd Control Debuff yang diberikan oleh target musuh pada aksi kali ini. Efek ini dapat dipicu 1 kali. Jumlah batas terpicu akan di-reset setelah \"Matrix of Prescience\" diaktifkan ulang.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

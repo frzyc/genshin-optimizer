@@ -40,6 +40,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm sức bền thuộc tính tương ứng của kẻ địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Thành Kính",
+        "fullDesc": "Khi bắt đầu hiệp, nhận ngay {{1}} tầng \"Nâng Cấp\".",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Khảng Khái",
+        "fullDesc": "Khi kẻ địch vào chiến đấu, bản thân hồi ngay {{1}} điểm Năng Lượng.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Dũng Khí",
+        "fullDesc": "Tăng {{2}}% sát thương gây ra cho kẻ địch có Phần Trăm HP hiện tại nhỏ hơn hoặc bằng {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

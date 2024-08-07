@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Quy Nạp",
+        "fullDesc": "Khi thi triển Chiến Kỹ, mỗi khi mục tiêu có 1 Hiệu Ứng Xấu, sẽ tăng {{1}}% Tỷ Lệ Bạo Kích, tăng {{2}}% Sát Thương Bạo Kích của Dr. Ratio, hiệu ứng này tối đa cộng dồn {{3}} tầng.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Diễn Giải",
+        "fullDesc": "Sau khi thi triển Chiến Kỹ tấn công kẻ địch, có {{1}}% xác suất cơ bản giảm {{2}}% Kháng Hiệu Ứng của kẻ địch bị tấn công, duy trì {{3}} hiệp.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Suy Luận",
+        "fullDesc": "Khi gây sát thương, nếu mục tiêu có từ {{1}} Hiệu Ứng Xấu trở lên, thì mỗi một Hiệu Ứng Xấu của mục tiêu sẽ tăng {{2}}% sát thương Dr. Ratio gây ra cho mục tiêu đó, tối đa tăng {{3}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

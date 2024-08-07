@@ -40,6 +40,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Vita Infinita",
+        "fullDesc": "Saat persentase HP Blade saat ini kurang dari atau sama dengan 50% Max HP-nya, Pemulihan HP yang diterimanya meningkat {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Neverending Deaths",
+        "fullDesc": "Setelah melancarkan \"Forest of Sword\", jika serangan mengenai target musuh yang berstatus Weakness Break, maka Blade akan memulihkan HP-nya sebesar {{1}}% Max HP dirinya + {{2}}.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Cyclone of Destruction",
+        "fullDesc": "DMG Serangan Lanjutan yang dilancarkan Talent meningkat {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

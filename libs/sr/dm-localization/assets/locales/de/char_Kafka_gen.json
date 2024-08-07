@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Folter",
+        "fullDesc": "Beim Einsatz des Ultimates erleiden Gegner sofort SCH basierend auf allen aktuellen DoT-Debuffs zusätzlich zum SCH durch den Status Schock.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Plünderung",
+        "fullDesc": "Wird ein geschockter Gegner besiegt, erhält Kafka zusätzlich {{1}} Pkt. Energie zurück.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Dornen",
+        "fullDesc": "Erhöht die Grundchance des Status Schock durch Ultimate, Technik und Folgeangriffe des Talents um {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

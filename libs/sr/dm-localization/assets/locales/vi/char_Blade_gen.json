@@ -40,6 +40,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Tuổi Thọ Vô Tận",
+        "fullDesc": "Khi Phần Trăm HP hiện tại của Blade nhỏ hơn hoặc bằng 50% Giới Hạn HP, lượng hồi phục khi được trị liệu tăng {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Cái Chết Không Hồi Kết",
+        "fullDesc": "Sau khi thi triển Rừng Kiếm, nếu đánh trúng kẻ địch ở trạng thái Phá Vỡ Điểm Yếu, Blade sẽ hồi HP bằng {{1}}% Giới Hạn HP của bản thân +{{2}}",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Thảm Họa Huỷ Diệt",
+        "fullDesc": "Tăng {{1}}% sát thương Đòn Đánh Theo Sau do Thiên Phú thi triển.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -55,6 +55,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của kẻ địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Quỷ Đỏ",
+        "fullDesc": "Khi bắt đầu chiến đấu sẽ nhận ngay {{1}} điểm Mộng Tàn và gắn cho 1 kẻ địch ngẫu nhiên {{1}} tầng Nút Thắt Đỏ. Khi Mộng Tàn đạt giới hạn, cứ mỗi 1 điểm Mộng Tàn vượt mức sẽ nhận 1 tầng Tứ Tướng Đoạn Ngã, khiến Tứ Tướng Đoạn Ngã tối đa có thể cộng dồn đến {{2}} tầng.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Vực Sâu",
+        "fullDesc": "Khi trong đội phe ta có 1 hoặc 2 nhân vật Vận Mệnh \"Hư Vô\" ngoại trừ Acheron, sẽ tăng sát thương gây ra bởi Tấn Công Thường, Chiến Kỹ, Tuyệt Kỹ của Acheron bằng {{1}}% hoặc {{2}}% sát thương ban đầu.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Trái Tim Sấm",
+        "fullDesc": "Khi \"Lưỡi Chém Mưa\" của Tuyệt Kỹ đánh trúng mục tiêu phe địch có \"Nút Thắt Đỏ\", sẽ khiến sát thương Acheron gây ra tăng {{1}}%, hiệu ứng này tối đa cộng dồn {{2}} tầng, duy trì {{3}} hiệp, đồng thời khi phát động Hoàng Tuyền Vượt Kiếp sẽ gây thêm {{4}} lần sát thương, mỗi lần sát thương gây cho kẻ địch ngẫu nhiên Sát Thương Lôi bằng {{5}}% Tấn Công của Acheron, sát thương này được xem là Sát Thương Tuyệt Kỹ.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

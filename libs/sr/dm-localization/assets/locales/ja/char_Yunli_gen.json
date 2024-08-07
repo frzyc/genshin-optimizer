@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#えんりん}炎輪{RUBY_E#}",
+        "fullDesc": "「看破・斬」を1回発動した後、次の「看破・斬」は「看破・滅」に変わる。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#きゃくじゃ}却邪{RUBY_E#}",
+        "fullDesc": "「構え」状態の時、行動制限系デバフに抵抗し、受けるダメージ-{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#しんこう}真鋼{RUBY_E#}",
+        "fullDesc": "カウンターを発動する時、雲璃の攻撃力+{{1}}%、1ターン継続。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

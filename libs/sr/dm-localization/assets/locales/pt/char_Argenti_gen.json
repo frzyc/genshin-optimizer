@@ -40,6 +40,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Piedade",
+        "fullDesc": "No início de uma rodada, ganha imediatamente {{1}} acúmulo(s) de Apoteose.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Generosidade",
+        "fullDesc": "Quando inimigos-alvo entram na batalha, regenera {{1}} de Energia imediatamente para si.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Coragem",
+        "fullDesc": "Causa {{2}}% de Dano extra a inimigos cuja porcentagem de PV for igual ou menor que {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

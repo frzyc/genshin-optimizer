@@ -40,6 +40,27 @@
         "fullDesc": "敵を攻撃、戦闘突入後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#むじんけいじゅ}無尽形寿{RUBY_E#}",
+        "fullDesc": "刃の残りHPが50%以下の時、治癒を受けた時の回復量+{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#ひゃくしたいにん}百死耐忍{RUBY_E#}",
+        "fullDesc": "「無間剣樹」を発動した後、弱点撃破状態の敵に命中した場合、刃は自身の最大HP{{1}}%+{{2}}のHPを回復する。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#えこうめつぼう}壊劫滅亡{RUBY_E#}",
+        "fullDesc": "天賦による追加攻撃ダメージ+{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

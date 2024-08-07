@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Sternenfeuer",
+        "fullDesc": "Nach dem Einsatz eines Angriffs besteht eine Grundchance von {{1}}%, bei den Gegnern für {{2}} Rd. Brennen zu verursachen.\\nGegner im Status Brennen erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von {{3}}% von Himekos ANG.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Magma",
+        "fullDesc": "Erhöht den zugefügten SCH an brennenden Gegnern durch Fertigkeit um {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Norm",
+        "fullDesc": "Liegt der LP-Prozentsatz bei {{1}}% oder höher, steigt die KRIT-Rate um {{2}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

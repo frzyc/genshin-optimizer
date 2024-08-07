@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Geração",
+        "fullDesc": "A duração do Erro é estendida por {{1}} rodada(s). Sempre que um inimigo é afligido com Quebra de Fraqueza, Loba Prateada tem {{2}}% de chance-base de implantar um Erro aleatório ao inimigo.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Injeção",
+        "fullDesc": "A duração da Fraqueza implantada pela Perícia da Loba Prateada aumenta em {{1}} rodada(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Comentário Adicional",
+        "fullDesc": "Se tiver {{1}} ou mais penalidades afetando o inimigo quando a Perícia for utilizada, a Perícia diminui a RES a Todos os Tipos do inimigo em um adicional de {{2}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

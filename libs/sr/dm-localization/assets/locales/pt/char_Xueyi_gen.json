@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Tear Clarividente",
+        "fullDesc": "Aumenta o Dano causado por esta unidade em uma quantidade igual a {{1}}% do Efeito de Quebra, até um máximo de {{2}}% de aumento de Dano.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Rolamentos Intrépidos",
+        "fullDesc": "Se a Tenacidade do inimigo-alvo for igual ou maior que {{1}}% da sua Tenacidade máxima, causa {{2}}% a mais de Dano ao usar a Perícia Suprema.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Mainframe Perspicaz",
+        "fullDesc": "Xueyi irá manter os registros do número de acúmulos de Carma que excederem o limite máximo de acúmulos, até {{1}} acúmulos na contagem. Após o Talento de Xueyi ser acionado, ela ganhará um número de acúmulos de Carma correspondente ao número de acúmulos registrados.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

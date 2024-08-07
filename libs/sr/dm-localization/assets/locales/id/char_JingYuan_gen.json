@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Battalia Crush",
+        "fullDesc": "Jika Hits Per Action milik Lightning-Lord pada giliran berikutnya lebih dari atau sama dengan {{1}}, maka CRIT DMG-nya pada giliran berikutnya akan meningkat {{2}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Savant Providence",
+        "fullDesc": "Segera memulihkan {{1}} Energy saat pertempuran dimulai.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "War Marshal",
+        "fullDesc": "Setelah melancarkan Skill, CRIT Rate meningkat sebesar {{1}}% selama {{2}} giliran.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

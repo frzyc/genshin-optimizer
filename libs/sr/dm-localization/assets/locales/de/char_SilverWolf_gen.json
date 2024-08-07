@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Generieren",
+        "fullDesc": "Verlängert die Dauer von „Fehler“ um {{1}} Rd. Jedes Mal, wenn ein Gegner Schwächebruch erleidet, hat Silberwolf eine Grundchance von {{2}}%, dem Ziel einen zufälligen „Fehler“ zu implantieren.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Injizieren",
+        "fullDesc": "Verlängert die Dauer der durch Silberwolfs Fertigkeit hinzugefügten Schwäche um {{1}} Rd.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Annotation",
+        "fullDesc": "Hat der Gegner beim Einsatz der Fertigkeit {{1}} oder mehr Debuffs, wird der WDS aller Typen des Gegners zusätzlich um {{2}}% reduziert.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

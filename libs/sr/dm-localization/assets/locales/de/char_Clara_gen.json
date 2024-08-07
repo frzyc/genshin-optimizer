@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Teil der Familie",
+        "fullDesc": "Wenn Clara angegriffen wird, besteht eine feste Chance von {{1}}%, einen Debuff zu entfernen.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Unter Schutz",
+        "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Rache",
+        "fullDesc": "Erhöht den durch Svarogs Konter verursachten SCH um {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

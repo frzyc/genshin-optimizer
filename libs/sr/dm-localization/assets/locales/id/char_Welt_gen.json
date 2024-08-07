@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Retribution",
+        "fullDesc": "Saat melancarkan Ultimate, ada {{1}}% peluang dasar untuk meningkatkan {{2}}% DMG yang diterima target selama {{3}} giliran.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Judgment",
+        "fullDesc": "Memulihkan {{1}} Energy tambahan saat melancarkan Ultimate.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Punishment",
+        "fullDesc": "Meningkatkan {{1}}% DMG pada target musuh yang terkena Weakness Break.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Summation",
+        "fullDesc": "When Dr. Ratio uses his Skill, for every debuff on the target, his CRIT Rate increases by {{1}}% and CRIT DMG by {{2}}%. This effect can stack up to {{3}} time(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Inference",
+        "fullDesc": "When Skill is used to attack an enemy target, there is a {{1}}% base chance to reduce the attacked target's Effect RES by {{2}}% for {{3}} turn(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Deduction",
+        "fullDesc": "When dealing DMG to a target that has {{1}} or more debuff(s), for each debuff the target has, the DMG dealt by Dr. Ratio to this target increases by {{2}}%, up to a maximum increase of {{3}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

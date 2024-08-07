@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Coloratura Cadenza",
+        "fullDesc": "When the battle begins, this character's action is Advanced Forward by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Impromptu Flourish",
+        "fullDesc": "While the Concerto state is active, the CRIT DMG dealt when all allies launch follow-up attacks increases by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Sequential Passage",
+        "fullDesc": "When using Skill, additionally regenerates {{1}} Energy.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

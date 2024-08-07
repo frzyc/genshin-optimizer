@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Toma de registros",
+        "fullDesc": "Aumenta el ATQ de los aliados que activan el efecto de recuperación de pts. de habilidad básica de Lastre en un {{1}}% durante {{2}} turno.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Inframundo",
+        "fullDesc": "Al derrotar a un enemigo con Lastre, si el recuento de activaciones de recuperación de pts. de habilidad básica de Lastre es {{1}} o menos, se recupera adicionalmente {{2}} pt. de habilidad básica.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Reanimación",
+        "fullDesc": "Cuando se activa el efecto de recuperación de pts. de habilidad básica de Lastre, Hanya regenera {{1}} pts. de energía.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

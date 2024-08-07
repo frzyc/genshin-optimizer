@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Trap",
+        "fullDesc": "Memperpanjang durasi status Wind Shear yang diberikan Talent sebanyak {{1}} giliran.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Defensive Position",
+        "fullDesc": "Memulihkan {{1}} Energy tambahan saat melancarkan Ultimate.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Spice Up",
+        "fullDesc": "Mengurangi {{1}}% DMG yang diakibatkan target musuh berstatus Wind Shear pada Sampo.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Accord de rachat",
+        "fullDesc": "Jade obtient {{2}} cumul de Bien hypothéqué lorsqu'une cible ennemie entre en combat. Jade obtient {{1}} cumuls de Bien hypothéqué supplémentaires au début du tour de l'Agent de recouvrement de dettes.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Dépôt de garantie",
+        "fullDesc": "L'action de Jade est avancée de {{1}}% en début de combat.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Gage d'exception",
+        "fullDesc": "Chaque cumul de l'effet Bien hypothéqué obtenu via le talent augmente l'ATQ de Jade de {{1}}% supplémentaires.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Recompra inversa",
+        "fullDesc": "Cuando los enemigos entran en combate, Jade obtiene {{2}} acumulación de Prenda. Cuando el personaje en el estado de Cobrador de deudas comienza su turno, Jade obtiene {{1}} acumulaciones adicionales de Prenda.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Boleto de garantía",
+        "fullDesc": "Al comenzar la batalla, la acción de Jade se adelanta un {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Confiscación de bienes",
+        "fullDesc": "Cada acumulación de Prenda del talento aumenta el ATQ de Jade en un {{1}}% adicional.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

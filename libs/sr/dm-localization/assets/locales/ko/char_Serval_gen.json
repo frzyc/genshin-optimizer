@@ -35,6 +35,27 @@
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "로큰롤",
+        "fullDesc": "전투 스킬 발동 시 피격된 적이 감전 상태에 빠질 기본 확률이 {{1}}% 증가한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "전자음",
+        "fullDesc": "전투 시작 시 즉시 에너지를 {{1}}pt 회복한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "열광",
+        "fullDesc": "적 처치 후 공격력이 {{1}}% 증가한다. 지속 시간: {{2}}턴",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

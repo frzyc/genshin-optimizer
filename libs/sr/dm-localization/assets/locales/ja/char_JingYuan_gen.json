@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#はじん}破陣{RUBY_E#}",
+        "fullDesc": "「神君」の次のターンの攻撃段数が{{1}}以上の場合、神君の次のターンの会心ダメージ+{{2}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#せんけん}先見{RUBY_E#}",
+        "fullDesc": "戦闘開始時、EPを{{1}}回復する。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#けんしょう}遣将{RUBY_E#}",
+        "fullDesc": "戦闘スキルを発動した後、会心率+{{1}}%、{{2}}ターン継続。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

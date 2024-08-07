@@ -40,6 +40,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Paisaje infernal",
+        "fullDesc": "En el estado Transmigración espectral, la RES a efecto aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Maestra de espadas",
+        "fullDesc": "Tras usar Destello trascendental, la siguiente acción se adelanta un {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Espectro gélido",
+        "fullDesc": "En el estado Transmigración espectral, el daño que inflige la habilidad definitiva aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

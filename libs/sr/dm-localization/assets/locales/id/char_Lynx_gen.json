@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Advance Surveying",
+        "fullDesc": "Saat target berstatus \"Survival Response\" terkena serangan, Lynx akan segera memulihkan {{1}} Energy.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Exploration Techniques",
+        "fullDesc": "Meningkatkan {{1}}% peluang untuk menahan Crowd Control Debuff.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Survival in the Extreme",
+        "fullDesc": "Efek pemulihan berkelanjutan dari Talent diperpanjang {{1}} giliran.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

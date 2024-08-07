@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Respiração Inerte",
+        "fullDesc": "Aumenta o Efeito de Quebra em {{1}}% para todos os aliados.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Dias Mínguam, Pensamentos Crescem",
+        "fullDesc": "Ruan Mei regenera {{1}} de Energia ao início da sua rodada.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Luz de Velas em Águas Tranquilas",
+        "fullDesc": "Em batalha, para cada {{2}}% do Efeito de Quebra de Ruan Mei que exceda {{1}}%, sua Perícia aumenta adicionalmente o Dano dos aliados em {{3}}%, até um máximo de {{4}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

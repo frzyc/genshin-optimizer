@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Befreiung",
+        "fullDesc": "Erhöht vor dem ersten Treffer des Ultimates die Grundchance, Gegner einzufrieren, um {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Verriegelung",
+        "fullDesc": "Erhöht beim Einsatz des Ultimates die Effekt-Trefferrate um {{1}}%. Dieser Effekt hält bis zum Ende der Aktion des Ultimates an.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Transmission",
+        "fullDesc": "Erhöht den KRIT-SCH bei eingefrorenen Gegnern um {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

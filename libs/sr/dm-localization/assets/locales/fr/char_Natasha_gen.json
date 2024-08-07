@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Apaisement",
+        "fullDesc": "La compétence supprime également {{1}} malus de la cible alliée.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Guérisseuse",
+        "fullDesc": "Les soins prodigués par Natasha augmentent de {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Convalescence",
+        "fullDesc": "Prolonge l'effet de soin continu de la compétence du personnage d'{{1}} tour.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

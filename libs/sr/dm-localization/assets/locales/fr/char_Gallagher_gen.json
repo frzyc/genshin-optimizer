@@ -40,6 +40,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Cocktail signature",
+        "fullDesc": "Augmente les soins prodigués par cette unité à hauteur de {{1}}% de son effet de Rupture, jusqu'à un maximum de {{2}}% d'augmentation.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Levure de bière",
+        "fullDesc": "Avance immédiatement de 100 % l'action de ce personnage après l'utilisation de son ultime.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Santé !",
+        "fullDesc": "Lorsque Gallagher utilise Coup de fouet pour attaquer des ennemis affectés par Ivresse, l'effet de restauration de PV de son talent s'applique également aux autres alliés pour cette attaque.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

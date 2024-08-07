@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Sparks",
+        "fullDesc": "Saat melancarkan Basic Attack, ada {{1}}% peluang dasar untuk mengakibatkan target musuh terkena status Burn selama {{2}} giliran.\\nSaat terkena status Burn, target musuh akan menerima Fire DoT sebesar {{3}}% Basic Attack Asta setiap saat giliran dimulai.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Ignite",
+        "fullDesc": "Meningkatkan {{1}}% Fire DMG seluruh rekan tim saat Asta berada di medan pertempuran.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Constellation",
+        "fullDesc": "Setiap lapis Charge yang dimiliki Asta akan meningkatkan {{1}}% DEF-nya.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

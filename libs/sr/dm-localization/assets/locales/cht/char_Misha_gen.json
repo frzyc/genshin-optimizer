@@ -35,6 +35,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "釋放",
+        "fullDesc": "終結技首段攻擊前，使目標陷入凍結狀態的基礎機率提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "鎖接",
+        "fullDesc": "施放終結技時，效果命中提高{{1}}%，持續至本次終結技行動結束。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "傳衝",
+        "fullDesc": "對陷入凍結狀態的敵方目標造成傷害時，暴擊傷害提升{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

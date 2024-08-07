@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Inquiétude viscérale",
+        "fullDesc": "Lorsque Cygne noir utilise sa compétence pour attaquer un ennemi affecté par Faille du vent, Saignement, Brûlure ou Stupéfaction, chacun de ces malus a respectivement {{1}}% de chances de base d'appliquer 1 cumul supplémentaire d'Arcanes.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Marc de café",
+        "fullDesc": "Lorsqu'une cible ennemie entre en combat, elle a {{1}}% de chances de base de subir 1 cumul d'Arcanes.\\nChaque fois qu'une cible ennemie subit des dégâts sur la durée pendant l'attaque d'un allié, elle a {{1}}% de chances de base d'être affectée par 1 cumul d'Arcanes. Le nombre maximum de cumuls qui peuvent être appliqués au cours d'une seule attaque est de {{2}}.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Présage de la flamme de bougie",
+        "fullDesc": "Augmente les DGT infligés par le personnage à hauteur de {{1}}% de ses chances d'appliquer des effets, jusqu'à une augmentation maximale de DGT de {{2}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

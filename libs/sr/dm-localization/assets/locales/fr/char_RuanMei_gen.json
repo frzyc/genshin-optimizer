@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Respiration inerte",
+        "fullDesc": "Augmente l'effet de Rupture de tous les alliés de {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Rêveries du temps qui passe",
+        "fullDesc": "Ruan Mei régénère {{1}} points d'énergie au début de son tour.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Bougie sur les flots",
+        "fullDesc": "En combat, pour chaque {{2}}% d'effet de Rupture de Ruan Mei qui dépasse {{1}}%, la compétence de Ruan Mei augmente les DGT de tous les alliés de {{3}}% supplémentaires, jusqu'à un maximum de {{4}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Ressurgimento Purificador",
+        "fullDesc": "Quando o efeito da Perícia é ativado, remove {{1}} penalidade(s) de um aliado-alvo.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Santificado",
+        "fullDesc": "Quando um inimigo no Campo é atacado por um aliado, todos os aliados, exceto o atacante, restauram PV igual a {{1}}% do ATQ de Luocha + {{2}}.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Através do Vale",
+        "fullDesc": "A chance de resistir a penalidades de Controle Negativo aumenta em {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

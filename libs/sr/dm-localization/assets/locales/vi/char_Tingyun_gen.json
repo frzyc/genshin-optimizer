@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Khoảng Trời Lưu Lại",
+        "fullDesc": "Khi thi triển Chiến Kỹ, Tốc Độ của Tingyun tăng {{1}}%, duy trì 1 hiệp.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Ngăn Chặn Tai Ương",
+        "fullDesc": "Sát thương Tấn Công Thường gây ra tăng {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Hanh Thông",
+        "fullDesc": "Khi hiệp của Tingyun bắt đầu, bản thân hồi phục ngay {{1}} điểm Năng Lượng.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

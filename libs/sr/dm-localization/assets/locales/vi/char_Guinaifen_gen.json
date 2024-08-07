@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Trèo Sào",
+        "fullDesc": "Tấn công thường có {{1}}% xác suất cơ bản khiến kẻ địch rơi vào trạng thái Thiêu Đốt giống như Chiến Kỹ.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Nhảy Vòng",
+        "fullDesc": "Khi vào trận, hành động của Guinaifen sẽ ưu tiên {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Đi Bộ Trên Dao",
+        "fullDesc": "Sát thương gây cho kẻ địch rơi vào trạng thái Thiêu Đốt tăng {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

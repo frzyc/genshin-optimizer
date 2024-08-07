@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#じゅんしん}純真{RUBY_E#}",
+        "fullDesc": "残りHPが{{1}}%以下の場合、敵に攻撃される確率がダウンする。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#ちくこう}逐寇{RUBY_E#}",
+        "fullDesc": "「剣勢」を発動するたび、「剣勢」ダメージ+{{1}}%、最大で{{2}}回累積できる。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#はてき}破敵{RUBY_E#}",
+        "fullDesc": "通常攻撃または戦闘スキルを発動した後、フィールド上に弱点撃破状態の敵が存在する場合、素裳の行動順が{{1}}%早まる。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

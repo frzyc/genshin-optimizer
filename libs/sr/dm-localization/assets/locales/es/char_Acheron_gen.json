@@ -55,6 +55,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Oni rojo",
+        "fullDesc": "Al comienzo de la batalla, obtiene inmediatamente {{1}} pts. de Sueños rotos y aplica {{1}} acumulaciones de Rojo sacrificial a un enemigo al azar. Cuando Sueños rotos llega al máximo, por cada punto excedente de Sueños rotos obtiene 1 acumulación de Influjo tetravalente. Hace que Influjo tetravalente se pueda acumular hasta {{2}} veces.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "El abismo",
+        "fullDesc": "Cuando en el equipo hay 1 o 2 personajes de la Vía de la Nihilidad (sin contar a Acheron), el daño que infligen el ATQ básico, la habilidad básica y la habilidad definitiva de Acheron aumenta en un {{1}}% o un {{2}}% del daño original.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Núcleo relampagueante",
+        "fullDesc": "Cuando Pluviespada de la habilidad definitiva golpea a un objetivo enemigo con Rojo sacrificial, el daño de Acheron aumenta en un {{1}}%. Se puede acumular hasta {{2}} veces y dura {{3}} turnos. Además, inflige daño {{4}} veces más cuando se activa Resurgimiento estigio. Cada vez inflige un Daño de Rayo equivalente al {{5}}% del ATQ de Acheron a un objetivo enemigo y se considera daño de habilidad definitiva.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

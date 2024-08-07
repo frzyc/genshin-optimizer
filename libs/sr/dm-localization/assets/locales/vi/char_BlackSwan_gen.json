@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Rối Loạn Tâm Can",
+        "fullDesc": "Sau khi thi triển Chiến Kỹ tấn công kẻ địch chỉ định ở trạng thái Bào Mòn, Chảy Máu, Thiêu Đốt, Sốc Điện, lần lượt có {{1}}% xác suất cơ bản khiến mục tiêu rơi thêm vào 1 tầng Dấu Tích Bí Ẩn.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Manh Mối Dưới Đáy Cốc",
+        "fullDesc": "Khi kẻ địch vào chiến đấu, sẽ có {{1}}% xác suất cơ bản rơi vào 1 tầng Dấu Tích Bí Ẩn.\\nMỗi khi kẻ địch chịu 1 lần Sát Thương Duy Trì trong 1 lần tấn công của phe ta, sẽ có {{1}}% xác suất cơ bản rơi vào 1 tầng Dấu Tích Bí Ẩn, tối đa rơi vào {{2}} tầng trong 1 lần tấn công.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Điềm Báo Dưới Ánh Nến",
+        "fullDesc": "Tăng sát thương do bản thân gây ra, mức tăng bằng {{1}}% Chính Xác Hiệu Ứng, tối đa khiến Sát Thương gây ra tăng {{2}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

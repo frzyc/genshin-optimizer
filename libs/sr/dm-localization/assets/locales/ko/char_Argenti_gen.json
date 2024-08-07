@@ -40,6 +40,27 @@
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "경건",
+        "fullDesc": "턴 시작 시 즉시 [승격]을 {{1}}스택 획득한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "너그러움",
+        "fullDesc": "적이 전투 진입 시 자신의 에너지를 즉시 {{1}}pt 회복한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "용기",
+        "fullDesc": "현재 HP 백분율이 {{1}}% 이하인 적에게 주는 피해가 {{2}}% 증가한다",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

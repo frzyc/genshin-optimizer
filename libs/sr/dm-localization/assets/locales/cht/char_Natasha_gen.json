@@ -35,6 +35,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "舒緩",
+        "fullDesc": "施放戰技時，解除指定我方單體的{{1}}個負面效果。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "醫者",
+        "fullDesc": "娜塔莎提供的治療量提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "調理",
+        "fullDesc": "施放戰技產生的持續回復效果延長{{1}}回合。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -45,6 +45,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Module α: Antilag Outburst",
+        "fullDesc": "During the Complete Combustion, attacking enemies that have no Fire Weakness can also reduce their Toughness, with the effect being equivalent to {{1}}% of the original Toughness Reduction from abilities.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Module β: Autoreactive Armor",
+        "fullDesc": "When SAM is in Complete Combustion with a Break Effect that is equal to or greater than {{1}}%/{{2}}%, attacking a Weakness-Broken enemy target will convert the Toughness Reduction of this attack into 1 instance of {{3}}%/{{4}}% Super Break DMG.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Module γ: Core Overload",
+        "fullDesc": "For every {{2}} point(s) of SAM's ATK that exceeds {{1}}, increases this unit's Break Effect by {{3}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

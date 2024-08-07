@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Hebelwirkung",
+        "fullDesc": "Wenn Aventurins VTD höher als {{3}} ist, steigt seine KRIT-Rate für jede 100 Pkt. VTD über diesem Wert um {{1}}%, bis max. {{2}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Heiße Hand",
+        "fullDesc": "Gewährt allen Verbündeten zu Beginn des Kampfes für {{1}} Rd. den Schild „Verstärkter Einsatz“. Die Schildmenge entspricht {{2}}% der durch die Fertigkeit gewährten Schildmenge.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Bingo!",
+        "fullDesc": "Aventurin sammelt 1 Pkt. „Blinde Wette“, nachdem ein Verbündeter mit „Verstärkter Einsatz“ einen Folgeangriff startet. Dieser Effekt kann max. {{3}}-mal ausgelöst werden. Zu Beginn von Aventurins Runde wird seine Auslösungsanzahl zurückgesetzt. Nachdem Aventurin einen Folgeangriff seines Talents startet, erhalten alle Verbündeten Verstärkter Einsatz, welcher SCH in Höhe von {{1}}% von Aventurins VTD plus {{2}} absorbiert. Der Verbündete mit der momentan geringsten Schildmenge erhält für 3 Rd. zusätzlich Verstärkter Einsatz, welcher SCH in Höhe von {{4}}% von Aventurins VTD plus {{5}} absorbiert.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

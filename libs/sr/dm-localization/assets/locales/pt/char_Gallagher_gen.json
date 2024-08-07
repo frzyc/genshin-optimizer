@@ -40,6 +40,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Mistura Nova",
+        "fullDesc": "Aumenta a Cura Realizada desta unidade em uma quantidade igual a {{1}}% do Efeito de Quebra, até um máximo de {{2}}% de aumento da Cura Realizada.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Fermento Orgânico",
+        "fullDesc": "Após utilizar sua Perícia Suprema, imediatamente Avança Adiante a ação desta unidade em 100%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Virar o Copo",
+        "fullDesc": "Quando Gallagher usa Blitz de Néctar para atacar inimigos no estado de Inebriação, o efeito de Recuperação de PV do Talento dele será aplicado a outros aliados também desta vez.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

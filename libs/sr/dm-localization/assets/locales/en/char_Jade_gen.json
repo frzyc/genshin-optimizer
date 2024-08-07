@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Reverse Repo",
+        "fullDesc": "When an enemy target enters combat, Jade gains {{2}} stack(s) of Pawned Asset. When the Debt Collector character's turn starts, additionally gains {{1}} stack(s) of Pawned Asset.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Collateral Ticket",
+        "fullDesc": "When the battle starts, Jade's action is advanced forward by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Asset Forfeiture",
+        "fullDesc": "Each Pawned Asset stack from the Talent additionally increases Jade's ATK by {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Inert Respiration",
+        "fullDesc": "Meningkatkan {{1}}% Break Effect seluruh rekan tim.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Days Wane, Thoughts Wax",
+        "fullDesc": "Saat giliran Ruan Mei dimulai, dia akan memulihkan {{1}} Energy.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Candle Lights on Still Waters",
+        "fullDesc": "Saat Break Effect Ruan Mei di pertempuran lebih besar dari {{1}}%, untuk setiap {{2}}% yang berlebih, akan meningkatkan {{3}}% efek peningkatan DMG bagi seluruh rekan tim dari Skill Ruan Mei, maksimal tidak lebih dari {{4}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

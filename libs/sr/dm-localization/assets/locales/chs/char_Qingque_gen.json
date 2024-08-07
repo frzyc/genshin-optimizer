@@ -40,6 +40,27 @@
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "争番",
+        "fullDesc": "施放战技时，恢复1个战技点。该效果单场战斗中只能触发1次。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "听牌",
+        "fullDesc": "战技使自身造成的伤害提高效果额外提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "抢杠",
+        "fullDesc": "施放强化普攻后，青雀的速度提高{{1}}%，持续1回合。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

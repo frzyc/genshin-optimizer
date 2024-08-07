@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Nightshade",
+        "fullDesc": "When current HP percentage is {{1}}% or lower, reduces the chance of being attacked by enemies.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Lacerate",
+        "fullDesc": "While Seele is in the buffed state, her Quantum RES PEN increases by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Rippling Waves",
+        "fullDesc": "After using a Basic ATK, Seele's next action will be Advanced Forward by {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

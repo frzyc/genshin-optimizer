@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Phá Trận",
+        "fullDesc": "Nếu số đòn đánh trong một lượt ở hiệp sau của Thần Quân lớn hơn hoặc bằng {{1}}, thì sát thương bạo kích trong hiệp sau sẽ tăng {{2}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Vấn Vương",
+        "fullDesc": "Khi bắt đầu trận, sẽ hồi ngay {{1}} điểm Năng Lượng.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Chiếu Tướng",
+        "fullDesc": "Sau khi thi triển Chiến Kỹ, Tỷ Lệ Bạo Kích tăng {{1}}%, duy trì {{2}} hiệp.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Giày Vò",
+        "fullDesc": "Khi thi triển Tuyệt Kỹ, kẻ địch từ \"trạng thái Sốc Điện kẻ địch đang phải chịu sinh ra sát thương ngay lập tức\" đổi thành \"tất cả Hiệu Ứng Xấu thuộc dạng sát thương duy trì mà kẻ địch đang phải chịu sẽ sinh ra sát thương ngay lập tức\".",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Cướp Đoạt",
+        "fullDesc": "Khi mục tiêu địch đang ở trạng thái Sốc Điện bị tiêu diệt, Kafka hồi thêm {{1}} Năng Lượng.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Gai Góc",
+        "fullDesc": "Tăng {{1}}% xác suất cơ bản khiến kẻ địch rơi vào Sốc Điện của Tuyệt Kỹ, Bí Kỹ và Đòn Đánh Theo Sau kích hoạt bởi Thiên Phú.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

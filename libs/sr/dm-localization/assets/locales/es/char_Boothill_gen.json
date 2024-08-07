@@ -40,6 +40,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Cartucho fantasma",
+        "fullDesc": "Aumenta su Prob. CRIT/Daño CRIT en una cantidad equivalente al {{1}}%/{{3}}% del efecto de Ruptura. La Prob. CRIT/Daño CRIT puede aumentar hasta un máximo del {{2}}%/{{4}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Sobre las culebras",
+        "fullDesc": "Cuando Boothill está en el estado de Duelo a muerte, el daño recibido procedente de objetivos que no tengan Duelo a muerte se reduce en un {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "A quemarropa",
+        "fullDesc": "Cuando está en el estado de Duelo a muerte y obtiene Ventaja en el bolsillo, recupera {{1}} pts. de energía. Este efecto también se activa al obtener acumulaciones de Ventaja en el bolsillo por encima del límite.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

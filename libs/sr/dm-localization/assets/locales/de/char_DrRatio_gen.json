@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Induktion",
+        "fullDesc": "Beim Einsatz der Fertigkeit wird für jeden Debuff auf dem Ziel Dr. Wahrheits KRIT-Rate um {{1}}% und KRIT-SCH um {{2}}% erhöht. Dieser Effekt ist bis zu {{3}}-fach stapelbar.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Inferenz",
+        "fullDesc": "Wird ein Ziel mit der Fertigkeit angegriffen, besteht eine Grundchance von {{1}}%, den Effekt-WDS des angegriffenen Gegners für {{3}} Rd. um {{2}}% zu reduzieren.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Deduktion",
+        "fullDesc": "Wenn einem Ziel mit {{1}} oder mehr Debuffs SCH zugefügt wird, wird der verursachte SCH von Dr. Wahrheit für jeden Debuff des Ziels um {{2}}% bis zu max. {{3}}% erhöht.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

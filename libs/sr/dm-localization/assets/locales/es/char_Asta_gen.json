@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Chispas",
+        "fullDesc": "Al usar el ATQ básico, hay un {{1}}% de probabilidad base de infligir Quemadura al objetivo durante {{2}} turnos.\\nLos enemigos afectados por Quemadura reciben al comienzo de cada turno un Daño de Fuego con el tiempo equivalente al {{3}}% del daño que inflige el ATQ básico de Asta.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Ignición",
+        "fullDesc": "Cuando Asta está en la batalla, el Daño de Fuego que infligen todos los aliados aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Constelación",
+        "fullDesc": "Por cada acumulación de Recarga que tenga Asta, su DEF aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Archerion",
+        "fullDesc": "Yukong dapat menahan 1 kali Debuff yang dilancarkan padanya. Efek ini dapat dipicu lagi setelah {{1}} giliran.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Bowmaster",
+        "fullDesc": "Saat Yukong berada di medan pertempuran, Imaginary DMG yang diakibatkan seluruh rekan tim meningkat {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Majestas",
+        "fullDesc": "Saat memiliki \"Roaring Bowstrings\", Yukong akan memulihkan {{1}} Energy tambahan setiap kali rekan tim beraksi.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

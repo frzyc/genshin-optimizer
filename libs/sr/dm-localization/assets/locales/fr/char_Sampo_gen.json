@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Piège",
+        "fullDesc": "Prolonge la durée de la Faille du vent provoquée par le talent d'{{1}} tour.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Position défensive",
+        "fullDesc": "Régénère {{1}} points d'énergie supplémentaires lorsque le personnage utilise son ultime.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Pimenter les choses",
+        "fullDesc": "Les ennemis affectés par l'effet Faille du vent infligent {{1}}% de DGT en moins à Sampo.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

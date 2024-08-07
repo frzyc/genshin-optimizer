@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Feu d'étoile",
+        "fullDesc": "Il y a {{1}}% de chances de base d'infliger Brûlure aux ennemis pendant {{2}} tours après utilisation d'une attaque.\\nLes ennemis affectés par Brûlure subissent des dégâts de feu sur la durée équivalents à {{3}}% de l'ATQ de Himeko au début de chaque tour.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Magma",
+        "fullDesc": "La compétence inflige {{1}}% de DGT supplémentaires aux ennemis affectés par l'état Brûlure.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Repère",
+        "fullDesc": "Lorsque les PV du personnage sont supérieurs ou égaux à {{1}}%, les chances de coup critique augmentent de {{2}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

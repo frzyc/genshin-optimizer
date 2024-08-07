@@ -45,6 +45,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Explosion à retardement du module α",
+        "fullDesc": "Dans l'état Combustion complète, les attaques contre les ennemis qui n'ont pas de Faiblesse au feu peuvent également réduire la robustesse d'un montant équivalent à {{1}}% de la réduction de robustesse originale de la capacité.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Armure auto-réactive du module β",
+        "fullDesc": "Lorsque SAM est dans l'état Combustion complète avec un effet de Rupture supérieur ou égal à {{1}}%/{{2}}%, attaquer une cible ennemie en état de Rupture de faiblesse convertit la réduction de robustesse de cette attaque en 1 instance de {{3}}%/{{4}}% de DGT de rupture extrême.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Noyau de surcharge du module γ",
+        "fullDesc": "Augmente l'effet de Rupture de SAM de {{3}}% pour chaque tranche de {{2}} points d'ATQ qui dépasse {{1}}.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

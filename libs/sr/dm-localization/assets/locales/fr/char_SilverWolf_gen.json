@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Générer",
+        "fullDesc": "La durée du Bug est prolongée d'{{1}} tour. Chaque fois qu'un ennemi subit une Rupture de faiblesse, Louve d'argent a {{2}}% de chances de base d'implanter un Bug aléatoire à l'ennemi.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Infecter",
+        "fullDesc": "La durée de la Faiblesse infligée par la compétence de Louve d'argent augmente d'{{1}} tour.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Annotation complémentaire",
+        "fullDesc": "Lorsque l'ennemi subit au moins {{1}} malus, la compétence diminue toutes ses RÉS de type de {{2}}% supplémentaires.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

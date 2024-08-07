@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Retribution",
+        "fullDesc": "When using Ultimate, there is a {{1}}% base chance to increase the DMG received by the targets by {{2}}% for {{3}} turn(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Judgment",
+        "fullDesc": "Using Ultimate additionally regenerates {{1}} Energy.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Punishment",
+        "fullDesc": "Deals {{1}}% more DMG to enemies inflicted with Weakness Break.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

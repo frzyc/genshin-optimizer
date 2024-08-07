@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Kinship",
+        "fullDesc": "When attacked, this character has a {{1}}% fixed chance to remove a debuff placed on them.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Under Protection",
+        "fullDesc": "The chance to resist Crowd Control Debuffs increases by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Revenge",
+        "fullDesc": "Increases Svarog's Counter DMG by {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

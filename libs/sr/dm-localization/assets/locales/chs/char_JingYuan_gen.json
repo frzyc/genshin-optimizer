@@ -35,6 +35,27 @@
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "破阵",
+        "fullDesc": "若【神君】下回合的攻击段数大于等于{{1}}段，则其下回合的暴击伤害提高{{2}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "绸缪",
+        "fullDesc": "战斗开始时，立即恢复{{1}}点能量。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "遣将",
+        "fullDesc": "施放战技后，暴击率提升{{1}}%，持续{{2}}回合。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

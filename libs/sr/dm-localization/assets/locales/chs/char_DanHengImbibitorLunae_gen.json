@@ -55,6 +55,27 @@
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "伏辰",
+        "fullDesc": "战斗开始时，立即恢复{{1}}点能量。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "修禹",
+        "fullDesc": "抵抗控制类负面状态的概率提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "起蛰",
+        "fullDesc": "对拥有虚数属性弱点的敌方目标造成伤害时，暴击伤害提高{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

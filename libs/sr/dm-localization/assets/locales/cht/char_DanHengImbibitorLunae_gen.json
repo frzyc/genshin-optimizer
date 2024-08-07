@@ -55,6 +55,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "伏辰",
+        "fullDesc": "戰鬥開始時，立即恢復{{1}}點能量。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "修禹",
+        "fullDesc": "抵抗控制類負面狀態的機率提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "起蟄",
+        "fullDesc": "對擁有虛數屬性弱點的敵方目標造成傷害時，暴擊傷害提高{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

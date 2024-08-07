@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Lý Luận Kỳ Hoàng",
+        "fullDesc": "Khi Bailu trị liệu quá mức cho mục tiêu của phe ta sẽ tăng {{1}}% Giới Hạn HP của mục tiêu, duy trì {{2}} hiệp.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Long Mạch Vidyadhara",
+        "fullDesc": "Số lần kích hoạt hiệu ứng Sinh Mệnh tăng {{1}} lần.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Phúc Trạch Lân Uyên",
+        "fullDesc": "Giảm {{1}}% sát thương mà nhân vật sở hữu \"Sinh Mệnh\" phải chịu.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

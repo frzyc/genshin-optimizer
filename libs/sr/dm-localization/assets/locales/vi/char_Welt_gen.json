@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Khiển Trách",
+        "fullDesc": "Khi thi triển Tuyệt Kỹ có {{1}}% xác suất cơ bản khiến sát thương mà mục tiêu phải chịu tăng {{2}}%, duy trì {{3}} hiệp.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Phán Quyết",
+        "fullDesc": "Khi thi triển Tuyệt Kỹ sẽ hồi thêm {{1}} Năng Lượng.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Trừng Phạt",
+        "fullDesc": "Sát thương gây ra cho kẻ địch bị Phá Vỡ Điểm Yếu tăng {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

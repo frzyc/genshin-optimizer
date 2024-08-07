@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Compra Reversa",
+        "fullDesc": "Quando um inimigo-alvo entra em combate, Jade ganha {{2}} acúmulo(s) de Ativo Penhorado. Quando a rodada de um personagem com Coletor de Dívidas inicia, ganha adicionalmente {{1}} acúmulo(s) de Ativo Penhorado.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Tíquete de Garantia",
+        "fullDesc": "No começo da batalha, a ação de Jade é Avançada Adiante em {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Confisco de Bens",
+        "fullDesc": "Cada acúmulo de Ativo Penhorado do Talento aumenta adicionalmente o ATQ de Jade em {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

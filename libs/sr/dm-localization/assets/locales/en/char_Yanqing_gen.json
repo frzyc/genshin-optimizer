@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Icing on the Kick",
+        "fullDesc": "When Yanqing attacks, deals Additional Ice DMG equal to {{1}}% of Yanqing's ATK to enemies with Ice Weakness.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Frost Favors the Brave",
+        "fullDesc": "When Soulsteel Sync is active, Effect RES increases by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Gentle Blade",
+        "fullDesc": "When a CRIT Hit is triggered, increases SPD by {{1}}% for {{2}} turn(s).",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

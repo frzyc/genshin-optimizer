@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Purify",
+        "fullDesc": "Saat melancarkan Skill, akan menghilangkan 1 Debuff dari rekan tim yang ditargetkan.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Reinforce",
+        "fullDesc": "Durasi Shield yang diberikan Skill bertambah {{1}} giliran.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Ice Spell",
+        "fullDesc": "Saat melancarkan Ultimate, meningkatkan {{1}}% peluang dasar untuk menyebabkan status Frozen pada target musuh.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

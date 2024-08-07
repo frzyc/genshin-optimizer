@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#りゅうせい}留晴{RUBY_E#}",
+        "fullDesc": "戦闘スキルを発動した時、停雲の速度+{{1}}%、1ターン継続。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#じょさい}除災{RUBY_E#}",
+        "fullDesc": "通常攻撃によるダメージ+{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#こうつう}亨通{RUBY_E#}",
+        "fullDesc": "停雲は自身のターンが回ってきた時、EPを{{1}}回復する。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

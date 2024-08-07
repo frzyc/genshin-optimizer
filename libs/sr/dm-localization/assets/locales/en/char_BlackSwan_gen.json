@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Viscera's Disquiet",
+        "fullDesc": "After using the Skill to attack a single target enemy that has Wind Shear, Bleed, Burn, or Shock, each of these debuffs respectively has a {{1}}% base chance of inflicting 1 extra stack of Arcana.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Goblet's Dredges",
+        "fullDesc": "When an enemy target enters battle, there is a {{1}}% base chance for it to be inflicted with 1 stack of Arcana.\\nEvery time an enemy target receives DoT during a single attack by an ally, there is a {{1}}% base chance for the target to be inflicted with 1 stack of Arcana. The maximum number of stacks that can be inflicted during 1 single attack is {{2}}.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Candleflame's Portent",
+        "fullDesc": "Increases this unit's DMG by an amount equal to {{1}}% of Effect Hit Rate, up to a maximum DMG increase of {{2}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

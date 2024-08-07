@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Consignação",
+        "fullDesc": "Aliados que ativarem o efeito de recuperação de Pontos de Perícia de Fardo têm o ATQ aumentado em {{1}}% por {{2}} rodada(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Submundo",
+        "fullDesc": "Se a contagem de ativação do efeito de recuperação de Pontos de Perícia de Fardo for {{1}} ou inferior quando um inimigo com Fardo for derrotado, recupera adicionalmente {{2}} Ponto(s) de Perícia.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Reanimada",
+        "fullDesc": "Quando o efeito de recuperação de Pontos de Perícia de Fardo é ativado, este personagem regenera {{1}} de Energia.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -40,6 +40,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Le fort défend le faible",
+        "fullDesc": "Les DGT subis par tous les alliés sont réduits de {{2}}% pendant {{3}} tour après utilisation de la compétence.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Bravoure inébranlable",
+        "fullDesc": "Utiliser l'ATQ normale renforcée restaure {{1}}% des PV max {M#du pionnier}{F#de la pionnière}.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Il vaut toujours mieux agir",
+        "fullDesc": "Lorsque {M#le pionnier}{F#la pionnière} est {M#protégé}{F#protégée} par un bouclier au début du tour, augmente son ATQ de {{2}}% jusqu'à la fin de l'action et régénère {{1}} points d'énergie.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

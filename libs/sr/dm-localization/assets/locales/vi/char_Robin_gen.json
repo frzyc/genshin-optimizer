@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của kẻ địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Cadenza Màu Sắc",
+        "fullDesc": "Khi bắt đầu chiến đấu, bản thân Ưu Tiên Hành Động {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Khúc Đệm Ngẫu Hứng",
+        "fullDesc": "Trong trạng thái Hợp Tấu, Sát Thương Bạo Kích của toàn thể phe ta gây ra khi phát động Đòn Đánh Theo Sau tăng {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Giai Điệu Chuyển Tiến",
+        "fullDesc": "Khi thi triển Chiến Kỹ sẽ hồi thêm {{1}} Năng Lượng.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -40,6 +40,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Surcharge cinétique",
+        "fullDesc": "Dissipe immédiatement {{1}} bonus de la cible ennemie lors de l'utilisation de la compétence.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Freinage cyclique",
+        "fullDesc": "Régénère {{1}} points d'énergie supplémentaires pour chaque cumul de Soif de combat obtenu.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Soif de combat écrasante",
+        "fullDesc": "Lors de l'utilisation de l'ATQ normale renforcée, chaque coup porté par Direct du droit accorde à Luka {{1}}% de chances fixes d'utiliser 1 attaque supplémentaire. Cet effet ne s'applique pas aux coups supplémentaires assénés de cette manière.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

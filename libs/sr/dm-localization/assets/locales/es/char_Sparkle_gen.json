@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Almanaque",
+        "fullDesc": "Al usar el ATQ básico, recupera {{1}} pts. de energía adicionales.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Flor artificial",
+        "fullDesc": "El efecto de aumento de Daño CRIT de la habilidad básica se extiende hasta el comienzo del siguiente turno del objetivo.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Serenata nocturna",
+        "fullDesc": "El ATQ de todos los aliados aumenta en un {{4}}%. Cuando en el equipo aliado hay 1/2/3 personajes de tipo Cuántico, el ATQ de los aliados de tipo Cuántico aumenta en un {{1}}%/{{2}}%/{{3}}% adicional.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

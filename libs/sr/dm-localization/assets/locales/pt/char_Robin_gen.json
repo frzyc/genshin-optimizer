@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Cadência Coloratura",
+        "fullDesc": "Quando a batalha começa, a ação desse personagem é Avançada Adiante em {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Floreio Improvisado",
+        "fullDesc": "Enquanto estiver no estado de Concerto, o Dano CRIT causado por todos os aliados ao realizar Ataques Extras aumenta em {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Passagem Sequencial",
+        "fullDesc": "Ao usar a Perícia, adicionalmente regenera {{1}} de Energia.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

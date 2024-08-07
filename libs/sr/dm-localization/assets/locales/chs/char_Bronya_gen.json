@@ -35,6 +35,27 @@
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "号令",
+        "fullDesc": "普攻的暴击率提高至100%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "阵地",
+        "fullDesc": "战斗开始时，我方全体的防御力提高{{2}}%，持续{{1}}回合。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "军势",
+        "fullDesc": "布洛妮娅在场时，我方全体造成的伤害提高{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

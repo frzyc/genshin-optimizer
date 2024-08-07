@@ -40,6 +40,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Kinetic Overload",
+        "fullDesc": "When the Skill is used, immediately dispels {{1}} buff from the enemy target.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Cycle Braking",
+        "fullDesc": "For every stack of Fighting Will obtained, additionally regenerates {{1}} Energy.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Crush Fighting Will",
+        "fullDesc": "When using Enhanced Basic ATK, every hit Direct Punch deals has a {{1}}% fixed chance for Luka to use 1 additional hit. This effect does not apply to additional hits generated in this way.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

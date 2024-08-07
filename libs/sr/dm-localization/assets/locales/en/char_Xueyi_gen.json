@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Clairvoyant Loom",
+        "fullDesc": "Increases DMG dealt by this unit by an amount equal to {{1}}% of Break Effect, up to a maximum DMG increase of {{2}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Intrepid Rollerbearings",
+        "fullDesc": "If the enemy target's Toughness is equal to or higher than {{1}}% of their Max Toughness, deals {{2}}% more DMG when using Ultimate.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Perspicacious Mainframe",
+        "fullDesc": "Xueyi will keep a tally of the number of Karma stacks that exceed the max stack limit, up to {{1}} stacks in the tally. After Xueyi's Talent is triggered, she will gain a corresponding number of tallied Karma stacks.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

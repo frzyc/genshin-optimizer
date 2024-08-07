@@ -45,6 +45,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "蓄勢",
+        "fullDesc": "戰鬥開始時，立即恢復{{1}}點能量。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "堅韌",
+        "fullDesc": "天賦的效果每層同時使開拓者的防禦力提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "鬥志",
+        "fullDesc": "施放戰技或終結技【全勝•安息全壘打】時，對指定敵方目標造成的傷害提高{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

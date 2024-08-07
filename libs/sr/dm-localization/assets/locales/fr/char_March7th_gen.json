@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Purification",
+        "fullDesc": "La compétence supprime également 1 malus de la cible alliée.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Renforcement",
+        "fullDesc": "La durée du bouclier généré par la compétence du personnage est prolongée d'{{1}} tour.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Sortilège de glace",
+        "fullDesc": "Augmente les chances de base de l'ultime de geler les ennemis de {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

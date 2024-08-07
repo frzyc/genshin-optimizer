@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Ghi Dấu Năm Tháng",
+        "fullDesc": "Khi thi triển Tấn Công Thường sẽ hồi thêm {{1}} Năng Lượng.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Hoa Nhân Tạo",
+        "fullDesc": "Hiệu ứng Tăng Sát Thương Bạo Kích cung cấp bởi Chiến Kỹ sẽ kéo dài đến khi bắt đầu hiệp kế tiếp của mục tiêu.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Dạ Khúc Tưởng Nhớ",
+        "fullDesc": "Tấn Công của toàn phe ta tăng {{4}}%. Khi trong đội phe ta có 1/2/3 nhân vật thuộc tính Lượng Tử, tấn công của nhân vật có thuộc tính Lượng Tử phe ta tăng thêm {{1}}%/{{2}}%/{{3}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

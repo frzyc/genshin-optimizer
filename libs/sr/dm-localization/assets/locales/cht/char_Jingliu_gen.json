@@ -40,6 +40,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "死境",
+        "fullDesc": "【轉魄】狀態下，效果抗性提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "劍首",
+        "fullDesc": "施放【無罅飛光】後，下次行動提前{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "霜魄",
+        "fullDesc": "【轉魄】狀態下，終結技造成的傷害提高{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

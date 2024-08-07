@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Efficiency",
+        "fullDesc": "Saat melancarkan Skill, efek peningkatan DMG pada target akan bertambah {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Puppet",
+        "fullDesc": "Meningkatkan {{1}}% peluang untuk menahan Crowd Control Debuff.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Icing",
+        "fullDesc": "Saat melancarkan Ultimate, meningkatkan {{1}}% DMG pada musuh dengan status Frozen.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

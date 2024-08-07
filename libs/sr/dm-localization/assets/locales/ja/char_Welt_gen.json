@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#ちょうかい}懲戒{RUBY_E#}",
+        "fullDesc": "必殺技を発動する時、{{1}}%の基礎確率で敵の受けるダメージ+{{2}}%、{{3}}ターン継続。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#しんぱん}審判{RUBY_E#}",
+        "fullDesc": "必殺技を発動した時、さらにEPを{{1}}回復する。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#さいけつ}裁決{RUBY_E#}",
+        "fullDesc": "弱点撃破された敵に対して与ダメージ+{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

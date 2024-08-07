@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Starfire",
+        "fullDesc": "Setelah melancarkan serangan, memiliki {{1}}% peluang dasar untuk membuat target musuh terkena status Burn selama {{2}} giliran.\\nSaat dalam status Burn, target musuh akan menerima Fire DoT sebesar {{3}}% ATK Himeko setiap kali gilirannya dimulai.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Magma",
+        "fullDesc": "Meningkatkan {{1}}% Skill DMG pada target musuh dengan status Burn.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Benchmark",
+        "fullDesc": "Meningkatkan {{2}}% CRIT Rate jika persentase HP saat ini lebih dari atau sama dengan {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

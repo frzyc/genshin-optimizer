@@ -35,6 +35,27 @@
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "올가미",
+        "fullDesc": "특성으로 적이 풍화 상태에 빠지는 지속 시간이 {{1}}턴 증가한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "후공",
+        "fullDesc": "필살기 발동 시 추가로 에너지를 {{1}}pt 회복한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "첨가",
+        "fullDesc": "풍화 상태의 적이 삼포에게 가하는 피해가 {{1}}% 감소한다",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

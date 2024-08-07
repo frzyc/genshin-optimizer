@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Dragon caché",
+        "fullDesc": "Réduit les chances du personnage d'être attaqué par des ennemis quand son pourcentage de PV est inférieur ou égal à {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Plus rapide que la lumière",
+        "fullDesc": "Le personnage a {{1}}% de chances fixes d'augmenter sa propre VIT de {{2}}% pendant {{3}} tours après avoir lancé une attaque.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Bourrasque",
+        "fullDesc": "L'ATQ normale inflige {{1}}% de DGT supplémentaires aux ennemis ralentis.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "청명",
+        "fullDesc": "전투 스킬 발동 시 정운의 속도가 {{1}}% 증가한다. 지속 시간: 1턴",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "재액 방지",
+        "fullDesc": "일반 공격이 가하는 피해가 {{1}}% 증가한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "형통",
+        "fullDesc": "정운의 턴 시작 시 즉시 자신의 에너지를 {{1}}pt 회복한다",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Renacimiento acuoso",
+        "fullDesc": "Al activar el efecto de la habilidad básica, se elimina {{1}} estado negativo del objetivo aliado.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Santificación",
+        "fullDesc": "Cuando un enemigo que está dentro del campo recibe un ataque de un aliado, los demás aliados que no son el atacante también regeneran una cantidad de PV equivalente al {{1}}% del ATQ de Luocha + {{2}}.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Travesía del valle",
+        "fullDesc": "La probabilidad de resistir estados negativos de Control aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

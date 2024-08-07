@@ -35,6 +35,27 @@
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "颁冰",
+        "fullDesc": "施放攻击后，对携带冰属性弱点的敌方目标造成等同于彦卿{{1}}%攻击力的冰属性附加伤害。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "凌霜",
+        "fullDesc": "处于【智剑连心】效果时，效果抵抗提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "轻吕",
+        "fullDesc": "触发暴击时，速度提高{{1}}%，持续{{2}}回合。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

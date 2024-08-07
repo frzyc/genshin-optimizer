@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#やこう}夜行{RUBY_E#}",
+        "fullDesc": "残りHPが{{1}}%以下の場合、敵に攻撃される確率ダウン。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#ざんれつ}斬裂{RUBY_E#}",
+        "fullDesc": "増幅状態の時、ゼーレの量子属性耐性貫通+{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "さざ{RUBY_B#なみ}波{RUBY_E#}",
+        "fullDesc": "通常攻撃を行った後、ゼーレの次の行動順が{{1}}%早まる。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

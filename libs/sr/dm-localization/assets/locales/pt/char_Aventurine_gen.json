@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Alavancamento",
+        "fullDesc": "Para cada 100 de DEF de Aventurine que exceder {{3}}, aumenta sua própria Chance de CRIT em {{1}}%, até um aumento máximo de {{2}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Mão Quente",
+        "fullDesc": "Quando a batalha começa, concede um Escudo de Aposta Fortificada para todos os aliados, cujo efeito de Escudo é igual a {{2}}% do Escudo concedido pela Perícia, durando por {{1}} rodada(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Bingo!",
+        "fullDesc": "Aventurine acumula 1 Aposta Cega depois que um aliado com Aposta Fortificada realiza um Ataque Extra. Este efeito pode ser acionado um máximo de {{3}} vez(es). A contagem de acionamento deste efeito é reiniciada no início da rodada de Aventurine. Depois que Aventurine realiza um Ataque Extra do seu Talento, fornece Aposta Fortificada para todos os aliados, que pode bloquear Dano igual a {{1}}% da DEF de Aventurine + {{2}}, e fornece adicionalmente Aposta Fortificada que pode bloquear Dano igual a {{4}}% da DEF de Aventurine + {{5}} ao aliado com o efeito de Escudo mais baixo no momento, durando por 3 rodadas.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

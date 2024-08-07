@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#てきすいそせい}滴水蘇生{RUBY_E#}",
+        "fullDesc": "戦闘スキルの効果が発動された時、ターゲットとなった味方単体のデバフを{{1}}つ解除する。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#きよ}清{RUBY_E#}めし{RUBY_B#ちり}塵{RUBY_E#}の{RUBY_B#み}身{RUBY_E#}",
+        "fullDesc": "結界内の任意の敵が味方の攻撃を受けた後、攻撃者以外の味方も羅刹の攻撃力{{1}}%+{{2}}のHPを回復する。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#ゆうこく}幽谷{RUBY_E#}を{RUBY_B#こ}越{RUBY_E#}え",
+        "fullDesc": "行動制限系デバフに抵抗する確率+{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

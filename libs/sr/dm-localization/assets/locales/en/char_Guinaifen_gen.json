@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "High Poles",
+        "fullDesc": "Basic ATK has a {{1}}% base chance of inflicting an enemy with a Burn, equivalent to that of Skill.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Bladed Hoop",
+        "fullDesc": "When the battle begins, Guinaifen's action is advanced forward by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Walking on Knives",
+        "fullDesc": "Deals {{1}}% more DMG to Burned enemies.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

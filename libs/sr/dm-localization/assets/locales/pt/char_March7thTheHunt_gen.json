@@ -40,6 +40,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Vôo do Cisne",
+        "fullDesc": "Quando a batalha começa, a ação de 7 de Março é Avançada Adiante em {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Filigrana",
+        "fullDesc": "7 de Março pode reduzir a Tenacidade de inimigos cujo |Tipo de Fraqueza corresponda ao Tipo do Shifu. Ao infligir Quebra de Fraqueza, também ativa o efeito de Quebra de Fraqueza contra Imaginário.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Domesticador de Marés",
+        "fullDesc": "Após usar o ATQ Básico Aprimorado, aumenta o Dano CRIT e o Efeito de Quebra do Shifu em {{1}}% e {{2}}% respectivamente, durando por {{3}} rodada(s).",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

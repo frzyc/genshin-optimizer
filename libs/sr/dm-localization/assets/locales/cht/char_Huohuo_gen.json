@@ -35,6 +35,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "不敢自專",
+        "fullDesc": "戰鬥開始時，藿藿獲得【禳命】，持續{{1}}回合。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "貞凶之命",
+        "fullDesc": "抵抗控制類負面狀態的機率提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "怯懼應激",
+        "fullDesc": "觸發天賦為我方目標提供治療時，藿藿恢復{{1}}點能量。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

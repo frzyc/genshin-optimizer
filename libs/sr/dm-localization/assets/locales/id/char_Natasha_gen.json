@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Soothe",
+        "fullDesc": "Saat melancarkan Skill, menghilangkan {{1}} Debuff dari 1 rekan tim yang ditargetkan.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Healer",
+        "fullDesc": "Pemulihan yang diberikan oleh Natasha meningkat {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Recuperation",
+        "fullDesc": "Memperpanjang durasi efek pemulihan berkelanjutan dari Skill selama {{1}} giliran.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

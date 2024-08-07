@@ -40,6 +40,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Không Lối Thoát",
+        "fullDesc": "Ở trạng thái Chuyển Hồn, Kháng Hiệu Ứng tăng {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Kiếm Thủ Hàng Đầu",
+        "fullDesc": "Sau khi thi triển Vô Hạ Phi Quang, lần sau ưu tiên hành động {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Linh Hồn Sương Giá",
+        "fullDesc": "Ở trạng thái Chuyển Hồn, sát thương Tuyệt Kỹ gây ra tăng {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

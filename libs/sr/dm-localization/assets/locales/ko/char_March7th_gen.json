@@ -35,6 +35,27 @@
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "순결",
+        "fullDesc": "전투 스킬 발동 시 지정된 단일 아군의 디버프 효과를 1개 해제한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "가호",
+        "fullDesc": "전투 스킬이 제공하는 실드의 지속 시간이 {{1}}턴 증가한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "얼음 저주",
+        "fullDesc": "필살기 발동 시 적을 빙결하는 기본 확률이 {{1}}% 증가한다",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

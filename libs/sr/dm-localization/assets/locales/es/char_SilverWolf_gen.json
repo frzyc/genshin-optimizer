@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Generación",
+        "fullDesc": "La duración de los errores se incrementa en {{1}} turno. Cada vez que se rompa la Debilidad de un enemigo, Silver Wolf tiene una probabilidad base del {{2}}% de implantar un error al azar a ese objetivo.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Inyección",
+        "fullDesc": "Al usar la habilidad básica, la Debilidad añadida al objetivo alarga su duración en {{1}} turno.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Nota al margen",
+        "fullDesc": "Al usar la habilidad básica, si el objetivo tiene {{1}} o más estados negativos, su RES a todos los tipos se reduce en un {{2}}% adicional.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

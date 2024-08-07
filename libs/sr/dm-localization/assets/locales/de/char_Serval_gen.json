@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Rock ’n’ Roll",
+        "fullDesc": "Erhöht die Grundchance, dass die Fertigkeit bei Gegnern Schock verursacht, um {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Schwingen der Saiten",
+        "fullDesc": "Stellt zu Beginn des Kampfes unmittelbar {{1}} Pkt. Energie wieder her.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Manie",
+        "fullDesc": "Erhöht den ANG für {{2}} Rd. um {{1}}%, wenn ein Gegner besiegt wird.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

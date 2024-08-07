@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Nourished Joviality",
+        "fullDesc": "Tingyun's SPD increases by {{1}}% for 1 turn after using Skill.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Knell Subdual",
+        "fullDesc": "DMG dealt by Basic ATK increases by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Jubilant Passage",
+        "fullDesc": "Tingyun immediately regenerates {{1}} Energy at the start of her turn.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

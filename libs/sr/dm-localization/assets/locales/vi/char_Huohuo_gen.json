@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm sức bền thuộc tính tương ứng của kẻ địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Không Dám Chuyên Quyền",
+        "fullDesc": "Khi bắt đầu chiến đấu, Huohuo nhận Cầu Mệnh, duy trì {{1}} hiệp.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Mệnh Trấn Hung",
+        "fullDesc": "Tăng {{1}}% xác suất Kháng Hiệu Ứng Xấu dạng Khống Chế.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Nỗi Sợ Kinh Hoàng",
+        "fullDesc": "Khi kích hoạt Thiên Phú trị liệu cho mục tiêu phe ta, Huohuo sẽ hồi phục {{1}} điểm Năng Lượng.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

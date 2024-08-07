@@ -35,6 +35,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "駐晴",
+        "fullDesc": "施放戰技時，停雲自身速度提高{{1}}%，持續1回合。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "止厄",
+        "fullDesc": "普通攻擊造成的傷害提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "亨通",
+        "fullDesc": "停雲的回合開始時，自身立即恢復{{1}}點能量。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -40,6 +40,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Sobrecarga Cinética",
+        "fullDesc": "Ao usar a Perícia, imediatamente remove {{1}} melhoria(s) do inimigo-alvo.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Quebra de Ciclo",
+        "fullDesc": "Para cada acúmulo de Desejo de Lutar obtido, regenera adicionalmente {{1}} de Energia.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Desejo de Lutar Avassalador",
+        "fullDesc": "Ao usar um ATQ Básico Aprimorado, cada golpe que o Punho Certeiro causa tem uma chance fixa de {{1}}% de Luka usar 1 golpe adicional. Este efeito não se aplica a golpes adicionais gerados desta forma.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

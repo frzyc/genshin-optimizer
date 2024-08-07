@@ -45,6 +45,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Modul α: Diachroner Ausbruch",
+        "fullDesc": "Im Status „Vollständige Verbrennung“ reduzieren Angriffe auf Gegner ohne Feuer-Schwäche ebenfalls den WDS, wobei der Effekt {{1}}% der WDS-Reduzierung der ursprünglichen Fähigkeit entspricht.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Modul β: Autoreaktive Rüstung",
+        "fullDesc": "Wenn SAM sich im Status „Vollständige Verbrennung“ befindet und der Brucheffekt bei {{1}}%/{{2}}% oder mehr liegt, wird nach einem Angriff auf Gegner im Schwächebruch der WDS-Reduzierungswert des Angriffs in 1-mal {{3}}%/{{4}}% des Super-Bruch-SCH umgewandelt.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Modul γ: Kernüberladung",
+        "fullDesc": "Für je {{2}} Pkt. von SAMs ANG, die {{1}} überschreiten, wird sein Brucheffekt um {{3}}% erhöht.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

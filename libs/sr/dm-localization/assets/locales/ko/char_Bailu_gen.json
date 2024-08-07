@@ -35,6 +35,27 @@
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "의술의 이치",
+        "fullDesc": "백로가 아군에게 초과 치유할 시 대상 HP 최대치가 {{1}}% 증가한다. 지속 시간: {{2}}턴",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "비디아다라 용맥",
+        "fullDesc": "[생명] 효과 발동 횟수가 {{1}}회 증가한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "인연못 은혜",
+        "fullDesc": "[생명]을 보유한 캐릭터가 받는 피해가 {{1}}% 감소한다",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

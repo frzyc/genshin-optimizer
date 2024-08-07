@@ -45,6 +45,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Pront{M#o}{F#a} para a Batalha",
+        "fullDesc": "No início da batalha, regenera {{1}} de Energia imediatamente.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Tenacidade",
+        "fullDesc": "Cada acúmulo de Talento aumenta a DEF {F#da}{M#do} Desbravador{F#a} em {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Desejo de Lutar",
+        "fullDesc": "Ao usar a Perícia ou a Perícia Suprema \"Ruptura: Home Run Fatal\", o Dano causado ao inimigo-alvo é aumentado em {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

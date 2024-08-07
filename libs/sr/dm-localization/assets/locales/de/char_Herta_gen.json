@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Effizienz",
+        "fullDesc": "Erhöht beim Einsatz der Fertigkeit den erhöhten SCH zusätzlich um {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Marionette",
+        "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Frost",
+        "fullDesc": "Erhöht den eingefrorenen Gegnern beim Einsatz des Ultimates zugefügten SCH um {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Commandement",
+        "fullDesc": "L'ATQ normale a 100 % de chances de coup critique.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "À l'épreuve du combat",
+        "fullDesc": "La DÉF de tous les alliés augmente de {{2}}% pendant {{1}} tours en début de combat.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Puissance militaire",
+        "fullDesc": "Lorsque Bronya est sur le champ de bataille, les DGT de tous les alliés augmentent de {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

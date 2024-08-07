@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und reduziert nach Kampfeintritt den Widerstand des gegnerischen Ziels des entsprechenden Typs.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Vorabuntersuchung",
+        "fullDesc": "Nachdem ein Ziel mit „Überlebensreaktion“ getroffen wurde, stellt Lynx sofort {{1}} Pkt. Energie wieder her.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Erkundungstechnik",
+        "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Überleben in extremen Umgebungen",
+        "fullDesc": "Verlängert die Dauer der durch das Talent bewirkten kontinuierlichen Heilung um {{1}} Rd.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

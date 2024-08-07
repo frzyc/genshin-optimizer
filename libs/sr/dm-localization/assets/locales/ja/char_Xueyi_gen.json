@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#よちょう}予兆{RUBY_E#}の{RUBY_B#からく}絡繰{RUBY_E#}り",
+        "fullDesc": "自身の与ダメージを、撃破特効の{{1}}%分アップする、最大で与ダメージ+{{2}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#さいほう}砕鋒{RUBY_E#}の{RUBY_B#じくうけ}軸受{RUBY_E#}",
+        "fullDesc": "必殺技を発動した時、残り靭性が最大靭性{{1}}%以上の敵への与ダメージ+{{2}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#きかい}機会{RUBY_E#}を{RUBY_B#うかが}伺{RUBY_E#}う{RUBY_B#ちゅうすう}中枢{RUBY_E#}",
+        "fullDesc": "雪衣は累積上限を超えた「悪業」層数をカウントする、最大で{{1}}層カウントできる。雪衣が天賦を発動した後、超過分の「悪業」層数を獲得する。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

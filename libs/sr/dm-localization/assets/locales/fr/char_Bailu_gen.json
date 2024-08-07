@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Analectes du Qihuang",
+        "fullDesc": "Lorsque Bailu soigne une cible alliée au-delà de ses PV max normaux, les PV max de la cible augmentent de {{1}}% pendant {{2}} tours.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Ichor vidyadharien",
+        "fullDesc": "Revigoration peut se déclencher {{1}} fois supplémentaire.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Bénédiction aquatique",
+        "fullDesc": "Les personnages revigorés subissent {{1}}% de DGT en moins.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

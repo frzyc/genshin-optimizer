@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Summation",
+        "fullDesc": "Saat melancarkan Skill, untuk setiap 1 efek Debuff yang dimiliki target, CRIT Rate Dr. Ratio akan meningkat {{1}}%, dan CRIT DMG meningkat {{2}}%. Efek ini dapat ditumpuk hingga {{3}} lapis.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Inference",
+        "fullDesc": "Setelah melancarkan Skill untuk menyerang target musuh, ada {{1}}% Peluang Dasar untuk mengurangi {{2}}% Effect RES target musuh yang terkena serangan, berlangsung selama {{3}} giliran.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Deduction",
+        "fullDesc": "Saat mengakibatkan DMG, jika target memiliki {{1}} efek Debuff atau lebih, untuk setiap 1 efek Debuff yang dimiliki target, DMG yang diakibatkan Dr. Ratio pada target tersebut akan meningkat {{2}}%, maksimal meningkat hingga {{3}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

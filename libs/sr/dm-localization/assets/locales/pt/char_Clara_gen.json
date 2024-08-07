@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Afinidade",
+        "fullDesc": "Ao receber um ataque, este personagem tem uma chance fixa de {{1}}% de remover uma penalidade que tiver sido aplicada a ele.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Sob Proteção",
+        "fullDesc": "A chance de resistir a penalidades de Controle Negativo aumenta em {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Vingança",
+        "fullDesc": "Aumenta em {{1}}% o Dano de Contra-Ataque de Svarog.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

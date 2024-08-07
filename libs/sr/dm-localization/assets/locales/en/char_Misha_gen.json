@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Release",
+        "fullDesc": "Before the Ultimate's first hit lands, increases the base chance of Freezing the target by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Interlock",
+        "fullDesc": "When using the Ultimate, increases the Effect Hit Rate by {{1}}%, lasting until the end of the current Ultimate's action.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Transmission",
+        "fullDesc": "When dealing DMG to Frozen enemies, increases CRIT DMG by {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

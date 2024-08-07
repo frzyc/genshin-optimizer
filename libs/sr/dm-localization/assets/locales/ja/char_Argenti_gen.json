@@ -40,6 +40,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#けいけん}敬虔{RUBY_E#}",
+        "fullDesc": "ターンが回ってきた時、「栄達」を{{1}}層獲得する。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#こうがい}慷慨{RUBY_E#}",
+        "fullDesc": "敵が戦闘に入った時、自身のEPを{{1}}回復する。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#ゆうき}勇気{RUBY_E#}",
+        "fullDesc": "残りHPが{{1}}%以下の敵に対して与ダメージ+{{2}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "頒冰",
+        "fullDesc": "發動攻擊後，對攜帶冰屬性弱點的敵方目標造成等同於彥卿{{1}}%攻擊力的冰屬性附加傷害。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "凌霜",
+        "fullDesc": "擁有【智劍連心】效果時，效果抗性提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "輕呂",
+        "fullDesc": "觸發暴擊時，速度提高{{1}}%，持續{{2}}回合。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

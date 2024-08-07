@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Überziehung",
+        "fullDesc": "Wenn Topaz ihren Standardangriff einsetzt, um SCH zuzufügen, wird der Angriff als Folgeangriff gewertet.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Finanzielle Turbulenzen",
+        "fullDesc": "Erhöht Topaz’ und Konties SCH gegen Gegner mit Feuer-Schwäche um {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Technische Anpassung",
+        "fullDesc": "Wenn Kontie mit Status „Erstaunlicher Aufstieg!“ einen Angriff ausführt, wird Topaz’ Energie zusätzlich um {{1}} Pkt. wiederhergestellt.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

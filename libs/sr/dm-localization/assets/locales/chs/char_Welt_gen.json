@@ -35,6 +35,27 @@
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "惩戒",
+        "fullDesc": "施放终结技时，有{{1}}%基础概率使目标受到的伤害提高{{2}}%，持续{{3}}回合。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "审判",
+        "fullDesc": "施放终结技时，额外恢复{{1}}点能量。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "裁决",
+        "fullDesc": "对被弱点击破的敌方目标造成的伤害提高{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

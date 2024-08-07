@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Nightshade",
+        "fullDesc": "Mengurangi peluang diserang oleh target musuh jika persentase HP saat ini kurang dari atau sama dengan {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Lacerate",
+        "fullDesc": "Saat Seele dalam status buff, Quantum RES PEN dia meningkat {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Rippling Waves",
+        "fullDesc": "Setelah melancarkan Basic Attack, mendahulukan {{1}}% aksi Seele yang selanjutnya.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

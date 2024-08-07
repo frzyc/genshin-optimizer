@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Sans filet",
+        "fullDesc": "L'ATQ normale a {{1}}% de chances de base d'infliger un effet de Brûlure similaire à celui de la compétence.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Cerceau lame",
+        "fullDesc": "L'action de Guinaifen est avancée de {{1}}% en début de combat.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Marche sur le feu",
+        "fullDesc": "Inflige {{1}}% de DGT supplémentaires aux ennemis brûlés.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

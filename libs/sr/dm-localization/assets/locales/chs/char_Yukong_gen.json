@@ -35,6 +35,27 @@
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "襄尺",
+        "fullDesc": "驭空被施加负面效果时可抵抗1次负面效果，该效果在{{1}}回合后可再次触发。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "迟彝",
+        "fullDesc": "驭空在场时，我方全体造成的虚数属性伤害提高{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "气壮",
+        "fullDesc": "持有【鸣弦号令】时，每当我方目标行动后，驭空将额外恢复{{1}}点能量。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Baila para mí",
+        "fullDesc": "Si hay 5 o más/4/3/2/1 enemigos en el campo de batalla, el Daño de Ultrarruptura activado por el efecto de Bailarín de apoyo aumenta en un {{1}}%/{{2}}%/{{3}}%/{{4}}%/{{5}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Sigue la corriente",
+        "fullDesc": "Al usar la habilidad básica, la Reducción de Firmeza del primer daño infligido aumenta en un {{1}}% adicional.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Sombrero del teatro",
+        "fullDesc": "Cuando un aliado inflige Ruptura de Debilidad, la acción del enemigo se retrasa en un {{1}}% adicional.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

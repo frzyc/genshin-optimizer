@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Hồi Sinh",
+        "fullDesc": "Khi tiêu diệt kẻ địch, nếu Phần Trăm HP hiện tại thấp hơn hoặc bằng {{1}}%, sẽ hồi ngay HP bằng {{2}}% Giới Hạn HP của bản thân.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Kiên Nhẫn",
+        "fullDesc": "Tăng {{1}}% tỷ lệ Kháng Hiệu Ứng Xấu dạng Sát Thương Duy Trì.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Chống Cự",
+        "fullDesc": "Khi vào chiến đấu, nếu Phần Trăm HP hiện tại nhỏ hơn hoặc bằng {{1}}%, thì Arlan có thể kháng tất cả sát thương ngoại trừ sát thương duy trì. Sau khi Arlan bị tấn công, hiệu ứng này sẽ giải trừ.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

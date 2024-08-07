@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Nachtschatten",
+        "fullDesc": "Liegt der LP-Prozentsatz bei {{1}}% oder niedriger, sinkt die Chance, von Gegnern angegriffen zu werden.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Zerreißen",
+        "fullDesc": "Erhöht beim Buff die Quanten-WDS-DUR von Seele um {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Gekräuselte Oberfläche",
+        "fullDesc": "Zieht nach einem Standardangriff Seeles nächste Aktion um {{1}}% vor.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

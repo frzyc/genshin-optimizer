@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Décroissance",
+        "fullDesc": "Lorsque Topaz utilise une ATQ normale pour infliger des DGT, l'attaque est considérée comme une attaque de suivi.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Turbulences financières",
+        "fullDesc": "Augmente les DGT infligés par Topaz et Compti aux cibles ennemies qui ont une Faiblesse au feu de {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Loi du marché",
+        "fullDesc": "Lorsque Compti attaque dans l'état Inflation exponentielle, Topaz régénère {{1}} points d'énergie supplémentaires.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

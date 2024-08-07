@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "La cerise sur le couteau",
+        "fullDesc": "Lorsque Yanqing attaque, il inflige des DGT de glace additionnels équivalents à {{1}}% de son ATQ aux ennemis qui ont une Faiblesse à la glace.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "La glace sourit aux audacieux",
+        "fullDesc": "Lorsque Osmose avec l'acier est active, la RÉS aux effets augmente de {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Lame rapide",
+        "fullDesc": "En cas de coup critique, la VIT augmente de {{1}}% pendant {{2}} tours.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

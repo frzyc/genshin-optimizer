@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Archerion",
+        "fullDesc": "Yukong est capable de bloquer 1 malus. Cet effet peut être déclenché une fois tous les {{1}} tours.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Archère émérite",
+        "fullDesc": "Lorsque Yukong est sur le champ de bataille, les DGT imaginaires infligés par les alliés augmentent de {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Majesté",
+        "fullDesc": "Lorsque « Rugissement des cordes » est actif, Yukong régénère {{1}} points d'énergie supplémentaires à chaque action alliée.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

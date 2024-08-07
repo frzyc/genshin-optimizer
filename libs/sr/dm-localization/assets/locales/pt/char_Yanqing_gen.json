@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Cereja do Chute",
+        "fullDesc": "Quando Yanqing ataca, causa Dano de Gelo Adicional igual a {{1}}% do ATQ de Yanqing a inimigos com Fraqueza contra Gelo.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "O Gelo Favorece os Corajosos",
+        "fullDesc": "Quando a Sincronia d'Alma de Ferro é ativada, a RES a Efeito aumenta em {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Lâmina Gentil",
+        "fullDesc": "Quando um Acerto CRIT for ativado, a VEL aumenta em {{1}}% por {{2}} rodada(s).",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

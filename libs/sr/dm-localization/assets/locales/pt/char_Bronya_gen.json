@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Comando",
+        "fullDesc": "A Chance de CRIT do ATQ Básico aumenta para 100%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Campo de Batalha",
+        "fullDesc": "No início da batalha, aumenta a DEF de todos os aliados em {{2}}% por {{1}} rodada(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Poder Militar",
+        "fullDesc": "Quando Bronya está no campo, todos os aliados causam {{1}}% a mais de Dano.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

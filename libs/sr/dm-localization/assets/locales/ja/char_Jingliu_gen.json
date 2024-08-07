@@ -40,6 +40,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#しきょう}死境{RUBY_E#}",
+        "fullDesc": "「転魄」状態の時、効果抵抗+{{1}}%。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#けんしゅ}剣首{RUBY_E#}",
+        "fullDesc": "「無罅の飛光」を発動した後、次の行動順が{{1}}%早まる。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#そうはく}霜魄{RUBY_E#}",
+        "fullDesc": "「転魄」状態の時、必殺技によるダメージ+{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

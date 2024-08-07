@@ -40,6 +40,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Pelea por una ficha",
+        "fullDesc": "Al usar la habilidad básica, recupera 1 pt. de habilidad básica. Este efecto solo se puede activar una vez por batalla.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Esperando el palo adecuado",
+        "fullDesc": "La habilidad básica hace que inflija un {{1}}% más de daño.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Robo de cuarteto",
+        "fullDesc": "Tras utilizar el ATQ básico potenciado, la VEL de Qingque aumenta en un {{1}}% durante 1 turno.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

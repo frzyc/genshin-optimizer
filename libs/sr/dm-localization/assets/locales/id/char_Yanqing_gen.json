@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Icing on the Kick",
+        "fullDesc": "Setelah melancarkan serangan, akan mengakibatkan Ice DMG tambahan sebesar {{1}}% ATK Yanqing pada target musuh dengan Ice Weakness.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Frost Favors the Brave",
+        "fullDesc": "Saat \"Soulsteel Sync\" aktif, Effect RES meningkat {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Gentle Blade",
+        "fullDesc": "Saat CRIT Hit terpicu, meningkatkan {{1}}% SPD selama {{2}} giliran.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

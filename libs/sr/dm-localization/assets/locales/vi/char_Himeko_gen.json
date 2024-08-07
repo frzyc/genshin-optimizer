@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Ngôi Sao Lửa",
+        "fullDesc": "Khi thi triển tấn công có {{1}}% xác suất cơ bản khiến kẻ địch rơi vào trạng thái Thiêu Đốt, duy trì {{2}} hiệp.\\nTrong trạng thái Thiêu Đốt, khi bắt đầu mỗi hiệp, kẻ địch chịu Sát Thương Hỏa duy trì tương đương {{3}}% Tấn Công của Himeko.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Nóng Bỏng",
+        "fullDesc": "Sát thương Chiến Kỹ gây cho mục tiêu địch ở trạng thái Thiêu Đốt tăng {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Chuẩn Mực",
+        "fullDesc": "Nếu Phần Trăm HP hiện tại cao hơn hoặc bằng {{1}}%, thì Tỷ Lệ Bạo Kích tăng {{2}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

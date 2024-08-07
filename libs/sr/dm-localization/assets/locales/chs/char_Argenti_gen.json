@@ -40,6 +40,27 @@
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "虔诚",
+        "fullDesc": "回合开始时，立即获得{{1}}层【升格】。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "慷慨",
+        "fullDesc": "在敌方目标进入战斗时，自身立即恢复{{1}}点能量。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "勇气",
+        "fullDesc": "对当前生命值百分比小于等于{{1}}%的敌方目标造成的伤害提高{{2}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

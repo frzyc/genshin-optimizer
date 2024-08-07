@@ -40,6 +40,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Anmut",
+        "fullDesc": "Beim Kampfbeginn wird 7. März’ Aktion um {{1}}% vorgezogen.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Zartheit",
+        "fullDesc": "7. März kann den WDS von Gegnern mit der Schwäche vom Typ des Meisters reduzieren. Wenn Schwächebruch erlitten wird, wird auch der Effekt von Schwächebruch des Typs Imaginär ausgelöst.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Gezeitenwechsel",
+        "fullDesc": "Erhöht nach dem Einsatz des verstärkten Standardangriffs den KRIT-SCH des Meisters für {{3}} Rd. um {{1}}% und seinen Brucheffekt um {{2}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

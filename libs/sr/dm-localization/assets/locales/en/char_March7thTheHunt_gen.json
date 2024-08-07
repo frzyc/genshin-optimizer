@@ -40,6 +40,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Swan Soar",
+        "fullDesc": "When the battle starts, March 7th's action is Advanced Forward by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Filigree",
+        "fullDesc": "March 7th can reduce the Toughness of enemies whose Weakness Type is the same as Shifu's Combat Type. When Breaking Weakness, triggers the Imaginary Weakness Break effect.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Tide Tamer",
+        "fullDesc": "After using Enhanced Basic ATK, increases Shifu's CRIT DMG by {{1}}% and Break Effect by {{2}}%, lasting for {{3}} turn(s).",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

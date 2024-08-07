@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Torture",
+        "fullDesc": "Les cibles ennemies subissent immédiatement les dégâts infligés par tous les effets de dégâts sur la durée actuels au lieu de subir immédiatement les dégâts de Stupéfaction lors de l'utilisation de l'ultime.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Pillage",
+        "fullDesc": "Lorsqu'un ennemi affecté par l'effet Stupéfaction est vaincu, Kafka régénère en plus {{1}} points d'énergie.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Épines",
+        "fullDesc": "La chance de base d'infliger Stupéfaction aux ennemis avec l'ultime, la technique et l'attaque de suivi déclenchée par le talent augmente de {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

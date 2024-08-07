@@ -35,6 +35,27 @@
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "가족",
+        "fullDesc": "피격 시 {{1}}%의 고정 확률로 자신의 디버프 효과 1개가 해제된다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "수호",
+        "fullDesc": "제어류 디버프 상태 저항 확률이 {{1}}% 증가한다",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "복수",
+        "fullDesc": "스바로그의 반격이 가하는 피해가 {{1}}% 증가한다",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Hồi Sinh",
+        "fullDesc": "Khi kích hoạt hiệu ứng Chiến Kỹ, giải trừ {{1}} Hiệu Ứng Xấu của 1 đồng đội chỉ định.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Thánh Hóa",
+        "fullDesc": "Sau khi kẻ địch bất kỳ trong kết giới bị phe ta tấn công, toàn bộ phe ta ngoại trừ người tấn công cũng sẽ hồi lượng HP bằng {{1}}% Tấn Công của Luocha +{{2}}.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Đi Qua Thung Lũng",
+        "fullDesc": "Tăng {{1}}% xác suất Kháng Hiệu Ứng Xấu dạng Khống Chế.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

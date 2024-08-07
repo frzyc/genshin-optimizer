@@ -40,6 +40,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#よわ}弱{RUBY_E#}きを{RUBY_B#たす}助{RUBY_E#}け",
+        "fullDesc": "戦闘スキルを発動した後、味方全体の受けるダメージ-{{2}}%、{{3}}ターン継続。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#し}死{RUBY_E#}の{RUBY_B#まえ}前{RUBY_E#}に{RUBY_B#せい}生{RUBY_E#}を",
+        "fullDesc": "開拓者が強化通常攻撃を行った後、HPを最大HP{{1}}%分回復する。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#かんが}考{RUBY_E#}えるより{RUBY_B#こうどう}行動{RUBY_E#}",
+        "fullDesc": "ターンが回ってきた時、開拓者がバリアを持つ場合、攻撃力+{{2}}%、EPを{{1}}回復する、効果は行動終了まで継続。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

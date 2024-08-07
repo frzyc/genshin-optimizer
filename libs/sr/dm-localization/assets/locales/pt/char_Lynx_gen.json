@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Pesquisa de Avanço",
+        "fullDesc": "Após um alvo com \"Resposta de Sobrevivência\" ser atingido, Lynx regenera {{1}} de Energia imediatamente.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Técnicas de Exploração",
+        "fullDesc": "Aumenta a chance de resistir a penalidades de Controle Negativo em {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Sobrevivência ao Extremo",
+        "fullDesc": "Estende a duração do efeito de cura contínua concedido pelo Talento por {{1}} rodada(s).",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

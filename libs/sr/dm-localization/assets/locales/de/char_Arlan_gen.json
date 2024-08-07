@@ -35,6 +35,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Wiederbelebung",
+        "fullDesc": "Liegt der LP-Prozentsatz bei {{1}}% oder niedriger beim Besiegen eines Gegners, erhält Arlan unmittelbar {{2}}% seiner max. LP zurück.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Beharrlichkeit",
+        "fullDesc": "Erhöht die Chance von WDS gegen DoT-Debuffs um {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Abwehren",
+        "fullDesc": "Besitzt Arlan beim Kampfeintritt {{1}}% oder weniger LP, kann er allen SCH außer DoT blocken, bis er angegriffen wird.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

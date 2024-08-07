@@ -35,6 +35,27 @@
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Liberação",
+        "fullDesc": "Antes do acerto do primeiro golpe da Perícia Suprema, aumenta em {{1}}% a chance-base de causar Congelamento ao alvo.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Interligação",
+        "fullDesc": "Ao usar a Perícia Suprema, aumenta a Taxa de Acerto de Efeito em {{1}}%, durando até o final da ação da Perícia Suprema atual.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Transmissão",
+        "fullDesc": "Ao causar Dano a inimigos com Congelamento, aumenta o Dano CRIT em {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Trampa",
+        "fullDesc": "La duración del estado de Intemperie que el talento aplica a los enemigos se alarga en {{1}} turno.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Posición defensiva",
+        "fullDesc": "Al usar la habilidad definitiva, recupera {{1}} pts. de energía adicionales.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Picante",
+        "fullDesc": "El daño que los enemigos afectados por Intemperie infligen a Sampo se reduce en un {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

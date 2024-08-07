@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Roue enflammée",
+        "fullDesc": "Après chaque utilisation de « Sens de l'entaille », la prochaine utilisation de « Sens de l'entaille  » est remplacée par « Sens de l'éradication ».",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Répression du mal",
+        "fullDesc": "Lorsque Yunli est dans l'état Parade, elle résiste aux malus de contrôle et subit {{1}}% de DGT en moins.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Arme absolue",
+        "fullDesc": "L'ATQ de Yunli augmente de {{1}}% pendant 1 tour après avoir lancé un contre.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

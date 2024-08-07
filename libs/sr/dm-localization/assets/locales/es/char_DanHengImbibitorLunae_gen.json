@@ -55,6 +55,27 @@
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Estrella oculta",
+        "fullDesc": "Recupera {{1}} pts. de energía al comenzar la batalla.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Contención de inundaciones",
+        "fullDesc": "La probabilidad de resistir estados negativos de Control aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Nuevo despertar",
+        "fullDesc": "Cuando inflige daño a enemigos con Debilidad Imaginaria, el Daño CRIT aumenta en un {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

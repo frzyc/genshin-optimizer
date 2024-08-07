@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Efficiency",
+        "fullDesc": "When Skill is used, the DMG Boost effect on target enemies increases by an extra {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Puppet",
+        "fullDesc": "The chance to resist Crowd Control Debuffs increases by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Icing",
+        "fullDesc": "When Ultimate is used, deals {{1}}% more DMG to Frozen enemies.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Chroniques",
+        "fullDesc": "Régénère {{1}} points d'énergie supplémentaires lors de l'utilisation de l'ATQ normale.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Fleur artificielle",
+        "fullDesc": "L'effet d'augmentation des DGT critiques accordé par la compétence est prolongé jusqu'au début du prochain tour de la cible.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Rêverie nocturne",
+        "fullDesc": "Augmente l'ATQ de tous les alliés de {{4}}%. Lorsqu'il y a 1/2/3 alliés de type quantique dans l'équipe, l'ATQ des alliés de type quantique augmente de {{1}}%/{{2}}%/{{3}}% supplémentaires.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

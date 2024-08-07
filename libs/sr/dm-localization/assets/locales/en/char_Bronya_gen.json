@@ -35,6 +35,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Command",
+        "fullDesc": "The CRIT Rate for Basic ATK increases to 100%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Battlefield",
+        "fullDesc": "At the start of the battle, all allies' DEF increases by {{2}}% for {{1}} turn(s).",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Military Might",
+        "fullDesc": "When Bronya is on the field, all allies deal {{1}}% more DMG.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

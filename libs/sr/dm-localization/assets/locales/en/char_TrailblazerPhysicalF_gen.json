@@ -45,6 +45,27 @@
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Ready for Battle",
+        "fullDesc": "At the start of the battle, immediately regenerates {{1}} Energy.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Tenacity",
+        "fullDesc": "Each Talent stack increases the Trailblazer's DEF by {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Fighting Will",
+        "fullDesc": "When using Skill or Ultimate \"Blowout: RIP Home Run,\" DMG dealt to the target enemy is increased by {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

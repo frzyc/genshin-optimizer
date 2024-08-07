@@ -35,6 +35,27 @@
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "{RUBY_B#せんりゅう}潜龍{RUBY_E#}",
+        "fullDesc": "残りHPが{{1}}%以下の場合、敵に攻撃される確率ダウン。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "{RUBY_B#ぜつえい}絶影{RUBY_E#}",
+        "fullDesc": "攻撃を行った後、{{1}}%の固定確率で自身の速度+{{2}}%、{{3}}ターン継続。",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "{RUBY_B#ごうふう}剛風{RUBY_E#}",
+        "fullDesc": "減速状態の敵に対する、通常攻撃によるダメージ+{{1}}%。",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

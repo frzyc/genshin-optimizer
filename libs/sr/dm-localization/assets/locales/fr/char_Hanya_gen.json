@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Consignation",
+        "fullDesc": "L'ATQ des alliés qui déclenchent l'effet de récupération de point de compétence de Fardeau augmente de {{1}}% pendant {{2}} tour.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Au-delà",
+        "fullDesc": "Récupère {{2}} point de compétence supplémentaire lorsque des ennemis affectés par Fardeau sont éliminés et que le nombre de fois où la récupération de point de compétence de Fardeau a été déclenchée est inférieur ou égal à {{1}}.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Résurrection",
+        "fullDesc": "Le personnage régénère {{1}} points d'énergie lorsque l'effet de récupération de point de compétence de Fardeau se déclenche.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

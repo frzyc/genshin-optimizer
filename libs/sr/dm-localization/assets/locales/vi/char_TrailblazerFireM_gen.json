@@ -40,6 +40,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Lá Lành Đùm Lá Rách",
+        "fullDesc": "Sau khi thi triển Chiến Kỹ, sẽ giảm {{2}}% sát thương mà toàn phe ta phải chịu, duy trì {{3}} hiệp.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Cuộc Sống Trước Khi Chết",
+        "fullDesc": "Sau khi Nhà Khai Phá thi triển cường hóa Tấn Công Thường, sẽ hồi HP bằng {{1}}% Giới Hạn HP của bản thân.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Dừng Nghĩ Ngợi, Hãy Hành Động!",
+        "fullDesc": "Khi bắt đầu hiệp, nếu Nhà Khai Phá được Khiên bảo vệ, thì Tấn Công sẽ tăng {{2}}% và hồi {{1}} Năng Lượng, duy trì đến khi hành động kết thúc.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

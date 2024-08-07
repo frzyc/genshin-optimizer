@@ -40,6 +40,27 @@
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Brandneues Rezept",
+        "fullDesc": "Erhöht die von Gallagher bewirkte Heilung in Höhe von {{1}}% des Brucheffekts. Die bewirkte Heilung kann durch diesen Effekt um bis zu {{2}}% erhöht werden.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Natürliche Hefe",
+        "fullDesc": "Nach dem Einsatz des Ultimates wird die eigene Aktion um 100 % vorgezogen.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Zum Wohl",
+        "fullDesc": "Wenn Gallagher „Hopfenschwall“ einsetzt, um Gegner im Status Berauschung anzugreifen, wirkt die LP-Wiederherstellung seines Talents für diesen Angriff auch auf andere Verbündeten.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -55,6 +55,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Étoile cachée",
+        "fullDesc": "Régénère immédiatement {{1}} points d'énergie en début de combat.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Règne abyssal",
+        "fullDesc": "Augmente les chances de résister aux malus de contrôle de {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Sursaut du dragon",
+        "fullDesc": "Les DGT critiques du personnage augmentent de {{1}}% lorsqu'il inflige des DGT à des cibles ennemies qui ont une Faiblesse imaginaire.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

@@ -35,6 +35,27 @@
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Frappe douloureuse",
+        "fullDesc": "Inflige {{1}}% de DGT supplémentaires aux ennemis qui subissent un malus.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Stratégie secrète",
+        "fullDesc": "Augmente les chances d'appliquer des effets de tous les alliés de {{1}}% lorsque Pela est sur le champ de bataille.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Anéantissement",
+        "fullDesc": "Augmente les DGT de la prochaine attaque de {{1}}% lorsque le personnage utilise sa compétence pour supprimer un bonus.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

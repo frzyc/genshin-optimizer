@@ -35,6 +35,27 @@
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Release",
+        "fullDesc": "Sebelum Hit pertama dari Ultimate mengenai target, peluang dasar untuk membuat target memasuki status Frozen meningkat {{1}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Interlock",
+        "fullDesc": "Saat melancarkan Ultimate, meningkatkan {{1}}% Effect Hit Rate sampai aksi Ultimate kali ini berakhir.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Transmission",
+        "fullDesc": "Saat mengakibatkan DMG pada target musuh berstatus Frozen, CRIT DMG meningkat {{1}}%.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {

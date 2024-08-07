@@ -35,6 +35,27 @@
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
         "shortDesc": ""
       }
+    },
+    "bonusAbility1": {
+      "0": {
+        "name": "Khung Dệt Điềm Báo",
+        "fullDesc": "Tăng Sát Thương do bản thân gây ra, mức tăng bằng {{1}}% Tấn Công Kích Phá, tối đa khiến sát thương gây ra tăng {{2}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility2": {
+      "0": {
+        "name": "Ổ Trục Phá Hủy",
+        "fullDesc": "Nếu Sức Bền hiện tại của kẻ địch lớn hơn hoặc bằng {{1}}% Giới Hạn Sức Bền của chính kẻ đó, thì sát thương Tuyệt Kỹ gây ra tăng {{2}}%.",
+        "shortDesc": ""
+      }
+    },
+    "bonusAbility3": {
+      "0": {
+        "name": "Trung Khu Quan Sát",
+        "fullDesc": "Xueyi sẽ tích lũy số tầng Ác Báo vượt mức, tối đa tích lũy {{1}} tầng. Sau khi Xueyi kích hoạt Thiên Phú sẽ nhận lại được số tầng Ác Báo tích lũy tương ứng.",
+        "shortDesc": ""
+      }
     }
   },
   "ranks": {
