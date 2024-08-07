@@ -7,8 +7,8 @@
       "pointId": "1303001",
       "anchor": "Point01",
       "pointType": 2,
-      "skillParamList": {
-        "130301": [
+      "skillParamList": [
+        [
           [
             0.5,
             0.6,
@@ -21,14 +21,14 @@
             1.3
           ]
         ]
-      }
+      ]
     },
     "skill": {
       "pointId": "1303002",
       "anchor": "Point02",
       "pointType": 2,
-      "skillParamList": {
-        "130302": [
+      "skillParamList": [
+        [
           [
             0.16,
             0.176,
@@ -81,14 +81,14 @@
             3
           ]
         ]
-      }
+      ]
     },
     "ult": {
       "pointId": "1303003",
       "anchor": "Point03",
       "pointType": 2,
-      "skillParamList": {
-        "130303": [
+      "skillParamList": [
+        [
           [
             0.15,
             0.16,
@@ -175,14 +175,14 @@
             0.6
           ]
         ]
-      }
+      ]
     },
     "talent": {
       "pointId": "1303004",
       "anchor": "Point04",
       "pointType": 2,
-      "skillParamList": {
-        "130304": [
+      "skillParamList": [
+        [
           [
             0.08,
             0.082,
@@ -218,14 +218,14 @@
             1.5
           ]
         ]
-      }
+      ]
     },
     "technique": {
       "pointId": "1303007",
       "anchor": "Point05",
       "pointType": 2,
-      "skillParamList": {
-        "130307": [
+      "skillParamList": [
+        [
           [
             1
           ],
@@ -239,38 +239,38 @@
             20
           ]
         ]
-      }
+      ]
     },
     "bonusAbility1": {
       "pointId": "1303101",
       "anchor": "Point06",
       "pointType": 3,
-      "skillParamList": {
-        "1303101": [
+      "skillParamList": [
+        [
           [
             0.2
           ]
         ]
-      }
+      ]
     },
     "bonusAbility2": {
       "pointId": "1303102",
       "anchor": "Point07",
       "pointType": 3,
-      "skillParamList": {
-        "1303102": [
+      "skillParamList": [
+        [
           [
             5
           ]
         ]
-      }
+      ]
     },
     "bonusAbility3": {
       "pointId": "1303103",
       "anchor": "Point08",
       "pointType": 3,
-      "skillParamList": {
-        "1303103": [
+      "skillParamList": [
+        [
           [
             1.2,
             0.1,
@@ -278,7 +278,7 @@
             0.36
           ]
         ]
-      }
+      ]
     },
     "statBoost1": {
       "pointId": "1303201",
@@ -291,11 +291,11 @@
         }
       ],
       "pointType": 1,
-      "skillParamList": {
-        "1303201": [
+      "skillParamList": [
+        [
           []
         ]
-      }
+      ]
     },
     "statBoost2": {
       "pointId": "1303202",
@@ -308,11 +308,11 @@
         }
       ],
       "pointType": 1,
-      "skillParamList": {
-        "1303202": [
+      "skillParamList": [
+        [
           []
         ]
-      }
+      ]
     },
     "statBoost3": {
       "pointId": "1303203",
@@ -325,11 +325,11 @@
         }
       ],
       "pointType": 1,
-      "skillParamList": {
-        "1303203": [
+      "skillParamList": [
+        [
           []
         ]
-      }
+      ]
     },
     "statBoost4": {
       "pointId": "1303204",
@@ -342,11 +342,11 @@
         }
       ],
       "pointType": 1,
-      "skillParamList": {
-        "1303204": [
+      "skillParamList": [
+        [
           []
         ]
-      }
+      ]
     },
     "statBoost5": {
       "pointId": "1303205",
@@ -359,11 +359,11 @@
         }
       ],
       "pointType": 1,
-      "skillParamList": {
-        "1303205": [
+      "skillParamList": [
+        [
           []
         ]
-      }
+      ]
     },
     "statBoost6": {
       "pointId": "1303206",
@@ -376,11 +376,11 @@
         }
       ],
       "pointType": 1,
-      "skillParamList": {
-        "1303206": [
+      "skillParamList": [
+        [
           []
         ]
-      }
+      ]
     },
     "statBoost7": {
       "pointId": "1303207",
@@ -393,11 +393,11 @@
         }
       ],
       "pointType": 1,
-      "skillParamList": {
-        "1303207": [
+      "skillParamList": [
+        [
           []
         ]
-      }
+      ]
     },
     "statBoost8": {
       "pointId": "1303208",
@@ -410,11 +410,11 @@
         }
       ],
       "pointType": 1,
-      "skillParamList": {
-        "1303208": [
+      "skillParamList": [
+        [
           []
         ]
-      }
+      ]
     },
     "statBoost9": {
       "pointId": "1303209",
@@ -427,11 +427,11 @@
         }
       ],
       "pointType": 1,
-      "skillParamList": {
-        "1303209": [
+      "skillParamList": [
+        [
           []
         ]
-      }
+      ]
     },
     "statBoost10": {
       "pointId": "1303210",
@@ -444,11 +444,11 @@
         }
       ],
       "pointType": 1,
-      "skillParamList": {
-        "1303210": [
+      "skillParamList": [
+        [
           []
         ]
-      }
+      ]
     }
   },
   "ascension": [

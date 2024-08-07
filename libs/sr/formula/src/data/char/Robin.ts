@@ -26,19 +26,19 @@ let s = 0,
 // TODO: Load scalings
 const dm = {
   basic: {
-    dmg: basic[0],
+    dmg: basic[0][0],
   },
   skill: {
-    dmg: skill[s++],
+    dmg: skill[0][s++],
   },
   ult: {
-    dmg: ult[u++],
+    dmg: ult[0][u++],
   },
   talent: {
-    dmg: talent[ta++],
+    dmg: talent[0][ta++],
   },
   technique: {
-    dmg: (technique[te++] ?? [0])[0],
+    dmg: (technique[0][te++] ?? [0])[0],
   },
   e1: {
     dmg: eidolon[1][0] ?? 0,
