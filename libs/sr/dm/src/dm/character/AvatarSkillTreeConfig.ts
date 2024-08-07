@@ -70,6 +70,28 @@ export type PropertyType =
   | 'PhysicalAddedRatio'
   | 'ThunderAddedRatio'
 
+export const allSkillTreeTypes = [
+  'basic',
+  'skill',
+  'ult',
+  'talent',
+  'technique',
+  'bonusAbility1',
+  'bonusAbility2',
+  'bonusAbility3',
+  'statBoost1',
+  'statBoost2',
+  'statBoost3',
+  'statBoost4',
+  'statBoost5',
+  'statBoost6',
+  'statBoost7',
+  'statBoost8',
+  'statBoost9',
+  'statBoost10',
+] as const
+export type SkillTreeType = (typeof allSkillTreeTypes)[number]
+
 const avatarSkillTreeConfigSrc = JSON.parse(
   readDMJSON('ExcelOutput/AvatarSkillTreeConfig.json')
 ) as AvatarSkillTreeConfig[]

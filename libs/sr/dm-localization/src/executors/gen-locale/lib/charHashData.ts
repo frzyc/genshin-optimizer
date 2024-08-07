@@ -5,12 +5,13 @@ import {
   allCharacterDataKeys,
   allTrailblazerGenderedKeys,
 } from '@genshin-optimizer/sr/consts'
-import type { Rank } from '@genshin-optimizer/sr/dm'
+import type { AvatarSkillTreeConfig, Rank } from '@genshin-optimizer/sr/dm'
 import {
   DmAttackTypeMap,
   avatarConfig,
   avatarRankConfig,
   avatarSkillConfig,
+  avatarSkillTreeConfig,
   characterIdMap,
 } from '@genshin-optimizer/sr/dm'
 import { convertToHash } from './util'
@@ -20,7 +21,12 @@ type CharData = {
   abilities: AbilitiesData
   ranks: Ranks
 }
-type AbilitiesData = Partial<Record<AbilityKey, AbilityData[]>>
+type AbilitiesData = Partial<
+  Record<
+    AbilityKey | 'bonusAbility1' | 'bonusAbility2' | 'bonusAbility3',
+    AbilityData[]
+  >
+>
 type AbilityData = {
   name: string
   fullDesc: string
@@ -30,6 +36,20 @@ type Ranks = Record<Rank, RankData>
 type RankData = {
   name: string
   desc: string
+}
+
+function addBonusAbility(
+  config: AvatarSkillTreeConfig,
+  abilities: AbilitiesData,
+  key: 'bonusAbility1' | 'bonusAbility2' | 'bonusAbility3'
+) {
+  abilities[key] = [
+    {
+      name: convertToHash(config.PointName).toString(),
+      fullDesc: convertToHash(config.PointDesc).toString(),
+      shortDesc: '',
+    },
+  ]
 }
 
 const charArray = Object.entries(avatarConfig).map(([charId, charConfig]) => {
@@ -55,6 +75,24 @@ const charArray = Object.entries(avatarConfig).map(([charId, charConfig]) => {
       shortDesc: SimpleSkillDesc.Hash.toString(),
     })
   })
+
+  // Bonus abilities
+  const [
+    _basic,
+    _skill,
+    _ult,
+    _talent,
+    _technique,
+    bonusAbility1,
+    bonusAbility2,
+    bonusAbility3,
+  ] = Object.values(avatarSkillTreeConfig[charId]).map(
+    // Grab the first level
+    (skillTree) => skillTree[0]
+  )
+  addBonusAbility(bonusAbility1, abilities, 'bonusAbility1')
+  addBonusAbility(bonusAbility2, abilities, 'bonusAbility2')
+  addBonusAbility(bonusAbility3, abilities, 'bonusAbility3')
 
   // Eidolons
   const rankArray = Object.values(avatarRankConfig[charId]).map(

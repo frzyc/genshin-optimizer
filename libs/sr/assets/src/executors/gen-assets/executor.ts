@@ -35,17 +35,26 @@ export default async function runExecutor(
   console.log(options)
   if (options.fetchAssets === 'local' && fs.existsSync(DM2D_PATH)) {
     console.log('Copying files')
-    await crawlObject(
+    crawlObject(
       AssetData,
       [],
-      (s) => typeof s === 'string',
-      async (filePath: string, keys) => {
-        const fileName = keys.slice(-1)
+      (s) => typeof s === 'string' || Array.isArray(s),
+      (filePath: string | string[], keys) => {
+        const fileName = keys.slice(-1)[0]
         const folderPath = keys.slice(0, -1).join('/')
-        copyFile(
-          `${DM2D_PATH}/${filePath.toLocaleLowerCase()}`,
-          `${DEST_PROJ_PATH}/gen/${folderPath}/${fileName}.png`
-        )
+        if (typeof filePath === 'string') {
+          copyFile(
+            `${DM2D_PATH}/${filePath.toLocaleLowerCase()}`,
+            `${DEST_PROJ_PATH}/gen/${folderPath}/${fileName}.png`
+          )
+        } else {
+          filePath.forEach((fp, index) =>
+            copyFile(
+              `${DM2D_PATH}/${fp.toLocaleLowerCase()}`,
+              `${DEST_PROJ_PATH}/gen/${folderPath}/${fileName}_${index}.png`
+            )
+          )
+        }
       }
     )
   } else if (options.fetchAssets === 'yatta') {
@@ -53,39 +62,23 @@ export default async function runExecutor(
     await crawlObjectAsync(
       AssetData,
       [],
-      (s) => typeof s === 'string',
-      async (filePath: string, keys) => {
-        const fileName = keys.slice(-1)
+      (s) => typeof s === 'string' || Array.isArray(s),
+      async (filePath: string | string[], keys) => {
+        const fileName = keys.slice(-1)[0]
         const subFolderPath = keys.slice(0, -1).join('/')
-        const yattaFileName = filePath.split('/').at(-1) ?? ''
-        const yatta = `https://api.yatta.top/hsr/assets/UI/skill/${yattaFileName}`
         const destFolder = path.resolve(
           `${DEST_PROJ_PATH}/gen/${subFolderPath}`
         )
-        const destFile = path.resolve(`${destFolder}/${fileName}.png`)
-
         if (!fs.existsSync(destFolder)) fs.mkdirSync(destFolder)
 
-        const filestream = fs.createWriteStream(destFile)
-
-        try {
-          const yattaImage = await fetch(yatta)
-          if (yattaImage.body === null) {
-            console.log(
-              `File body null for ${yatta} to be stored in ${destFile}`
-            )
-            return
-          }
-          await finished(
-            Readable.fromWeb(yattaImage.body as ReadableStream<any>).pipe(
-              filestream
+        if (typeof filePath === 'string') {
+          await saveFromYatta(filePath, destFolder, fileName)
+        } else {
+          await Promise.all(
+            filePath.map((fp, index) =>
+              saveFromYatta(fp, destFolder, `${fileName}_${index}`)
             )
           )
-        } catch (exception) {
-          console.log(
-            `Exception when fetching ${yatta} for ${destFile}: ${exception}`
-          )
-          throw exception
         }
       }
     )
@@ -98,12 +91,50 @@ export default async function runExecutor(
   crawlObject(
     AssetData,
     [],
-    (s) => typeof s === 'string',
-    (_filePath: string, keys) => {
+    (s) => typeof s === 'string' || Array.isArray(s),
+    (filePath: string | string[], keys) => {
       const fileName = keys.slice(-1)[0]
-      layeredAssignment(indexData, keys, fileName)
+      if (typeof filePath === 'string') {
+        layeredAssignment(indexData, keys, fileName)
+      } else {
+        filePath.forEach((_, index) => {
+          const newKeys = [...keys]
+          newKeys[newKeys.length - 1] = `${
+            newKeys[newKeys.length - 1]
+          }_${index}`
+          layeredAssignment(indexData, newKeys, `${fileName}_${index}`)
+        })
+      }
     }
   )
   await generateIndexFromObj(indexData, `${DEST_PROJ_PATH}/gen`)
   return { success: true }
+}
+
+async function saveFromYatta(
+  filePath: string,
+  destFolder: string,
+  fileName: string
+) {
+  const yattaFileName = filePath.split('/').at(-1) ?? ''
+  const yatta = `https://api.yatta.top/hsr/assets/UI/skill/${yattaFileName}`
+  const destFile = path.resolve(`${destFolder}/${fileName}.png`)
+
+  const filestream = fs.createWriteStream(destFile)
+
+  try {
+    const yattaImage = await fetch(yatta)
+    if (yattaImage.body === null) {
+      console.log(`File body null for ${yatta} to be stored in ${destFile}`)
+      return
+    }
+    await finished(
+      Readable.fromWeb(yattaImage.body as ReadableStream<any>).pipe(filestream)
+    )
+  } catch (exception) {
+    console.log(
+      `Exception when fetching ${yatta} for ${destFile}: ${exception}`
+    )
+    throw exception
+  }
 }
