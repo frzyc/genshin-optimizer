@@ -67,7 +67,7 @@ function skillEmbed(
     text += '\n\n'
   }
   const embed = baseEmbed(id, name).setDescription(clean(text))
-  const thumbnail = getAssets(id)[ability === 'overworld' ? 'basic' : ability]
+  const thumbnail = getAssets(id)[ability]
   if (thumbnail) embed.setThumbnail(createYattaUrl('skill', thumbnail[0]))
   return embed
 }
