@@ -61,7 +61,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: ${{ vars.ENV_NAME }}
+          app-name: ${{ needs.set-env.outputs.env }}
           slot-name: 'Production'
           package: somnia_build/dist/apps/somnia
       - name: Output date
