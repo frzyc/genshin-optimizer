@@ -1,5 +1,5 @@
 'use client'
-import { ColorText, SqBadge } from '@genshin-optimizer/common/ui'
+import { ColorText, SqBadge, TranslateObj } from '@genshin-optimizer/common/ui'
 import '@genshin-optimizer/gi/theme' // import to validate typing for color variants
 import { Skeleton, Typography } from '@mui/material'
 import type { TFunction } from 'i18next'
@@ -63,35 +63,15 @@ export function Translate({
   children?: ReactNode
   useBadge?: boolean
 }) {
-  const { t } = useTranslation(ns)
-  const textKey = `${ns}:${key18}`
-  const textObj = values
-    ? t(textKey, { returnObjects: true, ...values })
-    : t(textKey, { returnObjects: true })
-  if (typeof textObj === 'string')
-    return (
-      <span>
-        <Trans
-          i18nKey={textKey}
-          t={t}
-          components={useBadge ? badgeComponents : textComponents}
-          values={values}
-        >
-          {children}
-        </Trans>
-      </span>
-    )
-
   return (
-    <Suspense fallback={<Skeleton>{children}</Skeleton>}>
-      <T
-        key18={textKey}
-        obj={textObj}
-        t={t}
-        values={values}
-        useBadge={useBadge}
-      />
-    </Suspense>
+    <TranslateObj
+      ns={ns}
+      key18={key18}
+      values={values}
+      children={children}
+      useBadge={useBadge}
+      components={useBadge ? badgeComponents : textComponents}
+    />
   )
 }
 /**this is used cause the `components` prop mess with tag interpolation. */
