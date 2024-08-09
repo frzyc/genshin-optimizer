@@ -2,11 +2,11 @@ import { assertUnreachable } from '@genshin-optimizer/common/util'
 import type { AnyNode, CalcResult } from '@genshin-optimizer/pando/engine'
 import {
   Calculator as Base,
+  DebugCalculator,
   calculation,
 } from '@genshin-optimizer/pando/engine'
 import type { Member, Read, Sheet, Tag } from './data/util'
-import { reader } from './data/util'
-import { DebugCalculator } from './debug'
+import { reader, tagStr } from './data/util'
 
 const { arithmetic } = calculation
 const emptyCond: CondInfo = {}
@@ -108,7 +108,7 @@ export class Calculator extends Base<CalcMeta> {
       .reduce(merge, emptyCond)
   }
   toDebug(): DebugCalculator {
-    return new DebugCalculator(this)
+    return new DebugCalculator(this, tagStr)
   }
 }
 
