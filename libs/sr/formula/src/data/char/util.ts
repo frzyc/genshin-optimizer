@@ -235,8 +235,8 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       )
     ),
     // Small trace stat boosts
-    ...statBoosts.flatMap((statBoost) =>
-      Object.entries(statBoost).map(([key, amt], index) => {
+    ...statBoosts.flatMap((statBoost, index) =>
+      Object.entries(statBoost).map(([key, amt]) => {
         return getStatFromStatKey(self.premod, key).add(
           // TODO: Add automatic ascension requirement
           cmpEq(char[`statBoost${(index + 1) as StatBoostKey}`], 1, amt)
@@ -271,5 +271,8 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       listingItem(self.final.dmg_[TypeKeyToListingType[data_gen.damageType]])
     ),
     self.listing.formulas.add(listingItem(self.final.dmg_.physical)),
+    self.listing.formulas.add(listingItem(self.final.dmg_)),
+    self.listing.formulas.add(listingItem(self.final.weakness_)),
+    self.listing.formulas.add(listingItem(self.final.resPen_)),
   ]
 }
