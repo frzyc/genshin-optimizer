@@ -2,6 +2,7 @@ import type { AnyNode, Calculator, ReRead } from './node'
 import { traverse } from './node'
 import type { Tag, TagMapSubsetCache } from './tag'
 import { TagMapExactValues } from './tag'
+export * from './debugCalc'
 
 export function detectCycle(tag: Tag, calc: Calculator) {
   const stack: Tag[] = []

@@ -9,6 +9,8 @@ export * from './lightCone/EquipmentConfig'
 export * from './lightCone/EquipmentPromotionConfig'
 export * from './lightCone/EquipmentSkillConfig'
 
+export * from './misc/AvatarBreakDamage'
+
 export * from './relic/RelicDataInfo'
 export * from './relic/RelicMainAffixConfig'
 export * from './relic/RelicSetConfig'

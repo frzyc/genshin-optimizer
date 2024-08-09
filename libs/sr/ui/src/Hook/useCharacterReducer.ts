@@ -1,7 +1,7 @@
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import type { ICachedSroCharacter } from '@genshin-optimizer/sr/db'
 import { useCallback } from 'react'
-import { useDatabaseContext } from '../Context'
+import { useDatabaseContext } from '../Context/DatabaseContext'
 
 type characterTeamAction = {
   type: 'team'

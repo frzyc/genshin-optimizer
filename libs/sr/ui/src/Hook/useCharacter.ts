@@ -1,6 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import { useEffect, useState } from 'react'
-import { useDatabaseContext } from '../Context'
+import { useDatabaseContext } from '../Context/DatabaseContext'
 
 export function useCharacter(characterKey: CharacterKey | '' | undefined = '') {
   const { database } = useDatabaseContext()

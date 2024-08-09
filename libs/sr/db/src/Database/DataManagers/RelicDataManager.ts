@@ -21,7 +21,7 @@ import type {
   ISubstat,
 } from '@genshin-optimizer/sr/srod'
 import {
-  getRelicMainStatDisplayVal,
+  getRelicMainStatVal,
   getSubstatRange,
 } from '@genshin-optimizer/sr/util'
 import type {
@@ -307,7 +307,7 @@ export function cachedRelic(
   const level = Math.round(
     Math.min(Math.max(0, flex.level), relicMaxLevel[rarity])
   )
-  const mainStatVal = getRelicMainStatDisplayVal(rarity, mainStatKey, level)
+  const mainStatVal = getRelicMainStatVal(rarity, mainStatKey, level)
 
   const errors: string[] = []
   const substats: ICachedSubstat[] = flex.substats.map((substat) => ({

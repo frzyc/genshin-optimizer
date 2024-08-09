@@ -731,25 +731,9 @@ export const conditionals = {
     },
   },
   RuanMei: {
-    boolConditional: {
-      sheet: 'RuanMei',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'RuanMei',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'RuanMei',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
+    skillOvertone: { sheet: 'RuanMei', name: 'skillOvertone', type: 'bool' },
+    ultZone: { sheet: 'RuanMei', name: 'ultZone', type: 'bool' },
+    e4Broken: { sheet: 'RuanMei', name: 'e4Broken', type: 'bool' },
   },
   Sampo: {
     boolConditional: { sheet: 'Sampo', name: 'boolConditional', type: 'bool' },
@@ -3152,6 +3136,17 @@ export const conditionals = {
 }
 export const formulas = {
   Acheron: {
+    breakBase_0: {
+      sheet: 'Acheron',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Acheron',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Acheron',
       name: 'basicDmg_0',
@@ -3165,6 +3160,17 @@ export const formulas = {
     },
   },
   Argenti: {
+    breakBase_0: {
+      sheet: 'Argenti',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Argenti',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Argenti',
       name: 'basicDmg_0',
@@ -3178,6 +3184,17 @@ export const formulas = {
     },
   },
   Arlan: {
+    breakBase_0: {
+      sheet: 'Arlan',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Arlan',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Arlan',
       name: 'basicDmg_0',
@@ -3191,6 +3208,17 @@ export const formulas = {
     },
   },
   Asta: {
+    breakBase_0: {
+      sheet: 'Asta',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Asta',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Asta',
       name: 'basicDmg_0',
@@ -3204,6 +3232,17 @@ export const formulas = {
     },
   },
   Aventurine: {
+    breakBase_0: {
+      sheet: 'Aventurine',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Aventurine',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Aventurine',
       name: 'basicDmg_0',
@@ -3217,6 +3256,17 @@ export const formulas = {
     },
   },
   Bailu: {
+    breakBase_0: {
+      sheet: 'Bailu',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Bailu',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Bailu',
       name: 'basicDmg_0',
@@ -3230,6 +3280,17 @@ export const formulas = {
     },
   },
   BlackSwan: {
+    breakBase_0: {
+      sheet: 'BlackSwan',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'BlackSwan',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'BlackSwan',
       name: 'basicDmg_0',
@@ -3243,6 +3304,17 @@ export const formulas = {
     },
   },
   Blade: {
+    breakBase_0: {
+      sheet: 'Blade',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Blade',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Blade',
       name: 'basicDmg_0',
@@ -3256,6 +3328,17 @@ export const formulas = {
     },
   },
   Boothill: {
+    breakBase_0: {
+      sheet: 'Boothill',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Boothill',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Boothill',
       name: 'basicDmg_0',
@@ -3269,6 +3352,17 @@ export const formulas = {
     },
   },
   Bronya: {
+    breakBase_0: {
+      sheet: 'Bronya',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Bronya',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Bronya',
       name: 'basicDmg_0',
@@ -3282,6 +3376,17 @@ export const formulas = {
     },
   },
   Clara: {
+    breakBase_0: {
+      sheet: 'Clara',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Clara',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Clara',
       name: 'basicDmg_0',
@@ -3295,6 +3400,17 @@ export const formulas = {
     },
   },
   DanHeng: {
+    breakBase_0: {
+      sheet: 'DanHeng',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'DanHeng',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'DanHeng',
       name: 'basicDmg_0',
@@ -3308,6 +3424,17 @@ export const formulas = {
     },
   },
   DanHengImbibitorLunae: {
+    breakBase_0: {
+      sheet: 'DanHengImbibitorLunae',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'DanHengImbibitorLunae',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'DanHengImbibitorLunae',
       name: 'basicDmg_0',
@@ -3321,6 +3448,17 @@ export const formulas = {
     },
   },
   DrRatio: {
+    breakBase_0: {
+      sheet: 'DrRatio',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'DrRatio',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'DrRatio',
       name: 'basicDmg_0',
@@ -3334,6 +3472,17 @@ export const formulas = {
     },
   },
   Firefly: {
+    breakBase_0: {
+      sheet: 'Firefly',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Firefly',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Firefly',
       name: 'basicDmg_0',
@@ -3347,6 +3496,17 @@ export const formulas = {
     },
   },
   FuXuan: {
+    breakBase_0: {
+      sheet: 'FuXuan',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'FuXuan',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'FuXuan',
       name: 'basicDmg_0',
@@ -3360,6 +3520,17 @@ export const formulas = {
     },
   },
   Gallagher: {
+    breakBase_0: {
+      sheet: 'Gallagher',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Gallagher',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Gallagher',
       name: 'basicDmg_0',
@@ -3373,6 +3544,17 @@ export const formulas = {
     },
   },
   Gepard: {
+    breakBase_0: {
+      sheet: 'Gepard',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Gepard',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Gepard',
       name: 'basicDmg_0',
@@ -3386,6 +3568,17 @@ export const formulas = {
     },
   },
   Guinaifen: {
+    breakBase_0: {
+      sheet: 'Guinaifen',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Guinaifen',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Guinaifen',
       name: 'basicDmg_0',
@@ -3399,6 +3592,17 @@ export const formulas = {
     },
   },
   Hanya: {
+    breakBase_0: {
+      sheet: 'Hanya',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Hanya',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Hanya',
       name: 'basicDmg_0',
@@ -3412,6 +3616,17 @@ export const formulas = {
     },
   },
   Herta: {
+    breakBase_0: {
+      sheet: 'Herta',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Herta',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Herta',
       name: 'basicDmg_0',
@@ -3425,6 +3640,17 @@ export const formulas = {
     },
   },
   Himeko: {
+    breakBase_0: {
+      sheet: 'Himeko',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Himeko',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Himeko',
       name: 'basicDmg_0',
@@ -3438,6 +3664,17 @@ export const formulas = {
     },
   },
   Hook: {
+    breakBase_0: {
+      sheet: 'Hook',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Hook',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Hook',
       name: 'basicDmg_0',
@@ -3451,6 +3688,17 @@ export const formulas = {
     },
   },
   Huohuo: {
+    breakBase_0: {
+      sheet: 'Huohuo',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Huohuo',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Huohuo',
       name: 'basicDmg_0',
@@ -3464,6 +3712,17 @@ export const formulas = {
     },
   },
   Jade: {
+    breakBase_0: {
+      sheet: 'Jade',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Jade',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Jade',
       name: 'basicDmg_0',
@@ -3477,6 +3736,17 @@ export const formulas = {
     },
   },
   JingYuan: {
+    breakBase_0: {
+      sheet: 'JingYuan',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'JingYuan',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'JingYuan',
       name: 'basicDmg_0',
@@ -3490,6 +3760,17 @@ export const formulas = {
     },
   },
   Jingliu: {
+    breakBase_0: {
+      sheet: 'Jingliu',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Jingliu',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Jingliu',
       name: 'basicDmg_0',
@@ -3503,6 +3784,17 @@ export const formulas = {
     },
   },
   Kafka: {
+    breakBase_0: {
+      sheet: 'Kafka',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Kafka',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Kafka',
       name: 'basicDmg_0',
@@ -3516,6 +3808,17 @@ export const formulas = {
     },
   },
   Luka: {
+    breakBase_0: {
+      sheet: 'Luka',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Luka',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Luka',
       name: 'basicDmg_0',
@@ -3529,6 +3832,17 @@ export const formulas = {
     },
   },
   Luocha: {
+    breakBase_0: {
+      sheet: 'Luocha',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Luocha',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Luocha',
       name: 'basicDmg_0',
@@ -3542,6 +3856,17 @@ export const formulas = {
     },
   },
   Lynx: {
+    breakBase_0: {
+      sheet: 'Lynx',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Lynx',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Lynx',
       name: 'basicDmg_0',
@@ -3555,6 +3880,17 @@ export const formulas = {
     },
   },
   March7th: {
+    breakBase_0: {
+      sheet: 'March7th',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'March7th',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'March7th',
       name: 'basicDmg_0',
@@ -3678,6 +4014,17 @@ export const formulas = {
     },
   },
   March7thTheHunt: {
+    breakBase_0: {
+      sheet: 'March7thTheHunt',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'March7thTheHunt',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'March7thTheHunt',
       name: 'basicDmg_0',
@@ -3691,6 +4038,17 @@ export const formulas = {
     },
   },
   Misha: {
+    breakBase_0: {
+      sheet: 'Misha',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Misha',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Misha',
       name: 'basicDmg_0',
@@ -3704,6 +4062,17 @@ export const formulas = {
     },
   },
   Natasha: {
+    breakBase_0: {
+      sheet: 'Natasha',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Natasha',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Natasha',
       name: 'basicDmg_0',
@@ -3717,6 +4086,17 @@ export const formulas = {
     },
   },
   Pela: {
+    breakBase_0: {
+      sheet: 'Pela',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Pela',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Pela',
       name: 'basicDmg_0',
@@ -3730,6 +4110,17 @@ export const formulas = {
     },
   },
   Qingque: {
+    breakBase_0: {
+      sheet: 'Qingque',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Qingque',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Qingque',
       name: 'basicDmg_0',
@@ -3743,6 +4134,17 @@ export const formulas = {
     },
   },
   Robin: {
+    breakBase_0: {
+      sheet: 'Robin',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Robin',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Robin',
       name: 'basicDmg_0',
@@ -3756,6 +4158,17 @@ export const formulas = {
     },
   },
   RuanMei: {
+    breakBase_0: {
+      sheet: 'RuanMei',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'RuanMei',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'RuanMei',
       name: 'basicDmg_0',
@@ -3767,8 +4180,52 @@ export const formulas = {
         name: 'basicDmg_0',
       },
     },
+    zoneBreakDmg_0: {
+      sheet: 'RuanMei',
+      name: 'zoneBreakDmg_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'RuanMei',
+        name: 'zoneBreakDmg_0',
+      },
+    },
+    talentBreakDmg_0: {
+      sheet: 'RuanMei',
+      name: 'talentBreakDmg_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'RuanMei',
+        name: 'talentBreakDmg_0',
+      },
+    },
+    techBreakDmg_0: {
+      sheet: 'RuanMei',
+      name: 'techBreakDmg_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'RuanMei',
+        name: 'techBreakDmg_0',
+      },
+    },
   },
   Sampo: {
+    breakBase_0: {
+      sheet: 'Sampo',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Sampo',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Sampo',
       name: 'basicDmg_0',
@@ -3782,6 +4239,17 @@ export const formulas = {
     },
   },
   Seele: {
+    breakBase_0: {
+      sheet: 'Seele',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Seele',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Seele',
       name: 'basicDmg_0',
@@ -3795,6 +4263,17 @@ export const formulas = {
     },
   },
   Serval: {
+    breakBase_0: {
+      sheet: 'Serval',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Serval',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Serval',
       name: 'basicDmg_0',
@@ -3808,6 +4287,17 @@ export const formulas = {
     },
   },
   SilverWolf: {
+    breakBase_0: {
+      sheet: 'SilverWolf',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'SilverWolf',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'SilverWolf',
       name: 'basicDmg_0',
@@ -3821,6 +4311,17 @@ export const formulas = {
     },
   },
   Sparkle: {
+    breakBase_0: {
+      sheet: 'Sparkle',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Sparkle',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Sparkle',
       name: 'basicDmg_0',
@@ -3834,6 +4335,17 @@ export const formulas = {
     },
   },
   Sushang: {
+    breakBase_0: {
+      sheet: 'Sushang',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Sushang',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Sushang',
       name: 'basicDmg_0',
@@ -3847,6 +4359,17 @@ export const formulas = {
     },
   },
   Tingyun: {
+    breakBase_0: {
+      sheet: 'Tingyun',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Tingyun',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Tingyun',
       name: 'basicDmg_0',
@@ -3860,6 +4383,17 @@ export const formulas = {
     },
   },
   TopazAndNumby: {
+    breakBase_0: {
+      sheet: 'TopazAndNumby',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'TopazAndNumby',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'TopazAndNumby',
       name: 'basicDmg_0',
@@ -3873,6 +4407,17 @@ export const formulas = {
     },
   },
   Welt: {
+    breakBase_0: {
+      sheet: 'Welt',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Welt',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Welt',
       name: 'basicDmg_0',
@@ -3886,6 +4431,17 @@ export const formulas = {
     },
   },
   Xueyi: {
+    breakBase_0: {
+      sheet: 'Xueyi',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Xueyi',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Xueyi',
       name: 'basicDmg_0',
@@ -3899,6 +4455,17 @@ export const formulas = {
     },
   },
   Yanqing: {
+    breakBase_0: {
+      sheet: 'Yanqing',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Yanqing',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Yanqing',
       name: 'basicDmg_0',
@@ -3912,6 +4479,17 @@ export const formulas = {
     },
   },
   Yukong: {
+    breakBase_0: {
+      sheet: 'Yukong',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Yukong',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Yukong',
       name: 'basicDmg_0',
@@ -3925,6 +4503,17 @@ export const formulas = {
     },
   },
   Yunli: {
+    breakBase_0: {
+      sheet: 'Yunli',
+      name: 'breakBase_0',
+      tag: {
+        et: 'self',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Yunli',
+        name: 'breakBase_0',
+      },
+    },
     basicDmg_0: {
       sheet: 'Yunli',
       name: 'basicDmg_0',

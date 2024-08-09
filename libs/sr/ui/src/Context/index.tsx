@@ -1,3 +1,3 @@
-export * from './CalcContext'
-export * from './CharacterContext'
-export * from './DatabaseContext'
+export { useCalcContext } from './CalcContext'
+export { useCharacterContext } from './CharacterContext'
+export { useDatabaseContext } from './DatabaseContext'
