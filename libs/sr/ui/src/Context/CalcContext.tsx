@@ -16,11 +16,12 @@ import type {
 import {
   charData,
   conditionalData,
+  enemy,
   enemyDebuff,
   lightConeData,
   members,
   relicsData,
-  selfBuff,
+  self,
   srCalculatorWithEntries,
   teamData,
   withMember,
@@ -61,10 +62,10 @@ export function CalcProvider({ children }: { children: ReactNode }) {
         mainChar.character &&
         srCalculatorWithEntries([
           ...teamData([
-            members[0],
+            members[1],
             ...mainChar.character.team
               .map((key, index) =>
-                key === '' ? undefined : members[index + 1]
+                key === '' ? undefined : members[index + 2]
               )
               .filter((m): m is Member => !!m),
           ]),
@@ -75,7 +76,9 @@ export function CalcProvider({ children }: { children: ReactNode }) {
           // TODO: Get these from db
           enemyDebuff.common.lvl.add(80),
           enemyDebuff.common.res.add(0.1),
-          selfBuff.common.critMode.add('avg'),
+          enemy.common.isBroken.add(0),
+          enemy.common.maxToughness.add(100),
+          self.common.critMode.add('avg'),
         ]),
     }),
     [mainChar, teammate1, teammate2, teammate3]
