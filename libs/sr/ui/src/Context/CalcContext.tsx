@@ -103,7 +103,7 @@ function createMember(
   return !character
     ? []
     : withMember(
-        `member${memberIndex}`,
+        `${memberIndex}`,
         ...charData(character),
         ...lightConeData(lightCone),
         ...relicsData(
