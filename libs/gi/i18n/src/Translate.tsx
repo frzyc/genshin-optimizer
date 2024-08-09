@@ -1,5 +1,5 @@
 'use client'
-import { ColorText, SqBadge, TranslateObj } from '@genshin-optimizer/common/ui'
+import { ColorText, SqBadge, TranslateBase } from '@genshin-optimizer/common/ui'
 import '@genshin-optimizer/gi/theme' // import to validate typing for color variants
 import type { ReactNode } from 'react'
 
@@ -61,7 +61,7 @@ export function Translate({
   useBadge?: boolean
 }) {
   return (
-    <TranslateObj
+    <TranslateBase
       ns={ns}
       key18={key18}
       values={values}

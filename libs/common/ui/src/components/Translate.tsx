@@ -9,7 +9,7 @@ import { Trans, useTranslation } from 'react-i18next'
 /**
  * Note: Trans.values & Trans.components wont work together...
  */
-export function TranslateObj({
+export function TranslateBase({
   ns,
   key18,
   values,
