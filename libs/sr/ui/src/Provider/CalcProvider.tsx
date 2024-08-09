@@ -117,11 +117,14 @@ function createMember(
           )
         ),
         // TODO: Conditionals
-        ...conditionalData({
-          RuanMei: {
-            skillOvertone: 1,
-            ultZone: 1,
-            e4Broken: 1,
+        ...conditionalData('0', {
+          // Only 1 Ruan Mei on a team, so src doesn't matter
+          all: {
+            RuanMei: {
+              skillOvertone: 1,
+              ultZone: 1,
+              e4Broken: 1,
+            },
           },
         }),
       ]
