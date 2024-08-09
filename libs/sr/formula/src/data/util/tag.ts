@@ -97,6 +97,7 @@ const stats: Record<Stat, Desc> = {
   heal_: agg,
   dmg_: agg,
   resPen_: agg,
+  weakness_: agg,
 } as const
 export const selfTag = {
   base: { atk: agg, def: agg, hp: agg, spd: agg },
@@ -141,6 +142,8 @@ export const enemyTag = {
     defRed_: agg,
     defIgn_: agg,
     res: agg,
+    maxToughness: iso,
+    isBroken: iso,
   },
 } as const
 

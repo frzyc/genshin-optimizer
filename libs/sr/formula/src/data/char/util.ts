@@ -1,4 +1,5 @@
 import { objMap } from '@genshin-optimizer/common/util'
+import type { NumNode } from '@genshin-optimizer/pando/engine'
 import {
   cmpEq,
   cmpGE,
@@ -11,20 +12,22 @@ import {
   type AbilityKey,
   type StatBoostKey,
 } from '@genshin-optimizer/sr/consts'
-import type {
-  CharacterDatum,
-  SkillTreeNodeBonusStat,
+import {
+  allStats,
+  type CharacterDatum,
+  type SkillTreeNodeBonusStat,
 } from '@genshin-optimizer/sr/stats'
 import type { DmgTag, FormulaArg, Stat } from '../util'
 import {
-  TypeKeyToListingType,
   customDmg,
   customHeal,
   customShield,
+  enemy,
   getStatFromStatKey,
   listingItem,
   percent,
   self,
+  TypeKeyToListingType,
   type TagMapNodeEntries,
 } from '../util'
 
@@ -40,7 +43,16 @@ export function getBaseTag(data_gen: CharacterDatum): DmgTag {
  * @returns Object with entry for basic, skill, ult, talent, technique and eidolon scalings. Eidolon contains further entries 1-6 for each eidolon.
  */
 export function scalingParams(data_gen: CharacterDatum) {
-  const { basic, skill, ult, talent, technique } = data_gen.skillTree
+  const {
+    basic,
+    skill,
+    ult,
+    talent,
+    technique,
+    bonusAbility1,
+    bonusAbility2,
+    bonusAbility3,
+  } = data_gen.skillTree
   const eidolon = objMap(data_gen.rankMap, (rankInfo) => rankInfo.params)
 
   return {
@@ -49,6 +61,9 @@ export function scalingParams(data_gen: CharacterDatum) {
     ult: ult.skillParamList,
     talent: talent.skillParamList,
     technique: technique.skillParamList,
+    bonusAbility1: bonusAbility1.skillParamList,
+    bonusAbility2: bonusAbility2.skillParamList,
+    bonusAbility3: bonusAbility3.skillParamList,
     eidolon,
   }
 }
@@ -82,6 +97,46 @@ export function dmg(
   dmgTag.damageType1 = attackType
   const base = prod(self.final[stat], multi)
   return customDmg(name, dmgTag, base, splits, arg, ...extra)
+}
+
+// Maybe move this somewhere else?
+const breakBaseRatios = {
+  physical: 2,
+  fire: 2,
+  ice: 1,
+  lightning: 1,
+  wind: 1.5,
+  quantum: 0.5,
+  imaginary: 0.5,
+}
+/**
+ * Creates damage node for Break Base DMG. Expects `dmgTag.elementalType` to be provided.
+ * @param name Base name to be used as the key
+ * @param dmgTag Tag object containing damageType1, damageType2 and elementalType
+ * @param multiplier  Multiplier to apply to the base dmg, such as when a skill does 'X% of char's Base Break DMG'
+ * @returns
+ */
+export function breakBaseDmg(
+  name: string,
+  dmgTag: DmgTag,
+  multiplier?: NumNode
+) {
+  // https://honkai-star-rail.fandom.com/wiki/Toughness#Weakness_Break
+  if (!dmgTag.elementalType) {
+    throw new Error('No elemental type provided for breakBaseDmg')
+  }
+  const breakBaseRatio = breakBaseRatios[dmgTag.elementalType]
+  return customDmg(
+    name,
+    dmgTag,
+    // ratio * baseRatio * levelMult * (0.5 + maxToughness / 40)
+    prod(
+      ...(multiplier ? [multiplier] : []),
+      breakBaseRatio,
+      subscript(self.char.lvl, allStats.misc.breakLevelMulti),
+      sum(0.5, prod(enemy.common.maxToughness, 1 / 40))
+    )
+  )
 }
 
 /**
@@ -183,6 +238,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ...statBoosts.flatMap((statBoost) =>
       Object.entries(statBoost).map(([key, amt], index) => {
         return getStatFromStatKey(self.premod, key).add(
+          // TODO: Add automatic ascension requirement
           cmpEq(char[`statBoost${(index + 1) as StatBoostKey}`], 1, amt)
         )
       })
@@ -194,6 +250,10 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
           self.char[abilityKey].add(cmpGE(eidolon, ei, levelBoost))
       )
     ),
+    // Break base DMG
+    ...breakBaseDmg('breakBase', {
+      elementalType: TypeKeyToListingType[data_gen.damageType],
+    }).flatMap((entries) => entries.map((entry) => entry)),
     // Formula listings for stats
     // TODO: Reorder this
     self.listing.formulas.add(listingItem(self.final.hp)),
