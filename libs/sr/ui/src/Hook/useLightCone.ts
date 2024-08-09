@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useDatabaseContext } from '../Context'
+import { useDatabaseContext } from '../Context/DatabaseContext'
 
 export function useLightCone(lightConeId: string | '' | undefined = '') {
   const { database } = useDatabaseContext()
