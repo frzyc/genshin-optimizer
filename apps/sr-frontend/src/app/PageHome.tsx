@@ -75,7 +75,7 @@ export default function PageHome() {
                                     undefined,
                                     2
                                   )}
-                                </Typography>{' '}
+                                </Typography>
                               </AccordionDetails>
                             </Accordion>
                           </Box>

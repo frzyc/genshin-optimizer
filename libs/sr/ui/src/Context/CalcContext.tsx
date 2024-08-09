@@ -106,7 +106,8 @@ function createMember(
 ): TagMapNodeEntries {
   return !character
     ? []
-    : withMember(
+    : [
+        ...withMember(
         `${memberIndex}`,
         ...charData(character),
         ...lightConeData(lightCone),
@@ -125,6 +126,7 @@ function createMember(
                 { key: relic.mainStatKey, value: relic.mainStatVal },
               ],
             }))
+          )
         ),
         // TODO: Conditionals
         ...conditionalData({
@@ -133,6 +135,6 @@ function createMember(
             ultZone: 1,
             e4Broken: 1,
           },
-        })
-      )
+        }),
+      ]
 }
