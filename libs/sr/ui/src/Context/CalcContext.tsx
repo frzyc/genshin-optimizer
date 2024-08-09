@@ -15,6 +15,7 @@ import type {
 } from '@genshin-optimizer/sr/formula'
 import {
   charData,
+  conditionalData,
   enemyDebuff,
   lightConeData,
   members,
@@ -121,7 +122,14 @@ function createMember(
                 { key: relic.mainStatKey, value: relic.mainStatVal },
               ],
             }))
-        )
+        ),
         // TODO: Conditionals
+        ...conditionalData({
+          RuanMei: {
+            skillOvertone: 1,
+            ultZone: 1,
+            e4Broken: 1,
+          },
+        })
       )
 }

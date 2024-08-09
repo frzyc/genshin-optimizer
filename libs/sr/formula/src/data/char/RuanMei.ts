@@ -107,6 +107,11 @@ const { skillOvertone, ultZone, e4Broken } = allBoolConditionals(key)
 
 const e6TechniqueAddMult = cmpGE(char.eidolon, 6, dm.e6.breakDmgMult_inc)
 
+console.log(
+  teamBuff.premod.dmg_.add(
+    skillOvertone.ifOn(subscript(char.skill, dm.skill.dmg_))
+  )
+)
 const sheet = register(
   key,
   // Handles base stats, StatBoosts and Eidolon 3 + 5
@@ -131,6 +136,7 @@ const sheet = register(
   ),
 
   // Buffs
+  selfBuff.premod.atk.add(100900),
   teamBuff.premod.dmg_.add(
     skillOvertone.ifOn(subscript(char.skill, dm.skill.dmg_))
   ),
