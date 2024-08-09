@@ -91,8 +91,8 @@ const dm = {
     atk_: eidolon[2][0],
   },
   e4: {
-    break_: eidolon[3][0],
-    duration: eidolon[3][1],
+    break_: eidolon[4][0],
+    duration: eidolon[4][1],
   },
   e6: {
     ultDurationInc: eidolon[6][0],
@@ -108,8 +108,8 @@ const { skillOvertone, ultZone, e4Broken } = allBoolConditionals(key)
 const e6TechniqueAddMult = cmpGE(char.eidolon, 6, dm.e6.breakDmgMult_inc)
 
 console.log(
-  teamBuff.premod.dmg_.add(
-    skillOvertone.ifOn(subscript(char.skill, dm.skill.dmg_))
+  selfBuff.premod.brEff_.add(
+    cmpEq(char.eidolon, 4, e4Broken.ifOn(dm.e4.break_))
   )
 )
 const sheet = register(
@@ -136,7 +136,7 @@ const sheet = register(
   ),
 
   // Buffs
-  selfBuff.premod.atk.add(100900),
+  self.premod.atk.add(100900),
   teamBuff.premod.dmg_.add(
     skillOvertone.ifOn(subscript(char.skill, dm.skill.dmg_))
   ),
