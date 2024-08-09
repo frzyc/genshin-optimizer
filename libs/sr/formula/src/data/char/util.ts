@@ -270,7 +270,6 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     self.listing.formulas.add(
       listingItem(self.final.dmg_[TypeKeyToListingType[data_gen.damageType]])
     ),
-    self.listing.formulas.add(listingItem(self.final.dmg_.physical)),
     self.listing.formulas.add(listingItem(self.final.dmg_)),
     self.listing.formulas.add(listingItem(self.final.weakness_)),
     self.listing.formulas.add(listingItem(self.final.resPen_)),
