@@ -97,16 +97,6 @@ export function dmg(
   return customDmg(name, dmgTag, base, splits, arg, ...extra)
 }
 
-const breakBaseRatios = {
-  physical: 2,
-  fire: 2,
-  ice: 1,
-  lightning: 1,
-  wind: 1.5,
-  quantum: 0.5,
-  imaginary: 0.5,
-}
-
 /**
  * Creates an array of TagMapNodeEntries representing a levelable ability's shield instance, and registers their formulas
  * @param name Base name to be used as the key

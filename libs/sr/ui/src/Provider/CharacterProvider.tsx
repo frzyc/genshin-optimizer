@@ -1,7 +1,7 @@
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import type { ReactNode } from 'react'
 import { useMemo, useState } from 'react'
-import type { CharacterContextObj } from '../Context/CharacterContext';
+import type { CharacterContextObj } from '../Context/CharacterContext'
 import { CharacterContext } from '../Context/CharacterContext'
 
 export function CharacterProvider({ children }: { children: ReactNode }) {
