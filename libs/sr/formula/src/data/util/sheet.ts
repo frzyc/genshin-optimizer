@@ -143,7 +143,7 @@ export function customHeal(
 }
 
 /**
- * Creates TagMapNodeEntries representing a heal instance, and registers the formula
+ * Creates TagMapNodeEntries representing a break DMG instance, and registers the formula
  * @param name Base name to be used as the key
  * @param dmgTag Tag object containing damageType1, damageType2 and elementalType
  * @param base Node representing the break DMG value
