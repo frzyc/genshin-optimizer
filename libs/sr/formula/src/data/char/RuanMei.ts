@@ -11,6 +11,7 @@ import { type CharacterKey } from '@genshin-optimizer/sr/consts'
 import { allStats } from '@genshin-optimizer/sr/stats'
 import {
   allBoolConditionals,
+  customBreakDmg,
   enemy,
   enemyDebuff,
   notSelfBuff,
@@ -19,13 +20,7 @@ import {
   selfBuff,
   teamBuff,
 } from '../util'
-import {
-  breakBaseDmg,
-  dmg,
-  entriesForChar,
-  getBaseTag,
-  scalingParams,
-} from './util'
+import { dmg, entriesForChar, getBaseTag, scalingParams } from './util'
 
 const key: CharacterKey = 'RuanMei'
 const data_gen = allStats.char[key]
@@ -114,17 +109,17 @@ const sheet = register(
 
   // Formulas
   ...dmg('basicDmg', baseTag, 'atk', dm.basic.dmg, 'basic'),
-  ...breakBaseDmg(
+  ...customBreakDmg(
     'zoneBreakDmg',
     { ...baseTag, damageType1: 'break' },
     subscript(char.ult, dm.ult.breakDmg)
   ),
-  ...breakBaseDmg(
+  ...customBreakDmg(
     'talentBreakDmg',
     { ...baseTag, damageType1: 'break' },
     subscript(char.talent, dm.talent.breakDmg)
   ),
-  ...breakBaseDmg(
+  ...customBreakDmg(
     'techBreakDmg',
     { ...baseTag, damageType1: 'break' },
     sum(dm.technique.breakDmg, e6TechniqueAddMult)

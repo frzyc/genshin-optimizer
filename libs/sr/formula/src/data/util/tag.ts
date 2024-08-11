@@ -130,6 +130,7 @@ export const selfTag = {
     dmg: prep,
     shield: prep,
     heal: prep,
+    breakDmg: prep,
   },
   listing: {
     formulas: aggStr,

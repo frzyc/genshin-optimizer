@@ -1,5 +1,4 @@
 import { objMap } from '@genshin-optimizer/common/util'
-import type { NumNode } from '@genshin-optimizer/pando/engine'
 import {
   cmpEq,
   cmpGE,
@@ -13,16 +12,15 @@ import {
   type StatBoostKey,
 } from '@genshin-optimizer/sr/consts'
 import {
-  allStats,
   type CharacterDatum,
   type SkillTreeNodeBonusStat,
 } from '@genshin-optimizer/sr/stats'
 import type { DmgTag, FormulaArg, Stat } from '../util'
 import {
+  customBreakDmg,
   customDmg,
   customHeal,
   customShield,
-  enemy,
   getStatFromStatKey,
   listingItem,
   percent,
@@ -99,7 +97,6 @@ export function dmg(
   return customDmg(name, dmgTag, base, splits, arg, ...extra)
 }
 
-// Maybe move this somewhere else?
 const breakBaseRatios = {
   physical: 2,
   fire: 2,
@@ -108,35 +105,6 @@ const breakBaseRatios = {
   wind: 1.5,
   quantum: 0.5,
   imaginary: 0.5,
-}
-/**
- * Creates damage node for Break Base DMG. Expects `dmgTag.elementalType` to be provided.
- * @param name Base name to be used as the key
- * @param dmgTag Tag object containing damageType1, damageType2 and elementalType
- * @param multiplier  Multiplier to apply to the base dmg, such as when a skill does 'X% of char's Base Break DMG'
- * @returns
- */
-export function breakBaseDmg(
-  name: string,
-  dmgTag: DmgTag,
-  multiplier?: NumNode
-) {
-  // https://honkai-star-rail.fandom.com/wiki/Toughness#Weakness_Break
-  if (!dmgTag.elementalType) {
-    throw new Error('No elemental type provided for breakBaseDmg')
-  }
-  const breakBaseRatio = breakBaseRatios[dmgTag.elementalType]
-  return customDmg(
-    name,
-    dmgTag,
-    // ratio * baseRatio * levelMult * (0.5 + maxToughness / 40)
-    prod(
-      ...(multiplier ? [multiplier] : []),
-      breakBaseRatio,
-      subscript(self.char.lvl, allStats.misc.breakLevelMulti),
-      sum(0.5, prod(enemy.common.maxToughness, 1 / 40))
-    )
-  )
 }
 
 /**
@@ -251,9 +219,14 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       )
     ),
     // Break base DMG
-    ...breakBaseDmg('breakBase', {
-      elementalType: TypeKeyToListingType[data_gen.damageType],
-    }).flatMap((entries) => entries.map((entry) => entry)),
+    ...customBreakDmg(
+      'breakDmg',
+      {
+        elementalType: TypeKeyToListingType[data_gen.damageType],
+        damageType1: 'break',
+      },
+      constant(1)
+    ),
     // Formula listings for stats
     // TODO: Reorder this
     self.listing.formulas.add(listingItem(self.final.hp)),
