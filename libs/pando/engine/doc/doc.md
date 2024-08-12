@@ -1,23 +1,48 @@
-# Tag and Tag Database
+# Tag System
 
-A tag is dictionary of tag category (key) and tag value (value) pairs.
-We denote a tag category using `cat:`, and a tag value using `cat:val`.
-
-We also define "tag combination", where tags `T1` and `T2` are combined to create a new tag, denoted `T1/T2`. The resulting tag `T` satisfies the following,
-- If `cat:v` ∈ `T2`, then `cat:v` ∈ `T`,
-- If `cat:` ∉ `T2` and `cat:v` ∈ `T1`, then `cat:v` ∈ `T`,
-- If `cat:` ∉ `T2` and `cat:` ∉ `T1`, then `cat:` ∉ `T`.
-That is, `T2` overrides tag entries in `T1`.
+A tag is a dictionary of tag category (key) and tag value (value) pairs.
+We denote a tag category and a tag value by `cat:` and `cat:val`, respectively.
+When there is no ambiguity, `val` may be used instead of `cat:val`.
+We also define a "combination" of tags `T1` and `T2`, denoted by `T1/T2`, as a tag that satisfies the following, for any tag category `cat:`
+- If `cat:v` ∈ `T2`, then `cat:v` ∈ `T1/T2`,
+- If `cat:` ∉ `T2` and `cat:v` ∈ `T1`, then `cat:v` ∈ `T1/T2`,
+- If `cat:` ∉ `T2` and `cat:` ∉ `T1`, then `cat:` ∉ `T1/T2`.
 Note the asymmetry between `T1` and `T2`.
 
-## Tag Database and Gathering
+As an example, the combination `{ c1:v1 c2:v2 }/{ c2:v3 c3:v4 }` is the tag `{ c1:v1 c2:v3 c3:v4 }`.
+In this example, `c1:` and `c3:` exist in only one of the tags, and so their values are used.
+For `c2:`, both tags contain different values, and so the value in the right tag is preferred.
+
+## Tag Database Gathering
 
 A calculator `calc` contains an array of tag-node pairs, called Tag Database.
-Each entry `{ tag, val }` in the tag database signifies that the value of `tag` should include the calculation of `val`.
-With tag database, `calc` can *gather a tag `T`* using `calc.get(T)`, which returns all entries in the tag database with matching tags.
-An entry `{ tag, val }` in the tag database is included in a gathering iff for every `k:v` ∈ `tag`, `k:v` is also in `T`.
+Each entry `{ tag, value }` in the tag database signifies that the value of `tag` should include the calculation of `val`.
+With tag database, `calc` can *gather a tag `T`* via`calc.get(T)`, returning all entries in the tag database with matching tags.
+An entry `{ tag, value }` in the tag database is included in a gathering iff for every `k:v` ∈ `tag`, `k:v` ∈ `T`.
 
-TODO: discuss what happens when gathering a reread entry
+If the value in the included entry is a `node`, its value is computed using tag `T`.
+If the value is a `Reread` with tag `T2`, another gather is performed using `T/T2`, and its result is appended to the final result.
+For example, consider `calc.get({ c1:v1 c2:vA })` when the `calc`ulator has a Tag Database
+```
+[
+  { tag: { c1:v1       }, value: node1 }, // entry 1
+  { tag: { c1:v2       }, value: node2 }, // entry 2
+  { tag: { c1:v1 c2:vA }, value: node3 }, // entry 3
+  { tag: { c1:v1 c2:vB }, value: node4 }, // entry 4
+  { tag: {       c2:vA }, value: node5 }, // entry 5
+  { tag: { c1:v1 c2:vA }, value: reread({ c2:vB }) } // entry 6
+].
+```
+In this case, `calc` first selects the matching entries 1, 3, 5, and 6.
+As entries 1, 3, and 5 contain nodes, `calc` computes nodes 1, 3, and 5 with tag `{ c1:v1 c2:vA }`.
+Next, the the calculator resolves entry 6, by performing a gathering with tag `{ c1:v1 c2:vA }/{ c2:vB } = { c1:v1 c2:vB }`, computing nodes 1 and 4 with tag `{ c1:v1 c2:vB }`.
+The calculator then returns the following:
+- Value of `node1` computed with tag `{ c1:v1 c2:vA }`,
+- Value of `node3` computed with tag `{ c1:v1 c2:vA }`,
+- Value of `node5` computed with tag `{ c1:v1 c2:vA }`,
+- Value of `node1` computed with tag `{ c1:v1 c2:vB }`, and
+- Value of `node4` computed with tag `{ c1:v1 c2:vB }`.
+Note that `node1` is computed twice, each with different tags, due to `reread` operation.
 
 # Node Operations
 
@@ -26,7 +51,7 @@ Operations are separated into three types, arithmetic, branching, and tag-relate
 
 ## Arithmetic Operations
 
-- `constant(c)`: values of a constant `c` (converting it into a `Node`),
+- `constant(c)`: values of a constant `c` (converting it to a `Node`),
   - This is normally unneeded as most functions permit both `Node` and constants,
 - `sum(x1, x2, ...) := x1 + x2 + ...`,
 - `prod(x1, x2, ...) := x1 * x2 * ...`,
@@ -62,29 +87,8 @@ By default, all arithmetic and branching operations preserve the tags, e.g., cal
 - `tagVal(cat)` reads the value of the current tag at category `cat`, or `""` if `cat:` ∉ current tag,
 - `tag(v, tag)` calculates `v` using the tag combination `current tag/tag`,
 - `dynTag(v, tag)` calculates `v` using the tag combination `current tag/tag`. The main difference compared to `tag` operation is that the tag values in `dynTag` can be other nodes, which are computed with `Tbase` tag. When both `dynTax` and `tag` are applicable, prefer `tag` for performance reason.
+- `read(tag, accu)` performs a gather with tag `current tag/tag`, then combine the results using `accu`mulator the accumulators include `sum/prod/min/max`, corresponding to the arithmetic operations. It may also be `undefined`, in which case, the gathering is assumed to contain exactly one entry.
 
-### Read and Reread Operations
+# Calculator Customization
 
-TODO: explain read and reread
-
-As an example, when performing `calc.compute(read({ c1:v1 c2:v3 }, "sum"))` with a calculator `calc` that has a Tag Database:
-```
-[
-  { tag: { c1:v1       }, val: node1 }, // entry 1
-  { tag: { c1:v2       }, val: node2 }, // entry 2
-  { tag: { c1:v1 c2:vA }, val: node3 }, // entry 3
-  { tag: { c1:v1 c2:vB }, val: node4 }, // entry 4
-  { tag: {       c2:vA }, val: node5 }, // entry 5
-  { tag: { c1:v1 c2:vA }, val: reread({ c2:v4 }) } // entry 6
-]
-```
-the calculator
-- Gathers entries matching `{ c1:v1 c2:vA }` (entries 1, 3, 5, and 6),
-  - Computes `node1` with tag `{ c1:v1 c2:vA }` (node1A),
-  - Computes `node3` with tag `{ c1:v1 c2:vA }`,
-  - Computes `node5` with tag `{ c1:v1 c2:vA }`,
-  - As entry 6 is a `reread`, gathers entries matching `{ c1:v1 c2:vB }` (entries 1, 4, note the different `c2:` throughout this part)
-    - Computes `node1` with tag `{ c1:v1 c2:vB }` (node1B),
-    - Computes `node4` with tag `{ c1:v1 c2:vB }`,
-- Apply `sum` accumulator, yielding `node1A + node3 + node5 + node1B + node4`.
-Note that `node1` is computed twice, each with different tags, due to `reread` operation.
+TODO
