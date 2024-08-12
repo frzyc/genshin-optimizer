@@ -16,6 +16,8 @@ async function read(path: string) {
   }
 }
 
+const base = `https://github.com/frzyc/genshin-optimizer`
+
 export async function run(interaction: ChatInputCommandInteraction) {
   const mainstat = await stat(__dirname + '/main.js')
   const buildtime = Math.floor(mainstat.mtime.getTime() / 1000)
@@ -23,9 +25,10 @@ export async function run(interaction: ChatInputCommandInteraction) {
   let text = `build: <t:${buildtime}:R>\n` + `up: <t:${uptime}:R>\n`
 
   const ref = await read(__dirname + '/ref')
-  if (ref) text += 'ref: `' + Buffer.from(ref) + '`\n'
+  if (ref) text += `'ref: (\`${ref}\`)[<${base}/commit/${ref}>]\n`
+
   const pr = await read(__dirname + '/prNumber')
-  if (pr) text += 'pr: `#' + Buffer.from(ref) + '`\n'
+  if (pr) text += `pr: (\`#${pr}\`)[<${base}/pull/${pr}>]\n`
 
   const embed = new EmbedBuilder()
   embed.setDescription(text)
