@@ -51,8 +51,8 @@ We assume the following tags (in addition to `qt:formula`) to exist for the top-
 Most of these formulas begin by preparing appropriate tags for the rest of the formulas.
 Tags (such as dmg element `ele:`) are assumed to exist throughout the formula specification, but computing the correct value requires a calculator.
 So it cannot be set prior to calculator creation.
-Instead we calculate them while the tags are not assumed ready, hence the `prep`are phase, identified by `qt:prep`.
-In this phase, the formulas are more restricted in the avilable tags (e.g., `qt:prep q:ele`, of course, cannot use `ele:` tags).
+Instead, we calculate them while the tags are not assumed ready, hence the `prep` phase, identified by `qt:prep`.
+In this phase, the formulas are more restricted in the avilable tags (e.g., `qt:prep q:ele` cannot use `ele:`).
 Once `prep:` calculation is completed, the tags are attached to the base formula via `dynTag`.
 
 ## Entry Type and Sheet Specifier
@@ -121,7 +121,7 @@ Instead, it is used to include additions to the current formula.
 For example, reading `{ q:dmg_ ele:hydro }` gathers both any-element dmg bonus (`{ q:dmg_ }`) and hydro-only dmg bonus (`{ q:dmg_ ele:hydro }`).
 Most formulas also retain these optional tags, so the specified optional tags at a top-level formula also apply to the deeper parts of the formula, e.g., character talent level.
 
-> `name:` is removed when crossing the team buff boundary to improve caching as team buffs do not need the formula name.
+> `name:null` is applied when crossing team buff boundaries to improve caching.
 
 ## Mechanisms
 
