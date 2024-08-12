@@ -24,21 +24,24 @@ For `c2:`, both tags contain different values, and so the value in the right tag
 
 A calculator `calc` contains an array of tag-node pairs, called Tag Database.
 Each entry `{ tag, value }` in the tag database signifies that the computation of `tag` should include `value`.
+We denote a tag database entry with `tag <- value`.
+If `value` is a reread to `tag2`, we may instead denote the entry with `tag <= tag2`.
+Note the different arrow type between the two, as well as the type difference on the right side of the arrow.
+
 With tag database, `calc` can _gather a tag `T`_ via `calc.get(T)`, returning all entries in the tag database with matching tags.
-An entry `{ tag, value }` in the tag database is included in a gathering iff for every `k:v` ∈ `tag`, `k:v` ∈ `T`.
+An entry `tag <- value` in the tag database is included in a gathering iff for every `k:v` ∈ `tag`, `v == null` or `k:v` ∈ `T`.
 If the value in the included entry is a `node`, its value is computed using tag `T`.
 If the value is a `Reread` with tag `T2`, another gather is performed using `T/T2`, and its result is appended to the final result.
-
 As an example, consider `calc.get({ c1:v1 c2:vA })` when the `calc`ulator has the following Tag Database,
 
 ```
 [
-  { tag: { c1:v1       }, value: node1 }, // entry 1
-  { tag: { c1:v2       }, value: node2 }, // entry 2
-  { tag: { c1:v1 c2:vA }, value: node3 }, // entry 3
-  { tag: { c1:v1 c2:vB }, value: node4 }, // entry 4
-  { tag: {       c2:vA }, value: node5 }, // entry 5
-  { tag: { c1:v1 c2:vA }, value: reread({ c2:vB }) } // entry 6
+  { c1:v1       } <- node1, // entry 1
+  { c1:v2       } <- node2, // entry 2
+  { c1:v1 c2:vA } <- node3, // entry 3
+  { c1:v1 c2:vB } <- node4, // entry 4
+  {       c2:vA } <- node5, // entry 5
+  { c1:v1 c2:vA } <= { c2:vB } // entry 6
 ].
 ```
 
