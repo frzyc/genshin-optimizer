@@ -24,7 +24,7 @@ export async function run(interaction: ChatInputCommandInteraction) {
 
   const ref = await read(__dirname + '/ref')
   if (ref) text += 'ref: `' + Buffer.from(ref) + '`\n'
-  const pr = await read(__dirname + '/pr_number')
+  const pr = await read(__dirname + '/prNumber')
   if (pr) text += 'pr: `#' + Buffer.from(ref) + '`\n'
 
   const embed = new EmbedBuilder()
