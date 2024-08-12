@@ -1,6 +1,6 @@
 import type { OptProblemInput } from './type'
 
-export * from './GOSolver'
 export * from './common'
+export * from './GOSolver'
 
 export type { OptProblemInput }
