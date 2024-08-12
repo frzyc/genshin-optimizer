@@ -1,4 +1,10 @@
-# Tags
+# Pando
+
+## Usage
+
+TODO
+
+## Tags
 
 A tag is a dictionary of tag category (key) and tag value (value) pairs.
 We denote a tag category and a tag value by `cat:` and `cat:val`, respectively.
@@ -13,7 +19,7 @@ As an example, the combination `{ c1:v1 c2:v2 }/{ c2:v3 c3:v4 }` is the tag `{ c
 In this example, `c1:` and `c3:` exist in only one of the tags, and so their values are used.
 For `c2:`, both tags contain different values, and so the value in the right tag is preferred.
 
-## Tag Database Gathering
+### Tag Database Gathering
 
 A calculator `calc` contains an array of tag-node pairs, called Tag Database.
 Each entry `{ tag, value }` in the tag database signifies that the computation of `tag` should include `value`.
@@ -42,14 +48,15 @@ The calculator then returns the following:
 - Value of `node5` computed with tag `{ c1:v1 c2:vA }`,
 - Value of `node1` computed with tag `{ c1:v1 c2:vB }`, and
 - Value of `node4` computed with tag `{ c1:v1 c2:vB }`.
+
 Note that `node1` is computed twice, each with different tags, due to `reread` operation.
 
-# Node Operations
+## Node Operations
 
 This section outlines all operations supported by Pando.
 Operations are separated into three types, arithmetic, branching, and tag-related.
 
-## Arithmetic Operations
+### Arithmetic Operations
 
 - `constant(c)`: values of a constant `c` (converting it to a `Node`),
   - This is normally unneeded as most functions permit both `Node` and constants,
@@ -63,7 +70,7 @@ Operations are separated into three types, arithmetic, branching, and tag-relate
 - `custom(op, x1, x2, ...)` is for custom node for non-standard computations,
   - See [Calculator Customization Section](#customize) on how to add support for custom operations.
 
-## Branching Operations 
+### Branching Operations 
 
 Most branching functions are of the form `cmp<<CMP>>(x1, x2, pass, fail)` where a comparator CMP (e.g., `Eq`) is used to compare `x1` and `x2`.
 If the comparison yields true (e.g., `x1 == x2` for `cmpEq`), then `pass` branch is chosen.
@@ -79,26 +86,27 @@ Another branching function is `lookup(key, table, defaultV) := table[key] ?? def
 There are two main distinctions between `subscript` and `lookup`:
 - `lookup` indices are strings while `subscript` indices are numbers, and
 - `lookup` `table` may contain complex nodes while `subscript` `array` can contain only constants.
+
 Nodes other than `table[key]` are not evaluated.
 When both `lookup` and `subscript` are applicable, prefer `subscript` for performance reason.
 
-## Tag-Related Operations 
+### Tag-Related Operations 
 
 By default, all arithmetic and branching operations preserve the tags, e.g., calculating `sum(x1, x2)` with a tag `T`, the calculation of `x1` and `x2` also use the same tag `T`.
+When computing with a current tag `Tcur`
 
-- `tagVal(cat)` reads the value of the current tag at category `cat`, or `""` if `cat:` ∉ current tag,
-- `tag(v, tag)` calculates `v` using the tag combination `current tag/tag`,
-- `dynTag(v, tag)` calculates `v` using the tag combination `current tag/tag`.
-  The main difference compared to `tag` operation is that the tag values in `dynTag` can be other nodes, which are computed with `Tbase` tag.
+- `tagVal(cat)` reads the value of `Tcur` at category `cat`, or `""` if `cat:` ∉ `Tcur`,
+- `tag(v, tag)` calculates `v` using `Tcur/tag`,
+- `dynTag(v, tag)` calculates `v` using `Tcur/tag`.
+  The main difference compared to `tag` operation is that the tag values in `dynTag` can be other nodes, which are computed with `Tcur` tag.
   When both `dynTag` and `tag` are applicable, prefer `tag` for performance reason.
-- `read(tag, accu)` performs a gather with tag `current tag/tag`, then combine the results using `accu`mulator the accumulators include `sum/prod/min/max`, corresponding to the arithmetic operations.
+- `read(tag, accu)` performs a gather with tag `Tcur/tag`, then combine the results using `accu`mulator the accumulators include `sum/prod/min/max`, corresponding to the arithmetic operations.
   It may also be `undefined`, in which case, the gathering is assumed to contain exactly one entry.
 
-# <a name="customize"></a> Calculator Customization
+## <a name="customize"></a> Calculator Customization
 
 `Calculator` can be customized via subclassing.
-Some functions are designed to be overriden by such subclasses, including
-
+Functions that are designed to be overriden by such subclasses include
 ```
 - computeMeta(n: AnyNode, value: number | string,
     x: (CalcResult<number | string, M> | undefined)[],
