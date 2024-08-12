@@ -10,7 +10,7 @@ export const slashcommand = new SlashCommandBuilder()
 async function read(path: string) {
   try {
     const data = await readFile(path)
-    return Buffer.from(data).toString()
+    return Buffer.from(data).toString().trim()
   } catch {
     return ''
   }
