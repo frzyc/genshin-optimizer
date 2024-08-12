@@ -11,13 +11,13 @@ import {
   type AbilityKey,
   type StatBoostKey,
 } from '@genshin-optimizer/sr/consts'
-import type {
-  CharacterDatum,
-  SkillTreeNodeBonusStat,
+import {
+  type CharacterDatum,
+  type SkillTreeNodeBonusStat,
 } from '@genshin-optimizer/sr/stats'
 import type { DmgTag, FormulaArg, Stat } from '../util'
 import {
-  TypeKeyToListingType,
+  customBreakDmg,
   customDmg,
   customHeal,
   customShield,
@@ -25,6 +25,7 @@ import {
   listingItem,
   percent,
   self,
+  TypeKeyToListingType,
   type TagMapNodeEntries,
 } from '../util'
 
@@ -40,7 +41,16 @@ export function getBaseTag(data_gen: CharacterDatum): DmgTag {
  * @returns Object with entry for basic, skill, ult, talent, technique and eidolon scalings. Eidolon contains further entries 1-6 for each eidolon.
  */
 export function scalingParams(data_gen: CharacterDatum) {
-  const { basic, skill, ult, talent, technique } = data_gen.skillTree
+  const {
+    basic,
+    skill,
+    ult,
+    talent,
+    technique,
+    bonusAbility1,
+    bonusAbility2,
+    bonusAbility3,
+  } = data_gen.skillTree
   const eidolon = objMap(data_gen.rankMap, (rankInfo) => rankInfo.params)
 
   return {
@@ -49,6 +59,9 @@ export function scalingParams(data_gen: CharacterDatum) {
     ult: ult.skillParamList,
     talent: talent.skillParamList,
     technique: technique.skillParamList,
+    bonusAbility1: bonusAbility1.skillParamList,
+    bonusAbility2: bonusAbility2.skillParamList,
+    bonusAbility3: bonusAbility3.skillParamList,
     eidolon,
   }
 }
@@ -180,9 +193,10 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       )
     ),
     // Small trace stat boosts
-    ...statBoosts.flatMap((statBoost) =>
-      Object.entries(statBoost).map(([key, amt], index) => {
+    ...statBoosts.flatMap((statBoost, index) =>
+      Object.entries(statBoost).map(([key, amt]) => {
         return getStatFromStatKey(self.premod, key).add(
+          // TODO: Add automatic ascension requirement
           cmpEq(char[`statBoost${(index + 1) as StatBoostKey}`], 1, amt)
         )
       })
@@ -193,6 +207,15 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
         ([abilityKey, levelBoost]) =>
           self.char[abilityKey].add(cmpGE(eidolon, ei, levelBoost))
       )
+    ),
+    // Break base DMG
+    ...customBreakDmg(
+      'breakDmg',
+      {
+        elementalType: TypeKeyToListingType[data_gen.damageType],
+        damageType1: 'break',
+      },
+      1
     ),
     // Formula listings for stats
     // TODO: Reorder this
@@ -210,6 +233,8 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     self.listing.formulas.add(
       listingItem(self.final.dmg_[TypeKeyToListingType[data_gen.damageType]])
     ),
-    self.listing.formulas.add(listingItem(self.final.dmg_.physical)),
+    self.listing.formulas.add(listingItem(self.final.dmg_)),
+    self.listing.formulas.add(listingItem(self.final.weakness_)),
+    self.listing.formulas.add(listingItem(self.final.resPen_)),
   ]
 }

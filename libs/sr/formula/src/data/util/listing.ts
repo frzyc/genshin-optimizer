@@ -23,6 +23,7 @@ const stats = [
   'heal_',
   'dmg_',
   'resPen_',
+  'weakness_',
 ] as const
 
 export const bonusAbilities = [

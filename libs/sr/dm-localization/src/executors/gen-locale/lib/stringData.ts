@@ -99,6 +99,12 @@ const langArray = Object.entries(languageMap).map(([langKey, strings]) => {
     data.charNames[key] = data.char[key].name
   })
 
+  // March 7th (Hunt) name handling
+  data.char.March7thTheHunt.name = `${data.char.March7thTheHunt.name} • ${
+    strings[HashData.sheet.path.TheHunt]
+  }`
+  data.charNames.March7thTheHunt = data.char.March7thTheHunt.name
+
   const tuple: [LanguageKey, LanguageData] = [langKey, data]
   return tuple
 })

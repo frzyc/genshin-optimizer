@@ -261,6 +261,13 @@ export function subscript<P extends OP>(
 
 // Tagging
 
+/**
+ * Add a fixed `tag` to a `v`alue to limit lookups of the `v`alue based on the tag
+ * e.g. v = `self.dmg_` looks up all dmg_ values
+ * `tag(self.dmg_, { ele: 'cryo' })` looks up all dmg_ values with { ele: 'cryo' } or no ele specified. Will not match dmg_ with {ele: 'pyro' } for example.
+ * @param v
+ * @param tag
+ */
 export function tag<P extends OP = never>(
   v: Num<P>,
   tag: Tag
@@ -279,6 +286,14 @@ export function tag<P extends OP = never>(
 ): TagOverride<AnyNode<P>, P | 'tag'> {
   return { op: 'tag', x: [toV(v)], br, tag }
 }
+
+/**
+ * Add a `tag` to a `v`alue to limit lookups of the `v`alue based on the tag.
+ * Unlike `tag()` function, the `tag` here is a node computed by Pando.
+ * This has worse performance than `tag()` and maybe more edge cases.
+ * @param v
+ * @param tag
+ */
 export function dynTag<P extends OP = never>(
   v: Num<P>,
   tag: Record<string, Str<P>>
