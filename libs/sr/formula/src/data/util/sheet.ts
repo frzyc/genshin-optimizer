@@ -156,7 +156,7 @@ export function customHeal(
 export function customBreakDmg(
   name: string,
   dmgTag: DmgTag,
-  base: NumNode,
+  base: NumNode | number,
   { team, cond = 'unique' }: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {

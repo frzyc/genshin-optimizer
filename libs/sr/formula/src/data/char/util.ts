@@ -215,7 +215,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
         elementalType: TypeKeyToListingType[data_gen.damageType],
         damageType1: 'break',
       },
-      constant(1)
+      1
     ),
     // Formula listings for stats
     // TODO: Reorder this

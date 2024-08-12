@@ -104,14 +104,14 @@ export function artifactsData(
  * Generate conditional TagMapNodeEntry for calculator. Should be provided outside of any member data, in order to preserve specified 'src'
  * @param dst member to apply conditionals to
  * @param data conditional data in `Src: { Sheet: { CondKey: value } }` format. Src can be 'all', unless the buff is possibly duplicated (e.g. artifact team buff). In that case, you should specify the src member
- * @returns
+ * @returns TagMapNodeEntires to be provided to calculator
  */
 export function conditionalData(
   dst: Member,
   data: Partial<
     Record<Member, Partial<Record<Sheet, Record<string, string | number>>>>
   >
-) {
+): TagMapNodeEntries {
   return Object.entries(data).flatMap(([src, entries]) =>
     Object.entries(entries).flatMap(([key, entries]) => {
       const conds = conditionalEntries(key as Sheet, src as Member, dst)

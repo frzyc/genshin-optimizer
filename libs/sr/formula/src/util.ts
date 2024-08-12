@@ -176,8 +176,8 @@ export function conditionalData(
   >
 ) {
   return Object.entries(data).flatMap(([src, entries]) =>
-    Object.entries(entries).flatMap(([key, entries]) => {
-      const conds = conditionalEntries(key as Sheet, src as Member, dst)
+    Object.entries(entries).flatMap(([sheet, entries]) => {
+      const conds = conditionalEntries(sheet, src, dst)
       return Object.entries(entries).map(([k, v]) => conds(k, v))
     })
   )

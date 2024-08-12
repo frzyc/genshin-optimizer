@@ -1,7 +1,6 @@
 import {
   cmpEq,
   cmpGE,
-  constant,
   min,
   prod,
   subscript,
@@ -97,7 +96,6 @@ const dm = {
 
 const { char } = self
 
-// TODO: Add conditionals
 const { skillOvertone, ultZone, e4Broken } = allBoolConditionals(key)
 
 const e6TechniqueAddMult = cmpGE(char.eidolon, 6, dm.e6.breakDmgMult_inc)
@@ -134,22 +132,20 @@ const sheet = register(
     ultZone.ifOn(subscript(char.ult, dm.ult.resPen_))
   ),
   notSelfBuff.premod.spd_.add(subscript(char.talent, dm.talent.spd_)),
-  teamBuff.premod.brEff_.add(
-    cmpEq(char.bonusAbility1, 1, constant(dm.b1.break_))
-  ),
+  teamBuff.premod.brEff_.add(cmpEq(char.bonusAbility1, 1, dm.b1.break_)),
   teamBuff.premod.dmg_.add(
     cmpEq(
       char.bonusAbility3,
       1,
       skillOvertone.ifOn(
         min(
-          // (brEff_ - 1.2) / 0.1 * 0.06
+          // (brEff_ - breakThreshold) / breakPer * dmgPer
           prod(
             sum(self.final.brEff_, -dm.b3.breakThreshold),
             1 / dm.b3.breakPer,
-            dm.b3.breakPer
+            dm.b3.dmg_per
           ),
-          constant(dm.b3.max_dmg_)
+          dm.b3.max_dmg_
         )
       )
     )
