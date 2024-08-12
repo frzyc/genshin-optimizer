@@ -12,6 +12,7 @@ const textComponents = {
   quantum: <ColorText color="quantum" />,
   wind: <ColorText color="wind" />,
 }
+
 const badgeComponents = {
   fire: <SqBadge color="fire" />,
   ice: <SqBadge color="ice" />,

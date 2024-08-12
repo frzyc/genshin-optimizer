@@ -23,6 +23,7 @@ const textComponents = {
   burgeon: <ColorText color="burgeon" />,
   hyperbloom: <ColorText color="hyperbloom" />,
 }
+
 const badgeComponents = {
   anemo: <SqBadge color="anemo" />,
   geo: <SqBadge color="geo" />,
@@ -44,9 +45,6 @@ const badgeComponents = {
   hyperbloom: <SqBadge color="hyperbloom" />,
 }
 
-/**
- * Note: Trans.values & Trans.components wont work together...
- */
 export function Translate({
   ns,
   key18,
