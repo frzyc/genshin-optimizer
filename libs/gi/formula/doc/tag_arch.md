@@ -57,33 +57,33 @@ Once `prep:` calculation is completed, the tags are attached to the base formula
 
 ## Entry Type and Sheet Specifier
 
-The tag categories `et:` and `sheet:` are separated into read-side, which is used by `read` operations, and write-side, which is used in as tags in tag database entries.
+The tag categories `et:` and `sheet:` are separated into read-side, which is used by `read` operations, and write-side, which is used as tags in tag database entries.
 
-- Read-side `et:` specifies the type of calculation, whether the query computes the current character stat (`et:self`), team-wide stat (`et:team`), the stat of the buff target (`et:target`), or the common enemy stat (`et:enemy`).
-- Write-side `et:` specifies the type of entry, whether it applies only to the current character (`et:selfBuff`), the entire team (`et:teamBuff`), other members (`et:notSelfBuff`), or if it is a debuff to the enemy (`et:enemy`).
-- Read-side `sheet:` speficies the sheets that will be included in gathering, whether to gather all sheets from all team members (`sheet:agg`), only character sheets of the current character (`sheet:iso`), or common listing outside of any specific sheets (`static`).
-- Write-side `sheet:` specifies the sheet that the entry belongs to (`sheet:<char key>/<weapon key>/<art>`), or if the entry is a UI custom formula (`sheet:custom`).
+- Read-side `et:` specifies whether the query computes the current character stat (`et:self`), team-wide stat (`et:team`), the stat of the buff target (`et:target`), or the common enemy stat (`et:enemy`).
+- Write-side `et:` specifies whether the entry applies only to the current character (`et:selfBuff`), the entire team (`et:teamBuff`), other members (`et:notSelfBuff`), or the enemy (`et:enemy`).
+- Read-side `sheet:` speficies the sheets to include in gathering, whether to gather all sheets from all members (`sheet:agg`), only character sheets of the current member (`sheet:iso`), or common listing outside of any specific sheets (`static`).
+- Write-side `sheet:` specifies the sheet the entry belongs to (`sheet:<char key>/<weapon key>/<art>`), or if the entry is a UI custom formula (`sheet:custom`).
 
-Every query starts with one of the read-side `sheet: et:` combination.
+Every query starts with a read-side `sheet: et:` combination.
 The gathering operation then maps to the appropriate write-side `sheet: et:` via util functions.
 Following is the gathered entries on different `sheet: et:` combinations:
 
 - `sheet:agg et:self` queries (e.g., `self.char.skill`)
   - `{ sheet:agg et:self  } <= { sheet:custom }` (`data/common/index.ts`)
     - Custom contributions
-  - `{ src:<src> sheet:agg } <= { src:* dst:<src> et:selfBuff/teamBuff/notSelfBuff }` (`teamData`, add `src:/dst:` and switch to write-side `et:`)
-    - `{ src:<src> sheet:agg } <= { sheet:<char key/weapon key/art> }` (`charData/weaponData/artData` with `withMember`, select sheets)
+  - `{ src:<src> sheet:agg } <= { src:* dst:<src> et:selfBuff/teamBuff/notSelfBuff }` (`teamData`)
+    - `{ src:<src> sheet:agg } <= { sheet:<char key/weapon key/art> }` (`char/weapon/artData` with `withMember`)
       - Sheet-specific contributions from appropriate members `src: dst:` and write-side `sheet: et:`
   - No sheet-specific contributions at top-level as the sheet selection above are wrapped within `withMember`.
     So those formulas are only included when `teamData` adds the correct `src:` with `reread` above
 - `et:self sheet:iso` queries (e.g., `self.char.lvl`)
   - `{ sheet:agg et:self } <= { sheet:custom }` (`data/common/index.ts`)
     - Custom contributions
-  - `{ sheet:iso } <= { sheet:<char key> et:self }` (`charData` with `withMember`, select sheets)
+  - `{ sheet:iso } <= { sheet:<char key> et:self }` (`charData` with `withMember`)
     - `et:self` contributions from the current character
 - `et:team sheet:agg/iso` queries (e.g., `team.final.atk`)
   - `{ et:team } <- { src:* et:self }` (`teamData`)
-    - `et:self` query from each member with appropriate `sheet:`
+    - `et:self` query from each member with the same `sheet:`
 - TODO: `et:enemy sheet:enemy`, `sheet:static`, and `sheet:dyn`
 
 Notes:
@@ -125,14 +125,18 @@ Most formulas also retain these optional tags, so the specified optional tags at
 
 ## Mechanisms
 
-## Non-Stacking (`Read.addOnce`)
+### Formula Listing
 
 TODO
 
-## Priority String
+### Non-Stacking (`Read.addOnce`)
 
 TODO
 
-## `meta.ts` generation
+### Priority String
+
+TODO
+
+### `meta.ts` generation
 
 TODO
