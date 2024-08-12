@@ -3,12 +3,12 @@
 A tag is a dictionary of tag category (key) and tag value (value) pairs.
 We denote a tag category and a tag value by `cat:` and `cat:val`, respectively.
 When there is no ambiguity, `val` may be used instead of `cat:val`.
-We also define a "combination" of tags `T1` and `T2`, denoted by `T1/T2`, as a tag that satisfies the following, for any tag category `cat:`
+We also define a "combination" of tags `T1` and `T2`, denoted by `T1/T2`, as a tag that satisfies the following, for any tag category `cat:`,
 - If `cat:v` ∈ `T2`, then `cat:v` ∈ `T1/T2`,
 - If `cat:` ∉ `T2` and `cat:v` ∈ `T1`, then `cat:v` ∈ `T1/T2`,
 - If `cat:` ∉ `T2` and `cat:` ∉ `T1`, then `cat:` ∉ `T1/T2`.
-Note the asymmetry between `T1` and `T2`.
 
+Note the asymmetry between `T1` and `T2`.
 As an example, the combination `{ c1:v1 c2:v2 }/{ c2:v3 c3:v4 }` is the tag `{ c1:v1 c2:v3 c3:v4 }`.
 In this example, `c1:` and `c3:` exist in only one of the tags, and so their values are used.
 For `c2:`, both tags contain different values, and so the value in the right tag is preferred.
@@ -16,13 +16,13 @@ For `c2:`, both tags contain different values, and so the value in the right tag
 ## Tag Database Gathering
 
 A calculator `calc` contains an array of tag-node pairs, called Tag Database.
-Each entry `{ tag, value }` in the tag database signifies that the value of `tag` should include the calculation of `val`.
-With tag database, `calc` can *gather a tag `T`* via`calc.get(T)`, returning all entries in the tag database with matching tags.
+Each entry `{ tag, value }` in the tag database signifies that the computation of `tag` should include `value`.
+With tag database, `calc` can *gather a tag `T`* via `calc.get(T)`, returning all entries in the tag database with matching tags.
 An entry `{ tag, value }` in the tag database is included in a gathering iff for every `k:v` ∈ `tag`, `k:v` ∈ `T`.
-
 If the value in the included entry is a `node`, its value is computed using tag `T`.
 If the value is a `Reread` with tag `T2`, another gather is performed using `T/T2`, and its result is appended to the final result.
-For example, consider `calc.get({ c1:v1 c2:vA })` when the `calc`ulator has a Tag Database
+
+As an example, consider `calc.get({ c1:v1 c2:vA })` when the `calc`ulator has the following Tag Database,
 ```
 [
   { tag: { c1:v1       }, value: node1 }, // entry 1
@@ -58,14 +58,16 @@ Operations are separated into three types, arithmetic, branching, and tag-relate
 - `min(x1, x2, ...) := Math.min(x1, x2, ...)`,
 - `max(x1, x2, ...) := Math.max(x1, x2, ...)`,
 - `sumfrac(x1, x2) := x1 / (x1 + x2)`,
-- `subscript(index, array) := array[index]`. `array` can be either array of strings or of numbers,
+- `subscript(index, array) := array[index]`.
+  `array` can be either array of strings or of numbers,
 - `custom(op, x1, x2, ...)` is for custom node for non-standard computations,
-  - See [TODO] on how to add support for custom operations.
+  - See [Calculator Customization Section](#customization) on how to add support for custom operations.
 
 ## Branching Operations 
 
 Most branching functions are of the form `cmp<<CMP>>(x1, x2, pass, fail)` where a comparator CMP (e.g., `Eq`) is used to compare `x1` and `x2`.
-If the comparison yields true (e.g., `x1 == x2` for `cmpEq`), then `pass` branch is chosen. Otherwise, `fail` branch is chosen.
+If the comparison yields true (e.g., `x1 == x2` for `cmpEq`), then `pass` branch is chosen.
+Otherwise, `fail` branch is chosen.
 Unchosen branch is not evaluated.
 `fail` can be omitted if it is 0.
 Supported comparators include
@@ -86,9 +88,12 @@ By default, all arithmetic and branching operations preserve the tags, e.g., cal
 
 - `tagVal(cat)` reads the value of the current tag at category `cat`, or `""` if `cat:` ∉ current tag,
 - `tag(v, tag)` calculates `v` using the tag combination `current tag/tag`,
-- `dynTag(v, tag)` calculates `v` using the tag combination `current tag/tag`. The main difference compared to `tag` operation is that the tag values in `dynTag` can be other nodes, which are computed with `Tbase` tag. When both `dynTax` and `tag` are applicable, prefer `tag` for performance reason.
-- `read(tag, accu)` performs a gather with tag `current tag/tag`, then combine the results using `accu`mulator the accumulators include `sum/prod/min/max`, corresponding to the arithmetic operations. It may also be `undefined`, in which case, the gathering is assumed to contain exactly one entry.
+- `dynTag(v, tag)` calculates `v` using the tag combination `current tag/tag`.
+  The main difference compared to `tag` operation is that the tag values in `dynTag` can be other nodes, which are computed with `Tbase` tag.
+  When both `dynTag` and `tag` are applicable, prefer `tag` for performance reason.
+- `read(tag, accu)` performs a gather with tag `current tag/tag`, then combine the results using `accu`mulator the accumulators include `sum/prod/min/max`, corresponding to the arithmetic operations.
+  It may also be `undefined`, in which case, the gathering is assumed to contain exactly one entry.
 
-# Calculator Customization
+# <a name="customization"></a> Calculator Customization
 
 TODO
