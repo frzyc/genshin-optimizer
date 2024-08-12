@@ -55,34 +55,42 @@ Instead we calculate them while the tags are not assumed ready, hence the `prep`
 In this phase, the formulas are more restricted in the avilable tags (e.g., `qt:prep q:ele`, of course, cannot use `ele:` tags).
 Once `prep:` calculation is completed, the tags are attached to the base formula via `dynTag`.
 
-## Entry Types and Sheet-Specific Formulas
+## `et:` and `sheet:`
 
-On a `read` operation, `et:` tag specifies the type of calculation, whether the query computes the current character stat (`et:self`), the common enemy stat (`et:enemy`), team-wide stat (`et:team`), or the stat of the buff target (`et:target`).
-As an entry tag, `et:` specifies the type of entry, whether it is a buff that only applies to the current character (`et:selfBuff`), the entire team (`et:teamBuff`), other members only (`et:notSelfBuff`), or if it is a debuff to enemy (`et:enemy`).
+The tag categories `et:` and `sheet:` are separated into read-side, which is used by `read` operations, and write-side, which is used in as tags in tag database entries.
 
-The query starts with one of the read-side `et:`.
-The gathering operation then maps to the appropriate `sheet:` and write-side `et:` via util functions.
-Consider a read on a `et:self sheet:agg` query (e.g., `self.char.skill`), the following is the entries matched during the gathering
+- Read-side `et:` specifies the type of calculation, whether the query computes the current character stat (`et:self`), the common enemy stat (`et:enemy`), team-wide stat (`et:team`), or the stat of the buff target (`et:target`).
+- Read-side `sheet:` speficies the sheets that will be used to gather particular query, whether to gather all sheets from all team members (`sheet:agg`), only character sheets of the current character (`sheet:iso`), or common listing outside of any specific sheets (`static`).
+- Write-side `et:` specifies the type of entry, whether it is a buff that only applies to the current character (`et:selfBuff`), the entire team (`et:teamBuff`), other members only (`et:notSelfBuff`), or if it is a debuff to enemy (`et:enemy`).
+- Write-side `sheet:` specifies the sheet that the entry belongs to (`sheet:<char key>/<weapon key>/<art>`), or if the entry is a UI custom formula (`sheet:custom`).
 
-- `{ et:self sheet:agg } <= { sheet:custom }` (`data/common/index.ts`)
+The query starts with one of the read-side `sheet: et:` combination.
+The gathering operation then maps to the appropriate write-side `sheet: et:` via util functions.
+Consider a read on a `sheet:agg et:` query (e.g., `self.char.skill`), the following is the entries matched during the gathering
+
+- `{ sheet:agg et:self  } <= { sheet:custom }` (`data/common/index.ts`)
   - Custom contributions
-- `{ sheet:agg src:<src> } <= { src:<*> dst:<src> et:selfBuff/teamBuff/notSelfBuff }` (`teamData`, insert the correct `et:`)
-  - `{ sheet:agg src:<src> } <= { sheet:<char key/weapon key/art> }` (`charData/weaponData/artData` with `withMember`, select sheets)
+- `{ src:<src> sheet:agg } <= { src:<*> dst:<src> et:selfBuff/teamBuff/notSelfBuff }` (`teamData`, insert the correct `et:`)
+  - `{ src:<src> sheet:agg } <= { sheet:<char key/weapon key/art> }` (`charData/weaponData/artData` with `withMember`, select sheets)
     - Chararcter/weapon/artifact-specific `et:selfBuff/teamBuff/notSelfBuff` contributions (from appropriate members `src:` and `dst:`)
-- No sheet-specific contributions at top-level as the sheet selection by above are wrapped within `withMember`.
+- No sheet-specific contributions at top-level as the sheet selection above are wrapped within `withMember`.
   So those formulas are only included when `teamData` adds the correct `src:` with `reread` above
 
-For `et:self sheet:iso` queries, this is a simpler,
+For `et:self sheet:iso` queries, the gathered entries are simpler,
 
-- `{ et:self sheet:agg } <= { sheet:custom }` (`data/common/index.ts`)
+- `{ sheet:agg et:self } <= { sheet:custom }` (`data/common/index.ts`)
   - Custom contributions
-- `{ sheet:iso } <= { et:self sheet:<char key> }` (`charData` with `withMember`)
+- `{ sheet:iso } <= { sheet:<char key> et:self }` (`charData` with `withMember`)
   - `et:self` contributions from the current character
 
-Team-wide queries (`et:team`) utilize the computations of `et:self`,
+> To avoid collision with `sheet:agg`, `sheet:iso` contributions use `et:self` instead of `et:selfBuff`.
+
+Team-wide queries (`et:team`) utilize the computations of `et:self`, with the following gathered entries,
 
 - `{ et:team } <- { src:* et:self }` (`teamData`)
   - `et:self` query from each member with appropriate `sheet:`
+
+TODO: `et:enemy sheet:enemy`, `sheet:static`, and `sheet:dyn`
 
 ## Sheet-Specific formulas
 
