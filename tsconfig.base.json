@@ -145,6 +145,7 @@
       "@genshin-optimizer/sr/solver": ["libs/sr/solver/src/index.ts"],
       "@genshin-optimizer/sr/srod": ["libs/sr/srod/src/index.ts"],
       "@genshin-optimizer/sr/stats": ["libs/sr/stats/src/index.ts"],
+      "@genshin-optimizer/sr/theme": ["libs/sr/theme/src/index.ts"],
       "@genshin-optimizer/sr/ui": ["libs/sr/ui/src/index.tsx"],
       "@genshin-optimizer/sr/util": ["libs/sr/util/src/index.ts"]
     }

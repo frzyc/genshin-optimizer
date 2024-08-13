@@ -228,7 +228,7 @@ function DesktopHeader({
             backgroundColor: 'rgba(255,255,255,0.1)',
           },
           '& .Mui-selected': {
-            backgroundImage: `linear-gradient(to top, ${theme.palette.brandGO500.main}, ${theme.palette.neutral700.main})`,
+            backgroundImage: `linear-gradient(to top, ${theme.palette.brand500.main}, ${theme.palette.neutral700.main})`,
             color: `${theme.palette.neutral100.main} !important`,
             textShadow:
               '0.25px 0 0 currentColor, -0.25px 0 0 currentColor, 0 0.25px 0 currentColor, 0 -0.25px 0',
@@ -247,7 +247,7 @@ function DesktopHeader({
                 sx={(theme) => ({
                   height: '24px',
                   width: '24px',
-                  boxShadow: `0 0 10px 1px ${theme.palette.brandGO500.main}`,
+                  boxShadow: `0 0 10px 1px ${theme.palette.brand500.main}`,
                 })}
               />
               <Typography variant="h6" sx={{ px: 1, fontWeight: 'Normal' }}>
@@ -353,7 +353,7 @@ function MobileHeader({
             }}
             sx={(theme) => ({
               '& .Mui-selected': {
-                backgroundImage: `linear-gradient(to right, ${theme.palette.brandGO500.main}, ${theme.palette.neutral700.main})`,
+                backgroundImage: `linear-gradient(to right, ${theme.palette.brand500.main}, ${theme.palette.neutral700.main})`,
                 color: `${theme.palette.neutral100.main} !important`,
                 textShadow:
                   '0.1px 0 0 currentColor, -0.1px 0 0 currentColor, 0 0.1px 0 currentColor, 0 -0.1px 0',
@@ -372,7 +372,7 @@ function MobileHeader({
                   sx={(theme) => ({
                     height: '24px',
                     width: '24px',
-                    boxShadow: `0 0 10px 1px ${theme.palette.brandGO500.main}`,
+                    boxShadow: `0 0 10px 1px ${theme.palette.brand500.main}`,
                   })}
                 />
               }
@@ -418,7 +418,7 @@ function MobileHeader({
                 sx={(theme) => ({
                   height: '24px',
                   width: '24px',
-                  boxShadow: `0 0 10px 1px ${theme.palette.brandGO500.main}`,
+                  boxShadow: `0 0 10px 1px ${theme.palette.brand500.main}`,
                 })}
               />
             }
