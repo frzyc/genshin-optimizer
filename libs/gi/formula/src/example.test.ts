@@ -25,6 +25,7 @@ import {
   artifactsData,
   charData,
   conditionalData,
+  noTeamData,
   teamData,
   weaponData,
   withMember,
@@ -185,7 +186,7 @@ describe('example', () => {
       'skill_hold',
       'skill_press',
     ])
-    expect(listing.filter((x) => x.sheet === 'static').length).toEqual(5)
+    expect(listing.filter((x) => x.sheet === 'static').length).toEqual(6)
   })
   test('calculate formulas in a listing', () => {
     const read = calc
@@ -273,7 +274,10 @@ describe('example', () => {
   })
 })
 describe('weapon-only example', () => {
-  const data: TagMapNodeEntries = [...weaponData(rawData[1].weapon as IWeapon)],
+  const data: TagMapNodeEntries = [
+      ...noTeamData(),
+      ...weaponData(rawData[1].weapon as IWeapon),
+    ],
     calc = genshinCalculatorWithEntries(data)
 
   const self = convert(selfTag, { et: 'self' })

@@ -30,10 +30,11 @@ export function withMember(
 
 export function charData(data: ICharacter): TagMapNodeEntries {
   const { lvl, basic, skill, ult, talent, ascension, eidolon } = self.char
+  const { char, iso, [data.key]: sheet } = reader.withAll('sheet', [])
 
   return [
-    reader.sheet('char').reread(reader.sheet(data.key)),
-    reader.withTag({ sheet: 'iso', et: 'self' }).reread(reader.sheet(data.key)),
+    char.reread(sheet),
+    iso.with('et', 'self').reread(sheet),
 
     lvl.add(data.level),
     basic.add(data.basic),
@@ -161,6 +162,17 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
       teamEntry.add(reader.withTag({ src, et: 'self' }).sum)
     ),
   ].flat()
+}
+
+export function noTeamData(): TagMapNodeEntries {
+  const { self } = reader.sheet('agg').withAll('et', [])
+
+  // `Team Data` without `src:` and `dst:`
+  return [
+    // Self Buff
+    self.reread(reader.withTag({ et: 'selfBuff' })),
+    // TODO: Non-Stacking and Total Team Stat
+  ]
 }
 
 /**

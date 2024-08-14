@@ -217,8 +217,8 @@ export function tagStr(tag: Tag, ex?: any): string {
   else if (q) required(`.${q}`, '')
 
   optional(elementalType, 'ele')
-  optional(`1:${damageType1}`, 'dmg1')
-  optional(`2:${damageType2}`, 'dmg2')
+  optional(damageType1 && `1:${damageType1}`, 'dmg1')
+  optional(damageType2 && `2:${damageType2}`, 'dmg2')
   if (ex) result += `[${ex}] `
   return result + '}'
 }

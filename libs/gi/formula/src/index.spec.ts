@@ -5,6 +5,7 @@ import type { Member, Sheet, TagMapNodeEntries } from './data/util'
 import { self, selfTag, sheets, tagStr, teamBuff } from './data/util'
 import { teamData, withMember } from './util'
 
+import { allCharacterKeys, allWeaponKeys } from '@genshin-optimizer/gi/consts'
 import { fail } from 'assert'
 
 describe('calculator', () => {
@@ -67,14 +68,33 @@ describe('calculator', () => {
 })
 describe('sheet', () => {
   test('buff entries', () => {
+    const sheets = new Set([...allCharacterKeys, ...allWeaponKeys, 'art'])
     for (const { tag } of entries) {
       if (tag.et && tag.qt && tag.q) {
         switch (tag.et) {
-          case 'selfBuff':
+          case 'selfBuff': {
+            const { sheet } = (selfTag as any)[tag.qt][tag.q]
+            if (sheet === 'iso' && sheets.has(tag.sheet as any)) continue
+            if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
+            fail(`Ill-form selfBuff entry (${tagStr(tag)}) for sheet ${sheet}`)
+            break
+          }
+          case 'notSelfBuff':
           case 'teamBuff': {
             const { sheet } = (selfTag as any)[tag.qt][tag.q]
-            if (sheet !== 'agg') fail(`Ineffective entry ${tagStr(tag)}`)
+            if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
+            fail(`Ill-form ${tag.et} entry (${tagStr(tag)}) for sheet ${sheet}`)
             break
+          }
+          case 'self': {
+            const desc = (selfTag as any)[tag.qt]?.[tag.q]
+            if (!desc) continue
+            const { sheet } = desc
+            if (!sheet) continue
+            if (sheet === 'iso' && !sheets.has(tag.sheet as any)) continue
+            if (sheet === 'agg' && !sheets.has(tag.sheet as any)) continue
+            if (sheet === tag.sheet) continue
+            fail(`Illform self entry (${tagStr(tag)}) for sheet ${sheet}`)
           }
         }
       }
