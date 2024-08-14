@@ -1,14 +1,23 @@
-import { compileTagMapValues } from '@genshin-optimizer/pando/engine'
-import type {
-  AscensionKey,
-  CharacterKey,
-  LightConeKey,
+import {
+  compileTagMapValues,
+  setDebugMode,
+} from '@genshin-optimizer/pando/engine'
+import {
+  allCharacterKeys,
+  allLightConeKeys,
+  type AscensionKey,
+  type CharacterKey,
+  type LightConeKey,
 } from '@genshin-optimizer/sr/consts'
 import { fail } from 'assert'
-import { charData, lightConeData, withMember } from '.'
+import { charData, lightConeData, noTeamData, withMember } from '.'
 import { Calculator } from './calculator'
 import { data, keys, values } from './data'
 import { convert, selfTag, tagStr, type TagMapNodeEntries } from './data/util'
+
+setDebugMode(true)
+// This is generally unnecessary, but without it, some tags in `DebugCalculator` will be missing
+Object.assign(values, compileTagMapValues(keys, data))
 
 describe('character test', () => {
   it.each([
@@ -19,6 +28,8 @@ describe('character test', () => {
   ])('Calculate character base stats', (lvl, ascension, atk, def, hp, spd) => {
     const charKey: CharacterKey = 'March7th'
     const data: TagMapNodeEntries = [
+      ...noTeamData(),
+
       ...withMember(
         '0',
         ...charData({
@@ -53,6 +64,8 @@ describe('lightCone test', () => {
   ])('Calculate lightCone base stats', (lvl, ascension, atk, def, hp) => {
     const lcKey: LightConeKey = 'Arrows'
     const data: TagMapNodeEntries = [
+      ...noTeamData(),
+
       ...withMember(
         '0',
         ...charData({
@@ -79,14 +92,14 @@ describe('lightCone test', () => {
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
-    const member0 = convert(selfTag, { src: '0', et: 'self' })
-    expect(calc.compute(member0.base.atk.sheet('lightCone')).val).toBeCloseTo(
-      atk
-    )
-    expect(calc.compute(member0.base.def.sheet('lightCone')).val).toBeCloseTo(
-      def
-    )
-    expect(calc.compute(member0.base.hp.sheet('lightCone')).val).toBeCloseTo(hp)
+    const lightCone0 = convert(selfTag, {
+      src: '0',
+      et: 'selfBuff', // `selfBuff` for stat contributions
+      sheet: 'lightCone',
+    })
+    expect(calc.compute(lightCone0.base.atk).val).toBeCloseTo(atk)
+    expect(calc.compute(lightCone0.base.def).val).toBeCloseTo(def)
+    expect(calc.compute(lightCone0.base.hp).val).toBeCloseTo(hp)
   })
 })
 
@@ -96,6 +109,8 @@ describe('char+lightCone test', () => {
     const lcKey: LightConeKey = 'Amber'
 
     const data: TagMapNodeEntries = [
+      ...noTeamData(),
+
       ...withMember(
         '0',
         ...charData({
@@ -127,14 +142,36 @@ describe('char+lightCone test', () => {
 })
 describe('sheet', () => {
   test('buff entries', () => {
+    const sheets = new Set([...allCharacterKeys, ...allLightConeKeys, 'relic'])
     for (const { tag } of data) {
       if (tag.et && tag.qt && tag.q) {
         switch (tag.et) {
-          case 'selfBuff':
+          case 'selfBuff': {
+            const { sheet } = (selfTag as any)[tag.qt][tag.q]
+            // Self buff entries are for iso/agg queries inside a sheet
+            if (sheet === 'iso' && sheets.has(tag.sheet as any)) continue
+            if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
+            fail(`Ill-form selfBuff entry (${tagStr(tag)}) for sheet ${sheet}`)
+            break
+          }
+          case 'notSelfBuff':
           case 'teamBuff': {
             const { sheet } = (selfTag as any)[tag.qt][tag.q]
-            if (sheet !== 'agg') fail(`Ineffective entry ${tagStr(tag)}`)
+            // Buff entries are for agg queries inside a sheet
+            if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
+            fail(`Ill-form ${tag.et} entry (${tagStr(tag)}) for sheet ${sheet}`)
             break
+          }
+          case 'self': {
+            const desc = (selfTag as any)[tag.qt]?.[tag.q]
+            if (!desc) continue
+            const { sheet } = desc
+            if (!sheet) continue
+            if (sheet === 'iso' && !sheets.has(tag.sheet as any)) continue
+            if (sheet === 'agg' && !sheets.has(tag.sheet as any)) continue
+            if (sheet === tag.sheet) continue
+            // iso/agg entries should use `selfBuff`
+            fail(`Illform self entry (${tagStr(tag)}) for sheet ${sheet}`)
           }
         }
       }

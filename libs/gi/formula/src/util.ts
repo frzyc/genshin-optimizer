@@ -30,10 +30,11 @@ export function withMember(
 
 export function charData(data: ICharacter): TagMapNodeEntries {
   const { lvl, auto, skill, burst, ascension, constellation } = self.char
+  const { agg, iso, [data.key]: sheet } = reader.withAll('sheet', [])
 
   return [
-    reader.sheet('agg').reread(reader.sheet(data.key)),
-    reader.withTag({ sheet: 'iso', et: 'self' }).reread(reader.sheet(data.key)),
+    agg.reread(sheet),
+    iso.with('et', 'self').reread(sheet.with('et', 'selfBuff')),
 
     lvl.add(data.level),
     auto.add(data.talent.auto),
@@ -70,6 +71,7 @@ export function artifactsData(
     common: { count },
     premod,
   } = convert(selfTag, { sheet: 'art', et: 'self' })
+  const { agg, art, dyn } = reader.withAll('sheet', [])
   const sets: Partial<Record<ArtifactSetKey, number>> = {},
     stats: Partial<Record<MainStatKey | SubstatKey, number>> = {}
   for (const { set: setKey, stats: stat } of data) {
@@ -82,12 +84,12 @@ export function artifactsData(
       else stats[key] = stat + value
     }
   }
+
   return [
-    // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
-    reader.sheet('agg').reread(reader.sheet('art')),
+    agg.reread(art), // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
 
     // Add `sheet:dyn` between the stat and the buff so that we can `detach` them easily
-    reader.withTag({ sheet: 'art', qt: 'premod' }).reread(reader.sheet('dyn')),
+    art.with('qt', 'premod').reread(dyn),
     ...Object.entries(stats).map(([k, v]) =>
       readStat(premod, k as MainStatKey | SubstatKey)
         .sheet('dyn')
@@ -174,4 +176,15 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
       teamEntry.add(reader.withTag({ src, et: 'self' }).sum)
     ),
   ].flat()
+}
+
+export function noTeamData(): TagMapNodeEntries {
+  const { self } = reader.sheet('agg').withAll('et', [])
+
+  // `Team Data` without `src:` and `dst:`
+  return [
+    // Self Buff
+    self.reread(reader.withTag({ et: 'selfBuff' })),
+    // TODO: Non-Stacking and Total Team Stat
+  ]
 }

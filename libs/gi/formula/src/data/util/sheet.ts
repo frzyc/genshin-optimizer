@@ -45,7 +45,7 @@ export function customDmg(
     team,
     'dmg',
     tag(cond, { move }),
-    self.formula.base.add(base),
+    selfBuff.formula.base.add(base),
     self.prep.ele.add(eleOverride ?? self.reaction.infusion),
     ...extra
   )
@@ -73,7 +73,7 @@ export function customShield(
     team,
     'shield',
     ele ? tag(cond, { ele }) : cond,
-    self.formula.base.add(base),
+    selfBuff.formula.base.add(base),
     ...extra
   )
 }
@@ -89,7 +89,7 @@ export function customHeal(
     team,
     'heal',
     cond,
-    self.formula.base.add(base),
+    selfBuff.formula.base.add(base),
     ...extra
   )
 }

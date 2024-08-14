@@ -8,7 +8,6 @@ import type { Read, Tag } from '.'
 import {
   percent,
   reader,
-  self,
   selfBuff,
   tag,
   teamBuff,
@@ -84,7 +83,7 @@ export function customDmg(
       team,
       'dmg',
       tag(cond, dmgTag),
-      self.formula.base.add(prod(base, percent(split))),
+      selfBuff.formula.base.add(prod(base, percent(split))),
       ...extra
     )
   )
@@ -111,7 +110,7 @@ export function customShield(
     team,
     'shield',
     cond,
-    self.formula.base.add(base),
+    selfBuff.formula.base.add(base),
     ...extra
   )
 }
@@ -137,7 +136,7 @@ export function customHeal(
     team,
     'heal',
     cond,
-    self.formula.base.add(base),
+    selfBuff.formula.base.add(base),
     ...extra
   )
 }
@@ -165,7 +164,7 @@ export function customBreakDmg(
     team,
     'breakDmg',
     tag(cond, dmgTag),
-    self.formula.base.add(base),
+    selfBuff.formula.base.add(base),
     ...extra
   )
 }

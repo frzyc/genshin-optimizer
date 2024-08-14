@@ -2,7 +2,7 @@ import { type WeaponKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
-import { allStatics, readStat, self } from '../util'
+import { allStatics, readStat, self, selfBuff } from '../util'
 
 export function entriesForWeapon(key: WeaponKey): TagMapNodeEntries {
   const gen = allStats.weapon.data[key]
@@ -16,27 +16,26 @@ export function entriesForWeapon(key: WeaponKey): TagMapNodeEntries {
   return [
     // Stats
     ...gen.lvlCurves.map(({ key, base, curve }) =>
-      (key == 'atk' ? self.base[key] : readStat(self.premod, key)).add(
+      (key == 'atk' ? selfBuff.base[key] : readStat(selfBuff.premod, key)).add(
         prod(base, allStatics('static')[curve])
       )
     ),
     ...Object.entries(gen.ascensionBonus).map(([key, values]) =>
-      (key == 'atk'
-        ? self.base[key]
-        : readStat(self.premod, key as keyof typeof gen.ascensionBonus)
-      ).add(subscript(ascension, values))
+      (key == 'atk' ? selfBuff.base[key] : readStat(selfBuff.premod, key)).add(
+        subscript(ascension, values)
+      )
     ),
     ...Object.entries(gen.refinementBonus).map(([key, values]) =>
-      readStat(
-        self.weaponRefinement,
-        key as keyof typeof gen.refinementBonus
-      ).add(subscript(refinement, values))
+      readStat(selfBuff.weaponRefinement, key).add(
+        subscript(refinement, values)
+      )
     ),
 
     // Specialized stats, items here are sheet-specific data (i.e., `sheet:<key>`)
-    self.weapon.primary.add(self.base[primaryStat].sheet(key)),
+    // Read from `selfBuff` to include only sheet's contribution.
+    selfBuff.weapon.primary.add(selfBuff.base[primaryStat].sheet(key)),
     ...[...nonPrimaryStat].map((stat) =>
-      self.weapon.secondary.add(readStat(self.premod, stat).sheet(key))
+      selfBuff.weapon.secondary.add(readStat(selfBuff.premod, stat).sheet(key))
     ),
   ]
 }
