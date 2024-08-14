@@ -8,7 +8,6 @@ import type { Read, Tag } from '.'
 import {
   percent,
   reader,
-  self,
   selfBuff,
   tag,
   teamBuff,
@@ -40,7 +39,7 @@ export function register(
 function registerFormula(
   name: string,
   team: boolean | undefined,
-  q: 'dmg' | 'heal' | 'shield',
+  q: 'dmg' | 'heal' | 'shield' | 'breakDmg',
   cond: string | StrNode,
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
@@ -84,7 +83,7 @@ export function customDmg(
       team,
       'dmg',
       tag(cond, dmgTag),
-      self.formula.base.add(prod(base, percent(split))),
+      selfBuff.formula.base.add(prod(base, percent(split))),
       ...extra
     )
   )
@@ -111,7 +110,7 @@ export function customShield(
     team,
     'shield',
     cond,
-    self.formula.base.add(base),
+    selfBuff.formula.base.add(base),
     ...extra
   )
 }
@@ -137,7 +136,35 @@ export function customHeal(
     team,
     'heal',
     cond,
-    self.formula.base.add(base),
+    selfBuff.formula.base.add(base),
+    ...extra
+  )
+}
+
+/**
+ * Creates TagMapNodeEntries representing a break DMG instance, and registers the formula
+ * @param name Base name to be used as the key
+ * @param dmgTag Tag object containing damageType1, damageType2 and elementalType
+ * @param base Node representing the break DMG value
+ * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`, and also show the formula in teammates' listing.
+ *
+ * `{ cond: <node> }` to hide these instances behind a conditional check.
+ * @param extra Buffs that should only apply to this damage instance
+ * @returns TagMapNodeEntries representing the heal instance
+ */
+export function customBreakDmg(
+  name: string,
+  dmgTag: DmgTag,
+  base: NumNode | number,
+  { team, cond = 'unique' }: FormulaArg = {},
+  ...extra: TagMapNodeEntries
+): TagMapNodeEntries {
+  return registerFormula(
+    name,
+    team,
+    'breakDmg',
+    tag(cond, dmgTag),
+    selfBuff.formula.base.add(base),
     ...extra
   )
 }

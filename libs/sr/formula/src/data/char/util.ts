@@ -11,13 +11,13 @@ import {
   type AbilityKey,
   type StatBoostKey,
 } from '@genshin-optimizer/sr/consts'
-import type {
-  CharacterDatum,
-  SkillTreeNodeBonusStat,
+import {
+  type CharacterDatum,
+  type SkillTreeNodeBonusStat,
 } from '@genshin-optimizer/sr/stats'
 import type { DmgTag, FormulaArg, Stat } from '../util'
 import {
-  TypeKeyToListingType,
+  customBreakDmg,
   customDmg,
   customHeal,
   customShield,
@@ -25,6 +25,8 @@ import {
   listingItem,
   percent,
   self,
+  selfBuff,
+  TypeKeyToListingType,
   type TagMapNodeEntries,
 } from '../util'
 
@@ -40,7 +42,16 @@ export function getBaseTag(data_gen: CharacterDatum): DmgTag {
  * @returns Object with entry for basic, skill, ult, talent, technique and eidolon scalings. Eidolon contains further entries 1-6 for each eidolon.
  */
 export function scalingParams(data_gen: CharacterDatum) {
-  const { basic, skill, ult, talent, technique } = data_gen.skillTree
+  const {
+    basic,
+    skill,
+    ult,
+    talent,
+    technique,
+    bonusAbility1,
+    bonusAbility2,
+    bonusAbility3,
+  } = data_gen.skillTree
   const eidolon = objMap(data_gen.rankMap, (rankInfo) => rankInfo.params)
 
   return {
@@ -49,6 +60,9 @@ export function scalingParams(data_gen: CharacterDatum) {
     ult: ult.skillParamList,
     talent: talent.skillParamList,
     technique: technique.skillParamList,
+    bonusAbility1: bonusAbility1.skillParamList,
+    bonusAbility2: bonusAbility2.skillParamList,
+    bonusAbility3: bonusAbility3.skillParamList,
     eidolon,
   }
 }
@@ -148,7 +162,7 @@ export function heal(
  */
 export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
   const { char } = self
-  const { eidolon, ascension, lvl, ele, path } = char
+  const { eidolon, ascension, lvl } = char
   // The "add" only applies to currLvl - 1, since "base" is stat at lvl 1
   const readLvl = sum(constant(-1), lvl)
   const statBoosts = Object.entries(data_gen.skillTree)
@@ -156,13 +170,13 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     .map(([_, s]) => s.levels?.[0]?.stats)
     .filter((s): s is SkillTreeNodeBonusStat => !!s)
   return [
-    ele.add(data_gen.damageType),
-    path.add(data_gen.path),
+    selfBuff.char.ele.add(data_gen.damageType),
+    selfBuff.char.path.add(data_gen.path),
     // Base stats
     ...(['hp', 'atk', 'def'] as const).map((sk) => {
       const basePerAsc = data_gen.ascension.map((p) => p[sk].base)
       const addPerAsc = data_gen.ascension.map((p) => p[sk].add)
-      return self.base[sk].add(
+      return selfBuff.base[sk].add(
         sum(
           subscript(ascension, basePerAsc),
           prod(readLvl, subscript(ascension, addPerAsc))
@@ -171,18 +185,19 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     }),
     ...(['crit_', 'crit_dmg_'] as const).map((sk) => {
       const statAsc = data_gen.ascension.map((p) => p[sk])
-      return self.premod[sk].add(subscript(ascension, statAsc))
+      return selfBuff.premod[sk].add(subscript(ascension, statAsc))
     }),
-    self.base.spd.add(
+    selfBuff.base.spd.add(
       subscript(
         ascension,
         data_gen.ascension.map((p) => p.spd)
       )
     ),
     // Small trace stat boosts
-    ...statBoosts.flatMap((statBoost) =>
-      Object.entries(statBoost).map(([key, amt], index) => {
-        return getStatFromStatKey(self.premod, key).add(
+    ...statBoosts.flatMap((statBoost, index) =>
+      Object.entries(statBoost).map(([key, amt]) => {
+        return getStatFromStatKey(selfBuff.premod, key).add(
+          // TODO: Add automatic ascension requirement
           cmpEq(char[`statBoost${(index + 1) as StatBoostKey}`], 1, amt)
         )
       })
@@ -191,25 +206,36 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ...([3, 5] as const).flatMap((ei) =>
       Object.entries(data_gen.rankMap[3].skillTypeAddLevel).map(
         ([abilityKey, levelBoost]) =>
-          self.char[abilityKey].add(cmpGE(eidolon, ei, levelBoost))
+          selfBuff.char[abilityKey].add(cmpGE(eidolon, ei, levelBoost))
       )
+    ),
+    // Break base DMG
+    ...customBreakDmg(
+      'breakDmg',
+      {
+        elementalType: TypeKeyToListingType[data_gen.damageType],
+        damageType1: 'break',
+      },
+      1
     ),
     // Formula listings for stats
     // TODO: Reorder this
-    self.listing.formulas.add(listingItem(self.final.hp)),
-    self.listing.formulas.add(listingItem(self.final.atk)),
-    self.listing.formulas.add(listingItem(self.final.def)),
-    self.listing.formulas.add(listingItem(self.final.spd)),
-    self.listing.formulas.add(listingItem(self.final.enerRegen_)),
-    self.listing.formulas.add(listingItem(self.final.eff_)),
-    self.listing.formulas.add(listingItem(self.final.eff_res_)),
-    self.listing.formulas.add(listingItem(self.final.brEff_)),
-    self.listing.formulas.add(listingItem(self.common.cappedCrit_)),
-    self.listing.formulas.add(listingItem(self.final.crit_dmg_)),
-    self.listing.formulas.add(listingItem(self.final.heal_)),
-    self.listing.formulas.add(
+    selfBuff.listing.formulas.add(listingItem(self.final.hp)),
+    selfBuff.listing.formulas.add(listingItem(self.final.atk)),
+    selfBuff.listing.formulas.add(listingItem(self.final.def)),
+    selfBuff.listing.formulas.add(listingItem(self.final.spd)),
+    selfBuff.listing.formulas.add(listingItem(self.final.enerRegen_)),
+    selfBuff.listing.formulas.add(listingItem(self.final.eff_)),
+    selfBuff.listing.formulas.add(listingItem(self.final.eff_res_)),
+    selfBuff.listing.formulas.add(listingItem(self.final.brEff_)),
+    selfBuff.listing.formulas.add(listingItem(self.common.cappedCrit_)),
+    selfBuff.listing.formulas.add(listingItem(self.final.crit_dmg_)),
+    selfBuff.listing.formulas.add(listingItem(self.final.heal_)),
+    selfBuff.listing.formulas.add(
       listingItem(self.final.dmg_[TypeKeyToListingType[data_gen.damageType]])
     ),
-    self.listing.formulas.add(listingItem(self.final.dmg_.physical)),
+    selfBuff.listing.formulas.add(listingItem(self.final.dmg_)),
+    selfBuff.listing.formulas.add(listingItem(self.final.weakness_)),
+    selfBuff.listing.formulas.add(listingItem(self.final.resPen_)),
   ]
 }

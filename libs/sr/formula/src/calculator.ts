@@ -2,11 +2,11 @@ import { assertUnreachable } from '@genshin-optimizer/common/util'
 import type { AnyNode, CalcResult } from '@genshin-optimizer/pando/engine'
 import {
   Calculator as Base,
+  DebugCalculator,
   calculation,
 } from '@genshin-optimizer/pando/engine'
 import type { Member, Read, Sheet, Tag } from './data/util'
-import { reader } from './data/util'
-import { DebugCalculator } from './debug'
+import { reader, tagStr } from './data/util'
 
 const { arithmetic } = calculation
 const emptyCond: CondInfo = {}
@@ -61,11 +61,11 @@ export class Calculator extends Base<CalcMeta> {
       case 'min':
       case 'max':
       case 'sumfrac': {
-        const empty = arithmetic[op]([], ex)
-        const ops = x.filter((x) => x!.val !== empty) as CalcResult<
-          number,
-          CalcMeta
-        >[]
+        let ops = x as CalcResult<number, CalcMeta>[]
+        if (ops.length > 1) {
+          const empty = arithmetic[op]([], ex)
+          ops = ops.filter((x) => x!.val !== empty)
+        }
         if (ops.length <= 1) {
           let meta = ops[0]?.meta ?? constOverride()
           if (meta.conds !== conds) meta = { ...meta, conds } // Use parent `conds` when short-circuiting
@@ -108,7 +108,7 @@ export class Calculator extends Base<CalcMeta> {
       .reduce(merge, emptyCond)
   }
   toDebug(): DebugCalculator {
-    return new DebugCalculator(this)
+    return new DebugCalculator(this, tagStr)
   }
 }
 

@@ -30,10 +30,11 @@ export function withMember(
 
 export function charData(data: ICharacter): TagMapNodeEntries {
   const { lvl, auto, skill, burst, ascension, constellation } = self.char
+  const { agg, iso, [data.key]: sheet } = reader.withAll('sheet', [])
 
   return [
-    reader.sheet('agg').reread(reader.sheet(data.key)),
-    reader.withTag({ sheet: 'iso', et: 'self' }).reread(reader.sheet(data.key)),
+    agg.reread(sheet),
+    iso.with('et', 'self').reread(sheet.with('et', 'selfBuff')),
 
     lvl.add(data.level),
     auto.add(data.talent.auto),
@@ -70,6 +71,7 @@ export function artifactsData(
     common: { count },
     premod,
   } = convert(selfTag, { sheet: 'art', et: 'self' })
+  const { agg, art, dyn } = reader.withAll('sheet', [])
   const sets: Partial<Record<ArtifactSetKey, number>> = {},
     stats: Partial<Record<MainStatKey | SubstatKey, number>> = {}
   for (const { set: setKey, stats: stat } of data) {
@@ -82,12 +84,12 @@ export function artifactsData(
       else stats[key] = stat + value
     }
   }
+
   return [
-    // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
-    reader.sheet('agg').reread(reader.sheet('art')),
+    agg.reread(art), // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
 
     // Add `sheet:dyn` between the stat and the buff so that we can `detach` them easily
-    reader.withTag({ sheet: 'art', qt: 'premod' }).reread(reader.sheet('dyn')),
+    art.with('qt', 'premod').reread(dyn),
     ...Object.entries(stats).map(([k, v]) =>
       readStat(premod, k as MainStatKey | SubstatKey)
         .sheet('dyn')
@@ -100,12 +102,18 @@ export function artifactsData(
   ]
 }
 
+/**
+ * Generate conditional TagMapNodeEntry for calculator. Should be provided outside of any member data, in order to preserve specified 'src'
+ * @param dst member to apply conditionals to
+ * @param data conditional data in `Src: { Sheet: { CondKey: value } }` format. Src can be 'all', unless the buff is possibly duplicated (e.g. artifact team buff). In that case, you should specify the src member
+ * @returns TagMapNodeEntires to be provided to calculator
+ */
 export function conditionalData(
   dst: Member,
   data: Partial<
     Record<Member, Partial<Record<Sheet, Record<string, string | number>>>>
   >
-) {
+): TagMapNodeEntries {
   return Object.entries(data).flatMap(([src, entries]) =>
     Object.entries(entries).flatMap(([key, entries]) => {
       const conds = conditionalEntries(key as Sheet, src as Member, dst)
@@ -168,4 +176,15 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
       teamEntry.add(reader.withTag({ src, et: 'self' }).sum)
     ),
   ].flat()
+}
+
+export function noTeamData(): TagMapNodeEntries {
+  const { self } = reader.sheet('agg').withAll('et', [])
+
+  // `Team Data` without `src:` and `dst:`
+  return [
+    // Self Buff
+    self.reread(reader.withTag({ et: 'selfBuff' })),
+    // TODO: Non-Stacking and Total Team Stat
+  ]
 }

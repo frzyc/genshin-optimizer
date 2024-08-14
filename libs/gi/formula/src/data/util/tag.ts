@@ -118,7 +118,7 @@ export const selfTag = {
   common: {
     weaponType: iso,
     critMode: fixed,
-    cappedCritRate_: iso,
+    cappedCritRate_: fixed,
     count: isoSum,
     eleCount: fixed,
   },
