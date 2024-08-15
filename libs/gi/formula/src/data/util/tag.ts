@@ -206,9 +206,10 @@ export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
 export const userBuff = convert(selfTag, { et: 'self', sheet: 'custom' })
 
 // Custom tags
+type CondShareType = 'src' | 'dst' | 'none'
 export const allStatics = (sheet: Sheet) =>
   reader.withTag({ et: 'self', sheet, qt: 'misc' }).withAll('q', [])
-export const allBoolConditionals = (sheet: Sheet, shared?: boolean) =>
+export const allBoolConditionals = (sheet: Sheet, shared?: CondShareType) =>
   allConditionals(sheet, shared, { type: 'bool' }, (r) => ({
     ifOn: (node: NumNode | number, off?: NumNode | number) =>
       cmpNE(r, 0, node, off),
@@ -217,7 +218,7 @@ export const allBoolConditionals = (sheet: Sheet, shared?: boolean) =>
 export const allListConditionals = <T extends string>(
   sheet: Sheet,
   list: T[],
-  shared?: boolean
+  shared?: CondShareType
 ) =>
   allConditionals(sheet, shared, { type: 'list', list }, (r) => ({
     map: (table: Record<T, number>, def = 0) =>
@@ -229,7 +230,7 @@ export const allNumConditionals = (
   int_only = true,
   min?: number,
   max?: number,
-  shared?: boolean
+  shared?: CondShareType
 ) =>
   allConditionals(sheet, shared, { type: 'num', int_only, min, max }, (r) => r)
 
@@ -240,7 +241,7 @@ export const conditionalEntries = (sheet: Sheet, src: Member, dst: Member) => {
 
 function allConditionals<T>(
   sheet: Sheet,
-  shared = true,
+  shared: CondShareType = 'src',
   meta: object,
   transform: (r: Read, q: string) => T
 ): Record<string, T> {
@@ -259,7 +260,7 @@ function allConditionals<T>(
     cata: null,
   }
   let base = reader.sum.withTag(baseTag)
-  if (shared) base = base.with('src', 'all')
+  if (shared !== 'none') base = base.with(shared, 'all')
   if (metaList.conditionals) {
     const { conditionals } = metaList
     return base.withAll('q', [], (r, q) => {
