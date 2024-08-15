@@ -1,7 +1,7 @@
 import { lookup, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
 import { allStats } from '@genshin-optimizer/sr/stats'
 import type { TagMapNodeEntries } from '../util'
-import { enemy, percent, self } from '../util'
+import { enemy, percent, self, selfBuff } from '../util'
 
 const breakBaseRatios = {
   Physical: 2,
@@ -14,16 +14,16 @@ const breakBaseRatios = {
 }
 const data: TagMapNodeEntries = [
   // Formula calculations
-  self.formula.dmg.add(
+  selfBuff.formula.dmg.add(
     prod(self.dmg.out, self.dmg.critMulti, enemy.common.inDmg)
   ),
-  self.formula.shield.add(
+  selfBuff.formula.shield.add(
     prod(self.formula.base, sum(percent(1), self.premod.shield_))
   ),
-  self.formula.heal.add(
+  selfBuff.formula.heal.add(
     prod(self.formula.base, sum(percent(1), self.final.heal_))
   ),
-  self.formula.breakDmg.add(
+  selfBuff.formula.breakDmg.add(
     prod(
       self.formula.base,
       lookup(self.char.ele, breakBaseRatios),

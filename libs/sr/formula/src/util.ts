@@ -12,6 +12,7 @@ import {
   getStatFromStatKey,
   reader,
   self,
+  selfBuff,
   selfTag,
 } from './data/util'
 
@@ -44,15 +45,17 @@ export function charData(data: ICharacter): TagMapNodeEntries {
     ascension.add(data.ascension),
     eidolon.add(data.eidolon),
     ...allStatBoostKeys.map((index) =>
-      self.char[`statBoost${index}`].add(data.statBoosts[index] ? 1 : 0)
+      selfBuff.char[`statBoost${index}`].add(data.statBoosts[index] ? 1 : 0)
     ),
     ...allBonusAbilityKeys.map((index) =>
-      self.char[`bonusAbility${index}`].add(data.bonusAbilities[index] ? 1 : 0)
+      selfBuff.char[`bonusAbility${index}`].add(
+        data.bonusAbilities[index] ? 1 : 0
+      )
     ),
 
     // Default char
-    self.premod.crit_.add(0.05),
-    self.premod.crit_dmg_.add(0.5),
+    selfBuff.premod.crit_.add(0.05),
+    selfBuff.premod.crit_dmg_.add(0.5),
   ]
 }
 

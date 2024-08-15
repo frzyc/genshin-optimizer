@@ -12,6 +12,7 @@ import {
   readStat,
   reader,
   self,
+  selfBuff,
   selfTag,
 } from './data/util'
 
@@ -44,8 +45,8 @@ export function charData(data: ICharacter): TagMapNodeEntries {
     constellation.add(data.constellation),
 
     // Default char
-    self.premod.critRate_.add(0.05),
-    self.premod.critDMG_.add(0.5),
+    selfBuff.premod.critRate_.add(0.05),
+    selfBuff.premod.critDMG_.add(0.5),
   ]
 }
 

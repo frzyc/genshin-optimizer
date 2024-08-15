@@ -46,7 +46,7 @@ export function customDmg(
     'dmg',
     tag(cond, { move }),
     selfBuff.formula.base.add(base),
-    self.prep.ele.add(eleOverride ?? self.reaction.infusion),
+    selfBuff.prep.ele.add(eleOverride ?? self.reaction.infusion),
     ...extra
   )
 }

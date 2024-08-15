@@ -13,7 +13,7 @@ import type { Tag, TagMapNodeEntries } from './data/util'
 import {
   convert,
   enemyDebuff,
-  self,
+  selfBuff,
   selfTag,
   team,
   userBuff,
@@ -70,7 +70,7 @@ describe('example', () => {
       enemyDebuff.reaction.amp.add(''),
       enemyDebuff.common.lvl.add(12),
       enemyDebuff.common.preRes.add(0.1),
-      self.common.critMode.add('avg'),
+      selfBuff.common.critMode.add('avg'),
     ],
     calc = genshinCalculatorWithEntries(data)
 
