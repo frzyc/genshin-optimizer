@@ -45,7 +45,7 @@ export class Calculator extends Base<CalcMeta> {
     if (tag?.qt === 'cond') {
       const { src, dst, sheet, q } = tag
       conds = merge(conds, {
-        [dst!]: { [src!]: { [sheet!]: { [q!]: val } } },
+        [dst ?? null!]: { [src ?? null!]: { [sheet!]: { [q!]: val } } },
       })
     }
 
@@ -137,7 +137,7 @@ function merge<T extends Record<string, any>>(a: T, b: T): T {
       const new_val = merge(result[key], val)
       if (new_val !== result[key]) {
         dirty = true
-        result[key] = val
+        result[key] = new_val
       }
     } else {
       dirty = true
