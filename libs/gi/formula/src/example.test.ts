@@ -25,7 +25,6 @@ import {
   artifactsData,
   charData,
   conditionalData,
-  noTeamData,
   teamData,
   weaponData,
   withMember,
@@ -165,7 +164,6 @@ describe('example', () => {
       test(`with name ${name}`, () => {
         expect(tag).toEqual({
           src: '0',
-          dst: '0',
           et: 'self',
           sheet: 'Nahida',
           qt: 'formula',
@@ -274,10 +272,7 @@ describe('example', () => {
   })
 })
 describe('weapon-only example', () => {
-  const data: TagMapNodeEntries = [
-      ...noTeamData(),
-      ...weaponData(rawData[1].weapon as IWeapon),
-    ],
+  const data: TagMapNodeEntries = [...weaponData(rawData[1].weapon as IWeapon)],
     calc = genshinCalculatorWithEntries(data)
 
   const self = convert(selfTag, { et: 'self' })

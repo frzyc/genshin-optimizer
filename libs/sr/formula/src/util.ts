@@ -34,7 +34,7 @@ export function charData(data: ICharacter): TagMapNodeEntries {
 
   return [
     char.reread(sheet),
-    iso.with('et', 'self').reread(sheet),
+    iso.reread(sheet),
 
     lvl.add(data.level),
     basic.add(data.basic),
@@ -119,10 +119,6 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
         .withTag({ et: 'target', dst })
         .reread(reader.withTag({ et: 'self', dst: null, src: dst }))
     ),
-    // Self Buff
-    members.map((src) =>
-      self.with('src', src).reread(reader.withTag({ et: 'selfBuff', dst: src }))
-    ),
     // Team Buff
     members.flatMap((dst) => {
       const entry = self.with('src', dst)
@@ -162,17 +158,6 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
       teamEntry.add(reader.withTag({ src, et: 'self' }).sum)
     ),
   ].flat()
-}
-
-export function noTeamData(): TagMapNodeEntries {
-  const { self } = reader.sheet('agg').withAll('et', [])
-
-  // `Team Data` without `src:` and `dst:`
-  return [
-    // Self Buff
-    self.reread(reader.withTag({ et: 'selfBuff' })),
-    // TODO: Non-Stacking and Total Team Stat
-  ]
 }
 
 /**

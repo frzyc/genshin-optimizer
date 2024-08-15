@@ -72,13 +72,6 @@ describe('sheet', () => {
     for (const { tag } of entries) {
       if (tag.et && tag.qt && tag.q) {
         switch (tag.et) {
-          case 'selfBuff': {
-            const { sheet } = (selfTag as any)[tag.qt][tag.q]
-            if (sheet === 'iso' && sheets.has(tag.sheet as any)) continue
-            if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
-            fail(`Ill-form selfBuff entry (${tagStr(tag)}) for sheet ${sheet}`)
-            break
-          }
           case 'notSelfBuff':
           case 'teamBuff': {
             const { sheet } = (selfTag as any)[tag.qt][tag.q]
@@ -91,9 +84,8 @@ describe('sheet', () => {
             if (!desc) continue
             const { sheet } = desc
             if (!sheet) continue
-            if (sheet === 'iso' && !sheets.has(tag.sheet as any)) continue
-            if (sheet === 'agg' && !sheets.has(tag.sheet as any)) continue
-            if (sheet === tag.sheet) continue
+            if (sheet === 'iso' || sheet === 'agg' || sheet === tag.sheet)
+              continue
             fail(`Illform self entry (${tagStr(tag)}) for sheet ${sheet}`)
           }
         }

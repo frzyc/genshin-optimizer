@@ -33,7 +33,6 @@ export const presets = [
 ] as const
 export const entryTypes = [
   'self',
-  'selfBuff',
   'teamBuff',
   'notSelfBuff',
   'enemy',
