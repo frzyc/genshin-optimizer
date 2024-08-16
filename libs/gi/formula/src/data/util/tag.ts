@@ -238,7 +238,7 @@ export const conditionalEntries = (sheet: Sheet, src: Member, dst: Member) => {
   return (name: string, val: string | number) => base[name].add(val)
 }
 
-type CondShareType = 'src' | 'dst' | 'none'
+type CondShareType = 'both' | 'src' | 'dst' | 'none'
 function allConditionals<T>(
   sheet: Sheet,
   shared: CondShareType = 'src',
@@ -260,7 +260,8 @@ function allConditionals<T>(
     cata: null,
   }
   let base = reader.sum.withTag(baseTag)
-  if (shared !== 'none') base = base.with(shared, 'all')
+  if (shared === 'both') base = base.withTag({ src: 'all', dst: 'all' })
+  else if (shared !== 'none') base = base.with(shared, 'all')
   if (metaList.conditionals) {
     const { conditionals } = metaList
     return base.withAll('q', [], (r, q) => {

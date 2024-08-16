@@ -68,7 +68,12 @@ describe('calculator', () => {
 })
 describe('sheet', () => {
   test('buff entries', () => {
-    const sheets = new Set([...allCharacterKeys, ...allWeaponKeys, 'art'])
+    const sheets = new Set([
+      ...allCharacterKeys,
+      ...allWeaponKeys,
+      'art',
+      'reso',
+    ])
     for (const { tag } of entries) {
       if (tag.et && tag.qt && tag.q) {
         switch (tag.et) {

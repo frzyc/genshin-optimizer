@@ -47,6 +47,7 @@ export const sheets = [
   ...allWeaponKeys,
   ...allArtifactSetKeys,
   'art',
+  'reso',
   'dyn',
   'enemy',
   'custom',

@@ -6,11 +6,13 @@ import { allStatics, percent, reader, self, selfBuff, team } from '../util'
 import dmg from './dmg'
 import prep from './prep'
 import reaction from './reaction'
+import resonance from './resonance'
 
 const data: TagMapNodeEntries = [
   ...dmg,
   ...prep,
   ...reaction,
+  ...resonance,
 
   reader.withTag({ sheet: 'iso', et: 'self' }).reread(reader.sheet('custom')),
   reader.withTag({ sheet: 'agg', et: 'self' }).reread(reader.sheet('custom')),

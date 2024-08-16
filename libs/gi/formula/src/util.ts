@@ -138,6 +138,8 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
       const entry = self.with('src', dst)
       return members.map((src) => entry.reread(teamBuff.withTag({ dst, src })))
     }),
+    // Resonance Team Buff
+    self.reread(teamBuff.withTag({ et: 'teamBuff', sheet: 'reso' })),
     // Not Self Buff
     members.flatMap((dst) => {
       const entry = self.with('src', dst)
