@@ -1,6 +1,6 @@
-import type { AnyNode, CalcResult } from './node'
+import type { AnyNode, CalcResult, ReRead } from './node'
 import { Calculator as BaseCalculator, map } from './node'
-import type { Tag } from './tag'
+import type { Tag, TagMapSubsetCache } from './tag'
 
 const isRead = Symbol()
 type TagStr = (tag: Tag, ex?: any) => string
@@ -21,6 +21,25 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     this.tagStr = tagStr
     this.custom = calc.computeCustom
   }
+
+  override _compute(
+    n: AnyNode,
+    cache: TagMapSubsetCache<AnyNode | ReRead>
+  ): CalcResult<any, DebugMeta> {
+    try {
+      return super._compute(n, cache)
+    } catch (e) {
+      return {
+        val: `err: ${(e as any).message}`,
+        meta: {
+          formula: this.nodeString(n),
+          deps: [],
+          [isRead]: false,
+        },
+      }
+    }
+  }
+
   override computeMeta(
     n: AnyNode,
     val: number | string,
@@ -52,7 +71,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
             let entry = ''
             rereadSeq.map((e, i) => {
               if (i) entry += i % 2 ? ' <= ' : ' <- '
-              entry += this.tagStr(e)
+              entry += e ? this.tagStr(e) : '!!'
             })
             return { entry, ...meta }
           }
