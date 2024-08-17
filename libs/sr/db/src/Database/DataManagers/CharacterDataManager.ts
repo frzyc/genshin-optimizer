@@ -1,11 +1,6 @@
 import type { TriggerString } from '@genshin-optimizer/common/database'
 import { clamp, deepClone, objKeyMap } from '@genshin-optimizer/common/util'
-import type {
-  CharacterKey,
-  CharacterLocationKey,
-  RelicSlotKey,
-  TrailblazerKey,
-} from '@genshin-optimizer/sr/consts'
+import type { CharacterKey, RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import {
   allBonusAbilityKeys,
   allCharacterKeys,
@@ -13,7 +8,6 @@ import {
   allRelicSlotKeys,
   allStatBoostKeys,
   allTrailblazerKeys,
-  charKeyToCharLocKey,
 } from '@genshin-optimizer/sr/consts'
 import type { ISrObjectDescription } from '@genshin-optimizer/sr/srod'
 import { validateLevelAsc } from '@genshin-optimizer/sr/util'
@@ -125,14 +119,13 @@ export class CharacterDataManager extends DataManager<
             allRelicSlotKeys,
             (sk) =>
               Object.values(this.database.relics?.data ?? {}).find(
-                (r) =>
-                  r?.location === charKeyToCharLocKey(id) && r.slotKey === sk
+                (r) => r?.location === id && r.slotKey === sk
               )?.id ?? ''
           ),
       equippedLightCone: oldChar
         ? oldChar.equippedLightCone
         : Object.values(this.database.lightCones?.data ?? {}).find(
-            (lc) => lc?.location === charKeyToCharLocKey(id)
+            (lc) => lc?.location === id
           )?.id ?? '',
       ...storageObj,
     }
@@ -184,9 +177,6 @@ export class CharacterDataManager extends DataManager<
       allTrailblazerKeys[0]
     )
   }
-  LocationToCharacterKey(key: CharacterLocationKey): CharacterKey {
-    return key === 'Trailblazer' ? this.getTrailblazerCharacterKey() : key
-  }
   getOrCreate(key: CharacterKey): ICachedSroCharacter {
     if (!this.keys.includes(key)) {
       this.set(key, initialCharacter(key))
@@ -199,30 +189,11 @@ export class CharacterDataManager extends DataManager<
     if (!char) return undefined
     for (const relicKey of Object.values(char.equippedRelics)) {
       const relic = this.database.relics.get(relicKey)
-      // Only unequip relic from Trailblazer if there are no more "Trailblazer"s in the database
-      if (
-        relic &&
-        (relic.location === key ||
-          (relic.location === 'Trailblazer' &&
-            allTrailblazerKeys.includes(key as TrailblazerKey) &&
-            !allTrailblazerKeys.find(
-              (t) => t !== key && this.keys.includes(t)
-            )))
-      )
+      if (relic && relic.location === key)
         this.database.relics.setCached(relicKey, { ...relic, location: '' })
     }
     const lightCone = this.database.lightCones.get(char.equippedLightCone)
-    // Only unequip light cone from Trailblazer if there are no more "Trailblazer"s in the database
-    if (
-      lightCone &&
-      (lightCone.location === key ||
-        (lightCone.location === 'Trailblazer' &&
-          allTrailblazerKeys.includes(key as TrailblazerKey) &&
-          !allTrailblazerKeys.find(
-            (t) => t !== key && this.keys.includes(t)
-          ))) &&
-      char.equippedLightCone
-    )
+    if (lightCone && lightCone.location === key && char.equippedLightCone)
       this.database.lightCones.setCached(char.equippedLightCone, {
         ...lightCone,
         location: '',
@@ -235,20 +206,12 @@ export class CharacterDataManager extends DataManager<
    * This does not update the `location` on relic
    * This function should be use internally for database to maintain cache on ICachedSroCharacter.
    */
-  setEquippedRelic(
-    key: CharacterLocationKey,
-    slotKey: RelicSlotKey,
-    relicId: string
-  ) {
-    const setEq = (k: CharacterKey) => {
-      const char = super.get(k)
-      if (!char) return
-      const equippedRelics = deepClone(char.equippedRelics)
-      equippedRelics[slotKey] = relicId
-      super.setCached(k, { ...char, equippedRelics })
-    }
-    if (key === 'Trailblazer') allTrailblazerKeys.forEach((k) => setEq(k))
-    else setEq(key)
+  setEquippedRelic(key: CharacterKey, slotKey: RelicSlotKey, relicId: string) {
+    const char = super.get(key)
+    if (!char) return
+    const equippedRelics = deepClone(char.equippedRelics)
+    equippedRelics[slotKey] = relicId
+    super.setCached(key, { ...char, equippedRelics })
   }
 
   /**
@@ -257,16 +220,12 @@ export class CharacterDataManager extends DataManager<
    * This function should be use internally for database to maintain cache on ICachedSroCharacter.
    */
   setEquippedLightCone(
-    key: CharacterLocationKey,
+    key: CharacterKey,
     equippedLightCone: ICachedSroCharacter['equippedLightCone']
   ) {
-    const setEq = (k: CharacterKey) => {
-      const char = super.get(k)
-      if (!char) return
-      super.setCached(k, { ...char, equippedLightCone })
-    }
-    if (key === 'Trailblazer') allTrailblazerKeys.forEach((k) => setEq(k))
-    else setEq(key)
+    const char = super.get(key)
+    if (!char) return
+    super.setCached(key, { ...char, equippedLightCone })
   }
 
   hasDup(char: ISroCharacter, isSro: boolean) {
@@ -326,10 +285,8 @@ export class CharacterDataManager extends DataManager<
       return JSON.stringify(dbSr) === JSON.stringify(charSr)
     }
   }
-  triggerCharacter(key: CharacterLocationKey, reason: TriggerString) {
-    if (key === 'Trailblazer')
-      allTrailblazerKeys.forEach((ck) => this.trigger(ck, reason, this.get(ck)))
-    else this.trigger(key, reason, this.get(key))
+  triggerCharacter(key: CharacterKey, reason: TriggerString) {
+    this.trigger(key, reason, this.get(key))
   }
   override importSROD(
     sr: ISrObjectDescription & ISroDatabase,

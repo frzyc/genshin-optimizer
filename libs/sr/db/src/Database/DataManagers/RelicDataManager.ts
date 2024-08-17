@@ -5,13 +5,12 @@ import type {
   RelicSubStatKey,
 } from '@genshin-optimizer/sr/consts'
 import {
-  allCharacterLocationKeys,
+  allCharacterKeys,
   allRelicMainStatKeys,
   allRelicRarityKeys,
   allRelicSetKeys,
   allRelicSlotKeys,
   allRelicSubStatKeys,
-  charKeyToCharLocKey,
   relicMaxLevel,
   relicSlotToMainStatKeys,
 } from '@genshin-optimizer/sr/consts'
@@ -54,14 +53,10 @@ export class RelicDataManager extends DataManager<
     if (newRelic.location !== oldRelic?.location) {
       const slotKey = newRelic.slotKey
       const prevChar = oldRelic?.location
-        ? this.database.chars.getOrCreate(
-            this.database.chars.LocationToCharacterKey(oldRelic.location)
-          )
+        ? this.database.chars.getOrCreate(oldRelic.location)
         : undefined
       const newChar = newRelic.location
-        ? this.database.chars.getOrCreate(
-            this.database.chars.LocationToCharacterKey(newRelic.location)
-          )
+        ? this.database.chars.getOrCreate(newRelic.location)
         : undefined
 
       // previously equipped relic at new location
@@ -73,17 +68,13 @@ export class RelicDataManager extends DataManager<
       if (prevRelic)
         super.setCached(prevRelic.id, {
           ...prevRelic,
-          location: prevChar?.key ? charKeyToCharLocKey(prevChar.key) : '',
+          location: prevChar?.key ?? '',
         })
       if (newChar)
-        this.database.chars.setEquippedRelic(
-          charKeyToCharLocKey(newChar.key),
-          slotKey,
-          newRelic.id
-        )
+        this.database.chars.setEquippedRelic(newChar.key, slotKey, newRelic.id)
       if (prevChar)
         this.database.chars.setEquippedRelic(
-          charKeyToCharLocKey(prevChar.key),
+          prevChar.key,
           slotKey,
           prevRelic?.id ?? ''
         )
@@ -475,7 +466,7 @@ export function validateRelic(
   if (!(plausibleMainStats as RelicMainStatKey[]).includes(mainStatKey))
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
     else return undefined // ambiguous mainstat
-  if (!location || !allCharacterLocationKeys.includes(location)) location = ''
+  if (!location || !allCharacterKeys.includes(location)) location = ''
   return {
     setKey,
     rarity,
