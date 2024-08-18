@@ -26,7 +26,7 @@ const infusionTable = priorityTable(infusionPrio),
 
 const data: TagMapNodeEntries = [
   enemyDebuff.common.postRes.add(custom('res', preRes)),
-  enemyDebuff.common.inDmg.add(
+  selfBuff.dmg.inDmg.add(
     prod(
       sumfrac(
         sum(self.char.lvl, 100),

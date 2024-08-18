@@ -14,7 +14,7 @@ const data: TagMapNodeEntries = [
   // Formulas
   // If any `prep` nodes are available, put them in `dynTag` or note them here
   selfBuff.formula.dmg.add(
-    dynTag(prod(self.dmg.out, self.dmg.critMulti, enemy.common.inDmg), {
+    dynTag(prod(self.dmg.out, self.dmg.critMulti, self.dmg.inDmg), {
       ele,
       amp,
       cata /* `move` is fixed */,

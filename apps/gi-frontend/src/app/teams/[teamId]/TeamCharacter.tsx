@@ -32,7 +32,10 @@ export function TeamCharacter() {
 
 function Content({ character }: { character: TeamLoadoutCharacter }) {
   const calc = useContext(CalcContext)
-  const member = useMemo(() => convert(selfTag, { src: '0', et: 'self' }), [])
+  const member = useMemo(
+    () => convert(selfTag, { et: 'self', src: '0', dst: 'all' }),
+    []
+  )
   if (!calc) return null
   return (
     <MemberContext.Provider value={member}>

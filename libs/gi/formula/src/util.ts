@@ -131,7 +131,7 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     members.map((dst) =>
       reader
         .withTag({ et: 'target', dst })
-        .reread(reader.withTag({ et: 'self', dst: null, src: dst }))
+        .reread(reader.withTag({ et: 'self', src: dst, dst: 'all' }))
     ),
     // Team Buff
     members.flatMap((dst) => {
@@ -144,8 +144,8 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     members.flatMap((dst) => {
       const entry = self.with('src', dst)
       return members
+        .filter((src) => src !== dst)
         .map((src) => entry.reread(notSelfBuff.withTag({ dst, src })))
-        .filter(({ value }) => value.tag!['dst'] != value.tag!['src'])
     }),
     // Non-stacking
     members.slice(0, 4).flatMap((_, i) => {
@@ -172,7 +172,7 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     // final eleMas, where the outer query uses a `max` accumulator, while final eleMas
     // must use `sum` accumulator for a correct result.
     members.map((src) =>
-      teamEntry.add(reader.withTag({ src, et: 'self' }).sum)
+      teamEntry.add(reader.withTag({ et: 'self', src, dst: 'all' }).sum)
     ),
   ].flat()
 }

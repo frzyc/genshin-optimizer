@@ -3,7 +3,7 @@ import type { TagMapNodeEntries } from '../util'
 import { enemy, enemyDebuff, percent, self, selfBuff } from '../util'
 
 const data: TagMapNodeEntries = [
-  enemyDebuff.common.inDmg.add(
+  selfBuff.dmg.inDmg.add(
     prod(
       // DEF Multiplier
       sumfrac(

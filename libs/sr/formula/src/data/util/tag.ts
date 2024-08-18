@@ -123,7 +123,7 @@ export const selfTag = {
     critMode: fixed,
     cappedCrit_: iso,
   },
-  dmg: { out: fixed, critMulti: fixed },
+  dmg: { out: fixed, inDmg: fixed, critMulti: fixed },
   formula: {
     base: agg,
     listing: aggStr,
@@ -139,7 +139,6 @@ export const selfTag = {
 export const enemyTag = {
   common: {
     lvl: fixed,
-    inDmg: fixed,
     defRed_: agg,
     defIgn_: agg,
     res: agg,
@@ -173,10 +172,10 @@ export function convert<V extends Record<string, Record<string, Desc>>>(
 }
 
 // Default queries
-export const self = convert(selfTag, { et: 'self', dst: null })
-export const team = convert(selfTag, { et: 'team', dst: null, src: null })
+export const self = convert(selfTag, { et: 'self', dst: 'all' })
+export const team = convert(selfTag, { et: 'team', src: null, dst: 'all' })
 export const target = convert(selfTag, { et: 'target', src: null })
-export const enemy = convert(enemyTag, { et: 'enemy' })
+export const enemy = convert(enemyTag, { et: 'enemy', src: null, dst: null })
 
 // Default tag DB keys
 export const selfBuff = convert(selfTag, { et: 'self' })

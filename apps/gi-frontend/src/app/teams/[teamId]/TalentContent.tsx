@@ -323,7 +323,7 @@ export function ConstellationDropdown({
   calc: Calculator
 }) {
   const { t } = useTranslation('sheet_gen')
-  const member0 = convert(selfTag, { src: '0', et: 'self' })
+  const member0 = convert(selfTag, { et: 'self', src: '0', dst: 'all' })
   const constellation = calc.compute(member0.char.constellation).val
   return (
     <DropdownButton
