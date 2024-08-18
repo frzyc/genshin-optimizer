@@ -8,13 +8,13 @@ import {
 import type { Member, Read, Sheet, Tag } from './data/util'
 import { reader, tagStr } from './data/util'
 
-const reusable = Symbol()
+const emptyInfo: Info = Object.freeze({ conds: Object.freeze({}) })
 const { arithmetic } = calculation
 
 type MemRec<V> = Partial<Record<Member, V>>
 type CondInfo = MemRec<MemRec<Partial<Record<Sheet, Record<string, number>>>>>
 
-export type CalcMeta = PartialMeta & Info & { [reusable]?: true }
+export type CalcMeta = PartialMeta & Info
 export type PartialMeta = {
   tag?: Tag
   op: 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac' | 'res'
@@ -37,7 +37,7 @@ export class Calculator extends Base<CalcMeta> {
     _br: CalcResult<number | string, CalcMeta>[],
     tag: Tag | undefined
   ): CalcMeta {
-    const info = { conds: {} }
+    const info = { ...emptyInfo }
     const x = _x.filter((x) => !!x).map((x) => extract(x, info))
     _br.forEach((br) => extract(br, info))
 
@@ -53,7 +53,7 @@ export class Calculator extends Base<CalcMeta> {
     function wrap(result: CalcResult<number | string, PartialMeta>): CalcMeta {
       const meta = result.meta as CalcMeta
       const reuse = meta.conds === info.conds
-      return reuse ? meta : withTag(tag, { ...meta, ...info })
+      return withTag(tag, reuse ? meta : { ...meta, ...info })
     }
 
     if (op === 'read' && ex !== undefined) {
@@ -87,13 +87,8 @@ export class Calculator extends Base<CalcMeta> {
       case 'tag':
       case 'dtag':
         return wrap(x[0])
-      case 'read': {
-        const result = wrap(x[0])
-        // If it is already reusable, this does nothing.
-        // If it isn't, it will be a newly created object
-        result[reusable] = true
-        return result
-      }
+      case 'read':
+        return Object.freeze(wrap(x[0]))
       case 'custom':
         return finalize(ex, x as CalcResult<number, PartialMeta>[])
       default:
@@ -107,7 +102,7 @@ export class Calculator extends Base<CalcMeta> {
   ): CalcResult<string | number, CalcMeta> {
     let dirty = false
     const val = result.val
-    const meta = { ...result.meta }
+    const meta = { ...Object.freeze(result.meta) }
 
     if (tag.qt === 'cond') {
       const { src, dst, sheet, q } = tag
@@ -116,7 +111,7 @@ export class Calculator extends Base<CalcMeta> {
       }
       dirty = true
     }
-
+    Object.freeze(meta)
     return dirty ? { val, meta } : result
   }
 
@@ -146,7 +141,7 @@ function extract<V>(
 ): CalcResult<V, PartialMeta> {
   const { conds, ...meta } = x.meta
   info.conds = mergeConds(info.conds, conds)
-  return x.meta[reusable] ? x : { val: x.val, meta }
+  return Object.isFrozen(x.meta) ? x : { val: x.val, meta }
 }
 
 function mergeConds(a: CondInfo, b: CondInfo): CondInfo {

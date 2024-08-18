@@ -112,7 +112,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     }
     if (n.op === 'read') {
       tag = Object.fromEntries(Object.entries(tag!).filter(([_, v]) => v))
-      result.note = `gather ${x.length} nodes for ${this.tagStr(tag)}`
+      result.note = `gather ${x.length} node(s) for ${this.tagStr(tag)}`
       result.formula = `[${valStr(val)}] read ${this.nodeString(n)}`
       result.deps = x.map((x) => x!.meta)
     } else delete result.note
