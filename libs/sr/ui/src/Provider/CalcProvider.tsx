@@ -13,7 +13,6 @@ import {
   charData,
   conditionalData,
   enemy,
-  enemyDebuff,
   lightConeData,
   members,
   relicsData,
@@ -62,8 +61,8 @@ export function CalcProvider({ children }: { children: ReactNode }) {
           ...createMember(2, teammate2),
           ...createMember(3, teammate3),
           // TODO: Get these from db
-          enemyDebuff.common.lvl.add(80),
-          enemyDebuff.common.res.add(0.1),
+          enemy.common.lvl.add(80),
+          enemy.common.res.add(0.1),
           enemy.common.isBroken.add(0),
           enemy.common.maxToughness.add(100),
           self.common.critMode.add('avg'),

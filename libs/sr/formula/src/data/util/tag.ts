@@ -151,10 +151,10 @@ export function convert<V extends Record<string, Record<string, Desc>>>(
   v: V,
   tag: Omit<Tag, 'qt' | 'q'>
 ): {
-    [j in 'withTag' | keyof V]: j extends 'withTag'
+  [j in 'withTag' | keyof V]: j extends 'withTag'
     ? (_: Tag) => Read
     : { [k in keyof V[j]]: Read }
-  } {
+} {
   const r = reader.withTag(tag)
   return r.withAll(
     'qt',
