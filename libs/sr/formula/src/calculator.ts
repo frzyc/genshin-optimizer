@@ -26,10 +26,6 @@ type Info = {
 }
 
 export class Calculator extends Base<CalcMeta> {
-  override computeCustom(val: any[], op: string): any {
-    if (op == 'res') return res(val[0])
-    return super.computeCustom(val, op)
-  }
   override computeMeta(
     { op, ex }: AnyNode,
     val: number | string,
@@ -133,11 +129,6 @@ export class Calculator extends Base<CalcMeta> {
   toDebug(): DebugCalculator {
     return new DebugCalculator(this, tagStr)
   }
-}
-export function res(x: number): number {
-  if (x >= 0.75) return 1 / (1 + 4 * x)
-  if (x >= 0) return 1 - x
-  return 1 - 0.5 * x
 }
 
 function extract<V>(
