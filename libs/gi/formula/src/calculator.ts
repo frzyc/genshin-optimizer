@@ -15,7 +15,7 @@ type MemRec<V> = Partial<Record<Member, V>>
 type CondInfo = MemRec<MemRec<Partial<Record<Sheet, Record<string, number>>>>>
 
 export type CalcMeta = PartialMeta & Info & { [reusable]?: true }
-type PartialMeta = {
+export type PartialMeta = {
   tag?: Tag
   op: 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac' | 'res'
   ops: CalcResult<number, PartialMeta>[]

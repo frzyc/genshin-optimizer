@@ -1,11 +1,8 @@
 import type { CalcResult } from '@genshin-optimizer/pando/engine'
 import type { Tag } from './data/util'
+import type { PartialMeta } from './calculator'
 
-type Output = {
-  tag: Tag | undefined
-  op: 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac'
-  ops: CalcResult<number, Output>[]
-}
+type Output = PartialMeta
 
 type FormulaText = {
   name: string | undefined
