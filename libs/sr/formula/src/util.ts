@@ -114,7 +114,9 @@ export function relicsData(
 
 export function teamData(members: readonly Member[]): TagMapNodeEntries {
   const teamEntry = reader.with('et', 'team')
-  const { self, teamBuff, notSelfBuff } = reader.sheet('agg').withAll('et', [])
+  const { self, enemy, teamBuff, notSelfBuff } = reader
+    .sheet('agg')
+    .withAll('et', [])
   return [
     // Target Entries
     members.map((dst) =>
@@ -134,6 +136,10 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
         .map((src) => entry.reread(notSelfBuff.withTag({ dst, src })))
         .filter(({ value }) => value.tag!['dst'] != value.tag!['src'])
     }),
+    // Enemy Debuff
+    members.map((dst) =>
+      enemy.reread(reader.withTag({ et: 'enemyDeBuff', src: dst, dst: 'all' }))
+    ),
     // Non-stacking
     members.slice(0, 4).flatMap((_, i) => {
       const { stackIn, stackTmp } = reader.withAll('qt', [])

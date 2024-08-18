@@ -2,7 +2,15 @@ import { compileTagMapValues } from '@genshin-optimizer/pando/engine'
 import { Calculator } from './calculator'
 import { entries, keys, values } from './data'
 import type { Member, Sheet, TagMapNodeEntries } from './data/util'
-import { self, selfBuff, selfTag, sheets, tagStr, teamBuff } from './data/util'
+import {
+  enemyTag,
+  self,
+  selfBuff,
+  selfTag,
+  sheets,
+  tagStr,
+  teamBuff,
+} from './data/util'
 import { teamData, withMember } from './util'
 
 import { allCharacterKeys, allWeaponKeys } from '@genshin-optimizer/gi/consts'
@@ -84,6 +92,13 @@ describe('sheet', () => {
             fail(`Ill-form ${tag.et} entry (${tagStr(tag)}) for sheet ${sheet}`)
             break
           }
+          case 'enemyDeBuff': {
+            const { sheet } = (enemyTag as any)[tag.qt][tag.q]
+            if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
+            if (sheet === tag.sheet) continue
+            fail(`Ill-form ${tag.et} entry (${tagStr(tag)}) for sheet ${sheet}`)
+            break
+          }
           case 'self': {
             const desc = (selfTag as any)[tag.qt]?.[tag.q]
             if (!desc) continue
@@ -92,6 +107,16 @@ describe('sheet', () => {
             if (sheet === 'iso' || sheet === 'agg' || sheet === tag.sheet)
               continue
             fail(`Illform self entry (${tagStr(tag)}) for sheet ${sheet}`)
+            break
+          }
+          case 'enemy': {
+            const desc = (enemyTag as any)[tag.qt]?.[tag.q]
+            if (!desc) continue
+            const { sheet } = desc
+            if (!sheet) continue
+            if (sheet === 'agg' || sheet === tag.sheet) continue
+            fail(`Illform self entry (${tagStr(tag)}) for sheet ${sheet}`)
+            break
           }
         }
       }

@@ -13,7 +13,13 @@ import { fail } from 'assert'
 import { charData, lightConeData, withMember } from '.'
 import { Calculator } from './calculator'
 import { data, keys, values } from './data'
-import { convert, selfTag, tagStr, type TagMapNodeEntries } from './data/util'
+import {
+  convert,
+  enemyTag,
+  selfTag,
+  tagStr,
+  type TagMapNodeEntries,
+} from './data/util'
 
 setDebugMode(true)
 // This is generally unnecessary, but without it, some tags in `DebugCalculator` will be missing
@@ -149,6 +155,13 @@ describe('sheet', () => {
             fail(`Ill-form ${tag.et} entry (${tagStr(tag)}) for sheet ${sheet}`)
             break
           }
+          case 'enemyDeBuff': {
+            const { sheet } = (enemyTag as any)[tag.qt][tag.q]
+            if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
+            if (sheet === tag.sheet) continue
+            fail(`Ill-form ${tag.et} entry (${tagStr(tag)}) for sheet ${sheet}`)
+            break
+          }
           case 'self': {
             const desc = (selfTag as any)[tag.qt]?.[tag.q]
             if (!desc) continue
@@ -157,6 +170,16 @@ describe('sheet', () => {
             if (sheet === 'iso' || sheet === 'agg' || sheet === tag.sheet)
               continue
             fail(`Illform self entry (${tagStr(tag)}) for sheet ${sheet}`)
+            break
+          }
+          case 'enemy': {
+            const desc = (enemyTag as any)[tag.qt]?.[tag.q]
+            if (!desc) continue
+            const { sheet } = desc
+            if (!sheet) continue
+            if (sheet === 'agg' || sheet === tag.sheet) continue
+            fail(`Illform self entry (${tagStr(tag)}) for sheet ${sheet}`)
+            break
           }
         }
       }

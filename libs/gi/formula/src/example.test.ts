@@ -10,14 +10,7 @@ import {
 } from '@genshin-optimizer/pando/engine'
 import { entries, keys, values } from './data'
 import type { Tag, TagMapNodeEntries } from './data/util'
-import {
-  convert,
-  enemyDebuff,
-  selfBuff,
-  selfTag,
-  team,
-  userBuff,
-} from './data/util'
+import { convert, enemy, selfBuff, selfTag, team, userBuff } from './data/util'
 import rawData from './example.test.json'
 import { genshinCalculatorWithEntries } from './index'
 import { conditionals } from './meta'
@@ -66,10 +59,10 @@ describe('example', () => {
       ...conditionalData('1', rawData[1].conditionals),
 
       // Enemy
-      enemyDebuff.reaction.cata.add('spread'),
-      enemyDebuff.reaction.amp.add(''),
-      enemyDebuff.common.lvl.add(12),
-      enemyDebuff.common.preRes.add(0.1),
+      enemy.reaction.cata.add('spread'),
+      enemy.reaction.amp.add(''),
+      enemy.common.lvl.add(12),
+      enemy.common.preRes.add(0.1),
       selfBuff.common.critMode.add('avg'),
     ],
     calc = genshinCalculatorWithEntries(data)
