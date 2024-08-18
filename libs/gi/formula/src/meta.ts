@@ -2635,6 +2635,12 @@ export const conditionals = {
       int_only: true,
     },
   },
+  static: {
+    enemyFrozen: { sheet: 'static', name: 'enemyFrozen', type: 'bool' },
+    hasShield: { sheet: 'static', name: 'hasShield', type: 'bool' },
+    nearbyDendro1: { sheet: 'static', name: 'nearbyDendro1', type: 'bool' },
+    nearbyDendro2: { sheet: 'static', name: 'nearbyDendro2', type: 'bool' },
+  },
   AThousandFloatingDreams: {
     _someBoolConditional: {
       sheet: 'AThousandFloatingDreams',
