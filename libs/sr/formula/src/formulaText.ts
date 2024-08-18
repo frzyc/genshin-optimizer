@@ -1,5 +1,4 @@
 import type { CalcResult } from '@genshin-optimizer/pando/engine'
-import type { Tag } from './data/util'
 import type { PartialMeta } from './calculator'
 
 type Output = PartialMeta

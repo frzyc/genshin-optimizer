@@ -66,7 +66,7 @@ export function detach(
   }
   function fold(
     x: NumTagFree[],
-    op: keyof typeof arithmetic,
+    op: Exclude<keyof typeof arithmetic, 'unique'>,
     ex: any
   ): NumTagFree {
     if (x.every((x) => x.op === 'const'))
