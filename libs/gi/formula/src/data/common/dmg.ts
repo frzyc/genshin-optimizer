@@ -7,7 +7,14 @@ import {
   sumfrac,
 } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
-import { enemy, percent, priorityTable, self, selfBuff } from '../util'
+import {
+  enemy,
+  enemyDebuff,
+  percent,
+  priorityTable,
+  self,
+  selfBuff,
+} from '../util'
 
 export const infusionPrio = {
   nonOverridable: { hydro: 5, pyro: 6 },
@@ -18,7 +25,7 @@ const infusionTable = priorityTable(infusionPrio),
   preRes = enemy.common.preRes
 
 const data: TagMapNodeEntries = [
-  enemy.common.postRes.add(custom('res', preRes)),
+  enemyDebuff.common.postRes.add(custom('res', preRes)),
   selfBuff.dmg.inDmg.add(
     prod(
       sumfrac(

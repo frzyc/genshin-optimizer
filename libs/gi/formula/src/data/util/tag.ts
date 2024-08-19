@@ -201,7 +201,7 @@ export const enemy = convert(enemyTag, { et: 'enemy', src: null, dst: null })
 export const selfBuff = convert(selfTag, { et: 'self' })
 export const teamBuff = convert(selfTag, { et: 'teamBuff' })
 export const notSelfBuff = convert(selfTag, { et: 'notSelfBuff' })
-export const enemyDebuff = convert(enemyTag, { et: 'enemyDeBuff' })
+export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
 export const userBuff = convert(selfTag, { et: 'self', sheet: 'custom' })
 
 // Custom tags
