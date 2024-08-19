@@ -35,8 +35,10 @@ export class Calculator<M = any> {
     this.calculated = new TagMapExactValues(keys.tagLen, {})
   }
 
-  get<V extends number | string = number | string>(tag: Tag): CalcResult<V, M>[]
-  get(tag: Tag): CalcResult<number | string, M>[] {
+  gather<V extends number | string = number | string>(
+    tag: Tag
+  ): CalcResult<V, M>[]
+  gather(tag: Tag): CalcResult<number | string, M>[] {
     return this._gather(this.nodes.cache(this.keys).with(tag)).pre
   }
 

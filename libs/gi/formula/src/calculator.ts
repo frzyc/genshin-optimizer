@@ -116,7 +116,7 @@ export class Calculator extends Base<CalcMeta> {
   }
 
   listFormulas(read: Read): Read[] {
-    return this.get(read.tag)
+    return this.gather(read.tag)
       .filter((x) => x.val)
       .map(({ val, meta }) => reader.withTag(meta.tag!)[val as Read['accu']])
   }
