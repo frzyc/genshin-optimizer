@@ -4,11 +4,10 @@ import { enemyFrozen, hasShield } from './conds'
 
 const count = team.common.count
 
-// CAUTION: the names cannot collide with other 'static' conditionals on other sheets
 export const {
   nearbyDendro1, // Burning, Quicken, Bloom
   nearbyDendro2, // Aggravate, Spread, Hyperbloom, Burgeon
-} = allBoolConditionals('static', 'dst')
+} = allBoolConditionals('reso', 'dst')
 
 export default register(
   'reso',
