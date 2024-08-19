@@ -69,10 +69,10 @@ export class Read extends TypedRead<Tag, Read> {
     // Use raw tags here instead of `self.*` to avoid cyclic dependency
     // Entries in TeamData need `member:` for priority
     return [
-      // 1) self.stackIn.<q>.add(value)
+      // 1) selfBuff.stackIn.<q>.add(value)
       this.withTag({ et: 'self', sheet, qt: 'stackIn', q }).add(value),
-      // 2) In TeamData: self.stackTmp.<q>.add(cmpNE(self.stackIn.<q>, 0, /* priority */))
-      // 3) In TeamData: self.stackOut.<q>.add(cmpEq(team.stackTmp.<q>.max, /* priority */, self.stackIn))
+      // 2) In TeamData: selfBuff.stackTmp.<q>.add(cmpNE(self.stackIn.<q>, 0, /* priority */))
+      // 3) In TeamData: selfBuff.stackOut.<q>.add(cmpEq(team.stackTmp.<q>.max, /* priority */, self.stackIn))
       // 4) teamBuff.<stat>.add(self.stackOut.<q>)
       this.add(reader.withTag({ et: 'self', sheet, qt: 'stackOut', q })),
     ]

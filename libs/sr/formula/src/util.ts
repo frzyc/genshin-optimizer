@@ -12,6 +12,7 @@ import {
   getStatFromStatKey,
   reader,
   self,
+  selfBuff,
   selfTag,
 } from './data/util'
 
@@ -34,7 +35,7 @@ export function charData(data: ICharacter): TagMapNodeEntries {
 
   return [
     char.reread(sheet),
-    iso.with('et', 'self').reread(sheet),
+    iso.reread(sheet),
 
     lvl.add(data.level),
     basic.add(data.basic),
@@ -44,15 +45,17 @@ export function charData(data: ICharacter): TagMapNodeEntries {
     ascension.add(data.ascension),
     eidolon.add(data.eidolon),
     ...allStatBoostKeys.map((index) =>
-      self.char[`statBoost${index}`].add(data.statBoosts[index] ? 1 : 0)
+      selfBuff.char[`statBoost${index}`].add(data.statBoosts[index] ? 1 : 0)
     ),
     ...allBonusAbilityKeys.map((index) =>
-      self.char[`bonusAbility${index}`].add(data.bonusAbilities[index] ? 1 : 0)
+      selfBuff.char[`bonusAbility${index}`].add(
+        data.bonusAbilities[index] ? 1 : 0
+      )
     ),
 
     // Default char
-    self.premod.crit_.add(0.05),
-    self.premod.crit_dmg_.add(0.5),
+    selfBuff.premod.crit_.add(0.05),
+    selfBuff.premod.crit_dmg_.add(0.5),
   ]
 }
 
@@ -111,17 +114,15 @@ export function relicsData(
 
 export function teamData(members: readonly Member[]): TagMapNodeEntries {
   const teamEntry = reader.with('et', 'team')
-  const { self, teamBuff, notSelfBuff } = reader.sheet('agg').withAll('et', [])
+  const { self, enemy, teamBuff, notSelfBuff } = reader
+    .sheet('agg')
+    .withAll('et', [])
   return [
     // Target Entries
     members.map((dst) =>
       reader
         .withTag({ et: 'target', dst })
         .reread(reader.withTag({ et: 'self', dst: null, src: dst }))
-    ),
-    // Self Buff
-    members.map((src) =>
-      self.with('src', src).reread(reader.withTag({ et: 'selfBuff', dst: src }))
     ),
     // Team Buff
     members.flatMap((dst) => {
@@ -135,6 +136,10 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
         .map((src) => entry.reread(notSelfBuff.withTag({ dst, src })))
         .filter(({ value }) => value.tag!['dst'] != value.tag!['src'])
     }),
+    // Enemy Debuff
+    members.map((dst) =>
+      enemy.reread(reader.withTag({ et: 'enemyDeBuff', src: dst, dst: 'all' }))
+    ),
     // Non-stacking
     members.slice(0, 4).flatMap((_, i) => {
       const { stackIn, stackTmp } = reader.withAll('qt', [])
@@ -162,17 +167,6 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
       teamEntry.add(reader.withTag({ src, et: 'self' }).sum)
     ),
   ].flat()
-}
-
-export function noTeamData(): TagMapNodeEntries {
-  const { self } = reader.sheet('agg').withAll('et', [])
-
-  // `Team Data` without `src:` and `dst:`
-  return [
-    // Self Buff
-    self.reread(reader.withTag({ et: 'selfBuff' })),
-    // TODO: Non-Stacking and Total Team Stat
-  ]
 }
 
 /**

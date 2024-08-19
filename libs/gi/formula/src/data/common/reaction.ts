@@ -17,7 +17,7 @@ import {
   sumfrac,
 } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
-import { percent, self, tag } from '../util'
+import { percent, self, selfBuff, tag } from '../util'
 
 const transLvlMultis = [
   NaN, // lvl 0
@@ -313,24 +313,24 @@ function trigger(
 }
 
 const data: TagMapNodeEntries = [
-  self.reaction.ampBase.add(eleMasMulti(25 / 9, 1400)),
-  self.reaction.ampMulti.melt.cryo.add(prod(1.5, ampBase)),
-  self.reaction.ampMulti.melt.pyro.add(prod(2.0, ampBase)),
-  self.reaction.ampMulti.vaporize.pyro.add(prod(1.5, ampBase)),
-  self.reaction.ampMulti.vaporize.hydro.add(prod(2.0, ampBase)),
+  selfBuff.reaction.ampBase.add(eleMasMulti(25 / 9, 1400)),
+  selfBuff.reaction.ampMulti.melt.cryo.add(prod(1.5, ampBase)),
+  selfBuff.reaction.ampMulti.melt.pyro.add(prod(2.0, ampBase)),
+  selfBuff.reaction.ampMulti.vaporize.pyro.add(prod(1.5, ampBase)),
+  selfBuff.reaction.ampMulti.vaporize.hydro.add(prod(2.0, ampBase)),
 
-  self.reaction.cataBase.add(eleMasMulti(5, 1200)),
-  self.reaction.cataAddi.spread.dendro.add(
+  selfBuff.reaction.cataBase.add(eleMasMulti(5, 1200)),
+  selfBuff.reaction.cataAddi.spread.dendro.add(
     prod(subscript(self.char.lvl, transLvlMultis), 1.25, cataBase)
   ),
-  self.reaction.cataAddi.aggravate.electro.add(
+  selfBuff.reaction.cataAddi.aggravate.electro.add(
     prod(subscript(self.char.lvl, transLvlMultis), 1.15, cataBase)
   ),
 
-  self.reaction.transBase.add(
+  selfBuff.reaction.transBase.add(
     prod(subscript(lvl, transLvlMultis), eleMasMulti(16, 2000))
   ),
-  self.trans.critMulti.add(
+  selfBuff.trans.critMulti.add(
     lookup(self.common.critMode, {
       crit: sum(1, self.trans.cappedCritRate_),
       nonCrit: 1,
@@ -338,7 +338,7 @@ const data: TagMapNodeEntries = [
     })
   ),
   ...allTransformativeReactionKeys.map((trans) =>
-    self.trans.multi[trans].add(transInfo[trans].multi)
+    selfBuff.trans.multi[trans].add(transInfo[trans].multi)
   ),
 
   // Trans listing
@@ -364,10 +364,10 @@ const data: TagMapNodeEntries = [
     return variants.flatMap((ele) => {
       const name = trans === 'swirl' ? `swirl_${ele}` : trans
       return [
-        self.listing.formulas.add(
+        selfBuff.listing.formulas.add(
           tag(cond, { trans, qt: 'formula', q, ele, sheet: 'static', name })
         ),
-        self.prep.ele.name(name).add(ele),
+        selfBuff.prep.ele.name(name).add(ele),
       ]
     })
   }),

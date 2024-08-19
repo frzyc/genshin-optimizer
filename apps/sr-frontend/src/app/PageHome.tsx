@@ -29,7 +29,7 @@ export default function PageHome() {
   const [editorKey, setCharacterKey] = useState<CharacterKey | undefined>(
     undefined
   )
-  const member0 = convert(selfTag, { src: '0', et: 'self' })
+  const member0 = convert(selfTag, { et: 'self', src: '0', dst: 'all' })
 
   return (
     <>
