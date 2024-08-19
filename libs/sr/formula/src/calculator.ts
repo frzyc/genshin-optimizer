@@ -12,6 +12,7 @@ const emptyInfo: Info = Object.freeze({ conds: Object.freeze({}) })
 const { arithmetic } = calculation
 
 type MemRec<V> = Partial<Record<Member, V>>
+/// conds[dst][src][sheet][name]
 type CondInfo = MemRec<MemRec<Partial<Record<Sheet, Record<string, number>>>>>
 
 export type CalcMeta = PartialMeta & Info
@@ -20,10 +21,7 @@ export type PartialMeta = {
   op: 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac' | 'res'
   ops: CalcResult<number, PartialMeta>[]
 }
-type Info = {
-  /// conds[dst][src][sheet][name]
-  conds: CondInfo
-}
+type Info = { conds: CondInfo }
 
 export class Calculator extends Base<CalcMeta> {
   override computeMeta(

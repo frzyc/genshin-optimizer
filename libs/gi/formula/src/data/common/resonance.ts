@@ -1,8 +1,14 @@
 import { cmpGE } from '@genshin-optimizer/pando/engine'
-import { register, team, teamBuff } from '../util'
-import { enemyFrozen, hasShield, nearbyDendro1, nearbyDendro2 } from './conds'
+import { allBoolConditionals, register, team, teamBuff } from '../util'
+import { enemyFrozen, hasShield } from './conds'
 
 const count = team.common.count
+
+// CAUTION: the names cannot collide with other 'static' conditionals on other sheets
+export const {
+  nearbyDendro1, // Burning, Quicken, Bloom
+  nearbyDendro2, // Aggravate, Spread, Hyperbloom, Burgeon
+} = allBoolConditionals('static', 'dst')
 
 export default register(
   'reso',
