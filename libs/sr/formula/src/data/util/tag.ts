@@ -151,10 +151,10 @@ export function convert<V extends Record<string, Record<string, Desc>>>(
   v: V,
   tag: Omit<Tag, 'qt' | 'q'>
 ): {
-  [j in 'withTag' | keyof V]: j extends 'withTag'
+    [j in 'withTag' | keyof V]: j extends 'withTag'
     ? (_: Tag) => Read
     : { [k in keyof V[j]]: Read }
-} {
+  } {
   const r = reader.withTag(tag)
   return r.withAll(
     'qt',
@@ -172,20 +172,11 @@ export function convert<V extends Record<string, Record<string, Desc>>>(
 }
 
 // Default queries
+const noName = { src: null, name: null }
 export const self = convert(selfTag, { et: 'self', dst: 'all' })
-export const team = convert(selfTag, {
-  et: 'team',
-  src: null,
-  dst: 'all',
-  name: null,
-})
-export const target = convert(selfTag, { et: 'target', src: null, name: null })
-export const enemy = convert(enemyTag, {
-  et: 'enemy',
-  src: null,
-  dst: null,
-  name: null,
-})
+export const team = convert(selfTag, { et: 'team', dst: 'all', ...noName, })
+export const target = convert(selfTag, { et: 'target', ...noName })
+export const enemy = convert(enemyTag, { et: 'enemy', dst: null, ...noName, })
 
 // Default tag DB keys
 export const selfBuff = convert(selfTag, { et: 'self' })
