@@ -10,14 +10,7 @@ import {
 } from '@genshin-optimizer/pando/engine'
 import { entries, keys, values } from './data'
 import type { Tag, TagMapNodeEntries } from './data/util'
-import {
-  convert,
-  enemyDebuff,
-  self,
-  selfTag,
-  team,
-  userBuff,
-} from './data/util'
+import { convert, enemy, selfBuff, selfTag, team, userBuff } from './data/util'
 import rawData from './example.test.json'
 import { genshinCalculatorWithEntries } from './index'
 import { conditionals } from './meta'
@@ -25,7 +18,6 @@ import {
   artifactsData,
   charData,
   conditionalData,
-  noTeamData,
   teamData,
   weaponData,
   withMember,
@@ -67,16 +59,16 @@ describe('example', () => {
       ...conditionalData('1', rawData[1].conditionals),
 
       // Enemy
-      enemyDebuff.reaction.cata.add('spread'),
-      enemyDebuff.reaction.amp.add(''),
-      enemyDebuff.common.lvl.add(12),
-      enemyDebuff.common.preRes.add(0.1),
-      self.common.critMode.add('avg'),
+      enemy.reaction.cata.add('spread'),
+      enemy.reaction.amp.add(''),
+      enemy.common.lvl.add(12),
+      enemy.common.preRes.add(0.1),
+      selfBuff.common.critMode.add('avg'),
     ],
     calc = genshinCalculatorWithEntries(data)
 
-  const member0 = convert(selfTag, { src: '0', et: 'self' })
-  const member1 = convert(selfTag, { src: '1', et: 'self' })
+  const member0 = convert(selfTag, { et: 'self', src: '0', dst: 'all' })
+  const member1 = convert(selfTag, { et: 'self', src: '1', dst: 'all' })
 
   test.skip('debug formula', () => {
     // Pick formula
@@ -165,7 +157,7 @@ describe('example', () => {
       test(`with name ${name}`, () => {
         expect(tag).toEqual({
           src: '0',
-          dst: '0',
+          dst: 'all',
           et: 'self',
           sheet: 'Nahida',
           qt: 'formula',
@@ -274,13 +266,10 @@ describe('example', () => {
   })
 })
 describe('weapon-only example', () => {
-  const data: TagMapNodeEntries = [
-      ...noTeamData(),
-      ...weaponData(rawData[1].weapon as IWeapon),
-    ],
+  const data: TagMapNodeEntries = [...weaponData(rawData[1].weapon as IWeapon)],
     calc = genshinCalculatorWithEntries(data)
 
-  const self = convert(selfTag, { et: 'self' })
+  const self = convert(selfTag, { et: 'self', dst: 'all' })
 
   test('calculate specialized stats', () => {
     const primary = calc.compute(self.weapon.primary)

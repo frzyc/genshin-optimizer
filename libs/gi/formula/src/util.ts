@@ -12,6 +12,7 @@ import {
   readStat,
   reader,
   self,
+  selfBuff,
   selfTag,
 } from './data/util'
 
@@ -34,7 +35,7 @@ export function charData(data: ICharacter): TagMapNodeEntries {
 
   return [
     agg.reread(sheet),
-    iso.with('et', 'self').reread(sheet.with('et', 'selfBuff')),
+    iso.reread(sheet),
 
     lvl.add(data.level),
     auto.add(data.talent.auto),
@@ -44,8 +45,8 @@ export function charData(data: ICharacter): TagMapNodeEntries {
     constellation.add(data.constellation),
 
     // Default char
-    self.premod.critRate_.add(0.05),
-    self.premod.critDMG_.add(0.5),
+    selfBuff.premod.critRate_.add(0.05),
+    selfBuff.premod.critDMG_.add(0.5),
   ]
 }
 
@@ -124,17 +125,15 @@ export function conditionalData(
 
 export function teamData(members: readonly Member[]): TagMapNodeEntries {
   const teamEntry = reader.with('et', 'team')
-  const { self, teamBuff, notSelfBuff } = reader.sheet('agg').withAll('et', [])
+  const { self, enemy, teamBuff, notSelfBuff } = reader
+    .sheet('agg')
+    .withAll('et', [])
   return [
     // Target Entries
     members.map((dst) =>
       reader
         .withTag({ et: 'target', dst })
-        .reread(reader.withTag({ et: 'self', dst: null, src: dst }))
-    ),
-    // Self Buff
-    members.flatMap((src) =>
-      self.with('src', src).reread(reader.withTag({ et: 'selfBuff', dst: src }))
+        .reread(reader.withTag({ et: 'self', src: dst, dst: 'all' }))
     ),
     // Team Buff
     members.flatMap((dst) => {
@@ -145,9 +144,15 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     members.flatMap((dst) => {
       const entry = self.with('src', dst)
       return members
+        .filter((src) => src !== dst)
         .map((src) => entry.reread(notSelfBuff.withTag({ dst, src })))
-        .filter(({ value }) => value.tag!['dst'] != value.tag!['src'])
     }),
+    // Enemy Debuff
+    members.map((dst) =>
+      enemy.reread(reader.withTag({ et: 'enemyDeBuff', src: dst, dst: 'all' }))
+    ),
+    // Resonance Team Buff
+    self.reread(teamBuff.withTag({ et: 'teamBuff', sheet: 'reso' })),
     // Non-stacking
     members.slice(0, 4).flatMap((_, i) => {
       const { stackIn, stackTmp } = reader.withAll('qt', [])
@@ -173,18 +178,7 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     // final eleMas, where the outer query uses a `max` accumulator, while final eleMas
     // must use `sum` accumulator for a correct result.
     members.map((src) =>
-      teamEntry.add(reader.withTag({ src, et: 'self' }).sum)
+      teamEntry.add(reader.withTag({ et: 'self', src, dst: 'all' }).sum)
     ),
   ].flat()
-}
-
-export function noTeamData(): TagMapNodeEntries {
-  const { self } = reader.sheet('agg').withAll('et', [])
-
-  // `Team Data` without `src:` and `dst:`
-  return [
-    // Self Buff
-    self.reread(reader.withTag({ et: 'selfBuff' })),
-    // TODO: Non-Stacking and Total Team Stat
-  ]
 }

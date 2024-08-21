@@ -13,7 +13,7 @@ type Arithmetics = Sum | Prod | Min | Max | SumFrac
 type Branching<Output> = Match<Output> | Threshold<Output> | Lookup<Output>
 
 export const arithmetic: Record<
-  Arithmetics['op'],
+  Arithmetics['op'] | 'unique',
   (x: number[], ex: any) => number
 > = {
   sum: (x) => x.reduce((a, b) => a + b, 0),
@@ -21,6 +21,7 @@ export const arithmetic: Record<
   min: (x) => Math.min(...x),
   max: (x) => Math.max(...x),
   sumfrac: ([x, c]) => x! / (x! + c!),
+  unique: ([x]) => x!,
 }
 export const branching: Record<
   Branching<unknown>['op'],

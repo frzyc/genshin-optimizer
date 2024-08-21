@@ -14,7 +14,7 @@ type LightConeCardProps = {
 export function LightConeCard({ lightConeId }: LightConeCardProps) {
   const lightCone = useLightCone(lightConeId)
 
-  const member0 = convert(selfTag, { src: '0', et: 'self' })
+  const member0 = convert(selfTag, { et: 'self', src: '0', dst: 'all' })
   const calc = srCalculatorWithEntries(
     withMember('0', ...lightConeData(lightCone))
   )
