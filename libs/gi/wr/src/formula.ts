@@ -569,6 +569,7 @@ const common: Data = {
       `${ele}_resMulti_`,
       res(total[`${ele}_enemyRes_`]),
     ]),
+    defIgn: total.enemyDefIgn_,
   },
 }
 

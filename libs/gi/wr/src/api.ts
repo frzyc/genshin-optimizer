@@ -179,7 +179,7 @@ export function dataObjForCharacterNew(
   if (enemyOverride.enemyDefRed_)
     result.premod!.enemyDefRed_ = percent(enemyOverride.enemyDefRed_ / 100)
   if (enemyOverride.enemyDefIgn_)
-    result.enemy!.defIgn = percent(enemyOverride.enemyDefIgn_ / 100)
+    result.premod!.enemyDefIgn_ = percent(enemyOverride.enemyDefIgn_ / 100)
 
   crawlObject(
     conditional,
