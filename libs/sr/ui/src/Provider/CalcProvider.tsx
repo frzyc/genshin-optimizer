@@ -36,12 +36,15 @@ type CharacterFullData = {
 }
 
 export function CalcProvider({ children }: { children: ReactNode }) {
-  const { characterKey } = useCharacterContext()
-  const mainChar = useCharacterAndEquipment(characterKey)
+  const { character } = useCharacterContext()
+  const mainChar = useCharacterAndEquipment(character)
 
-  const teammate1 = useCharacterAndEquipment(mainChar.character?.team[0])
-  const teammate2 = useCharacterAndEquipment(mainChar.character?.team[1])
-  const teammate3 = useCharacterAndEquipment(mainChar.character?.team[2])
+  const character1 = useCharacter(mainChar.character?.team[0])
+  const character2 = useCharacter(mainChar.character?.team[1])
+  const character3 = useCharacter(mainChar.character?.team[2])
+  const member1 = useCharacterAndEquipment(character1)
+  const member2 = useCharacterAndEquipment(character2)
+  const member3 = useCharacterAndEquipment(character3)
 
   const calcContextObj: CalcContextObj = useMemo(
     () => ({
@@ -57,9 +60,9 @@ export function CalcProvider({ children }: { children: ReactNode }) {
               .filter((m): m is Member => !!m),
           ]),
           ...createMember(0, mainChar),
-          ...createMember(1, teammate1),
-          ...createMember(2, teammate2),
-          ...createMember(3, teammate3),
+          ...createMember(1, member1),
+          ...createMember(2, member2),
+          ...createMember(3, member3),
           // TODO: Get these from db
           enemy.common.lvl.add(80),
           enemy.common.res.add(0.1),
@@ -68,7 +71,7 @@ export function CalcProvider({ children }: { children: ReactNode }) {
           self.common.critMode.add('avg'),
         ]),
     }),
-    [mainChar, teammate1, teammate2, teammate3]
+    [mainChar, member1, member2, member3]
   )
 
   return (
@@ -79,9 +82,8 @@ export function CalcProvider({ children }: { children: ReactNode }) {
 }
 
 function useCharacterAndEquipment(
-  characterKey: CharacterKey | '' | undefined
+  character: ICachedSroCharacter | undefined
 ): CharacterFullData {
-  const character = useCharacter(characterKey)
   const lightCone = useLightCone(character?.equippedLightCone)
   const relics = useEquippedRelics(character?.equippedRelics)
   return { character, lightCone, relics }
