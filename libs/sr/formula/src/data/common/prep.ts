@@ -28,7 +28,7 @@ const data: TagMapNodeEntries = [
       self.formula.base,
       lookup(self.char.ele, breakBaseRatios),
       subscript(self.char.lvl, allStats.misc.breakLevelMulti),
-      sum(1, self.final.brEff_),
+      sum(percent(1), self.final.brEff_),
       self.dmg.inDmg
     )
   ),
