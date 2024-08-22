@@ -174,7 +174,7 @@ export function TeamCharacterSelector({
               disabled={!loadoutMetadata[ind]}
               label={
                 loadoutKey ? (
-                  <Typography>{t`Character Name`}</Typography>
+                  <Typography>{t(`charNames_gen:${loadoutKey}`)}</Typography>
                 ) : (
                   `Character ${ind + 1}` // TODO: Translation
                 )

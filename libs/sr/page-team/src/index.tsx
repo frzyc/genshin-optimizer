@@ -6,11 +6,13 @@ import type {
 import {
   CharacterContext,
   LoadoutContext,
+  TeamCalcProvider,
   TeamCharacterSelector,
   useCharacter,
   useDatabaseContext,
+  useLoadout,
   useLoadoutContext,
-  useTeamChar,
+  useTeam,
 } from '@genshin-optimizer/sr/ui'
 import { Box, Skeleton } from '@mui/material'
 import { Suspense, useEffect, useMemo } from 'react'
@@ -54,7 +56,7 @@ function Page({ teamId }: { teamId: string }) {
   const { database } = useDatabaseContext()
   const navigate = useNavigate()
 
-  const team = database.teams.get(teamId)!
+  const team = useTeam(teamId)!
   const { loadoutMetadata } = team
   // use the current URL as the "source of truth" for characterKey and tab.
   const {
@@ -107,45 +109,47 @@ function Page({ teamId }: { teamId: string }) {
     }, [characterKey, t, tab, team.name])
   )
 
-  const loadout = useTeamChar(loadoutId ?? '')
+  const loadout = useLoadout(loadoutId ?? '')
   const loadoutContextObj: LoadoutContextObj | undefined = useMemo(() => {
     if (!loadoutId || !loadout || !loadoutMetadatum) return undefined
     return { teamId, team, loadoutId, loadout, loadoutMetadatum }
   }, [loadoutMetadatum, team, loadout, loadoutId, teamId])
 
   return (
-    <Box
-      sx={{ display: 'flex', gap: 1, flexDirection: 'column', mx: 1, mt: 2 }}
-    >
-      <CardThemed>
-        <TeamCharacterSelector
-          teamId={teamId}
-          charKey={characterKey}
-          tab={tab}
-        />
-      </CardThemed>
+    <TeamCalcProvider teamId={teamId}>
       <Box
-      // sx={(theme) => {
-      //   const elementKey = characterKey && allStats.char[characterKey]
-      //   if (!elementKey) return {}
-      //   const hex = theme.palette[elementKey].main as string
-      //   const color = hexToColor(hex)
-      //   if (!color) return {}
-      //   const rgba = colorToRgbaString(color, 0.1)
-      //   return {
-      //     background: `linear-gradient(to bottom, ${rgba} 0%, rgba(0,0,0,0)) 25%`,
-      //   }
-      // }}
+        sx={{ display: 'flex', gap: 1, flexDirection: 'column', mx: 1, mt: 2 }}
       >
-        {loadoutContextObj ? (
-          <LoadoutContext.Provider value={loadoutContextObj}>
-            <TeammateDisplayWrapper />
-          </LoadoutContext.Provider>
-        ) : (
-          <TeamSettings teamId={teamId} />
-        )}
+        <CardThemed>
+          <TeamCharacterSelector
+            teamId={teamId}
+            charKey={characterKey}
+            tab={tab}
+          />
+        </CardThemed>
+        <Box
+        // sx={(theme) => {
+        //   const elementKey = characterKey && allStats.char[characterKey]
+        //   if (!elementKey) return {}
+        //   const hex = theme.palette[elementKey].main as string
+        //   const color = hexToColor(hex)
+        //   if (!color) return {}
+        //   const rgba = colorToRgbaString(color, 0.1)
+        //   return {
+        //     background: `linear-gradient(to bottom, ${rgba} 0%, rgba(0,0,0,0)) 25%`,
+        //   }
+        // }}
+        >
+          {loadoutContextObj ? (
+            <LoadoutContext.Provider value={loadoutContextObj}>
+              <TeammateDisplayWrapper />
+            </LoadoutContext.Provider>
+          ) : (
+            <TeamSettings teamId={teamId} />
+          )}
+        </Box>
       </Box>
-    </Box>
+    </TeamCalcProvider>
   )
 }
 

@@ -4,7 +4,7 @@ import type { ReactNode } from 'react'
 import { useMemo } from 'react'
 import type { LoadoutContextObj } from '../Context/LoadoutContext'
 import { LoadoutContext } from '../Context/LoadoutContext'
-import { useTeamChar } from '../Hook/useTeamChar'
+import { useLoadout } from '../Hook/useLoadout'
 
 export function LoadoutProvider({
   children,
@@ -18,7 +18,7 @@ export function LoadoutProvider({
   loadoutMetadatum?: LoadoutMetadatum
 }) {
   const loadoutId = loadoutMetadatum?.loadoutId
-  const loadout = useTeamChar(loadoutId ?? '')
+  const loadout = useLoadout(loadoutId ?? '')
   const loadoutContextObj: LoadoutContextObj | undefined = useMemo(() => {
     if (!loadoutId || !loadout || !loadoutMetadatum) return undefined
     return { teamId, team, loadoutId, loadout, loadoutMetadatum }

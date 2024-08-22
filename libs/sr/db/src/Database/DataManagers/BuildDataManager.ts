@@ -10,7 +10,7 @@ export interface Build {
   description: string
 
   lightConeId?: string
-  relicIds: Record<RelicSlotKey, string | undefined>
+  relicIds: Record<RelicSlotKey, string>
 }
 
 export class BuildDataManager extends DataManager<
@@ -30,14 +30,14 @@ export class BuildDataManager extends DataManager<
       lightConeId = undefined
 
     if (typeof relicIds !== 'object')
-      relicIds = objKeyMap(allRelicSlotKeys, () => undefined)
+      relicIds = objKeyMap(allRelicSlotKeys, () => '')
     else
       relicIds = objKeyMap(allRelicSlotKeys, (sk) => {
         const id = relicIds[sk]
-        if (!id) return undefined
+        if (!id) return ''
         const relic = this.database.relics.get(id)
-        if (!relic) return undefined
-        if (relic.slotKey !== sk) return undefined
+        if (!relic) return ''
+        if (relic.slotKey !== sk) return ''
         return id
       })
     return {
