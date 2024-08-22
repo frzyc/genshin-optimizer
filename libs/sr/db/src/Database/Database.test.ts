@@ -591,7 +591,7 @@ describe('Database', () => {
   })
 
   describe('Trailblazer Handling', () => {
-    test('Test Trailblazer share equipment', () => {
+    test('Test Trailblazer do not share equipment', () => {
       database.chars.set(
         'TrailblazerPhysical',
         initialCharacter('TrailblazerPhysical')
@@ -603,12 +603,12 @@ describe('Database', () => {
       })
       const relic1Id = database.relics.new({
         ...relic1,
-        location: 'Trailblazer',
+        location: 'TrailblazerFire',
       })
 
       expect(
         database.chars.get('TrailblazerPhysical')!.equippedRelics.body
-      ).toEqual(relic1Id)
+      ).toEqual('')
       expect(
         database.chars.get('TrailblazerFire')!.equippedRelics.body
       ).toEqual(relic1Id)
@@ -625,27 +625,27 @@ describe('Database', () => {
       })
       const relic2Id = database.relics.new({
         ...relic2,
-        location: 'Trailblazer',
+        location: 'TrailblazerPhysical',
       })
       expect(
         database.chars.get('TrailblazerPhysical')!.equippedRelics.body
       ).toEqual(relic2Id)
       expect(
         database.chars.get('TrailblazerFire')!.equippedRelics.body
-      ).toEqual(relic2Id)
+      ).toEqual(relic1Id)
 
       const lightCone2Id = database.lightCones.new({
         ...newLightCone('Chorus'),
-        location: 'Trailblazer',
+        location: 'TrailblazerPhysical',
       })
       expect(
         database.chars.get('TrailblazerPhysical')!.equippedLightCone
       ).toEqual(lightCone2Id)
       expect(database.chars.get('TrailblazerFire')!.equippedLightCone).toEqual(
-        lightCone2Id
+        ''
       )
 
-      // deletion dont remove equipment until all traveler is gone
+      // deletion dont remove equipment on other trailblazer
       database.chars.remove('TrailblazerFire')
 
       expect(
@@ -654,12 +654,14 @@ describe('Database', () => {
       expect(
         database.chars.get('TrailblazerPhysical')!.equippedLightCone
       ).toEqual(lightCone2Id)
-      expect(database.relics.get(relic2Id)!.location).toEqual('Trailblazer')
+      expect(database.relics.get(relic2Id)!.location).toEqual(
+        'TrailblazerPhysical'
+      )
       expect(database.lightCones.get(lightCone2Id)!.location).toEqual(
-        'Trailblazer'
+        'TrailblazerPhysical'
       )
 
-      // deletion of final traveler unequips
+      // deletion of proper trailblazer does unequip
       database.chars.remove('TrailblazerPhysical')
 
       expect(database.relics.get(relic2Id)!.location).toEqual('')
