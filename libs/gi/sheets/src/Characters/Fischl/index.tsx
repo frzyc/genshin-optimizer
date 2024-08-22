@@ -1,5 +1,6 @@
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+import type { UIData } from '@genshin-optimizer/gi/uidata'
 import {
   constant,
   greaterEq,
@@ -120,11 +121,14 @@ const dmgFormulas = {
     aimedChargedOz: greaterEq(
       input.asc,
       1,
-      prod(
-        percent(dm.passive1.dmg),
-        dmgNode('atk', dm.charged.aimedCharged, 'charged', {
+      dmgNode(
+        'atk',
+        dm.charged.aimedCharged,
+        'charged',
+        {
           hit: { ele: constant('electro') },
-        })
+        },
+        percent(dm.passive1.dmg)
       )
     ),
   },
@@ -263,7 +267,7 @@ const sheet: TalentSheet = {
         },
         {
           text: ct.chg('skill.skillParams.2'),
-          value: (data) =>
+          value: (data: UIData) =>
             data.get(input.constellation).value >= 6
               ? dm.skill.duration + dm.constellation6.duration
               : dm.skill.duration,
