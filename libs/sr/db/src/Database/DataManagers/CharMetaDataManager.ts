@@ -1,8 +1,5 @@
 import { deepFreeze } from '@genshin-optimizer/common/util'
-import type {
-  CharacterKey,
-  CharacterLocationKey,
-} from '@genshin-optimizer/sr/consts'
+import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import { allTrailblazerKeys } from '@genshin-optimizer/sr/consts'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
@@ -35,9 +32,6 @@ export class CharMetaDataManager extends DataManager<
       allTrailblazerKeys.find((k) => this.keys.includes(k)) ??
       allTrailblazerKeys[0]
     )
-  }
-  LocationToCharacterKey(key: CharacterLocationKey): CharacterKey {
-    return key === 'Trailblazer' ? this.getTrailblazerCharacterKey() : key
   }
   override get(key: CharacterKey): ICharMeta {
     return this.data[key] ?? initCharMeta

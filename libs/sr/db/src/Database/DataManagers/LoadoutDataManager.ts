@@ -18,7 +18,7 @@ type CondKey = CharacterKey | RelicSetKey | LightConeKey
 export type IConditionalValues = Partial<
   Record<CondKey, { [key: string]: string }>
 >
-export interface TeamCharacter {
+export interface Loadout {
   key: CharacterKey
 
   name: string
@@ -34,14 +34,15 @@ export interface TeamCharacter {
   optConfigId: string
 }
 
-export class TeamCharacterDataManager extends DataManager<
+// Same as TeamCharDataManager in GO
+export class LoadoutDataManager extends DataManager<
   string,
-  'teamchars',
-  TeamCharacter,
-  TeamCharacter
+  'loadouts',
+  Loadout,
+  Loadout
 > {
   constructor(database: SroDatabase) {
-    super(database, 'teamchars')
+    super(database, 'loadouts')
 
     // Since this and optConfig have a 1:1 relationship, validate whether there are any orphaned optConfigs
     // const optConfigKeys = new Set(this.database.optConfigs.keys)
@@ -64,8 +65,8 @@ export class TeamCharacterDataManager extends DataManager<
     }
     return `${characterKey} Loadout`
   }
-  override validate(obj: unknown): TeamCharacter | undefined {
-    const { key: characterKey } = obj as TeamCharacter
+  override validate(obj: unknown): Loadout | undefined {
+    const { key: characterKey } = obj as Loadout
     let {
       name,
       description,
@@ -77,7 +78,7 @@ export class TeamCharacterDataManager extends DataManager<
       buildIds,
       buildTcIds,
       optConfigId,
-    } = obj as TeamCharacter
+    } = obj as Loadout
     if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
 
     if (typeof name !== 'string') name = this.newName(characterKey)
@@ -118,17 +119,14 @@ export class TeamCharacterDataManager extends DataManager<
     }
   }
 
-  new(key: CharacterKey, data: Partial<TeamCharacter> = {}): string {
+  new(key: CharacterKey, data: Partial<Loadout> = {}): string {
     const optConfigId = this.database.optConfigs.new()
     const id = this.generateKey()
     this.set(id, { key, optConfigId, ...data })
     return id
   }
-  override remove(
-    teamCharId: string,
-    notify?: boolean
-  ): TeamCharacter | undefined {
-    const rem = super.remove(teamCharId, notify)
+  override remove(loadoutId: string, notify?: boolean): Loadout | undefined {
+    const rem = super.remove(loadoutId, notify)
     if (!rem) return
     const { optConfigId, buildIds, buildTcIds } = rem
     this.database.optConfigs.remove(optConfigId)
@@ -136,11 +134,11 @@ export class TeamCharacterDataManager extends DataManager<
       if (
         this.database.teams
           .get(teamId)!
-          .loadoutData.some(
-            (loadoutDatum) => loadoutDatum?.teamCharId === teamCharId
+          .loadoutMetadata.some(
+            (loadoutMetadatum) => loadoutMetadatum?.loadoutId === loadoutId
           )
       )
-        this.database.teams.set(teamId, {}) // use validator to remove teamCharId entries
+        this.database.teams.set(teamId, {}) // use validator to remove loadoutId entries
     })
 
     buildIds.forEach((buildId) => this.database.builds.remove(buildId))
@@ -151,40 +149,40 @@ export class TeamCharacterDataManager extends DataManager<
     super.clear()
   }
   duplicate(teamcharId: string): string {
-    const teamCharRaw = this.get(teamcharId)
-    if (!teamCharRaw) return ''
-    const teamChar = deepClone(teamCharRaw)
+    const loadoutRaw = this.get(teamcharId)
+    if (!loadoutRaw) return ''
+    const loadout = deepClone(loadoutRaw)
 
-    teamChar.buildIds = teamChar.buildIds.map((buildId) =>
+    loadout.buildIds = loadout.buildIds.map((buildId) =>
       this.database.builds.duplicate(buildId)
     )
 
-    teamChar.buildTcIds = teamChar.buildTcIds.map((buildTcId) =>
+    loadout.buildTcIds = loadout.buildTcIds.map((buildTcId) =>
       this.database.buildTcs.duplicate(buildTcId)
     )
 
-    teamChar.optConfigId = this.database.optConfigs.duplicate(
-      teamChar.optConfigId
+    loadout.optConfigId = this.database.optConfigs.duplicate(
+      loadout.optConfigId
     )
-    teamChar.name = `${teamChar.name} (duplicated)`
-    return this.new(teamChar.key, teamChar)
+    loadout.name = `${loadout.name} (duplicated)`
+    return this.new(loadout.key, loadout)
   }
-  newBuild(teamCharId: string, build: Partial<Build> = {}) {
-    if (!this.get(teamCharId)) return
+  newBuild(loadoutId: string, build: Partial<Build> = {}) {
+    if (!this.get(loadoutId)) return
 
     const buildId = this.database.builds.new(build)
     if (!buildId) return
-    this.set(teamCharId, (teamChar) => {
-      teamChar.buildIds.unshift(buildId)
+    this.set(loadoutId, (loadout) => {
+      loadout.buildIds.unshift(buildId)
     })
   }
-  newBuildTc(teamCharId: string, data: Partial<IBuildTc> = {}) {
-    if (!this.get(teamCharId)) return
+  newBuildTc(loadoutId: string, data: Partial<IBuildTc> = {}) {
+    if (!this.get(loadoutId)) return
 
     const buildTcId = this.database.buildTcs.new(data)
     if (!buildTcId) return
-    this.set(teamCharId, (teamChar) => {
-      teamChar.buildTcIds.unshift(buildTcId)
+    this.set(loadoutId, (loadout) => {
+      loadout.buildTcIds.unshift(buildTcId)
     })
   }
   newBuildTcFromBuild(
@@ -197,16 +195,16 @@ export class TeamCharacterDataManager extends DataManager<
     toBuildTc(buildTc, lightCone, relics)
     const buildTcId = this.database.buildTcs.new(buildTc)
     if (!buildTcId) return undefined
-    this.set(teamcharId, (teamChar) => {
-      teamChar.buildTcIds.unshift(buildTcId)
+    this.set(teamcharId, (loadout) => {
+      loadout.buildTcIds.unshift(buildTcId)
     })
     return buildTcId
   }
 
-  export(teamCharId: string): object {
-    const teamChar = this.database.teamChars.get(teamCharId)
-    if (!teamChar) return {}
-    const { buildIds, buildTcIds, optConfigId, ...rest } = teamChar
+  export(loadoutId: string): object {
+    const loadout = this.database.loadouts.get(loadoutId)
+    if (!loadout) return {}
+    const { buildIds, buildTcIds, optConfigId, ...rest } = loadout
     return {
       ...rest,
       buildTcs: buildTcIds.map((buildTcId) =>
@@ -216,7 +214,7 @@ export class TeamCharacterDataManager extends DataManager<
     }
   }
   import(data: object): string {
-    const { buildTcs, optConfig, ...rest } = data as TeamCharacter & {
+    const { buildTcs, optConfig, ...rest } = data as Loadout & {
       buildTcs: object[]
       optConfig: object
     }
@@ -232,9 +230,9 @@ export class TeamCharacterDataManager extends DataManager<
       return ''
     return id
   }
-  followChar(teamCharId: string, callback: DataManagerCallback<CharacterKey>) {
-    const teamChar = this.database.teamChars.get(teamCharId)
-    if (!teamChar) return () => {}
-    return this.database.chars.follow(teamChar.key, callback)
+  followChar(loadoutId: string, callback: DataManagerCallback<CharacterKey>) {
+    const loadout = this.database.loadouts.get(loadoutId)
+    if (!loadout) return () => {}
+    return this.database.chars.follow(loadout.key, callback)
   }
 }

@@ -1,12 +1,32 @@
 import { CardThemed, useTitle } from '@genshin-optimizer/common/ui'
+import type {
+  CharacterContextObj,
+  LoadoutContextObj,
+} from '@genshin-optimizer/sr/ui'
 import {
+  CharacterContext,
+  LoadoutContext,
+  TeamCalcProvider,
   TeamCharacterSelector,
+  useCharacter,
   useDatabaseContext,
+  useLoadout,
+  useLoadoutContext,
+  useTeam,
 } from '@genshin-optimizer/sr/ui'
 import { Box, Skeleton } from '@mui/material'
 import { Suspense, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Navigate, useMatch, useNavigate, useParams } from 'react-router-dom'
+import {
+  Navigate,
+  Route,
+  Routes,
+  useMatch,
+  useNavigate,
+  useParams,
+} from 'react-router-dom'
+import TeamSettings from './TeamSettings'
+import TeammateDisplay from './TeammateDisplay'
 
 const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
 
@@ -36,8 +56,8 @@ function Page({ teamId }: { teamId: string }) {
   const { database } = useDatabaseContext()
   const navigate = useNavigate()
 
-  const team = database.teams.get(teamId)!
-  const { loadoutData } = team
+  const team = useTeam(teamId)!
+  const { loadoutMetadata } = team
   // use the current URL as the "source of truth" for characterKey and tab.
   const {
     params: { characterKey: characterKeyRaw },
@@ -51,25 +71,26 @@ function Page({ teamId }: { teamId: string }) {
   }
 
   // validate characterKey
-  const loadoutDatum = useMemo(() => {
-    const loadoutDatum = loadoutData.find(
-      (loadoutDatum) =>
-        loadoutDatum?.teamCharId &&
-        database.teamChars.get(loadoutDatum.teamCharId)?.key === characterKeyRaw
+  const loadoutMetadatum = useMemo(() => {
+    const loadoutMetadatum = loadoutMetadata.find(
+      (loadoutMetadatum) =>
+        loadoutMetadatum?.loadoutId &&
+        database.loadouts.get(loadoutMetadatum.loadoutId)?.key ===
+          characterKeyRaw
     )
 
-    return loadoutDatum
-  }, [loadoutData, database.teamChars, characterKeyRaw])
+    return loadoutMetadatum
+  }, [loadoutMetadata, database.loadouts, characterKeyRaw])
 
   useEffect(() => {
     window.scrollTo({ top: 0 })
   }, [])
   useEffect(() => {
-    if (!loadoutDatum) navigate('', { replace: true })
-  }, [loadoutDatum, navigate])
+    if (!loadoutMetadatum) navigate('', { replace: true })
+  }, [loadoutMetadatum, navigate])
 
-  const teamCharId = loadoutDatum?.teamCharId
-  const characterKey = database.teamChars.get(teamCharId)?.key
+  const loadoutId = loadoutMetadatum?.loadoutId
+  const characterKey = database.loadouts.get(loadoutId)?.key
 
   const { t } = useTranslation(['charNames_gen', 'page_character'])
 
@@ -88,17 +109,72 @@ function Page({ teamId }: { teamId: string }) {
     }, [characterKey, t, tab, team.name])
   )
 
+  const loadout = useLoadout(loadoutId ?? '')
+  const loadoutContextObj: LoadoutContextObj | undefined = useMemo(() => {
+    if (!loadoutId || !loadout || !loadoutMetadatum) return undefined
+    return { teamId, team, loadoutId, loadout, loadoutMetadatum }
+  }, [loadoutMetadatum, team, loadout, loadoutId, teamId])
+
   return (
-    <Box
-      sx={{ display: 'flex', gap: 1, flexDirection: 'column', mx: 1, mt: 2 }}
-    >
-      <CardThemed>
-        <TeamCharacterSelector
-          teamId={teamId}
-          charKey={characterKey}
-          tab={tab}
-        />
-      </CardThemed>
-    </Box>
+    <TeamCalcProvider teamId={teamId}>
+      <Box
+        sx={{ display: 'flex', gap: 1, flexDirection: 'column', mx: 1, mt: 2 }}
+      >
+        <CardThemed>
+          <TeamCharacterSelector
+            teamId={teamId}
+            charKey={characterKey}
+            tab={tab}
+          />
+        </CardThemed>
+        <Box
+        // sx={(theme) => {
+        //   const elementKey = characterKey && allStats.char[characterKey]
+        //   if (!elementKey) return {}
+        //   const hex = theme.palette[elementKey].main as string
+        //   const color = hexToColor(hex)
+        //   if (!color) return {}
+        //   const rgba = colorToRgbaString(color, 0.1)
+        //   return {
+        //     background: `linear-gradient(to bottom, ${rgba} 0%, rgba(0,0,0,0)) 25%`,
+        //   }
+        // }}
+        >
+          {loadoutContextObj ? (
+            <LoadoutContext.Provider value={loadoutContextObj}>
+              <TeammateDisplayWrapper />
+            </LoadoutContext.Provider>
+          ) : (
+            <TeamSettings teamId={teamId} />
+          )}
+        </Box>
+      </Box>
+    </TeamCalcProvider>
+  )
+}
+
+function TeammateDisplayWrapper({ tab }: { tab?: string }) {
+  const {
+    loadout: { key: characterKey },
+  } = useLoadoutContext()
+  const character = useCharacter(characterKey)
+  const characterContextValue: CharacterContextObj | undefined = useMemo(
+    () =>
+      character && {
+        character,
+      },
+    [character]
+  )
+  if (!characterContextValue)
+    return <Skeleton variant="rectangular" width="100%" height={1000} />
+
+  return (
+    <CharacterContext.Provider value={characterContextValue}>
+      <Routes>
+        <Route path=":characterKey">
+          <Route path="*" index element={<TeammateDisplay tab={tab} />} />
+        </Route>
+      </Routes>
+    </CharacterContext.Provider>
   )
 }

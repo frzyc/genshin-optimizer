@@ -12,8 +12,8 @@ import type { SroDatabase } from '../Database'
 
 const buildTypeKeys = ['equipped', 'real', 'tc'] as const
 type BuildTypeKey = (typeof buildTypeKeys)[number]
-export type LoadoutDatum = {
-  teamCharId: string
+export type LoadoutMetadatum = {
+  loadoutId: string
   buildType: BuildTypeKey
   buildId: string
   buildTcId: string
@@ -26,7 +26,7 @@ export interface Team {
   name: string
   description: string
 
-  loadoutData: Array<LoadoutDatum | undefined>
+  loadoutMetadata: Array<LoadoutMetadatum | undefined>
   lastEdit: number
 }
 
@@ -43,19 +43,20 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     return `Team Name`
   }
   override validate(obj: unknown): Team | undefined {
-    let { name, description, loadoutData, lastEdit } = obj as Team
+    let { name, description, loadoutMetadata, lastEdit } = obj as Team
     if (typeof name !== 'string') name = this.newName()
     if (typeof description !== 'string') description = ''
 
     {
-      // validate teamCharIds
-      if (!Array.isArray(loadoutData))
-        loadoutData = range(0, 3).map(() => undefined)
+      // validate loadoutIds
+      if (!Array.isArray(loadoutMetadata))
+        loadoutMetadata = range(0, 3).map(() => undefined)
 
-      loadoutData = range(0, 3).map((ind) => {
-        const loadoutDatum = loadoutData[ind]
-        if (!loadoutDatum || typeof loadoutDatum !== 'object') return undefined
-        const { teamCharId } = loadoutDatum
+      loadoutMetadata = range(0, 3).map((ind) => {
+        const loadoutMetadatum = loadoutMetadata[ind]
+        if (!loadoutMetadatum || typeof loadoutMetadatum !== 'object')
+          return undefined
+        const { loadoutId } = loadoutMetadatum
         let {
           buildType,
           buildId,
@@ -64,17 +65,17 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
           compareType,
           compareBuildId,
           compareBuildTcId,
-        } = loadoutDatum
-        const teamChar = this.database.teamChars.get(teamCharId)
-        if (!teamChar) return undefined
+        } = loadoutMetadatum
+        const loadout = this.database.loadouts.get(loadoutId)
+        if (!loadout) return undefined
 
         if (!buildTypeKeys.includes(buildType)) buildType = 'equipped'
-        if (typeof buildId !== 'string' || !teamChar.buildIds.includes(buildId))
+        if (typeof buildId !== 'string' || !loadout.buildIds.includes(buildId))
           buildId = ''
 
         if (
           typeof buildTcId !== 'string' ||
-          !teamChar.buildTcIds.includes(buildTcId)
+          !loadout.buildTcIds.includes(buildTcId)
         )
           buildTcId = ''
 
@@ -90,7 +91,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
 
         if (
           typeof compareBuildId !== 'string' ||
-          !teamChar.buildIds.includes(compareBuildId)
+          !loadout.buildIds.includes(compareBuildId)
         ) {
           compareBuildId = ''
           if (compareType === 'real') compareType = 'equipped'
@@ -98,14 +99,14 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
 
         if (
           typeof compareBuildTcId !== 'string' ||
-          !teamChar.buildTcIds.includes(compareBuildTcId)
+          !loadout.buildTcIds.includes(compareBuildTcId)
         ) {
           compareBuildTcId = ''
           if (compareType === 'tc') compareType = 'equipped'
         }
 
         return {
-          teamCharId,
+          loadoutId,
           buildType,
           buildId,
           buildTcId,
@@ -113,14 +114,19 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
           compareType,
           compareBuildId,
           compareBuildTcId,
-        } as LoadoutDatum
+        } as LoadoutMetadatum
       })
 
       // make sure there isnt a team without "Active" character, by shifting characters forward.
-      if (!loadoutData[0] && loadoutData.some((loadoutData) => loadoutData)) {
-        const index = loadoutData.findIndex((loadoutData) => !!loadoutData)
-        loadoutData[0] = loadoutData[index]
-        loadoutData[index] = undefined
+      if (
+        !loadoutMetadata[0] &&
+        loadoutMetadata.some((loadoutMetadata) => loadoutMetadata)
+      ) {
+        const index = loadoutMetadata.findIndex(
+          (loadoutMetadata) => !!loadoutMetadata
+        )
+        loadoutMetadata[0] = loadoutMetadata[index]
+        loadoutMetadata[index] = undefined
       }
     }
 
@@ -129,7 +135,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     return {
       name,
       description,
-      loadoutData,
+      loadoutMetadata,
       lastEdit,
     }
   }
@@ -153,27 +159,29 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
   export(teamId: string): object {
     const team = this.database.teams.get(teamId)
     if (!team) return {}
-    const { loadoutData, ...rest } = team
+    const { loadoutMetadata, ...rest } = team
     return {
       ...rest,
-      loadoutData: loadoutData.map(
-        (loadoutData) =>
-          loadoutData?.teamCharId &&
-          this.database.teamChars.export(loadoutData?.teamCharId)
+      loadoutMetadata: loadoutMetadata.map(
+        (loadoutMetadatum) =>
+          loadoutMetadatum?.loadoutId &&
+          this.database.loadouts.export(loadoutMetadatum?.loadoutId)
       ),
     }
   }
   import(data: object): string {
-    const { loadoutData, ...rest } = data as Team & { loadoutData: object[] }
+    const { loadoutMetadata, ...rest } = data as Team & {
+      loadoutMetadata: object[]
+    }
     const id = this.generateKey()
     if (
       !this.set(id, {
         ...rest,
         name: `${rest.name ?? ''} (Imported)`,
-        loadoutData: loadoutData.map(
+        loadoutMetadata: loadoutMetadata.map(
           (obj) =>
             obj && {
-              teamCharId: this.database.teamChars.import(obj),
+              loadoutId: this.database.loadouts.import(obj),
             }
         ),
       } as Team)
@@ -184,30 +192,31 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
 
   getActiveTeamChar(teamId: string) {
     const team = this.database.teams.get(teamId)
-    const teamCharId = team?.loadoutData[0]?.teamCharId
-    return this.database.teamChars.get(teamCharId)
+    const loadoutId = team?.loadoutMetadata[0]?.loadoutId
+    return this.database.loadouts.get(loadoutId)
   }
 
-  getLoadoutDatum(teamId: string, teamCharId: string) {
+  getLoadoutDatum(teamId: string, loadoutId: string) {
     const team = this.get(teamId)
     if (!team) return undefined
-    return team.loadoutData.find(
-      (loadoutDatum) => loadoutDatum?.teamCharId === teamCharId
+    return team.loadoutMetadata.find(
+      (loadoutMetadatum) => loadoutMetadatum?.loadoutId === loadoutId
     )
   }
   setLoadoutDatum(
     teamId: string,
-    teamCharId: string,
-    data: Partial<LoadoutDatum>
+    loadoutId: string,
+    data: Partial<LoadoutMetadatum>
   ) {
     this.set(teamId, (team) => {
-      const loadoutDataInd = team.loadoutData.findIndex(
-        (loadoutDatum) => loadoutDatum && loadoutDatum.teamCharId === teamCharId
+      const loadoutDataInd = team.loadoutMetadata.findIndex(
+        (loadoutMetadatum) =>
+          loadoutMetadatum && loadoutMetadatum.loadoutId === loadoutId
       )
       if (loadoutDataInd < 0) return
 
-      team.loadoutData[loadoutDataInd]! = {
-        ...team.loadoutData[loadoutDataInd]!,
+      team.loadoutMetadata[loadoutDataInd]! = {
+        ...team.loadoutMetadata[loadoutDataInd]!,
         ...data,
       }
     })
@@ -216,13 +225,13 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
    * Note: this doesnt return any relics (all undefined) when the current teamchar is using a TC Build.
    */
   getLoadoutRelics({
-    teamCharId,
+    loadoutId,
     buildType,
     buildId,
-  }: LoadoutDatum): Record<RelicSlotKey, ICachedRelic | undefined> {
-    const teamChar = this.database.teamChars.get(teamCharId)
-    if (!teamChar) return objKeyMap(allRelicSlotKeys, () => undefined)
-    const { key: characterKey } = teamChar
+  }: LoadoutMetadatum): Record<RelicSlotKey, ICachedRelic | undefined> {
+    const loadout = this.database.loadouts.get(loadoutId)
+    if (!loadout) return objKeyMap(allRelicSlotKeys, () => undefined)
+    const { key: characterKey } = loadout
     switch (buildType) {
       case 'equipped': {
         const char = this.database.chars.get(characterKey)
@@ -239,7 +248,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
   }
 
   followLoadoutDatum(
-    { buildType, buildId, buildTcId }: LoadoutDatum,
+    { buildType, buildId, buildTcId }: LoadoutMetadatum,
     callback: () => void
   ) {
     if (buildType === 'real') {
@@ -262,7 +271,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     return () => {}
   }
   followLoadoutDatumCompare(
-    { compareType, compareBuildId, compareBuildTcId }: LoadoutDatum,
+    { compareType, compareBuildId, compareBuildTcId }: LoadoutMetadatum,
     callback: () => void
   ) {
     if (compareType === 'real') {
@@ -288,7 +297,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     return () => {}
   }
   getActiveBuildName(
-    { buildType, buildId, buildTcId }: LoadoutDatum,
+    { buildType, buildId, buildTcId }: LoadoutMetadatum,
     equippedName = 'Equipped Build'
   ) {
     switch (buildType) {
