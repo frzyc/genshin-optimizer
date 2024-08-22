@@ -1,16 +1,16 @@
 import { CardThemed, useTitle } from '@genshin-optimizer/common/ui'
 import type {
   CharacterContextObj,
-  TeamCharacterContextObj,
+  LoadoutContextObj,
 } from '@genshin-optimizer/sr/ui'
 import {
   CharacterContext,
-  TeamCharacterContext,
+  LoadoutContext,
   TeamCharacterSelector,
   useCharacter,
   useDatabaseContext,
+  useLoadoutContext,
   useTeamChar,
-  useTeamCharacterContext,
 } from '@genshin-optimizer/sr/ui'
 import { Box, Skeleton } from '@mui/material'
 import { Suspense, useEffect, useMemo } from 'react'
@@ -23,8 +23,8 @@ import {
   useNavigate,
   useParams,
 } from 'react-router-dom'
-import TeamCharacterDisplay from './TeamCharacterDisplay'
 import TeamSettings from './TeamSettings'
+import TeammateDisplay from './TeammateDisplay'
 
 const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
 
@@ -55,7 +55,7 @@ function Page({ teamId }: { teamId: string }) {
   const navigate = useNavigate()
 
   const team = database.teams.get(teamId)!
-  const { loadoutData } = team
+  const { loadoutMetadata } = team
   // use the current URL as the "source of truth" for characterKey and tab.
   const {
     params: { characterKey: characterKeyRaw },
@@ -69,25 +69,26 @@ function Page({ teamId }: { teamId: string }) {
   }
 
   // validate characterKey
-  const loadoutDatum = useMemo(() => {
-    const loadoutDatum = loadoutData.find(
-      (loadoutDatum) =>
-        loadoutDatum?.teamCharId &&
-        database.teamChars.get(loadoutDatum.teamCharId)?.key === characterKeyRaw
+  const loadoutMetadatum = useMemo(() => {
+    const loadoutMetadatum = loadoutMetadata.find(
+      (loadoutMetadatum) =>
+        loadoutMetadatum?.loadoutId &&
+        database.loadouts.get(loadoutMetadatum.loadoutId)?.key ===
+          characterKeyRaw
     )
 
-    return loadoutDatum
-  }, [loadoutData, database.teamChars, characterKeyRaw])
+    return loadoutMetadatum
+  }, [loadoutMetadata, database.loadouts, characterKeyRaw])
 
   useEffect(() => {
     window.scrollTo({ top: 0 })
   }, [])
   useEffect(() => {
-    if (!loadoutDatum) navigate('', { replace: true })
-  }, [loadoutDatum, navigate])
+    if (!loadoutMetadatum) navigate('', { replace: true })
+  }, [loadoutMetadatum, navigate])
 
-  const teamCharId = loadoutDatum?.teamCharId
-  const characterKey = database.teamChars.get(teamCharId)?.key
+  const loadoutId = loadoutMetadatum?.loadoutId
+  const characterKey = database.loadouts.get(loadoutId)?.key
 
   const { t } = useTranslation(['charNames_gen', 'page_character'])
 
@@ -106,12 +107,11 @@ function Page({ teamId }: { teamId: string }) {
     }, [characterKey, t, tab, team.name])
   )
 
-  const teamChar = useTeamChar(teamCharId ?? '')
-  const teamCharacterContextObj: TeamCharacterContextObj | undefined =
-    useMemo(() => {
-      if (!teamCharId || !teamChar || !loadoutDatum) return undefined
-      return { teamId, team, teamCharId, teamChar, loadoutDatum }
-    }, [loadoutDatum, team, teamChar, teamCharId, teamId])
+  const loadout = useTeamChar(loadoutId ?? '')
+  const loadoutContextObj: LoadoutContextObj | undefined = useMemo(() => {
+    if (!loadoutId || !loadout || !loadoutMetadatum) return undefined
+    return { teamId, team, loadoutId, loadout, loadoutMetadatum }
+  }, [loadoutMetadatum, team, loadout, loadoutId, teamId])
 
   return (
     <Box
@@ -137,10 +137,10 @@ function Page({ teamId }: { teamId: string }) {
       //   }
       // }}
       >
-        {teamCharacterContextObj ? (
-          <TeamCharacterContext.Provider value={teamCharacterContextObj}>
-            <TeamCharacterDisplayWrapper />
-          </TeamCharacterContext.Provider>
+        {loadoutContextObj ? (
+          <LoadoutContext.Provider value={loadoutContextObj}>
+            <TeammateDisplayWrapper />
+          </LoadoutContext.Provider>
         ) : (
           <TeamSettings teamId={teamId} />
         )}
@@ -149,10 +149,10 @@ function Page({ teamId }: { teamId: string }) {
   )
 }
 
-function TeamCharacterDisplayWrapper({ tab }: { tab?: string }) {
+function TeammateDisplayWrapper({ tab }: { tab?: string }) {
   const {
-    teamChar: { key: characterKey },
-  } = useTeamCharacterContext()
+    loadout: { key: characterKey },
+  } = useLoadoutContext()
   const character = useCharacter(characterKey)
   const characterContextValue: CharacterContextObj | undefined = useMemo(
     () =>
@@ -168,7 +168,7 @@ function TeamCharacterDisplayWrapper({ tab }: { tab?: string }) {
     <CharacterContext.Provider value={characterContextValue}>
       <Routes>
         <Route path=":characterKey">
-          <Route path="*" index element={<TeamCharacterDisplay tab={tab} />} />
+          <Route path="*" index element={<TeammateDisplay tab={tab} />} />
         </Route>
       </Routes>
     </CharacterContext.Provider>

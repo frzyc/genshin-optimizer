@@ -53,11 +53,11 @@ export function TeamCard({
         </Box>
         <CardContent>
           <Grid container columns={4} gap={1}>
-            {team.loadoutData.map((ld, i) =>
-              ld?.teamCharId ? (
-                <CardThemed key={ld.teamCharId} sx={{ flexGrow: 1 }}>
+            {team.loadoutMetadata.map((ld, i) =>
+              ld?.loadoutId ? (
+                <CardThemed key={ld.loadoutId} sx={{ flexGrow: 1 }}>
                   <Typography>
-                    {database.teamChars.get(ld.teamCharId)?.key}
+                    {database.loadouts.get(ld.loadoutId)?.key}
                   </Typography>
                 </CardThemed>
               ) : (

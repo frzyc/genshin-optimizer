@@ -1,6 +1,6 @@
 import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
 import { useDatabaseContext } from '../Context'
-export function useTeamChar(teamCharId: string) {
+export function useTeamChar(loadoutId: string) {
   const { database } = useDatabaseContext()
-  return useDataManagerBase(database.teamChars, teamCharId)
+  return useDataManagerBase(database.loadouts, loadoutId)
 }
