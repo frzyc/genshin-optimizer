@@ -1,0 +1,41 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost (Requires dev server to be running)",
+      "url": "http://localhost:4200",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Start GO dev server and launch Chrome against localhost",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["run", "nx", "serve", "frontend"],
+      "serverReadyAction": {
+        "action": "debugWithChrome",
+        "pattern": "http://localhost:.*1m([0-9]+)",
+        "uriFormat": "http://localhost:%s",
+        "webRoot": "${workspaceFolder}"
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Start SRO dev server and launch Chrome against localhost",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["run", "nx", "serve", "sr-frontend"],
+      "serverReadyAction": {
+        "action": "debugWithChrome",
+        "pattern": "http://localhost:.*1m([0-9]+)",
+        "uriFormat": "http://localhost:%s",
+        "webRoot": "${workspaceFolder}"
+      }
+    }
+  ]
+}

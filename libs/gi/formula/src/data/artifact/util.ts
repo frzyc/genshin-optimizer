@@ -13,11 +13,11 @@ export function registerArt(
    * reduce `Read` traffic due to the sheer numbers of `et:agg` calculations and `sheet:<key>`
    * it would require for each `sheet:art` read.
    */
-
   function internal({ tag: oldTag, value }: TagMapNodeEntry): TagMapNodeEntry {
-    if (oldTag.sheet === sheet)
-      // Special entries (usually stack count) that override `stack`
-      return { tag: oldTag, value }
+    // Sheet-specific `enemy` stats adds to `enemyDeBuff` instead
+    if (oldTag.et === 'enemy') oldTag = { ...oldTag, et: 'enemyDeBuff' }
+    // Special entries (usually stack count) that override `stack`
+    if (oldTag.sheet === sheet) return { tag: oldTag, value }
 
     // Add `sheet:art` to the tag and add `tag(sheet:<key>, value)` to set tags for calculation
     if (

@@ -18,10 +18,11 @@ export function register(
   sheet: Exclude<Sheet, ArtifactSetKey>,
   ...data: (TagMapNodeEntry | TagMapNodeEntries)[]
 ): TagMapNodeEntries {
-  const internal = ({ tag, value }: TagMapNodeEntry) => ({
-    tag: { ...tag, sheet },
-    value,
-  })
+  const internal = ({ tag, value }: TagMapNodeEntry) => {
+    // Sheet-specific `enemy` stats adds to `enemyDeBuff` instead
+    if (tag.et === 'enemy') tag = { ...tag, et: 'enemyDeBuff' }
+    return { tag: { ...tag, sheet }, value }
+  }
   return data.flatMap((data) =>
     Array.isArray(data) ? data.map(internal) : internal(data)
   )
