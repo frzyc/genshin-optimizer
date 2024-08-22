@@ -21,6 +21,7 @@ import {
   Typography,
 } from '@mui/material'
 import { useState } from 'react'
+import Optimize from './Tabs/Optimize'
 
 export default function TeammateDisplay({ tab }: { tab?: string }) {
   const {
@@ -98,6 +99,8 @@ export default function TeammateDisplay({ tab }: { tab?: string }) {
             </Accordion>
           </CardContent>
         </CardThemed>
+        {/* TODO: Move to a dedicated tab */}
+        <Optimize />
       </Stack>
     </Box>
   )
