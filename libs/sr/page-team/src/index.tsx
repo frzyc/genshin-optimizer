@@ -1,12 +1,30 @@
 import { CardThemed, useTitle } from '@genshin-optimizer/common/ui'
+import type {
+  CharacterContextObj,
+  TeamCharacterContextObj,
+} from '@genshin-optimizer/sr/ui'
 import {
+  CharacterContext,
+  TeamCharacterContext,
   TeamCharacterSelector,
+  useCharacter,
   useDatabaseContext,
+  useTeamChar,
+  useTeamCharacterContext,
 } from '@genshin-optimizer/sr/ui'
 import { Box, Skeleton } from '@mui/material'
 import { Suspense, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Navigate, useMatch, useNavigate, useParams } from 'react-router-dom'
+import {
+  Navigate,
+  Route,
+  Routes,
+  useMatch,
+  useNavigate,
+  useParams,
+} from 'react-router-dom'
+import TeamCharacterDisplay from './TeamCharacterDisplay'
+import TeamSettings from './TeamSettings'
 
 const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
 
@@ -88,6 +106,13 @@ function Page({ teamId }: { teamId: string }) {
     }, [characterKey, t, tab, team.name])
   )
 
+  const teamChar = useTeamChar(teamCharId ?? '')
+  const teamCharacterContextObj: TeamCharacterContextObj | undefined =
+    useMemo(() => {
+      if (!teamCharId || !teamChar || !loadoutDatum) return undefined
+      return { teamId, team, teamCharId, teamChar, loadoutDatum }
+    }, [loadoutDatum, team, teamChar, teamCharId, teamId])
+
   return (
     <Box
       sx={{ display: 'flex', gap: 1, flexDirection: 'column', mx: 1, mt: 2 }}
@@ -99,6 +124,53 @@ function Page({ teamId }: { teamId: string }) {
           tab={tab}
         />
       </CardThemed>
+      <Box
+      // sx={(theme) => {
+      //   const elementKey = characterKey && allStats.char[characterKey]
+      //   if (!elementKey) return {}
+      //   const hex = theme.palette[elementKey].main as string
+      //   const color = hexToColor(hex)
+      //   if (!color) return {}
+      //   const rgba = colorToRgbaString(color, 0.1)
+      //   return {
+      //     background: `linear-gradient(to bottom, ${rgba} 0%, rgba(0,0,0,0)) 25%`,
+      //   }
+      // }}
+      >
+        {teamCharacterContextObj ? (
+          <TeamCharacterContext.Provider value={teamCharacterContextObj}>
+            <TeamCharacterDisplayWrapper />
+          </TeamCharacterContext.Provider>
+        ) : (
+          <TeamSettings teamId={teamId} />
+        )}
+      </Box>
     </Box>
+  )
+}
+
+function TeamCharacterDisplayWrapper({ tab }: { tab?: string }) {
+  const {
+    teamChar: { key: characterKey },
+  } = useTeamCharacterContext()
+  const character = useCharacter(characterKey)
+  const characterContextValue: CharacterContextObj | undefined = useMemo(
+    () =>
+      character && {
+        character,
+      },
+    [character]
+  )
+  if (!characterContextValue)
+    return <Skeleton variant="rectangular" width="100%" height={1000} />
+
+  return (
+    <CharacterContext.Provider value={characterContextValue}>
+      <Routes>
+        <Route path=":characterKey">
+          <Route path="*" index element={<TeamCharacterDisplay tab={tab} />} />
+        </Route>
+      </Routes>
+    </CharacterContext.Provider>
   )
 }
