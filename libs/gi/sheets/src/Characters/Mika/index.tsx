@@ -1,6 +1,7 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+import type { UIData } from '@genshin-optimizer/gi/uidata'
 import {
   equal,
   greaterEq,
@@ -11,6 +12,7 @@ import {
   percent,
   prod,
   subscript,
+  sum,
   target,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
@@ -101,7 +103,7 @@ const [condA1DetectorStacksPath, condA1DetectorStacks] = cond(
   key,
   'a1DetectorStacks'
 )
-const detectorStacksArr = range(1, 4)
+const detectorStacksArr = range(1, 5)
 const a1DetectorStacks_physical_dmg_disp = greaterEq(
   input.asc,
   1,
@@ -110,16 +112,32 @@ const a1DetectorStacks_physical_dmg_disp = greaterEq(
     'on',
     lookup(
       condA1DetectorStacks,
-      objKeyMap(detectorStacksArr, (stack) =>
-        // Don't allow the 5th stack unless c6
-        stack === 4
-          ? greaterEq(
-              input.constellation,
-              6,
-              prod(stack, percent(dm.passive1.physical_dmg_))
-            )
-          : prod(stack, percent(dm.passive1.physical_dmg_))
-      ),
+      objKeyMap(detectorStacksArr, (stack) => {
+        const totalPhysical_dmg_ = prod(
+          stack,
+          percent(dm.passive1.physical_dmg_)
+        )
+        // Check for A4 or C6
+        if (stack === 4) {
+          return greaterEq(
+            sum(
+              greaterEq(input.constellation, 6, 1),
+              greaterEq(input.asc, 4, 1)
+            ),
+            1,
+            totalPhysical_dmg_
+          )
+        }
+        // Check for both A4 and C6
+        else if (stack === 5) {
+          return greaterEq(
+            input.constellation,
+            6,
+            greaterEq(input.asc, 4, totalPhysical_dmg_)
+          )
+        }
+        return totalPhysical_dmg_
+      }),
       naught,
       { path: 'physical_dmg_', isTeamBuff: true }
     )
@@ -298,18 +316,20 @@ const sheet: TalentSheet = {
       teamBuff: true,
       canShow: equal(condInSoulwind, 'on', 1),
       name: ct.ch('numDetectorStacks'),
-      states: (data) =>
-        objKeyMap(
-          range(1, data.get(input.constellation).value >= 6 ? 4 : 3),
-          (stack) => ({
-            name: st('stack', { count: stack }),
-            fields: [
-              {
-                node: a1DetectorStacks_physical_dmg_disp,
-              },
-            ],
-          })
-        ),
+      states: (data) => {
+        const isC6 = data.get(input.constellation).value === 6
+        const isA4 = data.get(input.asc).value >= 4
+        const maxStacks =
+          dm.passive1.maxStacks + (isA4 ? 1 : 0) + (isC6 ? 1 : 0)
+        return objKeyMap(range(1, maxStacks), (stack) => ({
+          name: st('stack', { count: stack }),
+          fields: [
+            {
+              node: a1DetectorStacks_physical_dmg_disp,
+            },
+          ],
+        }))
+      },
     }),
     ct.condTem('constellation6', {
       teamBuff: true,
@@ -352,7 +372,7 @@ const sheet: TalentSheet = {
         },
         {
           text: ct.chg('burst.skillParams.2'),
-          value: (data) =>
+          value: (data: UIData) =>
             data.get(input.constellation).value >= 1 &&
             data.get(condInSoulwind).value === 'on' &&
             data.get(input.activeCharKey).value ===
