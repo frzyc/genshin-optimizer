@@ -10,8 +10,8 @@ import type {
 } from '@genshin-optimizer/sr/srod'
 import { validateLevelAsc } from '@genshin-optimizer/sr/util'
 import type {
+  ICachedCharacter,
   ICachedLightCone,
-  ICachedSroCharacter,
   ISroDatabase,
 } from '../../Interfaces'
 import { DataManager } from '../DataManager'
@@ -39,10 +39,10 @@ export class LightConeDataManager extends DataManager<
     const oldLightCone = super.get(id)
 
     // During initialization of the database, if you import lightCones with location without a corresponding character, the char will be generated here.
-    const getWithInit = (cKey: CharacterKey): ICachedSroCharacter => {
+    const getWithInit = (cKey: CharacterKey): ICachedCharacter => {
       if (!this.database.chars.keys.includes(cKey))
         this.database.chars.set(cKey, initialCharacter(cKey))
-      return this.database.chars.get(cKey) as ICachedSroCharacter
+      return this.database.chars.get(cKey) as ICachedCharacter
     }
     if (newLightCone.location !== oldLightCone?.location) {
       const prevChar = oldLightCone?.location

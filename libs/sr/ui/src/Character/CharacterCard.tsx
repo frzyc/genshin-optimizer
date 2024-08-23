@@ -1,5 +1,5 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import type { ICachedSroCharacter } from '@genshin-optimizer/sr/db'
+import type { ICachedCharacter } from '@genshin-optimizer/sr/db'
 import {
   charData,
   convert,
@@ -19,7 +19,7 @@ export function CharacterCard({
   character,
   onClick,
 }: {
-  character: ICachedSroCharacter
+  character: ICachedCharacter
   onClick?: () => void
 }) {
   const calc = srCalculatorWithEntries(withMember('0', ...charData(character)))

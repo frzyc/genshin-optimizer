@@ -3,9 +3,9 @@ import type {
   RelicSubStatKey,
 } from '@genshin-optimizer/sr/consts'
 import type {
+  ICachedCharacter,
   ICachedLightCone,
   ICachedRelic,
-  ICachedSroCharacter,
   LoadoutMetadatum,
 } from '@genshin-optimizer/sr/db'
 import type { Member, TagMapNodeEntries } from '@genshin-optimizer/sr/formula'
@@ -30,7 +30,7 @@ import { useCharacter, useEquippedRelics, useTeam } from '../Hook'
 import { useLightCone } from '../Hook/useLightCone'
 
 type CharacterFullData = {
-  character: ICachedSroCharacter | undefined
+  character: ICachedCharacter | undefined
   lightCone: ICachedLightCone | undefined
   relics: Record<RelicSlotKey, ICachedRelic | undefined>
 }
