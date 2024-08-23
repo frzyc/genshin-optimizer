@@ -136,8 +136,8 @@ export function EnemyEditor({
   const defaultVal = 10
 
   const eLvl = enemyOverride.enemyLevel ?? 100
-  const eDefRed = enemyOverride.enemyDefIgn_ ?? 0
-  const eDefIgn = enemyOverride.enemyDefRed_ ?? 0
+  const eDefRed = enemyOverride.enemyDefRed_ ?? 0
+  const eDefIgn = enemyOverride.enemyDefIgn_ ?? 0
   return (
     <Grid container spacing={1}>
       <Grid item {...bsProps}>
