@@ -13,7 +13,7 @@ import type { Tag, TagMapNodeEntries } from './data/util'
 import {
   convert,
   enemyDebuff,
-  self,
+  selfBuff,
   selfTag,
   team,
   userBuff,
@@ -25,7 +25,6 @@ import {
   artifactsData,
   charData,
   conditionalData,
-  noTeamData,
   teamData,
   weaponData,
   withMember,
@@ -71,12 +70,12 @@ describe('example', () => {
       enemyDebuff.reaction.amp.add(''),
       enemyDebuff.common.lvl.add(12),
       enemyDebuff.common.preRes.add(0.1),
-      self.common.critMode.add('avg'),
+      selfBuff.common.critMode.add('avg'),
     ],
     calc = genshinCalculatorWithEntries(data)
 
-  const member0 = convert(selfTag, { src: '0', et: 'self' })
-  const member1 = convert(selfTag, { src: '1', et: 'self' })
+  const member0 = convert(selfTag, { et: 'self', src: '0', dst: 'all' })
+  const member1 = convert(selfTag, { et: 'self', src: '1', dst: 'all' })
 
   test.skip('debug formula', () => {
     // Pick formula
@@ -165,7 +164,7 @@ describe('example', () => {
       test(`with name ${name}`, () => {
         expect(tag).toEqual({
           src: '0',
-          dst: '0',
+          dst: 'all',
           et: 'self',
           sheet: 'Nahida',
           qt: 'formula',
@@ -274,13 +273,10 @@ describe('example', () => {
   })
 })
 describe('weapon-only example', () => {
-  const data: TagMapNodeEntries = [
-      ...noTeamData(),
-      ...weaponData(rawData[1].weapon as IWeapon),
-    ],
+  const data: TagMapNodeEntries = [...weaponData(rawData[1].weapon as IWeapon)],
     calc = genshinCalculatorWithEntries(data)
 
-  const self = convert(selfTag, { et: 'self' })
+  const self = convert(selfTag, { et: 'self', dst: 'all' })
 
   test('calculate specialized stats', () => {
     const primary = calc.compute(self.weapon.primary)

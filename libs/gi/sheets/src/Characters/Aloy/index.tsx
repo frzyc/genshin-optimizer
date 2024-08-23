@@ -12,6 +12,7 @@ import {
   naught,
   percent,
   subscript,
+  target,
   unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
@@ -104,21 +105,14 @@ const [condA1Path, condA1] = cond(key, 'A1')
 const atk_ = greaterEq(
   input.asc,
   1,
-  equal(
-    condA1,
-    'on',
-    equal(input.activeCharKey, key, percent(dm.passive1.atkInc))
-  )
+  equal(condA1, 'on', equal(target.charKey, key, percent(dm.passive1.atkInc)))
 )
-const teamAtk_ = greaterEq(
+const teamAtk_disp = greaterEq(
   input.asc,
   1,
-  equal(
-    condA1,
-    'on',
-    unequal(input.activeCharKey, key, percent(dm.passive1.teamAtkInc))
-  )
+  equal(condA1, 'on', percent(dm.passive1.teamAtkInc))
 )
+const teamAtk_ = unequal(target.charKey, key, teamAtk_disp)
 
 const [condA4Path, condA4] = cond(key, 'A4')
 const cryo_dmg_ = greaterEq(
@@ -330,7 +324,7 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: infoMut(teamAtk_, { path: 'atk_' }),
+              node: infoMut(teamAtk_disp, { path: 'atk_', isTeamBuff: true }),
             },
             {
               node: infoMut(atk_, { path: 'atk_' }),

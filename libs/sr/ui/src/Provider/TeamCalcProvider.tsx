@@ -1,5 +1,4 @@
 import type {
-  CharacterKey,
   RelicSlotKey,
   RelicSubStatKey,
 } from '@genshin-optimizer/sr/consts'
@@ -7,27 +6,27 @@ import type {
   ICachedLightCone,
   ICachedRelic,
   ICachedSroCharacter,
+  LoadoutMetadatum,
 } from '@genshin-optimizer/sr/db'
 import type { Member, TagMapNodeEntries } from '@genshin-optimizer/sr/formula'
 import {
   charData,
   conditionalData,
-  enemy,
   enemyDebuff,
   lightConeData,
   members,
   relicsData,
-  self,
+  selfBuff,
   srCalculatorWithEntries,
   teamData,
   withMember,
 } from '@genshin-optimizer/sr/formula'
 import type { ReactNode } from 'react'
 import { useMemo } from 'react'
+import { useDatabaseContext } from '../Context'
 import type { CalcContextObj } from '../Context/CalcContext'
 import { CalcContext } from '../Context/CalcContext'
-import { useCharacterContext } from '../Context/CharacterContext'
-import { useCharacter, useEquippedRelics } from '../Hook'
+import { useCharacter, useEquippedRelics, useTeam } from '../Hook'
 import { useLightCone } from '../Hook/useLightCone'
 
 type CharacterFullData = {
@@ -36,40 +35,44 @@ type CharacterFullData = {
   relics: Record<RelicSlotKey, ICachedRelic | undefined>
 }
 
-export function CalcProvider({ children }: { children: ReactNode }) {
-  const { characterKey } = useCharacterContext()
-  const mainChar = useCharacterAndEquipment(characterKey)
-
-  const teammate1 = useCharacterAndEquipment(mainChar.character?.team[0])
-  const teammate2 = useCharacterAndEquipment(mainChar.character?.team[1])
-  const teammate3 = useCharacterAndEquipment(mainChar.character?.team[2])
+export function TeamCalcProvider({
+  teamId,
+  children,
+}: {
+  teamId: string
+  children: ReactNode
+}) {
+  const team = useTeam(teamId)!
+  const member0 = useCharacterAndEquipment(team.loadoutMetadata[0])
+  const member1 = useCharacterAndEquipment(team.loadoutMetadata[1])
+  const member2 = useCharacterAndEquipment(team.loadoutMetadata[2])
+  const member3 = useCharacterAndEquipment(team.loadoutMetadata[3])
 
   const calcContextObj: CalcContextObj = useMemo(
     () => ({
-      calc:
-        mainChar.character &&
-        srCalculatorWithEntries([
-          ...teamData([
-            members[1],
-            ...mainChar.character.team
-              .map((key, index) =>
-                key === '' ? undefined : members[index + 2]
-              )
-              .filter((m): m is Member => !!m),
-          ]),
-          ...createMember(0, mainChar),
-          ...createMember(1, teammate1),
-          ...createMember(2, teammate2),
-          ...createMember(3, teammate3),
-          // TODO: Get these from db
-          enemyDebuff.common.lvl.add(80),
-          enemyDebuff.common.res.add(0.1),
-          enemy.common.isBroken.add(0),
-          enemy.common.maxToughness.add(100),
-          self.common.critMode.add('avg'),
-        ]),
+      calc: srCalculatorWithEntries([
+        // Specify members present in the team
+        ...teamData(
+          team.loadoutMetadata
+            .map((meta, index) =>
+              meta === undefined ? undefined : members[index + 1]
+            )
+            .filter((m): m is Member => !!m)
+        ),
+        // Add actual member data
+        ...(member0 ? createMember(0, member0) : []),
+        ...(member1 ? createMember(1, member1) : []),
+        ...(member2 ? createMember(2, member2) : []),
+        ...(member3 ? createMember(3, member3) : []),
+        // TODO: Get these from db
+        enemyDebuff.common.lvl.add(80),
+        enemyDebuff.common.res.add(0.1),
+        enemyDebuff.common.isBroken.add(0),
+        enemyDebuff.common.maxToughness.add(100),
+        selfBuff.common.critMode.add('avg'),
+      ]),
     }),
-    [mainChar, teammate1, teammate2, teammate3]
+    [member0, member1, member2, member3, team.loadoutMetadata]
   )
 
   return (
@@ -80,11 +83,16 @@ export function CalcProvider({ children }: { children: ReactNode }) {
 }
 
 function useCharacterAndEquipment(
-  characterKey: CharacterKey | '' | undefined
-): CharacterFullData {
-  const character = useCharacter(characterKey)
-  const lightCone = useLightCone(character?.equippedLightCone)
-  const relics = useEquippedRelics(character?.equippedRelics)
+  loadoutMetadatum: LoadoutMetadatum | undefined
+): CharacterFullData | undefined {
+  const { database } = useDatabaseContext()
+  const character = useCharacter(
+    database.loadouts.get(loadoutMetadatum?.loadoutId)?.key
+  )
+  // TODO: Handle tc build
+  const build = database.builds.get(loadoutMetadatum?.buildId)
+  const lightCone = useLightCone(build?.lightConeId)
+  const relics = useEquippedRelics(build?.relicIds)
   return { character, lightCone, relics }
 }
 

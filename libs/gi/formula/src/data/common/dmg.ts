@@ -7,7 +7,14 @@ import {
   sumfrac,
 } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
-import { enemy, enemyDebuff, percent, priorityTable, self } from '../util'
+import {
+  enemy,
+  enemyDebuff,
+  percent,
+  priorityTable,
+  self,
+  selfBuff,
+} from '../util'
 
 export const infusionPrio = {
   nonOverridable: { hydro: 5, pyro: 6 },
@@ -19,7 +26,7 @@ const infusionTable = priorityTable(infusionPrio),
 
 const data: TagMapNodeEntries = [
   enemyDebuff.common.postRes.add(custom('res', preRes)),
-  enemyDebuff.common.inDmg.add(
+  selfBuff.dmg.inDmg.add(
     prod(
       sumfrac(
         sum(self.char.lvl, 100),
@@ -32,14 +39,14 @@ const data: TagMapNodeEntries = [
       enemy.common.postRes
     )
   ),
-  self.dmg.out.add(
+  selfBuff.dmg.out.add(
     prod(
       self.reaction.ampMulti,
       sum(self.formula.base, self.reaction.cataAddi),
       sum(percent(1), self.final.dmg_)
     )
   ),
-  self.dmg.critMulti.add(
+  selfBuff.dmg.critMulti.add(
     lookup(self.common.critMode, {
       crit: sum(1, self.common.cappedCritRate_),
       nonCrit: 1,
@@ -47,9 +54,9 @@ const data: TagMapNodeEntries = [
     })
   ),
 
-  self.reaction.infusion.add(
+  selfBuff.reaction.infusion.add(
     subscript(self.reaction.infusionIndex.max, infusionTable)
   ),
-  self.reaction.infusionIndex.add(0),
+  selfBuff.reaction.infusionIndex.add(0),
 ]
 export default data

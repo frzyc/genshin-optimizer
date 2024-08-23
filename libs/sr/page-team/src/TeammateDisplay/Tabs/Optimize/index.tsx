@@ -18,7 +18,6 @@ import {
   Box,
   Button,
   CardContent,
-  Container,
   LinearProgress,
   Stack,
   Typography,
@@ -101,45 +100,43 @@ export default function Optimize() {
   }, [cancelToken])
 
   return (
-    <Container>
-      <CardThemed bgt="dark">
-        <CardContent>
-          <StatFilterCard />
-          <Stack>
-            <Typography variant="h5">{t('optimize')}</Typography>
+    <CardThemed bgt="dark">
+      <CardContent>
+        <StatFilterCard />
+        <Stack>
+          <Typography variant="h5">{t('optimize')}</Typography>
+          <Box>
+            <OptimizationTargetSelector
+              optTarget={optTarget}
+              setOptTarget={setOptTarget}
+            />
+            <WorkerSelector
+              numWorkers={numWorkers}
+              setNumWorkers={setNumWorkers}
+            />
+            <Button
+              onClick={optimizing ? onCancel : onOptimize}
+              color={optimizing ? 'error' : 'primary'}
+              startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
+            >
+              {optimizing ? t('cancel') : t('optimize')}
+            </Button>
+          </Box>
+          {progress && (
+            <ProgressIndicator
+              progress={progress}
+              totalPermutations={totalPermutations}
+            />
+          )}
+          {build && (
             <Box>
-              <OptimizationTargetSelector
-                optTarget={optTarget}
-                setOptTarget={setOptTarget}
-              />
-              <WorkerSelector
-                numWorkers={numWorkers}
-                setNumWorkers={setNumWorkers}
-              />
-              <Button
-                onClick={optimizing ? onCancel : onOptimize}
-                color={optimizing ? 'error' : 'primary'}
-                startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
-              >
-                {optimizing ? t('cancel') : t('optimize')}
-              </Button>
+              <Typography>Best: {build.value}</Typography>
+              <BuildDisplay build={build.ids} />
             </Box>
-            {progress && (
-              <ProgressIndicator
-                progress={progress}
-                totalPermutations={totalPermutations}
-              />
-            )}
-            {build && (
-              <Box>
-                <Typography>Best: {build.value}</Typography>
-                <BuildDisplay build={build.ids} />
-              </Box>
-            )}
-          </Stack>
-        </CardContent>
-      </CardThemed>
-    </Container>
+          )}
+        </Stack>
+      </CardContent>
+    </CardThemed>
   )
 }
 

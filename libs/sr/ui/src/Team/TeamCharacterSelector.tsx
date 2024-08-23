@@ -41,7 +41,7 @@ export function TeamCharacterSelector({
   const { database } = useDatabaseContext()
 
   const team = database.teams.get(teamId)!
-  const { loadoutData } = team
+  const { loadoutMetadata } = team
 
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
@@ -161,28 +161,27 @@ export function TeamCharacterSelector({
           label={'Team Settings'}
           onClick={() => navigate(`/teams/${teamId}/`)}
         />
-        {loadoutData.map((loadoutDatum, ind) => {
-          const teamCharKey =
-            loadoutDatum &&
-            database.teamChars.get(loadoutDatum?.teamCharId)?.key
+        {loadoutMetadata.map((loadoutMetadatum, ind) => {
+          const loadoutKey =
+            loadoutMetadatum &&
+            database.loadouts.get(loadoutMetadatum?.loadoutId)?.key
           return (
             <Tab
               icon={<PersonIcon />}
               iconPosition="start"
-              value={teamCharKey ?? ind}
+              value={loadoutKey ?? ind}
               key={ind}
-              disabled={!loadoutData[ind]}
+              disabled={!loadoutMetadata[ind]}
               label={
-                teamCharKey ? (
-                  <Typography>{t`Character Name`}</Typography>
+                loadoutKey ? (
+                  <Typography>{t(`charNames_gen:${loadoutKey}`)}</Typography>
                 ) : (
                   `Character ${ind + 1}` // TODO: Translation
                 )
               }
               onClick={() =>
                 // conserve the current tab when switching to another character
-                teamCharKey &&
-                navigate(`/teams/${teamId}/${teamCharKey}/${tab}`)
+                loadoutKey && navigate(`/teams/${teamId}/${loadoutKey}/${tab}`)
               }
             />
           )

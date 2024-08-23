@@ -1,6 +1,7 @@
 import type { CalcResult } from '@genshin-optimizer/pando/engine'
-import type { CalcMeta } from './calculator'
+import type { PartialMeta } from './calculator'
 
+type Output = PartialMeta
 type FormulaText = {
   name: string | undefined
   formula: string
@@ -10,8 +11,8 @@ type FormulaText = {
   deps: FormulaText[]
 }
 export function translate(
-  data: CalcResult<number, CalcMeta>,
-  cache: Map<CalcResult<number, CalcMeta>, FormulaText> = new Map()
+  data: CalcResult<number, Output>,
+  cache: Map<CalcResult<number, Output>, FormulaText> = new Map()
 ): FormulaText {
   const old = cache.get(data)
   if (old) return old
@@ -22,7 +23,7 @@ export function translate(
 
   const deps = new Set<FormulaText>()
   function getString(
-    ops: CalcResult<number, CalcMeta>[],
+    ops: CalcResult<number, Output>[],
     prec: number // precedence of the encompassing/parent term
   ): string[] {
     return ops.map((op) => {

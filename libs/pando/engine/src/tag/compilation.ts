@@ -96,7 +96,7 @@ export function mergeTagMapValues<V>(
 ): RawTagMapValues<V> {
   if (entries.length == 1) return entries[0]!
   const keys = new Set(entries.flatMap((entry) => Object.keys(entry)))
-  return Object.fromEntries(
+  const result: RawTagMapValues<V> = Object.fromEntries(
     [...keys].map((key) => [
       key,
       key === ''
@@ -104,4 +104,7 @@ export function mergeTagMapValues<V>(
         : mergeTagMapValues(entries.map((e) => e[key]!).filter((x) => x)),
     ])
   )
+  if (isDebug('tag_db') && keys.has(''))
+    result[debugTag] = entries.flatMap((e) => e[debugTag] ?? [])
+  return result
 }
