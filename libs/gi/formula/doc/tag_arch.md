@@ -59,37 +59,66 @@ Once `prep:` calculation is completed, the tags are attached to the base formula
 
 The tag categories `et:` and `sheet:` are separated into read-side, which is used by `read` operations, and write-side, which is used as tags in tag database entries.
 
-- Read-side `et:` specifies whether the query computes the current character stat (`et:self`), team-wide stat (`et:team`), the stat of the buff target (`et:target`), or the common enemy stat (`et:enemy`).
-- Write-side `et:` specifies whether the entry applies only to the current character (`et:selfBuff`), the entire team (`et:teamBuff`), other members (`et:notSelfBuff`), or the enemy (`et:enemy`).
-- Read-side `sheet:` speficies the sheets to include in gathering, whether to gather all sheets from all members (`sheet:agg`), only character sheets of the current member (`sheet:iso`), or common listing outside of any specific sheets (`static`).
-- Write-side `sheet:` specifies the sheet the entry belongs to (`sheet:<char key>/<weapon key>/<art>`), or if the entry is a UI custom formula (`sheet:custom`).
+- Read-side `et:` specifies whether the query computes
+  - The current character stat (`et:self`),
+  - Team-wide stat (`et:team`),
+  - The stat of the buff target (`et:target`), or
+  - The common enemy stat (`et:enemy`).
+- Write-side `et:` specifies whether the entry applies
+  - To the current character (`et:self`),
+  - To the entire team (`et:teamBuff`, inside sheets only),
+  - To other members (`et:notSelfBuff`, inside sheets only), or
+  - To the (common) enemy (`et:enemyDeBuff` inside sheets and `et:enemy` outside sheets).
+- Read-side `sheet:` speficies the sheets to include in gathering, whether to gather
+  - All sheets from all members (`sheet:agg`),
+  - Only character sheets of the current member (`sheet:iso`), or
+  - Common listing outside any specific sheets (`static`).
+- Write-side `sheet:` specifies
+  - The sheet the entry belongs to (`sheet:<char key>/<weapon key>/<art>`), or
+  - That the entry is a UI custom formula (`sheet:custom`).
 
+Note that some tags are both read- and write-sides.
 Every query starts with a read-side `sheet: et:` combination.
 The gathering operation then maps to the appropriate write-side `sheet: et:` via util functions.
 Following is the gathered entries on different `sheet: et:` combinations:
 
 - `sheet:agg et:self` queries (e.g., `self.char.skill`)
-  - `{ sheet:agg et:self  } <= { sheet:custom }` (`data/common/index.ts`)
+  - Non-specific non-sheet contributions
+  - `{ sheet:agg et:self } <= { sheet:custom }` from `data/common/index.ts`
     - Custom contributions
-  - `{ src:<src> sheet:agg } <= { src:* dst:<src> et:selfBuff/teamBuff/notSelfBuff }` (`teamData`)
-    - `{ src:<src> sheet:agg } <= { sheet:<char key/weapon key/art> }` (`char/weapon/artData` with `withMember`)
+  - `{ sheet:agg } <= { sheet:<char key/weapon key/art> }` from `char/weapon/artData` with `withMember`
+    - Sheet-specific `et:self` contributions from appropriate members
+    - (Artifact only) `{ sheet:art qt:premod } <= { sheet:dyn }`
+      - Hook for conversion to untagged graph.
+  - `{ src:<src> sheet:agg } <= { src:* dst:<src> et:teamBuff/notSelfBuff }` from `teamData`
+    - `{ src:<src> sheet:agg } <= { sheet:<char key/weapon key/art> }` from `char/weapon/artData` with `withMember`
+      - Sheet-specific `et:*Buff` contributions from appropriate members `src: dst:`
+- `sheet:iso et:self` queries (e.g., `self.char.lvl`)
+  - Non-specific non-sheet contributions
+  - `{ sheet:iso et:self } <= { sheet:custom }` from `data/common/index.ts`
+    - Custom contributions
+  - `{ sheet:iso } <= { sheet:<char key> }` from `charData` with `withMember`
+    - Char-sheet-specific `et:self` contributions from the current character
+- `sheet:agg et:enemy` queries (e.g., `enemy.common.defIgn`)
+  - `{ src:<src> sheet:agg } <= { src:* dst:<src> et:enemyDeBuff }` from `teamData`
+    - `{ src:<src> sheet:agg } <= { sheet:<char key/weapon key/art> }` from `char/weapon/artData` with `withMember`
       - Sheet-specific contributions from appropriate members `src: dst:` and write-side `sheet: et:`
-  - No sheet-specific contributions at top-level as the sheet selection above are wrapped within `withMember`.
-    So those formulas are only included when `teamData` adds the correct `src:` with `reread` above
-- `et:self sheet:iso` queries (e.g., `self.char.lvl`)
-  - `{ sheet:agg et:self } <= { sheet:custom }` (`data/common/index.ts`)
-    - Custom contributions
-  - `{ sheet:iso } <= { sheet:<char key> et:self }` (`charData` with `withMember`)
-    - `et:self` contributions from the current character
+- `sheet:iso et:enemy` queries (unused so far)
+  - `{ sheet:iso } <= { sheet:<char key> }` from `charData` with `withMember`
+    - Char-sheet-specific contributions from the current character
+- `sheet:static et:self/enemy` (e.g., `self.commin.critMode`)
+  - Non-sheet contributions from the same tag
 - `et:team sheet:agg/iso` queries (e.g., `team.final.atk`)
   - `{ et:team } <- { src:* et:self }` (`teamData`)
-    - `et:self` query from each member with the same `sheet:`
-- TODO: `et:enemy sheet:enemy`, `sheet:static`, and `sheet:dyn`
+    - `et:self` query from each member (with the same `sheet:`)
 
 Notes:
 
-- `sheet:iso` contributions use `et:self` instead of `et:selfBuff`.
-- Artifact use `sheet:art` instead of `sheet:<artifact name>` as all artifacts are always included together. This helps reduce the `read` needed due to the sheer number of artifacts.
+- Write-side `et:*Buff` can only be used inside a sheet as they require the `teamData` entry to insert `src:` and `char/weapon/artData` (with `withMember`) to override `sheet:`.
+  Outside of a sheet, `et:self/enemy` must be used instead as the `teamData` entry overrides `et:` in the process.
+  - The convention is to use `selfBuff/teamBuff/notSelfBuff/enemyDebuff` _variables_ for all entry creations, and "fix" the `et:` for sheets when it is `register`ed.
+- Artifact use `sheet:art` instead of `sheet:<artifact name>` as all artifacts are always included together.
+  This helps reduce the `read` needed due to the sheer number of artifacts.
   - `sheet:<artifact name>` is used only for counting the number equipped artifact of that set.
 
 ## Conditionals
