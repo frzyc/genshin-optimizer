@@ -101,12 +101,18 @@ const dmgFormulas = {
       2,
       dmgNode('atk', dm.skill.dmg1, 'skill')
     ),
-    dmg2: dmgNode('atk', dm.skill.dmg2, 'skill', { enemy: { defIgn: nodeC6 } }),
-    dmg3: dmgNode('atk', dm.skill.dmg3, 'skill', { enemy: { defIgn: nodeC6 } }),
+    dmg2: dmgNode('atk', dm.skill.dmg2, 'skill', {
+      premod: { enemyDefIgn_: nodeC6 },
+    }),
+    dmg3: dmgNode('atk', dm.skill.dmg3, 'skill', {
+      premod: { enemyDefIgn_: nodeC6 },
+    }),
     dmg4: greaterEq(
       input.constellation,
       2,
-      dmgNode('atk', dm.skill.dmg4, 'skill', { enemy: { defIgn: nodeC6 } })
+      dmgNode('atk', dm.skill.dmg4, 'skill', {
+        premod: { enemyDefIgn_: nodeC6 },
+      })
     ),
   },
   burst: {

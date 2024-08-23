@@ -284,7 +284,7 @@ const inputBase = {
       read(undefined, { prefix: 'base', ...info(`${ele}_enemyRes_`) }),
     ]),
     defRed: read(undefined),
-    defIgn: read('add', { ...info('enemyDefIgn_'), pivot }),
+    defIgn: read(undefined),
   },
 
   hit: {
