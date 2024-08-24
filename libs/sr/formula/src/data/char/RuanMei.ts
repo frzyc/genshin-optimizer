@@ -1,7 +1,7 @@
 import {
   cmpEq,
   cmpGE,
-  min,
+  max,
   prod,
   subscript,
   sum,
@@ -138,7 +138,7 @@ const sheet = register(
       char.bonusAbility3,
       1,
       skillOvertone.ifOn(
-        min(
+        max(
           // (brEff_ - breakThreshold) / breakPer * dmgPer
           prod(
             sum(self.final.brEff_, -dm.b3.breakThreshold),

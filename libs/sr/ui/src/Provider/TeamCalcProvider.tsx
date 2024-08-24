@@ -1,14 +1,19 @@
 import type {
+  CharacterKey,
   RelicSlotKey,
   RelicSubStatKey,
 } from '@genshin-optimizer/sr/consts'
 import type {
+  ICachedCharacter,
   ICachedLightCone,
   ICachedRelic,
-  ICachedSroCharacter,
   LoadoutMetadatum,
 } from '@genshin-optimizer/sr/db'
-import type { Member, TagMapNodeEntries } from '@genshin-optimizer/sr/formula'
+import type {
+  Member,
+  SrcCondInfo,
+  TagMapNodeEntries,
+} from '@genshin-optimizer/sr/formula'
 import {
   charData,
   conditionalData,
@@ -23,17 +28,24 @@ import {
 } from '@genshin-optimizer/sr/formula'
 import type { ReactNode } from 'react'
 import { useMemo } from 'react'
-import { useDatabaseContext } from '../Context'
 import type { CalcContextObj } from '../Context/CalcContext'
 import { CalcContext } from '../Context/CalcContext'
-import { useCharacter, useEquippedRelics, useTeam } from '../Hook'
+import {
+  useBuild,
+  useCharacter,
+  useEquippedRelics,
+  useLoadout,
+  useTeam,
+} from '../Hook'
 import { useLightCone } from '../Hook/useLightCone'
 
 type CharacterFullData = {
-  character: ICachedSroCharacter | undefined
+  character: ICachedCharacter | undefined
   lightCone: ICachedLightCone | undefined
   relics: Record<RelicSlotKey, ICachedRelic | undefined>
+  conditionals: SrcCondInfo | undefined // Assumes dst is the character
 }
+type MemberIndexMap = Partial<Record<CharacterKey | 'all', Member | 'all'>>
 
 export function TeamCalcProvider({
   teamId,
@@ -43,10 +55,31 @@ export function TeamCalcProvider({
   children: ReactNode
 }) {
   const team = useTeam(teamId)!
-  const member0 = useCharacterAndEquipment(team.loadoutMetadata[0])
-  const member1 = useCharacterAndEquipment(team.loadoutMetadata[1])
-  const member2 = useCharacterAndEquipment(team.loadoutMetadata[2])
-  const member3 = useCharacterAndEquipment(team.loadoutMetadata[3])
+  const loadout0 = useLoadout(team.loadoutMetadata[0]?.loadoutId)
+  const loadout1 = useLoadout(team.loadoutMetadata[1]?.loadoutId)
+  const loadout2 = useLoadout(team.loadoutMetadata[2]?.loadoutId)
+  const loadout3 = useLoadout(team.loadoutMetadata[3]?.loadoutId)
+  const memberIndexMap: MemberIndexMap = { all: 'all' }
+  if (loadout0) memberIndexMap[loadout0.key] = '0'
+  if (loadout1) memberIndexMap[loadout1.key] = '1'
+  if (loadout2) memberIndexMap[loadout2.key] = '2'
+  if (loadout3) memberIndexMap[loadout3.key] = '3'
+  const member0 = useCharacterAndEquipment(
+    team.loadoutMetadata[0],
+    memberIndexMap
+  )
+  const member1 = useCharacterAndEquipment(
+    team.loadoutMetadata[1],
+    memberIndexMap
+  )
+  const member2 = useCharacterAndEquipment(
+    team.loadoutMetadata[2],
+    memberIndexMap
+  )
+  const member3 = useCharacterAndEquipment(
+    team.loadoutMetadata[3],
+    memberIndexMap
+  )
 
   const calcContextObj: CalcContextObj = useMemo(
     () => ({
@@ -55,7 +88,7 @@ export function TeamCalcProvider({
         ...teamData(
           team.loadoutMetadata
             .map((meta, index) =>
-              meta === undefined ? undefined : members[index + 1]
+              meta === undefined ? undefined : members[index]
             )
             .filter((m): m is Member => !!m)
         ),
@@ -83,22 +116,31 @@ export function TeamCalcProvider({
 }
 
 function useCharacterAndEquipment(
-  loadoutMetadatum: LoadoutMetadatum | undefined
+  meta: LoadoutMetadatum | undefined,
+  memberIndexMap: MemberIndexMap
 ): CharacterFullData | undefined {
-  const { database } = useDatabaseContext()
-  const character = useCharacter(
-    database.loadouts.get(loadoutMetadatum?.loadoutId)?.key
-  )
+  const loadout = useLoadout(meta?.loadoutId)
+  const character = useCharacter(loadout?.key)
   // TODO: Handle tc build
-  const build = database.builds.get(loadoutMetadatum?.buildId)
+  const build = useBuild(meta?.buildId)
   const lightCone = useLightCone(build?.lightConeId)
   const relics = useEquippedRelics(build?.relicIds)
-  return { character, lightCone, relics }
+
+  // Convert dbConditionals {CharacterKey: condobject} to calcConditionals {Member: condObject}
+  const dbConditionals = loadout?.conditional
+  const conditionals = Object.fromEntries(
+    Object.entries(dbConditionals ?? {}).map(([srcKey, srcCond]) => [
+      memberIndexMap[srcKey],
+      srcCond,
+    ])
+  )
+
+  return { character, lightCone, relics, conditionals }
 }
 
 function createMember(
   memberIndex: 0 | 1 | 2 | 3,
-  { character, lightCone, relics }: CharacterFullData
+  { character, lightCone, relics, conditionals }: CharacterFullData
 ): TagMapNodeEntries {
   return !character
     ? []
@@ -124,16 +166,6 @@ function createMember(
               }))
           )
         ),
-        // TODO: Conditionals
-        ...conditionalData('0', {
-          // Only 1 Ruan Mei on a team, so src doesn't matter
-          all: {
-            RuanMei: {
-              skillOvertone: 1,
-              ultZone: 1,
-              e4Broken: 1,
-            },
-          },
-        }),
+        ...conditionalData(`${memberIndex}`, conditionals),
       ]
 }

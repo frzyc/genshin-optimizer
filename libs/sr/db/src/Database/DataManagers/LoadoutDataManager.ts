@@ -1,30 +1,22 @@
 import type { DataManagerCallback } from '@genshin-optimizer/common/database'
 import { deepClone } from '@genshin-optimizer/common/util'
-import type {
-  CharacterKey,
-  HitModeKey,
-  LightConeKey,
-  RelicSetKey,
-} from '@genshin-optimizer/sr/consts'
+import type { CharacterKey, HitModeKey } from '@genshin-optimizer/sr/consts'
 import { allCharacterKeys, allHitModeKeys } from '@genshin-optimizer/sr/consts'
 import type { ICachedLightCone, ICachedRelic } from '../../Interfaces'
 import type { IBuildTc } from '../../Interfaces/IBuildTc'
+import type { ConditionalValues } from '../../Types/conditional'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
 import type { Build } from './BuildDataManager'
 import { initCharTC, toBuildTc } from './BuildTcDataManager'
 
-type CondKey = CharacterKey | RelicSetKey | LightConeKey
-export type IConditionalValues = Partial<
-  Record<CondKey, { [key: string]: string }>
->
 export interface Loadout {
   key: CharacterKey
 
   name: string
   description: string
 
-  conditional: IConditionalValues
+  conditional: ConditionalValues
 
   hitMode: HitModeKey
 
