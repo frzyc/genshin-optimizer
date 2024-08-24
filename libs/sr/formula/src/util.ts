@@ -127,23 +127,28 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     // Team Buff
     members.flatMap((dst) => {
       const entry = self.with('src', dst)
-      return members.map((src) => entry.reread(teamBuff.withTag({ dst, src })))
+      return members.map((src) =>
+        entry.reread(teamBuff.withTag({ dst, src, name: null }))
+      )
     }),
     // Not Self Buff
     members.flatMap((dst) => {
       const entry = self.with('src', dst)
       return members
-        .map((src) => entry.reread(notSelfBuff.withTag({ dst, src })))
-        .filter(({ value }) => value.tag!['dst'] != value.tag!['src'])
+        .filter((src) => src !== dst)
+        .map((src) =>
+          entry.reread(notSelfBuff.withTag({ dst, src, name: null }))
+        )
     }),
     // Enemy Debuff
-    members.map((dst) =>
-      enemy.reread(reader.withTag({ et: 'enemyDeBuff', src: dst, dst: 'all' }))
+    members.map((src) =>
+      enemy.reread(
+        reader.withTag({ et: 'enemyDeBuff', dst: 'all', src, name: null })
+      )
     ),
     // Non-stacking
-    members.slice(0, 4).flatMap((_, i) => {
+    members.flatMap((src, i) => {
       const { stackIn, stackTmp } = reader.withAll('qt', [])
-      const src = `${i}` as '0' | '1' | '2' | '3'
       // Make sure not to use `sheet:agg` here to match `stackOut` on the `reader.addOnce` side
       const self = reader.withTag({ src, et: 'self' })
       // Use `i + 1` for priority so that `0` means no buff
