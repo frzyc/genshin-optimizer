@@ -126,6 +126,7 @@
         "libs/sr/dm-localization/src/index.ts"
       ],
       "@genshin-optimizer/sr/formula": ["libs/sr/formula/src/index.ts"],
+      "@genshin-optimizer/sr/formula-ui": ["libs/sr/formula-ui/src/index.ts"],
       "@genshin-optimizer/sr/i18n": ["libs/sr/i18n/src/index.ts"],
       "@genshin-optimizer/sr/i18n-node": ["libs/sr/i18n-node/src/index.ts"],
       "@genshin-optimizer/sr/page-characters": [

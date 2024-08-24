@@ -9,6 +9,7 @@ import { keys, values } from './data'
 export { Calculator } from './calculator'
 export type { SrcCondInfo } from './calculator'
 export * from './data/util'
+export * from './meta'
 export * from './util'
 
 export function srCalculatorWithValues(extras: TagMapEntries<number>) {

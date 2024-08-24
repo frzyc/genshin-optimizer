@@ -1,26 +1,27 @@
-import type { CharacterKey, LightConeKey } from '@genshin-optimizer/sr/consts'
-// import artifacts from './gen/artifacts'
-// import chars from './gen/chars'
-// import lightCones from './gen/lightCones'
-type characterAssetKey = 'icon' | 'cover'
+import type {
+  LightConeKey,
+  NonTrailblazerCharacterKey,
+  RelicSetKey,
+  RelicSlotKey,
+  TrailblazerGenderedKey,
+} from '@genshin-optimizer/sr/consts'
+import chars from './gen/chars'
+import lightCones from './gen/lightCones'
+import relics from './gen/relic'
+type characterAssetKey = 'icon' | 'basic_0'
 export function characterAsset(
-  _ck: CharacterKey,
+  ck: NonTrailblazerCharacterKey | TrailblazerGenderedKey,
   asset: characterAssetKey
-): string {
-  switch (asset) {
-    case 'icon':
-    default:
-      // return chars[ck][asset] ?? ''
-      throw new Error('TODO')
-  }
+) {
+  return chars[ck][asset]
 }
-export function lightConeAsset(_lck: LightConeKey) {
-  // return lightCones[lck]
-  throw new Error('TODO')
+type LightConeAssetKey = 'icon' | 'cover'
+export function lightConeAsset(lck: LightConeKey, asset: LightConeAssetKey) {
+  return lightCones[lck][asset]
 }
-// export function artifactAsset(
-//   ak: ArtifactSetKey,
-//   slotKey: ArtifactSlotKey
-// ): string {
-//   return artifacts[ak][slotKey] ?? ''
-// }
+
+export function relicAsset(rk: RelicSetKey, slotKey: RelicSlotKey) {
+  const relic = relics[rk]
+
+  return relic[slotKey as keyof typeof relic]
+}
