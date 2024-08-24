@@ -159,6 +159,10 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
           .add(cmpEq(stackTmp.max.with('et', 'team'), i + 1, stackIn)),
       ]
     }),
+    // Conditional: `src:all` imply `src:*`
+    members.map((src) =>
+      reader.withTag({ src, qt: 'cond' }).reread(reader.with('src', 'all'))
+    ),
     // Total Team Stat
     //
     // CAUTION:
