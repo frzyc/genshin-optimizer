@@ -173,8 +173,8 @@ export function convert<V extends Record<string, Record<string, Desc>>>(
 
 // Default queries
 const noName = { src: null, name: null }
-export const self = convert(selfTag, { et: 'self', dst: 'all' })
-export const team = convert(selfTag, { et: 'team', dst: 'all', ...noName })
+export const self = convert(selfTag, { et: 'self', dst: null })
+export const team = convert(selfTag, { et: 'team', dst: null, ...noName })
 export const target = convert(selfTag, { et: 'target', ...noName })
 export const enemy = convert(enemyTag, { et: 'enemy', dst: null, ...noName })
 
@@ -188,8 +188,8 @@ export const userBuff = convert(selfTag, { et: 'self', sheet: 'custom' })
 // Custom tags
 export const allStatics = (sheet: Sheet) =>
   reader.withTag({ et: 'self', sheet, qt: 'misc' }).withAll('q', [])
-export const allBoolConditionals = (sheet: Sheet, shared?: CondShareType) =>
-  allConditionals(sheet, shared, { type: 'bool' }, (r) => ({
+export const allBoolConditionals = (sheet: Sheet, ignored?: CondIgnored) =>
+  allConditionals(sheet, ignored, { type: 'bool' }, (r) => ({
     ifOn: (node: NumNode | number, off?: NumNode | number) =>
       cmpNE(r, 0, node, off),
     ifOff: (node: NumNode | number) => cmpEq(r, 0, node),
@@ -197,9 +197,9 @@ export const allBoolConditionals = (sheet: Sheet, shared?: CondShareType) =>
 export const allListConditionals = <T extends string>(
   sheet: Sheet,
   list: T[],
-  shared?: CondShareType
+  ignored?: CondIgnored
 ) =>
-  allConditionals(sheet, shared, { type: 'list', list }, (r) => ({
+  allConditionals(sheet, ignored, { type: 'list', list }, (r) => ({
     map: (table: Record<T, number>, def = 0) =>
       subscript(r, [def, ...list.map((v) => table[v] ?? def)]),
     value: r,
@@ -209,19 +209,23 @@ export const allNumConditionals = (
   int_only = true,
   min?: number,
   max?: number,
-  shared?: CondShareType
+  ignored?: CondIgnored
 ) =>
-  allConditionals(sheet, shared, { type: 'num', int_only, min, max }, (r) => r)
+  allConditionals(sheet, ignored, { type: 'num', int_only, min, max }, (r) => r)
 
-export const conditionalEntries = (sheet: Sheet, src: Member, dst: Member) => {
-  const base = self.withTag({ src, dst, sheet, qt: 'cond' }).withAll('q', [])
+type MemAll = Member | 'all'
+export const conditionalEntries = (sheet: Sheet, src: MemAll, dst: MemAll) => {
+  let tag: Tag = { sheet, qt: 'cond' }
+  if (src !== 'all') tag = { ...tag, src }
+  if (dst !== 'all') tag = { ...tag, dst }
+  const base = self.withTag(tag).withAll('q', [])
   return (name: string, val: string | number) => base[name].add(val)
 }
 
-type CondShareType = 'src' | 'dst' | 'none'
+type CondIgnored = 'both' | 'src' | 'dst' | 'none'
 function allConditionals<T>(
   sheet: Sheet,
-  shared: CondShareType = 'src',
+  shared: CondIgnored = 'src',
   meta: object,
   transform: (r: Read, q: string) => T
 ): Record<string, T> {
@@ -236,8 +240,9 @@ function allConditionals<T>(
     damageType1: null,
     damageType2: null,
   }
-  let base = reader.sum.withTag(baseTag)
-  if (shared !== 'none') base = base.with(shared, 'all')
+  let base = reader.max.withTag(baseTag)
+  if (shared === 'both') base = base.withTag({ src: null, dst: null })
+  else if (shared !== 'none') base = base.with(shared, null)
   if (metaList.conditionals) {
     const { conditionals } = metaList
     return base.withAll('q', [], (r, q) => {

@@ -30,7 +30,7 @@ export function CharacterCard({
       })
     )
   )
-  const member0 = convert(selfTag, { et: 'self', src: '0', dst: 'all' })
+  const member0 = convert(selfTag, { et: 'self', src: '0' })
   return (
     <CardThemed>
       <CardContent>

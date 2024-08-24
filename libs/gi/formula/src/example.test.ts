@@ -74,8 +74,8 @@ describe('example', () => {
     ],
     calc = genshinCalculatorWithEntries(data)
 
-  const member0 = convert(selfTag, { et: 'self', src: '0', dst: 'all' })
-  const member1 = convert(selfTag, { et: 'self', src: '1', dst: 'all' })
+  const member0 = convert(selfTag, { et: 'self', src: '0' })
+  const member1 = convert(selfTag, { et: 'self', src: '1' })
 
   test.skip('debug formula', () => {
     // Pick formula
@@ -164,7 +164,6 @@ describe('example', () => {
       test(`with name ${name}`, () => {
         expect(tag).toEqual({
           src: '0',
-          dst: 'all',
           et: 'self',
           sheet: 'Nahida',
           qt: 'formula',
@@ -220,7 +219,7 @@ describe('example', () => {
     // all conditionals affecting all formulas
     const conds = calc.listCondFormulas(member0.listing.formulas)
 
-    // Read current value: all -s> member0 Nilou:a1AfterHit
+    // Read current value: all -> member0 Nilou:a1AfterHit
     expect(conds['0']?.['all']?.['Nilou']?.['a1AfterHit']).toEqual(0)
 
     // Grab metadata from an entry
@@ -276,7 +275,7 @@ describe('weapon-only example', () => {
   const data: TagMapNodeEntries = [...weaponData(rawData[1].weapon as IWeapon)],
     calc = genshinCalculatorWithEntries(data)
 
-  const self = convert(selfTag, { et: 'self', dst: 'all' })
+  const self = convert(selfTag, { et: 'self' })
 
   test('calculate specialized stats', () => {
     const primary = calc.compute(self.weapon.primary)

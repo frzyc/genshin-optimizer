@@ -110,14 +110,17 @@ export function artifactsData(
  * @returns TagMapNodeEntires to be provided to calculator
  */
 export function conditionalData(
-  dst: Member,
+  dst: Member | 'all',
   data: Partial<
-    Record<Member, Partial<Record<Sheet, Record<string, string | number>>>>
+    Record<
+      Member | 'all',
+      Partial<Record<Sheet, Record<string, string | number>>>
+    >
   >
 ): TagMapNodeEntries {
   return Object.entries(data).flatMap(([src, entries]) =>
     Object.entries(entries).flatMap(([key, entries]) => {
-      const conds = conditionalEntries(key as Sheet, src as Member, dst)
+      const conds = conditionalEntries(key as Sheet, src as Member | 'all', dst)
       return Object.entries(entries).map(([k, v]) => conds(k, v))
     })
   )
@@ -133,30 +136,37 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     members.map((dst) =>
       reader
         .withTag({ et: 'target', dst })
-        .reread(reader.withTag({ et: 'self', src: dst, dst: 'all' }))
+        .reread(reader.withTag({ et: 'self', src: dst, dst: null }))
     ),
     // Team Buff
     members.flatMap((dst) => {
       const entry = self.with('src', dst)
-      return members.map((src) => entry.reread(teamBuff.withTag({ dst, src })))
+      return members.map((src) =>
+        entry.reread(teamBuff.withTag({ dst, src, name: null }))
+      )
     }),
     // Not Self Buff
     members.flatMap((dst) => {
       const entry = self.with('src', dst)
       return members
         .filter((src) => src !== dst)
-        .map((src) => entry.reread(notSelfBuff.withTag({ dst, src })))
+        .map((src) =>
+          entry.reread(notSelfBuff.withTag({ dst, src, name: null }))
+        )
     }),
     // Enemy Debuff
-    members.map((dst) =>
-      enemy.reread(reader.withTag({ et: 'enemyDeBuff', src: dst, dst: 'all' }))
+    members.map((src) =>
+      enemy.reread(
+        reader.withTag({ et: 'enemyDeBuff', dst: null, src, name: null })
+      )
     ),
     // Resonance Team Buff
-    self.reread(teamBuff.withTag({ et: 'teamBuff', sheet: 'reso' })),
+    self.reread(
+      teamBuff.withTag({ et: 'teamBuff', sheet: 'reso', name: null })
+    ),
     // Non-stacking
-    members.slice(0, 4).flatMap((_, i) => {
+    members.flatMap((src, i) => {
       const { stackIn, stackTmp } = reader.withAll('qt', [])
-      const src = `${i}` as '0' | '1' | '2' | '3'
       // Make sure not to use `sheet:agg` here to match `stackOut` on the `reader.addOnce` side
       const self = reader.withTag({ src, et: 'self' })
       // Use `i + 1` for priority so that `0` means no buff
@@ -178,7 +188,7 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     // final eleMas, where the outer query uses a `max` accumulator, while final eleMas
     // must use `sum` accumulator for a correct result.
     members.map((src) =>
-      teamEntry.add(reader.withTag({ et: 'self', src, dst: 'all' }).sum)
+      teamEntry.add(reader.withTag({ et: 'self', src, dst: null }).sum)
     ),
   ].flat()
 }
