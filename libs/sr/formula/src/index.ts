@@ -7,7 +7,7 @@ import { compileTagMapValues, constant } from '@genshin-optimizer/pando/engine'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
 export { Calculator } from './calculator'
-export type { SingleCondInfo } from './calculator'
+export type { SrcCondInfo } from './calculator'
 export * from './data/util'
 export * from './util'
 

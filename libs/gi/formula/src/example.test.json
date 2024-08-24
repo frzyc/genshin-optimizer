@@ -20,11 +20,13 @@
       "lock": false
     },
     "conditionals": {
-      "Nahida": {
-        "c2Bloom": 1
-      },
-      "KeyOfKhajNisut": {
-        "afterSkillStacks": 3
+      "all": {
+        "Nahida": {
+          "c2Bloom": 1
+        },
+        "KeyOfKhajNisut": {
+          "afterSkillStacks": 3
+        }
       }
     }
   },

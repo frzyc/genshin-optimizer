@@ -1,3 +1,4 @@
+export * from './useBuild'
 export * from './useCharacter'
 export * from './useCharacterReducer'
 export * from './useEquippedRelics'
