@@ -12,8 +12,12 @@ const emptyInfo: Info = Object.freeze({ conds: Object.freeze({}) })
 const { arithmetic } = calculation
 
 type MemRec<V> = Partial<Record<Member, V>>
+export type SingleCondInfo = Partial<
+  Record<Sheet, Record<string, string | number>>
+>
+type SrcCondInfo = MemRec<SingleCondInfo>
 /// conds[dst][src][sheet][name]
-type CondInfo = MemRec<MemRec<Partial<Record<Sheet, Record<string, number>>>>>
+type CondInfo = MemRec<SrcCondInfo>
 
 export type CalcMeta = PartialMeta & Info
 export type PartialMeta = {

@@ -5,7 +5,8 @@ import type {
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IWeapon } from '@genshin-optimizer/gi/good'
 import { cmpEq, cmpNE } from '@genshin-optimizer/pando/engine'
-import type { Member, Preset, Sheet, TagMapNodeEntries } from './data/util'
+import type { SingleCondInfo } from './calculator'
+import type { Member, Preset, TagMapNodeEntries } from './data/util'
 import {
   conditionalEntries,
   convert,
@@ -106,21 +107,15 @@ export function artifactsData(
 /**
  * Generate conditional TagMapNodeEntry for calculator. Should be provided outside of any member data, in order to preserve specified 'src'
  * @param dst member to apply conditionals to
- * @param data conditional data in `Src: { Sheet: { CondKey: value } }` format. Src can be 'all', unless the buff is possibly duplicated (e.g. artifact team buff). In that case, you should specify the src member
- * @returns TagMapNodeEntires to be provided to calculator
+ * @param data conditional data in `{ Sheet: { CondKey: value } }` format. Src will always be 'all'. If the buff is possibly duplicated, but non-stacking (e.g. relic team buff), we take the buff from highest member index.
+ * @returns
  */
-export function conditionalData(
-  dst: Member,
-  data: Partial<
-    Record<Member, Partial<Record<Sheet, Record<string, string | number>>>>
-  >
-): TagMapNodeEntries {
-  return Object.entries(data).flatMap(([src, entries]) =>
-    Object.entries(entries).flatMap(([key, entries]) => {
-      const conds = conditionalEntries(key as Sheet, src as Member, dst)
-      return Object.entries(entries).map(([k, v]) => conds(k, v))
-    })
-  )
+export function conditionalData(dst: Member, data: SingleCondInfo | undefined) {
+  if (!data) return []
+  return Object.entries(data).flatMap(([sheet, entries]) => {
+    const conds = conditionalEntries(sheet, 'all', dst)
+    return Object.entries(entries).map(([k, v]) => conds(k, v))
+  })
 }
 
 export function teamData(members: readonly Member[]): TagMapNodeEntries {
