@@ -41,8 +41,7 @@ export default function TeammateDisplay({ tab }: { tab?: string }) {
 
   const member = convert(selfTag, {
     et: 'self',
-    src: members[teammateIndex + 1],
-    dst: 'all',
+    src: members[teammateIndex],
   })
   return (
     <Box>

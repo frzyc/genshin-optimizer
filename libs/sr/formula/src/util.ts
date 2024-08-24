@@ -128,23 +128,28 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     // Team Buff
     members.flatMap((dst) => {
       const entry = self.with('src', dst)
-      return members.map((src) => entry.reread(teamBuff.withTag({ dst, src })))
+      return members.map((src) =>
+        entry.reread(teamBuff.withTag({ dst, src, name: null }))
+      )
     }),
     // Not Self Buff
     members.flatMap((dst) => {
       const entry = self.with('src', dst)
       return members
-        .map((src) => entry.reread(notSelfBuff.withTag({ dst, src })))
-        .filter(({ value }) => value.tag!['dst'] != value.tag!['src'])
+        .filter((src) => src !== dst)
+        .map((src) =>
+          entry.reread(notSelfBuff.withTag({ dst, src, name: null }))
+        )
     }),
     // Enemy Debuff
-    members.map((dst) =>
-      enemy.reread(reader.withTag({ et: 'enemyDeBuff', src: dst, dst: 'all' }))
+    members.map((src) =>
+      enemy.reread(
+        reader.withTag({ et: 'enemyDeBuff', dst: null, src, name: null })
+      )
     ),
     // Non-stacking
-    members.slice(0, 4).flatMap((_, i) => {
+    members.flatMap((src, i) => {
       const { stackIn, stackTmp } = reader.withAll('qt', [])
-      const src = `${i}` as '0' | '1' | '2' | '3'
       // Make sure not to use `sheet:agg` here to match `stackOut` on the `reader.addOnce` side
       const self = reader.withTag({ src, et: 'self' })
       // Use `i + 1` for priority so that `0` means no buff
@@ -155,6 +160,7 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
           .add(cmpEq(stackTmp.max.with('et', 'team'), i + 1, stackIn)),
       ]
     }),
+
     // Total Team Stat
     //
     // CAUTION:
@@ -176,7 +182,10 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
  * @param data conditional data in `{ Sheet: { CondKey: value } }` format. Src will always be 'all'. If the buff is possibly duplicated, but non-stacking (e.g. relic team buff), we take the buff from highest member index.
  * @returns
  */
-export function conditionalData(dst: Member, data: SingleCondInfo | undefined) {
+export function conditionalData(
+  dst: Member | 'all',
+  data: SingleCondInfo | undefined
+) {
   if (!data) return []
   return Object.entries(data).flatMap(([sheet, entries]) => {
     const conds = conditionalEntries(sheet, 'all', dst)

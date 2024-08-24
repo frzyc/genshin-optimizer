@@ -25,7 +25,7 @@ const symbolsConsumedArr = range(1, 3)
 const eleMas = lookup(
   condSymbolsConsumed,
   objKeyMap(symbolsConsumedArr, (symbol) =>
-    prod(symbol, subscript(input.weapon.refinement, eleMasArr, { unit: '%' }))
+    prod(symbol, subscript(input.weapon.refinement, eleMasArr))
   ),
   naught
 )

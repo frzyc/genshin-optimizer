@@ -60,7 +60,7 @@ export function TeamCalcProvider({
         ...teamData(
           team.loadoutMetadata
             .map((meta, index) =>
-              meta === undefined ? undefined : members[index + 1]
+              meta === undefined ? undefined : members[index]
             )
             .filter((m): m is Member => !!m)
         ),
