@@ -4,7 +4,7 @@ import {
   crawlObjectAsync,
   layeredAssignment,
 } from '@genshin-optimizer/common/util'
-import { AssetData } from '@genshin-optimizer/sr/assets-data'
+import { AssetData, CommonAssetData } from '@genshin-optimizer/sr/assets-data'
 import { DM2D_PATH } from '@genshin-optimizer/sr/dm'
 import { workspaceRoot } from '@nx/devkit'
 import * as fs from 'fs'
@@ -33,10 +33,11 @@ export default async function runExecutor(
   // Dump out the asset List.
   // Best effort and since most of the time we don't use this
   console.log(options)
+  const totalData = { ...AssetData, ...CommonAssetData }
   if (options.fetchAssets === 'local' && fs.existsSync(DM2D_PATH)) {
     console.log('Copying files')
     crawlObject(
-      AssetData,
+      totalData,
       [],
       (s) => typeof s === 'string' || Array.isArray(s),
       (filePath: string | string[], keys) => {
@@ -60,7 +61,7 @@ export default async function runExecutor(
   } else if (options.fetchAssets === 'yatta') {
     console.log('Fetching from yatta.top')
     await crawlObjectAsync(
-      AssetData,
+      totalData,
       [],
       (s) => typeof s === 'string' || Array.isArray(s),
       async (filePath: string | string[], keys) => {
@@ -89,7 +90,7 @@ export default async function runExecutor(
   // Extract just the filename for the index files
   const indexData = {}
   crawlObject(
-    AssetData,
+    totalData,
     [],
     (s) => typeof s === 'string' || Array.isArray(s),
     (filePath: string | string[], keys) => {
