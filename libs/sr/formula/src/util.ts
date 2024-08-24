@@ -143,7 +143,7 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     // Enemy Debuff
     members.map((src) =>
       enemy.reread(
-        reader.withTag({ et: 'enemyDeBuff', dst: 'all', src, name: null })
+        reader.withTag({ et: 'enemyDeBuff', dst: null, src, name: null })
       )
     ),
     // Non-stacking
@@ -159,10 +159,7 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
           .add(cmpEq(stackTmp.max.with('et', 'team'), i + 1, stackIn)),
       ]
     }),
-    // Conditional: `src:all` imply `src:*`
-    members.map((src) =>
-      reader.withTag({ src, qt: 'cond' }).reread(reader.with('src', 'all'))
-    ),
+
     // Total Team Stat
     //
     // CAUTION:
@@ -185,9 +182,12 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
  * @returns
  */
 export function conditionalData(
-  dst: Member,
+  dst: Member | 'all',
   data: Partial<
-    Record<Member, Partial<Record<Sheet, Record<string, string | number>>>>
+    Record<
+      Member | 'all',
+      Partial<Record<Sheet, Record<string, string | number>>>
+    >
   >
 ) {
   return Object.entries(data).flatMap(([src, entries]) =>

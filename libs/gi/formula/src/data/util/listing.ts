@@ -53,7 +53,7 @@ export const sheets = [
   'enemy',
   'custom',
 ] as const
-export const members = ['all', '0', '1', '2', '3'] as const
+export const members = ['0', '1', '2', '3'] as const
 
 export type Stat = (typeof stats)[number]
 export type Preset = (typeof presets)[number]

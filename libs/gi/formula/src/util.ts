@@ -110,14 +110,17 @@ export function artifactsData(
  * @returns TagMapNodeEntires to be provided to calculator
  */
 export function conditionalData(
-  dst: Member,
+  dst: Member | 'all',
   data: Partial<
-    Record<Member, Partial<Record<Sheet, Record<string, string | number>>>>
+    Record<
+      Member | 'all',
+      Partial<Record<Sheet, Record<string, string | number>>>
+    >
   >
 ): TagMapNodeEntries {
   return Object.entries(data).flatMap(([src, entries]) =>
     Object.entries(entries).flatMap(([key, entries]) => {
-      const conds = conditionalEntries(key as Sheet, src as Member, dst)
+      const conds = conditionalEntries(key as Sheet, src as Member | 'all', dst)
       return Object.entries(entries).map(([k, v]) => conds(k, v))
     })
   )
@@ -133,7 +136,7 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     members.map((dst) =>
       reader
         .withTag({ et: 'target', dst })
-        .reread(reader.withTag({ et: 'self', src: dst, dst: 'all' }))
+        .reread(reader.withTag({ et: 'self', src: dst, dst: null }))
     ),
     // Team Buff
     members.flatMap((dst) => {
@@ -154,7 +157,7 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     // Enemy Debuff
     members.map((src) =>
       enemy.reread(
-        reader.withTag({ et: 'enemyDeBuff', dst: 'all', src, name: null })
+        reader.withTag({ et: 'enemyDeBuff', dst: null, src, name: null })
       )
     ),
     // Resonance Team Buff
@@ -174,10 +177,7 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
           .add(cmpEq(stackTmp.max.with('et', 'team'), i + 1, stackIn)),
       ]
     }),
-    // Conditional: `src:all` imply `src:*`
-    members.map((src) =>
-      reader.withTag({ src, qt: 'cond' }).reread(reader.with('src', 'all'))
-    ),
+
     // Total Team Stat
     //
     // CAUTION:
@@ -188,7 +188,7 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     // final eleMas, where the outer query uses a `max` accumulator, while final eleMas
     // must use `sum` accumulator for a correct result.
     members.map((src) =>
-      teamEntry.add(reader.withTag({ et: 'self', src, dst: 'all' }).sum)
+      teamEntry.add(reader.withTag({ et: 'self', src, dst: null }).sum)
     ),
   ].flat()
 }
