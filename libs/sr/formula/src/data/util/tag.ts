@@ -236,7 +236,7 @@ function allConditionals<T>(
     damageType1: null,
     damageType2: null,
   }
-  let base = reader.sum.withTag(baseTag)
+  let base = reader.max.withTag(baseTag)
   if (shared !== 'none') base = base.with(shared, 'all')
   if (metaList.conditionals) {
     const { conditionals } = metaList
