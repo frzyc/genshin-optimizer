@@ -8,7 +8,11 @@ import type {
   ICachedRelic,
   LoadoutMetadatum,
 } from '@genshin-optimizer/sr/db'
-import type { Member, TagMapNodeEntries } from '@genshin-optimizer/sr/formula'
+import type {
+  Member,
+  SingleCondInfo,
+  TagMapNodeEntries,
+} from '@genshin-optimizer/sr/formula'
 import {
   charData,
   conditionalData,
@@ -33,6 +37,7 @@ type CharacterFullData = {
   character: ICachedCharacter | undefined
   lightCone: ICachedLightCone | undefined
   relics: Record<RelicSlotKey, ICachedRelic | undefined>
+  conditionals: SingleCondInfo | undefined // Assumes dst is the character
 }
 
 export function TeamCalcProvider({
@@ -86,19 +91,19 @@ function useCharacterAndEquipment(
   loadoutMetadatum: LoadoutMetadatum | undefined
 ): CharacterFullData | undefined {
   const { database } = useDatabaseContext()
-  const character = useCharacter(
-    database.loadouts.get(loadoutMetadatum?.loadoutId)?.key
-  )
+  const loadout = database.loadouts.get(loadoutMetadatum?.loadoutId)
+  const character = useCharacter(loadout?.key)
   // TODO: Handle tc build
   const build = database.builds.get(loadoutMetadatum?.buildId)
   const lightCone = useLightCone(build?.lightConeId)
   const relics = useEquippedRelics(build?.relicIds)
-  return { character, lightCone, relics }
+  const conditionals = loadout?.conditional
+  return { character, lightCone, relics, conditionals }
 }
 
 function createMember(
   memberIndex: 0 | 1 | 2 | 3,
-  { character, lightCone, relics }: CharacterFullData
+  { character, lightCone, relics, conditionals }: CharacterFullData
 ): TagMapNodeEntries {
   return !character
     ? []
@@ -124,16 +129,6 @@ function createMember(
               }))
           )
         ),
-        // TODO: Conditionals
-        ...conditionalData('0', {
-          // Only 1 Ruan Mei on a team, so src doesn't matter
-          all: {
-            RuanMei: {
-              skillOvertone: 1,
-              ultZone: 1,
-              e4Broken: 1,
-            },
-          },
-        }),
+        ...conditionalData(`${memberIndex}`, conditionals),
       ]
 }
