@@ -9,7 +9,7 @@ export * from './keys'
 export * from './subset'
 export * from './type'
 
-/** `TagMap` speciallized in finding entries with matching tags, ignoring extraneous tag categories in the entry tags. */
+/** `TagMap` specialized in finding entries with matching tags, ignoring extraneous tag categories in the entry tags. */
 export class TagMapSubset<V> {
   keys: TagMapKeys
   values: TagMapSubsetValues<V>
@@ -21,8 +21,5 @@ export class TagMapSubset<V> {
 
   subset(tag: Tag): V[] {
     return this.values.subset(this.keys.get(tag))
-  }
-  cache() {
-    return this.values.cache(this.keys)
   }
 }
