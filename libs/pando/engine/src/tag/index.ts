@@ -4,7 +4,7 @@ import { TagMapSubsetValues } from './subset'
 import type { Tag } from './type'
 
 export * from './compilation'
-export * from './exact'
+export * from './dedup'
 export * from './keys'
 export * from './subset'
 export * from './type'

@@ -16,9 +16,8 @@ export type RawTagMapKeys = {
 }
 
 /**
- * Serializable data for `TagMapExactValues` and `TagMapSubsetValues`.
- * The format is not stabilized. Use `compileTagMapValues` to construct
- * a valid object.
+ * Serializable data for `TagMapSubsetValues`. The format is not
+ * stabilized. Use `compileTagMapValues` to construct a valid object.
  */
 export type RawTagMapValues<V> = {
   [key in string]?: RawTagMapValues<V>

@@ -36,6 +36,15 @@ export class TagMapSubsetValues<V> {
     }
     return crawl(this.internal, 0), result
   }
+  debugTag(id: TagID): Tag[] {
+    const result: Tag[] = [],
+      tagLen = this.tagLen
+    function crawl(v: Internal<V>, offset: number): void {
+      if (offset === tagLen) result.push(...v.tags)
+      else v.subset(id[offset]!).forEach((v) => crawl(v, offset + 1))
+    }
+    return crawl(this.internal, 0), result
+  }
 
   cache(keys: TagMapKeys): TagMapSubsetCache<V> {
     const tagLen = keys.tagLen
