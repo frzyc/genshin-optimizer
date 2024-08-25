@@ -1,3 +1,4 @@
+import { useDatabaseTally } from '@genshin-optimizer/common/database-ui'
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
 import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
 import { Settings } from '@mui/icons-material'
@@ -26,7 +27,7 @@ import {
   useTheme,
 } from '@mui/material'
 import type { ReactElement, ReactNode } from 'react'
-import { Suspense, useEffect, useState } from 'react'
+import { Suspense, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useMatch } from 'react-router-dom'
 
@@ -79,59 +80,43 @@ const settings: ITab = {
 
 function RelicChip() {
   const { database } = useDatabaseContext()
-  const [total, setTotal] = useState(database.relics.keys.length)
-  useEffect(
-    () =>
-      database.relics.followAny(
-        (_k, r) =>
-          ['new', 'remove'].includes(r) && setTotal(database.relics.keys.length)
-      ),
-    [database]
+  return (
+    <Chip
+      label={<strong>{useDatabaseTally(database.relics)}</strong>}
+      size="small"
+    />
   )
-  return <Chip label={<strong>{total}</strong>} size="small" />
 }
 
 function LightConeChip() {
   const { database } = useDatabaseContext()
-  const [total, setTotal] = useState(database.lightCones.keys.length)
-  useEffect(
-    () =>
-      database.lightCones.followAny(
-        (_k, r) =>
-          ['new', 'remove'].includes(r) &&
-          setTotal(database.lightCones.keys.length)
-      ),
-    [database]
+
+  return (
+    <Chip
+      label={<strong>{useDatabaseTally(database.lightCones)}</strong>}
+      size="small"
+    />
   )
-  return <Chip label={<strong>{total}</strong>} size="small" />
 }
 
 function CharacterChip() {
   const { database } = useDatabaseContext()
-  const [total, setTotal] = useState(database.lightCones.keys.length)
-  useEffect(
-    () =>
-      database.chars.followAny(
-        (_k, r) =>
-          ['new', 'remove'].includes(r) && setTotal(database.chars.keys.length)
-      ),
-    [database]
+  return (
+    <Chip
+      label={<strong>{useDatabaseTally(database.chars)}</strong>}
+      size="small"
+    />
   )
-  return <Chip label={<strong>{total}</strong>} size="small" />
 }
 
 function TeamChip() {
   const { database } = useDatabaseContext()
-  const [total, setTotal] = useState(database.teams.keys.length)
-  useEffect(
-    () =>
-      database.teams.followAny(
-        (_k, r) =>
-          ['new', 'remove'].includes(r) && setTotal(database.teams.keys.length)
-      ),
-    [database]
+  return (
+    <Chip
+      label={<strong>{useDatabaseTally(database.teams)}</strong>}
+      size="small"
+    />
   )
-  return <Chip label={<strong>{total}</strong>} size="small" />
 }
 
 export default function Header({ anchor }: { anchor: string }) {

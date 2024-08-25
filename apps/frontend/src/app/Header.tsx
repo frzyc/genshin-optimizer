@@ -1,4 +1,4 @@
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { useDatabaseTally } from '@genshin-optimizer/common/database-ui'
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { FlowerIcon } from '@genshin-optimizer/gi/svgicons'
@@ -29,7 +29,7 @@ import {
   useTheme,
 } from '@mui/material'
 import type { ReactElement, ReactNode } from 'react'
-import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
+import { Suspense, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useMatch } from 'react-router-dom'
 import go_icon from './go_icon.png'
@@ -114,55 +114,19 @@ function Tally({ children }: { children: ReactNode }) {
 }
 function ArtifactChip() {
   const database = useDatabase()
-  const [dirty, setDirty] = useForceUpdate()
-  useEffect(
-    () => database.arts.followAny(() => setDirty()),
-    [database, setDirty]
-  )
-  const total = useMemo(
-    () => dirty && database.arts.keys.length,
-    [dirty, database]
-  )
-  return <Tally>{total}</Tally>
+  return <Tally>{useDatabaseTally(database.arts)}</Tally>
 }
 function CharacterChip() {
   const database = useDatabase()
-  const [dirty, setDirty] = useForceUpdate()
-  useEffect(
-    () => database.chars.followAny(() => setDirty()),
-    [database, setDirty]
-  )
-  const total = useMemo(
-    () => dirty && database.chars.keys.length,
-    [dirty, database]
-  )
-  return <Tally>{total}</Tally>
+  return <Tally>{useDatabaseTally(database.chars)}</Tally>
 }
 function TeamChip() {
   const database = useDatabase()
-  const [dirty, setDirty] = useForceUpdate()
-  useEffect(
-    () => database.teams.followAny(() => setDirty()),
-    [database, setDirty]
-  )
-  const total = useMemo(
-    () => dirty && database.teams.keys.length,
-    [dirty, database]
-  )
-  return <Tally>{total}</Tally>
+  return <Tally>{useDatabaseTally(database.teams)}</Tally>
 }
 function WeaponChip() {
   const database = useDatabase()
-  const [dirty, setDirty] = useForceUpdate()
-  useEffect(
-    () => database.weapons.followAny(() => setDirty()),
-    [database, setDirty]
-  )
-  const total = useMemo(
-    () => dirty && database.weapons.keys.length,
-    [database, dirty]
-  )
-  return <Tally>{total}</Tally>
+  return <Tally>{useDatabaseTally(database.weapons)}</Tally>
 }
 
 export default function Header({ anchor }: { anchor: string }) {
