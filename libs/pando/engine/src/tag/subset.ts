@@ -4,10 +4,10 @@ import type { TagID } from './keys'
 import { entryKey, entryVal } from './symb'
 import type { Tag } from './type'
 
-type Leaf<V> = { [entryVal]: V[]; [entryKey]?: Tag[] }
+type Leaf<V> = { [entryVal]: V[];[entryKey]?: Tag[] }
 
 /**
- * `TagMap` speciallized in finding entries with matching tags, ignoring
+ * `TagMap` specialized in finding entries with matching tags, ignoring
  * extraneous tag categories in the entry tags. Operates on `TagID`
  * instead of `Tag`.
  */

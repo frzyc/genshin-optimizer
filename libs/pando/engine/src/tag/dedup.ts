@@ -2,6 +2,10 @@ import type { TagID, TagMapKeys } from './keys'
 import type { Tag } from './type'
 
 export type DedupTag<V = never> = Leaf<V>
+/**
+ * A group of deduplicated tags. `DedupTag`s of the same `Tag`
+ * are guaranteed to be the same reference.
+ */
 export class DedupTags<V = never> {
   root = new Internal<V>(undefined!)
   keys: TagMapKeys
@@ -12,7 +16,7 @@ export class DedupTags<V = never> {
     this.empty = this.at({})
   }
 
-  at(tag: Tag): Leaf<V> {
+  at(tag: Tag): DedupTag<V> {
     const id = this.keys.get(tag)
     const cur = id.reduce((cur, id) => cur.child(id), this.root)
     if (!cur.leaf) cur.leaf = new Leaf(tag, id, this.keys, cur)
@@ -54,6 +58,7 @@ class Leaf<V> {
     this.internal = internal
   }
 
+  /** Item associated with tag `{ ...this.tag, tag }` */
   with(tag: Tag): Leaf<V> {
     const { id, firstReplacedByte: first } = this.keys.combine(this.id, tag)
     let cur = this.internal
