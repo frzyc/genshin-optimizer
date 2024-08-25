@@ -15,8 +15,8 @@ import type {
 /**
  * Most of functions here cache the calculation/traversal, and will skip any nodes
  * that they visit more than once. This caching will not work on nodes containing
- * `Tag`-related nodes. So they are default disallowed here, as reflected in the
- * `OP` redeclaration here.
+ * `Tag`-related nodes. So they are disallowed by default here, as reflected in
+ * this `OP` redeclaration.
  */
 type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
 export type NumTagFree = NumNode<OP>
