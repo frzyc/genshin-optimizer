@@ -61,8 +61,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
         })
       }
     })
-    cache.val = { pre }
-    return cache.val
+    return (cache.val = { pre })
   }
   override _compute(
     n: AnyNode,

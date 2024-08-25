@@ -53,8 +53,7 @@ export class Calculator<M = any> {
           ? this._gather(cache.with(n.tag)).pre
           : [this.markGathered(cache.tag, n, this._compute(n, cache))]
       )
-    cache.val = { pre }
-    return cache.val
+    return (cache.val = { pre })
   }
 
   _compute(n: StrNode, cache: TagCache<M>): CalcResult<string, M>
@@ -85,9 +84,8 @@ export class Calculator<M = any> {
       case 'lookup': {
         const br = n.br.map((br) => this._compute(br, cache)),
           branchID = branching[op](getV(br), n.ex)
-        const x = [...Array(n.x.length)],
-          result = this._compute(n.x[branchID]!, cache)
-        x[branchID] = result
+        const x = [...Array(n.x.length)]
+        const result = (x[branchID] = this._compute(n.x[branchID]!, cache))
         return finalize(result.val, x, br)
       }
       case 'subscript': {
@@ -119,8 +117,7 @@ export class Calculator<M = any> {
         if (isDebug('calc') && ex === 'unique' && pre.length !== 1)
           throw new Error(`Ill-form read for ${tagString(newCache.tag)}`)
         const val = arithmetic[ex](getV(pre) as number[], undefined)
-        computed[ex] = finalize(val, pre, [], newCache.tag)
-        return computed[ex]
+        return (computed[ex] = finalize(val, pre, [], newCache.tag))
       }
       case 'custom': {
         const x = n.x.map((n) => this._compute(n, cache))
