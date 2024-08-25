@@ -1,4 +1,5 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CalcContext } from '@genshin-optimizer/pando/ui-sheet'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import type { ICachedRelic } from '@genshin-optimizer/sr/db'
 import type { Read } from '@genshin-optimizer/sr/formula'
@@ -9,7 +10,6 @@ import {
   OptimizationTargetSelector,
   StatFilterCard,
   WorkerSelector,
-  useCalcContext,
   useDatabaseContext,
 } from '@genshin-optimizer/sr/ui'
 import CloseIcon from '@mui/icons-material/Close'
@@ -22,14 +22,21 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 import { useTranslation } from 'react-i18next'
 
 export default function Optimize() {
   const { t } = useTranslation('optimize')
   const { database } = useDatabaseContext()
 
-  const { calc } = useCalcContext()
+  const calc = useContext(CalcContext)
 
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<ProgressResult | undefined>(

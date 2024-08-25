@@ -1,5 +1,5 @@
-import type { convert, selfTag } from '@genshin-optimizer/gi/formula'
+import type { NumNode, Tag } from '@genshin-optimizer/pando/engine'
 import { createContext } from 'react'
-export const MemberContext = createContext<ReturnType<
-  typeof convert<typeof selfTag>
-> | null>(null)
+export const MemberContext = createContext<{
+  withTag: (t: Tag) => NumNode
+} | null>(null)

@@ -1,3 +1,5 @@
+import type { Calculator } from '@genshin-optimizer/pando/engine'
+import { CalcContext } from '@genshin-optimizer/pando/ui-sheet'
 import type {
   CharacterKey,
   RelicSlotKey,
@@ -28,8 +30,6 @@ import {
 } from '@genshin-optimizer/sr/formula'
 import type { ReactNode } from 'react'
 import { useMemo } from 'react'
-import type { CalcContextObj } from '../Context/CalcContext'
-import { CalcContext } from '../Context/CalcContext'
 import {
   useBuild,
   useCharacter,
@@ -81,9 +81,9 @@ export function TeamCalcProvider({
     memberIndexMap
   )
 
-  const calcContextObj: CalcContextObj = useMemo(
-    () => ({
-      calc: srCalculatorWithEntries([
+  const calc: Calculator = useMemo(
+    () =>
+      srCalculatorWithEntries([
         // Specify members present in the team
         ...teamData(
           team.loadoutMetadata
@@ -104,15 +104,10 @@ export function TeamCalcProvider({
         enemyDebuff.common.maxToughness.add(100),
         selfBuff.common.critMode.add('avg'),
       ]),
-    }),
     [member0, member1, member2, member3, team.loadoutMetadata]
   )
 
-  return (
-    <CalcContext.Provider value={calcContextObj}>
-      {children}
-    </CalcContext.Provider>
-  )
+  return <CalcContext.Provider value={calc}>{children}</CalcContext.Provider>
 }
 
 function useCharacterAndEquipment(

@@ -11,19 +11,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
     name: chg('abilities.basic.0.name'),
     img: characterAsset(key, 'basic_0'),
     documents: [
-      {
-        type: 'text',
-        text: chg('auto.fields.normal'),
-      },
-      {
-        type: 'fields',
-        fields: Object.entries(formulas.RuanMei)
-          .filter(([key]) => key.startsWith('normal'))
-          .map(([_, { tag }], i) => ({
-            title: chg(`auto.skillParams.${i}`),
-            fieldRef: tag,
-          })),
-      },
       { type: 'text', text: chg(`abilities.basic.0.fullDesc`) },
       {
         type: 'fields',

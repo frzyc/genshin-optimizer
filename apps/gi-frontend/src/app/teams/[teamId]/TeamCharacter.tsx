@@ -1,6 +1,7 @@
 'use client'
 
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import type { Calculator } from '@genshin-optimizer/gi/formula'
 import { convert, selfTag } from '@genshin-optimizer/gi/formula'
 import { CalcContext, MemberContext } from '@genshin-optimizer/pando/ui-sheet'
 import { CardContent, CardHeader, Stack, Typography } from '@mui/material'
@@ -50,7 +51,7 @@ function Content({ character }: { character: TeamLoadoutCharacter }) {
             <Typography>Talent</Typography>
           </CardContent>
         </CardThemed>
-        <CharacterTalentPane character={character} calc={calc} />
+        <CharacterTalentPane character={character} calc={calc as Calculator} />
       </Stack>
     </MemberContext.Provider>
   )
