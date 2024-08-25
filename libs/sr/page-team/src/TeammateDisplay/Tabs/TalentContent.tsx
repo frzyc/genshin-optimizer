@@ -6,11 +6,12 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import type { UISheetElement } from '@genshin-optimizer/pando/ui-sheet'
-import { CalcContext, DocumentDisplay } from '@genshin-optimizer/pando/ui-sheet'
+import { DocumentDisplay } from '@genshin-optimizer/pando/ui-sheet'
 import { maxEidolonCount } from '@genshin-optimizer/sr/consts'
 import { convert, selfTag } from '@genshin-optimizer/sr/formula'
 import {
   uiSheets,
+  useSrCalcContext,
   type TalentSheetElementKey,
 } from '@genshin-optimizer/sr/formula-ui'
 import { useLoadoutContext } from '@genshin-optimizer/sr/ui'
@@ -25,7 +26,7 @@ import {
   useTheme,
 } from '@mui/material'
 import type { ReactNode } from 'react'
-import { useCallback, useContext } from 'react'
+import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
 const talentSpacing = {
@@ -38,7 +39,7 @@ export default function CharacterTalentPane() {
   const {
     loadout: { key: characterKey },
   } = useLoadoutContext()
-  const calc = useContext(CalcContext)
+  const calc = useSrCalcContext()
   const { t } = useTranslation('sheet_gen')
 
   const skillBurstList = [
@@ -315,7 +316,7 @@ function SkillDisplayCard({
 
 export function ConstellationDropdown() {
   const { t } = useTranslation('sheet_gen')
-  const calc = useContext(CalcContext)
+  const calc = useSrCalcContext()
   if (!calc) return null
   const member0 = convert(selfTag, { et: 'self', src: '0' })
   const constellation = calc.compute(member0.char.eidolon).val

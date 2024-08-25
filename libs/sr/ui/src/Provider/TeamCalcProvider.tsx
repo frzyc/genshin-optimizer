@@ -1,4 +1,3 @@
-import type { Calculator } from '@genshin-optimizer/pando/engine'
 import { CalcContext } from '@genshin-optimizer/pando/ui-sheet'
 import type {
   CharacterKey,
@@ -81,7 +80,7 @@ export function TeamCalcProvider({
     memberIndexMap
   )
 
-  const calc: Calculator = useMemo(
+  const calc = useMemo(
     () =>
       srCalculatorWithEntries([
         // Specify members present in the team

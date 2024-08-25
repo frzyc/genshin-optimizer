@@ -1,9 +1,8 @@
-import type { Calculator } from '@genshin-optimizer/pando/engine'
 import { detach } from '@genshin-optimizer/pando/engine'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { allRelicSetKeys } from '@genshin-optimizer/sr/consts'
 import type { ICachedRelic } from '@genshin-optimizer/sr/db'
-import type { Read, Tag } from '@genshin-optimizer/sr/formula'
+import type { Calculator, Read, Tag } from '@genshin-optimizer/sr/formula'
 import type {
   ParentCommand,
   ParentCommandTerminate,
