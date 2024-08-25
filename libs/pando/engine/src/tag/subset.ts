@@ -8,7 +8,7 @@ type Leaf<V> = { [entryVal]: V[]; [entryKey]?: Tag[] }
 
 /**
  * `TagMap` specialized in finding entries with matching tags, ignoring
- * extraneous tag categories in the entry tags. Operates on `TagID`
+ * extraneous tag categories in the entry tags. Operates on `TagId`
  * instead of `Tag`.
  */
 export class TagMapSubsetValues<V> {

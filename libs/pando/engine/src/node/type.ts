@@ -81,7 +81,7 @@ export interface DynamicTag<Output, PermitOP extends OP = OP>
   extends Base<'dtag' & PermitOP, Output, StrNode<PermitOP>> {
   ex: string[]
 }
-/** Tag value associated with a category, or '' of the value does not exist */
+/** Tag value associated with a category, or '' if the value does not exist */
 export interface TagValRead<PermitOP extends OP = OP>
   extends Base<'vtag' & PermitOP, never> {
   ex: string
