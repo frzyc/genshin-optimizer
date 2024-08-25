@@ -1,11 +1,6 @@
-import type {
-  RawTagMapKeys,
-  RawTagMapValues,
-  Tag,
-  TagMapSubsetCache,
-} from '../tag'
+import type { DedupTag, RawTagMapKeys, RawTagMapValues, Tag } from '../tag'
 import {
-  TagMapExactValues,
+  DedupTags,
   TagMapKeys,
   TagMapSubsetValues,
   mergeTagMapValues,
@@ -14,7 +9,7 @@ import { assertUnreachable, extract, isDebug, tagString } from '../util'
 import { arithmetic, branching } from './formula'
 import type { AnyNode, NumNode, ReRead, Read, StrNode } from './type'
 
-export type TagCache = TagMapSubsetCache<AnyNode | ReRead>
+export type TagCache<M> = DedupTag<PreRead<M>>
 export type PreRead<M> = Partial<
   Record<NonNullable<Read['ex']> | 'unique', CalcResult<number | string, M>>
 > & { pre: CalcResult<number | string, M>[] }
@@ -24,7 +19,7 @@ export type CalcResult<V, M> = { val: V; meta: M }
 export class Calculator<M = any> {
   keys: TagMapKeys
   nodes: TagMapSubsetValues<AnyNode | ReRead>
-  calculated: TagMapExactValues<PreRead<M>>
+  cache: DedupTags<PreRead<M>>
 
   constructor(
     keys: RawTagMapKeys,
@@ -32,43 +27,39 @@ export class Calculator<M = any> {
   ) {
     this.keys = new TagMapKeys(keys)
     this.nodes = new TagMapSubsetValues(keys.tagLen, mergeTagMapValues(values))
-    this.calculated = new TagMapExactValues(keys.tagLen, {})
+    this.cache = new DedupTags(this.keys)
   }
 
   gather<V extends number | string = number | string>(
     tag: Tag
   ): CalcResult<V, M>[]
   gather(tag: Tag): CalcResult<number | string, M>[] {
-    return this._gather(this.nodes.cache(this.keys).with(tag)).pre
+    return this._gather(this.cache.at(tag)).pre
   }
 
   compute(n: NumNode): CalcResult<number, M>
   compute(n: StrNode): CalcResult<string, M>
   compute(n: AnyNode): CalcResult<number | string, M>
   compute(n: AnyNode): CalcResult<number | string, M> {
-    return this._compute(n, this.nodes.cache(this.keys))
+    return this._compute(n, this.cache.empty)
   }
 
-  _gather(cache: TagCache): PreRead<M> {
-    const result = this.calculated.refExact(cache.id)
-    if (result.length) return result[0]!
-
-    result.push({
-      pre: cache
-        .subset()
-        .flatMap((n) =>
-          n.op === 'reread'
-            ? this._gather(cache.with(n.tag)).pre
-            : [this.markGathered(cache.tag, n, this._compute(n, cache))]
-        ),
-    })
-    return result[0]!
+  _gather(cache: TagCache<M>): PreRead<M> {
+    if (cache.val) return cache.val
+    const pre = this.nodes
+      .subset(cache.id)
+      .flatMap((n) =>
+        n.op === 'reread'
+          ? this._gather(cache.with(n.tag)).pre
+          : [this.markGathered(cache.tag, n, this._compute(n, cache))]
+      )
+    return (cache.val = { pre })
   }
 
-  _compute(n: StrNode, cache: TagCache): CalcResult<string, M>
-  _compute(n: NumNode, cache: TagCache): CalcResult<number, M>
-  _compute(n: AnyNode, cache: TagCache): CalcResult<number | string, M>
-  _compute(n: AnyNode, cache: TagCache): CalcResult<number | string, M> {
+  _compute(n: StrNode, cache: TagCache<M>): CalcResult<string, M>
+  _compute(n: NumNode, cache: TagCache<M>): CalcResult<number, M>
+  _compute(n: AnyNode, cache: TagCache<M>): CalcResult<number | string, M>
+  _compute(n: AnyNode, cache: TagCache<M>): CalcResult<number | string, M> {
     const finalize = (
       val: number | string,
       x: (CalcResult<number | string, M> | undefined)[],
@@ -93,9 +84,8 @@ export class Calculator<M = any> {
       case 'lookup': {
         const br = n.br.map((br) => this._compute(br, cache)),
           branchID = branching[op](getV(br), n.ex)
-        const x = [...Array(n.x.length)],
-          result = this._compute(n.x[branchID]!, cache)
-        x[branchID] = result
+        const x = [...Array(n.x.length)]
+        const result = (x[branchID] = this._compute(n.x[branchID]!, cache))
         return finalize(result.val, x, br)
       }
       case 'subscript': {
@@ -127,8 +117,7 @@ export class Calculator<M = any> {
         if (isDebug('calc') && ex === 'unique' && pre.length !== 1)
           throw new Error(`Ill-form read for ${tagString(newCache.tag)}`)
         const val = arithmetic[ex](getV(pre) as number[], undefined)
-        computed[ex] = finalize(val, pre, [], newCache.tag)
-        return computed[ex]
+        return (computed[ex] = finalize(val, pre, [], newCache.tag))
       }
       case 'custom': {
         const x = n.x.map((n) => this._compute(n, cache))

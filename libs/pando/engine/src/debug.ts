@@ -1,14 +1,6 @@
-import type {
-  AnyNode,
-  CalcResult,
-  Calculator,
-  PreRead,
-  ReRead,
-  TagCache,
-} from './node'
-import { Calculator as BaseCalculator, map, traverse } from './node'
-import type { Tag, TagMapSubsetCache } from './tag'
-import { TagMapExactValues } from './tag'
+import type { AnyNode, CalcResult, PreRead, TagCache } from './node'
+import { Calculator as BaseCalculator, map } from './node'
+import type { Tag } from './tag'
 import { isDebug } from './util'
 
 const isRead = Symbol()
@@ -23,6 +15,7 @@ export type DebugMeta = {
 export class DebugCalculator extends BaseCalculator<DebugMeta> {
   tagStr: TagStr
   custom: typeof this.computeCustom
+  gathering = new Set<TagCache<DebugMeta>>()
 
   constructor(calc: BaseCalculator<any>, tagStr: TagStr) {
     super(calc.keys)
@@ -31,28 +24,28 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     this.custom = calc.computeCustom
   }
 
-  checkCycle(tag: Tag) {
-    checkCycle(tag, this)
+  override _gather(cache: TagCache<DebugMeta>): PreRead<DebugMeta> {
+    if (this.gathering.has(cache))
+      throw new Error(`Loop detected for {this.tagStr(cache.tag)}`)
+    this.gathering.add(cache)
+    const result = this.__gather(cache)
+    this.gathering.delete(cache)
+    return result
   }
 
-  override _gather(cache: TagCache): PreRead<DebugMeta> {
-    // The only thing we do differently from `super` is adding `note`,
-    // which requires `tag_db` debug mode. Skip if it is unavailable
+  __gather(cache: TagCache<DebugMeta>): PreRead<DebugMeta> {
+    // The only thing we do differently from `super._gather` is adding
+    // `note`, which requires `tag_db` debug mode. Skip if unavailable
     if (!isDebug('tag_db')) return super._gather(cache)
+    if (cache.val) return cache.val
 
-    const result = this.calculated.refExact(cache.id)
-    if (result.length) return result[0]!
-
-    const tags = cache.tags().map((t) => (t ? this.tagStr(t) : '!!'))
-    for (const entry of cache.internal.entries) {
-      if (entry.tags.length != entry.values.length) {
-        console.log(entry)
-      }
-    }
-    const pre = cache.subset().flatMap((n, i) => {
+    const tags = this.nodes
+      .debugTag(cache.id)
+      .map((t) => (t ? this.tagStr(t) : '!!'))
+    const pre = this.nodes.subset(cache.id).flatMap((n, i) => {
       if (n.op === 'reread') {
         return this._gather(cache.with(n.tag)).pre.map((x) => {
-          // Must be a new object in case `reread` entry is shared with a regular `read`.
+          // Must be a new object as `reread` entries are shared with regular `read`.
           // They would have the same `val` and `meta` but different `note`.
           x = { ...x, meta: { ...x.meta } }
           x.meta.note = `${tags[i]} <= ${this.tagStr(n.tag)} : ${x.meta.note!}`
@@ -69,10 +62,12 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
         })
       }
     })
-    result.push({ pre })
-    return result[0]!
+    return (cache.val = { pre })
   }
-  override _compute(n: AnyNode, cache: TagCache): CalcResult<any, DebugMeta> {
+  override _compute(
+    n: AnyNode,
+    cache: TagCache<DebugMeta>
+  ): CalcResult<any, DebugMeta> {
     try {
       return super._compute(n, cache)
     } catch (e) {
@@ -95,15 +90,13 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     br: CalcResult<number | string, DebugMeta>[],
     tag: Tag | undefined
   ): DebugMeta {
-    function valStr(val: number | string): string {
-      if (typeof val !== 'number') return `"${val}"`
-      if (Math.round(val) === val) return `${val}`
-      return val.toFixed(2)
-    }
+    if (typeof val !== 'number') val = `"${val}"`
+    else if (Math.round(val) === val) val = `${val}`
+    else val = val.toFixed(2)
 
     const result: DebugMeta = {
-      note: '',
-      formula: `[${valStr(val)}] ${this.nodeString(n)}`,
+      note: '', // Force JSON ordering, delete if unused
+      formula: `[${val}] ${this.nodeString(n)}`,
       deps: [
         ...x.map((x) => x?.meta).filter((x) => !!x),
         ...br.map((br) => br.meta),
@@ -113,7 +106,6 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     if (n.op === 'read') {
       tag = Object.fromEntries(Object.entries(tag!).filter(([_, v]) => v))
       result.note = `gather ${x.length} node(s) for ${this.tagStr(tag)}`
-      result.formula = `[${valStr(val)}] read ${this.nodeString(n)}`
       result.deps = x.map((x) => x!.meta)
     } else delete result.note
     return result
@@ -137,52 +129,4 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
       return `${op}(` + args.join(', ') + ')'
     })[0]
   }
-}
-
-function checkCycle(tag: Tag, calc: Calculator) {
-  const stack: Tag[] = []
-  const tagKeys = calc.keys
-  /** Stack depth when first encountered the tag, or 0 if already visited */
-  const openDepth = new TagMapExactValues<number>(tagKeys.tagLen, {})
-
-  function internal(cache: TagMapSubsetCache<AnyNode | ReRead>) {
-    const tag = cache.tag,
-      depth = openDepth.refExact(tagKeys.get(tag))
-    if (depth[0] > 0) {
-      console.log(stack.slice(depth[0] - 1))
-      throw new Error('Cyclical dependencies found')
-    } else if (depth[0] == 0) return // Already visited
-    depth[0] = stack.push(tag)
-
-    const nodes = cache.subset()
-    const n = nodes.filter((x) => x.op !== 'reread') as AnyNode[]
-    const re = nodes.filter((x) => x.op === 'reread') as ReRead[]
-
-    traverse(n, (n, map) => {
-      switch (n.op) {
-        case 'read': {
-          const newTag = cache.with(n.tag)
-          internal(newTag)
-          return
-        }
-        case 'tag': {
-          map(n.x[0])
-          return
-        }
-        case 'dtag':
-          console.warn('Ignored dtag node while checking for cycles')
-      }
-      n.x.forEach(map)
-      n.br.forEach(map)
-    })
-
-    for (const { tag: extra } of re) {
-      const newTag = cache.with(extra)
-      internal(newTag)
-    }
-
-    depth[0] = 0
-    stack.pop()
-  }
-  internal(calc.nodes.cache(calc.keys).with(tag))
 }

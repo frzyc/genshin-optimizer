@@ -317,17 +317,21 @@ export function dynTag<P extends OP = never>(
     ex: Object.keys(tag),
   }
 }
+/** Current tag value at `cat:`, or `''` of not available */
 export function tagVal(cat: string): TagValRead {
   return { op: 'vtag', x, br, ex: cat }
 }
 
+/** Gather entries matching `{current tag}/Tag`, then combine the results with `ex` */
 export function read(tag: Tag, ex: Read['ex']): Read {
   return { op: 'read', x, br, tag, ex }
 }
+/** (Entry-only) trigger another gather with `{current tag}/tag` */
 export function reread(tag: Tag): ReRead {
   return { op: 'reread', tag }
 }
 
+/** Custop node calculating `op(v)` */
 export function custom<P extends OP = never>(
   op: string,
   ...v: Num<P>[]

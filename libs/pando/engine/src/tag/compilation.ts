@@ -1,6 +1,6 @@
 import { isDebug } from '../util'
-import { debugTag } from './debug'
 import { TagMapKeys } from './keys'
+import { entryKey, entryVal } from './symb'
 import type { Tag, TagCategory, TagValue } from './type'
 
 /**
@@ -16,13 +16,12 @@ export type RawTagMapKeys = {
 }
 
 /**
- * Serializable data for `TagMapExactValues` and `TagMapSubsetValues`.
- * The format is not stabilized. Use `compileTagMapValues` to construct
- * a valid object.
+ * Serializable data for `TagMapSubsetValues`. The format is not
+ * stabilized. Use `compileTagMapValues` to construct a valid object.
  */
 export type RawTagMapValues<V> = {
   [key in string]?: RawTagMapValues<V>
-} & { ''?: V[]; [debugTag]?: Tag[] }
+} & { [entryKey]?: Tag[]; [entryVal]?: V[] }
 
 /** Uncompiled entry for `TagMap<V>` */
 export type TagMapEntry<V, T = Tag> = { tag: T; value: V }
@@ -81,11 +80,11 @@ export function compileTagMapValues<V>(
       if (!current[_id]) current[_id] = {}
       current = current[_id] as RawTagMapValues<V>
     }
-    if (!current['']) current[''] = []
-    current[''].push(value)
+    if (!current[entryVal]) current[entryVal] = []
+    current[entryVal].push(value)
     if (isDebug('tag_db')) {
-      if (!current[debugTag]) current[debugTag] = []
-      current[debugTag].push(tag)
+      if (!current[entryKey]) current[entryKey] = []
+      current[entryKey].push(tag)
     }
   }
   return result
@@ -99,12 +98,14 @@ export function mergeTagMapValues<V>(
   const result: RawTagMapValues<V> = Object.fromEntries(
     [...keys].map((key) => [
       key,
-      key === ''
-        ? (entries.flatMap((e) => e[key]!).filter((x) => x) as any)
-        : mergeTagMapValues(entries.map((e) => e[key]!).filter((x) => x)),
+      mergeTagMapValues(entries.map((e) => e[key]!).filter((x) => !!x)),
     ])
   )
-  if (isDebug('tag_db') && keys.has(''))
-    result[debugTag] = entries.flatMap((e) => e[debugTag] ?? [])
+  const vals = entries.flatMap((e) => e[entryVal] ?? [])
+  if (vals.length) {
+    result[entryVal] = vals
+    if (isDebug('tag_db'))
+      result[entryKey] = entries.flatMap((e) => e[entryKey] ?? [])
+  }
   return result
 }
