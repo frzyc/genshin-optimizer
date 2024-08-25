@@ -25,7 +25,8 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
   }
 
   override _gather(cache: TagCache<DebugMeta>): PreRead<DebugMeta> {
-    if (this.gathering.has(cache)) throw new Error('Loop detected')
+    if (this.gathering.has(cache))
+      throw new Error(`Loop detected for {this.tagStr(cache.tag)}`)
     this.gathering.add(cache)
     const result = this.__gather(cache)
     this.gathering.delete(cache)
@@ -33,8 +34,8 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
   }
 
   __gather(cache: TagCache<DebugMeta>): PreRead<DebugMeta> {
-    // The only thing we do differently from `super` is adding `note`,
-    // which requires `tag_db` debug mode. Skip if it is unavailable
+    // The only thing we do differently from `super._gather` is adding
+    // `note`, which requires `tag_db` debug mode. Skip if unavailable
     if (!isDebug('tag_db')) return super._gather(cache)
     if (cache.val) return cache.val
 
@@ -89,15 +90,13 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     br: CalcResult<number | string, DebugMeta>[],
     tag: Tag | undefined
   ): DebugMeta {
-    function valStr(val: number | string): string {
-      if (typeof val !== 'number') return `"${val}"`
-      if (Math.round(val) === val) return `${val}`
-      return val.toFixed(2)
-    }
+    if (typeof val !== 'number') val = `"${val}"`
+    else if (Math.round(val) === val) val = `${val}`
+    else val = val.toFixed(2)
 
     const result: DebugMeta = {
-      note: '',
-      formula: `[${valStr(val)}] ${this.nodeString(n)}`,
+      note: '', // Force JSON ordering, delete if unused
+      formula: `[${val}] ${this.nodeString(n)}`,
       deps: [
         ...x.map((x) => x?.meta).filter((x) => !!x),
         ...br.map((br) => br.meta),
@@ -107,7 +106,6 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     if (n.op === 'read') {
       tag = Object.fromEntries(Object.entries(tag!).filter(([_, v]) => v))
       result.note = `gather ${x.length} node(s) for ${this.tagStr(tag)}`
-      result.formula = `[${valStr(val)}] read ${this.nodeString(n)}`
       result.deps = x.map((x) => x!.meta)
     } else delete result.note
     return result

@@ -1,4 +1,4 @@
-import type { TagID, TagMapKeys } from './keys'
+import type { TagId, TagMapKeys } from './keys'
 import type { Tag } from './type'
 
 export type DedupTag<V = never> = Leaf<V>
@@ -16,6 +16,7 @@ export class DedupTags<V = never> {
     this.empty = this.at({})
   }
 
+  /** Object associated with `tag` */
   at(tag: Tag): DedupTag<V> {
     const id = this.keys.get(tag)
     const cur = id.reduce((cur, id) => cur.child(id), this.root)
@@ -45,20 +46,20 @@ class Internal<V> {
 
 class Leaf<V> {
   tag: Tag
-  id: TagID
+  id: TagId
   val?: V
 
   keys: TagMapKeys
   internal: Internal<V>
 
-  constructor(tag: Tag, id: TagID, keys: TagMapKeys, internal: Internal<V>) {
+  constructor(tag: Tag, id: TagId, keys: TagMapKeys, internal: Internal<V>) {
     this.tag = tag
     this.id = id
     this.keys = keys
     this.internal = internal
   }
 
-  /** Item associated with tag `{ ...this.tag, tag }` */
+  /** Object associated with tag `{ ...this.tag, tag }` */
   with(tag: Tag): Leaf<V> {
     const { id, firstReplacedByte: first } = this.keys.combine(this.id, tag)
     let cur = this.internal

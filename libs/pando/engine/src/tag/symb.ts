@@ -1,2 +1,2 @@
-export const entryKey = Symbol('TagDbKey')
-export const entryVal = Symbol('TagDbVal')
+export const entryKey = Symbol()
+export const entryVal = Symbol()

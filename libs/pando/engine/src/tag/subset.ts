@@ -1,6 +1,6 @@
 import { isDebug } from '../util'
 import type { RawTagMapValues } from './compilation'
-import type { TagID } from './keys'
+import type { TagId } from './keys'
 import { entryKey, entryVal } from './symb'
 import type { Tag } from './type'
 
@@ -18,12 +18,14 @@ export class TagMapSubsetValues<V> {
     this.root = new Internal(tagLen, compiled)
   }
 
-  subset(id: TagID): V[] {
+  /** All entry values whose tags matching `id`. Missing entry tag categories are ignored */
+  subset(id: TagId): V[] {
     const result: V[] = []
     this._subset(id, (l) => result.push(...l[entryVal]))
     return result
   }
-  debugTag(id: TagID): Tag[] {
+  /** Entry tags of `this.subset(id)`, in the same order */
+  debugTag(id: TagId): Tag[] {
     if (isDebug('tag_db'))
       throw new Error('Entry tags are only tracked in debug mode')
     const result: Tag[] = []
@@ -31,7 +33,7 @@ export class TagMapSubsetValues<V> {
     return result
   }
 
-  _subset(id: TagID, callback: (_: Leaf<V>) => void): void {
+  _subset(id: TagId, callback: (_: Leaf<V>) => void): void {
     const len = id.length
     function crawl(idx: number, internal: Internal<V>) {
       if (idx < len) internal.subset(id[idx]).forEach((i) => crawl(idx + 1, i))
@@ -50,7 +52,7 @@ class Internal<V> {
       for (const [mask, v] of Object.entries(vals)) {
         const map = new Map<number, Internal<V>>()
         for (const [id, vv] of Object.entries(v!))
-          map.set(+id, new Internal(remLen - 1, vv as RawTagMapValues<V>))
+          map.set(+id, new Internal(remLen - 1, vv!))
         this.children.push({ mask: +mask, map })
       }
     } else this.leaf = vals as Leaf<V>
