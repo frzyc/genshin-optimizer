@@ -2,6 +2,7 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import type { ICachedRelic } from '@genshin-optimizer/sr/db'
 import type { Read } from '@genshin-optimizer/sr/formula'
+import { useSrCalcContext } from '@genshin-optimizer/sr/formula-ui'
 import type { BuildResult, ProgressResult } from '@genshin-optimizer/sr/solver'
 import { MAX_BUILDS, Solver } from '@genshin-optimizer/sr/solver'
 import {
@@ -9,7 +10,6 @@ import {
   OptimizationTargetSelector,
   StatFilterCard,
   WorkerSelector,
-  useCalcContext,
   useDatabaseContext,
 } from '@genshin-optimizer/sr/ui'
 import CloseIcon from '@mui/icons-material/Close'
@@ -29,7 +29,7 @@ export default function Optimize() {
   const { t } = useTranslation('optimize')
   const { database } = useDatabaseContext()
 
-  const { calc } = useCalcContext()
+  const calc = useSrCalcContext()
 
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<ProgressResult | undefined>(

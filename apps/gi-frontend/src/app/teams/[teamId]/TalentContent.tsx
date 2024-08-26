@@ -11,8 +11,8 @@ import {
   selfTag,
   type Calculator,
 } from '@genshin-optimizer/gi/formula'
+import type { TalentSheetElementKey } from '@genshin-optimizer/gi/formula-ui'
 import { uiSheets } from '@genshin-optimizer/gi/formula-ui'
-import { type TalentSheetElementKey } from '@genshin-optimizer/gi/sheets'
 import type { UISheetElement } from '@genshin-optimizer/pando/ui-sheet'
 import { DocumentDisplay } from '@genshin-optimizer/pando/ui-sheet'
 import {

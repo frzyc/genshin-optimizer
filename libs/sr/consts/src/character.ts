@@ -105,6 +105,8 @@ export const allCharacterDataKeys = [
 ] as const
 export type CharacterDataKey = (typeof allCharacterDataKeys)[number]
 
+export const maxEidolonCount = 6 as const
+
 export const allLocationKeys = [...allCharacterKeys, ''] as const
 export type LocationKey = (typeof allLocationKeys)[number]
 

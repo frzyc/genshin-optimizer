@@ -74,8 +74,7 @@ export function CalcWrapper({ children }: { children: ReactNode }) {
       enemyDebuff.common.preRes.add(0.1),
       selfBuff.common.critMode.add('avg'),
     ]
-    const calc = genshinCalculatorWithEntries(data)
-    return calc
+    return genshinCalculatorWithEntries(data)
   }, [team])
   return <CalcContext.Provider value={calc}>{children}</CalcContext.Provider>
 }
