@@ -11,6 +11,7 @@ declare module '@mui/material/styles' {
     physical: Palette['primary']
     quantum: Palette['primary']
     wind: Palette['primary']
+    orange: Palette['primary']
   }
 
   interface PaletteOptions {
@@ -21,6 +22,7 @@ declare module '@mui/material/styles' {
     physical?: PaletteOptions['primary']
     quantum?: PaletteOptions['primary']
     wind?: PaletteOptions['primary']
+    orange?: Palette['primary']
   }
 }
 
@@ -103,6 +105,10 @@ export const theme = createTheme({
     wind: commonTheme.palette.augmentColor({
       color: { main: '#3cc088', contrastText: '#fff' },
       name: 'wind',
+    }),
+    orange: commonTheme.palette.augmentColor({
+      color: { main: '#f29e38', contrastText: '#fff' },
+      name: 'orange',
     }),
   },
 })

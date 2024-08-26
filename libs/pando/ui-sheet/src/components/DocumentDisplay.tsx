@@ -1,9 +1,11 @@
 'use client'
 import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import { CardHeaderCustom, CardThemed } from '@genshin-optimizer/common/ui'
+import { evalIfFunc } from '@genshin-optimizer/common/util'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { Box, Collapse, Divider } from '@mui/material'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { CalcContext, MemberContext } from '../context'
 import type { Document, FieldsDocument, Header, TextDocument } from '../types'
 import { FieldsDisplay } from './FieldDisplay'
 
@@ -61,7 +63,10 @@ function FieldsSectionDisplay({
 }
 
 function TextSectionDisplay({ textDocument }: { textDocument: TextDocument }) {
-  return <div>{textDocument.text}</div>
+  const calculator = useContext(CalcContext)
+  const member = useContext(MemberContext)
+  if (!member || !calculator) return null
+  return <div>{evalIfFunc(textDocument.text, calculator, member)}</div>
 }
 function TextSectionDisplayCollapse({
   textDocument,
@@ -110,7 +115,7 @@ function TextSectionDisplayCollapse({
           },
         }}
       >
-        <div>{textDocument.text}</div>
+        <TextSectionDisplay textDocument={textDocument} />
       </Collapse>
     </Box>
   )

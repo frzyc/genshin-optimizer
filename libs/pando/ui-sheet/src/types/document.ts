@@ -1,3 +1,4 @@
+import type { Calculator, NumNode, Tag } from '@genshin-optimizer/pando/engine'
 import type { ReactNode } from 'react'
 import type { Conditional } from './conditional'
 import type { Field } from './field'
@@ -7,7 +8,12 @@ export type Document = TextDocument | FieldsDocument | ConditionalDocument
 
 export interface TextDocument extends BaseDocument {
   type: 'text'
-  text: ReactNode
+  text:
+    | ReactNode
+    | ((
+        calc: Calculator,
+        member: { withTag: (t: Tag) => NumNode }
+      ) => ReactNode)
 }
 export interface FieldsDocument extends BaseDocument {
   type: 'fields'

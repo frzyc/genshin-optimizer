@@ -11,6 +11,7 @@ const textComponents = {
   physical: <ColorText color="physical" />,
   quantum: <ColorText color="quantum" />,
   wind: <ColorText color="wind" />,
+  orangeStrong: <ColorText color="orange" sx={{ fontWeight: 'bold' }} />,
 }
 
 const badgeComponents = {
