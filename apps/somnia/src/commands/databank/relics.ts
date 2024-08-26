@@ -18,7 +18,7 @@ export function relicBank(id: RelicSetKey, name: string, data: any) {
       text: 'Relic Databank',
     })
     .setDescription(clean(text))
-  const relic = AssetData.relic[id]
+  const relic = AssetData.relics[id]
   let thumbnail = ''
   if ('sphere' in relic) thumbnail = relic.sphere
   else if ('head' in relic) thumbnail = relic.head
