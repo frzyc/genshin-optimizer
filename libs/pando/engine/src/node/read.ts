@@ -16,10 +16,10 @@ export class TypedRead<T extends Tag> implements Read {
   // Subclass interfaces
 
   /** Callback for when a tag `<cat>:<val>` is generated */
-  register<C extends keyof T>(_cat: C, _val: T[C]) {}
+  register<C extends keyof T>(_cat: C, _val: T[C]) { }
   /** Return an instance of `Subclass` with given `tag` and `ex` */
   ctor(tag: T, ex: Read['ex']): this {
-    return new (Object.getPrototypeOf(this).constructor)(tag, ex)
+    return new (this.constructor as any)(tag, ex)
   }
 
   with<C extends keyof T>(cat: C, val: T[C]): this {
