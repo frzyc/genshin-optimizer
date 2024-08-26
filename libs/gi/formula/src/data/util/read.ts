@@ -42,14 +42,11 @@ export type Tag = {
   [key in keyof typeof fixedTags]?: (typeof fixedTags)[key][number] | null
 } & { name?: string | null; qt?: string | null; q?: string | null }
 
-export class Read extends TypedRead<Tag, Read> {
+export class Read extends TypedRead<Tag> {
   override register<C extends keyof Tag>(cat: C, val: Tag[C]): void {
     if (val == null) return // null | undefined
     if (cat === 'name') usedNames.add(val)
     else if (cat === 'q') usedQ.add(val)
-  }
-  override ctor(tag: Tag, ex: Read['ex']): Read {
-    return new Read(tag, ex)
   }
 
   name(name: string): Read {
@@ -200,6 +197,24 @@ export class Read extends TypedRead<Tag, Read> {
     return super.with('region', 'khaenriah')
   }
 }
+export function tag(v: number | NumNode, tag: Tag): TagOverride<NumNode>
+export function tag(v: string | StrNode, tag: Tag): TagOverride<StrNode>
+export function tag(
+  v: number | string | AnyNode,
+  tag: Tag
+): TagOverride<AnyNode>
+export function tag(
+  v: number | string | AnyNode,
+  tag: Tag
+): TagOverride<AnyNode> {
+  return typeof v == 'object' && v.op == 'tag'
+    ? baseTag(v.x[0], { ...v.tag, ...tag }) // Fold nested tag nodes
+    : baseTag(v, tag)
+}
+export function tagVal(cat: keyof Tag): TagValRead {
+  return baseTagVal(cat)
+}
+
 export function tagStr(tag: Tag, ex?: any): string {
   const {
     name,
@@ -255,23 +270,6 @@ export function tagStr(tag: Tag, ex?: any): string {
   optional(cata, 'cata')
   if (ex) result += `[${ex}] `
   return result + '}'
-}
-export function tag(v: number | NumNode, tag: Tag): TagOverride<NumNode>
-export function tag(v: string | StrNode, tag: Tag): TagOverride<StrNode>
-export function tag(
-  v: number | string | AnyNode,
-  tag: Tag
-): TagOverride<AnyNode>
-export function tag(
-  v: number | string | AnyNode,
-  tag: Tag
-): TagOverride<AnyNode> {
-  return typeof v == 'object' && v.op == 'tag'
-    ? baseTag(v.x[0], { ...v.tag, ...tag }) // Fold nested tag nodes
-    : baseTag(v, tag)
-}
-export function tagVal(cat: keyof Tag): TagValRead {
-  return baseTagVal(cat)
 }
 
 const counters: Record<string, number> = {}

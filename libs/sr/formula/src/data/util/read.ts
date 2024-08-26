@@ -1,7 +1,6 @@
 import type {
   AnyNode,
   NumNode,
-  ReRead,
   StrNode,
   TagOverride,
   TagValRead,
@@ -39,14 +38,11 @@ export type Tag = {
   [key in keyof typeof fixedTags]?: (typeof fixedTags)[key][number] | null
 } & { name?: string | null; qt?: string | null; q?: string | null }
 
-export class Read extends TypedRead<Tag, Read> {
+export class Read extends TypedRead<Tag> {
   override register<C extends keyof Tag>(cat: C, val: Tag[C]): void {
     if (val == null) return // null | undefined
     if (cat === 'name') usedNames.add(val)
     else if (cat === 'q') usedQ.add(val)
-  }
-  override ctor(tag: Tag, ex: Read['ex']): Read {
-    return new Read(tag, ex)
   }
 
   name(name: string): Read {
@@ -57,10 +53,7 @@ export class Read extends TypedRead<Tag, Read> {
   }
 
   add(value: number | string | AnyNode): TagMapNodeEntry {
-    return {
-      tag: this.tag,
-      value: typeof value === 'object' ? value : constant(value),
-    }
+    return super.toEntry(typeof value === 'object' ? value : constant(value))
   }
   addOnce(sheet: Sheet, value: number | NumNode): TagMapNodeEntries {
     if (this.tag.et !== 'teamBuff' || !sheet)
@@ -83,8 +76,12 @@ export class Read extends TypedRead<Tag, Read> {
   ): TagMapNodeEntry[] {
     return this[dmgType].map((r) => r.add(val))
   }
-  reread(r: Read): { tag: Tag; value: ReRead } {
-    return { tag: this.tag, value: reread(r.tag) }
+  reread(r: Read): TagMapNodeEntry {
+    return super.toEntry(reread(r.tag))
+  }
+
+  override toString(): string {
+    return tagStr(this.tag, this.ex)
   }
 
   // Optional Modifiers

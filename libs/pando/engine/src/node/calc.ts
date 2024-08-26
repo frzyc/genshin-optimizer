@@ -29,7 +29,7 @@ export class Calculator<M = any> {
   }
   withTag(tag: Tag): this {
     return Object.assign(
-      Object.getPrototypeOf(this).constructor(this.cache.keys),
+      new (Object.getPrototypeOf(this).constructor)(this.cache.keys),
       this,
       { cache: this.cache.with(tag) }
     )
