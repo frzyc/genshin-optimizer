@@ -5,16 +5,16 @@ import {
   NextImage,
 } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
-import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
-import {
-  convert,
-  selfTag,
-  type Calculator,
-} from '@genshin-optimizer/gi/formula'
-import type { TalentSheetElementKey } from '@genshin-optimizer/gi/formula-ui'
-import { uiSheets } from '@genshin-optimizer/gi/formula-ui'
 import type { UISheetElement } from '@genshin-optimizer/pando/ui-sheet'
 import { DocumentDisplay } from '@genshin-optimizer/pando/ui-sheet'
+import { maxEidolonCount } from '@genshin-optimizer/sr/consts'
+import { convert, selfTag } from '@genshin-optimizer/sr/formula'
+import {
+  uiSheets,
+  useSrCalcContext,
+  type TalentSheetElementKey,
+} from '@genshin-optimizer/sr/formula-ui'
+import { useLoadoutContext } from '@genshin-optimizer/sr/ui'
 import {
   Box,
   CardActionArea,
@@ -28,7 +28,6 @@ import {
 import type { ReactNode } from 'react'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import type { TeamLoadoutCharacter } from './getTeam'
 
 const talentSpacing = {
   xs: 12,
@@ -36,19 +35,17 @@ const talentSpacing = {
   md: 4,
 }
 
-export default function CharacterTalentPane({
-  character,
-  calc,
-}: {
-  character: TeamLoadoutCharacter
-  calc: Calculator
-}) {
+export default function CharacterTalentPane() {
+  const {
+    loadout: { key: characterKey },
+  } = useLoadoutContext()
+  const calc = useSrCalcContext()
   const { t } = useTranslation('sheet_gen')
 
   const skillBurstList = [
-    ['auto', t('talents.auto')],
+    ['basic', t('talents.basic')],
     ['skill', t('talents.skill')],
-    ['burst', t('talents.burst')],
+    ['ultimate', t('talents.ultimate')],
   ] as [TalentSheetElementKey, string][]
   // const passivesList: [
   //   tKey: TalentSheetElementKey,
@@ -88,8 +85,9 @@ export default function CharacterTalentPane({
   //     constellation,
   //   ]
   // )
-  const characterSheet = uiSheets[character.key]
-  if (!characterSheet) return
+  const characterSheet = uiSheets[characterKey]
+  console.log({ characterSheet, calc })
+  if (!characterSheet || !calc) return
   return (
     <>
       {/* <CardThemed bgt="light">
@@ -119,7 +117,7 @@ export default function CharacterTalentPane({
             lg={3}
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
-            <ConstellationDropdown character={character} calc={calc} />
+            <ConstellationDropdown />
             {/* {constellationCards.map((c, i) => (
               <Box key={i} sx={{ opacity: constellation >= i + 1 ? 1 : 0.5 }}>
                 {c}
@@ -142,7 +140,7 @@ export default function CharacterTalentPane({
               </Grid>
             )
           })}
-          {!!characterSheet['sprint'] && (
+          {/* {!!characterSheet['sprint'] && (
             <Grid item {...talentSpacing}>
               <SkillDisplayCard
                 talentKey="sprint"
@@ -159,7 +157,7 @@ export default function CharacterTalentPane({
                 sheetElement={characterSheet['passive']}
               />
             </Grid>
-          )}
+          )} */}
           {/* passives */}
           {/* {passivesList.map(([tKey, tText, asc]) => {
             const enabled = ascension >= asc
@@ -180,7 +178,7 @@ export default function CharacterTalentPane({
         {!grlg && (
           <Grid item xs={12} md={12} lg={3} container spacing={1}>
             <Grid item xs={12}>
-              <ConstellationDropdown character={character} calc={calc} />
+              <ConstellationDropdown />
             </Grid>
             {/* {constellationCards.map((c, i) => (
               <Grid
@@ -316,15 +314,12 @@ function SkillDisplayCard({
   )
 }
 
-export function ConstellationDropdown({
-  calc,
-}: {
-  character: TeamLoadoutCharacter
-  calc: Calculator
-}) {
+export function ConstellationDropdown() {
   const { t } = useTranslation('sheet_gen')
+  const calc = useSrCalcContext()
+  if (!calc) return null
   const member0 = convert(selfTag, { et: 'self', src: '0' })
-  const constellation = calc.compute(member0.char.constellation).val
+  const constellation = calc.compute(member0.char.eidolon).val
   return (
     <DropdownButton
       fullWidth
@@ -332,7 +327,7 @@ export function ConstellationDropdown({
       color="primary"
       // sx={{ color: buildTc?.character ? 'yellow' : undefined }}
     >
-      {range(0, maxConstellationCount).map((i) => (
+      {range(0, maxEidolonCount).map((i) => (
         <MenuItem
           key={i}
           selected={constellation === i}
