@@ -1,13 +1,12 @@
-import { compileTagMapKeys, compileTagMapValues, TagMapKeys } from '../tag'
+import { compileTagMapKeys, compileTagMapValues } from '../tag'
 import { Calculator } from './calc'
 import { constant } from './construction'
 
-const compiledKeys = compileTagMapKeys([
+const keys = compileTagMapKeys([
   { category: 'cat1', values: new Set([...Array(4)].map((_, i) => `val${i}`)) },
   { category: 'cat2', values: new Set([...Array(4)].map((_, i) => `val${i}`)) },
   { category: 'cat3', values: new Set([...Array(4)].map((_, i) => `val${i}`)) },
 ])
-const keys = new TagMapKeys(compiledKeys)
 
 describe('Calculator', () => {
   it('is initializable with no entry', () => {

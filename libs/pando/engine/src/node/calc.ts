@@ -1,8 +1,13 @@
-import type { DedupTag, RawTagMapValues, Tag, TagMapKeys } from '../tag'
-import { DedupTags, TagMapSubsetValues, mergeTagMapValues } from '../tag'
+import type { DedupTag, RawTagMapKeys, RawTagMapValues, Tag } from '../tag'
+import {
+  DedupTags,
+  mergeTagMapValues,
+  TagMapKeys,
+  TagMapSubsetValues,
+} from '../tag'
 import { assertUnreachable, extract, isDebug, tagString } from '../util'
 import { arithmetic, branching } from './formula'
-import type { AnyNode, NumNode, ReRead, Read, StrNode } from './type'
+import type { AnyNode, NumNode, Read, ReRead, StrNode } from './type'
 
 export type TagCache<M> = DedupTag<PreRead<M>>
 export type PreRead<M> = Partial<
@@ -16,15 +21,18 @@ export class Calculator<M = any> {
   cache: DedupTag<PreRead<M>>
 
   constructor(
-    keys: TagMapKeys,
+    keys: RawTagMapKeys,
     ...values: RawTagMapValues<AnyNode | ReRead>[]
   ) {
     this.nodes = new TagMapSubsetValues(keys.tagLen, mergeTagMapValues(values))
-    this.cache = new DedupTags(keys).empty
+    this.cache = new DedupTags(new TagMapKeys(keys)).empty
   }
-
-  withTag(_: Tag): Calculator<M> {
-    throw new Error('Unimplemented')
+  withTag(tag: Tag): this {
+    return Object.assign(
+      Object.getPrototypeOf(this).constructor(this.cache.keys),
+      this,
+      { cache: this.cache.with(tag) }
+    )
   }
 
   gather<V extends number | string = number | string>(

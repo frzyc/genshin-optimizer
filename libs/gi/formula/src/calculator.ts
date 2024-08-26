@@ -1,21 +1,13 @@
 import { assertUnreachable } from '@genshin-optimizer/common/util'
-import type {
-  AnyNode,
-  CalcResult,
-  RawTagMapValues,
-  ReRead,
-} from '@genshin-optimizer/pando/engine'
+import type { AnyNode, CalcResult } from '@genshin-optimizer/pando/engine'
 import {
   Calculator as Base,
   DebugCalculator,
-  TagMapKeys,
   calculation,
 } from '@genshin-optimizer/pando/engine'
-import { keys } from './data'
 import type { Member, Read, Sheet, Tag } from './data/util'
 import { reader, tagStr } from './data/util'
 
-const tagMapKeys = new TagMapKeys(keys)
 const emptyInfo: Info = Object.freeze({ conds: Object.freeze({}) })
 const { arithmetic } = calculation
 
@@ -34,14 +26,6 @@ export type PartialMeta = {
 type Info = { conds: CondInfo }
 
 export class Calculator extends Base<CalcMeta> {
-  constructor(...values: RawTagMapValues<AnyNode | ReRead>[]) {
-    super(tagMapKeys, ...values)
-  }
-  override withTag(tag: Tag): Calculator {
-    const calc = Object.assign(new Calculator(), this)
-    calc.cache = calc.cache.with(tag)
-    return calc
-  }
   override computeCustom(val: any[], op: string): any {
     if (op == 'res') return res(val[0])
     return super.computeCustom(val, op)

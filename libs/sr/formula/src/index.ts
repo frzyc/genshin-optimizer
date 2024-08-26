@@ -21,5 +21,5 @@ export function srCalculatorWithEntries(
   extras: TagMapEntries<AnyNode | ReRead>
 ) {
   const extraEntries = compileTagMapValues(keys, extras)
-  return new Calculator(values, extraEntries)
+  return new Calculator(keys, values, extraEntries)
 }
