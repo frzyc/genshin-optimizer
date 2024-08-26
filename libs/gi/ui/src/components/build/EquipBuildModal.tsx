@@ -113,6 +113,52 @@ function Content(props: Props) {
           gap: 1,
         }}
       >
+        {/* Confirmation Message */}
+        <Typography sx={{ fontSize: 20 }}>
+          Do you want to make the changes shown below?
+        </Typography>
+        {teamCharId && (
+          <FormControlLabel
+            label={
+              <>
+                Copy the current equipment in <strong>{currentName}</strong> to
+                a new build. Otherwise, they will be overwritten.
+              </>
+            }
+            control={
+              <Checkbox
+                checked={copyCurrent}
+                onChange={(event) => setCopyCurrent(event.target.checked)}
+                color={copyCurrent ? 'success' : 'secondary'}
+              />
+            }
+          />
+        )}
+        {copyCurrent && (
+          <TextField
+            label="Build Name"
+            placeholder={`Duplicate of ${currentName}`}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            size="small"
+            sx={{ width: '75%', marginX: 4 }}
+          />
+        )}
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'flex-end',
+            gap: 1,
+            marginTop: 4,
+          }}
+        >
+          <Button color="error" onClick={onHide}>
+            Cancel
+          </Button>
+          <Button color="success" onClick={toEquip}>
+            Equip
+          </Button>
+        </Box>
         {/* Active Build */}
         <CardThemed bgt="light">
           <CardContent
@@ -206,51 +252,6 @@ function Content(props: Props) {
             </DataWrapper>
           </CardContent>
         </CardThemed>
-        <Typography sx={{ fontSize: 20 }}>
-          Do you want to make the changes shown above?
-        </Typography>
-        {teamCharId && (
-          <FormControlLabel
-            label={
-              <>
-                Copy the current equipment in <strong>{currentName}</strong> to
-                a new build. Otherwise, they will be overwritten.
-              </>
-            }
-            control={
-              <Checkbox
-                checked={copyCurrent}
-                onChange={(event) => setCopyCurrent(event.target.checked)}
-                color={copyCurrent ? 'success' : 'secondary'}
-              />
-            }
-          />
-        )}
-        {copyCurrent && (
-          <TextField
-            label="Build Name"
-            placeholder={`Duplicate of ${currentName}`}
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            size="small"
-            sx={{ width: '75%', marginX: 4 }}
-          />
-        )}
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-            gap: 1,
-            marginTop: 4,
-          }}
-        >
-          <Button color="error" onClick={onHide}>
-            Cancel
-          </Button>
-          <Button color="success" onClick={toEquip}>
-            Equip
-          </Button>
-        </Box>
       </CardContent>
     </CardThemed>
   )
