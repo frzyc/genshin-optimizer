@@ -23,6 +23,9 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     this.tagStr = tagStr
     this.custom = calc.computeCustom
   }
+  override withTag(_tag: Tag): this {
+    throw new Error('Unimplemented')
+  }
 
   override _gather(cache: TagCache<DebugMeta>): PreRead<DebugMeta> {
     if (this.gathering.has(cache))
