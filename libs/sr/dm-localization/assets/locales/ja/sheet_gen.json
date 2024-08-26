@@ -1,12 +1,12 @@
 {
   "type": {
-    "Physical": "物理",
-    "Quantum": "量子",
-    "Lightning": "雷",
-    "Ice": "氷",
-    "Wind": "風",
-    "Fire": "炎",
-    "Imaginary": "虚数"
+    "physical": "物理",
+    "quantum": "量子",
+    "lightning": "雷",
+    "ice": "氷",
+    "wind": "風",
+    "fire": "炎",
+    "imaginary": "虚数"
   },
   "path": {
     "Erudition": "{RUBY_B#ちえ}知恵{RUBY_E#}",

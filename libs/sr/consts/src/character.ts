@@ -61,13 +61,13 @@ export type NonTrailblazerCharacterKey =
   (typeof nonTrailblazerCharacterKeys)[number]
 
 export const allElementalTypeKeys = [
-  'Physical',
-  'Quantum',
-  'Lightning',
-  'Ice',
-  'Wind',
-  'Fire',
-  'Imaginary',
+  'physical',
+  'quantum',
+  'lightning',
+  'ice',
+  'wind',
+  'fire',
+  'imaginary',
 ] as const
 export type ElementalTypeKey = (typeof allElementalTypeKeys)[number]
 

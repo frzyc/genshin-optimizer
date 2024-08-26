@@ -26,14 +26,13 @@ import {
   percent,
   self,
   selfBuff,
-  TypeKeyToListingType,
   type TagMapNodeEntries,
 } from '../util'
 
 type AbilityScalingType = Exclude<AbilityKey, 'technique' | 'overworld'>
 
 export function getBaseTag(data_gen: CharacterDatum): DmgTag {
-  return { elementalType: TypeKeyToListingType[data_gen.damageType] }
+  return { elementalType: data_gen.damageType }
 }
 
 /**
@@ -213,7 +212,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ...customBreakDmg(
       'breakDmg',
       {
-        elementalType: TypeKeyToListingType[data_gen.damageType],
+        elementalType: data_gen.damageType,
         damageType1: 'break',
       },
       1
@@ -232,7 +231,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     selfBuff.listing.formulas.add(listingItem(self.final.crit_dmg_)),
     selfBuff.listing.formulas.add(listingItem(self.final.heal_)),
     selfBuff.listing.formulas.add(
-      listingItem(self.final.dmg_[TypeKeyToListingType[data_gen.damageType]])
+      listingItem(self.final.dmg_[data_gen.damageType])
     ),
     selfBuff.listing.formulas.add(listingItem(self.final.dmg_)),
     selfBuff.listing.formulas.add(listingItem(self.final.weakness_)),

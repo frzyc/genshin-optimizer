@@ -1,6 +1,6 @@
 {
   "rarity": 5,
-  "damageType": "Quantum",
+  "damageType": "quantum",
   "path": "Erudition",
   "skillTree": {
     "basic": {

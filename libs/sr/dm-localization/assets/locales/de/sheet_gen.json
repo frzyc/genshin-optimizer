@@ -1,12 +1,12 @@
 {
   "type": {
-    "Physical": "Physisch",
-    "Quantum": "Quanten",
-    "Lightning": "Blitz",
-    "Ice": "Eis",
-    "Wind": "Wind",
-    "Fire": "Feuer",
-    "Imaginary": "Imaginär"
+    "physical": "Physisch",
+    "quantum": "Quanten",
+    "lightning": "Blitz",
+    "ice": "Eis",
+    "wind": "Wind",
+    "fire": "Feuer",
+    "imaginary": "Imaginär"
   },
   "path": {
     "Erudition": "Die Gelehrsamkeit",

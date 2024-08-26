@@ -1,6 +1,6 @@
 {
   "rarity": 5,
-  "damageType": "Lightning",
+  "damageType": "lightning",
   "path": "Abundance",
   "skillTree": {
     "basic": {

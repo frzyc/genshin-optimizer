@@ -2,7 +2,7 @@
   "char": {
     "March7th": {
       "rarity": 4,
-      "damageType": "Ice",
+      "damageType": "ice",
       "path": "Preservation",
       "skillTree": {
         "basic": {
@@ -636,7 +636,7 @@
     },
     "DanHeng": {
       "rarity": 4,
-      "damageType": "Wind",
+      "damageType": "wind",
       "path": "TheHunt",
       "skillTree": {
         "basic": {
@@ -1215,7 +1215,7 @@
     },
     "Himeko": {
       "rarity": 5,
-      "damageType": "Fire",
+      "damageType": "fire",
       "path": "Erudition",
       "skillTree": {
         "basic": {
@@ -1771,7 +1771,7 @@
     },
     "Welt": {
       "rarity": 5,
-      "damageType": "Imaginary",
+      "damageType": "imaginary",
       "path": "Nihility",
       "skillTree": {
         "basic": {
@@ -2378,7 +2378,7 @@
     },
     "Kafka": {
       "rarity": 5,
-      "damageType": "Lightning",
+      "damageType": "lightning",
       "path": "Nihility",
       "skillTree": {
         "basic": {
@@ -3012,7 +3012,7 @@
     },
     "SilverWolf": {
       "rarity": 5,
-      "damageType": "Quantum",
+      "damageType": "quantum",
       "path": "Nihility",
       "skillTree": {
         "basic": {
@@ -3729,7 +3729,7 @@
     },
     "Arlan": {
       "rarity": 4,
-      "damageType": "Lightning",
+      "damageType": "lightning",
       "path": "Destruction",
       "skillTree": {
         "basic": {
@@ -4254,7 +4254,7 @@
     },
     "Asta": {
       "rarity": 4,
-      "damageType": "Fire",
+      "damageType": "fire",
       "path": "Harmony",
       "skillTree": {
         "basic": {
@@ -4797,7 +4797,7 @@
     },
     "Herta": {
       "rarity": 4,
-      "damageType": "Ice",
+      "damageType": "ice",
       "path": "Erudition",
       "skillTree": {
         "basic": {
@@ -5345,7 +5345,7 @@
     },
     "Bronya": {
       "rarity": 5,
-      "damageType": "Wind",
+      "damageType": "wind",
       "path": "Harmony",
       "skillTree": {
         "basic": {
@@ -5940,7 +5940,7 @@
     },
     "Seele": {
       "rarity": 5,
-      "damageType": "Quantum",
+      "damageType": "quantum",
       "path": "TheHunt",
       "skillTree": {
         "basic": {
@@ -6485,7 +6485,7 @@
     },
     "Serval": {
       "rarity": 4,
-      "damageType": "Lightning",
+      "damageType": "lightning",
       "path": "Erudition",
       "skillTree": {
         "basic": {
@@ -7071,7 +7071,7 @@
     },
     "Gepard": {
       "rarity": 5,
-      "damageType": "Ice",
+      "damageType": "ice",
       "path": "Preservation",
       "skillTree": {
         "basic": {
@@ -7652,7 +7652,7 @@
     },
     "Natasha": {
       "rarity": 4,
-      "damageType": "Physical",
+      "damageType": "physical",
       "path": "Abundance",
       "skillTree": {
         "basic": {
@@ -8259,7 +8259,7 @@
     },
     "Pela": {
       "rarity": 4,
-      "damageType": "Ice",
+      "damageType": "ice",
       "path": "Nihility",
       "skillTree": {
         "basic": {
@@ -8831,7 +8831,7 @@
     },
     "Clara": {
       "rarity": 5,
-      "damageType": "Physical",
+      "damageType": "physical",
       "path": "Destruction",
       "skillTree": {
         "basic": {
@@ -9444,7 +9444,7 @@
     },
     "Sampo": {
       "rarity": 4,
-      "damageType": "Wind",
+      "damageType": "wind",
       "path": "Nihility",
       "skillTree": {
         "basic": {
@@ -10062,7 +10062,7 @@
     },
     "Hook": {
       "rarity": 4,
-      "damageType": "Fire",
+      "damageType": "fire",
       "path": "Destruction",
       "skillTree": {
         "basic": {
@@ -10718,7 +10718,7 @@
     },
     "Lynx": {
       "rarity": 4,
-      "damageType": "Quantum",
+      "damageType": "quantum",
       "path": "Abundance",
       "skillTree": {
         "basic": {
@@ -11399,7 +11399,7 @@
     },
     "Luka": {
       "rarity": 4,
-      "damageType": "Physical",
+      "damageType": "physical",
       "path": "Nihility",
       "skillTree": {
         "basic": {
@@ -12072,7 +12072,7 @@
     },
     "TopazAndNumby": {
       "rarity": 5,
-      "damageType": "Fire",
+      "damageType": "fire",
       "path": "TheHunt",
       "skillTree": {
         "basic": {
@@ -12668,7 +12668,7 @@
     },
     "Qingque": {
       "rarity": 4,
-      "damageType": "Quantum",
+      "damageType": "quantum",
       "path": "Erudition",
       "skillTree": {
         "basic": {
@@ -13213,7 +13213,7 @@
     },
     "Tingyun": {
       "rarity": 4,
-      "damageType": "Lightning",
+      "damageType": "lightning",
       "path": "Harmony",
       "skillTree": {
         "basic": {
@@ -13789,7 +13789,7 @@
     },
     "Luocha": {
       "rarity": 5,
-      "damageType": "Imaginary",
+      "damageType": "imaginary",
       "path": "Abundance",
       "skillTree": {
         "basic": {
@@ -14401,7 +14401,7 @@
     },
     "JingYuan": {
       "rarity": 5,
-      "damageType": "Lightning",
+      "damageType": "lightning",
       "path": "Erudition",
       "skillTree": {
         "basic": {
@@ -15015,7 +15015,7 @@
     },
     "Blade": {
       "rarity": 5,
-      "damageType": "Wind",
+      "damageType": "wind",
       "path": "Destruction",
       "skillTree": {
         "basic": {
@@ -15773,7 +15773,7 @@
     },
     "Sushang": {
       "rarity": 4,
-      "damageType": "Physical",
+      "damageType": "physical",
       "path": "TheHunt",
       "skillTree": {
         "basic": {
@@ -16364,7 +16364,7 @@
     },
     "Yukong": {
       "rarity": 4,
-      "damageType": "Imaginary",
+      "damageType": "imaginary",
       "path": "Harmony",
       "skillTree": {
         "basic": {
@@ -16947,7 +16947,7 @@
     },
     "FuXuan": {
       "rarity": 5,
-      "damageType": "Quantum",
+      "damageType": "quantum",
       "path": "Preservation",
       "skillTree": {
         "basic": {
@@ -17543,7 +17543,7 @@
     },
     "Yanqing": {
       "rarity": 5,
-      "damageType": "Ice",
+      "damageType": "ice",
       "path": "TheHunt",
       "skillTree": {
         "basic": {
@@ -18159,7 +18159,7 @@
     },
     "Guinaifen": {
       "rarity": 4,
-      "damageType": "Fire",
+      "damageType": "fire",
       "path": "Nihility",
       "skillTree": {
         "basic": {
@@ -18828,7 +18828,7 @@
     },
     "Bailu": {
       "rarity": 5,
-      "damageType": "Lightning",
+      "damageType": "lightning",
       "path": "Abundance",
       "skillTree": {
         "basic": {
@@ -19476,7 +19476,7 @@
     },
     "Jingliu": {
       "rarity": 5,
-      "damageType": "Ice",
+      "damageType": "ice",
       "path": "Destruction",
       "skillTree": {
         "basic": {
@@ -20209,7 +20209,7 @@
     },
     "DanHengImbibitorLunae": {
       "rarity": 5,
-      "damageType": "Imaginary",
+      "damageType": "imaginary",
       "path": "Destruction",
       "skillTree": {
         "basic": {
@@ -20849,7 +20849,7 @@
     },
     "Xueyi": {
       "rarity": 4,
-      "damageType": "Quantum",
+      "damageType": "quantum",
       "path": "Destruction",
       "skillTree": {
         "basic": {
@@ -21428,7 +21428,7 @@
     },
     "Hanya": {
       "rarity": 4,
-      "damageType": "Physical",
+      "damageType": "physical",
       "path": "Harmony",
       "skillTree": {
         "basic": {
@@ -21987,7 +21987,7 @@
     },
     "Huohuo": {
       "rarity": 5,
-      "damageType": "Wind",
+      "damageType": "wind",
       "path": "Abundance",
       "skillTree": {
         "basic": {
@@ -22694,7 +22694,7 @@
     },
     "Yunli": {
       "rarity": 5,
-      "damageType": "Physical",
+      "damageType": "physical",
       "path": "Destruction",
       "skillTree": {
         "basic": {
@@ -23393,7 +23393,7 @@
     },
     "March7thTheHunt": {
       "rarity": 4,
-      "damageType": "Imaginary",
+      "damageType": "imaginary",
       "path": "TheHunt",
       "skillTree": {
         "basic": {
@@ -24049,7 +24049,7 @@
     },
     "Gallagher": {
       "rarity": 4,
-      "damageType": "Fire",
+      "damageType": "fire",
       "path": "Abundance",
       "skillTree": {
         "basic": {
@@ -24613,7 +24613,7 @@
     },
     "Argenti": {
       "rarity": 5,
-      "damageType": "Physical",
+      "damageType": "physical",
       "path": "Erudition",
       "skillTree": {
         "basic": {
@@ -25235,7 +25235,7 @@
     },
     "RuanMei": {
       "rarity": 5,
-      "damageType": "Ice",
+      "damageType": "ice",
       "path": "Harmony",
       "skillTree": {
         "basic": {
@@ -25859,7 +25859,7 @@
     },
     "Aventurine": {
       "rarity": 5,
-      "damageType": "Imaginary",
+      "damageType": "imaginary",
       "path": "Preservation",
       "skillTree": {
         "basic": {
@@ -26543,7 +26543,7 @@
     },
     "DrRatio": {
       "rarity": 5,
-      "damageType": "Imaginary",
+      "damageType": "imaginary",
       "path": "TheHunt",
       "skillTree": {
         "basic": {
@@ -27103,7 +27103,7 @@
     },
     "Sparkle": {
       "rarity": 5,
-      "damageType": "Quantum",
+      "damageType": "quantum",
       "path": "Harmony",
       "skillTree": {
         "basic": {
@@ -27749,7 +27749,7 @@
     },
     "BlackSwan": {
       "rarity": 5,
-      "damageType": "Wind",
+      "damageType": "wind",
       "path": "Nihility",
       "skillTree": {
         "basic": {
@@ -28509,7 +28509,7 @@
     },
     "Acheron": {
       "rarity": 5,
-      "damageType": "Lightning",
+      "damageType": "lightning",
       "path": "Nihility",
       "skillTree": {
         "basic": {
@@ -29338,7 +29338,7 @@
     },
     "Robin": {
       "rarity": 5,
-      "damageType": "Physical",
+      "damageType": "physical",
       "path": "Harmony",
       "skillTree": {
         "basic": {
@@ -29953,7 +29953,7 @@
     },
     "Firefly": {
       "rarity": 5,
-      "damageType": "Fire",
+      "damageType": "fire",
       "path": "Destruction",
       "skillTree": {
         "basic": {
@@ -30755,7 +30755,7 @@
     },
     "Misha": {
       "rarity": 4,
-      "damageType": "Ice",
+      "damageType": "ice",
       "path": "Destruction",
       "skillTree": {
         "basic": {
@@ -31372,7 +31372,7 @@
     },
     "Jade": {
       "rarity": 5,
-      "damageType": "Quantum",
+      "damageType": "quantum",
       "path": "Erudition",
       "skillTree": {
         "basic": {
@@ -32038,7 +32038,7 @@
     },
     "Boothill": {
       "rarity": 5,
-      "damageType": "Physical",
+      "damageType": "physical",
       "path": "TheHunt",
       "skillTree": {
         "basic": {
@@ -32702,7 +32702,7 @@
     },
     "TrailblazerPhysicalM": {
       "rarity": 5,
-      "damageType": "Physical",
+      "damageType": "physical",
       "path": "Destruction",
       "skillTree": {
         "basic": {
@@ -33299,7 +33299,7 @@
     },
     "TrailblazerPhysicalF": {
       "rarity": 5,
-      "damageType": "Physical",
+      "damageType": "physical",
       "path": "Destruction",
       "skillTree": {
         "basic": {
@@ -33896,7 +33896,7 @@
     },
     "TrailblazerFireM": {
       "rarity": 5,
-      "damageType": "Fire",
+      "damageType": "fire",
       "path": "Preservation",
       "skillTree": {
         "basic": {
@@ -34525,7 +34525,7 @@
     },
     "TrailblazerFireF": {
       "rarity": 5,
-      "damageType": "Fire",
+      "damageType": "fire",
       "path": "Preservation",
       "skillTree": {
         "basic": {
@@ -35154,7 +35154,7 @@
     },
     "TrailblazerImaginaryM": {
       "rarity": 5,
-      "damageType": "Imaginary",
+      "damageType": "imaginary",
       "path": "Harmony",
       "skillTree": {
         "basic": {
@@ -35704,7 +35704,7 @@
     },
     "TrailblazerImaginaryF": {
       "rarity": 5,
-      "damageType": "Imaginary",
+      "damageType": "imaginary",
       "path": "Harmony",
       "skillTree": {
         "basic": {

@@ -1,6 +1,6 @@
 {
   "rarity": 5,
-  "damageType": "Wind",
+  "damageType": "wind",
   "path": "Nihility",
   "skillTree": {
     "basic": {
