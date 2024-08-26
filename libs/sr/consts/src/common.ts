@@ -29,13 +29,13 @@ export const allStatKeys = [
 export type StatKey = (typeof allStatKeys)[number]
 
 export const allElementalDamageKeys = [
-  'physical',
-  'fire',
-  'ice',
-  'wind',
-  'lightning',
-  'quantum',
-  'imaginary',
+  'physical_dmg_',
+  'fire_dmg_',
+  'ice_dmg_',
+  'wind_dmg_',
+  'lightning_dmg_',
+  'quantum_dmg_',
+  'imaginary_dmg_',
 ] as const
 export type ElementalDamageKey = (typeof allElementalDamageKeys)[number]
 

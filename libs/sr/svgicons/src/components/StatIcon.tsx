@@ -1,5 +1,5 @@
-import type { ElementalDamageKey } from '@genshin-optimizer/sr/consts'
-import { allElementalDamageKeys } from '@genshin-optimizer/sr/consts'
+import type { ElementalTypeKey } from '@genshin-optimizer/sr/consts'
+import { allElementalTypeKeys } from '@genshin-optimizer/sr/consts'
 import type { SvgIconProps } from '@mui/material'
 import {
   AtkIcon,
@@ -60,8 +60,8 @@ export function StatIcon({
       return <BrEffIcon {...iconProps} />
   }
   const ele = statKey.split('_')[0]
-  if (allElementalDamageKeys.includes(ele as ElementalDamageKey))
-    return <ElementIcon ele={ele as ElementalDamageKey} iconProps={iconProps} />
+  if (allElementalTypeKeys.includes(ele as ElementalTypeKey))
+    return <ElementIcon ele={ele as ElementalTypeKey} iconProps={iconProps} />
 
   return null
 }
@@ -70,23 +70,23 @@ export function ElementIcon({
   ele,
   iconProps = {},
 }: {
-  ele: ElementalDamageKey
+  ele: ElementalTypeKey
   iconProps?: SvgIconProps
 }) {
   switch (ele) {
-    case 'fire':
+    case 'Fire':
       return <FireIcon {...iconProps} />
-    case 'ice':
+    case 'Ice':
       return <IceIcon {...iconProps} />
-    case 'imaginary':
+    case 'Imaginary':
       return <ImaginaryIcon {...iconProps} />
-    case 'lightning':
+    case 'Lightning':
       return <LightningIcon {...iconProps} />
-    case 'quantum':
+    case 'Quantum':
       return <QuantumIcon {...iconProps} />
-    case 'wind':
+    case 'Wind':
       return <WindIcon {...iconProps} />
-    case 'physical':
+    case 'Physical':
       return <PhysicalIcon {...iconProps} />
   }
 }

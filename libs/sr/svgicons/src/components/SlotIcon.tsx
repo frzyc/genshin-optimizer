@@ -19,7 +19,7 @@ export function SlotIcon({
   switch (slotKey) {
     case 'head':
       return <HeadIcon {...iconProps} />
-    case 'hands':
+    case 'hand':
       return <HandsIcon {...iconProps} />
     case 'body':
       return <BodyIcon {...iconProps} />

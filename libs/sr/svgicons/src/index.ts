@@ -1,6 +1,6 @@
 export * from './icons/RelicSlot/BodyIcon'
 export * from './icons/RelicSlot/FeetIcon'
-export * from './icons/RelicSlot/HandIcon'
+export * from './icons/RelicSlot/HandsIcon'
 export * from './icons/RelicSlot/HeadIcon'
 export * from './icons/RelicSlot/RopeIcon'
 export * from './icons/RelicSlot/SphereIcon'
