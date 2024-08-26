@@ -19,6 +19,7 @@ export function SlotIcon({
   switch (slotKey) {
     case 'head':
       return <HeadIcon {...iconProps} />
+    // TODO: change to 'hands' when slotKey name gets changed
     case 'hand':
       return <HandsIcon {...iconProps} />
     case 'body':

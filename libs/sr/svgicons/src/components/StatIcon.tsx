@@ -59,7 +59,12 @@ export function StatIcon({
     case 'brEff_':
       return <BrEffIcon {...iconProps} />
   }
-  const ele = statKey.split('_')[0]
+
+  // TODO: Deprecated when ElementalTypeKey gets uncapitalized
+  // match first character of elem string, replace it with uppercase version
+  const ele = statKey
+    .split('_')[0]
+    .replace(/^./g, (match) => match.toUpperCase())
   if (allElementalTypeKeys.includes(ele as ElementalTypeKey))
     return <ElementIcon ele={ele as ElementalTypeKey} iconProps={iconProps} />
 
