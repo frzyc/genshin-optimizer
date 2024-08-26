@@ -25,7 +25,7 @@ export class Calculator<M = any> {
     ...values: RawTagMapValues<AnyNode | ReRead>[]
   ) {
     this.nodes = new TagMapSubsetValues(keys.tagLen, mergeTagMapValues(values))
-    this.cache = new DedupTags(new TagMapKeys(keys)).empty
+    this.cache = new DedupTags(new TagMapKeys(keys)).at({})
   }
   withTag(tag: Tag): this {
     return Object.assign(

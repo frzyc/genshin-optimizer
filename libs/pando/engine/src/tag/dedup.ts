@@ -9,11 +9,9 @@ export type DedupTag<V = never> = Leaf<V>
 export class DedupTags<V = never> {
   root = new Internal<V>(undefined!)
   keys: TagMapKeys
-  empty: Leaf<V>
 
   constructor(keys: TagMapKeys) {
     this.keys = keys
-    this.empty = this.at({})
   }
 
   /** Object associated with `tag` */
