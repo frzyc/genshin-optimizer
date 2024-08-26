@@ -28,11 +28,9 @@ export class Calculator<M = any> {
     this.cache = new DedupTags(new TagMapKeys(keys)).at({})
   }
   withTag(tag: Tag): this {
-    return Object.assign(
-      new (this.constructor as any)(this.cache.keys),
-      this,
-      { cache: this.cache.with(tag) }
-    )
+    return Object.assign(new (this.constructor as any)(this.cache.keys), this, {
+      cache: this.cache.with(tag),
+    })
   }
 
   gather<V extends number | string = number | string>(
