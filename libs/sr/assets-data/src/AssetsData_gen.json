@@ -2184,124 +2184,124 @@
       "eidolon6": "SpriteOutput/SkillIcons/Avatar/8005/SkillIcon_8005_Rank6.png"
     }
   },
-  "relic": {
+  "relics": {
     "PasserbyOfWanderingCloud": {
       "head": "SpriteOutput/RelicFigures/IconRelic_101_1.png",
-      "hand": "SpriteOutput/RelicFigures/IconRelic_101_2.png",
+      "hands": "SpriteOutput/RelicFigures/IconRelic_101_2.png",
       "body": "SpriteOutput/RelicFigures/IconRelic_101_3.png",
       "feet": "SpriteOutput/RelicFigures/IconRelic_101_4.png"
     },
     "MusketeerOfWildWheat": {
       "head": "SpriteOutput/RelicFigures/IconRelic_102_1.png",
-      "hand": "SpriteOutput/RelicFigures/IconRelic_102_2.png",
+      "hands": "SpriteOutput/RelicFigures/IconRelic_102_2.png",
       "body": "SpriteOutput/RelicFigures/IconRelic_102_3.png",
       "feet": "SpriteOutput/RelicFigures/IconRelic_102_4.png"
     },
     "KnightOfPurityPalace": {
       "head": "SpriteOutput/RelicFigures/IconRelic_103_1.png",
-      "hand": "SpriteOutput/RelicFigures/IconRelic_103_2.png",
+      "hands": "SpriteOutput/RelicFigures/IconRelic_103_2.png",
       "body": "SpriteOutput/RelicFigures/IconRelic_103_3.png",
       "feet": "SpriteOutput/RelicFigures/IconRelic_103_4.png"
     },
     "HunterOfGlacialForest": {
       "head": "SpriteOutput/RelicFigures/IconRelic_104_1.png",
-      "hand": "SpriteOutput/RelicFigures/IconRelic_104_2.png",
+      "hands": "SpriteOutput/RelicFigures/IconRelic_104_2.png",
       "body": "SpriteOutput/RelicFigures/IconRelic_104_3.png",
       "feet": "SpriteOutput/RelicFigures/IconRelic_104_4.png"
     },
     "ChampionOfStreetwiseBoxing": {
       "head": "SpriteOutput/RelicFigures/IconRelic_105_1.png",
-      "hand": "SpriteOutput/RelicFigures/IconRelic_105_2.png",
+      "hands": "SpriteOutput/RelicFigures/IconRelic_105_2.png",
       "body": "SpriteOutput/RelicFigures/IconRelic_105_3.png",
       "feet": "SpriteOutput/RelicFigures/IconRelic_105_4.png"
     },
     "GuardOfWutheringSnow": {
       "head": "SpriteOutput/RelicFigures/IconRelic_106_1.png",
-      "hand": "SpriteOutput/RelicFigures/IconRelic_106_2.png",
+      "hands": "SpriteOutput/RelicFigures/IconRelic_106_2.png",
       "body": "SpriteOutput/RelicFigures/IconRelic_106_3.png",
       "feet": "SpriteOutput/RelicFigures/IconRelic_106_4.png"
     },
     "FiresmithOfLavaForging": {
       "head": "SpriteOutput/RelicFigures/IconRelic_107_1.png",
-      "hand": "SpriteOutput/RelicFigures/IconRelic_107_2.png",
+      "hands": "SpriteOutput/RelicFigures/IconRelic_107_2.png",
       "body": "SpriteOutput/RelicFigures/IconRelic_107_3.png",
       "feet": "SpriteOutput/RelicFigures/IconRelic_107_4.png"
     },
     "GeniusOfBrilliantStars": {
       "head": "SpriteOutput/RelicFigures/IconRelic_108_1.png",
-      "hand": "SpriteOutput/RelicFigures/IconRelic_108_2.png",
+      "hands": "SpriteOutput/RelicFigures/IconRelic_108_2.png",
       "body": "SpriteOutput/RelicFigures/IconRelic_108_3.png",
       "feet": "SpriteOutput/RelicFigures/IconRelic_108_4.png"
     },
     "BandOfSizzlingThunder": {
       "head": "SpriteOutput/RelicFigures/IconRelic_109_1.png",
-      "hand": "SpriteOutput/RelicFigures/IconRelic_109_2.png",
+      "hands": "SpriteOutput/RelicFigures/IconRelic_109_2.png",
       "body": "SpriteOutput/RelicFigures/IconRelic_109_3.png",
       "feet": "SpriteOutput/RelicFigures/IconRelic_109_4.png"
     },
     "EagleOfTwilightLine": {
       "head": "SpriteOutput/RelicFigures/IconRelic_110_1.png",
-      "hand": "SpriteOutput/RelicFigures/IconRelic_110_2.png",
+      "hands": "SpriteOutput/RelicFigures/IconRelic_110_2.png",
       "body": "SpriteOutput/RelicFigures/IconRelic_110_3.png",
       "feet": "SpriteOutput/RelicFigures/IconRelic_110_4.png"
     },
     "ThiefOfShootingMeteor": {
       "head": "SpriteOutput/RelicFigures/IconRelic_111_1.png",
-      "hand": "SpriteOutput/RelicFigures/IconRelic_111_2.png",
+      "hands": "SpriteOutput/RelicFigures/IconRelic_111_2.png",
       "body": "SpriteOutput/RelicFigures/IconRelic_111_3.png",
       "feet": "SpriteOutput/RelicFigures/IconRelic_111_4.png"
     },
     "WastelanderOfBanditryDesert": {
       "head": "SpriteOutput/RelicFigures/IconRelic_112_1.png",
-      "hand": "SpriteOutput/RelicFigures/IconRelic_112_2.png",
+      "hands": "SpriteOutput/RelicFigures/IconRelic_112_2.png",
       "body": "SpriteOutput/RelicFigures/IconRelic_112_3.png",
       "feet": "SpriteOutput/RelicFigures/IconRelic_112_4.png"
     },
     "LongevousDisciple": {
       "head": "SpriteOutput/RelicFigures/IconRelic_113_1.png",
-      "hand": "SpriteOutput/RelicFigures/IconRelic_113_2.png",
+      "hands": "SpriteOutput/RelicFigures/IconRelic_113_2.png",
       "body": "SpriteOutput/RelicFigures/IconRelic_113_3.png",
       "feet": "SpriteOutput/RelicFigures/IconRelic_113_4.png"
     },
     "MessengerTraversingHackerspace": {
       "head": "SpriteOutput/RelicFigures/IconRelic_114_1.png",
-      "hand": "SpriteOutput/RelicFigures/IconRelic_114_2.png",
+      "hands": "SpriteOutput/RelicFigures/IconRelic_114_2.png",
       "body": "SpriteOutput/RelicFigures/IconRelic_114_3.png",
       "feet": "SpriteOutput/RelicFigures/IconRelic_114_4.png"
     },
     "TheAshblazingGrandDuke": {
       "head": "SpriteOutput/RelicFigures/IconRelic_115_1.png",
-      "hand": "SpriteOutput/RelicFigures/IconRelic_115_2.png",
+      "hands": "SpriteOutput/RelicFigures/IconRelic_115_2.png",
       "body": "SpriteOutput/RelicFigures/IconRelic_115_3.png",
       "feet": "SpriteOutput/RelicFigures/IconRelic_115_4.png"
     },
     "PrisonerInDeepConfinement": {
       "head": "SpriteOutput/RelicFigures/IconRelic_116_1.png",
-      "hand": "SpriteOutput/RelicFigures/IconRelic_116_2.png",
+      "hands": "SpriteOutput/RelicFigures/IconRelic_116_2.png",
       "body": "SpriteOutput/RelicFigures/IconRelic_116_3.png",
       "feet": "SpriteOutput/RelicFigures/IconRelic_116_4.png"
     },
     "PioneerDiverOfDeadWaters": {
       "head": "SpriteOutput/RelicFigures/IconRelic_117_1.png",
-      "hand": "SpriteOutput/RelicFigures/IconRelic_117_2.png",
+      "hands": "SpriteOutput/RelicFigures/IconRelic_117_2.png",
       "body": "SpriteOutput/RelicFigures/IconRelic_117_3.png",
       "feet": "SpriteOutput/RelicFigures/IconRelic_117_4.png"
     },
     "WatchmakerMasterOfDreamMachinations": {
       "head": "SpriteOutput/RelicFigures/IconRelic_118_1.png",
-      "hand": "SpriteOutput/RelicFigures/IconRelic_118_2.png",
+      "hands": "SpriteOutput/RelicFigures/IconRelic_118_2.png",
       "body": "SpriteOutput/RelicFigures/IconRelic_118_3.png",
       "feet": "SpriteOutput/RelicFigures/IconRelic_118_4.png"
     },
     "IronCavalryAgainstTheScourge": {
       "head": "SpriteOutput/RelicFigures/IconRelic_119_1.png",
-      "hand": "SpriteOutput/RelicFigures/IconRelic_119_2.png",
+      "hands": "SpriteOutput/RelicFigures/IconRelic_119_2.png",
       "body": "SpriteOutput/RelicFigures/IconRelic_119_3.png",
       "feet": "SpriteOutput/RelicFigures/IconRelic_119_4.png"
     },
     "TheWindSouringValorous": {
       "head": "SpriteOutput/RelicFigures/IconRelic_120_1.png",
-      "hand": "SpriteOutput/RelicFigures/IconRelic_120_2.png",
+      "hands": "SpriteOutput/RelicFigures/IconRelic_120_2.png",
       "body": "SpriteOutput/RelicFigures/IconRelic_120_3.png",
       "feet": "SpriteOutput/RelicFigures/IconRelic_120_4.png"
     },

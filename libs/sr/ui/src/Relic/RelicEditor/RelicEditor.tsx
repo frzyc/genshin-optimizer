@@ -174,7 +174,7 @@ export function RelicEditor({
           newSheet.rarity,
           Math.max(...newSheet.rarity) as RelicRarityKey
         )
-        newValue.slotKey = pick(relic?.slotKey, ['head', 'hand'])
+        newValue.slotKey = pick(relic?.slotKey, ['head', 'hands'])
       }
       if (newValue.rarity) newValue.level = relic?.level ?? 0
       if (newValue.level)
