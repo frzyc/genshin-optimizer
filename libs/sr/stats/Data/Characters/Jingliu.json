@@ -1,6 +1,6 @@
 {
   "rarity": 5,
-  "damageType": "Ice",
+  "damageType": "ice",
   "path": "Destruction",
   "skillTree": {
     "basic": {

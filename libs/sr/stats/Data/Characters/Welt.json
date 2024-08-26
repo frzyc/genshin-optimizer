@@ -1,6 +1,6 @@
 {
   "rarity": 5,
-  "damageType": "Imaginary",
+  "damageType": "imaginary",
   "path": "Nihility",
   "skillTree": {
     "basic": {

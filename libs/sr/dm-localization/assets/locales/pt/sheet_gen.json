@@ -1,12 +1,12 @@
 {
   "type": {
-    "Physical": "Físico",
-    "Quantum": "Quântico",
-    "Lightning": "Raio",
-    "Ice": "Gelo",
-    "Wind": "Vento",
-    "Fire": "Fogo",
-    "Imaginary": "Imaginário"
+    "physical": "Físico",
+    "quantum": "Quântico",
+    "lightning": "Raio",
+    "ice": "Gelo",
+    "wind": "Vento",
+    "fire": "Fogo",
+    "imaginary": "Imaginário"
   },
   "path": {
     "Erudition": "A Erudição",

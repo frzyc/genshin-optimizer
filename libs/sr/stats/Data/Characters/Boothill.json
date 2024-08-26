@@ -1,6 +1,6 @@
 {
   "rarity": 5,
-  "damageType": "Physical",
+  "damageType": "physical",
   "path": "TheHunt",
   "skillTree": {
     "basic": {

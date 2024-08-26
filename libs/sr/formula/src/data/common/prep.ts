@@ -1,16 +1,16 @@
 import { lookup, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
 import { allStats } from '@genshin-optimizer/sr/stats'
-import type { TagMapNodeEntries } from '../util'
+import type { ElementalType, TagMapNodeEntries } from '../util'
 import { percent, self, selfBuff } from '../util'
 
-const breakBaseRatios = {
-  Physical: 2,
-  Fire: 2,
-  Ice: 1,
-  Lightning: 1,
-  Wind: 1.5,
-  Quantum: 0.5,
-  Imaginary: 0.5,
+const breakBaseRatios: Record<ElementalType, number> = {
+  physical: 2,
+  fire: 2,
+  ice: 1,
+  lightning: 1,
+  wind: 1.5,
+  quantum: 0.5,
+  imaginary: 0.5,
 }
 const data: TagMapNodeEntries = [
   // Formula calculations

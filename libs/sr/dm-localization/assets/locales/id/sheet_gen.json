@@ -1,12 +1,12 @@
 {
   "type": {
-    "Physical": "Physical",
-    "Quantum": "Quantum",
-    "Lightning": "Lightning",
-    "Ice": "Ice",
-    "Wind": "Wind",
-    "Fire": "Fire",
-    "Imaginary": "Imaginary"
+    "physical": "Physical",
+    "quantum": "Quantum",
+    "lightning": "Lightning",
+    "ice": "Ice",
+    "wind": "Wind",
+    "fire": "Fire",
+    "imaginary": "Imaginary"
   },
   "path": {
     "Erudition": "Erudition",

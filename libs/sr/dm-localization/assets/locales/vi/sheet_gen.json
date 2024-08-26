@@ -1,12 +1,12 @@
 {
   "type": {
-    "Physical": "Vật Lý",
-    "Quantum": "Lượng Tử",
-    "Lightning": "Lôi",
-    "Ice": "Băng",
-    "Wind": "Phong",
-    "Fire": "Hỏa",
-    "Imaginary": "Số Ảo"
+    "physical": "Vật Lý",
+    "quantum": "Lượng Tử",
+    "lightning": "Lôi",
+    "ice": "Băng",
+    "wind": "Phong",
+    "fire": "Hỏa",
+    "imaginary": "Số Ảo"
   },
   "path": {
     "Erudition": "Tri Thức",

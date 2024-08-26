@@ -75,7 +75,9 @@ const langArray = Object.entries(languageMap).map(([langKey, strings]) => {
 
   // Trailblazer name handling
   allTrailblazerGenderedKeys.forEach((key) => {
-    const type = allElementalTypeKeys.find((typeKey) => key.includes(typeKey))
+    const type = allElementalTypeKeys.find((typeKey) =>
+      key.toLowerCase().includes(typeKey)
+    )
     if (!type)
       throw new Error(
         `Trailblazer key ${key} was unable to find an elemental type`
