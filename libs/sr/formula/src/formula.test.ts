@@ -50,7 +50,7 @@ describe('character test', () => {
         })
       ),
     ]
-    const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+    const calc = new Calculator(values, compileTagMapValues(keys, data))
 
     const member0 = convert(selfTag, { et: 'self', src: '0' })
     expect(calc.compute(member0.final.atk).val).toBeCloseTo(atk)
@@ -92,7 +92,7 @@ describe('lightCone test', () => {
         })
       ),
     ]
-    const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+    const calc = new Calculator(values, compileTagMapValues(keys, data))
 
     const lightCone0 = convert(selfTag, {
       et: 'self',
@@ -135,7 +135,7 @@ describe('char+lightCone test', () => {
         })
       ),
     ]
-    const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+    const calc = new Calculator(values, compileTagMapValues(keys, data))
     const member0 = convert(selfTag, { et: 'self', src: '0' })
     expect(calc.compute(member0.final.atk).val).toBeCloseTo(81.6)
   })

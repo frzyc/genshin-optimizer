@@ -18,7 +18,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
   gathering = new Set<TagCache<DebugMeta>>()
 
   constructor(calc: BaseCalculator<any>, tagStr: TagStr) {
-    super(calc.keys)
+    super(calc.cache.keys)
     this.nodes = calc.nodes
     this.tagStr = tagStr
     this.custom = calc.computeCustom

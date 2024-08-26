@@ -140,7 +140,7 @@ export function detach(
         assertUnreachable(op)
     }
   }
-  return n.map((n) => map(n, new DedupTags(calc.keys).empty))
+  return n.map((n) => map(n, new DedupTags(calc.cache.keys).empty))
 }
 
 /** Combine nested `sum`/`prod`/`min`/`max`, e.g., turn `sum(..., sum(...))` into `sum(...)` */

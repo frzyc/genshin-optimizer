@@ -55,7 +55,7 @@ describe('calculator', () => {
             ...withMember('2', selfBuff.premod.hp.add(4)),
             ...stack,
           ],
-          calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+          calc = new Calculator(values, compileTagMapValues(keys, data))
 
         // Every member got buffed by exactly once with the last member value
         for (const src of members)
@@ -67,7 +67,7 @@ describe('calculator', () => {
             // No members with non-zero values
             ...stack,
           ],
-          calc = new Calculator(keys, values, compileTagMapValues(keys, data))
+          calc = new Calculator(values, compileTagMapValues(keys, data))
         for (const src of members)
           expect(calc.compute(self.final.atk.withTag({ src })).val).toEqual(0)
       })

@@ -1,10 +1,5 @@
-import type { DedupTag, RawTagMapKeys, RawTagMapValues, Tag } from '../tag'
-import {
-  DedupTags,
-  TagMapKeys,
-  TagMapSubsetValues,
-  mergeTagMapValues,
-} from '../tag'
+import type { DedupTag, RawTagMapValues, Tag, TagMapKeys } from '../tag'
+import { DedupTags, TagMapSubsetValues, mergeTagMapValues } from '../tag'
 import { assertUnreachable, extract, isDebug, tagString } from '../util'
 import { arithmetic, branching } from './formula'
 import type { AnyNode, NumNode, ReRead, Read, StrNode } from './type'
@@ -17,31 +12,33 @@ const getV = <V, M>(n: CalcResult<V, M>[]) => extract(n, 'val')
 
 export type CalcResult<V, M> = { val: V; meta: M }
 export class Calculator<M = any> {
-  keys: TagMapKeys
   nodes: TagMapSubsetValues<AnyNode | ReRead>
-  cache: DedupTags<PreRead<M>>
+  cache: DedupTag<PreRead<M>>
 
   constructor(
-    keys: RawTagMapKeys,
+    keys: TagMapKeys,
     ...values: RawTagMapValues<AnyNode | ReRead>[]
   ) {
-    this.keys = new TagMapKeys(keys)
     this.nodes = new TagMapSubsetValues(keys.tagLen, mergeTagMapValues(values))
-    this.cache = new DedupTags(this.keys)
+    this.cache = new DedupTags(keys).empty
+  }
+
+  withTag(_: Tag): Calculator<M> {
+    throw new Error('Unimplemented')
   }
 
   gather<V extends number | string = number | string>(
     tag: Tag
   ): CalcResult<V, M>[]
   gather(tag: Tag): CalcResult<number | string, M>[] {
-    return this._gather(this.cache.at(tag)).pre
+    return this._gather(this.cache.with(tag)).pre
   }
 
   compute(n: NumNode): CalcResult<number, M>
   compute(n: StrNode): CalcResult<string, M>
   compute(n: AnyNode): CalcResult<number | string, M>
   compute(n: AnyNode): CalcResult<number | string, M> {
-    return this._compute(n, this.cache.empty)
+    return this._compute(n, this.cache)
   }
 
   _gather(cache: TagCache<M>): PreRead<M> {
