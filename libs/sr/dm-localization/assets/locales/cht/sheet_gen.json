@@ -1,12 +1,12 @@
 {
   "type": {
-    "Physical": "物理",
-    "Quantum": "量子",
-    "Lightning": "雷",
-    "Ice": "冰",
-    "Wind": "風",
-    "Fire": "火",
-    "Imaginary": "虛數"
+    "physical": "物理",
+    "quantum": "量子",
+    "lightning": "雷",
+    "ice": "冰",
+    "wind": "風",
+    "fire": "火",
+    "imaginary": "虛數"
   },
   "path": {
     "Erudition": "智識",

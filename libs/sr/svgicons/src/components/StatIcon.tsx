@@ -60,11 +60,7 @@ export function StatIcon({
       return <BrEffIcon {...iconProps} />
   }
 
-  // TODO: Deprecated when ElementalTypeKey gets uncapitalized
-  // match first character of elem string, replace it with uppercase version
-  const ele = statKey
-    .split('_')[0]
-    .replace(/^./g, (match) => match.toUpperCase())
+  const ele = statKey.split('_')[0]
   if (allElementalTypeKeys.includes(ele as ElementalTypeKey))
     return <ElementIcon ele={ele as ElementalTypeKey} iconProps={iconProps} />
 
@@ -79,19 +75,19 @@ export function ElementIcon({
   iconProps?: SvgIconProps
 }) {
   switch (ele) {
-    case 'Fire':
+    case 'fire':
       return <FireIcon {...iconProps} />
-    case 'Ice':
+    case 'ice':
       return <IceIcon {...iconProps} />
-    case 'Imaginary':
+    case 'imaginary':
       return <ImaginaryIcon {...iconProps} />
-    case 'Lightning':
+    case 'lightning':
       return <LightningIcon {...iconProps} />
-    case 'Quantum':
+    case 'quantum':
       return <QuantumIcon {...iconProps} />
-    case 'Wind':
+    case 'wind':
       return <WindIcon {...iconProps} />
-    case 'Physical':
+    case 'physical':
       return <PhysicalIcon {...iconProps} />
   }
 }
