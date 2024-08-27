@@ -214,7 +214,7 @@ export const allWeaponCatalystKeys = [
   'SacrificialJade',
   'SkywardAtlas',
   'SolarPearl',
-  'SurfingTime',
+  'SurfsUp',
   'TheWidsith',
   'ThrillingTalesOfDragonSlayers',
   'TomeOfTheEternalFlow',

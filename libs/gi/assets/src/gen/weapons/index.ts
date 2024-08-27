@@ -155,7 +155,7 @@ import SplendorOfTranquilWaters from './SplendorOfTranquilWaters'
 import StaffOfHoma from './StaffOfHoma'
 import StaffOfTheScarletSands from './StaffOfTheScarletSands'
 import SummitShaper from './SummitShaper'
-import SurfingTime from './SurfingTime'
+import SurfsUp from './SurfsUp'
 import SwordOfDescension from './SwordOfDescension'
 import SwordOfNarzissenkreuz from './SwordOfNarzissenkreuz'
 import TalkingStick from './TalkingStick'
@@ -351,7 +351,7 @@ const data = {
   StaffOfHoma,
   StaffOfTheScarletSands,
   SummitShaper,
-  SurfingTime,
+  SurfsUp,
   SwordOfDescension,
   SwordOfNarzissenkreuz,
   TalkingStick,

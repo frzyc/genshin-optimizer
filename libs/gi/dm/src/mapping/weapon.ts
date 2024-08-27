@@ -181,7 +181,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   14513: 'CashflowSupervision',
   14514: 'TomeOfTheEternalFlow',
   14515: 'CranesEchoingCall',
-  14516: 'SurfingTime',
+  14516: 'SurfsUp',
 
   //bow
   15101: 'HuntersBow',

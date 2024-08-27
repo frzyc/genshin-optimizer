@@ -33,7 +33,7 @@ import SacrificialFragments from './SacrificialFragments'
 import SacrificialJade from './SacrificialJade'
 import SkywardAtlas from './SkywardAtlas'
 import SolarPearl from './SolarPearl'
-import SurfingTime from './SurfingTime'
+import SurfsUp from './SurfsUp'
 import TheWidsith from './TheWidsith'
 import ThrillingTalesOfDragonSlayers from './ThrillingTalesOfDragonSlayers'
 import TomeOfTheEternalFlow from './TomeOfTheEternalFlow'
@@ -75,7 +75,7 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   SacrificialJade,
   SkywardAtlas,
   SolarPearl,
-  SurfingTime,
+  SurfsUp,
   TheWidsith,
   ThrillingTalesOfDragonSlayers,
   TomeOfTheEternalFlow,

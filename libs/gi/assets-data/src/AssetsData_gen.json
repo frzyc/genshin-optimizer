@@ -608,7 +608,7 @@
       "icon": "UI_EquipIcon_Catalyst_MountainGale",
       "awakenIcon": "UI_EquipIcon_Catalyst_MountainGale_Awaken"
     },
-    "SurfingTime": {
+    "SurfsUp": {
       "icon": "UI_EquipIcon_Catalyst_MechaPufferfish",
       "awakenIcon": "UI_EquipIcon_Catalyst_MechaPufferfish_Awaken"
     },
