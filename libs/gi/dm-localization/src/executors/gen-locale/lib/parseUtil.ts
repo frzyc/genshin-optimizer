@@ -82,9 +82,9 @@ const paragraph = (string: string) => {
   while (parsed[parsed.length - 1] === '<br/>') parsed.pop()
   return { ...parseBulletPoints(parsed) }
 }
-const autoFields = (string: string) => {
+const autoFields = (string: string, delimiter = '\\n\\n<strong>') => {
   const strings = string
-    .split('\\n\\n<strong>')
+    .split(delimiter)
     .filter((s) => s)
     .map((s, i) => (i ? '<strong>' : '') + s)
   return strings.map((s) => ({ ...paragraph(s) }))
@@ -109,6 +109,13 @@ export const parsingFunctions: {
   },
   autoFields: (lang, string, keys) => {
     const strings = autoFields(string)
+    if (strings.length === 2) {
+      const [, charkey] = keys as any
+      if (charkey === 'Kinich' && lang === 'id') {
+        const [normal, charged, plunging] = autoFields(string, '\\n<strong>')
+        return { normal, charged, plunging } as any
+      }
+    }
     if (strings.length === 3) {
       const [normal, charged, plunging] = strings
       return { normal, charged, plunging } as any

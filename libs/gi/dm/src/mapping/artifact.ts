@@ -52,6 +52,8 @@ export const artifactIdMap: Record<string | number, ArtifactSetKey> = {
   15034: 'NighttimeWhispersInTheEchoingWoods',
   15035: 'FragmentOfHarmonicWhimsy',
   15036: 'UnfinishedReverie',
+  15037: 'ScrollOfTheHeroOfCinderCity',
+  15038: 'ObsidianCodex',
 } as const
 
 export const artifactSlotMap = {

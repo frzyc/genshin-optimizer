@@ -6,6 +6,7 @@ import BeaconOfTheReedSea from './BeaconOfTheReedSea'
 import BlackcliffSlasher from './BlackcliffSlasher'
 import BloodtaintedGreatsword from './BloodtaintedGreatsword'
 import DebateClub from './DebateClub'
+import EarthShaker from './EarthShaker'
 import FavoniusGreatsword from './FavoniusGreatsword'
 import FerrousShadow from './FerrousShadow'
 import ForestRegalia from './ForestRegalia'
@@ -42,6 +43,7 @@ const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   BlackcliffSlasher,
   BloodtaintedGreatsword,
   DebateClub,
+  EarthShaker,
   FavoniusGreatsword,
   FerrousShadow,
   ForestRegalia,
