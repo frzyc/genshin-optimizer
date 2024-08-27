@@ -109,6 +109,7 @@ const a4_dmg_ = greaterEq(
   )
 )
 
+const c1_skill_dmg_ = greaterEq(input.constellation, 1, dm.constellation1.dmg_)
 const c1_a1_dmg_ = greaterEq(
   input.constellation,
   1,
@@ -187,6 +188,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     normal_dmgInc: c6_normal_dmgInc,
     charged_dmgInc: c6_charged_dmgInc,
     all_dmg_: a4_dmg_,
+    skill_dmg_: c1_skill_dmg_,
   },
   teamBuff: {
     premod: {
@@ -291,6 +293,13 @@ const sheet: TalentSheet = {
         },
       ],
     },
+    ct.headerTem('constellation1', {
+      fields: [
+        {
+          node: c1_skill_dmg_,
+        },
+      ],
+    }),
   ]),
 
   burst: ct.talentTem('burst', [
