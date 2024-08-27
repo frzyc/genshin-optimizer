@@ -19,18 +19,25 @@ export type CalcResult<V, M> = { val: V; meta: M }
 export class Calculator<M = any> {
   nodes: TagMapSubsetValues<AnyNode | ReRead>
   cache: DedupTag<PreRead<M>>
+  calc: DedupTag<this>
 
   constructor(
-    keys: RawTagMapKeys,
+    rawKeys: RawTagMapKeys,
     ...values: RawTagMapValues<AnyNode | ReRead>[]
   ) {
+    const keys = new TagMapKeys(rawKeys)
     this.nodes = new TagMapSubsetValues(keys.tagLen, mergeTagMapValues(values))
-    this.cache = new DedupTags(new TagMapKeys(keys)).at({})
+    this.cache = new DedupTags(keys).at({})
+    this.calc = new DedupTags(keys).at({})
+    this.calc.val = this
   }
   withTag(tag: Tag): this {
-    return Object.assign(new (this.constructor as any)(this.cache.keys), this, {
-      cache: this.cache.with(tag),
-    })
+    const calc = this.calc.with(tag)
+    return (calc.val ??= Object.assign(
+      new (this.constructor as any)(this.cache.keys),
+      this,
+      { cache: this.cache.with(tag), calc }
+    ))
   }
 
   gather<V extends number | string = number | string>(
