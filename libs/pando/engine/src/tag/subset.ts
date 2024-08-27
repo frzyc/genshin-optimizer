@@ -26,7 +26,7 @@ export class TagMapSubsetValues<V> {
   }
   /** Entry tags of `this.subset(id)`, in the same order */
   debugTag(id: TagId): Tag[] {
-    if (isDebug('tag_db'))
+    if (!isDebug('tag_db'))
       throw new Error('Entry tags are only tracked in debug mode')
     const result: Tag[] = []
     this._subset(id, (l) => result.push(...l[entryKey]!))
