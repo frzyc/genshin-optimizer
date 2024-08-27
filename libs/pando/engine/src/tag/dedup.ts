@@ -59,12 +59,12 @@ class Leaf<V> {
 
   /** Object associated with tag `{ ...this.tag, tag }` */
   with(tag: Tag): Leaf<V> {
-    const { id, firstReplacedByte: first } = this.keys.combine(this.id, tag)
+    const { keys } = this
+    const { id, firstReplacedByte: first } = keys.combine(this.id, tag)
     let cur = this.internal
-    for (let i = first; i < this.keys.tagLen; i++) cur = cur.parent
-    cur = id.slice(first).reduce((cur, id) => cur.child(id), cur)
-    if (!cur.leaf)
-      cur.leaf = new Leaf({ ...this.tag, ...tag }, id, this.keys, cur)
+    for (let i = first; i < keys.tagLen; i++) cur = cur.parent
+    for (let i = first; i < keys.tagLen; i++) cur = cur.child(id[i])
+    if (!cur.leaf) cur.leaf = new Leaf({ ...this.tag, ...tag }, id, keys, cur)
     return cur.leaf
   }
 }
