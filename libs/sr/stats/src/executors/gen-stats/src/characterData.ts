@@ -1,5 +1,6 @@
 import {
   objKeyMap,
+  range,
   transposeArray,
   verifyObjKeys,
 } from '@genshin-optimizer/common/util'
@@ -84,17 +85,22 @@ export default function characterData(): CharacterData {
                 LevelUpSkillID.length > 0
                   ? // Grab from AvatarSkillConfig (non-traces)
                     LevelUpSkillID.map((skillId) =>
-                      transposeArray(
-                        avatarSkillConfig[skillId]!.map(({ ParamList }) =>
+                      transposeArray([
+                        range(
+                          1,
+                          avatarSkillConfig[skillId][0].ParamList!.length
+                        ).map(() => -1),
+                        ...avatarSkillConfig[skillId]!.map(({ ParamList }) =>
                           ParamList.map(({ Value }) => Value)
-                        )
-                      )
+                        ),
+                      ])
                     )
                   : // Grab from itself (AvatarSkillTreeConfig) (traces)
                     [
-                      skillTree.map((config) =>
-                        config.ParamList.map(({ Value }) => Value)
-                      ),
+                      skillTree.map((config) => [
+                        -1,
+                        ...config.ParamList.map(({ Value }) => Value),
+                      ]),
                     ]
 
               const levels = skillTree.map(({ StatusAddList }) => {
