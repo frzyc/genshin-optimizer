@@ -1,0 +1,174 @@
+{
+  "name": "Mualani",
+  "title": "La Cabalgadora de Olas Rugientes",
+  "description": "Una guía de Natlan muy famosa que lleva una tienda de suministros acuáticos, así como una surfera experta en todo tipo de deportes de agua.",
+  "constellationName": "Phoca Neomonachus",
+  "auto": {
+    "name": "Refrescamiento",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 3 ataques que infligen <hydro>Daño Hydro</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para lanzar al aire un peciglobo que inflige <hydro>Daño Hydro en el AdE</hydro> al caer."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Concentra el poder del agua, se lanza desde el aire para golpear el suelo y daña a los enemigos a su paso, infligiendo <hydro>Daño Hydro en el AdE</hydro> en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Cargado",
+      "4": "Coste de Aguante de ATQ Cargado",
+      "5": "Daño de Caída",
+      "6": "Daño de impacto de caída baja/alta",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Escualosurf rompeolas",
+    "description": {
+      "0": "Usa su conocimiento de control de la velocidad y las mareas para ponerse a surfear en cualquier momento y lugar.",
+      "1": "Al usar esta habilidad, Mualani obtiene 60 pts. de noctambulismo y entra en el estado de “bendición noctámbula”.",
+      "2": "<br/>",
+      "3": "<strong>Bendición noctámbula: Mualani</strong>",
+      "4": "Consume continuamente pts. de noctambulismo. Al agotarse todos o al usar de nuevo la habilidad, terminará la duración de la bendición noctámbula de Mualani. Dicha bendición tiene las siguientes propiedades:",
+      "5": [
+        "Se sube a su escualotabla de surf y aumenta la Vel. Movimiento y la RES a interrupción de Mualani. Mientras esté en este estado, podrá moverse sobre el agua y sobre el flogisto líquido, a cuyo daño también será inmune.",
+        "Al ejecutar un Ataque Normal, en su lugar realizará un escualomordisco que inflige <hydro>Daño Hydro</hydro> de naturaleza noctámbula en función de la Vida Máx. de Mualani. El escualomordisco se puede ejecutar en el aire y el daño que inflige se considera daño de Ataque Normal.",
+        "Al entrar en contacto con un enemigo en este estado, Mualani aplicará sobre dicho enemigo una marca depredadora y obtendrá 1 carga de “energía mareal” que se puede acumular hasta 3 veces. Solo puede obtener 1 carga cada 0.7 s del mismo enemigo."
+      ],
+      "6": "<br/>",
+      "7": "<strong>Energía mareal y marca depredadora</strong>",
+      "8": "Aumenta el daño que inflige el escualomordisco en función de las cargas de energía mareal que tenga Mualani. Con 3 cargas, el escualomordisco se transforma en un “escualomordisco tsunámico” que inflige aún más daño y, tras golpear a un enemigo, elimina todas las cargas de energía mareal.",
+      "9": "Al golpear a un enemigo con el escualomordisco, elimina la marca de dicho enemigo y dispara escualoproyectiles a un máximo de 5 enemigos cercanos afectados por marcas depredadoras. Estos proyectiles infligen una cantidad de daño equivalente al escualomordisco y eliminan las marcas depredadoras de dichos enemigos. Si el escualomordisco o los escualoproyectiles tienen más de 1 enemigo como objetivo, el daño que infligen irá disminuyendo hasta un máximo del 72% del daño original cuando haya 3 enemigos como objetivo.",
+      "10": "<br/>",
+      "11": "<i>En primer lugar, este tiburón no es solo una tabla de surf, sino también un tiburón de agua dulce. Y en segundo lugar, no come humanos, pero sí los muerde.</i>"
+    },
+    "skillParams": {
+      "0": "Daño básico de escualomordisco",
+      "1": "Aumento de daño de energía mareal",
+      "2": "Aumento de daño adicional de escualomordisco tsunámico",
+      "3": "TdE de escualomordisco",
+      "4": "Límite de pts. de noctambulismo",
+      "5": "TdE",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Misil acuaexplosivo",
+    "description": {
+      "0": "Dispara un escualomisil gigante que persigue al enemigo e inflige <hydro>Daño Hydro en el AdE</hydro> de naturaleza noctámbula en función de la Vida Máx. de Mualani.",
+      "1": "<br/>",
+      "2": "<i>Mualani dio ese nombre al escualomisil porque la mezcla del agua y el fuego le recuerda a las aguas termales.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "TdE",
+      "2": "Energía Elemental",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Peciglobo antitérmico de agua dulce",
+    "description": {
+      "0": "Al golpear a un enemigo con el escualomordisco tsunámico, se crea un peciglobo en las cercanías. Al recoger un peciglobo, Mualani recupera 20 pts. de noctambulismo. Como máximo, solo se pueden crear 2 peciglobos de esta manera mientras esté activa una bendición noctámbula."
+    }
+  },
+  "passive2": {
+    "name": "¡La mejor guía de Natlan!",
+    "description": {
+      "0": "Cuando un personaje cercano del equipo causa una explosión noctámbula, Mualani obtiene 1 carga de “conocimiento de la marea” que dura 20 s y puede acumularse hasta 3 veces. Al usar <strong>Misil acuaexplosivo</strong>, Mualani consume todas las cargas de conocimiento de la marea para que el daño de dicha habilidad aumente según el número de cargas consumidas en una cantidad equivalente al 15/30/45% de su Vida Máx."
+    }
+  },
+  "passive3": {
+    "name": "Gracia de la noche: Control del oleaje",
+    "description": {
+      "0": "Cuando no tenga más pts. de noctambulismo, Mualani consumirá flogisto para conservar la bendición noctámbula.",
+      "1": "Si se encuentra en una zona con alguna mecánica de flogisto de Natlan, podrá utilizar “Transmisión noctambular: Mualani”. Cuando el personaje en uso esté esprintando, nadando, se encuentre en un estado de movimiento derivado de algún talento o esté a cierta altura en el aire, al cambiar a Mualani, esta entrará en estado de bendición noctámbula y obtendrá 40 pts. de noctambulismo. Tu equipo solo puede activar Transmisión noctambular una vez cada 10 s.",
+      "2": "<br/>",
+      "3": "Además, cuando Mualani se mueva sobre el agua o el flogisto líquido mientras está en estado de bendición noctámbula, consumirá un 75% menos de pts. de noctambulismo o de flogisto si está dentro de Natlan, y un 35% menos de pts. de noctambulismo si está fuera de dicha nación."
+    }
+  },
+  "passive": {
+    "name": "¡La clave es seguir sonriendo!",
+    "description": {
+      "0": "Restaura 15 pts. de flogisto al interactuar con algunos objetos recolectables en zonas de Natlan con mecánicas de flogisto. Además, muestra la ubicación de los <strong>objetos típicos de Natlan</strong> cercanos en el minimapa."
+    }
+  },
+  "constellation1": {
+    "name": "Parsimonia de Meztli",
+    "description": {
+      "0": "El daño que inflige el primer escualomordisco tsunámico realizado tras entrar en estado de bendición noctámbula y sus escualoproyectiles aumenta en una cantidad equivalente al 66% de la Vida Máx. de Mualani. Este aumento de daño sigue las normas de disminución de daño de <strong>Escualosurf rompeolas</strong>.",
+      "1": "Además, mientras Mualani no esté en combate, los pts. de noctambulismo y de flogisto que consume su estado de bendición noctámbula se reducen en un 30%."
+    }
+  },
+  "constellation2": {
+    "name": "¡Mualani dándolo todo!",
+    "description": {
+      "0": "Al entrar en estado de bendición noctámbula, Mualani obtiene 2 cargas de energía mareal de <strong>Escualosurf rompeolas</strong>, y al recoger un peciglobo, obtiene 1 carga.",
+      "1": "Además, cuando Mualani recoja 2 peciglobos durante una bendición noctámbula, recuperará 12 pts. de noctambulismo en 2 s. Para que se active este efecto, es necesario desbloquear el talento pasivo “Peciglobo antitérmico de agua dulce”."
+    }
+  },
+  "constellation3": {
+    "name": "Surfeando en el mar de la alegría",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Escualosurf rompeolas</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Tiburón devorapeciglobos",
+    "description": {
+      "0": "Al recoger un peciglobo, Mualani obtiene 8 pts. de Energía Elemental. Para que se active este efecto, es necesario desbloquear el talento pasivo “Peciglobo antitérmico de agua dulce”.",
+      "1": "Además, aumenta en un 75% el daño infligido con <strong>Misil acuaexplosivo</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "¡Escualotablas de surf a la venta!",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Misil acuaexplosivo</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Espíritu del Pueblo de los Manantiales",
+    "description": {
+      "0": "Elimina la restricción por la que el aumento de daño otorgado por la constelación “Parsimonia de Meztli” solo se podía activar una vez durante el estado de bendición noctámbula."
+    }
+  }
+}

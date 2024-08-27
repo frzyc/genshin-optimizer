@@ -7,6 +7,7 @@ import AmosBow from './AmosBow'
 import ApprenticesNotes from './ApprenticesNotes'
 import AquaSimulacra from './AquaSimulacra'
 import AquilaFavonia from './AquilaFavonia'
+import AshGravenDrinkingHorn from './AshGravenDrinkingHorn'
 import AThousandFloatingDreams from './AThousandFloatingDreams'
 import BalladOfTheBoundlessBlue from './BalladOfTheBoundlessBlue'
 import BalladOfTheFjords from './BalladOfTheFjords'
@@ -21,6 +22,7 @@ import BlackTassel from './BlackTassel'
 import BloodtaintedGreatsword from './BloodtaintedGreatsword'
 import CalamityQueller from './CalamityQueller'
 import CashflowSupervision from './CashflowSupervision'
+import ChainBreaker from './ChainBreaker'
 import CinnabarSpindle from './CinnabarSpindle'
 import Cloudforged from './Cloudforged'
 import CompoundBow from './CompoundBow'
@@ -36,6 +38,7 @@ import DodocoTales from './DodocoTales'
 import DragonsBane from './DragonsBane'
 import DragonspineSpear from './DragonspineSpear'
 import DullBlade from './DullBlade'
+import EarthShaker from './EarthShaker'
 import ElegyForTheEnd from './ElegyForTheEnd'
 import EmeraldOrb from './EmeraldOrb'
 import EndOfTheLine from './EndOfTheLine'
@@ -54,6 +57,8 @@ import FilletBlade from './FilletBlade'
 import FinaleOfTheDeep from './FinaleOfTheDeep'
 import FleuveCendreFerryman from './FleuveCendreFerryman'
 import FlowingPurity from './FlowingPurity'
+import FluteOfEzpitzal from './FluteOfEzpitzal'
+import FootprintOfTheRainbow from './FootprintOfTheRainbow'
 import ForestRegalia from './ForestRegalia'
 import FreedomSworn from './FreedomSworn'
 import Frostbearer from './Frostbearer'
@@ -115,6 +120,7 @@ import RavenBow from './RavenBow'
 import RecurveBow from './RecurveBow'
 import RedhornStonethresher from './RedhornStonethresher'
 import RightfulReward from './RightfulReward'
+import RingOfYaxche from './RingOfYaxche'
 import RoyalBow from './RoyalBow'
 import RoyalGreatsword from './RoyalGreatsword'
 import RoyalGrimoire from './RoyalGrimoire'
@@ -149,6 +155,7 @@ import SplendorOfTranquilWaters from './SplendorOfTranquilWaters'
 import StaffOfHoma from './StaffOfHoma'
 import StaffOfTheScarletSands from './StaffOfTheScarletSands'
 import SummitShaper from './SummitShaper'
+import SurfingTime from './SurfingTime'
 import SwordOfDescension from './SwordOfDescension'
 import SwordOfNarzissenkreuz from './SwordOfNarzissenkreuz'
 import TalkingStick from './TalkingStick'
@@ -197,6 +204,7 @@ const data = {
   ApprenticesNotes,
   AquaSimulacra,
   AquilaFavonia,
+  AshGravenDrinkingHorn,
   BalladOfTheBoundlessBlue,
   BalladOfTheFjords,
   BeaconOfTheReedSea,
@@ -210,6 +218,7 @@ const data = {
   BloodtaintedGreatsword,
   CalamityQueller,
   CashflowSupervision,
+  ChainBreaker,
   CinnabarSpindle,
   Cloudforged,
   CompoundBow,
@@ -225,6 +234,7 @@ const data = {
   DragonsBane,
   DragonspineSpear,
   DullBlade,
+  EarthShaker,
   ElegyForTheEnd,
   EmeraldOrb,
   EndOfTheLine,
@@ -243,6 +253,8 @@ const data = {
   FinaleOfTheDeep,
   FleuveCendreFerryman,
   FlowingPurity,
+  FluteOfEzpitzal,
+  FootprintOfTheRainbow,
   ForestRegalia,
   FreedomSworn,
   Frostbearer,
@@ -304,6 +316,7 @@ const data = {
   RecurveBow,
   RedhornStonethresher,
   RightfulReward,
+  RingOfYaxche,
   RoyalBow,
   RoyalGreatsword,
   RoyalGrimoire,
@@ -338,6 +351,7 @@ const data = {
   StaffOfHoma,
   StaffOfTheScarletSands,
   SummitShaper,
+  SurfingTime,
   SwordOfDescension,
   SwordOfNarzissenkreuz,
   TalkingStick,

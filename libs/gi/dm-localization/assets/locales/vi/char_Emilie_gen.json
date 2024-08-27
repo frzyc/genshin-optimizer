@@ -107,7 +107,7 @@
   "passive1": {
     "name": "Dư Hương",
     "description": {
-      "0": "Mỗi thu thập 2 <strong>Hương Thơm</strong>, Hộp Lumidouce Cấp 2 sẽ tiêu hao Hương Thơm để thi triển \"Tinh Hoa Sương Sớm\", gây <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> tương ứng với 600% Tấn Công của Emilie cho kẻ địch. Sát thương này sẽ được xem là sát thương Kỹ Năng Nguyên Tố."
+      "0": "Mỗi thu thập 2 <strong>Hương Thơm</strong>, Hộp Lumidouce Cấp 2 sẽ tiêu hao Hương Thơm để thi triển \"Tinh Hoa Sương Sớm\", gây <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> tương ứng với 600% Tấn Công của Emilie cho kẻ địch. Sát thương này không được xem là sát thương Kỹ Năng Nguyên Tố."
     }
   },
   "passive2": {

@@ -1,0 +1,24 @@
+{
+  "name": "Sáo Ezpitzal",
+  "description": {
+    "0": "Thanh đao bằng ngọc thạch có tạo hình kỳ lạ, được truyền lại trong Chủ Nhân Gió Đêm với cái tên \"sáo tư tế\"."
+  },
+  "passiveName": "Bí Ẩn Gương Và Khói",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, phòng ngự tăng <cryo>16%</cryo> trong 15s."
+    },
+    "1": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, phòng ngự tăng <cryo>20%</cryo> trong 15s."
+    },
+    "2": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, phòng ngự tăng <cryo>24%</cryo> trong 15s."
+    },
+    "3": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, phòng ngự tăng <cryo>28%</cryo> trong 15s."
+    },
+    "4": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, phòng ngự tăng <cryo>32%</cryo> trong 15s."
+    }
+  }
+}

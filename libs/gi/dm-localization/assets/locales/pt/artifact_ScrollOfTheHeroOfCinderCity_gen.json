@@ -1,0 +1,29 @@
+{
+  "setName": "Pergaminho do Herói da Cidade Incandescente",
+  "setEffects": {
+    "2": "Quando um membro da equipe próximo desencadeia uma Explosão do Espírito da Noite, o personagem que está com essa arma equipada regenera 6 de Energia Elemental.",
+    "4": "Quando o personagem que está com essa arma equipada desencadeia uma Reação Elemental que envolve seu Tipo Elemental, todos os membros próximos da equipe ganham 12% de Bônus de Dano Elemental relacionado à reação por 15s. Caso o personagem que está com essa arma equipada estiver no estado Bênção do Espírito da Noite ao desencadear esse efeito, todos os membros próximos da equipe ganham mais 28% de Bônus de Dano Elemental relacionado à reação por 20s. Esse efeito pode ser ativado mesmo quando o personagem que está com essa arma equipada está fora de campo. Bônus de Dano fornecidos por conjuntos de Artefatos com o mesmo nome não acumularão."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Talismã do Domador de Feras",
+      "desc": "Uma flor esculpida em pedra e Dragonita, significando que seu portador está qualificado para se tornar um domador de Alpacas."
+    },
+    "plume": {
+      "name": "Sinalizador do Guarda das Montanhas",
+      "desc": "Um sinalizador usado por guardas das montanhas para marcar caminhos. Suas formas de penas de pássaro os tornam realmente muito chamativos."
+    },
+    "sands": {
+      "name": "Relógio Dourado da Mística",
+      "desc": "Um disco dourado na forma do sol. Sua superfície possui o desenho de um dragão que parece simbolizar o ciclo da vida e da morte."
+    },
+    "goblet": {
+      "name": "Cálice do Estudioso Viajante",
+      "desc": "Um estranho cálice surpreendentemente semelhante a uma Garras do Dragão. Seu criador deve tê-lo feito com algo especial em mente."
+    },
+    "circlet": {
+      "name": "Máscara de Penas do Guerreiro Mágico",
+      "desc": "Uma máscara de pena com plumagem de falcão. Há muitas lendas sobre ela."
+    }
+  }
+}
