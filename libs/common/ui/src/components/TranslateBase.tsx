@@ -14,14 +14,12 @@ export function TranslateBase({
   key18,
   values,
   children,
-  useBadge,
   components,
 }: {
   ns: string
   key18: string
   values?: Record<string, string | number>
   children?: ReactNode
-  useBadge?: boolean
   components?: Record<string, EmotionJSX.Element>
 }) {
   const { t } = useTranslation(ns)
@@ -42,7 +40,6 @@ export function TranslateBase({
         obj={textObj}
         t={t}
         values={values}
-        useBadge={useBadge}
         components={components}
       />
     </Suspense>
@@ -59,7 +56,6 @@ function T({
   li,
   t,
   values,
-  useBadge,
   components,
 }: {
   key18: string
@@ -67,7 +63,6 @@ function T({
   li?: boolean
   t: TFunction<string, undefined>
   values?: any
-  useBadge?: boolean
   components?: Record<string, EmotionJSX.Element>
 }) {
   if (typeof obj === 'string')
@@ -90,7 +85,7 @@ function T({
             li
             t={t}
             values={values}
-            useBadge={useBadge}
+            components={components}
           />
         </ul>
       </Typography>
@@ -106,7 +101,7 @@ function T({
           obj={val}
           t={t}
           values={values}
-          useBadge={useBadge}
+          components={components}
         />
       )
     if (typeof val === 'string') {

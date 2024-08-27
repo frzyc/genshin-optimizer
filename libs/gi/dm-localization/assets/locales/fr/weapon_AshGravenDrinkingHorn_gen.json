@@ -1,0 +1,24 @@
+{
+  "name": "Corne à boire cendrée",
+  "description": {
+    "0": "Un récipient rituel transmis parmi les Meztlis. Ils disent que c'était autrefois un trésor très précieux, mais jamais utilisé, du héros « géant » Tupac."
+  },
+  "passiveName": "Poignée de Tupac",
+  "passiveDescription": {
+    "0": {
+      "0": "Lorsqu'une attaque touche un ennemi, des DGT de zone d'une valeur équivalant à <cryo>40 %</cryo> des PV max sont infligés à l'emplacement de la cible. Cet effet peut être déclenché une fois toutes les 15 s."
+    },
+    "1": {
+      "0": "Lorsqu'une attaque touche un ennemi, des DGT de zone d'une valeur équivalant à <cryo>50 %</cryo> des PV max sont infligés à l'emplacement de la cible. Cet effet peut être déclenché une fois toutes les 15 s."
+    },
+    "2": {
+      "0": "Lorsqu'une attaque touche un ennemi, des DGT de zone d'une valeur équivalant à <cryo>60 %</cryo> des PV max sont infligés à l'emplacement de la cible. Cet effet peut être déclenché une fois toutes les 15 s."
+    },
+    "3": {
+      "0": "Lorsqu'une attaque touche un ennemi, des DGT de zone d'une valeur équivalant à <cryo>70 %</cryo> des PV max sont infligés à l'emplacement de la cible. Cet effet peut être déclenché une fois toutes les 15 s."
+    },
+    "4": {
+      "0": "Lorsqu'une attaque touche un ennemi, des DGT de zone d'une valeur équivalant à <cryo>80 %</cryo> des PV max sont infligés à l'emplacement de la cible. Cet effet peut être déclenché une fois toutes les 15 s."
+    }
+  }
+}

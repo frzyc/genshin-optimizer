@@ -1,0 +1,24 @@
+{
+  "name": "Flute of Ezpitzal",
+  "description": {
+    "0": "A peculiarly shaped jade longsword that has been passed down amongst the Masters of the Night-Wind as a \"priestly flute.\""
+  },
+  "passiveName": "Smoke-and-Mirror Mystery",
+  "passiveDescription": {
+    "0": {
+      "0": "Using an Elemental Skill increases DEF by <cryo>16%</cryo> for 15s."
+    },
+    "1": {
+      "0": "Using an Elemental Skill increases DEF by <cryo>20%</cryo> for 15s."
+    },
+    "2": {
+      "0": "Using an Elemental Skill increases DEF by <cryo>24%</cryo> for 15s."
+    },
+    "3": {
+      "0": "Using an Elemental Skill increases DEF by <cryo>28%</cryo> for 15s."
+    },
+    "4": {
+      "0": "Using an Elemental Skill increases DEF by <cryo>32%</cryo> for 15s."
+    }
+  }
+}

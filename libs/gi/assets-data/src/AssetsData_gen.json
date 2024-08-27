@@ -124,6 +124,10 @@
       "icon": "UI_EquipIcon_Sword_Purewill",
       "awakenIcon": "UI_EquipIcon_Sword_Purewill"
     },
+    "FluteOfEzpitzal": {
+      "icon": "UI_EquipIcon_Sword_Isikhulu",
+      "awakenIcon": "UI_EquipIcon_Sword_Isikhulu_Awaken"
+    },
     "AquilaFavonia": {
       "icon": "UI_EquipIcon_Sword_Falcon",
       "awakenIcon": "UI_EquipIcon_Sword_Falcon_Awaken"
@@ -284,6 +288,10 @@
       "icon": "UI_EquipIcon_Claymore_Mechanic",
       "awakenIcon": "UI_EquipIcon_Claymore_Mechanic_Awaken"
     },
+    "EarthShaker": {
+      "icon": "UI_EquipIcon_Claymore_Isikhulu",
+      "awakenIcon": "UI_EquipIcon_Claymore_Isikhulu_Awaken"
+    },
     "SkywardPride": {
       "icon": "UI_EquipIcon_Claymore_Dvalin",
       "awakenIcon": "UI_EquipIcon_Claymore_Dvalin_Awaken"
@@ -403,6 +411,10 @@
     "ProspectorsDrill": {
       "icon": "UI_EquipIcon_Pole_Mechanic",
       "awakenIcon": "UI_EquipIcon_Pole_Mechanic_Awaken"
+    },
+    "FootprintOfTheRainbow": {
+      "icon": "UI_EquipIcon_Pole_Isikhulu",
+      "awakenIcon": "UI_EquipIcon_Pole_Isikhulu_Awaken"
     },
     "StaffOfHoma": {
       "icon": "UI_EquipIcon_Pole_Homa",
@@ -544,6 +556,14 @@
       "icon": "UI_EquipIcon_Catalyst_DandelionPoem",
       "awakenIcon": "UI_EquipIcon_Catalyst_DandelionPoem_Awaken"
     },
+    "AshGravenDrinkingHorn": {
+      "icon": "UI_EquipIcon_Catalyst_ConchSprayer",
+      "awakenIcon": "UI_EquipIcon_Catalyst_ConchSprayer_Awaken"
+    },
+    "RingOfYaxche": {
+      "icon": "UI_EquipIcon_Catalyst_Isikhulu",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Isikhulu_Awaken"
+    },
     "SkywardAtlas": {
       "icon": "UI_EquipIcon_Catalyst_Dvalin",
       "awakenIcon": "UI_EquipIcon_Catalyst_Dvalin_Awaken"
@@ -587,6 +607,10 @@
     "CranesEchoingCall": {
       "icon": "UI_EquipIcon_Catalyst_MountainGale",
       "awakenIcon": "UI_EquipIcon_Catalyst_MountainGale_Awaken"
+    },
+    "SurfsUp": {
+      "icon": "UI_EquipIcon_Catalyst_MechaPufferfish",
+      "awakenIcon": "UI_EquipIcon_Catalyst_MechaPufferfish_Awaken"
     },
     "HuntersBow": {
       "icon": "UI_EquipIcon_Bow_Hunters",
@@ -707,6 +731,10 @@
     "RangeGauge": {
       "icon": "UI_EquipIcon_Bow_Mechanic",
       "awakenIcon": "UI_EquipIcon_Bow_Mechanic_Awaken"
+    },
+    "ChainBreaker": {
+      "icon": "UI_EquipIcon_Bow_Isikhulu",
+      "awakenIcon": "UI_EquipIcon_Bow_Isikhulu_Awaken"
     },
     "SkywardHarp": {
       "icon": "UI_EquipIcon_Bow_Dvalin",
@@ -1087,6 +1115,20 @@
       "sands": "UI_RelicIcon_15036_5",
       "goblet": "UI_RelicIcon_15036_1",
       "circlet": "UI_RelicIcon_15036_3"
+    },
+    "ScrollOfTheHeroOfCinderCity": {
+      "flower": "UI_RelicIcon_15037_4",
+      "plume": "UI_RelicIcon_15037_2",
+      "sands": "UI_RelicIcon_15037_5",
+      "goblet": "UI_RelicIcon_15037_1",
+      "circlet": "UI_RelicIcon_15037_3"
+    },
+    "ObsidianCodex": {
+      "flower": "UI_RelicIcon_15038_4",
+      "plume": "UI_RelicIcon_15038_2",
+      "sands": "UI_RelicIcon_15038_5",
+      "goblet": "UI_RelicIcon_15038_1",
+      "circlet": "UI_RelicIcon_15038_3"
     }
   },
   "chars": {
@@ -2528,6 +2570,42 @@
       "constellation4": "UI_Talent_S_Emilie_03",
       "constellation5": "UI_Talent_U_Emilie_02",
       "constellation6": "UI_Talent_S_Emilie_04"
+    },
+    "Kachina": {
+      "icon": "UI_AvatarIcon_Kachina",
+      "iconSide": "UI_AvatarIcon_Side_Kachina",
+      "banner": "UI_NameCardPic_Kachina_P",
+      "bar": "UI_NameCardPic_Kachina_Alpha",
+      "skill": "Skill_S_Kachina_01",
+      "burst": "Skill_E_Kachina_01_HD",
+      "passive1": "UI_Talent_S_Kachina_05",
+      "passive2": "UI_Talent_S_Kachina_06",
+      "passive3": "UI_Talent_S_Kachina_07",
+      "passive": "UI_Talent_S_Kachina_08",
+      "constellation1": "UI_Talent_S_Kachina_01",
+      "constellation2": "UI_Talent_S_Kachina_02",
+      "constellation3": "UI_Talent_U_Kachina_01",
+      "constellation4": "UI_Talent_S_Kachina_03",
+      "constellation5": "UI_Talent_U_Kachina_02",
+      "constellation6": "UI_Talent_S_Kachina_04"
+    },
+    "Mualani": {
+      "icon": "UI_AvatarIcon_Mualani",
+      "iconSide": "UI_AvatarIcon_Side_Mualani",
+      "banner": "UI_NameCardPic_Mualani_P",
+      "bar": "UI_NameCardPic_Mualani_Alpha",
+      "skill": "Skill_S_Mualani_01",
+      "burst": "Skill_E_Mualani_01_HD",
+      "passive1": "UI_Talent_S_Mualani_05",
+      "passive2": "UI_Talent_S_Mualani_06",
+      "passive3": "UI_Talent_S_Mualani_07",
+      "passive": "UI_Talent_S_Kachina_08",
+      "constellation1": "UI_Talent_S_Mualani_01",
+      "constellation2": "UI_Talent_S_Mualani_02",
+      "constellation3": "UI_Talent_U_Mualani_01",
+      "constellation4": "UI_Talent_S_Mualani_03",
+      "constellation5": "UI_Talent_U_Mualani_02",
+      "constellation6": "UI_Talent_S_Mualani_04"
     },
     "TravelerAnemo": {
       "skill": "Skill_S_PlayerWind_01",

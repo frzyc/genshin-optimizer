@@ -1,0 +1,177 @@
+{
+  "name": "Kachina",
+  "title": "Or brut moucheté",
+  "description": "Une jeune guerrière des Nanatzcayens à qui a été accordé l'antique nom d'« Uthabiti ». C'est une jeune fille bienveillante et déterminée qui grandit en affrontant l'adversité.",
+  "constellationName": "Ochotona Princeps",
+  "auto": {
+    "name": "Morsure de crête",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 coups de lance."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour charger en ligne droite et infliger des DGT aux ennemis en chemin."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Allez, Virevolturbo !",
+    "description": {
+      "0": "Combattez aux côtés du fidèle Virevolturbo !",
+      "1": "Invoque Virevolturbo. Avec un appui long, Kachina invoque et chevauche Virevolturbo.",
+      "2": "Après utilisation, Kachina obtient 60 pts de noctâme et entre dans l'état Bénédiction noctâme.",
+      "3": "<br/>",
+      "4": "<strong>Bénédiction noctâme : Kachina</strong>",
+      "5": "Les différentes actions de Virevolturbo consomment les points de noctâme de Kachina.",
+      "6": "L'état Bénédiction noctâme de Kachina dure jusqu'à ce que tous les points de noctâme soient épuisés.",
+      "7": "<br/>",
+      "8": "<strong>Virevolturbo</strong>",
+      "9": "Virevolturbo peut exister indépendamment ou être chevauché et contrôlé par Kachina. Lorsque Virevolturbo est présent, la compétence élémentaire de Kachina « Allez, Virevolturbo ! » sert à monter sur Virevolturbo ou à en descendre.",
+      "10": [
+        " Lorsqu'il est présent indépendamment de Kachina, Virevolturbo frappe le sol de façon intermittente, infligeant des <geo>DGT Géo de zone</geo> infusés de noctâme selon la DÉF de Kachina.",
+        " Lorsque Kachina chevauche Virevolturbo, elle peut contrôler ses mouvements rapides, escalader et utiliser son attaque normale pour frapper le sol, infligeant des <geo>DGT Géo de zone</geo> infusés de noctâme selon la DÉF de Kachina."
+      ],
+      "11": "<br/>",
+      "12": "Virevolturbo disparaît une fois la bénédiction noctâme de Kachina terminée et est considéré comme une construction Géo. Il ne peut exister qu'un seul Virevolturbo de Kachina à la fois.",
+      "13": "<br/>",
+      "14": "<i>Virevolturbo n'a que l'apparence d'une toupie : il s'agit en fait d'une perceuse pouvant briser même les roches les plus solides !</i>"
+    },
+    "skillParams": {
+      "0": "DGT Virevolturbo (si chevauché)",
+      "1": "DGT Virevolturbo (si indépendant)",
+      "2": "Limite de noctâme",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Un peu de sérieux !",
+    "description": {
+      "0": "Kachina frappe le sol, infligeant des <geo>DGT Géo de zone</geo> selon sa DÉF et créant un super champ de forage.",
+      "1": "Ce champ augmente la portée d'attaque de Virevolturbo, ainsi que sa VIT de déplacement lorsque Kachina le chevauche.",
+      "2": "<br/>",
+      "3": "Si un Virevolturbo de Kachina est présent lors de l'utilisation, il est invoqué à côté d'elle.",
+      "4": "<br/>",
+      "5": "<i>Tout comme les artistes nerveux aiment imaginer le public comme des pantins en bois, Kachina imagine ses adversaires comme des beaux gisements de pierres précieuses... Le genre qu'on aimerait ramener à la maison et collectionner...</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Durée de champ",
+      "2": "Temps de recharge",
+      "3": "Énergie élémentaire",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Écho de la montagne",
+    "description": {
+      "0": "Lorsqu'un membre de l'équipe à proximité a déclenché une éruption noctâme, le <geo>bonus de DGT Géo</geo> de Kachina augmente de 20 % pendant 12 s."
+    }
+  },
+  "passive2": {
+    "name": "Poids de la roche",
+    "description": {
+      "0": "Augmente les DGT infligés par <strong>Virevolturbo</strong> d'une valeur équivalant à 20 % de la DÉF de Kachina."
+    }
+  },
+  "passive3": {
+    "name": "Don de la nuit : Foyer de l'unité",
+    "description": {
+      "0": "Après avoir épuisé ses points de noctâme, Kachina change pour consommer du phlogistique afin de maintenir sa bénédiction noctâme.",
+      "1": "Dans une zone de Natlan avec des mécanismes phlogistiques, la transmission noctâme « Kachina » peut être utilisée. Lorsque le personnage déployé sprinte, escalade, est en plein mouvement provoqué par une aptitude particulière ou est à une certaine hauteur dans les airs, le déploiement de Kachina déclenche l'effet suivant : Kachina entre dans l'état Bénédiction noctâme, chevauche <strong>Virevolturbo</strong> en arrivant sur le terrain et obtient 30 pts de noctâme. La transmission noctâme peut être déclenchée une fois toutes les 10 s par votre équipe.",
+      "2": "<br/>",
+      "3": "De plus, la consommation d'endurance de Kachina lors de l'escalade diminue de 90 % lorsqu'elle chevauche <strong>Virevolturbo</strong> dans la région de Natlan."
+    }
+  },
+  "passive": {
+    "name": "Bénédiction des flammes cristallines",
+    "description": {
+      "0": "Dans une zone de Natlan avec des mécanismes phlogistiques, interagir avec certains objets récoltables restaure 20 pts d'endurance. De plus, l'emplacement des <strong>produits de Natlan</strong> est affiché sur la mini-carte."
+    }
+  },
+  "constellation1": {
+    "name": "Les fragments sont aussi des gemmes",
+    "description": {
+      "0": "Lorsque Kachina monte sur <strong>Virevolturbo</strong> ou en descend, elle collecte les fragments proches qui ont été générés par des réactions de Cristallisation.",
+      "1": "De plus, lorsqu'un personnage de l'équipe obtient un fragment, Kachina récupère 3 pts d'énergie élémentaire, l'énergie élémentaire pouvant être restaurée une fois toutes les 5 s de cette manière."
+    }
+  },
+  "constellation2": {
+    "name": "Jamais sans... Virevolturbo",
+    "description": {
+      "0": "Lorsque Kachina utilise <strong>Un peu de sérieux !</strong>, elle récupère 20 pts de noctâme. Si aucun <strong>Virevolturbo</strong> de Kachina n'est sur le terrain lors de l'utilisation, Kachina passe en bénédiction noctâme et en invoque un."
+    }
+  },
+  "constellation3": {
+    "name": "Stabilisateur optimisé",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Allez, Virevolturbo !</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Ennemis nombreux, attention redoublée",
+    "description": {
+      "0": "Lorsqu'il y a 1/2/3/4+ ennemis dans le super champ de forage d'<strong>Un peu de sérieux !</strong>, la DÉF des personnages déployés dans le champ augmente respectivement de 8 %/12 %/16 %/20 %."
+    }
+  },
+  "constellation5": {
+    "name": "Ma collection jusqu'à maintenant",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Un peu de sérieux !</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Cette fois, je gagne",
+    "description": {
+      "0": "Lorsque le bouclier de votre personnage déployé est remplacé ou détruit pour n'importe quelle raison, Kachina inflige des <geo>DGT Géo de zone</geo> d'une valeur équivalant à 200 % de sa DÉF. Cet effet peut être déclenché une fois toutes les 5 s."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Sừng Rượu Vân Xanh",
+  "description": {
+    "0": "Dụng cụ nghi lễ được lưu truyền trong Meztli. Nghe nói được vị anh hùng Tupac \"Khổng Lồ\" yêu quý nhưng chưa từng sử dụng."
+  },
+  "passiveName": "Nắm Đấm Của Tupac",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi đánh trúng kẻ địch, sẽ gây sát thương diện rộng bằng <cryo>40%</cryo> Giới Hạn HP tại vị trí mục tiêu. Hiệu quả này mỗi 15s tối đa kích hoạt một lần."
+    },
+    "1": {
+      "0": "Khi đánh trúng kẻ địch, sẽ gây sát thương diện rộng bằng <cryo>50%</cryo> Giới Hạn HP tại vị trí mục tiêu. Hiệu quả này mỗi 15s tối đa kích hoạt một lần."
+    },
+    "2": {
+      "0": "Khi đánh trúng kẻ địch, sẽ gây sát thương diện rộng bằng <cryo>60%</cryo> Giới Hạn HP tại vị trí mục tiêu. Hiệu quả này mỗi 15s tối đa kích hoạt một lần."
+    },
+    "3": {
+      "0": "Khi đánh trúng kẻ địch, sẽ gây sát thương diện rộng bằng <cryo>70%</cryo> Giới Hạn HP tại vị trí mục tiêu. Hiệu quả này mỗi 15s tối đa kích hoạt một lần."
+    },
+    "4": {
+      "0": "Khi đánh trúng kẻ địch, sẽ gây sát thương diện rộng bằng <cryo>80%</cryo> Giới Hạn HP tại vị trí mục tiêu. Hiệu quả này mỗi 15s tối đa kích hoạt một lần."
+    }
+  }
+}

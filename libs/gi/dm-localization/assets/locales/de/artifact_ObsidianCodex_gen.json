@@ -1,0 +1,29 @@
+{
+  "setName": "Obsidiankodex",
+  "setEffects": {
+    "2": "Erhöht, wenn der Träger im Zustand „Nachtseelensegen“ und aktiv auf dem Feld ist, den verursachten Schaden um 15 %.",
+    "4": "Erhöht, nachdem der Träger aktiv auf dem Schlachtfeld 1 Nachtseelenpunkt verbraucht hat, die KT 6 s lang um 40 %. 1 s Abklingzeit."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Erwartungen der Anderen",
+      "desc": "Eine sorgfältig aus schwarzem Kristall gefeilte Blume, die nachts ein mysteriöses Licht ausstrahlt."
+    },
+    "plume": {
+      "name": "Seelenmarkwurzel",
+      "desc": "Ein Federschmuck, der den Flügeln der alten Drachen nachempfunden ist. Vielleicht zeugte er einst von einer längst vergessenen Geschichte."
+    },
+    "sands": {
+      "name": "Mythen aus dem Reich der Nacht",
+      "desc": "Ein geheimnisvolles Instrument, das weder ein Zeitmesser noch ein Kompass ist. Heute weiß niemand mehr, wozu es dient."
+    },
+    "goblet": {
+      "name": "Festmahl vor dem Streit",
+      "desc": "Ein Gefäß aus Steinen, die scheinbar willkürlich in Form gehauen wurden. Niemand weiß jedoch, wer eine solche Kraft besitzen könnte."
+    },
+    "circlet": {
+      "name": "Krone der Weisen",
+      "desc": "Eine Krone aus Obsidian. In alten Zeiten wurde sie zur Krönung von Stammesadligen verwendet."
+    }
+  }
+}

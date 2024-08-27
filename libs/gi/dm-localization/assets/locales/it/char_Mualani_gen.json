@@ -1,0 +1,174 @@
+{
+  "name": "Mualani",
+  "title": "Cacciatrice di onde gorgoglianti",
+  "description": "Una famosa guida di Natlan, proprietaria di un negozio di articoli per sport acquatici, nonché solcaonde esperta.",
+  "constellationName": "Phoca Neomonachus",
+  "auto": {
+    "name": "Trattamento rinfrescante",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra fino a 3 attacchi d'acqua che infliggono <hydro>DAN da Hydro</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per scagliare in aria un Gonfiotto che infligge <hydro>DAN da Hydro ad area</hydro> all'impatto col terreno."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Accumulando la forza di Hydro, Mualani si scaglia contro il suolo da mezz'aria, danneggiando tutti gli avversari lungo la sua traiettoria. Infligge <hydro>DAN da Hydro ad area</hydro> all'impatto col suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da ATT caricato",
+      "4": "Costo vigore ATT caricato",
+      "5": "DAN da ATT in picchiata",
+      "6": "DAN da ATT in picchiata basso/alto",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Squalo spaccaonde",
+    "description": {
+      "0": "Sfruttando la sua padronanza della velocità, delle onde e dell'acqua, Mualani è in grado di surfare ovunque e in qualsiasi momento.",
+      "1": "Dopo aver usato la sua abilità, Mualani ottiene 60 punti Anima della Notte ed entra nello stato di Grazia dell'Anima della Notte.",
+      "2": "<br/>",
+      "3": "<strong>Grazia dell'Anima della Notte: Mualani</strong>",
+      "4": "Consuma costantemente punti Anima della Notte. Quando vengono consumati tutti o l'abilità viene usata nuovamente, lo stato di Grazia dell'Anima della Notte termina. Lo stato prevede quanto segue:",
+      "5": [
+        " Mualani sale sulla sua Tavola Sharky, aumentando la sua VEL di movimento e la resistenza all'interruzione. Mualani può spostarsi sulle superfici acquatiche e sul Flogisto liquido, non subendo DAN dal contatto con quest'ultimo;",
+        " gli attacchi normali vengono convertiti in Morsi di Sharky che infliggono <hydro>DAN da Hydro</hydro> basati sui PS max di Mualani e con attributo Anima della Notte. I Morsi di Sharky possono essere inflitti a mezz'aria. I DAN inflitti in questo modo sono considerati DAN da attacco normale;",
+        " quando Mualani entra in contatto con i nemici, li contrassegna con un Marchio della Preda e ottiene 1 accumulo di Slancio ondoso, fino a un massimo di 3. È possibile ottenere dal medesimo avversario 1 accumulo ogni 0,7 s."
+      ],
+      "6": "<br/>",
+      "7": "<strong>Slancio ondoso e Marchio della Preda</strong>",
+      "8": "Quando Mualani usa il Morso di Sharky, i DAN inflitti aumentano in base agli accumuli di Slancio ondoso. Se possiede 3 accumuli, l'attacco normale viene sostituito dal Morso impetuoso di Sharky, che aumenta ulteriormente i DAN e rimuove tutti gli accumuli una volta colpito un avversario.",
+      "9": "Quando i Morsi di Sharky colpiscono avversari affetti dal Marchio della Preda, il Marchio viene rimosso, e Mualani lancia dei Missili squalosi a un massimo di 5 avversari vicini contrassegnati da un Marchio della Preda, infliggendo DAN pari all'attuale iterazione del Morso di Sharky e rimuovendo tutti i Marchi. Se il numero di obiettivi del Morso di Sharky e dei Missili squalosi è maggiore di 1, i DAN inflitti diminuiscono a un 72% dei DAN originali quando sono presenti almeno 3 obiettivi.",
+      "10": "<br/>",
+      "11": "<i>Innanzitutto, Sharky è uno squalo d'acqua dolce, oltre a essere una tavola da surf. E poi, non è che voglia davvero nutrirsi, ma i suoi morsi fanno davvero tanto male.</i>"
+    },
+    "skillParams": {
+      "0": "DAN base da Morso di Sharky",
+      "1": "Bonus DAN Slancio ondoso",
+      "2": "Bonus DAN aggiuntivo Morso impetuoso di Sharky",
+      "3": "TdR Morso di Sharky",
+      "4": "Limite punti Anima della Notte",
+      "5": "TdR",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Squaloscoppio ondapazza",
+    "description": {
+      "0": "Lancia un Super Missile squaloso a ricerca che infligge <hydro>DAN da Hydro ad area</hydro> basati sui PS max di Mualani e con attributo Anima della Notte.",
+      "1": "<br/>",
+      "2": "<i>Mualani ha scelto di usare questo grido di battaglia, nel lanciare il suo Missile squaloso, essendo la perfetta combinazione tra l'esplosivo ardore della passione e le rilassanti atmosfere tipiche delle sorgenti termali.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "TdR",
+      "2": "Costo energia",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Gonfiotto d'acqua dolce termoresistente",
+    "description": {
+      "0": "Quando Sharky colpisce un avversario con un Morso impetuoso, genera nelle vicinanze un Gonfiotto da raccogliere, che ridona 20 punti Anima della Notte a Mualani. È possibile creare solo 2 Gonfiotti in questo modo nel corso della medesima iterazione di Grazia dell'Anima della Notte."
+    }
+  },
+  "passive2": {
+    "name": "La migliore guida di Natlan",
+    "description": {
+      "0": "Dopo che un membro vicino del gruppo innesca un Impeto dell'Anima della Notte, Mualani ottiene un accumulo di Gesta del Solcaonde della durata di 20 s, fino a un massimo di 3 accumuli. Quando Mualani usa <strong>Squaloscoppio ondapazza</strong>, consuma tutti gli accumuli di Gesta del Solcaonde e aumenta i DAN di questa iterazione di Squaloscoppio ondapazza di un 15%/30%/45% dei suoi PS max, in base al numero di accumuli consumati."
+    }
+  },
+  "passive3": {
+    "name": "Dono del Reame notturno: Creste e ventri",
+    "description": {
+      "0": "Dopo aver esaurito i punti Anima della Notte, Mualani consuma il Flogisto per conservare la sua Grazia dell'Anima della Notte.",
+      "1": "Se si trova in un'area di Natlan dove sono presenti uno o più Meccanismi flogistici, può usare Trasmissione dell'Anima della Notte: Mualani. Quando il personaggio attivo sta eseguendo uno Scatto, sta nuotando o compiendo un movimento causato da determinati talenti, oppure è sospeso in aria a una certa altezza, passare il controllo a Mualani attiva il seguente effetto: Mualani entra nello stato di Grazia dell'Anima della Notte e ottiene 40 punti Anima della Notte. Trasmissione dell'Anima della Notte può attivarsi una volta ogni 10 s all'interno del tuo gruppo.",
+      "2": "<br/>",
+      "3": "Inoltre, il consumo di punti Anima della Notte o di Flogisto quando Mualani si sposta sulle superfici acquatiche e sul Flogisto liquido durante la Grazia dell'Anima della Notte diminuisce di un 75% quando si trova a Natlan; quando si trova al di fuori di Natlan, invece, il consumo di punti Anima della Notte diminuisce di un 35%."
+    }
+  },
+  "passive": {
+    "name": "Il segreto è nel sorriso!",
+    "description": {
+      "0": "Quando si trova in un'area di Natlan dove sono presenti dei Meccanismi flogistici, interagire con alcuni materiali da raccolta ripristina 15 punti Flogisto. Inoltre, la posizione delle <strong>risorse uniche di Natlan</strong> circostanti viene mostrata sulla minimappa."
+    }
+  },
+  "constellation1": {
+    "name": "La placida \"Meztli\"...",
+    "description": {
+      "0": "Dopo aver attivato lo stato di Grazia dell'Anima della Notte, i DAN inflitti dal primo Morso impetuoso di Sharky e dai relativi Missili squalosi aumentano di un 66% dei PS max di Mualani. Questa iterazione di DAN aumentati è soggetta alle medesime regole di riduzione di <strong>Squalo spaccaonde</strong>.",
+      "1": "Inoltre, quando non è in combattimento, lo stato di Grazia dell'Anima della Notte di Mualani consuma un 30% di Flogisto e di punti Anima della Notte in meno."
+    }
+  },
+  "constellation2": {
+    "name": "Mualani darà il meglio di sé!",
+    "description": {
+      "0": "Mualani ottiene 2 accumuli di Slancio ondoso di <strong>Squalo spaccaonde</strong> quando entra in stato di Grazia dell'Anima della Notte. Ciascun Gonfiotto raccolto le conferisce 1 accumulo.",
+      "1": "In più, quando raccoglie 2 Gonfiotti nella medesima iterazione di Grazia dell'Anima della Notte, Mualani riceve 12 punti Anima della Notte aggiuntivi nell'arco di 2 s. Quest'effetto richiede il talento passivo Gonfiotto d'acqua dolce termoresistente."
+    }
+  },
+  "constellation3": {
+    "name": "Surfare su mari di gioia",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Squalo spaccaonde</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Gonfiotti per Sharky",
+    "description": {
+      "0": "L'energia di Mualani si ripristina di 8 quando raccoglie un Gonfiotto. Richiede il talento passivo Gonfiotto d'acqua dolce termoresistente.",
+      "1": "In più, i DAN inflitti da <strong>Squaloscoppio ondapazza</strong> aumentano di un 75%."
+    }
+  },
+  "constellation5": {
+    "name": "Tavole da surf in promozione!",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Squaloscoppio ondapazza</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Spirito del Popolo delle Sorgenti",
+    "description": {
+      "0": "L'aumento di DAN derivante dalla costellazione \"La placida 'Meztli'...\" non è più limitato a un'unica attivazione durante lo stato di Grazia dell'Anima della Notte."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Ash-Graven Drinking Horn",
+  "description": {
+    "0": "Wadah upacara yang diwariskan oleh Meztli. Konon katanya benda ini dianggap sangat berharga oleh sang pahlawan \"Raksasa\", Tupac, tapi ia tidak pernah menggunakannya."
+  },
+  "passiveName": "Tupac's Grip",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat serangan mengenai musuh, akan mengakibatkan DMG Area sebesar <cryo>40%</cryo> dari Max HP pada lokasi target. Efek ini dapat terpicu sekali setiap 15 detik."
+    },
+    "1": {
+      "0": "Saat serangan mengenai musuh, akan mengakibatkan DMG Area sebesar <cryo>50%</cryo> dari Max HP pada lokasi target. Efek ini dapat terpicu sekali setiap 15 detik."
+    },
+    "2": {
+      "0": "Saat serangan mengenai musuh, akan mengakibatkan DMG Area sebesar <cryo>60%</cryo> dari Max HP pada lokasi target. Efek ini dapat terpicu sekali setiap 15 detik."
+    },
+    "3": {
+      "0": "Saat serangan mengenai musuh, akan mengakibatkan DMG Area sebesar <cryo>70%</cryo> dari Max HP pada lokasi target. Efek ini dapat terpicu sekali setiap 15 detik."
+    },
+    "4": {
+      "0": "Saat serangan mengenai musuh, akan mengakibatkan DMG Area sebesar <cryo>80%</cryo> dari Max HP pada lokasi target. Efek ini dapat terpicu sekali setiap 15 detik."
+    }
+  }
+}

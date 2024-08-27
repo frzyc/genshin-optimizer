@@ -1,0 +1,24 @@
+{
+  "name": "Ash-Graven Drinking Horn",
+  "description": {
+    "0": "A ritual vessel passed down amongst the Meztli. They say that this was once a treasure much-valued, yet never used, by the hero \"Giant\" Tupac."
+  },
+  "passiveName": "Tupac's Grip",
+  "passiveDescription": {
+    "0": {
+      "0": "When an attack hits an opponent, deal AoE DMG equal to <cryo>40%</cryo> of Max HP at the target location. This effect can be triggered once every 15s."
+    },
+    "1": {
+      "0": "When an attack hits an opponent, deal AoE DMG equal to <cryo>50%</cryo> of Max HP at the target's location. This effect can be triggered once every 15s."
+    },
+    "2": {
+      "0": "When an attack hits an opponent, deal AoE DMG equal to <cryo>60%</cryo> of Max HP at the target's location. This effect can be triggered once every 15s."
+    },
+    "3": {
+      "0": "When an attack hits an opponent, deal AoE DMG equal to <cryo>70%</cryo> of Max HP at the target's location. This effect can be triggered once every 15s."
+    },
+    "4": {
+      "0": "When an attack hits an opponent, deal AoE DMG equal to <cryo>80%</cryo> of Max HP at the target's location. This effect can be triggered once every 15s."
+    }
+  }
+}

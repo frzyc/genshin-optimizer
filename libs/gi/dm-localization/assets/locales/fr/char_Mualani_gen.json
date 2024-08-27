@@ -1,0 +1,174 @@
+{
+  "name": "Mualani",
+  "title": "Chasseuse des vagues rugissantes",
+  "description": "Une guide bien connue à Natlan qui possède un magasin de sports nautiques et est experte dans toutes les formes de sports aquatiques.",
+  "constellationName": "Phoca Neomonachus",
+  "auto": {
+    "name": "Réfrigération",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 3 attaques qui infligent des <hydro>DGT Hydro</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour lancer une globi-balle qui inflige des <hydro>DGT Hydro de zone</hydro> en atterrissant."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs en concentrant ses pouvoirs Hydro, infligeant des DGT aux ennemis en chemin et des <hydro>DGT Hydro de zone</hydro> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT attaque chargée",
+      "4": "Coût d'endurance attaque chargée",
+      "5": "DGT durant la chute",
+      "6": "DGT chute basse/élevée",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Squalisurf brise-vagues",
+    "description": {
+      "0": "En combinant ses connaissances du contrôle de vitesse et des marées, Mualani peut surfer n'importe où, n'importe quand.",
+      "1": "Après utilisation, Mualani obtient 60 pts de noctâme et entre dans l'état Bénédiction noctâme.",
+      "2": "<br/>",
+      "3": "<strong>Bénédiction noctâme : Mualani</strong>",
+      "4": "La bénédiction noctâme de Mualani consomme de façon continue ses points de noctâme et prend fin une fois les points épuisés ou lors d'une nouvelle utilisation de la compétence. L'état Bénédiction noctâme de Mualani possède les propriétés spéciales suivantes :",
+      "5": [
+        " En surfant sur la planche « Requinou », Mualani augmente sa VIT de déplacement et RÉS à l'interruption et peut se déplacer sur l'eau et sur le phlogistique liquide pendant la durée de l'état sans subir de DGT à cause de ce phlogistique liquide.",
+        " L'attaque normale de Mualani est convertie en morsure de Requinou, infligeant des <hydro>DGT Hydro</hydro> infusés de noctâme selon les PV max de Mualani. Les morsures de Requinou peuvent être utilisées dans les airs et les DGT qu'elles infligent sont considérés comme des DGT d'attaque normale.",
+        " Lorsque Mualani touche un ennemi pendant cet état, elle lui applique une marque de proie et obtient 1 cumul d'élan houleux. Cet effet peut être cumulé 3 fois maximum, et un même ennemi peut accorder un cumul une fois toutes les 0,7 s."
+      ],
+      "6": "<br/>",
+      "7": "<strong>Élan houleux et marque de proie</strong>",
+      "8": "Lorsque Mualani utilise une morsure de Requinou, les DGT infligés augmentent en fonction des cumuls d'élan houleux. Avec 3 cumuls, la morsure de Requinou de Mualani devient une morsure déferlante de Requinou, dont les DGT sont davantage augmentés, et qui consomme tous les cumuls d'élan houleux lorsqu'un ennemi est touché.",
+      "9": "Lorsqu'une morsure de Requinou touche un ennemi, sa marque est annulée et des missiles de Requinou sont tirés sur un maximum de 5 ennemis à proximité avec une marque de proie, leur infligeant des dégâts d'une valeur équivalant à cette instance de morsure de Requinou et annulant leur marque. Si cette morsure de Requinou et ces missiles de Requinou ont plus d'une cible, les DGT infligés diminuent, ces DGT pouvant diminuer à une valeur minimale équivalant à 72 % des DGT d'origine lorsque 3 ennemis ou plus sont ciblés.",
+      "10": "<br/>",
+      "11": "<i>Déjà, Requinou est un requin d'eau douce en plus d'être une planche de surf. Et puis, même s'il n'a pas vraiment besoin de manger, il va quand même mordre.</i>"
+    },
+    "skillParams": {
+      "0": "DGT de base morsure de Requinou",
+      "1": "Bonus de DGT élan houleux",
+      "2": "Bonus supplémentaire de DGT morsure déferlante",
+      "3": "TdR morsure de Requinou",
+      "4": "Limite de noctâme",
+      "5": "Temps de recharge",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Requin-pact boum",
+    "description": {
+      "0": "Tire un super missile de Requinou qui peut suivre les ennemis, infligeant des <hydro>DGT Hydro de zone</hydro> infusés de noctâme selon les PV max de Mualani.",
+      "1": "<br/>",
+      "2": "<i>Si Mualani a nommé ces missiles de Requinou ainsi, c'est à cause du mélange d'eau et de feu à l'intérieur, ce qui leur donne également un côté plus « thermal ».</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Temps de recharge",
+      "2": "Énergie élémentaire",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Bouée d'eau douce thermorésistante",
+    "description": {
+      "0": "Toucher un ennemi avec une morsure déferlante de Requinou génère une globi-bouée à proximité, et Mualani peut récupérer 20 pts de noctâme en collectant une globi-bouée. Un maximum de 2 globi-bouées peut être créé de cette manière pendant la durée d'une utilisation de la bénédiction noctâme."
+    }
+  },
+  "passive2": {
+    "name": "Meilleure guide de Natlan",
+    "description": {
+      "0": "Lorsqu'un membre de l'équipe à proximité a déclenché une éruption noctâme, Mualani obtient un cumul d'exploit de surf pendant 20 s, cet effet pouvant être cumulé 3 fois maximum. Lorsque Mualani utilise <strong>Requin-pact boum</strong>, elle consomme tous ses cumuls d'exploit de surf, les cumuls augmentant les DGT infligés par cette instance de Requin-pact boum d'une valeur équivalant à 15 %/30 %/45 % des PV max de Mualani, selon le nombre de cumuls consommés."
+    }
+  },
+  "passive3": {
+    "name": "Don de la nuit : Crêtes et creux",
+    "description": {
+      "0": "Après avoir épuisé ses points de noctâme, Mualani change pour consommer du phlogistique afin de maintenir sa bénédiction noctâme.",
+      "1": "Dans une zone de Natlan avec des mécanismes phlogistiques, la transmission noctâme « Mualani » peut être utilisée. Lorsque le personnage déployé sprinte, nage, est en plein mouvement provoqué par une aptitude particulière ou est à une certaine hauteur dans les airs, le déploiement de Mualani déclenche l'effet suivant : Mualani entre dans l'état Bénédiction noctâme et obtient 40 pts de noctâme. La transmission noctâme peut être déclenchée une fois toutes les 10 s par votre équipe.",
+      "2": "<br/>",
+      "3": "De plus, lorsque Mualani se déplace sur l'eau ou le phlogistique liquide pendant sa bénédiction noctâme, la consommation de points de noctâme et de phlogistique diminue de 75 % dans la région de Natlan et la consommation de points de noctâme de 35 % dans les régions hors de Natlan."
+    }
+  },
+  "passive": {
+    "name": "Toujours avoir le sourire !",
+    "description": {
+      "0": "Dans une zone de Natlan avec des mécanismes phlogistiques, interagir avec certains objets récoltables restaure 15 pts de phlogistique. De plus, l'emplacement des <strong>produits de Natlan</strong> est affiché sur la mini-carte."
+    }
+  },
+  "constellation1": {
+    "name": "Le Meztli oisif...",
+    "description": {
+      "0": "Les DGT infligés par la première morsure déferlante de Requinou après le début de la bénédiction noctâme et par les missiles de Requinou que cette morsure déclenche augmentent d'une valeur équivalant à 66 % des PV max de Mualani. Ces DGT sont cependant sujets à la règle d'atténuation des DGT de <strong>Squalisurf brise-vagues</strong>.",
+      "1": "De plus, la consommation de points de noctâme ou de phlogistique de l'état Bénédiction noctâme de Mualani diminue de 30 % lorsqu'elle n'est pas en combat."
+    }
+  },
+  "constellation2": {
+    "name": "Mualani à fond !",
+    "description": {
+      "0": "Mualani obtient 2 cumuls d'élan houleux de <strong>Squalisurf brise-vagues</strong> lorsqu'elle active sa bénédiction noctâme et 1 cumul lorsqu'elle collecte une globi-bouée.",
+      "1": "De plus, lorsque Mualani collecte 2 globi-bouées pendant une seule bénédiction noctâme, elle récupère 12 pts de noctâme supplémentaires pendant 2 s. L'aptitude passive « Bouée d'eau douce thermorésistante » doit être déjà débloquée pour cet effet."
+    }
+  },
+  "constellation3": {
+    "name": "Surf sur une mer joyeuse",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Squalisurf brise-vagues</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Requinou mange des bouées",
+    "description": {
+      "0": "Mualani récupère 8 pts d'énergie élémentaire lorsqu'elle collecte une globi-bouée. L'aptitude passive « Bouée d'eau douce thermorésistante » doit être déjà débloquée.",
+      "1": "De plus, les DGT infligés par <strong>Requin-pact boum</strong> augmentent de 75 %."
+    }
+  },
+  "constellation5": {
+    "name": "Planche identique en promo !",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Requin-pact boum</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Esprit du Peuple des sources",
+    "description": {
+      "0": "L'effet d'augmentation de DGT de la constellation « Le Meztli oisif... » n'est plus limité à un seul déclenchement par bénédiction noctâme."
+    }
+  }
+}

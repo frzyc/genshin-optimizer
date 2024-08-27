@@ -848,5 +848,39 @@
       "flower",
       "sands"
     ]
+  },
+  "ScrollOfTheHeroOfCinderCity": {
+    "setNum": [
+      2,
+      4
+    ],
+    "rarities": [
+      4,
+      5
+    ],
+    "slots": [
+      "goblet",
+      "plume",
+      "circlet",
+      "flower",
+      "sands"
+    ]
+  },
+  "ObsidianCodex": {
+    "setNum": [
+      2,
+      4
+    ],
+    "rarities": [
+      4,
+      5
+    ],
+    "slots": [
+      "goblet",
+      "plume",
+      "circlet",
+      "flower",
+      "sands"
+    ]
   }
 }

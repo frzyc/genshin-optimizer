@@ -1,0 +1,174 @@
+{
+  "name": "Mualani",
+  "title": "Plitsch-Platsch-Wellenjägerin",
+  "description": "Eine weithin bekannte Fremdenführerin aus Natlan, Inhaberin eines Ladens für Wassersportausrüstungen sowie eine erfahrene Wellenreiterin, die sich auf alle Arten von Wasseraktivitäten spezialisiert hat.",
+  "constellationName": "Phoca Neomonachus",
+  "auto": {
+    "name": "Kühlende Behandlung",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 3 Angriffe aus und verursacht <hydro>Hydro-Schaden</hydro>."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer, schleudert einen Kugelfisch-Ball in die Luft, der bei der Landung <hydro>Hydro-Flächenschaden</hydro> verursacht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Konzentriert die Kraft des Wassers, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <hydro>Hydro-Flächenschaden</hydro>."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH heftiger Schläge",
+      "4": "Ausdauerverbrauch heftiger Schläge",
+      "5": "SCH beim Fallen",
+      "6": "SCH beim Fallen aus niedriger/großer Höhe",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Haifischreitende Wellenspalterin",
+    "description": {
+      "0": "Durch die Kombination ihrer Kenntnisse über das Beherrschen von Geschwindigkeit und Gezeiten kann Mualani an jedem Ort und zu jeder Zeit Wellen reiten.",
+      "1": "Nach dem Einsetzen erhält Mualani 60 Nachtseelenpunkte und tritt in den Zustand Nachtseelensegen ein.",
+      "2": "<br/>",
+      "3": "<strong>Nachtseelensegen – Mualani</strong>",
+      "4": "Verbraucht fortlaufend Nachtseelenpunkte. Wenn diese aufgebraucht sind oder wenn die Fähigkeit erneut eingesetzt wird, endet Mualanis Zustand Nachtseelensegen. Der Zustand Nachtseelensegen hat die folgenden Eigenschaften:",
+      "5": [
+        " Steigt auf das Haifisch-Surfbrett und erhöht Mualanis Bewegungsgeschwindigkeit und Unterbrechungswiderstand. Mualani kann sich über Wasser und flüssiges Phlogiston bewegen, während dieser Zustand aktiv ist, und sie erleidet keinen Schaden durch flüssiges Phlogiston.",
+        " Wandelt Standardangriffe in Haifischbisse um, die mit Nachtseelen versehenen <hydro>Hydro-Schaden</hydro> basierend auf Mualanis max. LP verursachen. Haifischbisse können in der Luft ausgeführt werden. Der auf diese Weise verursachte Schaden wird als Schaden des Standardangriffs betrachtet.",
+        " Wenn sie in diesem Zustand mit Gegnern in Kontakt kommt, werden diese als Beute markiert und Mualani erhält selbst 1 Stapelung „Wellenschwung“, 3-fach stapelbar. Pro Gegner alle 0,7 s 1 Stapelung möglich."
+      ],
+      "6": "<br/>",
+      "7": "<strong>Wellenschwung und Markierung der Beute</strong>",
+      "8": "Erhöht, wenn Mualani den Haifischbiss einsetzt, den von ihr verursachten Schaden basierend auf der Menge an Stapelungen von Wellenschwung. Bei 3 Stapelungen wird der Haifischbiss in Wogender Haibiss umgewandelt, was ihren Schaden weiter erhöht。 Entfernt nach dem Treffen von Gegnern alle Stapelungen von Wellenschwung.",
+      "9": "Entfernt, wenn der Haifischbiss einen Gegner trifft, die Markierung und feuert Haifischgeschosse auf bis zu 5 als Beute markierte Gegner in der Nähe ab, die ihnen Schaden in gleicher Höhe wie dem des diesmaligen Haifischbisses zufügen und ihre Markierungen entfernen. Verringert, wenn mehr als 1 Gegner Ziel von Haifischbiss und Haifischgeschossen ist, den verursachten Schaden, wobei der max. Schaden 72 % des ursprünglichen Schadens beträgt, wenn 3 Gegner betroffen sind.",
+      "10": "<br/>",
+      "11": "<i>Erstens ist mein kleiner Hai nicht nur ein Surfbrett, sondern auch ein Süßwasserhai. Zweitens muss er nicht wirklich fressen, aber er beißt trotzdem.</i>"
+    },
+    "skillParams": {
+      "0": "Basis-SCH Haifischbiss",
+      "1": "SCH-Bonus von Wellenschwung",
+      "2": "Zusätzlicher SCH-Bonus von Wogendem Haibiss",
+      "3": "Abklingzeit von Haifischbiss",
+      "4": "Max. Nachtseelenpunkte",
+      "5": "Abklingzeit",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Haibitzen-Geschoss",
+    "description": {
+      "0": "Feuert ein Superhaigeschoss ab, das Gegner verfolgt und mit Nachtseelen versehenen <hydro>Hydro-Flächenschaden</hydro> basierend auf Mualanis max. LP verursacht.",
+      "1": "<br/>",
+      "2": "<i>Mualani hat diese Art von Haifischgeschossen so genannt, weil der Name die Elemente Hydro und Pyro in sich vereint, sodass der Begriff einen an die heißen Quellen denken lässt.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Abklingzeit",
+      "2": "Elementarenergie",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Hitzebeständiger Süßwasserkugelfisch",
+    "description": {
+      "0": "Erzeugt in der Nähe einen Kugelfisch-Ball, wenn ein Gegner von Wogender Haibiss getroffen wird. Stellt Mualani selbst 20 Nachtseelenpunkte wieder her, wenn sie einen Kugelfisch-Ball erhält. Während einer einzigen Auslösung von Nachtseelensegen kann höchstens 2 solche Kugelfisch-Bälle auf diese Weise erschaffen werden."
+    }
+  },
+  "passive2": {
+    "name": "Beste Reiseführerin von Natlan",
+    "description": {
+      "0": "Verleiht, sobald ein in der Nähe befindliches Truppenmitglied Nachtseelenaufbruch auslöst, Mualani 1 Stapelung „Wellenreitererfahrung“, hält 20 s, 3-fach stapelbar. Verbraucht, wenn Mualani <strong>Sturmexplosions-Geschoss</strong> einsetzt, alle Stapelungen von „Wellenreitererfahrung“, erhöht den diesmal verursachten Schaden von Haibitzen-Geschoss basierend auf den verbrauchten Stapelungen um 15/30/45 % von Mualanis max. LP."
+    }
+  },
+  "passive3": {
+    "name": "Geschenk des Nachtreichs – Wellenberge und Wellentäler",
+    "description": {
+      "0": "Sobald ihre Nachtseelenpunkte aufgebraucht sind, kann Mualani zum Verbrauch von Phlogiston wechseln, um ihren Nachtseelensegen aufrechtzuerhalten.",
+      "1": "Beim Aufenthalt in einem Gebiet mit Phlogiston-Mechanismus in Natlan kann die Nachtseelen-Übertragung – Mualani verwendet werden. Wenn die aktuelle Figur gerade rennt, schwimmt, sich in einem Bewegungsmodus befindet, der durch bestimmte Talente ausgelöst wird, oder sich in einer bestimmten Höhe in der Luft befindet, wird beim Wechsel zu Mualani Folgendes ausgelöst: Mualani tritt in den Zustand des Nachtseelensegens ein und erhält 40 Nachtseelenpunkte. 10 s Abklingzeit für das Auslösen der Nachtseelen-Übertragung innerhalb der eigenen Truppe.",
+      "2": "<br/>",
+      "3": "Außerdem verbraucht Mualani in Natlan 75 % weniger Nachtseelenpunkte oder Phlogiston, wenn sie sich im Zustand „Nachtseelensegen“ auf dem Wasser oder flüssigen Phlogiston bewegt, und 35 % weniger Nachtseelenpunkte, wenn sie dasselbe außerhalb Natlans tut."
+    }
+  },
+  "passive": {
+    "name": "Lächeln ist der Trick!",
+    "description": {
+      "0": "Stellt beim Aufenthalt in einem Gebiet mit Phlogiston-Mechanismus in Natlan für das Einsammeln einiger sammelbarer Materialien 15 Punkte Phlogiston wieder her. Zeigt außerdem alle <strong>Besonderheiten Natlans</strong> in der Nähe auf der Minikarte an."
+    }
+  },
+  "constellation1": {
+    "name": "Die gemütlichen „Meztli“ ...",
+    "description": {
+      "0": "Erhöht den SCH durch den ersten Wogenden Haibiss und die davon ausgelösten Haifischgeschosse, nachdem Mualani in den Zustand Nachtseelensegen eingetreten hat, um 66 % von Mualanis max. LP. Dieser SCH-Bonuseffekt unterliegt den SCH-Reduktionsregeln von <strong>Haifischreitende Wellenspalterin</strong>.",
+      "1": "Verringert außerdem Mualanis Verbrauch von Nachtseelenpunkten und Phlogiston im Zustand Nachtseelensegen um 30 %, wenn sie sich nicht im Kampf befindet."
+    }
+  },
+  "constellation2": {
+    "name": "Mualani gibt alles!",
+    "description": {
+      "0": "Verleiht Mualani 2 Stapelungen Wellenschwung von <strong>Haifischreitende Wellenspalterin</strong>, wenn sie in den Zustand Nachtseelensegen tritt. Verleiht ihr 1 Stapelung Wellenschwung, wenn sie einen Kugelfisch-Ball erhält.",
+      "1": "Stellt Mualani pro Nachtseelensegen innerhalb von 2 s nach dem Erhalten von 2 Kugelfisch-Bällen zusätzlich 12 Nachtseelenpunkte wieder her. Für diesen Effekt muss das passive Talent „Hitzebeständiger Süßwasserkugelfisch“ zuerst freigeschaltet werden."
+    }
+  },
+  "constellation3": {
+    "name": "Surfen auf fröhlichen Meeren",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Haifischreitende Wellenspalterin</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Haifisch frisst Kugelfische",
+    "description": {
+      "0": "Stellt Mualani beim Erhalten eines Kugelfisch-Balls 8 Punkte Elementarenergie wieder her. Das passive Talent „Hitzebeständiger Süßwasserkugelfisch“ muss zuerst freigeschaltet werden.",
+      "1": "Erhöht außerdem den durch <strong>Haibitzen-Geschoss</strong> verursachten Schaden um 75 %."
+    }
+  },
+  "constellation5": {
+    "name": "Surfbrett im gleichen Stil im Angebot!",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Haibitzen-Geschoss</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Der Geist der Menschen der Quellen",
+    "description": {
+      "0": "Entfernt die Beschränkung, dass der Schadenbonus durch das Sternbild „Die gemütlichen ‚Meztli‘ ...“ nur einmal pro Nachtseelensegen ausgelöst werden kann."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Códice de Obsidiana",
+  "setEffects": {
+    "2": "Enquanto o personagem que está com essa arma equipada estiver sob a Bênção do Espírito da Noite e estiver ativo, o Dano causado por ele é aumentado em 15%.",
+    "4": "Enquanto estiver ativo, após o personagem que está com essa arma equipada consumir 1 ponto de Espírito da Noite, a Taxa CRIT aumenta em 40% por 6s. Este efeito pode ser ativado no máximo uma vez a cada segundo."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Julgamento Primordial",
+      "desc": "Uma flor meticulosamente esculpida em cristal negro. Ela emite uma luz misteriosa à noite."
+    },
+    "plume": {
+      "name": "Raiz da Medula do Espírito",
+      "desc": "Um acessório emplumado feito em imitação da asa de um dragão. Talvez tenha sido um dia uma lembrança de alguma história esquecida."
+    },
+    "sands": {
+      "name": "Mitos do Reino da Noite",
+      "desc": "Um instrumento de ritual misterioso que não é nem um relógio, nem uma bússola. Hoje em dia, ninguém faz ideia de para que serve."
+    },
+    "goblet": {
+      "name": "Pré-Banquete dos Desafiantes",
+      "desc": "Um recipiente que parece ter sido feito torcendo e moldando pedra de uma forma aparentemente caprichosa. Não se sabe quem possui esse tipo de força."
+    },
+    "circlet": {
+      "name": "Coroa das Divindades",
+      "desc": "Uma coroa feita de obsidiana que, nos tempos antigos, era usada em cerimônias de coroação por reis tribais nobres."
+    }
+  }
+}

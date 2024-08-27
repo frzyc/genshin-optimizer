@@ -1,0 +1,29 @@
+{
+  "setName": "Rotolo dell'Eroe della Città di cenere",
+  "setEffects": {
+    "2": "Quando un membro vicino del gruppo innesca un Impeto dell'Anima della Notte, il personaggio equipaggiato con questo set rigenera 6 di energia elementale.",
+    "4": "Dopo che il personaggio che equipaggia il set innesca una reazione legata al proprio tipo elementale, tutti i membri del gruppo vicini che possiedono un tipo elementale correlato alla suddetta reazione ottengono un bonus DAN elementali pari a un 12% per 15 s. Se il personaggio che equipaggia il set è in stato di Grazia dell'Anima della Notte quando questo effetto si attiva, il suddetto bonus DAN elementali aumenta di un ulteriore 28% per 20 s. Il personaggio che equipaggia il set può attivare questo effetto anche se non si trova in campo. Il bonus DAN di più set di manufatti con lo stesso nome non si accumula."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Talismano del Domatore di bestie",
+      "desc": "Un fiore scolpito con selce e Drachite. Chiunque lo possieda dimostra di essere qualificato a diventare un domatore di bestie."
+    },
+    "plume": {
+      "name": "Segno del Guardamonti",
+      "desc": "Un indicatore usato dai Guardamonti per tracciare i sentieri. La sua forma, simile alla piuma di un volatile, lo rende particolarmente vistoso."
+    },
+    "sands": {
+      "name": "Meridiana d'oro mistica",
+      "desc": "Un disco dorato ispirato alla forma del sole. I motivi draconici che lo adornano sembrano simboleggiare il ciclo della vita e della morte."
+    },
+    "goblet": {
+      "name": "Coppa artigliata dello studioso errante",
+      "desc": "Un curioso calice dalla forma simile a un artiglio di drago. Chiunque l'abbia creato doveva avere in mente un'idea molto speciale."
+    },
+    "circlet": {
+      "name": "Maschera piumata del demone guerriero",
+      "desc": "Una maschera decorata con piume simili a quelle di un falco, avvolta da un gran numero di leggende."
+    }
+  }
+}
