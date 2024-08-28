@@ -140,5 +140,5 @@ export const relicSlotToMainStatKeys: Record<RelicSlotKey, RelicMainStatKey[]> =
       'quantum_dmg_',
       'imaginary_dmg_',
     ],
-    rope: ['brEff_', 'enerRegen_'],
+    rope: ['hp_', 'atk_', 'def_', 'brEff_', 'enerRegen_'],
   }

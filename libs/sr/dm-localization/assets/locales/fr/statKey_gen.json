@@ -1,8 +1,11 @@
 {
   "spd": "VIT",
   "hp": "PV",
+  "hp_": "PV",
   "atk": "ATQ",
+  "atk_": "ATQ",
   "def": "DÉF",
+  "def_": "DÉF",
   "crit_": "Chances de coup critique",
   "crit_dmg_": "DGT CRIT",
   "brEff_": "Effet de Rupture",

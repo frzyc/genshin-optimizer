@@ -1,8 +1,11 @@
 {
   "spd": "SPD",
   "hp": "HP",
+  "hp_": "HP",
   "atk": "ATK",
+  "atk_": "ATK",
   "def": "DEF",
+  "def_": "DEF",
   "crit_": "CRIT Rate",
   "crit_dmg_": "CRIT DMG",
   "brEff_": "Break Effect",
