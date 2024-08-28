@@ -15,10 +15,10 @@ import {
   allStatics,
   customDmg,
   enemyDebuff,
+  own,
+  ownBuff,
   percent,
   register,
-  self,
-  selfBuff,
   team,
   teamBuff,
 } from '../util'
@@ -102,7 +102,7 @@ const info = dataGenToCharInfo(data_gen)
 const {
   final,
   char: { skill, burst, ascension, constellation },
-} = self
+} = own
 const { a1ActiveInBurst, c2Bloom, c2QSA, partyInBurst, isActive } =
   allBoolConditionals(info.key)
 const { c4Count } = allNumConditionals(info.key, true, 0, 4)
@@ -191,10 +191,10 @@ const a4Karma_critRate_ = percent(
 const t = register(
   info.key,
   entriesForChar(info, data_gen),
-  selfBuff.char.skill.add(cmpGE(constellation, 3, 3)),
-  selfBuff.char.burst.add(cmpGE(constellation, 5, 3)),
+  ownBuff.char.skill.add(cmpGE(constellation, 3, 3)),
+  ownBuff.char.burst.add(cmpGE(constellation, 5, 3)),
 
-  selfBuff.premod.eleMas.add(
+  ownBuff.premod.eleMas.add(
     cmpGE(
       constellation,
       4,
@@ -245,8 +245,8 @@ const t = register(
       prod(percent(subscript(skill, dm.skill.karmaEleMasDmg)), final.eleMas)
     ),
     undefined,
-    selfBuff.premod.dmg_.add(sum(a4Karma_dmg_, burst_karma_dmg_)),
-    selfBuff.premod.critRate_.add(a4Karma_critRate_)
+    ownBuff.premod.dmg_.add(sum(a4Karma_dmg_, burst_karma_dmg_)),
+    ownBuff.premod.critRate_.add(a4Karma_critRate_)
   )
 )
 export default t

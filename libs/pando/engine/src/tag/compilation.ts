@@ -1,6 +1,6 @@
 import { isDebug } from '../util'
 import { TagMapKeys } from './keys'
-import { entryKey, entryVal } from './symb'
+import { entryRef, entryVal } from './symb'
 import type { Tag, TagCategory, TagValue } from './type'
 
 /**
@@ -21,7 +21,7 @@ export type RawTagMapKeys = {
  */
 export type RawTagMapValues<V> = {
   [key in string]?: RawTagMapValues<V>
-} & { [entryKey]?: Tag[]; [entryVal]?: V[] }
+} & { [entryRef]?: TagMapEntry<V>[]; [entryVal]?: V[] }
 
 /** Uncompiled entry for `TagMap<V>` */
 export type TagMapEntry<V, T = Tag> = { tag: T; value: V }
@@ -68,7 +68,8 @@ export function compileTagMapValues<V>(
   const keys = new TagMapKeys(_keys),
     tagLen = keys.tagLen,
     result: RawTagMapValues<V> = {}
-  for (const { tag, value } of entries) {
+  for (const entry of entries) {
+    const { tag, value } = entry
     const { id, mask } = keys.getMask(tag)
 
     let current = result
@@ -83,8 +84,8 @@ export function compileTagMapValues<V>(
     if (!current[entryVal]) current[entryVal] = []
     current[entryVal].push(value)
     if (isDebug('tag_db')) {
-      if (!current[entryKey]) current[entryKey] = []
-      current[entryKey].push(tag)
+      if (!current[entryRef]) current[entryRef] = []
+      current[entryRef].push(entry)
     }
   }
   return result
@@ -105,7 +106,7 @@ export function mergeTagMapValues<V>(
   if (vals.length) {
     result[entryVal] = vals
     if (isDebug('tag_db'))
-      result[entryKey] = entries.flatMap((e) => e[entryKey] ?? [])
+      result[entryRef] = entries.flatMap((e) => e[entryRef] ?? [])
   }
   return result
 }

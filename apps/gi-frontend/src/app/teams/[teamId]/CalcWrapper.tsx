@@ -5,7 +5,7 @@ import {
   charData,
   enemyDebuff,
   genshinCalculatorWithEntries,
-  selfBuff,
+  ownBuff,
   teamData,
   weaponData,
   withMember,
@@ -72,7 +72,7 @@ export function CalcWrapper({ children }: { children: ReactNode }) {
       enemyDebuff.reaction.amp.add(''),
       enemyDebuff.common.lvl.add(12),
       enemyDebuff.common.preRes.add(0.1),
-      selfBuff.common.critMode.add('avg'),
+      ownBuff.common.critMode.add('avg'),
     ]
     return genshinCalculatorWithEntries(data)
   }, [team])

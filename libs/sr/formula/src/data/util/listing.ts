@@ -66,12 +66,12 @@ export const damageTypes = [
 ] as const
 
 export const entryTypes = [
-  'self',
+  'own',
   'enemy',
   'team',
   'target',
   'teamBuff',
-  'notSelfBuff',
+  'notOwnBuff',
   'enemyDeBuff', // Ends with 'Buff' so `Calculator` can pick up on this tag
 ] as const
 export const sheets = [

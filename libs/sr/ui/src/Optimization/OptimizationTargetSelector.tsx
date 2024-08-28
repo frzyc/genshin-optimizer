@@ -1,6 +1,6 @@
 import { DropdownButton } from '@genshin-optimizer/common/ui'
 import type { Read } from '@genshin-optimizer/sr/formula'
-import { convert, selfTag } from '@genshin-optimizer/sr/formula'
+import { convert, ownTag } from '@genshin-optimizer/sr/formula'
 import { useSrCalcContext } from '@genshin-optimizer/sr/formula-ui'
 import { MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'
@@ -14,7 +14,7 @@ export function OptimizationTargetSelector({
 }) {
   const { t } = useTranslation('optimize')
   const calc = useSrCalcContext()
-  const member0 = convert(selfTag, { et: 'self', src: '0' })
+  const member0 = convert(ownTag, { et: 'own', src: '0' })
   return (
     <DropdownButton
       title={`${t('optTarget')}${

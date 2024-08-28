@@ -6,10 +6,10 @@ import { infusionPrio } from '../common/dmg'
 import {
   allBoolConditionals,
   customDmg,
+  own,
+  ownBuff,
   percent,
   register,
-  self,
-  selfBuff,
   teamBuff,
 } from '../util'
 import { dataGenToCharInfo, dmg, entriesForChar, shield } from './util'
@@ -77,7 +77,7 @@ const info = dataGenToCharInfo(data_gen)
 const {
   final,
   char: { ascension, constellation },
-} = self
+} = own
 const { afterBurst, c2AfterSkillHit } = allBoolConditionals(info.key)
 
 const normalEle_dmg_ = afterBurst.ifOn(percent(dm.burst.dmg_bonus_))
@@ -96,10 +96,10 @@ const c2_hp_ = cmpGE(
 export default register(
   info.key,
   entriesForChar(info, data_gen),
-  selfBuff.char.burst.add(cmpGE(constellation, 3, 3)),
-  selfBuff.char.skill.add(cmpGE(constellation, 5, 3)),
+  ownBuff.char.burst.add(cmpGE(constellation, 3, 3)),
+  ownBuff.char.skill.add(cmpGE(constellation, 5, 3)),
 
-  selfBuff.premod.hp_.add(c2_hp_),
+  ownBuff.premod.hp_.add(c2_hp_),
 
   allElementKeys.map((ele) =>
     teamBuff.premod.dmg_.normal[ele].add(sum(normalEle_dmg_, a4_normalEle_dmg_))
@@ -136,6 +136,6 @@ export default register(
     { ele: 'hydro' }
   ),
   customDmg(`c6`, info.ele, 'burst', prod(dm.constellation6.dmg, final.hp), {
-    cond: cmpGE(self.char.constellation, 6, 'unique', ''),
+    cond: cmpGE(own.char.constellation, 6, 'unique', ''),
   })
 )

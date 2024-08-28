@@ -6,9 +6,9 @@ import {
   allListConditionals,
   allNumConditionals,
   enemyDebuff,
+  own,
+  ownBuff,
   register,
-  self,
-  selfBuff,
   team,
   teamBuff,
 } from '../util'
@@ -34,7 +34,7 @@ const info = dataGenToCharInfo(data_gen, 'geo')
 const {
   final: _final,
   char: { ascension: _ascension, constellation },
-} = self
+} = own
 // TODO: Conditionals
 const { _someBoolConditional } = allBoolConditionals(info.key)
 const { _someListConditional } = allListConditionals(info.key, [])
@@ -46,18 +46,18 @@ export default register(
   info.key,
   entriesForChar(info, data_gen),
   // TODO: Double check these
-  selfBuff.char.burst.add(cmpGE(constellation, 3, 3)),
-  selfBuff.char.skill.add(cmpGE(constellation, 5, 3)),
+  ownBuff.char.burst.add(cmpGE(constellation, 3, 3)),
+  ownBuff.char.skill.add(cmpGE(constellation, 5, 3)),
 
   // TODO:
-  // - Add self-buff formulas using `selfBuff.<buff target>.add(<buff value>)`
-  selfBuff.premod.atk.add(1),
+  // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
+  ownBuff.premod.atk.add(1),
   // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
   teamBuff.premod.atk.add(1),
   // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
   enemyDebuff.common.defRed_.add(1),
   //
-  // <buff value> uses `self.*`, `team.*`, `target.*` (target of team buff), and `enemy.*`
+  // <buff value> uses `own.*`, `team.*`, `target.*` (target of team buff), and `enemy.*`
 
   // Formulas
   // TODO: Add dmg/heal/shield formulas using `dmg`, `customDmg`, `shield`, `customShield`, `fixedShield`, or `customHeal`

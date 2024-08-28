@@ -105,7 +105,7 @@ export class Solver {
     const relicSetKeys = new Set(allRelicSetKeys)
     const detachedNodes = detach([this.optTarget], this.calc, (tag: Tag) => {
       if (tag['src'] !== '0') return undefined // Wrong member
-      if (tag['et'] !== 'self') return undefined // Not applied (only) to self
+      if (tag['et'] !== 'own') return undefined // Not applied (only) to self
 
       if (tag['sheet'] === 'dyn' && tag['qt'] === 'premod')
         return { q: tag['q']! } // Relic stat bonus

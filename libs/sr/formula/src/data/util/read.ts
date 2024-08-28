@@ -1,7 +1,6 @@
 import type {
   AnyNode,
   NumNode,
-  ReRead,
   StrNode,
   TagOverride,
   TagValRead,
@@ -39,14 +38,11 @@ export type Tag = {
   [key in keyof typeof fixedTags]?: (typeof fixedTags)[key][number] | null
 } & { name?: string | null; qt?: string | null; q?: string | null }
 
-export class Read extends TypedRead<Tag, Read> {
+export class Read extends TypedRead<Tag> {
   override register<C extends keyof Tag>(cat: C, val: Tag[C]): void {
     if (val == null) return // null | undefined
     if (cat === 'name') usedNames.add(val)
     else if (cat === 'q') usedQ.add(val)
-  }
-  override ctor(tag: Tag, ex: Read['ex']): Read {
-    return new Read(tag, ex)
   }
 
   name(name: string): Read {
@@ -57,24 +53,21 @@ export class Read extends TypedRead<Tag, Read> {
   }
 
   add(value: number | string | AnyNode): TagMapNodeEntry {
-    return {
-      tag: this.tag,
-      value: typeof value === 'object' ? value : constant(value),
-    }
+    return super.toEntry(typeof value === 'object' ? value : constant(value))
   }
   addOnce(sheet: Sheet, value: number | NumNode): TagMapNodeEntries {
     if (this.tag.et !== 'teamBuff' || !sheet)
       throw new Error('Unsupported non-stacking entry')
     const q = `${uniqueId(sheet)}`
-    // Use raw tags here instead of `self.*` to avoid cyclic dependency
+    // Use raw tags here instead of `own.*` to avoid cyclic dependency
     // Entries in TeamData need `member:` for priority
     return [
-      // 1) selfBuff.stackIn.<q>.add(value)
-      this.withTag({ et: 'self', sheet, qt: 'stackIn', q }).add(value),
-      // 2) In TeamData: selfBuff.stackTmp.<q>.add(cmpNE(self.stackIn.<q>, 0, /* priority */))
-      // 3) In TeamData: selfBuff.stackOut.<q>.add(cmpEq(team.stackTmp.<q>.max, /* priority */, self.stackIn))
-      // 4) teamBuff.<stat>.add(self.stackOut.<q>)
-      this.add(reader.withTag({ et: 'self', sheet, qt: 'stackOut', q })),
+      // 1) ownBuff.stackIn.<q>.add(value)
+      this.withTag({ et: 'own', sheet, qt: 'stackIn', q }).add(value),
+      // 2) In TeamData: ownBuff.stackTmp.<q>.add(cmpNE(own.stackIn.<q>, 0, /* priority */))
+      // 3) In TeamData: ownBuff.stackOut.<q>.add(cmpEq(team.stackTmp.<q>.max, /* priority */, own.stackIn))
+      // 4) teamBuff.<stat>.add(own.stackOut.<q>)
+      this.add(reader.withTag({ et: 'own', sheet, qt: 'stackOut', q })),
     ]
   }
   addWithDmgType(
@@ -83,8 +76,12 @@ export class Read extends TypedRead<Tag, Read> {
   ): TagMapNodeEntry[] {
     return this[dmgType].map((r) => r.add(val))
   }
-  reread(r: Read): { tag: Tag; value: ReRead } {
-    return { tag: this.tag, value: reread(r.tag) }
+  reread(r: Read): TagMapNodeEntry {
+    return super.toEntry(reread(r.tag))
+  }
+
+  override toString(): string {
+    return tagStr(this.tag, this.ex)
   }
 
   // Optional Modifiers

@@ -8,7 +8,7 @@ import { range } from '@genshin-optimizer/common/util'
 import type { UISheetElement } from '@genshin-optimizer/pando/ui-sheet'
 import { DocumentDisplay } from '@genshin-optimizer/pando/ui-sheet'
 import { maxEidolonCount } from '@genshin-optimizer/sr/consts'
-import { convert, selfTag } from '@genshin-optimizer/sr/formula'
+import { convert, ownTag } from '@genshin-optimizer/sr/formula'
 import {
   uiSheets,
   useSrCalcContext,
@@ -318,7 +318,7 @@ export function ConstellationDropdown() {
   const { t } = useTranslation('sheet_gen')
   const calc = useSrCalcContext()
   if (!calc) return null
-  const member0 = convert(selfTag, { et: 'self', src: '0' })
+  const member0 = convert(ownTag, { et: 'own', src: '0' })
   const constellation = calc.compute(member0.char.eidolon).val
   return (
     <DropdownButton

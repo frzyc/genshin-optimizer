@@ -11,10 +11,10 @@ import {
 import {
   allBoolConditionals,
   enemyDebuff,
+  own,
+  ownBuff,
   percent,
   register,
-  self,
-  selfBuff,
   team,
   teamBuff,
 } from '../util'
@@ -100,7 +100,7 @@ const info = dataGenToCharInfo(data_gen)
 const {
   final,
   char: { ascension, constellation },
-} = self
+} = own
 const { a1AfterSkill, a1AfterHit, c4AfterPirHit } = allBoolConditionals(
   info.key
 )
@@ -109,7 +109,7 @@ const { c2Hydro, c2Dendro } = allBoolConditionals(info.key)
 const onlyDendroHydroTeam = cmpGE(
   team.common.count.dendro,
   1,
-  cmpEq(self.common.eleCount, 2, 1)
+  cmpEq(own.common.eleCount, 2, 1)
 )
 const isGoldenChaliceBountyActive = cmpGE(
   ascension,
@@ -184,12 +184,12 @@ const c6_critDMG_ = cmpGE(
 export default register(
   info.key,
   entriesForChar(info, data_gen),
-  selfBuff.char.skill.add(cmpGE(constellation, 3, 3)),
-  selfBuff.char.burst.add(cmpGE(constellation, 5, 3)),
+  ownBuff.char.skill.add(cmpGE(constellation, 3, 3)),
+  ownBuff.char.burst.add(cmpGE(constellation, 5, 3)),
 
-  selfBuff.premod.dmg_.burst.add(c4_burst_dmg_),
-  selfBuff.premod.critRate_.add(c6_critRate_),
-  selfBuff.premod.critDMG_.add(c6_critDMG_),
+  ownBuff.premod.dmg_.burst.add(c4_burst_dmg_),
+  ownBuff.premod.critRate_.add(c6_critRate_),
+  ownBuff.premod.critDMG_.add(c6_critDMG_),
 
   teamBuff.premod.eleMas.add(a1AfterSkillAndHit_eleMas),
   teamBuff.premod.dmg_.bloom.add(bountifulBloom_dmg_),
@@ -217,7 +217,7 @@ export default register(
     dm.skill[`moonDmg`],
     'skill',
     undefined,
-    selfBuff.premod.dmg_.add(c1_moon_dmg_)
+    ownBuff.premod.dmg_.add(c1_moon_dmg_)
   ),
   (['skill', 'aeon'] as const).flatMap((k) =>
     dmg(`burst_${k}`, info, 'hp', dm.burst[`${k}Dmg`], 'burst')

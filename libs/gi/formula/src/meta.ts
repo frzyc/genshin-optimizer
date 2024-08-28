@@ -6128,7 +6128,7 @@ export const formulas = {
       sheet: 'Albedo',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Albedo',
@@ -6142,7 +6142,7 @@ export const formulas = {
       sheet: 'Alhaitham',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Alhaitham',
@@ -6156,7 +6156,7 @@ export const formulas = {
       sheet: 'Aloy',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Aloy',
@@ -6170,7 +6170,7 @@ export const formulas = {
       sheet: 'Amber',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Amber',
@@ -6184,7 +6184,7 @@ export const formulas = {
       sheet: 'AratakiItto',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'AratakiItto',
@@ -6198,7 +6198,7 @@ export const formulas = {
       sheet: 'Arlecchino',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Arlecchino',
@@ -6212,7 +6212,7 @@ export const formulas = {
       sheet: 'Baizhu',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Baizhu',
@@ -6226,7 +6226,7 @@ export const formulas = {
       sheet: 'Barbara',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Barbara',
@@ -6240,7 +6240,7 @@ export const formulas = {
       sheet: 'Beidou',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Beidou',
@@ -6254,7 +6254,7 @@ export const formulas = {
       sheet: 'Bennett',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Bennett',
@@ -6268,7 +6268,7 @@ export const formulas = {
       sheet: 'Candace',
       name: 'normal_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Candace',
@@ -6280,7 +6280,7 @@ export const formulas = {
       sheet: 'Candace',
       name: 'normal_1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Candace',
@@ -6292,7 +6292,7 @@ export const formulas = {
       sheet: 'Candace',
       name: 'normal_2',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Candace',
@@ -6304,7 +6304,7 @@ export const formulas = {
       sheet: 'Candace',
       name: 'normal_3',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Candace',
@@ -6316,7 +6316,7 @@ export const formulas = {
       sheet: 'Candace',
       name: 'normal_4',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Candace',
@@ -6328,7 +6328,7 @@ export const formulas = {
       sheet: 'Candace',
       name: 'charged',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Candace',
@@ -6340,7 +6340,7 @@ export const formulas = {
       sheet: 'Candace',
       name: 'plunging_dmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Candace',
@@ -6352,7 +6352,7 @@ export const formulas = {
       sheet: 'Candace',
       name: 'plunging_low',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Candace',
@@ -6364,7 +6364,7 @@ export const formulas = {
       sheet: 'Candace',
       name: 'plunging_high',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Candace',
@@ -6376,7 +6376,7 @@ export const formulas = {
       sheet: 'Candace',
       name: 'skill_basic',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Candace',
@@ -6388,7 +6388,7 @@ export const formulas = {
       sheet: 'Candace',
       name: 'skill_charged',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Candace',
@@ -6400,7 +6400,7 @@ export const formulas = {
       sheet: 'Candace',
       name: 'burst_skill',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Candace',
@@ -6412,7 +6412,7 @@ export const formulas = {
       sheet: 'Candace',
       name: 'burst_wave',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Candace',
@@ -6424,7 +6424,7 @@ export const formulas = {
       sheet: 'Candace',
       name: 'skill_shield',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'shield',
         sheet: 'Candace',
@@ -6435,7 +6435,7 @@ export const formulas = {
       sheet: 'Candace',
       name: 'skill_hydroShield',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'shield',
         sheet: 'Candace',
@@ -6447,7 +6447,7 @@ export const formulas = {
       sheet: 'Candace',
       name: 'c6',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Candace',
@@ -6461,7 +6461,7 @@ export const formulas = {
       sheet: 'Charlotte',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Charlotte',
@@ -6475,7 +6475,7 @@ export const formulas = {
       sheet: 'Chevreuse',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Chevreuse',
@@ -6489,7 +6489,7 @@ export const formulas = {
       sheet: 'Chiori',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Chiori',
@@ -6503,7 +6503,7 @@ export const formulas = {
       sheet: 'Chongyun',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Chongyun',
@@ -6517,7 +6517,7 @@ export const formulas = {
       sheet: 'Clorinde',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Clorinde',
@@ -6531,7 +6531,7 @@ export const formulas = {
       sheet: 'Collei',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Collei',
@@ -6545,7 +6545,7 @@ export const formulas = {
       sheet: 'Cyno',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Cyno',
@@ -6559,7 +6559,7 @@ export const formulas = {
       sheet: 'Dehya',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Dehya',
@@ -6573,7 +6573,7 @@ export const formulas = {
       sheet: 'Diluc',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Diluc',
@@ -6587,7 +6587,7 @@ export const formulas = {
       sheet: 'Diona',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Diona',
@@ -6601,7 +6601,7 @@ export const formulas = {
       sheet: 'Dori',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Dori',
@@ -6615,7 +6615,7 @@ export const formulas = {
       sheet: 'Eula',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Eula',
@@ -6629,7 +6629,7 @@ export const formulas = {
       sheet: 'Faruzan',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Faruzan',
@@ -6643,7 +6643,7 @@ export const formulas = {
       sheet: 'Fischl',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Fischl',
@@ -6657,7 +6657,7 @@ export const formulas = {
       sheet: 'Freminet',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Freminet',
@@ -6671,7 +6671,7 @@ export const formulas = {
       sheet: 'Furina',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Furina',
@@ -6685,7 +6685,7 @@ export const formulas = {
       sheet: 'Gaming',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Gaming',
@@ -6699,7 +6699,7 @@ export const formulas = {
       sheet: 'Ganyu',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Ganyu',
@@ -6713,7 +6713,7 @@ export const formulas = {
       sheet: 'Gorou',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Gorou',
@@ -6727,7 +6727,7 @@ export const formulas = {
       sheet: 'HuTao',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'HuTao',
@@ -6741,7 +6741,7 @@ export const formulas = {
       sheet: 'Jean',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Jean',
@@ -6755,7 +6755,7 @@ export const formulas = {
       sheet: 'KaedeharaKazuha',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'KaedeharaKazuha',
@@ -6769,7 +6769,7 @@ export const formulas = {
       sheet: 'Kaeya',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Kaeya',
@@ -6783,7 +6783,7 @@ export const formulas = {
       sheet: 'KamisatoAyaka',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'KamisatoAyaka',
@@ -6797,7 +6797,7 @@ export const formulas = {
       sheet: 'KamisatoAyato',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'KamisatoAyato',
@@ -6811,7 +6811,7 @@ export const formulas = {
       sheet: 'Kaveh',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Kaveh',
@@ -6825,7 +6825,7 @@ export const formulas = {
       sheet: 'Keqing',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Keqing',
@@ -6839,7 +6839,7 @@ export const formulas = {
       sheet: 'Kirara',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Kirara',
@@ -6853,7 +6853,7 @@ export const formulas = {
       sheet: 'Klee',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Klee',
@@ -6867,7 +6867,7 @@ export const formulas = {
       sheet: 'KujouSara',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'KujouSara',
@@ -6881,7 +6881,7 @@ export const formulas = {
       sheet: 'KukiShinobu',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'KukiShinobu',
@@ -6895,7 +6895,7 @@ export const formulas = {
       sheet: 'Layla',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Layla',
@@ -6909,7 +6909,7 @@ export const formulas = {
       sheet: 'Lisa',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Lisa',
@@ -6923,7 +6923,7 @@ export const formulas = {
       sheet: 'Lynette',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Lynette',
@@ -6937,7 +6937,7 @@ export const formulas = {
       sheet: 'Lyney',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Lyney',
@@ -6951,7 +6951,7 @@ export const formulas = {
       sheet: 'Mika',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Mika',
@@ -6965,7 +6965,7 @@ export const formulas = {
       sheet: 'Mona',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Mona',
@@ -6979,7 +6979,7 @@ export const formulas = {
       sheet: 'Nahida',
       name: 'normal_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nahida',
@@ -6991,7 +6991,7 @@ export const formulas = {
       sheet: 'Nahida',
       name: 'normal_1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nahida',
@@ -7003,7 +7003,7 @@ export const formulas = {
       sheet: 'Nahida',
       name: 'normal_2',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nahida',
@@ -7015,7 +7015,7 @@ export const formulas = {
       sheet: 'Nahida',
       name: 'normal_3',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nahida',
@@ -7027,7 +7027,7 @@ export const formulas = {
       sheet: 'Nahida',
       name: 'charged',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nahida',
@@ -7039,7 +7039,7 @@ export const formulas = {
       sheet: 'Nahida',
       name: 'plunging_dmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nahida',
@@ -7051,7 +7051,7 @@ export const formulas = {
       sheet: 'Nahida',
       name: 'plunging_low',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nahida',
@@ -7063,7 +7063,7 @@ export const formulas = {
       sheet: 'Nahida',
       name: 'plunging_high',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nahida',
@@ -7075,7 +7075,7 @@ export const formulas = {
       sheet: 'Nahida',
       name: 'skill_press',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nahida',
@@ -7087,7 +7087,7 @@ export const formulas = {
       sheet: 'Nahida',
       name: 'skill_hold',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nahida',
@@ -7099,7 +7099,7 @@ export const formulas = {
       sheet: 'Nahida',
       name: 'karma_dmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nahida',
@@ -7113,7 +7113,7 @@ export const formulas = {
       sheet: 'Navia',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Navia',
@@ -7127,7 +7127,7 @@ export const formulas = {
       sheet: 'Neuvillette',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Neuvillette',
@@ -7141,7 +7141,7 @@ export const formulas = {
       sheet: 'Nilou',
       name: 'normal_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nilou',
@@ -7153,7 +7153,7 @@ export const formulas = {
       sheet: 'Nilou',
       name: 'normal_1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nilou',
@@ -7165,7 +7165,7 @@ export const formulas = {
       sheet: 'Nilou',
       name: 'normal_2',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nilou',
@@ -7177,7 +7177,7 @@ export const formulas = {
       sheet: 'Nilou',
       name: 'charged_1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nilou',
@@ -7189,7 +7189,7 @@ export const formulas = {
       sheet: 'Nilou',
       name: 'charged_2',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nilou',
@@ -7201,7 +7201,7 @@ export const formulas = {
       sheet: 'Nilou',
       name: 'plunging_dmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nilou',
@@ -7213,7 +7213,7 @@ export const formulas = {
       sheet: 'Nilou',
       name: 'plunging_low',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nilou',
@@ -7225,7 +7225,7 @@ export const formulas = {
       sheet: 'Nilou',
       name: 'plunging_high',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nilou',
@@ -7237,7 +7237,7 @@ export const formulas = {
       sheet: 'Nilou',
       name: 'skill_skill',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nilou',
@@ -7249,7 +7249,7 @@ export const formulas = {
       sheet: 'Nilou',
       name: 'skill_dance1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nilou',
@@ -7261,7 +7261,7 @@ export const formulas = {
       sheet: 'Nilou',
       name: 'skill_dance2',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nilou',
@@ -7273,7 +7273,7 @@ export const formulas = {
       sheet: 'Nilou',
       name: 'skill_whirl1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nilou',
@@ -7285,7 +7285,7 @@ export const formulas = {
       sheet: 'Nilou',
       name: 'skill_whirl2',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nilou',
@@ -7297,7 +7297,7 @@ export const formulas = {
       sheet: 'Nilou',
       name: 'skill_wheel',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nilou',
@@ -7309,7 +7309,7 @@ export const formulas = {
       sheet: 'Nilou',
       name: 'skill_moon',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nilou',
@@ -7321,7 +7321,7 @@ export const formulas = {
       sheet: 'Nilou',
       name: 'burst_skill',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nilou',
@@ -7333,7 +7333,7 @@ export const formulas = {
       sheet: 'Nilou',
       name: 'burst_aeon',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Nilou',
@@ -7347,7 +7347,7 @@ export const formulas = {
       sheet: 'Ningguang',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Ningguang',
@@ -7361,7 +7361,7 @@ export const formulas = {
       sheet: 'Noelle',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Noelle',
@@ -7375,7 +7375,7 @@ export const formulas = {
       sheet: 'Qiqi',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Qiqi',
@@ -7389,7 +7389,7 @@ export const formulas = {
       sheet: 'RaidenShogun',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'RaidenShogun',
@@ -7403,7 +7403,7 @@ export const formulas = {
       sheet: 'Razor',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Razor',
@@ -7417,7 +7417,7 @@ export const formulas = {
       sheet: 'Rosaria',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Rosaria',
@@ -7431,7 +7431,7 @@ export const formulas = {
       sheet: 'SangonomiyaKokomi',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'SangonomiyaKokomi',
@@ -7445,7 +7445,7 @@ export const formulas = {
       sheet: 'Sayu',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Sayu',
@@ -7459,7 +7459,7 @@ export const formulas = {
       sheet: 'Sethos',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Sethos',
@@ -7473,7 +7473,7 @@ export const formulas = {
       sheet: 'Shenhe',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Shenhe',
@@ -7487,7 +7487,7 @@ export const formulas = {
       sheet: 'ShikanoinHeizou',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'ShikanoinHeizou',
@@ -7501,7 +7501,7 @@ export const formulas = {
       sheet: 'Somnia',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Somnia',
@@ -7515,7 +7515,7 @@ export const formulas = {
       sheet: 'Sucrose',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Sucrose',
@@ -7529,7 +7529,7 @@ export const formulas = {
       sheet: 'Tartaglia',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Tartaglia',
@@ -7543,7 +7543,7 @@ export const formulas = {
       sheet: 'Thoma',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Thoma',
@@ -7557,7 +7557,7 @@ export const formulas = {
       sheet: 'Tighnari',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Tighnari',
@@ -7571,7 +7571,7 @@ export const formulas = {
       sheet: 'Venti',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Venti',
@@ -7585,7 +7585,7 @@ export const formulas = {
       sheet: 'Wanderer',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Wanderer',
@@ -7599,7 +7599,7 @@ export const formulas = {
       sheet: 'Wriothesley',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Wriothesley',
@@ -7613,7 +7613,7 @@ export const formulas = {
       sheet: 'Xiangling',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Xiangling',
@@ -7627,7 +7627,7 @@ export const formulas = {
       sheet: 'Xianyun',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Xianyun',
@@ -7641,7 +7641,7 @@ export const formulas = {
       sheet: 'Xiao',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Xiao',
@@ -7655,7 +7655,7 @@ export const formulas = {
       sheet: 'Xingqiu',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Xingqiu',
@@ -7669,7 +7669,7 @@ export const formulas = {
       sheet: 'Xinyan',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Xinyan',
@@ -7683,7 +7683,7 @@ export const formulas = {
       sheet: 'YaeMiko',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'YaeMiko',
@@ -7697,7 +7697,7 @@ export const formulas = {
       sheet: 'Yanfei',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Yanfei',
@@ -7711,7 +7711,7 @@ export const formulas = {
       sheet: 'Yaoyao',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Yaoyao',
@@ -7725,7 +7725,7 @@ export const formulas = {
       sheet: 'Yelan',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Yelan',
@@ -7739,7 +7739,7 @@ export const formulas = {
       sheet: 'Yoimiya',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Yoimiya',
@@ -7753,7 +7753,7 @@ export const formulas = {
       sheet: 'YunJin',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'YunJin',
@@ -7767,7 +7767,7 @@ export const formulas = {
       sheet: 'Zhongli',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Zhongli',
@@ -7781,7 +7781,7 @@ export const formulas = {
       sheet: 'TravelerAnemo',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'TravelerAnemo',
@@ -7795,7 +7795,7 @@ export const formulas = {
       sheet: 'TravelerGeo',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'TravelerGeo',
@@ -7809,7 +7809,7 @@ export const formulas = {
       sheet: 'TravelerElectro',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'TravelerElectro',
@@ -7823,7 +7823,7 @@ export const formulas = {
       sheet: 'TravelerDendro',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'TravelerDendro',
@@ -7837,7 +7837,7 @@ export const formulas = {
       sheet: 'TravelerHydro',
       name: 'normal1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'TravelerHydro',
@@ -7851,7 +7851,7 @@ export const formulas = {
       sheet: 'PrototypeAmber',
       name: 'heal',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'heal',
         sheet: 'PrototypeAmber',

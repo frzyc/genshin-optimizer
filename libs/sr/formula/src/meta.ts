@@ -3140,7 +3140,7 @@ export const formulas = {
       sheet: 'Acheron',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Acheron',
@@ -3151,7 +3151,7 @@ export const formulas = {
       sheet: 'Acheron',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Acheron',
@@ -3164,7 +3164,7 @@ export const formulas = {
       sheet: 'Argenti',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Argenti',
@@ -3175,7 +3175,7 @@ export const formulas = {
       sheet: 'Argenti',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Argenti',
@@ -3188,7 +3188,7 @@ export const formulas = {
       sheet: 'Arlan',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Arlan',
@@ -3199,7 +3199,7 @@ export const formulas = {
       sheet: 'Arlan',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Arlan',
@@ -3212,7 +3212,7 @@ export const formulas = {
       sheet: 'Asta',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Asta',
@@ -3223,7 +3223,7 @@ export const formulas = {
       sheet: 'Asta',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Asta',
@@ -3236,7 +3236,7 @@ export const formulas = {
       sheet: 'Aventurine',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Aventurine',
@@ -3247,7 +3247,7 @@ export const formulas = {
       sheet: 'Aventurine',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Aventurine',
@@ -3260,7 +3260,7 @@ export const formulas = {
       sheet: 'Bailu',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Bailu',
@@ -3271,7 +3271,7 @@ export const formulas = {
       sheet: 'Bailu',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Bailu',
@@ -3284,7 +3284,7 @@ export const formulas = {
       sheet: 'BlackSwan',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'BlackSwan',
@@ -3295,7 +3295,7 @@ export const formulas = {
       sheet: 'BlackSwan',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'BlackSwan',
@@ -3308,7 +3308,7 @@ export const formulas = {
       sheet: 'Blade',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Blade',
@@ -3319,7 +3319,7 @@ export const formulas = {
       sheet: 'Blade',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Blade',
@@ -3332,7 +3332,7 @@ export const formulas = {
       sheet: 'Boothill',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Boothill',
@@ -3343,7 +3343,7 @@ export const formulas = {
       sheet: 'Boothill',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Boothill',
@@ -3356,7 +3356,7 @@ export const formulas = {
       sheet: 'Bronya',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Bronya',
@@ -3367,7 +3367,7 @@ export const formulas = {
       sheet: 'Bronya',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Bronya',
@@ -3380,7 +3380,7 @@ export const formulas = {
       sheet: 'Clara',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Clara',
@@ -3391,7 +3391,7 @@ export const formulas = {
       sheet: 'Clara',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Clara',
@@ -3404,7 +3404,7 @@ export const formulas = {
       sheet: 'DanHeng',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'DanHeng',
@@ -3415,7 +3415,7 @@ export const formulas = {
       sheet: 'DanHeng',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'DanHeng',
@@ -3428,7 +3428,7 @@ export const formulas = {
       sheet: 'DanHengImbibitorLunae',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'DanHengImbibitorLunae',
@@ -3439,7 +3439,7 @@ export const formulas = {
       sheet: 'DanHengImbibitorLunae',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'DanHengImbibitorLunae',
@@ -3452,7 +3452,7 @@ export const formulas = {
       sheet: 'DrRatio',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'DrRatio',
@@ -3463,7 +3463,7 @@ export const formulas = {
       sheet: 'DrRatio',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'DrRatio',
@@ -3476,7 +3476,7 @@ export const formulas = {
       sheet: 'Firefly',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Firefly',
@@ -3487,7 +3487,7 @@ export const formulas = {
       sheet: 'Firefly',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Firefly',
@@ -3500,7 +3500,7 @@ export const formulas = {
       sheet: 'FuXuan',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'FuXuan',
@@ -3511,7 +3511,7 @@ export const formulas = {
       sheet: 'FuXuan',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'FuXuan',
@@ -3524,7 +3524,7 @@ export const formulas = {
       sheet: 'Gallagher',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Gallagher',
@@ -3535,7 +3535,7 @@ export const formulas = {
       sheet: 'Gallagher',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Gallagher',
@@ -3548,7 +3548,7 @@ export const formulas = {
       sheet: 'Gepard',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Gepard',
@@ -3559,7 +3559,7 @@ export const formulas = {
       sheet: 'Gepard',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Gepard',
@@ -3572,7 +3572,7 @@ export const formulas = {
       sheet: 'Guinaifen',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Guinaifen',
@@ -3583,7 +3583,7 @@ export const formulas = {
       sheet: 'Guinaifen',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Guinaifen',
@@ -3596,7 +3596,7 @@ export const formulas = {
       sheet: 'Hanya',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Hanya',
@@ -3607,7 +3607,7 @@ export const formulas = {
       sheet: 'Hanya',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Hanya',
@@ -3620,7 +3620,7 @@ export const formulas = {
       sheet: 'Herta',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Herta',
@@ -3631,7 +3631,7 @@ export const formulas = {
       sheet: 'Herta',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Herta',
@@ -3644,7 +3644,7 @@ export const formulas = {
       sheet: 'Himeko',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Himeko',
@@ -3655,7 +3655,7 @@ export const formulas = {
       sheet: 'Himeko',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Himeko',
@@ -3668,7 +3668,7 @@ export const formulas = {
       sheet: 'Hook',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Hook',
@@ -3679,7 +3679,7 @@ export const formulas = {
       sheet: 'Hook',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Hook',
@@ -3692,7 +3692,7 @@ export const formulas = {
       sheet: 'Huohuo',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Huohuo',
@@ -3703,7 +3703,7 @@ export const formulas = {
       sheet: 'Huohuo',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Huohuo',
@@ -3716,7 +3716,7 @@ export const formulas = {
       sheet: 'Jade',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Jade',
@@ -3727,7 +3727,7 @@ export const formulas = {
       sheet: 'Jade',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Jade',
@@ -3740,7 +3740,7 @@ export const formulas = {
       sheet: 'JingYuan',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'JingYuan',
@@ -3751,7 +3751,7 @@ export const formulas = {
       sheet: 'JingYuan',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'JingYuan',
@@ -3764,7 +3764,7 @@ export const formulas = {
       sheet: 'Jingliu',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Jingliu',
@@ -3775,7 +3775,7 @@ export const formulas = {
       sheet: 'Jingliu',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Jingliu',
@@ -3788,7 +3788,7 @@ export const formulas = {
       sheet: 'Kafka',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Kafka',
@@ -3799,7 +3799,7 @@ export const formulas = {
       sheet: 'Kafka',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Kafka',
@@ -3812,7 +3812,7 @@ export const formulas = {
       sheet: 'Luka',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Luka',
@@ -3823,7 +3823,7 @@ export const formulas = {
       sheet: 'Luka',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Luka',
@@ -3836,7 +3836,7 @@ export const formulas = {
       sheet: 'Luocha',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Luocha',
@@ -3847,7 +3847,7 @@ export const formulas = {
       sheet: 'Luocha',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Luocha',
@@ -3860,7 +3860,7 @@ export const formulas = {
       sheet: 'Lynx',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Lynx',
@@ -3871,7 +3871,7 @@ export const formulas = {
       sheet: 'Lynx',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Lynx',
@@ -3884,7 +3884,7 @@ export const formulas = {
       sheet: 'March7th',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'March7th',
@@ -3895,7 +3895,7 @@ export const formulas = {
       sheet: 'March7th',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'March7th',
@@ -3906,7 +3906,7 @@ export const formulas = {
       sheet: 'March7th',
       name: 'skillShield',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'shield',
         sheet: 'March7th',
@@ -3917,7 +3917,7 @@ export const formulas = {
       sheet: 'March7th',
       name: 'ultDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'March7th',
@@ -3928,7 +3928,7 @@ export const formulas = {
       sheet: 'March7th',
       name: 'ultDmg_1',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'March7th',
@@ -3939,7 +3939,7 @@ export const formulas = {
       sheet: 'March7th',
       name: 'ultDmg_2',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'March7th',
@@ -3950,7 +3950,7 @@ export const formulas = {
       sheet: 'March7th',
       name: 'ultDmg_3',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'March7th',
@@ -3961,7 +3961,7 @@ export const formulas = {
       sheet: 'March7th',
       name: 'ultFreeze_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'March7th',
@@ -3972,7 +3972,7 @@ export const formulas = {
       sheet: 'March7th',
       name: 'talentDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'March7th',
@@ -3983,7 +3983,7 @@ export const formulas = {
       sheet: 'March7th',
       name: 'techniqueFreeze_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'March7th',
@@ -3994,7 +3994,7 @@ export const formulas = {
       sheet: 'March7th',
       name: 'e1Shield',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'shield',
         sheet: 'March7th',
@@ -4005,7 +4005,7 @@ export const formulas = {
       sheet: 'March7th',
       name: 'e6Heal',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'heal',
         sheet: 'March7th',
@@ -4018,7 +4018,7 @@ export const formulas = {
       sheet: 'March7thTheHunt',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'March7thTheHunt',
@@ -4029,7 +4029,7 @@ export const formulas = {
       sheet: 'March7thTheHunt',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'March7thTheHunt',
@@ -4042,7 +4042,7 @@ export const formulas = {
       sheet: 'Misha',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Misha',
@@ -4053,7 +4053,7 @@ export const formulas = {
       sheet: 'Misha',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Misha',
@@ -4066,7 +4066,7 @@ export const formulas = {
       sheet: 'Natasha',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Natasha',
@@ -4077,7 +4077,7 @@ export const formulas = {
       sheet: 'Natasha',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Natasha',
@@ -4090,7 +4090,7 @@ export const formulas = {
       sheet: 'Pela',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Pela',
@@ -4101,7 +4101,7 @@ export const formulas = {
       sheet: 'Pela',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Pela',
@@ -4114,7 +4114,7 @@ export const formulas = {
       sheet: 'Qingque',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Qingque',
@@ -4125,7 +4125,7 @@ export const formulas = {
       sheet: 'Qingque',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Qingque',
@@ -4138,7 +4138,7 @@ export const formulas = {
       sheet: 'Robin',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Robin',
@@ -4149,7 +4149,7 @@ export const formulas = {
       sheet: 'Robin',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Robin',
@@ -4162,7 +4162,7 @@ export const formulas = {
       sheet: 'RuanMei',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'RuanMei',
@@ -4173,7 +4173,7 @@ export const formulas = {
       sheet: 'RuanMei',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'RuanMei',
@@ -4184,7 +4184,7 @@ export const formulas = {
       sheet: 'RuanMei',
       name: 'zoneBreakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'RuanMei',
@@ -4195,7 +4195,7 @@ export const formulas = {
       sheet: 'RuanMei',
       name: 'talentBreakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'RuanMei',
@@ -4206,7 +4206,7 @@ export const formulas = {
       sheet: 'RuanMei',
       name: 'techBreakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'RuanMei',
@@ -4219,7 +4219,7 @@ export const formulas = {
       sheet: 'Sampo',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Sampo',
@@ -4230,7 +4230,7 @@ export const formulas = {
       sheet: 'Sampo',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Sampo',
@@ -4243,7 +4243,7 @@ export const formulas = {
       sheet: 'Seele',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Seele',
@@ -4254,7 +4254,7 @@ export const formulas = {
       sheet: 'Seele',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Seele',
@@ -4267,7 +4267,7 @@ export const formulas = {
       sheet: 'Serval',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Serval',
@@ -4278,7 +4278,7 @@ export const formulas = {
       sheet: 'Serval',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Serval',
@@ -4291,7 +4291,7 @@ export const formulas = {
       sheet: 'SilverWolf',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'SilverWolf',
@@ -4302,7 +4302,7 @@ export const formulas = {
       sheet: 'SilverWolf',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'SilverWolf',
@@ -4315,7 +4315,7 @@ export const formulas = {
       sheet: 'Sparkle',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Sparkle',
@@ -4326,7 +4326,7 @@ export const formulas = {
       sheet: 'Sparkle',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Sparkle',
@@ -4339,7 +4339,7 @@ export const formulas = {
       sheet: 'Sushang',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Sushang',
@@ -4350,7 +4350,7 @@ export const formulas = {
       sheet: 'Sushang',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Sushang',
@@ -4363,7 +4363,7 @@ export const formulas = {
       sheet: 'Tingyun',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Tingyun',
@@ -4374,7 +4374,7 @@ export const formulas = {
       sheet: 'Tingyun',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Tingyun',
@@ -4387,7 +4387,7 @@ export const formulas = {
       sheet: 'TopazAndNumby',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'TopazAndNumby',
@@ -4398,7 +4398,7 @@ export const formulas = {
       sheet: 'TopazAndNumby',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'TopazAndNumby',
@@ -4411,7 +4411,7 @@ export const formulas = {
       sheet: 'Welt',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Welt',
@@ -4422,7 +4422,7 @@ export const formulas = {
       sheet: 'Welt',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Welt',
@@ -4435,7 +4435,7 @@ export const formulas = {
       sheet: 'Xueyi',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Xueyi',
@@ -4446,7 +4446,7 @@ export const formulas = {
       sheet: 'Xueyi',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Xueyi',
@@ -4459,7 +4459,7 @@ export const formulas = {
       sheet: 'Yanqing',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Yanqing',
@@ -4470,7 +4470,7 @@ export const formulas = {
       sheet: 'Yanqing',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Yanqing',
@@ -4483,7 +4483,7 @@ export const formulas = {
       sheet: 'Yukong',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Yukong',
@@ -4494,7 +4494,7 @@ export const formulas = {
       sheet: 'Yukong',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Yukong',
@@ -4507,7 +4507,7 @@ export const formulas = {
       sheet: 'Yunli',
       name: 'breakDmg',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'Yunli',
@@ -4518,7 +4518,7 @@ export const formulas = {
       sheet: 'Yunli',
       name: 'basicDmg_0',
       tag: {
-        et: 'self',
+        et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Yunli',
