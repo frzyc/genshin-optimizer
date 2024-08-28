@@ -92,7 +92,7 @@ export function TagFieldDisplay({
   if (!calc) return null
   // if (!calc && !compareCalc) return null
 
-  // undefined: we assume "unique" accumulator
+  //TODO: undefined: we assume "unique" accumulator
   const valueCalcRes = calc.compute(read(field.fieldRef, undefined))
   // const compareValueCalcRes: CalcResult<number, CalcMeta> | null = null
 
