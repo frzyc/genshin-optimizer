@@ -86,6 +86,7 @@
   "charOffField": "Character is off-field",
   "activeCharField": "Character is inside the ability's field",
   "opponentsField": "Opponent is inside the ability's field",
+  "numOpponentsField": "Number of opponents inside the ability's field",
   "takeDmg": "After taking DMG",
   "infusion": {
     "pyro": "Pyro Infusion",
@@ -164,8 +165,24 @@
   "elementalReaction": {
     "hydro": "After triggering a <hydro>Hydro-related</hydro> Elemental Reaction",
     "electro": "After triggering an <electro>Electro-related</electro> Elemental Reaction",
+    "cryo": "After triggering a <cryo>Cryo-related</cryo> Elemental Reaction",
+    "pyro": "After triggering a <pyro>Pyro-related</pyro> Elemental Reaction",
+    "dendro": "After triggering a <dendro>Dendro-related</dendro> Elemental Reaction",
+    "anemo": "After triggering an <anemo>Anemo-related</anemo> Elemental Reaction",
+    "geo": "After triggering a <geo>Geo-related</geo> Elemental Reaction",
     "shatter": "After triggering a <shattered>Shatter</shattered> Elemental Reaction",
-    "cryo": "After triggering a <cryo>Cryo-related</cryo> Elemental Reaction"
+    "team": {
+      "pyro": "After a party member triggers a <pyro>Pyro-related</pyro> Elemental Reaction"
+    },
+    "nightsoul": {
+      "hydro": "After triggering a <hydro>Hydro-related</hydro> Elemental Reaction while in Nightsoul's Blessing",
+      "electro": "After triggering an <electro>Electro-related</electro> Elemental Reaction while in Nightsoul's Blessing",
+      "cryo": "After triggering a <cryo>Cryo-related</cryo> Elemental Reaction while in Nightsoul's Blessing",
+      "pyro": "After triggering a <pyro>Pyro-related</pyro> Elemental Reaction while in Nightsoul's Blessing",
+      "dendro": "After triggering a <dendro>Dendro-related</dendro> Elemental Reaction while in Nightsoul's Blessing",
+      "anemo": "After triggering an <anemo>Anemo-related</anemo> Elemental Reaction while in Nightsoul's Blessing",
+      "geo": "After triggering a <geo>Geo-related</geo> Elemental Reaction while in Nightsoul's Blessing"
+    }
   },
   "bonusScaling": {
     "skill_": "Ele. Skill Bonus Scaling",
@@ -188,7 +205,9 @@
     "electro": "Enemy is affected by <electro>Electro</electro>",
     "cryo": "Enemy is affected by <cryo>Cryo</cryo>",
     "frozenOrCryo": "Enemy is <cryo>Frozen</cryo> or affected by <cryo>Cryo</cryo>",
-    "pyro": "Enemy is affected by <pyro>Pyro</pyro>"
+    "pyro": "Enemy is affected by <pyro>Pyro</pyro>",
+    "burning": "Enemy in the <pyro>Burning</pyro> state",
+    "quicken": "Enemy in the <spread>Quicken</spread> state"
   },
   "enemyState": {
     "burning": "Enemy in the <pyro>Burning</pyro> state"
@@ -204,5 +223,8 @@
     "changes": "After the value of a Bond of Life increases or decreases",
     "increases": "After the value of a Bond of Life increases",
     "percentOf": "% of Bond of Life"
+  },
+  "nightsoul": {
+    "partyBurst": "After nearby party members trigger a Nightsoul Burst"
   }
 }

@@ -1,0 +1,24 @@
+{
+  "name": "Flauto di Ezpitzal",
+  "description": {
+    "0": "Una spada di giada dalla forma inusuale, tramandata di generazione in generazione come \"flauto sacerdotale\" tra i Maestri del Vento della Notte."
+  },
+  "passiveName": "Mistero di fumo e specchi",
+  "passiveDescription": {
+    "0": {
+      "0": "Usare un'abilità elementale aumenta la DIF di un <cryo>16%</cryo> per 15 s."
+    },
+    "1": {
+      "0": "Usare un'abilità elementale aumenta la DIF di un <cryo>20%</cryo> per 15 s."
+    },
+    "2": {
+      "0": "Usare un'abilità elementale aumenta la DIF di un <cryo>24%</cryo> per 15 s."
+    },
+    "3": {
+      "0": "Usare un'abilità elementale aumenta la DIF di un <cryo>28%</cryo> per 15 s."
+    },
+    "4": {
+      "0": "Usare un'abilità elementale aumenta la DIF di un <cryo>32%</cryo> per 15 s."
+    }
+  }
+}

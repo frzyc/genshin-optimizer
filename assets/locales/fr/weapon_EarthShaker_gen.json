@@ -1,0 +1,24 @@
+{
+  "name": "Trembleur de terre",
+  "description": {
+    "0": "Une lame lourde qui, selon certains, était appréciée par le héros connu sous le surnom de « voleur de feu ». On dit que même les flammes du seigneur de la Cité de braise n'ont pas pu la brûler."
+  },
+  "passiveName": "Promesse de Qhapaq Nan",
+  "passiveDescription": {
+    "0": {
+      "0": "Lorsqu'un personnage de l'équipe a déclenché une réaction liée à l'élément Pyro, les DGT infligés par la compétence élémentaire du personnage équipé de l'arme augmentent de <cryo>16 %</cryo> pendant 8 s. Cet effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "1": {
+      "0": "Lorsqu'un personnage de l'équipe a déclenché une réaction liée à l'élément Pyro, les DGT infligés par la compétence élémentaire du personnage équipé de l'arme augmentent de <cryo>20 %</cryo> pendant 8 s. Cet effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "2": {
+      "0": "Lorsqu'un personnage de l'équipe a déclenché une réaction liée à l'élément Pyro, les DGT infligés par la compétence élémentaire du personnage équipé de l'arme augmentent de <cryo>24 %</cryo> pendant 8 s. Cet effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "3": {
+      "0": "Lorsqu'un personnage de l'équipe a déclenché une réaction liée à l'élément Pyro, les DGT infligés par la compétence élémentaire du personnage équipé de l'arme augmentent de <cryo>28 %</cryo> pendant 8 s. Cet effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    },
+    "4": {
+      "0": "Lorsqu'un personnage de l'équipe a déclenché une réaction liée à l'élément Pyro, les DGT infligés par la compétence élémentaire du personnage équipé de l'arme augmentent de <cryo>32 %</cryo> pendant 8 s. Cet effet peut être déclenché même lorsque le personnage fait partie de l'équipe mais n'est pas déployé."
+    }
+  }
+}

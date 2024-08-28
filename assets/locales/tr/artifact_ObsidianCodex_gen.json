@@ -1,0 +1,29 @@
+{
+  "setName": "Obsidiyen Kodeks",
+  "setEffects": {
+    "2": "Kuşanan karakter Gece Ruhunun Lütfu durumundayken ve savaş alanındayken verdiği Hasar %15 artar.",
+    "4": "Kuşanan karakter savaş alanındayken 1 Gece Ruhu puanı tükettiğinde 6 saniyeliğine Kritik Oranı %40 artar. Bu etki her saniyede bir tetiklenebilir."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Yabancı Yaşamların Beklentileri",
+      "desc": "Siyah kristalden özenle oyulmuş bir çiçek. Geceleri gizemli bir ışık yayar."
+    },
+    "plume": {
+      "name": "Ruh İliğinin Kökü",
+      "desc": "Kadim bir ejderhanın kanatlarını taklit eden tüylü bir aksesuar. Belki unutulmuş bir geçmişin hatırasıydı bir zamanlar."
+    },
+    "sands": {
+      "name": "Gece Diyarının Mitleri",
+      "desc": "Ne saat ne pusula olan gizemli bir ritüel eşyası. Bugünlerde ne için kullanıldığını bilen yok."
+    },
+    "goblet": {
+      "name": "Yarışma Öncesi Ziyafet",
+      "desc": "Taşın oldukça tuhaf biçimde bükülüp şekillendirilmesiyle ortaya çıkan bir kap. Böylesi bir kuvvete kimin sahip olduğuysa merak konusu..."
+    },
+    "circlet": {
+      "name": "Azizlerin Tacı",
+      "desc": "Kadim çağlarda soylu kabile krallarının taç giyme törenlerinde kullanılan bir obsidiyen taç."
+    }
+  }
+}

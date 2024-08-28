@@ -1,0 +1,29 @@
+{
+  "setName": "Bức Tranh Dũng Sĩ Thành Tro Tàn",
+  "setEffects": {
+    "2": "Khi nhân vật trong đội gần đó kích hoạt Dạ Hồn Bùng Nổ, người trang bị sẽ hồi phục 6 điểm Năng Lượng Nguyên Tố.",
+    "4": "Sau khi người trang bị kích hoạt phản ứng liên quan đến loại nguyên tố của họ, tất cả nhân vật trong đội ở gần tăng 12% buff Sát Thương Nguyên Tố của loại nguyên tố liên quan đến phản ứng đó, duy trì 15s. Nếu người trang bị đang trong trạng thái Dạ Hồn Chúc Phúc khi kích hoạt hiệu quả này, sẽ còn khiến tất cả nhân vật trong đội ở gần tăng thêm 28% buff Sát Thương Nguyên Tố của loại nguyên tố liên quan đến phản ứng đó, duy trì 20s. Người trang bị khi không ra trận cũng có thể kích hoạt hiệu quả nêu trên. Hiệu quả sát thương tăng thêm sản sinh từ bộ Thánh Di Vật cùng tên sẽ không thể cộng dồn."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Bùa Hộ Mệnh Của Nhà Luyện Thú",
+      "desc": "Hoa được chạm khắc từ phôi ngọc và kết tinh rồng, tượng trưng cho người đeo đã đạt được tư cách trở thành nhà luyện thú."
+    },
+    "plume": {
+      "name": "Tín Hiệu Của Tuần Tra Núi",
+      "desc": "Tín hiệu mà đội tuần tra núi dùng để đánh dấu đường đi, được đặt bên đường với hình dạng giống như lông chim khá bắt mắt."
+    },
+    "sands": {
+      "name": "Đĩa Vàng Của Bí Thuật Gia",
+      "desc": "Chiếc đĩa vàng hình mặt trời, hoa văn rồng trên đó dường như tượng trưng cho vòng tuần hoàn của sinh tử."
+    },
+    "goblet": {
+      "name": "Chiếc Ly Của Du Học Giả",
+      "desc": "Ly rượu kỳ lạ có tạo hình giống như móng vuốt rồng, người tạo ra chắc có dụng ý riêng."
+    },
+    "circlet": {
+      "name": "Mặt Nạ Lông Của Chiến Sĩ Ma",
+      "desc": "Mặt nạ lông vũ giống chim ưng, xung quanh nó từng có rất nhiều truyền thuyết."
+    }
+  }
+}

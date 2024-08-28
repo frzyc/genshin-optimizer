@@ -1,0 +1,29 @@
+{
+  "setName": "Scroll of the Hero of Cinder City",
+  "setEffects": {
+    "2": "Saat anggota party di sekitar memicu Nightsoul Burst, akan memulihkan 6 Energy untuk Karakter yang mengenakan.",
+    "4": "Setelah Karakter yang mengenakan memicu Reaksi Elemental yang berkaitan dengan Tipe Elemental dirinya, maka Elemental DMG Bonus seluruh anggota party di sekitar yang berkaitan dengan Tipe Elemental tersebut meningkat 12% selama 15 detik. Jika Karakter yang mengenakan berada dalam status Nightsoul's Blessing saat memicu efek di atas, maka Elemental DMG Bonus seluruh anggota party di sekitar yang berkaitan dengan Tipe Elemental tersebut meningkat lagi sebesar 28% selama 20 detik. Efek di atas dapat terpicu meskipun Karakter tidak berada di medan tempur. Bonus DMG dari Set Artefak dengan nama yang sama tidak dapat ditumpuk."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Beast Tamer's Talisman",
+      "desc": "Bunga yang terbuat dari batu api dan Drakite, menandakan bahwa pemakainya sudah memenuhi syarat untuk menjadi seorang Pawang Penjinak."
+    },
+    "plume": {
+      "name": "Mountain Ranger's Marker",
+      "desc": "Suar yang digunakan oleh Pengawas Gunung untuk menandai jalan, bentuknya yang menyerupai bulu burung yang berdiri di tepi jalan benar-benar menarik perhatian."
+    },
+    "sands": {
+      "name": "Mystic's Gold Dial",
+      "desc": "Piringan emas berbentuk matahari, pola naga di atasnya seperti melambangkan perputaran antara kehidupan dan kematian."
+    },
+    "goblet": {
+      "name": "Wandering Scholar's Claw Cup",
+      "desc": "Cangkir anggur dengan bentuk unik yang menyerupai cakar naga. Pembuatnya pasti memiliki pertimbangannya tersendiri."
+    },
+    "circlet": {
+      "name": "Demon-Warrior's Feather Mask",
+      "desc": "Topeng berbulu yang menyerupai elang, ada banyak legenda yang menceritakan tentang benda ini."
+    }
+  }
+}

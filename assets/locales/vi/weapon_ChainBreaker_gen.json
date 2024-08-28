@@ -1,0 +1,24 @@
+{
+  "name": "Phá Xích",
+  "description": {
+    "0": "Cung dài được trang trí bằng ngọc thạch, dây cung dường như luôn bị gió nhẹ bao bọc. Truyền thuyết kể rằng nó được rèn bởi thợ thủ công của rồng trong thời đại xa xưa."
+  },
+  "passiveName": "Khúc Ca Hoa Và Lông Vũ",
+  "passiveDescription": {
+    "0": {
+      "0": "Trong đội mỗi có một nhân vật Natlan hoặc khác loại nguyên tố với người trang bị, thì người trang bị sẽ tăng <cryo>4.8%</cryo> Tấn Công; Khi số nhân vật nêu trên không ít hơn 3 người thì người trang bị sẽ tăng <cryo>24</cryo> Tinh Thông Nguyên Tố."
+    },
+    "1": {
+      "0": "Trong đội mỗi có một nhân vật Natlan hoặc khác loại nguyên tố với người trang bị, thì người trang bị sẽ tăng <cryo>6%</cryo> Tấn Công; Khi số nhân vật nêu trên không ít hơn 3 người thì người trang bị sẽ tăng <cryo>30</cryo> Tinh Thông Nguyên Tố."
+    },
+    "2": {
+      "0": "Trong đội mỗi có một nhân vật Natlan hoặc khác loại nguyên tố với người trang bị, thì người trang bị sẽ tăng <cryo>7.2%</cryo> Tấn Công; Khi số nhân vật nêu trên không ít hơn 3 người thì người trang bị sẽ tăng <cryo>36</cryo> Tinh Thông Nguyên Tố."
+    },
+    "3": {
+      "0": "Trong đội mỗi có một nhân vật Natlan hoặc khác loại nguyên tố với người trang bị, thì người trang bị sẽ tăng <cryo>8.4%</cryo> Tấn Công; Khi số nhân vật nêu trên không ít hơn 3 người thì người trang bị sẽ tăng <cryo>42</cryo> Tinh Thông Nguyên Tố."
+    },
+    "4": {
+      "0": "Trong đội mỗi có một nhân vật Natlan hoặc khác loại nguyên tố với người trang bị, thì người trang bị sẽ tăng <cryo>9.6%</cryo> Tấn Công; Khi số nhân vật nêu trên không ít hơn 3 người thì người trang bị sẽ tăng <cryo>48</cryo> Tinh Thông Nguyên Tố."
+    }
+  }
+}

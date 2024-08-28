@@ -1,0 +1,24 @@
+{
+  "name": "Corno cinereo",
+  "description": {
+    "0": "Un recipiente rituale tramandato tra i Meztli. Si dice che anticamente fosse un tesoro estremamente prezioso appartenente all'eroico \"Gigante\" Tupac, il quale tuttavia non sembra averne mai fatto uso."
+  },
+  "passiveName": "Stretta di Tupac",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando un attacco colpisce un avversario, infligge DAN ad area pari a un <cryo>40%</cryo> dei PS max nel punto colpito. Quest'effetto può attivarsi una volta ogni 15 s."
+    },
+    "1": {
+      "0": "Quando un attacco colpisce un avversario, infligge DAN ad area pari a un <cryo>50%</cryo> dei PS max nel punto colpito. Quest'effetto può attivarsi una volta ogni 15 s."
+    },
+    "2": {
+      "0": "Quando un attacco colpisce un avversario, infligge DAN ad area pari a un <cryo>60%</cryo> dei PS max nel punto colpito. Quest'effetto può attivarsi una volta ogni 15 s."
+    },
+    "3": {
+      "0": "Quando un attacco colpisce un avversario, infligge DAN ad area pari a un <cryo>70%</cryo> dei PS max nel punto colpito. Quest'effetto può attivarsi una volta ogni 15 s."
+    },
+    "4": {
+      "0": "Quando un attacco colpisce un avversario, infligge DAN ad area pari a un <cryo>80%</cryo> dei PS max nel punto colpito. Quest'effetto può attivarsi una volta ogni 15 s."
+    }
+  }
+}

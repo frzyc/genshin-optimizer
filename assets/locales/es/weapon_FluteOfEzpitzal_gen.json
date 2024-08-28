@@ -1,0 +1,24 @@
+{
+  "name": "Flauta de Ezpitzal",
+  "description": {
+    "0": "Una espada larga de jade de forma peculiar que ha sido transmitida entre los Augures Vientonocturno como una “flauta sacerdotal”."
+  },
+  "passiveName": "Enigma del espejo y el humo",
+  "passiveDescription": {
+    "0": {
+      "0": "Al usar la Habilidad Elemental, la DEF aumenta en un <cryo>16%</cryo> durante 15 s."
+    },
+    "1": {
+      "0": "Al usar la Habilidad Elemental, la DEF aumenta en un <cryo>20%</cryo> durante 15 s."
+    },
+    "2": {
+      "0": "Al usar la Habilidad Elemental, la DEF aumenta en un <cryo>24%</cryo> durante 15 s."
+    },
+    "3": {
+      "0": "Al usar la Habilidad Elemental, la DEF aumenta en un <cryo>28%</cryo> durante 15 s."
+    },
+    "4": {
+      "0": "Al usar la Habilidad Elemental, la DEF aumenta en un <cryo>32%</cryo> durante 15 s."
+    }
+  }
+}

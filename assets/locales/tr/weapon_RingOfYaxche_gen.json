@@ -1,0 +1,24 @@
+{
+  "name": "Yaxche Yüzüğü",
+  "description": {
+    "0": "Bu yeşim silah eski bir kahraman tarafından yaratıldı. Efsaneye göre yanardağda yaşayan dev ejderhayı gökten bizzat bu silah indirmiş."
+  },
+  "passiveName": "Bereketli Toprakların Yankıları",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Element Becerisi kullanmak Yeşim Taç etkisi kazandırır: Her 1.000 Maks. Can, 10 saniyeliğine kuşanan karakterin Normal Saldırı Hasarını <cryo>%0,6</cryo> artırır. Normal Saldırı Hasarı bu şekilde en fazla <cryo>%16</cryo> artabilir."
+    },
+    "1": {
+      "0": "Bir Element Becerisi kullanmak Yeşim Taç etkisi kazandırır: Her 1.000 Maks. Can, 10 saniyeliğine kuşanan karakterin Normal Saldırı Hasarını <cryo>%0,7</cryo> artırır. Normal Saldırı Hasarı bu şekilde en fazla <cryo>%20</cryo> artabilir."
+    },
+    "2": {
+      "0": "Bir Element Becerisi kullanmak Yeşim Taç etkisi kazandırır: Her 1.000 Maks. Can, 10 saniyeliğine kuşanan karakterin Normal Saldırı Hasarını <cryo>%0,8</cryo> artırır. Normal Saldırı Hasarı bu şekilde en fazla <cryo>%24</cryo> artabilir."
+    },
+    "3": {
+      "0": "Bir Element Becerisi kullanmak Yeşim Taç etkisi kazandırır: Her 1.000 Maks. Can, 10 saniyeliğine kuşanan karakterin Normal Saldırı Hasarını <cryo>%0,9</cryo> artırır. Normal Saldırı Hasarı bu şekilde en fazla <cryo>%28</cryo> artabilir."
+    },
+    "4": {
+      "0": "Bir Element Becerisi kullanmak Yeşim Taç etkisi kazandırır: Her 1.000 Maks. Can, 10 saniyeliğine kuşanan karakterin Normal Saldırı Hasarını <cryo>%1</cryo> artırır. Normal Saldırı Hasarı bu şekilde en fazla <cryo>%32</cryo> artabilir."
+    }
+  }
+}

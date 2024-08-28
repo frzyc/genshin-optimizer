@@ -1,0 +1,24 @@
+{
+  "name": "Earth Shaker",
+  "description": {
+    "0": "A heavy blade that people claim was beloved by the hero known as the Firethief. They say that even the Lord of Cinder Keep's flames could not burn it away."
+  },
+  "passiveName": "Oath of Qhapaq Nan",
+  "passiveDescription": {
+    "0": {
+      "0": "After a party member triggers a Pyro-related reaction, the equipping character's Elemental Skill DMG is increased by <cryo>16%</cryo> for 8s. This effect can be triggered even when the triggering party member is not on the field."
+    },
+    "1": {
+      "0": "After a party member triggers a Pyro-related reaction, the equipping character's Elemental Skill DMG is increased by <cryo>20%</cryo> for 8s. This effect can be triggered even when the triggering party member is not on the field."
+    },
+    "2": {
+      "0": "After a party member triggers a Pyro-related reaction, the equipping character's Elemental Skill DMG is increased by <cryo>24%</cryo> for 8s. This effect can be triggered even when the triggering party member is not on the field."
+    },
+    "3": {
+      "0": "After a party member triggers a Pyro-related reaction, the equipping character's Elemental Skill DMG is increased by <cryo>28%</cryo> for 8s. This effect can be triggered even when the triggering party member is not on the field."
+    },
+    "4": {
+      "0": "After a party member triggers a Pyro-related reaction, the equipping character's Elemental Skill DMG is increased by <cryo>32%</cryo> for 8s. This effect can be triggered even when the triggering party member is not on the field."
+    }
+  }
+}

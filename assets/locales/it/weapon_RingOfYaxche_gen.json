@@ -1,0 +1,24 @@
+{
+  "name": "Anello di Yaxche",
+  "description": {
+    "0": "Un recipiente di giada fabbricato da un eroe di un lontano passato. Leggenda vuole che abbia abbattuto il gigantesco drago che dimorava nel vulcano."
+  },
+  "passiveName": "Echi della Terra fertile",
+  "passiveDescription": {
+    "0": {
+      "0": "Usare un'abilità elementale conferisce l'effetto Corona di Giada: per ogni 1.000 di PS max, i DAN da attacco normale del personaggio aumentano di uno <cryo>0,6%</cryo> per 10 s. I DAN da attacco normale possono aumentare in questo modo fino a un <cryo>16%</cryo> massimo."
+    },
+    "1": {
+      "0": "Usare un'abilità elementale conferisce l'effetto Corona di Giada: per ogni 1.000 di PS max, i DAN da attacco normale del personaggio aumentano di uno <cryo>0,7%</cryo> per 10 s. I DAN da attacco normale possono aumentare in questo modo fino a un <cryo>20%</cryo> massimo."
+    },
+    "2": {
+      "0": "Usare un'abilità elementale conferisce l'effetto Corona di Giada: per ogni 1.000 di PS max, i DAN da attacco normale del personaggio aumentano di uno <cryo>0,8%</cryo> per 10 s. I DAN da attacco normale possono aumentare in questo modo fino a un <cryo>24%</cryo> massimo."
+    },
+    "3": {
+      "0": "Usare un'abilità elementale conferisce l'effetto Corona di Giada: per ogni 1.000 di PS max, i DAN da attacco normale del personaggio aumentano di uno <cryo>0,9%</cryo> per 10 s. I DAN da attacco normale possono aumentare in questo modo fino a un <cryo>28%</cryo> massimo."
+    },
+    "4": {
+      "0": "Usare un'abilità elementale conferisce l'effetto Corona di Giada: per ogni 1.000 di PS max, i DAN da attacco normale del personaggio aumentano di uno <cryo>1%</cryo> per 10 s. I DAN da attacco normale possono aumentare in questo modo fino a un <cryo>32%</cryo> massimo."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Hora de Surfear",
+  "description": {
+    "0": "Un objeto conmemorativo que, supuestamente, se le iba a entregar al ganador de la primera edición del Campeonato de Surf Intertribal. Como el torneo aún está en fase de preparación, el premio lo está guardando temporalmente la dueña de la tienda Peciglobos Parsimoniosos."
+  },
+  "passiveName": "Recuerdos del agua",
+  "passiveDescription": {
+    "0": {
+      "0": "La Vida Máx. aumenta en un <cryo>20%</cryo>. Una vez cada 15 s, otorga los siguientes efectos durante 14 s después de usar la Habilidad Elemental: otorga 4 cargas de “estío”. Cada carga aumenta en un <cryo>12%</cryo> el daño del Ataque Normal. Mientras este efecto está activo, una vez cada 1.5 s, elimina 1 carga de estío tras golpear a un enemigo con un Ataque Normal, y otorga 1 carga tras causar una reacción de Vaporización contra un enemigo. El efecto de estío puede acumularse hasta 4 veces."
+    },
+    "1": {
+      "0": "La Vida Máx. aumenta en un <cryo>25%</cryo>. Una vez cada 15 s, otorga los siguientes efectos durante 14 s después de usar la Habilidad Elemental: otorga 4 cargas de “estío”. Cada carga aumenta en un <cryo>15%</cryo> el daño del Ataque Normal. Mientras este efecto está activo, una vez cada 1.5 s, elimina 1 carga de estío tras golpear a un enemigo con un Ataque Normal, y otorga 1 carga tras causar una reacción de Vaporización contra un enemigo. El efecto de estío puede acumularse hasta 4 veces."
+    },
+    "2": {
+      "0": "La Vida Máx. aumenta en un <cryo>30%</cryo>. Una vez cada 15 s, otorga los siguientes efectos durante 14 s después de usar la Habilidad Elemental: otorga 4 cargas de “estío”. Cada carga aumenta en un <cryo>18%</cryo> el daño del Ataque Normal. Mientras este efecto está activo, una vez cada 1.5 s, elimina 1 carga de estío tras golpear a un enemigo con un Ataque Normal, y otorga 1 carga tras causar una reacción de Vaporización contra un enemigo. El efecto de estío puede acumularse hasta 4 veces."
+    },
+    "3": {
+      "0": "La Vida Máx. aumenta en un <cryo>35%</cryo>. Una vez cada 15 s, otorga los siguientes efectos durante 14 s después de usar la Habilidad Elemental: otorga 4 cargas de “estío”. Cada carga aumenta en un <cryo>21%</cryo> el daño del Ataque Normal. Mientras este efecto está activo, una vez cada 1.5 s, elimina 1 carga de estío tras golpear a un enemigo con un Ataque Normal, y otorga 1 carga tras causar una reacción de Vaporización contra un enemigo. El efecto de estío puede acumularse hasta 4 veces."
+    },
+    "4": {
+      "0": "La Vida Máx. aumenta en un <cryo>40%</cryo>. Una vez cada 15 s, otorga los siguientes efectos durante 14 s después de usar la Habilidad Elemental: otorga 4 cargas de “estío”. Cada carga aumenta en un <cryo>24%</cryo> el daño del Ataque Normal. Mientras este efecto está activo, una vez cada 1.5 s, elimina 1 carga de estío tras golpear a un enemigo con un Ataque Normal, y otorga 1 carga tras causar una reacción de Vaporización contra un enemigo. El efecto de estío puede acumularse hasta 4 veces."
+    }
+  }
+}
