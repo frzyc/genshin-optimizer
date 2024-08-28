@@ -162,10 +162,7 @@ export function RelicCard({
               variant="body2"
               sx={{ display: 'flex', gap: 0.5, alignItems: 'center' }}
             >
-              <SlotIcon
-                iconProps={{ fontSize: 'inherit' }}
-                slotKey={slotKey}
-              />
+              <SlotIcon iconProps={{ fontSize: 'inherit' }} slotKey={slotKey} />
               {t(`slotName.${slotKey}`)}
             </Typography>
             <Typography
