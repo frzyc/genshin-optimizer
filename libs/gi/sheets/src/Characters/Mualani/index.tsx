@@ -3,7 +3,6 @@ import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
   constant,
-  equal,
   greaterEq,
   infoMut,
   input,
@@ -119,15 +118,10 @@ const a4Stacks_burst_dmgInc = greaterEq(
   )
 )
 
-const [condC1FirstPath, condC1First] = cond(key, 'c1First')
 const c1First_surging_dmgInc = greaterEq(
   input.constellation,
   1,
-  equal(
-    condC1First,
-    'on',
-    prod(percent(dm.constellation1.dmgInc), input.total.hp)
-  )
+  prod(percent(dm.constellation1.dmgInc), input.total.hp)
 )
 
 const c4_burst_dmg_ = greaterEq(
@@ -181,7 +175,7 @@ const dmgFormulas = {
       'normal',
       {
         premod: {
-          normal_dmgInc: sum(surging_bite_dmgInc, c1First_surging_dmgInc),
+          normal_dmgInc: surging_bite_dmgInc,
         },
       },
       undefined,
@@ -195,7 +189,22 @@ const dmgFormulas = {
     a4Stacks_burst_dmgInc,
   },
   constellation1: {
-    c1First_surging_dmgInc,
+    surgingDmg: greaterEq(
+      input.constellation,
+      1,
+      dmgNode(
+        'hp',
+        dm.skill.basicDmg,
+        'normal',
+        {
+          premod: {
+            normal_dmgInc: sum(surging_bite_dmgInc, c1First_surging_dmgInc),
+          },
+        },
+        undefined,
+        'skill'
+      )
+    ),
   },
 }
 
@@ -293,21 +302,14 @@ const sheet: TalentSheet = {
         },
       ],
     },
-    ct.condTem('constellation1', {
-      value: condC1First,
-      path: condC1FirstPath,
-      name: ct.ch('c1Cond'),
-      states: {
-        on: {
-          fields: [
-            {
-              node: infoMut(c1First_surging_dmgInc, {
-                name: ct.ch('surging_dmgInc'),
-              }),
-            },
-          ],
+    ct.headerTem('constellation1', {
+      fields: [
+        {
+          node: infoMut(dmgFormulas.constellation1.surgingDmg, {
+            name: ct.ch('c1FirstSurgingDmg'),
+          }),
         },
-      },
+      ],
     }),
   ]),
 
