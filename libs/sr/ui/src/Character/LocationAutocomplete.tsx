@@ -20,7 +20,7 @@ export function LocationAutocomplete({
   setLocKey,
   ...props
 }: LocationAutocompleteProps) {
-  const { t } = useTranslation(['character', 'charNames_gen'])
+  const { t } = useTranslation(['common', 'charNames_gen'])
   const { database } = useDatabaseContext()
 
   const charInDb = useCallback(
@@ -38,7 +38,7 @@ export function LocationAutocomplete({
     () => [
       {
         key: '',
-        label: t('character:autocomplete.none'),
+        label: t('inventory'),
       },
       ...allCharacterKeys.map(
         (key): GeneralAutocompleteOption<CharacterKey | ''> => ({
