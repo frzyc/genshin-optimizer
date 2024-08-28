@@ -5,6 +5,7 @@ import {
   charData,
   enemyDebuff,
   genshinCalculatorWithEntries,
+  members,
   ownBuff,
   teamData,
   weaponData,
@@ -18,22 +19,24 @@ import { useContext, useMemo } from 'react'
 import { TeamContext } from './TeamContext'
 import { TeamLoadoutCharacterToICharacter } from './teamUtil'
 
-export function CalcWrapper({ children }: { children: ReactNode }) {
+export function CalcWrapper({
+  children,
+  src,
+}: {
+  children: ReactNode
+  src: '1' | '2' | '3' | '0'
+}) {
   const team = useContext(TeamContext)
-
   const calc = useMemo(() => {
     if (!team) return null
     const data: TagMapNodeEntries = [
       ...teamData(
-        team.team_loadouts.map(
-          (team_loadout) =>
-            team_loadout.index.toString() as '1' | '2' | '3' | '0'
-        )
+        team.team_loadouts.map((team_loadout) => members[team_loadout.index])
       ),
       ...team.team_loadouts
         .flatMap((team_loadout) => {
           return withMember(
-            team_loadout.index.toString() as '1' | '2' | '3' | '0',
+            members[team_loadout.index],
             ...charData(
               TeamLoadoutCharacterToICharacter(team_loadout.loadout!.character!)
             ),
@@ -76,5 +79,8 @@ export function CalcWrapper({ children }: { children: ReactNode }) {
     ]
     return genshinCalculatorWithEntries(data)
   }, [team])
-  return <CalcContext.Provider value={calc}>{children}</CalcContext.Provider>
+  const calcWithTag = useMemo(() => calc?.withTag({ src }) ?? null, [calc, src])
+  return (
+    <CalcContext.Provider value={calcWithTag}>{children}</CalcContext.Provider>
+  )
 }
