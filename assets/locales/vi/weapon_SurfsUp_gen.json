@@ -1,0 +1,24 @@
+{
+  "name": "Thời Khắc Lướt Sóng",
+  "description": {
+    "0": "Đồ lưu niệm được đặt trước để phát cho quán quân \"Giải Lướt Sóng Toàn Bộ Tộc Mùa Đầu Tiên\". Vì giải đấu hiện đang trong giai đoạn chuẩn bị, nên phần thưởng đã được tạm cất trong tiệm \"Cá Nóc Nhàn Nhã\" để chủ tiệm bảo quản thay."
+  },
+  "passiveName": "Hồi Ức Sắc Nước",
+  "passiveDescription": {
+    "0": {
+      "0": "Giới Hạn HP tăng <cryo>20%</cryo>. Cứ mỗi 15s, trong 14s sau khi thi triển Kỹ Năng Nguyên Tố sẽ sản sinh hiệu quả sau: Nhận 4 tầng \"Hè Nóng\", mỗi tầng khiến sát thương Tấn Công Thường tăng <cryo>12%</cryo>. Trong thời gian duy trì: Cứ mỗi 1.5s, sau khi Tấn Công Thường trúng kẻ địch sẽ xóa 1 tầng; Cứ mỗi 1.5s, sau khi kích hoạt phản ứng Bốc Hơi sẽ tăng 1 tầng. Hiệu quả \"Hè Nóng\" tối đa cộng dồn 4 tầng."
+    },
+    "1": {
+      "0": "Giới Hạn HP tăng <cryo>25%</cryo>. Cứ mỗi 15s, trong 14s sau khi thi triển Kỹ Năng Nguyên Tố sẽ sản sinh hiệu quả sau: Nhận 4 tầng \"Hè Nóng\", mỗi tầng khiến sát thương Tấn Công Thường tăng <cryo>15%</cryo>. Trong thời gian duy trì: Cứ mỗi 1.5s, sau khi Tấn Công Thường trúng kẻ địch sẽ xóa 1 tầng; Cứ mỗi 1.5s, sau khi kích hoạt phản ứng Bốc Hơi sẽ tăng 1 tầng. Hiệu quả \"Hè Nóng\" tối đa cộng dồn 4 tầng."
+    },
+    "2": {
+      "0": "Giới Hạn HP tăng <cryo>30%</cryo>. Cứ mỗi 15s, trong 14s sau khi thi triển Kỹ Năng Nguyên Tố sẽ sản sinh hiệu quả sau: Nhận 4 tầng \"Hè Nóng\", mỗi tầng khiến sát thương Tấn Công Thường tăng <cryo>18%</cryo>. Trong thời gian duy trì: Cứ mỗi 1.5s, sau khi Tấn Công Thường trúng kẻ địch sẽ xóa 1 tầng; Cứ mỗi 1.5s, sau khi kích hoạt phản ứng Bốc Hơi sẽ tăng 1 tầng. Hiệu quả \"Hè Nóng\" tối đa cộng dồn 4 tầng."
+    },
+    "3": {
+      "0": "Giới Hạn HP tăng <cryo>35%</cryo>. Cứ mỗi 15s, trong 14s sau khi thi triển Kỹ Năng Nguyên Tố sẽ sản sinh hiệu quả sau: Nhận 4 tầng \"Hè Nóng\", mỗi tầng khiến sát thương Tấn Công Thường tăng <cryo>21%</cryo>. Trong thời gian duy trì: Cứ mỗi 1.5s, sau khi Tấn Công Thường trúng kẻ địch sẽ xóa 1 tầng; Cứ mỗi 1.5s, sau khi kích hoạt phản ứng Bốc Hơi sẽ tăng 1 tầng. Hiệu quả \"Hè Nóng\" tối đa cộng dồn 4 tầng."
+    },
+    "4": {
+      "0": "Giới Hạn HP tăng <cryo>40%</cryo>. Cứ mỗi 15s, trong 14s sau khi thi triển Kỹ Năng Nguyên Tố sẽ sản sinh hiệu quả sau: Nhận 4 tầng \"Hè Nóng\", mỗi tầng khiến sát thương Tấn Công Thường tăng <cryo>24%</cryo>. Trong thời gian duy trì: Cứ mỗi 1.5s, sau khi Tấn Công Thường trúng kẻ địch sẽ xóa 1 tầng; Cứ mỗi 1.5s, sau khi kích hoạt phản ứng Bốc Hơi sẽ tăng 1 tầng. Hiệu quả \"Hè Nóng\" tối đa cộng dồn 4 tầng."
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "setName": "Bí Điển Obsidian",
+  "setEffects": {
+    "2": "Khi người trang bị ở trạng thái Dạ Hồn Chúc Phúc và đang ra trận, sát thương gây ra tăng 15%.",
+    "4": "Người trang bị sau khi tiêu hao 1 điểm Dạ Hồn trong trận, Tỷ Lệ Bạo Kích tăng 40% trong 6s. Hiệu quả này mỗi 1s tối đa kích hoạt một lần."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Kỳ Vọng Của Dị Chủng",
+      "desc": "Đóa hoa được chạm khắc tỉ mỉ từ tinh thạch màu đen, vào ban đêm sẽ tỏa ra ánh sáng huyền bí."
+    },
+    "plume": {
+      "name": "Gốc Rễ Của Linh Tủy",
+      "desc": "Trang sức lông vũ mô phỏng theo cánh của loài rồng cổ xưa, có lẽ từng là minh chứng cho một giai đoạn lịch sử đã bị lãng quên nào đó."
+    },
+    "sands": {
+      "name": "Thần Thoại Của Dạ Vực",
+      "desc": "Vật dụng thần bí không phải đồng hồ cũng không phải la bàn, đến nay trên thế gian không còn ai biết được công dụng của nó."
+    },
+    "goblet": {
+      "name": "Bữa Tiệc Trước Chiến Tranh",
+      "desc": "Vật chứa dường như được tạo ra bằng cách xoắn và tạo hình đá theo một cách kỳ quặc, không biết ai lại có sức mạnh như vậy."
+    },
+    "circlet": {
+      "name": "Vương Miện Của Thánh Giả",
+      "desc": "Vương miện được làm từ Đá Obsidian. Vào thời xa xưa từng được dùng trong nghi thức trao vương miện của các vị vua cao quý trong bộ tộc."
+    }
+  }
+}

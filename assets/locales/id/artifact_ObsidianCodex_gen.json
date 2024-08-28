@@ -1,0 +1,29 @@
+{
+  "setName": "Obsidian Codex",
+  "setEffects": {
+    "2": "Saat Karakter yang mengenakan berada dalam status Nightsoul's Blessing dan berada di medan pertempuran, DMG yang diakibatkan meningkat sebanyak 15%.",
+    "4": "Setelah Karakter yang mengenakan mengonsumsi 1 poin Nightsoul saat berada di medan pertempuran, akan meningkatkan CRIT Rate sebesar 40% selama 6 detik. Efek ini dapat terpicu sekali setiap 1 detik."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Reckoning of the Xenogenic",
+      "desc": "Bunga yang terbuat dari kristal hitam dan diukir dengan hati-hati. Dapat memancarkan cahaya yang misterius di malam hari."
+    },
+    "plume": {
+      "name": "Root of the Spirit-Marrow",
+      "desc": "Aksesoris bulu yang dibuat dengan meniru sayap naga kuno. Mungkin merupakan saksi dari sejarah masa lalu yang terlupakan."
+    },
+    "sands": {
+      "name": "Myths of the Night Realm",
+      "desc": "Perangkat misterius yang bukan merupakan penanda waktu atau kompas, sudah tidak ada manusia di dunia zaman sekarang yang tahu kegunaannya."
+    },
+    "goblet": {
+      "name": "Pre-Banquet of the Contenders",
+      "desc": "Wadah yang sepertinya terbuat dari potongan batu yang dibentuk diputar-putar. Entah siapa yang memiliki kekuatan sekuat itu."
+    },
+    "circlet": {
+      "name": "Crown of the Saints",
+      "desc": "Mahkota yang terbuat dari obsidian ini pernah digunakan untuk upacara pemahkotaan raja suku yang mulia di zaman dahulu."
+    }
+  }
+}

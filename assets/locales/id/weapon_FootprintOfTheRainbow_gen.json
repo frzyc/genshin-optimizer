@@ -1,0 +1,24 @@
+{
+  "name": "Footprint of the Rainbow",
+  "description": {
+    "0": "Tombak panjang yang ditempa dari batu giok. Dapat memantulkan cahaya berwarna-warni di bawah sinar matahari."
+  },
+  "passiveName": "Pact of Flowing Springs",
+  "passiveDescription": {
+    "0": {
+      "0": "Melancarkan Elemental Skill, akan meningkatkan <cryo>16%</cryo> DEF selama 15 detik."
+    },
+    "1": {
+      "0": "Melancarkan Elemental Skill, akan meningkatkan <cryo>20%</cryo> DEF selama 15 detik."
+    },
+    "2": {
+      "0": "Melancarkan Elemental Skill, akan meningkatkan <cryo>24%</cryo> DEF selama 15 detik."
+    },
+    "3": {
+      "0": "Melancarkan Elemental Skill, akan meningkatkan <cryo>28%</cryo> DEF selama 15 detik."
+    },
+    "4": {
+      "0": "Melancarkan Elemental Skill, akan meningkatkan <cryo>32%</cryo> DEF selama 15 detik."
+    }
+  }
+}

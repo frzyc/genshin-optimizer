@@ -1,0 +1,24 @@
+{
+  "name": "Vai col surf",
+  "description": {
+    "0": "Un oggetto commemorativo pensato come premio esclusivo per il campione del \"Primo Torneo di Surf Intertribù\". Essendo il torneo ancora nella sua fase preparatoria, l'oggetto è stato temporaneamente affidato alla proprietaria del negozio Il Gonfiotto Pacioccone."
+  },
+  "passiveName": "Rimembranza acquatica",
+  "passiveDescription": {
+    "0": {
+      "0": "I PS max aumentano di un <cryo>20%</cryo>. Ogni 15 s, per 14 s dopo l'uso di un'abilità elementale: il personaggio ottiene 4 accumuli di Estate torrida, ognuno dei quali aumenta i DAN da attacco normale di un <cryo>12%</cryo>. Per la durata dell'effetto, ogni 1,5 s, il personaggio perde 1 accumulo dopo che un attacco normale colpisce un avversario; ogni 1,5 s, il personaggio ottiene 1 accumulo dopo aver innescato una reazione di Vaporizzazione su un avversario. È possibile avere fino a un massimo di 4 accumuli di Estate torrida."
+    },
+    "1": {
+      "0": "I PS max aumentano di un <cryo>25%</cryo>. Ogni 15 s, per 14 s dopo l'uso di un'abilità elementale: il personaggio ottiene 4 accumuli di Estate torrida, ognuno dei quali aumenta i DAN da attacco normale di un <cryo>15%</cryo>. Per la durata dell'effetto, ogni 1,5 s, il personaggio perde 1 accumulo dopo che un attacco normale colpisce un avversario; ogni 1,5 s, il personaggio ottiene 1 accumulo dopo aver innescato una reazione di Vaporizzazione su un avversario. È possibile avere fino a un massimo di 4 accumuli di Estate torrida."
+    },
+    "2": {
+      "0": "I PS max aumentano di un <cryo>30%</cryo>. Ogni 15 s, per 14 s dopo l'uso di un'abilità elementale: il personaggio ottiene 4 accumuli di Estate torrida, ognuno dei quali aumenta i DAN da attacco normale di un <cryo>18%</cryo>. Per la durata dell'effetto, ogni 1,5 s, il personaggio perde 1 accumulo dopo che un attacco normale colpisce un avversario; ogni 1,5 s, il personaggio ottiene 1 accumulo dopo aver innescato una reazione di Vaporizzazione su un avversario. È possibile avere fino a un massimo di 4 accumuli di Estate torrida."
+    },
+    "3": {
+      "0": "I PS max aumentano di un <cryo>35%</cryo>. Ogni 15 s, per 14 s dopo l'uso di un'abilità elementale: il personaggio ottiene 4 accumuli di Estate torrida, ognuno dei quali aumenta i DAN da attacco normale di un <cryo>21%</cryo>. Per la durata dell'effetto, ogni 1,5 s, il personaggio perde 1 accumulo dopo che un attacco normale colpisce un avversario; ogni 1,5 s, il personaggio ottiene 1 accumulo dopo aver innescato una reazione di Vaporizzazione su un avversario. È possibile avere fino a un massimo di 4 accumuli di Estate torrida."
+    },
+    "4": {
+      "0": "I PS max aumentano di un <cryo>40%</cryo>. Ogni 15 s, per 14 s dopo l'uso di un'abilità elementale: il personaggio ottiene 4 accumuli di Estate torrida, ognuno dei quali aumenta i DAN da attacco normale di un <cryo>24%</cryo>. Per la durata dell'effetto, ogni 1,5 s, il personaggio perde 1 accumulo dopo che un attacco normale colpisce un avversario; ogni 1,5 s, il personaggio ottiene 1 accumulo dopo aver innescato una reazione di Vaporizzazione su un avversario. È possibile avere fino a un massimo di 4 accumuli di Estate torrida."
+    }
+  }
+}

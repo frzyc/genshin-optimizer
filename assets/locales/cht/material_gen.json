@@ -206,6 +206,9 @@
   "StarsailCoin": {
     "name": "星遊幣"
   },
+  "ColorfulContemplation": {
+    "name": "形彩思緒"
+  },
   "Primogem": {
     "name": "原石"
   },
@@ -275,6 +278,15 @@
   "FontaineReputationEXP": {
     "name": "聲望經驗·楓丹"
   },
+  "ScionsOfTheCanopyReputationEXP": {
+    "name": "聲望經驗·「懸木人」"
+  },
+  "PeopleOfTheSpringsReputationEXP": {
+    "name": "聲望經驗·「流泉之眾」"
+  },
+  "ChildrenOfEchoesReputationEXP": {
+    "name": "聲望經驗·「回聲之子」"
+  },
   "MemoryOfEternalFlames": {
     "name": "恆常燃燒的記憶"
   },
@@ -295,6 +307,9 @@
   },
   "MemoryOfImmovableCrystals": {
     "name": "不動晶石的記憶"
+  },
+  "BlazingFlintOre": {
+    "name": "灼燃的燧原礦"
   },
   "KamisatoAyaka": {
     "name": "神里綾華"
@@ -821,6 +836,9 @@
   "AnAppellativeStroke": {
     "name": "新名撰聿"
   },
+  "ReaffirmedAccordOfAppellation": {
+    "name": "重立名約之契"
+  },
   "EnergyOrbPyro": {
     "name": "元素能量球(火)"
   },
@@ -877,6 +895,12 @@
   },
   "QuestUseAtomicEnergyOrbPouch": {
     "name": "任務用-元素蜜囊原子能量球"
+  },
+  "PhlogistonEnergyOrb": {
+    "name": "燃素能量球"
+  },
+  "PhlogistonEnergyOrbSeparateDrop": {
+    "name": "燃素能量球（分開掉落）"
   },
   "TestRandomTreasureChest": {
     "name": "測試隨機寶箱"
@@ -937,6 +961,24 @@
   },
   "RazorTestPackage": {
     "name": "雷澤測試包"
+  },
+  "Kachina": {
+    "name": "卡齊娜"
+  },
+  "Kinich": {
+    "name": "基尼奇"
+  },
+  "Mualani": {
+    "name": "瑪拉妮"
+  },
+  "KachinasStellaFortuna": {
+    "name": "卡齊娜的命星"
+  },
+  "KinichsStellaFortuna": {
+    "name": "基尼奇的命星"
+  },
+  "MualanisStellaFortuna": {
+    "name": "瑪拉妮的命星"
   },
   "Apple": {
     "name": "蘋果"
@@ -3182,6 +3224,21 @@
   "MidlanderPolearmBillet": {
     "name": "央陸長柄武器原胚"
   },
+  "BorderlandSwordBillet": {
+    "name": "垠土單手劍原胚"
+  },
+  "BorderlandBowBillet": {
+    "name": "垠土弓原胚"
+  },
+  "BorderlandClaymoreBillet": {
+    "name": "垠土雙手劍原胚"
+  },
+  "BorderlandCatalystBillet": {
+    "name": "垠土法器原胚"
+  },
+  "BorderlandPolearmBillet": {
+    "name": "垠土長柄武器原胚"
+  },
   "Onikabuto": {
     "name": "鬼兜蟲"
   },
@@ -3308,6 +3365,33 @@
   "ChenyuAdeptea": {
     "name": "沉玉仙茗"
   },
+  "Grainfruit": {
+    "name": "顆粒果"
+  },
+  "CandlecapMushroom": {
+    "name": "燭傘蘑菇"
+  },
+  "SpinelFruit": {
+    "name": "澄晶實"
+  },
+  "Cacahuatl": {
+    "name": "苦種"
+  },
+  "SprayfeatherGill": {
+    "name": "浪沫羽鰓"
+  },
+  "BrilliantChrysanthemum": {
+    "name": "灼灼彩菊"
+  },
+  "QuenepaBerry": {
+    "name": "青蜜莓"
+  },
+  "SaurianClawSucculent": {
+    "name": "肉龍掌"
+  },
+  "EmbercoreFlower": {
+    "name": "燼芯花"
+  },
   "BirchWood": {
     "name": "樺木"
   },
@@ -3370,6 +3454,18 @@
   },
   "TorchWood": {
     "name": "炬木"
+  },
+  "WhiteChestnutOakWood": {
+    "name": "白栗櫟木"
+  },
+  "AshenAratikuWood": {
+    "name": "灰灰樓林木"
+  },
+  "FlammabombWood": {
+    "name": "燃爆木"
+  },
+  "PeachPalmWood": {
+    "name": "桃椰子木"
   },
   "Fabric": {
     "name": "布匹"
@@ -4880,6 +4976,33 @@
   "PhilosophiesOfOrder": {
     "name": "「秩序」的哲學"
   },
+  "TeachingsOfContention": {
+    "name": "「角逐」的教導"
+  },
+  "GuideToContention": {
+    "name": "「角逐」的指引"
+  },
+  "PhilosophiesOfContention": {
+    "name": "「角逐」的哲學"
+  },
+  "TeachingsOfKindling": {
+    "name": "「焚燔」的教導"
+  },
+  "GuideToKindling": {
+    "name": "「焚燔」的指引"
+  },
+  "PhilosophiesOfKindling": {
+    "name": "「焚燔」的哲學"
+  },
+  "TeachingsOfConflict": {
+    "name": "「紛爭」的教導"
+  },
+  "GuideToConflict": {
+    "name": "「紛爭」的指引"
+  },
+  "PhilosophiesOfConflict": {
+    "name": "「紛爭」的哲學"
+  },
   "SanctifyingDroplet": {
     "name": "祝聖之滴"
   },
@@ -4888,6 +5011,9 @@
   },
   "SanctifyingEssence": {
     "name": "祝聖精華"
+  },
+  "SanctifyingElixir": {
+    "name": "祝聖之霜"
   },
   "TestStaminaGrowthItem": {
     "name": "測試用體力成長道具"
@@ -4972,6 +5098,12 @@
   },
   "SpiritCarp": {
     "name": "蒼靈鯉"
+  },
+  "NatlanShrineOfDepthsKey": {
+    "name": "納塔地靈龕之鑰"
+  },
+  "Pyroculus": {
+    "name": "散失的火神瞳"
   },
   "JubilantFeather": {
     "name": "歡聲飛羽"
@@ -7034,6 +7166,186 @@
   "AMagicalMix": {
     "name": "魔術特調"
   },
+  "SuspiciousMeatnado": {
+    "name": "奇怪的獸肉旋風"
+  },
+  "Meatnado": {
+    "name": "獸肉旋風"
+  },
+  "DeliciousMeatnado": {
+    "name": "美味的獸肉旋風"
+  },
+  "SuspiciousAppleRolyPoly": {
+    "name": "奇怪的蘋果捲捲"
+  },
+  "AppleRolyPoly": {
+    "name": "蘋果捲捲"
+  },
+  "DeliciousAppleRolyPoly": {
+    "name": "美味的蘋果捲捲"
+  },
+  "SuspiciousGlitteringGemstones": {
+    "name": "奇怪的寶石閃閃"
+  },
+  "GlitteringGemstones": {
+    "name": "寶石閃閃"
+  },
+  "DeliciousGlitteringGemstones": {
+    "name": "美味的寶石閃閃"
+  },
+  "SuspiciousHotSpringOClock": {
+    "name": "奇怪的溫泉時光"
+  },
+  "HotSpringOClock": {
+    "name": "溫泉時光"
+  },
+  "DeliciousHotSpringOClock": {
+    "name": "美味的溫泉時光"
+  },
+  "SuspiciousPuffPops": {
+    "name": "奇怪的咚咚砰砰"
+  },
+  "PuffPops": {
+    "name": "咚咚砰砰"
+  },
+  "DeliciousPuffPops": {
+    "name": "美味的咚咚砰砰"
+  },
+  "SuspiciousSaurusCrackers": {
+    "name": "奇怪的龍龍餅乾"
+  },
+  "SaurusCrackers": {
+    "name": "龍龍餅乾"
+  },
+  "DeliciousSaurusCrackers": {
+    "name": "美味的龍龍餅乾"
+  },
+  "SuspiciousForestOfColor": {
+    "name": "奇怪的多彩之森"
+  },
+  "ForestOfColor": {
+    "name": "多彩之森"
+  },
+  "DeliciousForestOfColor": {
+    "name": "美味的多彩之森"
+  },
+  "SuspiciousGrilledFishInMintSauce": {
+    "name": "奇怪的薄荷醬烤魚"
+  },
+  "GrilledFishInMintSauce": {
+    "name": "薄荷醬烤魚"
+  },
+  "DeliciousGrilledFishInMintSauce": {
+    "name": "美味的薄荷醬烤魚"
+  },
+  "SuspiciousTatacos": {
+    "name": "奇怪的塔塔可"
+  },
+  "Tatacos": {
+    "name": "塔塔可"
+  },
+  "DeliciousTatacos": {
+    "name": "美味的塔塔可"
+  },
+  "SuspiciousSourSauceKipper": {
+    "name": "奇怪的酸汁醃魚"
+  },
+  "SourSauceKipper": {
+    "name": "酸汁醃魚"
+  },
+  "DeliciousSourSauceKipper": {
+    "name": "美味的酸汁醃魚"
+  },
+  "SuspiciousChocolate": {
+    "name": "奇怪的巧克力"
+  },
+  "Chocolate": {
+    "name": "巧克力"
+  },
+  "DeliciousChocolate": {
+    "name": "美味的巧克力"
+  },
+  "SuspiciousStuffedNMashedPotatoes": {
+    "name": "奇怪的夾心馬鈴薯泥"
+  },
+  "StuffedNMashedPotatoes": {
+    "name": "夾心馬鈴薯泥"
+  },
+  "DeliciousStuffedNMashedPotatoes": {
+    "name": "美味的夾心馬鈴薯泥"
+  },
+  "SuspiciousCupOGrainfruit": {
+    "name": "奇怪的粒果杯"
+  },
+  "CupOGrainfruit": {
+    "name": "粒果杯"
+  },
+  "DeliciousCupOGrainfruit": {
+    "name": "美味的粒果杯"
+  },
+  "SuspiciousGrainfruitMeatSoup": {
+    "name": "奇怪的粒果肉湯"
+  },
+  "GrainfruitMeatSoup": {
+    "name": "粒果肉湯"
+  },
+  "DeliciousGrainfruitMeatSoup": {
+    "name": "美味的粒果肉湯"
+  },
+  "SuspiciousGrainfruitChips": {
+    "name": "奇怪的粒果片片"
+  },
+  "GrainfruitChips": {
+    "name": "粒果片片"
+  },
+  "DeliciousGrainfruitChips": {
+    "name": "美味的粒果片片"
+  },
+  "SuspiciousFriedShrimpBeanballs": {
+    "name": "奇怪的炸蝦豆球"
+  },
+  "FriedShrimpBeanballs": {
+    "name": "炸蝦豆球"
+  },
+  "DeliciousFriedShrimpBeanballs": {
+    "name": "美味的炸蝦豆球"
+  },
+  "SuspiciousBlazedMeatStew": {
+    "name": "奇怪的火焰燉肉"
+  },
+  "BlazedMeatStew": {
+    "name": "火焰燉肉"
+  },
+  "DeliciousBlazedMeatStew": {
+    "name": "美味的火焰燉肉"
+  },
+  "SaurianHuntersReward": {
+    "name": "獵龍者的犒賞"
+  },
+  "PassTheLuck": {
+    "name": "好運傳遞"
+  },
+  "ImpeccablyOrganized": {
+    "name": "齊齊整整"
+  },
+  "SuspiciousGoldenApplePastry": {
+    "name": "奇怪的蘋果金條條"
+  },
+  "GoldenApplePastry": {
+    "name": "蘋果金條條"
+  },
+  "DeliciousGoldenApplePastry": {
+    "name": "美味的蘋果金條條"
+  },
+  "SuspiciousDelightsOfWondrousWanderings": {
+    "name": "奇怪的奇旅饌匣"
+  },
+  "DelightsOfWondrousWanderings": {
+    "name": "奇旅饌匣"
+  },
+  "DeliciousDelightsOfWondrousWanderings": {
+    "name": "美味的奇旅饌匣"
+  },
   "RecipeItem": {
     "name": "食譜道具"
   },
@@ -7625,6 +7937,63 @@
   "RecipeCrispCroissantCombo": {
     "name": "食譜：酥酥羊角包"
   },
+  "RecipeMeatnado": {
+    "name": "食譜：獸肉旋風"
+  },
+  "RecipeAppleRolyPoly": {
+    "name": "食譜：蘋果捲捲"
+  },
+  "RecipeGlitteringGemstones": {
+    "name": "食譜：寶石閃閃"
+  },
+  "RecipeHotSpringOClock": {
+    "name": "食譜：溫泉時光"
+  },
+  "RecipePuffPops": {
+    "name": "食譜：咚咚砰砰"
+  },
+  "RecipeSaurusCrackers": {
+    "name": "食譜：龍龍餅乾"
+  },
+  "RecipeForestOfColor": {
+    "name": "食譜：多彩之森"
+  },
+  "RecipeGrilledFishInMintSauce": {
+    "name": "食譜：薄荷醬烤魚"
+  },
+  "RecipeTatacos": {
+    "name": "食譜：塔塔可"
+  },
+  "RecipeSourSauceKipper": {
+    "name": "食譜：酸汁醃魚"
+  },
+  "RecipeChocolate": {
+    "name": "食譜：巧克力"
+  },
+  "RecipeStuffedNMashedPotatoes": {
+    "name": "食譜：夾心馬鈴薯泥"
+  },
+  "RecipeCupOGrainfruit": {
+    "name": "食譜：粒果杯"
+  },
+  "RecipeGrainfruitMeatSoup": {
+    "name": "食譜：粒果肉湯"
+  },
+  "RecipeGrainfruitChips": {
+    "name": "食譜：粒果片片"
+  },
+  "RecipeFriedShrimpBeanballs": {
+    "name": "食譜：炸蝦豆球"
+  },
+  "RecipeBlazedMeatStew": {
+    "name": "食譜：火焰燉肉"
+  },
+  "RecipeGoldenApplePastry": {
+    "name": "食譜：蘋果金條條"
+  },
+  "RecipeDelightsOfWondrousWanderings": {
+    "name": "食譜：奇旅饌匣"
+  },
   "CraftedItems": {
     "name": "合成產物"
   },
@@ -7744,6 +8113,9 @@
   },
   "FlashingMaintenanceMekBait": {
     "name": "維護機關頻閃誘餌"
+  },
+  "StrengthTonic": {
+    "name": "「強水」"
   },
   "PrimordialEssence": {
     "name": "原質"
@@ -8045,6 +8417,51 @@
   "StillSmolderingHilt": {
     "name": "未熄的劍柄"
   },
+  "JuvenileFang": {
+    "name": "稚嫩的尖齒"
+  },
+  "SeasonedFang": {
+    "name": "老練的堅齒"
+  },
+  "TyrantsFang": {
+    "name": "橫行霸者的利齒"
+  },
+  "SentrysWoodenWhistle": {
+    "name": "衛從的木哨"
+  },
+  "WarriorsMetalWhistle": {
+    "name": "戰士的鐵哨"
+  },
+  "SaurianCrownedWarriorsGoldenWhistle": {
+    "name": "龍冠武士的金哨"
+  },
+  "ShardOfAShatteredWill": {
+    "name": "意志破碎的殘片"
+  },
+  "LocusOfAClearWill": {
+    "name": "意志明晰的寄偶"
+  },
+  "SigilOfAStridingWill": {
+    "name": "意志巡遊的符像"
+  },
+  "IgnitedStone": {
+    "name": "聚燃的石塊"
+  },
+  "IgnitedSeedOfLife": {
+    "name": "聚燃的命種"
+  },
+  "IgnitedSeeingEye": {
+    "name": "聚燃的遊像眼"
+  },
+  "AxisOfTheSecretSource": {
+    "name": "秘源軸"
+  },
+  "SheathOfTheSecretSource": {
+    "name": "秘源機鞘"
+  },
+  "HeartOfTheSecretSource": {
+    "name": "秘源真芯"
+  },
   "HurricaneSeed": {
     "name": "颶風之種"
   },
@@ -8231,6 +8648,15 @@
   "DenialAndJudgment": {
     "name": "否定裁斷"
   },
+  "TheCornerstoneOfStarsAndFlames": {
+    "name": "星與火的基石"
+  },
+  "MarkOfTheBindingBlessing": {
+    "name": "受祝所縛之印"
+  },
+  "OverripeFlamegranate": {
+    "name": "過熟的火榴果"
+  },
   "TileOfDecarabiansTower": {
     "name": "高塔孤王的破瓦"
   },
@@ -8411,6 +8837,42 @@
   "GoldenGobletOfThePristineSea": {
     "name": "無垢之海的金杯"
   },
+  "BlazingSacrificialHeartsTerror": {
+    "name": "貢祭熾心的惶恐"
+  },
+  "BlazingSacrificialHeartsHesitance": {
+    "name": "貢祭熾心的躊躇"
+  },
+  "BlazingSacrificialHeartsResolve": {
+    "name": "貢祭熾心的決絕"
+  },
+  "BlazingSacrificialHeartsSplendor": {
+    "name": "貢祭熾心的榮膺"
+  },
+  "DeliriousDecadenceOfTheSacredLord": {
+    "name": "譫妄聖主的朽敗"
+  },
+  "DeliriousDesolationOfTheSacredLord": {
+    "name": "譫妄聖主的餘哀"
+  },
+  "DeliriousDemeanorOfTheSacredLord": {
+    "name": "譫妄聖主的容光"
+  },
+  "DeliriousDivinityOfTheSacredLord": {
+    "name": "譫妄聖主的神面"
+  },
+  "NightWindsMysticConsideration": {
+    "name": "神合秘煙的思緒"
+  },
+  "NightWindsMysticPremonition": {
+    "name": "神合秘煙的預感"
+  },
+  "NightWindsMysticAugury": {
+    "name": "神合秘煙的徵兆"
+  },
+  "NightWindsMysticRevelation": {
+    "name": "神合秘煙的啟示"
+  },
   "StarterSupplyBundle": {
     "name": "啟程補給包"
   },
@@ -8429,8 +8891,8 @@
   "CharacterAscensionBundleVeryHigh": {
     "name": "角色突破自選-超級"
   },
-  "TalentMaterialsBundleLow": {
-    "name": "天賦書自選-低級"
+  "PackOfVirtuousTeachings": {
+    "name": "品格教導包"
   },
   "VirtuousShareBundle": {
     "name": "美德分享包"
@@ -8504,6 +8966,12 @@
   "OutfitOptionBundle": {
     "name": "衣裝心選包"
   },
+  "BorderlandBilletTrove": {
+    "name": "垠土原胚之匣"
+  },
+  "TalentShareBundle": {
+    "name": "天賦助力分享包"
+  },
   "BEP": {
     "name": "紀行經驗"
   },
@@ -8542,6 +9010,12 @@
   },
   "PhilosophiesOfTheOriginalCurrent": {
     "name": "源流的哲學"
+  },
+  "GuidesOfAJourney": {
+    "name": "旅途的指引"
+  },
+  "PhilosophiesOfAJourney": {
+    "name": "旅途的哲學"
   },
   "DomainReliquaryTierIII": {
     "name": "深秘聖物匣·三等"
@@ -10340,6 +10814,12 @@
   "FishSeizedFromAPelicansMouth": {
     "name": "從「鵜鶘」嘴裡搶下的魚"
   },
+  "YellowObsidianFragment": {
+    "name": "明黃曜石斷片"
+  },
+  "YellowObsidianRing": {
+    "name": "明黃曜石環"
+  },
   "InvitationFromTheAratakiGang": {
     "name": "荒瀧派的邀請函"
   },
@@ -10358,6 +10838,9 @@
   "TaintedHydroPhantasmExtract": {
     "name": "濁水幻靈的提取物"
   },
+  "CouriersTrialKeystone": {
+    "name": "訊使試煉的鑰石"
+  },
   "ShikanoinHeizousMessage": {
     "name": "鹿野院平藏的留言"
   },
@@ -10366,6 +10849,9 @@
   },
   "LynettesEnvelope": {
     "name": "琳妮特的信封"
+  },
+  "TalismanOfWaxaklahunUbahKan": {
+    "name": "瓦薩克拉胡巴肯的護符"
   },
   "RestoredScore": {
     "name": "修復完好的曲譜"
@@ -10400,6 +10886,15 @@
   "DamagedScore": {
     "name": "破損的曲譜"
   },
+  "KeyWithFrontalNotches": {
+    "name": "豁口在前的鑰匙"
+  },
+  "KeyWithCenteredNotches": {
+    "name": "豁口在中的鑰匙"
+  },
+  "KeyWithRearNotches": {
+    "name": "豁口在後的鑰匙"
+  },
   "BrickstacksLongRangeLamp": {
     "name": "疊架遠光燈"
   },
@@ -10423,6 +10918,21 @@
   },
   "RuggierosNotesII": {
     "name": "魯傑羅的筆記·其二"
+  },
+  "GreenObsidianFragment": {
+    "name": "翠青曜石斷片"
+  },
+  "GreenObsidianRing": {
+    "name": "翠青曜石環"
+  },
+  "AzureObsidianFragment": {
+    "name": "湛藍曜石斷片"
+  },
+  "AzureObsidianRing": {
+    "name": "湛藍曜石環"
+  },
+  "NightJade": {
+    "name": "夜之玉"
   },
   "PagesFromALostScoreII": {
     "name": "遺落的曲譜殘頁·其二"
@@ -10454,6 +10964,15 @@
   "GuardsSpear": {
     "name": "衛兵長矛"
   },
+  "StarShard": {
+    "name": "星星碎片"
+  },
+  "CrudeObsidianStatue": {
+    "name": "粗糙的黑曜石像"
+  },
+  "RedMetalKey": {
+    "name": "赤色的金屬鑰匙"
+  },
   "TreasureMapWithTheVaultsLocation": {
     "name": "指出寶庫位置的「藏寶圖」"
   },
@@ -10465,6 +10984,9 @@
   },
   "HarmostsNotesII": {
     "name": "調律師的筆記·下"
+  },
+  "GreenEdgedPaperSlip": {
+    "name": "邊緣綠油油的紙"
   },
   "TatteredNavigationLog": {
     "name": "殘破的航海日誌"
@@ -10495,6 +11017,42 @@
   },
   "ExperimentLog": {
     "name": "實驗日誌"
+  },
+  "FreshSourSauceKipper": {
+    "name": "新鮮的酸汁醃魚"
+  },
+  "AGemMeantAsAGift": {
+    "name": "作為禮物的寶石"
+  },
+  "JewelArtisansToolbox": {
+    "name": "珠寶工匠的工具箱"
+  },
+  "JewelArtisansBoxOfParts": {
+    "name": "珠寶工匠的零件箱"
+  },
+  "PhlogistonEnergyOrbForGathering": {
+    "name": "採集用-燃素能量球"
+  },
+  "BoundaryMarkerInscription": {
+    "name": "界碑上的刻文"
+  },
+  "IridescentInscriptionFragment": {
+    "name": "鐫光銘印的殘片"
+  },
+  "GoldenEntreaty": {
+    "name": "通牒金盤"
+  },
+  "CazcalsHoraSpecialCareKit": {
+    "name": "卡茲加的「霍萊專用護理套裝」"
+  },
+  "Uthabiti": {
+    "name": "「烏沙博蒂」"
+  },
+  "PurposeBuiltGrapplingHook": {
+    "name": "特製鉤索"
+  },
+  "OrdinaryObsidian": {
+    "name": "普通的黑曜石"
   },
   "TheLittleWitchAndTheUndyingFireI": {
     "name": "小魔女與不熄滅的火·卷一"
@@ -10541,6 +11099,15 @@
   "TheFelineFirmVIII": {
     "name": "貓咪事務所·卷八"
   },
+  "BrokenGraffitiMarkedStone": {
+    "name": "繪有塗鴉的裂石"
+  },
+  "ShatteredNightJade": {
+    "name": "殘夜的碎玉"
+  },
+  "ContendingSpark": {
+    "name": "角逐火簇"
+  },
   "ASettingSunThatNeverSets": {
     "name": "「永遠高掛的落日」"
   },
@@ -10553,6 +11120,18 @@
   "MagicTonic": {
     "name": "「魔水」"
   },
+  "OgunsTestimony": {
+    "name": "奧貢的證言"
+  },
+  "PampasTestimony": {
+    "name": "潘帕的證言"
+  },
+  "TheLocustsPurchaseInvoice": {
+    "name": "蚱蜢派的採買清單"
+  },
+  "AnelasTestimony": {
+    "name": "阿妮拉的證言"
+  },
   "FellDragonsPicturebook": {
     "name": "「邪龍」繪卷"
   },
@@ -10561,6 +11140,141 @@
   },
   "AnIncompleteManuscript": {
     "name": "「一篇未完成的手稿」"
+  },
+  "MissingPackage": {
+    "name": "丟失的快捷郵件"
+  },
+  "DamagedPackage": {
+    "name": "汙損的快捷郵件"
+  },
+  "DamagedLetter": {
+    "name": "破損的信件"
+  },
+  "SlightlySquashedPackage": {
+    "name": "歪歪扭扭的快捷郵件"
+  },
+  "TornLetter": {
+    "name": "裂開的信件"
+  },
+  "AcatsPackage": {
+    "name": "愛雅的快捷郵件"
+  },
+  "ChancasLetter": {
+    "name": "夏安卡的信件"
+  },
+  "ImixsPackage": {
+    "name": "伊蜜的快捷郵件"
+  },
+  "TirdasLetter": {
+    "name": "蒂爾妲的信件"
+  },
+  "MapLeftBehindByTheFirstChief": {
+    "name": "初代首領留下的地圖"
+  },
+  "AminasCoinPouch": {
+    "name": "阿米娜的錢袋"
+  },
+  "KaulusRecommendedExpeditionEquipment": {
+    "name": "卡烏魯推薦的探險裝備"
+  },
+  "PhotoWithAta": {
+    "name": "與阿塔的合照"
+  },
+  "ExpeditionEquipmentPurchasedByMualani": {
+    "name": "瑪拉妮購置的探險裝備"
+  },
+  "PathOfTurnfire": {
+    "name": "回火之路"
+  },
+  "MementosOfTeyvatAlbum": {
+    "name": "提瓦特憶冊"
+  },
+  "DopeyDazzlersNotesOnGraffiti": {
+    "name": "「炫彩呆子」的塗鴉手記"
+  },
+  "AncientChronicleOfTheDreamseekerPriestI": {
+    "name": "古尋夢祭司的紀錄·其之一"
+  },
+  "AncientChronicleOfTheDreamseekerPriestII": {
+    "name": "古尋夢祭司的紀錄·其之二"
+  },
+  "AncientChronicleOfTheDreamseekerPriestIII": {
+    "name": "古尋夢祭司的紀錄·其之三"
+  },
+  "AncientChronicleOfTheDreamseekerPriestIV": {
+    "name": "古尋夢祭司的紀錄·其之四"
+  },
+  "FreshSprayfeatherGill": {
+    "name": "新鮮的浪沫羽鰓"
+  },
+  "AminasCompensation": {
+    "name": "阿米娜的報酬"
+  },
+  "KeyToSomewhere": {
+    "name": "某處的鑰匙"
+  },
+  "CommemorativePhotoOfYouAndMualani": {
+    "name": "{F#妳}{M#你}與瑪拉妮的紀念合照"
+  },
+  "ShinyShell": {
+    "name": "閃亮亮的貝殼"
+  },
+  "AteasTalisman": {
+    "name": "阿伽婭的護身符"
+  },
+  "WoodenModelAlpaca": {
+    "name": "綿馱獸木像"
+  },
+  "StrangeSaurianCartKey": {
+    "name": "奇怪的運龍車鑰匙"
+  },
+  "NoteInADriftBottle": {
+    "name": "漂流瓶內的紙條"
+  },
+  "NoteLeftInsideATreasureChest": {
+    "name": "留在寶箱內的紙條"
+  },
+  "ResearchCenterEmergencyMachineOperationHandbook": {
+    "name": "研究中心緊急機械操作手冊"
+  },
+  "MaaweAndMonetooI": {
+    "name": "瑪阿威與幻寫靈·卷一"
+  },
+  "MaaweAndMonetooII": {
+    "name": "瑪阿威與幻寫靈·卷二"
+  },
+  "MaaweAndMonetooIII": {
+    "name": "瑪阿威與幻寫靈·卷三"
+  },
+  "RecordsOfHananPachaI": {
+    "name": "哈南帕查記事·卷一"
+  },
+  "RecordsOfHananPachaII": {
+    "name": "哈南帕查記事·卷二"
+  },
+  "RecordsOfHananPachaIII": {
+    "name": "哈南帕查記事·卷三"
+  },
+  "TheTaleOfQoyllorAndUkuku": {
+    "name": "奎伊露和烏庫庫的故事"
+  },
+  "TheVolcanoLordAndTheShadowPins": {
+    "name": "火山大王與縫影針"
+  },
+  "PicturesqueRecords": {
+    "name": "筆觸如畫的紀錄"
+  },
+  "InspectionAndMaintenanceRecords": {
+    "name": "驗收與維修紀錄"
+  },
+  "DiaryOfASoldierAbroad": {
+    "name": "駐紮日記"
+  },
+  "UnfinishedMusicalScore": {
+    "name": "未完成的樂稿"
+  },
+  "NoteLeftAtTheCamp": {
+    "name": "營地遺留的筆記"
   },
   "TearsAmongTheStars": {
     "name": "星間之淚"
@@ -10654,6 +11368,24 @@
   },
   "RainbowRoseSeed": {
     "name": "「虹彩薔薇」的種子"
+  },
+  "GrainfruitKernel": {
+    "name": "「顆粒果」的種子"
+  },
+  "CacahuatlSeed": {
+    "name": "「苦種」的種子"
+  },
+  "SaurianClawSucculentSeed": {
+    "name": "「肉龍掌」的種子"
+  },
+  "QuenepaBerrySeed": {
+    "name": "「青蜜莓」的種子"
+  },
+  "BrilliantChrysanthemumSeed": {
+    "name": "「灼灼彩菊」的種子"
+  },
+  "SprayfeatherGillSeed": {
+    "name": "「浪沫羽鰓」的種子"
   },
   "Medaka": {
     "name": "花鱂"
@@ -10807,6 +11539,9 @@
   },
   "WingsOfDelicacies": {
     "name": "餚饌之翼"
+  },
+  "WingsOfSoaringFlame": {
+    "name": "烈火騰燎之翼"
   },
   "RadiantSpincrystal1": {
     "name": "旋曜玉帛·其一"
@@ -11246,6 +11981,36 @@
   "RadiantSpincrystal130": {
     "name": "旋曜玉帛·其一百三十"
   },
+  "RadiantSpincrystal131": {
+    "name": "旋曜玉帛·其一百三十一"
+  },
+  "RadiantSpincrystal132": {
+    "name": "旋曜玉帛·其一百三十二"
+  },
+  "RadiantSpincrystal133": {
+    "name": "旋曜玉帛·其一百三十三"
+  },
+  "RadiantSpincrystal134": {
+    "name": "旋曜玉帛·其一百三十四"
+  },
+  "RadiantSpincrystal135": {
+    "name": "旋曜玉帛·其一百三十五"
+  },
+  "RadiantSpincrystal136": {
+    "name": "旋曜玉帛·其一百三十六"
+  },
+  "RadiantSpincrystal137": {
+    "name": "旋曜玉帛·其一百三十七"
+  },
+  "RadiantSpincrystal138": {
+    "name": "旋曜玉帛·其一百三十八"
+  },
+  "RadiantSpincrystal139": {
+    "name": "旋曜玉帛·其一百三十九"
+  },
+  "RadiantSpincrystal140": {
+    "name": "旋曜玉帛·其一百四十"
+  },
   "LanternFiber": {
     "name": "燈紙纖維"
   },
@@ -11320,6 +12085,9 @@
   },
   "CamAndCablesOfLaw": {
     "name": "衡儀機樞"
+  },
+  "TheSeasSilentShade": {
+    "name": "「凝靜的海色」"
   },
   "FalconsDance": {
     "name": "鷹隼之舞"
@@ -12077,6 +12845,39 @@
   "CelebrationFeastII": {
     "name": "慶典·盛宴·其二"
   },
+  "KinichAjaw": {
+    "name": "基尼奇·阿喬"
+  },
+  "MualaniSharky": {
+    "name": "瑪拉妮·鯊鯊"
+  },
+  "KachinaTwirly": {
+    "name": "卡齊娜·轉轉"
+  },
+  "NatlanDivineArmy": {
+    "name": "納塔·神軍"
+  },
+  "NatlanFieryDragon": {
+    "name": "納塔·炎龍"
+  },
+  "AchievementEndpoint": {
+    "name": "成就·盡頭"
+  },
+  "AchievementFelineFortune": {
+    "name": "成就·喵運"
+  },
+  "NatlanReturnOfTheFlame": {
+    "name": "納塔·歸火"
+  },
+  "AchievementLordOfTheNight": {
+    "name": "成就·夜主"
+  },
+  "TravelNotesPrimalFire": {
+    "name": "紀行·源火"
+  },
+  "CelebrationCrispyAndSweet": {
+    "name": "慶典·甘脆"
+  },
   "EchoDandelionKnight": {
     "name": "遊跡·蒲公英騎士"
   },
@@ -12350,6 +13151,27 @@
   "AsagirisDedicatedFontaineKamera": {
     "name": "朝霧的楓丹專用留影機"
   },
+  "PyroculusResonanceStone": {
+    "name": "火神瞳共鳴石"
+  },
+  "PyroTreasureCompass": {
+    "name": "火之尋寶羅盤"
+  },
+  "FirstbornFiresprite": {
+    "name": "初誕靈焰"
+  },
+  "KaboomBox": {
+    "name": "砰砰爆發箱"
+  },
+  "GraffitiKamera": {
+    "name": "「塗鴉留影機」"
+  },
+  "PaimonsKamera": {
+    "name": "派蒙的留影機"
+  },
+  "ArtifactTransmuter": {
+    "name": "聖言自明機"
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "說明：風神瞳共鳴石"
   },
@@ -12458,6 +13280,21 @@
   "FormulaFlashingMaintenanceMekBait": {
     "name": "配方：維護機關頻閃誘餌"
   },
+  "DiagramFluteOfEzpitzal": {
+    "name": "圖譜：息燧之笛"
+  },
+  "DiagramEarthShaker": {
+    "name": "圖譜：撼地者"
+  },
+  "DiagramFootprintOfTheRainbow": {
+    "name": "圖譜：虹的行跡"
+  },
+  "DiagramRingOfYaxche": {
+    "name": "圖譜：木棉之環"
+  },
+  "DiagramChainBreaker": {
+    "name": "圖譜：碎鏈"
+  },
   "InstructionsDendroculusResonanceStone": {
     "name": "說明：草神瞳共鳴石"
   },
@@ -12472,6 +13309,15 @@
   },
   "FormulaPureWater": {
     "name": "配方：「純潔之水」"
+  },
+  "RecipeStrengthTonic": {
+    "name": "配方：「強水」"
+  },
+  "InstructionsPyroculusResonanceStone": {
+    "name": "說明：火神瞳共鳴石"
+  },
+  "DiagramPyroTreasureCompass": {
+    "name": "圖譜：火之尋寶羅盤"
   },
   "SilkenPrint": {
     "name": "「繪綺之枕印」"
@@ -12557,6 +13403,18 @@
   "FilledWithConfidence": {
     "name": "自信滿滿"
   },
+  "LookingAroundCuriously": {
+    "name": "好奇張望"
+  },
+  "WarmGreeting": {
+    "name": "熱情問候"
+  },
+  "SpontaneousPerformance": {
+    "name": "即興演奏"
+  },
+  "StrivingToNegotiate": {
+    "name": "努力交涉"
+  },
   "RhodeiaOfLoch": {
     "name": "純水精靈·洛蒂婭"
   },
@@ -12628,6 +13486,9 @@
   },
   "FrostOperative": {
     "name": "愚人眾·霜役人"
+  },
+  "HydroHilichurlRogue": {
+    "name": "丘丘水行遊俠"
   },
   "UndividedHeart": {
     "name": "唯此一心"
@@ -12914,6 +13775,15 @@
   "RimeflowRapier": {
     "name": "冰雅刺劍"
   },
+  "MomentOfWakingAndResolve": {
+    "name": "夢曉與決意之刻"
+  },
+  "TheyCallHerCloudRetainer": {
+    "name": "知是留雲僊"
+  },
+  "HydrodartSlime": {
+    "name": "水鏢史萊姆"
+  },
   "MagicGuide": {
     "name": "魔導緒論"
   },
@@ -13166,6 +14036,15 @@
   "GladiatorsTriumphus": {
     "name": "角鬥士的凱旋"
   },
+  "XenochromaticHuntersRay": {
+    "name": "異色獵刀鰩"
+  },
+  "Yumkasaurus": {
+    "name": "匿葉龍"
+  },
+  "Koholasaurus": {
+    "name": "鰭游龍"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -13312,6 +14191,12 @@
   },
   "Serene": {
     "name": "瑟琳"
+  },
+  "StadiumOfTheSacredFlame": {
+    "name": "聖火競技場"
+  },
+  "Atea": {
+    "name": "阿伽婭"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交織之冰"
@@ -13496,6 +14381,12 @@
   "Tada": {
     "name": "噔噔！"
   },
+  "SaurianDiningBuddies": {
+    "name": "龍夥伴的聚餐"
+  },
+  "EdictOfAbsolution": {
+    "name": "赦免宣告"
+  },
   "Origin": {
     "name": "原初"
   },
@@ -13543,6 +14434,9 @@
   },
   "TheChasmCrown": {
     "name": "層岩巨淵·冠冕"
+  },
+  "Natlan": {
+    "name": "納塔"
   },
   "BeginnerPlayerBadge": {
     "name": "初級牌手徽章"
@@ -14024,9 +14918,6 @@
   "HelloWelcome": {
     "name": "「你好！歡迎！」"
   },
-  "ShinyShell": {
-    "name": "「亮亮貝殼」"
-  },
   "ForbiddenZoneFloorLampIronhammer": {
     "name": "禁限地燈—「鐵鎚」"
   },
@@ -14056,6 +14947,18 @@
   },
   "GlowingForestFruit": {
     "name": "「叢林的螢螢果實」"
+  },
+  "FlammabombWoodDancerStreetLamp": {
+    "name": "燃爆木「舞者」路燈"
+  },
+  "AshenAratikuWoodNiftyStreetLamp": {
+    "name": "灰灰樓林木「便巧」路燈"
+  },
+  "WhiteChestnutOakWoodHarpoonStreetLamp": {
+    "name": "白栗櫟木「魚叉」路燈"
+  },
+  "WhiteChestnutOakWoodTwilightFloorLamp": {
+    "name": "白栗櫟木「幽暮」地燈"
   },
   "EfflorescentIllumination": {
     "name": "「花葉百相之光」"
@@ -15125,6 +16028,9 @@
   "MusicTownsHutMardouceHarmony": {
     "name": "樂鎮棚屋—「柔茉和聲」"
   },
+  "SalesSavvy101": {
+    "name": "「行銷販運之方」"
+  },
   "HilichurlOutpostHut": {
     "name": "丘丘前哨小屋"
   },
@@ -15497,6 +16403,63 @@
   "ResourcefulResidenceInTheMusicmakingTown": {
     "name": "「制樂之鎮的巧居」"
   },
+  "StonehutOfEchoesStandardWorkshop": {
+    "name": "回聲石屋-「標準工坊」"
+  },
+  "StonehutOfEchoesAlphaDragon": {
+    "name": "回聲石屋-「群龍之首」"
+  },
+  "StonehutOfEchoesHighTopBoots": {
+    "name": "回聲石屋-「高筒長靴」"
+  },
+  "TequemecanDanceOff": {
+    "name": "「堅岩之谷的競舞」"
+  },
+  "TequemecanTreasures": {
+    "name": "「堅岩之谷的珠翠」"
+  },
+  "TequemecanIngenuity": {
+    "name": "「堅岩之谷的巧思」"
+  },
+  "HuitztlanCampgroundSortAndOrder": {
+    "name": "懸木營地-「分門定序」"
+  },
+  "HuitztlanCampgroundMultiPurposeSpace": {
+    "name": "懸木營地-「兩用空間」"
+  },
+  "HuitztlanCampgroundCompanionsConnection": {
+    "name": "懸木營地-「夥伴關係」"
+  },
+  "HuitztlanCampgroundFoolproofPlan": {
+    "name": "懸木營地-「萬全之策」"
+  },
+  "HuitztlanCampgroundSteadfastInTheStorm": {
+    "name": "懸木營地-「不懼狂風」"
+  },
+  "HuitztlanCampgroundDistributionHub": {
+    "name": "懸木營地-「集散中心」"
+  },
+  "HotSpringRetreatSecretMenu": {
+    "name": "流泉逸居-「秘密菜單」"
+  },
+  "HotSpringRetreatMarketingStrategy": {
+    "name": "流泉逸居-「發行策略」"
+  },
+  "HotSpringRetreatGoWithTheFlow": {
+    "name": "流泉逸居-「順其自然」"
+  },
+  "HotSpringRetreatTidalSurge": {
+    "name": "流泉逸居-「湧動浪潮」"
+  },
+  "WingsOfTheSprings": {
+    "name": "「湧流之地的層翼」"
+  },
+  "SkiffOfTheSprings": {
+    "name": "「湧流之地的扁舟」"
+  },
+  "HotSpringRetreatTopChoice": {
+    "name": "流泉逸居-「上佳選擇」"
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "花鳥噴泉"
   },
@@ -15607,6 +16570,9 @@
   },
   "BrimmingFreightCar": {
     "name": "「滿滿當當載貨車廂」"
+  },
+  "EvenHandedJudgment": {
+    "name": "「周正的判罰」"
   },
   "AdeptusGate": {
     "name": "三眼守仙牌"
@@ -16412,6 +17378,15 @@
   "ConscientiousWindcatcherSentinel": {
     "name": "「兢兢業業捕風衛兵」"
   },
+  "NanatzcayanArtistry": {
+    "name": "「納茨卡延之繪」"
+  },
+  "CeaselessClash": {
+    "name": "「不息的爭流」"
+  },
+  "FlagOfHuitztlan": {
+    "name": "「維茨特蘭之幟」"
+  },
   "BookshelfFreeReading": {
     "name": "書報架-「自由取閱」"
   },
@@ -16426,6 +17401,9 @@
   },
   "CleverlyCraftedShelfHotSalesStrategy": {
     "name": "巧煉陳架-「熱銷策略」"
+  },
+  "CouriersSystemOfSortAndDispatch": {
+    "name": "「訊使的分揀專輸」"
   },
   "PoolOfSapphireGrace": {
     "name": "「靈沼雲池」"
@@ -16514,6 +17492,15 @@
   "GardenStellarMusicalPillar": {
     "name": "「庭園的星輝樂柱」"
   },
+  "TequemecanStronghold": {
+    "name": "「堅岩之谷的圍護」"
+  },
+  "HangingPostOfCoatepecMountain": {
+    "name": "「踞石山中的懸樁」"
+  },
+  "BalustradeOfTheSprings": {
+    "name": "「湧流之地的輕欄」"
+  },
   "SmoothWoodenBench": {
     "name": "平整的木製長凳"
   },
@@ -16552,6 +17539,12 @@
   },
   "MallowWoodChairEZFold": {
     "name": "懸鈴木「簡摺」座椅"
+  },
+  "AzureGemOfTheSprings": {
+    "name": "「流泉的湛藍寶石」"
+  },
+  "SurgingHarmoniesOfTheSprings": {
+    "name": "「流泉的湧浪和聲」"
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "丘丘雙層警戒台"
@@ -16625,6 +17618,12 @@
   "JoyousForestParty": {
     "name": "「叢林的歡聚一堂」"
   },
+  "CompactLongTableCouriersEdition": {
+    "name": "「訊使的就簡長桌」"
+  },
+  "WhiteChestnutOakWoodRawFinishLowTable": {
+    "name": "白栗櫟木「原色」矮桌"
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "酒肆貨櫃-「會須百杯飲」"
   },
@@ -16666,5 +17665,20 @@
   },
   "ScheduleAbidingTrainStationSign": {
     "name": "「恪守時間候車站牌」"
+  },
+  "MegaMightyBoulderBreaker": {
+    "name": "「超猛巨大碎岩轉轉」"
+  },
+  "RidingTheInferno": {
+    "name": "「烈焰的騎行」"
+  },
+  "CouriersTimelyDispatch": {
+    "name": "「訊使的因時快遞」"
+  },
+  "TailoredCourierService": {
+    "name": "「訊使的各取所需」"
+  },
+  "WayToTheExtreme": {
+    "name": "「極限的方向」"
   }
 }

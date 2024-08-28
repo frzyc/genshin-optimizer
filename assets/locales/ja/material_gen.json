@@ -206,6 +206,9 @@
   "StarsailCoin": {
     "name": "星旅コイン"
   },
+  "ColorfulContemplation": {
+    "name": "色彩アイデア"
+  },
   "Primogem": {
     "name": "原石"
   },
@@ -275,6 +278,15 @@
   "FontaineReputationEXP": {
     "name": "評判経験値·フォンテーヌ"
   },
+  "ScionsOfTheCanopyReputationEXP": {
+    "name": "評判経験値·「懸木の民」"
+  },
+  "PeopleOfTheSpringsReputationEXP": {
+    "name": "評判経験値·「流泉の衆」"
+  },
+  "ChildrenOfEchoesReputationEXP": {
+    "name": "評判経験値·「こだまの子」"
+  },
   "MemoryOfEternalFlames": {
     "name": "恒常燃焼の記憶"
   },
@@ -295,6 +307,9 @@
   },
   "MemoryOfImmovableCrystals": {
     "name": "不動晶石の記憶"
+  },
+  "BlazingFlintOre": {
+    "name": "灼熱の燧原鉱"
   },
   "KamisatoAyaka": {
     "name": "神里綾華"
@@ -821,6 +836,9 @@
   "AnAppellativeStroke": {
     "name": "新名撰筆"
   },
+  "ReaffirmedAccordOfAppellation": {
+    "name": "再命名の契約"
+  },
   "EnergyOrbPyro": {
     "name": "元素エネルギーボール(炎)"
   },
@@ -877,6 +895,12 @@
   },
   "QuestUseAtomicEnergyOrbPouch": {
     "name": "任務用-元素蜜嚢原子エネルギーボール"
+  },
+  "PhlogistonEnergyOrb": {
+    "name": "燃素エネルギーオーブ"
+  },
+  "PhlogistonEnergyOrbSeparateDrop": {
+    "name": "燃素エネルギーオーブ（別々にドロップ）"
   },
   "TestRandomTreasureChest": {
     "name": ""
@@ -937,6 +961,24 @@
   },
   "RazorTestPackage": {
     "name": "レザーテストパック"
+  },
+  "Kachina": {
+    "name": "カチーナ"
+  },
+  "Kinich": {
+    "name": "キィニチ"
+  },
+  "Mualani": {
+    "name": "ムアラニ"
+  },
+  "KachinasStellaFortuna": {
+    "name": "カチーナの星屑"
+  },
+  "KinichsStellaFortuna": {
+    "name": "キィニチの星屑"
+  },
+  "MualanisStellaFortuna": {
+    "name": "ムアラニの星屑"
   },
   "Apple": {
     "name": "リンゴ"
@@ -3182,6 +3224,21 @@
   "MidlanderPolearmBillet": {
     "name": "中央大陸長柄武器の原型"
   },
+  "BorderlandSwordBillet": {
+    "name": "境土片手剣の原型"
+  },
+  "BorderlandBowBillet": {
+    "name": "境土弓の原型"
+  },
+  "BorderlandClaymoreBillet": {
+    "name": "境土両手剣の原型"
+  },
+  "BorderlandCatalystBillet": {
+    "name": "境土法器の原型"
+  },
+  "BorderlandPolearmBillet": {
+    "name": "境土長柄武器の原型"
+  },
   "Onikabuto": {
     "name": "オニカブトムシ"
   },
@@ -3308,6 +3365,33 @@
   "ChenyuAdeptea": {
     "name": "沈玉仙茶"
   },
+  "Grainfruit": {
+    "name": "グレインの実"
+  },
+  "CandlecapMushroom": {
+    "name": "キャンドルキノコ"
+  },
+  "SpinelFruit": {
+    "name": "スピネルの実"
+  },
+  "Cacahuatl": {
+    "name": "ショコアトゥルの種"
+  },
+  "SprayfeatherGill": {
+    "name": "波しぶきのエラ"
+  },
+  "BrilliantChrysanthemum": {
+    "name": "シャクギク"
+  },
+  "QuenepaBerry": {
+    "name": "ケネパベリー"
+  },
+  "SaurianClawSucculent": {
+    "name": "サウリアンサキュレント"
+  },
+  "EmbercoreFlower": {
+    "name": "エンバーコアフラワー"
+  },
   "BirchWood": {
     "name": "樺材"
   },
@@ -3370,6 +3454,18 @@
   },
   "TorchWood": {
     "name": "トーチ材"
+  },
+  "WhiteChestnutOakWood": {
+    "name": "ホワイトオーク材"
+  },
+  "AshenAratikuWood": {
+    "name": "アッシェンロリニア材"
+  },
+  "FlammabombWood": {
+    "name": "フレイムボム材"
+  },
+  "PeachPalmWood": {
+    "name": "ピーチココナッツ材"
   },
   "Fabric": {
     "name": "布材"
@@ -4880,6 +4976,33 @@
   "PhilosophiesOfOrder": {
     "name": "「秩序」の哲学"
   },
+  "TeachingsOfContention": {
+    "name": "「角逐」の教え"
+  },
+  "GuideToContention": {
+    "name": "「角逐」の導き"
+  },
+  "PhilosophiesOfContention": {
+    "name": "「角逐」の哲学"
+  },
+  "TeachingsOfKindling": {
+    "name": "「焚燼」の教え"
+  },
+  "GuideToKindling": {
+    "name": "「焚燼」の導き"
+  },
+  "PhilosophiesOfKindling": {
+    "name": "「焚燼」の哲学"
+  },
+  "TeachingsOfConflict": {
+    "name": "「紛争」の教え"
+  },
+  "GuideToConflict": {
+    "name": "「紛争」の導き"
+  },
+  "PhilosophiesOfConflict": {
+    "name": "「紛争」の哲学"
+  },
   "SanctifyingDroplet": {
     "name": "祝福の雫"
   },
@@ -4888,6 +5011,9 @@
   },
   "SanctifyingEssence": {
     "name": "祈聖のエキス"
+  },
+  "SanctifyingElixir": {
+    "name": "祈聖のエリクシル"
   },
   "TestStaminaGrowthItem": {
     "name": "テスト用スタミナ成長アイテム"
@@ -4972,6 +5098,12 @@
   },
   "SpiritCarp": {
     "name": "蒼霊の鯉"
+  },
+  "NatlanShrineOfDepthsKey": {
+    "name": "ナタの地霊壇の鍵"
+  },
+  "Pyroculus": {
+    "name": "失われた炎神の瞳"
   },
   "JubilantFeather": {
     "name": "歓声の羽"
@@ -7034,6 +7166,186 @@
   "AMagicalMix": {
     "name": "マジックスペシャル"
   },
+  "SuspiciousMeatnado": {
+    "name": "微妙な獣肉ハリケーン"
+  },
+  "Meatnado": {
+    "name": "獣肉ハリケーン"
+  },
+  "DeliciousMeatnado": {
+    "name": "美味しそうな獣肉ハリケーン"
+  },
+  "SuspiciousAppleRolyPoly": {
+    "name": "微妙なアップルシュトゥルーデル"
+  },
+  "AppleRolyPoly": {
+    "name": "アップルシュトゥルーデル"
+  },
+  "DeliciousAppleRolyPoly": {
+    "name": "美味しそうなアップルシュトゥルーデル"
+  },
+  "SuspiciousGlitteringGemstones": {
+    "name": "微妙なきらきらジュエリー"
+  },
+  "GlitteringGemstones": {
+    "name": "きらきらジュエリー"
+  },
+  "DeliciousGlitteringGemstones": {
+    "name": "美味しそうなきらきらジュエリー"
+  },
+  "SuspiciousHotSpringOClock": {
+    "name": "微妙な温泉タイム"
+  },
+  "HotSpringOClock": {
+    "name": "温泉タイム"
+  },
+  "DeliciousHotSpringOClock": {
+    "name": "美味しそうな温泉タイム"
+  },
+  "SuspiciousPuffPops": {
+    "name": "微妙なドキドキポンポン"
+  },
+  "PuffPops": {
+    "name": "ドキドキポンポン"
+  },
+  "DeliciousPuffPops": {
+    "name": "美味しそうなドキドキポンポン"
+  },
+  "SuspiciousSaurusCrackers": {
+    "name": "微妙なちび竜ビスケット"
+  },
+  "SaurusCrackers": {
+    "name": "ちび竜ビスケット"
+  },
+  "DeliciousSaurusCrackers": {
+    "name": "美味しそうなちび竜ビスケット"
+  },
+  "SuspiciousForestOfColor": {
+    "name": "微妙なカラフルフォレスト"
+  },
+  "ForestOfColor": {
+    "name": "カラフルフォレスト"
+  },
+  "DeliciousForestOfColor": {
+    "name": "美味しそうなカラフルフォレスト"
+  },
+  "SuspiciousGrilledFishInMintSauce": {
+    "name": "微妙な魚のミントソースグリル"
+  },
+  "GrilledFishInMintSauce": {
+    "name": "魚のミントソースグリル"
+  },
+  "DeliciousGrilledFishInMintSauce": {
+    "name": "美味しそうな魚のミントソースグリル"
+  },
+  "SuspiciousTatacos": {
+    "name": "微妙なタタコス"
+  },
+  "Tatacos": {
+    "name": "タタコス"
+  },
+  "DeliciousTatacos": {
+    "name": "美味しそうなタタコス"
+  },
+  "SuspiciousSourSauceKipper": {
+    "name": "微妙なセビチェ"
+  },
+  "SourSauceKipper": {
+    "name": "セビチェ"
+  },
+  "DeliciousSourSauceKipper": {
+    "name": "美味しそうなセビチェ"
+  },
+  "SuspiciousChocolate": {
+    "name": "微妙なチョコレート"
+  },
+  "Chocolate": {
+    "name": "チョコレート"
+  },
+  "DeliciousChocolate": {
+    "name": "美味しそうなチョコレート"
+  },
+  "SuspiciousStuffedNMashedPotatoes": {
+    "name": "微妙なカウサ"
+  },
+  "StuffedNMashedPotatoes": {
+    "name": "カウサ"
+  },
+  "DeliciousStuffedNMashedPotatoes": {
+    "name": "美味しそうなカウサ"
+  },
+  "SuspiciousCupOGrainfruit": {
+    "name": "微妙なグレインカップ"
+  },
+  "CupOGrainfruit": {
+    "name": "グレインカップ"
+  },
+  "DeliciousCupOGrainfruit": {
+    "name": "美味しそうなグレインカップ"
+  },
+  "SuspiciousGrainfruitMeatSoup": {
+    "name": "微妙なグレイン·ポソレ"
+  },
+  "GrainfruitMeatSoup": {
+    "name": "グレイン·ポソレ"
+  },
+  "DeliciousGrainfruitMeatSoup": {
+    "name": "美味しそうなグレイン·ポソレ"
+  },
+  "SuspiciousGrainfruitChips": {
+    "name": "微妙なグレインチップス"
+  },
+  "GrainfruitChips": {
+    "name": "グレインチップス"
+  },
+  "DeliciousGrainfruitChips": {
+    "name": "美味しそうなグレインチップス"
+  },
+  "SuspiciousFriedShrimpBeanballs": {
+    "name": "微妙なアカラジェ"
+  },
+  "FriedShrimpBeanballs": {
+    "name": "アカラジェ"
+  },
+  "DeliciousFriedShrimpBeanballs": {
+    "name": "美味しそうなアカラジェ"
+  },
+  "SuspiciousBlazedMeatStew": {
+    "name": "微妙なブレイズ·ミートシチュー"
+  },
+  "BlazedMeatStew": {
+    "name": "ブレイズ·ミートシチュー"
+  },
+  "DeliciousBlazedMeatStew": {
+    "name": "美味しそうなブレイズ·ミートシチュー"
+  },
+  "SaurianHuntersReward": {
+    "name": "竜狩り人の褒賞"
+  },
+  "PassTheLuck": {
+    "name": "幸運のおすそわけ"
+  },
+  "ImpeccablyOrganized": {
+    "name": "きっちりチップス"
+  },
+  "SuspiciousGoldenApplePastry": {
+    "name": "微妙なゴールデンアップルペストリー"
+  },
+  "GoldenApplePastry": {
+    "name": "ゴールデンアップルペストリー"
+  },
+  "DeliciousGoldenApplePastry": {
+    "name": "美味しそうなゴールデンアップルペストリー"
+  },
+  "SuspiciousDelightsOfWondrousWanderings": {
+    "name": "微妙なワンダーボックス"
+  },
+  "DelightsOfWondrousWanderings": {
+    "name": "ワンダーボックス"
+  },
+  "DeliciousDelightsOfWondrousWanderings": {
+    "name": "美味しそうなワンダーボックス"
+  },
   "RecipeItem": {
     "name": "レシピアイテム"
   },
@@ -7625,6 +7937,63 @@
   "RecipeCrispCroissantCombo": {
     "name": "レシピ：カリカリクロワッサン"
   },
+  "RecipeMeatnado": {
+    "name": "レシピ：獣肉ハリケーン"
+  },
+  "RecipeAppleRolyPoly": {
+    "name": "レシピ：アップルシュトゥルーデル"
+  },
+  "RecipeGlitteringGemstones": {
+    "name": "レシピ：きらきらジュエリー"
+  },
+  "RecipeHotSpringOClock": {
+    "name": "レシピ：温泉タイム"
+  },
+  "RecipePuffPops": {
+    "name": "レシピ：ドキドキポンポン"
+  },
+  "RecipeSaurusCrackers": {
+    "name": "レシピ：ちび竜ビスケット"
+  },
+  "RecipeForestOfColor": {
+    "name": "レシピ：カラフルフォレスト"
+  },
+  "RecipeGrilledFishInMintSauce": {
+    "name": "レシピ：魚のミントソースグリル"
+  },
+  "RecipeTatacos": {
+    "name": "レシピ：タタコス"
+  },
+  "RecipeSourSauceKipper": {
+    "name": "レシピ：セビチェ"
+  },
+  "RecipeChocolate": {
+    "name": "レシピ：チョコレート"
+  },
+  "RecipeStuffedNMashedPotatoes": {
+    "name": "レシピ：カウサ"
+  },
+  "RecipeCupOGrainfruit": {
+    "name": "レシピ：グレインカップ"
+  },
+  "RecipeGrainfruitMeatSoup": {
+    "name": "レシピ：グレイン·ポソレ"
+  },
+  "RecipeGrainfruitChips": {
+    "name": "レシピ：グレインチップス"
+  },
+  "RecipeFriedShrimpBeanballs": {
+    "name": "レシピ：アカラジェ"
+  },
+  "RecipeBlazedMeatStew": {
+    "name": "レシピ：ブレイズ·ミートシチュー"
+  },
+  "RecipeGoldenApplePastry": {
+    "name": "レシピ：ゴールデンアップルペストリー"
+  },
+  "RecipeDelightsOfWondrousWanderings": {
+    "name": "レシピ：ワンダーボックス"
+  },
   "CraftedItems": {
     "name": "合成産物"
   },
@@ -7744,6 +8113,9 @@
   },
   "FlashingMaintenanceMekBait": {
     "name": "メンテマシナリーの閃光釣り餌"
+  },
+  "StrengthTonic": {
+    "name": "「ストロングトニック」"
   },
   "PrimordialEssence": {
     "name": "原質"
@@ -8045,6 +8417,51 @@
   "StillSmolderingHilt": {
     "name": "光揺らぐ剣の柄"
   },
+  "JuvenileFang": {
+    "name": "未熟な牙"
+  },
+  "SeasonedFang": {
+    "name": "熟練の牙"
+  },
+  "TyrantsFang": {
+    "name": "覇道の牙"
+  },
+  "SentrysWoodenWhistle": {
+    "name": "従戦士の木笛"
+  },
+  "WarriorsMetalWhistle": {
+    "name": "戦士の鉄笛"
+  },
+  "SaurianCrownedWarriorsGoldenWhistle": {
+    "name": "竜冠戦士の金笛"
+  },
+  "ShardOfAShatteredWill": {
+    "name": "砕けた意志の欠片"
+  },
+  "LocusOfAClearWill": {
+    "name": "明瞭な意志の偶像"
+  },
+  "SigilOfAStridingWill": {
+    "name": "巡る意志の偶像"
+  },
+  "IgnitedStone": {
+    "name": "燃え盛る石"
+  },
+  "IgnitedSeedOfLife": {
+    "name": "燃え盛る命の種"
+  },
+  "IgnitedSeeingEye": {
+    "name": "燃え盛る遊像の眼"
+  },
+  "AxisOfTheSecretSource": {
+    "name": "秘源のベアリング"
+  },
+  "SheathOfTheSecretSource": {
+    "name": "秘源のシース"
+  },
+  "HeartOfTheSecretSource": {
+    "name": "秘源のコア"
+  },
   "HurricaneSeed": {
     "name": "暴風の種"
   },
@@ -8231,6 +8648,15 @@
   "DenialAndJudgment": {
     "name": "否定と裁決"
   },
+  "TheCornerstoneOfStarsAndFlames": {
+    "name": "星と炎の礎石"
+  },
+  "MarkOfTheBindingBlessing": {
+    "name": "祝福の縛印"
+  },
+  "OverripeFlamegranate": {
+    "name": "フレイムグレネード·爛熟"
+  },
   "TileOfDecarabiansTower": {
     "name": "高塔の王の瓦"
   },
@@ -8411,6 +8837,42 @@
   "GoldenGobletOfThePristineSea": {
     "name": "無垢な海の金盃"
   },
+  "BlazingSacrificialHeartsTerror": {
+    "name": "灼心を捧げる恐怖"
+  },
+  "BlazingSacrificialHeartsHesitance": {
+    "name": "灼心を捧げる躊躇"
+  },
+  "BlazingSacrificialHeartsResolve": {
+    "name": "灼心を捧げる決意"
+  },
+  "BlazingSacrificialHeartsSplendor": {
+    "name": "灼心を捧げる栄光"
+  },
+  "DeliriousDecadenceOfTheSacredLord": {
+    "name": "狂乱の聖主の腐敗"
+  },
+  "DeliriousDesolationOfTheSacredLord": {
+    "name": "狂乱の聖主の哀れ"
+  },
+  "DeliriousDemeanorOfTheSacredLord": {
+    "name": "狂乱の聖主の容貌"
+  },
+  "DeliriousDivinityOfTheSacredLord": {
+    "name": "狂乱の聖主の神面"
+  },
+  "NightWindsMysticConsideration": {
+    "name": "神秘なる煙の思考"
+  },
+  "NightWindsMysticPremonition": {
+    "name": "神秘なる煙の予感"
+  },
+  "NightWindsMysticAugury": {
+    "name": "神秘なる煙の予兆"
+  },
+  "NightWindsMysticRevelation": {
+    "name": "神秘なる煙の啓示"
+  },
   "StarterSupplyBundle": {
     "name": "旅立ち補給パック"
   },
@@ -8429,8 +8891,8 @@
   "CharacterAscensionBundleVeryHigh": {
     "name": "キャラクター突破選択-最高級"
   },
-  "TalentMaterialsBundleLow": {
-    "name": "天賦書選択-低級"
+  "PackOfVirtuousTeachings": {
+    "name": "品格教材パック"
   },
   "VirtuousShareBundle": {
     "name": "美徳シェアパック"
@@ -8504,6 +8966,12 @@
   "OutfitOptionBundle": {
     "name": "コスチューム引き換えチケット"
   },
+  "BorderlandBilletTrove": {
+    "name": "境土の原型の箱"
+  },
+  "TalentShareBundle": {
+    "name": "天賦助力シェアパック"
+  },
   "BEP": {
     "name": "紀行経験"
   },
@@ -8542,6 +9010,12 @@
   },
   "PhilosophiesOfTheOriginalCurrent": {
     "name": "源流の哲学"
+  },
+  "GuidesOfAJourney": {
+    "name": "旅の導き"
+  },
+  "PhilosophiesOfAJourney": {
+    "name": "旅の哲学"
   },
   "DomainReliquaryTierIII": {
     "name": "深秘の聖遺物箱·三等"
@@ -10340,6 +10814,12 @@
   "FishSeizedFromAPelicansMouth": {
     "name": "「ペリカン」の口から奪った魚"
   },
+  "YellowObsidianFragment": {
+    "name": "黄曜石の欠片"
+  },
+  "YellowObsidianRing": {
+    "name": "黄曜石の輪"
+  },
   "InvitationFromTheAratakiGang": {
     "name": "荒瀧派の招待状"
   },
@@ -10358,6 +10838,9 @@
   "TaintedHydroPhantasmExtract": {
     "name": "濁水幻霊の抽出物"
   },
+  "CouriersTrialKeystone": {
+    "name": "伝達使の試練に使われる石の鍵"
+  },
   "ShikanoinHeizousMessage": {
     "name": "鹿野院平蔵のメッセージ"
   },
@@ -10366,6 +10849,9 @@
   },
   "LynettesEnvelope": {
     "name": "リネットの封筒"
+  },
+  "TalismanOfWaxaklahunUbahKan": {
+    "name": "ワシャクラフン·ウバ·カンの護符"
   },
   "RestoredScore": {
     "name": "修復された楽譜"
@@ -10400,6 +10886,15 @@
   "DamagedScore": {
     "name": "破損した楽譜"
   },
+  "KeyWithFrontalNotches": {
+    "name": "先端側にギザギザがある鍵"
+  },
+  "KeyWithCenteredNotches": {
+    "name": "真ん中にギザギザがある鍵"
+  },
+  "KeyWithRearNotches": {
+    "name": "後端側にギザギザがある鍵"
+  },
   "BrickstacksLongRangeLamp": {
     "name": "ブロックサーチライト"
   },
@@ -10423,6 +10918,21 @@
   },
   "RuggierosNotesII": {
     "name": "ルッジェロのノート·2"
+  },
+  "GreenObsidianFragment": {
+    "name": "緑曜石の欠片"
+  },
+  "GreenObsidianRing": {
+    "name": "緑曜石の輪"
+  },
+  "AzureObsidianFragment": {
+    "name": "藍曜石の欠片"
+  },
+  "AzureObsidianRing": {
+    "name": "藍曜石の輪"
+  },
+  "NightJade": {
+    "name": "夜の玉"
   },
   "PagesFromALostScoreII": {
     "name": "失われた譜面の断片·2"
@@ -10454,6 +10964,15 @@
   "GuardsSpear": {
     "name": "衛兵の槍"
   },
+  "StarShard": {
+    "name": "星の欠片"
+  },
+  "CrudeObsidianStatue": {
+    "name": "粗っぽい黒曜石の像"
+  },
+  "RedMetalKey": {
+    "name": "赤い金属の鍵"
+  },
   "TreasureMapWithTheVaultsLocation": {
     "name": "宝物の在処を示す「宝の地図」"
   },
@@ -10465,6 +10984,9 @@
   },
   "HarmostsNotesII": {
     "name": "調律師のノート·下"
+  },
+  "GreenEdgedPaperSlip": {
+    "name": "緑の模様があしらわれた紙"
   },
   "TatteredNavigationLog": {
     "name": "ボロボロの航海日誌"
@@ -10495,6 +11017,42 @@
   },
   "ExperimentLog": {
     "name": "実験日誌"
+  },
+  "FreshSourSauceKipper": {
+    "name": "新鮮なセビチェ"
+  },
+  "AGemMeantAsAGift": {
+    "name": "贈り物の宝石"
+  },
+  "JewelArtisansToolbox": {
+    "name": "宝石職人の道具箱"
+  },
+  "JewelArtisansBoxOfParts": {
+    "name": "宝石職人の部品箱"
+  },
+  "PhlogistonEnergyOrbForGathering": {
+    "name": "採集用-燃素エネルギーオーブ"
+  },
+  "BoundaryMarkerInscription": {
+    "name": "境界の碑に刻まれた文字"
+  },
+  "IridescentInscriptionFragment": {
+    "name": "光の刻印の欠片"
+  },
+  "GoldenEntreaty": {
+    "name": "通牒の金盤"
+  },
+  "CazcalsHoraSpecialCareKit": {
+    "name": "カズーガの「ホーリーお世話専用セット」"
+  },
+  "Uthabiti": {
+    "name": "「ウッサビーティ」"
+  },
+  "PurposeBuiltGrapplingHook": {
+    "name": "特製のカギ縄"
+  },
+  "OrdinaryObsidian": {
+    "name": "普通の黒曜石"
   },
   "TheLittleWitchAndTheUndyingFireI": {
     "name": "小さな魔女と消えない炎·1"
@@ -10541,6 +11099,15 @@
   "TheFelineFirmVIII": {
     "name": "ニャンコ事務所·8"
   },
+  "BrokenGraffitiMarkedStone": {
+    "name": "ラクガキの描かれた石"
+  },
+  "ShatteredNightJade": {
+    "name": "残夜の砕玉"
+  },
+  "ContendingSpark": {
+    "name": "角逐の火"
+  },
   "ASettingSunThatNeverSets": {
     "name": "「永遠に沈まぬ夕日」"
   },
@@ -10553,6 +11120,18 @@
   "MagicTonic": {
     "name": "「魔水」"
   },
+  "OgunsTestimony": {
+    "name": "オグンの証言"
+  },
+  "PampasTestimony": {
+    "name": "パンパの証言"
+  },
+  "TheLocustsPurchaseInvoice": {
+    "name": "バッタ派の購入明細"
+  },
+  "AnelasTestimony": {
+    "name": "アネラの証言"
+  },
   "FellDragonsPicturebook": {
     "name": "「悪龍」の絵本"
   },
@@ -10561,6 +11140,141 @@
   },
   "AnIncompleteManuscript": {
     "name": "「未完成の手稿」"
+  },
+  "MissingPackage": {
+    "name": "失くした郵便物"
+  },
+  "DamagedPackage": {
+    "name": "汚れた郵便物"
+  },
+  "DamagedLetter": {
+    "name": "破損した手紙"
+  },
+  "SlightlySquashedPackage": {
+    "name": "くしゃくしゃになった郵便物"
+  },
+  "TornLetter": {
+    "name": "封が破れた手紙"
+  },
+  "AcatsPackage": {
+    "name": "アイヤの郵便物"
+  },
+  "ChancasLetter": {
+    "name": "チアンカの手紙"
+  },
+  "ImixsPackage": {
+    "name": "イミシュの郵便物"
+  },
+  "TirdasLetter": {
+    "name": "ティルダの手紙"
+  },
+  "MapLeftBehindByTheFirstChief": {
+    "name": "初代族長が残した地図"
+  },
+  "AminasCoinPouch": {
+    "name": "アミナのモラ袋"
+  },
+  "KaulusRecommendedExpeditionEquipment": {
+    "name": "カウルが勧めてくれた冒険装備"
+  },
+  "PhotoWithAta": {
+    "name": "アタとの記念写真"
+  },
+  "ExpeditionEquipmentPurchasedByMualani": {
+    "name": "ムアラニが購入した冒険装備"
+  },
+  "PathOfTurnfire": {
+    "name": "廻焔の道"
+  },
+  "MementosOfTeyvatAlbum": {
+    "name": "テイワットの思い出のアルバム"
+  },
+  "DopeyDazzlersNotesOnGraffiti": {
+    "name": "「カラフルノロマ」の手記"
+  },
+  "AncientChronicleOfTheDreamseekerPriestI": {
+    "name": "夢を求める祭司の古記録·1"
+  },
+  "AncientChronicleOfTheDreamseekerPriestII": {
+    "name": "夢を求める祭司の古記録·2"
+  },
+  "AncientChronicleOfTheDreamseekerPriestIII": {
+    "name": "夢を求める祭司の古記録·3"
+  },
+  "AncientChronicleOfTheDreamseekerPriestIV": {
+    "name": "夢を求める祭司の古記録·4"
+  },
+  "FreshSprayfeatherGill": {
+    "name": "新鮮な波しぶきのエラ"
+  },
+  "AminasCompensation": {
+    "name": "アミナからの報酬"
+  },
+  "KeyToSomewhere": {
+    "name": "どこかの鍵"
+  },
+  "CommemorativePhotoOfYouAndMualani": {
+    "name": "ムアラニとの記念写真"
+  },
+  "ShinyShell": {
+    "name": "キラキラした貝殻"
+  },
+  "AteasTalisman": {
+    "name": "アテアのお守り"
+  },
+  "WoodenModelAlpaca": {
+    "name": "モコモコ駄獣の木彫り"
+  },
+  "StrangeSaurianCartKey": {
+    "name": "奇妙な竜運搬車の鍵"
+  },
+  "NoteInADriftBottle": {
+    "name": "漂流瓶の中の紙切れ"
+  },
+  "NoteLeftInsideATreasureChest": {
+    "name": "宝箱の中にあった紙切れ"
+  },
+  "ResearchCenterEmergencyMachineOperationHandbook": {
+    "name": "研究センター緊急機械操作マニュアル"
+  },
+  "MaaweAndMonetooI": {
+    "name": "マーウェと幻写霊·1"
+  },
+  "MaaweAndMonetooII": {
+    "name": "マーウェと幻写霊·2"
+  },
+  "MaaweAndMonetooIII": {
+    "name": "マーウェと幻写霊·3"
+  },
+  "RecordsOfHananPachaI": {
+    "name": "ハナン·パチャの記録·1"
+  },
+  "RecordsOfHananPachaII": {
+    "name": "ハナン·パチャの記録·2"
+  },
+  "RecordsOfHananPachaIII": {
+    "name": "ハナン·パチャの記録·3"
+  },
+  "TheTaleOfQoyllorAndUkuku": {
+    "name": "クイールとウククの物語"
+  },
+  "TheVolcanoLordAndTheShadowPins": {
+    "name": "火山大王と陰縫いの針"
+  },
+  "PicturesqueRecords": {
+    "name": "絵のような記録"
+  },
+  "InspectionAndMaintenanceRecords": {
+    "name": "検収と修理記録"
+  },
+  "DiaryOfASoldierAbroad": {
+    "name": "駐屯日記"
+  },
+  "UnfinishedMusicalScore": {
+    "name": "未完成の楽譜"
+  },
+  "NoteLeftAtTheCamp": {
+    "name": "拠点に残されたノート"
   },
   "TearsAmongTheStars": {
     "name": "星間の涙"
@@ -10654,6 +11368,24 @@
   },
   "RainbowRoseSeed": {
     "name": "「レインボーローズ」の種"
+  },
+  "GrainfruitKernel": {
+    "name": "「グレインの実」の種"
+  },
+  "CacahuatlSeed": {
+    "name": "「ショコアトゥルの種」の種"
+  },
+  "SaurianClawSucculentSeed": {
+    "name": "「サウリアンサキュレント」の種"
+  },
+  "QuenepaBerrySeed": {
+    "name": "「ケネパベリー」の種"
+  },
+  "BrilliantChrysanthemumSeed": {
+    "name": "「シャクギク」の種"
+  },
+  "SprayfeatherGillSeed": {
+    "name": "「波しぶきのエラ」の種"
   },
   "Medaka": {
     "name": "グッピー"
@@ -10806,7 +11538,10 @@
     "name": "須臾の夢の翼"
   },
   "WingsOfDelicacies": {
-    "name": "饗宴の翼"
+    "name": "盛宴の翼"
+  },
+  "WingsOfSoaringFlame": {
+    "name": "燎原烈火の翼"
   },
   "RadiantSpincrystal1": {
     "name": "旋曜玉帛·1"
@@ -11246,6 +11981,36 @@
   "RadiantSpincrystal130": {
     "name": "旋曜玉帛·130"
   },
+  "RadiantSpincrystal131": {
+    "name": "旋曜玉帛·131"
+  },
+  "RadiantSpincrystal132": {
+    "name": "旋曜玉帛·132"
+  },
+  "RadiantSpincrystal133": {
+    "name": "旋曜玉帛·133"
+  },
+  "RadiantSpincrystal134": {
+    "name": "旋曜玉帛·134"
+  },
+  "RadiantSpincrystal135": {
+    "name": "旋曜玉帛·135"
+  },
+  "RadiantSpincrystal136": {
+    "name": "旋曜玉帛·136"
+  },
+  "RadiantSpincrystal137": {
+    "name": "旋曜玉帛·137"
+  },
+  "RadiantSpincrystal138": {
+    "name": "旋曜玉帛·138"
+  },
+  "RadiantSpincrystal139": {
+    "name": "旋曜玉帛·139"
+  },
+  "RadiantSpincrystal140": {
+    "name": "旋曜玉帛·140"
+  },
   "LanternFiber": {
     "name": "紙の繊維"
   },
@@ -11320,6 +12085,9 @@
   },
   "CamAndCablesOfLaw": {
     "name": "衡儀機枢"
+  },
+  "TheSeasSilentShade": {
+    "name": "静かな海色"
   },
   "FalconsDance": {
     "name": "鷹の舞"
@@ -12077,6 +12845,39 @@
   "CelebrationFeastII": {
     "name": "祭典·宴会·2"
   },
+  "KinichAjaw": {
+    "name": "キィニチ·アハウ"
+  },
+  "MualaniSharky": {
+    "name": "ムアラニ·サメくん"
+  },
+  "KachinaTwirly": {
+    "name": "カチーナ·コマちゃん"
+  },
+  "NatlanDivineArmy": {
+    "name": "ナタ·神の軍"
+  },
+  "NatlanFieryDragon": {
+    "name": "ナタ·炎龍"
+  },
+  "AchievementEndpoint": {
+    "name": "アチーブメント·果て"
+  },
+  "AchievementFelineFortune": {
+    "name": "アチーブメント·にゃん運"
+  },
+  "NatlanReturnOfTheFlame": {
+    "name": "ナタ·帰火"
+  },
+  "AchievementLordOfTheNight": {
+    "name": "アチーブメント·夜の主"
+  },
+  "TravelNotesPrimalFire": {
+    "name": "紀行·源火"
+  },
+  "CelebrationCrispyAndSweet": {
+    "name": "祭典·あまあまサクサク"
+  },
   "EchoDandelionKnight": {
     "name": "軌跡·蒲公英騎士"
   },
@@ -12350,6 +13151,27 @@
   "AsagirisDedicatedFontaineKamera": {
     "name": "朝霧のフォンテーヌ専用写真機"
   },
+  "PyroculusResonanceStone": {
+    "name": "炎神の瞳の共鳴石"
+  },
+  "PyroTreasureCompass": {
+    "name": "炎のトレジャーコンパス"
+  },
+  "FirstbornFiresprite": {
+    "name": "新生の霊炎"
+  },
+  "KaboomBox": {
+    "name": "バンバンびっくり箱"
+  },
+  "GraffitiKamera": {
+    "name": "「ラクガキ写真機」"
+  },
+  "PaimonsKamera": {
+    "name": "パイモンの写真機"
+  },
+  "ArtifactTransmuter": {
+    "name": "聖言のタイプライター"
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "説明：風神の瞳の共鳴石"
   },
@@ -12458,6 +13280,21 @@
   "FormulaFlashingMaintenanceMekBait": {
     "name": "配合：メンテマシナリーの閃光釣り餌"
   },
+  "DiagramFluteOfEzpitzal": {
+    "name": "鍛造図：エズピツァルの笛"
+  },
+  "DiagramEarthShaker": {
+    "name": "鍛造図：アースシェイカー"
+  },
+  "DiagramFootprintOfTheRainbow": {
+    "name": "鍛造図：虹の行方"
+  },
+  "DiagramRingOfYaxche": {
+    "name": "鍛造図：ヤシュチェの環"
+  },
+  "DiagramChainBreaker": {
+    "name": "鍛造図：チェーンブレイカー"
+  },
   "InstructionsDendroculusResonanceStone": {
     "name": "説明：草神の瞳の共鳴石"
   },
@@ -12472,6 +13309,15 @@
   },
   "FormulaPureWater": {
     "name": "レシピ：「純潔の水」"
+  },
+  "RecipeStrengthTonic": {
+    "name": "配合：「ストロングトニック」"
+  },
+  "InstructionsPyroculusResonanceStone": {
+    "name": "説明：炎神の瞳の共鳴石"
+  },
+  "DiagramPyroTreasureCompass": {
+    "name": "図譜：炎のトレジャーコンパス"
   },
   "SilkenPrint": {
     "name": "「絵綺の枕印」"
@@ -12557,6 +13403,18 @@
   "FilledWithConfidence": {
     "name": "自信満々"
   },
+  "LookingAroundCuriously": {
+    "name": "興味津々"
+  },
+  "WarmGreeting": {
+    "name": "元気な挨拶"
+  },
+  "SpontaneousPerformance": {
+    "name": "即興演奏"
+  },
+  "StrivingToNegotiate": {
+    "name": "真面目な交渉"
+  },
   "RhodeiaOfLoch": {
     "name": "純水精霊·ローデシア"
   },
@@ -12628,6 +13486,9 @@
   },
   "FrostOperative": {
     "name": "ファデュイ·氷霜の従者"
+  },
+  "HydroHilichurlRogue": {
+    "name": "ヒルチャールレンジャー·水"
   },
   "UndividedHeart": {
     "name": "唯一の心"
@@ -12914,6 +13775,15 @@
   "RimeflowRapier": {
     "name": "優雅な氷剣"
   },
+  "MomentOfWakingAndResolve": {
+    "name": "目覚めと決意の刻"
+  },
+  "TheyCallHerCloudRetainer": {
+    "name": "留雲を仙と覚る"
+  },
+  "HydrodartSlime": {
+    "name": "ハイドロダーツスライム"
+  },
   "MagicGuide": {
     "name": "魔導緒論"
   },
@@ -13166,6 +14036,15 @@
   "GladiatorsTriumphus": {
     "name": "剣闘士の凱旋"
   },
+  "XenochromaticHuntersRay": {
+    "name": "狩猟刀エイ亜種"
+  },
+  "Yumkasaurus": {
+    "name": "ユムカ竜"
+  },
+  "Koholasaurus": {
+    "name": "コホラ竜"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -13312,6 +14191,12 @@
   },
   "Serene": {
     "name": "セレーネ"
+  },
+  "StadiumOfTheSacredFlame": {
+    "name": "聖火競技場"
+  },
+  "Atea": {
+    "name": "アテア"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交錯の氷"
@@ -13496,6 +14381,12 @@
   "Tada": {
     "name": "ジャジャ～ン！"
   },
+  "SaurianDiningBuddies": {
+    "name": "竜の仲間たちの食事"
+  },
+  "EdictOfAbsolution": {
+    "name": "赦免の宣告"
+  },
   "Origin": {
     "name": "原初"
   },
@@ -13543,6 +14434,9 @@
   },
   "TheChasmCrown": {
     "name": "層岩巨淵·冠"
+  },
+  "Natlan": {
+    "name": "ナタ"
   },
   "BeginnerPlayerBadge": {
     "name": "初心者プレイヤーメダル"
@@ -14024,9 +14918,6 @@
   "HelloWelcome": {
     "name": "「こんにちは！ようこそ！」"
   },
-  "ShinyShell": {
-    "name": "「ぴかぴか貝殻」"
-  },
   "ForbiddenZoneFloorLampIronhammer": {
     "name": "禁戒のフロアランプ—「鉄槌」"
   },
@@ -14056,6 +14947,18 @@
   },
   "GlowingForestFruit": {
     "name": "「森を照らすたわわな実」"
+  },
+  "FlammabombWoodDancerStreetLamp": {
+    "name": "フレイムボム材「踊り子」街灯"
+  },
+  "AshenAratikuWoodNiftyStreetLamp": {
+    "name": "アッシェンロリニア材「便利」街灯"
+  },
+  "WhiteChestnutOakWoodHarpoonStreetLamp": {
+    "name": "ホワイトオーク材「金突き」街灯"
+  },
+  "WhiteChestnutOakWoodTwilightFloorLamp": {
+    "name": "ホワイトオーク材「薄暗い夕暮れ」フロアランプ"
   },
   "EfflorescentIllumination": {
     "name": "「花葉百相の光」"
@@ -15125,6 +16028,9 @@
   "MusicTownsHutMardouceHarmony": {
     "name": "音楽の町の小屋-「ルミドゥースとマルコットのハーモニー」"
   },
+  "SalesSavvy101": {
+    "name": "「売り捌く方法」"
+  },
   "HilichurlOutpostHut": {
     "name": "ヒルチャールの前哨小屋"
   },
@@ -15497,6 +16403,63 @@
   "ResourcefulResidenceInTheMusicmakingTown": {
     "name": "「音楽の町の巧緻な住居」"
   },
+  "StonehutOfEchoesStandardWorkshop": {
+    "name": "こだま石屋-「標準工房」"
+  },
+  "StonehutOfEchoesAlphaDragon": {
+    "name": "こだま石屋-「群竜の首」"
+  },
+  "StonehutOfEchoesHighTopBoots": {
+    "name": "こだま石屋-「トールブーツ」"
+  },
+  "TequemecanDanceOff": {
+    "name": "「堅岩の谷のダンスバトル」"
+  },
+  "TequemecanTreasures": {
+    "name": "「堅岩の谷の珠と翡翠」"
+  },
+  "TequemecanIngenuity": {
+    "name": "「堅岩の谷の創意」"
+  },
+  "HuitztlanCampgroundSortAndOrder": {
+    "name": "懸木キャンプ-「門により順序が決まる」"
+  },
+  "HuitztlanCampgroundMultiPurposeSpace": {
+    "name": "懸木キャンプ-「両用空間」"
+  },
+  "HuitztlanCampgroundCompanionsConnection": {
+    "name": "懸木キャンプ-「仲間関係」"
+  },
+  "HuitztlanCampgroundFoolproofPlan": {
+    "name": "懸木キャンプ-「万全の策」"
+  },
+  "HuitztlanCampgroundSteadfastInTheStorm": {
+    "name": "懸木キャンプ-「強風を恐れず」"
+  },
+  "HuitztlanCampgroundDistributionHub": {
+    "name": "懸木キャンプ-「集散センター」"
+  },
+  "HotSpringRetreatSecretMenu": {
+    "name": "流泉逸居-「秘密のメニュー」"
+  },
+  "HotSpringRetreatMarketingStrategy": {
+    "name": "流泉逸居-「流通戦略」"
+  },
+  "HotSpringRetreatGoWithTheFlow": {
+    "name": "流泉逸居-「成り行きに任せる」"
+  },
+  "HotSpringRetreatTidalSurge": {
+    "name": "流泉逸居-「波のように押し寄せる」"
+  },
+  "WingsOfTheSprings": {
+    "name": "「勢いよく流れる地の層翼」"
+  },
+  "SkiffOfTheSprings": {
+    "name": "「勢いよく流れる地の小舟」"
+  },
+  "HotSpringRetreatTopChoice": {
+    "name": "流泉逸居-「最良の選択」"
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "花鳥の噴水"
   },
@@ -15607,6 +16570,9 @@
   },
   "BrimmingFreightCar": {
     "name": "「大容量貨物車」"
+  },
+  "EvenHandedJudgment": {
+    "name": "「きちんとした判決」"
   },
   "AdeptusGate": {
     "name": "三眼の仙牌"
@@ -16412,6 +17378,15 @@
   "ConscientiousWindcatcherSentinel": {
     "name": "「責任を全うする『風を捕まえる衛兵』」"
   },
+  "NanatzcayanArtistry": {
+    "name": "「ナナツカヤンの絵」"
+  },
+  "CeaselessClash": {
+    "name": "「絶え間ない流れ」"
+  },
+  "FlagOfHuitztlan": {
+    "name": "「ウィッツトランの旗」"
+  },
   "BookshelfFreeReading": {
     "name": "ブックラック-「ご自由にお読みください」"
   },
@@ -16426,6 +17401,9 @@
   },
   "CleverlyCraftedShelfHotSalesStrategy": {
     "name": "匠の陳列棚-「人気商品戦略」"
+  },
+  "CouriersSystemOfSortAndDispatch": {
+    "name": "「伝達使の仕分けセンター」"
   },
   "PoolOfSapphireGrace": {
     "name": "「霊沼雲池」"
@@ -16514,6 +17492,15 @@
   "GardenStellarMusicalPillar": {
     "name": "「星の輝くメロディーの柱」"
   },
+  "TequemecanStronghold": {
+    "name": "「堅岩の谷の保護」"
+  },
+  "HangingPostOfCoatepecMountain": {
+    "name": "「岩山に吊るされた杭」"
+  },
+  "BalustradeOfTheSprings": {
+    "name": "「勢いよく流れる地の欄干」"
+  },
   "SmoothWoodenBench": {
     "name": "平らな木製ベンチ"
   },
@@ -16552,6 +17539,12 @@
   },
   "MallowWoodChairEZFold": {
     "name": "マロウ材の椅子「折り畳み」"
+  },
+  "AzureGemOfTheSprings": {
+    "name": "「流泉の紺碧の宝石」"
+  },
+  "SurgingHarmoniesOfTheSprings": {
+    "name": "「流泉の波と声」"
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "ヒルチャールの二階建て監視塔"
@@ -16625,6 +17618,12 @@
   "JoyousForestParty": {
     "name": "「森の中の集い」"
   },
+  "CompactLongTableCouriersEdition": {
+    "name": "「伝達使の長テーブル」"
+  },
+  "WhiteChestnutOakWoodRawFinishLowTable": {
+    "name": "ホワイトオーク材「原色」ローテーブル"
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "酒屋の商品棚-「百杯飲み」"
   },
@@ -16666,5 +17665,20 @@
   },
   "ScheduleAbidingTrainStationSign": {
     "name": "「定時運行を目指す標識柱」"
+  },
+  "MegaMightyBoulderBreaker": {
+    "name": "「強力な岩石粉砕機」"
+  },
+  "RidingTheInferno": {
+    "name": "「激しい炎の騎行」"
+  },
+  "CouriersTimelyDispatch": {
+    "name": "「伝達使のタイムリーな配達」"
+  },
+  "TailoredCourierService": {
+    "name": "「伝達使に必要なもの」"
+  },
+  "WayToTheExtreme": {
+    "name": "「マスターの方向」"
   }
 }

@@ -1,0 +1,24 @@
+{
+  "name": "Sörf Zamanı",
+  "description": {
+    "0": "\"Birinci Kabileler Arası Sörf Şampiyonası\" şampiyonuna verilmek için tasarlanan bir hatıra eşyası. Bu turnuva şu an hazırlık aşamasında olduğundan ödül de geçici olarak Deniz Keyfi'nde, dükkan sahibinin gözetiminde bekliyor."
+  },
+  "passiveName": "Suyun Hatıraları",
+  "passiveDescription": {
+    "0": {
+      "0": "Maks. Can <cryo>%20</cryo> artar. Her 15 saniyede bir, Element Becerisi kullanıldıktan sonra 14 saniyeliğine 4 Kavurucu Yaz kademesi kazanılır. Her kademe, Normal Saldırı Hasarını <cryo>%12</cryo> artırır. Bu etkinin süresi boyunca her 1,5 saniyede bir düşmana Normal Saldırı isabet ettiğinde 1 kademe kaldırılır. Her 1,5 saniyede bir düşman üzerinde Buharlaşma tepkimesi tetiklendiğinde ise 1 kademe eklenir. En fazla 4 Kavurucu Yaz kademesi birikebilir."
+    },
+    "1": {
+      "0": "Maks. Can <cryo>%25</cryo> artar. Her 15 saniyede bir, Element Becerisi kullanıldıktan sonra 14 saniyeliğine 4 Kavurucu Yaz kademesi kazanılır. Her kademe, Normal Saldırı Hasarını <cryo>%15</cryo> artırır. Bu etkinin süresi boyunca her 1,5 saniyede bir düşmana Normal Saldırı isabet ettiğinde 1 kademe kaldırılır. Her 1,5 saniyede bir düşman üzerinde Buharlaşma tepkimesi tetiklendiğinde ise 1 kademe eklenir. En fazla 4 Kavurucu Yaz kademesi birikebilir."
+    },
+    "2": {
+      "0": "Maks. Can <cryo>%30</cryo> artar. Her 15 saniyede bir, Element Becerisi kullanıldıktan sonra 14 saniyeliğine 4 Kavurucu Yaz kademesi kazanılır. Her kademe, Normal Saldırı Hasarını <cryo>%18</cryo> artırır. Bu etkinin süresi boyunca her 1,5 saniyede bir düşmana Normal Saldırı isabet ettiğinde 1 kademe kaldırılır. Her 1,5 saniyede bir düşman üzerinde Buharlaşma tepkimesi tetiklendiğinde ise 1 kademe eklenir. En fazla 4 Kavurucu Yaz kademesi birikebilir."
+    },
+    "3": {
+      "0": "Maks. Can <cryo>%35</cryo> artar. Her 15 saniyede bir, Element Becerisi kullanıldıktan sonra 14 saniyeliğine 4 Kavurucu Yaz kademesi kazanılır. Her kademe, Normal Saldırı Hasarını <cryo>%21</cryo> artırır. Bu etkinin süresi boyunca her 1,5 saniyede bir düşmana Normal Saldırı isabet ettiğinde 1 kademe kaldırılır. Her 1,5 saniyede bir düşman üzerinde Buharlaşma tepkimesi tetiklendiğinde ise 1 kademe eklenir. En fazla 4 Kavurucu Yaz kademesi birikebilir."
+    },
+    "4": {
+      "0": "Maks. Can <cryo>%40</cryo> artar. Her 15 saniyede bir, Element Becerisi kullanıldıktan sonra 14 saniyeliğine 4 Kavurucu Yaz kademesi kazanılır. Her kademe, Normal Saldırı Hasarını <cryo>%24</cryo> artırır. Bu etkinin süresi boyunca her 1,5 saniyede bir düşmana Normal Saldırı isabet ettiğinde 1 kademe kaldırılır. Her 1,5 saniyede bir düşman üzerinde Buharlaşma tepkimesi tetiklendiğinde ise 1 kademe eklenir. En fazla 4 Kavurucu Yaz kademesi birikebilir."
+    }
+  }
+}

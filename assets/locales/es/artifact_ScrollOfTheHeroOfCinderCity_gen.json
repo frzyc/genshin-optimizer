@@ -1,0 +1,29 @@
+{
+  "setName": "Pergamino del Héroe de la Ciudad de las Cenizas",
+  "setEffects": {
+    "2": "Cuando un personaje cercano del equipo causa una explosión noctámbula, el portador de este conjunto recupera 6 pts. de Energía Elemental.",
+    "4": "Cuando el portador de este conjunto causa una Reacción Elemental relacionada con su tipo elemental, los Bonos de Daño Elemental relacionados con esa Reacción Elemental de todos los personajes cercanos del equipo aumentan en un 12% durante 15 s. Si el portador de este conjunto está en el estado de bendición noctámbula cuando se activa este efecto, los Bonos de Daño Elemental relacionados con esa Reacción Elemental de dichos personajes aumentan en un 28% adicional durante 20 s. Estos efectos se pueden activar incluso cuando el portador está en tu equipo pero no en uso. Los bonos de daño otorgados por este conjunto de artefactos no se pueden acumular con los de otro conjunto del mismo tipo."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Talismán del Domador de Bestias",
+      "desc": "Una flor creada con sílex y vidriagón que simboliza que su portador ha obtenido el derecho a convertirse en domador de bestias."
+    },
+    "plume": {
+      "name": "Distintivo de los Patrullamontañas",
+      "desc": "Una insignia que usaban los patrullamontañas para marcar el camino. Al tener forma de pluma, llama mucho la atención si uno se la encuentra."
+    },
+    "sands": {
+      "name": "Reloj de Sol Dorado de la Mistagoga",
+      "desc": "Un reloj de sol cuya forma, ciertamente, recuerda a la del sol. Los motivos decorativos que tiene simbolizan el ciclo de la vida y la muerte."
+    },
+    "goblet": {
+      "name": "Cáliz en Garra del Erudito Itinerante",
+      "desc": "Un cáliz para beber licor cuya forma es sorprendentemente similar a la garra de un saurio. Seguro que su creador tenía sus motivos para crear semejante objeto."
+    },
+    "circlet": {
+      "name": "Máscara Emplumada del Guerrero Maligno",
+      "desc": "Una máscara emplumada con forma de cabeza de halcón alrededor de la cual giraban múltiples leyendas."
+    }
+  }
+}

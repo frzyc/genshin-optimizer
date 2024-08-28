@@ -206,6 +206,9 @@
   "StarsailCoin": {
     "name": "Sternwanderungsmünze"
   },
+  "ColorfulContemplation": {
+    "name": "Farbenfroher Gedankenhauch"
+  },
   "Primogem": {
     "name": "Urgestein"
   },
@@ -275,6 +278,15 @@
   "FontaineReputationEXP": {
     "name": "Ansehenserfahrung für Fontaine"
   },
+  "ScionsOfTheCanopyReputationEXP": {
+    "name": "Ansehenserfahrung für Nachkommen der Baumkrone"
+  },
+  "PeopleOfTheSpringsReputationEXP": {
+    "name": "Ansehenserfahrung für Menschen der Quellen"
+  },
+  "ChildrenOfEchoesReputationEXP": {
+    "name": "Ansehenserfahrung für Kinder der Echos"
+  },
   "MemoryOfEternalFlames": {
     "name": "Erinnerung der ewigen Flammen"
   },
@@ -295,6 +307,9 @@
   },
   "MemoryOfImmovableCrystals": {
     "name": "Erinnerung der unbeweglichen Kristalle"
+  },
+  "BlazingFlintOre": {
+    "name": "Glühendes Feuerroherz"
   },
   "KamisatoAyaka": {
     "name": "Kamisato Ayaka"
@@ -821,6 +836,9 @@
   "AnAppellativeStroke": {
     "name": "Umschreibungspinsel"
   },
+  "ReaffirmedAccordOfAppellation": {
+    "name": "Vereinbarung zur erneuten Benennung"
+  },
   "EnergyOrbPyro": {
     "name": "Elementarenergiekugel (Pyro)"
   },
@@ -877,6 +895,12 @@
   },
   "QuestUseAtomicEnergyOrbPouch": {
     "name": "Kernenergiekugel in Elementartasche für Aufträge"
+  },
+  "PhlogistonEnergyOrb": {
+    "name": "Phlogiston-Energiekugel"
+  },
+  "PhlogistonEnergyOrbSeparateDrop": {
+    "name": "Phlogiston-Energiekugel (seperate Beute)"
   },
   "TestRandomTreasureChest": {
     "name": ""
@@ -937,6 +961,24 @@
   },
   "RazorTestPackage": {
     "name": ""
+  },
+  "Kachina": {
+    "name": "Kachina"
+  },
+  "Kinich": {
+    "name": "Kinich"
+  },
+  "Mualani": {
+    "name": "Mualani"
+  },
+  "KachinasStellaFortuna": {
+    "name": "Stella Fortuna von Kachina"
+  },
+  "KinichsStellaFortuna": {
+    "name": "Stella Fortuna von Kinich"
+  },
+  "MualanisStellaFortuna": {
+    "name": "Stella Fortuna von Mualani"
   },
   "Apple": {
     "name": "Apfel"
@@ -3182,6 +3224,21 @@
   "MidlanderPolearmBillet": {
     "name": "Unbearbeitete Stangenwaffe des Kernlands"
   },
+  "BorderlandSwordBillet": {
+    "name": "Unbearbeiteter Einhänder des Grenzlands"
+  },
+  "BorderlandBowBillet": {
+    "name": "Unbearbeiteter Bogen des Grenzlands"
+  },
+  "BorderlandClaymoreBillet": {
+    "name": "Unbearbeiteter Zweihänder des Grenzlands"
+  },
+  "BorderlandCatalystBillet": {
+    "name": "Unbearbeiteter Katalysator des Grenzlands"
+  },
+  "BorderlandPolearmBillet": {
+    "name": "Unbearbeitete Stangenwaffe des Grenzlands"
+  },
   "Onikabuto": {
     "name": "Onikabuto"
   },
@@ -3308,6 +3365,33 @@
   "ChenyuAdeptea": {
     "name": "Adeptentee aus Chenyu"
   },
+  "Grainfruit": {
+    "name": "Kornfrucht"
+  },
+  "CandlecapMushroom": {
+    "name": "Fackelparasolpilz"
+  },
+  "SpinelFruit": {
+    "name": "Spinellfrucht"
+  },
+  "Cacahuatl": {
+    "name": "Cacahuatl"
+  },
+  "SprayfeatherGill": {
+    "name": "Gischtfeder-Kieme"
+  },
+  "BrilliantChrysanthemum": {
+    "name": "Brillante Chrysantheme"
+  },
+  "QuenepaBerry": {
+    "name": "Quenepa-Beere"
+  },
+  "SaurianClawSucculent": {
+    "name": "Saurierklauen-Sukkulente"
+  },
+  "EmbercoreFlower": {
+    "name": "Glutkernblume"
+  },
   "BirchWood": {
     "name": "Birkenholz"
   },
@@ -3370,6 +3454,18 @@
   },
   "TorchWood": {
     "name": "Fackelholz"
+  },
+  "WhiteChestnutOakWood": {
+    "name": "Kastanieneichenholz"
+  },
+  "AshenAratikuWood": {
+    "name": "Aschen-Aratiku-Holz"
+  },
+  "FlammabombWood": {
+    "name": "Flammabummholz"
+  },
+  "PeachPalmWood": {
+    "name": "Pfirsichpalmenholz"
   },
   "Fabric": {
     "name": "Stoff"
@@ -4880,6 +4976,33 @@
   "PhilosophiesOfOrder": {
     "name": "Philosophie der „Ordnung“"
   },
+  "TeachingsOfContention": {
+    "name": "Lehren des „Wettstreits“"
+  },
+  "GuideToContention": {
+    "name": "Anleitung zum „Wettstreit“"
+  },
+  "PhilosophiesOfContention": {
+    "name": "Philosophie des „Wettstreits“"
+  },
+  "TeachingsOfKindling": {
+    "name": "Lehren der „Verbrennung“"
+  },
+  "GuideToKindling": {
+    "name": "Anleitung zur „Verbrennung“"
+  },
+  "PhilosophiesOfKindling": {
+    "name": "Philosophie der „Verbrennung“"
+  },
+  "TeachingsOfConflict": {
+    "name": "Lehren der „Zwietracht“"
+  },
+  "GuideToConflict": {
+    "name": "Anleitung zur „Zwietracht“"
+  },
+  "PhilosophiesOfConflict": {
+    "name": "Philosophie der „Zwietracht“"
+  },
   "SanctifyingDroplet": {
     "name": "Heiliger Tropfen"
   },
@@ -4888,6 +5011,9 @@
   },
   "SanctifyingEssence": {
     "name": "Weihessenz"
+  },
+  "SanctifyingElixir": {
+    "name": "Heiliger Frost"
   },
   "TestStaminaGrowthItem": {
     "name": "(Test) Objekt für Anstieg der Ausdauer"
@@ -4972,6 +5098,12 @@
   },
   "SpiritCarp": {
     "name": "Geister-Karpfen"
+  },
+  "NatlanShrineOfDepthsKey": {
+    "name": "Schlüssel zu den Schreinen der Tiefe in Natlan"
+  },
+  "Pyroculus": {
+    "name": "Verlorener Pyroculus"
   },
   "JubilantFeather": {
     "name": "Jubelfeder"
@@ -7034,6 +7166,186 @@
   "AMagicalMix": {
     "name": "Eine magische Mischung"
   },
+  "SuspiciousMeatnado": {
+    "name": "Misslungener Fleischonado"
+  },
+  "Meatnado": {
+    "name": "Fleischonado"
+  },
+  "DeliciousMeatnado": {
+    "name": "Leckerer Fleischonado"
+  },
+  "SuspiciousAppleRolyPoly": {
+    "name": "Misslungener Apfelstrudel"
+  },
+  "AppleRolyPoly": {
+    "name": "Apfelstrudel"
+  },
+  "DeliciousAppleRolyPoly": {
+    "name": "Leckerer Apfelstrudel"
+  },
+  "SuspiciousGlitteringGemstones": {
+    "name": "Misslungene funkelnde Edelsteine"
+  },
+  "GlitteringGemstones": {
+    "name": "Funkelnde Edelsteine"
+  },
+  "DeliciousGlitteringGemstones": {
+    "name": "Leckere funkelnde Edelsteine"
+  },
+  "SuspiciousHotSpringOClock": {
+    "name": "Misslungene Heiße-Quelle-Zeit"
+  },
+  "HotSpringOClock": {
+    "name": "Heiße-Quelle-Zeit"
+  },
+  "DeliciousHotSpringOClock": {
+    "name": "Leckere Heiße-Quelle-Zeit"
+  },
+  "SuspiciousPuffPops": {
+    "name": "Misslungene Rumms-Rumms"
+  },
+  "PuffPops": {
+    "name": "Rumms-Rumms"
+  },
+  "DeliciousPuffPops": {
+    "name": "Leckere Rumms-Rumms"
+  },
+  "SuspiciousSaurusCrackers": {
+    "name": "Misslungene Saurierkekse"
+  },
+  "SaurusCrackers": {
+    "name": "Saurierkekse"
+  },
+  "DeliciousSaurusCrackers": {
+    "name": "Leckere Saurierkekse"
+  },
+  "SuspiciousForestOfColor": {
+    "name": "Misslungener Wald der Farben"
+  },
+  "ForestOfColor": {
+    "name": "Wald der Farben"
+  },
+  "DeliciousForestOfColor": {
+    "name": "Leckerer Wald der Farben"
+  },
+  "SuspiciousGrilledFishInMintSauce": {
+    "name": "Misslungener gegrillter Fisch in Minzsauce"
+  },
+  "GrilledFishInMintSauce": {
+    "name": "Gegrillter Fisch in Minzsauce"
+  },
+  "DeliciousGrilledFishInMintSauce": {
+    "name": "Leckerer gegrillter Fisch in Minzsauce"
+  },
+  "SuspiciousTatacos": {
+    "name": "Misslungene Tatacos"
+  },
+  "Tatacos": {
+    "name": "Tatacos"
+  },
+  "DeliciousTatacos": {
+    "name": "Leckere Tatacos"
+  },
+  "SuspiciousSourSauceKipper": {
+    "name": "Misslungener Pökelfisch in saurer Sauce"
+  },
+  "SourSauceKipper": {
+    "name": "Pökelfisch in saurer Sauce"
+  },
+  "DeliciousSourSauceKipper": {
+    "name": "Leckerer Pökelfisch in saurer Sauce"
+  },
+  "SuspiciousChocolate": {
+    "name": "Misslungene Schokolade"
+  },
+  "Chocolate": {
+    "name": "Schokolade"
+  },
+  "DeliciousChocolate": {
+    "name": "Leckere Schokolade"
+  },
+  "SuspiciousStuffedNMashedPotatoes": {
+    "name": "Misslungenes gefülltes Kartoffelpüree"
+  },
+  "StuffedNMashedPotatoes": {
+    "name": "Gefülltes Kartoffelpüree"
+  },
+  "DeliciousStuffedNMashedPotatoes": {
+    "name": "Leckeres gefülltes Kartoffelpüree"
+  },
+  "SuspiciousCupOGrainfruit": {
+    "name": "Misslungener Beerenbecher"
+  },
+  "CupOGrainfruit": {
+    "name": "Beerenbecher"
+  },
+  "DeliciousCupOGrainfruit": {
+    "name": "Leckerer Beerenbecher"
+  },
+  "SuspiciousGrainfruitMeatSoup": {
+    "name": "Misslungene Kornfruchtfleischsuppe"
+  },
+  "GrainfruitMeatSoup": {
+    "name": "Kornfruchtfleischsuppe"
+  },
+  "DeliciousGrainfruitMeatSoup": {
+    "name": "Leckere Kornfruchtfleischsuppe"
+  },
+  "SuspiciousGrainfruitChips": {
+    "name": "Misslungene Kornfruchtchips"
+  },
+  "GrainfruitChips": {
+    "name": "Kornfruchtchips"
+  },
+  "DeliciousGrainfruitChips": {
+    "name": "Leckere Kornfruchtchips"
+  },
+  "SuspiciousFriedShrimpBeanballs": {
+    "name": "Misslungene frittierte Garnelen-Bohnenbällchen"
+  },
+  "FriedShrimpBeanballs": {
+    "name": "Frittierte Garnelen-Bohnenbällchen"
+  },
+  "DeliciousFriedShrimpBeanballs": {
+    "name": "Leckere frittierte Garnelen-Bohnenbällchen"
+  },
+  "SuspiciousBlazedMeatStew": {
+    "name": "Misslungener geschmorter Fleischeintopf"
+  },
+  "BlazedMeatStew": {
+    "name": "Geschmorter Fleischeintopf"
+  },
+  "DeliciousBlazedMeatStew": {
+    "name": "Leckerer geschmorter Fleischeintopf"
+  },
+  "SaurianHuntersReward": {
+    "name": "Saurierjäger-Leckereien"
+  },
+  "PassTheLuck": {
+    "name": "Die Weitergabe von Glück"
+  },
+  "ImpeccablyOrganized": {
+    "name": "Alles in bester Ordnung"
+  },
+  "SuspiciousGoldenApplePastry": {
+    "name": "Misslungene goldene Apfelstreifen"
+  },
+  "GoldenApplePastry": {
+    "name": "Goldene Apfelstreifen"
+  },
+  "DeliciousGoldenApplePastry": {
+    "name": "Leckere goldene Apfelstreifen"
+  },
+  "SuspiciousDelightsOfWondrousWanderings": {
+    "name": "Misslungene Köstlichkeiten wundersamer Wanderungen"
+  },
+  "DelightsOfWondrousWanderings": {
+    "name": "Köstlichkeiten wundersamer Wanderungen"
+  },
+  "DeliciousDelightsOfWondrousWanderings": {
+    "name": "Leckere Köstlichkeiten wundersamer Wanderungen"
+  },
   "RecipeItem": {
     "name": "Objekt für Rezepte"
   },
@@ -7625,6 +7937,63 @@
   "RecipeCrispCroissantCombo": {
     "name": "Rezept: Knusprige Croissant-Kombination"
   },
+  "RecipeMeatnado": {
+    "name": "Rezept: Fleischonado"
+  },
+  "RecipeAppleRolyPoly": {
+    "name": "Rezept: Apfelstrudel"
+  },
+  "RecipeGlitteringGemstones": {
+    "name": "Rezept: Funkelnde Edelsteine"
+  },
+  "RecipeHotSpringOClock": {
+    "name": "Rezept: Heiße-Quelle-Zeit"
+  },
+  "RecipePuffPops": {
+    "name": "Rezept: Rumms-Rumms"
+  },
+  "RecipeSaurusCrackers": {
+    "name": "Rezept: Saurierkekse"
+  },
+  "RecipeForestOfColor": {
+    "name": "Rezept: Wald der Farben"
+  },
+  "RecipeGrilledFishInMintSauce": {
+    "name": "Rezept: Gegrillter Fisch in Minzsauce"
+  },
+  "RecipeTatacos": {
+    "name": "Rezept: Tatacos"
+  },
+  "RecipeSourSauceKipper": {
+    "name": "Rezept: Pökelfisch in saurer Sauce"
+  },
+  "RecipeChocolate": {
+    "name": "Rezept: Schokolade"
+  },
+  "RecipeStuffedNMashedPotatoes": {
+    "name": "Rezept: Gefülltes Kartoffelpüree"
+  },
+  "RecipeCupOGrainfruit": {
+    "name": "Rezept: Beerenbecher"
+  },
+  "RecipeGrainfruitMeatSoup": {
+    "name": "Rezept: Kornfruchtfleischsuppe"
+  },
+  "RecipeGrainfruitChips": {
+    "name": "Rezept: Kornfruchtchips"
+  },
+  "RecipeFriedShrimpBeanballs": {
+    "name": "Rezept: Frittierte Garnelen-Bohnenbällchen"
+  },
+  "RecipeBlazedMeatStew": {
+    "name": "Rezept: Geschmorter Fleischeintopf"
+  },
+  "RecipeGoldenApplePastry": {
+    "name": "Rezept: Goldene Apfelstreifen"
+  },
+  "RecipeDelightsOfWondrousWanderings": {
+    "name": "Rezept: Köstlichkeiten wundersamer Wanderungen"
+  },
   "CraftedItems": {
     "name": "Hergestelltes Produkt"
   },
@@ -7744,6 +8113,9 @@
   },
   "FlashingMaintenanceMekBait": {
     "name": "Unterstützungs-Mecha-Leuchtköder"
+  },
+  "StrengthTonic": {
+    "name": "„Starkes Wasser“"
   },
   "PrimordialEssence": {
     "name": "Ursubstanz"
@@ -8045,6 +8417,51 @@
   "StillSmolderingHilt": {
     "name": "Schwelender Schwertgriff"
   },
+  "JuvenileFang": {
+    "name": "Unreifer spitzer Zahn"
+  },
+  "SeasonedFang": {
+    "name": "Ausgereifter kräftiger Zahn"
+  },
+  "TyrantsFang": {
+    "name": "Schneidezahn des Eroberers"
+  },
+  "SentrysWoodenWhistle": {
+    "name": "Holzpfeife des Wächters"
+  },
+  "WarriorsMetalWhistle": {
+    "name": "Eisenpfeife des Kriegers"
+  },
+  "SaurianCrownedWarriorsGoldenWhistle": {
+    "name": "Goldpfeife des Saurierkriegers"
+  },
+  "ShardOfAShatteredWill": {
+    "name": "Fragment des zersplitterten Willens"
+  },
+  "LocusOfAClearWill": {
+    "name": "Gestalt des klaren Willens"
+  },
+  "SigilOfAStridingWill": {
+    "name": "Talisman des wandernden Willens"
+  },
+  "IgnitedStone": {
+    "name": "Lodernder Steinbrocken"
+  },
+  "IgnitedSeedOfLife": {
+    "name": "Entzündete Saat des Lebens"
+  },
+  "IgnitedSeeingEye": {
+    "name": "Loderndes Gestaltauge"
+  },
+  "AxisOfTheSecretSource": {
+    "name": "Geheimquellen-Achse"
+  },
+  "SheathOfTheSecretSource": {
+    "name": "Geheimquellen-Gehäuse"
+  },
+  "HeartOfTheSecretSource": {
+    "name": "Geheimquellen-Kern"
+  },
   "HurricaneSeed": {
     "name": "Orkansamen"
   },
@@ -8231,6 +8648,15 @@
   "DenialAndJudgment": {
     "name": "Ablehnung und Urteilsspruch"
   },
+  "TheCornerstoneOfStarsAndFlames": {
+    "name": "Grundstein der Sterne und des Feuers"
+  },
+  "MarkOfTheBindingBlessing": {
+    "name": "Siegel des gebundenen Segens"
+  },
+  "OverripeFlamegranate": {
+    "name": "Überreife Flammengranate"
+  },
   "TileOfDecarabiansTower": {
     "name": "Decarabians zerbrochener Ziegel"
   },
@@ -8411,6 +8837,42 @@
   "GoldenGobletOfThePristineSea": {
     "name": "Goldkelch des unberührten Meers"
   },
+  "BlazingSacrificialHeartsTerror": {
+    "name": "Furcht der inbrünstigen Opfergabe"
+  },
+  "BlazingSacrificialHeartsHesitance": {
+    "name": "Zögern der inbrünstigen Opfergabe"
+  },
+  "BlazingSacrificialHeartsResolve": {
+    "name": "Entschlossenheit der inbrünstigen Opfergabe"
+  },
+  "BlazingSacrificialHeartsSplendor": {
+    "name": "Ruhm der inbrünstigen Opfergabe"
+  },
+  "DeliriousDecadenceOfTheSacredLord": {
+    "name": "Verfall des wahnsinnigen Fürsten"
+  },
+  "DeliriousDesolationOfTheSacredLord": {
+    "name": "Leid des wahnsinnigen Fürsten"
+  },
+  "DeliriousDemeanorOfTheSacredLord": {
+    "name": "Glanz des wahnsinnigen Fürsten"
+  },
+  "DeliriousDivinityOfTheSacredLord": {
+    "name": "Antlitz des wahnsinnigen Fürsten"
+  },
+  "NightWindsMysticConsideration": {
+    "name": "Gedanken der Vergänglichkeit"
+  },
+  "NightWindsMysticPremonition": {
+    "name": "Vorahnung der Vergänglichkeit"
+  },
+  "NightWindsMysticAugury": {
+    "name": "Omen der Vergänglichkeit"
+  },
+  "NightWindsMysticRevelation": {
+    "name": "Offenbarung der Vergänglichkeit"
+  },
   "StarterSupplyBundle": {
     "name": "Hilfsgüterpaket für Anfänger"
   },
@@ -8429,8 +8891,8 @@
   "CharacterAscensionBundleVeryHigh": {
     "name": "Superwahlpaket für Figurenaufstieg"
   },
-  "TalentMaterialsBundleLow": {
-    "name": "Niederes Wahlpaket für Talente"
+  "PackOfVirtuousTeachings": {
+    "name": "Paket der charakterlichen Schulung"
   },
   "VirtuousShareBundle": {
     "name": "Paket des tugendhaften Teilens"
@@ -8504,6 +8966,12 @@
   "OutfitOptionBundle": {
     "name": "Kleidungsauswahlpaket"
   },
+  "BorderlandBilletTrove": {
+    "name": "Kiste der unbearbeiteten Waffen des Grenzlands"
+  },
+  "TalentShareBundle": {
+    "name": "Talentteilpaket"
+  },
   "BEP": {
     "name": "Erlebnispass-EP"
   },
@@ -8542,6 +9010,12 @@
   },
   "PhilosophiesOfTheOriginalCurrent": {
     "name": "Philosophie des Reiches des Wassers"
+  },
+  "GuidesOfAJourney": {
+    "name": "Anleitung zur Reise"
+  },
+  "PhilosophiesOfAJourney": {
+    "name": "Philosophie der Reise"
   },
   "DomainReliquaryTierIII": {
     "name": "Rätselhafte Artefaktkiste – Rang 3"
@@ -10340,6 +10814,12 @@
   "FishSeizedFromAPelicansMouth": {
     "name": "Aus Pelikanschnabel ergatterter „Fisch“"
   },
+  "YellowObsidianFragment": {
+    "name": "Hellgelbes Obsidian-Bruchstück"
+  },
+  "YellowObsidianRing": {
+    "name": "Hellgelber Obsidian-Ring"
+  },
   "InvitationFromTheAratakiGang": {
     "name": "Einladung von der Arataki-Bande"
   },
@@ -10358,6 +10838,9 @@
   "TaintedHydroPhantasmExtract": {
     "name": "Okeanospuk-Extrakt"
   },
+  "CouriersTrialKeystone": {
+    "name": "Schlüsselstein der Botenprüfung"
+  },
   "ShikanoinHeizousMessage": {
     "name": "Nachricht von Shikanoin Heizou"
   },
@@ -10366,6 +10849,9 @@
   },
   "LynettesEnvelope": {
     "name": "Lynettes Briefumschlag"
+  },
+  "TalismanOfWaxaklahunUbahKan": {
+    "name": "Amulett von Waxaklahun Ubah Kan"
   },
   "RestoredScore": {
     "name": "Vervollständigte Partitur"
@@ -10400,6 +10886,15 @@
   "DamagedScore": {
     "name": "Beschädigte Partitur"
   },
+  "KeyWithFrontalNotches": {
+    "name": "Schlüssel mit vorderer Kerbe"
+  },
+  "KeyWithCenteredNotches": {
+    "name": "Schlüssel mit mittlerer Kerbe"
+  },
+  "KeyWithRearNotches": {
+    "name": "Schlüssel mit hinterer Kerbe"
+  },
   "BrickstacksLongRangeLamp": {
     "name": "Ziegelstedt-Fernstrahler"
   },
@@ -10423,6 +10918,21 @@
   },
   "RuggierosNotesII": {
     "name": "Ruggieros Notizen II"
+  },
+  "GreenObsidianFragment": {
+    "name": "Türkisgrünes Obsidian-Bruchstück"
+  },
+  "GreenObsidianRing": {
+    "name": "Türkisgrüner Obsidian-Ring"
+  },
+  "AzureObsidianFragment": {
+    "name": "Azurblaues Obsidian-Bruchstück"
+  },
+  "AzureObsidianRing": {
+    "name": "Azurblauer Obsidian-Ring"
+  },
+  "NightJade": {
+    "name": "Jade der Nacht"
   },
   "PagesFromALostScoreII": {
     "name": "Zerrissene Partiturseite II"
@@ -10454,6 +10964,15 @@
   "GuardsSpear": {
     "name": "Speer der Wache"
   },
+  "StarShard": {
+    "name": "Sternensplitter"
+  },
+  "CrudeObsidianStatue": {
+    "name": "Grobe Obsidian-Statue"
+  },
+  "RedMetalKey": {
+    "name": "Roter Metallschlüssel"
+  },
   "TreasureMapWithTheVaultsLocation": {
     "name": "„Schatzkarte“ mit Standort einer Schatzkammer"
   },
@@ -10465,6 +10984,9 @@
   },
   "HarmostsNotesII": {
     "name": "Notizen eines Harmosten II"
+  },
+  "GreenEdgedPaperSlip": {
+    "name": "Papier mit grünem Rand"
   },
   "TatteredNavigationLog": {
     "name": "Zerfleddertes Logbuch"
@@ -10495,6 +11017,42 @@
   },
   "ExperimentLog": {
     "name": "Versuchsprotokoll"
+  },
+  "FreshSourSauceKipper": {
+    "name": "Frischer Pökelfisch in saurer Sauce"
+  },
+  "AGemMeantAsAGift": {
+    "name": "Als Geschenk gedachter Edelstein"
+  },
+  "JewelArtisansToolbox": {
+    "name": "Werkzeugkasten des Edelstein-Meisters"
+  },
+  "JewelArtisansBoxOfParts": {
+    "name": "Bauteilkasten des Edelstein-Meisters"
+  },
+  "PhlogistonEnergyOrbForGathering": {
+    "name": "Sammelutensil – Phlogiston-Energiekugel"
+  },
+  "BoundaryMarkerInscription": {
+    "name": "Grenzsteininschrift"
+  },
+  "IridescentInscriptionFragment": {
+    "name": "Fragment der schillernden Inschrift"
+  },
+  "GoldenEntreaty": {
+    "name": "Goldscheibe des Ultimatums"
+  },
+  "CazcalsHoraSpecialCareKit": {
+    "name": "Cazcals „spezielles Pflegeset für Hora“"
+  },
+  "Uthabiti": {
+    "name": "„Uthabiti“"
+  },
+  "PurposeBuiltGrapplingHook": {
+    "name": "Speziell angefertigtes Kletterseil"
+  },
+  "OrdinaryObsidian": {
+    "name": "Normaler Obsidian"
   },
   "TheLittleWitchAndTheUndyingFireI": {
     "name": "Die kleine Hexe und das unauslöschliche Feuer – Band I"
@@ -10541,6 +11099,15 @@
   "TheFelineFirmVIII": {
     "name": "Das Kätzchenbüro – Band VIII"
   },
+  "BrokenGraffitiMarkedStone": {
+    "name": "Mit Graffiti bemalter Bruchstein"
+  },
+  "ShatteredNightJade": {
+    "name": "Gesplitterte Jade der unvollständigen Nacht"
+  },
+  "ContendingSpark": {
+    "name": "Funken des Wettstreits"
+  },
   "ASettingSunThatNeverSets": {
     "name": "„Eine untergehende Sonne, die niemals versinkt“"
   },
@@ -10553,6 +11120,18 @@
   "MagicTonic": {
     "name": "Zauberwasser"
   },
+  "OgunsTestimony": {
+    "name": "Oguns Zeugenaussage"
+  },
+  "PampasTestimony": {
+    "name": "Pampas Zeugenaussage"
+  },
+  "TheLocustsPurchaseInvoice": {
+    "name": "Einkaufsliste der Heuschrecken-Fraktion"
+  },
+  "AnelasTestimony": {
+    "name": "Anelas Zeugenaussage"
+  },
   "FellDragonsPicturebook": {
     "name": "Bilderbuch des „bösen Drachen“"
   },
@@ -10561,6 +11140,141 @@
   },
   "AnIncompleteManuscript": {
     "name": "„Ein unvollendetes Manuskript“"
+  },
+  "MissingPackage": {
+    "name": "Verlorenes Paket"
+  },
+  "DamagedPackage": {
+    "name": "Beschädigtes Paket"
+  },
+  "DamagedLetter": {
+    "name": "Beschädigter Brief"
+  },
+  "SlightlySquashedPackage": {
+    "name": "Unförmiges Paket"
+  },
+  "TornLetter": {
+    "name": "Zerrissener Brief"
+  },
+  "AcatsPackage": {
+    "name": "Acats Paket"
+  },
+  "ChancasLetter": {
+    "name": "Chancas Brief"
+  },
+  "ImixsPackage": {
+    "name": "Imix’ Paket"
+  },
+  "TirdasLetter": {
+    "name": "Tirdas Brief"
+  },
+  "MapLeftBehindByTheFirstChief": {
+    "name": "Karte des ersten Häuptlings"
+  },
+  "AminasCoinPouch": {
+    "name": "Aminas Geldbeutel"
+  },
+  "KaulusRecommendedExpeditionEquipment": {
+    "name": "Von Kaulu empfohlene Expeditionsausrüstung"
+  },
+  "PhotoWithAta": {
+    "name": "Foto mit Ata"
+  },
+  "ExpeditionEquipmentPurchasedByMualani": {
+    "name": "Von Mualani erworbene Expeditionsausrüstung"
+  },
+  "PathOfTurnfire": {
+    "name": "Wendefeuerpfad"
+  },
+  "MementosOfTeyvatAlbum": {
+    "name": "Teyvat-Erinnerungsalbum"
+  },
+  "DopeyDazzlersNotesOnGraffiti": {
+    "name": "Graffiti-Notizbuch der „Farbnärrin“"
+  },
+  "AncientChronicleOfTheDreamseekerPriestI": {
+    "name": "Aufzeichnungen des alten Priesters der Träume I"
+  },
+  "AncientChronicleOfTheDreamseekerPriestII": {
+    "name": "Aufzeichnungen des alten Priesters der Träume II"
+  },
+  "AncientChronicleOfTheDreamseekerPriestIII": {
+    "name": "Aufzeichnungen des alten Priesters der Träume III"
+  },
+  "AncientChronicleOfTheDreamseekerPriestIV": {
+    "name": "Aufzeichnungen des alten Priesters der Träume IV"
+  },
+  "FreshSprayfeatherGill": {
+    "name": "Frische Gischtfeder-Kieme"
+  },
+  "AminasCompensation": {
+    "name": "Aminas Entlohnung"
+  },
+  "KeyToSomewhere": {
+    "name": "Schlüssel zu irgendeinem Ort"
+  },
+  "CommemorativePhotoOfYouAndMualani": {
+    "name": "Gedenkfoto von dir und Mualani"
+  },
+  "ShinyShell": {
+    "name": "Funkelnde Muschel"
+  },
+  "AteasTalisman": {
+    "name": "Ateas Talisman"
+  },
+  "WoodenModelAlpaca": {
+    "name": "Alpacktier-Holzfigur"
+  },
+  "StrangeSaurianCartKey": {
+    "name": "Seltsamer Sauriertransporterschlüssel"
+  },
+  "NoteInADriftBottle": {
+    "name": "Nachricht aus einer Flaschenpost"
+  },
+  "NoteLeftInsideATreasureChest": {
+    "name": "Nachricht aus einer Schatztruhe"
+  },
+  "ResearchCenterEmergencyMachineOperationHandbook": {
+    "name": "Handbuch für den Einsatz von Notfallausrüstung des Forschungszentrums"
+  },
+  "MaaweAndMonetooI": {
+    "name": "Maawe und Monetoo – Band I"
+  },
+  "MaaweAndMonetooII": {
+    "name": "Maawe und Monetoo – Band II"
+  },
+  "MaaweAndMonetooIII": {
+    "name": "Maawe und Monetoo – Band III"
+  },
+  "RecordsOfHananPachaI": {
+    "name": "Aufzeichnungen von Hanan Pacha – Band I"
+  },
+  "RecordsOfHananPachaII": {
+    "name": "Aufzeichnungen von Hanan Pacha – Band II"
+  },
+  "RecordsOfHananPachaIII": {
+    "name": "Aufzeichnungen von Hanan Pacha – Band III"
+  },
+  "TheTaleOfQoyllorAndUkuku": {
+    "name": "Die Geschichte von Qoyllor und Ukuku"
+  },
+  "TheVolcanoLordAndTheShadowPins": {
+    "name": "Der Herrscher des Vulkans und die Schattennadel"
+  },
+  "PicturesqueRecords": {
+    "name": "Bildhafte Aufzeichnung"
+  },
+  "InspectionAndMaintenanceRecords": {
+    "name": "Inspektions- und Reparaturprotokoll"
+  },
+  "DiaryOfASoldierAbroad": {
+    "name": "Tagebuch eines Soldaten in der Fremde"
+  },
+  "UnfinishedMusicalScore": {
+    "name": "Unvollendetes Manuskript"
+  },
+  "NoteLeftAtTheCamp": {
+    "name": "Im Lager zurückgelassene Notizen"
   },
   "TearsAmongTheStars": {
     "name": "Tränen zwischen den Sternen"
@@ -10654,6 +11368,24 @@
   },
   "RainbowRoseSeed": {
     "name": "Regenbogenrose-Samen"
+  },
+  "GrainfruitKernel": {
+    "name": "„Kornfrucht“-Samen"
+  },
+  "CacahuatlSeed": {
+    "name": "„Cacahuatl“-Samen"
+  },
+  "SaurianClawSucculentSeed": {
+    "name": "„Saurierklauen-Sukkulente“-Samen"
+  },
+  "QuenepaBerrySeed": {
+    "name": "„Quenepa-Beere“-Samen"
+  },
+  "BrilliantChrysanthemumSeed": {
+    "name": "„Brillante Chrysantheme“-Samen"
+  },
+  "SprayfeatherGillSeed": {
+    "name": "„Gischtfeder-Kieme“-Samen"
   },
   "Medaka": {
     "name": "Medaka"
@@ -10807,6 +11539,9 @@
   },
   "WingsOfDelicacies": {
     "name": "Flügel der Köstlichkeit"
+  },
+  "WingsOfSoaringFlame": {
+    "name": "Flügel der flackernden Flammen"
   },
   "RadiantSpincrystal1": {
     "name": "Strahlender Drehkristall I"
@@ -11246,6 +11981,36 @@
   "RadiantSpincrystal130": {
     "name": "Strahlender Drehkristall CXXX"
   },
+  "RadiantSpincrystal131": {
+    "name": "Strahlender Drehkristall CXXXI"
+  },
+  "RadiantSpincrystal132": {
+    "name": "Strahlender Drehkristall CXXXII"
+  },
+  "RadiantSpincrystal133": {
+    "name": "Strahlender Drehkristall CXXXIII"
+  },
+  "RadiantSpincrystal134": {
+    "name": "Strahlender Drehkristall CXXXIV"
+  },
+  "RadiantSpincrystal135": {
+    "name": "Strahlender Drehkristall CXXXV"
+  },
+  "RadiantSpincrystal136": {
+    "name": "Strahlender Drehkristall CXXXVI"
+  },
+  "RadiantSpincrystal137": {
+    "name": "Strahlender Drehkristall CXXXVII"
+  },
+  "RadiantSpincrystal138": {
+    "name": "Strahlender Drehkristall CXXXVIII"
+  },
+  "RadiantSpincrystal139": {
+    "name": "Strahlender Drehkristall CXXXIX"
+  },
+  "RadiantSpincrystal140": {
+    "name": "Strahlender Drehkristall CXL"
+  },
   "LanternFiber": {
     "name": "Laternenpapierfasern"
   },
@@ -11320,6 +12085,9 @@
   },
   "CamAndCablesOfLaw": {
     "name": "Mechanisches Stück von Mitte und Maß"
+  },
+  "TheSeasSilentShade": {
+    "name": "„Stille Meeresfarbe“"
   },
   "FalconsDance": {
     "name": "Falkentanz"
@@ -12077,6 +12845,39 @@
   "CelebrationFeastII": {
     "name": "Feierlichkeit – Gelage II"
   },
+  "KinichAjaw": {
+    "name": "Kinich – Ajaw"
+  },
+  "MualaniSharky": {
+    "name": "Mualani – Haifisch"
+  },
+  "KachinaTwirly": {
+    "name": "Kachina – Wirbelwind"
+  },
+  "NatlanDivineArmy": {
+    "name": "Natlan – Göttliche Armee"
+  },
+  "NatlanFieryDragon": {
+    "name": "Natlan – Feuerdrache"
+  },
+  "AchievementEndpoint": {
+    "name": "Errungenschaft – Ende"
+  },
+  "AchievementFelineFortune": {
+    "name": "Errungenschaft – Miau-Glück"
+  },
+  "NatlanReturnOfTheFlame": {
+    "name": "Natlan – Die Rückkehr der Flamme"
+  },
+  "AchievementLordOfTheNight": {
+    "name": "Errungenschaft – Herrscher der Nacht"
+  },
+  "TravelNotesPrimalFire": {
+    "name": "Erlebnispass – Urfeuer"
+  },
+  "CelebrationCrispyAndSweet": {
+    "name": "Feierlichkeit – Süß und knackig"
+  },
   "EchoDandelionKnight": {
     "name": "Echo – Löwenzahnritter"
   },
@@ -12350,6 +13151,27 @@
   "AsagirisDedicatedFontaineKamera": {
     "name": "Asagiris angepasster Fotoapparat für Fontaine"
   },
+  "PyroculusResonanceStone": {
+    "name": "Pyroculus-Resonanzstein"
+  },
+  "PyroTreasureCompass": {
+    "name": "Pyro-Schatzkompass"
+  },
+  "FirstbornFiresprite": {
+    "name": "Erstgeborener Feuerspringer"
+  },
+  "KaboomBox": {
+    "name": "Bumm-Bumm-Box"
+  },
+  "GraffitiKamera": {
+    "name": "„Graffiti-Fotoapparat“"
+  },
+  "PaimonsKamera": {
+    "name": "Paimons Fotoapparat"
+  },
+  "ArtifactTransmuter": {
+    "name": "Artefakt-Umwandler"
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Erläuterung: Anemoculus-Resonanzstein"
   },
@@ -12458,6 +13280,21 @@
   "FormulaFlashingMaintenanceMekBait": {
     "name": "Rezept: Unterstützungs-Mecha-Leuchtköder"
   },
+  "DiagramFluteOfEzpitzal": {
+    "name": "Bauplan: Ezpitzal-Flöte"
+  },
+  "DiagramEarthShaker": {
+    "name": "Bauplan: Bebenmacher"
+  },
+  "DiagramFootprintOfTheRainbow": {
+    "name": "Bauplan: Spuren des Regenbogens"
+  },
+  "DiagramRingOfYaxche": {
+    "name": "Bauplan: Yaxche-Ring"
+  },
+  "DiagramChainBreaker": {
+    "name": "Bauplan: Zersprungene Ketten"
+  },
   "InstructionsDendroculusResonanceStone": {
     "name": "Erläuterung: Dendroculus-Resonanzstein"
   },
@@ -12472,6 +13309,15 @@
   },
   "FormulaPureWater": {
     "name": "Rezept: „Reines Wasser“"
+  },
+  "RecipeStrengthTonic": {
+    "name": "Rezept: „Starkes Wasser“"
+  },
+  "InstructionsPyroculusResonanceStone": {
+    "name": "Erläuterung: Pyroculus-Resonanzstein"
+  },
+  "DiagramPyroTreasureCompass": {
+    "name": "Bauplan: Pyro-Schatzkompass"
   },
   "SilkenPrint": {
     "name": "Seidendruck"
@@ -12557,6 +13403,18 @@
   "FilledWithConfidence": {
     "name": "Voller Zuversicht"
   },
+  "LookingAroundCuriously": {
+    "name": "Neugierig umschauen"
+  },
+  "WarmGreeting": {
+    "name": "Herzlicher Gruß"
+  },
+  "SpontaneousPerformance": {
+    "name": "Improvisierte Vorstellung"
+  },
+  "StrivingToNegotiate": {
+    "name": "Bemühte Verhandlung"
+  },
   "RhodeiaOfLoch": {
     "name": "Okeanide Rhodeia"
   },
@@ -12628,6 +13486,9 @@
   },
   "FrostOperative": {
     "name": "Fatui – Frostdienerin"
+  },
+  "HydroHilichurlRogue": {
+    "name": "Hilichurl-Hydro-Läufer"
   },
   "UndividedHeart": {
     "name": "Eintracht"
@@ -12914,6 +13775,15 @@
   "RimeflowRapier": {
     "name": "Eiskalte Klinge"
   },
+  "MomentOfWakingAndResolve": {
+    "name": "Moment des Erwachens und der Entschlossenheit"
+  },
+  "TheyCallHerCloudRetainer": {
+    "name": "Die mit den Wolken tanzt"
+  },
+  "HydrodartSlime": {
+    "name": "Hydrodart-Schleim"
+  },
   "MagicGuide": {
     "name": "Magieführer"
   },
@@ -13166,6 +14036,15 @@
   "GladiatorsTriumphus": {
     "name": "Triumph des Gladiators"
   },
+  "XenochromaticHuntersRay": {
+    "name": "Xenochromatischer Jäger-Schwertrochen"
+  },
+  "Yumkasaurus": {
+    "name": "Yumkasaurier"
+  },
+  "Koholasaurus": {
+    "name": "Koholasaurier"
+  },
   "LiyueHarborWharf": {
     "name": "Hafen von Liyue"
   },
@@ -13312,6 +14191,12 @@
   },
   "Serene": {
     "name": "Serene"
+  },
+  "StadiumOfTheSacredFlame": {
+    "name": "Arena des heiligen Feuers"
+  },
+  "Atea": {
+    "name": "Atea"
   },
   "ElementalResonanceWovenIce": {
     "name": "Elementarer Einklang – Gebündeltes Eis"
@@ -13496,6 +14381,12 @@
   "Tada": {
     "name": "Tada!"
   },
+  "SaurianDiningBuddies": {
+    "name": "Festmahl der Sauriergefährten"
+  },
+  "EdictOfAbsolution": {
+    "name": "Edikt der Absolution"
+  },
   "Origin": {
     "name": "Anbeginn"
   },
@@ -13543,6 +14434,9 @@
   },
   "TheChasmCrown": {
     "name": "Große Kluft – Goldene Krone"
+  },
+  "Natlan": {
+    "name": "Natlan"
   },
   "BeginnerPlayerBadge": {
     "name": "Kartenspielwappen – Anfänger"
@@ -14024,9 +14918,6 @@
   "HelloWelcome": {
     "name": "„Hallo! Willkommen!“"
   },
-  "ShinyShell": {
-    "name": "„Leuchtemuschel“"
-  },
   "ForbiddenZoneFloorLampIronhammer": {
     "name": "Lampe des verbotenen Ortes – „Eisenhammer“"
   },
@@ -14056,6 +14947,18 @@
   },
   "GlowingForestFruit": {
     "name": "„Leuchtende Waldfrucht“"
+  },
+  "FlammabombWoodDancerStreetLamp": {
+    "name": "Straßenlaterne aus Flammabummholz – „Tänzer“"
+  },
+  "AshenAratikuWoodNiftyStreetLamp": {
+    "name": "Straßenlaterne aus Aschen-Aratiku-Holz – „Praktisch“"
+  },
+  "WhiteChestnutOakWoodHarpoonStreetLamp": {
+    "name": "Straßenlaterne aus Kastanieneichenholz – „Harpune“"
+  },
+  "WhiteChestnutOakWoodTwilightFloorLamp": {
+    "name": "Stehlampe aus Kastanieneichenholz – „Dämmerlicht“"
   },
   "EfflorescentIllumination": {
     "name": "„Mannigfaltiges Licht der Blütenblätter“"
@@ -14283,7 +15186,7 @@
     "name": "„Schlaf schön“-Bett aus Lindenholz"
   },
   "PineReceptionCounter": {
-    "name": "Empfangsstheke aus Kiefernholz"
+    "name": "Empfangstheke aus Kiefernholz"
   },
   "TeahouseCounterToshimaru": {
     "name": "Teestuben-Tresen – „Toshimaru“"
@@ -15125,6 +16028,9 @@
   "MusicTownsHutMardouceHarmony": {
     "name": "Hütte in der Stadt der Musik – „Mardouce“"
   },
+  "SalesSavvy101": {
+    "name": "„Eine Handels- und Transportmethode“"
+  },
   "HilichurlOutpostHut": {
     "name": "Hütte des Hilichurl-Vorpostens"
   },
@@ -15497,6 +16403,63 @@
   "ResourcefulResidenceInTheMusicmakingTown": {
     "name": "„Originelles Wohnhaus in der Stadt des Musizierens“"
   },
+  "StonehutOfEchoesStandardWorkshop": {
+    "name": "Echosteinhaus – „Standardwerkstatt“"
+  },
+  "StonehutOfEchoesAlphaDragon": {
+    "name": "Echosteinhaus – „Anführer der Saurier“"
+  },
+  "StonehutOfEchoesHighTopBoots": {
+    "name": "Echosteinhaus – „Hoher Stiefel“"
+  },
+  "TequemecanDanceOff": {
+    "name": "„Tequemecan-Wetttanz“"
+  },
+  "TequemecanTreasures": {
+    "name": "„Tequemecan-Edelsteine“"
+  },
+  "TequemecanIngenuity": {
+    "name": "„Tequemecan-Einfallsreichtum“"
+  },
+  "HuitztlanCampgroundSortAndOrder": {
+    "name": "Baumkronenlager – „Symmetrische Ordnung“"
+  },
+  "HuitztlanCampgroundMultiPurposeSpace": {
+    "name": "Baumkronenlager – „Multifunktionaler Raum“"
+  },
+  "HuitztlanCampgroundCompanionsConnection": {
+    "name": "Baumkronenlager – „Partnerschaft“"
+  },
+  "HuitztlanCampgroundFoolproofPlan": {
+    "name": "Baumkronenlager – „Perfekte Planung“"
+  },
+  "HuitztlanCampgroundSteadfastInTheStorm": {
+    "name": "Baumkronenlager – „Sturmfest“"
+  },
+  "HuitztlanCampgroundDistributionHub": {
+    "name": "Baumkronenlager – „Verteilzentrum“"
+  },
+  "HotSpringRetreatSecretMenu": {
+    "name": "Quellen-Residenz – „Geheime Speisekarte“"
+  },
+  "HotSpringRetreatMarketingStrategy": {
+    "name": "Quellen-Residenz – „Verkaufsstrategie“"
+  },
+  "HotSpringRetreatGoWithTheFlow": {
+    "name": "Quellen-Residenz – „Den Dingen ihren Lauf lassen“"
+  },
+  "HotSpringRetreatTidalSurge": {
+    "name": "Quellen-Residenz – „Wellenwoge“"
+  },
+  "WingsOfTheSprings": {
+    "name": "„Überlappende Flügel der Sprudelnden Lande“"
+  },
+  "SkiffOfTheSprings": {
+    "name": "„Surfbretter der Sprudelnden Lande“"
+  },
+  "HotSpringRetreatTopChoice": {
+    "name": "Quellen-Residenz – „Ausgezeichnete Wahl“"
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Springbrunnen mit Blumen- und Vogelmuster"
   },
@@ -15607,6 +16570,9 @@
   },
   "BrimmingFreightCar": {
     "name": "„Vollgestopfter Güterwagen“"
+  },
+  "EvenHandedJudgment": {
+    "name": "„Gerechte Strafmaßnahme“"
   },
   "AdeptusGate": {
     "name": "Adeptentor"
@@ -16412,6 +17378,15 @@
   "ConscientiousWindcatcherSentinel": {
     "name": "„Gewissenhafte Windfangwache“"
   },
+  "NanatzcayanArtistry": {
+    "name": "„Gemälde von Nanatzcayan“"
+  },
+  "CeaselessClash": {
+    "name": "„Unaufhörlicher Strom des Kampfs“"
+  },
+  "FlagOfHuitztlan": {
+    "name": "„Fahne von Huitztlan“"
+  },
   "BookshelfFreeReading": {
     "name": "Bücher- und Zeitschriftenregal – „Zur freien Verfügung“"
   },
@@ -16426,6 +17401,9 @@
   },
   "CleverlyCraftedShelfHotSalesStrategy": {
     "name": "Raffiniertes Regal – „Heiße Verkaufsstrategie“"
+  },
+  "CouriersSystemOfSortAndDispatch": {
+    "name": "„Sortieren und Transportieren der Boten“"
   },
   "PoolOfSapphireGrace": {
     "name": "Geistwolkenbecken"
@@ -16514,6 +17492,15 @@
   "GardenStellarMusicalPillar": {
     "name": "„Sternenglanz-Klangsäule im Garten“"
   },
+  "TequemecanStronghold": {
+    "name": "„Tequemecan-Umzäunung“"
+  },
+  "HangingPostOfCoatepecMountain": {
+    "name": "„Hängende Pfähle am Coatepec-Berg“"
+  },
+  "BalustradeOfTheSprings": {
+    "name": "„Leichte Pfähle der Sprudelnden Lande“"
+  },
   "SmoothWoodenBench": {
     "name": "Glatte Holzbank"
   },
@@ -16552,6 +17539,12 @@
   },
   "MallowWoodChairEZFold": {
     "name": "Klappstuhl „Einfaches Falten“ aus Platanenholz"
+  },
+  "AzureGemOfTheSprings": {
+    "name": "„Saphir der Quellen“"
+  },
+  "SurgingHarmoniesOfTheSprings": {
+    "name": "„Harmonie der Wellen und Quellen“"
   },
   "TwoStoryHilichurlSentryTower": {
     "name": "Zweistöckiger Hilichurl-Wachturm"
@@ -16625,6 +17618,12 @@
   "JoyousForestParty": {
     "name": "Freudenfest im Wald"
   },
+  "CompactLongTableCouriersEdition": {
+    "name": "„Einfache lange Tafel der Boten“"
+  },
+  "WhiteChestnutOakWoodRawFinishLowTable": {
+    "name": "Niedriger Tisch aus Kastanieneichenholz in „Naturfarbe“"
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Weinladen-Theke – „Nach Herzenslust“"
   },
@@ -16666,5 +17665,20 @@
   },
   "ScheduleAbidingTrainStationSign": {
     "name": "Pünktliches Haltestellenschild"
+  },
+  "MegaMightyBoulderBreaker": {
+    "name": "„Riesiges Felsbrocken-Bohrgerät“"
+  },
+  "RidingTheInferno": {
+    "name": "„Reiten der Flammen“"
+  },
+  "CouriersTimelyDispatch": {
+    "name": "„Die pünktliche Zustellung des Boten“"
+  },
+  "TailoredCourierService": {
+    "name": "„Jeder Bote nimmt, was er braucht“"
+  },
+  "WayToTheExtreme": {
+    "name": "„Richtung der Grenzen“"
   }
 }

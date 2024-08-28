@@ -1,0 +1,24 @@
+{
+  "name": "Vòng Yaxche",
+  "description": {
+    "0": "Ngọc khí được tạo ra bởi hai anh kiệt của ngày xưa. Truyền thuyết kể rằng nó đã từng bắn rơi con rồng khổng lồ sống trong núi lửa."
+  },
+  "passiveName": "Tiếng Vọng Của Vùng Đất Màu Mỡ",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, sẽ nhận được hiệu quả \"Vương Miện Ngọc\": Mỗi 1000 Giới Hạn HP sẽ khiến sát thương Tấn Công Thường gây ra tăng <cryo>0.6%</cryo> trong 10s. Tối đa có thể tăng <cryo>16%</cryo> sát thương Tấn Công Thường bằng cách thức này."
+    },
+    "1": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, sẽ nhận được hiệu quả \"Vương Miện Ngọc\": Mỗi 1000 Giới Hạn HP sẽ khiến sát thương Tấn Công Thường gây ra tăng <cryo>0.7%</cryo> trong 10s. Tối đa có thể tăng <cryo>20%</cryo> sát thương Tấn Công Thường bằng cách thức này."
+    },
+    "2": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, sẽ nhận được hiệu quả \"Vương Miện Ngọc\": Mỗi 1000 Giới Hạn HP sẽ khiến sát thương Tấn Công Thường gây ra tăng <cryo>0.8%</cryo> trong 10s. Tối đa có thể tăng <cryo>24%</cryo> sát thương Tấn Công Thường bằng cách thức này."
+    },
+    "3": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, sẽ nhận được hiệu quả \"Vương Miện Ngọc\": Mỗi 1000 Giới Hạn HP sẽ khiến sát thương Tấn Công Thường gây ra tăng <cryo>0.9%</cryo> trong 10s. Tối đa có thể tăng <cryo>28%</cryo> sát thương Tấn Công Thường bằng cách thức này."
+    },
+    "4": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố, sẽ nhận được hiệu quả \"Vương Miện Ngọc\": Mỗi 1000 Giới Hạn HP sẽ khiến sát thương Tấn Công Thường gây ra tăng <cryo>1%</cryo> trong 10s. Tối đa có thể tăng <cryo>32%</cryo> sát thương Tấn Công Thường bằng cách thức này."
+    }
+  }
+}

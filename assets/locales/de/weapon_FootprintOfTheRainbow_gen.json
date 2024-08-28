@@ -1,0 +1,24 @@
+{
+  "name": "Spuren des Regenbogens",
+  "description": {
+    "0": "Eine scharfe Lanze aus Jade, die in der Sonne ein Regenbogenlicht ausstrahlt."
+  },
+  "passiveName": "Pakt des Wassers der Flüsse und Quellen",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht beim Auslösen der Elementarfähigkeit die VTD 15 s lang um <cryo>16 %</cryo>."
+    },
+    "1": {
+      "0": "Erhöht beim Auslösen der Elementarfähigkeit die VTD 15 s lang um <cryo>20 %</cryo>."
+    },
+    "2": {
+      "0": "Erhöht beim Auslösen der Elementarfähigkeit die VTD 15 s lang um <cryo>24 %</cryo>."
+    },
+    "3": {
+      "0": "Erhöht beim Auslösen der Elementarfähigkeit die VTD 15 s lang um <cryo>28 %</cryo>."
+    },
+    "4": {
+      "0": "Erhöht beim Auslösen der Elementarfähigkeit die VTD 15 s lang um <cryo>32 %</cryo>."
+    }
+  }
+}

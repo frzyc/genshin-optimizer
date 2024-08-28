@@ -1,0 +1,24 @@
+{
+  "name": "Instant surfant",
+  "description": {
+    "0": "Un objet commémoratif réservé à l'origine au vainqueur du Premier championnat inter-tribus de surf. Étant donné que ce tournoi est actuellement en phase préparatoire, le prix est temporairement conservé à la Bouée oisive et protégé par le propriétaire de l'établissement."
+  },
+  "passiveName": "Souvenir aquacolore",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente les PV max de <cryo>20 %</cryo>. Toutes les 15 s, l'effet suivant se produit pendant 14 s après avoir utilisé une compétence élémentaire : accorde 4 cumuls d'été flamboyant, chaque cumul augmentant les DGT des attaques normales de <cryo>12 %</cryo>. Une fois toutes les 1,5 s pendant cette durée, toucher un ennemi avec une attaque normale consomme un cumul. Une fois toutes les 1,5 s, déclencher une réaction d'Évaporation sur un ennemi rajoute un cumul. L'effet Été flamboyant peut être cumulé 4 fois maximum."
+    },
+    "1": {
+      "0": "Augmente les PV max de <cryo>25 %</cryo>. Toutes les 15 s, l'effet suivant se produit pendant 14 s après avoir utilisé une compétence élémentaire : accorde 4 cumuls d'été flamboyant, chaque cumul augmentant les DGT des attaques normales de <cryo>15 %</cryo>. Une fois toutes les 1,5 s pendant cette durée, toucher un ennemi avec une attaque normale consomme un cumul. Une fois toutes les 1,5 s, déclencher une réaction d'Évaporation sur un ennemi rajoute un cumul. L'effet Été flamboyant peut être cumulé 4 fois maximum."
+    },
+    "2": {
+      "0": "Augmente les PV max de <cryo>30 %</cryo>. Toutes les 15 s, l'effet suivant se produit pendant 14 s après avoir utilisé une compétence élémentaire : accorde 4 cumuls d'été flamboyant, chaque cumul augmentant les DGT des attaques normales de <cryo>18 %</cryo>. Une fois toutes les 1,5 s pendant cette durée, toucher un ennemi avec une attaque normale consomme un cumul. Une fois toutes les 1,5 s, déclencher une réaction d'Évaporation sur un ennemi rajoute un cumul. L'effet Été flamboyant peut être cumulé 4 fois maximum."
+    },
+    "3": {
+      "0": "Augmente les PV max de <cryo>35 %</cryo>. Toutes les 15 s, l'effet suivant se produit pendant 14 s après avoir utilisé une compétence élémentaire : accorde 4 cumuls d'été flamboyant, chaque cumul augmentant les DGT des attaques normales de <cryo>21 %</cryo>. Une fois toutes les 1,5 s pendant cette durée, toucher un ennemi avec une attaque normale consomme un cumul. Une fois toutes les 1,5 s, déclencher une réaction d'Évaporation sur un ennemi rajoute un cumul. L'effet Été flamboyant peut être cumulé 4 fois maximum."
+    },
+    "4": {
+      "0": "Augmente les PV max de <cryo>40 %</cryo>. Toutes les 15 s, l'effet suivant se produit pendant 14 s après avoir utilisé une compétence élémentaire : accorde 4 cumuls d'été flamboyant, chaque cumul augmentant les DGT des attaques normales de <cryo>24 %</cryo>. Une fois toutes les 1,5 s pendant cette durée, toucher un ennemi avec une attaque normale consomme un cumul. Une fois toutes les 1,5 s, déclencher une réaction d'Évaporation sur un ennemi rajoute un cumul. L'effet Été flamboyant peut être cumulé 4 fois maximum."
+    }
+  }
+}

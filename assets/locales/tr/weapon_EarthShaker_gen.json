@@ -1,0 +1,24 @@
+{
+  "name": "Yersarsan",
+  "description": {
+    "0": "Ateş Hırsızı adlı kahramanın sevdiği söylenen ağır bir kılıç. Hatta Kül Şehrin Efendisinin alevleri bile yakamamış bu kılıcı."
+  },
+  "passiveName": "Qhapaq Nan Yemini",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir grup üyesi Ateş ile ilgili bir tepkime tetikledikten sonra 8 saniyeliğine kuşanan karakterin Element Becerisi Hasarı <cryo>%16</cryo> artar. Bu etki, etkiyi tetikleyen grup üyesi alanda olmasa da tetiklenebilir."
+    },
+    "1": {
+      "0": "Bir grup üyesi Ateş ile ilgili bir tepkime tetikledikten sonra 8 saniyeliğine kuşanan karakterin Element Becerisi Hasarı <cryo>%20</cryo> artar. Bu etki, etkiyi tetikleyen grup üyesi alanda olmasa da tetiklenebilir."
+    },
+    "2": {
+      "0": "Bir grup üyesi Ateş ile ilgili bir tepkime tetikledikten sonra 8 saniyeliğine kuşanan karakterin Element Becerisi Hasarı <cryo>%24</cryo> artar. Bu etki, etkiyi tetikleyen grup üyesi alanda olmasa da tetiklenebilir."
+    },
+    "3": {
+      "0": "Bir grup üyesi Ateş ile ilgili bir tepkime tetikledikten sonra 8 saniyeliğine kuşanan karakterin Element Becerisi Hasarı <cryo>%28</cryo> artar. Bu etki, etkiyi tetikleyen grup üyesi alanda olmasa da tetiklenebilir."
+    },
+    "4": {
+      "0": "Bir grup üyesi Ateş ile ilgili bir tepkime tetikledikten sonra 8 saniyeliğine kuşanan karakterin Element Becerisi Hasarı <cryo>%32</cryo> artar. Bu etki, etkiyi tetikleyen grup üyesi alanda olmasa da tetiklenebilir."
+    }
+  }
+}

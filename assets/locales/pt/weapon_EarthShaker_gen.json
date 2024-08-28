@@ -1,0 +1,24 @@
+{
+  "name": "Estremecedor da Terra",
+  "description": {
+    "0": "A espada preferida do Ladrão das Chamas. Dizem que nem mesmo as chamas do Rei da Cidade das Cinzas foram capazes de quebrá-la."
+  },
+  "passiveName": "Juramento de Qhapaq Nan",
+  "passiveDescription": {
+    "0": {
+      "0": "Após um membro da equipe desencadear uma reação relacionada ao Pyro, o Dano da Habilidade Elemental do personagem que está com essa arma equipada é aumentado em <cryo>16%</cryo> por 8s. Esse efeito também pode ser desencadeado quando o personagem que causou a reação não está em campo."
+    },
+    "1": {
+      "0": "Após um membro da equipe desencadear uma reação relacionada ao Pyro, o Dano da Habilidade Elemental do personagem que está com essa arma equipada é aumentado em <cryo>20%</cryo> por 8s. Esse efeito também pode ser desencadeado quando o personagem que causou a reação não está em campo."
+    },
+    "2": {
+      "0": "Após um membro da equipe desencadear uma reação relacionada ao Pyro, o Dano da Habilidade Elemental do personagem que está com essa arma equipada é aumentado em <cryo>24%</cryo> por 8s. Esse efeito também pode ser desencadeado quando o personagem que causou a reação não está em campo."
+    },
+    "3": {
+      "0": "Após um membro da equipe desencadear uma reação relacionada ao Pyro, o Dano da Habilidade Elemental do personagem que está com essa arma equipada é aumentado em <cryo>28%</cryo> por 8s. Esse efeito também pode ser desencadeado quando o personagem que causou a reação não está em campo."
+    },
+    "4": {
+      "0": "Após um membro da equipe desencadear uma reação relacionada ao Pyro, o Dano da Habilidade Elemental do personagem que está com essa arma equipada é aumentado em <cryo>32%</cryo> por 8s. Esse efeito também pode ser desencadeado quando o personagem que causou a reação não está em campo."
+    }
+  }
+}

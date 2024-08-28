@@ -1,0 +1,24 @@
+{
+  "name": "Zeit fürs Wellenreiten",
+  "description": {
+    "0": "Ein Andenken, das ursprünglich für den Gewinner der ersten „Surfmeisterschaft für alle Stämme“ reserviert war. Da sich der Wettbewerb noch in der Vorbereitungsphase befindet, wird dieser Preis vorübergehend im „Gemütlichen Kugelfisch“ unter der Obhut der Geschäftsinhaberin aufbewahrt."
+  },
+  "passiveName": "Erinnerungen in der Farbe des Wassers",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht die max. LP um <cryo>20 %</cryo>. Verleiht alle 15 s einmal nach dem Anwenden der Elementarfähigkeit folgenden 14 s anhaltenden Effekt: Verleiht 4 Stapelungen „Sommerhitze“ und erhöht für jede Stapelung den mit Standardangriffen verursachten Schaden um <cryo>12 %</cryo>. Entfernt während der Wirkungsdauer alle 1,5 s einmal nach dem Treffen von Gegnern mit Standardangriffen 1 Stapelung. Fügt während der Wirkungsdauer alle 1,5 s einmal nach dem Verursachen der Reaktion „Verdampfen“ an Gegnern 1 Stapelung hinzu. Effekt „Sommerhitze“ ist 4-fach stapelbar."
+    },
+    "1": {
+      "0": "Erhöht die max. LP um <cryo>25 %</cryo>. Verleiht alle 15 s einmal nach dem Anwenden der Elementarfähigkeit folgenden 14 s anhaltenden Effekt: Verleiht 4 Stapelungen „Sommerhitze“ und erhöht für jede Stapelung den mit Standardangriffen verursachten Schaden um <cryo>15 %</cryo>. Entfernt während der Wirkungsdauer alle 1,5 s einmal nach dem Treffen von Gegnern mit Standardangriffen 1 Stapelung. Fügt während der Wirkungsdauer alle 1,5 s einmal nach dem Verursachen der Reaktion „Verdampfen“ an Gegnern 1 Stapelung hinzu. Effekt „Sommerhitze“ ist 4-fach stapelbar."
+    },
+    "2": {
+      "0": "Erhöht die max. LP um <cryo>30 %</cryo>. Verleiht alle 15 s einmal nach dem Anwenden der Elementarfähigkeit folgenden 14 s anhaltenden Effekt: Verleiht 4 Stapelungen „Sommerhitze“ und erhöht für jede Stapelung den mit Standardangriffen verursachten Schaden um <cryo>18 %</cryo>. Entfernt während der Wirkungsdauer alle 1,5 s einmal nach dem Treffen von Gegnern mit Standardangriffen 1 Stapelung. Fügt während der Wirkungsdauer alle 1,5 s einmal nach dem Verursachen der Reaktion „Verdampfen“ an Gegnern 1 Stapelung hinzu. Effekt „Sommerhitze“ ist 4-fach stapelbar."
+    },
+    "3": {
+      "0": "Erhöht die max. LP um <cryo>35 %</cryo>. Verleiht alle 15 s einmal nach dem Anwenden der Elementarfähigkeit folgenden 14 s anhaltenden Effekt: Verleiht 4 Stapelungen „Sommerhitze“ und erhöht für jede Stapelung den mit Standardangriffen verursachten Schaden um <cryo>21 %</cryo>. Entfernt während der Wirkungsdauer alle 1,5 s einmal nach dem Treffen von Gegnern mit Standardangriffen 1 Stapelung. Fügt während der Wirkungsdauer alle 1,5 s einmal nach dem Verursachen der Reaktion „Verdampfen“ an Gegnern 1 Stapelung hinzu. Effekt „Sommerhitze“ ist 4-fach stapelbar."
+    },
+    "4": {
+      "0": "Erhöht die max. LP um <cryo>40 %</cryo>. Verleiht alle 15 s einmal nach dem Anwenden der Elementarfähigkeit folgenden 14 s anhaltenden Effekt: Verleiht 4 Stapelungen „Sommerhitze“ und erhöht für jede Stapelung den mit Standardangriffen verursachten Schaden um <cryo>24 %</cryo>. Entfernt während der Wirkungsdauer alle 1,5 s einmal nach dem Treffen von Gegnern mit Standardangriffen 1 Stapelung. Fügt während der Wirkungsdauer alle 1,5 s einmal nach dem Verursachen der Reaktion „Verdampfen“ an Gegnern 1 Stapelung hinzu. Effekt „Sommerhitze“ ist 4-fach stapelbar."
+    }
+  }
+}
