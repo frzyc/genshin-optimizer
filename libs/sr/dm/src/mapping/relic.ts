@@ -46,8 +46,8 @@ export const relicSlotMap: Record<RelicSlotDMKey, RelicSlotKey> = {
   HAND: 'hands',
   BODY: 'body',
   FOOT: 'feet',
-  NECK: 'rope',
-  OBJECT: 'sphere',
+  NECK: 'sphere',
+  OBJECT: 'rope',
 } as const
 
 export type RelicSlotDMKey =
