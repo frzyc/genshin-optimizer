@@ -1,10 +1,9 @@
-import { isDebug } from '../util'
-import type { RawTagMapValues } from './compilation'
+import type { RawTagMapValues, TagMapEntry } from './compilation'
 import type { TagId } from './keys'
-import { entryKey, entryVal } from './symb'
-import type { Tag } from './type'
+import type { entryRef } from './symb'
+import { entryVal } from './symb'
 
-type Leaf<V> = { [entryVal]: V[]; [entryKey]?: Tag[] }
+type Leaf<V> = { [entryVal]: V[]; [entryRef]?: TagMapEntry<V>[] }
 
 /**
  * `TagMap` specialized in finding entries with matching tags, ignoring
@@ -24,15 +23,6 @@ export class TagMapSubsetValues<V> {
     this._subset(id, (l) => result.push(...l[entryVal]))
     return result
   }
-  /** Entry tags of `this.subset(id)`, in the same order */
-  debugTag(id: TagId): Tag[] {
-    if (isDebug('tag_db'))
-      throw new Error('Entry tags are only tracked in debug mode')
-    const result: Tag[] = []
-    this._subset(id, (l) => result.push(...l[entryKey]!))
-    return result
-  }
-
   _subset(id: TagId, callback: (_: Leaf<V>) => void): void {
     const len = id.length
     function crawl(idx: number, internal: Internal<V>) {

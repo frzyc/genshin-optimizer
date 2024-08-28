@@ -1,6 +1,6 @@
 import { compileTagMapKeys, compileTagMapValues } from '../tag'
 import { Calculator } from './calc'
-import { constant } from './construction'
+import { constant, read } from './construction'
 
 const keys = compileTagMapKeys([
   { category: 'cat1', values: new Set([...Array(4)].map((_, i) => `val${i}`)) },
@@ -51,5 +51,31 @@ describe('Calculator', () => {
   it('can detect a nonexistent tag category', () => {
     const calc = new Calculator(keys)
     expect(() => calc.gather({ cat4: 'val1' })).toThrow()
+  })
+
+  describe('withTag', () => {
+    // 1 suffix means it includes `cat1:val1`
+    const calc = new Calculator(keys)
+    const calc1 = calc.withTag({ cat1: 'val1' })
+    it('creates a new calculator', () => {
+      expect(calc1).not.toBe(calc)
+    })
+    it('returns old references on the same tags', () => {
+      expect(calc.withTag({})).toBe(calc)
+      expect(calc.withTag({ cat1: 'val1' })).toBe(calc1)
+      expect(calc1.withTag({ cat1: null })).toBe(calc)
+      expect(calc1.withTag({})).toBe(calc1)
+      expect(calc1.withTag({ cat1: 'val1' })).toBe(calc1)
+    })
+    it('shares the same cache', () => {
+      // Check references rather than values
+      const ref = calc.compute(read({}, undefined))
+      const ref1 = calc.compute(read({ cat1: 'val1' }, undefined))
+      const refCalc1 = calc1.compute(read({ cat1: null }, undefined))
+      const ref1Calc1 = calc1.compute(read({}, undefined))
+      expect(ref1Calc1).not.toBe(ref)
+      expect(ref1Calc1).toBe(ref1)
+      expect(refCalc1).toBe(ref)
+    })
   })
 })
