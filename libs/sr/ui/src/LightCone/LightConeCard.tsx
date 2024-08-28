@@ -15,7 +15,7 @@ export function LightConeCard({ lightConeId }: LightConeCardProps) {
 
   const calc = srCalculatorWithEntries(
     withMember('0', ...lightConeData(lightCone))
-  )
+  ).withTag({ src: '0' })
 
   if (!lightCone) return null
   return (
