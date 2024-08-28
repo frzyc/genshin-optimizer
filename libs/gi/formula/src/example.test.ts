@@ -10,14 +10,7 @@ import {
 } from '@genshin-optimizer/pando/engine'
 import { entries, keys, values } from './data'
 import type { Tag, TagMapNodeEntries } from './data/util'
-import {
-  convert,
-  enemyDebuff,
-  selfBuff,
-  selfTag,
-  team,
-  userBuff,
-} from './data/util'
+import { enemyDebuff, own, ownBuff, team, userBuff } from './data/util'
 import rawData from './example.test.json'
 import { genshinCalculatorWithEntries } from './index'
 import { conditionals } from './meta'
@@ -70,17 +63,17 @@ describe('example', () => {
       enemyDebuff.reaction.amp.add(''),
       enemyDebuff.common.lvl.add(12),
       enemyDebuff.common.preRes.add(0.1),
-      selfBuff.common.critMode.add('avg'),
+      ownBuff.common.critMode.add('avg'),
     ],
     calc = genshinCalculatorWithEntries(data)
 
-  const member0 = convert(selfTag, { et: 'self', src: '0' })
-  const member1 = convert(selfTag, { et: 'self', src: '1' })
+  const mem0 = calc.withTag({ src: '0' })
+  const mem1 = calc.withTag({ src: '1' })
 
   test.skip('debug formula', () => {
     // Pick formula
-    const normal0 = calc
-      .listFormulas(member1.listing.formulas)
+    const normal0 = mem1
+      .listFormulas(own.listing.formulas)
       .find((x) => x.tag.name === 'normal_0')!
 
     // Get a debug calculator
@@ -90,29 +83,16 @@ describe('example', () => {
     console.log(JSON.stringify(debugCalc.compute(normal0)))
   })
 
-  test('enumerate all tags', () => {
-    expect(Object.keys(member0).sort()).toEqual(Object.keys(selfTag).sort())
-    for (const [qt, values] of Object.entries(member0)) {
-      expect(values).toBe(member0[qt as keyof typeof member0])
-      for (const [q, v] of Object.entries(values)) {
-        // Swap order here to check if the order of query matters
-        expect(values[q as keyof typeof values]).toBe(v)
-      }
-    }
-  })
   test('calculate stats', () => {
-    expect(calc.compute(member1.final.hp).val).toBeCloseTo(9479.7, 1)
-    expect(calc.compute(member0.final.atk).val).toBeCloseTo(346.21, 2)
-    expect(calc.compute(member0.final.def).val).toBeCloseTo(124.15, 2)
-    expect(calc.compute(member0.final.eleMas).val).toBeCloseTo(28.44, 2)
-    expect(calc.compute(member0.final.critRate_).val).toBe(0.05)
-    expect(calc.compute(member0.final.critRate_.burgeon).val).toBeCloseTo(
-      0.25,
-      2
-    )
-    expect(calc.compute(member0.common.cappedCritRate_).val).toBe(0.05)
-    expect(calc.compute(member0.common.cappedCritRate_.burgeon).val).toBe(0.25)
-    const specialized = calc.compute(member0.char.specialized)
+    expect(mem1.compute(own.final.hp).val).toBeCloseTo(9479.7, 1)
+    expect(mem0.compute(own.final.atk).val).toBeCloseTo(346.21, 2)
+    expect(mem0.compute(own.final.def).val).toBeCloseTo(124.15, 2)
+    expect(mem0.compute(own.final.eleMas).val).toBeCloseTo(28.44, 2)
+    expect(mem0.compute(own.final.critRate_).val).toBe(0.05)
+    expect(mem0.compute(own.final.critRate_.burgeon).val).toBeCloseTo(0.25, 2)
+    expect(mem0.compute(own.common.cappedCritRate_).val).toBe(0.05)
+    expect(mem0.compute(own.common.cappedCritRate_.burgeon).val).toBe(0.25)
+    const specialized = mem0.compute(own.char.specialized)
     expect(specialized.val).toBe(0)
     // Specialized stat include the stat tag
     expect(specialized.meta.tag?.['sheet']).toBe('Nahida')
@@ -121,18 +101,20 @@ describe('example', () => {
   })
   test('calculate team stats', () => {
     // Nahida's contribution to `common.count`
-    expect(calc.compute(member0.common.count.hydro).val).toBe(0)
-    expect(calc.compute(member0.common.count.dendro).val).toBe(1)
+    expect(mem0.compute(own.common.count.hydro).val).toBe(0)
+    expect(mem0.compute(own.common.count.dendro).val).toBe(1)
 
     // Team's final `common.count`
     expect(calc.compute(team.common.count.dendro).val).toBe(1)
     expect(calc.compute(team.common.count.hydro).val).toBe(1)
+    // Team stats are accessible via `mem*` as well
+    expect(mem0.compute(team.common.count.dendro).val).toBe(1)
+    expect(mem0.compute(team.common.count.hydro).val).toBe(1)
     // NOT `team` since this uses a specific formula, but the value from every member is the same
-    expect(calc.compute(member0.common.eleCount).val).toBe(2)
+    expect(mem0.compute(own.common.eleCount).val).toBe(2)
 
     expect(calc.compute(team.final.eleMas).val).toEqual(
-      calc.compute(member0.final.eleMas).val +
-        calc.compute(member1.final.eleMas).val
+      mem0.compute(own.final.eleMas).val + mem1.compute(own.final.eleMas).val
     )
   })
   describe('retrieve formulas in a listing', () => {
@@ -141,7 +123,7 @@ describe('example', () => {
      * ```
      * {
      *   src: <member>
-     *   et: 'self'
+     *   et: 'own'
      *   sheet: <sheet that defines the formula>
      *   qt: 'formula'
      *   q: < 'dmg' / 'trans' / 'shield' / 'heal' >
@@ -149,9 +131,7 @@ describe('example', () => {
      * }
      * ```
      */
-    const listing = calc
-      .listFormulas(member0.listing.formulas)
-      .map((x) => x.tag)
+    const listing = mem0.listFormulas(own.listing.formulas).map((x) => x.tag)
 
     // Simple check that all tags are in the correct format
     const names: string[] = []
@@ -164,7 +144,8 @@ describe('example', () => {
       test(`with name ${name}`, () => {
         expect(tag).toEqual({
           src: '0',
-          et: 'self',
+          dst: null,
+          et: 'own',
           sheet: 'Nahida',
           qt: 'formula',
           q: 'dmg', // DMG formula
@@ -187,8 +168,8 @@ describe('example', () => {
     expect(listing.filter((x) => x.sheet === 'static').length).toEqual(6)
   })
   test('calculate formulas in a listing', () => {
-    const read = calc
-      .listFormulas(member0.listing.formulas)
+    const read = mem0
+      .listFormulas(own.listing.formulas)
       .find((x) => x.tag.name === 'normal_0')!
     const tag = read.tag
 
@@ -209,7 +190,7 @@ describe('example', () => {
     expect(cata).toEqual('spread')
   })
   test('list conditionals affecting a given node', () => {
-    const result = calc.compute(member0.dmg.critMulti.burgeon)
+    const result = mem0.compute(own.dmg.critMulti.burgeon)
     const conds = result.meta.conds
 
     // conds[dst][src][sheet][name] == cond value
@@ -217,7 +198,7 @@ describe('example', () => {
   })
   test('list conditionals affecting a member', () => {
     // all conditionals affecting all formulas
-    const conds = calc.listCondFormulas(member0.listing.formulas)
+    const conds = mem0.listCondFormulas(own.listing.formulas)
 
     // Read current value: all -> member0 Nilou:a1AfterHit
     expect(conds['0']?.['all']?.['Nilou']?.['a1AfterHit']).toEqual(0)
@@ -229,18 +210,18 @@ describe('example', () => {
   test('create optimization calculation', () => {
     // Step 1: Pick formula(s); anything that `calc.compute` can handle will work
     const nodes = [
-      calc
-        .listFormulas(member0.listing.formulas)
+      mem0
+        .listFormulas(own.listing.formulas)
         .find((x) => x.tag.name === 'normal_0')!,
-      member0.char.auto,
-      member0.final.atk,
+      own.char.auto,
+      own.final.atk,
     ]
 
     // Step 2: Detach nodes from Calculator
     const allArts = new Set(allArtifactSetKeys) // Cache for fast lookup, put in global
     let detached = detach(nodes, calc, (tag: Tag) => {
       if (tag['src'] != '0') return undefined // Wrong member
-      if (tag['et'] != 'self') return undefined // Not applied (only) to self
+      if (tag['et'] != 'own') return undefined // Not applied (only) to 'own'
 
       if (tag['sheet'] === 'dyn' && tag['qt'] === 'premod')
         return { q: tag['q']! } // Art stat bonus
@@ -275,17 +256,15 @@ describe('weapon-only example', () => {
   const data: TagMapNodeEntries = [...weaponData(rawData[1].weapon as IWeapon)],
     calc = genshinCalculatorWithEntries(data)
 
-  const self = convert(selfTag, { et: 'self' })
-
   test('calculate specialized stats', () => {
-    const primary = calc.compute(self.weapon.primary)
+    const primary = calc.compute(own.weapon.primary)
     expect(primary.val).toBeCloseTo(337.96) // atk
     expect(primary.meta.tag?.['sheet']).toEqual('KeyOfKhajNisut')
     expect(primary.meta.tag!['qt']).toEqual('base')
     expect(primary.meta.tag!['q']).toEqual('atk')
 
     // If there are multiple, or none, use `calc.get` instead
-    const secondary = calc.compute(self.weapon.secondary)
+    const secondary = calc.compute(own.weapon.secondary)
     expect(secondary.val).toBeCloseTo(0.458) // hp_
     expect(secondary.meta.tag?.['sheet']).toEqual('KeyOfKhajNisut')
     expect(secondary.meta.tag!['qt']).toEqual('premod')

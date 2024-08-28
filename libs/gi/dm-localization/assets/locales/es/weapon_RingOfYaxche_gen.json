@@ -1,0 +1,24 @@
+{
+  "name": "Anillo del Yaxché",
+  "description": {
+    "0": "Una reliquia de jade que crearon los héroes gemelos de la antigüedad. Cuenta la leyenda que con ella se derribó del cielo al dragón gigante que había ocupado el volcán."
+  },
+  "passiveName": "Eco de la tierra de la fertilidad",
+  "passiveDescription": {
+    "0": {
+      "0": "Al usar la Habilidad Elemental, otorga el efecto de “corona de jade”, el cual aumenta durante 10 s el daño del Ataque Normal en un <cryo>0.6%</cryo> por cada 1000 pts. de Vida Máx. que tenga el portador de esta arma. Como máximo, el daño del Ataque Normal puede aumentar en un <cryo>16%</cryo> de esta manera."
+    },
+    "1": {
+      "0": "Al usar la Habilidad Elemental, otorga el efecto de “corona de jade”, el cual aumenta durante 10 s el daño del Ataque Normal en un <cryo>0.7%</cryo> por cada 1000 pts. de Vida Máx. que tenga el portador de esta arma. Como máximo, el daño del Ataque Normal puede aumentar en un <cryo>20%</cryo> de esta manera."
+    },
+    "2": {
+      "0": "Al usar la Habilidad Elemental, otorga el efecto de “corona de jade”, el cual aumenta durante 10 s el daño del Ataque Normal en un <cryo>0.8%</cryo> por cada 1000 pts. de Vida Máx. que tenga el portador de esta arma. Como máximo, el daño del Ataque Normal puede aumentar en un <cryo>24%</cryo> de esta manera."
+    },
+    "3": {
+      "0": "Al usar la Habilidad Elemental, otorga el efecto de “corona de jade”, el cual aumenta durante 10 s el daño del Ataque Normal en un <cryo>0.9%</cryo> por cada 1000 pts. de Vida Máx. que tenga el portador de esta arma. Como máximo, el daño del Ataque Normal puede aumentar en un <cryo>28%</cryo> de esta manera."
+    },
+    "4": {
+      "0": "Al usar la Habilidad Elemental, otorga el efecto de “corona de jade”, el cual aumenta durante 10 s el daño del Ataque Normal en un <cryo>1%</cryo> por cada 1000 pts. de Vida Máx. que tenga el portador de esta arma. Como máximo, el daño del Ataque Normal puede aumentar en un <cryo>32%</cryo> de esta manera."
+    }
+  }
+}

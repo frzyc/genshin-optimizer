@@ -40,6 +40,7 @@ import Ganyu from './Ganyu'
 import Gorou from './Gorou'
 import HuTao from './HuTao'
 import Jean from './Jean'
+import Kachina from './Kachina'
 import KaedeharaKazuha from './KaedeharaKazuha'
 import Kaeya from './Kaeya'
 import KamisatoAyaka from './KamisatoAyaka'
@@ -56,6 +57,7 @@ import Lynette from './Lynette'
 import Lyney from './Lyney'
 import Mika from './Mika'
 import Mona from './Mona'
+import Mualani from './Mualani'
 import Nahida from './Nahida'
 import Navia from './Navia'
 import Neuvillette from './Neuvillette'
@@ -137,6 +139,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Gorou,
   HuTao,
   Jean,
+  Kachina,
   KaedeharaKazuha,
   Kaeya,
   KamisatoAyaka,
@@ -153,6 +156,7 @@ const characters: Record<CharacterSheetKey, CharacterSheet> = {
   Lyney,
   Mika,
   Mona,
+  Mualani,
   Nahida,
   Navia,
   Neuvillette,

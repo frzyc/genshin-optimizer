@@ -21,8 +21,8 @@ import {
   enemyDebuff,
   lightConeData,
   members,
+  ownBuff,
   relicsData,
-  selfBuff,
   srCalculatorWithEntries,
   teamData,
   withMember,
@@ -48,9 +48,11 @@ type MemberIndexMap = Partial<Record<CharacterKey | 'all', Member | 'all'>>
 
 export function TeamCalcProvider({
   teamId,
+  src,
   children,
 }: {
   teamId: string
+  src: '1' | '2' | '3' | '0'
   children: ReactNode
 }) {
   const team = useTeam(teamId)!
@@ -58,11 +60,15 @@ export function TeamCalcProvider({
   const loadout1 = useLoadout(team.loadoutMetadata[1]?.loadoutId)
   const loadout2 = useLoadout(team.loadoutMetadata[2]?.loadoutId)
   const loadout3 = useLoadout(team.loadoutMetadata[3]?.loadoutId)
-  const memberIndexMap: MemberIndexMap = { all: 'all' }
-  if (loadout0) memberIndexMap[loadout0.key] = '0'
-  if (loadout1) memberIndexMap[loadout1.key] = '1'
-  if (loadout2) memberIndexMap[loadout2.key] = '2'
-  if (loadout3) memberIndexMap[loadout3.key] = '3'
+
+  const memberIndexMap = useMemo(() => {
+    const memberIndexMap: MemberIndexMap = { all: 'all' }
+    if (loadout0) memberIndexMap[loadout0.key] = '0'
+    if (loadout1) memberIndexMap[loadout1.key] = '1'
+    if (loadout2) memberIndexMap[loadout2.key] = '2'
+    if (loadout3) memberIndexMap[loadout3.key] = '3'
+    return memberIndexMap
+  }, [loadout0, loadout1, loadout2, loadout3])
   const member0 = useCharacterAndEquipment(
     team.loadoutMetadata[0],
     memberIndexMap
@@ -101,12 +107,16 @@ export function TeamCalcProvider({
         enemyDebuff.common.res.add(0.1),
         enemyDebuff.common.isBroken.add(0),
         enemyDebuff.common.maxToughness.add(100),
-        selfBuff.common.critMode.add('avg'),
+        ownBuff.common.critMode.add('avg'),
       ]),
     [member0, member1, member2, member3, team.loadoutMetadata]
   )
 
-  return <CalcContext.Provider value={calc}>{children}</CalcContext.Provider>
+  const calcWithTag = useMemo(() => calc?.withTag({ src }) ?? null, [calc, src])
+
+  return (
+    <CalcContext.Provider value={calcWithTag}>{children}</CalcContext.Provider>
+  )
 }
 
 function useCharacterAndEquipment(
@@ -121,15 +131,21 @@ function useCharacterAndEquipment(
   const relics = useEquippedRelics(build?.relicIds)
 
   // Convert dbConditionals {CharacterKey: condobject} to calcConditionals {Member: condObject}
-  const dbConditionals = loadout?.conditional
-  const conditionals = Object.fromEntries(
-    Object.entries(dbConditionals ?? {}).map(([srcKey, srcCond]) => [
-      memberIndexMap[srcKey],
-      srcCond,
-    ])
+  const conditionals = useMemo(
+    () =>
+      Object.fromEntries(
+        Object.entries(loadout?.conditional ?? {}).map(([srcKey, srcCond]) => [
+          memberIndexMap[srcKey],
+          srcCond,
+        ])
+      ),
+    [loadout, memberIndexMap]
   )
 
-  return { character, lightCone, relics, conditionals }
+  return useMemo(
+    () => ({ character, lightCone, relics, conditionals }),
+    [character, lightCone, conditionals, relics]
+  )
 }
 
 function createMember(

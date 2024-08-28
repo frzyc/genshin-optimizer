@@ -1,11 +1,10 @@
 'use client'
 
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { convert, selfTag } from '@genshin-optimizer/gi/formula'
+import { members, own } from '@genshin-optimizer/gi/formula'
 import { useGiCalcContext } from '@genshin-optimizer/gi/formula-ui'
-import { MemberContext } from '@genshin-optimizer/pando/ui-sheet'
 import { CardContent, CardHeader, Stack, Typography } from '@mui/material'
-import { useContext, useMemo, useState } from 'react'
+import { useContext, useState } from 'react'
 import { CalcWrapper } from './CalcWrapper'
 import CharacterTalentPane from './TalentContent'
 import { TeamContext } from './TeamContext'
@@ -20,7 +19,7 @@ export function TeamCharacter() {
   if (!character) return null
   const { key } = character
   return (
-    <CalcWrapper>
+    <CalcWrapper src={members[charIndex]}>
       <CardThemed>
         <CardHeader title={`Character: ${key}`} />
         <CardContent>
@@ -33,26 +32,23 @@ export function TeamCharacter() {
 
 function Content({ character }: { character: TeamLoadoutCharacter }) {
   const calc = useGiCalcContext()
-  const member = useMemo(() => convert(selfTag, { et: 'self', src: '0' }), [])
   if (!calc) return null
   return (
-    <MemberContext.Provider value={member}>
-      <Stack spacing={1}>
-        <CardThemed bgt="light">
-          <CardContent>
-            <Typography>{character.key}</Typography>
-            <Typography>HP:{calc.compute(member.final.hp).val}</Typography>
-            <Typography>ATK:{calc.compute(member.final.atk).val}</Typography>
-            <Typography>DEF:{calc.compute(member.final.def).val}</Typography>
-          </CardContent>
-        </CardThemed>
-        <CardThemed bgt="light">
-          <CardContent>
-            <Typography>Talent</Typography>
-          </CardContent>
-        </CardThemed>
-        <CharacterTalentPane character={character} calc={calc} />
-      </Stack>
-    </MemberContext.Provider>
+    <Stack spacing={1}>
+      <CardThemed bgt="light">
+        <CardContent>
+          <Typography>{character.key}</Typography>
+          <Typography>HP:{calc.compute(own.final.hp).val}</Typography>
+          <Typography>ATK:{calc.compute(own.final.atk).val}</Typography>
+          <Typography>DEF:{calc.compute(own.final.def).val}</Typography>
+        </CardContent>
+      </CardThemed>
+      <CardThemed bgt="light">
+        <CardContent>
+          <Typography>Talent</Typography>
+        </CardContent>
+      </CardThemed>
+      <CharacterTalentPane character={character} calc={calc} />
+    </Stack>
   )
 }

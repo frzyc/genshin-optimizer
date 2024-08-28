@@ -1,13 +1,13 @@
 import type { DedupTag, RawTagMapKeys, RawTagMapValues, Tag } from '../tag'
 import {
   DedupTags,
+  mergeTagMapValues,
   TagMapKeys,
   TagMapSubsetValues,
-  mergeTagMapValues,
 } from '../tag'
 import { assertUnreachable, extract, isDebug, tagString } from '../util'
 import { arithmetic, branching } from './formula'
-import type { AnyNode, NumNode, ReRead, Read, StrNode } from './type'
+import type { AnyNode, NumNode, Read, ReRead, StrNode } from './type'
 
 export type TagCache<M> = DedupTag<PreRead<M>>
 export type PreRead<M> = Partial<
@@ -17,31 +17,41 @@ const getV = <V, M>(n: CalcResult<V, M>[]) => extract(n, 'val')
 
 export type CalcResult<V, M> = { val: V; meta: M }
 export class Calculator<M = any> {
-  keys: TagMapKeys
   nodes: TagMapSubsetValues<AnyNode | ReRead>
-  cache: DedupTags<PreRead<M>>
+  cache: DedupTag<PreRead<M>>
+  calc: DedupTag<this>
 
   constructor(
-    keys: RawTagMapKeys,
+    rawKeys: RawTagMapKeys,
     ...values: RawTagMapValues<AnyNode | ReRead>[]
   ) {
-    this.keys = new TagMapKeys(keys)
+    const keys = new TagMapKeys(rawKeys)
     this.nodes = new TagMapSubsetValues(keys.tagLen, mergeTagMapValues(values))
-    this.cache = new DedupTags(this.keys)
+    this.cache = new DedupTags(keys).at({})
+    this.calc = new DedupTags(keys).at({})
+    this.calc.val = this
+  }
+  withTag(tag: Tag): this {
+    const calc = this.calc.with(tag)
+    return (calc.val ??= Object.assign(
+      new (this.constructor as any)(this.cache.keys),
+      this,
+      { cache: this.cache.with(tag), calc }
+    ))
   }
 
   gather<V extends number | string = number | string>(
     tag: Tag
   ): CalcResult<V, M>[]
   gather(tag: Tag): CalcResult<number | string, M>[] {
-    return this._gather(this.cache.at(tag)).pre
+    return this._gather(this.cache.with(tag)).pre
   }
 
   compute(n: NumNode): CalcResult<number, M>
   compute(n: StrNode): CalcResult<string, M>
   compute(n: AnyNode): CalcResult<number | string, M>
   compute(n: AnyNode): CalcResult<number | string, M> {
-    return this._compute(n, this.cache.empty)
+    return this._compute(n, this.cache)
   }
 
   _gather(cache: TagCache<M>): PreRead<M> {

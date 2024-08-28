@@ -13,6 +13,7 @@ import FesteringDesire from './FesteringDesire'
 import FilletBlade from './FilletBlade'
 import FinaleOfTheDeep from './FinaleOfTheDeep'
 import FleuveCendreFerryman from './FleuveCendreFerryman'
+import FluteOfEzpitzal from './FluteOfEzpitzal'
 import FreedomSworn from './FreedomSworn'
 import HaranGeppakuFutsu from './HaranGeppakuFutsu'
 import HarbingerOfDawn from './HarbingerOfDawn'
@@ -57,6 +58,7 @@ const sword: Record<WeaponSwordKey, WeaponSheet> = {
   FilletBlade,
   FinaleOfTheDeep,
   FleuveCendreFerryman,
+  FluteOfEzpitzal,
   FreedomSworn,
   HaranGeppakuFutsu,
   HarbingerOfDawn,

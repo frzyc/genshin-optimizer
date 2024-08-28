@@ -1,0 +1,177 @@
+{
+  "name": "Kachina",
+  "title": "Oro screziato allo stato grezzo",
+  "description": "Una giovane guerriera dei Nanatzcayan insignita del Nome antico di \"Uthabiti\". Gentile e insaziabilmente perseverante, ogni ostacolo che affronta la rende sempre più forte.",
+  "constellationName": "Ochotona Princeps",
+  "auto": {
+    "name": "Mangiaroccia",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra fino a 4 colpi di lancia consecutivi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per attaccare balzando in avanti e infliggendo DAN agli avversari lungo la traiettoria."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato",
+      "5": "Costo vigore ATT caricato",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Vai, Trottolino, vai!",
+    "description": {
+      "0": "Combatte insieme a Trottolino, la sua fidata turbotrottola!",
+      "1": "Evoca Trottolino. La pressione prolungata dell'abilità permette a Kachina di evocare Trottolino e salirci a bordo immediatamente.",
+      "2": "Dopo l'attivazione dell'abilità, Kachina ottiene 60 punti Anima della Notte ed entra nello stato di Grazia dell'Anima della Notte.",
+      "3": "<br/>",
+      "4": "<strong>Grazia dell'Anima della Notte: Kachina</strong>",
+      "5": "Le azioni eseguite da Trottolino consumano punti Anima della Notte.",
+      "6": "Lo stato termina quando tutti i punti vengono consumati.",
+      "7": "<br/>",
+      "8": "<strong>Trottolino</strong>",
+      "9": "Può sia agire in autonomia che essere manovrato da Kachina quando quest'ultima ci si trova sopra. Quando Trottolino è in campo, l'abilità elementale di Kachina \"Vai, Trottolino, vai!\" viene sostituita da un comando che permette a Kachina di salire a bordo e scendere da Trottolino.",
+      "10": [
+        " Quando agisce in autonomia, Trottolino colpisce il terreno con violenza a intervalli regolari, infliggendo <geo>DAN da Geo ad area</geo> basati sulla DIF di Kachina e con attributo Anima della Notte.",
+        " Quando Kachina è a bordo di Trottolino, quest'ultima può controllarne i movimenti, usarlo per arrampicarsi rapidamente e sferrare l'attacco normale per colpire il terreno con violenza, infliggendo <geo>DAN da Geo ad area</geo> basati sulla DIF di Kachina e con attributo Anima della Notte."
+      ],
+      "11": "<br/>",
+      "12": "Trottolino è considerato un costrutto di Geo, e scompare al termine dello stato di Grazia dell'Anima della Notte di Kachina. Può esistere soltanto 1 Trottolino creato da Kachina in campo alla volta.",
+      "13": "<br/>",
+      "14": "<i>Trottolino può sembrare una trottola, ma l'apparenza inganna: in realtà è una trivella in grado di spaccare anche la roccia più dura!</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Trottolino con Kachina a bordo",
+      "1": "DAN da Trottolino in autonomia",
+      "2": "Limite punti Anima della Notte",
+      "3": "TdR",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ora si fa sul serio!",
+    "description": {
+      "0": "Kachina colpisce il terreno infliggendo <geo>DAN da Geo ad area</geo> in base alla sua DIF, schierando un Campo Turbotrivella.",
+      "1": "Il Campo aumenta l'area d'effetto degli attacchi di Trottolino e la sua VEL di movimento quando Kachina si trova sopra di lui.",
+      "2": "<br/>",
+      "3": "Se il Trottolino di Kachina è già presente in campo quando viene usata questa abilità, Trottolino riappare nuovamente al suo fianco.",
+      "4": "<br/>",
+      "5": "<i>Come gli interpreti agitati tendono a paragonare gli spettatori a dei pupazzi di legno, a Kachina piace immaginare i suoi avversari come minerali pieni di splendide gemme preziose, di quelle che non vedi l'ora di raccogliere e portarti a casa.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Durata campo",
+      "2": "TdR",
+      "3": "Costo energia",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Echi della montagna",
+    "description": {
+      "0": "Dopo che un membro vicino del gruppo innesca un Impeto dell'Anima della Notte, il <geo>bonus DAN da Geo</geo> di Kachina aumenta di un 20% per 12 s."
+    }
+  },
+  "passive2": {
+    "name": "Peso della pietra",
+    "description": {
+      "0": "I DAN inflitti da <strong>Trottolino</strong> aumentano di un 20% della DIF di Kachina."
+    }
+  },
+  "passive3": {
+    "name": "Dono del Reame notturno: Cuore dell'unità",
+    "description": {
+      "0": "Dopo aver esaurito i punti Anima della Notte, Kachina consuma il Flogisto per conservare la sua Grazia dell'Anima della Notte.",
+      "1": "Se si trova in un'area di Natlan dove sono presenti uno o più Meccanismi flogistici, può usare Trasmissione dell'Anima della Notte: Kachina. Quando il personaggio attivo sta eseguendo uno Scatto, si sta arrampicando o compiendo un movimento causato da determinati talenti, oppure è sospeso in aria a una certa altezza, passare il controllo a Kachina attiva il seguente effetto: Kachina entra nello stato di Grazia dell'Anima della Notte, sale a bordo di <strong>Trottolino</strong> appena entra in campo e ottiene 30 punti Anima della Notte. Trasmissione dell'Anima della Notte può attivarsi una volta ogni 10 s all'interno del tuo gruppo.",
+      "2": "<br/>",
+      "3": "Inoltre, quando si trova a Natlan, Kachina consuma un 90% di vigore in meno durante le arrampicate quando si trova a bordo di <strong>Trottolino</strong>."
+    }
+  },
+  "passive": {
+    "name": "Favore della fiamma di cristallo",
+    "description": {
+      "0": "Quando si trova in un'area di Natlan dove sono presenti dei Meccanismi flogistici, interagire con alcuni materiali da raccolta ripristina 20 di vigore. Inoltre, la posizione delle <strong>risorse uniche di Natlan</strong> circostanti viene mostrata sulla minimappa."
+    }
+  },
+  "constellation1": {
+    "name": "Anche i frammenti sono gemme",
+    "description": {
+      "0": "Quando Kachina sale a bordo o scende da <strong>Trottolino</strong>, assorbe i frammenti elementali circostanti creati tramite la Cristallizzazione.",
+      "1": "Inoltre, ogni volta che un membro del gruppo raccoglie uno di questi frammenti, l'energia di Kachina si ripristina di 3. È possibile fornire energia a Kachina in questo modo una volta ogni 5 s."
+    }
+  },
+  "constellation2": {
+    "name": "Mai uscire di casa senza... Trottolino",
+    "description": {
+      "0": "Quando usa <strong>Ora si fa sul serio!</strong>, Kachina riguadagna 20 punti Anima della Notte. Se in campo non c'è alcun <strong>Trottolino</strong> appartenente a lei, entra nello stato di Grazia dell'Anima della Notte e ne evoca uno."
+    }
+  },
+  "constellation3": {
+    "name": "Stabilizzazione migliorata",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Vai, Trottolino, vai!</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "La prudenza non è mai troppa",
+    "description": {
+      "0": "Quando nel Campo Turbotrivella creato da <strong>Ora si fa sul serio!</strong> è presente un numero di avversari pari a 1/2/3/4 (o più), la DIF del personaggio attivo all'interno del campo aumenta di un 8%/12%/16%/20%."
+    }
+  },
+  "constellation5": {
+    "name": "La mia collezione attuale",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Ora si fa sul serio!</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Stavolta devo vincere",
+    "description": {
+      "0": "Quando lo scudo del personaggio attivo viene sostituito o distrutto per qualsiasi motivo, Kachina infligge <geo>DAN da Geo ad area</geo> pari a un 200% della sua DIF. Quest'effetto può attivarsi una volta ogni 5 s."
+    }
+  }
+}

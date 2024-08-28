@@ -1,4 +1,3 @@
-import type { ElementalTypeKey } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterKeys,
   allLightConeKeys,
@@ -67,12 +66,12 @@ export const damageTypes = [
 ] as const
 
 export const entryTypes = [
-  'self',
+  'own',
   'enemy',
   'team',
   'target',
   'teamBuff',
-  'notSelfBuff',
+  'notOwnBuff',
   'enemyDeBuff', // Ends with 'Buff' so `Calculator` can pick up on this tag
 ] as const
 export const sheets = [
@@ -112,13 +111,3 @@ export type EntryType = (typeof entryTypes)[number]
 export type Sheet = (typeof sheets)[number]
 export type Member = (typeof members)[number]
 export type Preset = (typeof presets)[number]
-
-export const TypeKeyToListingType: Record<ElementalTypeKey, ElementalType> = {
-  Physical: 'physical',
-  Quantum: 'quantum',
-  Lightning: 'lightning',
-  Ice: 'ice',
-  Wind: 'wind',
-  Fire: 'fire',
-  Imaginary: 'imaginary',
-}

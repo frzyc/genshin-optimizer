@@ -7,7 +7,7 @@ import type {
 } from '@genshin-optimizer/sr/consts'
 import chars from './gen/chars'
 import lightCones from './gen/lightCones'
-import relics from './gen/relic'
+import relics from './gen/relics'
 type characterAssetKey = 'icon' | 'basic_0'
 export function characterAsset(
   ck: NonTrailblazerCharacterKey | TrailblazerGenderedKey,

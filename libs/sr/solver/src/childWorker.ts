@@ -105,7 +105,7 @@ async function start() {
   }
 
   relicStatsBySlot.head.forEach((head) => {
-    relicStatsBySlot.hand.forEach((hand) => {
+    relicStatsBySlot.hands.forEach((hands) => {
       relicStatsBySlot.feet.forEach((feet) => {
         relicStatsBySlot.body.forEach((body) => {
           relicStatsBySlot.sphere.forEach((sphere) => {
@@ -113,7 +113,7 @@ async function start() {
               // Step 5: Calculate the value
               const results = compiledCalcFunction([
                 head.stats,
-                hand.stats,
+                hands.stats,
                 feet.stats,
                 body.stats,
                 sphere.stats,
@@ -124,7 +124,7 @@ async function start() {
                 value: results[0], // We only pass 1 target to calculate, so just grab the 1st result
                 ids: {
                   head: head.id,
-                  hand: hand.id,
+                  hands: hands.id,
                   feet: feet.id,
                   body: body.id,
                   sphere: sphere.id,

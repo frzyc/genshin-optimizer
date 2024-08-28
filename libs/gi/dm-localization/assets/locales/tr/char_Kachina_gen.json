@@ -1,0 +1,177 @@
+{
+  "name": "Kachina",
+  "title": "Ebruli Altın Cevheri",
+  "description": "Kadim Adı \"Uthabiti\" olan Nanatzcayan'ın genç bir savaşçısı. İyi kalpli ve inatçı biri. Karşılaştığı her zorlukla daha da güçlenip becerilerini geliştiriyor.",
+  "constellationName": "Islıklı Tavşan",
+  "auto": {
+    "name": "Kayabiçen",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 4 mızrak saldırısı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "İleri atılırken belirli miktarda Dayanıklılık harcar ve önündeki düşmanlara hasar verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Hasarı",
+      "5": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Atıl Turbo Topaç!",
+    "description": {
+      "0": "Turbo yoldaşın Turbo Topaç ile omuz omuza savaş!",
+      "1": "Turbo Topaç'ı çağırır. Basılı Tutulup bırakılırsa Kachina, Turbo Topaç'ı çağırıp ona biner.",
+      "2": "Beceri kullanıldıktan sonra Kachina 60 Gece Ruhu puanı kazanır ve Gece Ruhunun Lütfu durumuna girer.",
+      "3": "<br/>",
+      "4": "<strong>Gece Ruhunun Lütfu: Kachina</strong>",
+      "5": "Turbo Topaç'ın çeşitli hamleleri Kachina'nın Gece Ruhu puanlarını harcar.",
+      "6": "Gece Ruhunun Lütfu durumu puanlar tükenene kadar sürer.",
+      "7": "<br/>",
+      "8": "<strong>Turbo Topaç</strong>",
+      "9": "Bağımsız şekilde var olabilir veya Kachina tarafından binilip sürülebilir. Turbo Topaç alandayken Kachina'nın Element Becerisi \"Atıl Turbo Topaç!\", Turbo Topaç'a Binme/İnme seçeneği olarak değişir.",
+      "10": [
+        "Turbo Topaç, Kachina'dan bağımsız olarak alandayken belirli aralıklarla yere vurur ve Kachina'nın Savunmasına göre Gece Ruhu tesirli <geo>Toprak Alan Hasarı</geo> verir.",
+        "Kachina, Turbo Topaç'ı sürerken hızla ilerleyebilir, tırmanabilir ve Normal Saldırılarıyla yere vurup Kachina'nın Savunmasına göre Gece Ruhu tesirli <geo>Toprak Alan Hasarı</geo> verebilir."
+      ],
+      "11": "<br/>",
+      "12": "Turbo Topaç bir Toprak Yapısı olarak kabul edilir ve Kachina'nın Gece Ruhunun Lütfu durumu sona erdiğinde alandan kaybolur. Aynı anda alanda Kachina tarafından yaratılan yalnızca 1 Turbo Topaç var olabilir.",
+      "13": "<br/>",
+      "14": "<i>Turbo Topaç dışarıdan topaç gibi görünse de kendisi aslında en sert kayayı bile kırıp açabilen bir matkaptır!</i>"
+    },
+    "skillParams": {
+      "0": "Turbo Topaç Biniş Hasarı",
+      "1": "Turbo Topaç Bağımsız Hasar",
+      "2": "Gece Ruhu Puanı Sınırı",
+      "3": "BS",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ciddileşme Zamanı!",
+    "description": {
+      "0": "Kachina, yere vurarak Savunmasına göre <geo>Toprak Alan Hasarı</geo> verir ve bir Turbo Matkap Alanı oluşturur.",
+      "1": "Bu Alan, Kachina Turbo Topaç'ı sürerken Turbo Topaç'ın Saldırı Etki Alanını ve Hareket Hızını artırır.",
+      "2": "<br/>",
+      "3": "Bu kullanıldığında Kachina'nın kendi Turbo Topaç'ı alandaysa Turbo Topaç, Kachina'nın yanına çağırılır.",
+      "4": "<br/>",
+      "5": "<i>Gergin sanatçılar, rahatlayabilmek için seyircilerini ahşap kuklalar olarak hayal eder. Kachina ise düşmanlarını, eve getirip biriktirmek isteyeceğin çok hoş cevherler olarak hayal ediyor.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Alan Süresi",
+      "2": "BS",
+      "3": "Enerji Maliyeti",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Dağ Yankıları",
+    "description": {
+      "0": "Yakındaki grup üyeleri bir Gece Ruhu Patlaması tetikledikten sonra 12 saniyeliğine Kachina'nın <geo>Toprak Hasarı Bonusu</geo> %20 artar."
+    }
+  },
+  "passive2": {
+    "name": "Taşın Ağırlığı",
+    "description": {
+      "0": "<strong>Turbo Topaç'ın</strong> verdiği Hasar, Kachina'nın Savunmasının %20'si kadar artar."
+    }
+  },
+  "passive3": {
+    "name": "Gece Diyarının Armağanı: Birliğin Kalbi",
+    "description": {
+      "0": "Kachina, Gece Ruhu puanları tükendiğinde Filojiston harcayarak Gece Ruhunun Lütfu durumunda kalmaya devam eder.",
+      "1": "Kachina, Natlan'da Filojiston Mekanikleri bulunan bir bölgedeyken \"Gece Ruhu Aktarımı: Kachina\" kullanabilir. Aktif karakter depar atarken, tırmanırken, belirli Yeteneklerden kaynaklı bir hareket modundayken veya havada belirli bir yükseklikteyken Kachina'ya geçildiğinde şu etkiler tetiklenir: Kachina, savaş alanına geldiğinde Gece Ruhunun Lütfu durumuna girer ve <strong>Turbo Topaç'a</strong> binerek 30 Gece Ruhu puanı kazanır. Gece Ruhu Aktarımı kendi takımın tarafından her 10 saniyede bir tetiklenebilir.",
+      "2": "<br/>",
+      "3": "Ayrıca Kachina, Natlan'da <strong>Turbo Topaç'a</strong> biniyorken tırmandığında %90 daha az Dayanıklılık tüketir."
+    }
+  },
+  "passive": {
+    "name": "Kristal Alevin Lütfu",
+    "description": {
+      "0": "Natlan'da Filojiston Mekanikleri olan bir bölgedeyken bazı toplanabilir eşyalarla etkileşime geçtiğinde 20 Dayanıklılık yenilenir. Ayrıca yakındaki <strong>Natlan'a özgü kaynakların</strong> konumları mini haritada belirir."
+    }
+  },
+  "constellation1": {
+    "name": "Cevher Parçalansa Da Cevherdir",
+    "description": {
+      "0": "Kachina <strong>Turbo Topaç'a</strong> bindiğinde veya ondan indiğinde Kristalleşme ile oluşan yakındaki Element Parçalarını toplar.",
+      "1": "Ayrıca bir grup üyesi bu Parçalardan birini aldığında Kachina için 3 Enerji yenilenir. Enerji, bu şekilde her 5 saniyede bir yenilenebilir."
+    }
+  },
+  "constellation2": {
+    "name": "Turbo Topaç Olmadan Yola Çıkılmaz",
+    "description": {
+      "0": "Kachina <strong>\"Ciddileşme Zamanı!\"</strong> kullandığında 20 Gece Ruhu puanı yeniler. Savaş alanında ona ait bir <strong>Turbo Topaç</strong> yoksa Gece Ruhunun Lütfu durumuna girer ve bir Turbo Topaç çağırır."
+    }
+  },
+  "constellation3": {
+    "name": "Geliştirilmiş Sabitleyici",
+    "description": {
+      "0": "<strong>Atıl Turbo Topaç!</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Daha Fazla Düşman, Daha Fazla Tedbir",
+    "description": {
+      "0": "<strong>\"Ciddileşme Zamanı!\"</strong> becerisi ile oluşturulan Turbo Matkap Alanında 1/2/3/4 veya üzeri düşman varsa aktif karakterin Savunması %8/%12/%16/%20 artar."
+    }
+  },
+  "constellation5": {
+    "name": "Bugüne Dek Topladıklarım",
+    "description": {
+      "0": "<strong>Ciddileşme Zamanı!</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Bu Sefer Kazanmalıyım",
+    "description": {
+      "0": "Aktif karakterinin Kalkanı bir sebepten ötürü yenilendiğinde veya yok edildiğinde Kachina, Savunmasının %200'ü kadar <geo>Toprak Alan Hasarı</geo> verir. Bu etki 5 saniyede bir tetiklenebilir."
+    }
+  }
+}

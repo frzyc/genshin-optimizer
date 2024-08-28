@@ -16,7 +16,7 @@ import { data, keys, values } from './data'
 import {
   convert,
   enemyTag,
-  selfTag,
+  ownTag,
   tagStr,
   type TagMapNodeEntries,
 } from './data/util'
@@ -52,7 +52,7 @@ describe('character test', () => {
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
-    const member0 = convert(selfTag, { et: 'self', src: '0' })
+    const member0 = convert(ownTag, { et: 'own', src: '0' })
     expect(calc.compute(member0.final.atk).val).toBeCloseTo(atk)
     expect(calc.compute(member0.final.def).val).toBeCloseTo(def)
     expect(calc.compute(member0.final.hp).val).toBeCloseTo(hp)
@@ -94,8 +94,8 @@ describe('lightCone test', () => {
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
-    const lightCone0 = convert(selfTag, {
-      et: 'self',
+    const lightCone0 = convert(ownTag, {
+      et: 'own',
       src: '0',
       sheet: 'lightCone',
     })
@@ -136,7 +136,7 @@ describe('char+lightCone test', () => {
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
-    const member0 = convert(selfTag, { et: 'self', src: '0' })
+    const member0 = convert(ownTag, { et: 'own', src: '0' })
     expect(calc.compute(member0.final.atk).val).toBeCloseTo(81.6)
   })
 })
@@ -146,29 +146,29 @@ describe('sheet', () => {
     for (const { tag } of data) {
       if (tag.et && tag.qt && tag.q) {
         switch (tag.et) {
-          case 'notSelfBuff':
+          case 'notOwnBuff':
           case 'teamBuff': {
-            const { sheet } = (selfTag as any)[tag.qt][tag.q]
+            const { sheet } = (ownTag as any)[tag.qt][tag.q]
             // Buff entries are for agg queries inside a sheet
             if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
-            fail(`Ill-form ${tag.et} entry (${tagStr(tag)}) for sheet ${sheet}`)
+            fail(`Ill-form entry (${tagStr(tag)}) for sheet ${sheet}`)
             break
           }
           case 'enemyDeBuff': {
             const { sheet } = (enemyTag as any)[tag.qt][tag.q]
             if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
             if (sheet === tag.sheet) continue
-            fail(`Ill-form ${tag.et} entry (${tagStr(tag)}) for sheet ${sheet}`)
+            fail(`Ill-form entry (${tagStr(tag)}) for sheet ${sheet}`)
             break
           }
-          case 'self': {
-            const desc = (selfTag as any)[tag.qt]?.[tag.q]
+          case 'own': {
+            const desc = (ownTag as any)[tag.qt]?.[tag.q]
             if (!desc) continue
             const { sheet } = desc
             if (!sheet) continue
             if (sheet === 'iso' || sheet === 'agg' || sheet === tag.sheet)
               continue
-            fail(`Illform self entry (${tagStr(tag)}) for sheet ${sheet}`)
+            fail(`Illform entry (${tagStr(tag)}) for sheet ${sheet}`)
             break
           }
           case 'enemy': {
@@ -177,7 +177,7 @@ describe('sheet', () => {
             const { sheet } = desc
             if (!sheet) continue
             if (sheet === 'agg' || sheet === tag.sheet) continue
-            fail(`Illform self entry (${tagStr(tag)}) for sheet ${sheet}`)
+            fail(`Illform entry (${tagStr(tag)}) for sheet ${sheet}`)
             break
           }
         }

@@ -1,0 +1,174 @@
+{
+  "name": "Mualani",
+  "title": "Coşkun Dalgaların Peşinde",
+  "description": "Natlan'da popüler bir rehber. Aynı zamanda bir su sporları dükkanı sahibi ve dalga yakalama uzmanıdır.",
+  "constellationName": "Keşiş Foku",
+  "auto": {
+    "name": "Serinletici Tedavi",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "<hydro>Su Hasarı</hydro> veren en fazla 3 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak havaya bir Balon Balığı Topu fırlatır, Top yere düştüğünde <hydro>Su Alan Hasarı</hydro> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Mualani, Suyun gücünü toplayarak havadayken yere doğru atılır ve yoluna çıkan tüm düşmanlara hasar verir. Yere vurduğunda <hydro>Su Alan Hasarı</hydro> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Yüklü Saldırı Hasarı",
+      "4": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "5": "Havadan Saldırı Hasarı",
+      "6": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Dalgakıran Köpek Balığı",
+    "description": {
+      "0": "Mualani, hız, dalgalar ve suya dair uzmanlığı sayesinde dilediği yerde dilediği zaman sörf yapabilir.",
+      "1": "Mualani, bu beceriyi kullandıktan sonra 60 Gece Ruhu puanı kazanır ve Gece Ruhunun Lütfu durumuna girer.",
+      "2": "<br/>",
+      "3": "<strong>Gece Ruhunun Lütfu: Mualani</strong>",
+      "4": "Devamlı olarak Gece Ruhu puanı harcar. Puanlar tükendiğinde veya beceri tekrar kullanıldığında Mualani'nin Gece Ruhunun Lütfu durumu sona erer. Lütuf aşağıdaki özellikleri verir:",
+      "5": [
+        "Mualani, Camgöz Sörf Tahtasına binerek Hareket Hızını ve Müdahale Direncini artırır. Mualani bu durum etkinken suda ve Sıvı Filojistonda hareket edebilir, ayrıca Sıvı Filojistondan Hasar almaz.",
+        "Normal Saldırılar Camgöz'ün Isırıklarına dönüşür ve Mualani'nin Maks. Canına bağlı olarak Gece Ruhu tesirli <hydro>Su Hasarı</hydro> verir. Camgöz'ün Isırıkları, havadayken kullanılabilir. Bu şekilde verilen Hasar, Normal Saldırı Hasarı sayılır.",
+        "Mualani bu durumdayken düşmanlarla temas ettiğinde onlara \"Av İşareti\" uygular ve 1 Dalga Momentumu kademesi kazanır. 3 kademeye kadar birikebilir. Her düşmandan 0,7 saniyede 1 kademe elde edilebilir."
+      ],
+      "6": "<br/>",
+      "7": "<strong>Dalga Momentumu ve Av İşareti</strong>",
+      "8": "Mualani, Camgöz'ün Isırığını kullandığında verdiği Hasar, sahip olduğu Dalga Momentumu kademesine göre artar. 3 kademeye sahipse Normal Saldırısı, Camgöz'ün Dev Isırığına dönüşür, verdiği Hasarı daha da artırır ve düşmana isabet ettikten sonra tüm kademeleri kaldırır.",
+      "9": "Camgöz'ün Isırığı, Av İşareti olan düşmanlara isabet ederse İşaret kaldırılır ve Mualani, Av İşareti olan yakındaki en fazla 5 düşmana Camgöz Füzeleri ateşleyerek bu seferki Camgöz'ün Isırığı kadar Hasar verir ve İşaretlerini kaldırır. Eğer Camgöz'ün Isırığı ve Camgöz Füzeleri birden fazla düşmanı hedef almışsa verilen Hasar azalır. En az 3 düşmanı hedef aldığında verilen Hasar, orijinal Hasarın %72'sine azalır.",
+      "10": "<br/>",
+      "11": "<i>Öncelikle Camgöz, sörf tahtası olmasının yanı sıra bir tatlı su köpek balığıdır. İkinci olarak da yemek yemeye ihtiyaç duymaz fakat kesinlikle ısırır.</i>"
+    },
+    "skillParams": {
+      "0": "Camgöz'ün Isırığı Temel Hasarı",
+      "1": "Dalga Momentumu Hasar Bonusu",
+      "2": "Camgöz'ün Dev Isırığı Ek Hasar Bonusu",
+      "3": "Camgöz'ün Isırığı BS",
+      "4": "Gece Ruhu Puanı Sınırı",
+      "5": "BS",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Fırtınapatlatan Atışı",
+    "description": {
+      "0": "Düşmanları takip edebilen ve Mualani'nin Maks. Canına göre Gece Ruhu tesirli <hydro>Su Alan Hasarı</hydro> veren bir Süper Camgöz Füzesi fırlatır.",
+      "1": "<br/>",
+      "2": "<i>Mualani, Camgöz Füzesinin ismini, içinde hem patlayıcıların ateşini hem suyun huzurunu barındırdığı için seçti. Gerçekten de kaplıcalara yaraşır bir isim.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "BS",
+      "2": "Enerji Maliyeti",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Isıya Dayanıklı Tatlı Su Şamandırası",
+    "description": {
+      "0": "Camgöz'ün Dev Isırığı bir düşmana isabet ettiğinde yakında bir Şamandıra oluşur. Mualani bir Şamandıra aldığında 20 Gece Ruhu puanı yeniler. Bir Gece Ruhunun Lütfu kullanımında bu şekilde yalnızca 2 adet Şamandıra oluşturulabilir."
+    }
+  },
+  "passive2": {
+    "name": "Natlan'ın En İyi Rehberi",
+    "description": {
+      "0": "Yakındaki bir grup üyesi bir Gece Ruhu Patlaması tetikledikten sonra Mualani 1 kademe Dalga Avcısının Serüveni kazanır. Her kademe 20sn sürer ve 3 kademeye kadar birikir. Mualani <strong>Fırtınapatlatan Atışı</strong> kullandığında tüm Dalga Avcısının Serüveni kademeleri kaldırılır ve kaldırılan kademe sayısına bağlı olarak bu Fırtınapatlatan Atışının Hasarını Maks. Canının %15/%30/%45'i kadar artırır."
+    }
+  },
+  "passive3": {
+    "name": "Gece Diyarının Armağanı: Tepeler ve Çukurlar",
+    "description": {
+      "0": "Mualani, Gece Ruhu puanları tükendiğinde Filojiston harcayarak Gece Ruhunun Lütfu durumunda kalmaya devam eder.",
+      "1": "Mualani, Natlan'da Filojiston Mekanikleri bulunan bir bölgedeyken \"Gece Ruhu Aktarımı: Mualani\" kullanabilir. Aktif karakter depar atarken, yüzerken, belirli Yeteneklerden kaynaklı bir hareket modundayken veya havada belirli bir yükseklikteyken Mualani'ye geçildiğinde şu etkiler tetiklenir: Mualani, Gece Ruhunun Lütfu durumuna girer ve 40 Gece Ruhu puanı kazanır. Gece Ruhu Aktarımı kendi takımın tarafından 10 saniyede bir tetiklenebilir.",
+      "2": "<br/>",
+      "3": "Ayrıca Mualani, Gece Ruhunun Lütfu sırasında su ve Sıvı Filojiston üzerinde giderken Gece Ruhu puanı veya Filojiston tüketimi Natlan'dayken %75 azalır, Natlan'ın dışındayken ise Gece Ruhu puanı tüketimi %35 azalır."
+    }
+  },
+  "passive": {
+    "name": "İşin Sırrı Hep Gülümsemek!",
+    "description": {
+      "0": "Natlan'da Filojiston Mekanikleri olan bir bölgedeyken bazı toplanabilir eşyalarla etkileşime geçtiğinde 15 Filojiston yenilenir. Ayrıca yakındaki <strong>Natlan'a özgü kaynakların</strong> konumları mini haritada belirir."
+    }
+  },
+  "constellation1": {
+    "name": "Aylak \"Meztli\"...",
+    "description": {
+      "0": "Mualani Gece Ruhunun Lütfuna girdikten sonraki ilk Camgöz'ün Dev Isırığının ve tetiklediği Camgöz Füzelerinin Hasarı, Mualani'nin Maks. Canının %66'sı kadar artar. Bu Hasar artışı için <strong>Dalgakıran Köpek Balığı</strong> becerisinin Hasar azalışı kuralları geçerlidir.",
+      "1": "Ayrıca Mualani'nin Gece Ruhunun Lütfu durumu, savaşta değilken %30 daha az Filojiston ve Gece Ruhu puanı tüketir."
+    }
+  },
+  "constellation2": {
+    "name": "Mualani Bütün Gücüyle Saldırıyor!",
+    "description": {
+      "0": "Mualani, Gece Ruhunun Lütfu durumuna girdiğinde <strong>Dalgakıran Köpek Balığı</strong> becerisinden 2 kademe Dalga Momentumu kazanır. Şamandıra aldığında ise 1 kademe kazanır.",
+      "1": "Ayrıca Mualani bir Gece Ruhunun Lütfu durumunda 2 Şamandıra aldığında 2 saniye boyunca ilave 12 Gece Ruhu puanı yeniler. Bu etki için öncelikle \"Isıya Dayanıklı Tatlı Su Şamandırası\" Pasif Yeteneğinin açılmış olması gerekir."
+    }
+  },
+  "constellation3": {
+    "name": "Coşkulu Denizlerde Sörf",
+    "description": {
+      "0": "<strong>Dalgakıran Köpek Balığı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Camgöz'ün Şamandıra İştahı",
+    "description": {
+      "0": "Mualani bir Şamandıra aldığında 8 Enerji yeniler. \"Isıya Dayanıklı Tatlı Su Şamandırası\" Pasif Yeteneğinin açılmış olması gerekir.",
+      "1": "Ayrıca <strong>Fırtınapatlatan Atışı</strong> becerisinin verdiği Hasar %75 artar."
+    }
+  },
+  "constellation5": {
+    "name": "Aynı Tarz Sörf Tahtası Satışta!",
+    "description": {
+      "0": "<strong>Fırtınapatlatan Atışı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Kaplıca Halkının Ruhu",
+    "description": {
+      "0": "\"Aylak 'Meztli'...\" Takımyıldızının verdiği Hasar artışı bir Gece Ruhunun Lütfunda birden fazla defa tetiklenebilir."
+    }
+  }
+}

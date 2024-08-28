@@ -1,6 +1,6 @@
 {
   "rarity": 4,
-  "damageType": "Lightning",
+  "damageType": "lightning",
   "path": "Destruction",
   "skillTree": {
     "basic": {
@@ -10,6 +10,7 @@
       "skillParamList": [
         [
           [
+            -1,
             0.5,
             0.6,
             0.7,
@@ -30,6 +31,7 @@
       "skillParamList": [
         [
           [
+            -1,
             0.15,
             0.15,
             0.15,
@@ -47,6 +49,7 @@
             0.15
           ],
           [
+            -1,
             1.2,
             1.32,
             1.44,
@@ -73,6 +76,7 @@
       "skillParamList": [
         [
           [
+            -1,
             1.92,
             2.048,
             2.176,
@@ -90,6 +94,7 @@
             3.84
           ],
           [
+            -1,
             0.96,
             1.024,
             1.088,
@@ -116,6 +121,7 @@
       "skillParamList": [
         [
           [
+            -1,
             0.36,
             0.396,
             0.432,
@@ -142,6 +148,7 @@
       "skillParamList": [
         [
           [
+            -1,
             0.8
           ]
         ]
@@ -154,6 +161,7 @@
       "skillParamList": [
         [
           [
+            -1,
             0.3,
             0.2
           ]
@@ -167,6 +175,7 @@
       "skillParamList": [
         [
           [
+            -1,
             0.5
           ]
         ]
@@ -179,6 +188,7 @@
       "skillParamList": [
         [
           [
+            -1,
             0.5
           ]
         ]
@@ -197,7 +207,9 @@
       "pointType": 1,
       "skillParamList": [
         [
-          []
+          [
+            -1
+          ]
         ]
       ]
     },
@@ -214,7 +226,9 @@
       "pointType": 1,
       "skillParamList": [
         [
-          []
+          [
+            -1
+          ]
         ]
       ]
     },
@@ -231,7 +245,9 @@
       "pointType": 1,
       "skillParamList": [
         [
-          []
+          [
+            -1
+          ]
         ]
       ]
     },
@@ -248,7 +264,9 @@
       "pointType": 1,
       "skillParamList": [
         [
-          []
+          [
+            -1
+          ]
         ]
       ]
     },
@@ -265,7 +283,9 @@
       "pointType": 1,
       "skillParamList": [
         [
-          []
+          [
+            -1
+          ]
         ]
       ]
     },
@@ -282,7 +302,9 @@
       "pointType": 1,
       "skillParamList": [
         [
-          []
+          [
+            -1
+          ]
         ]
       ]
     },
@@ -299,7 +321,9 @@
       "pointType": 1,
       "skillParamList": [
         [
-          []
+          [
+            -1
+          ]
         ]
       ]
     },
@@ -316,7 +340,9 @@
       "pointType": 1,
       "skillParamList": [
         [
-          []
+          [
+            -1
+          ]
         ]
       ]
     },
@@ -333,7 +359,9 @@
       "pointType": 1,
       "skillParamList": [
         [
-          []
+          [
+            -1
+          ]
         ]
       ]
     },
@@ -350,7 +378,9 @@
       "pointType": 1,
       "skillParamList": [
         [
-          []
+          [
+            -1
+          ]
         ]
       ]
     }

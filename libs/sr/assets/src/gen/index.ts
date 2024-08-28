@@ -1,11 +1,11 @@
 // This is a generated index file.
 import chars from './chars'
 import lightCones from './lightCones'
-import relic from './relic'
+import relics from './relics'
 
 const data = {
   chars,
   lightCones,
-  relic,
+  relics,
 } as const
 export default data

@@ -1,0 +1,24 @@
+{
+  "name": "Rompecadenas",
+  "description": {
+    "0": "Un arco adornado con jade cuya cuerda parece estar siempre envuelta por un suave viento. Según una leyenda, fue forjado por un herrero dragón de una época muy antigua."
+  },
+  "passiveName": "Balada plumafloral",
+  "passiveDescription": {
+    "0": {
+      "0": "Por cada personaje de Natlan o de tipo elemental distinto al del portador de esta arma que haya en el equipo, el ATQ de dicho portador aumenta en un <cryo>4.8%</cryo>. Cuando haya 3 o más personajes con estas características, la Maestría Elemental del portador de esta arma aumenta en <cryo>24</cryo> pts."
+    },
+    "1": {
+      "0": "Por cada personaje de Natlan o de tipo elemental distinto al del portador de esta arma que haya en el equipo, el ATQ de dicho portador aumenta en un <cryo>6%</cryo>. Cuando haya 3 o más personajes con estas características, la Maestría Elemental del portador de esta arma aumenta en <cryo>30</cryo> pts."
+    },
+    "2": {
+      "0": "Por cada personaje de Natlan o de tipo elemental distinto al del portador de esta arma que haya en el equipo, el ATQ de dicho portador aumenta en un <cryo>7.2%</cryo>. Cuando haya 3 o más personajes con estas características, la Maestría Elemental del portador de esta arma aumenta en <cryo>36</cryo> pts."
+    },
+    "3": {
+      "0": "Por cada personaje de Natlan o de tipo elemental distinto al del portador de esta arma que haya en el equipo, el ATQ de dicho portador aumenta en un <cryo>8.4%</cryo>. Cuando haya 3 o más personajes con estas características, la Maestría Elemental del portador de esta arma aumenta en <cryo>42</cryo> pts."
+    },
+    "4": {
+      "0": "Por cada personaje de Natlan o de tipo elemental distinto al del portador de esta arma que haya en el equipo, el ATQ de dicho portador aumenta en un <cryo>9.6%</cryo>. Cuando haya 3 o más personajes con estas características, la Maestría Elemental del portador de esta arma aumenta en <cryo>48</cryo> pts."
+    }
+  }
+}

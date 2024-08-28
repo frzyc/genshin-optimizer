@@ -1,0 +1,24 @@
+{
+  "name": "Đao Chấn Động",
+  "description": {
+    "0": "Trọng kiếm được vị anh kiệt với biệt danh \"Trộm Lửa\" yêu thích. Nghe nói ngay cả ngọn lửa của Vua Thành Tro Tàn cũng không thể thiêu rụi nó."
+  },
+  "passiveName": "Lời Thề Qhapaq Nan",
+  "passiveDescription": {
+    "0": {
+      "0": "Sau khi nhân vật trong đội kích hoạt phản ứng liên quan đến nguyên tố Hỏa, sát thương Kỹ Năng Nguyên Tố của người trang bị gây ra tăng <cryo>16%</cryo> trong 8s. Hiệu quả này cũng có thể kích hoạt khi nhân vật trong đội không ra trận."
+    },
+    "1": {
+      "0": "Sau khi nhân vật trong đội kích hoạt phản ứng liên quan đến nguyên tố Hỏa, sát thương Kỹ Năng Nguyên Tố của người trang bị gây ra tăng <cryo>20%</cryo> trong 8s. Hiệu quả này cũng có thể kích hoạt khi nhân vật trong đội không ra trận."
+    },
+    "2": {
+      "0": "Sau khi nhân vật trong đội kích hoạt phản ứng liên quan đến nguyên tố Hỏa, sát thương Kỹ Năng Nguyên Tố của người trang bị gây ra tăng <cryo>24%</cryo> trong 8s. Hiệu quả này cũng có thể kích hoạt khi nhân vật trong đội không ra trận."
+    },
+    "3": {
+      "0": "Sau khi nhân vật trong đội kích hoạt phản ứng liên quan đến nguyên tố Hỏa, sát thương Kỹ Năng Nguyên Tố của người trang bị gây ra tăng <cryo>28%</cryo> trong 8s. Hiệu quả này cũng có thể kích hoạt khi nhân vật trong đội không ra trận."
+    },
+    "4": {
+      "0": "Sau khi nhân vật trong đội kích hoạt phản ứng liên quan đến nguyên tố Hỏa, sát thương Kỹ Năng Nguyên Tố của người trang bị gây ra tăng <cryo>32%</cryo> trong 8s. Hiệu quả này cũng có thể kích hoạt khi nhân vật trong đội không ra trận."
+    }
+  }
+}

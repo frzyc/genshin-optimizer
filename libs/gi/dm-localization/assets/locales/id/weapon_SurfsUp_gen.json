@@ -1,0 +1,24 @@
+{
+  "name": "Surf's Up",
+  "description": {
+    "0": "Benda kenang-kenangan yang awalnya dipesan untuk diberikan kepada pemenang \"Kejuaraan Berselancar Seluruh Suku Pertama\". Karena turnamennya sampai sekarang masih dalam tahap persiapan, maka untuk sementara hadiahnya disimpan di dalam Leisurely Puffer dulu dan dijaga oleh pemiliknya."
+  },
+  "passiveName": "Aqua Remembrance",
+  "passiveDescription": {
+    "0": {
+      "0": "Meningkatkan <cryo>20%</cryo> Max HP. Setiap 15 detik sekali, dalam kurun waktu 14 detik setelah melancarkan Elemental Skill: Mendapatkan 4 lapis \"Scorching Summer\". Setiap lapisnya akan meningkatkan <cryo>12%</cryo> DMG Normal Attack. Selama durasi ini, kedua efek di bawah dapat terpicu sekali setiap 1,5 detik: Mengenai musuh dengan Normal Attack akan menghapus 1 lapis Scorching Summer, sedangkan memicu reaksi Vaporize pada musuh akan menambah 1 lapis Scorching Summer. Efek Scorching Summer dapat ditumpuk sampai 4 lapis."
+    },
+    "1": {
+      "0": "Meningkatkan <cryo>25%</cryo> Max HP. Setiap 15 detik sekali, dalam kurun waktu 14 detik setelah melancarkan Elemental Skill: Mendapatkan 4 lapis \"Scorching Summer\". Setiap lapisnya akan meningkatkan <cryo>15%</cryo> DMG Normal Attack. Selama durasi ini, kedua efek di bawah dapat terpicu sekali setiap 1,5 detik: Mengenai musuh dengan Normal Attack akan menghapus 1 lapis Scorching Summer, sedangkan memicu reaksi Vaporize pada musuh akan menambah 1 lapis Scorching Summer. Efek Scorching Summer dapat ditumpuk sampai 4 lapis."
+    },
+    "2": {
+      "0": "Meningkatkan <cryo>30%</cryo> Max HP. Setiap 15 detik sekali, dalam kurun waktu 14 detik setelah melancarkan Elemental Skill: Mendapatkan 4 lapis \"Scorching Summer\". Setiap lapisnya akan meningkatkan <cryo>18%</cryo> DMG Normal Attack. Selama durasi ini, kedua efek di bawah dapat terpicu sekali setiap 1,5 detik: Mengenai musuh dengan Normal Attack akan menghapus 1 lapis Scorching Summer, sedangkan memicu reaksi Vaporize pada musuh akan menambah 1 lapis Scorching Summer. Efek Scorching Summer dapat ditumpuk sampai 4 lapis."
+    },
+    "3": {
+      "0": "Meningkatkan <cryo>35%</cryo> Max HP. Setiap 15 detik sekali, dalam kurun waktu 14 detik setelah melancarkan Elemental Skill: Mendapatkan 4 lapis \"Scorching Summer\". Setiap lapisnya akan meningkatkan <cryo>21%</cryo> DMG Normal Attack. Selama durasi ini, kedua efek di bawah dapat terpicu sekali setiap 1,5 detik: Mengenai musuh dengan Normal Attack akan menghapus 1 lapis Scorching Summer, sedangkan memicu reaksi Vaporize pada musuh akan menambah 1 lapis Scorching Summer. Efek Scorching Summer dapat ditumpuk sampai 4 lapis."
+    },
+    "4": {
+      "0": "Meningkatkan <cryo>40%</cryo> Max HP. Setiap 15 detik sekali, dalam kurun waktu 14 detik setelah melancarkan Elemental Skill: Mendapatkan 4 lapis \"Scorching Summer\". Setiap lapisnya akan meningkatkan <cryo>24%</cryo> DMG Normal Attack. Selama durasi ini, kedua efek di bawah dapat terpicu sekali setiap 1,5 detik: Mengenai musuh dengan Normal Attack akan menghapus 1 lapis Scorching Summer, sedangkan memicu reaksi Vaporize pada musuh akan menambah 1 lapis Scorching Summer. Efek Scorching Summer dapat ditumpuk sampai 4 lapis."
+    }
+  }
+}

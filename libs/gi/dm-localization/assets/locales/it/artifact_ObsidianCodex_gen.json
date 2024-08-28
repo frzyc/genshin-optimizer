@@ -1,0 +1,29 @@
+{
+  "setName": "Codice d'ossidiana",
+  "setEffects": {
+    "2": "Mentre il personaggio equipaggiato con questo set è in stato di Grazia dell'Anima della Notte ed è in campo, i DAN che infligge aumentano di un 15%.",
+    "4": "Quando il personaggio equipaggiato con questo set consuma 1 punto Anima della Notte mentre si trova in campo, il suo tasso di CRIT aumenta di un 40% per 6 s. Quest'effetto può attivarsi una volta ogni secondo."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Restituzione xenogenica",
+      "desc": "Un fiore in cristallo nero scolpito meticolosamente. Nelle ore notturne emette una luce misteriosa."
+    },
+    "plume": {
+      "name": "Fonte del Midollo spiritico",
+      "desc": "Un accessorio piumato la cui forma ricorda l'ala di un antico drago. Potrebbe trattarsi della reliquia di un'antica storia dimenticata."
+    },
+    "sands": {
+      "name": "Miti del Reame notturno",
+      "desc": "Un misterioso oggetto rituale. A oggi, nessuno sa dire con precisione a cosa serva, quel che è certo è che non si tratta né di un segnatempo né di una bussola."
+    },
+    "goblet": {
+      "name": "Rinfresco dei contendenti",
+      "desc": "Un recipiente apparentemente realizzato torcendo e plasmando la pietra con modalità assai bizzarre. Viene da chiedersi chi mai sia dotato di una simile forza..."
+    },
+    "circlet": {
+      "name": "Corona dei santi",
+      "desc": "Una corona fatta d'ossidiana che anticamente veniva usata nelle cerimonie d'incoronazione dai nobili re tribali."
+    }
+  }
+}

@@ -113,7 +113,7 @@ function initCharTCRelicSlots() {
     level: 20,
     statKey: (s === 'head'
       ? 'hp'
-      : s === 'hand'
+      : s === 'hands'
       ? 'atk'
       : 'atk_') as RelicMainStatKey,
   }))

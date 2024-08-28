@@ -54,7 +54,7 @@ export interface OptConfig {
     sphere: RelicMainStatKey[]
     rope: RelicMainStatKey[]
     head?: never
-    hand?: never
+    hands?: never
   }
   excludedLocations: CharacterKey[]
   allowLocationsState: AllowLocationsState

@@ -92,7 +92,7 @@ const stats: Record<Stat, Desc> = {
   dmg_: agg,
   heal_: agg,
 } as const
-export const selfTag = {
+export const ownTag = {
   base: { atk: agg, def: agg, hp: agg },
   weaponRefinement: { ...stats, shield_: agg },
   premod: { ...stats, shield_: agg },
@@ -193,21 +193,21 @@ export function convert<V extends Record<string, Record<string, Desc>>>(
 
 // Default queries
 const noName = { src: null, name: null }
-export const self = convert(selfTag, { et: 'self', dst: null })
-export const team = convert(selfTag, { et: 'team', dst: null, ...noName })
-export const target = convert(selfTag, { et: 'target', ...noName })
+export const own = convert(ownTag, { et: 'own', dst: null })
+export const team = convert(ownTag, { et: 'team', dst: null, ...noName })
+export const target = convert(ownTag, { et: 'target', ...noName })
 export const enemy = convert(enemyTag, { et: 'enemy', dst: null, ...noName })
 
 // Default tag DB keys
-export const selfBuff = convert(selfTag, { et: 'self' })
-export const teamBuff = convert(selfTag, { et: 'teamBuff' })
-export const notSelfBuff = convert(selfTag, { et: 'notSelfBuff' })
+export const ownBuff = convert(ownTag, { et: 'own' })
+export const teamBuff = convert(ownTag, { et: 'teamBuff' })
+export const notOwnBuff = convert(ownTag, { et: 'notOwnBuff' })
 export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
-export const userBuff = convert(selfTag, { et: 'self', sheet: 'custom' })
+export const userBuff = convert(ownTag, { et: 'own', sheet: 'custom' })
 
 // Custom tags
 export const allStatics = (sheet: Sheet) =>
-  reader.withTag({ et: 'self', sheet, qt: 'misc' }).withAll('q', [])
+  reader.withTag({ et: 'own', sheet, qt: 'misc' }).withAll('q', [])
 export const allBoolConditionals = (sheet: Sheet, ignored?: CondIgnored) =>
   allConditionals(sheet, ignored, { type: 'bool' }, (r) => ({
     ifOn: (node: NumNode | number, off?: NumNode | number) =>
@@ -238,7 +238,7 @@ export const conditionalEntries = (sheet: Sheet, src: MemAll, dst: MemAll) => {
   let tag: Tag = { sheet, qt: 'cond' }
   if (src !== 'all') tag = { ...tag, src }
   if (dst !== 'all') tag = { ...tag, dst }
-  const base = self.withTag(tag).withAll('q', [])
+  const base = own.withTag(tag).withAll('q', [])
   return (name: string, val: string | number) => base[name].add(val)
 }
 
@@ -251,7 +251,7 @@ function allConditionals<T>(
 ): Record<string, T> {
   // Keep the base tag "full" here so that `cond` returns consistent tags
   const baseTag: Omit<Required<Tag>, 'preset' | 'src' | 'dst' | 'q'> = {
-    et: 'self',
+    et: 'own',
     sheet,
     qt: 'cond',
     // Remove irrelevant tags
@@ -280,7 +280,7 @@ function allConditionals<T>(
 }
 
 export const queryTypes = new Set([
-  ...Object.keys(selfTag),
+  ...Object.keys(ownTag),
   ...Object.keys(enemyTag),
   'cond',
   'misc',
@@ -289,7 +289,7 @@ export const queryTypes = new Set([
   'stackOut',
 ])
 // Register `q:`
-for (const values of [...Object.values(selfTag), ...Object.values(enemyTag)])
+for (const values of [...Object.values(ownTag), ...Object.values(enemyTag)])
   for (const q of Object.keys(values)) reader.with('q', q)
 
 export function tagToStat(tag: Tag): StatKey {

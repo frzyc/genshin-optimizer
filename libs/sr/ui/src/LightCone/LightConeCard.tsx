@@ -1,10 +1,8 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import {
-  convert,
   lightConeData,
-  selfTag,
+  own,
   srCalculatorWithEntries,
-  withMember,
 } from '@genshin-optimizer/sr/formula'
 import { CardContent, Typography } from '@mui/material'
 import { useLightCone } from '../Hook'
@@ -14,10 +12,7 @@ type LightConeCardProps = {
 export function LightConeCard({ lightConeId }: LightConeCardProps) {
   const lightCone = useLightCone(lightConeId)
 
-  const member0 = convert(selfTag, { et: 'self', src: '0' })
-  const calc = srCalculatorWithEntries(
-    withMember('0', ...lightConeData(lightCone))
-  )
+  const calc = srCalculatorWithEntries(lightConeData(lightCone))
 
   if (!lightCone) return null
   return (
@@ -28,13 +23,13 @@ export function LightConeCard({ lightConeId }: LightConeCardProps) {
         <Typography>Ascension: {lightCone.ascension}</Typography>
         <Typography>Superimpose: {lightCone.superimpose}</Typography>
         <Typography>
-          ATK: {calc?.compute(member0.base.atk.with('sheet', 'lightCone')).val}
+          ATK: {calc?.compute(own.base.atk.with('sheet', 'lightCone')).val}
         </Typography>
         <Typography>
-          HP: {calc?.compute(member0.base.hp.with('sheet', 'lightCone')).val}
+          HP: {calc?.compute(own.base.hp.with('sheet', 'lightCone')).val}
         </Typography>
         <Typography>
-          DEF: {calc?.compute(member0.base.def.with('sheet', 'lightCone')).val}
+          DEF: {calc?.compute(own.base.def.with('sheet', 'lightCone')).val}
         </Typography>
       </CardContent>
     </CardThemed>

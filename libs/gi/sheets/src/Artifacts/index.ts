@@ -33,6 +33,7 @@ import MartialArtist from './MartialArtist'
 import NighttimeWhispersInTheEchoingWoods from './NighttimeWhispersInTheEchoingWoods'
 import NoblesseOblige from './NoblesseOblige'
 import NymphsDream from './NymphsDream'
+import ObsidianCodex from './ObsidianCodex'
 import OceanHuedClam from './OceanHuedClam'
 import PaleFlame from './PaleFlame'
 import PrayersForDestiny from './PrayersForDestiny'
@@ -42,6 +43,7 @@ import PrayersToSpringtime from './PrayersToSpringtime'
 import ResolutionOfSojourner from './ResolutionOfSojourner'
 import RetracingBolide from './RetracingBolide'
 import Scholar from './Scholar'
+import ScrollOfTheHeroOfCinderCity from './ScrollOfTheHeroOfCinderCity'
 import ShimenawasReminiscence from './ShimenawasReminiscence'
 import SongOfDaysPast from './SongOfDaysPast'
 import TenacityOfTheMillelith from './TenacityOfTheMillelith'
@@ -86,6 +88,7 @@ export const artifactSheets: Record<ArtifactSetKey, ArtifactSheet> = {
   NighttimeWhispersInTheEchoingWoods,
   NoblesseOblige,
   NymphsDream,
+  ObsidianCodex,
   OceanHuedClam,
   PaleFlame,
   PrayersForDestiny,
@@ -95,6 +98,7 @@ export const artifactSheets: Record<ArtifactSetKey, ArtifactSheet> = {
   ResolutionOfSojourner,
   RetracingBolide,
   Scholar,
+  ScrollOfTheHeroOfCinderCity,
   ShimenawasReminiscence,
   SongOfDaysPast,
   TenacityOfTheMillelith,

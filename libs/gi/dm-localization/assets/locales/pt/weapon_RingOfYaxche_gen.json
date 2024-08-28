@@ -1,0 +1,24 @@
+{
+  "name": "Anel de Yaxche",
+  "description": {
+    "0": "Um artefato de jade dos gêmeos heróis de outrora. Dizem que derrotou o dragão do céu que controlava o vulcão."
+  },
+  "passiveName": "Ecos da Terra Abundante",
+  "passiveDescription": {
+    "0": {
+      "0": "Ganha o efeito Coroa Forjada em Jade ao usar uma Habilidade Elemental: Cada 1.000 de Vida Máxima aumentará o Dano causado do Ataque Normal em <cryo>0.6%</cryo> por 10s. O Dano do Ataque Normal pode ser aumentado dessa forma em um máximo de <cryo>16%</cryo>."
+    },
+    "1": {
+      "0": "Ganha o efeito Coroa Forjada em Jade ao usar uma Habilidade Elemental: Cada 1.000 de Vida Máxima aumentará o Dano causado do Ataque Normal em <cryo>0.7%</cryo> por 10s. O Dano do Ataque Normal pode ser aumentado dessa forma em um máximo de <cryo>20%</cryo>."
+    },
+    "2": {
+      "0": "Ganha o efeito Coroa Forjada em Jade ao usar uma Habilidade Elemental: Cada 1.000 de Vida Máxima aumentará o Dano causado do Ataque Normal em <cryo>0.8%</cryo> por 10s. O Dano do Ataque Normal pode ser aumentado dessa forma em um máximo de <cryo>24%</cryo>."
+    },
+    "3": {
+      "0": "Ganha o efeito Coroa Forjada em Jade ao usar uma Habilidade Elemental: Cada 1.000 de Vida Máxima aumentará o Dano causado do Ataque Normal em <cryo>0.9%</cryo> por 10s. O Dano do Ataque Normal pode ser aumentado dessa forma em um máximo de <cryo>28%</cryo>."
+    },
+    "4": {
+      "0": "Ganha o efeito Coroa Forjada em Jade ao usar uma Habilidade Elemental: Cada 1.000 de Vida Máxima aumentará o Dano causado do Ataque Normal em <cryo>1%</cryo> por 10s. O Dano do Ataque Normal pode ser aumentado dessa forma em um máximo de <cryo>32%</cryo>."
+    }
+  }
+}

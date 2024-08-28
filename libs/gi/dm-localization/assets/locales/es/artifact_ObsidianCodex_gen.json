@@ -1,0 +1,29 @@
+{
+  "setName": "Códice de Obsidiana",
+  "setEffects": {
+    "2": "Cuando el portador de este conjunto está en uso y en el estado de bendición noctámbula, el daño que inflige aumenta en un 15%.",
+    "4": "Cuando el portador de este conjunto consume 1 pt. de noctambulismo mientras está en uso, su Prob. CRIT aumenta en un 40% durante 6 s. Este efecto solo se puede activar una vez cada 1 s."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Anhelo Xenogénico",
+      "desc": "Una flor creada muy cuidadosamente con un mineral de color negro. Por la noche, emite una luz de lo más misteriosa."
+    },
+    "plume": {
+      "name": "Raíz de la Médula Espiritual",
+      "desc": "Una pluma que imita la forma de las alas de los dragones de la antigüedad. Tal vez haya sido testigo de alguna época histórica ahora olvidada."
+    },
+    "sands": {
+      "name": "Mito del Reino de la Noche",
+      "desc": "Un artilugio que no es ni un reloj ni una brújula. En la actualidad, nadie sabe cuál es su uso."
+    },
+    "goblet": {
+      "name": "Tentempié de la Disputa",
+      "desc": "Parece como si alguien hubiera retorcido una piedra y la hubiera golpeado hasta darle esta forma. Pero ¿quién podría tener tanta fuerza?"
+    },
+    "circlet": {
+      "name": "Corona de los Santos",
+      "desc": "Una corona hecha de obsidiana que se usaba en las coronaciones de los líderes tribales de la antigüedad."
+    }
+  }
+}

@@ -48,7 +48,7 @@ export default function Optimize() {
         },
         {
           head: [],
-          hand: [],
+          hands: [],
           feet: [],
           body: [],
           sphere: [],

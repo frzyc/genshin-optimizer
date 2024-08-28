@@ -1,0 +1,24 @@
+{
+  "name": "Flauta de Ezpitzal",
+  "description": {
+    "0": "Uma lâmina de jade feita de forma peculiar. Nas lendas dos Mestres do Vento Noturno, ela é conhecida como a ritualística \"Flauta do Sacerdote\"."
+  },
+  "passiveName": "Mistério da Fumaça e do Espelho",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta a DEF em <cryo>16%</cryo> por 15s após utilizar a Habilidade Elemental."
+    },
+    "1": {
+      "0": "Aumenta a DEF deste personagem em <cryo>20%</cryo> por 15s após utilizar a Habilidade Elemental."
+    },
+    "2": {
+      "0": "Aumenta a DEF em <cryo>24%</cryo> por 15s após utilizar a Habilidade Elemental."
+    },
+    "3": {
+      "0": "Aumenta a DEF em <cryo>28%</cryo> por 15s após utilizar a Habilidade Elemental."
+    },
+    "4": {
+      "0": "Aumenta a DEF em <cryo>32%</cryo> por 15s após utilizar a Habilidade Elemental."
+    }
+  }
+}

@@ -2,6 +2,7 @@ import type { WeaponCatalystKey } from '@genshin-optimizer/gi/consts'
 import type { WeaponSheet } from '../WeaponSheet'
 import AThousandFloatingDreams from './AThousandFloatingDreams'
 import ApprenticesNotes from './ApprenticesNotes'
+import AshGravenDrinkingHorn from './AshGravenDrinkingHorn'
 import BalladOfTheBoundlessBlue from './BalladOfTheBoundlessBlue'
 import BlackcliffAgate from './BlackcliffAgate'
 import CashflowSupervision from './CashflowSupervision'
@@ -26,11 +27,13 @@ import OtherworldlyStory from './OtherworldlyStory'
 import PocketGrimoire from './PocketGrimoire'
 import PrototypeAmber from './PrototypeAmber'
 import QuantumCatalyst from './QuantumCatalyst'
+import RingOfYaxche from './RingOfYaxche'
 import RoyalGrimoire from './RoyalGrimoire'
 import SacrificialFragments from './SacrificialFragments'
 import SacrificialJade from './SacrificialJade'
 import SkywardAtlas from './SkywardAtlas'
 import SolarPearl from './SolarPearl'
+import SurfsUp from './SurfsUp'
 import TheWidsith from './TheWidsith'
 import ThrillingTalesOfDragonSlayers from './ThrillingTalesOfDragonSlayers'
 import TomeOfTheEternalFlow from './TomeOfTheEternalFlow'
@@ -40,6 +43,7 @@ import WanderingEvenstar from './WanderingEvenstar'
 import WineAndSong from './WineAndSong'
 const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   ApprenticesNotes,
+  AshGravenDrinkingHorn,
   AThousandFloatingDreams,
   BalladOfTheBoundlessBlue,
   BlackcliffAgate,
@@ -65,11 +69,13 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   PocketGrimoire,
   PrototypeAmber,
   QuantumCatalyst,
+  RingOfYaxche,
   RoyalGrimoire,
   SacrificialFragments,
   SacrificialJade,
   SkywardAtlas,
   SolarPearl,
+  SurfsUp,
   TheWidsith,
   ThrillingTalesOfDragonSlayers,
   TomeOfTheEternalFlow,

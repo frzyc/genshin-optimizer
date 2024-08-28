@@ -86,6 +86,9 @@
   "10000097": "Sethos",
   "10000098": "Clorinde",
   "10000099": "Emilie",
+  "10000100": "Kachina",
+  "10000101": "Kinich",
+  "10000102": "Mualani",
   "11000008": "PartyTest4",
   "11000009": "BackgroundTest",
   "11000010": "NakedModel1",
@@ -102,7 +105,6 @@
   "11000031": "LateWeaponTestA",
   "11000032": "LateWeaponTestB",
   "11000033": "LateWeaponTestC",
-  "11000034": "LateWeaponTestD",
   "11000035": "LanceWarrioress",
   "11000036": "SwordswomanTest",
   "11000037": "RxWhiteBox",
@@ -113,5 +115,6 @@
   "11000042": "ChongyunTest",
   "11000043": "TestCharacter",
   "11000044": "QiqiTest",
-  "11000045": "DionaTest"
+  "11000045": "DionaTest",
+  "11000046": "PyroArchonTest"
 }
