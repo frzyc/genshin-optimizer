@@ -1,7 +1,7 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { MemberContext } from '@genshin-optimizer/pando/ui-sheet'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import { convert, members, selfTag } from '@genshin-optimizer/sr/formula'
+import { convert, members, ownTag } from '@genshin-optimizer/sr/formula'
 import { useSrCalcContext } from '@genshin-optimizer/sr/formula-ui'
 import {
   CharacterCard,
@@ -41,7 +41,7 @@ export default function TeammateDisplay({ tab }: { tab?: string }) {
     (meta) => database.loadouts.get(meta?.loadoutId)?.key === characterKey
   )
 
-  const member = convert(selfTag, {
+  const member = convert(ownTag, {
     et: 'own',
     src: members[teammateIndex],
   })

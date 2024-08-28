@@ -6,7 +6,7 @@ import {
   enemyTag,
 own,
 ownBuff,
-  selfTag,
+  ownTag,
   sheets,
   tagStr,
   teamBuff,
@@ -87,7 +87,7 @@ describe('sheet', () => {
         switch (tag.et) {
           case 'notOwnBuff':
           case 'teamBuff': {
-            const { sheet } = (selfTag as any)[tag.qt][tag.q]
+            const { sheet } = (ownTag as any)[tag.qt][tag.q]
             if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
             fail(`Ill-form entry (${tagStr(tag)}) for sheet ${sheet}`)
             break
@@ -100,7 +100,7 @@ describe('sheet', () => {
             break
           }
           case 'own': {
-            const desc = (selfTag as any)[tag.qt]?.[tag.q]
+            const desc = (ownTag as any)[tag.qt]?.[tag.q]
             if (!desc) continue
             const { sheet } = desc
             if (!sheet) continue

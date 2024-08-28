@@ -14,7 +14,7 @@ import {
   ownBuff,
   readStat,
   reader,
-  selfTag,
+  ownTag,
 } from './data/util'
 
 export function withPreset(
@@ -72,7 +72,7 @@ export function artifactsData(
   const {
     common: { count },
     premod,
-  } = convert(selfTag, { sheet: 'art', et: 'own' })
+  } = convert(ownTag, { sheet: 'art', et: 'own' })
   const { agg, art, dyn } = reader.withAll('sheet', [])
   const sets: Partial<Record<ArtifactSetKey, number>> = {},
     stats: Partial<Record<MainStatKey | SubstatKey, number>> = {}

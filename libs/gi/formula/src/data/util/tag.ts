@@ -92,7 +92,7 @@ const stats: Record<Stat, Desc> = {
   dmg_: agg,
   heal_: agg,
 } as const
-export const selfTag = {
+export const ownTag = {
   base: { atk: agg, def: agg, hp: agg },
   weaponRefinement: { ...stats, shield_: agg },
   premod: { ...stats, shield_: agg },
@@ -193,17 +193,17 @@ export function convert<V extends Record<string, Record<string, Desc>>>(
 
 // Default queries
 const noName = { src: null, name: null }
-export const own = convert(selfTag, { et: 'own', dst: null })
-export const team = convert(selfTag, { et: 'team', dst: null, ...noName })
-export const target = convert(selfTag, { et: 'target', ...noName })
+export const own = convert(ownTag, { et: 'own', dst: null })
+export const team = convert(ownTag, { et: 'team', dst: null, ...noName })
+export const target = convert(ownTag, { et: 'target', ...noName })
 export const enemy = convert(enemyTag, { et: 'enemy', dst: null, ...noName })
 
 // Default tag DB keys
-export const ownBuff = convert(selfTag, { et: 'own' })
-export const teamBuff = convert(selfTag, { et: 'teamBuff' })
-export const notOwnBuff = convert(selfTag, { et: 'notOwnBuff' })
+export const ownBuff = convert(ownTag, { et: 'own' })
+export const teamBuff = convert(ownTag, { et: 'teamBuff' })
+export const notOwnBuff = convert(ownTag, { et: 'notOwnBuff' })
 export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
-export const userBuff = convert(selfTag, { et: 'own', sheet: 'custom' })
+export const userBuff = convert(ownTag, { et: 'own', sheet: 'custom' })
 
 // Custom tags
 export const allStatics = (sheet: Sheet) =>
@@ -280,7 +280,7 @@ function allConditionals<T>(
 }
 
 export const queryTypes = new Set([
-  ...Object.keys(selfTag),
+  ...Object.keys(ownTag),
   ...Object.keys(enemyTag),
   'cond',
   'misc',
@@ -289,7 +289,7 @@ export const queryTypes = new Set([
   'stackOut',
 ])
 // Register `q:`
-for (const values of [...Object.values(selfTag), ...Object.values(enemyTag)])
+for (const values of [...Object.values(ownTag), ...Object.values(enemyTag)])
   for (const q of Object.keys(values)) reader.with('q', q)
 
 export function tagToStat(tag: Tag): StatKey {

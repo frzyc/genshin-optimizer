@@ -3,7 +3,7 @@ import {
   charData,
   convert,
   genshinCalculatorWithEntries,
-  selfTag,
+  ownTag,
   withMember,
 } from '@genshin-optimizer/gi/formula'
 import type { ICharacter } from '@genshin-optimizer/gi/good'
@@ -30,7 +30,7 @@ export function CharacterCard({
       })
     )
   )
-  const member0 = convert(selfTag, { et: 'own', src: '0' })
+  const member0 = convert(ownTag, { et: 'own', src: '0' })
   return (
     <CardThemed>
       <CardContent>

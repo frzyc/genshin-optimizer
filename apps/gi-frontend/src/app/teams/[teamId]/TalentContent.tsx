@@ -8,7 +8,7 @@ import { range } from '@genshin-optimizer/common/util'
 import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
 import {
   convert,
-  selfTag,
+  ownTag,
   type Calculator,
 } from '@genshin-optimizer/gi/formula'
 import type { TalentSheetElementKey } from '@genshin-optimizer/gi/formula-ui'
@@ -323,7 +323,7 @@ export function ConstellationDropdown({
   calc: Calculator
 }) {
   const { t } = useTranslation('sheet_gen')
-  const member0 = convert(selfTag, { et: 'own', src: '0' })
+  const member0 = convert(ownTag, { et: 'own', src: '0' })
   const constellation = calc.compute(member0.char.constellation).val
   return (
     <DropdownButton

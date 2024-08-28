@@ -14,7 +14,7 @@ import {
   reader,
   own,
   ownBuff,
-  selfTag,
+  ownTag,
 } from './data/util'
 
 export function withPreset(
@@ -82,7 +82,7 @@ export function relicsData(
   const {
     common: { count },
     premod,
-  } = convert(selfTag, { sheet: 'relic', et: 'own' })
+  } = convert(ownTag, { sheet: 'relic', et: 'own' })
   const sets: Partial<Record<RelicSetKey, number>> = {},
     stats: Partial<Record<StatKey, number>> = {}
   for (const { set: setKey, stats: stat } of data) {

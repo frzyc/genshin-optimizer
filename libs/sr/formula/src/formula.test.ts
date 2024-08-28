@@ -16,7 +16,7 @@ import { data, keys, values } from './data'
 import {
   convert,
   enemyTag,
-  selfTag,
+  ownTag,
   tagStr,
   type TagMapNodeEntries,
 } from './data/util'
@@ -52,7 +52,7 @@ describe('character test', () => {
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
-    const member0 = convert(selfTag, { et: 'own', src: '0' })
+    const member0 = convert(ownTag, { et: 'own', src: '0' })
     expect(calc.compute(member0.final.atk).val).toBeCloseTo(atk)
     expect(calc.compute(member0.final.def).val).toBeCloseTo(def)
     expect(calc.compute(member0.final.hp).val).toBeCloseTo(hp)
@@ -94,7 +94,7 @@ describe('lightCone test', () => {
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
-    const lightCone0 = convert(selfTag, {
+    const lightCone0 = convert(ownTag, {
       et: 'own',
       src: '0',
       sheet: 'lightCone',
@@ -136,7 +136,7 @@ describe('char+lightCone test', () => {
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
-    const member0 = convert(selfTag, { et: 'own', src: '0' })
+    const member0 = convert(ownTag, { et: 'own', src: '0' })
     expect(calc.compute(member0.final.atk).val).toBeCloseTo(81.6)
   })
 })
@@ -148,7 +148,7 @@ describe('sheet', () => {
         switch (tag.et) {
           case 'notOwnBuff':
           case 'teamBuff': {
-            const { sheet } = (selfTag as any)[tag.qt][tag.q]
+            const { sheet } = (ownTag as any)[tag.qt][tag.q]
             // Buff entries are for agg queries inside a sheet
             if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
             fail(`Ill-form entry (${tagStr(tag)}) for sheet ${sheet}`)
@@ -162,7 +162,7 @@ describe('sheet', () => {
             break
           }
           case 'own': {
-            const desc = (selfTag as any)[tag.qt]?.[tag.q]
+            const desc = (ownTag as any)[tag.qt]?.[tag.q]
             if (!desc) continue
             const { sheet } = desc
             if (!sheet) continue

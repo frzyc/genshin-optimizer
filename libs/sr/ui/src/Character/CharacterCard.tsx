@@ -3,7 +3,7 @@ import type { ICachedCharacter } from '@genshin-optimizer/sr/db'
 import {
   charData,
   convert,
-  selfTag,
+  ownTag,
   srCalculatorWithEntries,
   withMember,
 } from '@genshin-optimizer/sr/formula'
@@ -24,7 +24,7 @@ export function CharacterCard({
 }) {
   const calc = srCalculatorWithEntries(withMember('0', ...charData(character)))
 
-  const member0 = convert(selfTag, { et: 'own', src: '0' })
+  const member0 = convert(ownTag, { et: 'own', src: '0' })
 
   return (
     <Stack>

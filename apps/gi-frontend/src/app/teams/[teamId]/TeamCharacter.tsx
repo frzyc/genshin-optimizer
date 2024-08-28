@@ -1,7 +1,7 @@
 'use client'
 
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { convert, selfTag } from '@genshin-optimizer/gi/formula'
+import { convert, ownTag } from '@genshin-optimizer/gi/formula'
 import { useGiCalcContext } from '@genshin-optimizer/gi/formula-ui'
 import { MemberContext } from '@genshin-optimizer/pando/ui-sheet'
 import { CardContent, CardHeader, Stack, Typography } from '@mui/material'
@@ -33,7 +33,7 @@ export function TeamCharacter() {
 
 function Content({ character }: { character: TeamLoadoutCharacter }) {
   const calc = useGiCalcContext()
-  const member = useMemo(() => convert(selfTag, { et: 'own', src: '0' }), [])
+  const member = useMemo(() => convert(ownTag, { et: 'own', src: '0' }), [])
   if (!calc) return null
   return (
     <MemberContext.Provider value={member}>

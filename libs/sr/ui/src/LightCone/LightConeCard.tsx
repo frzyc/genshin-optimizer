@@ -2,7 +2,7 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import {
   convert,
   lightConeData,
-  selfTag,
+  ownTag,
   srCalculatorWithEntries,
   withMember,
 } from '@genshin-optimizer/sr/formula'
@@ -14,7 +14,7 @@ type LightConeCardProps = {
 export function LightConeCard({ lightConeId }: LightConeCardProps) {
   const lightCone = useLightCone(lightConeId)
 
-  const member0 = convert(selfTag, { et: 'own', src: '0' })
+  const member0 = convert(ownTag, { et: 'own', src: '0' })
   const calc = srCalculatorWithEntries(
     withMember('0', ...lightConeData(lightCone))
   )
