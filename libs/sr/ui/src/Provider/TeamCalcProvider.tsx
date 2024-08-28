@@ -21,8 +21,8 @@ import {
   enemyDebuff,
   lightConeData,
   members,
+  ownBuff,
   relicsData,
-  selfBuff,
   srCalculatorWithEntries,
   teamData,
   withMember,
@@ -101,7 +101,7 @@ export function TeamCalcProvider({
         enemyDebuff.common.res.add(0.1),
         enemyDebuff.common.isBroken.add(0),
         enemyDebuff.common.maxToughness.add(100),
-        selfBuff.common.critMode.add('avg'),
+        ownBuff.common.critMode.add('avg'),
       ]),
     [member0, member1, member2, member3, team.loadoutMetadata]
   )

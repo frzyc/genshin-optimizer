@@ -63,15 +63,15 @@ export class Read extends TypedRead<Tag> {
     if (this.tag.et !== 'teamBuff' || !sheet)
       throw new Error('Unsupported non-stacking entry')
     const q = `${uniqueId(sheet)}`
-    // Use raw tags here instead of `self.*` to avoid cyclic dependency
+    // Use raw tags here instead of `own.*` to avoid cyclic dependency
     // Entries in TeamData need `member:` for priority
     return [
-      // 1) selfBuff.stackIn.<q>.add(value)
-      this.withTag({ et: 'self', sheet, qt: 'stackIn', q }).add(value),
-      // 2) In TeamData: selfBuff.stackTmp.<q>.add(cmpNE(self.stackIn.<q>, 0, /* priority */))
-      // 3) In TeamData: selfBuff.stackOut.<q>.add(cmpEq(team.stackTmp.<q>.max, /* priority */, self.stackIn))
-      // 4) teamBuff.<stat>.add(self.stackOut.<q>)
-      this.add(reader.withTag({ et: 'self', sheet, qt: 'stackOut', q })),
+      // 1) ownBuff.stackIn.<q>.add(value)
+      this.withTag({ et: 'own', sheet, qt: 'stackIn', q }).add(value),
+      // 2) In TeamData: ownBuff.stackTmp.<q>.add(cmpNE(own.stackIn.<q>, 0, /* priority */))
+      // 3) In TeamData: ownBuff.stackOut.<q>.add(cmpEq(team.stackTmp.<q>.max, /* priority */, own.stackIn))
+      // 4) teamBuff.<stat>.add(own.stackOut.<q>)
+      this.add(reader.withTag({ et: 'own', sheet, qt: 'stackOut', q })),
     ]
   }
   reread(r: Read): TagMapNodeEntry {
