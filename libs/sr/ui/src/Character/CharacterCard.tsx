@@ -24,7 +24,7 @@ export function CharacterCard({
 }) {
   const calc = srCalculatorWithEntries(withMember('0', ...charData(character)))
 
-  const member0 = convert(selfTag, { et: 'self', src: '0' })
+  const member0 = convert(selfTag, { et: 'own', src: '0' })
 
   return (
     <Stack>

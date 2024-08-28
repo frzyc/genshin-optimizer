@@ -42,7 +42,7 @@ export default function TeammateDisplay({ tab }: { tab?: string }) {
   )
 
   const member = convert(selfTag, {
-    et: 'self',
+    et: 'own',
     src: members[teammateIndex],
   })
   return (

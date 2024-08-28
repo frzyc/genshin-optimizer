@@ -48,7 +48,7 @@ function registerFormula(
   const listing = (team ? teamBuff : ownBuff).listing.formulas
   return [
     listing.add(
-      listingItem(reader.withTag({ name, et: 'self', qt: 'formula', q }), cond)
+      listingItem(reader.withTag({ name, et: 'own', qt: 'formula', q }), cond)
     ),
     ...extra.map(({ tag, value }) => ({ tag: { ...tag, name }, value })),
   ]

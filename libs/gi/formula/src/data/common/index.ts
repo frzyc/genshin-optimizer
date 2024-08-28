@@ -14,18 +14,18 @@ const data: TagMapNodeEntries = [
   ...reaction,
   ...resonance,
 
-  reader.withTag({ sheet: 'iso', et: 'self' }).reread(reader.sheet('custom')),
-  reader.withTag({ sheet: 'agg', et: 'self' }).reread(reader.sheet('custom')),
+  reader.withTag({ sheet: 'iso', et: 'own' }).reread(reader.sheet('custom')),
+  reader.withTag({ sheet: 'agg', et: 'own' }).reread(reader.sheet('custom')),
 
   // Final <= Premod <= Base + WeaponRefinement
   reader
-    .withTag({ sheet: 'agg', et: 'self', qt: 'final' })
+    .withTag({ sheet: 'agg', et: 'own', qt: 'final' })
     .add(reader.with('qt', 'premod').sum),
   reader
-    .withTag({ sheet: 'agg', et: 'self', qt: 'premod' })
+    .withTag({ sheet: 'agg', et: 'own', qt: 'premod' })
     .add(reader.with('qt', 'base').sum),
   reader
-    .withTag({ sheet: 'agg', et: 'self', qt: 'premod' })
+    .withTag({ sheet: 'agg', et: 'own', qt: 'premod' })
     .add(reader.with('qt', 'weaponRefinement').sum),
 
   // premod X += base X * premod X%

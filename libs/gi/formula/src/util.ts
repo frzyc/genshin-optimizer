@@ -72,7 +72,7 @@ export function artifactsData(
   const {
     common: { count },
     premod,
-  } = convert(selfTag, { sheet: 'art', et: 'self' })
+  } = convert(selfTag, { sheet: 'art', et: 'own' })
   const { agg, art, dyn } = reader.withAll('sheet', [])
   const sets: Partial<Record<ArtifactSetKey, number>> = {},
     stats: Partial<Record<MainStatKey | SubstatKey, number>> = {}
@@ -125,7 +125,7 @@ export function conditionalData(
 
 export function teamData(members: readonly Member[]): TagMapNodeEntries {
   const teamEntry = reader.with('et', 'team')
-  const { self, enemy, teamBuff, notSelfBuff } = reader
+  const { own, enemy, teamBuff, notSelfBuff } = reader
     .sheet('agg')
     .withAll('et', [])
   return [
@@ -133,18 +133,18 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     members.map((dst) =>
       reader
         .withTag({ et: 'target', dst })
-        .reread(reader.withTag({ et: 'self', src: dst, dst: null }))
+        .reread(reader.withTag({ et: 'own', src: dst, dst: null }))
     ),
     // Team Buff
     members.flatMap((dst) => {
-      const entry = self.with('src', dst)
+      const entry = own.with('src', dst)
       return members.map((src) =>
         entry.reread(teamBuff.withTag({ dst, src, name: null }))
       )
     }),
     // Not Self Buff
     members.flatMap((dst) => {
-      const entry = self.with('src', dst)
+      const entry = own.with('src', dst)
       return members
         .filter((src) => src !== dst)
         .map((src) =>
@@ -158,18 +158,18 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
       )
     ),
     // Resonance Team Buff
-    self.reread(
+    own.reread(
       teamBuff.withTag({ et: 'teamBuff', sheet: 'reso', name: null })
     ),
     // Non-stacking
     members.flatMap((src, i) => {
       const { stackIn, stackTmp } = reader.withAll('qt', [])
       // Make sure not to use `sheet:agg` here to match `stackOut` on the `reader.addOnce` side
-      const self = reader.withTag({ src, et: 'self' })
+      const own = reader.withTag({ src, et: 'own' })
       // Use `i + 1` for priority so that `0` means no buff
       return [
-        self.with('qt', 'stackTmp').add(cmpNE(stackIn, 0, i + 1)),
-        self
+        own.with('qt', 'stackTmp').add(cmpNE(stackIn, 0, i + 1)),
+        own
           .with('qt', 'stackOut')
           .add(cmpEq(stackTmp.max.with('et', 'team'), i + 1, stackIn)),
       ]
@@ -185,7 +185,7 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     // final eleMas, where the outer query uses a `max` accumulator, while final eleMas
     // must use `sum` accumulator for a correct result.
     members.map((src) =>
-      teamEntry.add(reader.withTag({ et: 'self', src, dst: null }).sum)
+      teamEntry.add(reader.withTag({ et: 'own', src, dst: null }).sum)
     ),
   ].flat()
 }

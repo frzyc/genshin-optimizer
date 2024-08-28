@@ -14,7 +14,7 @@ export function OptimizationTargetSelector({
 }) {
   const { t } = useTranslation('optimize')
   const calc = useSrCalcContext()
-  const member0 = convert(selfTag, { et: 'self', src: '0' })
+  const member0 = convert(selfTag, { et: 'own', src: '0' })
   return (
     <DropdownButton
       title={`${t('optTarget')}${

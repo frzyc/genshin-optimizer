@@ -82,7 +82,7 @@ export function relicsData(
   const {
     common: { count },
     premod,
-  } = convert(selfTag, { sheet: 'relic', et: 'self' })
+  } = convert(selfTag, { sheet: 'relic', et: 'own' })
   const sets: Partial<Record<RelicSetKey, number>> = {},
     stats: Partial<Record<StatKey, number>> = {}
   for (const { set: setKey, stats: stat } of data) {
@@ -115,7 +115,7 @@ export function relicsData(
 
 export function teamData(members: readonly Member[]): TagMapNodeEntries {
   const teamEntry = reader.with('et', 'team')
-  const { self, enemy, teamBuff, notSelfBuff } = reader
+  const { own, enemy, teamBuff, notSelfBuff } = reader
     .sheet('agg')
     .withAll('et', [])
   return [
@@ -123,18 +123,18 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     members.map((dst) =>
       reader
         .withTag({ et: 'target', dst })
-        .reread(reader.withTag({ et: 'self', dst: null, src: dst }))
+        .reread(reader.withTag({ et: 'own', dst: null, src: dst }))
     ),
     // Team Buff
     members.flatMap((dst) => {
-      const entry = self.with('src', dst)
+      const entry = own.with('src', dst)
       return members.map((src) =>
         entry.reread(teamBuff.withTag({ dst, src, name: null }))
       )
     }),
     // Not Self Buff
     members.flatMap((dst) => {
-      const entry = self.with('src', dst)
+      const entry = own.with('src', dst)
       return members
         .filter((src) => src !== dst)
         .map((src) =>
@@ -151,11 +151,11 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     members.flatMap((src, i) => {
       const { stackIn, stackTmp } = reader.withAll('qt', [])
       // Make sure not to use `sheet:agg` here to match `stackOut` on the `reader.addOnce` side
-      const self = reader.withTag({ src, et: 'self' })
+      const own = reader.withTag({ src, et: 'own' })
       // Use `i + 1` for priority so that `0` means no buff
       return [
-        self.with('qt', 'stackTmp').add(cmpNE(stackIn, 0, i + 1)),
-        self
+        own.with('qt', 'stackTmp').add(cmpNE(stackIn, 0, i + 1)),
+        own
           .with('qt', 'stackOut')
           .add(cmpEq(stackTmp.max.with('et', 'team'), i + 1, stackIn)),
       ]
@@ -171,7 +171,7 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     // final eleMas, where the outer query uses a `max` accumulator, while final eleMas
     // must use `sum` accumulator for a correct result.
     members.map((src) =>
-      teamEntry.add(reader.withTag({ src, et: 'self' }).sum)
+      teamEntry.add(reader.withTag({ src, et: 'own' }).sum)
     ),
   ].flat()
 }

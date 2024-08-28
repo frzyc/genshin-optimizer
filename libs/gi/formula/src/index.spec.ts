@@ -89,24 +89,24 @@ describe('sheet', () => {
           case 'teamBuff': {
             const { sheet } = (selfTag as any)[tag.qt][tag.q]
             if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
-            fail(`Ill-form ${tag.et} entry (${tagStr(tag)}) for sheet ${sheet}`)
+            fail(`Ill-form entry (${tagStr(tag)}) for sheet ${sheet}`)
             break
           }
           case 'enemyDeBuff': {
             const { sheet } = (enemyTag as any)[tag.qt][tag.q]
             if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
             if (sheet === tag.sheet) continue
-            fail(`Ill-form ${tag.et} entry (${tagStr(tag)}) for sheet ${sheet}`)
+            fail(`Ill-form entry (${tagStr(tag)}) for sheet ${sheet}`)
             break
           }
-          case 'self': {
+          case 'own': {
             const desc = (selfTag as any)[tag.qt]?.[tag.q]
             if (!desc) continue
             const { sheet } = desc
             if (!sheet) continue
             if (sheet === 'iso' || sheet === 'agg' || sheet === tag.sheet)
               continue
-            fail(`Illform self entry (${tagStr(tag)}) for sheet ${sheet}`)
+            fail(`Illform entry (${tagStr(tag)}) for sheet ${sheet}`)
             break
           }
           case 'enemy': {
@@ -115,7 +115,7 @@ describe('sheet', () => {
             const { sheet } = desc
             if (!sheet) continue
             if (sheet === 'agg' || sheet === tag.sheet) continue
-            fail(`Illform self entry (${tagStr(tag)}) for sheet ${sheet}`)
+            fail(`Illform entry (${tagStr(tag)}) for sheet ${sheet}`)
             break
           }
         }

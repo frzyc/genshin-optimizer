@@ -193,21 +193,21 @@ export function convert<V extends Record<string, Record<string, Desc>>>(
 
 // Default queries
 const noName = { src: null, name: null }
-export const own = convert(selfTag, { et: 'self', dst: null })
+export const own = convert(selfTag, { et: 'own', dst: null })
 export const team = convert(selfTag, { et: 'team', dst: null, ...noName })
 export const target = convert(selfTag, { et: 'target', ...noName })
 export const enemy = convert(enemyTag, { et: 'enemy', dst: null, ...noName })
 
 // Default tag DB keys
-export const ownBuff = convert(selfTag, { et: 'self' })
+export const ownBuff = convert(selfTag, { et: 'own' })
 export const teamBuff = convert(selfTag, { et: 'teamBuff' })
 export const notSelfBuff = convert(selfTag, { et: 'notSelfBuff' })
 export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
-export const userBuff = convert(selfTag, { et: 'self', sheet: 'custom' })
+export const userBuff = convert(selfTag, { et: 'own', sheet: 'custom' })
 
 // Custom tags
 export const allStatics = (sheet: Sheet) =>
-  reader.withTag({ et: 'self', sheet, qt: 'misc' }).withAll('q', [])
+  reader.withTag({ et: 'own', sheet, qt: 'misc' }).withAll('q', [])
 export const allBoolConditionals = (sheet: Sheet, ignored?: CondIgnored) =>
   allConditionals(sheet, ignored, { type: 'bool' }, (r) => ({
     ifOn: (node: NumNode | number, off?: NumNode | number) =>
@@ -251,7 +251,7 @@ function allConditionals<T>(
 ): Record<string, T> {
   // Keep the base tag "full" here so that `cond` returns consistent tags
   const baseTag: Omit<Required<Tag>, 'preset' | 'src' | 'dst' | 'q'> = {
-    et: 'self',
+    et: 'own',
     sheet,
     qt: 'cond',
     // Remove irrelevant tags

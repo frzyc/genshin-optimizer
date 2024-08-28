@@ -123,7 +123,7 @@ describe('example', () => {
      * ```
      * {
      *   src: <member>
-     *   et: 'self'
+     *   et: 'own'
      *   sheet: <sheet that defines the formula>
      *   qt: 'formula'
      *   q: < 'dmg' / 'trans' / 'shield' / 'heal' >
@@ -145,7 +145,7 @@ describe('example', () => {
         expect(tag).toEqual({
           src: '0',
           dst: null,
-          et: 'self',
+          et: 'own',
           sheet: 'Nahida',
           qt: 'formula',
           q: 'dmg', // DMG formula
@@ -221,7 +221,7 @@ describe('example', () => {
     const allArts = new Set(allArtifactSetKeys) // Cache for fast lookup, put in global
     let detached = detach(nodes, calc, (tag: Tag) => {
       if (tag['src'] != '0') return undefined // Wrong member
-      if (tag['et'] != 'self') return undefined // Not applied (only) to self
+      if (tag['et'] != 'own') return undefined // Not applied (only) to 'own'
 
       if (tag['sheet'] === 'dyn' && tag['qt'] === 'premod')
         return { q: tag['q']! } // Art stat bonus

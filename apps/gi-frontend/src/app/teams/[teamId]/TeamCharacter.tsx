@@ -33,7 +33,7 @@ export function TeamCharacter() {
 
 function Content({ character }: { character: TeamLoadoutCharacter }) {
   const calc = useGiCalcContext()
-  const member = useMemo(() => convert(selfTag, { et: 'self', src: '0' }), [])
+  const member = useMemo(() => convert(selfTag, { et: 'own', src: '0' }), [])
   if (!calc) return null
   return (
     <MemberContext.Provider value={member}>

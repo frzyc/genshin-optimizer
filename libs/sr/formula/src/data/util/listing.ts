@@ -66,7 +66,7 @@ export const damageTypes = [
 ] as const
 
 export const entryTypes = [
-  'self',
+  'own',
   'enemy',
   'team',
   'target',

@@ -32,7 +32,7 @@ export const presets = [
   'preset9',
 ] as const
 export const entryTypes = [
-  'self',
+  'own',
   'enemy',
   'team',
   'target',
