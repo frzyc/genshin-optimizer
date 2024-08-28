@@ -163,10 +163,7 @@ export function RelicCard({
               sx={{ display: 'flex', gap: 0.5, alignItems: 'center' }}
             >
               <SlotIcon
-                iconProps={{
-                  fontSize: 'inherit',
-                  sx: { marginLeft: '2px' },
-                }}
+                iconProps={{ fontSize: 'inherit' }}
                 slotKey={slotKey}
               />
               {t(`slotName.${slotKey}`)}
@@ -177,7 +174,7 @@ export function RelicCard({
             >
               <StatIcon
                 statKey={mainStatKey}
-                iconProps={{ sx: { color: `${ele}.main`, marginLeft: '-2px' } }}
+                iconProps={{ sx: { color: `${ele}.main` } }}
               />
               <span>{tk(mainStatKey)}</span>
             </Typography>
