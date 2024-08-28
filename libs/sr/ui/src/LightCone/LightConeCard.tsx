@@ -3,7 +3,6 @@ import {
   lightConeData,
   own,
   srCalculatorWithEntries,
-  withMember,
 } from '@genshin-optimizer/sr/formula'
 import { CardContent, Typography } from '@mui/material'
 import { useLightCone } from '../Hook'
@@ -13,9 +12,7 @@ type LightConeCardProps = {
 export function LightConeCard({ lightConeId }: LightConeCardProps) {
   const lightCone = useLightCone(lightConeId)
 
-  const calc = srCalculatorWithEntries(
-    withMember('0', ...lightConeData(lightCone))
-  ).withTag({ src: '0' })
+  const calc = srCalculatorWithEntries(lightConeData(lightCone))
 
   if (!lightCone) return null
   return (
