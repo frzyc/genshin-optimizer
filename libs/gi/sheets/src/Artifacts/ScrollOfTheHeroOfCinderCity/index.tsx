@@ -6,12 +6,12 @@ import {
 import type { UIData } from '@genshin-optimizer/gi/uidata'
 import type { Data } from '@genshin-optimizer/gi/wr'
 import {
+  compareEq,
   equal,
   greaterEq,
   infoMut,
   input,
   sum,
-  threshold,
 } from '@genshin-optimizer/gi/wr'
 import { condReadNode, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
@@ -36,9 +36,9 @@ const condReactBuffs = objKeyValMap(allElementKeys, (ele) => [
   greaterEq(
     input.artSet.ScrollOfTheHeroOfCinderCity,
     4,
-    threshold(
-      equal(input.charEle, ele, 1),
-      1,
+    compareEq(
+      input.charEle,
+      ele,
       // buffing self elemental damage, check if any of the reactions are enabled
       greaterEq(reactNodeOnCount, 1, 0.12),
       // buffing other elemental damage, check if that particular conditional is enabled
@@ -57,11 +57,7 @@ const condNightsouls = objKeyMap(allElementKeys, (ele) =>
 
 const reactAndNightsoulOnCount = sum(
   ...allElementKeys.map((ele) =>
-    greaterEq(
-      equal(condReacts[ele], ele, equal(condNightsouls[ele], ele, 1)),
-      1,
-      1
-    )
+    equal(condReacts[ele], ele, equal(condNightsouls[ele], ele, 1))
   )
 )
 
@@ -70,9 +66,9 @@ const condNightsoulBuffs = objKeyValMap(allElementKeys, (ele) => [
   greaterEq(
     input.artSet.ScrollOfTheHeroOfCinderCity,
     4,
-    threshold(
-      equal(input.charEle, ele, 1),
-      1,
+    compareEq(
+      input.charEle,
+      ele,
       // buffing self elemental damage, check if any of the reactions are enabled
       greaterEq(reactAndNightsoulOnCount, 1, 0.28),
       // buffing other elemental damage, check if that particular conditional is enabled
