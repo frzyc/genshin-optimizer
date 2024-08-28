@@ -13,7 +13,8 @@
       "noStat": "Sem Valor",
       "eff": "Eficiência: <1></1>",
       "nextRolls": "Próximos rolls:",
-      "RollCount": { "one": "{{count}} Roll", "other": "{{count}} Rolls" }
+      "RollCount_one": "{{count}} Roll",
+      "RollCount_other": "{{count}} Rolls"
     },
     "rarity": "Raridade",
     "level": "Nível",
@@ -94,14 +95,11 @@
   "locationsTooltip": "Desative \"Todos os Artefatos Equipados\" para selecionar apenas   os de alguns personagens",
   "showDup": "Mostrar Duplicatas.",
   "noDupAlert": "Não há artefatos duplicados no seu inventário.",
-  "showingNum": {
-    "one": "Mostrando <1>{{count}}</1> de {{value}} Artefato",
-    "other": "Mostrando <1>{{count}}</1> de {{value}} Artefatos"
-  },
-  "substat": {
-    "one": "{{count}} secundário",
-    "other": "{{count}} secundários"
-  },
-  "sub": { "one": "{{count}} secundário", "other": "{{count}} secundários" },
+  "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} Artefato",
+  "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Artefatos",
+  "substat_one": "{{count}} secundário",
+  "substat_other": "{{count}} secundários",
+  "sub_one": "{{count}} secundário",
+  "sub_other": "{{count}} secundários",
   "noArtifacts": "Parece que você ainda não adicionou artefatos. Se você quiser, há <1>scanners automáticos</1> para você importá-los mais rapidamente!"
 }
