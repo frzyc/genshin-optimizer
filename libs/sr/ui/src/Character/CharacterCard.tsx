@@ -4,7 +4,6 @@ import {
   charData,
   own,
   srCalculatorWithEntries,
-  withMember,
 } from '@genshin-optimizer/sr/formula'
 import {
   CardActionArea,
@@ -21,9 +20,7 @@ export function CharacterCard({
   character: ICachedCharacter
   onClick?: () => void
 }) {
-  const calc = srCalculatorWithEntries(
-    withMember('0', ...charData(character))
-  ).withTag({ src: '0' })
+  const calc = srCalculatorWithEntries(charData(character))
 
   return (
     <Stack>
