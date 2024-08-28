@@ -45,9 +45,9 @@
       "1": "<br/>",
       "2": "<strong>Lumidouce Case</strong>",
       "3": [
-        "Menembakkan Puff of Puredew secara berkala terhadap musuh yang ada di dekatnya, mengakibatkan <dendro>Dendro DMG</dendro>.",
-        "Saat musuh yang ada di dekatnya berada dalam status Burning, akan menghasilkan Scent secara berkala. Scent yang bisa dihasilkan dengan cara ini adalah satu buah setiap 2 detik. Lumidouce Case akan mengumpulkan Scent yang ada di sekitarnya, setelah berhasil mengumpulkan dua buah, maka levelnya akan meningkat, dan saat menembakkan Puff of Puredew, akan menembakkan satu Puff of Puredew tambahan, dan akan meningkatkan DMG dan radius serangan yang disebutkan di atas.",
-        "Hanya bisa ada satu Lumidouce Case yang diciptakan Emilie sendiri dalam satu waktu. Saat diciptakan, level Lumidouce Case awal adalah level 1, dan akan bisa meningkat hingga level 2. Saat ada di medan pertempuran, jika dalam 8 detik berikutnya tidak berhasil mengumpulkan Scent, maka level Lumidouce Case akan kembali menjadi level 1."
+        "Menembakkan Puff of Puredew secara berkala terhadap musuh yang ada di dekatnya dan mengakibatkan <dendro>Dendro DMG</dendro>.",
+        "Saat musuh yang ada di dekatnya berada dalam status Burning, akan tercipta Scent secara berkala. Scent yang bisa dihasilkan dengan cara ini adalah satu buah setiap 2 detik. Lumidouce Case akan mengumpulkan Scent yang ada di sekitarnya dan levelnya akan meningkat setelah berhasil mengumpulkan dua Scent. Setelah levelnya meningkat, Lumidouce Case akan menembakkan satu Puff of Puredew tambahan saat menembakkan Puff of Puredew. Radius serangan dan DMG yang diakibatkan serangan di atas juga akan meningkat.",
+        "Hanya bisa ada satu Lumidouce Case yang diciptakan Emilie sendiri dalam satu waktu. Saat diciptakan, level awal Lumidouce Case adalah level 1 dan bisa meningkat hingga level 2. Saat ada di medan pertempuran, jika Lumidouce Case tidak mengumpulkan Scent dalam kurun 8 detik, maka levelnya akan kembali menjadi level 1."
       ],
       "4": "<br/>",
       "5": "<strong>Arkhe: Pneuma</strong>",
@@ -113,19 +113,19 @@
   "passive2": {
     "name": "Rectification",
     "description": {
-      "0": "DMG yang disebabkan Emilie terhadap musuh dalam status Burning akan meningkat berdasarkan ATK Emilie: Untuk setiap 1.000 poin ATK, DMG meningkat 15%, maksimum peningkatan yang bisa diperoleh dengan cara ini adalah 36%."
+      "0": "DMG yang diakibatkan Emilie terhadap musuh dalam status Burning akan meningkat berdasarkan ATK Emilie: Untuk setiap 1.000 poin ATK, DMG meningkat 15%, maksimum peningkatan yang bisa diperoleh dengan cara ini adalah 36%."
     }
   },
   "passive3": {
     "name": "Headspace Capture",
     "description": {
-      "0": "Saat ada Lumidouce Case yang diciptakan oleh Emilie sendiri di medan perang, maka <pyro>Pyro RES</pyro> seluruh anggota party yang ada di sekitar terhadap DMG Burning meningkat 85%."
+      "0": "Saat ada Lumidouce Case yang diciptakan oleh Emilie sendiri di medan pertempuran, akan meningkatkan 85% <pyro>Pyro RES</pyro> seluruh anggota party yang ada di sekitar terhadap DMG Burning."
     }
   },
   "constellation1": {
     "name": "Light Fragrance Leaching",
     "description": {
-      "0": "DMG yang disebabkan <strong>Fragrance Extraction</strong> dan Cleardew Cologne dari Talenta Pasif \"Lingering Fragrance\" meningkat 20%. Peningkatan DMG untuk Talenta Pasif harus membuka Talenta Pasif \"Lingering Fragrance\" terlebih dulu.",
+      "0": "DMG yang diakibatkan <strong>Fragrance Extraction</strong> dan Cleardew Cologne dari Talenta Pasif \"Lingering Fragrance\" meningkat 20%. Peningkatan DMG untuk Talenta Pasif hanya berlaku setelah Talenta Pasif \"Lingering Fragrance\" dibuka.",
       "1": "Selain itu, saat anggota party di sekitar memicu reaksi Burning terhadap musuh atau mengakibatkan <dendro>Dendro DMG</dendro> terhadap musuh yang berada dalam status Burning, akan menghasilkan 1 <strong>Scent</strong> tambahan. Efek ini dapat terpicu sekali setiap 2,9 detik."
     }
   },
@@ -159,9 +159,9 @@
     "name": "Marcotte Sillage",
     "description": {
       "0": "Saat melancarkan <strong>Fragrance Extraction</strong> atau <strong>Aromatic Explication</strong>, Emilie akan mendapatkan Abiding Fragrance yang berlangsung 5 detik.",
-      "1": "Selama berlangsung, setelah Emilie melancarkan Normal Attack atau Charged Attack, akan menghasilkan 1 Scent, lalu Normal Attack dan Charged Attack Emilie akan dikonversi menjadi <dendro>Dendro DMG</dendro> yang tidak bisa ditimpa Elemental Infusion lainnya, DMG yang dihasilkan juga akan meningkat sebesar 300% ATK Emilie.",
+      "1": "Selama efek ini berlangsung, 1 Scent akan tercipta setelah Emilie melancarkan Normal Attack atau Charged Attack. Selain itu, Normal Attack dan Charged Attack Emilie akan dikonversi menjadi <dendro>Dendro DMG</dendro> yang tidak bisa ditimpa Elemental Infusion lainnya dan DMG yang diakibatkan juga akan meningkat sebesar 300% ATK Emilie.",
       "2": "<br/>",
-      "3": "Efek Abiding Fragrance akan dihapus setelah menghasilkan 4 Scent melalui cara ini atau setelah durasinya berakhir. Efek Abiding Fragrance dapat terpicu sekali setiap 12 detik."
+      "3": "Efek Abiding Fragrance akan hilang setelah menghasilkan 4 Scent melalui cara ini atau setelah durasinya berakhir. Efek Abiding Fragrance dapat terpicu sekali setiap 12 detik."
     }
   }
 }

@@ -1,0 +1,24 @@
+{
+  "name": "Trilha do Arco-Íris",
+  "description": {
+    "0": "Uma lança afiada forjada em jade, que pode refletir um brilho iridescente sob a luz do sol."
+  },
+  "passiveName": "Pacto das Fontes Fluentes",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta a DEF em <cryo>16%</cryo> por 15s após utilizar a Habilidade Elemental."
+    },
+    "1": {
+      "0": "Aumenta a DEF em <cryo>20%</cryo> por 15s após utilizar a Habilidade Elemental."
+    },
+    "2": {
+      "0": "Aumenta a DEF em <cryo>24%</cryo> por 15s após utilizar a Habilidade Elemental."
+    },
+    "3": {
+      "0": "Aumenta a DEF deste personagem em <cryo>28%</cryo> por 15s após utilizar a Habilidade Elemental."
+    },
+    "4": {
+      "0": "Aumenta a DEF em <cryo>32%</cryo> por 15s após utilizar a Habilidade Elemental."
+    }
+  }
+}

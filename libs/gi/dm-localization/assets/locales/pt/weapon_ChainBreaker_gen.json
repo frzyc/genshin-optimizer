@@ -1,0 +1,24 @@
+{
+  "name": "Quebrador de Correntes",
+  "description": {
+    "0": "Um arco longo adornado com jade, cujas cordas parecem estar sempre envoltas por uma brisa suave. Reza a lenda que foi forjado por artesãos Saurianos em tempos muito antigos."
+  },
+  "passiveName": "Canção da Flor de Penas",
+  "passiveDescription": {
+    "0": {
+      "0": "Para cada personagem da equipe que é de Natlan ou que tenha um Tipo Elemental diferente do personagem que está com essa arma equipada, o personagem que está com essa arma equipada ganha <cryo>4.8%</cryo> de aumento de ATQ. Quando não houver menos que 3 dos personagens mencionados, o personagem que está com essa arma equipada ganha <cryo>24</cryo> de Proficiência Elemental."
+    },
+    "1": {
+      "0": "Para cada personagem da equipe que é de Natlan ou que tenha um Tipo Elemental diferente do personagem que está com essa arma equipada, o personagem que está com essa arma equipada ganha <cryo>6%</cryo> de aumento de ATQ. Quando não houver menos que 3 dos personagens mencionados, o personagem que está com essa arma equipada ganha <cryo>30</cryo> de Proficiência Elemental."
+    },
+    "2": {
+      "0": "Para cada personagem da equipe que é de Natlan ou que tenha um Tipo Elemental diferente do personagem que está com essa arma equipada, o personagem que está com essa arma equipada ganha <cryo>7.2%</cryo> de aumento de ATQ. Quando não houver menos que 3 dos personagens mencionados, o personagem que está com essa arma equipada ganha <cryo>36</cryo> de Proficiência Elemental."
+    },
+    "3": {
+      "0": "Para cada personagem da equipe que é de Natlan ou que tenha um Tipo Elemental diferente do personagem que está com essa arma equipada, o personagem que está com essa arma equipada ganha <cryo>8.4%</cryo> de aumento de ATQ. Quando não houver menos que 3 dos personagens mencionados, o personagem que está com essa arma equipada ganha <cryo>42</cryo> de Proficiência Elemental."
+    },
+    "4": {
+      "0": "Para cada personagem da equipe que é de Natlan ou que tenha um Tipo Elemental diferente do personagem que está com essa arma equipada, o personagem que está com essa arma equipada ganha <cryo>9.6%</cryo> de aumento de ATQ. Quando não houver menos que 3 dos personagens mencionados, o personagem que está com essa arma equipada ganha <cryo>48</cryo> de Proficiência Elemental."
+    }
+  }
+}

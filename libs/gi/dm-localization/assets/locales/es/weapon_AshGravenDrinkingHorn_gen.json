@@ -1,0 +1,24 @@
+{
+  "name": "Cuerno Veteazulado",
+  "description": {
+    "0": "Un objeto ritual transmitido entre los Meztli. Dicen que se trata de un tesoro que fue muy preciado por el héroe Túpac, al cual llamaban “gigante”, pero que nunca llegó a usar."
+  },
+  "passiveName": "Empuñadura de Túpac",
+  "passiveDescription": {
+    "0": {
+      "0": "Al golpear a un enemigo, inflige en la ubicación golpeada Daño en el AdE en una cantidad equivalente al <cryo>40%</cryo> de la Vida Máx. Este efecto solo se puede activar una vez cada 15 s."
+    },
+    "1": {
+      "0": "Al golpear a un enemigo, inflige en la ubicación golpeada Daño en el AdE en una cantidad equivalente al <cryo>50%</cryo> de la Vida Máx. Este efecto solo se puede activar una vez cada 15 s."
+    },
+    "2": {
+      "0": "Al golpear a un enemigo, inflige en la ubicación golpeada Daño en el AdE en una cantidad equivalente al <cryo>60%</cryo> de la Vida Máx. Este efecto solo se puede activar una vez cada 15 s."
+    },
+    "3": {
+      "0": "Al golpear a un enemigo, inflige en la ubicación golpeada Daño en el AdE en una cantidad equivalente al <cryo>70%</cryo> de la Vida Máx. Este efecto solo se puede activar una vez cada 15 s."
+    },
+    "4": {
+      "0": "Al golpear a un enemigo, inflige en la ubicación golpeada Daño en el AdE en una cantidad equivalente al <cryo>80%</cryo> de la Vida Máx. Este efecto solo se puede activar una vez cada 15 s."
+    }
+  }
+}

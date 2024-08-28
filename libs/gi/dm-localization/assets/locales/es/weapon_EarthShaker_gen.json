@@ -1,0 +1,24 @@
+{
+  "name": "Terragitador",
+  "description": {
+    "0": "La espada pesada que le gustaba utilizar al héroe conocido como “Robafuegos”. Dicen que ni siquiera las llamas del rey de la Ciudad de las Cenizas pudieron quemarla."
+  },
+  "passiveName": "Juramento de la senda esmeralda",
+  "passiveDescription": {
+    "0": {
+      "0": "Cuando un personaje del equipo causa una Reacción Elemental Pyro, el daño que inflige el portador de esta arma con su Habilidad Elemental aumenta en un <cryo>16%</cryo> durante 8 s. Este efecto se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "1": {
+      "0": "Cuando un personaje del equipo causa una Reacción Elemental Pyro, el daño que inflige el portador de esta arma con su Habilidad Elemental aumenta en un <cryo>20%</cryo> durante 8 s. Este efecto se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "2": {
+      "0": "Cuando un personaje del equipo causa una Reacción Elemental Pyro, el daño que inflige el portador de esta arma con su Habilidad Elemental aumenta en un <cryo>24%</cryo> durante 8 s. Este efecto se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "3": {
+      "0": "Cuando un personaje del equipo causa una Reacción Elemental Pyro, el daño que inflige el portador de esta arma con su Habilidad Elemental aumenta en un <cryo>28%</cryo> durante 8 s. Este efecto se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    },
+    "4": {
+      "0": "Cuando un personaje del equipo causa una Reacción Elemental Pyro, el daño que inflige el portador de esta arma con su Habilidad Elemental aumenta en un <cryo>32%</cryo> durante 8 s. Este efecto se puede activar incluso cuando el personaje está en tu equipo pero no en uso."
+    }
+  }
+}

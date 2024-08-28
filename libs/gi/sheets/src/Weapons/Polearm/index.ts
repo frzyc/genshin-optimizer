@@ -13,6 +13,7 @@ import DragonsBane from './DragonsBane'
 import DragonspineSpear from './DragonspineSpear'
 import EngulfingLightning from './EngulfingLightning'
 import FavoniusLance from './FavoniusLance'
+import FootprintOfTheRainbow from './FootprintOfTheRainbow'
 import Halberd from './Halberd'
 import IronPoint from './IronPoint'
 import KitainCrossSpear from './KitainCrossSpear'
@@ -62,6 +63,7 @@ const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   StaffOfHoma,
   StaffOfTheScarletSands,
   TheCatch,
+  FootprintOfTheRainbow,
   VortexVanquisher,
   WavebreakersFin,
   WhiteTassel,

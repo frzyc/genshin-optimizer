@@ -423,7 +423,6 @@ function WeaponCard({ weapon }: { weapon: ICachedWeapon }) {
       bgt="neutral600"
       sx={{
         height: '100%',
-        maxHeight: '50px',
         display: 'flex',
         flexDirection: 'horizontal',
         boxShadow: `0 0 10px rgba(0,0,0,0.4)`,
@@ -433,7 +432,7 @@ function WeaponCard({ weapon }: { weapon: ICachedWeapon }) {
         component={NextImage ? NextImage : 'img'}
         src={weaponAsset(weapon.key, weapon.ascension >= 2)}
         maxWidth="100%"
-        maxHeight="100%"
+        maxHeight="50px"
         sx={{ mt: 'auto' }}
       />
       <Box

@@ -1,0 +1,29 @@
+{
+  "setName": "Codex d'obsidienne",
+  "setEffects": {
+    "2": "Lorsque le personnage équipé de l'artéfact bénéficie d'une bénédiction noctâme et est sur le terrain, les DGT qu'il inflige augmentent de 15 %.",
+    "4": "Lorsque le personnage équipé de l'artéfact a consommé 1 pt de noctâme sur le terrain, le taux CRIT augmente de 40 % pendant 6 s. Cet effet peut être déclenché une fois toutes les secondes."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Représailles des aberrants",
+      "desc": "Une fleur minutieusement sculptée dans du cristal noir. Elle émet une lumière mystérieuse pendant la nuit."
+    },
+    "plume": {
+      "name": "Racine de la moelle spirituelle",
+      "desc": "Un accessoire à plumes conçu pour imiter l'aile d'un dragon. Peut-être était-ce autrefois un petit souvenir d'une histoire oubliée..."
+    },
+    "sands": {
+      "name": "Mythes du domaine nocturne",
+      "desc": "Un élément rituel mystérieux qui n'est ni une montre ni une boussole. Personne n'a aujourd'hui la moindre idée de son utilité..."
+    },
+    "goblet": {
+      "name": "Pré-banquet des concurrents",
+      "desc": "Un récipient qui semble avoir été fabriqué en tordant et en façonnant la pierre d'une manière apparemment fantaisiste. Mais la question de savoir qui possède une telle force reste ouverte..."
+    },
+    "circlet": {
+      "name": "Diadème des saints",
+      "desc": "Une couronne en obsidienne qui, dans les temps anciens, était utilisée lors des rituels de couronnement par les rois des tribus nobles."
+    }
+  }
+}

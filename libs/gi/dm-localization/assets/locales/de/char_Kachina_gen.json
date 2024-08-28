@@ -1,0 +1,177 @@
+{
+  "name": "Kachina",
+  "title": "Gesprenkeltes Rohgold",
+  "description": "Eine junge Kämpferin der Nanatzcayan, die den antiken Namen „Uthabiti“ erhielt. Eine gutmütige, entschlossene junge Frau, die stets an ihren Misserfolgen wächst.",
+  "constellationName": "Ochotona Princeps",
+  "auto": {
+    "name": "Felsenbeißer",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Lanzenstiche hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer, sticht geschwind nach vorn und fügt den Gegnern in der Bahn Schaden zu."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden auf, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge",
+      "5": "Ausdauerverbrauch heftiger Schläge",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Los, kleiner Wirbelwind!",
+    "description": {
+      "0": "Kämpft gemeinsam mit dem vertrauenswürdigen kleinen Wirbelwind!",
+      "1": "Beschwört den kleinen Wirbelwind. Beim Auslösen durch Gedrückthalten wird Kachina den kleinen Wirbelwind beschwören und auf ihm reiten.",
+      "2": "Nach dem Auslösen erhält Kachina 60 Nachtseelenpunkte und tritt in den Zustand des Nachtseelensegens ein.",
+      "3": "<br/>",
+      "4": "<strong>Nachtseelensegen – Kachina</strong>",
+      "5": "Die verschiedenen Aktionen des kleinen Wirbelwinds verbrauchen Kachinas Nachtseelenpunkte.",
+      "6": "Der Zustand Nachtseelensegen von Kachina endet, sobald die Nachtseelenpunkte aufgebraucht sind.",
+      "7": "<br/>",
+      "8": "<strong>Kleiner Wirbelwind</strong>",
+      "9": "Kann unabhängig existieren oder von Kachina geritten und gesteuert werden. Wenn der kleine Wirbelwind auf dem Feld ist, ändert sich Kachinas Elementarfähigkeit „Los, kleiner Wirbelwind!“ in Auf- und Abstiegsoptionen.",
+      "10": [
+        " Wenn der kleine Wirbelwind unabhängig von Kachina existiert, greift er in regelmäßigen Abständen den Boden an und verursacht dabei mit Nachtseelen versehenen <geo>Geo-Flächenschaden</geo> basierend auf Kachinas VTD.",
+        " Wenn Kachina auf dem kleinen Wirbelwind reitet, kann sie ihn steuern, um sich schnell zu bewegen, zu klettern, beim Ausführen des Standardangriffs den Boden anzugreifen und damit mit Nachtseelen versehenen <geo>Geo-Flächenschaden</geo> basierend auf Kachinas VTD zu verursachen."
+      ],
+      "11": "<br/>",
+      "12": "Der kleine Wirbelwind verschwindet, sobald der Zustand Nachtseelensegen von Kachina endet, und gilt als Geo-Objekt. Es kann gleichzeitig nur ein von Kachina selbst erschaffener kleiner Wirbelwind auf dem Feld existieren.",
+      "13": "<br/>",
+      "14": "<i>Der kleine Wirbelwind sieht nur aus wie ein Kreisel, in Wirklichkeit ist er ein Bohrer, der selbst den stärksten Felsen aufbrechen kann!</i>"
+    },
+    "skillParams": {
+      "0": "SCH beim Reiten auf dem kleinen Wirbelwind",
+      "1": "Unabhängiger SCH des kleinen Wirbelwinds",
+      "2": "Max. Nachtseelenpunkte",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Jetzt wird es ernst!",
+    "description": {
+      "0": "Schlägt auf den Boden und verursacht <geo>Geo-Flächenschaden</geo> basierend auf Kachinas VTD und erzeugt daraufhin ein Superbohrfeld.",
+      "1": "Das Superbohrfeld erhöht die Angriffsreichweite des kleinen Wirbelwinds sowie die Bewegungsgeschwindigkeit beim Reiten.",
+      "2": "<br/>",
+      "3": "Beschwört den kleinen Wirbelwind an ihre Seite, wenn beim Einsetzen dieser Fähigkeit Kachinas eigener kleiner Wirbelwind bereits auf dem Feld ist.",
+      "4": "<br/>",
+      "5": "<i>So wie nervöse Künstler sich die Zuschauer gern als Holzpuppen vorstellen, stellt sich Kachina vor, dass ihre Gegner die schönsten Edelsteine wären, die man stolz nach Hause bringen und horten kann.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Dauer des Felds",
+      "2": "Abklingzeit",
+      "3": "Elementarenergie",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Gebirgsechos",
+    "description": {
+      "0": "Erhöht Kachinas <geo>Geo-SCH-Bonus</geo> 12 s lang um 20 %, sobald ein Truppenmitglied in der Nähe „Nachtseelenaufbruch“ auslöst."
+    }
+  },
+  "passive2": {
+    "name": "Gewicht der Felsen",
+    "description": {
+      "0": "Erhöht den vom <strong>kleinen Wirbelwind</strong> verursachten Schaden in Höhe von 20 % von Kachinas VTD."
+    }
+  },
+  "passive3": {
+    "name": "Geschenk des Nachtreichs – Herz der Einheit",
+    "description": {
+      "0": "Nachdem ihre Nachtseelenpunkte aufgebraucht sind, kann Kachina zum Konsum von Phlogiston wechseln, um ihren Nachtseelensegen aufrechtzuerhalten.",
+      "1": "Bei Aufenthalt in einem Gebiet mit Phlogiston-Mechanismus in Natlan kann die Nachtseelen-Übertragung – Kachina verwendet werden. Wenn die aktuelle Figur gerade rennt, klettert, sich in einem Bewegungsmodus befindet, der durch bestimmte Talente ausgelöst wird, oder sich in einer bestimmten Höhe in der Luft befindet, wird beim Wechsel zu Kachina Folgendes ausgelöst: Kachina tritt in den Zustand des Nachtseelensegens ein und reitet auf dem <strong>kleinen Wirbelwind</strong>, wenn sie das Feld betritt. Außerdem erhält sie 30 Nachtseelenpunkte. 10 s Abklingzeit für das Auslösen der Nachtseelen-Übertragung innerhalb der eigenen Truppe.",
+      "2": "<br/>",
+      "3": "Außerdem verbraucht Kachina 90 % weniger Ausdauer, wenn sie beim Klettern in Natlan auf dem <strong>kleinen Wirbelwind</strong> reitet."
+    }
+  },
+  "passive": {
+    "name": "Segen der Kristallflamme",
+    "description": {
+      "0": "Stellt beim Aufenthalt in einem Gebiet mit Phlogiston-Mechanismus in Natlan für das Einsammeln einiger sammelbarer Materialien 20 Punkte Ausdauer wieder her. Zeigt außerdem alle <strong>Besonderheiten Natlans</strong> in der Nähe auf der Minikarte an."
+    }
+  },
+  "constellation1": {
+    "name": "Auch Kristallsplitter sind Edelsteine",
+    "description": {
+      "0": "Wenn Kachina auf den <strong>kleinen Wirbelwind</strong> steigt oder von ihm absteigt, sammelt sie die Splitter in der Nähe ein, die durch die Reaktion „Kristallisation“ erzeugt wurden.",
+      "1": "Wenn ein Truppenmitglied einen Splitter einsammelt, werden Kachina außerdem 3 Punkte Elementarenergie wiederhergestellt. Elementarenergie kann auf diese Weise einmal alle 5 s wiederhergestellt werden."
+    }
+  },
+  "constellation2": {
+    "name": "Niemals das Haus verlassen ohne ... den kleinen Wirbelwind",
+    "description": {
+      "0": "Stellt Kachina, wenn sie <strong>„Jetzt wird es ernst!“</strong> einsetzt, 20 Nachtseelenpunkte wieder her. Wenn sich kein <strong>kleiner Wirbelwind</strong>, der ihr selbst gehört, auf dem Feld befindet, wird sie in den Zustand Nachtseelensegen treten und einen beschwören."
+    }
+  },
+  "constellation3": {
+    "name": "Verbesserter Stabilisator",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Los, kleiner Wirbelwind!</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Mehr Gegner, mehr Vorsicht",
+    "description": {
+      "0": "Erhöht, wenn sich 1/2/3/4 oder mehr Gegner innerhalb des durch <strong>„Jetzt wird es ernst!“</strong> erzeugten Superbohrfeldes befinden, die VTD der aktuellen Figur der Truppe innerhalb des Felds um 8/12/16/20 %."
+    }
+  },
+  "constellation5": {
+    "name": "Alles, was ich bis jetzt gesammelt habe",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Jetzt wird es ernst!</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Diesmal muss ich gewinnen",
+    "description": {
+      "0": "Wenn der Schild deiner aktiven Figur in der Truppe aus irgendeinem Grund ersetzt oder zerstört wird, verursacht Kachina <geo>Geo-Flächenschaden</geo> in Höhe von 200 % ihrer VTD, 5 s Abklingzeit."
+    }
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "name": "Kachina",
+  "title": "Mottled Gold Yet Unsmelted",
+  "description": "Pejuang muda Nanatzcayan yang menyandang Marga Kuno \"Uthabiti\". Baik hati dan pantang menyerah, dia tumbuh lebih kuat acap kali berhasil melewati rintangan yang menghadang.",
+  "constellationName": "Ochotona Princeps",
+  "auto": {
+    "name": "Cragbiter",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 serangan tombak berturut-turut."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk menerjang ke depan, mengakibatkan DMG pada musuh di jalur terjangan."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah di bawahnya, menyerang musuh di jalur terjangan dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Go, Go Turbo Twirly!",
+    "description": {
+      "0": "Bertempurlah bersama Turbo Twirly yang bisa diandalkan!",
+      "1": "Memanggil Turbo Twirly: Saat dilancarkan dalam Mode Tahan dan dilepaskan, Kachina akan memanggil dan menaiki Turbo Twirly.",
+      "2": "Setelah dilancarkan, Kachina akan mendapatkan 60 poin Nightsoul dan memasuki status Nightsoul's Blessing.",
+      "3": "<br/>",
+      "4": "<strong>Nightsoul's Blessing: Kachina</strong>",
+      "5": "Berbagai tindakan dari Turbo Twirly akan mengonsumsi poin Nightsoul Kachina.",
+      "6": "Nightsoul's Blessing Kachina akan terus berlangsung sampai poin Nightsoul Kachina habis terkonsumsi.",
+      "7": "<br/>",
+      "8": "<strong>Turbo Twirly</strong>",
+      "9": "Bisa eksis secara independen atau bisa dinaiki dan dikendalikan oleh Kachina. Saat Turbo Twirly eksis secara independen, Elemental Skill \"Go, Go Turbo Twirly!\" Kachina akan diubah menjadi pilihan menaiki atau turun dari Turbo Twirly.",
+      "10": [
+        "Saat Turbo Twirly eksis secara independen, akan menghantam permukaan tanah secara berkala dan mengakibatkan <geo>Geo DMG Area</geo> dengan atribut Nightsoul berdasarkan DEF Kachina.",
+        "Saat Kachina menaiki Turbo Twirly, dia bisa mengontrol Turbo Twirly untuk bisa bergerak dan memanjat dengan cepat, lalu Normal Attack yang dilancarkan akan menghantam permukaan tanah, dan mengakibatkan <geo>Geo DMG Area</geo> dengan atribut Nightsoul berdasarkan DEF Kachina."
+      ],
+      "11": "<br/>",
+      "12": "Turbo Twirly akan hilang saat status Nightsoul's Blessing Kachina berakhir, dan akan dianggap sebagai Geo Construct. Selain itu, hanya satu Turbo Twirly yang boleh ada dalam waktu yang sama.",
+      "13": "<br/>",
+      "14": "<i>Turbo Twirly cuma kelihatan mirip gasing saja. Tapi sebenarnya, dia bisa mengebor batu yang paling keras sekalipun!</i>"
+    },
+    "skillParams": {
+      "0": "DMG Mengendarai Turbo Twirly",
+      "1": "DMG Independen Turbo Twirly",
+      "2": "Batas Poin Nightsoul",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Time to Get Serious!",
+    "description": {
+      "0": "Menghantam tanah dan mengakibatkan <geo>Geo DMG Area</geo> berdasarkan DEF Kachina, serta menghasilkan Turbo Drill Field.",
+      "1": "Turbo Drill Field akan meningkatkan radius serangan Turbo Twirly dan kecepatan gerakan Turbo Twirly saat dinaiki.",
+      "2": "<br/>",
+      "3": "Saat dilancarkan, jika ada Turbo Twirly milik Kachina sendiri, maka akan memanggil Turbo Twirly tersebut ke sisinya.",
+      "4": "<br/>",
+      "5": "<i>Layaknya penampil gugup yang membayangkan penontonnya adalah boneka kayu, Kachina membayangkan musuhnya sebagai batu permata yang paling indah ... yang bisa dibawa pulang dan disimpan dengan penuh rasa bangga.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Durasi Area",
+      "2": "Cooldown",
+      "3": "Konsumsi Energy",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Mountain Echoes",
+    "description": {
+      "0": "Setelah anggota party di sekitar memicu Nightsoul Burst, <geo>Geo DMG Bonus</geo> Kachina meningkat 20% selama 12 detik."
+    }
+  },
+  "passive2": {
+    "name": "The Weight of Stone",
+    "description": {
+      "0": "DMG yang diakibatkan <strong>Turbo Twirly</strong> meningkat sebesar 20% DEF Kachina."
+    }
+  },
+  "passive3": {
+    "name": "Night Realm's Gift: Heart of Unity",
+    "description": {
+      "0": "Setelah Nightsoul habis terkonsumsi, Kachina akan mengonsumsi Phlogiston untuk mempertahankan status Nightsoul's Blessing-nya.",
+      "1": "Saat berada di lokasi yang memiliki Phlogiston Mechanic di Natlan, Kachina bisa melancarkan Nightsoul Transmission: Kachina. Saat Karakter aktif sedang berlari, memanjat, atau sedang bergerak yang dikarenakan oleh Talenta tertentu, atau saat melayang di ketinggian tertentu, dan mengganti Karakter menjadi Kachina, akan memicu efek: Kachina akan memasuki status Nightsoul's Blessing dan menaiki <strong>Turbo Twirly</strong>, serta mendapatkan 30 poin Nightsoul. Nightsoul Transmission party sendiri dapat terpicu sekali setiap 10 detik.",
+      "2": "<br/>",
+      "3": "Selain itu, saat berada di Natlan, Stamina yang dikonsumsi Kachina saat memanjat sambil mengendarai <strong>Turbo Twirly</strong> akan berkurang 90%."
+    }
+  },
+  "passive": {
+    "name": "Boon of Crystal Flame",
+    "description": {
+      "0": "Saat ada area dengan Phlogiston Mechanic di Natlan, berinteraksi dengan item tertentu yang bisa dikumpulkan, akan memulihkan 20 poin Stamina. Selain ini, akan menunjukkan posisi <strong>Produk Khas Natlan</strong> yang ada di sekitar pada peta kecil."
+    }
+  },
+  "constellation1": {
+    "name": "Shards Are Gems Too",
+    "description": {
+      "0": "Saat Kachina menaiki atau turun dari <strong>Turbo Twirly</strong>, akan menyerap Elemental Shard di sekitar yang dihasilkan oleh Crystallize.",
+      "1": "Selain itu, saat anggota party mendapatkan Elemental Shard ini, akan memulihkan 3 poin Energy Kachina. Pemulihan Energy yang bisa diperoleh dengan cara ini adalah maksimum sekali setiap 5 detik."
+    }
+  },
+  "constellation2": {
+    "name": "Never Leave Home Without... Turbo Twirly",
+    "description": {
+      "0": "Saat Kachina melancarkan <strong>\"Time to Get Serious!\"</strong>, akan memulihkan 20 poin Nightsoul. Jika saat dilancarkan, tidak ada <strong>Turbo Twirly</strong> milik Kachina sendiri, maka akan memasuki status Nightsoul's Blessing dan memanggil Turbo Twirly."
+    }
+  },
+  "constellation3": {
+    "name": "Improved Stabilizer",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Go, Go Turbo Twirly!</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "More Foes, More Caution",
+    "description": {
+      "0": "Saat jumlah musuh yang berada dalam Turbo Drill Field yang dihasilkan oleh <strong>\"Time to Get Serious!\"</strong> berjumlah 1/2/3/4 musuh atau lebih, maka Karakter aktif anggota party di dalam area mendapatkan peningkatan DEF sebesar 8%/12%/16%/20%."
+    }
+  },
+  "constellation5": {
+    "name": "All I've Collected Till Now",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Time to Get Serious!</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "This Time, I've Gotta Win",
+    "description": {
+      "0": "Saat perisai Karakter aktif di dalam party digantikan atau hancur karena alasan apa pun, maka Kachina akan mengakibatkan <geo>Geo DMG Area</geo> sebesar 200% DEF Kachina saat ini. Efek ini dapat terpicu sekali setiap 5 detik."
+    }
+  }
+}

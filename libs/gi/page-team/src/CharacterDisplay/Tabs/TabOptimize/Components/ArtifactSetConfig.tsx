@@ -567,18 +567,36 @@ function ArtifactSetCard({
     teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
   const { artSetExclusion } = useOptConfig(optConfigId)!
-  const setExclusionSet = artSetExclusion?.[setKey] ?? []
-  const allow4 = !setExclusionSet.includes(4)
+  const setExclusionSet = useMemo(
+    // We have nullish fallback so this should be fine
+    () => artSetExclusion?.[setKey as ArtSetExclusionKey] ?? [],
+    [artSetExclusion, setKey]
+  )
   const slots = getNumSlots(slotCount)
   const sheet = getArtSheet(setKey)
   const artStat = getArtSetStat(setKey)
-  /* Assumes that all conditionals are from 4-Set. needs to change if there are 2-Set conditionals */
-  const set4CondNums = useMemo(() => {
-    if (!allow4) return []
-    return Object.keys(sheet.setEffects).filter((setNumKey) =>
-      sheet.setEffects[setNumKey]?.document.some((doc) => 'states' in doc)
-    )
-  }, [sheet.setEffects, allow4])
+  // Get all conditionals that are not excluded
+  // Assumes conditionals are 2 and 4p
+  const condNums = useMemo(() => {
+    return Object.keys(sheet.setEffects).filter((setNumKey) => {
+      if (setNumKey !== '2' && setNumKey !== '4') {
+        return false
+      } else {
+        const sheetHasConditionals = sheet.setEffects[setNumKey]?.document.some(
+          (doc) => 'states' in doc
+        )
+        if (setNumKey === '2') {
+          const cond2CanShow = !(
+            setExclusionSet.includes(2) && setExclusionSet.includes(4)
+          )
+          return cond2CanShow && sheetHasConditionals
+        } /* if (setNumKey === '4') */ else {
+          const cond4CanShow = !setExclusionSet.includes(4)
+          return cond4CanShow && sheetHasConditionals
+        }
+      }
+    })
+  }, [sheet.setEffects, setExclusionSet])
   return (
     <Grid item key={setKey} xs={1}>
       <CardThemed
@@ -695,12 +713,12 @@ function ArtifactSetCard({
           />
         )}
 
-        {!!set4CondNums.length && (
+        {!!condNums.length && (
           <DataContext.Provider value={fakeDataContextObj}>
             <CardContent
               sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
             >
-              {set4CondNums.map((setNumKey) => (
+              {condNums.map((setNumKey) => (
                 <SetEffectDisplay
                   key={setNumKey}
                   setKey={setKey}

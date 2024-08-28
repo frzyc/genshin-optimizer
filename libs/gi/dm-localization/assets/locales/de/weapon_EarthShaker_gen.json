@@ -1,0 +1,24 @@
+{
+  "name": "Bebenmacher",
+  "description": {
+    "0": "Das große Schwert, das von dem als „Flammendieb“ bekannten Helden bevorzugt wurde. Es heißt, dass selbst das brennende Feuer des Königs der aschenen Stadt es nicht zum Schmelzen bringen konnte."
+  },
+  "passiveName": "Eid von Qhapaq Nan",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht, nachdem ein Truppenmitglied eine Pyro-Reaktion ausgelöst hat, den mit Elementarfähigkeiten des Trägers verursachten Schaden 8 s lang um <cryo>16 %</cryo>. Dieser Effekt kann auch ausgelöst werden, wenn die jeweilige Figur inaktiv in der Truppe ist."
+    },
+    "1": {
+      "0": "Erhöht, nachdem ein Truppenmitglied eine Pyro-Reaktion ausgelöst hat, den mit Elementarfähigkeiten des Trägers verursachten Schaden 8 s lang um <cryo>20 %</cryo>. Dieser Effekt kann auch ausgelöst werden, wenn die jeweilige Figur inaktiv in der Truppe ist."
+    },
+    "2": {
+      "0": "Erhöht, nachdem ein Truppenmitglied eine Pyro-Reaktion ausgelöst hat, den mit Elementarfähigkeiten des Trägers verursachten Schaden 8 s lang um <cryo>24 %</cryo>. Dieser Effekt kann auch ausgelöst werden, wenn die jeweilige Figur inaktiv in der Truppe ist."
+    },
+    "3": {
+      "0": "Erhöht, nachdem ein Truppenmitglied eine Pyro-Reaktion ausgelöst hat, den mit Elementarfähigkeiten des Trägers verursachten Schaden 8 s lang um <cryo>28 %</cryo>. Dieser Effekt kann auch ausgelöst werden, wenn die jeweilige Figur inaktiv in der Truppe ist."
+    },
+    "4": {
+      "0": "Erhöht, nachdem ein Truppenmitglied eine Pyro-Reaktion ausgelöst hat, den mit Elementarfähigkeiten des Trägers verursachten Schaden 8 s lang um <cryo>32 %</cryo>. Dieser Effekt kann auch ausgelöst werden, wenn die jeweilige Figur inaktiv in der Truppe ist."
+    }
+  }
+}

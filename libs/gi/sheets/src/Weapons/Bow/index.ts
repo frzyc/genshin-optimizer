@@ -5,6 +5,7 @@ import AlleyHunter from './AlleyHunter'
 import AmosBow from './AmosBow'
 import AquaSimulacra from './AquaSimulacra'
 import BlackcliffWarbow from './BlackcliffWarbow'
+import ChainBreaker from './ChainBreaker'
 import Cloudforged from './Cloudforged'
 import CompoundBow from './CompoundBow'
 import ElegyForTheEnd from './ElegyForTheEnd'
@@ -71,6 +72,7 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   ScionOfTheBlazingSun,
   SeasonedHuntersBow,
   SharpshootersOath,
+  ChainBreaker,
   SkywardHarp,
   Slingshot,
   SongOfStillness,

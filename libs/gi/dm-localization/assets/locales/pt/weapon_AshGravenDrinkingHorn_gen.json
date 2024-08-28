@@ -1,0 +1,24 @@
+{
+  "name": "Cálice de Chifre Cinza Escarlate",
+  "description": {
+    "0": "Um artefato cerimonial herdado por Meztli, dizem que é um tesouro amado, mas nunca usado pelo herói conhecido como \"Gigante\", Tupac."
+  },
+  "passiveName": "Garra de Tupac",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando um ataque acerta um oponente, causa <cryo>40%</cryo> da Vida Máxima como Dano em uma AdE no local do alvo. Este efeito pode ser desencadeado uma vez a cada 15s."
+    },
+    "1": {
+      "0": "Quando um ataque acerta um oponente, causa <cryo>50%</cryo> da Vida Máxima como Dano em uma AdE no local do alvo. Este efeito pode ser desencadeado uma vez a cada 15s."
+    },
+    "2": {
+      "0": "Quando um ataque acerta um oponente, causa <cryo>60%</cryo> da Vida Máxima como Dano em uma AdE no local do alvo. Este efeito pode ser desencadeado uma vez a cada 15s."
+    },
+    "3": {
+      "0": "Quando um ataque acerta um oponente, causa <cryo>70%</cryo> da Vida Máxima como Dano em uma AdE no local do alvo. Este efeito pode ser desencadeado uma vez a cada 15s."
+    },
+    "4": {
+      "0": "Quando um ataque acerta um oponente, causa <cryo>80%</cryo> da Vida Máxima como Dano em uma AdE no local do alvo. Este efeito pode ser desencadeado uma vez a cada 15s."
+    }
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "name": "Kachina",
+  "title": "La Gema de Oro en Bruto",
+  "description": "Una joven guerrera de Nanatzcayan agraciada con el nombre antiguo de “Uthabiti”. Esta muchacha persistente y de buen corazón siempre encuentra oportunidades de crecimiento ante cualquier contratiempo.",
+  "constellationName": "Ochotona Princeps",
+  "auto": {
+    "name": "Riscomordisco",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 ataques rápidos con lanza."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume una cierta cantidad de Aguante para lanzarse al frente e infligir daño a los enemigos en el camino."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, dañando a los enemigos cercanos e infligiendo Daño en el AdE en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Daño de ATQ Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "¡Adelante, turbogirador!",
+    "description": {
+      "0": "¡Lucha junto a su superadorable turbogirador!",
+      "1": "Invoca al turbogirador. Al mantener pulsado, Kachina invoca al turbogirador y se monta en él.",
+      "2": "Al usar esta habilidad, Kachina obtiene 60 pts. de noctambulismo y entra en el estado de “bendición noctámbula”.",
+      "3": "<br/>",
+      "4": "<strong>Bendición noctámbula: Kachina</strong>",
+      "5": "Las acciones del turbogirador consumen pts. de noctambulismo.",
+      "6": "Al consumirlos todos, la duración del estado de bendición noctámbula de Kachina terminará.",
+      "7": "<br/>",
+      "8": "<strong>Turbogirador</strong>",
+      "9": "Puede estar en el campo de batalla de forma independiente o Kachina puede subirse a él para manejarlo. Mientras el turbogirador esté activo, la Habilidad Elemental de Kachina, “¡Adelante, turbogirador!”, se sustituye por las acciones de subirse o bajarse de dicho artilugio.",
+      "10": [
+        "Cuando este esté en el campo de batalla de forma independiente, impactará contra el suelo cada cierto tiempo para infligir <geo>Daño Geo en el AdE</geo> de naturaleza noctámbula en función de la DEF de Kachina.",
+        "Cuando Kachina se sube al turbogirador, podrá controlarlo para moverse y escalar a gran velocidad. Además, al ejecutar un Ataque Normal, impactará contra el suelo e infligirá <geo>Daño Geo en el AdE</geo> de naturaleza noctámbula en función de su DEF."
+      ],
+      "11": "<br/>",
+      "12": "El turbogirador se considera una creación Geo y desaparece cuando termina la duración de la bendición noctámbula de Kachina. Solo puede existir al mismo tiempo un turbogirador invocado por ella.",
+      "13": "<br/>",
+      "14": "<i>Puede que el turbogirador no parezca más que una simple peonza, pero en realidad es un taladro capaz de perforar hasta la más robusta de las rocas.</i>"
+    },
+    "skillParams": {
+      "0": "Daño al subirse al turbogirador",
+      "1": "Daño independiente del turbogirador",
+      "2": "Límite de pts. de noctambulismo",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "¡Ahora voy en serio!",
+    "description": {
+      "0": "Impacta contra el suelo para infligir <geo>Daño Geo en el AdE</geo> en función de la DEF de Kachina y crear un “área supergiratoria”.",
+      "1": "Dicha área aumenta el AdE de ataque del turbogirador y su Vel. Movimiento cuando Kachina está subida en él.",
+      "2": "<br/>",
+      "3": "Si al usar esta habilidad ya hay en el campo de batalla un turbogirador invocado por Kachina, lo invocará para que aparezca a su lado.",
+      "4": "<br/>",
+      "5": "<i>Igual que alguien que está nervioso antes de dar un espectáculo se imagina que su público son muñecos, Kachina se imagina que sus enemigos son piedras preciosas que se puede llevar a casa para coleccionarlas.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Duración del área",
+      "2": "TdE",
+      "3": "Energía Elemental",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Eco montañoso",
+    "description": {
+      "0": "Cuando un personaje cercano del equipo causa una explosión noctámbula, Kachina obtiene un 20% de <geo>Bono de Daño Geo</geo> durante 12 s."
+    }
+  },
+  "passive2": {
+    "name": "Peso rocoso",
+    "description": {
+      "0": "El daño que inflige el <strong>turbogirador</strong> aumenta en una cantidad equivalente al 20% de la DEF de Kachina."
+    }
+  },
+  "passive3": {
+    "name": "Gracia de la noche: Corazones unidos",
+    "description": {
+      "0": "Cuando no tenga más pts. de noctambulismo, Kachina consumirá flogisto para conservar la bendición noctámbula.",
+      "1": "Si se encuentra en una zona con alguna mecánica de flogisto de Natlan, podrá utilizar “Transmisión noctambular: Kachina”. Cuando el personaje en uso esté esprintando, escalando, se encuentre en un estado de movimiento derivado de algún talento o esté a cierta altura en el aire, al cambiar a Kachina, esta entrará en estado de bendición noctámbula, se subirá al <strong>turbogirador</strong> y obtendrá 30 pts. de noctambulismo. Tu equipo solo puede activar Transmisión noctambular una vez cada 10 s.",
+      "2": "<br/>",
+      "3": "Además, al estar en Natlan, el Coste de Aguante de Kachina al escalar mientras está montada en el <strong>turbogirador</strong> se reduce en un 90%."
+    }
+  },
+  "passive": {
+    "name": "Bendición pirominera",
+    "description": {
+      "0": "Restaura 20 pts. de Aguante al interactuar con algunos objetos recolectables en zonas de Natlan con mecánicas de flogisto. Además, muestra la ubicación de los <strong>objetos típicos de Natlan</strong> cercanos en el minimapa."
+    }
+  },
+  "constellation1": {
+    "name": "Los fragmentos también son gemas",
+    "description": {
+      "0": "Cuando Kachina se suba o se baje del <strong>turbogirador</strong>, recogerá los fragmentos cercanos creados con la reacción de Cristalización.",
+      "1": "Además, cuando un personaje del equipo recoge un fragmento, Kachina recupera 3 pts. de Energía Elemental. Solo puede recuperar Energía Elemental una vez cada 5 s de esta manera."
+    }
+  },
+  "constellation2": {
+    "name": "Nunca puede faltar... ¡mi turbogirador!",
+    "description": {
+      "0": "Cuando Kachina usa <strong>¡Ahora voy en serio!</strong>, recupera 20 pts. de noctambulismo. Si al usar dicha habilidad no hay ningún <strong>turbogirador</strong> suyo en el campo de batalla, Kachina entrará en el estado de bendición noctámbula e invocará uno."
+    }
+  },
+  "constellation3": {
+    "name": "Estabilizador mejorado",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>¡Adelante, turbogirador!</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "A más enemigos, más precaución",
+    "description": {
+      "0": "Cuando haya 1/2/3/4 o más enemigos en el área supergiratoria de <strong>¡Ahora voy en serio!</strong>, la DEF del personaje en uso del equipo que esté dentro del área aumenta en un 8/12/16/20%."
+    }
+  },
+  "constellation5": {
+    "name": "Te presento mi gran colección",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>¡Ahora voy en serio!</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Esta vez, tengo que ganar",
+    "description": {
+      "0": "Cuando el escudo de tu personaje en uso se remplace o destruya por cualquier razón, Kachina infligirá <geo>Daño Geo en el AdE</geo> en una cantidad equivalente al 200% de su DEF. Este efecto solo se puede activar una vez cada 5 s."
+    }
+  }
+}

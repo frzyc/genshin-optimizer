@@ -1,0 +1,24 @@
+{
+  "name": "Ring of Yaxche",
+  "description": {
+    "0": "This jade vessel was created by a hero of yesteryear. Legend has it that it once shot the giant dragon that dwelt in the volcano down from the skies."
+  },
+  "passiveName": "Echoes of the Plentiful Land",
+  "passiveDescription": {
+    "0": {
+      "0": "Using an Elemental Skill grants the Jade-Forged Crown effect: Every 1,000 Max HP will increase the Normal Attack DMG dealt by the equipping character by <cryo>0.6%</cryo> for 10s. Normal Attack DMG can be increased this way by a maximum of <cryo>16%</cryo>."
+    },
+    "1": {
+      "0": "Using an Elemental Skill grants the Jade-Forged Crown effect: Every 1,000 Max HP will increase the Normal Attack DMG dealt by the equipping character by <cryo>0.7%</cryo> for 10s. Normal Attack DMG can be increased this way by a maximum of <cryo>20%</cryo>."
+    },
+    "2": {
+      "0": "Using an Elemental Skill grants the Jade-Forged Crown effect: Every 1,000 Max HP will increase the Normal Attack DMG dealt by the equipping character by <cryo>0.8%</cryo> for 10s. Normal Attack DMG can be increased this way by a maximum of <cryo>24%</cryo>."
+    },
+    "3": {
+      "0": "Using an Elemental Skill grants the Jade-Forged Crown effect: Every 1,000 Max HP will increase the Normal Attack DMG dealt by the equipping character by <cryo>0.9%</cryo> for 10s. Normal Attack DMG can be increased this way by a maximum of <cryo>28%</cryo>."
+    },
+    "4": {
+      "0": "Using an Elemental Skill grants the Jade-Forged Crown effect: Every 1,000 Max HP will increase the Normal Attack DMG dealt by the equipping character by <cryo>1%</cryo> for 10s. Normal Attack DMG can be increased this way by a maximum of <cryo>32%</cryo>."
+    }
+  }
+}

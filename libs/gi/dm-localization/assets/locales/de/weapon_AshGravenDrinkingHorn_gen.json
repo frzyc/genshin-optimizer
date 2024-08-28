@@ -1,0 +1,24 @@
+{
+  "name": "Aschgraues Trinkhorn",
+  "description": {
+    "0": "Ein rituelles Gefäß, das von den Meztli geerbt wurde und von dem Helden Tupac, der „Riese“ genannt wurde, als Schatz verehrt, aber nie benutzt worden sein soll."
+  },
+  "passiveName": "Tupacs Griff",
+  "passiveDescription": {
+    "0": {
+      "0": "Verursacht beim Treffen von Gegnern mit Angriffen an der Stelle des Ziels Flächenschaden basierend auf <cryo>40 %</cryo> der max. LP, 15 s Abklingzeit."
+    },
+    "1": {
+      "0": "Verursacht beim Treffen von Gegnern mit Angriffen an der Stelle des Ziels Flächenschaden basierend auf <cryo>50 %</cryo> der max. LP, 15 s Abklingzeit."
+    },
+    "2": {
+      "0": "Verursacht beim Treffen von Gegnern mit Angriffen an der Stelle des Ziels Flächenschaden basierend auf <cryo>60 %</cryo> der max. LP, 15 s Abklingzeit."
+    },
+    "3": {
+      "0": "Verursacht beim Treffen von Gegnern mit Angriffen an der Stelle des Ziels Flächenschaden basierend auf <cryo>70 %</cryo> der max. LP, 15 s Abklingzeit."
+    },
+    "4": {
+      "0": "Verursacht beim Treffen von Gegnern mit Angriffen an der Stelle des Ziels Flächenschaden basierend auf <cryo>80 %</cryo> der max. LP, 15 s Abklingzeit."
+    }
+  }
+}

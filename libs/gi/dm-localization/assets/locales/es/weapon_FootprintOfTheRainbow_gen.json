@@ -1,0 +1,24 @@
+{
+  "name": "Estela Iridiscente",
+  "description": {
+    "0": "Una afilada lanza forjada con jade. Desprende una tenue luz iridiscente al exponerse al sol."
+  },
+  "passiveName": "Pacto del arroyo y el manantial",
+  "passiveDescription": {
+    "0": {
+      "0": "Al usar la Habilidad Elemental, la DEF aumenta en un <cryo>16%</cryo> durante 15 s."
+    },
+    "1": {
+      "0": "Al usar la Habilidad Elemental, la DEF aumenta en un <cryo>20%</cryo> durante 15 s."
+    },
+    "2": {
+      "0": "Al usar la Habilidad Elemental, la DEF aumenta en un <cryo>24%</cryo> durante 15 s."
+    },
+    "3": {
+      "0": "Al usar la Habilidad Elemental, la DEF aumenta en un <cryo>28%</cryo> durante 15 s."
+    },
+    "4": {
+      "0": "Al usar la Habilidad Elemental, la DEF aumenta en un <cryo>32%</cryo> durante 15 s."
+    }
+  }
+}

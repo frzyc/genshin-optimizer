@@ -1,0 +1,24 @@
+{
+  "name": "Kül Oymalı İçki Boynuzu",
+  "description": {
+    "0": "Meztli halkı arasında nesilden nesile aktarılmış bir tören kadehi. Bunun bir zamanlar kahraman \"Dev\" Tupac tarafından çok değer verilen fakat hiç kullanılmayan bir hazine olduğu söylenir."
+  },
+  "passiveName": "Tupac'ın Tutuşu",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir saldırı bir düşmana isabet ettiğinde hedefin konumunda Maks. Canın <cryo>%40'ı</cryo> kadar Alan Hasarı verir. Bu etki 15 saniyede bir tetiklenebilir."
+    },
+    "1": {
+      "0": "Bir saldırı bir düşmana isabet ettiğinde hedefin konumunda Maks. Canın <cryo>%50'si</cryo> kadar Alan Hasarı verir. Bu etki 15 saniyede bir tetiklenebilir."
+    },
+    "2": {
+      "0": "Bir saldırı bir düşmana isabet ettiğinde hedefin konumunda Maks. Canın <cryo>%60'ı</cryo> kadar Alan Hasarı verir. Bu etki 15 saniyede bir tetiklenebilir."
+    },
+    "3": {
+      "0": "Bir saldırı bir düşmana isabet ettiğinde hedefin konumunda Maks. Canın <cryo>%70'i</cryo> kadar Alan Hasarı verir. Bu etki 15 saniyede bir tetiklenebilir."
+    },
+    "4": {
+      "0": "Bir saldırı bir düşmana isabet ettiğinde hedefin konumunda Maks. Canın <cryo>%80'i</cryo> kadar Alan Hasarı verir. Bu etki 15 saniyede bir tetiklenebilir."
+    }
+  }
+}

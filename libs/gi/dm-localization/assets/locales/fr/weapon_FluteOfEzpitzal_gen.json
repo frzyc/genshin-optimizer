@@ -1,0 +1,24 @@
+{
+  "name": "Flûte d'ezpitzal",
+  "description": {
+    "0": "Une épée longue en jade de forme particulière qui a été transmise parmi les Maîtres du vent nocturne comme une « flûte sacerdotale »."
+  },
+  "passiveName": "Mystère d'écran de fumée",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente la DÉF de <cryo>16 %</cryo> pendant 15 s après l'utilisation d'une compétence élémentaire."
+    },
+    "1": {
+      "0": "Augmente la DÉF de <cryo>20 %</cryo> pendant 15 s après l'utilisation d'une compétence élémentaire."
+    },
+    "2": {
+      "0": "Augmente la DÉF de <cryo>24 %</cryo> pendant 15 s après l'utilisation d'une compétence élémentaire."
+    },
+    "3": {
+      "0": "Augmente la DÉF de <cryo>28 %</cryo> pendant 15 s après l'utilisation d'une compétence élémentaire."
+    },
+    "4": {
+      "0": "Augmente la DÉF de <cryo>32 %</cryo> pendant 15 s après l'utilisation d'une compétence élémentaire."
+    }
+  }
+}

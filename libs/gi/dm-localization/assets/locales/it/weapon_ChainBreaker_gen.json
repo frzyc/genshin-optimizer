@@ -1,0 +1,24 @@
+{
+  "name": "Spezzacatene",
+  "description": {
+    "0": "Un arco lungo decorato con giada. Intorno alla sua corda sembra spirare continuamente una brezza gentile. Secondo la leggenda, quest'arma venne fabbricata in un'era assai antica da un artigiano della specie dei draghi."
+  },
+  "passiveName": "Canzone del Piumafiore",
+  "passiveDescription": {
+    "0": {
+      "0": "Per ogni membro del gruppo proveniente da Natlan o che possiede un tipo elementale diverso da quello del personaggio che equipaggia l'arma, quest'ultimo ottiene un <cryo>4,8%</cryo> di ATT aumentato. Quando nel gruppo sono presenti non meno di 3 dei personaggi menzionati sopra, il personaggio che equipaggia l'arma ottiene <cryo>24</cryo> di maestria elementale."
+    },
+    "1": {
+      "0": "Per ogni membro del gruppo proveniente da Natlan o che possiede un tipo elementale diverso da quello del personaggio che equipaggia l'arma, quest'ultimo ottiene un <cryo>6%</cryo> di ATT aumentato. Quando nel gruppo sono presenti non meno di 3 dei personaggi menzionati sopra, il personaggio che equipaggia l'arma ottiene <cryo>30</cryo> di maestria elementale."
+    },
+    "2": {
+      "0": "Per ogni membro del gruppo proveniente da Natlan o che possiede un tipo elementale diverso da quello del personaggio che equipaggia l'arma, quest'ultimo ottiene un <cryo>7,2%</cryo> di ATT aumentato. Quando nel gruppo sono presenti non meno di 3 dei personaggi menzionati sopra, il personaggio che equipaggia l'arma ottiene <cryo>36</cryo> di maestria elementale."
+    },
+    "3": {
+      "0": "Per ogni membro del gruppo proveniente da Natlan o che possiede un tipo elementale diverso da quello del personaggio che equipaggia l'arma, quest'ultimo ottiene un <cryo>8,4%</cryo> di ATT aumentato. Quando nel gruppo sono presenti non meno di 3 dei personaggi menzionati sopra, il personaggio che equipaggia l'arma ottiene <cryo>42</cryo> di maestria elementale."
+    },
+    "4": {
+      "0": "Per ogni membro del gruppo proveniente da Natlan o che possiede un tipo elementale diverso da quello del personaggio che equipaggia l'arma, quest'ultimo ottiene un <cryo>9,6%</cryo> di ATT aumentato. Quando nel gruppo sono presenti non meno di 3 dei personaggi menzionati sopra, il personaggio che equipaggia l'arma ottiene <cryo>48</cryo> di maestria elementale."
+    }
+  }
+}

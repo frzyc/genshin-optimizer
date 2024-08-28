@@ -32,6 +32,7 @@ import Ganyu from './Character_Ganyu_Card.png'
 import Gorou from './Character_Gorou_Card.png'
 import HuTao from './Character_Hu_Tao_Card.png'
 import Jean from './Character_Jean_Card.jpg'
+import Kachina from './Character_Kachina_Card.jpg'
 import Kaeya from './Character_Kaeya_Card.jpg'
 import KamisatoAyaka from './Character_Kamisato_Ayaka_Card.png'
 import KamisatoAyato from './Character_Kamisato_Ayato_Card.png'
@@ -48,6 +49,7 @@ import Lynette from './Character_Lynette_Card.jpg'
 import Lyney from './Character_Lyney_Card.jpg'
 import Mika from './Character_Mika_Card.jpg'
 import Mona from './Character_Mona_Card.jpg'
+import Mualani from './Character_Mualani_Card.jpg'
 import Nahida from './Character_Nahida_Card.jpeg'
 import Navia from './Character_Navia_Card.jpg'
 import Neuvillette from './Character_Neuvillette_Card.jpg'
@@ -121,6 +123,7 @@ const charCards = {
   Gorou,
   HuTao,
   Jean,
+  Kachina,
   KaedeharaKazuha,
   Kaeya,
   KamisatoAyaka,
@@ -137,6 +140,7 @@ const charCards = {
   Lynette,
   Mika,
   Mona,
+  Mualani,
   Nahida,
   Navia,
   Neuvillette,
