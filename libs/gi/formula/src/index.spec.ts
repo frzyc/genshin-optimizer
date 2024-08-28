@@ -85,7 +85,7 @@ describe('sheet', () => {
     for (const { tag } of entries) {
       if (tag.et && tag.qt && tag.q) {
         switch (tag.et) {
-          case 'notSelfBuff':
+          case 'notOwnBuff':
           case 'teamBuff': {
             const { sheet } = (selfTag as any)[tag.qt][tag.q]
             if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue

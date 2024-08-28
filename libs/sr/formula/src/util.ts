@@ -115,7 +115,7 @@ export function relicsData(
 
 export function teamData(members: readonly Member[]): TagMapNodeEntries {
   const teamEntry = reader.with('et', 'team')
-  const { own, enemy, teamBuff, notSelfBuff } = reader
+  const { own, enemy, teamBuff, notOwnBuff } = reader
     .sheet('agg')
     .withAll('et', [])
   return [
@@ -138,7 +138,7 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
       return members
         .filter((src) => src !== dst)
         .map((src) =>
-          entry.reread(notSelfBuff.withTag({ dst, src, name: null }))
+          entry.reread(notOwnBuff.withTag({ dst, src, name: null }))
         )
     }),
     // Enemy Debuff

@@ -37,7 +37,7 @@ export const entryTypes = [
   'team',
   'target',
   'teamBuff',
-  'notSelfBuff',
+  'notOwnBuff',
   'enemyDeBuff', // Ends with 'Buff' so `Calculator` can pick up on this tag
 ] as const
 export const sheets = [

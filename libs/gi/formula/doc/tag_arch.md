@@ -67,7 +67,7 @@ The tag categories `et:` and `sheet:` are separated into read-side, which is use
 - Write-side `et:` specifies whether the entry applies
   - To the current character (`et:own`),
   - To the entire team (`et:teamBuff`, inside sheets only),
-  - To other members (`et:notSelfBuff`, inside sheets only), or
+  - To other members (`et:notOwnBuff`, inside sheets only), or
   - To the (common) enemy (`et:enemyDeBuff` inside sheets and `et:enemy` outside sheets).
 - Read-side `sheet:` speficies the sheets to include in gathering, whether to gather
   - All sheets from all members (`sheet:agg`),
@@ -90,7 +90,7 @@ Following is the gathered entries on different `sheet: et:` combinations:
     - Sheet-specific `et:own` contributions from appropriate members
     - (Artifact only) `{ sheet:art qt:premod } <= { sheet:dyn }`
       - Hook for conversion to untagged graph.
-  - `{ src:<src> sheet:agg } <= { src:* dst:<src> et:teamBuff/notSelfBuff }` from `teamData`
+  - `{ src:<src> sheet:agg } <= { src:* dst:<src> et:teamBuff/notOwnBuff }` from `teamData`
     - `{ src:<src> sheet:agg } <= { sheet:<char key/weapon key/art> }` from `char/weapon/artData` with `withMember`
       - Sheet-specific `et:*Buff` contributions from appropriate members `src: dst:`
 - `sheet:iso et:own` queries (e.g., `own.char.lvl`)
@@ -116,7 +116,7 @@ Notes:
 
 - Write-side `et:*Buff` can only be used inside a sheet as they require the `teamData` entry to insert `src:` and `char/weapon/artData` (with `withMember`) to override `sheet:`.
   Outside of a sheet, `et:own/enemy` must be used instead as the `teamData` entry overrides `et:` in the process.
-  - The convention is to use `ownBuff/teamBuff/notSelfBuff/enemyDebuff` _variables_ for all entry creations, and "fix" the `et:` for sheets when it is `register`ed.
+  - The convention is to use `ownBuff/teamBuff/notOwnBuff/enemyDebuff` _variables_ for all entry creations, and "fix" the `et:` for sheets when it is `register`ed.
 - Artifact use `sheet:art` instead of `sheet:<artifact name>` as all artifacts are always included together.
   This helps reduce the `read` needed due to the sheer number of artifacts.
   - `sheet:<artifact name>` is used only for counting the number equipped artifact of that set.
@@ -138,7 +138,7 @@ Conditional query tags are of the form
 ```
 
 Since the tag requires both `src:` and `dst:`, conditionals are only valid when both are guaranteed to exist.
-A notable class of entries that satisfy the condition are entries with `et:ownBuff/teamBuff/notSelfBuff/enemyDebuff` tags.
+A notable class of entries that satisfy the condition are entries with `et:ownBuff/teamBuff/notOwnBuff/enemyDebuff` tags.
 We call those entries _buff context_, as those entries are missing when calculating stats without team information.
 
 > Unused tags are set to `null` when reading conditionals to improve caching.

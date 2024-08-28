@@ -181,7 +181,7 @@ export const enemy = convert(enemyTag, { et: 'enemy', dst: null, ...noName })
 // Default tag DB keys
 export const ownBuff = convert(selfTag, { et: 'own' })
 export const teamBuff = convert(selfTag, { et: 'teamBuff' })
-export const notSelfBuff = convert(selfTag, { et: 'notSelfBuff' })
+export const notOwnBuff = convert(selfTag, { et: 'notOwnBuff' })
 export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
 export const userBuff = convert(selfTag, { et: 'own', sheet: 'custom' })
 

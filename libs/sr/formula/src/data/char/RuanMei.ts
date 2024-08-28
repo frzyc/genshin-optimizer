@@ -13,7 +13,7 @@ import {
   customBreakDmg,
   enemy,
   enemyDebuff,
-  notSelfBuff,
+  notOwnBuff,
   register,
   own,
   ownBuff,
@@ -131,7 +131,7 @@ const sheet = register(
   teamBuff.premod.resPen_.add(
     ultZone.ifOn(subscript(char.ult, dm.ult.resPen_))
   ),
-  notSelfBuff.premod.spd_.add(subscript(char.talent, dm.talent.spd_)),
+  notOwnBuff.premod.spd_.add(subscript(char.talent, dm.talent.spd_)),
   teamBuff.premod.brEff_.add(cmpEq(char.bonusAbility1, 1, dm.b1.break_)),
   teamBuff.premod.dmg_.add(
     cmpEq(

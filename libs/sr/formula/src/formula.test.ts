@@ -146,7 +146,7 @@ describe('sheet', () => {
     for (const { tag } of data) {
       if (tag.et && tag.qt && tag.q) {
         switch (tag.et) {
-          case 'notSelfBuff':
+          case 'notOwnBuff':
           case 'teamBuff': {
             const { sheet } = (selfTag as any)[tag.qt][tag.q]
             // Buff entries are for agg queries inside a sheet
