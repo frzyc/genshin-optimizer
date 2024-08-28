@@ -14,9 +14,7 @@
         "noStat": "スコアなし",
         "eff": "サブ効果スコア（RV）： <1></1>",
         "nextRolls": "可能な効果値：",
-        "RollCount": {
-          "other": "{{count}} 強化回数"
-        }
+        "RollCount_other": "{{count}} 強化回数"
       },
       "rarity": "レア度別",
       "level": "レベル",
@@ -97,15 +95,9 @@
     "locationsTooltip": "特定のキャラクターでフィルタリングするためには「装備されている全ての聖遺物」を無効にしてください",
     "showDup": "重複聖遺物を表示",
     "noDupAlert": "インベントリーに重複している聖遺物はありません。",
-    "showingNum": {
-      "other": "{{value}}個の聖遺物のうち<1>{{count}}</1>個を表示"
-    },
-    "substat": {
-      "other": "{{count}}サブ効果"
-    },
-    "sub": {
-      "other": "{{count}}サブステ"
-    },
+    "showingNum_other": "{{value}}個の聖遺物のうち<1>{{count}}</1>個を表示",
+    "substat_other": "{{count}}サブ効果",
+    "sub_other": "{{count}}サブステ",
     "noArtifacts": "まだ聖遺物が追加されていないようです。よろしければ、使いやすい<1>自動スキャナー</1>をご利用ください！"
   },
   "languages": {
@@ -466,28 +458,14 @@
     "timeOnField": "フィールド上での時間",
     "hpChange": "HP増減後",
     "afterHeal": "回復後",
-    "hits": {
-      "other": "{{count}}ヒット数"
-    },
+    "hits_other": "{{count}}ヒット数",
     "percentMaxHP": "最大HP%",
-    "stack": {
-      "other": "{{count}}層"
-    },
-    "seconds": {
-      "other": "{{count}}秒"
-    },
-    "uses": {
-      "other": "{{count}}回使用"
-    },
-    "opponents": {
-      "other": "{{count}}体の敵"
-    },
-    "members": {
-      "other": "{{count}}人のチームメンバー"
-    },
-    "times": {
-      "other": "{{count}}回"
-    },
+    "stack_other": "{{count}}層",
+    "seconds_other": "{{count}}秒",
+    "uses_other": "{{count}}回使用",
+    "opponents_other": "{{count}}体の敵",
+    "members_other": "{{count}}人のチームメンバー",
+    "times_other": "{{count}}回",
     "activeChar": "フィールド上のキャラクター",
     "otherHpChange": "チームメンバーのHPが増減後",
     "reactionOp": {
@@ -932,7 +910,13 @@
     "c6": "殺生櫻、敵の防御力を無視"
   },
   "char_Yanfei": {
-    "seals": ["印0つ", "印1つ", "印2つ", "印3つ", "印4つ"],
+    "seals": [
+      "印0つ",
+      "印1つ",
+      "印2つ",
+      "印3つ",
+      "印4つ"
+    ],
     "perSeal": "（印1つごとに）",
     "maxSeals": "丹火の印の最大数",
     "charged": {
@@ -1122,9 +1106,7 @@
       "info2": "構成が正確に設定されている事を確認ください。",
       "description": "詳細",
       "duplicate": "重複",
-      "target": {
-        "other": "<0>{{count}}</0>つのターゲット"
-      }
+      "target_other": "<0>{{count}}</0>つのターゲット"
     },
     "addStats": {
       "title": "敵・ボーナスステータスの構成",
@@ -1186,18 +1168,14 @@
       "team_reso": "元素共鳴",
       "resonance_tip": "元素共鳴の効果を発揮するためには、パーティーが4人揃っている必要があります。"
     },
-    "showingNum": {
-      "other": "{{value}}人のキャラクターの内、<1>{{count}}</1> 人を表示中"
-    }
+    "showingNum_other": "{{value}}人のキャラクターの内、<1>{{count}}</1> 人を表示中"
   },
   "page_weapon": {
     "edit": "武器改造",
     "weaponName": "武器名",
     "removeWeapon": "{{value}}を削除してよろしいですか？",
     "addWeapon": "武器を追加",
-    "showingNum": {
-      "other": "武器{{value}}つの内、<1>{{count}}</1>つを表示中"
-    },
+    "showingNum_other": "武器{{value}}つの内、<1>{{count}}</1>つを表示中",
     "cantDeleteLock": "武器がロックされているため解除できません"
   },
   "weapon_AquaSimulacra": {
@@ -1329,9 +1307,7 @@
       "deSelectExc": "除外リストから外す聖遺物をクリックしてください",
       "usingNum": "除外聖遺物<1>{{totalStr}}</1>個使用中",
       "button_txt": "聖遺物を除外",
-      "excNum": {
-        "other": "<0>{{count}}</0>個の聖遺物を除外"
-      }
+      "excNum_other": "<0>{{count}}</0>個の聖遺物を除外"
     },
     "excludeChar": {
       "title": "装備中聖遺物構成",
@@ -1349,21 +1325,15 @@
         "all": "全聖遺物"
       },
       "usingState": "使用中",
-      "usingNumTot": {
-        "other": "<3>{{count}}</3>人のキャラクターからの<1>{{arts}}</1>個の聖遺物を使用中"
-      }
+      "usingNumTot_other": "<3>{{count}}</3>人のキャラクターからの<1>{{arts}}</1>個の聖遺物を使用中"
     },
     "buildCompleted": "ビルド生成完了",
     "notifyTooltip": "ビルドの生成が完了したら通知音が鳴ります。タブアウト時にも通知が表示されます。",
     "bonusStats": {
       "title": "ボーナスステータス"
     },
-    "build": {
-      "other": "<0>{{count}}</0>つのビルド"
-    },
-    "thread": {
-      "other": "<0>{{count}}</0>つのスレッド"
-    }
+    "build_other": "<0>{{count}}</0>つのビルド",
+    "thread_other": "<0>{{count}}</0>つのスレッド"
   },
   "weapon_ForestRegalia": {
     "condName": "唯識の葉を拾った後"
