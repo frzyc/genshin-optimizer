@@ -6,9 +6,9 @@ import {
   allListConditionals,
   allNumConditionals,
   enemyDebuff,
-  register,
   own,
   ownBuff,
+  register,
   teamBuff,
 } from '../util'
 import { entriesForRelic } from './util'

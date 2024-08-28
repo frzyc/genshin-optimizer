@@ -1,7 +1,7 @@
 import { prod, subscript } from '@genshin-optimizer/pando/engine'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { allStats } from '@genshin-optimizer/sr/stats'
-import { allNumConditionals, register, own, ownBuff } from '../util'
+import { allNumConditionals, own, ownBuff, register } from '../util'
 import { entriesForLightCone } from './util'
 
 const key: LightConeKey = 'TheSeriousnessOfBreakfast'

@@ -1,7 +1,7 @@
 import { cmpGE, prod } from '@genshin-optimizer/pando/engine'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { allStats } from '@genshin-optimizer/sr/stats'
-import { allNumConditionals, enemyDebuff, register, own } from '../util'
+import { allNumConditionals, enemyDebuff, own, register } from '../util'
 import { entriesForRelic } from './util'
 
 const key: RelicSetKey = 'PrisonerInDeepConfinement'

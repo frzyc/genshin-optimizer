@@ -6,9 +6,9 @@ import {
   allListConditionals,
   allNumConditionals,
   enemyDebuff,
-  register,
   own,
   ownBuff,
+  register,
   teamBuff,
 } from '../util'
 import { entriesForLightCone } from './util'
@@ -36,9 +36,7 @@ const sheet = register(
 
   // TODO: Add formulas/buffs
   // Conditional buffs
-  ownBuff.premod.dmg_.add(
-    boolConditional.ifOn(subscript(superimpose, dm.dmg))
-  ),
+  ownBuff.premod.dmg_.add(boolConditional.ifOn(subscript(superimpose, dm.dmg))),
   teamBuff.premod.dmg_.add(listConditional.map({ val1: 1, val2: 2 })),
   enemyDebuff.common.defIgn_.add(numConditional)
 )

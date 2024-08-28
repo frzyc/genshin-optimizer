@@ -11,10 +11,10 @@ import {
   conditionalEntries,
   convert,
   getStatFromStatKey,
-  reader,
   own,
   ownBuff,
   ownTag,
+  reader,
 } from './data/util'
 
 export function withPreset(
@@ -170,9 +170,7 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     // use different accumulators from the inner query. Such is the case for maximum team
     // final eleMas, where the outer query uses a `max` accumulator, while final eleMas
     // must use `sum` accumulator for a correct result.
-    members.map((src) =>
-      teamEntry.add(reader.withTag({ src, et: 'own' }).sum)
-    ),
+    members.map((src) => teamEntry.add(reader.withTag({ src, et: 'own' }).sum)),
   ].flat()
 }
 

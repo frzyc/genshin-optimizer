@@ -1,7 +1,7 @@
 import { lookup, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
 import { allStats } from '@genshin-optimizer/sr/stats'
 import type { ElementalType, TagMapNodeEntries } from '../util'
-import { percent, own, ownBuff } from '../util'
+import { own, ownBuff, percent } from '../util'
 
 const breakBaseRatios: Record<ElementalType, number> = {
   physical: 2,
@@ -14,9 +14,7 @@ const breakBaseRatios: Record<ElementalType, number> = {
 }
 const data: TagMapNodeEntries = [
   // Formula calculations
-  ownBuff.formula.dmg.add(
-    prod(own.dmg.out, own.dmg.critMulti, own.dmg.inDmg)
-  ),
+  ownBuff.formula.dmg.add(prod(own.dmg.out, own.dmg.critMulti, own.dmg.inDmg)),
   ownBuff.formula.shield.add(
     prod(own.formula.base, sum(percent(1), own.premod.shield_))
   ),

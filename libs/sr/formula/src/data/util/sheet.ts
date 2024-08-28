@@ -6,9 +6,9 @@ import {
 import type { StatKey } from '@genshin-optimizer/sr/consts'
 import type { Read, Tag } from '.'
 import {
+  ownBuff,
   percent,
   reader,
-  ownBuff,
   tag,
   teamBuff,
   type TagMapNodeEntries,

@@ -12,9 +12,9 @@ import {
   convert,
   own,
   ownBuff,
+  ownTag,
   readStat,
   reader,
-  ownTag,
 } from './data/util'
 
 export function withPreset(
@@ -158,9 +158,7 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
       )
     ),
     // Resonance Team Buff
-    own.reread(
-      teamBuff.withTag({ et: 'teamBuff', sheet: 'reso', name: null })
-    ),
+    own.reread(teamBuff.withTag({ et: 'teamBuff', sheet: 'reso', name: null })),
     // Non-stacking
     members.flatMap((src, i) => {
       const { stackIn, stackTmp } = reader.withAll('qt', [])

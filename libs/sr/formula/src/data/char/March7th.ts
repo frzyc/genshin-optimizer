@@ -5,10 +5,10 @@ import {
   customDmg,
   customHeal,
   customShield,
-  percent,
-  register,
   own,
   ownBuff,
+  percent,
+  register,
   target,
 } from '../util'
 import { dmg, entriesForChar, getBaseTag, scalingParams, shield } from './util'

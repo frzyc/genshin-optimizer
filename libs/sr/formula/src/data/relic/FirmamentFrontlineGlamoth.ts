@@ -1,7 +1,7 @@
 import { cmpGE } from '@genshin-optimizer/pando/engine'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { allStats } from '@genshin-optimizer/sr/stats'
-import { register, own, ownBuff } from '../util'
+import { own, ownBuff, register } from '../util'
 import { entriesForRelic } from './util'
 
 const key: RelicSetKey = 'FirmamentFrontlineGlamoth'

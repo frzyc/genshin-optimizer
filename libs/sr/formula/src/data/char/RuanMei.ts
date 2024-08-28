@@ -14,9 +14,9 @@ import {
   enemy,
   enemyDebuff,
   notOwnBuff,
-  register,
   own,
   ownBuff,
+  register,
   teamBuff,
 } from '../util'
 import { dmg, entriesForChar, getBaseTag, scalingParams } from './util'
@@ -154,8 +154,6 @@ const sheet = register(
   teamBuff.premod.atk_.add(
     cmpGE(char.eidolon, 2, cmpEq(enemy.common.isBroken, 1, dm.e2.atk_))
   ),
-  ownBuff.premod.brEff_.add(
-    cmpEq(char.eidolon, 4, e4Broken.ifOn(dm.e4.break_))
-  )
+  ownBuff.premod.brEff_.add(cmpEq(char.eidolon, 4, e4Broken.ifOn(dm.e4.break_)))
 )
 export default sheet

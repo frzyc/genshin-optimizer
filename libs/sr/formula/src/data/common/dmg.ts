@@ -1,6 +1,6 @@
 import { lookup, prod, sum, sumfrac } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
-import { enemy, enemyDebuff, percent, own, ownBuff } from '../util'
+import { enemy, enemyDebuff, own, ownBuff, percent } from '../util'
 
 const data: TagMapNodeEntries = [
   ownBuff.dmg.inDmg.add(
@@ -25,9 +25,7 @@ const data: TagMapNodeEntries = [
       // TODO: Vulnerability, DMG Reduction and Broken multipliers
     )
   ),
-  ownBuff.dmg.out.add(
-    prod(own.formula.base, sum(percent(1), own.final.dmg_))
-  ),
+  ownBuff.dmg.out.add(prod(own.formula.base, sum(percent(1), own.final.dmg_))),
   ownBuff.dmg.critMulti.add(
     lookup(own.common.critMode, {
       crit: sum(percent(1), own.final.crit_dmg_),

@@ -10,7 +10,7 @@ import {
 } from '@genshin-optimizer/pando/engine'
 import { entries, keys, values } from './data'
 import type { Tag, TagMapNodeEntries } from './data/util'
-import { enemyDebuff,  own,  ownBuff, team, userBuff } from './data/util'
+import { enemyDebuff, own, ownBuff, team, userBuff } from './data/util'
 import rawData from './example.test.json'
 import { genshinCalculatorWithEntries } from './index'
 import { conditionals } from './meta'

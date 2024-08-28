@@ -4,8 +4,8 @@ import { entries, keys, values } from './data'
 import type { Member, Sheet, TagMapNodeEntries } from './data/util'
 import {
   enemyTag,
-own,
-ownBuff,
+  own,
+  ownBuff,
   ownTag,
   sheets,
   tagStr,
