@@ -6,7 +6,7 @@
     },
     "assumptionLvl": {
       "no": "No Main Stat Lv. Assumption",
-      "lvl": "Supposez que la Stat principale est au moins au niveau Lv. {{lvl}}"
+      "lvl": "Supposez que la Stat principale est au moins Lv. {{lvl}}"
     },
     "title": "Filtre Stat principal/Configuration"
   },
@@ -65,7 +65,7 @@
     "selectOptTarget": "Sélectionner une cible d'optimisation",
     "selectGraphTarget": "Sélectionner une cible graphique",
     "invalidTarget": "TARGET INVALIDE",
-    "selectBuildTarget": "Sélectionner une cible de contrainte de construction"
+    "selectBuildTarget": "Sélectionnez une cible de contrainte d'optimisation"
   },
   "selectTargetFirst": "Sélectionnez d'abord une cible d'optimisation",
   "generateButton": {
@@ -73,7 +73,7 @@
     "generateBuilds": "Générer des Builds"
   },
   "removeBuildButton": "Supprimer Construire",
-  "theorycraftButton": "Théorie de l'art",
+  "theorycraftButton": "Theorycraft",
   "currentlyEquippedBuild": "Actuellement équipé",
   "addBuildToList": "Ajouter la construction à la liste",
   "graphBuildLabel": "Graphique #<1>{{count}}</1>",
@@ -85,10 +85,8 @@
     "deSelectExc": "Cliquez sur un artefact pour le supprimer de la liste d'exclusion",
     "usingNum": "Utilisation de <1>{{totalStr}}</1> artefact(s) exclu(s)",
     "button_txt": "Exclure les artefacts",
-    "excNum": {
-      "one": "<0>{{count}}</0> l'artefact est exclu",
-      "other": "Théorie de la construction"
-    }
+    "excNum_one": "<0>{{count}}</0> l'artefact est exclu",
+    "excNum_other": "Théorie de la construction"
   },
   "excludeChar": {
     "title": "Configuration de l'artefact équipé",
@@ -106,20 +104,14 @@
       "all": "Tous les artefacts"
     },
     "usingState": "Utilisation",
-    "usingNumTot": {
-      "one": "Utilisation d'artefacts <1>{{arts}}</1> de <3>{{count}}</3> personnage",
-      "other": "Utilisation de <1>{{totalStr}}</1> artefact(s) exclu(s)"
-    }
+    "usingNumTot_one": "Utilisation d'artefacts <1>{{arts}}</1> de <3>{{count}}</3> personnage",
+    "usingNumTot_other": "Utilisation de <1>{{totalStr}}</1> artefact(s) exclu(s)"
   },
   "buildCompleted": "Construction achevée",
   "notifyTooltip": "Joue un son lorsque les constructions finissent d'être générées. Affiche également un message d'alarme lorsque l'on quitte l'écran.",
   "bonusStats": { "title": "Bonus Stats" },
-  "build": {
-    "one": "<0>{{count}}</0> Construire",
-    "other": "<0><0>Excluding<1></1> 4-Set</0></0> exclurait les constructions en 4-Set : <2><0>AAAA</0>R</2> and <4><0>AAAAA</0></4>."
-  },
-  "thread": {
-    "one": "<0>{{count}}</0> File d'attente",
-    "other": "<0><0>Excluding<1></1> 5-Arc-en-ciel</0></0>} exclurait les constructions complètes à 5 arcs-en-ciel : <2><0>RRRRR</0></2>."
-  }
+  "build_one": "<0>{{count}}</0> Construire",
+  "build_other": "<0><0>Excluding<1></1> 4-Set</0></0> exclurait les constructions en 4-Set : <2><0>AAAA</0>R</2> and <4><0>AAAAA</0></4>.",
+  "thread_one": "<0>{{count}}</0> File d'attente",
+  "thread_other": "<0><0>Excluding<1></1> 5-Arc-en-ciel</0></0>} exclurait les constructions complètes à 5 arcs-en-ciel : <2><0>RRRRR</0></2>."
 }

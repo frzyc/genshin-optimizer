@@ -169,26 +169,21 @@
   "timeOnField": "Temps passé sur le terrain",
   "hpChange": "Après les changements de HP",
   "afterHeal": "Après avoir été guéri",
-  "hits": { "one": "{{count}} Frapper", "other": "{{count}} Coups" },
+  "hits_one": "{{count}} Frapper",
+  "hits_other": "{{count}} Coups",
   "percentMaxHP": "% Max HP",
-  "stack": {
-    "one": "{{count}} Pile",
-    "other": "HP ennemis inférieurs ou égaux à {{percent}}%"
-  },
-  "seconds": {
-    "one": "{{count}} Deuxième",
-    "other": "HP ennemi supérieur à {{percent}}%"
-  },
-  "uses": {
-    "one": "{{count}} Utiliser",
-    "other": "HP ennemi supérieur ou égal à {{percent}}%"
-  },
-  "opponents": {
-    "one": "{{count}} Opposant",
-    "other": "Après avoir déclenché une </cryo>Relation Cryo{{value}} Réaction élémentaire"
-  },
-  "members": { "one": "{{count}} Membre", "other": "% de PV actuel" },
-  "times": { "one": "{{count}} Temps", "other": "{{count}} fois" },
+  "stack_one": "{{count}} Pile",
+  "stack_other": "HP ennemis inférieurs ou égaux à {{percent}}%",
+  "seconds_one": "{{count}} Deuxième",
+  "seconds_other": "HP ennemi supérieur à {{percent}}%",
+  "uses_one": "{{count}} Utiliser",
+  "uses_other": "HP ennemi supérieur ou égal à {{percent}}%",
+  "opponents_one": "{{count}} Opposant",
+  "opponents_other": "Après avoir déclenché une </cryo>Relation Cryo{{value}} Réaction élémentaire",
+  "members_one": "{{count}} Membre",
+  "members_other": "% de PV actuel",
+  "times_one": "{{count}} Temps",
+  "times_other": "{{count}} fois",
   "activeChar": "Caractère actif",
   "otherHpChange": "Lorsque les PV d'un coéquipier changent",
   "reactionOp": {

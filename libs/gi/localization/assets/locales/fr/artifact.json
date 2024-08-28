@@ -6,22 +6,23 @@
       "noSubstat": "Pas de Substat",
       "selectSub": "Sélectionner une Substat",
       "error": {
-        "noCalc": "Impossible de calculer les rolls de la stat.",
-        "noOverRoll": "Une substat ne peut être roll plus de {{value}} fois."
+        "noCalc": "Impossible de calculer les jets de la stat.",
+        "noOverRoll": "Une substat ne peut être tirée plus de {{value}} fois."
       },
-      "noRoll": "Aucun Roll",
+      "noRoll": "Aucun Jets",
       "noStat": "Pas de valeur",
-      "eff": "Efficacité: <1></1>",
+      "eff": "Valeur des jets: <1></1>",
       "nextRolls": "Prochaines augmentations :",
-      "RollCount": { "one": "{{count}} Rouleau", "other": "{{count}} Rolls" }
+      "RollCount_one": "{{count}} Rouleau",
+      "RollCount_other": "{{count}} Rolls"
     },
     "rarity": "Rareté",
     "level": "Niveau",
     "unknownPieceName": "Nom de Pièce Inconnu",
-    "curSubEff": "Efficacité Substat actuelle",
-    "curSubEffDesc": "Tous les 4 niveaux d'amélioration d'artéfact, vous obtenez une augmentation d'une substat. <strong>Efficacité de Substat</strong> calcule à quel point cette augmentation est élevée à l'aide d'un pourcentage.",
-    "maxSubEff": "Efficacité de rolls maximum",
-    "maxSubEffDesc": "L'<strong>Efficacité de Substat maximum</strong> d'un artéfact calcule l'efficacité si les améliorations restantes donnent des valeurs parfaites.",
+    "curSubEff": "Valeur Actuelle des jets",
+    "curSubEffDesc": "Tous les 4 niveaux d'amélioration d'artéfact, vous obtenez une augmentation d'une substat. <strong>Efficacité de Substat</strong> calcule à quel point cette augmentation est élevée en pourcentage.",
+    "maxSubEff": "Valeur Max. des jets",
+    "maxSubEffDesc": "L'<strong>Valeur Max. du jet de substat</strong> d'un artéfact calcule la valeur des jets si les améliorations restantes donnent leurs valeurs max.",
     "preview": "Prévisualisation d'artéfact",
     "dupArt": "Doublon d'artéfact détecté.",
     "upArt": "Artéfact amélioré détecté.",
@@ -55,7 +56,7 @@
     "Cliquez sur \"Détails\" quand vous améliorez vos artéfacts dans le jeu pour les analyser au fur et à mesure que vous les améliorez.",
     "Vous pouvez maintenant upload plusieurs captures d'écran d'artéfacts à analyser !"
   ],
-  "mainStat": "Main Stat",
+  "mainStat": "Stat principale",
   "slot": "Emplacement",
   "slotName": {
     "flower": "Fleur de la Vie",
@@ -94,11 +95,11 @@
   "locationsTooltip": "Désactiver \"Tous les artefacts équipés\" pour filtrer par personnages spécifiques",
   "showDup": "Afficher les doublons",
   "noDupAlert": "Il n'y a pas d'artefacts en double dans votre inventaire.",
-  "showingNum": {
-    "one": "Afficher <1>{{count}}</1> sur {{value}} Artéfact",
-    "other": "Montre <1>{{count}}</1> / {{value}} Artéfacts"
-  },
-  "substat": { "one": "{{count}} substat", "other": "{{count}} substats" },
-  "sub": { "one": "{{count}} sub", "other": "{{count}} subs" },
+  "showingNum_one": "Afficher <1>{{count}}</1> sur {{value}} Artéfact",
+  "showingNum_other": "Montre <1>{{count}}</1> / {{value}} Artéfacts",
+  "substat_one": "{{count}} substat",
+  "substat_other": "{{count}} substats",
+  "sub_one": "{{count}} sub",
+  "sub_other": "{{count}} subs",
   "noArtifacts": "Il semblerait que vous n'ayez pas encore ajouté d'artéfacts. Des <1>scanners automatiques</1> sont à disposition pour accélérer le processus d'import!"
 }
