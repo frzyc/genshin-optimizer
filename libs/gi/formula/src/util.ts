@@ -10,10 +10,10 @@ import type { Member, Preset, TagMapNodeEntries } from './data/util'
 import {
   conditionalEntries,
   convert,
+  own,
+  ownBuff,
   readStat,
   reader,
-  self,
-  selfBuff,
   selfTag,
 } from './data/util'
 
@@ -31,7 +31,7 @@ export function withMember(
 }
 
 export function charData(data: ICharacter): TagMapNodeEntries {
-  const { lvl, auto, skill, burst, ascension, constellation } = self.char
+  const { lvl, auto, skill, burst, ascension, constellation } = own.char
   const { agg, iso, [data.key]: sheet } = reader.withAll('sheet', [])
 
   return [
@@ -46,13 +46,13 @@ export function charData(data: ICharacter): TagMapNodeEntries {
     constellation.add(data.constellation),
 
     // Default char
-    selfBuff.premod.critRate_.add(0.05),
-    selfBuff.premod.critDMG_.add(0.5),
+    ownBuff.premod.critRate_.add(0.05),
+    ownBuff.premod.critDMG_.add(0.5),
   ]
 }
 
 export function weaponData(data: IWeapon): TagMapNodeEntries {
-  const { lvl, ascension, refinement } = self.weapon
+  const { lvl, ascension, refinement } = own.weapon
 
   return [
     reader.sheet('agg').reread(reader.sheet(data.key)),

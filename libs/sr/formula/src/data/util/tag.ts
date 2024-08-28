@@ -173,13 +173,13 @@ export function convert<V extends Record<string, Record<string, Desc>>>(
 
 // Default queries
 const noName = { src: null, name: null }
-export const self = convert(selfTag, { et: 'self', dst: null })
+export const own = convert(selfTag, { et: 'self', dst: null })
 export const team = convert(selfTag, { et: 'team', dst: null, ...noName })
 export const target = convert(selfTag, { et: 'target', ...noName })
 export const enemy = convert(enemyTag, { et: 'enemy', dst: null, ...noName })
 
 // Default tag DB keys
-export const selfBuff = convert(selfTag, { et: 'self' })
+export const ownBuff = convert(selfTag, { et: 'self' })
 export const teamBuff = convert(selfTag, { et: 'teamBuff' })
 export const notSelfBuff = convert(selfTag, { et: 'notSelfBuff' })
 export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
@@ -218,7 +218,7 @@ export const conditionalEntries = (sheet: Sheet, src: MemAll, dst: MemAll) => {
   let tag: Tag = { sheet, qt: 'cond' }
   if (src !== 'all') tag = { ...tag, src }
   if (dst !== 'all') tag = { ...tag, dst }
-  const base = self.withTag(tag).withAll('q', [])
+  const base = own.withTag(tag).withAll('q', [])
   return (name: string, val: string | number) => base[name].add(val)
 }
 

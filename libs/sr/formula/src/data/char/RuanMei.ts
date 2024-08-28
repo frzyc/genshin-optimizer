@@ -15,8 +15,8 @@ import {
   enemyDebuff,
   notSelfBuff,
   register,
-  self,
-  selfBuff,
+  own,
+  ownBuff,
   teamBuff,
 } from '../util'
 import { dmg, entriesForChar, getBaseTag, scalingParams } from './util'
@@ -94,7 +94,7 @@ const dm = {
   },
 } as const
 
-const { char } = self
+const { char } = own
 
 const { skillOvertone, ultZone, e4Broken } = allBoolConditionals(key)
 
@@ -141,7 +141,7 @@ const sheet = register(
         max(
           // (brEff_ - breakThreshold) / breakPer * dmgPer
           prod(
-            sum(self.final.brEff_, -dm.b3.breakThreshold),
+            sum(own.final.brEff_, -dm.b3.breakThreshold),
             1 / dm.b3.breakPer,
             dm.b3.dmg_per
           ),
@@ -154,7 +154,7 @@ const sheet = register(
   teamBuff.premod.atk_.add(
     cmpGE(char.eidolon, 2, cmpEq(enemy.common.isBroken, 1, dm.e2.atk_))
   ),
-  selfBuff.premod.brEff_.add(
+  ownBuff.premod.brEff_.add(
     cmpEq(char.eidolon, 4, e4Broken.ifOn(dm.e4.break_))
   )
 )

@@ -7,8 +7,8 @@ import {
   allNumConditionals,
   enemyDebuff,
   register,
-  self,
-  selfBuff,
+  own,
+  ownBuff,
   teamBuff,
 } from '../util'
 import { entriesForRelic } from './util'
@@ -28,7 +28,7 @@ const dm = {
   },
 }
 
-const relicCount = self.common.count.sheet(key)
+const relicCount = own.common.count.sheet(key)
 
 // TODO: Add conditionals
 const { boolConditional } = allBoolConditionals(key)
@@ -42,7 +42,7 @@ const sheet = register(
 
   // TODO: Add formulas/buffs
   // Conditional buffs
-  selfBuff.premod.dmg_.add(
+  ownBuff.premod.dmg_.add(
     boolConditional.ifOn(cmpGE(relicCount, 4, dm[4].dmg))
   ),
   teamBuff.premod.dmg_.add(listConditional.map({ val1: 1, val2: 2 })),

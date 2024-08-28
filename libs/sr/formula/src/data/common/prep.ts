@@ -1,7 +1,7 @@
 import { lookup, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
 import { allStats } from '@genshin-optimizer/sr/stats'
 import type { ElementalType, TagMapNodeEntries } from '../util'
-import { percent, self, selfBuff } from '../util'
+import { percent, own, ownBuff } from '../util'
 
 const breakBaseRatios: Record<ElementalType, number> = {
   physical: 2,
@@ -14,22 +14,22 @@ const breakBaseRatios: Record<ElementalType, number> = {
 }
 const data: TagMapNodeEntries = [
   // Formula calculations
-  selfBuff.formula.dmg.add(
-    prod(self.dmg.out, self.dmg.critMulti, self.dmg.inDmg)
+  ownBuff.formula.dmg.add(
+    prod(own.dmg.out, own.dmg.critMulti, own.dmg.inDmg)
   ),
-  selfBuff.formula.shield.add(
-    prod(self.formula.base, sum(percent(1), self.premod.shield_))
+  ownBuff.formula.shield.add(
+    prod(own.formula.base, sum(percent(1), own.premod.shield_))
   ),
-  selfBuff.formula.heal.add(
-    prod(self.formula.base, sum(percent(1), self.final.heal_))
+  ownBuff.formula.heal.add(
+    prod(own.formula.base, sum(percent(1), own.final.heal_))
   ),
-  selfBuff.formula.breakDmg.add(
+  ownBuff.formula.breakDmg.add(
     prod(
-      self.formula.base,
-      lookup(self.char.ele, breakBaseRatios),
-      subscript(self.char.lvl, allStats.misc.breakLevelMulti),
-      sum(percent(1), self.final.brEff_),
-      self.dmg.inDmg
+      own.formula.base,
+      lookup(own.char.ele, breakBaseRatios),
+      subscript(own.char.lvl, allStats.misc.breakLevelMulti),
+      sum(percent(1), own.final.brEff_),
+      own.dmg.inDmg
     )
   ),
 ]

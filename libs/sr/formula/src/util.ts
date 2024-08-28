@@ -12,8 +12,8 @@ import {
   convert,
   getStatFromStatKey,
   reader,
-  self,
-  selfBuff,
+  own,
+  ownBuff,
   selfTag,
 } from './data/util'
 
@@ -31,7 +31,7 @@ export function withMember(
 }
 
 export function charData(data: ICharacter): TagMapNodeEntries {
-  const { lvl, basic, skill, ult, talent, ascension, eidolon } = self.char
+  const { lvl, basic, skill, ult, talent, ascension, eidolon } = own.char
   const { char, iso, [data.key]: sheet } = reader.withAll('sheet', [])
 
   return [
@@ -46,23 +46,23 @@ export function charData(data: ICharacter): TagMapNodeEntries {
     ascension.add(data.ascension),
     eidolon.add(data.eidolon),
     ...allStatBoostKeys.map((index) =>
-      selfBuff.char[`statBoost${index}`].add(data.statBoosts[index] ? 1 : 0)
+      ownBuff.char[`statBoost${index}`].add(data.statBoosts[index] ? 1 : 0)
     ),
     ...allBonusAbilityKeys.map((index) =>
-      selfBuff.char[`bonusAbility${index}`].add(
+      ownBuff.char[`bonusAbility${index}`].add(
         data.bonusAbilities[index] ? 1 : 0
       )
     ),
 
     // Default char
-    selfBuff.premod.crit_.add(0.05),
-    selfBuff.premod.crit_dmg_.add(0.5),
+    ownBuff.premod.crit_.add(0.05),
+    ownBuff.premod.crit_dmg_.add(0.5),
   ]
 }
 
 export function lightConeData(data: ILightCone | undefined): TagMapNodeEntries {
   if (!data) return []
-  const { lvl, ascension, superimpose } = self.lightCone
+  const { lvl, ascension, superimpose } = own.lightCone
 
   return [
     reader.sheet('lightCone').reread(reader.sheet(data.key)),

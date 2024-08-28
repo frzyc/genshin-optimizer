@@ -1,7 +1,7 @@
 import { cmpGE } from '@genshin-optimizer/pando/engine'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { allStats } from '@genshin-optimizer/sr/stats'
-import { register, self, selfBuff } from '../util'
+import { register, own, ownBuff } from '../util'
 import { entriesForRelic } from './util'
 
 const key: RelicSetKey = 'FirmamentFrontlineGlamoth'
@@ -18,7 +18,7 @@ const dm = {
   },
 }
 
-const relicCount = self.common.count.sheet(key)
+const relicCount = own.common.count.sheet(key)
 
 const sheet = register(
   key,
@@ -26,15 +26,15 @@ const sheet = register(
   entriesForRelic(key, data_gen),
 
   // Variable buffs
-  selfBuff.premod.dmg_.add(
+  ownBuff.premod.dmg_.add(
     cmpGE(
       relicCount,
       4,
       cmpGE(
-        self.final.spd,
+        own.final.spd,
         dm[2].spdCutoff2,
         dm[2].dmg2_,
-        cmpGE(self.final.spd, dm[2].spdCutoff1, dm[2].dmg1_)
+        cmpGE(own.final.spd, dm[2].spdCutoff1, dm[2].dmg1_)
       )
     )
   )

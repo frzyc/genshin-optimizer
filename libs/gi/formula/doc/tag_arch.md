@@ -30,7 +30,7 @@ Missing tags are omitted.
 The current computation, called query, is identified by `qt: q:`.
 It is always set when performing a `read` operation, and valid query combinations are specified in `data/util/tag.ts`.
 All queries assume a certain `et: sheet:` and `accu` upon read, which is specified by `Desc` and enforced via `convert` (both declared in `tag.ts`).
-As an example, to calculate the current character's skill talent level, use `read({ et:self qt:char q:skill sheet:agg }, 'sum')` or simply `self.char.skill`.
+As an example, to calculate the current character's skill talent level, use `read({ et:self qt:char q:skill sheet:agg }, 'sum')` or simply `own.char.skill`.
 For more details on `et:` and `sheet:` see below.
 
 We split query identifier into `qt:` and `q:` to simplify formula specifications.
@@ -82,7 +82,7 @@ Every query starts with a read-side `sheet: et:` combination.
 The gathering operation then maps to the appropriate write-side `sheet: et:` via util functions.
 Following is the gathered entries on different `sheet: et:` combinations:
 
-- `sheet:agg et:self` queries (e.g., `self.char.skill`)
+- `sheet:agg et:self` queries (e.g., `own.char.skill`)
   - Non-specific non-sheet contributions
   - `{ sheet:agg et:self } <= { sheet:custom }` from `data/common/index.ts`
     - Custom contributions
@@ -93,7 +93,7 @@ Following is the gathered entries on different `sheet: et:` combinations:
   - `{ src:<src> sheet:agg } <= { src:* dst:<src> et:teamBuff/notSelfBuff }` from `teamData`
     - `{ src:<src> sheet:agg } <= { sheet:<char key/weapon key/art> }` from `char/weapon/artData` with `withMember`
       - Sheet-specific `et:*Buff` contributions from appropriate members `src: dst:`
-- `sheet:iso et:self` queries (e.g., `self.char.lvl`)
+- `sheet:iso et:self` queries (e.g., `own.char.lvl`)
   - Non-specific non-sheet contributions
   - `{ sheet:iso et:self } <= { sheet:custom }` from `data/common/index.ts`
     - Custom contributions
@@ -106,7 +106,7 @@ Following is the gathered entries on different `sheet: et:` combinations:
 - `sheet:iso et:enemy` queries (unused so far)
   - `{ sheet:iso } <= { sheet:<char key> }` from `charData` with `withMember`
     - Char-sheet-specific contributions from the current character
-- `sheet:static et:self/enemy` (e.g., `self.commin.critMode`)
+- `sheet:static et:self/enemy` (e.g., `own.commin.critMode`)
   - Non-sheet contributions from the same tag
 - `et:team sheet:agg/iso` queries (e.g., `team.final.atk`)
   - `{ et:team } <- { src:* et:self }` (`teamData`)
@@ -116,7 +116,7 @@ Notes:
 
 - Write-side `et:*Buff` can only be used inside a sheet as they require the `teamData` entry to insert `src:` and `char/weapon/artData` (with `withMember`) to override `sheet:`.
   Outside of a sheet, `et:self/enemy` must be used instead as the `teamData` entry overrides `et:` in the process.
-  - The convention is to use `selfBuff/teamBuff/notSelfBuff/enemyDebuff` _variables_ for all entry creations, and "fix" the `et:` for sheets when it is `register`ed.
+  - The convention is to use `ownBuff/teamBuff/notSelfBuff/enemyDebuff` _variables_ for all entry creations, and "fix" the `et:` for sheets when it is `register`ed.
 - Artifact use `sheet:art` instead of `sheet:<artifact name>` as all artifacts are always included together.
   This helps reduce the `read` needed due to the sheer number of artifacts.
   - `sheet:<artifact name>` is used only for counting the number equipped artifact of that set.

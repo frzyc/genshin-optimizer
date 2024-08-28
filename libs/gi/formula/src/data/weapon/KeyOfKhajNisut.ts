@@ -2,10 +2,10 @@ import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { cmpEq, prod, subscript } from '@genshin-optimizer/pando/engine'
 import {
   allNumConditionals,
+  own,
+  ownBuff,
   percent,
   register,
-  self,
-  selfBuff,
   teamBuff,
 } from '../util'
 import { entriesForWeapon } from './util'
@@ -17,7 +17,7 @@ const teamEmSrc = [NaN, 0.002, 0.0025, 0.003, 0.0035, 0.004]
 const {
   final,
   weapon: { refinement },
-} = self
+} = own
 const { afterSkillStacks } = allNumConditionals(key, true, 0, 3)
 const selfElemas = prod(
   afterSkillStacks,
@@ -33,6 +33,6 @@ const teamEleMas = cmpEq(
 export default register(
   key,
   entriesForWeapon(key),
-  selfBuff.final.eleMas.add(selfElemas),
+  ownBuff.final.eleMas.add(selfElemas),
   teamBuff.final.eleMas.add(teamEleMas)
 )

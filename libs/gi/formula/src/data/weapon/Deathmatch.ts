@@ -4,8 +4,8 @@ import {
   allBoolConditionals,
   allListConditionals,
   allNumConditionals,
+  own,
   register,
-  self,
 } from '../util'
 import { entriesForWeapon } from './util'
 
@@ -13,7 +13,7 @@ const key: WeaponKey = 'Deathmatch'
 
 const {
   weapon: { refinement: _refinement },
-} = self
+} = own
 // TODO: Conditionals
 const { _someBoolConditional } = allBoolConditionals(key)
 const { _someListConditional } = allListConditionals(key, [])
@@ -24,7 +24,7 @@ export default register(
   entriesForWeapon(key)
 
   // TODO:
-  // - Add self-buff formulas using `selfBuff.<buff target>.add(<buff value>)`
+  // - Add member's own formulas using `ownBuff.<buff target>.add(<buff value>)`
   // - Add teambuff formulas using `teamBuff.<buff target>.add(<buff value>)
   // - Add enemy debuff using `enemyDebuff.<debuff target>.add(<debuff value>)`
   //

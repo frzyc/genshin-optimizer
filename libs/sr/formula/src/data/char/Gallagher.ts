@@ -7,8 +7,8 @@ import {
   allNumConditionals,
   enemyDebuff,
   register,
-  self,
-  selfBuff,
+  own,
+  ownBuff,
   teamBuff,
 } from '../util'
 import { dmg, entriesForChar, getBaseTag, scalingParams } from './util'
@@ -45,7 +45,7 @@ const dm = {
   },
 } as const
 
-const { char } = self
+const { char } = own
 
 // TODO: Add conditionals
 const { boolConditional } = allBoolConditionals(key)
@@ -62,7 +62,7 @@ const sheet = register(
   ...dmg('basicDmg', baseTag, 'atk', dm.basic.dmg, 'basic'),
 
   // Buffs
-  selfBuff.premod.dmg_.add(cmpGE(char.eidolon, 6, boolConditional.ifOn(1))),
+  ownBuff.premod.dmg_.add(cmpGE(char.eidolon, 6, boolConditional.ifOn(1))),
   teamBuff.premod.dmg_.add(listConditional.map({ val1: 1, val2: 2 })),
   enemyDebuff.common.defIgn_.add(numConditional)
 )

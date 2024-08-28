@@ -7,8 +7,8 @@ import {
   customShield,
   percent,
   register,
-  self,
-  selfBuff,
+  own,
+  ownBuff,
   target,
 } from '../util'
 import { dmg, entriesForChar, getBaseTag, scalingParams, shield } from './util'
@@ -63,12 +63,12 @@ const dm = {
   },
 } as const
 
-const { char } = self
+const { char } = own
 
 const e4_counter_dmgInc = cmpGE(
   char.eidolon,
   4,
-  prod(self.final.def, percent(dm.e4.dmgInc))
+  prod(own.final.def, percent(dm.e4.dmgInc))
 )
 
 const sheet = register(
@@ -102,17 +102,17 @@ const sheet = register(
     'talent',
     undefined,
     undefined,
-    selfBuff.formula.base.add(e4_counter_dmgInc)
+    ownBuff.formula.base.add(e4_counter_dmgInc)
   ),
   ...customDmg(
     'techniqueFreeze',
     { damageType1: 'elemental', ...baseTag },
-    prod(self.final.atk, percent(dm.technique.dmg))
+    prod(own.final.atk, percent(dm.technique.dmg))
   ),
   // Eidolon formulas
   customShield(
     'e1Shield',
-    sum(prod(self.final.def, dm.e2.shieldMult), dm.e2.shieldBase),
+    sum(prod(own.final.def, dm.e2.shieldMult), dm.e2.shieldBase),
     { cond: cmpGE(char.eidolon, 1, 'unique', '') }
   ),
   customHeal(

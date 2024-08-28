@@ -7,8 +7,8 @@ import {
   allNumConditionals,
   enemyDebuff,
   register,
-  self,
-  selfBuff,
+  own,
+  ownBuff,
   teamBuff,
 } from '../util'
 import { entriesForLightCone } from './util'
@@ -22,7 +22,7 @@ const dm = {
   dmg: data_gen.superimpose.otherStats[i++] ?? [1, 2, 3, 4, 5],
 }
 
-const { superimpose } = self.lightCone
+const { superimpose } = own.lightCone
 
 // TODO: Add conditionals
 const { boolConditional } = allBoolConditionals(key)
@@ -36,7 +36,7 @@ const sheet = register(
 
   // TODO: Add formulas/buffs
   // Conditional buffs
-  selfBuff.premod.dmg_.add(
+  ownBuff.premod.dmg_.add(
     boolConditional.ifOn(subscript(superimpose, dm.dmg))
   ),
   teamBuff.premod.dmg_.add(listConditional.map({ val1: 1, val2: 2 })),

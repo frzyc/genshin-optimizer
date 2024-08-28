@@ -8,7 +8,7 @@ import type { Read, Tag } from '.'
 import {
   percent,
   reader,
-  selfBuff,
+  ownBuff,
   tag,
   teamBuff,
   type TagMapNodeEntries,
@@ -45,7 +45,7 @@ function registerFormula(
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   reader.name(name) // register name:<name>
-  const listing = (team ? teamBuff : selfBuff).listing.formulas
+  const listing = (team ? teamBuff : ownBuff).listing.formulas
   return [
     listing.add(
       listingItem(reader.withTag({ name, et: 'self', qt: 'formula', q }), cond)
@@ -64,7 +64,7 @@ export function listingItem(t: Read, cond?: string | StrNode) {
  * @param dmgTag Tag object containing damageType1, damageType2 and elementalType
  * @param base Node representing the full damage value
  * @param splits Array of decimals that should add up to 1. Each entry represents the percentage of damage that hit deals, for multi-hit moves. We get splits from SRSim devs, see the array at the top of https://github.com/simimpact/srsim/blob/main/internal/character/march7th/ult.go for example.
- * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`, and also show the formula in teammates' listing.
+ * @param arg `{ team: true }` to use `teamBuff` instead of `ownBuff`, and also show the formula in teammates' listing.
  *
  * `{ cond: <node> }` to hide these instances behind a conditional check.
  * @param extra Buffs that should only apply to this damage instance
@@ -84,7 +84,7 @@ export function customDmg(
       team,
       'dmg',
       tag(cond, dmgTag),
-      selfBuff.formula.base.add(prod(base, percent(split))),
+      ownBuff.formula.base.add(prod(base, percent(split))),
       ...extra
     )
   )
@@ -94,7 +94,7 @@ export function customDmg(
  * Creates TagMapNodeEntries representing a shield instance, and registers the formula
  * @param name Base name to be used as the key
  * @param base Node representing the shield value
- * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`, and also show the formula in teammates' listing.
+ * @param arg `{ team: true }` to use `teamBuff` instead of `ownBuff`, and also show the formula in teammates' listing.
  *
  * `{ cond: <node> }` to hide these instances behind a conditional check.
  * @param extra Buffs that should only apply to this damage instance
@@ -111,7 +111,7 @@ export function customShield(
     team,
     'shield',
     cond,
-    selfBuff.formula.base.add(base),
+    ownBuff.formula.base.add(base),
     ...extra
   )
 }
@@ -120,7 +120,7 @@ export function customShield(
  * Creates TagMapNodeEntries representing a heal instance, and registers the formula
  * @param name Base name to be used as the key
  * @param base Node representing the heal value
- * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`, and also show the formula in teammates' listing.
+ * @param arg `{ team: true }` to use `teamBuff` instead of `ownBuff`, and also show the formula in teammates' listing.
  *
  * `{ cond: <node> }` to hide these instances behind a conditional check.
  * @param extra Buffs that should only apply to this damage instance
@@ -137,7 +137,7 @@ export function customHeal(
     team,
     'heal',
     cond,
-    selfBuff.formula.base.add(base),
+    ownBuff.formula.base.add(base),
     ...extra
   )
 }
@@ -147,7 +147,7 @@ export function customHeal(
  * @param name Base name to be used as the key
  * @param dmgTag Tag object containing damageType1, damageType2 and elementalType
  * @param base Node representing the break DMG value
- * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`, and also show the formula in teammates' listing.
+ * @param arg `{ team: true }` to use `teamBuff` instead of `ownBuff`, and also show the formula in teammates' listing.
  *
  * `{ cond: <node> }` to hide these instances behind a conditional check.
  * @param extra Buffs that should only apply to this damage instance
@@ -165,13 +165,13 @@ export function customBreakDmg(
     team,
     'breakDmg',
     tag(cond, dmgTag),
-    selfBuff.formula.base.add(base),
+    ownBuff.formula.base.add(base),
     ...extra
   )
 }
 
 export function getStatFromStatKey(
-  buff: typeof selfBuff.premod,
+  buff: typeof ownBuff.premod,
   statKey: StatKey
 ) {
   switch (statKey) {

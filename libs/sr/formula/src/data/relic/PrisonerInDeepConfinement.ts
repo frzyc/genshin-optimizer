@@ -1,7 +1,7 @@
 import { cmpGE, prod } from '@genshin-optimizer/pando/engine'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { allStats } from '@genshin-optimizer/sr/stats'
-import { allNumConditionals, enemyDebuff, register, self } from '../util'
+import { allNumConditionals, enemyDebuff, register, own } from '../util'
 import { entriesForRelic } from './util'
 
 const key: RelicSetKey = 'PrisonerInDeepConfinement'
@@ -19,7 +19,7 @@ const dm = {
   },
 }
 
-const relicCount = self.common.count.sheet(key)
+const relicCount = own.common.count.sheet(key)
 
 const { stackCount } = allNumConditionals(key, 'sum', true, 0, dm[4].numStacks)
 
