@@ -27,24 +27,23 @@ const condReacts = objKeyMap(allElementKeys, (ele) =>
   condReadNode(condReactPaths[ele])
 )
 
-const condReactNodes = objKeyMap(allElementKeys, (triggerEle) =>
-  greaterEq(
-    input.artSet.ScrollOfTheHeroOfCinderCity,
-    4,
-    equal(condReacts[triggerEle], triggerEle, 1)
-  )
+const reactNodeOnCount = sum(
+  ...allElementKeys.map((ele) => equal(condReacts[ele], ele, 1))
 )
-const reactNodeOnCount = sum(...Object.values(condReactNodes))
 
 const condReactBuffs = objKeyValMap(allElementKeys, (ele) => [
   `${ele}_dmg_`,
-  threshold(
-    equal(input.charEle, ele, 1),
-    1,
-    // buffing self elemental damage, check if any of the reactions are enabled
-    greaterEq(reactNodeOnCount, 1, 0.12),
-    // buffing other elemental damage, check if that particular conditional is enabled
-    equal(condReactNodes[ele], 1, 0.12)
+  greaterEq(
+    input.artSet.ScrollOfTheHeroOfCinderCity,
+    4,
+    threshold(
+      equal(input.charEle, ele, 1),
+      1,
+      // buffing self elemental damage, check if any of the reactions are enabled
+      greaterEq(reactNodeOnCount, 1, 0.12),
+      // buffing other elemental damage, check if that particular conditional is enabled
+      equal(condReacts[ele], ele, 0.12)
+    )
   ),
 ])
 
@@ -56,17 +55,10 @@ const condNightsouls = objKeyMap(allElementKeys, (ele) =>
   condReadNode(condNightsoulPaths[ele])
 )
 
-const condNightsoulNodes = objKeyMap(allElementKeys, (triggerEle) =>
-  greaterEq(
-    input.artSet.ScrollOfTheHeroOfCinderCity,
-    4,
-    equal(condNightsouls[triggerEle], triggerEle, 1)
-  )
-)
 const reactAndNightsoulOnCount = sum(
   ...allElementKeys.map((ele) =>
     greaterEq(
-      equal(condReactNodes[ele], 1, equal(condNightsoulNodes[ele], 1, 1)),
+      equal(condReacts[ele], ele, equal(condNightsouls[ele], ele, 1)),
       1,
       1
     )
@@ -75,13 +67,17 @@ const reactAndNightsoulOnCount = sum(
 
 const condNightsoulBuffs = objKeyValMap(allElementKeys, (ele) => [
   `${ele}_dmg_`,
-  threshold(
-    equal(input.charEle, ele, 1),
-    1,
-    // buffing self elemental damage, check if any of the reactions are enabled
-    greaterEq(reactAndNightsoulOnCount, 1, 0.28),
-    // buffing other elemental damage, check if that particular conditional is enabled
-    equal(condNightsoulNodes[ele], 1, equal(condReactNodes[ele], 1, 0.28))
+  greaterEq(
+    input.artSet.ScrollOfTheHeroOfCinderCity,
+    4,
+    threshold(
+      equal(input.charEle, ele, 1),
+      1,
+      // buffing self elemental damage, check if any of the reactions are enabled
+      greaterEq(reactAndNightsoulOnCount, 1, 0.28),
+      // buffing other elemental damage, check if that particular conditional is enabled
+      equal(condNightsouls[ele], ele, equal(condReacts[ele], ele, 0.28))
+    )
   ),
 ])
 
@@ -143,7 +139,7 @@ const sheet: SetEffectSheet = {
         states: (data: UIData) =>
           objKeyMap(
             // Only show reactions that are already enabled
-            allElementKeys.filter((ele) => data.get(condReactNodes[ele]).value),
+            allElementKeys.filter((ele) => data.get(condReacts[ele]).value),
             (ele) => ({
               value: condNightsouls[ele],
               path: condNightsoulPaths[ele],
