@@ -1,4 +1,5 @@
 import { CardThemed, useTitle } from '@genshin-optimizer/common/ui'
+import { members } from '@genshin-optimizer/sr/formula'
 import type {
   CharacterContextObj,
   LoadoutContextObj,
@@ -71,17 +72,20 @@ function Page({ teamId }: { teamId: string }) {
   }
 
   // validate characterKey
-  const loadoutMetadatum = useMemo(() => {
-    const loadoutMetadatum = loadoutMetadata.find(
-      (loadoutMetadatum) =>
-        loadoutMetadatum?.loadoutId &&
-        database.loadouts.get(loadoutMetadatum.loadoutId)?.key ===
-          characterKeyRaw
-    )
-
-    return loadoutMetadatum
-  }, [loadoutMetadata, database.loadouts, characterKeyRaw])
-
+  const loadoutMetadatumIndex = useMemo(
+    () =>
+      loadoutMetadata.findIndex(
+        (loadoutMetadatum) =>
+          loadoutMetadatum?.loadoutId &&
+          database.loadouts.get(loadoutMetadatum.loadoutId)?.key ===
+            characterKeyRaw
+      ),
+    [loadoutMetadata, database.loadouts, characterKeyRaw]
+  )
+  const loadoutMetadatum = useMemo(
+    () => loadoutMetadata[loadoutMetadatumIndex],
+    [loadoutMetadata, loadoutMetadatumIndex]
+  )
   useEffect(() => {
     window.scrollTo({ top: 0 })
   }, [])
@@ -116,7 +120,7 @@ function Page({ teamId }: { teamId: string }) {
   }, [loadoutMetadatum, team, loadout, loadoutId, teamId])
 
   return (
-    <TeamCalcProvider teamId={teamId}>
+    <TeamCalcProvider teamId={teamId} src={members[loadoutMetadatumIndex]}>
       <Box
         sx={{ display: 'flex', gap: 1, flexDirection: 'column', mx: 1, mt: 2 }}
       >

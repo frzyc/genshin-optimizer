@@ -2,8 +2,7 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { ICachedCharacter } from '@genshin-optimizer/sr/db'
 import {
   charData,
-  convert,
-  ownTag,
+  own,
   srCalculatorWithEntries,
   withMember,
 } from '@genshin-optimizer/sr/formula'
@@ -22,9 +21,9 @@ export function CharacterCard({
   character: ICachedCharacter
   onClick?: () => void
 }) {
-  const calc = srCalculatorWithEntries(withMember('0', ...charData(character)))
-
-  const member0 = convert(ownTag, { et: 'own', src: '0' })
+  const calc = srCalculatorWithEntries(
+    withMember('0', ...charData(character))
+  ).withTag({ src: '0' })
 
   return (
     <Stack>
@@ -41,33 +40,32 @@ export function CharacterCard({
           <Typography>Eidolon: {character.eidolon}</Typography>
           <Typography>Level: {character.level}</Typography>
 
-          <Typography>ATK: {calc.compute(member0.final.atk).val}</Typography>
+          <Typography>ATK: {calc.compute(own.final.atk).val}</Typography>
 
           <Typography>
-            Break effect: {calc.compute(member0.final.brEff_).val}
+            Break effect: {calc.compute(own.final.brEff_).val}
           </Typography>
           <Typography>
-            CRIT Rate: {calc.compute(member0.final.crit_).val}
+            CRIT Rate: {calc.compute(own.final.crit_).val}
           </Typography>
           <Typography>
-            CRIT DMG: {calc.compute(member0.final.crit_dmg_).val}
+            CRIT DMG: {calc.compute(own.final.crit_dmg_).val}
           </Typography>
-          <Typography>DEF: {calc.compute(member0.final.def).val}</Typography>
+          <Typography>DEF: {calc.compute(own.final.def).val}</Typography>
           <Typography>
-            Effect Hit Rate: {calc.compute(member0.final.eff_).val}
-          </Typography>
-          <Typography>
-            Effect RES: {calc.compute(member0.final.eff_res_).val}
+            Effect Hit Rate: {calc.compute(own.final.eff_).val}
           </Typography>
           <Typography>
-            Energy Regeneration Rate:{' '}
-            {calc.compute(member0.final.enerRegen_).val}
+            Effect RES: {calc.compute(own.final.eff_res_).val}
           </Typography>
           <Typography>
-            Heal Boost: {calc.compute(member0.final.heal_).val}
+            Energy Regeneration Rate: {calc.compute(own.final.enerRegen_).val}
           </Typography>
-          <Typography>HP: {calc.compute(member0.final.hp).val}</Typography>
-          <Typography>Speed: {calc.compute(member0.final.spd).val}</Typography>
+          <Typography>
+            Heal Boost: {calc.compute(own.final.heal_).val}
+          </Typography>
+          <Typography>HP: {calc.compute(own.final.hp).val}</Typography>
+          <Typography>Speed: {calc.compute(own.final.spd).val}</Typography>
         </CardContent>
       </CardThemed>
     </Stack>
