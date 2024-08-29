@@ -35,10 +35,8 @@
     "info2": "É responsabilidade do usuário confirmar a precisão das configurações em relação ao seu próprio contexto de jogo.",
     "description": "Descrição",
     "duplicate": "Duplicar",
-    "target": {
-      "one": "<0>{{count}}</0> Objetivo",
-      "other": "<0>{{count}}</0> Objetivos"
-    }
+    "target_one": "<0>{{count}}</0> Objetivo",
+    "target_other": "<0>{{count}}</0> Objetivos"
   },
   "addStats": {
     "title": "Ajustes do Inimigo + Atributos Bônus",
@@ -95,8 +93,6 @@
     "team_reso": "Ressonância da Equipe",
     "resonance_tip": "A equipe deve possuir 4 personagens para que a Ressonância Elemental tenha efeito."
   },
-  "showingNum": {
-    "one": "Mostrando <1>{{count}}</1> de {{value}} Personagem",
-    "other": "Mostrando <1>{{count}}</1> de {{value}} Personagens"
-  }
+  "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} Personagem",
+  "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Personagens"
 }

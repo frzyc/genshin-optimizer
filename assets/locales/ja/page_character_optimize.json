@@ -85,7 +85,7 @@
     "deSelectExc": "除外リストから外す聖遺物をクリックしてください",
     "usingNum": "除外聖遺物<1>{{totalStr}}</1>個使用中",
     "button_txt": "聖遺物を除外",
-    "excNum": { "other": "<0>{{count}}</0>個の聖遺物を除外" }
+    "excNum_other": "<0>{{count}}</0>個の聖遺物を除外"
   },
   "excludeChar": {
     "title": "装備中聖遺物構成",
@@ -103,13 +103,11 @@
       "all": "全聖遺物"
     },
     "usingState": "使用中",
-    "usingNumTot": {
-      "other": "<3>{{count}}</3>人のキャラクターからの<1>{{arts}}</1>個の聖遺物を使用中"
-    }
+    "usingNumTot_other": "<3>{{count}}</3>人のキャラクターからの<1>{{arts}}</1>個の聖遺物を使用中"
   },
   "buildCompleted": "ビルド生成完了",
   "notifyTooltip": "ビルドの生成が完了したら通知音が鳴ります。タブアウト時にも通知が表示されます。",
   "bonusStats": { "title": "ボーナスステータス" },
-  "build": { "other": "<0>{{count}}</0>つのビルド" },
-  "thread": { "other": "<0>{{count}}</0>つのスレッド" }
+  "build_other": "<0>{{count}}</0>つのビルド",
+  "thread_other": "<0>{{count}}</0>つのスレッド"
 }
