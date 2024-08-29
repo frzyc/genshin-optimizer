@@ -8,7 +8,7 @@ import type {
 import chars from './gen/chars'
 import lightCones from './gen/lightCones'
 import relics from './gen/relics'
-type characterAssetKey = 'icon' | 'basic_0'
+type characterAssetKey = 'icon' | 'basic_0' | 'skill_0'
 export function characterAsset(
   ck: NonTrailblazerCharacterKey | TrailblazerGenderedKey,
   asset: characterAssetKey
