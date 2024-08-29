@@ -1,6 +1,7 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
+import type { UIData } from '@genshin-optimizer/gi/uidata'
 import {
   constant,
   equal,
@@ -9,6 +10,7 @@ import {
   input,
   lookup,
   naught,
+  one,
   percent,
   prod,
   subscript,
@@ -129,6 +131,12 @@ const p1_pyro_dmg_ = greaterEq(
   )
 )
 
+const a4_dmg = greaterEq(
+  input.asc,
+  4,
+  customDmgNode(prod(input.total.atk, dm.passive2.dmg), 'charged')
+)
+
 const [condC2EnemyHpPath, condC2EnemyHp] = cond(key, 'c2EnemyHp')
 const c2EnemyHp_critRate_ = greaterEq(
   input.constellation,
@@ -156,10 +164,18 @@ const dmgFormulas = {
     dmg: dmgNode('atk', dm.burst.dmg, 'burst'),
   },
   passive2: {
-    dmg: greaterEq(
-      input.asc,
-      4,
-      customDmgNode(prod(input.total.atk, dm.passive2.dmg), 'charged')
+    dmg: a4_dmg,
+    probabilistic_dmg: prod(
+      lookup(
+        input.hit.hitMode,
+        {
+          hit: naught,
+          critHit: one,
+          avgHit: input.total.cappedCritRate,
+        },
+        naught
+      ),
+      a4_dmg
     ),
   },
   constellation4: {
@@ -230,7 +246,7 @@ const sheet: TalentSheet = {
         },
         {
           text: ct.ch('maxSeals'),
-          value: (data) =>
+          value: (data: UIData) =>
             data.get(input.constellation).value >= 6
               ? dm.charged.maxSeals + dm.c6.extraSeals
               : dm.charged.maxSeals,
@@ -273,6 +289,12 @@ const sheet: TalentSheet = {
         {
           node: infoMut(dmgFormulas.passive2.dmg, {
             name: ct.ch('passive2.key'),
+          }),
+        },
+        {
+          node: infoMut(dmgFormulas.passive2.probabilistic_dmg, {
+            name: ct.ch('passive2.key'),
+            textSuffix: ct.ch('passive2.probabilisticSuffix'),
           }),
         },
       ],
