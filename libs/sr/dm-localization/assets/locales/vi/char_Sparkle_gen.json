@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Hài Độc Thoại",
-        "fullDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Sparkle.",
+        "fullDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Sparkle.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Lượng Tử cho 1 kẻ địch."
       }
     },
     "skill": {
       "0": {
         "name": "Cá Nhỏ Cõi Mơ",
-        "fullDesc": "Tăng Sát Thương Bạo Kích của 1 đồng đội chỉ định, mức tăng bằng <orangeStrong>{{1}}%</orangeStrong> Sát Thương Bạo Kích của Sparkle +<orangeStrong>{{2}}%</orangeStrong>, duy trì {{3}} hiệp, đồng thời khiến mục tiêu này ưu tiên hành động {{4}}%.\\nKhi Sparkle thi triển kỹ năng này lên bản thân, sẽ không thể kích hoạt hiệu ứng Ưu Tiên Hành Động.",
+        "fullDesc": "Tăng Sát Thương Bạo Kích của 1 đồng đội chỉ định, mức tăng bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Sát Thương Bạo Kích của Sparkle +<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, duy trì {{3}} hiệp, đồng thời khiến mục tiêu này ưu tiên hành động {{4, percent}}%.\\nKhi Sparkle thi triển kỹ năng này lên bản thân, sẽ không thể kích hoạt hiệu ứng Ưu Tiên Hành Động.",
         "shortDesc": "Tăng <orangeStrong>Sát Thương Bạo Kích</orangeStrong> của 1 đồng đội, và khiến mục tiêu này ưu tiên hành động."
       }
     },
     "ult": {
       "0": {
         "name": "Cô Gái Nghìn Mặt",
-        "fullDesc": "Hồi phục {{2}} Điểm Chiến Kỹ cho phe ta, đồng thời khiến toàn thể phe ta nhận được Câu Đố Kỳ Dị. Khi mục tiêu phe ta có Câu Đố Kỳ Dị kích hoạt hiệu ứng Tăng Sát Thương từ Thiên Phú của Sparkle, mỗi tầng sẽ tăng thêm <orangeStrong>{{3}}%</orangeStrong>, duy trì {{4}} hiệp.",
+        "fullDesc": "Hồi phục {{2}} Điểm Chiến Kỹ cho phe ta, đồng thời khiến toàn thể phe ta nhận được Câu Đố Kỳ Dị. Khi mục tiêu phe ta có Câu Đố Kỳ Dị kích hoạt hiệu ứng Tăng Sát Thương từ Thiên Phú của Sparkle, mỗi tầng sẽ tăng thêm <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, duy trì {{4}} hiệp.",
         "shortDesc": "Hồi phục <orangeStrong>Điểm Chiến Kỹ</orangeStrong> cho phe ta, tăng thêm hiệu ứng Tăng Sát Thương khi kích hoạt Thiên Phú Sparkle."
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Dạ Khúc Tưởng Nhớ",
-        "fullDesc": "Tấn Công của toàn phe ta tăng {{4}}%. Khi trong đội phe ta có 1/2/3 nhân vật thuộc tính Lượng Tử, tấn công của nhân vật có thuộc tính Lượng Tử phe ta tăng thêm {{1}}%/{{2}}%/{{3}}%.",
+        "fullDesc": "Tấn Công của toàn phe ta tăng {{4, percent}}%. Khi trong đội phe ta có 1/2/3 nhân vật thuộc tính Lượng Tử, tấn công của nhân vật có thuộc tính Lượng Tử phe ta tăng thêm {{1, percent}}%/{{2, percent}}%/{{3, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Dẹp Bỏ Hoài Nghi",
-      "desc": "Thời gian duy trì Câu Đố Kỳ Dị thi triển bởi Tuyệt Kỹ tăng thêm 1 hiệp, mục tiêu phe ta sở hữu Câu Đố Kỳ Dị sẽ tăng {{1}}% Tấn Công."
+      "desc": "Thời gian duy trì Câu Đố Kỳ Dị thi triển bởi Tuyệt Kỹ tăng thêm 1 hiệp, mục tiêu phe ta sở hữu Câu Đố Kỳ Dị sẽ tăng {{1, percent}}% Tấn Công."
     },
     "2": {
       "name": "Hư Cấu Vô Cớ",
-      "desc": "Mỗi tầng hiệu ứng của Thiên Phú khiến mục tiêu phe ta khi gây sát thương sẽ bỏ qua {{1}}% Phòng Thủ của mục tiêu."
+      "desc": "Mỗi tầng hiệu ứng của Thiên Phú khiến mục tiêu phe ta khi gây sát thương sẽ bỏ qua {{1, percent}}% Phòng Thủ của mục tiêu."
     },
     "3": {
       "name": "Giấc Mộng Viển Vông",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Lời Giải Đáp Đa Tầng",
-      "desc": "Tăng thêm hiệu ứng Tăng Sát Thương Bạo Kích của Chiến Kỹ, mức tăng bằng {{1}}% Sát Thương Bạo Kích của Sparkle, và khi Sparkle thi triển Chiến Kỹ, sẽ khiến hiệu ứng Tăng Sát Thương Bạo Kích của Chiến Kỹ có hiệu lực với đồng đội sở hữu Câu Đố Kỳ Dị, khi Sparkle thi triển Tuyệt Kỹ, nếu trong phe ta có mục tiêu mang hiệu ứng Tăng Sát Thương Bạo Kích của Chiến Kỹ, sẽ khiến hiệu ứng này khuếch tán đến đồng đội đang có Câu Đố Kỳ Dị."
+      "desc": "Tăng thêm hiệu ứng Tăng Sát Thương Bạo Kích của Chiến Kỹ, mức tăng bằng {{1, percent}}% Sát Thương Bạo Kích của Sparkle, và khi Sparkle thi triển Chiến Kỹ, sẽ khiến hiệu ứng Tăng Sát Thương Bạo Kích của Chiến Kỹ có hiệu lực với đồng đội sở hữu Câu Đố Kỳ Dị, khi Sparkle thi triển Tuyệt Kỹ, nếu trong phe ta có mục tiêu mang hiệu ứng Tăng Sát Thương Bạo Kích của Chiến Kỹ, sẽ khiến hiệu ứng này khuếch tán đến đồng đội đang có Câu Đố Kỳ Dị."
     }
   }
 }

@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "¿Y tú qué miras?",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Herta como Daño de Hielo a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Herta como Daño de Hielo a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Oferta única",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Herta como Daño de Hielo a todos los enemigos. Si el porcentaje de PV del enemigo es igual o superior al {{2}}%, el daño infligido a ese objetivo aumenta en un {{3}}%.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Herta como Daño de Hielo a todos los enemigos. Si el porcentaje de PV del enemigo es igual o superior al {{2, percent}}%, el daño infligido a ese objetivo aumenta en un {{3, percent}}%.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a todos los enemigos. Los enemigos con más PV reciben más daño."
       }
     },
     "ult": {
       "0": {
         "name": "Es magia, le puse algo de magia",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Herta como Daño de Hielo a todos los enemigos.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Herta como Daño de Hielo a todos los enemigos.",
         "shortDesc": "Inflige Daño de Hielo a todos los enemigos."
       }
     },
     "technique": {
       "0": {
         "name": "Todavía se puede optimizar",
-        "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, el ATQ de Herta aumenta en un {{1}}% durante {{2}} turnos.",
+        "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, el ATQ de Herta aumenta en un {{1, percent}}% durante {{2}} turnos.",
         "shortDesc": ""
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Eficiencia",
-        "fullDesc": "Al usar la habilidad básica, el efecto de incremento de daño aumenta en un {{1}}% adicional.",
+        "fullDesc": "Al usar la habilidad básica, el efecto de incremento de daño aumenta en un {{1, percent}}% adicional.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Marioneta",
-        "fullDesc": "La probabilidad de resistir estados negativos de Control aumenta en un {{1}}%.",
+        "fullDesc": "La probabilidad de resistir estados negativos de Control aumenta en un {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Congelamiento",
-        "fullDesc": "La habilidad definitiva de Herta inflige un {{1}}% más de daño a los enemigos afectados por Congelación.",
+        "fullDesc": "La habilidad definitiva de Herta inflige un {{1, percent}}% más de daño a los enemigos afectados por Congelación.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Me regodeo en tu miseria",
-      "desc": "Al usar el ATQ básico, si el objetivo tiene un porcentaje de PV igual o inferior al {{1}}%, Herta inflige un Daño de Hielo adicional equivalente al {{2}}% de su ATQ."
+      "desc": "Al usar el ATQ básico, si el objetivo tiene un porcentaje de PV igual o inferior al {{1, percent}}%, Herta inflige un Daño de Hielo adicional equivalente al {{2, percent}}% de su ATQ."
     },
     "2": {
       "name": "Que no pare la fiesta",
-      "desc": "Cada vez que se activa el talento, su Prob. CRIT aumenta en un {{1}}%. Este efecto se puede acumular hasta {{2}} veces."
+      "desc": "Cada vez que se activa el talento, su Prob. CRIT aumenta en un {{1, percent}}%. Este efecto se puede acumular hasta {{2}} veces."
     },
     "3": {
       "name": "Soy de ese tipo de chicas",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Donde más duele",
-      "desc": "Cuando el talento se activa, el daño que inflige Herta aumenta en un {{1}}%."
+      "desc": "Cuando el talento se activa, el daño que inflige Herta aumenta en un {{1, percent}}%."
     },
     "5": {
       "name": "Insulta a lo grande o no lo hagas",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Nadie me puede traicionar",
-      "desc": "Tras usar la habilidad definitiva, su ATQ aumenta en un {{1}}% durante {{2}} turno."
+      "desc": "Tras usar la habilidad definitiva, su ATQ aumenta en un {{1, percent}}% durante {{2}} turno."
     }
   }
 }

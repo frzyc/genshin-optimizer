@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Tập Kích Mạnh Mẽ",
-        "fullDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Seele.",
+        "fullDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Seele.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Lượng Tử cho 1 kẻ địch."
       }
     },
     "skill": {
       "0": {
         "name": "Lưỡi Kiếm Trở Về",
-        "fullDesc": "Khiến tốc độ của Seele tăng {{2}}%, đồng thời gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Seele, hiệu ứng tăng tốc duy trì {{3}} hiệp.",
+        "fullDesc": "Khiến tốc độ của Seele tăng {{2, percent}}%, đồng thời gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Seele, hiệu ứng tăng tốc duy trì {{3}} hiệp.",
         "shortDesc": "Gây sát thương Lượng Tử cho 1 kẻ địch, và giúp bản thân tăng tốc độ."
       }
     },
     "ult": {
       "0": {
         "name": "Loạn Điệp",
-        "fullDesc": "Bước vào trạng thái buff ngay, đồng thời gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Seele.",
+        "fullDesc": "Bước vào trạng thái buff ngay, đồng thời gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Seele.",
         "shortDesc": "Vào <orangeStrong>trạng thái Buff</orangeStrong>, gây lượng lớn Sát Thương Lượng Tử cho 1 kẻ địch."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Hành Quân Trong Đêm",
-        "fullDesc": "Nếu Phần Trăm HP hiện tại nhỏ hơn hoặc bằng {{1}}%, sẽ giảm xác suất bị kẻ địch tấn công.",
+        "fullDesc": "Nếu Phần Trăm HP hiện tại nhỏ hơn hoặc bằng {{1, percent}}%, sẽ giảm xác suất bị kẻ địch tấn công.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Chia Cắt",
-        "fullDesc": "Khi ở trạng thái Buff, Xuyên Kháng Lượng Tử của Seele tăng {{1}}%.",
+        "fullDesc": "Khi ở trạng thái Buff, Xuyên Kháng Lượng Tử của Seele tăng {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Gợn Sóng",
-        "fullDesc": "Sau khi tấn công thường, lần hành động tiếp theo của Seele sẽ ưu tiên {{1}}%.",
+        "fullDesc": "Sau khi tấn công thường, lần hành động tiếp theo của Seele sẽ ưu tiên {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Trảm Tận",
-      "desc": "Khi gây sát thương cho kẻ địch có phần trăm HP hiện tại nhỏ hơn hoặc bằng {{1}}%, Tỷ Lệ Bạo Kích tăng {{2}}%."
+      "desc": "Khi gây sát thương cho kẻ địch có phần trăm HP hiện tại nhỏ hơn hoặc bằng {{1, percent}}%, Tỷ Lệ Bạo Kích tăng {{2, percent}}%."
     },
     "2": {
       "name": "Điệp Vũ",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Phân Ly",
-      "desc": "Sau khi thi triển Tuyệt Kỹ sẽ khiến 1 kẻ địch bị tấn công rơi vào trạng thái Loạn Điệp, duy trì {{2}} hiệp. Sau khi mục tiêu địch ở trạng thái Loạn Điệp bị tấn công, sẽ chịu thêm 1 lần Sát Thương Lượng Tử kèm theo bằng {{1}}% Sát Thương Tuyệt Kỹ của Seele. Nếu mục tiêu này bị tiêu diệt bởi sát thương kèm theo của trạng thái Loạn Điệp do mục tiêu khác trong phe ta kích hoạt, sẽ không kích hoạt Thiên Phú của Seele.\\nKhi Seele rơi vào trạng thái không thể chiến đấu, thì trạng thái Loạn Điệp của kẻ địch sẽ bị giải trừ."
+      "desc": "Sau khi thi triển Tuyệt Kỹ sẽ khiến 1 kẻ địch bị tấn công rơi vào trạng thái Loạn Điệp, duy trì {{2}} hiệp. Sau khi mục tiêu địch ở trạng thái Loạn Điệp bị tấn công, sẽ chịu thêm 1 lần Sát Thương Lượng Tử kèm theo bằng {{1, percent}}% Sát Thương Tuyệt Kỹ của Seele. Nếu mục tiêu này bị tiêu diệt bởi sát thương kèm theo của trạng thái Loạn Điệp do mục tiêu khác trong phe ta kích hoạt, sẽ không kích hoạt Thiên Phú của Seele.\\nKhi Seele rơi vào trạng thái không thể chiến đấu, thì trạng thái Loạn Điệp của kẻ địch sẽ bị giải trừ."
     }
   }
 }

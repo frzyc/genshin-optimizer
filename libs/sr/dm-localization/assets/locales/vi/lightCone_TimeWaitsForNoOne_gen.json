@@ -2,6 +2,6 @@
   "name": "Thời Gian Không Ngừng Lại",
   "passive": {
     "name": "Sáng, Trưa, Chiều, Tối",
-    "description": "Khiến Giới Hạn HP của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>, lượng trị liệu tăng <orangeStrong>{{2}}%</orangeStrong>. Khi người trang bị cung cấp trị liệu cho mục tiêu phe ta, sẽ ghi lại lượng trị liệu. Sau khi mục tiêu bất kỳ của phe ta tấn công, sẽ căn cứ <orangeStrong>{{3}}%</orangeStrong> lượng trị liệu được ghi, gây sát thương kèm theo cho 1 kẻ địch bị tấn công ngẫu nhiên dựa trên thuộc tính người trang bị. Sát thương này không chịu ảnh hưởng bởi các buff khác, mỗi hiệp tối đa tổng kết 1 lần."
+    "description": "Khiến Giới Hạn HP của người trang bị tăng <orangeStrong>{{1, percent}}%</orangeStrong>, lượng trị liệu tăng <orangeStrong>{{2, percent}}%</orangeStrong>. Khi người trang bị cung cấp trị liệu cho mục tiêu phe ta, sẽ ghi lại lượng trị liệu. Sau khi mục tiêu bất kỳ của phe ta tấn công, sẽ căn cứ <orangeStrong>{{3, percent}}%</orangeStrong> lượng trị liệu được ghi, gây sát thương kèm theo cho 1 kẻ địch bị tấn công ngẫu nhiên dựa trên thuộc tính người trang bị. Sát thương này không chịu ảnh hưởng bởi các buff khác, mỗi hiệp tối đa tổng kết 1 lần."
   }
 }

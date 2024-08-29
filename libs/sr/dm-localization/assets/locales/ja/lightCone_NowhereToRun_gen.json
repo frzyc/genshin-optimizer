@@ -2,6 +2,6 @@
   "name": "{RUBY_B#に}逃{RUBY_E#}げ{RUBY_B#ば}場{RUBY_E#}なし",
   "passive": {
     "name": "{RUBY_B#ぜっきょう}絶境{RUBY_E#}",
-    "description": "装備キャラの攻撃力+<orangeStrong>{{1}}%</orangeStrong>。装備キャラが敵を倒した時、自身の攻撃力<orangeStrong>{{2}}%</orangeStrong>分のHPを回復する。"
+    "description": "装備キャラの攻撃力+<orangeStrong>{{1, percent}}%</orangeStrong>。装備キャラが敵を倒した時、自身の攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分のHPを回復する。"
   }
 }

@@ -2,6 +2,6 @@
   "name": "Flammes lointaines",
   "passive": {
     "name": "Déflagration",
-    "description": "Lorsque le porteur perd un montant de PV supérieur à {{1}}% de ses PV max en une attaque, ou qu'il consomme un montant de PV supérieur à {{1}}% de ses PV max, soigne immédiatement un montant de PV équivalent à {{3}}% de ses PV max en plus d'augmenter de <orangeStrong>{{2}}%</orangeStrong> les DGT qu'il inflige pendant {{4}} tours. Cet effet ne peut être activé qu'une seule fois tous les {{5}} tours."
+    "description": "Lorsque le porteur perd un montant de PV supérieur à {{1, percent}}% de ses PV max en une attaque, ou qu'il consomme un montant de PV supérieur à {{1, percent}}% de ses PV max, soigne immédiatement un montant de PV équivalent à {{3, percent}}% de ses PV max en plus d'augmenter de <orangeStrong>{{2, percent}}%</orangeStrong> les DGT qu'il inflige pendant {{4}} tours. Cet effet ne peut être activé qu'une seule fois tous les {{5}} tours."
   }
 }

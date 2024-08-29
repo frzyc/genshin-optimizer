@@ -1,7 +1,7 @@
 {
   "setName": "Campeona de boxeo callejero",
   "setEffects": {
-    "2": "Daño Físico +{{1}}%.",
-    "4": "Cuando el portador ataca o recibe un ataque, su ATQ aumenta en un {{1}}% durante la batalla actual. Puede acumularse hasta {{2}} veces."
+    "2": "Daño Físico +{{1, percent}}%.",
+    "4": "Cuando el portador ataca o recibe un ataque, su ATQ aumenta en un {{1, percent}}% durante la batalla actual. Puede acumularse hasta {{2}} veces."
   }
 }

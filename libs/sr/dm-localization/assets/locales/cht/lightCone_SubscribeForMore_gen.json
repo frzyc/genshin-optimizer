@@ -2,6 +2,6 @@
   "name": "按個追蹤吧！",
   "passive": {
     "name": "不按讚不准走！",
-    "description": "使裝備者普通攻擊和戰技造成的傷害提高<orangeStrong>{{1}}%</orangeStrong>，當裝備者的現有能量值等於其能量上限時，該效果額外提高<orangeStrong>{{2}}%</orangeStrong>。"
+    "description": "使裝備者普通攻擊和戰技造成的傷害提高<orangeStrong>{{1, percent}}%</orangeStrong>，當裝備者的現有能量值等於其能量上限時，該效果額外提高<orangeStrong>{{2, percent}}%</orangeStrong>。"
   }
 }

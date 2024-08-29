@@ -1,7 +1,7 @@
 {
   "setName": "Prisoner in Deep Confinement",
   "setEffects": {
-    "2": "ATK +{{1}}%.",
-    "4": "Untuk setiap 1 efek DoT yang dimiliki target musuh, saat pengguna mengakibatkan DMG pada target tersebut, akan mengabaikan {{1}}% DEF-nya. Berlaku untuk maksimal {{2}} DoT."
+    "2": "ATK +{{1, percent}}%.",
+    "4": "Untuk setiap 1 efek DoT yang dimiliki target musuh, saat pengguna mengakibatkan DMG pada target tersebut, akan mengabaikan {{1, percent}}% DEF-nya. Berlaku untuk maksimal {{2}} DoT."
   }
 }

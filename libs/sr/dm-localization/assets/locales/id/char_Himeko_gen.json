@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Sawblade Tuning",
-        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Himeko pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Himeko pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Molten Detonation",
-        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Himeko pada 1 target musuh, dan di saat bersamaan mengakibatkan Fire DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Himeko pada musuh di sekitar target.",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Himeko pada 1 target musuh, dan di saat bersamaan mengakibatkan Fire DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Himeko pada musuh di sekitar target.",
         "shortDesc": "Mengakibatkan Fire DMG pada 1 target musuh dan Fire DMG dalam jumlah kecil pada musuh di sekitar target."
       }
     },
     "ult": {
       "0": {
         "name": "Heavenly Flare",
-        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Himeko pada seluruh musuh. Setiap 1 musuh yang dikalahkan akan memulihkan {{2}} Energy tambahan untuk Himeko.",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Himeko pada seluruh musuh. Setiap 1 musuh yang dikalahkan akan memulihkan {{2}} Energy tambahan untuk Himeko.",
         "shortDesc": "Mengakibatkan Fire DMG pada seluruh musuh dan memulihkan Energy jika ada musuh yang dikalahkan."
       }
     },
     "technique": {
       "0": {
         "name": "Incomplete Combustion",
-        "fullDesc": "Setelah menggunakan Technique, Himeko akan menciptakan sebuah dimensi khusus selama {{4}} detik. Setelah memasuki pertempuran bersama musuh dalam dimensi khusus, ada {{1}}% <u>peluang dasar</u> untuk meningkatkan {{2}}% Fire DMG yang diterima target musuh selama {{3}} giliran. Hanya boleh ada 1 efek dimensi khusus ciptaan rekan tim dalam satu waktu.",
+        "fullDesc": "Setelah menggunakan Technique, Himeko akan menciptakan sebuah dimensi khusus selama {{4}} detik. Setelah memasuki pertempuran bersama musuh dalam dimensi khusus, ada {{1, percent}}% <u>peluang dasar</u> untuk meningkatkan {{2, percent}}% Fire DMG yang diterima target musuh selama {{3}} giliran. Hanya boleh ada 1 efek dimensi khusus ciptaan rekan tim dalam satu waktu.",
         "shortDesc": "Menciptakan dimensi khusus. Setelah memasuki pertempuran dengan musuh dalam dimensi khusus, berpeluang besar untuk <orangeStrong>meningkatkan Fire DMG yang diterima</orangeStrong> oleh target musuh."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Starfire",
-        "fullDesc": "Setelah melancarkan serangan, memiliki {{1}}% peluang dasar untuk membuat target musuh terkena status Burn selama {{2}} giliran.\\nSaat dalam status Burn, target musuh akan menerima Fire DoT sebesar {{3}}% ATK Himeko setiap kali gilirannya dimulai.",
+        "fullDesc": "Setelah melancarkan serangan, memiliki {{1, percent}}% peluang dasar untuk membuat target musuh terkena status Burn selama {{2}} giliran.\\nSaat dalam status Burn, target musuh akan menerima Fire DoT sebesar {{3, percent}}% ATK Himeko setiap kali gilirannya dimulai.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Magma",
-        "fullDesc": "Meningkatkan {{1}}% Skill DMG pada target musuh dengan status Burn.",
+        "fullDesc": "Meningkatkan {{1, percent}}% Skill DMG pada target musuh dengan status Burn.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Benchmark",
-        "fullDesc": "Meningkatkan {{2}}% CRIT Rate jika persentase HP saat ini lebih dari atau sama dengan {{1}}%.",
+        "fullDesc": "Meningkatkan {{2, percent}}% CRIT Rate jika persentase HP saat ini lebih dari atau sama dengan {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Childhood",
-      "desc": "Setelah \"Victory Rush\" terpicu, meningkatkan {{1}}% SPD Himeko selama {{2}} giliran."
+      "desc": "Setelah \"Victory Rush\" terpicu, meningkatkan {{1, percent}}% SPD Himeko selama {{2}} giliran."
     },
     "2": {
       "name": "Convergence",
-      "desc": "Meningkatkan {{2}}% DMG pada target musuh yang persentase HP-nya kurang dari atau sama dengan {{1}}%."
+      "desc": "Meningkatkan {{2, percent}}% DMG pada target musuh yang persentase HP-nya kurang dari atau sama dengan {{1, percent}}%."
     },
     "3": {
       "name": "Poised",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Trailblaze!",
-      "desc": "Ultimate mengakibatkan 2 kali DMG tambahan pada musuh secara acak, masing-masing mengakibatkan Fire DMG sebesar {{1}}% dari DMG awal."
+      "desc": "Ultimate mengakibatkan 2 kali DMG tambahan pada musuh secara acak, masing-masing mengakibatkan Fire DMG sebesar {{1, percent}}% dari DMG awal."
     }
   }
 }

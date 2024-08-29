@@ -2,6 +2,6 @@
   "name": "Tôi Trong Gương Ngày Ấy",
   "passive": {
     "name": "Hương Mai Nồng Nàn",
-    "description": "Khiến Tấn Công Kích Phá của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>. Sau khi người trang bị thi triển Tuyệt Kỹ, sẽ khiến sát thương của toàn bộ phe ta tăng <orangeStrong>{{2}}%</orangeStrong>, duy trì {{3}} hiệp, hơn nữa nếu Tấn Công Kích Phá của người trang bị lớn hơn hoặc bằng {{4}}%, sẽ hồi 1 điểm Chiến Kỹ.\\nKhi bắt đầu mỗi đợt, toàn bộ phe ta sẽ hồi ngay <orangeStrong>{{5}}</orangeStrong> Năng Lượng, kỹ năng cùng loại sẽ không thể cộng dồn."
+    "description": "Khiến Tấn Công Kích Phá của người trang bị tăng <orangeStrong>{{1, percent}}%</orangeStrong>. Sau khi người trang bị thi triển Tuyệt Kỹ, sẽ khiến sát thương của toàn bộ phe ta tăng <orangeStrong>{{2, percent}}%</orangeStrong>, duy trì {{3}} hiệp, hơn nữa nếu Tấn Công Kích Phá của người trang bị lớn hơn hoặc bằng {{4, percent}}%, sẽ hồi 1 điểm Chiến Kỹ.\\nKhi bắt đầu mỗi đợt, toàn bộ phe ta sẽ hồi ngay <orangeStrong>{{5, fixed(fixed: 1)}}</orangeStrong> Năng Lượng, kỹ năng cùng loại sẽ không thể cộng dồn."
   }
 }

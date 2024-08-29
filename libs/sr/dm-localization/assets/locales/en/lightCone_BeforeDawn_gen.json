@@ -2,6 +2,6 @@
   "name": "Before Dawn",
   "passive": {
     "name": "Long Night",
-    "description": "Increases the wearer's CRIT DMG by <orangeStrong>{{1}}%</orangeStrong>. Increases DMG dealt by the wearer's Skill and Ultimate by <orangeStrong>{{2}}%</orangeStrong>. After the wearer uses Skill or Ultimate, gains Somnus Corpus. Upon triggering a follow-up attack, consumes Somnus Corpus, and increases DMG dealt by follow-up attack by <orangeStrong>{{3}}%</orangeStrong>."
+    "description": "Increases the wearer's CRIT DMG by <orangeStrong>{{1, percent}}%</orangeStrong>. Increases DMG dealt by the wearer's Skill and Ultimate by <orangeStrong>{{2, percent}}%</orangeStrong>. After the wearer uses Skill or Ultimate, gains Somnus Corpus. Upon triggering a follow-up attack, consumes Somnus Corpus, and increases DMG dealt by follow-up attack by <orangeStrong>{{3, percent}}%</orangeStrong>."
   }
 }

@@ -2,6 +2,6 @@
   "name": "{RUBY_B#けんしき}見識{RUBY_E#}",
   "passive": {
     "name": "{RUBY_B#てんさい}天才{RUBY_E#}",
-    "description": "装備キャラが必殺技を発動した時、攻撃力+<orangeStrong>{{1}}%</orangeStrong>、{{2}}ターン継続。"
+    "description": "装備キャラが必殺技を発動した時、攻撃力+<orangeStrong>{{1, percent}}%</orangeStrong>、{{2}}ターン継続。"
   }
 }

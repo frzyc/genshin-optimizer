@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Diagnosetritt",
-        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Bailus ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Bailus ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Unter den Wolken singen",
-        "fullDesc": "Stellt LP eines anvisierten Verbündeten sofort um <orangeStrong>{{1}}%</orangeStrong> von Bailus max. LP plus <orangeStrong>{{2}}</orangeStrong> wieder her. Anschließend heilt Bailu {{4}}-mal zufällige Verbündete. Nach jeder Heilung werden die wiederhergestellten LP beim nächsten Mal um {{3}}% reduziert.",
+        "fullDesc": "Stellt LP eines anvisierten Verbündeten sofort um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Bailus max. LP plus <orangeStrong>{{2}}</orangeStrong> wieder her. Anschließend heilt Bailu {{4}}-mal zufällige Verbündete. Nach jeder Heilung werden die wiederhergestellten LP beim nächsten Mal um {{3, percent}}% reduziert.",
         "shortDesc": "Stellt LP für einen Verbündeten wieder her und heilt dann einen weiteren zufälligen Verbündeten."
       }
     },
     "ult": {
       "0": {
         "name": "Sprung des Sumpfdrachen",
-        "fullDesc": "Stellt LP aller Verbündeten sofort um <orangeStrong>{{1}}%</orangeStrong> von Bailus max. LP plus <orangeStrong>{{2}}</orangeStrong> wieder her.\\nVerbündete, die noch nicht belebt sind, werden von Bailu belebt. Bei Verbündeten mit Belebung hält die Belebungsdauer 1 weitere Runde lang an.\\nDie „Belebung“ hält bis zu {{3}} Rd. lang an. Dieser Effekt ist nicht stapelbar.",
+        "fullDesc": "Stellt LP aller Verbündeten sofort um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Bailus max. LP plus <orangeStrong>{{2}}</orangeStrong> wieder her.\\nVerbündete, die noch nicht belebt sind, werden von Bailu belebt. Bei Verbündeten mit Belebung hält die Belebungsdauer 1 weitere Runde lang an.\\nDie „Belebung“ hält bis zu {{3}} Rd. lang an. Dieser Effekt ist nicht stapelbar.",
         "shortDesc": "Stellt LP für alle Verbündeten wieder her. Belebt die Verbündeten oder verlängert die Dauer der „Belebung“."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Qihuang-Analekten",
-        "fullDesc": "Erhöht die max. LP des Ziels für {{2}} Rd. um {{1}}%, wenn Bailu einen Verbündeten über dessen max. LP hinaus heilt.",
+        "fullDesc": "Erhöht die max. LP des Ziels für {{2}} Rd. um {{1, percent}}%, wenn Bailu einen Verbündeten über dessen max. LP hinaus heilt.",
         "shortDesc": ""
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Aquatischer Segen",
-        "fullDesc": "Verringert den erlittenen SCH der belebten Figuren um {{1}}%.",
+        "fullDesc": "Verringert den erlittenen SCH der belebten Figuren um {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Topf des schlummernden Drachen",
-      "desc": "Erhöht nach dem Einsatz des Ultimates die bewirkte Heilung von Bailu für {{2}} Rd. um {{1}}%."
+      "desc": "Erhöht nach dem Einsatz des Ultimates die bewirkte Heilung von Bailu für {{2}} Rd. um {{1, percent}}%."
     },
     "3": {
       "name": "Rätselhaftes Wunder",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Bedrohung ausgetrieben",
-      "desc": "Jede Heilung durch die Fertigkeit erhöht den vom Empfänger verursachten SCH für {{3}} Rd. um {{1}}%. Dieser Effekt ist bis zu {{2}}-mal stapelbar."
+      "desc": "Jede Heilung durch die Fertigkeit erhöht den vom Empfänger verursachten SCH für {{3}} Rd. um {{1, percent}}%. Dieser Effekt ist bis zu {{2}}-mal stapelbar."
     },
     "5": {
       "name": "Beseitigung irdischer Probleme",

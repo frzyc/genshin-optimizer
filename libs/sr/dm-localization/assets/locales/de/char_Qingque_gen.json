@@ -4,26 +4,26 @@
     "basic": {
       "0": {
         "name": "Selbstgezogener Sieg",
-        "fullDesc": "Wirft 1 Jadestein der Farbe mit der geringsten Anzahl von Steinen in Qingques aktueller Hand und fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Qingques ANG zu.",
+        "fullDesc": "Wirft 1 Jadestein der Farbe mit der geringsten Anzahl von Steinen in Qingques aktueller Hand und fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Qingques ANG zu.",
         "shortDesc": "Wirft 1 Stein und fügt einem anvisierten Gegner geringen Quanten-SCH zu."
       },
       "1": {
         "name": "Sieg mit dem Kong!",
-        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Qingques ANG zu und fügt angrenzenden Zielen Quanten-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Qingques ANG zu.\\n„Sieg mit dem Kong!“ kann keine Fertigkeitspunkte wiederherstellen.",
+        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Qingques ANG zu und fügt angrenzenden Zielen Quanten-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Qingques ANG zu.\\n„Sieg mit dem Kong!“ kann keine Fertigkeitspunkte wiederherstellen.",
         "shortDesc": "Fügt einem Gegner Quanten-SCH zu und fügt angrenzenden Zielen geringen Quanten-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Letzten Stein eingeholt",
-        "fullDesc": "Zieht sofort {{1}} Jadesteine. Erhöht den SCH von Qingques Angriff um <orangeStrong>{{2}}%</orangeStrong> bis zum Ende dieser Runde. Dieser Effekt ist bis zu {{3}}-fach stapelbar. Diese Fertigkeit beendet die Runde nicht.",
+        "fullDesc": "Zieht sofort {{1}} Jadesteine. Erhöht den SCH von Qingques Angriff um <orangeStrong>{{2, percent}}%</orangeStrong> bis zum Ende dieser Runde. Dieser Effekt ist bis zu {{3}}-fach stapelbar. Diese Fertigkeit beendet die Runde nicht.",
         "shortDesc": "<orangeStrong>Zieht einen Stein</orangeStrong> und erhöht den zugefügten SCH. <orangeStrong>Die Runde wird nicht beendet</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Vier verborgene Fische? Gewonnen!",
-        "fullDesc": "Fügt allen Gegnern Quanten-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Qingques ANG zu und zieht 4 Jadesteine derselben Farbe.",
+        "fullDesc": "Fügt allen Gegnern Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Qingques ANG zu und zieht 4 Jadesteine derselben Farbe.",
         "shortDesc": "Fügt allen Gegnern Quanten-SCH zu und zieht dann 4 Jadesteine derselben Farbe."
       }
     },
@@ -51,14 +51,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Auf eine Farbe warten",
-        "fullDesc": "Die Fertigkeit erhöht den erhöhten SCH zusätzlich um {{1}}%.",
+        "fullDesc": "Die Fertigkeit erhöht den erhöhten SCH zusätzlich um {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Den Kong berauben",
-        "fullDesc": "Erhöht nach dem Einsatz des verstärkten Standardangriffs die GES für 1 Rd. um {{1}}%.",
+        "fullDesc": "Erhöht nach dem Einsatz des verstärkten Standardangriffs die GES für 1 Rd. um {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -66,7 +66,7 @@
   "ranks": {
     "1": {
       "name": "Bauer umgewandelt, Preis erhalten",
-      "desc": "Der Ultimate verursacht {{1}}% mehr SCH."
+      "desc": "Der Ultimate verursacht {{1, percent}}% mehr SCH."
     },
     "2": {
       "name": "Zeit für ein Nickerchen, direkt auf dem Schachbrett",
@@ -78,7 +78,7 @@
     },
     "4": {
       "name": "Glückliche Kombination, der letzte Stein wartet",
-      "desc": "Nach dem Einsatz der Fertigkeit besteht eine feste Chance von {{1}}%, den Status „Autarkie“ zu erhalten. Dieser Status hält bis zum Ende dieser Runde.\\nIm Status Autarkie führt Qingque nach dem Einsatz des Standardangriffs oder verstärkten Standardangriffs sofort einen Folgeangriff aus und fügt dem Ziel Quanten-SCH in Höhe von 100 % des Standardangriff-SCH oder verstärkten Standardangriff-SCH zu."
+      "desc": "Nach dem Einsatz der Fertigkeit besteht eine feste Chance von {{1, percent}}%, den Status „Autarkie“ zu erhalten. Dieser Status hält bis zum Ende dieser Runde.\\nIm Status Autarkie führt Qingque nach dem Einsatz des Standardangriffs oder verstärkten Standardangriffs sofort einen Folgeangriff aus und fügt dem Ziel Quanten-SCH in Höhe von 100 % des Standardangriff-SCH oder verstärkten Standardangriff-SCH zu."
     },
     "5": {
       "name": "Selbst gezogene Steine, das Glück verschmäht",

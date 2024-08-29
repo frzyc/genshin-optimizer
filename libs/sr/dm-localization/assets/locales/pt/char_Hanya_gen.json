@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Pincel do Oráculo",
-        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Hanya a um único inimigo.",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Hanya a um único inimigo.",
         "shortDesc": "Causa Dano Físico leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Samsara, Bloqueada",
-        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Hanya a um único inimigo-alvo, então aplica Fardo a ele.\\nA cada 2 ATQs Básicos, Perícias ou Perícias Supremas utilizados por aliados em um inimigo com Fardo, aliados recuperam imediatamente 1 Ponto de Perícia. Fardo só fica ativo no último alvo em que foi aplicado, e será removido automaticamente depois que o efeito de recuperação de Ponto de Perícia for ativado {{2}} vezes.",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Hanya a um único inimigo-alvo, então aplica Fardo a ele.\\nA cada 2 ATQs Básicos, Perícias ou Perícias Supremas utilizados por aliados em um inimigo com Fardo, aliados recuperam imediatamente 1 Ponto de Perícia. Fardo só fica ativo no último alvo em que foi aplicado, e será removido automaticamente depois que o efeito de recuperação de Ponto de Perícia for ativado {{2}} vezes.",
         "shortDesc": "Causa Dano Físico a um único inimigo e aplica Fardo a ele. Para cada 2 ATQs Básicos, Perícias ou Perícias Supremas que aliados utilizarem contra um inimigo com Fardo, os aliados <orangeStrong>recuperarão 1 Ponto de Perícia</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Decreto dos Três Senhores, Todos Devem Obedecer",
-        "fullDesc": "Aumenta a VEL de um aliado-alvo em <orangeStrong>{{3}}%</orangeStrong> da VEL de Hanya e aumenta o ATQ do mesmo aliado-alvo em <orangeStrong>{{1}}%</orangeStrong> por {{2}} rodada(s).",
+        "fullDesc": "Aumenta a VEL de um aliado-alvo em <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> da VEL de Hanya e aumenta o ATQ do mesmo aliado-alvo em <orangeStrong>{{1, percent}}%</orangeStrong> por {{2}} rodada(s).",
         "shortDesc": "Aumenta a <orangeStrong>VEL e o ATQ</orangeStrong> de um aliado."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Consignação",
-        "fullDesc": "Aliados que ativarem o efeito de recuperação de Pontos de Perícia de Fardo têm o ATQ aumentado em {{1}}% por {{2}} rodada(s).",
+        "fullDesc": "Aliados que ativarem o efeito de recuperação de Pontos de Perícia de Fardo têm o ATQ aumentado em {{1, percent}}% por {{2}} rodada(s).",
         "shortDesc": ""
       }
     },
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Um Coração",
-      "desc": "Quando um aliado com o efeito da Perícia Suprema de Hanya derrotar um inimigo, a ação de Hanya é Avançada Adiante em {{1}}%. Esse efeito só pode ser ativado {{2}} vez(es) por rodada."
+      "desc": "Quando um aliado com o efeito da Perícia Suprema de Hanya derrotar um inimigo, a ação de Hanya é Avançada Adiante em {{1, percent}}%. Esse efeito só pode ser ativado {{2}} vez(es) por rodada."
     },
     "2": {
       "name": "Duas Visualizações",
-      "desc": "Após usar a Perícia, a VEL deste personagem aumenta em {{1}}% por {{2}} rodada(s)."
+      "desc": "Após usar a Perícia, a VEL deste personagem aumenta em {{1, percent}}% por {{2}} rodada(s)."
     },
     "3": {
       "name": "Três Tentações",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Seis Reverências",
-      "desc": "Aumenta o efeito de Bônus de Dano do Talento em um adicional de {{1}}%."
+      "desc": "Aumenta o efeito de Bônus de Dano do Talento em um adicional de {{1, percent}}%."
     }
   }
 }

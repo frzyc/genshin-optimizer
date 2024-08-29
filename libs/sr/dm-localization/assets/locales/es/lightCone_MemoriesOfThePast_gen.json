@@ -2,6 +2,6 @@
   "name": "Imagen en el recuerdo",
   "passive": {
     "name": "Foto vieja",
-    "description": "El efecto de Ruptura del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Después de atacar, el portador recupera <orangeStrong>{{2}}</orangeStrong> pts. de energía adicionales. Este efecto solo se puede activar una vez por turno."
+    "description": "El efecto de Ruptura del portador aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong>. Después de atacar, el portador recupera <orangeStrong>{{2}}</orangeStrong> pts. de energía adicionales. Este efecto solo se puede activar una vez por turno."
   }
 }

@@ -2,6 +2,6 @@
   "name": "Du Hành Trên Biển Sao",
   "passive": {
     "name": "Săn Đuổi",
-    "description": "Khiến Tỷ Lệ Bạo Kích của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>, Tỷ Lệ Bạo Kích mà người trang bị gây cho kẻ địch có phần trăm HP từ {{2}}% trở xuống sẽ tăng thêm <orangeStrong>{{3}}%</orangeStrong>. Sau khi người trang bị tiêu diệt kẻ địch, Tấn Công tăng <orangeStrong>{{4}}%</orangeStrong>, duy trì {{5}} hiệp."
+    "description": "Khiến Tỷ Lệ Bạo Kích của người trang bị tăng <orangeStrong>{{1, percent}}%</orangeStrong>, Tỷ Lệ Bạo Kích mà người trang bị gây cho kẻ địch có phần trăm HP từ {{2, percent}}% trở xuống sẽ tăng thêm <orangeStrong>{{3, percent}}%</orangeStrong>. Sau khi người trang bị tiêu diệt kẻ địch, Tấn Công tăng <orangeStrong>{{4, percent}}%</orangeStrong>, duy trì {{5}} hiệp."
   }
 }

@@ -2,6 +2,6 @@
   "name": "Cuộc Chiến Chưa Nguôi",
   "passive": {
     "name": "Người Thừa Kế",
-    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> hiệu suất hồi Năng Lượng của người trang bị, đồng thời hồi 1 điểm Chiến Kỹ khi thi triển Tuyệt Kỹ lên mục tiêu phe ta. Mỗi khi thi triển 2 lần Tuyệt Kỹ sẽ kích hoạt hiệu ứng này 1 lần. Sau khi người trang bị thi triển Chiến Kỹ sẽ khiến sát thương gây ra bởi mục tiêu khác của phe ta trong lần hành động tiếp theo tăng <orangeStrong>{{2}}%</orangeStrong>, duy trì {{3}} hiệp."
+    "description": "Tăng <orangeStrong>{{1, percent}}%</orangeStrong> hiệu suất hồi Năng Lượng của người trang bị, đồng thời hồi 1 điểm Chiến Kỹ khi thi triển Tuyệt Kỹ lên mục tiêu phe ta. Mỗi khi thi triển 2 lần Tuyệt Kỹ sẽ kích hoạt hiệu ứng này 1 lần. Sau khi người trang bị thi triển Chiến Kỹ sẽ khiến sát thương gây ra bởi mục tiêu khác của phe ta trong lần hành động tiếp theo tăng <orangeStrong>{{2, percent}}%</orangeStrong>, duy trì {{3}} hiệp."
   }
 }

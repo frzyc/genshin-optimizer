@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Tras la amabilidad",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Natasha como Daño Físico a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Natasha como Daño Físico a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Amor, curación y decisiones",
-        "fullDesc": "Cura inmediatamente a un aliado con una cantidad de PV equivalente al <orangeStrong>{{1}}%</orangeStrong> de los PV máx. de Natasha + <orangeStrong>{{4}}</orangeStrong>. Al comienzo de los siguientes {{3}} turnos, ese mismo aliado regenera una cantidad de PV equivalente al <orangeStrong>{{2}}%</orangeStrong> de los PV máx. de Natasha + <orangeStrong>{{5}}</orangeStrong>.",
+        "fullDesc": "Cura inmediatamente a un aliado con una cantidad de PV equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Natasha + <orangeStrong>{{4}}</orangeStrong>. Al comienzo de los siguientes {{3}} turnos, ese mismo aliado regenera una cantidad de PV equivalente al <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Natasha + <orangeStrong>{{5}}</orangeStrong>.",
         "shortDesc": "<orangeStrong>Regenera PV</orangeStrong> a un aliado y lo <orangeStrong>sana continuamente</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Don del renacimiento",
-        "fullDesc": "Cura inmediatamente a todos los aliados con una cantidad de PV equivalente al <orangeStrong>{{1}}%</orangeStrong> de los PV máx. de Natasha + <orangeStrong>{{2}}</orangeStrong>.",
+        "fullDesc": "Cura inmediatamente a todos los aliados con una cantidad de PV equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Natasha + <orangeStrong>{{2}}</orangeStrong>.",
         "shortDesc": "<orangeStrong>Regenera los PV</orangeStrong> de todos los aliados."
       }
     },
     "technique": {
       "0": {
         "name": "Investigación sobre hipnosis",
-        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{4}}% del ATQ de Natasha como Daño Físico a un enemigo al azar. Además, cada enemigo tiene una <u>probabilidad base</u> del {{1}}% de ser afectado por Debilitación.\\nEl daño que infligen los enemigos debilitados se reduce en un {{2}}% durante {{3}} turno.",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{4, percent}}% del ATQ de Natasha como Daño Físico a un enemigo al azar. Además, cada enemigo tiene una <u>probabilidad base</u> del {{1, percent}}% de ser afectado por Debilitación.\\nEl daño que infligen los enemigos debilitados se reduce en un {{2, percent}}% durante {{3}} turno.",
         "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de Daño Físico a un enemigo al azar. Además, cada enemigo tiene una gran probabilidad de ser afectado por Debilitación."
       }
     },
@@ -46,7 +46,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Sanadora",
-        "fullDesc": "La curación realizada por Natasha aumenta en un {{1}}%.",
+        "fullDesc": "La curación realizada por Natasha aumenta en un {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Experta en farmacología",
-      "desc": "Después de recibir un ataque, si su porcentaje de PV es igual o inferior al {{1}}%, Natasha se cura a sí misma una vez por el {{2}}% de sus PV máx. + {{3}}. Este efecto solo se puede activar una vez en cada batalla."
+      "desc": "Después de recibir un ataque, si su porcentaje de PV es igual o inferior al {{1, percent}}%, Natasha se cura a sí misma una vez por el {{2, percent}}% de sus PV máx. + {{3}}. Este efecto solo se puede activar una vez en cada batalla."
     },
     "2": {
       "name": "Estudio clínico",
-      "desc": "Al usar la habilidad definitiva, proporciona durante {{2}} turno curación continua a los aliados que tengan un porcentaje de PV igual o inferior al {{1}}%. Al comenzar su turno, estos aliados regeneran una cantidad de PV equivalente al {{3}}% de los PV máx. de Natasha + {{4}}."
+      "desc": "Al usar la habilidad definitiva, proporciona durante {{2}} turno curación continua a los aliados que tengan un porcentaje de PV igual o inferior al {{1, percent}}%. Al comenzar su turno, estos aliados regeneran una cantidad de PV equivalente al {{3, percent}}% de los PV máx. de Natasha + {{4}}."
     },
     "3": {
       "name": "El tratamiento correcto",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "La compasión de la doctora",
-      "desc": "Al usar el ATQ básico, Natasha inflige un Daño Físico extra equivalente al {{1}}% de sus PV máx."
+      "desc": "Al usar el ATQ básico, Natasha inflige un Daño Físico extra equivalente al {{1, percent}}% de sus PV máx."
     }
   }
 }

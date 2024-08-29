@@ -4,33 +4,33 @@
     "basic": {
       "0": {
         "name": "Hey! Verbrenn dich nicht!",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Hooks ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Hooks ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Hey! Erinnerst du dich an Hook?",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Hooks ANG zu und verursacht bei dem Ziel mit einer <u>Grundchance</u> von {{2}}% für {{3}} Rd. Brennen.\\nBrennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von <orangeStrong>{{4}}%</orangeStrong> von Hooks ANG.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Hooks ANG zu und verursacht bei dem Ziel mit einer <u>Grundchance</u> von {{2, percent}}% für {{3}} Rd. Brennen.\\nBrennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von Hooks ANG.",
         "shortDesc": "Fügt einem Gegner Feuer-SCH zu und verursacht dem Ziel mit hoher Chance Brennen."
       },
       "1": {
         "name": "Hey! Erinnerst du dich an Hook?",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Hooks ANG zu und verursacht beim Ziel mit einer <u>Grundchance</u> von {{2}}% für {{3}} Rd. Brennen. Fügt außerdem angrenzenden Zielen Feuer-SCH in Höhe von <orangeStrong>{{5}}%</orangeStrong> von Hooks ANG zu.\\nBrennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von <orangeStrong>{{4}}%</orangeStrong> von Hooks ANG.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Hooks ANG zu und verursacht beim Ziel mit einer <u>Grundchance</u> von {{2, percent}}% für {{3}} Rd. Brennen. Fügt außerdem angrenzenden Zielen Feuer-SCH in Höhe von <orangeStrong>{{5, percent}}%</orangeStrong> von Hooks ANG zu.\\nBrennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von Hooks ANG.",
         "shortDesc": "Fügt einem Gegner Feuer-SCH zu und verursacht beim Ziel mit hoher Chance Brennen. Angrenzende Ziele erleiden geringen Feuer-SCH."
       }
     },
     "ult": {
       "0": {
         "name": "Bumm! Hier kommt das Feuer!",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Hooks ANG zu.\\nVerstärkt nach dem Einsatz des Ultimates die nächste Fertigkeit, die dem anvisierten Gegner sowie angrenzenden Zielen SCH zufügt.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Hooks ANG zu.\\nVerstärkt nach dem Einsatz des Ultimates die nächste Fertigkeit, die dem anvisierten Gegner sowie angrenzenden Zielen SCH zufügt.",
         "shortDesc": "Fügt einem Gegner massiven Feuer-SCH zu und <orangeStrong>verstärkt Hooks nächste Fertigkeit</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Puh! Sieh sich einer das Chaos an!",
-        "fullDesc": "Greift den Gegner unmittelbar an. Nach Kampfeintritt fügt Hook einem zufälligen Gegner Feuer-SCH in Höhe von {{4}}% ihres ANG zu und hat eine <u>Grundchance</u> von {{1}}%, bei allen Gegnern für {{3}} Rd. Brennen zu verursachen.\\nBrennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von {{2}}% von Hooks ANG.",
+        "fullDesc": "Greift den Gegner unmittelbar an. Nach Kampfeintritt fügt Hook einem zufälligen Gegner Feuer-SCH in Höhe von {{4, percent}}% ihres ANG zu und hat eine <u>Grundchance</u> von {{1, percent}}%, bei allen Gegnern für {{3}} Rd. Brennen zu verursachen.\\nBrennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von {{2, percent}}% von Hooks ANG.",
         "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt einem zufälligen Gegner Feuer-SCH zu, mit einer hohen Chance, allen Gegnern Brennen zuzufügen."
       }
     },
@@ -44,21 +44,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Unschuld",
-        "fullDesc": "Stellt bei Auslösung des Talents LP in Höhe von {{1}}% von Hooks max. LP wieder her.",
+        "fullDesc": "Stellt bei Auslösung des Talents LP in Höhe von {{1, percent}}% von Hooks max. LP wieder her.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Naivität",
-        "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1}}%.",
+        "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Spiel mit dem Feuer",
-        "fullDesc": "Zieht nach dem Einsatz des Ultimates Hooks Aktion um {{2}}% vor und stellt zusätzlich {{1}} Pkt. Energie wieder her.",
+        "fullDesc": "Zieht nach dem Einsatz des Ultimates Hooks Aktion um {{2, percent}}% vor und stellt zusätzlich {{1}} Pkt. Energie wieder her.",
         "shortDesc": ""
       }
     }
@@ -66,7 +66,7 @@
   "ranks": {
     "1": {
       "name": "Früh zu Bett, früh aus den Federn",
-      "desc": "Die verstärkte Fertigkeit verursacht {{1}}% mehr SCH."
+      "desc": "Die verstärkte Fertigkeit verursacht {{1, percent}}% mehr SCH."
     },
     "2": {
       "name": "Glücklicher Bauch, glücklicher Körper",
@@ -78,7 +78,7 @@
     },
     "4": {
       "name": "Nichts wissen macht auch nichts",
-      "desc": "Bei Auslösung des Talents besteht eine Grundchance von {{1}}%, dass angrenzende Ziele des anvisierten Gegners von Brennen betroffen werden, das durch Fertigkeit verursacht wird."
+      "desc": "Bei Auslösung des Talents besteht eine Grundchance von {{1, percent}}%, dass angrenzende Ziele des anvisierten Gegners von Brennen betroffen werden, das durch Fertigkeit verursacht wird."
     },
     "5": {
       "name": "Für den Ruhm der Maulwürfe",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Immer bereit zum Schlagen und Treten",
-      "desc": "Hook fügt brennenden Gegnern {{1}}% mehr SCH zu."
+      "desc": "Hook fügt brennenden Gegnern {{1, percent}}% mehr SCH zu."
     }
   }
 }

@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Mind is Might",
-        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Dr. Ratio pada 1 musuh yang ditarget.",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Dr. Ratio pada 1 musuh yang ditarget.",
         "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh yang ditargetkan."
       }
     },
     "skill": {
       "0": {
         "name": "Intellectual Midwifery",
-        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Dr. Ratio pada 1 musuh yang ditarget.",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Dr. Ratio pada 1 musuh yang ditarget.",
         "shortDesc": "Mengakibatkan Imaginary DMG pada 1 musuh yang ditargetkan."
       }
     },
     "ult": {
       "0": {
         "name": "Syllogistic Paradox",
-        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Dr. Ratio pada satu musuh yang ditarget, dan menambahkan \"Wiseman's Folly\". Saat rekan tim Dr. Ratio menyerang target yang memiliki \"Wiseman's Folly\", Dr. Ratio akan melancarkan 1 kali <u>Serangan Lanjutan</u> dari Talent kepada target tersebut.\\nEfek \"Wiseman's Folly\" dapat dipicu paling banyak {{2}} kali dan hanya berlaku pada target Ultimate Dr. Ratio yang terbaru. Setelah melancarkan Ultimate Dr. Ratio, jumlah pemicuan efek ini akan direset.",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Dr. Ratio pada satu musuh yang ditarget, dan menambahkan \"Wiseman's Folly\". Saat rekan tim Dr. Ratio menyerang target yang memiliki \"Wiseman's Folly\", Dr. Ratio akan melancarkan 1 kali <u>Serangan Lanjutan</u> dari Talent kepada target tersebut.\\nEfek \"Wiseman's Folly\" dapat dipicu paling banyak {{2}} kali dan hanya berlaku pada target Ultimate Dr. Ratio yang terbaru. Setelah melancarkan Ultimate Dr. Ratio, jumlah pemicuan efek ini akan direset.",
         "shortDesc": "Mengakibatkan Imaginary DMG pada satu musuh yang ditarget dan menambahkan status \"Wiseman's Folly\" pada target. Saat rekan tim Dr. Ratio menyerang target berstatus \"Wiseman's Folly\", Dr. Ratio akan memicu 1 kali <orangeStrong><u>Serangan Lanjutan</u></orangeStrong> pada target tersebut."
       }
     },
     "technique": {
       "0": {
         "name": "Mold of Idolatry",
-        "fullDesc": "Setelah menggunakan Technique, akan menciptakan sebuah dimensi khusus yang akan memancing (Taunt) musuh di sekitar, berlangsung selama {{1}} detik. Setelah memasuki pertempuran dengan musuh di dalam dimensi khusus, ada {{2}}% <u>peluang dasar</u> untuk membuat SPD setiap target musuh berkurang {{3}}%, berlangsung selama {{4}} giliran. Hanya boleh ada 1 efek dimensi khusus ciptaan rekan tim dalam satu waktu.",
+        "fullDesc": "Setelah menggunakan Technique, akan menciptakan sebuah dimensi khusus yang akan memancing (Taunt) musuh di sekitar, berlangsung selama {{1}} detik. Setelah memasuki pertempuran dengan musuh di dalam dimensi khusus, ada {{2, percent}}% <u>peluang dasar</u> untuk membuat SPD setiap target musuh berkurang {{3, percent}}%, berlangsung selama {{4}} giliran. Hanya boleh ada 1 efek dimensi khusus ciptaan rekan tim dalam satu waktu.",
         "shortDesc": "Menciptakan sebuah dimensi khusus. Musuh di dalam dimensi khusus akan terpancing (terkena Taunt). Setelah memasuki pertempuran dengan musuh di dalam dimensi khusus, berpeluang besar untuk <orangeStrong>mengurangi SPD</orangeStrong> target musuh."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Summation",
-        "fullDesc": "Saat melancarkan Skill, untuk setiap 1 efek Debuff yang dimiliki target, CRIT Rate Dr. Ratio akan meningkat {{1}}%, dan CRIT DMG meningkat {{2}}%. Efek ini dapat ditumpuk hingga {{3}} lapis.",
+        "fullDesc": "Saat melancarkan Skill, untuk setiap 1 efek Debuff yang dimiliki target, CRIT Rate Dr. Ratio akan meningkat {{1, percent(fixed: 1)}}%, dan CRIT DMG meningkat {{2, percent}}%. Efek ini dapat ditumpuk hingga {{3}} lapis.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Inference",
-        "fullDesc": "Setelah melancarkan Skill untuk menyerang target musuh, ada {{1}}% Peluang Dasar untuk mengurangi {{2}}% Effect RES target musuh yang terkena serangan, berlangsung selama {{3}} giliran.",
+        "fullDesc": "Setelah melancarkan Skill untuk menyerang target musuh, ada {{1, percent}}% Peluang Dasar untuk mengurangi {{2, percent}}% Effect RES target musuh yang terkena serangan, berlangsung selama {{3}} giliran.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Deduction",
-        "fullDesc": "Saat mengakibatkan DMG, jika target memiliki {{1}} efek Debuff atau lebih, untuk setiap 1 efek Debuff yang dimiliki target, DMG yang diakibatkan Dr. Ratio pada target tersebut akan meningkat {{2}}%, maksimal meningkat hingga {{3}}%.",
+        "fullDesc": "Saat mengakibatkan DMG, jika target memiliki {{1}} efek Debuff atau lebih, untuk setiap 1 efek Debuff yang dimiliki target, DMG yang diakibatkan Dr. Ratio pada target tersebut akan meningkat {{2, percent}}%, maksimal meningkat hingga {{3, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "The Divine Is in the Details",
-      "desc": "Saat Serangan Lanjutan dari Talent miliknya menyerang target, untuk setiap 1 efek Debuff yang dimiliki target, akan mengakibatkan Imaginary DMG Tambahan pada target sebesar {{1}}% ATK Dr. Ratio. Dalam setiap Serangan Lanjutan miliknya, efek ini maksimal terpicu {{2}} kali."
+      "desc": "Saat Serangan Lanjutan dari Talent miliknya menyerang target, untuk setiap 1 efek Debuff yang dimiliki target, akan mengakibatkan Imaginary DMG Tambahan pada target sebesar {{1, percent}}% ATK Dr. Ratio. Dalam setiap Serangan Lanjutan miliknya, efek ini maksimal terpicu {{2}} kali."
     },
     "3": {
       "name": "Know Thyself",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Vincit Omnia Veritas",
-      "desc": "Efek terpicunya \"Wiseman's Folly\" bertambah ekstra {{1}} kali. DMG yang diakibatkan Serangan Lanjutan dari Talent meningkat {{2}}%."
+      "desc": "Efek terpicunya \"Wiseman's Folly\" bertambah ekstra {{1}} kali. DMG yang diakibatkan Serangan Lanjutan dari Talent meningkat {{2, percent}}%."
     }
   }
 }

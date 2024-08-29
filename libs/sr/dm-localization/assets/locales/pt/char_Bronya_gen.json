@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Munição de Ventos Fortes",
-        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Bronya a um único inimigo.",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Bronya a um único inimigo.",
         "shortDesc": "Causa Dano de Vento leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Redistribuição de Combate",
-        "fullDesc": "Dissipa uma <u>penalidade</u> de um único aliado, permite que ele aja imediatamente, e aumenta seu Dano em <orangeStrong>{{1}}%</orangeStrong> por {{3}} rodada(s).\\nQuando esta Perícia é usada na própria Bronya, ela não pode agir imediatamente novamente.",
+        "fullDesc": "Dissipa uma <u>penalidade</u> de um único aliado, permite que ele aja imediatamente, e aumenta seu Dano em <orangeStrong>{{1, percent}}%</orangeStrong> por {{3}} rodada(s).\\nQuando esta Perícia é usada na própria Bronya, ela não pode agir imediatamente novamente.",
         "shortDesc": "<orangeStrong>Remove</orangeStrong> 1 <orangeStrong><u>penalidade</u></orangeStrong> de um único aliado, <orangeStrong>aumenta o dano que ele causa</orangeStrong> e permite que ele <orangeStrong>aja imediatamente</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "A Marcha de Belobog",
-        "fullDesc": "Aumenta o ATQ de todos os aliados em <orangeStrong>{{1}}%</orangeStrong> e aumenta o Dano CRIT em <orangeStrong>{{2}}%</orangeStrong> do Dano CRIT de Bronya mais <orangeStrong>{{3}}%</orangeStrong> por {{4}} rodada(s).",
+        "fullDesc": "Aumenta o ATQ de todos os aliados em <orangeStrong>{{1, percent}}%</orangeStrong> e aumenta o Dano CRIT em <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> do Dano CRIT de Bronya mais <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> por {{4}} rodada(s).",
         "shortDesc": "Aumenta o <orangeStrong>ATQ</orangeStrong> e o <orangeStrong>Dano CRIT</orangeStrong> de todos os aliados"
       }
     },
     "technique": {
       "0": {
         "name": "Bandeira de Comando",
-        "fullDesc": "Após Bronya usar sua Técnica, no início da próxima batalha, o ATQ de todos os aliados aumenta em {{1}}% por {{2}} rodada(s).",
+        "fullDesc": "Após Bronya usar sua Técnica, no início da próxima batalha, o ATQ de todos os aliados aumenta em {{1, percent}}% por {{2}} rodada(s).",
         "shortDesc": "Depois que esta personagem usa a Técnica, aumenta o ATQ de todos os aliados no início da próxima batalha."
       }
     },
@@ -46,14 +46,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Campo de Batalha",
-        "fullDesc": "No início da batalha, aumenta a DEF de todos os aliados em {{2}}% por {{1}} rodada(s).",
+        "fullDesc": "No início da batalha, aumenta a DEF de todos os aliados em {{2, percent}}% por {{1}} rodada(s).",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Poder Militar",
-        "fullDesc": "Quando Bronya está no campo, todos os aliados causam {{1}}% a mais de Dano.",
+        "fullDesc": "Quando Bronya está no campo, todos os aliados causam {{1, percent}}% a mais de Dano.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Aprimore Sua Força",
-      "desc": "Ao usar a Perícia, há {{1}}% de chance fixa de recuperar 1 Ponto de Perícia. Este efeito tem recarga de 1 rodada."
+      "desc": "Ao usar a Perícia, há {{1, percent}}% de chance fixa de recuperar 1 Ponto de Perícia. Este efeito tem recarga de 1 rodada."
     },
     "2": {
       "name": "Marcha Rápida",
-      "desc": "Ao usar a Perícia, a VEL do aliado-alvo aumenta em {{1}}% depois de realizar a ação, e dura 1 rodada."
+      "desc": "Ao usar a Perícia, a VEL do aliado-alvo aumenta em {{1, percent}}% depois de realizar a ação, e dura 1 rodada."
     },
     "3": {
       "name": "Bombardeio",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Pegue de Surpresa",
-      "desc": "Após qualquer outro aliado usar um ATQ Básico em um inimigo-alvo com Fraqueza contra Vento, Bronya realiza 1 Ataque Extra imediatamente contra o alvo, causando Dano de Vento equivalente a {{1}}% do Dano ATQ Básico. Este efeito só pode ser ativado 1 vez por rodada."
+      "desc": "Após qualquer outro aliado usar um ATQ Básico em um inimigo-alvo com Fraqueza contra Vento, Bronya realiza 1 Ataque Extra imediatamente contra o alvo, causando Dano de Vento equivalente a {{1, percent}}% do Dano ATQ Básico. Este efeito só pode ser ativado 1 vez por rodada."
     },
     "5": {
       "name": "Incontrolável",

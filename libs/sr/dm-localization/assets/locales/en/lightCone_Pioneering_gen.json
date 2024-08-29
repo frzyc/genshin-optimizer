@@ -2,6 +2,6 @@
   "name": "Pioneering",
   "passive": {
     "name": "IPC",
-    "description": "When the wearer Breaks an enemy's Weakness, the wearer restores HP by <orangeStrong>{{1}}%</orangeStrong> of their Max HP."
+    "description": "When the wearer Breaks an enemy's Weakness, the wearer restores HP by <orangeStrong>{{1, percent}}%</orangeStrong> of their Max HP."
   }
 }

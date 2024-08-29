@@ -2,6 +2,6 @@
   "name": "Совместная гибель",
   "passive": {
     "name": "Легион",
-    "description": "Если текущее HP владельца ниже {{1}}%, то его крит. шанс повышается на <orangeStrong>{{2}}%</orangeStrong>."
+    "description": "Если текущее HP владельца ниже {{1, percent}}%, то его крит. шанс повышается на <orangeStrong>{{2, percent}}%</orangeStrong>."
   }
 }

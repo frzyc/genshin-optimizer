@@ -2,6 +2,6 @@
   "name": "On the Fall of an Aeon",
   "passive": {
     "name": "Moth To Flames",
-    "description": "Setiap kali pengguna melancarkan serangan, ATK dari pengguna akan meningkat <orangeStrong>{{1}}%</orangeStrong> selama pertempuran, efek tersebut dapat ditumpuk hingga {{2}} lapis. Ketika pengguna mengakibatkan Weakness Break pada target musuh, DMG yang diakibatkan pengguna akan meningkat <orangeStrong>{{3}}%</orangeStrong> selama {{4}} giliran."
+    "description": "Setiap kali pengguna melancarkan serangan, ATK dari pengguna akan meningkat <orangeStrong>{{1, percent}}%</orangeStrong> selama pertempuran, efek tersebut dapat ditumpuk hingga {{2}} lapis. Ketika pengguna mengakibatkan Weakness Break pada target musuh, DMG yang diakibatkan pengguna akan meningkat <orangeStrong>{{3, percent}}%</orangeStrong> selama {{4}} giliran."
   }
 }

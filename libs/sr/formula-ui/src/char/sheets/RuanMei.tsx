@@ -1,7 +1,8 @@
 import type { UISheet } from '@genshin-optimizer/pando/ui-sheet'
 import { characterAsset } from '@genshin-optimizer/sr/assets'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import { formulas } from '@genshin-optimizer/sr/formula'
+import { formulas, own } from '@genshin-optimizer/sr/formula'
+import { getInterpolateObject } from '@genshin-optimizer/sr/stats'
 import { trans } from '../../util'
 import type { TalentSheetElementKey } from '../consts'
 const key: CharacterKey = 'RuanMei'
@@ -11,7 +12,16 @@ const sheet: UISheet<TalentSheetElementKey> = {
     name: chg('abilities.basic.0.name'),
     img: characterAsset(key, 'basic_0'),
     documents: [
-      { type: 'text', text: chg(`abilities.basic.0.fullDesc`) },
+      {
+        type: 'text',
+        text: (calculator) => {
+          const basicLevel = calculator.compute(own.char.basic).val
+          return chg(
+            `abilities.basic.0.fullDesc`,
+            getInterpolateObject(key, 'basic', basicLevel)
+          )
+        },
+      },
       {
         type: 'fields',
         fields: [

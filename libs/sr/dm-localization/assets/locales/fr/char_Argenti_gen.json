@@ -4,33 +4,33 @@
     "basic": {
       "0": {
         "name": "Fragrance fugace",
-        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ d'Argenti à une cible ennemie unique.",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ d'Argenti à une cible ennemie unique.",
         "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Épines de la justice",
-        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ d'Argenti à tous les ennemis.",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ d'Argenti à tous les ennemis.",
         "shortDesc": "Inflige des DGT physiques mineurs à tous les ennemis."
       }
     },
     "ult": {
       "0": {
         "name": "Beauté infinie du jardin des roses",
-        "fullDesc": "Consomme <orangeStrong>{{2}}</orangeStrong> points d'énergie et inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ d'Argenti à tous les ennemis.",
+        "fullDesc": "Consomme <orangeStrong>{{2}}</orangeStrong> points d'énergie et inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ d'Argenti à tous les ennemis.",
         "shortDesc": "Consomme <orangeStrong>{{2}}</orangeStrong> points d'énergie et inflige des DGT physiques à tous les ennemis."
       },
       "1": {
         "name": "En mon propre jardin",
-        "fullDesc": "Consomme {{4}} points d'énergie, inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ d'Argenti à tous les ennemis et inflige des DGT {{2}} fois supplémentaires à un ennemi aléatoire, infligeant à chaque fois des DGT physiques équivalents à <orangeStrong>{{3}}%</orangeStrong> de l'ATQ d'Argenti.",
+        "fullDesc": "Consomme {{4}} points d'énergie, inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ d'Argenti à tous les ennemis et inflige des DGT {{2}} fois supplémentaires à un ennemi aléatoire, infligeant à chaque fois des DGT physiques équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> de l'ATQ d'Argenti.",
         "shortDesc": "Consomme <orangeStrong>{{4}}</orangeStrong> points d'énergie et inflige des DGT physiques à tous les ennemis, ainsi que des DGT physiques mineurs à une cible aléatoire, pour un total de 6 rebonds."
       }
     },
     "technique": {
       "0": {
         "name": "Manifeste de la vertu",
-        "fullDesc": "Après utilisation de la technique, les ennemis situés dans une zone définie subissent Hébété pendant {{1}} secondes. Les ennemis hébétés ne peuvent pas attaquer activement votre équipe.\\nEngager le combat en attaquant un ennemi hébété inflige des DGT équivalents à {{2}}% de l'ATQ d'Argenti à tous les ennemis et régénère son énergie de {{3}} points.",
+        "fullDesc": "Après utilisation de la technique, les ennemis situés dans une zone définie subissent Hébété pendant {{1}} secondes. Les ennemis hébétés ne peuvent pas attaquer activement votre équipe.\\nEngager le combat en attaquant un ennemi hébété inflige des DGT équivalents à {{2, percent}}% de l'ATQ d'Argenti à tous les ennemis et régénère son énergie de {{3}} points.",
         "shortDesc": "Inflige Hébété à tous les ennemis dans une zone définie. Lorsque vous engagez le combat contre des ennemis hébétés, vous leur infligez des DGT physiques mineurs et régénérez l'énergie d'Argenti."
       }
     },
@@ -58,7 +58,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Courage",
-        "fullDesc": "Inflige {{2}}% de DGT supplémentaires aux ennemis dont le pourcentage de PV est inférieur ou égal à {{1}}%.",
+        "fullDesc": "Inflige {{2, percent}}% de DGT supplémentaires aux ennemis dont le pourcentage de PV est inférieur ou égal à {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Imperfection au royaume de l'esthétisme",
-      "desc": "Chaque cumul d'Ascension augmente les DGT critiques de {{1}}%."
+      "desc": "Chaque cumul d'Ascension augmente les DGT critiques de {{1, percent}}%."
     },
     "2": {
       "name": "Humilité de l'agate",
-      "desc": "L'ATQ du personnage augmente de {{2}}% pendant {{3}} tour lorsque vous utilisez l'ultime avec {{1}} ennemis ou plus sur le champ de bataille."
+      "desc": "L'ATQ du personnage augmente de {{2, percent}}% pendant {{3}} tour lorsque vous utilisez l'ultime avec {{1}} ennemis ou plus sur le champ de bataille."
     },
     "3": {
       "name": "Gloire du chemin d'épines",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Resplendissance",
-      "desc": "L'ultime ignore {{1}}% de la DÉF des cibles ennemies."
+      "desc": "L'ultime ignore {{1, percent}}% de la DÉF des cibles ennemies."
     }
   }
 }

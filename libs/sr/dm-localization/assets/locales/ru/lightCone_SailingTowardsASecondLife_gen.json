@@ -2,6 +2,6 @@
   "name": "Отплытие ко второй жизни",
   "passive": {
     "name": "Бурные воды",
-    "description": "Эффект пробития владельца повышается на <orangeStrong>{{1}}%</orangeStrong>. Наносимый владельцем урон пробития игнорирует <orangeStrong>{{3}}%</orangeStrong> защиты цели. Если эффект пробития владельца в бою выше или равен {{2}}%, то его скорость повышается на <orangeStrong>{{4}}%</orangeStrong>."
+    "description": "Эффект пробития владельца повышается на <orangeStrong>{{1, percent}}%</orangeStrong>. Наносимый владельцем урон пробития игнорирует <orangeStrong>{{3, percent}}%</orangeStrong> защиты цели. Если эффект пробития владельца в бою выше или равен {{2, percent}}%, то его скорость повышается на <orangeStrong>{{4, percent}}%</orangeStrong>."
   }
 }

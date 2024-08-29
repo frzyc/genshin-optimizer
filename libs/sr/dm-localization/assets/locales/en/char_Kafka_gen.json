@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Midnight Tumult",
-        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Kafka's ATK to a single enemy.",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Kafka's ATK to a single enemy.",
         "shortDesc": "Deals minor Lightning DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Caressing Moonlight",
-        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Kafka's ATK to a target enemy and Lightning DMG equal to <orangeStrong>{{3}}%</orangeStrong> of Kafka's ATK to enemies adjacent to it.\\nIf the target enemy is currently receiving DoT, all DoTs currently placed on that enemy immediately produce DMG equal to <orangeStrong>{{2}}%</orangeStrong> of their original DMG.",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Kafka's ATK to a target enemy and Lightning DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Kafka's ATK to enemies adjacent to it.\\nIf the target enemy is currently receiving DoT, all DoTs currently placed on that enemy immediately produce DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of their original DMG.",
         "shortDesc": "Deals Lightning DMG to a single enemy and minor Lightning DMG to adjacent targets.\\nIf the primary target is currently afflicted with a DoT effect, the DoT <orangeStrong>deals DMG 1 extra time</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Twilight Trill",
-        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Kafka's ATK to all enemies, with a {{2}}% <u>base chance</u> for enemies hit to become Shocked and immediately take DMG from their current Shock state, equal to <orangeStrong>{{5}}%</orangeStrong> of its original DMG. Shock lasts for {{3}} turn(s).\\nWhile Shocked, enemies receive Lightning DoT equal to <orangeStrong>{{4}}%</orangeStrong> of Kafka's ATK at the beginning of each turn.",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Kafka's ATK to all enemies, with a {{2, percent}}% <u>base chance</u> for enemies hit to become Shocked and immediately take DMG from their current Shock state, equal to <orangeStrong>{{5, percent}}%</orangeStrong> of its original DMG. Shock lasts for {{3}} turn(s).\\nWhile Shocked, enemies receive Lightning DoT equal to <orangeStrong>{{4, percent}}%</orangeStrong> of Kafka's ATK at the beginning of each turn.",
         "shortDesc": "Deals minor Lightning DMG to all enemies, with a high chance of <orangeStrong>Shocking them</orangeStrong>.\\nIf the enemies are currently Shocked, the Shock status <orangeStrong>deals DMG 1 extra time</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Mercy Is Not Forgiveness",
-        "fullDesc": "Immediately attacks all enemies within a set range. After entering battle, deals Lightning DMG equal to {{3}}% of Kafka's ATK to all enemies, with a {{1}}% <u>base chance</u> to inflict Shock equivalent to that applied by her Ultimate on every enemy target for {{2}} turn(s).",
+        "fullDesc": "Immediately attacks all enemies within a set range. After entering battle, deals Lightning DMG equal to {{3, percent}}% of Kafka's ATK to all enemies, with a {{1, percent}}% <u>base chance</u> to inflict Shock equivalent to that applied by her Ultimate on every enemy target for {{2}} turn(s).",
         "shortDesc": "Attacks all enemies within range. After entering battle, deals minor Lightning DMG to all enemies, with a high chance to <orangeStrong>Shock</orangeStrong> them."
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Thorns",
-        "fullDesc": "The base chance for target enemies to get Shocked by the Ultimate, the Technique, or the Talent-triggered follow-up attack increases by {{1}}%.",
+        "fullDesc": "The base chance for target enemies to get Shocked by the Ultimate, the Technique, or the Talent-triggered follow-up attack increases by {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Da Capo",
-      "desc": "When the Talent triggers a follow-up attack, there is a {{1}}% base chance to increase the DoT received by the target by {{2}}% for {{3}} turn(s)."
+      "desc": "When the Talent triggers a follow-up attack, there is a {{1, percent}}% base chance to increase the DoT received by the target by {{2, percent}}% for {{3}} turn(s)."
     },
     "2": {
       "name": "Fortississimo",
-      "desc": "While Kafka is on the field, DoT dealt by all allies increases by {{1}}%."
+      "desc": "While Kafka is on the field, DoT dealt by all allies increases by {{1, percent}}%."
     },
     "3": {
       "name": "Capriccio",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Leggiero",
-      "desc": "The Shock inflicted on the enemy target by the Ultimate, the Technique, or the Talent-triggered follow-up attack has a DMG multiplier increase of {{1}}% and lasts {{2}} turn(s) longer."
+      "desc": "The Shock inflicted on the enemy target by the Ultimate, the Technique, or the Talent-triggered follow-up attack has a DMG multiplier increase of {{1, percent}}% and lasts {{2}} turn(s) longer."
     }
   }
 }

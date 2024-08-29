@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "바람의 탄환",
-        "fullDesc": "지정된 단일 적에게 브로냐 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 바람 속성 피해를 가한다",
+        "fullDesc": "지정된 단일 적에게 브로냐 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 바람 속성 피해를 가한다",
         "shortDesc": "단일 적에게 소량의 바람 속성 피해를 가한다"
       }
     },
     "skill": {
       "0": {
         "name": "작전 재배치",
-        "fullDesc": "지정된 단일 아군의 <u>디버프 효과</u>를 1개 해제하며, 해당 목표는 즉시 행동하고, 가하는 피해가 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 지속 시간: {{3}}턴.\\n자신에게 해당 스킬을 발동하면 즉시 행동 효과는 발동되지 않는다",
+        "fullDesc": "지정된 단일 아군의 <u>디버프 효과</u>를 1개 해제하며, 해당 목표는 즉시 행동하고, 가하는 피해가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 지속 시간: {{3}}턴.\\n자신에게 해당 스킬을 발동하면 즉시 행동 효과는 발동되지 않는다",
         "shortDesc": "단일 아군의 <orangeStrong><u>디버프 효과</u></orangeStrong>를 1개 <orangeStrong>해제</orangeStrong>하고, 해당 아군이 <orangeStrong>가하는 피해가 증가</orangeStrong>하며 <orangeStrong>즉시 행동</orangeStrong>한다"
       }
     },
     "ult": {
       "0": {
         "name": "벨로보그 행진곡",
-        "fullDesc": "모든 아군의 공격력이 <orangeStrong>{{1}}%</orangeStrong> 증가하고, 동시에 브로냐 치명타 피해 <orangeStrong>{{2}}%</orangeStrong>+<orangeStrong>{{3}}%</orangeStrong>만큼의 치명타 피해가 증가한다. 지속 시간: {{4}}턴",
+        "fullDesc": "모든 아군의 공격력이 <orangeStrong>{{1, percent}}%</orangeStrong> 증가하고, 동시에 브로냐 치명타 피해 <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>만큼의 치명타 피해가 증가한다. 지속 시간: {{4}}턴",
         "shortDesc": "모든 아군의 <orangeStrong>공격력이 증가</orangeStrong>하고 <orangeStrong>치명타 피해가 증가</orangeStrong>한다"
       }
     },
     "technique": {
       "0": {
         "name": "깃발 아래",
-        "fullDesc": "비술 발동 후 다음 전투 시작 시 모든 아군의 공격력이 {{1}}% 증가한다. 지속 시간: {{2}}턴",
+        "fullDesc": "비술 발동 후 다음 전투 시작 시 모든 아군의 공격력이 {{1, percent}}% 증가한다. 지속 시간: {{2}}턴",
         "shortDesc": "비술을 발동하고 다음 전투 시작 시 모든 아군의 공격력이 증가한다"
       }
     },
@@ -46,14 +46,14 @@
     "bonusAbility2": {
       "0": {
         "name": "진영",
-        "fullDesc": "전투 시작 시 모든 아군의 방어력이 {{2}}% 증가한다. 지속 시간: {{1}}턴",
+        "fullDesc": "전투 시작 시 모든 아군의 방어력이 {{2, percent}}% 증가한다. 지속 시간: {{1}}턴",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "군세",
-        "fullDesc": "브로냐가 필드에 있으면 모든 아군이 가하는 피해가 {{1}}% 증가한다",
+        "fullDesc": "브로냐가 필드에 있으면 모든 아군이 가하는 피해가 {{1, percent}}% 증가한다",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "정신 무장, 전투력 비축",
-      "desc": "전투 스킬 발동 시 {{1}}% 고정 확률로 전투 스킬 포인트를 1pt 회복하며, 해당 효과의 재발동 대기시간은 1턴이다"
+      "desc": "전투 스킬 발동 시 {{1, percent}}% 고정 확률로 전투 스킬 포인트를 1pt 회복하며, 해당 효과의 재발동 대기시간은 1턴이다"
     },
     "2": {
       "name": "빠른 행군",
-      "desc": "전투 스킬 발동 시 지정된 아군은 행동 후 속도가 {{1}}% 증가한다. 지속 시간: 1턴"
+      "desc": "전투 스킬 발동 시 지정된 아군은 행동 후 속도가 {{1, percent}}% 증가한다. 지속 시간: 1턴"
     },
     "3": {
       "name": "포격 개시",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "허점 공격",
-      "desc": "다른 아군 캐릭터가 바람 속성 약점을 보유한 적에게 일반 공격을 발동하면, 브로냐는 즉시 추가 공격을 1회 발동하여 해당 목표에게 일반 공격 피해 {{1}}%만큼의 바람 속성 피해를 가한다. 해당 효과는 턴마다 1회 발동할 수 있다"
+      "desc": "다른 아군 캐릭터가 바람 속성 약점을 보유한 적에게 일반 공격을 발동하면, 브로냐는 즉시 추가 공격을 1회 발동하여 해당 목표에게 일반 공격 피해 {{1, percent}}%만큼의 바람 속성 피해를 가한다. 해당 효과는 턴마다 1회 발동할 수 있다"
     },
     "5": {
       "name": "승승장구",

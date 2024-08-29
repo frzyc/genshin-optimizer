@@ -1,7 +1,7 @@
 {
   "setName": "Prisoner in Deep Confinement",
   "setEffects": {
-    "2": "Increases ATK by {{1}}%.",
-    "4": "For every DoT the enemy target is afflicted with, the wearer will ignore {{1}}% of its DEF when dealing DMG to it. This effect is valid for a max of {{2}} DoTs."
+    "2": "Increases ATK by {{1, percent}}%.",
+    "4": "For every DoT the enemy target is afflicted with, the wearer will ignore {{1, percent}}% of its DEF when dealing DMG to it. This effect is valid for a max of {{2}} DoTs."
   }
 }

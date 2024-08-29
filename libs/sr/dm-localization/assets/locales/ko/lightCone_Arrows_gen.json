@@ -2,6 +2,6 @@
   "name": "화살촉",
   "passive": {
     "name": "위기",
-    "description": "전투 시작 시 장착한 캐릭터의 치명타 확률이 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 지속 시간: {{2}}턴"
+    "description": "전투 시작 시 장착한 캐릭터의 치명타 확률이 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 지속 시간: {{2}}턴"
   }
 }

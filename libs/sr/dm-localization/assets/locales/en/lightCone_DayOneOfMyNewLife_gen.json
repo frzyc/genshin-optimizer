@@ -2,6 +2,6 @@
   "name": "Day One of My New Life",
   "passive": {
     "name": "At This Very Moment",
-    "description": "Increases the wearer's DEF by <orangeStrong>{{1}}%</orangeStrong>. After entering battle, increases All-Type RES of all allies by <orangeStrong>{{2}}%</orangeStrong>. Abilities of the same type cannot stack."
+    "description": "Increases the wearer's DEF by <orangeStrong>{{1, percent}}%</orangeStrong>. After entering battle, increases All-Type RES of all allies by <orangeStrong>{{2, percent}}%</orangeStrong>. Abilities of the same type cannot stack."
   }
 }

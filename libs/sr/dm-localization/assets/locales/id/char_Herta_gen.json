@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "What Are You Looking At?",
-        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Herta pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Herta pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "One-Time Offer",
-        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Herta pada seluruh musuh. Jika persentase HP target musuh saat ini lebih dari atau sama dengan {{2}}%, maka DMG yang diakibatkan pada target akan meningkat {{3}}%.",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Herta pada seluruh musuh. Jika persentase HP target musuh saat ini lebih dari atau sama dengan {{2, percent}}%, maka DMG yang diakibatkan pada target akan meningkat {{3, percent}}%.",
         "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada seluruh musuh, DMG yang diakibatkan akan lebih tinggi pada target yang persentase HP-nya tinggi."
       }
     },
     "ult": {
       "0": {
         "name": "It's Magic, I Added Some Magic",
-        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Herta pada seluruh musuh.",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Herta pada seluruh musuh.",
         "shortDesc": "Mengakibatkan Ice DMG pada seluruh musuh."
       }
     },
     "technique": {
       "0": {
         "name": "It Can Still Be Optimized",
-        "fullDesc": "Setelah menggunakan Technique, meningkatkan {{1}}% ATK Herta selama {{2}} giliran pada saat pertempuran selanjutnya dimulai.",
+        "fullDesc": "Setelah menggunakan Technique, meningkatkan {{1, percent}}% ATK Herta selama {{2}} giliran pada saat pertempuran selanjutnya dimulai.",
         "shortDesc": ""
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Efficiency",
-        "fullDesc": "Saat melancarkan Skill, efek peningkatan DMG pada target akan bertambah {{1}}%.",
+        "fullDesc": "Saat melancarkan Skill, efek peningkatan DMG pada target akan bertambah {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Puppet",
-        "fullDesc": "Meningkatkan {{1}}% peluang untuk menahan Crowd Control Debuff.",
+        "fullDesc": "Meningkatkan {{1, percent}}% peluang untuk menahan Crowd Control Debuff.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Icing",
-        "fullDesc": "Saat melancarkan Ultimate, meningkatkan {{1}}% DMG pada musuh dengan status Frozen.",
+        "fullDesc": "Saat melancarkan Ultimate, meningkatkan {{1, percent}}% DMG pada musuh dengan status Frozen.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Kick You When You're Down",
-      "desc": "Saat melancarkan Basic Attack, jika persentase HP musuh yang ditarget kurang dari atau sama dengan {{1}}%, maka akan mengakibatkan Ice DMG tambahan sebesar {{2}}% ATK Herta."
+      "desc": "Saat melancarkan Basic Attack, jika persentase HP musuh yang ditarget kurang dari atau sama dengan {{1, percent}}%, maka akan mengakibatkan Ice DMG tambahan sebesar {{2, percent}}% ATK Herta."
     },
     "2": {
       "name": "Keep the Ball Rolling",
-      "desc": "Setiap kali Talent terpicu, CRIT Rate Herta akan meningkat {{1}}%, efek ini dapat ditumpuk hingga {{2}} lapis."
+      "desc": "Setiap kali Talent terpicu, CRIT Rate Herta akan meningkat {{1, percent}}%, efek ini dapat ditumpuk hingga {{2}} lapis."
     },
     "3": {
       "name": "That's the Kind of Girl I Am",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Hit Where It Hurts",
-      "desc": "Meningkatkan {{1}}% DMG yang diakibatkan saat Talent terpicu."
+      "desc": "Meningkatkan {{1, percent}}% DMG yang diakibatkan saat Talent terpicu."
     },
     "5": {
       "name": "Cuss Big or Cuss Nothing",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "No One Can Betray Me",
-      "desc": "Setelah melancarkan Ultimate, meningkatkan {{1}}% ATK selama {{2}} giliran."
+      "desc": "Setelah melancarkan Ultimate, meningkatkan {{1, percent}}% ATK selama {{2}} giliran."
     }
   }
 }

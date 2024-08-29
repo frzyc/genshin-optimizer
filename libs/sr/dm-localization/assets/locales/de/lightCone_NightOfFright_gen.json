@@ -2,6 +2,6 @@
   "name": "Nacht der Angst",
   "passive": {
     "name": "Atme tief durch",
-    "description": "Erhöht die Energie-Wiederherstellungsrate des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Wenn ein Verbündeter seinen Ultimate einsetzt, stellt der Träger bei einem Verbündeten mit dem niedrigsten LP-Prozentsatz LP in Höhe von <orangeStrong>{{2}}%</orangeStrong> seiner max. LP wieder her. Wenn der Träger Verbündete heilt, wird der ANG des geheilten Verbündeten um <orangeStrong>{{3}}%</orangeStrong> erhöht. Dieser Effekt ist bis zu {{4}}-fach stapelbar und hält {{5}} Rd. an."
+    "description": "Erhöht die Energie-Wiederherstellungsrate des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Wenn ein Verbündeter seinen Ultimate einsetzt, stellt der Träger bei einem Verbündeten mit dem niedrigsten LP-Prozentsatz LP in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> seiner max. LP wieder her. Wenn der Träger Verbündete heilt, wird der ANG des geheilten Verbündeten um <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> erhöht. Dieser Effekt ist bis zu {{4}}-fach stapelbar und hält {{5}} Rd. an."
   }
 }

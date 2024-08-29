@@ -4,33 +4,33 @@
     "basic": {
       "0": {
         "name": "Fleeting Fragrance",
-        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Argenti's ATK to a single target enemy.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Argenti's ATK to a single target enemy.",
         "shortDesc": "Deals minor Physical DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Justice, Hereby Blooms",
-        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Argenti's ATK to all enemies.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Argenti's ATK to all enemies.",
         "shortDesc": "Deals minor Physical DMG to all enemies."
       }
     },
     "ult": {
       "0": {
         "name": "For In This Garden, Supreme Beauty Bestows",
-        "fullDesc": "Consumes {{2}} Energy and deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Argenti's ATK to all enemies.",
+        "fullDesc": "Consumes {{2}} Energy and deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Argenti's ATK to all enemies.",
         "shortDesc": "Consumes <orangeStrong>{{2}}</orangeStrong> Energy and deals Physical DMG to all enemies."
       },
       "1": {
         "name": "Merit Bestowed in \"My\" Garden",
-        "fullDesc": "Consumes {{4}} Energy and deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Argenti's ATK to all enemies. And further deals DMG for {{2}} extra time(s), with each time dealing Physical DMG equal to <orangeStrong>{{3}}%</orangeStrong> of Argenti's ATK to a random enemy.",
+        "fullDesc": "Consumes {{4}} Energy and deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Argenti's ATK to all enemies. And further deals DMG for {{2}} extra time(s), with each time dealing Physical DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Argenti's ATK to a random enemy.",
         "shortDesc": "Consumes <orangeStrong>{{4}}</orangeStrong> Energy and deals Physical DMG to all enemies and additionally deals minor Physical DMG to random single enemy targets for 6 Bounces."
       }
     },
     "technique": {
       "0": {
         "name": "Manifesto of Purest Virtue",
-        "fullDesc": "After using the Technique, enemies in a set area are inflicted with Daze for {{1}} second(s). Dazed enemies will not actively attack the team.\\nWhen attacking a Dazed enemy to enter combat, deals Physical DMG to all enemies equal to {{2}}% of Argenti's ATK and regenerates his Energy by {{3}}.",
+        "fullDesc": "After using the Technique, enemies in a set area are inflicted with Daze for {{1}} second(s). Dazed enemies will not actively attack the team.\\nWhen attacking a Dazed enemy to enter combat, deals Physical DMG to all enemies equal to {{2, percent}}% of Argenti's ATK and regenerates his Energy by {{3}}.",
         "shortDesc": "Inflicts Daze on all enemies within a set area. When attacking a Dazed enemy to enter combat, deals minor Physical DMG to all enemies and regenerates energy for Argenti."
       }
     },
@@ -58,7 +58,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Courage",
-        "fullDesc": "Deals {{2}}% more DMG to enemies whose HP percentage is {{1}}% or less.",
+        "fullDesc": "Deals {{2, percent}}% more DMG to enemies whose HP percentage is {{1, percent}}% or less.",
         "shortDesc": ""
       }
     }
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "A Lacuna in Kingdom of Aesthetics",
-      "desc": "Each stack of Apotheosis additionally increases CRIT DMG by {{1}}%."
+      "desc": "Each stack of Apotheosis additionally increases CRIT DMG by {{1, percent}}%."
     },
     "2": {
       "name": "Agate's Humility",
-      "desc": "If the number of enemies on the field equals to {{1}} or more when the Ultimate is used, ATK increases by {{2}}% for {{3}} turn(s)."
+      "desc": "If the number of enemies on the field equals to {{1}} or more when the Ultimate is used, ATK increases by {{2, percent}}% for {{3}} turn(s)."
     },
     "3": {
       "name": "Thorny Road's Glory",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "\"Your\" Resplendence",
-      "desc": "When using Ultimate, ignores {{1}}% of enemy targets' DEF."
+      "desc": "When using Ultimate, ignores {{1, percent}}% of enemy targets' DEF."
     }
   }
 }

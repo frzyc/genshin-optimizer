@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "E—Excuse Me, Please!",
-        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Misha pada satu musuh yang ditargetkan.",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Misha pada satu musuh yang ditargetkan.",
         "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "R—Room Service!",
-        "fullDesc": "Menambah {{3}} Hit untuk Hits Per Action Ultimate Misha yang berikutnya. Mengakibatkan Ice DMG pada 1 musuh yang ditargetkan sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Misha, dan mengakibatkan Ice DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Misha pada target di sekitarnya.",
+        "fullDesc": "Menambah {{3}} Hit untuk Hits Per Action Ultimate Misha yang berikutnya. Mengakibatkan Ice DMG pada 1 musuh yang ditargetkan sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Misha, dan mengakibatkan Ice DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Misha pada target di sekitarnya.",
         "shortDesc": "Mengakibatkan Ice DMG pada 1 musuh dan mengakibatkan Ice DMG dalam jumlah kecil pada target di sekitarnya, serta menambah <orangeStrong>jumlah Hits Per Action untuk Ultimate</orangeStrong> Misha yang berikutnya."
       }
     },
     "ult": {
       "0": {
         "name": "G—Gonna Be Late!",
-        "fullDesc": "Memiliki {{1}} Hits Per Action secara default. Pertama-tama, akan melancarkan 1 Hit serangan pada 1 musuh yang ditargetkan dan mengakibatkan Ice DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Misha. Kemudian, sisa Hit-nya akan mengakibatkan Ice DMG pada musuh secara acak sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Misha. Sebelum setiap Hit-nya mengenai target, memiliki <orangeStrong>{{3}}%</orangeStrong> <u>Peluang Dasar</u> untuk membuat target memasuki status Frozen selama 1 giliran.\\nTarget musuh tidak dapat beraksi saat berada dalam status Frozen, di saat bersamaan setiap saat gilirannya dimulai, target juga akan menerima Ice <u>DMG tambahan</u> sebesar <orangeStrong>{{4}}%</orangeStrong> ATK Misha.\\nUltimate ini maksimal dapat memiliki {{5}} Hits Per Action. Setelah melancarkan Ultimate, jumlah Hits Per Action di-reset kembali ke jumlah default.",
+        "fullDesc": "Memiliki {{1}} Hits Per Action secara default. Pertama-tama, akan melancarkan 1 Hit serangan pada 1 musuh yang ditargetkan dan mengakibatkan Ice DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Misha. Kemudian, sisa Hit-nya akan mengakibatkan Ice DMG pada musuh secara acak sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Misha. Sebelum setiap Hit-nya mengenai target, memiliki <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> <u>Peluang Dasar</u> untuk membuat target memasuki status Frozen selama 1 giliran.\\nTarget musuh tidak dapat beraksi saat berada dalam status Frozen, di saat bersamaan setiap saat gilirannya dimulai, target juga akan menerima Ice <u>DMG tambahan</u> sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK Misha.\\nUltimate ini maksimal dapat memiliki {{5}} Hits Per Action. Setelah melancarkan Ultimate, jumlah Hits Per Action di-reset kembali ke jumlah default.",
         "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh. Total dapat Bounce <orangeStrong>{{1}}</orangeStrong> kali secara default, maksimal dapat Bounce <orangeStrong>{{5}}</orangeStrong> kali. Sebelum setiap Hit-nya mengenai target, berpeluang kecil untuk <orangeStrong>membuat target memasuki status Frozen</orangeStrong>."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Release",
-        "fullDesc": "Sebelum Hit pertama dari Ultimate mengenai target, peluang dasar untuk membuat target memasuki status Frozen meningkat {{1}}%.",
+        "fullDesc": "Sebelum Hit pertama dari Ultimate mengenai target, peluang dasar untuk membuat target memasuki status Frozen meningkat {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Interlock",
-        "fullDesc": "Saat melancarkan Ultimate, meningkatkan {{1}}% Effect Hit Rate sampai aksi Ultimate kali ini berakhir.",
+        "fullDesc": "Saat melancarkan Ultimate, meningkatkan {{1, percent}}% Effect Hit Rate sampai aksi Ultimate kali ini berakhir.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Transmission",
-        "fullDesc": "Saat mengakibatkan DMG pada target musuh berstatus Frozen, CRIT DMG meningkat {{1}}%.",
+        "fullDesc": "Saat mengakibatkan DMG pada target musuh berstatus Frozen, CRIT DMG meningkat {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Yearning of Youth",
-      "desc": "Sebelum setiap Hit dari Ultimate mengenai target, memiliki {{3}}% Peluang Dasar untuk mengurangi {{1}}% DEF target selama {{2}} giliran."
+      "desc": "Sebelum setiap Hit dari Ultimate mengenai target, memiliki {{3, percent}}% Peluang Dasar untuk mengurangi {{1, percent}}% DEF target selama {{2}} giliran."
     },
     "3": {
       "name": "Vestige of Happiness",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Visage of Kinship",
-      "desc": "Meningkatkan {{1}}% DMG Multiplier dari setiap Hit Ultimate."
+      "desc": "Meningkatkan {{1, percent}}% DMG Multiplier dari setiap Hit Ultimate."
     },
     "5": {
       "name": "Genesis of First Love",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Estrangement of Dream",
-      "desc": "Saat melancarkan Ultimate, meningkatkan {{2}}% DMG yang diakibatkan diri sendiri hingga giliran berakhir. Dan pada pelancaran Skill Misha yang berikutnya, akan memulihkan {{1}} Poin Skill untuk rekan tim."
+      "desc": "Saat melancarkan Ultimate, meningkatkan {{2, percent}}% DMG yang diakibatkan diri sendiri hingga giliran berakhir. Dan pada pelancaran Skill Misha yang berikutnya, akan memulihkan {{1}} Poin Skill untuk rekan tim."
     }
   }
 }

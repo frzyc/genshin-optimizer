@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Thwack",
-        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Seele's ATK to a single enemy.",
+        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Seele's ATK to a single enemy.",
         "shortDesc": "Deals minor Quantum DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Sheathed Blade",
-        "fullDesc": "Increases Seele's SPD by {{2}}% for {{3}} turn(s) and deals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Seele's ATK to a single enemy.",
+        "fullDesc": "Increases Seele's SPD by {{2, percent}}% for {{3}} turn(s) and deals Quantum DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Seele's ATK to a single enemy.",
         "shortDesc": "Deals Quantum DMG to a single enemy and increases SPD."
       }
     },
     "ult": {
       "0": {
         "name": "Butterfly Flurry",
-        "fullDesc": "Seele enters the buffed state and deals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of her ATK to a single enemy.",
+        "fullDesc": "Seele enters the buffed state and deals Quantum DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of her ATK to a single enemy.",
         "shortDesc": "Enters the <orangeStrong>buffed state</orangeStrong> and deals massive Quantum DMG to a single enemy."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Nightshade",
-        "fullDesc": "When current HP percentage is {{1}}% or lower, reduces the chance of being attacked by enemies.",
+        "fullDesc": "When current HP percentage is {{1, percent}}% or lower, reduces the chance of being attacked by enemies.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Lacerate",
-        "fullDesc": "While Seele is in the buffed state, her Quantum RES PEN increases by {{1}}%.",
+        "fullDesc": "While Seele is in the buffed state, her Quantum RES PEN increases by {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Rippling Waves",
-        "fullDesc": "After using a Basic ATK, Seele's next action will be Advanced Forward by {{1}}%.",
+        "fullDesc": "After using a Basic ATK, Seele's next action will be Advanced Forward by {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Extirpating Slash",
-      "desc": "When dealing DMG to an enemy whose HP percentage is {{1}}% or lower, CRIT Rate increases by {{2}}%."
+      "desc": "When dealing DMG to an enemy whose HP percentage is {{1, percent}}% or lower, CRIT Rate increases by {{2, percent}}%."
     },
     "2": {
       "name": "Dancing Butterfly",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Shattering Shambles",
-      "desc": "After Seele uses her Ultimate, inflict the target enemy with Butterfly Flurry for {{2}} turn(s). Enemies suffering from Butterfly Flurry will take Additional Quantum DMG equal to {{1}}% of Seele's Ultimate DMG every time they are attacked. If the target enemy is defeated by the Butterfly Flurry DMG triggered by other allies' attacks, Seele's Talent will not be triggered.\\nWhen Seele is knocked down, the Butterfly Flurry inflicted on the enemies will be removed."
+      "desc": "After Seele uses her Ultimate, inflict the target enemy with Butterfly Flurry for {{2}} turn(s). Enemies suffering from Butterfly Flurry will take Additional Quantum DMG equal to {{1, percent}}% of Seele's Ultimate DMG every time they are attacked. If the target enemy is defeated by the Butterfly Flurry DMG triggered by other allies' attacks, Seele's Talent will not be triggered.\\nWhen Seele is knocked down, the Butterfly Flurry inflicted on the enemies will be removed."
     }
   }
 }

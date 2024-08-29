@@ -1,6 +1,6 @@
 {
   "setName": "La vie sur Vonwacq",
   "setEffects": {
-    "2": "Augmente le taux de régénération d'énergie du porteur de {{1}}%. Lorsque sa VIT est supérieure ou égale à {{2}}, son action est avancée de {{3}}% dès l'entrée en combat."
+    "2": "Augmente le taux de régénération d'énergie du porteur de {{1, percent}}%. Lorsque sa VIT est supérieure ou égale à {{2}}, son action est avancée de {{3, percent}}% dès l'entrée en combat."
   }
 }

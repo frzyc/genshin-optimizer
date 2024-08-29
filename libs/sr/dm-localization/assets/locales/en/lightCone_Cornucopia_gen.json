@@ -2,6 +2,6 @@
   "name": "Cornucopia",
   "passive": {
     "name": "Prosperity",
-    "description": "When the wearer uses their Skill or Ultimate, their Outgoing Healing increases by <orangeStrong>{{1}}%</orangeStrong>."
+    "description": "When the wearer uses their Skill or Ultimate, their Outgoing Healing increases by <orangeStrong>{{1, percent}}%</orangeStrong>."
   }
 }

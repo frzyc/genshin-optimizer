@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Orchideennadel",
-        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Ruan Meis ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Ruan Meis ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Wiederholungsschleife",
-        "fullDesc": "Nachdem Ruan Mei ihre Fertigkeit einsetzt, erhält sie für {{3}} Rd. „Oberton“. Die Dauer dieses Status verringert sich zu Beginn jeder ihrer Rd. um 1. Wenn Ruan Mei Oberton besitzt, wird der SCH aller Verbündeten um <orangeStrong>{{1}}%</orangeStrong> und die Schwächebruch-Effizienz aller Verbündeten um {{2}}% erhöht.",
+        "fullDesc": "Nachdem Ruan Mei ihre Fertigkeit einsetzt, erhält sie für {{3}} Rd. „Oberton“. Die Dauer dieses Status verringert sich zu Beginn jeder ihrer Rd. um 1. Wenn Ruan Mei Oberton besitzt, wird der SCH aller Verbündeten um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> und die Schwächebruch-Effizienz aller Verbündeten um {{2, percent}}% erhöht.",
         "shortDesc": "Nachdem Ruan Mei ihre Fertigkeit einsetzt, erhält sie „Oberton“, was <orangeStrong>SCH</orangeStrong> und <orangeStrong>Schwächebruch-Effizienz</orangeStrong> aller Verbündeten erhöht."
       }
     },
     "ult": {
       "0": {
         "name": "Blütenblätter im Wasserwirbel",
-        "fullDesc": "Ruan Mei erzeugt ein Feld, das für {{2}} Rd. anhält. Die Dauer dieses Felds verringert sich jeweils zu Beginn ihrer Rd. um 1.\\nWährend das Feld aktiv ist, wird die WDS-DUR aller Typen für alle Verbündeten um <orangeStrong>{{1}}%</orangeStrong> erhöht. Weiterhin wird nach einem Angriff eines Verbündeten dem Ziel „Überreife“ zugefügt.\\nÜberreife wird ausgelöst, wenn der Gegner versucht, sich von einem <u>Schwächebruch</u> zu erholen. Sein <u>Schwächebruch</u> wird verlängert und seine Aktion um {{3}}% von Ruan Meis Brucheffekt plus {{4}}% <u>verzögert</u>. Weiterhin erleidet der Gegner <u>Bruch-SCH</u> in Höhe von <orangeStrong>{{5}}%</orangeStrong> von Ruan Meis Eis-Bruch-SCH.\\nGegner, die sich noch nicht von ihrem <u>Schwächebruch</u> erholt haben, können nicht erneut mit Überreife belegt werden.",
+        "fullDesc": "Ruan Mei erzeugt ein Feld, das für {{2}} Rd. anhält. Die Dauer dieses Felds verringert sich jeweils zu Beginn ihrer Rd. um 1.\\nWährend das Feld aktiv ist, wird die WDS-DUR aller Typen für alle Verbündeten um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> erhöht. Weiterhin wird nach einem Angriff eines Verbündeten dem Ziel „Überreife“ zugefügt.\\nÜberreife wird ausgelöst, wenn der Gegner versucht, sich von einem <u>Schwächebruch</u> zu erholen. Sein <u>Schwächebruch</u> wird verlängert und seine Aktion um {{3, percent}}% von Ruan Meis Brucheffekt plus {{4, percent}}% <u>verzögert</u>. Weiterhin erleidet der Gegner <u>Bruch-SCH</u> in Höhe von <orangeStrong>{{5, percent}}%</orangeStrong> von Ruan Meis Eis-Bruch-SCH.\\nGegner, die sich noch nicht von ihrem <u>Schwächebruch</u> erholt haben, können nicht erneut mit Überreife belegt werden.",
         "shortDesc": "Erhöht die <orangeStrong>WDS-DUR aller Typen</orangeStrong> der Verbündeten und fügt nach einem Angriff auf ein Ziel „Überreife“ zu."
       }
     },
     "technique": {
       "0": {
         "name": "Wisch die Zither, streich die Ärmel",
-        "fullDesc": "Kampfbeginn wird automatisch {{1}}-mal Ruan Meis Fertigkeit ausgelöst. Dieser Effekt verbraucht keine Fertigkeitspunkte.\\nWenn Ruan Mei in der Universum-Simulation oder in Divergentes Universum Wisch die Zither, streich die Ärmel besitzt und Verbündete Gegner angreifen, um einen Kampf zu beginnen, wird dies als Angriff auf die Schwäche der Gegner betrachtet und ungeachtet ihres Schwächetyps der Widerstand aller Gegner reduziert. Wenn so Schwächebruch verursacht wird, entspricht der Effekt dem jeweiligen Typ des Angreifers. Mit jedem Segen im Besitz (bis zu max. {{4}} Segen) wird die WDS-Reduzierung dieses Angriffs um {{2}}% erhöht. Wenn der Angriff beim Gegner Schwächebruch verursacht, erleidet er zusätzlich Bruch-SCH in Höhe von {{3}}% von Ruan Meis Eis-Bruch-SCH.",
+        "fullDesc": "Kampfbeginn wird automatisch {{1}}-mal Ruan Meis Fertigkeit ausgelöst. Dieser Effekt verbraucht keine Fertigkeitspunkte.\\nWenn Ruan Mei in der Universum-Simulation oder in Divergentes Universum Wisch die Zither, streich die Ärmel besitzt und Verbündete Gegner angreifen, um einen Kampf zu beginnen, wird dies als Angriff auf die Schwäche der Gegner betrachtet und ungeachtet ihres Schwächetyps der Widerstand aller Gegner reduziert. Wenn so Schwächebruch verursacht wird, entspricht der Effekt dem jeweiligen Typ des Angreifers. Mit jedem Segen im Besitz (bis zu max. {{4}} Segen) wird die WDS-Reduzierung dieses Angriffs um {{2, percent}}% erhöht. Wenn der Angriff beim Gegner Schwächebruch verursacht, erleidet er zusätzlich Bruch-SCH in Höhe von {{3, percent}}% von Ruan Meis Eis-Bruch-SCH.",
         "shortDesc": "Beim nächsten Kampfeintritt wird die Fertigkeit <orangeStrong>{{1}}</orangeStrong>-mal automatisch ausgelöst. Wenn Verbündete Gegner in der Universum-Simulation oder in Divergentes Universum angreifen, nachdem die Technik angewendet wurde, wird dies als Angriff auf die Schwäche der Gegner betrachtet und <orangeStrong>ungeachtet ihres Schwächetyps</orangeStrong> ihr Widerstand reduziert. Mit jedem Segen im Besitz wird die WDS-Reduzierung erhöht und beim Verursachen von Schwächebruch zusätzlich Bruch-SCH zugefügt."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Atmender Organismus",
-        "fullDesc": "Erhöht Brucheffekt aller Verbündeten um {{1}}%.",
+        "fullDesc": "Erhöht Brucheffekt aller Verbündeten um {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Tropfendes Wachs, brennendes Wasser",
-        "fullDesc": "Im Kampf erhöht Ruan Meis Fertigkeit für jede {{2}}% von Ruan Meis Brucheffekt über {{1}}% zusätzlich den SCH der Verbündeten um {{3}}% bis max. {{4}}%.",
+        "fullDesc": "Im Kampf erhöht Ruan Meis Fertigkeit für jede {{2, percent}}% von Ruan Meis Brucheffekt über {{1, percent}}% zusätzlich den SCH der Verbündeten um {{3, percent}}% bis max. {{4, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Neuralstickerei",
-      "desc": "Während das Feld des Ultimates aktiv ist, ignoriert der von Verbündeten verursachte SCH {{1}}% der VTD des Zieles."
+      "desc": "Während das Feld des Ultimates aktiv ist, ignoriert der von Verbündeten verursachte SCH {{1, percent}}% der VTD des Zieles."
     },
     "2": {
       "name": "Schilfspaziergang",
-      "desc": "Wenn Ruan Mei am Kampf teilnimmt, wird der ANG von Verbündeten bei Angriffen auf Gegner mit Schwächebruch um {{1}}% erhöht."
+      "desc": "Wenn Ruan Mei am Kampf teilnimmt, wird der ANG von Verbündeten bei Angriffen auf Gegner mit Schwächebruch um {{1, percent}}% erhöht."
     },
     "3": {
       "name": "Schillernd tanzendes Grün",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Göttliche Suche im bronzenen Spiegel",
-      "desc": "Wird die Schwäche eines Gegners gebrochen, steigt Ruan Meis Brucheffekt für {{2}} Rd. um {{1}}%."
+      "desc": "Wird die Schwäche eines Gegners gebrochen, steigt Ruan Meis Brucheffekt für {{2}} Rd. um {{1, percent}}%."
     },
     "5": {
       "name": "Haarnadel des trägen Handwerkers",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Vom Schleier halb bedeckt",
-      "desc": "Verlängert die aktive Dauer des vom Ultimate erzeugten Felds um {{1}} Rd. Der SCH-Multiplikator ihres Talents wird zusätzlich um {{2}}% erhöht."
+      "desc": "Verlängert die aktive Dauer des vom Ultimate erzeugten Felds um {{1}} Rd. Der SCH-Multiplikator ihres Talents wird zusätzlich um {{2, percent}}% erhöht."
     }
   }
 }

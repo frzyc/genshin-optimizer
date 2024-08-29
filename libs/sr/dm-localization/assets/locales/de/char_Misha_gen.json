@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Entschuldigung! Aus dem Weg, bitte ...!",
-        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Mishas ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Mishas ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Zi... Zimmerservice!",
-        "fullDesc": "Erhöht die Trefferzahl von Mishas nächstem Ultimate um {{3}}. Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Mishas ANG zu und fügt angrenzenden Zielen Eis-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Mishas ANG zu.",
+        "fullDesc": "Erhöht die Trefferzahl von Mishas nächstem Ultimate um {{3}}. Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Mishas ANG zu und fügt angrenzenden Zielen Eis-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Mishas ANG zu.",
         "shortDesc": "Fügt einem Gegner Eis-SCH zu und angrenzenden Einheiten geringen Eis-SCH zu. Erhöht die <orangeStrong>Trefferzahl von Mishas nächstem Ultimate</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Ich bin spät dran!",
-        "fullDesc": "Mishas Ultimate hat zunächst eine Trefferzahl von {{1}}. Anfangs verursacht er einen Treffer und fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> seines ANG zu. Mit seinen weiteren Treffern fügt er jeweils einem zufälligen Gegner Eis-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> seines ANG zu. Vor jedem Treffer besteht eine <u>Grundchance</u> von <orangeStrong>{{3}}%</orangeStrong>, das Ziel für 1 Rd. einzufrieren.\\nEin gefrorener Gegner kann keine Aktionen ausführen und erleidet zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von <orangeStrong>{{4}}%</orangeStrong> von Mishas ANG.\\nMishas Ultimate kann eine Trefferzahl von bis zu {{5}} haben. Nach dem Einsatz seines Ultimates wird die Trefferzahl auf die ursprüngliche Anzahl zurückgesetzt.",
+        "fullDesc": "Mishas Ultimate hat zunächst eine Trefferzahl von {{1}}. Anfangs verursacht er einen Treffer und fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> seines ANG zu. Mit seinen weiteren Treffern fügt er jeweils einem zufälligen Gegner Eis-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> seines ANG zu. Vor jedem Treffer besteht eine <u>Grundchance</u> von <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, das Ziel für 1 Rd. einzufrieren.\\nEin gefrorener Gegner kann keine Aktionen ausführen und erleidet zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von Mishas ANG.\\nMishas Ultimate kann eine Trefferzahl von bis zu {{5}} haben. Nach dem Einsatz seines Ultimates wird die Trefferzahl auf die ursprüngliche Anzahl zurückgesetzt.",
         "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu. Der Angriff prallt zunächst <orangeStrong>{{1}}</orangeStrong>-mal und max. <orangeStrong>{{5}}</orangeStrong>-mal ab. Vor jedem Treffer besteht eine geringe Chance, das Ziel <orangeStrong>einzufrieren</orangeStrong>."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Befreiung",
-        "fullDesc": "Erhöht vor dem ersten Treffer des Ultimates die Grundchance, Gegner einzufrieren, um {{1}}%.",
+        "fullDesc": "Erhöht vor dem ersten Treffer des Ultimates die Grundchance, Gegner einzufrieren, um {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Verriegelung",
-        "fullDesc": "Erhöht beim Einsatz des Ultimates die Effekt-Trefferrate um {{1}}%. Dieser Effekt hält bis zum Ende der Aktion des Ultimates an.",
+        "fullDesc": "Erhöht beim Einsatz des Ultimates die Effekt-Trefferrate um {{1, percent}}%. Dieser Effekt hält bis zum Ende der Aktion des Ultimates an.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Transmission",
-        "fullDesc": "Erhöht den KRIT-SCH bei eingefrorenen Gegnern um {{1}}%.",
+        "fullDesc": "Erhöht den KRIT-SCH bei eingefrorenen Gegnern um {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Jugendliche Sehnsucht",
-      "desc": "Der Ultimate hat vor jedem Treffer eine Grundchance von {{3}}%, die VTD des Ziels für {{2}} Rd. um {{1}}% zu reduzieren."
+      "desc": "Der Ultimate hat vor jedem Treffer eine Grundchance von {{3, percent}}%, die VTD des Ziels für {{2}} Rd. um {{1, percent}}% zu reduzieren."
     },
     "3": {
       "name": "Schatten glücklicher Jahre",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Vertraute Erscheinung",
-      "desc": "Erhöht den SCH-Multiplikator von jedem Treffer des Ultimates um {{1}}%."
+      "desc": "Erhöht den SCH-Multiplikator von jedem Treffer des Ultimates um {{1, percent}}%."
     },
     "5": {
       "name": "Erste Liebe und Freundschaft",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Verblasste Sehnsucht",
-      "desc": "Nach dem Einsatz des Ultimates wird sein verursachter SCH um {{2}}% bis zum Ende der eigenen Runde erhöht. Stellt nach dem nächsten Einsatz der Fertigkeit {{1}} Fertigkeitspunkt für das Team wieder her."
+      "desc": "Nach dem Einsatz des Ultimates wird sein verursachter SCH um {{2, percent}}% bis zum Ende der eigenen Runde erhöht. Stellt nach dem nächsten Einsatz der Fertigkeit {{1}} Fertigkeitspunkt für das Team wieder her."
     }
   }
 }

@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Lanza del Nimbocaballero: Viento del norte",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Dan Heng como Daño de Viento a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Dan Heng como Daño de Viento a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Lanza del Nimbocaballero: Torrente",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Dan Heng como Daño de Viento a un enemigo.\\nCuando el daño infligido por la habilidad básica causa un golpe CRIT, hay una <u>probabilidad base</u> del {{4}}% de reducir la VEL del objetivo en un {{2}}% durante {{3}} turnos.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Dan Heng como Daño de Viento a un enemigo.\\nCuando el daño infligido por la habilidad básica causa un golpe CRIT, hay una <u>probabilidad base</u> del {{4, percent}}% de reducir la VEL del objetivo en un {{2, percent}}% durante {{3}} turnos.",
         "shortDesc": "Inflige Daño de Viento a un enemigo. Cuando asesta un golpe CRIT, tiene una gran probabilidad de causar Ralentización."
       }
     },
     "ult": {
       "0": {
         "name": "Sueño etéreo",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Dan Heng como Daño de Viento a un enemigo. Cuando el objetivo está afectado por Ralentización, el multiplicador del daño que inflige la habilidad definitiva de Dan Heng aumenta en un <orangeStrong>{{2}}%</orangeStrong>.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Dan Heng como Daño de Viento a un enemigo. Cuando el objetivo está afectado por Ralentización, el multiplicador del daño que inflige la habilidad definitiva de Dan Heng aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong>.",
         "shortDesc": "Inflige una gran cantidad de Daño de Viento a un enemigo. Aumenta el multiplicador de daño contra los objetivos afectados por Ralentización."
       }
     },
     "technique": {
       "0": {
         "name": "Lanza perforadora",
-        "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, el ATQ de Dan Heng aumenta en un {{1}}% durante {{2}} turnos.",
+        "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, el ATQ de Dan Heng aumenta en un {{1, percent}}% durante {{2}} turnos.",
         "shortDesc": "Tras usar la técnica, el ATQ aumenta en la siguiente batalla."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Dragón oculto",
-        "fullDesc": "Cuando el porcentaje de PV es igual o inferior al {{1}}%, se reduce la probabilidad de recibir un ataque enemigo.",
+        "fullDesc": "Cuando el porcentaje de PV es igual o inferior al {{1, percent}}%, se reduce la probabilidad de recibir un ataque enemigo.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Sombra de la desesperación",
-        "fullDesc": "Tras atacar, hay una probabilidad fija del {{1}}% de aumentar la VEL propia en un {{2}}% durante {{3}} turnos.",
+        "fullDesc": "Tras atacar, hay una probabilidad fija del {{1, percent}}% de aumentar la VEL propia en un {{2, percent}}% durante {{3}} turnos.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Temporal",
-        "fullDesc": "El ATQ básico inflige un {{1}}% más de daño a los enemigos afectados por Ralentización.",
+        "fullDesc": "El ATQ básico inflige un {{1, percent}}% más de daño a los enemigos afectados por Ralentización.",
         "shortDesc": ""
       }
     }
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Cuanto más subes, más dura es la caída",
-      "desc": "Cuando el porcentaje de PV del objetivo golpeado es igual o superior al {{1}}%, la Prob. CRIT aumenta en un {{2}}%."
+      "desc": "Cuando el porcentaje de PV del objetivo golpeado es igual o superior al {{1, percent}}%, la Prob. CRIT aumenta en un {{2, percent}}%."
     },
     "2": {
       "name": "Controlar el mal y extinguir la llama",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Alma atormentada en espera",
-      "desc": "La Ralentización causada por la habilidad básica reduce la VEL del objetivo en un {{1}}% adicional."
+      "desc": "La Ralentización causada por la habilidad básica reduce la VEL del objetivo en un {{1, percent}}% adicional."
     }
   }
 }

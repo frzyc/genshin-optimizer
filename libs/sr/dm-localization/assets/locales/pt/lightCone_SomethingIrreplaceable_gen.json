@@ -2,6 +2,6 @@
   "name": "Algo Insubstituível",
   "passive": {
     "name": "Afinidade",
-    "description": "Aumenta em <orangeStrong>{{1}}%</orangeStrong> o ATQ do usuário. Quando o usuário derrota um inimigo ou é atingido, recupera imediatamente PV equivalentes a <orangeStrong>{{2}}%</orangeStrong> do próprio ATQ. Ao mesmo tempo, o Dano do usuário aumenta em <orangeStrong>{{3}}%</orangeStrong> até o fim da sua próxima rodada. Este efeito não se acumula e só pode ser ativado 1 vez por rodada."
+    "description": "Aumenta em <orangeStrong>{{1, percent}}%</orangeStrong> o ATQ do usuário. Quando o usuário derrota um inimigo ou é atingido, recupera imediatamente PV equivalentes a <orangeStrong>{{2, percent}}%</orangeStrong> do próprio ATQ. Ao mesmo tempo, o Dano do usuário aumenta em <orangeStrong>{{3, percent}}%</orangeStrong> até o fim da sua próxima rodada. Este efeito não se acumula e só pode ser ativado 1 vez por rodada."
   }
 }

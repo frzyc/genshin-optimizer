@@ -2,6 +2,6 @@
   "name": "戍御",
   "passive": {
     "name": "兴复",
-    "description": "使装备者施放终结技时，回复等同于自身生命上限<orangeStrong>{{1}}%</orangeStrong>的生命值。"
+    "description": "使装备者施放终结技时，回复等同于自身生命上限<orangeStrong>{{1, percent}}%</orangeStrong>的生命值。"
   }
 }

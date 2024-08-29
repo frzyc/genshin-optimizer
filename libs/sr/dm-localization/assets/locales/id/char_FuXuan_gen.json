@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Novaburst",
-        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> Max HP Fu Xuan pada 1 musuh yang ditarget.",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> Max HP Fu Xuan pada 1 musuh yang ditarget.",
         "shortDesc": "Mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Known by Stars, Shown by Hearts",
-        "fullDesc": "Mengaktifkan \"Matrix of Prescience\". Seluruh rekan tim Fu Xuan akan <u>membagikan</u> {{1}}% dari semua DMG yang diterima mereka pada Fu Xuan (sebelum DMG ini ditahan oleh efek Shield apa pun) selama {{3}} giliran.\\nRekan tim yang terkena pengaruh \"Matrix of Prescience\" akan memperoleh status \"Knowledge\". Rekan tim berstatus \"Knowledge\" akan mendapat peningkatan Max HP sebesar <orangeStrong>{{4}}%</orangeStrong> Max HP Fu Xuan, dan peningkatan CRIT Rate sebesar <orangeStrong>{{5}}%</orangeStrong>.\\nSaat Fu Xuan <u>gugur</u>, \"Matrix of Prescience\" juga akan dihapus.",
+        "fullDesc": "Mengaktifkan \"Matrix of Prescience\". Seluruh rekan tim Fu Xuan akan <u>membagikan</u> {{1, percent}}% dari semua DMG yang diterima mereka pada Fu Xuan (sebelum DMG ini ditahan oleh efek Shield apa pun) selama {{3}} giliran.\\nRekan tim yang terkena pengaruh \"Matrix of Prescience\" akan memperoleh status \"Knowledge\". Rekan tim berstatus \"Knowledge\" akan mendapat peningkatan Max HP sebesar <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> Max HP Fu Xuan, dan peningkatan CRIT Rate sebesar <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.\\nSaat Fu Xuan <u>gugur</u>, \"Matrix of Prescience\" juga akan dihapus.",
         "shortDesc": "Mengaktifkan \"Matrix of Prescience\", <orangeStrong><u>membagi</u> sebagian DMG yang diterima</orangeStrong> seluruh rekan tim Fu Xuan kepada Fu Xuan. Selain itu juga akan meningkatkan Max HP dan <orangeStrong>CRIT Rate</orangeStrong> seluruh rekan tim."
       }
     },
     "ult": {
       "0": {
         "name": "Woes of Many Morphed to One",
-        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> Max HP Fu Xuan pada seluruh musuh, serta memperoleh 1 kali jumlah kesempatan terpicunya pemulihan HP dari Talent Fu Xuan.",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> Max HP Fu Xuan pada seluruh musuh, serta memperoleh 1 kali jumlah kesempatan terpicunya pemulihan HP dari Talent Fu Xuan.",
         "shortDesc": "Mengakibatkan Quantum DMG pada seluruh musuh dan menambah jumlah kesempatan terpicunya Talent Fu Xuan."
       }
     },
@@ -46,7 +46,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Dunjia, the Metamystic",
-        "fullDesc": "Saat Fu Xuan melancarkan Ultimate, seluruh rekan tim selain dirinya akan memulihkan HP sebesar {{1}}% Max HP Fu Xuan + {{2}}.",
+        "fullDesc": "Saat Fu Xuan melancarkan Ultimate, seluruh rekan tim selain dirinya akan memulihkan HP sebesar {{1, percent}}% Max HP Fu Xuan + {{2}}.",
         "shortDesc": ""
       }
     },
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Dominus Pacis",
-      "desc": "\"Knowledge\" meningkatkan {{1}}% CRIT DMG."
+      "desc": "\"Knowledge\" meningkatkan {{1, percent}}% CRIT DMG."
     },
     "2": {
       "name": "Optimus Felix",
-      "desc": "Saat \"Matrix of Prescience\" aktif, jika ada rekan tim yang menerima serangan mematikan, maka seluruh rekan tim yang menerima serangan mematikan pada aksi kali ini tidak akan gugur, dan akan segera memulihkan HP-nya sebesar {{1}}% Max HP masing-masing. Efek ini dapat dipicu sekali dalam 1 pertempuran."
+      "desc": "Saat \"Matrix of Prescience\" aktif, jika ada rekan tim yang menerima serangan mematikan, maka seluruh rekan tim yang menerima serangan mematikan pada aksi kali ini tidak akan gugur, dan akan segera memulihkan HP-nya sebesar {{1, percent}}% Max HP masing-masing. Efek ini dapat dipicu sekali dalam 1 pertempuran."
     },
     "3": {
       "name": "Apex Nexus",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Omnia Vita",
-      "desc": "Saat \"Matrix of Prescience\" aktif, ia akan menghitung akumulasi jumlah HP yang berkurang dari seluruh rekan tim dalam pertempuran kali ini. DMG yang diakibatkan Ultimate Fu Xuan akan meningkat sebesar {{1}}% dari perhitungan akumulasi jumlah HP seluruh rekan tim yang berkurang di pertempuran kali ini.\\nJumlah perhitungan akumulasi HP yang berkurang dari seluruh rekan tim tidak dapat melebihi {{2}}% Max HP Fu Xuan. Setelah melancarkan Ultimate, perhitungan jumlah akumulasi akan direset ulang dan diakumulasi kembali."
+      "desc": "Saat \"Matrix of Prescience\" aktif, ia akan menghitung akumulasi jumlah HP yang berkurang dari seluruh rekan tim dalam pertempuran kali ini. DMG yang diakibatkan Ultimate Fu Xuan akan meningkat sebesar {{1, percent}}% dari perhitungan akumulasi jumlah HP seluruh rekan tim yang berkurang di pertempuran kali ini.\\nJumlah perhitungan akumulasi HP yang berkurang dari seluruh rekan tim tidak dapat melebihi {{2, percent}}% Max HP Fu Xuan. Setelah melancarkan Ultimate, perhitungan jumlah akumulasi akan direset ulang dan diakumulasi kembali."
     }
   }
 }

@@ -2,6 +2,6 @@
   "name": "Grenzenloser Tanz",
   "passive": {
     "name": "Prüfen",
-    "description": "Erhöht die KRIT-Rate des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Der Träger verursacht <orangeStrong>{{2}}%</orangeStrong> mehr KRIT-SCH bei Gegnern, die verringerte VTD besitzen oder verlangsamt sind."
+    "description": "Erhöht die KRIT-Rate des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Der Träger verursacht <orangeStrong>{{2, percent}}%</orangeStrong> mehr KRIT-SCH bei Gegnern, die verringerte VTD besitzen oder verlangsamt sind."
   }
 }

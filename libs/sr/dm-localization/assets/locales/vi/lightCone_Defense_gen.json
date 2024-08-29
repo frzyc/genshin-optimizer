@@ -2,6 +2,6 @@
   "name": "Phòng Thủ",
   "passive": {
     "name": "Phục Sinh",
-    "description": "Khi người trang bị thi triển Tuyệt Kỹ, sẽ hồi HP tương đương <orangeStrong>{{1}}%</orangeStrong> Giới Hạn HP của bản thân."
+    "description": "Khi người trang bị thi triển Tuyệt Kỹ, sẽ hồi HP tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Giới Hạn HP của bản thân."
   }
 }

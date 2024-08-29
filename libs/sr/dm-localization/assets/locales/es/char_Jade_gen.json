@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Flagelo de la opulencia",
-        "fullDesc": "Jade Inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño Cuántico a un enemigo y un <orangeStrong>{{2}}%</orangeStrong> de su ATQ como Daño Cuántico a los enemigos adyacentes.",
+        "fullDesc": "Jade Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Cuántico a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño Cuántico a los enemigos adyacentes.",
         "shortDesc": "Inflige una pequeña cantidad de Daño Cuántico a un enemigo y a los enemigos adyacentes."
       }
     },
     "skill": {
       "0": {
         "name": "Garantía de adquisición",
-        "fullDesc": "Convierte a un aliado en Cobrador de deudas y aumenta su VEL en {{1}} pts. durante {{4}} turnos.\\nDespués de que el Cobrador de deudas ataque, inflige a cada enemigo golpeado un <orangeStrong>{{3}}%</orangeStrong> del ATQ de Jade como <u>daño adicional</u> de tipo Cuántico, y el Cobrador de deudas consume una cantidad de PV equivalente al {{2}}% de sus PV máx. Si no tiene suficientes PV, sus PV se reducen a 1.\\nSi Jade se convierte en Cobrador de deudas, no recibe el efecto de aumento de VEL ni consume PV tras atacar.\\nMientras en el campo de batalla haya un Cobrador de deudas, Jade no puede usar la habilidad básica. Al comienzo de cada turno de Jade, la duración del estado de Cobrador de deudas se reduce en 1.",
+        "fullDesc": "Convierte a un aliado en Cobrador de deudas y aumenta su VEL en {{1}} pts. durante {{4}} turnos.\\nDespués de que el Cobrador de deudas ataque, inflige a cada enemigo golpeado un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Jade como <u>daño adicional</u> de tipo Cuántico, y el Cobrador de deudas consume una cantidad de PV equivalente al {{2, percent}}% de sus PV máx. Si no tiene suficientes PV, sus PV se reducen a 1.\\nSi Jade se convierte en Cobrador de deudas, no recibe el efecto de aumento de VEL ni consume PV tras atacar.\\nMientras en el campo de batalla haya un Cobrador de deudas, Jade no puede usar la habilidad básica. Al comienzo de cada turno de Jade, la duración del estado de Cobrador de deudas se reduce en 1.",
         "shortDesc": "Convierte a un aliado en <orangeStrong>Cobrador de deudas</orangeStrong> y aumenta su VEL. Después de que el <orangeStrong>Cobrador de deudas</orangeStrong> ataque, consume PV e inflige una pequeña cantidad de <u>daño adicional</u> de tipo Cuántico a cada enemigo golpeado. Si Jade se convierte en Cobrador de deudas, no recibe el efecto de aumento de VEL ni consume PV tras atacar."
       }
     },
     "ult": {
       "0": {
         "name": "Juramento de lo profundo",
-        "fullDesc": "Inflige un <orangeStrong>{{3}}%</orangeStrong> del ATQ de Jade como Daño Cuántico a todos los enemigos. Además, potencia el <u>ataque adicional</u> del talento de Jade. El multiplicador del daño que infligen los ataques adicionales aumenta en un <orangeStrong>{{1}}%</orangeStrong>. El efecto de potenciación se puede activar {{2}} veces.",
+        "fullDesc": "Inflige un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Jade como Daño Cuántico a todos los enemigos. Además, potencia el <u>ataque adicional</u> del talento de Jade. El multiplicador del daño que infligen los ataques adicionales aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong>. El efecto de potenciación se puede activar {{2}} veces.",
         "shortDesc": "Inflige Daño Cuántico a todos los enemigos y aumenta el <orangeStrong>multiplicador del daño de <u>ataque adicional</u></orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Visión predadora",
-        "fullDesc": "Tras usar la técnica, los enemigos de un área determinada entran en el estado de Obediencia ciega durante {{1}} s. Los enemigos en este estado no pueden iniciar ataques contra aliados. Al entrar en combate tras atacar a enemigos afectados con Obediencia ciega, todos los enemigos afectados con Obediencia ciega entran a la vez en combate. Inflige un {{2}}% del ATQ de Jade como Daño Cuántico a todos los enemigos y Jade obtiene inmediatamente {{3}} acumulaciones de Prenda.",
+        "fullDesc": "Tras usar la técnica, los enemigos de un área determinada entran en el estado de Obediencia ciega durante {{1}} s. Los enemigos en este estado no pueden iniciar ataques contra aliados. Al entrar en combate tras atacar a enemigos afectados con Obediencia ciega, todos los enemigos afectados con Obediencia ciega entran a la vez en combate. Inflige un {{2, percent}}% del ATQ de Jade como Daño Cuántico a todos los enemigos y Jade obtiene inmediatamente {{3}} acumulaciones de Prenda.",
         "shortDesc": "Afecta con Obediencia ciega a los enemigos en un área determinada. Al atacar a enemigos afectados con Obediencia ciega, todos los enemigos afectados con Obediencia ciega entran a la vez en combate. Tras entrar en combate, inflige una pequeña cantidad de Daño Cuántico a todos los enemigos y Jade obtiene inmediatamente <orangeStrong>{{3}}</orangeStrong> acumulaciones de Prenda."
       }
     },
@@ -46,14 +46,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Boleto de garantía",
-        "fullDesc": "Al comenzar la batalla, la acción de Jade se adelanta un {{1}}%.",
+        "fullDesc": "Al comenzar la batalla, la acción de Jade se adelanta un {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Confiscación de bienes",
-        "fullDesc": "Cada acumulación de Prenda del talento aumenta el ATQ de Jade en un {{1}}% adicional.",
+        "fullDesc": "Cada acumulación de Prenda del talento aumenta el ATQ de Jade en un {{1, percent(fixed: 1)}}% adicional.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "¿Altruismo? Comerciable, no obstante",
-      "desc": "El daño de ataque adicional del talento de Jade aumenta en un {{1}}%. Si un personaje en el estado de Cobrador de deudas golpea a 2/1 enemigos tras atacar, Jade obtiene {{2}}/{{3}} puntos de carga adicionales respectivamente."
+      "desc": "El daño de ataque adicional del talento de Jade aumenta en un {{1, percent}}%. Si un personaje en el estado de Cobrador de deudas golpea a 2/1 enemigos tras atacar, Jade obtiene {{2}}/{{3}} puntos de carga adicionales respectivamente."
     },
     "2": {
       "name": "¿Moralidad? Autenticada por la presente",
-      "desc": "Cuando hay {{1}} acumulaciones de Prenda, la Prob. CRIT de Jade aumenta en un {{2}}%."
+      "desc": "Cuando hay {{1}} acumulaciones de Prenda, la Prob. CRIT de Jade aumenta en un {{2, percent}}%."
     },
     "3": {
       "name": "¿Franqueza? Pronto será empeñada",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "¿Sinceridad? Solo con opción de venta",
-      "desc": "Al usar la habilidad definitiva, el daño que inflige Jade ignora un {{1}}% de la DEF del enemigo durante {{2}} turnos."
+      "desc": "Al usar la habilidad definitiva, el daño que inflige Jade ignora un {{1, percent}}% de la DEF del enemigo durante {{2}} turnos."
     },
     "5": {
       "name": "¿Esperanza? Dada en pago hace tiempo",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "¿Justicia? Pendiente de patrocinio",
-      "desc": "Cuando hay aliados en el estado de Cobrador de deudas en el campo de batalla, la PEN de la RES a Cuántico de Jade aumenta en un {{1}}%, y Jade obtiene el estado de Cobrador de deudas."
+      "desc": "Cuando hay aliados en el estado de Cobrador de deudas en el campo de batalla, la PEN de la RES a Cuántico de Jade aumenta en un {{1, percent}}%, y Jade obtiene el estado de Cobrador de deudas."
     }
   }
 }

@@ -2,6 +2,6 @@
   "name": "Schicksalsfaden",
   "passive": {
     "name": "Einblick",
-    "description": "Erhöht den Effekt-WDS des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Erhöht für jede {{2}} Pkt. VTD des Trägers den verursachten SCH um <orangeStrong>{{3}}%</orangeStrong> bis max. <orangeStrong>{{4}}%</orangeStrong>."
+    "description": "Erhöht den Effekt-WDS des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Erhöht für jede {{2}} Pkt. VTD des Trägers den verursachten SCH um <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> bis max. <orangeStrong>{{4, percent}}%</orangeStrong>."
   }
 }

@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Velocidad del rayo",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Arlan como Daño de Rayo a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Arlan como Daño de Rayo a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Rompeataduras",
-        "fullDesc": "Arlan consume una cantidad de PV equivalente al {{1}}% de sus PV máx. e inflige un <orangeStrong>{{2}}%</orangeStrong> de su ATQ como Daño de Rayo a un enemigo. Si no hay suficientes PV, al usar la habilidad básica los PV actuales de Arlan se reducen a 1.",
+        "fullDesc": "Arlan consume una cantidad de PV equivalente al {{1, percent}}% de sus PV máx. e inflige un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño de Rayo a un enemigo. Si no hay suficientes PV, al usar la habilidad básica los PV actuales de Arlan se reducen a 1.",
         "shortDesc": "Consume una parte de sus PV para infligir Daño de Rayo a un enemigo."
       }
     },
     "ult": {
       "0": {
         "name": "Castigo furibundo",
-        "fullDesc": "Arlan inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño de Rayo a un enemigo y un <orangeStrong>{{2}}%</orangeStrong> de su ATQ como Daño de Rayo a los enemigos adyacentes.",
+        "fullDesc": "Arlan inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño de Rayo a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño de Rayo a los enemigos adyacentes.",
         "shortDesc": "Inflige una gran cantidad de Daño de Rayo a un enemigo y Daño de Rayo a los enemigos adyacentes."
       }
     },
     "technique": {
       "0": {
         "name": "Cosecha rápida",
-        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{1}}% del ATQ de Arlan como Daño de Rayo a todos los enemigos.",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{1, percent}}% del ATQ de Arlan como Daño de Rayo a todos los enemigos.",
         "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de Daño de Rayo a todos los enemigos."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Renacimiento",
-        "fullDesc": "Si su porcentaje de PV es igual o inferior al {{1}}% cuando elimina a un enemigo, regenera un {{2}}% de sus PV máx.",
+        "fullDesc": "Si su porcentaje de PV es igual o inferior al {{1, percent}}% cuando elimina a un enemigo, regenera un {{2, percent}}% de sus PV máx.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Constancia",
-        "fullDesc": "La probabilidad de resistir estados negativos de Daño con el tiempo aumenta en un {{1}}%.",
+        "fullDesc": "La probabilidad de resistir estados negativos de Daño con el tiempo aumenta en un {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Repelencia",
-        "fullDesc": "Al entrar en combate, si el porcentaje de PV de Arlan es igual o inferior al {{1}}%, resiste todo el daño que no sea Daño con el tiempo. Este efecto desaparece después de que Arlan reciba un ataque.",
+        "fullDesc": "Al entrar en combate, si el porcentaje de PV de Arlan es igual o inferior al {{1, percent}}%, resiste todo el daño que no sea Daño con el tiempo. Este efecto desaparece después de que Arlan reciba un ataque.",
         "shortDesc": ""
       }
     }
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Hasta el final",
-      "desc": "Cuando su porcentaje de PV es igual o inferior al 50%, el daño que inflige su habilidad básica aumenta en un {{1}}%."
+      "desc": "Cuando su porcentaje de PV es igual o inferior al 50%, el daño que inflige su habilidad básica aumenta en un {{1, percent}}%."
     },
     "2": {
       "name": "Liberación",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Cambio de tornas",
-      "desc": "Al recibir un golpe letal durante el combate, en vez de caer derrotado, Arlan recupera un {{1}}% de sus PV máx. Este efecto se disipa automáticamente tras activarse 1 vez o después de {{2}} turnos."
+      "desc": "Al recibir un golpe letal durante el combate, en vez de caer derrotado, Arlan recupera un {{1, percent}}% de sus PV máx. Este efecto se disipa automáticamente tras activarse 1 vez o después de {{2}} turnos."
     },
     "5": {
       "name": "Martillo y tenazas",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Autosacrificio",
-      "desc": "Cuando el porcentaje de PV es igual o inferior al 50%, el daño que inflige la habilidad definitiva aumenta en un {{1}}% y el multiplicador de daño a los enemigos adyacentes aumenta en la misma proporción que el multiplicador de daño al objetivo principal."
+      "desc": "Cuando el porcentaje de PV es igual o inferior al 50%, el daño que inflige la habilidad definitiva aumenta en un {{1, percent}}% y el multiplicador de daño a los enemigos adyacentes aumenta en la misma proporción que el multiplicador de daño al objetivo principal."
     }
   }
 }

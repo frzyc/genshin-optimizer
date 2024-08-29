@@ -1,7 +1,7 @@
 {
   "setName": "Môn Đồ Trường Thọ",
   "setEffects": {
-    "2": "Tăng Giới Hạn HP {{1}}%.",
-    "4": "Sau khi người trang bị chịu tấn công hoặc bị mục tiêu phe ta tiêu hao HP, Tỷ Lệ Bạo Kích tăng {{1}}%, duy trì {{2}} hiệp. Hiệu ứng này tối đa cộng dồn {{3}} tầng."
+    "2": "Tăng Giới Hạn HP {{1, percent}}%.",
+    "4": "Sau khi người trang bị chịu tấn công hoặc bị mục tiêu phe ta tiêu hao HP, Tỷ Lệ Bạo Kích tăng {{1, percent}}%, duy trì {{2}} hiệp. Hiệu ứng này tối đa cộng dồn {{3}} tầng."
   }
 }

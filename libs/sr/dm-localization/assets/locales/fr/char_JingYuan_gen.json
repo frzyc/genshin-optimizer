@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Feux de la lumière",
-        "fullDesc": "Jing Yuan inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de son ATQ à un ennemi unique.",
+        "fullDesc": "Jing Yuan inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de son ATQ à un ennemi unique.",
         "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Zénith tonitruant",
-        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Jing Yuan à tous les ennemis et augmente le nombre de frappes par action du Seigneur de la foudre de {{2}} pour le tour suivant.",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Jing Yuan à tous les ennemis et augmente le nombre de frappes par action du Seigneur de la foudre de {{2}} pour le tour suivant.",
         "shortDesc": "Inflige des DGT de foudre mineurs à tous les ennemis et <orangeStrong>augmente le nombre de frappes par action du Seigneur de la foudre</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Porteur de lumière",
-        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Jing Yuan à tous les ennemis et augmente le nombre de frappes par action du Seigneur de la foudre de {{2}} pour le tour suivant.",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Jing Yuan à tous les ennemis et augmente le nombre de frappes par action du Seigneur de la foudre de {{2}} pour le tour suivant.",
         "shortDesc": "Inflige des DGT de foudre à tous les ennemis et <orangeStrong>augmente le nombre de frappes par action du Seigneur de la foudre</orangeStrong>."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Choc de la bataille",
-        "fullDesc": "Si le nombre de frappes par action du Seigneur de la foudre est supérieur ou égal à {{1}} pour le prochain tour, ses DGT critiques augmentent de {{2}}% au prochain tour.",
+        "fullDesc": "Si le nombre de frappes par action du Seigneur de la foudre est supérieur ou égal à {{1}} pour le prochain tour, ses DGT critiques augmentent de {{2, percent}}% au prochain tour.",
         "shortDesc": ""
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Maréchal de guerre",
-        "fullDesc": "Les chances de coup critique augmentent de {{1}}% pendant {{2}} tours après utilisation de la compétence.",
+        "fullDesc": "Les chances de coup critique augmentent de {{1, percent}}% pendant {{2}} tours après utilisation de la compétence.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Entaille clivante",
-      "desc": "Lorsque le Seigneur de la foudre attaque, le multiplicateur de DGT sur les ennemis adjacents à la cible ennemie augmente d'un montant supplémentaire équivalent à {{1}}% du multiplicateur de DGT de la cible principale."
+      "desc": "Lorsque le Seigneur de la foudre attaque, le multiplicateur de DGT sur les ennemis adjacents à la cible ennemie augmente d'un montant supplémentaire équivalent à {{1, percent}}% du multiplicateur de DGT de la cible principale."
     },
     "2": {
       "name": "Écrasement céleste",
-      "desc": "Après que le Seigneur de la foudre a agi, les DGT infligés par l'ATQ normale, la compétence et l'ultime de Jing Yuan augmentent de {{1}}% pendant {{2}} tours."
+      "desc": "Après que le Seigneur de la foudre a agi, les DGT infligés par l'ATQ normale, la compétence et l'ultime de Jing Yuan augmentent de {{1, percent}}% pendant {{2}} tours."
     },
     "3": {
       "name": "Soumission solaire",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Moisson des âmes perdues",
-      "desc": "Chaque frappe du Seigneur de la foudre lors de son action rend la cible ennemie vulnérable.\\nLes ennemis vulnérables subissent {{1}}% de DGT supplémentaires jusqu'à la fin du tour actuel du Seigneur de la foudre. Cumulable jusqu'à {{2}} fois."
+      "desc": "Chaque frappe du Seigneur de la foudre lors de son action rend la cible ennemie vulnérable.\\nLes ennemis vulnérables subissent {{1, percent}}% de DGT supplémentaires jusqu'à la fin du tour actuel du Seigneur de la foudre. Cumulable jusqu'à {{2}} fois."
     }
   }
 }

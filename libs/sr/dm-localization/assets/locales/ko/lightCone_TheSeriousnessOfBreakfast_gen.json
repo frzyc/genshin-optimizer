@@ -2,6 +2,6 @@
   "name": "느낌 있는 아침 식사 루틴",
   "passive": {
     "name": "각자 위치로",
-    "description": "장착한 캐릭터가 가하는 피해가 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 적 1기를 처치할 때마다, 장착한 캐릭터의 공격력이 <orangeStrong>{{2}}%</orangeStrong> 증가한다. 해당 효과 최대 중첩수: {{3}}스택"
+    "description": "장착한 캐릭터가 가하는 피해가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 적 1기를 처치할 때마다, 장착한 캐릭터의 공격력이 <orangeStrong>{{2, percent}}%</orangeStrong> 증가한다. 해당 효과 최대 중첩수: {{3}}스택"
   }
 }

@@ -2,6 +2,6 @@
   "name": "Jeu d'épée",
   "passive": {
     "name": "Autodidacte",
-    "description": "À chaque fois que le porteur touche la même cible, les DGT infligés augmentent de <orangeStrong>{{1}}%</orangeStrong>. Cumulable jusqu'à {{2}} fois. Cet effet est dissipé lorsque le porteur change de cible."
+    "description": "À chaque fois que le porteur touche la même cible, les DGT infligés augmentent de <orangeStrong>{{1, percent}}%</orangeStrong>. Cumulable jusqu'à {{2}} fois. Cet effet est dissipé lorsque le porteur change de cible."
   }
 }

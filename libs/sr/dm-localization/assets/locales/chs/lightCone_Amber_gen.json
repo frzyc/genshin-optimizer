@@ -2,6 +2,6 @@
   "name": "琥珀",
   "passive": {
     "name": "静滞",
-    "description": "使装备者的防御力提高<orangeStrong>{{1}}%</orangeStrong>。当装备者当前生命值百分比小于{{2}}%时，其防御力额外提高<orangeStrong>{{3}}%</orangeStrong>。"
+    "description": "使装备者的防御力提高<orangeStrong>{{1, percent}}%</orangeStrong>。当装备者当前生命值百分比小于{{2, percent}}%时，其防御力额外提高<orangeStrong>{{3, percent}}%</orangeStrong>。"
   }
 }

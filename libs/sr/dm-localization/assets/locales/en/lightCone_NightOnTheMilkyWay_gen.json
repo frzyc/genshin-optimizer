@@ -2,6 +2,6 @@
   "name": "Night on the Milky Way",
   "passive": {
     "name": "Meteor Swarm",
-    "description": "For every enemy on the field, increases the wearer's ATK by <orangeStrong>{{2}}%</orangeStrong>, up to 5 stacks. When an enemy is inflicted with Weakness Break, the DMG dealt by the wearer increases by <orangeStrong>{{1}}%</orangeStrong> for 1 turn."
+    "description": "For every enemy on the field, increases the wearer's ATK by <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, up to 5 stacks. When an enemy is inflicted with Weakness Break, the DMG dealt by the wearer increases by <orangeStrong>{{1, percent}}%</orangeStrong> for 1 turn."
   }
 }

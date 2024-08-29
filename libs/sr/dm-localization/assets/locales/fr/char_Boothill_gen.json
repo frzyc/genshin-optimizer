@@ -4,26 +4,26 @@
     "basic": {
       "0": {
         "name": "Coup de talon brise-crâne",
-        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ du Fossoyeur à une cible ennemie unique.",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ du Fossoyeur à une cible ennemie unique.",
         "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique."
       },
       "1": {
         "name": "Tir en rafale",
-        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ du Fossoyeur à une cible ennemie unique.\\nL'ATQ normale renforcée ne permet pas de récupérer de points de compétence et ne peut cibler que l'ennemi qui est actuellement dans l'état Confrontation.",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ du Fossoyeur à une cible ennemie unique.\\nL'ATQ normale renforcée ne permet pas de récupérer de points de compétence et ne peut cibler que l'ennemi qui est actuellement dans l'état Confrontation.",
         "shortDesc": "Inflige des DGT physiques à un ennemi unique. Ne peut attaquer que la cible avec Confrontation."
       }
     },
     "skill": {
       "0": {
         "name": "Tango endiablé",
-        "fullDesc": "Force le Fossoyeur à entrer en état de Confrontation avec une cible ennemie unique. L'ATQ normale du Fossoyeur devient renforcée et il ne peut pas utiliser sa compétence pour une durée de {{3}} tours. Cette durée diminue de 1 au début de chaque tour du Fossoyeur.\\nLa cible ennemie qui est en état de Confrontation est provoquée. Lorsque la cible ennemie/le Fossoyeur subit une attaque de la part de l'autre partie, les DGT reçus augmentent de <orangeStrong>{{1}}%</orangeStrong>/{{2}}%.\\nLorsque la cible est éliminée ou qu'elle subit une Rupture de faiblesse, le Fossoyeur obtient 1 cumul d'Avantage en poche, et dissipe Confrontation.\\nCette compétence ne régénère pas d'énergie. Le tour ne se termine pas après l'utilisation de la compétence.",
+        "fullDesc": "Force le Fossoyeur à entrer en état de Confrontation avec une cible ennemie unique. L'ATQ normale du Fossoyeur devient renforcée et il ne peut pas utiliser sa compétence pour une durée de {{3}} tours. Cette durée diminue de 1 au début de chaque tour du Fossoyeur.\\nLa cible ennemie qui est en état de Confrontation est provoquée. Lorsque la cible ennemie/le Fossoyeur subit une attaque de la part de l'autre partie, les DGT reçus augmentent de <orangeStrong>{{1, percent}}%</orangeStrong>/{{2, percent}}%.\\nLorsque la cible est éliminée ou qu'elle subit une Rupture de faiblesse, le Fossoyeur obtient 1 cumul d'Avantage en poche, et dissipe Confrontation.\\nCette compétence ne régénère pas d'énergie. Le tour ne se termine pas après l'utilisation de la compétence.",
         "shortDesc": "Initie une <orangeStrong>Confrontation</orangeStrong>. Lorsque la cible de la Confrontation <orangeStrong>est éliminée ou subit une Rupture de faiblesse</orangeStrong>, le Fossoyeur bénéficie d'Avantage en poche et dissipe Confrontation. Le Fossoyeur utilise désormais son <orangeStrong>ATQ normale renforcée</orangeStrong> et le tour ne se termine pas."
       }
     },
     "ult": {
       "0": {
         "name": "Crépuscule des plaines du sud",
-        "fullDesc": "Applique une Faiblesse physique à une cible ennemie unique pour {{3}} tours.\\nInflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ du Fossoyeur à la cible et <u>retarde son action</u> de <orangeStrong>{{2}}%</orangeStrong>.",
+        "fullDesc": "Applique une Faiblesse physique à une cible ennemie unique pour {{3}} tours.\\nInflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ du Fossoyeur à la cible et <u>retarde son action</u> de <orangeStrong>{{2, percent}}%</orangeStrong>.",
         "shortDesc": "<orangeStrong>Applique une Faiblesse physique</orangeStrong> à un ennemi unique et lui inflige une quantité massive de DGT physiques, tout en retardant son action."
       }
     },
@@ -44,14 +44,14 @@
     "bonusAbility1": {
       "0": {
         "name": "Recharge fantôme",
-        "fullDesc": "Augmente les chances de coup critique / DGT critiques du personnage. L'augmentation est équivalente à {{1}}% / {{3}}% de l'effet de Rupture. Les chances de coup critique / DGT critiques peuvent être augmentés au maximum de {{2}}% / {{4}}%.",
+        "fullDesc": "Augmente les chances de coup critique / DGT critiques du personnage. L'augmentation est équivalente à {{1, percent}}% / {{3, percent}}% de l'effet de Rupture. Les chances de coup critique / DGT critiques peuvent être augmentés au maximum de {{2, percent}}% / {{4, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Panier de crabes",
-        "fullDesc": "Lorsque le Fossoyeur est en état de Confrontation, réduit les DGT qu'il subit de la part des cibles qui ne sont pas en état de Confrontation de {{1}}%.",
+        "fullDesc": "Lorsque le Fossoyeur est en état de Confrontation, réduit les DGT qu'il subit de la part des cibles qui ne sont pas en état de Confrontation de {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Sillage de l'étoile solitaire",
-      "desc": "Obtient 1 cumul d'Avantage en poche en début de combat. Lorsque le Fossoyeur inflige des DGT, il ignore {{1}}% de la DÉF de la cible ennemie."
+      "desc": "Obtient 1 cumul d'Avantage en poche en début de combat. Lorsque le Fossoyeur inflige des DGT, il ignore {{1, percent}}% de la DÉF de la cible ennemie."
     },
     "2": {
       "name": "Baroudeur",
-      "desc": "Lorsque le Fossoyeur gagne Avantage en poche dans l'état Confrontation, il récupère {{1}} point de compétence et son effet de Rupture augmente de {{2}}% pour une durée de {{3}} tours. Cet effet peut également se déclencher lors de l'obtention de cumuls d'Avantage en poche qui dépassent le maximum, mais ne peut pas se déclencher plusieurs fois dans un même tour."
+      "desc": "Lorsque le Fossoyeur gagne Avantage en poche dans l'état Confrontation, il récupère {{1}} point de compétence et son effet de Rupture augmente de {{2, percent}}% pour une durée de {{3}} tours. Cet effet peut également se déclencher lors de l'obtention de cumuls d'Avantage en poche qui dépassent le maximum, mais ne peut pas se déclencher plusieurs fois dans un même tour."
     },
     "3": {
       "name": "Gardien du verger de marbre",
@@ -78,7 +78,7 @@
     },
     "4": {
       "name": "Spécialiste de la viande froide",
-      "desc": "Lorsque la cible ennemie en état de Confrontation est attaquée par le Fossoyeur, l'augmentation des DGT subis est majorée de {{1}}%. Lorsque le Fossoyeur est attaqué par la cible ennemie en état de Confrontation, l'augmentation des DGT subis est réduite de {{2}}%."
+      "desc": "Lorsque la cible ennemie en état de Confrontation est attaquée par le Fossoyeur, l'augmentation des DGT subis est majorée de {{1, percent}}%. Lorsque le Fossoyeur est attaqué par la cible ennemie en état de Confrontation, l'augmentation des DGT subis est réduite de {{2, percent}}%."
     },
     "5": {
       "name": "Discours de la souche",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Raton laveur du Motel Pied-de-biche",
-      "desc": "Lorsque le talent du Fossoyeur inflige des DGT de rupture, il inflige des DGT de rupture supplémentaires équivalents à {{1}}% du multiplicateur des DGT initiaux à la cible et des DGT de rupture supplémentaires équivalents à {{2}}% du multiplicateur des DGT initiaux aux cibles adjacentes."
+      "desc": "Lorsque le talent du Fossoyeur inflige des DGT de rupture, il inflige des DGT de rupture supplémentaires équivalents à {{1, percent}}% du multiplicateur des DGT initiaux à la cible et des DGT de rupture supplémentaires équivalents à {{2, percent}}% du multiplicateur des DGT initiaux aux cibles adjacentes."
     }
   }
 }

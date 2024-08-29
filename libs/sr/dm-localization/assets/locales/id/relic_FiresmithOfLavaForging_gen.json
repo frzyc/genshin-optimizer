@@ -1,7 +1,7 @@
 {
   "setName": "Firesmith of Lava-Forging",
   "setEffects": {
-    "2": "Fire DMG +{{1}}%.",
-    "4": "Meningkatkan {{1}}% DMG yang diakibatkan oleh Skill pengguna. Setelah melancarkan Ultimate, Fire DMG pengguna untuk serangan berikutnya meningkat {{2}}%."
+    "2": "Fire DMG +{{1, percent}}%.",
+    "4": "Meningkatkan {{1, percent}}% DMG yang diakibatkan oleh Skill pengguna. Setelah melancarkan Ultimate, Fire DMG pengguna untuk serangan berikutnya meningkat {{2, percent}}%."
   }
 }

@@ -1,7 +1,7 @@
 {
   "setName": "Thief of Shooting Meteor",
   "setEffects": {
-    "2": "Break Effect +{{1}}%.",
-    "4": "Meningkatkan {{1}}% Break Effect pengguna. Memulihkan {{2}} Energy setelah pengguna mengakibatkan Weakness Break pada musuh."
+    "2": "Break Effect +{{1, percent}}%.",
+    "4": "Meningkatkan {{1, percent}}% Break Effect pengguna. Memulihkan {{2}} Energy setelah pengguna mengakibatkan Weakness Break pada musuh."
   }
 }

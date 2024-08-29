@@ -2,6 +2,6 @@
   "name": "But the Battle Isn't Over",
   "passive": {
     "name": "Heir",
-    "description": "Increases the wearer's Energy Regeneration Rate by <orangeStrong>{{1}}%</orangeStrong> and regenerates 1 Skill Point when the wearer uses their Ultimate on an ally. This effect can be triggered once after every 2 uses of the wearer's Ultimate. When the wearer uses their Skill, the next ally taking action (except the wearer) deals <orangeStrong>{{2}}%</orangeStrong> more DMG for {{3}} turn(s)."
+    "description": "Increases the wearer's Energy Regeneration Rate by <orangeStrong>{{1, percent}}%</orangeStrong> and regenerates 1 Skill Point when the wearer uses their Ultimate on an ally. This effect can be triggered once after every 2 uses of the wearer's Ultimate. When the wearer uses their Skill, the next ally taking action (except the wearer) deals <orangeStrong>{{2, percent}}%</orangeStrong> more DMG for {{3}} turn(s)."
   }
 }

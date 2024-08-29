@@ -4,38 +4,38 @@
     "basic": {
       "0": {
         "name": "Farewell Hit",
-        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of the Trailblazer's ATK to a single enemy.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of the Trailblazer's ATK to a single enemy.",
         "shortDesc": "Deals minor Physical DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "RIP Home Run",
-        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of the Trailblazer's ATK to a single enemy and enemies adjacent to it.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of the Trailblazer's ATK to a single enemy and enemies adjacent to it.",
         "shortDesc": "Deals Physical DMG to a single enemy and enemies adjacent to it."
       }
     },
     "ult": {
       "0": {
         "name": "Stardust Ace",
-        "fullDesc": "Choose between two attack modes to deliver a full strike.\\nBlowout: Farewell Hit deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of the Trailblazer's ATK to a single enemy.\\nBlowout: RIP Home Run deals Physical DMG equal to <orangeStrong>{{2}}%</orangeStrong> of the Trailblazer's ATK to a single enemy, and Physical DMG equal to <orangeStrong>{{3}}%</orangeStrong> of the Trailblazer's ATK to enemies adjacent to it.",
+        "fullDesc": "Choose between two attack modes to deliver a full strike.\\nBlowout: Farewell Hit deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of the Trailblazer's ATK to a single enemy.\\nBlowout: RIP Home Run deals Physical DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of the Trailblazer's ATK to a single enemy, and Physical DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of the Trailblazer's ATK to enemies adjacent to it.",
         "shortDesc": "Uses Single Target ATK or Blast to strike with full force."
       },
       "1": {
         "name": "Blowout: Farewell Hit",
-        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of the Trailblazer's ATK to a single enemy.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of the Trailblazer's ATK to a single enemy.",
         "shortDesc": "Deals massive Physical DMG to a single enemy."
       },
       "2": {
         "name": "Blowout: RIP Home Run",
-        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Trailblazer's ATK to a single enemy and Physical DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Trailblazer's ATK to enemies adjacent to it.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Trailblazer's ATK to a single enemy and Physical DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Trailblazer's ATK to enemies adjacent to it.",
         "shortDesc": "Deals Physical DMG to a single enemy and enemies adjacent to it."
       }
     },
     "technique": {
       "0": {
         "name": "Immortal Third Strike",
-        "fullDesc": "Immediately heals all allies for {{1}}% of their respective Max HP after using this Technique.",
+        "fullDesc": "Immediately heals all allies for {{1, percent}}% of their respective Max HP after using this Technique.",
         "shortDesc": ""
       }
     },
@@ -56,14 +56,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Tenacity",
-        "fullDesc": "Each Talent stack increases the Trailblazer's DEF by {{1}}%.",
+        "fullDesc": "Each Talent stack increases the Trailblazer's DEF by {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Fighting Will",
-        "fullDesc": "When using Skill or Ultimate \"Blowout: RIP Home Run,\" DMG dealt to the target enemy is increased by {{1}}%.",
+        "fullDesc": "When using Skill or Ultimate \"Blowout: RIP Home Run,\" DMG dealt to the target enemy is increased by {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -75,7 +75,7 @@
     },
     "2": {
       "name": "An Unwilling Host",
-      "desc": "Attacking enemies with Physical Weakness restores the Trailblazer's HP equal to {{1}}% of the Trailblazer's ATK."
+      "desc": "Attacking enemies with Physical Weakness restores the Trailblazer's HP equal to {{1, percent}}% of the Trailblazer's ATK."
     },
     "3": {
       "name": "A Leading Whisper",
@@ -83,7 +83,7 @@
     },
     "4": {
       "name": "A Destructing Glance",
-      "desc": "When attacking an enemy with Weakness Break, CRIT Rate is increased by {{1}}%."
+      "desc": "When attacking an enemy with Weakness Break, CRIT Rate is increased by {{1, percent}}%."
     },
     "5": {
       "name": "A Surviving Hope",

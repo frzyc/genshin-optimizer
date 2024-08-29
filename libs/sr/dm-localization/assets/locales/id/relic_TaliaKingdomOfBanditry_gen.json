@@ -1,6 +1,6 @@
 {
   "setName": "Talia: Kingdom of Banditry",
   "setEffects": {
-    "2": "Meningkatkan {{1}}% Break Effect pengguna. Meningkatkan {{3}}% Break Effect tambahan ketika SPD pengguna lebih dari atau sama dengan {{2}}."
+    "2": "Meningkatkan {{1, percent}}% Break Effect pengguna. Meningkatkan {{3, percent}}% Break Effect tambahan ketika SPD pengguna lebih dari atau sama dengan {{2}}."
   }
 }

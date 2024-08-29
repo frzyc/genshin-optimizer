@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Tir de flèche",
-        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Yukong à une cible ennemie.",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Yukong à une cible ennemie.",
         "shortDesc": "Inflige des DGT imaginaires mineurs à un ennemi."
       }
     },
     "skill": {
       "0": {
         "name": "Salve de courage",
-        "fullDesc": "Obtient {{1}} cumuls de « Rugissement des cordes » (maximum de 2 cumuls). Lorsque « Rugissement des cordes » est actif, l'ATQ de tous les alliés augmente de <orangeStrong>{{2}}%</orangeStrong>, et Yukong perd 1 cumul de « Rugissement des cordes » à la fin de chaque tour allié (y compris celui de Yukong).\\nAu cours du tour où Yukong obtient « Rugissement des cordes » en utilisant sa compétence, elle ne perd pas de cumul de « Rugissement des cordes ».",
+        "fullDesc": "Obtient {{1}} cumuls de « Rugissement des cordes » (maximum de 2 cumuls). Lorsque « Rugissement des cordes » est actif, l'ATQ de tous les alliés augmente de <orangeStrong>{{2, percent}}%</orangeStrong>, et Yukong perd 1 cumul de « Rugissement des cordes » à la fin de chaque tour allié (y compris celui de Yukong).\\nAu cours du tour où Yukong obtient « Rugissement des cordes » en utilisant sa compétence, elle ne perd pas de cumul de « Rugissement des cordes ».",
         "shortDesc": "Gagne 2 cumuls de Rugissement des cordes. L'<orangeStrong>ATQ de tous les alliés augmente</orangeStrong> lorsque Rugissement des cordes est actif sur ce personnage."
       }
     },
     "ult": {
       "0": {
         "name": "Crécerelle en piqué",
-        "fullDesc": "Si Yukong bénéficie de « Rugissement des cordes » lorsqu'elle utilise son ultime, les chances de coup critique de tous les alliés augmentent de <orangeStrong>{{2}}%</orangeStrong> et leurs DGT critiques de <orangeStrong>{{3}}%</orangeStrong>. D'autre part, inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Yukong à un ennemi unique.",
+        "fullDesc": "Si Yukong bénéficie de « Rugissement des cordes » lorsqu'elle utilise son ultime, les chances de coup critique de tous les alliés augmentent de <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> et leurs DGT critiques de <orangeStrong>{{3, percent}}%</orangeStrong>. D'autre part, inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Yukong à un ennemi unique.",
         "shortDesc": "<orangeStrong>Augmente les chances de coup critique et les DGT critiques</orangeStrong> de tous les alliés quand Rugissement des cordes est actif sur ce personnage et inflige des DGT imaginaires massifs à un ennemi unique."
       }
     },
     "technique": {
       "0": {
         "name": "À la poursuite du vent",
-        "fullDesc": "Après utilisation de la technique, Yukong entre en mode Sprint pendant {{1}} secondes. En mode Sprint, la vitesse de déplacement augmente de {{2}}% et Yukong obtient {{3}} cumuls de « Rugissement des cordes » lorsqu'elle entre en combat en attaquant des ennemis.",
+        "fullDesc": "Après utilisation de la technique, Yukong entre en mode Sprint pendant {{1}} secondes. En mode Sprint, la vitesse de déplacement augmente de {{2, percent}}% et Yukong obtient {{3}} cumuls de « Rugissement des cordes » lorsqu'elle entre en combat en attaquant des ennemis.",
         "shortDesc": "Augmente la <orangeStrong>vitesse de déplacement</orangeStrong>. Reçoit 2 cumuls de Rugissement des cordes après être entré en combat en attaquant un ennemi."
       }
     },
@@ -46,7 +46,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Archère émérite",
-        "fullDesc": "Lorsque Yukong est sur le champ de bataille, les DGT imaginaires infligés par les alliés augmentent de {{1}}%.",
+        "fullDesc": "Lorsque Yukong est sur le champ de bataille, les DGT imaginaires infligés par les alliés augmentent de {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Maréchale des airs",
-      "desc": "Augmente la VIT de tous les alliés de {{1}}% pendant {{2}} tours en début de combat."
+      "desc": "Augmente la VIT de tous les alliés de {{1, percent}}% pendant {{2}} tours en début de combat."
     },
     "2": {
       "name": "Commandement céleste",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Échos du zéphyr",
-      "desc": "Lorsque « Rugissement des cordes » est actif, Yukong inflige {{1}}% de DGT supplémentaires aux ennemis."
+      "desc": "Lorsque « Rugissement des cordes » est actif, Yukong inflige {{1, percent}}% de DGT supplémentaires aux ennemis."
     },
     "5": {
       "name": "Tir mortel majestueux",

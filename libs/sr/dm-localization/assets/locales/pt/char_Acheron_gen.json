@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Caminhos Definhados Trilaterais",
-        "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Acheron a um único inimigo-alvo.",
+        "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Acheron a um único inimigo-alvo.",
         "shortDesc": "Causa Dano de Raio leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Brilho de Oito Trovões",
-        "fullDesc": "Ganha {{3}} ponto(s) de Sonho Retalhado. Inflige {{3}} acúmulo(s) de Nó Rubro a um único inimigo-alvo e causa Dano de Raio igual <orangeStrong>{{1}}%</orangeStrong> do ATQ de Acheron a este alvo, assim como Dano de Raio igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ de Acheron a alvos adjacentes.",
+        "fullDesc": "Ganha {{3}} ponto(s) de Sonho Retalhado. Inflige {{3}} acúmulo(s) de Nó Rubro a um único inimigo-alvo e causa Dano de Raio igual <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Acheron a este alvo, assim como Dano de Raio igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Acheron a alvos adjacentes.",
         "shortDesc": "Ganha <orangeStrong>{{3}}</orangeStrong> ponto(s) de Sonho Retalhado. Inflige <orangeStrong>{{3}}</orangeStrong> acúmulo(s) de Nó Rubro a um único inimigo e causa Dano de Raio a ele, assim como Dano de Raio leve a alvos adjacentes."
       }
     },
     "ult": {
       "0": {
         "name": "Lágrimas Vermelhas do Sonho Retalhado",
-        "fullDesc": "Utiliza sequencialmente Lâmina Pluvial 3 vezes e Ressurreição Estígia 1 vez, causando Dano de Raio até <orangeStrong>{{6}}%</orangeStrong> do ATQ de Acheron a um único inimigo-alvo, e causa Dano de Raio até de <orangeStrong>{{7}}%</orangeStrong> do ATQ de Acheron a todos os outros inimigos.\\nLâmina Pluvial: Causa Dano de Raio igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Acheron a um único inimigo-alvo e remove até 3 acúmulos de Nó Rubro do alvo. Quando o Nó Rubro é removido, imediatamente causa Dano de Raio igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ de Acheron a todos os inimigos. Para cada acúmulo de Nó Rubro removido, o Multiplicador de Dano desta aplicação de Dano é adicionalmente aumentado, até um aumento de <orangeStrong>{{5}}%</orangeStrong>.\\nRessurreição Estígia: Causa Dano de Raio igual a <orangeStrong>{{3}}%</orangeStrong> do ATQ de Acheron a todos os inimigos e remove todos os Nós Rubros.\\n\\nNós Rubros não podem ser aplicados a inimigos durante a Perícia Suprema.",
+        "fullDesc": "Utiliza sequencialmente Lâmina Pluvial 3 vezes e Ressurreição Estígia 1 vez, causando Dano de Raio até <orangeStrong>{{6, percent}}%</orangeStrong> do ATQ de Acheron a um único inimigo-alvo, e causa Dano de Raio até de <orangeStrong>{{7, percent}}%</orangeStrong> do ATQ de Acheron a todos os outros inimigos.\\nLâmina Pluvial: Causa Dano de Raio igual a <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> do ATQ de Acheron a um único inimigo-alvo e remove até 3 acúmulos de Nó Rubro do alvo. Quando o Nó Rubro é removido, imediatamente causa Dano de Raio igual a <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> do ATQ de Acheron a todos os inimigos. Para cada acúmulo de Nó Rubro removido, o Multiplicador de Dano desta aplicação de Dano é adicionalmente aumentado, até um aumento de <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.\\nRessurreição Estígia: Causa Dano de Raio igual a <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de Acheron a todos os inimigos e remove todos os Nós Rubros.\\n\\nNós Rubros não podem ser aplicados a inimigos durante a Perícia Suprema.",
         "shortDesc": "Causa 3 golpes de Dano de Raio Leve a um único inimigo. Se Nó Rubro for removido do alvo, então causa Dano de Raio leve a todos os inimigos. Finalmente, causa 1 golpe de Dano de Raio a todos os inimigos e remove Nó Rubro."
       },
       "1": {
@@ -45,7 +45,7 @@
     "technique": {
       "0": {
         "name": "Ascendência Quadrivalente",
-        "fullDesc": "Imediatamente ataca o inimigo. No início de cada onda, ganha Ascendência Quadrivalente, causando Dano de Raio igual a {{1}}% do ATQ de Acheron a todos os inimigos e reduzindo a Tenacidade te todos os inimigos independentemente dos Tipos de Fraqueza. Ao infligir Quebra de Fraqueza, aciona o efeito de Quebra de Fraqueza de Raio.\\nAscendência Quadrivalente: depois de usar sua Perícia Suprema, Acheron ganha {{2}} ponto(s) de Sonho Retalhado e inflige {{2}} acúmulo(s) de Nó Rubro em um único inimigo aleatório.\\nSe o ataque for realizado contra um inimigo normal, ele é derrotado imediatamente sem entrar em combate. Nenhum Ponto de Técnica será consumido caso nenhum inimigo seja atingido.",
+        "fullDesc": "Imediatamente ataca o inimigo. No início de cada onda, ganha Ascendência Quadrivalente, causando Dano de Raio igual a {{1, percent}}% do ATQ de Acheron a todos os inimigos e reduzindo a Tenacidade te todos os inimigos independentemente dos Tipos de Fraqueza. Ao infligir Quebra de Fraqueza, aciona o efeito de Quebra de Fraqueza de Raio.\\nAscendência Quadrivalente: depois de usar sua Perícia Suprema, Acheron ganha {{2}} ponto(s) de Sonho Retalhado e inflige {{2}} acúmulo(s) de Nó Rubro em um único inimigo aleatório.\\nSe o ataque for realizado contra um inimigo normal, ele é derrotado imediatamente sem entrar em combate. Nenhum Ponto de Técnica será consumido caso nenhum inimigo seja atingido.",
         "shortDesc": "Ataca o inimigo. Recebe Ascendência Quadrivalente no início de cada onda, causando Dano de Raio a todos os inimigos e reduzindo sua Tenacidade <orangeStrong>independentemente dos Tipos de Fraqueza</orangeStrong>.\\nSe estiver atacando um inimigo comum, <orangeStrong>imediatamente o derrota</orangeStrong> sem entrar em combate. O Ponto de Técnica não é gasto se o ataque não atingir um inimigo."
       }
     },
@@ -66,14 +66,14 @@
     "bonusAbility2": {
       "0": {
         "name": "O Abismo",
-        "fullDesc": "Quando existirem 1 ou 2 personagens seguindo o Caminho da Inexistência na equipe além de Acheron, aumenta o Dano do ATQ Básico, da Perícia e da Perícia Suprema de Acheron em {{1}}% ou {{2}}% do Dano original respectivamente.",
+        "fullDesc": "Quando existirem 1 ou 2 personagens seguindo o Caminho da Inexistência na equipe além de Acheron, aumenta o Dano do ATQ Básico, da Perícia e da Perícia Suprema de Acheron em {{1, percent}}% ou {{2, percent}}% do Dano original respectivamente.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Núcleo Trovejante",
-        "fullDesc": "Quando a Lâmina Pluvial da Perícia Suprema atinge os inimigos-alvo com Nó Rubro, o Dano causado por Acheron aumenta em {{1}}%, acumulando até um máximo de {{2}} acúmulo(s) e durando por {{3}} rodada(s). Também causa Dano adicionalmente {{4}} vez(es) quando a Ressurreição Estígia é acionada. Cada golpe causa Dano de Raio igual a {{5}}% do ATQ de Acheron a um único inimigo-alvo aleatório e é considerado como Dano de Perícia Suprema.",
+        "fullDesc": "Quando a Lâmina Pluvial da Perícia Suprema atinge os inimigos-alvo com Nó Rubro, o Dano causado por Acheron aumenta em {{1, percent}}%, acumulando até um máximo de {{2}} acúmulo(s) e durando por {{3}} rodada(s). Também causa Dano adicionalmente {{4}} vez(es) quando a Ressurreição Estígia é acionada. Cada golpe causa Dano de Raio igual a {{5, percent}}% do ATQ de Acheron a um único inimigo-alvo aleatório e é considerado como Dano de Perícia Suprema.",
         "shortDesc": ""
       }
     }
@@ -81,7 +81,7 @@
   "ranks": {
     "1": {
       "name": "Verdadeiras Palavras do Céu",
-      "desc": "Ao causar Dano a inimigos com penalidade, aumenta a Chance de CRIT em {{1}}%."
+      "desc": "Ao causar Dano a inimigos com penalidade, aumenta a Chance de CRIT em {{1, percent}}%."
     },
     "2": {
       "name": "Trovões Mudos na Tempestade Amainada",
@@ -93,7 +93,7 @@
     },
     "4": {
       "name": "Fogo Sagrado da Alma Refletida",
-      "desc": "Quando o inimigo-alvo entra em combate, inflige a ele o estado de Vulnerabilidade Vulnerável do Dano da Perícia Suprema, aumentando a quantidade de Dano da Perícia Suprema recebido em {{1}}%."
+      "desc": "Quando o inimigo-alvo entra em combate, inflige a ele o estado de Vulnerabilidade Vulnerável do Dano da Perícia Suprema, aumentando a quantidade de Dano da Perícia Suprema recebido em {{1, percent}}%."
     },
     "5": {
       "name": "Almas Espalhadas em Terras Apagadas",
@@ -101,7 +101,7 @@
     },
     "6": {
       "name": "Apocalipse, o Emancipador",
-      "desc": "Aumenta a PEN de RES a Todos os Tipos do Dano de Perícia Suprema causado por Acheron em {{1}}%. O Dano causado pelo ATQ Básico e a Perícia também será considerado Dano de Perícia Suprema e pode reduzir a Tenacidade do inimigo independentemente dos Tipos de Fraqueza. Quando as Fraquezas são Quebradas, aciona o efeito de Quebra de Fraqueza contra Raio."
+      "desc": "Aumenta a PEN de RES a Todos os Tipos do Dano de Perícia Suprema causado por Acheron em {{1, percent}}%. O Dano causado pelo ATQ Básico e a Perícia também será considerado Dano de Perícia Suprema e pode reduzir a Tenacidade do inimigo independentemente dos Tipos de Fraqueza. Quando as Fraquezas são Quebradas, aciona o efeito de Quebra de Fraqueza contra Raio."
     }
   }
 }

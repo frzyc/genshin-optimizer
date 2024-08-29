@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "{RUBY_B#かっさいまんじょう}喝采満場{RUBY_E#}",
-        "fullDesc": "指定した敵単体に桂乃芬の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の炎属性ダメージを与える。",
+        "fullDesc": "指定した敵単体に桂乃芬の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与える。",
         "shortDesc": "敵単体に少量の炎属性ダメージを与える。"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#で}出{RUBY_E#}だし{RUBY_B#こうちょう}好調{RUBY_E#}",
-        "fullDesc": "指定した敵単体に桂乃芬の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の炎属性ダメージを与え、隣接する敵に桂乃芬の攻撃力<orangeStrong>{{2}}%</orangeStrong>分の炎属性ダメージを与える。{{3}}%の<u>基礎確率</u>で指定した敵とその隣接する敵に燃焼状態を付与する。燃焼状態の敵は、ターンが回ってくるたびに桂乃芬の攻撃力<orangeStrong>{{4}}%</orangeStrong>分の炎属性持続ダメージを受ける、{{5}}ターン継続。",
+        "fullDesc": "指定した敵単体に桂乃芬の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与え、隣接する敵に桂乃芬の攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の炎属性ダメージを与える。{{3, percent}}%の<u>基礎確率</u>で指定した敵とその隣接する敵に燃焼状態を付与する。燃焼状態の敵は、ターンが回ってくるたびに桂乃芬の攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の炎属性持続ダメージを受ける、{{5}}ターン継続。",
         "shortDesc": "敵単体に炎属性ダメージを与え、隣接する敵に少量の炎属性ダメージを与え、高確率で<orangeStrong>燃焼状態</orangeStrong>を付与する。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#おはこ}十八番{RUBY_E#}を{RUBY_B#ひろう}披露{RUBY_E#}するね",
-        "fullDesc": "敵全体に桂乃芬の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の炎属性ダメージを与える。敵が燃焼状態の場合、付与された燃焼状態が本来のダメージ<orangeStrong>{{2}}%</orangeStrong>分のダメージを発生する。",
+        "fullDesc": "敵全体に桂乃芬の攻撃力<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>分の炎属性ダメージを与える。敵が燃焼状態の場合、付与された燃焼状態が本来のダメージ<orangeStrong>{{2, percent}}%</orangeStrong>分のダメージを発生する。",
         "shortDesc": "敵全体に炎属性ダメージを与え、敵が燃焼状態の場合、燃焼状態がさらにダメージを1回発生する。"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#だいどうげい}大道芸{RUBY_E#}",
-        "fullDesc": "敵を攻撃。戦闘に入った後、敵にダメージを{{2}}回与える。1ヒットごとにランダムな敵単体に桂乃芬の攻撃力{{1}}%分の炎属性ダメージを与え、{{3}}%の<u>基礎確率</u>でその敵を「火喰い」状態にする。",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵にダメージを{{2}}回与える。1ヒットごとにランダムな敵単体に桂乃芬の攻撃力{{1, percent}}%分の炎属性ダメージを与え、{{3, percent}}%の<u>基礎確率</u>でその敵を「火喰い」状態にする。",
         "shortDesc": "敵を攻撃し、戦闘に入った後に敵単体に少量の炎属性ダメージを与え、<orangeStrong>「火喰い」状態</orangeStrong>を付与する。4回バウンドする。"
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#えんかん}縁竿{RUBY_E#}",
-        "fullDesc": "通常攻撃は{{1}}%の基礎確率で敵を戦闘スキルが与えるものと同じ燃焼状態にする。",
+        "fullDesc": "通常攻撃は{{1, percent}}%の基礎確率で敵を戦闘スキルが与えるものと同じ燃焼状態にする。",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#やいば}刃{RUBY_E#}の{RUBY_B#わ}輪{RUBY_E#}くぐり",
-        "fullDesc": "戦闘開始時、桂乃芬の行動順が{{1}}%早まる。",
+        "fullDesc": "戦闘開始時、桂乃芬の行動順が{{1, percent}}%早まる。",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#はだしとうとう}裸足踏刀{RUBY_E#}",
-        "fullDesc": "燃焼状態の敵に対する与ダメージ+{{1}}%。",
+        "fullDesc": "燃焼状態の敵に対する与ダメージ+{{1, percent}}%。",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "{RUBY_B#さかだ}逆立{RUBY_E#}ち{RUBY_B#めんく}麺食{RUBY_E#}い",
-      "desc": "戦闘スキルを発動した時、{{1}}%の基礎確率で攻撃を受けた敵の効果抵抗-{{2}}%、{{3}}ターン継続。"
+      "desc": "戦闘スキルを発動した時、{{1, percent}}%の基礎確率で攻撃を受けた敵の効果抵抗-{{2, percent}}%、{{3}}ターン継続。"
     },
     "2": {
       "name": "{RUBY_B#は}歯{RUBY_E#}を{RUBY_B#みが}磨{RUBY_E#}きながら{RUBY_B#くちぶえ}口笛{RUBY_E#}を{RUBY_B#ふ}吹{RUBY_E#}く",
-      "desc": "敵が燃焼状態の時、桂乃芬の通常攻撃と戦闘スキルがその敵に付与する燃焼状態のダメージ倍率+{{1}}%。"
+      "desc": "敵が燃焼状態の時、桂乃芬の通常攻撃と戦闘スキルがその敵に付与する燃焼状態のダメージ倍率+{{1, percent}}%。"
     },
     "3": {
       "name": "{RUBY_B#むなもと}胸元{RUBY_E#}で{RUBY_B#いわくだ}岩砕{RUBY_E#}き",

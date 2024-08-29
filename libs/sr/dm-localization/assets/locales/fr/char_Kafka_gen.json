@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Tumulte de minuit",
-        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Kafka à un ennemi unique.",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Kafka à un ennemi unique.",
         "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Caresse du clair de lune",
-        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Kafka à une cible ennemie et des DGT de foudre équivalents à <orangeStrong>{{3}}%</orangeStrong> de l'ATQ de Kafka aux ennemis adjacents.\\nSi la cible ennemie est soumise à des dégâts sur la durée, tous les dégâts sur la durée qu'elle subit actuellement produisent immédiatement des DGT équivalents à <orangeStrong>{{2}}%</orangeStrong> des DGT initiaux.",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Kafka à une cible ennemie et des DGT de foudre équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> de l'ATQ de Kafka aux ennemis adjacents.\\nSi la cible ennemie est soumise à des dégâts sur la durée, tous les dégâts sur la durée qu'elle subit actuellement produisent immédiatement des DGT équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> des DGT initiaux.",
         "shortDesc": "Inflige des DGT de foudre à un ennemi unique et des DGT de foudre mineurs aux cibles adjacentes.\\nSi la cible principale est actuellement affectée par un effet de dégâts sur la durée, les dégâts sur la durée <orangeStrong>infligent des DGT 1 fois supplémentaire</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Trille crépusculaire",
-        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Kafka à tous les ennemis. Les ennemis touchés ont {{2}}% de <u>chances de base</u> d'être stupéfiés et de subir immédiatement des dégâts équivalents à <orangeStrong>{{5}}%</orangeStrong> des DGT initiaux de l'effet Stupéfaction. Stupéfaction dure {{3}} tours.\\nLes ennemis stupéfiés subissent des dégâts de foudre sur la durée équivalents à <orangeStrong>{{4}}%</orangeStrong> de l'ATQ de Kafka au début de chaque tour.",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Kafka à tous les ennemis. Les ennemis touchés ont {{2, percent}}% de <u>chances de base</u> d'être stupéfiés et de subir immédiatement des dégâts équivalents à <orangeStrong>{{5, percent}}%</orangeStrong> des DGT initiaux de l'effet Stupéfaction. Stupéfaction dure {{3}} tours.\\nLes ennemis stupéfiés subissent des dégâts de foudre sur la durée équivalents à <orangeStrong>{{4, percent}}%</orangeStrong> de l'ATQ de Kafka au début de chaque tour.",
         "shortDesc": "Inflige des DGT de foudre mineurs à tous les ennemis, avec de fortes chances de les <orangeStrong>stupéfier</orangeStrong>.\\nSi les ennemis sont déjà stupéfiés, l'état Stupéfaction <orangeStrong>inflige des DGT 1 fois supplémentaire</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "La pitié n'est pas un pardon",
-        "fullDesc": "Attaque immédiatement tous les ennemis dans un rayon déterminé. Inflige des DGT de foudre équivalents à {{3}}% de l'ATQ de Kafka à tous les ennemis après être entrée en combat, avec {{1}}% de <u>chances de base</u> d'infliger l'effet Stupéfaction de l'ultime à chaque ennemi pendant {{2}} tours.",
+        "fullDesc": "Attaque immédiatement tous les ennemis dans un rayon déterminé. Inflige des DGT de foudre équivalents à {{3, percent}}% de l'ATQ de Kafka à tous les ennemis après être entrée en combat, avec {{1, percent}}% de <u>chances de base</u> d'infliger l'effet Stupéfaction de l'ultime à chaque ennemi pendant {{2}} tours.",
         "shortDesc": "Attaque tous les ennemis à portée. Après être entré en combat, inflige des DGT de foudre mineurs à tous les ennemis, avec une forte probabilité de leur infliger <orangeStrong>Stupéfaction</orangeStrong>."
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Épines",
-        "fullDesc": "La chance de base d'infliger Stupéfaction aux ennemis avec l'ultime, la technique et l'attaque de suivi déclenchée par le talent augmente de {{1}}%.",
+        "fullDesc": "La chance de base d'infliger Stupéfaction aux ennemis avec l'ultime, la technique et l'attaque de suivi déclenchée par le talent augmente de {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Da capo",
-      "desc": "Lorsque le talent déclenche une attaque de suivi, il y a {{1}}% de chances de base d'augmenter les dégâts sur la durée subis par la cible de {{2}}% pendant {{3}} tours."
+      "desc": "Lorsque le talent déclenche une attaque de suivi, il y a {{1, percent}}% de chances de base d'augmenter les dégâts sur la durée subis par la cible de {{2, percent}}% pendant {{3}} tours."
     },
     "2": {
       "name": "Fortississimo",
-      "desc": "Lorsque Kafka est sur le champ de bataille, les dégâts sur la durée infligés par tous les alliés augmentent de {{1}}%."
+      "desc": "Lorsque Kafka est sur le champ de bataille, les dégâts sur la durée infligés par tous les alliés augmentent de {{1, percent}}%."
     },
     "3": {
       "name": "Capriccio",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Leggiero",
-      "desc": "Le multiplicateur des DGT de Stupéfaction infligés par l'ultime, la technique ou l'attaque de suivi déclenchée par le talent augmente de {{1}}% et l'effet dure {{2}} tour de plus."
+      "desc": "Le multiplicateur des DGT de Stupéfaction infligés par l'ultime, la technique ou l'attaque de suivi déclenchée par le talent augmente de {{1, percent}}% et l'effet dure {{2}} tour de plus."
     }
   }
 }

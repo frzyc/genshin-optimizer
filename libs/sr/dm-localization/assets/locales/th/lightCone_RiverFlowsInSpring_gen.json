@@ -2,6 +2,6 @@
   "name": "River Flows in Spring",
   "passive": {
     "name": "Stave Off the Lingering Cold",
-    "description": "หลังจากเข้าสู่การต่อสู้ จะทำให้ความเร็วของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> และสร้าง DMG เพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong> หลังจากผู้สวมใส่ได้รับ DMG เอฟเฟกต์นี้จะไร้ผล และเอฟเฟกต์นี้จะฟื้นฟูเมื่อสิ้นสุดเทิร์นถัดไป"
+    "description": "หลังจากเข้าสู่การต่อสู้ จะทำให้ความเร็วของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> และสร้าง DMG เพิ่มขึ้น <orangeStrong>{{2, percent}}%</orangeStrong> หลังจากผู้สวมใส่ได้รับ DMG เอฟเฟกต์นี้จะไร้ผล และเอฟเฟกต์นี้จะฟื้นฟูเมื่อสิ้นสุดเทิร์นถัดไป"
   }
 }

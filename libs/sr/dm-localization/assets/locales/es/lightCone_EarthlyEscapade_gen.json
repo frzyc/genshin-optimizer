@@ -2,6 +2,6 @@
   "name": "Mundo de juegos",
   "passive": {
     "name": "Veleidad",
-    "description": "Aumenta el Daño CRIT del portador en un <orangeStrong>{{1}}%</orangeStrong>. Al comienzo de la batalla, el portador obtiene Máscara durante {{6}} turnos. Mientras el portador tiene Máscara, la Prob. CRIT de los aliados del portador aumenta en un <orangeStrong>{{5}}%</orangeStrong> y el Daño CRIT aumenta en un <orangeStrong>{{2}}%</orangeStrong>. Cada vez que el portador recupera 1 pt. de habilidad básica (incluyendo los pts. que exceden el límite), obtiene 1 acumulación de Llama radiante. Cuando tiene {{4}} acumulaciones de Llama radiante, se eliminan todas y obtiene Máscara durante {{3}} turnos."
+    "description": "Aumenta el Daño CRIT del portador en un <orangeStrong>{{1, percent}}%</orangeStrong>. Al comienzo de la batalla, el portador obtiene Máscara durante {{6}} turnos. Mientras el portador tiene Máscara, la Prob. CRIT de los aliados del portador aumenta en un <orangeStrong>{{5, percent}}%</orangeStrong> y el Daño CRIT aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong>. Cada vez que el portador recupera 1 pt. de habilidad básica (incluyendo los pts. que exceden el límite), obtiene 1 acumulación de Llama radiante. Cuando tiene {{4}} acumulaciones de Llama radiante, se eliminan todas y obtiene Máscara durante {{3}} turnos."
   }
 }

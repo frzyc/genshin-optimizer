@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Etiqueta al bailar el swing",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Imaginario a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Imaginario a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Aguacero en el intermedio",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Imaginario a un enemigo y después inflige daño 4 veces más. Cada golpe inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Imaginario a un enemigo al azar.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Imaginario a un enemigo y después inflige daño 4 veces más. Cada golpe inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Imaginario a un enemigo al azar.",
         "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo. Se dispara 5 veces en total."
       }
     },
     "ult": {
       "0": {
         "name": "Desfile clamoroso de luces",
-        "fullDesc": "Aplica a todos los aliados el efecto Bailarín de apoyo durante {{1}} turnos. La duración del efecto se reduce en 1 cada vez que comience el turno {F#de la}{M#del} Trazacaminos. El efecto de Ruptura de los aliados bajo el efecto de Bailarín de apoyo aumenta en un <orangeStrong>{{3}}%</orangeStrong>. Cuando atacan a enemigos con <u>Ruptura de Debilidad</u>, convierten la Reducción de Firmeza de este ataque en <u>Daño de Ultrarruptura</u> 1 vez.",
+        "fullDesc": "Aplica a todos los aliados el efecto Bailarín de apoyo durante {{1}} turnos. La duración del efecto se reduce en 1 cada vez que comience el turno {F#de la}{M#del} Trazacaminos. El efecto de Ruptura de los aliados bajo el efecto de Bailarín de apoyo aumenta en un <orangeStrong>{{3, percent}}%</orangeStrong>. Cuando atacan a enemigos con <u>Ruptura de Debilidad</u>, convierten la Reducción de Firmeza de este ataque en <u>Daño de Ultrarruptura</u> 1 vez.",
         "shortDesc": "Aplica el efecto Bailarín de apoyo a todos los aliados. Los aliados bajo el efecto de Bailarín de apoyo tienen <orangeStrong>mayor efecto de Ruptura</orangeStrong> e infligen adicionalmente 1 vez <orangeStrong><u>Daño de Ultrarruptura</u></orangeStrong> cuando atacan a enemigos con <u>Ruptura de Debilidad</u>."
       }
     },
     "technique": {
       "0": {
         "name": "¡Que entren los solistas!",
-        "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, el efecto de Ruptura de todos los aliados aumenta en un {{1}}% durante {{2}} turnos.",
+        "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, el efecto de Ruptura de todos los aliados aumenta en un {{1, percent}}% durante {{2}} turnos.",
         "shortDesc": "Aumenta el efecto de Ruptura de todos los aliados en la siguiente batalla."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Baila para mí",
-        "fullDesc": "Si hay 5 o más/4/3/2/1 enemigos en el campo de batalla, el Daño de Ultrarruptura activado por el efecto de Bailarín de apoyo aumenta en un {{1}}%/{{2}}%/{{3}}%/{{4}}%/{{5}}%.",
+        "fullDesc": "Si hay 5 o más/4/3/2/1 enemigos en el campo de batalla, el Daño de Ultrarruptura activado por el efecto de Bailarín de apoyo aumenta en un {{1, percent}}%/{{2, percent}}%/{{3, percent}}%/{{4, percent}}%/{{5, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Sigue la corriente",
-        "fullDesc": "Al usar la habilidad básica, la Reducción de Firmeza del primer daño infligido aumenta en un {{1}}% adicional.",
+        "fullDesc": "Al usar la habilidad básica, la Reducción de Firmeza del primer daño infligido aumenta en un {{1, percent}}% adicional.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Sombrero del teatro",
-        "fullDesc": "Cuando un aliado inflige Ruptura de Debilidad, la acción del enemigo se retrasa en un {{1}}% adicional.",
+        "fullDesc": "Cuando un aliado inflige Ruptura de Debilidad, la acción del enemigo se retrasa en un {{1, percent}}% adicional.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Arcoíris fugaprisiones",
-      "desc": "Al comenzar la batalla, la recuperación de energía {F#de la}{M#del} Trazacaminos aumenta en un <orangeStrong>{{1}}%</orangeStrong> durante {{2}} turnos."
+      "desc": "Al comenzar la batalla, la recuperación de energía {F#de la}{M#del} Trazacaminos aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong> durante {{2}} turnos."
     },
     "3": {
       "name": "Sanatorio del silencio de redonda",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Paloma en la chistera",
-      "desc": "Mientras {F#la}{M#el} Trazacaminos está en el campo de batalla, el efecto de Ruptura de todos los aliados excepto {F#ella}{M#él} aumenta en una cantidad equivalente al {{1}}% del efecto de Ruptura {F#de la}{M#del} Trazacaminos."
+      "desc": "Mientras {F#la}{M#el} Trazacaminos está en el campo de batalla, el efecto de Ruptura de todos los aliados excepto {F#ella}{M#él} aumenta en una cantidad equivalente al {{1, percent}}% del efecto de Ruptura {F#de la}{M#del} Trazacaminos."
     },
     "5": {
       "name": "Poema de viejos ritmos",

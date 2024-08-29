@@ -2,6 +2,6 @@
   "name": "Amber",
   "passive": {
     "name": "Stasis",
-    "description": "ทำให้ DEF ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> เมื่อเปอร์เซ็นต์ HP ปัจจุบันของผู้สวมใส่น้อยกว่า {{2}}% DEF จะเพิ่มขึ้นอีก <orangeStrong>{{3}}%</orangeStrong>"
+    "description": "ทำให้ DEF ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> เมื่อเปอร์เซ็นต์ HP ปัจจุบันของผู้สวมใส่น้อยกว่า {{2, percent}}% DEF จะเพิ่มขึ้นอีก <orangeStrong>{{3, percent}}%</orangeStrong>"
   }
 }

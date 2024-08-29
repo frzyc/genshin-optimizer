@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Windreiterkugel",
-        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Bronyas ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Bronyas ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Erneuter Kampfeinsatz",
-        "fullDesc": "Entfernt 1 <u>Debuff</u> von einem anvisierten Verbündeten, lässt ihn sofort eine Aktion ausführen und erhöht seinen zugefügten SCH für {{3}} Rd. um <orangeStrong>{{1}}%</orangeStrong>.\\nWird diese Fertigkeit auf Bronya selbst angewendet, kann sie keine sofortige Aktion ausführen.",
+        "fullDesc": "Entfernt 1 <u>Debuff</u> von einem anvisierten Verbündeten, lässt ihn sofort eine Aktion ausführen und erhöht seinen zugefügten SCH für {{3}} Rd. um <orangeStrong>{{1, percent}}%</orangeStrong>.\\nWird diese Fertigkeit auf Bronya selbst angewendet, kann sie keine sofortige Aktion ausführen.",
         "shortDesc": "<orangeStrong>Entfernt</orangeStrong> 1 <orangeStrong><u>Debuff</u></orangeStrong> von einem Verbündeten, erhöht dessen <orangeStrong>SCH</orangeStrong> und er <orangeStrong>tritt sofort in Aktion</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Der Belobog-Marsch",
-        "fullDesc": "Erhöht den ANG aller Verbündeten um <orangeStrong>{{1}}%</orangeStrong> und ihren KRIT-SCH um <orangeStrong>{{2}}%</orangeStrong> von Bronyas KRIT-SCH plus <orangeStrong>{{3}}%</orangeStrong> für {{4}} Rd.",
+        "fullDesc": "Erhöht den ANG aller Verbündeten um <orangeStrong>{{1, percent}}%</orangeStrong> und ihren KRIT-SCH um <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> von Bronyas KRIT-SCH plus <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> für {{4}} Rd.",
         "shortDesc": "Erhöht den <orangeStrong>ANG</orangeStrong> und <orangeStrong>KRIT-SCH</orangeStrong> aller Verbündeten."
       }
     },
     "technique": {
       "0": {
         "name": "Banner der Führung",
-        "fullDesc": "Erhöht nach dem Einsatz der Technik den ANG aller Verbündeten zu Beginn des nächsten Kampfs für {{2}} Rd. um {{1}}%.",
+        "fullDesc": "Erhöht nach dem Einsatz der Technik den ANG aller Verbündeten zu Beginn des nächsten Kampfs für {{2}} Rd. um {{1, percent}}%.",
         "shortDesc": "Nach dem Einsatz der Technik wird der ANG aller Verbündeten zu Beginn des nächsten Kampfes erhöht."
       }
     },
@@ -46,14 +46,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Schlachtfeld",
-        "fullDesc": "Erhöht zu Beginn des Kampfes die VTD aller Verbündeten für {{1}} Rd. um {{2}}%.",
+        "fullDesc": "Erhöht zu Beginn des Kampfes die VTD aller Verbündeten für {{1}} Rd. um {{2, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Militärmacht",
-        "fullDesc": "Erhöht den SCH aller Verbündeten um {{1}}%, wenn Bronya mitkämpft.",
+        "fullDesc": "Erhöht den SCH aller Verbündeten um {{1, percent}}%, wenn Bronya mitkämpft.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Stärke erhöhen",
-      "desc": "Beim Einsatz der Fertigkeit besteht eine feste Chance von {{1}}%, 1 Fertigkeitspunkt wiederherzustellen. Dieser Effekt hat eine Abklingzeit von 1 Rd."
+      "desc": "Beim Einsatz der Fertigkeit besteht eine feste Chance von {{1, percent}}%, 1 Fertigkeitspunkt wiederherzustellen. Dieser Effekt hat eine Abklingzeit von 1 Rd."
     },
     "2": {
       "name": "Eilmarsch",
-      "desc": "Erhöht beim Einsatz der Fertigkeit die GES eines anvisierten Verbündeten für 1 Rd. um {{1}}%, wenn er eine Aktion ausführt."
+      "desc": "Erhöht beim Einsatz der Fertigkeit die GES eines anvisierten Verbündeten für 1 Rd. um {{1, percent}}%, wenn er eine Aktion ausführt."
     },
     "3": {
       "name": "Bombardement",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Überraschungsangriff",
-      "desc": "Nach einem Standardangriff eines Verbündeten auf einen Gegner mit Wind-Schwäche startet Bronya unmittelbar einen Folgeangriff und fügt dem Ziel Wind-SCH in Höhe von {{1}}% des Standardangriff-SCH zu. Dieser Effekt kann nur 1-mal pro Runde ausgelöst werden."
+      "desc": "Nach einem Standardangriff eines Verbündeten auf einen Gegner mit Wind-Schwäche startet Bronya unmittelbar einen Folgeangriff und fügt dem Ziel Wind-SCH in Höhe von {{1, percent}}% des Standardangriff-SCH zu. Dieser Effekt kann nur 1-mal pro Runde ausgelöst werden."
     },
     "5": {
       "name": "Unaufhaltsam",

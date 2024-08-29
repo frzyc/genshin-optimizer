@@ -2,6 +2,6 @@
   "name": "{RUBY_B#ようこう}陽光{RUBY_E#}より{RUBY_B#かがや}輝{RUBY_E#}くもの",
   "passive": {
     "name": "この{RUBY_B#いのち}命{RUBY_E#}に{RUBY_B#か}替{RUBY_E#}えても",
-    "description": "装備キャラの会心率+<orangeStrong>{{1}}%</orangeStrong>。装備キャラが通常攻撃を行った時、「龍吟」を1層獲得する、{{2}}ターン継続。「龍吟」1層につき、装備キャラの攻撃力+<orangeStrong>{{4}}%</orangeStrong>、EP回復効率+<orangeStrong>{{5}}%</orangeStrong>。「龍吟」は最大で{{3}}層累積できる。"
+    "description": "装備キャラの会心率+<orangeStrong>{{1, percent}}%</orangeStrong>。装備キャラが通常攻撃を行った時、「龍吟」を1層獲得する、{{2}}ターン継続。「龍吟」1層につき、装備キャラの攻撃力+<orangeStrong>{{4, percent}}%</orangeStrong>、EP回復効率+<orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>。「龍吟」は最大で{{3}}層累積できる。"
   }
 }

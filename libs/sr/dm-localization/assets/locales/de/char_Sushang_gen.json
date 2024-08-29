@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Ritter-Schwertkunst: Stellarer Halo",
-        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Sushangs ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Sushangs ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen physischen SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Ritter-Schwertkunst: Bergfall",
-        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Sushangs ANG zu. Es besteht eine Chance von {{3}}%, nach dem letzten Treffer die „Schwerthaltung“ auszulösen, die dem Ziel <u>zusätzlichen</u> physischen SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Sushangs ANG zufügt.\\nBefindet das Ziel sich im Zustand <u>Schwächebruch</u>, wird die „Schwerthaltung“ garantiert ausgelöst.",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Sushangs ANG zu. Es besteht eine Chance von {{3, percent}}%, nach dem letzten Treffer die „Schwerthaltung“ auszulösen, die dem Ziel <u>zusätzlichen</u> physischen SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Sushangs ANG zufügt.\\nBefindet das Ziel sich im Zustand <u>Schwächebruch</u>, wird die „Schwerthaltung“ garantiert ausgelöst.",
         "shortDesc": "Fügt einem Gegner physischen SCH zu und <orangeStrong>besteht eine geringe Chance, „Schwerthaltung“ auszulösen</orangeStrong>. Bei Gegner mit <u>Schwächebruch</u> wird die <orangeStrong>„Schwerthaltung“ garantiert ausgelöst</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Die Gestalt von Taixu: Herold der Morgenröte",
-        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Sushangs ANG zu und sie tritt sofort in Aktion. Erhöht außerdem ihren ANG um <orangeStrong>{{4}}%</orangeStrong> und beim Einsatz der Fertigkeit 2 zusätzliche Chancen für {{2}} Rd., „Schwerthaltung“ auszulösen.\\nWird die „Schwerthaltung“ durch eine zusätzliche Chance ausgelöst, wird {{3}}% des ursprünglichen SCH verursacht.",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Sushangs ANG zu und sie tritt sofort in Aktion. Erhöht außerdem ihren ANG um <orangeStrong>{{4, percent}}%</orangeStrong> und beim Einsatz der Fertigkeit 2 zusätzliche Chancen für {{2}} Rd., „Schwerthaltung“ auszulösen.\\nWird die „Schwerthaltung“ durch eine zusätzliche Chance ausgelöst, wird {{3, percent}}% des ursprünglichen SCH verursacht.",
         "shortDesc": "Fügt einem Gegner massiven physischen SCH zu, verstärkt den Effekt der „Schwerthaltung“ und gewährt Sushang <orangeStrong>eine sofortige Aktion</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Ritter-Schwertkunst: Ansturm",
-        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt allen Gegnern physischen SCH in Höhe von {{1}}% von Sushangs ANG zu.",
+        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt allen Gegnern physischen SCH in Höhe von {{1, percent}}% von Sushangs ANG zu.",
         "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt allen Gegnern geringen physischen SCH zu."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Frühlingsgeburt",
-        "fullDesc": "Liegt der LP-Prozentsatz bei {{1}}% oder niedriger, sinkt die Chance, von Gegnern angegriffen zu werden.",
+        "fullDesc": "Liegt der LP-Prozentsatz bei {{1, percent}}% oder niedriger, sinkt die Chance, von Gegnern angegriffen zu werden.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Zurückschlagen gegen den Feind",
-        "fullDesc": "Für jede ausgelöste „Schwerthaltung“ wird ihr zugefügter SCH um {{1}}% erhöht. Dieser Effekt ist bis zu {{2}}-mal stapelbar.",
+        "fullDesc": "Für jede ausgelöste „Schwerthaltung“ wird ihr zugefügter SCH um {{1, percent}}% erhöht. Dieser Effekt ist bis zu {{2}}-mal stapelbar.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Sieger",
-        "fullDesc": "Zieht nach dem Einsatz des Standardangriffs oder der Fertigkeit Sushangs Aktion um {{1}}% vor, wenn sich auf dem Feld Gegner mit Schwächebruch befinden.",
+        "fullDesc": "Zieht nach dem Einsatz des Standardangriffs oder der Fertigkeit Sushangs Aktion um {{1, percent}}% vor, wenn sich auf dem Feld Gegner mit Schwächebruch befinden.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Kultivierter Körper",
-      "desc": "Nach Auslösung der „Schwerthaltung“ erleidet Sushang für 1 Rd. {{1}}% weniger SCH."
+      "desc": "Nach Auslösung der „Schwerthaltung“ erleidet Sushang für 1 Rd. {{1, percent}}% weniger SCH."
     },
     "3": {
       "name": "Uralter Schwertstil",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Scharfer Verstand",
-      "desc": "Erhöht Sushangs Brucheffekt um {{1}}%."
+      "desc": "Erhöht Sushangs Brucheffekt um {{1, percent}}%."
     },
     "5": {
       "name": "Der Wille von Taixu",

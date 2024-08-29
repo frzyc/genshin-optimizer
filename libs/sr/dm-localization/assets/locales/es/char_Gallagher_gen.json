@@ -4,12 +4,12 @@
     "basic": {
       "0": {
         "name": "Tarifa de descorche",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Gallagher como Daño de Fuego a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Gallagher como Daño de Fuego a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo."
       },
       "1": {
         "name": "Espuma desbordante",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Gallagher como Daño de Fuego a un enemigo y reduce su ATQ en un <orangeStrong>{{2}}%</orangeStrong> durante {{3}} turnos.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Gallagher como Daño de Fuego a un enemigo y reduce su ATQ en un <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> durante {{3}} turnos.",
         "shortDesc": "Inflige Daño de Fuego a un enemigo y reduce su ATQ."
       }
     },
@@ -23,14 +23,14 @@
     "ult": {
       "0": {
         "name": "Hora del champán",
-        "fullDesc": "Afecta con Melopea a todos los enemigos durante {{2}} turnos. Al mismo tiempo, inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Gallagher como Daño de Fuego a todos los enemigos, y su siguiente ATQ básico se potencia y se convierte en Espuma desbordante.",
+        "fullDesc": "Afecta con Melopea a todos los enemigos durante {{2}} turnos. Al mismo tiempo, inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Gallagher como Daño de Fuego a todos los enemigos, y su siguiente ATQ básico se potencia y se convierte en Espuma desbordante.",
         "shortDesc": "<orangeStrong>Afecta con Melopea</orangeStrong> a todos los enemigos y al mismo tiempo les inflige Daño de Fuego. El siguiente ATQ básico se potencia y se convierte en Espuma desbordante."
       }
     },
     "technique": {
       "0": {
         "name": "Cosecha propia",
-        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Afecta con Melopea a todos los enemigos durante {{1}} turnos y les inflige un {{2}}% del ATQ de Gallagher como Daño de Fuego.",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Afecta con Melopea a todos los enemigos durante {{1}} turnos y les inflige un {{2, percent}}% del ATQ de Gallagher como Daño de Fuego.",
         "shortDesc": "Ataca al enemigo y entra en combate. <orangeStrong>Afecta con Melopea</orangeStrong> a todos los enemigos y les inflige una pequeña cantidad de Daño de Fuego."
       }
     },
@@ -44,7 +44,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Brebaje innovador",
-        "fullDesc": "Aumenta su curación realizada en una cantidad equivalente al {{1}}% del efecto de Ruptura. La curación realizada puede aumentar un {{2}}% como máximo.",
+        "fullDesc": "Aumenta su curación realizada en una cantidad equivalente al {{1, percent}}% del efecto de Ruptura. La curación realizada puede aumentar un {{2, percent}}% como máximo.",
         "shortDesc": ""
       }
     },
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Perro salado",
-      "desc": "Cuando Gallagher entra en combate, recupera {{1}} pts. de energía y su RES a efecto aumenta en un {{2}}%."
+      "desc": "Cuando Gallagher entra en combate, recupera {{1}} pts. de energía y su RES a efecto aumenta en un {{2, percent}}%."
     },
     "2": {
       "name": "Cola de león",
-      "desc": "Al usar la habilidad básica, se elimina {{1}} estado negativo del objetivo aliado y aumenta su RES a efecto en un {{2}}% durante {{3}} turnos."
+      "desc": "Al usar la habilidad básica, se elimina {{1}} estado negativo del objetivo aliado y aumenta su RES a efecto en un {{2, percent}}% durante {{3}} turnos."
     },
     "3": {
       "name": "Resucitador",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Sangre y arena",
-      "desc": "El efecto de Ruptura de Gallagher aumenta en un {{1}}% y su eficiencia de la Ruptura de Debilidad aumenta en un {{2}}%."
+      "desc": "El efecto de Ruptura de Gallagher aumenta en un {{1, percent}}% y su eficiencia de la Ruptura de Debilidad aumenta en un {{2, percent}}%."
     }
   }
 }

@@ -2,6 +2,6 @@
   "name": "Olhos da Presa",
   "passive": {
     "name": "Autoconfiança",
-    "description": "Aumenta em <orangeStrong>{{1}}%</orangeStrong> a Taxa de Acerto de Efeito do usuário e em <orangeStrong>{{2}}%</orangeStrong> o Dano Contínuo."
+    "description": "Aumenta em <orangeStrong>{{1, percent}}%</orangeStrong> a Taxa de Acerto de Efeito do usuário e em <orangeStrong>{{2, percent}}%</orangeStrong> o Dano Contínuo."
   }
 }

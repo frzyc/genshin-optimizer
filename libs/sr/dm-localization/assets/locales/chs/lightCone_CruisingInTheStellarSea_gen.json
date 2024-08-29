@@ -2,6 +2,6 @@
   "name": "星海巡航",
   "passive": {
     "name": "猎逐",
-    "description": "使装备者的暴击率提高<orangeStrong>{{1}}%</orangeStrong>，装备者对生命值百分比小于等于{{2}}%的敌方目标暴击率额外提高<orangeStrong>{{3}}%</orangeStrong>。当装备者消灭敌方目标后，攻击力提高<orangeStrong>{{4}}%</orangeStrong>，持续{{5}}回合。"
+    "description": "使装备者的暴击率提高<orangeStrong>{{1, percent}}%</orangeStrong>，装备者对生命值百分比小于等于{{2, percent}}%的敌方目标暴击率额外提高<orangeStrong>{{3, percent}}%</orangeStrong>。当装备者消灭敌方目标后，攻击力提高<orangeStrong>{{4, percent}}%</orangeStrong>，持续{{5}}回合。"
   }
 }

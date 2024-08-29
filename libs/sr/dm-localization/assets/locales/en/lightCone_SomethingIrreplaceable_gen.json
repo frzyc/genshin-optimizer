@@ -2,6 +2,6 @@
   "name": "Something Irreplaceable",
   "passive": {
     "name": "Kinship",
-    "description": "Increases the wearer's ATK by <orangeStrong>{{1}}%</orangeStrong>. When the wearer defeats an enemy or is hit, immediately restores HP equal to <orangeStrong>{{2}}%</orangeStrong> of the wearer's ATK. At the same time, the wearer's DMG is increased by <orangeStrong>{{3}}%</orangeStrong> until the end of their next turn. This effect cannot stack and can only trigger 1 time per turn."
+    "description": "Increases the wearer's ATK by <orangeStrong>{{1, percent}}%</orangeStrong>. When the wearer defeats an enemy or is hit, immediately restores HP equal to <orangeStrong>{{2, percent}}%</orangeStrong> of the wearer's ATK. At the same time, the wearer's DMG is increased by <orangeStrong>{{3, percent}}%</orangeStrong> until the end of their next turn. This effect cannot stack and can only trigger 1 time per turn."
   }
 }

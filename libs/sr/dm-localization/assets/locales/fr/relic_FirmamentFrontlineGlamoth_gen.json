@@ -1,6 +1,6 @@
 {
   "setName": "Glamoth, ligne de front du firmament",
   "setEffects": {
-    "2": "Augmente l'ATQ du porteur de {{1}}%. Lorsque sa VIT est supérieure ou égale à {{2}}/{{3}}, le porteur inflige {{4}}%/{{5}}% de DGT supplémentaires."
+    "2": "Augmente l'ATQ du porteur de {{1, percent}}%. Lorsque sa VIT est supérieure ou égale à {{2}}/{{3}}, le porteur inflige {{4, percent}}%/{{5, percent}}% de DGT supplémentaires."
   }
 }

@@ -2,6 +2,6 @@
   "name": "Avant l'aube",
   "passive": {
     "name": "Longue nuit",
-    "description": "Augmente les DGT critiques du porteur de <orangeStrong>{{1}}%</orangeStrong>. Augmente les DGT infligés par la compétence et l'ultime du porteur de <orangeStrong>{{2}}%</orangeStrong>. Après utilisation de sa compétence ou de son ultime, le porteur bénéficie de Somnus Corpus. Lors du déclenchement d'une attaque de suivi, Somnus Corpus se dissipe et les DGT infligés par l'attaque de suivi augmentent de <orangeStrong>{{3}}%</orangeStrong>."
+    "description": "Augmente les DGT critiques du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Augmente les DGT infligés par la compétence et l'ultime du porteur de <orangeStrong>{{2, percent}}%</orangeStrong>. Après utilisation de sa compétence ou de son ultime, le porteur bénéficie de Somnus Corpus. Lors du déclenchement d'une attaque de suivi, Somnus Corpus se dissipe et les DGT infligés par l'attaque de suivi augmentent de <orangeStrong>{{3, percent}}%</orangeStrong>."
   }
 }

@@ -2,6 +2,6 @@
   "name": "Nuit sur la voie lactée",
   "passive": {
     "name": "Essaim de météores",
-    "description": "Pour chaque ennemi sur le champ de bataille, augmente l'ATQ du porteur de <orangeStrong>{{2}}%</orangeStrong> jusqu'à 5 cumuls. Lorsqu'un ennemi est affecté par Rupture de faiblesse, augmente les DGT infligés par le porteur de <orangeStrong>{{1}}%</orangeStrong> pendant 1 tour."
+    "description": "Pour chaque ennemi sur le champ de bataille, augmente l'ATQ du porteur de <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> jusqu'à 5 cumuls. Lorsqu'un ennemi est affecté par Rupture de faiblesse, augmente les DGT infligés par le porteur de <orangeStrong>{{1, percent}}%</orangeStrong> pendant 1 tour."
   }
 }

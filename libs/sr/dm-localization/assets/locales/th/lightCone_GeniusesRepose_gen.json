@@ -2,6 +2,6 @@
   "name": "Geniuses' Repose",
   "passive": {
     "name": "Each Now Has a Role to Play",
-    "description": "ทำให้ ATK ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> หลังจากที่ผู้สวมใส่กำจัดศัตรูเป้าหมายแล้ว DMG คริติคอลจะเพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong> เป็นเวลา {{3}} เทิร์น"
+    "description": "ทำให้ ATK ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> หลังจากที่ผู้สวมใส่กำจัดศัตรูเป้าหมายแล้ว DMG คริติคอลจะเพิ่มขึ้น <orangeStrong>{{2, percent}}%</orangeStrong> เป็นเวลา {{3}} เทิร์น"
   }
 }

@@ -2,6 +2,6 @@
   "name": "Memories of the Past",
   "passive": {
     "name": "Old Photo",
-    "description": "Increases the wearer's Break Effect by <orangeStrong>{{1}}%</orangeStrong>. When the wearer attacks, additionally regenerates <orangeStrong>{{2}}</orangeStrong> Energy. This effect cannot be repeatedly triggered in a single turn."
+    "description": "Increases the wearer's Break Effect by <orangeStrong>{{1, percent}}%</orangeStrong>. When the wearer attacks, additionally regenerates <orangeStrong>{{2}}</orangeStrong> Energy. This effect cannot be repeatedly triggered in a single turn."
   }
 }

@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "{RUBY_B#うんきそうじゅつ}雲騎槍術{RUBY_E#}・{RUBY_B#さくふう}朔風{RUBY_E#}",
-        "fullDesc": "指定した敵単体に丹恒の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の風属性ダメージを与える。",
+        "fullDesc": "指定した敵単体に丹恒の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の風属性ダメージを与える。",
         "shortDesc": "敵単体に少量の風属性ダメージを与える。"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#うんきそうじゅつ}雲騎槍術{RUBY_E#}・{RUBY_B#しつう}疾雨{RUBY_E#}",
-        "fullDesc": "指定した敵単体に丹恒の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の風属性ダメージを与える。\\n戦闘スキルによるダメージで会心が発生した時、{{4}}%の<u>基礎確率</u>で攻撃を受けた敵の速度-{{2}}%、{{3}}ターン継続。",
+        "fullDesc": "指定した敵単体に丹恒の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の風属性ダメージを与える。\\n戦闘スキルによるダメージで会心が発生した時、{{4, percent}}%の<u>基礎確率</u>で攻撃を受けた敵の速度-{{2, percent}}%、{{3}}ターン継続。",
         "shortDesc": "敵単体に風属性ダメージを与え、会心時に高確率で減速状態を付与。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#どうてん}洞天{RUBY_E#}{RUBY_B#げんげ}幻化{RUBY_E#}、{RUBY_B#ちょうむ}長夢{RUBY_E#}{RUBY_B#いっかく}一覚{RUBY_E#}",
-        "fullDesc": "指定した敵単体に丹恒の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の風属性ダメージを与える。攻撃を受けた敵が減速状態の場合、必殺技によるダメージのダメージ倍率+<orangeStrong>{{2}}%</orangeStrong>。",
+        "fullDesc": "指定した敵単体に丹恒の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の風属性ダメージを与える。攻撃を受けた敵が減速状態の場合、必殺技によるダメージのダメージ倍率+<orangeStrong>{{2, percent}}%</orangeStrong>。",
         "shortDesc": "敵単体に大量の風属性ダメージを与える、減速状態の敵に対してダメージ倍率アップ。"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#はてき}破敵{RUBY_E#}の{RUBY_B#ほこさき}矛先{RUBY_E#}",
-        "fullDesc": "秘技を使用した後、次の戦闘開始時、丹恒の攻撃力+{{1}}%、{{2}}ターン継続。",
+        "fullDesc": "秘技を使用した後、次の戦闘開始時、丹恒の攻撃力+{{1, percent}}%、{{2}}ターン継続。",
         "shortDesc": "秘技を使用、次の戦闘に入った後に攻撃力アップ。"
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#せんりゅう}潜龍{RUBY_E#}",
-        "fullDesc": "残りHPが{{1}}%以下の場合、敵に攻撃される確率ダウン。",
+        "fullDesc": "残りHPが{{1, percent}}%以下の場合、敵に攻撃される確率ダウン。",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#ぜつえい}絶影{RUBY_E#}",
-        "fullDesc": "攻撃を行った後、{{1}}%の固定確率で自身の速度+{{2}}%、{{3}}ターン継続。",
+        "fullDesc": "攻撃を行った後、{{1, percent}}%の固定確率で自身の速度+{{2, percent}}%、{{3}}ターン継続。",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#ごうふう}剛風{RUBY_E#}",
-        "fullDesc": "減速状態の敵に対する、通常攻撃によるダメージ+{{1}}%。",
+        "fullDesc": "減速状態の敵に対する、通常攻撃によるダメージ+{{1, percent}}%。",
         "shortDesc": ""
       }
     }
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "{RUBY_B#きょくてんきゅうじん}極天窮尽{RUBY_E#}するも\\n{RUBY_B#たかぶ}昂{RUBY_E#}り{RUBY_B#たも}保{RUBY_E#}てず",
-      "desc": "攻撃が命中した敵の残りHPが{{1}}%以上の場合、会心率+{{2}}%。"
+      "desc": "攻撃が命中した敵の残りHPが{{1, percent}}%以上の場合、会心率+{{2, percent}}%。"
     },
     "2": {
       "name": "{RUBY_B#はちどくあっとう}八毒圧倒{RUBY_E#}\\n{RUBY_B#えんえんめっきゃく}炎煙滅却{RUBY_E#}",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "{RUBY_B#こんじょうじょうばく}今生縄縛{RUBY_E#}\\n{RUBY_B#と}解{RUBY_E#}く{RUBY_B#とき}時{RUBY_E#}{RUBY_B#せ}急{RUBY_E#}く{RUBY_B#なか}勿{RUBY_E#}れ",
-      "desc": "戦闘スキルによって減速状態を付与された敵は、さらに速度-{{1}}%。"
+      "desc": "戦闘スキルによって減速状態を付与された敵は、さらに速度-{{1, percent}}%。"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "setName": "Raumstation für Versiegelung",
   "setEffects": {
-    "2": "Erhöht ANG des Trägers um {{1}}%. Wenn die GES des Trägers {{2}} oder höher erreicht, wird sein ANG zusätzlich um {{3}}% erhöht."
+    "2": "Erhöht ANG des Trägers um {{1, percent}}%. Wenn die GES des Trägers {{2}} oder höher erreicht, wird sein ANG zusätzlich um {{3, percent}}% erhöht."
   }
 }

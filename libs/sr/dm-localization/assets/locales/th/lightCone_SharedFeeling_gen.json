@@ -2,6 +2,6 @@
   "name": "Shared Feeling",
   "passive": {
     "name": "Cure and Repair",
-    "description": "ทำให้ปริมาณการรักษาของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> และเมื่อปล่อยสกิลต่อสู้ จะฟื้นฟูพลังงานให้ฝ่ายตัวเองทั้งหมด <orangeStrong>{{2}}</orangeStrong> หน่วย"
+    "description": "ทำให้ปริมาณการรักษาของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> และเมื่อปล่อยสกิลต่อสู้ จะฟื้นฟูพลังงานให้ฝ่ายตัวเองทั้งหมด <orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong> หน่วย"
   }
 }

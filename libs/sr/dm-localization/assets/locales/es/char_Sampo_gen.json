@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Filos cegadores",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Sampo como Daño de Viento a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Sampo como Daño de Viento a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Amor que rebota",
-        "fullDesc": "Inflige un <orangeStrong>{{2}}%</orangeStrong> del ATQ de Sampo como Daño de Viento a un enemigo. También inflige daño {{1}} veces más, y cada vez inflige un Daño de Viento equivalente al <orangeStrong>{{2}}%</orangeStrong> del ATQ de Sampo a un enemigo al azar.",
+        "fullDesc": "Inflige un <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Sampo como Daño de Viento a un enemigo. También inflige daño {{1}} veces más, y cada vez inflige un Daño de Viento equivalente al <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Sampo a un enemigo al azar.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo. Se dispara 5 veces en total."
       }
     },
     "ult": {
       "0": {
         "name": "Regalo sorpresa",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Sampo como Daño de Viento a todos los enemigos y tiene una <u>probabilidad base</u> del {{4}}% de aumentar el Daño con el tiempo que reciben los enemigos atacados en un <orangeStrong>{{2}}%</orangeStrong> durante {{3}} turnos.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Sampo como Daño de Viento a todos los enemigos y tiene una <u>probabilidad base</u> del {{4, percent}}% de aumentar el Daño con el tiempo que reciben los enemigos atacados en un <orangeStrong>{{2, percent}}%</orangeStrong> durante {{3}} turnos.",
         "shortDesc": "Inflige Daño de Viento a todos los enemigos y tiene una gran probabilidad de que <orangeStrong>aumente el Daño con el tiempo que reciben</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Brillo resplandeciente",
-        "fullDesc": "Tras usar la técnica, los enemigos de un área determinada quedan afectados por Ceguera durante {{1}} s, lo que les impide detectar a los aliados.\\nAl iniciar combate contra enemigos cegados, cada enemigo tiene una <u>probabilidad fija</u> del {{2}}% de que su acción se retrase en un {{3}}%.",
+        "fullDesc": "Tras usar la técnica, los enemigos de un área determinada quedan afectados por Ceguera durante {{1}} s, lo que les impide detectar a los aliados.\\nAl iniciar combate contra enemigos cegados, cada enemigo tiene una <u>probabilidad fija</u> del {{2, percent}}% de que su acción se retrase en un {{3, percent}}%.",
         "shortDesc": "Hace que los enemigos de un área determinada sean afectados por Ceguera. Al entrar en combate contra enemigos cegados, cada enemigo tiene una gran probabilidad de que su <u>acción se retrase</u>."
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Picante",
-        "fullDesc": "El daño que los enemigos afectados por Intemperie infligen a Sampo se reduce en un {{1}}%.",
+        "fullDesc": "El daño que los enemigos afectados por Intemperie infligen a Sampo se reduce en un {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Entusiasmo contagioso",
-      "desc": "Cuando elimina a un enemigo afectado por Intemperie, todos los enemigos tienen una probabilidad base del {{1}}% de recibir {{2}} acumulación del estado de Intemperie equivalente a las del talento."
+      "desc": "Cuando elimina a un enemigo afectado por Intemperie, todos los enemigos tienen una probabilidad base del {{1, percent}}% de recibir {{2}} acumulación del estado de Intemperie equivalente a las del talento."
     },
     "3": {
       "name": "¡Mucho dinero!",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Cuánto amor, cuánto odio",
-      "desc": "Cuando la habilidad básica golpea a un enemigo que tenga {{1}} o más acumulaciones de Intemperie, ese enemigo recibe inmediatamente un {{2}}% del daño de su estado de Intemperie."
+      "desc": "Cuando la habilidad básica golpea a un enemigo que tenga {{1}} o más acumulaciones de Intemperie, ese enemigo recibe inmediatamente un {{2, percent}}% del daño de su estado de Intemperie."
     },
     "5": {
       "name": "¡Muchísimo dinero!",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Gasto en aumento",
-      "desc": "El multiplicador de daño del estado de Intemperie aplicado por el talento aumenta en un {{1}}%."
+      "desc": "El multiplicador de daño del estado de Intemperie aplicado por el talento aumenta en un {{1, percent}}%."
     }
   }
 }

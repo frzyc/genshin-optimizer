@@ -2,6 +2,6 @@
   "name": "Banque de données",
   "passive": {
     "name": "Leçon apprise",
-    "description": "Augmente les DGT infligés par l'ultime du porteur de <orangeStrong>{{1}}%</orangeStrong>."
+    "description": "Augmente les DGT infligés par l'ultime du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>."
   }
 }

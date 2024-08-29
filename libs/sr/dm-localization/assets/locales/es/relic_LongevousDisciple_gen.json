@@ -1,7 +1,7 @@
 {
   "setName": "Discípula longeva",
   "setEffects": {
-    "2": "PV máx. +{{1}}%.",
-    "4": "Cuando el portador recibe un ataque o un aliado (incluyendo el portador) consume PV del portador, la Prob. CRIT aumenta en un {{1}}% durante {{2}} turnos. Este efecto se puede acumular hasta {{3}} veces."
+    "2": "PV máx. +{{1, percent}}%.",
+    "4": "Cuando el portador recibe un ataque o un aliado (incluyendo el portador) consume PV del portador, la Prob. CRIT aumenta en un {{1, percent}}% durante {{2}} turnos. Este efecto se puede acumular hasta {{3}} veces."
   }
 }

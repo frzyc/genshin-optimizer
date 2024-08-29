@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Frostschuss",
-        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Pelas ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Pelas ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Frostbeule",
-        "fullDesc": "Entfernt {{2}} <u>Buff</u> des anvisierten Gegners und fügt dem Ziel Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Pelas ANG zu.",
+        "fullDesc": "Entfernt {{2}} <u>Buff</u> des anvisierten Gegners und fügt dem Ziel Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Pelas ANG zu.",
         "shortDesc": "<orangeStrong>Entfernt</orangeStrong> 1 <orangeStrong><u>Buff</u></orangeStrong> eines Gegners und fügt einem Gegner Eis-SCH zu."
       }
     },
     "ult": {
       "0": {
         "name": "Zonenunterdrückung",
-        "fullDesc": "Fügt allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{4}}%</orangeStrong> von Pelas ANG zu und hat eine <u>Grundchance</u> von {{1}}%, bei jedem Gegner „Universelle Beherrschung“ zu verursachen.\\nDie VTD der Gegner im Status „Universelle Beherrschung“ wird für {{3}} Rd. um <orangeStrong>{{2}}%</orangeStrong> reduziert.",
+        "fullDesc": "Fügt allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von Pelas ANG zu und hat eine <u>Grundchance</u> von {{1, percent}}%, bei jedem Gegner „Universelle Beherrschung“ zu verursachen.\\nDie VTD der Gegner im Status „Universelle Beherrschung“ wird für {{3}} Rd. um <orangeStrong>{{2, percent}}%</orangeStrong> reduziert.",
         "shortDesc": "Hat eine hohe Chance, die <orangeStrong>VTD</orangeStrong> aller Gegner zu <orangeStrong>reduzieren</orangeStrong> und fügt allen Gegnern geringen Eis-SCH zu."
       }
     },
     "technique": {
       "0": {
         "name": "Präventivschlag",
-        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt einem zufälligen Gegner Eis-SCH in Höhe von {{4}}% von Pelas ANG zu und hat eine <u>Grundchance</u> von {{1}}%, die VTD aller Gegner für {{3}} Rd. um {{2}}% zu reduzieren.",
+        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt einem zufälligen Gegner Eis-SCH in Höhe von {{4, percent}}% von Pelas ANG zu und hat eine <u>Grundchance</u> von {{1, percent}}%, die VTD aller Gegner für {{3}} Rd. um {{2, percent}}% zu reduzieren.",
         "shortDesc": "Greift Gegner an. Fügt nach Kampfeintritt einem zufälligen Gegner geringen Eis-SCH zu und hat eine hohe Chance, die VTD aller Gegner zu reduzieren."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Schlägerei",
-        "fullDesc": "Erhöht den SCH an Gegnern mit Debuff um {{1}}%.",
+        "fullDesc": "Erhöht den SCH an Gegnern mit Debuff um {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Geheimstrategie",
-        "fullDesc": "Erhöht die Effekt-Trefferrate aller Verbündeten um {{1}}%, wenn Pela mitkämpft.",
+        "fullDesc": "Erhöht die Effekt-Trefferrate aller Verbündeten um {{1, percent}}%, wenn Pela mitkämpft.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Auslöschung",
-        "fullDesc": "Erhöht den SCH durch den nächsten Angriff um {{1}}%, wenn beim Einsatz der Fertigkeit ein Buff entfernt wird.",
+        "fullDesc": "Erhöht den SCH durch den nächsten Angriff um {{1, percent}}%, wenn beim Einsatz der Fertigkeit ein Buff entfernt wird.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Hartnäckige Ladung",
-      "desc": "Nach Einsatz der Fertigkeit zum Entfernen eines gegnerischen Buffs wird ihre GES für {{2}} Rd. um {{1}}% erhöht."
+      "desc": "Nach Einsatz der Fertigkeit zum Entfernen eines gegnerischen Buffs wird ihre GES für {{2}} Rd. um {{1, percent}}% erhöht."
     },
     "3": {
       "name": "Unterdrückungskraft",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Vollständige Analyse",
-      "desc": "Beim Einsatz der Fertigkeit besteht eine Grundchance von {{1}}%, den Eis-WDS des Gegners für {{3}} Rd. um {{2}}% zu reduzieren."
+      "desc": "Beim Einsatz der Fertigkeit besteht eine Grundchance von {{1, percent}}%, den Eis-WDS des Gegners für {{3}} Rd. um {{2, percent}}% zu reduzieren."
     },
     "5": {
       "name": "Absolute Gefährdung",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Schwache Verfolgung",
-      "desc": "Wenn der Gegner nach Pelas Angriff einen Debuff hat, fügt sie ihm zusätzlichen Eis-SCH in Höhe von {{1}}% von Pelas ANG zu."
+      "desc": "Wenn der Gegner nach Pelas Angriff einen Debuff hat, fügt sie ihm zusätzlichen Eis-SCH in Höhe von {{1, percent}}% von Pelas ANG zu."
     }
   }
 }

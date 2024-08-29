@@ -2,6 +2,6 @@
   "name": "Reforged Remembrance",
   "passive": {
     "name": "Crystallize",
-    "description": "Increases the wearer's Effect Hit Rate by <orangeStrong>{{1}}%</orangeStrong>. When the wearer deals DMG to an enemy inflicted with Wind Shear, Burn, Shock, or Bleed, each respectively grants 1 stack of Prophet, stacking up to {{4}} time(s). In a single battle, only 1 stack of Prophet can be granted for each type of DoT. Every stack of Prophet increases wearer's ATK by <orangeStrong>{{2}}%</orangeStrong> and enables the DoT dealt to ignore <orangeStrong>{{3}}%</orangeStrong> of the target's DEF."
+    "description": "Increases the wearer's Effect Hit Rate by <orangeStrong>{{1, percent}}%</orangeStrong>. When the wearer deals DMG to an enemy inflicted with Wind Shear, Burn, Shock, or Bleed, each respectively grants 1 stack of Prophet, stacking up to {{4}} time(s). In a single battle, only 1 stack of Prophet can be granted for each type of DoT. Every stack of Prophet increases wearer's ATK by <orangeStrong>{{2, percent}}%</orangeStrong> and enables the DoT dealt to ignore <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> of the target's DEF."
   }
 }

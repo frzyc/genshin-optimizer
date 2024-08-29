@@ -1,7 +1,7 @@
 {
   "setName": "Thợ Săn Tuyết Phủ",
   "setEffects": {
-    "2": "Tăng Sát Thương Băng {{1}}%.",
-    "4": "Khi người trang bị thi triển Tuyệt Kỹ, Sát Thương Bạo Kích tăng {{1}}%, duy trì {{2}} hiệp."
+    "2": "Tăng Sát Thương Băng {{1, percent}}%.",
+    "4": "Khi người trang bị thi triển Tuyệt Kỹ, Sát Thương Bạo Kích tăng {{1, percent}}%, duy trì {{2}} hiệp."
   }
 }

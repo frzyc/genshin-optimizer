@@ -2,6 +2,6 @@
   "name": "Sailing Towards a Second Life",
   "passive": {
     "name": "Rough Water",
-    "description": "ทำให้เอฟเฟกต์ทำลายล้าง ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> โดย DMG ทำลายล้างที่สร้างจะเพิกเฉยต่อ DEF <orangeStrong>{{3}}%</orangeStrong> ของเป้าหมาย และเมื่อเอฟเฟกต์ทำลายล้างในการต่อสู้ ของผู้สวมใส่มากกว่าหรือเท่ากับ {{2}}% ความเร็วจะเพิ่มขึ้น <orangeStrong>{{4}}%</orangeStrong>"
+    "description": "ทำให้เอฟเฟกต์ทำลายล้าง ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> โดย DMG ทำลายล้างที่สร้างจะเพิกเฉยต่อ DEF <orangeStrong>{{3, percent}}%</orangeStrong> ของเป้าหมาย และเมื่อเอฟเฟกต์ทำลายล้างในการต่อสู้ ของผู้สวมใส่มากกว่าหรือเท่ากับ {{2, percent}}% ความเร็วจะเพิ่มขึ้น <orangeStrong>{{4, percent}}%</orangeStrong>"
   }
 }

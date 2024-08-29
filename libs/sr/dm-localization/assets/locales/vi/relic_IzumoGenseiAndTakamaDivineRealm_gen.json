@@ -1,6 +1,6 @@
 {
   "setName": "Izumo Hiện Thế Và Thần Quốc Cõi Trời",
   "setEffects": {
-    "2": "Tăng {{1}}% Tấn Công của người trang bị. Khi vào chiến đấu, nếu có ít nhất 1 đồng đội cùng Vận Mệnh với người trang bị, thì Tỷ Lệ Bạo Kích của người trang bị tăng {{2}}%."
+    "2": "Tăng {{1, percent}}% Tấn Công của người trang bị. Khi vào chiến đấu, nếu có ít nhất 1 đồng đội cùng Vận Mệnh với người trang bị, thì Tỷ Lệ Bạo Kích của người trang bị tăng {{2, percent}}%."
   }
 }

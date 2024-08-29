@@ -2,6 +2,6 @@
   "name": "Nowhere to Run",
   "passive": {
     "name": "Desperate Times",
-    "description": "Increases the wearer's ATK by <orangeStrong>{{1}}%</orangeStrong>. Whenever the wearer defeats an enemy, they restore HP equal to <orangeStrong>{{2}}%</orangeStrong> of their ATK."
+    "description": "Increases the wearer's ATK by <orangeStrong>{{1, percent}}%</orangeStrong>. Whenever the wearer defeats an enemy, they restore HP equal to <orangeStrong>{{2, percent}}%</orangeStrong> of their ATK."
   }
 }

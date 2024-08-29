@@ -2,6 +2,6 @@
   "name": "驶向第二次生命",
   "passive": {
     "name": "苦航",
-    "description": "使装备者的击破特攻提高<orangeStrong>{{1}}%</orangeStrong>，造成的击破伤害无视目标<orangeStrong>{{3}}%</orangeStrong>的防御力。当装备者在战斗中击破特攻大于等于{{2}}%时，速度提高<orangeStrong>{{4}}%</orangeStrong>。"
+    "description": "使装备者的击破特攻提高<orangeStrong>{{1, percent}}%</orangeStrong>，造成的击破伤害无视目标<orangeStrong>{{3, percent}}%</orangeStrong>的防御力。当装备者在战斗中击破特攻大于等于{{2, percent}}%时，速度提高<orangeStrong>{{4, percent}}%</orangeStrong>。"
   }
 }

@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Sägeblatt-Justierung",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Himekos ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Himekos ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Geschmolzene Explosion",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Himekos ANG zu und fügt den angrenzenden Zielen Feuer-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Himekos ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Himekos ANG zu und fügt den angrenzenden Zielen Feuer-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Himekos ANG zu.",
         "shortDesc": "Fügt einem Gegner Feuer-SCH zu und fügt den angrenzenden Zielen geringen Feuer-SCH zu."
       }
     },
     "ult": {
       "0": {
         "name": "Himmlisches Leuchtsignal",
-        "fullDesc": "Fügt allen Gegnern Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Himekos ANG zu. Für jeden besiegten Gegner erhält Himeko zusätzlich {{2}} Pkt. Energie zurück.",
+        "fullDesc": "Fügt allen Gegnern Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Himekos ANG zu. Für jeden besiegten Gegner erhält Himeko zusätzlich {{2}} Pkt. Energie zurück.",
         "shortDesc": "Fügt allen Gegnern Feuer-SCH zu und stellt Energie beim Besiegen des Gegners wieder her."
       }
     },
     "technique": {
       "0": {
         "name": "Unvollständige Verbrennung",
-        "fullDesc": "Erzeugt nach dem Einsatz der Technik für {{4}} s eine spezielle Dimension. Nach Kampfeintritt mit Gegnern in dieser Dimension besteht eine <u>Grundchance</u> von {{1}}%, den von den Gegnern erlittenen Feuer-SCH für {{3}} Rd. um {{2}}% zu erhöhen. Es kann nur eine von Verbündeten erschaffene Dimension zur gleichen Zeit existieren.",
+        "fullDesc": "Erzeugt nach dem Einsatz der Technik für {{4}} s eine spezielle Dimension. Nach Kampfeintritt mit Gegnern in dieser Dimension besteht eine <u>Grundchance</u> von {{1, percent}}%, den von den Gegnern erlittenen Feuer-SCH für {{3}} Rd. um {{2, percent}}% zu erhöhen. Es kann nur eine von Verbündeten erschaffene Dimension zur gleichen Zeit existieren.",
         "shortDesc": "Erschafft eine Dimension. Wenn du mit Gegnern in der Dimension kämpfst, besteht eine hohe Chance, dass <orangeStrong>der ihnen zugefügte Feuer-SCH erhöht wird</orangeStrong>."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Sternenfeuer",
-        "fullDesc": "Nach dem Einsatz eines Angriffs besteht eine Grundchance von {{1}}%, bei den Gegnern für {{2}} Rd. Brennen zu verursachen.\\nGegner im Status Brennen erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von {{3}}% von Himekos ANG.",
+        "fullDesc": "Nach dem Einsatz eines Angriffs besteht eine Grundchance von {{1, percent}}%, bei den Gegnern für {{2}} Rd. Brennen zu verursachen.\\nGegner im Status Brennen erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von {{3, percent}}% von Himekos ANG.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Magma",
-        "fullDesc": "Erhöht den zugefügten SCH an brennenden Gegnern durch Fertigkeit um {{1}}%.",
+        "fullDesc": "Erhöht den zugefügten SCH an brennenden Gegnern durch Fertigkeit um {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Norm",
-        "fullDesc": "Liegt der LP-Prozentsatz bei {{1}}% oder höher, steigt die KRIT-Rate um {{2}}%.",
+        "fullDesc": "Liegt der LP-Prozentsatz bei {{1, percent}}% oder höher, steigt die KRIT-Rate um {{2, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Kindheit",
-      "desc": "Erhöht Himekos GES nach Auslösung von „Siegesrausch“ für {{2}} Rd. um {{1}}%."
+      "desc": "Erhöht Himekos GES nach Auslösung von „Siegesrausch“ für {{2}} Rd. um {{1, percent}}%."
     },
     "2": {
       "name": "Konvergenz",
-      "desc": "Verursacht {{2}}% mehr SCH bei Gegnern mit LP-Prozentzahl von {{1}}% oder weniger."
+      "desc": "Verursacht {{2, percent}}% mehr SCH bei Gegnern mit LP-Prozentzahl von {{1, percent}}% oder weniger."
     },
     "3": {
       "name": "Selbstsicherheit",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Trailblaze!",
-      "desc": "Der Ultimate verursacht zweimal zusätzlichen SCH und fügt zufälligen Gegnern jedes Mal Feuer-SCH in Höhe von {{1}}% des ursprünglichen SCH zu."
+      "desc": "Der Ultimate verursacht zweimal zusätzlichen SCH und fügt zufälligen Gegnern jedes Mal Feuer-SCH in Höhe von {{1, percent}}% des ursprünglichen SCH zu."
     }
   }
 }

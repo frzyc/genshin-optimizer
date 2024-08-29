@@ -2,6 +2,6 @@
   "name": "Destiny's Threads Forewoven",
   "passive": {
     "name": "Insight",
-    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Effect RES pengguna. Untuk setiap {{2}} DEF yang dimiliki pengguna, DMG yang diakibatkan pengguna akan meningkat <orangeStrong>{{3}}%</orangeStrong>, maksimal meningkat hingga <orangeStrong>{{4}}%</orangeStrong>."
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> Effect RES pengguna. Untuk setiap {{2}} DEF yang dimiliki pengguna, DMG yang diakibatkan pengguna akan meningkat <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, maksimal meningkat hingga <orangeStrong>{{4, percent}}%</orangeStrong>."
   }
 }

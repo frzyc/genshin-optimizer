@@ -4,26 +4,26 @@
     "basic": {
       "0": {
         "name": "{RUBY_B#メンゼンチン}門前清{RUBY_E#}",
-        "fullDesc": "数が一番少ない絵柄の美玉牌を1枚使用し、指定した敵単体に青雀の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の量子属性ダメージを与える。",
+        "fullDesc": "数が一番少ない絵柄の美玉牌を1枚使用し、指定した敵単体に青雀の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の量子属性ダメージを与える。",
         "shortDesc": "牌を1枚使用し、敵単体に少量の量子属性ダメージを与える。"
       },
       "1": {
         "name": "{RUBY_B#リンシャンカイホウ}嶺上開花{RUBY_E#}！",
-        "fullDesc": "指定した敵単体に青雀の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の量子属性ダメージを与え、隣接する敵に青雀の攻撃力<orangeStrong>{{2}}%</orangeStrong>分の量子属性ダメージを与える。\\n「嶺上開花！」はSPを回復できない。",
+        "fullDesc": "指定した敵単体に青雀の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の量子属性ダメージを与え、隣接する敵に青雀の攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の量子属性ダメージを与える。\\n「嶺上開花！」はSPを回復できない。",
         "shortDesc": "敵単体に量子属性ダメージを与え、隣接する敵に少量の量子属性ダメージを与える。"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#ハイテイラオユエ}海底撈月{RUBY_E#}",
-        "fullDesc": "牌を{{1}}枚取り、自身の与ダメージ+<orangeStrong>{{2}}%</orangeStrong>、このターンが終了するまで継続。この効果は最大で{{3}}層累積できる。この戦闘スキルを発動した後、ターンは終了しない。",
+        "fullDesc": "牌を{{1}}枚取り、自身の与ダメージ+<orangeStrong>{{2, percent}}%</orangeStrong>、このターンが終了するまで継続。この効果は最大で{{3}}層累積できる。この戦闘スキルを発動した後、ターンは終了しない。",
         "shortDesc": "<orangeStrong>牌を取り</orangeStrong>、自身の与ダメージをアップする。<orangeStrong>ターンは終了しない</orangeStrong>。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#ヤオユイアン}幺魚暗{RUBY_E#}カン？アガリ！",
-        "fullDesc": "敵全体に青雀の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の量子属性ダメージを与え、同じ絵柄の美玉牌を4枚獲得する。",
+        "fullDesc": "敵全体に青雀の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の量子属性ダメージを与え、同じ絵柄の美玉牌を4枚獲得する。",
         "shortDesc": "敵全体に量子属性ダメージを与え、同じ絵柄の牌を4枚獲得する。"
       }
     },
@@ -51,14 +51,14 @@
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#テンパイ}聴牌{RUBY_E#}",
-        "fullDesc": "戦闘スキルによる、自身の与ダメージアップ効果がさらに{{1}}%アップする。",
+        "fullDesc": "戦闘スキルによる、自身の与ダメージアップ効果がさらに{{1, percent}}%アップする。",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "チャンカン",
-        "fullDesc": "強化通常攻撃を行った後、青雀の速度+{{1}}%、1ターン継続。",
+        "fullDesc": "強化通常攻撃を行った後、青雀の速度+{{1, percent}}%、1ターン継続。",
         "shortDesc": ""
       }
     }
@@ -66,7 +66,7 @@
   "ranks": {
     "1": {
       "name": "{RUBY_B#ヤオユイ}幺魚{RUBY_E#}と{RUBY_B#たわむ}戯{RUBY_E#}れる{RUBY_B#こへい}孤兵{RUBY_E#}",
-      "desc": "必殺技によるダメージ+{{1}}%。"
+      "desc": "必殺技によるダメージ+{{1, percent}}%。"
     },
     "2": {
       "name": "{RUBY_B#ごばん}碁盤{RUBY_E#}は{RUBY_B#まくら}枕{RUBY_E#}、{RUBY_B#かいみん}快眠{RUBY_E#}の{RUBY_B#たす}助け{RUBY_E#}",
@@ -78,7 +78,7 @@
     },
     "4": {
       "name": "{RUBY_B#じごく}地獄{RUBY_E#}{RUBY_B#ま}待{RUBY_E#}ちも{RUBY_B#おだ}穏{RUBY_E#}やかに",
-      "desc": "戦闘スキルを発動した後、{{1}}%の固定確率で「門前ツモ」状態に入る、このターンが終了するまで継続。\\n「門前ツモ」状態では、通常攻撃または強化通常攻撃を行った後に追加攻撃を1回行い、敵にその通常攻撃または強化通常攻撃ダメージ100%分の量子属性ダメージを与える。"
+      "desc": "戦闘スキルを発動した後、{{1, percent}}%の固定確率で「門前ツモ」状態に入る、このターンが終了するまで継続。\\n「門前ツモ」状態では、通常攻撃または強化通常攻撃を行った後に追加攻撃を1回行い、敵にその通常攻撃または強化通常攻撃ダメージ100%分の量子属性ダメージを与える。"
     },
     "5": {
       "name": "{RUBY_B#よわた}世渡{RUBY_E#}りは{RUBY_B#ごううん}豪運{RUBY_E#}{RUBY_B#まか}任{RUBY_E#}せ",

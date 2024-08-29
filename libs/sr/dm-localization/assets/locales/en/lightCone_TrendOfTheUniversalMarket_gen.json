@@ -2,6 +2,6 @@
   "name": "Trend of the Universal Market",
   "passive": {
     "name": "A New Round of Shuffling",
-    "description": "Increases the wearer's DEF by <orangeStrong>{{1}}%</orangeStrong>. When the wearer is attacked, there is a <orangeStrong>{{2}}%</orangeStrong> base chance to Burn the enemy. For each turn, the wearer deals DoT that is equal to <orangeStrong>{{3}}%</orangeStrong> of the wearer's DEF for {{4}} turn(s)."
+    "description": "Increases the wearer's DEF by <orangeStrong>{{1, percent}}%</orangeStrong>. When the wearer is attacked, there is a <orangeStrong>{{2, percent}}%</orangeStrong> base chance to Burn the enemy. For each turn, the wearer deals DoT that is equal to <orangeStrong>{{3, percent}}%</orangeStrong> of the wearer's DEF for {{4}} turn(s)."
   }
 }

@@ -1,6 +1,6 @@
 {
   "setName": "Fleet of the Ageless",
   "setEffects": {
-    "2": "Meningkatkan {{1}}% Max HP pengguna. Meningkatkan {{3}}% ATK seluruh rekan tim ketika SPD pengguna lebih dari atau sama dengan {{2}}."
+    "2": "Meningkatkan {{1, percent}}% Max HP pengguna. Meningkatkan {{3, percent}}% ATK seluruh rekan tim ketika SPD pengguna lebih dari atau sama dengan {{2}}."
   }
 }

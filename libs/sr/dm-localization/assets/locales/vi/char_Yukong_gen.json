@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Tên Bay",
-        "fullDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Yukong.",
+        "fullDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Yukong.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Số Ảo cho 1 kẻ địch."
       }
     },
     "skill": {
       "0": {
         "name": "Tiếng Đàn Thiên Cung",
-        "fullDesc": "Nhận {{1}} tầng Hiệu Lệnh Cung Đàn, tối đa có không quá 2 tầng. Khi Yukong có Hiệu Lệnh Cung Đàn, Tấn Công của toàn bộ phe ta tăng <orangeStrong>{{2}}%</orangeStrong>, đồng thời mỗi lần mục tiêu phe ta kết thúc hiệp, sẽ xóa 1 tầng Hiệu Lệnh Cung Đàn của Yukong.\\nHiệp mà Yukong thi triển Chiến Kỹ có được Hiệu Lệnh Cung Đàn, sẽ không xóa Hiệu Lệnh Cung Đàn.",
+        "fullDesc": "Nhận {{1}} tầng Hiệu Lệnh Cung Đàn, tối đa có không quá 2 tầng. Khi Yukong có Hiệu Lệnh Cung Đàn, Tấn Công của toàn bộ phe ta tăng <orangeStrong>{{2, percent}}%</orangeStrong>, đồng thời mỗi lần mục tiêu phe ta kết thúc hiệp, sẽ xóa 1 tầng Hiệu Lệnh Cung Đàn của Yukong.\\nHiệp mà Yukong thi triển Chiến Kỹ có được Hiệu Lệnh Cung Đàn, sẽ không xóa Hiệu Lệnh Cung Đàn.",
         "shortDesc": "Nhận 2 tầng Hiệu Lệnh Cung Đàn, khi bản thân kích hoạt Hiệu Lệnh Cung Đàn sẽ <orangeStrong>tăng Tấn Công</orangeStrong> cho toàn bộ phe ta."
       }
     },
     "ult": {
       "0": {
         "name": "Mũi Tên Xuyên Mây",
-        "fullDesc": "Khi thi triển Tuyệt Kỹ, nếu Yukong có Hiệu Lệnh Cung Đàn, sẽ khiến Tỷ Lệ Bạo Kích của toàn phe ta tăng <orangeStrong>{{2}}%</orangeStrong>, Sát Thương Bạo Kích tăng <orangeStrong>{{3}}%</orangeStrong>. Đồng thời gây cho 1 kẻ địch chỉ định Sát Thương Số Ảo bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Yukong.",
+        "fullDesc": "Khi thi triển Tuyệt Kỹ, nếu Yukong có Hiệu Lệnh Cung Đàn, sẽ khiến Tỷ Lệ Bạo Kích của toàn phe ta tăng <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, Sát Thương Bạo Kích tăng <orangeStrong>{{3, percent}}%</orangeStrong>. Đồng thời gây cho 1 kẻ địch chỉ định Sát Thương Số Ảo bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Yukong.",
         "shortDesc": "Khi bản thân kích hoạt Hiệu Lệnh Cung Đàn, sẽ <orangeStrong>tăng Tỷ Lệ Bạo Kích và Sát Thương Bạo Kích</orangeStrong> của toàn phe ta, đồng thời gây lượng lớn Sát Thương Số Ảo cho 1 kẻ địch."
       }
     },
     "technique": {
       "0": {
         "name": "Diều Hâu Đuổi Gió",
-        "fullDesc": "Sau khi dùng Bí Kỹ sẽ vào trạng thái Xung Kích trong {{1}}s. Ở trạng thái Xung Kích, tốc độ di chuyển của bản thân tăng {{2}}%, và khi chủ động tấn công kẻ địch để vào chiến đấu, Yukong nhận được {{3}} tầng Hiệu Lệnh Cung Đàn.",
+        "fullDesc": "Sau khi dùng Bí Kỹ sẽ vào trạng thái Xung Kích trong {{1}}s. Ở trạng thái Xung Kích, tốc độ di chuyển của bản thân tăng {{2, percent}}%, và khi chủ động tấn công kẻ địch để vào chiến đấu, Yukong nhận được {{3}} tầng Hiệu Lệnh Cung Đàn.",
         "shortDesc": "<orangeStrong>Tăng tốc độ di chuyển</orangeStrong> của bản thân. Sau khi tấn công kẻ địch để vào trận, sẽ nhận 2 tầng Hiệu Lệnh Cung Đàn."
       }
     },
@@ -46,7 +46,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Bậc Thầy Xạ Thủ",
-        "fullDesc": "Khi Yukong trong trận, Sát Thương Số Ảo của toàn phe ta gây ra tăng {{1}}%.",
+        "fullDesc": "Khi Yukong trong trận, Sát Thương Số Ảo của toàn phe ta gây ra tăng {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Chỉ Huy Đợi Chiến",
-      "desc": "Khi bắt đầu chiến đấu, Tốc Độ của toàn bộ phe ta tăng {{1}}%, duy trì {{2}} hiệp."
+      "desc": "Khi bắt đầu chiến đấu, Tốc Độ của toàn bộ phe ta tăng {{1, percent}}%, duy trì {{2}} hiệp."
     },
     "2": {
       "name": "Chế Ngự Bầu Trời",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Mũi Tên Lướt Gió",
-      "desc": "Khi có Hiệu Lệnh Cung Đàn, sát thương Yukong gây ra tăng {{1}}%."
+      "desc": "Khi có Hiệu Lệnh Cung Đàn, sát thương Yukong gây ra tăng {{1, percent}}%."
     },
     "5": {
       "name": "Vỗ Cánh Tung Trời",

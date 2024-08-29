@@ -1,7 +1,7 @@
 {
   "setName": "Tù Nhân Ngục Tối",
   "setEffects": {
-    "2": "Tấn Công tăng {{1}}%.",
-    "4": "Mỗi khi kẻ địch nhận phải 1 hiệu ứng Sát Thương Duy Trì, thì sát thương người trang bị gây ra cho kẻ đó sẽ bỏ qua {{1}}% Phòng Thủ của kẻ đó. Hiệu ứng này có hiệu lực với tối đa {{2}} hiệu ứng Sát Thương Duy Trì."
+    "2": "Tấn Công tăng {{1, percent}}%.",
+    "4": "Mỗi khi kẻ địch nhận phải 1 hiệu ứng Sát Thương Duy Trì, thì sát thương người trang bị gây ra cho kẻ đó sẽ bỏ qua {{1, percent}}% Phòng Thủ của kẻ đó. Hiệu ứng này có hiệu lực với tối đa {{2}} hiệu ứng Sát Thương Duy Trì."
   }
 }

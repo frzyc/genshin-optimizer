@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Tir givré",
-        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Pela à une cible ennemie unique.",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Pela à une cible ennemie unique.",
         "shortDesc": "Inflige des DGT de glace mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Morsure du givre",
-        "fullDesc": "Supprime {{2}} <u>bonus</u> et inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Pela à une cible ennemie unique.",
+        "fullDesc": "Supprime {{2}} <u>bonus</u> et inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Pela à une cible ennemie unique.",
         "shortDesc": "<orangeStrong>Dissipe</orangeStrong> 1 <orangeStrong><u>bonus</u></orangeStrong> d'une cible ennemie unique, et inflige des DGT de glace à la cible ennemie."
       }
     },
     "ult": {
       "0": {
         "name": "Suppression de zone",
-        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{4}}%</orangeStrong> de l'ATQ de Pela à tous les ennemis, avec {{1}}% de <u>chances de base</u> d'infliger Exposé à tous les ennemis.\\nLorsqu'ils sont exposés, les ennemis voient leur DÉF réduite de <orangeStrong>{{2}}%</orangeStrong> pendant {{3}} tours.",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{4, percent}}%</orangeStrong> de l'ATQ de Pela à tous les ennemis, avec {{1, percent}}% de <u>chances de base</u> d'infliger Exposé à tous les ennemis.\\nLorsqu'ils sont exposés, les ennemis voient leur DÉF réduite de <orangeStrong>{{2, percent}}%</orangeStrong> pendant {{3}} tours.",
         "shortDesc": "A de fortes chances de <orangeStrong>diminuer la DÉF des ennemis</orangeStrong> et inflige des DGT de glace mineurs à tous les ennemis."
       }
     },
     "technique": {
       "0": {
         "name": "Frappe préventive",
-        "fullDesc": "Engage immédiatement le combat contre les ennemis. Pela inflige des DGT de glace équivalents à {{4}}% de son ATQ à un ennemi aléatoire en entrant en combat, avec {{1}}% de <u>chances de base</u> de diminuer la DÉF de tous les ennemis de {{2}}% pendant {{3}} tours.",
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Pela inflige des DGT de glace équivalents à {{4, percent}}% de son ATQ à un ennemi aléatoire en entrant en combat, avec {{1, percent}}% de <u>chances de base</u> de diminuer la DÉF de tous les ennemis de {{2, percent}}% pendant {{3}} tours.",
         "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT mineurs à un ennemi unique aléatoire après être entré en combat, avec de fortes chances de réduire la DÉF de toutes les cibles ennemies."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Frappe douloureuse",
-        "fullDesc": "Inflige {{1}}% de DGT supplémentaires aux ennemis qui subissent un malus.",
+        "fullDesc": "Inflige {{1, percent}}% de DGT supplémentaires aux ennemis qui subissent un malus.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Stratégie secrète",
-        "fullDesc": "Augmente les chances d'appliquer des effets de tous les alliés de {{1}}% lorsque Pela est sur le champ de bataille.",
+        "fullDesc": "Augmente les chances d'appliquer des effets de tous les alliés de {{1, percent}}% lorsque Pela est sur le champ de bataille.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Anéantissement",
-        "fullDesc": "Augmente les DGT de la prochaine attaque de {{1}}% lorsque le personnage utilise sa compétence pour supprimer un bonus.",
+        "fullDesc": "Augmente les DGT de la prochaine attaque de {{1, percent}}% lorsque le personnage utilise sa compétence pour supprimer un bonus.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Charge inflexible",
-      "desc": "Utiliser la compétence pour supprimer un bonus ennemi augmente la VIT de {{1}}% pendant {{2}} tours."
+      "desc": "Utiliser la compétence pour supprimer un bonus ennemi augmente la VIT de {{1, percent}}% pendant {{2}} tours."
     },
     "3": {
       "name": "Force de répression",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Analyse complète",
-      "desc": "Lors de l'utilisation de la compétence, il y a {{1}}% de chances de base de réduire la RÉS à la glace de la cible ennemie de {{2}}% pendant {{3}} tours."
+      "desc": "Lors de l'utilisation de la compétence, il y a {{1, percent}}% de chances de base de réduire la RÉS à la glace de la cible ennemie de {{2, percent}}% pendant {{3}} tours."
     },
     "5": {
       "name": "Péril absolu",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Poursuite acharnée",
-      "desc": "Lorsque Pela attaque un ennemi qui subit un malus, elle lui inflige des DGT de glace additionnels équivalents à {{1}}% de sa propre ATQ."
+      "desc": "Lorsque Pela attaque un ennemi qui subit un malus, elle lui inflige des DGT de glace additionnels équivalents à {{1, percent}}% de sa propre ATQ."
     }
   }
 }

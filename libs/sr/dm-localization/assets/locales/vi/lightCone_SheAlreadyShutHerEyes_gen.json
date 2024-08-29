@@ -2,6 +2,6 @@
   "name": "Đôi Mắt Đã Nhắm Lại",
   "passive": {
     "name": "Tầm Nhìn",
-    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> Giới Hạn HP của người trang bị, hiệu suất hồi phục Năng Lượng tăng <orangeStrong>{{4}}%</orangeStrong>. Khi HP của người trang bị xuống thấp, khiến toàn thể phe ta tăng <orangeStrong>{{2}}%</orangeStrong> sát thương gây ra, duy trì {{5}} hiệp.\\nKhi bắt đầu mỗi đợt, sẽ hồi HP cho toàn phe ta bằng <orangeStrong>{{3}}%</orangeStrong> lượng HP mỗi nhân vật đã mất."
+    "description": "Tăng <orangeStrong>{{1, percent}}%</orangeStrong> Giới Hạn HP của người trang bị, hiệu suất hồi phục Năng Lượng tăng <orangeStrong>{{4, percent}}%</orangeStrong>. Khi HP của người trang bị xuống thấp, khiến toàn thể phe ta tăng <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> sát thương gây ra, duy trì {{5}} hiệp.\\nKhi bắt đầu mỗi đợt, sẽ hồi HP cho toàn phe ta bằng <orangeStrong>{{3, percent}}%</orangeStrong> lượng HP mỗi nhân vật đã mất."
   }
 }

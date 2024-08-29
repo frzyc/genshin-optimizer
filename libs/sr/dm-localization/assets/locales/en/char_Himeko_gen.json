@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Sawblade Tuning",
-        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Himeko's ATK to a single enemy.",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Himeko's ATK to a single enemy.",
         "shortDesc": "Deals minor Fire DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Molten Detonation",
-        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Himeko's ATK to a single enemy and Fire DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Himeko's ATK to enemies adjacent to it.",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Himeko's ATK to a single enemy and Fire DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Himeko's ATK to enemies adjacent to it.",
         "shortDesc": "Deals Fire DMG to a single enemy and minor Fire DMG to enemies adjacent to it."
       }
     },
     "ult": {
       "0": {
         "name": "Heavenly Flare",
-        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Himeko's ATK to all enemies. Himeko regenerates {{2}} extra Energy for each enemy defeated.",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Himeko's ATK to all enemies. Himeko regenerates {{2}} extra Energy for each enemy defeated.",
         "shortDesc": "Deals Fire DMG to all enemies and regenerates Energy if enemies are defeated."
       }
     },
     "technique": {
       "0": {
         "name": "Incomplete Combustion",
-        "fullDesc": "After using Technique, creates a special dimension that lasts for {{4}} second(s). After entering battle with enemies in the special dimension, there is a {{1}}% <u>base chance</u> to increase Fire DMG taken by enemies by {{2}}% for {{3}} turn(s). Only 1 dimension created by allies can exist at the same time.",
+        "fullDesc": "After using Technique, creates a special dimension that lasts for {{4}} second(s). After entering battle with enemies in the special dimension, there is a {{1, percent}}% <u>base chance</u> to increase Fire DMG taken by enemies by {{2, percent}}% for {{3}} turn(s). Only 1 dimension created by allies can exist at the same time.",
         "shortDesc": "Creates a special dimension. After entering combat with enemies in the dimension, there is a high chance to <orangeStrong>increase Fire DMG taken by enemies</orangeStrong>."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Starfire",
-        "fullDesc": "After using an attack, there is a {{1}}% base chance to inflict Burn on enemies for {{2}} turn(s).\\nWhen afflicted with Burn, enemies take Fire DoT equal to {{3}}% of Himeko's ATK at the start of each turn.",
+        "fullDesc": "After using an attack, there is a {{1, percent}}% base chance to inflict Burn on enemies for {{2}} turn(s).\\nWhen afflicted with Burn, enemies take Fire DoT equal to {{3, percent}}% of Himeko's ATK at the start of each turn.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Magma",
-        "fullDesc": "Skill deals {{1}}% more DMG to enemies currently afflicted with Burn.",
+        "fullDesc": "Skill deals {{1, percent}}% more DMG to enemies currently afflicted with Burn.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Benchmark",
-        "fullDesc": "When current HP percentage is {{1}}% or higher, CRIT Rate increases by {{2}}%.",
+        "fullDesc": "When current HP percentage is {{1, percent}}% or higher, CRIT Rate increases by {{2, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Childhood",
-      "desc": "After \"Victory Rush\" is triggered, Himeko's SPD increases by {{1}}% for {{2}} turn(s)."
+      "desc": "After \"Victory Rush\" is triggered, Himeko's SPD increases by {{1, percent}}% for {{2}} turn(s)."
     },
     "2": {
       "name": "Convergence",
-      "desc": "Deals {{2}}% more DMG to enemies whose HP percentage is {{1}}% or less."
+      "desc": "Deals {{2, percent}}% more DMG to enemies whose HP percentage is {{1, percent}}% or less."
     },
     "3": {
       "name": "Poised",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Trailblaze!",
-      "desc": "Ultimate deals DMG 2 extra times, each of which deals Fire DMG equal to {{1}}% of the original DMG to a random enemy."
+      "desc": "Ultimate deals DMG 2 extra times, each of which deals Fire DMG equal to {{1, percent}}% of the original DMG to a random enemy."
     }
   }
 }

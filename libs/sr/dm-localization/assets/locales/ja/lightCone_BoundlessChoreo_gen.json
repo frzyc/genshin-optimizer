@@ -2,6 +2,6 @@
   "name": "{RUBY_B#お}終{RUBY_E#}わりなき{RUBY_B#ぶとう}舞踏{RUBY_E#}",
   "passive": {
     "name": "{RUBY_B#さぐ}探{RUBY_E#}り{RUBY_B#あ}合{RUBY_E#}い",
-    "description": "装備キャラの会心率+<orangeStrong>{{1}}%</orangeStrong>。防御力ダウン状態または減速状態の敵に対する、装備キャラの会心ダメージ+<orangeStrong>{{2}}%</orangeStrong>。"
+    "description": "装備キャラの会心率+<orangeStrong>{{1, percent}}%</orangeStrong>。防御力ダウン状態または減速状態の敵に対する、装備キャラの会心ダメージ+<orangeStrong>{{2, percent}}%</orangeStrong>。"
   }
 }

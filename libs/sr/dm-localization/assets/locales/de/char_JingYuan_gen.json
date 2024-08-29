@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Gleißendes Licht",
-        "fullDesc": "Jing Yuan fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> seines ANG zu.",
+        "fullDesc": "Jing Yuan fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> seines ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Gespaltener Zenit",
-        "fullDesc": "Fügt allen Gegnern Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Jing Yuans ANG zu und erhöht die Trefferzahl des Blitz-Lords in der nächsten Runde um {{2}}.",
+        "fullDesc": "Fügt allen Gegnern Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Jing Yuans ANG zu und erhöht die Trefferzahl des Blitz-Lords in der nächsten Runde um {{2}}.",
         "shortDesc": "Fügt allen Gegnern geringen Blitz-SCH zu und <orangeStrong>erhöht die Trefferzahl des Blitz-Lords</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Lichtbringer",
-        "fullDesc": "Fügt allen Gegnern Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Jing Yuans ANG zu und erhöht die Trefferzahl des Blitz-Lords in der nächsten Runde um {{2}}.",
+        "fullDesc": "Fügt allen Gegnern Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Jing Yuans ANG zu und erhöht die Trefferzahl des Blitz-Lords in der nächsten Runde um {{2}}.",
         "shortDesc": "Fügt allen Gegnern Blitz-SCH zu und <orangeStrong>erhöht die Trefferzahl des Blitz-Lords</orangeStrong>."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Formationsbrecher",
-        "fullDesc": "Erhöht den KRIT-SCH für die nächste Runde um {{2}}%, wenn die Trefferzahl des Blitz-Lords in der nächsten Runde bei {{1}} oder mehr liegt.",
+        "fullDesc": "Erhöht den KRIT-SCH für die nächste Runde um {{2, percent}}%, wenn die Trefferzahl des Blitz-Lords in der nächsten Runde bei {{1}} oder mehr liegt.",
         "shortDesc": ""
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Schachmatt",
-        "fullDesc": "Erhöht nach dem Einsatz der Fertigkeit die KRIT-Rate für {{2}} Rd. um {{1}}%.",
+        "fullDesc": "Erhöht nach dem Einsatz der Fertigkeit die KRIT-Rate für {{2}} Rd. um {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Blitz, gespaltene Klippen",
-      "desc": "Erhöht beim Angriff des Blitz-Lords den SCH-Multiplikator für angrenzende Ziele um einen zusätzlichen Wert in Höhe von {{1}}% des SCH-Multiplikators für den anvisierten Gegner."
+      "desc": "Erhöht beim Angriff des Blitz-Lords den SCH-Multiplikator für angrenzende Ziele um einen zusätzlichen Wert in Höhe von {{1, percent}}% des SCH-Multiplikators für den anvisierten Gegner."
     },
     "2": {
       "name": "Phalanx, blockierte Sonnen",
-      "desc": "Nach der Aktion des Blitz-Lords verursachen Jing Yuans Standardangriff, Fertigkeit und Ultimate für {{2}} Rd. {{1}}% mehr SCH."
+      "desc": "Nach der Aktion des Blitz-Lords verursachen Jing Yuans Standardangriff, Fertigkeit und Ultimate für {{2}} Rd. {{1, percent}}% mehr SCH."
     },
     "3": {
       "name": "Schlag, zerbrochenes Licht",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Zauber, bezwungene Feinde",
-      "desc": "Jeder Treffer des Blitz-Lords verursacht bei den Gegnern zusätzlich Anfälligkeit.\\nAnfällige Ziele erleiden bis zum Ende dieses Angriffs des Blitz-Lords {{1}}% mehr SCH. Dieser Effekt ist bis zu {{2}}-mal stapelbar."
+      "desc": "Jeder Treffer des Blitz-Lords verursacht bei den Gegnern zusätzlich Anfälligkeit.\\nAnfällige Ziele erleiden bis zum Ende dieses Angriffs des Blitz-Lords {{1, percent}}% mehr SCH. Dieser Effekt ist bis zu {{2}}-mal stapelbar."
     }
   }
 }

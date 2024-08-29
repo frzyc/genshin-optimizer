@@ -1,6 +1,6 @@
 {
   "setName": "Đấu Trường Ngôi Sao",
   "setEffects": {
-    "2": "Tăng {{1}}% tỷ lệ Bạo Kích của người trang bị. Khi tỷ lệ Bạo Kích của người đó từ {{2}}% trở lên, sẽ tăng {{3}}% sát thương gây ra khi thi triển Tấn Công Thường hoặc Chiến Kỹ"
+    "2": "Tăng {{1, percent}}% tỷ lệ Bạo Kích của người trang bị. Khi tỷ lệ Bạo Kích của người đó từ {{2, percent}}% trở lên, sẽ tăng {{3, percent}}% sát thương gây ra khi thi triển Tấn Công Thường hoặc Chiến Kỹ"
   }
 }

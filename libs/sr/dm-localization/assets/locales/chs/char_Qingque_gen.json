@@ -4,26 +4,26 @@
     "basic": {
       "0": {
         "name": "门前清",
-        "fullDesc": "使用1张当前花色最少的琼玉牌，对指定敌方单体造成等同于青雀<orangeStrong>{{1}}%</orangeStrong>攻击力的量子属性伤害。",
+        "fullDesc": "使用1张当前花色最少的琼玉牌，对指定敌方单体造成等同于青雀<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的量子属性伤害。",
         "shortDesc": "使用1张牌，对敌方单体造成少量量子属性伤害。"
       },
       "1": {
         "name": "杠上开花！",
-        "fullDesc": "对指定敌方单体造成等同于青雀<orangeStrong>{{1}}%</orangeStrong>攻击力的量子属性伤害，并对其相邻目标造成等同于青雀<orangeStrong>{{2}}%</orangeStrong>攻击力的量子属性伤害。\\n【杠上开花！】无法恢复战技点。",
+        "fullDesc": "对指定敌方单体造成等同于青雀<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的量子属性伤害，并对其相邻目标造成等同于青雀<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的量子属性伤害。\\n【杠上开花！】无法恢复战技点。",
         "shortDesc": "对敌方单体造成量子属性伤害，并对相邻目标造成少量量子属性伤害。"
       }
     },
     "skill": {
       "0": {
         "name": "海底捞月",
-        "fullDesc": "立即抽取{{1}}张琼玉牌，使自身造成的伤害提高<orangeStrong>{{2}}%</orangeStrong>，持续至本回合结束。该效果可以叠加{{3}}层。施放该战技后，本回合不会结束。",
+        "fullDesc": "立即抽取{{1}}张琼玉牌，使自身造成的伤害提高<orangeStrong>{{2, percent}}%</orangeStrong>，持续至本回合结束。该效果可以叠加{{3}}层。施放该战技后，本回合不会结束。",
         "shortDesc": "<orangeStrong>抽牌</orangeStrong>，使自身造成的伤害提高，且<orangeStrong>本回合不会结束</orangeStrong>。"
       }
     },
     "ult": {
       "0": {
         "name": "四幺暗刻？和！",
-        "fullDesc": "对敌方全体造成等同于青雀<orangeStrong>{{1}}%</orangeStrong>攻击力的量子属性伤害，并获得4张相同花色的琼玉牌。",
+        "fullDesc": "对敌方全体造成等同于青雀<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的量子属性伤害，并获得4张相同花色的琼玉牌。",
         "shortDesc": "对敌方全体造成量子属性伤害，获得4张相同花色的牌。"
       }
     },
@@ -51,14 +51,14 @@
     "bonusAbility2": {
       "0": {
         "name": "听牌",
-        "fullDesc": "战技使自身造成的伤害提高效果额外提高{{1}}%。",
+        "fullDesc": "战技使自身造成的伤害提高效果额外提高{{1, percent}}%。",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "抢杠",
-        "fullDesc": "施放强化普攻后，青雀的速度提高{{1}}%，持续1回合。",
+        "fullDesc": "施放强化普攻后，青雀的速度提高{{1, percent}}%，持续1回合。",
         "shortDesc": ""
       }
     }
@@ -66,7 +66,7 @@
   "ranks": {
     "1": {
       "name": "散勇化骁摸幺鱼",
-      "desc": "施放终结技造成的伤害提高{{1}}%。"
+      "desc": "施放终结技造成的伤害提高{{1, percent}}%。"
     },
     "2": {
       "name": "棋枰作枕好入眠",
@@ -78,7 +78,7 @@
     },
     "4": {
       "name": "帝垣翔鳞和绝张",
-      "desc": "施放战技后，有{{1}}%的固定概率获得【不求人】状态，持续至本回合结束。\\n【不求人】状态下，施放普攻或施放强化普攻后立即进行1次追加攻击，对该目标造成等同于普攻或强化普攻伤害100%的量子属性伤害。"
+      "desc": "施放战技后，有{{1, percent}}%的固定概率获得【不求人】状态，持续至本回合结束。\\n【不求人】状态下，施放普攻或施放强化普攻后立即进行1次追加攻击，对该目标造成等同于普攻或强化普攻伤害100%的量子属性伤害。"
     },
     "5": {
       "name": "七星流离全不靠",

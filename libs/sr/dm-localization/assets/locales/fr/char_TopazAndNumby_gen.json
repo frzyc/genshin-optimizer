@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Déficit",
-        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Topaz à un ennemi unique.",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Topaz à un ennemi unique.",
         "shortDesc": "Inflige des DGT de feu mineurs à un ennemi."
       }
     },
     "skill": {
       "0": {
         "name": "Des difficultés de paiement ?",
-        "fullDesc": "Applique Reconnaissance de dette à une cible ennemie unique, ce qui augmente les DGT d'<u>attaque de suivi</u> qu'elle subit de <orangeStrong>{{2}}%</orangeStrong>. Reconnaissance de dette ne s'applique qu'à sa dernière cible. Si aucun ennemi sur le champ de bataille n'est affecté par Reconnaissance de dette au début du tour ou pendant l'action d'un allié, Topaz applique Reconnaissance de dette à une cible ennemie aléatoire.\\nCompti inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Topaz à cette cible. Les DGT infligés par cette compétence sont considérés comme provenant d'une <u>attaque de suivi</u>.",
+        "fullDesc": "Applique Reconnaissance de dette à une cible ennemie unique, ce qui augmente les DGT d'<u>attaque de suivi</u> qu'elle subit de <orangeStrong>{{2, percent}}%</orangeStrong>. Reconnaissance de dette ne s'applique qu'à sa dernière cible. Si aucun ennemi sur le champ de bataille n'est affecté par Reconnaissance de dette au début du tour ou pendant l'action d'un allié, Topaz applique Reconnaissance de dette à une cible ennemie aléatoire.\\nCompti inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Topaz à cette cible. Les DGT infligés par cette compétence sont considérés comme provenant d'une <u>attaque de suivi</u>.",
         "shortDesc": "Applique Reconnaissance de dette à un ennemi unique, <orangeStrong>ce qui augmente les DGT d'attaque de suivi qu'il subit</orangeStrong>. Compti inflige des DGT de feu à la cible."
       }
     },
     "ult": {
       "0": {
         "name": "Pertes et profits",
-        "fullDesc": "Compti entre dans l'état Inflation exponentielle. Son multiplicateur de DGT augmente de <orangeStrong>{{1}}%</orangeStrong> et ses DGT critiques de <orangeStrong>{{2}}%</orangeStrong>. D'autre part, lorsque des ennemis affectés par Reconnaissance de dette sont touchés par l'ATQ normale, la compétence ou l'ultime d'un allié, l'action de Compti est avancée de {{3}}%. Compti quitte l'état Inflation exponentielle après avoir utilisé {{4}} attaques.",
+        "fullDesc": "Compti entre dans l'état Inflation exponentielle. Son multiplicateur de DGT augmente de <orangeStrong>{{1, percent}}%</orangeStrong> et ses DGT critiques de <orangeStrong>{{2, percent}}%</orangeStrong>. D'autre part, lorsque des ennemis affectés par Reconnaissance de dette sont touchés par l'ATQ normale, la compétence ou l'ultime d'un allié, l'action de Compti est avancée de {{3, percent}}%. Compti quitte l'état Inflation exponentielle après avoir utilisé {{4}} attaques.",
         "shortDesc": "Compti entre dans l'état Inflation exponentielle et <orangeStrong>son multiplicateur de DGT ainsi que ses DGT critiques augmentent</orangeStrong>."
       }
     },
@@ -46,7 +46,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Turbulences financières",
-        "fullDesc": "Augmente les DGT infligés par Topaz et Compti aux cibles ennemies qui ont une Faiblesse au feu de {{1}}%.",
+        "fullDesc": "Augmente les DGT infligés par Topaz et Compti aux cibles ennemies qui ont une Faiblesse au feu de {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Marché à terme",
-      "desc": "Lorsque des ennemis affectés par Reconnaissance de dette subissent des attaques de suivi, ils entrent dans l'état Débiteur. Cet effet ne peut s'activer qu'une fois par attaque.\\nDébiteur augmente les DGT critiques des attaques de suivi infligées aux cibles ennemies de {{1}}%, cumulable jusqu'à {{2}} fois. Débiteur se dissipe en même temps que Reconnaissance de dette."
+      "desc": "Lorsque des ennemis affectés par Reconnaissance de dette subissent des attaques de suivi, ils entrent dans l'état Débiteur. Cet effet ne peut s'activer qu'une fois par attaque.\\nDébiteur augmente les DGT critiques des attaques de suivi infligées aux cibles ennemies de {{1, percent}}%, cumulable jusqu'à {{2}} fois. Débiteur se dissipe en même temps que Reconnaissance de dette."
     },
     "2": {
       "name": "Acquisition de bonne foi",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Transaction rapide",
-      "desc": "L'action de Topaz est avancée de {{1}}% après le début du tour de Compti."
+      "desc": "L'action de Topaz est avancée de {{1, percent}}% après le début du tour de Compti."
     },
     "5": {
       "name": "Loi de l'offre et de la demande",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Prime d'intéressement",
-      "desc": "Le nombre d'attaques de Compti augmente de {{1}} lorsqu'il est dans l'état Inflation exponentielle, et sa PÉN de RÉS au feu augmente de {{2}}% lorsqu'il attaque."
+      "desc": "Le nombre d'attaques de Compti augmente de {{1}} lorsqu'il est dans l'état Inflation exponentielle, et sa PÉN de RÉS au feu augmente de {{2, percent}}% lorsqu'il attaque."
     }
   }
 }

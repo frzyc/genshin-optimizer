@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Flügelflattern",
-        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Robins ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Robins ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen physischen SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Arie der Feder",
-        "fullDesc": "Erhöht den verursachten SCH aller Verbündeten für {{2}} Rd. um <orangeStrong>{{1}}%</orangeStrong>. Diese Dauer wird jeweils zu Beginn von Robins Rd. um 1 verringert.",
+        "fullDesc": "Erhöht den verursachten SCH aller Verbündeten für {{2}} Rd. um <orangeStrong>{{1, percent}}%</orangeStrong>. Diese Dauer wird jeweils zu Beginn von Robins Rd. um 1 verringert.",
         "shortDesc": "<orangeStrong>Erhöht den verursachten SCH</orangeStrong> aller Verbündeten."
       }
     },
     "ult": {
       "0": {
         "name": "Sternenfuge mit tausend Klängen",
-        "fullDesc": "Robin tritt in den Status „Konzert“ ein, wodurch alle Verbündeten außer ihr selbst sofort eine Aktion ausführen.\\nIm Status Konzert wird der ANG aller Verbündeten in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Robins ANG plus <orangeStrong>{{3}}</orangeStrong> erhöht. Nach jedem Angriff eines Verbündeten verursacht Robin 1-mal <u>zusätzlich physischen SCH</u> in Höhe von <orangeStrong>{{4}}%</orangeStrong> ihres ANG. Die KRIT-Rate für diesen SCH beträgt {{5}}% und der KRIT-SCH {{6}}%.\\nWenn Robin sich im Status Konzert befindet, ist Robin immun gegen <u>Mengenkontrolle-Debuffs</u>. Bis zum Ende des Status Konzert wird sie keine Runde haben und keine Aktion ausführen.\\nDer Countdown von Konzert erscheint in der Aktionsreihenfolge. Beginnt die Runde des Countdowns, verlässt Robin den Status Konzert und führt sofort eine Aktion aus. Der Countdown hat eine feste GES von {{2}}.",
+        "fullDesc": "Robin tritt in den Status „Konzert“ ein, wodurch alle Verbündeten außer ihr selbst sofort eine Aktion ausführen.\\nIm Status Konzert wird der ANG aller Verbündeten in Höhe von <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Robins ANG plus <orangeStrong>{{3}}</orangeStrong> erhöht. Nach jedem Angriff eines Verbündeten verursacht Robin 1-mal <u>zusätzlich physischen SCH</u> in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> ihres ANG. Die KRIT-Rate für diesen SCH beträgt {{5, percent}}% und der KRIT-SCH {{6, percent}}%.\\nWenn Robin sich im Status Konzert befindet, ist Robin immun gegen <u>Mengenkontrolle-Debuffs</u>. Bis zum Ende des Status Konzert wird sie keine Runde haben und keine Aktion ausführen.\\nDer Countdown von Konzert erscheint in der Aktionsreihenfolge. Beginnt die Runde des Countdowns, verlässt Robin den Status Konzert und führt sofort eine Aktion aus. Der Countdown hat eine feste GES von {{2}}.",
         "shortDesc": "Tritt in den Status „Konzert“ ein. Der <orangeStrong>ANG aller Verbündeten wird erhöht</orangeStrong> und Robins Teammitglieder können sofort eine Aktion ausführen. Robin fügt nach einem Angriff eines Verbündeten <orangeStrong><u>zusätzlich</u> physischen SCH</orangeStrong> zu. Der Status Konzert verleiht Robin Immunität gegen <u>Mengenkontrolle-Debuffs</u>. Solange der Status aktiv ist, wird Robin bis zum Ende des Countdowns keine Runde haben und keine Aktion ausführen."
       }
     },
@@ -39,14 +39,14 @@
     "bonusAbility1": {
       "0": {
         "name": "Prachtvolle Koloratur",
-        "fullDesc": "Beim Kampfbeginn wird die eigene Aktion um {{1}}% vorgezogen.",
+        "fullDesc": "Beim Kampfbeginn wird die eigene Aktion um {{1, percent}}% vorgezogen.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Improvisierte Vokalise",
-        "fullDesc": "Im Status „Konzert“ wird der KRIT-SCH aller Verbündeten bei Folgeangriffen um {{1}}% erhöht.",
+        "fullDesc": "Im Status „Konzert“ wird der KRIT-SCH aller Verbündeten bei Folgeangriffen um {{1, percent}}% erhöht.",
         "shortDesc": ""
       }
     },
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Land des Lächelns",
-      "desc": "Im Status „Konzert“ wird die WDS-DUR aller Typen für alle Verbündeten um {{1}}% erhöht."
+      "desc": "Im Status „Konzert“ wird die WDS-DUR aller Typen für alle Verbündeten um {{1, percent}}% erhöht."
     },
     "2": {
       "name": "Mittagstee für zwei",
-      "desc": "Im Status „Konzert“ wird die GES aller Verbündeten um {{1}}% erhöht. Die Energie-Wiederherstellung des Talents wird zusätzlich um {{2}} Pkt. erhöht."
+      "desc": "Im Status „Konzert“ wird die GES aller Verbündeten um {{1, percent}}% erhöht. Die Energie-Wiederherstellung des Talents wird zusätzlich um {{2}} Pkt. erhöht."
     },
     "3": {
       "name": "Verdrehte Saiten",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Schlüssel des Regentropfens",
-      "desc": "Beim Einsatz des Ultimates werden Mengenkontrolle-Debuffs von allen Verbündeten entfernt. Während Robin sich im Status „Konzert“ befindet, wird der Effekt-WDS aller Verbündeten um {{1}}% erhöht."
+      "desc": "Beim Einsatz des Ultimates werden Mengenkontrolle-Debuffs von allen Verbündeten entfernt. Während Robin sich im Status „Konzert“ befindet, wird der Effekt-WDS aller Verbündeten um {{1, percent}}% erhöht."
     },
     "5": {
       "name": "Tränen des einsamen Sterns",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Mondlose Mitternacht",
-      "desc": "Im Status „Konzert“ wird der KRIT-SCH des vom Ultimate verursachten zusätzlichen physischen SCH zusätzlich um {{2}}% erhöht. „Mondlose Mitternacht“ kann bis zu {{1}}-mal ausgelöst werden. Beim Einsatz des Ultimates wird die Auslösungszahl zurückgesetzt."
+      "desc": "Im Status „Konzert“ wird der KRIT-SCH des vom Ultimate verursachten zusätzlichen physischen SCH zusätzlich um {{2, percent}}% erhöht. „Mondlose Mitternacht“ kann bis zu {{1}}-mal ausgelöst werden. Beim Einsatz des Ultimates wird die Auslösungszahl zurückgesetzt."
     }
   }
 }

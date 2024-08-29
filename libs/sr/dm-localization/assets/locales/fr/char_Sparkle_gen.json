@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Mélodrame",
-        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Sparkle à une cible unique.",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Sparkle à une cible unique.",
         "shortDesc": "Inflige des DGT quantiques mineurs à une cible unique."
       }
     },
     "skill": {
       "0": {
         "name": "Anguille sous roche",
-        "fullDesc": "Augmente les DGT critiques d'une cible alliée unique à hauteur de <orangeStrong>{{1}}%</orangeStrong> des DGT critiques de Sparkle + <orangeStrong>{{2}}%</orangeStrong> pendant {{3}} tour et avance de {{4}}% l'action de cet allié.\\nLorsque Sparkle utilise cette capacité sur elle-même, son action n'est pas avancée.",
+        "fullDesc": "Augmente les DGT critiques d'une cible alliée unique à hauteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> des DGT critiques de Sparkle + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> pendant {{3}} tour et avance de {{4, percent}}% l'action de cet allié.\\nLorsque Sparkle utilise cette capacité sur elle-même, son action n'est pas avancée.",
         "shortDesc": "Augmente les <orangeStrong>DGT critiques</orangeStrong> d'un allié et avance son action."
       }
     },
     "ult": {
       "0": {
         "name": "Personnage aux mille visages",
-        "fullDesc": "Régénère {{2}} points de compétence pour l'équipe et accorde Énigme à tous les alliés. Chaque cumul de l'effet d'augmentation de DGT accordé par le talent de Sparkle augmente de <orangeStrong>{{3}}%</orangeStrong> supplémentaires pour les alliés qui bénéficient d'Énigme. Dure {{4}} tours.",
+        "fullDesc": "Régénère {{2}} points de compétence pour l'équipe et accorde Énigme à tous les alliés. Chaque cumul de l'effet d'augmentation de DGT accordé par le talent de Sparkle augmente de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> supplémentaires pour les alliés qui bénéficient d'Énigme. Dure {{4}} tours.",
         "shortDesc": "Régénère des <orangeStrong>points de compétence</orangeStrong> pour l'équipe et permet d'accroître l'augmentation de DGT accordée par son talent."
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Rêverie nocturne",
-        "fullDesc": "Augmente l'ATQ de tous les alliés de {{4}}%. Lorsqu'il y a 1/2/3 alliés de type quantique dans l'équipe, l'ATQ des alliés de type quantique augmente de {{1}}%/{{2}}%/{{3}}% supplémentaires.",
+        "fullDesc": "Augmente l'ATQ de tous les alliés de {{4, percent}}%. Lorsqu'il y a 1/2/3 alliés de type quantique dans l'équipe, l'ATQ des alliés de type quantique augmente de {{1, percent}}%/{{2, percent}}%/{{3, percent}}% supplémentaires.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Suspens suspicieux",
-      "desc": "L'effet Énigme accordé par l'ultime dure 1 tour supplémentaire. Tous les alliés qui bénéficient de cet effet voient leur ATQ augmenter de {{1}}%."
+      "desc": "L'effet Énigme accordé par l'ultime dure 1 tour supplémentaire. Tous les alliés qui bénéficient de cet effet voient leur ATQ augmenter de {{1, percent}}%."
     },
     "2": {
       "name": "Fiction sans fondement",
-      "desc": "Chaque cumul de l'effet du talent permet aux alliés d'ignorer {{1}}% de la DÉF de la cible lorsqu'ils infligent des DGT."
+      "desc": "Chaque cumul de l'effet du talent permet aux alliés d'ignorer {{1, percent}}% de la DÉF de la cible lorsqu'ils infligent des DGT."
     },
     "3": {
       "name": "Rêve irréalisable",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Choix multiples",
-      "desc": "L'effet d'augmentation des DGT critiques accordé par la compétence de Sparkle augmente d'un montant équivalent à {{1}}% des DGT critiques de Sparkle. Lorsque Sparkle utilise sa compétence, l'effet d'augmentation des DGT critiques de sa compétence s'applique à tous les alliés qui bénéficient de l'effet Énigme. Lorsque Sparkle utilise son ultime, tout allié qui bénéficie de l'effet d'augmentation de DGT de sa compétence propage cet effet aux alliés avec Énigme."
+      "desc": "L'effet d'augmentation des DGT critiques accordé par la compétence de Sparkle augmente d'un montant équivalent à {{1, percent}}% des DGT critiques de Sparkle. Lorsque Sparkle utilise sa compétence, l'effet d'augmentation des DGT critiques de sa compétence s'applique à tous les alliés qui bénéficient de l'effet Énigme. Lorsque Sparkle utilise son ultime, tout allié qui bénéficie de l'effet d'augmentation de DGT de sa compétence propage cet effet aux alliés avec Énigme."
     }
   }
 }

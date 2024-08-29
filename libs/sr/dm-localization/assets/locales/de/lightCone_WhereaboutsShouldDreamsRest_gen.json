@@ -2,6 +2,6 @@
   "name": "Wohin sollen die Träume gehen",
   "passive": {
     "name": "Metamorphose",
-    "description": "Erhöht den Brucheffekt des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Wenn der Träger bei einem Gegner Bruch-SCH verursacht, wird dieser für {{4}} Rd. mit „Niedergeschmettert“ belegt. Gegner mit Niedergeschmettert erleiden durch den Träger <orangeStrong>{{2}}%</orangeStrong> mehr Bruch-SCH und ihre GES wird um {{3}}% reduziert. Effekte der gleichen Art sind nicht stapelbar."
+    "description": "Erhöht den Brucheffekt des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Wenn der Träger bei einem Gegner Bruch-SCH verursacht, wird dieser für {{4}} Rd. mit „Niedergeschmettert“ belegt. Gegner mit Niedergeschmettert erleiden durch den Träger <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> mehr Bruch-SCH und ihre GES wird um {{3, percent}}% reduziert. Effekte der gleichen Art sind nicht stapelbar."
   }
 }

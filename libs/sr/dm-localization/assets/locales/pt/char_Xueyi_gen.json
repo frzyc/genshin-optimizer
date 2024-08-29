@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Sovela Quebra-mara",
-        "fullDesc": "Causa <orangeStrong>{{1}}%</orangeStrong> do ATQ de Xueyi como Dano Quântico a um único inimigo-alvo.",
+        "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Xueyi como Dano Quântico a um único inimigo-alvo.",
         "shortDesc": "Causa Dano Quântico leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Obliteração de Iniquidade",
-        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Xueyi a um único inimigo e <orangeStrong>{{2}}%</orangeStrong> do ATQ de Xueyi como Dano Quântico aos inimigos adjacentes.",
+        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Xueyi a um único inimigo e <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Xueyi como Dano Quântico aos inimigos adjacentes.",
         "shortDesc": "Causa Dano Quântico a um único inimigo e Dano Quântico leve a inimigos adjacentes a ele."
       }
     },
     "ult": {
       "0": {
         "name": "Castigo Divino",
-        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Xueyi a um único inimigo-alvo. Este ataque ignora os Tipos de Fraqueza e reduz a Tenacidade do inimigo. Quando o inimigo sofrer a Quebra de Fraqueza, o efeito Quebra de Fraqueza contra Quântico é ativado.\\nNeste ataque, quanto mais Tenacidade for reduzida, maior será o Dano causado, até um máximo de <orangeStrong>{{3}}%</orangeStrong> de aumento.",
+        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Xueyi a um único inimigo-alvo. Este ataque ignora os Tipos de Fraqueza e reduz a Tenacidade do inimigo. Quando o inimigo sofrer a Quebra de Fraqueza, o efeito Quebra de Fraqueza contra Quântico é ativado.\\nNeste ataque, quanto mais Tenacidade for reduzida, maior será o Dano causado, até um máximo de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de aumento.",
         "shortDesc": "Causa Dano Quântico massivo a um único inimigo. Este ataque <orangeStrong>ignora Tipos de Fraqueza</orangeStrong> e reduz a Tenacidade do alvo. Quanto mais Tenacidade é reduzida, mais alto é o Dano causado."
       }
     },
     "technique": {
       "0": {
         "name": "Execução Sumária",
-        "fullDesc": "Ataca o inimigo imediatamente. Depois de entrar no combate, causa {{1}}% do ATQ de Xueyi como Dano Quântico a todos os inimigos.",
+        "fullDesc": "Ataca o inimigo imediatamente. Depois de entrar no combate, causa {{1, percent}}% do ATQ de Xueyi como Dano Quântico a todos os inimigos.",
         "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano Quântico leve a todos os inimigos."
       }
     },
@@ -39,14 +39,14 @@
     "bonusAbility1": {
       "0": {
         "name": "Tear Clarividente",
-        "fullDesc": "Aumenta o Dano causado por esta unidade em uma quantidade igual a {{1}}% do Efeito de Quebra, até um máximo de {{2}}% de aumento de Dano.",
+        "fullDesc": "Aumenta o Dano causado por esta unidade em uma quantidade igual a {{1, percent}}% do Efeito de Quebra, até um máximo de {{2, percent}}% de aumento de Dano.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Rolamentos Intrépidos",
-        "fullDesc": "Se a Tenacidade do inimigo-alvo for igual ou maior que {{1}}% da sua Tenacidade máxima, causa {{2}}% a mais de Dano ao usar a Perícia Suprema.",
+        "fullDesc": "Se a Tenacidade do inimigo-alvo for igual ou maior que {{1, percent}}% da sua Tenacidade máxima, causa {{2, percent}}% a mais de Dano ao usar a Perícia Suprema.",
         "shortDesc": ""
       }
     },
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Dvesha, Inibida",
-      "desc": "Aumenta em {{1}}% o Dano causado pelo Ataque Extra de Talento."
+      "desc": "Aumenta em {{1, percent}}% o Dano causado pelo Ataque Extra de Talento."
     },
     "2": {
       "name": "Klesha, Rompida",
-      "desc": "O Ataque Extra do Talento reduz a Tenacidade inimiga independente dos Tipos de Fraqueza. Ao mesmo tempo, recupera os PV de Xueyi em uma quantidade igual a {{1}}% dos PV máximos dela. Ao aplicar Quebra de Fraqueza, ativa o Efeito de Quebra Quântico."
+      "desc": "O Ataque Extra do Talento reduz a Tenacidade inimiga independente dos Tipos de Fraqueza. Ao mesmo tempo, recupera os PV de Xueyi em uma quantidade igual a {{1, percent}}% dos PV máximos dela. Ao aplicar Quebra de Fraqueza, ativa o Efeito de Quebra Quântico."
     },
     "3": {
       "name": "Duhkha, Cessada",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Carma, Partido",
-      "desc": "Ao usar a Perícia Suprema, o Efeito de Quebra aumenta em {{1}}% por {{2}} rodada(s)."
+      "desc": "Ao usar a Perícia Suprema, o Efeito de Quebra aumenta em {{1, percent}}% por {{2}} rodada(s)."
     },
     "5": {
       "name": "Deva, Encantada",

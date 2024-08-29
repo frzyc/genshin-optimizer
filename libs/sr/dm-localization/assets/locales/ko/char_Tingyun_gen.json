@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "축객령",
-        "fullDesc": "지정된 단일 적에게 정운 공격력 <orangeStrong>{{1}}%</orangeStrong>의 번개 속성 피해를 준다",
+        "fullDesc": "지정된 단일 적에게 정운 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>의 번개 속성 피해를 준다",
         "shortDesc": "단일 적에게 소량의 번개 속성 피해를 가한다"
       }
     },
     "skill": {
       "0": {
         "name": "정다운 화음",
-        "fullDesc": "지정된 단일 아군에게 [축복]을 제공한다. 대상의 공격력을 <orangeStrong>{{2}}%</orangeStrong> 증가시키며 현재 정운 공격력의 <orangeStrong>{{4}}%</orangeStrong>을 넘지 않는다.\\n[축복]을 획득한 대상은 공격 발동 후 추가로 자신의 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 번개 속성 <u>추가 피해</u>를 1회 가한다.\\n[축복] 지속 시간: {{3}}턴. 최근 정운의 전투 스킬 대상이 된 아군에게만 적용된다",
+        "fullDesc": "지정된 단일 아군에게 [축복]을 제공한다. 대상의 공격력을 <orangeStrong>{{2, percent}}%</orangeStrong> 증가시키며 현재 정운 공격력의 <orangeStrong>{{4, percent}}%</orangeStrong>을 넘지 않는다.\\n[축복]을 획득한 대상은 공격 발동 후 추가로 자신의 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 번개 속성 <u>추가 피해</u>를 1회 가한다.\\n[축복] 지속 시간: {{3}}턴. 최근 정운의 전투 스킬 대상이 된 아군에게만 적용된다",
         "shortDesc": "단일 아군의 <orangeStrong>공격력이 증가</orangeStrong>하고 [축복]을 획득한다. [축복] 상태에서 공격 시 소량의 <orangeStrong>번개 속성 <u>추가 피해</u></orangeStrong>를 추가로 가한다"
       }
     },
     "ult": {
       "0": {
         "name": "상서로운 구름의 기원",
-        "fullDesc": "지정된 단일 아군의 에너지를 {{1}}pt 회복하고, 목표가 가하는 피해가 <orangeStrong>{{3}}%</orangeStrong> 증가한다. 지속 시간: {{2}}턴",
+        "fullDesc": "지정된 단일 아군의 에너지를 {{1}}pt 회복하고, 목표가 가하는 피해가 <orangeStrong>{{3, percent}}%</orangeStrong> 증가한다. 지속 시간: {{2}}턴",
         "shortDesc": "단일 아군이 <orangeStrong>에너지를 회복</orangeStrong>하고, <orangeStrong>가하는 피해가 증가</orangeStrong>한다"
       }
     },
@@ -39,14 +39,14 @@
     "bonusAbility1": {
       "0": {
         "name": "청명",
-        "fullDesc": "전투 스킬 발동 시 정운의 속도가 {{1}}% 증가한다. 지속 시간: 1턴",
+        "fullDesc": "전투 스킬 발동 시 정운의 속도가 {{1, percent}}% 증가한다. 지속 시간: 1턴",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "재액 방지",
-        "fullDesc": "일반 공격이 가하는 피해가 {{1}}% 증가한다",
+        "fullDesc": "일반 공격이 가하는 피해가 {{1, percent}}% 증가한다",
         "shortDesc": ""
       }
     },
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "봄바람과 함께 불어오는 행운",
-      "desc": "[축복] 효과를 획득한 단일 아군은 필살기 발동 후 속도가 {{1}}% 증가한다. 지속 시간:1턴"
+      "desc": "[축복] 효과를 획득한 단일 아군은 필살기 발동 후 속도가 {{1, percent}}% 증가한다. 지속 시간:1턴"
     },
     "2": {
       "name": "군자의 은혜에는 미소로 화답을",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "명화는 변화하며 형세를 읽나니",
-      "desc": "[축복] 효과로 인한 피해 배율이 {{1}}% 증가한다"
+      "desc": "[축복] 효과로 인한 피해 배율이 {{1, percent}}% 증가한다"
     },
     "5": {
       "name": "여우의 태연함",

@@ -2,6 +2,6 @@
   "name": "Schwertkampf",
   "passive": {
     "name": "Eigene Antworten",
-    "description": "Jedes Mal, wenn der Träger dasselbe Ziel trifft, wird der verursachte SCH um <orangeStrong>{{1}}%</orangeStrong> erhöht. Dieser Effekt ist bis zu {{2}}-fach stapelbar. Wechselt der Träger das Angriffsziel, wird dieser Buff unmittelbar entfernt."
+    "description": "Jedes Mal, wenn der Träger dasselbe Ziel trifft, wird der verursachte SCH um <orangeStrong>{{1, percent}}%</orangeStrong> erhöht. Dieser Effekt ist bis zu {{2}}-fach stapelbar. Wechselt der Träger das Angriffsziel, wird dieser Buff unmittelbar entfernt."
   }
 }

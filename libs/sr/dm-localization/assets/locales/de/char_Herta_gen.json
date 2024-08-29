@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Was schaust du so?",
-        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Hertas ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Hertas ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Einmaliges Angebot",
-        "fullDesc": "Fügt allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Hertas ANG zu. Ziele mit LP-Prozentsatz von {{2}}% oder höher erleiden {{3}}% mehr SCH.",
+        "fullDesc": "Fügt allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Hertas ANG zu. Ziele mit LP-Prozentsatz von {{2, percent}}% oder höher erleiden {{3, percent}}% mehr SCH.",
         "shortDesc": "Fügt allen Gegnern geringen Eis-SCH zu. Ziele mit höheren LP erleiden mehr SCH."
       }
     },
     "ult": {
       "0": {
         "name": "Ich arbeite mit Magie",
-        "fullDesc": "Fügt allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Hertas ANG zu.",
+        "fullDesc": "Fügt allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Hertas ANG zu.",
         "shortDesc": "Fügt allen Gegnern Eis-SCH zu."
       }
     },
     "technique": {
       "0": {
         "name": "Das kann noch optimiert werden",
-        "fullDesc": "Erhöht nach dem Einsatz der Technik Hertas ANG zu Beginn des nächstes Kampfes für {{2}} Rd. um {{1}}%.",
+        "fullDesc": "Erhöht nach dem Einsatz der Technik Hertas ANG zu Beginn des nächstes Kampfes für {{2}} Rd. um {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Effizienz",
-        "fullDesc": "Erhöht beim Einsatz der Fertigkeit den erhöhten SCH zusätzlich um {{1}}%.",
+        "fullDesc": "Erhöht beim Einsatz der Fertigkeit den erhöhten SCH zusätzlich um {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Marionette",
-        "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1}}%.",
+        "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Frost",
-        "fullDesc": "Erhöht den eingefrorenen Gegnern beim Einsatz des Ultimates zugefügten SCH um {{1}}%.",
+        "fullDesc": "Erhöht den eingefrorenen Gegnern beim Einsatz des Ultimates zugefügten SCH um {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Tritt dich, wenn du am Boden liegst",
-      "desc": "Liegt der LP-Prozentsatz des anvisierten Gegners bei {{1}}% oder weniger, verursacht Hertas Standardangriff zusätzlichen Eis-SCH in Höhe von {{2}}% von Hertas ANG."
+      "desc": "Liegt der LP-Prozentsatz des anvisierten Gegners bei {{1, percent}}% oder weniger, verursacht Hertas Standardangriff zusätzlichen Eis-SCH in Höhe von {{2, percent}}% von Hertas ANG."
     },
     "2": {
       "name": "Triumph und Verfolgung",
-      "desc": "Erhöht für jede Auslösung des Talents die KRIT-Rate von Herta um {{1}}%. Dieser Effekt ist bis zu {{2}}-mal stapelbar."
+      "desc": "Erhöht für jede Auslösung des Talents die KRIT-Rate von Herta um {{1, percent}}%. Dieser Effekt ist bis zu {{2}}-mal stapelbar."
     },
     "3": {
       "name": "So bin ich nun mal",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Hinlangen, wo es weh tut",
-      "desc": "Verursacht bei der Auslösung des Talents {{1}}% mehr SCH."
+      "desc": "Verursacht bei der Auslösung des Talents {{1, percent}}% mehr SCH."
     },
     "5": {
       "name": "Fluch ordentlich oder lass es bleiben",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Keiner kann mich betrügen",
-      "desc": "Erhöht ANG nach dem Einsatz des Ultimates für {{2}} Rd. um {{1}}%."
+      "desc": "Erhöht ANG nach dem Einsatz des Ultimates für {{2}} Rd. um {{1, percent}}%."
     }
   }
 }

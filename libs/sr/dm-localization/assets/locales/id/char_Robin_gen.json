@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Wingflip White Noise",
-        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Robin pada 1 musuh yang ditargetkan.",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Robin pada 1 musuh yang ditargetkan.",
         "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Pinion's Aria",
-        "fullDesc": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> DMG yang diakibatkan seluruh rekan tim, berlangsung selama {{2}} giliran. Setiap kali giliran Robin dimulai, durasi efek ini akan berkurang 1 giliran.",
+        "fullDesc": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> DMG yang diakibatkan seluruh rekan tim, berlangsung selama {{2}} giliran. Setiap kali giliran Robin dimulai, durasi efek ini akan berkurang 1 giliran.",
         "shortDesc": "<orangeStrong>Meningkatkan DMG</orangeStrong> seluruh rekan tim."
       }
     },
     "ult": {
       "0": {
         "name": "Vox Harmonique, Opus Cosmique",
-        "fullDesc": "Robin memasuki status \"Concerto\", membuat rekan tim selain dirinya segera beraksi.\\nSaat berstatus \"Concerto\", meningkatkan ATK seluruh rekan tim, peningkatannya adalah sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Robin + <orangeStrong>{{3}}</orangeStrong>, dan setiap kali setelah rekan tim melancarkan serangan, Robin akan mengakibatkan 1 kali Physical <u>DMG tambahan</u> sebesar <orangeStrong>{{4}}%</orangeStrong> ATK dirinya (serangan ini memiliki CRIT Rate tetap sebesar {{5}}% dan CRIT DMG tetap sebesar {{6}}%).\\nSaat berstatus \"Concerto\", Robin kebal terhadap <u>Crowd Control Debuff</u>, dan Robin tidak akan memasuki gilirannya serta tidak dapat beraksi hingga hitung mundur berakhir.\\nHitung mundur \"Concerto\" akan muncul di Susunan Aksi. Saat giliran hitung mundur dimulai, Robin akan keluar dari status \"Concerto\" dan segera beraksi. Hitung mundur memiliki SPD tetap sebesar {{2}}.",
+        "fullDesc": "Robin memasuki status \"Concerto\", membuat rekan tim selain dirinya segera beraksi.\\nSaat berstatus \"Concerto\", meningkatkan ATK seluruh rekan tim, peningkatannya adalah sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> ATK Robin + <orangeStrong>{{3}}</orangeStrong>, dan setiap kali setelah rekan tim melancarkan serangan, Robin akan mengakibatkan 1 kali Physical <u>DMG tambahan</u> sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK dirinya (serangan ini memiliki CRIT Rate tetap sebesar {{5, percent}}% dan CRIT DMG tetap sebesar {{6, percent}}%).\\nSaat berstatus \"Concerto\", Robin kebal terhadap <u>Crowd Control Debuff</u>, dan Robin tidak akan memasuki gilirannya serta tidak dapat beraksi hingga hitung mundur berakhir.\\nHitung mundur \"Concerto\" akan muncul di Susunan Aksi. Saat giliran hitung mundur dimulai, Robin akan keluar dari status \"Concerto\" dan segera beraksi. Hitung mundur memiliki SPD tetap sebesar {{2}}.",
         "shortDesc": "Memasuki status \"Concerto\" dan <orangeStrong>meningkatkan ATK</orangeStrong> seluruh rekan tim, serta membuat seluruh rekan tim selain dirinya sendiri segera beraksi. Setelah rekan tim menyerang, Robin akan mengakibatkan <orangeStrong>Physical <u>DMG Tambahan</u></orangeStrong>. Selama berstatus \"Concerto\", Robin kebal terhadap <u>Crowd Control Debuff</u>, dan Robin tidak akan memasuki gilirannya serta tidak dapat beraksi hingga hitung mundur berakhir."
       }
     },
@@ -39,14 +39,14 @@
     "bonusAbility1": {
       "0": {
         "name": "Coloratura Cadenza",
-        "fullDesc": "Saat pertempuran dimulai, aksi karakter ini akan didahulukan {{1}}%.",
+        "fullDesc": "Saat pertempuran dimulai, aksi karakter ini akan didahulukan {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Impromptu Flourish",
-        "fullDesc": "Saat berada dalam status \"Concerto\", CRIT DMG yang diakibatkan seluruh rekan tim saat melancarkan Serangan Lanjutan meningkat {{1}}%.",
+        "fullDesc": "Saat berada dalam status \"Concerto\", CRIT DMG yang diakibatkan seluruh rekan tim saat melancarkan Serangan Lanjutan meningkat {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Land of Smiles",
-      "desc": "Saat berstatus \"Concerto\", RES PEN Seluruh Tipe dari seluruh rekan tim meningkat {{1}}%."
+      "desc": "Saat berstatus \"Concerto\", RES PEN Seluruh Tipe dari seluruh rekan tim meningkat {{1, percent}}%."
     },
     "2": {
       "name": "Afternoon Tea For Two",
-      "desc": "Saat berstatus \"Concerto\", SPD seluruh rekan tim meningkat {{1}}%. Efek pemulihan Energy dari Talent meningkat {{2}} poin."
+      "desc": "Saat berstatus \"Concerto\", SPD seluruh rekan tim meningkat {{1, percent}}%. Efek pemulihan Energy dari Talent meningkat {{2}} poin."
     },
     "3": {
       "name": "Inverted Tuning",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Raindrop Key",
-      "desc": "Saat Robin melancarkan Ultimate, akan menghapus status Crowd Control Debuff dari seluruh rekan tim. Saat Robin berada dalam status \"Concerto\", Effect RES seluruh rekan tim meningkat {{1}}%."
+      "desc": "Saat Robin melancarkan Ultimate, akan menghapus status Crowd Control Debuff dari seluruh rekan tim. Saat Robin berada dalam status \"Concerto\", Effect RES seluruh rekan tim meningkat {{1, percent}}%."
     },
     "5": {
       "name": "Lonestar's Lament",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Moonless Midnight",
-      "desc": "Saat berstatus \"Concerto\", CRIT DMG dari Physical DMG Tambahan yang diakibatkan Ultimate akan meningkat ekstra {{2}}%. Efek \"Moonless Midnight\" maksimal terpicu {{1}} kali, dan jumlah terpicu akan reset setiap kali melancarkan Ultimate karakter ini."
+      "desc": "Saat berstatus \"Concerto\", CRIT DMG dari Physical DMG Tambahan yang diakibatkan Ultimate akan meningkat ekstra {{2, percent}}%. Efek \"Moonless Midnight\" maksimal terpicu {{1}} kali, dan jumlah terpicu akan reset setiap kali melancarkan Ultimate karakter ini."
     }
   }
 }

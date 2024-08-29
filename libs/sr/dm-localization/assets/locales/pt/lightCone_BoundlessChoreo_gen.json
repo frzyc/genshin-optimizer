@@ -2,6 +2,6 @@
   "name": "Dança Ilimitada",
   "passive": {
     "name": "Escrutinar",
-    "description": "Aumenta a Chance de CRIT do usuário em <orangeStrong>{{1}}%</orangeStrong>. O usuário causa <orangeStrong>{{2}}%</orangeStrong> mais Dano CRIT em inimigos que estão com Lentidão ou com DEF reduzida."
+    "description": "Aumenta a Chance de CRIT do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. O usuário causa <orangeStrong>{{2, percent}}%</orangeStrong> mais Dano CRIT em inimigos que estão com Lentidão ou com DEF reduzida."
   }
 }

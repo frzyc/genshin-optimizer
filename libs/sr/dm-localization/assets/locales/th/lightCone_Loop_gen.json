@@ -2,6 +2,6 @@
   "name": "Loop",
   "passive": {
     "name": "Pursuit",
-    "description": "ผู้สวมใส่จะสร้าง DMG แก่ศัตรูเป้าหมายที่กำลังติดสถานะลดความเร็วเพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong>"
+    "description": "ผู้สวมใส่จะสร้าง DMG แก่ศัตรูเป้าหมายที่กำลังติดสถานะลดความเร็วเพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong>"
   }
 }

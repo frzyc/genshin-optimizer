@@ -2,6 +2,6 @@
   "name": "Au! Hora de Passear!",
   "passive": {
     "name": "Corra!",
-    "description": "Aumenta em <orangeStrong>{{1}}%</orangeStrong> o ATQ do usuário e aumenta o Dano que ele causa a inimigos sob o status de Queimadura ou Sangramento em <orangeStrong>{{2}}%</orangeStrong>. Também se aplica a Dano Contínuo."
+    "description": "Aumenta em <orangeStrong>{{1, percent}}%</orangeStrong> o ATQ do usuário e aumenta o Dano que ele causa a inimigos sob o status de Queimadura ou Sangramento em <orangeStrong>{{2, percent}}%</orangeStrong>. Também se aplica a Dano Contínuo."
   }
 }

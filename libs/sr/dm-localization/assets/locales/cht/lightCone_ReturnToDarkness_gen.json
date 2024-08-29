@@ -2,6 +2,6 @@
   "name": "重返幽冥",
   "passive": {
     "name": "洶湧",
-    "description": "使裝備者暴擊率提高<orangeStrong>{{1}}%</orangeStrong>。暴擊後有<orangeStrong>{{2}}%</orangeStrong>的固定機率解除受攻擊敵方目標所持有的1個增益效果。該效果每次攻擊只可觸發1次。"
+    "description": "使裝備者暴擊率提高<orangeStrong>{{1, percent}}%</orangeStrong>。暴擊後有<orangeStrong>{{2, percent}}%</orangeStrong>的固定機率解除受攻擊敵方目標所持有的1個增益效果。該效果每次攻擊只可觸發1次。"
   }
 }

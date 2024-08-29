@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Mara-Sunder Awl",
-        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Xueyi pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Xueyi pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Iniquity Obliteration",
-        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Xueyi pada satu musuh yang ditarget, serta mengakibatkan Quantum DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Xueyi pada musuh di sekitar target.",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Xueyi pada satu musuh yang ditarget, serta mengakibatkan Quantum DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Xueyi pada musuh di sekitar target.",
         "shortDesc": "Mengakibatkan Quantum DMG pada satu musuh, dan Quantum DMG dalam jumlah kecil pada target di sekitarnya."
       }
     },
     "ult": {
       "0": {
         "name": "Divine Castigation",
-        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Xueyi pada 1 target musuh. Serangan ini mengabaikan Tipe Weakness dan mengurangi Toughness musuh tersebut. Jika mengakibatkan Weakness Break dengan cara ini, maka akan memicu efek Quantum Weakness Break.\\nDalam serangan kali ini, semakin banyak Toughness yang berkurang, semakin tinggi DMG yang diakibatkan, maksimal hingga <orangeStrong>{{3}}%</orangeStrong>.",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Xueyi pada 1 target musuh. Serangan ini mengabaikan Tipe Weakness dan mengurangi Toughness musuh tersebut. Jika mengakibatkan Weakness Break dengan cara ini, maka akan memicu efek Quantum Weakness Break.\\nDalam serangan kali ini, semakin banyak Toughness yang berkurang, semakin tinggi DMG yang diakibatkan, maksimal hingga <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.",
         "shortDesc": "Mengakibatkan Quantum DMG dalam jumlah besar pada satu musuh. Serangan ini <orangeStrong>mengabaikan Tipe Weakness</orangeStrong> dan mengurangi Toughness musuh tersebut. Semakin banyak Toughness yang berkurang, semakin tinggi DMG yang diakibatkan."
       }
     },
     "technique": {
       "0": {
         "name": "Summary Execution",
-        "fullDesc": "Segera menyerang musuh, dan setelah memasuki pertempuran, mengakibatkan Quantum DMG sebesar {{1}}% ATK Xueyi pada seluruh musuh.",
+        "fullDesc": "Segera menyerang musuh, dan setelah memasuki pertempuran, mengakibatkan Quantum DMG sebesar {{1, percent}}% ATK Xueyi pada seluruh musuh.",
         "shortDesc": "Menyerang musuh dan mengakibatkan Quantum DMG dalam jumlah kecil pada seluruh musuh setelah memasuki pertempuran."
       }
     },
@@ -39,14 +39,14 @@
     "bonusAbility1": {
       "0": {
         "name": "Clairvoyant Loom",
-        "fullDesc": "Meningkatkan DMG yang diakibatkan karakter ini sebesar {{1}}% dari Break Effect karakter ini. DMG yang diakibatkan dapat meningkat hingga {{2}}% oleh efek ini.",
+        "fullDesc": "Meningkatkan DMG yang diakibatkan karakter ini sebesar {{1, percent}}% dari Break Effect karakter ini. DMG yang diakibatkan dapat meningkat hingga {{2, percent}}% oleh efek ini.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Intrepid Rollerbearings",
-        "fullDesc": "Saat melancarkan Ultimate, jika Toughness target musuh saat ini lebih dari atau sama dengan {{1}}% Max Toughness dirinya, maka DMG yang diakibatkan Xueyi akan meningkat {{2}}%.",
+        "fullDesc": "Saat melancarkan Ultimate, jika Toughness target musuh saat ini lebih dari atau sama dengan {{1, percent}}% Max Toughness dirinya, maka DMG yang diakibatkan Xueyi akan meningkat {{2, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Dvesha, Inhibited",
-      "desc": "Meningkatkan {{1}}% DMG yang diakibatkan Serangan Lanjutan Talent."
+      "desc": "Meningkatkan {{1, percent}}% DMG yang diakibatkan Serangan Lanjutan Talent."
     },
     "2": {
       "name": "Klesha, Breached",
-      "desc": "Serangan Lanjutan dari Talent akan mengabaikan Tipe Weakness dan mengurangi Toughness musuh, dan pada saat yang sama memulihkan HP Xueyi sebesar {{1}}% Max HP-nya. Jika mengakibatkan Weakness Break dengan cara ini, maka akan memicu efek Quantum Weakness Break."
+      "desc": "Serangan Lanjutan dari Talent akan mengabaikan Tipe Weakness dan mengurangi Toughness musuh, dan pada saat yang sama memulihkan HP Xueyi sebesar {{1, percent}}% Max HP-nya. Jika mengakibatkan Weakness Break dengan cara ini, maka akan memicu efek Quantum Weakness Break."
     },
     "3": {
       "name": "Duḥkha, Ceased",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Karma, Severed",
-      "desc": "Saat melancarkan Ultimate, Break Effect karakter ini meningkat sebesar {{1}}% selama {{2}} giliran."
+      "desc": "Saat melancarkan Ultimate, Break Effect karakter ini meningkat sebesar {{1, percent}}% selama {{2}} giliran."
     },
     "5": {
       "name": "Deva, Enthralled",

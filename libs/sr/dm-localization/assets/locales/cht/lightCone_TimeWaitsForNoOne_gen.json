@@ -2,6 +2,6 @@
   "name": "時節不居",
   "passive": {
     "name": "日有四時",
-    "description": "使裝備者生命上限提高<orangeStrong>{{1}}%</orangeStrong>、治療量提高<orangeStrong>{{2}}%</orangeStrong>。當裝備者對我方目標提供治療時，記錄治療量。當任意我方目標發動攻擊後，按照治療量紀錄的<orangeStrong>{{3}}%</orangeStrong>，對隨機1個受到攻擊的敵方目標根據裝備者屬性造成附加傷害。該傷害不受加成影響，每回合最多結算1次。"
+    "description": "使裝備者生命上限提高<orangeStrong>{{1, percent}}%</orangeStrong>、治療量提高<orangeStrong>{{2, percent}}%</orangeStrong>。當裝備者對我方目標提供治療時，記錄治療量。當任意我方目標發動攻擊後，按照治療量紀錄的<orangeStrong>{{3, percent}}%</orangeStrong>，對隨機1個受到攻擊的敵方目標根據裝備者屬性造成附加傷害。該傷害不受加成影響，每回合最多結算1次。"
   }
 }

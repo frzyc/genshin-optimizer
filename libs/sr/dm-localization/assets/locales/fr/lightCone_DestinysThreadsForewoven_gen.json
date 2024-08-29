@@ -2,6 +2,6 @@
   "name": "Fils du destin",
   "passive": {
     "name": "Prescience",
-    "description": "Augmente la RÉS aux effets du porteur de <orangeStrong>{{1}}%</orangeStrong>. Augmente les DGT infligés par le porteur de <orangeStrong>{{3}}%</orangeStrong> pour chaque tranche de {{2}} points de DÉF jusqu'à une augmentation maximale de DGT de <orangeStrong>{{4}}%</orangeStrong>."
+    "description": "Augmente la RÉS aux effets du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Augmente les DGT infligés par le porteur de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> pour chaque tranche de {{2}} points de DÉF jusqu'à une augmentation maximale de DGT de <orangeStrong>{{4, percent}}%</orangeStrong>."
   }
 }

@@ -2,6 +2,6 @@
   "name": "A Esperança é Inestimável",
   "passive": {
     "name": "Promessa",
-    "description": "Aumenta a Chance de CRIT do usuário em <orangeStrong>{{1}}%</orangeStrong>. Enquanto o usuário está em batalha, para cada {{3}}% de Dano CRIT que exceda {{2}}%, o Dano causado pelo Ataque Extra é aumentado em <orangeStrong>{{4}}%</orangeStrong>. Este efeito pode acumular até {{5}} vez(es). Quando a batalha começa ou após o usuário usar seu ATQ Básico, permite que o Dano causado pela Perícia Suprema ou pelo Ataque Extra ignorem <orangeStrong>{{6}}%</orangeStrong> da DEF do alvo, durando por {{7}} rodada(s)."
+    "description": "Aumenta a Chance de CRIT do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Enquanto o usuário está em batalha, para cada {{3, percent}}% de Dano CRIT que exceda {{2, percent}}%, o Dano causado pelo Ataque Extra é aumentado em <orangeStrong>{{4, percent}}%</orangeStrong>. Este efeito pode acumular até {{5}} vez(es). Quando a batalha começa ou após o usuário usar seu ATQ Básico, permite que o Dano causado pela Perícia Suprema ou pelo Ataque Extra ignorem <orangeStrong>{{6, percent}}%</orangeStrong> da DEF do alvo, durando por {{7}} rodada(s)."
   }
 }

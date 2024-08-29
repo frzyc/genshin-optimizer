@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Arte de Lanceiro das Nuvens: Ventos do Norte",
-        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Dan Heng a um único inimigo.",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Dan Heng a um único inimigo.",
         "shortDesc": "Causa Dano de Vento leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Arte de Lanceiro das Nuvens: Enxurrada",
-        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Dan Heng a um único inimigo.\\nQuando o Dano causado pela Perícia ativa um Acerto CRIT, há uma <u>chance-base</u> de {{4}}% de reduzir a VEL do alvo em {{2}}%, durando por {{3}} rodada(s).",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Dan Heng a um único inimigo.\\nQuando o Dano causado pela Perícia ativa um Acerto CRIT, há uma <u>chance-base</u> de {{4, percent}}% de reduzir a VEL do alvo em {{2, percent}}%, durando por {{3}} rodada(s).",
         "shortDesc": "Causa Dano de Vento a um único inimigo. Ao realizar um Acerto CRIT, há altas chances de causar Lentidão no inimigo."
       }
     },
     "ult": {
       "0": {
         "name": "Sonho Etéreo",
-        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Dan Heng a um único inimigo-alvo. Se o inimigo atacado estiver com Lentidão, o multiplicador do Dano causado pela Perícia Suprema aumenta em <orangeStrong>{{2}}%</orangeStrong>.",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Dan Heng a um único inimigo-alvo. Se o inimigo atacado estiver com Lentidão, o multiplicador do Dano causado pela Perícia Suprema aumenta em <orangeStrong>{{2, percent}}%</orangeStrong>.",
         "shortDesc": "Causa Dano de Vento massivo a um inimigo. Se o inimigo estiver sofrendo de Lentidão, o multiplicador de Dano causado será maior."
       }
     },
     "technique": {
       "0": {
         "name": "Ponta de Lança Divisora",
-        "fullDesc": "Após Dan Heng usar a sua Técnica, seu ATQ aumenta em {{1}}% no início da próxima batalha por {{2}} rodada(s).",
+        "fullDesc": "Após Dan Heng usar a sua Técnica, seu ATQ aumenta em {{1, percent}}% no início da próxima batalha por {{2}} rodada(s).",
         "shortDesc": "Após usar a sua Técnica, seu ATQ é aumentado no início da próxima batalha."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Dragão Escondido",
-        "fullDesc": "Quando os PV atuais forem iguais a {{1}}% ou inferiores, reduz a chance de ser atacado por inimigos.",
+        "fullDesc": "Quando os PV atuais forem iguais a {{1, percent}}% ou inferiores, reduz a chance de ser atacado por inimigos.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Mais Rápido que a Luz",
-        "fullDesc": "Depois de desferir um ataque, há uma chance fixa de {{1}}% de aumentar a própria VEL em {{2}}% por {{3}} rodada(s).",
+        "fullDesc": "Depois de desferir um ataque, há uma chance fixa de {{1, percent}}% de aumentar a própria VEL em {{2, percent}}% por {{3}} rodada(s).",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Forte Ventania",
-        "fullDesc": "ATQ Básico causa {{1}}% a mais de Dano a inimigos com Lentidão.",
+        "fullDesc": "ATQ Básico causa {{1, percent}}% a mais de Dano a inimigos com Lentidão.",
         "shortDesc": ""
       }
     }
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Quanto Mais Alto Você Voa, De Mais Alto Você Cai",
-      "desc": "Quando o inimigo-alvo atacado tem {{1}}% ou mais de PV, a Chance de CRIT aumenta em {{2}}%."
+      "desc": "Quando o inimigo-alvo atacado tem {{1, percent}}% ou mais de PV, a Chance de CRIT aumenta em {{2, percent}}%."
     },
     "2": {
       "name": "Amainar o Octeto Venenoso, Saciar o Vício das Chamas",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "A Alma Inquieta Aguarda",
-      "desc": "O estado de Lentidão ativado pela Perícia reduz a VEL do inimigo em mais {{1}}%."
+      "desc": "O estado de Lentidão ativado pela Perícia reduz a VEL do inimigo em mais {{1, percent}}%."
     }
   }
 }

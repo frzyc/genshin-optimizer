@@ -2,6 +2,6 @@
   "name": "순수 사유의 세례",
   "passive": {
     "name": "사고력 훈련",
-    "description": "장착한 캐릭터의 치명타 피해가 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 적이 보유한 디버프 효과 1개당 장착한 캐릭터가 해당 적에게 가하는 치명타 피해가 추가로 <orangeStrong>{{2}}%</orangeStrong> 증가한다, 해당 효과 최대 중첩수: {{3}}스택. 필살기로 적 공격 시 장착한 캐릭터는 [변론] 효과를 획득해 가하는 피해가 <orangeStrong>{{4}}%</orangeStrong> 증가하고, 추가 공격은 목표의 방어력을 <orangeStrong>{{5}}%</orangeStrong> 무시한다, 해당 효과 지속 시간: {{6}}턴"
+    "description": "장착한 캐릭터의 치명타 피해가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 적이 보유한 디버프 효과 1개당 장착한 캐릭터가 해당 적에게 가하는 치명타 피해가 추가로 <orangeStrong>{{2, percent}}%</orangeStrong> 증가한다, 해당 효과 최대 중첩수: {{3}}스택. 필살기로 적 공격 시 장착한 캐릭터는 [변론] 효과를 획득해 가하는 피해가 <orangeStrong>{{4, percent}}%</orangeStrong> 증가하고, 추가 공격은 목표의 방어력을 <orangeStrong>{{5, percent}}%</orangeStrong> 무시한다, 해당 효과 지속 시간: {{6}}턴"
   }
 }

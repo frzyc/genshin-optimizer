@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Midnight Tumult",
-        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Kafka pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Kafka pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Caressing Moonlight",
-        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Kafka pada 1 target musuh, serta mengakibatkan Lightning DMG sebesar <orangeStrong>{{3}}%</orangeStrong> ATK Kafka pada musuh di sekitar target.\\nJika target musuh sedang terkena DoT, seluruh DoT yang diterimanya akan segera mengakibatkan DMG sebesar <orangeStrong>{{2}}%</orangeStrong> DMG awal DoT Debuff-nya.",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Kafka pada 1 target musuh, serta mengakibatkan Lightning DMG sebesar <orangeStrong>{{3, percent}}%</orangeStrong> ATK Kafka pada musuh di sekitar target.\\nJika target musuh sedang terkena DoT, seluruh DoT yang diterimanya akan segera mengakibatkan DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> DMG awal DoT Debuff-nya.",
         "shortDesc": "Mengakibatkan Lightning DMG pada 1 musuh dan mengakibatkan Lightning DMG dalam jumlah kecil pada target di sekitarnya.\\nJika target utama berada dalam status DoT Debuff, maka DoT Debuff yang dimilikinya akan <orangeStrong>mengakibatkan 1 kali DMG tambahan</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Twilight Trill",
-        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Kafka pada seluruh musuh. Musuh yang terkena serangan memiliki {{2}}% <u>peluang dasar</u> untuk memasuki status Shock, dan membuat semua status Shock yang saat ini dimiliki oleh target segera mengakibatkan DMG sebesar <orangeStrong>{{5}}%</orangeStrong> DMG awal DoT-nya.\\nSaat dalam status Shock, target musuh akan menerima Lightning DoT sebesar <orangeStrong>{{4}}%</orangeStrong> ATK Kafka saat setiap gilirannya dimulai.",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Kafka pada seluruh musuh. Musuh yang terkena serangan memiliki {{2, percent}}% <u>peluang dasar</u> untuk memasuki status Shock, dan membuat semua status Shock yang saat ini dimiliki oleh target segera mengakibatkan DMG sebesar <orangeStrong>{{5, percent}}%</orangeStrong> DMG awal DoT-nya.\\nSaat dalam status Shock, target musuh akan menerima Lightning DoT sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK Kafka saat setiap gilirannya dimulai.",
         "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada seluruh musuh, berpeluang besar <orangeStrong>menambahkan status Shock</orangeStrong> pada musuh.\\nJika target musuh berstatus Shock, maka status Shock tersebut akan <orangeStrong>mengakibatkan 1 kali DMG tambahan</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Mercy Is Not Forgiveness",
-        "fullDesc": "Segera menyerang musuh dalam cakupan area tertentu. Setelah memasuki pertempuran, mengakibatkan Lightning DMG sebesar {{3}}% ATK Kafka pada seluruh musuh, dan di saat bersamaan memiliki {{1}}% <u>peluang dasar</u> untuk membuat setiap target musuh memasuki status Shock yang sama dengan status Shock dari Ultimate Kafka selama {{2}} giliran.",
+        "fullDesc": "Segera menyerang musuh dalam cakupan area tertentu. Setelah memasuki pertempuran, mengakibatkan Lightning DMG sebesar {{3, percent}}% ATK Kafka pada seluruh musuh, dan di saat bersamaan memiliki {{1, percent}}% <u>peluang dasar</u> untuk membuat setiap target musuh memasuki status Shock yang sama dengan status Shock dari Ultimate Kafka selama {{2}} giliran.",
         "shortDesc": "Menyerang seluruh musuh dalam cakupan area, setelah memasuki pertempuran, mengakibatkan Lightning DMG dalam jumlah kecil pada seluruh musuh, serta berpeluang besar <orangeStrong>menambahkan status Shock</orangeStrong>."
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Thorns",
-        "fullDesc": "Peluang dasar dari Ultimate, Technique, dan Serangan Lanjutan yang dipicu Talent untuk membuat target memasuki status Shock meningkat {{1}}%.",
+        "fullDesc": "Peluang dasar dari Ultimate, Technique, dan Serangan Lanjutan yang dipicu Talent untuk membuat target memasuki status Shock meningkat {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Da Capo",
-      "desc": "Saat Serangan Lanjutan dari Talent terpicu, ada {{1}}% peluang dasar untuk meningkatkan DoT yang diterima target sebesar {{2}}% selama {{3}} giliran."
+      "desc": "Saat Serangan Lanjutan dari Talent terpicu, ada {{1, percent}}% peluang dasar untuk meningkatkan DoT yang diterima target sebesar {{2, percent}}% selama {{3}} giliran."
     },
     "2": {
       "name": "Fortississimo",
-      "desc": "Saat Kafka berada di medan pertempuran, DoT yang diakibatkan seluruh rekan tim meningkat {{1}}%."
+      "desc": "Saat Kafka berada di medan pertempuran, DoT yang diakibatkan seluruh rekan tim meningkat {{1, percent}}%."
     },
     "3": {
       "name": "Capriccio",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Leggiero",
-      "desc": "Meningkatkan {{1}}% DMG Multiplier dari status Shock yang diakibatkan Ultimate, Technique, dan Serangan Lanjutan yang dipicu Talent, serta memperpanjang durasi status Shock sebanyak {{2}} giliran."
+      "desc": "Meningkatkan {{1, percent}}% DMG Multiplier dari status Shock yang diakibatkan Ultimate, Technique, dan Serangan Lanjutan yang dipicu Talent, serta memperpanjang durasi status Shock sebanyak {{2}} giliran."
     }
   }
 }

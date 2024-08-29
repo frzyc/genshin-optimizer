@@ -2,6 +2,6 @@
   "name": "一场术后对话",
   "passive": {
     "name": "互相治愈",
-    "description": "使装备者的能量恢复效率提高<orangeStrong>{{1}}%</orangeStrong>，并在施放终结技时治疗量提高<orangeStrong>{{2}}%</orangeStrong>。"
+    "description": "使装备者的能量恢复效率提高<orangeStrong>{{1, percent}}%</orangeStrong>，并在施放终结技时治疗量提高<orangeStrong>{{2, percent}}%</orangeStrong>。"
   }
 }

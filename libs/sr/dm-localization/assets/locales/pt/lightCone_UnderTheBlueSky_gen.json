@@ -2,6 +2,6 @@
   "name": "Sob o Céu Azul",
   "passive": {
     "name": "Centeio Sob o Sol",
-    "description": "Aumenta em <orangeStrong>{{1}}%</orangeStrong> o ATQ do usuário. Quando o usuário derrota um inimigo, aumenta em <orangeStrong>{{2}}%</orangeStrong> a Chance de CRIT do usuário por {{3}} rodada(s)."
+    "description": "Aumenta em <orangeStrong>{{1, percent}}%</orangeStrong> o ATQ do usuário. Quando o usuário derrota um inimigo, aumenta em <orangeStrong>{{2, percent}}%</orangeStrong> a Chance de CRIT do usuário por {{3}} rodada(s)."
   }
 }

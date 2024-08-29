@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Bitterkalter Pfeil",
-        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von 7. März’ ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von 7. März’ ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Die Macht der Niedlichkeit",
-        "fullDesc": "Gewährt einem anvisierten Verbündeten einen Schild, der {{2}} Rd. hält und SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von 7. März’ VTD plus <orangeStrong>{{4}}</orangeStrong> absorbieren kann.\\nWenn der Verbündete aktuell min. {{3}}% seiner LP hat, wird die Chance, vom Gegner angegriffen zu werden, stark erhöht.",
+        "fullDesc": "Gewährt einem anvisierten Verbündeten einen Schild, der {{2}} Rd. hält und SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von 7. März’ VTD plus <orangeStrong>{{4}}</orangeStrong> absorbieren kann.\\nWenn der Verbündete aktuell min. {{3, percent}}% seiner LP hat, wird die Chance, vom Gegner angegriffen zu werden, stark erhöht.",
         "shortDesc": "Gewährt einem Verbündeten einen <orangeStrong>Schild</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Gletscherkaskade",
-        "fullDesc": "Fügt allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von 7. März’ ANG zu und friert die getroffenen Gegner mit einer <u>Grundchance</u> von {{2}}% für {{3}} Rd. ein.\\nEingefrorene Gegner können keine Aktionen ausführen und erleiden zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von <orangeStrong>{{4}}%</orangeStrong> von 7. März’ ANG.",
+        "fullDesc": "Fügt allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von 7. März’ ANG zu und friert die getroffenen Gegner mit einer <u>Grundchance</u> von {{2, percent}}% für {{3}} Rd. ein.\\nEingefrorene Gegner können keine Aktionen ausführen und erleiden zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von 7. März’ ANG.",
         "shortDesc": "Fügt <orangeStrong>allen Gegnern</orangeStrong> Eis-SCH zu und <orangeStrong>hat eine Chance, sie einzufrieren</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Eiskalte Schönheit",
-        "fullDesc": "Greift den Gegner unmittelbar an. Nach Kampfeintritt besteht eine <u>Grundchance</u> von {{1}}%, einen zufällig ausgewählten Gegner für {{2}} Rd. einzufrieren.\\nEingefrorene Gegner können sich nicht bewegen und erleiden zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von {{3}}% von 7. März’ ANG.",
+        "fullDesc": "Greift den Gegner unmittelbar an. Nach Kampfeintritt besteht eine <u>Grundchance</u> von {{1, percent}}%, einen zufällig ausgewählten Gegner für {{2}} Rd. einzufrieren.\\nEingefrorene Gegner können sich nicht bewegen und erleiden zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von {{3, percent}}% von 7. März’ ANG.",
         "shortDesc": "Greift den Gegner an. Hat eine hohe Chance, einen zufälligen Gegner nach Kampfeintritt einzufrieren."
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Eiszauber",
-        "fullDesc": "Erhöht die Grundchance, dass Gegner durch Ultimates eingefroren werden, um {{1}}%.",
+        "fullDesc": "Erhöht die Grundchance, dass Gegner durch Ultimates eingefroren werden, um {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Erinnerung an es",
-      "desc": "Gewährt beim Kampfeintritt dem Verbündeten mit den wenigsten LP einen Schild in Höhe von {{1}}% von 7. März’ VTD plus {{3}} für {{2}} Rd."
+      "desc": "Gewährt beim Kampfeintritt dem Verbündeten mit den wenigsten LP einen Schild in Höhe von {{1, percent}}% von 7. März’ VTD plus {{3}} für {{2}} Rd."
     },
     "3": {
       "name": "Erinnerung an alles",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Ich will nicht verlieren",
-      "desc": "Erhöht die Auslösungsanzahl des Konters durch Talent pro Runde um 1. Erhöht den durch Konter verursachten SCH um {{1}}% von 7. März’ VTD."
+      "desc": "Erhöht die Auslösungsanzahl des Konters durch Talent pro Runde um 1. Erhöht den durch Konter verursachten SCH um {{1, percent}}% von 7. März’ VTD."
     },
     "5": {
       "name": "Ich will nicht vergessen",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Immer so weiter ...",
-      "desc": "Verbündete, die durch den Schild der Fertigkeit geschützt sind, werden zu Beginn jeder Runde LP in Höhe von {{1}}% ihrer max. LP plus {{2}} wiederhergestellt."
+      "desc": "Verbündete, die durch den Schild der Fertigkeit geschützt sind, werden zu Beginn jeder Runde LP in Höhe von {{1, percent}}% ihrer max. LP plus {{2}} wiederhergestellt."
     }
   }
 }

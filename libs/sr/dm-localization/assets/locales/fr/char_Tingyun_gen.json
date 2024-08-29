@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Expulsion",
-        "fullDesc": "Tingyun inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de son ATQ à un ennemi unique.",
+        "fullDesc": "Tingyun inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de son ATQ à un ennemi unique.",
         "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Mélodie apaisante",
-        "fullDesc": "Accorde une bénédiction à un allié unique qui augmente son ATQ de <orangeStrong>{{2}}%</orangeStrong>, dans la limite de <orangeStrong>{{4}}%</orangeStrong> de l'ATQ actuelle de Tingyun.\\nLorsque l'allié béni attaque, il inflige des DGT de foudre <u>additionnels</u> équivalents à <orangeStrong>{{1}}%</orangeStrong> de sa propre ATQ 1 fois.\\nLa bénédiction dure {{3}} tours et n'est effective que sur le dernier personnage à bénéficier de la compétence de Tingyun.",
+        "fullDesc": "Accorde une bénédiction à un allié unique qui augmente son ATQ de <orangeStrong>{{2, percent}}%</orangeStrong>, dans la limite de <orangeStrong>{{4, percent}}%</orangeStrong> de l'ATQ actuelle de Tingyun.\\nLorsque l'allié béni attaque, il inflige des DGT de foudre <u>additionnels</u> équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de sa propre ATQ 1 fois.\\nLa bénédiction dure {{3}} tours et n'est effective que sur le dernier personnage à bénéficier de la compétence de Tingyun.",
         "shortDesc": "<orangeStrong>Augmente l'ATQ</orangeStrong> d'un allié et lui accorde une bénédiction. L'allié avec la bénédiction inflige également des <orangeStrong>DGT de foudre <u>additionnels</u> mineurs</orangeStrong> lorsqu'elle attaque."
       }
     },
     "ult": {
       "0": {
         "name": "Bienveillance des nuages",
-        "fullDesc": "Régénère {{1}} points d'énergie à un allié unique et augmente les DGT qu'il inflige de <orangeStrong>{{3}}%</orangeStrong> pendant {{2}} tours.",
+        "fullDesc": "Régénère {{1}} points d'énergie à un allié unique et augmente les DGT qu'il inflige de <orangeStrong>{{3, percent}}%</orangeStrong> pendant {{2}} tours.",
         "shortDesc": "Régénère de l'<orangeStrong>énergie</orangeStrong> pour une cible alliée et <orangeStrong>augmente les DGT qu'elle inflige</orangeStrong>."
       }
     },
@@ -39,14 +39,14 @@
     "bonusAbility1": {
       "0": {
         "name": "Jovialité nourrie",
-        "fullDesc": "La VIT de Tingyun augmente de {{1}}% pendant 1 tour après utilisation de sa compétence.",
+        "fullDesc": "La VIT de Tingyun augmente de {{1, percent}}% pendant 1 tour après utilisation de sa compétence.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Subjugation de la peine",
-        "fullDesc": "Augmente les DGT infligés par l'ATQ normale de {{1}}%.",
+        "fullDesc": "Augmente les DGT infligés par l'ATQ normale de {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Bénédiction de vivacité",
-      "desc": "La VIT de l'allié béni augmente de {{1}}% pendant 1 tour après utilisation de son ultime."
+      "desc": "La VIT de l'allié béni augmente de {{1, percent}}% pendant 1 tour après utilisation de son ultime."
     },
     "2": {
       "name": "Généreuse donatrice",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Versatilité joviale",
-      "desc": "Le multiplicateur de DGT de la bénédiction augmente de {{1}}%."
+      "desc": "Le multiplicateur de DGT de la bénédiction augmente de {{1, percent}}%."
     },
     "5": {
       "name": "Passante coquette",

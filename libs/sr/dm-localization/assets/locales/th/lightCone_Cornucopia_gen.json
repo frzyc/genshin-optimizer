@@ -2,6 +2,6 @@
   "name": "Cornucopia",
   "passive": {
     "name": "Prosperity",
-    "description": "เมื่อผู้สวมใส่ใช้สกิลต่อสู้และท่าไม้ตาย การรักษาจะเพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong>"
+    "description": "เมื่อผู้สวมใส่ใช้สกิลต่อสู้และท่าไม้ตาย การรักษาจะเพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong>"
   }
 }

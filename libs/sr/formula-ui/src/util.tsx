@@ -15,7 +15,7 @@ export const stg = (strKey: string) => (
 )
 
 type Translated = [
-  trg: (i18key: string) => ReactNode,
+  trg: (i18key: string, values?: Record<string, string | number>) => ReactNode,
   tr: (i18key: string, values?: Record<string, string | number>) => ReactNode
 ]
 
@@ -34,8 +34,8 @@ export function trans(
     | RelicSetKey
 ): Translated {
   return [
-    (strKey: string) => (
-      <Translate ns={`${typeKey}_${key}_gen`} key18={strKey} />
+    (strKey: string, values?: Record<string, string | number>) => (
+      <Translate ns={`${typeKey}_${key}_gen`} key18={strKey} values={values} />
     ),
     (strKey: string, values?: Record<string, string | number>) => (
       <Translate ns={`${typeKey}_${key}`} key18={strKey} values={values} />

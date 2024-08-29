@@ -2,6 +2,6 @@
   "name": "Sailing Towards a Second Life",
   "passive": {
     "name": "Rough Water",
-    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Break Effect pengguna, dan Break DMG yang diakibatkan pengguna akan mengabaikan <orangeStrong>{{3}}%</orangeStrong> DEF target. Saat Break Effect pengguna di pertempuran lebih dari atau sama dengan {{2}}%, SPD akan meningkat <orangeStrong>{{4}}%</orangeStrong>."
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> Break Effect pengguna, dan Break DMG yang diakibatkan pengguna akan mengabaikan <orangeStrong>{{3, percent}}%</orangeStrong> DEF target. Saat Break Effect pengguna di pertempuran lebih dari atau sama dengan {{2, percent}}%, SPD akan meningkat <orangeStrong>{{4, percent}}%</orangeStrong>."
   }
 }

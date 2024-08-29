@@ -1,7 +1,7 @@
 {
   "setName": "Forjador de lava",
   "setEffects": {
-    "2": "Daño de Fuego +{{1}}%.",
-    "4": "El daño que inflige la habilidad básica del portador aumenta en un {{1}}%. Además, tras usar la habilidad definitiva, el Daño de Fuego que inflija en el siguiente ataque aumenta en un {{2}}%."
+    "2": "Daño de Fuego +{{1, percent}}%.",
+    "4": "El daño que inflige la habilidad básica del portador aumenta en un {{1, percent}}%. Además, tras usar la habilidad definitiva, el Daño de Fuego que inflija en el siguiente ataque aumenta en un {{2, percent}}%."
   }
 }

@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Nhìn Gì Mà Nhìn",
-        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Herta.",
+        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Herta.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Băng cho 1 kẻ địch."
       }
     },
     "skill": {
       "0": {
         "name": "Nhát Búa Đấu Giá Ấn Định",
-        "fullDesc": "Gây Sát Thương Băng bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Herta cho toàn phe địch. Nếu phần trăm HP hiện tại của đơn vị địch lớn hơn hoặc bằng {{2}}%, thì sát thương gây ra cho mục tiêu này tăng {{3}}%.",
+        "fullDesc": "Gây Sát Thương Băng bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Herta cho toàn phe địch. Nếu phần trăm HP hiện tại của đơn vị địch lớn hơn hoặc bằng {{2, percent}}%, thì sát thương gây ra cho mục tiêu này tăng {{3, percent}}%.",
         "shortDesc": "Gây lượng nhỏ sát thương Băng cho tất cả địch, tăng sát thương gây ra cho mục tiêu có HP cao."
       }
     },
     "ult": {
       "0": {
         "name": "Là Phép Thuật, Tôi Đã Thêm Vào Phép Thuật",
-        "fullDesc": "Gây Sát Thương Băng cho toàn bộ kẻ địch tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Herta.",
+        "fullDesc": "Gây Sát Thương Băng cho toàn bộ kẻ địch tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Herta.",
         "shortDesc": "Gây Sát Thương Băng cho toàn phe địch."
       }
     },
     "technique": {
       "0": {
         "name": "Có Thể Ưu Hóa",
-        "fullDesc": "Sau khi dùng Bí Kỹ, Tấn Công của Herta khi bắt đầu lần chiến đấu tiếp theo tăng {{1}}%, duy trì {{2}} hiệp.",
+        "fullDesc": "Sau khi dùng Bí Kỹ, Tấn Công của Herta khi bắt đầu lần chiến đấu tiếp theo tăng {{1, percent}}%, duy trì {{2}} hiệp.",
         "shortDesc": ""
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Hiệu Suất",
-        "fullDesc": "Khi thi triển Chiến Kỹ, hiệu ứng tăng sát thương gây lên mục tiêu sẽ tăng thêm {{1}}%.",
+        "fullDesc": "Khi thi triển Chiến Kỹ, hiệu ứng tăng sát thương gây lên mục tiêu sẽ tăng thêm {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Con Rối",
-        "fullDesc": "Tăng {{1}}% tỷ lệ Kháng Hiệu Ứng Xấu dạng Khống Chế.",
+        "fullDesc": "Tăng {{1, percent}}% tỷ lệ Kháng Hiệu Ứng Xấu dạng Khống Chế.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Kết Băng",
-        "fullDesc": "Khi thi triển Tuyệt Kỹ sẽ tăng {{1}}% sát thương gây ra cho kẻ địch trong trạng thái Đóng Băng.",
+        "fullDesc": "Khi thi triển Tuyệt Kỹ sẽ tăng {{1, percent}}% sát thương gây ra cho kẻ địch trong trạng thái Đóng Băng.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Thiên Thạch Rơi Xuống Giếng",
-      "desc": "Khi thi triển tấn công thường, nếu Phần Trăm HP của 1 kẻ địch chỉ định nhỏ hơn hoặc bằng {{1}}%, sẽ gây thêm Sát Thương Băng kèm theo bằng {{2}}% Tấn Công của Herta."
+      "desc": "Khi thi triển tấn công thường, nếu Phần Trăm HP của 1 kẻ địch chỉ định nhỏ hơn hoặc bằng {{1, percent}}%, sẽ gây thêm Sát Thương Băng kèm theo bằng {{2, percent}}% Tấn Công của Herta."
     },
     "2": {
       "name": "Chiến Thắng Và Truy Kích",
-      "desc": "Mỗi khi kích hoạt Thiên Phú 1 lần, Tỷ Lệ Bạo Kích của bản thân tăng {{1}}%, hiệu ứng này tối đa cộng dồn {{2}} tầng."
+      "desc": "Mỗi khi kích hoạt Thiên Phú 1 lần, Tỷ Lệ Bạo Kích của bản thân tăng {{1, percent}}%, hiệu ứng này tối đa cộng dồn {{2}} tầng."
     },
     "3": {
       "name": "Tôi Chính Là Cô Gái Như Vậy",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Đánh Người Phải Lựa Chỗ Đau",
-      "desc": "Sát thương gây ra khi kích hoạt Thiên Phú tăng {{1}}%."
+      "desc": "Sát thương gây ra khi kích hoạt Thiên Phú tăng {{1, percent}}%."
     },
     "5": {
       "name": "Mắng Người Không Kiêng Nể",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Không Ai Được Phản Bội Tôi",
-      "desc": "Sau khi thi triển Tuyệt Kỹ, Tấn Công tăng {{1}}%, duy trì {{2}} hiệp."
+      "desc": "Sau khi thi triển Tuyệt Kỹ, Tấn Công tăng {{1, percent}}%, duy trì {{2}} hiệp."
     }
   }
 }

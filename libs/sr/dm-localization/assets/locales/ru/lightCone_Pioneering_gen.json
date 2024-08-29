@@ -2,6 +2,6 @@
   "name": "Новые горизонты",
   "passive": {
     "name": "Корпорация",
-    "description": "Когда владелец пробивает уязвимость противника, он восстанавливает <orangeStrong>{{1}}%</orangeStrong> HP."
+    "description": "Когда владелец пробивает уязвимость противника, он восстанавливает <orangeStrong>{{1, percent}}%</orangeStrong> HP."
   }
 }

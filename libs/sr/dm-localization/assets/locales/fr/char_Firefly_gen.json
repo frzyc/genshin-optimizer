@@ -4,38 +4,38 @@
     "basic": {
       "0": {
         "name": "Manœuvre de propulsion éclair",
-        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de SAM à une cible ennemie unique.",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de SAM à une cible ennemie unique.",
         "shortDesc": "Inflige des DGT de feu mineurs à un ennemi unique."
       },
       "1": {
         "name": "Décimation pyrogénique de Lampyroptère type IV",
-        "fullDesc": "Restaure des PV à hauteur de {{2}}% des PV max du personnage et inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de SAM à une cible ennemie unique.",
+        "fullDesc": "Restaure des PV à hauteur de {{2, percent}}% des PV max du personnage et inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de SAM à une cible ennemie unique.",
         "shortDesc": "Restaure une partie des PV du personnage et inflige des DGT de feu à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Manœuvre de frappe aérienne",
-        "fullDesc": "Consomme un montant de PV équivalent à {{2}}% des PV max du personnage pour régénérer un montant fixe d'énergie équivalent à <orangeStrong>{{3}}%</orangeStrong> de son énergie max. Inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de son ATQ à une cible ennemie unique. Si les PV actuels du personnage ne sont pas suffisants, ils sont réduits à 1 après utilisation de la compétence. <u>Avance la prochaine action</u> du personnage de {{4}}%.",
+        "fullDesc": "Consomme un montant de PV équivalent à {{2, percent}}% des PV max du personnage pour régénérer un montant fixe d'énergie équivalent à <orangeStrong>{{3, percent}}%</orangeStrong> de son énergie max. Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de son ATQ à une cible ennemie unique. Si les PV actuels du personnage ne sont pas suffisants, ils sont réduits à 1 après utilisation de la compétence. <u>Avance la prochaine action</u> du personnage de {{4, percent}}%.",
         "shortDesc": "Consomme une partie des PV du personnage pour régénérer des points d'énergie, inflige des DGT de feu à un ennemi unique et <u>avance</u> la prochaine action du personnage."
       },
       "1": {
         "name": "Surcharge de l'étoile mourante de Lampyroptère type IV",
-        "fullDesc": "Restaure des PV à hauteur de {{3}}% des PV max du personnage. Applique une Faiblesse au feu à une cible ennemie unique pour une durée de {{4}} tours. Inflige des DGT de feu équivalents à ({{5}} x effet de Rupture + <orangeStrong>{{1}}%</orangeStrong>) de l'ATQ de SAM à cette cible. D'autre part, inflige des DGT de feu équivalents à ({{6}} x effet de Rupture + <orangeStrong>{{2}}%</orangeStrong>) de l'ATQ de SAM aux cibles adjacentes. L'effet de Rupture pris en compte ne peut pas dépasser {{7}}%.",
+        "fullDesc": "Restaure des PV à hauteur de {{3, percent}}% des PV max du personnage. Applique une Faiblesse au feu à une cible ennemie unique pour une durée de {{4}} tours. Inflige des DGT de feu équivalents à ({{5, fixed(fixed: 1)}} x effet de Rupture + <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>) de l'ATQ de SAM à cette cible. D'autre part, inflige des DGT de feu équivalents à ({{6, fixed(fixed: 1)}} x effet de Rupture + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>) de l'ATQ de SAM aux cibles adjacentes. L'effet de Rupture pris en compte ne peut pas dépasser {{7, percent}}%.",
         "shortDesc": "Restaure une partie des PV du personnage, <orangeStrong>applique une Faiblesse au feu</orangeStrong> à une cible ennemie unique et inflige des DGT de feu massifs à cette cible, et des DGT de feu aux cibles adjacentes."
       }
     },
     "ult": {
       "0": {
         "name": "Combustion complète de Lampyroptère type IV",
-        "fullDesc": "Entre dans l'état Combustion complète. Avance l'action du personnage de 100 % et son ATQ normale et sa compétence deviennent renforcées. Dans l'état Combustion complète, sa VIT augmente de <orangeStrong>{{3}}</orangeStrong>, et lors de l'utilisation de l'ATQ normale renforcée ou de la compétence renforcée, son efficacité de Rupture de faiblesse augmente de {{2}}% et les DGT de rupture que le personnage inflige aux ennemis augmentent de <orangeStrong>{{1}}%</orangeStrong> jusqu'à la fin de cette attaque.\\nUn compte à rebours pour l'effet Combustion complète apparaît dans l'ordre d'action. SAM quitte l'état Combustion complète lorsque le compte à rebours se termine. Le compte à rebours a une VIT fixe de {{4}}.\\nSAM ne peut pas utiliser son ultime dans l'état Combustion complète.",
+        "fullDesc": "Entre dans l'état Combustion complète. Avance l'action du personnage de 100 % et son ATQ normale et sa compétence deviennent renforcées. Dans l'état Combustion complète, sa VIT augmente de <orangeStrong>{{3}}</orangeStrong>, et lors de l'utilisation de l'ATQ normale renforcée ou de la compétence renforcée, son efficacité de Rupture de faiblesse augmente de {{2, percent}}% et les DGT de rupture que le personnage inflige aux ennemis augmentent de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> jusqu'à la fin de cette attaque.\\nUn compte à rebours pour l'effet Combustion complète apparaît dans l'ordre d'action. SAM quitte l'état Combustion complète lorsque le compte à rebours se termine. Le compte à rebours a une VIT fixe de {{4}}.\\nSAM ne peut pas utiliser son ultime dans l'état Combustion complète.",
         "shortDesc": "Entre dans l'état Combustion complète. <orangeStrong>Avance l'action du personnage de <unbreak>100</orangeStrong> %</color>, <orangeStrong>son ATQ normale et sa compétence</orangeStrong> deviennent <orangeStrong>renforcées</orangeStrong>, et <orangeStrong>sa VIT, son efficacité de Rupture de faiblesse et les DGT de rupture qu'il inflige aux cibles ennemies</orangeStrong> augmentent jusqu'à la fin du compte à rebours."
       }
     },
     "technique": {
       "0": {
         "name": "Δ Manœuvre d'incinération météoritique",
-        "fullDesc": "S'envole et se déplace librement dans les airs pendant {{1}} secondes. Cet effet peut être annulé prématurément en déclenchant une attaque plongeante. À la fin de la durée, plonge et attaque immédiatement tous les ennemis dans une zone définie. Applique une Faiblesse au feu pour {{3}} tours aux ennemis au début de chaque vague, puis inflige des DGT de feu équivalents à {{2}}% de l'ATQ de SAM à tous les ennemis.",
+        "fullDesc": "S'envole et se déplace librement dans les airs pendant {{1}} secondes. Cet effet peut être annulé prématurément en déclenchant une attaque plongeante. À la fin de la durée, plonge et attaque immédiatement tous les ennemis dans une zone définie. Applique une Faiblesse au feu pour {{3}} tours aux ennemis au début de chaque vague, puis inflige des DGT de feu équivalents à {{2, percent}}% de l'ATQ de SAM à tous les ennemis.",
         "shortDesc": "S'envole pour se déplacer librement. Après quelques secondes dans les airs, plonge et attaque les ennemis dans une zone définie. Au début de <orangeStrong>chaque vague</orangeStrong>, <orangeStrong>applique une Faiblesse au feu</orangeStrong> à tous les ennemis et leur inflige des DGT de feu."
       }
     },
@@ -49,21 +49,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Explosion à retardement du module α",
-        "fullDesc": "Dans l'état Combustion complète, les attaques contre les ennemis qui n'ont pas de Faiblesse au feu peuvent également réduire la robustesse d'un montant équivalent à {{1}}% de la réduction de robustesse originale de la capacité.",
+        "fullDesc": "Dans l'état Combustion complète, les attaques contre les ennemis qui n'ont pas de Faiblesse au feu peuvent également réduire la robustesse d'un montant équivalent à {{1, percent}}% de la réduction de robustesse originale de la capacité.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Armure auto-réactive du module β",
-        "fullDesc": "Lorsque SAM est dans l'état Combustion complète avec un effet de Rupture supérieur ou égal à {{1}}%/{{2}}%, attaquer une cible ennemie en état de Rupture de faiblesse convertit la réduction de robustesse de cette attaque en 1 instance de {{3}}%/{{4}}% de DGT de rupture extrême.",
+        "fullDesc": "Lorsque SAM est dans l'état Combustion complète avec un effet de Rupture supérieur ou égal à {{1, percent}}%/{{2, percent}}%, attaquer une cible ennemie en état de Rupture de faiblesse convertit la réduction de robustesse de cette attaque en 1 instance de {{3, percent}}%/{{4, percent}}% de DGT de rupture extrême.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Noyau de surcharge du module γ",
-        "fullDesc": "Augmente l'effet de Rupture de SAM de {{3}}% pour chaque tranche de {{2}} points d'ATQ qui dépasse {{1}}.",
+        "fullDesc": "Augmente l'effet de Rupture de SAM de {{3, percent(fixed: 1)}}% pour chaque tranche de {{2}} points d'ATQ qui dépasse {{1}}.",
         "shortDesc": ""
       }
     }
@@ -71,7 +71,7 @@
   "ranks": {
     "1": {
       "name": "Repos de la chrysalide écarlate",
-      "desc": "Ignore {{1}}% de la DÉF de la cible lors de l'utilisation de la compétence renforcée et la compétence renforcée ne consomme pas de point de compétence."
+      "desc": "Ignore {{1, percent}}% de la DÉF de la cible lors de l'utilisation de la compétence renforcée et la compétence renforcée ne consomme pas de point de compétence."
     },
     "2": {
       "name": "Chute des cieux fracturés",
@@ -83,7 +83,7 @@
     },
     "4": {
       "name": "Regard sur la flamme de luciole",
-      "desc": "Augmente de {{1}}% la RÉS aux effets de SAM dans l'état Combustion complète."
+      "desc": "Augmente de {{1, percent}}% la RÉS aux effets de SAM dans l'état Combustion complète."
     },
     "5": {
       "name": "Lueur dans la nuit sans rêve",
@@ -91,7 +91,7 @@
     },
     "6": {
       "name": "Métamorphose de l'ultime lendemain",
-      "desc": "Augmente de {{1}}% la PÉN de RÉS au feu de SAM dans l'état Combustion complète. Son efficacité de Rupture de faiblesse augmente de {{2}}% lors de l'utilisation de l'ATQ normale renforcée ou de la compétence renforcée."
+      "desc": "Augmente de {{1, percent}}% la PÉN de RÉS au feu de SAM dans l'état Combustion complète. Son efficacité de Rupture de faiblesse augmente de {{2, percent}}% lors de l'utilisation de l'ATQ normale renforcée ou de la compétence renforcée."
     }
   }
 }

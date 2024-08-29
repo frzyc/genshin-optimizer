@@ -2,6 +2,6 @@
   "name": "Sagacidade",
   "passive": {
     "name": "Gênio",
-    "description": "Quando o usuário desfere a sua Perícia Suprema, aumenta o ATQ em <orangeStrong>{{1}}%</orangeStrong> por {{2}} rodada(s)."
+    "description": "Quando o usuário desfere a sua Perícia Suprema, aumenta o ATQ em <orangeStrong>{{1, percent}}%</orangeStrong> por {{2}} rodada(s)."
   }
 }

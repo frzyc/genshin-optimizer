@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Diagnostic musclé",
-        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Bailu à un ennemi unique.",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Bailu à un ennemi unique.",
         "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Chanter parmi les nuages",
-        "fullDesc": "Soigne immédiatement un allié unique à hauteur de <orangeStrong>{{1}}%</orangeStrong> des PV max de Bailu + <orangeStrong>{{2}}</orangeStrong>. Bailu soigne ensuite les alliés de manière aléatoire {{4}} fois. Après chaque soin, les PV restaurés par le soin suivant diminuent de {{3}}%.",
+        "fullDesc": "Soigne immédiatement un allié unique à hauteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> des PV max de Bailu + <orangeStrong>{{2}}</orangeStrong>. Bailu soigne ensuite les alliés de manière aléatoire {{4}} fois. Après chaque soin, les PV restaurés par le soin suivant diminuent de {{3, percent}}%.",
         "shortDesc": "Restaure les PV d'un allié unique, puis soigne des alliés de manière aléatoire."
       }
     },
     "ult": {
       "0": {
         "name": "Foudroyés par la félicité",
-        "fullDesc": "Soigne immédiatement tous les alliés à hauteur de <orangeStrong>{{1}}%</orangeStrong> des PV max de Bailu + <orangeStrong>{{2}}</orangeStrong>.\\nBailu accorde Revigoration aux alliés qui ne bénéficient pas encore de cet effet et prolonge l'effet d'1 tour pour ceux qui en bénéficient déjà.\\nL'effet de Revigoration peut durer jusqu'à {{3}} tours. Cet effet n'est pas cumulable.",
+        "fullDesc": "Soigne immédiatement tous les alliés à hauteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> des PV max de Bailu + <orangeStrong>{{2}}</orangeStrong>.\\nBailu accorde Revigoration aux alliés qui ne bénéficient pas encore de cet effet et prolonge l'effet d'1 tour pour ceux qui en bénéficient déjà.\\nL'effet de Revigoration peut durer jusqu'à {{3}} tours. Cet effet n'est pas cumulable.",
         "shortDesc": "Restaure des PV à tous les alliés et leur accorde Revigoration ou prolonge sa durée."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Analectes du Qihuang",
-        "fullDesc": "Lorsque Bailu soigne une cible alliée au-delà de ses PV max normaux, les PV max de la cible augmentent de {{1}}% pendant {{2}} tours.",
+        "fullDesc": "Lorsque Bailu soigne une cible alliée au-delà de ses PV max normaux, les PV max de la cible augmentent de {{1, percent}}% pendant {{2}} tours.",
         "shortDesc": ""
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Bénédiction aquatique",
-        "fullDesc": "Les personnages revigorés subissent {{1}}% de DGT en moins.",
+        "fullDesc": "Les personnages revigorés subissent {{1, percent}}% de DGT en moins.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Repos sylphique",
-      "desc": "Après utilisation de son ultime, les soins prodigués par Bailu augmentent de {{1}}% supplémentaires pendant {{2}} tours."
+      "desc": "Après utilisation de son ultime, les soins prodigués par Bailu augmentent de {{1, percent}}% supplémentaires pendant {{2}} tours."
     },
     "3": {
       "name": "Opulence omnisciente",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Suppression du mal",
-      "desc": "Les soins prodigués par la compétence augmentent les DGT infligés par le bénéficiaire de {{1}}% pendant {{3}} tours. Cet effet peut être cumulé jusqu'à {{2}} fois."
+      "desc": "Les soins prodigués par la compétence augmentent les DGT infligés par le bénéficiaire de {{1, percent}}% pendant {{3}} tours. Cet effet peut être cumulé jusqu'à {{2}} fois."
     },
     "5": {
       "name": "Inquiétudes oubliées",

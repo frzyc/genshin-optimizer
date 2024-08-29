@@ -2,6 +2,6 @@
   "name": "Pioneering",
   "passive": {
     "name": "IPC",
-    "description": "เมื่อผู้สวมใส่ทำลายจุดอ่อนของศัตรูเป้าหมาย จะฟื้นฟู HP <orangeStrong>{{1}}%</orangeStrong> ของ HP สูงสุดของตัวเอง"
+    "description": "เมื่อผู้สวมใส่ทำลายจุดอ่อนของศัตรูเป้าหมาย จะฟื้นฟู HP <orangeStrong>{{1, percent}}%</orangeStrong> ของ HP สูงสุดของตัวเอง"
   }
 }

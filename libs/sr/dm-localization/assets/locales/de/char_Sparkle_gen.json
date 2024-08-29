@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Monodrama",
-        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Sparkles ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Sparkles ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Quanten-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Schlafschwimmer",
-        "fullDesc": "Erhöht für {{3}} Rd. den KRIT-SCH eines anvisierten Verbündeten um <orangeStrong>{{1}}%</orangeStrong> von Sparkles KRIT-SCH plus <orangeStrong>{{2}}%</orangeStrong>. Zieht außerdem die Aktion des Ziels um {{4}}% vor.\\nWenn Sparkle diese Fähigkeit an sich selbst einsetzt, wird der Aktionsvorzug nicht ausgelöst.",
+        "fullDesc": "Erhöht für {{3}} Rd. den KRIT-SCH eines anvisierten Verbündeten um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Sparkles KRIT-SCH plus <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. Zieht außerdem die Aktion des Ziels um {{4, percent}}% vor.\\nWenn Sparkle diese Fähigkeit an sich selbst einsetzt, wird der Aktionsvorzug nicht ausgelöst.",
         "shortDesc": "Erhöht den <orangeStrong>KRIT-SCH</orangeStrong> eines Verbündeten und zieht seine Aktion vor."
       }
     },
     "ult": {
       "0": {
         "name": "Ein Leben in tausend Rollen",
-        "fullDesc": "Stellt für alle Verbündeten {{2}} Fertigkeitspunkte wieder her und verleiht ihnen „Rätselhaft“. Für Verbündete mit Rätselhaft erhöht jede Stapelung der SCH-Erhöhung durch Sparkles Talent für {{4}} Rd. zusätzlich um <orangeStrong>{{3}}%</orangeStrong>.",
+        "fullDesc": "Stellt für alle Verbündeten {{2}} Fertigkeitspunkte wieder her und verleiht ihnen „Rätselhaft“. Für Verbündete mit Rätselhaft erhöht jede Stapelung der SCH-Erhöhung durch Sparkles Talent für {{4}} Rd. zusätzlich um <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.",
         "shortDesc": "Stellt <orangeStrong>Fertigkeitspunkte</orangeStrong> wieder her und erhöht zusätzlich die SCH-Erhöhung von Sparkles Talent."
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Nocturne",
-        "fullDesc": "Erhöht den ANG aller Verbündeten um {{4}}%. Bei 1/2/3 Quantenfigur(en) im Team wird der ANG von Verbündeten vom Typ Quanten zusätzlich um {{1}}%/{{2}}%/{{3}}% erhöht.",
+        "fullDesc": "Erhöht den ANG aller Verbündeten um {{4, percent}}%. Bei 1/2/3 Quantenfigur(en) im Team wird der ANG von Verbündeten vom Typ Quanten zusätzlich um {{1, percent}}%/{{2, percent}}%/{{3, percent}}% erhöht.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Am Rande des Zweifels",
-      "desc": "Verlängert die Dauer von „Rätselhaft“, das durch den Ultimate verursacht wurde, zusätzlich um 1 Rd. Der ANG der Verbündeten mit Rätselhaft wird um {{1}}% erhöht."
+      "desc": "Verlängert die Dauer von „Rätselhaft“, das durch den Ultimate verursacht wurde, zusätzlich um 1 Rd. Der ANG der Verbündeten mit Rätselhaft wird um {{1, percent}}% erhöht."
     },
     "2": {
       "name": "Sinnleere Fiktion",
-      "desc": "Jede Stapelung des Talents lässt Verbündete {{1}}% der VTD des Ziels ignorieren."
+      "desc": "Jede Stapelung des Talents lässt Verbündete {{1, percent}}% der VTD des Ziels ignorieren."
     },
     "3": {
       "name": "Fantasieblase",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Mehrfachauswahl",
-      "desc": "Die KRIT-SCH-Erhöhung der Fertigkeit wird zusätzlich um {{1}}% von Sparkles KRIT-SCH erhöht. Wenn sie ihre Fertigkeit einsetzt, wirkt der Effekt der KRIT-SCH-Erhöhung für Sparkles Teammitglieder mit „Rätselhaft“. Wenn Sparkle ihren Ultimate einsetzt und ein Verbündeter den von der Fertigkeit verursachten Effekt der KRIT-SCH-Erhöhung besitzt, wird dieser Effekt auf alle Sparkles Teammitglieder mit Rätselhaft ausgedehnt."
+      "desc": "Die KRIT-SCH-Erhöhung der Fertigkeit wird zusätzlich um {{1, percent}}% von Sparkles KRIT-SCH erhöht. Wenn sie ihre Fertigkeit einsetzt, wirkt der Effekt der KRIT-SCH-Erhöhung für Sparkles Teammitglieder mit „Rätselhaft“. Wenn Sparkle ihren Ultimate einsetzt und ein Verbündeter den von der Fertigkeit verursachten Effekt der KRIT-SCH-Erhöhung besitzt, wird dieser Effekt auf alle Sparkles Teammitglieder mit Rätselhaft ausgedehnt."
     }
   }
 }

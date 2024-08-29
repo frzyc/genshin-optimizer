@@ -1,7 +1,7 @@
 {
   "setName": "Caçador da Floresta Glacial",
   "setEffects": {
-    "2": "Aumenta o Dano de Gelo em {{1}}%.",
-    "4": "Após o usuário utilizar sua Perícia Suprema, aumenta em {{1}}% o Dano CRIT por {{2}} rodada(s)."
+    "2": "Aumenta o Dano de Gelo em {{1, percent}}%.",
+    "4": "Após o usuário utilizar sua Perícia Suprema, aumenta em {{1, percent}}% o Dano CRIT por {{2}} rodada(s)."
   }
 }

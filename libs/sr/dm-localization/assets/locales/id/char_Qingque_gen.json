@@ -4,26 +4,26 @@
     "basic": {
       "0": {
         "name": "Flower Pick",
-        "fullDesc": "Melemparkan 1 Jade Tile yang jumlah polanya paling sedikit dan mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Qingque pada 1 target musuh.",
+        "fullDesc": "Melemparkan 1 Jade Tile yang jumlah polanya paling sedikit dan mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Qingque pada 1 target musuh.",
         "shortDesc": "Melemparkan 1 lembar Jade Tile dan mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh."
       },
       "1": {
         "name": "Cherry on Top!",
-        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Qingque pada 1 target musuh, serta mengakibatkan Quantum DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Qingque pada musuh di sekitar target.\\n\"Cherry on Top!\" tidak dapat memulihkan Poin Skill.",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Qingque pada 1 target musuh, serta mengakibatkan Quantum DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Qingque pada musuh di sekitar target.\\n\"Cherry on Top!\" tidak dapat memulihkan Poin Skill.",
         "shortDesc": "Mengakibatkan Quantum DMG pada 1 musuh, dan Quantum DMG dalam jumlah kecil pada target di sekitarnya."
       }
     },
     "skill": {
       "0": {
         "name": "A Scoop of Moon",
-        "fullDesc": "Segera mengambil {{1}} lembar Jade Tile dan meningkatkan <orangeStrong>{{2}}%</orangeStrong> DMG Qingque hingga gilirannya berakhir, efek ini dapat ditumpuk hingga {{3}} lapis. Giliran saat ini tidak akan berakhir setelah melancarkan Skill ini.",
+        "fullDesc": "Segera mengambil {{1}} lembar Jade Tile dan meningkatkan <orangeStrong>{{2, percent}}%</orangeStrong> DMG Qingque hingga gilirannya berakhir, efek ini dapat ditumpuk hingga {{3}} lapis. Giliran saat ini tidak akan berakhir setelah melancarkan Skill ini.",
         "shortDesc": "<orangeStrong>Menarik Jade Tile</orangeStrong>, meningkatkan DMG yang diakibatkan dirinya, dan <orangeStrong>giliran kali ini tidak akan berakhir</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "A Quartet? Woo-hoo!",
-        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Qingque pada seluruh musuh, serta mendapatkan 4 Jade Tile dengan pola yang sama.",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Qingque pada seluruh musuh, serta mendapatkan 4 Jade Tile dengan pola yang sama.",
         "shortDesc": "Mengakibatkan Quantum DMG pada seluruh musuh, serta mendapatkan 4 lembar Jade Tile dengan pola yang sama."
       }
     },
@@ -51,14 +51,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Bide Time",
-        "fullDesc": "Efek peningkatan DMG dari Skill Qingque meningkat {{1}}%.",
+        "fullDesc": "Efek peningkatan DMG dari Skill Qingque meningkat {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Robbing the Kong",
-        "fullDesc": "Meningkatkan {{1}}% SPD Qingque selama 1 giliran setelah melancarkan Enhanced Basic Attack.",
+        "fullDesc": "Meningkatkan {{1, percent}}% SPD Qingque selama 1 giliran setelah melancarkan Enhanced Basic Attack.",
         "shortDesc": ""
       }
     }
@@ -66,7 +66,7 @@
   "ranks": {
     "1": {
       "name": "Rise Through the Tiles",
-      "desc": "Meningkatkan {{1}}% DMG yang diakibatkan Ultimate."
+      "desc": "Meningkatkan {{1, percent}}% DMG yang diakibatkan Ultimate."
     },
     "2": {
       "name": "Sleep on the Tiles",
@@ -78,7 +78,7 @@
     },
     "4": {
       "name": "Right on the Tiles",
-      "desc": "Setelah melancarkan Skill, memiliki {{1}}% peluang tetap untuk memperoleh status \"Self-Sufficer\" hingga akhir giliran saat ini.\\nSetelah melancarkan Basic Attack atau Enhanced Basic Attack dalam status \"Self-Sufficer\", Qingque akan langsung melancarkan 1 Serangan Lanjutan yang mengakibatkan Quantum DMG pada target sebesar 100% dari Basic Attack DMG atau Enhanced Basic Attack DMG."
+      "desc": "Setelah melancarkan Skill, memiliki {{1, percent}}% peluang tetap untuk memperoleh status \"Self-Sufficer\" hingga akhir giliran saat ini.\\nSetelah melancarkan Basic Attack atau Enhanced Basic Attack dalam status \"Self-Sufficer\", Qingque akan langsung melancarkan 1 Serangan Lanjutan yang mengakibatkan Quantum DMG pada target sebesar 100% dari Basic Attack DMG atau Enhanced Basic Attack DMG."
     },
     "5": {
       "name": "Gambit for the Tiles",

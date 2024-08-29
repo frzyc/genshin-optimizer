@@ -2,6 +2,6 @@
   "name": "Demeure brisée",
   "passive": {
     "name": "Éradication",
-    "description": "Le porteur inflige <orangeStrong>{{2}}%</orangeStrong> de DGT supplémentaires aux cibles ennemies dont le pourcentage de PV est supérieur à {{1}}%."
+    "description": "Le porteur inflige <orangeStrong>{{2, percent}}%</orangeStrong> de DGT supplémentaires aux cibles ennemies dont le pourcentage de PV est supérieur à {{1, percent}}%."
   }
 }

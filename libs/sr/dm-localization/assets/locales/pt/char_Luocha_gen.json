@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Espinhos do Abismo",
-        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Luocha a um único inimigo.",
+        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Luocha a um único inimigo.",
         "shortDesc": "Causa Dano Imaginário leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Prece da Flor do Abismo",
-        "fullDesc": "Após usar a sua Perícia, Luocha restaura os PV do aliado-alvo imediatamente em <orangeStrong>{{1}}%</orangeStrong> do ATQ de Luocha + <orangeStrong>{{2}}</orangeStrong>. Enquanto isso, Luocha ganha 1 acúmulo de Flor do Abismo.\\nQuando a porcentagem dos PV de qualquer aliado chega a {{3}}% ou menos, um efeito equivalente à Perícia de Luocha será imediatamente ativado e aplicado a este aliado uma vez (sem consumir Pontos de Perícia). Este efeito pode ser ativado novamente após {{4}} rodada(s).",
+        "fullDesc": "Após usar a sua Perícia, Luocha restaura os PV do aliado-alvo imediatamente em <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Luocha + <orangeStrong>{{2}}</orangeStrong>. Enquanto isso, Luocha ganha 1 acúmulo de Flor do Abismo.\\nQuando a porcentagem dos PV de qualquer aliado chega a {{3, percent}}% ou menos, um efeito equivalente à Perícia de Luocha será imediatamente ativado e aplicado a este aliado uma vez (sem consumir Pontos de Perícia). Este efeito pode ser ativado novamente após {{4}} rodada(s).",
         "shortDesc": "<orangeStrong>Restaura</orangeStrong> PV de um único aliado e ganha 1 acúmulo de Flor do Abismo."
       }
     },
     "ult": {
       "0": {
         "name": "Desejo de Morte",
-        "fullDesc": "Remove {{2}} <u>melhoria(s)</u> de todos os inimigos e causa <orangeStrong>{{1}}%</orangeStrong> do ATQ de Luocha como Dano Imaginário a todos os inimigos. Ao mesmo tempo, Luocha ganha 1 acúmulo de Flor do Abismo.",
+        "fullDesc": "Remove {{2}} <u>melhoria(s)</u> de todos os inimigos e causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Luocha como Dano Imaginário a todos os inimigos. Ao mesmo tempo, Luocha ganha 1 acúmulo de Flor do Abismo.",
         "shortDesc": "<orangeStrong>Remove </orangeStrong>1<orangeStrong> <u>melhoria</u> </orangeStrong>de todos os inimigos, causa Dano Imaginário a todos os inimigos, e ganha 1 acúmulo de Flor do Abismo."
       }
     },
@@ -46,14 +46,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Santificado",
-        "fullDesc": "Quando um inimigo no Campo é atacado por um aliado, todos os aliados, exceto o atacante, restauram PV igual a {{1}}% do ATQ de Luocha + {{2}}.",
+        "fullDesc": "Quando um inimigo no Campo é atacado por um aliado, todos os aliados, exceto o atacante, restauram PV igual a {{1, percent(fixed: 1)}}% do ATQ de Luocha + {{2}}.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Através do Vale",
-        "fullDesc": "A chance de resistir a penalidades de Controle Negativo aumenta em {{1}}%.",
+        "fullDesc": "A chance de resistir a penalidades de Controle Negativo aumenta em {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Ablução da Rapidez",
-      "desc": "Enquanto o Campo estiver ativo, o ATQ de todos os aliados aumenta em {{1}}%."
+      "desc": "Enquanto o Campo estiver ativo, o ATQ de todos os aliados aumenta em {{1, percent}}%."
     },
     "2": {
       "name": "Concessão da Pureza",
-      "desc": "Quando sua Perícia é ativada, se os PV do aliado-alvo forem inferiores a 50%, a Cura Realizada por Luocha aumenta em {{1}}%. Se o aliado-alvo tiver 50% ou mais de PV, o aliado recebe um Escudo que pode absorver Dano igual a {{2}}% do ATQ de Luocha + {{3}}, que dura por {{4}} rodadas."
+      "desc": "Quando sua Perícia é ativada, se os PV do aliado-alvo forem inferiores a 50%, a Cura Realizada por Luocha aumenta em {{1, percent}}%. Se o aliado-alvo tiver 50% ou mais de PV, o aliado recebe um Escudo que pode absorver Dano igual a {{2, percent}}% do ATQ de Luocha + {{3}}, que dura por {{4}} rodadas."
     },
     "3": {
       "name": "Questionamento pelos Tolos",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "O Peso da Coroa",
-      "desc": "Quando o Campo de Luocha está ativo, inimigos recebem Enfraquecimento e causam {{1}}% a menos de Dano."
+      "desc": "Quando o Campo de Luocha está ativo, inimigos recebem Enfraquecimento e causam {{1, percent}}% a menos de Dano."
     },
     "5": {
       "name": "Cicatriz Abaixo da Dor",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "De Volta ao Pó",
-      "desc": "Ao usar a Perícia Suprema, há uma chance fixa de {{1}}% de reduzir a RES a Todos os Tipos de todos os inimigos em {{2}}% por {{3}} rodada(s)."
+      "desc": "Ao usar a Perícia Suprema, há uma chance fixa de {{1, percent}}% de reduzir a RES a Todos os Tipos de todos os inimigos em {{2, percent}}% por {{3}} rodada(s)."
     }
   }
 }
