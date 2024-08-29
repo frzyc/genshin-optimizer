@@ -109,6 +109,9 @@ export function RelicInventory({ onAdd, onEdit }: RelicInventoryProps) {
                 setLocation={(location) =>
                   database.relics.set(relicId, { location })
                 }
+                onLockToggle={() =>
+                  database.relics.set(relicId, ({ lock }) => ({ lock: !lock }))
+                }
               />
             </Grid>
           ))}
