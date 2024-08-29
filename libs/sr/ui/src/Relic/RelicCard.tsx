@@ -1,3 +1,4 @@
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import {
   BootstrapTooltip,
   CardThemed,
@@ -60,8 +61,8 @@ export function RelicCard({
   excluded = false,
 }: RelicCardProps) {
   const { t } = useTranslation('relic')
-  const { t: tk } = useTranslation('slotKey_gen')
-  const { t: tl } = useTranslation('statKey_gen')
+  const { t: tk } = useTranslation(['slotKey_gen', 'statKey_gen'])
+
   const {
     lock,
     slotKey,
@@ -164,7 +165,7 @@ export function RelicCard({
               sx={{ display: 'flex', gap: 0.5, alignItems: 'center' }}
             >
               <SlotIcon iconProps={{ fontSize: 'inherit' }} slotKey={slotKey} />
-              {tk(slotKey)}
+              {tk(`slotKey_gen:${slotKey}`)}
             </Typography>
             <Typography
               variant="h6"
@@ -174,7 +175,7 @@ export function RelicCard({
                 statKey={mainStatKey}
                 iconProps={{ sx: { color: `${ele}.main` } }}
               />
-              <span>{tl(mainStatKey)}</span>
+              <span>{tk(`statKey_gen:${mainStatKey}`)}</span>
             </Typography>
             <Typography variant="h5">
               <strong>
@@ -216,7 +217,8 @@ export function RelicCard({
         >
           {substats.map((substat) => (
             <Typography key={substat.key}>
-              {substat.key}+{substat.value}
+              <StatIcon statKey={substat.key} iconProps={iconInlineProps} />{' '}
+              {tk(`statKey_gen:${substat.key}`)}+{substat.value}
             </Typography>
           ))}
           <Box flexGrow={1} />
