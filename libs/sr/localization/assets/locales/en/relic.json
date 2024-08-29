@@ -1,10 +1,4 @@
 {
-  "slotName": {
-    "head": "Head",
-    "hands": "Hands",
-    "body": "Body",
-    "feet": "Feet",
-    "sphere": "Planar Sphere",
-    "rope": "Link Rope"
-  }
+  "edit": "Edit Relic",
+  "cantDeleteLock": "Cannot delete relic because it is locked"
 }
