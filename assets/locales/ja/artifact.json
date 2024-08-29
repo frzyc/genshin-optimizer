@@ -13,7 +13,7 @@
       "noStat": "スコアなし",
       "eff": "サブ効果スコア（RV）： <1></1>",
       "nextRolls": "可能な効果値：",
-      "RollCount": { "other": "{{count}} 強化回数" }
+      "RollCount_other": "{{count}} 強化回数"
     },
     "rarity": "レア度別",
     "level": "レベル",
@@ -92,10 +92,8 @@
   "locationsTooltip": "特定のキャラクターでフィルタリングするためには「装備されている全ての聖遺物」を無効にしてください",
   "showDup": "重複聖遺物を表示",
   "noDupAlert": "インベントリーに重複している聖遺物はありません。",
-  "showingNum": {
-    "other": "{{value}}個の聖遺物のうち<1>{{count}}</1>個を表示"
-  },
-  "substat": { "other": "{{count}}サブ効果" },
-  "sub": { "other": "{{count}}サブステ" },
+  "showingNum_other": "{{value}}個の聖遺物のうち<1>{{count}}</1>個を表示",
+  "substat_other": "{{count}}サブ効果",
+  "sub_other": "{{count}}サブステ",
   "noArtifacts": "まだ聖遺物が追加されていないようです。よろしければ、使いやすい<1>自動スキャナー</1>をご利用ください！"
 }

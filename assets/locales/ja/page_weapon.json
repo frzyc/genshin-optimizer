@@ -3,6 +3,6 @@
   "weaponName": "武器名",
   "removeWeapon": "{{value}}を削除してよろしいですか？",
   "addWeapon": "武器を追加",
-  "showingNum": { "other": "武器{{value}}つの内、<1>{{count}}</1>つを表示中" },
+  "showingNum_other": "武器{{value}}つの内、<1>{{count}}</1>つを表示中",
   "cantDeleteLock": "武器がロックされているため解除できません"
 }
