@@ -14,6 +14,7 @@ import {
 } from '@genshin-optimizer/sr/consts'
 import type { ICachedRelic } from '@genshin-optimizer/sr/db'
 import type { ISubstat } from '@genshin-optimizer/sr/srod'
+import { StatIcon } from '@genshin-optimizer/sr/svgicons'
 import {
   getSubstatSummedRolls,
   getSubstatValuesPercent,
@@ -31,6 +32,7 @@ import {
 } from '@mui/material'
 import { useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+import { RelicStatWithUnit } from './RelicStatKeyDisplay'
 
 // TODO: validation, roll table, roll values, efficiency, display text, icons, ...
 export default function SubstatInput({
@@ -89,11 +91,10 @@ export default function SubstatInput({
       <Box sx={{ display: 'flex' }}>
         <ButtonGroup size="small" sx={{ width: '100%', display: 'flex' }}>
           <DropdownButton
-            // startIcon={key ? <StatIcon statKey={key} /> : undefined}
+            startIcon={key ? <StatIcon statKey={key} /> : undefined}
             title={
               key ? (
-                // <ArtifactStatWithUnit statKey={key} />
-                <p>{key}</p>
+                <RelicStatWithUnit statKey={key} />
               ) : (
                 t('editor.substat.substatFormat', { value: index + 1 })
               )
@@ -116,10 +117,11 @@ export default function SubstatInput({
                   disabled={key === k}
                   onClick={() => setSubstat(index, { key: k, value: 0 })}
                 >
-                  <ListItemIcon>{/* <StatIcon statKey={k} /> */}</ListItemIcon>
+                  <ListItemIcon>
+                    <StatIcon statKey={k} />
+                  </ListItemIcon>
                   <ListItemText>
-                    {/* <ArtifactStatWithUnit statKey={k} /> */}
-                    {k}
+                    <RelicStatWithUnit statKey={k} />
                   </ListItemText>
                 </MenuItem>
               ))}
