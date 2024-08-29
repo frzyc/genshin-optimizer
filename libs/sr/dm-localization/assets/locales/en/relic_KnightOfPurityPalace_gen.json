@@ -1,7 +1,7 @@
 {
   "setName": "Knight of Purity Palace",
   "setEffects": {
-    "2": "Increases DEF by {{1}}%.",
-    "4": "Increases the max DMG that can be absorbed by the Shield created by the wearer by {{1}}%."
+    "2": "Increases DEF by {{1, percent}}%.",
+    "4": "Increases the max DMG that can be absorbed by the Shield created by the wearer by {{1, percent}}%."
   }
 }

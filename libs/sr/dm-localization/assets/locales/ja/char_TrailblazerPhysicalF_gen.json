@@ -4,38 +4,38 @@
     "basic": {
       "0": {
         "name": "サヨナラ{RUBY_B#あんだ}安打{RUBY_E#}",
-        "fullDesc": "指定した敵単体に開拓者の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の物理属性ダメージを与える。",
+        "fullDesc": "指定した敵単体に開拓者の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の物理属性ダメージを与える。",
         "shortDesc": "敵単体に少量の物理属性ダメージを与える。"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#あんそく}安息{RUBY_E#}ホームラン",
-        "fullDesc": "指定した敵単体および隣接する敵に開拓者の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の物理属性ダメージを与える。",
+        "fullDesc": "指定した敵単体および隣接する敵に開拓者の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の物理属性ダメージを与える。",
         "shortDesc": "敵単体および隣接する敵に物理属性ダメージを与える。"
       }
     },
     "ult": {
       "0": {
         "name": "スターダストエース",
-        "fullDesc": "2つの攻撃モードの内の1つを選択し全力のバッティングをお見舞いする。\\n「全勝・サヨナラ安打」：指定した敵単体に開拓者の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の物理属性ダメージを与える。\\n「全勝・安息ホームラン」：指定した敵単体に開拓者の攻撃力<orangeStrong>{{2}}%</orangeStrong>分の物理属性ダメージを与え、隣接する敵に開拓者の攻撃力<orangeStrong>{{3}}%</orangeStrong>分の物理属性ダメージを与える。",
+        "fullDesc": "2つの攻撃モードの内の1つを選択し全力のバッティングをお見舞いする。\\n「全勝・サヨナラ安打」：指定した敵単体に開拓者の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の物理属性ダメージを与える。\\n「全勝・安息ホームラン」：指定した敵単体に開拓者の攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の物理属性ダメージを与え、隣接する敵に開拓者の攻撃力<orangeStrong>{{3, percent}}%</orangeStrong>分の物理属性ダメージを与える。",
         "shortDesc": "単体攻撃または拡散攻撃を選択し、全力のバッティングを振り出す。"
       },
       "1": {
         "name": "{RUBY_B#ぜんしょう}全勝{RUBY_E#}・サヨナラ{RUBY_B#あんだ}安打{RUBY_E#}",
-        "fullDesc": "指定した敵単体に開拓者の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の物理属性ダメージを与える。",
+        "fullDesc": "指定した敵単体に開拓者の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の物理属性ダメージを与える。",
         "shortDesc": "敵単体に大量の物理属性ダメージを与える。"
       },
       "2": {
         "name": "{RUBY_B#ぜんしょう}全勝{RUBY_E#}・{RUBY_B#あんそく}安息{RUBY_E#}ホームラン",
-        "fullDesc": "指定した敵単体に開拓者の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の物理属性ダメージを与え、隣接する敵に開拓者の攻撃力<orangeStrong>{{2}}%</orangeStrong>分の物理属性ダメージを与える。",
+        "fullDesc": "指定した敵単体に開拓者の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の物理属性ダメージを与え、隣接する敵に開拓者の攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の物理属性ダメージを与える。",
         "shortDesc": "敵単体および隣接する敵に物理属性ダメージを与える。"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#ふめつさんしん}不滅三振{RUBY_E#}",
-        "fullDesc": "秘技を使用した後、味方全体のHPをそれぞれの最大HP{{1}}%分回復する。",
+        "fullDesc": "秘技を使用した後、味方全体のHPをそれぞれの最大HP{{1, percent}}%分回復する。",
         "shortDesc": ""
       }
     },
@@ -56,14 +56,14 @@
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#けんじん}堅靭{RUBY_E#}",
-        "fullDesc": "天賦効果1層につき、開拓者の防御力+{{1}}%。",
+        "fullDesc": "天賦効果1層につき、開拓者の防御力+{{1, percent}}%。",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#とうし}闘志{RUBY_E#}",
-        "fullDesc": "戦闘スキルまたは必殺技「全勝・安息ホームラン」を発動した時、指定した敵に対して与ダメージ+{{1}}%。",
+        "fullDesc": "戦闘スキルまたは必殺技「全勝・安息ホームラン」を発動した時、指定した敵に対して与ダメージ+{{1, percent}}%。",
         "shortDesc": ""
       }
     }
@@ -75,7 +75,7 @@
     },
     "2": {
       "name": "{RUBY_B#えん}縁{RUBY_E#}の{RUBY_B#もと}下{RUBY_E#}{RUBY_B#かごう}假合{RUBY_E#}した{RUBY_B#じんしん}人身{RUBY_E#}",
-      "desc": "攻撃を行った後、攻撃が命中した敵の弱点が物理属性の場合、開拓者の攻撃力{{1}}%分のHPを回復する。"
+      "desc": "攻撃を行った後、攻撃が命中した敵の弱点が物理属性の場合、開拓者の攻撃力{{1, percent}}%分のHPを回復する。"
     },
     "3": {
       "name": "{RUBY_B#ぜんろ}前路{RUBY_E#}を{RUBY_B#しめ}示{RUBY_E#}す{RUBY_B#ことだま}言霊{RUBY_E#}",
@@ -83,7 +83,7 @@
     },
     "4": {
       "name": "{RUBY_B#きめつ}毀滅{RUBY_E#}の{RUBY_B#しゅんかん}瞬間{RUBY_E#}を{RUBY_B#ぎょうし}凝視{RUBY_E#}する{RUBY_B#ひとみ}瞳{RUBY_E#}",
-      "desc": "弱点撃破状態の敵に攻撃が命中した時、会心率+{{1}}%。"
+      "desc": "弱点撃破状態の敵に攻撃が命中した時、会心率+{{1, percent}}%。"
     },
     "5": {
       "name": "{RUBY_B#さいごう}災劫{RUBY_E#}に{RUBY_B#も}燃{RUBY_E#}える{RUBY_B#さいせい}再生{RUBY_E#}の{RUBY_B#きぼう}希望{RUBY_E#}",

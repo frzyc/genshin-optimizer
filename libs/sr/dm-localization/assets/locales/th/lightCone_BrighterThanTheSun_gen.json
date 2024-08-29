@@ -2,6 +2,6 @@
   "name": "Brighter Than the Sun",
   "passive": {
     "name": "Defiant Till Death",
-    "description": "ทำให้อัตราคริติคอลของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> เมื่อผู้สวมใส่ใช้การโจมตีปกติ จะได้รับ \"Dragon's Call\" 1 ชั้น เป็นเวลา {{2}} เทิร์น ซึ่ง \"Dragon's Call\" แต่ละชั้น จะทำให้ ATK ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{4}}%</orangeStrong> และอัตราการฟื้นฟูพลังงานเพิ่มขึ้น <orangeStrong>{{5}}%</orangeStrong> โดย \"Dragon's Call\" สามารถซ้อนทับได้สูงสุด {{3}} ชั้น"
+    "description": "ทำให้อัตราคริติคอลของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> เมื่อผู้สวมใส่ใช้การโจมตีปกติ จะได้รับ \"Dragon's Call\" 1 ชั้น เป็นเวลา {{2}} เทิร์น ซึ่ง \"Dragon's Call\" แต่ละชั้น จะทำให้ ATK ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{4, percent}}%</orangeStrong> และอัตราการฟื้นฟูพลังงานเพิ่มขึ้น <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong> โดย \"Dragon's Call\" สามารถซ้อนทับได้สูงสุด {{3}} ชั้น"
   }
 }

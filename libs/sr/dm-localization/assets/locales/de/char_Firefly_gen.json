@@ -4,38 +4,38 @@
     "basic": {
       "0": {
         "name": "Befehl: Fackelantrieb",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von SAMs ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von SAMs ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu."
       },
       "1": {
         "name": "PyroFly Typ IV: Pyrogene Dezimierung",
-        "fullDesc": "Stellt {{2}}% der eigenen max. LP wieder her. Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von SAMs ANG zu.",
+        "fullDesc": "Stellt {{2, percent}}% der eigenen max. LP wieder her. Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von SAMs ANG zu.",
         "shortDesc": "Stellt einen Teil der eigenen LP wieder her und fügt einem Gegner Feuer-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Befehl: Luftbombardierung",
-        "fullDesc": "Verbraucht {{2}}% der eigenen max. LP und stellt eine feste Menge Energie in Höhe von <orangeStrong>{{3}}%</orangeStrong> der eigenen max. Energie wieder her, um einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von SAMs ANG zuzufügen. Wenn die aktuellen LP nicht ausreichen, werden SAMs LP beim Einsatz der Fertigkeit auf 1 reduziert. Die nächste Aktion wird um {{4}}% <u>vorgezogen</u>.",
+        "fullDesc": "Verbraucht {{2, percent}}% der eigenen max. LP und stellt eine feste Menge Energie in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> der eigenen max. Energie wieder her, um einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von SAMs ANG zuzufügen. Wenn die aktuellen LP nicht ausreichen, werden SAMs LP beim Einsatz der Fertigkeit auf 1 reduziert. Die nächste Aktion wird um {{4, percent}}% <u>vorgezogen</u>.",
         "shortDesc": "Verbraucht einen Teil der eigenen LP und stellt Energie wieder her, um einem Gegner Feuer-SCH zuzufügen. Die nächste Aktion wird <u>vorgezogen</u>."
       },
       "1": {
         "name": "PyroFly Typ IV: Überladung eines sterbenden Sterns",
-        "fullDesc": "Stellt {{3}}% der eigenen max. LP wieder her. Implantiert einem anvisierten Gegner für {{4}} Rd. eine Feuer-Schwäche und fügt ihm Feuer-SCH in Höhe von {{5}} × Brucheffekt + <orangeStrong>{{1}}%</orangeStrong> von SAMs ANG zu. Fügt gleichzeitig angrenzenden Einheiten Feuer-SCH in Höhe von {{6}} × Brucheffekt + <orangeStrong>{{2}}%</orangeStrong> von SAMs ANG zu. Dabei werden max. {{7}}% des Brucheffekts berechnet.",
+        "fullDesc": "Stellt {{3, percent}}% der eigenen max. LP wieder her. Implantiert einem anvisierten Gegner für {{4}} Rd. eine Feuer-Schwäche und fügt ihm Feuer-SCH in Höhe von {{5, fixed(fixed: 1)}} × Brucheffekt + <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von SAMs ANG zu. Fügt gleichzeitig angrenzenden Einheiten Feuer-SCH in Höhe von {{6, fixed(fixed: 1)}} × Brucheffekt + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> von SAMs ANG zu. Dabei werden max. {{7, percent}}% des Brucheffekts berechnet.",
         "shortDesc": "Stellt einen Teil der eigenen LP wieder her. <orangeStrong>Implantiert einem Gegner Feuer-Schwäche</orangeStrong> und fügt ihm massiven Feuer-SCH zu. Fügt gleichzeitig angrenzenden Einheiten Feuer-SCH zu."
       }
     },
     "ult": {
       "0": {
         "name": "PyroFly Typ IV: Vollständige Verbrennung",
-        "fullDesc": "Tritt in den Status „Vollständige Verbrennung“ ein. Zieht die eigene Aktion um 100 % vor und erhält den verstärkten Standardangriff sowie die verstärkte Fertigkeit. Erhöht im Status Vollständige Verbrennung die GES um <orangeStrong>{{3}}</orangeStrong> Pkt., beim Einsatz des verstärkten Standardangriffs oder der verstärkten Fertigkeit die eigene Schwächebruch-Effizienz um {{2}}% und den von Gegnern erlittenen Bruch-SCH durch SAM um <orangeStrong>{{1}}%</orangeStrong>. Dies dauert bis zum Ende des Angriffs an.\\nIn der Aktionsreihenfolge erscheint ein Countdown für Vollständige Verbrennung. Beginnt die Runde des Countdowns, verlässt SAM den Status Vollständige Verbrennung. Der Countdown hat eine feste GES von {{4}}.\\nIm Status Vollständige Verbrennung kann SAM den Ultimate nicht einsetzen.",
+        "fullDesc": "Tritt in den Status „Vollständige Verbrennung“ ein. Zieht die eigene Aktion um 100 % vor und erhält den verstärkten Standardangriff sowie die verstärkte Fertigkeit. Erhöht im Status Vollständige Verbrennung die GES um <orangeStrong>{{3}}</orangeStrong> Pkt., beim Einsatz des verstärkten Standardangriffs oder der verstärkten Fertigkeit die eigene Schwächebruch-Effizienz um {{2, percent}}% und den von Gegnern erlittenen Bruch-SCH durch SAM um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Dies dauert bis zum Ende des Angriffs an.\\nIn der Aktionsreihenfolge erscheint ein Countdown für Vollständige Verbrennung. Beginnt die Runde des Countdowns, verlässt SAM den Status Vollständige Verbrennung. Der Countdown hat eine feste GES von {{4}}.\\nIm Status Vollständige Verbrennung kann SAM den Ultimate nicht einsetzen.",
         "shortDesc": "Tritt in den Status „Vollständige Verbrennung“ ein. <orangeStrong>Zieht die eigene Aktion um <unbreak>100</orangeStrong> % </color> und erhält den <orangeStrong>verstärkten Standardangriff</orangeStrong> sowie die <orangeStrong>verstärkte Fertigkeit</orangeStrong>. Erhöht außerdem <orangeStrong>die GES, Schwächebruch-Effizienz und den von Gegnern erlittenen Bruch-SCH</orangeStrong>, bis zum Ende des Countdowns."
       }
     },
     "technique": {
       "0": {
         "name": "Δ Befehl: Verbrannter Meteorit",
-        "fullDesc": "Springt in die Luft und bewegt sich ohne Einschränkungen. Dies dauert {{1}} Sek. an und kann mit einem Sturzangriff vorzeitig beendet werden. Nach dem Ende der freien Bewegung steigt SAM herab und greift sofort alle Gegner in einem bestimmten Wirkungsbereich an. Implantiert allen Gegnern zu Beginn jeder Kampfwelle für {{3}} Rd. Feuer-Schwäche und fügt ihnen dann Feuer-SCH in Höhe von {{2}}% von SAMs ANG zu.",
+        "fullDesc": "Springt in die Luft und bewegt sich ohne Einschränkungen. Dies dauert {{1}} Sek. an und kann mit einem Sturzangriff vorzeitig beendet werden. Nach dem Ende der freien Bewegung steigt SAM herab und greift sofort alle Gegner in einem bestimmten Wirkungsbereich an. Implantiert allen Gegnern zu Beginn jeder Kampfwelle für {{3}} Rd. Feuer-Schwäche und fügt ihnen dann Feuer-SCH in Höhe von {{2, percent}}% von SAMs ANG zu.",
         "shortDesc": "Springt in die Luft und bewegt sich ohne Einschränkungen. Steigt herab und greift nach einigen Sekunden der Bewegung alle Gegner im Wirkungsbereich an. <orangeStrong>Implantiert</orangeStrong> allen Gegnern zu Beginn <orangeStrong>jeder Kampfwelle Feuer-Schwäche</orangeStrong> und fügt ihnen dann Feuer-SCH zu."
       }
     },
@@ -49,21 +49,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Modul α: Diachroner Ausbruch",
-        "fullDesc": "Im Status „Vollständige Verbrennung“ reduzieren Angriffe auf Gegner ohne Feuer-Schwäche ebenfalls den WDS, wobei der Effekt {{1}}% der WDS-Reduzierung der ursprünglichen Fähigkeit entspricht.",
+        "fullDesc": "Im Status „Vollständige Verbrennung“ reduzieren Angriffe auf Gegner ohne Feuer-Schwäche ebenfalls den WDS, wobei der Effekt {{1, percent}}% der WDS-Reduzierung der ursprünglichen Fähigkeit entspricht.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Modul β: Autoreaktive Rüstung",
-        "fullDesc": "Wenn SAM sich im Status „Vollständige Verbrennung“ befindet und der Brucheffekt bei {{1}}%/{{2}}% oder mehr liegt, wird nach einem Angriff auf Gegner im Schwächebruch der WDS-Reduzierungswert des Angriffs in 1-mal {{3}}%/{{4}}% des Super-Bruch-SCH umgewandelt.",
+        "fullDesc": "Wenn SAM sich im Status „Vollständige Verbrennung“ befindet und der Brucheffekt bei {{1, percent}}%/{{2, percent}}% oder mehr liegt, wird nach einem Angriff auf Gegner im Schwächebruch der WDS-Reduzierungswert des Angriffs in 1-mal {{3, percent}}%/{{4, percent}}% des Super-Bruch-SCH umgewandelt.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Modul γ: Kernüberladung",
-        "fullDesc": "Für je {{2}} Pkt. von SAMs ANG, die {{1}} überschreiten, wird sein Brucheffekt um {{3}}% erhöht.",
+        "fullDesc": "Für je {{2}} Pkt. von SAMs ANG, die {{1}} überschreiten, wird sein Brucheffekt um {{3, percent(fixed: 1)}}% erhöht.",
         "shortDesc": ""
       }
     }
@@ -71,7 +71,7 @@
   "ranks": {
     "1": {
       "name": "Im geröteten Kokon schlief ich einst",
-      "desc": "Beim Einsatz der verstärkten Fertigkeit werden {{1}}% der VTD des Ziels ignoriert und keine Fertigkeitspunkte verbraucht."
+      "desc": "Beim Einsatz der verstärkten Fertigkeit werden {{1, percent}}% der VTD des Ziels ignoriert und keine Fertigkeitspunkte verbraucht."
     },
     "2": {
       "name": "Fall aus zerbrochenem Himmel",
@@ -83,7 +83,7 @@
     },
     "4": {
       "name": "Ich sehe sie bald, die Flamme des Glühwürmchens",
-      "desc": "Erhöht im Status „Vollständige Verbrennung“ SAMs Effekt-WDS um {{1}}%."
+      "desc": "Erhöht im Status „Vollständige Verbrennung“ SAMs Effekt-WDS um {{1, percent}}%."
     },
     "5": {
       "name": "Entfacht aus traumloser Nacht",
@@ -91,7 +91,7 @@
     },
     "6": {
       "name": "Erblüht aus endgültigem Morgen",
-      "desc": "Erhöht im Status „Vollständige Verbrennung“ SAMs Feuer-WDS-DUR um {{1}}%. Beim Einsatz des verstärkten Standardangriffs und der verstärkten Fertigkeit wird die Schwächebruch-Effizienz um {{2}}% erhöht."
+      "desc": "Erhöht im Status „Vollständige Verbrennung“ SAMs Feuer-WDS-DUR um {{1, percent}}%. Beim Einsatz des verstärkten Standardangriffs und der verstärkten Fertigkeit wird die Schwächebruch-Effizienz um {{2, percent}}% erhöht."
     }
   }
 }

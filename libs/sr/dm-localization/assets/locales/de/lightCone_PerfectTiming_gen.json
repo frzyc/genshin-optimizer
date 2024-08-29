@@ -2,6 +2,6 @@
   "name": "Perfektes Timing",
   "passive": {
     "name": "Brechung der Sichtlinie",
-    "description": "Erhöht den Effekt-WDS des Trägers um <orangeStrong>{{1}}%</orangeStrong> und erhöht die bewirkte Heilung um <orangeStrong>{{2}}%</orangeStrong> des Effekt-WDS. Die bewirkte Heilung kann bis zu <orangeStrong>{{3}}%</orangeStrong> erhöht werden."
+    "description": "Erhöht den Effekt-WDS des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong> und erhöht die bewirkte Heilung um <orangeStrong>{{2, percent}}%</orangeStrong> des Effekt-WDS. Die bewirkte Heilung kann bis zu <orangeStrong>{{3, percent}}%</orangeStrong> erhöht werden."
   }
 }

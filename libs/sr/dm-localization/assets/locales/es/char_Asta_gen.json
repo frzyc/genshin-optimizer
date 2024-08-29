@@ -4,14 +4,14 @@
     "basic": {
       "0": {
         "name": "Haz espectral",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Asta como Daño de Fuego a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Asta como Daño de Fuego a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Tormenta de meteoritos",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Asta como Daño de Fuego a un enemigo y después inflige daño 4 veces más. Cada golpe inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Asta como Daño de Fuego a un enemigo al azar.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Asta como Daño de Fuego a un enemigo y después inflige daño 4 veces más. Cada golpe inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Asta como Daño de Fuego a un enemigo al azar.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo. Se dispara 5 veces."
       }
     },
@@ -25,7 +25,7 @@
     "technique": {
       "0": {
         "name": "Destello milagroso",
-        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{1}}% del ATQ de Asta como Daño de Fuego a todos los enemigos.",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{1, percent}}% del ATQ de Asta como Daño de Fuego a todos los enemigos.",
         "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de daño a todos los enemigos."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Chispas",
-        "fullDesc": "Al usar el ATQ básico, hay un {{1}}% de probabilidad base de infligir Quemadura al objetivo durante {{2}} turnos.\\nLos enemigos afectados por Quemadura reciben al comienzo de cada turno un Daño de Fuego con el tiempo equivalente al {{3}}% del daño que inflige el ATQ básico de Asta.",
+        "fullDesc": "Al usar el ATQ básico, hay un {{1, percent}}% de probabilidad base de infligir Quemadura al objetivo durante {{2}} turnos.\\nLos enemigos afectados por Quemadura reciben al comienzo de cada turno un Daño de Fuego con el tiempo equivalente al {{3, percent}}% del daño que inflige el ATQ básico de Asta.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Ignición",
-        "fullDesc": "Cuando Asta está en la batalla, el Daño de Fuego que infligen todos los aliados aumenta en un {{1}}%.",
+        "fullDesc": "Cuando Asta está en la batalla, el Daño de Fuego que infligen todos los aliados aumenta en un {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Constelación",
-        "fullDesc": "Por cada acumulación de Recarga que tenga Asta, su DEF aumenta en un {{1}}%.",
+        "fullDesc": "Por cada acumulación de Recarga que tenga Asta, su DEF aumenta en un {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Manifestación de la aurora",
-      "desc": "Cuando hay {{1}} o más acumulaciones de Recarga del talento, la recuperación de energía de Asta aumenta en un {{2}}%."
+      "desc": "Cuando hay {{1}} o más acumulaciones de Recarga del talento, la recuperación de energía de Asta aumenta en un {{2, percent}}%."
     },
     "5": {
       "name": "Misterio de los objetos del espacio profundo",

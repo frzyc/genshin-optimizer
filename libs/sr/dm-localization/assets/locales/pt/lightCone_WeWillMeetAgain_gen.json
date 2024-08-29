@@ -2,6 +2,6 @@
   "name": "Ainda nos Veremos de Novo",
   "passive": {
     "name": "A Luta é um Diálogo",
-    "description": "Após o usuário usar um ATQ Básico ou Perícia, causa Dano Adicional igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ do usuário a um inimigo aleatório que tenha sido atacado."
+    "description": "Após o usuário usar um ATQ Básico ou Perícia, causa Dano Adicional igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ do usuário a um inimigo aleatório que tenha sido atacado."
   }
 }

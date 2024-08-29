@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Bala del vendaval",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Bronya como Daño de Viento a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Bronya como Daño de Viento a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Reorganización del combate",
-        "fullDesc": "Elimina un <u>estado negativo</u> de un aliado, hace que realice una acción inmediatamente y aumenta el daño que inflige en un <orangeStrong>{{1}}%</orangeStrong> durante {{3}} turno.\\nSi utiliza esta habilidad consigo misma, no se activará la acción inmediata.",
+        "fullDesc": "Elimina un <u>estado negativo</u> de un aliado, hace que realice una acción inmediatamente y aumenta el daño que inflige en un <orangeStrong>{{1, percent}}%</orangeStrong> durante {{3}} turno.\\nSi utiliza esta habilidad consigo misma, no se activará la acción inmediata.",
         "shortDesc": "<orangeStrong>Elimina</orangeStrong> 1 <orangeStrong><u>estado negativo</u></orangeStrong> de un aliado, <orangeStrong>aumenta el daño que inflige</orangeStrong> y <orangeStrong>hace que realice una acción inmediatamente</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Marcha de Belobog",
-        "fullDesc": "El ATQ de todos los aliados aumenta en un <orangeStrong>{{1}}%</orangeStrong> y el Daño CRIT se incrementa en un <orangeStrong>{{2}}%</orangeStrong> del Daño CRIT de Bronya + <orangeStrong>{{3}}%</orangeStrong> durante {{4}} turnos.",
+        "fullDesc": "El ATQ de todos los aliados aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong> y el Daño CRIT se incrementa en un <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> del Daño CRIT de Bronya + <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> durante {{4}} turnos.",
         "shortDesc": "Aumenta el <orangeStrong>ATQ</orangeStrong> y el <orangeStrong>Daño CRIT</orangeStrong> de todos los aliados."
       }
     },
     "technique": {
       "0": {
         "name": "Estandarte de mando",
-        "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, el ATQ de todos los aliados aumenta en un {{1}}% durante {{2}} turnos.",
+        "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, el ATQ de todos los aliados aumenta en un {{1, percent}}% durante {{2}} turnos.",
         "shortDesc": "Tras usar la técnica, el ATQ de todos los aliados aumenta en la siguiente batalla."
       }
     },
@@ -46,14 +46,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Campo de batalla",
-        "fullDesc": "Al comenzar la batalla, la DEF de todos los aliados aumenta en un {{2}}% durante {{1}} turnos.",
+        "fullDesc": "Al comenzar la batalla, la DEF de todos los aliados aumenta en un {{2, percent}}% durante {{1}} turnos.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Poder militar",
-        "fullDesc": "Cuando Bronya está en la batalla, el daño que infligen todos los aliados aumenta en un {{1}}%.",
+        "fullDesc": "Cuando Bronya está en la batalla, el daño que infligen todos los aliados aumenta en un {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Mejora de fortaleza",
-      "desc": "Al usar la habilidad básica, hay una probabilidad fija del {{1}}% de recuperar 1 pt. de habilidad básica. Este efecto tiene un TdE de 1 turno."
+      "desc": "Al usar la habilidad básica, hay una probabilidad fija del {{1, percent}}% de recuperar 1 pt. de habilidad básica. Este efecto tiene un TdE de 1 turno."
     },
     "2": {
       "name": "Marcha rápida",
-      "desc": "Al usar la habilidad básica, cuando el aliado objetivo realiza una acción, su VEL aumenta en un {{1}}% durante 1 turno."
+      "desc": "Al usar la habilidad básica, cuando el aliado objetivo realiza una acción, su VEL aumenta en un {{1, percent}}% durante 1 turno."
     },
     "3": {
       "name": "Bombardeo",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Por sorpresa",
-      "desc": "Cuando un aliado de Bronya usa su ATQ básico contra un enemigo que tiene Debilidad de Viento, Bronya lanza un ataque adicional que inflige un Daño de Viento equivalente al {{1}}% del daño de ATQ básico. Este efecto solo se puede activar una vez por turno."
+      "desc": "Cuando un aliado de Bronya usa su ATQ básico contra un enemigo que tiene Debilidad de Viento, Bronya lanza un ataque adicional que inflige un Daño de Viento equivalente al {{1, percent}}% del daño de ATQ básico. Este efecto solo se puede activar una vez por turno."
     },
     "5": {
       "name": "Imparable",

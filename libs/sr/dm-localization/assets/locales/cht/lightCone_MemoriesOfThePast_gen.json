@@ -2,6 +2,6 @@
   "name": "記憶中的模樣",
   "passive": {
     "name": "舊相片",
-    "description": "使裝備者的擊破特攻提高<orangeStrong>{{1}}%</orangeStrong>。裝備者發動攻擊後，額外恢復<orangeStrong>{{2}}</orangeStrong>點能量。該效果單一回合內不可重複觸發。"
+    "description": "使裝備者的擊破特攻提高<orangeStrong>{{1, percent}}%</orangeStrong>。裝備者發動攻擊後，額外恢復<orangeStrong>{{2}}</orangeStrong>點能量。該效果單一回合內不可重複觸發。"
   }
 }

@@ -2,6 +2,6 @@
   "name": "Die Zeit wartet auf niemanden",
   "passive": {
     "name": "Morgens, mittags, abends und nachts",
-    "description": "Erhöht die max. LP des Trägers um <orangeStrong>{{1}}%</orangeStrong> und seine bewirkte Heilung um <orangeStrong>{{2}}%</orangeStrong>. Wenn der Träger Verbündete heilt, wird die bewirkte Heilung gespeichert. Wenn ein Verbündeter angreift, erleidet ein zufällig angegriffener Gegner zusätzlichen SCH in Höhe von <orangeStrong>{{3}}%</orangeStrong> der gespeicherten bewirkten Heilung. Dieser zusätzliche SCH ist desselben Typs wie der SCH des Trägers, wird nicht von anderen Buffs beeinflusst und kann nur 1-mal pro Runde ausgelöst werden."
+    "description": "Erhöht die max. LP des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong> und seine bewirkte Heilung um <orangeStrong>{{2, percent}}%</orangeStrong>. Wenn der Träger Verbündete heilt, wird die bewirkte Heilung gespeichert. Wenn ein Verbündeter angreift, erleidet ein zufällig angegriffener Gegner zusätzlichen SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> der gespeicherten bewirkten Heilung. Dieser zusätzliche SCH ist desselben Typs wie der SCH des Trägers, wird nicht von anderen Buffs beeinflusst und kann nur 1-mal pro Runde ausgelöst werden."
   }
 }

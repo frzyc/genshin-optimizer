@@ -2,6 +2,6 @@
   "name": "Во имя мира",
   "passive": {
     "name": "Наследник",
-    "description": "Урон владельца, наносимый противникам с ослаблениями, повышается на <orangeStrong>{{1}}%</orangeStrong>. Когда владелец использует навык, шанс попадания эффектов этой атаки повышается на <orangeStrong>{{2}}%</orangeStrong>, а сила атаки - на <orangeStrong>{{3}}%</orangeStrong>."
+    "description": "Урон владельца, наносимый противникам с ослаблениями, повышается на <orangeStrong>{{1, percent}}%</orangeStrong>. Когда владелец использует навык, шанс попадания эффектов этой атаки повышается на <orangeStrong>{{2, percent}}%</orangeStrong>, а сила атаки - на <orangeStrong>{{3, percent}}%</orangeStrong>."
   }
 }

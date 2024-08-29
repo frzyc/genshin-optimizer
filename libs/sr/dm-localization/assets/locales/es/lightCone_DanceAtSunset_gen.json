@@ -2,6 +2,6 @@
   "name": "Danza crepuscular",
   "passive": {
     "name": "Fascinación profunda",
-    "description": "Aumenta en gran medida la probabilidad de que el portador reciba un ataque y el Daño CRIT del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Después de que el portador use la habilidad definitiva, obtiene 1 acumulación de Danza ígnea durante 2 turnos. Se puede acumular hasta {{2}} veces. Cada acumulación de Danza ígnea aumenta el daño que infligen los ataques adicionales del portador en un <orangeStrong>{{3}}%</orangeStrong>."
+    "description": "Aumenta en gran medida la probabilidad de que el portador reciba un ataque y el Daño CRIT del portador aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong>. Después de que el portador use la habilidad definitiva, obtiene 1 acumulación de Danza ígnea durante 2 turnos. Se puede acumular hasta {{2}} veces. Cada acumulación de Danza ígnea aumenta el daño que infligen los ataques adicionales del portador en un <orangeStrong>{{3, percent}}%</orangeStrong>."
   }
 }

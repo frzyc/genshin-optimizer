@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "{RUBY_B#かんこう}寒光{RUBY_E#}{RUBY_B#さ}刺{RUBY_E#}す{RUBY_B#そうほう}霜鋒{RUBY_E#}",
-        "fullDesc": "指定した敵単体に彦卿の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の氷属性ダメージを与える。",
+        "fullDesc": "指定した敵単体に彦卿の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
         "shortDesc": "敵単体に少量の氷属性ダメージを与える。"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#さんじゃくしゅうすい}三尺秋水{RUBY_E#}",
-        "fullDesc": "指定した敵単体に彦卿の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の氷属性ダメージを与え、彦卿に「智剣連心」を付与する、1ターン継続。",
+        "fullDesc": "指定した敵単体に彦卿の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与え、彦卿に「智剣連心」を付与する、1ターン継続。",
         "shortDesc": "敵単体に氷属性ダメージを与え、自身に「智剣連心」を付与。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#かいう}快雨{RUBY_E#}に{RUBY_B#たわむ}戯{RUBY_E#}れる{RUBY_B#つばめ}燕{RUBY_E#}",
-        "fullDesc": "自身の会心率+{{1}}%、彦卿に「智剣連心」がある場合、さらに会心ダメージ+<orangeStrong>{{2}}%</orangeStrong>、<u>バフ</u>は1ターン継続。その後、指定した敵単体に彦卿の攻撃力<orangeStrong>{{3}}%</orangeStrong>分の氷属性ダメージを与える。",
+        "fullDesc": "自身の会心率+{{1, percent}}%、彦卿に「智剣連心」がある場合、さらに会心ダメージ+<orangeStrong>{{2, percent}}%</orangeStrong>、<u>バフ</u>は1ターン継続。その後、指定した敵単体に彦卿の攻撃力<orangeStrong>{{3, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
         "shortDesc": "自身の会心率アップ、「智剣連心」を強化、敵単体に大量の氷属性ダメージを与える。"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#ぎょけんしんけつ}御剣真訣{RUBY_E#}",
-        "fullDesc": "秘技を使用した後、次の戦闘開始時、残りHPが{{1}}%以上の敵に対して、彦卿の与ダメージ+{{2}}%、{{3}}ターン継続。",
+        "fullDesc": "秘技を使用した後、次の戦闘開始時、残りHPが{{1, percent}}%以上の敵に対して、彦卿の与ダメージ+{{2, percent}}%、{{3}}ターン継続。",
         "shortDesc": "秘技を使用、次の戦闘開始時、残りHPが50%以上の敵に対して、自身の与ダメージがアップする。"
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#はんぴょう}頒氷{RUBY_E#}",
-        "fullDesc": "攻撃を行った後、氷属性の弱点がある敵に、彦卿の攻撃力{{1}}%分の氷属性付加ダメージを与える。",
+        "fullDesc": "攻撃を行った後、氷属性の弱点がある敵に、彦卿の攻撃力{{1, percent}}%分の氷属性付加ダメージを与える。",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#りょうそう}凌霜{RUBY_E#}",
-        "fullDesc": "「智剣連心」がある場合、効果抵抗+{{1}}%。",
+        "fullDesc": "「智剣連心」がある場合、効果抵抗+{{1, percent}}%。",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#けいりょ}軽呂{RUBY_E#}",
-        "fullDesc": "会心が発生した時、速度+{{1}}%、{{2}}ターン継続。",
+        "fullDesc": "会心が発生した時、速度+{{1, percent}}%、{{2}}ターン継続。",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "{RUBY_B#そじん}素刃{RUBY_E#}",
-      "desc": "彦卿が敵に攻撃を行う時、その敵が凍結状態の場合、敵に彦卿の攻撃力{{1}}%分の氷属性付加ダメージを与える。"
+      "desc": "彦卿が敵に攻撃を行う時、その敵が凍結状態の場合、敵に彦卿の攻撃力{{1, percent}}%分の氷属性付加ダメージを与える。"
     },
     "2": {
       "name": "{RUBY_B#くうめい}空明{RUBY_E#}",
-      "desc": "彦卿に「智剣連心」がある場合、さらにEP回復効率+{{1}}%。"
+      "desc": "彦卿に「智剣連心」がある場合、さらにEP回復効率+{{1, percent}}%。"
     },
     "3": {
       "name": "{RUBY_B#けんたい}剣胎{RUBY_E#}",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "{RUBY_B#そうれい}霜厲{RUBY_E#}",
-      "desc": "残りHPが{{1}}%以上の時、自身の氷属性耐性貫通+{{2}}%。"
+      "desc": "残りHPが{{1, percent}}%以上の時、自身の氷属性耐性貫通+{{2, percent}}%。"
     },
     "5": {
       "name": "{RUBY_B#ぶこつ}武骨{RUBY_E#}",

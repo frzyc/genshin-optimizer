@@ -2,6 +2,6 @@
   "name": "Mas a Batalha Não Acabou",
   "passive": {
     "name": "Sucessão",
-    "description": "Aumenta em <orangeStrong>{{1}}%</orangeStrong> a Taxa de Regeneração de Energia do usuário e regenera 1 Ponto de Perícia quando o usuário ativa a sua Perícia Suprema em um aliado. Esse efeito pode ser ativado uma vez a cada 2 usos da Perícia Suprema do usuário. Quando o usuário usa a sua Perícia, o próximo aliado em ação (exceto o próprio usuário) causa <orangeStrong>{{2}}%</orangeStrong> a mais de Dano por {{3}} rodada(s)."
+    "description": "Aumenta em <orangeStrong>{{1, percent}}%</orangeStrong> a Taxa de Regeneração de Energia do usuário e regenera 1 Ponto de Perícia quando o usuário ativa a sua Perícia Suprema em um aliado. Esse efeito pode ser ativado uma vez a cada 2 usos da Perícia Suprema do usuário. Quando o usuário usa a sua Perícia, o próximo aliado em ação (exceto o próprio usuário) causa <orangeStrong>{{2, percent}}%</orangeStrong> a mais de Dano por {{3}} rodada(s)."
   }
 }

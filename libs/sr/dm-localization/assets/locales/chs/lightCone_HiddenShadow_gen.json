@@ -2,6 +2,6 @@
   "name": "匿影",
   "passive": {
     "name": "机关",
-    "description": "施放战技后，使装备者的下一次普攻对敌方目标造成等同于自身<orangeStrong>{{1}}%</orangeStrong>攻击力的附加伤害。"
+    "description": "施放战技后，使装备者的下一次普攻对敌方目标造成等同于自身<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的附加伤害。"
   }
 }

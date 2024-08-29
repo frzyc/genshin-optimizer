@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "{RUBY_B#はますい}破魔錐{RUBY_E#}",
-        "fullDesc": "指定した敵単体に雪衣の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の量子属性ダメージを与える。",
+        "fullDesc": "指定した敵単体に雪衣の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の量子属性ダメージを与える。",
         "shortDesc": "敵単体に少量の量子属性ダメージを与える。"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#しょあくしょうふく}諸悪摂伏{RUBY_E#}",
-        "fullDesc": "指定した敵単体に雪衣の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の量子属性ダメージを与え、隣接する敵に雪衣の攻撃力<orangeStrong>{{2}}%</orangeStrong>分の量子属性ダメージを与える。",
+        "fullDesc": "指定した敵単体に雪衣の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の量子属性ダメージを与え、隣接する敵に雪衣の攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の量子属性ダメージを与える。",
         "shortDesc": "敵単体に量子属性ダメージを与え、隣接する敵に少量の量子属性ダメージを与える。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#み}身{RUBY_E#}を{RUBY_B#つらぬ}貫{RUBY_E#}く{RUBY_B#てんばつ}天罰{RUBY_E#}",
-        "fullDesc": "指定した敵単体に雪衣の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の量子属性ダメージを与え、弱点属性を無視して敵の靭性を削る。敵を弱点撃破した時、量子属性の弱点撃破効果を触発する。\\n削った靭性が多いほど、その回の攻撃の与ダメージがアップする、最大で与ダメージ+<orangeStrong>{{3}}%</orangeStrong>。",
+        "fullDesc": "指定した敵単体に雪衣の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の量子属性ダメージを与え、弱点属性を無視して敵の靭性を削る。敵を弱点撃破した時、量子属性の弱点撃破効果を触発する。\\n削った靭性が多いほど、その回の攻撃の与ダメージがアップする、最大で与ダメージ+<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>。",
         "shortDesc": "敵単体に大量の量子属性ダメージを与える。その回の攻撃は<orangeStrong>弱点属性を無視</orangeStrong>して敵単体の靭性を削る。削った靭性が多いほど、与ダメージがアップする。"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#ざん}斬{RUBY_E#}、{RUBY_B#そっけつ}即決{RUBY_E#}",
-        "fullDesc": "敵を攻撃。戦闘開始後、敵全体に雪衣の攻撃力{{1}}%分の量子属性ダメージを与える。",
+        "fullDesc": "敵を攻撃。戦闘開始後、敵全体に雪衣の攻撃力{{1, percent}}%分の量子属性ダメージを与える。",
         "shortDesc": "敵を攻撃。戦闘に入った後、敵全体に少量の量子属性ダメージを与える。"
       }
     },
@@ -39,14 +39,14 @@
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#よちょう}予兆{RUBY_E#}の{RUBY_B#からく}絡繰{RUBY_E#}り",
-        "fullDesc": "自身の与ダメージを、撃破特効の{{1}}%分アップする、最大で与ダメージ+{{2}}%。",
+        "fullDesc": "自身の与ダメージを、撃破特効の{{1, percent}}%分アップする、最大で与ダメージ+{{2, percent}}%。",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#さいほう}砕鋒{RUBY_E#}の{RUBY_B#じくうけ}軸受{RUBY_E#}",
-        "fullDesc": "必殺技を発動した時、残り靭性が最大靭性{{1}}%以上の敵への与ダメージ+{{2}}%。",
+        "fullDesc": "必殺技を発動した時、残り靭性が最大靭性{{1, percent}}%以上の敵への与ダメージ+{{2, percent}}%。",
         "shortDesc": ""
       }
     },
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "{RUBY_B#しんましば}心魔縛{RUBY_E#}り",
-      "desc": "天賦による追加攻撃ダメージ+{{1}}%。"
+      "desc": "天賦による追加攻撃ダメージ+{{1, percent}}%。"
     },
     "2": {
       "name": "{RUBY_B#ごじんやぶ}五塵破{RUBY_E#}り",
-      "desc": "天賦の追加攻撃は敵の弱点属性を無視して靭性を削り、自身の最大HP{{1}}%分のHPを回復する。敵を弱点撃破した時、量子属性の弱点撃破効果を発動する。"
+      "desc": "天賦の追加攻撃は敵の弱点属性を無視して靭性を削り、自身の最大HP{{1, percent}}%分のHPを回復する。敵を弱点撃破した時、量子属性の弱点撃破効果を発動する。"
     },
     "3": {
       "name": "{RUBY_B#くたい}苦諦{RUBY_E#}{RUBY_B#とど}止{RUBY_E#}め",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "{RUBY_B#ごうこんた}業根断{RUBY_E#}ち",
-      "desc": "必殺技を発動した時、撃破特効+{{1}}%、{{2}}ターン継続。"
+      "desc": "必殺技を発動した時、撃破特効+{{1, percent}}%、{{2}}ターン継続。"
     },
     "5": {
       "name": "{RUBY_B#れいじんとら}霊神囚{RUBY_E#}え",

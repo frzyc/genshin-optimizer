@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Monodrama",
-        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Sparkle a um único inimigo-alvo.",
+        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Sparkle a um único inimigo-alvo.",
         "shortDesc": "Causa Dano Quântico leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Mergulhadora de Sonhos",
-        "fullDesc": "Aumenta o Dano CRIT de um único aliado-alvo em <orangeStrong>{{1}}%</orangeStrong> do Dano CRIT de Sparkle + <orangeStrong>{{2}}%</orangeStrong>, durando por {{3}} rodada(s). E ao mesmo tempo, Avança Adiante a ação deste aliado em {{4}}%.\\nQuando Sparkle usa essa habilidade em si, sua ação não será Avançada Adiante.",
+        "fullDesc": "Aumenta o Dano CRIT de um único aliado-alvo em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> do Dano CRIT de Sparkle + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, durando por {{3}} rodada(s). E ao mesmo tempo, Avança Adiante a ação deste aliado em {{4, percent}}%.\\nQuando Sparkle usa essa habilidade em si, sua ação não será Avançada Adiante.",
         "shortDesc": "Aumenta o <orangeStrong>Dano CRIT</orangeStrong> de um aliado e sua ação é Avançada Adiante."
       }
     },
     "ult": {
       "0": {
         "name": "A Heroína de Mil Faces",
-        "fullDesc": "Recupera {{2}} Pontos de Perícia para a equipe e concede Criptografia a todos os aliados. Para aliados com Criptografia, cada acúmulo do efeito de Bônus de Dano concedido pelo Talento de Sparkle aumenta adicionalmente em <orangeStrong>{{3}}%</orangeStrong>, durando por {{4}} rodada(s).",
+        "fullDesc": "Recupera {{2}} Pontos de Perícia para a equipe e concede Criptografia a todos os aliados. Para aliados com Criptografia, cada acúmulo do efeito de Bônus de Dano concedido pelo Talento de Sparkle aumenta adicionalmente em <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, durando por {{4}} rodada(s).",
         "shortDesc": "Recupera <orangeStrong>Pontos de Perícia</orangeStrong> para a equipe e habilita que o Bônus de Dano provido pelo Talento de Sparkle seja adicionalmente aprimorado."
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Noturna",
-        "fullDesc": "Aumenta o ATQ de todos os aliados em {{4}}%. Quando há 1/2/3 aliado(s) do Tipo Quânticos na equipe, adicionalmente, o ATQ dos aliados é aumentado em {{1}}%/{{2}}%/{{3}}%.",
+        "fullDesc": "Aumenta o ATQ de todos os aliados em {{4, percent}}%. Quando há 1/2/3 aliado(s) do Tipo Quânticos na equipe, adicionalmente, o ATQ dos aliados é aumentado em {{1, percent}}%/{{2, percent}}%/{{3, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Suspensão de Descrença",
-      "desc": "O efeito de Criptografia concedido pela Perícia Suprema dura por 1 rodada extra. Todos os aliados com Criptografia têm seu ATQ aumentado em {{1}}%."
+      "desc": "O efeito de Criptografia concedido pela Perícia Suprema dura por 1 rodada extra. Todos os aliados com Criptografia têm seu ATQ aumentado em {{1, percent}}%."
     },
     "2": {
       "name": "Puramente Fictício",
-      "desc": "Cada acúmulo do efeito do Talento permite que os aliados ignorem adicionalmente {{1}}% da DEF do alvo ao causar Dano."
+      "desc": "Cada acúmulo do efeito do Talento permite que os aliados ignorem adicionalmente {{1, percent}}% da DEF do alvo ao causar Dano."
     },
     "3": {
       "name": "Sonho Impossível",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Narrativa Polissêmica",
-      "desc": "O efeito de Bônus de Dano CRIT fornecido pela Perícia aumenta adicionalmente em uma quantidade igual a {{1}}% do Dano CRIT de Sparkle. Quando Sparkle usa sua Perícia, o efeito de Bônus de Dano CRIT da Perícia dela será aplicado a todos os aliados com Criptografia. Quando Sparkle usa sua Perícia Suprema, qualquer aliado único que se beneficie do Bônus de Dano CRIT da Perícia dela espalhará esse efeito para aliados com Criptografia."
+      "desc": "O efeito de Bônus de Dano CRIT fornecido pela Perícia aumenta adicionalmente em uma quantidade igual a {{1, percent}}% do Dano CRIT de Sparkle. Quando Sparkle usa sua Perícia, o efeito de Bônus de Dano CRIT da Perícia dela será aplicado a todos os aliados com Criptografia. Quando Sparkle usa sua Perícia Suprema, qualquer aliado único que se beneficie do Bônus de Dano CRIT da Perícia dela espalhará esse efeito para aliados com Criptografia."
     }
   }
 }

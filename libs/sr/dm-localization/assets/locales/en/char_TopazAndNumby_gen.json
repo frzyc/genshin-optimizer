@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Deficit...",
-        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Topaz's ATK to a single enemy.",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Topaz's ATK to a single enemy.",
         "shortDesc": "Deals minor Fire DMG to an enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Difficulty Paying?",
-        "fullDesc": "Inflicts a single target enemy with a Proof of Debt status, increasing the <u>follow-up attack</u> DMG it receives by <orangeStrong>{{2}}%</orangeStrong>. Proof of Debt only takes effect on the most recent target it is applied to. If there are no enemies inflicted with Proof of Debt on the field when an ally's turn starts or when an ally takes action, Topaz will inflict a random enemy with Proof of Debt.\\nNumby deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Topaz's ATK to this target. Using this Skill to deal DMG is considered as launching a <u>follow-up attack</u>.",
+        "fullDesc": "Inflicts a single target enemy with a Proof of Debt status, increasing the <u>follow-up attack</u> DMG it receives by <orangeStrong>{{2, percent}}%</orangeStrong>. Proof of Debt only takes effect on the most recent target it is applied to. If there are no enemies inflicted with Proof of Debt on the field when an ally's turn starts or when an ally takes action, Topaz will inflict a random enemy with Proof of Debt.\\nNumby deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Topaz's ATK to this target. Using this Skill to deal DMG is considered as launching a <u>follow-up attack</u>.",
         "shortDesc": "Inflicts a single enemy with a Proof of Debt status and causes it to <orangeStrong>receive increased follow-up attack DMG</orangeStrong>. Numby deals Fire DMG to the target."
       }
     },
     "ult": {
       "0": {
         "name": "Turn a Profit!",
-        "fullDesc": "Numby enters the Windfall Bonanza! state and its DMG multiplier increases by <orangeStrong>{{1}}%</orangeStrong> and CRIT DMG increases by <orangeStrong>{{2}}%</orangeStrong>. Also, when enemies with Proof of Debt are hit by an ally's Basic ATK, Skill, or Ultimate, Numby's action is Advanced Forward by {{3}}%. Numby exits the Windfall Bonanza! state after using {{4}} attacks.",
+        "fullDesc": "Numby enters the Windfall Bonanza! state and its DMG multiplier increases by <orangeStrong>{{1, percent}}%</orangeStrong> and CRIT DMG increases by <orangeStrong>{{2, percent}}%</orangeStrong>. Also, when enemies with Proof of Debt are hit by an ally's Basic ATK, Skill, or Ultimate, Numby's action is Advanced Forward by {{3, percent}}%. Numby exits the Windfall Bonanza! state after using {{4}} attacks.",
         "shortDesc": "Numby enters the Windfall Bonanza! state and <orangeStrong>increases its DMG multiplier and CRIT DMG</orangeStrong>."
       }
     },
@@ -46,7 +46,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Financial Turmoil",
-        "fullDesc": "Increases Topaz & Numby's DMG dealt to enemy targets with Fire Weakness by {{1}}%.",
+        "fullDesc": "Increases Topaz & Numby's DMG dealt to enemy targets with Fire Weakness by {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Future Market",
-      "desc": "When enemies afflicted with Proof of Debt receive follow-up attacks, they will enter the Debtor state. This can take effect only once within a single attack.\\nThe Debtor state increases the CRIT DMG of follow-up attacks inflicted on the target enemies by {{1}}%, stacking up to {{2}} time(s). When Proof of Debt is removed, the Debtor state is also removed."
+      "desc": "When enemies afflicted with Proof of Debt receive follow-up attacks, they will enter the Debtor state. This can take effect only once within a single attack.\\nThe Debtor state increases the CRIT DMG of follow-up attacks inflicted on the target enemies by {{1, percent}}%, stacking up to {{2}} time(s). When Proof of Debt is removed, the Debtor state is also removed."
     },
     "2": {
       "name": "Bona Fide Acquisition",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Agile Operation",
-      "desc": "After Numby's turn begins, Topaz's action is Advanced Forward by {{1}}%."
+      "desc": "After Numby's turn begins, Topaz's action is Advanced Forward by {{1, percent}}%."
     },
     "5": {
       "name": "Inflationary Demand",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Incentive Mechanism",
-      "desc": "Numby's attack count during the Windfall Bonanza! state increases by {{1}}, and its Fire RES PEN increases by {{2}}% when it attacks."
+      "desc": "Numby's attack count during the Windfall Bonanza! state increases by {{1}}, and its Fire RES PEN increases by {{2, percent}}% when it attacks."
     }
   }
 }

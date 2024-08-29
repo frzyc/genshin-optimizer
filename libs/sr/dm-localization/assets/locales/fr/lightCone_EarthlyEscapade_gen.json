@@ -2,6 +2,6 @@
   "name": "Escapade terrestre",
   "passive": {
     "name": "Caprices",
-    "description": "Augmente les DGT critiques du porteur de <orangeStrong>{{1}}%</orangeStrong>. Le porteur obtient l'effet Masque pendant {{6}} tours en début de combat. Tant que le porteur bénéficie de Masque, ses alliés voient leurs chances de coup critique augmenter de <orangeStrong>{{5}}%</orangeStrong> et leurs DGT critiques de <orangeStrong>{{2}}%</orangeStrong>. Chaque fois que le porteur régénère 1 point de compétence (y compris des points de compétence au-delà de la limite), il gagne 1 cumul de Flamme radieuse. À {{4}} cumuls de Flamme radieuse, il perd tous les cumuls et gagne Masque. Dure {{3}} tours."
+    "description": "Augmente les DGT critiques du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Le porteur obtient l'effet Masque pendant {{6}} tours en début de combat. Tant que le porteur bénéficie de Masque, ses alliés voient leurs chances de coup critique augmenter de <orangeStrong>{{5, percent}}%</orangeStrong> et leurs DGT critiques de <orangeStrong>{{2, percent}}%</orangeStrong>. Chaque fois que le porteur régénère 1 point de compétence (y compris des points de compétence au-delà de la limite), il gagne 1 cumul de Flamme radieuse. À {{4}} cumuls de Flamme radieuse, il perd tous les cumuls et gagne Masque. Dure {{3}} tours."
   }
 }

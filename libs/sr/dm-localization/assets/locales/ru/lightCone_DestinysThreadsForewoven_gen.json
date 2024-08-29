@@ -2,6 +2,6 @@
   "name": "Плетение нитей судьбы",
   "passive": {
     "name": "Прозрение",
-    "description": "Сопротивление эффектам владельца повышается на <orangeStrong>{{1}}%</orangeStrong>. Каждые {{2}} ед. защиты владельца повышают наносимый им урон на <orangeStrong>{{3}}%</orangeStrong> до макс. <orangeStrong>{{4}}%</orangeStrong>."
+    "description": "Сопротивление эффектам владельца повышается на <orangeStrong>{{1, percent}}%</orangeStrong>. Каждые {{2}} ед. защиты владельца повышают наносимый им урон на <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> до макс. <orangeStrong>{{4, percent}}%</orangeStrong>."
   }
 }

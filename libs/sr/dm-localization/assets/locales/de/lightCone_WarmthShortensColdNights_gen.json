@@ -2,6 +2,6 @@
   "name": "Warme Nächte dauern nicht lange",
   "passive": {
     "name": "Kleines Licht",
-    "description": "Erhöht die max. LP des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Stellt nach dem Einsatz des Standardangriffs oder der Fertigkeit die LP aller Verbündeten um <orangeStrong>{{2}}%</orangeStrong> ihrer jeweiligen max. LP wieder her."
+    "description": "Erhöht die max. LP des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Stellt nach dem Einsatz des Standardangriffs oder der Fertigkeit die LP aller Verbündeten um <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> ihrer jeweiligen max. LP wieder her."
   }
 }

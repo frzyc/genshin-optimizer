@@ -4,33 +4,33 @@
     "basic": {
       "0": {
         "name": "Luz Quebra-Gelo",
-        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo e ganha 1 acúmulo de Vontade de Magma.",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo e ganha 1 acúmulo de Vontade de Magma.",
         "shortDesc": "Causa Dano de Fogo leve a um único inimigo e ganha Vontade de Magma."
       },
       "1": {
         "name": "Luz Quebra-Gelo",
-        "fullDesc": "Consome 4 acúmulos de Vontade de Magma para aprimorar o ATQ Básico, causando Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo e Dano de Fogo igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} aos inimigos adjacentes a ele.",
+        "fullDesc": "Consome 4 acúmulos de Vontade de Magma para aprimorar o ATQ Básico, causando Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo e Dano de Fogo igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} aos inimigos adjacentes a ele.",
         "shortDesc": "Consome Vontade de Magma, e então causa Dano de Fogo a um único inimigo e Dano de Fogo leve aos inimigos adjacentes a ele."
       }
     },
     "skill": {
       "0": {
         "name": "Âmbar Ardente",
-        "fullDesc": "Aumenta a Redução de Dano {F#da Desbravadora}{M#do Desbravador} em <orangeStrong>{{1}}%</orangeStrong> e ganha 1 acúmulo da Vontade de Magma, com {{2}}% de <u>chance-base</u> de Provocar todos os inimigos por {{3}} rodada(s).",
+        "fullDesc": "Aumenta a Redução de Dano {F#da Desbravadora}{M#do Desbravador} em <orangeStrong>{{1, percent}}%</orangeStrong> e ganha 1 acúmulo da Vontade de Magma, com {{2, percent}}% de <u>chance-base</u> de Provocar todos os inimigos por {{3}} rodada(s).",
         "shortDesc": "Reduz o Dano recebido e recebe Vontade de Magma, com uma alta chance de Provocar todos os inimigos."
       }
     },
     "ult": {
       "0": {
         "name": "Lança das Chamas da Guerra",
-        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} mais <orangeStrong>{{2}}%</orangeStrong> da DEF {F#da Desbravadora}{M#do Desbravador} a todos os inimigos. O próximo ATQ Básico será automaticamente aprimorado e não custará Vontade de Magma.",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} mais <orangeStrong>{{2, percent}}%</orangeStrong> da DEF {F#da Desbravadora}{M#do Desbravador} a todos os inimigos. O próximo ATQ Básico será automaticamente aprimorado e não custará Vontade de Magma.",
         "shortDesc": "Causa Dano de Fogo a todos os inimigos e aprimora o próximo ATQ Básico."
       }
     },
     "technique": {
       "0": {
         "name": "Chamado do Guardião",
-        "fullDesc": "Após usar Técnica, no início da próxima batalha, ganha um Escudo que absorve Dano igual a {{1}}% da DEF {F#da Desbravadora}{M#do Desbravador} mais {{2}} por {{3}} rodada(s).",
+        "fullDesc": "Após usar Técnica, no início da próxima batalha, ganha um Escudo que absorve Dano igual a {{1, percent}}% da DEF {F#da Desbravadora}{M#do Desbravador} mais {{2}} por {{3}} rodada(s).",
         "shortDesc": ""
       }
     },
@@ -44,21 +44,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Os Fortes Defendem os Fracos",
-        "fullDesc": "Após usar a Perícia, reduz em {{2}}% o Dano recebido por todos os aliados por {{3}} rodada(s).",
+        "fullDesc": "Após usar a Perícia, reduz em {{2, percent}}% o Dano recebido por todos os aliados por {{3}} rodada(s).",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Galanteria Inabalável",
-        "fullDesc": "Usar o ATQ Básico Aprimorado restaura {{1}}% dos PV máximos {F#da}{M#do} Desbrava{M#dor}{F#dora}.",
+        "fullDesc": "Usar o ATQ Básico Aprimorado restaura {{1, percent}}% dos PV máximos {F#da}{M#do} Desbrava{M#dor}{F#dora}.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "É Melhor Agir do que Pensar Demais",
-        "fullDesc": "Quando {F#a}{M#o} Desbrava{M#dor}{F#dora} recebe proteção de um Escudo no início da rodada, aumenta seu ATQ em {{2}}% e regenera {{1}} de Energia até a ação ser encerrada.",
+        "fullDesc": "Quando {F#a}{M#o} Desbrava{M#dor}{F#dora} recebe proteção de um Escudo no início da rodada, aumenta seu ATQ em {{2, percent}}% e regenera {{1}} de Energia até a ação ser encerrada.",
         "shortDesc": ""
       }
     }
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Ressonância Sísmica",
-      "desc": "Quando {F#a Desbravadora}{M#o Desbravador} usa seu ATQ Básico, adicionalmente causa Dano de Fogo igual a {{1}}% da DEF {F#da Desbravadora}{M#do Desbravador}. Ao usar seu ATQ Básico Aprimorado, {F#a Desbravadora}{M#o Desbravador} adicionalmente causa Dano de Fogo igual a {{2}}% de sua DEF."
+      "desc": "Quando {F#a Desbravadora}{M#o Desbravador} usa seu ATQ Básico, adicionalmente causa Dano de Fogo igual a {{1, percent}}% da DEF {F#da Desbravadora}{M#do Desbravador}. Ao usar seu ATQ Básico Aprimorado, {F#a Desbravadora}{M#o Desbravador} adicionalmente causa Dano de Fogo igual a {{2, percent}}% de sua DEF."
     },
     "2": {
       "name": "Tenacidade que Desafia o Tempo",
-      "desc": "O Escudo aplicado a todos os aliados pelo Talento {F#da Desbravadora}{M#do Desbravador} bloqueará Dano extra igual a {{1}}% da DEF {F#da Desbravadora}{M#do Desbravador} + {{2}}."
+      "desc": "O Escudo aplicado a todos os aliados pelo Talento {F#da Desbravadora}{M#do Desbravador} bloqueará Dano extra igual a {{1, percent}}% da DEF {F#da Desbravadora}{M#do Desbravador} + {{2}}."
     },
     "3": {
       "name": "Projeto de Desbravamento",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Bastião Forja-Cidades",
-      "desc": "Após {M#o Desbravador}{F#a Desbravadora} usar um ATQ Básico aprimorado ou a Perícia Suprema aprimorada, a DEF {M#dele}{F#dela} aumenta em {{1}}%. Acumula até {{2}} vez(es)."
+      "desc": "Após {M#o Desbravador}{F#a Desbravadora} usar um ATQ Básico aprimorado ou a Perícia Suprema aprimorada, a DEF {M#dele}{F#dela} aumenta em {{1, percent}}%. Acumula até {{2}} vez(es)."
     }
   }
 }

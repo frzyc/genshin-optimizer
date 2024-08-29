@@ -2,6 +2,6 @@
   "name": "Momento Perfeito",
   "passive": {
     "name": "Refração da Visão",
-    "description": "Aumenta RES a Efeito do usuário em <orangeStrong>{{1}}%</orangeStrong> e aumenta a Cura Realizada em um valor igual a <orangeStrong>{{2}}%</orangeStrong> da RES de Efeito. A Cura Realizada pode ser aumentada dessa forma em até <orangeStrong>{{3}}%</orangeStrong>."
+    "description": "Aumenta RES a Efeito do usuário em <orangeStrong>{{1, percent}}%</orangeStrong> e aumenta a Cura Realizada em um valor igual a <orangeStrong>{{2, percent}}%</orangeStrong> da RES de Efeito. A Cura Realizada pode ser aumentada dessa forma em até <orangeStrong>{{3, percent}}%</orangeStrong>."
   }
 }

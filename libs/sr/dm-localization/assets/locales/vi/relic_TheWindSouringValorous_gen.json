@@ -1,7 +1,7 @@
 {
   "setName": "Dũng Khí Ngút Trời",
   "setEffects": {
-    "2": "Tấn Công tăng {{1}}%.",
-    "4": "Tăng {{1}}% Tỷ Lệ Bạo Kích cho người trang bị. Khi người trang bị thi triển Đòn Đánh Theo Sau, khiến sát thương Tuyệt Kỹ gây ra tăng {{2}}%, duy trì {{3}} hiệp."
+    "2": "Tấn Công tăng {{1, percent}}%.",
+    "4": "Tăng {{1, percent}}% Tỷ Lệ Bạo Kích cho người trang bị. Khi người trang bị thi triển Đòn Đánh Theo Sau, khiến sát thương Tuyệt Kỹ gây ra tăng {{2, percent}}%, duy trì {{3}} hiệp."
   }
 }

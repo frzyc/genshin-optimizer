@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Je veux aider",
-        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Clara à un ennemi unique.",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Clara à un ennemi unique.",
         "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Svarog veille sur toi",
-        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Clara à tous les ennemis et des DGT physiques supplémentaires équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de Clara aux ennemis marqués par Svarog d'une Marque de contre.\\nToutes les Marques de contre sont supprimées après utilisation de cette compétence.",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Clara à tous les ennemis et des DGT physiques supplémentaires équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Clara aux ennemis marqués par Svarog d'une Marque de contre.\\nToutes les Marques de contre sont supprimées après utilisation de cette compétence.",
         "shortDesc": "Inflige des DGT physiques à tous les ennemis et des <orangeStrong>DGT physiques supplémentaires</orangeStrong> aux cibles qui portent une Marque de contre."
       }
     },
     "ult": {
       "0": {
         "name": "C'est une promesse, pas un ordre",
-        "fullDesc": "Après utilisation de l'ultime de Clara, les DGT qu'elle subit sont réduits de <orangeStrong>{{4}}%</orangeStrong> supplémentaires et ses chances d'être attaquée par les ennemis sont considérablement augmentées pendant {{3}} tours.\\nD'autre part, le <u>contre</u> de Svarog est renforcé. Lorsqu'un allié est attaqué, Svarog lance immédiatement un <u>contre</u> et son multiplicateur de DGT contre l'ennemi augmente de <orangeStrong>{{2}}%</orangeStrong>. Les ennemis adjacents subissent 50 % des DGT infligés à la cible ennemie principale. Le <u>contre</u> renforcé peut prendre effet {{5}} fois.",
+        "fullDesc": "Après utilisation de l'ultime de Clara, les DGT qu'elle subit sont réduits de <orangeStrong>{{4, percent}}%</orangeStrong> supplémentaires et ses chances d'être attaquée par les ennemis sont considérablement augmentées pendant {{3}} tours.\\nD'autre part, le <u>contre</u> de Svarog est renforcé. Lorsqu'un allié est attaqué, Svarog lance immédiatement un <u>contre</u> et son multiplicateur de DGT contre l'ennemi augmente de <orangeStrong>{{2, percent}}%</orangeStrong>. Les ennemis adjacents subissent 50 % des DGT infligés à la cible ennemie principale. Le <u>contre</u> renforcé peut prendre effet {{5}} fois.",
         "shortDesc": "<orangeStrong>Réduit les DGT subis</orangeStrong>, augmente les chances d'être attaqué par les ennemis et renforce les <u>contres</u>."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Une vraie famille",
-        "fullDesc": "Lorsque le personnage est attaqué, il a {{1}}% de chances fixes de supprimer un malus qu'il subit.",
+        "fullDesc": "Lorsque le personnage est attaqué, il a {{1, percent}}% de chances fixes de supprimer un malus qu'il subit.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Sous bonne garde",
-        "fullDesc": "Les chances de résister aux malus de contrôle augmentent de {{1}}%.",
+        "fullDesc": "Les chances de résister aux malus de contrôle augmentent de {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Vengeance",
-        "fullDesc": "Augmente les DGT de contre de Svarog de {{1}}%.",
+        "fullDesc": "Augmente les DGT de contre de Svarog de {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Une étreinte intense",
-      "desc": "L'ATQ augmente de {{1}}% pendant {{2}} tours après utilisation de l'ultime."
+      "desc": "L'ATQ augmente de {{1, percent}}% pendant {{2}} tours après utilisation de l'ultime."
     },
     "3": {
       "name": "Armure d'acier froid",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Chaleur familiale",
-      "desc": "Lorsque Clara est touchée, les DGT qu'elle subit sont réduits de {{1}}%. Cet effet dure jusqu'au début de son prochain tour."
+      "desc": "Lorsque Clara est touchée, les DGT qu'elle subit sont réduits de {{1, percent}}%. Cet effet dure jusqu'au début de son prochain tour."
     },
     "5": {
       "name": "Une petite promesse",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Compagnons de longue date",
-      "desc": "Lorsque d'autres alliés sont touchés, Svarog a également {{1}}% de chances fixes de déclencher un contre envers l'assaillant et de le marquer avec une Marque de contre. Le nombre de contres renforcés accordés par l'ultime augmente de {{2}}."
+      "desc": "Lorsque d'autres alliés sont touchés, Svarog a également {{1, percent}}% de chances fixes de déclencher un contre envers l'assaillant et de le marquer avec une Marque de contre. Le nombre de contres renforcés accordés par l'ultime augmente de {{2}}."
     }
   }
 }

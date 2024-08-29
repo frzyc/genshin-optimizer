@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Cruce marchito trilateral",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Acheron como Daño de Rayo a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Acheron como Daño de Rayo a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Diluvio de cortes",
-        "fullDesc": "Obtiene {{3}} pt. de Sueños rotos. Aplica {{3}} acumulación de Rojo sacrificial a un enemigo, le inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Acheron como Daño de Rayo e inflige un <orangeStrong>{{2}}%</orangeStrong> del ATQ de Acheron como Daño de Rayo a los enemigos adyacentes.",
+        "fullDesc": "Obtiene {{3}} pt. de Sueños rotos. Aplica {{3}} acumulación de Rojo sacrificial a un enemigo, le inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Acheron como Daño de Rayo e inflige un <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Acheron como Daño de Rayo a los enemigos adyacentes.",
         "shortDesc": "Obtiene <orangeStrong><color=#f29e38ff>#3[i]</orangeStrong> pt. de Sueños rotos</color>. Aplica <orangeStrong>{{3}}</orangeStrong> acumulación de Rojo sacrificial a un enemigo, le inflige Daño de Rayo e inflige una pequeña cantidad de Daño de Rayo a los enemigos adyacentes."
       }
     },
     "ult": {
       "0": {
         "name": "Sueño destrozado, lágrimas escarlata",
-        "fullDesc": "Lanza Pluviespada 3 veces y Resurgimiento estigio 1 vez e inflige hasta un <orangeStrong>{{6}}%</orangeStrong> del ATQ de Acheron como Daño de Rayo a un enemigo. También inflige hasta un <orangeStrong>{{7}}%</orangeStrong> del ATQ de Acheron como Daño de Rayo a los demás enemigos.\\nPluviespada: inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Acheron como Daño de Rayo a un enemigo y elimina hasta 3 acumulaciones de Rojo sacrificial del objetivo. Cuando se elimina Rojo sacrificial, inflige a todos los enemigos un <orangeStrong>{{2}}%</orangeStrong> del ATQ de Acheron como Daño de Rayo y, por cada acumulación de Rojo sacrificial eliminada, el multiplicador de daño de este ataque aumenta de forma adicional hasta un máximo del <orangeStrong>{{5}}%</orangeStrong>.\\nResurgimiento estigio: inflige un <orangeStrong>{{3}}%</orangeStrong> del ATQ de Acheron como Daño de Rayo a todos los enemigos y elimina todas las acumulaciones de Rojo sacrificial.\\nMientras se usa la habilidad definitiva, no se puede aplicar Rojo sacrificial a los enemigos.",
+        "fullDesc": "Lanza Pluviespada 3 veces y Resurgimiento estigio 1 vez e inflige hasta un <orangeStrong>{{6, percent}}%</orangeStrong> del ATQ de Acheron como Daño de Rayo a un enemigo. También inflige hasta un <orangeStrong>{{7, percent}}%</orangeStrong> del ATQ de Acheron como Daño de Rayo a los demás enemigos.\\nPluviespada: inflige un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> del ATQ de Acheron como Daño de Rayo a un enemigo y elimina hasta 3 acumulaciones de Rojo sacrificial del objetivo. Cuando se elimina Rojo sacrificial, inflige a todos los enemigos un <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> del ATQ de Acheron como Daño de Rayo y, por cada acumulación de Rojo sacrificial eliminada, el multiplicador de daño de este ataque aumenta de forma adicional hasta un máximo del <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.\\nResurgimiento estigio: inflige un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Acheron como Daño de Rayo a todos los enemigos y elimina todas las acumulaciones de Rojo sacrificial.\\nMientras se usa la habilidad definitiva, no se puede aplicar Rojo sacrificial a los enemigos.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo 3 veces a un enemigo. Si elimina Rojo sacrificial del objetivo, inflige una pequeña cantidad de Daño de Rayo a todos los enemigos. Después, inflige Daño de Rayo a todos los enemigos 1 vez y elimina todas las acumulaciones de Rojo sacrificial."
       },
       "1": {
@@ -45,7 +45,7 @@
     "technique": {
       "0": {
         "name": "Influjo tetravalente",
-        "fullDesc": "Ataca al enemigo inmediatamente. Al comienzo de cada oleada, obtiene Influjo tetravalente, inflige un {{1}}% del ATQ de Acheron como Daño de Rayo a todos los enemigos y reduce su Firmeza ignorando sus tipos de Debilidad. Al infligir Ruptura de Debilidad, activa el efecto de Ruptura de Rayo.\\nInflujo tetravalente: tras lanzar la habilidad definitiva, Acheron obtiene {{2}} pt. de Sueños rotos y aplica {{2}} acumulación de Rojo sacrificial a un enemigo al azar.\\nSi ataca a un enemigo normal, lo derrota directamente y no entra en combate. Si el ataque no acierta a un enemigo, no se consume el punto de técnica.",
+        "fullDesc": "Ataca al enemigo inmediatamente. Al comienzo de cada oleada, obtiene Influjo tetravalente, inflige un {{1, percent}}% del ATQ de Acheron como Daño de Rayo a todos los enemigos y reduce su Firmeza ignorando sus tipos de Debilidad. Al infligir Ruptura de Debilidad, activa el efecto de Ruptura de Rayo.\\nInflujo tetravalente: tras lanzar la habilidad definitiva, Acheron obtiene {{2}} pt. de Sueños rotos y aplica {{2}} acumulación de Rojo sacrificial a un enemigo al azar.\\nSi ataca a un enemigo normal, lo derrota directamente y no entra en combate. Si el ataque no acierta a un enemigo, no se consume el punto de técnica.",
         "shortDesc": "Ataca al enemigo y obtiene Influjo tetravalente al principio de cada oleada. Inflige Daño de Rayo a todos los enemigos y reduce su Firmeza <orangeStrong>ignorando el tipo de Debilidad</orangeStrong>.\\nSi ataca a enemigos normales, <orangeStrong>los derrota inmediatamente</orangeStrong> sin entrar en combate. Si el ataque no acierta a un enemigo, no se consume el punto de técnica."
       }
     },
@@ -66,14 +66,14 @@
     "bonusAbility2": {
       "0": {
         "name": "El abismo",
-        "fullDesc": "Cuando en el equipo hay 1 o 2 personajes de la Vía de la Nihilidad (sin contar a Acheron), el daño que infligen el ATQ básico, la habilidad básica y la habilidad definitiva de Acheron aumenta en un {{1}}% o un {{2}}% del daño original.",
+        "fullDesc": "Cuando en el equipo hay 1 o 2 personajes de la Vía de la Nihilidad (sin contar a Acheron), el daño que infligen el ATQ básico, la habilidad básica y la habilidad definitiva de Acheron aumenta en un {{1, percent}}% o un {{2, percent}}% del daño original.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Núcleo relampagueante",
-        "fullDesc": "Cuando Pluviespada de la habilidad definitiva golpea a un objetivo enemigo con Rojo sacrificial, el daño de Acheron aumenta en un {{1}}%. Se puede acumular hasta {{2}} veces y dura {{3}} turnos. Además, inflige daño {{4}} veces más cuando se activa Resurgimiento estigio. Cada vez inflige un Daño de Rayo equivalente al {{5}}% del ATQ de Acheron a un objetivo enemigo y se considera daño de habilidad definitiva.",
+        "fullDesc": "Cuando Pluviespada de la habilidad definitiva golpea a un objetivo enemigo con Rojo sacrificial, el daño de Acheron aumenta en un {{1, percent}}%. Se puede acumular hasta {{2}} veces y dura {{3}} turnos. Además, inflige daño {{4}} veces más cuando se activa Resurgimiento estigio. Cada vez inflige un Daño de Rayo equivalente al {{5, percent}}% del ATQ de Acheron a un objetivo enemigo y se considera daño de habilidad definitiva.",
         "shortDesc": ""
       }
     }
@@ -81,7 +81,7 @@
   "ranks": {
     "1": {
       "name": "Caída del cielo y comienzo de la verdad",
-      "desc": "Al infligir daño a enemigos con estados negativos, la Prob. CRIT aumenta en un {{1}}%."
+      "desc": "Al infligir daño a enemigos con estados negativos, la Prob. CRIT aumenta en un {{1, percent}}%."
     },
     "2": {
       "name": "Trueno silenciado y tempestad calmada",
@@ -93,7 +93,7 @@
     },
     "4": {
       "name": "Llamas del alma reflejada",
-      "desc": "Cuando el enemigo entra en combate, le aplica Vulnerabilidad a daño de habilidad definitiva, lo que aumenta el daño de habilidad definitiva recibido en un {{1}}%."
+      "desc": "Cuando el enemigo entra en combate, le aplica Vulnerabilidad a daño de habilidad definitiva, lo que aumenta el daño de habilidad definitiva recibido en un {{1, percent}}%."
     },
     "5": {
       "name": "Rocas fragmentadas, almas desplazadas",
@@ -101,7 +101,7 @@
     },
     "6": {
       "name": "Calamidad rompecadenas",
-      "desc": "La PEN de la RES a todos los tipos del daño de habilidad definitiva infligido por Acheron aumenta en un {{1}}%. El daño infligido por su ATQ básico o habilidad básica se considera daño de habilidad definitiva, y consume la Firmeza del enemigo ignorando sus tipos de Debilidad. Al romper la Debilidad de un enemigo, activa el efecto de Ruptura de Rayo."
+      "desc": "La PEN de la RES a todos los tipos del daño de habilidad definitiva infligido por Acheron aumenta en un {{1, percent}}%. El daño infligido por su ATQ básico o habilidad básica se considera daño de habilidad definitiva, y consume la Firmeza del enemigo ignorando sus tipos de Debilidad. Al romper la Debilidad de un enemigo, activa el efecto de Ruptura de Rayo."
     }
   }
 }

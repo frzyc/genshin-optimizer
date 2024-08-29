@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Cloudlancer Art: North Wind",
-        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Dan Heng pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Dan Heng pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Cloudlancer Art: Torrent",
-        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Dan Heng pada 1 target musuh.\\nSaat DMG yang diakibatkan Skill memicu CRIT Hit, ada {{4}}% <u>peluang dasar</u> untuk mengurangi {{2}}% SPD target musuh selama {{3}} giliran.",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Dan Heng pada 1 target musuh.\\nSaat DMG yang diakibatkan Skill memicu CRIT Hit, ada {{4, percent}}% <u>peluang dasar</u> untuk mengurangi {{2, percent}}% SPD target musuh selama {{3}} giliran.",
         "shortDesc": "Mengakibatkan Wind DMG pada 1 musuh. Berpeluang memberikan status Slow jika memicu CRIT Hit."
       }
     },
     "ult": {
       "0": {
         "name": "Ethereal Dream",
-        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Dan Heng pada 1 target musuh. Jika musuh tersebut sedang berstatus Slow, maka DMG Multiplier dari DMG yang diakibatkan Ultimate Dan Heng akan meningkat <orangeStrong>{{2}}%</orangeStrong>.",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Dan Heng pada 1 target musuh. Jika musuh tersebut sedang berstatus Slow, maka DMG Multiplier dari DMG yang diakibatkan Ultimate Dan Heng akan meningkat <orangeStrong>{{2, percent}}%</orangeStrong>.",
         "shortDesc": "Mengakibatkan Wind DMG dalam jumlah besar pada 1 musuh, meningkatkan DMG Multiplier jika musuh berstatus Slow."
       }
     },
     "technique": {
       "0": {
         "name": "Splitting Spearhead",
-        "fullDesc": "Setelah menggunakan Technique, meningkatkan {{1}}% ATK Dan Heng selama {{2}} giliran pada saat pertempuran selanjutnya dimulai.",
+        "fullDesc": "Setelah menggunakan Technique, meningkatkan {{1, percent}}% ATK Dan Heng selama {{2}} giliran pada saat pertempuran selanjutnya dimulai.",
         "shortDesc": "Saat menggunakan Technique, ATK akan meningkat setelah memasuki pertempuran berikutnya."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Hidden Dragon",
-        "fullDesc": "Mengurangi peluang diserang oleh target musuh jika persentase HP saat ini kurang dari atau sama dengan {{1}}%.",
+        "fullDesc": "Mengurangi peluang diserang oleh target musuh jika persentase HP saat ini kurang dari atau sama dengan {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Faster Than Light",
-        "fullDesc": "Setelah melancarkan serangan, memiliki {{1}}% peluang tetap untuk meningkatkan {{2}}% SPD diri sendiri selama {{3}} giliran.",
+        "fullDesc": "Setelah melancarkan serangan, memiliki {{1, percent}}% peluang tetap untuk meningkatkan {{2, percent}}% SPD diri sendiri selama {{3}} giliran.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "High Gale",
-        "fullDesc": "Meningkatkan {{1}}% DMG yang diakibatkan Basic Attack pada target musuh dengan status Slow.",
+        "fullDesc": "Meningkatkan {{1, percent}}% DMG yang diakibatkan Basic Attack pada target musuh dengan status Slow.",
         "shortDesc": ""
       }
     }
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "The Higher You Fly, the Harder You Fall",
-      "desc": "Saat persentase HP target musuh yang diserang lebih dari atau sama dengan {{1}}%, CRIT Rate meningkat {{2}}%."
+      "desc": "Saat persentase HP target musuh yang diserang lebih dari atau sama dengan {{1, percent}}%, CRIT Rate meningkat {{2, percent}}%."
     },
     "2": {
       "name": "Quell the Venom Octet, Quench the Vice O'Flame",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "The Troubled Soul Lies in Wait",
-      "desc": "Status Slow yang dipicu Skill mengurangi {{1}}% SPD tambahan pada musuh."
+      "desc": "Status Slow yang dipicu Skill mengurangi {{1, percent}}% SPD tambahan pada musuh."
     }
   }
 }

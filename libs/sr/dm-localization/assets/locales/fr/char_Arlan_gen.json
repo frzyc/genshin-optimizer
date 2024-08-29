@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Ruée éclair",
-        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ d'Arlan à un ennemi unique.",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ d'Arlan à un ennemi unique.",
         "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Briseur de chaînes",
-        "fullDesc": "Consomme {{1}}% des PV max d'Arlan pour infliger des DGT de foudre équivalents à <orangeStrong>{{2}}%</orangeStrong> de son ATQ à un ennemi unique. Si les PV d'Arlan ne sont pas suffisants, ses PV sont réduits à 1 après utilisation de sa compétence.",
+        "fullDesc": "Consomme {{1, percent}}% des PV max d'Arlan pour infliger des DGT de foudre équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de son ATQ à un ennemi unique. Si les PV d'Arlan ne sont pas suffisants, ses PV sont réduits à 1 après utilisation de sa compétence.",
         "shortDesc": "Consomme une partie de ses propres PV pour infliger des DGT de foudre à un ennemi unique."
       }
     },
     "ult": {
       "0": {
         "name": "Châtiment frénétique",
-        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ d'Arlan à un ennemi unique et des DGT de foudre équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ d'Arlan aux ennemis adjacents.",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ d'Arlan à un ennemi unique et des DGT de foudre équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ d'Arlan aux ennemis adjacents.",
         "shortDesc": "Inflige des DGT de foudre massifs à un ennemi unique et des DGT de foudre aux ennemis adjacents."
       }
     },
     "technique": {
       "0": {
         "name": "Moisson rapide",
-        "fullDesc": "Engage immédiatement le combat contre les ennemis. Inflige des DGT de foudre équivalents à {{1}}% de l'ATQ d'Arlan à tous les ennemis après être entré en combat.",
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Inflige des DGT de foudre équivalents à {{1, percent}}% de l'ATQ d'Arlan à tous les ennemis après être entré en combat.",
         "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT de foudre mineurs à tous les ennemis après être entré en combat."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Second souffle",
-        "fullDesc": "Si le pourcentage de PV du personnage est inférieur ou égal à {{1}}% lorsqu'il élimine un ennemi, restaure immédiatement des PV équivalents à {{2}}% de ses PV max.",
+        "fullDesc": "Si le pourcentage de PV du personnage est inférieur ou égal à {{1, percent}}% lorsqu'il élimine un ennemi, restaure immédiatement des PV équivalents à {{2, percent}}% de ses PV max.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Endurance",
-        "fullDesc": "Les chances de résister aux malus de dégâts sur la durée augmentent de {{1}}%.",
+        "fullDesc": "Les chances de résister aux malus de dégâts sur la durée augmentent de {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Protection",
-        "fullDesc": "Si les PV d'Arlan sont inférieurs ou égaux à {{1}}% en entrant en combat, il peut annuler tous les DGT subis à l'exception des dégâts sur la durée jusqu'à ce qu'il soit attaqué (les DGT de l'attaque étant annulés).",
+        "fullDesc": "Si les PV d'Arlan sont inférieurs ou égaux à {{1, percent}}% en entrant en combat, il peut annuler tous les DGT subis à l'exception des dégâts sur la durée jusqu'à ce qu'il soit attaqué (les DGT de l'attaque étant annulés).",
         "shortDesc": ""
       }
     }
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Jusqu'au-boutiste",
-      "desc": "Lorsque les PV du personnage sont inférieurs ou égaux à 50 % de ses PV max, augmente les DGT infligés par la compétence de {{1}}%."
+      "desc": "Lorsque les PV du personnage sont inférieurs ou égaux à 50 % de ses PV max, augmente les DGT infligés par la compétence de {{1, percent}}%."
     },
     "2": {
       "name": "Libération",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Retournement de situation",
-      "desc": "Lorsqu'il est frappé par un coup fatal après être entré en combat, au lieu de tomber à terre, Arlan restaure immédiatement {{1}}% de ses PV max. Cet effet disparaît automatiquement après avoir été déclenché une fois, ou après {{2}} tours."
+      "desc": "Lorsqu'il est frappé par un coup fatal après être entré en combat, au lieu de tomber à terre, Arlan restaure immédiatement {{1, percent}}% de ses PV max. Cet effet disparaît automatiquement après avoir été déclenché une fois, ou après {{2}} tours."
     },
     "5": {
       "name": "Corps et âme",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Abnégation",
-      "desc": "Lorsque les PV du personnage sont inférieurs ou égaux à 50 % de ses PV max, l'ultime inflige {{1}}% de DGT supplémentaires. Le multiplicateur de DGT de la cible principale s'applique également aux ennemis adjacents."
+      "desc": "Lorsque les PV du personnage sont inférieurs ou égaux à 50 % de ses PV max, l'ultime inflige {{1, percent}}% de DGT supplémentaires. Le multiplicateur de DGT de la cible principale s'applique également aux ennemis adjacents."
     }
   }
 }

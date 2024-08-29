@@ -2,6 +2,6 @@
   "name": "Nirgends zu fliehen",
   "passive": {
     "name": "Krise",
-    "description": "Erhöht den ANG des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Besiegt der Träger einen Gegner, werden seine LP in Höhe von <orangeStrong>{{2}}%</orangeStrong> seines ANG wiederhergestellt."
+    "description": "Erhöht den ANG des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Besiegt der Träger einen Gegner, werden seine LP in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> seines ANG wiederhergestellt."
   }
 }

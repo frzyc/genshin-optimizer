@@ -2,6 +2,6 @@
   "name": "Past and Future",
   "passive": {
     "name": "Kites From the Past",
-    "description": "When the wearer uses their Skill, the next ally taking action (except the wearer) deals <orangeStrong>{{1}}%</orangeStrong> increased DMG for {{2}} turn(s)."
+    "description": "When the wearer uses their Skill, the next ally taking action (except the wearer) deals <orangeStrong>{{1, percent}}%</orangeStrong> increased DMG for {{2}} turn(s)."
   }
 }

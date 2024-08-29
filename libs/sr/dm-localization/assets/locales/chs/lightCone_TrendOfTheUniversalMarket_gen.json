@@ -2,6 +2,6 @@
   "name": "宇宙市场趋势",
   "passive": {
     "name": "新一轮洗牌",
-    "description": "使装备者的防御力提高<orangeStrong>{{1}}%</orangeStrong>。当装备者受到攻击后，有<orangeStrong>{{2}}%</orangeStrong>的基础概率使敌方目标陷入灼烧状态，每回合造成等同于装备者<orangeStrong>{{3}}%</orangeStrong>防御力的持续伤害，持续{{4}}回合。"
+    "description": "使装备者的防御力提高<orangeStrong>{{1, percent}}%</orangeStrong>。当装备者受到攻击后，有<orangeStrong>{{2, percent}}%</orangeStrong>的基础概率使敌方目标陷入灼烧状态，每回合造成等同于装备者<orangeStrong>{{3, percent}}%</orangeStrong>防御力的持续伤害，持续{{4}}回合。"
   }
 }

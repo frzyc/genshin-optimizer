@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Ich will helfen",
-        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Claras ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Claras ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen physischen SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Svarogs Auge ruht auf dir",
-        "fullDesc": "Fügt allen Gegnern physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Claras ANG zu. Gegner mit Svarogs „Kontermarkierung“ erleiden zusätzlichen physischen SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Claras ANG.\\nAlle „Kontermarkierungen“ werden nach dem Einsatz der Fertigkeit entfernt.",
+        "fullDesc": "Fügt allen Gegnern physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Claras ANG zu. Gegner mit Svarogs „Kontermarkierung“ erleiden zusätzlichen physischen SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Claras ANG.\\nAlle „Kontermarkierungen“ werden nach dem Einsatz der Fertigkeit entfernt.",
         "shortDesc": "Fügt allen Gegnern physischen SCH zu. Bei Gegnern mit Kontermarkierung wird zusätzlich <orangeStrong>physischer SCH bewirkt</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Ein Versprechen, kein Befehl",
-        "fullDesc": "Reduziert nach dem Einsatz des Ultimates den von Clara erlittenen SCH zusätzlich um <orangeStrong>{{4}}%</orangeStrong> und erhöht stark für {{3}} Rd. die Chance, von Gegnern angegriffen zu werden.\\nAußerdem wird Svarogs <u>Konter</u> verstärkt. Wird ein Verbündeter angegriffen, führt Svarog sofort einen <u>Konter</u> aus. Dieser Konter erhöht den SCH-Multiplikator gegen den Gegner um <orangeStrong>{{2}}%</orangeStrong> und fügt angrenzenden Zielen 50 % des vom anvisierten Gegner erlittenen SCH zu. Der verstärkte <u>Konter</u> kann {{5}}-mal ausgelöst werden.",
+        "fullDesc": "Reduziert nach dem Einsatz des Ultimates den von Clara erlittenen SCH zusätzlich um <orangeStrong>{{4, percent}}%</orangeStrong> und erhöht stark für {{3}} Rd. die Chance, von Gegnern angegriffen zu werden.\\nAußerdem wird Svarogs <u>Konter</u> verstärkt. Wird ein Verbündeter angegriffen, führt Svarog sofort einen <u>Konter</u> aus. Dieser Konter erhöht den SCH-Multiplikator gegen den Gegner um <orangeStrong>{{2, percent}}%</orangeStrong> und fügt angrenzenden Zielen 50 % des vom anvisierten Gegner erlittenen SCH zu. Der verstärkte <u>Konter</u> kann {{5}}-mal ausgelöst werden.",
         "shortDesc": "<orangeStrong>Reduziert den selbst erlittenen SCH</orangeStrong> und erhöht die Chance, angegriffen zu werden. Der Effekt von <u>Konter</u> wird verstärkt."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Teil der Familie",
-        "fullDesc": "Wenn Clara angegriffen wird, besteht eine feste Chance von {{1}}%, einen Debuff zu entfernen.",
+        "fullDesc": "Wenn Clara angegriffen wird, besteht eine feste Chance von {{1, percent}}%, einen Debuff zu entfernen.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Unter Schutz",
-        "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1}}%.",
+        "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Rache",
-        "fullDesc": "Erhöht den durch Svarogs Konter verursachten SCH um {{1}}%.",
+        "fullDesc": "Erhöht den durch Svarogs Konter verursachten SCH um {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Eine enge Umarmung",
-      "desc": "Erhöht nach dem Einsatz des Ultimates den ANG für {{2}} Rd. um {{1}}%."
+      "desc": "Erhöht nach dem Einsatz des Ultimates den ANG für {{2}} Rd. um {{1, percent}}%."
     },
     "3": {
       "name": "Rüstung aus kaltem Stahl",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Wärme der Familie",
-      "desc": "Wird Clara angegriffen, sinkt ihr erlittener SCH um {{1}}%. Dieser Effekt hält bis zum Beginn ihrer nächsten Runde an."
+      "desc": "Wird Clara angegriffen, sinkt ihr erlittener SCH um {{1, percent}}%. Dieser Effekt hält bis zum Beginn ihrer nächsten Runde an."
     },
     "5": {
       "name": "Ein kleines Versprechen",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Langfristige Begleitung",
-      "desc": "Wird ein anderer Verbündeter angegriffen, führt Svarog mit einer festen Chance von {{1}}% einen Konter aus und markiert den Angreifer mit „Kontermarkierung“. Beim Einsatz des Ultimates wird die Anzahl der verstärkten Konter zusätzlich um {{2}} erhöht."
+      "desc": "Wird ein anderer Verbündeter angegriffen, führt Svarog mit einer festen Chance von {{1, percent}}% einen Konter aus und markiert den Angreifer mit „Kontermarkierung“. Beim Einsatz des Ultimates wird die Anzahl der verstärkten Konter zusätzlich um {{2}} erhöht."
     }
   }
 }

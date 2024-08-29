@@ -1,6 +1,6 @@
 {
   "setName": "Fragua de la linterna Kalpagni",
   "setEffects": {
-    "2": "La VEL del portador aumenta en un {{1}}%. Cuando el portador golpea a un enemigo con Debilidad de Fuego, el efecto de Ruptura aumenta en un {{2}}% durante {{3}} turno."
+    "2": "La VEL del portador aumenta en un {{1, percent}}%. Cuando el portador golpea a un enemigo con Debilidad de Fuego, el efecto de Ruptura aumenta en un {{2, percent}}% durante {{3}} turno."
   }
 }

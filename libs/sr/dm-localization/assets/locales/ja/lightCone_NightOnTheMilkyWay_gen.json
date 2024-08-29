@@ -2,6 +2,6 @@
   "name": "{RUBY_B#ぎんがてつどう}銀河鉄道{RUBY_E#}の{RUBY_B#よる}夜{RUBY_E#}",
   "passive": {
     "name": "{RUBY_B#りゅうせいぐん}流星群{RUBY_E#}",
-    "description": "フィールド上にいる敵1体につき、装備キャラの攻撃力+<orangeStrong>{{2}}%</orangeStrong>、この効果は最大で5層累積できる。敵が弱点撃破された時、装備キャラの与ダメージ+<orangeStrong>{{1}}%</orangeStrong>、1ターン継続。"
+    "description": "フィールド上にいる敵1体につき、装備キャラの攻撃力+<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>、この効果は最大で5層累積できる。敵が弱点撃破された時、装備キャラの与ダメージ+<orangeStrong>{{1, percent}}%</orangeStrong>、1ターン継続。"
   }
 }

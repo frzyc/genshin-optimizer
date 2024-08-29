@@ -2,6 +2,6 @@
   "name": "Multiplication",
   "passive": {
     "name": "Denizens of Abundance",
-    "description": "After the wearer uses their Basic ATK, their next action will be Advanced Forward by <orangeStrong>{{1}}%</orangeStrong>."
+    "description": "After the wearer uses their Basic ATK, their next action will be Advanced Forward by <orangeStrong>{{1, percent}}%</orangeStrong>."
   }
 }

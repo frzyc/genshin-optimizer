@@ -2,6 +2,6 @@
   "name": "Auf zu einem zweiten Leben",
   "passive": {
     "name": "Starker Wellengang",
-    "description": "Erhöht den Brucheffekt des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Vom Träger verursachter Bruch-SCH ignoriert <orangeStrong>{{3}}%</orangeStrong> der VTD des Ziels. Wenn der Brucheffekt des Trägers im Kampf {{2}}% oder mehr beträgt, wird seine GES um <orangeStrong>{{4}}%</orangeStrong> erhöht."
+    "description": "Erhöht den Brucheffekt des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Vom Träger verursachter Bruch-SCH ignoriert <orangeStrong>{{3, percent}}%</orangeStrong> der VTD des Ziels. Wenn der Brucheffekt des Trägers im Kampf {{2, percent}}% oder mehr beträgt, wird seine GES um <orangeStrong>{{4, percent}}%</orangeStrong> erhöht."
   }
 }

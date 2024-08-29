@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Estandarte: Llamatormentas",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> de los PV máx. de Huohuo como Daño de Viento a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de los PV máx. de Huohuo como Daño de Viento a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Talismán: Protección",
-        "fullDesc": "Elimina {{5}} <u>estado negativo</u> de un aliado y regenera inmediatamente una cantidad de PV equivalente al <orangeStrong>{{1}}%</orangeStrong> de los PV máx. de Huohuo + <orangeStrong>{{2}}</orangeStrong> para ese aliado. Al mismo tiempo, regenera a los aliados adyacentes una cantidad de PV equivalente al <orangeStrong>{{3}}%</orangeStrong> de los PV máx. de Huohuo + <orangeStrong>{{4}}</orangeStrong>.",
+        "fullDesc": "Elimina {{5}} <u>estado negativo</u> de un aliado y regenera inmediatamente una cantidad de PV equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Huohuo + <orangeStrong>{{2}}</orangeStrong> para ese aliado. Al mismo tiempo, regenera a los aliados adyacentes una cantidad de PV equivalente al <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Huohuo + <orangeStrong>{{4}}</orangeStrong>.",
         "shortDesc": "Elimina 1 <u>estado negativo</u> de un aliado y <orangeStrong>regenera los PV</orangeStrong> de un aliado y los aliados adyacentes."
       }
     },
     "ult": {
       "0": {
         "name": "Cola: Dominación espiritual",
-        "fullDesc": "Recupera para todos los demás aliados (excepto Huohuo) una cantidad de energía equivalente al <orangeStrong>{{1}}%</orangeStrong> de su respectiva energía máx. y aumenta su ATQ en un <orangeStrong>{{2}}%</orangeStrong> durante {{3}} turnos.",
+        "fullDesc": "Recupera para todos los demás aliados (excepto Huohuo) una cantidad de energía equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de su respectiva energía máx. y aumenta su ATQ en un <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> durante {{3}} turnos.",
         "shortDesc": "<orangeStrong>Recupera energía</orangeStrong> para todos los demás aliados y <orangeStrong>aumenta su ATQ</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Demonio: Destitución del mal",
-        "fullDesc": "Huohuo asusta a los enemigos cercanos y los afecta con Terror. Los enemigos aterrorizados huirán de Huohuo durante {{4}} s. Al entrar en combate con enemigos afectados por Terror, hay un {{1}}% de <u>probabilidad base</u> de reducir el ATQ de cada enemigo en un {{2}}% durante {{3}} turnos.",
+        "fullDesc": "Huohuo asusta a los enemigos cercanos y los afecta con Terror. Los enemigos aterrorizados huirán de Huohuo durante {{4}} s. Al entrar en combate con enemigos afectados por Terror, hay un {{1, percent}}% de <u>probabilidad base</u> de reducir el ATQ de cada enemigo en un {{2, percent}}% durante {{3}} turnos.",
         "shortDesc": "Afecta a los enemigos cercanos con Terror. Al entrar en combate con enemigos afectados por Terror, hay una gran probabilidad de aplicar una <orangeStrong>reducción de ATQ</orangeStrong> a los objetivos."
       }
     },
@@ -46,7 +46,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Maldición",
-        "fullDesc": "La probabilidad de resistir estados negativos de Control aumenta en un {{1}}%.",
+        "fullDesc": "La probabilidad de resistir estados negativos de Control aumenta en un {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Poseída por un heliobus",
-      "desc": "La duración del efecto de Vida sacrificada que genera el talento aumenta en {{2}} turno. Además, cuando Huohuo tiene Vida sacrificada, la VEL de todos los aliados aumenta en un {{1}}%."
+      "desc": "La duración del efecto de Vida sacrificada que genera el talento aumenta en {{2}} turno. Además, cuando Huohuo tiene Vida sacrificada, la VEL de todos los aliados aumenta en un {{1, percent}}%."
     },
     "2": {
       "name": "Talismanes de jueces y espíritu en la cola",
-      "desc": "Cuando Huohuo tiene Vida sacrificada, si un aliado recibe un golpe letal no cae derrotado, sino que regenera una cantidad de PV equivalente al {{1}}% de sus PV máx. y la duración de Vida sacrificada se reduce en 1 turno. Este efecto se puede activar {{2}} veces en cada batalla."
+      "desc": "Cuando Huohuo tiene Vida sacrificada, si un aliado recibe un golpe letal no cae derrotado, sino que regenera una cantidad de PV equivalente al {{1, percent}}% de sus PV máx. y la duración de Vida sacrificada se reduce en 1 turno. Este efecto se puede activar {{2}} veces en cada batalla."
     },
     "3": {
       "name": "Cuerpo del mal, polillas a la luz",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Siempre juntos y en conflicto",
-      "desc": "Al curar a un aliado mediante su habilidad básica o el efecto de su talento, la curación realizada de Huohuo aumenta proporcionalmente cuantos menos PV tenga el aliado, hasta un aumento máximo del {{1}}%."
+      "desc": "Al curar a un aliado mediante su habilidad básica o el efecto de su talento, la curación realizada de Huohuo aumenta proporcionalmente cuantos menos PV tenga el aliado, hasta un aumento máximo del {{1, percent}}%."
     },
     "5": {
       "name": "Somete todo mal, por decreto de los Diez Líderes",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Objetivo compartido, destino simbiótico",
-      "desc": "Al curar a un aliado, el daño infligido por el aliado aumenta en un {{1}}% durante {{2}} turnos."
+      "desc": "Al curar a un aliado, el daño infligido por el aliado aumenta en un {{1, percent}}% durante {{2}} turnos."
     }
   }
 }

@@ -4,26 +4,26 @@
     "basic": {
       "0": {
         "name": "Lame tueuse de démons",
-        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de March 7th à un ennemi unique et obtient {{2}} point de charge.",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de March 7th à un ennemi unique et obtient {{2}} point de charge.",
         "shortDesc": "Inflige des DGT imaginaires mineurs à un ennemi unique et obtient <orangeStrong>{{2}}</orangeStrong> point de charge."
       },
       "1": {
         "name": "Déluge de lames",
-        "fullDesc": "Cette attaque inflige des DGT {{4}} fois initialement, chaque frappe infligeant des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de March 7th à la cible ennemie. Après la frappe finale, il y a {{2}}% de <u>chances fixes</u> d'infliger 1 frappe supplémentaire, jusqu'à un maximum de {{3}} frappes supplémentaires. L'énergie régénérée par l'utilisation de l'ATQ normale renforcée n'augmente pas avec le nombre de frappes par action.\\nL'ATQ normale renforcée ne permet pas de récupérer de points de compétence.",
+        "fullDesc": "Cette attaque inflige des DGT {{4}} fois initialement, chaque frappe infligeant des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de March 7th à la cible ennemie. Après la frappe finale, il y a {{2, percent}}% de <u>chances fixes</u> d'infliger 1 frappe supplémentaire, jusqu'à un maximum de {{3}} frappes supplémentaires. L'énergie régénérée par l'utilisation de l'ATQ normale renforcée n'augmente pas avec le nombre de frappes par action.\\nL'ATQ normale renforcée ne permet pas de récupérer de points de compétence.",
         "shortDesc": "Inflige des DGT imaginaires à un ennemi unique sous forme de <orangeStrong>{{4}}</orangeStrong> frappes initiales, et avec <orangeStrong>des chances d'infliger jusqu'à <unbreak>#3[i]</orangeStrong> frappes supplémentaires</color>."
       }
     },
     "skill": {
       "0": {
         "name": "Maître, c'est l'heure du thé !",
-        "fullDesc": "Désigne un allié unique (à l'exception de ce personnage) comme Maître et augmente sa VIT de <orangeStrong>{{1}}%</orangeStrong>. Seule la dernière cible de la compétence de March 7th est considérée comme son « Maître ».\\n\\nChaque fois que March 7th utilise son ATQ normale ou qu'elle inflige des DGT avec 1 frappe de son ATQ normale renforcée, elle déclenche l'effet correspondant en fonction de la Voie du Maître :\\n\\nÉrudition, Destruction, Chasse : Inflige des <u>DGT additionnels</u> (dont le type correspond au type de combat du Maître) équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de March 7th.\\nHarmonie, Nihilité, Préservation, Abondance : Augmente la réduction de robustesse de cette instance de DGT de {{3}}%.",
+        "fullDesc": "Désigne un allié unique (à l'exception de ce personnage) comme Maître et augmente sa VIT de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Seule la dernière cible de la compétence de March 7th est considérée comme son « Maître ».\\n\\nChaque fois que March 7th utilise son ATQ normale ou qu'elle inflige des DGT avec 1 frappe de son ATQ normale renforcée, elle déclenche l'effet correspondant en fonction de la Voie du Maître :\\n\\nÉrudition, Destruction, Chasse : Inflige des <u>DGT additionnels</u> (dont le type correspond au type de combat du Maître) équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de March 7th.\\nHarmonie, Nihilité, Préservation, Abondance : Augmente la réduction de robustesse de cette instance de DGT de {{3, percent}}%.",
         "shortDesc": "Désigne un allié unique comme « Maître ». Chaque fois que March utilise son ATQ normale ou qu'elle inflige des DGT avec son ATQ normale renforcée, elle déclenche un effet qui correspond à la <orangeStrong>Voie du Maître</orangeStrong> :\\n\\nÉrudition, Destruction, Chasse : Inflige des <orangeStrong><u>DGT additionnels</u></orangeStrong> en fonction du type du Maître.\\nHarmonie, Nihilité, Préservation, Abondance : Augmente la <orangeStrong>réduction de robustesse</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "March 7th, héroïne suprême",
-        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de March 7th à une cible ennemie unique.\\nAugmente de {{2}} le nombre de frappes par action de la prochaine ATQ normale renforcée et augmente les <u>chances fixes</u> d'infliger des DGT supplémentaires de {{3}}%.",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de March 7th à une cible ennemie unique.\\nAugmente de {{2}} le nombre de frappes par action de la prochaine ATQ normale renforcée et augmente les <u>chances fixes</u> d'infliger des DGT supplémentaires de {{3, percent}}%.",
         "shortDesc": "Inflige des DGT imaginaires à un ennemi unique et <orangeStrong>augmente</orangeStrong> le nombre de frappes par action et les chances d'infliger des DGT de la <orangeStrong>prochaine ATQ normale renforcée</orangeStrong>."
       }
     },
@@ -44,7 +44,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Envolée gracieuse",
-        "fullDesc": "L'action de March 7th est avancée de {{1}}% en début de combat.",
+        "fullDesc": "L'action de March 7th est avancée de {{1, percent}}% en début de combat.",
         "shortDesc": ""
       }
     },
@@ -58,7 +58,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Onde de choc de la lame",
-        "fullDesc": "Lorsque March 7th utilise son ATQ normale renforcée, les DGT critiques de son Maître augmentent de {{1}}% et son effet de Rupture augmente de {{2}}% pendant {{3}} tours.",
+        "fullDesc": "Lorsque March 7th utilise son ATQ normale renforcée, les DGT critiques de son Maître augmentent de {{1, percent}}% et son effet de Rupture augmente de {{2, percent}}% pendant {{3}} tours.",
         "shortDesc": ""
       }
     }
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Fulgurance du succès",
-      "desc": "La VIT de March 7th augmente de {{1}}% lorsqu'il y a un Maître sur le champ de bataille."
+      "desc": "La VIT de March 7th augmente de {{1, percent}}% lorsqu'il y a un Maître sur le champ de bataille."
     },
     "2": {
       "name": "Flot de fleurets",
-      "desc": "Lorsque le Maître utilise son ATQ normale ou sa compétence pour attaquer une cible ennemie, March 7th lance immédiatement une attaque de suivi, infligeant des DGT imaginaires équivalents à {{1}}% de son ATQ à la cible principale de cette attaque. D'autre part, elle déclenche l'effet qui correspond à la Voie du Maître et gagne {{3}} point de charge. S'il n'y a aucune cible principale à attaquer, March 7th attaque un ennemi unique aléatoire. Cet effet ne peut se déclencher qu'une fois par tour."
+      "desc": "Lorsque le Maître utilise son ATQ normale ou sa compétence pour attaquer une cible ennemie, March 7th lance immédiatement une attaque de suivi, infligeant des DGT imaginaires équivalents à {{1, percent}}% de son ATQ à la cible principale de cette attaque. D'autre part, elle déclenche l'effet qui correspond à la Voie du Maître et gagne {{3}} point de charge. S'il n'y a aucune cible principale à attaquer, March 7th attaque un ennemi unique aléatoire. Cet effet ne peut se déclencher qu'une fois par tour."
     },
     "3": {
       "name": "Futée et affûtée",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Jamais égalée",
-      "desc": "Augmente les DGT critiques de la prochaine ATQ normale renforcée de {{1}}% après avoir utilisé l'ultime."
+      "desc": "Augmente les DGT critiques de la prochaine ATQ normale renforcée de {{1, percent}}% après avoir utilisé l'ultime."
     }
   }
 }

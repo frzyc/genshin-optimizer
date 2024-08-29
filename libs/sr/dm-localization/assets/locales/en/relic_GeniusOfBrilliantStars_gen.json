@@ -1,7 +1,7 @@
 {
   "setName": "Genius of Brilliant Stars",
   "setEffects": {
-    "2": "Increases Quantum DMG by {{1}}%.",
-    "4": "When the wearer deals DMG to the target enemy, ignores {{1}}% DEF. If the target enemy has Quantum Weakness, the wearer additionally ignores {{2}}% DEF."
+    "2": "Increases Quantum DMG by {{1, percent}}%.",
+    "4": "When the wearer deals DMG to the target enemy, ignores {{1, percent}}% DEF. If the target enemy has Quantum Weakness, the wearer additionally ignores {{2, percent}}% DEF."
   }
 }

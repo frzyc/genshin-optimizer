@@ -2,6 +2,6 @@
   "name": "Moment de victoire",
   "passive": {
     "name": "Verdict",
-    "description": "Augmente la DÉF du porteur de <orangeStrong>{{2}}%</orangeStrong> et les chances d'appliquer des effets de <orangeStrong>{{4}}%</orangeStrong>. Augmente la probabilité pour le porteur d'être attaqué par des ennemis. Lorsque le porteur est attaqué, sa DÉF augmente de <orangeStrong>{{3}}%</orangeStrong> supplémentaires jusqu'à la fin de son tour."
+    "description": "Augmente la DÉF du porteur de <orangeStrong>{{2, percent}}%</orangeStrong> et les chances d'appliquer des effets de <orangeStrong>{{4, percent}}%</orangeStrong>. Augmente la probabilité pour le porteur d'être attaqué par des ennemis. Lorsque le porteur est attaqué, sa DÉF augmente de <orangeStrong>{{3, percent}}%</orangeStrong> supplémentaires jusqu'à la fin de son tour."
   }
 }

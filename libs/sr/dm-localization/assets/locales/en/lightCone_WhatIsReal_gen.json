@@ -2,6 +2,6 @@
   "name": "What Is Real?",
   "passive": {
     "name": "Hypothesis",
-    "description": "Increases the wearer's Break Effect by <orangeStrong>{{1}}%</orangeStrong>. After using Basic ATK, restores HP for the wearer by an amount equal to <orangeStrong>{{2}}%</orangeStrong> of Max HP plus {{3}}."
+    "description": "Increases the wearer's Break Effect by <orangeStrong>{{1, percent}}%</orangeStrong>. After using Basic ATK, restores HP for the wearer by an amount equal to <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> of Max HP plus {{3}}."
   }
 }

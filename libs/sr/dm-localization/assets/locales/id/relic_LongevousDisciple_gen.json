@@ -1,7 +1,7 @@
 {
   "setName": "Longevous Disciple",
   "setEffects": {
-    "2": "Max HP +{{1}}%.",
-    "4": "Setelah pengguna terkena serangan atau HP-nya dikonsumsi oleh rekan tim (termasuk pengguna sendiri), CRIT Rate akan meningkat {{1}}% selama {{2}} giliran. Efek ini dapat ditumpuk hingga {{3}} lapis."
+    "2": "Max HP +{{1, percent}}%.",
+    "4": "Setelah pengguna terkena serangan atau HP-nya dikonsumsi oleh rekan tim (termasuk pengguna sendiri), CRIT Rate akan meningkat {{1, percent}}% selama {{2}} giliran. Efek ini dapat ditumpuk hingga {{3}} lapis."
   }
 }

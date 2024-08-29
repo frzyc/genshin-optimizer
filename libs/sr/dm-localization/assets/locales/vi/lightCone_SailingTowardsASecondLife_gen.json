@@ -2,6 +2,6 @@
   "name": "Hướng Đến Sinh Mệnh Thứ Hai",
   "passive": {
     "name": "Gian Khổ",
-    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> Tấn Công Kích Phá của người trang bị, Sát Thương Phá Vỡ gây ra sẽ bỏ qua <orangeStrong>{{3}}%</orangeStrong> Phòng Thủ của mục tiêu. Trong chiến đấu, khi Tấn Công Kích Phá của người trang bị lớn hơn hoặc bằng {{2}}%, Tốc Độ tăng <orangeStrong>{{4}}%</orangeStrong>."
+    "description": "Tăng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công Kích Phá của người trang bị, Sát Thương Phá Vỡ gây ra sẽ bỏ qua <orangeStrong>{{3, percent}}%</orangeStrong> Phòng Thủ của mục tiêu. Trong chiến đấu, khi Tấn Công Kích Phá của người trang bị lớn hơn hoặc bằng {{2, percent}}%, Tốc Độ tăng <orangeStrong>{{4, percent}}%</orangeStrong>."
   }
 }

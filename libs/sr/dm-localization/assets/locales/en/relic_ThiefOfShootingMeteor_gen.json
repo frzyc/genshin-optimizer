@@ -1,7 +1,7 @@
 {
   "setName": "Thief of Shooting Meteor",
   "setEffects": {
-    "2": "Increases Break Effect by {{1}}%.",
-    "4": "Increases the wearer's Break Effect by {{1}}%. After the wearer inflicts Weakness Break on an enemy, regenerates {{2}} Energy."
+    "2": "Increases Break Effect by {{1, percent}}%.",
+    "4": "Increases the wearer's Break Effect by {{1, percent}}%. After the wearer inflicts Weakness Break on an enemy, regenerates {{2}} Energy."
   }
 }

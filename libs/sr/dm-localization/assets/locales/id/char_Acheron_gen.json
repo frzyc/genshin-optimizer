@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Trilateral Wiltcross",
-        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Acheron pada 1 musuh yang ditargetkan.",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Acheron pada 1 musuh yang ditargetkan.",
         "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Octobolt Flash",
-        "fullDesc": "Memperoleh {{3}} poin \"Slashed Dream\". Menambahkan {{3}} lapis \"Crimson Knot\" pada 1 musuh yang ditargetkan, dan mengakibatkan Lightning DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Acheron pada musuh tersebut, dan di saat yang bersamaan, mengakibatkan Lightning DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Acheron pada target di sekitar musuh tersebut.",
+        "fullDesc": "Memperoleh {{3}} poin \"Slashed Dream\". Menambahkan {{3}} lapis \"Crimson Knot\" pada 1 musuh yang ditargetkan, dan mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Acheron pada musuh tersebut, dan di saat yang bersamaan, mengakibatkan Lightning DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Acheron pada target di sekitar musuh tersebut.",
         "shortDesc": "Memperoleh <orangeStrong><color=#f29e38ff>#3[i]</orangeStrong> poin \"Slashed Dream\"</color>. Menambahkan <orangeStrong>{{3}}</orangeStrong> lapis \"Crimson Knot\" pada 1 musuh dan mengakibatkan Lightning DMG pada musuh tersebut, serta mengakibatkan Lightning DMG dalam jumlah kecil pada target di sekitar musuh tersebut."
       }
     },
     "ult": {
       "0": {
         "name": "Slashed Dream Cries in Red",
-        "fullDesc": "Melancarkan \"Rainblade\" 3 kali berturut-turut dan \"Stygian Resurge\" 1 kali, mengakibatkan Lightning DMG pada 1 musuh yang ditargetkan maksimal hingga sebesar <orangeStrong>{{6}}%</orangeStrong> ATK Acheron, serta mengakibatkan Lightning DMG maksimal hingga sebesar <orangeStrong>{{7}}%</orangeStrong> ATK Acheron pada target lainnya.\\n\\n\"Rainblade\": Mengakibatkan Lightning DMG pada 1 musuh yang ditargetkan sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Acheron, dan menghilangkan maksimal hingga 3 lapis \"Crimson Knot\" dari target. Saat \"Crimson Knot\" dihilangkan, akan segera mengakibatkan Lightning DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Acheron pada seluruh musuh, dan DMG Multiplier dari serangan ini akan meningkat untuk setiap 1 lapis \"Crimson Knot\" yang dihilangkan, maksimal meningkat hingga <orangeStrong>{{5}}%</orangeStrong>.\\n\\n\"Stygian Resurge\": Mengakibatkan Lightning DMG sebesar <orangeStrong>{{3}}%</orangeStrong> ATK Acheron pada seluruh musuh dan menghapus seluruh \"Crimson Knot\".\\n\\nSaat Ultimate berlangsung, \"Crimson Knot\" tidak dapat ditambahkan pada musuh.",
+        "fullDesc": "Melancarkan \"Rainblade\" 3 kali berturut-turut dan \"Stygian Resurge\" 1 kali, mengakibatkan Lightning DMG pada 1 musuh yang ditargetkan maksimal hingga sebesar <orangeStrong>{{6, percent}}%</orangeStrong> ATK Acheron, serta mengakibatkan Lightning DMG maksimal hingga sebesar <orangeStrong>{{7, percent}}%</orangeStrong> ATK Acheron pada target lainnya.\\n\\n\"Rainblade\": Mengakibatkan Lightning DMG pada 1 musuh yang ditargetkan sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> ATK Acheron, dan menghilangkan maksimal hingga 3 lapis \"Crimson Knot\" dari target. Saat \"Crimson Knot\" dihilangkan, akan segera mengakibatkan Lightning DMG sebesar <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> ATK Acheron pada seluruh musuh, dan DMG Multiplier dari serangan ini akan meningkat untuk setiap 1 lapis \"Crimson Knot\" yang dihilangkan, maksimal meningkat hingga <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.\\n\\n\"Stygian Resurge\": Mengakibatkan Lightning DMG sebesar <orangeStrong>{{3, percent}}%</orangeStrong> ATK Acheron pada seluruh musuh dan menghapus seluruh \"Crimson Knot\".\\n\\nSaat Ultimate berlangsung, \"Crimson Knot\" tidak dapat ditambahkan pada musuh.",
         "shortDesc": "Mengakibatkan 3 Hit Lightning DMG dalam jumlah kecil kepada 1 musuh. Jika \"Crimson Knot\" target dihilangkan, akan mengakibatkan Lightning DMG dalam jumlah kecil kepada seluruh musuh. Terakhir, akan mengakibatkan 1 Hit Lightning DMG pada seluruh musuh dan menghapus seluruh \"Crimson Knot\"."
       },
       "1": {
@@ -45,7 +45,7 @@
     "technique": {
       "0": {
         "name": "Quadrivalent Ascendance",
-        "fullDesc": "Segera menyerang musuh. Saat setiap gelombang pertempuran dimulai, akan memperoleh \"Quadrivalent Ascendance\", mengakibatkan Lightning DMG kepada seluruh musuh sebesar {{1}}% ATK Acheron, lalu mengabaikan Tipe Weakness dan mengurangi Toughness seluruh musuh. Saat memicu Weakness Break, akan memicu efek Lightning Weakness Break.\\n\"Quadrivalent Ascendance\": Setelah melancarkan Ultimate, Acheron akan memperoleh {{2}} poin \"Slashed Dream\", dan memberikan {{2}} lapis \"Crimson Knot\" pada 1 musuh secara acak.\\nJika menyerang musuh biasa, maka akan langsung mengalahkan musuh biasa tersebut tanpa perlu memasuki pertempuran. Jika serangan ini tidak mengenai musuh, maka Poin Technique tidak akan terkonsumsi.",
+        "fullDesc": "Segera menyerang musuh. Saat setiap gelombang pertempuran dimulai, akan memperoleh \"Quadrivalent Ascendance\", mengakibatkan Lightning DMG kepada seluruh musuh sebesar {{1, percent}}% ATK Acheron, lalu mengabaikan Tipe Weakness dan mengurangi Toughness seluruh musuh. Saat memicu Weakness Break, akan memicu efek Lightning Weakness Break.\\n\"Quadrivalent Ascendance\": Setelah melancarkan Ultimate, Acheron akan memperoleh {{2}} poin \"Slashed Dream\", dan memberikan {{2}} lapis \"Crimson Knot\" pada 1 musuh secara acak.\\nJika menyerang musuh biasa, maka akan langsung mengalahkan musuh biasa tersebut tanpa perlu memasuki pertempuran. Jika serangan ini tidak mengenai musuh, maka Poin Technique tidak akan terkonsumsi.",
         "shortDesc": "Menyerang musuh. Saat setiap gelombang pertempuran dimulai, akan memperoleh \"Quadrivalent Ascendance\", mengakibatkan Lightning DMG pada seluruh musuh, <orangeStrong>mengabaikan Tipe Weakness</orangeStrong> dan mengurangi Toughness.\\nJika menyerang musuh biasa, maka akan <orangeStrong>langsung mengalahkan musuh biasa tersebut</orangeStrong> tanpa perlu memasuki pertempuran. Jika serangan ini tidak mengenai musuh, maka Poin Technique tidak akan terkonsumsi."
       }
     },
@@ -66,14 +66,14 @@
     "bonusAbility2": {
       "0": {
         "name": "The Abyss",
-        "fullDesc": "Saat di dalam tim terdapat 1/2 karakter dengan Path \"Nihility\" selain Acheron, maka DMG yang diakibatkan Basic Attack, Skill, dan Ultimate Acheron adalah {{1}}%/{{2}}% dari DMG awalnya.",
+        "fullDesc": "Saat di dalam tim terdapat 1/2 karakter dengan Path \"Nihility\" selain Acheron, maka DMG yang diakibatkan Basic Attack, Skill, dan Ultimate Acheron adalah {{1, percent}}%/{{2, percent}}% dari DMG awalnya.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Thunder Core",
-        "fullDesc": "Saat \"Rainblade\" dari Ultimate mengenai target musuh yang memiliki \"Crimson Knot\", akan meningkatkan {{1}}% DMG yang diakibatkan Acheron, efek ini dapat ditumpuk hingga {{2}} lapis dan berlangsung selama {{3}} giliran, serta mengakibatkan {{4}} kali DMG tambahan saat melancarkan \"Stygian Resurge\", yang masing-masing DMG tersebut mengakibatkan Lightning DMG sebesar {{5}}% ATK Acheron pada musuh secara acak. DMG tersebut akan dianggap sebagai Ultimate DMG.",
+        "fullDesc": "Saat \"Rainblade\" dari Ultimate mengenai target musuh yang memiliki \"Crimson Knot\", akan meningkatkan {{1, percent}}% DMG yang diakibatkan Acheron, efek ini dapat ditumpuk hingga {{2}} lapis dan berlangsung selama {{3}} giliran, serta mengakibatkan {{4}} kali DMG tambahan saat melancarkan \"Stygian Resurge\", yang masing-masing DMG tersebut mengakibatkan Lightning DMG sebesar {{5, percent}}% ATK Acheron pada musuh secara acak. DMG tersebut akan dianggap sebagai Ultimate DMG.",
         "shortDesc": ""
       }
     }
@@ -81,7 +81,7 @@
   "ranks": {
     "1": {
       "name": "Silenced Sky Spake Sooth",
-      "desc": "Saat mengakibatkan DMG pada target musuh berstatus Debuff, CRIT Rate meningkat {{1}}%."
+      "desc": "Saat mengakibatkan DMG pada target musuh berstatus Debuff, CRIT Rate meningkat {{1, percent}}%."
     },
     "2": {
       "name": "Mute Thunder in Still Tempest",
@@ -93,7 +93,7 @@
     },
     "4": {
       "name": "Shrined Fire for Mirrored Soul",
-      "desc": "Saat target musuh memasuki pertempuran, akan membuatnya memasuki status Ultimate DMG Vulnerability, meningkatkan {{1}}% Ultimate DMG yang diterimanya."
+      "desc": "Saat target musuh memasuki pertempuran, akan membuatnya memasuki status Ultimate DMG Vulnerability, meningkatkan {{1, percent}}% Ultimate DMG yang diterimanya."
     },
     "5": {
       "name": "Strewn Souls on Erased Earths",
@@ -101,7 +101,7 @@
     },
     "6": {
       "name": "Apocalypse, the Emancipator",
-      "desc": "Meningkatkan {{1}}% RES PEN Seluruh Tipe dari Ultimate DMG yang diakibatkan Acheron. DMG yang diakibatkan Basic Attack dan Skill Acheron juga akan dianggap sebagai Ultimate DMG, dan mengabaikan Tipe Weakness musuh untuk mengurangi Toughness. Saat mengakibatkan Weakness Break, akan memicu efek Lightning Weakness Break."
+      "desc": "Meningkatkan {{1, percent}}% RES PEN Seluruh Tipe dari Ultimate DMG yang diakibatkan Acheron. DMG yang diakibatkan Basic Attack dan Skill Acheron juga akan dianggap sebagai Ultimate DMG, dan mengabaikan Tipe Weakness musuh untuk mengurangi Toughness. Saat mengakibatkan Weakness Break, akan memicu efek Lightning Weakness Break."
     }
   }
 }

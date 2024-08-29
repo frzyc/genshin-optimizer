@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Puissance de l'esprit",
-        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dr Ratio à une cible unique.",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Dr Ratio à une cible unique.",
         "shortDesc": "Inflige des DGT imaginaires mineurs à une cible unique."
       }
     },
     "skill": {
       "0": {
         "name": "Déclic intellectuel",
-        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dr Ratio à une cible unique.",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Dr Ratio à une cible unique.",
         "shortDesc": "Inflige des DGT imaginaires à un ennemi unique."
       }
     },
     "ult": {
       "0": {
         "name": "Paradoxe du syllogisme",
-        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dr Ratio à une cible ennemie unique et applique Folie du sage. Lorsque les alliés de Dr Ratio attaquent une cible affectée par Folie du sage, Dr Ratio lui inflige l'<u>attaque de suivi</u> de son talent une fois.\\nFolie du sage peut être déclenchée jusqu'à {{2}} fois et n'affecte que la cible la plus récente de l'ultime de Dr Ratio. Le nombre de déclenchements est réinitialisé après que Dr Ratio utilise son ultime.",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Dr Ratio à une cible ennemie unique et applique Folie du sage. Lorsque les alliés de Dr Ratio attaquent une cible affectée par Folie du sage, Dr Ratio lui inflige l'<u>attaque de suivi</u> de son talent une fois.\\nFolie du sage peut être déclenchée jusqu'à {{2}} fois et n'affecte que la cible la plus récente de l'ultime de Dr Ratio. Le nombre de déclenchements est réinitialisé après que Dr Ratio utilise son ultime.",
         "shortDesc": "Inflige des DGT imaginaires à une cible ennemie unique et applique Folie du sage. Lorsque les alliés de Dr Ratio attaquent une cible affectée par Folie du sage, Dr Ratio lui inflige 1 <orangeStrong><u>attaque de suivi</u></orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Fascination façonnée",
-        "fullDesc": "Crée une dimension spéciale qui provoque les ennemis proches pendant {{1}} secondes après avoir utilisé la technique. Il y a {{2}}% de <u>chances de base</u> de réduire la VIT des ennemis de {{3}}% pendant {{4}} tours en engageant le combat avec des ennemis dans la dimension. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "fullDesc": "Crée une dimension spéciale qui provoque les ennemis proches pendant {{1}} secondes après avoir utilisé la technique. Il y a {{2, percent}}% de <u>chances de base</u> de réduire la VIT des ennemis de {{3, percent}}% pendant {{4}} tours en engageant le combat avec des ennemis dans la dimension. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
         "shortDesc": "Crée une dimension spéciale. Les ennemis dans la dimension subissent l'effet Provocation. Il y a de fortes chances de <orangeStrong>réduire la VIT</orangeStrong> des cibles ennemies après être entré en combat avec des ennemis dans cette dimension."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Synthèse",
-        "fullDesc": "Lorsque Dr Ratio utilise sa compétence, ses chances de coup critique augmentent de {{1}}% et ses DGT critiques de {{2}}% pour chaque malus sur la cible. Cet effet peut être cumulé jusqu'à {{3}} fois.",
+        "fullDesc": "Lorsque Dr Ratio utilise sa compétence, ses chances de coup critique augmentent de {{1, percent(fixed: 1)}}% et ses DGT critiques de {{2, percent}}% pour chaque malus sur la cible. Cet effet peut être cumulé jusqu'à {{3}} fois.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Inférence",
-        "fullDesc": "Lorsque la compétence est utilisée pour attaquer une cible ennemie, il y a {{1}}% de chances de base de réduire la RÉS aux effets de la cible attaquée de {{2}}% pendant {{3}} tours.",
+        "fullDesc": "Lorsque la compétence est utilisée pour attaquer une cible ennemie, il y a {{1, percent}}% de chances de base de réduire la RÉS aux effets de la cible attaquée de {{2, percent}}% pendant {{3}} tours.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Déduction",
-        "fullDesc": "Lorsque Dr Ratio inflige des DGT à une cible ayant au moins {{1}} malus, les DGT infligés par Dr Ratio à cette cible augmentent de {{2}}% pour chaque malus appliqué à la cible, jusqu'à une augmentation maximale de {{3}}%.",
+        "fullDesc": "Lorsque Dr Ratio inflige des DGT à une cible ayant au moins {{1}} malus, les DGT infligés par Dr Ratio à cette cible augmentent de {{2, percent}}% pour chaque malus appliqué à la cible, jusqu'à une augmentation maximale de {{3, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Le diable est dans les détails",
-      "desc": "Lorsque l'attaque de suivi de son talent touche une cible, cette dernière subit des DGT imaginaires supplémentaires équivalents à {{1}}% de l'ATQ de Dr Ratio pour chaque malus qui lui est appliqué. Cet effet peut être déclenché un maximum de {{2}} fois durant chaque attaque de suivi."
+      "desc": "Lorsque l'attaque de suivi de son talent touche une cible, cette dernière subit des DGT imaginaires supplémentaires équivalents à {{1, percent}}% de l'ATQ de Dr Ratio pour chaque malus qui lui est appliqué. Cet effet peut être déclenché un maximum de {{2}} fois durant chaque attaque de suivi."
     },
     "3": {
       "name": "Connais-toi toi-même",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Vincit Omnia Veritas",
-      "desc": "Augmente de {{1}} le nombre possible de déclenchements de Folie du sage. Les DGT infligés par l'attaque de suivi du talent augmentent de {{2}}%."
+      "desc": "Augmente de {{1}} le nombre possible de déclenchements de Folie du sage. Les DGT infligés par l'attaque de suivi du talent augmentent de {{2, percent}}%."
     }
   }
 }

@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Diagnostic Kick",
-        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Bailu's ATK to a single enemy.",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Bailu's ATK to a single enemy.",
         "shortDesc": "Deals minor Lightning DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Singing Among Clouds",
-        "fullDesc": "Heals a single ally for <orangeStrong>{{1}}%</orangeStrong> of Bailu's Max HP plus <orangeStrong>{{2}}</orangeStrong>. Bailu then heals random allies {{4}} time(s). After each healing, HP restored from the next healing is reduced by {{3}}%.",
+        "fullDesc": "Heals a single ally for <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Bailu's Max HP plus <orangeStrong>{{2}}</orangeStrong>. Bailu then heals random allies {{4}} time(s). After each healing, HP restored from the next healing is reduced by {{3, percent}}%.",
         "shortDesc": "Restores HP for a single ally, then heals random allies."
       }
     },
     "ult": {
       "0": {
         "name": "Felicitous Thunderleap",
-        "fullDesc": "Heals all allies for <orangeStrong>{{1}}%</orangeStrong> of Bailu's Max HP plus <orangeStrong>{{2}}</orangeStrong>.\\nBailu applies Invigoration to allies that are not already Invigorated. For those already Invigorated, Bailu extends the duration of their Invigoration by 1 turn.\\nThe effect of Invigoration can last for {{3}} turn(s). This effect cannot stack.",
+        "fullDesc": "Heals all allies for <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Bailu's Max HP plus <orangeStrong>{{2}}</orangeStrong>.\\nBailu applies Invigoration to allies that are not already Invigorated. For those already Invigorated, Bailu extends the duration of their Invigoration by 1 turn.\\nThe effect of Invigoration can last for {{3}} turn(s). This effect cannot stack.",
         "shortDesc": "Restores HP for all allies, and grants them Invigoration, or prolongs the duration of their Invigoration."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Qihuang Analects",
-        "fullDesc": "When Bailu heals a target ally above their normal Max HP, the target's Max HP increases by {{1}}% for {{2}} turns.",
+        "fullDesc": "When Bailu heals a target ally above their normal Max HP, the target's Max HP increases by {{1, percent}}% for {{2}} turns.",
         "shortDesc": ""
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Aquatic Benediction",
-        "fullDesc": "Characters with Invigoration receive {{1}}% less DMG.",
+        "fullDesc": "Characters with Invigoration receive {{1, percent}}% less DMG.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Sylphic Slumber",
-      "desc": "After using her Ultimate, Bailu's Outgoing Healing increases by an additional {{1}}% for {{2}} turn(s)."
+      "desc": "After using her Ultimate, Bailu's Outgoing Healing increases by an additional {{1, percent}}% for {{2}} turn(s)."
     },
     "3": {
       "name": "Omniscient Opulence",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Evil Excision",
-      "desc": "Every healing provided by the Skill makes the recipient deal {{1}}% more DMG for {{3}} turn(s). This effect can stack up to {{2}} time(s)."
+      "desc": "Every healing provided by the Skill makes the recipient deal {{1, percent}}% more DMG for {{3}} turn(s). This effect can stack up to {{2}} time(s)."
     },
     "5": {
       "name": "Waning Worries",

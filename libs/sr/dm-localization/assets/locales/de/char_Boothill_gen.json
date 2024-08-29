@@ -4,26 +4,26 @@
     "basic": {
       "0": {
         "name": "Schädelsplitter-Hufeisen",
-        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Boothills ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Boothills ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen physischen SCH zu."
       },
       "1": {
         "name": "Finger am Abzug",
-        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Boothills ANG zu.\\nDer verstärkte Standardangriff stellt keine Fertigkeitspunkte wieder her und kann nur gegnerische Ziele im Status „Tödliche Konfrontation“ angreifen.",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Boothills ANG zu.\\nDer verstärkte Standardangriff stellt keine Fertigkeitspunkte wieder her und kann nur gegnerische Ziele im Status „Tödliche Konfrontation“ angreifen.",
         "shortDesc": "Fügt einem Gegner physischen SCH zu. Kann nur das Ziel von „Tödliche Konfrontation“ angreifen."
       }
     },
     "skill": {
       "0": {
         "name": "Tango des Tänzers auf brennendem Kies",
-        "fullDesc": "Lässt einen anvisierten Gegner und Boothill in den Status „Tödliche Konfrontation“ eintreten. Boothill erhält für {{3}} Rd. einen verstärkten Standardangriff und kann seine Fertigkeit nicht einsetzen. Diese Dauer wird jeweils zu Beginn von Boothills Rd. um 1 verringert.\\nDas gegnerische Ziel mit Tödliche Konfrontation wird verspottet. Wenn das Ziel / Boothill voneinander angegriffen wird, erleiden sie jeweils <orangeStrong>{{1}}%</orangeStrong>/{{2}}% mehr SCH.\\nNachdem das Ziel besiegt wurde oder Schwächebruch erlitten hat, erhält Boothill 1 Stapelung „Trumpf in der Tasche“ und Tödliche Konfrontation wird dann aufgehoben.\\nDiese Fertigkeit stellt keine Energie wieder her. Nach dem Einsatz dieser Fertigkeit wird die aktuelle Runde nicht beendet.",
+        "fullDesc": "Lässt einen anvisierten Gegner und Boothill in den Status „Tödliche Konfrontation“ eintreten. Boothill erhält für {{3}} Rd. einen verstärkten Standardangriff und kann seine Fertigkeit nicht einsetzen. Diese Dauer wird jeweils zu Beginn von Boothills Rd. um 1 verringert.\\nDas gegnerische Ziel mit Tödliche Konfrontation wird verspottet. Wenn das Ziel / Boothill voneinander angegriffen wird, erleiden sie jeweils <orangeStrong>{{1, percent}}%</orangeStrong>/{{2, percent}}% mehr SCH.\\nNachdem das Ziel besiegt wurde oder Schwächebruch erlitten hat, erhält Boothill 1 Stapelung „Trumpf in der Tasche“ und Tödliche Konfrontation wird dann aufgehoben.\\nDiese Fertigkeit stellt keine Energie wieder her. Nach dem Einsatz dieser Fertigkeit wird die aktuelle Runde nicht beendet.",
         "shortDesc": "Aktiviert <orangeStrong>Tödliche Konfrontation</orangeStrong>. Nachdem das Ziel von Tödliche Konfrontation <orangeStrong>besiegt wurde oder Schwächebruch erlitten hat</orangeStrong>, erhält Boothill „Trumpf in der Tasche“ und Tödliche Konfrontation wird aufgehoben. Boothill <orangeStrong>erhält einen verstärkten Standardangriff</orangeStrong> und die aktuelle Runde wird nicht beendet."
       }
     },
     "ult": {
       "0": {
         "name": "Staubteufels Tanz bei Sonnenuntergang",
-        "fullDesc": "Fügt einem anvisierten Gegner für {{3}} Rd. eine physische Schwäche hinzu.\\nFügt dem Ziel physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Boothills ANG zu und <u>verzögert die Aktion</u> des Ziels um <orangeStrong>{{2}}%</orangeStrong>.",
+        "fullDesc": "Fügt einem anvisierten Gegner für {{3}} Rd. eine physische Schwäche hinzu.\\nFügt dem Ziel physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Boothills ANG zu und <u>verzögert die Aktion</u> des Ziels um <orangeStrong>{{2, percent}}%</orangeStrong>.",
         "shortDesc": "Fügt einem Gegner eine <orangeStrong>physische Schwäche</orangeStrong> hinzu, verursacht beim Ziel massiven physischen SCH und verzögert dessen Aktion."
       }
     },
@@ -44,14 +44,14 @@
     "bonusAbility1": {
       "0": {
         "name": "Geisterladung",
-        "fullDesc": "Erhöht die KRIT-Rate / den KRIT-SCH dieser Einheit. Die Erhöhung beträgt {{1}}%/{{3}}% ihres Brucheffekts. Die KRIT-Rate / der KRIT-SCH kann durch diesen Effekt um bis zu {{2}}%/{{4}}% erhöht werden.",
+        "fullDesc": "Erhöht die KRIT-Rate / den KRIT-SCH dieser Einheit. Die Erhöhung beträgt {{1, percent}}%/{{3, percent}}% ihres Brucheffekts. Die KRIT-Rate / der KRIT-SCH kann durch diesen Effekt um bis zu {{2, percent}}%/{{4, percent}}% erhöht werden.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Aufstieg der Schlangen",
-        "fullDesc": "Befindet sich Boothill im Status „Tödliche Konfrontation“, wird sein erlittener SCH durch Ziele, die sich nicht in Tödliche Konfrontation befinden, um {{1}}% reduziert.",
+        "fullDesc": "Befindet sich Boothill im Status „Tödliche Konfrontation“, wird sein erlittener SCH durch Ziele, die sich nicht in Tödliche Konfrontation befinden, um {{1, percent}}% reduziert.",
         "shortDesc": ""
       }
     },
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Einsamer Stern im Staub",
-      "desc": "Erhält zu Beginn des Kampfes 1 Stapelung „Trumpf in der Tasche“. Boothill verursacht SCH, der {{1}}% der VTD des gegnerischen Ziels ignoriert."
+      "desc": "Erhält zu Beginn des Kampfes 1 Stapelung „Trumpf in der Tasche“. Boothill verursacht SCH, der {{1, percent}}% der VTD des gegnerischen Ziels ignoriert."
     },
     "2": {
       "name": "Meilenstein-Händler",
-      "desc": "Stellt beim Erhalt von „Trumpf in der Tasche“ im Status „Tödliche Konfrontation“ {{1}} Fertigkeitspunkt wieder her und erhöht für {{3}} Rd. den Brucheffekt um {{2}}%. Dieser Effekt kann in einer einzelnen Runde nicht wiederholt ausgelöst werden. Er wird auch ausgelöst, wenn Stapelungen von Trumpf in der Tasche erhalten werden, die die max. Stapelzahl überschreiten."
+      "desc": "Stellt beim Erhalt von „Trumpf in der Tasche“ im Status „Tödliche Konfrontation“ {{1}} Fertigkeitspunkt wieder her und erhöht für {{3}} Rd. den Brucheffekt um {{2, percent}}%. Dieser Effekt kann in einer einzelnen Runde nicht wiederholt ausgelöst werden. Er wird auch ausgelöst, wenn Stapelungen von Trumpf in der Tasche erhalten werden, die die max. Stapelzahl überschreiten."
     },
     "3": {
       "name": "Wächter des marmornen Obstgartens",
@@ -78,7 +78,7 @@
     },
     "4": {
       "name": "Aufschnittskoch",
-      "desc": "Wenn Gegner mit „Tödliche Konfrontation“ von Boothill angegriffen werden, wird der erlittene SCH zusätzlich um {{1}}% erhöht. Wenn Boothill von Gegnern mit Tödliche Konfrontation angegriffen wird, wird der Effekt der erlittenen SCH-Erhöhung um {{2}}% reduziert."
+      "desc": "Wenn Gegner mit „Tödliche Konfrontation“ von Boothill angegriffen werden, wird der erlittene SCH zusätzlich um {{1, percent}}% erhöht. Wenn Boothill von Gegnern mit Tödliche Konfrontation angegriffen wird, wird der Effekt der erlittenen SCH-Erhöhung um {{2, percent}}% reduziert."
     },
     "5": {
       "name": "Baumstumpfredner",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Waschbär im Hotel Brecheisen",
-      "desc": "Wenn durch das Talent Bruch-SCH verursacht wird, wird dem Ziel zusätzlich Bruch-SCH in Höhe von {{1}}% des ursprünglichen SCH-Multiplikators und angrenzenden Einheiten zusätzlich Bruch-SCH in Höhe von {{2}}% des ursprünglichen SCH-Multiplikators zugefügt."
+      "desc": "Wenn durch das Talent Bruch-SCH verursacht wird, wird dem Ziel zusätzlich Bruch-SCH in Höhe von {{1, percent}}% des ursprünglichen SCH-Multiplikators und angrenzenden Einheiten zusätzlich Bruch-SCH in Höhe von {{2, percent}}% des ursprünglichen SCH-Multiplikators zugefügt."
     }
   }
 }

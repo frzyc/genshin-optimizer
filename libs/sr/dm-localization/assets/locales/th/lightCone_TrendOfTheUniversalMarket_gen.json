@@ -2,6 +2,6 @@
   "name": "Trend of the Universal Market",
   "passive": {
     "name": "A New Round of Shuffling",
-    "description": "ทำให้ DEF ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> หลังจากผู้สวมใส่ถูกโจมตี จะมีโอกาสพื้นฐาน <orangeStrong>{{2}}%</orangeStrong> ที่จะทำให้ศัตรูเป้าหมายติดสถานะเผาไหม้ และในแต่ละเทิร์น จะสร้าง DMG ต่อเนื่อง <orangeStrong>{{3}}%</orangeStrong> ของ DEF ของผู้สวมใส่ เป็นเวลา {{4}} เทิร์น"
+    "description": "ทำให้ DEF ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> หลังจากผู้สวมใส่ถูกโจมตี จะมีโอกาสพื้นฐาน <orangeStrong>{{2, percent}}%</orangeStrong> ที่จะทำให้ศัตรูเป้าหมายติดสถานะเผาไหม้ และในแต่ละเทิร์น จะสร้าง DMG ต่อเนื่อง <orangeStrong>{{3, percent}}%</orangeStrong> ของ DEF ของผู้สวมใส่ เป็นเวลา {{4}} เทิร์น"
   }
 }

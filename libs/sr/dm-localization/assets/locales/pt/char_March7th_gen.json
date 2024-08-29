@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Flecha Glacial",
-        "fullDesc": "Causa Dano de Gelo equivalente a <orangeStrong>{{1}}%</orangeStrong> do ATQ de 7 de Março a um único inimigo.",
+        "fullDesc": "Causa Dano de Gelo equivalente a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de 7 de Março a um único inimigo.",
         "shortDesc": "Causa Dano de Gelo leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "O Poder da Fofura",
-        "fullDesc": "Concede a um único aliado um Escudo que pode absorver Dano igual a <orangeStrong>{{1}}%</orangeStrong> da DEF de 7 de Março + <orangeStrong>{{4}}</orangeStrong> por {{2}} rodada(s).\\nSe esse aliado tiver {{3}}% ou mais de PV, aumenta significativamente a chance de inimigos atacarem esse aliado.",
+        "fullDesc": "Concede a um único aliado um Escudo que pode absorver Dano igual a <orangeStrong>{{1, percent}}%</orangeStrong> da DEF de 7 de Março + <orangeStrong>{{4}}</orangeStrong> por {{2}} rodada(s).\\nSe esse aliado tiver {{3, percent}}% ou mais de PV, aumenta significativamente a chance de inimigos atacarem esse aliado.",
         "shortDesc": "<orangeStrong>Aplica um Escudo</orangeStrong> em um único aliado."
       }
     },
     "ult": {
       "0": {
         "name": "Cascata Glacial",
-        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de 7 de Março a todos os inimigos. Ao serem atingidos, os inimigos têm {{2}}% de <u>chance-base</u> de sofrer Congelamento por {{3}} rodada(s).\\nDurante o Congelamento, os inimigos não podem agir e recebem <u>Dano de Gelo Adicional</u> igual a <orangeStrong>{{4}}%</orangeStrong> do ATQ de 7 de Março no início de cada rodada.",
+        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de 7 de Março a todos os inimigos. Ao serem atingidos, os inimigos têm {{2, percent}}% de <u>chance-base</u> de sofrer Congelamento por {{3}} rodada(s).\\nDurante o Congelamento, os inimigos não podem agir e recebem <u>Dano de Gelo Adicional</u> igual a <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de 7 de Março no início de cada rodada.",
         "shortDesc": "Causa Dano de Gelo a <orangeStrong>todos os inimigos</orangeStrong>, com <orangeStrong>uma chance de aplicar o efeito de Congelamento</orangeStrong>"
       }
     },
     "technique": {
       "0": {
         "name": "Beleza Glacial",
-        "fullDesc": "Ataca o inimigo imediatamente. Após entrar na batalha, tem {{1}}% de <u>chance-base</u> de causar Congelamento a um inimigo aleatório por {{2}} rodada(s).\\nDurante o Congelamento, o inimigo não pode agir e recebe {{3}}% do ATQ de 7 de Março como Dano de Gelo <u>Adicional</u> no início de cada rodada.",
+        "fullDesc": "Ataca o inimigo imediatamente. Após entrar na batalha, tem {{1, percent}}% de <u>chance-base</u> de causar Congelamento a um inimigo aleatório por {{2}} rodada(s).\\nDurante o Congelamento, o inimigo não pode agir e recebe {{3, percent}}% do ATQ de 7 de Março como Dano de Gelo <u>Adicional</u> no início de cada rodada.",
         "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, existe uma alta chance de infligir Congelamento em um inimigo aleatório."
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Feitiço de Gelo",
-        "fullDesc": "Aumenta em {{1}}% a chance-base da Perícia Suprema causar Congelamento a inimigos.",
+        "fullDesc": "Aumenta em {{1, percent}}% a chance-base da Perícia Suprema causar Congelamento a inimigos.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Memória de Ser",
-      "desc": "Ao entrar na batalha, concede um Escudo igual a {{1}}% da DEF de 7 de Março + {{3}} ao aliado com a menor porcentagem de PV, durando por {{2}} rodada(s)."
+      "desc": "Ao entrar na batalha, concede um Escudo igual a {{1, percent}}% da DEF de 7 de Março + {{3}} ao aliado com a menor porcentagem de PV, durando por {{2}} rodada(s)."
     },
     "3": {
       "name": "Memória de Tudo",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Nunca se Renda de Novo",
-      "desc": "O efeito Contra-Ataque do Talento pode ser ativado 1 vez mais em cada rodada. O Dano causado por Contra-Ataques aumenta em {{1}}% da DEF de 7 de Março."
+      "desc": "O efeito Contra-Ataque do Talento pode ser ativado 1 vez mais em cada rodada. O Dano causado por Contra-Ataques aumenta em {{1, percent}}% da DEF de 7 de Março."
     },
     "5": {
       "name": "Nunca se Esqueça de Novo",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "É Sempre Assim...",
-      "desc": "Aliados sob a proteção do Escudo concedido pela Perícia restauram PV equivalentes a {{1}}% de seus PV máximos + {{2}} no início de cada rodada."
+      "desc": "Aliados sob a proteção do Escudo concedido pela Perícia restauram PV equivalentes a {{1, percent}}% de seus PV máximos + {{2}} no início de cada rodada."
     }
   }
 }

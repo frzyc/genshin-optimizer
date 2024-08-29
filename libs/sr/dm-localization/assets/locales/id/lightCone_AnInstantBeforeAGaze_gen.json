@@ -2,6 +2,6 @@
   "name": "An Instant Before A Gaze",
   "passive": {
     "name": "A Knight's Pilgrimage",
-    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> CRIT DMG pengguna. Saat pengguna melancarkan Ultimate, akan meningkatkan DMG yang diakibatkan Ultimate pengguna berdasarkan Max Energy pengguna. Setiap poin Energy meningkatkan <orangeStrong>{{2}}%</orangeStrong> DMG, maksimal hingga {{3}} Energy."
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> CRIT DMG pengguna. Saat pengguna melancarkan Ultimate, akan meningkatkan DMG yang diakibatkan Ultimate pengguna berdasarkan Max Energy pengguna. Setiap poin Energy meningkatkan <orangeStrong>{{2, percent(fixed: 2)}}%</orangeStrong> DMG, maksimal hingga {{3}} Energy."
   }
 }

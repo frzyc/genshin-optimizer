@@ -2,6 +2,6 @@
   "name": "重塑时光之忆",
   "passive": {
     "name": "结晶",
-    "description": "使装备者的效果命中提高<orangeStrong>{{1}}%</orangeStrong>。装备者对陷入风化、灼烧、触电、裂伤状态的敌方目标造成伤害时，分别获得1层【先知】，最多叠加{{4}}层。单场战斗中，每种持续伤害状态类型仅可叠加1次【先知】效果。每层【先知】使装备者的攻击力提高<orangeStrong>{{2}}%</orangeStrong>，造成的持续伤害无视目标<orangeStrong>{{3}}%</orangeStrong>的防御力。"
+    "description": "使装备者的效果命中提高<orangeStrong>{{1, percent}}%</orangeStrong>。装备者对陷入风化、灼烧、触电、裂伤状态的敌方目标造成伤害时，分别获得1层【先知】，最多叠加{{4}}层。单场战斗中，每种持续伤害状态类型仅可叠加1次【先知】效果。每层【先知】使装备者的攻击力提高<orangeStrong>{{2, percent}}%</orangeStrong>，造成的持续伤害无视目标<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>的防御力。"
   }
 }

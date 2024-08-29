@@ -1,7 +1,7 @@
 {
   "setName": "Transeúnte de la nube pasajera",
   "setEffects": {
-    "2": "Curación realizada +{{1}}%.",
+    "2": "Curación realizada +{{1, percent}}%.",
     "4": "Al entrar en combate, el equipo recupera inmediatamente 1 pt. de habilidad básica."
   }
 }

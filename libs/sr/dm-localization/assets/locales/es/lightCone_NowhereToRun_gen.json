@@ -2,6 +2,6 @@
   "name": "Sin escapatoria",
   "passive": {
     "name": "En un aprieto",
-    "description": "El ATQ del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Cuando el portador elimina a un enemigo, regenera una cantidad de PV equivalente al <orangeStrong>{{2}}%</orangeStrong> de su ATQ."
+    "description": "El ATQ del portador aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong>. Cuando el portador elimina a un enemigo, regenera una cantidad de PV equivalente al <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ."
   }
 }

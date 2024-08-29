@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Gravity Suppression",
-        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Welt's ATK to a single enemy.",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Welt's ATK to a single enemy.",
         "shortDesc": "Deals minor Imaginary DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Edge of the Void",
-        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Welt's ATK to a single enemy and further deals DMG 2 extra times, with each time dealing Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Welt's ATK to a random enemy. On hit, there is a <orangeStrong>{{2}}%</orangeStrong> <u>base chance</u> to reduce the enemy's SPD by {{3}}% for {{4}} turn(s).",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Welt's ATK to a single enemy and further deals DMG 2 extra times, with each time dealing Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Welt's ATK to a random enemy. On hit, there is a <orangeStrong>{{2, percent}}%</orangeStrong> <u>base chance</u> to reduce the enemy's SPD by {{3, percent}}% for {{4}} turn(s).",
         "shortDesc": "Deals minor Imaginary DMG to a single enemy. This attack can Bounce 3 times, with a chance of <orangeStrong>Slowing</orangeStrong> the hit enemies."
       }
     },
     "ult": {
       "0": {
         "name": "Synthetic Black Hole",
-        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Welt's ATK to all enemies, with a {{3}}% <u>base chance</u> for enemies hit by this ability to be Imprisoned for 1 turn.\\nImprisoned enemies have their <u>actions delayed</u> by <orangeStrong>{{2}}%</orangeStrong> and SPD reduced by {{4}}%.",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Welt's ATK to all enemies, with a {{3, percent}}% <u>base chance</u> for enemies hit by this ability to be Imprisoned for 1 turn.\\nImprisoned enemies have their <u>actions delayed</u> by <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> and SPD reduced by {{4, percent}}%.",
         "shortDesc": "Deals Imaginary DMG to all enemies, with <orangeStrong>a high chance of Imprisoning them</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Gravitational Imprisonment",
-        "fullDesc": "After using Welt's Technique, create a special dimension that lasts for {{4}} second(s). Enemies in this special dimension have their Movement SPD reduced by {{5}}%. After entering battle with enemies in the special dimension, there is a {{1}}% <u>base chance</u> to Imprison the enemies for 1 turn.\\nImprisoned enemies have their <u>actions delayed</u> by {{2}}% and SPD reduced by {{3}}%. Only 1 dimension created by allies can exist at the same time.",
+        "fullDesc": "After using Welt's Technique, create a special dimension that lasts for {{4}} second(s). Enemies in this special dimension have their Movement SPD reduced by {{5, percent}}%. After entering battle with enemies in the special dimension, there is a {{1, percent}}% <u>base chance</u> to Imprison the enemies for 1 turn.\\nImprisoned enemies have their <u>actions delayed</u> by {{2, percent}}% and SPD reduced by {{3, percent}}%. Only 1 dimension created by allies can exist at the same time.",
         "shortDesc": "Creates a special dimension. Enemies in this dimension have their Movement SPD reduced. After entering combat with enemies in the dimension, there is a <orangeStrong>high chance for the enemies to become Imprisoned</orangeStrong>."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Retribution",
-        "fullDesc": "When using Ultimate, there is a {{1}}% base chance to increase the DMG received by the targets by {{2}}% for {{3}} turn(s).",
+        "fullDesc": "When using Ultimate, there is a {{1, percent}}% base chance to increase the DMG received by the targets by {{2, percent}}% for {{3}} turn(s).",
         "shortDesc": ""
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Punishment",
-        "fullDesc": "Deals {{1}}% more DMG to enemies inflicted with Weakness Break.",
+        "fullDesc": "Deals {{1, percent}}% more DMG to enemies inflicted with Weakness Break.",
         "shortDesc": ""
       }
     }
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Legacy of Honor",
-      "desc": "After using Ultimate, Welt gets enhanced. Then, the next {{3}} time(s) he uses Basic ATK or Skill, deals 1 extra instance of Additional DMG to the target enemy. The Additional DMG dealt when using Basic ATK is equal to {{1}}% of Basic ATK DMG multiplier. The Additional DMG dealt when using Skill is equal to {{2}}% of Skill DMG multiplier."
+      "desc": "After using Ultimate, Welt gets enhanced. Then, the next {{3}} time(s) he uses Basic ATK or Skill, deals 1 extra instance of Additional DMG to the target enemy. The Additional DMG dealt when using Basic ATK is equal to {{1, percent}}% of Basic ATK DMG multiplier. The Additional DMG dealt when using Skill is equal to {{2, percent}}% of Skill DMG multiplier."
     },
     "2": {
       "name": "Conflux of Stars",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Appellation of Justice",
-      "desc": "Base chance for Skill to inflict SPD Reduction increases by {{1}}%."
+      "desc": "Base chance for Skill to inflict SPD Reduction increases by {{1, percent}}%."
     },
     "5": {
       "name": "Power of Kindness",

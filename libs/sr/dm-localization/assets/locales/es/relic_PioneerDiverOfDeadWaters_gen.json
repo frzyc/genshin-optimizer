@@ -1,7 +1,7 @@
 {
   "setName": "Buceadora pionera del agua muerta",
   "setEffects": {
-    "2": "El daño infligido a los enemigos afectados por estados negativos aumenta en un {{1}}%.",
-    "4": "La Prob. CRIT aumenta en un {{1}}%. El Daño CRIT que el portador inflige a los enemigos que tengan al menos {{4}}/{{5}} estados negativos aumenta en un {{2}}%/{{3}}%. Cuando el portador aplica un estado negativo a un enemigo, los efectos mencionados aumentan en un 100% durante {{6}} turno."
+    "2": "El daño infligido a los enemigos afectados por estados negativos aumenta en un {{1, percent}}%.",
+    "4": "La Prob. CRIT aumenta en un {{1, percent}}%. El Daño CRIT que el portador inflige a los enemigos que tengan al menos {{4}}/{{5}} estados negativos aumenta en un {{2, percent}}%/{{3, percent}}%. Cuando el portador aplica un estado negativo a un enemigo, los efectos mencionados aumentan en un 100% durante {{6}} turno."
   }
 }

@@ -2,6 +2,6 @@
   "name": "Depois que a Harmonia se Dissipa",
   "passive": {
     "name": "Quietude",
-    "description": "Aumenta o Efeito de Quebra do usuário em <orangeStrong>{{1}}%</orangeStrong>. Após o usuário usar sua Perícia Suprema, aumenta sua VEL em <orangeStrong>{{2}}%</orangeStrong>, durando por {{3}} rodada(s)."
+    "description": "Aumenta o Efeito de Quebra do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Após o usuário usar sua Perícia Suprema, aumenta sua VEL em <orangeStrong>{{2, percent}}%</orangeStrong>, durando por {{3}} rodada(s)."
   }
 }

@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "El conocimiento es poder",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ del Dr. Ratio como Daño Imaginario a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ del Dr. Ratio como Daño Imaginario a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Método de refuerzo cognitivo",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ del Dr. Ratio como Daño Imaginario a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ del Dr. Ratio como Daño Imaginario a un enemigo.",
         "shortDesc": "Inflige Daño Imaginario a un enemigo."
       }
     },
     "ult": {
       "0": {
         "name": "Paradoja silogística",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ del Dr. Ratio como Daño Imaginario a un enemigo y le aplica Locura de los sabios. Cuando un aliado del Dr. Ratio ataca a un objetivo afectado por Locura de los sabios, el Dr. Ratio lanza el <u>ataque adicional</u> del talento contra dicho objetivo.\\nLocura de los sabios se puede activar hasta {{2}} veces y solo afecta al último objetivo afectado por la habilidad definitiva del Dr. Ratio. Tras usar la habilidad definitiva, se reinicia el contador de activaciones.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ del Dr. Ratio como Daño Imaginario a un enemigo y le aplica Locura de los sabios. Cuando un aliado del Dr. Ratio ataca a un objetivo afectado por Locura de los sabios, el Dr. Ratio lanza el <u>ataque adicional</u> del talento contra dicho objetivo.\\nLocura de los sabios se puede activar hasta {{2}} veces y solo afecta al último objetivo afectado por la habilidad definitiva del Dr. Ratio. Tras usar la habilidad definitiva, se reinicia el contador de activaciones.",
         "shortDesc": "Inflige Daño Imaginario a un enemigo y le aplica Locura de los sabios. Cuando un aliado del Dr. Ratio ataca a un objetivo afectado por Locura de los sabios, el Dr. Ratio lanza un <orangeStrong><u>ataque adicional</u></orangeStrong> contra dicho objetivo."
       }
     },
     "technique": {
       "0": {
         "name": "Molde de la idolatría",
-        "fullDesc": "Tras usar la técnica, crea una zona especial que afecta con Provocación a los enemigos cercanos durante {{1}} s. Al entrar en combate con los enemigos dentro de la zona especial, hay una <u>probabilidad base</u> del {{2}}% de que la VEL de cada enemigo se reduzca en un {{3}}% durante {{4}} turnos. Solo puedes tener una zona especial creada por los aliados a la vez.",
+        "fullDesc": "Tras usar la técnica, crea una zona especial que afecta con Provocación a los enemigos cercanos durante {{1}} s. Al entrar en combate con los enemigos dentro de la zona especial, hay una <u>probabilidad base</u> del {{2, percent}}% de que la VEL de cada enemigo se reduzca en un {{3, percent}}% durante {{4}} turnos. Solo puedes tener una zona especial creada por los aliados a la vez.",
         "shortDesc": "Crea una zona especial. Los enemigos que se encuentren dentro de la zona son afectados por Provocación. Al entrar en combate con los enemigos de la zona, hay una gran probabilidad de que <orangeStrong>la velocidad del objetivo enemigo se reduzca</orangeStrong>."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Inducción",
-        "fullDesc": "Al usar la habilidad básica, por cada estado negativo del objetivo, la Prob. CRIT del Dr. Ratio aumenta en un {{1}}% y su Daño CRIT aumenta en un {{2}}%. Este efecto se puede acumular hasta {{3}} veces.",
+        "fullDesc": "Al usar la habilidad básica, por cada estado negativo del objetivo, la Prob. CRIT del Dr. Ratio aumenta en un {{1, percent(fixed: 1)}}% y su Daño CRIT aumenta en un {{2, percent}}%. Este efecto se puede acumular hasta {{3}} veces.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Inferencia",
-        "fullDesc": "Al usar la habilidad básica para atacar a un enemigo, hay un {{1}}% de probabilidad base de reducir la RES a efecto del objetivo en un {{2}}% durante {{3}} turnos.",
+        "fullDesc": "Al usar la habilidad básica para atacar a un enemigo, hay un {{1, percent}}% de probabilidad base de reducir la RES a efecto del objetivo en un {{2, percent}}% durante {{3}} turnos.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Deducción",
-        "fullDesc": "Al infligir daño, si el objetivo tiene {{1}} o más estados negativos, el Dr. Ratio le inflige un {{2}}% más de daño por cada estado negativo, hasta un aumento máximo del {{3}}%.",
+        "fullDesc": "Al infligir daño, si el objetivo tiene {{1}} o más estados negativos, el Dr. Ratio le inflige un {{2, percent}}% más de daño por cada estado negativo, hasta un aumento máximo del {{3, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "En los detalles está lo divino",
-      "desc": "Cuando el ataque adicional de su talento golpea a un enemigo, el Dr. Ratio inflige un {{1}}% de su ATQ como Daño Imaginario adicional por cada estado negativo que tenga el objetivo. Este efecto se puede activar un máximo de {{2}} veces cada vez que use su ataque adicional."
+      "desc": "Cuando el ataque adicional de su talento golpea a un enemigo, el Dr. Ratio inflige un {{1, percent}}% de su ATQ como Daño Imaginario adicional por cada estado negativo que tenga el objetivo. Este efecto se puede activar un máximo de {{2}} veces cada vez que use su ataque adicional."
     },
     "3": {
       "name": "Conócete a ti mismo",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "La verdad eterna",
-      "desc": "Locura de los sabios se puede activar {{1}} vez más. El daño que inflige el ataque adicional del talento aumenta en un {{2}}%."
+      "desc": "Locura de los sabios se puede activar {{1}} vez más. El daño que inflige el ataque adicional del talento aumenta en un {{2, percent}}%."
     }
   }
 }

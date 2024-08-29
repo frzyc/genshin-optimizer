@@ -2,6 +2,6 @@
   "name": "无处可逃",
   "passive": {
     "name": "绝境",
-    "description": "使装备者的攻击力提高<orangeStrong>{{1}}%</orangeStrong>。当装备者消灭敌方目标时，回复等同于自身<orangeStrong>{{2}}%</orangeStrong>攻击力的生命值。"
+    "description": "使装备者的攻击力提高<orangeStrong>{{1, percent}}%</orangeStrong>。当装备者消灭敌方目标时，回复等同于自身<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的生命值。"
   }
 }

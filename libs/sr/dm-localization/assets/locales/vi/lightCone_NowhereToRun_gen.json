@@ -2,6 +2,6 @@
   "name": "Không Nơi Ẩn Náu",
   "passive": {
     "name": "Đường Cùng",
-    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của người trang bị. Khi người trang bị tiêu diệt kẻ địch sẽ hồi một lượng HP bằng <orangeStrong>{{2}}%</orangeStrong> Tấn Công của bản thân."
+    "description": "Tăng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của người trang bị. Khi người trang bị tiêu diệt kẻ địch sẽ hồi một lượng HP bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của bản thân."
   }
 }

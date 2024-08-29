@@ -2,6 +2,6 @@
   "name": "Texture des Mémoires",
   "passive": {
     "name": "Trésor",
-    "description": "Augmente la RÉS aux effets du porteur de <orangeStrong>{{1}}%</orangeStrong>. Lorsque le porteur est attaqué et n'a pas de bouclier, il obtient un bouclier équivalent à <orangeStrong>{{2}}%</orangeStrong> de ses PV max pendant {{3}} tours. Cet effet ne peut être déclenché qu'1 fois tous les {{4}} tours. Si le porteur a déjà un bouclier lorsqu'il est attaqué, les DGT subis sont réduits de <orangeStrong>{{5}}%</orangeStrong>."
+    "description": "Augmente la RÉS aux effets du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Lorsque le porteur est attaqué et n'a pas de bouclier, il obtient un bouclier équivalent à <orangeStrong>{{2, percent}}%</orangeStrong> de ses PV max pendant {{3}} tours. Cet effet ne peut être déclenché qu'1 fois tous les {{4}} tours. Si le porteur a déjà un bouclier lorsqu'il est attaqué, les DGT subis sont réduits de <orangeStrong>{{5, percent}}%</orangeStrong>."
   }
 }

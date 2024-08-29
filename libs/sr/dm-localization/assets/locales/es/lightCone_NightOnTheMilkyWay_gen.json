@@ -2,6 +2,6 @@
   "name": "Noche en la Vía Láctea",
   "passive": {
     "name": "Lluvia de meteoros",
-    "description": "Por cada enemigo que haya en el campo de batalla, el ATQ del portador aumenta en un <orangeStrong>{{2}}%</orangeStrong>. Este efecto se puede acumular hasta 5 veces. Si algún enemigo es afectado por Ruptura de Debilidad, el daño que inflige el portador aumenta en un <orangeStrong>{{1}}%</orangeStrong> durante 1 turno."
+    "description": "Por cada enemigo que haya en el campo de batalla, el ATQ del portador aumenta en un <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. Este efecto se puede acumular hasta 5 veces. Si algún enemigo es afectado por Ruptura de Debilidad, el daño que inflige el portador aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong> durante 1 turno."
   }
 }

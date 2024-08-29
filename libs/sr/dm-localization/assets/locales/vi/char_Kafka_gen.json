@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Náo Động Giữa Đêm",
-        "fullDesc": "Gây Sát Thương Lôi cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Kafka.",
+        "fullDesc": "Gây Sát Thương Lôi cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Kafka.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho 1 kẻ địch."
       }
     },
     "skill": {
       "0": {
         "name": "Ánh Trăng Ve Vuốt",
-        "fullDesc": "Gây Sát Thương Lôi cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Kafka, đồng thời gây cho mục tiêu lân cận của kẻ đó Sát Thương Lôi tương đương <orangeStrong>{{3}}%</orangeStrong> Tấn Công của Kafka.\\nNếu kẻ địch chỉ định đang ở trạng thái Sát Thương Duy Trì, thì tất cả Sát Thương Duy Trì mà kẻ đó đang chịu sẽ lập tức sinh ra sát thương tương đương <orangeStrong>{{2}}%</orangeStrong> sát thương ban đầu.",
+        "fullDesc": "Gây Sát Thương Lôi cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Kafka, đồng thời gây cho mục tiêu lân cận của kẻ đó Sát Thương Lôi tương đương <orangeStrong>{{3, percent}}%</orangeStrong> Tấn Công của Kafka.\\nNếu kẻ địch chỉ định đang ở trạng thái Sát Thương Duy Trì, thì tất cả Sát Thương Duy Trì mà kẻ đó đang chịu sẽ lập tức sinh ra sát thương tương đương <orangeStrong>{{2, percent}}%</orangeStrong> sát thương ban đầu.",
         "shortDesc": "Gây Sát Thương Lôi cho một kẻ địch và lượng nhỏ Sát Thương Lôi cho mục tiêu lân cận.\\nNếu mục tiêu chính đang trong Hiệu Ứng Xấu loại Sát Thương Duy Trì, sẽ khiến Hiệu Ứng Xấu loại Sát Thương Duy Trì này <orangeStrong>gây thêm 1 lần sát thương</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Âm Vọng Bi Kịch",
-        "fullDesc": "Gây Sát Thương Lôi cho toàn bộ kẻ địch tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Kafka, có {{2}}% <u>xác suất cơ bản</u> khiến kẻ địch bị tấn công rơi vào trạng thái Sốc Điện và khiến trạng thái Sốc Điện phải chịu hiện tại sinh ra sát thương tương đương <orangeStrong>{{5}}%</orangeStrong> sát thương ban đầu. Trạng thái Sốc Điện duy trì {{3}} hiệp.\\nTrong trạng thái này, kẻ địch mỗi khi bắt đầu hiệp sẽ chịu Sát Thương Lôi duy trì tương đương <orangeStrong>{{4}}%</orangeStrong> Tấn Công của Kafka.",
+        "fullDesc": "Gây Sát Thương Lôi cho toàn bộ kẻ địch tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Kafka, có {{2, percent}}% <u>xác suất cơ bản</u> khiến kẻ địch bị tấn công rơi vào trạng thái Sốc Điện và khiến trạng thái Sốc Điện phải chịu hiện tại sinh ra sát thương tương đương <orangeStrong>{{5, percent}}%</orangeStrong> sát thương ban đầu. Trạng thái Sốc Điện duy trì {{3}} hiệp.\\nTrong trạng thái này, kẻ địch mỗi khi bắt đầu hiệp sẽ chịu Sát Thương Lôi duy trì tương đương <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công của Kafka.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho toàn bộ kẻ địch, có xác suất lớn <orangeStrong>thi triển trạng thái Sốc Điện</orangeStrong>.\\nNếu kẻ địch ở trạng thái Sốc Điện, sẽ khiến trạng thái Sốc Điện <orangeStrong>gây thêm 1 lần sát thương</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Tha Thứ Không Có Nghĩa là Nhân Từ",
-        "fullDesc": "Tấn công ngay tất cả kẻ địch trong phạm vi nhất định, sau khi vào chiến đấu sẽ gây Sát Thương Lôi cho toàn bộ địch bằng {{3}}% Tấn Công của Kafka, đồng thời có {{1}}% <u>xác suất cơ bản</u> khiến mỗi 1 kẻ địch rơi vào trạng thái Sốc Điện giống với Tuyệt Kỹ, duy trì {{2}} hiệp.",
+        "fullDesc": "Tấn công ngay tất cả kẻ địch trong phạm vi nhất định, sau khi vào chiến đấu sẽ gây Sát Thương Lôi cho toàn bộ địch bằng {{3, percent}}% Tấn Công của Kafka, đồng thời có {{1, percent}}% <u>xác suất cơ bản</u> khiến mỗi 1 kẻ địch rơi vào trạng thái Sốc Điện giống với Tuyệt Kỹ, duy trì {{2}} hiệp.",
         "shortDesc": "Tấn công tất cả kẻ địch trong phạm vi, sau khi vào chiến đấu, sẽ gây lượng nhỏ Sát Thương Lôi cho toàn bộ địch, xác suất lớn <orangeStrong>thi triển trạng thái Sốc Điện</orangeStrong>."
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Gai Góc",
-        "fullDesc": "Tăng {{1}}% xác suất cơ bản khiến kẻ địch rơi vào Sốc Điện của Tuyệt Kỹ, Bí Kỹ và Đòn Đánh Theo Sau kích hoạt bởi Thiên Phú.",
+        "fullDesc": "Tăng {{1, percent}}% xác suất cơ bản khiến kẻ địch rơi vào Sốc Điện của Tuyệt Kỹ, Bí Kỹ và Đòn Đánh Theo Sau kích hoạt bởi Thiên Phú.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Vô Cùng Vô Tận!",
-      "desc": "Khi thiên phú kích hoạt Đòn Đánh Theo Sau sẽ có {{1}}% xác suất cơ bản khiến Sát Thương Duy Trì mà mục tiêu phải chịu tăng {{2}}%, duy trì {{3}} hiệp."
+      "desc": "Khi thiên phú kích hoạt Đòn Đánh Theo Sau sẽ có {{1, percent}}% xác suất cơ bản khiến Sát Thương Duy Trì mà mục tiêu phải chịu tăng {{2, percent}}%, duy trì {{3}} hiệp."
     },
     "2": {
       "name": "Kẻ Mơ Tưởng, Thổn Thức",
-      "desc": "Khi Kafka trong trận, Sát Thương Duy Trì toàn phe ta gây ra tăng {{1}}%."
+      "desc": "Khi Kafka trong trận, Sát Thương Duy Trì toàn phe ta gây ra tăng {{1, percent}}%."
     },
     "3": {
       "name": "Tôi Khen Ngợi, Cao Hứng",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Uyển Chuyển Nhẹ Nhàng",
-      "desc": "Bội Số Sát Thương của trạng thái Sốc Điện được gây ra bởi Tuyệt Kỹ, Bí Kỹ và Đòn Đánh Theo Sau được kích hoạt từ Thiên Phú tăng {{1}}%, và thời gian duy trì của Sốc Điện tăng {{2}} hiệp."
+      "desc": "Bội Số Sát Thương của trạng thái Sốc Điện được gây ra bởi Tuyệt Kỹ, Bí Kỹ và Đòn Đánh Theo Sau được kích hoạt từ Thiên Phú tăng {{1, percent}}%, và thời gian duy trì của Sốc Điện tăng {{2}} hiệp."
     }
   }
 }

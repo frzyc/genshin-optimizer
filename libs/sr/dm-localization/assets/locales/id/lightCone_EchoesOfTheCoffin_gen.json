@@ -2,6 +2,6 @@
   "name": "Echoes of the Coffin",
   "passive": {
     "name": "Thorns",
-    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> ATK pengguna. Setelah pengguna melancarkan serangan, untuk setiap 1 target musuh berbeda yang diserang oleh pengguna, akan memulihkan <orangeStrong>{{3}}</orangeStrong> Energy. Setiap serangan dapat memulihkan Energy hingga {{4}} kali dengan cara ini. Setelah pengguna melancarkan Ultimate, akan meningkatkan <orangeStrong>{{2}}</orangeStrong> SPD seluruh rekan tim selama 1 giliran."
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> ATK pengguna. Setelah pengguna melancarkan serangan, untuk setiap 1 target musuh berbeda yang diserang oleh pengguna, akan memulihkan <orangeStrong>{{3, fixed(fixed: 1)}}</orangeStrong> Energy. Setiap serangan dapat memulihkan Energy hingga {{4}} kali dengan cara ini. Setelah pengguna melancarkan Ultimate, akan meningkatkan <orangeStrong>{{2}}</orangeStrong> SPD seluruh rekan tim selama 1 giliran."
   }
 }

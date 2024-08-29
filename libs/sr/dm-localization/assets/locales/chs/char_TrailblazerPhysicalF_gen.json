@@ -4,38 +4,38 @@
     "basic": {
       "0": {
         "name": "再见安打",
-        "fullDesc": "对指定敌方单体造成等同于开拓者<orangeStrong>{{1}}%</orangeStrong>攻击力的物理属性伤害。",
+        "fullDesc": "对指定敌方单体造成等同于开拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害。",
         "shortDesc": "对敌方单体造成少量物理属性伤害。"
       }
     },
     "skill": {
       "0": {
         "name": "安息全垒打",
-        "fullDesc": "对指定敌方单体及其相邻目标造成等同于开拓者<orangeStrong>{{1}}%</orangeStrong>攻击力的物理属性伤害。",
+        "fullDesc": "对指定敌方单体及其相邻目标造成等同于开拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害。",
         "shortDesc": "对敌方单体以及相邻目标造成物理属性伤害。"
       }
     },
     "ult": {
       "0": {
         "name": "星尘王牌",
-        "fullDesc": "在两种攻击模式中选择其一挥出全力一击。\\n【全胜•再见安打】：对指定敌方单体造成等同于开拓者<orangeStrong>{{1}}%</orangeStrong>攻击力的物理属性伤害。\\n【全胜•安息全垒打】：对指定敌方单体造成等同于开拓者<orangeStrong>{{2}}%</orangeStrong>攻击力的物理属性伤害，并对其相邻目标造成等同于开拓者<orangeStrong>{{3}}%</orangeStrong>攻击力的物理属性伤害。",
+        "fullDesc": "在两种攻击模式中选择其一挥出全力一击。\\n【全胜•再见安打】：对指定敌方单体造成等同于开拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害。\\n【全胜•安息全垒打】：对指定敌方单体造成等同于开拓者<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的物理属性伤害，并对其相邻目标造成等同于开拓者<orangeStrong>{{3, percent}}%</orangeStrong>攻击力的物理属性伤害。",
         "shortDesc": "选择单攻或扩散的攻击方式，挥出全力一击。"
       },
       "1": {
         "name": "全胜•再见安打",
-        "fullDesc": "对指定敌方单体造成等同于开拓者<orangeStrong>{{1}}%</orangeStrong>攻击力的物理属性伤害。",
+        "fullDesc": "对指定敌方单体造成等同于开拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害。",
         "shortDesc": "对敌方单体造成大量物理属性伤害。"
       },
       "2": {
         "name": "全胜•安息全垒打",
-        "fullDesc": "对指定敌方单体造成等同于开拓者<orangeStrong>{{1}}%</orangeStrong>攻击力的物理属性伤害，同时对其相邻目标造成等同于开拓者<orangeStrong>{{2}}%</orangeStrong>攻击力的物理属性伤害。",
+        "fullDesc": "对指定敌方单体造成等同于开拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害，同时对其相邻目标造成等同于开拓者<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的物理属性伤害。",
         "shortDesc": "对敌方单体及其相邻目标造成物理属性伤害。"
       }
     },
     "technique": {
       "0": {
         "name": "不灭三振",
-        "fullDesc": "使用秘技后立即为我方全体回复等同于各自生命上限{{1}}%的生命值。",
+        "fullDesc": "使用秘技后立即为我方全体回复等同于各自生命上限{{1, percent}}%的生命值。",
         "shortDesc": ""
       }
     },
@@ -56,14 +56,14 @@
     "bonusAbility2": {
       "0": {
         "name": "坚韧",
-        "fullDesc": "天赋的效果每层同时使开拓者的防御力提高{{1}}%。",
+        "fullDesc": "天赋的效果每层同时使开拓者的防御力提高{{1, percent}}%。",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "斗志",
-        "fullDesc": "施放战技或终结技【全胜•安息全垒打】时，对指定敌方目标造成的伤害提高{{1}}%。",
+        "fullDesc": "施放战技或终结技【全胜•安息全垒打】时，对指定敌方目标造成的伤害提高{{1, percent}}%。",
         "shortDesc": ""
       }
     }
@@ -75,7 +75,7 @@
     },
     "2": {
       "name": "因缘假合的人身",
-      "desc": "施放攻击后，若击中的敌方目标弱点为物理属性，则回复等同于开拓者{{1}}%攻击力的生命值。"
+      "desc": "施放攻击后，若击中的敌方目标弱点为物理属性，则回复等同于开拓者{{1, percent}}%攻击力的生命值。"
     },
     "3": {
       "name": "揭示前路的言灵",
@@ -83,7 +83,7 @@
     },
     "4": {
       "name": "凝眸毁灭的瞬间",
-      "desc": "击中处于弱点击破状态的敌方目标时，暴击率提高{{1}}%。"
+      "desc": "击中处于弱点击破状态的敌方目标时，暴击率提高{{1, percent}}%。"
     },
     "5": {
       "name": "劫余重生的希望",

@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Cloudlancer Art: North Wind",
-        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Dan Heng's ATK to a single enemy.",
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Dan Heng's ATK to a single enemy.",
         "shortDesc": "Deals minor Wind DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Cloudlancer Art: Torrent",
-        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Dan Heng's ATK to a single enemy.\\nWhen DMG dealt by Skill triggers CRIT Hit, there is a {{4}}% <u>base chance</u> to reduce the target's SPD by {{2}}%, lasting for {{3}} turn(s).",
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Dan Heng's ATK to a single enemy.\\nWhen DMG dealt by Skill triggers CRIT Hit, there is a {{4, percent}}% <u>base chance</u> to reduce the target's SPD by {{2, percent}}%, lasting for {{3}} turn(s).",
         "shortDesc": "Deals Wind DMG to a single enemy. Upon a CRIT Hit, there is a high chance of Slowing the enemy."
       }
     },
     "ult": {
       "0": {
         "name": "Ethereal Dream",
-        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Dan Heng's ATK to a single target enemy. If the attacked enemy is Slowed, the multiplier for the DMG dealt by Ultimate increases by <orangeStrong>{{2}}%</orangeStrong>.",
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Dan Heng's ATK to a single target enemy. If the attacked enemy is Slowed, the multiplier for the DMG dealt by Ultimate increases by <orangeStrong>{{2, percent}}%</orangeStrong>.",
         "shortDesc": "Deals massive Wind DMG to a single enemy. If the enemy is Slowed, DMG multiplier dealt will be increased."
       }
     },
     "technique": {
       "0": {
         "name": "Splitting Spearhead",
-        "fullDesc": "After Dan Heng uses his Technique, his ATK increases by {{1}}% at the start of the next battle for {{2}} turn(s).",
+        "fullDesc": "After Dan Heng uses his Technique, his ATK increases by {{1, percent}}% at the start of the next battle for {{2}} turn(s).",
         "shortDesc": "After they use their Technique, their ATK is increased at the start of the next battle."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Hidden Dragon",
-        "fullDesc": "When current HP percentage is {{1}}% or lower, reduces the chance of being attacked by enemies.",
+        "fullDesc": "When current HP percentage is {{1, percent}}% or lower, reduces the chance of being attacked by enemies.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Faster Than Light",
-        "fullDesc": "After launching an attack, there is a {{1}}% fixed chance to increase own SPD by {{2}}% for {{3}} turn(s).",
+        "fullDesc": "After launching an attack, there is a {{1, percent}}% fixed chance to increase own SPD by {{2, percent}}% for {{3}} turn(s).",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "High Gale",
-        "fullDesc": "Basic ATK deals {{1}}% more DMG to Slowed enemies.",
+        "fullDesc": "Basic ATK deals {{1, percent}}% more DMG to Slowed enemies.",
         "shortDesc": ""
       }
     }
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "The Higher You Fly, the Harder You Fall",
-      "desc": "When the target enemy's current HP percentage is greater than or equal to {{1}}%, CRIT Rate increases by {{2}}%."
+      "desc": "When the target enemy's current HP percentage is greater than or equal to {{1, percent}}%, CRIT Rate increases by {{2, percent}}%."
     },
     "2": {
       "name": "Quell the Venom Octet, Quench the Vice O'Flame",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "The Troubled Soul Lies in Wait",
-      "desc": "The Slow state triggered by Skill reduces the enemy's SPD by an extra {{1}}%."
+      "desc": "The Slow state triggered by Skill reduces the enemy's SPD by an extra {{1, percent}}%."
     }
   }
 }

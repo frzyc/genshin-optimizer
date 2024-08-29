@@ -2,6 +2,6 @@
   "name": "따듯한 밤은 길지 않고",
   "passive": {
     "name": "작은 등불",
-    "description": "장착한 캐릭터의 HP 최대치가 <orangeStrong>{{1}}%</orangeStrong> 증가하고, 일반 공격 혹은 전투 스킬 발동 후 HP를 각자 HP 최대치 <orangeStrong>{{2}}%</orangeStrong> 만큼 회복시킨다"
+    "description": "장착한 캐릭터의 HP 최대치가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가하고, 일반 공격 혹은 전투 스킬 발동 후 HP를 각자 HP 최대치 <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> 만큼 회복시킨다"
   }
 }

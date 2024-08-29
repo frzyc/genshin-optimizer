@@ -2,6 +2,6 @@
   "name": "별바다 순항",
   "passive": {
     "name": "사냥감 추적",
-    "description": "장착한 캐릭터의 치명타 확률이 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터는 HP 백분율이 {{2}}% 이하인 적에게 가하는 치명타 확률이 추가로 <orangeStrong>{{3}}%</orangeStrong> 증가한다. 장착한 캐릭터는 적을 처치한 후 공격력이 <orangeStrong>{{4}}%</orangeStrong> 증가한다. 지속 시간: {{5}}턴"
+    "description": "장착한 캐릭터의 치명타 확률이 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 장착한 캐릭터는 HP 백분율이 {{2, percent}}% 이하인 적에게 가하는 치명타 확률이 추가로 <orangeStrong>{{3, percent}}%</orangeStrong> 증가한다. 장착한 캐릭터는 적을 처치한 후 공격력이 <orangeStrong>{{4, percent}}%</orangeStrong> 증가한다. 지속 시간: {{5}}턴"
   }
 }

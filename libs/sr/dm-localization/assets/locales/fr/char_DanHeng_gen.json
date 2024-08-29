@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Lance perce-nuages : Vent du nord",
-        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dan Heng à un ennemi unique.",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Dan Heng à un ennemi unique.",
         "shortDesc": "Inflige des DGT de vent mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Lance perce-nuages : Torrent",
-        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dan Heng à un ennemi unique.\\nSi les DGT infligés par la compétence résultent en un coup critique, il y a {{4}}% de <u>chances de base</u> de réduire la VIT de la cible de {{2}}% pendant {{3}} tours.",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Dan Heng à un ennemi unique.\\nSi les DGT infligés par la compétence résultent en un coup critique, il y a {{4, percent}}% de <u>chances de base</u> de réduire la VIT de la cible de {{2, percent}}% pendant {{3}} tours.",
         "shortDesc": "Inflige des DGT de vent à un ennemi unique. En cas de coup critique, il y a de fortes chances de ralentir l'ennemi."
       }
     },
     "ult": {
       "0": {
         "name": "Rêve éthéré",
-        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Dan Heng à un ennemi unique. Si l'ennemi est ralenti, le multiplicateur des DGT infligés par l'ultime augmente de <orangeStrong>{{2}}%</orangeStrong>.",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Dan Heng à un ennemi unique. Si l'ennemi est ralenti, le multiplicateur des DGT infligés par l'ultime augmente de <orangeStrong>{{2, percent}}%</orangeStrong>.",
         "shortDesc": "Inflige des DGT de vent massifs à un ennemi unique. Si l'ennemi est ralenti, le multiplicateur des dégâts infligés augmente."
       }
     },
     "technique": {
       "0": {
         "name": "Pointe affûtée",
-        "fullDesc": "Après utilisation de la technique de Dan Heng, son ATQ augmente de {{1}}% pendant {{2}} tours au début du combat suivant.",
+        "fullDesc": "Après utilisation de la technique de Dan Heng, son ATQ augmente de {{1, percent}}% pendant {{2}} tours au début du combat suivant.",
         "shortDesc": "Après utilisation de la technique, son ATQ augmente au début du combat suivant."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Dragon caché",
-        "fullDesc": "Réduit les chances du personnage d'être attaqué par des ennemis quand son pourcentage de PV est inférieur ou égal à {{1}}%.",
+        "fullDesc": "Réduit les chances du personnage d'être attaqué par des ennemis quand son pourcentage de PV est inférieur ou égal à {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Plus rapide que la lumière",
-        "fullDesc": "Le personnage a {{1}}% de chances fixes d'augmenter sa propre VIT de {{2}}% pendant {{3}} tours après avoir lancé une attaque.",
+        "fullDesc": "Le personnage a {{1, percent}}% de chances fixes d'augmenter sa propre VIT de {{2, percent}}% pendant {{3}} tours après avoir lancé une attaque.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Bourrasque",
-        "fullDesc": "L'ATQ normale inflige {{1}}% de DGT supplémentaires aux ennemis ralentis.",
+        "fullDesc": "L'ATQ normale inflige {{1, percent}}% de DGT supplémentaires aux ennemis ralentis.",
         "shortDesc": ""
       }
     }
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Plus dure sera la chute",
-      "desc": "Lorsque le pourcentage de PV actuel de la cible ennemie est supérieur ou égal à {{1}}%, les chances de coup critique augmentent de {{2}}%."
+      "desc": "Lorsque le pourcentage de PV actuel de la cible ennemie est supérieur ou égal à {{1, percent}}%, les chances de coup critique augmentent de {{2, percent}}%."
     },
     "2": {
       "name": "Faire taire le poison et étouffer les flammes",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "L'âme troublée attend",
-      "desc": "L'état Ralenti provoqué par la compétence de Dan Heng réduit la VIT de l'ennemi de {{1}}% supplémentaires."
+      "desc": "L'état Ralenti provoqué par la compétence de Dan Heng réduit la VIT de l'ennemi de {{1, percent}}% supplémentaires."
     }
   }
 }

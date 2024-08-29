@@ -1,6 +1,6 @@
 {
   "setName": "Salsotto inerte",
   "setEffects": {
-    "2": "Augmente les chances de coup critique du porteur de {{1}}%. Lorsque ses chances de coup critique actuelles atteignent au moins {{2}}%, les DGT infligés par son ultime et son attaque de suivi augmentent de {{3}}%."
+    "2": "Augmente les chances de coup critique du porteur de {{1, percent}}%. Lorsque ses chances de coup critique actuelles atteignent au moins {{2, percent}}%, les DGT infligés par son ultime et son attaque de suivi augmentent de {{3, percent}}%."
   }
 }

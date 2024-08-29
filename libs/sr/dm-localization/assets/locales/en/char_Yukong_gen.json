@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Arrowslinger",
-        "fullDesc": "Deals <orangeStrong>{{1}}%</orangeStrong> of Yukong's ATK as Imaginary DMG to a target enemy.",
+        "fullDesc": "Deals <orangeStrong>{{1, percent}}%</orangeStrong> of Yukong's ATK as Imaginary DMG to a target enemy.",
         "shortDesc": "Deals minor Imaginary DMG to an enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Emboldening Salvo",
-        "fullDesc": "Obtains {{1}} stack(s) of \"Roaring Bowstrings\" (to a maximum of 2 stacks). When \"Roaring Bowstrings\" is active, the ATK of all allies increases by <orangeStrong>{{2}}%</orangeStrong>, and every time an ally's turn (including Yukong's) ends, Yukong loses 1 stack of \"Roaring Bowstrings.\"\\nWhen it's the turn where Yukong gains \"Roaring Bowstrings\" by using Skill, \"Roaring Bowstrings\" will not be removed.",
+        "fullDesc": "Obtains {{1}} stack(s) of \"Roaring Bowstrings\" (to a maximum of 2 stacks). When \"Roaring Bowstrings\" is active, the ATK of all allies increases by <orangeStrong>{{2, percent}}%</orangeStrong>, and every time an ally's turn (including Yukong's) ends, Yukong loses 1 stack of \"Roaring Bowstrings.\"\\nWhen it's the turn where Yukong gains \"Roaring Bowstrings\" by using Skill, \"Roaring Bowstrings\" will not be removed.",
         "shortDesc": "Obtains 2 stacks of Roaring Bowstrings. All allies' <orangeStrong>ATK increases</orangeStrong> when Roaring Bowstrings is active on this character."
       }
     },
     "ult": {
       "0": {
         "name": "Diving Kestrel",
-        "fullDesc": "If \"Roaring Bowstrings\" is active on Yukong when her Ultimate is used, additionally increases all allies' CRIT Rate by <orangeStrong>{{2}}%</orangeStrong> and CRIT DMG by <orangeStrong>{{3}}%</orangeStrong>. At the same time, deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Yukong's ATK to a single enemy.",
+        "fullDesc": "If \"Roaring Bowstrings\" is active on Yukong when her Ultimate is used, additionally increases all allies' CRIT Rate by <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> and CRIT DMG by <orangeStrong>{{3, percent}}%</orangeStrong>. At the same time, deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Yukong's ATK to a single enemy.",
         "shortDesc": "When Roaring Bowstrings is active on this character, <orangeStrong>increases the CRIT Rate and CRIT DMG</orangeStrong> of all allies and deals massive Imaginary DMG to a single enemy."
       }
     },
     "technique": {
       "0": {
         "name": "Windchaser",
-        "fullDesc": "After using her Technique, Yukong enters Sprint mode for {{1}} seconds. In Sprint mode, her Movement SPD increases by {{2}}%, and Yukong gains {{3}} stack(s) of \"Roaring Bowstrings\" when she enters battle by attacking enemies.",
+        "fullDesc": "After using her Technique, Yukong enters Sprint mode for {{1}} seconds. In Sprint mode, her Movement SPD increases by {{2, percent}}%, and Yukong gains {{3}} stack(s) of \"Roaring Bowstrings\" when she enters battle by attacking enemies.",
         "shortDesc": "<orangeStrong>Increases Movement Speed</orangeStrong>. After attacking an enemy and entering battle, receive 2 stacks of Roaring Bowstrings."
       }
     },
@@ -46,7 +46,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Bowmaster",
-        "fullDesc": "When Yukong is on the field, Imaginary DMG dealt by all allies increases by {{1}}%.",
+        "fullDesc": "When Yukong is on the field, Imaginary DMG dealt by all allies increases by {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Aerial Marshal",
-      "desc": "At the start of battle, increases the SPD of all allies by {{1}}% for {{2}} turn(s)."
+      "desc": "At the start of battle, increases the SPD of all allies by {{1, percent}}% for {{2}} turn(s)."
     },
     "2": {
       "name": "Skyward Command",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Zephyrean Echoes",
-      "desc": "When \"Roaring Bowstrings\" is active, Yukong deals {{1}}% more DMG to enemies."
+      "desc": "When \"Roaring Bowstrings\" is active, Yukong deals {{1, percent}}% more DMG to enemies."
     },
     "5": {
       "name": "August Deadshot",

@@ -2,6 +2,6 @@
   "name": "거울 속 지난날의 나",
   "passive": {
     "name": "뼈에 사무치는 매화향",
-    "description": "장착한 캐릭터의 격파 특수효과가 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터는 필살기 발동 후 모든 아군이 가하는 피해를 {{3}}턴 동안 <orangeStrong>{{2}}%</orangeStrong> 증가시키며, 장착한 캐릭터의 격파 특수효과가 {{4}}% 이상일 경우 전투 스킬 포인트를 1pt 회복한다.\\n웨이브가 시작될 때마다 모든 아군은 즉시 에너지를 <orangeStrong>{{5}}</orangeStrong>pt 회복한다. 같은 유형의 스킬 효과는 중복 적용되지 않는다"
+    "description": "장착한 캐릭터의 격파 특수효과가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 장착한 캐릭터는 필살기 발동 후 모든 아군이 가하는 피해를 {{3}}턴 동안 <orangeStrong>{{2, percent}}%</orangeStrong> 증가시키며, 장착한 캐릭터의 격파 특수효과가 {{4, percent}}% 이상일 경우 전투 스킬 포인트를 1pt 회복한다.\\n웨이브가 시작될 때마다 모든 아군은 즉시 에너지를 <orangeStrong>{{5, fixed(fixed: 1)}}</orangeStrong>pt 회복한다. 같은 유형의 스킬 효과는 중복 적용되지 않는다"
   }
 }

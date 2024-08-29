@@ -2,6 +2,6 @@
   "name": "Night of Fright",
   "passive": {
     "name": "Deep, Deep Breaths",
-    "description": "Increases the wearer's Energy Regeneration Rate by <orangeStrong>{{1}}%</orangeStrong>. When any ally uses their Ultimate, the wearer restores HP for the ally currently with the lowest HP percentage by an amount equal to <orangeStrong>{{2}}%</orangeStrong> of the healed ally's Max HP. When the wearer provides healing for an ally, increases the healed ally's ATK by <orangeStrong>{{3}}%</orangeStrong>. This effect can stack up to {{4}} times and lasts for {{5}} turn(s)."
+    "description": "Increases the wearer's Energy Regeneration Rate by <orangeStrong>{{1, percent}}%</orangeStrong>. When any ally uses their Ultimate, the wearer restores HP for the ally currently with the lowest HP percentage by an amount equal to <orangeStrong>{{2, percent}}%</orangeStrong> of the healed ally's Max HP. When the wearer provides healing for an ally, increases the healed ally's ATK by <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>. This effect can stack up to {{4}} times and lasts for {{5}} turn(s)."
   }
 }

@@ -2,6 +2,6 @@
   "name": "심연의 고리",
   "passive": {
     "name": "추궁",
-    "description": "장착한 캐릭터가 감속 상태의 적에게 가하는 피해가 <orangeStrong>{{1}}%</orangeStrong> 증가한다"
+    "description": "장착한 캐릭터가 감속 상태의 적에게 가하는 피해가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다"
   }
 }

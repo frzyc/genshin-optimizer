@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Pinceau divin",
-        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Hanya à un ennemi unique.",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Hanya à un ennemi unique.",
         "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Emprisonnement d'âme",
-        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Hanya à un ennemi unique et lui applique Fardeau.\\nLes alliés récupèrent 1 point de compétence chaque fois qu'ils utilisent deux ATQ normales, compétences ou ultimes sur un ennemi affecté par Fardeau. Fardeau n'est actif que sur la dernière cible et se dissipe dès que l'effet de récupération de point de compétence est déclenché {{2}} fois.",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Hanya à un ennemi unique et lui applique Fardeau.\\nLes alliés récupèrent 1 point de compétence chaque fois qu'ils utilisent deux ATQ normales, compétences ou ultimes sur un ennemi affecté par Fardeau. Fardeau n'est actif que sur la dernière cible et se dissipe dès que l'effet de récupération de point de compétence est déclenché {{2}} fois.",
         "shortDesc": "Inflige des DGT physiques à un ennemi unique et lui applique Fardeau. Les alliés <orangeStrong>récupèrent 1 point de compétence</orangeStrong> chaque fois qu'ils utilisent deux ATQ normales, compétences ou ultimes sur un ennemi affecté par Fardeau."
       }
     },
     "ult": {
       "0": {
         "name": "Sentence universelle",
-        "fullDesc": "Augmente la VIT d'une cible alliée à hauteur de <orangeStrong>{{3}}%</orangeStrong> de la VIT de Hanya et son ATQ de <orangeStrong>{{1}}%</orangeStrong>, pour une durée de {{2}} tours.",
+        "fullDesc": "Augmente la VIT d'une cible alliée à hauteur de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de la VIT de Hanya et son ATQ de <orangeStrong>{{1, percent}}%</orangeStrong>, pour une durée de {{2}} tours.",
         "shortDesc": "Augmente <orangeStrong>la VIT et l'ATQ</orangeStrong> d'un allié."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Consignation",
-        "fullDesc": "L'ATQ des alliés qui déclenchent l'effet de récupération de point de compétence de Fardeau augmente de {{1}}% pendant {{2}} tour.",
+        "fullDesc": "L'ATQ des alliés qui déclenchent l'effet de récupération de point de compétence de Fardeau augmente de {{1, percent}}% pendant {{2}} tour.",
         "shortDesc": ""
       }
     },
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Une seule pensée",
-      "desc": "Lorsqu'un allié qui bénéficie de l'effet de l'ultime de Hanya élimine un ennemi, l'action de Hanya est avancée de {{1}}%. Cet effet ne peut être déclenché que {{2}} fois par tour."
+      "desc": "Lorsqu'un allié qui bénéficie de l'effet de l'ultime de Hanya élimine un ennemi, l'action de Hanya est avancée de {{1, percent}}%. Cet effet ne peut être déclenché que {{2}} fois par tour."
     },
     "2": {
       "name": "Deux vérités",
-      "desc": "La VIT du personnage augmente de {{1}}% pendant {{2}} tour après avoir utilisé sa compétence."
+      "desc": "La VIT du personnage augmente de {{1, percent}}% pendant {{2}} tour après avoir utilisé sa compétence."
     },
     "3": {
       "name": "Trois poussières",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Six destinées",
-      "desc": "Améliore l'effet d'augmentation de DGT du talent de {{1}}% supplémentaires."
+      "desc": "Améliore l'effet d'augmentation de DGT du talent de {{1, percent}}% supplémentaires."
     }
   }
 }

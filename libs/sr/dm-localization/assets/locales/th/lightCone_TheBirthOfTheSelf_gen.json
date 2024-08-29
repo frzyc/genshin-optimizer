@@ -2,6 +2,6 @@
   "name": "The Birth of the Self",
   "passive": {
     "name": "The Maiden in the Painting",
-    "description": "ทำให้การโจมตีต่อเนื่องของผู้สวมใส่สร้าง DMG เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> หากเปอร์เซ็นต์ HP ปัจจุบันของศัตรูเป้าหมายน้อยกว่าหรือเท่ากับ {{2}}% การโจมตีต่อเนื่องจะสร้าง DMG เพิ่มขึ้นอีก <orangeStrong>{{3}}%</orangeStrong>"
+    "description": "ทำให้การโจมตีต่อเนื่องของผู้สวมใส่สร้าง DMG เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> หากเปอร์เซ็นต์ HP ปัจจุบันของศัตรูเป้าหมายน้อยกว่าหรือเท่ากับ {{2, percent}}% การโจมตีต่อเนื่องจะสร้าง DMG เพิ่มขึ้นอีก <orangeStrong>{{3, percent}}%</orangeStrong>"
   }
 }

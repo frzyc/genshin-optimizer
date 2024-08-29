@@ -4,38 +4,38 @@
     "basic": {
       "0": {
         "name": "Coup d'adieu",
-        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi unique.",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi unique.",
         "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Home run final",
-        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi unique et aux ennemis adjacents.",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi unique et aux ennemis adjacents.",
         "shortDesc": "Inflige des DGT physiques à un ennemi unique et aux ennemis adjacents."
       }
     },
     "ult": {
       "0": {
         "name": "{M#Lançeur}{F#Lançeuse} de poussière d'étoile",
-        "fullDesc": "Vous choisissez entre deux modes d'attaque pour infliger un coup dévastateur.\\nFrappe écrasante : Coup d'adieu inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi unique.\\nFrappe écrasante : Home run final inflige des DGT physiques équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi unique, ainsi que des DGT physiques équivalents à <orangeStrong>{{3}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} aux ennemis adjacents.",
+        "fullDesc": "Vous choisissez entre deux modes d'attaque pour infliger un coup dévastateur.\\nFrappe écrasante : Coup d'adieu inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi unique.\\nFrappe écrasante : Home run final inflige des DGT physiques équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi unique, ainsi que des DGT physiques équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} aux ennemis adjacents.",
         "shortDesc": "Utilise une ATQ sur cible unique ou par propagation pour infliger un coup dévastateur."
       },
       "1": {
         "name": "Frappe écrasante : Coup d'adieu",
-        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi unique.",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi unique.",
         "shortDesc": "Inflige des DGT physiques massifs à un ennemi unique."
       },
       "2": {
         "name": "Frappe écrasante : Home run final",
-        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi unique et des DGT physiques équivalents à <orangeStrong>{{2}}%</orangeStrong> de son ATQ aux ennemis adjacents.",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi unique et des DGT physiques équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de son ATQ aux ennemis adjacents.",
         "shortDesc": "Inflige des DGT physiques à un ennemi unique et aux ennemis adjacents."
       }
     },
     "technique": {
       "0": {
         "name": "Troisième prise immortelle",
-        "fullDesc": "Soigne immédiatement tous les alliés à hauteur de {{1}}% de leurs PV max respectifs après utilisation de cette technique.",
+        "fullDesc": "Soigne immédiatement tous les alliés à hauteur de {{1, percent}}% de leurs PV max respectifs après utilisation de cette technique.",
         "shortDesc": ""
       }
     },
@@ -56,14 +56,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Ténacité",
-        "fullDesc": "Chaque cumul du talent augmente la DÉF {M#du pionnier}{F#de la pionnière} de {{1}}%.",
+        "fullDesc": "Chaque cumul du talent augmente la DÉF {M#du pionnier}{F#de la pionnière} de {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Soif d'en découdre",
-        "fullDesc": "Les DGT infligés à la cible principale augmentent de {{1}}% lorsque le personnage utilise sa compétence ou son ultime « Frappe écrasante : Home run final ».",
+        "fullDesc": "Les DGT infligés à la cible principale augmentent de {{1, percent}}% lorsque le personnage utilise sa compétence ou son ultime « Frappe écrasante : Home run final ».",
         "shortDesc": ""
       }
     }
@@ -75,7 +75,7 @@
     },
     "2": {
       "name": "À son corps défendant",
-      "desc": "Attaquer des ennemis ayant une Faiblesse physique restaure une quantité de PV équivalente à {{1}}% de l'ATQ {M#du pionnier à ce dernier}{F#de la pionnière à cette dernière}."
+      "desc": "Attaquer des ennemis ayant une Faiblesse physique restaure une quantité de PV équivalente à {{1, percent}}% de l'ATQ {M#du pionnier à ce dernier}{F#de la pionnière à cette dernière}."
     },
     "3": {
       "name": "Un chuchotement pour seul guide",
@@ -83,7 +83,7 @@
     },
     "4": {
       "name": "Regard destructeur",
-      "desc": "Les chances de coup critique du personnage augmentent de {{1}}% contre les ennemis victimes d'une Rupture de faiblesse."
+      "desc": "Les chances de coup critique du personnage augmentent de {{1, percent}}% contre les ennemis victimes d'une Rupture de faiblesse."
     },
     "5": {
       "name": "Un espoir de survie",

@@ -1,7 +1,7 @@
 {
   "setName": "Champion of Streetwise Boxing",
   "setEffects": {
-    "2": "Increases Physical DMG by {{1}}%.",
-    "4": "After the wearer attacks or is hit, their ATK increases by {{1}}% for the rest of the battle. This effect can stack up to {{2}} time(s)."
+    "2": "Increases Physical DMG by {{1, percent}}%.",
+    "4": "After the wearer attacks or is hit, their ATK increases by {{1, percent}}% for the rest of the battle. This effect can stack up to {{2}} time(s)."
   }
 }

@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Tiễn Khách",
-        "fullDesc": "Gây Sát Thương Lôi cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Tingyun.",
+        "fullDesc": "Gây Sát Thương Lôi cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Tingyun.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho 1 kẻ địch."
       }
     },
     "skill": {
       "0": {
         "name": "Âm Điệu Nhịp Nhàng",
-        "fullDesc": "Cung cấp \"Ban Phúc\" cho 1 đồng đội, khiến đồng đội đó tăng <orangeStrong>{{2}}%</orangeStrong> Tấn Công, tối đa không vượt quá <orangeStrong>{{4}}%</orangeStrong> Tấn Công hiện tại của Tingyun.\\nSau khi mục tiêu được \"Ban Phúc\" thực hiện tấn công sẽ gây thêm 1 lần <u>Sát Thương Lôi kèm theo</u> bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của bản thân mục tiêu đó.\\n\"Ban Phúc\" duy trì {{3}} hiệp và chỉ có hiệu lực với mục tiêu thi triển Chiến Kỹ mới nhất của Tingyun.",
+        "fullDesc": "Cung cấp \"Ban Phúc\" cho 1 đồng đội, khiến đồng đội đó tăng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công, tối đa không vượt quá <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công hiện tại của Tingyun.\\nSau khi mục tiêu được \"Ban Phúc\" thực hiện tấn công sẽ gây thêm 1 lần <u>Sát Thương Lôi kèm theo</u> bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của bản thân mục tiêu đó.\\n\"Ban Phúc\" duy trì {{3}} hiệp và chỉ có hiệu lực với mục tiêu thi triển Chiến Kỹ mới nhất của Tingyun.",
         "shortDesc": "<orangeStrong>Tăng tấn công</orangeStrong> của 1 đồng đội và nhận Ban Phúc. Khi tấn công trong trạng thái Ban Phúc sẽ gây thêm lượng nhỏ <orangeStrong>Sát Thương Lôi <u>Kèm Theo</u></orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Nghi Lễ Áng Mây Lành",
-        "fullDesc": "Hồi phục {{1}} Năng Lượng cho 1 đồng đội, đồng thời khiến sát thương mà mục tiêu gây ra tăng <orangeStrong>{{3}}%</orangeStrong>, duy trì {{2}} hiệp.",
+        "fullDesc": "Hồi phục {{1}} Năng Lượng cho 1 đồng đội, đồng thời khiến sát thương mà mục tiêu gây ra tăng <orangeStrong>{{3, percent}}%</orangeStrong>, duy trì {{2}} hiệp.",
         "shortDesc": "<orangeStrong>Hồi năng lượng</orangeStrong> cho 1 đồng đội và <orangeStrong>tăng sát thương đồng đội đó gây ra</orangeStrong>."
       }
     },
@@ -39,14 +39,14 @@
     "bonusAbility1": {
       "0": {
         "name": "Khoảng Trời Lưu Lại",
-        "fullDesc": "Khi thi triển Chiến Kỹ, Tốc Độ của Tingyun tăng {{1}}%, duy trì 1 hiệp.",
+        "fullDesc": "Khi thi triển Chiến Kỹ, Tốc Độ của Tingyun tăng {{1, percent}}%, duy trì 1 hiệp.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Ngăn Chặn Tai Ương",
-        "fullDesc": "Sát thương Tấn Công Thường gây ra tăng {{1}}%.",
+        "fullDesc": "Sát thương Tấn Công Thường gây ra tăng {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Gió Xuân Đắc Ý",
-      "desc": "Sau khi 1 đồng đội nhận được Ban Phúc thi triển Tuyệt Kỹ, Tốc Độ sẽ tăng {{1}}%, duy trì 1 hiệp."
+      "desc": "Sau khi 1 đồng đội nhận được Ban Phúc thi triển Tuyệt Kỹ, Tốc Độ sẽ tăng {{1, percent}}%, duy trì 1 hiệp."
     },
     "2": {
       "name": "Ân Huệ Quân Tử",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Linh Hoạt Vui Vẻ",
-      "desc": "Bội Số Sát Thương kèm theo từ Ban Phúc tăng {{1}}%."
+      "desc": "Bội Số Sát Thương kèm theo từ Ban Phúc tăng {{1, percent}}%."
     },
     "5": {
       "name": "Hồ Yêu Ma Mị",

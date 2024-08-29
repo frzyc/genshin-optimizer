@@ -2,6 +2,6 @@
   "name": "기억 속 모습",
   "passive": {
     "name": "오래된 사진",
-    "description": "장착한 캐릭터의 격파 특수효과가 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터가 공격 발동 후 추가로 에너지가 <orangeStrong>{{2}}</orangeStrong>pt 증가한다. 해당 효과는 단일 턴 내 중복 발동되지 않는다"
+    "description": "장착한 캐릭터의 격파 특수효과가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 장착한 캐릭터가 공격 발동 후 추가로 에너지가 <orangeStrong>{{2}}</orangeStrong>pt 증가한다. 해당 효과는 단일 턴 내 중복 발동되지 않는다"
   }
 }

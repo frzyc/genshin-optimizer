@@ -2,6 +2,6 @@
   "name": "Chỉ Cần Chờ Đợi",
   "passive": {
     "name": "Mạng Nhện",
-    "description": "Sát thương người trang bị gây ra tăng <orangeStrong>{{2}}%</orangeStrong>. Sau mỗi lần người trang bị thi triển tấn công, tốc độ tăng <orangeStrong>{{3}}%</orangeStrong>, tối đa cộng dồn {{4}} tầng.\\nKhi người trang bị đánh trúng kẻ địch, nếu kẻ địch này không ở trạng thái Xói Mòn sẽ có 100% xác suất cơ bản khiến kẻ đó rơi vào trạng thái Xói Mòn. Khi kẻ địch đã ở trạng thái này sẽ được xem là rơi vào Sốc Điện. Ở trạng thái Xói Mòn, kẻ địch mỗi khi bắt đầu hiệp sẽ chịu Sát Thương Lôi Duy Trì bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của người trang bị, duy trì {{5}} hiệp."
+    "description": "Sát thương người trang bị gây ra tăng <orangeStrong>{{2, percent}}%</orangeStrong>. Sau mỗi lần người trang bị thi triển tấn công, tốc độ tăng <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, tối đa cộng dồn {{4}} tầng.\\nKhi người trang bị đánh trúng kẻ địch, nếu kẻ địch này không ở trạng thái Xói Mòn sẽ có 100% xác suất cơ bản khiến kẻ đó rơi vào trạng thái Xói Mòn. Khi kẻ địch đã ở trạng thái này sẽ được xem là rơi vào Sốc Điện. Ở trạng thái Xói Mòn, kẻ địch mỗi khi bắt đầu hiệp sẽ chịu Sát Thương Lôi Duy Trì bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của người trang bị, duy trì {{5}} hiệp."
   }
 }

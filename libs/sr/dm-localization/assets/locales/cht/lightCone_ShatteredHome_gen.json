@@ -2,6 +2,6 @@
   "name": "樂圮",
   "passive": {
     "name": "誅討",
-    "description": "使裝備者對當下生命值百分比大於{{1}}%的敵方目標造成的傷害提高<orangeStrong>{{2}}%</orangeStrong>。"
+    "description": "使裝備者對當下生命值百分比大於{{1, percent}}%的敵方目標造成的傷害提高<orangeStrong>{{2, percent}}%</orangeStrong>。"
   }
 }

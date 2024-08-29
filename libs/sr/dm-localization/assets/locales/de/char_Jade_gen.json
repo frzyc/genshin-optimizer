@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Peitsche des Reichtums",
-        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Jades ANG zu und fügt angrenzenden Einheiten Quanten-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Jades ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Jades ANG zu und fügt angrenzenden Einheiten Quanten-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Jades ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Quanten-SCH zu und fügt angrenzenden Einheiten geringen Quanten-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Garantie der Annexion",
-        "fullDesc": "Lässt einen Verbündeten zum „Schuldeneintreiber“ werden und erhöht seine GES für {{4}} Rd. um {{1}} Pkt.\\nNachdem der Schuldeneintreiber angegriffen hat, fügt er allen getroffenen Gegnern 1-mal <u>zusätzlichen Quanten-SCH</u> in Höhe von <orangeStrong>{{3}}%</orangeStrong> von Jades ANG zu und verbraucht {{2}}% seiner max. LP. Wenn die aktuellen LP nicht ausreichen, werden sie auf 1 reduziert.\\nWenn Jade zur Schuldeneintreiberin wird, kann sie den Effekt der GES-Erhöhung nicht erhalten und ihre Angriffe verbrauchen keine LP.\\nWenn auf dem Feld der Schuldeneintreiber existiert, kann Jade ihre Fertigkeit nicht einsetzen. Zu Beginn jeder ihrer Runden wird die Dauer des Status Schuldeneintreiber um 1 verringert.",
+        "fullDesc": "Lässt einen Verbündeten zum „Schuldeneintreiber“ werden und erhöht seine GES für {{4}} Rd. um {{1}} Pkt.\\nNachdem der Schuldeneintreiber angegriffen hat, fügt er allen getroffenen Gegnern 1-mal <u>zusätzlichen Quanten-SCH</u> in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Jades ANG zu und verbraucht {{2, percent}}% seiner max. LP. Wenn die aktuellen LP nicht ausreichen, werden sie auf 1 reduziert.\\nWenn Jade zur Schuldeneintreiberin wird, kann sie den Effekt der GES-Erhöhung nicht erhalten und ihre Angriffe verbrauchen keine LP.\\nWenn auf dem Feld der Schuldeneintreiber existiert, kann Jade ihre Fertigkeit nicht einsetzen. Zu Beginn jeder ihrer Runden wird die Dauer des Status Schuldeneintreiber um 1 verringert.",
         "shortDesc": "Lässt einen Verbündeten zum <orangeStrong>Schuldeneintreiber</orangeStrong> werden und erhöht seine GES. Nachdem der <orangeStrong>Schuldeneintreiber</orangeStrong> angegriffen hat, verbraucht er seine eigenen LP und fügt allen getroffenen Gegnern geringen <u>zusätzlichen Quanten-SCH</u> zu. Wenn Jade zur Schuldeneintreiberin wird, kann sie den Effekt der GES-Erhöhung nicht erhalten und ihre Angriffe verbrauchen keine LP."
       }
     },
     "ult": {
       "0": {
         "name": "Vertrag im Abgrund",
-        "fullDesc": "Fügt allen Gegnern Quanten-SCH in Höhe von <orangeStrong>{{3}}%</orangeStrong> von Jades ANG zu. Verstärkt gleichzeitig den <u>Folgeangriff</u> von Jades Talent, indem sein SCH-Multiplikator um <orangeStrong>{{1}}%</orangeStrong> erhöht wird. Der Verstärkungseffekt kann {{2}}-mal wirksam werden.",
+        "fullDesc": "Fügt allen Gegnern Quanten-SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Jades ANG zu. Verstärkt gleichzeitig den <u>Folgeangriff</u> von Jades Talent, indem sein SCH-Multiplikator um <orangeStrong>{{1, percent}}%</orangeStrong> erhöht wird. Der Verstärkungseffekt kann {{2}}-mal wirksam werden.",
         "shortDesc": "Fügt allen Gegnern Quanten-SCH zu und erhält einen erhöhten SCH-Multiplikator für <orangeStrong><u>Folgeangriffe</u></orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Sichtfeld des Jägers",
-        "fullDesc": "Nach dem Einsatz der Technik werden Gegner in einem bestimmten Wirkungsbereich für {{1}} Sek. mit „Blindlings“ belegt. Gegner im Status Blindlings greifen Verbündete nicht aktiv an. Werden Gegner mit Blindlings aktiv angegriffen, treten alle Gegner mit diesem Status gleichzeitig in den Kampf ein. Fügt nach Kampfeintritt allen Gegnern Quanten-SCH in Höhe von {{2}}% von Jades ANG zu und Jade erhält sofort {{3}}-fach „Verpfändung“.",
+        "fullDesc": "Nach dem Einsatz der Technik werden Gegner in einem bestimmten Wirkungsbereich für {{1}} Sek. mit „Blindlings“ belegt. Gegner im Status Blindlings greifen Verbündete nicht aktiv an. Werden Gegner mit Blindlings aktiv angegriffen, treten alle Gegner mit diesem Status gleichzeitig in den Kampf ein. Fügt nach Kampfeintritt allen Gegnern Quanten-SCH in Höhe von {{2, percent}}% von Jades ANG zu und Jade erhält sofort {{3}}-fach „Verpfändung“.",
         "shortDesc": "Belegt Gegner in einem bestimmten Wirkungsbereich mit „Blindlings“. Beim Angriff auf Gegner mit Blindlings treten alle Gegner mit diesem Status gleichzeitig in den Kampf ein. Fügt nach Kampfeintritt allen Gegnern geringen Quanten-SCH zu und Jade erhält sofort <orangeStrong>{{3}}</orangeStrong>-fach „Verpfändung“."
       }
     },
@@ -46,14 +46,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Sicherheitsticket",
-        "fullDesc": "Beim Kampfbeginn wird Jades Aktion um {{1}}% vorgezogen.",
+        "fullDesc": "Beim Kampfbeginn wird Jades Aktion um {{1, percent}}% vorgezogen.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Vermögensverlust",
-        "fullDesc": "Jede Stapelung von „Verpfändung“ des Talents erhöht Jades ANG zusätzlich um {{1}}%.",
+        "fullDesc": "Jede Stapelung von „Verpfändung“ des Talents erhöht Jades ANG zusätzlich um {{1, percent(fixed: 1)}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Uneigennützigkeit? Auch handelbar",
-      "desc": "Erhöht den Folgeangriff-SCH von Jades Talent um {{1}}%. Wenn ein Verbündeter als „Schuldeneintreiber“ angreift und 2/1 Gegner trifft, erhält Jade zusätzlich {{2}}/{{3}} Pkt. Aufladung."
+      "desc": "Erhöht den Folgeangriff-SCH von Jades Talent um {{1, percent}}%. Wenn ein Verbündeter als „Schuldeneintreiber“ angreift und 2/1 Gegner trifft, erhält Jade zusätzlich {{2}}/{{3}} Pkt. Aufladung."
     },
     "2": {
       "name": "Moralität? Hiermit bescheinigt",
-      "desc": "Wenn „Verpfändung“ {{1}} Stapelungen erreicht, wird Jades KRIT-Rate um {{2}}% erhöht."
+      "desc": "Wenn „Verpfändung“ {{1}} Stapelungen erreicht, wird Jades KRIT-Rate um {{2, percent}}% erhöht."
     },
     "3": {
       "name": "Ehrlichkeit? Bald verpfändet",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Aufrichtigkeit? Nur mit Verkaufsoption",
-      "desc": "Beim Einsatz des Ultimates ignoriert der von Jade verursachte SCH für {{2}} Rd. {{1}}% der VTD der Gegner."
+      "desc": "Beim Einsatz des Ultimates ignoriert der von Jade verursachte SCH für {{2}} Rd. {{1, percent}}% der VTD der Gegner."
     },
     "5": {
       "name": "Hoffnung? Bereits ausverkauft",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Gerechtigkeit? Ausstehender Sponsor",
-      "desc": "Wenn sich ein Verbündeter als „Schuldeneintreiber“ auf dem Feld befindet, wird Jades Quanten-WDS-DUR um {{1}}% erhöht und sie tritt in den Status Schuldeneintreiber ein."
+      "desc": "Wenn sich ein Verbündeter als „Schuldeneintreiber“ auf dem Feld befindet, wird Jades Quanten-WDS-DUR um {{1, percent}}% erhöht und sie tritt in den Status Schuldeneintreiber ein."
     }
   }
 }

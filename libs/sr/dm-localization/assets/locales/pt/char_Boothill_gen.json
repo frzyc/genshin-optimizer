@@ -4,26 +4,26 @@
     "basic": {
       "0": {
         "name": "Esporas Esmaga-Crânio",
-        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Boothill a um único inimigo-alvo.",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Boothill a um único inimigo-alvo.",
         "shortDesc": "Causa Dano Físico leve a um único inimigo."
       },
       "1": {
         "name": "Martelada Sequencial",
-        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Boothill a um único inimigo-alvo.\\nO ATQ Básico Aprimorado não pode recuperar Pontos de Perícia e só pode focar no inimigo-alvo com Confronto.",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Boothill a um único inimigo-alvo.\\nO ATQ Básico Aprimorado não pode recuperar Pontos de Perícia e só pode focar no inimigo-alvo com Confronto.",
         "shortDesc": "Causa Dano Físico a um único inimigo. Só pode atacar o alvo em Confronto."
       }
     },
     "skill": {
       "0": {
         "name": "Tango Crepitante",
-        "fullDesc": "Força Boothill e um inimigo-alvo a entrar no estado de Confronto. O ATQ Básico de Boothill é Aprimorado, e ele não pode usar sua Perícia, com duração de {{3}} rodada(s). A duração diminui em 1 no início de cada rodada de Boothill.\\nO inimigo-alvo no Confronto fica Provocado. Quando esse inimigo-alvo ou Boothill é atacado pela outra parte no Confronto, o Dano que recebem aumenta em <orangeStrong>{{1}}%</orangeStrong>/{{2}}%.\\nApós esse alvo ser derrotado ou sofrer Quebra de Fraqueza, Boothill ganha 1 acúmulo de Truque de Bolso e então dissolve o Confronto.\\nEsta Perícia não regenera Energia. Após usar esta Perícia, a rodada atual não termina.",
+        "fullDesc": "Força Boothill e um inimigo-alvo a entrar no estado de Confronto. O ATQ Básico de Boothill é Aprimorado, e ele não pode usar sua Perícia, com duração de {{3}} rodada(s). A duração diminui em 1 no início de cada rodada de Boothill.\\nO inimigo-alvo no Confronto fica Provocado. Quando esse inimigo-alvo ou Boothill é atacado pela outra parte no Confronto, o Dano que recebem aumenta em <orangeStrong>{{1, percent}}%</orangeStrong>/{{2, percent}}%.\\nApós esse alvo ser derrotado ou sofrer Quebra de Fraqueza, Boothill ganha 1 acúmulo de Truque de Bolso e então dissolve o Confronto.\\nEsta Perícia não regenera Energia. Após usar esta Perícia, a rodada atual não termina.",
         "shortDesc": "Inicia <orangeStrong>Confronto</orangeStrong>. Depois que o alvo no Confronto for <orangeStrong>derrotado ou sofrer Quebra de Fraqueza</orangeStrong>, Boothill recebe Truque de Bolso e desfaz o Confronto. Boothill <orangeStrong>ganha ATQs Básicos Aprimorados</orangeStrong> e esta rodada não termina."
       }
     },
     "ult": {
       "0": {
         "name": "Rodeio Crepuscular do Demônio da Areia",
-        "fullDesc": "Aplica Fraqueza contra Físico a um inimigo-alvo, durando por {{3}} rodada(s).\\nCausa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Boothill ao alvo e <u>retarda suas ações</u> em <orangeStrong>{{2}}%</orangeStrong>.",
+        "fullDesc": "Aplica Fraqueza contra Físico a um inimigo-alvo, durando por {{3}} rodada(s).\\nCausa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Boothill ao alvo e <u>retarda suas ações</u> em <orangeStrong>{{2, percent}}%</orangeStrong>.",
         "shortDesc": "<orangeStrong>Aplica Fraqueza contra Físico</orangeStrong> a um único inimigo, causa uma quantidade massiva de Dano Físico e atrasa suas ações."
       }
     },
@@ -44,14 +44,14 @@
     "bonusAbility1": {
       "0": {
         "name": "Munição Fantasma",
-        "fullDesc": "Aumenta a Chance de CRIT / o Dano CRIT deste personagem em uma quantidade igual a {{1}}% / {{3}}% do Efeito de Quebra, com um aumento máximo de {{2}}% / {{4}}%.",
+        "fullDesc": "Aumenta a Chance de CRIT / o Dano CRIT deste personagem em uma quantidade igual a {{1, percent}}% / {{3, percent}}% do Efeito de Quebra, com um aumento máximo de {{2, percent}}% / {{4, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Sobre as Cobras",
-        "fullDesc": "Enquanto Boothill está em Confronto, diminui o Dano que ele recebe de alvos que não estejam em Confronto em {{1}}%.",
+        "fullDesc": "Enquanto Boothill está em Confronto, diminui o Dano que ele recebe de alvos que não estejam em Confronto em {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Estrela Solitária da Trilha Empoeirada",
-      "desc": "No início da batalha, obtém 1 acúmulo de Truque de Bolso. Quando Boothill causa Dano, ignora {{1}}% da DEF do inimigo-alvo."
+      "desc": "No início da batalha, obtém 1 acúmulo de Truque de Bolso. Quando Boothill causa Dano, ignora {{1, percent}}% da DEF do inimigo-alvo."
     },
     "2": {
       "name": "Revendedor de Conquistas",
-      "desc": "Quando em Confronto e obtendo Truque de Bolso, recupera {{1}} Ponto(s) de Perícia e aumenta o Efeito de Quebra em {{2}}%, com duração de {{3}} rodada(s). Este efeito também pode ser ativado ao obter acúmulos de Truque de Bolso que excedam o limite máximo. No entanto, não pode ser ativado repetidamente em uma única rodada."
+      "desc": "Quando em Confronto e obtendo Truque de Bolso, recupera {{1}} Ponto(s) de Perícia e aumenta o Efeito de Quebra em {{2, percent}}%, com duração de {{3}} rodada(s). Este efeito também pode ser ativado ao obter acúmulos de Truque de Bolso que excedam o limite máximo. No entanto, não pode ser ativado repetidamente em uma única rodada."
     },
     "3": {
       "name": "Guarda do Jardim de Mármore",
@@ -78,7 +78,7 @@
     },
     "4": {
       "name": "Chef de Carnes Frias",
-      "desc": "Quando o inimigo-alvo que estiver em Confronto for atacado por Boothill, o Dano recebido por ele aumenta em {{1}}%. Quando Boothill é atacado pelo inimigo-alvo em Confronto, o efeito de receber mais Dano é reduzido em {{2}}% nele."
+      "desc": "Quando o inimigo-alvo que estiver em Confronto for atacado por Boothill, o Dano recebido por ele aumenta em {{1, percent}}%. Quando Boothill é atacado pelo inimigo-alvo em Confronto, o efeito de receber mais Dano é reduzido em {{2, percent}}% nele."
     },
     "5": {
       "name": "Discurso do Tronco",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Guaxinim do Hotel Pé de Cabra",
-      "desc": "Ao ativar o Dano de Quebra do Talento, adicionalmente causa Dano de Quebra ao inimigo-alvo igual a {{1}}% do multiplicador de Dano original e causa Dano de Quebra a alvos adjacentes igual a {{2}}% do multiplicador de Dano original a alvos adjacentes."
+      "desc": "Ao ativar o Dano de Quebra do Talento, adicionalmente causa Dano de Quebra ao inimigo-alvo igual a {{1, percent}}% do multiplicador de Dano original e causa Dano de Quebra a alvos adjacentes igual a {{2, percent}}% do multiplicador de Dano original a alvos adjacentes."
     }
   }
 }

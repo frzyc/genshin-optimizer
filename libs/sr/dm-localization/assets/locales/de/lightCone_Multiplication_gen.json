@@ -2,6 +2,6 @@
   "name": "Aufschwung",
   "passive": {
     "name": "Wesen des Überflusses",
-    "description": "Nach dem Einsatz des Standardangriffs wird die nächste Aktion des Trägers um <orangeStrong>{{1}}%</orangeStrong> vorgezogen."
+    "description": "Nach dem Einsatz des Standardangriffs wird die nächste Aktion des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong> vorgezogen."
   }
 }

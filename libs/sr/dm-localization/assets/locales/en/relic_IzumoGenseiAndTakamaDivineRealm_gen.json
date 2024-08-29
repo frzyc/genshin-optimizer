@@ -1,6 +1,6 @@
 {
   "setName": "Izumo Gensei and Takama Divine Realm",
   "setEffects": {
-    "2": "Increases the wearer's ATK by {{1}}%. When entering battle, if at least one other ally follows the same Path as the wearer, then the wearer's CRIT Rate increases by {{2}}%."
+    "2": "Increases the wearer's ATK by {{1, percent}}%. When entering battle, if at least one other ally follows the same Path as the wearer, then the wearer's CRIT Rate increases by {{2, percent}}%."
   }
 }

@@ -2,6 +2,6 @@
   "name": "댄스! 댄스! 댄스!",
   "passive": {
     "name": "멈출 수 없어!",
-    "description": "장착한 캐릭터가 필살기 발동 후 모든 아군의 행동 게이지가 <orangeStrong>{{1}}%</orangeStrong> 증가한다"
+    "description": "장착한 캐릭터가 필살기 발동 후 모든 아군의 행동 게이지가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다"
   }
 }

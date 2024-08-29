@@ -4,38 +4,38 @@
     "basic": {
       "0": {
         "name": "再見安打",
-        "fullDesc": "對指定敵方單體造成等同於開拓者<orangeStrong>{{1}}%</orangeStrong>攻擊力的物理屬性傷害。",
+        "fullDesc": "對指定敵方單體造成等同於開拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害。",
         "shortDesc": "對敵方單體造成少量物理屬性傷害。"
       }
     },
     "skill": {
       "0": {
         "name": "安息全壘打",
-        "fullDesc": "對指定敵方單體及其相鄰目標造成等同於開拓者<orangeStrong>{{1}}%</orangeStrong>攻擊力的物理屬性傷害。",
+        "fullDesc": "對指定敵方單體及其相鄰目標造成等同於開拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害。",
         "shortDesc": "對敵方單體以及相鄰目標造成物理屬性傷害。"
       }
     },
     "ult": {
       "0": {
         "name": "星塵王牌",
-        "fullDesc": "在兩種攻擊模式中選擇其一揮出全力一擊。\\n【全勝•再見安打】：對指定敵方單體造成等同於開拓者<orangeStrong>{{1}}%</orangeStrong>攻擊力的物理屬性傷害。\\n【全勝•安息全壘打】：對指定敵方單體造成等同於開拓者<orangeStrong>{{2}}%</orangeStrong>攻擊力的物理屬性傷害，並對其相鄰目標造成等同於開拓者<orangeStrong>{{3}}%</orangeStrong>攻擊力的物理屬性傷害。",
+        "fullDesc": "在兩種攻擊模式中選擇其一揮出全力一擊。\\n【全勝•再見安打】：對指定敵方單體造成等同於開拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害。\\n【全勝•安息全壘打】：對指定敵方單體造成等同於開拓者<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的物理屬性傷害，並對其相鄰目標造成等同於開拓者<orangeStrong>{{3, percent}}%</orangeStrong>攻擊力的物理屬性傷害。",
         "shortDesc": "選擇單體或擴散的攻擊方式，揮出全力一擊。"
       },
       "1": {
         "name": "全勝•再見安打",
-        "fullDesc": "對指定敵方單體造成等同於開拓者<orangeStrong>{{1}}%</orangeStrong>攻擊力的物理屬性傷害。",
+        "fullDesc": "對指定敵方單體造成等同於開拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害。",
         "shortDesc": "對敵方單體造成大量物理屬性傷害。"
       },
       "2": {
         "name": "全勝•安息全壘打",
-        "fullDesc": "對指定敵方單體造成等同於開拓者<orangeStrong>{{1}}%</orangeStrong>攻擊力的物理屬性傷害，同時對其相鄰目標造成等同於開拓者<orangeStrong>{{2}}%</orangeStrong>攻擊力的物理屬性傷害。",
+        "fullDesc": "對指定敵方單體造成等同於開拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害，同時對其相鄰目標造成等同於開拓者<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的物理屬性傷害。",
         "shortDesc": "對敵方單體及其相鄰目標造成物理屬性傷害。"
       }
     },
     "technique": {
       "0": {
         "name": "不死三振",
-        "fullDesc": "使用秘技後立即為我方全體回復等同於各自生命上限{{1}}%的生命值。",
+        "fullDesc": "使用秘技後立即為我方全體回復等同於各自生命上限{{1, percent}}%的生命值。",
         "shortDesc": ""
       }
     },
@@ -56,14 +56,14 @@
     "bonusAbility2": {
       "0": {
         "name": "堅韌",
-        "fullDesc": "天賦的效果每層同時使開拓者的防禦力提高{{1}}%。",
+        "fullDesc": "天賦的效果每層同時使開拓者的防禦力提高{{1, percent}}%。",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "鬥志",
-        "fullDesc": "施放戰技或終結技【全勝•安息全壘打】時，對指定敵方目標造成的傷害提高{{1}}%。",
+        "fullDesc": "施放戰技或終結技【全勝•安息全壘打】時，對指定敵方目標造成的傷害提高{{1, percent}}%。",
         "shortDesc": ""
       }
     }
@@ -75,7 +75,7 @@
     },
     "2": {
       "name": "因緣假合的人身",
-      "desc": "發動攻擊後，若命中的敵方目標弱點為物理屬性，則回復等同於開拓者{{1}}%攻擊力的生命值。"
+      "desc": "發動攻擊後，若命中的敵方目標弱點為物理屬性，則回復等同於開拓者{{1, percent}}%攻擊力的生命值。"
     },
     "3": {
       "name": "揭示前路的言靈",
@@ -83,7 +83,7 @@
     },
     "4": {
       "name": "凝眸毀滅的瞬間",
-      "desc": "擊中處於弱點擊破狀態的敵方目標時，暴擊率提高{{1}}%。"
+      "desc": "擊中處於弱點擊破狀態的敵方目標時，暴擊率提高{{1, percent}}%。"
     },
     "5": {
       "name": "劫餘重生的希望",

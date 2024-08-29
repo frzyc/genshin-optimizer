@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Cloudfencer Art: Starshine",
-        "fullDesc": "สร้าง DMG กายภาพ <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Sushang แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "fullDesc": "สร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Sushang แก่ศัตรูที่กำหนดหนึ่งตัว",
         "shortDesc": "สร้าง DMG กายภาพเล็กน้อย แก่ฝ่ายศัตรูหนึ่งตัว"
       }
     },
     "skill": {
       "0": {
         "name": "Cloudfencer Art: Mountainfall",
-        "fullDesc": "สร้าง DMG กายภาพ <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Sushang แก่ศัตรูที่กำหนดหนึ่งตัว ขณะเดียวกัน หลังจากการโจมตีครั้งสุดท้าย จะมีโอกาส {{3}}% ที่จะปล่อย \"Sword Stance\" เพื่อสร้าง <u>DMG กายภาพเพิ่มเติม</u> <orangeStrong>{{2}}%</orangeStrong> ของ ATK ของ Sushang แก่เป้าหมาย\\nหากเป้าหมายนั้นติด<u>สถานะทำลายจุดอ่อน</u> \"Sword Stance\" จะถูกปล่อยอย่างแน่นอน",
+        "fullDesc": "สร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Sushang แก่ศัตรูที่กำหนดหนึ่งตัว ขณะเดียวกัน หลังจากการโจมตีครั้งสุดท้าย จะมีโอกาส {{3, percent}}% ที่จะปล่อย \"Sword Stance\" เพื่อสร้าง <u>DMG กายภาพเพิ่มเติม</u> <orangeStrong>{{2, percent}}%</orangeStrong> ของ ATK ของ Sushang แก่เป้าหมาย\\nหากเป้าหมายนั้นติด<u>สถานะทำลายจุดอ่อน</u> \"Sword Stance\" จะถูกปล่อยอย่างแน่นอน",
         "shortDesc": "สร้าง DMG กายภาพแก่ศัตรูหนึ่งตัว และ<orangeStrong>มีโอกาสเล็กน้อยที่จะปล่อย \"Sword Stance\"</orangeStrong> หากเป้าหมายติด <u>สถานะทำลายจุดอ่อน</u> <orangeStrong>\"Sword Stance\" จะถูกปล่อยอย่างแน่นอน</orangeStrong>"
       }
     },
     "ult": {
       "0": {
         "name": "Shape of Taixu: Dawn Herald",
-        "fullDesc": "สร้าง DMG กายภาพ <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Sushang แก่ศัตรูที่กำหนดหนึ่งตัว และทำให้ Sushang แอ็กชันทันที พร้อมทั้งทำให้ ATK เพิ่มขึ้น <orangeStrong>{{4}}%</orangeStrong> และเมื่อใช้สกิลต่อสู้ จะเพิ่มโอกาสเกิด \"Sword Stance\" อีก 2 ครั้ง เป็นเวลา {{2}} เทิร์น\\n\"Sword Stance\" ที่เกิดจากโอกาสเพิ่มเติมนี้ จะสร้าง DMG {{3}}% ของค่า DMG เดิม",
+        "fullDesc": "สร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Sushang แก่ศัตรูที่กำหนดหนึ่งตัว และทำให้ Sushang แอ็กชันทันที พร้อมทั้งทำให้ ATK เพิ่มขึ้น <orangeStrong>{{4, percent}}%</orangeStrong> และเมื่อใช้สกิลต่อสู้ จะเพิ่มโอกาสเกิด \"Sword Stance\" อีก 2 ครั้ง เป็นเวลา {{2}} เทิร์น\\n\"Sword Stance\" ที่เกิดจากโอกาสเพิ่มเติมนี้ จะสร้าง DMG {{3, percent}}% ของค่า DMG เดิม",
         "shortDesc": "สร้าง DMG กายภาพ อย่างรุนแรงแก่ฝ่ายศัตรูหนึ่งตัว พร้อมเสริมพลังเอฟเฟกต์ \"Sword Stance\" และ<orangeStrong>ทำการแอ็กชันทันที</orangeStrong>"
       }
     },
     "technique": {
       "0": {
         "name": "Cloudfencer Art: Warcry",
-        "fullDesc": "เมื่อโจมตีศัตรูทันทีและเข้าสู่การต่อสู้ จะสร้าง DMG กายภาพ {{1}}% ของ ATK ของ Sushang แก่ฝ่ายศัตรูทั้งหมด",
+        "fullDesc": "เมื่อโจมตีศัตรูทันทีและเข้าสู่การต่อสู้ จะสร้าง DMG กายภาพ {{1, percent}}% ของ ATK ของ Sushang แก่ฝ่ายศัตรูทั้งหมด",
         "shortDesc": "เมื่อโจมตีศัตรูและเข้าสู่การต่อสู้ จะสร้าง DMG กายภาพเล็กน้อยแก่ฝ่ายศัตรูทั้งหมด"
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Guileless",
-        "fullDesc": "หากเปอร์เซ็นต์ HP ปัจจุบันเท่ากับหรือน้อยกว่า {{1}}% โอกาสถูกศัตรูเป้าหมายโจมตีจะลดลง",
+        "fullDesc": "หากเปอร์เซ็นต์ HP ปัจจุบันเท่ากับหรือน้อยกว่า {{1, percent}}% โอกาสถูกศัตรูเป้าหมายโจมตีจะลดลง",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Riposte",
-        "fullDesc": "ทุกครั้งที่ใช้ \"Sword Stance\" 1 ครั้ง \"Sword Stance\" จะสร้าง DMG เพิ่มขึ้น {{1}}% เอฟเฟกต์นี้สามารถซ้อนทับได้สูงสุด {{2}} ชั้น",
+        "fullDesc": "ทุกครั้งที่ใช้ \"Sword Stance\" 1 ครั้ง \"Sword Stance\" จะสร้าง DMG เพิ่มขึ้น {{1, percent}}% เอฟเฟกต์นี้สามารถซ้อนทับได้สูงสุด {{2}} ชั้น",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Vanquisher",
-        "fullDesc": "หลังจากใช้การโจมตีปกติ หรือสกิลต่อสู้แล้ว หากในการต่อสู้มีศัตรูเป้าหมายที่ติดสถานะทำลายจุดอ่อน จะเร่งแอ็กชันของ Sushang ขึ้น {{1}}%",
+        "fullDesc": "หลังจากใช้การโจมตีปกติ หรือสกิลต่อสู้แล้ว หากในการต่อสู้มีศัตรูเป้าหมายที่ติดสถานะทำลายจุดอ่อน จะเร่งแอ็กชันของ Sushang ขึ้น {{1, percent}}%",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Refine in Toil",
-      "desc": "หลังจากใช้ \"Sword Stance\" Sushang จะได้รับ DMG ลดลง {{1}}% เป็นเวลา 1 เทิร์น"
+      "desc": "หลังจากใช้ \"Sword Stance\" Sushang จะได้รับ DMG ลดลง {{1, percent}}% เป็นเวลา 1 เทิร์น"
     },
     "3": {
       "name": "Rise From Fame",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Cleave With Heart",
-      "desc": "เอฟเฟกต์ทำลายล้างของ Sushang เพิ่มขึ้น {{1}}%"
+      "desc": "เอฟเฟกต์ทำลายล้างของ Sushang เพิ่มขึ้น {{1, percent}}%"
     },
     "5": {
       "name": "Prevail via Taixu",

@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Patada diagnóstica",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Bailu como Daño de Rayo a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Bailu como Daño de Rayo a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Cantando entre las nubes",
-        "fullDesc": "Cura a un aliado con una cantidad de PV equivalente al <orangeStrong>{{1}}%</orangeStrong> de los PV máx. de Bailu + <orangeStrong>{{2}}</orangeStrong>. Después, Bailu cura {{4}} veces a aliados al azar. Cada vez que cura, los PV que regenera la siguiente curación realizada se reducen en un {{3}}%.",
+        "fullDesc": "Cura a un aliado con una cantidad de PV equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Bailu + <orangeStrong>{{2}}</orangeStrong>. Después, Bailu cura {{4}} veces a aliados al azar. Cada vez que cura, los PV que regenera la siguiente curación realizada se reducen en un {{3, percent}}%.",
         "shortDesc": "Regenera PV a un aliado y después cura a aliados al azar."
       }
     },
     "ult": {
       "0": {
         "name": "Salto del dragón del marjal",
-        "fullDesc": "Cura a todos los aliados con una cantidad de PV equivalente al <orangeStrong>{{1}}%</orangeStrong> de los PV máx. de Bailu + <orangeStrong>{{2}}</orangeStrong>.\\nAplica Vigor a los aliados que no lo tienen y alarga el efecto en 1 turno a los que lo tienen.\\nVigor dura {{3}} turnos y no se puede acumular.",
+        "fullDesc": "Cura a todos los aliados con una cantidad de PV equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Bailu + <orangeStrong>{{2}}</orangeStrong>.\\nAplica Vigor a los aliados que no lo tienen y alarga el efecto en 1 turno a los que lo tienen.\\nVigor dura {{3}} turnos y no se puede acumular.",
         "shortDesc": "Regenera PV a todos los aliados y les aplica Vigor o extiende su duración."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Analectas de Qihuang",
-        "fullDesc": "Cuando Bailu cura a un aliado por encima de sus PV máx., los PV máx. del objetivo aumentan en un {{1}}% durante {{2}} turnos.",
+        "fullDesc": "Cuando Bailu cura a un aliado por encima de sus PV máx., los PV máx. del objetivo aumentan en un {{1, percent}}% durante {{2}} turnos.",
         "shortDesc": ""
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Bendición acuática",
-        "fullDesc": "El daño que reciben los personajes con Vigor se reduce en un {{1}}%.",
+        "fullDesc": "El daño que reciben los personajes con Vigor se reduce en un {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Tetera del dragón durmiente",
-      "desc": "Tras usar la habilidad definitiva, la curación realizada por Bailu aumenta en un {{1}}% durante {{2}} turnos."
+      "desc": "Tras usar la habilidad definitiva, la curación realizada por Bailu aumenta en un {{1, percent}}% durante {{2}} turnos."
     },
     "3": {
       "name": "Portento enigmático",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Amenaza exorcizada",
-      "desc": "Cada curación proporcionada por la habilidad básica de Bailu aumenta el daño que inflige el receptor de la curación en un {{1}}%. Se puede acumular hasta {{2}} veces y dura {{3}} turnos."
+      "desc": "Cada curación proporcionada por la habilidad básica de Bailu aumenta el daño que inflige el receptor de la curación en un {{1, percent}}%. Se puede acumular hasta {{2}} veces y dura {{3}} turnos."
     },
     "5": {
       "name": "Eliminación de preocupaciones terrenales",

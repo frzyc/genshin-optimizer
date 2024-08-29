@@ -1,6 +1,6 @@
 {
   "setName": "Forge de la lanterne Kalpagni",
   "setEffects": {
-    "2": "Augmente la VIT du porteur de {{1}}%. Lorsque le porteur touche une cible ennemie qui a une Faiblesse au feu, l'effet de Rupture du porteur augmente de {{2}}% pendant {{3}} tour."
+    "2": "Augmente la VIT du porteur de {{1, percent}}%. Lorsque le porteur touche une cible ennemie qui a une Faiblesse au feu, l'effet de Rupture du porteur augmente de {{2, percent}}% pendant {{3}} tour."
   }
 }

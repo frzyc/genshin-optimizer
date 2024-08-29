@@ -2,6 +2,6 @@
   "name": "Moment des Sieges",
   "passive": {
     "name": "Urteilsspruch",
-    "description": "Erhöht die VTD des Trägers um <orangeStrong>{{2}}%</orangeStrong> und die Effekt-Trefferrate um <orangeStrong>{{4}}%</orangeStrong>. Erhöht die Chance, dass der Träger von Gegnern angegriffen wird. Wird der Träger angegriffen, wird die VTD bis zum Ende seiner Runde zusätzlich um <orangeStrong>{{3}}%</orangeStrong> erhöht."
+    "description": "Erhöht die VTD des Trägers um <orangeStrong>{{2, percent}}%</orangeStrong> und die Effekt-Trefferrate um <orangeStrong>{{4, percent}}%</orangeStrong>. Erhöht die Chance, dass der Träger von Gegnern angegriffen wird. Wird der Träger angegriffen, wird die VTD bis zum Ende seiner Runde zusätzlich um <orangeStrong>{{3, percent}}%</orangeStrong> erhöht."
   }
 }

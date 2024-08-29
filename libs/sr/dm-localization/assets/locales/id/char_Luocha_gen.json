@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Thorns of the Abyss",
-        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Luocha pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Luocha pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Prayer of Abyss Flower",
-        "fullDesc": "Setelah melancarkan Skill, segera memulihkan HP 1 rekan yang ditarget sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Luocha + <orangeStrong>{{2}}</orangeStrong> dan membuat Luocha memperoleh 1 lapis \"Abyss Flower\".\\nSaat Persentase HP salah satu rekan tim saat ini kurang dari atau sama dengan {{3}}%, Luocha akan segera memicu sebuah efek yang sama dengan Skill ini pada rekan tersebut sebanyak 1 kali tanpa perlu mengonsumsi Poin Skill. Efek ini dapat dipicu lagi setelah {{4}} giliran.",
+        "fullDesc": "Setelah melancarkan Skill, segera memulihkan HP 1 rekan yang ditarget sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Luocha + <orangeStrong>{{2}}</orangeStrong> dan membuat Luocha memperoleh 1 lapis \"Abyss Flower\".\\nSaat Persentase HP salah satu rekan tim saat ini kurang dari atau sama dengan {{3, percent}}%, Luocha akan segera memicu sebuah efek yang sama dengan Skill ini pada rekan tersebut sebanyak 1 kali tanpa perlu mengonsumsi Poin Skill. Efek ini dapat dipicu lagi setelah {{4}} giliran.",
         "shortDesc": "<orangeStrong>Memulihkan</orangeStrong> HP 1 rekan tim dan memperoleh 1 lapis \"Abyss Flower\"."
       }
     },
     "ult": {
       "0": {
         "name": "Death Wish",
-        "fullDesc": "Menghapus masing-masing {{2}} <u>Buff</u> dari seluruh target musuh dan mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Luocha ke seluruh musuh, serta memberikan Luocha 1 lapis \"Abyss Flower\".",
+        "fullDesc": "Menghapus masing-masing {{2}} <u>Buff</u> dari seluruh target musuh dan mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Luocha ke seluruh musuh, serta memberikan Luocha 1 lapis \"Abyss Flower\".",
         "shortDesc": "<orangeStrong>Menghapus</orangeStrong> masing-masing 1 <orangeStrong><u>efek Buff</u></orangeStrong> dari seluruh musuh dan mengakibatkan Imaginary DMG pada seluruh musuh, serta memperoleh 1 lapis \"Abyss Flower\"."
       }
     },
@@ -46,14 +46,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Sanctified",
-        "fullDesc": "Setelah target musuh mana pun dalam area pembatas terkena serangan rekan tim, seluruh rekan tim (selain penyerang) akan memulihkan HP sebesar {{1}}% ATK Luocha +{{2}}.",
+        "fullDesc": "Setelah target musuh mana pun dalam area pembatas terkena serangan rekan tim, seluruh rekan tim (selain penyerang) akan memulihkan HP sebesar {{1, percent(fixed: 1)}}% ATK Luocha +{{2}}.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Through the Valley",
-        "fullDesc": "Meningkatkan {{1}}% peluang untuk menahan Crowd Control Debuff.",
+        "fullDesc": "Meningkatkan {{1, percent}}% peluang untuk menahan Crowd Control Debuff.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Ablution of the Quick",
-      "desc": "Meningkatkan {{1}}% ATK seluruh rekan tim saat area pembatas aktif."
+      "desc": "Meningkatkan {{1, percent}}% ATK seluruh rekan tim saat area pembatas aktif."
     },
     "2": {
       "name": "Bestowal From the Pure",
-      "desc": "Saat memicu efek Skill, jika persentase HP rekan tim yang ditargetkan kurang dari 50%, maka pemulihan yang diberikan Luocha akan meningkat {{1}}%. Jika persentase HP rekan tim yang ditargetkan lebih dari atau sama dengan 50%, maka Luocha akan memberikan Shield yang menahan DMG sebesar {{2}}% ATK Luocha +{{3}} selama {{4}} giliran."
+      "desc": "Saat memicu efek Skill, jika persentase HP rekan tim yang ditargetkan kurang dari 50%, maka pemulihan yang diberikan Luocha akan meningkat {{1, percent}}%. Jika persentase HP rekan tim yang ditargetkan lebih dari atau sama dengan 50%, maka Luocha akan memberikan Shield yang menahan DMG sebesar {{2, percent}}% ATK Luocha +{{3}} selama {{4}} giliran."
     },
     "3": {
       "name": "Surveyal by the Fool",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Heavy Lies the Crown",
-      "desc": "Membuat target musuh memasuki status Weaken saat area pembatas aktif, mengurangi {{1}}% DMG yang diakibatkannya."
+      "desc": "Membuat target musuh memasuki status Weaken saat area pembatas aktif, mengurangi {{1, percent}}% DMG yang diakibatkannya."
     },
     "5": {
       "name": "Cicatrix 'Neath the Pain",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Reunion With the Dust",
-      "desc": "Saat melancarkan Ultimate, ada {{1}}% peluang tetap untuk mengurangi {{2}}% RES seluruh tipe seluruh musuh selama {{3}} giliran."
+      "desc": "Saat melancarkan Ultimate, ada {{1, percent}}% peluang tetap untuk mengurangi {{2, percent}}% RES seluruh tipe seluruh musuh selama {{3}} giliran."
     }
   }
 }

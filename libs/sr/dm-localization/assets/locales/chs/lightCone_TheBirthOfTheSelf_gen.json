@@ -2,6 +2,6 @@
   "name": "「我」的诞生",
   "passive": {
     "name": "画像少女",
-    "description": "使装备者追加攻击造成的伤害提高<orangeStrong>{{1}}%</orangeStrong>。若该敌方目标当前生命值百分比小于等于{{2}}%，则追加攻击造成的伤害额外提高<orangeStrong>{{3}}%</orangeStrong>。"
+    "description": "使装备者追加攻击造成的伤害提高<orangeStrong>{{1, percent}}%</orangeStrong>。若该敌方目标当前生命值百分比小于等于{{2, percent}}%，则追加攻击造成的伤害额外提高<orangeStrong>{{3, percent}}%</orangeStrong>。"
   }
 }

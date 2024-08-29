@@ -2,6 +2,6 @@
   "name": "兩個人的演唱會",
   "passive": {
     "name": "鼓舞",
-    "description": "使裝備者的防禦力提高<orangeStrong>{{1}}%</orangeStrong>。場上每有一名持有護盾的角色，裝備者造成的傷害便提高<orangeStrong>{{2}}%</orangeStrong>。"
+    "description": "使裝備者的防禦力提高<orangeStrong>{{1, percent}}%</orangeStrong>。場上每有一名持有護盾的角色，裝備者造成的傷害便提高<orangeStrong>{{2, percent}}%</orangeStrong>。"
   }
 }

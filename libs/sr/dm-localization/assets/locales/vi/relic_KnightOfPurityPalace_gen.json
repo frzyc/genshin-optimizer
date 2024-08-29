@@ -1,7 +1,7 @@
 {
   "setName": "Thánh Kỵ Sĩ Giáo Hoàng Tịnh Đình",
   "setEffects": {
-    "2": "Tăng Phòng Thủ {{1}}%.",
-    "4": "Tăng {{1}}% Khiên mà người trang bị cung cấp."
+    "2": "Tăng Phòng Thủ {{1, percent}}%.",
+    "4": "Tăng {{1, percent}}% Khiên mà người trang bị cung cấp."
   }
 }

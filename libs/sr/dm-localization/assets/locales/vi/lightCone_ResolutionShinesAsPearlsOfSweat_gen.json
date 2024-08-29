@@ -2,6 +2,6 @@
   "name": "Sự Quyết Tâm Như Giọt Mồ Hôi Lấp Lánh",
   "passive": {
     "name": "Ngoái Đầu Nhìn",
-    "description": "Khi người trang bị đánh trúng mục tiêu địch, nếu mục tiêu này không ở trạng thái Đánh Hạ, sẽ có <orangeStrong>{{1}}%</orangeStrong> xác suất cơ bản khiến địch rơi vào trạng thái Đánh Hạ. Kẻ địch ở trạng thái Đánh Hạ sẽ giảm <orangeStrong>{{2}}%</orangeStrong> Phòng Thủ, duy trì {{3}} hiệp."
+    "description": "Khi người trang bị đánh trúng mục tiêu địch, nếu mục tiêu này không ở trạng thái Đánh Hạ, sẽ có <orangeStrong>{{1, percent}}%</orangeStrong> xác suất cơ bản khiến địch rơi vào trạng thái Đánh Hạ. Kẻ địch ở trạng thái Đánh Hạ sẽ giảm <orangeStrong>{{2, percent}}%</orangeStrong> Phòng Thủ, duy trì {{3}} hiệp."
   }
 }

@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "劈頭滿堂彩",
-        "fullDesc": "對指定敵方單體造成等同於桂乃芬<orangeStrong>{{1}}%</orangeStrong>攻擊力的火屬性傷害。",
+        "fullDesc": "對指定敵方單體造成等同於桂乃芬<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的火屬性傷害。",
         "shortDesc": "對敵方單體造成少量火屬性傷害。"
       }
     },
     "skill": {
       "0": {
         "name": "迎面開門紅",
-        "fullDesc": "對指定敵方單體造成等同於桂乃芬<orangeStrong>{{1}}%</orangeStrong>攻擊力的火屬性傷害，並對相鄰目標造成等同於桂乃芬<orangeStrong>{{2}}%</orangeStrong>攻擊力的火屬性傷害，有{{3}}%的<u>基礎機率</u>使目標與相鄰目標陷入灼燒狀態。灼燒狀態下，敵方目標每回合開始時受到等同於桂乃芬<orangeStrong>{{4}}%</orangeStrong>攻擊力的火屬性持續傷害，持續{{5}}回合。",
+        "fullDesc": "對指定敵方單體造成等同於桂乃芬<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的火屬性傷害，並對相鄰目標造成等同於桂乃芬<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的火屬性傷害，有{{3, percent}}%的<u>基礎機率</u>使目標與相鄰目標陷入灼燒狀態。灼燒狀態下，敵方目標每回合開始時受到等同於桂乃芬<orangeStrong>{{4, percent}}%</orangeStrong>攻擊力的火屬性持續傷害，持續{{5}}回合。",
         "shortDesc": "對敵方單體造成火屬性傷害，對相鄰目標造成少量火屬性傷害，有高機率施加<orangeStrong>灼燒狀態</orangeStrong>。"
       }
     },
     "ult": {
       "0": {
         "name": "給您來段看家戲",
-        "fullDesc": "對敵方全體造成等同於桂乃芬<orangeStrong>{{1}}%</orangeStrong>攻擊力的火屬性傷害，若目標處於灼燒狀態，使其當下承受的灼燒狀態立即產生相當於原傷害<orangeStrong>{{2}}%</orangeStrong>的傷害。",
+        "fullDesc": "對敵方全體造成等同於桂乃芬<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>攻擊力的火屬性傷害，若目標處於灼燒狀態，使其當下承受的灼燒狀態立即產生相當於原傷害<orangeStrong>{{2, percent}}%</orangeStrong>的傷害。",
         "shortDesc": "對敵方全體造成火屬性傷害，若敵方目標處於灼燒狀態，則使灼燒狀態額外產生1次傷害。"
       }
     },
     "technique": {
       "0": {
         "name": "耍耍把式賣賣藝",
-        "fullDesc": "立即攻擊敵人，進入戰鬥後造成{{2}}次傷害，每次傷害對敵方隨機單體造成等同於桂乃芬{{1}}%攻擊力的火屬性傷害並有{{3}}%的<u>基礎機率</u>使目標陷入【吞火】狀態。",
+        "fullDesc": "立即攻擊敵人，進入戰鬥後造成{{2}}次傷害，每次傷害對敵方隨機單體造成等同於桂乃芬{{1, percent}}%攻擊力的火屬性傷害並有{{3, percent}}%的<u>基礎機率</u>使目標陷入【吞火】狀態。",
         "shortDesc": "攻擊敵人，進入戰鬥後對敵方單體造成少量火屬性傷害並施加<orangeStrong>【吞火】狀態</orangeStrong>，共彈射4次。"
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "緣竿",
-        "fullDesc": "普通攻擊有{{1}}%的基礎機率使敵方目標陷入與戰技相同的灼燒狀態。",
+        "fullDesc": "普通攻擊有{{1, percent}}%的基礎機率使敵方目標陷入與戰技相同的灼燒狀態。",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "投狹",
-        "fullDesc": "戰鬥開始時，桂乃芬的行動提前{{1}}%。",
+        "fullDesc": "戰鬥開始時，桂乃芬的行動提前{{1, percent}}%。",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "逾鋒",
-        "fullDesc": "對陷入灼燒狀態的敵方目標造成的傷害提高{{1}}%。",
+        "fullDesc": "對陷入灼燒狀態的敵方目標造成的傷害提高{{1, percent}}%。",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "倒立吃麵條",
-      "desc": "施放戰技時，有{{1}}%的基礎機率使受到攻擊的敵方目標效果抗性降低{{2}}%，持續{{3}}回合。"
+      "desc": "施放戰技時，有{{1, percent}}%的基礎機率使受到攻擊的敵方目標效果抗性降低{{2, percent}}%，持續{{3}}回合。"
     },
     "2": {
       "name": "刷牙吹口哨",
-      "desc": "當敵方目標處於灼燒狀態時，桂乃芬的普通攻擊與戰技對其施加的灼燒狀態的傷害倍率提升{{1}}%。"
+      "desc": "當敵方目標處於灼燒狀態時，桂乃芬的普通攻擊與戰技對其施加的灼燒狀態的傷害倍率提升{{1, percent}}%。"
     },
     "3": {
       "name": "胸口碎大石",

@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Glistening Light",
-        "fullDesc": "สร้าง DMG สายฟ้า <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Jing Yuan แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "fullDesc": "สร้าง DMG สายฟ้า <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Jing Yuan แก่ศัตรูที่กำหนดหนึ่งตัว",
         "shortDesc": "สร้าง DMG สายฟ้าเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว"
       }
     },
     "skill": {
       "0": {
         "name": "Rifting Zenith",
-        "fullDesc": "สร้าง DMG สายฟ้า <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Jing Yuan แก่ศัตรูทั้งหมด พร้อมทั้งเพิ่มจำนวนการโจมตีในเทิร์นถัดไปของ \"Lightning-Lord\" {{2}} ครั้ง",
+        "fullDesc": "สร้าง DMG สายฟ้า <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Jing Yuan แก่ศัตรูทั้งหมด พร้อมทั้งเพิ่มจำนวนการโจมตีในเทิร์นถัดไปของ \"Lightning-Lord\" {{2}} ครั้ง",
         "shortDesc": "สร้าง DMG สายฟ้าเล็กน้อยแก่ฝ่ายศัตรูทั้งหมด และ<orangeStrong>เพิ่มจำนวนการโจมตีของ \"Lightning-Lord\"</orangeStrong>"
       }
     },
     "ult": {
       "0": {
         "name": "Lightbringer",
-        "fullDesc": "สร้าง DMG สายฟ้า <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของ Jing Yuan แก่ศัตรูทั้งหมด พร้อมทั้งเพิ่มจำนวนการโจมตีในเทิร์นถัดไปของ \"Lightning-Lord\" {{2}} ครั้ง",
+        "fullDesc": "สร้าง DMG สายฟ้า <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Jing Yuan แก่ศัตรูทั้งหมด พร้อมทั้งเพิ่มจำนวนการโจมตีในเทิร์นถัดไปของ \"Lightning-Lord\" {{2}} ครั้ง",
         "shortDesc": "สร้าง DMG สายฟ้าแก่ฝ่ายศัตรูทั้งหมด และ<orangeStrong>เพิ่มจำนวนการโจมตีของ \"Lightning-Lord\"</orangeStrong>"
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Battalia Crush",
-        "fullDesc": "หากจำนวนการโจมตีในเทิร์นถัดไปของ \"Lightning-Lord\" มากกว่าหรือเท่ากับ {{1}} ครั้ง DMG คริติคอลในเทิร์นถัดไปของ \"Lightning-Lord\" จะเพิ่มขึ้น {{2}}%",
+        "fullDesc": "หากจำนวนการโจมตีในเทิร์นถัดไปของ \"Lightning-Lord\" มากกว่าหรือเท่ากับ {{1}} ครั้ง DMG คริติคอลในเทิร์นถัดไปของ \"Lightning-Lord\" จะเพิ่มขึ้น {{2, percent}}%",
         "shortDesc": ""
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "War Marshal",
-        "fullDesc": "หลังจากปล่อยสกิลต่อสู้ อัตราคริติคอลจะเพิ่มขึ้น {{1}}% เป็นเวลา {{2}} เทิร์น",
+        "fullDesc": "หลังจากปล่อยสกิลต่อสู้ อัตราคริติคอลจะเพิ่มขึ้น {{1, percent}}% เป็นเวลา {{2}} เทิร์น",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Slash, Seas Split",
-      "desc": "เมื่อ \"Lightning-Lord\" ทำการโจมตี ตัวคูณ DMG ของเป้าหมาย ที่อยู่ใกล้เคียงกับศัตรูที่กำหนด จะเพิ่มขึ้นอีก {{1}}% ของตัวคูณ DMG ของศัตรูเป้าหมายหลัก"
+      "desc": "เมื่อ \"Lightning-Lord\" ทำการโจมตี ตัวคูณ DMG ของเป้าหมาย ที่อยู่ใกล้เคียงกับศัตรูที่กำหนด จะเพิ่มขึ้นอีก {{1, percent}}% ของตัวคูณ DMG ของศัตรูเป้าหมายหลัก"
     },
     "2": {
       "name": "Swing, Skies Squashed",
-      "desc": "หลังจาก \"Lightning-Lord\" แอ็กชัน การโจมตีปกติ, สกิลต่อสู้, และท่าไม้ตายของ Jing Yuan จะสร้าง DMG เพิ่มขึ้น {{1}}% เป็นเวลา {{2}} เทิร์น"
+      "desc": "หลังจาก \"Lightning-Lord\" แอ็กชัน การโจมตีปกติ, สกิลต่อสู้, และท่าไม้ตายของ Jing Yuan จะสร้าง DMG เพิ่มขึ้น {{1, percent}}% เป็นเวลา {{2}} เทิร์น"
     },
     "3": {
       "name": "Strike, Suns Subdued",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Sweep, Souls Slain",
-      "desc": "หลังจากการโจมตีแต่ละครั้งของ \"Lightning-Lord\" จะทำให้ศัตรูเป้าหมายที่กำหนด ติดสถานะเปราะบางเพิ่มเติม\\nศัตรูเป้าหมายที่ติดสถานะเปราะบาง จะได้รับ DMG เพิ่มขึ้น {{1}}% จนกว่าจะสิ้นสุดเทิร์นปัจจุบันของ \"Lightning-Lord\" โดยสามารถซ้อนทับได้สูงสุด {{2}} ชั้น"
+      "desc": "หลังจากการโจมตีแต่ละครั้งของ \"Lightning-Lord\" จะทำให้ศัตรูเป้าหมายที่กำหนด ติดสถานะเปราะบางเพิ่มเติม\\nศัตรูเป้าหมายที่ติดสถานะเปราะบาง จะได้รับ DMG เพิ่มขึ้น {{1, percent}}% จนกว่าจะสิ้นสุดเทิร์นปัจจุบันของ \"Lightning-Lord\" โดยสามารถซ้อนทับได้สูงสุด {{2}} ชั้น"
     }
   }
 }

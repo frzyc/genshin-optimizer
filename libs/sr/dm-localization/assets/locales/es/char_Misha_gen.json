@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "¡Disculpe, por favor!",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Misha como Daño de Hielo a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Misha como Daño de Hielo a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "¡Servicio de habitaciones!",
-        "fullDesc": "Aumenta en {{3}} los golpes por acción de la habilidad definitiva de Misha la siguiente vez que la utilice. Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Misha como Daño de Hielo a un enemigo y un <orangeStrong>{{2}}%</orangeStrong> del ATQ de Misha como Daño de Hielo a los enemigos adyacentes.",
+        "fullDesc": "Aumenta en {{3}} los golpes por acción de la habilidad definitiva de Misha la siguiente vez que la utilice. Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Misha como Daño de Hielo a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Misha como Daño de Hielo a los enemigos adyacentes.",
         "shortDesc": "Inflige Daño de Hielo a un enemigo y una pequeña cantidad de Daño de Hielo a los enemigos adyacentes. Aumenta los <orangeStrong>golpes por acción de la habilidad definitiva</orangeStrong> de Misha la siguiente vez que la utilice."
       }
     },
     "ult": {
       "0": {
         "name": "¡Voy a llegar tarde!",
-        "fullDesc": "Tiene {{1}} golpes por acción por defecto. Primero, Misha golpea a un enemigo con 1 golpe que inflige un <orangeStrong>{{2}}%</orangeStrong> del ATQ de Misha como Daño de Hielo. El resto de golpes alcanzan a enemigos al azar e infligen un <orangeStrong>{{2}}%</orangeStrong> del ATQ de Misha como Daño de Hielo. Antes de que cada golpe alcance a su objetivo, hay un <orangeStrong>{{3}}%</orangeStrong> de <u>probabilidad base</u> de afectar con Congelación al objetivo durante 1 turno.\\nLos enemigos congelados no pueden actuar, y al principio de cada turno reciben un <orangeStrong>{{4}}%</orangeStrong> del ATQ de Misha como Daño de Hielo <u>adicional</u>.\\nLa habilidad definitiva puede acumular {{5}} golpes por acción como máximo. Tras usar la habilidad definitiva, los golpes por acción se restablecen a su cantidad inicial.",
+        "fullDesc": "Tiene {{1}} golpes por acción por defecto. Primero, Misha golpea a un enemigo con 1 golpe que inflige un <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Misha como Daño de Hielo. El resto de golpes alcanzan a enemigos al azar e infligen un <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Misha como Daño de Hielo. Antes de que cada golpe alcance a su objetivo, hay un <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de <u>probabilidad base</u> de afectar con Congelación al objetivo durante 1 turno.\\nLos enemigos congelados no pueden actuar, y al principio de cada turno reciben un <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ de Misha como Daño de Hielo <u>adicional</u>.\\nLa habilidad definitiva puede acumular {{5}} golpes por acción como máximo. Tras usar la habilidad definitiva, los golpes por acción se restablecen a su cantidad inicial.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo. Por defecto, rebota <orangeStrong>{{1}}</orangeStrong> veces entre los enemigos y puede llegar hasta un máximo de <orangeStrong>{{5}}</orangeStrong> rebotes. Antes de que cada golpe alcance al objetivo, tiene una pequeña probabilidad de <orangeStrong>congelarlo</orangeStrong>."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Lanzamiento",
-        "fullDesc": "Antes de que el primer golpe de la habilidad definitiva alcance a su objetivo, la probabilidad base de congelarlo aumenta en un {{1}}%.",
+        "fullDesc": "Antes de que el primer golpe de la habilidad definitiva alcance a su objetivo, la probabilidad base de congelarlo aumenta en un {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Entrelazamiento",
-        "fullDesc": "Al usar la habilidad definitiva, el acierto de efecto aumenta en un {{1}}% hasta el final de la acción de esta habilidad definitiva.",
+        "fullDesc": "Al usar la habilidad definitiva, el acierto de efecto aumenta en un {{1, percent}}% hasta el final de la acción de esta habilidad definitiva.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Transmisión",
-        "fullDesc": "Cuando inflige daño a enemigos congelados, el Daño CRIT aumenta en un {{1}}%.",
+        "fullDesc": "Cuando inflige daño a enemigos congelados, el Daño CRIT aumenta en un {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Anhelo de juventud",
-      "desc": "Antes de que cada golpe de la habilidad definitiva alcance a su objetivo, hay un {{3}}% de probabilidad base de reducir su DEF en un {{1}}% durante {{2}} turnos."
+      "desc": "Antes de que cada golpe de la habilidad definitiva alcance a su objetivo, hay un {{3, percent}}% de probabilidad base de reducir su DEF en un {{1, percent}}% durante {{2}} turnos."
     },
     "3": {
       "name": "Vestigios de felicidad",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Apariencia familiar",
-      "desc": "Aumenta el multiplicador de daño de cada golpe de la habilidad definitiva en un {{1}}%."
+      "desc": "Aumenta el multiplicador de daño de cada golpe de la habilidad definitiva en un {{1, percent}}%."
     },
     "5": {
       "name": "Génesis del amor y la amistad",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Deseo del pasado",
-      "desc": "Al usar la habilidad definitiva, inflige un {{2}}% más de daño hasta que termine su turno. Además, la siguiente vez que use la habilidad básica, los aliados recuperan {{1}} pt. de habilidad básica."
+      "desc": "Al usar la habilidad definitiva, inflige un {{2, percent}}% más de daño hasta que termine su turno. Además, la siguiente vez que use la habilidad básica, los aliados recuperan {{1}} pt. de habilidad básica."
     }
   }
 }

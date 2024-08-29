@@ -2,6 +2,6 @@
   "name": "Múa! Múa! Múa!",
   "passive": {
     "name": "Không Dừng Lại Được!",
-    "description": "Sau khi người trang bị thi triển Tuyệt Kỹ, toàn phe ta sẽ ưu tiên hành động <orangeStrong>{{1}}%</orangeStrong>."
+    "description": "Sau khi người trang bị thi triển Tuyệt Kỹ, toàn phe ta sẽ ưu tiên hành động <orangeStrong>{{1, percent}}%</orangeStrong>."
   }
 }

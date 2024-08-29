@@ -1,6 +1,6 @@
 {
   "setName": "Duran, Dynasty of Running Wolves",
   "setEffects": {
-    "2": "Saat rekan tim melancarkan Serangan Lanjutan, pengguna akan memperoleh 1 lapis \"Merit\", yang dapat ditumpuk hingga {{1}} lapis. Setiap lapis \"Merit\" akan meningkatkan DMG yang diakibatkan Serangan Lanjutan pengguna sebesar {{2}}%. Saat mencapai {{1}} lapis, CRIT DMG pengguna akan meningkat sebesar {{3}}%."
+    "2": "Saat rekan tim melancarkan Serangan Lanjutan, pengguna akan memperoleh 1 lapis \"Merit\", yang dapat ditumpuk hingga {{1}} lapis. Setiap lapis \"Merit\" akan meningkatkan DMG yang diakibatkan Serangan Lanjutan pengguna sebesar {{2, percent}}%. Saat mencapai {{1}} lapis, CRIT DMG pengguna akan meningkat sebesar {{3, percent}}%."
   }
 }

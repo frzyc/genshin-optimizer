@@ -1,6 +1,6 @@
 {
   "setName": "Duran, dynastie des loups",
   "setEffects": {
-    "2": "Lorsqu'un allié utilise une attaque de suivi, le porteur gagne 1 cumul de Mérite, cumulable jusqu'à {{1}} fois. Chaque cumul de Mérite augmente les DGT infligés par les attaques de suivi du porteur de {{2}}%. À {{1}} cumuls, les DGT critiques du porteur augmentent de {{3}}%."
+    "2": "Lorsqu'un allié utilise une attaque de suivi, le porteur gagne 1 cumul de Mérite, cumulable jusqu'à {{1}} fois. Chaque cumul de Mérite augmente les DGT infligés par les attaques de suivi du porteur de {{2, percent}}%. À {{1}} cumuls, les DGT critiques du porteur augmentent de {{3, percent}}%."
   }
 }

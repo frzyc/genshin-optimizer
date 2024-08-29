@@ -2,6 +2,6 @@
   "name": "Today Is Another Peaceful Day",
   "passive": {
     "name": "A Storm Is Coming",
-    "description": "Setelah memasuki pertempuran, meningkatkan DMG pengguna berdasarkan Max Energy pengguna. Setiap 1 Energy meningkatkan <orangeStrong>{{1}}%</orangeStrong> DMG, maksimal {{2}} Energy."
+    "description": "Setelah memasuki pertempuran, meningkatkan DMG pengguna berdasarkan Max Energy pengguna. Setiap 1 Energy meningkatkan <orangeStrong>{{1, percent(fixed: 2)}}%</orangeStrong> DMG, maksimal {{2}} Energy."
   }
 }

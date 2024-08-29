@@ -4,12 +4,12 @@
     "basic": {
       "0": {
         "name": "Entkorkungsgebühr",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Gallaghers ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Gallaghers ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu."
       },
       "1": {
         "name": "Hopfenschwall",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Gallaghers ANG zu. Reduziert den ANG des Ziels für {{3}} Rd. um <orangeStrong>{{2}}%</orangeStrong>.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Gallaghers ANG zu. Reduziert den ANG des Ziels für {{3}} Rd. um <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>.",
         "shortDesc": "Fügt einem Gegner Feuer-SCH zu und reduziert seinen ANG."
       }
     },
@@ -23,14 +23,14 @@
     "ult": {
       "0": {
         "name": "Champagner-Zeremonie",
-        "fullDesc": "Belegt alle Gegner für {{2}} Rd. mit „Berauschung“ und fügt ihnen gleichzeitig Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Gallaghers ANG zu. Verstärkt den nächsten Standardangriff zu „Hopfenschwall“.",
+        "fullDesc": "Belegt alle Gegner für {{2}} Rd. mit „Berauschung“ und fügt ihnen gleichzeitig Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Gallaghers ANG zu. Verstärkt den nächsten Standardangriff zu „Hopfenschwall“.",
         "shortDesc": "Belegt alle Gegner mit <orangeStrong>Berauschung</orangeStrong> und fügt ihnen Feuer-SCH zu. Verstärkt den nächsten Standardangriff zu „Hopfenschwall“."
       }
     },
     "technique": {
       "0": {
         "name": "Edler Tropfen",
-        "fullDesc": "Greift sofort den Gegner an. Belegt nach Kampfeintritt alle Gegner für {{1}} Rd. mit „Berauschung“ und fügt ihnen Feuer-SCH in Höhe von {{2}}% von Gallaghers ANG zu.",
+        "fullDesc": "Greift sofort den Gegner an. Belegt nach Kampfeintritt alle Gegner für {{1}} Rd. mit „Berauschung“ und fügt ihnen Feuer-SCH in Höhe von {{2, percent}}% von Gallaghers ANG zu.",
         "shortDesc": "Greift den Gegner an. Belegt nach Kampfeintritt alle Gegner mit <orangeStrong>Berauschung</orangeStrong> und fügt ihnen geringen Feuer-SCH zu."
       }
     },
@@ -44,7 +44,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Brandneues Rezept",
-        "fullDesc": "Erhöht die von Gallagher bewirkte Heilung in Höhe von {{1}}% des Brucheffekts. Die bewirkte Heilung kann durch diesen Effekt um bis zu {{2}}% erhöht werden.",
+        "fullDesc": "Erhöht die von Gallagher bewirkte Heilung in Höhe von {{1, percent}}% des Brucheffekts. Die bewirkte Heilung kann durch diesen Effekt um bis zu {{2, percent}}% erhöht werden.",
         "shortDesc": ""
       }
     },
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Salty Dog",
-      "desc": "Stellt {{1}} Pkt. Energie wieder her, nachdem Gallagher in den Kampf eintritt, und erhöht seinen Effekt-WDS um {{2}}%."
+      "desc": "Stellt {{1}} Pkt. Energie wieder her, nachdem Gallagher in den Kampf eintritt, und erhöht seinen Effekt-WDS um {{2, percent}}%."
     },
     "2": {
       "name": "Löwenschwanz",
-      "desc": "Entfernt beim Einsatz der Fertigkeit {{1}} Debuff von einem anvisierten Verbündeten. Erhöht gleichzeitig seinen Effekt-WDS für {{3}} Rd. um {{2}}%."
+      "desc": "Entfernt beim Einsatz der Fertigkeit {{1}} Debuff von einem anvisierten Verbündeten. Erhöht gleichzeitig seinen Effekt-WDS für {{3}} Rd. um {{2, percent}}%."
     },
     "3": {
       "name": "Wiederbelebung der Toten",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Blut und Sand",
-      "desc": "Erhöht Gallaghers Brucheffekt um {{1}}% und die Schwächebruch-Effizienz um {{2}}%."
+      "desc": "Erhöht Gallaghers Brucheffekt um {{1, percent}}% und die Schwächebruch-Effizienz um {{2, percent}}%."
     }
   }
 }

@@ -4,26 +4,26 @@
     "basic": {
       "0": {
         "name": "Bonne pioche",
-        "fullDesc": "Lance une tuile de jade de la série dont Qingque a le moins de tuiles en main pour infliger des DGT quantiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Qingque à un ennemi unique.",
+        "fullDesc": "Lance une tuile de jade de la série dont Qingque a le moins de tuiles en main pour infliger des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Qingque à un ennemi unique.",
         "shortDesc": "Lance une tuile pour infliger des DGT quantiques mineurs à un ennemi unique."
       },
       "1": {
         "name": "C'est la tuile !",
-        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Qingque à un ennemi unique et des DGT quantiques équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de Qingque aux ennemis adjacents.\\n« C'est la tuile ! » ne permet pas de récupérer de points de compétence.",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Qingque à un ennemi unique et des DGT quantiques équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Qingque aux ennemis adjacents.\\n« C'est la tuile ! » ne permet pas de récupérer de points de compétence.",
         "shortDesc": "Inflige des DGT quantiques à un ennemi unique et des DGT quantiques mineurs aux ennemis adjacents."
       }
     },
     "skill": {
       "0": {
         "name": "Coup de pouce",
-        "fullDesc": "Pioche immédiatement {{1}} tuiles de jade et augmente les DGT de <orangeStrong>{{2}}%</orangeStrong> jusqu'à la fin du tour en cours. Cet effet peut être cumulé jusqu'à {{3}} fois. Le tour ne prend pas fin après l'utilisation de cette compétence.",
+        "fullDesc": "Pioche immédiatement {{1}} tuiles de jade et augmente les DGT de <orangeStrong>{{2, percent}}%</orangeStrong> jusqu'à la fin du tour en cours. Cet effet peut être cumulé jusqu'à {{3}} fois. Le tour ne prend pas fin après l'utilisation de cette compétence.",
         "shortDesc": "<orangeStrong>Pioche des tuiles</orangeStrong> et augmente les DGT infligés. <orangeStrong>Ce tour ne se termine pas</orangeStrong> après cette action."
       }
     },
     "ult": {
       "0": {
         "name": "Quatre pungs en main ? Tout va bien !",
-        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Qingque à tous les ennemis et accorde 4 tuiles de jade de la même série.",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Qingque à tous les ennemis et accorde 4 tuiles de jade de la même série.",
         "shortDesc": "Inflige des DGT quantiques à tous les ennemis et accorde 4 tuiles de jade de la même série."
       }
     },
@@ -51,14 +51,14 @@
     "bonusAbility2": {
       "0": {
         "name": "En attente d'une combinaison",
-        "fullDesc": "Utiliser la compétence accroît l'effet d'augmentation de DGT des attaques de {{1}}% supplémentaires.",
+        "fullDesc": "Utiliser la compétence accroît l'effet d'augmentation de DGT des attaques de {{1, percent}}% supplémentaires.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Main gagnante",
-        "fullDesc": "La VIT de Qingque augmente de {{1}}% pendant 1 tour après avoir utilisé l'ATQ normale renforcée.",
+        "fullDesc": "La VIT de Qingque augmente de {{1, percent}}% pendant 1 tour après avoir utilisé l'ATQ normale renforcée.",
         "shortDesc": ""
       }
     }
@@ -66,7 +66,7 @@
   "ranks": {
     "1": {
       "name": "Avènement des tuiles",
-      "desc": "Les DGT infligés par l'ultime augmentent de {{1}}%."
+      "desc": "Les DGT infligés par l'ultime augmentent de {{1, percent}}%."
     },
     "2": {
       "name": "Repos sur l'échiquier",
@@ -78,7 +78,7 @@
     },
     "4": {
       "name": "Mets de la tuile",
-      "desc": "Après avoir utilisé la compétence, il y a {{1}}% de chances fixes d'obtenir Autonome, qui dure jusqu'à la fin du tour en cours.\\nLorsque l'état Autonome est actif, utiliser l'ATQ normale ou l'ATQ normale renforcée lance immédiatement 1 attaque de suivi sur le ou les mêmes cibles, infligeant des DGT quantiques équivalents à 100 % des DGT d'ATQ normale (ou d'ATQ normale renforcée)."
+      "desc": "Après avoir utilisé la compétence, il y a {{1, percent}}% de chances fixes d'obtenir Autonome, qui dure jusqu'à la fin du tour en cours.\\nLorsque l'état Autonome est actif, utiliser l'ATQ normale ou l'ATQ normale renforcée lance immédiatement 1 attaque de suivi sur le ou les mêmes cibles, infligeant des DGT quantiques équivalents à 100 % des DGT d'ATQ normale (ou d'ATQ normale renforcée)."
     },
     "5": {
       "name": "Tuiles piochées, la chance a tourné",

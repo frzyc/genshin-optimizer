@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Dislodged",
-        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Tingyun pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Tingyun pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Soothing Melody",
-        "fullDesc": "Memberikan \"Benediction\" pada 1 rekan tim dan meningkatkan <orangeStrong>{{2}}%</orangeStrong> ATK-nya. Nilai peningkatan ATK tidak dapat melebihi <orangeStrong>{{4}}%</orangeStrong> ATK Tingyun saat ini.\\nSetelah rekan yang mendapatkan \"Benediction\" melancarkan serangan, rekan tersebut akan mengakibatkan 1 kali Lightning <u>DMG tambahan</u> sebesar <orangeStrong>{{1}}%</orangeStrong> ATK-nya.\\n\"Benediction\" berlangsung selama {{3}} giliran dan hanya efektif pada target skill terbaru Tingyun.",
+        "fullDesc": "Memberikan \"Benediction\" pada 1 rekan tim dan meningkatkan <orangeStrong>{{2, percent}}%</orangeStrong> ATK-nya. Nilai peningkatan ATK tidak dapat melebihi <orangeStrong>{{4, percent}}%</orangeStrong> ATK Tingyun saat ini.\\nSetelah rekan yang mendapatkan \"Benediction\" melancarkan serangan, rekan tersebut akan mengakibatkan 1 kali Lightning <u>DMG tambahan</u> sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK-nya.\\n\"Benediction\" berlangsung selama {{3}} giliran dan hanya efektif pada target skill terbaru Tingyun.",
         "shortDesc": "<orangeStrong>Meningkatkan ATK</orangeStrong> 1 rekan tim dan memberinya \"Benediction\". Saat rekan berstatus \"Benediction\" melancarkan serangan, akan mengakibatkan <orangeStrong>Lightning <u>DMG tambahan</u></orangeStrong> dalam jumlah kecil."
       }
     },
     "ult": {
       "0": {
         "name": "Amidst the Rejoicing Clouds",
-        "fullDesc": "Memulihkan {{1}} Energy 1 rekan tim yang ditargetkan dan di saat bersamaan meningkatkan <orangeStrong>{{3}}%</orangeStrong> DMG rekan tersebut selama {{2}} giliran.",
+        "fullDesc": "Memulihkan {{1}} Energy 1 rekan tim yang ditargetkan dan di saat bersamaan meningkatkan <orangeStrong>{{3, percent}}%</orangeStrong> DMG rekan tersebut selama {{2}} giliran.",
         "shortDesc": "<orangeStrong>Memulihkan Energy</orangeStrong> 1 rekan tim dan <orangeStrong>meningkatkan DMG yang diakibatkan</orangeStrong> rekan tersebut."
       }
     },
@@ -39,14 +39,14 @@
     "bonusAbility1": {
       "0": {
         "name": "Nourished Joviality",
-        "fullDesc": "Saat melancarkan Skill, meningkatkan {{1}}% SPD Tingyun selama 1 giliran.",
+        "fullDesc": "Saat melancarkan Skill, meningkatkan {{1, percent}}% SPD Tingyun selama 1 giliran.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Knell Subdual",
-        "fullDesc": "Meningkatkan {{1}}% DMG yang diakibatkan Basic Attack.",
+        "fullDesc": "Meningkatkan {{1, percent}}% DMG yang diakibatkan Basic Attack.",
         "shortDesc": ""
       }
     },
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Windfall of Lucky Springs",
-      "desc": "Setelah rekan yang mendapatkan \"Benediction\" melancarkan Ultimate, SPD rekan tersebut akan meningkat {{1}}% selama 1 giliran."
+      "desc": "Setelah rekan yang mendapatkan \"Benediction\" melancarkan Ultimate, SPD rekan tersebut akan meningkat {{1, percent}}% selama 1 giliran."
     },
     "2": {
       "name": "Gainfully Gives, Givingly Gains",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Jovial Versatility",
-      "desc": "Meningkatkan {{1}}% DMG Multiplier dari \"Benediction\"."
+      "desc": "Meningkatkan {{1, percent}}% DMG Multiplier dari \"Benediction\"."
     },
     "5": {
       "name": "Sauntering Coquette",

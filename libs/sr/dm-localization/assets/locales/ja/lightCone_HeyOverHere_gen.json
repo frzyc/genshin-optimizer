@@ -2,6 +2,6 @@
   "name": "よぉ、ここにいるぜ",
   "passive": {
     "name": "{RUBY_B#こわ}怖{RUBY_E#}くない…{RUBY_B#こわ}怖{RUBY_E#}くない！",
-    "description": "装備キャラの最大HP+<orangeStrong>{{1}}%</orangeStrong>。装備キャラが戦闘スキルを発動した時、治癒量+<orangeStrong>{{2}}%</orangeStrong>、{{3}}ターン継続。"
+    "description": "装備キャラの最大HP+<orangeStrong>{{1, percent}}%</orangeStrong>。装備キャラが戦闘スキルを発動した時、治癒量+<orangeStrong>{{2, percent}}%</orangeStrong>、{{3}}ターン継続。"
   }
 }

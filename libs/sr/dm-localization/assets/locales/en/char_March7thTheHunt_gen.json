@@ -4,26 +4,26 @@
     "basic": {
       "0": {
         "name": "My Sword Zaps Demons",
-        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of March 7th's ATK to a single enemy and gains {{2}} point(s) of Charge.",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of March 7th's ATK to a single enemy and gains {{2}} point(s) of Charge.",
         "shortDesc": "Deals minor Imaginary DMG to a single enemy and gains <orangeStrong>{{2}}</orangeStrong> point(s) of Charge."
       },
       "1": {
         "name": "Brows Be Smitten, Heart Be Bitten",
-        "fullDesc": "Initially, deals {{4}} hits, each causing Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of March 7th's ATK to a single target enemy. After dealing the final hit, there is a {{2}}% <u>fixed chance</u> to deal 1 extra hit, up to a max of {{3}} extra hit(s). Energy regenerated from using Enhanced Basic ATK does not increase with the number of hits.\\nEnhanced Basic ATK cannot recover Skill Points.",
+        "fullDesc": "Initially, deals {{4}} hits, each causing Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of March 7th's ATK to a single target enemy. After dealing the final hit, there is a {{2, percent}}% <u>fixed chance</u> to deal 1 extra hit, up to a max of {{3}} extra hit(s). Energy regenerated from using Enhanced Basic ATK does not increase with the number of hits.\\nEnhanced Basic ATK cannot recover Skill Points.",
         "shortDesc": "Deals Imaginary DMG to a single enemy, dealing <orangeStrong>{{4}}</orangeStrong> hits initially. <orangeStrong>There is a chance to additionally deal up to <unbreak>#3[i]</orangeStrong> hit(s)</color>."
       }
     },
     "skill": {
       "0": {
         "name": "Master, It's Tea Time!",
-        "fullDesc": "Designates a single ally (excluding this unit) as Shifu and increases Shifu's SPD by <orangeStrong>{{1}}%</orangeStrong>. Only the most recent target of March 7th's Skill is considered as Shifu.\\n\\nWhen using Basic ATK or dealing 1 hit of Enhanced Basic ATK's DMG, triggers the corresponding effect based on the specific Path of Shifu:\\n\\nErudition, Destruction, The Hunt: Deals <u>Additional DMG</u> (DMG Type based on Shifu's Combat Type) equal to <orangeStrong>{{2}}%</orangeStrong> of March 7th's ATK.\\nHarmony, Nihility, Preservation, Abundance: Increases the Toughness Reduction of this instance of DMG by {{3}}%.",
+        "fullDesc": "Designates a single ally (excluding this unit) as Shifu and increases Shifu's SPD by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Only the most recent target of March 7th's Skill is considered as Shifu.\\n\\nWhen using Basic ATK or dealing 1 hit of Enhanced Basic ATK's DMG, triggers the corresponding effect based on the specific Path of Shifu:\\n\\nErudition, Destruction, The Hunt: Deals <u>Additional DMG</u> (DMG Type based on Shifu's Combat Type) equal to <orangeStrong>{{2, percent}}%</orangeStrong> of March 7th's ATK.\\nHarmony, Nihility, Preservation, Abundance: Increases the Toughness Reduction of this instance of DMG by {{3, percent}}%.",
         "shortDesc": "Makes a single ally become Shifu. When using Basic ATK or dealing Enhanced Basic ATK's DMG, triggers the corresponding effect based on <orangeStrong>the Shifu's Path</orangeStrong>:\\n\\nErudition, Destruction, The Hunt: Deals <orangeStrong><u>Additional DMG</u></orangeStrong> based on Shifu's Type.\\nHarmony, Nihility, Preservation, Abundance: <orangeStrong>Toughness Reduction</orangeStrong> increases."
       }
     },
     "ult": {
       "0": {
         "name": "March 7th, the Apex Heroine",
-        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of March 7th's ATK to a single target enemy.\\nIncreases the initial Hits Per Action of the next Enhanced Basic ATK by {{2}} hits and increase the <u>fixed chance </u>of additionally dealing DMG by {{3}}%.",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of March 7th's ATK to a single target enemy.\\nIncreases the initial Hits Per Action of the next Enhanced Basic ATK by {{2}} hits and increase the <u>fixed chance </u>of additionally dealing DMG by {{3, percent}}%.",
         "shortDesc": "Deals Imaginary DMG to a single enemy and <orangeStrong>increases</orangeStrong> the Hits Per Action and DMG chance of <orangeStrong>the next Enhanced Basic ATK</orangeStrong>."
       }
     },
@@ -44,7 +44,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Swan Soar",
-        "fullDesc": "When the battle starts, March 7th's action is Advanced Forward by {{1}}%.",
+        "fullDesc": "When the battle starts, March 7th's action is Advanced Forward by {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -58,7 +58,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Tide Tamer",
-        "fullDesc": "After using Enhanced Basic ATK, increases Shifu's CRIT DMG by {{1}}% and Break Effect by {{2}}%, lasting for {{3}} turn(s).",
+        "fullDesc": "After using Enhanced Basic ATK, increases Shifu's CRIT DMG by {{1, percent}}% and Break Effect by {{2, percent}}%, lasting for {{3}} turn(s).",
         "shortDesc": ""
       }
     }
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "My Sword Stirs Starlight",
-      "desc": "When Shifu is on the field, increases March 7th's SPD by {{1}}%."
+      "desc": "When Shifu is on the field, increases March 7th's SPD by {{1, percent}}%."
     },
     "2": {
       "name": "Blade Dances on Waves' Fight",
-      "desc": "After Shifu uses Basic ATK or Skill to attack an enemy target, March 7th immediately launches a follow-up attack and deals Imaginary DMG equal to {{1}}% of March 7th's ATK to the primary target of this attack. Additionally, triggers the corresponding effect based on Shifu's Path and then gains {{3}} point(s) of Charge. If there is no primary target available to attack, then attacks a single random enemy instead. This effect can only trigger once per turn."
+      "desc": "After Shifu uses Basic ATK or Skill to attack an enemy target, March 7th immediately launches a follow-up attack and deals Imaginary DMG equal to {{1, percent}}% of March 7th's ATK to the primary target of this attack. Additionally, triggers the corresponding effect based on Shifu's Path and then gains {{3}} point(s) of Charge. If there is no primary target available to attack, then attacks a single random enemy instead. This effect can only trigger once per turn."
     },
     "3": {
       "name": "Sharp Wit in Martial Might",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Me, the Best Girl in Sight",
-      "desc": "After using Ultimate, increases the CRIT DMG dealt by the next Enhanced Basic ATK by {{1}}%."
+      "desc": "After using Ultimate, increases the CRIT DMG dealt by the next Enhanced Basic ATK by {{1, percent}}%."
     }
   }
 }

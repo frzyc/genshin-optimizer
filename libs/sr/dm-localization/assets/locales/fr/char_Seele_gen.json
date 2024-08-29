@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Représailles",
-        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Seele à un ennemi unique.",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Seele à un ennemi unique.",
         "shortDesc": "Inflige des DGT quantiques mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Lame rengainée",
-        "fullDesc": "Augmente la VIT de Seele de {{2}}% pendant {{3}} tours et inflige des DGT quantiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Seele à un ennemi unique.",
+        "fullDesc": "Augmente la VIT de Seele de {{2, percent}}% pendant {{3}} tours et inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Seele à un ennemi unique.",
         "shortDesc": "Inflige des DGT quantiques à un ennemi unique et augmente la VIT."
       }
     },
     "ult": {
       "0": {
         "name": "Volée de papillons",
-        "fullDesc": "Seele entre immédiatement dans l'état amélioré et inflige des DGT quantiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de son ATQ à un ennemi unique.",
+        "fullDesc": "Seele entre immédiatement dans l'état amélioré et inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de son ATQ à un ennemi unique.",
         "shortDesc": "Entre dans l'<orangeStrong>état amélioré</orangeStrong> et inflige des DGT quantiques massifs à un ennemi unique."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Ombre dans la nuit",
-        "fullDesc": "Réduit les chances du personnage d'être attaqué par des ennemis quand son pourcentage de PV est inférieur ou égal à {{1}}%.",
+        "fullDesc": "Réduit les chances du personnage d'être attaqué par des ennemis quand son pourcentage de PV est inférieur ou égal à {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Lacération",
-        "fullDesc": "La PÉN de RÉS quantique de Seele augmente de {{1}}% lorsqu'elle est dans l'état amélioré.",
+        "fullDesc": "La PÉN de RÉS quantique de Seele augmente de {{1, percent}}% lorsqu'elle est dans l'état amélioré.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Vagues ondulantes",
-        "fullDesc": "Après utilisation de son ATQ normale, l'action suivante de Seele est avancée de {{1}}%.",
+        "fullDesc": "Après utilisation de son ATQ normale, l'action suivante de Seele est avancée de {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Coup tranchant",
-      "desc": "Lorsque le personnage inflige des DGT à un ennemi dont le pourcentage de PV est inférieur ou égal à {{1}}%, les chances de coup critique augmentent de {{2}}%."
+      "desc": "Lorsque le personnage inflige des DGT à un ennemi dont le pourcentage de PV est inférieur ou égal à {{1, percent}}%, les chances de coup critique augmentent de {{2, percent}}%."
     },
     "2": {
       "name": "Papillon dansant",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Ébranlements éclatants",
-      "desc": "Après utilisation de l'ultime de Seele, inflige l'effet Volée de papillons à la cible ennemie pendant {{2}} tour. Les ennemis affectés par Volée de papillons subissent des DGT quantiques additionnels équivalents à {{1}}% des DGT de l'ultime de Seele chaque fois qu'ils sont attaqués. Si la cible ennemie est vaincue par les DGT de Volée de papillons provoqués par les attaques d'autres alliés, le talent de Seele ne se déclenche pas.\\nLorsque Seele est à terre, l'effet Volée de papillons infligé aux ennemis est supprimé."
+      "desc": "Après utilisation de l'ultime de Seele, inflige l'effet Volée de papillons à la cible ennemie pendant {{2}} tour. Les ennemis affectés par Volée de papillons subissent des DGT quantiques additionnels équivalents à {{1, percent}}% des DGT de l'ultime de Seele chaque fois qu'ils sont attaqués. Si la cible ennemie est vaincue par les DGT de Volée de papillons provoqués par les attaques d'autres alliés, le talent de Seele ne se déclenche pas.\\nLorsque Seele est à terre, l'effet Volée de papillons infligé aux ennemis est supprimé."
     }
   }
 }

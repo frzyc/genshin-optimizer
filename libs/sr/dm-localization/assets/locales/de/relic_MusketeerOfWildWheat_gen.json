@@ -1,7 +1,7 @@
 {
   "setName": "Musketierin des wilden Weizens",
   "setEffects": {
-    "2": "Erhöht ANG um {{1}}%.",
-    "4": "Erhöht die GES des Trägers um {{1}}% und den durch Standardangriffe verursachten SCH um {{2}}%."
+    "2": "Erhöht ANG um {{1, percent}}%.",
+    "4": "Erhöht die GES des Trägers um {{1, percent}}% und den durch Standardangriffe verursachten SCH um {{2, percent}}%."
   }
 }

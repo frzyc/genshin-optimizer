@@ -2,6 +2,6 @@
   "name": "{RUBY_B#うつく}美{RUBY_E#}しき{RUBY_B#はな}華{RUBY_E#}よ{RUBY_B#いま}今{RUBY_E#}{RUBY_B#さ}咲{RUBY_E#}かん",
   "passive": {
     "name": "{RUBY_B#わす}忘{RUBY_E#}れることなかれ",
-    "description": "装備キャラの攻撃力+<orangeStrong>{{1}}%</orangeStrong>。戦闘に入る時、パーティに同じ運命の味方が2名以上いる場合、それらの味方の会心ダメージ+<orangeStrong>{{2}}%</orangeStrong>。同系統のスキルは重ね掛け不可。"
+    "description": "装備キャラの攻撃力+<orangeStrong>{{1, percent}}%</orangeStrong>。戦闘に入る時、パーティに同じ運命の味方が2名以上いる場合、それらの味方の会心ダメージ+<orangeStrong>{{2, percent}}%</orangeStrong>。同系統のスキルは重ね掛け不可。"
   }
 }

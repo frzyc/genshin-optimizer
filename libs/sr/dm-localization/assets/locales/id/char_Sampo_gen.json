@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Dazzling Blades",
-        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Sampo pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Sampo pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Ricochet Love",
-        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Sampo pada 1 target musuh, serta mengakibatkan {{1}} kali Wind DMG tambahan masing-masing sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Sampo pada musuh secara acak.",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Sampo pada 1 target musuh, serta mengakibatkan {{1}} kali Wind DMG tambahan masing-masing sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Sampo pada musuh secara acak.",
         "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh. Total Bounce 5 kali."
       }
     },
     "ult": {
       "0": {
         "name": "Surprise Present",
-        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Sampo pada seluruh musuh, di saat bersamaan memiliki {{4}}% <u>peluang dasar</u> untuk meningkatkan <orangeStrong>{{2}}%</orangeStrong> DoT yang diterima musuh yang terkena serangan selama {{3}} giliran.",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Sampo pada seluruh musuh, di saat bersamaan memiliki {{4, percent}}% <u>peluang dasar</u> untuk meningkatkan <orangeStrong>{{2, percent}}%</orangeStrong> DoT yang diterima musuh yang terkena serangan selama {{3}} giliran.",
         "shortDesc": "Mengakibatkan Wind DMG pada seluruh musuh dan berpeluang besar <orangeStrong>meningkatkan DoT yang diterima musuh</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Shining Bright",
-        "fullDesc": "Setelah menggunakan Technique, musuh dalam jangkauan tertentu akan terkena status Blind selama {{1}} detik. Musuh yang terkena status Blind tidak akan bisa mendeteksi timmu.\\nJika menyerang musuh yang terkena status Blind, akan ada {{2}}% <u>peluang tetap</u> untuk menunda {{3}}% aksi seluruh musuh saat memasuki pertempuran.",
+        "fullDesc": "Setelah menggunakan Technique, musuh dalam jangkauan tertentu akan terkena status Blind selama {{1}} detik. Musuh yang terkena status Blind tidak akan bisa mendeteksi timmu.\\nJika menyerang musuh yang terkena status Blind, akan ada {{2, percent}}% <u>peluang tetap</u> untuk menunda {{3, percent}}% aksi seluruh musuh saat memasuki pertempuran.",
         "shortDesc": "Membuat musuh dalam jangkauan tertentu memasuki status Blind dan berpeluang besar untuk <u>menunda</u> aksi setiap target musuh setelah memasuki pertempuran."
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Spice Up",
-        "fullDesc": "Mengurangi {{1}}% DMG yang diakibatkan target musuh berstatus Wind Shear pada Sampo.",
+        "fullDesc": "Mengurangi {{1, percent}}% DMG yang diakibatkan target musuh berstatus Wind Shear pada Sampo.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Infectious Enthusiasm",
-      "desc": "Saat mengalahkan musuh yang berada dalam status Wind Shear, Sampo memiliki {{1}}% peluang dasar untuk menambah {{2}} lapis Wind Shear yang sebanding dengan Talent pada seluruh musuh."
+      "desc": "Saat mengalahkan musuh yang berada dalam status Wind Shear, Sampo memiliki {{1, percent}}% peluang dasar untuk menambah {{2}} lapis Wind Shear yang sebanding dengan Talent pada seluruh musuh."
     },
     "3": {
       "name": "Big Money!",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "The Deeper the Love, the Stronger the Hate",
-      "desc": "Saat Skill mengenai target musuh yang jumlah lapisan status Wind Shear-nya lebih dari atau sama dengan {{1}} lapis, status Wind Shear yang dimilikinya saat itu akan segera mengakibatkan DMG sebesar {{2}}% DMG Wind Shear."
+      "desc": "Saat Skill mengenai target musuh yang jumlah lapisan status Wind Shear-nya lebih dari atau sama dengan {{1}} lapis, status Wind Shear yang dimilikinya saat itu akan segera mengakibatkan DMG sebesar {{2, percent}}% DMG Wind Shear."
     },
     "5": {
       "name": "Huuuuge Money!",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Increased Spending",
-      "desc": "Meningkatkan {{1}}% DMG Multiplier status Wind Shear yang diberikan Talent."
+      "desc": "Meningkatkan {{1, percent}}% DMG Multiplier status Wind Shear yang diberikan Talent."
     }
   }
 }

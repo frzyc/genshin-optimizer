@@ -2,6 +2,6 @@
   "name": "I Shall Be My Own Sword",
   "passive": {
     "name": "With This Evening Jade",
-    "description": "Increases the wearer's CRIT DMG by <orangeStrong>{{1}}%</orangeStrong>. When an ally (excluding the wearer) gets attacked or loses HP, the wearer gains 1 stack of Eclipse, up to a max of {{2}} stack(s). Each stack of Eclipse increases the DMG of the wearer's next attack by <orangeStrong>{{3}}%</orangeStrong>. When {{2}} stack(s) are reached, additionally enables that attack to ignore <orangeStrong>{{4}}%</orangeStrong> of the enemy's DEF. This effect will be removed after the wearer uses an attack."
+    "description": "Increases the wearer's CRIT DMG by <orangeStrong>{{1, percent}}%</orangeStrong>. When an ally (excluding the wearer) gets attacked or loses HP, the wearer gains 1 stack of Eclipse, up to a max of {{2}} stack(s). Each stack of Eclipse increases the DMG of the wearer's next attack by <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>. When {{2}} stack(s) are reached, additionally enables that attack to ignore <orangeStrong>{{4, percent}}%</orangeStrong> of the enemy's DEF. This effect will be removed after the wearer uses an attack."
   }
 }

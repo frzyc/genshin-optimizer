@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Coup de chapeau",
-        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à une cible ennemie unique.",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à une cible ennemie unique.",
         "shortDesc": "Inflige des DGT imaginaires mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Pluie d'applaudissements",
-        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à une cible ennemie unique et inflige des DGT 4 fois supplémentaires, infligeant à chaque fois des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi aléatoire.",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à une cible ennemie unique et inflige des DGT 4 fois supplémentaires, infligeant à chaque fois des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} à un ennemi aléatoire.",
         "shortDesc": "Inflige des DGT imaginaires mineurs à des cibles ennemies uniques pour un total de 5 rebonds."
       }
     },
     "ult": {
       "0": {
         "name": "Performance sur scène",
-        "fullDesc": "Applique l'effet Soutien sur scène à tous les alliés, pour une durée de {{1}} tours. Cette durée diminue de 1 tour au début de chaque tour {M#du pionnier}{F#de la pionnière}. L'effet de Rupture des alliés qui bénéficient de Soutien sur scène augmente de <orangeStrong>{{3}}%</orangeStrong>. Lorsqu'ils attaquent des cibles ennemies qui sont en <u>état de Rupture de faiblesse</u>, la réduction de robustesse de cette attaque est convertie 1 fois en une instance de <u>DGT de rupture extrême</u>.",
+        "fullDesc": "Applique l'effet Soutien sur scène à tous les alliés, pour une durée de {{1}} tours. Cette durée diminue de 1 tour au début de chaque tour {M#du pionnier}{F#de la pionnière}. L'effet de Rupture des alliés qui bénéficient de Soutien sur scène augmente de <orangeStrong>{{3, percent}}%</orangeStrong>. Lorsqu'ils attaquent des cibles ennemies qui sont en <u>état de Rupture de faiblesse</u>, la réduction de robustesse de cette attaque est convertie 1 fois en une instance de <u>DGT de rupture extrême</u>.",
         "shortDesc": "Applique l'effet Soutien sur scène à tous les alliés. Les alliés qui bénéficient de l'effet Soutien sur scène voient leur <orangeStrong>effet de Rupture</orangeStrong> augmenté et infligent des <orangeStrong><u>DGT de rupture extrême</u></orangeStrong> 1 fois lorsqu'ils attaquent des cibles ennemies qui subissent une <u>Rupture de faiblesse</u>."
       }
     },
     "technique": {
       "0": {
         "name": "Entrée fracassante",
-        "fullDesc": "L'effet de Rupture de tous les alliés augmente de {{1}}% pendant {{2}} tours au début du prochain combat après avoir utilisé la technique.",
+        "fullDesc": "L'effet de Rupture de tous les alliés augmente de {{1, percent}}% pendant {{2}} tours au début du prochain combat après avoir utilisé la technique.",
         "shortDesc": "Augmente l'effet de Rupture de tous les alliés au début du prochain combat."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Danse avec moi",
-        "fullDesc": "Lorsqu'il y a 5 ou plus/4/3/2/1 cible(s) ennemie(s) sur le champ de bataille, les DGT de rupture extrême déclenchés par l'effet Soutien sur scène augmentent de {{1}}%/{{2}}%/{{3}}%/{{4}}%/{{5}}%.",
+        "fullDesc": "Lorsqu'il y a 5 ou plus/4/3/2/1 cible(s) ennemie(s) sur le champ de bataille, les DGT de rupture extrême déclenchés par l'effet Soutien sur scène augmentent de {{1, percent}}%/{{2, percent}}%/{{3, percent}}%/{{4, percent}}%/{{5, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Ovation",
-        "fullDesc": "Augmente de {{1}}% la réduction de robustesse de la première instance de DGT en utilisant la compétence.",
+        "fullDesc": "Augmente de {{1, percent}}% la réduction de robustesse de la première instance de DGT en utilisant la compétence.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Chapeau bas",
-        "fullDesc": "Lorsqu'un allié inflige une Rupture de faiblesse à un ennemi, retarde l'action de la cible ennemie de {{1}}% supplémentaires.",
+        "fullDesc": "Lorsqu'un allié inflige une Rupture de faiblesse à un ennemi, retarde l'action de la cible ennemie de {{1, percent}}% supplémentaires.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Charleston endiablé",
-      "desc": "Le taux de régénération d'énergie {M#du pionnier}{F#de la pionnière} augmente de {{1}}% pour une durée de {{2}} tours en début de combat."
+      "desc": "Le taux de régénération d'énergie {M#du pionnier}{F#de la pionnière} augmente de {{1, percent}}% pour une durée de {{2}} tours en début de combat."
     },
     "3": {
       "name": "Note finale",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Chapeau l'artiste",
-      "desc": "Lorsque {M#le pionnier}{F#la pionnière} est sur le champ de bataille, augmente l'effet de Rupture de tous les alliés à l'exception {M#du pionnier}{F#de la pionnière}. L'augmentation est équivalente à {{1}}% de l'effet de Rupture {M#du pionnier}{F#de la pionnière}."
+      "desc": "Lorsque {M#le pionnier}{F#la pionnière} est sur le champ de bataille, augmente l'effet de Rupture de tous les alliés à l'exception {M#du pionnier}{F#de la pionnière}. L'augmentation est équivalente à {{1, percent}}% de l'effet de Rupture {M#du pionnier}{F#de la pionnière}."
     },
     "5": {
       "name": "Rythmes anciens",

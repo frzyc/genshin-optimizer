@@ -4,33 +4,33 @@
     "basic": {
       "0": {
         "name": "Hương Thơm Bay Xa",
-        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Argenti.",
+        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Argenti.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch."
       }
     },
     "skill": {
       "0": {
         "name": "Công Lý, Nở Rộ Từ Đây",
-        "fullDesc": "Gây Sát Thương Vật Lý cho toàn bộ kẻ địch tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Argenti.",
+        "fullDesc": "Gây Sát Thương Vật Lý cho toàn bộ kẻ địch tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Argenti.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Vật Lý lên toàn bộ địch."
       }
     },
     "ult": {
       "0": {
         "name": "Khu Vườn Ban Tặng Cái Đẹp",
-        "fullDesc": "Tiêu hao {{2}} điểm Năng Lượng, gây Sát Thương Vật Lý cho toàn bộ kẻ địch tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Argenti.",
+        "fullDesc": "Tiêu hao {{2}} điểm Năng Lượng, gây Sát Thương Vật Lý cho toàn bộ kẻ địch tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Argenti.",
         "shortDesc": "Tiêu hao <orangeStrong>{{2}}</orangeStrong> Năng Lượng, gây Sát Thương Vật Lý lên toàn bộ địch."
       },
       "1": {
         "name": "Ở Vườn Của Ta, Trao Tặng Công Đức",
-        "fullDesc": "Tiêu hao {{4}} điểm Năng Lượng, gây Sát Thương Vật Lý lên toàn bộ địch tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Argenti, đồng thời gây thêm {{2}} lần sát thương, mỗi lần sát thương gây ra Sát Thương Vật Lý lên 1 kẻ địch ngẫu nhiên tương đương <orangeStrong>{{3}}%</orangeStrong> Tấn Công của Argenti.",
+        "fullDesc": "Tiêu hao {{4}} điểm Năng Lượng, gây Sát Thương Vật Lý lên toàn bộ địch tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Argenti, đồng thời gây thêm {{2}} lần sát thương, mỗi lần sát thương gây ra Sát Thương Vật Lý lên 1 kẻ địch ngẫu nhiên tương đương <orangeStrong>{{3, percent}}%</orangeStrong> Tấn Công của Argenti.",
         "shortDesc": "Tiêu hao <orangeStrong>{{4}}</orangeStrong> Năng Lượng, gây Sát Thương Vật Lý lên toàn bộ địch, đồng thời gây thêm lượng nhỏ Sát Thương Vật Lý lên 1 kẻ địch ngẫu nhiên, tổng cộng Nảy Bật 6 lần."
       }
     },
     "technique": {
       "0": {
         "name": "Tuyên Ngôn Thuần Khiết",
-        "fullDesc": "Sau khi dùng Bí Kỹ, khiến kẻ địch trong khu vực nhất định rơi vào trạng thái Choáng {{1}} giây, kẻ địch ở trạng thái Choáng sẽ không chủ động tấn công mục tiêu phe ta.\\nNếu chủ động tấn công kẻ địch ở trạng thái Choáng, khi vào chiến đấu, sẽ gây Sát Thương Vật Lý lên toàn bộ địch tương đương {{2}}% Tấn Công của Argenti, đồng thời khiến Argenti hồi {{3}} điểm Năng Lượng.",
+        "fullDesc": "Sau khi dùng Bí Kỹ, khiến kẻ địch trong khu vực nhất định rơi vào trạng thái Choáng {{1}} giây, kẻ địch ở trạng thái Choáng sẽ không chủ động tấn công mục tiêu phe ta.\\nNếu chủ động tấn công kẻ địch ở trạng thái Choáng, khi vào chiến đấu, sẽ gây Sát Thương Vật Lý lên toàn bộ địch tương đương {{2, percent}}% Tấn Công của Argenti, đồng thời khiến Argenti hồi {{3}} điểm Năng Lượng.",
         "shortDesc": "Khiến kẻ địch trong khu vực nhất định rơi vào trạng thái Choáng. Tấn công kẻ địch đang ở trạng thái Choáng, vào chiến đấu sẽ gây lượng nhỏ Sát Thương Vật Lý lên toàn bộ địch, Argenti hồi Năng Lượng."
       }
     },
@@ -58,7 +58,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Dũng Khí",
-        "fullDesc": "Tăng {{2}}% sát thương gây ra cho kẻ địch có Phần Trăm HP hiện tại nhỏ hơn hoặc bằng {{1}}%.",
+        "fullDesc": "Tăng {{2, percent}}% sát thương gây ra cho kẻ địch có Phần Trăm HP hiện tại nhỏ hơn hoặc bằng {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Vết Khuyết Của Vương Quốc Cái Đẹp",
-      "desc": "Mỗi tầng \"Nâng Cấp\" sẽ tăng thêm {{1}}% Sát Thương Bạo Kích."
+      "desc": "Mỗi tầng \"Nâng Cấp\" sẽ tăng thêm {{1, percent}}% Sát Thương Bạo Kích."
     },
     "2": {
       "name": "Sự Khiêm Nhường Của Đá Mã Não",
-      "desc": "Khi thi triển Tuyệt Kỹ, nếu số lượng kẻ địch từ {{1}} trở lên, Tấn Công tăng {{2}}%, duy trì {{3}} hiệp."
+      "desc": "Khi thi triển Tuyệt Kỹ, nếu số lượng kẻ địch từ {{1}} trở lên, Tấn Công tăng {{2, percent}}%, duy trì {{3}} hiệp."
     },
     "3": {
       "name": "Vinh Quang Con Đường Gai",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Ánh Hào Quang Của \"Bạn\"",
-      "desc": "Khi thi triển Tuyệt Kỹ, bỏ qua {{1}}% Phòng Thủ của kẻ địch."
+      "desc": "Khi thi triển Tuyệt Kỹ, bỏ qua {{1, percent}}% Phòng Thủ của kẻ địch."
     }
   }
 }

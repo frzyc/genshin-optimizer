@@ -2,6 +2,6 @@
   "name": "Luzes Noturnas",
   "passive": {
     "name": "Pacificar",
-    "description": "O usuário ganha 1 acúmulo de Canção sempre que um aliado ataca. Cada acúmulo de Canção aumenta a Taxa de Regeneração de Energia do usuário em <orangeStrong>{{1}}%</orangeStrong>, até {{2}} acúmulo(s). Quando o usuário utiliza sua Perícia Suprema, remove Canção e ganha Cadência. Cadência aumenta o ATQ do usuário em <orangeStrong>{{4}}%</orangeStrong> e o Dano causado pela equipe em <orangeStrong>{{3}}%</orangeStrong>, durando por {{5}} rodada(s)."
+    "description": "O usuário ganha 1 acúmulo de Canção sempre que um aliado ataca. Cada acúmulo de Canção aumenta a Taxa de Regeneração de Energia do usuário em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, até {{2}} acúmulo(s). Quando o usuário utiliza sua Perícia Suprema, remove Canção e ganha Cadência. Cadência aumenta o ATQ do usuário em <orangeStrong>{{4, percent}}%</orangeStrong> e o Dano causado pela equipe em <orangeStrong>{{3, percent}}%</orangeStrong>, durando por {{5}} rodada(s)."
   }
 }

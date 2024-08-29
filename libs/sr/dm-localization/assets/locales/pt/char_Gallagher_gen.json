@@ -4,12 +4,12 @@
     "basic": {
       "0": {
         "name": "Taxa de Rolha",
-        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Gallagher a um único inimigo-alvo.",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Gallagher a um único inimigo-alvo.",
         "shortDesc": "Causa Dano de Fogo leve a um único inimigo."
       },
       "1": {
         "name": "Blitz de Néctar",
-        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Gallagher a um único inimigo-alvo e reduz o ATQ do alvo em <orangeStrong>{{2}}%</orangeStrong>, durando por {{3}} rodada(s).",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Gallagher a um único inimigo-alvo e reduz o ATQ do alvo em <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, durando por {{3}} rodada(s).",
         "shortDesc": "Causa Dano de Fogo a um único inimigo e reduz o ATQ."
       }
     },
@@ -23,14 +23,14 @@
     "ult": {
       "0": {
         "name": "Etiqueta de Champanhe",
-        "fullDesc": "Inflige Inebriação a todos os inimigos, durando por {{2}} rodada(s). Ao mesmo tempo, causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Gallagher a todos os inimigos e aprimora o próximo ATQ Básico para Blitz de Néctar.",
+        "fullDesc": "Inflige Inebriação a todos os inimigos, durando por {{2}} rodada(s). Ao mesmo tempo, causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Gallagher a todos os inimigos e aprimora o próximo ATQ Básico para Blitz de Néctar.",
         "shortDesc": "<orangeStrong>Inflige Inebriação</orangeStrong> a todos os inimigos e causa Dano de Fogo a eles ao mesmo tempo. Aprimora o próximo ATQ Básico para Blitz de Néctar."
       }
     },
     "technique": {
       "0": {
         "name": "Artesão de Elixires",
-        "fullDesc": "Ataca o inimigo imediatamente. Ao entrar na batalha, inflige Inebriação a todos os inimigos, durando por {{1}} rodada(s). Causa Dano de Fogo igual a {{2}}% do ATQ de Gallagher a todos os inimigos.",
+        "fullDesc": "Ataca o inimigo imediatamente. Ao entrar na batalha, inflige Inebriação a todos os inimigos, durando por {{1}} rodada(s). Causa Dano de Fogo igual a {{2, percent}}% do ATQ de Gallagher a todos os inimigos.",
         "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, <orangeStrong>inflige Inebriação</orangeStrong> a todos os inimigos e causa Dano de Fogo leve a todos os inimigos."
       }
     },
@@ -44,7 +44,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Mistura Nova",
-        "fullDesc": "Aumenta a Cura Realizada desta unidade em uma quantidade igual a {{1}}% do Efeito de Quebra, até um máximo de {{2}}% de aumento da Cura Realizada.",
+        "fullDesc": "Aumenta a Cura Realizada desta unidade em uma quantidade igual a {{1, percent}}% do Efeito de Quebra, até um máximo de {{2, percent}}% de aumento da Cura Realizada.",
         "shortDesc": ""
       }
     },
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Cão Salgado",
-      "desc": "Regenera {{1}} de Energia quando Gallagher entra em batalha e aumenta a RES a Efeito dele em {{2}}%."
+      "desc": "Regenera {{1}} de Energia quando Gallagher entra em batalha e aumenta a RES a Efeito dele em {{2, percent}}%."
     },
     "2": {
       "name": "Cauda de Leão",
-      "desc": "Ao usar a Perícia, remove {{1}} Penalidade(s) de um aliado-alvo. Ao mesmo tempo, aumenta a sua RES a Efeito em {{2}}%, durando por {{3}} rodada(s)."
+      "desc": "Ao usar a Perícia, remove {{1}} Penalidade(s) de um aliado-alvo. Ao mesmo tempo, aumenta a sua RES a Efeito em {{2, percent}}%, durando por {{3}} rodada(s)."
     },
     "3": {
       "name": "Reanimador de Cadáveres",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Sangue e Areia",
-      "desc": "Aumenta o Efeito de Quebra de Gallagher em {{1}}% e a Eficiência de Quebra de Fraqueza em {{2}}%."
+      "desc": "Aumenta o Efeito de Quebra de Gallagher em {{1, percent}}% e a Eficiência de Quebra de Fraqueza em {{2, percent}}%."
     }
   }
 }

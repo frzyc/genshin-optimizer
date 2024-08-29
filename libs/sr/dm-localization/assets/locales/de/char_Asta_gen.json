@@ -4,14 +4,14 @@
     "basic": {
       "0": {
         "name": "Spektralstrahl",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Astas ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Astas ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Meteoritensturm",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Astas ANG zu. Löst zusätzlich 4 Angriffe gegen zufällige Gegner aus, die jeweils Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Astas ANG verursachen.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Astas ANG zu. Löst zusätzlich 4 Angriffe gegen zufällige Gegner aus, die jeweils Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Astas ANG verursachen.",
         "shortDesc": "Fügt einem Gegner mit insgesamt 5-mal Abprall geringen Feuer-SCH zu."
       }
     },
@@ -25,7 +25,7 @@
     "technique": {
       "0": {
         "name": "Wunderblitz",
-        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt allen Gegnern Feuer-SCH in Höhe von {{1}}% von Astas ANG zu.",
+        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt allen Gegnern Feuer-SCH in Höhe von {{1, percent}}% von Astas ANG zu.",
         "shortDesc": "Greift Gegner an. Fügt nach Kampfeintritt allen Gegnern geringen SCH zu."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Funken",
-        "fullDesc": "Beim Einsatz des Standardangriffs besteht eine Grundchance von {{1}}%, bei Gegnern für {{2}} Rd. Brennen zu verursachen.\\nBrennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von {{3}}% von Astas Standardangriffs.",
+        "fullDesc": "Beim Einsatz des Standardangriffs besteht eine Grundchance von {{1, percent}}%, bei Gegnern für {{2}} Rd. Brennen zu verursachen.\\nBrennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von {{3, percent}}% von Astas Standardangriffs.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Entzünden",
-        "fullDesc": "Erhöht den Feuer-SCH aller Verbündeten um {{1}}%, wenn Asta mitkämpft.",
+        "fullDesc": "Erhöht den Feuer-SCH aller Verbündeten um {{1, percent}}%, wenn Asta mitkämpft.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Konstellation",
-        "fullDesc": "Erhöht die VTD für jede Aufladestapelung um {{1}}%.",
+        "fullDesc": "Erhöht die VTD für jede Aufladestapelung um {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Wenn die Morgenröte sich manifestiert",
-      "desc": "Erhöht Astas Energie- Wiederherstellungsrate um {{2}}%, wenn sie {{1}} oder mehr Aufladestapelungen hat."
+      "desc": "Erhöht Astas Energie- Wiederherstellungsrate um {{2, percent}}%, wenn sie {{1}} oder mehr Aufladestapelungen hat."
     },
     "5": {
       "name": "Geheimnis ferner Objekte im All",

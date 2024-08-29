@@ -2,6 +2,6 @@
   "name": "Defense",
   "passive": {
     "name": "Revitalization",
-    "description": "When the wearer unleashes their Ultimate, they restore HP by <orangeStrong>{{1}}%</orangeStrong> of their Max HP."
+    "description": "When the wearer unleashes their Ultimate, they restore HP by <orangeStrong>{{1, percent}}%</orangeStrong> of their Max HP."
   }
 }

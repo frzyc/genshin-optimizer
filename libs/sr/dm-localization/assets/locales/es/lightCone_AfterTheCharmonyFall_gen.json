@@ -2,6 +2,6 @@
   "name": "Tras el silencio de La Armonía",
   "passive": {
     "name": "Silencio",
-    "description": "El efecto de Ruptura del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Después de que el portador use su habilidad definitiva, la VEL aumenta en un <orangeStrong>{{2}}%</orangeStrong> durante {{3}} turnos."
+    "description": "El efecto de Ruptura del portador aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong>. Después de que el portador use su habilidad definitiva, la VEL aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong> durante {{3}} turnos."
   }
 }

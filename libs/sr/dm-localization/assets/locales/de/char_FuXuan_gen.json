@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Sternschlag",
-        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> der max. LP von Fu Xuan zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> der max. LP von Fu Xuan zu.",
         "shortDesc": "Fügt einem Gegner geringen Quanten-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Astronomisches Wunder",
-        "fullDesc": "Aktiviert die „Matrix der Voraussicht“. Für {{3}} Rd. wird {{1}}% des SCH, den Fu Xuans Verbündete erleiden (und bevor dieser Schaden durch eventuell vorhandene Schilde absorbiert wird), mit Fu Xuan <u>geteilt</u>.\\nAlle Verbündeten, die von der „Matrix der Voraussicht“ betroffen sind, erhalten den Status „Wissen“, der ihre max. LP um <orangeStrong>{{4}}%</orangeStrong> der max. LP von Fu Xuan und ihre KRIT-Rate um <orangeStrong>{{5}}%</orangeStrong> erhöht.\\nWenn Fu Xuan <u>handlungsunfähig</u> wird, verschwindet die „Matrix der Voraussicht“.",
+        "fullDesc": "Aktiviert die „Matrix der Voraussicht“. Für {{3}} Rd. wird {{1, percent}}% des SCH, den Fu Xuans Verbündete erleiden (und bevor dieser Schaden durch eventuell vorhandene Schilde absorbiert wird), mit Fu Xuan <u>geteilt</u>.\\nAlle Verbündeten, die von der „Matrix der Voraussicht“ betroffen sind, erhalten den Status „Wissen“, der ihre max. LP um <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> der max. LP von Fu Xuan und ihre KRIT-Rate um <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong> erhöht.\\nWenn Fu Xuan <u>handlungsunfähig</u> wird, verschwindet die „Matrix der Voraussicht“.",
         "shortDesc": "Aktiviert die „Matrix der Voraussicht“, wodurch <orangeStrong>der erlittene SCH</orangeStrong> von Verbündeten mit Fu Xuan <u>geteilt</u> wird. <orangeStrong>Erhöht die KRIT-Rate</orangeStrong> und die max. LP aller Verbündeten."
       }
     },
     "ult": {
       "0": {
         "name": "Ultimative Evolution",
-        "fullDesc": "Fügt allen Gegnern Quanten-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> der max. LP von Fu Xuan zu und verleiht 1 Auslösepunkt für die LP-Wiederherstellung von Fu Xuans Talent.",
+        "fullDesc": "Fügt allen Gegnern Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> der max. LP von Fu Xuan zu und verleiht 1 Auslösepunkt für die LP-Wiederherstellung von Fu Xuans Talent.",
         "shortDesc": "Fügt allen Gegnern Quanten-SCH zu und erhöht die Auslösungsanzahl von Fu Xuans Talent."
       }
     },
@@ -46,7 +46,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Dun-Jia-Wahrsagung",
-        "fullDesc": "Beim Einsatz des Ultimates werden die LP aller anderen Verbündeten um {{1}}% der max. LP von Fu Xuan plus {{2}} wiederhergestellt.",
+        "fullDesc": "Beim Einsatz des Ultimates werden die LP aller anderen Verbündeten um {{1, percent}}% der max. LP von Fu Xuan plus {{2}} wiederhergestellt.",
         "shortDesc": ""
       }
     },
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Zyklus von Leben und Tod",
-      "desc": "„Wissen“ erhöht KRIT-SCH um {{1}}%."
+      "desc": "„Wissen“ erhöht KRIT-SCH um {{1, percent}}%."
     },
     "2": {
       "name": "Verheißungsvolles Omen",
-      "desc": "Wenn ein Verbündeter von einem Todesstoß getroffen wird, während die Matrix der Voraussicht aktiv ist, bleiben alle Verbündeten, die während dieser Aktion von einem Todesstoß getroffen wurden, davon nicht handlungsunfähig und {{1}}% ihrer max. LP werden sofort wiederhergestellt. Dieser Effekt kann 1-mal pro Kampf ausgelöst werden."
+      "desc": "Wenn ein Verbündeter von einem Todesstoß getroffen wird, während die Matrix der Voraussicht aktiv ist, bleiben alle Verbündeten, die während dieser Aktion von einem Todesstoß getroffen wurden, davon nicht handlungsunfähig und {{1, percent}}% ihrer max. LP werden sofort wiederhergestellt. Dieser Effekt kann 1-mal pro Kampf ausgelöst werden."
     },
     "3": {
       "name": "Gottheit der Pflicht",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Wiederaufleben",
-      "desc": "Sobald die „Matrix der Voraussicht“ aktiviert ist, werden die gesamten LP, die alle Verbündeten im aktuellen Kampf verloren haben, addiert. Der durch Ultimate von Fu Xuan verursachte SCH erhöht sich um {{1}}% der gesamten LP, die alle Verbündeten im aktuellen Kampf verloren haben.\\nDie von allen Verbündeten im aktuellen Kampf verlorenen LP sind auf {{2}}% der max. LP von Fu Xuan begrenzt. Dieser Wert wird zurückgesetzt und neu angesammelt, nachdem Fu Xuans Ultimate eingesetzt wurde."
+      "desc": "Sobald die „Matrix der Voraussicht“ aktiviert ist, werden die gesamten LP, die alle Verbündeten im aktuellen Kampf verloren haben, addiert. Der durch Ultimate von Fu Xuan verursachte SCH erhöht sich um {{1, percent}}% der gesamten LP, die alle Verbündeten im aktuellen Kampf verloren haben.\\nDie von allen Verbündeten im aktuellen Kampf verlorenen LP sind auf {{2, percent}}% der max. LP von Fu Xuan begrenzt. Dieser Wert wird zurückgesetzt und neu angesammelt, nachdem Fu Xuans Ultimate eingesetzt wurde."
     }
   }
 }

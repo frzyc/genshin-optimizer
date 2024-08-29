@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Frappe stellaire",
-        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1}}%</orangeStrong> des PV max de Fu Xuan à un ennemi unique.",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> des PV max de Fu Xuan à un ennemi unique.",
         "shortDesc": "Inflige des DGT quantiques mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Merveille des étoiles",
-        "fullDesc": "Active Matrice de prémonition, ce qui permet aux autres membres de l'équipe de Fu Xuan de lui <u>transférer</u> {{1}}% des DGT qu'ils subissent (avant que ces DGT ne soient atténués par d'éventuels boucliers) pendant {{3}} tours.\\nLorsqu'ils sont affectés par Matrice de prémonition, tous les membres de l'équipe bénéficient de l'effet Connaissance, qui augmente leurs PV max respectifs à hauteur de <orangeStrong>{{4}}%</orangeStrong> des PV max de Fu Xuan, et leurs chances de coup critique de <orangeStrong>{{5}}%</orangeStrong>.\\nMatrice de prémonition se dissipe lorsque Fu Xuan est <u>à terre</u>.",
+        "fullDesc": "Active Matrice de prémonition, ce qui permet aux autres membres de l'équipe de Fu Xuan de lui <u>transférer</u> {{1, percent}}% des DGT qu'ils subissent (avant que ces DGT ne soient atténués par d'éventuels boucliers) pendant {{3}} tours.\\nLorsqu'ils sont affectés par Matrice de prémonition, tous les membres de l'équipe bénéficient de l'effet Connaissance, qui augmente leurs PV max respectifs à hauteur de <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> des PV max de Fu Xuan, et leurs chances de coup critique de <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.\\nMatrice de prémonition se dissipe lorsque Fu Xuan est <u>à terre</u>.",
         "shortDesc": "Active Matrice de prémonition. <orangeStrong>Les DGT subis par les alliés de Fu Xuan lui sont <u>transférés</u></orangeStrong>. D'autre part, <orangeStrong>augmente les chances de coup critique</orangeStrong> et les PV max de tous les alliés."
       }
     },
     "ult": {
       "0": {
         "name": "Évolution ultime",
-        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1}}%</orangeStrong> des PV max de Fu Xuan à tous les ennemis et obtient 1 déclenchement pour l'effet de restauration de PV accordé par le talent de Fu Xuan.",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> des PV max de Fu Xuan à tous les ennemis et obtient 1 déclenchement pour l'effet de restauration de PV accordé par le talent de Fu Xuan.",
         "shortDesc": "Inflige des DGT quantiques à tous les ennemis et augmente le nombre de fois où le talent de Fu Xuan se déclenche."
       }
     },
@@ -46,7 +46,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Dunjia et la métaphysique",
-        "fullDesc": "Fu Xuan soigne tous les autres alliés à hauteur de {{1}}% de ses PV max + {{2}} lorsqu'elle utilise son ultime.",
+        "fullDesc": "Fu Xuan soigne tous les autres alliés à hauteur de {{1, percent}}% de ses PV max + {{2}} lorsqu'elle utilise son ultime.",
         "shortDesc": ""
       }
     },
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Dominus Pacis",
-      "desc": "Connaissance augmente les DGT critiques de {{1}}%."
+      "desc": "Connaissance augmente les DGT critiques de {{1, percent}}%."
     },
     "2": {
       "name": "Optimus Felix",
-      "desc": "Si un membre de l'équipe est frappé par un coup fatal alors que Matrice de prémonition est active, tous les alliés qui ont été frappés par un coup fatal pendant cette action ne tombent pas à terre et récupèrent {{1}}% de leurs PV max immédiatement. Cet effet peut se déclencher 1 fois par combat."
+      "desc": "Si un membre de l'équipe est frappé par un coup fatal alors que Matrice de prémonition est active, tous les alliés qui ont été frappés par un coup fatal pendant cette action ne tombent pas à terre et récupèrent {{1, percent}}% de leurs PV max immédiatement. Cet effet peut se déclencher 1 fois par combat."
     },
     "3": {
       "name": "Apex Nexus",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Omnia Vita",
-      "desc": "Lorsque Matrice de prémonition est activée, le total des PV perdus par tous les membres de l'équipe est enregistré au cours du combat. Les DGT infligés par l'ultime de Fu Xuan augmentent d'un montant équivalent à {{1}}% de ce total.\\nCe total est plafonné à {{2}}% des PV max de Fu Xuan et sa valeur est réinitialisée et recommence à s'accumuler après utilisation de l'ultime de Fu Xuan."
+      "desc": "Lorsque Matrice de prémonition est activée, le total des PV perdus par tous les membres de l'équipe est enregistré au cours du combat. Les DGT infligés par l'ultime de Fu Xuan augmentent d'un montant équivalent à {{1, percent}}% de ce total.\\nCe total est plafonné à {{2, percent}}% des PV max de Fu Xuan et sa valeur est réinitialisée et recommence à s'accumuler après utilisation de l'ultime de Fu Xuan."
     }
   }
 }

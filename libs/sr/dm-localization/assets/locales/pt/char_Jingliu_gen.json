@@ -4,33 +4,33 @@
     "basic": {
       "0": {
         "name": "Brilho da Lua Luzente",
-        "fullDesc": "Causa <orangeStrong>{{1}}%</orangeStrong> do ATQ de Jingliu como Dano de Gelo a um único inimigo.",
+        "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Jingliu como Dano de Gelo a um único inimigo.",
         "shortDesc": "Causa Dano de Gelo leve a um único inimigo-alvo."
       }
     },
     "skill": {
       "0": {
         "name": "Clarão Transcendente",
-        "fullDesc": "Causa <orangeStrong>{{1}}%</orangeStrong> do ATQ de Jingliu como Dano de Gelo a um único inimigo e obtém {{2}} acúmulo(s) de Sizígia.",
+        "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Jingliu como Dano de Gelo a um único inimigo e obtém {{2}} acúmulo(s) de Sizígia.",
         "shortDesc": "Causa Dano de Gelo a um inimigo-alvo e obtém <orangeStrong>1 acúmulo de Sizígia</orangeStrong>."
       },
       "1": {
         "name": "Lua sobre o Rio Glacial",
-        "fullDesc": "Causa <orangeStrong>{{1}}%</orangeStrong> do ATQ de Jingliu como Dano de Gelo a um único inimigo e <orangeStrong>{{3}}%</orangeStrong> do ATQ de Jingliu como Dano de Gelo a inimigos adjacentes. Consome {{2}} acúmulo(s) de Sizígia. Usar esta habilidade não consome Pontos de Perícia.",
+        "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Jingliu como Dano de Gelo a um único inimigo e <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de Jingliu como Dano de Gelo a inimigos adjacentes. Consome {{2}} acúmulo(s) de Sizígia. Usar esta habilidade não consome Pontos de Perícia.",
         "shortDesc": "Causa Dano de Gelo a um único inimigo-alvo e Dano de Gelo a alvos adjacentes. Consome 1 acúmulo de Sizígia."
       }
     },
     "ult": {
       "0": {
         "name": "Fluxonírico Florefêmero",
-        "fullDesc": "Causa <orangeStrong>{{1}}%</orangeStrong> do ATQ de Jingliu como Dano de Gelo a um único inimigo e <orangeStrong>{{3}}%</orangeStrong> do ATQ de Jingliu como Dano de Gelo a inimigos adjacentes. Ganha {{2}} acúmulo(s) de Sizígia depois que o ataque acaba.",
+        "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Jingliu como Dano de Gelo a um único inimigo e <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de Jingliu como Dano de Gelo a inimigos adjacentes. Ganha {{2}} acúmulo(s) de Sizígia depois que o ataque acaba.",
         "shortDesc": "Causa Dano de Gelo massivo a um inimigo-alvo e causa Dano de Gelo aos alvos adjacentes. Obtém <orangeStrong>1 acúmulo de Sizígia</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Brilho da Verdade",
-        "fullDesc": "Após usar esta Técnica, cria uma dimensão especial ao redor de Jingliu que dura por {{3}} segundos, e todos os inimigos nesta dimensão especial sofrerão Congelamento. Após entrar em combate com os inimigos na dimensão especial, Jingliu recupera imediatamente {{6}} de Energia e obtém {{1}} acúmulo(s) de Sizígia, com uma <u>chance-base</u> de {{2}}% de causar Congelamento nos inimigos-alvo por {{4}} rodada(s). Enquanto estiverem com Congelamento, inimigos-alvo não podem agir, e recebem <u>Dano de Gelo Adicional</u> igual a {{5}}% do ATQ de Jingliu no início de cada rodada. Somente 1 dimensão criada por aliados pode existir ao mesmo tempo.",
+        "fullDesc": "Após usar esta Técnica, cria uma dimensão especial ao redor de Jingliu que dura por {{3}} segundos, e todos os inimigos nesta dimensão especial sofrerão Congelamento. Após entrar em combate com os inimigos na dimensão especial, Jingliu recupera imediatamente {{6}} de Energia e obtém {{1}} acúmulo(s) de Sizígia, com uma <u>chance-base</u> de {{2, percent}}% de causar Congelamento nos inimigos-alvo por {{4}} rodada(s). Enquanto estiverem com Congelamento, inimigos-alvo não podem agir, e recebem <u>Dano de Gelo Adicional</u> igual a {{5, percent}}% do ATQ de Jingliu no início de cada rodada. Somente 1 dimensão criada por aliados pode existir ao mesmo tempo.",
         "shortDesc": "Cria uma dimensão especial em volta do personagem. Inimigos dentro desta dimensão sofrerão <orangeStrong>Congelamento</orangeStrong>. Após entrar em combate com inimigos nesta dimensão, este personagem recupera Energia e obtém 1 acúmulo de Sizígia com altas chances de aplicar <orangeStrong>Congelamento</orangeStrong> nos inimigos."
       }
     },
@@ -44,21 +44,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Reino da Morte",
-        "fullDesc": "Aumenta a RES a Efeito em {{1}}% enquanto estiver no estado de Transmigração Espectral.",
+        "fullDesc": "Aumenta a RES a Efeito em {{1, percent}}% enquanto estiver no estado de Transmigração Espectral.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Campeã da Espada",
-        "fullDesc": "Após usar Clarão Transcendente, a próxima ação será Avançada Adiante em {{1}}%.",
+        "fullDesc": "Após usar Clarão Transcendente, a próxima ação será Avançada Adiante em {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Ira Gélida",
-        "fullDesc": "Aumenta o Dano da Perícia Suprema em {{1}}% enquanto estiver no estado de Transmigração Espectral.",
+        "fullDesc": "Aumenta o Dano da Perícia Suprema em {{1, percent}}% enquanto estiver no estado de Transmigração Espectral.",
         "shortDesc": ""
       }
     }
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Queda Lunar nos Portões de Tianguan",
-      "desc": "Aumenta o Dano CRIT de Jingliu em {{1}}% pela(s) próxima(s) {{3}} rodada(s) quando usa sua Perícia Aprimorada ou sua Perícia Suprema. Se apenas um alvo inimigo for atacado, o alvo receberá adicionalmente Dano de Gelo igual a {{2}}% do ATQ de Jingliu."
+      "desc": "Aumenta o Dano CRIT de Jingliu em {{1, percent}}% pela(s) próxima(s) {{3}} rodada(s) quando usa sua Perícia Aprimorada ou sua Perícia Suprema. Se apenas um alvo inimigo for atacado, o alvo receberá adicionalmente Dano de Gelo igual a {{2, percent}}% do ATQ de Jingliu."
     },
     "2": {
       "name": "Sombras Crescentes Sobre a Constelação de Qixing",
-      "desc": "Após usar a Perícia Suprema, aumenta o Dano da próxima Perícia Aprimorada em {{1}}%."
+      "desc": "Após usar a Perícia Suprema, aumenta o Dano da próxima Perícia Aprimorada em {{1, percent}}%."
     },
     "3": {
       "name": "Neblina Mercurial da Crescente",
@@ -78,7 +78,7 @@
     },
     "4": {
       "name": "Brilho da Lança Lunar",
-      "desc": "Durante o estado de Transmigração Espectral, o ATQ obtido por consumir os PV dos aliados é adicionalmente aumentado em {{1}}% do total de PV consumido por toda a equipe. O limite para o aumento de ATQ feito dessa forma também aumenta em {{2}}%."
+      "desc": "Durante o estado de Transmigração Espectral, o ATQ obtido por consumir os PV dos aliados é adicionalmente aumentado em {{1, percent}}% do total de PV consumido por toda a equipe. O limite para o aumento de ATQ feito dessa forma também aumenta em {{2, percent}}%."
     },
     "5": {
       "name": "Brilho Noturno Estelar",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Esfera Esvaziada pelo Vazio",
-      "desc": "Quando Jingliu entra no estado de Transmigração Espectral, o limite de acúmulos de Sizígia aumenta em 1, e Jingliu obtém {{1}} acúmulo(s) de Sizígia. Enquanto estiver no estado de Transmigração Espectral, seu Dano CRIT aumenta em {{2}}%."
+      "desc": "Quando Jingliu entra no estado de Transmigração Espectral, o limite de acúmulos de Sizígia aumenta em 1, e Jingliu obtém {{1}} acúmulo(s) de Sizígia. Enquanto estiver no estado de Transmigração Espectral, seu Dano CRIT aumenta em {{2, percent}}%."
     }
   }
 }

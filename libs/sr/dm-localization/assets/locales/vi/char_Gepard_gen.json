@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Nắm Đấm Phán Quyết",
-        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Gepard.",
+        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Gepard.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Băng cho 1 kẻ địch."
       }
     },
     "skill": {
       "0": {
         "name": "Xung Kích Kinh Hoàng",
-        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Gepard, đồng thời có {{2}}% <u>xác suất cơ bản</u> khiến mục tiêu đó bị Đóng Băng, duy trì {{3}} hiệp.\\nTrong trạng thái Đóng Băng, kẻ địch không thể hành động, đồng thời mỗi hiệp đấu bắt đầu sẽ chịu lượng <u>sát thương kèm theo</u> thuộc tính Băng bằng <orangeStrong>{{4}}%</orangeStrong> Tấn Công của Gepard.",
+        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Gepard, đồng thời có {{2, percent}}% <u>xác suất cơ bản</u> khiến mục tiêu đó bị Đóng Băng, duy trì {{3}} hiệp.\\nTrong trạng thái Đóng Băng, kẻ địch không thể hành động, đồng thời mỗi hiệp đấu bắt đầu sẽ chịu lượng <u>sát thương kèm theo</u> thuộc tính Băng bằng <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công của Gepard.",
         "shortDesc": "Gây Sát Thương Băng cho 1 kẻ địch, <orangeStrong>có xác suất kèm trạng thái Đóng Băng cho mục tiêu</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Bức Tường Sừng Sững",
-        "fullDesc": "Tạo Khiên triệt tiêu sát thương tương đương <orangeStrong>{{1}}%</orangeStrong> Phòng Thủ của Gepard +<orangeStrong>{{3}}</orangeStrong> cho toàn phe ta, duy trì {{2}} hiệp.",
+        "fullDesc": "Tạo Khiên triệt tiêu sát thương tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Phòng Thủ của Gepard +<orangeStrong>{{3}}</orangeStrong> cho toàn phe ta, duy trì {{2}} hiệp.",
         "shortDesc": "<orangeStrong>Cung cấp Khiên</orangeStrong> cho toàn bộ phe ta."
       }
     },
     "technique": {
       "0": {
         "name": "Chứng Nhận Hữu Tình",
-        "fullDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu lần chiến đấu tiếp theo sẽ tạo Khiên cho toàn phe ta giúp triệt tiêu sát thương tương đương {{1}}% Phòng Thủ của Gepard +{{3}}, duy trì {{2}} hiệp.",
+        "fullDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu lần chiến đấu tiếp theo sẽ tạo Khiên cho toàn phe ta giúp triệt tiêu sát thương tương đương {{1, percent}}% Phòng Thủ của Gepard +{{3}}, duy trì {{2}} hiệp.",
         "shortDesc": "Dùng Bí Kỹ, khi bắt đầu lần chiến đấu tiếp theo, toàn bộ phe ta sẽ nhận được khiên."
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Chiến Ý",
-        "fullDesc": "Gepard tăng tấn công bằng {{1}}% Phòng Thủ hiện tại của bản thân, khi bắt đầu mỗi hiệp sẽ làm mới.",
+        "fullDesc": "Gepard tăng tấn công bằng {{1, percent}}% Phòng Thủ hiện tại của bản thân, khi bắt đầu mỗi hiệp sẽ làm mới.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Tận Chức Tận Trách",
-      "desc": "Khi thi triển Chiến Kỹ sẽ tăng {{1}}% xác suất cơ bản khiến kẻ địch bị tấn công rơi vào trạng thái Đóng Băng."
+      "desc": "Khi thi triển Chiến Kỹ sẽ tăng {{1, percent}}% xác suất cơ bản khiến kẻ địch bị tấn công rơi vào trạng thái Đóng Băng."
     },
     "2": {
       "name": "Giá Rét Tàn Dư",
-      "desc": "Sau khi giải trừ trạng thái Đóng Băng mà Chiến Kỹ khiến mục tiêu địch rơi vào, Tốc Độ của mục tiêu giảm {{1}}%, duy trì {{2}} hiệp."
+      "desc": "Sau khi giải trừ trạng thái Đóng Băng mà Chiến Kỹ khiến mục tiêu địch rơi vào, Tốc Độ của mục tiêu giảm {{1, percent}}%, duy trì {{2}} hiệp."
     },
     "3": {
       "name": "Không Bao Giờ Đầu Hàng",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Luôn Luôn Chân Thành",
-      "desc": "Khi Gepard trong trận, Kháng Hiệu Ứng của toàn phe ta tăng {{1}}%."
+      "desc": "Khi Gepard trong trận, Kháng Hiệu Ứng của toàn phe ta tăng {{1, percent}}%."
     },
     "5": {
       "name": "Nắm Đấm Sắt Lạnh",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Quyết Ý Bất Khuất",
-      "desc": "Khi kích hoạt Thiên Phú, Gepard sẽ hành động ngay, và lượng hồi HP hiện tại tăng thêm {{1}}% Giới Hạn HP của bản thân."
+      "desc": "Khi kích hoạt Thiên Phú, Gepard sẽ hành động ngay, và lượng hồi HP hiện tại tăng thêm {{1, percent}}% Giới Hạn HP của bản thân."
     }
   }
 }

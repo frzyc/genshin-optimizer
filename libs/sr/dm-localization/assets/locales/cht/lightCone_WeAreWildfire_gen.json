@@ -2,6 +2,6 @@
   "name": "我們是地火",
   "passive": {
     "name": "淚中人",
-    "description": "戰鬥開始時，使我方全體受到的傷害降低<orangeStrong>{{2}}%</orangeStrong>，持續{{3}}回合。同時立即為我方全體回復等同於各自已損失生命值<orangeStrong>{{1}}%</orangeStrong>的生命值。"
+    "description": "戰鬥開始時，使我方全體受到的傷害降低<orangeStrong>{{2, percent}}%</orangeStrong>，持續{{3}}回合。同時立即為我方全體回復等同於各自已損失生命值<orangeStrong>{{1, percent}}%</orangeStrong>的生命值。"
   }
 }

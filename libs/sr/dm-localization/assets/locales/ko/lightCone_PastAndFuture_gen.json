@@ -2,6 +2,6 @@
   "name": "과거와 미래",
   "passive": {
     "name": "옛날 연",
-    "description": "장착한 캐릭터가 전투 스킬 발동 후 다음에 행동하는 다른 아군이 가하는 피해가 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 지속 시간: {{2}}턴"
+    "description": "장착한 캐릭터가 전투 스킬 발동 후 다음에 행동하는 다른 아군이 가하는 피해가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 지속 시간: {{2}}턴"
   }
 }

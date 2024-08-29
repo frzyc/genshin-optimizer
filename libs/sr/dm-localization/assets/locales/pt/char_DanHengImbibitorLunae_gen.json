@@ -4,29 +4,29 @@
     "basic": {
       "0": {
         "name": "Lótus Beneficente",
-        "fullDesc": "Realiza um ataque de 2 golpes e causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Dan Heng - Embebidor Lunae a um único inimigo-alvo.",
+        "fullDesc": "Realiza um ataque de 2 golpes e causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Dan Heng - Embebidor Lunae a um único inimigo-alvo.",
         "shortDesc": "Causa Dano Imaginário leve a um único inimigo."
       },
       "1": {
         "name": "Transcendência",
-        "fullDesc": "Realiza um ataque de 3 golpes e causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Dan Heng - Embebidor Lunae a um único inimigo.",
+        "fullDesc": "Realiza um ataque de 3 golpes e causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Dan Heng - Embebidor Lunae a um único inimigo.",
         "shortDesc": "Realiza <orangeStrong>3 golpes</orangeStrong> neste ataque e causa Dano Imaginário a um único inimigo-alvo."
       },
       "2": {
         "name": "Lança Divina",
-        "fullDesc": "Realiza um ataque de 5 golpes e causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Dan Heng - Embebidor Lunae a um único inimigo-alvo. Do quarto golpe em diante, causa simultaneamente Dano Imaginário igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ de Dan Heng - Embebidor Lunae a alvos adjacentes.",
+        "fullDesc": "Realiza um ataque de 5 golpes e causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Dan Heng - Embebidor Lunae a um único inimigo-alvo. Do quarto golpe em diante, causa simultaneamente Dano Imaginário igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Dan Heng - Embebidor Lunae a alvos adjacentes.",
         "shortDesc": "Realiza <orangeStrong>5 golpes</orangeStrong> neste ataque para causar Dano Imaginário massivo a um único inimigo e Dano Imaginário leve a alvos adjacentes. Para cada um dos últimos 2 golpes, obtém 1 acúmulo de Rugido Soberano logo antes do golpe, aumentando o Dano CRIT."
       },
       "3": {
         "name": "Salto Fulgurante",
-        "fullDesc": "Realiza um ataque de 7 golpes e causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Dan Heng - Embebidor Lunae a um único inimigo-alvo. Do quarto golpe em diante, causa simultaneamente Dano Imaginário igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ de Dan Heng - Embebidor Lunae a alvos adjacentes.",
+        "fullDesc": "Realiza um ataque de 7 golpes e causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Dan Heng - Embebidor Lunae a um único inimigo-alvo. Do quarto golpe em diante, causa simultaneamente Dano Imaginário igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Dan Heng - Embebidor Lunae a alvos adjacentes.",
         "shortDesc": "Realiza <orangeStrong>7 golpes</orangeStrong> neste ataque para causar Dano Imaginário massivo a um único inimigo e Dano Imaginário a alvos adjacentes. Para cada um dos últimos 4 golpes, obtém 1 acúmulo de Rugido Soberano logo antes do golpe, aumentando o Dano CRIT."
       }
     },
     "skill": {
       "0": {
         "name": "Dracore Libre",
-        "fullDesc": "Aprimora o ATQ Básico. Aprimoramentos podem ser aplicados até 3 vezes consecutivas. Usar esta habilidade não consome Pontos de Perícia e não é considerado como utilização de uma Perícia.\\nAprimorado uma vez, Lótus Beneficente se torna Transcendência.\\nAprimorado duas vezes, Lótus Beneficente se torna Lança Divina.\\nAprimorado três vezes, Lótus Beneficente se torna Salto Fulgurante.\\nAo utilizar Lança Divina ou Salto Fulgurante, começando do quarto golpe, 1 acúmulo de \"Rugido Soberano\" é concedido antes de cada golpe. Cada acúmulo de \"Rugido Soberano\" aumenta o Dano CRIT de Dan Heng - Embebidor Lunae em <orangeStrong>{{1}}%</orangeStrong>, até um máximo de {{2}} acúmulos. Estes acúmulos duram até o final da rodada dele.",
+        "fullDesc": "Aprimora o ATQ Básico. Aprimoramentos podem ser aplicados até 3 vezes consecutivas. Usar esta habilidade não consome Pontos de Perícia e não é considerado como utilização de uma Perícia.\\nAprimorado uma vez, Lótus Beneficente se torna Transcendência.\\nAprimorado duas vezes, Lótus Beneficente se torna Lança Divina.\\nAprimorado três vezes, Lótus Beneficente se torna Salto Fulgurante.\\nAo utilizar Lança Divina ou Salto Fulgurante, começando do quarto golpe, 1 acúmulo de \"Rugido Soberano\" é concedido antes de cada golpe. Cada acúmulo de \"Rugido Soberano\" aumenta o Dano CRIT de Dan Heng - Embebidor Lunae em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, até um máximo de {{2}} acúmulos. Estes acúmulos duram até o final da rodada dele.",
         "shortDesc": "Aprimora o ATQ Básico Lótus Beneficente para <orangeStrong>Transcendência</orangeStrong>, <orangeStrong>Lança Divina</orangeStrong> ou <orangeStrong>Salto Fulgurante</orangeStrong>."
       },
       "1": {
@@ -38,14 +38,14 @@
     "ult": {
       "0": {
         "name": "A Água Celeste Ablui Tudo",
-        "fullDesc": "Realiza um ataque de 3 golpes e causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Dan Heng - Embebidor Lunae a um único inimigo-alvo. Ao mesmo tempo, causa Dano Imaginário igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ de Dan Heng - Embebidor Lunae a alvos adjacentes. Então, obtém {{3}} Squama Sacrosancta.\\nÉ possível possuir até {{4}} Squama Sacrosancta, que podem ser usados para anular o consumo de Pontos de Perícia de Dan Heng - Embebidor Lunae. Consumir Squama Sacrosancta é considerado o equivalente a consumir Pontos de Perícia.",
+        "fullDesc": "Realiza um ataque de 3 golpes e causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Dan Heng - Embebidor Lunae a um único inimigo-alvo. Ao mesmo tempo, causa Dano Imaginário igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Dan Heng - Embebidor Lunae a alvos adjacentes. Então, obtém {{3}} Squama Sacrosancta.\\nÉ possível possuir até {{4}} Squama Sacrosancta, que podem ser usados para anular o consumo de Pontos de Perícia de Dan Heng - Embebidor Lunae. Consumir Squama Sacrosancta é considerado o equivalente a consumir Pontos de Perícia.",
         "shortDesc": "Causa Dano Imaginário massivo a um único inimigo, causa Dano Imaginário a alvos adjacentes, e ganha 2 Squama Sacrosancta, que podem <orangeStrong>anular</orangeStrong> o <orangeStrong>consumo de Pontos de Perícia</orangeStrong> de Dan Heng - Embebidor Lunae. Consumir Squama Sacrosancta é considerado o equivalente a consumir pontos de Perícia."
       }
     },
     "technique": {
       "0": {
         "name": "Prismadracônico Amaina-Céus",
-        "fullDesc": "Após usar sua Técnica, Dan Heng - Embebidor Lunae entra no estado de Dragão Saltitante por {{2}} segundos. Enquanto está no estado de Dragão Saltitante, usar o seu ataque permite que ele se mova para frente rapidamente por uma certa distância, atacando todos os inimigos nos quais ele tocar e bloqueando todos os ataques direcionados a ele. Após entrar no combate ao atacar inimigos no estado de Dragão Saltitante, Dan Heng - Embebidor Lunae causa Dano Imaginário igual a {{3}}% do seu ATQ a todos os inimigos, e ganha {{1}} Squama Sacrosancta.",
+        "fullDesc": "Após usar sua Técnica, Dan Heng - Embebidor Lunae entra no estado de Dragão Saltitante por {{2}} segundos. Enquanto está no estado de Dragão Saltitante, usar o seu ataque permite que ele se mova para frente rapidamente por uma certa distância, atacando todos os inimigos nos quais ele tocar e bloqueando todos os ataques direcionados a ele. Após entrar no combate ao atacar inimigos no estado de Dragão Saltitante, Dan Heng - Embebidor Lunae causa Dano Imaginário igual a {{3, percent}}% do seu ATQ a todos os inimigos, e ganha {{1}} Squama Sacrosancta.",
         "shortDesc": "Entra no estado de Dragão Saltitante. Atacar fará com que esse personagem se mova para frente rapidamente uma certa distância e ataque todos os inimigos tocados. Após entrar em combate ao atacar inimigos, causa Dano Imaginário a todos os inimigos, e ganha 1 Squama Sacrosancta."
       }
     },
@@ -66,14 +66,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Reinado Aquático",
-        "fullDesc": "Aumenta a chance de resistir a penalidades de Controle Negativo em {{1}}%.",
+        "fullDesc": "Aumenta a chance de resistir a penalidades de Controle Negativo em {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Nova Descarga",
-        "fullDesc": "Ao causar Dano a inimigos com Fraqueza contra Imaginário, aumenta o Dano CRIT em {{1}}%.",
+        "fullDesc": "Ao causar Dano a inimigos com Fraqueza contra Imaginário, aumenta o Dano CRIT em {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -101,7 +101,7 @@
     },
     "6": {
       "name": "Reinado, Retornado",
-      "desc": "Depois que qualquer aliado usa a Perícia Suprema, a PEN de RES a Imaginário do próximo Salto Fulgurante de Dan Heng - Embebidor Lunae aumenta em {{1}}%. Este efeito pode acumular até {{2}} vez(es)."
+      "desc": "Depois que qualquer aliado usa a Perícia Suprema, a PEN de RES a Imaginário do próximo Salto Fulgurante de Dan Heng - Embebidor Lunae aumenta em {{1, percent}}%. Este efeito pode acumular até {{2}} vez(es)."
     }
   }
 }

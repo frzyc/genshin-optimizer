@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Lưỡi Đao Lóe Sáng",
-        "fullDesc": "Gây Sát Thương Phong cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Sampo.",
+        "fullDesc": "Gây Sát Thương Phong cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Sampo.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Phong cho 1 kẻ địch."
       }
     },
     "skill": {
       "0": {
         "name": "Tình Yêu Rộn Ràng",
-        "fullDesc": "Gây sát thương Phong cho 1 kẻ địch chỉ định bằng <orangeStrong>{{2}}%</orangeStrong> tấn công của Sampo, và gây thêm {{1}} lần sát thương, mỗi lần sát thương sẽ gây sát thương Phong cho 1 kẻ địch ngẫu nhiên bằng <orangeStrong>{{2}}%</orangeStrong> tấn công của Sampo.",
+        "fullDesc": "Gây sát thương Phong cho 1 kẻ địch chỉ định bằng <orangeStrong>{{2, percent}}%</orangeStrong> tấn công của Sampo, và gây thêm {{1}} lần sát thương, mỗi lần sát thương sẽ gây sát thương Phong cho 1 kẻ địch ngẫu nhiên bằng <orangeStrong>{{2, percent}}%</orangeStrong> tấn công của Sampo.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Phong cho 1 kẻ địch, tổng cộng nảy bật 5 lần."
       }
     },
     "ult": {
       "0": {
         "name": "Món Quà Bất Ngờ",
-        "fullDesc": "Gây Sát Thương Phong tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Sampo lên toàn phe địch, đồng thời có {{4}}% <u>xác suất cơ bản</u> khiến sát thương duy trì mà kẻ địch bị tấn công phải chịu tăng <orangeStrong>{{2}}%</orangeStrong>, duy trì {{3}} hiệp.",
+        "fullDesc": "Gây Sát Thương Phong tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Sampo lên toàn phe địch, đồng thời có {{4, percent}}% <u>xác suất cơ bản</u> khiến sát thương duy trì mà kẻ địch bị tấn công phải chịu tăng <orangeStrong>{{2, percent}}%</orangeStrong>, duy trì {{3}} hiệp.",
         "shortDesc": "Gây Sát Thương Phong cho toàn bộ kẻ địch, có xác suất lớn khiến chúng <orangeStrong>tăng Sát Thương Duy Trì phải chịu</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Tỏa Sáng Rực Rỡ",
-        "fullDesc": "Sau khi dùng Bí Kỹ sẽ khiến kẻ địch trong khu vực nhất định rơi vào trạng thái Mù {{1}} giây, kẻ địch ở trạng thái Mù không thể phát hiện mục tiêu phe ta.\\nNếu chủ động tấn công kẻ địch rơi vào trạng thái Mù thì khi vào chiến đấu sẽ có {{2}}% <u>xác suất cố định</u> khiến mỗi kẻ địch Trì Hoãn Hành Động {{3}}%.",
+        "fullDesc": "Sau khi dùng Bí Kỹ sẽ khiến kẻ địch trong khu vực nhất định rơi vào trạng thái Mù {{1}} giây, kẻ địch ở trạng thái Mù không thể phát hiện mục tiêu phe ta.\\nNếu chủ động tấn công kẻ địch rơi vào trạng thái Mù thì khi vào chiến đấu sẽ có {{2, percent}}% <u>xác suất cố định</u> khiến mỗi kẻ địch Trì Hoãn Hành Động {{3, percent}}%.",
         "shortDesc": "Khiến kẻ địch trong khu vực nhất định rơi vào trạng thái Mù. Tấn công kẻ địch trong trạng thái Mù, vào chiến đấu sẽ có xác suất lớn khiến mỗi một kẻ địch <u>trì hoãn hành động</u>."
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Sắc Màu Cuộc Sống",
-        "fullDesc": "Sát thương mà kẻ địch trong trạng thái Bào Mòn gây cho Sampo giảm {{1}}%.",
+        "fullDesc": "Sát thương mà kẻ địch trong trạng thái Bào Mòn gây cho Sampo giảm {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Nhiệt Tình Lan Toả",
-      "desc": "Khi kẻ địch đang ở trạng thái Bào Mòn bị tiêu diệt, sẽ khiến toàn phe địch có {{1}}% xác suất cơ bản cộng dồn {{2}} tầng bằng với trạng thái Bào Mòn của Thiên Phú."
+      "desc": "Khi kẻ địch đang ở trạng thái Bào Mòn bị tiêu diệt, sẽ khiến toàn phe địch có {{1, percent}}% xác suất cơ bản cộng dồn {{2}} tầng bằng với trạng thái Bào Mòn của Thiên Phú."
     },
     "3": {
       "name": "Con Số Lớn!",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Yêu Càng Nhiều, Hận Càng Sâu",
-      "desc": "Khi Chiến Kỹ đánh trúng mục tiêu địch có trạng thái Bào Mòn từ {{1}} tầng trở lên, sẽ khiến trạng thái Bào Mòn mục tiêu đó đang chịu lập tức sinh ra sát thương bằng {{2}}% sát thương ban đầu."
+      "desc": "Khi Chiến Kỹ đánh trúng mục tiêu địch có trạng thái Bào Mòn từ {{1}} tầng trở lên, sẽ khiến trạng thái Bào Mòn mục tiêu đó đang chịu lập tức sinh ra sát thương bằng {{2, percent}}% sát thương ban đầu."
     },
     "5": {
       "name": "Con Số Cực Lớn!",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Tiêu Phí Tăng Cấp",
-      "desc": "Bội Số Sát Thương của trạng thái Bào Mòn do Thiên Phú gây ra tăng {{1}}%."
+      "desc": "Bội Số Sát Thương của trạng thái Bào Mòn do Thiên Phú gây ra tăng {{1, percent}}%."
     }
   }
 }

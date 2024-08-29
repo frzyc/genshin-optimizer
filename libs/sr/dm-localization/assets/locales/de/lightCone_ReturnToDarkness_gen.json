@@ -2,6 +2,6 @@
   "name": "Rückkehr in die Dunkelheit",
   "passive": {
     "name": "Tosende Wellen",
-    "description": "Erhöht die KRIT-Rate des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Nach einem kritischen Treffer besteht eine feste Chance von <orangeStrong>{{2}}%</orangeStrong>, 1 Buff auf dem anvisierten Gegner zu entfernen. Dieser Effekt kann nur 1-mal für jeden Angriff ausgelöst werden."
+    "description": "Erhöht die KRIT-Rate des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Nach einem kritischen Treffer besteht eine feste Chance von <orangeStrong>{{2, percent}}%</orangeStrong>, 1 Buff auf dem anvisierten Gegner zu entfernen. Dieser Effekt kann nur 1-mal für jeden Angriff ausgelöst werden."
   }
 }

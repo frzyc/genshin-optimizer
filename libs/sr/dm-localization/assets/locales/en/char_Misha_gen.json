@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "E—Excuse Me, Please!",
-        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Misha's ATK to a single target enemy.",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Misha's ATK to a single target enemy.",
         "shortDesc": "Deals minor Ice DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "R—Room Service!",
-        "fullDesc": "Increases the Hits Per Action for Misha's next Ultimate by {{3}} hit(s). Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Misha's ATK to a single target enemy, and Ice DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Misha's ATK to adjacent targets.",
+        "fullDesc": "Increases the Hits Per Action for Misha's next Ultimate by {{3}} hit(s). Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Misha's ATK to a single target enemy, and Ice DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Misha's ATK to adjacent targets.",
         "shortDesc": "Deals Ice DMG to an enemy and minor Ice DMG to enemies adjacent to them. In addition, increases Misha's next <orangeStrong>Ultimate's Hit Per Action</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "G—Gonna Be Late!",
-        "fullDesc": "Has {{1}} Hits Per Action by default. First, uses 1 hit to deal Ice DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Misha's ATK to a single target enemy. Then, the rest of the hits each deals Ice DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Misha's ATK to a single random enemy. Just before each hit lands, there is a <orangeStrong>{{3}}%</orangeStrong> <u>base chance</u> to Freeze the target, lasting for 1 turn.\\nWhile Frozen, enemy targets cannot take any actions, and at the start of their turn, they receive <u>Additional Ice DMG</u> equal to <orangeStrong>{{4}}%</orangeStrong> of Misha's ATK.\\nThis Ultimate can possess up to {{5}} Hits Per Action. After the Ultimate is used, its Hits Per Action will be reset to the default level.",
+        "fullDesc": "Has {{1}} Hits Per Action by default. First, uses 1 hit to deal Ice DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Misha's ATK to a single target enemy. Then, the rest of the hits each deals Ice DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Misha's ATK to a single random enemy. Just before each hit lands, there is a <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> <u>base chance</u> to Freeze the target, lasting for 1 turn.\\nWhile Frozen, enemy targets cannot take any actions, and at the start of their turn, they receive <u>Additional Ice DMG</u> equal to <orangeStrong>{{4, percent}}%</orangeStrong> of Misha's ATK.\\nThis Ultimate can possess up to {{5}} Hits Per Action. After the Ultimate is used, its Hits Per Action will be reset to the default level.",
         "shortDesc": "Deals minor Ice DMG to single enemies. The attack bounces <orangeStrong>{{1}}</orangeStrong> times by default and up to a maximum of <orangeStrong>{{5}}</orangeStrong> times. Before each hit lands, there is a minor chance to <orangeStrong>Freeze</orangeStrong> the target."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Release",
-        "fullDesc": "Before the Ultimate's first hit lands, increases the base chance of Freezing the target by {{1}}%.",
+        "fullDesc": "Before the Ultimate's first hit lands, increases the base chance of Freezing the target by {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Interlock",
-        "fullDesc": "When using the Ultimate, increases the Effect Hit Rate by {{1}}%, lasting until the end of the current Ultimate's action.",
+        "fullDesc": "When using the Ultimate, increases the Effect Hit Rate by {{1, percent}}%, lasting until the end of the current Ultimate's action.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Transmission",
-        "fullDesc": "When dealing DMG to Frozen enemies, increases CRIT DMG by {{1}}%.",
+        "fullDesc": "When dealing DMG to Frozen enemies, increases CRIT DMG by {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Yearning of Youth",
-      "desc": "Before each hit of the Ultimate lands, there is a {{3}}% base chance of reducing the target's DEF by {{1}}% for {{2}} turn(s)."
+      "desc": "Before each hit of the Ultimate lands, there is a {{3, percent}}% base chance of reducing the target's DEF by {{1, percent}}% for {{2}} turn(s)."
     },
     "3": {
       "name": "Vestige of Happiness",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Visage of Kinship",
-      "desc": "Increases the DMG multiplier for each hit of the Ultimate by {{1}}%."
+      "desc": "Increases the DMG multiplier for each hit of the Ultimate by {{1, percent}}%."
     },
     "5": {
       "name": "Genesis of First Love",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Estrangement of Dream",
-      "desc": "When using the Ultimate, increases own DMG by {{2}}%, lasting until the end of the turn. In addition, the next time the Skill is used, recovers {{1}} Skill Point(s) for the team."
+      "desc": "When using the Ultimate, increases own DMG by {{2, percent}}%, lasting until the end of the turn. In addition, the next time the Skill is used, recovers {{1}} Skill Point(s) for the team."
     }
   }
 }

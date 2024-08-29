@@ -1,7 +1,7 @@
 {
   "setName": "Chim Ưng Ranh Giới Ngày Đêm",
   "setEffects": {
-    "2": "Tăng Sát Thương Phong {{1}}%.",
-    "4": "Sau khi người trang bị thi triển Tuyệt Kỹ, khiến Hành Động của người đó ưu tiên {{1}}%."
+    "2": "Tăng Sát Thương Phong {{1, percent}}%.",
+    "4": "Sau khi người trang bị thi triển Tuyệt Kỹ, khiến Hành Động của người đó ưu tiên {{1, percent}}%."
   }
 }

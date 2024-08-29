@@ -2,6 +2,6 @@
   "name": "Return to Darkness",
   "passive": {
     "name": "Raging Waves",
-    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> CRIT Rate pengguna. Setelah CRIT Hit, ada <orangeStrong>{{2}}%</orangeStrong> peluang tetap untuk menghapus 1 efek buff yang dimiliki musuh yang terserang. Efek ini hanya dapat dipicu sekali untuk setiap serangan."
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> CRIT Rate pengguna. Setelah CRIT Hit, ada <orangeStrong>{{2, percent}}%</orangeStrong> peluang tetap untuk menghapus 1 efek buff yang dimiliki musuh yang terserang. Efek ini hanya dapat dipicu sekali untuk setiap serangan."
   }
 }

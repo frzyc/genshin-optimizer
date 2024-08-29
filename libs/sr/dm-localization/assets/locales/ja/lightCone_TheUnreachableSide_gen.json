@@ -2,6 +2,6 @@
   "name": "{RUBY_B#つ}着{RUBY_E#}かない{RUBY_B#ひがん}彼岸{RUBY_E#}",
   "passive": {
     "name": "ならぬ",
-    "description": "装備キャラの会心率+<orangeStrong>{{1}}%</orangeStrong>、最大HP+<orangeStrong>{{2}}%</orangeStrong>。装備キャラが攻撃を受ける、または自身のHPを消費すると、与ダメージ+<orangeStrong>{{3}}%</orangeStrong>、この効果は装備キャラが攻撃を行った後に解除される。"
+    "description": "装備キャラの会心率+<orangeStrong>{{1, percent}}%</orangeStrong>、最大HP+<orangeStrong>{{2, percent}}%</orangeStrong>。装備キャラが攻撃を受ける、または自身のHPを消費すると、与ダメージ+<orangeStrong>{{3, percent}}%</orangeStrong>、この効果は装備キャラが攻撃を行った後に解除される。"
   }
 }

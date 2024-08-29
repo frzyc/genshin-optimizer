@@ -2,6 +2,6 @@
   "name": "落日时起舞",
   "passive": {
     "name": "沉酣",
-    "description": "使装备者受到攻击的概率大幅提高，暴击伤害提高<orangeStrong>{{1}}%</orangeStrong>。当装备者施放终结技后，获得1层【火舞】，持续2回合，最多叠加{{2}}层。每层【火舞】使装备者追加攻击造成的伤害提高<orangeStrong>{{3}}%</orangeStrong>。"
+    "description": "使装备者受到攻击的概率大幅提高，暴击伤害提高<orangeStrong>{{1, percent}}%</orangeStrong>。当装备者施放终结技后，获得1层【火舞】，持续2回合，最多叠加{{2}}层。每层【火舞】使装备者追加攻击造成的伤害提高<orangeStrong>{{3, percent}}%</orangeStrong>。"
   }
 }

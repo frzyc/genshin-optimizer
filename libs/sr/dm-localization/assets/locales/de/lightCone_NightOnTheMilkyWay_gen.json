@@ -2,6 +2,6 @@
   "name": "Nacht auf der Milchstraße",
   "passive": {
     "name": "Meteoritenschwarm",
-    "description": "Erhöht für jeden Gegner auf dem Feld den ANG des Trägers jeweils um <orangeStrong>{{2}}%</orangeStrong>. Dieser Effekt ist bis zu 5-mal stapelbar. Wenn die Schwäche eines Gegners gebrochen wird, wird der durch den Träger verursachte SCH für 1 Rd. um <orangeStrong>{{1}}%</orangeStrong> erhöht."
+    "description": "Erhöht für jeden Gegner auf dem Feld den ANG des Trägers jeweils um <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. Dieser Effekt ist bis zu 5-mal stapelbar. Wenn die Schwäche eines Gegners gebrochen wird, wird der durch den Träger verursachte SCH für 1 Rd. um <orangeStrong>{{1, percent}}%</orangeStrong> erhöht."
   }
 }

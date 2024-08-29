@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Poing de la conviction",
-        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Gepard à un ennemi unique.",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Gepard à un ennemi unique.",
         "shortDesc": "Inflige des DGT de glace mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Frappe intimidante",
-        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Gepard à un ennemi unique avec {{2}}% de <u>chances de base</u> de geler l'ennemi pendant {{3}} tour.\\nUn ennemi gelé ne peut pas agir et subit des DGT de glace <u>additionnels</u> équivalents à <orangeStrong>{{4}}%</orangeStrong> de l'ATQ de Gepard au début de chaque tour.",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Gepard à un ennemi unique avec {{2, percent}}% de <u>chances de base</u> de geler l'ennemi pendant {{3}} tour.\\nUn ennemi gelé ne peut pas agir et subit des DGT de glace <u>additionnels</u> équivalents à <orangeStrong>{{4, percent}}%</orangeStrong> de l'ATQ de Gepard au début de chaque tour.",
         "shortDesc": "Inflige des DGT de glace à un ennemi unique, avec une <orangeStrong>chance de le geler</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Rempart d'endurance",
-        "fullDesc": "Accorde à tous les alliés un bouclier qui absorbe une quantité de DGT équivalente à <orangeStrong>{{1}}%</orangeStrong> de la DÉF de Gepard + <orangeStrong>{{3}}</orangeStrong> pendant {{2}} tours.",
+        "fullDesc": "Accorde à tous les alliés un bouclier qui absorbe une quantité de DGT équivalente à <orangeStrong>{{1, percent}}%</orangeStrong> de la DÉF de Gepard + <orangeStrong>{{3}}</orangeStrong> pendant {{2}} tours.",
         "shortDesc": "<orangeStrong>Accorde un bouclier</orangeStrong> à tous les alliés."
       }
     },
     "technique": {
       "0": {
         "name": "Camaraderie",
-        "fullDesc": "Après utilisation de la technique de Gepard, tous les alliés gagnent un bouclier qui absorbe des DGT équivalents à {{1}}% de la DÉF de Gepard + {{3}} pendant {{2}} tours au début du combat suivant.",
+        "fullDesc": "Après utilisation de la technique de Gepard, tous les alliés gagnent un bouclier qui absorbe des DGT équivalents à {{1, percent}}% de la DÉF de Gepard + {{3}} pendant {{2}} tours au début du combat suivant.",
         "shortDesc": "Après utilisation de la technique, tous les alliés obtiennent un bouclier au début du combat suivant."
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Esprit combatif",
-        "fullDesc": "L'ATQ de Gepard augmente à hauteur de {{1}}% de sa DÉF actuelle. Cet effet s'actualise au début de chaque tour.",
+        "fullDesc": "L'ATQ de Gepard augmente à hauteur de {{1, percent}}% de sa DÉF actuelle. Cet effet s'actualise au début de chaque tour.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Devoir de diligence",
-      "desc": "Augmente les chances de base que la cible ennemie soit gelée lors de l'utilisation de la compétence de {{1}}%."
+      "desc": "Augmente les chances de base que la cible ennemie soit gelée lors de l'utilisation de la compétence de {{1, percent}}%."
     },
     "2": {
       "name": "Froid persistant",
-      "desc": "Quand un ennemi gelé par la compétence est dégelé, sa VIT diminue de {{1}}% pendant {{2}} tour."
+      "desc": "Quand un ennemi gelé par la compétence est dégelé, sa VIT diminue de {{1, percent}}% pendant {{2}} tour."
     },
     "3": {
       "name": "Sans reddition",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "La foi déplace les montagnes",
-      "desc": "Lorsque Gepard participe au combat, la RÉS aux effets de tous les alliés augmente de {{1}}%."
+      "desc": "Lorsque Gepard participe au combat, la RÉS aux effets de tous les alliés augmente de {{1, percent}}%."
     },
     "5": {
       "name": "Poing de fer froid",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Détermination sans faille",
-      "desc": "Lorsque son talent se déclenche, Gepard agit immédiatement et restaure des PV supplémentaires équivalents à {{1}}% de ses PV max."
+      "desc": "Lorsque son talent se déclenche, Gepard agit immédiatement et restaure des PV supplémentaires équivalents à {{1, percent}}% de ses PV max."
     }
   }
 }

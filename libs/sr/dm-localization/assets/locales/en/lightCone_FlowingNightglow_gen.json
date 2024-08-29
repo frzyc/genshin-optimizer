@@ -2,6 +2,6 @@
   "name": "Flowing Nightglow",
   "passive": {
     "name": "Pacify",
-    "description": "Every time an ally attacks, the wearer gains 1 stack of Cantillation. Each stack of Cantillation increases the wearer's Energy Regeneration Rate by <orangeStrong>{{1}}%</orangeStrong>, stacking up to {{2}} time(s). When the wearer uses their Ultimate, removes Cantillation and gains Cadenza. Cadenza increases the Wearer's ATK by <orangeStrong>{{4}}%</orangeStrong> and increases all allies' DMG dealt by <orangeStrong>{{3}}%</orangeStrong>, lasting for {{5}} turn(s)."
+    "description": "Every time an ally attacks, the wearer gains 1 stack of Cantillation. Each stack of Cantillation increases the wearer's Energy Regeneration Rate by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, stacking up to {{2}} time(s). When the wearer uses their Ultimate, removes Cantillation and gains Cadenza. Cadenza increases the Wearer's ATK by <orangeStrong>{{4, percent}}%</orangeStrong> and increases all allies' DMG dealt by <orangeStrong>{{3, percent}}%</orangeStrong>, lasting for {{5}} turn(s)."
   }
 }

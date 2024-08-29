@@ -2,6 +2,6 @@
   "name": "Rực Rỡ Hơn Mặt Trời",
   "passive": {
     "name": "Liều Mình",
-    "description": "Khiến Tỷ Lệ Bạo Kích của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>. Khi người trang bị thi triển tấn công thường, sẽ nhận 1 tầng Rồng Gầm, duy trì {{2}} hiệp. Mỗi tầng Rồng Gầm sẽ tăng <orangeStrong>{{4}}%</orangeStrong> tấn công của người trang bị, hiệu suất hồi năng lượng tăng <orangeStrong>{{5}}%</orangeStrong>. Rồng Gầm tối đa cộng dồn {{3}} tầng."
+    "description": "Khiến Tỷ Lệ Bạo Kích của người trang bị tăng <orangeStrong>{{1, percent}}%</orangeStrong>. Khi người trang bị thi triển tấn công thường, sẽ nhận 1 tầng Rồng Gầm, duy trì {{2}} hiệp. Mỗi tầng Rồng Gầm sẽ tăng <orangeStrong>{{4, percent}}%</orangeStrong> tấn công của người trang bị, hiệu suất hồi năng lượng tăng <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>. Rồng Gầm tối đa cộng dồn {{3}} tầng."
   }
 }

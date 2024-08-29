@@ -1,6 +1,6 @@
 {
   "setName": "Vonwacq Vivaz",
   "setEffects": {
-    "2": "Aumenta em {{1}}% a Taxa de Regeneração de Energia do usuário. Quando a VEL do usuário chegar a {{2}} ou mais, a ação do usuário é Avançada Adiante em {{3}}% imediatamente ao entrar na batalha."
+    "2": "Aumenta em {{1, percent}}% a Taxa de Regeneração de Energia do usuário. Quando a VEL do usuário chegar a {{2}} ou mais, a ação do usuário é Avançada Adiante em {{3, percent}}% imediatamente ao entrar na batalha."
   }
 }

@@ -2,6 +2,6 @@
   "name": "Yo seré mi propia espada",
   "passive": {
     "name": "Con este jade nocturno",
-    "description": "El Daño CRIT del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Cuando un aliado recibe un ataque o consume PV, el portador obtiene 1 acumulación de Eclipse. Se puede acumular hasta {{2}} veces. Por cada acumulación, el daño que inflige el siguiente ataque del portador aumenta en un <orangeStrong>{{3}}%</orangeStrong>. Cuando se alcanzan {{2}} acumulaciones, el ataque actual ignora un <orangeStrong>{{4}}%</orangeStrong> de la DEF del objetivo. Este efecto se elimina después de que el portador lance un ataque."
+    "description": "El Daño CRIT del portador aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong>. Cuando un aliado recibe un ataque o consume PV, el portador obtiene 1 acumulación de Eclipse. Se puede acumular hasta {{2}} veces. Por cada acumulación, el daño que inflige el siguiente ataque del portador aumenta en un <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>. Cuando se alcanzan {{2}} acumulaciones, el ataque actual ignora un <orangeStrong>{{4, percent}}%</orangeStrong> de la DEF del objetivo. Este efecto se elimina después de que el portador lance un ataque."
   }
 }

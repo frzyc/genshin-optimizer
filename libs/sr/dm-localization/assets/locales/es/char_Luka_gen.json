@@ -4,33 +4,33 @@
     "basic": {
       "0": {
         "name": "Puño certero",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Luka como Daño Físico a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Luka como Daño Físico a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo."
       },
       "1": {
         "name": "Puño rompecielos certero",
-        "fullDesc": "Consume 2 acumulaciones de Voluntad luchadora y usa primero Puño certero para lanzar un ataque de 3 golpes. Cada golpe inflige a un enemigo un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Luka como Daño Físico.\\nDespués, usa Puño rompecielos para golpear 1 vez más e inflige a un enemigo un <orangeStrong>{{2}}%</orangeStrong> del ATQ de Luka como Daño Físico.",
+        "fullDesc": "Consume 2 acumulaciones de Voluntad luchadora y usa primero Puño certero para lanzar un ataque de 3 golpes. Cada golpe inflige a un enemigo un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Luka como Daño Físico.\\nDespués, usa Puño rompecielos para golpear 1 vez más e inflige a un enemigo un <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Luka como Daño Físico.",
         "shortDesc": "Consume 2 acumulaciones de Voluntad luchadora e inflige Daño Físico a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "¡Puño, fuera!",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Luka como Daño Físico a un enemigo y después tiene un {{2}}% de <u>probabilidad base</u> de afectar con Sangrado al objetivo durante {{5}} turnos.\\nEl enemigo afectado por Sangrado recibe un Daño Físico con el tiempo equivalente al {{3}}% de sus PV máx. al comienzo de cada turno, hasta un máximo del <orangeStrong>{{4}}%</orangeStrong> del ATQ de Luka.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Luka como Daño Físico a un enemigo y después tiene un {{2, percent}}% de <u>probabilidad base</u> de afectar con Sangrado al objetivo durante {{5}} turnos.\\nEl enemigo afectado por Sangrado recibe un Daño Físico con el tiempo equivalente al {{3, percent(fixed: 1)}}% de sus PV máx. al comienzo de cada turno, hasta un máximo del <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ de Luka.",
         "shortDesc": "Inflige Daño Físico a un enemigo y tiene una gran probabilidad de <orangeStrong>aplicarle Sangrado</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Golpe de gracia",
-        "fullDesc": "Obtiene {{5}} acumulaciones de Voluntad luchadora y tiene una <u>probabilidad base</u> del {{2}}% de aumentar en un <orangeStrong>{{3}}%</orangeStrong> el daño que recibe un enemigo durante {{4}} turnos. Después inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Luka como Daño Físico a ese objetivo.",
+        "fullDesc": "Obtiene {{5}} acumulaciones de Voluntad luchadora y tiene una <u>probabilidad base</u> del {{2, percent}}% de aumentar en un <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> el daño que recibe un enemigo durante {{4}} turnos. Después inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Luka como Daño Físico a ese objetivo.",
         "shortDesc": "Obtiene <orangeStrong>{{5}}</orangeStrong> acumulaciones de Voluntad luchadora, tiene una gran probabilidad de aumentar el daño que recibe el enemigo y le inflige una gran cantidad de Daño Físico."
       }
     },
     "technique": {
       "0": {
         "name": "Anticipación",
-        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{1}}% del ATQ de Luka como Daño Físico a un enemigo al azar y tiene un {{2}}% de <u>probabilidad base</u> de afectarlo con un estado de Sangrado equivalente al de la habilidad básica. Después, Luka obtiene 1 acumulación adicional de Voluntad luchadora.",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{1, percent}}% del ATQ de Luka como Daño Físico a un enemigo al azar y tiene un {{2, percent}}% de <u>probabilidad base</u> de afectarlo con un estado de Sangrado equivalente al de la habilidad básica. Después, Luka obtiene 1 acumulación adicional de Voluntad luchadora.",
         "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de Daño Físico a un enemigo al azar y tiene una gran probabilidad de <orangeStrong>afectarlo con Sangrado</orangeStrong>. Después obtiene 1 acumulación adicional de Voluntad luchadora."
       }
     },
@@ -58,7 +58,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Voluntad luchadora aplastante",
-        "fullDesc": "Al usar el ATQ básico potenciado, cada golpe de Puño certero tiene un {{1}}% de probabilidad fija de que Luka lance 1 golpe adicional. Este efecto no se activa con los golpes adicionales activados de esta manera.",
+        "fullDesc": "Al usar el ATQ básico potenciado, cada golpe de Puño certero tiene un {{1, percent}}% de probabilidad fija de que Luka lance 1 golpe adicional. Este efecto no se activa con los golpes adicionales activados de esta manera.",
         "shortDesc": ""
       }
     }
@@ -66,7 +66,7 @@
   "ranks": {
     "1": {
       "name": "Lucha interminable",
-      "desc": "Cuando Luka realiza una acción, si el objetivo está afectado por Sangrado, el daño que inflige Luka aumenta en un {{1}}% durante {{2}} turnos."
+      "desc": "Cuando Luka realiza una acción, si el objetivo está afectado por Sangrado, el daño que inflige Luka aumenta en un {{1, percent}}% durante {{2}} turnos."
     },
     "2": {
       "name": "El enemigo es débil, yo soy fuerte",
@@ -78,7 +78,7 @@
     },
     "4": {
       "name": "Persistencia implacable",
-      "desc": "Por cada acumulación de Voluntad luchadora, el ATQ aumenta en un {{1}}%. Este efecto se puede acumular hasta {{2}} veces."
+      "desc": "Por cada acumulación de Voluntad luchadora, el ATQ aumenta en un {{1, percent}}%. Este efecto se puede acumular hasta {{2}} veces."
     },
     "5": {
       "name": "El espíritu de Llamarada",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "El aplauso del campeón",
-      "desc": "Tras golpear con el Puño rompecielos de su ATQ básico potenciado a un enemigo afectado por Sangrado, el estado de Sangrado inflige al instante 1 vez adicional un daño equivalente al {{1}}% del daño de Sangrado original por cada golpe de Puño certero de ese ATQ básico potenciado."
+      "desc": "Tras golpear con el Puño rompecielos de su ATQ básico potenciado a un enemigo afectado por Sangrado, el estado de Sangrado inflige al instante 1 vez adicional un daño equivalente al {{1, percent}}% del daño de Sangrado original por cada golpe de Puño certero de ese ATQ básico potenciado."
     }
   }
 }

@@ -2,6 +2,6 @@
   "name": "Le long de la rive",
   "passive": {
     "name": "Passeur",
-    "description": "Augmente les DGT critiques du porteur de <orangeStrong>{{1}}%</orangeStrong>. Lorsque le porteur touche une cible ennemie, applique l'effet Bulle du vide pendant 1 tour à l'ennemi. Cet effet peut être déclenché 1 fois sur chaque cible pour chaque attaque lancée par le porteur. Le porteur inflige <orangeStrong>{{2}}%</orangeStrong> de DGT supplémentaires aux cibles affectées par Bulle du vide et les DGT infligés par son ultime augmentent de <orangeStrong>{{3}}%</orangeStrong>."
+    "description": "Augmente les DGT critiques du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Lorsque le porteur touche une cible ennemie, applique l'effet Bulle du vide pendant 1 tour à l'ennemi. Cet effet peut être déclenché 1 fois sur chaque cible pour chaque attaque lancée par le porteur. Le porteur inflige <orangeStrong>{{2, percent}}%</orangeStrong> de DGT supplémentaires aux cibles affectées par Bulle du vide et les DGT infligés par son ultime augmentent de <orangeStrong>{{3, percent}}%</orangeStrong>."
   }
 }

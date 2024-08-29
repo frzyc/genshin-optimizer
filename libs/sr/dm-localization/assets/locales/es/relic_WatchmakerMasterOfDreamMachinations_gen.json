@@ -1,7 +1,7 @@
 {
   "setName": "Relojero de maquinaciones oníricas",
   "setEffects": {
-    "2": "Efecto de Ruptura +{{1}}%.",
-    "4": "Cuando el portador usa su habilidad definitiva sobre un aliado, el efecto de Ruptura de todos los aliados aumenta en un {{1}}% durante {{2}} turnos. Este efecto no se puede acumular."
+    "2": "Efecto de Ruptura +{{1, percent}}%.",
+    "4": "Cuando el portador usa su habilidad definitiva sobre un aliado, el efecto de Ruptura de todos los aliados aumenta en un {{1, percent}}% durante {{2}} turnos. Este efecto no se puede acumular."
   }
 }

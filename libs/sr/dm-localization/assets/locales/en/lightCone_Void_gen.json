@@ -2,6 +2,6 @@
   "name": "Void",
   "passive": {
     "name": "Fallen",
-    "description": "At the start of the battle, the wearer's Effect Hit Rate increases by <orangeStrong>{{1}}%</orangeStrong> for {{2}} turn(s)."
+    "description": "At the start of the battle, the wearer's Effect Hit Rate increases by <orangeStrong>{{1, percent}}%</orangeStrong> for {{2}} turn(s)."
   }
 }

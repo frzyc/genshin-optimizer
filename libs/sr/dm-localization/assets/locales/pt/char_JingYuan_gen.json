@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Fulgor Radiante",
-        "fullDesc": "Jing Yuan causa Dano de Raio igual a <orangeStrong>{{1}}%</orangeStrong> de seu ATQ a um único inimigo.",
+        "fullDesc": "Jing Yuan causa Dano de Raio igual a <orangeStrong>{{1, percent}}%</orangeStrong> de seu ATQ a um único inimigo.",
         "shortDesc": "Causa Dano de Raio leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Zênite Rompido",
-        "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Jing Yuan a todos os inimigos e aumenta os Golpes por Ação do Senhor dos Raios em {{2}} na próxima rodada.",
+        "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Jing Yuan a todos os inimigos e aumenta os Golpes por Ação do Senhor dos Raios em {{2}} na próxima rodada.",
         "shortDesc": "Causa Dano de Raio leve a todos os inimigos e <orangeStrong>aumenta os Golpes por Ação do Senhor dos Raios</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Portador da Luz",
-        "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Jing Yuan a todos os inimigos e aumenta os Golpes por Ação do Senhor dos Raios em {{2}} na próxima rodada.",
+        "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Jing Yuan a todos os inimigos e aumenta os Golpes por Ação do Senhor dos Raios em {{2}} na próxima rodada.",
         "shortDesc": "Causa Dano de Raio a todos os inimigos e <orangeStrong>aumenta os Golpes por Ação do Senhor dos Raios</orangeStrong>."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Esmagamento de Batalha",
-        "fullDesc": "Se os Golpes por Ação do Senhor dos Raios forem maiores ou iguais a {{1}} na próxima rodada, o Dano CRIT dele aumenta em {{2}}% pela próxima rodada.",
+        "fullDesc": "Se os Golpes por Ação do Senhor dos Raios forem maiores ou iguais a {{1}} na próxima rodada, o Dano CRIT dele aumenta em {{2, percent}}% pela próxima rodada.",
         "shortDesc": ""
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Marechal da Guerra",
-        "fullDesc": "Após a Perícia ser utilizada, a Chance de CRIT aumenta em {{1}}% por {{2}} rodada(s).",
+        "fullDesc": "Após a Perícia ser utilizada, a Chance de CRIT aumenta em {{1, percent}}% por {{2}} rodada(s).",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Corte, Mares Partidos",
-      "desc": "Quando o Senhor dos Raios ataca, o multiplicador de Dano nos inimigos adjacentes ao inimigo-alvo aumenta em uma quantidade extra igual a {{1}}% do multiplicador de Dano contra o inimigo-alvo principal."
+      "desc": "Quando o Senhor dos Raios ataca, o multiplicador de Dano nos inimigos adjacentes ao inimigo-alvo aumenta em uma quantidade extra igual a {{1, percent}}% do multiplicador de Dano contra o inimigo-alvo principal."
     },
     "2": {
       "name": "Golpe, Céus Esmagados",
-      "desc": "Depois que o Senhor dos Raios age, o Dano causado pelo ATQ Básico, pela Perícia e pela Perícia Suprema de Jing Yuan aumenta em {{1}}% por {{2}} rodada(s)."
+      "desc": "Depois que o Senhor dos Raios age, o Dano causado pelo ATQ Básico, pela Perícia e pela Perícia Suprema de Jing Yuan aumenta em {{1, percent}}% por {{2}} rodada(s)."
     },
     "3": {
       "name": "Ataque, Sóis Subjulgados",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Varrer, Almas Ceifadas",
-      "desc": "Cada golpe lançado pelo Senhor dos Raios ao agir tornará o inimigo-alvo Vulnerável.\\nQuando Vulneráveis, inimigos recebem {{1}}% a mais de Dano até o final da rodada atual do Senhor dos Raios, acumulando em até {{2}} vez(es)."
+      "desc": "Cada golpe lançado pelo Senhor dos Raios ao agir tornará o inimigo-alvo Vulnerável.\\nQuando Vulneráveis, inimigos recebem {{1, percent}}% a mais de Dano até o final da rodada atual do Senhor dos Raios, acumulando em até {{2}} vez(es)."
     }
   }
 }

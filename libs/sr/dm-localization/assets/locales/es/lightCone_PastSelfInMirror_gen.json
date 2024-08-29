@@ -2,6 +2,6 @@
   "name": "Mi pasado en el espejo",
   "passive": {
     "name": "Fragancia de ciruela en mis huesos",
-    "description": "El efecto de Ruptura del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Cuando el portador usa la habilidad definitiva, el daño que infligen todos los aliados aumenta en un <orangeStrong>{{2}}%</orangeStrong> durante {{3}} turnos, y si el efecto de Ruptura del portador es igual o superior al {{4}}%, se recupera 1 pt. de habilidad básica.\\nAl comienzo de cada oleada, todos los aliados recuperan <orangeStrong>{{5}}</orangeStrong> pts. de energía. Los efectos del mismo tipo no se pueden activar varias veces."
+    "description": "El efecto de Ruptura del portador aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong>. Cuando el portador usa la habilidad definitiva, el daño que infligen todos los aliados aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong> durante {{3}} turnos, y si el efecto de Ruptura del portador es igual o superior al {{4, percent}}%, se recupera 1 pt. de habilidad básica.\\nAl comienzo de cada oleada, todos los aliados recuperan <orangeStrong>{{5, fixed(fixed: 1)}}</orangeStrong> pts. de energía. Los efectos del mismo tipo no se pueden activar varias veces."
   }
 }

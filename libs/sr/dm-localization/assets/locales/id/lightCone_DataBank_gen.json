@@ -2,6 +2,6 @@
   "name": "Data Bank",
   "passive": {
     "name": "Learned",
-    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> DMG yang diakibatkan Ultimate pengguna."
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> DMG yang diakibatkan Ultimate pengguna."
   }
 }

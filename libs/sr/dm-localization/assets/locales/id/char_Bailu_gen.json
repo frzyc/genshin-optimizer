@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Diagnostic Kick",
-        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Bailu pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Bailu pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Singing Among Clouds",
-        "fullDesc": "Segera memulihkan HP 1 rekan sebesar <orangeStrong>{{1}}%</orangeStrong> Max HP Bailu + <orangeStrong>{{2}}</orangeStrong>. Lalu, Bailu akan memberikan {{4}} kali pemulihan pada rekan tim secara acak. Jumlah HP yang dipulihkan akan berkurang {{3}}% dari setiap pemulihan ke pemulihan berikutnya.",
+        "fullDesc": "Segera memulihkan HP 1 rekan sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Max HP Bailu + <orangeStrong>{{2}}</orangeStrong>. Lalu, Bailu akan memberikan {{4}} kali pemulihan pada rekan tim secara acak. Jumlah HP yang dipulihkan akan berkurang {{3, percent}}% dari setiap pemulihan ke pemulihan berikutnya.",
         "shortDesc": "Memulihkan HP 1 rekan tim, lalu memulihkan rekan yang lain secara acak."
       }
     },
     "ult": {
       "0": {
         "name": "Felicitous Thunderleap",
-        "fullDesc": "Segera memulihkan HP seluruh rekan tim sebesar <orangeStrong>{{1}}%</orangeStrong> Max HP Bailu +<orangeStrong>{{2}}</orangeStrong>.\\nBailu akan memberikan efek \"Invigoration\" pada rekan tim yang belum memiliki \"Invigoration\". Bailu akan menambah durasi \"Invigoration\" selama 1 giliran untuk rekan tim yang sudah memiliki \"Invigoration\".\\n\"Invigoration\" dapat berlangsung selama {{3}} giliran dan tidak dapat ditumpuk.",
+        "fullDesc": "Segera memulihkan HP seluruh rekan tim sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Max HP Bailu +<orangeStrong>{{2}}</orangeStrong>.\\nBailu akan memberikan efek \"Invigoration\" pada rekan tim yang belum memiliki \"Invigoration\". Bailu akan menambah durasi \"Invigoration\" selama 1 giliran untuk rekan tim yang sudah memiliki \"Invigoration\".\\n\"Invigoration\" dapat berlangsung selama {{3}} giliran dan tidak dapat ditumpuk.",
         "shortDesc": "Memulihkan HP seluruh rekan tim, memberikan \"Invigoration\" atau menambah durasi \"Invigoration\"."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Qihuang Analects",
-        "fullDesc": "Saat Bailu mengakibatkan pemulihan berlebihan pada rekan tim, akan meningkatkan {{1}}% Max HP target tersebut selama {{2}} giliran.",
+        "fullDesc": "Saat Bailu mengakibatkan pemulihan berlebihan pada rekan tim, akan meningkatkan {{1, percent}}% Max HP target tersebut selama {{2}} giliran.",
         "shortDesc": ""
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Aquatic Benediction",
-        "fullDesc": "Mengurangi {{1}}% DMG yang diterima karakter berefek \"Invigoration\".",
+        "fullDesc": "Mengurangi {{1, percent}}% DMG yang diterima karakter berefek \"Invigoration\".",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Sylphic Slumber",
-      "desc": "Setelah melancarkan Ultimate, meningkatkan {{1}}% Outgoing Healing selama {{2}} giliran."
+      "desc": "Setelah melancarkan Ultimate, meningkatkan {{1, percent}}% Outgoing Healing selama {{2}} giliran."
     },
     "3": {
       "name": "Omniscient Opulence",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Evil Excision",
-      "desc": "Setiap pemulihan dari Skill akan meningkatkan {{1}}% DMG penerima pemulihan. Dapat ditumpuk {{2}} lapis selama {{3}} giliran."
+      "desc": "Setiap pemulihan dari Skill akan meningkatkan {{1, percent}}% DMG penerima pemulihan. Dapat ditumpuk {{2}} lapis selama {{3}} giliran."
     },
     "5": {
       "name": "Waning Worries",

@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Straight Bet",
-        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> DEF Aventurine pada 1 musuh yang ditargetkan.",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> DEF Aventurine pada 1 musuh yang ditargetkan.",
         "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh yang ditargetkan."
       }
     },
     "skill": {
       "0": {
         "name": "Cornerstone Deluxe",
-        "fullDesc": "Memberikan Shield \"Fortified Wager\" pada seluruh rekan tim yang dapat menahan DMG sebesar <orangeStrong>{{1}}%</orangeStrong> DEF Aventurine + <orangeStrong>{{2}}</orangeStrong>, berlangsung selama {{3}} giliran. Saat memperoleh ulang \"Fortified Wager\", kekuatan Shield dapat ditumpuk, maksimal tidak melebihi {{4}}% kekuatan Shield yang diberikan Skill saat ini.",
+        "fullDesc": "Memberikan Shield \"Fortified Wager\" pada seluruh rekan tim yang dapat menahan DMG sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> DEF Aventurine + <orangeStrong>{{2}}</orangeStrong>, berlangsung selama {{3}} giliran. Saat memperoleh ulang \"Fortified Wager\", kekuatan Shield dapat ditumpuk, maksimal tidak melebihi {{4, percent}}% kekuatan Shield yang diberikan Skill saat ini.",
         "shortDesc": "Memberikan Shield \"Fortified Wager\" yang <orangeStrong>kekuatan Shield-nya dapat ditumpuk</orangeStrong> pada seluruh rekan tim."
       }
     },
     "ult": {
       "0": {
         "name": "Roulette Shark",
-        "fullDesc": "Memperoleh \"Blind Bet\" sebesar 1 hingga {{1}} poin secara acak. Kemudian, membuat 1 musuh yang ditargetkan memasuki status \"Unnerved\" selama {{4}} giliran, serta mengakibatkan Imaginary DMG sebesar <orangeStrong>{{2}}%</orangeStrong> DEF Aventurine pada 1 musuh yang ditargetkan tersebut. Saat rekan tim menyerang target musuh berstatus \"Unnerved\", CRIT DMG yang diakibatkan meningkat <orangeStrong>{{3}}%</orangeStrong>.",
+        "fullDesc": "Memperoleh \"Blind Bet\" sebesar 1 hingga {{1}} poin secara acak. Kemudian, membuat 1 musuh yang ditargetkan memasuki status \"Unnerved\" selama {{4}} giliran, serta mengakibatkan Imaginary DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> DEF Aventurine pada 1 musuh yang ditargetkan tersebut. Saat rekan tim menyerang target musuh berstatus \"Unnerved\", CRIT DMG yang diakibatkan meningkat <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.",
         "shortDesc": "Memperoleh poin \"Blind Bet\" secara acak dan membuat 1 musuh memasuki status \"Unnerved\", serta mengakibatkan Imaginary DMG pada musuh tersebut. Saat rekan tim menyerang target musuh berstatus \"Unnerved\", <orangeStrong>CRIT DMG yang diakibatkan akan meningkat</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "The Red or the Black",
-        "fullDesc": "Setelah menggunakan Technique, akan memperoleh 1 dari beberapa efek berikut:\\nMemiliki peluang tertentu untuk memperoleh peningkatan {{1}}% DEF;\\nBerpeluang besar memperoleh peningkatan {{2}}% DEF;\\nBerpeluang kecil memperoleh peningkatan {{3}}% DEF.\\nKetika digunakan berulang, hanya efek dengan nilai tertinggi yang akan tersimpan.\\nSaat pertempuran berikutnya dimulai, DEF seluruh rekan tim akan meningkat sesuai dengan nilai DEF yang terkait, berlangsung selama {{4}} giliran.",
+        "fullDesc": "Setelah menggunakan Technique, akan memperoleh 1 dari beberapa efek berikut:\\nMemiliki peluang tertentu untuk memperoleh peningkatan {{1, percent}}% DEF;\\nBerpeluang besar memperoleh peningkatan {{2, percent}}% DEF;\\nBerpeluang kecil memperoleh peningkatan {{3, percent}}% DEF.\\nKetika digunakan berulang, hanya efek dengan nilai tertinggi yang akan tersimpan.\\nSaat pertempuran berikutnya dimulai, DEF seluruh rekan tim akan meningkat sesuai dengan nilai DEF yang terkait, berlangsung selama {{4}} giliran.",
         "shortDesc": "Setelah menggunakan Technique, akan memperoleh 1 dari 3 jenis efek peningkatan DEF secara acak. Saat pertempuran berikutnya dimulai, DEF seluruh rekan tim akan meningkat sesuai dengan nilai DEF yang terkait."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Leverage",
-        "fullDesc": "Jika DEF Aventurine lebih dari {{3}}, maka untuk setiap 100 DEF yang berlebih akan meningkatkan {{1}}% CRIT Rate, maksimal meningkat hingga {{2}}%.",
+        "fullDesc": "Jika DEF Aventurine lebih dari {{3}}, maka untuk setiap 100 DEF yang berlebih akan meningkatkan {{1, percent}}% CRIT Rate, maksimal meningkat hingga {{2, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Hot Hand",
-        "fullDesc": "Saat pertempuran dimulai, akan memberikan Shield \"Fortified Wager\" pada seluruh rekan tim. Kekuatan Shield-nya adalah sebesar {{2}}% dari kekuatan Shield yang diberikan Skill Aventurine, berlangsung selama {{1}} giliran.",
+        "fullDesc": "Saat pertempuran dimulai, akan memberikan Shield \"Fortified Wager\" pada seluruh rekan tim. Kekuatan Shield-nya adalah sebesar {{2, percent}}% dari kekuatan Shield yang diberikan Skill Aventurine, berlangsung selama {{1}} giliran.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Bingo!",
-        "fullDesc": "Setelah rekan tim Aventurine yang memiliki \"Fortified Wager\" melancarkan Serangan Lanjutan, Aventurine akan mengakumulasi 1 poin \"Blind Bet\", efek ini dapat dipicu hingga {{3}} kali. Saat giliran Aventurine dimulai, perhitungan jumlah terpicunya efek ini akan di-reset. Setelah Aventurine melancarkan Serangan Lanjutan dari Talent-nya, akan memberikan \"Fortified Wager\" yang dapat menahan DMG pada seluruh rekan tim sebesar {{1}}% DEF Aventurine + {{2}}, serta memberikan ekstra \"Fortified Wager\" pada rekan tim dengan nilai Shield terendah sebesar {{4}}% DEF Aventurine + {{5}}, berlangsung selama {{3}} giliran.",
+        "fullDesc": "Setelah rekan tim Aventurine yang memiliki \"Fortified Wager\" melancarkan Serangan Lanjutan, Aventurine akan mengakumulasi 1 poin \"Blind Bet\", efek ini dapat dipicu hingga {{3}} kali. Saat giliran Aventurine dimulai, perhitungan jumlah terpicunya efek ini akan di-reset. Setelah Aventurine melancarkan Serangan Lanjutan dari Talent-nya, akan memberikan \"Fortified Wager\" yang dapat menahan DMG pada seluruh rekan tim sebesar {{1, percent}}% DEF Aventurine + {{2}}, serta memberikan ekstra \"Fortified Wager\" pada rekan tim dengan nilai Shield terendah sebesar {{4, percent}}% DEF Aventurine + {{5}}, berlangsung selama {{3}} giliran.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Prisoner's Dilemma",
-      "desc": "CRIT DMG dari rekan tim yang memiliki \"Fortified Wager\" meningkat {{1}}%. Setelah melancarkan Ultimate, akan memberikan Shield \"Fortified Wager\" pada seluruh rekan tim. Kekuatan Shield tersebut sebesar {{2}}% dari kekuatan Shield yang diberikan Skill Aventurine, berlangsung selama {{3}} giliran."
+      "desc": "CRIT DMG dari rekan tim yang memiliki \"Fortified Wager\" meningkat {{1, percent}}%. Setelah melancarkan Ultimate, akan memberikan Shield \"Fortified Wager\" pada seluruh rekan tim. Kekuatan Shield tersebut sebesar {{2, percent}}% dari kekuatan Shield yang diberikan Skill Aventurine, berlangsung selama {{3}} giliran."
     },
     "2": {
       "name": "Bounded Rationality",
-      "desc": "Saat melancarkan Basic Attack, RES Seluruh Tipe milik target musuh berkurang {{2}}% selama {{3}} giliran."
+      "desc": "Saat melancarkan Basic Attack, RES Seluruh Tipe milik target musuh berkurang {{2, percent}}% selama {{3}} giliran."
     },
     "3": {
       "name": "Droprate Maxing",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Unexpected Hanging Paradox",
-      "desc": "Saat memicu Serangan Lanjutan dari Talent Aventurine, DEF Aventurine akan meningkat {{1}}% terlebih dahulu selama {{2}} giliran, serta menambah {{3}} Hits Per Action dari Serangan Lanjutan Talent-nya."
+      "desc": "Saat memicu Serangan Lanjutan dari Talent Aventurine, DEF Aventurine akan meningkat {{1, percent}}% terlebih dahulu selama {{2}} giliran, serta menambah {{3}} Hits Per Action dari Serangan Lanjutan Talent-nya."
     },
     "5": {
       "name": "Ambiguity Aversion",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Stag Hunt Game",
-      "desc": "Untuk setiap 1 rekan tim Aventurine yang memiliki Shield, DMG yang diakibatkan Aventurine akan meningkat {{1}}%, maksimal tidak melebihi {{2}}%."
+      "desc": "Untuk setiap 1 rekan tim Aventurine yang memiliki Shield, DMG yang diakibatkan Aventurine akan meningkat {{1, percent}}%, maksimal tidak melebihi {{2, percent}}%."
     }
   }
 }

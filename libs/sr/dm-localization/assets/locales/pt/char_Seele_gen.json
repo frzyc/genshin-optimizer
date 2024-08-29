@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Agressão",
-        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Seele a um único inimigo.",
+        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Seele a um único inimigo.",
         "shortDesc": "Causa Dano Quântico leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Lâmina Embainhada",
-        "fullDesc": "Aumenta a VEL de Seele em {{2}}% por {{3}} rodada(s) e causa Dano Quântico equivalente a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Seele a um inimigo.",
+        "fullDesc": "Aumenta a VEL de Seele em {{2, percent}}% por {{3}} rodada(s) e causa Dano Quântico equivalente a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Seele a um inimigo.",
         "shortDesc": "Causa Dano Quântico a um único inimigo e aumenta a VEL."
       }
     },
     "ult": {
       "0": {
         "name": "Enxurrada de Borboletas",
-        "fullDesc": "Seele entra no modo melhorado e causa Dano Quântico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ dela a um único inimigo.",
+        "fullDesc": "Seele entra no modo melhorado e causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ dela a um único inimigo.",
         "shortDesc": "Entra no <orangeStrong>modo melhorado</orangeStrong> e causa Dano Quântico massivo a um único inimigo."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Sombra Noturna",
-        "fullDesc": "Quando os PV atuais forem iguais a {{1}}% ou inferiores, reduz a chance de ser atacada por inimigos.",
+        "fullDesc": "Quando os PV atuais forem iguais a {{1, percent}}% ou inferiores, reduz a chance de ser atacada por inimigos.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Laceração",
-        "fullDesc": "Enquanto Seele estiver com Melhoria, a PEN de RES a Dano Quântico dela aumenta em {{1}}%.",
+        "fullDesc": "Enquanto Seele estiver com Melhoria, a PEN de RES a Dano Quântico dela aumenta em {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Ondulação",
-        "fullDesc": "Após usar um ATQ Básico, a próxima ação de Seele será Avançada Adiante em {{1}}%.",
+        "fullDesc": "Após usar um ATQ Básico, a próxima ação de Seele será Avançada Adiante em {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Golpe Extirpador",
-      "desc": "Ao causar Dano a um inimigo com {{1}}% ou menos de PV, a Chance de CRIT aumenta em {{2}}%."
+      "desc": "Ao causar Dano a um inimigo com {{1, percent}}% ou menos de PV, a Chance de CRIT aumenta em {{2, percent}}%."
     },
     "2": {
       "name": "Borboleta Dançarina",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Confusão Devastadora",
-      "desc": "Após Seele usar sua Perícia Suprema, inflige Enxurrada de Borboletas ao inimigo-alvo por {{2}} rodada(s). Inimigos afetados recebem Dano Adicional igual a {{1}}% do Dano da Perícia Suprema de Seele como Dano Quântico cada vez que for atacado. Se o inimigo-alvo for derrotado pelo Dano de Enxurrada de Borboletas ativado pelo ataque de outros aliados, o Talento de Seele não poderá ser ativado.\\nQuando Seele é derrubada, a Enxurrada de Borboletas infligida aos inimigos será removida."
+      "desc": "Após Seele usar sua Perícia Suprema, inflige Enxurrada de Borboletas ao inimigo-alvo por {{2}} rodada(s). Inimigos afetados recebem Dano Adicional igual a {{1, percent}}% do Dano da Perícia Suprema de Seele como Dano Quântico cada vez que for atacado. Se o inimigo-alvo for derrotado pelo Dano de Enxurrada de Borboletas ativado pelo ataque de outros aliados, o Talento de Seele não poderá ser ativado.\\nQuando Seele é derrubada, a Enxurrada de Borboletas infligida aos inimigos será removida."
     }
   }
 }

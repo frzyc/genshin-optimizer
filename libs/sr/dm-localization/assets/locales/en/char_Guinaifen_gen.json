@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Standing Ovation",
-        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Guinaifen's ATK to a single enemy.",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Guinaifen's ATK to a single enemy.",
         "shortDesc": "Deals minor Fire DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Blazing Welcome",
-        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Guinaifen's ATK to a single enemy and Fire DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Guinaifen's ATK to any adjacent enemies, with a {{3}}% <u>base chance</u> to Burn the target and adjacent targets. When Burned, enemies will take a Fire DoT equal to <orangeStrong>{{4}}%</orangeStrong> of Guinaifen's ATK at the beginning of each turn, lasting for {{5}} turn(s).",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Guinaifen's ATK to a single enemy and Fire DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Guinaifen's ATK to any adjacent enemies, with a {{3, percent}}% <u>base chance</u> to Burn the target and adjacent targets. When Burned, enemies will take a Fire DoT equal to <orangeStrong>{{4, percent}}%</orangeStrong> of Guinaifen's ATK at the beginning of each turn, lasting for {{5}} turn(s).",
         "shortDesc": "Deals Fire DMG to a single enemy and minor Fire DMG to adjacent enemies, with a high chance of <orangeStrong>Burning</orangeStrong> them."
       }
     },
     "ult": {
       "0": {
         "name": "Watch This Showstopper",
-        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Guinaifen's ATK to all enemies. If the target enemy is currently inflicted with Burn, then their Burn status immediately produces DMG equal to <orangeStrong>{{2}}%</orangeStrong> of their original DMG.",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Guinaifen's ATK to all enemies. If the target enemy is currently inflicted with Burn, then their Burn status immediately produces DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of their original DMG.",
         "shortDesc": "Deals Fire DMG to all enemies. If the enemies are inflicted with Burn, the Burn status deals DMG 1 extra time."
       }
     },
     "technique": {
       "0": {
         "name": "Skill Showcase",
-        "fullDesc": "Immediately attacks the enemy. After entering battle, deals DMG for {{2}} time(s), dealing Fire DMG equal to {{1}}% of Guinaifen's ATK to a random single enemy target each time, with a {{3}}% <u>base chance</u> of inflicting Firekiss on them.",
+        "fullDesc": "Immediately attacks the enemy. After entering battle, deals DMG for {{2}} time(s), dealing Fire DMG equal to {{1, percent}}% of Guinaifen's ATK to a random single enemy target each time, with a {{3, percent}}% <u>base chance</u> of inflicting Firekiss on them.",
         "shortDesc": "Attacks the enemy. After entering battle, deals minor Fire DMG to a single target while applying <orangeStrong>Firekiss</orangeStrong>, with a total of 4 Bounces."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "High Poles",
-        "fullDesc": "Basic ATK has a {{1}}% base chance of inflicting an enemy with a Burn, equivalent to that of Skill.",
+        "fullDesc": "Basic ATK has a {{1, percent}}% base chance of inflicting an enemy with a Burn, equivalent to that of Skill.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Bladed Hoop",
-        "fullDesc": "When the battle begins, Guinaifen's action is advanced forward by {{1}}%.",
+        "fullDesc": "When the battle begins, Guinaifen's action is advanced forward by {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Walking on Knives",
-        "fullDesc": "Deals {{1}}% more DMG to Burned enemies.",
+        "fullDesc": "Deals {{1, percent}}% more DMG to Burned enemies.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Slurping Noodles During Handstand",
-      "desc": "When Skill is used, there is a {{1}}% base chance to reduce the attacked target enemy's Effect RES by {{2}}% for {{3}} turn(s)."
+      "desc": "When Skill is used, there is a {{1, percent}}% base chance to reduce the attacked target enemy's Effect RES by {{2, percent}}% for {{3}} turn(s)."
     },
     "2": {
       "name": "Brushing Teeth While Whistling",
-      "desc": "When an enemy target is being Burned, the DMG multiplier of the Burn status applied by her Basic ATK or Skill increases by {{1}}%."
+      "desc": "When an enemy target is being Burned, the DMG multiplier of the Burn status applied by her Basic ATK or Skill increases by {{1, percent}}%."
     },
     "3": {
       "name": "Smashing Boulder on Chest",

@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Expulsão",
-        "fullDesc": "Tingyun causa Dano de Raio igual a <orangeStrong>{{1}}%</orangeStrong> de seu ATQ a um único inimigo.",
+        "fullDesc": "Tingyun causa Dano de Raio igual a <orangeStrong>{{1, percent}}%</orangeStrong> de seu ATQ a um único inimigo.",
         "shortDesc": "Causa Dano de Raio leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Melodia Calmante",
-        "fullDesc": "Concede Bênção a um único aliado e aumenta o ATQ dele em <orangeStrong>{{2}}%</orangeStrong>, até o máximo de <orangeStrong>{{4}}%</orangeStrong> do ATQ atual de Tingyun.\\nQuando o aliado com Bênção ataca, ele causa <u>Dano Adicional</u> de Raio igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ daquele aliado 1 vez.\\nA Bênção dura por {{3}} rodada(s) e só tem efeito no último aliado a receber a Perícia de Tingyun.",
+        "fullDesc": "Concede Bênção a um único aliado e aumenta o ATQ dele em <orangeStrong>{{2, percent}}%</orangeStrong>, até o máximo de <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ atual de Tingyun.\\nQuando o aliado com Bênção ataca, ele causa <u>Dano Adicional</u> de Raio igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ daquele aliado 1 vez.\\nA Bênção dura por {{3}} rodada(s) e só tem efeito no último aliado a receber a Perícia de Tingyun.",
         "shortDesc": "<orangeStrong>Aumenta o ATQ</orangeStrong> de um único aliado e concede Bênção a ele. O aliado com Bênção causa adicionalmente <orangeStrong><u>Dano Adicional</u> de Raio</orangeStrong> leve ao atacar."
       }
     },
     "ult": {
       "0": {
         "name": "Em Meio às Nuvens Alegres",
-        "fullDesc": "Regenera {{1}} de Energia de um aliado e aumenta o Dano dele em <orangeStrong>{{3}}%</orangeStrong> por {{2}} rodada(s).",
+        "fullDesc": "Regenera {{1}} de Energia de um aliado e aumenta o Dano dele em <orangeStrong>{{3, percent}}%</orangeStrong> por {{2}} rodada(s).",
         "shortDesc": "Regenera a <orangeStrong>Energia</orangeStrong> de um aliado-alvo e <orangeStrong>aumenta o Dano</orangeStrong> causado por ele."
       }
     },
@@ -39,14 +39,14 @@
     "bonusAbility1": {
       "0": {
         "name": "Jovialidade Nutrida",
-        "fullDesc": "Aumenta em {{1}}% a VEL de Tingyun por 1 rodada após usar a Perícia.",
+        "fullDesc": "Aumenta em {{1, percent}}% a VEL de Tingyun por 1 rodada após usar a Perícia.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Subjugar de Joelhos",
-        "fullDesc": "Aumenta em {{1}}% o Dano do ATQ Básico.",
+        "fullDesc": "Aumenta em {{1, percent}}% o Dano do ATQ Básico.",
         "shortDesc": ""
       }
     },
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "A Sorte Sorri com Bondade",
-      "desc": "Após usar a Perícia Suprema, o aliado com Bênção ganha {{1}}% de aumento de VEL por 1 rodada."
+      "desc": "Após usar a Perícia Suprema, o aliado com Bênção ganha {{1, percent}}% de aumento de VEL por 1 rodada."
     },
     "2": {
       "name": "Dá os Ganhos, Ganha o que Dá",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Versatilidade Jovial",
-      "desc": "O multiplicador de Dano concedido pela Bênção aumenta em {{1}}%."
+      "desc": "O multiplicador de Dano concedido pela Bênção aumenta em {{1, percent}}%."
     },
     "5": {
       "name": "Astúcia Tranquila",

@@ -2,6 +2,6 @@
   "name": "On est les Feux sauvages",
   "passive": {
     "name": "Les larmes aux yeux",
-    "description": "Les DGT infligés à tous les alliés diminuent de <orangeStrong>{{2}}%</orangeStrong> pendant {{3}} tours en début de combat. D'autre part, restaure immédiatement <orangeStrong>{{1}}%</orangeStrong> de leurs PV perdus respectifs."
+    "description": "Les DGT infligés à tous les alliés diminuent de <orangeStrong>{{2, percent}}%</orangeStrong> pendant {{3}} tours en début de combat. D'autre part, restaure immédiatement <orangeStrong>{{1, percent}}%</orangeStrong> de leurs PV perdus respectifs."
   }
 }
