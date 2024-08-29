@@ -16,10 +16,11 @@ const runExecutor: PromiseExecutor<GenLocaleExecutorSchema> = async (
       //general manual localization namespaces
       if (
         [
-          'sheet',
           'charNames',
           'lightConeNames',
           'relicNames',
+          'sheet',
+          'slotKey',
           'statKey',
         ].includes(type)
       )
