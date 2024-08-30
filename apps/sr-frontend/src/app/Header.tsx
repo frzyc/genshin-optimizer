@@ -1,11 +1,14 @@
 import { useDatabaseTally } from '@genshin-optimizer/common/database-ui'
-import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
+import { Tally } from '@genshin-optimizer/common/ui'
+import {
+  CharacterIcon,
+  LightConeIcon,
+  RelicIcon,
+  TeamsIcon,
+} from '@genshin-optimizer/sr/svgicons'
 import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
 import { Settings } from '@mui/icons-material'
-import DiamondIcon from '@mui/icons-material/Diamond'
-import GroupsIcon from '@mui/icons-material/Groups'
 import MenuIcon from '@mui/icons-material/Menu'
-import PersonIcon from '@mui/icons-material/Person'
 import {
   AppBar,
   Box,
@@ -13,10 +16,6 @@ import {
   Chip,
   Drawer,
   IconButton,
-  List,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
   Skeleton,
   Tab,
   Tabs,
@@ -40,35 +39,34 @@ type ITab = {
 }
 const relics: ITab = {
   i18Key: 'tabs.relics',
-  // TODO: replace with real relics icon later
-  icon: <DiamondIcon />,
+  icon: <RelicIcon />,
   to: '/relics',
   value: 'relics',
-  textSuffix: <RelicChip key="relicsAdd" />,
+  textSuffix: <RelicsTab key="relicsAdd" />,
 }
 
 const lightCones: ITab = {
   i18Key: 'tabs.lightcones',
-  icon: <AnvilIcon />,
+  icon: <LightConeIcon />,
   to: '/lightcones',
   value: 'lightcones',
-  textSuffix: <LightConeChip key="lightConeAdd" />,
+  textSuffix: <LightConesTab key="lightConeAdd" />,
 }
 
 const characters: ITab = {
   i18Key: 'tabs.characters',
-  icon: <PersonIcon />,
+  icon: <CharacterIcon />,
   to: '/characters',
   value: 'characters',
-  textSuffix: <CharacterChip key="charactersAdd" />,
+  textSuffix: <CharactersTab key="charAdd" />,
 }
 
 const teams: ITab = {
   i18Key: 'tabs.teams',
-  icon: <GroupsIcon />,
+  icon: <TeamsIcon />,
   to: '/teams',
   value: 'teams',
-  textSuffix: <TeamChip key="charAdd" />,
+  textSuffix: <TeamsTab key="teamAdd" />,
 }
 
 const settings: ITab = {
@@ -76,47 +74,33 @@ const settings: ITab = {
   icon: <Settings />,
   to: '/settings',
   value: 'settings',
+  textSuffix: <SettingsChip />,
 }
 
-function RelicChip() {
+function SettingsChip() {
   const { database } = useDatabaseContext()
-  return (
-    <Chip
-      label={<strong>{useDatabaseTally(database.relics)}</strong>}
-      size="small"
-    />
-  )
+  const { name } = database?.dbMeta.get() ?? 'Database 0'
+  return <Chip label={name} />
 }
 
-function LightConeChip() {
+function RelicsTab() {
   const { database } = useDatabaseContext()
-
-  return (
-    <Chip
-      label={<strong>{useDatabaseTally(database.lightCones)}</strong>}
-      size="small"
-    />
-  )
+  return <Tally>{useDatabaseTally(database.relics)}</Tally>
 }
 
-function CharacterChip() {
+function LightConesTab() {
   const { database } = useDatabaseContext()
-  return (
-    <Chip
-      label={<strong>{useDatabaseTally(database.chars)}</strong>}
-      size="small"
-    />
-  )
+  return <Tally>{useDatabaseTally(database.lightCones)}</Tally>
 }
 
-function TeamChip() {
+function CharactersTab() {
   const { database } = useDatabaseContext()
-  return (
-    <Chip
-      label={<strong>{useDatabaseTally(database.teams)}</strong>}
-      size="small"
-    />
-  )
+  return <Tally>{useDatabaseTally(database.chars)}</Tally>
+}
+
+function TeamsTab() {
+  const { database } = useDatabaseContext()
+  return <Tally>{useDatabaseTally(database.teams)}</Tally>
 }
 
 export default function Header({ anchor }: { anchor: string }) {
@@ -131,9 +115,8 @@ const maincontent = [relics, lightCones, characters, teams, settings] as const
 
 function HeaderContent({ anchor }: { anchor: string }) {
   const theme = useTheme()
-  const isXL = useMediaQuery(theme.breakpoints.up('xl'))
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
-  const { t } = useTranslation(['ui', 'header'])
+
   const {
     params: { currentTab },
   } = useMatch({ path: '/:currentTab', end: false }) ?? {
@@ -141,16 +124,29 @@ function HeaderContent({ anchor }: { anchor: string }) {
   }
   if (isMobile)
     return <MobileHeader anchor={anchor} currentTab={currentTab ?? ''} />
+  return <DesktopHeader anchor={anchor} currentTab={currentTab ?? ''} />
+}
+
+function DesktopHeader({
+  anchor,
+  currentTab,
+}: {
+  anchor: string
+  currentTab: string
+}) {
+  const theme = useTheme()
+  const isXL = useMediaQuery(theme.breakpoints.up('xl'))
+  const { t } = useTranslation(['ui', 'header'])
   return (
     <AppBar
       position="static"
-      sx={{ bgcolor: '#343a40' }}
+      sx={{ bgcolor: 'neutral900.main' }}
       elevation={0}
       id={anchor}
     >
       <Tabs
         value={currentTab}
-        sx={{
+        sx={(theme) => ({
           '& .MuiTab-root': {
             p: 1,
             minWidth: 'auto',
@@ -160,7 +156,13 @@ function HeaderContent({ anchor }: { anchor: string }) {
             transition: 'background-color 0.5s ease',
             backgroundColor: 'rgba(255,255,255,0.1)',
           },
-        }}
+          '& .Mui-selected': {
+            backgroundImage: `linear-gradient(to top, ${theme.palette.brand500.main}, ${theme.palette.neutral700.main})`,
+            color: `${theme.palette.neutral100.main} !important`,
+            textShadow:
+              '0.25px 0 0 currentColor, -0.25px 0 0 currentColor, 0 0.25px 0 currentColor, 0 -0.25px 0',
+          },
+        })}
       >
         <Tab
           value=""
@@ -168,7 +170,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
           to="/"
           label={
             <Box display="flex" alignItems="center">
-              <Typography variant="h6" sx={{ px: 1 }}>
+              <Typography variant="h6" sx={{ px: 1, fontWeight: 'Normal' }}>
                 {t('pageTitle')}
               </Typography>
             </Box>
@@ -192,7 +194,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
               iconPosition="start"
               label={
                 isXL || textSuffix ? (
-                  <Box display="flex" gap={1} alignItems="center">
+                  <Box display="flex" gap={0.5} alignItems="center">
                     {isXL && <span>{t(`header:${i18Key}`)}</span>}
                     {textSuffix}
                   </Box>
@@ -207,7 +209,7 @@ function HeaderContent({ anchor }: { anchor: string }) {
   )
 }
 
-const mobileContent = [relics, lightCones, settings] as const
+const mobileContent = [relics, lightCones, characters, teams, settings] as const
 function MobileHeader({
   anchor,
   currentTab,
@@ -222,11 +224,13 @@ function MobileHeader({
   }
 
   const { t } = useTranslation(['ui', 'header'])
-  // Allow navigating back to the teams page when on a specific team.
-  const inTeam = useMatch({ path: '/teams/:teamId/*' })
   return (
     <>
-      <AppBar position="fixed" sx={{ bgcolor: '#343a40' }} elevation={0}>
+      <AppBar
+        position="fixed"
+        sx={{ bgcolor: 'neutral900.main' }}
+        elevation={0}
+      >
         <Drawer
           anchor="right"
           variant="temporary"
@@ -235,48 +239,70 @@ function MobileHeader({
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
           }}
+          PaperProps={{
+            sx: (theme) => ({
+              // backgroundColor: 'neutral700.main',
+              backgroundImage: `linear-gradient(to right, ${theme.palette.neutral700.main}, ${theme.palette.neutral700.main})`,
+            }),
+          }}
         >
-          <List>
-            <ListItemButton
-              key="home"
+          <Tabs
+            value={currentTab}
+            orientation="vertical"
+            variant="scrollable"
+            scrollButtons={false}
+            TabIndicatorProps={{
+              sx: {
+                left: 0,
+                width: '4px',
+              },
+            }}
+            sx={(theme) => ({
+              '& .Mui-selected': {
+                backgroundImage: `linear-gradient(to right, ${theme.palette.brand500.main}, ${theme.palette.neutral700.main})`,
+                color: `${theme.palette.neutral100.main} !important`,
+                textShadow:
+                  '0.1px 0 0 currentColor, -0.1px 0 0 currentColor, 0 0.1px 0 currentColor, 0 -0.1px 0',
+              },
+            })}
+          >
+            <Tab
+              value=""
               component={RouterLink}
               to={'/'}
-              selected={currentTab === ''}
-              disabled={currentTab === ''}
               onClick={handleDrawerToggle}
-            >
-              <ListItemText>{t('pageTitle')}</ListItemText>
-            </ListItemButton>
-            {mobileContent.map(
-              ({ i18Key, value, to, icon, textSuffix: extra }) => (
-                <ListItemButton
-                  key={value}
-                  component={RouterLink}
-                  to={to}
-                  selected={currentTab === value}
-                  disabled={currentTab === value && !inTeam}
-                  onClick={handleDrawerToggle}
-                >
-                  <ListItemIcon>{icon}</ListItemIcon>
-                  <ListItemText>
-                    <Box display="flex" gap={1} alignItems="center">
-                      {t(`header:${i18Key}`)}
-                      {extra}
-                    </Box>
-                  </ListItemText>
-                </ListItemButton>
-              )
-            )}
-          </List>
+              label={<Typography>{t('pageTitle')}</Typography>}
+            />
+            {mobileContent.map(({ i18Key, value, to, icon, textSuffix }) => (
+              <Tab
+                key={value}
+                value={value}
+                component={RouterLink}
+                to={to}
+                onClick={handleDrawerToggle}
+                icon={icon as ReactElement}
+                iconPosition="start"
+                label={
+                  <Box display="flex" gap={0.5} alignItems="center">
+                    <Typography>{t(`header:${i18Key}`)}</Typography>
+                    {textSuffix}
+                  </Box>
+                }
+                sx={{ justifyContent: 'flex-start' }}
+              />
+            ))}
+          </Tabs>
         </Drawer>
         <Toolbar>
           <Button
             variant="text"
-            sx={{ color: 'white' }}
+            sx={(theme) => ({
+              color: `${theme.palette.neutral200.main} !important`,
+            })}
             component={RouterLink}
             to="/"
           >
-            <Typography variant="h6" noWrap component="div">
+            <Typography variant="h6" noWrap component="div" sx={{ px: 1 }}>
               {t('pageTitle')}
             </Typography>
           </Button>
