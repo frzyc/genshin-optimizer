@@ -305,6 +305,7 @@ function SkillDisplayCard({
             document={doc}
             collapse
             // hideHeader={hideHeader}
+            setConditional={() => {}} // TODO: frzyc setConditional
           />
         ))}
       </CardContent>
