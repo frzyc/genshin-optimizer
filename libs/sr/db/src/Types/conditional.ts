@@ -4,15 +4,15 @@ import type {
   RelicSetKey,
 } from '@genshin-optimizer/sr/consts'
 
-export type CondKey = CharacterKey | RelicSetKey | LightConeKey
+type SheetKey = CharacterKey | RelicSetKey | LightConeKey
 // Stored per-char loadout, so the dst is assumed to be the owning char
-// CharKey is the srcKey
-// CondKey is the SheetKey
-// key is the condKey
+// CharKey|'all' is the srcKey
+// SheetKey is the SheetKey
+// condkey is the condKey
 // value is the condValue
 export type ConditionalValues = Partial<
   Record<
     CharacterKey | 'all',
-    Partial<Record<CondKey, { [key: string]: string }>>
+    Partial<Record<SheetKey, { [condkey: string]: number }>>
   >
 >

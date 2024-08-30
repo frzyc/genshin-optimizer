@@ -7,7 +7,7 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { Box, Button, Collapse, Divider } from '@mui/material'
-import { useContext, useState } from 'react'
+import { createContext, useContext, useState } from 'react'
 import { CalcContext } from '../context'
 import type {
   Conditional,
@@ -18,14 +18,25 @@ import type {
 } from '../types'
 import { FieldsDisplay } from './FieldDisplay'
 
+const SetConditionalContext = createContext(
+  (_srcKey: string, _sheetKey: string, _condKey: string, _value: number) => {}
+)
+
 export function DocumentDisplay({
   document,
   bgt = 'normal',
   collapse = false,
+  setConditional,
 }: {
   document: Document
   bgt?: CardBackgroundColor
   collapse?: boolean
+  setConditional: (
+    srcKey: string,
+    sheetKey: string,
+    condKey: string,
+    value: number
+  ) => void
 }) {
   switch (document.type) {
     case 'fields':
@@ -38,13 +49,15 @@ export function DocumentDisplay({
       )
     case 'conditional':
       return (
-        <ConditionalDisplay
-          conditional={document.conditional}
-          // hideDesc={hideDesc}
-          // hideHeader={hideHeader}
-          // disabled={disabled}
-          bgt={bgt}
-        />
+        <SetConditionalContext.Provider value={setConditional}>
+          <ConditionalDisplay
+            conditional={document.conditional}
+            // hideDesc={hideDesc}
+            // hideHeader={hideHeader}
+            // disabled={disabled}
+            bgt={bgt}
+          />
+        </SetConditionalContext.Provider>
       )
     default:
       return null
@@ -167,15 +180,18 @@ function ConditionalSelector({ conditional }: { conditional: Conditional }) {
 function BoolConditional({ conditional }: { conditional: Conditional }) {
   const calc = useContext(CalcContext)
   const { label, badge } = conditional
-
+  const setConditional = useContext(SetConditionalContext)
+  const { sheet: sheetKey, name: condKey } = conditional.metadata
+  if (!sheetKey || !condKey) throw new Error('metadata missing')
+  const srcKey = 'all'
   const conditionalValue = calc?.compute(
     read(
       {
         et: 'own',
         qt: 'cond',
-        sheet: conditional.metadata.sheet,
-        q: conditional.metadata.name,
-        src: 'all',
+        sheet: sheetKey,
+        q: condKey,
+        src: srcKey,
         dst: calc.cache.tag.src,
       },
       'max'
@@ -187,7 +203,9 @@ function BoolConditional({ conditional }: { conditional: Conditional }) {
       size="small"
       sx={{ borderRadius: 0 }}
       color={conditionalValue ? 'success' : 'primary'}
-      // onClick={() => setConditional(conditionalValue ? undefined : stateKey)}
+      onClick={() =>
+        setConditional(srcKey, sheetKey, condKey, +!conditionalValue)
+      }
       // disabled={disabled}
       startIcon={
         conditionalValue ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />
