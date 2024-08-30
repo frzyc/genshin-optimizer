@@ -1,5 +1,6 @@
 import { useDatabaseTally } from '@genshin-optimizer/common/database-ui'
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
+import { Tally } from '@genshin-optimizer/common/ui'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { FlowerIcon } from '@genshin-optimizer/gi/svgicons'
 import { SillyContext, shouldShowDevComponents } from '@genshin-optimizer/gi/ui'
@@ -105,13 +106,7 @@ function DBChip() {
   const { name } = useDBMeta()
   return <Chip label={name} />
 }
-function Tally({ children }: { children: ReactNode }) {
-  return (
-    <Typography sx={{ opacity: 0.7, lineHeight: 1 }} variant="caption">
-      {children}
-    </Typography>
-  )
-}
+
 function ArtifactChip() {
   const database = useDatabase()
   return <Tally>{useDatabaseTally(database.arts)}</Tally>
