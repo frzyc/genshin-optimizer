@@ -1,14 +1,28 @@
+import type {
+  IConditionalData,
+  IFormulaData,
+} from '@genshin-optimizer/common/formula'
+import type {
+  ArtifactSetKey,
+  CharacterKey,
+  WeaponKey,
+} from '@genshin-optimizer/gi/consts'
 import { workspaceRoot } from '@nx/devkit'
 import { writeFileSync } from 'fs'
 import * as path from 'path'
+import * as prettier from 'prettier'
 import type { GenDescExecutorSchema } from './schema'
-
 // Note:
 // It is important that `data` has NOT been loaded at this point
 // as we are injecting `conditionals` to "collect" the metadata
-import * as prettier from 'prettier'
 import type { entries as Entries } from '../../data'
+import type { Tag } from '../../data/util'
 import { metaList } from '../../data/util'
+
+type SheetKey = CharacterKey | ArtifactSetKey | WeaponKey
+type Conditionals = Partial<Record<SheetKey, Record<string, IConditionalData>>>
+type Formulas = Partial<Record<SheetKey, Record<string, IFormulaData<Tag>>>>
+
 metaList.conditionals = []
 
 export default async function runExecutor(
@@ -18,15 +32,20 @@ export default async function runExecutor(
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const { entries } = require('../../data')
   const { outputPath } = options
-  const formulas: Record<string, Record<string, any>> = {}
+  const formulas: Formulas = {}
 
   // Massage data from `metaList`
-  const conditionals: Record<string, Record<string, any>> = {}
+  const conditionals: Conditionals = {}
   for (const { tag, meta } of metaList.conditionals!) {
     const { sheet, q } = tag // Conditionals guarantee `sheet-q` pair uniqueness
-    if (!conditionals[sheet!]) conditionals[sheet!] = {}
-    if (!conditionals[sheet!][q!])
-      conditionals[sheet!][q!] = { sheet, name: q, ...meta }
+    const sheetKey = sheet as SheetKey
+    if (!conditionals[sheetKey]) conditionals[sheetKey] = {}
+    if (!conditionals[sheetKey][q!])
+      conditionals[sheetKey][q!] = {
+        sheet: sheetKey,
+        name: q!,
+        ...meta,
+      } as IConditionalData
     else console.log(`Duplicated conditionals for ${sheet}:${q}`)
   }
 
@@ -43,12 +62,17 @@ export default async function runExecutor(
       'name' in value.tag &&
       'q' in value.tag
     ) {
-      const sheet = tag.sheet!
+      // TODO: sheet can have 'enemy' 'custom', will they show up in meta?
+      const sheet = tag.sheet! as SheetKey
       const name = value.tag['name']!
       if (!formulas[sheet]) formulas[sheet] = {}
       if (formulas[sheet][name])
         console.error(`Duplicated formula definition for ${sheet}:${name}`)
-      formulas[sheet][name] = { sheet, name, tag: { ...tag, ...value.tag } }
+      formulas[sheet][name] = {
+        sheet,
+        name,
+        tag: { ...tag, ...value.tag },
+      }
     }
   }
 
@@ -56,46 +80,9 @@ export default async function runExecutor(
   const prettierRc = await prettier.resolveConfig(cwd)
   const str = prettier.format(
     `
-type Tag = Record<string, string>
-
-export type IConditionalData =
-  | IBoolConditionalData
-  | IListConditionalData
-  | INumConditionalData
-export type IFormulaData = {
-  sheet: string // entity
-  name: string // formula name
-  tag: Tag // tag used to access value
-}
-
-/// Conditional whose values are True (1.0) and False (0.0)
-export type IBoolConditionalData = {
-  type: 'bool' // type discriminator
-  sheet: string // entity
-  name: string // conditional name
-}
-/// Conditional whose values are those in the list. When inputting the
-/// entry, use the (0-based) position in the list
-export type IListConditionalData = {
-  type: 'list' // type discriminator
-  sheet: string // entity
-  name: string // conditional name
-
-  list: [string] // feasible values
-}
-/// Conditional whose values are regular numbers
-export type INumConditionalData = {
-  type: 'num' // type discriminator
-  sheet: string // entity
-  name: string // conditional name
-
-  int_only: boolean // whether the value must be an integer
-  min?: number // smallest feasible value, if applicable
-  max?: number // largest feasible value, if applicable
-}
-
-export const conditionals = ${JSON.stringify(conditionals)}
-export const formulas = ${JSON.stringify(formulas)}
+// WARNING: Generated file, do not modify
+export const conditionals = ${JSON.stringify(conditionals)} as const
+export const formulas = ${JSON.stringify(formulas)} as const
   `,
     { ...prettierRc, parser: 'typescript' }
   )

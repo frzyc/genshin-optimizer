@@ -33,6 +33,7 @@
       "@genshin-optimizer/common/database-ui": [
         "libs/common/database-ui/src/index.ts"
       ],
+      "@genshin-optimizer/common/formula": ["libs/common/formula/src/index.ts"],
       "@genshin-optimizer/common/img-util": [
         "libs/common/img-util/src/index.ts"
       ],
