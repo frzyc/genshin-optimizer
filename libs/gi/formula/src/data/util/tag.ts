@@ -1,4 +1,4 @@
-import { IBareConditionalData } from '@genshin-optimizer/common/formula'
+import type { IBareConditionalData } from '@genshin-optimizer/common/formula'
 import type { StatKey } from '@genshin-optimizer/gi/dm'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import {
