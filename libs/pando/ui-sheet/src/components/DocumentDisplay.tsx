@@ -7,7 +7,7 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { Box, Button, Collapse, Divider } from '@mui/material'
-import { createContext, useContext, useState } from 'react'
+import { useContext, useState } from 'react'
 import { CalcContext } from '../context'
 import type {
   Conditional,
@@ -18,9 +18,12 @@ import type {
 } from '../types'
 import { FieldsDisplay } from './FieldDisplay'
 
-const SetConditionalContext = createContext(
-  (_srcKey: string, _sheetKey: string, _condKey: string, _value: number) => {}
-)
+type SetConditionalFunc = (
+  srcKey: string,
+  sheetKey: string,
+  condKey: string,
+  value: number
+) => void
 
 export function DocumentDisplay({
   document,
@@ -31,12 +34,7 @@ export function DocumentDisplay({
   document: Document
   bgt?: CardBackgroundColor
   collapse?: boolean
-  setConditional: (
-    srcKey: string,
-    sheetKey: string,
-    condKey: string,
-    value: number
-  ) => void
+  setConditional: SetConditionalFunc
 }) {
   switch (document.type) {
     case 'fields':
@@ -49,15 +47,14 @@ export function DocumentDisplay({
       )
     case 'conditional':
       return (
-        <SetConditionalContext.Provider value={setConditional}>
-          <ConditionalDisplay
-            conditional={document.conditional}
-            // hideDesc={hideDesc}
-            // hideHeader={hideHeader}
-            // disabled={disabled}
-            bgt={bgt}
-          />
-        </SetConditionalContext.Provider>
+        <ConditionalDisplay
+          conditional={document.conditional}
+          setConditional={setConditional}
+          // hideDesc={hideDesc}
+          // hideHeader={hideHeader}
+          // disabled={disabled}
+          bgt={bgt}
+        />
       )
     default:
       return null
@@ -161,26 +158,53 @@ export function HeaderDisplay({
 function ConditionalDisplay({
   conditional,
   bgt = 'normal',
+  setConditional,
 }: {
   conditional: Conditional
   bgt?: CardBackgroundColor
+  setConditional: SetConditionalFunc
 }) {
   const { header, fields } = conditional
   return (
     <CardThemed bgt={bgt}>
       {!!header && <HeaderDisplay header={header} />}
-      <ConditionalSelector conditional={conditional} />
+      <ConditionalSelector
+        conditional={conditional}
+        setConditional={setConditional}
+      />
       {!!fields && <FieldsDisplay bgt={bgt} fields={fields} />}
     </CardThemed>
   )
 }
-function ConditionalSelector({ conditional }: { conditional: Conditional }) {
-  return <BoolConditional conditional={conditional} />
+function ConditionalSelector({
+  conditional,
+  setConditional,
+}: {
+  conditional: Conditional
+  setConditional: SetConditionalFunc
+}) {
+  switch (conditional.metadata.type) {
+    case 'bool':
+      return (
+        <BoolConditional
+          conditional={conditional}
+          setConditional={setConditional}
+        />
+      )
+    //TODO: case 'list' and 'num'
+    default:
+      return null
+  }
 }
-function BoolConditional({ conditional }: { conditional: Conditional }) {
+function BoolConditional({
+  conditional,
+  setConditional,
+}: {
+  conditional: Conditional
+  setConditional: SetConditionalFunc
+}) {
   const calc = useContext(CalcContext)
   const { label, badge } = conditional
-  const setConditional = useContext(SetConditionalContext)
   const { sheet: sheetKey, name: condKey } = conditional.metadata
   if (!sheetKey || !condKey) throw new Error('metadata missing')
   const srcKey = 'all'
