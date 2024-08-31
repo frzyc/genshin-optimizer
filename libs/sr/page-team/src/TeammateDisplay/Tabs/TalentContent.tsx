@@ -4,7 +4,7 @@ import {
   DropdownButton,
   NextImage,
 } from '@genshin-optimizer/common/ui'
-import { range } from '@genshin-optimizer/common/util'
+import { layeredAssignment, range } from '@genshin-optimizer/common/util'
 import type { UISheetElement } from '@genshin-optimizer/pando/ui-sheet'
 import { DocumentDisplay } from '@genshin-optimizer/pando/ui-sheet'
 import { maxEidolonCount } from '@genshin-optimizer/sr/consts'
@@ -14,7 +14,11 @@ import {
   useSrCalcContext,
   type TalentSheetElementKey,
 } from '@genshin-optimizer/sr/formula-ui'
-import { useLoadoutContext } from '@genshin-optimizer/sr/ui'
+import {
+  LoadoutContext,
+  useDatabaseContext,
+  useLoadoutContext,
+} from '@genshin-optimizer/sr/ui'
 import {
   Box,
   CardActionArea,
@@ -26,7 +30,7 @@ import {
   useTheme,
 } from '@mui/material'
 import type { ReactNode } from 'react'
-import { useCallback } from 'react'
+import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 
 const talentSpacing = {
@@ -86,7 +90,6 @@ export default function CharacterTalentPane() {
   //   ]
   // )
   const characterSheet = uiSheets[characterKey]
-  console.log({ characterSheet, calc })
   if (!characterSheet || !calc) return
   return (
     <>
@@ -278,6 +281,23 @@ function SkillDisplayCard({
   //   return false
   // }
 
+  const { loadoutId } = useContext(LoadoutContext)
+  const { database } = useDatabaseContext()
+  const setConditional = useCallback(
+    (srcKey: string, sheetKey: string, condKey: string, condValue: number) => {
+      database.loadouts.set(loadoutId, (loadout) => {
+        loadout = structuredClone(loadout)
+        layeredAssignment(
+          loadout.conditional,
+          [srcKey, sheetKey, condKey],
+          condValue
+        )
+        return loadout
+      })
+    },
+    [database, loadoutId]
+  )
+
   return (
     <CardThemed bgt="light" sx={{ height: '100%' }}>
       {header}
@@ -307,6 +327,7 @@ function SkillDisplayCard({
             document={doc}
             collapse
             // hideHeader={hideHeader}
+            setConditional={setConditional}
           />
         ))}
       </CardContent>
