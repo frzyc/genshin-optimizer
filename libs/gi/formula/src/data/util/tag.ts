@@ -260,13 +260,12 @@ function allConditionals<T>(
     trans: null,
     amp: null,
     cata: null,
+    [condMeta as any]: meta, // Add metadata directly to tag
   }
   let base = reader.max.withTag(baseTag)
   if (ignored === 'both') base = base.withTag({ src: null, dst: null })
   else if (ignored !== 'none') base = base.with(ignored, null)
-  return base.withAll('q', [], (r, q) =>
-    transform(r.with(condMeta as any, meta), q)
-  )
+  return base.withAll('q', [], transform)
 }
 
 export const queryTypes = new Set([

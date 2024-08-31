@@ -237,13 +237,12 @@ function allConditionals<T>(
     elementalType: null,
     damageType1: null,
     damageType2: null,
+    [condMeta as any]: meta, // Add metadata directly to tag
   }
   let base = reader.max.withTag(baseTag)
   if (shared === 'both') base = base.withTag({ src: null, dst: null })
   else if (shared !== 'none') base = base.with(shared, null)
-  return base.withAll('q', [], (r, q) =>
-    transform(r.with(condMeta as any, meta), q)
-  )
+  return base.withAll('q', [], transform)
 }
 
 export const queryTypes = new Set([
