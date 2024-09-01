@@ -81,15 +81,21 @@ export default function characterData(): CharacterData {
           Object.entries(avatarSkillTreeConfig[avatarid]).map(
             ([pointId, skillTree], index) => {
               const { Anchor, PointType, LevelUpSkillID } = skillTree[0]
+              const skillTreeType = allSkillTreeTypes[index]
               const skillParamList =
                 LevelUpSkillID.length > 0
                   ? // Grab from AvatarSkillConfig (basic, skill, ult, talent, technique)
                     LevelUpSkillID.map((skillId) =>
+                      // Add -1 at the beginning of arrays for basic, skill, ult, talent
                       transposeArray([
-                        range(
-                          1,
-                          avatarSkillConfig[skillId][0].ParamList!.length
-                        ).map(() => -1),
+                        ...(skillTreeType === 'technique'
+                          ? []
+                          : [
+                              range(
+                                1,
+                                avatarSkillConfig[skillId][0].ParamList!.length
+                              ).map(() => -1),
+                            ]),
                         ...avatarSkillConfig[skillId]!.map(({ ParamList }) =>
                           ParamList.map(({ Value }) => Value)
                         ),
@@ -113,7 +119,7 @@ export default function characterData(): CharacterData {
               })
 
               const tuple: [SkillTreeType, SkillTree] = [
-                allSkillTreeTypes[index],
+                skillTreeType,
                 {
                   pointId,
                   anchor: Anchor,
