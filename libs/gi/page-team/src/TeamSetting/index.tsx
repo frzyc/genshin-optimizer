@@ -6,6 +6,7 @@ import type { TeamData, dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
   AdResponsive,
   CharIconSide,
+  CharacterMultiSelectionModal,
   CharacterName,
   CharacterSelectionModal,
   EnemyExpandCard,
@@ -110,6 +111,7 @@ function TeamEditor({
   const [charSelectIndex, setCharSelectIndex] = useState(
     undefined as number | undefined
   )
+  const [showMultiSelect, setShowMultiSelect] = useState(false)
   const onSelect = (cKey: CharacterKey) => {
     if (charSelectIndex === undefined) return
 
@@ -168,8 +170,19 @@ function TeamEditor({
       <Suspense fallback={false}>
         <CharacterSelectionModal
           filter={(c) => c !== charKeyAtIndex}
-          show={charSelectIndex !== undefined}
+          show={!showMultiSelect && (charSelectIndex !== undefined)}
           onHide={() => setCharSelectIndex(undefined)}
+          onSelect={onSelect}
+        />
+      </Suspense>
+      <Suspense fallback={false}>
+        <CharacterMultiSelectionModal
+          filter={(c) => c !== charKeyAtIndex}
+          show={showMultiSelect && (charSelectIndex !== undefined)}
+          onHide={() => {
+            setCharSelectIndex(undefined)
+            setShowMultiSelect(false)
+          }}
           onSelect={onSelect}
         />
       </Suspense>
@@ -191,6 +204,15 @@ function TeamEditor({
           character" buffs, and cannot be empty.
         </Trans>
       </Alert>
+      <Button
+        key={0}
+        onClick={() => {
+          setCharSelectIndex(0)
+          setShowMultiSelect(true)
+        }}
+      >
+        Quick Select
+      </Button>
       <Grid container columns={{ xs: 1, md: 2, lg: 4 }} spacing={2}>
         {loadoutData.map((loadoutDatum, ind) => (
           <Grid item xs={1} key={loadoutDatum?.teamCharId ?? ind}>
