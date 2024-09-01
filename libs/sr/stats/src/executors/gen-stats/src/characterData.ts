@@ -83,7 +83,7 @@ export default function characterData(): CharacterData {
               const { Anchor, PointType, LevelUpSkillID } = skillTree[0]
               const skillParamList =
                 LevelUpSkillID.length > 0
-                  ? // Grab from AvatarSkillConfig (non-traces)
+                  ? // Grab from AvatarSkillConfig (basic, skill, ult, talent, technique)
                     LevelUpSkillID.map((skillId) =>
                       transposeArray([
                         range(
@@ -95,10 +95,9 @@ export default function characterData(): CharacterData {
                         ),
                       ])
                     )
-                  : // Grab from itself (AvatarSkillTreeConfig) (traces)
+                  : // Grab from itself (AvatarSkillTreeConfig) (bonus abilities/stat boosts)
                     [
                       skillTree.map((config) => [
-                        -1,
                         ...config.ParamList.map(({ Value }) => Value),
                       ]),
                     ]

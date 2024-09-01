@@ -203,7 +203,6 @@
       "skillParamList": [
         [
           [
-            -1,
             0.5,
             0.75
           ]
@@ -216,9 +215,7 @@
       "pointType": 3,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -228,9 +225,7 @@
       "pointType": 3,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -247,9 +242,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -266,9 +259,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -285,9 +276,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -304,9 +293,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -323,9 +310,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -342,9 +327,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -361,9 +344,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -380,9 +361,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -399,9 +378,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -418,9 +395,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     }

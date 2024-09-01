@@ -237,7 +237,6 @@
       "skillParamList": [
         [
           [
-            -1,
             20
           ]
         ]
@@ -250,7 +249,6 @@
       "skillParamList": [
         [
           [
-            -1,
             0.05,
             133
           ]
@@ -263,9 +261,7 @@
       "pointType": 3,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -282,9 +278,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -301,9 +295,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -320,9 +312,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -339,9 +329,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -358,9 +346,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -377,9 +363,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -396,9 +380,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -415,9 +397,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -434,9 +414,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -453,9 +431,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     }

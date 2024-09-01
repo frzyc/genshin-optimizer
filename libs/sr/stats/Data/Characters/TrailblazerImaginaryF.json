@@ -183,7 +183,6 @@
       "skillParamList": [
         [
           [
-            -1,
             0.2,
             0.3,
             0.4,
@@ -200,7 +199,6 @@
       "skillParamList": [
         [
           [
-            -1,
             1
           ]
         ]
@@ -213,7 +211,6 @@
       "skillParamList": [
         [
           [
-            -1,
             0.3
           ]
         ]
@@ -232,9 +229,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -251,9 +246,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -270,9 +263,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -289,9 +280,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -308,9 +297,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -327,9 +314,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -346,9 +331,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -365,9 +348,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -384,9 +365,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -403,9 +382,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     }
