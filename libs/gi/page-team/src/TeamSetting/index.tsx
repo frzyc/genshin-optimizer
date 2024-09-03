@@ -111,7 +111,6 @@ function TeamEditor({
   const [charSelectIndex, setCharSelectIndex] = useState(
     undefined as number | undefined
   )
-  const [showMultiSelect, setShowMultiSelect] = useState(false)
   const onSelect = (cKey: CharacterKey) => {
     if (charSelectIndex === undefined) return
 
@@ -151,6 +150,46 @@ function TeamEditor({
     loadoutData[charSelectIndex as number]?.teamCharId
   )?.key
 
+  const [showMultiSelect, setShowMultiSelect] = useState(false)
+  const onMultiSelect = (cKeys: CharacterKey[]) => {
+    for (let i = 0; i < cKeys.length; ++i)
+    {
+      const key = cKeys[i]
+
+      // Make sure character exists
+      database.chars.getWithInitWeapon(key)
+
+      const existingIndex = loadoutData.findIndex(
+        (loadoutDatum) =>
+          loadoutDatum &&
+          database.teamChars.get(loadoutDatum.teamCharId)?.key === key
+      )
+      if (existingIndex < 0) {
+        //find the first available teamchar
+        let teamCharId = database.teamChars.keys.find(
+          (k) => database.teamChars.get(k)!.key === key
+        )
+        // if there is no teamchar, create one.
+        if (!teamCharId) teamCharId = database.teamChars.new(key)
+        database.teams.set(teamId, (team) => {
+          if (!teamCharId) return
+          team.loadoutData[i] = { teamCharId } as LoadoutDatum
+        })
+      } else {
+        if (charSelectIndex === existingIndex) return
+        if (loadoutData[i]) {
+          // Already have a teamChar at destination, move to existing Index
+          const existingLoadoutDatum = loadoutData[existingIndex]
+          const destinationLoadoutDatum = loadoutData[i]
+          database.teams.set(teamId, (team) => {
+            team.loadoutData[i] = existingLoadoutDatum
+            team.loadoutData[existingIndex] = destinationLoadoutDatum
+          })
+        }
+      }
+    }
+  }
+
   const firstTeamCharId = loadoutData[0]?.teamCharId
   const firstTeamCharKey =
     firstTeamCharId && database.teamChars.get(firstTeamCharId)?.key
@@ -178,12 +217,11 @@ function TeamEditor({
       <Suspense fallback={false}>
         <CharacterMultiSelectionModal
           filter={(c) => c !== charKeyAtIndex}
-          show={showMultiSelect && (charSelectIndex !== undefined)}
+          show={showMultiSelect}
           onHide={() => {
-            setCharSelectIndex(undefined)
             setShowMultiSelect(false)
           }}
-          onSelect={onSelect}
+          onMultiSelect={onMultiSelect}
         />
       </Suspense>
       <Grid container columns={{ xs: 1, md: 2 }} spacing={2}>
@@ -206,10 +244,7 @@ function TeamEditor({
       </Alert>
       <Button
         key={0}
-        onClick={() => {
-          setCharSelectIndex(0)
-          setShowMultiSelect(true)
-        }}
+        onClick={() => setShowMultiSelect(true)}
       >
         Quick Select
       </Button>

@@ -82,24 +82,18 @@ type CharacterMultiSelectionModalProps = {
   show: boolean
   newFirst?: boolean
   onHide: () => void
-  onSelect?: (ckey: CharacterKey) => void
+  onMultiSelect?: (cKeys: CharacterKey[]) => void
   filter?: characterFilter
 }
 const sortKeys = Object.keys(characterSortMap)
 export function CharacterMultiSelectionModal({
   show,
   onHide,
-  onSelect,
+  onMultiSelect,
   filter = () => true,
   newFirst = false,
 }: CharacterMultiSelectionModalProps) {
   const [selectedCharacterKeys, setSelectedCharacterKeys] = useState([] as CharacterKey[])
-  const onMultiSelect = () => {
-    for (const key of selectedCharacterKeys)
-    {
-      onSelect?.(key);
-    }
-  }
 
   const { t } = useTranslation([
     'page_character',
@@ -198,8 +192,9 @@ export function CharacterMultiSelectionModal({
       open={show}
       onClose={() => {
         setSearchTerm('')
+        onMultiSelect?.(selectedCharacterKeys)
+        setSelectedCharacterKeys([])
         onHide()
-        onMultiSelect()
       }}
       containerProps={{
         sx: {
