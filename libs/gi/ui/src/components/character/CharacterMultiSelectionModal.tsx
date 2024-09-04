@@ -187,6 +187,13 @@ export function CharacterMultiSelectionModal({
 
   const { weaponType, element, sortType, ascending } = state
 
+  const onClick = (key: CharacterKey) => {
+    setSelectedCharacterKeys([
+      ...selectedCharacterKeys,
+      key
+    ])
+  }
+
   return (
     <ModalWrapper
       open={show}
@@ -286,12 +293,7 @@ export function CharacterMultiSelectionModal({
                 <Grid item key={characterKey} xs={1}>
                   <SelectionCard
                     characterKey={characterKey}
-                    onClick={() => {
-                      setSelectedCharacterKeys([
-                        ...selectedCharacterKeys,
-                        characterKey
-                      ])
-                    }}
+                    onClick={() => onClick(characterKey)}
                   />
                 </Grid>
               ))}

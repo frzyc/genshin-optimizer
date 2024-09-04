@@ -108,12 +108,7 @@ function TeamEditor({
   const database = useDatabase()
   const team = database.teams.get(teamId)!
   const { loadoutData } = team
-  const [charSelectIndex, setCharSelectIndex] = useState(
-    undefined as number | undefined
-  )
-  const onSelect = (cKey: CharacterKey) => {
-    if (charSelectIndex === undefined) return
-
+  const onSelect = (cKey: CharacterKey, selectedIndex: number) => {
     // Make sure character exists
     database.chars.getWithInitWeapon(cKey)
 
@@ -131,62 +126,41 @@ function TeamEditor({
       if (!teamCharId) teamCharId = database.teamChars.new(cKey)
       database.teams.set(teamId, (team) => {
         if (!teamCharId) return
-        team.loadoutData[charSelectIndex] = { teamCharId } as LoadoutDatum
+        team.loadoutData[selectedIndex] = { teamCharId } as LoadoutDatum
       })
     } else {
       if (charSelectIndex === existingIndex) return
-      if (loadoutData[charSelectIndex]) {
+      if (loadoutData[selectedIndex]) {
         // Already have a teamChar at destination, move to existing Index
         const existingLoadoutDatum = loadoutData[existingIndex]
-        const destinationLoadoutDatum = loadoutData[charSelectIndex]
+        const destinationLoadoutDatum = loadoutData[selectedIndex]
         database.teams.set(teamId, (team) => {
-          team.loadoutData[charSelectIndex] = existingLoadoutDatum
+          team.loadoutData[selectedIndex] = existingLoadoutDatum
           team.loadoutData[existingIndex] = destinationLoadoutDatum
         })
       }
     }
   }
+
+  const [charSelectIndex, setCharSelectIndex] = useState(
+    undefined as number | undefined
+  )
   const charKeyAtIndex = database.teamChars.get(
     loadoutData[charSelectIndex as number]?.teamCharId
   )?.key
+  const onSingleSelect = (cKey: CharacterKey) => {
+    if (charSelectIndex === undefined) return
+    onSelect(cKey, charSelectIndex)
+  }
 
+  // TODO: Need to remove characters from array when clicked again if already selected
+  //       Need to add visual indicating that a character has been selected and which index they're in
   const [showMultiSelect, setShowMultiSelect] = useState(false)
   const onMultiSelect = (cKeys: CharacterKey[]) => {
     for (let i = 0; i < cKeys.length; ++i)
     {
       const key = cKeys[i]
-
-      // Make sure character exists
-      database.chars.getWithInitWeapon(key)
-
-      const existingIndex = loadoutData.findIndex(
-        (loadoutDatum) =>
-          loadoutDatum &&
-          database.teamChars.get(loadoutDatum.teamCharId)?.key === key
-      )
-      if (existingIndex < 0) {
-        //find the first available teamchar
-        let teamCharId = database.teamChars.keys.find(
-          (k) => database.teamChars.get(k)!.key === key
-        )
-        // if there is no teamchar, create one.
-        if (!teamCharId) teamCharId = database.teamChars.new(key)
-        database.teams.set(teamId, (team) => {
-          if (!teamCharId) return
-          team.loadoutData[i] = { teamCharId } as LoadoutDatum
-        })
-      } else {
-        if (charSelectIndex === existingIndex) return
-        if (loadoutData[i]) {
-          // Already have a teamChar at destination, move to existing Index
-          const existingLoadoutDatum = loadoutData[existingIndex]
-          const destinationLoadoutDatum = loadoutData[i]
-          database.teams.set(teamId, (team) => {
-            team.loadoutData[i] = existingLoadoutDatum
-            team.loadoutData[existingIndex] = destinationLoadoutDatum
-          })
-        }
-      }
+      onSelect(key, i)
     }
   }
 
@@ -211,7 +185,7 @@ function TeamEditor({
           filter={(c) => c !== charKeyAtIndex}
           show={!showMultiSelect && (charSelectIndex !== undefined)}
           onHide={() => setCharSelectIndex(undefined)}
-          onSelect={onSelect}
+          onSelect={onSingleSelect}
         />
       </Suspense>
       <Suspense fallback={false}>
