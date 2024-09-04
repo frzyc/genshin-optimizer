@@ -51,6 +51,8 @@ const { char } = own
 const { boolConditional } = allBoolConditionals(key)
 const { listConditional } = allListConditionals(key, ['val1', 'val2'])
 const { numConditional } = allNumConditionals(key, true, 0, 2)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const { numConditionalNoMax } = allNumConditionals(key, true)
 
 const sheet = register(
   key,

@@ -6,29 +6,28 @@ export type IFormulaData<T = Tag> = {
   tag: T // tag used to access value
 }
 
-export type IConditionalData = IConditionalIdentifier & IBareConditionalData
-export type IBareConditionalData =
+export type IConditionalData =
   | IBoolConditionalData
   | IListConditionalData
   | INumConditionalData
 
-export type IConditionalIdentifier = {
+export interface IConditionalIdentifier {
   sheet: string // entity
   name: string // conditional name
 }
 /// Conditional whose values are True (1.0) and False (0.0)
-export type IBoolConditionalData = {
+export interface IBoolConditionalData extends IConditionalIdentifier {
   type: 'bool' // type discriminator
 }
 /// Conditional whose values are those in the list. When inputting the
 /// entry, use the (0-based) position in the list
-export type IListConditionalData = {
+export interface IListConditionalData extends IConditionalIdentifier {
   type: 'list' // type discriminator
 
-  list: string[] // feasible values
+  list: readonly string[] // feasible values
 }
 /// Conditional whose values are regular numbers
-export type INumConditionalData = {
+export interface INumConditionalData extends IConditionalIdentifier {
   type: 'num' // type discriminator
 
   int_only: boolean // whether the value must be an integer
