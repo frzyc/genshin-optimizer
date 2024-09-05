@@ -94,7 +94,7 @@
     "@supabase/ssr": "^0.3.0",
     "@swc/helpers": "0.5.11",
     "core-js": "^3.28.0",
-    "discord.js": "^14.15.3",
+    "discord.js": "^14.16.1",
     "i18next": "^23.6.0",
     "i18next-browser-languagedetector": "^7.0.1",
     "i18next-fs-backend": "^2.3.1",
