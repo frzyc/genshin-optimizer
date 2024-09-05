@@ -1,4 +1,8 @@
-import type { IBareConditionalData } from '@genshin-optimizer/common/formula'
+import type {
+  IConditionalData,
+  IListConditionalData,
+  INumConditionalData,
+} from '@genshin-optimizer/common/formula'
 import type { StatKey } from '@genshin-optimizer/gi/dm'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import {
@@ -216,11 +220,16 @@ export const allListConditionals = <T extends string>(
   list: T[],
   ignored?: CondIgnored
 ) =>
-  allConditionals(sheet, ignored, { type: 'list', list }, (r) => ({
-    map: (table: Record<T, number>, def = 0) =>
-      subscript(r, [def, ...list.map((v) => table[v] ?? def)]),
-    value: r,
-  }))
+  allConditionals(
+    sheet,
+    ignored,
+    { type: 'list', list } as Omit<IListConditionalData, 'sheet' | 'name'>,
+    (r) => ({
+      map: (table: Record<T, number>, def = 0) =>
+        subscript(r, [def, ...list.map((v) => table[v] ?? def)]),
+      value: r,
+    })
+  )
 export const allNumConditionals = (
   sheet: Sheet,
   int_only = true,
@@ -228,7 +237,15 @@ export const allNumConditionals = (
   max?: number,
   ignored?: CondIgnored
 ) =>
-  allConditionals(sheet, ignored, { type: 'num', int_only, min, max }, (r) => r)
+  allConditionals(
+    sheet,
+    ignored,
+    { type: 'num', int_only, min, max } as Omit<
+      INumConditionalData,
+      'sheet' | 'name'
+    >,
+    (r) => r
+  )
 
 type MemAll = Member | 'all'
 export const conditionalEntries = (sheet: Sheet, src: MemAll, dst: MemAll) => {
@@ -244,7 +261,7 @@ type CondIgnored = 'both' | 'src' | 'dst' | 'none'
 function allConditionals<T>(
   sheet: Sheet,
   ignored: CondIgnored = 'src',
-  meta: IBareConditionalData,
+  meta: Omit<IConditionalData, 'sheet' | 'name'>,
   transform: (r: Read, q: string) => T
 ): Record<string, T> {
   // Keep the base tag "full" here so that `cond` returns consistent tags
