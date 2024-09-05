@@ -185,6 +185,7 @@ export const conditionals = {
       name: 'numConditionalNoMax',
       type: 'num',
       int_only: true,
+      min: 0,
     },
   },
   Arrows: {
