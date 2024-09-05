@@ -3,6 +3,7 @@ import { CustomNumberInput } from '@genshin-optimizer/common/ui'
 import { clamp } from '@genshin-optimizer/common/util'
 import { Box, Divider, Slider } from '@mui/material'
 import { useCallback, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export function ArtifactLevelSlider({
   levelLow,
@@ -23,6 +24,7 @@ export function ArtifactLevelSlider({
   disabled?: boolean
   showLevelText?: boolean
 }) {
+  const { t } = useTranslation('artifact')
   const [sliderLow, setsliderLow] = useState(levelLow)
   const [sliderHigh, setsliderHigh] = useState(levelHigh)
   const setSlider = useCallback(
@@ -47,15 +49,13 @@ export function ArtifactLevelSlider({
         overflow: 'visible',
       }}
     >
-      <Box
-        sx={{ width: showLevelText ? 100 : 55, height: 32, display: 'flex' }}
-      >
+      <Box sx={{ width: 'max-content', height: 32, display: 'flex' }}>
         {showLevelText ? (
           <>
             <span
               style={{
-                padding: 0,
-                width: '55%',
+                padding: '0 1em',
+                width: 'max-content',
                 borderRadius: '4px 0 0 4px',
                 display: 'flex',
                 justifyContent: 'center',
@@ -64,7 +64,7 @@ export function ArtifactLevelSlider({
                 backgroundColor: 'rgb(30,120,200)',
               }}
             >
-              Level
+              {t`levelSliderTitle`}
             </span>
             <Divider orientation="vertical" flexItem />
           </>
@@ -75,14 +75,14 @@ export function ArtifactLevelSlider({
           onChange={(val) => setLow(clamp(val ?? 0, 0, levelHigh))}
           sx={{
             px: 1,
-            width: showLevelText ? '45%' : '100%',
+            width: '3em',
           }}
           inputProps={{ sx: { textAlign: showLevelText ? 'right' : 'center' } }}
           disabled={disabled}
         />
       </Box>
       <Slider
-        sx={{ width: 100, flexGrow: 1, mx: 2 }}
+        sx={{ flex: '0 1 100%', mx: 2 }}
         getAriaLabel={() => 'Arifact Level Range'}
         value={[sliderLow, sliderHigh]}
         onChange={setSlider}
@@ -99,7 +99,7 @@ export function ArtifactLevelSlider({
       <CustomNumberInput
         value={sliderHigh}
         onChange={(val) => setHigh(clamp(val ?? 0, levelLow, 20))}
-        sx={{ px: 1, width: '3em' }}
+        sx={{ px: 1, flex: '0 0 3em' }}
         inputProps={{ sx: { textAlign: 'center' } }}
         disabled={disabled}
       />
