@@ -6,7 +6,11 @@ import type {
   Tag,
   TagMapEntries,
 } from '@genshin-optimizer/pando/engine'
-import type { IConditionalData, IFormulaData } from './IConditionalData'
+import type {
+  IBaseConditionalData,
+  IConditionalData,
+  IFormulaData,
+} from './IConditionalData'
 
 type Conditionals = Record<string, Record<string, IConditionalData>>
 type Formulas<T> = Record<string, Record<string, IFormulaData<T>>>
@@ -21,9 +25,7 @@ export function extractCondMetadata(
   traverse(
     data.map((e) => e.value).filter((v) => v.op !== 'reread'),
     (n, visit) => {
-      const meta = n.tag?.[condMeta as any] as
-        | Omit<IConditionalData, 'sheet' | 'name'>
-        | undefined
+      const meta = n.tag?.[condMeta as any] as IBaseConditionalData | undefined
       if (!meta) {
         n.x.forEach(visit)
         n.br.forEach(visit)
@@ -33,7 +35,7 @@ export function extractCondMetadata(
       result[sheet] ??= {}
       if (result[sheet][name])
         console.log(`Duplicated conditionals for ${sheet}:${name}`)
-      result[sheet][name] = { sheet, name, ...meta! } as IConditionalData
+      result[sheet][name] = { sheet, name, ...meta! }
     }
   )
   return sortMeta(result)
