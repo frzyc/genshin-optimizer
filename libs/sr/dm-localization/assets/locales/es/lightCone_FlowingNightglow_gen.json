@@ -2,6 +2,6 @@
   "name": "Luces de la noche",
   "passive": {
     "name": "Consuelo",
-    "description": "Cada vez que un aliado ataca, el portador obtiene 1 acumulación de Tonada. Cada acumulación de Tonada aumenta la recuperación de energía del portador en un <orangeStrong>{{1}}%</orangeStrong>, hasta un máximo de {{2}} acumulaciones. Después de que el portador use su habilidad definitiva, elimina Tonada y obtiene Cadenza. Cadenza aumenta en un <orangeStrong>{{4}}%</orangeStrong> el ATQ del portador y aumenta en un <orangeStrong>{{3}}%</orangeStrong> el daño que infligen todos los aliados durante {{5}} turno."
+    "description": "Cada vez que un aliado ataca, el portador obtiene 1 acumulación de Tonada. Cada acumulación de Tonada aumenta la recuperación de energía del portador en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, hasta un máximo de {{2}} acumulaciones. Después de que el portador use su habilidad definitiva, elimina Tonada y obtiene Cadenza. Cadenza aumenta en un <orangeStrong>{{4, percent}}%</orangeStrong> el ATQ del portador y aumenta en un <orangeStrong>{{3, percent}}%</orangeStrong> el daño que infligen todos los aliados durante {{5}} turno."
   }
 }

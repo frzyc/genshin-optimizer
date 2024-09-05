@@ -1,7 +1,8 @@
-import type { GeneralAutocompleteProps } from '@genshin-optimizer/common/ui'
+import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
 import { GeneralAutocomplete } from '@genshin-optimizer/common/ui'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { allRelicSetKeys } from '@genshin-optimizer/sr/consts'
+import type { AutocompleteProps } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -9,10 +10,6 @@ type RelicSetAutocompleteProps = {
   relicSetKey: RelicSetKey | ''
   setRelicSetKey: (key: RelicSetKey | '') => void
   label?: string
-  props?: Omit<
-    GeneralAutocompleteProps<RelicSetKey | ''>,
-    'options' | 'valueKey' | 'onChange' | 'toImg' | 'groupBy' | 'renderGroup'
-  >
 }
 
 export function RelicSetAutocomplete({
@@ -20,7 +17,16 @@ export function RelicSetAutocomplete({
   setRelicSetKey,
   label = '',
   ...props
-}: RelicSetAutocompleteProps) {
+}: RelicSetAutocompleteProps &
+  Omit<
+    AutocompleteProps<
+      GeneralAutocompleteOption<RelicSetKey | ''>,
+      false,
+      boolean,
+      false
+    >,
+    'options' | 'valueKey' | 'onChange' | 'toImg' | 'renderInput'
+  >) {
   const { t } = useTranslation(['relic', 'relicNames_gen'])
   label = label ? label : t('relic:autocompleteLabels.set')
 

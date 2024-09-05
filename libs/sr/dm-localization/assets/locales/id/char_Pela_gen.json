@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Frost Shot",
-        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Pela pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Pela pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Frostbite",
-        "fullDesc": "Menghilangkan {{2}} <u>Buff</u> dan mengakibatkan Ice DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Pela pada 1 target musuh.",
+        "fullDesc": "Menghilangkan {{2}} <u>Buff</u> dan mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Pela pada 1 target musuh.",
         "shortDesc": "<orangeStrong>Menghapus</orangeStrong> 1 efek <orangeStrong><u>Buff</u></orangeStrong> dari 1 musuh, dan mengakibatkan Ice DMG pada target tersebut."
       }
     },
     "ult": {
       "0": {
         "name": "Zone Suppression",
-        "fullDesc": "Memiliki {{1}}% <u>peluang dasar</u> membuat setiap target musuh memasuki status \"Exposed\", di saat yang bersamaan juga mengakibatkan Ice DMG sebesar <orangeStrong>{{4}}%</orangeStrong> ATK Pela pada seluruh musuh.\\nTarget musuh yang berstatus \"Exposed\" akan mengalami <orangeStrong>{{2}}%</orangeStrong> pengurangan DEF selama {{3}} giliran.",
+        "fullDesc": "Memiliki {{1, percent}}% <u>peluang dasar</u> membuat setiap target musuh memasuki status \"Exposed\", di saat yang bersamaan juga mengakibatkan Ice DMG sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK Pela pada seluruh musuh.\\nTarget musuh yang berstatus \"Exposed\" akan mengalami <orangeStrong>{{2, percent}}%</orangeStrong> pengurangan DEF selama {{3}} giliran.",
         "shortDesc": "Berpeluang besar untuk <orangeStrong>mengurangi DEF</orangeStrong> target musuh, serta mengakibatkan Ice DMG dalam jumlah kecil pada seluruh musuh."
       }
     },
     "technique": {
       "0": {
         "name": "Preemptive Strike",
-        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Ice DMG sebesar {{4}}% ATK Pela pada musuh secara acak, dan di saat bersamaan seluruh target musuh memiliki {{1}}% <u>peluang dasar</u> untuk mengalami {{2}}% penurunan DEF selama {{3}} giliran.",
+        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Ice DMG sebesar {{4, percent}}% ATK Pela pada musuh secara acak, dan di saat bersamaan seluruh target musuh memiliki {{1, percent}}% <u>peluang dasar</u> untuk mengalami {{2, percent}}% penurunan DEF selama {{3}} giliran.",
         "shortDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengakibatkan DMG dalam jumlah kecil pada musuh secara acak dan berpeluang besar mengurangi DEF setiap target musuh."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Bash",
-        "fullDesc": "Meningkatkan {{1}}% DMG yang diakibatkan pada target musuh yang terkena efek Debuff.",
+        "fullDesc": "Meningkatkan {{1, percent}}% DMG yang diakibatkan pada target musuh yang terkena efek Debuff.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "The Secret Strategy",
-        "fullDesc": "Meningkatkan {{1}}% Effect Hit Rate seluruh rekan tim saat Pela berada di medan pertempuran.",
+        "fullDesc": "Meningkatkan {{1, percent}}% Effect Hit Rate seluruh rekan tim saat Pela berada di medan pertempuran.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Wipe Out",
-        "fullDesc": "Saat melancarkan Skill untuk menghilangkan Buff, DMG serangan Pela selanjutnya akan meningkat {{1}}%.",
+        "fullDesc": "Saat melancarkan Skill untuk menghilangkan Buff, DMG serangan Pela selanjutnya akan meningkat {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Adamant Charge",
-      "desc": "Setelah melancarkan Skill untuk menghapus efek Buff, SPD meningkat {{1}}% selama {{2}} giliran."
+      "desc": "Setelah melancarkan Skill untuk menghapus efek Buff, SPD meningkat {{1, percent}}% selama {{2}} giliran."
     },
     "3": {
       "name": "Suppressive Force",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Full Analysis",
-      "desc": "Saat melancarkan Skill, memiliki {{1}}% peluang dasar untuk mengurangi {{2}}% Ice RES target musuh selama {{3}} giliran."
+      "desc": "Saat melancarkan Skill, memiliki {{1, percent}}% peluang dasar untuk mengurangi {{2, percent}}% Ice RES target musuh selama {{3}} giliran."
     },
     "5": {
       "name": "Absolute Jeopardy",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Feeble Pursuit",
-      "desc": "Jika Pela melancarkan serangan pada target musuh yang terkena efek Debuff, Pela akan mengakibatkan Ice DMG tambahan sebesar {{1}}% ATK Pela."
+      "desc": "Jika Pela melancarkan serangan pada target musuh yang terkena efek Debuff, Pela akan mengakibatkan Ice DMG tambahan sebesar {{1, percent}}% ATK Pela."
     }
   }
 }

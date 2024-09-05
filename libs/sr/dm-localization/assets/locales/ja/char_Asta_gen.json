@@ -4,14 +4,14 @@
     "basic": {
       "0": {
         "name": "スペクトル{RUBY_B#こうせん}光線{RUBY_E#}",
-        "fullDesc": "指定した敵単体にアスターの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の炎属性ダメージを与える。",
+        "fullDesc": "指定した敵単体にアスターの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与える。",
         "shortDesc": "敵単体に少量の炎属性ダメージを与える。"
       }
     },
     "skill": {
       "0": {
         "name": "スターフォール",
-        "fullDesc": "指定した敵単体にアスターの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の炎属性ダメージを与え、さらに4ヒットする。1ヒットごとに、ランダムな敵単体にアスターの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の炎属性ダメージを与える。",
+        "fullDesc": "指定した敵単体にアスターの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与え、さらに4ヒットする。1ヒットごとに、ランダムな敵単体にアスターの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与える。",
         "shortDesc": "敵単体に少量の炎属性ダメージを与える、5回バウンドする。"
       }
     },
@@ -25,7 +25,7 @@
     "technique": {
       "0": {
         "name": "{RUBY_B#ちゃくそう}着想{RUBY_E#}の{RUBY_B#いっせん}一閃{RUBY_E#}",
-        "fullDesc": "敵を攻撃。戦闘に入った後、敵全体にアスターの攻撃力{{1}}%分の炎属性ダメージを与える。",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵全体にアスターの攻撃力{{1, percent}}%分の炎属性ダメージを与える。",
         "shortDesc": "敵を攻撃。戦闘に入った後、敵全体に少量のダメージを与える。"
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#ひばな}火花{RUBY_E#}",
-        "fullDesc": "通常攻撃を行った時、{{1}}%の基礎確率で敵を燃焼状態にする、{{2}}ターン継続。\\n燃焼状態の敵はターンが回ってくるたびに、アスターの通常攻撃ダメージ{{3}}%分の炎属性持続ダメージを受ける。",
+        "fullDesc": "通常攻撃を行った時、{{1, percent}}%の基礎確率で敵を燃焼状態にする、{{2}}ターン継続。\\n燃焼状態の敵はターンが回ってくるたびに、アスターの通常攻撃ダメージ{{3, percent}}%分の炎属性持続ダメージを受ける。",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#てんか}点火{RUBY_E#}",
-        "fullDesc": "アスターがフィールド上にいる時、味方全体の炎属性ダメージ+{{1}}%。",
+        "fullDesc": "アスターがフィールド上にいる時、味方全体の炎属性ダメージ+{{1, percent}}%。",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#せいざ}星座{RUBY_E#}",
-        "fullDesc": "アスターが持つ蓄エネ1層につき、自身の防御力+{{1}}%。",
+        "fullDesc": "アスターが持つ蓄エネ1層につき、自身の防御力+{{1, percent}}%。",
         "shortDesc": ""
       }
     }
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "{RUBY_B#きょっこう}極光{RUBY_E#}が{RUBY_B#けんげん}顕現{RUBY_E#}する{RUBY_B#とき}時{RUBY_E#}",
-      "desc": "天賦の蓄エネが{{1}}層以上の時、アスターのEP回復効率+{{2}}%。"
+      "desc": "天賦の蓄エネが{{1}}層以上の時、アスターのEP回復効率+{{2, percent}}%。"
     },
     "5": {
       "name": "{RUBY_B#しんくう}深空{RUBY_E#}{RUBY_B#ざ}座{RUBY_E#}す{RUBY_B#てんたい}天体{RUBY_E#}の{RUBY_B#なぞ}謎{RUBY_E#}",

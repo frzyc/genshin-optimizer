@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Windumkehr in der Sonne",
-        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Yunlis ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Yunlis ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen physischen SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Schockwellen-Schlag",
-        "fullDesc": "Stellt LP in Höhe von <orangeStrong>{{3}}%</orangeStrong> von Yunlis ANG plus <orangeStrong>{{4}}</orangeStrong> wieder her. Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Yunlis ANG und angrenzenden Einheiten physischen SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Yunlis ANG zu.",
+        "fullDesc": "Stellt LP in Höhe von <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> von Yunlis ANG plus <orangeStrong>{{4}}</orangeStrong> wieder her. Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Yunlis ANG und angrenzenden Einheiten physischen SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Yunlis ANG zu.",
         "shortDesc": "Stellt die eigene LP wieder her und fügt einem Gegner sowie angrenzenden Einheiten geringen physischen SCH zu."
       }
     },
     "ult": {
       "0": {
         "name": "Himmlische Verkündung der Klinge",
-        "fullDesc": "Verbraucht {{8}} Pkt. Energie. Yunli erhält „Parade“ und versetzt alle Gegner in den Status Verspotten bis zum Ende der nächsten Runde eines Verbündeten oder eines Gegners. Der KRIT-SCH von Yunlis nächstem Konter wird um <orangeStrong>{{2}}%</orangeStrong> erhöht. Wenn der Konter des Talents ausgelöst wird, wird stattdessen der <u>Konter</u> „Intuition: Auslöschen“ ausgelöst und der Effekt Parade entfernt. Wenn im Status Parade kein Konter ausgelöst wird, führt Yunli nach Ende des Status sofort einen <u>Konter</u> „Intuition: Abtrennen“ gegen zufällige Gegner aus.\\n„Intuition: Abtrennen“: Verursacht beim Ziel physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Yunlis ANG und bei angrenzenden Einheiten physischen SCH in Höhe von <orangeStrong>{{6}}%</orangeStrong> von Yunlis ANG.\\n„Intuition: Auslöschen“: Verursacht beim Ziel physischen SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Yunlis ANG und bei angrenzenden Einheiten physischen SCH in Höhe von <orangeStrong>{{6}}%</orangeStrong> von Yunlis ANG. Verursacht danach zusätzlich {{4}}-mal SCH, der jeweils einem zufälligen Gegner physischen SCH in Höhe von <orangeStrong>{{7}}%</orangeStrong> von Yunlis ANG zufügt.\\nWenn Yunli durch diese Fähigkeit SCH verursacht, wird dieser als Ultimate-SCH angesehen.",
+        "fullDesc": "Verbraucht {{8}} Pkt. Energie. Yunli erhält „Parade“ und versetzt alle Gegner in den Status Verspotten bis zum Ende der nächsten Runde eines Verbündeten oder eines Gegners. Der KRIT-SCH von Yunlis nächstem Konter wird um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht. Wenn der Konter des Talents ausgelöst wird, wird stattdessen der <u>Konter</u> „Intuition: Auslöschen“ ausgelöst und der Effekt Parade entfernt. Wenn im Status Parade kein Konter ausgelöst wird, führt Yunli nach Ende des Status sofort einen <u>Konter</u> „Intuition: Abtrennen“ gegen zufällige Gegner aus.\\n„Intuition: Abtrennen“: Verursacht beim Ziel physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Yunlis ANG und bei angrenzenden Einheiten physischen SCH in Höhe von <orangeStrong>{{6, percent}}%</orangeStrong> von Yunlis ANG.\\n„Intuition: Auslöschen“: Verursacht beim Ziel physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Yunlis ANG und bei angrenzenden Einheiten physischen SCH in Höhe von <orangeStrong>{{6, percent}}%</orangeStrong> von Yunlis ANG. Verursacht danach zusätzlich {{4}}-mal SCH, der jeweils einem zufälligen Gegner physischen SCH in Höhe von <orangeStrong>{{7, percent}}%</orangeStrong> von Yunlis ANG zufügt.\\nWenn Yunli durch diese Fähigkeit SCH verursacht, wird dieser als Ultimate-SCH angesehen.",
         "shortDesc": "Tritt in den Status „Parade“ ein und verspottet alle Gegner. Wird während der Dauer des Status angegriffen, wird der <orangeStrong>verstärkte <u>Konter</u></orangeStrong> ausgelöst und dem Angreifer sowie angrenzenden Einheiten <orangeStrong>physischer SCH</orangeStrong> zugefügt. Fügt danach einem Gegner geringen physischen SCH zu und prallt insgesamt 6-mal ab. Wenn kein Konter ausgelöst wird, während der Status Parade aktiv ist, wird zufälligen Gegnern sowie angrenzenden Einheiten physischer SCH zugefügt, wenn der Status endet."
       }
     },
     "technique": {
       "0": {
         "name": "Angriff der Abwendung",
-        "fullDesc": "Erhält für {{2}} Sek. den Effekt „Abwehr“. Nach Kampfeintritt durch einen Angriff auf Gegner oder durch einen erlittenen Angriff wird sofort einem zufälligen Gegner „Intuition: Auslöschen“ zugefügt und der verursachte SCH dieses Angriffs um {{1}}% erhöht.",
+        "fullDesc": "Erhält für {{2}} Sek. den Effekt „Abwehr“. Nach Kampfeintritt durch einen Angriff auf Gegner oder durch einen erlittenen Angriff wird sofort einem zufälligen Gegner „Intuition: Auslöschen“ zugefügt und der verursachte SCH dieses Angriffs um {{1, percent}}% erhöht.",
         "shortDesc": "Erhält für 20 Sek. den Effekt „Abwehr“. Nach Kampfeintritt durch einen Angriff auf Gegner oder durch einen erlittenen Angriff wird sofort einem zufälligen Gegner „Intuition: Auslöschen“ zugefügt."
       }
     },
@@ -46,14 +46,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Dämonenaustreiber",
-        "fullDesc": "Im Status „Parade“ werden Mengenkontrolle-Debuffs abgewehrt und der erlittene SCH um {{1}}% reduziert.",
+        "fullDesc": "Im Status „Parade“ werden Mengenkontrolle-Debuffs abgewehrt und der erlittene SCH um {{1, percent}}% reduziert.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Erzspalter",
-        "fullDesc": "Erhöht beim Einsatz eines Konters den ANG von Yunli für 1 Rd. um {{1}}%.",
+        "fullDesc": "Erhöht beim Einsatz eines Konters den ANG von Yunli für 1 Rd. um {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Polierter Stahl",
-      "desc": "Erhöht den SCH durch „Intuition: Abtrennen“ und „Intuition: Auslöschen“ um {{1}}%. Erhöht die Anzahl des zusätzlichen SCH durch „Intuition: Auslöschen“ um {{2}}."
+      "desc": "Erhöht den SCH durch „Intuition: Abtrennen“ und „Intuition: Auslöschen“ um {{1, percent}}%. Erhöht die Anzahl des zusätzlichen SCH durch „Intuition: Auslöschen“ um {{2}}."
     },
     "2": {
       "name": "Erwachter Schimmer",
-      "desc": "Wenn durch einen Konter SCH verursacht wird, werden {{1}}% der VTD des Ziels ignoriert."
+      "desc": "Wenn durch einen Konter SCH verursacht wird, werden {{1, percent}}% der VTD des Ziels ignoriert."
     },
     "3": {
       "name": "Bergspalter-Kluft",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Meisterschlag",
-      "desc": "Nach dem Einsatz von „Intuition: Abtrennen“ oder „Intuition: Auslöschen“ wird der eigene Effekt-WDS für {{2}} Rd. um {{1}}% erhöht."
+      "desc": "Nach dem Einsatz von „Intuition: Abtrennen“ oder „Intuition: Auslöschen“ wird der eigene Effekt-WDS für {{2}} Rd. um {{1, percent}}% erhöht."
     },
     "5": {
       "name": "Beharrliche Waffen",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Mut des Schwerts, Wille der Zither",
-      "desc": "Wenn ein Gegner während des Status „Parade“ Fähigkeiten einsetzt, wird „Intuition: Auslöschen“ ausgelöst und Parade entfernt, unabhängig davon, ob Yunli angegriffen wird oder nicht. Wenn Intuition: Abtrennen oder Intuition: Auslöschen SCH verursacht, wird die KRIT-Rate um {{1}}% und die physische WDS-DUR um {{2}}% erhöht."
+      "desc": "Wenn ein Gegner während des Status „Parade“ Fähigkeiten einsetzt, wird „Intuition: Auslöschen“ ausgelöst und Parade entfernt, unabhängig davon, ob Yunli angegriffen wird oder nicht. Wenn Intuition: Abtrennen oder Intuition: Auslöschen SCH verursacht, wird die KRIT-Rate um {{1, percent}}% und die physische WDS-DUR um {{2, percent}}% erhöht."
     }
   }
 }

@@ -14,7 +14,7 @@ export function lightConeSortConfigs(): SortConfigs<
   ILightCone
 > {
   return {
-    level: (lc) => lc.level * (lc.ascension + 1) ?? 0,
+    level: (lc) => lc.level * (lc.ascension + 1),
     name: (lc) => `lightConeNames_gen:${lc.key}` as string,
     rarity: (lc) => allStats.lightCone[lc.key].rarity,
   }

@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Quiero ayudar",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Clara como Daño Físico a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Clara como Daño Físico a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Svarog te vigila",
-        "fullDesc": "Clara inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño Físico a todos los enemigos, y además inflige un <orangeStrong>{{2}}%</orangeStrong> de su ATQ como Daño Físico extra a los objetivos que tengan la Marca de represalia de Svarog.\\nTras usar la habilidad básica, se eliminan todas las Marcas de represalia.",
+        "fullDesc": "Clara inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Físico a todos los enemigos, y además inflige un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño Físico extra a los objetivos que tengan la Marca de represalia de Svarog.\\nTras usar la habilidad básica, se eliminan todas las Marcas de represalia.",
         "shortDesc": "Inflige Daño Físico a todos los enemigos y además <orangeStrong>inflige Daño Físico extra</orangeStrong> a los que tengan Marca de represalia."
       }
     },
     "ult": {
       "0": {
         "name": "Es una promesa, no una orden",
-        "fullDesc": "Tras usar su habilidad definitiva, el daño que recibe Clara se reduce en un <orangeStrong>{{4}}%</orangeStrong> adicional y la probabilidad de ser atacada aumenta enormemente durante {{3}} turnos.\\nAdemás, el efecto de <u>contraataque</u> de Svarog se potencia. Cuando un aliado recibe un ataque, Svarog lanza un <u>contraataque</u> inmediatamente, su multiplicador de daño aumenta en un <orangeStrong>{{2}}%</orangeStrong> e inflige un 50% del daño que reciba el objetivo principal a los enemigos adyacentes. El efecto de potenciación se puede activar {{5}} veces.",
+        "fullDesc": "Tras usar su habilidad definitiva, el daño que recibe Clara se reduce en un <orangeStrong>{{4, percent}}%</orangeStrong> adicional y la probabilidad de ser atacada aumenta enormemente durante {{3}} turnos.\\nAdemás, el efecto de <u>contraataque</u> de Svarog se potencia. Cuando un aliado recibe un ataque, Svarog lanza un <u>contraataque</u> inmediatamente, su multiplicador de daño aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong> e inflige un 50% del daño que reciba el objetivo principal a los enemigos adyacentes. El efecto de potenciación se puede activar {{5}} veces.",
         "shortDesc": "<orangeStrong>Reduce el daño recibido</orangeStrong>, aumenta la probabilidad ser atacada y potencia el efecto de <u>contraataque</u>."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Familia",
-        "fullDesc": "Al recibir un ataque, tiene una probabilidad fija del {{1}}% de disipar uno de sus estados negativos.",
+        "fullDesc": "Al recibir un ataque, tiene una probabilidad fija del {{1, percent}}% de disipar uno de sus estados negativos.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Protección",
-        "fullDesc": "La probabilidad de resistir estados negativos de Control aumenta en un {{1}}%.",
+        "fullDesc": "La probabilidad de resistir estados negativos de Control aumenta en un {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Venganza",
-        "fullDesc": "El daño del contraataque de Svarog aumenta en un {{1}}%.",
+        "fullDesc": "El daño del contraataque de Svarog aumenta en un {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Abrazo de oso",
-      "desc": "Tras usar su habilidad definitiva, su ATQ aumenta en un {{1}}% durante {{2}} turnos."
+      "desc": "Tras usar su habilidad definitiva, su ATQ aumenta en un {{1, percent}}% durante {{2}} turnos."
     },
     "3": {
       "name": "Armadura de frío acero",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Calidez familiar",
-      "desc": "Tras ser atacada, Clara recibe un {{1}}% menos de daño. Este efecto dura hasta que comience su siguiente turno."
+      "desc": "Tras ser atacada, Clara recibe un {{1, percent}}% menos de daño. Este efecto dura hasta que comience su siguiente turno."
     },
     "5": {
       "name": "Una pequeña promesa",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Compañía duradera",
-      "desc": "Cuando otro aliado recibe un ataque, Svarog tiene una probabilidad fija del {{1}}% de activar un contraataque contra el atacante y marcarlo con Marca de represalia. Al usar la habilidad definitiva, la cantidad de contraataques potenciados aumenta en {{2}}."
+      "desc": "Cuando otro aliado recibe un ataque, Svarog tiene una probabilidad fija del {{1, percent}}% de activar un contraataque contra el atacante y marcarlo con Marca de represalia. Al usar la habilidad definitiva, la cantidad de contraataques potenciados aumenta en {{2}}."
     }
   }
 }

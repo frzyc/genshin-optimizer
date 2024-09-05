@@ -1,0 +1,24 @@
+{
+  "name": "Zincirkıran",
+  "description": {
+    "0": "Yeşimle bezeli bir uzun yay. Kirişinin etrafında sürekli hafif esintiler dolanır. Efsanelere göre bu silah, kadim bir çağda ejderha bir zanaatkar tarafından yapılmış."
+  },
+  "passiveName": "Çiçek Tüyü Şarkısı",
+  "passiveDescription": {
+    "0": {
+      "0": "Natlanlı olan veya kuşanan karakterden farklı Element Türüne sahip her grup üyesi için kuşanan karakterin Saldırısı <cryo>%4,8</cryo> artar. Bahsedilen niteliklerde en az 3 karakter varsa kuşanan karakter <cryo>24</cryo> Element Ustalığı kazanır."
+    },
+    "1": {
+      "0": "Natlanlı olan veya kuşanan karakterden farklı Element Türüne sahip her grup üyesi için kuşanan karakterin Saldırısı <cryo>%6</cryo> artar. Bahsedilen niteliklerde en az 3 karakter varsa kuşanan karakter <cryo>30</cryo> Element Ustalığı kazanır."
+    },
+    "2": {
+      "0": "Natlanlı olan veya kuşanan karakterden farklı Element Türüne sahip her grup üyesi için kuşanan karakterin Saldırısı <cryo>%7,2</cryo> artar. Bahsedilen niteliklerde en az 3 karakter varsa kuşanan karakter <cryo>36</cryo> Element Ustalığı kazanır."
+    },
+    "3": {
+      "0": "Natlanlı olan veya kuşanan karakterden farklı Element Türüne sahip her grup üyesi için kuşanan karakterin Saldırısı <cryo>%8,4</cryo> artar. Bahsedilen niteliklerde en az 3 karakter varsa kuşanan karakter <cryo>42</cryo> Element Ustalığı kazanır."
+    },
+    "4": {
+      "0": "Natlanlı olan veya kuşanan karakterden farklı Element Türüne sahip her grup üyesi için kuşanan karakterin Saldırısı <cryo>%9,6</cryo> artar. Bahsedilen niteliklerde en az 3 karakter varsa kuşanan karakter <cryo>48</cryo> Element Ustalığı kazanır."
+    }
+  }
+}

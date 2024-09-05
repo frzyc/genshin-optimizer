@@ -1,6 +1,6 @@
 {
   "setName": "Penacony, Land of the Dreams",
   "setEffects": {
-    "2": "Meningkatkan {{1}}% Energy Regeneration Rate pengguna. Meningkatkan {{2}}% DMG yang diakibatkan rekan lain yang tipe serangannya serupa dengan pengguna."
+    "2": "Meningkatkan {{1, percent}}% Energy Regeneration Rate pengguna. Meningkatkan {{2, percent}}% DMG yang diakibatkan rekan lain yang tipe serangannya serupa dengan pengguna."
   }
 }

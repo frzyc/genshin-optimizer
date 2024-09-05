@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Qu'est-ce que tu regardes ?",
-        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Herta à un ennemi unique.",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Herta à un ennemi unique.",
         "shortDesc": "Inflige des DGT de glace mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Une offre à ne pas manquer",
-        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Herta à tous les ennemis. Lorsque le pourcentage de PV d'un ennemi est supérieur ou égal à {{2}}%, les DGT qui lui sont infligés augmentent de {{3}}%.",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Herta à tous les ennemis. Lorsque le pourcentage de PV d'un ennemi est supérieur ou égal à {{2, percent}}%, les DGT qui lui sont infligés augmentent de {{3, percent}}%.",
         "shortDesc": "Inflige des DGT de glace mineurs à tous les ennemis. Les cibles qui ont le plus de PV subissent des DGT plus importants."
       }
     },
     "ult": {
       "0": {
         "name": "La magie, c'est exquis",
-        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Herta à tous les ennemis.",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Herta à tous les ennemis.",
         "shortDesc": "Inflige des DGT de glace à tous les ennemis."
       }
     },
     "technique": {
       "0": {
         "name": "Il y a de la marge de progression",
-        "fullDesc": "Après utilisation de sa technique, l'ATQ de Herta augmente de {{1}}% pendant {{2}} tours au début du combat suivant.",
+        "fullDesc": "Après utilisation de sa technique, l'ATQ de Herta augmente de {{1, percent}}% pendant {{2}} tours au début du combat suivant.",
         "shortDesc": ""
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Efficacité",
-        "fullDesc": "L'effet d'augmentation des DGT actif lors de l'utilisation de la compétence est majoré de {{1}}% supplémentaires.",
+        "fullDesc": "L'effet d'augmentation des DGT actif lors de l'utilisation de la compétence est majoré de {{1, percent}}% supplémentaires.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Marionnette",
-        "fullDesc": "Les chances de résister aux malus de contrôle augmentent de {{1}}%.",
+        "fullDesc": "Les chances de résister aux malus de contrôle augmentent de {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Glaçage",
-        "fullDesc": "Inflige {{1}}% de DGT supplémentaires aux ennemis gelés lors de l'utilisation de l'ultime.",
+        "fullDesc": "Inflige {{1, percent}}% de DGT supplémentaires aux ennemis gelés lors de l'utilisation de l'ultime.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Tu en veux encore ?",
-      "desc": "Si le pourcentage des PV de l'ennemi est inférieur ou égal à {{1}}%, l'ATQ normale de Herta inflige des DGT de glace additionnels équivalents à {{2}}% de l'ATQ de Herta."
+      "desc": "Si le pourcentage des PV de l'ennemi est inférieur ou égal à {{1, percent}}%, l'ATQ normale de Herta inflige des DGT de glace additionnels équivalents à {{2, percent}}% de l'ATQ de Herta."
     },
     "2": {
       "name": "On ne s'arrête pas",
-      "desc": "Chaque fois que le talent est déclenché, les chances de coup critique du personnage augmentent de {{1}}%. Cet effet est cumulable {{2}} fois."
+      "desc": "Chaque fois que le talent est déclenché, les chances de coup critique du personnage augmentent de {{1, percent}}%. Cet effet est cumulable {{2}} fois."
     },
     "3": {
       "name": "Je suis comme ça",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "On frappe là où ça fait mal",
-      "desc": "Les DGT augmentent de {{1}}% lorsque le talent est déclenché."
+      "desc": "Les DGT augmentent de {{1, percent}}% lorsque le talent est déclenché."
     },
     "5": {
       "name": "C'est tout ou rien",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "On ne me trahit pas",
-      "desc": "L'ATQ du personnage augmente de {{1}}% pendant {{2}} tour après utilisation de l'ultime."
+      "desc": "L'ATQ du personnage augmente de {{1, percent}}% pendant {{2}} tour après utilisation de l'ultime."
     }
   }
 }

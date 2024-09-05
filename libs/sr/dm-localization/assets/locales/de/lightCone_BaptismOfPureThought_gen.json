@@ -2,6 +2,6 @@
   "name": "Taufe des reinen Denkens",
   "passive": {
     "name": "Denktraining",
-    "description": "Erhöht den KRIT-SCH des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Für jeden Debuff auf dem gegnerischen Ziel erhöht sich der KRIT-SCH des Trägers um <orangeStrong>{{2}}%</orangeStrong>, bis zu einem Maximum von {{3}} Stapelungen. Wenn der Träger das Ziel mit seinem Ultimate angreift, erhält er den Effekt Debatte, der den zugefügten SCH um <orangeStrong>{{4}}%</orangeStrong> erhöht, und seine Folgeangriffe ignorieren <orangeStrong>{{5}}%</orangeStrong> der VTD des Ziels. Dieser Effekt hält für {{6}} Rd. an."
+    "description": "Erhöht den KRIT-SCH des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Für jeden Debuff auf dem gegnerischen Ziel erhöht sich der KRIT-SCH des Trägers um <orangeStrong>{{2, percent}}%</orangeStrong>, bis zu einem Maximum von {{3}} Stapelungen. Wenn der Träger das Ziel mit seinem Ultimate angreift, erhält er den Effekt Debatte, der den zugefügten SCH um <orangeStrong>{{4, percent}}%</orangeStrong> erhöht, und seine Folgeangriffe ignorieren <orangeStrong>{{5, percent}}%</orangeStrong> der VTD des Ziels. Dieser Effekt hält für {{6}} Rd. an."
   }
 }

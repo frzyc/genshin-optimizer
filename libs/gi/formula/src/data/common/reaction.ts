@@ -17,7 +17,7 @@ import {
   sumfrac,
 } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
-import { percent, self, tag } from '../util'
+import { own, ownBuff, percent, tag } from '../util'
 
 const transLvlMultis = [
   NaN, // lvl 0
@@ -211,7 +211,7 @@ const {
   final: { eleMas },
   char: { lvl },
   reaction: { ampBase, cataBase, bonus },
-} = self
+} = own
 
 function eleMasMulti(a: number, b: number): NumNode {
   return sum(percent(1), prod(a, sumfrac(eleMas, b)), bonus)
@@ -313,32 +313,32 @@ function trigger(
 }
 
 const data: TagMapNodeEntries = [
-  self.reaction.ampBase.add(eleMasMulti(25 / 9, 1400)),
-  self.reaction.ampMulti.melt.cryo.add(prod(1.5, ampBase)),
-  self.reaction.ampMulti.melt.pyro.add(prod(2.0, ampBase)),
-  self.reaction.ampMulti.vaporize.pyro.add(prod(1.5, ampBase)),
-  self.reaction.ampMulti.vaporize.hydro.add(prod(2.0, ampBase)),
+  ownBuff.reaction.ampBase.add(eleMasMulti(25 / 9, 1400)),
+  ownBuff.reaction.ampMulti.melt.cryo.add(prod(1.5, ampBase)),
+  ownBuff.reaction.ampMulti.melt.pyro.add(prod(2.0, ampBase)),
+  ownBuff.reaction.ampMulti.vaporize.pyro.add(prod(1.5, ampBase)),
+  ownBuff.reaction.ampMulti.vaporize.hydro.add(prod(2.0, ampBase)),
 
-  self.reaction.cataBase.add(eleMasMulti(5, 1200)),
-  self.reaction.cataAddi.spread.dendro.add(
-    prod(subscript(self.char.lvl, transLvlMultis), 1.25, cataBase)
+  ownBuff.reaction.cataBase.add(eleMasMulti(5, 1200)),
+  ownBuff.reaction.cataAddi.spread.dendro.add(
+    prod(subscript(own.char.lvl, transLvlMultis), 1.25, cataBase)
   ),
-  self.reaction.cataAddi.aggravate.electro.add(
-    prod(subscript(self.char.lvl, transLvlMultis), 1.15, cataBase)
+  ownBuff.reaction.cataAddi.aggravate.electro.add(
+    prod(subscript(own.char.lvl, transLvlMultis), 1.15, cataBase)
   ),
 
-  self.reaction.transBase.add(
+  ownBuff.reaction.transBase.add(
     prod(subscript(lvl, transLvlMultis), eleMasMulti(16, 2000))
   ),
-  self.trans.critMulti.add(
-    lookup(self.common.critMode, {
-      crit: sum(1, self.trans.cappedCritRate_),
+  ownBuff.trans.critMulti.add(
+    lookup(own.common.critMode, {
+      crit: sum(1, own.trans.cappedCritRate_),
       nonCrit: 1,
-      avg: sum(1, prod(self.trans.cappedCritRate_, self.trans.critDMG_)),
+      avg: sum(1, prod(own.trans.cappedCritRate_, own.trans.critDMG_)),
     })
   ),
   ...allTransformativeReactionKeys.map((trans) =>
-    self.trans.multi[trans].add(transInfo[trans].multi)
+    ownBuff.trans.multi[trans].add(transInfo[trans].multi)
   ),
 
   // Trans listing
@@ -355,19 +355,19 @@ const data: TagMapNodeEntries = [
     )
       cond =
         available.length === 1
-          ? cmpEq(self.char.ele, available[0], cond, '')
+          ? cmpEq(own.char.ele, available[0], cond, '')
           : lookup(
-              self.char.ele,
+              own.char.ele,
               Object.fromEntries(available.map((k) => [k, cond])),
               ''
             )
     return variants.flatMap((ele) => {
       const name = trans === 'swirl' ? `swirl_${ele}` : trans
       return [
-        self.listing.formulas.add(
+        ownBuff.listing.formulas.add(
           tag(cond, { trans, qt: 'formula', q, ele, sheet: 'static', name })
         ),
-        self.prep.ele.name(name).add(ele),
+        ownBuff.prep.ele.name(name).add(ele),
       ]
     })
   }),

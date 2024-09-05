@@ -2,6 +2,6 @@
   "name": "织造命运之线",
   "passive": {
     "name": "洞见",
-    "description": "使装备者的效果抵抗提高<orangeStrong>{{1}}%</orangeStrong>。装备者每有{{2}}点防御力，使装备者造成的伤害提高<orangeStrong>{{3}}%</orangeStrong>，最多使造成的伤害提高<orangeStrong>{{4}}%</orangeStrong>。"
+    "description": "使装备者的效果抵抗提高<orangeStrong>{{1, percent}}%</orangeStrong>。装备者每有{{2}}点防御力，使装备者造成的伤害提高<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>，最多使造成的伤害提高<orangeStrong>{{4, percent}}%</orangeStrong>。"
   }
 }

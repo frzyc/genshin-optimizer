@@ -2,6 +2,6 @@
   "name": "Cơn Mưa Tầm Tã",
   "passive": {
     "name": "Ảo Ảnh Hiện Thực",
-    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> Chính Xác Hiệu Ứng của người trang bị. Khi người trang bị gây sát thương cho kẻ địch đang có {{4}} Hiệu Ứng Xấu hoặc hơn, thì Tỷ Lệ Bạo Kích sẽ tăng <orangeStrong>{{5}}%</orangeStrong>. Sau khi người trang bị thi triển tấn công thường, Chiến Kỹ, Tuyệt Kỹ sẽ có {{2}}% xác suất cơ bản thi triển Mã Aether lên mục tiêu bị tấn công ngẫu nhiên chưa có Mã Aether. Sát thương phải chịu của mục tiêu có Mã Aether tăng <orangeStrong>{{3}}%</orangeStrong>, duy trì 1 hiệp."
+    "description": "Tăng <orangeStrong>{{1, percent}}%</orangeStrong> Chính Xác Hiệu Ứng của người trang bị. Khi người trang bị gây sát thương cho kẻ địch đang có {{4}} Hiệu Ứng Xấu hoặc hơn, thì Tỷ Lệ Bạo Kích sẽ tăng <orangeStrong>{{5, percent}}%</orangeStrong>. Sau khi người trang bị thi triển tấn công thường, Chiến Kỹ, Tuyệt Kỹ sẽ có {{2, percent}}% xác suất cơ bản thi triển Mã Aether lên mục tiêu bị tấn công ngẫu nhiên chưa có Mã Aether. Sát thương phải chịu của mục tiêu có Mã Aether tăng <orangeStrong>{{3, percent}}%</orangeStrong>, duy trì 1 hiệp."
   }
 }

@@ -2,6 +2,6 @@
   "name": "Füllhorn",
   "passive": {
     "name": "Gedeihen",
-    "description": "Erhöht beim Einsatz der Fertigkeit und des Ultimates die bewirkte Heilung des Trägers um <orangeStrong>{{1}}%</orangeStrong>."
+    "description": "Erhöht beim Einsatz der Fertigkeit und des Ultimates die bewirkte Heilung des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>."
   }
 }

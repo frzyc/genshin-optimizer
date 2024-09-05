@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Blitzrausch",
-        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Arlans ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Arlans ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Kettensprenger",
-        "fullDesc": "Verbraucht {{1}}% von Arlans max. LP, um einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Arlans ANG zuzufügen. Hat Arlan nicht genügend LP, werden seine LP beim Einsatz der Fertigkeit auf 1 reduziert.",
+        "fullDesc": "Verbraucht {{1, percent}}% von Arlans max. LP, um einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Arlans ANG zuzufügen. Hat Arlan nicht genügend LP, werden seine LP beim Einsatz der Fertigkeit auf 1 reduziert.",
         "shortDesc": "Verbraucht einen Teil von Arlans LP, um einem Gegner Blitz-SCH zuzufügen."
       }
     },
     "ult": {
       "0": {
         "name": "Rasende Strafe",
-        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Arlans ANG zu und fügt angrenzenden Zielen Blitz-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Arlans ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Arlans ANG zu und fügt angrenzenden Zielen Blitz-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Arlans ANG zu.",
         "shortDesc": "Fügt einem Gegner massiven Blitz-SCH und angrenzenden Zielen Blitz-SCH zu."
       }
     },
     "technique": {
       "0": {
         "name": "Rasche Ernte",
-        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt allen Gegnern Blitz-SCH in Höhe von {{1}}% von Arlans ANG zu.",
+        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt allen Gegnern Blitz-SCH in Höhe von {{1, percent}}% von Arlans ANG zu.",
         "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt allen Gegnern geringen Blitz-SCH zu."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Wiederbelebung",
-        "fullDesc": "Liegt der LP-Prozentsatz bei {{1}}% oder niedriger beim Besiegen eines Gegners, erhält Arlan unmittelbar {{2}}% seiner max. LP zurück.",
+        "fullDesc": "Liegt der LP-Prozentsatz bei {{1, percent}}% oder niedriger beim Besiegen eines Gegners, erhält Arlan unmittelbar {{2, percent}}% seiner max. LP zurück.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Beharrlichkeit",
-        "fullDesc": "Erhöht die Chance von WDS gegen DoT-Debuffs um {{1}}%.",
+        "fullDesc": "Erhöht die Chance von WDS gegen DoT-Debuffs um {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Abwehren",
-        "fullDesc": "Besitzt Arlan beim Kampfeintritt {{1}}% oder weniger LP, kann er allen SCH außer DoT blocken, bis er angegriffen wird.",
+        "fullDesc": "Besitzt Arlan beim Kampfeintritt {{1, percent}}% oder weniger LP, kann er allen SCH außer DoT blocken, bis er angegriffen wird.",
         "shortDesc": ""
       }
     }
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Bis zum bitteren Ende",
-      "desc": "Liegt der LP-Prozentsatz bei 50 % oder weniger, wird der durch die Fertigkeit verursachte SCH um {{1}}% erhöht."
+      "desc": "Liegt der LP-Prozentsatz bei 50 % oder weniger, wird der durch die Fertigkeit verursachte SCH um {{1, percent}}% erhöht."
     },
     "2": {
       "name": "Befreiung",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Rollentausch",
-      "desc": "Erleidet Arlan nach Kampfeintritt einen Todesstoß, stellt er seine LP sofort auf {{1}}% seiner max. LP wieder her, anstatt handlungsunfähig zu werden. Dieser Effekt wird automatisch nach 1-mal Auslösung oder nach {{2}} Rd. entfernt."
+      "desc": "Erleidet Arlan nach Kampfeintritt einen Todesstoß, stellt er seine LP sofort auf {{1, percent}}% seiner max. LP wieder her, anstatt handlungsunfähig zu werden. Dieser Effekt wird automatisch nach 1-mal Auslösung oder nach {{2}} Rd. entfernt."
     },
     "5": {
       "name": "Die Fetzen fliegen",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Selbstaufopferung",
-      "desc": "Liegt Arlans LP-Prozentsatz bei 50 % oder weniger, verursacht der Ultimate {{1}}% mehr SCH und angrenzende Ziele erhalten denselben SCH-Multiplikator wie der anvisierte Gegner."
+      "desc": "Liegt Arlans LP-Prozentsatz bei 50 % oder weniger, verursacht der Ultimate {{1, percent}}% mehr SCH und angrenzende Ziele erhalten denselben SCH-Multiplikator wie der anvisierte Gegner."
     }
   }
 }

@@ -4,12 +4,13 @@ import {
   type CardBackgroundColor,
 } from '@genshin-optimizer/common/ui'
 import { valueString } from '@genshin-optimizer/common/util'
+import { read } from '@genshin-optimizer/pando/engine'
 import GroupsIcon from '@mui/icons-material/Groups'
 import type { ListProps, Palette, PaletteColor } from '@mui/material'
 import { Box, List, ListItem, Typography, styled } from '@mui/material'
 import type { ReactNode } from 'react'
 import React, { useContext } from 'react'
-import { CalcContext, MemberContext } from '../context'
+import { CalcContext } from '../context'
 import type { Field, TagField, TextField } from '../types'
 
 export function FieldsDisplay({
@@ -87,11 +88,12 @@ export function TagFieldDisplay({
   showZero?: boolean
 }) {
   const calc = useContext(CalcContext)
-  const member = useContext(MemberContext)
   // const compareCalc: null | Calculator = null //TODO: compare calcs
-  if (!member || !calc) return null
+  if (!calc) return null
   // if (!calc && !compareCalc) return null
-  const valueCalcRes = calc.compute(member.withTag(field.fieldRef))
+
+  //TODO: undefined: we assume "unique" accumulator
+  const valueCalcRes = calc.compute(read(field.fieldRef, undefined))
   // const compareValueCalcRes: CalcResult<number, CalcMeta> | null = null
 
   // const { setFormulaData } = useContext(FormulaDataContext)

@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Cảnh Báo Hệ Thống",
-        "fullDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Sói Bạc.",
+        "fullDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Sói Bạc.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Lượng Tử cho 1 kẻ địch."
       }
     },
     "skill": {
       "0": {
         "name": "Cho Phép Thay Đổi?",
-        "fullDesc": "Có <orangeStrong>{{2}}%</orangeStrong> <u>xác suất cơ bản</u> thêm cho 1 kẻ địch chỉ định 1 Điểm Yếu mang thuộc tính có từ đồng đội trong trận, và giảm {{4}}% kháng thuộc tính của Điểm Yếu đó trong {{3}} hiệp. Nếu kẻ địch đã có điểm yếu của thuộc tính này thì hiệu ứng giảm kháng thuộc tính tương ứng sẽ không được kích hoạt.\\nMỗi kẻ địch chỉ có thể bị Sói Bạc thêm 1 điểm yếu, khi Sói Bạc thêm điểm yếu lần nữa cho kẻ đó thì chỉ giữ lại điểm yếu được thêm vào sau cùng.\\nCó {{5}}% <u>xác suất cơ bản</u> giảm kháng toàn bộ thuộc tính của kẻ địch này đi <orangeStrong>{{6}}%</orangeStrong> trong {{7}} hiệp.\\nGây cho kẻ địch này Sát Thương Lượng Tử bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Sói Bạc.",
+        "fullDesc": "Có <orangeStrong>{{2, percent}}%</orangeStrong> <u>xác suất cơ bản</u> thêm cho 1 kẻ địch chỉ định 1 Điểm Yếu mang thuộc tính có từ đồng đội trong trận, và giảm {{4, percent}}% kháng thuộc tính của Điểm Yếu đó trong {{3}} hiệp. Nếu kẻ địch đã có điểm yếu của thuộc tính này thì hiệu ứng giảm kháng thuộc tính tương ứng sẽ không được kích hoạt.\\nMỗi kẻ địch chỉ có thể bị Sói Bạc thêm 1 điểm yếu, khi Sói Bạc thêm điểm yếu lần nữa cho kẻ đó thì chỉ giữ lại điểm yếu được thêm vào sau cùng.\\nCó {{5, percent}}% <u>xác suất cơ bản</u> giảm kháng toàn bộ thuộc tính của kẻ địch này đi <orangeStrong>{{6, percent(fixed: 1)}}%</orangeStrong> trong {{7}} hiệp.\\nGây cho kẻ địch này Sát Thương Lượng Tử bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Sói Bạc.",
         "shortDesc": "Có xác suất lớn <orangeStrong>thêm Điểm Yếu</orangeStrong> cho 1 kẻ địch và gây Sát Thương Lượng Tử cho kẻ đó."
       }
     },
     "ult": {
       "0": {
         "name": "Tài Khoản Đã Bị Khóa",
-        "fullDesc": "Có <orangeStrong>{{2}}%</orangeStrong> <u>xác suất cơ bản</u> khiến Phòng Thủ của 1 kẻ địch chỉ định giảm <orangeStrong>{{3}}%</orangeStrong> trong {{4}} hiệp, đồng thời gây cho mục tiêu này Sát Thương Lượng Tử bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Sói Bạc.",
+        "fullDesc": "Có <orangeStrong>{{2, percent}}%</orangeStrong> <u>xác suất cơ bản</u> khiến Phòng Thủ của 1 kẻ địch chỉ định giảm <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> trong {{4}} hiệp, đồng thời gây cho mục tiêu này Sát Thương Lượng Tử bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Sói Bạc.",
         "shortDesc": "Xác suất lớn <orangeStrong>giảm Phòng Thủ</orangeStrong> của 1 kẻ địch và gây lượng lớn Sát Thương Lượng Tử cho kẻ đó."
       }
     },
     "technique": {
       "0": {
         "name": "Buộc Kết Thúc Tiến Trình",
-        "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu sẽ gây Sát Thương Lượng Tử bằng {{1}}% Tấn Công của Sói Bạc cho toàn bộ địch, đồng thời bỏ qua các thuộc tính Điểm Yếu và làm giảm Sức Bền của toàn phe địch. Khi phá vỡ điểm yếu sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu thuộc tính Lượng Tử.",
+        "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu sẽ gây Sát Thương Lượng Tử bằng {{1, percent}}% Tấn Công của Sói Bạc cho toàn bộ địch, đồng thời bỏ qua các thuộc tính Điểm Yếu và làm giảm Sức Bền của toàn phe địch. Khi phá vỡ điểm yếu sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu thuộc tính Lượng Tử.",
         "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây một lượng nhỏ sát thương cho toàn bộ địch, bỏ qua thuộc tính điểm yếu và làm giảm Sức Bền."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Tạo",
-        "fullDesc": "Thời gian duy trì của \"Bug\" tăng {{1}} hiệp. Mỗi khi có điểm yếu của mục tiêu phe địch bị phá vỡ, Sói Bạc có {{2}}% xác suất cơ bản cài cho mục tiêu này 1 \"Bug\" ngẫu nhiên.",
+        "fullDesc": "Thời gian duy trì của \"Bug\" tăng {{1}} hiệp. Mỗi khi có điểm yếu của mục tiêu phe địch bị phá vỡ, Sói Bạc có {{2, percent}}% xác suất cơ bản cài cho mục tiêu này 1 \"Bug\" ngẫu nhiên.",
         "shortDesc": ""
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Chú Thích",
-        "fullDesc": "Khi thi triển Chiến Kỹ, nếu số lượng Hiệu Ứng Xấu của kẻ địch nhiều hơn hoặc bằng {{1}}, thì Chiến Kỹ khiến hiệu ứng giảm Kháng Toàn Thuộc Tính của kẻ địch giảm thêm {{2}}%.",
+        "fullDesc": "Khi thi triển Chiến Kỹ, nếu số lượng Hiệu Ứng Xấu của kẻ địch nhiều hơn hoặc bằng {{1}}, thì Chiến Kỹ khiến hiệu ứng giảm Kháng Toàn Thuộc Tính của kẻ địch giảm thêm {{2, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Mạng Zombie",
-      "desc": "Khi kẻ địch vào chiến đấu sẽ giảm {{1}}% Kháng Hiệu Ứng của kẻ đó."
+      "desc": "Khi kẻ địch vào chiến đấu sẽ giảm {{1, percent}}% Kháng Hiệu Ứng của kẻ đó."
     },
     "3": {
       "name": "Tải Trọng Tấn Công",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Tấn Công Phản Đòn",
-      "desc": "Sau khi thi triển Tuyệt Kỹ tấn công kẻ địch, mỗi một Hiệu Ứng Xấu mà kẻ địch có sẽ gây thêm Sát Thương Lượng Tử kèm theo bằng {{1}}% Tấn Công của Sói Bạc. Hiệu ứng này tối đa kích hoạt {{2}} lần trong mỗi lần dùng Tuyệt Kỹ."
+      "desc": "Sau khi thi triển Tuyệt Kỹ tấn công kẻ địch, mỗi một Hiệu Ứng Xấu mà kẻ địch có sẽ gây thêm Sát Thương Lượng Tử kèm theo bằng {{1, percent}}% Tấn Công của Sói Bạc. Hiệu ứng này tối đa kích hoạt {{2}} lần trong mỗi lần dùng Tuyệt Kỹ."
     },
     "5": {
       "name": "Diệt Trừ Bạo Lực",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Mạng Lưới Trùng Lặp",
-      "desc": "Với mỗi một Hiệu Ứng Xấu mà kẻ địch có, sát thương Sói Bạc gây ra cho mục tiêu đó sẽ tăng {{1}}%, tối đa tăng {{2}}%."
+      "desc": "Với mỗi một Hiệu Ứng Xấu mà kẻ địch có, sát thương Sói Bạc gây ra cho mục tiêu đó sẽ tăng {{1, percent}}%, tối đa tăng {{2, percent}}%."
     }
   }
 }

@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "I Want to Help",
-        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Clara's ATK to a single enemy.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Clara's ATK to a single enemy.",
         "shortDesc": "Deals minor Physical DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Svarog Watches Over You",
-        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Clara's ATK to all enemies, and additionally deals Physical DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Clara's ATK to enemies marked by Svarog with a Mark of Counter.\\nAll Marks of Counter will be removed after this Skill is used.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Clara's ATK to all enemies, and additionally deals Physical DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Clara's ATK to enemies marked by Svarog with a Mark of Counter.\\nAll Marks of Counter will be removed after this Skill is used.",
         "shortDesc": "Deals Physical DMG to all enemies. <orangeStrong>Additionally deals Physical DMG</orangeStrong> to targets with Marks of Counter."
       }
     },
     "ult": {
       "0": {
         "name": "Promise, Not Command",
-        "fullDesc": "After Clara uses Ultimate, DMG dealt to her is reduced by an extra <orangeStrong>{{4}}%</orangeStrong>, and she has greatly increased chances of being attacked by enemies for {{3}} turn(s).\\nIn addition, Svarog's <u>Counter</u> is enhanced. When an ally is attacked, Svarog immediately launches a <u>Counter</u>, and its DMG multiplier against the enemy increases by <orangeStrong>{{2}}%</orangeStrong>. Enemies adjacent to it take 50% of the DMG dealt to the primary target enemy. Enhanced <u>Counter(s)</u> can take effect {{5}} time(s).",
+        "fullDesc": "After Clara uses Ultimate, DMG dealt to her is reduced by an extra <orangeStrong>{{4, percent}}%</orangeStrong>, and she has greatly increased chances of being attacked by enemies for {{3}} turn(s).\\nIn addition, Svarog's <u>Counter</u> is enhanced. When an ally is attacked, Svarog immediately launches a <u>Counter</u>, and its DMG multiplier against the enemy increases by <orangeStrong>{{2, percent}}%</orangeStrong>. Enemies adjacent to it take 50% of the DMG dealt to the primary target enemy. Enhanced <u>Counter(s)</u> can take effect {{5}} time(s).",
         "shortDesc": "<orangeStrong>Reduces DMG received</orangeStrong>, increases chance to be attacked by enemies, and enhances <u>Counters</u>."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Kinship",
-        "fullDesc": "When attacked, this character has a {{1}}% fixed chance to remove a debuff placed on them.",
+        "fullDesc": "When attacked, this character has a {{1, percent}}% fixed chance to remove a debuff placed on them.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Under Protection",
-        "fullDesc": "The chance to resist Crowd Control Debuffs increases by {{1}}%.",
+        "fullDesc": "The chance to resist Crowd Control Debuffs increases by {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Revenge",
-        "fullDesc": "Increases Svarog's Counter DMG by {{1}}%.",
+        "fullDesc": "Increases Svarog's Counter DMG by {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "A Tight Embrace",
-      "desc": "After using the Ultimate, ATK increases by {{1}}% for {{2}} turn(s)."
+      "desc": "After using the Ultimate, ATK increases by {{1, percent}}% for {{2}} turn(s)."
     },
     "3": {
       "name": "Cold Steel Armor",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Family's Warmth",
-      "desc": "After Clara is hit, the DMG taken by Clara is reduced by {{1}}%. This effect lasts until the start of her next turn."
+      "desc": "After Clara is hit, the DMG taken by Clara is reduced by {{1, percent}}%. This effect lasts until the start of her next turn."
     },
     "5": {
       "name": "A Small Promise",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Long Company",
-      "desc": "After other allies are hit, Svarog also has a {{1}}% fixed chance to trigger a Counter on the attacker and mark them with a Mark of Counter. When using Ultimate, the number of Enhanced Counters increases by {{2}}."
+      "desc": "After other allies are hit, Svarog also has a {{1, percent}}% fixed chance to trigger a Counter on the attacker and mark them with a Mark of Counter. When using Ultimate, the number of Enhanced Counters increases by {{2}}."
     }
   }
 }

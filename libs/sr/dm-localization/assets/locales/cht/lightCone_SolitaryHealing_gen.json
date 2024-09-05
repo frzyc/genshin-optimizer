@@ -2,6 +2,6 @@
   "name": "孤獨的療癒",
   "passive": {
     "name": "混沌靈藥",
-    "description": "使裝備者的擊破特攻提高<orangeStrong>{{1}}%</orangeStrong>。當裝備者施放終結技時，使裝備者造成的持續傷害提高<orangeStrong>{{2}}%</orangeStrong>，持續{{3}}回合。陷入裝備者施加的持續傷害效果的敵方目標被消滅時，裝備者恢復<orangeStrong>{{4}}</orangeStrong>點能量。"
+    "description": "使裝備者的擊破特攻提高<orangeStrong>{{1, percent}}%</orangeStrong>。當裝備者施放終結技時，使裝備者造成的持續傷害提高<orangeStrong>{{2, percent}}%</orangeStrong>，持續{{3}}回合。陷入裝備者施加的持續傷害效果的敵方目標被消滅時，裝備者恢復<orangeStrong>{{4, fixed(fixed: 1)}}</orangeStrong>點能量。"
   }
 }

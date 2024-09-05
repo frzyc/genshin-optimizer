@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Clara Cũng Muốn Giúp",
-        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Clara.",
+        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Clara.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch."
       }
     },
     "skill": {
       "0": {
         "name": "Svarog Đang Nhìn Ngươi",
-        "fullDesc": "Gây Sát Thương Vật Lý cho toàn phe địch tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Clara, và gây thêm cho tất cả địch bị Svarog đánh dấu \"Ký Hiệu Phản Kích\" một lượng Sát Thương Vật Lý bằng <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Clara.\\nSau khi thi triển Chiến Kỹ, tất cả \"Ký Hiệu Phản Kích\" sẽ mất hiệu lực.",
+        "fullDesc": "Gây Sát Thương Vật Lý cho toàn phe địch tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Clara, và gây thêm cho tất cả địch bị Svarog đánh dấu \"Ký Hiệu Phản Kích\" một lượng Sát Thương Vật Lý bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Clara.\\nSau khi thi triển Chiến Kỹ, tất cả \"Ký Hiệu Phản Kích\" sẽ mất hiệu lực.",
         "shortDesc": "Gây Sát Thương Vật Lý cho toàn phe địch, <orangeStrong>gây thêm Sát Thương Vật Lý</orangeStrong> cho mục tiêu mang Ký Hiệu Phản Kích."
       }
     },
     "ult": {
       "0": {
         "name": "Là Hẹn Ước, Không Phải Mệnh Lệnh",
-        "fullDesc": "Sau khi thi triển Tuyệt Kỹ, sát thương Clara phải chịu giảm thêm <orangeStrong>{{4}}%</orangeStrong>, đồng thời tăng xác suất bị phe địch tấn công, duy trì {{3}} hiệp.\\nĐồng thời <u>Phản Kích</u> của Svarog được cường hóa, sau khi mục tiêu bất kỳ của phe ta bị tấn công, Svarog sẽ thi triển ngay <u>phản kích</u>, Bội Số Sát Thương gây ra cho mục tiêu địch tăng <orangeStrong>{{2}}%</orangeStrong>, và gây sát thương cho mục tiêu lân cận kẻ đó bằng 50% của mục tiêu chính. Hiệu ứng cường hóa có thể hiệu lực {{5}} lần.",
+        "fullDesc": "Sau khi thi triển Tuyệt Kỹ, sát thương Clara phải chịu giảm thêm <orangeStrong>{{4, percent}}%</orangeStrong>, đồng thời tăng xác suất bị phe địch tấn công, duy trì {{3}} hiệp.\\nĐồng thời <u>Phản Kích</u> của Svarog được cường hóa, sau khi mục tiêu bất kỳ của phe ta bị tấn công, Svarog sẽ thi triển ngay <u>phản kích</u>, Bội Số Sát Thương gây ra cho mục tiêu địch tăng <orangeStrong>{{2, percent}}%</orangeStrong>, và gây sát thương cho mục tiêu lân cận kẻ đó bằng 50% của mục tiêu chính. Hiệu ứng cường hóa có thể hiệu lực {{5}} lần.",
         "shortDesc": "<orangeStrong>Giảm sát thương bản thân phải chịu</orangeStrong>, tăng xác suất bị tấn công, và cường hóa hiệu ứng <u>Phản Kích</u>."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Người Nhà",
-        "fullDesc": "Khi bị tấn công có {{1}}% xác suất cố định giải trừ 1 Hiệu Ứng Xấu của bản thân.",
+        "fullDesc": "Khi bị tấn công có {{1, percent}}% xác suất cố định giải trừ 1 Hiệu Ứng Xấu của bản thân.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Bảo Vệ",
-        "fullDesc": "Tăng {{1}}% tỷ lệ Kháng Hiệu Ứng Xấu dạng Khống Chế.",
+        "fullDesc": "Tăng {{1, percent}}% tỷ lệ Kháng Hiệu Ứng Xấu dạng Khống Chế.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Trả Thù",
-        "fullDesc": "Sát thương gây ra từ đòn phản kích của Svarog tăng {{1}}%.",
+        "fullDesc": "Sát thương gây ra từ đòn phản kích của Svarog tăng {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Cái Ôm Thật Chặt",
-      "desc": "Sau khi thi triển Tuyệt Kỹ, Tấn Công tăng {{1}}%, duy trì {{2}} hiệp."
+      "desc": "Sau khi thi triển Tuyệt Kỹ, Tấn Công tăng {{1, percent}}%, duy trì {{2}} hiệp."
     },
     "3": {
       "name": "Giáp Thép Băng Giá",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Mái Ấm Gia Đình",
-      "desc": "Sau khi bị tấn công, sát thương Clara phải chịu giảm {{1}}%, hiệu ứng kéo dài đến khi bắt đầu hiệp sau của bản thân."
+      "desc": "Sau khi bị tấn công, sát thương Clara phải chịu giảm {{1, percent}}%, hiệu ứng kéo dài đến khi bắt đầu hiệp sau của bản thân."
     },
     "5": {
       "name": "Lời Hứa Nho Nhỏ",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Đồng Hành Dài Lâu",
-      "desc": "Sau khi mục tiêu khác của phe ta bị tấn công, Svarog cũng có {{1}}% xác suất cố định phản kích lại người tấn công, đồng thời thêm \"Ký Hiệu Phản Kích\" lên mục tiêu tấn công. Khi thi triển Tuyệt Kỹ sẽ tăng thêm {{2}} lần cường hóa Phản Kích."
+      "desc": "Sau khi mục tiêu khác của phe ta bị tấn công, Svarog cũng có {{1, percent}}% xác suất cố định phản kích lại người tấn công, đồng thời thêm \"Ký Hiệu Phản Kích\" lên mục tiêu tấn công. Khi thi triển Tuyệt Kỹ sẽ tăng thêm {{2}} lần cường hóa Phản Kích."
     }
   }
 }

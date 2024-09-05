@@ -2,6 +2,6 @@
   "name": "Băng Chuột Chũi Hoan Nghênh",
   "passive": {
     "name": "Phiêu Lưu Kỳ Diệu",
-    "description": "Sau khi người trang bị thi triển Tấn Công Thường, Chiến Kỹ hoặc Tuyệt Kỹ lên kẻ địch, sẽ lần lượt nhận 1 tầng \"Trêu Chọc\". Mỗi tầng khiến Tấn Công của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>."
+    "description": "Sau khi người trang bị thi triển Tấn Công Thường, Chiến Kỹ hoặc Tuyệt Kỹ lên kẻ địch, sẽ lần lượt nhận 1 tầng \"Trêu Chọc\". Mỗi tầng khiến Tấn Công của người trang bị tăng <orangeStrong>{{1, percent}}%</orangeStrong>."
   }
 }

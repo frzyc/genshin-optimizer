@@ -4,38 +4,38 @@
     "basic": {
       "0": {
         "name": "Golpe de Despedida",
-        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo.",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo.",
         "shortDesc": "Causa Dano Físico leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Home Run Fatal",
-        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo e inimigos adjacentes.",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo e inimigos adjacentes.",
         "shortDesc": "Causa Dano Físico a um único inimigo e aos inimigos adjacentes a ele."
       }
     },
     "ult": {
       "0": {
         "name": "Ás de Poeira Estelar",
-        "fullDesc": "Escolha entre dois modos de ataque para desferir um golpe completo.\\nRuptura: Golpe de Despedida causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ {F#da}{M#do} Desbrava{M#dor}{F#dora} a um único inimigo.\\nRuptura: Home Run Fatal causa Dano Físico igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ {F#da}{M#do} Desbrava{M#dor}{F#dora} a um único inimigo, e Dano Físico igual a <orangeStrong>{{3}}%</orangeStrong> do ATQ {F#da}{M#do} Desbrava{M#dor}{F#dora} aos inimigos adjacentes a ele",
+        "fullDesc": "Escolha entre dois modos de ataque para desferir um golpe completo.\\nRuptura: Golpe de Despedida causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ {F#da}{M#do} Desbrava{M#dor}{F#dora} a um único inimigo.\\nRuptura: Home Run Fatal causa Dano Físico igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ {F#da}{M#do} Desbrava{M#dor}{F#dora} a um único inimigo, e Dano Físico igual a <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ {F#da}{M#do} Desbrava{M#dor}{F#dora} aos inimigos adjacentes a ele",
         "shortDesc": "Usa ATQ de alvo único ou uma Explosão para realizar um golpe com força máxima."
       },
       "1": {
         "name": "Ruptura: Golpe de Despedida",
-        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo.",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo.",
         "shortDesc": "Causa Dano Físico massivo a um único inimigo."
       },
       "2": {
         "name": "Ruptura: Home Run Fatal",
-        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo e Dano Físico igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a quaisquer inimigos adjacentes a ele.",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo e Dano Físico igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a quaisquer inimigos adjacentes a ele.",
         "shortDesc": "Causa Dano Físico a um único inimigo e aos inimigos adjacentes a ele."
       }
     },
     "technique": {
       "0": {
         "name": "Terceiro Golpe Imortal",
-        "fullDesc": "Imediatamente cura todos os aliados em {{1}}% de seus PV máximos depois de usar esta Técnica.",
+        "fullDesc": "Imediatamente cura todos os aliados em {{1, percent}}% de seus PV máximos depois de usar esta Técnica.",
         "shortDesc": ""
       }
     },
@@ -56,14 +56,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Tenacidade",
-        "fullDesc": "Cada acúmulo de Talento aumenta a DEF {F#da}{M#do} Desbravador{F#a} em {{1}}%.",
+        "fullDesc": "Cada acúmulo de Talento aumenta a DEF {F#da}{M#do} Desbravador{F#a} em {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Desejo de Lutar",
-        "fullDesc": "Ao usar a Perícia ou a Perícia Suprema \"Ruptura: Home Run Fatal\", o Dano causado ao inimigo-alvo é aumentado em {{1}}%.",
+        "fullDesc": "Ao usar a Perícia ou a Perícia Suprema \"Ruptura: Home Run Fatal\", o Dano causado ao inimigo-alvo é aumentado em {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -75,7 +75,7 @@
     },
     "2": {
       "name": "Um Anfitrião Indisposto",
-      "desc": "Atacar inimigos com Fraqueza contra Físico restaura uma quantidade de PV igual a {{1}}% do ATQ {F#da Desbravadora}{M#do Desbravador}."
+      "desc": "Atacar inimigos com Fraqueza contra Físico restaura uma quantidade de PV igual a {{1, percent}}% do ATQ {F#da Desbravadora}{M#do Desbravador}."
     },
     "3": {
       "name": "Um Sussurro Condutor",
@@ -83,7 +83,7 @@
     },
     "4": {
       "name": "Um Olhar Destruidor",
-      "desc": "Ao atacar um inimigo com Quebra de Fraqueza, a Chance de CRIT aumenta em {{1}}%."
+      "desc": "Ao atacar um inimigo com Quebra de Fraqueza, a Chance de CRIT aumenta em {{1, percent}}%."
     },
     "5": {
       "name": "Uma Esperança Sobrevivente",

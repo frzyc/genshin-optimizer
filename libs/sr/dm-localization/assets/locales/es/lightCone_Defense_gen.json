@@ -2,6 +2,6 @@
   "name": "Blindaje",
   "passive": {
     "name": "Revitalización",
-    "description": "Cuando el portador usa su habilidad definitiva, recupera una cantidad de PV equivalente al <orangeStrong>{{1}}%</orangeStrong> de sus PV máx."
+    "description": "Cuando el portador usa su habilidad definitiva, recupera una cantidad de PV equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> de sus PV máx."
   }
 }

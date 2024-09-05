@@ -33,6 +33,7 @@
       "@genshin-optimizer/common/database-ui": [
         "libs/common/database-ui/src/index.ts"
       ],
+      "@genshin-optimizer/common/formula": ["libs/common/formula/src/index.ts"],
       "@genshin-optimizer/common/img-util": [
         "libs/common/img-util/src/index.ts"
       ],
@@ -126,6 +127,7 @@
         "libs/sr/dm-localization/src/index.ts"
       ],
       "@genshin-optimizer/sr/formula": ["libs/sr/formula/src/index.ts"],
+      "@genshin-optimizer/sr/formula-ui": ["libs/sr/formula-ui/src/index.ts"],
       "@genshin-optimizer/sr/i18n": ["libs/sr/i18n/src/index.ts"],
       "@genshin-optimizer/sr/i18n-node": ["libs/sr/i18n-node/src/index.ts"],
       "@genshin-optimizer/sr/page-characters": [
@@ -145,6 +147,8 @@
       "@genshin-optimizer/sr/solver": ["libs/sr/solver/src/index.ts"],
       "@genshin-optimizer/sr/srod": ["libs/sr/srod/src/index.ts"],
       "@genshin-optimizer/sr/stats": ["libs/sr/stats/src/index.ts"],
+      "@genshin-optimizer/sr/svgicons": ["libs/sr/svgicons/src/index.ts"],
+      "@genshin-optimizer/sr/theme": ["libs/sr/theme/src/index.ts"],
       "@genshin-optimizer/sr/ui": ["libs/sr/ui/src/index.tsx"],
       "@genshin-optimizer/sr/util": ["libs/sr/util/src/index.ts"]
     }

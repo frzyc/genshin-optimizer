@@ -51,12 +51,14 @@ export function ArtifactSetEditor({
   const artifactSheet = getArtSheet(setKey)
 
   /* Assumes that all conditionals are from 4-Set. needs to change if there are 2-Set conditionals */
-  const set4CondNums = useMemo(() => {
-    if (!value || value < 4) return []
-    return Object.keys(artifactSheet.setEffects).filter((setNumKey) =>
-      artifactSheet.setEffects[setNumKey]?.document.some(
-        (doc) => 'states' in doc
-      )
+  const condNums = useMemo(() => {
+    if (!value || value < 2) return []
+    return Object.keys(artifactSheet.setEffects).filter(
+      (setNumKey) =>
+        +setNumKey <= value &&
+        artifactSheet.setEffects[setNumKey]?.document.some(
+          (doc) => 'states' in doc
+        )
     )
   }, [artifactSheet, value])
 
@@ -102,15 +104,14 @@ export function ArtifactSetEditor({
           </Button>
         </ButtonGroup>
       </Box>
-      {!!set4CondNums.length && (
+      {!!condNums.length && (
         <Stack spacing={1} sx={{ p: 1 }}>
-          {set4CondNums.map((setNumKey) => (
+          {condNums.map((setNumKey) => (
             <SetEffectDisplay
               key={setNumKey}
               setKey={setKey}
               setNumKey={parseInt(setNumKey) as SetNum}
               hideHeader
-              conditionalsOnly
               disabled={disabled}
             />
           ))}

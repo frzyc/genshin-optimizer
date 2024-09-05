@@ -2,6 +2,6 @@
   "name": "于夜色中",
   "passive": {
     "name": "花与蝶",
-    "description": "使装备者的暴击率提高<orangeStrong>{{1}}%</orangeStrong>。当装备者在战斗中速度大于100时，每超过{{2}}点，普攻和战技造成的伤害提高<orangeStrong>{{3}}%</orangeStrong>，同时终结技的暴击伤害提高<orangeStrong>{{4}}%</orangeStrong>，该效果可叠加{{5}}层。"
+    "description": "使装备者的暴击率提高<orangeStrong>{{1, percent}}%</orangeStrong>。当装备者在战斗中速度大于100时，每超过{{2}}点，普攻和战技造成的伤害提高<orangeStrong>{{3, percent}}%</orangeStrong>，同时终结技的暴击伤害提高<orangeStrong>{{4, percent}}%</orangeStrong>，该效果可叠加{{5}}层。"
   }
 }

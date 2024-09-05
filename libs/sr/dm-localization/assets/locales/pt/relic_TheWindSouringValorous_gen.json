@@ -1,7 +1,7 @@
 {
   "setName": "Coragem Como Vento e Nuvem",
   "setEffects": {
-    "2": "Aumenta o ATQ em {{1}}%.",
-    "4": "Aumenta a Chance de CRIT do usuário em {{1}}%. Depois que o usuário utiliza um Ataque Extra, aumenta o Dano causado pela Perícia Suprema em {{2}}%, durando por {{3}} rodada(s)."
+    "2": "Aumenta o ATQ em {{1, percent}}%.",
+    "4": "Aumenta a Chance de CRIT do usuário em {{1, percent}}%. Depois que o usuário utiliza um Ataque Extra, aumenta o Dano causado pela Perícia Suprema em {{2, percent}}%, durando por {{3}} rodada(s)."
   }
 }

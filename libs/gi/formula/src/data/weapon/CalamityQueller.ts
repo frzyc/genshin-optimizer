@@ -4,9 +4,9 @@ import { prod, subscript } from '@genshin-optimizer/pando/engine'
 import {
   allBoolConditionals,
   allNumConditionals,
+  own,
+  ownBuff,
   register,
-  self,
-  selfBuff,
 } from '../util'
 import { entriesForWeapon } from './util'
 
@@ -16,7 +16,7 @@ const atk_ = [NaN, 0.032, 0.04, 0.048, 0.056, 0.064]
 
 const {
   weapon: { refinement },
-} = self
+} = own
 const { stack } = allNumConditionals(key, true, 0, 6)
 const { isActive } = allBoolConditionals(key)
 
@@ -26,7 +26,7 @@ export default register(
   key,
   entriesForWeapon(key),
   allElementKeys.map((ele) =>
-    selfBuff.premod.dmg_[ele].add(subscript(refinement, dmg_))
+    ownBuff.premod.dmg_[ele].add(subscript(refinement, dmg_))
   ),
-  selfBuff.premod.atk_.add(atkInc)
+  ownBuff.premod.atk_.add(atkInc)
 )

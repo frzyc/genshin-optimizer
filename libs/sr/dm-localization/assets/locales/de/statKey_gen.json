@@ -1,8 +1,11 @@
 {
   "spd": "GES",
   "hp": "LP",
+  "hp_": "LP",
   "atk": "ANG",
+  "atk_": "ANG",
   "def": "VTD",
+  "def_": "VTD",
   "crit_": "KRIT-Rate",
   "crit_dmg_": "KRIT-SCH",
   "brEff_": "Brucheffekt",

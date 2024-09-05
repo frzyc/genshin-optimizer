@@ -1,6 +1,6 @@
 {
   "setName": "Izumo gensei y reino divino de Takama",
   "setEffects": {
-    "2": "Aumenta el ATQ del portador en un {{1}}%. Al entrar en combate, si hay al menos un aliado de la misma Vía que el portador, la Prob. CRIT del portador aumenta en un {{2}}%."
+    "2": "Aumenta el ATQ del portador en un {{1, percent}}%. Al entrar en combate, si hay al menos un aliado de la misma Vía que el portador, la Prob. CRIT del portador aumenta en un {{2, percent}}%."
   }
 }

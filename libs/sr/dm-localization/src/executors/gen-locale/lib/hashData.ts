@@ -37,11 +37,22 @@ export const HashData = {
   lightConeNames,
 
   sheet: sheetHashData,
+  slotKey: {
+    head: '1826268247',
+    hands: '-2144127003',
+    body: '1799740313',
+    feet: '1154536283',
+    sphere: '1873322474',
+    rope: '74129613',
+  },
   statKey: {
     spd: '461357812',
     hp: '-1544419067',
+    hp_: '-1544419067',
     atk: '-1126979077',
+    atk_: '-1126979077',
     def: '-615378225',
+    def_: '-615378225',
     crit_: '528301800',
     crit_dmg_: '-220753499',
     brEff_: '-1668395853',

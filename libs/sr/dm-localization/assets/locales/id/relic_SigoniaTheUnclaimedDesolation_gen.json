@@ -1,6 +1,6 @@
 {
   "setName": "Sigonia, the Unclaimed Desolation",
   "setEffects": {
-    "2": "Meningkatkan {{3}}% CRIT Rate pengguna. Saat target musuh dikalahkan, CRIT DMG pengguna akan meningkat {{1}}%, dapat ditumpuk hingga {{2}} lapis."
+    "2": "Meningkatkan {{3, percent}}% CRIT Rate pengguna. Saat target musuh dikalahkan, CRIT DMG pengguna akan meningkat {{1, percent}}%, dapat ditumpuk hingga {{2}} lapis."
   }
 }

@@ -2,6 +2,6 @@
   "name": "Juste de la patience",
   "passive": {
     "name": "Toile d'araignée",
-    "description": "Les DGT infligés par le porteur augmentent de <orangeStrong>{{2}}%</orangeStrong>. Après chaque attaque du porteur, sa VIT augmente de <orangeStrong>{{3}}%</orangeStrong>, effet cumulable <orangeStrong>{{4}}</orangeStrong> fois.\\nLorsque le porteur attaque un ennemi, il y a 100 % de chances de base de lui infliger l'effet Érosion, lorsque l'ennemi n'est pas déjà affecté par cet effet. Les ennemis affectés par Érosion sont considérés comme Stupéfiés et subissent des DGT de foudre sur la durée équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ du porteur pendant {{5}} tours."
+    "description": "Les DGT infligés par le porteur augmentent de <orangeStrong>{{2, percent}}%</orangeStrong>. Après chaque attaque du porteur, sa VIT augmente de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, effet cumulable <orangeStrong>{{4}}</orangeStrong> fois.\\nLorsque le porteur attaque un ennemi, il y a 100 % de chances de base de lui infliger l'effet Érosion, lorsque l'ennemi n'est pas déjà affecté par cet effet. Les ennemis affectés par Érosion sont considérés comme Stupéfiés et subissent des DGT de foudre sur la durée équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ du porteur pendant {{5}} tours."
   }
 }

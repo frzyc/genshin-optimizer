@@ -2,6 +2,6 @@
   "name": "拂晓之前",
   "passive": {
     "name": "长夜",
-    "description": "使装备者暴击伤害提高<orangeStrong>{{1}}%</orangeStrong>。使装备者战技和终结技造成的伤害提高<orangeStrong>{{2}}%</orangeStrong>。当装备者施放战技或终结技后，获得【梦身】效果。触发追加攻击时，消耗【梦身】，使追加攻击造成的伤害提高<orangeStrong>{{3}}%</orangeStrong>。"
+    "description": "使装备者暴击伤害提高<orangeStrong>{{1, percent}}%</orangeStrong>。使装备者战技和终结技造成的伤害提高<orangeStrong>{{2, percent}}%</orangeStrong>。当装备者施放战技或终结技后，获得【梦身】效果。触发追加攻击时，消耗【梦身】，使追加攻击造成的伤害提高<orangeStrong>{{3, percent}}%</orangeStrong>。"
   }
 }

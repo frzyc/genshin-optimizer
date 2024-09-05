@@ -1,7 +1,7 @@
 {
   "setName": "Thiết Vệ Bão Tuyết",
   "setEffects": {
-    "2": "Sát thương phải chịu giảm {{1}}%.",
-    "4": "Khi bắt đầu hiệp, nếu người trang bị có phần trăm HP hiện tại thấp hơn hoặc bằng {{1}}%, sẽ hồi HP bằng {{2}}% Giới Hạn HP của bản thân, và hồi {{3}} điểm Năng Lượng."
+    "2": "Sát thương phải chịu giảm {{1, percent}}%.",
+    "4": "Khi bắt đầu hiệp, nếu người trang bị có phần trăm HP hiện tại thấp hơn hoặc bằng {{1, percent}}%, sẽ hồi HP bằng {{2, percent}}% Giới Hạn HP của bản thân, và hồi {{3}} điểm Năng Lượng."
   }
 }

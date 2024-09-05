@@ -1,6 +1,6 @@
 {
   "setName": "Belobog des Architectes",
   "setEffects": {
-    "2": "Augmente la DÉF du porteur de {{1}}%. Lorsque ses chances d'appliquer des effets sont d'au moins {{2}}%, il obtient {{3}}% de DÉF supplémentaire."
+    "2": "Augmente la DÉF du porteur de {{1, percent}}%. Lorsque ses chances d'appliquer des effets sont d'au moins {{2, percent}}%, il obtient {{3, percent}}% de DÉF supplémentaire."
   }
 }

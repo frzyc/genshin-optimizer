@@ -2,6 +2,6 @@
   "name": "Đâu Là Thật?",
   "passive": {
     "name": "Giả Sử",
-    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> Tấn Công Kích Phá của người trang bị. Sau khi Tấn Công Thường, người trang bị sẽ hồi một lượng HP bằng <orangeStrong>{{2}}%</orangeStrong> Giới Hạn HP +{{3}}."
+    "description": "Tăng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công Kích Phá của người trang bị. Sau khi Tấn Công Thường, người trang bị sẽ hồi một lượng HP bằng <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP +{{3}}."
   }
 }

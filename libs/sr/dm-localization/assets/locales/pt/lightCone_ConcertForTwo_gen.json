@@ -2,6 +2,6 @@
   "name": "Concerto para Dois",
   "passive": {
     "name": "Inspirar",
-    "description": "Aumenta a DEF do usuário em <orangeStrong>{{1}}%</orangeStrong>. Para cada personagem com um Escudo em campo, o Dano causado pelo usuário aumenta em <orangeStrong>{{2}}%</orangeStrong>."
+    "description": "Aumenta a DEF do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Para cada personagem com um Escudo em campo, o Dano causado pelo usuário aumenta em <orangeStrong>{{2, percent}}%</orangeStrong>."
   }
 }

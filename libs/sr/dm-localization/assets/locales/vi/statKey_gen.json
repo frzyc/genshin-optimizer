@@ -1,8 +1,11 @@
 {
   "spd": "Tốc Độ",
   "hp": "HP",
+  "hp_": "HP",
   "atk": "Tấn Công",
+  "atk_": "Tấn Công",
   "def": "Phòng Thủ",
+  "def_": "Phòng Thủ",
   "crit_": "Tỷ Lệ Bạo Kích",
   "crit_dmg_": "Sát Thương Bạo Kích",
   "brEff_": "Tấn Công Kích Phá",

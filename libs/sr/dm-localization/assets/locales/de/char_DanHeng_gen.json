@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Ritter-Speertechnik: Nordwind",
-        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Dan Hengs ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Dan Hengs ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Ritter-Speertechnik: Sturzflut",
-        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Dan Hengs ANG zu.\\nVerringert die GES des Ziels mit einer <u>Grundchance</u> von {{4}}% für {{3}} Rd. um {{2}}%, wenn der durch Fertigkeiten verursachte SCH einen kritischen Treffer auslöst.",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Dan Hengs ANG zu.\\nVerringert die GES des Ziels mit einer <u>Grundchance</u> von {{4, percent}}% für {{3}} Rd. um {{2, percent}}%, wenn der durch Fertigkeiten verursachte SCH einen kritischen Treffer auslöst.",
         "shortDesc": "Fügt einem Gegner Wind-SCH zu. Nach einem KRIT wird das Ziel mit hoher Wahrscheinlichkeit verlangsamt."
       }
     },
     "ult": {
       "0": {
         "name": "Ätherischer Traum",
-        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Dan Hengs ANG zu. Erhöht den durch Ultimates verursachten SCH-Multiplikator um <orangeStrong>{{2}}%</orangeStrong>, wenn der getroffene Gegner verlangsamt ist.",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Dan Hengs ANG zu. Erhöht den durch Ultimates verursachten SCH-Multiplikator um <orangeStrong>{{2, percent}}%</orangeStrong>, wenn der getroffene Gegner verlangsamt ist.",
         "shortDesc": "Fügt einem Gegner massiven Wind-SCH zu. Wenn der Gegner verlangsamt wird, steigt der verursachte SCH."
       }
     },
     "technique": {
       "0": {
         "name": "Spaltende Speerspitze",
-        "fullDesc": "Erhöht nach dem Einsatz der Technik Dan Hengs ANG im nächsten Kampf um {{1}}% für {{2}} Rd.",
+        "fullDesc": "Erhöht nach dem Einsatz der Technik Dan Hengs ANG im nächsten Kampf um {{1, percent}}% für {{2}} Rd.",
         "shortDesc": "Nach dem Einsatz der Technik wird der ANG zu Beginn des nächsten Kampfs erhöht."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Verborgener Drache",
-        "fullDesc": "Liegt der LP-Prozentsatz bei {{1}}% oder niedriger, sinkt die Chance, von Gegnern angegriffen zu werden.",
+        "fullDesc": "Liegt der LP-Prozentsatz bei {{1, percent}}% oder niedriger, sinkt die Chance, von Gegnern angegriffen zu werden.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Schatten der Verzweiflung",
-        "fullDesc": "Nach dem Angriff besteht eine Chance von {{1}}%, die GES für {{3}} Rd. um {{2}}% zu erhöhen.",
+        "fullDesc": "Nach dem Angriff besteht eine Chance von {{1, percent}}%, die GES für {{3}} Rd. um {{2, percent}}% zu erhöhen.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Heftiger Wind",
-        "fullDesc": "Erhöht den verursachten SCH von Standardangriffen an verlangsamten Gegnern um {{1}}%.",
+        "fullDesc": "Erhöht den verursachten SCH von Standardangriffen an verlangsamten Gegnern um {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Wer hoch steigt, fällt tief",
-      "desc": "Wenn der anvisierte Gegner aktuell min. {{1}}% seiner LP hat, steigt Dan Hengs KRIT-Rate um {{2}}%."
+      "desc": "Wenn der anvisierte Gegner aktuell min. {{1, percent}}% seiner LP hat, steigt Dan Hengs KRIT-Rate um {{2, percent}}%."
     },
     "2": {
       "name": "Bosheit kontrollieren, Flamme löschen",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Die geplagte Seele liegt auf der Lauer",
-      "desc": "Die durch die Fertigkeit ausgelöste Verlangsamung reduziert die GES des Gegners zusätzlich um {{1}}%."
+      "desc": "Die durch die Fertigkeit ausgelöste Verlangsamung reduziert die GES des Gegners zusätzlich um {{1, percent}}%."
     }
   }
 }

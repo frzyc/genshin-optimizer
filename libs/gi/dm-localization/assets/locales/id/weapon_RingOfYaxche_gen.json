@@ -1,0 +1,24 @@
+{
+  "name": "Ring of Yaxche",
+  "description": {
+    "0": "Wadah giok yang ditempa oleh pahlawan kembar dari masa lalu. Konon katanya benda ini pernah menjatuhkan naga raksasa yang menguasai gunung berapi dari atas langit."
+  },
+  "passiveName": "Echoes of the Plentiful Land",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat melancarkan Elemental Skill, akan mendapatkan efek Jade-Forged Crown: Setiap 1.000 Max HP akan meningkatkan DMG Normal Attack Karakter yang mengenakan sebesar <cryo>0,6%</cryo> selama 10 detik. DMG Normal Attack yang bisa ditingkatkan dengan cara ini maksimum adalah <cryo>16%</cryo>."
+    },
+    "1": {
+      "0": "Saat melancarkan Elemental Skill, akan mendapatkan efek Jade-Forged Crown: Setiap 1.000 Max HP akan meningkatkan DMG Normal Attack Karakter yang mengenakan sebesar <cryo>0,7%</cryo> selama 10 detik. DMG Normal Attack yang bisa ditingkatkan dengan cara ini maksimum adalah <cryo>20%</cryo>."
+    },
+    "2": {
+      "0": "Saat melancarkan Elemental Skill, akan mendapatkan efek Jade-Forged Crown: Setiap 1.000 Max HP akan meningkatkan DMG Normal Attack Karakter yang mengenakan sebesar <cryo>0,8%</cryo> selama 10 detik. DMG Normal Attack yang bisa ditingkatkan dengan cara ini maksimum adalah <cryo>24%</cryo>."
+    },
+    "3": {
+      "0": "Saat melancarkan Elemental Skill, akan mendapatkan efek Jade-Forged Crown: Setiap 1.000 Max HP akan meningkatkan DMG Normal Attack Karakter yang mengenakan sebesar <cryo>0,9%</cryo> selama 10 detik. DMG Normal Attack yang bisa ditingkatkan dengan cara ini maksimum adalah <cryo>28%</cryo>."
+    },
+    "4": {
+      "0": "Saat melancarkan Elemental Skill, akan mendapatkan efek Jade-Forged Crown: Setiap 1.000 Max HP akan meningkatkan DMG Normal Attack Karakter yang mengenakan sebesar <cryo>1%</cryo> selama 10 detik. DMG Normal Attack yang bisa ditingkatkan dengan cara ini maksimum adalah <cryo>32%</cryo>."
+    }
+  }
+}

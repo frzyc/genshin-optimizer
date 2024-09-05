@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Accordage de la lame de scie",
-        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Himeko à un ennemi unique.",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Himeko à un ennemi unique.",
         "shortDesc": "Inflige des DGT de feu mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Détonation en fusion",
-        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Himeko à un ennemi unique et des DGT de feu équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de Himeko aux ennemis adjacents.",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Himeko à un ennemi unique et des DGT de feu équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Himeko aux ennemis adjacents.",
         "shortDesc": "Inflige des DGT de feu à un ennemi unique et des DGT de feu mineurs aux ennemis adjacents."
       }
     },
     "ult": {
       "0": {
         "name": "Éclat céleste",
-        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Himeko à tous les ennemis. Himeko régénère {{2}} points d'énergie supplémentaires pour chaque ennemi vaincu.",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Himeko à tous les ennemis. Himeko régénère {{2}} points d'énergie supplémentaires pour chaque ennemi vaincu.",
         "shortDesc": "Inflige des DGT de feu à tous les ennemis et régénère des points d'énergie si des ennemis sont vaincus."
       }
     },
     "technique": {
       "0": {
         "name": "Combustion incomplète",
-        "fullDesc": "Crée une dimension spéciale qui dure {{4}} secondes. Il y a {{1}}% de <u>chances de base</u> d'augmenter les DGT de feu subis par les ennemis de {{2}}% pendant {{3}} tours après être entré en combat avec des ennemis dans la dimension spéciale. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "fullDesc": "Crée une dimension spéciale qui dure {{4}} secondes. Il y a {{1, percent}}% de <u>chances de base</u> d'augmenter les DGT de feu subis par les ennemis de {{2, percent}}% pendant {{3}} tours après être entré en combat avec des ennemis dans la dimension spéciale. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
         "shortDesc": "Crée une dimension spéciale. Il y a de fortes chances d'<orangeStrong>augmenter les DGT de feu subis par les ennemis</orangeStrong> lorsque le combat est engagé avec des ennemis de la dimension."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Feu d'étoile",
-        "fullDesc": "Il y a {{1}}% de chances de base d'infliger Brûlure aux ennemis pendant {{2}} tours après utilisation d'une attaque.\\nLes ennemis affectés par Brûlure subissent des dégâts de feu sur la durée équivalents à {{3}}% de l'ATQ de Himeko au début de chaque tour.",
+        "fullDesc": "Il y a {{1, percent}}% de chances de base d'infliger Brûlure aux ennemis pendant {{2}} tours après utilisation d'une attaque.\\nLes ennemis affectés par Brûlure subissent des dégâts de feu sur la durée équivalents à {{3, percent}}% de l'ATQ de Himeko au début de chaque tour.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Magma",
-        "fullDesc": "La compétence inflige {{1}}% de DGT supplémentaires aux ennemis affectés par l'état Brûlure.",
+        "fullDesc": "La compétence inflige {{1, percent}}% de DGT supplémentaires aux ennemis affectés par l'état Brûlure.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Repère",
-        "fullDesc": "Lorsque les PV du personnage sont supérieurs ou égaux à {{1}}%, les chances de coup critique augmentent de {{2}}%.",
+        "fullDesc": "Lorsque les PV du personnage sont supérieurs ou égaux à {{1, percent}}%, les chances de coup critique augmentent de {{2, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Enfance",
-      "desc": "Après avoir déclenché Ruée vers la victoire, la VIT de Himeko augmente de {{1}}% pendant {{2}} tours."
+      "desc": "Après avoir déclenché Ruée vers la victoire, la VIT de Himeko augmente de {{1, percent}}% pendant {{2}} tours."
     },
     "2": {
       "name": "Convergence",
-      "desc": "Inflige {{2}}% de DGT supplémentaires aux ennemis dont le pourcentage de PV est inférieur ou égal à {{1}}%."
+      "desc": "Inflige {{2, percent}}% de DGT supplémentaires aux ennemis dont le pourcentage de PV est inférieur ou égal à {{1, percent}}%."
     },
     "3": {
       "name": "Assurance",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "En avant !",
-      "desc": "L'ultime inflige des DGT 2 fois supplémentaires, infligeant à chaque fois des DGT de feu équivalents à {{1}}% des DGT initiaux à un ennemi aléatoire."
+      "desc": "L'ultime inflige des DGT 2 fois supplémentaires, infligeant à chaque fois des DGT de feu équivalents à {{1, percent}}% des DGT initiaux à un ennemi aléatoire."
     }
   }
 }

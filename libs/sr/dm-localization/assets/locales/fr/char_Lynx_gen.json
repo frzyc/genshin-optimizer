@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Attaque au pic à glace",
-        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1}}%</orangeStrong> des PV max de Lynx à un ennemi unique.",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> des PV max de Lynx à un ennemi unique.",
         "shortDesc": "Inflige des DGT quantiques mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Sardines en conserve",
-        "fullDesc": "Applique Instinct de survie à une cible alliée unique et augmente ses PV max d'un montant équivalent à <orangeStrong>{{1}}%</orangeStrong> des PV max de Lynx + <orangeStrong>{{2}}</orangeStrong>. Si la cible est un personnage de la Voie de la Destruction ou de la Préservation, elle voit ses chances d'être attaquée par les ennemis considérablement augmenter. Instinct de survie dure {{3}} tours.\\nRestaure les PV de la cible à hauteur de <orangeStrong>{{4}}%</orangeStrong> des PV max de Lynx + <orangeStrong>{{5}}</orangeStrong>.",
+        "fullDesc": "Applique Instinct de survie à une cible alliée unique et augmente ses PV max d'un montant équivalent à <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> des PV max de Lynx + <orangeStrong>{{2}}</orangeStrong>. Si la cible est un personnage de la Voie de la Destruction ou de la Préservation, elle voit ses chances d'être attaquée par les ennemis considérablement augmenter. Instinct de survie dure {{3}} tours.\\nRestaure les PV de la cible à hauteur de <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> des PV max de Lynx + <orangeStrong>{{5}}</orangeStrong>.",
         "shortDesc": "Applique Instinct de survie à un allié unique, <orangeStrong>augmente ses PV max</orangeStrong>, et lui restaure des PV."
       }
     },
     "ult": {
       "0": {
         "name": "Plan de secours des Plaines des neiges",
-        "fullDesc": "Dissipe {{1}} <u>malus</u> à tous les alliés et leur redonne immédiatement un montant de PV équivalent à <orangeStrong>{{2}}%</orangeStrong> des PV max de Lynx + <orangeStrong>{{3}}</orangeStrong>.",
+        "fullDesc": "Dissipe {{1}} <u>malus</u> à tous les alliés et leur redonne immédiatement un montant de PV équivalent à <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> des PV max de Lynx + <orangeStrong>{{3}}</orangeStrong>.",
         "shortDesc": "Dissipe <orangeStrong>1 <u>malus</u> à tous les alliés</orangeStrong> et leur redonne des PV."
       }
     },
@@ -46,7 +46,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Techniques d'exploration",
-        "fullDesc": "Augmente les chances de résister aux malus de contrôle de {{1}}%.",
+        "fullDesc": "Augmente les chances de résister aux malus de contrôle de {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Randonnée des neiges matinale",
-      "desc": "Les soins prodigués par Lynx augmentent de {{2}}% sur les alliés dont le pourcentage de PV est inférieur ou égal à {{1}}%. Cet effet fonctionne également pour les soins continus."
+      "desc": "Les soins prodigués par Lynx augmentent de {{2, percent}}% sur les alliés dont le pourcentage de PV est inférieur ou égal à {{1, percent}}%. Cet effet fonctionne également pour les soins continus."
     },
     "2": {
       "name": "Réchaud portatif du midi",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Feu de camp du soir",
-      "desc": "Les cibles qui bénéficient d'Instinct de survie voient leur ATQ augmenter d'un montant équivalent à {{1}}% des PV max de Lynx pendant {{2}} tour."
+      "desc": "Les cibles qui bénéficient d'Instinct de survie voient leur ATQ augmenter d'un montant équivalent à {{1, percent(fixed: 1)}}% des PV max de Lynx pendant {{2}} tour."
     },
     "5": {
       "name": "Thé de l'aurore de minuit",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Aube des explorateurs",
-      "desc": "L'effet d'augmentation des PV max accordé par Instinct de survie est majoré d'un montant équivalent à {{1}}% des PV max de Lynx. Augmente également la RÉS aux effets de {{2}}%."
+      "desc": "L'effet d'augmentation des PV max accordé par Instinct de survie est majoré d'un montant équivalent à {{1, percent(fixed: 1)}}% des PV max de Lynx. Augmente également la RÉS aux effets de {{2, percent}}%."
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "setName": "Fleet of the Ageless",
   "setEffects": {
-    "2": "Increases the wearer's Max HP by {{1}}%. When the wearer's SPD reaches {{2}} or higher, all allies' ATK increases by {{3}}%."
+    "2": "Increases the wearer's Max HP by {{1, percent}}%. When the wearer's SPD reaches {{2}} or higher, all allies' ATK increases by {{3, percent}}%."
   }
 }

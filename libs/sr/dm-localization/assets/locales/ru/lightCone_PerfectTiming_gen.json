@@ -2,6 +2,6 @@
   "name": "Идеальное время",
   "passive": {
     "name": "Преломление линии обзора",
-    "description": "Сопротивление эффектам владельца повышается на <orangeStrong>{{1}}%</orangeStrong>. Исходящее исцеление владельца повышается на <orangeStrong>{{2}}%</orangeStrong> от сопротивления эффектам владельца до макс. <orangeStrong>{{3}}%</orangeStrong>."
+    "description": "Сопротивление эффектам владельца повышается на <orangeStrong>{{1, percent}}%</orangeStrong>. Исходящее исцеление владельца повышается на <orangeStrong>{{2, percent}}%</orangeStrong> от сопротивления эффектам владельца до макс. <orangeStrong>{{3, percent}}%</orangeStrong>."
   }
 }

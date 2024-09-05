@@ -2,6 +2,6 @@
   "name": "比阳光更明亮的",
   "passive": {
     "name": "抵死",
-    "description": "使装备者的暴击率提高<orangeStrong>{{1}}%</orangeStrong>。当装备者施放普攻时，获得1层【龙吟】，持续{{2}}回合。每层【龙吟】使装备者的攻击力提高<orangeStrong>{{4}}%</orangeStrong>，能量恢复效率提高<orangeStrong>{{5}}%</orangeStrong>。【龙吟】最多叠加{{3}}层。"
+    "description": "使装备者的暴击率提高<orangeStrong>{{1, percent}}%</orangeStrong>。当装备者施放普攻时，获得1层【龙吟】，持续{{2}}回合。每层【龙吟】使装备者的攻击力提高<orangeStrong>{{4, percent}}%</orangeStrong>，能量恢复效率提高<orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>。【龙吟】最多叠加{{3}}层。"
   }
 }

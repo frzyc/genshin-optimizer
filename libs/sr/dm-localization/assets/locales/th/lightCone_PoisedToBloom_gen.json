@@ -2,6 +2,6 @@
   "name": "Poised to Bloom",
   "passive": {
     "name": "Lose Not, Forget Not",
-    "description": "ทำให้ ATK ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> เมื่อเข้าสู่การต่อสู้ หากมีตัวละครฝ่ายเราสองตัวขึ้นไป ที่อยู่ใน Path เดียวกัน Path ใดก็ได้ จะทำให้ DMG คริติคอลของตัวละครเหล่านี้ เพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong> โดยสกิลประเภทเดียวกัน จะไม่สามารถมีผลซ้ำกันได้"
+    "description": "ทำให้ ATK ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> เมื่อเข้าสู่การต่อสู้ หากมีตัวละครฝ่ายเราสองตัวขึ้นไป ที่อยู่ใน Path เดียวกัน Path ใดก็ได้ จะทำให้ DMG คริติคอลของตัวละครเหล่านี้ เพิ่มขึ้น <orangeStrong>{{2, percent}}%</orangeStrong> โดยสกิลประเภทเดียวกัน จะไม่สามารถมีผลซ้ำกันได้"
   }
 }

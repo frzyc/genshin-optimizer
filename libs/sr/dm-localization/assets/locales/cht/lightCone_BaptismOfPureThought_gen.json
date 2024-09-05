@@ -2,6 +2,6 @@
   "name": "純粹思維的洗禮",
   "passive": {
     "name": "思想訓練",
-    "description": "使裝備者的暴擊傷害提高<orangeStrong>{{1}}%</orangeStrong>。敵方目標每承受1個負面效果，裝備者對其造成的暴擊傷害便額外提高<orangeStrong>{{2}}%</orangeStrong>，最多疊加{{3}}層。施放終結技攻擊敵方目標時，使裝備者獲得【論辯】效果，造成的傷害提高<orangeStrong>{{4}}%</orangeStrong>，追加攻擊無視目標<orangeStrong>{{5}}%</orangeStrong>的防禦力，該效果持續{{6}}回合。"
+    "description": "使裝備者的暴擊傷害提高<orangeStrong>{{1, percent}}%</orangeStrong>。敵方目標每承受1個負面效果，裝備者對其造成的暴擊傷害便額外提高<orangeStrong>{{2, percent}}%</orangeStrong>，最多疊加{{3}}層。施放終結技攻擊敵方目標時，使裝備者獲得【論辯】效果，造成的傷害提高<orangeStrong>{{4, percent}}%</orangeStrong>，追加攻擊無視目標<orangeStrong>{{5, percent}}%</orangeStrong>的防禦力，該效果持續{{6}}回合。"
   }
 }

@@ -2,6 +2,6 @@
   "name": "Post-Op Conversation",
   "passive": {
     "name": "Mutual Healing",
-    "description": "ทำให้อัตราการฟื้นฟูพลังงานของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> และเมื่อปล่อยท่าไม้ตาย การรักษาจะเพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong>"
+    "description": "ทำให้อัตราการฟื้นฟูพลังงานของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> และเมื่อปล่อยท่าไม้ตาย การรักษาจะเพิ่มขึ้น <orangeStrong>{{2, percent}}%</orangeStrong>"
   }
 }

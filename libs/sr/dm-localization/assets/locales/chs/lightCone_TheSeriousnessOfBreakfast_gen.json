@@ -2,6 +2,6 @@
   "name": "早餐的仪式感",
   "passive": {
     "name": "各就其位",
-    "description": "使装备者造成伤害提高<orangeStrong>{{1}}%</orangeStrong>。每消灭1个敌方目标，装备者的攻击力提高<orangeStrong>{{2}}%</orangeStrong>，该效果最多叠加{{3}}层。"
+    "description": "使装备者造成伤害提高<orangeStrong>{{1, percent}}%</orangeStrong>。每消灭1个敌方目标，装备者的攻击力提高<orangeStrong>{{2, percent}}%</orangeStrong>，该效果最多叠加{{3}}层。"
   }
 }

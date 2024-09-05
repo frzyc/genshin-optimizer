@@ -2,6 +2,6 @@
   "name": "In the Name of the World",
   "passive": {
     "name": "Inheritor",
-    "description": "ทำให้ผู้สวมใส่สร้าง DMG แก่ศัตรูเป้าหมายที่ติดเอฟเฟกต์ Debuff เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> เมื่อผู้สวมใส่ปล่อยสกิลต่อสู้ อัตราสร้างสถานะของการโจมตีครั้งนี้จะเพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong> และ ATK จะเพิ่มขึ้น <orangeStrong>{{3}}%</orangeStrong>"
+    "description": "ทำให้ผู้สวมใส่สร้าง DMG แก่ศัตรูเป้าหมายที่ติดเอฟเฟกต์ Debuff เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> เมื่อผู้สวมใส่ปล่อยสกิลต่อสู้ อัตราสร้างสถานะของการโจมตีครั้งนี้จะเพิ่มขึ้น <orangeStrong>{{2, percent}}%</orangeStrong> และ ATK จะเพิ่มขึ้น <orangeStrong>{{3, percent}}%</orangeStrong>"
   }
 }

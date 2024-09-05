@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Luz fría, filo helado",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Yanqing como Daño de Hielo a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Yanqing como Daño de Hielo a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Arista apedreadracos",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Yanqing como Daño de Hielo a un enemigo y activa Estocada empática durante 1 turno.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Yanqing como Daño de Hielo a un enemigo y activa Estocada empática durante 1 turno.",
         "shortDesc": "Inflige Daño de Hielo a un enemigo y activa Estocada empática."
       }
     },
     "ult": {
       "0": {
         "name": "Persecución pluvial de la golondrina",
-        "fullDesc": "Aumenta su Prob. CRIT en un {{1}}%. Cuando Estocada empática está activa, su Daño CRIT aumenta en un <orangeStrong>{{2}}%</orangeStrong> adicional. Estos <u>efectos positivos</u> duran 1 turno. A continuación, inflige un <orangeStrong>{{3}}%</orangeStrong> del ATQ de Yanqing como Daño de Hielo a un enemigo.",
+        "fullDesc": "Aumenta su Prob. CRIT en un {{1, percent}}%. Cuando Estocada empática está activa, su Daño CRIT aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong> adicional. Estos <u>efectos positivos</u> duran 1 turno. A continuación, inflige un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Yanqing como Daño de Hielo a un enemigo.",
         "shortDesc": "Aumenta su Prob. CRIT y potencia Estocada empática. Inflige una gran cantidad de Daño de Hielo a un enemigo."
       }
     },
     "technique": {
       "0": {
         "name": "Maestría de espada",
-        "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, Yanqing inflige un {{2}}% más de daño durante {{3}} turnos a los enemigos que tengan un porcentaje de PV igual o superior al {{1}}%.",
+        "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, Yanqing inflige un {{2, percent}}% más de daño durante {{3}} turnos a los enemigos que tengan un porcentaje de PV igual o superior al {{1, percent}}%.",
         "shortDesc": "Tras usar la técnica, al comenzar la siguiente batalla, aumenta el daño que inflige a los enemigos que tengan un porcentaje de PV igual o superior al 50%."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Beneficio congelado",
-        "fullDesc": "Tras lanzar un ataque, los objetivos con Debilidad de Hielo reciben un Daño de Hielo adicional equivalente al {{1}}% del ATQ de Yanqing.",
+        "fullDesc": "Tras lanzar un ataque, los objetivos con Debilidad de Hielo reciben un Daño de Hielo adicional equivalente al {{1, percent}}% del ATQ de Yanqing.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Cabeza alta",
-        "fullDesc": "Cuando Estocada empática está activa, la RES a efecto aumenta en un {{1}}%.",
+        "fullDesc": "Cuando Estocada empática está activa, la RES a efecto aumenta en un {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Acero de la estepa",
-        "fullDesc": "Al lograr un Golpe CRIT, la VEL aumenta en un {{1}}% durante {{2}} turnos.",
+        "fullDesc": "Al lograr un Golpe CRIT, la VEL aumenta en un {{1, percent}}% durante {{2}} turnos.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Hoja pulcra",
-      "desc": "Si el enemigo al que ataca Yanqing está afectado por Congelación, le inflige inmediatamente un {{1}}% del ATQ de Yanqing como Daño de Hielo adicional."
+      "desc": "Si el enemigo al que ataca Yanqing está afectado por Congelación, le inflige inmediatamente un {{1, percent}}% del ATQ de Yanqing como Daño de Hielo adicional."
     },
     "2": {
       "name": "Mente despejada",
-      "desc": "Cuando Estocada empática está activa, la recuperación de energía aumenta en un {{1}}% adicional."
+      "desc": "Cuando Estocada empática está activa, la recuperación de energía aumenta en un {{1, percent}}% adicional."
     },
     "3": {
       "name": "Espadachín nato",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Relente perforante",
-      "desc": "Cuando el porcentaje de PV es igual o superior al {{1}}%, su PEN de la RES a Hielo aumenta en un {{2}}%."
+      "desc": "Cuando el porcentaje de PV es igual o superior al {{1, percent}}%, su PEN de la RES a Hielo aumenta en un {{2, percent}}%."
     },
     "5": {
       "name": "Nacido para luchar",

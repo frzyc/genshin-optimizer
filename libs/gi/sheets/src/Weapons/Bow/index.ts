@@ -5,6 +5,7 @@ import AlleyHunter from './AlleyHunter'
 import AmosBow from './AmosBow'
 import AquaSimulacra from './AquaSimulacra'
 import BlackcliffWarbow from './BlackcliffWarbow'
+import ChainBreaker from './ChainBreaker'
 import Cloudforged from './Cloudforged'
 import CompoundBow from './CompoundBow'
 import ElegyForTheEnd from './ElegyForTheEnd'
@@ -45,9 +46,11 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   AmosBow,
   AquaSimulacra,
   BlackcliffWarbow,
+  ChainBreaker,
   Cloudforged,
   CompoundBow,
   ElegyForTheEnd,
+  EndOfTheLine,
   FadingTwilight,
   FavoniusWarbow,
   Hamayumi,
@@ -59,7 +62,6 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   MitternachtsWaltz,
   MouunsMoon,
   PolarStar,
-  SilvershowerHeartstrings,
   Predator,
   PrototypeCrescent,
   RangeGauge,
@@ -71,6 +73,7 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   ScionOfTheBlazingSun,
   SeasonedHuntersBow,
   SharpshootersOath,
+  SilvershowerHeartstrings,
   SkywardHarp,
   Slingshot,
   SongOfStillness,
@@ -78,7 +81,6 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   TheStringless,
   TheViridescentHunt,
   ThunderingPulse,
-  EndOfTheLine,
   WindblumeOde,
 } as const
 export default bow

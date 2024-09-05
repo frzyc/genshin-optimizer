@@ -2,6 +2,6 @@
   "name": "過往未來",
   "passive": {
     "name": "舊日紙鳶",
-    "description": "當裝備者施放戰技後，使下一個行動的我方其他目標造成的傷害提高<orangeStrong>{{1}}%</orangeStrong>，持續{{2}}回合。"
+    "description": "當裝備者施放戰技後，使下一個行動的我方其他目標造成的傷害提高<orangeStrong>{{1, percent}}%</orangeStrong>，持續{{2}}回合。"
   }
 }

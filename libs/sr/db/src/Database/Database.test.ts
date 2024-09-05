@@ -340,7 +340,7 @@ describe('Database', () => {
       mainStatKey: 'atk',
       rarity: 3,
       setKey: 'BandOfSizzlingThunder',
-      slotKey: 'hand',
+      slotKey: 'hands',
       substats: [{ key: 'atk_', value: 5 }],
     }
     const a2new: IRelic = {
@@ -351,7 +351,7 @@ describe('Database', () => {
       mainStatKey: 'atk',
       rarity: 3,
       setKey: 'BandOfSizzlingThunder',
-      slotKey: 'hand',
+      slotKey: 'hands',
       substats: [
         { key: 'atk_', value: 5 },
         { key: 'def_', value: 5 },
@@ -382,7 +382,7 @@ describe('Database', () => {
     const dbA1 = database.relics.get(dupId)
     expect(dbA1?.slotKey).toEqual('head')
     const dbA2 = database.relics.get(upgradeId)
-    expect(dbA2?.slotKey).toEqual('hand')
+    expect(dbA2?.slotKey).toEqual('hands')
     expect(dbA2?.level).toEqual(4)
   })
   test('Import character without lightCone should not give default lightCone', () => {
@@ -417,7 +417,7 @@ describe('Database', () => {
   describe('import again with overlapping ids', () => {
     test('import again with overlapping relic ids', () => {
       const old1 = randomizeRelic({ slotKey: 'head' })
-      const old2 = randomizeRelic({ slotKey: 'hand' })
+      const old2 = randomizeRelic({ slotKey: 'hands' })
       const old3 = randomizeRelic({ slotKey: 'sphere' })
       const old4 = randomizeRelic({ slotKey: 'body' })
 
@@ -456,7 +456,7 @@ describe('Database', () => {
       expect(database.relics.values.length).toEqual(4)
       // Expect imports to overwrite the id of old
       expect(database.relics.get(oldId1)?.slotKey).toEqual('head')
-      expect(database.relics.get(oldId2)?.slotKey).toEqual('hand')
+      expect(database.relics.get(oldId2)?.slotKey).toEqual('hands')
       expect(database.relics.get(oldId3)?.slotKey).toEqual('body')
       expect(database.relics.get(oldId4)?.slotKey).toEqual('sphere')
     })
@@ -513,7 +513,7 @@ describe('Database', () => {
   describe('mutual exclusion import with ids', () => {
     test('import with mutually-exclusive relic ids', () => {
       const old1 = randomizeRelic({ slotKey: 'head' })
-      const old2 = randomizeRelic({ slotKey: 'hand' })
+      const old2 = randomizeRelic({ slotKey: 'hands' })
       const new1 = randomizeRelic({ slotKey: 'sphere' })
       const new2 = randomizeRelic({ slotKey: 'body' })
 
@@ -546,7 +546,7 @@ describe('Database', () => {
         database.relics.values.find((a) => a.slotKey === 'head')?.id
       ).not.toEqual(oldId1)
       expect(
-        database.relics.values.find((a) => a.slotKey === 'hand')?.id
+        database.relics.values.find((a) => a.slotKey === 'hands')?.id
       ).not.toEqual(oldId2)
     })
 
@@ -591,7 +591,7 @@ describe('Database', () => {
   })
 
   describe('Trailblazer Handling', () => {
-    test('Test Trailblazer share equipment', () => {
+    test('Test Trailblazer do not share equipment', () => {
       database.chars.set(
         'TrailblazerPhysical',
         initialCharacter('TrailblazerPhysical')
@@ -603,12 +603,12 @@ describe('Database', () => {
       })
       const relic1Id = database.relics.new({
         ...relic1,
-        location: 'Trailblazer',
+        location: 'TrailblazerFire',
       })
 
       expect(
         database.chars.get('TrailblazerPhysical')!.equippedRelics.body
-      ).toEqual(relic1Id)
+      ).toEqual('')
       expect(
         database.chars.get('TrailblazerFire')!.equippedRelics.body
       ).toEqual(relic1Id)
@@ -625,27 +625,27 @@ describe('Database', () => {
       })
       const relic2Id = database.relics.new({
         ...relic2,
-        location: 'Trailblazer',
+        location: 'TrailblazerPhysical',
       })
       expect(
         database.chars.get('TrailblazerPhysical')!.equippedRelics.body
       ).toEqual(relic2Id)
       expect(
         database.chars.get('TrailblazerFire')!.equippedRelics.body
-      ).toEqual(relic2Id)
+      ).toEqual(relic1Id)
 
       const lightCone2Id = database.lightCones.new({
         ...newLightCone('Chorus'),
-        location: 'Trailblazer',
+        location: 'TrailblazerPhysical',
       })
       expect(
         database.chars.get('TrailblazerPhysical')!.equippedLightCone
       ).toEqual(lightCone2Id)
       expect(database.chars.get('TrailblazerFire')!.equippedLightCone).toEqual(
-        lightCone2Id
+        ''
       )
 
-      // deletion dont remove equipment until all traveler is gone
+      // deletion dont remove equipment on other trailblazer
       database.chars.remove('TrailblazerFire')
 
       expect(
@@ -654,12 +654,14 @@ describe('Database', () => {
       expect(
         database.chars.get('TrailblazerPhysical')!.equippedLightCone
       ).toEqual(lightCone2Id)
-      expect(database.relics.get(relic2Id)!.location).toEqual('Trailblazer')
+      expect(database.relics.get(relic2Id)!.location).toEqual(
+        'TrailblazerPhysical'
+      )
       expect(database.lightCones.get(lightCone2Id)!.location).toEqual(
-        'Trailblazer'
+        'TrailblazerPhysical'
       )
 
-      // deletion of final traveler unequips
+      // deletion of proper trailblazer does unequip
       database.chars.remove('TrailblazerPhysical')
 
       expect(database.relics.get(relic2Id)!.location).toEqual('')

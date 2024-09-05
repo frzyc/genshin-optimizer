@@ -2,6 +2,6 @@
   "name": "Incessant Rain",
   "passive": {
     "name": "Mirage of Reality",
-    "description": "Increases the wearer's Effect Hit Rate by <orangeStrong>{{1}}%</orangeStrong>. When the wearer deals DMG to an enemy that currently has {{4}} or more debuffs, increases the wearer's CRIT Rate by <orangeStrong>{{5}}%</orangeStrong>. After the wearer uses their Basic ATK, Skill, or Ultimate, there is a {{2}}% base chance to implant Aether Code on a random hit target that does not yet have it. Targets with Aether Code receive <orangeStrong>{{3}}%</orangeStrong> increased DMG for 1 turn."
+    "description": "Increases the wearer's Effect Hit Rate by <orangeStrong>{{1, percent}}%</orangeStrong>. When the wearer deals DMG to an enemy that currently has {{4}} or more debuffs, increases the wearer's CRIT Rate by <orangeStrong>{{5, percent}}%</orangeStrong>. After the wearer uses their Basic ATK, Skill, or Ultimate, there is a {{2, percent}}% base chance to implant Aether Code on a random hit target that does not yet have it. Targets with Aether Code receive <orangeStrong>{{3, percent}}%</orangeStrong> increased DMG for 1 turn."
   }
 }

@@ -2,6 +2,6 @@
   "name": "鋒鏑",
   "passive": {
     "name": "危機",
-    "description": "戰鬥開始時，使裝備者的暴擊率提高<orangeStrong>{{1}}%</orangeStrong>，持續{{2}}回合。"
+    "description": "戰鬥開始時，使裝備者的暴擊率提高<orangeStrong>{{1, percent}}%</orangeStrong>，持續{{2}}回合。"
   }
 }

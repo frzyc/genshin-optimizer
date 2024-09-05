@@ -1,7 +1,7 @@
 import { DBLocalStorage } from '@genshin-optimizer/common/database'
 import { SroDatabase } from '../Database'
 import { initCharTC } from './BuildTcDataManager'
-import type { LoadoutDatum } from './TeamDataManager'
+import type { LoadoutMetadatum } from './TeamDataManager'
 
 describe('export and import test', () => {
   const dbStorage = new DBLocalStorage(localStorage)
@@ -15,36 +15,36 @@ describe('export and import test', () => {
   test('exim', () => {
     // Create a team [Tingyun, null, March7th, null]
 
-    const tingyunId = database.teamChars.new('Tingyun', {
+    const tingyunId = database.loadouts.new('Tingyun', {
       buildIds: [database.builds.new()],
       buildTcIds: [database.buildTcs.new(initCharTC())],
       optConfigId: database.optConfigs.new({ optimizationTarget: ['test'] }),
     })
-    expect(database.teamChars.get(tingyunId)?.buildIds.length).toEqual(1)
-    expect(database.teamChars.get(tingyunId)?.buildTcIds.length).toEqual(1)
-    const march7thId = database.teamChars.new('March7th', {
+    expect(database.loadouts.get(tingyunId)?.buildIds.length).toEqual(1)
+    expect(database.loadouts.get(tingyunId)?.buildTcIds.length).toEqual(1)
+    const march7thId = database.loadouts.new('March7th', {
       buildIds: [database.builds.new()],
       buildTcIds: [database.buildTcs.new(initCharTC())],
     })
     const teamId = database.teams.new({
-      loadoutData: [
-        { teamCharId: tingyunId } as LoadoutDatum,
+      loadoutMetadata: [
+        { loadoutId: tingyunId } as LoadoutMetadatum,
         undefined,
-        { teamCharId: march7thId } as LoadoutDatum,
+        { loadoutId: march7thId } as LoadoutMetadatum,
       ],
     })
 
     const dbTeam = database.teams.get(teamId)!
     expect(dbTeam).toBeTruthy()
-    expect(dbTeam.loadoutData[0]?.teamCharId).toEqual(tingyunId)
-    expect(dbTeam.loadoutData[2]?.teamCharId).toEqual(march7thId)
+    expect(dbTeam.loadoutMetadata[0]?.loadoutId).toEqual(tingyunId)
+    expect(dbTeam.loadoutMetadata[2]?.loadoutId).toEqual(march7thId)
 
     const exp = database.teams.export(teamId)
     expect(exp).toBeTruthy()
-    expect((exp as any).loadoutData[0].key).toEqual('Tingyun')
-    expect((exp as any).loadoutData[0].optConfig.optimizationTarget).toEqual([
-      'test',
-    ])
+    expect((exp as any).loadoutMetadata[0].key).toEqual('Tingyun')
+    expect(
+      (exp as any).loadoutMetadata[0].optConfig.optimizationTarget
+    ).toEqual(['test'])
 
     let res: object | undefined = undefined
     expect(() => {
@@ -56,8 +56,8 @@ describe('export and import test', () => {
     const importTeam = database.teams.get(importTeamId)!
     expect(importTeam).toBeTruthy()
 
-    const tingyunTeamChar = database.teamChars.get(
-      importTeam.loadoutData[0]?.teamCharId
+    const tingyunTeamChar = database.loadouts.get(
+      importTeam.loadoutMetadata[0]?.loadoutId
     )
     expect(tingyunTeamChar?.key).toEqual('Tingyun')
     expect(tingyunTeamChar?.buildIds.length).toEqual(0)
@@ -65,8 +65,8 @@ describe('export and import test', () => {
     expect(
       database.optConfigs.get(tingyunTeamChar?.optConfigId)?.optimizationTarget
     ).toEqual(['test'])
-    const march7thTeamChar = database.teamChars.get(
-      importTeam.loadoutData[2]?.teamCharId
+    const march7thTeamChar = database.loadouts.get(
+      importTeam.loadoutMetadata[2]?.loadoutId
     )
     expect(march7thTeamChar?.key).toEqual('March7th')
     expect(march7thTeamChar?.buildIds.length).toEqual(0)

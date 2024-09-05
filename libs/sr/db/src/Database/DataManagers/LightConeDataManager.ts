@@ -1,8 +1,7 @@
-import type { CharacterLocationKey } from '@genshin-optimizer/sr/consts'
+import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
-  allCharacterLocationKeys,
+  allCharacterKeys,
   allLightConeKeys,
-  charKeyToCharLocKey,
   lightConeMaxLevel,
 } from '@genshin-optimizer/sr/consts'
 import type {
@@ -11,8 +10,8 @@ import type {
 } from '@genshin-optimizer/sr/srod'
 import { validateLevelAsc } from '@genshin-optimizer/sr/util'
 import type {
+  ICachedCharacter,
   ICachedLightCone,
-  ICachedSroCharacter,
   ISroDatabase,
 } from '../../Interfaces'
 import { DataManager } from '../DataManager'
@@ -40,11 +39,10 @@ export class LightConeDataManager extends DataManager<
     const oldLightCone = super.get(id)
 
     // During initialization of the database, if you import lightCones with location without a corresponding character, the char will be generated here.
-    const getWithInit = (lk: CharacterLocationKey): ICachedSroCharacter => {
-      const cKey = this.database.chars.LocationToCharacterKey(lk)
+    const getWithInit = (cKey: CharacterKey): ICachedCharacter => {
       if (!this.database.chars.keys.includes(cKey))
         this.database.chars.set(cKey, initialCharacter(cKey))
-      return this.database.chars.get(cKey) as ICachedSroCharacter
+      return this.database.chars.get(cKey) as ICachedCharacter
     }
     if (newLightCone.location !== oldLightCone?.location) {
       const prevChar = oldLightCone?.location
@@ -63,18 +61,15 @@ export class LightConeDataManager extends DataManager<
       if (prevLightCone)
         super.setCached(prevLightCone.id, {
           ...prevLightCone,
-          location: prevChar?.key ? charKeyToCharLocKey(prevChar.key) : '',
+          location: prevChar?.key ?? '',
         })
       else if (prevChar?.key) prevLightCone = undefined
 
       if (newChar)
-        this.database.chars.setEquippedLightCone(
-          charKeyToCharLocKey(newChar.key),
-          newLightCone.id
-        )
+        this.database.chars.setEquippedLightCone(newChar.key, newLightCone.id)
       if (prevChar)
         this.database.chars.setEquippedLightCone(
-          charKeyToCharLocKey(prevChar.key),
+          prevChar.key,
           prevLightCone?.id
         )
     } else
@@ -250,7 +245,7 @@ export function validateLightCone(obj: unknown = {}): ILightCone | undefined {
   const { level, ascension } = validateLevelAsc(rawLevel, rawAscension)
   if (typeof superimpose !== 'number' || superimpose < 1 || superimpose > 5)
     superimpose = 1
-  if (!location || !allCharacterLocationKeys.includes(location)) location = ''
+  if (!location || !allCharacterKeys.includes(location)) location = ''
   lock = !!lock
   return { key, level, ascension, superimpose, location, lock }
 }

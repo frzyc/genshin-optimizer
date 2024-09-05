@@ -1,6 +1,6 @@
 import { isDebug } from '../util'
-import { debugTag } from './debug'
 import { TagMapKeys } from './keys'
+import { entryRef, entryVal } from './symb'
 import type { Tag, TagCategory, TagValue } from './type'
 
 /**
@@ -16,13 +16,12 @@ export type RawTagMapKeys = {
 }
 
 /**
- * Serializable data for `TagMapExactValues` and `TagMapSubsetValues`.
- * The format is not stabilized. Use `compileTagMapValues` to construct
- * a valid object.
+ * Serializable data for `TagMapSubsetValues`. The format is not
+ * stabilized. Use `compileTagMapValues` to construct a valid object.
  */
 export type RawTagMapValues<V> = {
   [key in string]?: RawTagMapValues<V>
-} & { ''?: V[]; [debugTag]?: Tag[] }
+} & { [entryRef]?: TagMapEntry<V>[]; [entryVal]?: V[] }
 
 /** Uncompiled entry for `TagMap<V>` */
 export type TagMapEntry<V, T = Tag> = { tag: T; value: V }
@@ -69,7 +68,8 @@ export function compileTagMapValues<V>(
   const keys = new TagMapKeys(_keys),
     tagLen = keys.tagLen,
     result: RawTagMapValues<V> = {}
-  for (const { tag, value } of entries) {
+  for (const entry of entries) {
+    const { tag, value } = entry
     const { id, mask } = keys.getMask(tag)
 
     let current = result
@@ -81,11 +81,11 @@ export function compileTagMapValues<V>(
       if (!current[_id]) current[_id] = {}
       current = current[_id] as RawTagMapValues<V>
     }
-    if (!current['']) current[''] = []
-    current[''].push(value)
+    if (!current[entryVal]) current[entryVal] = []
+    current[entryVal].push(value)
     if (isDebug('tag_db')) {
-      if (!current[debugTag]) current[debugTag] = []
-      current[debugTag].push(tag)
+      if (!current[entryRef]) current[entryRef] = []
+      current[entryRef].push(entry)
     }
   }
   return result
@@ -96,12 +96,17 @@ export function mergeTagMapValues<V>(
 ): RawTagMapValues<V> {
   if (entries.length == 1) return entries[0]!
   const keys = new Set(entries.flatMap((entry) => Object.keys(entry)))
-  return Object.fromEntries(
+  const result: RawTagMapValues<V> = Object.fromEntries(
     [...keys].map((key) => [
       key,
-      key === ''
-        ? (entries.flatMap((e) => e[key]!).filter((x) => x) as any)
-        : mergeTagMapValues(entries.map((e) => e[key]!).filter((x) => x)),
+      mergeTagMapValues(entries.map((e) => e[key]!).filter((x) => !!x)),
     ])
   )
+  const vals = entries.flatMap((e) => e[entryVal] ?? [])
+  if (vals.length) {
+    result[entryVal] = vals
+    if (isDebug('tag_db'))
+      result[entryRef] = entries.flatMap((e) => e[entryRef] ?? [])
+  }
+  return result
 }

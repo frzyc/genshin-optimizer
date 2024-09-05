@@ -2,6 +2,6 @@
   "name": "Đừng Để Thế Giới Lạnh Lẽo",
   "passive": {
     "name": "Sức Mạnh Của Âm Thanh",
-    "description": "Khiến người trang bị khi vào chiến đấu sẽ hồi ngay <orangeStrong>{{2}}</orangeStrong> điểm Năng Lượng, đồng thời khiến sát thương Tuyệt Kỹ mà người đó gây ra tăng <orangeStrong>{{1}}%</orangeStrong>."
+    "description": "Khiến người trang bị khi vào chiến đấu sẽ hồi ngay <orangeStrong>{{2}}</orangeStrong> điểm Năng Lượng, đồng thời khiến sát thương Tuyệt Kỹ mà người đó gây ra tăng <orangeStrong>{{1, percent}}%</orangeStrong>."
   }
 }

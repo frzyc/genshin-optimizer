@@ -1,6 +1,6 @@
 {
   "name": "genshin-optimizer",
-  "version": "10.12.0",
+  "version": "10.13.2",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -39,7 +39,7 @@
     "@testing-library/react": "15.0.6",
     "@types/jest": "29.4.4",
     "@types/node": "^18.16.9",
-    "@types/react": "18.2.68",
+    "@types/react": "18.3.1",
     "@types/react-dom": "18.3.0",
     "@typescript-eslint/eslint-plugin": "7.16.0",
     "@typescript-eslint/parser": "7.16.0",

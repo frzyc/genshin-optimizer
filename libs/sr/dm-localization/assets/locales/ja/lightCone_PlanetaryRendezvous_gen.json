@@ -2,6 +2,6 @@
   "name": "{RUBY_B#わくせい}惑星{RUBY_E#}との{RUBY_B#であ}出会{RUBY_E#}い",
   "passive": {
     "name": "{RUBY_B#たびだ}旅立{RUBY_E#}ち",
-    "description": "戦闘に入った後、味方が装備キャラと同じ属性のダメージを与えた時、与ダメージ+<orangeStrong>{{1}}%</orangeStrong>。"
+    "description": "戦闘に入った後、味方が装備キャラと同じ属性のダメージを与えた時、与ダメージ+<orangeStrong>{{1, percent}}%</orangeStrong>。"
   }
 }

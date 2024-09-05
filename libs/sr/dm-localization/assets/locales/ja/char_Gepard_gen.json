@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "{RUBY_B#いちい}一意{RUBY_E#}の{RUBY_B#こぶし}拳{RUBY_E#}",
-        "fullDesc": "指定した敵単体にジェパードの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の氷属性ダメージを与える。",
+        "fullDesc": "指定した敵単体にジェパードの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
         "shortDesc": "敵単体に少量の氷属性ダメージを与える。"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#しんかん}震撼{RUBY_E#}の{RUBY_B#いちげき}一撃{RUBY_E#}",
-        "fullDesc": "指定した敵単体にジェパードの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の氷属性ダメージを与え、{{2}}%の<u>基礎確率</u>で攻撃を受けた敵を凍結状態にする、{{3}}ターン継続。\\n凍結状態の敵は行動できず、ターンが回ってくるたびにジェパードの攻撃力<orangeStrong>{{4}}%</orangeStrong>分の氷属性<u>付加ダメージ</u>を受ける。",
+        "fullDesc": "指定した敵単体にジェパードの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与え、{{2, percent}}%の<u>基礎確率</u>で攻撃を受けた敵を凍結状態にする、{{3}}ターン継続。\\n凍結状態の敵は行動できず、ターンが回ってくるたびにジェパードの攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の氷属性<u>付加ダメージ</u>を受ける。",
         "shortDesc": "敵単体に氷属性ダメージを与え、<orangeStrong>確率で敵を凍結状態にする</orangeStrong>。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#えいきつ}永屹{RUBY_E#}の{RUBY_B#かべ}壁{RUBY_E#}",
-        "fullDesc": "味方全体にジェパードの防御力<orangeStrong>{{1}}%</orangeStrong>+<orangeStrong>{{3}}</orangeStrong>の耐久値を持つバリアを付与する、{{2}}ターン継続。",
+        "fullDesc": "味方全体にジェパードの防御力<orangeStrong>{{1, percent}}%</orangeStrong>+<orangeStrong>{{3}}</orangeStrong>の耐久値を持つバリアを付与する、{{2}}ターン継続。",
         "shortDesc": "味方全体に<orangeStrong>バリアを付与</orangeStrong>する。"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#じんしん}仁心{RUBY_E#}の{RUBY_B#あかし}証{RUBY_E#}",
-        "fullDesc": "秘技を使用した後、次の戦闘開始時、味方全体にジェパードの防御力{{1}}%+{{3}}の耐久値を持つバリアを付与する、{{2}}ターン継続。",
+        "fullDesc": "秘技を使用した後、次の戦闘開始時、味方全体にジェパードの防御力{{1, percent}}%+{{3}}の耐久値を持つバリアを付与する、{{2}}ターン継続。",
         "shortDesc": "秘技を使用、次の戦闘開始時、味方全体にバリアを付与する。"
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#せんい}戦意{RUBY_E#}",
-        "fullDesc": "ジェパードの攻撃力が自身の防御力{{1}}%分アップ、ターンが回ってくるたびに更新される。",
+        "fullDesc": "ジェパードの攻撃力が自身の防御力{{1, percent}}%分アップ、ターンが回ってくるたびに更新される。",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "{RUBY_B#ちゅうじつとっこう}忠実篤厚{RUBY_E#}",
-      "desc": "戦闘スキルを発動した時、攻撃を受けた敵が凍結状態になる基礎確率+{{1}}%。"
+      "desc": "戦闘スキルを発動した時、攻撃を受けた敵が凍結状態になる基礎確率+{{1, percent}}%。"
     },
     "2": {
       "name": "{RUBY_B#よかん}余寒{RUBY_E#}",
-      "desc": "戦闘スキルで敵に与えた凍結状態が解除された後、敵の速度-{{1}}%、{{2}}ターン継続。"
+      "desc": "戦闘スキルで敵に与えた凍結状態が解除された後、敵の速度-{{1, percent}}%、{{2}}ターン継続。"
     },
     "3": {
       "name": "{RUBY_B#えいごうふらく}永劫不落{RUBY_E#}",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "{RUBY_B#かっこ}確固{RUBY_E#}たる{RUBY_B#いし}意志{RUBY_E#}",
-      "desc": "ジェパードがフィールド上にいる時、味方全体の効果抵抗+{{1}}%。"
+      "desc": "ジェパードがフィールド上にいる時、味方全体の効果抵抗+{{1, percent}}%。"
     },
     "5": {
       "name": "{RUBY_B#かんてつ}寒鉄{RUBY_E#}の{RUBY_B#ごと}如{RUBY_E#}く{RUBY_B#こぶし}拳{RUBY_E#}",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "{RUBY_B#ふくつ}不屈{RUBY_E#}の{RUBY_B#けつい}決意{RUBY_E#}",
-      "desc": "天賦発動時、ジェパードが即座に行動し、HPの回復量がさらに自身の最大HP{{1}}%分アップする。"
+      "desc": "天賦発動時、ジェパードが即座に行動し、HPの回復量がさらに自身の最大HP{{1, percent}}%分アップする。"
     }
   }
 }

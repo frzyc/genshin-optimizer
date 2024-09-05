@@ -2,6 +2,6 @@
   "name": "淵環",
   "passive": {
     "name": "追逼",
-    "description": "使裝備者對減速狀態下的敵方目標造成的傷害提高<orangeStrong>{{1}}%</orangeStrong>。"
+    "description": "使裝備者對減速狀態下的敵方目標造成的傷害提高<orangeStrong>{{1, percent}}%</orangeStrong>。"
   }
 }

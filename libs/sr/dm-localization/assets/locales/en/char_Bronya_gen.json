@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Windrider Bullet",
-        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Bronya's ATK to a single enemy.",
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Bronya's ATK to a single enemy.",
         "shortDesc": "Deals minor Wind DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Combat Redeployment",
-        "fullDesc": "Dispels a <u>debuff</u> from a single ally, allows them to immediately take action, and increases their DMG by <orangeStrong>{{1}}%</orangeStrong> for {{3}} turn(s).\\nWhen this Skill is used on Bronya herself, she cannot immediately take action again.",
+        "fullDesc": "Dispels a <u>debuff</u> from a single ally, allows them to immediately take action, and increases their DMG by <orangeStrong>{{1, percent}}%</orangeStrong> for {{3}} turn(s).\\nWhen this Skill is used on Bronya herself, she cannot immediately take action again.",
         "shortDesc": "<orangeStrong>Dispels</orangeStrong> 1 <orangeStrong><u>debuff</u></orangeStrong> from a single ally, <orangeStrong>increases the damage they deal</orangeStrong>, and allows them to <orangeStrong>immediately take action</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "The Belobog March",
-        "fullDesc": "Increases the ATK of all allies by <orangeStrong>{{1}}%</orangeStrong>, and increases their CRIT DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Bronya's CRIT DMG plus <orangeStrong>{{3}}%</orangeStrong> for {{4}} turn(s).",
+        "fullDesc": "Increases the ATK of all allies by <orangeStrong>{{1, percent}}%</orangeStrong>, and increases their CRIT DMG equal to <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> of Bronya's CRIT DMG plus <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> for {{4}} turn(s).",
         "shortDesc": "Increases <orangeStrong>ATK</orangeStrong> and <orangeStrong>CRIT DMG</orangeStrong> of all allies"
       }
     },
     "technique": {
       "0": {
         "name": "Banner of Command",
-        "fullDesc": "After using Bronya's Technique, at the start of the next battle, all allies' ATK increases by {{1}}% for {{2}} turn(s).",
+        "fullDesc": "After using Bronya's Technique, at the start of the next battle, all allies' ATK increases by {{1, percent}}% for {{2}} turn(s).",
         "shortDesc": "After this character uses Technique, increases all allies' ATK at the start of the next battle."
       }
     },
@@ -46,14 +46,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Battlefield",
-        "fullDesc": "At the start of the battle, all allies' DEF increases by {{2}}% for {{1}} turn(s).",
+        "fullDesc": "At the start of the battle, all allies' DEF increases by {{2, percent}}% for {{1}} turn(s).",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Military Might",
-        "fullDesc": "When Bronya is on the field, all allies deal {{1}}% more DMG.",
+        "fullDesc": "When Bronya is on the field, all allies deal {{1, percent}}% more DMG.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Hone Your Strength",
-      "desc": "When using Skill, there is a {{1}}% fixed chance of recovering 1 Skill Point. This effect has a 1-turn cooldown."
+      "desc": "When using Skill, there is a {{1, percent}}% fixed chance of recovering 1 Skill Point. This effect has a 1-turn cooldown."
     },
     "2": {
       "name": "Quick March",
-      "desc": "When using Skill, the target ally's SPD increases by {{1}}% after taking action, lasting for 1 turn."
+      "desc": "When using Skill, the target ally's SPD increases by {{1, percent}}% after taking action, lasting for 1 turn."
     },
     "3": {
       "name": "Bombardment",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Take by Surprise",
-      "desc": "After any other allied character uses Basic ATK on an enemy target that has Wind Weakness, Bronya immediately launches 1 instance of follow-up attack, dealing Wind DMG to this target by an amount equal to {{1}}% of Basic ATK DMG. This effect can only trigger once per turn."
+      "desc": "After any other allied character uses Basic ATK on an enemy target that has Wind Weakness, Bronya immediately launches 1 instance of follow-up attack, dealing Wind DMG to this target by an amount equal to {{1, percent}}% of Basic ATK DMG. This effect can only trigger once per turn."
     },
     "5": {
       "name": "Unstoppable",

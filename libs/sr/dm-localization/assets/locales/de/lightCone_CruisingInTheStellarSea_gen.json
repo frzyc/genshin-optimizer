@@ -2,6 +2,6 @@
   "name": "Fahrt durch das Sternenmeer",
   "passive": {
     "name": "Jagen",
-    "description": "Erhöht die KRIT-Rate des Trägers um <orangeStrong>{{1}}%</orangeStrong> und erhöht seine KRIT-Rate bei Gegnern, deren LP-Prozentsatz bei {{2}}% oder niedriger liegt, zusätzlich um <orangeStrong>{{3}}%</orangeStrong>. Besiegt der Träger einen Gegner, wird sein ANG für {{5}} Rd. um <orangeStrong>{{4}}%</orangeStrong> erhöht."
+    "description": "Erhöht die KRIT-Rate des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong> und erhöht seine KRIT-Rate bei Gegnern, deren LP-Prozentsatz bei {{2, percent}}% oder niedriger liegt, zusätzlich um <orangeStrong>{{3, percent}}%</orangeStrong>. Besiegt der Träger einen Gegner, wird sein ANG für {{5}} Rd. um <orangeStrong>{{4, percent}}%</orangeStrong> erhöht."
   }
 }

@@ -2,6 +2,6 @@
   "name": "{RUBY_B#せかい}世界{RUBY_E#}の{RUBY_B#な}名{RUBY_E#}を{RUBY_B#もっ}以{RUBY_E#}て",
   "passive": {
     "name": "{RUBY_B#でんしょうしゃ}伝承者{RUBY_E#}",
-    "description": "デバフ状態の敵に対して、装備キャラの与ダメージ+<orangeStrong>{{1}}%</orangeStrong>。装備キャラが戦闘スキルを発動した時、その攻撃の効果命中+<orangeStrong>{{2}}%</orangeStrong>、攻撃力+<orangeStrong>{{3}}%</orangeStrong>。"
+    "description": "デバフ状態の敵に対して、装備キャラの与ダメージ+<orangeStrong>{{1, percent}}%</orangeStrong>。装備キャラが戦闘スキルを発動した時、その攻撃の効果命中+<orangeStrong>{{2, percent}}%</orangeStrong>、攻撃力+<orangeStrong>{{3, percent}}%</orangeStrong>。"
   }
 }

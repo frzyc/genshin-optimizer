@@ -2,6 +2,6 @@
   "name": "대립",
   "passive": {
     "name": "연맹",
-    "description": "장착한 캐릭터는 적을 처치한 후 속도가 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 지속 시간: {{2}}턴"
+    "description": "장착한 캐릭터는 적을 처치한 후 속도가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 지속 시간: {{2}}턴"
   }
 }

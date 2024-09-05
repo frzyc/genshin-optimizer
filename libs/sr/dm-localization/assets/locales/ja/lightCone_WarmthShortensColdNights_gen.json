@@ -2,6 +2,6 @@
   "name": "{RUBY_B#あたた}暖{RUBY_E#}かい{RUBY_B#よる}夜{RUBY_E#}は{RUBY_B#なが}長{RUBY_E#}くない",
   "passive": {
     "name": "{RUBY_B#ちい}小{RUBY_E#}さな{RUBY_B#ともしび}灯火{RUBY_E#}",
-    "description": "装備キャラの最大HP+<orangeStrong>{{1}}%</orangeStrong>。通常攻撃または戦闘スキルを発動した後、味方全体のHPをそれぞれの最大HP<orangeStrong>{{2}}%</orangeStrong>分回復する。"
+    "description": "装備キャラの最大HP+<orangeStrong>{{1, percent}}%</orangeStrong>。通常攻撃または戦闘スキルを発動した後、味方全体のHPをそれぞれの最大HP<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>分回復する。"
   }
 }

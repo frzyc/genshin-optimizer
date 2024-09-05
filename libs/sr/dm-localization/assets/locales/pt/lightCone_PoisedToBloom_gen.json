@@ -2,6 +2,6 @@
   "name": "Prestes a Florescer",
   "passive": {
     "name": "Não Perder, Não Esquecer",
-    "description": "Aumenta o ATQ do usuário em <orangeStrong>{{1}}%</orangeStrong>. Ao entrar em combate, se dois ou mais aliados na equipe seguirem o mesmo Caminho, então aumenta o Dano CRIT desses personagens em <orangeStrong>{{2}}%</orangeStrong>. Habilidades do mesmo tipo não podem acumular."
+    "description": "Aumenta o ATQ do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Ao entrar em combate, se dois ou mais aliados na equipe seguirem o mesmo Caminho, então aumenta o Dano CRIT desses personagens em <orangeStrong>{{2, percent}}%</orangeStrong>. Habilidades do mesmo tipo não podem acumular."
   }
 }

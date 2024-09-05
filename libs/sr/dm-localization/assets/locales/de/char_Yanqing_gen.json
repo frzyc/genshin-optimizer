@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Kaltes Licht, kalte Klinge",
-        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Yanqings ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Yanqings ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Schwertwurf",
-        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Yanqings ANG zu und aktiviert für 1 Rd. „Empathische Schwertverbindung“.",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Yanqings ANG zu und aktiviert für 1 Rd. „Empathische Schwertverbindung“.",
         "shortDesc": "Fügt einem Gegner Eis-SCH zu und aktiviert „Empathische Schwertverbindung“."
       }
     },
     "ult": {
       "0": {
         "name": "Regenreiche Schwalbenjagd",
-        "fullDesc": "Erhöht Yanqings KRIT-Rate um {{1}}%. Erhöht Yanqings KRIT-SCH bei aktiver „Empathischer Schwertverbindung“ zusätzlich für 1 Rd. um <orangeStrong>{{2}}%</orangeStrong>. Der <u>Buff</u> hält 1 Rd. an. Fügt dann einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{3}}%</orangeStrong> von Yanqings ANG zu.",
+        "fullDesc": "Erhöht Yanqings KRIT-Rate um {{1, percent}}%. Erhöht Yanqings KRIT-SCH bei aktiver „Empathischer Schwertverbindung“ zusätzlich für 1 Rd. um <orangeStrong>{{2, percent}}%</orangeStrong>. Der <u>Buff</u> hält 1 Rd. an. Fügt dann einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Yanqings ANG zu.",
         "shortDesc": "Erhöht KRIT-Rate, verstärkt „Empathische Schwertverbindung“ und fügt einem Gegner massiven Eis-SCH zu."
       }
     },
     "technique": {
       "0": {
         "name": "Meisterfechter",
-        "fullDesc": "Fügt nach dem Einsatz der Technik Gegnern mit LP-Prozentsatz von {{1}}% oder höher zu Beginn des nächsten Kampfs {{2}}% mehr SCH für {{3}} Rd. zu.",
+        "fullDesc": "Fügt nach dem Einsatz der Technik Gegnern mit LP-Prozentsatz von {{1, percent}}% oder höher zu Beginn des nächsten Kampfs {{2, percent}}% mehr SCH für {{3}} Rd. zu.",
         "shortDesc": "Der Einsatz der Technik erhöht zu Beginn des nächsten Kampfes den verursachten SCH bei Gegnern mit LP-Prozentsatz von 50 % oder höher."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Gefrorener Segen",
-        "fullDesc": "Der Angriff fügt Gegnern mit Eis-Schwäche zusätzlich Eis-SCH in Höhe von {{1}}% von Yanqings ANG zu.",
+        "fullDesc": "Der Angriff fügt Gegnern mit Eis-Schwäche zusätzlich Eis-SCH in Höhe von {{1, percent}}% von Yanqings ANG zu.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Eisfrost",
-        "fullDesc": "Erhöht bei „Empathische Schwertverbindung“ den Effekt-WDS um {{1}}%.",
+        "fullDesc": "Erhöht bei „Empathische Schwertverbindung“ den Effekt-WDS um {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Sanfte Klinge",
-        "fullDesc": "Erhöht bei der Auslösung eines kritischen Treffers die GES für {{2}} Rd. um {{1}}%.",
+        "fullDesc": "Erhöht bei der Auslösung eines kritischen Treffers die GES für {{2}} Rd. um {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Saubere Klinge",
-      "desc": "Greift Yanqing gefrorene Gegner an, fügt er ihnen zusätzlichen Eis-SCH in Höhe von {{1}}% seines ANG zu."
+      "desc": "Greift Yanqing gefrorene Gegner an, fügt er ihnen zusätzlichen Eis-SCH in Höhe von {{1, percent}}% seines ANG zu."
     },
     "2": {
       "name": "Leere des Geistes",
-      "desc": "Ist „Empathische Schwertverbindung“ aktiv, steigt die Wiederherstellungsrate der Energie zusätzlich um {{1}}%."
+      "desc": "Ist „Empathische Schwertverbindung“ aktiv, steigt die Wiederherstellungsrate der Energie zusätzlich um {{1, percent}}%."
     },
     "3": {
       "name": "Begabter Schwertkämpfer",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Reifspieß",
-      "desc": "Liegt der LP-Prozentsatz bei {{1}}% oder höher, wird die Eis-WDS-DUR um {{2}}% erhöht."
+      "desc": "Liegt der LP-Prozentsatz bei {{1, percent}}% oder höher, wird die Eis-WDS-DUR um {{2, percent}}% erhöht."
     },
     "5": {
       "name": "Zum Kämpfen geboren",

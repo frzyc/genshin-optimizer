@@ -10,7 +10,7 @@ import {
   charData,
   convert,
   genshinCalculatorWithEntries,
-  selfTag,
+  ownTag,
   tagToStat,
   teamData,
   weaponData,
@@ -43,7 +43,7 @@ export function baseCharStats(
       })
     ),
   ]
-  const member0 = convert(selfTag, { src: '0', et: 'self' })
+  const member0 = convert(ownTag, { et: 'own', src: '0' })
   const calc = genshinCalculatorWithEntries(data)
   const stats: Partial<Record<StatKey, number>> = {
     hp: calc.compute(member0.base.hp).val,
@@ -74,7 +74,7 @@ export function baseWeaponStats(
       })
     ),
   ]
-  const member0 = convert(selfTag, { src: '0', et: 'self' })
+  const member0 = convert(ownTag, { et: 'own', src: '0' })
   const calc = genshinCalculatorWithEntries(data)
   const stats: Partial<Record<StatKey, number>> = {
     atk: calc.compute(member0.base.atk).val,

@@ -2,6 +2,6 @@
   "name": "Chuyến Thám Hiểm Thị Trấn Mộng Đẹp",
   "passive": {
     "name": "Đoàn Kết",
-    "description": "Sau khi người trang bị thi triển một trong các loại kỹ năng Tấn Công Thường/Chiến Kỹ/Tuyệt Kỹ, sẽ kèm theo Trái Tim Trẻ Thơ lên toàn bộ phe ta, Trái Tim Trẻ Thơ tăng <orangeStrong>{{1}}%</orangeStrong> sát thương do kỹ năng loại tương ứng của mục tiêu phe ta gây ra. Trái Tim Trẻ Thơ chỉ có hiệu lực với loại kỹ năng mà người trang bị vừa mới sử dụng, và không thể cộng dồn."
+    "description": "Sau khi người trang bị thi triển một trong các loại kỹ năng Tấn Công Thường/Chiến Kỹ/Tuyệt Kỹ, sẽ kèm theo Trái Tim Trẻ Thơ lên toàn bộ phe ta, Trái Tim Trẻ Thơ tăng <orangeStrong>{{1, percent}}%</orangeStrong> sát thương do kỹ năng loại tương ứng của mục tiêu phe ta gây ra. Trái Tim Trẻ Thơ chỉ có hiệu lực với loại kỹ năng mà người trang bị vừa mới sử dụng, và không thể cộng dồn."
   }
 }

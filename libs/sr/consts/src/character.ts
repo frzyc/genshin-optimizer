@@ -61,13 +61,13 @@ export type NonTrailblazerCharacterKey =
   (typeof nonTrailblazerCharacterKeys)[number]
 
 export const allElementalTypeKeys = [
-  'Physical',
-  'Quantum',
-  'Lightning',
-  'Ice',
-  'Wind',
-  'Fire',
-  'Imaginary',
+  'physical',
+  'quantum',
+  'lightning',
+  'ice',
+  'wind',
+  'fire',
+  'imaginary',
 ] as const
 export type ElementalTypeKey = (typeof allElementalTypeKeys)[number]
 
@@ -99,19 +99,15 @@ export const allCharacterKeys = [
 ] as const
 export type CharacterKey = (typeof allCharacterKeys)[number]
 
-export const allCharacterLocationKeys = [
-  ...nonTrailblazerCharacterKeys,
-  'Trailblazer',
-] as const
-export type CharacterLocationKey = (typeof allCharacterLocationKeys)[number]
-
 export const allCharacterDataKeys = [
   ...nonTrailblazerCharacterKeys,
   ...allTrailblazerGenderedKeys,
 ] as const
 export type CharacterDataKey = (typeof allCharacterDataKeys)[number]
 
-export const allLocationKeys = [...allCharacterLocationKeys, ''] as const
+export const maxEidolonCount = 6 as const
+
+export const allLocationKeys = [...allCharacterKeys, ''] as const
 export type LocationKey = (typeof allLocationKeys)[number]
 
 export const allBonusAbilityKeys = [1, 2, 3] as const
@@ -132,11 +128,3 @@ export const allAbilityKeys = [
   'overworld', // MAZE_NORMAL
 ] as const
 export type AbilityKey = (typeof allAbilityKeys)[number]
-
-export function charKeyToCharLocKey(
-  charKey: CharacterKey
-): CharacterLocationKey {
-  return charKey.includes('Trailblazer')
-    ? 'Trailblazer'
-    : (charKey as CharacterLocationKey)
-}

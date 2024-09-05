@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Alerte système",
-        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Louve d'argent à un ennemi unique.",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Louve d'argent à un ennemi unique.",
         "shortDesc": "Inflige des DGT quantiques mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Autoriser les modifications ?",
-        "fullDesc": "Il y a <orangeStrong>{{2}}%</orangeStrong> de <u>chances de base</u> d'appliquer 1 Faiblesse du type d'un personnage présent sur le champ de bataille à une cible ennemie. Réduit également la RÉS aux DGT de ce type de faiblesse de l'ennemi de {{4}}% pendant {{3}} tours. Si l'ennemi a déjà ce type de faiblesse, l'effet de réduction de RÉS aux DGT ne sera pas déclenché.\\nChaque ennemi ne peut avoir qu'une seule Faiblesse appliquée par Louve d'argent à la fois. Si Louve d'argent applique une nouvelle Faiblesse, elle remplace la précédente.\\nD'autre part, il y a {{5}}% de <u>chances de base</u> de réduire toutes les RÉS de type de l'ennemi de <orangeStrong>{{6}}%</orangeStrong> pendant {{7}} tours.\\nInflige des DGT quantiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Louve d'argent à cet ennemi.",
+        "fullDesc": "Il y a <orangeStrong>{{2, percent}}%</orangeStrong> de <u>chances de base</u> d'appliquer 1 Faiblesse du type d'un personnage présent sur le champ de bataille à une cible ennemie. Réduit également la RÉS aux DGT de ce type de faiblesse de l'ennemi de {{4, percent}}% pendant {{3}} tours. Si l'ennemi a déjà ce type de faiblesse, l'effet de réduction de RÉS aux DGT ne sera pas déclenché.\\nChaque ennemi ne peut avoir qu'une seule Faiblesse appliquée par Louve d'argent à la fois. Si Louve d'argent applique une nouvelle Faiblesse, elle remplace la précédente.\\nD'autre part, il y a {{5, percent}}% de <u>chances de base</u> de réduire toutes les RÉS de type de l'ennemi de <orangeStrong>{{6, percent(fixed: 1)}}%</orangeStrong> pendant {{7}} tours.\\nInflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Louve d'argent à cet ennemi.",
         "shortDesc": "Fortes chances d'<orangeStrong>appliquer une Faiblesse de type supplémentaire</orangeStrong> à un ennemi unique et de lui infliger des DGT quantiques."
       }
     },
     "ult": {
       "0": {
         "name": "Compte bloqué",
-        "fullDesc": "Il y a <orangeStrong>{{2}}%</orangeStrong> de <u>chances de base</u> de réduire la DÉF d'une cible ennemie de <orangeStrong>{{3}}%</orangeStrong> pendant {{4}} tours. D'autre part, inflige à la cible ennemie des DGT quantiques équivalent à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Louve d'argent.",
+        "fullDesc": "Il y a <orangeStrong>{{2, percent}}%</orangeStrong> de <u>chances de base</u> de réduire la DÉF d'une cible ennemie de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> pendant {{4}} tours. D'autre part, inflige à la cible ennemie des DGT quantiques équivalent à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Louve d'argent.",
         "shortDesc": "Fortes chances de <orangeStrong>réduire la DÉF d'un ennemi unique</orangeStrong> et inflige des DGT quantiques massifs à cette cible ennemie."
       }
     },
     "technique": {
       "0": {
         "name": "Arrêt forcé du programme",
-        "fullDesc": "Engage immédiatement le combat contre les ennemis. Inflige des DGT quantiques équivalents à {{1}}% de l'ATQ de Louve d'argent à tous les ennemis, ignore les types de faiblesse et réduit la robustesse de tous les ennemis après être entré en combat. Les ennemis qui subissent une Rupture de faiblesse de cette manière déclenchent l'effet de Rupture de faiblesse quantique.",
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Inflige des DGT quantiques équivalents à {{1, percent}}% de l'ATQ de Louve d'argent à tous les ennemis, ignore les types de faiblesse et réduit la robustesse de tous les ennemis après être entré en combat. Les ennemis qui subissent une Rupture de faiblesse de cette manière déclenchent l'effet de Rupture de faiblesse quantique.",
         "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT mineurs à tous les ennemis et réduit leur robustesse, quels que soient leurs types de faiblesses après être entré en combat."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Générer",
-        "fullDesc": "La durée du Bug est prolongée d'{{1}} tour. Chaque fois qu'un ennemi subit une Rupture de faiblesse, Louve d'argent a {{2}}% de chances de base d'implanter un Bug aléatoire à l'ennemi.",
+        "fullDesc": "La durée du Bug est prolongée d'{{1}} tour. Chaque fois qu'un ennemi subit une Rupture de faiblesse, Louve d'argent a {{2, percent}}% de chances de base d'implanter un Bug aléatoire à l'ennemi.",
         "shortDesc": ""
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Annotation complémentaire",
-        "fullDesc": "Lorsque l'ennemi subit au moins {{1}} malus, la compétence diminue toutes ses RÉS de type de {{2}}% supplémentaires.",
+        "fullDesc": "Lorsque l'ennemi subit au moins {{1}} malus, la compétence diminue toutes ses RÉS de type de {{2, percent}}% supplémentaires.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Machine zombie",
-      "desc": "Lorsqu'un ennemi entre en combat, sa RÉS aux effets diminue de {{1}}%."
+      "desc": "Lorsqu'un ennemi entre en combat, sa RÉS aux effets diminue de {{1, percent}}%."
     },
     "3": {
       "name": "Charge utile",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Cyberattaque",
-      "desc": "Lorsque Louve d'argent attaque un ennemi avec son ultime, elle inflige des DGT quantiques additionnels équivalents à {{1}}% de son ATQ pour chaque malus actuellement présent sur la cible ennemie. Cet effet peut être déclenché un maximum de {{2}} fois par utilisation de l'ultime."
+      "desc": "Lorsque Louve d'argent attaque un ennemi avec son ultime, elle inflige des DGT quantiques additionnels équivalents à {{1, percent}}% de son ATQ pour chaque malus actuellement présent sur la cible ennemie. Cet effet peut être déclenché un maximum de {{2}} fois par utilisation de l'ultime."
     },
     "5": {
       "name": "Attaque par force brute",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Réseau superposé",
-      "desc": "Pour chaque malus subi par la cible ennemie, les DGT infligés par Louve d'argent augmentent de {{1}}%, jusqu'à une limite de {{2}}%."
+      "desc": "Pour chaque malus subi par la cible ennemie, les DGT infligés par Louve d'argent augmentent de {{1, percent}}%, jusqu'à une limite de {{2, percent}}%."
     }
   }
 }

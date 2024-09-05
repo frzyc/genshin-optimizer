@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Dornen des Abgrunds",
-        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Luochas ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Luochas ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Gebet der Abgrundblume",
-        "fullDesc": "Nach dem Einsatz der Fertigkeit stellt er sofort die LP eines anvisierten Verbündeten um <orangeStrong>{{1}}%</orangeStrong> von Luochas ANG plus <orangeStrong>{{2}}</orangeStrong> wieder her. In der Zwischenzeit erhält Luocha 1 Stapelung „Abgrundblume“.\\nWenn der LP-Prozentsatz eines beliebigen Verbündeten bei {{3}}% oder niedriger liegt, wird ein Effekt, der Luochas Fertigkeit entspricht, sofort ausgelöst (ohne dabei Fertigkeitspunkte zu verbrauchen). Dieser Effekt kann nach {{4}} Rd. erneut ausgelöst werden.",
+        "fullDesc": "Nach dem Einsatz der Fertigkeit stellt er sofort die LP eines anvisierten Verbündeten um <orangeStrong>{{1, percent}}%</orangeStrong> von Luochas ANG plus <orangeStrong>{{2}}</orangeStrong> wieder her. In der Zwischenzeit erhält Luocha 1 Stapelung „Abgrundblume“.\\nWenn der LP-Prozentsatz eines beliebigen Verbündeten bei {{3, percent}}% oder niedriger liegt, wird ein Effekt, der Luochas Fertigkeit entspricht, sofort ausgelöst (ohne dabei Fertigkeitspunkte zu verbrauchen). Dieser Effekt kann nach {{4}} Rd. erneut ausgelöst werden.",
         "shortDesc": "<orangeStrong>Stellt</orangeStrong> LP eines Verbündeten <orangeStrong>wieder her</orangeStrong> und erhält 1-fach „Abgrundblume“."
       }
     },
     "ult": {
       "0": {
         "name": "Todestrieb",
-        "fullDesc": "Entfernt {{2}} <u>Buff</u> von allen Gegnern und fügt ihnen imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Luochas ANG zu. In der Zwischenzeit erhält Luocha 1 Stapelung „Abgrundblume“.",
+        "fullDesc": "Entfernt {{2}} <u>Buff</u> von allen Gegnern und fügt ihnen imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Luochas ANG zu. In der Zwischenzeit erhält Luocha 1 Stapelung „Abgrundblume“.",
         "shortDesc": "<orangeStrong>Entfernt</orangeStrong> 1 <orangeStrong><u>Buff</u></orangeStrong> von allen Gegnern, fügt ihnen imaginären SCH zu und erhält 1 Stapelung „Abgrundblume“."
       }
     },
@@ -46,14 +46,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Geheiligt",
-        "fullDesc": "Wenn ein Gegner innerhalb des Felds von einem Verbündeten angegriffen wird, werden die LP aller Verbündeten außer dem Angreifer um {{1}}% von Luochas ANG plus {{2}} wiederhergestellt.",
+        "fullDesc": "Wenn ein Gegner innerhalb des Felds von einem Verbündeten angegriffen wird, werden die LP aller Verbündeten außer dem Angreifer um {{1, percent(fixed: 1)}}% von Luochas ANG plus {{2}} wiederhergestellt.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Durch das Tal",
-        "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1}}%.",
+        "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Taufe der Lebenden",
-      "desc": "Ist das Feld aktiv, wird der ANG aller Verbündeten um {{1}}% erhöht."
+      "desc": "Ist das Feld aktiv, wird der ANG aller Verbündeten um {{1, percent}}% erhöht."
     },
     "2": {
       "name": "Reine Hingabe",
-      "desc": "Wenn der Effekt der Fertigkeit ausgelöst wird und der LP-Prozentsatz des anvisierten Verbündeten unter 50 % liegt, wird Luochas bewirkte Heilung um {{1}}% erhöht. Liegt der LP-Prozentsatz des anvisierten Verbündeten bei 50 % oder höher, gewährt Luocha ihm einen Schild, der für {{4}} Rd. SCH in Höhe von {{2}}% von Luochas ANG plus {{3}} absorbiert."
+      "desc": "Wenn der Effekt der Fertigkeit ausgelöst wird und der LP-Prozentsatz des anvisierten Verbündeten unter 50 % liegt, wird Luochas bewirkte Heilung um {{1, percent}}% erhöht. Liegt der LP-Prozentsatz des anvisierten Verbündeten bei 50 % oder höher, gewährt Luocha ihm einen Schild, der für {{4}} Rd. SCH in Höhe von {{2, percent}}% von Luochas ANG plus {{3}} absorbiert."
     },
     "3": {
       "name": "Ein närrischer Versuch",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Urteil der Dornenkrone",
-      "desc": "Ist das Feld aktiv, werden Gegner geschwächt und sie verursachen {{1}}% weniger SCH."
+      "desc": "Ist das Feld aktiv, werden Gegner geschwächt und sie verursachen {{1, percent}}% weniger SCH."
     },
     "5": {
       "name": "Opfermal",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Staub zu Staub",
-      "desc": "Beim Einsatz des Ultimates besteht eine feste Chance von {{1}}%, den WDS aller Typen von allen Gegnern für {{3}} Rd. um {{2}}% zu reduzieren."
+      "desc": "Beim Einsatz des Ultimates besteht eine feste Chance von {{1, percent}}%, den WDS aller Typen von allen Gegnern für {{3}} Rd. um {{2, percent}}% zu reduzieren."
     }
   }
 }

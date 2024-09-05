@@ -11,27 +11,28 @@ import {
   type AbilityKey,
   type StatBoostKey,
 } from '@genshin-optimizer/sr/consts'
-import type {
-  CharacterDatum,
-  SkillTreeNodeBonusStat,
+import {
+  type CharacterDatum,
+  type SkillTreeNodeBonusStat,
 } from '@genshin-optimizer/sr/stats'
 import type { DmgTag, FormulaArg, Stat } from '../util'
 import {
-  TypeKeyToListingType,
+  customBreakDmg,
   customDmg,
   customHeal,
   customShield,
   getStatFromStatKey,
   listingItem,
+  own,
+  ownBuff,
   percent,
-  self,
   type TagMapNodeEntries,
 } from '../util'
 
 type AbilityScalingType = Exclude<AbilityKey, 'technique' | 'overworld'>
 
 export function getBaseTag(data_gen: CharacterDatum): DmgTag {
-  return { elementalType: TypeKeyToListingType[data_gen.damageType] }
+  return { elementalType: data_gen.damageType }
 }
 
 /**
@@ -40,7 +41,16 @@ export function getBaseTag(data_gen: CharacterDatum): DmgTag {
  * @returns Object with entry for basic, skill, ult, talent, technique and eidolon scalings. Eidolon contains further entries 1-6 for each eidolon.
  */
 export function scalingParams(data_gen: CharacterDatum) {
-  const { basic, skill, ult, talent, technique } = data_gen.skillTree
+  const {
+    basic,
+    skill,
+    ult,
+    talent,
+    technique,
+    bonusAbility1,
+    bonusAbility2,
+    bonusAbility3,
+  } = data_gen.skillTree
   const eidolon = objMap(data_gen.rankMap, (rankInfo) => rankInfo.params)
 
   return {
@@ -49,6 +59,9 @@ export function scalingParams(data_gen: CharacterDatum) {
     ult: ult.skillParamList,
     talent: talent.skillParamList,
     technique: technique.skillParamList,
+    bonusAbility1: bonusAbility1.skillParamList,
+    bonusAbility2: bonusAbility2.skillParamList,
+    bonusAbility3: bonusAbility3.skillParamList,
     eidolon,
   }
 }
@@ -61,7 +74,7 @@ export function scalingParams(data_gen: CharacterDatum) {
  * @param levelScaling Array representing the scaling at different levels of the ability
  * @param abilityScalingType Ability level that the scaling depends on. This also controls the default damageType1 for dmgTag, if it is not specified already.
  * @param splits Array of decimals that should add up to 1. Each entry represents the percentage of damage that hit deals, for multi-hit moves. We get splits from SRSim devs, see the array at the top of https://github.com/simimpact/srsim/blob/main/internal/character/march7th/ult.go for example.
- * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
+ * @param arg `{ team: true }` to use `teamBuff` instead of `ownBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
  * @param extra Buffs that should only apply to this damage instance
  * @returns Array of TagMapNodeEntries representing the damage instance
  */
@@ -75,12 +88,12 @@ export function dmg(
   arg: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries[] {
-  const multi = percent(subscript(self.char[abilityScalingType], levelScaling))
+  const multi = percent(subscript(own.char[abilityScalingType], levelScaling))
   const attackType = dmgTag.damageType1 ?? abilityScalingType
   if (attackType === 'talent')
     throw new Error(`Cannot infer attack type for Talent-type ability ${name}`)
   dmgTag.damageType1 = attackType
-  const base = prod(self.final[stat], multi)
+  const base = prod(own.final[stat], multi)
   return customDmg(name, dmgTag, base, splits, arg, ...extra)
 }
 
@@ -91,7 +104,7 @@ export function dmg(
  * @param levelScalingMulti Array representing the multiplicative scaling at different levels of the ability
  * @param levelScalingFlat Array representing the flat scaling at different levels of the ability
  * @param abilityScalingType Ability level that the scaling depends on
- * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
+ * @param arg `{ team: true }` to use `teamBuff` instead of `ownBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
  * @param extra Buffs that should only apply to this shield instance
  * @returns Array of TagMapNodeEntries representing the shield instance
  */
@@ -104,10 +117,10 @@ export function shield(
   arg: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
-  const abilityLevel = self.char[abilityScalingType]
+  const abilityLevel = own.char[abilityScalingType]
   const multi = percent(subscript(abilityLevel, levelScalingMulti))
   const flat = subscript(abilityLevel, levelScalingFlat)
-  const base = sum(prod(self.final[stat], multi), flat)
+  const base = sum(prod(own.final[stat], multi), flat)
   return customShield(name, base, arg, ...extra)
 }
 
@@ -118,7 +131,7 @@ export function shield(
  * @param levelScalingMulti Array representing the multiplicative scaling at different levels of the ability
  * @param levelScalingFlat Array representing the flat scaling at different levels of the ability
  * @param abilityScalingType Ability level that the scaling depends on
- * @param arg `{ team: true }` to use `teamBuff` instead of `selfBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
+ * @param arg `{ team: true }` to use `teamBuff` instead of `ownBuff`. `{ cond: <node> }` to hide these instances behind a conditional check.
  * @param extra Buffs that should only apply to this heal instance
  * @returns Array of TagMapNodeEntries representing the heal instance
  */
@@ -131,10 +144,10 @@ export function heal(
   arg: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
-  const abilityLevel = self.char[abilityScalingType]
+  const abilityLevel = own.char[abilityScalingType]
   const multi = percent(subscript(abilityLevel, levelScalingMulti))
   const flat = subscript(abilityLevel, levelScalingFlat)
-  const base = sum(prod(self.final[stat], multi), flat)
+  const base = sum(prod(own.final[stat], multi), flat)
   return customHeal(name, base, arg, ...extra)
 }
 
@@ -147,8 +160,8 @@ export function heal(
  * @returns TagMapNodeEntries representing character stats/buffs
  */
 export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
-  const { char } = self
-  const { eidolon, ascension, lvl, ele, path } = char
+  const { char } = own
+  const { eidolon, ascension, lvl } = char
   // The "add" only applies to currLvl - 1, since "base" is stat at lvl 1
   const readLvl = sum(constant(-1), lvl)
   const statBoosts = Object.entries(data_gen.skillTree)
@@ -156,13 +169,13 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     .map(([_, s]) => s.levels?.[0]?.stats)
     .filter((s): s is SkillTreeNodeBonusStat => !!s)
   return [
-    ele.add(data_gen.damageType),
-    path.add(data_gen.path),
+    ownBuff.char.ele.add(data_gen.damageType),
+    ownBuff.char.path.add(data_gen.path),
     // Base stats
     ...(['hp', 'atk', 'def'] as const).map((sk) => {
       const basePerAsc = data_gen.ascension.map((p) => p[sk].base)
       const addPerAsc = data_gen.ascension.map((p) => p[sk].add)
-      return self.base[sk].add(
+      return ownBuff.base[sk].add(
         sum(
           subscript(ascension, basePerAsc),
           prod(readLvl, subscript(ascension, addPerAsc))
@@ -171,18 +184,19 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     }),
     ...(['crit_', 'crit_dmg_'] as const).map((sk) => {
       const statAsc = data_gen.ascension.map((p) => p[sk])
-      return self.premod[sk].add(subscript(ascension, statAsc))
+      return ownBuff.premod[sk].add(subscript(ascension, statAsc))
     }),
-    self.base.spd.add(
+    ownBuff.base.spd.add(
       subscript(
         ascension,
         data_gen.ascension.map((p) => p.spd)
       )
     ),
     // Small trace stat boosts
-    ...statBoosts.flatMap((statBoost) =>
-      Object.entries(statBoost).map(([key, amt], index) => {
-        return getStatFromStatKey(self.premod, key).add(
+    ...statBoosts.flatMap((statBoost, index) =>
+      Object.entries(statBoost).map(([key, amt]) => {
+        return getStatFromStatKey(ownBuff.premod, key).add(
+          // TODO: Add automatic ascension requirement
           cmpEq(char[`statBoost${(index + 1) as StatBoostKey}`], 1, amt)
         )
       })
@@ -191,25 +205,36 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ...([3, 5] as const).flatMap((ei) =>
       Object.entries(data_gen.rankMap[3].skillTypeAddLevel).map(
         ([abilityKey, levelBoost]) =>
-          self.char[abilityKey].add(cmpGE(eidolon, ei, levelBoost))
+          ownBuff.char[abilityKey].add(cmpGE(eidolon, ei, levelBoost))
       )
+    ),
+    // Break base DMG
+    ...customBreakDmg(
+      'breakDmg',
+      {
+        elementalType: data_gen.damageType,
+        damageType1: 'break',
+      },
+      1
     ),
     // Formula listings for stats
     // TODO: Reorder this
-    self.listing.formulas.add(listingItem(self.final.hp)),
-    self.listing.formulas.add(listingItem(self.final.atk)),
-    self.listing.formulas.add(listingItem(self.final.def)),
-    self.listing.formulas.add(listingItem(self.final.spd)),
-    self.listing.formulas.add(listingItem(self.final.enerRegen_)),
-    self.listing.formulas.add(listingItem(self.final.eff_)),
-    self.listing.formulas.add(listingItem(self.final.eff_res_)),
-    self.listing.formulas.add(listingItem(self.final.brEff_)),
-    self.listing.formulas.add(listingItem(self.common.cappedCrit_)),
-    self.listing.formulas.add(listingItem(self.final.crit_dmg_)),
-    self.listing.formulas.add(listingItem(self.final.heal_)),
-    self.listing.formulas.add(
-      listingItem(self.final.dmg_[TypeKeyToListingType[data_gen.damageType]])
+    ownBuff.listing.formulas.add(listingItem(own.final.hp)),
+    ownBuff.listing.formulas.add(listingItem(own.final.atk)),
+    ownBuff.listing.formulas.add(listingItem(own.final.def)),
+    ownBuff.listing.formulas.add(listingItem(own.final.spd)),
+    ownBuff.listing.formulas.add(listingItem(own.final.enerRegen_)),
+    ownBuff.listing.formulas.add(listingItem(own.final.eff_)),
+    ownBuff.listing.formulas.add(listingItem(own.final.eff_res_)),
+    ownBuff.listing.formulas.add(listingItem(own.final.brEff_)),
+    ownBuff.listing.formulas.add(listingItem(own.common.cappedCrit_)),
+    ownBuff.listing.formulas.add(listingItem(own.final.crit_dmg_)),
+    ownBuff.listing.formulas.add(listingItem(own.final.heal_)),
+    ownBuff.listing.formulas.add(
+      listingItem(own.final.dmg_[data_gen.damageType])
     ),
-    self.listing.formulas.add(listingItem(self.final.dmg_.physical)),
+    ownBuff.listing.formulas.add(listingItem(own.final.dmg_)),
+    ownBuff.listing.formulas.add(listingItem(own.final.weakness_)),
+    ownBuff.listing.formulas.add(listingItem(own.final.resPen_)),
   ]
 }

@@ -39,14 +39,14 @@ function processString(str: string | undefined) {
 
   // Match <color=#f29e38ff> OR <unbreak>; capturing the hexcode if it exists
   const match1 = new RegExp(/(?:<color=#([a-f0-9]{6,8})>|<unbreak>)/)
-  // Match #1[i]% OR any text; capturing the index + suffix OR the text
-  const match2 = new RegExp(/(?:#(.*?)\[.*?\](.*?)|(.*?))/)
+  // Match #1[i]% OR any text; capturing the index (1) + type (i) + suffix (%) OR the plain text if its not meant to be replaced
+  const match2 = new RegExp(/(?:#(.*?)\[(.*?)\](.*?)|(.*?))/)
   // Match </color> or </unbreak>
   const match3 = new RegExp(/(?:<\/unbreak>|<\/color>)/)
   str = str.replace(
     new RegExp(match1.source + match2.source + match3.source, 'g'),
-    (match, colorHex, index, suffix, flatValue) => {
-      const value = index ? `{{${index}}}${suffix}` : flatValue
+    (match, colorHex, index, type, suffix, plainString) => {
+      const value = createValueStr(index, type, suffix, plainString)
       // Bold + orange
       if (colorHex === 'f29e38ff')
         return `<${interpolationTags.orangeStrong}>${value}</${interpolationTags.orangeStrong}>`
@@ -59,6 +59,32 @@ function processString(str: string | undefined) {
   )
 
   return str
+}
+
+function createValueStr(
+  index: string | null,
+  type: string | null,
+  suffix: string | null,
+  plainString: string | null
+) {
+  if (index) {
+    if (suffix == '%') {
+      if (type?.startsWith('f')) {
+        return `{{${index}, percent(fixed: ${type.substring(1)})}}${suffix}`
+      } else {
+        return `{{${index}, percent}}${suffix}`
+      }
+    } else if (type?.startsWith('f')) {
+      return `{{${index}, fixed(fixed: ${type.substring(1)})}}`
+    }
+    return `{{${index}}}${suffix}`
+  } else if (plainString) {
+    return plainString
+  } else {
+    throw new Error(
+      'No index, suffix, type or plainString passed to createValueStr'
+    )
+  }
 }
 
 const langArray = Object.entries(languageMap).map(([langKey, strings]) => {
@@ -75,7 +101,9 @@ const langArray = Object.entries(languageMap).map(([langKey, strings]) => {
 
   // Trailblazer name handling
   allTrailblazerGenderedKeys.forEach((key) => {
-    const type = allElementalTypeKeys.find((typeKey) => key.includes(typeKey))
+    const type = allElementalTypeKeys.find((typeKey) =>
+      key.toLowerCase().includes(typeKey)
+    )
     if (!type)
       throw new Error(
         `Trailblazer key ${key} was unable to find an elemental type`
@@ -98,6 +126,12 @@ const langArray = Object.entries(languageMap).map(([langKey, strings]) => {
     ].name = `${data.char[key].name} (${typeString} • ${pathString})`
     data.charNames[key] = data.char[key].name
   })
+
+  // March 7th (Hunt) name handling
+  data.char.March7thTheHunt.name = `${data.char.March7thTheHunt.name} • ${
+    strings[HashData.sheet.path.TheHunt]
+  }`
+  data.charNames.March7thTheHunt = data.char.March7thTheHunt.name
 
   const tuple: [LanguageKey, LanguageData] = [langKey, data]
   return tuple

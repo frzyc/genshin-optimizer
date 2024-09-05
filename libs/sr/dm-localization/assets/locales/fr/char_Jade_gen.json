@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Revers de fortune",
-        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Jade à une cible ennemie unique et des DGT quantiques équivalents à <orangeStrong>{{2}}%</orangeStrong> de son ATQ aux ennemis adjacents.",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Jade à une cible ennemie unique et des DGT quantiques équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de son ATQ aux ennemis adjacents.",
         "shortDesc": "Inflige des DGT quantiques mineurs à un ennemi unique et des DGT quantiques mineurs aux ennemis adjacents."
       }
     },
     "skill": {
       "0": {
         "name": "Contrat d'acquisition",
-        "fullDesc": "Transforme une cible alliée unique en Agent de recouvrement de dettes et augmente sa VIT de {{1}} pendant {{4}} tours.\\nLorsque l'Agent de recouvrement de dettes attaque, inflige 1 instance de DGT quantiques <u>additionnels</u> équivalents à <orangeStrong>{{3}}%</orangeStrong> de l'ATQ de Jade à chaque cible ennemie touchée et consomme une partie des PV de l'Agent de recouvrement de dettes à hauteur de {{2}}% de ses PV max. Si ses PV actuels sont insuffisants, ils sont réduits à 1.\\nLorsque Jade devient Agent de recouvrement de dettes, elle ne bénéficie pas de l'effet d'augmentation de VIT, et ses attaques ne consomment pas de PV.\\nJade ne peut pas utiliser sa compétence lorsqu'il y a un Agent de recouvrement de dettes sur le champ de bataille. La durée de l'effet Agent de recouvrement de dettes diminue de 1 au début de chaque tour de Jade.",
+        "fullDesc": "Transforme une cible alliée unique en Agent de recouvrement de dettes et augmente sa VIT de {{1}} pendant {{4}} tours.\\nLorsque l'Agent de recouvrement de dettes attaque, inflige 1 instance de DGT quantiques <u>additionnels</u> équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> de l'ATQ de Jade à chaque cible ennemie touchée et consomme une partie des PV de l'Agent de recouvrement de dettes à hauteur de {{2, percent}}% de ses PV max. Si ses PV actuels sont insuffisants, ils sont réduits à 1.\\nLorsque Jade devient Agent de recouvrement de dettes, elle ne bénéficie pas de l'effet d'augmentation de VIT, et ses attaques ne consomment pas de PV.\\nJade ne peut pas utiliser sa compétence lorsqu'il y a un Agent de recouvrement de dettes sur le champ de bataille. La durée de l'effet Agent de recouvrement de dettes diminue de 1 au début de chaque tour de Jade.",
         "shortDesc": "Transforme un allié en <orangeStrong>Agent de recouvrement de dettes</orangeStrong> et augmente sa VIT. Lorsque l'<orangeStrong>Agent de recouvrement de dettes</orangeStrong> attaque, il inflige des DGT quantiques <u>additionnels</u> mineurs à chaque cible ennemie touchée et consomme ses propres PV. Lorsque Jade devient Agent de recouvrement de dettes, elle ne bénéficie pas de l'effet d'augmentation de VIT, et ses attaques ne consomment pas de PV."
       }
     },
     "ult": {
       "0": {
         "name": "Pacte de l'abîme",
-        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{3}}%</orangeStrong> de l'ATQ de Jade à tous les ennemis. D'autre part, renforce l'<u>attaque de suivi</u> du talent de Jade en augmentant son multiplicateur de DGT de <orangeStrong>{{1}}%</orangeStrong>. Ce renforcement peut prendre effet {{2}} fois.",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> de l'ATQ de Jade à tous les ennemis. D'autre part, renforce l'<u>attaque de suivi</u> du talent de Jade en augmentant son multiplicateur de DGT de <orangeStrong>{{1, percent}}%</orangeStrong>. Ce renforcement peut prendre effet {{2}} fois.",
         "shortDesc": "Inflige des DGT quantiques à tous les ennemis et augmente le multiplicateur de DGT d'<orangeStrong><u>attaque de suivi</u></orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Vision de prédateur",
-        "fullDesc": "Après utilisation de la technique, les ennemis situés dans une zone définie sont affectés par Obéissance aveugle pendant {{1}} secondes. Les ennemis affectés par Obéissance aveugle n'initient pas l'attaque contre les alliés. Lorsque vous engagez le combat en attaquant des ennemis affectés par Obéissance aveugle, tous les ennemis avec Obéissance aveugle entrent en combat simultanément. Une fois en combat, inflige des DGT quantiques équivalents à {{2}}% de l'ATQ de Jade à tous les ennemis, et Jade obtient immédiatement {{3}} cumuls de Bien hypothéqué.",
+        "fullDesc": "Après utilisation de la technique, les ennemis situés dans une zone définie sont affectés par Obéissance aveugle pendant {{1}} secondes. Les ennemis affectés par Obéissance aveugle n'initient pas l'attaque contre les alliés. Lorsque vous engagez le combat en attaquant des ennemis affectés par Obéissance aveugle, tous les ennemis avec Obéissance aveugle entrent en combat simultanément. Une fois en combat, inflige des DGT quantiques équivalents à {{2, percent}}% de l'ATQ de Jade à tous les ennemis, et Jade obtient immédiatement {{3}} cumuls de Bien hypothéqué.",
         "shortDesc": "Inflige Obéissance aveugle aux ennemis dans une zone définie. Tous les ennemis avec Obéissance aveugle entrent en combat simultanément en cas d'attaque sur un ennemi avec Obéissance aveugle. Inflige des DGT quantiques mineurs à tous les ennemis et Jade gagne immédiatement <orangeStrong>{{3}}</orangeStrong> cumuls de Bien hypothéqué en entrant en combat."
       }
     },
@@ -46,14 +46,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Dépôt de garantie",
-        "fullDesc": "L'action de Jade est avancée de {{1}}% en début de combat.",
+        "fullDesc": "L'action de Jade est avancée de {{1, percent}}% en début de combat.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Gage d'exception",
-        "fullDesc": "Chaque cumul de l'effet Bien hypothéqué obtenu via le talent augmente l'ATQ de Jade de {{1}}% supplémentaires.",
+        "fullDesc": "Chaque cumul de l'effet Bien hypothéqué obtenu via le talent augmente l'ATQ de Jade de {{1, percent(fixed: 1)}}% supplémentaires.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Altruisme négociable",
-      "desc": "Les DGT d'attaque de suivi du talent de Jade augmentent de {{1}}%. Lorsque le personnage qui bénéficie de l'effet Agent de recouvrement de dettes attaque et touche 2 ou 1 cible ennemie, Jade obtient respectivement {{2}} ou {{3}} points de charge supplémentaires."
+      "desc": "Les DGT d'attaque de suivi du talent de Jade augmentent de {{1, percent}}%. Lorsque le personnage qui bénéficie de l'effet Agent de recouvrement de dettes attaque et touche 2 ou 1 cible ennemie, Jade obtient respectivement {{2}} ou {{3}} points de charge supplémentaires."
     },
     "2": {
       "name": "Moralité sous caution",
-      "desc": "Augmente de {{2}}% les chances de coup critique de Jade à {{1}} cumuls de Bien hypothéqué."
+      "desc": "Augmente de {{2, percent}}% les chances de coup critique de Jade à {{1}} cumuls de Bien hypothéqué."
     },
     "3": {
       "name": "Honnêteté hypothéquée",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Acompte décisif",
-      "desc": "Les DGT infligés par Jade ignorent {{1}}% de la DÉF des cibles ennemies pendant {{2}} tours lors de l'utilisation de l'ultime."
+      "desc": "Les DGT infligés par Jade ignorent {{1, percent}}% de la DÉF des cibles ennemies pendant {{2}} tours lors de l'utilisation de l'ultime."
     },
     "5": {
       "name": "Abolition de l'espoir",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Équité sous condition",
-      "desc": "La PÉN de RÉS quantique de Jade augmente de {{1}}% lorsqu'il y a un Agent de recouvrement de dettes sur le champ de bataille, et elle bénéficie également elle-même de l'effet Agent de recouvrement de dettes."
+      "desc": "La PÉN de RÉS quantique de Jade augmente de {{1, percent}}% lorsqu'il y a un Agent de recouvrement de dettes sur le champ de bataille, et elle bénéficie également elle-même de l'effet Agent de recouvrement de dettes."
     }
   }
 }

@@ -32,13 +32,13 @@ export const presets = [
   'preset9',
 ] as const
 export const entryTypes = [
-  'self',
-  'selfBuff',
-  'teamBuff',
-  'notSelfBuff',
+  'own',
   'enemy',
   'team',
   'target',
+  'teamBuff',
+  'notOwnBuff',
+  'enemyDeBuff', // Ends with 'Buff' so `Calculator` can pick up on this tag
 ] as const
 export const sheets = [
   'agg',
@@ -48,11 +48,12 @@ export const sheets = [
   ...allWeaponKeys,
   ...allArtifactSetKeys,
   'art',
+  'reso',
   'dyn',
   'enemy',
   'custom',
 ] as const
-export const members = ['all', '0', '1', '2', '3'] as const
+export const members = ['0', '1', '2', '3'] as const
 
 export type Stat = (typeof stats)[number]
 export type Preset = (typeof presets)[number]

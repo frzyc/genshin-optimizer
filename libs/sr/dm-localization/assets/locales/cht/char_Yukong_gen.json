@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "流鏑",
-        "fullDesc": "對指定敵方單體造成等同於馭空<orangeStrong>{{1}}%</orangeStrong>攻擊力的虛數屬性傷害。",
+        "fullDesc": "對指定敵方單體造成等同於馭空<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的虛數屬性傷害。",
         "shortDesc": "對敵方單體造成少量虛數屬性傷害。"
       }
     },
     "skill": {
       "0": {
         "name": "天闕鳴弦",
-        "fullDesc": "獲得{{1}}層【鳴弦號令】，最多持有不超過2層。當馭空持有【鳴弦號令】時，我方全體攻擊力提高<orangeStrong>{{2}}%</orangeStrong>，且每次我方目標回合結束時，移除馭空1層【鳴弦號令】。\\n馭空施放戰技獲得【鳴弦號令】的回合，不會移除【鳴弦號令】。",
+        "fullDesc": "獲得{{1}}層【鳴弦號令】，最多持有不超過2層。當馭空持有【鳴弦號令】時，我方全體攻擊力提高<orangeStrong>{{2, percent}}%</orangeStrong>，且每次我方目標回合結束時，移除馭空1層【鳴弦號令】。\\n馭空施放戰技獲得【鳴弦號令】的回合，不會移除【鳴弦號令】。",
         "shortDesc": "獲得2層【鳴弦號令】，自身持有【鳴弦號令】時我方全體<orangeStrong>攻擊力提高</orangeStrong>。"
       }
     },
     "ult": {
       "0": {
         "name": "貫雲飲羽",
-        "fullDesc": "施放終結技時，若馭空持有【鳴弦號令】，則額外使我方全體暴擊率提高<orangeStrong>{{2}}%</orangeStrong>、暴擊傷害提高<orangeStrong>{{3}}%</orangeStrong>，同時對指定敵方單體造成等同於馭空<orangeStrong>{{1}}%</orangeStrong>攻擊力的虛數屬性傷害。",
+        "fullDesc": "施放終結技時，若馭空持有【鳴弦號令】，則額外使我方全體暴擊率提高<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>、暴擊傷害提高<orangeStrong>{{3, percent}}%</orangeStrong>，同時對指定敵方單體造成等同於馭空<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的虛數屬性傷害。",
         "shortDesc": "自身持有【鳴弦號令】時我方全體<orangeStrong>暴擊率和暴擊傷害提高</orangeStrong>，並對敵方單體造成大量虛數屬性傷害。"
       }
     },
     "technique": {
       "0": {
         "name": "雲鳶逐風",
-        "fullDesc": "使用秘技後進入持續{{1}}秒的衝刺狀態。衝刺狀態下自身移動速度提高{{2}}%，且主動攻擊敵人進入戰鬥時，馭空獲得{{3}}層【鳴弦號令】。",
+        "fullDesc": "使用秘技後進入持續{{1}}秒的衝刺狀態。衝刺狀態下自身移動速度提高{{2, percent}}%，且主動攻擊敵人進入戰鬥時，馭空獲得{{3}}層【鳴弦號令】。",
         "shortDesc": "使自身<orangeStrong>移動速度提高</orangeStrong>。攻擊敵人進入戰鬥後獲得2層【鳴弦號令】。"
       }
     },
@@ -46,7 +46,7 @@
     "bonusAbility2": {
       "0": {
         "name": "遲彝",
-        "fullDesc": "馭空在場時，我方全體造成的虛數屬性傷害提高{{1}}%。",
+        "fullDesc": "馭空在場時，我方全體造成的虛數屬性傷害提高{{1, percent}}%。",
         "shortDesc": ""
       }
     },
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "天舶飛將，枕弧待戰",
-      "desc": "進入戰鬥時，我方全體速度提高{{1}}%，持續{{2}}回合。"
+      "desc": "進入戰鬥時，我方全體速度提高{{1, percent}}%，持續{{2}}回合。"
     },
     "2": {
       "name": "青霄馳騁，驅馭蒼穹",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "百里聞風，九曲響鏑",
-      "desc": "持有【鳴弦號令】時，馭空造成的傷害提高{{1}}%。"
+      "desc": "持有【鳴弦號令】時，馭空造成的傷害提高{{1, percent}}%。"
     },
     "5": {
       "name": "井儀貫侯，疾羽參連",

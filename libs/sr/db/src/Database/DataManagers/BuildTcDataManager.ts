@@ -59,19 +59,19 @@ export class BuildTcDataManager extends DataManager<
   }
   override remove(key: string, notify?: boolean): IBuildTc | undefined {
     const buildTc = super.remove(key, notify)
-    // remove data from teamChar first
-    this.database.teamChars.entries.forEach(
-      ([teamCharId, teamChar]) =>
-        teamChar.buildTcIds.includes(key) &&
-        this.database.teamChars.set(teamCharId, {})
+    // remove data from loadout first
+    this.database.loadouts.entries.forEach(
+      ([loadoutId, loadout]) =>
+        loadout.buildTcIds.includes(key) &&
+        this.database.loadouts.set(loadoutId, {})
     )
-    // once teamChars are validated, teams can be validated as well
+    // once loadouts are validated, teams can be validated as well
     this.database.teams.entries.forEach(
       ([teamId, team]) =>
-        team.loadoutData?.some(
-          (loadoutDatum) =>
-            loadoutDatum?.buildTcId === key ||
-            loadoutDatum?.compareBuildTcId === key
+        team.loadoutMetadata?.some(
+          (loadoutMetadatum) =>
+            loadoutMetadatum?.buildTcId === key ||
+            loadoutMetadatum?.compareBuildTcId === key
         ) && this.database.teams.set(teamId, {}) // trigger a validation
     )
 
@@ -113,7 +113,7 @@ function initCharTCRelicSlots() {
     level: 20,
     statKey: (s === 'head'
       ? 'hp'
-      : s === 'hand'
+      : s === 'hands'
       ? 'atk'
       : 'atk_') as RelicMainStatKey,
   }))

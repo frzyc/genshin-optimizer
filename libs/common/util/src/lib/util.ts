@@ -1,5 +1,8 @@
-export function evalIfFunc<T, X>(value: T | ((arg: X) => T), arg: X): T {
-  return typeof value === 'function' ? (value as any)(arg) : value
+export function evalIfFunc<T, X extends unknown[]>(
+  value: T | ((...args: X) => T),
+  ...args: X
+): T {
+  return typeof value === 'function' ? (value as any)(...args) : value
 }
 
 export function assertUnreachable(value: never): never {

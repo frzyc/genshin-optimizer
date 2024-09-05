@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Luz reluciente",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Jing Yuan como Daño de Rayo a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Jing Yuan como Daño de Rayo a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Cénit agrietador",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Jing Yuan como Daño de Rayo a todos los enemigos e incrementa en {{2}} los golpes por acción del caballero divino en su siguiente turno.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Jing Yuan como Daño de Rayo a todos los enemigos e incrementa en {{2}} los golpes por acción del caballero divino en su siguiente turno.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a todos los enemigos e <orangeStrong>incrementa los golpes por acción del caballero divino</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Alumbrador",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Jing Yuan como Daño de Rayo a todos los enemigos e incrementa en {{2}} los golpes por acción del caballero divino en su siguiente turno.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Jing Yuan como Daño de Rayo a todos los enemigos e incrementa en {{2}} los golpes por acción del caballero divino en su siguiente turno.",
         "shortDesc": "Inflige Daño de Rayo a todos los enemigos e <orangeStrong>incrementa los golpes por acción del caballero divino</orangeStrong>."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Rompeformaciones",
-        "fullDesc": "Si la cantidad de golpes por acción del caballero divino es igual o superior a {{1}} en el siguiente turno, su Daño CRIT aumenta en un {{2}}% durante el siguiente turno.",
+        "fullDesc": "Si la cantidad de golpes por acción del caballero divino es igual o superior a {{1}} en el siguiente turno, su Daño CRIT aumenta en un {{2, percent}}% durante el siguiente turno.",
         "shortDesc": ""
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Jaque mate",
-        "fullDesc": "Tras usar la habilidad básica, la Prob. CRIT de Jing Yuan aumenta en un {{1}}% durante {{2}} turnos.",
+        "fullDesc": "Tras usar la habilidad básica, la Prob. CRIT de Jing Yuan aumenta en un {{1, percent}}% durante {{2}} turnos.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Corte, acantilados cercenados",
-      "desc": "Cuando el caballero divino lanza un ataque, el multiplicador de daño que inflige a los enemigos adyacentes al objetivo aumenta adicionalmente en una cantidad equivalente al {{1}}% del multiplicador de daño del objetivo principal."
+      "desc": "Cuando el caballero divino lanza un ataque, el multiplicador de daño que inflige a los enemigos adyacentes al objetivo aumenta adicionalmente en una cantidad equivalente al {{1, percent}}% del multiplicador de daño del objetivo principal."
     },
     "2": {
       "name": "Falange, soles bloqueados",
-      "desc": "Tras la acción del caballero divino, el ATQ básico, la habilidad básica y la habilidad definitiva de Jing Yuan infligen un {{1}}% más de daño durante {{2}} turnos."
+      "desc": "Tras la acción del caballero divino, el ATQ básico, la habilidad básica y la habilidad definitiva de Jing Yuan infligen un {{1, percent}}% más de daño durante {{2}} turnos."
     },
     "3": {
       "name": "Golpe, luz destrozada",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Conjuro, enemigos derrotados",
-      "desc": "Cada golpe que inflige el caballero divino hace que el objetivo enemigo entre en un estado de Vulnerabilidad.\\nLos enemigos vulnerables reciben un {{1}}% más de daño hasta que termine el ataque actual del caballero divino. Este efecto se puede acumular hasta {{2}} veces."
+      "desc": "Cada golpe que inflige el caballero divino hace que el objetivo enemigo entre en un estado de Vulnerabilidad.\\nLos enemigos vulnerables reciben un {{1, percent}}% más de daño hasta que termine el ataque actual del caballero divino. Este efecto se puede acumular hasta {{2}} veces."
     }
   }
 }

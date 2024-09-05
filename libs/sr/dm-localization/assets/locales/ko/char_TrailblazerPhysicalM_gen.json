@@ -4,38 +4,38 @@
     "basic": {
       "0": {
         "name": "끝내기 안타",
-        "fullDesc": "지정된 단일 적에게 개척자 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
+        "fullDesc": "지정된 단일 적에게 개척자 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
         "shortDesc": "단일 적에게 소량의 물리 속성 피해를 가한다"
       }
     },
     "skill": {
       "0": {
         "name": "안식 홈런",
-        "fullDesc": "지정된 단일 적과 인접한 목표에게 개척자 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
+        "fullDesc": "지정된 단일 적과 인접한 목표에게 개척자 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
         "shortDesc": "단일 적 및 인접한 목표에게 물리 속성 피해를 준다"
       }
     },
     "ult": {
       "0": {
         "name": "스타더스트의 에이스",
-        "fullDesc": "두 가지 모드 중 하나를 선택해 전력의 일격을 가한다.\\n[압승•끝내기 안타]: 지정된 단일 적에게 개척자 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 물리 속성 피해를 준다.\\n[압승•안식 홈런]: 지정된 단일 적에게 개척자 공격력 <orangeStrong>{{2}}%</orangeStrong>만큼의 물리 속성 피해를 주고, 인접한 목표에게도 개척자 공격력 <orangeStrong>{{3}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
+        "fullDesc": "두 가지 모드 중 하나를 선택해 전력의 일격을 가한다.\\n[압승•끝내기 안타]: 지정된 단일 적에게 개척자 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 물리 속성 피해를 준다.\\n[압승•안식 홈런]: 지정된 단일 적에게 개척자 공격력 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 물리 속성 피해를 주고, 인접한 목표에게도 개척자 공격력 <orangeStrong>{{3, percent}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
         "shortDesc": "단일 공격 또는 확산 공격으로 전력의 일격을 가한다"
       },
       "1": {
         "name": "압승•끝내기 안타",
-        "fullDesc": "지정된 단일 적에게 개척자 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
+        "fullDesc": "지정된 단일 적에게 개척자 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
         "shortDesc": "단일 적에게 대량의 물리 속성 피해를 준다"
       },
       "2": {
         "name": "압승•안식 홈런",
-        "fullDesc": "지정된 단일 적에게 개척자 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 물리 속성 피해를 주며, 인접한 목표에게 개척자 공격력 <orangeStrong>{{2}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
+        "fullDesc": "지정된 단일 적에게 개척자 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 물리 속성 피해를 주며, 인접한 목표에게 개척자 공격력 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
         "shortDesc": "단일 적 및 대상의 인접한 목표에게 물리 속성 피해를 가한다"
       }
     },
     "technique": {
       "0": {
         "name": "불멸의 삼진",
-        "fullDesc": "비술 발동 후 즉시 모든 아군은 자신의 HP 최대치 {{1}}%만큼의 HP를 회복한다",
+        "fullDesc": "비술 발동 후 즉시 모든 아군은 자신의 HP 최대치 {{1, percent}}%만큼의 HP를 회복한다",
         "shortDesc": ""
       }
     },
@@ -56,14 +56,14 @@
     "bonusAbility2": {
       "0": {
         "name": "강인",
-        "fullDesc": "특성의 효과는 스택마다 동시에 개척자의 방어력을 {{1}}% 증가시킨다",
+        "fullDesc": "특성의 효과는 스택마다 동시에 개척자의 방어력을 {{1, percent}}% 증가시킨다",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "투지",
-        "fullDesc": "전투 스킬 또는 필살기 [압승•안식 홈런] 발동 시 지정된 적에게 가하는 피해가 {{1}}% 증가한다",
+        "fullDesc": "전투 스킬 또는 필살기 [압승•안식 홈런] 발동 시 지정된 적에게 가하는 피해가 {{1, percent}}% 증가한다",
         "shortDesc": ""
       }
     }
@@ -75,7 +75,7 @@
     },
     "2": {
       "name": "가합의 인연",
-      "desc": "공격 발동 후 명중한 적의 약점이 물리 속성이면 개척자 공격력 {{1}}%만큼의 HP를 회복한다"
+      "desc": "공격 발동 후 명중한 적의 약점이 물리 속성이면 개척자 공격력 {{1, percent}}%만큼의 HP를 회복한다"
     },
     "3": {
       "name": "앞길을 제시하는 언령",
@@ -83,7 +83,7 @@
     },
     "4": {
       "name": "파멸의 순간을 응시하는 눈",
-      "desc": "약점 격파 상태의 적을 공격 시 치명타 확률이 {{1}}% 증가한다"
+      "desc": "약점 격파 상태의 적을 공격 시 치명타 확률이 {{1, percent}}% 증가한다"
     },
     "5": {
       "name": "남겨진 부활의 희망",

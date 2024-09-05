@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Pincel del oráculo",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Hanya como Daño Físico a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Hanya como Daño Físico a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Samsara, bloqueado",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Hanya como Daño Físico a un enemigo y lo afecta con Lastre.\\nCada vez que un aliado ataca 2 veces con un ATQ básico, una habilidad básica o una habilidad definitiva a un enemigo con Lastre, el equipo recupera 1 pt. de habilidad básica. Lastre solo tiene efecto en el último enemigo al que se le haya aplicado y se disipa automáticamente una vez que se haya activado {{2}} veces el efecto de recuperación de pts. de habilidad básica.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Hanya como Daño Físico a un enemigo y lo afecta con Lastre.\\nCada vez que un aliado ataca 2 veces con un ATQ básico, una habilidad básica o una habilidad definitiva a un enemigo con Lastre, el equipo recupera 1 pt. de habilidad básica. Lastre solo tiene efecto en el último enemigo al que se le haya aplicado y se disipa automáticamente una vez que se haya activado {{2}} veces el efecto de recuperación de pts. de habilidad básica.",
         "shortDesc": "Inflige Daño Físico a un enemigo y lo afecta con Lastre. Cuando un aliado ataque 2 veces con un ATQ básico, una habilidad básica o una habilidad definitiva a un objetivo afectado por Lastre, <orangeStrong>se recupera 1 pt. de habilidad básica</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Decreto de los Diez Líderes, todos obedecerán",
-        "fullDesc": "Aumenta la VEL de un aliado en un <orangeStrong>{{3}}%</orangeStrong> de la VEL de Hanya, y el ATQ de ese aliado en un <orangeStrong>{{1}}%</orangeStrong> durante {{2}} turnos.",
+        "fullDesc": "Aumenta la VEL de un aliado en un <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de la VEL de Hanya, y el ATQ de ese aliado en un <orangeStrong>{{1, percent}}%</orangeStrong> durante {{2}} turnos.",
         "shortDesc": "<orangeStrong>Aumenta la VEL y el ATQ</orangeStrong> de un aliado."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Toma de registros",
-        "fullDesc": "Aumenta el ATQ de los aliados que activan el efecto de recuperación de pts. de habilidad básica de Lastre en un {{1}}% durante {{2}} turno.",
+        "fullDesc": "Aumenta el ATQ de los aliados que activan el efecto de recuperación de pts. de habilidad básica de Lastre en un {{1, percent}}% durante {{2}} turno.",
         "shortDesc": ""
       }
     },
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Un corazón",
-      "desc": "Cuando un aliado con el efecto de la habilidad definitiva de Hanya derrota a un enemigo, la acción de Hanya se adelanta un {{1}}%. Este efecto solo puede activarse {{2}} vez por turno."
+      "desc": "Cuando un aliado con el efecto de la habilidad definitiva de Hanya derrota a un enemigo, la acción de Hanya se adelanta un {{1, percent}}%. Este efecto solo puede activarse {{2}} vez por turno."
     },
     "2": {
       "name": "Dos vistas",
-      "desc": "Tras usar su habilidad básica, su VEL aumenta en un {{1}}% durante {{2}} turno."
+      "desc": "Tras usar su habilidad básica, su VEL aumenta en un {{1, percent}}% durante {{2}} turno."
     },
     "3": {
       "name": "Tres tentaciones",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Seis reverencias",
-      "desc": "El efecto de aumento de daño del talento aumenta en un {{1}}% adicional."
+      "desc": "El efecto de aumento de daño del talento aumenta en un {{1, percent}}% adicional."
     }
   }
 }

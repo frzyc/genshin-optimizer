@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Supresión de la gravedad",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Welt como Daño Imaginario a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Welt como Daño Imaginario a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Filo del vacío",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Welt como Daño Imaginario a un enemigo e inflige daño 2 veces más. Cada golpe inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Welt como Daño Imaginario a un enemigo al azar. Al acertar a un enemigo, hay una <u>probabilidad base</u> del <orangeStrong>{{2}}%</orangeStrong> de reducir la VEL del objetivo atacado en un {{3}}% durante {{4}} turnos.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Welt como Daño Imaginario a un enemigo e inflige daño 2 veces más. Cada golpe inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Welt como Daño Imaginario a un enemigo al azar. Al acertar a un enemigo, hay una <u>probabilidad base</u> del <orangeStrong>{{2, percent}}%</orangeStrong> de reducir la VEL del objetivo atacado en un {{3, percent}}% durante {{4}} turnos.",
         "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo. Se dispara 3 veces y tiene una probabilidad de <orangeStrong>causar Ralentización</orangeStrong> al objetivo."
       }
     },
     "ult": {
       "0": {
         "name": "Agujero negro artificial",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Welt como Daño Imaginario a todos los enemigos y tiene una <u>probabilidad base</u> del {{3}}% de afectar con Prisión a los enemigos atacados durante 1 turno.\\nLas acciones de los enemigos aprisionados se <u>retrasan</u> un <orangeStrong>{{2}}%</orangeStrong> y su VEL se reduce en un {{4}}%.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Welt como Daño Imaginario a todos los enemigos y tiene una <u>probabilidad base</u> del {{3, percent}}% de afectar con Prisión a los enemigos atacados durante 1 turno.\\nLas acciones de los enemigos aprisionados se <u>retrasan</u> un <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> y su VEL se reduce en un {{4, percent}}%.",
         "shortDesc": "Inflige Daño Imaginario a todos los enemigos y tiene una <orangeStrong>gran probabilidad de aprisionarlos</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Prisión gravitacional",
-        "fullDesc": "Tras usar la técnica, crea una zona especial que dura {{4}} s. La VEL de movimiento de los enemigos que estén en la zona especial se reduce en un {{5}}%. Tras entrar en combate con enemigos en la zona especial, tiene una <u>probabilidad base</u> del {{1}}% de afectarlos con Prisión durante 1 turno.\\nLas acciones de los enemigos aprisionados se <u>retrasan</u> un {{2}}% y su VEL se reduce en un {{3}}%. Solo puede haber 1 zona especial creada por los aliados a la vez.",
+        "fullDesc": "Tras usar la técnica, crea una zona especial que dura {{4}} s. La VEL de movimiento de los enemigos que estén en la zona especial se reduce en un {{5, percent}}%. Tras entrar en combate con enemigos en la zona especial, tiene una <u>probabilidad base</u> del {{1, percent}}% de afectarlos con Prisión durante 1 turno.\\nLas acciones de los enemigos aprisionados se <u>retrasan</u> un {{2, percent}}% y su VEL se reduce en un {{3, percent}}%. Solo puede haber 1 zona especial creada por los aliados a la vez.",
         "shortDesc": "Crea una zona especial. La VEL de movimiento de los enemigos que estén en la zona se reduce. Al entrar en combate contra los enemigos en la zona, tiene una <orangeStrong>gran probabilidad de afectarlos con Prisión</orangeStrong>."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Retribución",
-        "fullDesc": "Al usar la habilidad definitiva, hay una probabilidad base del {{1}}% de infligir un {{2}}% más de daño a los objetivos durante {{3}} turnos.",
+        "fullDesc": "Al usar la habilidad definitiva, hay una probabilidad base del {{1, percent}}% de infligir un {{2, percent}}% más de daño a los objetivos durante {{3}} turnos.",
         "shortDesc": ""
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Castigo",
-        "fullDesc": "Inflige un {{1}}% más de daño a los enemigos afectados por Ruptura.",
+        "fullDesc": "Inflige un {{1, percent}}% más de daño a los enemigos afectados por Ruptura.",
         "shortDesc": ""
       }
     }
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Legado de honor",
-      "desc": "Tras usar su habilidad definitiva, Welt obtiene una potenciación: las {{3}} siguientes veces que ataque usando el ATQ básico o la habilidad básica, inflige daño adicional a los objetivos 1 vez. El daño adicional que inflige el ATQ básico es igual al {{1}}% del multiplicador del daño de ATQ básico, y el daño adicional que inflige la habilidad básica es igual al {{2}}% del multiplicador del daño de habilidad básica."
+      "desc": "Tras usar su habilidad definitiva, Welt obtiene una potenciación: las {{3}} siguientes veces que ataque usando el ATQ básico o la habilidad básica, inflige daño adicional a los objetivos 1 vez. El daño adicional que inflige el ATQ básico es igual al {{1, percent}}% del multiplicador del daño de ATQ básico, y el daño adicional que inflige la habilidad básica es igual al {{2, percent}}% del multiplicador del daño de habilidad básica."
     },
     "2": {
       "name": "Fusión de estrellas",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Apelación por la justicia",
-      "desc": "Al usar la habilidad básica, la probabilidad base de reducir la VEL del objetivo aumenta en un {{1}}%."
+      "desc": "Al usar la habilidad básica, la probabilidad base de reducir la VEL del objetivo aumenta en un {{1, percent}}%."
     },
     "5": {
       "name": "El poder de la bondad",

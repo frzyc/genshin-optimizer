@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "What Are You Looking At?",
-        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Herta's ATK to a single enemy.",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Herta's ATK to a single enemy.",
         "shortDesc": "Deals minor Ice DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "One-Time Offer",
-        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Herta's ATK to all enemies. If the enemy's HP percentage is {{2}}% or higher, DMG dealt to this target increases by {{3}}%.",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Herta's ATK to all enemies. If the enemy's HP percentage is {{2, percent}}% or higher, DMG dealt to this target increases by {{3, percent}}%.",
         "shortDesc": "Deals minor Ice DMG to all enemies. Targets with higher HP will receive increased DMG."
       }
     },
     "ult": {
       "0": {
         "name": "It's Magic, I Added Some Magic",
-        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Herta's ATK to all enemies.",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Herta's ATK to all enemies.",
         "shortDesc": "Deals Ice DMG to all enemies."
       }
     },
     "technique": {
       "0": {
         "name": "It Can Still Be Optimized",
-        "fullDesc": "After using her Technique, Herta's ATK increases by {{1}}% for {{2}} turn(s) at the beginning of the next battle.",
+        "fullDesc": "After using her Technique, Herta's ATK increases by {{1, percent}}% for {{2}} turn(s) at the beginning of the next battle.",
         "shortDesc": ""
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Efficiency",
-        "fullDesc": "When Skill is used, the DMG Boost effect on target enemies increases by an extra {{1}}%.",
+        "fullDesc": "When Skill is used, the DMG Boost effect on target enemies increases by an extra {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Puppet",
-        "fullDesc": "The chance to resist Crowd Control Debuffs increases by {{1}}%.",
+        "fullDesc": "The chance to resist Crowd Control Debuffs increases by {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Icing",
-        "fullDesc": "When Ultimate is used, deals {{1}}% more DMG to Frozen enemies.",
+        "fullDesc": "When Ultimate is used, deals {{1, percent}}% more DMG to Frozen enemies.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Kick You When You're Down",
-      "desc": "If the enemy's HP percentage is at {{1}}% or less, Herta's Basic ATK deals Additional Ice DMG equal to {{2}}% of Herta's ATK."
+      "desc": "If the enemy's HP percentage is at {{1, percent}}% or less, Herta's Basic ATK deals Additional Ice DMG equal to {{2, percent}}% of Herta's ATK."
     },
     "2": {
       "name": "Keep the Ball Rolling",
-      "desc": "Every time Talent is triggered, this character's CRIT Rate increases by {{1}}%. This effect can stack up to {{2}} time(s)."
+      "desc": "Every time Talent is triggered, this character's CRIT Rate increases by {{1, percent}}%. This effect can stack up to {{2}} time(s)."
     },
     "3": {
       "name": "That's the Kind of Girl I Am",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Hit Where It Hurts",
-      "desc": "When Talent is triggered, DMG increases by {{1}}%."
+      "desc": "When Talent is triggered, DMG increases by {{1, percent}}%."
     },
     "5": {
       "name": "Cuss Big or Cuss Nothing",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "No One Can Betray Me",
-      "desc": "After using Ultimate, this character's ATK increases by {{1}}% for {{2}} turn(s)."
+      "desc": "After using Ultimate, this character's ATK increases by {{1, percent}}% for {{2}} turn(s)."
     }
   }
 }

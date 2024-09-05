@@ -1,0 +1,24 @@
+{
+  "name": "Anneau de Yaxche",
+  "description": {
+    "0": "Cet objet de jade a été créé par un héros d'autrefois. La légende raconte qu'il aurait un jour abattu du ciel le dragon géant qui résidait dans le volcan."
+  },
+  "passiveName": "Échos des terres fertiles",
+  "passiveDescription": {
+    "0": {
+      "0": "Utiliser une compétence élémentaire accorde l'effet Couronne de Jade : chaque tranche de 1 000 PV max augmente les DGT infligés par les attaques normales de <cryo>0,6 %</cryo> pendant 10 s. Les DGT des attaques normales peuvent être augmentés d'un maximum de <cryo>16 %</cryo> de cette manière."
+    },
+    "1": {
+      "0": "Utiliser une compétence élémentaire accorde l'effet Couronne de Jade : chaque tranche de 1 000 PV max augmente les DGT infligés par les attaques normales de <cryo>0,7 %</cryo> pendant 10 s. Les DGT des attaques normales peuvent être augmentés d'un maximum de <cryo>20 %</cryo> de cette manière."
+    },
+    "2": {
+      "0": "Utiliser une compétence élémentaire accorde l'effet Couronne de Jade : chaque tranche de 1 000 PV max augmente les DGT infligés par les attaques normales de <cryo>0,8 %</cryo> pendant 10 s. Les DGT des attaques normales peuvent être augmentés d'un maximum de <cryo>24 %</cryo> de cette manière."
+    },
+    "3": {
+      "0": "Utiliser une compétence élémentaire accorde l'effet Couronne de Jade : chaque tranche de 1 000 PV max augmente les DGT infligés par les attaques normales de <cryo>0,9 %</cryo> pendant 10 s. Les DGT des attaques normales peuvent être augmentés d'un maximum de <cryo>28 %</cryo> de cette manière."
+    },
+    "4": {
+      "0": "Utiliser une compétence élémentaire accorde l'effet Couronne de Jade : chaque tranche de 1 000 PV max augmente les DGT infligés par les attaques normales de <cryo>1 %</cryo> pendant 10 s. Les DGT des attaques normales peuvent être augmentés d'un maximum de <cryo>32 %</cryo> de cette manière."
+    }
+  }
+}

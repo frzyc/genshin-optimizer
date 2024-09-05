@@ -2,6 +2,6 @@
   "name": "Multiplication",
   "passive": {
     "name": "Denizens of Abundance",
-    "description": "หลังจากผู้สวมใส่โจมตีปกติแล้ว จะเร่งแอ็กชันครั้งต่อไปขึ้น <orangeStrong>{{1}}%</orangeStrong>"
+    "description": "หลังจากผู้สวมใส่โจมตีปกติแล้ว จะเร่งแอ็กชันครั้งต่อไปขึ้น <orangeStrong>{{1, percent}}%</orangeStrong>"
   }
 }

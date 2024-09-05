@@ -62,7 +62,7 @@ const assetData = {
   // artifacts: {},
   lightCones: {} as Record<LightConeKey, LightConeIcon>,
   chars: {} as Record<CharacterDataKey, CharacterIcon>,
-  relic: {} as RelicIcons,
+  relics: {} as RelicIcons,
 }
 export type AssetData = typeof assetData
 
@@ -72,7 +72,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
   console.log('Executor ran for GenAssetsData', options)
 
   // Get icons for each relic piece
-  assetData.relic = Object.fromEntries(
+  assetData.relics = Object.fromEntries(
     Object.entries(relicDataInfo).map(([relicSetId, reflicDatas]) => [
       relicSetIdMap[relicSetId],
       Object.fromEntries(

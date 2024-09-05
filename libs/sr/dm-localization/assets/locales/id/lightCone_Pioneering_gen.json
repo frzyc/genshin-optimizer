@@ -2,6 +2,6 @@
   "name": "Pioneering",
   "passive": {
     "name": "IPC",
-    "description": "Memulihkan HP sebesar <orangeStrong>{{1}}%</orangeStrong> Max HP pengguna saat mengakibatkan Weakness Break kepada musuh."
+    "description": "Memulihkan HP sebesar <orangeStrong>{{1, percent}}%</orangeStrong> Max HP pengguna saat mengakibatkan Weakness Break kepada musuh."
   }
 }

@@ -1,6 +1,6 @@
 {
   "rarity": 4,
-  "damageType": "Quantum",
+  "damageType": "quantum",
   "path": "Destruction",
   "skillTree": {
     "basic": {
@@ -10,6 +10,7 @@
       "skillParamList": [
         [
           [
+            -1,
             0.5,
             0.6,
             0.7,
@@ -30,6 +31,7 @@
       "skillParamList": [
         [
           [
+            -1,
             0.7,
             0.77,
             0.84,
@@ -47,6 +49,7 @@
             1.75
           ],
           [
+            -1,
             0.35,
             0.385,
             0.42,
@@ -73,6 +76,7 @@
       "skillParamList": [
         [
           [
+            -1,
             1.5,
             1.6,
             1.7,
@@ -90,6 +94,7 @@
             3
           ],
           [
+            -1,
             0.09,
             0.096,
             0.102,
@@ -107,6 +112,7 @@
             0.18
           ],
           [
+            -1,
             0.36,
             0.384,
             0.408,
@@ -133,6 +139,7 @@
       "skillParamList": [
         [
           [
+            -1,
             8,
             8,
             8,
@@ -150,6 +157,7 @@
             8
           ],
           [
+            -1,
             0.45,
             0.495,
             0.54,
@@ -167,6 +175,7 @@
             1.125
           ],
           [
+            -1,
             1,
             1,
             1,
@@ -193,6 +202,7 @@
       "skillParamList": [
         [
           [
+            -1,
             0.8
           ]
         ]
@@ -205,6 +215,7 @@
       "skillParamList": [
         [
           [
+            -1,
             1,
             2.4
           ]
@@ -218,6 +229,7 @@
       "skillParamList": [
         [
           [
+            -1,
             0.5,
             0.1
           ]
@@ -231,6 +243,7 @@
       "skillParamList": [
         [
           [
+            -1,
             6
           ]
         ]
@@ -249,7 +262,9 @@
       "pointType": 1,
       "skillParamList": [
         [
-          []
+          [
+            -1
+          ]
         ]
       ]
     },
@@ -266,7 +281,9 @@
       "pointType": 1,
       "skillParamList": [
         [
-          []
+          [
+            -1
+          ]
         ]
       ]
     },
@@ -283,7 +300,9 @@
       "pointType": 1,
       "skillParamList": [
         [
-          []
+          [
+            -1
+          ]
         ]
       ]
     },
@@ -300,7 +319,9 @@
       "pointType": 1,
       "skillParamList": [
         [
-          []
+          [
+            -1
+          ]
         ]
       ]
     },
@@ -317,7 +338,9 @@
       "pointType": 1,
       "skillParamList": [
         [
-          []
+          [
+            -1
+          ]
         ]
       ]
     },
@@ -334,7 +357,9 @@
       "pointType": 1,
       "skillParamList": [
         [
-          []
+          [
+            -1
+          ]
         ]
       ]
     },
@@ -351,7 +376,9 @@
       "pointType": 1,
       "skillParamList": [
         [
-          []
+          [
+            -1
+          ]
         ]
       ]
     },
@@ -368,7 +395,9 @@
       "pointType": 1,
       "skillParamList": [
         [
-          []
+          [
+            -1
+          ]
         ]
       ]
     },
@@ -385,7 +414,9 @@
       "pointType": 1,
       "skillParamList": [
         [
-          []
+          [
+            -1
+          ]
         ]
       ]
     },
@@ -402,7 +433,9 @@
       "pointType": 1,
       "skillParamList": [
         [
-          []
+          [
+            -1
+          ]
         ]
       ]
     }

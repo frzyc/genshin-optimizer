@@ -1,0 +1,29 @@
+{
+  "setName": "Scroll of the Hero of Cinder City",
+  "setEffects": {
+    "2": "When a nearby party member triggers a Nightsoul Burst, the equipping character regenerates 6 Elemental Energy.",
+    "4": "After the equipping character triggers a reaction related to their Elemental Type, all nearby party members gain a 12% Elemental DMG Bonus for the Elemental Types involved in the elemental reaction for 15s. If the equipping character is in the Nightsoul's Blessing state when triggering this effect, all nearby party members gain an additional 28% Elemental DMG Bonus for the Elemental Types involved in the elemental reaction for 20s. The equipping character can trigger this effect while off-field, and the DMG bonus from Artifact Sets with the same name do not stack."
+  },
+  "pieces": {
+    "flower": {
+      "name": "Beast Tamer's Talisman",
+      "desc": "A flower carved from flint and Drakite, signifying that its bearer is qualified to become a beast tamer."
+    },
+    "plume": {
+      "name": "Mountain Ranger's Marker",
+      "desc": "A signal used by mountain rangers to mark out paths. Their bird-feather shapes make them very eye-catching indeed."
+    },
+    "sands": {
+      "name": "Mystic's Gold Dial",
+      "desc": "A golden disc shaped like a sun. The draconic patterns on it seem to symbolize the cycle of life and death."
+    },
+    "goblet": {
+      "name": "Wandering Scholar's Claw Cup",
+      "desc": "A strange goblet strikingly similar in shape to a dragon's claw. Its maker must have made it with something special in mind."
+    },
+    "circlet": {
+      "name": "Demon-Warrior's Feather Mask",
+      "desc": "A feather mask with falcon-esque plumage. Many legends surround this object."
+    }
+  }
+}

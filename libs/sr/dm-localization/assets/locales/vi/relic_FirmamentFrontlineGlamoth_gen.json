@@ -1,6 +1,6 @@
 {
   "setName": "Glamoth, Chiến Tuyến Không Trung",
   "setEffects": {
-    "2": "Tăng {{1}}% Tấn Công của người trang bị. Khi tốc độ của người trang bị từ {{2}}/{{3}} trở lên, sát thương do người trang bị gây ra tăng {{4}}%/{{5}}%."
+    "2": "Tăng {{1, percent}}% Tấn Công của người trang bị. Khi tốc độ của người trang bị từ {{2}}/{{3}} trở lên, sát thương do người trang bị gây ra tăng {{4, percent}}%/{{5, percent}}%."
   }
 }

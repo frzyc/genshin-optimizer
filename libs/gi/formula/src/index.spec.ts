@@ -2,9 +2,18 @@ import { compileTagMapValues } from '@genshin-optimizer/pando/engine'
 import { Calculator } from './calculator'
 import { entries, keys, values } from './data'
 import type { Member, Sheet, TagMapNodeEntries } from './data/util'
-import { self, selfTag, sheets, tagStr, teamBuff } from './data/util'
+import {
+  enemyTag,
+  own,
+  ownBuff,
+  ownTag,
+  sheets,
+  tagStr,
+  teamBuff,
+} from './data/util'
 import { teamData, withMember } from './util'
 
+import { allCharacterKeys, allWeaponKeys } from '@genshin-optimizer/gi/consts'
 import { fail } from 'assert'
 
 describe('calculator', () => {
@@ -36,21 +45,21 @@ describe('calculator', () => {
     })
     describe('stacking', () => {
       const members: Member[] = ['0', '1', '2', '3']
-      const stack = teamBuff.final.atk.addOnce('static', self.premod.hp)
+      const stack = teamBuff.final.atk.addOnce('static', own.premod.hp)
       test('multiple non-zero entries', () => {
         const data: TagMapNodeEntries = [
             ...teamData(members),
             // Multiple members with non-zero values
-            ...withMember('0', self.premod.hp.add(5)),
-            ...withMember('1', self.premod.hp.add(3)),
-            ...withMember('2', self.premod.hp.add(4)),
+            ...withMember('0', ownBuff.premod.hp.add(5)),
+            ...withMember('1', ownBuff.premod.hp.add(3)),
+            ...withMember('2', ownBuff.premod.hp.add(4)),
             ...stack,
           ],
           calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
         // Every member got buffed by exactly once with the last member value
         for (const src of members)
-          expect(calc.compute(self.final.atk.withTag({ src })).val).toEqual(4)
+          expect(calc.compute(own.final.atk.withTag({ src })).val).toEqual(4)
       })
       test('no non-zero entries', () => {
         const data: TagMapNodeEntries = [
@@ -60,20 +69,53 @@ describe('calculator', () => {
           ],
           calc = new Calculator(keys, values, compileTagMapValues(keys, data))
         for (const src of members)
-          expect(calc.compute(self.final.atk.withTag({ src })).val).toEqual(0)
+          expect(calc.compute(own.final.atk.withTag({ src })).val).toEqual(0)
       })
     })
   })
 })
 describe('sheet', () => {
   test('buff entries', () => {
+    const sheets = new Set([
+      ...allCharacterKeys,
+      ...allWeaponKeys,
+      'art',
+      'reso',
+    ])
     for (const { tag } of entries) {
       if (tag.et && tag.qt && tag.q) {
         switch (tag.et) {
-          case 'selfBuff':
+          case 'notOwnBuff':
           case 'teamBuff': {
-            const { sheet } = (selfTag as any)[tag.qt][tag.q]
-            if (sheet !== 'agg') fail(`Ineffective entry ${tagStr(tag)}`)
+            const { sheet } = (ownTag as any)[tag.qt][tag.q]
+            if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
+            fail(`Ill-form entry (${tagStr(tag)}) for sheet ${sheet}`)
+            break
+          }
+          case 'enemyDeBuff': {
+            const { sheet } = (enemyTag as any)[tag.qt][tag.q]
+            if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
+            if (sheet === tag.sheet) continue
+            fail(`Ill-form entry (${tagStr(tag)}) for sheet ${sheet}`)
+            break
+          }
+          case 'own': {
+            const desc = (ownTag as any)[tag.qt]?.[tag.q]
+            if (!desc) continue
+            const { sheet } = desc
+            if (!sheet) continue
+            if (sheet === 'iso' || sheet === 'agg' || sheet === tag.sheet)
+              continue
+            fail(`Illform entry (${tagStr(tag)}) for sheet ${sheet}`)
+            break
+          }
+          case 'enemy': {
+            const desc = (enemyTag as any)[tag.qt]?.[tag.q]
+            if (!desc) continue
+            const { sheet } = desc
+            if (!sheet) continue
+            if (sheet === 'agg' || sheet === tag.sheet) continue
+            fail(`Illform entry (${tagStr(tag)}) for sheet ${sheet}`)
             break
           }
         }

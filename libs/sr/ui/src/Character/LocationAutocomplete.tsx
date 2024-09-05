@@ -1,60 +1,63 @@
 import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
 import { GeneralAutocomplete } from '@genshin-optimizer/common/ui'
-import type { CharacterLocationKey } from '@genshin-optimizer/sr/consts'
-import { allCharacterLocationKeys } from '@genshin-optimizer/sr/consts'
+import type { CharacterKey } from '@genshin-optimizer/sr/consts'
+import { allCharacterKeys } from '@genshin-optimizer/sr/consts'
+import type { AutocompleteProps } from '@mui/material'
 import { Skeleton } from '@mui/material'
 import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDatabaseContext } from '../Context'
 
 type LocationAutocompleteProps = {
-  locKey: CharacterLocationKey | ''
-  setLocKey: (v: CharacterLocationKey | '') => void
-  props?: Omit<
-    GeneralAutocompleteOption<CharacterLocationKey | ''>,
-    'options' | 'valueKey' | 'onChange' | 'toImg'
-  >
+  locKey: CharacterKey | ''
+  setLocKey: (v: CharacterKey | '') => void
 }
+
 export function LocationAutocomplete({
   locKey,
   setLocKey,
   ...props
-}: LocationAutocompleteProps) {
-  const { t } = useTranslation(['character', 'charNames_gen'])
+}: LocationAutocompleteProps &
+  Omit<
+    AutocompleteProps<
+      GeneralAutocompleteOption<CharacterKey | ''>,
+      false,
+      boolean,
+      false
+    >,
+    'options' | 'valueKey' | 'onChange' | 'toImg' | 'renderInput'
+  >) {
+  const { t } = useTranslation(['common', 'charNames_gen'])
   const { database } = useDatabaseContext()
 
   const charInDb = useCallback(
-    (locationKey: CharacterLocationKey) =>
-      !!database.chars.get(database.chars.LocationToCharacterKey(locationKey)),
+    (characterKey: CharacterKey) => !!database.chars.get(characterKey),
     [database.chars]
   )
 
   const charIsFavorite = useCallback(
-    (locationKey: CharacterLocationKey) =>
-      database.charMeta.get(
-        database.charMeta.LocationToCharacterKey(locationKey)
-      ).favorite,
+    (characterKey: CharacterKey) =>
+      database.charMeta.get(characterKey).favorite,
     [database.charMeta]
   )
 
-  const options: GeneralAutocompleteOption<CharacterLocationKey | ''>[] =
-    useMemo(
-      () => [
-        {
-          key: '',
-          label: t('character:autocomplete.none'),
-        },
-        ...allCharacterLocationKeys.map(
-          (key): GeneralAutocompleteOption<CharacterLocationKey | ''> => ({
-            key,
-            label: t(`charNames_gen:${key}`),
-            favorite: charIsFavorite(key),
-            color: charInDb(key) ? undefined : 'secondary',
-          })
-        ),
-      ],
-      [charInDb, charIsFavorite, t]
-    )
+  const options: GeneralAutocompleteOption<CharacterKey | ''>[] = useMemo(
+    () => [
+      {
+        key: '',
+        label: t('inventory'),
+      },
+      ...allCharacterKeys.map(
+        (key): GeneralAutocompleteOption<CharacterKey | ''> => ({
+          key,
+          label: t(`charNames_gen:${key}`),
+          favorite: charIsFavorite(key),
+          color: charInDb(key) ? undefined : 'secondary',
+        })
+      ),
+    ],
+    [charInDb, charIsFavorite, t]
+  )
 
   return (
     <Suspense fallback={<Skeleton variant="text" width={100} />}>

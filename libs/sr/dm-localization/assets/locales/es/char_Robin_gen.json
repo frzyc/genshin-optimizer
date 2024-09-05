@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Ruido blanco de aleteo",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Robin como Daño Físico a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Robin como Daño Físico a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Aria de la pluma",
-        "fullDesc": "Aumenta en un <orangeStrong>{{1}}%</orangeStrong> el daño que infligen todos los aliados durante {{2}} turnos. Cada vez que comience el turno de Robin, la duración se reduce en 1 turno.",
+        "fullDesc": "Aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong> el daño que infligen todos los aliados durante {{2}} turnos. Cada vez que comience el turno de Robin, la duración se reduce en 1 turno.",
         "shortDesc": "<orangeStrong>Aumenta el daño</orangeStrong> que infligen todos los aliados."
       }
     },
     "ult": {
       "0": {
         "name": "Canon de mil voces, fuga estelar",
-        "fullDesc": "Robin entra en el estado de Concierto y hace que todos los aliados excepto ella actúen inmediatamente.\\nMientras está en el estado de Concierto, el ATQ de todos los aliados aumenta en una cantidad equivalente al <orangeStrong>{{1}}%</orangeStrong> + <orangeStrong>{{3}}</orangeStrong> del ATQ de Robin. Después de cada ataque de los aliados, Robin inflige 1 vez un <orangeStrong>{{4}}%</orangeStrong> de su ATQ como <u>Daño Físico adicional</u>. La Prob. CRIT de este daño se fija en el {{5}}% y el Daño CRIT se fija en el {{6}}%.\\nMientras está en el estado de Concierto, Robin obtiene inmunidad a <u>estados negativos de Control</u> y no puede realizar ninguna acción ni usar su turno hasta que termine el estado de Concierto.\\nEn el orden de acción aparece una cuenta regresiva de Concierto. Cuando comienza el turno de la cuenta regresiva, Robin sale del estado de Concierto y actúa inmediatamente. La cuenta regresiva tiene una VEL fija de {{2}}.",
+        "fullDesc": "Robin entra en el estado de Concierto y hace que todos los aliados excepto ella actúen inmediatamente.\\nMientras está en el estado de Concierto, el ATQ de todos los aliados aumenta en una cantidad equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> + <orangeStrong>{{3}}</orangeStrong> del ATQ de Robin. Después de cada ataque de los aliados, Robin inflige 1 vez un <orangeStrong>{{4, percent}}%</orangeStrong> de su ATQ como <u>Daño Físico adicional</u>. La Prob. CRIT de este daño se fija en el {{5, percent}}% y el Daño CRIT se fija en el {{6, percent}}%.\\nMientras está en el estado de Concierto, Robin obtiene inmunidad a <u>estados negativos de Control</u> y no puede realizar ninguna acción ni usar su turno hasta que termine el estado de Concierto.\\nEn el orden de acción aparece una cuenta regresiva de Concierto. Cuando comienza el turno de la cuenta regresiva, Robin sale del estado de Concierto y actúa inmediatamente. La cuenta regresiva tiene una VEL fija de {{2}}.",
         "shortDesc": "Entra en el estado de Concierto, <orangeStrong>aumenta el ATQ</orangeStrong> de todos los aliados y hace que todos excepto ella actúen inmediatamente. Después de que un aliado ataque, Robin inflige <orangeStrong><u>Daño Físico adicional</u></orangeStrong>. En el estado de Concierto, Robin es inmune a <u>estados negativos de Control</u>. Antes de que Concierto termine, Robin no puede actuar ni entrar en su turno hasta que termine la cuenta regresiva."
       }
     },
@@ -39,14 +39,14 @@
     "bonusAbility1": {
       "0": {
         "name": "Coloratura de cadenza",
-        "fullDesc": "Al comenzar la batalla, su acción se adelanta un {{1}}%.",
+        "fullDesc": "Al comenzar la batalla, su acción se adelanta un {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Adorno improvisado",
-        "fullDesc": "Cuando está en el estado de Concierto, el Daño CRIT que infligen todos los aliados con sus ataques adicionales aumenta en un {{1}}%.",
+        "fullDesc": "Cuando está en el estado de Concierto, el Daño CRIT que infligen todos los aliados con sus ataques adicionales aumenta en un {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "País de sonrisas",
-      "desc": "Cuando está en el estado de Concierto, la PEN de la RES a todos los tipos de todos los aliados aumenta en un {{1}}%."
+      "desc": "Cuando está en el estado de Concierto, la PEN de la RES a todos los tipos de todos los aliados aumenta en un {{1, percent}}%."
     },
     "2": {
       "name": "Té de la tarde para dos",
-      "desc": "Cuando está en el estado de Concierto, la VEL de todos los aliados aumenta en un {{1}}%. El efecto de recuperación de energía del talento aumenta adicionalmente en {{2}} pt."
+      "desc": "Cuando está en el estado de Concierto, la VEL de todos los aliados aumenta en un {{1, percent}}%. El efecto de recuperación de energía del talento aumenta adicionalmente en {{2}} pt."
     },
     "3": {
       "name": "Afinación inversa",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Llave de lluvia",
-      "desc": "Al usar su habilidad definitiva, elimina los estados negativos de Control de todos los aliados. Cuando Robin está en el estado de Concierto, la RES a efecto de todos los aliados aumenta en un {{1}}%."
+      "desc": "Al usar su habilidad definitiva, elimina los estados negativos de Control de todos los aliados. Cuando Robin está en el estado de Concierto, la RES a efecto de todos los aliados aumenta en un {{1, percent}}%."
     },
     "5": {
       "name": "Lamento de la estrella solitaria",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Noche sin luna",
-      "desc": "Cuando está en el estado de Concierto, el Daño CRIT del Daño Físico adicional infligido por la habilidad definitiva aumenta en un {{2}}%. El efecto de Noche sin luna se puede activar hasta {{1}} veces. Cada vez que usa la habilidad definitiva, se reinicia el número de veces que se puede activar."
+      "desc": "Cuando está en el estado de Concierto, el Daño CRIT del Daño Físico adicional infligido por la habilidad definitiva aumenta en un {{2, percent}}%. El efecto de Noche sin luna se puede activar hasta {{1}} veces. Cada vez que usa la habilidad definitiva, se reinicia el número de veces que se puede activar."
     }
   }
 }

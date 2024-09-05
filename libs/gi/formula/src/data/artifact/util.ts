@@ -1,26 +1,31 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries, TagMapNodeEntry } from '../util'
-import { self, tag } from '../util'
+import { own, tag } from '../util'
 
 export function registerArt(
   sheet: ArtifactSetKey,
   ...data: (TagMapNodeEntry | TagMapNodeEntries)[]
 ): TagMapNodeEntries {
   /* Unlike character and weapon, artifact buff is all-or-nothing, so we can register every
-   * buff as `key:art` and tag the formula as `key:key`. This means that `key:art`, which is
-   * read on each `et:agg`, does not need to reread `key:key`. This greatly reduce `Read`
-   * traffic due to the sheer numbers of `et:agg` calculations and `key:key` it would require
-   * for each `key:art` read.
+   * buff as `sheet:art` and tag the formula as `sheet:<key>`. This means that `sheet:art`,
+   * which is read on each `et:agg`, does not need to reread `sheet:<key>`. This greatly
+   * reduce `Read` traffic due to the sheer numbers of `et:agg` calculations and `sheet:<key>`
+   * it would require for each `sheet:art` read.
    */
-
   function internal({ tag: oldTag, value }: TagMapNodeEntry): TagMapNodeEntry {
-    if (oldTag.sheet === sheet)
-      // Special entries (usually stack count) that override `stack`
-      return { tag: oldTag, value }
+    // Sheet-specific `enemy` stats adds to `enemyDeBuff` instead
+    if (oldTag.et === 'enemy') oldTag = { ...oldTag, et: 'enemyDeBuff' }
+    // Special entries (usually stack count) that override `stack`
+    if (oldTag.sheet === sheet) return { tag: oldTag, value }
 
-    // Add `key:art` to the tag and add `tag(key:<<key>>, value)` to set tags for calculation
-    if (value.op === 'reread' || value.op === 'tag' || value.op === 'read')
+    // Add `sheet:art` to the tag and add `tag(sheet:<key>, value)` to set tags for calculation
+    if (
+      value.op === 'reread' ||
+      // Make sure that adding `sheet:<key>` and removing `et:*Buff` are separate steps
+      ((value.op === 'tag' || value.op === 'read') &&
+        !oldTag.et?.endsWith('Buff'))
+    )
       // Reuses `value` since it is already changing tags
       value = { ...value, tag: { ...value.tag, sheet } }
     else value = tag(value, { sheet })
@@ -32,5 +37,5 @@ export function registerArt(
 }
 
 export function artCount(key: ArtifactSetKey): NumNode {
-  return self.common.count.sheet(key)
+  return own.common.count.sheet(key)
 }

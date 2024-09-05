@@ -2,6 +2,6 @@
   "name": "Shattered Home",
   "passive": {
     "name": "Eradication",
-    "description": "ทำให้ผู้สวมใส่สร้าง DMG เพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong> แก่ศัตรูเป้าหมายที่มีเปอร์เซ็นต์ HP ปัจจุบันมากกว่า {{1}}%"
+    "description": "ทำให้ผู้สวมใส่สร้าง DMG เพิ่มขึ้น <orangeStrong>{{2, percent}}%</orangeStrong> แก่ศัตรูเป้าหมายที่มีเปอร์เซ็นต์ HP ปัจจุบันมากกว่า {{1, percent}}%"
   }
 }

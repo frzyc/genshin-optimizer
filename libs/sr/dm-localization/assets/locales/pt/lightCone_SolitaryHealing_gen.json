@@ -2,6 +2,6 @@
   "name": "Cura Solitária",
   "passive": {
     "name": "Elixir do Caos",
-    "description": "Aumenta em <orangeStrong>{{1}}%</orangeStrong> o Efeito de Quebra do usuário. Quando o usuário usa sua Perícia Suprema, aumenta o Dano Contínuo causado pelo usuário em <orangeStrong>{{2}}%</orangeStrong> durando por {{3}} rodada(s). Quando o inimigo-alvo sofrendo com o Dano Contínuo imposto pelo usuário é derrotado, regenera <orangeStrong>{{4}}</orangeStrong> de Energia para o usuário."
+    "description": "Aumenta em <orangeStrong>{{1, percent}}%</orangeStrong> o Efeito de Quebra do usuário. Quando o usuário usa sua Perícia Suprema, aumenta o Dano Contínuo causado pelo usuário em <orangeStrong>{{2, percent}}%</orangeStrong> durando por {{3}} rodada(s). Quando o inimigo-alvo sofrendo com o Dano Contínuo imposto pelo usuário é derrotado, regenera <orangeStrong>{{4, fixed(fixed: 1)}}</orangeStrong> de Energia para o usuário."
   }
 }

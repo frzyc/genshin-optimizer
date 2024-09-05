@@ -27,7 +27,7 @@ describe('optimization', () => {
 
   test('flatten', () => {
     expect(flatten(x)).toEqual([
-      sum(3, 4, 5, read0), // Does NOT combine multiplpe consts
+      sum(3, 4, 5, read0), // Does NOT combine multiple consts
       sum(3, 4, 5, read1), // Flatten only
       cmpGE(2, 1, read0, read1),
       cmpGE(read1, 1, 3, 3),
@@ -35,7 +35,7 @@ describe('optimization', () => {
   })
   test('combineConst', () => {
     expect(combineConst(x)).toEqual([
-      sum(12, read0), // Does NOT combine multiplpe consts
+      sum(12, read0), // Does NOT combine multiple consts
       sum(3, sum(4, sum(5)), read1), // Ignore nested operations
       cmpGE(2, 1, read0, read1),
       cmpGE(read1, 1, 3, 3),

@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "云骑剑经 • 素霓",
-        "fullDesc": "对指定敌方单体造成等同于素裳<orangeStrong>{{1}}%</orangeStrong>攻击力的物理属性伤害。",
+        "fullDesc": "对指定敌方单体造成等同于素裳<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害。",
         "shortDesc": "对敌方单体造成少量物理属性伤害。"
       }
     },
     "skill": {
       "0": {
         "name": "云骑剑经 • 山倾",
-        "fullDesc": "对指定敌方单体造成等同于素裳<orangeStrong>{{1}}%</orangeStrong>攻击力的物理属性伤害。同时最后一击后有{{3}}%概率发动【剑势】，对目标造成等同于素裳<orangeStrong>{{2}}%</orangeStrong>攻击力的物理属性<u>附加伤害</u>。\\n若该目标处于<u>弱点击破状态</u>，则【剑势】必定发动。",
+        "fullDesc": "对指定敌方单体造成等同于素裳<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害。同时最后一击后有{{3, percent}}%概率发动【剑势】，对目标造成等同于素裳<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的物理属性<u>附加伤害</u>。\\n若该目标处于<u>弱点击破状态</u>，则【剑势】必定发动。",
         "shortDesc": "对敌方单体造成物理属性伤害，有<orangeStrong>小概率发动【剑势】</orangeStrong>。若目标处于<u>弱点击破状态</u>则<orangeStrong>【剑势】必定发动</orangeStrong>。"
       }
     },
     "ult": {
       "0": {
         "name": "太虚形蕴 • 烛夜",
-        "fullDesc": "对指定敌方单体造成等同于素裳<orangeStrong>{{1}}%</orangeStrong>攻击力的物理属性伤害，并使素裳立即行动。同时使其攻击力提高<orangeStrong>{{4}}%</orangeStrong>，且施放战技时额外增加2次【剑势】的发动判定，持续{{2}}回合。\\n通过额外判定发动的【剑势】伤害为原伤害的{{3}}%。",
+        "fullDesc": "对指定敌方单体造成等同于素裳<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害，并使素裳立即行动。同时使其攻击力提高<orangeStrong>{{4, percent}}%</orangeStrong>，且施放战技时额外增加2次【剑势】的发动判定，持续{{2}}回合。\\n通过额外判定发动的【剑势】伤害为原伤害的{{3, percent}}%。",
         "shortDesc": "对敌方单体造成大量物理属性伤害，强化【剑势】效果并<orangeStrong>立即行动</orangeStrong>。"
       }
     },
     "technique": {
       "0": {
         "name": "云骑剑经 • 叩阵",
-        "fullDesc": "立即攻击敌人，进入战斗后对敌方全体造成等同于素裳{{1}}%攻击力的物理属性伤害。",
+        "fullDesc": "立即攻击敌人，进入战斗后对敌方全体造成等同于素裳{{1, percent}}%攻击力的物理属性伤害。",
         "shortDesc": "攻击敌人，进战后对敌方全体造成少量物理属性伤害。"
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "赤子",
-        "fullDesc": "若当前生命值百分比小于等于{{1}}%，则被敌方目标攻击的概率降低。",
+        "fullDesc": "若当前生命值百分比小于等于{{1, percent}}%，则被敌方目标攻击的概率降低。",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "逐寇",
-        "fullDesc": "每发动1次【剑势】，【剑势】造成的伤害提高{{1}}%，该效果最多叠加{{2}}层。",
+        "fullDesc": "每发动1次【剑势】，【剑势】造成的伤害提高{{1, percent}}%，该效果最多叠加{{2}}层。",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "破敌",
-        "fullDesc": "施放普攻或战技后，若场上有敌方目标处于弱点击破状态，则素裳的行动提前{{1}}%。",
+        "fullDesc": "施放普攻或战技后，若场上有敌方目标处于弱点击破状态，则素裳的行动提前{{1, percent}}%。",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "其身百炼",
-      "desc": "触发【剑势】后，素裳受到的伤害降低{{1}}%，持续1回合。"
+      "desc": "触发【剑势】后，素裳受到的伤害降低{{1, percent}}%，持续1回合。"
     },
     "3": {
       "name": "传古剑流",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "其心百辟",
-      "desc": "素裳的击破特攻提高{{1}}%。"
+      "desc": "素裳的击破特攻提高{{1, percent}}%。"
     },
     "5": {
       "name": "太虚神意",

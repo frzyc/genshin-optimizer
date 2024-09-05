@@ -2,6 +2,6 @@
   "name": "Datenbank",
   "passive": {
     "name": "Gelehrt",
-    "description": "Erhöht den durch den Ultimate des Trägers verursachten SCH um <orangeStrong>{{1}}%</orangeStrong>."
+    "description": "Erhöht den durch den Ultimate des Trägers verursachten SCH um <orangeStrong>{{1, percent}}%</orangeStrong>."
   }
 }

@@ -1,0 +1,24 @@
+{
+  "name": "Hora do Surfe",
+  "description": {
+    "0": "Originalmente reservado como lembrança para o campeão do \"Primeiro Campeonato de Corrida de Surfe de Todas as Tribos\". Dado que o evento continua em fase de preparação, o prêmio foi temporariamente armazenado no \"Flutuador Viajante\", sob a guarda do proprietário."
+  },
+  "passiveName": "Reminiscência da Água",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta a Vida Máxima em <cryo>20%</cryo>. A cada 15s, o seguinte ocorrerá nos 14s após usar uma Habilidade Elemental: ganha 4 acúmulos de Verão Escaldante. Cada acúmulo aumenta o Dano do Ataque Normal em <cryo>12%</cryo>. Nessa duração, uma vez a cada 1.5s: remove 1 acúmulo após um Ataque Normal acertar um oponente. Uma vez a cada 1.5s: acrescenta 1 acúmulo após desencadear uma reação de Vaporização em um oponente. O efeito Verão Escaldante pode ser acumulado até 4 vezes."
+    },
+    "1": {
+      "0": "Aumenta a Vida Máxima em <cryo>25%</cryo>. A cada 15s, o seguinte ocorrerá nos 14s após usar uma Habilidade Elemental: ganha 4 acúmulos de Verão Escaldante. Cada acúmulo aumenta o Dano do Ataque Normal em <cryo>15%</cryo>. Nessa duração, uma vez a cada 1.5s: remove 1 acúmulo após um Ataque Normal acertar um oponente. Uma vez a cada 1.5s: acrescenta 1 acúmulo após desencadear uma reação de Vaporização em um oponente. O efeito Verão Escaldante pode ser acumulado até 4 vezes."
+    },
+    "2": {
+      "0": "Aumenta a Vida Máxima em <cryo>30%</cryo>. A cada 15s, o seguinte ocorrerá nos 14s após usar uma Habilidade Elemental: ganha 4 acúmulos de Verão Escaldante. Cada acúmulo aumenta o Dano do Ataque Normal em <cryo>18%</cryo>. Nessa duração, uma vez a cada 1.5s: remove 1 acúmulo após um Ataque Normal acertar um oponente. Uma vez a cada 1.5s: acrescenta 1 acúmulo após desencadear uma reação de Vaporização em um oponente. O efeito Verão Escaldante pode ser acumulado até 4 vezes."
+    },
+    "3": {
+      "0": "Aumenta a Vida Máxima em <cryo>35%</cryo>. A cada 15s, o seguinte ocorrerá nos 14s após usar uma Habilidade Elemental: ganha 4 acúmulos de Verão Escaldante. Cada acúmulo aumenta o Dano do Ataque Normal em <cryo>21%</cryo>. Nessa duração, uma vez a cada 1.5s: remove 1 acúmulo após um Ataque Normal acertar um oponente. Uma vez a cada 1.5s: acrescenta 1 acúmulo após desencadear uma reação de Vaporização em um oponente. O efeito Verão Escaldante pode ser acumulado até 4 vezes."
+    },
+    "4": {
+      "0": "Aumenta a Vida Máxima em <cryo>40%</cryo>. A cada 15s, o seguinte ocorrerá nos 14s após usar uma Habilidade Elemental: ganha 4 acúmulos de Verão Escaldante. Cada acúmulo aumenta o Dano do Ataque Normal em <cryo>24%</cryo>. Nessa duração, uma vez a cada 1.5s: remove 1 acúmulo após um Ataque Normal acertar um oponente. Uma vez a cada 1.5s: acrescenta 1 acúmulo após desencadear uma reação de Vaporização em um oponente. O efeito Verão Escaldante pode ser acumulado até 4 vezes."
+    }
+  }
+}

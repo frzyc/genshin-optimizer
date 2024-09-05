@@ -1,12 +1,12 @@
 export const sheetHashData = {
   type: {
-    Physical: '-1101149179',
-    Quantum: '88513016',
-    Lightning: '-250814279',
-    Ice: '-756819502',
-    Wind: '-1513894875',
-    Fire: '-1474263915',
-    Imaginary: '118034640',
+    physical: '-1101149179',
+    quantum: '88513016',
+    lightning: '-250814279',
+    ice: '-756819502',
+    wind: '-1513894875',
+    fire: '-1474263915',
+    imaginary: '118034640',
   },
   path: {
     Erudition: '-953720572',

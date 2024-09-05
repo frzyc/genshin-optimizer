@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Faust der Überzeugung",
-        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Gepards ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Gepards ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Einschüchternder Schlag",
-        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Gepards ANG zu und verursacht beim Ziel mit einer <u>Grundchance</u> von {{2}}% für {{3}} Rd. Gefroren.\\nEin gefrorener Gegner kann keine Aktionen ausführen und erleidet zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von <orangeStrong>{{4}}%</orangeStrong> von Gepards ANG.",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Gepards ANG zu und verursacht beim Ziel mit einer <u>Grundchance</u> von {{2, percent}}% für {{3}} Rd. Gefroren.\\nEin gefrorener Gegner kann keine Aktionen ausführen und erleidet zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von Gepards ANG.",
         "shortDesc": "Fügt einem Gegner Eis-SCH zu und <orangeStrong>verursacht beim Ziel mit einer Chance Gefroren</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Emporragendes Bollwerk",
-        "fullDesc": "Gewährt allen Verbündeten für {{2}} Rd. einen Schild, der SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Gepards VTD plus <orangeStrong>{{3}}</orangeStrong> absorbiert.",
+        "fullDesc": "Gewährt allen Verbündeten für {{2}} Rd. einen Schild, der SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Gepards VTD plus <orangeStrong>{{3}}</orangeStrong> absorbiert.",
         "shortDesc": "Gewährt allen Verbündeten einen <orangeStrong>Schild</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Kameradschaft",
-        "fullDesc": "Die Technik gewährt allen Verbündeten zu Beginn des nächsten Kampfs einen Schild, der SCH in Höhe von {{1}}% von Gepards VTD plus {{3}} für {{2}} Rd. absorbiert.",
+        "fullDesc": "Die Technik gewährt allen Verbündeten zu Beginn des nächsten Kampfs einen Schild, der SCH in Höhe von {{1, percent}}% von Gepards VTD plus {{3}} für {{2}} Rd. absorbiert.",
         "shortDesc": "Nach dem Einsatz der Technik erhalten alle Verbündeten zu Beginn des nächsten Kampfes einen Schild."
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Kampfgeist",
-        "fullDesc": "Erhöht Gepards ANG um {{1}}% seiner aktuellen VTD. Dieser Effekt wird zu Beginn jeder Runde aktualisiert.",
+        "fullDesc": "Erhöht Gepards ANG um {{1, percent}}% seiner aktuellen VTD. Dieser Effekt wird zu Beginn jeder Runde aktualisiert.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Sorgfaltspflicht",
-      "desc": "Erhöht beim Einsatz der Fertigkeit die Grundchance, das Ziel einzufrieren, um {{1}}%."
+      "desc": "Erhöht beim Einsatz der Fertigkeit die Grundchance, das Ziel einzufrieren, um {{1, percent}}%."
     },
     "2": {
       "name": "Hartnäckige Kälte",
-      "desc": "Wenn der durch die Fertigkeit eingefrorene Gegner sich von „Gefroren“ erholt, sinkt seine GES für {{2}} Rd. um {{1}}%."
+      "desc": "Wenn der durch die Fertigkeit eingefrorene Gegner sich von „Gefroren“ erholt, sinkt seine GES für {{2}} Rd. um {{1, percent}}%."
     },
     "3": {
       "name": "Niemals aufgeben",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Der Glaube versetzt Berge",
-      "desc": "Erhöht den Effekt-WDS aller Verbündeten um {{1}}%, wenn Gepard mitkämpft."
+      "desc": "Erhöht den Effekt-WDS aller Verbündeten um {{1, percent}}%, wenn Gepard mitkämpft."
     },
     "5": {
       "name": "Kalte Eisenfaust",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Unnachgiebige Entschlossenheit",
-      "desc": "Bei Auslösung des Talents wird Gepard sofort in Aktion treten und seine LP-Wiederherstellung wird zusätzlich um {{1}}% seiner max. LP erhöht."
+      "desc": "Bei Auslösung des Talents wird Gepard sofort in Aktion treten und seine LP-Wiederherstellung wird zusätzlich um {{1, percent}}% seiner max. LP erhöht."
     }
   }
 }

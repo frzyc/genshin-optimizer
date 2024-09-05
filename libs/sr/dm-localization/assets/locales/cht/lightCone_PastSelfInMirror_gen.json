@@ -2,6 +2,6 @@
   "name": "鏡中故我",
   "passive": {
     "name": "徹骨梅香",
-    "description": "使裝備者擊破特攻提高<orangeStrong>{{1}}%</orangeStrong>。裝備者施放終結技後，使我方全體造成的傷害提高<orangeStrong>{{2}}%</orangeStrong>，持續{{3}}回合，並且若裝備者擊破特攻大於等於{{4}}%，則恢復1個戰技點。\\n每一波開始時，我方全體立即恢復<orangeStrong>{{5}}</orangeStrong>點能量，同類技能無法重複生效。"
+    "description": "使裝備者擊破特攻提高<orangeStrong>{{1, percent}}%</orangeStrong>。裝備者施放終結技後，使我方全體造成的傷害提高<orangeStrong>{{2, percent}}%</orangeStrong>，持續{{3}}回合，並且若裝備者擊破特攻大於等於{{4, percent}}%，則恢復1個戰技點。\\n每一波開始時，我方全體立即恢復<orangeStrong>{{5, fixed(fixed: 1)}}</orangeStrong>點能量，同類技能無法重複生效。"
   }
 }

@@ -2,6 +2,6 @@
   "name": "태양보다 밝게 빛나는 것",
   "passive": {
     "name": "결사 저항",
-    "description": "장착한 캐릭터의 치명타 확률이 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터가 일반 공격을 발동하면 [용의 포효]를 1스택 획득한다. 지속 시간: {{2}}턴. [용의 포효] 스택마다 장착한 캐릭터의 공격력이 <orangeStrong>{{4}}%</orangeStrong> 증가하고, 에너지 회복효율이 <orangeStrong>{{5}}%</orangeStrong> 증가한다. [용의 포효] 최대 중첩수: {{3}}스택"
+    "description": "장착한 캐릭터의 치명타 확률이 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 장착한 캐릭터가 일반 공격을 발동하면 [용의 포효]를 1스택 획득한다. 지속 시간: {{2}}턴. [용의 포효] 스택마다 장착한 캐릭터의 공격력이 <orangeStrong>{{4, percent}}%</orangeStrong> 증가하고, 에너지 회복효율이 <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong> 증가한다. [용의 포효] 최대 중첩수: {{3}}스택"
   }
 }

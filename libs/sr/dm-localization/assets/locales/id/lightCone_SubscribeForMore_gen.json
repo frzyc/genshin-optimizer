@@ -2,6 +2,6 @@
   "name": "Subscribe for More!",
   "passive": {
     "name": "Like Before You Leave!",
-    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> DMG yang diakibatkan Basic Attack dan Skill pengguna. Efek ini akan meningkat ekstra <orangeStrong>{{2}}%</orangeStrong> jika Energy pengguna saat ini mencapai batas maksimum."
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> DMG yang diakibatkan Basic Attack dan Skill pengguna. Efek ini akan meningkat ekstra <orangeStrong>{{2, percent}}%</orangeStrong> jika Energy pengguna saat ini mencapai batas maksimum."
   }
 }

@@ -2,6 +2,6 @@
   "name": "Nuit de l'épouvante",
   "passive": {
     "name": "On respire profondément",
-    "description": "Augmente le taux de régénération d'énergie du porteur de <orangeStrong>{{1}}%</orangeStrong>. Lorsqu'un allié utilise son ultime, le porteur restaure <orangeStrong>{{2}}%</orangeStrong> des PV max de l'allié qui a le moins de PV en pourcentage. Quand le porteur prodigue des soins à l'allié, augmente l'ATQ de l'allié soigné de <orangeStrong>{{3}}%</orangeStrong>. Cet effet peut être cumulé jusqu'à {{4}} fois et dure {{5}} tours."
+    "description": "Augmente le taux de régénération d'énergie du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Lorsqu'un allié utilise son ultime, le porteur restaure <orangeStrong>{{2, percent}}%</orangeStrong> des PV max de l'allié qui a le moins de PV en pourcentage. Quand le porteur prodigue des soins à l'allié, augmente l'ATQ de l'allié soigné de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>. Cet effet peut être cumulé jusqu'à {{4}} fois et dure {{5}} tours."
   }
 }

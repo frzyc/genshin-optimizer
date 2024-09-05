@@ -2,6 +2,6 @@
   "name": "Subscribe for More!",
   "passive": {
     "name": "Like Before You Leave!",
-    "description": "The wearer's Basic ATK and Skill deals <orangeStrong>{{1}}%</orangeStrong> more DMG. This effect increases by an extra <orangeStrong>{{2}}%</orangeStrong> when the wearer's current Energy reaches its max level."
+    "description": "The wearer's Basic ATK and Skill deals <orangeStrong>{{1, percent}}%</orangeStrong> more DMG. This effect increases by an extra <orangeStrong>{{2, percent}}%</orangeStrong> when the wearer's current Energy reaches its max level."
   }
 }

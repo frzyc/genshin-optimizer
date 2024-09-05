@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Suppression de la gravité",
-        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Welt à un ennemi unique.",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Welt à un ennemi unique.",
         "shortDesc": "Inflige des DGT imaginaires mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Frontière du vide",
-        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Welt à un ennemi unique et inflige des DGT 2 fois supplémentaires, infligeant à chaque fois des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Welt à un ennemi aléatoire. Les attaques qui touchent un ennemi ont <orangeStrong>{{2}}%</orangeStrong> de <u>chances de base</u> de réduire sa VIT de {{3}}% pendant {{4}} tours.",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Welt à un ennemi unique et inflige des DGT 2 fois supplémentaires, infligeant à chaque fois des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Welt à un ennemi aléatoire. Les attaques qui touchent un ennemi ont <orangeStrong>{{2, percent}}%</orangeStrong> de <u>chances de base</u> de réduire sa VIT de {{3, percent}}% pendant {{4}} tours.",
         "shortDesc": "Inflige des DGT imaginaires mineurs à un ennemi. Cette attaque peut rebondir 3 fois et a une chance de <orangeStrong>ralentir</orangeStrong> les ennemis touchés."
       }
     },
     "ult": {
       "0": {
         "name": "Trou noir synthétique",
-        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Welt à tous les ennemis, avec {{3}}% de <u>chances de base</u> d'emprisonner les ennemis touchés pendant 1 tour.\\nLes ennemis emprisonnés voient leurs <u>actions retardées</u> de <orangeStrong>{{2}}%</orangeStrong> et leur VIT réduite de {{4}}%.",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Welt à tous les ennemis, avec {{3, percent}}% de <u>chances de base</u> d'emprisonner les ennemis touchés pendant 1 tour.\\nLes ennemis emprisonnés voient leurs <u>actions retardées</u> de <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> et leur VIT réduite de {{4, percent}}%.",
         "shortDesc": "Inflige des DGT imaginaires à tous les ennemis, avec <orangeStrong>de fortes chances de les emprisonner</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Emprisonnement gravitationnel",
-        "fullDesc": "Crée une dimension spéciale qui dure {{4}} secondes. Les ennemis dans cette dimension spéciale voient leur vitesse de déplacement réduite de {{5}}%. Il y a {{1}}% de <u>chances de base</u> d'emprisonner les ennemis pour 1 tour après être entré en combat avec des ennemis dans la dimension spéciale.\\nLes ennemis emprisonnés voient leur <u>action retardée</u> de {{2}}% et leur VIT réduite de {{3}}%. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "fullDesc": "Crée une dimension spéciale qui dure {{4}} secondes. Les ennemis dans cette dimension spéciale voient leur vitesse de déplacement réduite de {{5, percent}}%. Il y a {{1, percent}}% de <u>chances de base</u> d'emprisonner les ennemis pour 1 tour après être entré en combat avec des ennemis dans la dimension spéciale.\\nLes ennemis emprisonnés voient leur <u>action retardée</u> de {{2, percent}}% et leur VIT réduite de {{3, percent}}%. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
         "shortDesc": "Crée une dimension spéciale. La vitesse de déplacement des ennemis à l'intérieur de la dimension est réduite. Il y a de <orangeStrong>fortes chances d'infliger Emprisonné aux ennemis</orangeStrong> lorsque le combat est engagé avec des ennemis de la dimension."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Acharnement",
-        "fullDesc": "Il y a {{1}}% de chances de base d'augmenter les DGT subis par les cibles de {{2}}% pendant {{3}} tours lors de l'utilisation de l'ultime.",
+        "fullDesc": "Il y a {{1, percent}}% de chances de base d'augmenter les DGT subis par les cibles de {{2, percent}}% pendant {{3}} tours lors de l'utilisation de l'ultime.",
         "shortDesc": ""
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Châtiment",
-        "fullDesc": "Inflige {{1}}% de DGT supplémentaires aux ennemis qui subissent une Rupture de faiblesse.",
+        "fullDesc": "Inflige {{1, percent}}% de DGT supplémentaires aux ennemis qui subissent une Rupture de faiblesse.",
         "shortDesc": ""
       }
     }
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Héritage d'honneur",
-      "desc": "Après utilisation de son ultime, Welt est renforcé. Puis, les {{3}} prochaines fois où il utilise l'ATQ normale ou la compétence, Welt inflige 1 instance supplémentaire de DGT additionnels à la cible ennemie. Les DGT additionnels infligés en utilisant l'ATQ normale sont équivalents à {{1}}% du multiplicateur de DGT de l'ATQ normale. Les DGT additionnels infligés en utilisant la compétence sont équivalents à {{2}}% du multiplicateur de DGT de la compétence."
+      "desc": "Après utilisation de son ultime, Welt est renforcé. Puis, les {{3}} prochaines fois où il utilise l'ATQ normale ou la compétence, Welt inflige 1 instance supplémentaire de DGT additionnels à la cible ennemie. Les DGT additionnels infligés en utilisant l'ATQ normale sont équivalents à {{1, percent}}% du multiplicateur de DGT de l'ATQ normale. Les DGT additionnels infligés en utilisant la compétence sont équivalents à {{2, percent}}% du multiplicateur de DGT de la compétence."
     },
     "2": {
       "name": "Confluence des étoiles",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Au nom de la justice",
-      "desc": "Augmente les chances de base de la compétence de réduire la VIT des ennemis touchés de {{1}}%."
+      "desc": "Augmente les chances de base de la compétence de réduire la VIT des ennemis touchés de {{1, percent}}%."
     },
     "5": {
       "name": "Pouvoir de la bonté",

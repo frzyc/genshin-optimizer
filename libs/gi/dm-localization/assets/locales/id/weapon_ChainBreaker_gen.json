@@ -1,0 +1,24 @@
+{
+  "name": "Chain Breaker",
+  "description": {
+    "0": "Busur panjang yang dihiasi dengan batu giok. Senar busurnya sepertinya selalu diselimuti oleh angin lembut. Konon katanya ditempa oleh pengrajin naga pada zaman dulu."
+  },
+  "passiveName": "Flower-Feather Song",
+  "passiveDescription": {
+    "0": {
+      "0": "Untuk setiap anggota party yang berasal dari Natlan atau memiliki Tipe Elemen yang berbeda dari Karakter yang mengenakan senjata ini, maka ATK Karakter yang mengenakan senjata ini akan meningkat <cryo>4,8%</cryo>. Jika terdapat setidaknya 3 dari Karakter yang disebutkan di atas, maka Elemental Mastery Karakter yang mengenakan senjata ini meningkat <cryo>24</cryo>."
+    },
+    "1": {
+      "0": "Untuk setiap anggota party yang berasal dari Natlan atau memiliki Tipe Elemen yang berbeda dari Karakter yang mengenakan senjata ini, maka ATK Karakter yang mengenakan senjata ini akan meningkat <cryo>6%</cryo>. Jika terdapat setidaknya 3 dari Karakter yang disebutkan di atas, maka Elemental Mastery Karakter yang mengenakan senjata ini meningkat <cryo>30</cryo>."
+    },
+    "2": {
+      "0": "Untuk setiap anggota party yang berasal dari Natlan atau memiliki Tipe Elemen yang berbeda dari Karakter yang mengenakan senjata ini, maka ATK Karakter yang mengenakan senjata ini akan meningkat <cryo>7,2%</cryo>. Jika terdapat setidaknya 3 dari Karakter yang disebutkan di atas, maka Elemental Mastery Karakter yang mengenakan senjata ini meningkat <cryo>36</cryo>."
+    },
+    "3": {
+      "0": "Untuk setiap anggota party yang berasal dari Natlan atau memiliki Tipe Elemen yang berbeda dari Karakter yang mengenakan senjata ini, maka ATK Karakter yang mengenakan senjata ini akan meningkat <cryo>8,4%</cryo>. Jika terdapat setidaknya 3 dari Karakter yang disebutkan di atas, maka Elemental Mastery Karakter yang mengenakan senjata ini meningkat <cryo>42</cryo>."
+    },
+    "4": {
+      "0": "Untuk setiap anggota party yang berasal dari Natlan atau memiliki Tipe Elemen yang berbeda dari Karakter yang mengenakan senjata ini, maka ATK Karakter yang mengenakan senjata ini akan meningkat <cryo>9,6%</cryo>. Jika terdapat setidaknya 3 dari Karakter yang disebutkan di atas, maka Elemental Mastery Karakter yang mengenakan senjata ini meningkat <cryo>48</cryo>."
+    }
+  }
+}

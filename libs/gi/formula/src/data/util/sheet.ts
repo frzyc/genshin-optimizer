@@ -10,7 +10,7 @@ import { prod } from '@genshin-optimizer/pando/engine'
 import type { Sheet, Stat } from './listing'
 import type { Read } from './read'
 import { reader, tag } from './read'
-import { self, selfBuff, teamBuff } from './tag'
+import { own, ownBuff, teamBuff } from './tag'
 import type { TagMapNodeEntries, TagMapNodeEntry } from './tagMapType'
 
 // Use `registerArt` for artifacts
@@ -18,10 +18,11 @@ export function register(
   sheet: Exclude<Sheet, ArtifactSetKey>,
   ...data: (TagMapNodeEntry | TagMapNodeEntries)[]
 ): TagMapNodeEntries {
-  const internal = ({ tag, value }: TagMapNodeEntry) => ({
-    tag: { ...tag, sheet },
-    value,
-  })
+  const internal = ({ tag, value }: TagMapNodeEntry) => {
+    // Sheet-specific `enemy` stats adds to `enemyDeBuff` instead
+    if (tag.et === 'enemy') tag = { ...tag, et: 'enemyDeBuff' }
+    return { tag: { ...tag, sheet }, value }
+  }
   return data.flatMap((data) =>
     Array.isArray(data) ? data.map(internal) : internal(data)
   )
@@ -45,8 +46,8 @@ export function customDmg(
     team,
     'dmg',
     tag(cond, { move }),
-    self.formula.base.add(base),
-    self.prep.ele.add(eleOverride ?? self.reaction.infusion),
+    ownBuff.formula.base.add(base),
+    ownBuff.prep.ele.add(eleOverride ?? own.reaction.infusion),
     ...extra
   )
 }
@@ -73,7 +74,7 @@ export function customShield(
     team,
     'shield',
     ele ? tag(cond, { ele }) : cond,
-    self.formula.base.add(base),
+    ownBuff.formula.base.add(base),
     ...extra
   )
 }
@@ -89,7 +90,7 @@ export function customHeal(
     team,
     'heal',
     cond,
-    self.formula.base.add(base),
+    ownBuff.formula.base.add(base),
     ...extra
   )
 }
@@ -102,10 +103,10 @@ function registerFormula(
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   reader.name(name) // register name:<name>
-  const listing = (team ? teamBuff : selfBuff).listing.formulas
+  const listing = (team ? teamBuff : ownBuff).listing.formulas
   return [
     listing.add(
-      listingItem(reader.withTag({ name, et: 'self', qt: 'formula', q }), cond)
+      listingItem(reader.withTag({ name, et: 'own', qt: 'formula', q }), cond)
     ),
     ...extra.map(({ tag, value }) => ({ tag: { ...tag, name }, value })),
   ]

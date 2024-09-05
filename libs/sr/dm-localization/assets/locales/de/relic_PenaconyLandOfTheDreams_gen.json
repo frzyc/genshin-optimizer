@@ -1,6 +1,6 @@
 {
   "setName": "Penacony, Land der Träume",
   "setEffects": {
-    "2": "Erhöht die Energie-Wiederherstellungsrate des Trägers um {{1}}%. Erhöht den SCH aller anderen Verbündeten im Team mit dem gleichen Typ wie der Träger um {{2}}%."
+    "2": "Erhöht die Energie-Wiederherstellungsrate des Trägers um {{1, percent}}%. Erhöht den SCH aller anderen Verbündeten im Team mit dem gleichen Typ wie der Träger um {{2, percent}}%."
   }
 }

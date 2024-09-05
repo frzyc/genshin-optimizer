@@ -1,5 +1,6 @@
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
+import { useDatabaseTally } from '@genshin-optimizer/common/database-ui'
 import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
+import { Tally } from '@genshin-optimizer/common/ui'
 import { useDBMeta, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { FlowerIcon } from '@genshin-optimizer/gi/svgicons'
 import { SillyContext, shouldShowDevComponents } from '@genshin-optimizer/gi/ui'
@@ -29,7 +30,7 @@ import {
   useTheme,
 } from '@mui/material'
 import type { ReactElement, ReactNode } from 'react'
-import { Suspense, useContext, useEffect, useMemo, useState } from 'react'
+import { Suspense, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useMatch } from 'react-router-dom'
 import go_icon from './go_icon.png'
@@ -105,64 +106,22 @@ function DBChip() {
   const { name } = useDBMeta()
   return <Chip label={name} />
 }
-function Tally({ children }: { children: ReactNode }) {
-  return (
-    <Typography sx={{ opacity: 0.7, lineHeight: 1 }} variant="caption">
-      {children}
-    </Typography>
-  )
-}
+
 function ArtifactChip() {
   const database = useDatabase()
-  const [dirty, setDirty] = useForceUpdate()
-  useEffect(
-    () => database.arts.followAny(() => setDirty()),
-    [database, setDirty]
-  )
-  const total = useMemo(
-    () => dirty && database.arts.keys.length,
-    [dirty, database]
-  )
-  return <Tally>{total}</Tally>
+  return <Tally>{useDatabaseTally(database.arts)}</Tally>
 }
 function CharacterChip() {
   const database = useDatabase()
-  const [dirty, setDirty] = useForceUpdate()
-  useEffect(
-    () => database.chars.followAny(() => setDirty()),
-    [database, setDirty]
-  )
-  const total = useMemo(
-    () => dirty && database.chars.keys.length,
-    [dirty, database]
-  )
-  return <Tally>{total}</Tally>
+  return <Tally>{useDatabaseTally(database.chars)}</Tally>
 }
 function TeamChip() {
   const database = useDatabase()
-  const [dirty, setDirty] = useForceUpdate()
-  useEffect(
-    () => database.teams.followAny(() => setDirty()),
-    [database, setDirty]
-  )
-  const total = useMemo(
-    () => dirty && database.teams.keys.length,
-    [dirty, database]
-  )
-  return <Tally>{total}</Tally>
+  return <Tally>{useDatabaseTally(database.teams)}</Tally>
 }
 function WeaponChip() {
   const database = useDatabase()
-  const [dirty, setDirty] = useForceUpdate()
-  useEffect(
-    () => database.weapons.followAny(() => setDirty()),
-    [database, setDirty]
-  )
-  const total = useMemo(
-    () => dirty && database.weapons.keys.length,
-    [database, dirty]
-  )
-  return <Tally>{total}</Tally>
+  return <Tally>{useDatabaseTally(database.weapons)}</Tally>
 }
 
 export default function Header({ anchor }: { anchor: string }) {
@@ -228,7 +187,7 @@ function DesktopHeader({
             backgroundColor: 'rgba(255,255,255,0.1)',
           },
           '& .Mui-selected': {
-            backgroundImage: `linear-gradient(to top, ${theme.palette.brandGO500.main}, ${theme.palette.neutral700.main})`,
+            backgroundImage: `linear-gradient(to top, ${theme.palette.brand500.main}, ${theme.palette.neutral700.main})`,
             color: `${theme.palette.neutral100.main} !important`,
             textShadow:
               '0.25px 0 0 currentColor, -0.25px 0 0 currentColor, 0 0.25px 0 currentColor, 0 -0.25px 0',
@@ -247,7 +206,7 @@ function DesktopHeader({
                 sx={(theme) => ({
                   height: '24px',
                   width: '24px',
-                  boxShadow: `0 0 10px 1px ${theme.palette.brandGO500.main}`,
+                  boxShadow: `0 0 10px 1px ${theme.palette.brand500.main}`,
                 })}
               />
               <Typography variant="h6" sx={{ px: 1, fontWeight: 'Normal' }}>
@@ -353,7 +312,7 @@ function MobileHeader({
             }}
             sx={(theme) => ({
               '& .Mui-selected': {
-                backgroundImage: `linear-gradient(to right, ${theme.palette.brandGO500.main}, ${theme.palette.neutral700.main})`,
+                backgroundImage: `linear-gradient(to right, ${theme.palette.brand500.main}, ${theme.palette.neutral700.main})`,
                 color: `${theme.palette.neutral100.main} !important`,
                 textShadow:
                   '0.1px 0 0 currentColor, -0.1px 0 0 currentColor, 0 0.1px 0 currentColor, 0 -0.1px 0',
@@ -372,7 +331,7 @@ function MobileHeader({
                   sx={(theme) => ({
                     height: '24px',
                     width: '24px',
-                    boxShadow: `0 0 10px 1px ${theme.palette.brandGO500.main}`,
+                    boxShadow: `0 0 10px 1px ${theme.palette.brand500.main}`,
                   })}
                 />
               }
@@ -418,7 +377,7 @@ function MobileHeader({
                 sx={(theme) => ({
                   height: '24px',
                   width: '24px',
-                  boxShadow: `0 0 10px 1px ${theme.palette.brandGO500.main}`,
+                  boxShadow: `0 0 10px 1px ${theme.palette.brand500.main}`,
                 })}
               />
             }

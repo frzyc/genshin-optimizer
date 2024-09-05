@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Thorns of the Abyss",
-        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Luocha's ATK to a single enemy.",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Luocha's ATK to a single enemy.",
         "shortDesc": "Deals minor Imaginary DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Prayer of Abyss Flower",
-        "fullDesc": "After using his Skill, Luocha immediately restores the target ally's HP equal to <orangeStrong>{{1}}%</orangeStrong> of Luocha's ATK plus <orangeStrong>{{2}}</orangeStrong>. Meanwhile, Luocha gains 1 stack of Abyss Flower.\\nWhen any ally's HP percentage drops to {{3}}% or lower, an effect equivalent to Luocha's Skill will immediately be triggered and applied to this ally for one time (without consuming Skill Points). This effect can be triggered again after {{4}} turn(s).",
+        "fullDesc": "After using his Skill, Luocha immediately restores the target ally's HP equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Luocha's ATK plus <orangeStrong>{{2}}</orangeStrong>. Meanwhile, Luocha gains 1 stack of Abyss Flower.\\nWhen any ally's HP percentage drops to {{3, percent}}% or lower, an effect equivalent to Luocha's Skill will immediately be triggered and applied to this ally for one time (without consuming Skill Points). This effect can be triggered again after {{4}} turn(s).",
         "shortDesc": "<orangeStrong>Restores</orangeStrong> a single ally's HP and gains 1 stack of Abyss Flower."
       }
     },
     "ult": {
       "0": {
         "name": "Death Wish",
-        "fullDesc": "Removes {{2}} <u>buff(s)</u> from all enemies and deals all enemies Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Luocha's ATK. At the same time, Luocha gains 1 stack of Abyss Flower.",
+        "fullDesc": "Removes {{2}} <u>buff(s)</u> from all enemies and deals all enemies Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Luocha's ATK. At the same time, Luocha gains 1 stack of Abyss Flower.",
         "shortDesc": "<orangeStrong>Removes</orangeStrong> 1 <orangeStrong><u>buff</u></orangeStrong> from all enemies, deals Imaginary DMG to all enemies, and gains 1 stack of Abyss Flower."
       }
     },
@@ -46,14 +46,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Sanctified",
-        "fullDesc": "When any enemy in the Zone is attacked by an ally, all allies (except the attacker) restore HP equal to {{1}}% of Luocha's ATK plus {{2}}.",
+        "fullDesc": "When any enemy in the Zone is attacked by an ally, all allies (except the attacker) restore HP equal to {{1, percent(fixed: 1)}}% of Luocha's ATK plus {{2}}.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Through the Valley",
-        "fullDesc": "The chance to resist Crowd Control debuffs increases by {{1}}%.",
+        "fullDesc": "The chance to resist Crowd Control debuffs increases by {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Ablution of the Quick",
-      "desc": "While the Zone is active, ATK of all allies increases by {{1}}%."
+      "desc": "While the Zone is active, ATK of all allies increases by {{1, percent}}%."
     },
     "2": {
       "name": "Bestowal From the Pure",
-      "desc": "When his Skill is triggered, if the target ally's HP is lower than 50%, Luocha's Outgoing Healing increases by {{1}}%. If the target ally's HP is at 50% or higher, the ally receives a Shield that can absorb DMG equal to {{2}}% of Luocha's ATK plus {{3}}, lasting for {{4}} turns."
+      "desc": "When his Skill is triggered, if the target ally's HP is lower than 50%, Luocha's Outgoing Healing increases by {{1, percent}}%. If the target ally's HP is at 50% or higher, the ally receives a Shield that can absorb DMG equal to {{2, percent}}% of Luocha's ATK plus {{3}}, lasting for {{4}} turns."
     },
     "3": {
       "name": "Surveyal by the Fool",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Heavy Lies the Crown",
-      "desc": "When Luocha's Zone is active, enemies become Weakened and deal {{1}}% less DMG."
+      "desc": "When Luocha's Zone is active, enemies become Weakened and deal {{1, percent}}% less DMG."
     },
     "5": {
       "name": "Cicatrix 'Neath the Pain",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Reunion With the Dust",
-      "desc": "When Ultimate is used, there is a {{1}}% fixed chance to reduce all enemies' All-Type RES by {{2}}% for {{3}} turn(s)."
+      "desc": "When Ultimate is used, there is a {{1, percent}}% fixed chance to reduce all enemies' All-Type RES by {{2, percent}}% for {{3}} turn(s)."
     }
   }
 }

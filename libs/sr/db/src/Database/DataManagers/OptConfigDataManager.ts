@@ -5,12 +5,12 @@ import {
   validateArr,
 } from '@genshin-optimizer/common/util'
 import type {
-  CharacterLocationKey,
+  CharacterKey,
   RelicMainStatKey,
   RelicSlotKey,
 } from '@genshin-optimizer/sr/consts'
 import {
-  allCharacterLocationKeys,
+  allCharacterKeys,
   allRelicSetKeys,
   allRelicSlotKeys,
   relicSlotToMainStatKeys,
@@ -54,9 +54,9 @@ export interface OptConfig {
     sphere: RelicMainStatKey[]
     rope: RelicMainStatKey[]
     head?: never
-    hand?: never
+    hands?: never
   }
-  excludedLocations: CharacterLocationKey[]
+  excludedLocations: CharacterKey[]
   allowLocationsState: AllowLocationsState
   relicExclusion: string[]
   useExcludedRelics: boolean
@@ -144,11 +144,10 @@ export class OptConfigDataManager extends DataManager<
 
     excludedLocations = validateArr(
       excludedLocations,
-      allCharacterLocationKeys.filter((k) => k !== key),
+      allCharacterKeys.filter((k) => k !== key),
       [] // Remove self from list
     ).filter(
-      (lk) =>
-        this.database.chars.get(this.database.chars.LocationToCharacterKey(lk)) // Remove characters who do not exist in the DB
+      (ck) => this.database.chars.get(ck) // Remove characters who do not exist in the DB
     )
     if (!allowLocationsState) allowLocationsState = 'unequippedOnly'
 

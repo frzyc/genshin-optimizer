@@ -2,6 +2,6 @@
   "name": "Adversarial",
   "passive": {
     "name": "Alliance",
-    "description": "Setelah pengguna mengalahkan target musuh, meningkatkan <orangeStrong>{{1}}%</orangeStrong> SPD selama {{2}} giliran."
+    "description": "Setelah pengguna mengalahkan target musuh, meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> SPD selama {{2}} giliran."
   }
 }

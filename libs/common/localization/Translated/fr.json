@@ -7,25 +7,23 @@
         "noSubstat": "Pas de Substat",
         "selectSub": "Sélectionner une Substat",
         "error": {
-          "noCalc": "Impossible de calculer les rolls de la stat.",
-          "noOverRoll": "Une substat ne peut être roll plus de {{value}} fois."
+          "noCalc": "Impossible de calculer les jets de la stat.",
+          "noOverRoll": "Une substat ne peut être tirée plus de {{value}} fois."
         },
-        "noRoll": "Aucun Roll",
+        "noRoll": "Aucun Jets",
         "noStat": "Pas de valeur",
-        "eff": "Efficacité: <1></1>",
+        "eff": "Valeur des jets: <1></1>",
         "nextRolls": "Prochaines augmentations :",
-        "RollCount": {
-          "one": "{{count}} Rouleau",
-          "other": "{{count}} Rolls"
-        }
+        "RollCount_one": "{{count}} Rouleau",
+        "RollCount_other": "{{count}} Rolls"
       },
       "rarity": "Rareté",
       "level": "Niveau",
       "unknownPieceName": "Nom de Pièce Inconnu",
-      "curSubEff": "Efficacité Substat actuelle",
-      "curSubEffDesc": "Tous les 4 niveaux d'amélioration d'artéfact, vous obtenez une augmentation d'une substat. <strong>Efficacité de Substat</strong> calcule à quel point cette augmentation est élevée à l'aide d'un pourcentage.",
-      "maxSubEff": "Efficacité de rolls maximum",
-      "maxSubEffDesc": "L'<strong>Efficacité de Substat maximum</strong> d'un artéfact calcule l'efficacité si les améliorations restantes donnent des valeurs parfaites.",
+      "curSubEff": "Valeur Actuelle des jets",
+      "curSubEffDesc": "Tous les 4 niveaux d'amélioration d'artéfact, vous obtenez une augmentation d'une substat. <strong>Efficacité de Substat</strong> calcule à quel point cette augmentation est élevée en pourcentage.",
+      "maxSubEff": "Valeur Max. des jets",
+      "maxSubEffDesc": "L'<strong>Valeur Max. du jet de substat</strong> d'un artéfact calcule la valeur des jets si les améliorations restantes donnent leurs valeurs max.",
       "preview": "Prévisualisation d'artéfact",
       "dupArt": "Doublon d'artéfact détecté.",
       "upArt": "Artéfact amélioré détecté.",
@@ -59,7 +57,7 @@
       "Cliquez sur \"Détails\" quand vous améliorez vos artéfacts dans le jeu pour les analyser au fur et à mesure que vous les améliorez.",
       "Vous pouvez maintenant upload plusieurs captures d'écran d'artéfacts à analyser !"
     ],
-    "mainStat": "Main Stat",
+    "mainStat": "Stat principale",
     "slot": "Emplacement",
     "slotName": {
       "flower": "Fleur de la Vie",
@@ -98,18 +96,12 @@
     "locationsTooltip": "Désactiver \"Tous les artefacts équipés\" pour filtrer par personnages spécifiques",
     "showDup": "Afficher les doublons",
     "noDupAlert": "Il n'y a pas d'artefacts en double dans votre inventaire.",
-    "showingNum": {
-      "one": "Afficher <1>{{count}}</1> sur {{value}} Artéfact",
-      "other": "Montre <1>{{count}}</1> / {{value}} Artéfacts"
-    },
-    "substat": {
-      "one": "{{count}} substat",
-      "other": "{{count}} substats"
-    },
-    "sub": {
-      "one": "{{count}} sub",
-      "other": "{{count}} subs"
-    },
+    "showingNum_one": "Afficher <1>{{count}}</1> sur {{value}} Artéfact",
+    "showingNum_other": "Montre <1>{{count}}</1> / {{value}} Artéfacts",
+    "substat_one": "{{count}} substat",
+    "substat_other": "{{count}} substats",
+    "sub_one": "{{count}} sub",
+    "sub_other": "{{count}} subs",
     "noArtifacts": "Il semblerait que vous n'ayez pas encore ajouté d'artéfacts. Des <1>scanners automatiques</1> sont à disposition pour accélérer le processus d'import!"
   },
   "languages": {
@@ -137,7 +129,7 @@
     "uploadCard": {
       "title": "Téléverser la base de données",
       "replaceDatabase": "Remplacer la base de données",
-      "hint": "Téléverser votre fichier JSON ici...",
+      "hint": "Chargez votre fichier JSON ici...",
       "hintPaste": "...ou coller vos données ci-dessous.",
       "error": {
         "jsonParse": "Impossible d'analyser le fichier JSON.",
@@ -469,35 +461,21 @@
     "timeOnField": "Temps passé sur le terrain",
     "hpChange": "Après les changements de HP",
     "afterHeal": "Après avoir été guéri",
-    "hits": {
-      "one": "{{count}} Frapper",
-      "other": "{{count}} Coups"
-    },
+    "hits_one": "{{count}} Frapper",
+    "hits_other": "{{count}} Coups",
     "percentMaxHP": "% Max HP",
-    "stack": {
-      "one": "{{count}} Pile",
-      "other": "HP ennemis inférieurs ou égaux à {{percent}}%"
-    },
-    "seconds": {
-      "one": "{{count}} Deuxième",
-      "other": "HP ennemi supérieur à {{percent}}%"
-    },
-    "uses": {
-      "one": "{{count}} Utiliser",
-      "other": "HP ennemi supérieur ou égal à {{percent}}%"
-    },
-    "opponents": {
-      "one": "{{count}} Opposant",
-      "other": "Après avoir déclenché une </cryo>Relation Cryo{{value}} Réaction élémentaire"
-    },
-    "members": {
-      "one": "{{count}} Membre",
-      "other": "% de PV actuel"
-    },
-    "times": {
-      "one": "{{count}} Temps",
-      "other": "{{count}} fois"
-    },
+    "stack_one": "{{count}} Pile",
+    "stack_other": "HP ennemis inférieurs ou égaux à {{percent}}%",
+    "seconds_one": "{{count}} Deuxième",
+    "seconds_other": "HP ennemi supérieur à {{percent}}%",
+    "uses_one": "{{count}} Utiliser",
+    "uses_other": "HP ennemi supérieur ou égal à {{percent}}%",
+    "opponents_one": "{{count}} Opposant",
+    "opponents_other": "Après avoir déclenché une </cryo>Relation Cryo{{value}} Réaction élémentaire",
+    "members_one": "{{count}} Membre",
+    "members_other": "% de PV actuel",
+    "times_one": "{{count}} Temps",
+    "times_other": "{{count}} fois",
     "activeChar": "Caractère actif",
     "otherHpChange": "Lorsque les PV d'un coéquipier changent",
     "reactionOp": {
@@ -1101,7 +1079,7 @@
       "overview": "Vue d'ensemble",
       "talent": "Talents",
       "optimize": "Optimiser",
-      "theorycraft": "La théorie de l'art"
+      "theorycraft": "Theorycraft"
     },
     "formulas": "Formules",
     "calculations": "Calculs",
@@ -1131,10 +1109,8 @@
       "info2": "Il est de la responsabilité de l'utilisateur de s'assurer que les configurations représentent bien son cas d'utilisation.",
       "description": "Description",
       "duplicate": "Duplicata",
-      "target": {
-        "one": "<0>{{count}}</0> Cible",
-        "other": "Ajouter une cible"
-      }
+      "target_one": "<0>{{count}}</0> Cible",
+      "target_other": "Ajouter une cible"
     },
     "addStats": {
       "title": "Configuration de l'ennemi + statistiques bonus",
@@ -1143,9 +1119,9 @@
     },
     "tabTheorycraft": {
       "substatType": {
-        "min": "Utiliser un minimum de rouleaux de substitution",
-        "max": "Utiliser le maximum de rouleaux de sous-produits",
-        "mid": "Utiliser des rouleaux de sous-mat médians"
+        "min": "Jet minimal de substat",
+        "max": "Jet de substat Max",
+        "mid": "Jet médian de substat"
       },
       "maxTotalRolls": "Une construction \"valide\" ne peut avoir qu'un maximum de 45 rouleaux.",
       "maxRolls": "Ce substat peut avoir un maximum de 30 rouleaux.",
@@ -1180,20 +1156,16 @@
       "team_reso": "Résonance de l'équipe",
       "resonance_tip": "Le groupe doit être composé de 4 personnages pour que la résonance élémentaire prenne effet."
     },
-    "showingNum": {
-      "one": "Afficher <1>{{count}}</1> sur {{value}} Caractère",
-      "other": "Formules"
-    }
+    "showingNum_one": "Afficher <1>{{count}}</1> sur {{value}} Caractère",
+    "showingNum_other": "Formules"
   },
   "page_weapon": {
     "edit": "Modifier l'arme",
     "weaponName": "Nom de l'arme",
     "removeWeapon": "Êtes-vous sûr de vouloir supprimer {{value}} ?",
     "addWeapon": "Ajouter une nouvelle arme",
-    "showingNum": {
-      "one": "Afficher <1>{{count}}</1> sur {{value}} Arme",
-      "other": "Utiliser les rouleaux de sous-statut médians"
-    },
+    "showingNum_one": "Afficher <1>{{count}}</1> sur {{value}} Arme",
+    "showingNum_other": "Utiliser les rouleaux de sous-statut médians",
     "cantDeleteLock": "Impossible de supprimer l'arme car elle est verrouillée"
   },
   "weapon_AquaSimulacra": {
@@ -1246,7 +1218,7 @@
       },
       "assumptionLvl": {
         "no": "No Main Stat Lv. Assumption",
-        "lvl": "Supposez que la Stat principale est au moins au niveau Lv. {{lvl}}"
+        "lvl": "Supposez que la Stat principale est au moins Lv. {{lvl}}"
       },
       "title": "Filtre Stat principal/Configuration"
     },
@@ -1305,7 +1277,7 @@
       "selectOptTarget": "Sélectionner une cible d'optimisation",
       "selectGraphTarget": "Sélectionner une cible graphique",
       "invalidTarget": "TARGET INVALIDE",
-      "selectBuildTarget": "Sélectionner une cible de contrainte de construction"
+      "selectBuildTarget": "Sélectionnez une cible de contrainte d'optimisation"
     },
     "selectTargetFirst": "Sélectionnez d'abord une cible d'optimisation",
     "generateButton": {
@@ -1313,7 +1285,7 @@
       "generateBuilds": "Générer des Builds"
     },
     "removeBuildButton": "Supprimer Construire",
-    "theorycraftButton": "Théorie de l'art",
+    "theorycraftButton": "Theorycraft",
     "currentlyEquippedBuild": "Actuellement équipé",
     "addBuildToList": "Ajouter la construction à la liste",
     "graphBuildLabel": "Graphique #<1>{{count}}</1>",
@@ -1325,10 +1297,8 @@
       "deSelectExc": "Cliquez sur un artefact pour le supprimer de la liste d'exclusion",
       "usingNum": "Utilisation de <1>{{totalStr}}</1> artefact(s) exclu(s)",
       "button_txt": "Exclure les artefacts",
-      "excNum": {
-        "one": "<0>{{count}}</0> l'artefact est exclu",
-        "other": "Théorie de la construction"
-      }
+      "excNum_one": "<0>{{count}}</0> l'artefact est exclu",
+      "excNum_other": "Théorie de la construction"
     },
     "excludeChar": {
       "title": "Configuration de l'artefact équipé",
@@ -1346,24 +1316,18 @@
         "all": "Tous les artefacts"
       },
       "usingState": "Utilisation",
-      "usingNumTot": {
-        "one": "Utilisation d'artefacts <1>{{arts}}</1> de <3>{{count}}</3> personnage",
-        "other": "Utilisation de <1>{{totalStr}}</1> artefact(s) exclu(s)"
-      }
+      "usingNumTot_one": "Utilisation d'artefacts <1>{{arts}}</1> de <3>{{count}}</3> personnage",
+      "usingNumTot_other": "Utilisation de <1>{{totalStr}}</1> artefact(s) exclu(s)"
     },
     "buildCompleted": "Construction achevée",
     "notifyTooltip": "Joue un son lorsque les constructions finissent d'être générées. Affiche également un message d'alarme lorsque l'on quitte l'écran.",
     "bonusStats": {
       "title": "Bonus Stats"
     },
-    "build": {
-      "one": "<0>{{count}}</0> Construire",
-      "other": "<0><0>Excluding<1></1> 4-Set</0></0> exclurait les constructions en 4-Set : <2><0>AAAA</0>R</2> and <4><0>AAAAA</0></4>."
-    },
-    "thread": {
-      "one": "<0>{{count}}</0> File d'attente",
-      "other": "<0><0>Excluding<1></1> 5-Arc-en-ciel</0></0>} exclurait les constructions complètes à 5 arcs-en-ciel : <2><0>RRRRR</0></2>."
-    }
+    "build_one": "<0>{{count}}</0> Construire",
+    "build_other": "<0><0>Excluding<1></1> 4-Set</0></0> exclurait les constructions en 4-Set : <2><0>AAAA</0>R</2> and <4><0>AAAAA</0></4>.",
+    "thread_one": "<0>{{count}}</0> File d'attente",
+    "thread_other": "<0><0>Excluding<1></1> 5-Arc-en-ciel</0></0>} exclurait les constructions complètes à 5 arcs-en-ciel : <2><0>RRRRR</0></2>."
   },
   "weapon_ForestRegalia": {
     "condName": "Après avoir ramassé une feuille de conscience"

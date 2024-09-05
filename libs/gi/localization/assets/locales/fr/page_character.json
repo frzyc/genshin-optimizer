@@ -4,7 +4,7 @@
     "overview": "Vue d'ensemble",
     "talent": "Talents",
     "optimize": "Optimiser",
-    "theorycraft": "La théorie de l'art"
+    "theorycraft": "Theorycraft"
   },
   "formulas": "Formules",
   "calculations": "Calculs",
@@ -34,7 +34,8 @@
     "info2": "Il est de la responsabilité de l'utilisateur de s'assurer que les configurations représentent bien son cas d'utilisation.",
     "description": "Description",
     "duplicate": "Duplicata",
-    "target": { "one": "<0>{{count}}</0> Cible", "other": "Ajouter une cible" }
+    "target_one": "<0>{{count}}</0> Cible",
+    "target_other": "Ajouter une cible"
   },
   "addStats": {
     "title": "Configuration de l'ennemi + statistiques bonus",
@@ -43,9 +44,9 @@
   },
   "tabTheorycraft": {
     "substatType": {
-      "min": "Utiliser un minimum de rouleaux de substitution",
-      "max": "Utiliser le maximum de rouleaux de sous-produits",
-      "mid": "Utiliser des rouleaux de sous-mat médians"
+      "min": "Jet minimal de substat",
+      "max": "Jet de substat Max",
+      "mid": "Jet médian de substat"
     },
     "maxTotalRolls": "Une construction \"valide\" ne peut avoir qu'un maximum de 45 rouleaux.",
     "maxRolls": "Ce substat peut avoir un maximum de 30 rouleaux.",
@@ -73,8 +74,6 @@
     "team_reso": "Résonance de l'équipe",
     "resonance_tip": "Le groupe doit être composé de 4 personnages pour que la résonance élémentaire prenne effet."
   },
-  "showingNum": {
-    "one": "Afficher <1>{{count}}</1> sur {{value}} Caractère",
-    "other": "Formules"
-  }
+  "showingNum_one": "Afficher <1>{{count}}</1> sur {{value}} Caractère",
+  "showingNum_other": "Formules"
 }

@@ -4,33 +4,33 @@
     "basic": {
       "0": {
         "name": "Scherbenschwert",
-        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Blades ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Blades ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu."
       },
       "1": {
         "name": "Schwerterwald",
-        "fullDesc": "Verbraucht LP in Höhe von {{1}}% von Blades max. LP und fügt einem anvisierten Gegner Wind-SCH zu. Dieser entspricht der Summe von <orangeStrong>{{2}}%</orangeStrong> seines ANG und <orangeStrong>{{4}}%</orangeStrong> seiner max. LP. Fügt zusätzlich angrenzenden Einheiten Wind-SCH zu. Dieser entspricht der Summe von <orangeStrong>{{3}}%</orangeStrong> seines ANG und <orangeStrong>{{5}}%</orangeStrong> seiner max. LP.\\nWenn Blades aktuelle LP nicht ausreichen, fallen seine aktuellen LP beim Einsatz von „Schwerterwald“ auf 1.\\n„Schwerterwald“ kann keine Fertigkeitspunkte wiederherstellen.",
+        "fullDesc": "Verbraucht LP in Höhe von {{1, percent}}% von Blades max. LP und fügt einem anvisierten Gegner Wind-SCH zu. Dieser entspricht der Summe von <orangeStrong>{{2, percent}}%</orangeStrong> seines ANG und <orangeStrong>{{4, percent}}%</orangeStrong> seiner max. LP. Fügt zusätzlich angrenzenden Einheiten Wind-SCH zu. Dieser entspricht der Summe von <orangeStrong>{{3, percent}}%</orangeStrong> seines ANG und <orangeStrong>{{5, percent}}%</orangeStrong> seiner max. LP.\\nWenn Blades aktuelle LP nicht ausreichen, fallen seine aktuellen LP beim Einsatz von „Schwerterwald“ auf 1.\\n„Schwerterwald“ kann keine Fertigkeitspunkte wiederherstellen.",
         "shortDesc": "Verbraucht LP und fügt einem Gegner Wind-SCH zu. Angrenzende Einheiten erleiden geringen Wind-SCH."
       }
     },
     "skill": {
       "0": {
         "name": "Höllenqual",
-        "fullDesc": "Verbraucht {{1}}% von Blades max. LP, um „Höllenqual“ zu aktivieren.\\nWenn „Höllenqual“ aktiv ist, kann seine Fertigkeit nicht eingesetzt werden. Erhöht Blades verursachten SCH um <orangeStrong>{{4}}%</orangeStrong> und verstärkt seinen Standardangriff „Scherbenschwert“ für {{2}} Rd. zu „Schwerterwald“\\nWenn Blades aktuelle LP nicht ausreichen, fallen seine aktuellen LP bei Einsatz seiner Fertigkeit auf 1.\\nDiese Fertigkeit stellt keine Energie wieder her. Der Einsatz dieser Fertigkeit beendet nicht die aktuelle Runde.",
+        "fullDesc": "Verbraucht {{1, percent}}% von Blades max. LP, um „Höllenqual“ zu aktivieren.\\nWenn „Höllenqual“ aktiv ist, kann seine Fertigkeit nicht eingesetzt werden. Erhöht Blades verursachten SCH um <orangeStrong>{{4, percent}}%</orangeStrong> und verstärkt seinen Standardangriff „Scherbenschwert“ für {{2}} Rd. zu „Schwerterwald“\\nWenn Blades aktuelle LP nicht ausreichen, fallen seine aktuellen LP bei Einsatz seiner Fertigkeit auf 1.\\nDiese Fertigkeit stellt keine Energie wieder her. Der Einsatz dieser Fertigkeit beendet nicht die aktuelle Runde.",
         "shortDesc": "Verbraucht LP, um den <orangeStrong>Standardangriff zu verstärken</orangeStrong>. Nach dem Einsatz der Fertigkeit wird die aktuelle Runde nicht beendet."
       }
     },
     "ult": {
       "0": {
         "name": "Todesurteil",
-        "fullDesc": "Setzt Blades aktuelle LP auf 50 % seiner max. LP und verursacht Wind-SCH. Dieser entspricht der Summe von <orangeStrong>{{1}}%</orangeStrong> seines ANG, <orangeStrong>{{2}}%</orangeStrong> seiner max. LP und <orangeStrong>{{5}}%</orangeStrong> der LP, die er im Laufe des aktuellen Kampfs insgesamt verloren hat. Fügt außerdem angrenzenden Einheiten Wind-SCH zu. Dieser entspricht der Summe von <orangeStrong>{{3}}%</orangeStrong> seines ANG, <orangeStrong>{{4}}%</orangeStrong> seiner max. LP und <orangeStrong>{{6}}%</orangeStrong> der LP, die er im Laufe des aktuellen Kampfs insgesamt verloren hat.\\nDie berechneten LP, die Blade im aktuellen Kampf insgesamt verloren hat, sind begrenzt auf {{7}}% seiner max. LP. Nachdem er seinen Ultimate eingesetzt hat, wird dieser Wert zurückgesetzt und neu berechnet.",
+        "fullDesc": "Setzt Blades aktuelle LP auf 50 % seiner max. LP und verursacht Wind-SCH. Dieser entspricht der Summe von <orangeStrong>{{1, percent}}%</orangeStrong> seines ANG, <orangeStrong>{{2, percent}}%</orangeStrong> seiner max. LP und <orangeStrong>{{5, percent}}%</orangeStrong> der LP, die er im Laufe des aktuellen Kampfs insgesamt verloren hat. Fügt außerdem angrenzenden Einheiten Wind-SCH zu. Dieser entspricht der Summe von <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> seines ANG, <orangeStrong>{{4, percent}}%</orangeStrong> seiner max. LP und <orangeStrong>{{6, percent}}%</orangeStrong> der LP, die er im Laufe des aktuellen Kampfs insgesamt verloren hat.\\nDie berechneten LP, die Blade im aktuellen Kampf insgesamt verloren hat, sind begrenzt auf {{7, percent}}% seiner max. LP. Nachdem er seinen Ultimate eingesetzt hat, wird dieser Wert zurückgesetzt und neu berechnet.",
         "shortDesc": "Setzt die aktuellen LP auf 50 % der max. LP. Fügt einem Gegner massiven Wind-SCH und angrenzenden Einheiten Wind-SCH zu."
       }
     },
     "technique": {
       "0": {
         "name": "Karmawind",
-        "fullDesc": "Greift den Gegner unmittelbar an. Verbraucht nach Kampfeintritt {{2}}% von Blades max. LP und fügt allen Gegnern Wind-SCH in Höhe von {{1}}% seiner max. LP zu.\\nWenn Blades aktuelle LP nicht ausreichen, fallen seine aktuellen LP beim Einsatz dieser Technik auf 1.",
+        "fullDesc": "Greift den Gegner unmittelbar an. Verbraucht nach Kampfeintritt {{2, percent}}% von Blades max. LP und fügt allen Gegnern Wind-SCH in Höhe von {{1, percent}}% seiner max. LP zu.\\nWenn Blades aktuelle LP nicht ausreichen, fallen seine aktuellen LP beim Einsatz dieser Technik auf 1.",
         "shortDesc": "Greift den Gegner an. Verbraucht nach Kampfeintritt eigene LP und fügt allen Gegnern Wind-SCH zu."
       }
     },
@@ -44,21 +44,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Endloses Leben",
-        "fullDesc": "Wenn der aktuelle LP-Prozentsatz von Blade gleich oder niedriger als 50 % seiner max. LP ist, wird erhaltene Heilung um {{1}}% erhöht.",
+        "fullDesc": "Wenn der aktuelle LP-Prozentsatz von Blade gleich oder niedriger als 50 % seiner max. LP ist, wird erhaltene Heilung um {{1, percent}}% erhöht.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Nie endender Tod",
-        "fullDesc": "Wenn Blades „Schwerterwald“ einen Gegner mit Schwächebruch trifft, erhält er LP in Höhe von {{1}}% seiner max. LP plus {{2}} zurück.",
+        "fullDesc": "Wenn Blades „Schwerterwald“ einen Gegner mit Schwächebruch trifft, erhält er LP in Höhe von {{1, percent}}% seiner max. LP plus {{2}} zurück.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Zyklon der Zerstörung",
-        "fullDesc": "Erhöht den Folgeangriff-SCH des Talents um {{1}}%.",
+        "fullDesc": "Erhöht den Folgeangriff-SCH des Talents um {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Eine Schwertlänge, tausend Höllentiefen",
-      "desc": "Blades Ultimate verursacht bei einem anvisierten Gegner zusätzlich erhöhten SCH, wobei der erhöhte Betrag {{1}}% seiner gesamten im aktuellen Kampf verlorenen LP beträgt.\\nDie berechneten LP, die Blade im aktuellen Kampf insgesamt verloren hat, werden auf {{2}}% seiner max. LP begrenzt. Nachdem er seinen Ultimate eingesetzt hat, wird dieser Wert zurückgesetzt und neu berechnet."
+      "desc": "Blades Ultimate verursacht bei einem anvisierten Gegner zusätzlich erhöhten SCH, wobei der erhöhte Betrag {{1, percent}}% seiner gesamten im aktuellen Kampf verlorenen LP beträgt.\\nDie berechneten LP, die Blade im aktuellen Kampf insgesamt verloren hat, werden auf {{2, percent}}% seiner max. LP begrenzt. Nachdem er seinen Ultimate eingesetzt hat, wird dieser Wert zurückgesetzt und neu berechnet."
     },
     "2": {
       "name": "Verpasste Träume, unendliches Bedauern",
-      "desc": "Wenn „Höllenqual“ aktiv ist, wird die KRIT-Rate um {{1}}% erhöht."
+      "desc": "Wenn „Höllenqual“ aktiv ist, wird die KRIT-Rate um {{1, percent}}% erhöht."
     },
     "3": {
       "name": "Geschmolzener Stahl, gemahlenes Korn",
@@ -78,7 +78,7 @@
     },
     "4": {
       "name": "Vom Tod abgewiesen, vom Leben heimgesucht",
-      "desc": "Werden Blades aktuelle LP auf 50 % oder niedriger reduziert, werden seine max. LP um {{1}}% erhöht. Dieser Effekt ist bis zu {{2}}-fach stapelbar."
+      "desc": "Werden Blades aktuelle LP auf 50 % oder niedriger reduziert, werden seine max. LP um {{1, percent}}% erhöht. Dieser Effekt ist bis zu {{2}}-fach stapelbar."
     },
     "5": {
       "name": "Todesurteil, Karmavollstreckung",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Wie Körper, so Seele",
-      "desc": "Die maximale Aufladungsanzahl wird auf 4 reduziert. Der durch Folgeangriffe verursachte SCH von Blades Talent wird zusätzlich um {{1}}% seiner max. LP erhöht."
+      "desc": "Die maximale Aufladungsanzahl wird auf 4 reduziert. Der durch Folgeangriffe verursachte SCH von Blades Talent wird zusätzlich um {{1, percent}}% seiner max. LP erhöht."
     }
   }
 }

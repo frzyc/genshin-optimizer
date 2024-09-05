@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "{RUBY_B#ゆ}揺{RUBY_E#}らめく{RUBY_B#れいぎ}礼儀{RUBY_E#}",
-        "fullDesc": "指定した敵単体に開拓者の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の虚数属性ダメージを与える。",
+        "fullDesc": "指定した敵単体に開拓者の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与える。",
         "shortDesc": "敵単体に少量の虚数属性ダメージを与える。"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#かんそうきょく}間奏曲{RUBY_E#}が{RUBY_B#ふ}降{RUBY_E#}らす{RUBY_B#あめ}雨{RUBY_E#}",
-        "fullDesc": "指定した敵単体に開拓者の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の虚数属性ダメージを与え、さらに4ヒットする。1ヒットごとに、ランダムな敵単体に開拓者の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の虚数属性ダメージを与える。",
+        "fullDesc": "指定した敵単体に開拓者の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与え、さらに4ヒットする。1ヒットごとに、ランダムな敵単体に開拓者の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与える。",
         "shortDesc": "敵単体に少量の虚数属性ダメージを与える、5回バウンドする。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#にぎ}賑{RUBY_E#}やかなパレード",
-        "fullDesc": "味方全体に「バックダンス」を付与する、{{1}}ターン継続。開拓者のターンが回ってくるたびに「バックダンス」の継続時間-1ターン。「バックダンス」を持つ味方の撃破特効+<orangeStrong>{{3}}%</orangeStrong>、<u>弱点撃破状態</u>の敵に攻撃を行った後、その回の攻撃の削靭値を1回の<u>超撃破ダメージ</u>に転換する。",
+        "fullDesc": "味方全体に「バックダンス」を付与する、{{1}}ターン継続。開拓者のターンが回ってくるたびに「バックダンス」の継続時間-1ターン。「バックダンス」を持つ味方の撃破特効+<orangeStrong>{{3, percent}}%</orangeStrong>、<u>弱点撃破状態</u>の敵に攻撃を行った後、その回の攻撃の削靭値を1回の<u>超撃破ダメージ</u>に転換する。",
         "shortDesc": "味方全体に「バックダンス」を付与する。「バックダンス」を持つ味方の<orangeStrong>撃破特効がアップする</orangeStrong>。また、<u>弱点撃破状態</u>の敵に攻撃を行った後、さらに<orangeStrong><u>超撃破ダメージ</u></orangeStrong>を1回与える。"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#そっきょう}即興{RUBY_E#}！{RUBY_B#どくそうだん}独奏団{RUBY_E#}",
-        "fullDesc": "秘技を使用した後、次の戦闘開始時、味方全体の撃破特効+{{1}}%、{{2}}ターン継続。",
+        "fullDesc": "秘技を使用した後、次の戦闘開始時、味方全体の撃破特効+{{1, percent}}%、{{2}}ターン継続。",
         "shortDesc": "次の戦闘開始時、味方全体の撃破特効をアップする。"
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "ダンス・フォー・ミー",
-        "fullDesc": "フィールド上の敵の数が5以上/4/3/2/1の場合、「バックダンス」が触発する超撃破ダメージ+{{1}}%/{{2}}%/{{3}}%/{{4}}%/{{5}}%。",
+        "fullDesc": "フィールド上の敵の数が5以上/4/3/2/1の場合、「バックダンス」が触発する超撃破ダメージ+{{1, percent}}%/{{2, percent}}%/{{3, percent}}%/{{4, percent}}%/{{5, percent}}%。",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#なが}流{RUBY_E#}れに{RUBY_B#み}身{RUBY_E#}を{RUBY_B#まか}任{RUBY_E#}せて",
-        "fullDesc": "戦闘スキルを発動した時、1ヒット目の削靭値+{{1}}%。",
+        "fullDesc": "戦闘スキルを発動した時、1ヒット目の削靭値+{{1, percent}}%。",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "シアターハット",
-        "fullDesc": "味方が敵を弱点撃破した後、さらに敵の行動順を{{1}}%遅延させる。",
+        "fullDesc": "味方が敵を弱点撃破した後、さらに敵の行動順を{{1, percent}}%遅延させる。",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "{RUBY_B#ろう}牢{RUBY_E#}を{RUBY_B#う}打{RUBY_E#}ち{RUBY_B#やぶ}破{RUBY_E#}る{RUBY_B#にじ}虹{RUBY_E#}",
-      "desc": "戦闘開始時、開拓者のEP回復効率+{{1}}%、{{2}}ターン継続。"
+      "desc": "戦闘開始時、開拓者のEP回復効率+{{1, percent}}%、{{2}}ターン継続。"
     },
     "3": {
       "name": "{RUBY_B#きゅうしふ}休止符{RUBY_E#}の{RUBY_B#りょうよういん}療養院{RUBY_E#}",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "ハトを{RUBY_B#かく}隠{RUBY_E#}す{RUBY_B#かんむり}冠{RUBY_E#}",
-      "desc": "開拓者がフィールド上にいる時、自身以外の味方の撃破特効を、開拓者の撃破特効{{1}}%分アップする。"
+      "desc": "開拓者がフィールド上にいる時、自身以外の味方の撃破特効を、開拓者の撃破特効{{1, percent}}%分アップする。"
     },
     "5": {
       "name": "{RUBY_B#ふる}古{RUBY_E#}き{RUBY_B#せんりつ}旋律{RUBY_E#}を{RUBY_B#いだ}抱{RUBY_E#}く{RUBY_B#しへん}詩篇{RUBY_E#}",

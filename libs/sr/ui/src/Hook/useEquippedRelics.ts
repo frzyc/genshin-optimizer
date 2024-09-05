@@ -3,15 +3,12 @@ import {
   allRelicSlotKeys,
   type RelicSlotKey,
 } from '@genshin-optimizer/sr/consts'
-import type {
-  ICachedRelic,
-  ICachedSroCharacter,
-} from '@genshin-optimizer/sr/db'
+import type { ICachedCharacter, ICachedRelic } from '@genshin-optimizer/sr/db'
 import { useEffect, useMemo, useState } from 'react'
-import { useDatabaseContext } from '../Context'
+import { useDatabaseContext } from '../Context/DatabaseContext'
 
 export function useEquippedRelics(
-  equippedRelics: ICachedSroCharacter['equippedRelics'] | undefined
+  equippedRelics: ICachedCharacter['equippedRelics'] | undefined
 ) {
   const relicSlotIds = useMemo(
     () =>

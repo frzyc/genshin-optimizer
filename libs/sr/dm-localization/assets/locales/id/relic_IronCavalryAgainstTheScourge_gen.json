@@ -1,7 +1,7 @@
 {
   "setName": "Iron Cavalry Against the Scourge",
   "setEffects": {
-    "2": "Break Effect +{{1}}%.",
-    "4": "Saat Break Effect pengguna lebih dari atau sama dengan {{1}}%, Break DMG yang diakibatkan pada target musuh akan mengabaikan {{3}}% DEF. Saat Break Effect pengguna lebih dari atau sama dengan {{2}}%, Super Break DMG yang diakibatkan pada target musuh akan mengabaikan ekstra {{4}}% DEF."
+    "2": "Break Effect +{{1, percent}}%.",
+    "4": "Saat Break Effect pengguna lebih dari atau sama dengan {{1, percent}}%, Break DMG yang diakibatkan pada target musuh akan mengabaikan {{3, percent}}% DEF. Saat Break Effect pengguna lebih dari atau sama dengan {{2, percent}}%, Super Break DMG yang diakibatkan pada target musuh akan mengabaikan ekstra {{4, percent}}% DEF."
   }
 }

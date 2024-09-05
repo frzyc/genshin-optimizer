@@ -2,6 +2,6 @@
   "name": "Darting Arrow",
   "passive": {
     "name": "War Cry",
-    "description": "Setelah pengguna mengalahkan target musuh, meningkatkan <orangeStrong>{{1}}%</orangeStrong> ATK selama {{2}} giliran."
+    "description": "Setelah pengguna mengalahkan target musuh, meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> ATK selama {{2}} giliran."
   }
 }

@@ -14,10 +14,8 @@
         "noStat": "Sem Valor",
         "eff": "Eficiência: <1></1>",
         "nextRolls": "Próximos rolls:",
-        "RollCount": {
-          "one": "{{count}} Roll",
-          "other": "{{count}} Rolls"
-        }
+        "RollCount_one": "{{count}} Roll",
+        "RollCount_other": "{{count}} Rolls"
       },
       "rarity": "Raridade",
       "level": "Nível",
@@ -98,18 +96,12 @@
     "locationsTooltip": "Desative \"Todos os Artefatos Equipados\" para selecionar apenas   os de alguns personagens",
     "showDup": "Mostrar Duplicatas.",
     "noDupAlert": "Não há artefatos duplicados no seu inventário.",
-    "showingNum": {
-      "one": "Mostrando <1>{{count}}</1> de {{value}} Artefato",
-      "other": "Mostrando <1>{{count}}</1> de {{value}} Artefatos"
-    },
-    "substat": {
-      "one": "{{count}} secundário",
-      "other": "{{count}} secundários"
-    },
-    "sub": {
-      "one": "{{count}} secundário",
-      "other": "{{count}} secundários"
-    },
+    "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} Artefato",
+    "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Artefatos",
+    "substat_one": "{{count}} secundário",
+    "substat_other": "{{count}} secundários",
+    "sub_one": "{{count}} secundário",
+    "sub_other": "{{count}} secundários",
     "noArtifacts": "Parece que você ainda não adicionou artefatos. Se você quiser, há <1>scanners automáticos</1> para você importá-los mais rapidamente!"
   },
   "languages": {
@@ -470,35 +462,21 @@
     "timeOnField": "Tempo passado em campo",
     "hpChange": "Após a Vida mudar",
     "afterHeal": "Após ser curado",
-    "hits": {
-      "one": "{{count}} Acerto",
-      "other": "{{count}} Acertos"
-    },
+    "hits_one": "{{count}} Acerto",
+    "hits_other": "{{count}} Acertos",
     "percentMaxHP": "% da Vida Máx.",
-    "stack": {
-      "one": "{{count}} Acúmulo",
-      "other": "{{count}} Acúmulos"
-    },
-    "seconds": {
-      "one": "{{count}} Segundo",
-      "other": "{{count}} Segundos"
-    },
-    "uses": {
-      "one": "{{count}} Uso",
-      "other": "{{count}} Usos"
-    },
-    "opponents": {
-      "one": "{{count}} Inimigo",
-      "other": "{{count}} Inimigos"
-    },
-    "members": {
-      "one": "{{count}} Membro",
-      "other": "{{count}} Membros"
-    },
-    "times": {
-      "one": "{{count}} Vez",
-      "other": "{{count}} Vezes"
-    },
+    "stack_one": "{{count}} Acúmulo",
+    "stack_other": "{{count}} Acúmulos",
+    "seconds_one": "{{count}} Segundo",
+    "seconds_other": "{{count}} Segundos",
+    "uses_one": "{{count}} Uso",
+    "uses_other": "{{count}} Usos",
+    "opponents_one": "{{count}} Inimigo",
+    "opponents_other": "{{count}} Inimigos",
+    "members_one": "{{count}} Membro",
+    "members_other": "{{count}} Membros",
+    "times_one": "{{count}} Vez",
+    "times_other": "{{count}} Vezes",
     "activeChar": "Personagem ativo",
     "otherHpChange": "Após a Vida de um personagem mudar",
     "reactionOp": {
@@ -1139,10 +1117,8 @@
       "info2": "É responsabilidade do usuário confirmar a precisão das configurações em relação ao seu próprio contexto de jogo.",
       "description": "Descrição",
       "duplicate": "Duplicar",
-      "target": {
-        "one": "<0>{{count}}</0> Objetivo",
-        "other": "<0>{{count}}</0> Objetivos"
-      }
+      "target_one": "<0>{{count}}</0> Objetivo",
+      "target_other": "<0>{{count}}</0> Objetivos"
     },
     "addStats": {
       "title": "Ajustes do Inimigo + Atributos Bônus",
@@ -1204,20 +1180,16 @@
       "team_reso": "Ressonância da Equipe",
       "resonance_tip": "A equipe deve possuir 4 personagens para que a Ressonância Elemental tenha efeito."
     },
-    "showingNum": {
-      "one": "Mostrando <1>{{count}}</1> de {{value}} Personagem",
-      "other": "Mostrando <1>{{count}}</1> de {{value}} Personagens"
-    }
+    "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} Personagem",
+    "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Personagens"
   },
   "page_weapon": {
     "edit": "Editar Arma",
     "weaponName": "Nome da Arma",
     "removeWeapon": "Tem certeza de que quer excluir {{value}}?",
     "addWeapon": "Adicionar Arma",
-    "showingNum": {
-      "one": "Mostrando <1>{{count}}</1> de {{value}} Arma",
-      "other": "Mostrando <1>{{count}}</1> de {{value}} Armas"
-    },
+    "showingNum_one": "Mostrando <1>{{count}}</1> de {{value}} Arma",
+    "showingNum_other": "Mostrando <1>{{count}}</1> de {{value}} Armas",
     "cantDeleteLock": "Não é possível excluir a arma, pois ela está trancada"
   },
   "weapon_AquaSimulacra": {
@@ -1349,10 +1321,8 @@
       "deSelectExc": "Clique num artefato para tirá-lo da lista de bloqueios",
       "usingNum": "Usando <1>{{totalStr}}</1> artefato(s) bloqueado(s)",
       "button_txt": "Bloquear Artefatos",
-      "excNum": {
-        "one": "<0>{{count}}</0> Artefato está bloqueado",
-        "other": "<0>{{count}}</0> Artefatos estão bloqueados"
-      }
+      "excNum_one": "<0>{{count}}</0> Artefato está bloqueado",
+      "excNum_other": "<0>{{count}}</0> Artefatos estão bloqueados"
     },
     "excludeChar": {
       "title": "Configuração de Artefatos Equipados",
@@ -1370,24 +1340,18 @@
         "all": "Todos os Artefatos"
       },
       "usingState": "Usando",
-      "usingNumTot": {
-        "one": "Usando <1>{{arts}}</1> Artefatos de <3>{{count}}</3> personagem",
-        "other": "Usando <1>{{arts}}</1> Artefatos de <3>{{count}}</3> personagens"
-      }
+      "usingNumTot_one": "Usando <1>{{arts}}</1> Artefatos de <3>{{count}}</3> personagem",
+      "usingNumTot_other": "Usando <1>{{arts}}</1> Artefatos de <3>{{count}}</3> personagens"
     },
     "buildCompleted": "Build Concluída",
     "notifyTooltip": "Toca um som quando a geração de Build terminar. Também mostrará uma notificação caso esteja em outra aba.",
     "bonusStats": {
       "title": "Atributos Bônus"
     },
-    "build": {
-      "one": "<0>{{count}}</0> Build",
-      "other": "<0>{{count}}</0> Builds"
-    },
-    "thread": {
-      "one": "<0>{{count}}</0> Thread",
-      "other": "<0>{{count}}</0> Threads"
-    }
+    "build_one": "<0>{{count}}</0> Build",
+    "build_other": "<0>{{count}}</0> Builds",
+    "thread_one": "<0>{{count}}</0> Thread",
+    "thread_other": "<0>{{count}}</0> Threads"
   },
   "weapon_ForestRegalia": {
     "condName": "Após coletar uma Folha da Consciência"

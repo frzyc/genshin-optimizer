@@ -2,6 +2,6 @@
   "name": "After the Charmony Fall",
   "passive": {
     "name": "Quiescence",
-    "description": "Increases the wearer's Break Effect by <orangeStrong>{{1}}%</orangeStrong>. After the wearer uses Ultimate, increases SPD by <orangeStrong>{{2}}%</orangeStrong>, lasting for {{3}} turn(s)."
+    "description": "Increases the wearer's Break Effect by <orangeStrong>{{1, percent}}%</orangeStrong>. After the wearer uses Ultimate, increases SPD by <orangeStrong>{{2, percent}}%</orangeStrong>, lasting for {{3}} turn(s)."
   }
 }

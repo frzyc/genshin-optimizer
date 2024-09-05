@@ -2,6 +2,6 @@
   "name": "Clameur du monde",
   "passive": {
     "name": "Le pouvoir du son",
-    "description": "Le porteur régénère <orangeStrong>{{2}}</orangeStrong> points d'énergie dès son entrée en combat, et les DGT infligés par son ultime augmentent de <orangeStrong>{{1}}%</orangeStrong>."
+    "description": "Le porteur régénère <orangeStrong>{{2}}</orangeStrong> points d'énergie dès son entrée en combat, et les DGT infligés par son ultime augmentent de <orangeStrong>{{1, percent}}%</orangeStrong>."
   }
 }

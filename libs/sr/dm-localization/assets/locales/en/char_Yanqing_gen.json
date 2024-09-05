@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Frost Thorn",
-        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Yanqing's ATK to a single enemy.",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Yanqing's ATK to a single enemy.",
         "shortDesc": "Deals minor Ice DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Darting Ironthorn",
-        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Yanqing's ATK to a single enemy and activates Soulsteel Sync for 1 turn.",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Yanqing's ATK to a single enemy and activates Soulsteel Sync for 1 turn.",
         "shortDesc": "Deals Ice DMG to a single enemy and activates the Soulsteel Sync."
       }
     },
     "ult": {
       "0": {
         "name": "Amidst the Raining Bliss",
-        "fullDesc": "Increases Yanqing's CRIT Rate by {{1}}%. When Soulsteel Sync is active, increases Yanqing's CRIT DMG by an extra <orangeStrong>{{2}}%</orangeStrong>. This <u>buff</u> lasts for one turn. Afterwards, deals Ice DMG equal to <orangeStrong>{{3}}%</orangeStrong> of Yanqing's ATK to a single enemy.",
+        "fullDesc": "Increases Yanqing's CRIT Rate by {{1, percent}}%. When Soulsteel Sync is active, increases Yanqing's CRIT DMG by an extra <orangeStrong>{{2, percent}}%</orangeStrong>. This <u>buff</u> lasts for one turn. Afterwards, deals Ice DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Yanqing's ATK to a single enemy.",
         "shortDesc": "Increases Yanqing's CRIT Rate. Enhances \"Soulsteel Sync\" and deals massive Ice DMG to a single enemy."
       }
     },
     "technique": {
       "0": {
         "name": "The One True Sword",
-        "fullDesc": "After using his Technique, at the start of the next battle, Yanqing deals {{2}}% more DMG for {{3}} turn(s) to enemies whose current HP is {{1}}% or higher.",
+        "fullDesc": "After using his Technique, at the start of the next battle, Yanqing deals {{2, percent}}% more DMG for {{3}} turn(s) to enemies whose current HP is {{1, percent}}% or higher.",
         "shortDesc": "After this character uses Technique, at the start of the next battle, increases the DMG dealt by this character to enemy targets whose HP is 50% or higher."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Icing on the Kick",
-        "fullDesc": "When Yanqing attacks, deals Additional Ice DMG equal to {{1}}% of Yanqing's ATK to enemies with Ice Weakness.",
+        "fullDesc": "When Yanqing attacks, deals Additional Ice DMG equal to {{1, percent}}% of Yanqing's ATK to enemies with Ice Weakness.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Frost Favors the Brave",
-        "fullDesc": "When Soulsteel Sync is active, Effect RES increases by {{1}}%.",
+        "fullDesc": "When Soulsteel Sync is active, Effect RES increases by {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Gentle Blade",
-        "fullDesc": "When a CRIT Hit is triggered, increases SPD by {{1}}% for {{2}} turn(s).",
+        "fullDesc": "When a CRIT Hit is triggered, increases SPD by {{1, percent}}% for {{2}} turn(s).",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Svelte Saber",
-      "desc": "When Yanqing attacks a Frozen enemy, he deals Additional Ice DMG equal to {{1}}% of his ATK."
+      "desc": "When Yanqing attacks a Frozen enemy, he deals Additional Ice DMG equal to {{1, percent}}% of his ATK."
     },
     "2": {
       "name": "Supine Serenade",
-      "desc": "When Soulsteel Sync is active, Energy Regeneration Rate increases by an extra {{1}}%."
+      "desc": "When Soulsteel Sync is active, Energy Regeneration Rate increases by an extra {{1, percent}}%."
     },
     "3": {
       "name": "Sword Savant",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Searing Sting",
-      "desc": "When the current HP percentage is {{1}}% or higher, Ice RES PEN increases by {{2}}%."
+      "desc": "When the current HP percentage is {{1, percent}}% or higher, Ice RES PEN increases by {{2, percent}}%."
     },
     "5": {
       "name": "Surging Strife",

@@ -82,10 +82,8 @@
     "deSelectExc": "Clique num artefato para tirá-lo da lista de bloqueios",
     "usingNum": "Usando <1>{{totalStr}}</1> artefato(s) bloqueado(s)",
     "button_txt": "Bloquear Artefatos",
-    "excNum": {
-      "one": "<0>{{count}}</0> Artefato está bloqueado",
-      "other": "<0>{{count}}</0> Artefatos estão bloqueados"
-    }
+    "excNum_one": "<0>{{count}}</0> Artefato está bloqueado",
+    "excNum_other": "<0>{{count}}</0> Artefatos estão bloqueados"
   },
   "excludeChar": {
     "title": "Configuração de Artefatos Equipados",
@@ -103,20 +101,14 @@
       "all": "Todos os Artefatos"
     },
     "usingState": "Usando",
-    "usingNumTot": {
-      "one": "Usando <1>{{arts}}</1> Artefatos de <3>{{count}}</3> personagem",
-      "other": "Usando <1>{{arts}}</1> Artefatos de <3>{{count}}</3> personagens"
-    }
+    "usingNumTot_one": "Usando <1>{{arts}}</1> Artefatos de <3>{{count}}</3> personagem",
+    "usingNumTot_other": "Usando <1>{{arts}}</1> Artefatos de <3>{{count}}</3> personagens"
   },
   "buildCompleted": "Build Concluída",
   "notifyTooltip": "Toca um som quando a geração de Build terminar. Também mostrará uma notificação caso esteja em outra aba.",
   "bonusStats": { "title": "Atributos Bônus" },
-  "build": {
-    "one": "<0>{{count}}</0> Build",
-    "other": "<0>{{count}}</0> Builds"
-  },
-  "thread": {
-    "one": "<0>{{count}}</0> Thread",
-    "other": "<0>{{count}}</0> Threads"
-  }
+  "build_one": "<0>{{count}}</0> Build",
+  "build_other": "<0>{{count}}</0> Builds",
+  "thread_one": "<0>{{count}}</0> Thread",
+  "thread_other": "<0>{{count}}</0> Threads"
 }

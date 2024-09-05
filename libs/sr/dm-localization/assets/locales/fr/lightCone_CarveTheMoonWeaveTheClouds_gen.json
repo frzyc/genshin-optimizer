@@ -2,6 +2,6 @@
   "name": "Nuages taillés dans la lune",
   "passive": {
     "name": "Secret",
-    "description": "L'un des effets suivants s'applique aléatoirement en début de combat et à chaque fois que le tour du porteur commence : l'ATQ de tous les alliés augmente de <orangeStrong>{{1}}%</orangeStrong>, les DGT critiques de tous les alliés augmentent de <orangeStrong>{{2}}%</orangeStrong> ou le taux de régénération d'énergie de tous les alliés augmente de <orangeStrong>{{3}}%</orangeStrong>. L'effet appliqué ne peut pas être identique au précédent et le remplace. L'effet appliqué est supprimé lorsque le porteur est à terre. Les capacités du même type ne se cumulent pas."
+    "description": "L'un des effets suivants s'applique aléatoirement en début de combat et à chaque fois que le tour du porteur commence : l'ATQ de tous les alliés augmente de <orangeStrong>{{1, percent}}%</orangeStrong>, les DGT critiques de tous les alliés augmentent de <orangeStrong>{{2, percent}}%</orangeStrong> ou le taux de régénération d'énergie de tous les alliés augmente de <orangeStrong>{{3, percent}}%</orangeStrong>. L'effet appliqué ne peut pas être identique au précédent et le remplace. L'effet appliqué est supprimé lorsque le porteur est à terre. Les capacités du même type ne se cumulent pas."
   }
 }

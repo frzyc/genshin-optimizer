@@ -4,33 +4,33 @@
     "basic": {
       "0": {
         "name": "Brillo resplandeciente",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Destello trascendental",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a un enemigo y obtiene {{2}} acumulación de Sizigia.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a un enemigo y obtiene {{2}} acumulación de Sizigia.",
         "shortDesc": "Inflige Daño de Hielo a un enemigo y obtiene <orangeStrong>1 acumulación de Sizigia</orangeStrong>."
       },
       "1": {
         "name": "Reflejo helado de la luna",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a un enemigo y un <orangeStrong>{{3}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a los enemigos adyacentes. Consume {{2}} acumulación de Sizigia. Esta habilidad no consume pts. de habilidad básica.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a un enemigo y un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a los enemigos adyacentes. Consume {{2}} acumulación de Sizigia. Esta habilidad no consume pts. de habilidad básica.",
         "shortDesc": "Inflige Daño de Hielo a un enemigo y a los enemigos adyacentes. Consume 1 acumulación de Sizigia."
       }
     },
     "ult": {
       "0": {
         "name": "Sueño de flores efímeras",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a un enemigo y un <orangeStrong>{{3}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a los enemigos adyacentes. Cuando termina el ataque, obtiene {{2}} acumulación de Sizigia.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a un enemigo y un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a los enemigos adyacentes. Cuando termina el ataque, obtiene {{2}} acumulación de Sizigia.",
         "shortDesc": "Inflige una gran cantidad de Daño de Hielo a un enemigo y Daño de Hielo a los enemigos adyacentes. Además, obtiene <orangeStrong>1 acumulación de Sizigia</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Resplandor de la verdad",
-        "fullDesc": "Tras usar la técnica, crea una zona especial a su alrededor que dura {{3}} segundos. Los enemigos que estén en la zona especial son afectados con Congelación. Al entrar en combate con los enemigos dentro de la zona, recupera {{6}} pts. de energía, obtiene {{1}} acumulación de Sizigia y tiene una <u>probabilidad base</u> del {{2}}% de congelar a los enemigos durante {{4}} turno. Los enemigos congelados no pueden actuar y al principio de cada turno reciben un Daño de Hielo <u>adicional</u> equivalente al {{5}}% del ATQ de Jingliu. Solo puede haber una zona especial creada por los aliados a la vez.",
+        "fullDesc": "Tras usar la técnica, crea una zona especial a su alrededor que dura {{3}} segundos. Los enemigos que estén en la zona especial son afectados con Congelación. Al entrar en combate con los enemigos dentro de la zona, recupera {{6}} pts. de energía, obtiene {{1}} acumulación de Sizigia y tiene una <u>probabilidad base</u> del {{2, percent}}% de congelar a los enemigos durante {{4}} turno. Los enemigos congelados no pueden actuar y al principio de cada turno reciben un Daño de Hielo <u>adicional</u> equivalente al {{5, percent}}% del ATQ de Jingliu. Solo puede haber una zona especial creada por los aliados a la vez.",
         "shortDesc": "Crea una zona especial a su alrededor. Los enemigos que estén en la zona <orangeStrong>se congelan</orangeStrong>. Al entrar en combate con los enemigos dentro de la zona, recupera energía, obtiene 1 acumulación de Sizigia y tiene una gran probabilidad de <orangeStrong>congelar</orangeStrong> a los enemigos."
       }
     },
@@ -44,21 +44,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Paisaje infernal",
-        "fullDesc": "En el estado Transmigración espectral, la RES a efecto aumenta en un {{1}}%.",
+        "fullDesc": "En el estado Transmigración espectral, la RES a efecto aumenta en un {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Maestra de espadas",
-        "fullDesc": "Tras usar Destello trascendental, la siguiente acción se adelanta un {{1}}%.",
+        "fullDesc": "Tras usar Destello trascendental, la siguiente acción se adelanta un {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Espectro gélido",
-        "fullDesc": "En el estado Transmigración espectral, el daño que inflige la habilidad definitiva aumenta en un {{1}}%.",
+        "fullDesc": "En el estado Transmigración espectral, el daño que inflige la habilidad definitiva aumenta en un {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Asalto lunar a las puertas celestiales",
-      "desc": "Al lanzar la habilidad definitiva o la habilidad básica potenciada, el Daño CRIT de Jingliu aumenta en un {{1}}% durante {{3}} turno. Si solo golpea a 1 enemigo, le inflige de forma adicional un {{2}}% del ATQ de Jingliu como Daño de Hielo."
+      "desc": "Al lanzar la habilidad definitiva o la habilidad básica potenciada, el Daño CRIT de Jingliu aumenta en un {{1, percent}}% durante {{3}} turno. Si solo golpea a 1 enemigo, le inflige de forma adicional un {{2, percent}}% del ATQ de Jingliu como Daño de Hielo."
     },
     "2": {
       "name": "Sombras lunares en Qixing",
-      "desc": "Tras usar la habilidad definitiva, el daño de la siguiente habilidad básica potenciada aumenta en un {{1}}%."
+      "desc": "Tras usar la habilidad definitiva, el daño de la siguiente habilidad básica potenciada aumenta en un {{1, percent}}%."
     },
     "3": {
       "name": "Cuarto creciente vigilante",
@@ -78,7 +78,7 @@
     },
     "4": {
       "name": "Lucero de la noche",
-      "desc": "Mientras está en el estado Transmigración espectral, el aumento de ATQ que obtiene cuando consume PV de los aliados se incrementa de forma adicional en un {{1}}% del total de PV consumidos a todos los aliados. El límite de ATQ que se puede obtener de esta forma aumenta en un {{2}}%."
+      "desc": "Mientras está en el estado Transmigración espectral, el aumento de ATQ que obtiene cuando consume PV de los aliados se incrementa de forma adicional en un {{1, percent}}% del total de PV consumidos a todos los aliados. El límite de ATQ que se puede obtener de esta forma aumenta en un {{2, percent}}%."
     },
     "5": {
       "name": "Brillo estelar oscurecido",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Eclipse vacíacuerpo",
-      "desc": "Cuando Jingliu entra en el estado Transmigración espectral, el límite de acumulaciones de Sizigia aumenta en 1 y obtiene {{1}} acumulación adicional de Sizigia. En el estado Transmigración espectral, el Daño CRIT aumenta en un {{2}}%."
+      "desc": "Cuando Jingliu entra en el estado Transmigración espectral, el límite de acumulaciones de Sizigia aumenta en 1 y obtiene {{1}} acumulación adicional de Sizigia. En el estado Transmigración espectral, el Daño CRIT aumenta en un {{2, percent}}%."
     }
   }
 }

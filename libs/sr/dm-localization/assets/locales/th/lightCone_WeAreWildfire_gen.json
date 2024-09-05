@@ -2,6 +2,6 @@
   "name": "We Are Wildfire",
   "passive": {
     "name": "Teary-Eyed",
-    "description": "เมื่อเริ่มต้นการต่อสู้ จะลด DMG ที่ฝ่ายเราทั้งหมดได้รับลง <orangeStrong>{{2}}%</orangeStrong> เป็นเวลา {{3}} เทิร์น พร้อมทั้งฟื้นฟู HP ให้กับฝ่ายตัวเองทั้งหมด เป็น <orangeStrong>{{1}}%</orangeStrong> ของ HP ที่แต่ละตัวเสียไปทันที"
+    "description": "เมื่อเริ่มต้นการต่อสู้ จะลด DMG ที่ฝ่ายเราทั้งหมดได้รับลง <orangeStrong>{{2, percent}}%</orangeStrong> เป็นเวลา {{3}} เทิร์น พร้อมทั้งฟื้นฟู HP ให้กับฝ่ายตัวเองทั้งหมด เป็น <orangeStrong>{{1, percent}}%</orangeStrong> ของ HP ที่แต่ละตัวเสียไปทันที"
   }
 }

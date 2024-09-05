@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "{RUBY_B#ちくきゃくれい}逐客令{RUBY_E#}",
-        "fullDesc": "指定した敵単体に停雲の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の雷属性ダメージを与える。",
+        "fullDesc": "指定した敵単体に停雲の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性ダメージを与える。",
         "shortDesc": "敵単体に少量の雷属性ダメージを与える。"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#しょうおんわいん}祥音和韻{RUBY_E#}",
-        "fullDesc": "指定した味方単体に「賜福」を付与し、その味方の攻撃力+<orangeStrong>{{2}}%</orangeStrong>、攻撃力アップ量は停雲の現在の攻撃力の<orangeStrong>{{4}}%</orangeStrong>を超えない。\\n「賜福」を付与された味方が攻撃を行った後、敵にその味方の攻撃力<orangeStrong>{{1}}%</orangeStrong>分の雷属性<u>付加ダメージ</u>を1回与える。\\n「賜福」は{{3}}ターン継続し、停雲の戦闘スキルで最後に指定したターゲットにのみ効果を発揮する。",
+        "fullDesc": "指定した味方単体に「賜福」を付与し、その味方の攻撃力+<orangeStrong>{{2, percent}}%</orangeStrong>、攻撃力アップ量は停雲の現在の攻撃力の<orangeStrong>{{4, percent}}%</orangeStrong>を超えない。\\n「賜福」を付与された味方が攻撃を行った後、敵にその味方の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性<u>付加ダメージ</u>を1回与える。\\n「賜福」は{{3}}ターン継続し、停雲の戦闘スキルで最後に指定したターゲットにのみ効果を発揮する。",
         "shortDesc": "味方単体の<orangeStrong>攻撃力をアップ</orangeStrong>させ、「賜福」を与える。「賜福」がある味方は攻撃を行った時に少量の<orangeStrong>雷属性<u>付加ダメージ</u></orangeStrong>を与える。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#けいうんこうふうぎとう}慶雲光覆儀祷{RUBY_E#}",
-        "fullDesc": "指定した味方単体のEPを{{1}}回復し、その味方の与ダメージ+<orangeStrong>{{3}}%</orangeStrong>、{{2}}ターン継続。",
+        "fullDesc": "指定した味方単体のEPを{{1}}回復し、その味方の与ダメージ+<orangeStrong>{{3, percent}}%</orangeStrong>、{{2}}ターン継続。",
         "shortDesc": "味方単体の<orangeStrong>EPを回復</orangeStrong>し、その味方の<orangeStrong>与ダメージをアップ</orangeStrong>する。"
       }
     },
@@ -39,14 +39,14 @@
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#りゅうせい}留晴{RUBY_E#}",
-        "fullDesc": "戦闘スキルを発動した時、停雲の速度+{{1}}%、1ターン継続。",
+        "fullDesc": "戦闘スキルを発動した時、停雲の速度+{{1, percent}}%、1ターン継続。",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#じょさい}除災{RUBY_E#}",
-        "fullDesc": "通常攻撃によるダメージ+{{1}}%。",
+        "fullDesc": "通常攻撃によるダメージ+{{1, percent}}%。",
         "shortDesc": ""
       }
     },
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "{RUBY_B#はるかぜ}春風{RUBY_E#}{RUBY_B#ふ}吹{RUBY_E#}きて{RUBY_B#じうん}時運{RUBY_E#}{RUBY_B#めぐ}巡{RUBY_E#}る",
-      "desc": "「賜福」を与えられた味方単体は、必殺技を発動した後に速度+{{1}}%、1ターン継続。"
+      "desc": "「賜福」を与えられた味方単体は、必殺技を発動した後に速度+{{1, percent}}%、1ターン継続。"
     },
     "2": {
       "name": "{RUBY_B#くんし}君子{RUBY_E#}の{RUBY_B#おんけい}恩恵{RUBY_E#}\\n{RUBY_B#ほほえ}微笑{RUBY_E#}みを{RUBY_B#もっ}以{RUBY_E#}て{RUBY_B#うけたまわ}承{RUBY_E#}るべき",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "{RUBY_B#じょうせい}情勢{RUBY_E#}を{RUBY_B#よ}読{RUBY_E#}み\\n{RUBY_B#へんか}変化{RUBY_E#}せし{RUBY_B#めいか}鳴火{RUBY_E#}",
-      "desc": "「賜福」の付加ダメージ倍率+{{1}}%。"
+      "desc": "「賜福」の付加ダメージ倍率+{{1, percent}}%。"
     },
     "5": {
       "name": "{RUBY_B#やす}綏{RUBY_E#}んずる{RUBY_B#こび}狐魅{RUBY_E#}",

@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Pari direct",
-        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1}}%</orangeStrong> de la DÉF d'Aventurine à une cible ennemie unique.",
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de la DÉF d'Aventurine à une cible ennemie unique.",
         "shortDesc": "Inflige des DGT imaginaires mineurs à une cible ennemie unique."
       }
     },
     "skill": {
       "0": {
         "name": "Pierre angulaire de la prospérité",
-        "fullDesc": "Accorde à tous les alliés un bouclier de Mise renforcée qui peut bloquer des DGT équivalents à <orangeStrong>{{1}}%</orangeStrong> de la DÉF d'Aventurine + <orangeStrong>{{2}}</orangeStrong> pendant {{3}} tours. Lorsque l'effet Mise renforcée est obtenu à plusieurs reprises, la valeur de bouclier peut se cumuler jusqu'à {{4}}% du bouclier fourni par la compétence actuelle.",
+        "fullDesc": "Accorde à tous les alliés un bouclier de Mise renforcée qui peut bloquer des DGT équivalents à <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de la DÉF d'Aventurine + <orangeStrong>{{2}}</orangeStrong> pendant {{3}} tours. Lorsque l'effet Mise renforcée est obtenu à plusieurs reprises, la valeur de bouclier peut se cumuler jusqu'à {{4, percent}}% du bouclier fourni par la compétence actuelle.",
         "shortDesc": "Accorde à tous les alliés un bouclier de Mise renforcée <orangeStrong>dont la valeur de bouclier est cumulable</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Roi de la roulette",
-        "fullDesc": "Récupère entre 1 et {{1}} Paris aveugles de manière aléatoire et applique Sur les nerfs à une cible ennemie unique. Dure {{4}} tours. Inflige des DGT imaginaires équivalents à <orangeStrong>{{2}}%</orangeStrong> de la DÉF d'Aventurine à la cible ennemie. Lorsqu'un allié touche une cible ennemie qui subit Sur les nerfs, les DGT critiques qu'il inflige augmentent de <orangeStrong>{{3}}%</orangeStrong>.",
+        "fullDesc": "Récupère entre 1 et {{1}} Paris aveugles de manière aléatoire et applique Sur les nerfs à une cible ennemie unique. Dure {{4}} tours. Inflige des DGT imaginaires équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de la DÉF d'Aventurine à la cible ennemie. Lorsqu'un allié touche une cible ennemie qui subit Sur les nerfs, les DGT critiques qu'il inflige augmentent de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.",
         "shortDesc": "Récupère un nombre aléatoire de Paris aveugles et applique Sur les nerfs à un ennemi unique, tout en infligeant des DGT imaginaires. Lorsqu'un allié touche un ennemi qui subit Sur les nerfs, les <orangeStrong>DGT critiques qu'il inflige augmentent</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Rouge ou noir",
-        "fullDesc": "L'utilisation de la technique accorde 1 des effets suivants :\\nIl y a une chance que la DÉF augmente de {{1}}%.\\nIl y a de fortes chances que la DÉF augmente de {{2}}%.\\nIl y a une faible chance que la DÉF augmente de {{3}}%.\\n\\nEn cas d'utilisation répétée de la technique, c'est l'effet obtenu avec la valeur la plus élevée qui est conservé.\\nLa DÉF de tous les alliés augmente de la valeur correspondante pendant {{4}} tours lors du prochain combat.",
+        "fullDesc": "L'utilisation de la technique accorde 1 des effets suivants :\\nIl y a une chance que la DÉF augmente de {{1, percent}}%.\\nIl y a de fortes chances que la DÉF augmente de {{2, percent}}%.\\nIl y a une faible chance que la DÉF augmente de {{3, percent}}%.\\n\\nEn cas d'utilisation répétée de la technique, c'est l'effet obtenu avec la valeur la plus élevée qui est conservé.\\nLa DÉF de tous les alliés augmente de la valeur correspondante pendant {{4}} tours lors du prochain combat.",
         "shortDesc": "L'utilisation de la technique accorde de manière aléatoire un des trois effets d'augmentation de DÉF avec différentes valeurs. La DÉF de tous les alliés augmente de la valeur correspondante après être entré en combat."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Par ricochet",
-        "fullDesc": "Pour chaque tranche de 100 points de DÉF qui dépasse {{3}}, les chances de coup critique d'Aventurine augmentent de {{1}}%, jusqu'à une augmentation maximale de {{2}}%.",
+        "fullDesc": "Pour chaque tranche de 100 points de DÉF qui dépasse {{3}}, les chances de coup critique d'Aventurine augmentent de {{1, percent}}%, jusqu'à une augmentation maximale de {{2, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "En veine",
-        "fullDesc": "Accorde un bouclier de Mise renforcée à tous les alliés en début de combat, dont la valeur de bouclier est équivalente à {{2}}% de celle accordée par la compétence. Dure {{1}} tours.",
+        "fullDesc": "Accorde un bouclier de Mise renforcée à tous les alliés en début de combat, dont la valeur de bouclier est équivalente à {{2, percent}}% de celle accordée par la compétence. Dure {{1}} tours.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Bingo !",
-        "fullDesc": "Aventurine récupère 1 Pari aveugle chaque fois qu'un allié qui bénéficie de Mise renforcée lance une attaque de suivi. Cet effet peut se déclencher jusqu'à {{3}} fois et son nombre de déclenchements se réinitialise au début du tour d'Aventurine. Lorsqu'Aventurine déclenche l'attaque de suivi de son talent, il accorde à tous les alliés un bouclier de Mise renforcée qui peut bloquer des DGT équivalents à {{1}}% de la DÉF d'Aventurine + {{2}} et accorde également une Mise renforcée qui peut bloquer des DGT équivalents à {{4}}% de la DÉF d'Aventurine + {{5}} à l'allié qui a la valeur de bouclier la plus faible pendant 3 tours.",
+        "fullDesc": "Aventurine récupère 1 Pari aveugle chaque fois qu'un allié qui bénéficie de Mise renforcée lance une attaque de suivi. Cet effet peut se déclencher jusqu'à {{3}} fois et son nombre de déclenchements se réinitialise au début du tour d'Aventurine. Lorsqu'Aventurine déclenche l'attaque de suivi de son talent, il accorde à tous les alliés un bouclier de Mise renforcée qui peut bloquer des DGT équivalents à {{1, percent}}% de la DÉF d'Aventurine + {{2}} et accorde également une Mise renforcée qui peut bloquer des DGT équivalents à {{4, percent}}% de la DÉF d'Aventurine + {{5}} à l'allié qui a la valeur de bouclier la plus faible pendant 3 tours.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Dilemme du prisonnier",
-      "desc": "Augmente les DGT critiques des alliés qui bénéficient de Mise renforcée de {{1}}%. Après avoir utilisé l'ultime, accorde à tous les alliés un bouclier de Mise renforcée dont la valeur de bouclier est équivalente à {{2}}% de celle accordée par la compétence. Dure {{3}} tours."
+      "desc": "Augmente les DGT critiques des alliés qui bénéficient de Mise renforcée de {{1, percent}}%. Après avoir utilisé l'ultime, accorde à tous les alliés un bouclier de Mise renforcée dont la valeur de bouclier est équivalente à {{2, percent}}% de celle accordée par la compétence. Dure {{3}} tours."
     },
     "2": {
       "name": "Rationalité limitée",
-      "desc": "Réduit toutes les RÉS de type de la cible de {{2}}% pendant {{3}} tours lors de l'utilisation de l'ATQ normale."
+      "desc": "Réduit toutes les RÉS de type de la cible de {{2, percent}}% pendant {{3}} tours lors de l'utilisation de l'ATQ normale."
     },
     "3": {
       "name": "Rendement maximal",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Paradoxe inattendu",
-      "desc": "Lors du déclenchement de l'attaque de suivi de son talent, la DÉF d'Aventurine augmente de {{1}}% pendant {{2}} tours et le nombre de frappes par action de l'attaque de suivi déclenchée par son talent augmente de {{3}}."
+      "desc": "Lors du déclenchement de l'attaque de suivi de son talent, la DÉF d'Aventurine augmente de {{1, percent}}% pendant {{2}} tours et le nombre de frappes par action de l'attaque de suivi déclenchée par son talent augmente de {{3}}."
     },
     "5": {
       "name": "Aversion à l'incertitude",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Jeu de chasse",
-      "desc": "Les DGT infligés par Aventurine augmentent de {{1}}% pour chaque allié qui bénéficie d'un bouclier, jusqu'à une augmentation maximale de {{2}}%."
+      "desc": "Les DGT infligés par Aventurine augmentent de {{1, percent}}% pour chaque allié qui bénéficie d'un bouclier, jusqu'à une augmentation maximale de {{2, percent}}%."
     }
   }
 }

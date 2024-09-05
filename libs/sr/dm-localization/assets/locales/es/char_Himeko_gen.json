@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Afinación de sierra",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Himeko como Daño de Fuego a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Himeko como Daño de Fuego a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Detonación fundida",
-        "fullDesc": "Himeko inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño de Fuego a un enemigo y un <orangeStrong>{{2}}%</orangeStrong> de su ATQ como Daño de Fuego a los enemigos adyacentes.",
+        "fullDesc": "Himeko inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño de Fuego a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño de Fuego a los enemigos adyacentes.",
         "shortDesc": "Inflige Daño de Fuego a un enemigo y una pequeña cantidad de Daño de Fuego a los enemigos adyacentes."
       }
     },
     "ult": {
       "0": {
         "name": "Llamas celestiales",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Himeko como Daño de Fuego a todos los enemigos. Por cada enemigo eliminado, Himeko recupera {{2}} pts. de energía adicionales.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Himeko como Daño de Fuego a todos los enemigos. Por cada enemigo eliminado, Himeko recupera {{2}} pts. de energía adicionales.",
         "shortDesc": "Inflige Daño de Fuego a todos los enemigos y recupera energía si elimina a alguno."
       }
     },
     "technique": {
       "0": {
         "name": "Combustión incompleta",
-        "fullDesc": "Tras usar la técnica, crea una zona especial que dura {{4}} s. Al entrar en combate con enemigos dentro de la zona especial, tiene una <u>probabilidad base</u> del {{1}}% de que los objetivos enemigos reciban un {{2}}% más de Daño de Fuego durante {{3}} turnos. Solo puede haber 1 zona especial creada por los aliados a la vez.",
+        "fullDesc": "Tras usar la técnica, crea una zona especial que dura {{4}} s. Al entrar en combate con enemigos dentro de la zona especial, tiene una <u>probabilidad base</u> del {{1, percent}}% de que los objetivos enemigos reciban un {{2, percent}}% más de Daño de Fuego durante {{3}} turnos. Solo puede haber 1 zona especial creada por los aliados a la vez.",
         "shortDesc": "Crea una zona especial. Al entrar en combate con enemigos en la zona especial, hay una gran probabilidad de que <orangeStrong>el Daño de Fuego que reciben los enemigos aumente</orangeStrong>."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Fuego estelar",
-        "fullDesc": "Al lanzar un ataque, hay un {{1}}% de probabilidad base de infligir Quemadura a los objetivos durante {{2}} turnos.\\nLos enemigos afectados por Quemadura reciben al comienzo de cada turno un Daño de Fuego con el tiempo equivalente al {{3}}% del ATQ de Himeko.",
+        "fullDesc": "Al lanzar un ataque, hay un {{1, percent}}% de probabilidad base de infligir Quemadura a los objetivos durante {{2}} turnos.\\nLos enemigos afectados por Quemadura reciben al comienzo de cada turno un Daño de Fuego con el tiempo equivalente al {{3, percent}}% del ATQ de Himeko.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Magma",
-        "fullDesc": "El daño que la habilidad básica inflige a los enemigos afectados por Quemadura aumenta en un {{1}}%.",
+        "fullDesc": "El daño que la habilidad básica inflige a los enemigos afectados por Quemadura aumenta en un {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "El estándar",
-        "fullDesc": "Si el porcentaje de PV es igual o superior al {{1}}%, la Prob. CRIT aumenta en un {{2}}%.",
+        "fullDesc": "Si el porcentaje de PV es igual o superior al {{1, percent}}%, la Prob. CRIT aumenta en un {{2, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Infancia",
-      "desc": "Cuando se activa Carrera de la victoria, la VEL de Himeko aumenta en un {{1}}% durante {{2}} turnos."
+      "desc": "Cuando se activa Carrera de la victoria, la VEL de Himeko aumenta en un {{1, percent}}% durante {{2}} turnos."
     },
     "2": {
       "name": "Convergencia",
-      "desc": "Cuando el objetivo tiene un porcentaje de PV igual o inferior al {{1}}%, recibe un {{2}}% más de daño."
+      "desc": "Cuando el objetivo tiene un porcentaje de PV igual o inferior al {{1, percent}}%, recibe un {{2, percent}}% más de daño."
     },
     "3": {
       "name": "Aplomo",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Trazando caminos",
-      "desc": "La habilidad definitiva inflige daño 2 veces adicionales. Cada vez, inflige a un enemigo al azar un Daño de Fuego equivalente al {{1}}% del daño original recibido."
+      "desc": "La habilidad definitiva inflige daño 2 veces adicionales. Cada vez, inflige a un enemigo al azar un Daño de Fuego equivalente al {{1, percent}}% del daño original recibido."
     }
   }
 }

@@ -35,7 +35,7 @@
     "info2": "構成が正確に設定されている事を確認ください。",
     "description": "詳細",
     "duplicate": "重複",
-    "target": { "other": "<0>{{count}}</0>つのターゲット" }
+    "target_other": "<0>{{count}}</0>つのターゲット"
   },
   "addStats": {
     "title": "敵・ボーナスステータスの構成",
@@ -89,7 +89,5 @@
     "team_reso": "元素共鳴",
     "resonance_tip": "元素共鳴の効果を発揮するためには、パーティーが4人揃っている必要があります。"
   },
-  "showingNum": {
-    "other": "{{value}}人のキャラクターの内、<1>{{count}}</1> 人を表示中"
-  }
+  "showingNum_other": "{{value}}人のキャラクターの内、<1>{{count}}</1> 人を表示中"
 }

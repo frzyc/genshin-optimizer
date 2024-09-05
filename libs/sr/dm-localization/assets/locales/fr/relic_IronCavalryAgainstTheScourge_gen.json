@@ -1,7 +1,7 @@
 {
   "setName": "Brigade de fer à l'assaut du fléau",
   "setEffects": {
-    "2": "Augmente l'effet de Rupture de {{1}}%.",
-    "4": "Si l'effet de Rupture du porteur est supérieur ou égal à {{1}}%, les DGT de rupture infligés ignorent {{3}}% de la DÉF de la cible ennemie. Lorsque l'effet de Rupture du porteur est supérieur ou égal à {{2}}%, les DGT de rupture extrême qu'il inflige aux cibles ennemies ignorent {{4}}% supplémentaires de la DÉF ennemie."
+    "2": "Augmente l'effet de Rupture de {{1, percent}}%.",
+    "4": "Si l'effet de Rupture du porteur est supérieur ou égal à {{1, percent}}%, les DGT de rupture infligés ignorent {{3, percent}}% de la DÉF de la cible ennemie. Lorsque l'effet de Rupture du porteur est supérieur ou égal à {{2, percent}}%, les DGT de rupture extrême qu'il inflige aux cibles ennemies ignorent {{4, percent}}% supplémentaires de la DÉF ennemie."
   }
 }

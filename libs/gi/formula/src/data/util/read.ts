@@ -42,14 +42,11 @@ export type Tag = {
   [key in keyof typeof fixedTags]?: (typeof fixedTags)[key][number] | null
 } & { name?: string | null; qt?: string | null; q?: string | null }
 
-export class Read extends TypedRead<Tag, Read> {
+export class Read extends TypedRead<Tag> {
   override register<C extends keyof Tag>(cat: C, val: Tag[C]): void {
     if (val == null) return // null | undefined
     if (cat === 'name') usedNames.add(val)
     else if (cat === 'q') usedQ.add(val)
-  }
-  override ctor(tag: Tag, ex: Read['ex']): Read {
-    return new Read(tag, ex)
   }
 
   name(name: string): Read {
@@ -66,15 +63,15 @@ export class Read extends TypedRead<Tag, Read> {
     if (this.tag.et !== 'teamBuff' || !sheet)
       throw new Error('Unsupported non-stacking entry')
     const q = `${uniqueId(sheet)}`
-    // Use raw tags here instead of `self.*` to avoid cyclic dependency
+    // Use raw tags here instead of `own.*` to avoid cyclic dependency
     // Entries in TeamData need `member:` for priority
     return [
-      // 1) self.stackIn.<q>.add(value)
-      this.withTag({ et: 'self', sheet, qt: 'stackIn', q }).add(value),
-      // 2) In TeamData: self.stackTmp.<q>.add(cmpNE(self.stackIn.<q>, 0, /* priority */))
-      // 3) In TeamData: self.stackOut.<q>.add(cmpEq(team.stackTmp.<q>.max, /* priority */, self.stackIn))
-      // 4) teamBuff.<stat>.add(self.stackOut.<q>)
-      this.add(reader.withTag({ et: 'self', sheet, qt: 'stackOut', q })),
+      // 1) ownBuff.stackIn.<q>.add(value)
+      this.withTag({ et: 'own', sheet, qt: 'stackIn', q }).add(value),
+      // 2) In TeamData: ownBuff.stackTmp.<q>.add(cmpNE(own.stackIn.<q>, 0, /* priority */))
+      // 3) In TeamData: ownBuff.stackOut.<q>.add(cmpEq(team.stackTmp.<q>.max, /* priority */, own.stackIn))
+      // 4) teamBuff.<stat>.add(own.stackOut.<q>)
+      this.add(reader.withTag({ et: 'own', sheet, qt: 'stackOut', q })),
     ]
   }
   reread(r: Read): TagMapNodeEntry {
@@ -200,6 +197,24 @@ export class Read extends TypedRead<Tag, Read> {
     return super.with('region', 'khaenriah')
   }
 }
+export function tag(v: number | NumNode, tag: Tag): TagOverride<NumNode>
+export function tag(v: string | StrNode, tag: Tag): TagOverride<StrNode>
+export function tag(
+  v: number | string | AnyNode,
+  tag: Tag
+): TagOverride<AnyNode>
+export function tag(
+  v: number | string | AnyNode,
+  tag: Tag
+): TagOverride<AnyNode> {
+  return typeof v == 'object' && v.op == 'tag'
+    ? baseTag(v.x[0], { ...v.tag, ...tag }) // Fold nested tag nodes
+    : baseTag(v, tag)
+}
+export function tagVal(cat: keyof Tag): TagValRead {
+  return baseTagVal(cat)
+}
+
 export function tagStr(tag: Tag, ex?: any): string {
   const {
     name,
@@ -255,23 +270,6 @@ export function tagStr(tag: Tag, ex?: any): string {
   optional(cata, 'cata')
   if (ex) result += `[${ex}] `
   return result + '}'
-}
-export function tag(v: number | NumNode, tag: Tag): TagOverride<NumNode>
-export function tag(v: string | StrNode, tag: Tag): TagOverride<StrNode>
-export function tag(
-  v: number | string | AnyNode,
-  tag: Tag
-): TagOverride<AnyNode>
-export function tag(
-  v: number | string | AnyNode,
-  tag: Tag
-): TagOverride<AnyNode> {
-  return typeof v == 'object' && v.op == 'tag'
-    ? baseTag(v.x[0], { ...v.tag, ...tag }) // Fold nested tag nodes
-    : baseTag(v, tag)
-}
-export function tagVal(cat: keyof Tag): TagValRead {
-  return baseTagVal(cat)
 }
 
 const counters: Record<string, number> = {}

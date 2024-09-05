@@ -4,33 +4,33 @@
     "basic": {
       "0": {
         "name": "Hehe! Don't Get Burned!",
-        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Hook's ATK to a single enemy.",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Hook's ATK to a single enemy.",
         "shortDesc": "Deals minor Fire DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Hey! Remember Hook?",
-        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Hook's ATK to a single enemy. In addition, there is a {{2}}% <u>base chance</u> to inflict Burn for {{3}} turn(s).\\nWhen afflicted with Burn, enemies will take Fire DoT equal to <orangeStrong>{{4}}%</orangeStrong> of Hook's ATK at the beginning of each turn.",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Hook's ATK to a single enemy. In addition, there is a {{2, percent}}% <u>base chance</u> to inflict Burn for {{3}} turn(s).\\nWhen afflicted with Burn, enemies will take Fire DoT equal to <orangeStrong>{{4, percent}}%</orangeStrong> of Hook's ATK at the beginning of each turn.",
         "shortDesc": "Deals Fire DMG to a single enemy, with a high chance to inflict Burn on the enemy."
       },
       "1": {
         "name": "Hey! Remember Hook?",
-        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Hook's ATK to a single enemy, with a {{2}}% <u>base chance</u> to Burn them for {{3}} turn(s). Additionally, deals Fire DMG equal to <orangeStrong>{{5}}%</orangeStrong> of Hook's ATK to enemies adjacent to it.\\nWhen afflicted with Burn, enemies will take Fire DoT equal to <orangeStrong>{{4}}%</orangeStrong> of Hook's ATK at the beginning of each turn.",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Hook's ATK to a single enemy, with a {{2, percent}}% <u>base chance</u> to Burn them for {{3}} turn(s). Additionally, deals Fire DMG equal to <orangeStrong>{{5, percent}}%</orangeStrong> of Hook's ATK to enemies adjacent to it.\\nWhen afflicted with Burn, enemies will take Fire DoT equal to <orangeStrong>{{4, percent}}%</orangeStrong> of Hook's ATK at the beginning of each turn.",
         "shortDesc": "Deals Fire DMG to a single enemy with a high chance of inflicting Burn, also deals minor Fire DMG to enemies adjacent to it."
       }
     },
     "ult": {
       "0": {
         "name": "Boom! Here Comes the Fire!",
-        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Hook's ATK to a single enemy.\\nAfter using Ultimate, the next Skill to be used is Enhanced, which deals DMG to a single enemy and enemies adjacent to it.",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Hook's ATK to a single enemy.\\nAfter using Ultimate, the next Skill to be used is Enhanced, which deals DMG to a single enemy and enemies adjacent to it.",
         "shortDesc": "Deals massive Fire DMG to a single enemy and <orangeStrong>Enhances this unit's next Skill</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Ack! Look at This Mess!",
-        "fullDesc": "Immediately attacks the enemy. Upon entering battle, Hook deals Fire DMG equal to {{4}}% of her ATK to a random enemy. In addition, there is a {{1}}% <u>base chance</u> to inflict Burn on every enemy for {{3}} turn(s).\\nWhen afflicted with Burn, enemies will take Fire DoT equal to {{2}}% of Hook's ATK at the beginning of each turn.",
+        "fullDesc": "Immediately attacks the enemy. Upon entering battle, Hook deals Fire DMG equal to {{4, percent}}% of her ATK to a random enemy. In addition, there is a {{1, percent}}% <u>base chance</u> to inflict Burn on every enemy for {{3}} turn(s).\\nWhen afflicted with Burn, enemies will take Fire DoT equal to {{2, percent}}% of Hook's ATK at the beginning of each turn.",
         "shortDesc": "Attacks the enemy. After entering battle, deals Fire DMG to a random single enemy, with a high chance to inflict Burn on all enemy targets."
       }
     },
@@ -44,21 +44,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Innocence",
-        "fullDesc": "Hook restores HP equal to {{1}}% of her Max HP whenever her Talent is triggered.",
+        "fullDesc": "Hook restores HP equal to {{1, percent}}% of her Max HP whenever her Talent is triggered.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Naivete",
-        "fullDesc": "The chance to resist Crowd Control Debuffs increases by {{1}}%.",
+        "fullDesc": "The chance to resist Crowd Control Debuffs increases by {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Playing With Fire",
-        "fullDesc": "When using her Ultimate, Hook has her action Advanced Forward by {{2}}% and Hook additionally regenerates {{1}} Energy.",
+        "fullDesc": "When using her Ultimate, Hook has her action Advanced Forward by {{2, percent}}% and Hook additionally regenerates {{1}} Energy.",
         "shortDesc": ""
       }
     }
@@ -66,7 +66,7 @@
   "ranks": {
     "1": {
       "name": "Early to Bed, Early to Rise",
-      "desc": "Enhanced Skill deals {{1}}% increased DMG."
+      "desc": "Enhanced Skill deals {{1, percent}}% increased DMG."
     },
     "2": {
       "name": "Happy Tummy, Happy Body",
@@ -78,7 +78,7 @@
     },
     "4": {
       "name": "It's Okay to Not Know",
-      "desc": "When Talent is triggered, there is a {{1}}% base chance to Burn enemies adjacent to the target enemy, equivalent to that of Skill."
+      "desc": "When Talent is triggered, there is a {{1, percent}}% base chance to Burn enemies adjacent to the target enemy, equivalent to that of Skill."
     },
     "5": {
       "name": "Let the Moles' Deeds Be Known",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Always Ready to Punch and Kick",
-      "desc": "Hook deals {{1}}% more DMG to enemies afflicted with Burn."
+      "desc": "Hook deals {{1, percent}}% more DMG to enemies afflicted with Burn."
     }
   }
 }

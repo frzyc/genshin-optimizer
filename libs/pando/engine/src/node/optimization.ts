@@ -1,4 +1,4 @@
-import type { Tag, TagMapSubsetCache } from '../tag'
+import { type DedupTag, DedupTags, type Tag } from '../tag'
 import { assertUnreachable } from '../util'
 import type { Calculator } from './calc'
 import { constant, read } from './construction'
@@ -7,7 +7,6 @@ import type {
   AnyNode,
   Const,
   NumNode,
-  ReRead,
   Read,
   StrNode,
   OP as TaggedOP,
@@ -16,8 +15,8 @@ import type {
 /**
  * Most of functions here cache the calculation/traversal, and will skip any nodes
  * that they visit more than once. This caching will not work on nodes containing
- * `Tag`-related nodes. So they are default disallowed here, as reflected in the
- * `OP` redeclaration here.
+ * `Tag`-related nodes. So they are disallowed by default here, as reflected in
+ * this `OP` redeclaration.
  */
 type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
 export type NumTagFree = NumNode<OP>
@@ -51,22 +50,22 @@ export function detach(
   calc: Calculator,
   dynTag: (_: Tag) => Tag | undefined
 ): AnyTagFree[] {
-  function detachRead(
-    cache: TagMapSubsetCache<AnyNode | ReRead>,
-    ex: Read['ex']
-  ): AnyTagFree[] {
+  type Cache = DedupTag<AnyTagFree[]>
+  function detachRead(cache: Cache, ex: Read['ex']): AnyTagFree[] {
+    if (cache.val) return cache.val
     const dyn = dynTag(cache.tag)
-    return dyn
+    cache.val = dyn
       ? [read(dyn, ex)]
-      : cache.subset().flatMap((n) => {
+      : calc.nodes.subset(cache.id).flatMap((n) => {
           return n.op !== 'reread'
             ? map(n, cache)
             : detachRead(cache.with(n.tag), ex)
         })
+    return cache.val
   }
   function fold(
     x: NumTagFree[],
-    op: keyof typeof arithmetic,
+    op: Exclude<keyof typeof arithmetic, 'unique'>,
     ex: any
   ): NumTagFree {
     if (x.every((x) => x.op === 'const'))
@@ -79,7 +78,6 @@ export function detach(
     return { op, x, br: [] }
   }
 
-  type Cache = TagMapSubsetCache<AnyNode | ReRead>
   function map(n: NumNode, cache: Cache): NumTagFree
   function map(n: StrNode, cache: Cache): StrTagFree
   function map(n: AnyNode, cache: Cache): AnyTagFree
@@ -142,9 +140,7 @@ export function detach(
         assertUnreachable(op)
     }
   }
-
-  const cache = calc.nodes.cache(calc.keys)
-  return n.map((n) => map(n, cache))
+  return n.map((n) => map(n, new DedupTags(calc.cache.keys).at({})))
 }
 
 /** Combine nested `sum`/`prod`/`min`/`max`, e.g., turn `sum(..., sum(...))` into `sum(...)` */

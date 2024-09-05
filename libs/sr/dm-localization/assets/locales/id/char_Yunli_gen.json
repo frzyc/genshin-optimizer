@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Galespin Summersault",
-        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Yunli pada 1 musuh yang ditargetkan.",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Yunli pada 1 musuh yang ditargetkan.",
         "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Bladeborne Quake",
-        "fullDesc": "Memulihkan HP sebesar <orangeStrong>{{3}}%</orangeStrong> ATK Yunli + <orangeStrong>{{4}}</orangeStrong>, dan mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Yunli pada 1 musuh yang ditargetkan, serta mengakibatkan Physical DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Yunli pada musuh di sekitar target.",
+        "fullDesc": "Memulihkan HP sebesar <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> ATK Yunli + <orangeStrong>{{4}}</orangeStrong>, dan mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Yunli pada 1 musuh yang ditargetkan, serta mengakibatkan Physical DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Yunli pada musuh di sekitar target.",
         "shortDesc": "Memulihkan HP diri sendiri, dan mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh dan target di sekitarnya."
       }
     },
     "ult": {
       "0": {
         "name": "Earthbind, Etherbreak",
-        "fullDesc": "Mengonsumsi {{8}} Energy. Yunli akan memperoleh \"Parry\" dan membuat seluruh musuh memasuki status Taunt, berlangsung hingga akhir giliran salah satu rekan tim atau musuh yang berikutnya. Selain itu, CRIT DMG yang diakibatkan Serangan Balasan Yunli yang berikutnya akan meningkat <orangeStrong>{{2}}%</orangeStrong>, dan saat memicu efek Serangan Balasan dari Talent, akan diganti menjadi melancarkan <u>Serangan Balasan</u> \"Intuit: Cull\", dan di saat bersamaan juga menghapus efek \"Parry\". Jika selama berstatus \"Parry\" tidak memicu Serangan Balasan, maka saat status berakhir, Yunli akan segera melancarkan <u>Serangan Balasan</u> \"Intuit: Slash\" pada target musuh acak.\\n\\n\"Intuit: Slash\": Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Yunli pada target, dan mengakibatkan Physical DMG sebesar <orangeStrong>{{6}}%</orangeStrong> ATK Yunli pada target di sekitarnya.\\n\\n\"Intuit: Cull\": Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Yunli pada target, dan mengakibatkan Physical DMG sebesar <orangeStrong>{{6}}%</orangeStrong> ATK Yunli pada target di sekitarnya, lalu mengakibatkan ekstra {{4}} kali DMG, yang setiap DMG-nya mengakibatkan Physical DMG sebesar <orangeStrong>{{7}}%</orangeStrong> ATK Yunli pada musuh acak.\\n\\nSaat Yunli mengakibatkan DMG melalui kemampuan ini, akan dianggap mengakibatkan Ultimate DMG.",
+        "fullDesc": "Mengonsumsi {{8}} Energy. Yunli akan memperoleh \"Parry\" dan membuat seluruh musuh memasuki status Taunt, berlangsung hingga akhir giliran salah satu rekan tim atau musuh yang berikutnya. Selain itu, CRIT DMG yang diakibatkan Serangan Balasan Yunli yang berikutnya akan meningkat <orangeStrong>{{2, percent}}%</orangeStrong>, dan saat memicu efek Serangan Balasan dari Talent, akan diganti menjadi melancarkan <u>Serangan Balasan</u> \"Intuit: Cull\", dan di saat bersamaan juga menghapus efek \"Parry\". Jika selama berstatus \"Parry\" tidak memicu Serangan Balasan, maka saat status berakhir, Yunli akan segera melancarkan <u>Serangan Balasan</u> \"Intuit: Slash\" pada target musuh acak.\\n\\n\"Intuit: Slash\": Mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Yunli pada target, dan mengakibatkan Physical DMG sebesar <orangeStrong>{{6, percent}}%</orangeStrong> ATK Yunli pada target di sekitarnya.\\n\\n\"Intuit: Cull\": Mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Yunli pada target, dan mengakibatkan Physical DMG sebesar <orangeStrong>{{6, percent}}%</orangeStrong> ATK Yunli pada target di sekitarnya, lalu mengakibatkan ekstra {{4}} kali DMG, yang setiap DMG-nya mengakibatkan Physical DMG sebesar <orangeStrong>{{7, percent}}%</orangeStrong> ATK Yunli pada musuh acak.\\n\\nSaat Yunli mengakibatkan DMG melalui kemampuan ini, akan dianggap mengakibatkan Ultimate DMG.",
         "shortDesc": "Memasuki status \"Parry\" dan membuat seluruh musuh memasuki status Taunt. Selama durasi \"Parry\", setelah terkena serangan akan memicu <orangeStrong><u>Serangan Balasan</u> yang kuat</orangeStrong>, <orangeStrong>mengakibatkan Physical DMG</orangeStrong> pada penyerang dan target di sekitarnya. Kemudian, akan mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh, total Bounce sebanyak 6 kali. Jika tidak memicu Serangan Balasan saat status \"Parry\" berlangsung, maka saat status berakhir akan mengakibatkan Physical DMG pada target musuh acak dan musuh di sekitarnya."
       }
     },
     "technique": {
       "0": {
         "name": "Posterior Precedence",
-        "fullDesc": "Membuat diri sendiri memperoleh efek \"Ward\" selama {{2}} detik. Selama durasi, setelah menyerang musuh atau terkena serangan untuk memasuki pertempuran, akan segera melancarkan \"Intuit: Cull\" pada musuh acak dan membuat DMG yang diakibatkan dari serangan kali ini meningkat {{1}}%.",
+        "fullDesc": "Membuat diri sendiri memperoleh efek \"Ward\" selama {{2}} detik. Selama durasi, setelah menyerang musuh atau terkena serangan untuk memasuki pertempuran, akan segera melancarkan \"Intuit: Cull\" pada musuh acak dan membuat DMG yang diakibatkan dari serangan kali ini meningkat {{1, percent}}%.",
         "shortDesc": "Membuat diri sendiri memperoleh efek \"Ward\" selama 20 detik. Selama durasi tersebut, setelah menyerang musuh atau terkena serangan untuk memasuki pertempuran, akan segera melancarkan \"Intuit: Cull\" pada musuh acak."
       }
     },
@@ -46,14 +46,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Demon Quell",
-        "fullDesc": "Saat berstatus \"Parry\", akan menahan efek Crowd Control Debuff yang diterima, serta mengurangi DMG yang diterima sebesar {{1}}%.",
+        "fullDesc": "Saat berstatus \"Parry\", akan menahan efek Crowd Control Debuff yang diterima, serta mengurangi DMG yang diterima sebesar {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "True Sunder",
-        "fullDesc": "Saat melancarkan Serangan Balasan, ATK Yunli meningkat {{1}}%, berlangsung selama 1 giliran.",
+        "fullDesc": "Saat melancarkan Serangan Balasan, ATK Yunli meningkat {{1, percent}}%, berlangsung selama 1 giliran.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Weathered Blade Does Not Sully",
-      "desc": "DMG yang diakibatkan \"Intuit: Slash\" dan \"Intuit: Cull\" meningkat {{1}}%, jumlah tambahan DMG dari \"Intuit: Cull\" bertambah {{2}}."
+      "desc": "DMG yang diakibatkan \"Intuit: Slash\" dan \"Intuit: Cull\" meningkat {{1, percent}}%, jumlah tambahan DMG dari \"Intuit: Cull\" bertambah {{2}}."
     },
     "2": {
       "name": "First Luster Breaks Dawn",
-      "desc": "Saat mengakibatkan DMG dengan melancarkan Serangan Balasan, akan mengabaikan {{1}}% DEF target musuh."
+      "desc": "Saat mengakibatkan DMG dengan melancarkan Serangan Balasan, akan mengabaikan {{1, percent}}% DEF target musuh."
     },
     "3": {
       "name": "Mastlength Twirls Mountweight",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Artisan's Ironsong",
-      "desc": "Setelah melancarkan \"Intuit: Slash\" atau \"Intuit: Cull\", akan meningkatkan {{1}}% Effect RES diri sendiri, berlangsung selama {{2}} giliran."
+      "desc": "Setelah melancarkan \"Intuit: Slash\" atau \"Intuit: Cull\", akan meningkatkan {{1, percent}}% Effect RES diri sendiri, berlangsung selama {{2}} giliran."
     },
     "5": {
       "name": "Blade of Old Outlasts All",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Walk in Blade, Talk in Zither",
-      "desc": "Selama durasi \"Parry\", saat musuh melancarkan kemampuan secara aktif, \"Intuit: Cull\" akan terpicu dan menghapus efek \"Parry\" tanpa peduli apakah musuh tersebut menyerang Yunli atau tidak. Saat melancarkan \"Intuit: Slash\" atau \"Intuit: Cull\" untuk mengakibatkan DMG, CRIT Rate Yunli akan meningkat {{1}}%, dan Physical RES PEN akan meningkat {{2}}%."
+      "desc": "Selama durasi \"Parry\", saat musuh melancarkan kemampuan secara aktif, \"Intuit: Cull\" akan terpicu dan menghapus efek \"Parry\" tanpa peduli apakah musuh tersebut menyerang Yunli atau tidak. Saat melancarkan \"Intuit: Slash\" atau \"Intuit: Cull\" untuk mengakibatkan DMG, CRIT Rate Yunli akan meningkat {{1, percent}}%, dan Physical RES PEN akan meningkat {{2, percent}}%."
     }
   }
 }

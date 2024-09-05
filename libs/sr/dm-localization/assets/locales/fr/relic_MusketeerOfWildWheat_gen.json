@@ -1,7 +1,7 @@
 {
   "setName": "Mousquetaire du blé sauvage",
   "setEffects": {
-    "2": "Augmente l'ATQ de {{1}}%.",
-    "4": "Augmente la VIT du porteur de {{1}}% et les DGT infligés par son ATQ normale de {{2}}%."
+    "2": "Augmente l'ATQ de {{1, percent}}%.",
+    "4": "Augmente la VIT du porteur de {{1, percent}}% et les DGT infligés par son ATQ normale de {{2, percent}}%."
   }
 }

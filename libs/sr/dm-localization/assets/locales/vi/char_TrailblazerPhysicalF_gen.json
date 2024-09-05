@@ -4,38 +4,38 @@
     "basic": {
       "0": {
         "name": "Trận Đánh Chia Tay",
-        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Nhà Khai Phá.",
+        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Nhà Khai Phá.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch."
       }
     },
     "skill": {
       "0": {
         "name": "Trận Chiến Cuối Cùng",
-        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định và mục tiêu lân cận kẻ đó tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Nhà Khai Phá.",
+        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định và mục tiêu lân cận kẻ đó tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Nhà Khai Phá.",
         "shortDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch và mục tiêu lân cận."
       }
     },
     "ult": {
       "0": {
         "name": "Át Chủ Bài Ma Thuật",
-        "fullDesc": "Chọn 1 trong 2 chế độ tấn công để ra đòn toàn lực.\\nToàn Thắng - Trận Đánh Chia Tay: Gây cho 1 kẻ địch chỉ định Sát Thương Vật Lý tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Nhà Khai Phá.\\nToàn Thắng - Trận Chiến Cuối Cùng: Gây cho 1 kẻ địch chỉ định Sát Thương Vật Lý tương đương <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Nhà Khai Phá, đồng thời gây cho mục tiêu lân cận kẻ đó Sát Thương Vật Lý tương đương <orangeStrong>{{3}}%</orangeStrong> Tấn Công của Nhà Khai Phá.",
+        "fullDesc": "Chọn 1 trong 2 chế độ tấn công để ra đòn toàn lực.\\nToàn Thắng - Trận Đánh Chia Tay: Gây cho 1 kẻ địch chỉ định Sát Thương Vật Lý tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Nhà Khai Phá.\\nToàn Thắng - Trận Chiến Cuối Cùng: Gây cho 1 kẻ địch chỉ định Sát Thương Vật Lý tương đương <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Nhà Khai Phá, đồng thời gây cho mục tiêu lân cận kẻ đó Sát Thương Vật Lý tương đương <orangeStrong>{{3, percent}}%</orangeStrong> Tấn Công của Nhà Khai Phá.",
         "shortDesc": "Chọn cách tấn công đơn lẻ hoặc đánh lan để ra đòn toàn lực."
       },
       "1": {
         "name": "Toàn Thắng - Trận Đánh Chia Tay",
-        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Nhà Khai Phá.",
+        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Nhà Khai Phá.",
         "shortDesc": "Gây lượng lớn Sát Thương Vật Lý cho 1 kẻ địch."
       },
       "2": {
         "name": "Toàn Thắng - Trận Chiến Cuối Cùng",
-        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Nhà Khai Phá, đồng thời gây Sát Thương Vật Lý cho mục tiêu lân cận kẻ đó bằng <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Nhà Khai Phá.",
+        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Nhà Khai Phá, đồng thời gây Sát Thương Vật Lý cho mục tiêu lân cận kẻ đó bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Nhà Khai Phá.",
         "shortDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch và mục tiêu lân cận kẻ đó."
       }
     },
     "technique": {
       "0": {
         "name": "Đòn Đánh Bất Diệt",
-        "fullDesc": "Sau khi dùng Bí Kỹ sẽ hồi ngay HP cho toàn thể phe ta tương đương {{1}}% Giới Hạn HP của mỗi người.",
+        "fullDesc": "Sau khi dùng Bí Kỹ sẽ hồi ngay HP cho toàn thể phe ta tương đương {{1, percent}}% Giới Hạn HP của mỗi người.",
         "shortDesc": ""
       }
     },
@@ -56,14 +56,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Sức Bền",
-        "fullDesc": "Mỗi tầng hiệu ứng Thiên Phú cũng khiến Phòng Thủ của Nhà Khai Phá tăng {{1}}%.",
+        "fullDesc": "Mỗi tầng hiệu ứng Thiên Phú cũng khiến Phòng Thủ của Nhà Khai Phá tăng {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Ý Chí Chiến Đấu",
-        "fullDesc": "Khi thi triển Chiến Kỹ hoặc Tuyệt Kỹ \"Toàn Thắng - Trận Chiến Cuối Cùng\", sẽ tăng {{1}}% sát thương gây ra cho kẻ địch chỉ định.",
+        "fullDesc": "Khi thi triển Chiến Kỹ hoặc Tuyệt Kỹ \"Toàn Thắng - Trận Chiến Cuối Cùng\", sẽ tăng {{1, percent}}% sát thương gây ra cho kẻ địch chỉ định.",
         "shortDesc": ""
       }
     }
@@ -75,7 +75,7 @@
     },
     "2": {
       "name": "Nhân Duyên Hợp Tan",
-      "desc": "Sau khi tấn công, nếu kẻ địch bị đánh trúng có Điểm Yếu là thuộc tính vật lý, sẽ hồi HP bằng {{1}}% Tấn Công của Nhà Khai Phá."
+      "desc": "Sau khi tấn công, nếu kẻ địch bị đánh trúng có Điểm Yếu là thuộc tính vật lý, sẽ hồi HP bằng {{1, percent}}% Tấn Công của Nhà Khai Phá."
     },
     "3": {
       "name": "Lời Thì Thầm Dẫn Dắt",
@@ -83,7 +83,7 @@
     },
     "4": {
       "name": "Khoảnh Khắc Chứng Kiến Huỷ Diệt",
-      "desc": "Khi đánh trúng kẻ địch trong trạng thái Phá Vỡ Điểm Yếu, Tỷ Lệ Bạo Kích tăng {{1}}%."
+      "desc": "Khi đánh trúng kẻ địch trong trạng thái Phá Vỡ Điểm Yếu, Tỷ Lệ Bạo Kích tăng {{1, percent}}%."
     },
     "5": {
       "name": "Hy Vọng Tái Sinh",

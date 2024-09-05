@@ -271,15 +271,13 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     burstBoost: nodeC3,
     burst_dmg_: skillEye_,
     electro_dmg_: dmgFormulas.passive2.passive2ElecDmgBonus,
+    enemyDefIgn_: defIgn_,
   },
   teamBuff: {
     premod: {
       atk_: c4AtkBonus_,
       burst_dmg_: skillEyeTeamBurstDmgInc,
     },
-  },
-  enemy: {
-    defIgn: defIgn_,
   },
 })
 

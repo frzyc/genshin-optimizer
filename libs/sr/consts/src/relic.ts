@@ -1,7 +1,7 @@
 export const allRelicPlanarSlotKeys = ['sphere', 'rope'] as const
 export type RelicPlanarSlotKey = (typeof allRelicPlanarSlotKeys)[number]
 
-export const allRelicCavernSlotKeys = ['head', 'hand', 'body', 'feet'] as const
+export const allRelicCavernSlotKeys = ['head', 'hands', 'body', 'feet'] as const
 export type RelicCavernSlotKey = (typeof allRelicCavernSlotKeys)[number]
 
 export const allRelicSlotKeys = [
@@ -125,7 +125,7 @@ export const relicSubstatRollData: Record<
 export const relicSlotToMainStatKeys: Record<RelicSlotKey, RelicMainStatKey[]> =
   {
     head: ['hp'],
-    hand: ['atk'],
+    hands: ['atk'],
     body: ['hp_', 'atk_', 'def_', 'eff_', 'heal_', 'crit_', 'crit_dmg_'],
     feet: ['hp_', 'atk_', 'def_', 'spd'],
     sphere: [
@@ -140,5 +140,5 @@ export const relicSlotToMainStatKeys: Record<RelicSlotKey, RelicMainStatKey[]> =
       'quantum_dmg_',
       'imaginary_dmg_',
     ],
-    rope: ['brEff_', 'enerRegen_'],
+    rope: ['hp_', 'atk_', 'def_', 'brEff_', 'enerRegen_'],
   }

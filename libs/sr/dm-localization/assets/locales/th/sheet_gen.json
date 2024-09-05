@@ -1,12 +1,12 @@
 {
   "type": {
-    "Physical": "กายภาพ",
-    "Quantum": "ควอนตัม",
-    "Lightning": "สายฟ้า",
-    "Ice": "น้ำแข็ง",
-    "Wind": "ลม",
-    "Fire": "ไฟ",
-    "Imaginary": "จินตภาพ"
+    "physical": "กายภาพ",
+    "quantum": "ควอนตัม",
+    "lightning": "สายฟ้า",
+    "ice": "น้ำแข็ง",
+    "wind": "ลม",
+    "fire": "ไฟ",
+    "imaginary": "จินตภาพ"
   },
   "path": {
     "Erudition": "ปัญญา",

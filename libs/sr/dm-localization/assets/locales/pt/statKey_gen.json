@@ -1,8 +1,11 @@
 {
   "spd": "VEL",
   "hp": "PV",
+  "hp_": "PV",
   "atk": "ATQ",
+  "atk_": "ATQ",
   "def": "DEF",
+  "def_": "DEF",
   "crit_": "Chance de CRIT",
   "crit_dmg_": "Dano CRIT",
   "brEff_": "Efeito de Quebra",

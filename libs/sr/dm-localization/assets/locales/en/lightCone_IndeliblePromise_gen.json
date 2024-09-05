@@ -2,6 +2,6 @@
   "name": "Indelible Promise",
   "passive": {
     "name": "Inheritance",
-    "description": "Increases the wearer's Break Effect by <orangeStrong>{{1}}%</orangeStrong>. When the wearer uses their Ultimate, increases CRIT Rate by <orangeStrong>{{2}}%</orangeStrong>, lasting for {{3}} turn(s)."
+    "description": "Increases the wearer's Break Effect by <orangeStrong>{{1, percent}}%</orangeStrong>. When the wearer uses their Ultimate, increases CRIT Rate by <orangeStrong>{{2, percent}}%</orangeStrong>, lasting for {{3}} turn(s)."
   }
 }

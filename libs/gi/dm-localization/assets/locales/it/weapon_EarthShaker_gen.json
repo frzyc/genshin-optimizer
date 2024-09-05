@@ -1,0 +1,24 @@
+{
+  "name": "Sisma",
+  "description": {
+    "0": "Una lama pesante che, stando all'opinione comune, apparteneva all'eroe conosciuto come Rubafuoco. Si dice che nemmeno le fiamme del Signore della Fortezza di Cenere siano state in grado di bruciarla."
+  },
+  "passiveName": "Giuramento del Qhapaq Nan",
+  "passiveDescription": {
+    "0": {
+      "0": "Dopo che un membro del gruppo innesca una reazione legata a Pyro, i DAN da abilità elementale del personaggio che equipaggia l'arma aumentano di un <cryo>16%</cryo> per 8 s. Quest'effetto può attivarsi anche se il membro che innesca la reazione non è in campo."
+    },
+    "1": {
+      "0": "Dopo che un membro del gruppo innesca una reazione legata a Pyro, i DAN da abilità elementale del personaggio che equipaggia l'arma aumentano di un <cryo>20%</cryo> per 8 s. Quest'effetto può attivarsi anche se il membro che innesca la reazione non è in campo."
+    },
+    "2": {
+      "0": "Dopo che un membro del gruppo innesca una reazione legata a Pyro, i DAN da abilità elementale del personaggio che equipaggia l'arma aumentano di un <cryo>24%</cryo> per 8 s. Quest'effetto può attivarsi anche se il membro che innesca la reazione non è in campo."
+    },
+    "3": {
+      "0": "Dopo che un membro del gruppo innesca una reazione legata a Pyro, i DAN da abilità elementale del personaggio che equipaggia l'arma aumentano di un <cryo>28%</cryo> per 8 s. Quest'effetto può attivarsi anche se il membro che innesca la reazione non è in campo."
+    },
+    "4": {
+      "0": "Dopo che un membro del gruppo innesca una reazione legata a Pyro, i DAN da abilità elementale del personaggio che equipaggia l'arma aumentano di un <cryo>32%</cryo> per 8 s. Quest'effetto può attivarsi anche se il membro che innesca la reazione non è in campo."
+    }
+  }
+}

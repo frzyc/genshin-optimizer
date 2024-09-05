@@ -7,7 +7,14 @@ import {
   sumfrac,
 } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
-import { enemy, enemyDebuff, percent, priorityTable, self } from '../util'
+import {
+  enemy,
+  enemyDebuff,
+  own,
+  ownBuff,
+  percent,
+  priorityTable,
+} from '../util'
 
 export const infusionPrio = {
   nonOverridable: { hydro: 5, pyro: 6 },
@@ -19,10 +26,10 @@ const infusionTable = priorityTable(infusionPrio),
 
 const data: TagMapNodeEntries = [
   enemyDebuff.common.postRes.add(custom('res', preRes)),
-  enemyDebuff.common.inDmg.add(
+  ownBuff.dmg.inDmg.add(
     prod(
       sumfrac(
-        sum(self.char.lvl, 100),
+        sum(own.char.lvl, 100),
         prod(
           sum(enemy.common.lvl, 100),
           sum(percent(1), prod(-1, enemy.common.defRed_)), // TODO: Cap
@@ -32,24 +39,24 @@ const data: TagMapNodeEntries = [
       enemy.common.postRes
     )
   ),
-  self.dmg.out.add(
+  ownBuff.dmg.out.add(
     prod(
-      self.reaction.ampMulti,
-      sum(self.formula.base, self.reaction.cataAddi),
-      sum(percent(1), self.final.dmg_)
+      own.reaction.ampMulti,
+      sum(own.formula.base, own.reaction.cataAddi),
+      sum(percent(1), own.final.dmg_)
     )
   ),
-  self.dmg.critMulti.add(
-    lookup(self.common.critMode, {
-      crit: sum(1, self.common.cappedCritRate_),
+  ownBuff.dmg.critMulti.add(
+    lookup(own.common.critMode, {
+      crit: sum(1, own.common.cappedCritRate_),
       nonCrit: 1,
-      avg: sum(1, prod(self.common.cappedCritRate_, self.final.critDMG_)),
+      avg: sum(1, prod(own.common.cappedCritRate_, own.final.critDMG_)),
     })
   ),
 
-  self.reaction.infusion.add(
-    subscript(self.reaction.infusionIndex.max, infusionTable)
+  ownBuff.reaction.infusion.add(
+    subscript(own.reaction.infusionIndex.max, infusionTable)
   ),
-  self.reaction.infusionIndex.add(0),
+  ownBuff.reaction.infusionIndex.add(0),
 ]
 export default data

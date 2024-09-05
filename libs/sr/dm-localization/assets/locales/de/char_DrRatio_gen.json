@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Wissen ist Macht",
-        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Dr. Wahrheits ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Dr. Wahrheits ANG zu.",
         "shortDesc": "Fügt einem anvisierten Gegner geringen imaginären SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Geistige Geburtshilfe",
-        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Dr. Wahrheits ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Dr. Wahrheits ANG zu.",
         "shortDesc": "Fügt einem anvisierten Gegner imaginären SCH zu."
       }
     },
     "ult": {
       "0": {
         "name": "Dreiteiliges Paradoxon",
-        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Dr. Wahrheits ANG zu und verursacht „Torheit der Weisen“. Wenn Dr. Wahrheits Verbündete mit Torheit der Weisen belegte Gegner angreifen, wird 1-mal ein <u>Folgeangriff</u> von Dr. Wahrheits Talent auf sie ausgelöst.\\nTorheit der Weisen kann max. {{2}}-mal ausgelöst werden und wirkt nur auf das letzte Ziel von Dr. Wahrheits Ultimate. Nach Einsatz von Dr. Wahrheits Ultimate wird die Auslösungsanzahl zurückgesetzt.",
+        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Dr. Wahrheits ANG zu und verursacht „Torheit der Weisen“. Wenn Dr. Wahrheits Verbündete mit Torheit der Weisen belegte Gegner angreifen, wird 1-mal ein <u>Folgeangriff</u> von Dr. Wahrheits Talent auf sie ausgelöst.\\nTorheit der Weisen kann max. {{2}}-mal ausgelöst werden und wirkt nur auf das letzte Ziel von Dr. Wahrheits Ultimate. Nach Einsatz von Dr. Wahrheits Ultimate wird die Auslösungsanzahl zurückgesetzt.",
         "shortDesc": "Fügt einem anvisierten Gegner imaginären SCH zu und verursacht „Torheit der Weisen“. Wenn Dr. Wahrheits Verbündete mit Torheit der Weisen belegte Gegner angreifen, wird 1-mal ein <orangeStrong><u>Folgeangriff</u></orangeStrong> auf sie ausgelöst."
       }
     },
     "technique": {
       "0": {
         "name": "Muster eines Idols",
-        "fullDesc": "Nach dem Einsatz der Technik wird für {{1}} Sek. eine spezielle Dimension erzeugt, die Gegner in der Nähe verspottet. Nach Kampfeintritt mit Gegnern in der Dimension besteht eine <u>Grundchance</u> von {{2}}%, dass jedem Gegner für {{4}} Rd. eine GES-Reduktion von {{3}}% zugefügt wird. Es kann nur 1 von Verbündeten erschaffene Dimension zur gleichen Zeit existieren.",
+        "fullDesc": "Nach dem Einsatz der Technik wird für {{1}} Sek. eine spezielle Dimension erzeugt, die Gegner in der Nähe verspottet. Nach Kampfeintritt mit Gegnern in der Dimension besteht eine <u>Grundchance</u> von {{2, percent}}%, dass jedem Gegner für {{4}} Rd. eine GES-Reduktion von {{3, percent}}% zugefügt wird. Es kann nur 1 von Verbündeten erschaffene Dimension zur gleichen Zeit existieren.",
         "shortDesc": "Erschafft eine Dimension. Gegner in dieser Dimension werden mit Verspotten belegt. Nach Kampfeintritt mit Gegnern in der Dimension besteht eine hohe Chance, dass den Gegnern <orangeStrong>GES-Reduktion</orangeStrong> zugefügt wird."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Induktion",
-        "fullDesc": "Beim Einsatz der Fertigkeit wird für jeden Debuff auf dem Ziel Dr. Wahrheits KRIT-Rate um {{1}}% und KRIT-SCH um {{2}}% erhöht. Dieser Effekt ist bis zu {{3}}-fach stapelbar.",
+        "fullDesc": "Beim Einsatz der Fertigkeit wird für jeden Debuff auf dem Ziel Dr. Wahrheits KRIT-Rate um {{1, percent(fixed: 1)}}% und KRIT-SCH um {{2, percent}}% erhöht. Dieser Effekt ist bis zu {{3}}-fach stapelbar.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Inferenz",
-        "fullDesc": "Wird ein Ziel mit der Fertigkeit angegriffen, besteht eine Grundchance von {{1}}%, den Effekt-WDS des angegriffenen Gegners für {{3}} Rd. um {{2}}% zu reduzieren.",
+        "fullDesc": "Wird ein Ziel mit der Fertigkeit angegriffen, besteht eine Grundchance von {{1, percent}}%, den Effekt-WDS des angegriffenen Gegners für {{3}} Rd. um {{2, percent}}% zu reduzieren.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Deduktion",
-        "fullDesc": "Wenn einem Ziel mit {{1}} oder mehr Debuffs SCH zugefügt wird, wird der verursachte SCH von Dr. Wahrheit für jeden Debuff des Ziels um {{2}}% bis zu max. {{3}}% erhöht.",
+        "fullDesc": "Wenn einem Ziel mit {{1}} oder mehr Debuffs SCH zugefügt wird, wird der verursachte SCH von Dr. Wahrheit für jeden Debuff des Ziels um {{2, percent}}% bis zu max. {{3, percent}}% erhöht.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Mikroskopisch doch tiefgründig",
-      "desc": "Wenn Dr. Wahrheit mit einem Folgeangriff seines Talents einen Gegner angreift, fügt er für jeden Debuff des Ziels zusätzlichen imaginären SCH in Höhe von {{1}}% von Dr. Wahrheits ANG zu. Dieser Effekt kann bei jedem Einsatz eines Folgeangriffs seines Talents bis zu {{2}}-mal ausgelöst werden."
+      "desc": "Wenn Dr. Wahrheit mit einem Folgeangriff seines Talents einen Gegner angreift, fügt er für jeden Debuff des Ziels zusätzlichen imaginären SCH in Höhe von {{1, percent}}% von Dr. Wahrheits ANG zu. Dieser Effekt kann bei jedem Einsatz eines Folgeangriffs seines Talents bis zu {{2}}-mal ausgelöst werden."
     },
     "3": {
       "name": "Kenne dich selbst",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Ewige Wahrheit",
-      "desc": "Erhöht die Auslösungsanzahl für „Torheit der Weisen“ um {{1}}. Der durch Folgeangriffe verursachte SCH des Talents wird um {{2}}% erhöht."
+      "desc": "Erhöht die Auslösungsanzahl für „Torheit der Weisen“ um {{1}}. Der durch Folgeangriffe verursachte SCH des Talents wird um {{2, percent}}% erhöht."
     }
   }
 }

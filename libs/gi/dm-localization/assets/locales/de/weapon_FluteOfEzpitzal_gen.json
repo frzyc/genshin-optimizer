@@ -1,0 +1,24 @@
+{
+  "name": "Ezpitzal-Flöte",
+  "description": {
+    "0": "Ein Jade-Langschwert von ungewöhnlicher Form, das in der Legende der Meister des Nachtwinds als „Priesterflöte“ bezeichnet wird."
+  },
+  "passiveName": "Rätsel von Spiegel und Rauch",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht beim Auslösen der Elementarfähigkeit die VTD 15 s lang um <cryo>16 %</cryo>."
+    },
+    "1": {
+      "0": "Erhöht beim Auslösen der Elementarfähigkeit die VTD 15 s lang um <cryo>20 %</cryo>."
+    },
+    "2": {
+      "0": "Erhöht beim Auslösen der Elementarfähigkeit die VTD 15 s lang um <cryo>24 %</cryo>."
+    },
+    "3": {
+      "0": "Erhöht beim Auslösen der Elementarfähigkeit die VTD 15 s lang um <cryo>28 %</cryo>."
+    },
+    "4": {
+      "0": "Erhöht beim Auslösen der Elementarfähigkeit die VTD 15 s lang um <cryo>32 %</cryo>."
+    }
+  }
+}

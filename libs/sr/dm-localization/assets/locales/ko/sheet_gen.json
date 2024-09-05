@@ -1,12 +1,12 @@
 {
   "type": {
-    "Physical": "물리",
-    "Quantum": "양자",
-    "Lightning": "번개",
-    "Ice": "얼음",
-    "Wind": "바람",
-    "Fire": "화염",
-    "Imaginary": "허수"
+    "physical": "물리",
+    "quantum": "양자",
+    "lightning": "번개",
+    "ice": "얼음",
+    "wind": "바람",
+    "fire": "화염",
+    "imaginary": "허수"
   },
   "path": {
     "Erudition": "지식",

@@ -2,6 +2,6 @@
   "name": "Buổi Trò Chuyện Hậu Phẫu",
   "passive": {
     "name": "Hồi Phục Qua Lại",
-    "description": "Khiến hiệu suất hồi năng lượng của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>, đồng thời lượng trị liệu khi thi triển Tuyệt Kỹ tăng <orangeStrong>{{2}}%</orangeStrong>."
+    "description": "Khiến hiệu suất hồi năng lượng của người trang bị tăng <orangeStrong>{{1, percent}}%</orangeStrong>, đồng thời lượng trị liệu khi thi triển Tuyệt Kỹ tăng <orangeStrong>{{2, percent}}%</orangeStrong>."
   }
 }

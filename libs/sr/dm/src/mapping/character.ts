@@ -87,11 +87,11 @@ export const avatarRarityMap: Record<AvatarRarity, RarityKey> = {
 }
 
 export const avatarDamageTypeMap: Record<AvatarDamageType, ElementalTypeKey> = {
-  Physical: 'Physical',
-  Quantum: 'Quantum',
-  Thunder: 'Lightning',
-  Ice: 'Ice',
-  Wind: 'Wind',
-  Fire: 'Fire',
-  Imaginary: 'Imaginary',
+  Physical: 'physical',
+  Quantum: 'quantum',
+  Thunder: 'lightning',
+  Ice: 'ice',
+  Wind: 'wind',
+  Fire: 'fire',
+  Imaginary: 'imaginary',
 }

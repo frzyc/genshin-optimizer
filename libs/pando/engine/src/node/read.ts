@@ -1,7 +1,7 @@
 import type { Tag, TagMapEntry } from '../tag'
 import type { Read } from './type'
 
-export class TypedRead<T extends Tag, Subclass> implements Read {
+export class TypedRead<T extends Tag> implements Read {
   op = 'read' as const
   x: never[] = []
   br: never[] = []
@@ -17,41 +17,41 @@ export class TypedRead<T extends Tag, Subclass> implements Read {
 
   /** Callback for when a tag `<cat>:<val>` is generated */
   register<C extends keyof T>(_cat: C, _val: T[C]) {}
-  /** Return an instance of `Subclass` with given `tag` and `ex` */
-  ctor(_tag: T, _ex: Read['ex']): Subclass {
-    throw new Error('Must be implemented by subclass')
+  /** Return an instance with given `tag` and `ex` */
+  ctor(tag: T, ex: Read['ex']): this {
+    return new (this.constructor as any)(tag, ex)
   }
 
-  with<C extends keyof T>(cat: C, val: T[C]): Subclass {
+  with<C extends keyof T>(cat: C, val: T[C]): this {
     this.register(cat, val)
     return this.ctor({ ...this.tag, [cat]: val }, this.ex)
   }
-  withTag(tag: T): Subclass {
+  withTag(tag: T): this {
     for (const [c, v] of Object.entries(tag)) this.register(c, v as T[typeof c])
     return this.ctor({ ...this.tag, ...tag }, this.ex)
   }
   withAll<C extends keyof T>(
     cat: C,
     keys: (T[C] & string)[]
-  ): Record<T[C] & string, Subclass>
+  ): Record<T[C] & string, this>
   withAll<C extends keyof T, V>(
     cat: C,
     keys: (T[C] & string)[],
-    transform: (r: Subclass, k: T[C] & string) => V
+    transform: (r: this, k: T[C] & string) => V
   ): Record<T[C] & string, V>
   withAll<C extends keyof T, V, Base>(
     cat: C,
     keys: (T[C] & string)[],
-    transform: (r: Subclass, k: T[C] & string) => V,
+    transform: (r: this, k: T[C] & string) => V,
     base: Base
   ): { [k in (T[C] & string) | keyof Base]: k extends keyof Base ? Base[k] : V }
   withAll<C extends keyof T, V>(
     cat: C,
     keys: (T[C] & string)[],
-    transform: (r: Subclass, k: T[C] & string) => V | Subclass = (x) => x,
+    transform: (r: this, k: T[C] & string) => V | this = (x) => x,
     base: object = {}
-  ): Record<T[C] & string, V | Subclass> {
-    return new Proxy(base as Record<T[C] & string, V | Subclass>, {
+  ): Record<T[C] & string, V | this> {
+    return new Proxy(base as Record<T[C] & string, V | this>, {
       ownKeys: (_) => keys,
       get: (old, p: T[C] & string) =>
         old[p] ?? (old[p] = transform(this.with(cat, p), p)),
@@ -63,10 +63,7 @@ export class TypedRead<T extends Tag, Subclass> implements Read {
     })
   }
   toEntry<V>(value: V): TagMapEntry<V, T> {
-    return {
-      tag: this.tag,
-      value,
-    }
+    return { tag: this.tag, value }
   }
 
   // Accumulator

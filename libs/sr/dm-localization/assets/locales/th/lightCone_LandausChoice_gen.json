@@ -2,6 +2,6 @@
   "name": "Landau's Choice",
   "passive": {
     "name": "Time Fleets Away",
-    "description": "ทำให้โอกาสที่ผู้สวมใส่จะโดนโจมตีเพิ่มขึ้น พร้อมทั้งได้รับ DMG ลดลง <orangeStrong>{{2}}%</orangeStrong>"
+    "description": "ทำให้โอกาสที่ผู้สวมใส่จะโดนโจมตีเพิ่มขึ้น พร้อมทั้งได้รับ DMG ลดลง <orangeStrong>{{2, percent}}%</orangeStrong>"
   }
 }

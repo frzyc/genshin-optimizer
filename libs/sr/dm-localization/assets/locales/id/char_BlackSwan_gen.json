@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Percipience, Silent Dawn",
-        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Black Swan pada 1 musuh yang ditarget, memiliki <orangeStrong>{{2}}%</orangeStrong> <u>Peluang Dasar</u> untuk membuat target memasuki 1 lapis \"<u>Arcana</u>\". Jika target yang diserang berstatus Wind Shear/Bleed/Burn/Shock, maka masing-masing dari status prasyarat tersebut yang ada pada target memiliki <orangeStrong>{{3}}%</orangeStrong> <u>Peluang Dasar</u> untuk menambahkan ekstra 1 lapis \"<u>Arcana</u>\" pada target.",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Black Swan pada 1 musuh yang ditarget, memiliki <orangeStrong>{{2, percent}}%</orangeStrong> <u>Peluang Dasar</u> untuk membuat target memasuki 1 lapis \"<u>Arcana</u>\". Jika target yang diserang berstatus Wind Shear/Bleed/Burn/Shock, maka masing-masing dari status prasyarat tersebut yang ada pada target memiliki <orangeStrong>{{3, percent}}%</orangeStrong> <u>Peluang Dasar</u> untuk menambahkan ekstra 1 lapis \"<u>Arcana</u>\" pada target.",
         "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh dan berpeluang untuk menambahkan \"<u>Arcana</u>\" pada target. Jika menyerang target yang <orangeStrong>berstatus Wind Shear/Bleed/Burn/Shock</orangeStrong>, maka masing-masing berpeluang untuk <orangeStrong>menambahkan ekstra \"<u>Arcana</u>\"</orangeStrong>."
       }
     },
     "skill": {
       "0": {
         "name": "Decadence, False Twilight",
-        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Black Swan pada 1 musuh yang ditargetkan dan target di sekitarnya. Di saat yang bersamaan, memiliki {{2}}% <u>Peluang Dasar</u> untuk membuat target dan musuh di sekitarnya memasuki 1 lapis \"<u>Arcana</u>\", serta memiliki {{3}}% <u>Peluang Dasar</u> untuk mengurangi <orangeStrong>{{4}}%</orangeStrong> DEF target dan musuh di sekitarnya selama {{5}} giliran.",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Black Swan pada 1 musuh yang ditargetkan dan target di sekitarnya. Di saat yang bersamaan, memiliki {{2, percent}}% <u>Peluang Dasar</u> untuk membuat target dan musuh di sekitarnya memasuki 1 lapis \"<u>Arcana</u>\", serta memiliki {{3, percent}}% <u>Peluang Dasar</u> untuk mengurangi <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> DEF target dan musuh di sekitarnya selama {{5}} giliran.",
         "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh dan target di sekitarnya, berpeluang besar untuk <orangeStrong>menambahkan \"<u>Arcana</u>\"</orangeStrong> pada target, dan berpeluang besar untuk mengurangi DEF target."
       }
     },
     "ult": {
       "0": {
         "name": "Bliss of Otherworld's Embrace",
-        "fullDesc": "Menambahkan status \"Epiphany\" pada seluruh musuh selama {{2}} giliran.\\nSaat berstatus \"Epiphany\", DMG yang diterima target musuh saat selama gilirannya berlangsung akan meningkat <orangeStrong>{{3}}%</orangeStrong>, dan juga membuat target musuh yang berstatus \"<u>Arcana</u>\" dianggap sama dengan memasuki status Wind Shear, Bleed, Burn, Shock secara bersamaan. Selain itu, setelah \"<u>Arcana</u>\" mengakibatkan DMG saat setiap giliran dimulai, jumlah lapisannya tidak akan di-reset. Efek mencegah reset lapisan \"<u>Arcana</u>\" ini maksimal terpicu {{4}} kali selama durasi \"Epiphany\" berlangsung. Saat target memasuki ulang status \"Epiphany\", jumlah batas terpicu akan di-refresh.\\nMengakibatkan Wind DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Black Swan pada seluruh musuh.",
+        "fullDesc": "Menambahkan status \"Epiphany\" pada seluruh musuh selama {{2}} giliran.\\nSaat berstatus \"Epiphany\", DMG yang diterima target musuh saat selama gilirannya berlangsung akan meningkat <orangeStrong>{{3, percent}}%</orangeStrong>, dan juga membuat target musuh yang berstatus \"<u>Arcana</u>\" dianggap sama dengan memasuki status Wind Shear, Bleed, Burn, Shock secara bersamaan. Selain itu, setelah \"<u>Arcana</u>\" mengakibatkan DMG saat setiap giliran dimulai, jumlah lapisannya tidak akan di-reset. Efek mencegah reset lapisan \"<u>Arcana</u>\" ini maksimal terpicu {{4}} kali selama durasi \"Epiphany\" berlangsung. Saat target memasuki ulang status \"Epiphany\", jumlah batas terpicu akan di-refresh.\\nMengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Black Swan pada seluruh musuh.",
         "shortDesc": "Menambahkan status \"Epiphany\" pada seluruh musuh, yang akan meningkatkan DMG yang diterima target saat giliran target berlangsung, serta <orangeStrong>membuat efek \"<u>Arcana</u>\" dianggap sama dengan status Wind Shear, Bleed, Burn, Shock</orangeStrong>. Selain itu, setelah \"<u>Arcana</u>\" mengakibatkan DMG saat giliran yang berikutnya dimulai, jumlah lapisannya tidak akan di-reset. Mengakibatkan Wind DMG pada seluruh musuh."
       }
     },
     "technique": {
       "0": {
         "name": "From Façade to Vérité",
-        "fullDesc": "Setelah menggunakan Technique, saat pertempuran berikutnya dimulai, ada {{1}}% <u>Peluang Dasar</u> untuk membuat setiap target musuh memasuki 1 lapis \"<u>Arcana</u>\". Setiap kali target berhasil memasuki status \"<u>Arcana</u>\", maka target tersebut akan memasuki lagi 1 lapis \"<u>Arcana</u>\". Efek ini akan terus terjadi berulang sampai target yang terkait gagal memasuki status \"<u>Arcana</u>\". Setiap kali target terkait berhasil memasuki status \"<u>Arcana</u>\", maka <u>Peluang Dasar</u> berikutnya untuk memasuki status \"<u>Arcana</u>\" pada target tersebut adalah {{2}}% dari <u>Peluang Dasar</u> sebelumnya.",
+        "fullDesc": "Setelah menggunakan Technique, saat pertempuran berikutnya dimulai, ada {{1, percent}}% <u>Peluang Dasar</u> untuk membuat setiap target musuh memasuki 1 lapis \"<u>Arcana</u>\". Setiap kali target berhasil memasuki status \"<u>Arcana</u>\", maka target tersebut akan memasuki lagi 1 lapis \"<u>Arcana</u>\". Efek ini akan terus terjadi berulang sampai target yang terkait gagal memasuki status \"<u>Arcana</u>\". Setiap kali target terkait berhasil memasuki status \"<u>Arcana</u>\", maka <u>Peluang Dasar</u> berikutnya untuk memasuki status \"<u>Arcana</u>\" pada target tersebut adalah {{2, percent}}% dari <u>Peluang Dasar</u> sebelumnya.",
         "shortDesc": "Setelah menggunakan Technique, saat pertempuran berikutnya dimulai, berpeluang besar untuk <orangeStrong>menambahkan \"<u>Arcana</u>\" secara berulang terus-menerus sampai gagal</orangeStrong> pada setiap target musuh."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Viscera's Disquiet",
-        "fullDesc": "Setelah karakter ini melancarkan Skill untuk menyerang musuh, jika musuh yang ditargetkan berstatus Wind Shear/Bleed/Burn/Shock, masing-masing dari status prasyarat tersebut yang ada pada target memiliki {{1}}% Peluang Dasar untuk membuat target memasuki ekstra 1 lapis \"Arcana\".",
+        "fullDesc": "Setelah karakter ini melancarkan Skill untuk menyerang musuh, jika musuh yang ditargetkan berstatus Wind Shear/Bleed/Burn/Shock, masing-masing dari status prasyarat tersebut yang ada pada target memiliki {{1, percent}}% Peluang Dasar untuk membuat target memasuki ekstra 1 lapis \"Arcana\".",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Goblet's Dredges",
-        "fullDesc": "Saat target musuh memasuki pertempuran, memiliki {{1}}% Peluang Dasar untuk menambahkan 1 lapis \"Arcana\" padanya.\\nSetiap kali target musuh menerima 1 DoT dalam 1 kali serangan yang dilancarkan rekan tim, musuh tersebut memiliki {{1}}% Peluang Dasar untuk memasuki 1 lapis \"Arcana\", maksimal dapat memasuki {{2}} lapis dalam 1 kali serangan.",
+        "fullDesc": "Saat target musuh memasuki pertempuran, memiliki {{1, percent}}% Peluang Dasar untuk menambahkan 1 lapis \"Arcana\" padanya.\\nSetiap kali target musuh menerima 1 DoT dalam 1 kali serangan yang dilancarkan rekan tim, musuh tersebut memiliki {{1, percent}}% Peluang Dasar untuk memasuki 1 lapis \"Arcana\", maksimal dapat memasuki {{2}} lapis dalam 1 kali serangan.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Candleflame's Portent",
-        "fullDesc": "Meningkatkan DMG yang diakibatkan diri sendiri, peningkatannya sebesar {{1}}% dari Effect Hit Rate, maksimal meningkat hingga {{2}}%.",
+        "fullDesc": "Meningkatkan DMG yang diakibatkan diri sendiri, peningkatannya sebesar {{1, percent}}% dari Effect Hit Rate, maksimal meningkat hingga {{2, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Seven Pillars of Wisdom",
-      "desc": "Saat Black Swan berada dalam kondisi siap bertempur (tidak gugur), target musuh yang berstatus Wind Shear/Bleed/Burn/Shock akan mengalami pengurangan {{1}}% RES Tipe terkait (Wind/Physical/Fire/Lightning RES sesuai urutan dengan jenis status di atas)."
+      "desc": "Saat Black Swan berada dalam kondisi siap bertempur (tidak gugur), target musuh yang berstatus Wind Shear/Bleed/Burn/Shock akan mengalami pengurangan {{1, percent}}% RES Tipe terkait (Wind/Physical/Fire/Lightning RES sesuai urutan dengan jenis status di atas)."
     },
     "2": {
       "name": "Weep Not For Me, My Lamb",
-      "desc": "Saat target musuh berstatus \"Arcana\" dikalahkan, ada {{1}}% Peluang Dasar untuk membuat musuh di sekitar target memasuki {{2}} lapis \"Arcana\"."
+      "desc": "Saat target musuh berstatus \"Arcana\" dikalahkan, ada {{1, percent}}% Peluang Dasar untuk membuat musuh di sekitar target memasuki {{2}} lapis \"Arcana\"."
     },
     "3": {
       "name": "As Above, So Below",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "In Tears We Gift",
-      "desc": "Saat berstatus \"Epiphany\", Effect RES target musuh akan berkurang {{1}}%, dan Black Swan akan memulihkan {{2}} Energy setiap saat giliran target dimulai atau saat target dikalahkan. Efek pemulihan Energy ini maksimal terpicu 1 kali selama durasi \"Epiphany\" berlangsung. Saat target memasuki ulang status \"Epiphany\", jumlah batas terpicu akan di-refresh."
+      "desc": "Saat berstatus \"Epiphany\", Effect RES target musuh akan berkurang {{1, percent}}%, dan Black Swan akan memulihkan {{2}} Energy setiap saat giliran target dimulai atau saat target dikalahkan. Efek pemulihan Energy ini maksimal terpicu 1 kali selama durasi \"Epiphany\" berlangsung. Saat target memasuki ulang status \"Epiphany\", jumlah batas terpicu akan di-refresh."
     },
     "5": {
       "name": "Linnutee Flyway",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Pantheon Merciful, Masses Pitiful",
-      "desc": "Saat target musuh menerima serangan dari rekan tim Black Swan, Black Swan memiliki {{2}}% Peluang Dasar untuk membuat target tersebut memasuki 1 lapis \"Arcana\".\\nSetiap kali saat Black Swan membuat target musuh memasuki status \"Arcana\", ada {{1}}% Peluang Tetap untuk membuat jumlah lapisan \"Arcana\" yang ditambahkan pada kali ini bertambah ekstra {{3}} lapis."
+      "desc": "Saat target musuh menerima serangan dari rekan tim Black Swan, Black Swan memiliki {{2, percent}}% Peluang Dasar untuk membuat target tersebut memasuki 1 lapis \"Arcana\".\\nSetiap kali saat Black Swan membuat target musuh memasuki status \"Arcana\", ada {{1, percent}}% Peluang Tetap untuk membuat jumlah lapisan \"Arcana\" yang ditambahkan pada kali ini bertambah ekstra {{3}} lapis."
     }
   }
 }

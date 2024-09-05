@@ -2,6 +2,6 @@
   "name": "She Already Shut Her Eyes",
   "passive": {
     "name": "Visioscape",
-    "description": "ทำให้ HP สูงสุดของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> และอัตราการฟื้นฟูพลังงานเพิ่มขึ้น <orangeStrong>{{4}}%</orangeStrong> เมื่อ HP ของผู้สวมใส่ลดลง จะทำให้ฝ่ายเราทั้งหมดสร้าง DMG เพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong> เป็นเวลา {{5}} เทิร์น\\nเมื่อเริ่มต้นแต่ละ Wave จะฟื้นฟู HP แก่ฝ่ายเราทั้งหมด <orangeStrong>{{3}}%</orangeStrong> ของ HP ที่แต่ละตัวเสียไป"
+    "description": "ทำให้ HP สูงสุดของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> และอัตราการฟื้นฟูพลังงานเพิ่มขึ้น <orangeStrong>{{4, percent}}%</orangeStrong> เมื่อ HP ของผู้สวมใส่ลดลง จะทำให้ฝ่ายเราทั้งหมดสร้าง DMG เพิ่มขึ้น <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> เป็นเวลา {{5}} เทิร์น\\nเมื่อเริ่มต้นแต่ละ Wave จะฟื้นฟู HP แก่ฝ่ายเราทั้งหมด <orangeStrong>{{3, percent}}%</orangeStrong> ของ HP ที่แต่ละตัวเสียไป"
   }
 }

@@ -1,0 +1,24 @@
+{
+  "name": "Chain Breaker",
+  "description": {
+    "0": "A jade-adorned longbow. The gentle winds always seem to swirl gently about its string. Legends claim that this weapon was made in a far more ancient era by a dragon artisan."
+  },
+  "passiveName": "Flower-Feather Song",
+  "passiveDescription": {
+    "0": {
+      "0": "For every party member from Natlan or who has a different Elemental Type from the equipping character, the equipping character gains <cryo>4.8%</cryo> increased ATK. When there are no less than 3 of the aforementioned characters, the equipping character gains <cryo>24</cryo> Elemental Mastery."
+    },
+    "1": {
+      "0": "For every party member from Natlan or who has a different Elemental Type from the equipping character, the equipping character gains <cryo>6%</cryo> increased ATK. When there are no less than 3 of the aforementioned characters, the equipping character gains <cryo>30</cryo> Elemental Mastery."
+    },
+    "2": {
+      "0": "For every party member from Natlan or who has a different Elemental Type from the equipping character, the equipping character gains <cryo>7.2%</cryo> increased ATK. When there are no less than 3 of the aforementioned characters, the equipping character gains <cryo>36</cryo> Elemental Mastery."
+    },
+    "3": {
+      "0": "For every party member from Natlan or who has a different Elemental Type from the equipping character, the equipping character gains <cryo>8.4%</cryo> increased ATK. When there are no less than 3 of the aforementioned characters, the equipping character gains <cryo>42</cryo> Elemental Mastery."
+    },
+    "4": {
+      "0": "For every party member from Natlan or who has a different Elemental Type from the equipping character, the equipping character gains <cryo>9.6%</cryo> increased ATK. When there are no less than 3 of the aforementioned characters, the equipping character gains <cryo>48</cryo> Elemental Mastery."
+    }
+  }
+}

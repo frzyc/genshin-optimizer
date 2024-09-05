@@ -4,12 +4,12 @@
     "basic": {
       "0": {
         "name": "Phí Mở Chai",
-        "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Gallagher.",
+        "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Gallagher.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch."
       },
       "1": {
         "name": "Hoa Rượu Tuôn Trào",
-        "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Gallagher. Đồng thời giảm <orangeStrong>{{2}}%</orangeStrong> Tấn Công của mục tiêu, duy trì {{3}} hiệp.",
+        "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Gallagher. Đồng thời giảm <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> Tấn Công của mục tiêu, duy trì {{3}} hiệp.",
         "shortDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch, và giảm Tấn Công của kẻ này."
       }
     },
@@ -23,14 +23,14 @@
     "ult": {
       "0": {
         "name": "Nghi Lễ Champagne",
-        "fullDesc": "Khiến toàn bộ phe địch rơi vào trạng thái \"Say Mèm\", duy trì {{2}} hiệp, đồng thời gây Sát Thương Hỏa cho toàn bộ phe địch bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Gallagher, và cường hóa Tấn Công Thường lần sau thành \"Hoa Rượu Tuôn Trào\".",
+        "fullDesc": "Khiến toàn bộ phe địch rơi vào trạng thái \"Say Mèm\", duy trì {{2}} hiệp, đồng thời gây Sát Thương Hỏa cho toàn bộ phe địch bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Gallagher, và cường hóa Tấn Công Thường lần sau thành \"Hoa Rượu Tuôn Trào\".",
         "shortDesc": "Khiến toàn bộ kẻ địch <orangeStrong>rơi vào trạng thái \"Say Mèm\"</orangeStrong>, đồng thời gây Sát Thương Hỏa cho toàn bộ kẻ địch. Tấn Công Thường lần sau cường hóa thành \"Hoa Rượu Tuôn Trào\"."
       }
     },
     "technique": {
       "0": {
         "name": "Rượu Ngọt Thủ Công",
-        "fullDesc": "Lập tức tấn công kẻ địch, sau khi vào chiến đấu khiến toàn thể phe địch rơi vào trạng thái Say Mèm, duy trì {{1}} hiệp, đồng thời gây Sát Thương Hỏa lên toàn bộ phe địch bằng {{2}}% Tấn Công của Gallagher.",
+        "fullDesc": "Lập tức tấn công kẻ địch, sau khi vào chiến đấu khiến toàn thể phe địch rơi vào trạng thái Say Mèm, duy trì {{1}} hiệp, đồng thời gây Sát Thương Hỏa lên toàn bộ phe địch bằng {{2, percent}}% Tấn Công của Gallagher.",
         "shortDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ khiến toàn bộ phe địch <orangeStrong>rơi vào trạng thái \"Say Mèm\"</orangeStrong>, và gây lượng nhỏ Sát Thương Hỏa lên toàn bộ phe địch."
       }
     },
@@ -44,7 +44,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Công Thức Mới Mẻ",
-        "fullDesc": "Tăng Lượng Trị Liệu do bản thân cung cấp, mức tăng bằng {{1}}% Tấn Công Kích Phá, tối đa tăng {{2}}% Lượng Trị Liệu cung cấp.",
+        "fullDesc": "Tăng Lượng Trị Liệu do bản thân cung cấp, mức tăng bằng {{1, percent}}% Tấn Công Kích Phá, tối đa tăng {{2, percent}}% Lượng Trị Liệu cung cấp.",
         "shortDesc": ""
       }
     },
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Salty Dog",
-      "desc": "Sau khi Gallagher vào chiến đấu sẽ hồi {{1}} Năng Lượng, Kháng Hiệu Ứng tăng {{2}}%."
+      "desc": "Sau khi Gallagher vào chiến đấu sẽ hồi {{1}} Năng Lượng, Kháng Hiệu Ứng tăng {{2, percent}}%."
     },
     "2": {
       "name": "Lion's Tail",
-      "desc": "Khi thi triển Chiến Kỹ, giải trừ {{1}} Hiệu Ứng Xấu của 1 đồng đội chỉ định, đồng thời khiến Kháng Hiệu Ứng của đồng đội đó tăng {{2}}%, duy trì {{3}} hiệp."
+      "desc": "Khi thi triển Chiến Kỹ, giải trừ {{1}} Hiệu Ứng Xấu của 1 đồng đội chỉ định, đồng thời khiến Kháng Hiệu Ứng của đồng đội đó tăng {{2, percent}}%, duy trì {{3}} hiệp."
     },
     "3": {
       "name": "Corpse Reviver",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Blood And Sand",
-      "desc": "Tấn Công Kích Phá của Gallagher tăng {{1}}%, hiệu suất Phá Vỡ Điểm Yếu tăng {{2}}%."
+      "desc": "Tấn Công Kích Phá của Gallagher tăng {{1, percent}}%, hiệu suất Phá Vỡ Điểm Yếu tăng {{2, percent}}%."
     }
   }
 }

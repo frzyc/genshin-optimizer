@@ -4,7 +4,7 @@
   "uploadCard": {
     "title": "Téléverser la base de données",
     "replaceDatabase": "Remplacer la base de données",
-    "hint": "Téléverser votre fichier JSON ici...",
+    "hint": "Chargez votre fichier JSON ici...",
     "hintPaste": "...ou coller vos données ci-dessous.",
     "error": {
       "jsonParse": "Impossible d'analyser le fichier JSON.",

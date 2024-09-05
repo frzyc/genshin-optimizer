@@ -1,6 +1,6 @@
 {
   "setName": "Forge of the Kalpagni Lantern",
   "setEffects": {
-    "2": "Increases the wearer's SPD by {{1}}%. When the wearer hits an enemy target that has Fire Weakness, the wearer's Break Effect increases by {{2}}%, lasting for {{3}} turn(s)."
+    "2": "Increases the wearer's SPD by {{1, percent}}%. When the wearer hits an enemy target that has Fire Weakness, the wearer's Break Effect increases by {{2, percent}}%, lasting for {{3}} turn(s)."
   }
 }

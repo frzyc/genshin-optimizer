@@ -1,6 +1,6 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import { min, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
-import { allNumConditionals, percent, register, self, selfBuff } from '../util'
+import { allNumConditionals, own, ownBuff, percent, register } from '../util'
 import { entriesForWeapon } from './util'
 
 // const atkSPD_arr = [0.1, 0.125, 0.15, 0.175, 0.2]
@@ -13,7 +13,7 @@ const max_normal_dmg_arr = [0.48, 0.6, 0.72, 0.84, 0.96]
 
 const {
   weapon: { refinement },
-} = self
+} = own
 const { timePassive } = allNumConditionals(key, false, 0, 12)
 const { hitPassive } = allNumConditionals(key, true, 0, 5)
 
@@ -34,5 +34,5 @@ const normal_dmg_ = min(
 export default register(
   key,
   entriesForWeapon(key),
-  selfBuff.premod.dmg_.normal.add(normal_dmg_)
+  ownBuff.premod.dmg_.normal.add(normal_dmg_)
 )

@@ -2,6 +2,6 @@
   "name": "孤独的疗愈",
   "passive": {
     "name": "混沌灵药",
-    "description": "使装备者的击破特攻提高<orangeStrong>{{1}}%</orangeStrong>。当装备者施放终结技时，使装备者造成的持续伤害提高<orangeStrong>{{2}}%</orangeStrong>，持续{{3}}回合。陷入装备者施加的持续伤害效果的敌方目标被消灭时，装备者恢复<orangeStrong>{{4}}</orangeStrong>点能量。"
+    "description": "使装备者的击破特攻提高<orangeStrong>{{1, percent}}%</orangeStrong>。当装备者施放终结技时，使装备者造成的持续伤害提高<orangeStrong>{{2, percent}}%</orangeStrong>，持续{{3}}回合。陷入装备者施加的持续伤害效果的敌方目标被消灭时，装备者恢复<orangeStrong>{{4, fixed(fixed: 1)}}</orangeStrong>点能量。"
   }
 }

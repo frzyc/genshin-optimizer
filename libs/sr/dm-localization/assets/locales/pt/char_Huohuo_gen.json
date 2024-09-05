@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Estandarte: Invoca-Tempestades",
-        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1}}%</orangeStrong> dos PV máximos de Huohuo a um inimigo-alvo.",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1, percent}}%</orangeStrong> dos PV máximos de Huohuo a um inimigo-alvo.",
         "shortDesc": "Causa Dano de Vento leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Talismã: Proteção",
-        "fullDesc": "Remove {{5}} <u>penalidade(s)</u> de um único aliado-alvo e restaura imediatamente PV deste aliado em uma quantidade igual a <orangeStrong>{{1}}%</orangeStrong> dos PV máximos de Huohuo + <orangeStrong>{{2}}</orangeStrong>. Ao mesmo tempo, restaura PV dos aliados adjacentes a este aliado-alvo em uma quantidade igual a <orangeStrong>{{3}}%</orangeStrong> dos PV máximos de Huohuo + <orangeStrong>{{4}}</orangeStrong>.",
+        "fullDesc": "Remove {{5}} <u>penalidade(s)</u> de um único aliado-alvo e restaura imediatamente PV deste aliado em uma quantidade igual a <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Huohuo + <orangeStrong>{{2}}</orangeStrong>. Ao mesmo tempo, restaura PV dos aliados adjacentes a este aliado-alvo em uma quantidade igual a <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Huohuo + <orangeStrong>{{4}}</orangeStrong>.",
         "shortDesc": "Remove 1 <u>penalidade</u> de um aliado e <orangeStrong>restaura PV</orangeStrong> daquele aliado e dos aliados adjacentes a ele."
       }
     },
     "ult": {
       "0": {
         "name": "Rabin: Dominação Espiritual",
-        "fullDesc": "Regenera Energia de todos os aliados (excluindo este personagem) em uma quantidade igual a <orangeStrong>{{1}}%</orangeStrong> de suas respectivas Energias máximas. Ao mesmo tempo, aumenta o ATQ deles em <orangeStrong>{{2}}%</orangeStrong> por {{3}} rodada(s).",
+        "fullDesc": "Regenera Energia de todos os aliados (excluindo este personagem) em uma quantidade igual a <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de suas respectivas Energias máximas. Ao mesmo tempo, aumenta o ATQ deles em <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> por {{3}} rodada(s).",
         "shortDesc": "<orangeStrong>Regenera a Energia</orangeStrong> de todos os aliados (excluindo este personagem) e <orangeStrong>aumenta o ATQ</orangeStrong> deles."
       }
     },
     "technique": {
       "0": {
         "name": "Demônio: Destituição do Mal",
-        "fullDesc": "Huohuo aterroriza inimigos próximos, deixando-os Horrorizados. Inimigos Horrorizados fogem de Huohuo por {{4}} segundos. Ao entrar numa batalha com inimigos Horrorizados, há {{1}}% de <u>chance-base</u> de reduzir o ATQ de todos os inimigos em {{2}}% por {{3}} rodada(s).",
+        "fullDesc": "Huohuo aterroriza inimigos próximos, deixando-os Horrorizados. Inimigos Horrorizados fogem de Huohuo por {{4}} segundos. Ao entrar numa batalha com inimigos Horrorizados, há {{1, percent}}% de <u>chance-base</u> de reduzir o ATQ de todos os inimigos em {{2, percent}}% por {{3}} rodada(s).",
         "shortDesc": "Deixa inimigos próximos Horrorizados. Ao entrar numa luta com inimigos Horrorizados, há altas chances de aplicar <orangeStrong>redução de ATQ</orangeStrong> nos inimigos-alvos."
       }
     },
@@ -46,7 +46,7 @@
     "bonusAbility2": {
       "0": {
         "name": "A Amaldiçoada",
-        "fullDesc": "A chance de resistir a penalidades de Controle Negativo aumenta em {{1}}%.",
+        "fullDesc": "A chance de resistir a penalidades de Controle Negativo aumenta em {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Ancorada ao Receptáculo, Espectros Aninhados",
-      "desc": "A duração da Provisão Divina produzida pelo Talento é estendida em {{2}} rodada(s). Quando Huohuo possui Provisão Divina, a VEL de todos os aliados aumenta em {{1}}%."
+      "desc": "A duração da Provisão Divina produzida pelo Talento é estendida em {{2}} rodada(s). Quando Huohuo possui Provisão Divina, a VEL de todos os aliados aumenta em {{1, percent}}%."
     },
     "2": {
       "name": "Selada no Rabin, Espectro Subjugado",
-      "desc": "Se Huohuo possuir Provisão Divina quando um aliado for atingido por um golpe fatal, o aliado não será derrubado, e seus PV serão imediatamente restaurados em uma quantidade igual a {{1}}% dos seus PV máximos. Isso reduz a duração da Provisão Divina em 1 rodada. Este efeito só pode ser ativado {{2}} vez(es) por batalha."
+      "desc": "Se Huohuo possuir Provisão Divina quando um aliado for atingido por um golpe fatal, o aliado não será derrubado, e seus PV serão imediatamente restaurados em uma quantidade igual a {{1, percent}}% dos seus PV máximos. Isso reduz a duração da Provisão Divina em 1 rodada. Este efeito só pode ser ativado {{2}} vez(es) por batalha."
     },
     "3": {
       "name": "Amaldiçoada pelo Destino, Mariposas às Chamas",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Presa à Vida, Atada à Contenda",
-      "desc": "Ao curar um aliado-alvo com a Perícia ou o Talento, quanto menos PV o aliado-alvo tiver no momento, maior a cura que ele receberá. O aumento máximo de cura fornecido por Huohuo é {{1}}%."
+      "desc": "Ao curar um aliado-alvo com a Perícia ou o Talento, quanto menos PV o aliado-alvo tiver no momento, maior a cura que ele receberá. O aumento máximo de cura fornecido por Huohuo é {{1, percent}}%."
     },
     "5": {
       "name": "Exigido pelo Decreto, Males Expulsos",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Tecido em Conjunto, Adesão Eterna",
-      "desc": "Ao curar um aliado-alvo, aumenta o Dano causado pelo aliado-alvo em {{1}}% por {{2}} rodada(s)."
+      "desc": "Ao curar um aliado-alvo, aumenta o Dano causado pelo aliado-alvo em {{1, percent}}% por {{2}} rodada(s)."
     }
   }
 }

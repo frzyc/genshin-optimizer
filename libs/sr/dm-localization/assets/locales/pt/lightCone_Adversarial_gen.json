@@ -2,6 +2,6 @@
   "name": "Antagonista",
   "passive": {
     "name": "Aliança",
-    "description": "Quando o usuário derrota um inimigo, aumenta a VEL em <orangeStrong>{{1}}%</orangeStrong> por {{2}} rodada(s)."
+    "description": "Quando o usuário derrota um inimigo, aumenta a VEL em <orangeStrong>{{1, percent}}%</orangeStrong> por {{2}} rodada(s)."
   }
 }

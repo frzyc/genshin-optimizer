@@ -2,6 +2,6 @@
   "name": "Trong Đêm Tối",
   "passive": {
     "name": "Hoa Và Bướm",
-    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> Tỷ Lệ Bạo Kích của người trang bị. Khi Tốc Độ trong chiến đấu của người trang bị lớn hơn 100, mỗi khi vượt trên {{2}} điểm sẽ tăng <orangeStrong>{{3}}%</orangeStrong> sát thương Tấn Công Thường và Chiến Kỹ gây ra, đồng thời tăng <orangeStrong>{{4}}%</orangeStrong> Sát Thương Bạo Kích Tuyệt Kỹ, hiệu ứng này có thể cộng dồn {{5}} tầng."
+    "description": "Tăng <orangeStrong>{{1, percent}}%</orangeStrong> Tỷ Lệ Bạo Kích của người trang bị. Khi Tốc Độ trong chiến đấu của người trang bị lớn hơn 100, mỗi khi vượt trên {{2}} điểm sẽ tăng <orangeStrong>{{3, percent}}%</orangeStrong> sát thương Tấn Công Thường và Chiến Kỹ gây ra, đồng thời tăng <orangeStrong>{{4, percent}}%</orangeStrong> Sát Thương Bạo Kích Tuyệt Kỹ, hiệu ứng này có thể cộng dồn {{5}} tầng."
   }
 }

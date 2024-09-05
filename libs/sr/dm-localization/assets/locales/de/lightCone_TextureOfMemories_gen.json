@@ -2,6 +2,6 @@
   "name": "Textur der Erinnerungen",
   "passive": {
     "name": "Schätzen",
-    "description": "Erhöht den Effekt-WDS des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Wenn der Träger angegriffen wird und keinen Schild hat, erhält er für {{3}} Rd. einen Schild in Höhe von <orangeStrong>{{2}}%</orangeStrong> seiner max. LP. Dieser Effekt kann nur 1-mal alle {{4}} Rd. ausgelöst werden. Hat der Träger einen Schild, wird der von ihm erlittene SCH um <orangeStrong>{{5}}%</orangeStrong> reduziert."
+    "description": "Erhöht den Effekt-WDS des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Wenn der Träger angegriffen wird und keinen Schild hat, erhält er für {{3}} Rd. einen Schild in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> seiner max. LP. Dieser Effekt kann nur 1-mal alle {{4}} Rd. ausgelöst werden. Hat der Träger einen Schild, wird der von ihm erlittene SCH um <orangeStrong>{{5, percent}}%</orangeStrong> reduziert."
   }
 }

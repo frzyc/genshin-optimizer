@@ -2,6 +2,6 @@
   "name": "{RUBY_B#さいご}最後{RUBY_E#}の{RUBY_B#しょうしゃ}勝者{RUBY_E#}",
   "passive": {
     "name": "ベット",
-    "description": "装備キャラの攻撃力+<orangeStrong>{{1}}%</orangeStrong>。装備キャラが敵に攻撃を行い、会心が発生した後、「好運」を1層獲得する、最大で{{3}}層累積できる。「好運」1層につき、装備キャラの会心ダメージ+<orangeStrong>{{2}}%</orangeStrong>。「好運」は装備キャラのターン終了時に解除される。"
+    "description": "装備キャラの攻撃力+<orangeStrong>{{1, percent}}%</orangeStrong>。装備キャラが敵に攻撃を行い、会心が発生した後、「好運」を1層獲得する、最大で{{3}}層累積できる。「好運」1層につき、装備キャラの会心ダメージ+<orangeStrong>{{2, percent}}%</orangeStrong>。「好運」は装備キャラのターン終了時に解除される。"
   }
 }

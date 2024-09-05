@@ -2,6 +2,6 @@
   "name": "Casa Destruída",
   "passive": {
     "name": "Erradicação",
-    "description": "O usuário causa <orangeStrong>{{2}}%</orangeStrong> a mais de Dano a inimigos-alvo com porcentagem de PV maior do que {{1}}%."
+    "description": "O usuário causa <orangeStrong>{{2, percent}}%</orangeStrong> a mais de Dano a inimigos-alvo com porcentagem de PV maior do que {{1, percent}}%."
   }
 }

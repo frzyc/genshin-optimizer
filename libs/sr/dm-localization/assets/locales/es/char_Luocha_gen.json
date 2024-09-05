@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Espinas del abismo",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Luocha como Daño Imaginario a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Luocha como Daño Imaginario a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "Oración de la flor abisal",
-        "fullDesc": "Tras usar la habilidad básica, regenera a un aliado determinado una cantidad de PV equivalente al <orangeStrong>{{1}}%</orangeStrong> del ATQ de Luocha + <orangeStrong>{{2}}</orangeStrong>. Luocha obtiene una acumulación de Flor abisal.\\nCuando cualquiera de los aliados tiene un porcentaje de PV igual o inferior al {{3}}%, Luocha le aplica una vez un efecto igual al de su habilidad básica y no consume pts. de habilidad básica. Este efecto se puede volver a activar después de {{4}} turnos.",
+        "fullDesc": "Tras usar la habilidad básica, regenera a un aliado determinado una cantidad de PV equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Luocha + <orangeStrong>{{2}}</orangeStrong>. Luocha obtiene una acumulación de Flor abisal.\\nCuando cualquiera de los aliados tiene un porcentaje de PV igual o inferior al {{3, percent}}%, Luocha le aplica una vez un efecto igual al de su habilidad básica y no consume pts. de habilidad básica. Este efecto se puede volver a activar después de {{4}} turnos.",
         "shortDesc": "<orangeStrong>Regenera</orangeStrong> los PV de un aliado y obtiene una acumulación de Flor abisal."
       }
     },
     "ult": {
       "0": {
         "name": "Deseo de muerte",
-        "fullDesc": "Elimina {{2}} <u>efecto positivo</u> de todos los enemigos y les inflige un Daño Imaginario equivalente al <orangeStrong>{{1}}%</orangeStrong> del ATQ de Luocha. Además, Luocha obtiene 1 acumulación de Flor abisal.",
+        "fullDesc": "Elimina {{2}} <u>efecto positivo</u> de todos los enemigos y les inflige un Daño Imaginario equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Luocha. Además, Luocha obtiene 1 acumulación de Flor abisal.",
         "shortDesc": "<orangeStrong>Elimina</orangeStrong> 1 <orangeStrong><u>efecto positivo</u></orangeStrong> de todos los enemigos y les inflige Daño Imaginario. Obtiene 1 acumulación de Flor abisal."
       }
     },
@@ -46,14 +46,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Santificación",
-        "fullDesc": "Cuando un enemigo que está dentro del campo recibe un ataque de un aliado, los demás aliados que no son el atacante también regeneran una cantidad de PV equivalente al {{1}}% del ATQ de Luocha + {{2}}.",
+        "fullDesc": "Cuando un enemigo que está dentro del campo recibe un ataque de un aliado, los demás aliados que no son el atacante también regeneran una cantidad de PV equivalente al {{1, percent(fixed: 1)}}% del ATQ de Luocha + {{2}}.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Travesía del valle",
-        "fullDesc": "La probabilidad de resistir estados negativos de Control aumenta en un {{1}}%.",
+        "fullDesc": "La probabilidad de resistir estados negativos de Control aumenta en un {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Ablución de los vivos",
-      "desc": "Mientras el campo está activo, el ATQ de todos los aliados aumenta en un {{1}}%."
+      "desc": "Mientras el campo está activo, el ATQ de todos los aliados aumenta en un {{1, percent}}%."
     },
     "2": {
       "name": "Concesión inmaculada",
-      "desc": "Al activar el efecto de la habilidad básica, si el aliado objetivo tiene en ese momento un porcentaje de PV inferior al 50%, la curación realizada por Luocha aumenta en un {{1}}%. Si el aliado tiene un porcentaje de PV igual o superior al 50%, Luocha le otorga un escudo que absorbe un daño equivalente al {{2}}% del ATQ de Luocha + {{3}} durante {{4}} turnos."
+      "desc": "Al activar el efecto de la habilidad básica, si el aliado objetivo tiene en ese momento un porcentaje de PV inferior al 50%, la curación realizada por Luocha aumenta en un {{1, percent}}%. Si el aliado tiene un porcentaje de PV igual o superior al 50%, Luocha le otorga un escudo que absorbe un daño equivalente al {{2, percent}}% del ATQ de Luocha + {{3}} durante {{4}} turnos."
     },
     "3": {
       "name": "Intento de bobos",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Juicio de espinas",
-      "desc": "Los enemigos se ven afectados por Debilitación cuando el campo de Luocha está activo y el daño que infligen se reduce en un {{1}}%."
+      "desc": "Los enemigos se ven afectados por Debilitación cuando el campo de Luocha está activo y el daño que infligen se reduce en un {{1, percent}}%."
     },
     "5": {
       "name": "Marca de sacrificio",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "En polvo te convertirás",
-      "desc": "Al usar la habilidad definitiva, hay una probabilidad fija del {{1}}% de que la RES a todos los tipos de todos los enemigos se reduzca en un {{2}}% durante {{3}} turnos."
+      "desc": "Al usar la habilidad definitiva, hay una probabilidad fija del {{1, percent}}% de que la RES a todos los tipos de todos los enemigos se reduzca en un {{2, percent}}% durante {{3}} turnos."
     }
   }
 }

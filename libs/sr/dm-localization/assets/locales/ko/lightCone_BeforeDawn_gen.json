@@ -2,6 +2,6 @@
   "name": "동트기 전",
   "passive": {
     "name": "긴 밤",
-    "description": "장착한 캐릭터의 치명타 피해가 <orangeStrong>{{1}}%</orangeStrong> 증가하며, 장착한 캐릭터의 전투 스킬과 필살기로 가하는 피해가 <orangeStrong>{{2}}%</orangeStrong> 증가한다. 장착한 캐릭터는 전투 스킬 혹은 필살기 발동 후 [몽신] 효과를 획득한다. 추가 공격 발동 시 [몽신]을 소모해 추가 공격으로 가하는 피해가 <orangeStrong>{{3}}%</orangeStrong> 증가한다"
+    "description": "장착한 캐릭터의 치명타 피해가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가하며, 장착한 캐릭터의 전투 스킬과 필살기로 가하는 피해가 <orangeStrong>{{2, percent}}%</orangeStrong> 증가한다. 장착한 캐릭터는 전투 스킬 혹은 필살기 발동 후 [몽신] 효과를 획득한다. 추가 공격 발동 시 [몽신]을 소모해 추가 공격으로 가하는 피해가 <orangeStrong>{{3, percent}}%</orangeStrong> 증가한다"
   }
 }

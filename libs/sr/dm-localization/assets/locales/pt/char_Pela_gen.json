@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Tiro Gélido",
-        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Pela a um único inimigo-alvo.",
+        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Pela a um único inimigo-alvo.",
         "shortDesc": "Causa Dano de Gelo leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Geladura",
-        "fullDesc": "Remove {{2}} <u>melhoria(s)</u> e causa Dano de Gelo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Pela a um único inimigo-alvo.",
+        "fullDesc": "Remove {{2}} <u>melhoria(s)</u> e causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Pela a um único inimigo-alvo.",
         "shortDesc": "<orangeStrong>Remove</orangeStrong> 1 <orangeStrong><u>melhoria</u></orangeStrong> de um único inimigo-alvo e causa Dano de Gelo ao inimigo-alvo."
       }
     },
     "ult": {
       "0": {
         "name": "Supressão de Zona",
-        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{4}}%</orangeStrong> do ATQ de Pela a todos os inimigos, com uma <u>chance-base</u> de {{1}}% de infligir a condição Exposto em todos os inimigos.\\nInimigos Expostos têm a DEF reduzida em <orangeStrong>{{2}}%</orangeStrong> por {{3}} rodada(s).",
+        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de Pela a todos os inimigos, com uma <u>chance-base</u> de {{1, percent}}% de infligir a condição Exposto em todos os inimigos.\\nInimigos Expostos têm a DEF reduzida em <orangeStrong>{{2, percent}}%</orangeStrong> por {{3}} rodada(s).",
         "shortDesc": "Tem altas chances de <orangeStrong>reduzir a DEF dos inimigos</orangeStrong>, além de causar Dano de Gelo leve a todos os inimigos."
       }
     },
     "technique": {
       "0": {
         "name": "Ataque Premeditado",
-        "fullDesc": "Ataca o inimigo imediatamente. Ao entrar na batalha, Pela causa Dano de Gelo igual a {{4}}% do seu ATQ a um inimigo aleatório, com {{1}}% de <u>chance-base</u> de reduzir a DEF de todos os inimigos em {{2}}% por {{3}} rodada(s).",
+        "fullDesc": "Ataca o inimigo imediatamente. Ao entrar na batalha, Pela causa Dano de Gelo igual a {{4, percent}}% do seu ATQ a um inimigo aleatório, com {{1, percent}}% de <u>chance-base</u> de reduzir a DEF de todos os inimigos em {{2, percent}}% por {{3}} rodada(s).",
         "shortDesc": "Ataca o inimigo. Após entrar na batalha, causa uma pequena quantidade de Dano a um inimigo aleatório, com alta chance de diminuir a DEF de todos os inimigos-alvo."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Pancada",
-        "fullDesc": "Causa {{1}}% a mais de Dano a inimigos com penalidades.",
+        "fullDesc": "Causa {{1, percent}}% a mais de Dano a inimigos com penalidades.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "A Estratégia Secreta",
-        "fullDesc": "Quando Pela está no campo, a Taxa de Acerto de Efeito de todos os aliados aumenta em {{1}}%.",
+        "fullDesc": "Quando Pela está no campo, a Taxa de Acerto de Efeito de todos os aliados aumenta em {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Exterminar",
-        "fullDesc": "Usar a Perícia para remover melhoria(s) aumenta em {{1}}% o Dano do próximo ataque.",
+        "fullDesc": "Usar a Perícia para remover melhoria(s) aumenta em {{1, percent}}% o Dano do próximo ataque.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Carregamento Rígido",
-      "desc": "Usar a Perícia para remover uma melhoria aumenta a VEL em {{1}}% por {{2}} rodada(s)."
+      "desc": "Usar a Perícia para remover uma melhoria aumenta a VEL em {{1, percent}}% por {{2}} rodada(s)."
     },
     "3": {
       "name": "Força Supressiva",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Análise Completa",
-      "desc": "Ao usar a Perícia, há {{1}}% de chance-base de reduzir a RES a Gelo do inimigo-alvo em {{2}}% por {{3}} rodada(s)."
+      "desc": "Ao usar a Perícia, há {{1, percent}}% de chance-base de reduzir a RES a Gelo do inimigo-alvo em {{2, percent}}% por {{3}} rodada(s)."
     },
     "5": {
       "name": "Perigo Total",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Busca Fraca",
-      "desc": "Quando Pela ataca um inimigo com alguma penalidade, ela causa Dano de Gelo Adicional igual a {{1}}% do ATQ dela ao inimigo."
+      "desc": "Quando Pela ataca um inimigo com alguma penalidade, ela causa Dano de Gelo Adicional igual a {{1, percent}}% do ATQ dela ao inimigo."
     }
   }
 }

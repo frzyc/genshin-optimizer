@@ -5,8 +5,17 @@ import {
   allStatBoostKeys,
 } from '@genshin-optimizer/sr/consts'
 import type { ICharacter, ILightCone } from '@genshin-optimizer/sr/srod'
+import type { SrcCondInfo } from './calculator'
 import type { Member, Preset, TagMapNodeEntries } from './data/util'
-import { convert, getStatFromStatKey, reader, self, selfTag } from './data/util'
+import {
+  conditionalEntries,
+  convert,
+  getStatFromStatKey,
+  own,
+  ownBuff,
+  ownTag,
+  reader,
+} from './data/util'
 
 export function withPreset(
   preset: Preset,
@@ -22,11 +31,12 @@ export function withMember(
 }
 
 export function charData(data: ICharacter): TagMapNodeEntries {
-  const { lvl, basic, skill, ult, talent, ascension, eidolon } = self.char
+  const { lvl, basic, skill, ult, talent, ascension, eidolon } = own.char
+  const { char, iso, [data.key]: sheet } = reader.withAll('sheet', [])
 
   return [
-    reader.sheet('char').reread(reader.sheet(data.key)),
-    reader.withTag({ sheet: 'iso', et: 'self' }).reread(reader.sheet(data.key)),
+    char.reread(sheet),
+    iso.reread(sheet),
 
     lvl.add(data.level),
     basic.add(data.basic),
@@ -36,21 +46,23 @@ export function charData(data: ICharacter): TagMapNodeEntries {
     ascension.add(data.ascension),
     eidolon.add(data.eidolon),
     ...allStatBoostKeys.map((index) =>
-      self.char[`statBoost${index}`].add(data.statBoosts[index] ? 1 : 0)
+      ownBuff.char[`statBoost${index}`].add(data.statBoosts[index] ? 1 : 0)
     ),
     ...allBonusAbilityKeys.map((index) =>
-      self.char[`bonusAbility${index}`].add(data.bonusAbilities[index] ? 1 : 0)
+      ownBuff.char[`bonusAbility${index}`].add(
+        data.bonusAbilities[index] ? 1 : 0
+      )
     ),
 
     // Default char
-    self.premod.crit_.add(0.05),
-    self.premod.crit_dmg_.add(0.5),
+    ownBuff.premod.crit_.add(0.05),
+    ownBuff.premod.crit_dmg_.add(0.5),
   ]
 }
 
 export function lightConeData(data: ILightCone | undefined): TagMapNodeEntries {
   if (!data) return []
-  const { lvl, ascension, superimpose } = self.lightCone
+  const { lvl, ascension, superimpose } = own.lightCone
 
   return [
     reader.sheet('lightCone').reread(reader.sheet(data.key)),
@@ -70,7 +82,7 @@ export function relicsData(
   const {
     common: { count },
     premod,
-  } = convert(selfTag, { sheet: 'relic', et: 'self' })
+  } = convert(ownTag, { sheet: 'relic', et: 'own' })
   const sets: Partial<Record<RelicSetKey, number>> = {},
     stats: Partial<Record<StatKey, number>> = {}
   for (const { set: setKey, stats: stat } of data) {
@@ -103,44 +115,52 @@ export function relicsData(
 
 export function teamData(members: readonly Member[]): TagMapNodeEntries {
   const teamEntry = reader.with('et', 'team')
-  const { self, teamBuff, notSelfBuff } = reader.sheet('agg').withAll('et', [])
+  const { own, enemy, teamBuff, notOwnBuff } = reader
+    .sheet('agg')
+    .withAll('et', [])
   return [
     // Target Entries
     members.map((dst) =>
       reader
         .withTag({ et: 'target', dst })
-        .reread(reader.withTag({ et: 'self', dst: null, src: dst }))
-    ),
-    // Self Buff
-    members.map((src) =>
-      self.with('src', src).reread(reader.withTag({ et: 'selfBuff', dst: src }))
+        .reread(reader.withTag({ et: 'own', dst: null, src: dst }))
     ),
     // Team Buff
     members.flatMap((dst) => {
-      const entry = self.with('src', dst)
-      return members.map((src) => entry.reread(teamBuff.withTag({ dst, src })))
+      const entry = own.with('src', dst)
+      return members.map((src) =>
+        entry.reread(teamBuff.withTag({ dst, src, name: null }))
+      )
     }),
     // Not Self Buff
     members.flatMap((dst) => {
-      const entry = self.with('src', dst)
+      const entry = own.with('src', dst)
       return members
-        .map((src) => entry.reread(notSelfBuff.withTag({ dst, src })))
-        .filter(({ value }) => value.tag!['dst'] != value.tag!['src'])
+        .filter((src) => src !== dst)
+        .map((src) =>
+          entry.reread(notOwnBuff.withTag({ dst, src, name: null }))
+        )
     }),
+    // Enemy Debuff
+    members.map((src) =>
+      enemy.reread(
+        reader.withTag({ et: 'enemyDeBuff', dst: null, src, name: null })
+      )
+    ),
     // Non-stacking
-    members.slice(0, 4).flatMap((_, i) => {
+    members.flatMap((src, i) => {
       const { stackIn, stackTmp } = reader.withAll('qt', [])
-      const src = `${i}` as '0' | '1' | '2' | '3'
       // Make sure not to use `sheet:agg` here to match `stackOut` on the `reader.addOnce` side
-      const self = reader.withTag({ src, et: 'self' })
+      const own = reader.withTag({ src, et: 'own' })
       // Use `i + 1` for priority so that `0` means no buff
       return [
-        self.with('qt', 'stackTmp').add(cmpNE(stackIn, 0, i + 1)),
-        self
+        own.with('qt', 'stackTmp').add(cmpNE(stackIn, 0, i + 1)),
+        own
           .with('qt', 'stackOut')
           .add(cmpEq(stackTmp.max.with('et', 'team'), i + 1, stackIn)),
       ]
     }),
+
     // Total Team Stat
     //
     // CAUTION:
@@ -150,8 +170,25 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     // use different accumulators from the inner query. Such is the case for maximum team
     // final eleMas, where the outer query uses a `max` accumulator, while final eleMas
     // must use `sum` accumulator for a correct result.
-    members.map((src) =>
-      teamEntry.add(reader.withTag({ src, et: 'self' }).sum)
-    ),
+    members.map((src) => teamEntry.add(reader.withTag({ src, et: 'own' }).sum)),
   ].flat()
+}
+
+/**
+ * Generate conditional TagMapNodeEntry for calculator. Should be provided outside of any member data, in order to preserve specified 'src'
+ * @param dst member to apply conditionals to
+ * @param data conditional data in `Src: { Sheet: { CondKey: value } }` format. Src can be 'all', unless the buff is possibly duplicated (e.g. relic team buff). In that case, you should specify the src member, if you want to select which one to apply.
+ * @returns
+ */
+export function conditionalData(
+  dst: Member | 'all',
+  data: SrcCondInfo | undefined
+) {
+  if (!data) return []
+  return Object.entries(data).flatMap(([src, entries]) =>
+    Object.entries(entries).flatMap(([sheet, entries]) => {
+      const conds = conditionalEntries(sheet, src, dst)
+      return Object.entries(entries).map(([k, v]) => conds(k, v))
+    })
+  )
 }

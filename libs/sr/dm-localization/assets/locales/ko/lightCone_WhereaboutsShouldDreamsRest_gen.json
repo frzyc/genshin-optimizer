@@ -2,6 +2,6 @@
   "name": "꿈은 어디로 돌아가야 하는가",
   "passive": {
     "name": "탈바꿈",
-    "description": "장착한 캐릭터의 격파 특수효과가 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터가 적에게 격파 피해를 가할 시 적을 [궤멸] 상태에 빠트린다, 지속 시간: {{4}}턴. [궤멸] 상태에서 목표가 장착한 캐릭터로부터 받는 격파 피해가 <orangeStrong>{{2}}%</orangeStrong> 증가하고 속도가 {{3}}% 감소하며, 같은 유형의 효과는 중첩되지 않는다"
+    "description": "장착한 캐릭터의 격파 특수효과가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 장착한 캐릭터가 적에게 격파 피해를 가할 시 적을 [궤멸] 상태에 빠트린다, 지속 시간: {{4}}턴. [궤멸] 상태에서 목표가 장착한 캐릭터로부터 받는 격파 피해가 <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> 증가하고 속도가 {{3, percent}}% 감소하며, 같은 유형의 효과는 중첩되지 않는다"
   }
 }

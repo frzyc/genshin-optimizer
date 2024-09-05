@@ -1,198 +1,150 @@
-import type {
-  RawTagMapKeys,
-  RawTagMapValues,
-  Tag,
-  TagMapSubsetCache,
-} from '../tag'
+import type { DedupTag, RawTagMapKeys, RawTagMapValues, Tag } from '../tag'
 import {
-  TagMapExactValues,
+  DedupTags,
+  mergeTagMapValues,
   TagMapKeys,
   TagMapSubsetValues,
-  mergeTagMapValues,
 } from '../tag'
 import { assertUnreachable, extract, isDebug, tagString } from '../util'
 import { arithmetic, branching } from './formula'
-import type { AnyNode, NumNode, ReRead, Read, StrNode } from './type'
+import type { AnyNode, NumNode, Read, ReRead, StrNode } from './type'
 
-type TagCache = TagMapSubsetCache<AnyNode | ReRead>
-type PreRead<M> = {
-  pre: CalcResult<number | string, M>[]
-  computed: Partial<
-    Record<NonNullable<Read['ex']>, CalcResult<number | string, M>>
-  >
-}
+export type TagCache<M> = DedupTag<PreRead<M>>
+export type PreRead<M> = Partial<
+  Record<NonNullable<Read['ex']> | 'unique', CalcResult<number | string, M>>
+> & { pre: CalcResult<number | string, M>[] }
 const getV = <V, M>(n: CalcResult<V, M>[]) => extract(n, 'val')
 
-export type CalcResult<V, M> = {
-  val: V
-  meta: M
-  rereadSeq?: Tag[]
-}
+export type CalcResult<V, M> = { val: V; meta: M }
 export class Calculator<M = any> {
-  keys: TagMapKeys
   nodes: TagMapSubsetValues<AnyNode | ReRead>
-  calculated: TagMapExactValues<PreRead<M>>
+  cache: DedupTag<PreRead<M>>
+  calc: DedupTag<this>
 
   constructor(
-    keys: RawTagMapKeys,
+    rawKeys: RawTagMapKeys,
     ...values: RawTagMapValues<AnyNode | ReRead>[]
   ) {
-    this.keys = new TagMapKeys(keys)
+    const keys = new TagMapKeys(rawKeys)
     this.nodes = new TagMapSubsetValues(keys.tagLen, mergeTagMapValues(values))
-    this.calculated = new TagMapExactValues(keys.tagLen, {})
+    this.cache = new DedupTags(keys).at({})
+    this.calc = new DedupTags(keys).at({})
+    this.calc.val = this
+  }
+  withTag(tag: Tag): this {
+    const calc = this.calc.with(tag)
+    return (calc.val ??= Object.assign(
+      new (this.constructor as any)(this.cache.keys),
+      this,
+      { cache: this.cache.with(tag), calc }
+    ))
   }
 
-  get<V extends number | string = number | string>(tag: Tag): CalcResult<V, M>[]
-  get(tag: Tag): CalcResult<number | string, M>[] {
-    return this._preread(this.nodes.cache(this.keys).with(tag)).pre
+  gather<V extends number | string = number | string>(
+    tag: Tag
+  ): CalcResult<V, M>[]
+  gather(tag: Tag): CalcResult<number | string, M>[] {
+    return this._gather(this.cache.with(tag)).pre
   }
 
   compute(n: NumNode): CalcResult<number, M>
   compute(n: StrNode): CalcResult<string, M>
   compute(n: AnyNode): CalcResult<number | string, M>
   compute(n: AnyNode): CalcResult<number | string, M> {
-    return this._compute(n, this.nodes.cache(this.keys))
+    return this._compute(n, this.cache)
   }
 
-  _preread(cache: TagCache): PreRead<M> {
-    const result = this.calculated.refExact(cache.id)
-    if (result.length) return result[0]!
-
-    if (!isDebug('calc'))
-      result.push({
-        pre: cache
-          .subset()
-          .flatMap((n) =>
-            n.op === 'reread'
-              ? this._preread(cache.with(n.tag)).pre
-              : [this._compute(n, cache)]
-          ),
-        computed: {},
-      })
-    else {
-      // Slow, debug path
-      const tags = cache.tags()
-      result.push({
-        pre: cache.subset().flatMap((n, i) =>
-          n.op === 'reread'
-            ? this._preread(cache.with(n.tag)).pre.map((x) =>
-                // Must be a new object in case `reread` entry is shared with a regular `read`.
-                // They would have the same `val` and `meta` but different `debugTag`.
-                ({ ...x, rereadSeq: [tags[i], n.tag, ...(x.rereadSeq ?? [])] })
-              )
-            : [{ ...this._compute(n, cache), rereadSeq: [tags[i]] }]
-        ),
-        computed: {},
-      })
-    }
-    return result[0]!
+  _gather(cache: TagCache<M>): PreRead<M> {
+    if (cache.val) return cache.val
+    const pre = this.nodes
+      .subset(cache.id)
+      .flatMap((n) =>
+        n.op === 'reread'
+          ? this._gather(cache.with(n.tag)).pre
+          : [this.markGathered(cache.tag, n, this._compute(n, cache))]
+      )
+    return (cache.val = { pre })
   }
 
-  _compute(n: StrNode, cache: TagCache): CalcResult<string, M>
-  _compute(n: NumNode, cache: TagCache): CalcResult<number, M>
-  _compute(n: AnyNode, cache: TagCache): CalcResult<number | string, M>
-  _compute(n: AnyNode, cache: TagCache): CalcResult<number | string, M> {
-    // eslint-disable-next-line @typescript-eslint/no-this-alias
-    const self = this
-    return internal(n)
-
-    function meta(
-      n: AnyNode,
+  _compute(n: StrNode, cache: TagCache<M>): CalcResult<string, M>
+  _compute(n: NumNode, cache: TagCache<M>): CalcResult<number, M>
+  _compute(n: AnyNode, cache: TagCache<M>): CalcResult<number | string, M>
+  _compute(n: AnyNode, cache: TagCache<M>): CalcResult<number | string, M> {
+    const finalize = (
       val: number | string,
       x: (CalcResult<number | string, M> | undefined)[],
       br: CalcResult<number | string, M>[],
       tag?: Tag
-    ): CalcResult<number | string, M> {
-      return { val, meta: self.computeMeta(n, val, x, br, tag) }
-    }
-    function internal(n: StrNode): CalcResult<string, M>
-    function internal(n: NumNode): CalcResult<number, M>
-    function internal(n: AnyNode): CalcResult<number | string, M>
-    function internal(n: AnyNode): CalcResult<number | string, M> {
-      const { op } = n
-      switch (op) {
-        case 'const':
-          return meta(n, n.ex, [], [])
-        case 'sum':
-        case 'prod':
-        case 'min':
-        case 'max':
-        case 'sumfrac': {
-          const x = n.x.map((n) => internal(n))
-          return meta(n, arithmetic[op](getV(x), n.ex), x, [])
-        }
-        case 'thres':
-        case 'match':
-        case 'lookup': {
-          const br = n.br.map((br) => internal(br)),
-            branchID = branching[op](getV(br), n.ex)
-          const x = [...Array(n.x.length)],
-            result = internal(n.x[branchID]!)
-          x[branchID] = result
-          return meta(n, result.val, x, br)
-        }
-        case 'subscript': {
-          const index = internal(n.br[0]!)
-          return meta(n, n.ex[index.val]!, [], [index])
-        }
-        case 'vtag':
-          return meta(n, cache.tag[n.ex] ?? '', [], [])
-        case 'tag': {
-          const newCache = cache.with(n.tag)
-          const result = self._compute(n.x[0]!, newCache)
-          return meta(n, result.val, [result], [], newCache.tag)
-        }
-        case 'dtag': {
-          const tags = n.br.map((br) => internal(br))
-          const newCache = cache.with(
-            Object.fromEntries(tags.map((tag, i) => [n.ex[i], tag.val]))
-          )
-          const result = self._compute(n.x[0]!, newCache)
-          return meta(n, result.val, [result], tags, newCache.tag)
-        }
-        case 'read': {
-          const newCache = cache.with(n.tag)
-          const { pre, computed } = self._preread(newCache),
-            ex = n.ex
+    ) => Object.freeze({ val, meta: this.computeMeta(n, val, x, br, tag) })
 
-          switch (ex) {
-            case undefined:
-              if (pre.length !== 1) {
-                const errorMsg = `Found ${
-                  pre.length
-                } nodes while reading tag ${tagString(
-                  newCache.tag
-                )} with no accumulator`
-                if (isDebug('calc')) {
-                  throw new Error(
-                    errorMsg +
-                      ': ' +
-                      pre
-                        .map((pre) => JSON.stringify(pre.rereadSeq![0]))
-                        .join(', ')
-                  )
-                } else console.error(errorMsg)
-              }
-              return meta(n, pre[0]?.val ?? undefined!, pre, [], newCache.tag)
-            default: {
-              if (computed[ex]) return computed[ex]!
-              const val = arithmetic[ex](getV(pre) as number[], undefined)
-              computed[ex] = meta(n, val, pre, [], newCache.tag)
-              return computed[ex]!
-            }
-          }
-        }
-        case 'custom': {
-          const x = n.x.map((n) => internal(n)),
-            ex = n.ex
-          return meta(n, self.computeCustom(getV(x), ex), x, [])
-        }
-        default:
-          assertUnreachable(op)
+    const { op } = n
+    switch (op) {
+      case 'const':
+        return finalize(n.ex, [], [])
+      case 'sum':
+      case 'prod':
+      case 'min':
+      case 'max':
+      case 'sumfrac': {
+        const x = n.x.map((n) => this._compute(n, cache))
+        return finalize(arithmetic[op](getV(x), n.ex), x, [])
       }
+      case 'thres':
+      case 'match':
+      case 'lookup': {
+        const br = n.br.map((br) => this._compute(br, cache)),
+          branchID = branching[op](getV(br), n.ex)
+        const x = [...Array(n.x.length)]
+        const result = (x[branchID] = this._compute(n.x[branchID]!, cache))
+        return finalize(result.val, x, br)
+      }
+      case 'subscript': {
+        const index = this._compute(n.br[0]!, cache)
+        return finalize(n.ex[index.val]!, [], [index])
+      }
+      case 'vtag':
+        return finalize(cache.tag[n.ex] ?? '', [], [])
+      case 'tag': {
+        const newCache = cache.with(n.tag)
+        const result = this._compute(n.x[0]!, newCache)
+        return finalize(result.val, [result], [], newCache.tag)
+      }
+      case 'dtag': {
+        const tags = n.br.map((br) => this._compute(br, cache))
+        const newCache = cache.with(
+          Object.fromEntries(tags.map((tag, i) => [n.ex[i], tag.val]))
+        )
+        const result = this._compute(n.x[0]!, newCache)
+        return finalize(result.val, [result], tags, newCache.tag)
+      }
+      case 'read': {
+        const newCache = cache.with(n.tag)
+        const computed = this._gather(newCache)
+        const { pre } = computed,
+          ex = n.ex ?? 'unique'
+
+        if (computed[ex]) return computed[ex]
+        if (isDebug('calc') && ex === 'unique' && pre.length !== 1)
+          throw new Error(`Ill-form read for ${tagString(newCache.tag)}`)
+        const val = arithmetic[ex](getV(pre) as number[], undefined)
+        return (computed[ex] = finalize(val, pre, [], newCache.tag))
+      }
+      case 'custom': {
+        const x = n.x.map((n) => this._compute(n, cache))
+        return finalize(this.computeCustom(getV(x), n.ex), x, [])
+      }
+      default:
+        assertUnreachable(op)
     }
   }
 
+  markGathered(
+    _tag: Tag,
+    _n: AnyNode | undefined,
+    result: CalcResult<number | string, M>
+  ): CalcResult<number | string, M> {
+    return result
+  }
   computeCustom(_: (number | string)[], op: string): any {
     throw new Error(`Unsupported custom node ${op} in Calculator`)
   }

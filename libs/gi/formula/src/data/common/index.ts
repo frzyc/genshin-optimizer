@@ -2,53 +2,55 @@ import { allElementKeys } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import { max, min, prod, subscript, sum } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
-import { allStatics, percent, reader, self, team } from '../util'
+import { allStatics, own, ownBuff, percent, reader, team } from '../util'
 import dmg from './dmg'
 import prep from './prep'
 import reaction from './reaction'
+import resonance from './resonance'
 
 const data: TagMapNodeEntries = [
   ...dmg,
   ...prep,
   ...reaction,
+  ...resonance,
 
-  reader.withTag({ sheet: 'iso', et: 'self' }).reread(reader.sheet('custom')),
-  reader.withTag({ sheet: 'agg', et: 'self' }).reread(reader.sheet('custom')),
+  reader.withTag({ sheet: 'iso', et: 'own' }).reread(reader.sheet('custom')),
+  reader.withTag({ sheet: 'agg', et: 'own' }).reread(reader.sheet('custom')),
 
   // Final <= Premod <= Base + WeaponRefinement
   reader
-    .withTag({ sheet: 'agg', et: 'self', qt: 'final' })
+    .withTag({ sheet: 'agg', et: 'own', qt: 'final' })
     .add(reader.with('qt', 'premod').sum),
   reader
-    .withTag({ sheet: 'agg', et: 'self', qt: 'premod' })
+    .withTag({ sheet: 'agg', et: 'own', qt: 'premod' })
     .add(reader.with('qt', 'base').sum),
   reader
-    .withTag({ sheet: 'agg', et: 'self', qt: 'premod' })
+    .withTag({ sheet: 'agg', et: 'own', qt: 'premod' })
     .add(reader.with('qt', 'weaponRefinement').sum),
 
   // premod X += base X * premod X%
   ...(['atk', 'def', 'hp'] as const).map((s) =>
-    self.premod[s].add(prod(self.base[s], self.premod[`${s}_`]))
+    ownBuff.premod[s].add(prod(own.base[s], own.premod[`${s}_`]))
   ),
 
   // Capped CR = Max(Min(Final CR, 1), 0)
-  self.common.cappedCritRate_.add(
-    max(min(self.final.critRate_, percent(1)), percent(0))
+  ownBuff.common.cappedCritRate_.add(
+    max(min(own.final.critRate_, percent(1)), percent(0))
   ),
-  self.trans.cappedCritRate_.add(
-    max(min(self.trans.critRate_, percent(1)), percent(0))
+  ownBuff.trans.cappedCritRate_.add(
+    max(min(own.trans.critRate_, percent(1)), percent(0))
   ),
 
   // Char & weapon curves
   ...Object.entries(allStats.char.expCurve).map(([k, v]) =>
-    allStatics('static')[k].add(subscript(self.char.lvl, v))
+    allStatics('static')[k].add(subscript(own.char.lvl, v))
   ),
   ...Object.entries(allStats.weapon.expCurve).map(([k, v]) =>
-    allStatics('static')[k].add(subscript(self.weapon.lvl, v))
+    allStatics('static')[k].add(subscript(own.weapon.lvl, v))
   ),
 
   // Total element count; this is NOT a `team` stat
-  self.common.eleCount.add(
+  ownBuff.common.eleCount.add(
     sum(...allElementKeys.map((ele) => team.common.count[ele].max))
   ),
 

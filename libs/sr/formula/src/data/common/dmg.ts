@@ -1,13 +1,13 @@
 import { lookup, prod, sum, sumfrac } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
-import { enemy, enemyDebuff, percent, self } from '../util'
+import { enemy, enemyDebuff, own, ownBuff, percent } from '../util'
 
 const data: TagMapNodeEntries = [
-  enemyDebuff.common.inDmg.add(
+  ownBuff.dmg.inDmg.add(
     prod(
       // DEF Multiplier
       sumfrac(
-        sum(self.char.lvl, 20),
+        sum(own.char.lvl, 20),
         prod(
           sum(enemy.common.lvl, 20),
           sum(
@@ -20,17 +20,17 @@ const data: TagMapNodeEntries = [
       // RES Multiplier
       sum(
         percent(1),
-        prod(-1, sum(enemyDebuff.common.res, prod(-1, self.final.resPen_)))
+        prod(-1, sum(enemyDebuff.common.res, prod(-1, own.final.resPen_)))
       )
       // TODO: Vulnerability, DMG Reduction and Broken multipliers
     )
   ),
-  self.dmg.out.add(prod(self.formula.base, sum(percent(1), self.final.dmg_))),
-  self.dmg.critMulti.add(
-    lookup(self.common.critMode, {
-      crit: sum(percent(1), self.final.crit_dmg_),
+  ownBuff.dmg.out.add(prod(own.formula.base, sum(percent(1), own.final.dmg_))),
+  ownBuff.dmg.critMulti.add(
+    lookup(own.common.critMode, {
+      crit: sum(percent(1), own.final.crit_dmg_),
       nonCrit: percent(1),
-      avg: sum(percent(1), prod(self.common.cappedCrit_, self.final.crit_dmg_)),
+      avg: sum(percent(1), prod(own.common.cappedCrit_, own.final.crit_dmg_)),
     })
   ),
 ]

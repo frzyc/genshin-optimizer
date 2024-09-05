@@ -2,6 +2,6 @@
   "name": "Inherently Unjust Destiny",
   "passive": {
     "name": "All-In",
-    "description": "ทำให้ DEF ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> เมื่อผู้สวมใส่มอบโล่ให้กับเป้าหมายฝ่ายเรา จะทำให้ DMG คริติคอลของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong> เป็นเวลา {{3}} เทิร์น เมื่อผู้สวมใส่ปล่อยการโจมตีต่อเนื่อง และโจมตีโดนศัตรูเป้าหมาย จะมีโอกาสพื้นฐาน <orangeStrong>{{4}}%</orangeStrong> ที่จะทำให้ศัตรูเป้าหมายที่โดนโจมตี ได้รับ DMG เพิ่มขึ้น <orangeStrong>{{5}}%</orangeStrong> เป็นเวลา {{6}} เทิร์น"
+    "description": "ทำให้ DEF ของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> เมื่อผู้สวมใส่มอบโล่ให้กับเป้าหมายฝ่ายเรา จะทำให้ DMG คริติคอลของผู้สวมใส่เพิ่มขึ้น <orangeStrong>{{2, percent}}%</orangeStrong> เป็นเวลา {{3}} เทิร์น เมื่อผู้สวมใส่ปล่อยการโจมตีต่อเนื่อง และโจมตีโดนศัตรูเป้าหมาย จะมีโอกาสพื้นฐาน <orangeStrong>{{4, percent}}%</orangeStrong> ที่จะทำให้ศัตรูเป้าหมายที่โดนโจมตี ได้รับ DMG เพิ่มขึ้น <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong> เป็นเวลา {{6}} เทิร์น"
   }
 }

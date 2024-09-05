@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Déficit",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Topaz como Daño de Fuego a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Topaz como Daño de Fuego a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo."
       }
     },
     "skill": {
       "0": {
         "name": "¿Problemas con el pago?",
-        "fullDesc": "Hace que un enemigo entre en el estado Certificado de deuda y aumenta en un <orangeStrong>{{2}}%</orangeStrong> el daño de <u>ataque adicional</u> que recibe. Certificado de deuda solo tiene efecto en el último objetivo al que se le haya aplicado. Al inicio del turno de un aliado o durante la acción de los aliados, si en el campo de batalla no hay ningún enemigo con Certificado de deuda, Topaz se lo aplica a un enemigo al azar.\\nConti inflige a ese objetivo un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Topaz como Daño de Fuego. Lanzar esta habilidad básica e infligir daño se considera como lanzar un <u>ataque adicional</u>.",
+        "fullDesc": "Hace que un enemigo entre en el estado Certificado de deuda y aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong> el daño de <u>ataque adicional</u> que recibe. Certificado de deuda solo tiene efecto en el último objetivo al que se le haya aplicado. Al inicio del turno de un aliado o durante la acción de los aliados, si en el campo de batalla no hay ningún enemigo con Certificado de deuda, Topaz se lo aplica a un enemigo al azar.\\nConti inflige a ese objetivo un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Topaz como Daño de Fuego. Lanzar esta habilidad básica e infligir daño se considera como lanzar un <u>ataque adicional</u>.",
         "shortDesc": "Hace que un enemigo entre en el estado Certificado de deuda y <orangeStrong>reciba más daño de ataque adicional</orangeStrong>. Conti inflige Daño de Fuego al objetivo."
       }
     },
     "ult": {
       "0": {
         "name": "De pérdida a ganancia",
-        "fullDesc": "Conti entra en el estado Subida increíble. Su multiplicador de daño aumenta en un <orangeStrong>{{1}}%</orangeStrong> y su Daño CRIT en un <orangeStrong>{{2}}%</orangeStrong>. Además, cuando un enemigo afectado por Certificado de deuda recibe el ataque de un ATQ básico, habilidad básica o habilidad definitiva de un aliado, la acción de Conti se adelanta un {{3}}%. Conti sale del estado Subida increíble después de lanzar {{4}} ataques.",
+        "fullDesc": "Conti entra en el estado Subida increíble. Su multiplicador de daño aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong> y su Daño CRIT en un <orangeStrong>{{2, percent}}%</orangeStrong>. Además, cuando un enemigo afectado por Certificado de deuda recibe el ataque de un ATQ básico, habilidad básica o habilidad definitiva de un aliado, la acción de Conti se adelanta un {{3, percent}}%. Conti sale del estado Subida increíble después de lanzar {{4}} ataques.",
         "shortDesc": "Conti entra en el estado Subida increíble y <orangeStrong>aumenta su multiplicador de daño y su Daño CRIT</orangeStrong>."
       }
     },
@@ -46,7 +46,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Agitación financiera",
-        "fullDesc": "El daño que Topaz y Conti infligen a los enemigos con Debilidad de Fuego aumenta en un {{1}}%.",
+        "fullDesc": "El daño que Topaz y Conti infligen a los enemigos con Debilidad de Fuego aumenta en un {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "El mercado del mañana",
-      "desc": "Cuando un enemigo afectado por Certificado de deuda recibe un ataque adicional, entra en el estado Endeudamiento. Se puede activar 1 vez como máximo por ataque.\\nEndeudamiento hace que el Daño CRIT de los ataques adicionales que recibe el objetivo aumente en un {{1}}%. Se puede acumular hasta {{2}} veces. Cuando Certificado de deuda se disipa, Endeudamiento también se elimina."
+      "desc": "Cuando un enemigo afectado por Certificado de deuda recibe un ataque adicional, entra en el estado Endeudamiento. Se puede activar 1 vez como máximo por ataque.\\nEndeudamiento hace que el Daño CRIT de los ataques adicionales que recibe el objetivo aumente en un {{1, percent}}%. Se puede acumular hasta {{2}} veces. Cuando Certificado de deuda se disipa, Endeudamiento también se elimina."
     },
     "2": {
       "name": "Adquisición de buena fe",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Gestión rápida",
-      "desc": "Cuando comienza el turno de Conti, la acción de Topaz se adelanta un {{1}}%."
+      "desc": "Cuando comienza el turno de Conti, la acción de Topaz se adelanta un {{1, percent}}%."
     },
     "5": {
       "name": "Demanda creciente",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Incentivos",
-      "desc": "Cuando Conti está en el estado Subida increíble, su cantidad de ataques aumenta en {{1}} y, cuando ataca, su PEN de la RES a Fuego aumenta en un {{2}}%."
+      "desc": "Cuando Conti está en el estado Subida increíble, su cantidad de ataques aumenta en {{1}} y, cuando ataca, su PEN de la RES a Fuego aumenta en un {{2, percent}}%."
     }
   }
 }

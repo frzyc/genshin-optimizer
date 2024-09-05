@@ -1,14 +1,29 @@
-import { compileTagMapValues } from '@genshin-optimizer/pando/engine'
-import type {
-  AscensionKey,
-  CharacterKey,
-  LightConeKey,
+import {
+  compileTagMapValues,
+  setDebugMode,
+} from '@genshin-optimizer/pando/engine'
+import {
+  allCharacterKeys,
+  allLightConeKeys,
+  type AscensionKey,
+  type CharacterKey,
+  type LightConeKey,
 } from '@genshin-optimizer/sr/consts'
 import { fail } from 'assert'
 import { charData, lightConeData, withMember } from '.'
 import { Calculator } from './calculator'
 import { data, keys, values } from './data'
-import { convert, selfTag, tagStr, type TagMapNodeEntries } from './data/util'
+import {
+  convert,
+  enemyTag,
+  ownTag,
+  tagStr,
+  type TagMapNodeEntries,
+} from './data/util'
+
+setDebugMode(true)
+// This is generally unnecessary, but without it, some tags in `DebugCalculator` will be missing
+Object.assign(values, compileTagMapValues(keys, data))
 
 describe('character test', () => {
   it.each([
@@ -37,7 +52,7 @@ describe('character test', () => {
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
-    const member0 = convert(selfTag, { src: '0', et: 'self' })
+    const member0 = convert(ownTag, { et: 'own', src: '0' })
     expect(calc.compute(member0.final.atk).val).toBeCloseTo(atk)
     expect(calc.compute(member0.final.def).val).toBeCloseTo(def)
     expect(calc.compute(member0.final.hp).val).toBeCloseTo(hp)
@@ -79,14 +94,14 @@ describe('lightCone test', () => {
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
-    const member0 = convert(selfTag, { src: '0', et: 'self' })
-    expect(calc.compute(member0.base.atk.sheet('lightCone')).val).toBeCloseTo(
-      atk
-    )
-    expect(calc.compute(member0.base.def.sheet('lightCone')).val).toBeCloseTo(
-      def
-    )
-    expect(calc.compute(member0.base.hp.sheet('lightCone')).val).toBeCloseTo(hp)
+    const lightCone0 = convert(ownTag, {
+      et: 'own',
+      src: '0',
+      sheet: 'lightCone',
+    })
+    expect(calc.compute(lightCone0.base.atk).val).toBeCloseTo(atk)
+    expect(calc.compute(lightCone0.base.def).val).toBeCloseTo(def)
+    expect(calc.compute(lightCone0.base.hp).val).toBeCloseTo(hp)
   })
 })
 
@@ -121,19 +136,48 @@ describe('char+lightCone test', () => {
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
-    const member0 = convert(selfTag, { src: '0', et: 'self' })
+    const member0 = convert(ownTag, { et: 'own', src: '0' })
     expect(calc.compute(member0.final.atk).val).toBeCloseTo(81.6)
   })
 })
 describe('sheet', () => {
   test('buff entries', () => {
+    const sheets = new Set([...allCharacterKeys, ...allLightConeKeys, 'relic'])
     for (const { tag } of data) {
       if (tag.et && tag.qt && tag.q) {
         switch (tag.et) {
-          case 'selfBuff':
+          case 'notOwnBuff':
           case 'teamBuff': {
-            const { sheet } = (selfTag as any)[tag.qt][tag.q]
-            if (sheet !== 'agg') fail(`Ineffective entry ${tagStr(tag)}`)
+            const { sheet } = (ownTag as any)[tag.qt][tag.q]
+            // Buff entries are for agg queries inside a sheet
+            if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
+            fail(`Ill-form entry (${tagStr(tag)}) for sheet ${sheet}`)
+            break
+          }
+          case 'enemyDeBuff': {
+            const { sheet } = (enemyTag as any)[tag.qt][tag.q]
+            if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
+            if (sheet === tag.sheet) continue
+            fail(`Ill-form entry (${tagStr(tag)}) for sheet ${sheet}`)
+            break
+          }
+          case 'own': {
+            const desc = (ownTag as any)[tag.qt]?.[tag.q]
+            if (!desc) continue
+            const { sheet } = desc
+            if (!sheet) continue
+            if (sheet === 'iso' || sheet === 'agg' || sheet === tag.sheet)
+              continue
+            fail(`Illform entry (${tagStr(tag)}) for sheet ${sheet}`)
+            break
+          }
+          case 'enemy': {
+            const desc = (enemyTag as any)[tag.qt]?.[tag.q]
+            if (!desc) continue
+            const { sheet } = desc
+            if (!sheet) continue
+            if (sheet === 'agg' || sheet === tag.sheet) continue
+            fail(`Illform entry (${tagStr(tag)}) for sheet ${sheet}`)
             break
           }
         }

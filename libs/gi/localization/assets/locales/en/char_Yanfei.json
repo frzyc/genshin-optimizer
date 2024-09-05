@@ -16,7 +16,8 @@
     "sealsConsumed": "Seals consumed by using a Charged Attack"
   },
   "passive2": {
-    "key": "Blazing Eye DMG"
+    "key": "Blazing Eye DMG",
+    "probabilisticSuffix": "(w/ Crit Rate Factored In)"
   },
   "c1": {
     "sealChargedStam_": "Charged Attack Stamina Consumption Decrease"

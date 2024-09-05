@@ -1,7 +1,7 @@
 {
   "setName": "Firesmith of Lava-Forging",
   "setEffects": {
-    "2": "Increases Fire DMG by {{1}}%.",
-    "4": "Increases DMG by the wearer's Skill by {{1}}%. After unleashing Ultimate, increases the wearer's Fire DMG by {{2}}% for the next attack."
+    "2": "Increases Fire DMG by {{1, percent}}%.",
+    "4": "Increases DMG by the wearer's Skill by {{1, percent}}%. After unleashing Ultimate, increases the wearer's Fire DMG by {{2, percent}}% for the next attack."
   }
 }

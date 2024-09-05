@@ -1,7 +1,7 @@
 {
   "setName": "Wastelander of Banditry Desert",
   "setEffects": {
-    "2": "Imaginary DMG +{{1}}%.",
-    "4": "Meningkatkan {{1}}% CRIT Rate pengguna saat menyerang target musuh yang memiliki efek Debuff dan meningkatkan {{2}}% CRIT DMG pengguna saat menyerang target musuh berstatus Imprisonment."
+    "2": "Imaginary DMG +{{1, percent}}%.",
+    "4": "Meningkatkan {{1, percent}}% CRIT Rate pengguna saat menyerang target musuh yang memiliki efek Debuff dan meningkatkan {{2, percent}}% CRIT DMG pengguna saat menyerang target musuh berstatus Imprisonment."
   }
 }

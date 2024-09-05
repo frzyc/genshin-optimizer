@@ -2,6 +2,6 @@
   "name": "Before the Tutorial Mission Starts",
   "passive": {
     "name": "Quick on the Draw",
-    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Effect Hit Rate pengguna. Setelah pengguna menyerang target musuh yang mengalami penurunan DEF, pengguna akan memulihkan <orangeStrong>{{2}}</orangeStrong> Energy."
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> Effect Hit Rate pengguna. Setelah pengguna menyerang target musuh yang mengalami penurunan DEF, pengguna akan memulihkan <orangeStrong>{{2}}</orangeStrong> Energy."
   }
 }

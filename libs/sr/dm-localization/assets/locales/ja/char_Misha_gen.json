@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "ど…{RUBY_B#ど}退{RUBY_E#}いてくださーい！",
-        "fullDesc": "指定した敵単体にミーシャの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の氷属性ダメージを与える。",
+        "fullDesc": "指定した敵単体にミーシャの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
         "shortDesc": "敵単体に少量の氷属性ダメージを与える。"
       }
     },
     "skill": {
       "0": {
         "name": "ル…ルームサービスです！",
-        "fullDesc": "ミーシャの次の必殺技の攻撃段数+{{3}}。指定した敵単体にミーシャの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の氷属性ダメージを与え、隣接する敵にミーシャの攻撃力<orangeStrong>{{2}}%</orangeStrong>分の氷属性ダメージを与える。",
+        "fullDesc": "ミーシャの次の必殺技の攻撃段数+{{3}}。指定した敵単体にミーシャの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与え、隣接する敵にミーシャの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
         "shortDesc": "敵単体に氷属性ダメージを与える。隣接する敵に少量の氷属性ダメージを与え、ミーシャの次の<orangeStrong>必殺技の攻撃段数をアップ</orangeStrong>する。"
       }
     },
     "ult": {
       "0": {
         "name": "ち…{RUBY_B#ちこく}遅刻{RUBY_E#}する！",
-        "fullDesc": "初期状態の攻撃段数は{{1}}。最初に1段の攻撃を行い、指定した敵単体にミーシャの攻撃力<orangeStrong>{{2}}%</orangeStrong>分の氷属性ダメージを与え、以降の各段攻撃は、ランダムな敵単体にミーシャの攻撃力<orangeStrong>{{2}}%</orangeStrong>分の氷属性ダメージを与える。各段攻撃の前に、<orangeStrong>{{3}}%</orangeStrong>の<u>基礎確率</u>で敵を凍結状態にする、1ターン継続。\\n凍結状態の敵は行動できず、ターンが回ってくるたびにミーシャの攻撃力<orangeStrong>{{4}}%</orangeStrong>分の氷属性<u>付加ダメージ</u>を受ける。\\n必殺技の最大攻撃段数は{{5}}。必殺技を発動した後、攻撃段数が初期状態にリセットされる。",
+        "fullDesc": "初期状態の攻撃段数は{{1}}。最初に1段の攻撃を行い、指定した敵単体にミーシャの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の氷属性ダメージを与え、以降の各段攻撃は、ランダムな敵単体にミーシャの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の氷属性ダメージを与える。各段攻撃の前に、<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>の<u>基礎確率</u>で敵を凍結状態にする、1ターン継続。\\n凍結状態の敵は行動できず、ターンが回ってくるたびにミーシャの攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の氷属性<u>付加ダメージ</u>を受ける。\\n必殺技の最大攻撃段数は{{5}}。必殺技を発動した後、攻撃段数が初期状態にリセットされる。",
         "shortDesc": "敵単体に少量の氷属性ダメージを与える。初期状態では<orangeStrong>{{1}}</orangeStrong>回バウンドする。最大で<orangeStrong>{{5}}</orangeStrong>回バウンドできる。各段攻撃の前に、低確率で敵を<orangeStrong>凍結</orangeStrong>状態にする。"
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "リリース",
-        "fullDesc": "必殺技の1段目の攻撃の前に、敵を凍結状態にする基礎確率+{{1}}%。",
+        "fullDesc": "必殺技の1段目の攻撃の前に、敵を凍結状態にする基礎確率+{{1, percent}}%。",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "インターロック",
-        "fullDesc": "必殺技を発動する時、効果命中+{{1}}%、その回の必殺技が終了するまで継続。",
+        "fullDesc": "必殺技を発動する時、効果命中+{{1, percent}}%、その回の必殺技が終了するまで継続。",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "トランスミッション",
-        "fullDesc": "凍結状態の敵にダメージを与える時、会心ダメージ+{{1}}%。",
+        "fullDesc": "凍結状態の敵にダメージを与える時、会心ダメージ+{{1, percent}}%。",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "{RUBY_B#せいしゅん}青春{RUBY_E#}の{RUBY_B#かな}悲{RUBY_E#}しい{RUBY_B#ちょうぼう}眺望{RUBY_E#}",
-      "desc": "必殺技の各段攻撃の前に、{{3}}%の基礎確率で敵の防御力-{{1}}%、{{2}}ターン継続。"
+      "desc": "必殺技の各段攻撃の前に、{{3, percent}}%の基礎確率で敵の防御力-{{1, percent}}%、{{2}}ターン継続。"
     },
     "3": {
       "name": "{RUBY_B#わす}忘{RUBY_E#}れられない{RUBY_B#じだい}時代{RUBY_E#}の{RUBY_B#なごり}名残{RUBY_E#}",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "よく{RUBY_B#し}知{RUBY_E#}る{RUBY_B#おもかげ}面影{RUBY_E#}",
-      "desc": "必殺技の各段攻撃のダメージ倍率+{{1}}%。"
+      "desc": "必殺技の各段攻撃のダメージ倍率+{{1, percent}}%。"
     },
     "5": {
       "name": "{RUBY_B#はじ}初{RUBY_E#}めての{RUBY_B#あいじょう}愛情{RUBY_E#}と{RUBY_B#ゆうじょう}友情{RUBY_E#}",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "{RUBY_B#ひさ}久{RUBY_E#}しく{RUBY_B#わす}忘{RUBY_E#}れていた{RUBY_B#あこが}憧{RUBY_E#}れ",
-      "desc": "必殺技を発動する時、自身の与ダメージ+{{2}}%、自身の次のターンが終了するまで継続。次の戦闘スキルを発動した後、SPを{{1}}回復する。"
+      "desc": "必殺技を発動する時、自身の与ダメージ+{{2, percent}}%、自身の次のターンが終了するまで継続。次の戦闘スキルを発動した後、SPを{{1}}回復する。"
     }
   }
 }

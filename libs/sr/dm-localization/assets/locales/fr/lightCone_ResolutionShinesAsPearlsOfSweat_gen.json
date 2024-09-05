@@ -2,6 +2,6 @@
   "name": "Résolution brillante",
   "passive": {
     "name": "Regard en arrière",
-    "description": "Lorsque le porteur touche un ennemi qui n'est pas déjà piégé, il y a <orangeStrong>{{1}}%</orangeStrong> de chances de base de piéger l'ennemi touché. La DÉF des ennemis piégés diminue de <orangeStrong>{{2}}%</orangeStrong> pendant {{3}} tour."
+    "description": "Lorsque le porteur touche un ennemi qui n'est pas déjà piégé, il y a <orangeStrong>{{1, percent}}%</orangeStrong> de chances de base de piéger l'ennemi touché. La DÉF des ennemis piégés diminue de <orangeStrong>{{2, percent}}%</orangeStrong> pendant {{3}} tour."
   }
 }

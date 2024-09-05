@@ -4,12 +4,12 @@
     "basic": {
       "0": {
         "name": "Corkage Fee",
-        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Gallagher's ATK to a single target enemy.",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Gallagher's ATK to a single target enemy.",
         "shortDesc": "Deals minor Fire DMG to a single enemy."
       },
       "1": {
         "name": "Nectar Blitz",
-        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Gallagher's ATK to a single target enemy. Reduces the target's ATK by <orangeStrong>{{2}}%</orangeStrong>, lasting for {{3}} turn(s).",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Gallagher's ATK to a single target enemy. Reduces the target's ATK by <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, lasting for {{3}} turn(s).",
         "shortDesc": "Deals Fire DMG to a single enemy and reduces ATK."
       }
     },
@@ -23,14 +23,14 @@
     "ult": {
       "0": {
         "name": "Champagne Etiquette",
-        "fullDesc": "Inflicts Besotted on all enemies, lasting for {{2}} turn(s). At the same time, deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Gallagher's ATK to all enemies, and enhances his next Basic ATK to Nectar Blitz.",
+        "fullDesc": "Inflicts Besotted on all enemies, lasting for {{2}} turn(s). At the same time, deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Gallagher's ATK to all enemies, and enhances his next Basic ATK to Nectar Blitz.",
         "shortDesc": "<orangeStrong>Inflicts Besotted</orangeStrong> on all enemies and deals Fire DMG to them at the same time. Enhances the next Basic ATK to Nectar Blitz."
       }
     },
     "technique": {
       "0": {
         "name": "Artisan Elixir",
-        "fullDesc": "Immediately attacks the enemy. Upon entering battle, inflicts Besotted on all enemies, lasting for {{1}} turn(s). And deals Fire DMG equal to {{2}}% of Gallagher's ATK to all enemies.",
+        "fullDesc": "Immediately attacks the enemy. Upon entering battle, inflicts Besotted on all enemies, lasting for {{1}} turn(s). And deals Fire DMG equal to {{2, percent}}% of Gallagher's ATK to all enemies.",
         "shortDesc": "Attacks the enemy. After entering battle, <orangeStrong>inflicts Besotted</orangeStrong> to all enemies and deals minor Fire DMG to all enemies."
       }
     },
@@ -44,7 +44,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Novel Concoction",
-        "fullDesc": "Increases this unit's Outgoing Healing by an amount equal to {{1}}% of Break Effect, up to a maximum Outgoing Healing increase of {{2}}%.",
+        "fullDesc": "Increases this unit's Outgoing Healing by an amount equal to {{1, percent}}% of Break Effect, up to a maximum Outgoing Healing increase of {{2, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Salty Dog",
-      "desc": "When entering the battle, Gallagher regenerates {{1}} Energy and increases Effect RES by {{2}}%."
+      "desc": "When entering the battle, Gallagher regenerates {{1}} Energy and increases Effect RES by {{2, percent}}%."
     },
     "2": {
       "name": "Lion's Tail",
-      "desc": "When using the Skill, removes {{1}} debuff(s) from the target ally. At the same time, increases their Effect RES by {{2}}%, lasting for {{3}} turn(s)."
+      "desc": "When using the Skill, removes {{1}} debuff(s) from the target ally. At the same time, increases their Effect RES by {{2, percent}}%, lasting for {{3}} turn(s)."
     },
     "3": {
       "name": "Corpse Reviver",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Blood and Sand",
-      "desc": "Increases Gallagher's Break Effect by {{1}}% and Weakness Break Efficiency by {{2}}%."
+      "desc": "Increases Gallagher's Break Effect by {{1, percent}}% and Weakness Break Efficiency by {{2, percent}}%."
     }
   }
 }

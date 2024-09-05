@@ -2,6 +2,6 @@
   "name": "Wuff! Zeit zum Laufen!",
   "passive": {
     "name": "Lauf!",
-    "description": "Erhöht den ANG des Trägers um <orangeStrong>{{1}}%</orangeStrong> und den SCH, der Gegnern im Status Brennen oder Bluten zugefügt wird, um <orangeStrong>{{2}}%</orangeStrong>. Dieser Effekt gilt ebenfalls für DoT."
+    "description": "Erhöht den ANG des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong> und den SCH, der Gegnern im Status Brennen oder Bluten zugefügt wird, um <orangeStrong>{{2, percent}}%</orangeStrong>. Dieser Effekt gilt ebenfalls für DoT."
   }
 }

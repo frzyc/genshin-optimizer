@@ -1,7 +1,7 @@
 {
   "setName": "Campeã de Boxe de Rua",
   "setEffects": {
-    "2": "Aumenta o Dano Físico em {{1}}%.",
-    "4": "Depois que o usuário ataca ou é atingido, aumenta em {{1}}% seu ATQ durante todo o resto da batalha. Este efeito pode acumular até {{2}} vez(es)."
+    "2": "Aumenta o Dano Físico em {{1, percent}}%.",
+    "4": "Depois que o usuário ataca ou é atingido, aumenta em {{1, percent}}% seu ATQ durante todo o resto da batalha. Este efeito pode acumular até {{2}} vez(es)."
   }
 }

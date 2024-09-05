@@ -16,9 +16,10 @@ import {
   customDmg,
   customShield,
   listingItem,
+  own,
+  ownBuff,
   percent,
   readStat,
-  self,
 } from '../util'
 
 export interface CharInfo {
@@ -69,7 +70,7 @@ export function dmg(
   const {
     char: { auto, skill, burst },
     final,
-  } = self
+  } = own
   const talentByMove = {
     normal: auto,
     charged: auto,
@@ -95,12 +96,12 @@ export function shield(
   arg: { ele?: ElementKey } & FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
-  const lvl = self.char[talent]
+  const lvl = own.char[talent]
   return customShield(
     name,
     arg.ele,
     sum(
-      prod(percent(subscript(lvl, tlvlMulti)), self.final[stat]),
+      prod(percent(subscript(lvl, tlvlMulti)), own.final[stat]),
       subscript(lvl, flat)
     ),
     arg,
@@ -119,7 +120,7 @@ export function fixedShield(
   return customShield(
     name,
     arg.ele,
-    sum(prod(percent, self.final[base]), flat),
+    sum(prod(percent, own.final[base]), flat),
     arg,
     ...extra
   )
@@ -131,52 +132,48 @@ export function entriesForChar(
   { key, ele, weaponType, region }: CharInfo,
   { lvlCurves, ascensionBonus }: CharacterDataGen
 ): TagMapNodeEntries {
-  const specialized = new Set(
-    Object.keys(ascensionBonus) as (keyof typeof ascensionBonus)[]
-  )
+  const specialized = new Set(Object.keys(ascensionBonus))
   specialized.delete('atk')
   specialized.delete('def')
   specialized.delete('hp')
 
-  // Use `self` here instead of `selfBuff` so that the number is
-  // still available even when the buff mechanism does not apply
-  const { ascension } = self.char
+  const { ascension } = own.char
   return [
     // Stats
     ...lvlCurves.map(({ key, base, curve }) =>
-      self.base[key].add(prod(base, allStatics('static')[curve]))
+      ownBuff.base[key].add(prod(base, allStatics('static')[curve]))
     ),
     ...Object.entries(ascensionBonus).map(([key, values]) =>
       (baseStats.has(key)
-        ? self.base[key as 'atk' | 'def' | 'hp']
-        : readStat(self.premod, key as keyof typeof ascensionBonus)
+        ? ownBuff.base[key as 'atk' | 'def' | 'hp']
+        : readStat(ownBuff.premod, key)
       ).add(subscript(ascension, values))
     ),
 
     // Constants
-    self.common.weaponType.add(weaponType),
-    self.char.ele.add(ele),
+    ownBuff.common.weaponType.add(weaponType),
+    ownBuff.char.ele.add(ele),
 
     // Counters
-    self.common.count[ele].add(1),
-    ...(region !== '' ? [self.common.count[region].add(1)] : []),
+    ownBuff.common.count[ele].add(1),
+    ...(region !== '' ? [ownBuff.common.count[region].add(1)] : []),
 
     // Listing (formulas)
-    self.listing.formulas.add(listingItem(self.final.hp)),
-    self.listing.formulas.add(listingItem(self.final.atk)),
-    self.listing.formulas.add(listingItem(self.final.def)),
-    self.listing.formulas.add(listingItem(self.final.eleMas)),
-    self.listing.formulas.add(listingItem(self.final.enerRech_)),
-    self.listing.formulas.add(listingItem(self.common.cappedCritRate_)),
-    self.listing.formulas.add(listingItem(self.final.critDMG_)),
-    self.listing.formulas.add(listingItem(self.final.heal_)),
-    self.listing.formulas.add(listingItem(self.final.dmg_[ele])),
-    self.listing.formulas.add(listingItem(self.final.dmg_.physical)),
+    ownBuff.listing.formulas.add(listingItem(own.final.hp)),
+    ownBuff.listing.formulas.add(listingItem(own.final.atk)),
+    ownBuff.listing.formulas.add(listingItem(own.final.def)),
+    ownBuff.listing.formulas.add(listingItem(own.final.eleMas)),
+    ownBuff.listing.formulas.add(listingItem(own.final.enerRech_)),
+    ownBuff.listing.formulas.add(listingItem(own.common.cappedCritRate_)),
+    ownBuff.listing.formulas.add(listingItem(own.final.critDMG_)),
+    ownBuff.listing.formulas.add(listingItem(own.final.heal_)),
+    ownBuff.listing.formulas.add(listingItem(own.final.dmg_[ele])),
+    ownBuff.listing.formulas.add(listingItem(own.final.dmg_.physical)),
 
-    // Listing (specialized)
+    // Specialized stats, items here are sheet-specific data (i.e., `sheet:<key>`)
+    // Read from `ownBuff` to include only sheet's contribution.
     ...[...specialized].map((stat) =>
-      // Sheet-specific data (i.e., `sheet:<key>`)
-      self.char.specialized.add(readStat(self.premod, stat).sheet(key))
+      ownBuff.char.specialized.add(readStat(ownBuff.premod, stat).sheet(key))
     ),
   ]
 }

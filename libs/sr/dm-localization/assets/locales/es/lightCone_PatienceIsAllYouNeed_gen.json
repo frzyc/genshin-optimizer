@@ -2,6 +2,6 @@
   "name": "Solo hay que esperar",
   "passive": {
     "name": "Telaraña",
-    "description": "El daño que inflige el portador aumenta en un <orangeStrong>{{2}}%</orangeStrong>. Después de cada ataque del portador, su VEL aumenta en un <orangeStrong>{{3}}%</orangeStrong>. Este efecto se puede acumular hasta {{4}} veces.\\nCuando el portador golpea a un objetivo, si este no está afectado por Erosión, hay un 100% de probabilidad base de afectarlo con Erosión. Cuando el objetivo está afectado por Erosión, se considera que también está afectado por Electrocución. En el estado de Erosión, al comienzo de cada turno el objetivo recibe un Daño de Rayo con el tiempo equivalente al <orangeStrong>{{1}}%</orangeStrong> del ATQ del portador durante {{5}} turno."
+    "description": "El daño que inflige el portador aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong>. Después de cada ataque del portador, su VEL aumenta en un <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>. Este efecto se puede acumular hasta {{4}} veces.\\nCuando el portador golpea a un objetivo, si este no está afectado por Erosión, hay un 100% de probabilidad base de afectarlo con Erosión. Cuando el objetivo está afectado por Erosión, se considera que también está afectado por Electrocución. En el estado de Erosión, al comienzo de cada turno el objetivo recibe un Daño de Rayo con el tiempo equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ del portador durante {{5}} turno."
   }
 }
