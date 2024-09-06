@@ -2,6 +2,6 @@
   "name": "开疆",
   "passive": {
     "name": "公司",
-    "description": "当装备者击破敌方目标的弱点时，回复等同于自身生命上限<orangeStrong>{{1}}%</orangeStrong>的生命值。"
+    "description": "当装备者击破敌方目标的弱点时，回复等同于自身生命上限<orangeStrong>{{1, percent}}%</orangeStrong>的生命值。"
   }
 }

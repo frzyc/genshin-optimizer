@@ -4,26 +4,26 @@
     "basic": {
       "0": {
         "name": "Tự Ù",
-        "fullDesc": "Dùng 1 Quân Bài Quỳnh Ngọc hoa văn ít nhất hiện tại, gây cho 1 kẻ địch chỉ định Sát Thương Lượng Tử tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Qingque.",
+        "fullDesc": "Dùng 1 Quân Bài Quỳnh Ngọc hoa văn ít nhất hiện tại, gây cho 1 kẻ địch chỉ định Sát Thương Lượng Tử tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Qingque.",
         "shortDesc": "Dùng 1 quân bài, gây lượng nhỏ Sát Thương Lượng Tử cho 1 kẻ địch."
       },
       "1": {
         "name": "Bộ Tứ Thêm Hoa!",
-        "fullDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Qingque, đồng thời gây cho mục tiêu lân cận kẻ đó Sát Thương Lượng Tử tương đương <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Qingque.\\n\"Bộ Tứ Thêm Hoa!\" không thể hồi điểm Chiến Kỹ.",
+        "fullDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Qingque, đồng thời gây cho mục tiêu lân cận kẻ đó Sát Thương Lượng Tử tương đương <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Qingque.\\n\"Bộ Tứ Thêm Hoa!\" không thể hồi điểm Chiến Kỹ.",
         "shortDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch, đồng thời gây lượng nhỏ Sát Thương Lượng Tử cho mục tiêu lân cận."
       }
     },
     "skill": {
       "0": {
         "name": "Quân Bài Cuối Cùng",
-        "fullDesc": "Bốc ngay {{1}} Quân Bài Quỳnh Ngọc, khiến sát thương do bản thân gây ra tăng <orangeStrong>{{2}}%</orangeStrong>, duy trì đến khi kết thúc hiệp này. Hiệu ứng này có thể cộng dồn {{3}} tầng. Sau khi thi triển Chiến Kỹ này, hiệp này sẽ không kết thúc.",
+        "fullDesc": "Bốc ngay {{1}} Quân Bài Quỳnh Ngọc, khiến sát thương do bản thân gây ra tăng <orangeStrong>{{2, percent}}%</orangeStrong>, duy trì đến khi kết thúc hiệp này. Hiệu ứng này có thể cộng dồn {{3}} tầng. Sau khi thi triển Chiến Kỹ này, hiệp này sẽ không kết thúc.",
         "shortDesc": "<orangeStrong>Rút bài</orangeStrong>, tăng sát thương bản thân gây ra và <orangeStrong>hiệp này sẽ không kết thúc</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Bộ Tứ? Ngon Lành!",
-        "fullDesc": "Gây cho toàn bộ phe địch sát thương Lượng Tử bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Qingque, và nhận 4 Quân Bài Quỳnh Ngọc cùng hoa văn.",
+        "fullDesc": "Gây cho toàn bộ phe địch sát thương Lượng Tử bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Qingque, và nhận 4 Quân Bài Quỳnh Ngọc cùng hoa văn.",
         "shortDesc": "Gây Sát Thương Lượng Tử cho toàn phe địch, nhận 4 quân bài hoa văn giống nhau."
       }
     },
@@ -51,14 +51,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Đợi Thời Cơ",
-        "fullDesc": "Chiến Kỹ khiến hiệu ứng tăng sát thương do bản thân gây ra tăng thêm {{1}}%.",
+        "fullDesc": "Chiến Kỹ khiến hiệu ứng tăng sát thương do bản thân gây ra tăng thêm {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Bắt Bài",
-        "fullDesc": "Sau khi thi triển Tấn Công Thường Cường Hóa, tốc độ của Qingque tăng {{1}}%, duy trì 1 hiệp.",
+        "fullDesc": "Sau khi thi triển Tấn Công Thường Cường Hóa, tốc độ của Qingque tăng {{1, percent}}%, duy trì 1 hiệp.",
         "shortDesc": ""
       }
     }
@@ -66,7 +66,7 @@
   "ranks": {
     "1": {
       "name": "Thế Bài Xung Phong Dũng Mãnh",
-      "desc": "Sát thương Tuyệt Kỹ gây ra tăng {{1}}%."
+      "desc": "Sát thương Tuyệt Kỹ gây ra tăng {{1, percent}}%."
     },
     "2": {
       "name": "Thế Bài Như Gối Ngủ Êm",
@@ -78,7 +78,7 @@
     },
     "4": {
       "name": "Thế Bài Thắng Trong Tầm Tay",
-      "desc": "Sau khi thi triển Chiến Kỹ, có {{1}}% xác suất cố định nhận trạng thái Bất Cầu Nhân, duy trì đến khi hiệp này kết thúc.\\nTrong trạng thái Bất Cầu Nhân, sau khi thi triển Tấn Công Thường hoặc Tấn Công Thường Cường Hóa, sẽ lập tức tiến hành 1 Đòn Đánh Theo Sau, gây cho mục tiêu này một lượng Sát Thương Lượng Tử bằng 100% Sát Thương Tấn Công Thường hoặc Tấn Công Thường Cường Hóa."
+      "desc": "Sau khi thi triển Chiến Kỹ, có {{1, percent}}% xác suất cố định nhận trạng thái Bất Cầu Nhân, duy trì đến khi hiệp này kết thúc.\\nTrong trạng thái Bất Cầu Nhân, sau khi thi triển Tấn Công Thường hoặc Tấn Công Thường Cường Hóa, sẽ lập tức tiến hành 1 Đòn Đánh Theo Sau, gây cho mục tiêu này một lượng Sát Thương Lượng Tử bằng 100% Sát Thương Tấn Công Thường hoặc Tấn Công Thường Cường Hóa."
     },
     "5": {
       "name": "Thế Bài Đánh Cược Vận Mệnh",

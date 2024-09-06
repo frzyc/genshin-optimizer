@@ -2,6 +2,6 @@
   "name": "Бежать некуда",
   "passive": {
     "name": "Отчаянные времена",
-    "description": "Сила атаки владельца повышается на <orangeStrong>{{1}}%</orangeStrong>. Когда владелец побеждает противника, он восстанавливает HP, равное <orangeStrong>{{2}}%</orangeStrong> от своей силы атаки."
+    "description": "Сила атаки владельца повышается на <orangeStrong>{{1, percent}}%</orangeStrong>. Когда владелец побеждает противника, он восстанавливает HP, равное <orangeStrong>{{2, percent}}%</orangeStrong> от своей силы атаки."
   }
 }

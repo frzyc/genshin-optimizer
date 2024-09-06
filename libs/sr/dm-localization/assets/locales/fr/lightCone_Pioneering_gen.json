@@ -2,6 +2,6 @@
   "name": "Expansion",
   "passive": {
     "name": "CPI",
-    "description": "Restaure <orangeStrong>{{1}}%</orangeStrong> des PV max du porteur lorsqu'il inflige une Rupture de faiblesse à un ennemi."
+    "description": "Restaure <orangeStrong>{{1, percent}}%</orangeStrong> des PV max du porteur lorsqu'il inflige une Rupture de faiblesse à un ennemi."
   }
 }

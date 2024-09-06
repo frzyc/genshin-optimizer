@@ -2,6 +2,6 @@
   "name": "Echos des Sarges",
   "passive": {
     "name": "Dornen",
-    "description": "Erhöht den ANG des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Wenn der Träger angreift, stellt er für jeden verschiedenen getroffenen Gegner <orangeStrong>{{3}}</orangeStrong> Pkt. Energie wieder her. Jeder Angriff kann auf diese Weise bis zu {{4}}-mal Energie wiederherstellen. Nachdem der Träger den Ultimate eingesetzt hat, wird die GES aller Verbündeten für 1 Rd. um <orangeStrong>{{2}}</orangeStrong> Pkt. erhöht."
+    "description": "Erhöht den ANG des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Wenn der Träger angreift, stellt er für jeden verschiedenen getroffenen Gegner <orangeStrong>{{3, fixed(fixed: 1)}}</orangeStrong> Pkt. Energie wieder her. Jeder Angriff kann auf diese Weise bis zu {{4}}-mal Energie wiederherstellen. Nachdem der Träger den Ultimate eingesetzt hat, wird die GES aller Verbündeten für 1 Rd. um <orangeStrong>{{2}}</orangeStrong> Pkt. erhöht."
   }
 }

@@ -2,6 +2,6 @@
   "name": "도망칠 곳은 없다",
   "passive": {
     "name": "곤경",
-    "description": "장착한 캐릭터의 공격력이 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터는 적을 처치할 때 자신의 공격력 <orangeStrong>{{2}}%</orangeStrong>만큼의 HP를 회복한다"
+    "description": "장착한 캐릭터의 공격력이 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 장착한 캐릭터는 적을 처치할 때 자신의 공격력 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 HP를 회복한다"
   }
 }

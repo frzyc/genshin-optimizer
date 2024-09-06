@@ -2,6 +2,6 @@
   "name": "記一位星神的殞落",
   "passive": {
     "name": "撲火",
-    "description": "當裝備者發動攻擊時，使裝備者本場戰鬥中的攻擊力提高<orangeStrong>{{1}}%</orangeStrong>，最多疊加{{2}}層。當裝備者擊破敵方目標弱點後，造成的傷害提高<orangeStrong>{{3}}%</orangeStrong>，持續{{4}}回合。"
+    "description": "當裝備者發動攻擊時，使裝備者本場戰鬥中的攻擊力提高<orangeStrong>{{1, percent}}%</orangeStrong>，最多疊加{{2}}層。當裝備者擊破敵方目標弱點後，造成的傷害提高<orangeStrong>{{3, percent}}%</orangeStrong>，持續{{4}}回合。"
   }
 }

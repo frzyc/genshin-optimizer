@@ -2,6 +2,6 @@
   "name": "Eu Serei Minha Própria Espada",
   "passive": {
     "name": "Com Este Jade Vespertino",
-    "description": "Aumenta o Dano CRIT do usuário em <orangeStrong>{{1}}%</orangeStrong>. Quando um aliado (excluindo o usuário) é atacado ou perde PV, o usuário ganha 1 acúmulo de Eclipse, até um máximo de {{2}} acúmulo(s). Cada acúmulo de Eclipse aumenta o Dano do próximo ataque do usuário em <orangeStrong>{{3}}%</orangeStrong>. Ao alcançar {{2}} acúmulo(s), permite adicionalmente que este ataque ignore <orangeStrong>{{4}}%</orangeStrong> da DEF do inimigo. Este efeito será removido depois que o usuário utilizar um ataque."
+    "description": "Aumenta o Dano CRIT do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Quando um aliado (excluindo o usuário) é atacado ou perde PV, o usuário ganha 1 acúmulo de Eclipse, até um máximo de {{2}} acúmulo(s). Cada acúmulo de Eclipse aumenta o Dano do próximo ataque do usuário em <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>. Ao alcançar {{2}} acúmulo(s), permite adicionalmente que este ataque ignore <orangeStrong>{{4, percent}}%</orangeStrong> da DEF do inimigo. Este efeito será removido depois que o usuário utilizar um ataque."
   }
 }

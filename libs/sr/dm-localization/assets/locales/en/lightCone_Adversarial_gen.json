@@ -2,6 +2,6 @@
   "name": "Adversarial",
   "passive": {
     "name": "Alliance",
-    "description": "When the wearer defeats an enemy, increases SPD by <orangeStrong>{{1}}%</orangeStrong> for {{2}} turn(s)."
+    "description": "When the wearer defeats an enemy, increases SPD by <orangeStrong>{{1, percent}}%</orangeStrong> for {{2}} turn(s)."
   }
 }

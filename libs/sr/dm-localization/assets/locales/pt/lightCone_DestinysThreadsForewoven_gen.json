@@ -2,6 +2,6 @@
   "name": "Fios Forjados do Destino",
   "passive": {
     "name": "Conhecimento",
-    "description": "Aumenta a RES a Efeito do usuário em <orangeStrong>{{1}}%</orangeStrong>. Para cada {{2}} de DEF que o usuário possui, aumenta o Dano causado pelo usuário em <orangeStrong>{{3}}%</orangeStrong> até um aumento de Dano máximo de <orangeStrong>{{4}}%</orangeStrong>."
+    "description": "Aumenta a RES a Efeito do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Para cada {{2}} de DEF que o usuário possui, aumenta o Dano causado pelo usuário em <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> até um aumento de Dano máximo de <orangeStrong>{{4, percent}}%</orangeStrong>."
   }
 }

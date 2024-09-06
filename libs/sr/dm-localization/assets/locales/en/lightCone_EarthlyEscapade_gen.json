@@ -2,6 +2,6 @@
   "name": "Earthly Escapade",
   "passive": {
     "name": "Capriciousness",
-    "description": "Increases the wearer's CRIT DMG by <orangeStrong>{{1}}%</orangeStrong>. At the start of the battle, the wearer gains Mask, lasting for {{6}} turn(s). While the wearer has Mask, the wearer's allies have their CRIT Rate increased by <orangeStrong>{{5}}%</orangeStrong> and their CRIT DMG increased by <orangeStrong>{{2}}%</orangeStrong>. For every 1 Skill Point the wearer recovers (including Skill Points that exceed the limit), they gain 1 stack of Radiant Flame. And when the wearer has {{4}} stacks of Radiant Flame, all the stacks are removed, and they gain Mask, lasting for {{3}} turn(s)."
+    "description": "Increases the wearer's CRIT DMG by <orangeStrong>{{1, percent}}%</orangeStrong>. At the start of the battle, the wearer gains Mask, lasting for {{6}} turn(s). While the wearer has Mask, the wearer's allies have their CRIT Rate increased by <orangeStrong>{{5, percent}}%</orangeStrong> and their CRIT DMG increased by <orangeStrong>{{2, percent}}%</orangeStrong>. For every 1 Skill Point the wearer recovers (including Skill Points that exceed the limit), they gain 1 stack of Radiant Flame. And when the wearer has {{4}} stacks of Radiant Flame, all the stacks are removed, and they gain Mask, lasting for {{3}} turn(s)."
   }
 }

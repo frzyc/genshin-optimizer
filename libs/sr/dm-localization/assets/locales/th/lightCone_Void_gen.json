@@ -2,6 +2,6 @@
   "name": "Void",
   "passive": {
     "name": "Fallen",
-    "description": "เมื่อการต่อสู้เริ่มขึ้น อัตราสร้างสถานะของผู้สวมใส่จะเพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> เป็นเวลา {{2}} เทิร์น"
+    "description": "เมื่อการต่อสู้เริ่มขึ้น อัตราสร้างสถานะของผู้สวมใส่จะเพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> เป็นเวลา {{2}} เทิร์น"
   }
 }

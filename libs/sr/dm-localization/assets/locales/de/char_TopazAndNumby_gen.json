@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Defizit ...",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG von Topaz zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG von Topaz zu.",
         "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Schwierigkeiten beim Bezahlen?",
-        "fullDesc": "Verursacht bei einem anvisierten Gegner „Schuldennachweis“ und erhöht den erlittenen <u>Folgeangriff-SCH</u> des Ziels um <orangeStrong>{{2}}%</orangeStrong>. Der „Schuldennachweis“ wirkt nur auf das letzte Ziel, auf das er angewendet wird. Wenn sich zu Beginn der Runde eines Verbündeten oder während der Aktion eines Verbündeten keine Gegner mit „Schuldennachweis“ auf dem Feld befinden, verursacht Topaz bei einem zufälligen Gegner „Schuldennachweis“.\\nKontie fügt diesem Ziel Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> des ANG von Topaz zu. Der Einsatz dieser Fertigkeit, um SCH zu verursachen, wird als ein <u>Folgeangriff</u> gewertet.",
+        "fullDesc": "Verursacht bei einem anvisierten Gegner „Schuldennachweis“ und erhöht den erlittenen <u>Folgeangriff-SCH</u> des Ziels um <orangeStrong>{{2, percent}}%</orangeStrong>. Der „Schuldennachweis“ wirkt nur auf das letzte Ziel, auf das er angewendet wird. Wenn sich zu Beginn der Runde eines Verbündeten oder während der Aktion eines Verbündeten keine Gegner mit „Schuldennachweis“ auf dem Feld befinden, verursacht Topaz bei einem zufälligen Gegner „Schuldennachweis“.\\nKontie fügt diesem Ziel Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG von Topaz zu. Der Einsatz dieser Fertigkeit, um SCH zu verursachen, wird als ein <u>Folgeangriff</u> gewertet.",
         "shortDesc": "Verursacht bei einem Gegner „Schuldennachweis“ und lässt ihn <orangeStrong>mehr Folgeangriff-SCH erleiden</orangeStrong>. Kontie fügt dem Ziel Feuer-SCH zu."
       }
     },
     "ult": {
       "0": {
         "name": "Vom Verlust zum Gewinn!",
-        "fullDesc": "Kontie tritt in den Status „Erstaunlicher Aufstieg!“ ein. Sein SCH-Multiplikator wird um <orangeStrong>{{1}}%</orangeStrong> und der KRIT-SCH wird um <orangeStrong>{{2}}%</orangeStrong> erhöht. Außerdem wird Konties Aktion um {{3}}% vorgezogen, wenn Gegner mit „Schuldennachweis“ von Standardangriff, Fertigkeit oder Ultimate eines Verbündeten getroffen werden. Nachdem Kontie {{4}}-mal Angriff eingesetzt hat, wird der Status „Erstaunlicher Aufstieg!“ beendet.",
+        "fullDesc": "Kontie tritt in den Status „Erstaunlicher Aufstieg!“ ein. Sein SCH-Multiplikator wird um <orangeStrong>{{1, percent}}%</orangeStrong> und der KRIT-SCH wird um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht. Außerdem wird Konties Aktion um {{3, percent}}% vorgezogen, wenn Gegner mit „Schuldennachweis“ von Standardangriff, Fertigkeit oder Ultimate eines Verbündeten getroffen werden. Nachdem Kontie {{4}}-mal Angriff eingesetzt hat, wird der Status „Erstaunlicher Aufstieg!“ beendet.",
         "shortDesc": "Kontie tritt in den Status „Erstaunlicher Aufstieg!“ ein und sein <orangeStrong>SCH-Multiplikator und KRIT-SCH werden</orangeStrong> erhöht."
       }
     },
@@ -46,7 +46,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Finanzielle Turbulenzen",
-        "fullDesc": "Erhöht Topaz’ und Konties SCH gegen Gegner mit Feuer-Schwäche um {{1}}%.",
+        "fullDesc": "Erhöht Topaz’ und Konties SCH gegen Gegner mit Feuer-Schwäche um {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Markt der Zukunft",
-      "desc": "Wenn Gegner mit „Schuldennachweis“ von Folgeangriffen getroffen werden, gehen sie in den Status „Schuldner“ über. Dies kann nur 1-mal in einem einzigen Angriff wirksam werden.\\n„Schuldner“ erhöht den KRIT-SCH von Folgeangriffen, der den betroffenen Gegnern zugefügt wird, um {{1}}%, bis zu {{2}}-fach stapelbar. Wenn „Schuldennachweis“ entfernt wird, wird auch der Status „Schuldner“ entfernt."
+      "desc": "Wenn Gegner mit „Schuldennachweis“ von Folgeangriffen getroffen werden, gehen sie in den Status „Schuldner“ über. Dies kann nur 1-mal in einem einzigen Angriff wirksam werden.\\n„Schuldner“ erhöht den KRIT-SCH von Folgeangriffen, der den betroffenen Gegnern zugefügt wird, um {{1, percent}}%, bis zu {{2}}-fach stapelbar. Wenn „Schuldennachweis“ entfernt wird, wird auch der Status „Schuldner“ entfernt."
     },
     "2": {
       "name": "Freundliche Übernahme",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Schnelle Handhabung",
-      "desc": "Wenn Konties Runde beginnt, wird Topaz’ Aktion um {{1}}% vorgezogen."
+      "desc": "Wenn Konties Runde beginnt, wird Topaz’ Aktion um {{1, percent}}% vorgezogen."
     },
     "5": {
       "name": "Überhöhte Nachfrage",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Anreizmechanismen",
-      "desc": "Erhöht Konties Trefferzahl im Status „Erstaunlicher Aufstieg!“ um {{1}}. Erhöht seine Feuer-WDS-DUR beim Angriff um {{2}}%."
+      "desc": "Erhöht Konties Trefferzahl im Status „Erstaunlicher Aufstieg!“ um {{1}}. Erhöht seine Feuer-WDS-DUR beim Angriff um {{2, percent}}%."
     }
   }
 }

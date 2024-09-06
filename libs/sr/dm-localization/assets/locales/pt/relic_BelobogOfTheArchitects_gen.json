@@ -1,6 +1,6 @@
 {
   "setName": "Belobog dos Arquitetos",
   "setEffects": {
-    "2": "Aumenta em {{1}}% a DEF do usuário. Quando a Taxa de Acerto de Efeito do usuário é de {{2}}% ou maior, ele ganha mais {{3}}% de DEF."
+    "2": "Aumenta em {{1, percent}}% a DEF do usuário. Quando a Taxa de Acerto de Efeito do usuário é de {{2, percent}}% ou maior, ele ganha mais {{3, percent}}% de DEF."
   }
 }

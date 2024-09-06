@@ -1,7 +1,7 @@
 {
   "setName": "Band of Sizzling Thunder",
   "setEffects": {
-    "2": "Lightning DMG +{{1}}%.",
-    "4": "Saat pengguna melancarkan Skill, meningkatkan {{1}}% ATK pengguna selama {{2}} giliran."
+    "2": "Lightning DMG +{{1, percent}}%.",
+    "4": "Saat pengguna melancarkan Skill, meningkatkan {{1, percent}}% ATK pengguna selama {{2}} giliran."
   }
 }

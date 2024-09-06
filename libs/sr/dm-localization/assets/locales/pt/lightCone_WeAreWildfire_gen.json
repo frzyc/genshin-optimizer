@@ -2,6 +2,6 @@
   "name": "Somos Fogo Vivo",
   "passive": {
     "name": "Olhos Lacrimejantes",
-    "description": "No início da batalha, diminui o Dano causado a todos os aliados em <orangeStrong>{{2}}%</orangeStrong> por {{3}} rodada(s). Ao mesmo tempo, restaura imediatamente os PV de todos os aliados igual a <orangeStrong>{{1}}%</orangeStrong> das respectivas diferenças entre os PV máximos de cada personagem e os seus PV atuais."
+    "description": "No início da batalha, diminui o Dano causado a todos os aliados em <orangeStrong>{{2, percent}}%</orangeStrong> por {{3}} rodada(s). Ao mesmo tempo, restaura imediatamente os PV de todos os aliados igual a <orangeStrong>{{1, percent}}%</orangeStrong> das respectivas diferenças entre os PV máximos de cada personagem e os seus PV atuais."
   }
 }

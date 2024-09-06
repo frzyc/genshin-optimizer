@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Monodrama",
-        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Sparkle's ATK to a single target enemy.",
+        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Sparkle's ATK to a single target enemy.",
         "shortDesc": "Deals minor Quantum DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Dreamdiver",
-        "fullDesc": "Increases the CRIT DMG of a single target ally by <orangeStrong>{{1}}%</orangeStrong> of Sparkle's CRIT DMG plus <orangeStrong>{{2}}%</orangeStrong>, lasting for {{3}} turn(s). And at the same time, Advances Forward this ally's action by {{4}}%.\\nWhen Sparkle uses this ability on herself, the Action Advance effect will not trigger.",
+        "fullDesc": "Increases the CRIT DMG of a single target ally by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Sparkle's CRIT DMG plus <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, lasting for {{3}} turn(s). And at the same time, Advances Forward this ally's action by {{4, percent}}%.\\nWhen Sparkle uses this ability on herself, the Action Advance effect will not trigger.",
         "shortDesc": "Increases an ally's <orangeStrong>CRIT DMG</orangeStrong> and Advances Forward their action."
       }
     },
     "ult": {
       "0": {
         "name": "The Hero with a Thousand Faces",
-        "fullDesc": "Recovers {{2}} Skill Points for the team and grants all allies Cipher. For allies with Cipher, each stack of the DMG Boost effect provided by Sparkle's Talent additionally increases by <orangeStrong>{{3}}%</orangeStrong>, lasting for {{4}} turns.",
+        "fullDesc": "Recovers {{2}} Skill Points for the team and grants all allies Cipher. For allies with Cipher, each stack of the DMG Boost effect provided by Sparkle's Talent additionally increases by <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, lasting for {{4}} turns.",
         "shortDesc": "Recovers <orangeStrong>Skill Points</orangeStrong> for the team, and enables the DMG Boost provided by Sparkle's Talent to be additionally enhanced."
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Nocturne",
-        "fullDesc": "Increases all allies' ATK by {{4}}%. When there are 1/2/3 Quantum-Type allies in the team, additionally increases Quantum-Type allies' ATK by {{1}}%/{{2}}%/{{3}}%.",
+        "fullDesc": "Increases all allies' ATK by {{4, percent}}%. When there are 1/2/3 Quantum-Type allies in the team, additionally increases Quantum-Type allies' ATK by {{1, percent}}%/{{2, percent}}%/{{3, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Suspension of Disbelief",
-      "desc": "The Cipher effect granted by the Ultimate lasts for 1 extra turn. All allies with Cipher have their ATK increased by {{1}}%."
+      "desc": "The Cipher effect granted by the Ultimate lasts for 1 extra turn. All allies with Cipher have their ATK increased by {{1, percent}}%."
     },
     "2": {
       "name": "Purely Fictitious",
-      "desc": "Every stack of the Talent's effect allows allies to additionally ignore {{1}}% of the target's DEF when dealing DMG."
+      "desc": "Every stack of the Talent's effect allows allies to additionally ignore {{1, percent}}% of the target's DEF when dealing DMG."
     },
     "3": {
       "name": "Pipedream",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Narrative Polysemy",
-      "desc": "The CRIT DMG Boost effect provided by the Skill additionally increases by an amount equal to {{1}}% of Sparkle's CRIT DMG. When Sparkle uses Skill, her Skill's CRIT DMG Boost effect will apply to all allies with Cipher. When Sparkle uses her Ultimate, any single ally who benefits from her Skill's CRIT DMG Boost will spread that effect to allies with Cipher."
+      "desc": "The CRIT DMG Boost effect provided by the Skill additionally increases by an amount equal to {{1, percent}}% of Sparkle's CRIT DMG. When Sparkle uses Skill, her Skill's CRIT DMG Boost effect will apply to all allies with Cipher. When Sparkle uses her Ultimate, any single ally who benefits from her Skill's CRIT DMG Boost will spread that effect to allies with Cipher."
     }
   }
 }

@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Oracle Brush",
-        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Hanya pada 1 musuh yang ditarget.",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Hanya pada 1 musuh yang ditarget.",
         "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Samsara, Locked",
-        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Hanya pada 1 musuh yang ditarget, serta membuat target tersebut memasuki status \"Burden\".\\nSaat setelah rekan tim melancarkan 2 kali serangan (Basic ATK, Skill, atau Ultimate) pada target musuh yang berstatus \"Burden\", akan segera memulihkan 1 Poin Skill untuk rekan tim. \"Burden\" cuma akan efektif pada target terbaru yang memperolehnya, serta akan dihapus secara otomatis setelah memicu {{2}} kali efek pemulihan Poin Skill.",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Hanya pada 1 musuh yang ditarget, serta membuat target tersebut memasuki status \"Burden\".\\nSaat setelah rekan tim melancarkan 2 kali serangan (Basic ATK, Skill, atau Ultimate) pada target musuh yang berstatus \"Burden\", akan segera memulihkan 1 Poin Skill untuk rekan tim. \"Burden\" cuma akan efektif pada target terbaru yang memperolehnya, serta akan dihapus secara otomatis setelah memicu {{2}} kali efek pemulihan Poin Skill.",
         "shortDesc": "Mengakibatkan Physical DMG pada 1 musuh, serta membuat target tersebut memasuki status \"Burden\". Saat setelah rekan tim melancarkan 2 kali serangan (Basic ATK, Skill, atau Ultimate) pada target musuh yang berstatus \"Burden\", akan segera memulihkan <orangeStrong>1 Poin Skill</orangeStrong> untuk rekan tim."
       }
     },
     "ult": {
       "0": {
         "name": "Ten-Lords' Decree, All Shall Obey",
-        "fullDesc": "Meningkatkan SPD 1 rekan tim yang ditarget sebesar <orangeStrong>{{3}}%</orangeStrong> SPD Hanya dan meningkatkan <orangeStrong>{{1}}%</orangeStrong> ATK target selama {{2}} giliran.",
+        "fullDesc": "Meningkatkan SPD 1 rekan tim yang ditarget sebesar <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> SPD Hanya dan meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> ATK target selama {{2}} giliran.",
         "shortDesc": "<orangeStrong>Meningkatkan SPD dan ATK</orangeStrong> 1 rekan tim."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Scrivener",
-        "fullDesc": "Meningkatkan ATK rekan tim yang memicu efek pemulihan Poin Skill \"Burden\" sebesar {{1}}% selama {{2}} giliran.",
+        "fullDesc": "Meningkatkan ATK rekan tim yang memicu efek pemulihan Poin Skill \"Burden\" sebesar {{1, percent}}% selama {{2}} giliran.",
         "shortDesc": ""
       }
     },
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "One Heart",
-      "desc": "Ketika rekan tim dengan efek Ultimate Hanya mengalahkan target musuh, aksi Hanya akan didahulukan sebesar {{1}}%. Efek ini cuma dapat dipicu {{2}} kali per giliran."
+      "desc": "Ketika rekan tim dengan efek Ultimate Hanya mengalahkan target musuh, aksi Hanya akan didahulukan sebesar {{1, percent}}%. Efek ini cuma dapat dipicu {{2}} kali per giliran."
     },
     "2": {
       "name": "Two Views",
-      "desc": "Setelah melancarkan Skill, meningkatkan {{1}}% SPD selama {{2}} giliran."
+      "desc": "Setelah melancarkan Skill, meningkatkan {{1, percent}}% SPD selama {{2}} giliran."
     },
     "3": {
       "name": "Three Temptations",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Six Reverences",
-      "desc": "Efek peningkatan DMG dari Talent akan meningkat ekstra {{1}}%."
+      "desc": "Efek peningkatan DMG dari Talent akan meningkat ekstra {{1, percent}}%."
     }
   }
 }

@@ -2,6 +2,6 @@
   "name": "Inherently Unjust Destiny",
   "passive": {
     "name": "All-In",
-    "description": "Increases the wearer's DEF by <orangeStrong>{{1}}%</orangeStrong>. When the wearer provides a Shield to an ally, the wearer's CRIT DMG increases by <orangeStrong>{{2}}%</orangeStrong>, lasting for {{3}} turn(s). When the wearer's follow-up attack hits an enemy target, there is a <orangeStrong>{{4}}%</orangeStrong> base chance to increase the DMG taken by the attacked enemy target by <orangeStrong>{{5}}%</orangeStrong>, lasting for {{6}} turn(s)."
+    "description": "Increases the wearer's DEF by <orangeStrong>{{1, percent}}%</orangeStrong>. When the wearer provides a Shield to an ally, the wearer's CRIT DMG increases by <orangeStrong>{{2, percent}}%</orangeStrong>, lasting for {{3}} turn(s). When the wearer's follow-up attack hits an enemy target, there is a <orangeStrong>{{4, percent}}%</orangeStrong> base chance to increase the DMG taken by the attacked enemy target by <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>, lasting for {{6}} turn(s)."
   }
 }

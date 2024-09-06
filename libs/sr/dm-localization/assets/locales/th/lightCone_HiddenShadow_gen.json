@@ -2,6 +2,6 @@
   "name": "Hidden Shadow",
   "passive": {
     "name": "Mechanism",
-    "description": "หลังจากปล่อยสกิลต่อสู้แล้ว จะทำให้การโจมตีปกติในครั้งต่อไปของผู้สวมใส่สร้าง DMG เพิ่มเติม <orangeStrong>{{1}}%</orangeStrong> ของ ATK ของตัวเอง แก่ศัตรูเป้าหมาย"
+    "description": "หลังจากปล่อยสกิลต่อสู้แล้ว จะทำให้การโจมตีปกติในครั้งต่อไปของผู้สวมใส่สร้าง DMG เพิ่มเติม <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของตัวเอง แก่ศัตรูเป้าหมาย"
   }
 }

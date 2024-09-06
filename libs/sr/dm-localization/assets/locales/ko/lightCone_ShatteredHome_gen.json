@@ -2,6 +2,6 @@
   "name": "무너진 행복",
   "passive": {
     "name": "토벌",
-    "description": "장착한 캐릭터는 현재 HP 백분율이 {{1}}%보다 높은 적을 공격할 경우 가하는 피해가 <orangeStrong>{{2}}%</orangeStrong> 증가한다"
+    "description": "장착한 캐릭터는 현재 HP 백분율이 {{1, percent}}%보다 높은 적을 공격할 경우 가하는 피해가 <orangeStrong>{{2, percent}}%</orangeStrong> 증가한다"
   }
 }

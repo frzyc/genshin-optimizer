@@ -2,6 +2,6 @@
   "name": "{RUBY_B#よあ}夜明{RUBY_E#}け{RUBY_B#まえ}前{RUBY_E#}",
   "passive": {
     "name": "{RUBY_B#ちょうや}長夜{RUBY_E#}",
-    "description": "装備キャラの会心ダメージ+<orangeStrong>{{1}}%</orangeStrong>。装備キャラの戦闘スキルと必殺技によるダメージ+<orangeStrong>{{2}}%</orangeStrong>。装備キャラが戦闘スキル、または必殺技を発動した後、「夢身」効果を獲得する。追加攻撃を行う時、「夢身」を消費し、追加攻撃ダメージ+<orangeStrong>{{3}}%</orangeStrong>。"
+    "description": "装備キャラの会心ダメージ+<orangeStrong>{{1, percent}}%</orangeStrong>。装備キャラの戦闘スキルと必殺技によるダメージ+<orangeStrong>{{2, percent}}%</orangeStrong>。装備キャラが戦闘スキル、または必殺技を発動した後、「夢身」効果を獲得する。追加攻撃を行う時、「夢身」を消費し、追加攻撃ダメージ+<orangeStrong>{{3, percent}}%</orangeStrong>。"
   }
 }

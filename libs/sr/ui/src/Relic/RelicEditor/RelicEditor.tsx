@@ -17,6 +17,7 @@ import {
 import type { ICachedRelic } from '@genshin-optimizer/sr/db'
 import { cachedRelic } from '@genshin-optimizer/sr/db'
 import type { IRelic, ISubstat } from '@genshin-optimizer/sr/srod'
+import { SlotIcon, StatIcon } from '@genshin-optimizer/sr/svgicons'
 import { getRelicMainStatDisplayVal } from '@genshin-optimizer/sr/util'
 import AddIcon from '@mui/icons-material/Add'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
@@ -35,8 +36,8 @@ import {
   CardHeader,
   Grid,
   IconButton,
+  ListItemIcon,
   MenuItem,
-  Select,
   Skeleton,
   TextField,
   Typography,
@@ -56,10 +57,11 @@ import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete } from '../../Character'
 import { useDatabaseContext } from '../../Context'
 import { RelicCard } from '../RelicCard'
+import { relicReducer } from './reducer'
 import RelicRarityDropdown from './RelicRarityDropdown'
 import { RelicSetAutocomplete } from './RelicSetAutocomplete'
+import { RelicStatWithUnit } from './RelicStatKeyDisplay'
 import SubstatInput from './SubstatInput'
-import { relicReducer } from './reducer'
 
 // TODO: temporary until relic sheet is implemented
 interface IRelicSheet {
@@ -88,6 +90,7 @@ export function RelicEditor({
   disableSet = false,
 }: RelicEditorProps) {
   const { t } = useTranslation('relic')
+  const { t: tk } = useTranslation(['slotKey_gen', 'statKey_gen'])
 
   const { database } = useDatabaseContext()
   const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
@@ -262,7 +265,7 @@ export function RelicEditor({
                       update({ setKey: key as RelicSetKey })
                     }
                     sx={{ flexGrow: 1 }}
-                    label={relic?.setKey ? '' : t('editor.unknownSetName')}
+                    label={relic?.setKey ? '' : t`editor.unknownSetName`}
                   />
                   <RelicRarityDropdown
                     rarity={relic ? rarity : undefined}
@@ -318,23 +321,36 @@ export function RelicEditor({
 
                 {/* slot */}
                 <Box component="div" display="flex">
-                  <Select
-                    label="Slot"
-                    value={slotKey}
-                    onChange={(e) =>
-                      update({ slotKey: e.target.value as RelicSlotKey })
+                  <DropdownButton
+                    startIcon={
+                      relic?.slotKey ? (
+                        <SlotIcon slotKey={relic.slotKey} />
+                      ) : undefined
                     }
+                    title={relic ? tk(relic.slotKey) : t`slot`}
+                    value={slotKey}
                     disabled={disableEditSlot || !sheet}
+                    color={relic ? 'success' : 'primary'}
                   >
-                    {allRelicSlotKeys.map((s) => (
-                      <MenuItem key={s} value={s}>
-                        {s}
+                    {allRelicSlotKeys.map((sk) => (
+                      <MenuItem
+                        key={sk}
+                        selected={slotKey === sk}
+                        disabled={slotKey === sk}
+                        onClick={() => update({ slotKey: sk })}
+                      >
+                        <ListItemIcon>
+                          <SlotIcon slotKey={sk} />
+                        </ListItemIcon>
+                        {tk(sk)}
                       </MenuItem>
                     ))}
-                  </Select>
+                  </DropdownButton>
                   <CardThemed bgt="light" sx={{ p: 1, ml: 1, flexGrow: 1 }}>
                     <Suspense fallback={<Skeleton width="60%" />}>
-                      <Typography color="text.secondary">{slotKey}</Typography>
+                      <Typography color="text.secondary">
+                        {tk(`slotKey_gen:${slotKey}`)}
+                      </Typography>
                     </Suspense>
                   </CardThemed>
                 </Box>
@@ -342,18 +358,35 @@ export function RelicEditor({
                 {/* main stat */}
                 <Box component="div" display="flex" gap={1}>
                   <DropdownButton
-                    title={<b>{relic?.mainStatKey ?? 'Main Stat'}</b>}
+                    startIcon={
+                      relic?.mainStatKey ? (
+                        <StatIcon statKey={relic.mainStatKey} />
+                      ) : undefined
+                    }
+                    title={
+                      <b>
+                        {relic ? (
+                          <RelicStatWithUnit statKey={relic.mainStatKey} />
+                        ) : (
+                          t`mainStat`
+                        )}
+                      </b>
+                    }
                     disabled={!sheet}
                     color={relic ? 'success' : 'primary'}
                   >
-                    {relicSlotToMainStatKeys[slotKey].map((mainStatK) => (
+                    {relicSlotToMainStatKeys[slotKey].map((mk) => (
                       <MenuItem
-                        key={mainStatK}
-                        selected={relic?.mainStatKey === mainStatK}
-                        disabled={relic?.mainStatKey === mainStatK}
-                        onClick={() => update({ mainStatKey: mainStatK })}
+                        key={mk}
+                        selected={relic?.mainStatKey === mk}
+                        disabled={relic?.mainStatKey === mk}
+                        onClick={() => update({ mainStatKey: mk })}
                       >
-                        {mainStatK}
+                        {/* TODO: Replace with colored text with icon at some point */}
+                        <ListItemIcon>
+                          <StatIcon statKey={mk} />
+                        </ListItemIcon>
+                        <RelicStatWithUnit statKey={mk} />
                       </MenuItem>
                     ))}
                   </DropdownButton>

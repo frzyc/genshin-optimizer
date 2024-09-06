@@ -2,6 +2,6 @@
   "name": "Sagacity",
   "passive": {
     "name": "Genius",
-    "description": "เมื่อผู้สวมใส่ใช้ท่าไม้ตาย ATK จะเพิ่มขึ้น <orangeStrong>{{1}}%</orangeStrong> เป็นเวลา {{2}} เทิร์น"
+    "description": "เมื่อผู้สวมใส่ใช้ท่าไม้ตาย ATK จะเพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> เป็นเวลา {{2}} เทิร์น"
   }
 }

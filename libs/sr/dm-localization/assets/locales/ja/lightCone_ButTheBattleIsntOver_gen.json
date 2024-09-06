@@ -2,6 +2,6 @@
   "name": "だが{RUBY_B#せんそう}戦争{RUBY_E#}は{RUBY_B#お}終{RUBY_E#}わらない",
   "passive": {
     "name": "{RUBY_B#けいしょうしゃ}継承者{RUBY_E#}",
-    "description": "装備キャラのEP回復効率+<orangeStrong>{{1}}%</orangeStrong>。味方に対して必殺技を発動した時、SPを1回復する、この効果は必殺技を2回発動するたびに1回発動できる。装備キャラが戦闘スキルを発動した後、次に行動する他の味方の与ダメージ+<orangeStrong>{{2}}%</orangeStrong>、{{3}}ターン継続。"
+    "description": "装備キャラのEP回復効率+<orangeStrong>{{1, percent}}%</orangeStrong>。味方に対して必殺技を発動した時、SPを1回復する、この効果は必殺技を2回発動するたびに1回発動できる。装備キャラが戦闘スキルを発動した後、次に行動する他の味方の与ダメージ+<orangeStrong>{{2, percent}}%</orangeStrong>、{{3}}ターン継続。"
   }
 }

@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "請……請讓一下！",
-        "fullDesc": "對指定敵方單體造成等同於米沙<orangeStrong>{{1}}%</orangeStrong>攻擊力的冰屬性傷害。",
+        "fullDesc": "對指定敵方單體造成等同於米沙<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的冰屬性傷害。",
         "shortDesc": "對敵方單體造成少量冰屬性傷害。"
       }
     },
     "skill": {
       "0": {
         "name": "客……客房服務！",
-        "fullDesc": "增加{{3}}段米沙下一次終結技的攻擊段數。對指定敵方單體造成等同於米沙<orangeStrong>{{1}}%</orangeStrong>攻擊力的冰屬性傷害，並對其相鄰目標造成等同於米沙<orangeStrong>{{2}}%</orangeStrong>攻擊力的冰屬性傷害。",
+        "fullDesc": "增加{{3}}段米沙下一次終結技的攻擊段數。對指定敵方單體造成等同於米沙<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的冰屬性傷害，並對其相鄰目標造成等同於米沙<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的冰屬性傷害。",
         "shortDesc": "對敵方單體造成冰屬性傷害、對相鄰目標造成少量冰屬性傷害，增加米沙下一次<orangeStrong>終結技的攻擊段數</orangeStrong>。"
       }
     },
     "ult": {
       "0": {
         "name": "要……要遲到了！",
-        "fullDesc": "初始擁有{{1}}段攻擊段數。首先發動1段攻擊對指定敵方單體造成等同於米沙<orangeStrong>{{2}}%</orangeStrong>攻擊力的冰屬性傷害，其餘每段攻擊對敵方隨機單體造成等同於米沙<orangeStrong>{{2}}%</orangeStrong>攻擊力的冰屬性傷害。每段攻擊前有<orangeStrong>{{3}}%</orangeStrong>的<u>基礎機率</u>使目標陷入凍結狀態，持續1回合。\\n凍結狀態下，敵方目標不能行動，同時每回合開始時受到等同於米沙<orangeStrong>{{4}}%</orangeStrong>攻擊力的冰屬性<u>附加傷害</u>。\\n終結技最多累積{{5}}段攻擊段數，施放終結技後攻擊段數恢復至初始狀態。",
+        "fullDesc": "初始擁有{{1}}段攻擊段數。首先發動1段攻擊對指定敵方單體造成等同於米沙<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的冰屬性傷害，其餘每段攻擊對敵方隨機單體造成等同於米沙<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的冰屬性傷害。每段攻擊前有<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>的<u>基礎機率</u>使目標陷入凍結狀態，持續1回合。\\n凍結狀態下，敵方目標不能行動，同時每回合開始時受到等同於米沙<orangeStrong>{{4, percent}}%</orangeStrong>攻擊力的冰屬性<u>附加傷害</u>。\\n終結技最多累積{{5}}段攻擊段數，施放終結技後攻擊段數恢復至初始狀態。",
         "shortDesc": "對敵方單體造成少量冰屬性傷害，初始共彈射<orangeStrong>{{1}}</orangeStrong>次，最多共彈射<orangeStrong>{{5}}</orangeStrong>次。每段攻擊前有低機率使目標<orangeStrong>凍結</orangeStrong>。"
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "釋放",
-        "fullDesc": "終結技首段攻擊前，使目標陷入凍結狀態的基礎機率提高{{1}}%。",
+        "fullDesc": "終結技首段攻擊前，使目標陷入凍結狀態的基礎機率提高{{1, percent}}%。",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "鎖接",
-        "fullDesc": "施放終結技時，效果命中提高{{1}}%，持續至本次終結技行動結束。",
+        "fullDesc": "施放終結技時，效果命中提高{{1, percent}}%，持續至本次終結技行動結束。",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "傳衝",
-        "fullDesc": "對陷入凍結狀態的敵方目標造成傷害時，暴擊傷害提升{{1}}%。",
+        "fullDesc": "對陷入凍結狀態的敵方目標造成傷害時，暴擊傷害提升{{1, percent}}%。",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "青春的悵望",
-      "desc": "終結技每段攻擊前，有{{3}}%的基礎機率使目標防禦力降低{{1}}%，持續{{2}}回合。"
+      "desc": "終結技每段攻擊前，有{{3, percent}}%的基礎機率使目標防禦力降低{{1, percent}}%，持續{{2}}回合。"
     },
     "3": {
       "name": "歡樂年光的影子",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "親摯的音容",
-      "desc": "終結技每段攻擊的傷害倍率提高{{1}}%。"
+      "desc": "終結技每段攻擊的傷害倍率提高{{1, percent}}%。"
     },
     "5": {
       "name": "最初的愛與友誼",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "久已生疏的憧憬",
-      "desc": "施放終結技時，使自身造成的傷害提高{{2}}%，持續至自身回合結束，且下一次施放戰技後為我方恢復{{1}}個戰技點。"
+      "desc": "施放終結技時，使自身造成的傷害提高{{2, percent}}%，持續至自身回合結束，且下一次施放戰技後為我方恢復{{1}}個戰技點。"
     }
   }
 }

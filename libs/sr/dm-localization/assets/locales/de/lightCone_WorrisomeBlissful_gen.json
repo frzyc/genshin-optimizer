@@ -2,6 +2,6 @@
   "name": "Besorgt doch glückselig",
   "passive": {
     "name": "Einer nach dem Anderen",
-    "description": "Erhöht die KRIT-Rate des Trägers um <orangeStrong>{{1}}%</orangeStrong> und den durch Folgeangriffe verursachten SCH um <orangeStrong>{{2}}%</orangeStrong>. Wenn der Träger einen Folgeangriff ausführt, wird das Ziel in den Status „Zähmen“ versetzt. Dieser Effekt ist bis zu {{4}}-fach stapelbar. Wenn Verbündete Gegner im Status „Zähmen“ treffen, erhöht jede Stapelung von „Zähmen“ den verursachten KRIT-SCH um <orangeStrong>{{3}}%</orangeStrong>."
+    "description": "Erhöht die KRIT-Rate des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong> und den durch Folgeangriffe verursachten SCH um <orangeStrong>{{2, percent}}%</orangeStrong>. Wenn der Träger einen Folgeangriff ausführt, wird das Ziel in den Status „Zähmen“ versetzt. Dieser Effekt ist bis zu {{4}}-fach stapelbar. Wenn Verbündete Gegner im Status „Zähmen“ treffen, erhöht jede Stapelung von „Zähmen“ den verursachten KRIT-SCH um <orangeStrong>{{3, percent}}%</orangeStrong>."
   }
 }

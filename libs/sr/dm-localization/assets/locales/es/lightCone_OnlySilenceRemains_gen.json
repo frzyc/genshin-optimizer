@@ -2,6 +2,6 @@
   "name": "Solo queda silencio",
   "passive": {
     "name": "Registro",
-    "description": "Aumenta el ATQ del portador en un <orangeStrong>{{1}}%</orangeStrong>. Si hay 2 o menos enemigos en el campo de batalla, aumenta la Prob. CRIT del portador en un <orangeStrong>{{2}}%</orangeStrong>."
+    "description": "Aumenta el ATQ del portador en un <orangeStrong>{{1, percent}}%</orangeStrong>. Si hay 2 o menos enemigos en el campo de batalla, aumenta la Prob. CRIT del portador en un <orangeStrong>{{2, percent}}%</orangeStrong>."
   }
 }

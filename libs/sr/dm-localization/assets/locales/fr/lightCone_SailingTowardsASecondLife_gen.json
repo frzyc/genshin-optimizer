@@ -2,6 +2,6 @@
   "name": "Le début d'une seconde vie",
   "passive": {
     "name": "Navigation en eaux troubles",
-    "description": "Augmente l'effet de Rupture du porteur de <orangeStrong>{{1}}%</orangeStrong> et les DGT de rupture qu'il inflige ignorent <orangeStrong>{{3}}%</orangeStrong> de la DÉF de la cible. Lorsque l'effet de Rupture du porteur est supérieur ou égal à {{2}}%, sa VIT augmente de <orangeStrong>{{4}}%</orangeStrong>."
+    "description": "Augmente l'effet de Rupture du porteur de <orangeStrong>{{1, percent}}%</orangeStrong> et les DGT de rupture qu'il inflige ignorent <orangeStrong>{{3, percent}}%</orangeStrong> de la DÉF de la cible. Lorsque l'effet de Rupture du porteur est supérieur ou égal à {{2, percent}}%, sa VIT augmente de <orangeStrong>{{4, percent}}%</orangeStrong>."
   }
 }

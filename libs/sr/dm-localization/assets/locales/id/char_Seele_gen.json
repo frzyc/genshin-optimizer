@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Thwack",
-        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Seele pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Seele pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Sheathed Blade",
-        "fullDesc": "Meningkatkan {{2}}% SPD Seele, serta mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Seele pada 1 target musuh. Efek peningkatan SPD berlangsung selama {{3}} giliran.",
+        "fullDesc": "Meningkatkan {{2, percent}}% SPD Seele, serta mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Seele pada 1 target musuh. Efek peningkatan SPD berlangsung selama {{3}} giliran.",
         "shortDesc": "Mengakibatkan Quantum DMG pada 1 musuh dan meningkatkan SPD diri sendiri."
       }
     },
     "ult": {
       "0": {
         "name": "Butterfly Flurry",
-        "fullDesc": "Langsung memasuki status Buff dan mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Seele pada 1 target musuh.",
+        "fullDesc": "Langsung memasuki status Buff dan mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Seele pada 1 target musuh.",
         "shortDesc": "Memasuki <orangeStrong>status Buff</orangeStrong> dan mengakibatkan Quantum DMG dalam jumlah besar pada 1 musuh."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Nightshade",
-        "fullDesc": "Mengurangi peluang diserang oleh target musuh jika persentase HP saat ini kurang dari atau sama dengan {{1}}%.",
+        "fullDesc": "Mengurangi peluang diserang oleh target musuh jika persentase HP saat ini kurang dari atau sama dengan {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Lacerate",
-        "fullDesc": "Saat Seele dalam status buff, Quantum RES PEN dia meningkat {{1}}%.",
+        "fullDesc": "Saat Seele dalam status buff, Quantum RES PEN dia meningkat {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Rippling Waves",
-        "fullDesc": "Setelah melancarkan Basic Attack, mendahulukan {{1}}% aksi Seele yang selanjutnya.",
+        "fullDesc": "Setelah melancarkan Basic Attack, mendahulukan {{1, percent}}% aksi Seele yang selanjutnya.",
         "shortDesc": ""
       }
     }
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Extirpating Slash",
-      "desc": "Saat mengakibatkan DMG pada target musuh dengan persentase HP saat ini kurang dari atau sama dengan {{1}}%, CRIT Rate meningkat {{2}}%."
+      "desc": "Saat mengakibatkan DMG pada target musuh dengan persentase HP saat ini kurang dari atau sama dengan {{1, percent}}%, CRIT Rate meningkat {{2, percent}}%."
     },
     "2": {
       "name": "Dancing Butterfly",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Shattering Shambles",
-      "desc": "Setelah melancarkan Ultimate, musuh yang diserang akan memasuki status \"Butterfly Flurry\" selama {{2}} giliran. Target musuh yang berada dalam status \"Butterfly Flurry\" akan menerima Quantum DMG tambahan sebesar {{1}}% dari Ultimate DMG Seele setiap kali terkena serangan. Jika target tersebut gugur akibat DMG Tambahan dari \"Butterfly Flurry\" yang dipicu oleh rekan lain, maka Talent Seele tidak akan terpicu.\\nJika Seele gugur, maka status \"Butterfly Flurry\" yang ada pada musuh akan dihapus."
+      "desc": "Setelah melancarkan Ultimate, musuh yang diserang akan memasuki status \"Butterfly Flurry\" selama {{2}} giliran. Target musuh yang berada dalam status \"Butterfly Flurry\" akan menerima Quantum DMG tambahan sebesar {{1, percent}}% dari Ultimate DMG Seele setiap kali terkena serangan. Jika target tersebut gugur akibat DMG Tambahan dari \"Butterfly Flurry\" yang dipicu oleh rekan lain, maka Talent Seele tidak akan terpicu.\\nJika Seele gugur, maka status \"Butterfly Flurry\" yang ada pada musuh akan dihapus."
     }
   }
 }

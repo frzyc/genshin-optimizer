@@ -2,6 +2,6 @@
   "name": "Volveremos a encontrarnos",
   "passive": {
     "name": "El discurso de las armas",
-    "description": "Cuando el portador usa su ATQ básico o su habilidad básica, inflige un daño adicional equivalente al <orangeStrong>{{1}}%</orangeStrong> de su ATQ a un enemigo al azar de los atacados."
+    "description": "Cuando el portador usa su ATQ básico o su habilidad básica, inflige un daño adicional equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ a un enemigo al azar de los atacados."
   }
 }

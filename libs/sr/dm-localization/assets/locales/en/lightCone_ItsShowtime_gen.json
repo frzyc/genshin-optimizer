@@ -2,6 +2,6 @@
   "name": "It's Showtime",
   "passive": {
     "name": "Self-Amusement",
-    "description": "When the wearer inflicts a debuff on an enemy, gains a stack of Trick. Every stack of Trick increases the wearer's DMG dealt by <orangeStrong>{{1}}%</orangeStrong>, stacking up to {{2}} time(s). This effect lasts for {{3}} turn(s). When the wearer's Effect Hit Rate is {{4}}% or higher, increases ATK by <orangeStrong>{{5}}%</orangeStrong>."
+    "description": "When the wearer inflicts a debuff on an enemy, gains a stack of Trick. Every stack of Trick increases the wearer's DMG dealt by <orangeStrong>{{1, percent}}%</orangeStrong>, stacking up to {{2}} time(s). This effect lasts for {{3}} turn(s). When the wearer's Effect Hit Rate is {{4, percent}}% or higher, increases ATK by <orangeStrong>{{5, percent}}%</orangeStrong>."
   }
 }

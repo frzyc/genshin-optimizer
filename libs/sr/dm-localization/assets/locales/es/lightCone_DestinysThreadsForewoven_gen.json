@@ -2,6 +2,6 @@
   "name": "Los hilos del destino",
   "passive": {
     "name": "Cognición",
-    "description": "La RES a efecto del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Por cada {{2}} pts. de DEF del portador, el daño que inflige aumenta en un <orangeStrong>{{3}}%</orangeStrong>, hasta un máximo de un <orangeStrong>{{4}}%</orangeStrong> de aumento de daño."
+    "description": "La RES a efecto del portador aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong>. Por cada {{2}} pts. de DEF del portador, el daño que inflige aumenta en un <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, hasta un máximo de un <orangeStrong>{{4, percent}}%</orangeStrong> de aumento de daño."
   }
 }

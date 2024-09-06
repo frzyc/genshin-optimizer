@@ -1,7 +1,7 @@
 {
   "setName": "Cazador del bosque glacial",
   "setEffects": {
-    "2": "Daño de Hielo +{{1}}%.",
-    "4": "Cuando el portador usa la habilidad definitiva, el Daño CRIT aumenta en un {{1}}% durante {{2}} turnos."
+    "2": "Daño de Hielo +{{1, percent}}%.",
+    "4": "Cuando el portador usa la habilidad definitiva, el Daño CRIT aumenta en un {{1, percent}}% durante {{2}} turnos."
   }
 }

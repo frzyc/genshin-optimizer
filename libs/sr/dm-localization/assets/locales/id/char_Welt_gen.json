@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Gravity Suppression",
-        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Welt pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Welt pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Edge of the Void",
-        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Welt pada 1 musuh yang ditarget, serta mengakibatkan 2 serangan tambahan yang masing-masing mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Welt pada musuh secara acak. Saat serangan mengenai musuh, ada <orangeStrong>{{2}}%</orangeStrong> <u>peluang dasar</u> untuk mengurangi {{3}}% SPD musuh tersebut selama {{4}} giliran.",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Welt pada 1 musuh yang ditarget, serta mengakibatkan 2 serangan tambahan yang masing-masing mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Welt pada musuh secara acak. Saat serangan mengenai musuh, ada <orangeStrong>{{2, percent}}%</orangeStrong> <u>peluang dasar</u> untuk mengurangi {{3, percent}}% SPD musuh tersebut selama {{4}} giliran.",
         "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh, total Bounce 3 kali dan berpeluang untuk <orangeStrong>memberikan status Slow</orangeStrong> pada target."
       }
     },
     "ult": {
       "0": {
         "name": "Synthetic Black Hole",
-        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Welt pada seluruh musuh. Target musuh yang terkena serangan memiliki {{3}}% <u>peluang dasar</u> untuk memasuki status Imprisonment selama 1 giliran.\\nSelama dalam status Imprisonment, target musuh mengalami <u>penundaan aksi</u> sebesar <orangeStrong>{{2}}%</orangeStrong> dan SPD berkurang {{4}}%.",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Welt pada seluruh musuh. Target musuh yang terkena serangan memiliki {{3, percent}}% <u>peluang dasar</u> untuk memasuki status Imprisonment selama 1 giliran.\\nSelama dalam status Imprisonment, target musuh mengalami <u>penundaan aksi</u> sebesar <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> dan SPD berkurang {{4, percent}}%.",
         "shortDesc": "Mengakibatkan Imaginary DMG pada seluruh musuh dan <orangeStrong>berpeluang besar memberikan status Imprisonment pada musuh</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Gravitational Imprisonment",
-        "fullDesc": "Setelah menggunakan Technique, Welt akan menciptakan sebuah dimensi khusus selama {{4}} detik. Movement SPD musuh yang berada di dalam dimensi khusus akan berkurang {{5}}%. Setelah memasuki pertempuran dengan musuh dalam dimensi khusus, ada {{1}}% <u>peluang dasar</u> untuk membuat target musuh memasuki status Imprisonment selama 1 giliran.\\nSelama dalam status Imprisonment, target musuh akan mengalami {{2}}% <u>penundaan aksi</u> dan SPD berkurang {{3}}%. Hanya boleh ada 1 efek dimensi khusus ciptaan rekan tim dalam satu waktu.",
+        "fullDesc": "Setelah menggunakan Technique, Welt akan menciptakan sebuah dimensi khusus selama {{4}} detik. Movement SPD musuh yang berada di dalam dimensi khusus akan berkurang {{5, percent}}%. Setelah memasuki pertempuran dengan musuh dalam dimensi khusus, ada {{1, percent}}% <u>peluang dasar</u> untuk membuat target musuh memasuki status Imprisonment selama 1 giliran.\\nSelama dalam status Imprisonment, target musuh akan mengalami {{2, percent}}% <u>penundaan aksi</u> dan SPD berkurang {{3, percent}}%. Hanya boleh ada 1 efek dimensi khusus ciptaan rekan tim dalam satu waktu.",
         "shortDesc": "Menciptakan dimensi khusus. Movement SPD musuh dalam dimensi khusus akan berkurang. Setelah memasuki pertempuran dengan musuh dalam dimensi khusus, <orangeStrong>berpeluang besar untuk membuat target musuh memasuki status Imprisonment</orangeStrong>."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Retribution",
-        "fullDesc": "Saat melancarkan Ultimate, ada {{1}}% peluang dasar untuk meningkatkan {{2}}% DMG yang diterima target selama {{3}} giliran.",
+        "fullDesc": "Saat melancarkan Ultimate, ada {{1, percent}}% peluang dasar untuk meningkatkan {{2, percent}}% DMG yang diterima target selama {{3}} giliran.",
         "shortDesc": ""
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Punishment",
-        "fullDesc": "Meningkatkan {{1}}% DMG pada target musuh yang terkena Weakness Break.",
+        "fullDesc": "Meningkatkan {{1, percent}}% DMG pada target musuh yang terkena Weakness Break.",
         "shortDesc": ""
       }
     }
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Legacy of Honor",
-      "desc": "Setelah melancarkan Ultimate, Welt akan mendapat peningkatan kekuatan. {{3}} Basic Attack atau Skill setelahnya akan mengakibatkan 1 kali DMG Tambahan pada target musuh. DMG Multiplier dari DMG Tambahan yang disebabkan Basic Attack adalah {{1}}% dari DMG Multiplier Basic Attack Welt, sedangkan DMG Multiplier dari DMG Tambahan yang disebabkan Skill adalah {{2}}% dari DMG Multiplier Skill Welt."
+      "desc": "Setelah melancarkan Ultimate, Welt akan mendapat peningkatan kekuatan. {{3}} Basic Attack atau Skill setelahnya akan mengakibatkan 1 kali DMG Tambahan pada target musuh. DMG Multiplier dari DMG Tambahan yang disebabkan Basic Attack adalah {{1, percent}}% dari DMG Multiplier Basic Attack Welt, sedangkan DMG Multiplier dari DMG Tambahan yang disebabkan Skill adalah {{2, percent}}% dari DMG Multiplier Skill Welt."
     },
     "2": {
       "name": "Conflux of Stars",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Appellation of Justice",
-      "desc": "Saat melancarkan Skill, meningkatkan {{1}}% peluang dasar untuk mengurangi SPD target musuh yang terkena serangan."
+      "desc": "Saat melancarkan Skill, meningkatkan {{1, percent}}% peluang dasar untuk mengurangi SPD target musuh yang terkena serangan."
     },
     "5": {
       "name": "Power of Kindness",

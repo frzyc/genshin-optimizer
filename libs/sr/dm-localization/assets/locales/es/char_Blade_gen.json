@@ -4,33 +4,33 @@
     "basic": {
       "0": {
         "name": "Espada fragmentada",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Blade como Daño de Viento a un enemigo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Blade como Daño de Viento a un enemigo.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo."
       },
       "1": {
         "name": "Bosque de espadas",
-        "fullDesc": "Consume el {{1}}% de los PV máx. de Blade e inflige un Daño de Viento equivalente al <orangeStrong>{{2}}%</orangeStrong> del ATQ de Blade + <orangeStrong>{{4}}%</orangeStrong> de sus PV máx. a un enemigo. También inflige un Daño de Viento equivalente al <orangeStrong>{{3}}%</orangeStrong> del ATQ de Blade + <orangeStrong>{{5}}%</orangeStrong> de sus PV máx. a los enemigos adyacentes.\\nSi Blade no tiene suficientes PV, tras usar Bosque de espadas sus PV se reducen a 1.\\nBosque de espadas no puede recuperar pts. de habilidad básica.",
+        "fullDesc": "Consume el {{1, percent}}% de los PV máx. de Blade e inflige un Daño de Viento equivalente al <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Blade + <orangeStrong>{{4, percent}}%</orangeStrong> de sus PV máx. a un enemigo. También inflige un Daño de Viento equivalente al <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Blade + <orangeStrong>{{5, percent}}%</orangeStrong> de sus PV máx. a los enemigos adyacentes.\\nSi Blade no tiene suficientes PV, tras usar Bosque de espadas sus PV se reducen a 1.\\nBosque de espadas no puede recuperar pts. de habilidad básica.",
         "shortDesc": "Consume PV e inflige Daño de Viento a un enemigo y una pequeña cantidad de Daño de Viento a los enemigos adyacentes."
       }
     },
     "skill": {
       "0": {
         "name": "Panorama infernal",
-        "fullDesc": "Consume un {{1}}% de los PV máx. de Blade y entra en el estado Panorama infernal.\\nEn el estado Panorama infernal no se puede usar la habilidad básica y el daño que inflige Blade aumenta en un <orangeStrong>{{4}}%</orangeStrong>. El ATQ básico Espada fragmentada se potencia y se transforma en Bosque de espadas durante {{2}} turnos.\\nSi Blade no tiene suficientes PV, al usar la habilidad básica sus PV se reducen a 1.\\nEsta habilidad básica no recupera energía. Tras usar esta habilidad básica, el turno no termina.",
+        "fullDesc": "Consume un {{1, percent}}% de los PV máx. de Blade y entra en el estado Panorama infernal.\\nEn el estado Panorama infernal no se puede usar la habilidad básica y el daño que inflige Blade aumenta en un <orangeStrong>{{4, percent}}%</orangeStrong>. El ATQ básico Espada fragmentada se potencia y se transforma en Bosque de espadas durante {{2}} turnos.\\nSi Blade no tiene suficientes PV, al usar la habilidad básica sus PV se reducen a 1.\\nEsta habilidad básica no recupera energía. Tras usar esta habilidad básica, el turno no termina.",
         "shortDesc": "Consume sus PV, <orangeStrong>potencia su ATQ básico</orangeStrong> y el turno no termina."
       }
     },
     "ult": {
       "0": {
         "name": "Sentencia de muerte",
-        "fullDesc": "Los PV actuales de Blade se establecen en el 50% de sus PV máx. e inflige a un enemigo un Daño de Viento equivalente al <orangeStrong>{{1}}%</orangeStrong> del ATQ de Blade + <orangeStrong>{{2}}%</orangeStrong> de sus PV máx. + <orangeStrong>{{5}}%</orangeStrong> del recuento de PV que ha perdido en esta batalla. También inflige a los enemigos adyacentes un Daño de Viento equivalente al <orangeStrong>{{3}}%</orangeStrong> del ATQ de Blade + <orangeStrong>{{4}}%</orangeStrong> de sus PV máx. + <orangeStrong>{{6}}%</orangeStrong> del recuento de PV que ha perdido en esta batalla.\\nEl recuento de PV perdidos en esta batalla no puede superar el {{7}}% de los PV máx. de Blade. Al usar su habilidad definitiva, este recuento se reinicia.",
+        "fullDesc": "Los PV actuales de Blade se establecen en el 50% de sus PV máx. e inflige a un enemigo un Daño de Viento equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Blade + <orangeStrong>{{2, percent}}%</orangeStrong> de sus PV máx. + <orangeStrong>{{5, percent}}%</orangeStrong> del recuento de PV que ha perdido en esta batalla. También inflige a los enemigos adyacentes un Daño de Viento equivalente al <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> del ATQ de Blade + <orangeStrong>{{4, percent}}%</orangeStrong> de sus PV máx. + <orangeStrong>{{6, percent}}%</orangeStrong> del recuento de PV que ha perdido en esta batalla.\\nEl recuento de PV perdidos en esta batalla no puede superar el {{7, percent}}% de los PV máx. de Blade. Al usar su habilidad definitiva, este recuento se reinicia.",
         "shortDesc": "Los PV actuales se establecen en el 50% de sus PV máx., inflige una gran cantidad de Daño de Viento a un enemigo y Daño de Viento a los enemigos adyacentes."
       }
     },
     "technique": {
       "0": {
         "name": "Viento kármico",
-        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Blade consume una cantidad de PV equivalente al {{2}}% de sus PV máx. e inflige un {{1}}% de sus PV máx. como Daño de Viento a todos los enemigos.\\nSi no tiene suficientes PV, al usar la técnica los PV de Blade se reducen a 1.",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Blade consume una cantidad de PV equivalente al {{2, percent}}% de sus PV máx. e inflige un {{1, percent}}% de sus PV máx. como Daño de Viento a todos los enemigos.\\nSi no tiene suficientes PV, al usar la técnica los PV de Blade se reducen a 1.",
         "shortDesc": "Ataca al enemigo y entra en combate. Consume sus PV e inflige Daño de Viento a todos los enemigos."
       }
     },
@@ -44,21 +44,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Vida infinita",
-        "fullDesc": "Si el porcentaje de PV de Blade es igual o inferior al 50% de sus PV máx., su curación recibida aumenta en un {{1}}%.",
+        "fullDesc": "Si el porcentaje de PV de Blade es igual o inferior al 50% de sus PV máx., su curación recibida aumenta en un {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Muertes incesantes",
-        "fullDesc": "Tras usar Bosque de espadas, si Blade golpea a un enemigo afectado por Ruptura de Debilidad, regenera una cantidad de PV equivalente al {{1}}% de sus PV máx. + {{2}}.",
+        "fullDesc": "Tras usar Bosque de espadas, si Blade golpea a un enemigo afectado por Ruptura de Debilidad, regenera una cantidad de PV equivalente al {{1, percent}}% de sus PV máx. + {{2}}.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Ciclón destructivo",
-        "fullDesc": "El daño de ataque adicional infligido por el talento aumenta en un {{1}}%.",
+        "fullDesc": "El daño de ataque adicional infligido por el talento aumenta en un {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "La espada que atraviesa el infierno",
-      "desc": "El daño que inflige la habilidad definitiva de Blade a un enemigo determinado aumenta en una cantidad adicional equivalente al {{1}}% del recuento de PV que ha perdido en esta batalla.\\nEl recuento de PV perdidos en esta batalla no puede superar el {{2}}% de los PV máx. de Blade. Al usar su habilidad definitiva, este recuento se reinicia."
+      "desc": "El daño que inflige la habilidad definitiva de Blade a un enemigo determinado aumenta en una cantidad adicional equivalente al {{1, percent}}% del recuento de PV que ha perdido en esta batalla.\\nEl recuento de PV perdidos en esta batalla no puede superar el {{2, percent}}% de los PV máx. de Blade. Al usar su habilidad definitiva, este recuento se reinicia."
     },
     "2": {
       "name": "Mil pesares por un sueño roto",
-      "desc": "Cuando Blade está en el estado Panorama infernal, su Prob. CRIT aumenta en un {{1}}%."
+      "desc": "Cuando Blade está en el estado Panorama infernal, su Prob. CRIT aumenta en un {{1, percent}}%."
     },
     "3": {
       "name": "Acero templado para sangrar sombras",
@@ -78,7 +78,7 @@
     },
     "4": {
       "name": "Rechazado por la muerte, infectado por la vida",
-      "desc": "Cuando el porcentaje de PV pasa de ser superior al 50% a igual o inferior al 50%, los PV máx. aumentan en un {{1}}%. Este efecto se puede acumular hasta {{2}} veces."
+      "desc": "Cuando el porcentaje de PV pasa de ser superior al 50% a igual o inferior al 50%, los PV máx. aumentan en un {{1, percent}}%. Este efecto se puede acumular hasta {{2}} veces."
     },
     "5": {
       "name": "Muerte a ojos de los Diez Líderes",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Renacimiento en un cuerpo vacío",
-      "desc": "El límite de acumulaciones de carga se reduce a 4. El daño infligido por el ataque adicional del talento aumenta en una cantidad equivalente al {{1}}% de los PV máx. de Blade."
+      "desc": "El límite de acumulaciones de carga se reduce a 4. El daño infligido por el ataque adicional del talento aumenta en una cantidad equivalente al {{1, percent}}% de los PV máx. de Blade."
     }
   }
 }

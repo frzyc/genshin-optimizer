@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Parfum entêtant",
-        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Ruan Mei à une cible unique.",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Ruan Mei à une cible unique.",
         "shortDesc": "Inflige des DGT de glace mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Chant lancinant des cordes",
-        "fullDesc": "Ruan Mei gagne Tonalité après avoir utilisé sa compétence, pour une durée de {{3}} tours. Cette durée diminue de 1 au début de chaque tour de Ruan Mei. Les DGT de tous les alliés augmentent de <orangeStrong>{{1}}%</orangeStrong> lorsque Ruan Mei bénéficie de Tonalité et leur efficacité de Rupture de faiblesse augmente de {{2}}%.",
+        "fullDesc": "Ruan Mei gagne Tonalité après avoir utilisé sa compétence, pour une durée de {{3}} tours. Cette durée diminue de 1 au début de chaque tour de Ruan Mei. Les DGT de tous les alliés augmentent de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> lorsque Ruan Mei bénéficie de Tonalité et leur efficacité de Rupture de faiblesse augmente de {{2, percent}}%.",
         "shortDesc": "Ruan Mei gagne Tonalité après avoir utilisé sa compétence. Les <orangeStrong>DGT</orangeStrong> et l'<orangeStrong>efficacité de Rupture de faiblesse</orangeStrong> de tous les alliés augmentent quand Ruan Mei bénéficie de cet effet."
       }
     },
     "ult": {
       "0": {
         "name": "Ondée de pétales",
-        "fullDesc": "Ruan Mei déploie une zone qui dure {{2}} tours. La durée de cette zone diminue de 1 au début de son tour.\\nLa PÉN de RÉS à tous les types de tous les alliés augmente de <orangeStrong>{{1}}%</orangeStrong> lorsqu'ils se trouvent à l'intérieur de la zone et leurs attaques appliquent Floraison incomplète aux ennemis touchés.\\nFloraison incomplète se déclenche lorsque ces ennemis tentent de se rétablir d'une <u>Rupture de faiblesse</u>, ce qui prolonge la durée de leur état de <u>Rupture de faiblesse</u> et <u>retarde leur action</u> à hauteur de {{3}}% de l'effet de Rupture de Ruan Mei + {{4}}%, tout en infligeant des DGT de rupture équivalents à <orangeStrong>{{5}}%</orangeStrong> des <u>DGT de rupture</u> de glace de Ruan Mei.\\nLes cibles ennemies ne peuvent pas subir à nouveau Floraison incomplète tant qu'elles n'ont pas récupéré de l'état de <u>Rupture de faiblesse</u>.",
+        "fullDesc": "Ruan Mei déploie une zone qui dure {{2}} tours. La durée de cette zone diminue de 1 au début de son tour.\\nLa PÉN de RÉS à tous les types de tous les alliés augmente de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> lorsqu'ils se trouvent à l'intérieur de la zone et leurs attaques appliquent Floraison incomplète aux ennemis touchés.\\nFloraison incomplète se déclenche lorsque ces ennemis tentent de se rétablir d'une <u>Rupture de faiblesse</u>, ce qui prolonge la durée de leur état de <u>Rupture de faiblesse</u> et <u>retarde leur action</u> à hauteur de {{3, percent}}% de l'effet de Rupture de Ruan Mei + {{4, percent}}%, tout en infligeant des DGT de rupture équivalents à <orangeStrong>{{5, percent}}%</orangeStrong> des <u>DGT de rupture</u> de glace de Ruan Mei.\\nLes cibles ennemies ne peuvent pas subir à nouveau Floraison incomplète tant qu'elles n'ont pas récupéré de l'état de <u>Rupture de faiblesse</u>.",
         "shortDesc": "Augmente la <orangeStrong>PÉN de RÉS à tous les types</orangeStrong> pour tous les alliés. Leurs attaques appliquent Floraison incomplète aux ennemis touchés."
       }
     },
     "technique": {
       "0": {
         "name": "Sérénade de soie",
-        "fullDesc": "Obtient Sérénade de soie après avoir utilisé la technique. Déclenche automatiquement la compétence sans utiliser de point de compétence {{1}} fois au début du combat suivant.\\nDans l'Univers simulé ou parallèle, lorsque Ruan Mei bénéficie de Sérénade de soie et que l'équipe attaque activement une cible ennemie, la Faiblesse de l'ennemi est toujours considérée comme ayant été attaquée pour entrer en combat, et cette attaque peut réduire la robustesse de tous les ennemis quel que soit leur type de faiblesse. Lorsque vous infligez une Rupture de faiblesse, vous déclenchez l'effet de Rupture correspondant au type de faiblesse de l'assaillant. Augmente la réduction de robustesse de cette attaque de {{2}}% pour chaque bénédiction possédée (un maximum de {{4}} bénédictions sont prises en compte). D'autre part, inflige à l'ennemi des DGT de rupture équivalents à {{3}}% des DGT de rupture de glace de Ruan Mei si cette attaque provoque une Rupture de faiblesse à un ennemi.",
+        "fullDesc": "Obtient Sérénade de soie après avoir utilisé la technique. Déclenche automatiquement la compétence sans utiliser de point de compétence {{1}} fois au début du combat suivant.\\nDans l'Univers simulé ou parallèle, lorsque Ruan Mei bénéficie de Sérénade de soie et que l'équipe attaque activement une cible ennemie, la Faiblesse de l'ennemi est toujours considérée comme ayant été attaquée pour entrer en combat, et cette attaque peut réduire la robustesse de tous les ennemis quel que soit leur type de faiblesse. Lorsque vous infligez une Rupture de faiblesse, vous déclenchez l'effet de Rupture correspondant au type de faiblesse de l'assaillant. Augmente la réduction de robustesse de cette attaque de {{2, percent}}% pour chaque bénédiction possédée (un maximum de {{4}} bénédictions sont prises en compte). D'autre part, inflige à l'ennemi des DGT de rupture équivalents à {{3, percent}}% des DGT de rupture de glace de Ruan Mei si cette attaque provoque une Rupture de faiblesse à un ennemi.",
         "shortDesc": "Déclenche automatiquement la compétence de ce personnage <orangeStrong>{{1}}</orangeStrong> fois la prochaine fois qu'il entre en combat. Après avoir utilisé la technique, les alliés qui attaquent des ennemis dans l'Univers simulé ou parallèle sont toujours considérés comme entrant en combat après avoir attaqué la Faiblesse des ennemis, et la robustesse des ennemis est réduite <orangeStrong>quel que soit leur type de faiblesse</orangeStrong>. Augmente la réduction de robustesse et les DGT de rupture infligés en cas de Rupture de faiblesse pour chaque bénédiction possédée."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Respiration inerte",
-        "fullDesc": "Augmente l'effet de Rupture de tous les alliés de {{1}}%.",
+        "fullDesc": "Augmente l'effet de Rupture de tous les alliés de {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Bougie sur les flots",
-        "fullDesc": "En combat, pour chaque {{2}}% d'effet de Rupture de Ruan Mei qui dépasse {{1}}%, la compétence de Ruan Mei augmente les DGT de tous les alliés de {{3}}% supplémentaires, jusqu'à un maximum de {{4}}%.",
+        "fullDesc": "En combat, pour chaque {{2, percent}}% d'effet de Rupture de Ruan Mei qui dépasse {{1, percent}}%, la compétence de Ruan Mei augmente les DGT de tous les alliés de {{3, percent}}% supplémentaires, jusqu'à un maximum de {{4, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Schéma neuronal",
-      "desc": "Lorsque que la zone générée par l'ultime est déployée, les DGT infligés par tous les alliés ignorent {{1}}% de la DÉF des cibles."
+      "desc": "Lorsque que la zone générée par l'ultime est déployée, les DGT infligés par tous les alliés ignorent {{1, percent}}% de la DÉF des cibles."
     },
     "2": {
       "name": "Promenade au bord des roseaux",
-      "desc": "Lorsque Ruan Mei est sur le champ de bataille, l'ATQ de tous les alliés augmente de {{1}}% lorsqu'ils infligent des DGT à des ennemis en état de Rupture de faiblesse."
+      "desc": "Lorsque Ruan Mei est sur le champ de bataille, l'ATQ de tous les alliés augmente de {{1, percent}}% lorsqu'ils infligent des DGT à des ennemis en état de Rupture de faiblesse."
     },
     "3": {
       "name": "Virevolte viridescente",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Éclat chatoyant",
-      "desc": "L'effet de Rupture de Ruan Mei augmente de {{1}}% pendant {{2}} tours en cas de Rupture de faiblesse d'une cible ennemie."
+      "desc": "L'effet de Rupture de Ruan Mei augmente de {{1, percent}}% pendant {{2}} tours en cas de Rupture de faiblesse d'une cible ennemie."
     },
     "5": {
       "name": "Barrette de languissement",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Cascade de rubans",
-      "desc": "Prolonge la durée de la zone générée par l'ultime de {{1}} tour. D'autre part, le multiplicateur des DGT de rupture du talent augmente de {{2}}%."
+      "desc": "Prolonge la durée de la zone générée par l'ultime de {{1}} tour. D'autre part, le multiplicateur des DGT de rupture du talent augmente de {{2, percent}}%."
     }
   }
 }

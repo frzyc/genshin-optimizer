@@ -2,6 +2,6 @@
   "name": "Le temps n'attend pas",
   "passive": {
     "name": "Matin, midi, crépuscule et nuit",
-    "description": "Augmente les PV max du porteur de <orangeStrong>{{1}}%</orangeStrong> et les soins qu'il prodigue de <orangeStrong>{{2}}%</orangeStrong>. Lorsque le porteur soigne un allié, la quantité de soins prodigués est enregistrée. Lorsqu'un allié lance une attaque, un ennemi aléatoire parmi ceux attaqués subit des DGT additionnels équivalents à <orangeStrong>{{3}}%</orangeStrong> des soins prodigués enregistrés. Le type des DGT additionnels est le même que celui du porteur. Ces DGT additionnels ne sont pas affectés par d'autres bonus et ne peuvent être infligés qu'1 fois par tour."
+    "description": "Augmente les PV max du porteur de <orangeStrong>{{1, percent}}%</orangeStrong> et les soins qu'il prodigue de <orangeStrong>{{2, percent}}%</orangeStrong>. Lorsque le porteur soigne un allié, la quantité de soins prodigués est enregistrée. Lorsqu'un allié lance une attaque, un ennemi aléatoire parmi ceux attaqués subit des DGT additionnels équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> des soins prodigués enregistrés. Le type des DGT additionnels est le même que celui du porteur. Ces DGT additionnels ne sont pas affectés par d'autres bonus et ne peuvent être infligés qu'1 fois par tour."
   }
 }

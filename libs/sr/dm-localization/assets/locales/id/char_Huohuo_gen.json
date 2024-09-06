@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Banner: Stormcaller",
-        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1}}%</orangeStrong> Max HP Huohuo pada 1 musuh yang ditarget.",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> Max HP Huohuo pada 1 musuh yang ditarget.",
         "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Talisman: Protection",
-        "fullDesc": "Menghapus {{5}} <u>Debuff</u> milik 1 rekan tim yang ditargetkan dan segera memulihkan HP sebesar <orangeStrong>{{1}}%</orangeStrong> Max HP Huohuo + <orangeStrong>{{2}}</orangeStrong> pada rekan tersebut. Di saat yang bersamaan, memulihkan HP sebesar <orangeStrong>{{3}}%</orangeStrong> Max HP Huohuo + <orangeStrong>{{4}}</orangeStrong> pada target di sekitarnya.",
+        "fullDesc": "Menghapus {{5}} <u>Debuff</u> milik 1 rekan tim yang ditargetkan dan segera memulihkan HP sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Max HP Huohuo + <orangeStrong>{{2}}</orangeStrong> pada rekan tersebut. Di saat yang bersamaan, memulihkan HP sebesar <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> Max HP Huohuo + <orangeStrong>{{4}}</orangeStrong> pada target di sekitarnya.",
         "shortDesc": "Menghapus 1 <u>Debuff</u> milik 1 rekan tim dan <orangeStrong>memulihkan HP</orangeStrong> rekan tersebut dan target di sekitarnya."
       }
     },
     "ult": {
       "0": {
         "name": "Tail: Spiritual Domination",
-        "fullDesc": "Memulihkan Energy rekan tim selain diri sendiri sebesar <orangeStrong>{{1}}%</orangeStrong> Max Energy mereka masing-masing. Di saat yang bersamaan, meningkatkan ATK mereka sebesar <orangeStrong>{{2}}%</orangeStrong> selama {{3}} giliran.",
+        "fullDesc": "Memulihkan Energy rekan tim selain diri sendiri sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Max Energy mereka masing-masing. Di saat yang bersamaan, meningkatkan ATK mereka sebesar <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> selama {{3}} giliran.",
         "shortDesc": "<orangeStrong>Memulihkan Energy</orangeStrong> untuk rekan tim selain diri sendiri, serta <orangeStrong>meningkatkan ATK</orangeStrong> mereka."
       }
     },
     "technique": {
       "0": {
         "name": "Fiend: Impeachment of Evil",
-        "fullDesc": "Huohuo meneror musuh di sekitarnya, membuat musuh memasuki status \"Horror-Struck\". Musuh yang berstatus \"Horror-Struck\" akan lari menjauhi Huohuo selama {{4}} detik. Setelah memasuki pertempuran dengan musuh yang berstatus \"Horror-Struck\", memiliki {{1}}% <u>peluang dasar</u> untuk mengurangi {{2}}% ATK setiap target selama {{3}} giliran.",
+        "fullDesc": "Huohuo meneror musuh di sekitarnya, membuat musuh memasuki status \"Horror-Struck\". Musuh yang berstatus \"Horror-Struck\" akan lari menjauhi Huohuo selama {{4}} detik. Setelah memasuki pertempuran dengan musuh yang berstatus \"Horror-Struck\", memiliki {{1, percent}}% <u>peluang dasar</u> untuk mengurangi {{2, percent}}% ATK setiap target selama {{3}} giliran.",
         "shortDesc": "Membuat musuh di sekitarnya memasuki status \"Horror-Struck\". Setelah memasuki pertempuran dengan musuh yang berstatus \"Horror-Struck\", berpeluang besar <orangeStrong>mengurangi ATK</orangeStrong> target musuh."
       }
     },
@@ -46,7 +46,7 @@
     "bonusAbility2": {
       "0": {
         "name": "The Cursed One",
-        "fullDesc": "Meningkatkan {{1}}% peluang untuk menahan Crowd Control Debuff.",
+        "fullDesc": "Meningkatkan {{1, percent}}% peluang untuk menahan Crowd Control Debuff.",
         "shortDesc": ""
       }
     },
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Anchored to Vessel, Specters Nestled",
-      "desc": "Durasi \"Divine Provision\" yang dihasilkan Talent bertambah {{2}} giliran, dan saat Huohuo memiliki \"Divine Provision\", SPD seluruh rekan tim meningkat {{1}}%."
+      "desc": "Durasi \"Divine Provision\" yang dihasilkan Talent bertambah {{2}} giliran, dan saat Huohuo memiliki \"Divine Provision\", SPD seluruh rekan tim meningkat {{1, percent}}%."
     },
     "2": {
       "name": "Sealed in Tail, Wraith Subdued",
-      "desc": "Saat Huohuo memiliki \"Divine Provision\", jika rekan tim terkena serangan mematikan, rekan tersebut tidak akan gugur dan HP-nya akan segera dipulihkan sebesar {{1}}% Max HP rekan tersebut. Hal ini akan mengurangi durasi \"Divine Provision\" sebanyak 1 giliran. Efek ini dapat terpicu {{2}} kali dalam 1 pertempuran."
+      "desc": "Saat Huohuo memiliki \"Divine Provision\", jika rekan tim terkena serangan mematikan, rekan tersebut tidak akan gugur dan HP-nya akan segera dipulihkan sebesar {{1, percent}}% Max HP rekan tersebut. Hal ini akan mengurangi durasi \"Divine Provision\" sebanyak 1 giliran. Efek ini dapat terpicu {{2}} kali dalam 1 pertempuran."
     },
     "3": {
       "name": "Cursed by Fate, Moths to Flame",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Tied in Life, Bound to Strife",
-      "desc": "Saat melancarkan Skill atau memicu Talent untuk memulihkan rekan tim, semakin rendah HP target saat ini, maka semakin tinggi pemulihannya. Maksimal meningkatkan Outgoing Healing (pemulihan) yang diberikan Huohuo hingga {{1}}%."
+      "desc": "Saat melancarkan Skill atau memicu Talent untuk memulihkan rekan tim, semakin rendah HP target saat ini, maka semakin tinggi pemulihannya. Maksimal meningkatkan Outgoing Healing (pemulihan) yang diberikan Huohuo hingga {{1, percent}}%."
     },
     "5": {
       "name": "Mandated by Edict, Evils Evicted",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Woven Together, Cohere Forever",
-      "desc": "Saat memulihkan rekan tim, meningkatkan {{1}}% DMG yang diakibatkan target selama {{2}} giliran."
+      "desc": "Saat memulihkan rekan tim, meningkatkan {{1, percent}}% DMG yang diakibatkan target selama {{2}} giliran."
     }
   }
 }

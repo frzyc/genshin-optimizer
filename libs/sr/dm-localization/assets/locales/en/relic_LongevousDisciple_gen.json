@@ -1,7 +1,7 @@
 {
   "setName": "Longevous Disciple",
   "setEffects": {
-    "2": "Increases Max HP by {{1}}%.",
-    "4": "When the wearer is hit or has their HP consumed by an ally or themselves, their CRIT Rate increases by {{1}}% for {{2}} turn(s) and up to {{3}} stacks."
+    "2": "Increases Max HP by {{1, percent}}%.",
+    "4": "When the wearer is hit or has their HP consumed by an ally or themselves, their CRIT Rate increases by {{1, percent}}% for {{2}} turn(s) and up to {{3}} stacks."
   }
 }

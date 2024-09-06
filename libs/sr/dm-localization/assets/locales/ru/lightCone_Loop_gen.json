@@ -2,6 +2,6 @@
   "name": "Петля",
   "passive": {
     "name": "Погоня",
-    "description": "Урон владельца, наносимый противникам со статусом Замедление, повышается на <orangeStrong>{{1}}%</orangeStrong>."
+    "description": "Урон владельца, наносимый противникам со статусом Замедление, повышается на <orangeStrong>{{1, percent}}%</orangeStrong>."
   }
 }

@@ -2,6 +2,6 @@
   "name": "{RUBY_B#よせい}余生{RUBY_E#}の{RUBY_B#しょにち}初日{RUBY_E#}",
   "passive": {
     "name": "この{RUBY_B#ひととき}一時{RUBY_E#}を{RUBY_B#えいえん}永遠{RUBY_E#}に",
-    "description": "装備キャラの防御力+<orangeStrong>{{1}}%</orangeStrong>。戦闘に入った後、味方全体の全属性耐性+<orangeStrong>{{2}}%</orangeStrong>。同系統のスキルは重ね掛け不可。"
+    "description": "装備キャラの防御力+<orangeStrong>{{1, percent}}%</orangeStrong>。戦闘に入った後、味方全体の全属性耐性+<orangeStrong>{{2, percent}}%</orangeStrong>。同系統のスキルは重ね掛け不可。"
   }
 }

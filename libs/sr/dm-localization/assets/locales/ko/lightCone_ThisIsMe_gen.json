@@ -2,6 +2,6 @@
   "name": "이게 바로 나야!",
   "passive": {
     "name": "지평",
-    "description": "장착한 캐릭터의 방어력이 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터는 필살기 발동 시 가하는 피해량이 증가하고, 증가 수치는 자신 방어력의 <orangeStrong>{{2}}%</orangeStrong>만큼이다. 해당 효과는 필살기를 발동할 때마다 적 1기당 1회만 적용된다"
+    "description": "장착한 캐릭터의 방어력이 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 장착한 캐릭터는 필살기 발동 시 가하는 피해량이 증가하고, 증가 수치는 자신 방어력의 <orangeStrong>{{2, percent}}%</orangeStrong>만큼이다. 해당 효과는 필살기를 발동할 때마다 적 1기당 1회만 적용된다"
   }
 }

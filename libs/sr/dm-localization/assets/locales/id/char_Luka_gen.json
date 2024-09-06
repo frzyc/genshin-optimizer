@@ -4,33 +4,33 @@
     "basic": {
       "0": {
         "name": "Direct Punch",
-        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Luka pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Luka pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh."
       },
       "1": {
         "name": "Sky-Shatter Fist",
-        "fullDesc": "Mengonsumsi 2 lapis \"Fighting Will\", menggunakan \"Direct Punch\" terlebih dulu untuk melancarkan 3 serangan yang setiap serangannya akan mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Luka pada musuh yang ditarget.\\nKemudian akan menggunakan \"Rising Uppercut\" untuk melancarkan 1 serangan yang akan mengakibatkan Physical DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Luka pada 1 target.",
+        "fullDesc": "Mengonsumsi 2 lapis \"Fighting Will\", menggunakan \"Direct Punch\" terlebih dulu untuk melancarkan 3 serangan yang setiap serangannya akan mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Luka pada musuh yang ditarget.\\nKemudian akan menggunakan \"Rising Uppercut\" untuk melancarkan 1 serangan yang akan mengakibatkan Physical DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Luka pada 1 target.",
         "shortDesc": "Mengonsumsi 2 lapis \"Fighting Will\" dan mengakibatkan Physical DMG pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Lacerating Fist",
-        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Luka pada 1 musuh yang ditarget, dan kemudian memiliki {{2}}% <u>peluang dasar</u> untuk membuat target memasuki status Bleed selama {{5}} giliran.\\nDalam status Bleed, setiap saat giliran target musuh dimulai, musuh akan menerima Physical DoT sebesar {{3}}% Max HP dirinya. Maksimal tidak melebihi <orangeStrong>{{4}}%</orangeStrong> ATK Luka.",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Luka pada 1 musuh yang ditarget, dan kemudian memiliki {{2, percent}}% <u>peluang dasar</u> untuk membuat target memasuki status Bleed selama {{5}} giliran.\\nDalam status Bleed, setiap saat giliran target musuh dimulai, musuh akan menerima Physical DoT sebesar {{3, percent(fixed: 1)}}% Max HP dirinya. Maksimal tidak melebihi <orangeStrong>{{4, percent}}%</orangeStrong> ATK Luka.",
         "shortDesc": "Mengakibatkan Physical DMG pada 1 musuh, dan berpeluang besar untuk <orangeStrong>memberikan status Bleed</orangeStrong> pada target."
       }
     },
     "ult": {
       "0": {
         "name": "Coup de Grâce",
-        "fullDesc": "Memperoleh {{5}} lapis \"Fighting Will\", dan memiliki {{2}}% <u>peluang dasar</u> untuk meningkatkan <orangeStrong>{{3}}%</orangeStrong> DMG yang diterima musuh yang ditarget selama {{4}} giliran. Lalu kemudian akan mengakibatkan Physical DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Luka pada target tersebut.",
+        "fullDesc": "Memperoleh {{5}} lapis \"Fighting Will\", dan memiliki {{2, percent}}% <u>peluang dasar</u> untuk meningkatkan <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> DMG yang diterima musuh yang ditarget selama {{4}} giliran. Lalu kemudian akan mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Luka pada target tersebut.",
         "shortDesc": "Mendapatkan <orangeStrong>{{5}}</orangeStrong> lapis \"Fighting Will\". Berpeluang besar untuk meningkatkan DMG yang diterima oleh 1 musuh, serta mengakibatkan Physical DMG dalam jumlah besar."
       }
     },
     "technique": {
       "0": {
         "name": "Anticipator",
-        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, akan mengakibatkan Physical DMG sebesar {{1}}% ATK Luka pada musuh secara acak, serta memiliki {{2}}% <u>peluang dasar</u> untuk membuat target memasuki status Bleed yang sama dengan Skill. Setelah itu Luka akan memperoleh tambahan 1 lapis \"Fighting Will\".",
+        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, akan mengakibatkan Physical DMG sebesar {{1, percent}}% ATK Luka pada musuh secara acak, serta memiliki {{2, percent}}% <u>peluang dasar</u> untuk membuat target memasuki status Bleed yang sama dengan Skill. Setelah itu Luka akan memperoleh tambahan 1 lapis \"Fighting Will\".",
         "shortDesc": "Menyerang musuh, dan setelah memasuki pertempuran, mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh secara acak, kemudian berpeluang besar membuat target <orangeStrong>memasuki status Bleed</orangeStrong>. Setelah itu, akan memperoleh 1 lapis \"Fighting Will\" tambahan."
       }
     },
@@ -58,7 +58,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Crush Fighting Will",
-        "fullDesc": "Saat melancarkan Enhanced Basic Attack, setiap 1 serangan dari \"Direct Punch\" memiliki {{1}}% peluang tetap untuk membuat Luka melancarkan 1 serangan tambahan. Efek ini tidak berlaku pada serangan tambahan yang dilancarkan dari efek ini.",
+        "fullDesc": "Saat melancarkan Enhanced Basic Attack, setiap 1 serangan dari \"Direct Punch\" memiliki {{1, percent}}% peluang tetap untuk membuat Luka melancarkan 1 serangan tambahan. Efek ini tidak berlaku pada serangan tambahan yang dilancarkan dari efek ini.",
         "shortDesc": ""
       }
     }
@@ -66,7 +66,7 @@
   "ranks": {
     "1": {
       "name": "Fighting Endlessly",
-      "desc": "Saat Luka beraksi, jika target musuh sedang berstatus Bleed, DMG yang diakibatkan Luka akan meningkat {{1}}% selama {{2}} giliran."
+      "desc": "Saat Luka beraksi, jika target musuh sedang berstatus Bleed, DMG yang diakibatkan Luka akan meningkat {{1, percent}}% selama {{2}} giliran."
     },
     "2": {
       "name": "The Enemy is Weak, I am Strong",
@@ -78,7 +78,7 @@
     },
     "4": {
       "name": "Never Turning Back",
-      "desc": "Setiap 1 lapis \"Fighting Will\" yang diperoleh akan meningkatkan {{1}}% ATK. Efek ini dapat ditumpuk hingga {{2}} lapis."
+      "desc": "Setiap 1 lapis \"Fighting Will\" yang diperoleh akan meningkatkan {{1, percent}}% ATK. Efek ini dapat ditumpuk hingga {{2}} lapis."
     },
     "5": {
       "name": "The Spirit of Wildfire",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "A Champion's Applause",
-      "desc": "Setelah \"Rising Uppercut\" dari Enhanced Basic Attack mengenai target musuh berstatus Bleed, maka setiap 1 serangan \"Direct Punch\" yang dilancarkan Enhanced Basic Attack kali ini akan membuat status Bleed musuh segera menghasilkan 1 kali DMG sebesar {{1}}% DMG awal Bleed."
+      "desc": "Setelah \"Rising Uppercut\" dari Enhanced Basic Attack mengenai target musuh berstatus Bleed, maka setiap 1 serangan \"Direct Punch\" yang dilancarkan Enhanced Basic Attack kali ini akan membuat status Bleed musuh segera menghasilkan 1 kali DMG sebesar {{1, percent}}% DMG awal Bleed."
     }
   }
 }

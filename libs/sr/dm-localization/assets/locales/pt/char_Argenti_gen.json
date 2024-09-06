@@ -4,33 +4,33 @@
     "basic": {
       "0": {
         "name": "Perfume Efêmero",
-        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Argenti a um único inimigo-alvo.",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Argenti a um único inimigo-alvo.",
         "shortDesc": "Causa Dano Físico leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Justiça, Aqui Floresce",
-        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Argenti a todos os inimigos.",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Argenti a todos os inimigos.",
         "shortDesc": "Causa Dano Físico leve a todos os inimigos."
       }
     },
     "ult": {
       "0": {
         "name": "Pois Neste Jardim, a Beleza Suprema Concede",
-        "fullDesc": "Consome {{2}} de Energia e causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Argenti a todos os inimigos.",
+        "fullDesc": "Consome {{2}} de Energia e causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Argenti a todos os inimigos.",
         "shortDesc": "Consome <orangeStrong>{{2}}</orangeStrong> de Energia e causa Dano Físico a todos os inimigos."
       },
       "1": {
         "name": "Mérito Concedido em \"Meu\" Jardim",
-        "fullDesc": "Consome {{4}} de Energia e causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Argenti a todos os inimigos, e ainda causa Dano por {{2}} vez(es) extra(s), com cada vez causando Dano Físico igual a <orangeStrong>{{3}}%</orangeStrong> do ATQ de Argenti a um inimigo aleatório.",
+        "fullDesc": "Consome {{4}} de Energia e causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Argenti a todos os inimigos, e ainda causa Dano por {{2}} vez(es) extra(s), com cada vez causando Dano Físico igual a <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de Argenti a um inimigo aleatório.",
         "shortDesc": "Consome <orangeStrong>{{4}}</orangeStrong> de Energia e causa Dano Físico a todos os inimigos e adicionalmente causa Dano Físico leve a inimigos-alvo únicos por 6 Ricochetes."
       }
     },
     "technique": {
       "0": {
         "name": "Manifesto da Mais Pura Virtude",
-        "fullDesc": "Após usar sua Técnica, inflige Confusão por {{1}} segundo(s) aos inimigos dentro de uma área definida. Inimigos com Confusão não atacarão a equipe ativamente.\\nAo atacar um inimigo com Confusão para entrar em combate, causa Dano Físico de {{2}}% do ATQ de Argenti a todos os inimigos e regenera a Energia de Argenti em {{3}}.",
+        "fullDesc": "Após usar sua Técnica, inflige Confusão por {{1}} segundo(s) aos inimigos dentro de uma área definida. Inimigos com Confusão não atacarão a equipe ativamente.\\nAo atacar um inimigo com Confusão para entrar em combate, causa Dano Físico de {{2, percent}}% do ATQ de Argenti a todos os inimigos e regenera a Energia de Argenti em {{3}}.",
         "shortDesc": "Inflige Confusão em todos os inimigos em uma área definida. Ao atacar um inimigo com Confusão para entrar em combate, causa Dano Físico leve a todos os inimigos e regenera energia de Argenti."
       }
     },
@@ -58,7 +58,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Coragem",
-        "fullDesc": "Causa {{2}}% de Dano extra a inimigos cuja porcentagem de PV for igual ou menor que {{1}}%.",
+        "fullDesc": "Causa {{2, percent}}% de Dano extra a inimigos cuja porcentagem de PV for igual ou menor que {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Uma Lacuna no Reino da Estética",
-      "desc": "Cada acúmulo de Apoteose aumenta o Dano CRIT adicionalmente em {{1}}%."
+      "desc": "Cada acúmulo de Apoteose aumenta o Dano CRIT adicionalmente em {{1, percent}}%."
     },
     "2": {
       "name": "Humildade de Ágata",
-      "desc": "Se o número de inimigos no campo é igual a {{1}} ou mais quando utilizar a Perícia Suprema, o ATQ aumenta em {{2}}% por {{3}} rodada(s)."
+      "desc": "Se o número de inimigos no campo é igual a {{1}} ou mais quando utilizar a Perícia Suprema, o ATQ aumenta em {{2, percent}}% por {{3}} rodada(s)."
     },
     "3": {
       "name": "Glória do Caminho de Espinhos",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "\"Vossa\" Resplandecência",
-      "desc": "Ao usar a Perícia Suprema, ignora {{1}}% da DEF do inimigo-alvo."
+      "desc": "Ao usar a Perícia Suprema, ignora {{1, percent}}% da DEF do inimigo-alvo."
     }
   }
 }

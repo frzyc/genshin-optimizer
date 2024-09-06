@@ -2,6 +2,6 @@
   "name": "Отдых гениев",
   "passive": {
     "name": "У каждого своя роль",
-    "description": "Сила атаки владельца повышается на <orangeStrong>{{1}}%</orangeStrong>. Когда владелец побеждает противника, его крит. урон повышается на <orangeStrong>{{2}}%</orangeStrong> на {{3}} хода."
+    "description": "Сила атаки владельца повышается на <orangeStrong>{{1, percent}}%</orangeStrong>. Когда владелец побеждает противника, его крит. урон повышается на <orangeStrong>{{2, percent}}%</orangeStrong> на {{3}} хода."
   }
 }

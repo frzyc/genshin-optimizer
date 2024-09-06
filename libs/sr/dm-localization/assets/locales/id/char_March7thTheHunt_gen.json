@@ -4,26 +4,26 @@
     "basic": {
       "0": {
         "name": "My Sword Zaps Demons",
-        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK March 7th pada 1 musuh yang ditargetkan, lalu memperoleh {{2}} poin Charge.",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK March 7th pada 1 musuh yang ditargetkan, lalu memperoleh {{2}} poin Charge.",
         "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh dan memperoleh <orangeStrong>{{2}}</orangeStrong> poin Charge."
       },
       "1": {
         "name": "Brows Be Smitten, Heart Be Bitten",
-        "fullDesc": "Pada awalnya mengakibatkan {{4}} Hit DMG. Setiap Hit-nya mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK March 7th pada 1 musuh yang ditargetkan. Setiap kali setelah mengakibatkan 1 Hit DMG yang terakhir, memiliki {{2}}% <u>peluang tetap</u> untuk mengakibatkan 1 Hit DMG lagi, maksimal mengakibatkan ekstra {{3}} Hit DMG. Pemulihan Energy dari pelancaran Enhanced Basic Attack tidak meningkat seiring dengan meningkatnya jumlah Hit.\\nEnhanced Basic Attack tidak dapat memulihkan Poin Skill.",
+        "fullDesc": "Pada awalnya mengakibatkan {{4}} Hit DMG. Setiap Hit-nya mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK March 7th pada 1 musuh yang ditargetkan. Setiap kali setelah mengakibatkan 1 Hit DMG yang terakhir, memiliki {{2, percent}}% <u>peluang tetap</u> untuk mengakibatkan 1 Hit DMG lagi, maksimal mengakibatkan ekstra {{3}} Hit DMG. Pemulihan Energy dari pelancaran Enhanced Basic Attack tidak meningkat seiring dengan meningkatnya jumlah Hit.\\nEnhanced Basic Attack tidak dapat memulihkan Poin Skill.",
         "shortDesc": "Mengakibatkan Imaginary DMG pada 1 musuh, yang pada awalnya mengakibatkan <orangeStrong>{{4}}</orangeStrong> Hit DMG, <orangeStrong>berpeluang mengakibatkan maksimal hingga ekstra <color=#f29e38ff>#3[i]</orangeStrong> Hit DMG</color>."
       }
     },
     "skill": {
       "0": {
         "name": "Master, It's Tea Time!",
-        "fullDesc": "Membuat 1 rekan tim selain diri sendiri menjadi \"Shifu\". SPD \"Shifu\" akan meningkat <orangeStrong>{{1}}%</orangeStrong>. Hanya target pelancaran Skill terbaru yang akan dianggap sebagai \"Shifu\" March 7th.\\nSetiap kali melancarkan Basic Attack atau mengakibatkan 1 Hit Enhanced Basic Attack DMG, jika ada \"Shifu\" dari Path tertentu di medan pertempuran, akan memicu efek yang sesuai:\\n\"Erudition\", \"Destruction\", dan \"Hunt\": Mengakibatkan <u>DMG Tambahan</u> berdasarkan Tipe \"Shifu\" sebesar <orangeStrong>{{2}}%</orangeStrong> ATK March 7th.\\n\"Harmony\", \"Nihility\", \"Preservation\", dan \"Abundance\": Pengurangan Toughness dari DMG kali ini meningkat {{3}}%.",
+        "fullDesc": "Membuat 1 rekan tim selain diri sendiri menjadi \"Shifu\". SPD \"Shifu\" akan meningkat <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Hanya target pelancaran Skill terbaru yang akan dianggap sebagai \"Shifu\" March 7th.\\nSetiap kali melancarkan Basic Attack atau mengakibatkan 1 Hit Enhanced Basic Attack DMG, jika ada \"Shifu\" dari Path tertentu di medan pertempuran, akan memicu efek yang sesuai:\\n\"Erudition\", \"Destruction\", dan \"Hunt\": Mengakibatkan <u>DMG Tambahan</u> berdasarkan Tipe \"Shifu\" sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK March 7th.\\n\"Harmony\", \"Nihility\", \"Preservation\", dan \"Abundance\": Pengurangan Toughness dari DMG kali ini meningkat {{3, percent}}%.",
         "shortDesc": "Membuat 1 rekan tim menjadi \"Shifu\". Saat melancarkan Basic Attack atau mengakibatkan Enhanced Basic Attack DMG, akan memicu efek berikut berdasarkan <orangeStrong>Path \"Shifu\"</orangeStrong>:\\n\"Erudition\", \"Destruction\", \"Hunt\": mengakibatkan <orangeStrong><u>DMG Tambahan</u></orangeStrong> berdasarkan Tipe \"Shifu\".\\n\"Harmony\", \"Nihility\", \"Preservation\", \"Abundance\": <orangeStrong>Pengurangan Toughness</orangeStrong> meningkat."
       }
     },
     "ult": {
       "0": {
         "name": "March 7th, the Apex Heroine",
-        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK March 7th pada 1 musuh yang ditargetkan.\\nMeningkatkan jumlah Hit awal dari pelancaran Enhanced Basic Attack yang berikutnya sebanyak {{2}} Hit, serta meningkatkan <u>peluang tetap</u> sebesar {{3}}% untuk mengakibatkan tambahan DMG.",
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK March 7th pada 1 musuh yang ditargetkan.\\nMeningkatkan jumlah Hit awal dari pelancaran Enhanced Basic Attack yang berikutnya sebanyak {{2}} Hit, serta meningkatkan <u>peluang tetap</u> sebesar {{3, percent}}% untuk mengakibatkan tambahan DMG.",
         "shortDesc": "Mengakibatkan Imaginary DMG pada 1 musuh, serta <orangeStrong>meningkatkan</orangeStrong> jumlah Hit dan peluang mengakibatkan DMG dari pelancaran <orangeStrong>Enhanced Basic Attack yang berikutnya</orangeStrong>."
       }
     },
@@ -44,7 +44,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Swan Soar",
-        "fullDesc": "Saat pertempuran dimulai, aksi March 7th akan didahulukan sebesar {{1}}%.",
+        "fullDesc": "Saat pertempuran dimulai, aksi March 7th akan didahulukan sebesar {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -58,7 +58,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Tide Tamer",
-        "fullDesc": "Setelah melancarkan Enhanced Basic Attack, akan meningkatkan {{1}}% CRIT DMG \"Shifu\" dan meningkatkan {{2}}% Break Effect \"Shifu\", berlangsung selama {{3}} giliran.",
+        "fullDesc": "Setelah melancarkan Enhanced Basic Attack, akan meningkatkan {{1, percent}}% CRIT DMG \"Shifu\" dan meningkatkan {{2, percent}}% Break Effect \"Shifu\", berlangsung selama {{3}} giliran.",
         "shortDesc": ""
       }
     }
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "My Sword Stirs Starlight",
-      "desc": "Saat \"Shifu\" berada di medan pertempuran, SPD March 7th akan meningkat {{1}}%."
+      "desc": "Saat \"Shifu\" berada di medan pertempuran, SPD March 7th akan meningkat {{1, percent}}%."
     },
     "2": {
       "name": "Blade Dances on Waves' Fight",
-      "desc": "Setiap kali setelah \"Shifu\" melancarkan Basic Attack atau Skill untuk menyerang target musuh, March 7th akan segera melancarkan Serangan Lanjutan, mengakibatkan Imaginary DMG sebesar {{1}}% ATK March 7th pada target utama serangan kali ini, dan memicu efek yang sesuai dengan Path \"Shifu\", lalu memperoleh {{3}} poin Charge. Jika tidak ada target utama yang dapat diserang, maka akan menyerang 1 musuh secara acak. Efek ini maksimal dapat dipicu 1 kali di setiap giliran."
+      "desc": "Setiap kali setelah \"Shifu\" melancarkan Basic Attack atau Skill untuk menyerang target musuh, March 7th akan segera melancarkan Serangan Lanjutan, mengakibatkan Imaginary DMG sebesar {{1, percent}}% ATK March 7th pada target utama serangan kali ini, dan memicu efek yang sesuai dengan Path \"Shifu\", lalu memperoleh {{3}} poin Charge. Jika tidak ada target utama yang dapat diserang, maka akan menyerang 1 musuh secara acak. Efek ini maksimal dapat dipicu 1 kali di setiap giliran."
     },
     "3": {
       "name": "Sharp Wit in Martial Might",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Me, the Best Girl in Sight",
-      "desc": "Setelah melancarkan Ultimate, CRIT DMG yang diakibatkan Enhanced Basic Attack berikutnya akan meningkat {{1}}%."
+      "desc": "Setelah melancarkan Ultimate, CRIT DMG yang diakibatkan Enhanced Basic Attack berikutnya akan meningkat {{1, percent}}%."
     }
   }
 }

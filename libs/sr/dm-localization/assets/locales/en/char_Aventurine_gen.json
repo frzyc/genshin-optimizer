@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Straight Bet",
-        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Aventurine's DEF to a single target enemy.",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Aventurine's DEF to a single target enemy.",
         "shortDesc": "Deals minor Imaginary DMG to a single target enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Cornerstone Deluxe",
-        "fullDesc": "Provides all allies with a Fortified Wager shield that can block DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Aventurine's DEF plus <orangeStrong>{{2}}</orangeStrong>, lasting for {{3}} turn(s). When Fortified Wager is gained repeatedly, the Shield effect can stack, up to {{4}}% of the current Shield effect provided by the Skill.",
+        "fullDesc": "Provides all allies with a Fortified Wager shield that can block DMG equal to <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Aventurine's DEF plus <orangeStrong>{{2}}</orangeStrong>, lasting for {{3}} turn(s). When Fortified Wager is gained repeatedly, the Shield effect can stack, up to {{4, percent}}% of the current Shield effect provided by the Skill.",
         "shortDesc": "Provides all allies with a Fortified Wager shield, <orangeStrong>whose Shield effect is stackable</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Roulette Shark",
-        "fullDesc": "Randomly gains 1 to {{1}} points of Blind Bet. Then, inflicts Unnerved on a single target enemy for {{4}} turn(s) and deals Imaginary DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Aventurine's DEF to the single target enemy. When an ally hits an Unnerved enemy target, the CRIT DMG dealt increases by <orangeStrong>{{3}}%</orangeStrong>.",
+        "fullDesc": "Randomly gains 1 to {{1}} points of Blind Bet. Then, inflicts Unnerved on a single target enemy for {{4}} turn(s) and deals Imaginary DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Aventurine's DEF to the single target enemy. When an ally hits an Unnerved enemy target, the CRIT DMG dealt increases by <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.",
         "shortDesc": "Gains a random amount of Blind Bet points and inflicts Unnerved on a single enemy, dealing Imaginary DMG. When an ally hits an Unnerved enemy, <orangeStrong>the CRIT DMG dealt increases</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "The Red or the Black",
-        "fullDesc": "After using the Technique, 1 of the following effects will be granted:\\nThere is a chance for DEF to increase by {{1}}%.\\nThere is a high chance for DEF to increase by {{2}}%.\\nThere is a small chance for DEF to increase by {{3}}%.\\n\\nWhen this Technique is used repeatedly, the acquired effect with the highest buff value is retained.\\nWhen the next battle starts, increases all allies' DEF by the corresponding value, lasting for {{4}} turn(s).",
+        "fullDesc": "After using the Technique, 1 of the following effects will be granted:\\nThere is a chance for DEF to increase by {{1, percent}}%.\\nThere is a high chance for DEF to increase by {{2, percent}}%.\\nThere is a small chance for DEF to increase by {{3, percent}}%.\\n\\nWhen this Technique is used repeatedly, the acquired effect with the highest buff value is retained.\\nWhen the next battle starts, increases all allies' DEF by the corresponding value, lasting for {{4}} turn(s).",
         "shortDesc": "Using the Technique randomly grants one out of the three DEF Boost effects with different buff values. After entering the next battle, increases all allies' DEF by the corresponding value."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Leverage",
-        "fullDesc": "For every 100 of Aventurine's DEF that exceeds {{3}}, increases his own CRIT Rate by {{1}}%, up to a maximum increase of {{2}}%.",
+        "fullDesc": "For every 100 of Aventurine's DEF that exceeds {{3}}, increases his own CRIT Rate by {{1, percent}}%, up to a maximum increase of {{2, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Hot Hand",
-        "fullDesc": "When battle starts, grants all allies a Fortified Wager shield, whose Shield effect is equal to {{2}}% of the one provided by the Skill, lasting for {{1}} turn(s).",
+        "fullDesc": "When battle starts, grants all allies a Fortified Wager shield, whose Shield effect is equal to {{2, percent}}% of the one provided by the Skill, lasting for {{1}} turn(s).",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Bingo!",
-        "fullDesc": "After an ally with Fortified Wager launches a follow-up attack, Aventurine accumulates 1 Blind Bet point. This effect can trigger up to {{3}} time(s). Its trigger count resets at the start of Aventurine's turn. After Aventurine launches his Talent's follow-up attack, provides all allies with a Fortified Wager that can block DMG equal to {{1}}% of Aventurine's DEF plus {{2}}, and additionally grants a Fortified Wager that can block DMG equal to {{4}}% of Aventurine's DEF plus {{5}} to the ally with the lowest Shield effect, lasting for 3 turns.",
+        "fullDesc": "After an ally with Fortified Wager launches a follow-up attack, Aventurine accumulates 1 Blind Bet point. This effect can trigger up to {{3}} time(s). Its trigger count resets at the start of Aventurine's turn. After Aventurine launches his Talent's follow-up attack, provides all allies with a Fortified Wager that can block DMG equal to {{1, percent}}% of Aventurine's DEF plus {{2}}, and additionally grants a Fortified Wager that can block DMG equal to {{4, percent}}% of Aventurine's DEF plus {{5}} to the ally with the lowest Shield effect, lasting for 3 turns.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Prisoner's Dilemma",
-      "desc": "Increases CRIT DMG by {{1}}% for allies with Fortified Wager. After using the Ultimate, provides all allies with a Fortified Wager shield, whose Shield effect is equal to {{2}}% of the one provided by the Skill, lasting for {{3}} turn(s)."
+      "desc": "Increases CRIT DMG by {{1, percent}}% for allies with Fortified Wager. After using the Ultimate, provides all allies with a Fortified Wager shield, whose Shield effect is equal to {{2, percent}}% of the one provided by the Skill, lasting for {{3}} turn(s)."
     },
     "2": {
       "name": "Bounded Rationality",
-      "desc": "When using the Basic ATK, reduces the target's All-Type RES by {{2}}% for {{3}} turn(s)."
+      "desc": "When using the Basic ATK, reduces the target's All-Type RES by {{2, percent}}% for {{3}} turn(s)."
     },
     "3": {
       "name": "Droprate Maxing",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Unexpected Hanging Paradox",
-      "desc": "When triggering his Talent's follow-up attack, first increases Aventurine's DEF by {{1}}% for {{2}} turn(s), and additionally increases the Hits Per Action for his talent's follow-up attack by {{3}}."
+      "desc": "When triggering his Talent's follow-up attack, first increases Aventurine's DEF by {{1, percent}}% for {{2}} turn(s), and additionally increases the Hits Per Action for his talent's follow-up attack by {{3}}."
     },
     "5": {
       "name": "Ambiguity Aversion",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Stag Hunt Game",
-      "desc": "For every ally that holds a Shield, the DMG dealt by Aventurine increases by {{1}}%, up to a maximum of {{2}}%."
+      "desc": "For every ally that holds a Shield, the DMG dealt by Aventurine increases by {{1, percent}}%, up to a maximum of {{2, percent}}%."
     }
   }
 }

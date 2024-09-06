@@ -2,6 +2,6 @@
   "name": "Phiền Não, Hạnh Phúc",
   "passive": {
     "name": "Từng Người Một",
-    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> Tỷ Lệ Bạo Kích của người trang bị, tăng <orangeStrong>{{2}}%</orangeStrong> sát thương do Đòn Đánh Theo Sau gây ra. Sau khi người trang bị thi triển Đòn Đánh Theo Sau, khiến mục tiêu rơi vào trạng thái Ôn Hòa, hiệu ứng này tối đa cộng dồn {{4}} tầng. Khi mục tiêu phe ta đánh trúng kẻ địch ở trạng thái Ôn Hòa, mỗi tầng Ôn Hòa sẽ tăng <orangeStrong>{{3}}%</orangeStrong> Sát Thương Bạo Kích gây ra."
+    "description": "Tăng <orangeStrong>{{1, percent}}%</orangeStrong> Tỷ Lệ Bạo Kích của người trang bị, tăng <orangeStrong>{{2, percent}}%</orangeStrong> sát thương do Đòn Đánh Theo Sau gây ra. Sau khi người trang bị thi triển Đòn Đánh Theo Sau, khiến mục tiêu rơi vào trạng thái Ôn Hòa, hiệu ứng này tối đa cộng dồn {{4}} tầng. Khi mục tiêu phe ta đánh trúng kẻ địch ở trạng thái Ôn Hòa, mỗi tầng Ôn Hòa sẽ tăng <orangeStrong>{{3, percent}}%</orangeStrong> Sát Thương Bạo Kích gây ra."
   }
 }

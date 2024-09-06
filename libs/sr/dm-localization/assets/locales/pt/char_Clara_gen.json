@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Eu Quero Ajudar",
-        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Clara a um único inimigo.",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Clara a um único inimigo.",
         "shortDesc": "Causa Dano Físico leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Svarog Cuida de Você",
-        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Clara a todos os inimigos e adicionalmente causa Dano Físico igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ de Clara a inimigos marcados por Svarog com uma Marca do Contra-Ataque.\\nApós o uso desta Perícia, todas as Marcas do Contra-Ataque serão removidas.",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Clara a todos os inimigos e adicionalmente causa Dano Físico igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Clara a inimigos marcados por Svarog com uma Marca do Contra-Ataque.\\nApós o uso desta Perícia, todas as Marcas do Contra-Ataque serão removidas.",
         "shortDesc": "Causa Dano Físico a todos os inimigos. <orangeStrong>Adicionalmente, causa Dano Físico</orangeStrong> a alvos com Marcas do Contra-Ataque."
       }
     },
     "ult": {
       "0": {
         "name": "É Uma Promessa, Não Uma Ordem",
-        "fullDesc": "Após Clara usar sua Perícia Suprema, o Dano causado a ela é reduzido em <orangeStrong>{{4}}%</orangeStrong> extra, e ela terá muito mais chances de ser atacada por inimigos por {{3}} rodada(s).\\nAlém disso, o <u>Contra-Ataque</u> de Svarog é aprimorado. Quando um aliado é atacado, Svarog usa um <u>Contra-Ataque</u> imediatamente, e seu multiplicador de Dano contra o inimigo aumenta em <orangeStrong>{{2}}%</orangeStrong>. Inimigos adjacentes a ele sofrem 50% do Dano causado ao inimigo-alvo principal. <u>Contra-Ataque(s)</u> aprimorado(s) podem entrar em vigor {{5}} vez(es).",
+        "fullDesc": "Após Clara usar sua Perícia Suprema, o Dano causado a ela é reduzido em <orangeStrong>{{4, percent}}%</orangeStrong> extra, e ela terá muito mais chances de ser atacada por inimigos por {{3}} rodada(s).\\nAlém disso, o <u>Contra-Ataque</u> de Svarog é aprimorado. Quando um aliado é atacado, Svarog usa um <u>Contra-Ataque</u> imediatamente, e seu multiplicador de Dano contra o inimigo aumenta em <orangeStrong>{{2, percent}}%</orangeStrong>. Inimigos adjacentes a ele sofrem 50% do Dano causado ao inimigo-alvo principal. <u>Contra-Ataque(s)</u> aprimorado(s) podem entrar em vigor {{5}} vez(es).",
         "shortDesc": "<orangeStrong>Reduz o Dano recebido</orangeStrong>, aumenta as chances de receber ataques de inimigos, e aprimora <u>Contra-Ataques</u>."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Afinidade",
-        "fullDesc": "Ao receber um ataque, este personagem tem uma chance fixa de {{1}}% de remover uma penalidade que tiver sido aplicada a ele.",
+        "fullDesc": "Ao receber um ataque, este personagem tem uma chance fixa de {{1, percent}}% de remover uma penalidade que tiver sido aplicada a ele.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Sob Proteção",
-        "fullDesc": "A chance de resistir a penalidades de Controle Negativo aumenta em {{1}}%.",
+        "fullDesc": "A chance de resistir a penalidades de Controle Negativo aumenta em {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Vingança",
-        "fullDesc": "Aumenta em {{1}}% o Dano de Contra-Ataque de Svarog.",
+        "fullDesc": "Aumenta em {{1, percent}}% o Dano de Contra-Ataque de Svarog.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Um Abraço Apertado",
-      "desc": "Após usar a Perícia Suprema, o ATQ aumenta em {{1}}% por {{2}} rodada(s)."
+      "desc": "Após usar a Perícia Suprema, o ATQ aumenta em {{1, percent}}% por {{2}} rodada(s)."
     },
     "3": {
       "name": "Armadura de Aço Fria",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Aconchego Familiar",
-      "desc": "Após sofrer um ataque, o Dano recebido por Clara é reduzido em {{1}}%. Este efeito dura até o início da rodada seguinte."
+      "desc": "Após sofrer um ataque, o Dano recebido por Clara é reduzido em {{1, percent}}%. Este efeito dura até o início da rodada seguinte."
     },
     "5": {
       "name": "Uma Pequena Promessa",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Longa Companhia",
-      "desc": "Quando outros aliados são atingidos, Svarog também tem {{1}}% de chance fixa de ativar um Contra-Ataque no atacante e marcá-lo com uma Marca do Contra-Ataque. Ao usar a Perícia Suprema, o número de Contra-Ataque(s) Aprimorado(s) aumenta em {{2}}."
+      "desc": "Quando outros aliados são atingidos, Svarog também tem {{1, percent}}% de chance fixa de ativar um Contra-Ataque no atacante e marcá-lo com uma Marca do Contra-Ataque. Ao usar a Perícia Suprema, o número de Contra-Ataque(s) Aprimorado(s) aumenta em {{2}}."
     }
   }
 }

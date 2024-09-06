@@ -2,6 +2,6 @@
   "name": "Mutual Demise",
   "passive": {
     "name": "Legion",
-    "description": "เมื่อ HP ปัจจุบันของผู้สวมใส่น้อยกว่า {{1}}% อัตราคริติคอลจะเพิ่มขึ้น <orangeStrong>{{2}}%</orangeStrong>"
+    "description": "เมื่อ HP ปัจจุบันของผู้สวมใส่น้อยกว่า {{1, percent}}% อัตราคริติคอลจะเพิ่มขึ้น <orangeStrong>{{2, percent}}%</orangeStrong>"
   }
 }

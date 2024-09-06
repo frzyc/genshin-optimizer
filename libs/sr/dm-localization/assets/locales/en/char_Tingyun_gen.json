@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Dislodged",
-        "fullDesc": "Tingyun deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of her ATK to a single enemy.",
+        "fullDesc": "Tingyun deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of her ATK to a single enemy.",
         "shortDesc": "Deals minor Lightning DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Soothing Melody",
-        "fullDesc": "Grants a single ally with Benediction to increase their ATK by <orangeStrong>{{2}}%</orangeStrong>, up to <orangeStrong>{{4}}%</orangeStrong> of Tingyun's current ATK.\\nWhen the ally with Benediction attacks, they will deal <u>Additional</u> Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of that ally's ATK for 1 time.\\nBenediction lasts for {{3}} turn(s) and is only effective on the most recent receiver of Tingyun's Skill.",
+        "fullDesc": "Grants a single ally with Benediction to increase their ATK by <orangeStrong>{{2, percent}}%</orangeStrong>, up to <orangeStrong>{{4, percent}}%</orangeStrong> of Tingyun's current ATK.\\nWhen the ally with Benediction attacks, they will deal <u>Additional</u> Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of that ally's ATK for 1 time.\\nBenediction lasts for {{3}} turn(s) and is only effective on the most recent receiver of Tingyun's Skill.",
         "shortDesc": "<orangeStrong>Increases the ATK</orangeStrong> of a single ally and grants them Benediction. Ally with Benediction additionally deals minor <orangeStrong>Lightning <u>Additional DMG</u></orangeStrong> when attacking."
       }
     },
     "ult": {
       "0": {
         "name": "Amidst the Rejoicing Clouds",
-        "fullDesc": "Regenerates {{1}} Energy for a single ally and increases the target's DMG by <orangeStrong>{{3}}%</orangeStrong> for {{2}} turn(s).",
+        "fullDesc": "Regenerates {{1}} Energy for a single ally and increases the target's DMG by <orangeStrong>{{3, percent}}%</orangeStrong> for {{2}} turn(s).",
         "shortDesc": "Regenerates a target ally's <orangeStrong>Energy</orangeStrong> and <orangeStrong>increases their DMG dealt</orangeStrong>."
       }
     },
@@ -39,14 +39,14 @@
     "bonusAbility1": {
       "0": {
         "name": "Nourished Joviality",
-        "fullDesc": "Tingyun's SPD increases by {{1}}% for 1 turn after using Skill.",
+        "fullDesc": "Tingyun's SPD increases by {{1, percent}}% for 1 turn after using Skill.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Knell Subdual",
-        "fullDesc": "DMG dealt by Basic ATK increases by {{1}}%.",
+        "fullDesc": "DMG dealt by Basic ATK increases by {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Windfall of Lucky Springs",
-      "desc": "After using their Ultimate, the ally with Benediction gains a {{1}}% increase in SPD for 1 turn."
+      "desc": "After using their Ultimate, the ally with Benediction gains a {{1, percent}}% increase in SPD for 1 turn."
     },
     "2": {
       "name": "Gainfully Gives, Givingly Gains",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Jovial Versatility",
-      "desc": "The DMG multiplier provided by Benediction increases by {{1}}%."
+      "desc": "The DMG multiplier provided by Benediction increases by {{1, percent}}%."
     },
     "5": {
       "name": "Sauntering Coquette",

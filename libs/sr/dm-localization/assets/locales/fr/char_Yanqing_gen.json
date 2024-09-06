@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Épine de givre",
-        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Yanqing à un ennemi unique.",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Yanqing à un ennemi unique.",
         "shortDesc": "Inflige des DGT de glace mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Salve d'aiguillons",
-        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Yanqing à un ennemi unique et active Osmose avec l'acier pendant 1 tour.",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Yanqing à un ennemi unique et active Osmose avec l'acier pendant 1 tour.",
         "shortDesc": "Inflige des DGT de glace à un ennemi unique et active Osmose avec l'acier."
       }
     },
     "ult": {
       "0": {
         "name": "Béatitude au milieu de l'averse",
-        "fullDesc": "Augmente les chances de coup critique de Yanqing de {{1}}%. Si Osmose avec l'acier est active, augmente les DGT critiques de Yanqing de <orangeStrong>{{2}}%</orangeStrong> supplémentaires. Ce <u>bonus</u> dure 1 tour avant d'infliger des DGT de glace équivalents à <orangeStrong>{{3}}%</orangeStrong> de l'ATQ de Yanqing à un ennemi unique.",
+        "fullDesc": "Augmente les chances de coup critique de Yanqing de {{1, percent}}%. Si Osmose avec l'acier est active, augmente les DGT critiques de Yanqing de <orangeStrong>{{2, percent}}%</orangeStrong> supplémentaires. Ce <u>bonus</u> dure 1 tour avant d'infliger des DGT de glace équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> de l'ATQ de Yanqing à un ennemi unique.",
         "shortDesc": "Augmente les chances de coup critique de Yanqing. Renforce Osmose avec l'acier et inflige des DGT de glace massifs à un ennemi unique."
       }
     },
     "technique": {
       "0": {
         "name": "La seule et unique lame",
-        "fullDesc": "Après utilisation de sa technique, les DGT de Yanqing augmentent de {{2}}% pendant {{3}} tours contre les ennemis dont les PV sont supérieurs ou égaux à {{1}}% au début du combat suivant.",
+        "fullDesc": "Après utilisation de sa technique, les DGT de Yanqing augmentent de {{2, percent}}% pendant {{3}} tours contre les ennemis dont les PV sont supérieurs ou égaux à {{1, percent}}% au début du combat suivant.",
         "shortDesc": "Après utilisation de la technique, les DGT infligés aux ennemis dont les PV sont supérieurs ou égaux à 50 % augmentent au début du combat suivant."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "La cerise sur le couteau",
-        "fullDesc": "Lorsque Yanqing attaque, il inflige des DGT de glace additionnels équivalents à {{1}}% de son ATQ aux ennemis qui ont une Faiblesse à la glace.",
+        "fullDesc": "Lorsque Yanqing attaque, il inflige des DGT de glace additionnels équivalents à {{1, percent}}% de son ATQ aux ennemis qui ont une Faiblesse à la glace.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "La glace sourit aux audacieux",
-        "fullDesc": "Lorsque Osmose avec l'acier est active, la RÉS aux effets augmente de {{1}}%.",
+        "fullDesc": "Lorsque Osmose avec l'acier est active, la RÉS aux effets augmente de {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Lame rapide",
-        "fullDesc": "En cas de coup critique, la VIT augmente de {{1}}% pendant {{2}} tours.",
+        "fullDesc": "En cas de coup critique, la VIT augmente de {{1, percent}}% pendant {{2}} tours.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Coupe franche",
-      "desc": "Lorsque Yanqing attaque un ennemi gelé, il inflige des DGT de glace additionnels équivalents à {{1}}% de son ATQ."
+      "desc": "Lorsque Yanqing attaque un ennemi gelé, il inflige des DGT de glace additionnels équivalents à {{1, percent}}% de son ATQ."
     },
     "2": {
       "name": "Transe du guerrier",
-      "desc": "Lorsque Osmose avec l'acier est active, le taux de régénération d'énergie augmente de {{1}}% supplémentaires."
+      "desc": "Lorsque Osmose avec l'acier est active, le taux de régénération d'énergie augmente de {{1, percent}}% supplémentaires."
     },
     "3": {
       "name": "Épéiste de génie",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Froid pénétrant",
-      "desc": "Lorsque les PV actuels du personnage sont supérieurs ou égaux à {{1}}%, sa PÉN de RÉS à la glace augmente de {{2}}%."
+      "desc": "Lorsque les PV actuels du personnage sont supérieurs ou égaux à {{1, percent}}%, sa PÉN de RÉS à la glace augmente de {{2, percent}}%."
     },
     "5": {
       "name": "Lutte sans répit",

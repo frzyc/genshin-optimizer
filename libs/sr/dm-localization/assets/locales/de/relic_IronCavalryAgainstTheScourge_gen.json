@@ -1,7 +1,7 @@
 {
   "setName": "Eiserne Kavallerie gegen die Plage",
   "setEffects": {
-    "2": "Erhöht Brucheffekt um {{1}}%.",
-    "4": "Wenn der Brucheffekt des Trägers {{1}}% oder mehr beträgt, wird beim Verursachen von Bruch-SCH {{3}}% der VTD des gegnerischen Ziels ignoriert. Wenn der Brucheffekt des Trägers {{2}}% oder mehr beträgt, wird beim Verursachen von Super-Bruch-SCH zusätzlich {{4}}% der VTD des gegnerischen Ziels ignoriert."
+    "2": "Erhöht Brucheffekt um {{1, percent}}%.",
+    "4": "Wenn der Brucheffekt des Trägers {{1, percent}}% oder mehr beträgt, wird beim Verursachen von Bruch-SCH {{3, percent}}% der VTD des gegnerischen Ziels ignoriert. Wenn der Brucheffekt des Trägers {{2, percent}}% oder mehr beträgt, wird beim Verursachen von Super-Bruch-SCH zusätzlich {{4, percent}}% der VTD des gegnerischen Ziels ignoriert."
   }
 }

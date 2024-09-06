@@ -2,6 +2,6 @@
   "name": "Elle a déjà fermé les yeux",
   "passive": {
     "name": "Vision",
-    "description": "Augmente les PV max du porteur de <orangeStrong>{{1}}%</orangeStrong> et le taux de régénération d'énergie de <orangeStrong>{{4}}%</orangeStrong>. Lorsque les PV du porteur sont réduits, les DGT infligés par tous les alliés augmentent de <orangeStrong>{{2}}%</orangeStrong> pendant {{5}} tours.\\nAu début de chaque vague, chaque allié récupère un montant de PV équivalent à <orangeStrong>{{3}}%</orangeStrong> de ses PV perdus."
+    "description": "Augmente les PV max du porteur de <orangeStrong>{{1, percent}}%</orangeStrong> et le taux de régénération d'énergie de <orangeStrong>{{4, percent}}%</orangeStrong>. Lorsque les PV du porteur sont réduits, les DGT infligés par tous les alliés augmentent de <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> pendant {{5}} tours.\\nAu début de chaque vague, chaque allié récupère un montant de PV équivalent à <orangeStrong>{{3, percent}}%</orangeStrong> de ses PV perdus."
   }
 }

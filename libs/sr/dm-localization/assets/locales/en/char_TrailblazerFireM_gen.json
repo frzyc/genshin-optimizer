@@ -4,33 +4,33 @@
     "basic": {
       "0": {
         "name": "Ice-Breaking Light",
-        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of the Trailblazer's ATK to a single enemy and gains 1 stack of Magma Will.",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of the Trailblazer's ATK to a single enemy and gains 1 stack of Magma Will.",
         "shortDesc": "Deals minor Fire DMG to a single enemy and gains Magma Will."
       },
       "1": {
         "name": "Ice-Breaking Light",
-        "fullDesc": "Consumes 4 stacks of Magma Will to enhance Basic ATK, dealing Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of the Trailblazer's ATK to a single enemy and Fire DMG to equal to <orangeStrong>{{2}}%</orangeStrong> of the Trailblazer's ATK to enemies adjacent to it.",
+        "fullDesc": "Consumes 4 stacks of Magma Will to enhance Basic ATK, dealing Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of the Trailblazer's ATK to a single enemy and Fire DMG to equal to <orangeStrong>{{2, percent}}%</orangeStrong> of the Trailblazer's ATK to enemies adjacent to it.",
         "shortDesc": "Consumes Magma Will, then deals Fire DMG to a single enemy and minor Fire DMG to enemies adjacent to it."
       }
     },
     "skill": {
       "0": {
         "name": "Ever-Burning Amber",
-        "fullDesc": "Increases the Trailblazer's DMG Reduction by <orangeStrong>{{1}}%</orangeStrong> and gains 1 stack of Magma Will, with a {{2}}% <u>base chance</u> to Taunt all enemies for {{3}} turn(s).",
+        "fullDesc": "Increases the Trailblazer's DMG Reduction by <orangeStrong>{{1, percent}}%</orangeStrong> and gains 1 stack of Magma Will, with a {{2, percent}}% <u>base chance</u> to Taunt all enemies for {{3}} turn(s).",
         "shortDesc": "Reduces DMG taken and gains Magma Will, with a high chance to Taunt all enemies."
       }
     },
     "ult": {
       "0": {
         "name": "War-Flaming Lance",
-        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1}}%</orangeStrong> of the Trailblazer's ATK plus <orangeStrong>{{2}}%</orangeStrong> of the Trailblazer's DEF to all enemies. The next Basic ATK will be automatically enhanced and does not cost Magma Will.",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of the Trailblazer's ATK plus <orangeStrong>{{2, percent}}%</orangeStrong> of the Trailblazer's DEF to all enemies. The next Basic ATK will be automatically enhanced and does not cost Magma Will.",
         "shortDesc": "Deals Fire DMG to all enemies and enhances the next Basic ATK."
       }
     },
     "technique": {
       "0": {
         "name": "Call of the Guardian",
-        "fullDesc": "After using Technique, at the start of the next battle, gains a Shield that absorbs DMG equal to {{1}}% of the Trailblazer's DEF plus {{2}} for {{3}} turn(s).",
+        "fullDesc": "After using Technique, at the start of the next battle, gains a Shield that absorbs DMG equal to {{1, percent}}% of the Trailblazer's DEF plus {{2}} for {{3}} turn(s).",
         "shortDesc": ""
       }
     },
@@ -44,21 +44,21 @@
     "bonusAbility1": {
       "0": {
         "name": "The Strong Defend the Weak",
-        "fullDesc": "After using the Skill, the DMG taken by all allies reduces by {{2}}% for {{3}} turn(s).",
+        "fullDesc": "After using the Skill, the DMG taken by all allies reduces by {{2, percent}}% for {{3}} turn(s).",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Unwavering Gallantry",
-        "fullDesc": "Using Enhanced Basic ATK restores the Trailblazer's HP by {{1}}% of their Max HP.",
+        "fullDesc": "Using Enhanced Basic ATK restores the Trailblazer's HP by {{1, percent}}% of their Max HP.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Action Beats Overthinking",
-        "fullDesc": "When the Trailblazer is protected by a Shield at the beginning of the turn, increases their ATK by {{2}}% and regenerates {{1}} Energy until the action is over.",
+        "fullDesc": "When the Trailblazer is protected by a Shield at the beginning of the turn, increases their ATK by {{2, percent}}% and regenerates {{1}} Energy until the action is over.",
         "shortDesc": ""
       }
     }
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Earth-Shaking Resonance",
-      "desc": "When the Trailblazer uses their Basic ATK, additionally deals Fire DMG equal to {{1}}% of the Trailblazer's DEF. When the Trailblazer uses their enhanced Basic ATK, additionally deals Fire DMG equal to {{2}}% of the Trailblazer's DEF."
+      "desc": "When the Trailblazer uses their Basic ATK, additionally deals Fire DMG equal to {{1, percent}}% of the Trailblazer's DEF. When the Trailblazer uses their enhanced Basic ATK, additionally deals Fire DMG equal to {{2, percent}}% of the Trailblazer's DEF."
     },
     "2": {
       "name": "Time-Defying Tenacity",
-      "desc": "The Shield applied to all allies from the Trailblazer's Talent will block extra DMG equal to {{1}}% of the Trailblazer's DEF plus {{2}}."
+      "desc": "The Shield applied to all allies from the Trailblazer's Talent will block extra DMG equal to {{1, percent}}% of the Trailblazer's DEF plus {{2}}."
     },
     "3": {
       "name": "Trail-Blazing Blueprint",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "City-Forging Bulwarks",
-      "desc": "After the Trailblazer uses enhanced Basic ATK or Ultimate, their DEF increases by {{1}}%. Stacks up to {{2}} time(s)."
+      "desc": "After the Trailblazer uses enhanced Basic ATK or Ultimate, their DEF increases by {{1, percent}}%. Stacks up to {{2}} time(s)."
     }
   }
 }

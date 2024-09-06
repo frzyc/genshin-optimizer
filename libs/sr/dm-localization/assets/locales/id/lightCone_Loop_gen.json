@@ -2,6 +2,6 @@
   "name": "Loop",
   "passive": {
     "name": "Pursuit",
-    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> DMG pengguna pada target musuh dengan status Slow."
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> DMG pengguna pada target musuh dengan status Slow."
   }
 }

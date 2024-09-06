@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Escrime perce-nuages : Étoile brillante",
-        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Sushang à un ennemi unique.",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Sushang à un ennemi unique.",
         "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Escrime perce-nuages : Chute de montagne",
-        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Sushang à un ennemi unique. De plus, il y a {{3}}% de chances de déclencher Posture de l'épée lors du coup final, ce qui inflige à l'ennemi des DGT physiques <u>additionnels</u> équivalents à <orangeStrong>{{2}}%</orangeStrong> de l'ATQ de Sushang.\\nSi l'ennemi est affecté par une <u>Rupture de faiblesse</u>, le déclenchement de Posture de l'épée est garanti.",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Sushang à un ennemi unique. De plus, il y a {{3, percent}}% de chances de déclencher Posture de l'épée lors du coup final, ce qui inflige à l'ennemi des DGT physiques <u>additionnels</u> équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Sushang.\\nSi l'ennemi est affecté par une <u>Rupture de faiblesse</u>, le déclenchement de Posture de l'épée est garanti.",
         "shortDesc": "Inflige des DGT physiques à un ennemi unique avec <orangeStrong>une faible chance de déclencher Posture de l'épée</orangeStrong>. Si l'ennemi est affecté par une <u>Rupture de faiblesse</u>, <orangeStrong>le déclenchement de Posture de l'épée est garanti</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Forme de Taixu : Héraut de l'aube",
-        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Sushang à un ennemi unique et Sushang agit immédiatement à nouveau. De plus, l'ATQ de Sushang augmente de <orangeStrong>{{4}}%</orangeStrong> et l'utilisation de sa compétence a 2 chances supplémentaires de déclencher Posture de l'épée pendant {{2}} tours.\\nLorsque Posture de l'épée est déclenchée par les chances supplémentaires, elle inflige {{3}}% des DGT initiaux.",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Sushang à un ennemi unique et Sushang agit immédiatement à nouveau. De plus, l'ATQ de Sushang augmente de <orangeStrong>{{4, percent}}%</orangeStrong> et l'utilisation de sa compétence a 2 chances supplémentaires de déclencher Posture de l'épée pendant {{2}} tours.\\nLorsque Posture de l'épée est déclenchée par les chances supplémentaires, elle inflige {{3, percent}}% des DGT initiaux.",
         "shortDesc": "Inflige des DGT physiques massifs à un ennemi unique, renforce l'effet de Posture de l'épée et <orangeStrong>agit immédiatement</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Escrime perce-nuages : Cri de guerre",
-        "fullDesc": "Engage immédiatement le combat contre les ennemis. Sushang inflige des DGT physiques équivalents à {{1}}% de son ATQ à tous les ennemis en entrant en combat.",
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Sushang inflige des DGT physiques équivalents à {{1, percent}}% de son ATQ à tous les ennemis en entrant en combat.",
         "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT physiques mineurs à tous les ennemis après être entré en combat."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Cœur pur",
-        "fullDesc": "Réduit les chances du personnage d'être attaqué par des ennemis quand son pourcentage de PV est inférieur ou égal à {{1}}%.",
+        "fullDesc": "Réduit les chances du personnage d'être attaqué par des ennemis quand son pourcentage de PV est inférieur ou égal à {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Riposte",
-        "fullDesc": "Pour chaque déclenchement de Posture de l'épée, les DGT infligés par Posture de l'épée augmentent de {{1}}%. Cumulable jusqu'à {{2}} fois.",
+        "fullDesc": "Pour chaque déclenchement de Posture de l'épée, les DGT infligés par Posture de l'épée augmentent de {{1, percent}}%. Cumulable jusqu'à {{2}} fois.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Victorieuse",
-        "fullDesc": "Si des ennemis sur le champ de bataille sont affectés par une Rupture de faiblesse après utilisation de l'ATQ normale ou de la compétence, l'action de Sushang est avancée de {{1}}%",
+        "fullDesc": "Si des ennemis sur le champ de bataille sont affectés par une Rupture de faiblesse après utilisation de l'ATQ normale ou de la compétence, l'action de Sushang est avancée de {{1, percent}}%",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Surentraînée",
-      "desc": "Après avoir déclenché Posture de l'épée, les DGT subis par Sushang sont réduits de {{1}}% pendant 1 tour."
+      "desc": "Après avoir déclenché Posture de l'épée, les DGT subis par Sushang sont réduits de {{1, percent}}% pendant 1 tour."
     },
     "3": {
       "name": "Née de la célébrité",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Rupture du cœur",
-      "desc": "L'effet de Rupture de Sushang augmente de {{1}}%."
+      "desc": "L'effet de Rupture de Sushang augmente de {{1, percent}}%."
     },
     "5": {
       "name": "Victoire du Taixu",

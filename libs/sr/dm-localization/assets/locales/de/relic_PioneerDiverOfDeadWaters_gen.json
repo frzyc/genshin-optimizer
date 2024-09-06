@@ -1,7 +1,7 @@
 {
   "setName": "Pioniertaucherin toter Gewässer",
   "setEffects": {
-    "2": "Erhöht den bei Gegnern mit Debuff verursachten SCH um {{1}}%.",
-    "4": "Erhöht die KRIT-Rate um {{1}}%. Der bei Gegnern mit nicht weniger als {{4}}/{{5}} Debuffs verursachte KRIT-SCH des Trägers wird um jeweils {{2}}%/{{3}}% erhöht. Nachdem er dem Gegner einen Debuff zugefügt hat, werden diese Effekte für {{6}} Rd. um 100 % erhöht."
+    "2": "Erhöht den bei Gegnern mit Debuff verursachten SCH um {{1, percent}}%.",
+    "4": "Erhöht die KRIT-Rate um {{1, percent}}%. Der bei Gegnern mit nicht weniger als {{4}}/{{5}} Debuffs verursachte KRIT-SCH des Trägers wird um jeweils {{2, percent}}%/{{3, percent}}% erhöht. Nachdem er dem Gegner einen Debuff zugefügt hat, werden diese Effekte für {{6}} Rd. um 100 % erhöht."
   }
 }

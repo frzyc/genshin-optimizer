@@ -2,6 +2,6 @@
   "name": "Fermate",
   "passive": {
     "name": "Semibrevis-Pause",
-    "description": "Erhöht den Brucheffekt des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Erhöht seinen verursachten SCH bei Gegnern, die Schock oder Windscherung erleiden, um <orangeStrong>{{2}}%</orangeStrong>. Dieser Effekt gilt ebenfalls für DoT."
+    "description": "Erhöht den Brucheffekt des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Erhöht seinen verursachten SCH bei Gegnern, die Schock oder Windscherung erleiden, um <orangeStrong>{{2, percent}}%</orangeStrong>. Dieser Effekt gilt ebenfalls für DoT."
   }
 }

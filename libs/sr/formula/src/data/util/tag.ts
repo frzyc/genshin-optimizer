@@ -1,3 +1,4 @@
+import type { IBareConditionalData } from '@genshin-optimizer/common/formula'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import {
@@ -10,10 +11,6 @@ import type { Member, Sheet, Stat } from './listing'
 import { bonusAbilities, statBoosts } from './listing'
 import type { Read, Tag } from './read'
 import { reader, tag } from './read'
-
-export const metaList: {
-  conditionals?: { tag: Tag; meta: object }[]
-} = {}
 
 export function percent(x: number | NumNode): NumNode {
   return tag(typeof x === 'number' ? constant(x) : x, { qt: 'misc', q: '_' })
@@ -222,11 +219,12 @@ export const conditionalEntries = (sheet: Sheet, src: MemAll, dst: MemAll) => {
   return (name: string, val: string | number) => base[name].add(val)
 }
 
+const condMeta = Symbol.for('condMeta')
 type CondIgnored = 'both' | 'src' | 'dst' | 'none'
 function allConditionals<T>(
   sheet: Sheet,
   shared: CondIgnored = 'src',
-  meta: object,
+  meta: IBareConditionalData,
   transform: (r: Read, q: string) => T
 ): Record<string, T> {
   // Keep the base tag "full" here so that `cond` returns consistent tags
@@ -239,20 +237,11 @@ function allConditionals<T>(
     elementalType: null,
     damageType1: null,
     damageType2: null,
+    [condMeta as any]: meta, // Add metadata directly to tag
   }
   let base = reader.max.withTag(baseTag)
   if (shared === 'both') base = base.withTag({ src: null, dst: null })
   else if (shared !== 'none') base = base.with(shared, null)
-  if (metaList.conditionals) {
-    const { conditionals } = metaList
-    return base.withAll('q', [], (r, q) => {
-      const tag = Object.fromEntries(
-        Object.entries(r.tag).filter(([_, v]) => v)
-      )
-      conditionals.push({ meta, tag })
-      return transform(r, q)
-    })
-  }
   return base.withAll('q', [], transform)
 }
 

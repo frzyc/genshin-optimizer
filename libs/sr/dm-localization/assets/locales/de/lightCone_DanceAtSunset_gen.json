@@ -2,6 +2,6 @@
   "name": "Tanz im Sonnenuntergang",
   "passive": {
     "name": "Tief versunken",
-    "description": "Erhöht stark die Chance des Trägers, angegriffen zu werden und erhöht den KRIT-SCH des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Nachdem der Träger seinen Ultimate eingesetzt hat, erhält er für 2 Rd. 1 Stapelung „Feuertanz“, bis zu {{2}} Stapelungen. Jede Stapelung Feuertanz erhöht den vom Folgeangriff des Trägers verursachten SCH um <orangeStrong>{{3}}%</orangeStrong>."
+    "description": "Erhöht stark die Chance des Trägers, angegriffen zu werden und erhöht den KRIT-SCH des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Nachdem der Träger seinen Ultimate eingesetzt hat, erhält er für 2 Rd. 1 Stapelung „Feuertanz“, bis zu {{2}} Stapelungen. Jede Stapelung Feuertanz erhöht den vom Folgeangriff des Trägers verursachten SCH um <orangeStrong>{{3, percent}}%</orangeStrong>."
   }
 }

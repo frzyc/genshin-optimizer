@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Dazzling Blades",
-        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Sampo's ATK to a single enemy.",
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Sampo's ATK to a single enemy.",
         "shortDesc": "Deals minor Wind DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Ricochet Love",
-        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Sampo's ATK to a single enemy, and further deals DMG for {{1}} extra time(s), with each time dealing Wind DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Sampo's ATK to a random enemy.",
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Sampo's ATK to a single enemy, and further deals DMG for {{1}} extra time(s), with each time dealing Wind DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Sampo's ATK to a random enemy.",
         "shortDesc": "Deals minor Wind DMG to single enemy targets with 5 Bounces in total."
       }
     },
     "ult": {
       "0": {
         "name": "Surprise Present",
-        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Sampo's ATK to all enemies, with a {{4}}% <u>base chance</u> to increase the targets' DoT taken by <orangeStrong>{{2}}%</orangeStrong> for {{3}} turn(s).",
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Sampo's ATK to all enemies, with a {{4, percent}}% <u>base chance</u> to increase the targets' DoT taken by <orangeStrong>{{2, percent}}%</orangeStrong> for {{3}} turn(s).",
         "shortDesc": "Deals Wind DMG to all enemies, with a high chance to cause <orangeStrong>increased DoT taken</orangeStrong> to them."
       }
     },
     "technique": {
       "0": {
         "name": "Shining Bright",
-        "fullDesc": "After Sampo uses his Technique, enemies in a set area are inflicted with Blind for {{1}} second(s). Blinded enemies cannot detect your team.\\nWhen initiating combat against a Blinded enemy, there is a {{2}}% <u>fixed chance</u> to delay all enemies' action by {{3}}%.",
+        "fullDesc": "After Sampo uses his Technique, enemies in a set area are inflicted with Blind for {{1}} second(s). Blinded enemies cannot detect your team.\\nWhen initiating combat against a Blinded enemy, there is a {{2, percent}}% <u>fixed chance</u> to delay all enemies' action by {{3, percent}}%.",
         "shortDesc": "Enemies in a set area are Blinded. When initiating battle against a Blinded enemy, there is a high chance to <u>delay</u> all enemies' actions."
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Spice Up",
-        "fullDesc": "Enemies with Wind Shear effect deal {{1}}% less DMG to Sampo.",
+        "fullDesc": "Enemies with Wind Shear effect deal {{1, percent}}% less DMG to Sampo.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Infectious Enthusiasm",
-      "desc": "Defeating an enemy with Wind Shear has a {{1}}% base chance to inflict all enemies with {{2}} stack(s) of Wind Shear, equivalent to the Talent's Wind Shear."
+      "desc": "Defeating an enemy with Wind Shear has a {{1, percent}}% base chance to inflict all enemies with {{2}} stack(s) of Wind Shear, equivalent to the Talent's Wind Shear."
     },
     "3": {
       "name": "Big Money!",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "The Deeper the Love, the Stronger the Hate",
-      "desc": "When Skill hits an enemy with {{1}} or more stack(s) of Wind Shear, the enemy immediately takes {{2}}% of current Wind Shear DMG."
+      "desc": "When Skill hits an enemy with {{1}} or more stack(s) of Wind Shear, the enemy immediately takes {{2, percent}}% of current Wind Shear DMG."
     },
     "5": {
       "name": "Huuuuge Money!",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Increased Spending",
-      "desc": "Talent's Wind Shear DMG multiplier increases by {{1}}%."
+      "desc": "Talent's Wind Shear DMG multiplier increases by {{1, percent}}%."
     }
   }
 }

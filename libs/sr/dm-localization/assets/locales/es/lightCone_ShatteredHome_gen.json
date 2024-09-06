@@ -2,6 +2,6 @@
   "name": "Hogar destrozado",
   "passive": {
     "name": "Erradicación",
-    "description": "El daño que el portador inflige a los enemigos cuyo porcentaje de PV sea superior al {{1}}% aumenta en un <orangeStrong>{{2}}%</orangeStrong>."
+    "description": "El daño que el portador inflige a los enemigos cuyo porcentaje de PV sea superior al {{1, percent}}% aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong>."
   }
 }

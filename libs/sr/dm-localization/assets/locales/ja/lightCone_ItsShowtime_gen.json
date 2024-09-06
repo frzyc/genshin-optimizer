@@ -2,6 +2,6 @@
   "name": "ショーの{RUBY_B#はじ}始{RUBY_E#}まり",
   "passive": {
     "name": "{RUBY_B#ひと}独{RUBY_E#}りの{RUBY_B#ごらく}娯楽{RUBY_E#}",
-    "description": "装備キャラが敵にデバフを付与した後、「トリック」を1層獲得する。「トリック」1層につき、装備キャラの与ダメージ+<orangeStrong>{{1}}%</orangeStrong>、{{3}}ターン継続、最大で{{2}}層累積できる。装備キャラの効果命中が{{4}}%以上の時、攻撃力+<orangeStrong>{{5}}%</orangeStrong>。"
+    "description": "装備キャラが敵にデバフを付与した後、「トリック」を1層獲得する。「トリック」1層につき、装備キャラの与ダメージ+<orangeStrong>{{1, percent}}%</orangeStrong>、{{3}}ターン継続、最大で{{2}}層累積できる。装備キャラの効果命中が{{4, percent}}%以上の時、攻撃力+<orangeStrong>{{5, percent}}%</orangeStrong>。"
   }
 }

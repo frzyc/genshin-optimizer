@@ -2,6 +2,6 @@
   "name": "{RUBY_B#りげん}離弦{RUBY_E#}",
   "passive": {
     "name": "{RUBY_B#めいかく}鳴角{RUBY_E#}",
-    "description": "装備キャラが敵を倒した後、攻撃力+<orangeStrong>{{1}}%</orangeStrong>、{{2}}ターン持続。"
+    "description": "装備キャラが敵を倒した後、攻撃力+<orangeStrong>{{1, percent}}%</orangeStrong>、{{2}}ターン持続。"
   }
 }

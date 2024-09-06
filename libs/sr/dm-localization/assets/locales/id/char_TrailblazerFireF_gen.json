@@ -4,33 +4,33 @@
     "basic": {
       "0": {
         "name": "Ice-Breaking Light",
-        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Trailblazer pada satu musuh yang ditarget dan memperoleh 1 lapis \"Magma Will\".",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Trailblazer pada satu musuh yang ditarget dan memperoleh 1 lapis \"Magma Will\".",
         "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh dan memperoleh \"Magma Will\"."
       },
       "1": {
         "name": "Ice-Breaking Light",
-        "fullDesc": "Mengonsumsi 4 lapis \"Magma Will\" untuk memperkuat Basic Attack, mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Trailblazer pada 1 target musuh, dan di saat bersamaan mengakibatkan Fire DMG sebesar <orangeStrong>{{2}}%</orangeStrong> ATK Trailblazer pada musuh di sekitar target.",
+        "fullDesc": "Mengonsumsi 4 lapis \"Magma Will\" untuk memperkuat Basic Attack, mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Trailblazer pada 1 target musuh, dan di saat bersamaan mengakibatkan Fire DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Trailblazer pada musuh di sekitar target.",
         "shortDesc": "Mengonsumsi \"Magma Will\" dan mengakibatkan Fire DMG pada 1 musuh dan mengakibatkan Fire DMG dalam jumlah kecil pada musuh di sekitar target."
       }
     },
     "skill": {
       "0": {
         "name": "Ever-Burning Amber",
-        "fullDesc": "Setelah melancarkan Skill, mengurangi <orangeStrong>{{1}}%</orangeStrong> DMG yang diterima Trailblazer dan memperoleh 1 lapis \"Magma Will\", serta memiliki {{2}}% <u>peluang dasar</u> untuk membuat musuh memasuki status \"Taunt\" selama {{3}} giliran.",
+        "fullDesc": "Setelah melancarkan Skill, mengurangi <orangeStrong>{{1, percent}}%</orangeStrong> DMG yang diterima Trailblazer dan memperoleh 1 lapis \"Magma Will\", serta memiliki {{2, percent}}% <u>peluang dasar</u> untuk membuat musuh memasuki status \"Taunt\" selama {{3}} giliran.",
         "shortDesc": "Mengurangi DMG yang diterima diri sendiri dan memperoleh \"Magma Will\". Berpeluang besar untuk memberikan efek Taunt pada seluruh musuh."
       }
     },
     "ult": {
       "0": {
         "name": "War-Flaming Lance",
-        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK +<orangeStrong>{{2}}%</orangeStrong> DEF Trailblazer pada seluruh musuh. Saat melancarkan Basic Attack selanjutnya, Trailblazer akan otomatis memperoleh peningkatan tanpa mengonsumsi \"Magma Will\".",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK +<orangeStrong>{{2, percent}}%</orangeStrong> DEF Trailblazer pada seluruh musuh. Saat melancarkan Basic Attack selanjutnya, Trailblazer akan otomatis memperoleh peningkatan tanpa mengonsumsi \"Magma Will\".",
         "shortDesc": "Mengakibatkan Fire DMG pada seluruh musuh dan meningkatkan Basic Attack selanjutnya."
       }
     },
     "technique": {
       "0": {
         "name": "Call of the Guardian",
-        "fullDesc": "Setelah menggunakan Technique, memberikan Shield yang dapat menahan DMG sebesar {{1}}% DEF Trailblazer +{{2}} selama {{3}} giliran saat pertempuran selanjutnya dimulai.",
+        "fullDesc": "Setelah menggunakan Technique, memberikan Shield yang dapat menahan DMG sebesar {{1, percent}}% DEF Trailblazer +{{2}} selama {{3}} giliran saat pertempuran selanjutnya dimulai.",
         "shortDesc": ""
       }
     },
@@ -44,21 +44,21 @@
     "bonusAbility1": {
       "0": {
         "name": "The Strong Defend the Weak",
-        "fullDesc": "Setelah melancarkan Skill, mengurangi {{2}}% DMG yang diterima seluruh rekan tim selama {{3}} giliran.",
+        "fullDesc": "Setelah melancarkan Skill, mengurangi {{2, percent}}% DMG yang diterima seluruh rekan tim selama {{3}} giliran.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Unwavering Gallantry",
-        "fullDesc": "Setelah melancarkan Enhanced Basic Attack, HP Trailblazer akan dipulihkan sebesar {{1}}% Max HP-nya.",
+        "fullDesc": "Setelah melancarkan Enhanced Basic Attack, HP Trailblazer akan dipulihkan sebesar {{1, percent}}% Max HP-nya.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Action Beats Overthinking",
-        "fullDesc": "Jika Trailblazer dilindungi Shield pada saat gilirannya dimulai, meningkatkan {{2}}% ATK dan memulihkan {{1}} Energy sampai aksinya berakhir.",
+        "fullDesc": "Jika Trailblazer dilindungi Shield pada saat gilirannya dimulai, meningkatkan {{2, percent}}% ATK dan memulihkan {{1}} Energy sampai aksinya berakhir.",
         "shortDesc": ""
       }
     }
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Earth-Shaking Resonance",
-      "desc": "Melancarkan Basic Attack/Enhanced Basic Attack akan mengakibatkan Fire DMG tambahan sebesar {{1}}%/{{2}}% DEF Trailblazer."
+      "desc": "Melancarkan Basic Attack/Enhanced Basic Attack akan mengakibatkan Fire DMG tambahan sebesar {{1, percent}}%/{{2, percent}}% DEF Trailblazer."
     },
     "2": {
       "name": "Time-Defying Tenacity",
-      "desc": "Ketika Talent terpicu, kekuatan Shield yang diperoleh untuk seluruh rekan tim akan meningkat sebesar {{1}}% DEF Trailblazer + {{2}}."
+      "desc": "Ketika Talent terpicu, kekuatan Shield yang diperoleh untuk seluruh rekan tim akan meningkat sebesar {{1, percent}}% DEF Trailblazer + {{2}}."
     },
     "3": {
       "name": "Trail-Blazing Blueprint",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "City-Forging Bulwarks",
-      "desc": "Meningkatkan {{1}}% DEF Trailblazer setelah melancarkan Enhanced Basic Attack atau Ultimate, dapat ditumpuk hingga {{2}} lapis."
+      "desc": "Meningkatkan {{1, percent}}% DEF Trailblazer setelah melancarkan Enhanced Basic Attack atau Ultimate, dapat ditumpuk hingga {{2}} lapis."
     }
   }
 }

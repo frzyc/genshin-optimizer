@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Lightning Rush",
-        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Arlan's ATK to a single enemy.",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Arlan's ATK to a single enemy.",
         "shortDesc": "Deals minor Lightning DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Shackle Breaker",
-        "fullDesc": "Consumes Arlan's HP equal to {{1}}% of his Max HP to deal Lightning DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Arlan's ATK to a single enemy. If Arlan does not have sufficient HP, his HP will be reduced to 1 after using his Skill.",
+        "fullDesc": "Consumes Arlan's HP equal to {{1, percent}}% of his Max HP to deal Lightning DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Arlan's ATK to a single enemy. If Arlan does not have sufficient HP, his HP will be reduced to 1 after using his Skill.",
         "shortDesc": "Consumes a portion of HP to deal Lightning DMG to a single enemy."
       }
     },
     "ult": {
       "0": {
         "name": "Frenzied Punishment",
-        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Arlan's ATK to a single enemy and Lightning DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Arlan's ATK to enemies adjacent to it.",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Arlan's ATK to a single enemy and Lightning DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Arlan's ATK to enemies adjacent to it.",
         "shortDesc": "Deals massive Lightning DMG to a single enemy and Lightning DMG to enemies adjacent to it."
       }
     },
     "technique": {
       "0": {
         "name": "Swift Harvest",
-        "fullDesc": "Immediately attacks the enemy. After entering battle, deals Lightning DMG equal to {{1}}% of Arlan's ATK to all enemies.",
+        "fullDesc": "Immediately attacks the enemy. After entering battle, deals Lightning DMG equal to {{1, percent}}% of Arlan's ATK to all enemies.",
         "shortDesc": "Attacks the enemy. After entering battle, deals minor Lightning DMG to all enemies."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Revival",
-        "fullDesc": "If the current HP percentage is {{1}}% or lower when defeating an enemy, immediately restores HP equal to {{2}}% of Max HP.",
+        "fullDesc": "If the current HP percentage is {{1, percent}}% or lower when defeating an enemy, immediately restores HP equal to {{2, percent}}% of Max HP.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Endurance",
-        "fullDesc": "The chance to resist DoT Debuffs increases by {{1}}%.",
+        "fullDesc": "The chance to resist DoT Debuffs increases by {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Repel",
-        "fullDesc": "Upon entering battle, if Arlan's HP is less than or equal to {{1}}%, he can nullify all DMG received except for DoTs until he is attacked.",
+        "fullDesc": "Upon entering battle, if Arlan's HP is less than or equal to {{1, percent}}%, he can nullify all DMG received except for DoTs until he is attacked.",
         "shortDesc": ""
       }
     }
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "To the Bitter End",
-      "desc": "When HP is lower than or equal to 50% of Max HP, increases DMG dealt by Skill by {{1}}%."
+      "desc": "When HP is lower than or equal to 50% of Max HP, increases DMG dealt by Skill by {{1, percent}}%."
     },
     "2": {
       "name": "Breaking Free",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Turn the Tables",
-      "desc": "When struck by a killing blow after entering battle, instead of becoming knocked down, Arlan immediately restores his HP to {{1}}% of his Max HP. This effect is automatically removed after it is triggered once or after {{2}} turn(s) have elapsed."
+      "desc": "When struck by a killing blow after entering battle, instead of becoming knocked down, Arlan immediately restores his HP to {{1, percent}}% of his Max HP. This effect is automatically removed after it is triggered once or after {{2}} turn(s) have elapsed."
     },
     "5": {
       "name": "Hammer and Tongs",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Self-Sacrifice",
-      "desc": "When HP drops to 50% or below, Ultimate deals {{1}}% more DMG. And the DMG multiplier for adjacent targets is raised to the same level as that for the primary target."
+      "desc": "When HP drops to 50% or below, Ultimate deals {{1, percent}}% more DMG. And the DMG multiplier for adjacent targets is raised to the same level as that for the primary target."
     }
   }
 }

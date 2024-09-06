@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "인자함의 이면",
-        "fullDesc": "지정된 단일 적에게 나타샤 공격력 <orangeStrong>{{1}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
+        "fullDesc": "지정된 단일 적에게 나타샤 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
         "shortDesc": "단일 적에게 소량의 물리 속성 피해를 가한다"
       }
     },
     "skill": {
       "0": {
         "name": "사랑, 구조와 선택",
-        "fullDesc": "지정된 단일 아군의 HP를 즉시 나타샤 HP 최대치의 <orangeStrong>{{1}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>만큼 회복하고, 턴이 시작될 때마다 대상의 HP를 나타샤 HP 최대치의 <orangeStrong>{{2}}%</orangeStrong>+<orangeStrong>{{5}}</orangeStrong>만큼 회복한다. 지속 시간: {{3}}턴",
+        "fullDesc": "지정된 단일 아군의 HP를 즉시 나타샤 HP 최대치의 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>만큼 회복하고, 턴이 시작될 때마다 대상의 HP를 나타샤 HP 최대치의 <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{5}}</orangeStrong>만큼 회복한다. 지속 시간: {{3}}턴",
         "shortDesc": "단일 아군의 <orangeStrong>HP를 회복하고</orangeStrong> 목표가 <orangeStrong>지속적으로 HP를 회복</orangeStrong>하게 한다"
       }
     },
     "ult": {
       "0": {
         "name": "신생의 의례",
-        "fullDesc": "모든 아군이 즉시 나타샤 HP 최대치 <orangeStrong>{{1}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>만큼의 HP를 회복한다",
+        "fullDesc": "모든 아군이 즉시 나타샤 HP 최대치 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>만큼의 HP를 회복한다",
         "shortDesc": "모든 아군의 <orangeStrong>HP를 회복</orangeStrong>한다"
       }
     },
     "technique": {
       "0": {
         "name": "최면 연구",
-        "fullDesc": "적을 바로 공격하며, 전투 진입 후 임의의 단일 적에게 나타샤 공격력 {{4}}%만큼의 물리 속성 피해를 준다. 동시에 {{1}}%의 <u>기본 확률</u>로 각 단일 적을 허약 상태에 빠트린다.\\n허약 상태의 적은 아군에게 가하는 피해가 {{2}}% 감소한다. 지속 시간: {{3}}턴",
+        "fullDesc": "적을 바로 공격하며, 전투 진입 후 임의의 단일 적에게 나타샤 공격력 {{4, percent}}%만큼의 물리 속성 피해를 준다. 동시에 {{1, percent}}%의 <u>기본 확률</u>로 각 단일 적을 허약 상태에 빠트린다.\\n허약 상태의 적은 아군에게 가하는 피해가 {{2, percent}}% 감소한다. 지속 시간: {{3}}턴",
         "shortDesc": "적을 공격하며, 전투 진입 후 임의의 단일 적에게 소량의 물리 속성 피해를 가하고, 높은 확률로 각 단일 적을 허약 상태에 빠트린다"
       }
     },
@@ -46,7 +46,7 @@
     "bonusAbility2": {
       "0": {
         "name": "의사",
-        "fullDesc": "나타샤가 제공하는 치유량이 {{1}}% 증가한다",
+        "fullDesc": "나타샤가 제공하는 치유량이 {{1, percent}}% 증가한다",
         "shortDesc": ""
       }
     },
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "약리학적 식견",
-      "desc": "피격 후 현재 HP 백분율이 {{1}}% 이하일 경우 자신에게 치유를 1회 발동하며 자신 HP 최대치 {{2}}%+{{3}}만큼의 HP를 회복한다. 해당 효과는 단일 전투마다 1회만 발동한다"
+      "desc": "피격 후 현재 HP 백분율이 {{1, percent}}% 이하일 경우 자신에게 치유를 1회 발동하며 자신 HP 최대치 {{2, percent}}%+{{3}}만큼의 HP를 회복한다. 해당 효과는 단일 전투마다 1회만 발동한다"
     },
     "2": {
       "name": "임상시험",
-      "desc": "필살기 발동 시 현재 HP 백분율이 {{1}}% 이하인 아군에게 {{2}}턴의 지속 치유 효과를 부여하며 목표의 턴이 시작될 때 대상에게 나타샤 HP 최대치 {{3}}%+{{4}}만큼의 HP를 회복한다"
+      "desc": "필살기 발동 시 현재 HP 백분율이 {{1, percent}}% 이하인 아군에게 {{2}}턴의 지속 치유 효과를 부여하며 목표의 턴이 시작될 때 대상에게 나타샤 HP 최대치 {{3, percent}}%+{{4}}만큼의 HP를 회복한다"
     },
     "3": {
       "name": "올바른 처방",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "의사의 인자함",
-      "desc": "일반 공격 발동 시 추가로 나타샤 HP 최대치 {{1}}%만큼의 물리 속성 피해를 준다"
+      "desc": "일반 공격 발동 시 추가로 나타샤 HP 최대치 {{1, percent}}%만큼의 물리 속성 피해를 준다"
     }
   }
 }

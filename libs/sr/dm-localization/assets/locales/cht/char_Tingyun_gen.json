@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "逐客令",
-        "fullDesc": "對指定敵方單體造成等同於停雲<orangeStrong>{{1}}%</orangeStrong>攻擊力的雷屬性傷害。",
+        "fullDesc": "對指定敵方單體造成等同於停雲<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性傷害。",
         "shortDesc": "對敵方單體造成少量雷屬性傷害。"
       }
     },
     "skill": {
       "0": {
         "name": "祥音和韻",
-        "fullDesc": "為指定我方單體提供【賜福】，使其攻擊力提高<orangeStrong>{{2}}%</orangeStrong>，最高不超過停雲當下攻擊力的<orangeStrong>{{4}}%</orangeStrong>。\\n獲得【賜福】的目標發動攻擊後，會額外造成1次等同於其自身<orangeStrong>{{1}}%</orangeStrong>攻擊力的雷屬性<u>附加傷害</u>。\\n【賜福】持續{{3}}回合且僅對停雲戰技最新的施放目標生效。",
+        "fullDesc": "為指定我方單體提供【賜福】，使其攻擊力提高<orangeStrong>{{2, percent}}%</orangeStrong>，最高不超過停雲當下攻擊力的<orangeStrong>{{4, percent}}%</orangeStrong>。\\n獲得【賜福】的目標發動攻擊後，會額外造成1次等同於其自身<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性<u>附加傷害</u>。\\n【賜福】持續{{3}}回合且僅對停雲戰技最新的施放目標生效。",
         "shortDesc": "使我方單體<orangeStrong>攻擊力提高</orangeStrong>，並獲得【賜福】。【賜福】狀態下攻擊時額外造成少量<orangeStrong>雷屬性<u>附加傷害</u></orangeStrong>。"
       }
     },
     "ult": {
       "0": {
         "name": "慶雲光覆儀禱",
-        "fullDesc": "為指定我方單體恢復{{1}}點能量，同時使目標造成的傷害提高<orangeStrong>{{3}}%</orangeStrong>，持續{{2}}回合。",
+        "fullDesc": "為指定我方單體恢復{{1}}點能量，同時使目標造成的傷害提高<orangeStrong>{{3, percent}}%</orangeStrong>，持續{{2}}回合。",
         "shortDesc": "為我方單體<orangeStrong>恢復能量</orangeStrong>，並使其<orangeStrong>造成的傷害提高</orangeStrong>。"
       }
     },
@@ -39,14 +39,14 @@
     "bonusAbility1": {
       "0": {
         "name": "駐晴",
-        "fullDesc": "施放戰技時，停雲自身速度提高{{1}}%，持續1回合。",
+        "fullDesc": "施放戰技時，停雲自身速度提高{{1, percent}}%，持續1回合。",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "止厄",
-        "fullDesc": "普通攻擊造成的傷害提高{{1}}%。",
+        "fullDesc": "普通攻擊造成的傷害提高{{1, percent}}%。",
         "shortDesc": ""
       }
     },
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "春風得意，時運馳騁",
-      "desc": "得到【賜福】的我方單體施放終結技後速度提高{{1}}%，持續1回合。"
+      "desc": "得到【賜福】的我方單體施放終結技後速度提高{{1, percent}}%，持續1回合。"
     },
     "2": {
       "name": "君子惠渥，晏笑承之",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "鳴火機變，度時察勢",
-      "desc": "【賜福】附加的傷害倍率提高{{1}}%。"
+      "desc": "【賜福】附加的傷害倍率提高{{1, percent}}%。"
     },
     "5": {
       "name": "綏綏狐魅",

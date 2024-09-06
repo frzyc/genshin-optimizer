@@ -2,6 +2,6 @@
   "name": "Đêm Kinh Hoàng",
   "passive": {
     "name": "Hít Thở Sâu",
-    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> hiệu suất hồi phục Năng Lượng của người trang bị. Khi mục tiêu phe ta thi triển Tuyệt Kỹ, người trang bị sẽ hồi HP bằng <orangeStrong>{{2}}%</orangeStrong> Giới Hạn HP cho mục tiêu phe ta có Phần Trăm HP thấp nhất hiện tại. Khi người trang bị trị liệu cho mục tiêu phe ta, sẽ khiến tấn công của mục tiêu này tăng <orangeStrong>{{3}}%</orangeStrong>, hiệu ứng này tối đa cộng dồn {{4}} tầng, duy trì {{5}} hiệp."
+    "description": "Tăng <orangeStrong>{{1, percent}}%</orangeStrong> hiệu suất hồi phục Năng Lượng của người trang bị. Khi mục tiêu phe ta thi triển Tuyệt Kỹ, người trang bị sẽ hồi HP bằng <orangeStrong>{{2, percent}}%</orangeStrong> Giới Hạn HP cho mục tiêu phe ta có Phần Trăm HP thấp nhất hiện tại. Khi người trang bị trị liệu cho mục tiêu phe ta, sẽ khiến tấn công của mục tiêu này tăng <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, hiệu ứng này tối đa cộng dồn {{4}} tầng, duy trì {{5}} hiệp."
   }
 }

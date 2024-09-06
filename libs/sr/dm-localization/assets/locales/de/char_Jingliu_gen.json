@@ -4,33 +4,33 @@
     "basic": {
       "0": {
         "name": "Strahlendes Mondleuchten",
-        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Jinglius ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Jinglius ANG zu.",
         "shortDesc": "Fügt einem anvisierten Gegner geringen Eis-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Transzendenter Blitz",
-        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Jinglius ANG zu und erhält {{2}} Stapelung „Lunation“.",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Jinglius ANG zu und erhält {{2}} Stapelung „Lunation“.",
         "shortDesc": "Fügt einem anvisierten Gegner Eis-SCH zu und erhält <orangeStrong>1 Stapelung „Lunation“</orangeStrong>."
       },
       "1": {
         "name": "Gletscherfluss im Mondenschein",
-        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Jinglius ANG und angrenzenden Einheiten Eis-SCH in Höhe von <orangeStrong>{{3}}%</orangeStrong> von Jinglius ANG zu. Verbraucht {{2}} Stapelung „Lunation“. Der Einsatz dieser Fähigkeit verbraucht keine Fertigkeitspunkte.",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Jinglius ANG und angrenzenden Einheiten Eis-SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Jinglius ANG zu. Verbraucht {{2}} Stapelung „Lunation“. Der Einsatz dieser Fähigkeit verbraucht keine Fertigkeitspunkte.",
         "shortDesc": "Fügt einem anvisierten Gegner und angrenzenden Einheiten Eis-SCH zu. Verbraucht 1 Stapelung „Lunation“."
       }
     },
     "ult": {
       "0": {
         "name": "Traum der vergänglichen Blüten",
-        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Jinglius ANG und angrenzenden Einheiten Eis-SCH in Höhe von <orangeStrong>{{3}}%</orangeStrong> von Jinglius ANG zu. Nach dem Angriff erhält sie {{2}} Stapelung „Lunation“.",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Jinglius ANG und angrenzenden Einheiten Eis-SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Jinglius ANG zu. Nach dem Angriff erhält sie {{2}} Stapelung „Lunation“.",
         "shortDesc": "Fügt einem anvisierten Gegner massiven Eis-SCH und angrenzenden Einheiten Eis-SCH zu. Erhält <orangeStrong>1 Stapelung „Lunation“</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Glanz des Inneren",
-        "fullDesc": "Nach dem Einsatz der Technik wird eine spezielle Dimension für {{3}} Sek. um Jingliu herum erzeugt. Alle Gegner innerhalb dieser Dimension werden eingefroren. Nach Kampfeintritt mit Gegnern in dieser Dimension werden {{6}} Pkt. Energie sofort wiederhergestellt. Gleichzeitig erhält Jingliu {{1}} Stapelung „Lunation“ und hat eine <u>Grundchance</u> von {{2}}%, Gegner für {{4}} Rd. einzufrieren. Gefrorene Gegner können keine Aktionen ausführen und erleiden zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von {{5}}% von Jinglius ANG. Es kann nur 1 von Verbündeten erschaffene Dimension zur gleichen Zeit existieren.",
+        "fullDesc": "Nach dem Einsatz der Technik wird eine spezielle Dimension für {{3}} Sek. um Jingliu herum erzeugt. Alle Gegner innerhalb dieser Dimension werden eingefroren. Nach Kampfeintritt mit Gegnern in dieser Dimension werden {{6}} Pkt. Energie sofort wiederhergestellt. Gleichzeitig erhält Jingliu {{1}} Stapelung „Lunation“ und hat eine <u>Grundchance</u> von {{2, percent}}%, Gegner für {{4}} Rd. einzufrieren. Gefrorene Gegner können keine Aktionen ausführen und erleiden zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von {{5, percent}}% von Jinglius ANG. Es kann nur 1 von Verbündeten erschaffene Dimension zur gleichen Zeit existieren.",
         "shortDesc": "Erzeugt eine spezielle Dimension um Jingliu herum. Gegner innerhalb dieser Dimension werden <orangeStrong>eingefroren</orangeStrong>. Nach Kampfeintritt mit Gegnern in dieser Dimension erhält Jingliu Energie, 1 Stapelung Lunation und hat eine hohe Chance, Gegner <orangeStrong>einzufrieren</orangeStrong>."
       }
     },
@@ -44,21 +44,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Totenreich",
-        "fullDesc": "Erhöht im Status „Seelenwanderung“ den Effekt-WDS um {{1}}%.",
+        "fullDesc": "Erhöht im Status „Seelenwanderung“ den Effekt-WDS um {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Schwertmeisterin",
-        "fullDesc": "Nach dem Einsatz von „Transzendenter Blitz“ wird die nächste Aktion um {{1}}% vorgezogen.",
+        "fullDesc": "Nach dem Einsatz von „Transzendenter Blitz“ wird die nächste Aktion um {{1, percent}}% vorgezogen.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Frostgespenst",
-        "fullDesc": "Erhöht im Status „Seelenwanderung“ den durch Ultimates verursachten SCH um {{1}}%.",
+        "fullDesc": "Erhöht im Status „Seelenwanderung“ den durch Ultimates verursachten SCH um {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Mondsturm auf die Himmelspforte",
-      "desc": "Beim Einsatz des Ultimates oder der verstärkten Fertigkeit wird Jinglius KRIT-SCH für {{3}} Rd. um {{1}}% erhöht. Wenn nur ein Gegner angegriffen wird, wird dem Ziel zusätzlich 1-mal Eis-SCH in Höhe von {{2}}% von Jinglius ANG zugefügt."
+      "desc": "Beim Einsatz des Ultimates oder der verstärkten Fertigkeit wird Jinglius KRIT-SCH für {{3}} Rd. um {{1, percent}}% erhöht. Wenn nur ein Gegner angegriffen wird, wird dem Ziel zusätzlich 1-mal Eis-SCH in Höhe von {{2, percent}}% von Jinglius ANG zugefügt."
     },
     "2": {
       "name": "Neumondschatten über Himmelswagen",
-      "desc": "Erhöht nach dem Einsatz des Ultimates den SCH der nächsten verstärkten Fertigkeit um {{1}}%."
+      "desc": "Erhöht nach dem Einsatz des Ultimates den SCH der nächsten verstärkten Fertigkeit um {{1, percent}}%."
     },
     "3": {
       "name": "Lunare Sehnsucht",
@@ -78,7 +78,7 @@
     },
     "4": {
       "name": "Hochgehaltenes Mondlicht",
-      "desc": "Im Status „Seelenwanderung“ wird der ANG, der durch den Verbrauch der LP von Verbündeten erhalten wird, zusätzlich um {{1}}% der insgesamt verbrauchten Menge der LP aller Verbündeten erhöht. Die Obergrenze für den auf diese Weise verstärkten ANG wird um {{2}}% erhöht."
+      "desc": "Im Status „Seelenwanderung“ wird der ANG, der durch den Verbrauch der LP von Verbündeten erhalten wird, zusätzlich um {{1, percent}}% der insgesamt verbrauchten Menge der LP aller Verbündeten erhöht. Die Obergrenze für den auf diese Weise verstärkten ANG wird um {{2, percent}}% erhöht."
     },
     "5": {
       "name": "Obskurität über den Sternen",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Finsternis zum Nichts",
-      "desc": "Wenn Jingliu in den Status „Seelenwanderung“ eintritt, wird das Stapelungslimit von „Lunation“ um 1 erhöht und sie erhält {{1}} Stapelung „Lunation“. Im Status „Seelenwanderung“ wird ihr KRIT-SCH um {{2}}% erhöht."
+      "desc": "Wenn Jingliu in den Status „Seelenwanderung“ eintritt, wird das Stapelungslimit von „Lunation“ um 1 erhöht und sie erhält {{1}} Stapelung „Lunation“. Im Status „Seelenwanderung“ wird ihr KRIT-SCH um {{2, percent}}% erhöht."
     }
   }
 }

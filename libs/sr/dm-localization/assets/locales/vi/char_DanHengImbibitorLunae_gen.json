@@ -4,29 +4,29 @@
     "basic": {
       "0": {
         "name": "Trạch Chi",
-        "fullDesc": "Thi triển 2 đòn tấn công gây cho 1 kẻ địch Sát Thương Số Ảo bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Dan Heng - Ẩm Nguyệt.",
+        "fullDesc": "Thi triển 2 đòn tấn công gây cho 1 kẻ địch Sát Thương Số Ảo bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Dan Heng - Ẩm Nguyệt.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Số Ảo cho 1 kẻ địch."
       },
       "1": {
         "name": "Tối Thượng",
-        "fullDesc": "Thi triển 3 đòn tấn công gây cho 1 kẻ địch Sát Thương Số Ảo bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Dan Heng - Ẩm Nguyệt.",
+        "fullDesc": "Thi triển 3 đòn tấn công gây cho 1 kẻ địch Sát Thương Số Ảo bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Dan Heng - Ẩm Nguyệt.",
         "shortDesc": "Thi triển <orangeStrong>3 đòn</orangeStrong> tấn công gây Sát Thương Số Ảo cho 1 kẻ địch."
       },
       "2": {
         "name": "Ngọn Giáo Thánh Thần",
-        "fullDesc": "Thi triển 5 đòn tấn công lên 1 kẻ địch chỉ định và gây ra Sát Thương Số Ảo bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Dan Heng - Ẩm Nguyệt. Bắt đầu từ đòn tấn công thứ 4, cùng lúc gây ra Sát Thương Số Ảo bằng <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Dan Heng - Ẩm Nguyệt lên mục tiêu lân cận.",
+        "fullDesc": "Thi triển 5 đòn tấn công lên 1 kẻ địch chỉ định và gây ra Sát Thương Số Ảo bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Dan Heng - Ẩm Nguyệt. Bắt đầu từ đòn tấn công thứ 4, cùng lúc gây ra Sát Thương Số Ảo bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Dan Heng - Ẩm Nguyệt lên mục tiêu lân cận.",
         "shortDesc": "Thi triển <orangeStrong>5 đòn</orangeStrong> tấn công gây lượng lớn Sát Thương Số Ảo cho 1 kẻ địch, gây lượng nhỏ Sát Thương Số Ảo cho mục tiêu lân cận. Nhận 1 tầng Hô Mưa Gọi Gió trước mỗi lần tung ra đòn thứ 4 và thứ 5. Hô Mưa Gọi Gió sẽ tăng Sát Thương Bạo Kích."
       },
       "3": {
         "name": "Bàn Nã Diệu Dược",
-        "fullDesc": "Thi triển 7 đòn tấn công lên 1 kẻ địch chỉ định và gây ra Sát Thương Số Ảo bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Dan Heng - Ẩm Nguyệt. Bắt đầu từ đòn tấn công thứ 4, cùng lúc gây ra Sát Thương Số Ảo bằng <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Dan Heng - Ẩm Nguyệt lên mục tiêu lân cận.",
+        "fullDesc": "Thi triển 7 đòn tấn công lên 1 kẻ địch chỉ định và gây ra Sát Thương Số Ảo bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Dan Heng - Ẩm Nguyệt. Bắt đầu từ đòn tấn công thứ 4, cùng lúc gây ra Sát Thương Số Ảo bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Dan Heng - Ẩm Nguyệt lên mục tiêu lân cận.",
         "shortDesc": "Thi triển <orangeStrong>7 đòn</orangeStrong> tấn công gây lượng lớn Sát Thương Số Ảo cho 1 kẻ địch, gây Sát Thương Số Ảo cho mục tiêu lân cận. Nhận 1 tầng Hô Mưa Gọi Gió trước mỗi lần tung ra đòn thứ 4, 5, 6 và 7. Hô Mưa Gọi Gió sẽ tăng Sát Thương Bạo Kích."
       }
     },
     "skill": {
       "0": {
         "name": "Long Lực Tự Tại",
-        "fullDesc": "Khiến hiệu ứng Tấn Công Thường được cường hóa, tối đa có thể liên tục cường hóa 3 lần, thi triển kỹ năng này không tiêu hao Điểm Chiến Kỹ và không tính là sử dụng Chiến Kỹ.\\nCường hóa 1 lần, \"Trạch Chi\" biến thành \"Tối Thượng\".\\nCường hóa 2 lần, \"Trạch Chi\" biến thành \"Ngọn Giáo Thánh Thần\".\\nCường hóa 3 lần, \"Trạch Chi\" biến thành \"Bàn Nã Diệu Dược\".\\nKhi thi triển \"Ngọn Giáo Thánh Thần\" hoặc \"Bàn Nã Diệu Dược\", bắt đầu từ đòn tấn công thứ 4, trước mỗi đòn tấn công sẽ nhận 1 tầng \"Hô Phong Hoán Vũ\", tăng <orangeStrong>{{1}}%</orangeStrong> Sát Thương Bạo Kích của Dan Heng - Ẩm Nguyệt, hiệu ứng này tối đa cộng dồn {{2}} tầng, duy trì đến khi hiệp của bản thân kết thúc.",
+        "fullDesc": "Khiến hiệu ứng Tấn Công Thường được cường hóa, tối đa có thể liên tục cường hóa 3 lần, thi triển kỹ năng này không tiêu hao Điểm Chiến Kỹ và không tính là sử dụng Chiến Kỹ.\\nCường hóa 1 lần, \"Trạch Chi\" biến thành \"Tối Thượng\".\\nCường hóa 2 lần, \"Trạch Chi\" biến thành \"Ngọn Giáo Thánh Thần\".\\nCường hóa 3 lần, \"Trạch Chi\" biến thành \"Bàn Nã Diệu Dược\".\\nKhi thi triển \"Ngọn Giáo Thánh Thần\" hoặc \"Bàn Nã Diệu Dược\", bắt đầu từ đòn tấn công thứ 4, trước mỗi đòn tấn công sẽ nhận 1 tầng \"Hô Phong Hoán Vũ\", tăng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Sát Thương Bạo Kích của Dan Heng - Ẩm Nguyệt, hiệu ứng này tối đa cộng dồn {{2}} tầng, duy trì đến khi hiệp của bản thân kết thúc.",
         "shortDesc": "Dùng tấn công thường Trạch Chi <orangeStrong>lần lượt cường hóa thành Tối Thượng</orangeStrong>, <orangeStrong>Ngọn Giáo Thánh Thần hoặc Bàn Nã Diệu Dược</orangeStrong>."
       },
       "1": {
@@ -38,14 +38,14 @@
     "ult": {
       "0": {
         "name": "Gột Rửa Thế Gian",
-        "fullDesc": "Thi triển 3 đòn tấn công gây Sát Thương Số Ảo cho 1 kẻ địch bằng <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Dan Heng - Ẩm Nguyệt, đồng thời gây Sát Thương Số Ảo cho mục tiêu lân cận bằng <orangeStrong>{{2}}%</orangeStrong> Tấn Công của Dan Heng - Ẩm Nguyệt. Và khiến bản thân nhận {{3}} Nghịch Lân.\\nTối đa sở hữu {{4}} Nghịch Lân, dùng để khấu trừ tiêu hao điểm Chiến Kỹ của Dan Heng - Ẩm Nguyệt. Tiêu hao Nghịch Lân được xem là tiêu hao điểm Chiến Kỹ.",
+        "fullDesc": "Thi triển 3 đòn tấn công gây Sát Thương Số Ảo cho 1 kẻ địch bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Dan Heng - Ẩm Nguyệt, đồng thời gây Sát Thương Số Ảo cho mục tiêu lân cận bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Dan Heng - Ẩm Nguyệt. Và khiến bản thân nhận {{3}} Nghịch Lân.\\nTối đa sở hữu {{4}} Nghịch Lân, dùng để khấu trừ tiêu hao điểm Chiến Kỹ của Dan Heng - Ẩm Nguyệt. Tiêu hao Nghịch Lân được xem là tiêu hao điểm Chiến Kỹ.",
         "shortDesc": "Gây lượng lớn Sát Thương Số Ảo cho 1 kẻ địch, gây Sát Thương Số Ảo cho mục tiêu lân cận và nhận 2 Nghịch Lân: Có thể <orangeStrong>khấu trừ</orangeStrong> <orangeStrong>tiêu hao điểm Chiến Kỹ</orangeStrong> của Dan Heng - Ẩm Nguyệt. Tiêu hao Nghịch Lân được xem là tiêu hao điểm Chiến Kỹ."
       }
     },
     "technique": {
       "0": {
         "name": "Long Thần Phá Hư Không",
-        "fullDesc": "Sau khi dùng Bí Kỹ sẽ vào trạng thái Bàn Diệu trong {{2}} giây. Ở trạng thái này, dùng tấn công sẽ di chuyển nhanh về phía trước một đoạn và tấn công kẻ địch tiếp xúc, trong lúc di chuyển nhanh có thể chống đỡ tất cả tấn công của kẻ địch. Ở trạng thái Bàn Diệu, sau khi chủ động tấn công kẻ địch vào chiến đấu, sẽ gây cho toàn bộ kẻ địch Sát Thương Số Ảo bằng {{3}}% Tấn Công của Dan Heng - Ẩm Nguyệt, đồng thời khiến bản thân nhận {{1}} Nghịch Lân.",
+        "fullDesc": "Sau khi dùng Bí Kỹ sẽ vào trạng thái Bàn Diệu trong {{2}} giây. Ở trạng thái này, dùng tấn công sẽ di chuyển nhanh về phía trước một đoạn và tấn công kẻ địch tiếp xúc, trong lúc di chuyển nhanh có thể chống đỡ tất cả tấn công của kẻ địch. Ở trạng thái Bàn Diệu, sau khi chủ động tấn công kẻ địch vào chiến đấu, sẽ gây cho toàn bộ kẻ địch Sát Thương Số Ảo bằng {{3, percent}}% Tấn Công của Dan Heng - Ẩm Nguyệt, đồng thời khiến bản thân nhận {{1}} Nghịch Lân.",
         "shortDesc": "Vào trạng thái Bàn Diệu, dùng tấn công sẽ di chuyển nhanh về phía trước một đoạn và tấn công kẻ địch tiếp xúc. Sau khi tấn công kẻ địch để vào trận, sẽ gây Sát Thương Số Ảo cho toàn bộ kẻ địch và nhận 1 Nghịch Lân."
       }
     },
@@ -66,14 +66,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Tu Vũ",
-        "fullDesc": "Tăng {{1}}% xác suất Kháng Hiệu Ứng Xấu dạng Khống Chế.",
+        "fullDesc": "Tăng {{1, percent}}% xác suất Kháng Hiệu Ứng Xấu dạng Khống Chế.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Khởi Trập",
-        "fullDesc": "Khi gây sát thương cho kẻ địch có Điểm Yếu Số Ảo, Sát Thương Bạo Kích sẽ tăng {{1}}%.",
+        "fullDesc": "Khi gây sát thương cho kẻ địch có Điểm Yếu Số Ảo, Sát Thương Bạo Kích sẽ tăng {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -101,7 +101,7 @@
     },
     "6": {
       "name": "Trị Vì",
-      "desc": "Sau khi đồng đội bất kỳ thi triển Tuyệt Kỹ, Dan Heng - Ẩm Nguyệt thi triển \"Bàn Nã Diệu Dược\" ở lần kế tiếp, Xuyên Kháng Số Ảo sẽ tăng {{1}}%, hiệu ứng này tối đa cộng dồn {{2}} tầng."
+      "desc": "Sau khi đồng đội bất kỳ thi triển Tuyệt Kỹ, Dan Heng - Ẩm Nguyệt thi triển \"Bàn Nã Diệu Dược\" ở lần kế tiếp, Xuyên Kháng Số Ảo sẽ tăng {{1, percent}}%, hiệu ứng này tối đa cộng dồn {{2}} tầng."
     }
   }
 }

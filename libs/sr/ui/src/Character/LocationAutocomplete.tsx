@@ -2,6 +2,7 @@ import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
 import { GeneralAutocomplete } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import { allCharacterKeys } from '@genshin-optimizer/sr/consts'
+import type { AutocompleteProps } from '@mui/material'
 import { Skeleton } from '@mui/material'
 import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -10,17 +11,23 @@ import { useDatabaseContext } from '../Context'
 type LocationAutocompleteProps = {
   locKey: CharacterKey | ''
   setLocKey: (v: CharacterKey | '') => void
-  props?: Omit<
-    GeneralAutocompleteOption<CharacterKey | ''>,
-    'options' | 'valueKey' | 'onChange' | 'toImg'
-  >
 }
+
 export function LocationAutocomplete({
   locKey,
   setLocKey,
   ...props
-}: LocationAutocompleteProps) {
-  const { t } = useTranslation(['character', 'charNames_gen'])
+}: LocationAutocompleteProps &
+  Omit<
+    AutocompleteProps<
+      GeneralAutocompleteOption<CharacterKey | ''>,
+      false,
+      boolean,
+      false
+    >,
+    'options' | 'valueKey' | 'onChange' | 'toImg' | 'renderInput'
+  >) {
+  const { t } = useTranslation(['common', 'charNames_gen'])
   const { database } = useDatabaseContext()
 
   const charInDb = useCallback(
@@ -38,7 +45,7 @@ export function LocationAutocomplete({
     () => [
       {
         key: '',
-        label: t('character:autocomplete.none'),
+        label: t('inventory'),
       },
       ...allCharacterKeys.map(
         (key): GeneralAutocompleteOption<CharacterKey | ''> => ({

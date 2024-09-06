@@ -2,6 +2,6 @@
   "name": "Solitary Healing",
   "passive": {
     "name": "Chaos Elixir",
-    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Break Effect pengguna. Saat pengguna melancarkan Ultimate, DoT yang diakibatkan pengguna meningkat <orangeStrong>{{2}}%</orangeStrong> selama {{3}} giliran. Saat musuh yang terkena efek DoT dari pengguna dikalahkan, pengguna akan memulihkan <orangeStrong>{{4}}</orangeStrong> Energy."
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> Break Effect pengguna. Saat pengguna melancarkan Ultimate, DoT yang diakibatkan pengguna meningkat <orangeStrong>{{2, percent}}%</orangeStrong> selama {{3}} giliran. Saat musuh yang terkena efek DoT dari pengguna dikalahkan, pengguna akan memulihkan <orangeStrong>{{4, fixed(fixed: 1)}}</orangeStrong> Energy."
   }
 }

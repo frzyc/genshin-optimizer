@@ -2,6 +2,6 @@
   "name": "Orilla inalcanzable",
   "passive": {
     "name": "Anhelo insatisfecho",
-    "description": "La Prob. CRIT del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong> y sus PV máx. aumentan en un <orangeStrong>{{2}}%</orangeStrong>. Cuando el portador recibe un ataque o consume sus propios PV, el daño que inflige aumenta en un <orangeStrong>{{3}}%</orangeStrong>. Este último efecto se elimina después de que el portador lance un ataque."
+    "description": "La Prob. CRIT del portador aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong> y sus PV máx. aumentan en un <orangeStrong>{{2, percent}}%</orangeStrong>. Cuando el portador recibe un ataque o consume sus propios PV, el daño que inflige aumenta en un <orangeStrong>{{3, percent}}%</orangeStrong>. Este último efecto se elimina después de que el portador lance un ataque."
   }
 }

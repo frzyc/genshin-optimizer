@@ -2,6 +2,6 @@
   "name": "She Already Shut Her Eyes",
   "passive": {
     "name": "Visioscape",
-    "description": "Increases the wearer's Max HP by <orangeStrong>{{1}}%</orangeStrong> and Energy Regeneration Rate by <orangeStrong>{{4}}%</orangeStrong>. When the wearer's HP is reduced, all allies' DMG dealt increases by <orangeStrong>{{2}}%</orangeStrong>, lasting for {{5}} turn(s).\\nAt the start of every wave, restores HP to all allies by an amount equal to <orangeStrong>{{3}}%</orangeStrong> of their respective lost HP."
+    "description": "Increases the wearer's Max HP by <orangeStrong>{{1, percent}}%</orangeStrong> and Energy Regeneration Rate by <orangeStrong>{{4, percent}}%</orangeStrong>. When the wearer's HP is reduced, all allies' DMG dealt increases by <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, lasting for {{5}} turn(s).\\nAt the start of every wave, restores HP to all allies by an amount equal to <orangeStrong>{{3, percent}}%</orangeStrong> of their respective lost HP."
   }
 }

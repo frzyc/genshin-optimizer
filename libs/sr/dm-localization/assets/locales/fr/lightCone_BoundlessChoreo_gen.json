@@ -2,6 +2,6 @@
   "name": "Danse endiablée",
   "passive": {
     "name": "Perception",
-    "description": "Augmente les chances de coup critique du porteur de <orangeStrong>{{1}}%</orangeStrong>. Le porteur inflige <orangeStrong>{{2}}%</orangeStrong> de DGT critiques supplémentaires aux ennemis ralentis ou dont la DÉF est réduite."
+    "description": "Augmente les chances de coup critique du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Le porteur inflige <orangeStrong>{{2, percent}}%</orangeStrong> de DGT critiques supplémentaires aux ennemis ralentis ou dont la DÉF est réduite."
   }
 }

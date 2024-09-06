@@ -2,6 +2,6 @@
   "name": "Das bin ich!",
   "passive": {
     "name": "Neues Kapitel",
-    "description": "Erhöht die VTD des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Erhöht den durch Ultimate verursachten SCH um <orangeStrong>{{2}}%</orangeStrong> seiner VTD. Dieser Effekt wird bei jedem Einsatz des Ultimates nur 1-mal pro gegnerischem Ziel wirksam."
+    "description": "Erhöht die VTD des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Erhöht den durch Ultimate verursachten SCH um <orangeStrong>{{2, percent}}%</orangeStrong> seiner VTD. Dieser Effekt wird bei jedem Einsatz des Ultimates nur 1-mal pro gegnerischem Ziel wirksam."
   }
 }

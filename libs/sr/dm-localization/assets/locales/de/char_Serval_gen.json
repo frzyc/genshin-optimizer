@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Grollender Donner",
-        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Servals ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Servals ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Heller Blitz",
-        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Servals ANG zu und fügt angrenzenden Zielen Blitz-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Servals ANG zu. Verursacht außerdem bei den getroffenen Gegnern mit einer <u>Grundchance</u> von {{3}}% für {{4}} Rd. Schock.\\nGeschockte Gegner erleiden zu Beginn jeder Runde Blitz-DoT in Höhe von <orangeStrong>{{5}}%</orangeStrong> von Servals ANG.",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Servals ANG zu und fügt angrenzenden Zielen Blitz-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Servals ANG zu. Verursacht außerdem bei den getroffenen Gegnern mit einer <u>Grundchance</u> von {{3, percent}}% für {{4}} Rd. Schock.\\nGeschockte Gegner erleiden zu Beginn jeder Runde Blitz-DoT in Höhe von <orangeStrong>{{5, percent}}%</orangeStrong> von Servals ANG.",
         "shortDesc": "Fügt einem Gegner und angrenzenden Einheiten geringen Blitz-SCH zu und bewirkt bei den Gegnern mit hoher Chance <orangeStrong>Schock</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Hier kommt das mechanische Fieber",
-        "fullDesc": "Fügt allen Gegnern Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Servals ANG zu. Verlängert die Dauer von Schock von Gegnern um {{2}} Rd.",
+        "fullDesc": "Fügt allen Gegnern Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Servals ANG zu. Verlängert die Dauer von Schock von Gegnern um {{2}} Rd.",
         "shortDesc": "Fügt allen Gegnern Blitz-SCH zu und verlängert die Dauer von Schock."
       }
     },
     "technique": {
       "0": {
         "name": "Gute Nacht, Belobog",
-        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt einem zufälligen Gegner Blitz-SCH in Höhe von {{4}}% von Servals ANG zu. Verursacht gleichzeitig bei allen Gegner mit einer <u>Grundchance</u> von {{1}}% für {{3}} Rd. Schock.\\nGeschockte Gegner erleiden zu Beginn jeder Runde Blitz-DoT in Höhe von {{2}}% von Servals ANG.",
+        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt einem zufälligen Gegner Blitz-SCH in Höhe von {{4, percent}}% von Servals ANG zu. Verursacht gleichzeitig bei allen Gegner mit einer <u>Grundchance</u> von {{1, percent}}% für {{3}} Rd. Schock.\\nGeschockte Gegner erleiden zu Beginn jeder Runde Blitz-DoT in Höhe von {{2, percent}}% von Servals ANG.",
         "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt einem zufälligen Gegner geringen Blitz-SCH zu und hat eine hohe Chance, jedem Gegner <orangeStrong>Schock zuzufügen</orangeStrong>."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Rock ’n’ Roll",
-        "fullDesc": "Erhöht die Grundchance, dass die Fertigkeit bei Gegnern Schock verursacht, um {{1}}%.",
+        "fullDesc": "Erhöht die Grundchance, dass die Fertigkeit bei Gegnern Schock verursacht, um {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Manie",
-        "fullDesc": "Erhöht den ANG für {{2}} Rd. um {{1}}%, wenn ein Gegner besiegt wird.",
+        "fullDesc": "Erhöht den ANG für {{2}} Rd. um {{1, percent}}%, wenn ein Gegner besiegt wird.",
         "shortDesc": ""
       }
     }
@@ -61,7 +61,7 @@
   "ranks": {
     "1": {
       "name": "Kraftvoll und durchschlagend",
-      "desc": "Der Standardangriff fügt einem zufälligen angrenzenden Gegner Blitz-SCH in Höhe von {{1}}% des Standardangriff-SCH von Serval zu."
+      "desc": "Der Standardangriff fügt einem zufälligen angrenzenden Gegner Blitz-SCH in Höhe von {{1, percent}}% des Standardangriff-SCH von Serval zu."
     },
     "2": {
       "name": "Zugabe!",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Etwas Lärm, bitte!",
-      "desc": "Beim Einsatz des Ultimates besteht eine Grundchance von {{1}}%, bei nicht geschockten Gegnern Schock zu verursachen. Dieser Effekt ist derselbe wie bei der Fertigkeit."
+      "desc": "Beim Einsatz des Ultimates besteht eine Grundchance von {{1, percent}}%, bei nicht geschockten Gegnern Schock zu verursachen. Dieser Effekt ist derselbe wie bei der Fertigkeit."
     },
     "5": {
       "name": "Belobogs lautestes Dröhnen!",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Dieses Lied hallt durch den Himmel!",
-      "desc": "Serval fügt geschockten Gegnern {{1}}% mehr SCH zu."
+      "desc": "Serval fügt geschockten Gegnern {{1, percent}}% mehr SCH zu."
     }
   }
 }

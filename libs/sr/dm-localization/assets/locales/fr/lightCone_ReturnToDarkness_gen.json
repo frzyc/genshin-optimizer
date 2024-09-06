@@ -2,6 +2,6 @@
   "name": "Retour aux ténèbres",
   "passive": {
     "name": "Vagues déchaînées",
-    "description": "Augmente les chances de coup critique du porteur de <orangeStrong>{{1}}%</orangeStrong>. Après un coup critique, il y a <orangeStrong>{{2}}%</orangeStrong> de chances fixes de dissiper 1 bonus de la cible ennemie. Cet effet ne peut être déclenché qu'1 fois par attaque."
+    "description": "Augmente les chances de coup critique du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Après un coup critique, il y a <orangeStrong>{{2, percent}}%</orangeStrong> de chances fixes de dissiper 1 bonus de la cible ennemie. Cet effet ne peut être déclenché qu'1 fois par attaque."
   }
 }

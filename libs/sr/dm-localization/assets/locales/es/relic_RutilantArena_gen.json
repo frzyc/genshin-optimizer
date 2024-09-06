@@ -1,6 +1,6 @@
 {
   "setName": "Arena rutilante",
   "setEffects": {
-    "2": "La Prob. CRIT del portador aumenta en un {{1}}%. Cuando su Prob. CRIT es igual o superior al {{2}}%, el daño que infligen su ATQ básico y su habilidad básica aumenta en un {{3}}%."
+    "2": "La Prob. CRIT del portador aumenta en un {{1, percent}}%. Cuando su Prob. CRIT es igual o superior al {{2, percent}}%, el daño que infligen su ATQ básico y su habilidad básica aumenta en un {{3, percent}}%."
   }
 }

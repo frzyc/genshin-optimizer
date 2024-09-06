@@ -2,6 +2,6 @@
   "name": "Destiny's Threads Forewoven",
   "passive": {
     "name": "Insight",
-    "description": "Increases the wearer's Effect RES by <orangeStrong>{{1}}%</orangeStrong>. For every {{2}} of DEF the wearer has, increases the wearer's DMG dealt by <orangeStrong>{{3}}%</orangeStrong>, up to a maximum DMG increase of <orangeStrong>{{4}}%</orangeStrong>."
+    "description": "Increases the wearer's Effect RES by <orangeStrong>{{1, percent}}%</orangeStrong>. For every {{2}} of DEF the wearer has, increases the wearer's DMG dealt by <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, up to a maximum DMG increase of <orangeStrong>{{4, percent}}%</orangeStrong>."
   }
 }

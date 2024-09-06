@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Tir du mistral",
-        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de Bronya à un ennemi unique.",
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Bronya à un ennemi unique.",
         "shortDesc": "Inflige des DGT de vent mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Redéploiement de combat",
-        "fullDesc": "Dissipe un <u>malus</u> d'un allié, lui permet d'agir immédiatement et augmente ses DGT de <orangeStrong>{{1}}%</orangeStrong> pendant {{3}} tour.\\nLorsque cette compétence est utilisée sur Bronya, elle ne peut pas agir immédiatement à nouveau.",
+        "fullDesc": "Dissipe un <u>malus</u> d'un allié, lui permet d'agir immédiatement et augmente ses DGT de <orangeStrong>{{1, percent}}%</orangeStrong> pendant {{3}} tour.\\nLorsque cette compétence est utilisée sur Bronya, elle ne peut pas agir immédiatement à nouveau.",
         "shortDesc": "<orangeStrong>Dissipe</orangeStrong> 1 <orangeStrong><u>malus</u></orangeStrong> subi par un allié unique, <orangeStrong>augmente les DGT qu'il inflige</orangeStrong>, et lui permet d'<orangeStrong>agir immédiatement</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "La marche de Belobog",
-        "fullDesc": "Augmente l'ATQ de tous les alliés de <orangeStrong>{{1}}%</orangeStrong> et augmente leurs DGT critiques d'un montant équivalent à <orangeStrong>{{2}}%</orangeStrong> des DGT critiques de Bronya + <orangeStrong>{{3}}%</orangeStrong> pendant {{4}} tours.",
+        "fullDesc": "Augmente l'ATQ de tous les alliés de <orangeStrong>{{1, percent}}%</orangeStrong> et augmente leurs DGT critiques d'un montant équivalent à <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> des DGT critiques de Bronya + <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> pendant {{4}} tours.",
         "shortDesc": "Augmente l'<orangeStrong>ATQ</orangeStrong> et les <orangeStrong>DGT critiques</orangeStrong> de tous les alliés."
       }
     },
     "technique": {
       "0": {
         "name": "Bannière de commandement",
-        "fullDesc": "Après utilisation de la technique de Bronya, l'ATQ de tous les alliés augmente de {{1}}% pendant {{2}} tours au début du combat suivant.",
+        "fullDesc": "Après utilisation de la technique de Bronya, l'ATQ de tous les alliés augmente de {{1, percent}}% pendant {{2}} tours au début du combat suivant.",
         "shortDesc": "Après utilisation de la technique, l'ATQ de tous les alliés augmente au début du combat suivant."
       }
     },
@@ -46,14 +46,14 @@
     "bonusAbility2": {
       "0": {
         "name": "À l'épreuve du combat",
-        "fullDesc": "La DÉF de tous les alliés augmente de {{2}}% pendant {{1}} tours en début de combat.",
+        "fullDesc": "La DÉF de tous les alliés augmente de {{2, percent}}% pendant {{1}} tours en début de combat.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Puissance militaire",
-        "fullDesc": "Lorsque Bronya est sur le champ de bataille, les DGT de tous les alliés augmentent de {{1}}%.",
+        "fullDesc": "Lorsque Bronya est sur le champ de bataille, les DGT de tous les alliés augmentent de {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Regain de force",
-      "desc": "Lors de l'utilisation de la compétence, il y a {{1}}% de chances fixes de récupérer 1 point de compétence. Cet effet a un temps de recharge d'1 tour."
+      "desc": "Lors de l'utilisation de la compétence, il y a {{1, percent}}% de chances fixes de récupérer 1 point de compétence. Cet effet a un temps de recharge d'1 tour."
     },
     "2": {
       "name": "Marche forcée",
-      "desc": "Lors de l'utilisation de la compétence, la VIT de la cible alliée augmente de {{1}}% pour 1 tour après avoir agi."
+      "desc": "Lors de l'utilisation de la compétence, la VIT de la cible alliée augmente de {{1, percent}}% pour 1 tour après avoir agi."
     },
     "3": {
       "name": "Bombardement",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Embuscade",
-      "desc": "Lorsqu'un allié autre que Bronya utilise son ATQ normale sur un ennemi qui a une Faiblesse au vent, Bronya lance immédiatement 1 instance d'attaque de suivi sur la cible, infligeant des DGT de vent équivalents à {{1}}% des DGT d'ATQ normale de Bronya. Cet effet ne peut être déclenché qu'1 fois par tour."
+      "desc": "Lorsqu'un allié autre que Bronya utilise son ATQ normale sur un ennemi qui a une Faiblesse au vent, Bronya lance immédiatement 1 instance d'attaque de suivi sur la cible, infligeant des DGT de vent équivalents à {{1, percent}}% des DGT d'ATQ normale de Bronya. Cet effet ne peut être déclenché qu'1 fois par tour."
     },
     "5": {
       "name": "Inarrêtable",

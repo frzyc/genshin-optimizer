@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Espinho Congelado",
-        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Yanqing a um único inimigo.",
+        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Yanqing a um único inimigo.",
         "shortDesc": "Causa Dano de Gelo leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Espinho de Ferro Veloz",
-        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Yanqing a um único inimigo e ativa a Sincronia d'Alma de Ferro por 1 rodada.",
+        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Yanqing a um único inimigo e ativa a Sincronia d'Alma de Ferro por 1 rodada.",
         "shortDesc": "Causa Dano de Gelo a um único inimigo e ativa a Sincronia d'Alma de Ferro."
       }
     },
     "ult": {
       "0": {
         "name": "Em Meio à Chuva de Bênçãos",
-        "fullDesc": "Aumenta a Chance de CRIT de Yanqing em {{1}}%. Quando a Sincronia d'Alma de Ferro está ativa, aumenta o Dano CRIT de Yanqing em mais <orangeStrong>{{2}}%</orangeStrong>. Essa <u>melhoria</u> dura por uma rodada. Depois, causa Dano de Gelo igual a <orangeStrong>{{3}}%</orangeStrong> do ATQ de Yanqing a um único inimigo.",
+        "fullDesc": "Aumenta a Chance de CRIT de Yanqing em {{1, percent}}%. Quando a Sincronia d'Alma de Ferro está ativa, aumenta o Dano CRIT de Yanqing em mais <orangeStrong>{{2, percent}}%</orangeStrong>. Essa <u>melhoria</u> dura por uma rodada. Depois, causa Dano de Gelo igual a <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de Yanqing a um único inimigo.",
         "shortDesc": "Aumenta a Chance de CRIT de Yanqing. Aprimora a Sincronia d'Alma de Ferro e causa Dano de Gelo massivo a um único inimigo."
       }
     },
     "technique": {
       "0": {
         "name": "A Verdadeira Espada",
-        "fullDesc": "Após usar sua Técnica, no início da próxima batalha, Yanqing causa {{2}}% a mais de Dano por {{3}} rodada(s) a inimigos que, no momento, têm PV igual ou superior a {{1}}%.",
+        "fullDesc": "Após usar sua Técnica, no início da próxima batalha, Yanqing causa {{2, percent}}% a mais de Dano por {{3}} rodada(s) a inimigos que, no momento, têm PV igual ou superior a {{1, percent}}%.",
         "shortDesc": "Depois que este personagem usa sua Técnica, no início da próxima batalha, aumenta o Dano causado por este personagem a inimigos-alvo com PV em 50% ou mais."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Cereja do Chute",
-        "fullDesc": "Quando Yanqing ataca, causa Dano de Gelo Adicional igual a {{1}}% do ATQ de Yanqing a inimigos com Fraqueza contra Gelo.",
+        "fullDesc": "Quando Yanqing ataca, causa Dano de Gelo Adicional igual a {{1, percent}}% do ATQ de Yanqing a inimigos com Fraqueza contra Gelo.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "O Gelo Favorece os Corajosos",
-        "fullDesc": "Quando a Sincronia d'Alma de Ferro é ativada, a RES a Efeito aumenta em {{1}}%.",
+        "fullDesc": "Quando a Sincronia d'Alma de Ferro é ativada, a RES a Efeito aumenta em {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Lâmina Gentil",
-        "fullDesc": "Quando um Acerto CRIT for ativado, a VEL aumenta em {{1}}% por {{2}} rodada(s).",
+        "fullDesc": "Quando um Acerto CRIT for ativado, a VEL aumenta em {{1, percent}}% por {{2}} rodada(s).",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Sabre Esbelto",
-      "desc": "Quando Yanqing ataca um inimigo com Congelamento, ele causa {{1}}% de seu ATQ como Dano de Gelo Adicional."
+      "desc": "Quando Yanqing ataca um inimigo com Congelamento, ele causa {{1, percent}}% de seu ATQ como Dano de Gelo Adicional."
     },
     "2": {
       "name": "Serenata do Supino",
-      "desc": "Quando a Sincronia d'Alma de Ferro estiver ativa, a Taxa de Regeneração de Energia aumenta em {{1}}% extra."
+      "desc": "Quando a Sincronia d'Alma de Ferro estiver ativa, a Taxa de Regeneração de Energia aumenta em {{1, percent}}% extra."
     },
     "3": {
       "name": "Espada Erudita",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Perfuração Flamejante",
-      "desc": "Quando os PV atuais estiverem em {{1}}% ou mais, a PEN de RES a Gelo aumenta em {{2}}%."
+      "desc": "Quando os PV atuais estiverem em {{1, percent}}% ou mais, a PEN de RES a Gelo aumenta em {{2, percent}}%."
     },
     "5": {
       "name": "Conflito Crescente",

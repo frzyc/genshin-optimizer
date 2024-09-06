@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Cloudfencer Art: Starshine",
-        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Sushang's ATK to a single enemy.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Sushang's ATK to a single enemy.",
         "shortDesc": "Deals minor Physical DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Cloudfencer Art: Mountainfall",
-        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Sushang's ATK to a single enemy. In addition, there is a {{3}}% chance to trigger Sword Stance on the final hit, dealing <u>Additional</u> Physical DMG equal to <orangeStrong>{{2}}%</orangeStrong> of Sushang's ATK to the enemy.\\nIf the enemy is inflicted with <u>Weakness Break</u>, Sword Stance is guaranteed to trigger.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Sushang's ATK to a single enemy. In addition, there is a {{3, percent}}% chance to trigger Sword Stance on the final hit, dealing <u>Additional</u> Physical DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Sushang's ATK to the enemy.\\nIf the enemy is inflicted with <u>Weakness Break</u>, Sword Stance is guaranteed to trigger.",
         "shortDesc": "Deals Physical DMG to a single enemy with <orangeStrong>a small chance of triggering Sword Stance</orangeStrong>. If the enemy has <u>Weakness Break</u>, <orangeStrong>Sword Stance is guaranteed to trigger</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Shape of Taixu: Dawn Herald",
-        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Sushang's ATK to a single enemy target, and she immediately takes action. In addition, Sushang's ATK increases by <orangeStrong>{{4}}%</orangeStrong> and using her Skill has 2 extra chances to trigger Sword Stance for {{2}} turn(s).\\nSword Stance triggered from the extra chances deals {{3}}% of the original DMG.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Sushang's ATK to a single enemy target, and she immediately takes action. In addition, Sushang's ATK increases by <orangeStrong>{{4, percent}}%</orangeStrong> and using her Skill has 2 extra chances to trigger Sword Stance for {{2}} turn(s).\\nSword Stance triggered from the extra chances deals {{3, percent}}% of the original DMG.",
         "shortDesc": "Deals massive Physical DMG to a single enemy, enhances Sword Stance's effect, and <orangeStrong>takes action immediately</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Cloudfencer Art: Warcry",
-        "fullDesc": "Immediately attacks the enemy. Upon entering battle, Sushang deals Physical DMG equal to {{1}}% of her ATK to all enemies.",
+        "fullDesc": "Immediately attacks the enemy. Upon entering battle, Sushang deals Physical DMG equal to {{1, percent}}% of her ATK to all enemies.",
         "shortDesc": "Attacks the enemy. After entering battle, deals minor Physical DMG to all enemies."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Guileless",
-        "fullDesc": "When current HP percentage is {{1}}% or lower, reduces the chance of being attacked by enemies.",
+        "fullDesc": "When current HP percentage is {{1, percent}}% or lower, reduces the chance of being attacked by enemies.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Riposte",
-        "fullDesc": "For every Sword Stance triggered, the DMG dealt by Sword Stance increases by {{1}}%. Stacks up to {{2}} time(s).",
+        "fullDesc": "For every Sword Stance triggered, the DMG dealt by Sword Stance increases by {{1, percent}}%. Stacks up to {{2}} time(s).",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Vanquisher",
-        "fullDesc": "After using Basic ATK or Skill, if there are enemies on the field with Weakness Break, Sushang's action is Advanced Forward by {{1}}%.",
+        "fullDesc": "After using Basic ATK or Skill, if there are enemies on the field with Weakness Break, Sushang's action is Advanced Forward by {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Refine in Toil",
-      "desc": "After Sword Stance is triggered, the DMG taken by Sushang is reduced by {{1}}% for 1 turn."
+      "desc": "After Sword Stance is triggered, the DMG taken by Sushang is reduced by {{1, percent}}% for 1 turn."
     },
     "3": {
       "name": "Rise From Fame",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Cleave With Heart",
-      "desc": "Sushang's Break Effect increases by {{1}}%."
+      "desc": "Sushang's Break Effect increases by {{1, percent}}%."
     },
     "5": {
       "name": "Prevail via Taixu",

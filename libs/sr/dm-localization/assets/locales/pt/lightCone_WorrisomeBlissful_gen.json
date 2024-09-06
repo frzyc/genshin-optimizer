@@ -2,6 +2,6 @@
   "name": "Inquietante, Extasiante",
   "passive": {
     "name": "Um De Cada Vez",
-    "description": "Aumenta o Chance de CRIT do usuário em <orangeStrong>{{1}}%</orangeStrong> e aumenta o Dano causado pelo Ataque Extra em <orangeStrong>{{2}}%</orangeStrong>. Após o usuário utilizar um Ataque Extra, aplica o estado de Domesticação ao alvo, acumulando até {{4}} vez(es). Quando os aliados atingem inimigos-alvo sob o estado de Domesticação, cada acúmulo de Domesticação aumenta o Dano CRIT causado em <orangeStrong>{{3}}%</orangeStrong>."
+    "description": "Aumenta o Chance de CRIT do usuário em <orangeStrong>{{1, percent}}%</orangeStrong> e aumenta o Dano causado pelo Ataque Extra em <orangeStrong>{{2, percent}}%</orangeStrong>. Após o usuário utilizar um Ataque Extra, aplica o estado de Domesticação ao alvo, acumulando até {{4}} vez(es). Quando os aliados atingem inimigos-alvo sob o estado de Domesticação, cada acúmulo de Domesticação aumenta o Dano CRIT causado em <orangeStrong>{{3, percent}}%</orangeStrong>."
   }
 }

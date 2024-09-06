@@ -2,6 +2,6 @@
   "name": "Arrows",
   "passive": {
     "name": "Crisis",
-    "description": "Saat pertempuran dimulai, meningkatkan <orangeStrong>{{1}}%</orangeStrong> CRIT Rate pengguna selama {{2}} giliran."
+    "description": "Saat pertempuran dimulai, meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> CRIT Rate pengguna selama {{2}} giliran."
   }
 }

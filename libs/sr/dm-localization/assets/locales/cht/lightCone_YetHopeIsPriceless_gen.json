@@ -2,6 +2,6 @@
   "name": "偏偏希望無價",
   "passive": {
     "name": "承諾",
-    "description": "使裝備者的暴擊率提高<orangeStrong>{{1}}%</orangeStrong>。當裝備者在戰鬥中暴擊傷害高於{{2}}%時，每超過{{3}}%，追加攻擊造成的傷害提高<orangeStrong>{{4}}%</orangeStrong>，該效果可疊加{{5}}層。戰鬥開始時和裝備者發動普通攻擊後，使終結技或追加攻擊造成的傷害無視目標<orangeStrong>{{6}}%</orangeStrong>的防禦，持續{{7}}回合。"
+    "description": "使裝備者的暴擊率提高<orangeStrong>{{1, percent}}%</orangeStrong>。當裝備者在戰鬥中暴擊傷害高於{{2, percent}}%時，每超過{{3, percent}}%，追加攻擊造成的傷害提高<orangeStrong>{{4, percent}}%</orangeStrong>，該效果可疊加{{5}}層。戰鬥開始時和裝備者發動普通攻擊後，使終結技或追加攻擊造成的傷害無視目標<orangeStrong>{{6, percent}}%</orangeStrong>的防禦，持續{{7}}回合。"
   }
 }

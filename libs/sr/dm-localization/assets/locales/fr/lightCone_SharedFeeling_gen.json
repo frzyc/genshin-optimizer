@@ -2,6 +2,6 @@
   "name": "Sentiment partagé",
   "passive": {
     "name": "Guérison et réparation",
-    "description": "Augmente les soins prodigués par le porteur de <orangeStrong>{{1}}%</orangeStrong>. Tous les alliés régénèrent <orangeStrong>{{2}}</orangeStrong> points d'énergie lors de l'utilisation de la compétence."
+    "description": "Augmente les soins prodigués par le porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Tous les alliés régénèrent <orangeStrong>{{2, fixed(fixed: 1)}}</orangeStrong> points d'énergie lors de l'utilisation de la compétence."
   }
 }

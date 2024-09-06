@@ -2,6 +2,6 @@
   "name": "Một Mình Chữa Trị",
   "passive": {
     "name": "Linh Dược Hỗn Độn",
-    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> Tấn Công Kích Phá của người trang bị. Khi người trang bị thi triển Tuyệt Kỹ, sẽ khiến Sát Thương Duy Trì của người trang bị gây ra tăng <orangeStrong>{{2}}%</orangeStrong>, duy trì {{3}} hiệp. Khi kẻ địch rơi vào hiệu ứng Sát Thương Duy Trì mà người trang bị thi triển bị tiêu diệt, người trang bị sẽ hồi <orangeStrong>{{4}}</orangeStrong> điểm Năng Lượng."
+    "description": "Tăng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công Kích Phá của người trang bị. Khi người trang bị thi triển Tuyệt Kỹ, sẽ khiến Sát Thương Duy Trì của người trang bị gây ra tăng <orangeStrong>{{2, percent}}%</orangeStrong>, duy trì {{3}} hiệp. Khi kẻ địch rơi vào hiệu ứng Sát Thương Duy Trì mà người trang bị thi triển bị tiêu diệt, người trang bị sẽ hồi <orangeStrong>{{4, fixed(fixed: 1)}}</orangeStrong> điểm Năng Lượng."
   }
 }

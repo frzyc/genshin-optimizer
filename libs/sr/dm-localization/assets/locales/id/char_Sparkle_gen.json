@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Monodrama",
-        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Sparkle pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Sparkle pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Dreamdiver",
-        "fullDesc": "Meningkatkan CRIT DMG 1 rekan tim yang ditargetkan, peningkatannya sebesar <orangeStrong>{{1}}%</orangeStrong> CRIT DMG Sparkle + <orangeStrong>{{2}}%</orangeStrong>, berlangsung selama {{3}} giliran, dan mendahulukan aksi rekan tersebut sebesar {{4}}%.\\nSaat Sparkle melancarkan Kemampuan ini pada dirinya sendiri, efek pendahuluan aksi tidak akan terpicu.",
+        "fullDesc": "Meningkatkan CRIT DMG 1 rekan tim yang ditargetkan, peningkatannya sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> CRIT DMG Sparkle + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, berlangsung selama {{3}} giliran, dan mendahulukan aksi rekan tersebut sebesar {{4, percent}}%.\\nSaat Sparkle melancarkan Kemampuan ini pada dirinya sendiri, efek pendahuluan aksi tidak akan terpicu.",
         "shortDesc": "Meningkatkan <orangeStrong>CRIT DMG</orangeStrong> 1 rekan tim dan mendahulukan aksi rekan tersebut."
       }
     },
     "ult": {
       "0": {
         "name": "The Hero with a Thousand Faces",
-        "fullDesc": "Memulihkan {{2}} Poin Skill untuk rekan tim dan memberikan efek \"Cipher\" pada seluruh rekan tim. Untuk rekan tim yang memiliki \"Cipher\", setiap lapis efek peningkatan DMG dari Talent Sparkle akan meningkat ekstra <orangeStrong>{{3}}%</orangeStrong>, berlangsung selama {{4}} giliran.",
+        "fullDesc": "Memulihkan {{2}} Poin Skill untuk rekan tim dan memberikan efek \"Cipher\" pada seluruh rekan tim. Untuk rekan tim yang memiliki \"Cipher\", setiap lapis efek peningkatan DMG dari Talent Sparkle akan meningkat ekstra <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, berlangsung selama {{4}} giliran.",
         "shortDesc": "Memulihkan <orangeStrong>Poin Skill</orangeStrong> rekan tim dan membuat efek peningkatan DMG dari terpicunya Talent Sparkle meningkat ekstra."
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Nocturne",
-        "fullDesc": "Meningkatkan {{4}}% ATK seluruh rekan tim. Saat ada 1/2/3 karakter Tipe Quantum di dalam tim, ATK dari rekan tim Tipe Quantum meningkat {{1}}%/{{2}}%/{{3}}%.",
+        "fullDesc": "Meningkatkan {{4, percent}}% ATK seluruh rekan tim. Saat ada 1/2/3 karakter Tipe Quantum di dalam tim, ATK dari rekan tim Tipe Quantum meningkat {{1, percent}}%/{{2, percent}}%/{{3, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Suspension of Disbelief",
-      "desc": "Durasi \"Cipher\" yang diberikan oleh Ultimate bertambah ekstra 1 giliran. Rekan tim yang memiliki \"Cipher\" akan mengalami peningkatan {{1}}% ATK."
+      "desc": "Durasi \"Cipher\" yang diberikan oleh Ultimate bertambah ekstra 1 giliran. Rekan tim yang memiliki \"Cipher\" akan mengalami peningkatan {{1, percent}}% ATK."
     },
     "2": {
       "name": "Purely Fictitious",
-      "desc": "Setiap lapis efek Talent akan membuat rekan tim mengabaikan {{1}}% DEF target saat mengakibatkan DMG pada musuh."
+      "desc": "Setiap lapis efek Talent akan membuat rekan tim mengabaikan {{1, percent}}% DEF target saat mengakibatkan DMG pada musuh."
     },
     "3": {
       "name": "Pipedream",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Narrative Polysemy",
-      "desc": "Efek peningkatan CRIT DMG dari Skill Sparkle meningkat ekstra, peningkatannya sebesar {{1}}% CRIT DMG Sparkle, dan saat Sparkle melancarkan Skill-nya, efek peningkatan CRIT DMG akan efektif untuk seluruh rekan (selain Sparkle) yang memiliki efek \"Cipher\". Saat Sparkle melancarkan Ultimate, jika terdapat rekan tim yang memiliki efek peningkatan CRIT DMG dari Skill Sparkle, maka efek tersebut akan menyebar ke seluruh rekan (selain Sparkle) yang memiliki efek \"Cipher\"."
+      "desc": "Efek peningkatan CRIT DMG dari Skill Sparkle meningkat ekstra, peningkatannya sebesar {{1, percent}}% CRIT DMG Sparkle, dan saat Sparkle melancarkan Skill-nya, efek peningkatan CRIT DMG akan efektif untuk seluruh rekan (selain Sparkle) yang memiliki efek \"Cipher\". Saat Sparkle melancarkan Ultimate, jika terdapat rekan tim yang memiliki efek peningkatan CRIT DMG dari Skill Sparkle, maka efek tersebut akan menyebar ke seluruh rekan (selain Sparkle) yang memiliki efek \"Cipher\"."
     }
   }
 }

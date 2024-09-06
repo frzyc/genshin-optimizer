@@ -2,6 +2,6 @@
   "name": "Restaurierte Erinnerung",
   "passive": {
     "name": "Kristallisiert",
-    "description": "Erhöht die Effekt-Trefferrate des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Wenn der Träger einem mit Windscherung, Brennen, Schock oder Bluten belegten Gegner SCH zufügt, erhalten sie jeweils 1 Stapelung „Prophet“ bis zu max. {{4}} Stapelungen. In einem Kampf kann jede Art von DoT nur 1 Stapelung Prophet verursachen. Jede Stapelung Prophet erhöht den ANG des Trägers um <orangeStrong>{{2}}%</orangeStrong> und der verursachte DoT ignoriert <orangeStrong>{{3}}%</orangeStrong> der VTD des Ziels."
+    "description": "Erhöht die Effekt-Trefferrate des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Wenn der Träger einem mit Windscherung, Brennen, Schock oder Bluten belegten Gegner SCH zufügt, erhalten sie jeweils 1 Stapelung „Prophet“ bis zu max. {{4}} Stapelungen. In einem Kampf kann jede Art von DoT nur 1 Stapelung Prophet verursachen. Jede Stapelung Prophet erhöht den ANG des Trägers um <orangeStrong>{{2, percent}}%</orangeStrong> und der verursachte DoT ignoriert <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> der VTD des Ziels."
   }
 }

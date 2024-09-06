@@ -2,6 +2,6 @@
   "name": "Điệu Múa Dưới Hoàng Hôn",
   "passive": {
     "name": "Trầm Mê",
-    "description": "Tăng mạnh xác suất người trang bị chịu tấn công, Sát Thương Bạo Kích tăng <orangeStrong>{{1}}%</orangeStrong>. Sau khi người trang bị thi triển Tuyệt Kỹ, sẽ nhận được 1 tầng Hỏa Vũ, duy trì 2 hiệp, tối đa cộng dồn {{2}} tầng. Mỗi tầng Hỏa Vũ khiến sát thương do Đòn Đánh Theo Sau của người trang bị gây ra tăng <orangeStrong>{{3}}%</orangeStrong>."
+    "description": "Tăng mạnh xác suất người trang bị chịu tấn công, Sát Thương Bạo Kích tăng <orangeStrong>{{1, percent}}%</orangeStrong>. Sau khi người trang bị thi triển Tuyệt Kỹ, sẽ nhận được 1 tầng Hỏa Vũ, duy trì 2 hiệp, tối đa cộng dồn {{2}} tầng. Mỗi tầng Hỏa Vũ khiến sát thương do Đòn Đánh Theo Sau của người trang bị gây ra tăng <orangeStrong>{{3, percent}}%</orangeStrong>."
   }
 }

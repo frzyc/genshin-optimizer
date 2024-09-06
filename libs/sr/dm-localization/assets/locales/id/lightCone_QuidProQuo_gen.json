@@ -2,6 +2,6 @@
   "name": "Quid Pro Quo",
   "passive": {
     "name": "Enjoy With Rapture",
-    "description": "Saat giliran pengguna dimulai, akan secara acak memulihkan <orangeStrong>{{2}}</orangeStrong> Energy 1 rekan lain yang persentase Energy-nya lebih rendah dari {{1}}%."
+    "description": "Saat giliran pengguna dimulai, akan secara acak memulihkan <orangeStrong>{{2}}</orangeStrong> Energy 1 rekan lain yang persentase Energy-nya lebih rendah dari {{1, percent}}%."
   }
 }

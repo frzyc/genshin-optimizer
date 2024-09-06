@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Welke Pfade der Schreckenstriade",
-        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Acherons ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Acherons ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Oktett des Donners",
-        "fullDesc": "Erhält {{3}} Pkt. „Zerbrochener Traum“. Belegt einen anvisierten Gegner mit {{3}} Stapelung „Karminroter Knoten“ und fügt ihm Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Acherons ANG sowie angrenzenden Einheiten Blitz-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Acherons ANG zu.",
+        "fullDesc": "Erhält {{3}} Pkt. „Zerbrochener Traum“. Belegt einen anvisierten Gegner mit {{3}} Stapelung „Karminroter Knoten“ und fügt ihm Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Acherons ANG sowie angrenzenden Einheiten Blitz-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Acherons ANG zu.",
         "shortDesc": "Erhält <orangeStrong><color=#f29e38ff>#3[i]</orangeStrong> Pkt. „Zerbrochener Traum“</color>. Belegt einen Gegner mit <orangeStrong>{{3}}</orangeStrong> Stapelung „Karminroter Knoten“ und fügt ihm Blitz-SCH sowie angrenzenden Einheiten geringen Blitz-SCH zu."
       }
     },
     "ult": {
       "0": {
         "name": "Verblassende Träume, ein Klingenstreich",
-        "fullDesc": "Löst aufeinanderfolgend 3-mal „Regnerische Klage“ und 1-mal „Zurück ins Jenseits“ aus, wobei einem anvisierten Gegner Blitz-SCH in Höhe von bis zu <orangeStrong>{{6}}%</orangeStrong> von Acherons ANG und anderen Zielen Blitz-SCH in Höhe von bis zu <orangeStrong>{{7}}%</orangeStrong> von Acherons ANG zugefügt wird.\\nRegnerische Klage: Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Acherons ANG zu und entfernt bis zu 3 Stapelungen „Karminroter Knoten“ des Ziels. Verursacht bei allen Gegnern sofort Blitz-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Acherons ANG, wenn Karminroter Knoten entfernt wird, wobei der SCH-Multiplikator mit jeder entfernten Stapelung zusätzlich erhöht wird, bis zu <orangeStrong>{{5}}%</orangeStrong>.\\nZurück ins Jenseits: Fügt allen Gegnern Blitz-SCH in Höhe von <orangeStrong>{{3}}%</orangeStrong> von Acherons ANG zu und entfernt alle Stapelungen Karminroter Knoten.\\nGegner können nicht während des Ultimates mit Karminroter Knoten belegt werden.",
+        "fullDesc": "Löst aufeinanderfolgend 3-mal „Regnerische Klage“ und 1-mal „Zurück ins Jenseits“ aus, wobei einem anvisierten Gegner Blitz-SCH in Höhe von bis zu <orangeStrong>{{6, percent}}%</orangeStrong> von Acherons ANG und anderen Zielen Blitz-SCH in Höhe von bis zu <orangeStrong>{{7, percent}}%</orangeStrong> von Acherons ANG zugefügt wird.\\nRegnerische Klage: Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Acherons ANG zu und entfernt bis zu 3 Stapelungen „Karminroter Knoten“ des Ziels. Verursacht bei allen Gegnern sofort Blitz-SCH in Höhe von <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> von Acherons ANG, wenn Karminroter Knoten entfernt wird, wobei der SCH-Multiplikator mit jeder entfernten Stapelung zusätzlich erhöht wird, bis zu <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.\\nZurück ins Jenseits: Fügt allen Gegnern Blitz-SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Acherons ANG zu und entfernt alle Stapelungen Karminroter Knoten.\\nGegner können nicht während des Ultimates mit Karminroter Knoten belegt werden.",
         "shortDesc": "Fügt einem Gegner 3-mal geringen Blitz-SCH zu. Wenn „Karminroter Knoten“ vom Ziel entfernt wird, erleiden alle Gegner geringen Blitz-SCH. Fügt schließlich allen Gegnern 1-mal Blitz-SCH zu und entfernt alle Stapelungen Karminroter Knoten."
       },
       "1": {
@@ -45,7 +45,7 @@
     "technique": {
       "0": {
         "name": "Vier Phasen des Ich",
-        "fullDesc": "Greift den Gegner an. Erhält zu Beginn jeder Kampfwelle „Vier Phasen des Ich“, fügt allen Gegnern Blitz-SCH in Höhe von {{1}}% von Acherons ANG zu und reduziert ihr Widerstand ungeachtet des Schwächetyps. Beim Schwächebruch wird der Effekt „Schwächebruch: Blitz“ ausgelöst.\\nVier Phasen des Ich: Acheron erhält nach dem Einsatz des Ultimates {{2}} Pkt. „Zerbrochener Traum“ und belegt einen zufälligen Gegner mit {{2}} Stapelung „Karminroter Knoten“.\\nWenn gewöhnliche Gegner angegriffen werden, werden sie sofort besiegt, ohne den Kampf zu betreten. Der Technikpunkt wird nicht verbraucht, wenn der Angriff keinen Gegner trifft.",
+        "fullDesc": "Greift den Gegner an. Erhält zu Beginn jeder Kampfwelle „Vier Phasen des Ich“, fügt allen Gegnern Blitz-SCH in Höhe von {{1, percent}}% von Acherons ANG zu und reduziert ihr Widerstand ungeachtet des Schwächetyps. Beim Schwächebruch wird der Effekt „Schwächebruch: Blitz“ ausgelöst.\\nVier Phasen des Ich: Acheron erhält nach dem Einsatz des Ultimates {{2}} Pkt. „Zerbrochener Traum“ und belegt einen zufälligen Gegner mit {{2}} Stapelung „Karminroter Knoten“.\\nWenn gewöhnliche Gegner angegriffen werden, werden sie sofort besiegt, ohne den Kampf zu betreten. Der Technikpunkt wird nicht verbraucht, wenn der Angriff keinen Gegner trifft.",
         "shortDesc": "Greift den Gegner an. Erhält zu Beginn jeder Kampfwelle „Vier Phasen des Ich“ und fügt allen Gegnern Blitz-SCH zu, der <orangeStrong>Schwächetypen ignoriert</orangeStrong> und Widerstand reduziert.\\nWenn gewöhnliche Gegner angegriffen werden, werden sie <orangeStrong>sofort besiegt</orangeStrong>, ohne den Kampf zu betreten. Der Technikpunkt wird nicht verbraucht, wenn der Angriff keinen Gegner trifft."
       }
     },
@@ -66,14 +66,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Unterwelt",
-        "fullDesc": "Wenn noch 1/2 weitere Figur(en) auf dem Pfad der Nichtigkeit im Team sind, beträgt der verursachte SCH von Acherons Standardangriff, Fertigkeit und Ultimate {{1}}%/{{2}}% des ursprünglichen SCH.",
+        "fullDesc": "Wenn noch 1/2 weitere Figur(en) auf dem Pfad der Nichtigkeit im Team sind, beträgt der verursachte SCH von Acherons Standardangriff, Fertigkeit und Ultimate {{1, percent}}%/{{2, percent}}% des ursprünglichen SCH.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Blitzherz",
-        "fullDesc": "Wenn „Regnerische Klage“ des Ultimates Gegner mit „Karminroter Knoten“ trifft, wird Acherons verursachter SCH für {{3}} Rd. um {{1}}% erhöht. Dieser Effekt ist bis zu {{2}}-fach stapelbar. Fügt außerdem zusätzlich {{4}}-mal SCH zu, wenn „Zurück ins Jenseits“ ausgelöst wird. Jedes Mal wird bei einem zufälligen Gegner Blitz-SCH in Höhe von {{5}}% von Acherons ANG verursacht und dieser SCH wird als Ultimate-SCH betrachtet.",
+        "fullDesc": "Wenn „Regnerische Klage“ des Ultimates Gegner mit „Karminroter Knoten“ trifft, wird Acherons verursachter SCH für {{3}} Rd. um {{1, percent}}% erhöht. Dieser Effekt ist bis zu {{2}}-fach stapelbar. Fügt außerdem zusätzlich {{4}}-mal SCH zu, wenn „Zurück ins Jenseits“ ausgelöst wird. Jedes Mal wird bei einem zufälligen Gegner Blitz-SCH in Höhe von {{5, percent}}% von Acherons ANG verursacht und dieser SCH wird als Ultimate-SCH betrachtet.",
         "shortDesc": ""
       }
     }
@@ -81,7 +81,7 @@
   "ranks": {
     "1": {
       "name": "Wahre Worte aus dem Himmel",
-      "desc": "Erhöht die KRIT-Rate bei Angriffen auf Gegner mit Debuff um {{1}}%."
+      "desc": "Erhöht die KRIT-Rate bei Angriffen auf Gegner mit Debuff um {{1, percent}}%."
     },
     "2": {
       "name": "Donner schweigt, Winde ruhen",
@@ -93,7 +93,7 @@
     },
     "4": {
       "name": "Flammen erleuchten den Menschen im Spiegel",
-      "desc": "Wenn Gegner in den Kampf eintreten, wird ihnen Ultimate-SCH-Anfälligkeit zugefügt. Ihr erlittener Ultimate-SCH wird um {{1}}% erhöht."
+      "desc": "Wenn Gegner in den Kampf eintreten, wird ihnen Ultimate-SCH-Anfälligkeit zugefügt. Ihr erlittener Ultimate-SCH wird um {{1, percent}}% erhöht."
     },
     "5": {
       "name": "Klippen bröckeln, Seelen schweifen",
@@ -101,7 +101,7 @@
     },
     "6": {
       "name": "Gespaltene Fesseln des Verhängnisses",
-      "desc": "Erhöht die WDS-DUR aller Typen für den von Acheron verursachten Ultimate-SCH um {{1}}%. Der durch Standardangriff und Fertigkeit verursachte SCH wird ebenfalls als Ultimate-SCH betrachtet und kann den WDS des Gegners unabhängig vom Schwächetyp reduzieren. Beim Schwächebruch wird der Effekt „Schwächebruch: Blitz“ ausgelöst."
+      "desc": "Erhöht die WDS-DUR aller Typen für den von Acheron verursachten Ultimate-SCH um {{1, percent}}%. Der durch Standardangriff und Fertigkeit verursachte SCH wird ebenfalls als Ultimate-SCH betrachtet und kann den WDS des Gegners unabhängig vom Schwächetyp reduzieren. Beim Schwächebruch wird der Effekt „Schwächebruch: Blitz“ ausgelöst."
     }
   }
 }

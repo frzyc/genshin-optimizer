@@ -2,6 +2,6 @@
   "name": "睿見",
   "passive": {
     "name": "天才",
-    "description": "當裝備者施放終結技時，攻擊力提高<orangeStrong>{{1}}%</orangeStrong>，持續{{2}}回合。"
+    "description": "當裝備者施放終結技時，攻擊力提高<orangeStrong>{{1, percent}}%</orangeStrong>，持續{{2}}回合。"
   }
 }

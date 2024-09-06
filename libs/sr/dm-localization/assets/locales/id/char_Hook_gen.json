@@ -4,33 +4,33 @@
     "basic": {
       "0": {
         "name": "Hehe! Don't Get Burned!",
-        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Hook pada 1 target musuh.",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Hook pada 1 target musuh.",
         "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh."
       }
     },
     "skill": {
       "0": {
         "name": "Hey! Remember Hook?",
-        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Hook pada 1 target musuh. Di saat bersamaan, target musuh memiliki {{2}}% <u>peluang dasar</u> untuk memasuki status Burn selama {{3}} giliran.\\nSaat dalam status Burn, target musuh akan menerima Fire DoT sebesar <orangeStrong>{{4}}%</orangeStrong> ATK Hook setiap gilirannya dimulai.",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Hook pada 1 target musuh. Di saat bersamaan, target musuh memiliki {{2, percent}}% <u>peluang dasar</u> untuk memasuki status Burn selama {{3}} giliran.\\nSaat dalam status Burn, target musuh akan menerima Fire DoT sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK Hook setiap gilirannya dimulai.",
         "shortDesc": "Mengakibatkan Fire DMG pada 1 musuh dan berpeluang besar memberikan status Burn pada target."
       },
       "1": {
         "name": "Hey! Remember Hook?",
-        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Hook pada 1 target musuh, dan di saat bersamaan memiliki {{2}}% <u>peluang dasar</u> untuk membuat musuh tersebut memasuki status Burn selama {{3}} giliran. Selain itu juga akan mengakibatkan Fire DMG sebesar <orangeStrong>{{5}}%</orangeStrong> ATK Hook pada musuh di sekitar target.\\nTarget musuh dengan status Burn akan menerima Fire DoT sebesar <orangeStrong>{{4}}%</orangeStrong> ATK Hook setiap kali gilirannya dimulai.",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Hook pada 1 target musuh, dan di saat bersamaan memiliki {{2, percent}}% <u>peluang dasar</u> untuk membuat musuh tersebut memasuki status Burn selama {{3}} giliran. Selain itu juga akan mengakibatkan Fire DMG sebesar <orangeStrong>{{5, percent}}%</orangeStrong> ATK Hook pada musuh di sekitar target.\\nTarget musuh dengan status Burn akan menerima Fire DoT sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK Hook setiap kali gilirannya dimulai.",
         "shortDesc": "Mengakibatkan Fire DMG pada 1 musuh dan berpeluang besar memberikan status Burn pada target, serta mengakibatkan Fire DMG dalam jumlah kecil pada musuh di sekitar target."
       }
     },
     "ult": {
       "0": {
         "name": "Boom! Here Comes the Fire!",
-        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Hook pada 1 target musuh.\\nSetelah melancarkan Ultimate, pelancaran Skill Hook berikutnya akan diperkuat dan dapat mengakibatkan DMG pada target musuh dan musuh di sekitar target secara bersamaan.",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Hook pada 1 target musuh.\\nSetelah melancarkan Ultimate, pelancaran Skill Hook berikutnya akan diperkuat dan dapat mengakibatkan DMG pada target musuh dan musuh di sekitar target secara bersamaan.",
         "shortDesc": "Mengakibatkan Fire DMG dalam jumlah besar pada 1 musuh dan <orangeStrong>memperkuat Skill Hook yang berikutnya</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Ack! Look at This Mess!",
-        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Fire DMG sebesar {{4}}% ATK Hook pada musuh secara acak. Di saat yang bersamaan, setiap target memiliki {{1}}% <u>peluang dasar</u> untuk memasuki status Burn selama {{3}} giliran.\\nTarget musuh dengan status Burn akan menerima Fire DoT sebesar {{2}}% ATK Hook setiap kali gilirannya dimulai.",
+        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Fire DMG sebesar {{4, percent}}% ATK Hook pada musuh secara acak. Di saat yang bersamaan, setiap target memiliki {{1, percent}}% <u>peluang dasar</u> untuk memasuki status Burn selama {{3}} giliran.\\nTarget musuh dengan status Burn akan menerima Fire DoT sebesar {{2, percent}}% ATK Hook setiap kali gilirannya dimulai.",
         "shortDesc": "Menyerang musuh dan mengakibatkan Fire DMG pada musuh secara acak, dan berpeluang besar untuk membuat setiap target musuh memasuki status Burn."
       }
     },
@@ -44,21 +44,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Innocence",
-        "fullDesc": "Saat Talent terpicu, Hook akan memulihkan HP sebesar {{1}}% dari Max HP-nya.",
+        "fullDesc": "Saat Talent terpicu, Hook akan memulihkan HP sebesar {{1, percent}}% dari Max HP-nya.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Naivete",
-        "fullDesc": "Meningkatkan {{1}}% peluang untuk menahan Crowd Control Debuff.",
+        "fullDesc": "Meningkatkan {{1, percent}}% peluang untuk menahan Crowd Control Debuff.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Playing With Fire",
-        "fullDesc": "Setelah melancarkan Ultimate, Hook akan mengalami {{2}}% Pendahuluan Aksi dan memulihkan {{1}} Energy tambahan.",
+        "fullDesc": "Setelah melancarkan Ultimate, Hook akan mengalami {{2, percent}}% Pendahuluan Aksi dan memulihkan {{1}} Energy tambahan.",
         "shortDesc": ""
       }
     }
@@ -66,7 +66,7 @@
   "ranks": {
     "1": {
       "name": "Early to Bed, Early to Rise",
-      "desc": "Meningkatkan {{1}}% DMG dari Skill yang diperkuat."
+      "desc": "Meningkatkan {{1, percent}}% DMG dari Skill yang diperkuat."
     },
     "2": {
       "name": "Happy Tummy, Happy Body",
@@ -78,7 +78,7 @@
     },
     "4": {
       "name": "It's Okay to Not Know",
-      "desc": "Saat talent terpicu, ada {{1}}% peluang dasar untuk membuat musuh di sekitar target utama juga memasuki status Burn yang sama dari Skill Hook."
+      "desc": "Saat talent terpicu, ada {{1, percent}}% peluang dasar untuk membuat musuh di sekitar target utama juga memasuki status Burn yang sama dari Skill Hook."
     },
     "5": {
       "name": "Let the Moles' Deeds Be Known",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Always Ready to Punch and Kick",
-      "desc": "Meningkatkan {{1}}% DMG Hook pada musuh berstatus Burn."
+      "desc": "Meningkatkan {{1, percent}}% DMG Hook pada musuh berstatus Burn."
     }
   }
 }

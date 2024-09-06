@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Stehende Ovation",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Guinaifens ANG zu.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Guinaifens ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu."
       }
     },
     "skill": {
       "0": {
         "name": "Herzliche Begrüßung",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> und angrenzenden Einheiten Feuer-SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> von Guinaifens ANG zu. Verursacht beim Ziel und angrenzenden Einheiten mit einer <u>Grundchance</u> von {{3}}% Brennen. Brennende Gegner erleiden für {{5}} Rd. zu Beginn jeder Runde Feuer-DoT in Höhe von <orangeStrong>{{4}}%</orangeStrong> von Guinaifens ANG.",
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> und angrenzenden Einheiten Feuer-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Guinaifens ANG zu. Verursacht beim Ziel und angrenzenden Einheiten mit einer <u>Grundchance</u> von {{3, percent}}% Brennen. Brennende Gegner erleiden für {{5}} Rd. zu Beginn jeder Runde Feuer-DoT in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von Guinaifens ANG.",
         "shortDesc": "Fügt einem Gegner Feuer-SCH und angrenzenden Einheiten geringen Feuer-SCH zu. Verursacht mit hoher Chance <orangeStrong>Brennen</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Erstklassige Show",
-        "fullDesc": "Fügt allen Gegnern Feuer-SCH in Höhe von <orangeStrong>{{1}}%</orangeStrong> von Guinaifens ANG zu. Wenn Ziele von Brennen betroffen sind, verursacht das Brennen sofort SCH in Höhe von <orangeStrong>{{2}}%</orangeStrong> des ursprünglichen SCH.",
+        "fullDesc": "Fügt allen Gegnern Feuer-SCH in Höhe von <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Guinaifens ANG zu. Wenn Ziele von Brennen betroffen sind, verursacht das Brennen sofort SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> des ursprünglichen SCH.",
         "shortDesc": "Fügt allen Gegnern Feuer-SCH zu. Gegner mit dem Status Brennen erleiden zusätzlich 1-mal SCH durch Brennen."
       }
     },
     "technique": {
       "0": {
         "name": "Demonstration der Fähigkeiten",
-        "fullDesc": "Greift den Gegner unmittelbar an. Verursacht nach Kampfeintritt {{2}}-mal SCH, wobei jedes Mal einem zufälligen Gegner Feuer-SCH in Höhe von {{1}}% von Guinaifens ANG zugefügt wird und eine <u>Grundchance</u> von {{3}}% besteht, „Feuer spucken“ bei ihm zu verursachen.",
+        "fullDesc": "Greift den Gegner unmittelbar an. Verursacht nach Kampfeintritt {{2}}-mal SCH, wobei jedes Mal einem zufälligen Gegner Feuer-SCH in Höhe von {{1, percent}}% von Guinaifens ANG zugefügt wird und eine <u>Grundchance</u> von {{3, percent}}% besteht, „Feuer spucken“ bei ihm zu verursachen.",
         "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt einem Gegner geringen Feuer-SCH zu und verursacht <orangeStrong>„Feuer spucken“</orangeStrong>. Dieser Angriff prallt 4-mal ab."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Hohe Stangen",
-        "fullDesc": "Der Standardangriff hat eine Grundchance von {{1}}%, beim Gegner denselben Status Brennen wie die Fertigkeit zu verursachen.",
+        "fullDesc": "Der Standardangriff hat eine Grundchance von {{1, percent}}%, beim Gegner denselben Status Brennen wie die Fertigkeit zu verursachen.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Ring mit Klingen",
-        "fullDesc": "Beim Kampfbeginn wird Guinaifens Aktion um {{1}}% vorgezogen.",
+        "fullDesc": "Beim Kampfbeginn wird Guinaifens Aktion um {{1, percent}}% vorgezogen.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Auf Messern gehen",
-        "fullDesc": "Fügt brennenden Gegnern {{1}}% mehr SCH zu.",
+        "fullDesc": "Fügt brennenden Gegnern {{1, percent}}% mehr SCH zu.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Nudeln kopfüber essen",
-      "desc": "Beim Einsatz der Fertigkeit besteht eine Grundchance von {{1}}%, den Effekt-WDS des angegriffenen Gegners für {{3}} Rd. um {{2}}% zu reduzieren."
+      "desc": "Beim Einsatz der Fertigkeit besteht eine Grundchance von {{1, percent}}%, den Effekt-WDS des angegriffenen Gegners für {{3}} Rd. um {{2, percent}}% zu reduzieren."
     },
     "2": {
       "name": "Zähne putzen und dabei pfeifen",
-      "desc": "Wenn der Gegner von Brennen betroffen ist, erhöhen Guinaifens Standardangriff und Fertigkeit den SCH-Multiplikator seines Status Brennen um {{1}}%."
+      "desc": "Wenn der Gegner von Brennen betroffen ist, erhöhen Guinaifens Standardangriff und Fertigkeit den SCH-Multiplikator seines Status Brennen um {{1, percent}}%."
     },
     "3": {
       "name": "Felsbrocken auf der Brust zerschmettern",

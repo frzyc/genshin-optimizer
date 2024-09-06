@@ -2,6 +2,6 @@
   "name": "Antes del amanecer",
   "passive": {
     "name": "Noche larga",
-    "description": "El Daño CRIT del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. El daño que infligen la habilidad básica y la habilidad definitiva del portador aumenta en un <orangeStrong>{{2}}%</orangeStrong>. Cuando el portador utiliza la habilidad básica o la habilidad definitiva, obtiene Somnus corpus. Al lanzar un ataque adicional, se consume Somnus corpus y el daño que inflige el ataque adicional aumenta en un <orangeStrong>{{3}}%</orangeStrong>."
+    "description": "El Daño CRIT del portador aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong>. El daño que infligen la habilidad básica y la habilidad definitiva del portador aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong>. Cuando el portador utiliza la habilidad básica o la habilidad definitiva, obtiene Somnus corpus. Al lanzar un ataque adicional, se consume Somnus corpus y el daño que inflige el ataque adicional aumenta en un <orangeStrong>{{3, percent}}%</orangeStrong>."
   }
 }

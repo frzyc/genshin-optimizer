@@ -1,7 +1,7 @@
 {
   "setName": "Pioneer Diver of Dead Waters",
   "setEffects": {
-    "2": "Increases DMG dealt to enemies with debuffs by {{1}}%.",
-    "4": "Increases CRIT Rate by {{1}}%. The wearer deals {{2}}%/{{3}}% increased CRIT DMG to enemies with at least {{4}}/{{5}} debuffs. After the wearer inflicts a debuff on enemy targets, the aforementioned effects increase by 100%, lasting for {{6}} turn(s)."
+    "2": "Increases DMG dealt to enemies with debuffs by {{1, percent}}%.",
+    "4": "Increases CRIT Rate by {{1, percent}}%. The wearer deals {{2, percent}}%/{{3, percent}}% increased CRIT DMG to enemies with at least {{4}}/{{5}} debuffs. After the wearer inflicts a debuff on enemy targets, the aforementioned effects increase by 100%, lasting for {{6}} turn(s)."
   }
 }

@@ -2,6 +2,6 @@
   "name": "嘿，我在这儿",
   "passive": {
     "name": "不怕不怕啦",
-    "description": "使装备者的生命上限提高<orangeStrong>{{1}}%</orangeStrong>。当装备者施放战技时，治疗量提高<orangeStrong>{{2}}%</orangeStrong>，持续{{3}}回合。"
+    "description": "使装备者的生命上限提高<orangeStrong>{{1, percent}}%</orangeStrong>。当装备者施放战技时，治疗量提高<orangeStrong>{{2, percent}}%</orangeStrong>，持续{{3}}回合。"
   }
 }

@@ -4,26 +4,26 @@
     "basic": {
       "0": {
         "name": "Combinación oculta",
-        "fullDesc": "Lanza 1 ficha de jade del palo que menos fichas tenga e inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Qingque como Daño Cuántico a un enemigo.",
+        "fullDesc": "Lanza 1 ficha de jade del palo que menos fichas tenga e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Qingque como Daño Cuántico a un enemigo.",
         "shortDesc": "Lanza 1 ficha e inflige una pequeña cantidad de Daño Cuántico a un enemigo."
       },
       "1": {
         "name": "¡Fuera la ficha del muro muerto!",
-        "fullDesc": "Qingque inflige un <orangeStrong>{{1}}%</orangeStrong> de su ATQ como Daño Cuántico a un enemigo y un <orangeStrong>{{2}}%</orangeStrong> de su ATQ como Daño Cuántico a los enemigos adyacentes.\\n\"¡Fuera la ficha del muro muerto!\" no recupera pts. de habilidad básica.",
+        "fullDesc": "Qingque inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Cuántico a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño Cuántico a los enemigos adyacentes.\\n\"¡Fuera la ficha del muro muerto!\" no recupera pts. de habilidad básica.",
         "shortDesc": "Inflige Daño Cuántico a un enemigo y una pequeña cantidad de Daño Cuántico a los enemigos adyacentes."
       }
     },
     "skill": {
       "0": {
         "name": "Última ficha posible",
-        "fullDesc": "Roba {{1}} fichas de jade e inflige un <orangeStrong>{{2}}%</orangeStrong> más de daño hasta que termine el turno. Este efecto se puede acumular hasta {{3}} veces. Tras usar esta habilidad básica, el turno no termina.",
+        "fullDesc": "Roba {{1}} fichas de jade e inflige un <orangeStrong>{{2, percent}}%</orangeStrong> más de daño hasta que termine el turno. Este efecto se puede acumular hasta {{3}} veces. Tras usar esta habilidad básica, el turno no termina.",
         "shortDesc": "<orangeStrong>Roba</orangeStrong>, aumenta el daño infligido y <orangeStrong>el turno no termina</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "¿Cuatro peces ocultos? ¡Victoria!",
-        "fullDesc": "Inflige un <orangeStrong>{{1}}%</orangeStrong> del ATQ de Qingque como Daño Cuántico a todos los enemigos y obtiene 4 fichas de jade del mismo palo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Qingque como Daño Cuántico a todos los enemigos y obtiene 4 fichas de jade del mismo palo.",
         "shortDesc": "Inflige Daño Cuántico a todos los enemigos y obtiene 4 fichas del mismo palo."
       }
     },
@@ -51,14 +51,14 @@
     "bonusAbility2": {
       "0": {
         "name": "Esperando el palo adecuado",
-        "fullDesc": "La habilidad básica hace que inflija un {{1}}% más de daño.",
+        "fullDesc": "La habilidad básica hace que inflija un {{1, percent}}% más de daño.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Robo de cuarteto",
-        "fullDesc": "Tras utilizar el ATQ básico potenciado, la VEL de Qingque aumenta en un {{1}}% durante 1 turno.",
+        "fullDesc": "Tras utilizar el ATQ básico potenciado, la VEL de Qingque aumenta en un {{1, percent}}% durante 1 turno.",
         "shortDesc": ""
       }
     }
@@ -66,7 +66,7 @@
   "ranks": {
     "1": {
       "name": "Peón coronado, premio obtenido",
-      "desc": "El daño que inflige la habilidad definitiva de Qingque aumenta en un {{1}}%."
+      "desc": "El daño que inflige la habilidad definitiva de Qingque aumenta en un {{1, percent}}%."
     },
     "2": {
       "name": "Hora de la siesta en las fichas",
@@ -78,7 +78,7 @@
     },
     "4": {
       "name": "Combo oportuno, la última ficha espera",
-      "desc": "Tras usar su habilidad básica, Qingque tiene un {{1}}% de probabilidad fija de obtener Autosuficiencia hasta que termine el turno.\\nEn el estado de Autosuficiencia, al usar el ATQ básico o el ATQ básico potenciado, se lanza inmediatamente un ataque adicional que inflige al mismo objetivo u objetivos un Daño Cuántico equivalente al 100% del daño de ATQ básico o de ATQ básico potenciado."
+      "desc": "Tras usar su habilidad básica, Qingque tiene un {{1, percent}}% de probabilidad fija de obtener Autosuficiencia hasta que termine el turno.\\nEn el estado de Autosuficiencia, al usar el ATQ básico o el ATQ básico potenciado, se lanza inmediatamente un ataque adicional que inflige al mismo objetivo u objetivos un Daño Cuántico equivalente al 100% del daño de ATQ básico o de ATQ básico potenciado."
     },
     "5": {
       "name": "Fichas sacadas, suerte acabada",

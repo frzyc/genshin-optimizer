@@ -2,6 +2,6 @@
   "name": "해 질 무렵 시작되는 춤",
   "passive": {
     "name": "심취",
-    "description": "장착한 캐릭터가 피격될 확률이 대폭 증가하고, 치명타 피해가 <orangeStrong>{{1}}%</orangeStrong> 증가한다. 장착한 캐릭터가 필살기를 발동하면 [화염의 춤]을 1스택 획득한다, 지속 시간: 2턴, 최대 중첩수: {{2}}스택. [화염의 춤] 스택마다 장착한 캐릭터의 추가 공격으로 가하는 피해가 <orangeStrong>{{3}}%</orangeStrong> 증가한다"
+    "description": "장착한 캐릭터가 피격될 확률이 대폭 증가하고, 치명타 피해가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 장착한 캐릭터가 필살기를 발동하면 [화염의 춤]을 1스택 획득한다, 지속 시간: 2턴, 최대 중첩수: {{2}}스택. [화염의 춤] 스택마다 장착한 캐릭터의 추가 공격으로 가하는 피해가 <orangeStrong>{{3, percent}}%</orangeStrong> 증가한다"
   }
 }

@@ -4,14 +4,14 @@
     "basic": {
       "0": {
         "name": "Rayon spectral",
-        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ d'Asta à un ennemi unique.",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ d'Asta à un ennemi unique.",
         "shortDesc": "Inflige des DGT de feu mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Tempête de météores",
-        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ d'Asta à un ennemi unique et inflige des DGT 4 fois supplémentaires, infligeant à chaque fois des DGT de feu équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ d'Asta à un ennemi aléatoire.",
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ d'Asta à un ennemi unique et inflige des DGT 4 fois supplémentaires, infligeant à chaque fois des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ d'Asta à un ennemi aléatoire.",
         "shortDesc": "Inflige des DGT de feu mineurs à des cibles ennemies uniques pour un total de 5 rebonds."
       }
     },
@@ -25,7 +25,7 @@
     "technique": {
       "0": {
         "name": "Coup de génie",
-        "fullDesc": "Engage immédiatement le combat contre les ennemis. Inflige des DGT de feu équivalents à {{1}}% de l'ATQ d'Asta à tous les ennemis après être entré en combat.",
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Inflige des DGT de feu équivalents à {{1, percent}}% de l'ATQ d'Asta à tous les ennemis après être entré en combat.",
         "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT mineurs à tous les ennemis après être entré en combat."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Étincelles",
-        "fullDesc": "L'ATQ normale d'Asta a {{1}}% de chances de base de brûler une cible ennemie pendant {{2}} tours.\\nLes ennemis brûlés subissent des dégâts de feu sur la durée équivalents à {{3}}% des DGT infligés par l'ATQ normale d'Asta au début de chaque tour.",
+        "fullDesc": "L'ATQ normale d'Asta a {{1, percent}}% de chances de base de brûler une cible ennemie pendant {{2}} tours.\\nLes ennemis brûlés subissent des dégâts de feu sur la durée équivalents à {{3, percent}}% des DGT infligés par l'ATQ normale d'Asta au début de chaque tour.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Mettre le feu aux poudres",
-        "fullDesc": "Lorsque Asta est sur le champ de bataille, les DGT de feu de tous les alliés augmentent de {{1}}%.",
+        "fullDesc": "Lorsque Asta est sur le champ de bataille, les DGT de feu de tous les alliés augmentent de {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Constellation",
-        "fullDesc": "La DÉF d'Asta augmente de {{1}}% pour chaque cumul de Chargement.",
+        "fullDesc": "La DÉF d'Asta augmente de {{1, percent}}% pour chaque cumul de Chargement.",
         "shortDesc": ""
       }
     }
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Manifestation de l'aurore",
-      "desc": "Le taux de régénération d'énergie d'Asta augmente de {{2}}% lorsqu'elle dispose de {{1}} cumuls de Chargement ou plus."
+      "desc": "Le taux de régénération d'énergie d'Asta augmente de {{2, percent}}% lorsqu'elle dispose de {{1}} cumuls de Chargement ou plus."
     },
     "5": {
       "name": "Nébuleuse de runes et de mystères",

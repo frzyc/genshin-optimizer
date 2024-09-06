@@ -4,26 +4,26 @@
     "basic": {
       "0": {
         "name": "Skullcrush Spurs",
-        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Boothill's ATK to a single target enemy.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Boothill's ATK to a single target enemy.",
         "shortDesc": "Deals minor Physical DMG to a single enemy."
       },
       "1": {
         "name": "Fanning the Hammer",
-        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Boothill's ATK to a single target enemy.\\nThe Enhanced Basic Attack cannot recover Skill Points and can only target the enemy that is in the Standoff.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Boothill's ATK to a single target enemy.\\nThe Enhanced Basic Attack cannot recover Skill Points and can only target the enemy that is in the Standoff.",
         "shortDesc": "Deals Physical DMG to a single enemy. Can only attack the target in the Standoff."
       }
     },
     "skill": {
       "0": {
         "name": "Sizzlin' Tango",
-        "fullDesc": "Forces Boothill and a single target enemy into the Standoff state. Boothill's Basic ATK gets Enhanced, and he cannot use his Skill, lasting for {{3}} turn(s). This duration decreases by 1 at the start of Boothill's every turn.\\nThe enemy target in the Standoff becomes Taunted. When this enemy target/Boothill gets attacked by the other party in the Standoff, the DMG they receive increases by <orangeStrong>{{1}}%</orangeStrong>/{{2}}%.\\nAfter this target is defeated or becomes Weakness Broken, Boothill gains 1 stack of Pocket Trickshot, then dispels the Standoff.\\nThis Skill cannot regenerate Energy. After using this Skill, the current turn does not end.",
+        "fullDesc": "Forces Boothill and a single target enemy into the Standoff state. Boothill's Basic ATK gets Enhanced, and he cannot use his Skill, lasting for {{3}} turn(s). This duration decreases by 1 at the start of Boothill's every turn.\\nThe enemy target in the Standoff becomes Taunted. When this enemy target/Boothill gets attacked by the other party in the Standoff, the DMG they receive increases by <orangeStrong>{{1, percent}}%</orangeStrong>/{{2, percent}}%.\\nAfter this target is defeated or becomes Weakness Broken, Boothill gains 1 stack of Pocket Trickshot, then dispels the Standoff.\\nThis Skill cannot regenerate Energy. After using this Skill, the current turn does not end.",
         "shortDesc": "Initiates <orangeStrong>Standoff</orangeStrong>. After the target in the Standoff is <orangeStrong>defeated or Weakness Broken</orangeStrong>, Boothill receives Pocket Trickshot and dispels the Standoff. Boothill <orangeStrong>gains Enhanced Basic ATK</orangeStrong> and this turn does not end."
       }
     },
     "ult": {
       "0": {
         "name": "Dust Devil's Sunset Rodeo",
-        "fullDesc": "Applies Physical Weakness to a single target enemy, lasting for {{3}} turn(s).\\nDeals Physical DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Boothill's ATK to the target and <u>delays their action</u> by <orangeStrong>{{2}}%</orangeStrong>.",
+        "fullDesc": "Applies Physical Weakness to a single target enemy, lasting for {{3}} turn(s).\\nDeals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Boothill's ATK to the target and <u>delays their action</u> by <orangeStrong>{{2, percent}}%</orangeStrong>.",
         "shortDesc": "<orangeStrong>Applies Physical Weakness</orangeStrong> to a single enemy, deals massive Physical DMG to them, and delays their action."
       }
     },
@@ -44,14 +44,14 @@
     "bonusAbility1": {
       "0": {
         "name": "Ghost Load",
-        "fullDesc": "Increase this character's CRIT Rate/CRIT DMG, by an amount equal to {{1}}%/{{3}}% of Break Effect, up to a max increase of {{2}}%/{{4}}%.",
+        "fullDesc": "Increase this character's CRIT Rate/CRIT DMG, by an amount equal to {{1, percent}}%/{{3, percent}}% of Break Effect, up to a max increase of {{2, percent}}%/{{4, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Above Snakes",
-        "fullDesc": "While Boothill is in the Standoff, reduces the DMG he receives from targets that are not in the Standoff by {{1}}%.",
+        "fullDesc": "While Boothill is in the Standoff, reduces the DMG he receives from targets that are not in the Standoff by {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Dusty Trail's Lone Star",
-      "desc": "When the battle starts, obtains 1 stack of Pocket Trickshot. When Boothill deals DMG, ignores {{1}}% of the enemy target's DEF."
+      "desc": "When the battle starts, obtains 1 stack of Pocket Trickshot. When Boothill deals DMG, ignores {{1, percent}}% of the enemy target's DEF."
     },
     "2": {
       "name": "Milestonemonger",
-      "desc": "When in Standoff and gaining Pocket Trickshot, recovers {{1}} Skill Point(s) and increases Break Effect by {{2}}%, lasting for {{3}} turn(s). Can also trigger this effect when gaining Pocket Trickshot stacks that exceed the max limit. But cannot trigger repeatedly within one turn."
+      "desc": "When in Standoff and gaining Pocket Trickshot, recovers {{1}} Skill Point(s) and increases Break Effect by {{2, percent}}%, lasting for {{3}} turn(s). Can also trigger this effect when gaining Pocket Trickshot stacks that exceed the max limit. But cannot trigger repeatedly within one turn."
     },
     "3": {
       "name": "Marble Orchard's Guard",
@@ -78,7 +78,7 @@
     },
     "4": {
       "name": "Cold Cuts Chef",
-      "desc": "When the enemy target in the Standoff is attacked by Boothill, the DMG they receive additionally increases by {{1}}%. When Boothill is attacked by the enemy target in the Standoff, the effect of him receiving increased DMG is offset by {{2}}%."
+      "desc": "When the enemy target in the Standoff is attacked by Boothill, the DMG they receive additionally increases by {{1, percent}}%. When Boothill is attacked by the enemy target in the Standoff, the effect of him receiving increased DMG is offset by {{2, percent}}%."
     },
     "5": {
       "name": "Stump Speech",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Crowbar Hotel's Raccoon",
-      "desc": "When triggering the Talent's Break DMG, additionally deals Break DMG to the target equal to {{1}}% of the original DMG multiplier and additionally deals Break DMG to adjacent targets equal to {{2}}% of the original DMG multiplier."
+      "desc": "When triggering the Talent's Break DMG, additionally deals Break DMG to the target equal to {{1, percent}}% of the original DMG multiplier and additionally deals Break DMG to adjacent targets equal to {{2, percent}}% of the original DMG multiplier."
     }
   }
 }

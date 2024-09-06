@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Flèche du froid glacial",
-        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de March 7th à un ennemi unique.",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de March 7th à un ennemi unique.",
         "shortDesc": "Inflige des DGT de glace mineurs à un ennemi unique."
       }
     },
     "skill": {
       "0": {
         "name": "Par le pouvoir de la mignonnerie",
-        "fullDesc": "Accorde un bouclier à un allié unique qui absorbe une quantité de DGT équivalente à <orangeStrong>{{1}}%</orangeStrong> de la DÉF de March 7th + <orangeStrong>{{4}}</orangeStrong> pendant {{2}} tours.\\nSi le pourcentage de PV actuel de l'allié est supérieur ou égal à {{3}}%, les chances que les ennemis attaquent cet allié augmentent considérablement.",
+        "fullDesc": "Accorde un bouclier à un allié unique qui absorbe une quantité de DGT équivalente à <orangeStrong>{{1, percent}}%</orangeStrong> de la DÉF de March 7th + <orangeStrong>{{4}}</orangeStrong> pendant {{2}} tours.\\nSi le pourcentage de PV actuel de l'allié est supérieur ou égal à {{3, percent}}%, les chances que les ennemis attaquent cet allié augmentent considérablement.",
         "shortDesc": "<orangeStrong>Accorde un bouclier</orangeStrong> à un allié unique."
       }
     },
     "ult": {
       "0": {
         "name": "Cascade glaciale",
-        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1}}%</orangeStrong> de l'ATQ de March 7th à tous les ennemis. Les ennemis touchés ont {{2}}% de <u>chances de base</u> d'être gelés pendant {{3}} tour.\\nLes ennemis gelés ne peuvent pas agir et subissent des DGT de glace <u>additionnels</u> équivalents à <orangeStrong>{{4}}%</orangeStrong> de l'ATQ de March 7th au début de chaque tour.",
+        "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de March 7th à tous les ennemis. Les ennemis touchés ont {{2, percent}}% de <u>chances de base</u> d'être gelés pendant {{3}} tour.\\nLes ennemis gelés ne peuvent pas agir et subissent des DGT de glace <u>additionnels</u> équivalents à <orangeStrong>{{4, percent}}%</orangeStrong> de l'ATQ de March 7th au début de chaque tour.",
         "shortDesc": "Inflige des DGT de glace à <orangeStrong>tous les ennemis</orangeStrong> avec <orangeStrong>une chance d'appliquer l'effet Gelé</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Beauté glacée",
-        "fullDesc": "Engage immédiatement le combat contre les ennemis. Il y a {{1}}% de <u>chances de base</u> de geler un ennemi aléatoire pendant {{2}} tour après être entré en combat.\\nUn ennemi gelé ne peut pas agir et subit des DGT de glace <u>additionnels</u> équivalents à {{3}}% de l'ATQ de March 7th au début de chaque tour.",
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Il y a {{1, percent}}% de <u>chances de base</u> de geler un ennemi aléatoire pendant {{2}} tour après être entré en combat.\\nUn ennemi gelé ne peut pas agir et subit des DGT de glace <u>additionnels</u> équivalents à {{3, percent}}% de l'ATQ de March 7th au début de chaque tour.",
         "shortDesc": "Engage le combat contre les ennemis avec de fortes chances d'infliger Gelé à un ennemi aléatoire en début de combat."
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Sortilège de glace",
-        "fullDesc": "Augmente les chances de base de l'ultime de geler les ennemis de {{1}}%.",
+        "fullDesc": "Augmente les chances de base de l'ultime de geler les ennemis de {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Souvenir de ça",
-      "desc": "Accorde un bouclier équivalent à {{1}}% de la DÉF de March 7th + {{3}} à l'allié dont le pourcentage de PV est le plus faible en entrant en combat, dure {{2}} tours."
+      "desc": "Accorde un bouclier équivalent à {{1, percent}}% de la DÉF de March 7th + {{3}} à l'allié dont le pourcentage de PV est le plus faible en entrant en combat, dure {{2}} tours."
     },
     "3": {
       "name": "Souvenir de tout",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Ne plus jamais abandonner",
-      "desc": "L'effet de contre du talent peut être déclenché 1 fois de plus à chaque tour. Les DGT infligés par le contre augmentent d'un montant équivalent à {{1}}% de la DÉF de March 7th."
+      "desc": "L'effet de contre du talent peut être déclenché 1 fois de plus à chaque tour. Les DGT infligés par le contre augmentent d'un montant équivalent à {{1, percent}}% de la DÉF de March 7th."
     },
     "5": {
       "name": "Ne plus jamais oublier",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Ça se passe comme ça...",
-      "desc": "Les alliés protégés par le bouclier octroyé par la compétence de March 7th restaurent un montant de PV équivalent à {{1}}% de leurs PV max + {{2}} au début de chaque tour."
+      "desc": "Les alliés protégés par le bouclier octroyé par la compétence de March 7th restaurent un montant de PV équivalent à {{1, percent}}% de leurs PV max + {{2}} au début de chaque tour."
     }
   }
 }

@@ -2,6 +2,6 @@
   "name": "芳華待灼",
   "passive": {
     "name": "莫失莫忘",
-    "description": "使裝備者的攻擊力提高<orangeStrong>{{1}}%</orangeStrong>。進入戰鬥時，若有兩名及以上我方角色擁有任意相同命途，使這些角色的暴擊傷害提高<orangeStrong>{{2}}%</orangeStrong>。同類技能無法重複生效。"
+    "description": "使裝備者的攻擊力提高<orangeStrong>{{1, percent}}%</orangeStrong>。進入戰鬥時，若有兩名及以上我方角色擁有任意相同命途，使這些角色的暴擊傷害提高<orangeStrong>{{2, percent}}%</orangeStrong>。同類技能無法重複生效。"
   }
 }

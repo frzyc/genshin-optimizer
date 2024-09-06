@@ -4,21 +4,21 @@
     "basic": {
       "0": {
         "name": "Glistening Light",
-        "fullDesc": "Jing Yuan deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of his ATK to a single enemy.",
+        "fullDesc": "Jing Yuan deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of his ATK to a single enemy.",
         "shortDesc": "Deals minor Lightning DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "Rifting Zenith",
-        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Jing Yuan's ATK to all enemies and increases Lightning-Lord's Hits Per Action by {{2}} for the next turn.",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Jing Yuan's ATK to all enemies and increases Lightning-Lord's Hits Per Action by {{2}} for the next turn.",
         "shortDesc": "Deals minor Lightning DMG to all enemies and <orangeStrong>increases Lightning-Lord's Hits Per Action</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Lightbringer",
-        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1}}%</orangeStrong> of Jing Yuan's ATK to all enemies and increases Lightning-Lord's Hits Per Action by {{2}} for the next turn.",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Jing Yuan's ATK to all enemies and increases Lightning-Lord's Hits Per Action by {{2}} for the next turn.",
         "shortDesc": "Deals Lightning DMG to all enemies and <orangeStrong>increases Lightning-Lord's Hits Per Action</orangeStrong>."
       }
     },
@@ -39,7 +39,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Battalia Crush",
-        "fullDesc": "If the Lightning-Lord's Hits Per Action is greater or equal to {{1}} in the next turn, its CRIT DMG increases by {{2}}% for the next turn.",
+        "fullDesc": "If the Lightning-Lord's Hits Per Action is greater or equal to {{1}} in the next turn, its CRIT DMG increases by {{2, percent}}% for the next turn.",
         "shortDesc": ""
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "War Marshal",
-        "fullDesc": "After the Skill is used, the CRIT Rate increases by {{1}}% for {{2}} turn(s).",
+        "fullDesc": "After the Skill is used, the CRIT Rate increases by {{1, percent}}% for {{2}} turn(s).",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Slash, Seas Split",
-      "desc": "When Lightning-Lord attacks, the DMG multiplier on enemies adjacent to the target enemy increases by an extra amount equal to {{1}}% of the DMG multiplier against the primary target enemy."
+      "desc": "When Lightning-Lord attacks, the DMG multiplier on enemies adjacent to the target enemy increases by an extra amount equal to {{1, percent}}% of the DMG multiplier against the primary target enemy."
     },
     "2": {
       "name": "Swing, Skies Squashed",
-      "desc": "After Lightning-Lord takes action, DMG dealt by Jing Yuan's Basic ATK, Skill, and Ultimate increases by {{1}}%, lasting for {{2}} turn(s)."
+      "desc": "After Lightning-Lord takes action, DMG dealt by Jing Yuan's Basic ATK, Skill, and Ultimate increases by {{1, percent}}%, lasting for {{2}} turn(s)."
     },
     "3": {
       "name": "Strike, Suns Subdued",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Sweep, Souls Slain",
-      "desc": "Each hit performed by the Lightning-Lord when it takes action will make the target enemy Vulnerable.\\nWhile Vulnerable, enemies receive {{1}}% more DMG until the end of the Lightning-Lord's current turn, stacking up to {{2}} time(s)."
+      "desc": "Each hit performed by the Lightning-Lord when it takes action will make the target enemy Vulnerable.\\nWhile Vulnerable, enemies receive {{1, percent}}% more DMG until the end of the Lightning-Lord's current turn, stacking up to {{2}} time(s)."
     }
   }
 }

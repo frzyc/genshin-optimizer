@@ -4,12 +4,12 @@
     "basic": {
       "0": {
         "name": "Corkage Fee",
-        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Gallagher pada 1 musuh yang ditargetkan.",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Gallagher pada 1 musuh yang ditargetkan.",
         "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh."
       },
       "1": {
         "name": "Nectar Blitz",
-        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Gallagher pada 1 musuh yang ditargetkan, dan mengurangi ATK target sebesar <orangeStrong>{{2}}%</orangeStrong>, berlangsung selama {{3}} giliran.",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Gallagher pada 1 musuh yang ditargetkan, dan mengurangi ATK target sebesar <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, berlangsung selama {{3}} giliran.",
         "shortDesc": "Mengakibatkan Fire DMG pada 1 musuh dan mengurangi ATK-nya."
       }
     },
@@ -23,14 +23,14 @@
     "ult": {
       "0": {
         "name": "Champagne Etiquette",
-        "fullDesc": "Membuat seluruh musuh memasuki status \"Besotted\" selama {{2}} giliran, dan di saat bersamaan mengakibatkan Fire DMG sebesar <orangeStrong>{{1}}%</orangeStrong> ATK Gallagher pada seluruh musuh, dan Basic Attack berikutnya akan diperkuat menjadi \"Nectar Blitz\".",
+        "fullDesc": "Membuat seluruh musuh memasuki status \"Besotted\" selama {{2}} giliran, dan di saat bersamaan mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Gallagher pada seluruh musuh, dan Basic Attack berikutnya akan diperkuat menjadi \"Nectar Blitz\".",
         "shortDesc": "Membuat seluruh musuh memasuki <orangeStrong>status \"Besotted\"</orangeStrong>, dan di saat yang bersamaan mengakibatkan Fire DMG pada seluruh musuh. Basic Attack berikutnya akan diperkuat menjadi \"Nectar Blitz\"."
       }
     },
     "technique": {
       "0": {
         "name": "Artisan Elixir",
-        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, akan membuat seluruh musuh memasuki status \"Besotted\" selama {{1}} giliran, serta mengakibatkan Fire DMG sebesar {{2}}% ATK Gallagher pada seluruh musuh.",
+        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, akan membuat seluruh musuh memasuki status \"Besotted\" selama {{1}} giliran, serta mengakibatkan Fire DMG sebesar {{2, percent}}% ATK Gallagher pada seluruh musuh.",
         "shortDesc": "Menyerang musuh. Setelah memasuki pertempuran, membuat seluruh musuh <orangeStrong>memasuki status \"Besotted\"</orangeStrong>, serta mengakibatkan Fire DMG dalam jumlah kecil pada seluruh musuh."
       }
     },
@@ -44,7 +44,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Novel Concoction",
-        "fullDesc": "Meningkatkan Outgoing Healing diri sendiri sebesar {{1}}% dari Break Effect, maksimal meningkat hingga {{2}}%.",
+        "fullDesc": "Meningkatkan Outgoing Healing diri sendiri sebesar {{1, percent}}% dari Break Effect, maksimal meningkat hingga {{2, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Salty Dog",
-      "desc": "Gallagher akan memulihkan {{1}} Energy setelah memasuki pertempuran, dan meningkatkan {{2}}% Effect RES dirinya."
+      "desc": "Gallagher akan memulihkan {{1}} Energy setelah memasuki pertempuran, dan meningkatkan {{2, percent}}% Effect RES dirinya."
     },
     "2": {
       "name": "Lion's Tail",
-      "desc": "Saat melancarkan Skill, akan menghilangkan {{1}} Debuff dari 1 rekan tim yang ditargetkan. Di saat bersamaan, akan meningkatkan {{2}}% Effect RES rekan tersebut, berlangsung selama {{3}} giliran."
+      "desc": "Saat melancarkan Skill, akan menghilangkan {{1}} Debuff dari 1 rekan tim yang ditargetkan. Di saat bersamaan, akan meningkatkan {{2, percent}}% Effect RES rekan tersebut, berlangsung selama {{3}} giliran."
     },
     "3": {
       "name": "Corpse Reviver",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Blood and Sand",
-      "desc": "Meningkatkan {{1}}% Break Effect dan {{2}}% Weakness Break Efficiency Gallagher."
+      "desc": "Meningkatkan {{1, percent}}% Break Effect dan {{2, percent}}% Weakness Break Efficiency Gallagher."
     }
   }
 }

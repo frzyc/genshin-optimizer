@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Frigid Cold Arrow",
-        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of March 7th's ATK to a single enemy.",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of March 7th's ATK to a single enemy.",
         "shortDesc": "Deals minor Ice DMG to a single enemy."
       }
     },
     "skill": {
       "0": {
         "name": "The Power of Cuteness",
-        "fullDesc": "Provides a single ally with a Shield that can absorb DMG equal to <orangeStrong>{{1}}%</orangeStrong> of March 7th's DEF plus <orangeStrong>{{4}}</orangeStrong> for {{2}} turn(s).\\nIf the ally's current HP percentage is {{3}}% or higher, greatly increases the chance of enemies attacking that ally.",
+        "fullDesc": "Provides a single ally with a Shield that can absorb DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of March 7th's DEF plus <orangeStrong>{{4}}</orangeStrong> for {{2}} turn(s).\\nIf the ally's current HP percentage is {{3, percent}}% or higher, greatly increases the chance of enemies attacking that ally.",
         "shortDesc": "<orangeStrong>Applies a Shield</orangeStrong> on a single ally."
       }
     },
     "ult": {
       "0": {
         "name": "Glacial Cascade",
-        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1}}%</orangeStrong> of March 7th's ATK to all enemies. Hit enemies have a {{2}}% <u>base chance</u> to be Frozen for {{3}} turn(s).\\nWhile Frozen, enemies cannot take action and will receive <u>Additional</u> Ice DMG equal to <orangeStrong>{{4}}%</orangeStrong> of March 7th's ATK at the beginning of each turn.",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of March 7th's ATK to all enemies. Hit enemies have a {{2, percent}}% <u>base chance</u> to be Frozen for {{3}} turn(s).\\nWhile Frozen, enemies cannot take action and will receive <u>Additional</u> Ice DMG equal to <orangeStrong>{{4, percent}}%</orangeStrong> of March 7th's ATK at the beginning of each turn.",
         "shortDesc": "Deals Ice DMG to <orangeStrong>all enemies</orangeStrong>, with <orangeStrong>a chance to apply the Freeze effect</orangeStrong>"
       }
     },
     "technique": {
       "0": {
         "name": "Freezing Beauty",
-        "fullDesc": "Immediately attacks the enemy. After entering battle, there is a {{1}}% <u>base chance</u> to Freeze a random enemy for {{2}} turn(s).\\nWhile Frozen, the enemy cannot take action and will take <u>Additional</u> Ice DMG equal to {{3}}% of March 7th's ATK at the beginning of each turn.",
+        "fullDesc": "Immediately attacks the enemy. After entering battle, there is a {{1, percent}}% <u>base chance</u> to Freeze a random enemy for {{2}} turn(s).\\nWhile Frozen, the enemy cannot take action and will take <u>Additional</u> Ice DMG equal to {{3, percent}}% of March 7th's ATK at the beginning of each turn.",
         "shortDesc": "Attacks the enemy. After entering battle, there is a high chance of inflicting Freeze on a random enemy."
       }
     },
@@ -53,7 +53,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Ice Spell",
-        "fullDesc": "Increases the Ultimate's base chance to Freeze enemies by {{1}}%.",
+        "fullDesc": "Increases the Ultimate's base chance to Freeze enemies by {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Memory of It",
-      "desc": "Upon entering battle, grants a Shield equal to {{1}}% of March 7th's DEF plus {{3}} to the ally with the lowest HP percentage, lasting for {{2}} turn(s)."
+      "desc": "Upon entering battle, grants a Shield equal to {{1, percent}}% of March 7th's DEF plus {{3}} to the ally with the lowest HP percentage, lasting for {{2}} turn(s)."
     },
     "3": {
       "name": "Memory of Everything",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Never Forfeit Again",
-      "desc": "The Talent's Counter effect can be triggered 1 more time in each turn. The DMG dealt by Counter increases by an amount that is equal to {{1}}% of March 7th's DEF."
+      "desc": "The Talent's Counter effect can be triggered 1 more time in each turn. The DMG dealt by Counter increases by an amount that is equal to {{1, percent}}% of March 7th's DEF."
     },
     "5": {
       "name": "Never Forget Again",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Just Like This, Always...",
-      "desc": "Allies under the protection of the Shield granted by the Skill restore HP equal to {{1}}% of their Max HP plus {{2}} at the beginning of each turn."
+      "desc": "Allies under the protection of the Shield granted by the Skill restore HP equal to {{1, percent}}% of their Max HP plus {{2}} at the beginning of each turn."
     }
   }
 }

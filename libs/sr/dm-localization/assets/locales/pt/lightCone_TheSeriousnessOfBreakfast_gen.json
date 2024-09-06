@@ -2,6 +2,6 @@
   "name": "A Solenidade do Café da Manhã",
   "passive": {
     "name": "Prepare-se",
-    "description": "Aumenta em <orangeStrong>{{1}}%</orangeStrong> o Dano do usuário. Para cada inimigo derrotado pelo usuário, aumenta em <orangeStrong>{{2}}%</orangeStrong> o ATQ do usuário, podendo acumular até {{3}} vez(es)."
+    "description": "Aumenta em <orangeStrong>{{1, percent}}%</orangeStrong> o Dano do usuário. Para cada inimigo derrotado pelo usuário, aumenta em <orangeStrong>{{2, percent}}%</orangeStrong> o ATQ do usuário, podendo acumular até {{3}} vez(es)."
   }
 }

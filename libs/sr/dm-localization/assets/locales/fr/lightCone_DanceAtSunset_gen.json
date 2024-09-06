@@ -2,6 +2,6 @@
   "name": "Danse au crépuscule",
   "passive": {
     "name": "Fascination",
-    "description": "Augmente considérablement les chances du porteur d'être attaqué ainsi que ses DGT critiques de <orangeStrong>{{1}}%</orangeStrong>. Le porteur obtient 1 cumul de Danse du feu après avoir utilisé son ultime. Danse du feu dure 2 tours et peut se cumuler jusqu'à {{2}} fois. Chaque cumul de Danse du feu augmente les DGT infligés par l'attaque de suivi du porteur de <orangeStrong>{{3}}%</orangeStrong>."
+    "description": "Augmente considérablement les chances du porteur d'être attaqué ainsi que ses DGT critiques de <orangeStrong>{{1, percent}}%</orangeStrong>. Le porteur obtient 1 cumul de Danse du feu après avoir utilisé son ultime. Danse du feu dure 2 tours et peut se cumuler jusqu'à {{2}} fois. Chaque cumul de Danse du feu augmente les DGT infligés par l'attaque de suivi du porteur de <orangeStrong>{{3, percent}}%</orangeStrong>."
   }
 }

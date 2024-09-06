@@ -2,6 +2,6 @@
   "name": "論劍",
   "passive": {
     "name": "各自的答案",
-    "description": "當裝備者多次擊中同一敵方目標時，每次造成的傷害提高<orangeStrong>{{1}}%</orangeStrong>，該效果最多疊加{{2}}層。若攻擊目標發生變化，則立即解除目前的增益效果。"
+    "description": "當裝備者多次擊中同一敵方目標時，每次造成的傷害提高<orangeStrong>{{1, percent}}%</orangeStrong>，該效果最多疊加{{2}}層。若攻擊目標發生變化，則立即解除目前的增益效果。"
   }
 }

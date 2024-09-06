@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Xạ Kích Đóng Băng",
-        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Pela.",
+        "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Pela.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Băng cho 1 kẻ địch."
       }
     },
     "skill": {
       "0": {
         "name": "Tê Cóng",
-        "fullDesc": "Giải trừ {{2}} <u>hiệu ứng buff</u> của 1 kẻ địch chỉ định, đồng thời gây Sát Thương Băng tương đương <orangeStrong>{{1}}%</orangeStrong> Tấn Công của Pela.",
+        "fullDesc": "Giải trừ {{2}} <u>hiệu ứng buff</u> của 1 kẻ địch chỉ định, đồng thời gây Sát Thương Băng tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Pela.",
         "shortDesc": "<orangeStrong>Giải trừ</orangeStrong> 1 <orangeStrong><u>hiệu ứng BUFF</u></orangeStrong> của 1 kẻ địch, gây Sát Thương Băng cho 1 kẻ địch."
       }
     },
     "ult": {
       "0": {
         "name": "Áp Chế Không Gian",
-        "fullDesc": "Có {{1}}% <u>xác suất cơ bản</u> khiến mỗi kẻ địch rơi vào trạng thái Thông Hiểu, đồng thời gây Sát Thương Băng cho toàn bộ kẻ địch tương đương <orangeStrong>{{4}}%</orangeStrong> Tấn Công của Pela.\\nMục tiêu địch ở trạng thái Thông Hiểu sẽ giảm <orangeStrong>{{2}}%</orangeStrong> Phòng Thủ, duy trì {{3}} hiệp.",
+        "fullDesc": "Có {{1, percent}}% <u>xác suất cơ bản</u> khiến mỗi kẻ địch rơi vào trạng thái Thông Hiểu, đồng thời gây Sát Thương Băng cho toàn bộ kẻ địch tương đương <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công của Pela.\\nMục tiêu địch ở trạng thái Thông Hiểu sẽ giảm <orangeStrong>{{2, percent}}%</orangeStrong> Phòng Thủ, duy trì {{3}} hiệp.",
         "shortDesc": "Có xác suất lớn khiến kẻ địch <orangeStrong>giảm phòng thủ</orangeStrong>, và gây lượng nhỏ Sát Thương Băng cho tất cả địch."
       }
     },
     "technique": {
       "0": {
         "name": "Giáng Đòn Phủ Đầu",
-        "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu, sẽ gây cho 1 kẻ địch ngẫu nhiên Sát Thương Băng tương đương {{4}}% Tấn Công của Pela, đồng thời có {{1}}% <u>xác suất cơ bản</u> khiến Phòng Thủ của mỗi kẻ địch giảm {{2}}%, duy trì {{3}} hiệp.",
+        "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu, sẽ gây cho 1 kẻ địch ngẫu nhiên Sát Thương Băng tương đương {{4, percent}}% Tấn Công của Pela, đồng thời có {{1, percent}}% <u>xác suất cơ bản</u> khiến Phòng Thủ của mỗi kẻ địch giảm {{2, percent}}%, duy trì {{3}} hiệp.",
         "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây lượng nhỏ sát thương cho 1 kẻ địch ngẫu nhiên, và có xác suất lớn khiến mỗi kẻ địch giảm Phòng Thủ."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Đòn Phủ Đầu",
-        "fullDesc": "Sát thương gây ra cho mục tiêu địch có Hiệu Ứng Xấu tăng {{1}}%.",
+        "fullDesc": "Sát thương gây ra cho mục tiêu địch có Hiệu Ứng Xấu tăng {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Kế Sách Bí Mật",
-        "fullDesc": "Khi Pela trong trận, Chính Xác Hiệu Ứng của toàn phe ta tăng {{1}}%.",
+        "fullDesc": "Khi Pela trong trận, Chính Xác Hiệu Ứng của toàn phe ta tăng {{1, percent}}%.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Truy Kích Và Tiêu Diệt",
-        "fullDesc": "Khi thi triển Chiến Kỹ giải trừ hiệu ứng buff, sát thương gây ra trong lần tấn công kế tiếp tăng {{1}}%.",
+        "fullDesc": "Khi thi triển Chiến Kỹ giải trừ hiệu ứng buff, sát thương gây ra trong lần tấn công kế tiếp tăng {{1, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "Không Ngừng Đột Kích",
-      "desc": "Khi thi triển Chiến Kỹ giải trừ hiệu ứng buff, Tốc Độ tăng {{1}}%, duy trì {{2}} hiệp."
+      "desc": "Khi thi triển Chiến Kỹ giải trừ hiệu ứng buff, Tốc Độ tăng {{1, percent}}%, duy trì {{2}} hiệp."
     },
     "3": {
       "name": "Tăng Cấp Áp Chế",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "Phân Tích Đầy Đủ",
-      "desc": "Khi thi triển Chiến Kỹ, có {{1}}% xác suất cơ bản khiến Kháng Băng của mục tiêu địch giảm {{2}}%, duy trì {{3}} hiệp."
+      "desc": "Khi thi triển Chiến Kỹ, có {{1, percent}}% xác suất cơ bản khiến Kháng Băng của mục tiêu địch giảm {{2, percent}}%, duy trì {{3}} hiệp."
     },
     "5": {
       "name": "Quấy Nhiễu Tuyệt Đối",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Truy Kích Yếu Ớt",
-      "desc": "Sau khi thi triển tấn công, nếu kẻ địch đang trong Hiệu Ứng Xấu, sẽ gây Sát Thương Băng kèm theo cho kẻ đó bằng {{1}}% Tấn Công của Pela."
+      "desc": "Sau khi thi triển tấn công, nếu kẻ địch đang trong Hiệu Ứng Xấu, sẽ gây Sát Thương Băng kèm theo cho kẻ đó bằng {{1, percent}}% Tấn Công của Pela."
     }
   }
 }

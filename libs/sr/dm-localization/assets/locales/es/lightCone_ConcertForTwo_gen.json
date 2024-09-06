@@ -2,6 +2,6 @@
   "name": "Concierto para dos",
   "passive": {
     "name": "Motivación",
-    "description": "La DEF del portador aumenta en un <orangeStrong>{{1}}%</orangeStrong>. Por cada personaje con escudo que haya en el campo de batalla, el daño que inflige el portador aumenta en un <orangeStrong>{{2}}%</orangeStrong>."
+    "description": "La DEF del portador aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong>. Por cada personaje con escudo que haya en el campo de batalla, el daño que inflige el portador aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong>."
   }
 }

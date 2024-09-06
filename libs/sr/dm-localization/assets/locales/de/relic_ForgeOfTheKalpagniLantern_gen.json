@@ -1,6 +1,6 @@
 {
   "setName": "Schmiede der Kalpagni-Laterne",
   "setEffects": {
-    "2": "Erhöht die GES des Trägers um {{1}}%. Trifft der Träger einen Gegner mit Feuer-Schwäche, wird sein Brucheffekt für {{3}} Rd. um {{2}}% erhöht."
+    "2": "Erhöht die GES des Trägers um {{1, percent}}%. Trifft der Träger einen Gegner mit Feuer-Schwäche, wird sein Brucheffekt für {{3}} Rd. um {{2, percent}}% erhöht."
   }
 }

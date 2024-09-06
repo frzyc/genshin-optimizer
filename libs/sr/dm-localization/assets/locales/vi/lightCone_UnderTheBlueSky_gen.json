@@ -2,6 +2,6 @@
   "name": "Dưới Bầu Trời Xanh",
   "passive": {
     "name": "Ngọn Lúa Dưới Ánh Mặt Trời",
-    "description": "Khiến Tấn Công của người trang bị tăng <orangeStrong>{{1}}%</orangeStrong>, sau khi người trang bị tiêu diệt kẻ địch, Tỷ Lệ Bạo Kích tăng <orangeStrong>{{2}}%</orangeStrong>, duy trì {{3}} hiệp."
+    "description": "Khiến Tấn Công của người trang bị tăng <orangeStrong>{{1, percent}}%</orangeStrong>, sau khi người trang bị tiêu diệt kẻ địch, Tỷ Lệ Bạo Kích tăng <orangeStrong>{{2, percent}}%</orangeStrong>, duy trì {{3}} hiệp."
   }
 }

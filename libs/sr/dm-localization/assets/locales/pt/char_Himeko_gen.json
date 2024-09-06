@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "Ajuste de Lâmina de Serra",
-        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Himeko a um único inimigo.",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Himeko a um único inimigo.",
         "shortDesc": "Causa Dano de Fogo leve a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Detonação por Fusão",
-        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Himeko a um único inimigo e <orangeStrong>{{2}}%</orangeStrong> do ATQ de Himeko como Dano de Fogo aos inimigos adjacentes a ele.",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Himeko a um único inimigo e <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Himeko como Dano de Fogo aos inimigos adjacentes a ele.",
         "shortDesc": "Causa Dano de Fogo a um único inimigo e Dano de Fogo leve a inimigos adjacentes a ele."
       }
     },
     "ult": {
       "0": {
         "name": "Chama Celestial",
-        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de Himeko a todos os inimigos. Além disso, Himeko regenera {{2}} de Energia extra para cada inimigo derrotado.",
+        "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Himeko a todos os inimigos. Além disso, Himeko regenera {{2}} de Energia extra para cada inimigo derrotado.",
         "shortDesc": "Causa Dano de Fogo a todos os inimigos. Se inimigos forem derrotados, regenera Energia."
       }
     },
     "technique": {
       "0": {
         "name": "Combustão Incompleta",
-        "fullDesc": "Após usar a Técnica, cria uma dimensão especial que dura {{4}}s. Depois de entrar em batalha com inimigos na dimensão especial, há {{1}}% de <u>chance-base</u> de aumentar o Dano de Fogo que os inimigos recebem em {{2}}% por {{3}} rodada(s). Só 1 dimensão criada por aliados pode existir ao mesmo tempo.",
+        "fullDesc": "Após usar a Técnica, cria uma dimensão especial que dura {{4}}s. Depois de entrar em batalha com inimigos na dimensão especial, há {{1, percent}}% de <u>chance-base</u> de aumentar o Dano de Fogo que os inimigos recebem em {{2, percent}}% por {{3}} rodada(s). Só 1 dimensão criada por aliados pode existir ao mesmo tempo.",
         "shortDesc": "Cria uma dimensão especial. Depois de entrar em combate com inimigos na dimensão, existe uma alta chance de <orangeStrong>aumentar o Dano de Fogo recebido pelos inimigos</orangeStrong>."
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "Chama Estelar",
-        "fullDesc": "Depois de usar um ataque, tem {{1}}% de chance-base de infligir Queimadura a inimigos por {{2}} rodada(s).\\nQuando afligidos por Queimadura, os inimigos recebem Dano de Fogo Contínuo igual a {{3}}% do ATQ de Himeko no início de cada rodada.",
+        "fullDesc": "Depois de usar um ataque, tem {{1, percent}}% de chance-base de infligir Queimadura a inimigos por {{2}} rodada(s).\\nQuando afligidos por Queimadura, os inimigos recebem Dano de Fogo Contínuo igual a {{3, percent}}% do ATQ de Himeko no início de cada rodada.",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Magma",
-        "fullDesc": "A Perícia causa {{1}}% a mais de Dano a inimigos atualmente sob efeito de Queimadura.",
+        "fullDesc": "A Perícia causa {{1, percent}}% a mais de Dano a inimigos atualmente sob efeito de Queimadura.",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Marco",
-        "fullDesc": "Quando os PV estiverem em {{1}}% ou mais, a Chance de CRIT aumenta em {{2}}%.",
+        "fullDesc": "Quando os PV estiverem em {{1, percent}}% ou mais, a Chance de CRIT aumenta em {{2, percent}}%.",
         "shortDesc": ""
       }
     }
@@ -61,11 +61,11 @@
   "ranks": {
     "1": {
       "name": "Infância",
-      "desc": "Após a \"Corrida da Vitória\" ser ativada, a VEL de Himeko tem um aumento de {{1}}% por {{2}} rodada(s)."
+      "desc": "Após a \"Corrida da Vitória\" ser ativada, a VEL de Himeko tem um aumento de {{1, percent}}% por {{2}} rodada(s)."
     },
     "2": {
       "name": "Convergência",
-      "desc": "Causa {{2}}% de Dano extra a inimigos cuja porcentagem de PV for igual ou menor que {{1}}%."
+      "desc": "Causa {{2, percent}}% de Dano extra a inimigos cuja porcentagem de PV for igual ou menor que {{1, percent}}%."
     },
     "3": {
       "name": "Equilíbrio",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "Desbravamento!",
-      "desc": "A Perícia Suprema causa dano mais duas vezes, causando também Dano de Fogo igual a {{1}}% do Dano original a um inimigo aleatório."
+      "desc": "A Perícia Suprema causa dano mais duas vezes, causando também Dano de Fogo igual a {{1, percent}}% do Dano original a um inimigo aleatório."
     }
   }
 }

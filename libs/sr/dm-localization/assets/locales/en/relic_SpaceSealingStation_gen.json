@@ -1,6 +1,6 @@
 {
   "setName": "Space Sealing Station",
   "setEffects": {
-    "2": "Increases the wearer's ATK by {{1}}%. When the wearer's SPD reaches {{2}} or higher, the wearer's ATK increases by an extra {{3}}%."
+    "2": "Increases the wearer's ATK by {{1, percent}}%. When the wearer's SPD reaches {{2}} or higher, the wearer's ATK increases by an extra {{3, percent}}%."
   }
 }

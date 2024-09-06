@@ -2,6 +2,6 @@
   "name": "Zusammenbruch des Himmels",
   "passive": {
     "name": "Verwüstung",
-    "description": "Erhöht den durch Standardangriffe und Fertigkeiten verursachten SCH des Trägers um <orangeStrong>{{1}}%</orangeStrong>."
+    "description": "Erhöht den durch Standardangriffe und Fertigkeiten verursachten SCH des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>."
   }
 }

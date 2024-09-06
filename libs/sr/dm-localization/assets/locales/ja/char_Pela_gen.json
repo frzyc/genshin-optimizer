@@ -4,28 +4,28 @@
     "basic": {
       "0": {
         "name": "{RUBY_B#ひょうてんそげき}氷点狙撃{RUBY_E#}",
-        "fullDesc": "指定した敵単体にペラの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の氷属性ダメージを与える。",
+        "fullDesc": "指定した敵単体にペラの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
         "shortDesc": "敵単体に少量の氷属性ダメージを与える。"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#ていおんぼうがい}低温妨害{RUBY_E#}",
-        "fullDesc": "指定した敵単体の<u>バフ</u>を{{2}}つ解除し、ペラの攻撃力<orangeStrong>{{1}}%</orangeStrong>分の氷属性ダメージを与える。",
+        "fullDesc": "指定した敵単体の<u>バフ</u>を{{2}}つ解除し、ペラの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
         "shortDesc": "敵単体の<orangeStrong><u>バフ</u></orangeStrong>を1つ<orangeStrong>解除</orangeStrong>し、敵単体に氷属性ダメージを与える。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#りょういきせいあつ}領域制圧{RUBY_E#}",
-        "fullDesc": "{{1}}%の<u>基礎確率</u>で敵単体それぞれを「一般解」状態にし、敵全体にペラの攻撃力<orangeStrong>{{4}}%</orangeStrong>分の氷属性ダメージを与える。\\n「一般解」状態の敵の防御力-<orangeStrong>{{2}}%</orangeStrong>、{{3}}ターン継続。",
+        "fullDesc": "{{1, percent}}%の<u>基礎確率</u>で敵単体それぞれを「一般解」状態にし、敵全体にペラの攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の氷属性ダメージを与える。\\n「一般解」状態の敵の防御力-<orangeStrong>{{2, percent}}%</orangeStrong>、{{3}}ターン継続。",
         "shortDesc": "高確率で敵の<orangeStrong>防御力をダウン</orangeStrong>し、敵全体に少量の氷属性ダメージを与える。"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#せんてひっしょう}先手必勝{RUBY_E#}",
-        "fullDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体にペラの攻撃力{{4}}%分の氷属性ダメージを与え、{{1}}%の<u>基礎確率</u>で敵単体それぞれの防御力-{{2}}%、{{3}}ターン継続。",
+        "fullDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体にペラの攻撃力{{4, percent}}%分の氷属性ダメージを与え、{{1, percent}}%の<u>基礎確率</u>で敵単体それぞれの防御力-{{2, percent}}%、{{3}}ターン継続。",
         "shortDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体に少量のダメージを与え、高確率で敵それぞれの防御力ダウン。"
       }
     },
@@ -39,21 +39,21 @@
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#つうげき}痛撃{RUBY_E#}",
-        "fullDesc": "デバフ状態の敵に対して与ダメージ+{{1}}%。",
+        "fullDesc": "デバフ状態の敵に対して与ダメージ+{{1, percent}}%。",
         "shortDesc": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#ひさく}秘策{RUBY_E#}",
-        "fullDesc": "ペラがフィールド上にいる時、味方全体の効果命中+{{1}}%。",
+        "fullDesc": "ペラがフィールド上にいる時、味方全体の効果命中+{{1, percent}}%。",
         "shortDesc": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#ついげきせんめつ}追撃殲滅{RUBY_E#}",
-        "fullDesc": "戦闘スキルを発動してバフを解除した時、次の攻撃の与ダメージ+{{1}}%。",
+        "fullDesc": "戦闘スキルを発動してバフを解除した時、次の攻撃の与ダメージ+{{1, percent}}%。",
         "shortDesc": ""
       }
     }
@@ -65,7 +65,7 @@
     },
     "2": {
       "name": "{RUBY_B#や}止{RUBY_E#}まぬ{RUBY_B#こうしん}行進{RUBY_E#}",
-      "desc": "戦闘スキルを発動してバフを解除する時、速度+{{1}}%、{{2}}ターン継続。"
+      "desc": "戦闘スキルを発動してバフを解除する時、速度+{{1, percent}}%、{{2}}ターン継続。"
     },
     "3": {
       "name": "{RUBY_B#せいあつ}制圧{RUBY_E#}エスカレート",
@@ -73,7 +73,7 @@
     },
     "4": {
       "name": "{RUBY_B#かんぜんかいせき}完全解析{RUBY_E#}",
-      "desc": "戦闘スキルを発動した時、{{1}}%の基礎確率で敵の氷属性耐性-{{2}}%、{{3}}ターン継続。"
+      "desc": "戦闘スキルを発動した時、{{1, percent}}%の基礎確率で敵の氷属性耐性-{{2, percent}}%、{{3}}ターン継続。"
     },
     "5": {
       "name": "{RUBY_B#れいどぼうがい}零度妨害{RUBY_E#}",
@@ -81,7 +81,7 @@
     },
     "6": {
       "name": "{RUBY_B#ひじゃくついげき}疲弱追撃{RUBY_E#}",
-      "desc": "攻撃を行った後、敵がデバフ状態の場合、ペラの攻撃力{{1}}%分の氷属性付加ダメージを与える。"
+      "desc": "攻撃を行った後、敵がデバフ状態の場合、ペラの攻撃力{{1, percent}}%分の氷属性付加ダメージを与える。"
     }
   }
 }

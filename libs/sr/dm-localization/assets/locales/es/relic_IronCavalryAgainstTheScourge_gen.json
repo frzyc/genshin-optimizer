@@ -1,7 +1,7 @@
 {
   "setName": "Caballería de hierro plaguicida",
   "setEffects": {
-    "2": "Efecto de Ruptura +{{1}}%.",
-    "4": "Cuando el efecto de Ruptura del portador es igual o superior al {{1}}%, al causar Daño de Ruptura al objetivo enemigo, ignora un {{3}}% de su DEF. Cuando el efecto de Ruptura del portador es igual o superior al {{2}}%, el Daño de Ultrarruptura que inflige al enemigo ignora adicionalmente un {{4}}% de su DEF."
+    "2": "Efecto de Ruptura +{{1, percent}}%.",
+    "4": "Cuando el efecto de Ruptura del portador es igual o superior al {{1, percent}}%, al causar Daño de Ruptura al objetivo enemigo, ignora un {{3, percent}}% de su DEF. Cuando el efecto de Ruptura del portador es igual o superior al {{2, percent}}%, el Daño de Ultrarruptura que inflige al enemigo ignora adicionalmente un {{4, percent}}% de su DEF."
   }
 }

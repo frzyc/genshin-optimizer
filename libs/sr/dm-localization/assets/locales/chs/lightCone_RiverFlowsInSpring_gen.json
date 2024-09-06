@@ -2,6 +2,6 @@
   "name": "春水初生",
   "passive": {
     "name": "驱散余寒",
-    "description": "进入战斗后，使装备者速度提高<orangeStrong>{{1}}%</orangeStrong>，造成的伤害提高<orangeStrong>{{2}}%</orangeStrong>。当装备者受到伤害后该效果失效，下个回合结束时该效果恢复。"
+    "description": "进入战斗后，使装备者速度提高<orangeStrong>{{1, percent}}%</orangeStrong>，造成的伤害提高<orangeStrong>{{2, percent}}%</orangeStrong>。当装备者受到伤害后该效果失效，下个回合结束时该效果恢复。"
   }
 }

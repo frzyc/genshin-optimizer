@@ -2,6 +2,6 @@
   "name": "Trend des universellen Markts",
   "passive": {
     "name": "Für eine neue Runde mischen",
-    "description": "Erhöht die VTD des Trägers um <orangeStrong>{{1}}%</orangeStrong>. Wenn der Träger angegriffen wird, besteht eine Grundchance von <orangeStrong>{{2}}%</orangeStrong>, beim Gegner Brennen zu verursachen und für jede Runde DoT in Höhe von <orangeStrong>{{3}}%</orangeStrong> der VTD des Trägers zuzufügen. Dieser Effekt hält {{4}} Rd. an."
+    "description": "Erhöht die VTD des Trägers um <orangeStrong>{{1, percent}}%</orangeStrong>. Wenn der Träger angegriffen wird, besteht eine Grundchance von <orangeStrong>{{2, percent}}%</orangeStrong>, beim Gegner Brennen zu verursachen und für jede Runde DoT in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> der VTD des Trägers zuzufügen. Dieser Effekt hält {{4}} Rd. an."
   }
 }

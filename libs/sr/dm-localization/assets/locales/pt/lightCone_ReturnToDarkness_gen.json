@@ -2,6 +2,6 @@
   "name": "Retorno à Escuridão",
   "passive": {
     "name": "Ondas Furiosas",
-    "description": "Aumenta a Chance de CRIT do usuário em <orangeStrong>{{1}}%</orangeStrong>. Após um Acerto CRIT, tem <orangeStrong>{{2}}%</orangeStrong> de chance fixa de remover 1 melhoria do inimigo-alvo. Esse efeito pode ser acionado apenas 1 vez por ataque."
+    "description": "Aumenta a Chance de CRIT do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Após um Acerto CRIT, tem <orangeStrong>{{2, percent}}%</orangeStrong> de chance fixa de remover 1 melhoria do inimigo-alvo. Esse efeito pode ser acionado apenas 1 vez por ataque."
   }
 }

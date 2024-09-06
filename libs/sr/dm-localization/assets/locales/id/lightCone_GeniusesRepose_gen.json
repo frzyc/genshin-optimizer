@@ -2,6 +2,6 @@
   "name": "Geniuses' Repose",
   "passive": {
     "name": "Each Now Has a Role to Play",
-    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> ATK pengguna. Setelah pengguna mengalahkan target musuh, meningkatkan <orangeStrong>{{2}}%</orangeStrong> CRIT DMG selama {{3}} giliran."
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> ATK pengguna. Setelah pengguna mengalahkan target musuh, meningkatkan <orangeStrong>{{2, percent}}%</orangeStrong> CRIT DMG selama {{3}} giliran."
   }
 }

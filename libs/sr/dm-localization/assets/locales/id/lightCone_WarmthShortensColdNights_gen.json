@@ -2,6 +2,6 @@
   "name": "Warmth Shortens Cold Nights",
   "passive": {
     "name": "Tiny Light",
-    "description": "Meningkatkan <orangeStrong>{{1}}%</orangeStrong> Max HP pengguna. Setelah melancarkan Basic Attack atau Skill, memulihkan HP seluruh rekan tim sebesar <orangeStrong>{{2}}%</orangeStrong> Max HP mereka masing-masing."
+    "description": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> Max HP pengguna. Setelah melancarkan Basic Attack atau Skill, memulihkan HP seluruh rekan tim sebesar <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> Max HP mereka masing-masing."
   }
 }

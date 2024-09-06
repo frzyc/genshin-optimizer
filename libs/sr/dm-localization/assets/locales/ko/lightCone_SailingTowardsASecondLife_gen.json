@@ -2,6 +2,6 @@
   "name": "두 번째 생명을 향해",
   "passive": {
     "name": "고된 항해",
-    "description": "장착한 캐릭터의 격파 특수효과가 <orangeStrong>{{1}}%</orangeStrong> 증가하고, 가하는 격파 피해는 목표의 방어력을 <orangeStrong>{{3}}%</orangeStrong> 무시한다. 전투 중 장착한 캐릭터의 격파 특수효과가 {{2}}% 이상일 경우 속도가 <orangeStrong>{{4}}%</orangeStrong> 증가한다"
+    "description": "장착한 캐릭터의 격파 특수효과가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가하고, 가하는 격파 피해는 목표의 방어력을 <orangeStrong>{{3, percent}}%</orangeStrong> 무시한다. 전투 중 장착한 캐릭터의 격파 특수효과가 {{2, percent}}% 이상일 경우 속도가 <orangeStrong>{{4, percent}}%</orangeStrong> 증가한다"
   }
 }

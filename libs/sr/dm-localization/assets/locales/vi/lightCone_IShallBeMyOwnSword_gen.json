@@ -2,6 +2,6 @@
   "name": "Thân Này Là Kiếm",
   "passive": {
     "name": "Giữ Lấy Ngọc Này",
-    "description": "Tăng <orangeStrong>{{1}}%</orangeStrong> Sát Thương Bạo Kích của người trang bị. Sau khi đồng đội bị tấn công hoặc tiêu hao HP, người trang bị sẽ nhận 1 tầng Nguyệt Thực, tối đa cộng dồn {{2}} tầng. Mỗi tầng Nguyệt Thực khiến sát thương gây ra ở lần tấn công kế tiếp của người trang bị tăng <orangeStrong>{{3}}%</orangeStrong>. Khi cộng dồn đủ {{2}} tầng sẽ khiến lần tấn công này bỏ qua <orangeStrong>{{4}}%</orangeStrong> phòng thủ của mục tiêu. Hiệu ứng này sẽ bị giải trừ sau khi người trang bị thi triển tấn công."
+    "description": "Tăng <orangeStrong>{{1, percent}}%</orangeStrong> Sát Thương Bạo Kích của người trang bị. Sau khi đồng đội bị tấn công hoặc tiêu hao HP, người trang bị sẽ nhận 1 tầng Nguyệt Thực, tối đa cộng dồn {{2}} tầng. Mỗi tầng Nguyệt Thực khiến sát thương gây ra ở lần tấn công kế tiếp của người trang bị tăng <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>. Khi cộng dồn đủ {{2}} tầng sẽ khiến lần tấn công này bỏ qua <orangeStrong>{{4, percent}}%</orangeStrong> phòng thủ của mục tiêu. Hiệu ứng này sẽ bị giải trừ sau khi người trang bị thi triển tấn công."
   }
 }

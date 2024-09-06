@@ -2,6 +2,6 @@
   "name": "Timing parfait",
   "passive": {
     "name": "Vue réfractée",
-    "description": "Augmente la RÉS aux effets du porteur de <orangeStrong>{{1}}%</orangeStrong> et augmente les soins prodigués d'un montant équivalent à <orangeStrong>{{2}}%</orangeStrong> de la RÉS aux effets. Les soins prodigués peuvent être augmentés de cette façon jusqu'à <orangeStrong>{{3}}%</orangeStrong>."
+    "description": "Augmente la RÉS aux effets du porteur de <orangeStrong>{{1, percent}}%</orangeStrong> et augmente les soins prodigués d'un montant équivalent à <orangeStrong>{{2, percent}}%</orangeStrong> de la RÉS aux effets. Les soins prodigués peuvent être augmentés de cette façon jusqu'à <orangeStrong>{{3, percent}}%</orangeStrong>."
   }
 }

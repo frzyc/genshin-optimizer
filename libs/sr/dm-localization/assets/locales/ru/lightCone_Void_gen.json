@@ -2,6 +2,6 @@
   "name": "Пустота",
   "passive": {
     "name": "Падший",
-    "description": "В начале боя шанс попадания эффектов владельца повышается на <orangeStrong>{{1}}%</orangeStrong> на {{2}} хода."
+    "description": "В начале боя шанс попадания эффектов владельца повышается на <orangeStrong>{{1, percent}}%</orangeStrong> на {{2}} хода."
   }
 }

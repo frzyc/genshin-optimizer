@@ -2,6 +2,6 @@
   "name": "Plus brillant que le soleil",
   "passive": {
     "name": "Jusqu'à la mort",
-    "description": "Augmente les chances de coup critique du porteur de <orangeStrong>{{1}}%</orangeStrong>. Lorsque le porteur utilise son ATQ normale, il gagne 1 cumul d'Appel du dragon, qui dure {{2}} tours. Chaque cumul d'Appel du dragon augmente l'ATQ du porteur de <orangeStrong>{{4}}%</orangeStrong> et le taux de régénération d'énergie de <orangeStrong>{{5}}%</orangeStrong>. Appel du dragon est cumulable jusqu'à {{3}} fois."
+    "description": "Augmente les chances de coup critique du porteur de <orangeStrong>{{1, percent}}%</orangeStrong>. Lorsque le porteur utilise son ATQ normale, il gagne 1 cumul d'Appel du dragon, qui dure {{2}} tours. Chaque cumul d'Appel du dragon augmente l'ATQ du porteur de <orangeStrong>{{4, percent}}%</orangeStrong> et le taux de régénération d'énergie de <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>. Appel du dragon est cumulable jusqu'à {{3}} fois."
   }
 }

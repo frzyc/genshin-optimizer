@@ -1,6 +1,6 @@
 {
   "setName": "Vonwacq Hoạt Bát",
   "setEffects": {
-    "2": "Tăng {{1}}% hiệu suất hồi Năng Lượng của người trang bị. Khi tốc độ của người trang bị từ {{2}} trở lên, vào chiến đấu sẽ lập tức Ưu Tiên Hành Động {{3}}%."
+    "2": "Tăng {{1, percent}}% hiệu suất hồi Năng Lượng của người trang bị. Khi tốc độ của người trang bị từ {{2}} trở lên, vào chiến đấu sẽ lập tức Ưu Tiên Hành Động {{3, percent}}%."
   }
 }

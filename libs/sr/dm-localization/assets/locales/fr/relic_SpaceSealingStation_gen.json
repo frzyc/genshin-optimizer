@@ -1,6 +1,6 @@
 {
   "setName": "Station de scellement spatial",
   "setEffects": {
-    "2": "Augmente l'ATQ du porteur de {{1}}%. Lorsque sa VIT est supérieure ou égale à {{2}}, son ATQ augmente encore de {{3}}%."
+    "2": "Augmente l'ATQ du porteur de {{1, percent}}%. Lorsque sa VIT est supérieure ou égale à {{2}}, son ATQ augmente encore de {{3, percent}}%."
   }
 }

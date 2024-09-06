@@ -2,6 +2,6 @@
   "name": "Noite Aterrorizante",
   "passive": {
     "name": "Respirações Profundas",
-    "description": "Aumenta a Taxa de Regeneração de Energia do usuário em <orangeStrong>{{1}}%</orangeStrong>. Quando qualquer aliado usa a Perícia Suprema, o usuário restaura os PV do aliado que estiver com a menor porcentagem de PV atualmente em <orangeStrong>{{2}}%</orangeStrong> dos PV máximos do aliado curado. Quando o usuário concede cura a um aliado, aumenta o ATQ do aliado curado em <orangeStrong>{{3}}%</orangeStrong>. Esse efeito pode acumular até {{4}} vezes e dura {{5}} rodada(s)."
+    "description": "Aumenta a Taxa de Regeneração de Energia do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Quando qualquer aliado usa a Perícia Suprema, o usuário restaura os PV do aliado que estiver com a menor porcentagem de PV atualmente em <orangeStrong>{{2, percent}}%</orangeStrong> dos PV máximos do aliado curado. Quando o usuário concede cura a um aliado, aumenta o ATQ do aliado curado em <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>. Esse efeito pode acumular até {{4}} vezes e dura {{5}} rodada(s)."
   }
 }

@@ -2,6 +2,6 @@
   "name": "Chuva Constante",
   "passive": {
     "name": "Miragem da Realidade",
-    "description": "Aumenta a Taxa de Acerto de Efeito do usuário em <orangeStrong>{{1}}%</orangeStrong>. Quando o usuário causa Dano a um inimigo com {{4}} ou mais penalidades no momento, aumenta a Chance de CRIT do usuário em <orangeStrong>{{5}}%</orangeStrong>. Depois que o usuário usar o seu ATQ Básico, Perícia ou Perícia Suprema, existe uma chance-base de {{2}}% de implantar Código do Éter em um alvo aleatório que ainda não esteja com Código do Éter. Alvos com Código do Éter recebem <orangeStrong>{{3}}%</orangeStrong> a mais de Dano por 1 rodada."
+    "description": "Aumenta a Taxa de Acerto de Efeito do usuário em <orangeStrong>{{1, percent}}%</orangeStrong>. Quando o usuário causa Dano a um inimigo com {{4}} ou mais penalidades no momento, aumenta a Chance de CRIT do usuário em <orangeStrong>{{5, percent}}%</orangeStrong>. Depois que o usuário usar o seu ATQ Básico, Perícia ou Perícia Suprema, existe uma chance-base de {{2, percent}}% de implantar Código do Éter em um alvo aleatório que ainda não esteja com Código do Éter. Alvos com Código do Éter recebem <orangeStrong>{{3, percent}}%</orangeStrong> a mais de Dano por 1 rodada."
   }
 }

@@ -4,26 +4,26 @@
     "basic": {
       "0": {
         "name": "Minha Espada Eletrocuta Demônios",
-        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de 7 de Março a um único inimigo e ganha {{2}} ponto(s) de Carga.",
+        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de 7 de Março a um único inimigo e ganha {{2}} ponto(s) de Carga.",
         "shortDesc": "Causa Dano Imaginário leve a um único inimigo e ganha <orangeStrong>{{2}}</orangeStrong> ponto(s) de Carga."
       },
       "1": {
         "name": "Rostos Feridos, Corações Mordidos",
-        "fullDesc": "Este ataque causa Dano {{4}} vez(es) inicialmente. Cada golpe contra o inimigo-alvo causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de 7 de Março. Após realizar o golpe final, há uma <u>chance fixa</u> de {{2}}% de realizar 1 golpe extra, até um máximo de {{3}} golpe(s) extra(s). A Energia regenerada ao utilizar o ATQ Básico Aprimorado não aumenta com o número de Golpes por Ação.\\nO ATQ Básico Aprimorado não pode recuperar Pontos de Perícia.",
+        "fullDesc": "Este ataque causa Dano {{4}} vez(es) inicialmente. Cada golpe contra o inimigo-alvo causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de 7 de Março. Após realizar o golpe final, há uma <u>chance fixa</u> de {{2, percent}}% de realizar 1 golpe extra, até um máximo de {{3}} golpe(s) extra(s). A Energia regenerada ao utilizar o ATQ Básico Aprimorado não aumenta com o número de Golpes por Ação.\\nO ATQ Básico Aprimorado não pode recuperar Pontos de Perícia.",
         "shortDesc": "Causa Dano Imaginário a um único inimigo, realizando inicialmente <orangeStrong>{{4}}</orangeStrong> golpes. <orangeStrong>Há uma chance de causar até <unbreak>#3[i]</orangeStrong> golpe(s) adicionalmente</color>."
       }
     },
     "skill": {
       "0": {
         "name": "Shifu, É Hora do Chá!",
-        "fullDesc": "Define um único aliado (excluindo esta unidade) como o Shifu e aumenta a VEL do Shifu em <orangeStrong>{{1}}%</orangeStrong>. Apenas o alvo mais recente da Perícia de 7 de Março será considerado seu \"Shifu\".\\n\\nAo usar um ATQ Básico ou ao aplicar 1 golpe de seu ATQ Básico Aprimorado que cause Dano, ativa os seguintes efeitos com base no Caminho específico do Shifu:\\n\\nA Erudição, A Destruição, A Caça: adicionalmente causa <u>Dano Adicional</u> (Tipo de Dano baseado no Tipo de Dano do Shifu) igual a <orangeStrong>{{2}}%</orangeStrong> do ATQ de 7 de Março.\\nA Harmonia, A Inexistência, A Preservação, A Abundância: aumenta a Redução de Tenacidade para esse Dano em {{3}}%.",
+        "fullDesc": "Define um único aliado (excluindo esta unidade) como o Shifu e aumenta a VEL do Shifu em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Apenas o alvo mais recente da Perícia de 7 de Março será considerado seu \"Shifu\".\\n\\nAo usar um ATQ Básico ou ao aplicar 1 golpe de seu ATQ Básico Aprimorado que cause Dano, ativa os seguintes efeitos com base no Caminho específico do Shifu:\\n\\nA Erudição, A Destruição, A Caça: adicionalmente causa <u>Dano Adicional</u> (Tipo de Dano baseado no Tipo de Dano do Shifu) igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de 7 de Março.\\nA Harmonia, A Inexistência, A Preservação, A Abundância: aumenta a Redução de Tenacidade para esse Dano em {{3, percent}}%.",
         "shortDesc": "Faz com que um único aliado se torne Shifu. Ao utilizar ATQ Básico ou causar Dano de ATQ Básico Aprimorado, aciona o efeito correspondente ao Caminho do Shifu:\\n\\nA Erudição, A Destruição, A Caça: causa <orangeStrong><u>Dano Adicional</u></orangeStrong> com base no Tipo do Shifu.\\nA Harmonia, A Inexistência, A Preservação, A Abundância: a <orangeStrong>Redução de Tenacidade</orangeStrong> aumenta."
       }
     },
     "ult": {
       "0": {
         "name": "7 de Março, a Maior das Heroínas",
-        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1}}%</orangeStrong> do ATQ de 7 de Março a um único inimigo-alvo.\\nAumenta os Golpes por Ação iniciais do próximo ATQ Básico Aprimorado em {{2}} golpes e aumenta a <u>chance-fixa</u> de causar Dano adicional em {{3}}%.",
+        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de 7 de Março a um único inimigo-alvo.\\nAumenta os Golpes por Ação iniciais do próximo ATQ Básico Aprimorado em {{2}} golpes e aumenta a <u>chance-fixa</u> de causar Dano adicional em {{3, percent}}%.",
         "shortDesc": "Causa Dano Imaginário a um único inimigo e <orangeStrong>aumenta</orangeStrong> os Golpes por Ação e a chance de Dano do <orangeStrong>próximo ATQ Básico Aprimorado</orangeStrong>."
       }
     },
@@ -44,7 +44,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Vôo do Cisne",
-        "fullDesc": "Quando a batalha começa, a ação de 7 de Março é Avançada Adiante em {{1}}%.",
+        "fullDesc": "Quando a batalha começa, a ação de 7 de Março é Avançada Adiante em {{1, percent}}%.",
         "shortDesc": ""
       }
     },
@@ -58,7 +58,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Domesticador de Marés",
-        "fullDesc": "Após usar o ATQ Básico Aprimorado, aumenta o Dano CRIT e o Efeito de Quebra do Shifu em {{1}}% e {{2}}% respectivamente, durando por {{3}} rodada(s).",
+        "fullDesc": "Após usar o ATQ Básico Aprimorado, aumenta o Dano CRIT e o Efeito de Quebra do Shifu em {{1, percent}}% e {{2, percent}}% respectivamente, durando por {{3}} rodada(s).",
         "shortDesc": ""
       }
     }
@@ -66,11 +66,11 @@
   "ranks": {
     "1": {
       "name": "Minha Espada Agita o Brilho Estelar",
-      "desc": "Quando o Shifu estiver em campo, aumenta a VEL de 7 de Março em {{1}}%."
+      "desc": "Quando o Shifu estiver em campo, aumenta a VEL de 7 de Março em {{1, percent}}%."
     },
     "2": {
       "name": "Lâmina que Dança na Luta de Ondas",
-      "desc": "Depois que o Shifu usar ATQ Básico ou Perícia para atacar um inimigo-alvo, 7 de Março utiliza um Ataque Extra imediatamente e causa Dano Imaginário igual a {{1}}% do ATQ de 7 de Março ao alvo principal deste ataque. Adicionalmente, ativa o efeito correspondente ao Caminho do Shifu e então ganha {{3}} ponto(s) de Carga. Se não houver nenhum alvo principal que possa ser atacado, então ataca um único inimigo aleatório em seu lugar. Esse efeito só pode ser ativado uma vez por rodada."
+      "desc": "Depois que o Shifu usar ATQ Básico ou Perícia para atacar um inimigo-alvo, 7 de Março utiliza um Ataque Extra imediatamente e causa Dano Imaginário igual a {{1, percent}}% do ATQ de 7 de Março ao alvo principal deste ataque. Adicionalmente, ativa o efeito correspondente ao Caminho do Shifu e então ganha {{3}} ponto(s) de Carga. Se não houver nenhum alvo principal que possa ser atacado, então ataca um único inimigo aleatório em seu lugar. Esse efeito só pode ser ativado uma vez por rodada."
     },
     "3": {
       "name": "Astúcia Afiada na Valentia Marcial",
@@ -86,7 +86,7 @@
     },
     "6": {
       "name": "Eu, a Maioral à Vista",
-      "desc": "Depois de usar a Perícia Suprema, aumenta o Dano CRIT causado pelo próximo ATQ Básico Aprimorado em {{1}}%."
+      "desc": "Depois de usar a Perícia Suprema, aumenta o Dano CRIT causado pelo próximo ATQ Básico Aprimorado em {{1, percent}}%."
     }
   }
 }
