@@ -7,7 +7,11 @@ import type {
   StringSelectMenuInteraction,
   User,
 } from 'discord.js'
-import { SlashCommandBuilder } from 'discord.js'
+import {
+  ApplicationIntegrationType,
+  InteractionContextType,
+  SlashCommandBuilder,
+} from 'discord.js'
 
 import { error } from '../lib/message'
 
@@ -26,6 +30,15 @@ import { charArchive, charReaction } from './archive/char'
 import { weaponArchive } from './archive/weapon'
 
 export const slashcommand = new SlashCommandBuilder()
+  .setIntegrationTypes([
+    ApplicationIntegrationType.GuildInstall,
+    ApplicationIntegrationType.UserInstall,
+  ])
+  .setContexts([
+    InteractionContextType.Guild,
+    InteractionContextType.BotDM,
+    InteractionContextType.PrivateChannel,
+  ])
   .setName('archive')
   .setDescription('Genshin Archive')
   .addSubcommand((s) =>
@@ -238,7 +251,7 @@ export async function reaction(
 ) {
   if (
     reaction.emoji.name === '❌' &&
-    permissions.sender(user, reaction.message.interaction)
+    permissions.sender(user, reaction.message.interactionMetadata)
   )
     return reaction.message.delete()
 
