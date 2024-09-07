@@ -43,8 +43,8 @@ export default async function runExecutor(
   const str = prettier.format(
     `
 // WARNING: Generated file, do not modify
-export const conditionals = ${JSON.stringify(conditionals)} as cosnt
-export const formulas = ${JSON.stringify(formulas)} as cosnt
+export const conditionals = ${JSON.stringify(conditionals)} as const
+export const formulas = ${JSON.stringify(formulas)} as const
 `,
     { ...prettierRc, parser: 'typescript' }
   )

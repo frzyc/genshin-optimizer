@@ -1,4 +1,4 @@
-import type { IBareConditionalData } from '@genshin-optimizer/common/formula'
+import type { IBaseConditionalData } from '@genshin-optimizer/common/formula'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import {
@@ -224,7 +224,7 @@ type CondIgnored = 'both' | 'src' | 'dst' | 'none'
 function allConditionals<T>(
   sheet: Sheet,
   shared: CondIgnored = 'src',
-  meta: IBareConditionalData,
+  meta: IBaseConditionalData,
   transform: (r: Read, q: string) => T
 ): Record<string, T> {
   // Keep the base tag "full" here so that `cond` returns consistent tags
