@@ -82,19 +82,21 @@ type CharacterMultiSelectionModalProps = {
   show: boolean
   newFirst?: boolean
   onHide: () => void
-  onMultiSelect?: (cKeys: CharacterKey[]) => void
+  onMultiSelect?: (cKeys: (CharacterKey | '')[]) => void
+  teamId: string
   filter?: characterFilter
 }
 const sortKeys = Object.keys(characterSortMap)
+// TODO: Needs a rename, technically this is the first open team slot
+let nextCharSlotIndex = 0
 export function CharacterMultiSelectionModal({
   show,
   onHide,
   onMultiSelect,
+  teamId,
   filter = () => true,
   newFirst = false,
 }: CharacterMultiSelectionModalProps) {
-  const [selectedCharacterKeys, setSelectedCharacterKeys] = useState([] as CharacterKey[])
-
   const { t } = useTranslation([
     'page_character',
     // Always load these 2 so character names are loaded for searching/sorting
@@ -107,6 +109,21 @@ export function CharacterMultiSelectionModal({
   useEffect(
     () => database.displayCharacter.follow((r, s) => setState(s)),
     [database, setState]
+  )
+
+  const team = database.teams.get(teamId)!
+  const { loadoutData } = team
+  const currentTeamCharKeys : (CharacterKey | '')[] = useMemo(() => {
+    const keys = [] as (CharacterKey | '')[]
+    loadoutData.forEach((loadoutDatum) => {
+      keys.push(database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? '')
+    })
+    return keys
+  }, [database, loadoutData])
+  const [selectedCharacterKeys, setSelectedCharacterKeys] = useState(currentTeamCharKeys as (CharacterKey | '')[])
+  useEffect(
+    () => setSelectedCharacterKeys(currentTeamCharKeys),
+    [currentTeamCharKeys, setSelectedCharacterKeys]
   )
 
   const { gender } = useDBMeta()
@@ -187,11 +204,33 @@ export function CharacterMultiSelectionModal({
 
   const { weaponType, element, sortType, ascending } = state
 
+  // TODO: Quick select modifies instead of overwriting the rest of the team (currently buggy, selecting after bringing the UI back up is removing later characters from the array? indexing error?)
+  //       Should ignore all selections when team is full
+  //       Should selected characters automatically be moved to the front of the list when the quick select UI is opened?
   const onClick = (key: CharacterKey) => {
-    setSelectedCharacterKeys([
-      ...selectedCharacterKeys,
-      key
-    ])
+    const keySlotIndex = selectedCharacterKeys.indexOf(key)
+    if (keySlotIndex === -1)
+    {
+      // Selected character wasn't already previously selected, so add their key to
+      // the first open slot in the array and remove the placeholder ''
+      setSelectedCharacterKeys([
+        ...selectedCharacterKeys.slice(0, nextCharSlotIndex),
+        key,
+        ...selectedCharacterKeys.slice(nextCharSlotIndex + 1)
+      ])
+      ++nextCharSlotIndex // TODO: Need to determine the next open slot
+    }
+    else
+    {
+      // Selected character key was previously selected, so remove it from the array
+      // and update the first open slot index if the newly emptied slot is earlier in the array
+      setSelectedCharacterKeys([
+        ...selectedCharacterKeys.slice(0, keySlotIndex),
+        '',
+        ...selectedCharacterKeys.slice(keySlotIndex + 1)
+      ])
+      nextCharSlotIndex = (nextCharSlotIndex < keySlotIndex) ? nextCharSlotIndex : keySlotIndex // TODO: Not 100% correct, how do we figure out the next open slot if array is not contiguous e.g. [char, empty, char, empty]
+    }
   }
 
   return (
@@ -294,6 +333,8 @@ export function CharacterMultiSelectionModal({
                   <SelectionCard
                     characterKey={characterKey}
                     onClick={() => onClick(characterKey)}
+                    isSelected={selectedCharacterKeys.indexOf(characterKey) !== -1}
+                    selectedCharKeys={selectedCharacterKeys}
                   />
                 </Grid>
               ))}
@@ -316,9 +357,13 @@ const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
 function SelectionCard({
   characterKey,
   onClick,
+  isSelected,
+  selectedCharKeys,
 }: {
   characterKey: CharacterKey
   onClick: () => void
+  isSelected: boolean
+  selectedCharKeys: (CharacterKey | '')[]
 }) {
   const { gender } = useDBMeta()
   const character = useCharacter(characterKey)
@@ -354,6 +399,9 @@ function SelectionCard({
             flexGrow: 1,
             display: 'flex',
             flexDirection: 'column',
+            outline: isSelected
+              ? 'solid gold'
+              : undefined,
           }}
         >
           <IconButton
@@ -365,6 +413,16 @@ function SelectionCard({
           >
             {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
           </IconButton>
+          {isSelected && (
+            <Typography variant="body2" sx={{ flexGrow: 1 }}>
+              <SqBadge
+                color={'charSelected'}
+                sx={{ position: 'absolute', top: 60, left: 205, zIndex: 2, textShadow: '0 0 5px gray' }}
+              >
+                {selectedCharKeys.indexOf(characterKey) + 1}
+              </SqBadge>
+            </Typography>
+          )}
           <CardActionArea onClick={onClick}>
             <Box
               display="flex"

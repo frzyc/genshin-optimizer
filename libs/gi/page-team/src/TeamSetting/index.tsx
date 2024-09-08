@@ -153,14 +153,21 @@ function TeamEditor({
     onSelect(cKey, charSelectIndex)
   }
 
-  // TODO: Need to remove characters from array when clicked again if already selected
-  //       Need to add visual indicating that a character has been selected and which index they're in
   const [showMultiSelect, setShowMultiSelect] = useState(false)
-  const onMultiSelect = (cKeys: CharacterKey[]) => {
-    for (let i = 0; i < cKeys.length; ++i)
+  // TODO: Deselection not working correctly, deselected characters should be removed from the team
+  //       Opening then closing quick select should result in no changes to the team, something is causing the team to be almost completely removed
+  const onMultiSelect = (cKeys: (CharacterKey | '')[]) => {
+    const filteredKeys = cKeys.filter((key) => key !== '')
+    for (let i = 0; i < filteredKeys.length; ++i)
     {
-      const key = cKeys[i]
+      const key = filteredKeys[i]
       onSelect(key, i)
+    }
+    for (let j = filteredKeys.length; j < team.loadoutData.length; ++j)
+    {
+      database.teams.set(teamId, (team) => {
+        team.loadoutData[j] = undefined
+      })
     }
   }
 
@@ -196,6 +203,7 @@ function TeamEditor({
             setShowMultiSelect(false)
           }}
           onMultiSelect={onMultiSelect}
+          teamId={teamId}
         />
       </Suspense>
       <Grid container columns={{ xs: 1, md: 2 }} spacing={2}>

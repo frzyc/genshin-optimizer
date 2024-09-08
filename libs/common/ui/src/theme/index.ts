@@ -41,6 +41,8 @@ declare module '@mui/material/styles' {
     rarity3: Palette['primary']
     rarity4: Palette['primary']
     rarity5: Palette['primary']
+
+    charSelected: Palette['primary']
   }
 
   interface PaletteOptions {
@@ -81,6 +83,8 @@ declare module '@mui/material/styles' {
     rarity3?: PaletteOptions['primary']
     rarity4?: PaletteOptions['primary']
     rarity5?: PaletteOptions['primary']
+
+    charSelected?: Palette['primary']
   }
 }
 
@@ -307,6 +311,11 @@ export const theme = createTheme({
     rarity5: defaultTheme.palette.augmentColor({
       color: { main: '#e6ac54', contrastText: '#fff' },
       name: 'rarity5',
+    }),
+
+    charSelected: defaultTheme.palette.augmentColor({
+      color: { main: '#ffd700' }, // ffd700
+      name: 'charSelected',
     }),
   },
   typography: {
