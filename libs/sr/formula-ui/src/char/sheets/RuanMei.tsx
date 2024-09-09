@@ -62,7 +62,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
           },
           metadata: conditionals.RuanMei.skillOvertone,
           label: 'Overtone',
-          fields: [{ title: 'Duration', fieldValue: 3 }],
+          fields: [
+            // TODO:
+            // {title:"Ally DMG Increase", ???},
+            // {title:"Break Efficiency",???}
+            { title: 'Duration', fieldValue: 3 },
+          ],
         },
       },
     ],
@@ -140,6 +145,23 @@ const sheet: UISheet<TalentSheetElementKey> = {
       {
         type: 'text',
         text: chg(`ranks.4.desc`),
+      },
+      {
+        type: 'conditional',
+        conditional: {
+          header: {
+            icon: <ImgIcon src={characterAsset(key, 'eidolon4')} />,
+            text: chg('ranks.4.name'),
+            additional: <SqBadge>Eidolon 4</SqBadge>,
+          },
+          metadata: conditionals.RuanMei.e4Broken,
+          label: 'Enemy Weakness Broken',
+          fields: [
+            // TODO: display node?
+            // {title:"Break Effect",fieldRef:formulas.RuanMei.e4Broken},
+            { title: 'Turns', fieldValue: 2 },
+          ],
+        },
       },
     ],
   },

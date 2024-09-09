@@ -47,17 +47,16 @@ export default function CharacterTalentPane() {
     loadout: { key: characterKey },
   } = useLoadoutContext()
   const calc = useSrCalcContext()
-  // TODO: sheet_gen for SRO
   const { t } = useTranslation('sheet_gen')
   const { database } = useDatabaseContext()
   // TODO: for TC overrides
   // const { buildTc, setBuildTc } = useContext(BuildTcContext)
 
   const skillBurstList: [TalentSheetElementKey, string][] = [
-    ['basic', t('talents.basic')],
-    ['skill', t('talents.skill')],
-    ['ult', t('talents.ultimate')],
-    ['talent', t('talents.talent')],
+    ['basic', t('ability.basic')],
+    ['skill', t('ability.skill')],
+    ['ult', t('ability.ult')],
+    ['talent', t('ability.talent')],
   ] as const
   // const passivesList: [
   //   tKey: TalentSheetElementKey,
@@ -82,7 +81,11 @@ export default function CharacterTalentPane() {
         return (
           <SkillDisplayCard
             talentKey={`eidolon${i}` as TalentSheetElementKey}
-            subtitle={t('eidolonLvl', { level: i })}
+            subtitle={
+              <span>
+                {t('eidolonLvl')} {i}
+              </span>
+            }
             sheetElement={ele}
             onClickTitle={() =>
               // buildTc?.character
@@ -130,7 +133,7 @@ export default function CharacterTalentPane() {
             lg={3}
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
-            <ConstellationDropdown />
+            <EidolonDropdown />
             {eidolonCards &&
               eidolonCards.map((c, i) => (
                 <Box key={i} sx={{ opacity: eidolon >= i + 1 ? 1 : 0.5 }}>
@@ -192,7 +195,7 @@ export default function CharacterTalentPane() {
         {!grlg && (
           <Grid item xs={12} md={12} lg={3} container spacing={1}>
             <Grid item xs={12}>
-              <ConstellationDropdown />
+              <EidolonDropdown />
             </Grid>
             {/* {constellationCards.map((c, i) => (
               <Grid
@@ -239,7 +242,7 @@ export default function CharacterTalentPane() {
 type SkillDisplayCardProps = {
   sheetElement: UISheetElement
   talentKey: TalentSheetElementKey
-  subtitle: string
+  subtitle: ReactNode
   onClickTitle?: () => void
 }
 function SkillDisplayCard({
@@ -350,7 +353,7 @@ function SkillDisplayCard({
   )
 }
 
-export function ConstellationDropdown() {
+export function EidolonDropdown() {
   const { t } = useTranslation('sheet_gen')
   const calc = useSrCalcContext()
   const {
@@ -358,19 +361,23 @@ export function ConstellationDropdown() {
   } = useLoadoutContext()
   const { database } = useDatabaseContext()
   if (!calc) return null
-  const constellation = calc.compute(own.char.eidolon).val
+  const eidolon = calc.compute(own.char.eidolon).val
   return (
     <DropdownButton
       fullWidth
-      title={t('eidolonLvl', { level: constellation })}
+      title={
+        <span>
+          {t('eidolonLvl')} {eidolon}
+        </span>
+      }
       color="primary"
       // sx={{ color: buildTc?.character ? 'yellow' : undefined }}
     >
       {range(0, maxEidolonCount).map((i) => (
         <MenuItem
           key={i}
-          selected={constellation === i}
-          disabled={constellation === i}
+          selected={eidolon === i}
+          disabled={eidolon === i}
           onClick={() =>
             // buildTc?.character
             //   ? setBuildTc((buildTc) => {
@@ -382,7 +389,9 @@ export function ConstellationDropdown() {
             })
           }
         >
-          {t(`eidolonLvl`, { level: i })}
+          <span>
+            {t('eidolonLvl')} {i}
+          </span>
         </MenuItem>
       ))}
     </DropdownButton>
@@ -410,7 +419,11 @@ export function TalentDropdown({
   return (
     <DropdownButton
       fullWidth
-      title={t('talentLvl', { level: level })}
+      title={
+        <span>
+          {t('lvl')} {level}
+        </span>
+      }
       color={levelBoost ? 'info' : 'primary'}
       {...dropDownButtonProps}
     >
@@ -421,7 +434,9 @@ export function TalentDropdown({
           disabled={character[talentKey] === i}
           onClick={() => setTalent(i)}
         >
-          {t('talentLvl', { level: i + levelBoost })}
+          <span>
+            {t('lvl')} {i + levelBoost}
+          </span>
         </MenuItem>
       ))}
     </DropdownButton>
