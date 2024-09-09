@@ -15,13 +15,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
     documents: [
       {
         type: 'text',
-        text: (calculator) => {
-          const basicLevel = calculator.compute(own.char.basic).val
-          return chg(
+        text: (calculator) =>
+          chg(
             `abilities.basic.0.fullDesc`,
-            getInterpolateObject(key, 'basic', basicLevel)
-          )
-        },
+            getInterpolateObject(
+              key,
+              'basic',
+              calculator.compute(own.char.basic).val
+            )
+          ),
       },
       {
         type: 'fields',
@@ -40,13 +42,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
     documents: [
       {
         type: 'text',
-        text: (calculator) => {
-          const basicLevel = calculator.compute(own.char.basic).val
-          return chg(
+        text: (calculator) =>
+          chg(
             `abilities.skill.0.fullDesc`,
-            getInterpolateObject(key, 'skill', basicLevel)
-          )
-        },
+            getInterpolateObject(
+              key,
+              'skill',
+              calculator.compute(own.char.skill).val
+            )
+          ),
       },
       {
         type: 'conditional',
@@ -60,6 +64,102 @@ const sheet: UISheet<TalentSheetElementKey> = {
           label: 'Overtone',
           fields: [{ title: 'Duration', fieldValue: 3 }],
         },
+      },
+    ],
+  },
+  ult: {
+    name: chg('abilities.ult.0.name'),
+    img: characterAsset(key, 'ult_0'),
+    documents: [
+      {
+        type: 'text',
+        text: (calculator) =>
+          chg(
+            `abilities.ult.0.fullDesc`,
+            getInterpolateObject(
+              key,
+              'ult',
+              calculator.compute(own.char.ult).val
+            )
+          ),
+      },
+    ],
+  },
+  talent: {
+    name: chg('abilities.talent.0.name'),
+    img: characterAsset(key, 'talent_0'),
+    documents: [
+      {
+        type: 'text',
+        text: (calculator) =>
+          chg(
+            `abilities.talent.0.fullDesc`,
+            getInterpolateObject(
+              key,
+              'talent',
+              calculator.compute(own.char.talent).val
+            )
+          ),
+      },
+    ],
+  },
+  eidolon1: {
+    name: chg('ranks.1.name'),
+    img: characterAsset(key, 'eidolon1'),
+    documents: [
+      {
+        type: 'text',
+        text: chg(`ranks.1.desc`),
+      },
+    ],
+  },
+  eidolon2: {
+    name: chg('ranks.2.name'),
+    img: characterAsset(key, 'eidolon2'),
+    documents: [
+      {
+        type: 'text',
+        text: chg(`ranks.2.desc`),
+      },
+    ],
+  },
+  eidolon3: {
+    name: chg('ranks.3.name'),
+    img: characterAsset(key, 'eidolon3'),
+    documents: [
+      {
+        type: 'text',
+        text: chg(`ranks.3.desc`),
+      },
+    ],
+  },
+  eidolon4: {
+    name: chg('ranks.4.name'),
+    img: characterAsset(key, 'eidolon4'),
+    documents: [
+      {
+        type: 'text',
+        text: chg(`ranks.4.desc`),
+      },
+    ],
+  },
+  eidolon5: {
+    name: chg('ranks.5.name'),
+    img: characterAsset(key, 'eidolon5'),
+    documents: [
+      {
+        type: 'text',
+        text: chg(`ranks.5.desc`),
+      },
+    ],
+  },
+  eidolon6: {
+    name: chg('ranks.6.name'),
+    img: characterAsset(key, 'eidolon6'),
+    documents: [
+      {
+        type: 'text',
+        text: chg(`ranks.6.desc`),
       },
     ],
   },
