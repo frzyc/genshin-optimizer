@@ -87,8 +87,6 @@ type CharacterMultiSelectionModalProps = {
   filter?: characterFilter
 }
 const sortKeys = Object.keys(characterSortMap)
-// TODO: Needs a rename, technically this is the first open team slot
-let nextCharSlotIndex = 0
 export function CharacterMultiSelectionModal({
   show,
   onHide,
@@ -204,21 +202,21 @@ export function CharacterMultiSelectionModal({
 
   const { weaponType, element, sortType, ascending } = state
 
-  // TODO: Quick select modifies instead of overwriting the rest of the team (currently buggy, selecting after bringing the UI back up is removing later characters from the array? indexing error?)
-  //       Should ignore all selections when team is full
+  // TODO: Should ignore all selections when team is full
   //       Should selected characters automatically be moved to the front of the list when the quick select UI is opened?
+  //       Check if new method of finding the first open slot in a team works correctly
   const onClick = (key: CharacterKey) => {
     const keySlotIndex = selectedCharacterKeys.indexOf(key)
     if (keySlotIndex === -1)
     {
       // Selected character wasn't already previously selected, so add their key to
       // the first open slot in the array and remove the placeholder ''
+      const firstOpenIndex = selectedCharacterKeys.indexOf('')
       setSelectedCharacterKeys([
-        ...selectedCharacterKeys.slice(0, nextCharSlotIndex),
+        ...selectedCharacterKeys.slice(0, firstOpenIndex),
         key,
-        ...selectedCharacterKeys.slice(nextCharSlotIndex + 1)
+        ...selectedCharacterKeys.slice(firstOpenIndex + 1)
       ])
-      ++nextCharSlotIndex // TODO: Need to determine the next open slot
     }
     else
     {
@@ -229,7 +227,6 @@ export function CharacterMultiSelectionModal({
         '',
         ...selectedCharacterKeys.slice(keySlotIndex + 1)
       ])
-      nextCharSlotIndex = (nextCharSlotIndex < keySlotIndex) ? nextCharSlotIndex : keySlotIndex // TODO: Not 100% correct, how do we figure out the next open slot if array is not contiguous e.g. [char, empty, char, empty]
     }
   }
 

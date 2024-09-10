@@ -129,7 +129,7 @@ function TeamEditor({
         team.loadoutData[selectedIndex] = { teamCharId } as LoadoutDatum
       })
     } else {
-      if (charSelectIndex === existingIndex) return
+      if (selectedIndex === existingIndex) return
       if (loadoutData[selectedIndex]) {
         // Already have a teamChar at destination, move to existing Index
         const existingLoadoutDatum = loadoutData[existingIndex]
@@ -137,6 +137,13 @@ function TeamEditor({
         database.teams.set(teamId, (team) => {
           team.loadoutData[selectedIndex] = existingLoadoutDatum
           team.loadoutData[existingIndex] = destinationLoadoutDatum
+        })
+      }
+      else
+      {
+        // No teamChar at destination, place existing teamChar in that slot
+        database.teams.set(teamId, (team) => {
+          team.loadoutData[selectedIndex] = loadoutData[existingIndex]
         })
       }
     }
@@ -154,8 +161,7 @@ function TeamEditor({
   }
 
   const [showMultiSelect, setShowMultiSelect] = useState(false)
-  // TODO: Deselection not working correctly, deselected characters should be removed from the team
-  //       Opening then closing quick select should result in no changes to the team, something is causing the team to be almost completely removed
+  // TODO: Opening then closing and reopening quick select should result in no changes to the team, something is causing the team to be almost completely removed
   const onMultiSelect = (cKeys: (CharacterKey | '')[]) => {
     const filteredKeys = cKeys.filter((key) => key !== '')
     for (let i = 0; i < filteredKeys.length; ++i)
