@@ -52,7 +52,7 @@ export default function TeammateDisplay({ tab }: { tab?: string }) {
             </Button>
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                All target values, if sheet is created
+                All target listings
               </AccordionSummary>
               <AccordionDetails>
                 <Stack>
@@ -89,6 +89,42 @@ export default function TeammateDisplay({ tab }: { tab?: string }) {
                         </Box>
                       )
                     })}
+                </Stack>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                All target buffs
+              </AccordionSummary>
+              <AccordionDetails>
+                <Stack>
+                  {calc?.listFormulas(own.listing.buffs).map((read, index) => {
+                    const computed = calc.compute(read)
+                    const name = read.tag.name || read.tag.q
+                    return (
+                      <Box key={`${name}${index}`}>
+                        <Typography>
+                          {name}: {computed.val}
+                        </Typography>
+                        <Accordion>
+                          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            debug for {name}
+                          </AccordionSummary>
+                          <AccordionDetails>
+                            conds:{' '}
+                            {JSON.stringify(computed.meta.conds, undefined, 2)}
+                            <Typography component="pre">
+                              {JSON.stringify(
+                                calc.toDebug().compute(read),
+                                undefined,
+                                2
+                              )}
+                            </Typography>
+                          </AccordionDetails>
+                        </Accordion>
+                      </Box>
+                    )
+                  })}
                 </Stack>
               </AccordionDetails>
             </Accordion>
