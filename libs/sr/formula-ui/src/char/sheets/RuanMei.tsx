@@ -8,6 +8,8 @@ import { trans } from '../../util'
 import type { TalentSheetElementKey } from '../consts'
 const key: CharacterKey = 'RuanMei'
 const [chg, _ch] = trans('char', key)
+const frm = formulas.RuanMei
+const cond = conditionals.RuanMei
 const sheet: UISheet<TalentSheetElementKey> = {
   basic: {
     name: chg('abilities.basic.0.name'),
@@ -30,7 +32,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         fields: [
           {
             title: chg('abilities.basic.0.shortDesc'),
-            fieldRef: formulas.RuanMei.basicDmg_0.tag,
+            fieldRef: frm.basicDmg_0.tag,
           },
         ],
       },
@@ -60,11 +62,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
             text: 'skill active',
             additional: <SqBadge>Skill</SqBadge>,
           },
-          metadata: conditionals.RuanMei.skillOvertone,
+          metadata: cond.skillOvertone,
           label: 'Overtone',
           fields: [
+            {
+              title: 'Ally DMG Increase',
+              fieldRef: frm.skillOvertone_dmg_.tag,
+            },
+            { title: 'weakness', fieldRef: frm.skillOvertone_weakness_.tag },
             // TODO:
-            // {title:"Ally DMG Increase", ???},
             // {title:"Break Efficiency",???}
             { title: 'Duration', fieldValue: 3 },
           ],
@@ -88,6 +94,24 @@ const sheet: UISheet<TalentSheetElementKey> = {
             )
           ),
       },
+      {
+        type: 'conditional',
+        conditional: {
+          header: {
+            icon: <ImgIcon src={characterAsset(key, 'ult_0')} />,
+            text: 'ult active',
+            additional: <SqBadge>Ult</SqBadge>,
+          },
+          metadata: cond.ultZone,
+          label: 'Ult zone',
+          fields: [
+            {
+              title: 'resPen_',
+              fieldRef: frm.ultZone_resPen_.tag,
+            },
+          ],
+        },
+      },
     ],
   },
   talent: {
@@ -106,6 +130,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
             )
           ),
       },
+      {
+        type: 'fields',
+        fields: [
+          {
+            title: 'spd_',
+            fieldRef: frm.talent_spd_.tag,
+          },
+        ],
+      },
     ],
   },
   eidolon1: {
@@ -115,6 +148,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
       {
         type: 'text',
         text: chg(`ranks.1.desc`),
+      },
+      {
+        type: 'fields',
+        fields: [
+          {
+            title: 'defIgn_',
+            fieldRef: frm.e1_defIgn_.tag,
+          },
+        ],
       },
     ],
   },
@@ -126,6 +168,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
         type: 'text',
         text: chg(`ranks.2.desc`),
       },
+      {
+        type: 'fields',
+        fields: [
+          {
+            title: 'atk_',
+            fieldRef: frm.e2_atk_.tag,
+          },
+        ],
+      },
     ],
   },
   eidolon3: {
@@ -135,6 +186,19 @@ const sheet: UISheet<TalentSheetElementKey> = {
       {
         type: 'text',
         text: chg(`ranks.3.desc`),
+      },
+      {
+        type: 'fields',
+        fields: [
+          {
+            title: 'talent',
+            fieldRef: frm.eidolon3_talent.tag,
+          },
+          {
+            title: 'ult',
+            fieldRef: frm.eidolon3_ult.tag,
+          },
+        ],
       },
     ],
   },
@@ -154,11 +218,11 @@ const sheet: UISheet<TalentSheetElementKey> = {
             text: chg('ranks.4.name'),
             additional: <SqBadge>Eidolon 4</SqBadge>,
           },
-          metadata: conditionals.RuanMei.e4Broken,
+          metadata: cond.e4Broken,
           label: 'Enemy Weakness Broken',
           fields: [
             // TODO: display node?
-            // {title:"Break Effect",fieldRef:formulas.RuanMei.e4Broken},
+            { title: 'Break Effect', fieldRef: frm.e4_break_.tag },
             { title: 'Turns', fieldValue: 2 },
           ],
         },
@@ -172,6 +236,19 @@ const sheet: UISheet<TalentSheetElementKey> = {
       {
         type: 'text',
         text: chg(`ranks.5.desc`),
+      },
+      {
+        type: 'fields',
+        fields: [
+          {
+            title: 'basic',
+            fieldRef: frm.eidolon5_basic.tag,
+          },
+          {
+            title: 'skill',
+            fieldRef: frm.eidolon5_skill.tag,
+          },
+        ],
       },
     ],
   },

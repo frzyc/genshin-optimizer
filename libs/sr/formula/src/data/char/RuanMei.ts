@@ -131,6 +131,7 @@ const sheet = register(
       skillOvertone.ifOn(subscript(char.skill, dm.skill.dmg_))
     )
   ),
+  // TODO: Break efficiency
   registerBuff(
     'skillOvertone_weakness_',
     teamBuff.premod.weakness_.add(skillOvertone.ifOn(dm.skill.weakness_))
