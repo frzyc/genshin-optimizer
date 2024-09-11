@@ -18,6 +18,7 @@ import {
   ownBuff,
   register,
   registerBuff,
+  registerBuffFormula,
   teamBuff,
 } from '../util'
 import { dmg, entriesForChar, getBaseTag, scalingParams } from './util'
@@ -150,7 +151,7 @@ const sheet = register(
     'ba1_break_',
     teamBuff.premod.brEff_.add(cmpEq(char.bonusAbility1, 1, dm.b1.break_))
   ),
-  registerBuff(
+  registerBuffFormula(
     'ba3_brEff_',
     teamBuff.premod.dmg_.add(
       cmpEq(

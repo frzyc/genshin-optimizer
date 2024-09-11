@@ -2,14 +2,20 @@ import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import type { UISheet } from '@genshin-optimizer/pando/ui-sheet'
 import { characterAsset } from '@genshin-optimizer/sr/assets'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import { conditionals, formulas, own } from '@genshin-optimizer/sr/formula'
+import {
+  buffs,
+  conditionals,
+  formulas,
+  own,
+} from '@genshin-optimizer/sr/formula'
 import { getInterpolateObject } from '@genshin-optimizer/sr/stats'
 import { trans } from '../../util'
 import type { TalentSheetElementKey } from '../consts'
 const key: CharacterKey = 'RuanMei'
 const [chg, _ch] = trans('char', key)
-const frm = formulas.RuanMei
+const formula = formulas.RuanMei
 const cond = conditionals.RuanMei
+const buff = buffs.RuanMei
 const sheet: UISheet<TalentSheetElementKey> = {
   basic: {
     name: chg('abilities.basic.0.name'),
@@ -32,7 +38,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         fields: [
           {
             title: chg('abilities.basic.0.shortDesc'),
-            fieldRef: frm.basicDmg_0.tag,
+            fieldRef: formula.basicDmg_0.tag,
           },
         ],
       },
@@ -67,9 +73,9 @@ const sheet: UISheet<TalentSheetElementKey> = {
           fields: [
             {
               title: 'Ally DMG Increase',
-              fieldRef: frm.skillOvertone_dmg_.tag,
+              fieldRef: buff.skillOvertone_dmg_.tag,
             },
-            { title: 'weakness', fieldRef: frm.skillOvertone_weakness_.tag },
+            { title: 'weakness', fieldRef: buff.skillOvertone_weakness_.tag },
             // TODO:
             // {title:"Break Efficiency",???}
             { title: 'Duration', fieldValue: 3 },
@@ -107,7 +113,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
           fields: [
             {
               title: 'resPen_',
-              fieldRef: frm.ultZone_resPen_.tag,
+              fieldRef: buff.ultZone_resPen_.tag,
             },
           ],
         },
@@ -135,7 +141,26 @@ const sheet: UISheet<TalentSheetElementKey> = {
         fields: [
           {
             title: 'spd_',
-            fieldRef: frm.talent_spd_.tag,
+            fieldRef: buff.talent_spd_.tag,
+          },
+        ],
+      },
+      // TODO: Move this to proper document, just want to visualize it for now.
+      {
+        type: 'fields',
+        fields: [
+          {
+            title: 'ba3 buff',
+            fieldRef: buff.ba3_brEff_.tag,
+          },
+        ],
+      },
+      {
+        type: 'fields',
+        fields: [
+          {
+            title: 'ba3 formula',
+            fieldRef: formula.ba3_brEff_.tag,
           },
         ],
       },
@@ -154,7 +179,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         fields: [
           {
             title: 'defIgn_',
-            fieldRef: frm.e1_defIgn_.tag,
+            fieldRef: buff.e1_defIgn_.tag,
           },
         ],
       },
@@ -173,7 +198,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         fields: [
           {
             title: 'atk_',
-            fieldRef: frm.e2_atk_.tag,
+            fieldRef: buff.e2_atk_.tag,
           },
         ],
       },
@@ -192,11 +217,11 @@ const sheet: UISheet<TalentSheetElementKey> = {
         fields: [
           {
             title: 'talent',
-            fieldRef: frm.eidolon3_talent.tag,
+            fieldRef: buff.eidolon3_talent.tag,
           },
           {
             title: 'ult',
-            fieldRef: frm.eidolon3_ult.tag,
+            fieldRef: buff.eidolon3_ult.tag,
           },
         ],
       },
@@ -222,7 +247,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
           label: 'Enemy Weakness Broken',
           fields: [
             // TODO: display node?
-            { title: 'Break Effect', fieldRef: frm.e4_break_.tag },
+            { title: 'Break Effect', fieldRef: buff.e4_break_.tag },
             { title: 'Turns', fieldValue: 2 },
           ],
         },
@@ -242,11 +267,11 @@ const sheet: UISheet<TalentSheetElementKey> = {
         fields: [
           {
             title: 'basic',
-            fieldRef: frm.eidolon5_basic.tag,
+            fieldRef: buff.eidolon5_basic.tag,
           },
           {
             title: 'skill',
-            fieldRef: frm.eidolon5_skill.tag,
+            fieldRef: buff.eidolon5_skill.tag,
           },
         ],
       },

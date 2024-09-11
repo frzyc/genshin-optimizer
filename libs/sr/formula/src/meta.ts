@@ -3128,6 +3128,1388 @@ export const formulas = {
         name: 'breakDmg',
       },
     },
+  },
+  Argenti: {
+    basicDmg_0: {
+      sheet: 'Argenti',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Argenti',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Argenti',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Argenti',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Arlan: {
+    basicDmg_0: {
+      sheet: 'Arlan',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Arlan',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Arlan',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Arlan',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Asta: {
+    basicDmg_0: {
+      sheet: 'Asta',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Asta',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Asta',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Asta',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Aventurine: {
+    basicDmg_0: {
+      sheet: 'Aventurine',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Aventurine',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Aventurine',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Aventurine',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Bailu: {
+    basicDmg_0: {
+      sheet: 'Bailu',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Bailu',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Bailu',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Bailu',
+        name: 'breakDmg',
+      },
+    },
+  },
+  BlackSwan: {
+    basicDmg_0: {
+      sheet: 'BlackSwan',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'BlackSwan',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'BlackSwan',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'BlackSwan',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Blade: {
+    basicDmg_0: {
+      sheet: 'Blade',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Blade',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Blade',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Blade',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Boothill: {
+    basicDmg_0: {
+      sheet: 'Boothill',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Boothill',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Boothill',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Boothill',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Bronya: {
+    basicDmg_0: {
+      sheet: 'Bronya',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Bronya',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Bronya',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Bronya',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Clara: {
+    basicDmg_0: {
+      sheet: 'Clara',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Clara',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Clara',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Clara',
+        name: 'breakDmg',
+      },
+    },
+  },
+  DanHeng: {
+    basicDmg_0: {
+      sheet: 'DanHeng',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'DanHeng',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'DanHeng',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'DanHeng',
+        name: 'breakDmg',
+      },
+    },
+  },
+  DanHengImbibitorLunae: {
+    basicDmg_0: {
+      sheet: 'DanHengImbibitorLunae',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'DanHengImbibitorLunae',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'DanHengImbibitorLunae',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'DanHengImbibitorLunae',
+        name: 'breakDmg',
+      },
+    },
+  },
+  DrRatio: {
+    basicDmg_0: {
+      sheet: 'DrRatio',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'DrRatio',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'DrRatio',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'DrRatio',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Firefly: {
+    basicDmg_0: {
+      sheet: 'Firefly',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Firefly',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Firefly',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Firefly',
+        name: 'breakDmg',
+      },
+    },
+  },
+  FuXuan: {
+    basicDmg_0: {
+      sheet: 'FuXuan',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'FuXuan',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'FuXuan',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'FuXuan',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Gallagher: {
+    basicDmg_0: {
+      sheet: 'Gallagher',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Gallagher',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Gallagher',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Gallagher',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Gepard: {
+    basicDmg_0: {
+      sheet: 'Gepard',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Gepard',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Gepard',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Gepard',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Guinaifen: {
+    basicDmg_0: {
+      sheet: 'Guinaifen',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Guinaifen',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Guinaifen',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Guinaifen',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Hanya: {
+    basicDmg_0: {
+      sheet: 'Hanya',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Hanya',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Hanya',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Hanya',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Herta: {
+    basicDmg_0: {
+      sheet: 'Herta',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Herta',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Herta',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Herta',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Himeko: {
+    basicDmg_0: {
+      sheet: 'Himeko',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Himeko',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Himeko',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Himeko',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Hook: {
+    basicDmg_0: {
+      sheet: 'Hook',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Hook',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Hook',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Hook',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Huohuo: {
+    basicDmg_0: {
+      sheet: 'Huohuo',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Huohuo',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Huohuo',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Huohuo',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Jade: {
+    basicDmg_0: {
+      sheet: 'Jade',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Jade',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Jade',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Jade',
+        name: 'breakDmg',
+      },
+    },
+  },
+  JingYuan: {
+    basicDmg_0: {
+      sheet: 'JingYuan',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'JingYuan',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'JingYuan',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'JingYuan',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Jingliu: {
+    basicDmg_0: {
+      sheet: 'Jingliu',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Jingliu',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Jingliu',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Jingliu',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Kafka: {
+    basicDmg_0: {
+      sheet: 'Kafka',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Kafka',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Kafka',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Kafka',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Luka: {
+    basicDmg_0: {
+      sheet: 'Luka',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Luka',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Luka',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Luka',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Luocha: {
+    basicDmg_0: {
+      sheet: 'Luocha',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Luocha',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Luocha',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Luocha',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Lynx: {
+    basicDmg_0: {
+      sheet: 'Lynx',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Lynx',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Lynx',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Lynx',
+        name: 'breakDmg',
+      },
+    },
+  },
+  March7th: {
+    basicDmg_0: {
+      sheet: 'March7th',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'March7th',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'March7th',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'March7th',
+        name: 'breakDmg',
+      },
+    },
+    e1Shield: {
+      sheet: 'March7th',
+      name: 'e1Shield',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'shield',
+        sheet: 'March7th',
+        name: 'e1Shield',
+      },
+    },
+    e6Heal: {
+      sheet: 'March7th',
+      name: 'e6Heal',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'March7th',
+        name: 'e6Heal',
+      },
+    },
+    skillShield: {
+      sheet: 'March7th',
+      name: 'skillShield',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'shield',
+        sheet: 'March7th',
+        name: 'skillShield',
+      },
+    },
+    talentDmg_0: {
+      sheet: 'March7th',
+      name: 'talentDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'March7th',
+        name: 'talentDmg_0',
+      },
+    },
+    techniqueFreeze_0: {
+      sheet: 'March7th',
+      name: 'techniqueFreeze_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'March7th',
+        name: 'techniqueFreeze_0',
+      },
+    },
+    ultDmg_0: {
+      sheet: 'March7th',
+      name: 'ultDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'March7th',
+        name: 'ultDmg_0',
+      },
+    },
+    ultDmg_1: {
+      sheet: 'March7th',
+      name: 'ultDmg_1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'March7th',
+        name: 'ultDmg_1',
+      },
+    },
+    ultDmg_2: {
+      sheet: 'March7th',
+      name: 'ultDmg_2',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'March7th',
+        name: 'ultDmg_2',
+      },
+    },
+    ultDmg_3: {
+      sheet: 'March7th',
+      name: 'ultDmg_3',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'March7th',
+        name: 'ultDmg_3',
+      },
+    },
+    ultFreeze_0: {
+      sheet: 'March7th',
+      name: 'ultFreeze_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'March7th',
+        name: 'ultFreeze_0',
+      },
+    },
+  },
+  March7thTheHunt: {
+    basicDmg_0: {
+      sheet: 'March7thTheHunt',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'March7thTheHunt',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'March7thTheHunt',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'March7thTheHunt',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Misha: {
+    basicDmg_0: {
+      sheet: 'Misha',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Misha',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Misha',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Misha',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Natasha: {
+    basicDmg_0: {
+      sheet: 'Natasha',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Natasha',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Natasha',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Natasha',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Pela: {
+    basicDmg_0: {
+      sheet: 'Pela',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Pela',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Pela',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Pela',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Qingque: {
+    basicDmg_0: {
+      sheet: 'Qingque',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Qingque',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Qingque',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Qingque',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Robin: {
+    basicDmg_0: {
+      sheet: 'Robin',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Robin',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Robin',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Robin',
+        name: 'breakDmg',
+      },
+    },
+  },
+  RuanMei: {
+    ba3_brEff_: {
+      sheet: 'RuanMei',
+      name: 'ba3_brEff_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'RuanMei',
+        name: 'ba3_brEff_',
+      },
+    },
+    basicDmg_0: {
+      sheet: 'RuanMei',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'RuanMei',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'RuanMei',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'RuanMei',
+        name: 'breakDmg',
+      },
+    },
+    talentBreakDmg: {
+      sheet: 'RuanMei',
+      name: 'talentBreakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'RuanMei',
+        name: 'talentBreakDmg',
+      },
+    },
+    techBreakDmg: {
+      sheet: 'RuanMei',
+      name: 'techBreakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'RuanMei',
+        name: 'techBreakDmg',
+      },
+    },
+    zoneBreakDmg: {
+      sheet: 'RuanMei',
+      name: 'zoneBreakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'RuanMei',
+        name: 'zoneBreakDmg',
+      },
+    },
+  },
+  Sampo: {
+    basicDmg_0: {
+      sheet: 'Sampo',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Sampo',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Sampo',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Sampo',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Seele: {
+    basicDmg_0: {
+      sheet: 'Seele',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Seele',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Seele',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Seele',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Serval: {
+    basicDmg_0: {
+      sheet: 'Serval',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Serval',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Serval',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Serval',
+        name: 'breakDmg',
+      },
+    },
+  },
+  SilverWolf: {
+    basicDmg_0: {
+      sheet: 'SilverWolf',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'SilverWolf',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'SilverWolf',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'SilverWolf',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Sparkle: {
+    basicDmg_0: {
+      sheet: 'Sparkle',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Sparkle',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Sparkle',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Sparkle',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Sushang: {
+    basicDmg_0: {
+      sheet: 'Sushang',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Sushang',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Sushang',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Sushang',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Tingyun: {
+    basicDmg_0: {
+      sheet: 'Tingyun',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Tingyun',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Tingyun',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Tingyun',
+        name: 'breakDmg',
+      },
+    },
+  },
+  TopazAndNumby: {
+    basicDmg_0: {
+      sheet: 'TopazAndNumby',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'TopazAndNumby',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'TopazAndNumby',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'TopazAndNumby',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Welt: {
+    basicDmg_0: {
+      sheet: 'Welt',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Welt',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Welt',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Welt',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Xueyi: {
+    basicDmg_0: {
+      sheet: 'Xueyi',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Xueyi',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Xueyi',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Xueyi',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Yanqing: {
+    basicDmg_0: {
+      sheet: 'Yanqing',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Yanqing',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Yanqing',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Yanqing',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Yukong: {
+    basicDmg_0: {
+      sheet: 'Yukong',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Yukong',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Yukong',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Yukong',
+        name: 'breakDmg',
+      },
+    },
+  },
+  Yunli: {
+    basicDmg_0: {
+      sheet: 'Yunli',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Yunli',
+        name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Yunli',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Yunli',
+        name: 'breakDmg',
+      },
+    },
+  },
+} as const
+export const buffs = {
+  Acheron: {
     eidolon3_basic: {
       sheet: 'Acheron',
       name: 'eidolon3_basic',
@@ -3286,28 +4668,6 @@ export const formulas = {
     },
   },
   Argenti: {
-    basicDmg_0: {
-      sheet: 'Argenti',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Argenti',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Argenti',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Argenti',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_skill: {
       sheet: 'Argenti',
       name: 'eidolon3_skill',
@@ -3467,28 +4827,6 @@ export const formulas = {
     },
   },
   Arlan: {
-    basicDmg_0: {
-      sheet: 'Arlan',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Arlan',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Arlan',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Arlan',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Arlan',
       name: 'eidolon3_basic',
@@ -3645,28 +4983,6 @@ export const formulas = {
     },
   },
   Asta: {
-    basicDmg_0: {
-      sheet: 'Asta',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Asta',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Asta',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Asta',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_skill: {
       sheet: 'Asta',
       name: 'eidolon3_skill',
@@ -3828,28 +5144,6 @@ export const formulas = {
     },
   },
   Aventurine: {
-    basicDmg_0: {
-      sheet: 'Aventurine',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Aventurine',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Aventurine',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Aventurine',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Aventurine',
       name: 'eidolon3_basic',
@@ -4009,28 +5303,6 @@ export const formulas = {
     },
   },
   Bailu: {
-    basicDmg_0: {
-      sheet: 'Bailu',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Bailu',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Bailu',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Bailu',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_skill: {
       sheet: 'Bailu',
       name: 'eidolon3_skill',
@@ -4187,28 +5459,6 @@ export const formulas = {
     },
   },
   BlackSwan: {
-    basicDmg_0: {
-      sheet: 'BlackSwan',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'BlackSwan',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'BlackSwan',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'BlackSwan',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_skill: {
       sheet: 'BlackSwan',
       name: 'eidolon3_skill',
@@ -4368,28 +5618,6 @@ export const formulas = {
     },
   },
   Blade: {
-    basicDmg_0: {
-      sheet: 'Blade',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Blade',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Blade',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Blade',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_talent: {
       sheet: 'Blade',
       name: 'eidolon3_talent',
@@ -4546,28 +5774,6 @@ export const formulas = {
     },
   },
   Boothill: {
-    basicDmg_0: {
-      sheet: 'Boothill',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Boothill',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Boothill',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Boothill',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Boothill',
       name: 'eidolon3_basic',
@@ -4724,28 +5930,6 @@ export const formulas = {
     },
   },
   Bronya: {
-    basicDmg_0: {
-      sheet: 'Bronya',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Bronya',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Bronya',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Bronya',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_talent: {
       sheet: 'Bronya',
       name: 'eidolon3_talent',
@@ -4907,28 +6091,6 @@ export const formulas = {
     },
   },
   Clara: {
-    basicDmg_0: {
-      sheet: 'Clara',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Clara',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Clara',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Clara',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Clara',
       name: 'eidolon3_basic',
@@ -5088,28 +6250,6 @@ export const formulas = {
     },
   },
   DanHeng: {
-    basicDmg_0: {
-      sheet: 'DanHeng',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'DanHeng',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'DanHeng',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'DanHeng',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'DanHeng',
       name: 'eidolon3_basic',
@@ -5271,28 +6411,6 @@ export const formulas = {
     },
   },
   DanHengImbibitorLunae: {
-    basicDmg_0: {
-      sheet: 'DanHengImbibitorLunae',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'DanHengImbibitorLunae',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'DanHengImbibitorLunae',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'DanHengImbibitorLunae',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'DanHengImbibitorLunae',
       name: 'eidolon3_basic',
@@ -5454,28 +6572,6 @@ export const formulas = {
     },
   },
   DrRatio: {
-    basicDmg_0: {
-      sheet: 'DrRatio',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'DrRatio',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'DrRatio',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'DrRatio',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'DrRatio',
       name: 'eidolon3_basic',
@@ -5632,28 +6728,6 @@ export const formulas = {
     },
   },
   Firefly: {
-    basicDmg_0: {
-      sheet: 'Firefly',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Firefly',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Firefly',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Firefly',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Firefly',
       name: 'eidolon3_basic',
@@ -5810,28 +6884,6 @@ export const formulas = {
     },
   },
   FuXuan: {
-    basicDmg_0: {
-      sheet: 'FuXuan',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'FuXuan',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'FuXuan',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'FuXuan',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_skill: {
       sheet: 'FuXuan',
       name: 'eidolon3_skill',
@@ -5988,28 +7040,6 @@ export const formulas = {
     },
   },
   Gallagher: {
-    basicDmg_0: {
-      sheet: 'Gallagher',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Gallagher',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Gallagher',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Gallagher',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Gallagher',
       name: 'eidolon3_basic',
@@ -6166,28 +7196,6 @@ export const formulas = {
     },
   },
   Gepard: {
-    basicDmg_0: {
-      sheet: 'Gepard',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Gepard',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Gepard',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Gepard',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_talent: {
       sheet: 'Gepard',
       name: 'eidolon3_talent',
@@ -6349,28 +7357,6 @@ export const formulas = {
     },
   },
   Guinaifen: {
-    basicDmg_0: {
-      sheet: 'Guinaifen',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Guinaifen',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Guinaifen',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Guinaifen',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Guinaifen',
       name: 'eidolon3_basic',
@@ -6532,28 +7518,6 @@ export const formulas = {
     },
   },
   Hanya: {
-    basicDmg_0: {
-      sheet: 'Hanya',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Hanya',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Hanya',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Hanya',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Hanya',
       name: 'eidolon3_basic',
@@ -6710,28 +7674,6 @@ export const formulas = {
     },
   },
   Herta: {
-    basicDmg_0: {
-      sheet: 'Herta',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Herta',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Herta',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Herta',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Herta',
       name: 'eidolon3_basic',
@@ -6893,28 +7835,6 @@ export const formulas = {
     },
   },
   Himeko: {
-    basicDmg_0: {
-      sheet: 'Himeko',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Himeko',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Himeko',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Himeko',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Himeko',
       name: 'eidolon3_basic',
@@ -7076,28 +7996,6 @@ export const formulas = {
     },
   },
   Hook: {
-    basicDmg_0: {
-      sheet: 'Hook',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Hook',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Hook',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Hook',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Hook',
       name: 'eidolon3_basic',
@@ -7254,28 +8152,6 @@ export const formulas = {
     },
   },
   Huohuo: {
-    basicDmg_0: {
-      sheet: 'Huohuo',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Huohuo',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Huohuo',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Huohuo',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_talent: {
       sheet: 'Huohuo',
       name: 'eidolon3_talent',
@@ -7432,28 +8308,6 @@ export const formulas = {
     },
   },
   Jade: {
-    basicDmg_0: {
-      sheet: 'Jade',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Jade',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Jade',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Jade',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_skill: {
       sheet: 'Jade',
       name: 'eidolon3_skill',
@@ -7615,28 +8469,6 @@ export const formulas = {
     },
   },
   JingYuan: {
-    basicDmg_0: {
-      sheet: 'JingYuan',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'JingYuan',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'JingYuan',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'JingYuan',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'JingYuan',
       name: 'eidolon3_basic',
@@ -7793,28 +8625,6 @@ export const formulas = {
     },
   },
   Jingliu: {
-    basicDmg_0: {
-      sheet: 'Jingliu',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Jingliu',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Jingliu',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Jingliu',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_talent: {
       sheet: 'Jingliu',
       name: 'eidolon3_talent',
@@ -7971,28 +8781,6 @@ export const formulas = {
     },
   },
   Kafka: {
-    basicDmg_0: {
-      sheet: 'Kafka',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Kafka',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Kafka',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Kafka',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Kafka',
       name: 'eidolon3_basic',
@@ -8149,28 +8937,6 @@ export const formulas = {
     },
   },
   Luka: {
-    basicDmg_0: {
-      sheet: 'Luka',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Luka',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Luka',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Luka',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_skill: {
       sheet: 'Luka',
       name: 'eidolon3_skill',
@@ -8327,28 +9093,6 @@ export const formulas = {
     },
   },
   Luocha: {
-    basicDmg_0: {
-      sheet: 'Luocha',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Luocha',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Luocha',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Luocha',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Luocha',
       name: 'eidolon3_basic',
@@ -8505,28 +9249,6 @@ export const formulas = {
     },
   },
   Lynx: {
-    basicDmg_0: {
-      sheet: 'Lynx',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Lynx',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Lynx',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Lynx',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Lynx',
       name: 'eidolon3_basic',
@@ -8683,50 +9405,6 @@ export const formulas = {
     },
   },
   March7th: {
-    basicDmg_0: {
-      sheet: 'March7th',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'March7th',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'March7th',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'March7th',
-        name: 'breakDmg',
-      },
-    },
-    e1Shield: {
-      sheet: 'March7th',
-      name: 'e1Shield',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'shield',
-        sheet: 'March7th',
-        name: 'e1Shield',
-      },
-    },
-    e6Heal: {
-      sheet: 'March7th',
-      name: 'e6Heal',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'heal',
-        sheet: 'March7th',
-        name: 'e6Heal',
-      },
-    },
     eidolon3_basic: {
       sheet: 'March7th',
       name: 'eidolon3_basic',
@@ -8769,17 +9447,6 @@ export const formulas = {
         q: 'talent',
         sheet: 'March7th',
         name: 'eidolon5_talent',
-      },
-    },
-    skillShield: {
-      sheet: 'March7th',
-      name: 'skillShield',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'shield',
-        sheet: 'March7th',
-        name: 'skillShield',
       },
     },
     statBoost1: {
@@ -8897,107 +9564,8 @@ export const formulas = {
         name: 'statBoost9',
       },
     },
-    talentDmg_0: {
-      sheet: 'March7th',
-      name: 'talentDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'March7th',
-        name: 'talentDmg_0',
-      },
-    },
-    techniqueFreeze_0: {
-      sheet: 'March7th',
-      name: 'techniqueFreeze_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'March7th',
-        name: 'techniqueFreeze_0',
-      },
-    },
-    ultDmg_0: {
-      sheet: 'March7th',
-      name: 'ultDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'March7th',
-        name: 'ultDmg_0',
-      },
-    },
-    ultDmg_1: {
-      sheet: 'March7th',
-      name: 'ultDmg_1',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'March7th',
-        name: 'ultDmg_1',
-      },
-    },
-    ultDmg_2: {
-      sheet: 'March7th',
-      name: 'ultDmg_2',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'March7th',
-        name: 'ultDmg_2',
-      },
-    },
-    ultDmg_3: {
-      sheet: 'March7th',
-      name: 'ultDmg_3',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'March7th',
-        name: 'ultDmg_3',
-      },
-    },
-    ultFreeze_0: {
-      sheet: 'March7th',
-      name: 'ultFreeze_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'March7th',
-        name: 'ultFreeze_0',
-      },
-    },
   },
   March7thTheHunt: {
-    basicDmg_0: {
-      sheet: 'March7thTheHunt',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'March7thTheHunt',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'March7thTheHunt',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'March7thTheHunt',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'March7thTheHunt',
       name: 'eidolon3_basic',
@@ -9154,28 +9722,6 @@ export const formulas = {
     },
   },
   Misha: {
-    basicDmg_0: {
-      sheet: 'Misha',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Misha',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Misha',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Misha',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Misha',
       name: 'eidolon3_basic',
@@ -9337,28 +9883,6 @@ export const formulas = {
     },
   },
   Natasha: {
-    basicDmg_0: {
-      sheet: 'Natasha',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Natasha',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Natasha',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Natasha',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Natasha',
       name: 'eidolon3_basic',
@@ -9515,28 +10039,6 @@ export const formulas = {
     },
   },
   Pela: {
-    basicDmg_0: {
-      sheet: 'Pela',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Pela',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Pela',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Pela',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Pela',
       name: 'eidolon3_basic',
@@ -9698,28 +10200,6 @@ export const formulas = {
     },
   },
   Qingque: {
-    basicDmg_0: {
-      sheet: 'Qingque',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Qingque',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Qingque',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Qingque',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_talent: {
       sheet: 'Qingque',
       name: 'eidolon3_talent',
@@ -9879,28 +10359,6 @@ export const formulas = {
     },
   },
   Robin: {
-    basicDmg_0: {
-      sheet: 'Robin',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Robin',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Robin',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Robin',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_skill: {
       sheet: 'Robin',
       name: 'eidolon3_skill',
@@ -10077,28 +10535,6 @@ export const formulas = {
         q: 'dmg_',
         sheet: 'RuanMei',
         name: 'ba3_brEff_',
-      },
-    },
-    basicDmg_0: {
-      sheet: 'RuanMei',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'RuanMei',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'RuanMei',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'RuanMei',
-        name: 'breakDmg',
       },
     },
     e1_defIgn_: {
@@ -10310,17 +10746,6 @@ export const formulas = {
         name: 'statBoost9',
       },
     },
-    talentBreakDmg: {
-      sheet: 'RuanMei',
-      name: 'talentBreakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'RuanMei',
-        name: 'talentBreakDmg',
-      },
-    },
     talent_spd_: {
       sheet: 'RuanMei',
       name: 'talent_spd_',
@@ -10330,17 +10755,6 @@ export const formulas = {
         q: 'spd_',
         sheet: 'RuanMei',
         name: 'talent_spd_',
-      },
-    },
-    techBreakDmg: {
-      sheet: 'RuanMei',
-      name: 'techBreakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'RuanMei',
-        name: 'techBreakDmg',
       },
     },
     ultZone_resPen_: {
@@ -10354,41 +10768,8 @@ export const formulas = {
         name: 'ultZone_resPen_',
       },
     },
-    zoneBreakDmg: {
-      sheet: 'RuanMei',
-      name: 'zoneBreakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'RuanMei',
-        name: 'zoneBreakDmg',
-      },
-    },
   },
   Sampo: {
-    basicDmg_0: {
-      sheet: 'Sampo',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Sampo',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Sampo',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Sampo',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Sampo',
       name: 'eidolon3_basic',
@@ -10545,28 +10926,6 @@ export const formulas = {
     },
   },
   Seele: {
-    basicDmg_0: {
-      sheet: 'Seele',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Seele',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Seele',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Seele',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_skill: {
       sheet: 'Seele',
       name: 'eidolon3_skill',
@@ -10723,28 +11082,6 @@ export const formulas = {
     },
   },
   Serval: {
-    basicDmg_0: {
-      sheet: 'Serval',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Serval',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Serval',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Serval',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Serval',
       name: 'eidolon3_basic',
@@ -10901,28 +11238,6 @@ export const formulas = {
     },
   },
   SilverWolf: {
-    basicDmg_0: {
-      sheet: 'SilverWolf',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'SilverWolf',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'SilverWolf',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'SilverWolf',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_skill: {
       sheet: 'SilverWolf',
       name: 'eidolon3_skill',
@@ -11081,28 +11396,6 @@ export const formulas = {
     },
   },
   Sparkle: {
-    basicDmg_0: {
-      sheet: 'Sparkle',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Sparkle',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Sparkle',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Sparkle',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Sparkle',
       name: 'eidolon3_basic',
@@ -11259,28 +11552,6 @@ export const formulas = {
     },
   },
   Sushang: {
-    basicDmg_0: {
-      sheet: 'Sushang',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Sushang',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Sushang',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Sushang',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_talent: {
       sheet: 'Sushang',
       name: 'eidolon3_talent',
@@ -11437,28 +11708,6 @@ export const formulas = {
     },
   },
   Tingyun: {
-    basicDmg_0: {
-      sheet: 'Tingyun',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Tingyun',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Tingyun',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Tingyun',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Tingyun',
       name: 'eidolon3_basic',
@@ -11617,28 +11866,6 @@ export const formulas = {
     },
   },
   TopazAndNumby: {
-    basicDmg_0: {
-      sheet: 'TopazAndNumby',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'TopazAndNumby',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'TopazAndNumby',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'TopazAndNumby',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'TopazAndNumby',
       name: 'eidolon3_basic',
@@ -11800,28 +12027,6 @@ export const formulas = {
     },
   },
   Welt: {
-    basicDmg_0: {
-      sheet: 'Welt',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Welt',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Welt',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Welt',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Welt',
       name: 'eidolon3_basic',
@@ -11981,28 +12186,6 @@ export const formulas = {
     },
   },
   Xueyi: {
-    basicDmg_0: {
-      sheet: 'Xueyi',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Xueyi',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Xueyi',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Xueyi',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Xueyi',
       name: 'eidolon3_basic',
@@ -12161,28 +12344,6 @@ export const formulas = {
     },
   },
   Yanqing: {
-    basicDmg_0: {
-      sheet: 'Yanqing',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Yanqing',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Yanqing',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Yanqing',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Yanqing',
       name: 'eidolon3_basic',
@@ -12342,28 +12503,6 @@ export const formulas = {
     },
   },
   Yukong: {
-    basicDmg_0: {
-      sheet: 'Yukong',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Yukong',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Yukong',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Yukong',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Yukong',
       name: 'eidolon3_basic',
@@ -12525,28 +12664,6 @@ export const formulas = {
     },
   },
   Yunli: {
-    basicDmg_0: {
-      sheet: 'Yunli',
-      name: 'basicDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'Yunli',
-        name: 'basicDmg_0',
-      },
-    },
-    breakDmg: {
-      sheet: 'Yunli',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Yunli',
-        name: 'breakDmg',
-      },
-    },
     eidolon3_basic: {
       sheet: 'Yunli',
       name: 'eidolon3_basic',
