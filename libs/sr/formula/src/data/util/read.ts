@@ -1,7 +1,6 @@
 import type {
   AnyNode,
   NumNode,
-  ReRead,
   StrNode,
   TagOverride,
   TagValRead,
