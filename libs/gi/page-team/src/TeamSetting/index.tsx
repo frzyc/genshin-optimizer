@@ -161,7 +161,6 @@ function TeamEditor({
   }
 
   const [showMultiSelect, setShowMultiSelect] = useState(false)
-  // TODO: Opening then closing and reopening quick select should result in no changes to the team, something is causing the team to be almost completely removed
   const onMultiSelect = (cKeys: (CharacterKey | '')[]) => {
     const filteredKeys = cKeys.filter((key) => key !== '')
     for (let i = 0; i < filteredKeys.length; ++i)
@@ -231,7 +230,6 @@ function TeamEditor({
         </Trans>
       </Alert>
       <Button
-        key={0}
         onClick={() => setShowMultiSelect(true)}
       >
         Quick Select

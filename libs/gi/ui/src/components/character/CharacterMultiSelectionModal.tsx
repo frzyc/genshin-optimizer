@@ -118,11 +118,6 @@ export function CharacterMultiSelectionModal({
     })
     return keys
   }, [database, loadoutData])
-  const [selectedCharacterKeys, setSelectedCharacterKeys] = useState(currentTeamCharKeys as (CharacterKey | '')[])
-  useEffect(
-    () => setSelectedCharacterKeys(currentTeamCharKeys),
-    [currentTeamCharKeys, setSelectedCharacterKeys]
-  )
 
   const { gender } = useDBMeta()
 
@@ -203,31 +198,21 @@ export function CharacterMultiSelectionModal({
   const { weaponType, element, sortType, ascending } = state
 
   // TODO: Should selected characters automatically be moved to the front of the list when the quick select UI is opened?
-  //       Check if new method of finding the first open slot in a team works correctly
+  //       Selection border doesn't appear until after mouse is moved away if not using state or sometimes renders normally?
   const onClick = (key: CharacterKey) => {
-    const keySlotIndex = selectedCharacterKeys.indexOf(key)
-    const firstOpenIndex = selectedCharacterKeys.indexOf('')
-    // Check if four characters have already been selected
-    if (firstOpenIndex === -1) return
-    if (keySlotIndex === -1)
+    const keySlotIndex = currentTeamCharKeys.indexOf(key)
+    const firstOpenIndex = currentTeamCharKeys.indexOf('')
+    if (keySlotIndex === -1 && firstOpenIndex !== -1)
     {
-      // Selected character wasn't already previously selected, so add their key to
-      // the first open slot in the array and remove the placeholder ''
-      setSelectedCharacterKeys([
-        ...selectedCharacterKeys.slice(0, firstOpenIndex),
-        key,
-        ...selectedCharacterKeys.slice(firstOpenIndex + 1)
-      ])
+      // Selected character wasn't already previously selected and team isn't full, so overwrite the placeholder ''
+      // with the character key in the first open team slot
+      currentTeamCharKeys.splice(firstOpenIndex, 1, key)
     }
     else
     {
-      // Selected character key was previously selected, so remove it from the array
-      // and update the first open slot index if the newly emptied slot is earlier in the array
-      setSelectedCharacterKeys([
-        ...selectedCharacterKeys.slice(0, keySlotIndex),
-        '',
-        ...selectedCharacterKeys.slice(keySlotIndex + 1)
-      ])
+      // Selected character key was previously selected, so replace the slot with
+      // '' to indicate the slot is currently empty
+      currentTeamCharKeys.splice(keySlotIndex, 1, '')
     }
   }
 
@@ -236,8 +221,7 @@ export function CharacterMultiSelectionModal({
       open={show}
       onClose={() => {
         setSearchTerm('')
-        onMultiSelect?.(selectedCharacterKeys)
-        setSelectedCharacterKeys([])
+        onMultiSelect?.(currentTeamCharKeys)
         onHide()
       }}
       containerProps={{
@@ -331,7 +315,7 @@ export function CharacterMultiSelectionModal({
                   <SelectionCard
                     characterKey={characterKey}
                     onClick={() => onClick(characterKey)}
-                    selectedCharKeys={selectedCharacterKeys}
+                    selectedCharKeys={currentTeamCharKeys}
                   />
                 </Grid>
               ))}
