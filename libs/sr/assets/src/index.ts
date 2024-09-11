@@ -8,7 +8,24 @@ import type {
 import chars from './gen/chars'
 import lightCones from './gen/lightCones'
 import relics from './gen/relics'
-type characterAssetKey = 'icon' | 'basic_0' | 'skill_0'
+type characterAssetKey =
+  | 'icon'
+  | 'basic_0'
+  | 'skill_0'
+  | 'ult_0'
+  | 'talent_0'
+  | 'technique_0'
+  | 'eidolon1'
+  | 'eidolon2'
+  | 'eidolon3'
+  | 'eidolon4'
+  | 'eidolon5'
+  | 'eidolon6'
+  | 'overworld_0'
+  | 'bonusAbility1'
+  | 'bonusAbility2'
+  | 'bonusAbility3'
+
 export function characterAsset(
   ck: NonTrailblazerCharacterKey | TrailblazerGenderedKey,
   asset: characterAssetKey

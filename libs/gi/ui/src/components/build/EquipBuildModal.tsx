@@ -47,7 +47,11 @@ export function EquipBuildModal(props: Props & { show: boolean }) {
   const { show, onHide } = props
   /* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it https://github.com/frzyc/genshin-optimizer/issues/1498*/
   return (
-    <ModalWrapper open={show} onClose={onHide}>
+    <ModalWrapper
+      open={show}
+      onClose={onHide}
+      containerProps={{ maxWidth: 'xl' }}
+    >
       <Content {...props} />
     </ModalWrapper>
   )

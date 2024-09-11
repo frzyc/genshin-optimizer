@@ -1,985 +1,5 @@
-type Tag = Record<string, string>
-
-export type IConditionalData =
-  | IBoolConditionalData
-  | IListConditionalData
-  | INumConditionalData
-export type IFormulaData = {
-  sheet: string // entity
-  name: string // formula name
-  tag: Tag // tag used to access value
-}
-
-/// Conditional whose values are True (1.0) and False (0.0)
-export type IBoolConditionalData = {
-  type: 'bool' // type discriminator
-  sheet: string // entity
-  name: string // conditional name
-}
-/// Conditional whose values are those in the list. When inputting the
-/// entry, use the (0-based) position in the list
-export type IListConditionalData = {
-  type: 'list' // type discriminator
-  sheet: string // entity
-  name: string // conditional name
-
-  list: [string] // feasible values
-}
-/// Conditional whose values are regular numbers
-export type INumConditionalData = {
-  type: 'num' // type discriminator
-  sheet: string // entity
-  name: string // conditional name
-
-  int_only: boolean // whether the value must be an integer
-  min?: number // smallest feasible value, if applicable
-  max?: number // largest feasible value, if applicable
-}
-
+// WARNING: Generated file, do not modify
 export const conditionals = {
-  Acheron: {
-    boolConditional: {
-      sheet: 'Acheron',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Acheron',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Acheron',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Argenti: {
-    boolConditional: {
-      sheet: 'Argenti',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Argenti',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Argenti',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Arlan: {
-    boolConditional: { sheet: 'Arlan', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Arlan',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Arlan',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Asta: {
-    boolConditional: { sheet: 'Asta', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Asta',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Asta',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Aventurine: {
-    boolConditional: {
-      sheet: 'Aventurine',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Aventurine',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Aventurine',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Bailu: {
-    boolConditional: { sheet: 'Bailu', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Bailu',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Bailu',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  BlackSwan: {
-    boolConditional: {
-      sheet: 'BlackSwan',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'BlackSwan',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'BlackSwan',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Blade: {
-    boolConditional: { sheet: 'Blade', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Blade',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Blade',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Boothill: {
-    boolConditional: {
-      sheet: 'Boothill',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Boothill',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Boothill',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Bronya: {
-    boolConditional: { sheet: 'Bronya', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Bronya',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Bronya',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Clara: {
-    boolConditional: { sheet: 'Clara', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Clara',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Clara',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  DanHeng: {
-    boolConditional: {
-      sheet: 'DanHeng',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'DanHeng',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'DanHeng',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  DanHengImbibitorLunae: {
-    boolConditional: {
-      sheet: 'DanHengImbibitorLunae',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'DanHengImbibitorLunae',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'DanHengImbibitorLunae',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  DrRatio: {
-    boolConditional: {
-      sheet: 'DrRatio',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'DrRatio',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'DrRatio',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Firefly: {
-    boolConditional: {
-      sheet: 'Firefly',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Firefly',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Firefly',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  FuXuan: {
-    boolConditional: { sheet: 'FuXuan', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'FuXuan',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'FuXuan',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Gallagher: {
-    boolConditional: {
-      sheet: 'Gallagher',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Gallagher',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Gallagher',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Gepard: {
-    boolConditional: { sheet: 'Gepard', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Gepard',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Gepard',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Guinaifen: {
-    boolConditional: {
-      sheet: 'Guinaifen',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Guinaifen',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Guinaifen',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Hanya: {
-    boolConditional: { sheet: 'Hanya', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Hanya',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Hanya',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Herta: {
-    boolConditional: { sheet: 'Herta', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Herta',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Herta',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Himeko: {
-    boolConditional: { sheet: 'Himeko', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Himeko',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Himeko',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Hook: {
-    boolConditional: { sheet: 'Hook', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Hook',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Hook',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Huohuo: {
-    boolConditional: { sheet: 'Huohuo', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Huohuo',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Huohuo',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Jade: {
-    boolConditional: { sheet: 'Jade', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Jade',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Jade',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  JingYuan: {
-    boolConditional: {
-      sheet: 'JingYuan',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'JingYuan',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'JingYuan',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Jingliu: {
-    boolConditional: {
-      sheet: 'Jingliu',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Jingliu',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Jingliu',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Kafka: {
-    boolConditional: { sheet: 'Kafka', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Kafka',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Kafka',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Luka: {
-    boolConditional: { sheet: 'Luka', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Luka',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Luka',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Luocha: {
-    boolConditional: { sheet: 'Luocha', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Luocha',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Luocha',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Lynx: {
-    boolConditional: { sheet: 'Lynx', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Lynx',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Lynx',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  March7thTheHunt: {
-    boolConditional: {
-      sheet: 'March7thTheHunt',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'March7thTheHunt',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'March7thTheHunt',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Misha: {
-    boolConditional: { sheet: 'Misha', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Misha',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Misha',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Natasha: {
-    boolConditional: {
-      sheet: 'Natasha',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Natasha',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Natasha',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Pela: {
-    boolConditional: { sheet: 'Pela', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Pela',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Pela',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Qingque: {
-    boolConditional: {
-      sheet: 'Qingque',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Qingque',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Qingque',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Robin: {
-    boolConditional: { sheet: 'Robin', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Robin',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Robin',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  RuanMei: {
-    skillOvertone: { sheet: 'RuanMei', name: 'skillOvertone', type: 'bool' },
-    ultZone: { sheet: 'RuanMei', name: 'ultZone', type: 'bool' },
-    e4Broken: { sheet: 'RuanMei', name: 'e4Broken', type: 'bool' },
-  },
-  Sampo: {
-    boolConditional: { sheet: 'Sampo', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Sampo',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Sampo',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Seele: {
-    boolConditional: { sheet: 'Seele', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Seele',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Seele',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Serval: {
-    boolConditional: { sheet: 'Serval', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Serval',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Serval',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  SilverWolf: {
-    boolConditional: {
-      sheet: 'SilverWolf',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'SilverWolf',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'SilverWolf',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Sparkle: {
-    boolConditional: {
-      sheet: 'Sparkle',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Sparkle',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Sparkle',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Sushang: {
-    boolConditional: {
-      sheet: 'Sushang',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Sushang',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Sushang',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Tingyun: {
-    boolConditional: {
-      sheet: 'Tingyun',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Tingyun',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Tingyun',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  TopazAndNumby: {
-    boolConditional: {
-      sheet: 'TopazAndNumby',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'TopazAndNumby',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'TopazAndNumby',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Welt: {
-    boolConditional: { sheet: 'Welt', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Welt',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Welt',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Xueyi: {
-    boolConditional: { sheet: 'Xueyi', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Xueyi',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Xueyi',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Yanqing: {
-    boolConditional: {
-      sheet: 'Yanqing',
-      name: 'boolConditional',
-      type: 'bool',
-    },
-    listConditional: {
-      sheet: 'Yanqing',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Yanqing',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Yukong: {
-    boolConditional: { sheet: 'Yukong', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Yukong',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Yukong',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
-  Yunli: {
-    boolConditional: { sheet: 'Yunli', name: 'boolConditional', type: 'bool' },
-    listConditional: {
-      sheet: 'Yunli',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'Yunli',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
-    },
-  },
   ASecretVow: {
     boolConditional: {
       sheet: 'ASecretVow',
@@ -994,6 +14,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'ASecretVow',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Acheron: {
+    boolConditional: {
+      sheet: 'Acheron',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'Acheron',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Acheron',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1102,6 +143,51 @@ export const conditionals = {
       max: 2,
     },
   },
+  Argenti: {
+    boolConditional: {
+      sheet: 'Argenti',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'Argenti',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Argenti',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Arlan: {
+    boolConditional: { sheet: 'Arlan', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Arlan',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Arlan',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+    numConditionalNoMax: {
+      sheet: 'Arlan',
+      name: 'numConditionalNoMax',
+      type: 'num',
+      int_only: true,
+      min: 0,
+    },
+  },
   Arrows: {
     boolConditional: { sheet: 'Arrows', name: 'boolConditional', type: 'bool' },
     listConditional: {
@@ -1112,6 +198,61 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'Arrows',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Asta: {
+    boolConditional: { sheet: 'Asta', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Asta',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Asta',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Aventurine: {
+    boolConditional: {
+      sheet: 'Aventurine',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'Aventurine',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Aventurine',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Bailu: {
+    boolConditional: { sheet: 'Bailu', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Bailu',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Bailu',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1182,6 +323,65 @@ export const conditionals = {
       max: 2,
     },
   },
+  BlackSwan: {
+    boolConditional: {
+      sheet: 'BlackSwan',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'BlackSwan',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'BlackSwan',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Blade: {
+    boolConditional: { sheet: 'Blade', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Blade',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Blade',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Boothill: {
+    boolConditional: {
+      sheet: 'Boothill',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'Boothill',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Boothill',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   BoundlessChoreo: {
     boolConditional: {
       sheet: 'BoundlessChoreo',
@@ -1217,6 +417,23 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'BrighterThanTheSun',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Bronya: {
+    boolConditional: { sheet: 'Bronya', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Bronya',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Bronya',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1276,6 +493,23 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'Chorus',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Clara: {
+    boolConditional: { sheet: 'Clara', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Clara',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Clara',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1360,6 +594,48 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'CruisingInTheStellarSea',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  DanHeng: {
+    boolConditional: {
+      sheet: 'DanHeng',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'DanHeng',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'DanHeng',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  DanHengImbibitorLunae: {
+    boolConditional: {
+      sheet: 'DanHengImbibitorLunae',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'DanHengImbibitorLunae',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'DanHengImbibitorLunae',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1514,6 +790,27 @@ export const conditionals = {
       max: 2,
     },
   },
+  DrRatio: {
+    boolConditional: {
+      sheet: 'DrRatio',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'DrRatio',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'DrRatio',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   DreamvilleAdventure: {
     boolConditional: {
       sheet: 'DreamvilleAdventure',
@@ -1661,6 +958,27 @@ export const conditionals = {
       max: 2,
     },
   },
+  Firefly: {
+    boolConditional: {
+      sheet: 'Firefly',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'Firefly',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Firefly',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   FlamesAfar: {
     boolConditional: {
       sheet: 'FlamesAfar',
@@ -1703,6 +1021,44 @@ export const conditionals = {
       max: 2,
     },
   },
+  FuXuan: {
+    boolConditional: { sheet: 'FuXuan', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'FuXuan',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'FuXuan',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Gallagher: {
+    boolConditional: {
+      sheet: 'Gallagher',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'Gallagher',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Gallagher',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   GeniusesRepose: {
     boolConditional: {
       sheet: 'GeniusesRepose',
@@ -1724,6 +1080,23 @@ export const conditionals = {
       max: 2,
     },
   },
+  Gepard: {
+    boolConditional: { sheet: 'Gepard', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Gepard',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Gepard',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   GoodNightAndSleepWell: {
     boolConditional: {
       sheet: 'GoodNightAndSleepWell',
@@ -1738,6 +1111,61 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'GoodNightAndSleepWell',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Guinaifen: {
+    boolConditional: {
+      sheet: 'Guinaifen',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'Guinaifen',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Guinaifen',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Hanya: {
+    boolConditional: { sheet: 'Hanya', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Hanya',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Hanya',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Herta: {
+    boolConditional: { sheet: 'Herta', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Herta',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Herta',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1780,6 +1208,57 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'HiddenShadow',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Himeko: {
+    boolConditional: { sheet: 'Himeko', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Himeko',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Himeko',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Hook: {
+    boolConditional: { sheet: 'Hook', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Hook',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Hook',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Huohuo: {
+    boolConditional: { sheet: 'Huohuo', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Huohuo',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Huohuo',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -1934,6 +1413,82 @@ export const conditionals = {
       max: 2,
     },
   },
+  Jade: {
+    boolConditional: { sheet: 'Jade', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Jade',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Jade',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  JingYuan: {
+    boolConditional: {
+      sheet: 'JingYuan',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'JingYuan',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'JingYuan',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Jingliu: {
+    boolConditional: {
+      sheet: 'Jingliu',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'Jingliu',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Jingliu',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Kafka: {
+    boolConditional: { sheet: 'Kafka', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Kafka',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Kafka',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   LandausChoice: {
     boolConditional: {
       sheet: 'LandausChoice',
@@ -1972,6 +1527,57 @@ export const conditionals = {
       max: 2,
     },
   },
+  Luka: {
+    boolConditional: { sheet: 'Luka', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Luka',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Luka',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Luocha: {
+    boolConditional: { sheet: 'Luocha', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Luocha',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Luocha',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Lynx: {
+    boolConditional: { sheet: 'Lynx', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Lynx',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Lynx',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   MakeTheWorldClamor: {
     boolConditional: {
       sheet: 'MakeTheWorldClamor',
@@ -1986,6 +1592,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'MakeTheWorldClamor',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  March7thTheHunt: {
+    boolConditional: {
+      sheet: 'March7thTheHunt',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'March7thTheHunt',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'March7thTheHunt',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -2056,6 +1683,23 @@ export const conditionals = {
       max: 2,
     },
   },
+  Misha: {
+    boolConditional: { sheet: 'Misha', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Misha',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Misha',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   MomentOfVictory: {
     boolConditional: {
       sheet: 'MomentOfVictory',
@@ -2112,6 +1756,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'MutualDemise',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Natasha: {
+    boolConditional: {
+      sheet: 'Natasha',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'Natasha',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Natasha',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -2308,6 +1973,23 @@ export const conditionals = {
       max: 2,
     },
   },
+  Pela: {
+    boolConditional: { sheet: 'Pela', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Pela',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Pela',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   PerfectTiming: {
     boolConditional: {
       sheet: 'PerfectTiming',
@@ -2406,6 +2088,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'PostOpConversation',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Qingque: {
+    boolConditional: {
+      sheet: 'Qingque',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'Qingque',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Qingque',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -2518,6 +2221,28 @@ export const conditionals = {
       max: 2,
     },
   },
+  Robin: {
+    boolConditional: { sheet: 'Robin', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Robin',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Robin',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  RuanMei: {
+    e4Broken: { sheet: 'RuanMei', name: 'e4Broken', type: 'bool' },
+    skillOvertone: { sheet: 'RuanMei', name: 'skillOvertone', type: 'bool' },
+    ultZone: { sheet: 'RuanMei', name: 'ultZone', type: 'bool' },
+  },
   Sagacity: {
     boolConditional: {
       sheet: 'Sagacity',
@@ -2553,6 +2278,57 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'SailingTowardsASecondLife',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Sampo: {
+    boolConditional: { sheet: 'Sampo', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Sampo',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Sampo',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Seele: {
+    boolConditional: { sheet: 'Seele', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Seele',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Seele',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Serval: {
+    boolConditional: { sheet: 'Serval', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Serval',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Serval',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -2623,6 +2399,27 @@ export const conditionals = {
       max: 2,
     },
   },
+  SilverWolf: {
+    boolConditional: {
+      sheet: 'SilverWolf',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'SilverWolf',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'SilverWolf',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   SleepLikeTheDead: {
     boolConditional: {
       sheet: 'SleepLikeTheDead',
@@ -2686,6 +2483,27 @@ export const conditionals = {
       max: 2,
     },
   },
+  Sparkle: {
+    boolConditional: {
+      sheet: 'Sparkle',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'Sparkle',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Sparkle',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   SubscribeForMore: {
     boolConditional: {
       sheet: 'SubscribeForMore',
@@ -2700,6 +2518,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'SubscribeForMore',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Sushang: {
+    boolConditional: {
+      sheet: 'Sushang',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'Sushang',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Sushang',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -2885,6 +2724,27 @@ export const conditionals = {
       max: 2,
     },
   },
+  Tingyun: {
+    boolConditional: {
+      sheet: 'Tingyun',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'Tingyun',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Tingyun',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   TodayIsAnotherPeacefulDay: {
     boolConditional: {
       sheet: 'TodayIsAnotherPeacefulDay',
@@ -2899,6 +2759,27 @@ export const conditionals = {
     },
     numConditional: {
       sheet: 'TodayIsAnotherPeacefulDay',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  TopazAndNumby: {
+    boolConditional: {
+      sheet: 'TopazAndNumby',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'TopazAndNumby',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'TopazAndNumby',
       name: 'numConditional',
       type: 'num',
       int_only: true,
@@ -3028,6 +2909,23 @@ export const conditionals = {
       max: 2,
     },
   },
+  Welt: {
+    boolConditional: { sheet: 'Welt', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Welt',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Welt',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   WhatIsReal: {
     boolConditional: {
       sheet: 'WhatIsReal',
@@ -3112,6 +3010,44 @@ export const conditionals = {
       max: 2,
     },
   },
+  Xueyi: {
+    boolConditional: { sheet: 'Xueyi', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Xueyi',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Xueyi',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Yanqing: {
+    boolConditional: {
+      sheet: 'Yanqing',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'Yanqing',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Yanqing',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
   YetHopeIsPriceless: {
     boolConditional: {
       sheet: 'YetHopeIsPriceless',
@@ -3133,20 +3069,43 @@ export const conditionals = {
       max: 2,
     },
   },
-}
+  Yukong: {
+    boolConditional: { sheet: 'Yukong', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Yukong',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Yukong',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+  Yunli: {
+    boolConditional: { sheet: 'Yunli', name: 'boolConditional', type: 'bool' },
+    listConditional: {
+      sheet: 'Yunli',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'Yunli',
+      name: 'numConditional',
+      type: 'num',
+      int_only: true,
+      min: 0,
+      max: 2,
+    },
+  },
+} as const
 export const formulas = {
   Acheron: {
-    breakDmg: {
-      sheet: 'Acheron',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Acheron',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Acheron',
       name: 'basicDmg_0',
@@ -3156,21 +3115,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Acheron',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Acheron',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Acheron',
+        name: 'breakDmg',
       },
     },
   },
   Argenti: {
-    breakDmg: {
-      sheet: 'Argenti',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Argenti',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Argenti',
       name: 'basicDmg_0',
@@ -3180,21 +3139,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Argenti',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Argenti',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Argenti',
+        name: 'breakDmg',
       },
     },
   },
   Arlan: {
-    breakDmg: {
-      sheet: 'Arlan',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Arlan',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Arlan',
       name: 'basicDmg_0',
@@ -3204,21 +3163,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Arlan',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Arlan',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Arlan',
+        name: 'breakDmg',
       },
     },
   },
   Asta: {
-    breakDmg: {
-      sheet: 'Asta',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Asta',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Asta',
       name: 'basicDmg_0',
@@ -3228,21 +3187,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Asta',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Asta',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Asta',
+        name: 'breakDmg',
       },
     },
   },
   Aventurine: {
-    breakDmg: {
-      sheet: 'Aventurine',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Aventurine',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Aventurine',
       name: 'basicDmg_0',
@@ -3252,21 +3211,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Aventurine',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Aventurine',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Aventurine',
+        name: 'breakDmg',
       },
     },
   },
   Bailu: {
-    breakDmg: {
-      sheet: 'Bailu',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Bailu',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Bailu',
       name: 'basicDmg_0',
@@ -3276,21 +3235,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Bailu',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Bailu',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Bailu',
+        name: 'breakDmg',
       },
     },
   },
   BlackSwan: {
-    breakDmg: {
-      sheet: 'BlackSwan',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'BlackSwan',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'BlackSwan',
       name: 'basicDmg_0',
@@ -3300,21 +3259,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'BlackSwan',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'BlackSwan',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'BlackSwan',
+        name: 'breakDmg',
       },
     },
   },
   Blade: {
-    breakDmg: {
-      sheet: 'Blade',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Blade',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Blade',
       name: 'basicDmg_0',
@@ -3324,21 +3283,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Blade',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Blade',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Blade',
+        name: 'breakDmg',
       },
     },
   },
   Boothill: {
-    breakDmg: {
-      sheet: 'Boothill',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Boothill',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Boothill',
       name: 'basicDmg_0',
@@ -3348,21 +3307,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Boothill',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Boothill',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Boothill',
+        name: 'breakDmg',
       },
     },
   },
   Bronya: {
-    breakDmg: {
-      sheet: 'Bronya',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Bronya',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Bronya',
       name: 'basicDmg_0',
@@ -3372,21 +3331,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Bronya',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Bronya',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Bronya',
+        name: 'breakDmg',
       },
     },
   },
   Clara: {
-    breakDmg: {
-      sheet: 'Clara',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Clara',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Clara',
       name: 'basicDmg_0',
@@ -3396,21 +3355,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Clara',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Clara',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Clara',
+        name: 'breakDmg',
       },
     },
   },
   DanHeng: {
-    breakDmg: {
-      sheet: 'DanHeng',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'DanHeng',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'DanHeng',
       name: 'basicDmg_0',
@@ -3420,21 +3379,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'DanHeng',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'DanHeng',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'DanHeng',
+        name: 'breakDmg',
       },
     },
   },
   DanHengImbibitorLunae: {
-    breakDmg: {
-      sheet: 'DanHengImbibitorLunae',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'DanHengImbibitorLunae',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'DanHengImbibitorLunae',
       name: 'basicDmg_0',
@@ -3444,21 +3403,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'DanHengImbibitorLunae',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'DanHengImbibitorLunae',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'DanHengImbibitorLunae',
+        name: 'breakDmg',
       },
     },
   },
   DrRatio: {
-    breakDmg: {
-      sheet: 'DrRatio',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'DrRatio',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'DrRatio',
       name: 'basicDmg_0',
@@ -3468,21 +3427,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'DrRatio',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'DrRatio',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'DrRatio',
+        name: 'breakDmg',
       },
     },
   },
   Firefly: {
-    breakDmg: {
-      sheet: 'Firefly',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Firefly',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Firefly',
       name: 'basicDmg_0',
@@ -3492,21 +3451,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Firefly',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Firefly',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Firefly',
+        name: 'breakDmg',
       },
     },
   },
   FuXuan: {
-    breakDmg: {
-      sheet: 'FuXuan',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'FuXuan',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'FuXuan',
       name: 'basicDmg_0',
@@ -3516,21 +3475,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'FuXuan',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'FuXuan',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'FuXuan',
+        name: 'breakDmg',
       },
     },
   },
   Gallagher: {
-    breakDmg: {
-      sheet: 'Gallagher',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Gallagher',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Gallagher',
       name: 'basicDmg_0',
@@ -3540,21 +3499,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Gallagher',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Gallagher',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Gallagher',
+        name: 'breakDmg',
       },
     },
   },
   Gepard: {
-    breakDmg: {
-      sheet: 'Gepard',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Gepard',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Gepard',
       name: 'basicDmg_0',
@@ -3564,21 +3523,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Gepard',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Gepard',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Gepard',
+        name: 'breakDmg',
       },
     },
   },
   Guinaifen: {
-    breakDmg: {
-      sheet: 'Guinaifen',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Guinaifen',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Guinaifen',
       name: 'basicDmg_0',
@@ -3588,21 +3547,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Guinaifen',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Guinaifen',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Guinaifen',
+        name: 'breakDmg',
       },
     },
   },
   Hanya: {
-    breakDmg: {
-      sheet: 'Hanya',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Hanya',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Hanya',
       name: 'basicDmg_0',
@@ -3612,21 +3571,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Hanya',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Hanya',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Hanya',
+        name: 'breakDmg',
       },
     },
   },
   Herta: {
-    breakDmg: {
-      sheet: 'Herta',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Herta',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Herta',
       name: 'basicDmg_0',
@@ -3636,21 +3595,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Herta',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Herta',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Herta',
+        name: 'breakDmg',
       },
     },
   },
   Himeko: {
-    breakDmg: {
-      sheet: 'Himeko',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Himeko',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Himeko',
       name: 'basicDmg_0',
@@ -3660,21 +3619,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Himeko',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Himeko',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Himeko',
+        name: 'breakDmg',
       },
     },
   },
   Hook: {
-    breakDmg: {
-      sheet: 'Hook',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Hook',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Hook',
       name: 'basicDmg_0',
@@ -3684,21 +3643,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Hook',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Hook',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Hook',
+        name: 'breakDmg',
       },
     },
   },
   Huohuo: {
-    breakDmg: {
-      sheet: 'Huohuo',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Huohuo',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Huohuo',
       name: 'basicDmg_0',
@@ -3708,21 +3667,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Huohuo',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Huohuo',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Huohuo',
+        name: 'breakDmg',
       },
     },
   },
   Jade: {
-    breakDmg: {
-      sheet: 'Jade',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Jade',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Jade',
       name: 'basicDmg_0',
@@ -3732,21 +3691,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Jade',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Jade',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Jade',
+        name: 'breakDmg',
       },
     },
   },
   JingYuan: {
-    breakDmg: {
-      sheet: 'JingYuan',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'JingYuan',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'JingYuan',
       name: 'basicDmg_0',
@@ -3756,21 +3715,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'JingYuan',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'JingYuan',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'JingYuan',
+        name: 'breakDmg',
       },
     },
   },
   Jingliu: {
-    breakDmg: {
-      sheet: 'Jingliu',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Jingliu',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Jingliu',
       name: 'basicDmg_0',
@@ -3780,21 +3739,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Jingliu',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Jingliu',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Jingliu',
+        name: 'breakDmg',
       },
     },
   },
   Kafka: {
-    breakDmg: {
-      sheet: 'Kafka',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Kafka',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Kafka',
       name: 'basicDmg_0',
@@ -3804,21 +3763,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Kafka',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Kafka',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Kafka',
+        name: 'breakDmg',
       },
     },
   },
   Luka: {
-    breakDmg: {
-      sheet: 'Luka',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Luka',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Luka',
       name: 'basicDmg_0',
@@ -3828,21 +3787,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Luka',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Luka',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Luka',
+        name: 'breakDmg',
       },
     },
   },
   Luocha: {
-    breakDmg: {
-      sheet: 'Luocha',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Luocha',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Luocha',
       name: 'basicDmg_0',
@@ -3852,21 +3811,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Luocha',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Luocha',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Luocha',
+        name: 'breakDmg',
       },
     },
   },
   Lynx: {
-    breakDmg: {
-      sheet: 'Lynx',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Lynx',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Lynx',
       name: 'basicDmg_0',
@@ -3876,10 +3835,32 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Lynx',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Lynx',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Lynx',
+        name: 'breakDmg',
       },
     },
   },
   March7th: {
+    basicDmg_0: {
+      sheet: 'March7th',
+      name: 'basicDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'March7th',
+        name: 'basicDmg_0',
+      },
+    },
     breakDmg: {
       sheet: 'March7th',
       name: 'breakDmg',
@@ -3891,15 +3872,26 @@ export const formulas = {
         name: 'breakDmg',
       },
     },
-    basicDmg_0: {
+    e1Shield: {
       sheet: 'March7th',
-      name: 'basicDmg_0',
+      name: 'e1Shield',
       tag: {
         et: 'own',
         qt: 'formula',
-        q: 'dmg',
+        q: 'shield',
         sheet: 'March7th',
-        name: 'basicDmg_0',
+        name: 'e1Shield',
+      },
+    },
+    e6Heal: {
+      sheet: 'March7th',
+      name: 'e6Heal',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'March7th',
+        name: 'e6Heal',
       },
     },
     skillShield: {
@@ -3911,6 +3903,28 @@ export const formulas = {
         q: 'shield',
         sheet: 'March7th',
         name: 'skillShield',
+      },
+    },
+    talentDmg_0: {
+      sheet: 'March7th',
+      name: 'talentDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'March7th',
+        name: 'talentDmg_0',
+      },
+    },
+    techniqueFreeze_0: {
+      sheet: 'March7th',
+      name: 'techniqueFreeze_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'March7th',
+        name: 'techniqueFreeze_0',
       },
     },
     ultDmg_0: {
@@ -3968,63 +3982,8 @@ export const formulas = {
         name: 'ultFreeze_0',
       },
     },
-    talentDmg_0: {
-      sheet: 'March7th',
-      name: 'talentDmg_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'March7th',
-        name: 'talentDmg_0',
-      },
-    },
-    techniqueFreeze_0: {
-      sheet: 'March7th',
-      name: 'techniqueFreeze_0',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'dmg',
-        sheet: 'March7th',
-        name: 'techniqueFreeze_0',
-      },
-    },
-    e1Shield: {
-      sheet: 'March7th',
-      name: 'e1Shield',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'shield',
-        sheet: 'March7th',
-        name: 'e1Shield',
-      },
-    },
-    e6Heal: {
-      sheet: 'March7th',
-      name: 'e6Heal',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'heal',
-        sheet: 'March7th',
-        name: 'e6Heal',
-      },
-    },
   },
   March7thTheHunt: {
-    breakDmg: {
-      sheet: 'March7thTheHunt',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'March7thTheHunt',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'March7thTheHunt',
       name: 'basicDmg_0',
@@ -4034,21 +3993,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'March7thTheHunt',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'March7thTheHunt',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'March7thTheHunt',
+        name: 'breakDmg',
       },
     },
   },
   Misha: {
-    breakDmg: {
-      sheet: 'Misha',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Misha',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Misha',
       name: 'basicDmg_0',
@@ -4058,21 +4017,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Misha',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Misha',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Misha',
+        name: 'breakDmg',
       },
     },
   },
   Natasha: {
-    breakDmg: {
-      sheet: 'Natasha',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Natasha',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Natasha',
       name: 'basicDmg_0',
@@ -4082,21 +4041,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Natasha',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Natasha',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Natasha',
+        name: 'breakDmg',
       },
     },
   },
   Pela: {
-    breakDmg: {
-      sheet: 'Pela',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Pela',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Pela',
       name: 'basicDmg_0',
@@ -4106,21 +4065,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Pela',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Pela',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Pela',
+        name: 'breakDmg',
       },
     },
   },
   Qingque: {
-    breakDmg: {
-      sheet: 'Qingque',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Qingque',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Qingque',
       name: 'basicDmg_0',
@@ -4130,21 +4089,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Qingque',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Qingque',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Qingque',
+        name: 'breakDmg',
       },
     },
   },
   Robin: {
-    breakDmg: {
-      sheet: 'Robin',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Robin',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Robin',
       name: 'basicDmg_0',
@@ -4154,21 +4113,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Robin',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Robin',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Robin',
+        name: 'breakDmg',
       },
     },
   },
   RuanMei: {
-    breakDmg: {
-      sheet: 'RuanMei',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'RuanMei',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'RuanMei',
       name: 'basicDmg_0',
@@ -4180,15 +4139,15 @@ export const formulas = {
         name: 'basicDmg_0',
       },
     },
-    zoneBreakDmg: {
+    breakDmg: {
       sheet: 'RuanMei',
-      name: 'zoneBreakDmg',
+      name: 'breakDmg',
       tag: {
         et: 'own',
         qt: 'formula',
         q: 'breakDmg',
         sheet: 'RuanMei',
-        name: 'zoneBreakDmg',
+        name: 'breakDmg',
       },
     },
     talentBreakDmg: {
@@ -4213,19 +4172,19 @@ export const formulas = {
         name: 'techBreakDmg',
       },
     },
-  },
-  Sampo: {
-    breakDmg: {
-      sheet: 'Sampo',
-      name: 'breakDmg',
+    zoneBreakDmg: {
+      sheet: 'RuanMei',
+      name: 'zoneBreakDmg',
       tag: {
         et: 'own',
         qt: 'formula',
         q: 'breakDmg',
-        sheet: 'Sampo',
-        name: 'breakDmg',
+        sheet: 'RuanMei',
+        name: 'zoneBreakDmg',
       },
     },
+  },
+  Sampo: {
     basicDmg_0: {
       sheet: 'Sampo',
       name: 'basicDmg_0',
@@ -4235,21 +4194,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Sampo',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Sampo',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Sampo',
+        name: 'breakDmg',
       },
     },
   },
   Seele: {
-    breakDmg: {
-      sheet: 'Seele',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Seele',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Seele',
       name: 'basicDmg_0',
@@ -4259,21 +4218,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Seele',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Seele',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Seele',
+        name: 'breakDmg',
       },
     },
   },
   Serval: {
-    breakDmg: {
-      sheet: 'Serval',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Serval',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Serval',
       name: 'basicDmg_0',
@@ -4283,21 +4242,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Serval',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Serval',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Serval',
+        name: 'breakDmg',
       },
     },
   },
   SilverWolf: {
-    breakDmg: {
-      sheet: 'SilverWolf',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'SilverWolf',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'SilverWolf',
       name: 'basicDmg_0',
@@ -4307,21 +4266,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'SilverWolf',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'SilverWolf',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'SilverWolf',
+        name: 'breakDmg',
       },
     },
   },
   Sparkle: {
-    breakDmg: {
-      sheet: 'Sparkle',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Sparkle',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Sparkle',
       name: 'basicDmg_0',
@@ -4331,21 +4290,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Sparkle',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Sparkle',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Sparkle',
+        name: 'breakDmg',
       },
     },
   },
   Sushang: {
-    breakDmg: {
-      sheet: 'Sushang',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Sushang',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Sushang',
       name: 'basicDmg_0',
@@ -4355,21 +4314,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Sushang',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Sushang',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Sushang',
+        name: 'breakDmg',
       },
     },
   },
   Tingyun: {
-    breakDmg: {
-      sheet: 'Tingyun',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Tingyun',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Tingyun',
       name: 'basicDmg_0',
@@ -4379,21 +4338,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Tingyun',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Tingyun',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Tingyun',
+        name: 'breakDmg',
       },
     },
   },
   TopazAndNumby: {
-    breakDmg: {
-      sheet: 'TopazAndNumby',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'TopazAndNumby',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'TopazAndNumby',
       name: 'basicDmg_0',
@@ -4403,21 +4362,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'TopazAndNumby',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'TopazAndNumby',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'TopazAndNumby',
+        name: 'breakDmg',
       },
     },
   },
   Welt: {
-    breakDmg: {
-      sheet: 'Welt',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Welt',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Welt',
       name: 'basicDmg_0',
@@ -4427,21 +4386,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Welt',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Welt',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Welt',
+        name: 'breakDmg',
       },
     },
   },
   Xueyi: {
-    breakDmg: {
-      sheet: 'Xueyi',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Xueyi',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Xueyi',
       name: 'basicDmg_0',
@@ -4451,21 +4410,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Xueyi',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Xueyi',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Xueyi',
+        name: 'breakDmg',
       },
     },
   },
   Yanqing: {
-    breakDmg: {
-      sheet: 'Yanqing',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Yanqing',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Yanqing',
       name: 'basicDmg_0',
@@ -4475,21 +4434,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Yanqing',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Yanqing',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Yanqing',
+        name: 'breakDmg',
       },
     },
   },
   Yukong: {
-    breakDmg: {
-      sheet: 'Yukong',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Yukong',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Yukong',
       name: 'basicDmg_0',
@@ -4499,21 +4458,21 @@ export const formulas = {
         q: 'dmg',
         sheet: 'Yukong',
         name: 'basicDmg_0',
+      },
+    },
+    breakDmg: {
+      sheet: 'Yukong',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Yukong',
+        name: 'breakDmg',
       },
     },
   },
   Yunli: {
-    breakDmg: {
-      sheet: 'Yunli',
-      name: 'breakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'Yunli',
-        name: 'breakDmg',
-      },
-    },
     basicDmg_0: {
       sheet: 'Yunli',
       name: 'basicDmg_0',
@@ -4525,5 +4484,16 @@ export const formulas = {
         name: 'basicDmg_0',
       },
     },
+    breakDmg: {
+      sheet: 'Yunli',
+      name: 'breakDmg',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'breakDmg',
+        sheet: 'Yunli',
+        name: 'breakDmg',
+      },
+    },
   },
-}
+} as const

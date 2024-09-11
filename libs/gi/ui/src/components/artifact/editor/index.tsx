@@ -450,7 +450,7 @@ export function ArtifactEditor({
               <Box component="div" display="flex">
                 <CustomNumberTextField
                   id="filled-basic"
-                  label="Level"
+                  label={t`editor.level`}
                   variant="filled"
                   sx={{ flexShrink: 1, flexGrow: 1, mr: 1, my: 0 }}
                   margin="dense"
@@ -617,7 +617,7 @@ export function ArtifactEditor({
                               component="span"
                               startIcon={<PhotoCamera />}
                             >
-                              Upload Screenshot (or Ctrl-V)
+                              {t`editor.uploadBtn`}
                             </Button>
                           </label>
                         </Grid>

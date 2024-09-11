@@ -31,5 +31,7 @@
     "blast": "Blast",
     "support": "Support",
     "impair": "Impair"
-  }
+  },
+  "eidolonLvl": "Level Eidolon:",
+  "lvl": "Lv."
 }

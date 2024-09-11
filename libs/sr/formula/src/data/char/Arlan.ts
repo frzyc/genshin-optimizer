@@ -51,6 +51,7 @@ const { char } = own
 const { boolConditional } = allBoolConditionals(key)
 const { listConditional } = allListConditionals(key, ['val1', 'val2'])
 const { numConditional } = allNumConditionals(key, true, 0, 2)
+const { numConditionalNoMax } = allNumConditionals(key, true, 0)
 
 const sheet = register(
   key,
@@ -64,6 +65,7 @@ const sheet = register(
   // Buffs
   ownBuff.premod.dmg_.add(cmpGE(char.eidolon, 6, boolConditional.ifOn(1))),
   teamBuff.premod.dmg_.add(listConditional.map({ val1: 1, val2: 2 })),
-  enemyDebuff.common.defIgn_.add(numConditional)
+  enemyDebuff.common.defIgn_.add(numConditional),
+  enemyDebuff.common.defIgn_.add(numConditionalNoMax)
 )
 export default sheet

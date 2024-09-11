@@ -150,10 +150,10 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
     skillBoost: skillC3,
     burstBoost: burstC5,
     skill_dmgInc: a4_skill_dmgInc,
+    geo_dmg_: a1NightsoulBurst_geo_dmg_,
   },
   teamBuff: {
     premod: {
-      geo_dmg_: a1NightsoulBurst_geo_dmg_,
       def_: c4Opponents_def_,
     },
   },
@@ -289,7 +289,6 @@ const sheet: TalentSheet = {
     ct.condTem('passive1', {
       value: condA1NightsoulBurst,
       path: condA1NightsoulBurstPath,
-      teamBuff: true,
       name: st('nightsoul.partyBurst'),
       states: {
         on: {

@@ -31,5 +31,7 @@
     "blast": "확산",
     "support": "서포트",
     "impair": "방해"
-  }
+  },
+  "eidolonLvl": "성혼 등급:{SPACE}",
+  "lvl": "Lv."
 }
