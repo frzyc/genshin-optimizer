@@ -71,6 +71,12 @@ export default function TeammateDisplay({ tab }: { tab?: string }) {
                               debug for {name}
                             </AccordionSummary>
                             <AccordionDetails>
+                              conds:{' '}
+                              {JSON.stringify(
+                                computed.meta.conds,
+                                undefined,
+                                2
+                              )}
                               <Typography component="pre">
                                 {JSON.stringify(
                                   calc.toDebug().compute(read),
