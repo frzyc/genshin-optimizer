@@ -17,6 +17,7 @@ import {
   own,
   ownBuff,
   register,
+  registerBuff,
   teamBuff,
 } from '../util'
 import { dmg, entriesForChar, getBaseTag, scalingParams } from './util'
@@ -124,36 +125,65 @@ const sheet = register(
   ),
 
   // Buffs
-  teamBuff.premod.dmg_.add(
-    skillOvertone.ifOn(subscript(char.skill, dm.skill.dmg_))
+  ...registerBuff(
+    'skillOvertone_dmg_',
+    teamBuff.premod.dmg_.add(
+      skillOvertone.ifOn(subscript(char.skill, dm.skill.dmg_))
+    )
   ),
-  teamBuff.premod.weakness_.add(skillOvertone.ifOn(dm.skill.weakness_)),
-  teamBuff.premod.resPen_.add(
-    ultZone.ifOn(subscript(char.ult, dm.ult.resPen_))
+  ...registerBuff(
+    'skillOvertone_weakness_',
+    teamBuff.premod.weakness_.add(skillOvertone.ifOn(dm.skill.weakness_))
   ),
-  notOwnBuff.premod.spd_.add(subscript(char.talent, dm.talent.spd_)),
-  teamBuff.premod.brEff_.add(cmpEq(char.bonusAbility1, 1, dm.b1.break_)),
-  teamBuff.premod.dmg_.add(
-    cmpEq(
-      char.bonusAbility3,
-      1,
-      skillOvertone.ifOn(
-        max(
-          // (brEff_ - breakThreshold) / breakPer * dmgPer
-          prod(
-            sum(own.final.brEff_, -dm.b3.breakThreshold),
-            1 / dm.b3.breakPer,
-            dm.b3.dmg_per
-          ),
-          dm.b3.max_dmg_
+  ...registerBuff(
+    'ultZone_resPen_',
+    teamBuff.premod.resPen_.add(
+      ultZone.ifOn(subscript(char.ult, dm.ult.resPen_))
+    )
+  ),
+  ...registerBuff(
+    'talent_spd_',
+    notOwnBuff.premod.spd_.add(subscript(char.talent, dm.talent.spd_))
+  ),
+  ...registerBuff(
+    'ba1_break_',
+    teamBuff.premod.brEff_.add(cmpEq(char.bonusAbility1, 1, dm.b1.break_))
+  ),
+  ...registerBuff(
+    'ba3_brEff_',
+    teamBuff.premod.dmg_.add(
+      cmpEq(
+        char.bonusAbility3,
+        1,
+        skillOvertone.ifOn(
+          max(
+            // (brEff_ - breakThreshold) / breakPer * dmgPer
+            prod(
+              sum(own.final.brEff_, -dm.b3.breakThreshold),
+              1 / dm.b3.breakPer,
+              dm.b3.dmg_per
+            ),
+            dm.b3.max_dmg_
+          )
         )
       )
     )
   ),
-  enemyDebuff.common.defIgn_.add(cmpGE(char.eidolon, 1, dm.e1.defIgn_)),
-  teamBuff.premod.atk_.add(
-    cmpGE(char.eidolon, 2, cmpEq(enemy.common.isBroken, 1, dm.e2.atk_))
+  ...registerBuff(
+    'e1_defIgn_',
+    enemyDebuff.common.defIgn_.add(cmpGE(char.eidolon, 1, dm.e1.defIgn_))
   ),
-  ownBuff.premod.brEff_.add(cmpEq(char.eidolon, 4, e4Broken.ifOn(dm.e4.break_)))
+  ...registerBuff(
+    'e2_atk_',
+    teamBuff.premod.atk_.add(
+      cmpGE(char.eidolon, 2, cmpEq(enemy.common.isBroken, 1, dm.e2.atk_))
+    )
+  ),
+  ...registerBuff(
+    'e4_break_',
+    ownBuff.premod.brEff_.add(
+      cmpEq(char.eidolon, 4, e4Broken.ifOn(dm.e4.break_))
+    )
+  )
 )
 export default sheet

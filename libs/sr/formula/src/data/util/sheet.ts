@@ -37,6 +37,33 @@ export function register(
   )
 }
 
+/**
+ * Registers a buff so it shows up in the listings.
+ * Example usage: `register(... , ...registerBuff('ba3_atk_', own.premod.atk_.add(dm.ba3.atk_)))`
+ * @param name Unqiue name of buff
+ * @param entry Buff to register
+ * @param cond Hide this buff behind this check
+ * @param team Add to team formula listings if true
+ * @returns Listing components to register the buff + the buff itself so it can be passed to `register`.
+ */
+export function registerBuff(
+  name: string,
+  entry: TagMapNodeEntry,
+  cond: string | StrNode = 'unique',
+  team = false
+): TagMapNodeEntries {
+  reader.name(name) // register name:<name>
+  const listing = (team ? teamBuff : ownBuff).listing.formulas
+  return [
+    // Link listing to a tag of { name: name, q: 'value' }
+    listing.add(listingItem(reader.withTag({ name, q: 'value' }), cond)),
+    // Create a tag of { name: name, q: 'value' } with value equal to the buff provided
+    { tag: { name, q: 'value' }, value: entry.value },
+    // Return the buff itself so it is automatically registered/added
+    entry,
+  ]
+}
+
 function registerFormula(
   name: string,
   team: boolean | undefined,
