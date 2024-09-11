@@ -53,7 +53,7 @@ export class Read extends TypedRead<Tag> {
     return super.with('sheet', sheet)
   }
 
-  add(value: number | string | AnyNode | ReRead): TagMapNodeEntry {
+  add(value: number | string | AnyNode): TagMapNodeEntry {
     return super.toEntry(typeof value === 'object' ? value : constant(value))
   }
   addOnce(sheet: Sheet, value: number | NumNode): TagMapNodeEntries {

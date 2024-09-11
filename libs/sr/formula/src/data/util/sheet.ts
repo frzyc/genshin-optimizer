@@ -58,7 +58,7 @@ export function registerBuff(
     // Link listing to a tag of { name: name, q: 'value' }
     listing.add(listingItem(namedReader, cond)),
     // Create a tag of { name: name, q: 'value' } with value equal to the buff provided
-    namedReader.add(entry.value),
+    namedReader.toEntry(entry.value),
     // Return the buff itself so it is automatically registered/added
     entry,
   ]
