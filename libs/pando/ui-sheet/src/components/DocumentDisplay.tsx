@@ -1,12 +1,33 @@
 'use client'
+import type {
+  IListConditionalData,
+  INumConditionalData,
+} from '@genshin-optimizer/common/formula'
 import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
-import { CardHeaderCustom, CardThemed } from '@genshin-optimizer/common/ui'
+import {
+  CardHeaderCustom,
+  CardThemed,
+  DropdownButton,
+  NumberInputLazy,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import { evalIfFunc } from '@genshin-optimizer/common/util'
+import type { Calculator } from '@genshin-optimizer/pando/engine'
 import { read } from '@genshin-optimizer/pando/engine'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
-import { Box, Button, Collapse, Divider } from '@mui/material'
+import type { SliderProps } from '@mui/material'
+import {
+  Box,
+  Button,
+  Collapse,
+  Divider,
+  MenuItem,
+  Slider,
+  Typography,
+} from '@mui/material'
+import type { ReactNode } from 'react'
 import { useContext, useState } from 'react'
 import { CalcContext } from '../context'
 import type {
@@ -191,24 +212,35 @@ function ConditionalSelector({
           setConditional={setConditional}
         />
       )
-    //TODO: case 'list' and 'num'
+    case 'list':
+      return (
+        <ListConditional
+          conditional={conditional}
+          setConditional={setConditional}
+        />
+      )
+    case 'num':
+      return (
+        <NumConditional
+          conditional={conditional}
+          setConditional={setConditional}
+        />
+      )
     default:
       return null
   }
 }
-function BoolConditional({
-  conditional,
-  setConditional,
-}: {
-  conditional: Conditional
-  setConditional: SetConditionalFunc
-}) {
-  const calc = useContext(CalcContext)
-  const { label, badge } = conditional
-  const { sheet: sheetKey, name: condKey } = conditional.metadata
-  if (!sheetKey || !condKey) throw new Error('metadata missing')
-  const srcKey = 'all'
-  const conditionalValue = calc?.compute(
+function Badge({ children }: { children: ReactNode }) {
+  if (!children) return null
+  return <SqBadge sx={{ ml: 1 }}>{children}</SqBadge>
+}
+function getConditionalValue(
+  calc: Calculator,
+  sheetKey: string,
+  condKey: string,
+  srcKey: string
+) {
+  return calc.compute(
     read(
       {
         et: 'own',
@@ -221,6 +253,23 @@ function BoolConditional({
       'max'
     )
   ).val
+}
+function BoolConditional({
+  conditional,
+  setConditional,
+}: {
+  conditional: Conditional
+  setConditional: SetConditionalFunc
+}) {
+  const calc = useContext(CalcContext)
+  const { label, badge } = conditional
+  const { sheet: sheetKey, name: condKey } = conditional.metadata
+  if (!sheetKey || !condKey) throw new Error('metadata missing')
+  if (!calc) return null
+  const srcKey = 'all'
+  const conditionalValue = getConditionalValue(calc, sheetKey, condKey, srcKey)
+  const labelEle = evalIfFunc(label, calc, conditionalValue)
+  const badgeEle = evalIfFunc(badge, calc, conditionalValue)
   return (
     <Button
       fullWidth
@@ -235,7 +284,126 @@ function BoolConditional({
         conditionalValue ? <CheckBoxIcon /> : <CheckBoxOutlineBlankIcon />
       }
     >
-      {label} {badge}
+      {labelEle} <Badge>{badgeEle}</Badge>
     </Button>
+  )
+}
+function ListConditional({
+  conditional,
+  setConditional,
+}: {
+  conditional: Conditional
+  setConditional: SetConditionalFunc
+}) {
+  const calc = useContext(CalcContext)
+  const { label, badge } = conditional
+  const {
+    sheet: sheetKey,
+    name: condKey,
+    list,
+  } = conditional.metadata as IListConditionalData
+  if (!sheetKey || !condKey) throw new Error('metadata missing')
+  if (!calc) return null
+  const srcKey = 'all'
+
+  const conditionalValue = getConditionalValue(calc, sheetKey, condKey, srcKey)
+
+  return (
+    <DropdownButton
+      fullWidth
+      size="small"
+      sx={{ borderRadius: 0 }}
+      color={conditionalValue ? 'success' : 'primary'}
+      title={
+        <>
+          {evalIfFunc(label, calc, conditionalValue)}{' '}
+          <Badge>{evalIfFunc(badge, calc, conditionalValue)}</Badge>
+        </>
+      }
+      // disabled={disabled}
+    >
+      <Divider />
+      {['0', ...list].map((val, ind) => (
+        <MenuItem
+          key={val}
+          onClick={() => setConditional(srcKey, sheetKey, condKey, ind)}
+          selected={conditionalValue === ind}
+          disabled={conditionalValue === ind}
+        >
+          {evalIfFunc(label, calc, ind)}
+          <Badge>{evalIfFunc(badge, calc, ind)}</Badge>
+        </MenuItem>
+      ))}
+    </DropdownButton>
+  )
+}
+
+function NumConditional({
+  conditional,
+  setConditional,
+}: {
+  conditional: Conditional
+  setConditional: SetConditionalFunc
+}) {
+  const calc = useContext(CalcContext)
+  const { label, badge } = conditional
+  const {
+    sheet: sheetKey,
+    name: condKey,
+    int_only,
+    min,
+    max,
+  } = conditional.metadata as INumConditionalData
+  if (!sheetKey || !condKey) throw new Error('metadata missing')
+  if (!calc) return null
+  const srcKey = 'all'
+
+  const conditionalValue = getConditionalValue(calc, sheetKey, condKey, srcKey)
+  const labelEle = evalIfFunc(label, calc, conditionalValue)
+  const badgeEle = evalIfFunc(badge, calc, conditionalValue)
+  if (typeof min === 'undefined' || typeof max === 'undefined')
+    return (
+      <NumberInputLazy
+        fullWidth
+        float={!int_only}
+        inputProps={{ min, max }}
+        InputProps={{
+          startAdornment: labelEle && <Box sx={{ mr: 1 }}>{labelEle}</Box>,
+          endAdornment: (
+            <Badge>{evalIfFunc(badge, calc, conditionalValue)}</Badge>
+          ),
+        }}
+        value={conditionalValue}
+        onChange={(newVal) => setConditional(srcKey, sheetKey, condKey, newVal)}
+      />
+    )
+  return (
+    <Box sx={{ px: 2 }}>
+      {(labelEle || badge) && (
+        <Typography display="flex" justifyContent="space-between">
+          {labelEle} {<Badge>{badgeEle}</Badge>}
+        </Typography>
+      )}
+      <CondSlider
+        max={max}
+        min={min}
+        value={conditionalValue}
+        // onChange={(_e, v) => setInnerValue(v as number)}
+        onChangeCommitted={(_e, v) =>
+          setConditional(srcKey, sheetKey, condKey, v as number)
+        }
+        valueLabelDisplay="auto"
+      />
+    </Box>
+  )
+}
+function CondSlider(props: Omit<SliderProps, 'onChange'>) {
+  const [innerValue, setInnerValue] = useState(props.value)
+  return (
+    <Slider
+      {...props}
+      onChange={(_e, v) => setInnerValue(v as number)}
+      value={innerValue}
+    />
   )
 }

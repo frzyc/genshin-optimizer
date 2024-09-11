@@ -1,7 +1,7 @@
 import type {
   ChatInputCommandInteraction,
   Message,
-  MessageInteraction,
+  MessageInteractionMetadata,
   PartialMessage,
   PartialUser,
   PermissionsBitField,
@@ -26,7 +26,10 @@ export default {
   },
 
   //true if user triggered the original interaction
-  sender(user: User | PartialUser, interaction: MessageInteraction | null) {
+  sender(
+    user: User | PartialUser,
+    interaction: MessageInteractionMetadata | null
+  ) {
     if (interaction) return user.id === interaction.user.id
     return false
   },

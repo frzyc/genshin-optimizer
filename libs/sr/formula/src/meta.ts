@@ -180,6 +180,13 @@ export const conditionals = {
       min: 0,
       max: 2,
     },
+    numConditionalNoMax: {
+      sheet: 'Arlan',
+      name: 'numConditionalNoMax',
+      type: 'num',
+      int_only: true,
+      min: 0,
+    },
   },
   Arrows: {
     boolConditional: { sheet: 'Arrows', name: 'boolConditional', type: 'bool' },
@@ -3096,7 +3103,7 @@ export const conditionals = {
       max: 2,
     },
   },
-} as cosnt
+} as const
 export const formulas = {
   Acheron: {
     basicDmg_0: {
@@ -4489,4 +4496,4 @@ export const formulas = {
       },
     },
   },
-} as cosnt
+} as const
