@@ -202,16 +202,17 @@ export function CharacterMultiSelectionModal({
 
   const { weaponType, element, sortType, ascending } = state
 
-  // TODO: Should ignore all selections when team is full
-  //       Should selected characters automatically be moved to the front of the list when the quick select UI is opened?
+  // TODO: Should selected characters automatically be moved to the front of the list when the quick select UI is opened?
   //       Check if new method of finding the first open slot in a team works correctly
   const onClick = (key: CharacterKey) => {
     const keySlotIndex = selectedCharacterKeys.indexOf(key)
+    const firstOpenIndex = selectedCharacterKeys.indexOf('')
+    // Check if four characters have already been selected
+    if (firstOpenIndex === -1) return
     if (keySlotIndex === -1)
     {
       // Selected character wasn't already previously selected, so add their key to
       // the first open slot in the array and remove the placeholder ''
-      const firstOpenIndex = selectedCharacterKeys.indexOf('')
       setSelectedCharacterKeys([
         ...selectedCharacterKeys.slice(0, firstOpenIndex),
         key,
@@ -330,7 +331,6 @@ export function CharacterMultiSelectionModal({
                   <SelectionCard
                     characterKey={characterKey}
                     onClick={() => onClick(characterKey)}
-                    isSelected={selectedCharacterKeys.indexOf(characterKey) !== -1}
                     selectedCharKeys={selectedCharacterKeys}
                   />
                 </Grid>
@@ -354,12 +354,10 @@ const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
 function SelectionCard({
   characterKey,
   onClick,
-  isSelected,
   selectedCharKeys,
 }: {
   characterKey: CharacterKey
   onClick: () => void
-  isSelected: boolean
   selectedCharKeys: (CharacterKey | '')[]
 }) {
   const { gender } = useDBMeta()
@@ -373,6 +371,8 @@ function SelectionCard({
   const { level = 1, ascension = 0, constellation = 0 } = character ?? {}
   const banner = characterAsset(characterKey, 'banner', gender)
   const rarity = getCharStat(characterKey).rarity
+
+  const isSelected = selectedCharKeys.indexOf(characterKey) !== -1
   return (
     <CustomTooltip
       enterDelay={300}
