@@ -52,8 +52,8 @@ export function registerBuff(
   cond: string | StrNode = 'unique',
   team = false
 ): TagMapNodeEntries {
-  // Remove unused tags. We cannot use `et:null` here because `namedReader` is
-  // also used as a `Tag` inside `namedReader`.
+  // Remove unused tags. We cannot use `sheet:null` here because
+  // `namedReader` is also used as a `Tag` inside `listingItem`.
   const { sheet: _sheet, ...tag } = entry.tag
   const namedReader = reader.withTag({ ...tag, et: 'display', name }) // register name:<name>
   const listing = (team ? teamBuff : ownBuff).listing.formulas
