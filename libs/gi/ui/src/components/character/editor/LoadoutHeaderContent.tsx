@@ -7,6 +7,7 @@ import PersonIcon from '@mui/icons-material/Person'
 import SettingsIcon from '@mui/icons-material/Settings'
 import { Box, CardContent, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
 import { OptimizationIcon } from '../../../consts'
 import { OptimizationTargetDisplay } from './OptimizationTargetDisplay'
 export function LoadoutHeaderContent({
@@ -18,6 +19,7 @@ export function LoadoutHeaderContent({
   showSetting?: boolean
   children?: ReactNode
 }) {
+  const { t } = useTranslation('page_team')
   const database = useDatabase()
   const {
     name,
@@ -46,26 +48,26 @@ export function LoadoutHeaderContent({
         <Box sx={{ display: 'flex', justifyItems: 'center', gap: 1 }}>
           <CheckroomIcon />
           <Typography>
-            Builds: <strong>{buildIds.length}</strong>
+            {t`loadoutHeader.builds`}<strong>{buildIds.length}</strong>
           </Typography>
         </Box>
         <Box sx={{ display: 'flex', justifyItems: 'center', gap: 1 }}>
           <CheckroomIcon />
           <Typography>
-            TC Builds: <strong>{buildTcIds.length}</strong>
+            {t`loadoutHeader.TcBuilds`}<strong>{buildTcIds.length}</strong>
           </Typography>
         </Box>
         <Box sx={{ display: 'flex', justifyItems: 'center', gap: 1 }}>
           <DashboardCustomizeIcon />
           <Typography>
-            Custom multi-targets: <strong>{customMultiTargets.length}</strong>
+            {t`loadoutHeader.mltTargets`}<strong>{customMultiTargets.length}</strong>
           </Typography>
         </Box>
       </Box>
       {optimizationTarget && (
         <Typography sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
           <OptimizationIcon />
-          <Box>Optimization Target:</Box>
+          <Box>{t`loadoutHeader.optTarget`}</Box>
           <OptimizationTargetDisplay
             customMultiTargets={customMultiTargets}
             optimizationTarget={optimizationTarget}

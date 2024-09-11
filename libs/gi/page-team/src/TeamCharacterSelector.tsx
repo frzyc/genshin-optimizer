@@ -203,7 +203,7 @@ export default function TeamCharacterSelector({
           icon={<GroupsIcon />}
           iconPosition="start"
           value={'team'}
-          label={'Team Settings'}
+          label={t`teamSettings.tab.team`}
           onClick={() => navigate(`/teams/${teamId}/`)}
         />
         {loadoutData.map((loadoutDatum, ind) => {
@@ -227,7 +227,7 @@ export default function TeamCharacterSelector({
                 teamCharKey ? (
                   <CharacterName characterKey={teamCharKey} gender={gender} />
                 ) : (
-                  `Character ${ind + 1}` // TODO: Translation
+                  t('teamSettings.tab.char', { count: ind + 1 })
                 )
               }
               onClick={() =>

@@ -98,6 +98,7 @@ export default function LoadoutSettingElement() {
 }
 
 function BuildManagementContent() {
+  const { t } = useTranslation('page_team')
   const database = useDatabase()
   const {
     teamCharId,
@@ -112,7 +113,7 @@ function BuildManagementContent() {
         title={
           <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
             <CheckroomIcon />
-            <span>Build Management</span>
+            <span>{t`loadoutSettings.management`}</span>
           </Box>
         }
       />
@@ -135,7 +136,7 @@ function BuildManagementContent() {
             size="small"
             onClick={() => database.teamChars.newBuild(teamCharId)}
           >
-            New Build
+            {t`loadoutSettings.newBuild`}
           </Button>
         </Box>
         <BuildInfoAlert />
@@ -156,7 +157,7 @@ function BuildManagementContent() {
         </Box>
 
         <Box sx={{ display: 'flex', gap: 2 }}>
-          <Typography variant="h6">TC Builds</Typography>
+          <Typography variant="h6">{t`loadoutSettings.tcBuild`}</Typography>
           <Button
             startIcon={<AddIcon />}
             color="info"
@@ -165,7 +166,7 @@ function BuildManagementContent() {
               database.teamChars.newBuildTcFromBuild(teamCharId, weaponTypeKey)
             }
           >
-            New TC Build
+            {t`loadoutSettings.newTcBuild`}
           </Button>
         </Box>
         <TCBuildInfoAlert />
@@ -215,6 +216,7 @@ function DetailStatButton({ buttonProps = {} }: { buttonProps?: ButtonProps }) {
   )
 }
 function FormulasButton({ buttonProps = {} }: { buttonProps?: ButtonProps }) {
+  const { t } = useTranslation('page_character')
   const { onModalOpen } = useContext(FormulaDataContext)
   return (
     <Button
@@ -223,7 +225,7 @@ function FormulasButton({ buttonProps = {} }: { buttonProps?: ButtonProps }) {
       onClick={onModalOpen}
       {...buttonProps}
     >
-      Show Formulas {'&'} Calcs
+      {t`showFormulas.button`}
     </Button>
   )
 }

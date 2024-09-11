@@ -20,6 +20,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import type { ButtonProps } from '@mui/material'
 import { Alert, Box, Button, CardContent, Grid } from '@mui/material'
 import { Suspense, useMemo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import BuildDropdown from '../BuildDropdown'
 import { LoadoutDropdown } from '../LoadoutDropdown'
@@ -36,6 +37,7 @@ export default function TeamSetting({
   teamData?: TeamData
   buttonProps?: ButtonProps
 }) {
+  const { t } = useTranslation('page_team')
   const navigate = useNavigate()
   const database = useDatabase()
   const [show, onShow, onHide] = useBoolState()
@@ -64,7 +66,7 @@ export default function TeamSetting({
           disabled={noChars}
           onClick={onShow}
         >
-          Export Team
+          {t`teamSettings.exportBtn`}
         </Button>
         <Button
           color="info"
@@ -73,7 +75,7 @@ export default function TeamSetting({
           onClick={onDup}
           startIcon={<ContentCopyIcon />}
         >
-          Duplicate Team
+          {t`teamSettings.dupBtn`}
         </Button>
         <TeamDelModal
           teamId={teamId}
@@ -87,7 +89,7 @@ export default function TeamSetting({
           onClick={noChars ? onDelNoChars : onShowDel}
           startIcon={<DeleteForeverIcon />}
         >
-          Delete Team
+          {t`teamSettings.deleteBtn`}
         </Button>
       </Box>
       <EnemyExpandCard teamId={teamId} />
@@ -102,6 +104,7 @@ function TeamEditor({
   teamId: string
   teamData?: TeamData
 }) {
+  const { t } = useTranslation('page_team')
   const database = useDatabase()
   const team = database.teams.get(teamId)!
   const { loadoutData } = team
@@ -183,10 +186,7 @@ function TeamEditor({
           <AdResponsive bgt="light" dataAdSlot="5102492054" maxHeight={400} />
         </Grid>
       </Grid>
-      <Alert severity="info">
-        The first character in the team receives any "active on-field character"
-        buffs, and cannot be empty.
-      </Alert>
+      <Alert severity="info">{t`teamSettings.alert.first`}</Alert>
       <Grid container columns={{ xs: 1, md: 2, lg: 4 }} spacing={2}>
         {loadoutData.map((loadoutDatum, ind) => (
           <Grid item xs={1} key={loadoutDatum?.teamCharId ?? ind}>
@@ -207,7 +207,7 @@ function TeamEditor({
                 disabled={!!ind && !loadoutData.some((id) => id)}
                 startIcon={<AddIcon />}
               >
-                Add Character
+                {t`teamSettings.addCharBtn`}
               </Button>
             )}
           </Grid>
@@ -229,6 +229,7 @@ function CharSelButton({
   teamData?: TeamData
   onClickChar: () => void
 }) {
+  const { t } = useTranslation('page_team')
   const database = useDatabase()
   const { teamCharId } = loadoutDatum
   const { key: characterKey } = database.teamChars.get(teamCharId)!
@@ -291,11 +292,11 @@ function CharSelButton({
       />
       {index ? (
         <Button onClick={onActive} color="info">
-          To Field
+          {t`teamSettings.toFieldBtn`}
         </Button>
       ) : (
         <Button disabled color="info">
-          On-field Character
+          {t`teamSettings.onFieldBtn`}
         </Button>
       )}
       {dataContextValue && (

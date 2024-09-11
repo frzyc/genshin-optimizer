@@ -23,6 +23,7 @@ import {
   Typography,
 } from '@mui/material'
 import { useMemo, useState } from 'react'
+import { Trans, useTranslation } from 'react-i18next'
 import type { dataContextObj } from '../../context/DataContext'
 import { DataContext } from '../../context/DataContext'
 import { useCharData } from '../../hooks/useCharData'
@@ -38,6 +39,7 @@ export function TeamDelModal({
   onHide: () => void
   onDel: () => void
 }) {
+  const { t } = useTranslation('page_team')
   const database = useDatabase()
   const team = useTeam(teamId)!
   const { name, description, loadoutData } = team
@@ -78,7 +80,7 @@ export function TeamDelModal({
                 alignItems: 'center',
               }}
             >
-              <Box>Delete Team:</Box>
+              <Box>{t`teamDelModal.teamName`}</Box>
               <strong>{name}</strong>
               {description && (
                 <BootstrapTooltip title={description}>
@@ -96,9 +98,11 @@ export function TeamDelModal({
         <Divider />
         <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Alert severity="info">
-            Removing the team will remove: resonance buffs, and enemy configs
-            stored in the team. Loadouts that are only in this team are also
-            selected by default for deletion.
+            <Trans t={t} i18nKey={'teamDelModal.alert'}>
+              Removing the team will remove: resonance buffs, and enemy configs
+              stored in the team. Loadouts that are only in this team are also
+              selected by default for deletion.
+            </Trans>
           </Alert>
           {loadoutData.map((loadoutDatum, i) =>
             loadoutDatum ? (
@@ -119,7 +123,7 @@ export function TeamDelModal({
             startIcon={<DeleteForeverIcon />}
             onClick={onDelete}
           >
-            Delete
+            {t`teamDelModal.delBtn`}
           </Button>
         </CardContent>
       </CardThemed>
@@ -137,6 +141,7 @@ function LoadoutDisplay({
   onClick: () => void
   inTeams: Team[]
 }) {
+  const { t } = useTranslation('page_team')
   const teamChar = useTeamChar(teamCharId)!
   const { key: characterKey } = teamChar
   const teamData = useCharData(characterKey)
@@ -162,8 +167,8 @@ function LoadoutDisplay({
             <ColorText color={inTeams.length === 1 ? 'success' : 'warning'}>
               <Typography>
                 {inTeams.length === 1
-                  ? 'Only in current team'
-                  : `In ${inTeams.length} teams`}
+                  ? t`teamDelModal.onlyCrrTeam`
+                  : t('teamDelModal.useMltTeams', { count: inTeams.length })}
               </Typography>
             </ColorText>
           </LoadoutHeaderContent>

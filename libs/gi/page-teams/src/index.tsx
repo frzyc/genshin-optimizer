@@ -41,6 +41,7 @@ const numToShowMap = { xs: 6, sm: 12, md: 18, lg: 24, xl: 24 }
 
 export default function PageTeams() {
   const { t } = useTranslation([
+    'page_team',
     'page_teams',
     // Always load these 2 so character names are loaded for searching/sorting
     'sillyWisher_charNames',
@@ -70,10 +71,10 @@ export default function PageTeams() {
     try {
       const dataObj = JSON.parse(data)
       if (!database.teams.import(dataObj))
-        window.alert(`Data verification failed.`)
+        window.alert(t`importForm.error.verifi`)
       onHideImport()
     } catch (e) {
-      window.alert(`Data Import failed. ${e}`)
+      window.alert(t('importForm.error.import', { msg: e }))
       return
     }
   }
@@ -154,7 +155,7 @@ export default function PageTeams() {
               onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
                 setSearchTerm(e.target.value)
               }
-              label="Team Name"
+              label={t`searchLabel.team`}
               // size="small"
               sx={{ height: '100%', flexGrow: 1 }}
               InputProps={{
@@ -178,20 +179,20 @@ export default function PageTeams() {
 
       <Box sx={{ display: 'flex', gap: 1 }}>
         <Button fullWidth onClick={onAdd} color="info" startIcon={<AddIcon />}>
-          Add Team
+          {t`addTeamBtn`}
         </Button>
         <ModalWrapper open={showImport} onClose={onHideImport}>
           <CardThemed>
-            <CardHeader title="Import Team" />
+            <CardHeader title={t`importForm.title`} />
             <Divider />
             <CardContent
               sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
             >
-              <Typography>Import a team in JSON form below.</Typography>
+              <Typography>{t`importForm.desc`}</Typography>
               <TextField
                 fullWidth
-                label="JSON Data"
-                placeholder="Paste your Team JSON here"
+                label={t`importForm.label`}
+                placeholder={t`importForm.placeholder`}
                 value={data}
                 onChange={(e) => setData(e.target.value)}
                 multiline
@@ -202,7 +203,7 @@ export default function PageTeams() {
                 disabled={!data}
                 onClick={importData}
               >
-                Import
+                {t`importForm.importBtn`}
               </Button>
             </CardContent>
           </CardThemed>
@@ -213,7 +214,7 @@ export default function PageTeams() {
           color="info"
           startIcon={<UploadIcon />}
         >
-          Import Team
+          {t`importTeamBtn`}
         </Button>
       </Box>
       <Suspense
