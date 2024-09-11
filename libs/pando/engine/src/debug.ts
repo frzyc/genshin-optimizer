@@ -25,6 +25,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     this.nodes = calc.nodes
     this.tagStr = tagStr
     this.custom = calc.computeCustom
+    this.cache = this.cache.with(calc.cache.tag)
   }
   override withTag(_tag: Tag): this {
     throw new Error('Unimplemented')
