@@ -52,13 +52,13 @@ export function registerBuff(
   cond: string | StrNode = 'unique',
   team = false
 ): TagMapNodeEntries {
-  const namedReader = reader.withTag(entry.tag).name(name) // register name:<name>
+  reader.name(name) // register name:<name>
   const listing = (team ? teamBuff : ownBuff).listing.formulas
   return [
     // Link listing to a tag of { name: name, q: 'value' }
-    listing.add(listingItem(namedReader, cond)),
+    listing.add(listingItem(reader.withTag({ name, q: 'value' }), cond)),
     // Create a tag of { name: name, q: 'value' } with value equal to the buff provided
-    namedReader.toEntry(entry.value),
+    { tag: { name, q: 'value' }, value: entry.value },
     // Return the buff itself so it is automatically registered/added
     entry,
   ]
