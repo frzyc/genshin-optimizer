@@ -52,14 +52,17 @@ export function registerBuff(
   cond: string | StrNode = 'unique',
   team = false
 ): TagMapNodeEntries {
-  reader.name(name) // register name:<name>
+  // Remove unused tags. We cannot use `et:null` here because `namedReader` is
+  // also used as a `Tag` inside `namedReader`.
+  const { sheet: _sheet, ...tag } = entry.tag
+  const namedReader = reader.withTag({ ...tag, et: 'display', name }) // register name:<name>
   const listing = (team ? teamBuff : ownBuff).listing.formulas
   return [
-    // Link listing to a tag of { name: name, q: 'value' }
-    listing.add(listingItem(reader.withTag({ name, q: 'value' }), cond)),
-    // Create a tag of { name: name, q: 'value' } with value equal to the buff provided
-    { tag: { name, q: 'value' }, value: entry.value },
-    // Return the buff itself so it is automatically registered/added
+    // Add this buff to listing listing
+    listing.add(listingItem(namedReader, cond)),
+    // Hook for listing
+    namedReader.toEntry(entry.value),
+    // Still include the original entry
     entry,
   ]
 }
