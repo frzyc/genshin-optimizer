@@ -63,22 +63,22 @@ const dm = {
     breakDmg: talent[0][ta++],
   },
   technique: {
-    triggers: technique[0][te++][0],
-    toughness_: technique[0][te++][0],
-    breakDmg: technique[0][te++][0],
-    maxBlessings: technique[0][te++][0],
+    triggers: technique[0][te++][1],
+    toughness_: technique[0][te++][1],
+    breakDmg: technique[0][te++][1],
+    maxBlessings: technique[0][te++][1],
   },
   b1: {
-    break_: bonusAbility1[0][0][0],
+    break_: bonusAbility1[0][0][1],
   },
   b2: {
-    energy: bonusAbility2[0][0][0],
+    energy: bonusAbility2[0][0][1],
   },
   b3: {
-    breakThreshold: bonusAbility3[0][0][0],
-    breakPer: bonusAbility3[0][0][1],
-    dmg_per: bonusAbility3[0][0][2],
-    max_dmg_: bonusAbility3[0][0][3],
+    breakThreshold: bonusAbility3[0][0][1],
+    breakPer: bonusAbility3[0][0][2],
+    dmg_per: bonusAbility3[0][0][3],
+    max_dmg_: bonusAbility3[0][0][4],
   },
   e1: {
     defIgn_: eidolon[1][0],
@@ -184,7 +184,7 @@ const sheet = register(
   registerBuff(
     'e4_break_',
     ownBuff.premod.brEff_.add(
-      cmpEq(char.eidolon, 4, e4Broken.ifOn(dm.e4.break_))
+      cmpGE(char.eidolon, 4, e4Broken.ifOn(dm.e4.break_))
     )
   )
 )
