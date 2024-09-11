@@ -210,7 +210,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
         ([abilityKey, levelBoost]) =>
           registerBuff(
             `eidolon${ei}_${abilityKey}`,
-          ownBuff.char[abilityKey].add(cmpGE(eidolon, ei, levelBoost))
+            ownBuff.char[abilityKey].add(cmpGE(eidolon, ei, levelBoost))
           )
       )
     ),

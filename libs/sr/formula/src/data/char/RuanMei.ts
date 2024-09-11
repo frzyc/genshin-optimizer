@@ -125,31 +125,31 @@ const sheet = register(
   ),
 
   // Buffs
-  ...registerBuff(
+  registerBuff(
     'skillOvertone_dmg_',
     teamBuff.premod.dmg_.add(
       skillOvertone.ifOn(subscript(char.skill, dm.skill.dmg_))
     )
   ),
-  ...registerBuff(
+  registerBuff(
     'skillOvertone_weakness_',
     teamBuff.premod.weakness_.add(skillOvertone.ifOn(dm.skill.weakness_))
   ),
-  ...registerBuff(
+  registerBuff(
     'ultZone_resPen_',
     teamBuff.premod.resPen_.add(
       ultZone.ifOn(subscript(char.ult, dm.ult.resPen_))
     )
   ),
-  ...registerBuff(
+  registerBuff(
     'talent_spd_',
     notOwnBuff.premod.spd_.add(subscript(char.talent, dm.talent.spd_))
   ),
-  ...registerBuff(
+  registerBuff(
     'ba1_break_',
     teamBuff.premod.brEff_.add(cmpEq(char.bonusAbility1, 1, dm.b1.break_))
   ),
-  ...registerBuff(
+  registerBuff(
     'ba3_brEff_',
     teamBuff.premod.dmg_.add(
       cmpEq(
@@ -169,17 +169,17 @@ const sheet = register(
       )
     )
   ),
-  ...registerBuff(
+  registerBuff(
     'e1_defIgn_',
     enemyDebuff.common.defIgn_.add(cmpGE(char.eidolon, 1, dm.e1.defIgn_))
   ),
-  ...registerBuff(
+  registerBuff(
     'e2_atk_',
     teamBuff.premod.atk_.add(
       cmpGE(char.eidolon, 2, cmpEq(enemy.common.isBroken, 1, dm.e2.atk_))
     )
   ),
-  ...registerBuff(
+  registerBuff(
     'e4_break_',
     ownBuff.premod.brEff_.add(
       cmpEq(char.eidolon, 4, e4Broken.ifOn(dm.e4.break_))
