@@ -198,19 +198,21 @@ export function CharacterMultiSelectionModal({
   const { weaponType, element, sortType, ascending } = state
 
   // TODO: Should selected characters automatically be moved to the front of the list when the quick select UI is opened?
+  //       Selected characters should bypass all filters
+  //       Currently selected characters should probably also be outlined in the single select UI? Can modals be merged into one with different functionality depending on multi select bool?
   //       Selection border doesn't appear until after mouse is moved away if not using state or sometimes renders normally?
   const onClick = (key: CharacterKey) => {
     const keySlotIndex = currentTeamCharKeys.indexOf(key)
     const firstOpenIndex = currentTeamCharKeys.indexOf('')
-    if (keySlotIndex === -1 && firstOpenIndex !== -1)
+    if (keySlotIndex === -1)
     {
-      // Selected character wasn't already previously selected and team isn't full, so overwrite the placeholder ''
-      // with the character key in the first open team slot
+      // Selected character was previously unselected, add to the list of currently selected keys if team is not full
+      if (firstOpenIndex === -1) return
       currentTeamCharKeys.splice(firstOpenIndex, 1, key)
     }
     else
     {
-      // Selected character key was previously selected, so replace the slot with
+      // Selected character was previously selected, so replace the slot with
       // '' to indicate the slot is currently empty
       currentTeamCharKeys.splice(keySlotIndex, 1, '')
     }
