@@ -127,7 +127,7 @@ export function TagFieldDisplay({
   fieldVal = (
     <>
       <span>{valueString(calcValue, unit, fixed)}</span>
-      {Math.abs(diff) > 0.0001 && compareCalcValue && (
+      {Math.abs(diff) > 0.0001 && !!compareCalcValue && (
         <BootstrapTooltip
           title={
             <Typography>

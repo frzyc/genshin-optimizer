@@ -26,6 +26,7 @@ import {
   own,
   ownBuff,
   percent,
+  registerBuff,
   type TagMapNodeEntries,
 } from '../util'
 
@@ -194,18 +195,23 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ),
     // Small trace stat boosts
     ...statBoosts.flatMap((statBoost, index) =>
-      Object.entries(statBoost).map(([key, amt]) => {
-        return getStatFromStatKey(ownBuff.premod, key).add(
-          // TODO: Add automatic ascension requirement
-          cmpEq(char[`statBoost${(index + 1) as StatBoostKey}`], 1, amt)
+      Object.entries(statBoost).flatMap(([key, amt]) => {
+        const sbKey = `statBoost${(index + 1) as StatBoostKey}` as const
+        const buff = getStatFromStatKey(ownBuff.premod, key).add(
+          // TODO: Add automatic ascension/level/previous node requirement
+          cmpEq(char[sbKey], 1, amt)
         )
+        return registerBuff(sbKey, buff)
       })
     ),
     // Eidolon 3 and 5 ability level boosts
     ...([3, 5] as const).flatMap((ei) =>
-      Object.entries(data_gen.rankMap[3].skillTypeAddLevel).map(
+      Object.entries(data_gen.rankMap[ei].skillTypeAddLevel).flatMap(
         ([abilityKey, levelBoost]) =>
-          ownBuff.char[abilityKey].add(cmpGE(eidolon, ei, levelBoost))
+          registerBuff(
+            `eidolon${ei}_${abilityKey}`,
+            ownBuff.char[abilityKey].add(cmpGE(eidolon, ei, levelBoost))
+          )
       )
     ),
     // Break base DMG

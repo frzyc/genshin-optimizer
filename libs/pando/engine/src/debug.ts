@@ -25,6 +25,7 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     this.nodes = calc.nodes
     this.tagStr = tagStr
     this.custom = calc.computeCustom
+    this.cache = this.cache.with(calc.cache.tag)
   }
   override withTag(_tag: Tag): this {
     throw new Error('Unimplemented')
@@ -106,7 +107,9 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
     }
     if (n.op === 'read') {
       tag = Object.fromEntries(Object.entries(tag!).filter(([_, v]) => v))
-      result.formula = `gather ${x.length} node(s) for ${this.tagStr(tag)}`
+      result.formula = `gather ${x.length} node(s) for ${this.tagStr(
+        n.tag
+      )} (${this.tagStr(tag)})`
       result.deps = x.map((x) => x!.meta)
     }
     return result
