@@ -31,6 +31,14 @@
   },
   "characterName": "Character Name",
   "teammate": "Teammate {{count}}",
+  "loadoutSettings": {
+    "alert": "<strong>Loadouts</strong> provides character context data, including bonus stats, conditionals, multi-targets, optimization config, and stores builds. A single <strong>Loadout</strong> can be used for many teams.",
+    "management": "Build Management",
+    "builds": "Builds",
+    "newBuild": "New Build",
+    "tcBuilds": "TC Builds",
+    "newTcBuild": "New TC Build"
+  },
   "multiTarget": {
     "title": "Multi-Optimization Target Config",
     "info1": "Note: Community-created Multi-Optimization Targets can be found within the <1>GO Discord</1> or <3>KQM's Multi-Optimization Guide</3>, however, the validity of such configurations cannot be guaranteed.",
@@ -51,6 +59,12 @@
   "showFormulas": {
     "button": "Show Formulas & Calcs",
     "title": "Formulas & Calculations"
+  },
+  "compareBtn": {
+    "compare": "Compare",
+    "current": "Current",
+    "equipped": "Equipped ",
+    "tc": "TC"
   },
   "tabTheorycraft": {
     "distribute": "Distribute",

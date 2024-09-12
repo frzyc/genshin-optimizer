@@ -98,7 +98,7 @@ export default function LoadoutSettingElement() {
 }
 
 function BuildManagementContent() {
-  const { t } = useTranslation('page_team')
+  const { t } = useTranslation('page_character')
   const database = useDatabase()
   const {
     teamCharId,
@@ -129,7 +129,7 @@ function BuildManagementContent() {
         </Grid>
 
         <Box sx={{ display: 'flex', gap: 2 }}>
-          <Typography variant="h6">Builds</Typography>
+          <Typography variant="h6">{ t`loadoutSettings.builds`}</Typography>
           <Button
             startIcon={<AddIcon />}
             color="info"
@@ -157,7 +157,7 @@ function BuildManagementContent() {
         </Box>
 
         <Box sx={{ display: 'flex', gap: 2 }}>
-          <Typography variant="h6">{t`loadoutSettings.tcBuild`}</Typography>
+          <Typography variant="h6">{t`loadoutSettings.tcBuilds`}</Typography>
           <Button
             startIcon={<AddIcon />}
             color="info"

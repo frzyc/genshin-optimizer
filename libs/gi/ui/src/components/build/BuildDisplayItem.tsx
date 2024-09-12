@@ -90,6 +90,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
   disabled,
   mainStatAssumptionLevel,
 }: BuildDisplayItemProps) {
+  const { t } = useTranslation('page_character_optimize')
   const {
     loadoutDatum: { buildType, buildId },
     teamChar: { buildIds = [] },
@@ -398,7 +399,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
               currentName={
                 buildType === 'real'
                   ? database.builds.get(buildId)!.name
-                  : 'Equipped'
+                  : t`buildDisplay.equipped`
               }
               currentWeaponId={currentWeaponId}
               currentArtifactIds={currentArtifactIds}
@@ -418,7 +419,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
               disabled={disabled || isActiveBuild}
               startIcon={<Checkroom />}
             >
-              Equip to Current Build
+              {t`buildDisplay.equipToCrr`}
             </Button>
             {extraButtonsRight}
           </Box>
@@ -452,6 +453,7 @@ function CompareWeaponModal({
   showWeapon: boolean
   onClose: () => void
 }) {
+  const { t } = useTranslation('page_character_optimize')
   const database = useDatabase()
   const diffCurrentWeap = oldId !== newId
 
@@ -479,12 +481,12 @@ function CompareWeaponModal({
             <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
               <CardThemed bgt="light" sx={{ p: 1 }}>
                 <Typography variant="h6" textAlign="center">
-                  Old Weapon
+                  {t`buildDisplay.oldWeapon`}
                 </Typography>
               </CardThemed>
               {oldId === 'tc' ? (
                 <Typography variant="h6" textAlign="center" color="info">
-                  <SqBadge>TC Weapon</SqBadge>
+                  <SqBadge>{t`buildDisplay.tcWeapon`}</SqBadge>
                 </Typography>
               ) : (
                 <WeaponCard weaponId={oldId!} onDelete={deleteWeapon} />
@@ -501,7 +503,7 @@ function CompareWeaponModal({
           <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
             <CardThemed bgt="light" sx={{ p: 1 }}>
               <Typography variant="h6" textAlign="center">
-                New Weapon
+                {t`buildDisplay.newWeapon`}
               </Typography>
             </CardThemed>
             <WeaponCard weaponId={newId} onDelete={deleteWeapon} />

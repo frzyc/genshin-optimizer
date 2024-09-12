@@ -3,7 +3,7 @@ import { Trans, useTranslation } from 'react-i18next'
 
 // TODO: Translation
 export function LoadoutInfoAlert() {
-  const { t } = useTranslation('page_team')
+  const { t } = useTranslation('page_character')
   return (
     <Alert severity="info">
       <Trans t={t} i18nKey={'loadoutSettings.alert'}>

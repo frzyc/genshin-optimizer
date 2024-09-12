@@ -1,4 +1,5 @@
 {
+  "specialized": "Specialized:",
   "mainStat": {
     "levelAssTooltip": {
       "title": "Main Stat Level Assumption",
@@ -59,6 +60,7 @@
     },
     "usingState": "Using"
   },
+  "useTeamArts": "Use artifacts in teammates' active builds",
   "allowPartial": "Allow Partial Builds (<5 artifacts)",
   "constraintFilter": {
     "title": "Minimum Build Constraints",
@@ -114,6 +116,41 @@
   "generateButton": {
     "cancel": "Cancel",
     "generateBuilds": "Generate Builds"
+  },
+  "buildShowingNum": "Showing <2>{{count}}</2> build generated for <5/>.",
+  "generatedOn": "Build generated on: ",
+  "selectChar": "Select a character to generate builds.",
+  "clearBuildsBtn": "Clear Builds",
+  "newTcBuild": {
+    "button": "New TC Build",
+    "title": "New Theorycraft Build",
+    "desc": "Copy over this build to a new TC Build",
+    "label": "TC Build Name",
+    "cancel": "Cancel",
+    "create": "Create"
+  },
+  "newBuild": {
+    "button": "New Build",
+    "title": "New Build",
+    "desc": "Copy over this build to a new build",
+    "label": "Build Name",
+    "cancel": "Cancel",
+    "create": "Create"
+  },
+  "buildDisplay": {
+    "equipped": "Equipped",
+    "equipToCrr": "Equip to Current Build",
+    "oldWeapon": "Old Weapon",
+    "tcWeapon": "TC Weapon",
+    "newWeapon": "New Weapon"
+  },
+  "equipBuildModal": {
+    "title": "Confirm Equipment Changes for <2>{{build}}</2>",
+    "desc": "Do you want to make the changes shown below?",
+    "overwrite": "Copy the current equipment in <2>{{build}}</2> to a new build. Otherwise, they will be overwritten.",
+    "label": "Build Name",
+    "cancel": "Cancel",
+    "equip": "Equip"
   },
   "removeBuildButton": "Remove Build",
   "theorycraftButton": "Theorycraft",

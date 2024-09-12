@@ -48,19 +48,22 @@ export function LoadoutHeaderContent({
         <Box sx={{ display: 'flex', justifyItems: 'center', gap: 1 }}>
           <CheckroomIcon />
           <Typography>
-            {t`loadoutHeader.builds`}<strong>{buildIds.length}</strong>
+            {t`loadoutHeader.builds`}
+            <strong>{buildIds.length}</strong>
           </Typography>
         </Box>
         <Box sx={{ display: 'flex', justifyItems: 'center', gap: 1 }}>
           <CheckroomIcon />
           <Typography>
-            {t`loadoutHeader.TcBuilds`}<strong>{buildTcIds.length}</strong>
+            {t`loadoutHeader.TcBuilds`}
+            <strong>{buildTcIds.length}</strong>
           </Typography>
         </Box>
         <Box sx={{ display: 'flex', justifyItems: 'center', gap: 1 }}>
           <DashboardCustomizeIcon />
           <Typography>
-            {t`loadoutHeader.mltTargets`}<strong>{customMultiTargets.length}</strong>
+            {t`loadoutHeader.mltTargets`}
+            <strong>{customMultiTargets.length}</strong>
           </Typography>
         </Box>
       </Box>

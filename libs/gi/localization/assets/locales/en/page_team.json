@@ -45,12 +45,13 @@
     "toFieldBtn": "To Field",
     "onFieldBtn": "On-field Character"
   },
-  "loadoutSettings": {
-    "alert": "<strong>Loadouts</strong> provides character context data, including bonus stats, conditionals, multi-targets, optimization config, and stores builds. A single <strong>Loadout</strong> can be used for many teams.",
-    "management": "Build Management",
-    "newBuild": "New Build",
-    "tcBuild": "TC Builds",
-    "newTcBuild": "New TC Build"
+  "enemyEditor": {
+    "enemyLevel": "Enemy ",
+    "defIgn": "DEF Ignore {{value}}%",
+    "defRed": "DEF Red. {{value}}%",
+    "announceBtn": "To get the specific resistance values of enemies, please visit the wiki.",
+    "note": "Note: Genshin Impact halves resistance shred values below 0%. For the sake of calculations enter the RAW value and GO will do the rest. (e.g. 10% - 20% = -10%)",
+    "immunity": "Immunity"
   },
   "buildInfo": {
     "equipped": "This is the build currently equipped to your character, this represents in-game equipement and is persistent outside of the Loadout.",

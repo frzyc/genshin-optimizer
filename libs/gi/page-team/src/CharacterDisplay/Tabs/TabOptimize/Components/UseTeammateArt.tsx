@@ -16,6 +16,7 @@ import {
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { Suspense, memo, useContext } from 'react'
+import { useTranslation } from 'react-i18next'
 export const UseTeammateArt = memo(function UseTeammateArt({
   totalTally,
   useTeammateBuild,
@@ -25,6 +26,7 @@ export const UseTeammateArt = memo(function UseTeammateArt({
   useTeammateBuild: boolean
   disabled?: boolean
 }) {
+  const { t } = useTranslation('page_character_optimize')
   const database = useDatabase()
   const {
     teamCharId,
@@ -121,7 +123,7 @@ export const UseTeammateArt = memo(function UseTeammateArt({
         >
           <Box display="flex" gap={1}>
             {/* TODO: Translation */}
-            <span>Use artifacts in teammates' active builds</span>
+            <span>{t`useTeamArts`}</span>
             <Chip label={totalTally} size="small" />
           </Box>
         </Button>

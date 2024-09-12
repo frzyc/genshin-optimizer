@@ -24,6 +24,7 @@ import {
   styled,
 } from '@mui/material'
 import { useCallback, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean
@@ -40,9 +41,9 @@ const ExpandButton = styled((props: ExpandMoreProps) => {
 }))
 
 export default ExpandButton
-
 // TODO: Translation
 export function EnemyExpandCard({ teamId }: { teamId: string }) {
+  const { t } = useTranslation('page_team')
   const [expanded, setexpanded] = useState(false)
   const toggle = useCallback(
     () => setexpanded(!expanded),
@@ -69,7 +70,8 @@ export function EnemyExpandCard({ teamId }: { teamId: string }) {
             color="success"
             label={
               <span>
-                Enemy <strong>{enemyLevel}</strong>
+                {t`enemyEditor.enemyLevel`}
+                <strong>{enemyLevel}</strong>
               </span>
             }
           />
@@ -78,8 +80,12 @@ export function EnemyExpandCard({ teamId }: { teamId: string }) {
               <EnemyResText element={element} enemyOverride={enemyOverride} />
             </Typography>
           ))}
-          <Typography>DEF Red. {enemyDefRed_}</Typography>
-          <Typography>DEF Ignore {enemyDefIgn_}</Typography>
+          <Typography>
+            {t('enemyEditor.defIgn', { value: enemyDefIgn_ })}
+          </Typography>
+          <Typography>
+            {t('enemyEditor.defRed', { value: enemyDefRed_ })}
+          </Typography>
           <Box flexGrow={1} display="flex" justifyContent="flex-end" gap={1}>
             <ExpandButton
               expand={expanded}
@@ -132,6 +138,7 @@ export function EnemyEditor({
   enemyOverride: Team['enemyOverride']
   bsProps?: object
 }) {
+  const { t } = useTranslation('page_team')
   const database = useDatabase()
   const defaultVal = 10
 
@@ -151,8 +158,7 @@ export function EnemyEditor({
           target="_blank"
           rel="noreferrer"
         >
-          To get the specific resistance values of enemies, please visit the
-          wiki.
+          {t`enemyEditor.announceBtn`}
         </Button>
       </Grid>
       <Grid item {...bsProps}>
@@ -220,7 +226,7 @@ export function EnemyEditor({
                   )
                 }
               >
-                Immunity
+                {t`enemyEditor.immunity`}
               </Button>
             </StatInput>
           </Grid>
@@ -257,11 +263,7 @@ export function EnemyEditor({
         />
       </Grid>
       <Grid item xs={12}>
-        <small>
-          Note: Genshin Impact halves resistance shred values below 0%. For the
-          sake of calculations enter the RAW value and GO will do the rest.
-          (e.g. 10% - 20% = -10%)
-        </small>
+        <small>{t`enemyEditor.note`}</small>
       </Grid>
     </Grid>
   )
