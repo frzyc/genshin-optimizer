@@ -59,9 +59,14 @@ function CharacterWrapper({ artId, weaponId, onHide, onEquip }: WrapperProps) {
   } = useContext(CharacterContext)
   const newArt = database.arts.get(artId ?? '')
   const currentArtifactIds = equippedArtifacts
-  const newArtifactIds = objMap(currentArtifactIds, (art, slot) =>
-    slot === newArt?.slotKey ? artId : art
-  )
+  const newArtifactIds = objMap(currentArtifactIds, (art, slot) => {
+    if (newArt === undefined) {
+      return artId; // Return the original artifact if newArt is undefined
+    }
+
+    return slot === newArt.slotKey ? artId : art; // Update the artifact ID if slot matches newArt's slotKey
+  });
+
   const currentWeaponId = equippedWeapon
   const newWeaponId = weaponId ?? currentWeaponId
 

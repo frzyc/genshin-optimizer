@@ -71,34 +71,96 @@ export class DataManagerBase<
   getStorage(key: CacheKey): StorageValue {
     return this.database.storage.get(this.toStorageKey(key))
   }
+  findObjects(key:CacheKey,valueOrFunc:
+    | Partial<StorageValue>
+    | ((v: StorageValue) => Partial<StorageValue> | void)){
+      const results: Record<string, any>[] = [];
+      const locationValue = typeof valueOrFunc === 'function'
+      ? valueOrFunc('') // Assume default location value is an empty string
+      : valueOrFunc;
+
+      for(let i=0;i<localStorage.length;i++){
+        const localStorageKey = localStorage.key(i);
+        if (localStorageKey === null) continue;
+
+        const rawData = localStorage.getItem(localStorageKey);
+        if (rawData ===null) continue
+
+        try {
+          const parsedData: StorageValue = JSON.parse(rawData);
+
+          if (parsedData?.slotKey === key && parsedData?.location === locationValue.location) {
+
+            results.push({localStorageKey,parsedData})
+          }
+        } catch (error) {
+          continue
+        }
+
+      }
+
+      return results
+
+  }
   set(
     key: CacheKey,
-    valueOrFunc:
-      | Partial<StorageValue>
-      | ((v: StorageValue) => Partial<StorageValue> | void),
+    valueOrFunc: Partial<StorageValue> | ((v: StorageValue) => Partial<StorageValue> | void),
     notify = true
   ): boolean {
-    const old = this.getStorage(key)
+
+    // Check if the key is one of the special slot keys
+    if (["flower", "goblet", "sands", "plume", "circlet"].includes(key)) {
+      // Find objects with the given slot key and location
+      const result = this.findObjects(key, valueOrFunc);
+
+      // Debug output to inspect results
+
+      // If a result is found, use the key from the result and set valueOrFunc to an empty string
+      if (result.length > 0) {
+        key = result[0].localStorageKey; // Use localStorageKey from the result
+        valueOrFunc = {location:""}; // This might be a placeholder; adjust based on your actual logic
+
+      } else {
+        console.warn(`No objects found for slotKey "${key}" and location "${valueOrFunc}"`);
+        return false;
+      }
+    }
+
+    // Retrieve the current storage object
+    const old = this.getStorage(key);
+
+    // If valueOrFunc is a function and no old data is present, trigger an 'invalid' event
     if (typeof valueOrFunc === 'function' && !old) {
-      this.trigger(key, 'invalid', valueOrFunc)
-      return false
+      this.trigger(key, 'invalid', valueOrFunc);
+      return false;
     }
-    const value =
-      typeof valueOrFunc === 'function' ? valueOrFunc(old) ?? old : valueOrFunc
-    const validated = this.validate({ ...(old ?? {}), ...value }, key)
+
+    // Determine the new value to be set
+    const value = typeof valueOrFunc === 'function' ? valueOrFunc(old) ?? old : valueOrFunc;
+
+    // Validate the new value
+    const validated = this.validate({ ...(old ?? {}), ...value }, key);
+
     if (!validated) {
-      this.trigger(key, 'invalid', value)
-      return false
+      this.trigger(key, 'invalid', value);
+      return false;
     }
-    const cached = this.toCache(validated, key)
+
+    // Cache the validated value
+    const cached = this.toCache(validated, key);
+
     if (!cached) {
-      this.trigger(key, 'invalid', value)
-      return false
+      this.trigger(key, 'invalid', value);
+      return false;
     }
-    this.setCached(key, cached)
-    if (!old && notify) this.trigger(key, 'new', cached)
-    return true
+
+    // Set the cached value and trigger appropriate events
+    this.setCached(key, cached);
+    if (!old && notify) this.trigger(key, 'new', cached);
+
+    return true;
   }
+
   setCached(key: CacheKey, cached: CacheValue) {
     deepFreeze(cached)
     this.data[key] = cached
