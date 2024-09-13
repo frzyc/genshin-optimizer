@@ -2,6 +2,24 @@ import { deepFreeze } from '@genshin-optimizer/common/util'
 import type { Database } from './Database'
 import type { TriggerString } from './common'
 
+
+interface Substat {
+  key: string;  // Key for the substat type (e.g., 'critDMG_', 'def_', 'enerRech_', etc.)
+  value: number;  // Numerical value for the substat
+}
+
+interface Artifact {
+  setKey: string;  // The artifact set key (e.g., 'TenacityOfTheMillelith')
+  rarity: number;  // Artifact rarity (e.g., 5 for 5-star artifacts)
+  level: number;   // Artifact level (e.g., 0 for a level 0 artifact)
+  slotKey: string; // Slot key for the artifact (e.g., 'plume', 'flower', 'goblet', etc.)
+  mainStatKey: string;  // Main stat key (e.g., 'atk')
+  substats: Substat[];  // Array of substat objects
+  location: string;  // Character location (if any), otherwise empty string
+  lock: boolean;  // Lock status of the artifact (true or false)
+}
+
+
 export class DataManagerBase<
   CacheKey extends string,
   DataKey extends string,
@@ -71,57 +89,54 @@ export class DataManagerBase<
   getStorage(key: CacheKey): StorageValue {
     return this.database.storage.get(this.toStorageKey(key))
   }
-  findObjects(key:CacheKey,valueOrFunc:
+  findObjects(key: CacheKey, valueOrFunc:
     | Partial<StorageValue>
-    | ((v: StorageValue) => Partial<StorageValue> | void)){
-      const results: Record<string, any>[] = [];
-      const locationValue = typeof valueOrFunc === 'function'
-      ? valueOrFunc('') // Assume default location value is an empty string
-      : valueOrFunc;
+    | ((v: StorageValue) => void | Partial<StorageValue>)) {
+    const results: Record<string, any>[] = [];
+    const locationValue = typeof valueOrFunc === 'function' ? valueOrFunc({} as StorageValue) || {} : valueOrFunc;
+    const location = 'location' in locationValue ? locationValue.location : '';
 
-      for(let i=0;i<localStorage.length;i++){
-        const localStorageKey = localStorage.key(i);
-        if (localStorageKey === null) continue;
+    for (let i = 0; i < localStorage.length; i++) {
+      const localStorageKey = localStorage.key(i);
+      if (localStorageKey === null) continue;
 
-        const rawData = localStorage.getItem(localStorageKey);
-        if (rawData ===null) continue
+      const rawData = localStorage.getItem(localStorageKey);
+      if (rawData === null) continue;
 
-        try {
-          const parsedData: StorageValue = JSON.parse(rawData);
+      try {
+        const parsedData: Artifact = JSON.parse(rawData);
 
-          if (parsedData?.slotKey === key && parsedData?.location === locationValue.location) {
-
-            results.push({localStorageKey,parsedData})
-          }
-        } catch (error) {
-          continue
+        if (parsedData?.slotKey === key && parsedData?.location === location) {
+          results.push({ localStorageKey, parsedData });
         }
-
+      } catch (error) {
+        console.warn("Failed to parse data from localStorage:", error);
+        continue;
       }
+    }
 
-      return results
-
+    return results;
   }
+
   set(
     key: CacheKey,
     valueOrFunc: Partial<StorageValue> | ((v: StorageValue) => Partial<StorageValue> | void),
     notify = true
   ): boolean {
-
     // Check if the key is one of the special slot keys
-    if (["flower", "goblet", "sands", "plume", "circlet"].includes(key)) {
-      // Find objects with the given slot key and location
+    if (["flower", "goblet", "sands", "plume", "circlet"].includes(key as string)) {
       const result = this.findObjects(key, valueOrFunc);
-
-      // Debug output to inspect results
-
-      // If a result is found, use the key from the result and set valueOrFunc to an empty string
       if (result.length > 0) {
-        key = result[0].localStorageKey; // Use localStorageKey from the result
-        valueOrFunc = {location:""}; // This might be a placeholder; adjust based on your actual logic
-
+        key = this.toCacheKey(result[0]['localStorageKey']);
+        valueOrFunc = (oldValue: StorageValue) => ({
+          ...oldValue,
+          location: ''
+        });
       } else {
-        console.warn(`No objects found for slotKey "${key}" and location "${valueOrFunc}"`);
+        const location = typeof valueOrFunc === 'function'
+          ? ''
+          : ('location' in valueOrFunc ? valueOrFunc.location : '');
+        console.warn(`No objects found for slotKey "${key}" and location "${location}"`);
         return false;
       }
     }

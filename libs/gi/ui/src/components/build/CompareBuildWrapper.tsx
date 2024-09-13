@@ -61,11 +61,16 @@ function CharacterWrapper({ artId, weaponId, onHide, onEquip }: WrapperProps) {
   const currentArtifactIds = equippedArtifacts
   const newArtifactIds = objMap(currentArtifactIds, (art, slot) => {
     if (newArt === undefined) {
-      return artId; // Return the original artifact if newArt is undefined
+      // If newArt is undefined, return an object with only the matching slotKey
+      return (slot === artId) ? artId : art;
     }
 
-    return slot === newArt.slotKey ? artId : art; // Update the artifact ID if slot matches newArt's slotKey
+    // Otherwise, use the existing logic
+    return slot === newArt.slotKey ? artId : art;
   });
+
+
+  console.log(newArtifactIds);
 
   const currentWeaponId = equippedWeapon
   const newWeaponId = weaponId ?? currentWeaponId
