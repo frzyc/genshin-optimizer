@@ -13,6 +13,7 @@ import {
   Typography,
 } from '@mui/material'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export default function CustomMultiTargetImportBtn({
   setCustomMultiTarget,
@@ -21,6 +22,7 @@ export default function CustomMultiTargetImportBtn({
   setCustomMultiTarget: (t: CustomMultiTarget) => void
   btnProps?: ButtonProps
 }) {
+  const { t } = useTranslation('page_character')
   const [show, onShow, onHide] = useBoolState()
   const [data, setData] = useState('')
 
@@ -28,33 +30,33 @@ export default function CustomMultiTargetImportBtn({
     try {
       const dataObj = JSON.parse(data)
       const validated = validateCustomMultiTarget(dataObj)
-      if (!validated) window.alert('Invalid Multi-Optimization Config')
+      if (!validated) window.alert(t`mTargetImport.invalid`)
       else {
         setCustomMultiTarget(validated)
         onHide()
       }
     } catch (e) {
-      window.alert(`Data Import failed. ${e}`)
+      window.alert(t`mTargetImport.failed` + `\n${e}`)
       return
     }
   }
   return (
     <>
       <Button {...btnProps} onClick={onShow}>
-        Import Multi-Opt
+        {t`mTargetImport.button`}
       </Button>
       <ModalWrapper open={show} onClose={onHide}>
         <CardThemed>
-          <CardHeader title="Import Multi-Opt" />
+          <CardHeader title={t`mTargetImport.title`} />
           <Divider />
           <CardContent
             sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
           >
-            <Typography>Import a Multi-opt in JSON form below.</Typography>
+            <Typography>{t`mTargetImport.desc`}</Typography>
             <TextField
               fullWidth
-              label="JSON Data"
-              placeholder="Paste your Team JSON here"
+              label={t`mTargetImport.label`}
+              placeholder={t`mTargetImport.placeholder`}
               value={data}
               onChange={(e) => setData(e.target.value)}
               multiline
@@ -65,7 +67,7 @@ export default function CustomMultiTargetImportBtn({
               disabled={!data}
               onClick={importData}
             >
-              Import
+              {t`mTargetImport.import`}
             </Button>
           </CardContent>
         </CardThemed>

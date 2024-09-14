@@ -48,7 +48,7 @@ export function getDisplayHeader(
   if (sectionKey === 'basic') return { title: 'Basic Stats' }
   if (sectionKey === 'character') return { title: 'Character' }
   if (sectionKey === 'bounsStats')
-    return { title: 'Bonus Stats', icon: <BarChartIcon /> }
+    return { title: '！！Bonus Stats', icon: <BarChartIcon /> }
   if (sectionKey === 'custom')
     return { title: 'Custom Multi Target', icon: <DashboardCustomizeIcon /> }
   if (sectionKey === 'teamBuff')

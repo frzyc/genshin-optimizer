@@ -573,9 +573,10 @@ function ShowingArt({
   numShowing: number
   total: number
 }) {
+  const { t } = useTranslation('page_character_optimize')
   return (
     <Typography color="text.secondary">
-      <Trans i18nKey="showingNum" count={numShowing} value={total}>
+      <Trans t={t} i18nKey="upOptShowingNum" count={numShowing} value={total}>
         Showing {{ count: numShowing }} out of {{ value: total }} Artifacts
       </Trans>
     </Typography>

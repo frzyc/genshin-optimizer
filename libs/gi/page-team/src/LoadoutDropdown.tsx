@@ -19,8 +19,8 @@ import {
   TextField,
 } from '@mui/material'
 import { useState } from 'react'
+import { Trans, useTranslation } from 'react-i18next'
 
-// TODO: Translation
 export function LoadoutDropdown({
   teamCharId,
   onChangeTeamCharId,
@@ -32,6 +32,7 @@ export function LoadoutDropdown({
   dropdownBtnProps?: Omit<DropdownButtonProps, 'children' | 'title'>
   label?: boolean
 }) {
+  const { t } = useTranslation('page_team')
   const database = useDatabase()
   const { key: characterKey, name } = database.teamChars.get(teamCharId)!
   const { gender } = useDBMeta()
@@ -58,10 +59,10 @@ export function LoadoutDropdown({
         <CardThemed>
           <CardHeader
             title={
-              <>
+              <Trans t={t} i18nKey={'loDropdown.popup.title'}>
                 Create a new Loadout For{' '}
                 <CharacterName characterKey={characterKey} gender={gender} />
-              </>
+              </Trans>
             }
           />
           <Divider />
@@ -70,14 +71,14 @@ export function LoadoutDropdown({
           >
             <TextField
               fullWidth
-              label="New Loadout Name"
-              placeholder="New Loadout Name"
+              label={t`loDropdown.popup.label`}
+              placeholder={t`loDropdown.popup.placeholder`}
               value={newName}
               onChange={(e) => setNewName(e.target.value)}
             />
             <TextField
               fullWidth
-              label="New Loadout Description"
+              label={t`loDropdown.popup.desc`}
               value={newDesc}
               onChange={(e) => setNewDesc(e.target.value)}
               multiline
@@ -85,7 +86,7 @@ export function LoadoutDropdown({
             />
             <Box sx={{ display: 'flex', gap: 2 }}>
               <Button color="error" fullWidth onClick={onHide}>
-                Cancel
+                {t`loDropdown.popup.cancel`}
               </Button>
               <Button
                 color="success"
@@ -93,7 +94,7 @@ export function LoadoutDropdown({
                 onClick={newLoadout}
                 disabled={!newName}
               >
-                Confirm
+                {t`loDropdown.popup.confirm`}
               </Button>
             </Box>
           </CardContent>
@@ -112,7 +113,8 @@ export function LoadoutDropdown({
           >
             {label ? (
               <span>
-                Loadout: <strong>{name}</strong>
+                {t`loDropdown.label`}
+                <strong>{name}</strong>
               </span>
             ) : (
               <span>{name}</span>
@@ -121,7 +123,7 @@ export function LoadoutDropdown({
         }
         {...dropdownBtnProps}
       >
-        <MenuItem onClick={() => onShow()}>Create a new Loadout</MenuItem>
+        <MenuItem onClick={() => onShow()}>{t`loDropdown.create`}</MenuItem>
         {teamCharIds.map((tcId) => {
           const { name, buildIds, buildTcIds, customMultiTargets } =
             database.teamChars.get(tcId)!
@@ -137,15 +139,15 @@ export function LoadoutDropdown({
                 color={buildIds.length ? 'primary' : 'secondary'}
                 sx={{ marginLeft: 'auto' }}
               >
-                {buildIds.length} Builds
+                {t(`loDropdown.builds`, { count: buildIds.length })}
               </SqBadge>
               <SqBadge color={buildTcIds.length ? 'primary' : 'secondary'}>
-                {buildTcIds.length} TC Builds
+                {t(`loDropdown.tcs`, { count: buildTcIds.length })}
               </SqBadge>
               <SqBadge
                 color={customMultiTargets.length ? 'success' : 'secondary'}
               >
-                {customMultiTargets.length} Multi-Opt
+                {t(`loDropdown.multi`, { count: customMultiTargets.length })}
               </SqBadge>
             </MenuItem>
           )

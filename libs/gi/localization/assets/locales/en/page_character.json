@@ -8,6 +8,45 @@
     "theorycraft": "Theorycraft",
     "upopt": "Artifact Upgrader"
   },
+  "buildCardTip": {
+    "edit": "Edit Build Settings",
+    "copyTc": "Copy to TC Builds",
+    "duplicate": "Duplicate Build",
+    "equip": "Equip Build",
+    "delete": "Delete Build"
+  },
+  "buildEquipped": {
+    "name": "Equipped Build",
+    "copy": {
+      "name": "Duplicate of Equipped",
+      "tcName": "Equipped Build - Copied",
+      "desc": "Copied from Equipped Build"
+    }
+  },
+  "buildReal": {
+    "copy": {
+      "name": "Duplicate of {{name}}",
+      "tcName": "{{name}} - Copied",
+      "equipped": "Equipped"
+    },
+    "edit": {
+      "title": "Build Settings",
+      "label": "Build Name",
+      "placeholder": "Build Name",
+      "desc": "Build Description"
+    }
+  },
+  "buildTc": {
+    "copy": {
+      "tcName": "Duplicate of {{name}}"
+    },
+    "edit": {
+      "title": "Build Settings",
+      "label": "Build Name",
+      "placeholder": "Build Name",
+      "desc": "Build Description"
+    }
+  },
   "formulas": "Formulas",
   "calculations": "Calculations",
   "selectCharacter": "Select a Character",
@@ -49,12 +88,38 @@
     "duplicate": "Duplicate",
     "target_one": "<0>{{count}}</0> Target",
     "target_other": "<0>{{count}}</0> Targets",
-    "jsonDescWarning": "It seems like you're trying to import a multi-opt config. This isn't the right place for that! Please go back one modal and press <strong>Import Multi-Opt.</strong>"
+    "jsonDescWarning": "It seems like you're trying to import a multi-opt config. This isn't the right place for that! Please go back one modal and press <strong>Import Multi-Opt.</strong>",
+    "label": "Custom Multi-target Name",
+    "desc": "Custom Multi-target Description",
+    "export": "Export",
+    "confirm": "Are you sure you want to delete this target?",
+    "copyMsg": "Copied configuration to clipboard."
+  },
+  "mTargetEditor": {
+    "title": "Target Editor",
+    "rankMobile": "#",
+    "rank": "Rank #",
+    "desc": "Target Description",
+    "noReaction": "No Reactions"
+  },
+  "mTargetImport": {
+    "invalid": "Invalid Multi-Optimization Config",
+    "failed": "Data Import failed. ",
+    "button": "Import Multi-Opt",
+    "title": "Import Multi-Opt",
+    "desc": "Import a Multi-opt in JSON form below.",
+    "label": "JSON Data",
+    "placeholder": "Paste your Team JSON here",
+    "import": "Import"
   },
   "addStats": {
     "title": "Bonus Stats",
     "info": "You can use these fields to add buffs/debuffs not directly supported in GO, such as food buffs, Abyss cards, or Superconduct. Please refer to the <1>Genshin Impact Wiki</1> for specific values.",
-    "label": "New Bonus Stat"
+    "label": "New Bonus Stat",
+    "main": "Main Stats",
+    "other": "Other Stats",
+    "misc": "Misc Stats",
+    "special": "<0>Special:</0> "
   },
   "showFormulas": {
     "button": "Show Formulas & Calcs",
@@ -125,5 +190,24 @@
   "teammateUsing": {
     "weapon": "Teammate <strong><1></1></strong> is using this weapon.",
     "artifact": "Teammate <strong><1></1></strong> is using this <3></3>"
+  },
+  "charContentModal": {
+    "loadoutsWith": "Team Loadouts with <2/>",
+    "addLoAndTeam": "Add new Loadout+Team",
+    "addTeam": "Add new Team"
+  },
+  "loadoutEditor": {
+    "label": "Loadout Name",
+    "placeholder": "Loadout Name",
+    "desc": "Loadout Description",
+    "dupBtn": "Duplicate Loadout",
+    "delBtn": "Delete Loadout",
+    "optTarget": "Optimization Target",
+    "conditionals": "Conditionals: ",
+    "builds": "Builds",
+    "teams": "Teams",
+    "addNewTeam": "Add new Team",
+    "bonusStats": "Bonus Stats",
+    "mltTargets": "Custom multi-targets"
   }
 }

@@ -37,8 +37,6 @@ import { teamFilterConfigs, teamSortConfigs, teamSortMap } from './TeamSort'
 const columns = { xs: 1, sm: 2, md: 2, lg: 3, xl: 3 }
 const numToShowMap = { xs: 6, sm: 12, md: 18, lg: 24, xl: 24 }
 
-// TODO: Translation
-
 export default function PageTeams() {
   const { t } = useTranslation([
     'page_team',

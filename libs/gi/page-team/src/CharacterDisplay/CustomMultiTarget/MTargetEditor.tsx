@@ -146,14 +146,14 @@ export default function MTargetEditor({
           }}
           onClick={() => setcollapse((c) => !c)}
         >
-          <Typography variant="h6">Target Editor</Typography>
+          <Typography variant="h6">{t`mTargetEditor.title`}</Typography>
           {collapse ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
         </CardActionArea>
         <TextFieldLazy
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                {isMobile ? '#' : 'Rank #'}
+                {isMobile ? t`mTargetEditor.rankMobile` : t`mTargetEditor.rank`}
               </InputAdornment>
             ),
           }}
@@ -286,7 +286,7 @@ export default function MTargetEditor({
               <Grid item xs={1}>
                 <TextFieldLazy
                   fullWidth
-                  label="Target Description"
+                  label={t`mTargetEditor.desc`}
                   value={description}
                   onChange={(description) =>
                     setCustomTarget({ ...customTarget, description })
@@ -343,7 +343,7 @@ function ReactionDropdown({
   return (
     <DropdownButton title={title} sx={{ ml: 'auto' }}>
       <MenuItem value="" disabled={!reaction} onClick={() => setReactionMode()}>
-        No Reactions
+        {t`mTargetEditor.noReaction`}
       </MenuItem>
       {reactions.map((rm) => (
         <MenuItem

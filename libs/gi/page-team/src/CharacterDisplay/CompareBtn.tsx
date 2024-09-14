@@ -12,7 +12,6 @@ import { useTranslation } from 'react-i18next'
  * This is used in conjuction with useCompareData hook to supply a compareData to the compare UI.
  */
 
-// TODO: Translation
 export default function CompareBtn({
   buttonGroupProps = {},
 }: {

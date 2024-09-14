@@ -141,6 +141,7 @@ export function WeaponSwapCard({
   weaponTypeKey: WeaponTypeKey
   onChangeId: (id: string) => void
 }) {
+  const { t } = useTranslation('ui')
   const [show, onOpen, onClose] = useBoolState()
   return (
     <CardThemed
@@ -156,8 +157,7 @@ export function WeaponSwapCard({
       <CardContent>
         <Typography>
           <ImgIcon src={imgAssets.weaponTypes[weaponTypeKey]} />{' '}
-          {/* TODO translation */}
-          {weaponTypeKey}
+          {t(`weaponType.${weaponTypeKey}`)}
         </Typography>
       </CardContent>
       <Divider />

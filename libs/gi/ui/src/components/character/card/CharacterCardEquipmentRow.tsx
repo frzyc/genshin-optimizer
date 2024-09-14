@@ -5,6 +5,7 @@ import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { input } from '@genshin-optimizer/gi/wr'
 import { Box, Card, Grid, Typography } from '@mui/material'
 import { useContext } from 'react'
+import { useTranslation } from 'react-i18next'
 import { DataContext } from '../../../context'
 import { ArtifactCardPico } from '../../artifact'
 import { WeaponCardPico, WeaponCardPicoObj } from '../../weapon'
@@ -56,6 +57,7 @@ export function CharacterCardEquipmentRowTC({
 }: {
   weapon: ICachedWeapon
 }) {
+  const { t } = useTranslation('ui')
   return (
     <Box>
       <Grid container columns={weapon ? 6 : 5} spacing={0.5} sx={{}}>
@@ -74,9 +76,8 @@ export function CharacterCardEquipmentRowTC({
               alignItems: 'center',
             }}
           >
-            {/* TODO: Translation */}
             <Typography>
-              <strong>TC Build</strong>
+              <strong>{t`tcBuild`}</strong>
             </Typography>
           </Card>
         </Grid>

@@ -81,7 +81,6 @@ type BuildDisplayItemProps = {
   mainStatAssumptionLevel: number
 }
 
-// TODO: Translation for build UI
 //for displaying each artifact build
 export const BuildDisplayItem = memo(function BuildDisplayItem({
   label,
@@ -346,8 +345,9 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
               <SqBadge color={currentlyEquipped ? 'success' : 'info'}>
                 <Typography sx={{ display: 'flex', gap: 1 }}>
                   <strong>{label}</strong>
-                  {/* TODO: Translation */}
-                  {currentlyEquipped && <span>(Equipped)</span>}
+                  {currentlyEquipped && (
+                    <span>{t`buildDisplay.equippedBadge`}</span>
+                  )}
                 </Typography>
               </SqBadge>
             )}
@@ -362,8 +362,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
                       )?.name
                     }
                   </span>
-                  {/* TODO: Translation */}
-                  {isActiveBuild && <span>(current build)</span>}
+                  {isActiveBuild && <span>{t`buildDisplay.currentBadge`}</span>}
                   {sameAsBuildIds.length > 1 && (
                     <Tooltip
                       arrow

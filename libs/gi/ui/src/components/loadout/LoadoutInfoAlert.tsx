@@ -1,7 +1,6 @@
 import { Alert } from '@mui/material'
 import { Trans, useTranslation } from 'react-i18next'
 
-// TODO: Translation
 export function LoadoutInfoAlert() {
   const { t } = useTranslation('page_character')
   return (

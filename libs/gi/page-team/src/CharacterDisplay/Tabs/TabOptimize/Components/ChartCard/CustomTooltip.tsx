@@ -133,8 +133,7 @@ export default function CustomTooltip({
                 )}
                 {activeBuild && (
                   <SqBadge color="success">
-                    {/* TODO: Translation */}
-                    <strong>Active Build</strong>
+                    <strong>{t`activeBuild`}</strong>
                   </SqBadge>
                 )}
                 {generLabel && <SqBadge color="info">{generLabel}</SqBadge>}

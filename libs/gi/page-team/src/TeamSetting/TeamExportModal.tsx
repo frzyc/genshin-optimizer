@@ -48,8 +48,8 @@ import {
   useTheme,
 } from '@mui/material'
 import { useMemo, useState } from 'react'
+import { Trans, useTranslation } from 'react-i18next'
 
-// TODO: Translation
 export default function TeamExportModal({
   show,
   onHide,
@@ -59,6 +59,7 @@ export default function TeamExportModal({
   onHide: () => void
   teamId: string
 }) {
+  const { t } = useTranslation('page_team')
   const database = useDatabase()
   const team = useTeam(teamId)!
   const { loadoutData } = team
@@ -93,7 +94,7 @@ export default function TeamExportModal({
     const dataStr = JSON.stringify(data)
     navigator.clipboard
       .writeText(dataStr)
-      .then(() => alert('Copied team data to clipboard.'))
+      .then(() => alert(t`exportModal.msg`))
       .catch(console.error)
   }
   const [selAll, setSelAll] = useState(true)
@@ -134,7 +135,7 @@ export default function TeamExportModal({
     <ModalWrapper open={show} onClose={onHide}>
       <CardThemed>
         <CardHeader
-          title="Team Export"
+          title={t`exportModal.title`}
           action={
             <IconButton onClick={onHide}>
               <CloseIcon />
@@ -151,12 +152,19 @@ export default function TeamExportModal({
             }}
           >
             <Alert severity="info">
-              Export the team data to be imported by another user. All the team
-              and loadout data (bonus stats, enemy config, optimize config) are
-              exported. All exported non-TC builds are converted to TC builds.
+              <Trans t={t} i18nKey={'exportModal.alert'}>
+                Export the team data to be imported by another user. All the
+                team and loadout data (bonus stats, enemy config, optimize
+                config) are exported. All exported non-TC builds are converted
+                to TC builds.
+              </Trans>
             </Alert>
-            <Button color="info" onClick={selAll ? onSelAll : onUnselAll}>
-              {selAll ? 'Select All' : 'Unselect All'}
+            <Button
+              sx={{ flexShrink: 0 }}
+              color="info"
+              onClick={selAll ? onSelAll : onUnselAll}
+            >
+              {selAll ? t`exportModal.selAll` : t`exportModal.unselAll`}
             </Button>
           </Box>
 
@@ -189,7 +197,7 @@ export default function TeamExportModal({
           sx={{ display: 'flex', gap: 2, justifyContent: 'flex-end' }}
         >
           <Button color="success" onClick={onExport}>
-            Export
+            {t`exportModal.export`}
           </Button>
         </CardContent>
       </CardThemed>
@@ -205,6 +213,7 @@ function LoadoutSetting({
   setting: LoadoutExportSetting
   setSetting: (loadoutExportSetting: Partial<LoadoutExportSetting>) => void
 }) {
+  const { t } = useTranslation('page_team')
   const database = useDatabase()
   const teamChar = useTeamChar(loadout.teamCharId)!
   const {
@@ -258,7 +267,7 @@ function LoadoutSetting({
                   sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
                 >
                   <OptimizationIcon />
-                  <Box>Optimization Target:</Box>
+                  <Box>{t`exportModal.target`}</Box>
                 </Typography>
                 <Typography>
                   <OptimizationTargetDisplay
@@ -278,7 +287,7 @@ function LoadoutSetting({
           <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
             <CustomMultiTargetIcon />
             <Typography>
-              <strong>Mtargets to Export</strong>
+              <strong>{t`exportModal.mTargets`}</strong>
             </Typography>
           </CardContent>
           <FieldDisplayList bgt="light">
@@ -326,7 +335,7 @@ function LoadoutSetting({
       <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
         <BuildIcon />
         <Typography>
-          <strong>Builds to Export</strong>
+          <strong>{t`exportModal.builds`}</strong>
         </Typography>
       </CardContent>
       <FieldDisplayList bgt="light">
@@ -342,7 +351,7 @@ function LoadoutSetting({
               tabIndex={-1}
               disableRipple
             />
-            <ListItemText primary={`Equipped Build`} />
+            <ListItemText primary={t`exportModal.equipped`} />
           </ListItemButton>
         </ListItem>
         {buildIds.map((buildId) => {
@@ -395,7 +404,7 @@ function LoadoutSetting({
                 <ListItemText
                   primary={
                     <Box>
-                      {buildTc.name} <SqBadge>TC Build</SqBadge>
+                      {buildTc.name} <SqBadge>{t`exportModal.tc`}</SqBadge>
                     </Box>
                   }
                 />

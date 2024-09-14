@@ -1049,7 +1049,6 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
         {t`newTcBuild.button`}
       </Button>
       {/* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
-      {/* TODO: Translation */}
       <ModalWrapper open={showTcPrompt} onClose={OnHideTcPrompt}>
         <CardThemed>
           <CardHeader
@@ -1119,7 +1118,6 @@ function CopyBuildButton({
         {t`newBuild.button`}
       </Button>
       {/* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
-      {/* TODO: Translation */}
       <ModalWrapper
         open={showPrompt}
         onClose={OnHidePrompt}

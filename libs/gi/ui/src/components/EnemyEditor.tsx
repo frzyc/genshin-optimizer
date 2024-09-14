@@ -41,7 +41,6 @@ const ExpandButton = styled((props: ExpandMoreProps) => {
 }))
 
 export default ExpandButton
-// TODO: Translation
 export function EnemyExpandCard({ teamId }: { teamId: string }) {
   const { t } = useTranslation('page_team')
   const [expanded, setexpanded] = useState(false)

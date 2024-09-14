@@ -31,8 +31,8 @@ import {
   TextField,
 } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
-// TODO: Translation
 export default function BuildReal({
   buildId,
   active = false,
@@ -40,6 +40,7 @@ export default function BuildReal({
   buildId: string
   active?: boolean
 }) {
+  const { t } = useTranslation('page_character')
   const [open, onOpen, onClose] = useBoolState()
   const {
     teamId,
@@ -89,13 +90,13 @@ export default function BuildReal({
     if (!newBuildTcId) return
     // copy over name/desc
     database.buildTcs.set(newBuildTcId, {
-      name: `${name} - Copied`,
+      name: t('buildReal.copy.tcName', { name }),
       description,
     })
   }
   const onDupe = () =>
     database.teamChars.newBuild(teamCharId, {
-      name: `Duplicate of ${name}`,
+      name: t('buildReal.copy.name', { name }),
       artifactIds: artifactIds,
       weaponId: weaponId,
     })
@@ -112,7 +113,7 @@ export default function BuildReal({
         <BuildEditor buildId={buildId} onClose={onClose} />
       </ModalWrapper>
       <EquipBuildModal
-        currentName="Equipped"
+        currentName={t`buildReal.copy.equipped`}
         currentWeaponId={equippedWeapon}
         currentArtifactIds={equippedArtifacts}
         newWeaponId={weaponId}
@@ -194,6 +195,7 @@ function BuildEditor({
   buildId: string
   onClose: () => void
 }) {
+  const { t } = useTranslation('page_character')
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
@@ -233,7 +235,7 @@ function BuildEditor({
   return (
     <CardThemed>
       <CardHeader
-        title="Build Settings"
+        title={t`buildReal.edit.title`}
         action={
           <IconButton onClick={onClose}>
             <CloseIcon />
@@ -244,14 +246,14 @@ function BuildEditor({
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
         <TextField
           fullWidth
-          label="Build Name"
-          placeholder="Build Name"
+          label={t`buildReal.edit.label`}
+          placeholder={t`buildReal.edit.placeholder`}
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <TextField
           fullWidth
-          label="Build Description"
+          label={t`buildReal.edit.desc`}
           value={desc}
           onChange={(e) => setDesc(e.target.value)}
           multiline

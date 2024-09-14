@@ -13,7 +13,9 @@ import {
 } from '@genshin-optimizer/gi/ui'
 import { Grid } from '@mui/material'
 import { useContext } from 'react'
+import { useTranslation } from 'react-i18next'
 export function BuildEquipped({ active = false }: { active?: boolean }) {
+  const { t } = useTranslation('page_character')
   const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const {
     character: { key: characterKey, equippedArtifacts, equippedWeapon },
@@ -25,7 +27,7 @@ export function BuildEquipped({ active = false }: { active?: boolean }) {
     })
   const onDupe = () =>
     database.teamChars.newBuild(teamCharId, {
-      name: 'Duplicate of Equipped',
+      name: t`buildEquipped.copy.name`,
       artifactIds: equippedArtifacts,
       weaponId: equippedWeapon,
     })
@@ -40,14 +42,14 @@ export function BuildEquipped({ active = false }: { active?: boolean }) {
     if (!newBuildTcId) return
     // copy over name
     database.buildTcs.set(newBuildTcId, {
-      name: `Equipped Build - Copied`,
-      description: 'Copied from Equipped Build',
+      name: t`buildEquipped.copy.tcName`,
+      description: t`buildEquipped.copy.desc`,
     })
   }
 
   return (
     <BuildCard
-      name={'Equipped Build'}
+      name={t`buildEquipped.name`}
       active={active}
       onActive={onActive}
       onCopyToTc={copyToTc}

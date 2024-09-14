@@ -57,7 +57,6 @@ export function EquipBuildModal(props: Props & { show: boolean }) {
     </ModalWrapper>
   )
 }
-/* TODO: Translation */
 function Content(props: Props) {
   const { t } = useTranslation('page_character_optimize')
   const {
@@ -83,7 +82,8 @@ function Content(props: Props) {
   const toEquip = () => {
     if (copyCurrent) {
       database.teamChars.newBuild(teamCharId, {
-        name: name !== '' ? name : `Duplicate of ${currentName}`,
+        name:
+          name !== '' ? name : t('equipBuildModal.newName', { currentName }),
         artifactIds: currentArtifactIds,
         weaponId: currentWeaponId,
       })
@@ -101,13 +101,9 @@ function Content(props: Props) {
           <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
             <CheckroomIcon />
             <span>
-              <Trans
-                t={t}
-                i18nKey={'equipBuildModal.title'}
-                build={currentName}
-              >
+              <Trans t={t} i18nKey={'equipBuildModal.title'}>
                 Confirm Equipment Changes for{' '}
-                <strong>{{ build: currentName } as any}</strong>
+                <strong>{{ currentName } as any}</strong>
               </Trans>
             </span>
           </Box>
@@ -131,13 +127,9 @@ function Content(props: Props) {
         {teamCharId && (
           <FormControlLabel
             label={
-              <Trans
-                t={t}
-                i18nKey={'equipBuildModal.overwrite'}
-                build={currentName}
-              >
+              <Trans t={t} i18nKey={'equipBuildModal.overwrite'}>
                 Copy the current equipment in{' '}
-                <strong>{{ build: currentName } as any}</strong> to a new build.
+                <strong>{{ currentName } as any}</strong> to a new build.
                 Otherwise, they will be overwritten.
               </Trans>
             }
@@ -153,7 +145,7 @@ function Content(props: Props) {
         {copyCurrent && (
           <TextField
             label={t`equipBuildModal.label`}
-            placeholder={`Duplicate of ${currentName}`}
+            placeholder={t('equipBuildModal.newName', { currentName })}
             value={name}
             onChange={(e) => setName(e.target.value)}
             size="small"

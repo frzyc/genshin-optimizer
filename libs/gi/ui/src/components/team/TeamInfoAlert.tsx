@@ -1,7 +1,6 @@
 import { Alert } from '@mui/material'
 import { Trans, useTranslation } from 'react-i18next'
 
-// TODO: Translation
 export function TeamInfoAlert() {
   const { t } = useTranslation('page_team')
   return (

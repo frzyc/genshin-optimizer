@@ -28,7 +28,6 @@ import { ResonanceDisplay } from './ResonanceDisplay'
 import { TeammateDisplay } from './TeamComponents'
 import TeamExportModal from './TeamExportModal'
 
-// TODO: Translation
 export default function TeamSetting({
   teamId,
   teamData,

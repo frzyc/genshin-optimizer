@@ -120,9 +120,7 @@ function WeaponFilter({
         <Grid container>
           <Grid item>
             <Typography variant="h6">
-              <Trans t={t} i18nKey="weaponFilter">
-                Weapon Filter
-              </Trans>
+                {t`weaponFilterTitle`}
             </Typography>
           </Grid>
           <Grid

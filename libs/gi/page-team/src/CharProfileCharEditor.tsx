@@ -30,7 +30,7 @@ import {
   Typography,
 } from '@mui/material'
 import { Suspense, useContext } from 'react'
-import { useTranslation } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import { BuildTcContext } from './BuildTcContext'
 
 export function CharProfileCharEditor({
@@ -84,8 +84,11 @@ function Content({ onClose }: { onClose?: () => void }) {
           <BootstrapTooltip
             title={
               <Typography>
-                Set a specific level, constellation, ascension, or talent level
-                for this TC build, that is different from the base character
+                <Trans t={t} i18nKey={'buildTcCharOverride.tip'}>
+                  Set a specific level, constellation, ascension, or talent
+                  level for this TC build, that is different from the base
+                  character
+                </Trans>
               </Typography>
             }
           >

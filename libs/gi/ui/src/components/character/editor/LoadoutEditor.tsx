@@ -34,6 +34,7 @@ import {
   Typography,
 } from '@mui/material'
 import { useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { OptimizationIcon } from '../../../consts'
 import { DocumentDisplay } from '../../DocumentDisplay'
@@ -56,6 +57,7 @@ export function LoadoutEditor({
   teamCharId: string
   teamIds: string[]
 }) {
+  const { t } = useTranslation('page_character')
   const [showRemoval, onShowRemoval, onHideRemoval] = useBoolState()
   const navigate = useNavigate()
   const database = useDatabase()
@@ -122,14 +124,14 @@ export function LoadoutEditor({
           <LoadoutInfoAlert />
           <TextFieldLazy
             fullWidth
-            label="Loadout Name"
-            placeholder="Loadout Name"
+            label={t`loadoutEditor.label`}
+            placeholder={t`loadoutEditor.placeholder`}
             value={name}
             onChange={(name) => database.teamChars.set(teamCharId, { name })}
           />
           <TextFieldLazy
             fullWidth
-            label="Loadout Description"
+            label={t`loadoutEditor.desc`}
             value={description}
             onChange={(description) =>
               database.teamChars.set(teamCharId, { description })
@@ -146,7 +148,7 @@ export function LoadoutEditor({
                   fullWidth
                   startIcon={<ContentCopyIcon />}
                 >
-                  Duplicate Loadout
+                  {t`loadoutEditor.dupBtn`}
                 </Button>
               </Grid>
               <Grid item xs={1}>
@@ -164,7 +166,7 @@ export function LoadoutEditor({
                   color="error"
                   onClick={onShowRemoval}
                 >
-                  Delete Loadout
+                  {t`loadoutEditor.delBtn`}
                 </Button>
               </Grid>
             </Grid>
@@ -190,7 +192,7 @@ export function LoadoutEditor({
                           }}
                         >
                           <OptimizationIcon />
-                          <span>Optimization Target</span>
+                          <span>{t`loadoutEditor.optTarget`}</span>
                         </Box>
                       }
                     />
@@ -218,7 +220,8 @@ export function LoadoutEditor({
                 <CardThemed bgt="light">
                   <CardContent>
                     <Typography variant="h6">
-                      Conditionals: <strong>{conditionalCount}</strong>
+                      {t`loadoutEditor.conditionals`}
+                      <strong>{conditionalCount}</strong>
                     </Typography>
                   </CardContent>
                 </CardThemed>
@@ -231,7 +234,7 @@ export function LoadoutEditor({
           title={
             <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
               <CheckroomIcon />
-              <span>Builds</span>
+              <span>{t`loadoutEditor.builds`}</span>
             </Box>
           }
         />
@@ -267,7 +270,7 @@ export function LoadoutEditor({
           title={
             <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
               <CheckroomIcon />
-              <span>Teams</span>
+              <span>{t`loadoutEditor.teams`}</span>
             </Box>
           }
         />
@@ -295,7 +298,7 @@ export function LoadoutEditor({
                 color="info"
                 startIcon={<AddIcon />}
               >
-                Add new Team
+                {t`loadoutEditor.addNewTeam`}
               </Button>
             </Grid>
           </Grid>
@@ -310,6 +313,7 @@ function BonusStatsCard({
 }: {
   bonusStats: TeamCharacter['bonusStats']
 }) {
+  const { t } = useTranslation('page_character')
   return (
     <CardThemed bgt="light">
       <CardHeader
@@ -322,7 +326,7 @@ function BonusStatsCard({
             }}
           >
             <BarChartIcon />
-            <span>Bonus Stats</span>
+            <span>{t`loadoutEditor.bonusStats`}</span>
           </Box>
         }
         titleTypographyProps={{ variant: 'h6' }}
@@ -348,6 +352,7 @@ function MultiTargetCard({
 }: {
   customMultiTargets: TeamCharacter['customMultiTargets']
 }) {
+  const { t } = useTranslation('page_character')
   return (
     <CardThemed bgt="light">
       <CardHeader
@@ -360,7 +365,7 @@ function MultiTargetCard({
             }}
           >
             <DashboardCustomizeIcon />
-            <span>Custom multi-targets</span>
+            <span>{t`loadoutEditor.mltTargets`}</span>
           </Box>
         }
         titleTypographyProps={{ variant: 'h6' }}

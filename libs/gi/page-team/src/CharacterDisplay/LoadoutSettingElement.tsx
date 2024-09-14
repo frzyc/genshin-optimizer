@@ -33,7 +33,6 @@ import BuildTc from './Build/BuildTc'
 import { CustomMultiTargetButton } from './CustomMultiTarget'
 import StatModal from './StatModal'
 
-// TODO: Translation
 const columns = { xs: 1, sm: 1, md: 2, lg: 2 }
 export default function LoadoutSettingElement() {
   const database = useDatabase()

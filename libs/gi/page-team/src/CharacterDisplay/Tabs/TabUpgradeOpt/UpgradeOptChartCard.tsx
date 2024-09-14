@@ -19,6 +19,7 @@ import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import { Box, Button, Divider, Grid, Tooltip, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import {
   Area,
   ComposedChart,
@@ -146,6 +147,7 @@ function UpgradeOptChartCardGraph({
   upOptCalc,
   ix,
 }: Props) {
+  const { t } = useTranslation('page_character_optimize')
   const upArt = upOptCalc.artifacts[ix]
   const database = useDatabase()
   const [, forceUpdate] = useForceUpdate()
@@ -224,13 +226,13 @@ function UpgradeOptChartCardGraph({
 
   const probUpgradeText = (
     <span>
-      Prob. upgrade{isExact ? '' : ' (est.)'}:{' '}
+      {t('upOptChart.prob', { est: isExact ? '' : t`upOptChart.est` })}
       <strong>{(100 * reportP).toFixed(1)}%</strong>
     </span>
   )
   const avgIncText = (
     <span>
-      Average increase{isExact ? '' : ' (est.)'}:{' '}
+      {t('upOptChart.average', { est: isExact ? '' : t`upOptChart.est` })}
       <strong>
         {reportD <= 0 ? '' : '+'}
         {((100 * reportD) / thr0).toFixed(1)}%
@@ -262,9 +264,9 @@ function UpgradeOptChartCardGraph({
         >
           <Box flexGrow={1}>
             {isCurrentlyEquipped ? (
-              <SqBadge color="secondary">Equipped</SqBadge>
+              <SqBadge color="secondary">{t`upOptChart.equipped`}</SqBadge>
             ) : (
-              <Typography>{'Current on Build'}</Typography>
+              <Typography>{t`upOptChart.current`}</Typography>
             )}
           </Box>
 
@@ -291,7 +293,7 @@ function UpgradeOptChartCardGraph({
             tickFormatter={(v) => `${v <= 0 ? '' : '+'}${v}%`}
           >
             <Label
-              value="Relative Increase to Target"
+              value={t`upOptChart.incLabel`}
               position="insideBottom"
               style={{ fill: '#eaebed' }}
               offset={-10}
@@ -303,7 +305,7 @@ function UpgradeOptChartCardGraph({
             tickFormatter={(v) => `${(v * 100).toFixed()}%`}
           >
             <Label
-              value="Probability"
+              value={t`upOptChart.probLabel`}
               position="insideLeft"
               angle={-90}
               style={{ fill: '#eaebed' }}
@@ -332,8 +334,12 @@ function UpgradeOptChartCardGraph({
             </linearGradient>
           </defs>
 
-          <Line dataKey="dne" stroke="red" name="Current Target Value" />
-          <Line dataKey="dne" stroke="rgba(0,200,0)" name="Average Increase" />
+          <Line dataKey="dne" stroke="red" name={t`upOptChart.currentLine`} />
+          <Line
+            dataKey="dne"
+            stroke="rgba(0,200,0)"
+            name={t`upOptChart.averageLine`}
+          />
           {constrained && (
             <Area
               type="monotone"
@@ -356,8 +362,10 @@ function UpgradeOptChartCardGraph({
             opacity={0.5}
             name={
               isExact
-                ? `Exact${constrained ? ' Constrained' : ''} Distribution`
-                : `Estimated Distribution`
+                ? t('upOptChart.exactDist', {
+                    const: constrained ? t`upOptChart.const` : '',
+                  })
+                : t`upOptChart.estimatedDist`
             }
             activeDot={false}
           />
@@ -365,13 +373,13 @@ function UpgradeOptChartCardGraph({
             x={perc(thr0)}
             stroke="red"
             strokeDasharray="3 3"
-            name="Current Target"
+            name={t`upOptChart.currentTarget`}
           />
           <ReferenceLine
             x={perc(thr0 + reportD)}
             stroke="rgba(0,200,0,1)"
             strokeDasharray="3 3"
-            name="Current Target"
+            name={t`upOptChart.currentTarget`}
           />
         </ComposedChart>
       </ResponsiveContainer>
