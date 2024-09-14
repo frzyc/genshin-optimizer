@@ -32,7 +32,7 @@ import {
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { Suspense, useCallback, useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import { getCalcDisplay, resolveInfo } from '../../util'
 import { LocationAutocomplete, LocationName } from '../character'
 import { WeaponName } from './WeaponTrans'
@@ -167,7 +167,9 @@ export function WeaponCardObj({
                 /{ascensionMaxLevel[ascension]}
               </Typography>
               <Typography variant="h6">
-                Refinement <strong>{refinement}</strong>
+                <Trans t={t} i18nKey={'refinement'}>
+                  Refinement <strong>{{ rank: refinement } as any}</strong>
+                </Trans>
               </Typography>
               <StarsDisplay stars={weaponStat.rarity} colored />
             </Box>

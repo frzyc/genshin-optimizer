@@ -19,5 +19,6 @@
   "subheadings": {
     "general": "General",
     "inventory": "Inventory"
-  }
+  },
+  "refinement": "Refinement <1>{{rank}}</1>"
 }
