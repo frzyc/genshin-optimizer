@@ -22,10 +22,17 @@
         "shortDesc": "Obtiene Apuesta ciega al azar y afecta con Sobresalto a un enemigo. Además, inflige Daño Imaginario al objetivo. Cuando un aliado ataca a un enemigo con Sobresalto, el <orangeStrong>Daño CRIT que inflige aumenta</orangeStrong>."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Bala cargada a la derecha",
+        "fullDesc": "La RES a efecto de un aliado con Apuesta reforzada aumenta en un <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>, y cuando ese aliado recibe un ataque, Aventurino obtiene 1 pt. de Apuesta ciega. Aventurino es inmune a los estados negativos de Control cuando tiene Apuesta reforzada. Este efecto se puede activar de nuevo después de {{5}} turnos, y al recibir un ataque obtiene adicionalmente {{1}} pt. de Apuesta ciega. Tras alcanzar 7 pts. de Apuesta ciega, Aventurino los consume y lanza un ataque adicional de {{2}} golpes. Cada golpe inflige a un enemigo aleatorio un <orangeStrong>{{3, percent}}%</orangeStrong> de la DEF de Aventurino como Daño Imaginario. Apuesta ciega puede acumular 10 pts. como máximo.",
+        "shortDesc": "La RES a efecto de un aliado con Apuesta reforzada aumenta y, cuando ese aliado recibe un ataque, Aventurino acumula Apuesta ciega. Aventurino es inmune a los estados negativos de Control cuando tiene Apuesta reforzada. Tras alcanzar 7 pts. de Apuesta ciega, Aventurino los consume y lanza un <orangeStrong>ataque adicional</orangeStrong> que inflige una pequeña cantidad de Daño Imaginario a un enemigo al azar. Se dispara 7 veces."
+      }
+    },
     "technique": {
       "0": {
         "name": "Rojo o negro",
-        "fullDesc": "Tras usar la técnica, se obtiene 1 de los siguientes efectos:\\nProbabilidad de aumentar la DEF en un {{1, percent}}%.\\nGran probabilidad de aumentar la DEF en un {{2, percent}}%.\\nPequeña probabilidad de aumentar la DEF en un {{3, percent}}%.\\nSi se usa repetidas veces, solo se conserva el efecto con el valor más alto.\\nCuando comienza la siguiente batalla, la DEF de todos los aliados aumenta en la cantidad correspondiente durante {{4}} turnos.",
+        "fullDesc": "Tras usar la técnica, se obtiene 1 de los siguientes efectos:<br>Probabilidad de aumentar la DEF en un {{1, percent}}%.<br>Gran probabilidad de aumentar la DEF en un {{2, percent}}%.<br>Pequeña probabilidad de aumentar la DEF en un {{3, percent}}%.<br>Si se usa repetidas veces, solo se conserva el efecto con el valor más alto.<br>Cuando comienza la siguiente batalla, la DEF de todos los aliados aumenta en la cantidad correspondiente durante {{4}} turnos.",
         "shortDesc": "Al usar la técnica se obtiene 1 de 3 posibles efectos de aumento de DEF al azar. Al entrar en el siguiente combate, la DEF de todos los aliados aumenta en la cantidad correspondiente."
       }
     },

@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Amidst the Raining Bliss",
-        "fullDesc": "เพิ่มอัตราคริติคอลของตัวเอง {{1, percent}}% หาก Yanqing อยู่ภายใต้เอฟเฟกต์ \"Soulsteel Sync\" จะทำให้ DMG คริติคอล เพิ่มขึ้นอีก <orangeStrong>{{2, percent}}%</orangeStrong> โดย<u>เอฟเฟกต์ Buff</u> จะคงอยู่เป็นเวลา 1 เทิร์น จากนั้นจะสร้าง DMG น้ำแข็ง <orangeStrong>{{3, percent}}%</orangeStrong> ของ ATK ของ Yanqing แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "fullDesc": "เพิ่มอัตราคริติคอลของตัวเอง {{1, percent}}% หาก Yanqing อยู่ภายใต้เอฟเฟกต์ \"Soulsteel Sync\" จะทำให้ DMG คริติคอล เพิ่มขึ้นอีก <orangeStrong>{{2, percent}}%</orangeStrong> โดยเอฟเฟกต์ Buff จะคงอยู่เป็นเวลา 1 เทิร์น จากนั้นจะสร้าง DMG น้ำแข็ง <orangeStrong>{{3, percent}}%</orangeStrong> ของ ATK ของ Yanqing แก่ศัตรูที่กำหนดหนึ่งตัว",
         "shortDesc": "เพิ่มอัตราคริติคอลของตัวเอง พร้อมทั้งเสริมพลังให้กับ \"Soulsteel Sync\" และสร้าง DMG น้ำแข็งอย่างรุนแรงแก่ศัตรูหนึ่งตัว"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "One With the Sword",
+        "fullDesc": "เมื่อ Yanqing อยู่ภายใต้เอฟเฟกต์ \"Soulsteel Sync\" โอกาสในการถูกโจมตีจะลดลง และเพิ่มอัตราคริติคอลของตัวเอง <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> และ DMG คริติคอล <orangeStrong>{{2, percent}}%</orangeStrong> โดยหลังจากโจมตีศัตรูเป้าหมาย จะมีโอกาสคงที่ <orangeStrong>{{3, percent}}%</orangeStrong> ที่จะทำการโจมตีต่อเนื่อง และสร้าง DMG น้ำแข็ง <orangeStrong>{{4, percent}}%</orangeStrong> ของ ATK ของ Yanqing แก่เป้าหมาย อีกทั้งมีโอกาสพื้นฐาน {{6, percent}}% ที่จะทำให้เป้าหมายดังกล่าวติดสถานะแช่แข็ง เป็นเวลา 1 เทิร์น<br>โดยขณะที่ติดสถานะแช่แข็ง ศัตรูเป้าหมายจะไม่สามารถแอ็กชันได้ พร้อมกับได้รับ DMG น้ำแข็งเพิ่มเติม <orangeStrong>{{5, percent}}%</orangeStrong> ของ ATK ของ Yanqing ในช่วงเริ่มต้นของแต่ละเทิร์น<br>เมื่อ Yanqing ได้รับ DMG \"Soulsteel Sync\" ก็จะหายไป",
+        "shortDesc": "<orangeStrong>ขณะที่อยู่ภายใต้ \"Soulsteel Sync\"</orangeStrong> จะลดโอกาสการถูกโจมตีลง <orangeStrong>อัตราคริติคอลและ DMG คริติคอลของตัวเองจะเพิ่มขึ้น</orangeStrong> <orangeStrong>หลังจากโจมตี</orangeStrong>ศัตรูเป้าหมาย จะมีโอกาสทำการ โจมตีต่อเนื่อง โดยจะสร้าง DMG น้ำแข็งแก่เป้าหมายดังกล่าว และมีโอกาสทำให้เป้าหมายดังกล่าวติดสถานะแช่แข็ง<br>หลังจากตัวเองได้รับ DMG แล้ว \"Soulsteel Sync\" จะหายไป"
       }
     },
     "technique": {

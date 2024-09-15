@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "Known by Stars, Shown by Hearts",
-        "fullDesc": "เปิดใช้งาน \"Matrix of Prescience\" และ<u>แบ่ง</u> DMG ให้กับ Fu Xuan {{1, percent}}% ของ DMG ทั้งหมดที่เพื่อนร่วมทีมของ Fu Xuan ได้รับ ก่อนที่จะถูกโล่ต้านทาน เป็นเวลา {{3}} เทิร์น\\nฝ่ายเราทั้งหมดที่อยู่ภายใต้ \"Matrix of Prescience\" จะได้รับสถานะ \"Knowledge\" ซึ่ง HP สูงสุดของเป้าหมายฝ่ายเราที่ติดสถานะ \"Knowledge\" จะเพิ่มขึ้น โดยค่าที่เพิ่มขึ้นจะเท่ากับ <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> ของ HP สูงสุดของ Fu Xuan และอัตราคริติคอลเพิ่มขึ้น <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>\\nเมื่อ Fu Xuan <u>หมดสติ</u> Matrix of Prescience ก็จะถูกลบไปด้วย",
-        "shortDesc": "เปิดใช้งาน \"Matrix of Prescience\" และ<orangeStrong><u>แบ่ง</u> DMG ทั้งหมด</orangeStrong>ที่เพื่อนร่วมทีมได้รับให้กับ Fu Xuan อีกทั้งทำให้ HP สูงสุด และ<orangeStrong>อัตราคริติคอล</orangeStrong> ของฝ่ายเราทั้งหมดเพิ่มขึ้น"
+        "fullDesc": "เปิดใช้งาน \"Matrix of Prescience\" และแบ่ง DMG ให้กับ Fu Xuan {{1, percent}}% ของ DMG ทั้งหมดที่เพื่อนร่วมทีมของ Fu Xuan ได้รับ ก่อนที่จะถูกโล่ต้านทาน เป็นเวลา {{3}} เทิร์น<br>ฝ่ายเราทั้งหมดที่อยู่ภายใต้ \"Matrix of Prescience\" จะได้รับสถานะ \"Knowledge\" ซึ่ง HP สูงสุดของเป้าหมายฝ่ายเราที่ติดสถานะ \"Knowledge\" จะเพิ่มขึ้น โดยค่าที่เพิ่มขึ้นจะเท่ากับ <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> ของ HP สูงสุดของ Fu Xuan และอัตราคริติคอลเพิ่มขึ้น <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong><br>เมื่อ Fu Xuan หมดสติ Matrix of Prescience ก็จะถูกลบไปด้วย",
+        "shortDesc": "เปิดใช้งาน \"Matrix of Prescience\" และ<orangeStrong>แบ่ง DMG ทั้งหมด</orangeStrong>ที่เพื่อนร่วมทีมได้รับให้กับ Fu Xuan อีกทั้งทำให้ HP สูงสุด และ<orangeStrong>อัตราคริติคอล</orangeStrong> ของฝ่ายเราทั้งหมดเพิ่มขึ้น"
       }
     },
     "ult": {
@@ -20,6 +20,13 @@
         "name": "Woes of Many Morphed to One",
         "fullDesc": "สร้าง DMG ควอนตัม <orangeStrong>{{1, percent}}%</orangeStrong> ของ HP สูงสุดของ Fu Xuan แก่ฝ่ายศัตรูทั้งหมด และได้รับจำนวนการฟื้นฟู HP จากพรสวรรค์ของ Fu Xuan 1 ครั้ง",
         "shortDesc": "สร้าง DMG ควอนตัมแก่ฝ่ายศัตรูทั้งหมด และเพิ่มจำนวนการใช้พรสวรรค์ของ Fu Xuan"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Bleak Breeds Bliss",
+        "fullDesc": "เมื่อ Fu Xuan อยู่ในสถานะสามารถต่อสู้ได้ จะเพิ่ม Misfortune Avoidance ให้แก่ฝ่ายเราทั้งหมด โดยเป้าหมายฝ่ายเราที่อยู่ภายใต้สถานะ Misfortune Avoidance จะได้รับ DMG ลดลง <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong><br>เมื่อเปอร์เซ็นต์ HP ปัจจุบันของ Fu Xuan น้อยกว่าหรือเท่ากับ {{2, percent}}% จะเกิดการฟื้นฟู HP โดยจะทำให้ตัวเองฟื้นฟู HP <orangeStrong>{{3, percent}}%</orangeStrong> ของค่า HP ที่สูญเสียไป หากถูกโจมตีจนถึงตาย จะไม่สามารถเกิดเอฟเฟกต์นี้ได้ ทั้งนี้เอฟเฟกต์ดังกล่าว จะสามารถเกิดขึ้นได้ 1 ครั้งตามค่าเริ่มต้น และสามารถเกิดขึ้นได้สูงสุด 2 ครั้ง",
+        "shortDesc": "เมื่อ Fu Xuan อยู่ในสถานะสามารถต่อสู้ได้ ฝ่ายเราทั้งหมดจะได้รับ DMG ลดลง<br>เมื่อ HP ค่อนข้างต่ำ <orangeStrong>จะฟื้นฟู HP ของตัวเอง</orangeStrong> ตามเปอร์เซ็นต์ HP ที่เสียไป<orangeStrong>โดยอัตโนมัติ</orangeStrong> ซึ่งเอฟเฟกต์นี้สามารถเกิดขึ้นได้สูงสุด 2 ครั้ง"
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Apex Nexus",
-      "desc": "เลเวลสกิลต่อสู้ +2 สูงสุดไม่เกิน Lv.15 และเลเวลพรสวรรค์ +2 สูงสุดไม่เกิน\\nLv.15"
+      "desc": "เลเวลสกิลต่อสู้ +2 สูงสุดไม่เกิน Lv.15 และเลเวลพรสวรรค์ +2 สูงสุดไม่เกิน<br>Lv.15"
     },
     "4": {
       "name": "Fortuna Stellaris",
@@ -81,7 +88,7 @@
     },
     "6": {
       "name": "Omnia Vita",
-      "desc": "เมื่อเปิดใช้งาน \"Matrix of Prescience\" จะสะสม HP ที่ฝ่ายเราทั้งหมดเสียไปในการต่อสู้นี้ และท่าไม้ตายของ Fu Xuan จะสร้าง DMG เพิ่มขึ้น โดยค่าที่เพิ่มขึ้นจะเท่ากับ {{1, percent}}% ของจำนวน HP ที่เสียไปในการต่อสู้นี้\\nโดยจำนวน HP ที่เสียไปในการต่อสู้นี้ จะสะสมได้สูงสุดไม่เกิน {{2, percent}}% ของ HP สูงสุดของ Fu Xuan โดยจะถูกรีเซ็ตและสะสมใหม่ หลังจากที่ปล่อยท่าไม้ตาย"
+      "desc": "เมื่อเปิดใช้งาน \"Matrix of Prescience\" จะสะสม HP ที่ฝ่ายเราทั้งหมดเสียไปในการต่อสู้นี้ และท่าไม้ตายของ Fu Xuan จะสร้าง DMG เพิ่มขึ้น โดยค่าที่เพิ่มขึ้นจะเท่ากับ {{1, percent}}% ของจำนวน HP ที่เสียไปในการต่อสู้นี้<br>โดยจำนวน HP ที่เสียไปในการต่อสู้นี้ จะสะสมได้สูงสุดไม่เกิน {{2, percent}}% ของ HP สูงสุดของ Fu Xuan โดยจะถูกรีเซ็ตและสะสมใหม่ หลังจากที่ปล่อยท่าไม้ตาย"
     }
   }
 }

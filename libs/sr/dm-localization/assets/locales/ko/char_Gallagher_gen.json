@@ -27,6 +27,13 @@
         "shortDesc": "모든 적을 <orangeStrong>[만취] 상태에 빠트리고</orangeStrong>, 동시에 모든 적에게 화염 속성 피해를 가한다. 다음번 일반 공격을 [솟구치는 거품]으로 강화한다"
       }
     },
+    "talent": {
+      "0": {
+        "name": "통쾌한 전투",
+        "fullDesc": "[만취]는 목표가 받는 격파 피해를 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> 증가시킨다. [만취] 상태의 목표가 아군 캐릭터의 공격을 받을 때마다 공격자는 HP를 <orangeStrong>{{2}}</orangeStrong>pt 회복한다",
+        "shortDesc": "[만취]는 목표가 <orangeStrong>받는 격파 피해를 증가</orangeStrong>시키고, 목표가 아군 캐릭터의 공격을 받을 때마다 <orangeStrong>공격자는 HP를 회복</orangeStrong>한다"
+      }
+    },
     "technique": {
       "0": {
         "name": "빈티지 개봉",

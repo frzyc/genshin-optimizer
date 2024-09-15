@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "云骑枪术•疾雨",
-        "fullDesc": "对指定敌方单体造成等同于丹恒<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的风属性伤害。\\n战技造成的伤害触发暴击时，有{{4, percent}}%的<u>基础概率</u>使受到攻击的敌方目标速度降低{{2, percent}}%，持续{{3}}回合。",
+        "fullDesc": "对指定敌方单体造成等同于丹恒<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的风属性伤害。<br>战技造成的伤害触发暴击时，有{{4, percent}}%的基础概率使受到攻击的敌方目标速度降低{{2, percent}}%，持续{{3}}回合。",
         "shortDesc": "对敌方单体造成风属性伤害，暴击时大概率施加减速状态。"
       }
     },
@@ -20,6 +20,13 @@
         "name": "洞天幻化，长梦一觉",
         "fullDesc": "对指定敌方单体造成等同于丹恒<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的风属性伤害。当受到攻击的敌方目标处于减速状态时，终结技造成的伤害倍率提高<orangeStrong>{{2, percent}}%</orangeStrong>。",
         "shortDesc": "对敌方单体造成大量风属性伤害，对减速状态的目标伤害倍率提高。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "寸长寸强",
+        "fullDesc": "当丹恒成为我方技能的施放目标时，下一次攻击的风属性抗性穿透提高<orangeStrong>{{1, percent}}%</orangeStrong>。该效果在{{2}}回合后可再次触发。",
+        "shortDesc": "成为我方技能施放目标时，下一次攻击<orangeStrong>风属性抗性穿透提高</orangeStrong>。该效果2回合后可再次触发。"
       }
     },
     "technique": {

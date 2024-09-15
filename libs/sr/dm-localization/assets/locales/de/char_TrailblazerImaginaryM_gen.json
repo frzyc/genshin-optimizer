@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Lärmende Laternenparade",
-        "fullDesc": "Verleiht allen Verbündeten für {{1}} Rd. den Effekt „Backup-Tänzer“. Zu Beginn jeder Runde {F#der Trailblazerin}{M#des Trailblazers} wird die Dauer dieses Effekts um 1 Rd. verringert. Der Brucheffekt von Verbündeten mit Backup-Tänzer wird um <orangeStrong>{{3, percent}}%</orangeStrong> erhöht. Wenn sie Gegner im Status <u>Schwächebruch</u> angreifen, wandeln sie den WDS-Reduzierungswert dieses Angriffs 1-mal in <u>Super-Bruch-SCH</u> um.",
-        "shortDesc": "Verleiht allen Verbündeten den Effekt „Backup-Tänzer“. <orangeStrong>Erhöht den Brucheffekt</orangeStrong> von Verbündeten mit diesem Effekt. Wenn sie einen Gegner im Status <u>Schwächebruch</u> angreifen, wird 1-mal zusätzlich <orangeStrong><u>Super-Bruch-SCH</u></orangeStrong> verursacht."
+        "fullDesc": "Verleiht allen Verbündeten für {{1}} Rd. den Effekt „Backup-Tänzer“. Zu Beginn jeder Runde {F#der Trailblazerin}{M#des Trailblazers} wird die Dauer dieses Effekts um 1 Rd. verringert. Der Brucheffekt von Verbündeten mit Backup-Tänzer wird um <orangeStrong>{{3, percent}}%</orangeStrong> erhöht. Wenn sie Gegner im Status Schwächebruch angreifen, wandeln sie den WDS-Reduzierungswert dieses Angriffs 1-mal in Super-Bruch-SCH um.",
+        "shortDesc": "Verleiht allen Verbündeten den Effekt „Backup-Tänzer“. <orangeStrong>Erhöht den Brucheffekt</orangeStrong> von Verbündeten mit diesem Effekt. Wenn sie einen Gegner im Status Schwächebruch angreifen, wird 1-mal zusätzlich <orangeStrong>Super-Bruch-SCH</orangeStrong> verursacht."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Tanzlieder auf ganzem Spektrum",
+        "fullDesc": "Wenn die Schwäche eines Gegners gebrochen wird, stellt {F#die Trailblazerin}{M#der Trailblazer} sofort <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> Pkt. Energie wieder her.",
+        "shortDesc": "Wenn die Schwäche eines Gegners gebrochen wird, stellt {F#die Trailblazerin}{M#der Trailblazer} Energie wieder her."
       }
     },
     "technique": {

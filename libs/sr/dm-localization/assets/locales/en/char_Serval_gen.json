@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Lightning Flash",
-        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Serval's ATK to a single enemy and Lightning DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Serval's ATK to enemies adjacent to it, with a {{3, percent}}% <u>base chance</u> for enemies hit to become Shocked for {{4}} turn(s).\\nWhile Shocked, enemies take Lightning DoT equal to <orangeStrong>{{5, percent}}%</orangeStrong> of Serval's ATK at the beginning of each turn.",
+        "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Serval's ATK to a single enemy and Lightning DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Serval's ATK to enemies adjacent to it, with a {{3, percent}}% base chance for enemies hit to become Shocked for {{4}} turn(s).<br>While Shocked, enemies take Lightning DoT equal to <orangeStrong>{{5, percent}}%</orangeStrong> of Serval's ATK at the beginning of each turn.",
         "shortDesc": "Deals minor Lightning DMG to a single enemy and any adjacent targets, with a high chance of causing <orangeStrong>Shock</orangeStrong>."
       }
     },
@@ -22,10 +22,17 @@
         "shortDesc": "Deals Lightning DMG to all enemies and increases the duration of Shock."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Galvanic Chords",
+        "fullDesc": "After Serval attacks, deals Additional Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Serval's ATK to all Shocked enemies.",
+        "shortDesc": "After attacking, deals <orangeStrong>a minor amount of Additional DMG</orangeStrong> to all Shocked enemies."
+      }
+    },
     "technique": {
       "0": {
         "name": "Good Night, Belobog",
-        "fullDesc": "Immediately attacks the enemy. After entering battle, deals Lightning DMG equal to {{4, percent}}% of Serval's ATK to a random enemy, with a {{1, percent}}% <u>base chance</u> for all enemies to become Shocked for {{3}} turn(s).\\nWhile Shocked, enemies will take Lightning DoT equal to {{2, percent}}% of Serval's ATK at the beginning of each turn.",
+        "fullDesc": "Immediately attacks the enemy. After entering battle, deals Lightning DMG equal to {{4, percent}}% of Serval's ATK to a random enemy, with a {{1, percent}}% base chance for all enemies to become Shocked for {{3}} turn(s).<br>While Shocked, enemies will take Lightning DoT equal to {{2, percent}}% of Serval's ATK at the beginning of each turn.",
         "shortDesc": "Attacks the enemy. After entering battle, deals minor Lightning DMG to a random single enemy, with a high chance to <orangeStrong>Shock</orangeStrong> all enemy targets."
       }
     },
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Listen, the Heartbeat of the Gears",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Make Some Noise!",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Belobog's Loudest Roar!",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "This Song Rocks to Heaven!",

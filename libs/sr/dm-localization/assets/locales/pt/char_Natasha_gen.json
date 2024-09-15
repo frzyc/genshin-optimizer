@@ -22,10 +22,17 @@
         "shortDesc": "<orangeStrong>Restaura PV</orangeStrong> de todos os aliados."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Enervação",
+        "fullDesc": "Ao curar aliados com PV iguais ou abaixo de {{1, percent}}%, aumenta a Cura Realizada de Natasha em <orangeStrong>{{2, percent}}%</orangeStrong>. Este efeito também funciona na cura contínua.",
+        "shortDesc": "Ao curar aliados com PV baixos, aumenta a Cura Realizada. Esse efeito também funciona em curas contínuas."
+      }
+    },
     "technique": {
       "0": {
         "name": "Pesquisa Hipnótica",
-        "fullDesc": "Ataca o inimigo imediatamente. Após entrar na batalha, causa Dano Físico igual a {{4, percent}}% do ATQ de Natasha a um inimigo aleatório, com {{1, percent}}% de <u>chance-base</u> de causar Enfraquecimento a todos os inimigos.\\nQuando enfraquecidos, inimigos causam {{2, percent}}% a menos de Dano a aliados por {{3}} rodada(s).",
+        "fullDesc": "Ataca o inimigo imediatamente. Após entrar na batalha, causa Dano Físico igual a {{4, percent}}% do ATQ de Natasha a um inimigo aleatório, com {{1, percent}}% de chance-base de causar Enfraquecimento a todos os inimigos.<br>Quando enfraquecidos, inimigos causam {{2, percent}}% a menos de Dano a aliados por {{3}} rodada(s).",
         "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano Físico leve a um único inimigo aleatório, com uma alta chance de infligir Fraqueza a todos os inimigos-alvo."
       }
     },
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "A Cura Correta",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Cura Milagrosa",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Tratamento Preventivo",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "Graça da Médica",

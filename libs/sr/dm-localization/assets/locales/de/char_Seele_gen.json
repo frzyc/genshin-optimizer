@@ -22,6 +22,13 @@
         "shortDesc": "Tritt in den <orangeStrong>verstärkten Zustand</orangeStrong> ein und fügt einem Gegner massiven Quanten-SCH zu."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Erneute Erscheinung",
+        "fullDesc": "Seele tritt beim Besiegen eines Gegners durch Standardangriff, Fertigkeit oder Ultimate in den verstärkten Zustand ein und erhält unmittelbar eine zusätzliche Runde. Während des verstärkten Zustands wird ihr SCH für {{2}} Rd. um <orangeStrong>{{1, percent}}%</orangeStrong> erhöht.<br>Gegner, die in der zusätzlichen Runde des Talents „Erneute Erscheinung“ besiegt werden, lösen das Talent nicht aus.",
+        "shortDesc": "Seele tritt beim <orangeStrong>Besiegen eines Gegners</orangeStrong> durch Standardangriff, Fertigkeit oder Ultimate <orangeStrong>in den verstärkten Zustand ein und erhält unmittelbar eine zusätzliche Runde</orangeStrong>. Während des verstärkten Zustands wird ihr SCH erhöht."
+      }
+    },
     "technique": {
       "0": {
         "name": "Phantomillusion",
@@ -81,7 +88,7 @@
     },
     "6": {
       "name": "Trennung",
-      "desc": "Der Ultimate verursacht beim getroffenen Gegner für {{2}} Rd. den Status „Schmetterlingssturm“. Gegner im Schmetterlingssturm erleiden bei Treffern 1-mal zusätzlich Quanten-SCH in Höhe von {{1, percent}}% von Seeles Ultimate-SCH. Wenn ein anderer Verbündeter das Ziel durch den zusätzlichen SCH von „Schmetterlingssturm“ besiegt, wird Seeles Talent nicht ausgelöst.\\nIst Seele handlungsunfähig, wird der Status „Schmetterlingssturm“ vom Gegner entfernt."
+      "desc": "Der Ultimate verursacht beim getroffenen Gegner für {{2}} Rd. den Status „Schmetterlingssturm“. Gegner im Schmetterlingssturm erleiden bei Treffern 1-mal zusätzlich Quanten-SCH in Höhe von {{1, percent}}% von Seeles Ultimate-SCH. Wenn ein anderer Verbündeter das Ziel durch den zusätzlichen SCH von „Schmetterlingssturm“ besiegt, wird Seeles Talent nicht ausgelöst.<br>Ist Seele handlungsunfähig, wird der Status „Schmetterlingssturm“ vom Gegner entfernt."
     }
   }
 }

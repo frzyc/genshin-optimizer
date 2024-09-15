@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "꿈을 헤엄치는 물고기",
-        "fullDesc": "지정된 단일 아군의 치명타 피해가 스파클 치명타 피해의 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>에 <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>를 더한 값만큼 증가한다. 지속 시간: {{3}}턴. 또한, 해당 목표의 행동 게이지가 {{4, percent}}% 증가한다.\\n스파클이 자신에게 해당 스킬을 발동하면 행동 게이지 증가 효과가 발동하지 않는다",
+        "fullDesc": "지정된 단일 아군의 치명타 피해가 스파클 치명타 피해의 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>에 <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>를 더한 값만큼 증가한다. 지속 시간: {{3}}턴. 또한, 해당 목표의 행동 게이지가 {{4, percent}}% 증가한다.<br>스파클이 자신에게 해당 스킬을 발동하면 행동 게이지 증가 효과가 발동하지 않는다",
         "shortDesc": "단일 아군의 <orangeStrong>치명타 피해</orangeStrong>가 증가하고, 해당 목표의 행동 게이지가 증가한다"
       }
     },
@@ -20,6 +20,13 @@
         "name": "천의 얼굴",
         "fullDesc": "아군의 전투 스킬 포인트를 {{2}}pt 회복하고 모든 아군이 [기이한 수수께끼] 효과를 획득한다. [기이한 수수께끼]를 보유한 아군은 스파클 특성으로 발동되는 피해 증가 효과가 스택당 추가로 <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> 증가한다. 지속 시간: {{4}}턴",
         "shortDesc": "아군의 <orangeStrong>전투 스킬 포인트</orangeStrong>를 회복하고, 스파클 특성으로 발동하는 피해 증가 효과가 추가로 증가한다"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "서술 트릭",
+        "fullDesc": "스파클이 필드에 있을 시 전투 스킬 포인트 최대치가 추가로 {{3}}pt 증가한다. 아군이 전투 스킬 포인트를 1pt 소모할 때마다 모든 아군이 가하는 피해가 <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> 증가한다, 해당 효과 지속 시간: {{1}}턴, 최대 중첩수: {{4}}스택",
+        "shortDesc": "아군의 <orangeStrong>전투 스킬 포인트 최대치</orangeStrong>가 증가하고, 아군이 전투 스킬 포인트 소모 시 모든 아군이 <orangeStrong>가하는 피해</orangeStrong>가 증가한다"
       }
     },
     "technique": {

@@ -22,6 +22,13 @@
         "shortDesc": "<orangeStrong>Aumenta la VEL</orangeStrong> de todos los aliados."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Astrometría",
+        "fullDesc": "Obtiene una acumulación de Recarga por cada objetivo distinto golpeado. Si el objetivo tiene Debilidad de Fuego, obtiene una acumulación adicional.<br>Por cada acumulación de Recarga que tenga Asta, el ATQ de todos los aliados aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Este efecto se puede acumular hasta {{2}} veces.<br>A partir de su segundo turno, Asta pierde {{3}} acumulaciones de Recarga al principio de cada turno.",
+        "shortDesc": "Obtiene una acumulación de Recarga por cada objetivo distinto golpeado, hasta un máximo de 5 acumulaciones. Cada acumulación aumenta el ATQ de todos los aliados. Las acumulaciones de Recarga se reducen al comenzar su turno."
+      }
+    },
     "technique": {
       "0": {
         "name": "Destello milagroso",
@@ -39,7 +46,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Chispas",
-        "fullDesc": "Al usar el ATQ básico, hay un {{1, percent}}% de probabilidad base de infligir Quemadura al objetivo durante {{2}} turnos.\\nLos enemigos afectados por Quemadura reciben al comienzo de cada turno un Daño de Fuego con el tiempo equivalente al {{3, percent}}% del daño que inflige el ATQ básico de Asta.",
+        "fullDesc": "Al usar el ATQ básico, hay un {{1, percent}}% de probabilidad base de infligir Quemadura al objetivo durante {{2}} turnos.<br>Los enemigos afectados por Quemadura reciben al comienzo de cada turno un Daño de Fuego con el tiempo equivalente al {{3, percent}}% del daño que inflige el ATQ básico de Asta.",
         "shortDesc": ""
       }
     },

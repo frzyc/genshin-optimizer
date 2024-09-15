@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Sternenfuge mit tausend Klängen",
-        "fullDesc": "Robin tritt in den Status „Konzert“ ein, wodurch alle Verbündeten außer ihr selbst sofort eine Aktion ausführen.\\nIm Status Konzert wird der ANG aller Verbündeten in Höhe von <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Robins ANG plus <orangeStrong>{{3}}</orangeStrong> erhöht. Nach jedem Angriff eines Verbündeten verursacht Robin 1-mal <u>zusätzlich physischen SCH</u> in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> ihres ANG. Die KRIT-Rate für diesen SCH beträgt {{5, percent}}% und der KRIT-SCH {{6, percent}}%.\\nWenn Robin sich im Status Konzert befindet, ist Robin immun gegen <u>Mengenkontrolle-Debuffs</u>. Bis zum Ende des Status Konzert wird sie keine Runde haben und keine Aktion ausführen.\\nDer Countdown von Konzert erscheint in der Aktionsreihenfolge. Beginnt die Runde des Countdowns, verlässt Robin den Status Konzert und führt sofort eine Aktion aus. Der Countdown hat eine feste GES von {{2}}.",
-        "shortDesc": "Tritt in den Status „Konzert“ ein. Der <orangeStrong>ANG aller Verbündeten wird erhöht</orangeStrong> und Robins Teammitglieder können sofort eine Aktion ausführen. Robin fügt nach einem Angriff eines Verbündeten <orangeStrong><u>zusätzlich</u> physischen SCH</orangeStrong> zu. Der Status Konzert verleiht Robin Immunität gegen <u>Mengenkontrolle-Debuffs</u>. Solange der Status aktiv ist, wird Robin bis zum Ende des Countdowns keine Runde haben und keine Aktion ausführen."
+        "fullDesc": "Robin tritt in den Status „Konzert“ ein, wodurch alle Verbündeten außer ihr selbst sofort eine Aktion ausführen.<br>Im Status Konzert wird der ANG aller Verbündeten in Höhe von <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Robins ANG plus <orangeStrong>{{3}}</orangeStrong> erhöht. Nach jedem Angriff eines Verbündeten verursacht Robin 1-mal zusätzlich physischen SCH in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> ihres ANG. Die KRIT-Rate für diesen SCH beträgt {{5, percent}}% und der KRIT-SCH {{6, percent}}%.<br>Wenn Robin sich im Status Konzert befindet, ist Robin immun gegen Mengenkontrolle-Debuffs. Bis zum Ende des Status Konzert wird sie keine Runde haben und keine Aktion ausführen.<br>Der Countdown von Konzert erscheint in der Aktionsreihenfolge. Beginnt die Runde des Countdowns, verlässt Robin den Status Konzert und führt sofort eine Aktion aus. Der Countdown hat eine feste GES von {{2}}.",
+        "shortDesc": "Tritt in den Status „Konzert“ ein. Der <orangeStrong>ANG aller Verbündeten wird erhöht</orangeStrong> und Robins Teammitglieder können sofort eine Aktion ausführen. Robin fügt nach einem Angriff eines Verbündeten <orangeStrong>zusätzlich physischen SCH</orangeStrong> zu. Der Status Konzert verleiht Robin Immunität gegen Mengenkontrolle-Debuffs. Solange der Status aktiv ist, wird Robin bis zum Ende des Countdowns keine Runde haben und keine Aktion ausführen."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Harmonische Ode",
+        "fullDesc": "Erhöht den KRIT-SCH aller Verbündeten um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Nach einem Angriff eines Verbündeten auf ein gegnerisches Ziel stellt Robin zusätzlich {{2}} Pkt. der eigenen Energie wieder her.",
+        "shortDesc": "Erhöht den <orangeStrong>KRIT-SCH</orangeStrong> aller Verbündeten. Nach einem Angriff eines Verbündeten stellt Robin zusätzlich Energie wieder her."
       }
     },
     "technique": {

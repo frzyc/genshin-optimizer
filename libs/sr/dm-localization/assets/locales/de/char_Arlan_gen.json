@@ -22,6 +22,13 @@
         "shortDesc": "Fügt einem Gegner massiven Blitz-SCH und angrenzenden Zielen Blitz-SCH zu."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Schmerz und Wut",
+        "fullDesc": "Erhöht Arlans SCH basierend auf seinem verlorenen LP-Prozentsatz, bis zu einer maximalen Erhöhung um <orangeStrong>{{1, percent}}%</orangeStrong>.",
+        "shortDesc": "<orangeStrong>Erhöht den SCH</orangeStrong> basierend auf dem <orangeStrong>Prozentsatz der verlorenen LP</orangeStrong>."
+      }
+    },
     "technique": {
       "0": {
         "name": "Rasche Ernte",

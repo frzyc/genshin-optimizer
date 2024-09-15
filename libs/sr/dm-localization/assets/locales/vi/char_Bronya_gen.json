@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "Tác Chiến Và Tái Bố Trí",
-        "fullDesc": "Xóa 1 <u>Hiệu Ứng Xấu</u> cho 1 đồng đội, đồng thời khiến mục tiêu này hành động ngay, sát thương gây ra tăng <orangeStrong>{{1, percent}}%</orangeStrong>, duy trì {{3}} hiệp.\\nKhi thi triển kỹ năng này cho bản thân, sẽ không thể kích hoạt ngay hiệu quả hành động.",
-        "shortDesc": "<orangeStrong>Giải trừ</orangeStrong> 1 <orangeStrong><u>Hiệu Ứng Xấu</u></orangeStrong> cho 1 đồng đội, <orangeStrong>tăng sát thương của đồng đội đó gây ra</orangeStrong> và <orangeStrong>hành động ngay</orangeStrong>."
+        "fullDesc": "Xóa 1 Hiệu Ứng Xấu cho 1 đồng đội, đồng thời khiến mục tiêu này hành động ngay, sát thương gây ra tăng <orangeStrong>{{1, percent}}%</orangeStrong>, duy trì {{3}} hiệp.<br>Khi thi triển kỹ năng này cho bản thân, sẽ không thể kích hoạt ngay hiệu quả hành động.",
+        "shortDesc": "<orangeStrong>Giải trừ</orangeStrong> 1 <orangeStrong>Hiệu Ứng Xấu</orangeStrong> cho 1 đồng đội, <orangeStrong>tăng sát thương của đồng đội đó gây ra</orangeStrong> và <orangeStrong>hành động ngay</orangeStrong>."
       }
     },
     "ult": {
@@ -20,6 +20,13 @@
         "name": "Khúc Quân Hành Belobog",
         "fullDesc": "Khiến toàn bộ phe ta tăng <orangeStrong>{{1, percent}}%</orangeStrong> tấn công, đồng thời tăng sát thương bạo kích bằng <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> sát thương bạo kích của Bronya +<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, duy trì {{4}} hiệp.",
         "shortDesc": "Tăng <orangeStrong>tấn công</orangeStrong>, <orangeStrong>tăng sát thương bạo kích</orangeStrong> của toàn bộ phe ta."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Đi Trước Một Bước",
+        "fullDesc": "Sau khi tấn công thường sẽ khiến Bronya Ưu Tiên Hành Động <orangeStrong>{{1, percent}}%</orangeStrong> cho lần hành động tiếp theo.",
+        "shortDesc": "Sau khi thi triển tấn công thường, sẽ ưu tiên hành động cho bản thân vào lần hành động tiếp theo."
       }
     },
     "technique": {

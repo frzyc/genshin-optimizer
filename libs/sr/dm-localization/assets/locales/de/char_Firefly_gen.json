@@ -16,8 +16,8 @@
     "skill": {
       "0": {
         "name": "Befehl: Luftbombardierung",
-        "fullDesc": "Verbraucht {{2, percent}}% der eigenen max. LP und stellt eine feste Menge Energie in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> der eigenen max. Energie wieder her, um einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von SAMs ANG zuzufügen. Wenn die aktuellen LP nicht ausreichen, werden SAMs LP beim Einsatz der Fertigkeit auf 1 reduziert. Die nächste Aktion wird um {{4, percent}}% <u>vorgezogen</u>.",
-        "shortDesc": "Verbraucht einen Teil der eigenen LP und stellt Energie wieder her, um einem Gegner Feuer-SCH zuzufügen. Die nächste Aktion wird <u>vorgezogen</u>."
+        "fullDesc": "Verbraucht {{2, percent}}% der eigenen max. LP und stellt eine feste Menge Energie in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> der eigenen max. Energie wieder her, um einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von SAMs ANG zuzufügen. Wenn die aktuellen LP nicht ausreichen, werden SAMs LP beim Einsatz der Fertigkeit auf 1 reduziert. Die nächste Aktion wird um {{4, percent}}% vorgezogen.",
+        "shortDesc": "Verbraucht einen Teil der eigenen LP und stellt Energie wieder her, um einem Gegner Feuer-SCH zuzufügen. Die nächste Aktion wird vorgezogen."
       },
       "1": {
         "name": "PyroFly Typ IV: Überladung eines sterbenden Sterns",
@@ -28,8 +28,15 @@
     "ult": {
       "0": {
         "name": "PyroFly Typ IV: Vollständige Verbrennung",
-        "fullDesc": "Tritt in den Status „Vollständige Verbrennung“ ein. Zieht die eigene Aktion um 100 % vor und erhält den verstärkten Standardangriff sowie die verstärkte Fertigkeit. Erhöht im Status Vollständige Verbrennung die GES um <orangeStrong>{{3}}</orangeStrong> Pkt., beim Einsatz des verstärkten Standardangriffs oder der verstärkten Fertigkeit die eigene Schwächebruch-Effizienz um {{2, percent}}% und den von Gegnern erlittenen Bruch-SCH durch SAM um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Dies dauert bis zum Ende des Angriffs an.\\nIn der Aktionsreihenfolge erscheint ein Countdown für Vollständige Verbrennung. Beginnt die Runde des Countdowns, verlässt SAM den Status Vollständige Verbrennung. Der Countdown hat eine feste GES von {{4}}.\\nIm Status Vollständige Verbrennung kann SAM den Ultimate nicht einsetzen.",
+        "fullDesc": "Tritt in den Status „Vollständige Verbrennung“ ein. Zieht die eigene Aktion um 100 % vor und erhält den verstärkten Standardangriff sowie die verstärkte Fertigkeit. Erhöht im Status Vollständige Verbrennung die GES um <orangeStrong>{{3}}</orangeStrong> Pkt., beim Einsatz des verstärkten Standardangriffs oder der verstärkten Fertigkeit die eigene Schwächebruch-Effizienz um {{2, percent}}% und den von Gegnern erlittenen Bruch-SCH durch SAM um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Dies dauert bis zum Ende des Angriffs an.<br>In der Aktionsreihenfolge erscheint ein Countdown für Vollständige Verbrennung. Beginnt die Runde des Countdowns, verlässt SAM den Status Vollständige Verbrennung. Der Countdown hat eine feste GES von {{4}}.<br>Im Status Vollständige Verbrennung kann SAM den Ultimate nicht einsetzen.",
         "shortDesc": "Tritt in den Status „Vollständige Verbrennung“ ein. <orangeStrong>Zieht die eigene Aktion um <unbreak>100</orangeStrong> % </color> und erhält den <orangeStrong>verstärkten Standardangriff</orangeStrong> sowie die <orangeStrong>verstärkte Fertigkeit</orangeStrong>. Erhöht außerdem <orangeStrong>die GES, Schwächebruch-Effizienz und den von Gegnern erlittenen Bruch-SCH</orangeStrong>, bis zum Ende des Countdowns."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Kokon-Pyronexus",
+        "fullDesc": "Je niedriger die LP sind, desto geringer wird der erlittene SCH. Wenn die LP {{3, percent}}% oder weniger betragen, ist der Effekt maximal wirksam, wobei die max. SCH-Reduktion bei <orangeStrong>{{1, percent}}%</orangeStrong> liegt. Im Status Vollständige Verbrennung ist die SCH-Reduktion stets maximal wirksam und der Effekt-WDS wird um <orangeStrong>{{4, percent}}%</orangeStrong> erhöht.<br>Wenn die Energie beim Kampfbeginn unter {{2, percent}}% liegt, wird sie auf {{2, percent}}% wiederhergestellt. Sobald die Energie vollständig wiederhergestellt ist, werden alle Debuffs entfernt.",
+        "shortDesc": "Je niedriger die LP sind, desto geringer wird der erlittene SCH. Im Status „Vollständige Verbrennung“ ist die SCH-Reduktion stets maximal wirksam und der Effekt-WDS wird erhöht. Wenn die Energie beim Kampfbeginn unter <orangeStrong>{{2, percent}}%</orangeStrong> liegt, wird sie auf <orangeStrong>{{2, percent}}%</orangeStrong> wiederhergestellt. Sobald die Energie vollständig wiederhergestellt ist, werden alle Debuffs entfernt."
       }
     },
     "technique": {

@@ -18,7 +18,7 @@
     "ult": {
       "0": {
         "name": "星尘王牌",
-        "fullDesc": "在两种攻击模式中选择其一挥出全力一击。\\n【全胜•再见安打】：对指定敌方单体造成等同于开拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害。\\n【全胜•安息全垒打】：对指定敌方单体造成等同于开拓者<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的物理属性伤害，并对其相邻目标造成等同于开拓者<orangeStrong>{{3, percent}}%</orangeStrong>攻击力的物理属性伤害。",
+        "fullDesc": "在两种攻击模式中选择其一挥出全力一击。<br>【全胜•再见安打】：对指定敌方单体造成等同于开拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害。<br>【全胜•安息全垒打】：对指定敌方单体造成等同于开拓者<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的物理属性伤害，并对其相邻目标造成等同于开拓者<orangeStrong>{{3, percent}}%</orangeStrong>攻击力的物理属性伤害。",
         "shortDesc": "选择单攻或扩散的攻击方式，挥出全力一击。"
       },
       "1": {
@@ -30,6 +30,13 @@
         "name": "全胜•安息全垒打",
         "fullDesc": "对指定敌方单体造成等同于开拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害，同时对其相邻目标造成等同于开拓者<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的物理属性伤害。",
         "shortDesc": "对敌方单体及其相邻目标造成物理属性伤害。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "牵制盗垒",
+        "fullDesc": "每次击破敌方目标的弱点后，攻击力提高<orangeStrong>{{1, percent}}%</orangeStrong>，该效果最多叠加{{2}}层。",
+        "shortDesc": ""
       }
     },
     "technique": {

@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "Erneuter Kampfeinsatz",
-        "fullDesc": "Entfernt 1 <u>Debuff</u> von einem anvisierten Verbündeten, lässt ihn sofort eine Aktion ausführen und erhöht seinen zugefügten SCH für {{3}} Rd. um <orangeStrong>{{1, percent}}%</orangeStrong>.\\nWird diese Fertigkeit auf Bronya selbst angewendet, kann sie keine sofortige Aktion ausführen.",
-        "shortDesc": "<orangeStrong>Entfernt</orangeStrong> 1 <orangeStrong><u>Debuff</u></orangeStrong> von einem Verbündeten, erhöht dessen <orangeStrong>SCH</orangeStrong> und er <orangeStrong>tritt sofort in Aktion</orangeStrong>."
+        "fullDesc": "Entfernt 1 Debuff von einem anvisierten Verbündeten, lässt ihn sofort eine Aktion ausführen und erhöht seinen zugefügten SCH für {{3}} Rd. um <orangeStrong>{{1, percent}}%</orangeStrong>.<br>Wird diese Fertigkeit auf Bronya selbst angewendet, kann sie keine sofortige Aktion ausführen.",
+        "shortDesc": "<orangeStrong>Entfernt</orangeStrong> 1 <orangeStrong>Debuff</orangeStrong> von einem Verbündeten, erhöht dessen <orangeStrong>SCH</orangeStrong> und er <orangeStrong>tritt sofort in Aktion</orangeStrong>."
       }
     },
     "ult": {
@@ -20,6 +20,13 @@
         "name": "Der Belobog-Marsch",
         "fullDesc": "Erhöht den ANG aller Verbündeten um <orangeStrong>{{1, percent}}%</orangeStrong> und ihren KRIT-SCH um <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> von Bronyas KRIT-SCH plus <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> für {{4}} Rd.",
         "shortDesc": "Erhöht den <orangeStrong>ANG</orangeStrong> und <orangeStrong>KRIT-SCH</orangeStrong> aller Verbündeten."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Allen voran",
+        "fullDesc": "Nach dem Einsatz des Standardangriffs wird Bronyas nächste Aktion um <orangeStrong>{{1, percent}}%</orangeStrong> vorgezogen.",
+        "shortDesc": "Nach dem Einsatz des Standardangriffs wird die nächste eigene Aktion vorgezogen."
       }
     },
     "technique": {

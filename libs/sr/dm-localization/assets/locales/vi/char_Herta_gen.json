@@ -22,6 +22,13 @@
         "shortDesc": "Gây Sát Thương Băng cho toàn phe địch."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Để Tôi!",
+        "fullDesc": "Khi đòn tấn công của mục tiêu bất kỳ phe ta khiến phần trăm HP hiện tại của kẻ địch nhỏ hơn hoặc bằng {{1, percent}}%, thì Herta sẽ phát động Đòn Đánh Theo Sau, gây cho toàn phe địch Sát Thương Băng bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Herta.",
+        "shortDesc": ""
+      }
+    },
     "technique": {
       "0": {
         "name": "Có Thể Ưu Hóa",

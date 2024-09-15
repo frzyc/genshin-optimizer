@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Einschüchternder Schlag",
-        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Gepards ANG zu und verursacht beim Ziel mit einer <u>Grundchance</u> von {{2, percent}}% für {{3}} Rd. Gefroren.\\nEin gefrorener Gegner kann keine Aktionen ausführen und erleidet zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von Gepards ANG.",
+        "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Gepards ANG zu und verursacht beim Ziel mit einer Grundchance von {{2, percent}}% für {{3}} Rd. Gefroren.<br>Ein gefrorener Gegner kann keine Aktionen ausführen und erleidet zu Beginn jeder Runde zusätzlichen Eis-SCH in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von Gepards ANG.",
         "shortDesc": "Fügt einem Gegner Eis-SCH zu und <orangeStrong>verursacht beim Ziel mit einer Chance Gefroren</orangeStrong>."
       }
     },
@@ -20,6 +20,13 @@
         "name": "Emporragendes Bollwerk",
         "fullDesc": "Gewährt allen Verbündeten für {{2}} Rd. einen Schild, der SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Gepards VTD plus <orangeStrong>{{3}}</orangeStrong> absorbiert.",
         "shortDesc": "Gewährt allen Verbündeten einen <orangeStrong>Schild</orangeStrong>."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Unnachgiebiger Wille",
+        "fullDesc": "Gepard wird durch einen Todesstoß nicht handlungsunfähig, sondern stellt unmittelbar <orangeStrong>{{1, percent}}%</orangeStrong> seiner max. LP wieder her. Dieser Effekt kann nur einmal pro Kampf ausgelöst werden.",
+        "shortDesc": "Wenn von einem Todesstoß getroffen, werden die eigenen LP sofort wiederhergestellt, <orangeStrong>anstatt handlungsunfähig zu werden</orangeStrong>. Dieser Effekt kann nur 1-mal pro Kampf ausgelöst werden."
       }
     },
     "technique": {

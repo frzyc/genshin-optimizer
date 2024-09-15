@@ -27,6 +27,13 @@
         "shortDesc": "<orangeStrong>Applique l'effet Ivresse</orangeStrong> à tous les ennemis tout en leur infligeant des DGT de feu. Renforce la prochaine ATQ normale en Coup de fouet."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Ébriété destructrice",
+        "fullDesc": "L'effet Ivresse augmente de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> les DGT de rupture subis par les cibles. Chaque fois qu'une cible affectée par Ivresse est attaquée par un allié, l'assaillant récupère <orangeStrong>{{2}}</orangeStrong> PV.",
+        "shortDesc": "L'effet Ivresse <orangeStrong>augmente les DGT de rupture que subissent les cibles</orangeStrong> et chaque fois qu'une cible se fait attaquer par un allié, <orangeStrong>l'assaillant récupère des PV</orangeStrong>."
+      }
+    },
     "technique": {
       "0": {
         "name": "Sans modération",
@@ -74,7 +81,7 @@
     },
     "3": {
       "name": "Remontant",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "4": {
       "name": "Derniers mots",
@@ -82,7 +89,7 @@
     },
     "5": {
       "name": "Mort dans l'après-midi",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "6": {
       "name": "Sang et sable",

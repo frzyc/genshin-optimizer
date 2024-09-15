@@ -9,22 +9,29 @@
       },
       "1": {
         "name": "Percutor de repetición",
-        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Boothill como Daño Físico a un enemigo. \\nEl ATQ básico potenciado no recupera pts. de habilidad básica y solo puede tener como objetivo al enemigo que tenga Duelo a muerte.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Boothill como Daño Físico a un enemigo. <br>El ATQ básico potenciado no recupera pts. de habilidad básica y solo puede tener como objetivo al enemigo que tenga Duelo a muerte.",
         "shortDesc": "Inflige Daño Físico a un enemigo. Solo puede atacar al enemigo con Duelo a muerte."
       }
     },
     "skill": {
       "0": {
         "name": "Tango de las brasas ardientes",
-        "fullDesc": "Hace que Boothill y un enemigo entren en el estado de Duelo a muerte. El ATQ básico de Boothill se potencia y no puede usar la habilidad básica durante {{3}} turnos. Esta duración se reduce en 1 al comienzo del turno de Boothill.\\nEl objetivo enemigo con Duelo a muerte es afectado con Provocación. Cuando el enemigo/Boothill reciben un ataque uno del otro, el daño recibido aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong>/{{2, percent}}%.\\nDespués de que este enemigo sea derrotado o se rompa su Debilidad, Boothill obtiene 1 acumulación de Ventaja en el bolsillo y luego disipa Duelo a muerte.\\nEsta habilidad básica no puede recuperar energía y el turno no termina.",
+        "fullDesc": "Hace que Boothill y un enemigo entren en el estado de Duelo a muerte. El ATQ básico de Boothill se potencia y no puede usar la habilidad básica durante {{3}} turnos. Esta duración se reduce en 1 al comienzo del turno de Boothill.<br>El objetivo enemigo con Duelo a muerte es afectado con Provocación. Cuando el enemigo/Boothill reciben un ataque uno del otro, el daño recibido aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong>/{{2, percent}}%.<br>Después de que este enemigo sea derrotado o se rompa su Debilidad, Boothill obtiene 1 acumulación de Ventaja en el bolsillo y luego disipa Duelo a muerte.<br>Esta habilidad básica no puede recuperar energía y el turno no termina.",
         "shortDesc": "Inicia <orangeStrong>Duelo a muerte</orangeStrong>. Después de que el objetivo de Duelo a muerte <orangeStrong>sea derrotado o se rompa su Debilidad</orangeStrong>, Boothill obtiene Ventaja en el bolsillo y disipa Duelo a muerte. <orangeStrong>Potencia su ATQ básico</orangeStrong> y el turno no termina."
       }
     },
     "ult": {
       "0": {
         "name": "Rodeo vespertino del diablo de polvo",
-        "fullDesc": "Aplica Debilidad Física a un enemigo durante {{3}} turnos.\\nAdemás, inflige al enemigo un Daño Físico equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Boothill y <u>retrasa su acción</u> en un <orangeStrong>{{2, percent}}%</orangeStrong>.",
+        "fullDesc": "Aplica Debilidad Física a un enemigo durante {{3}} turnos.<br>Además, inflige al enemigo un Daño Físico equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Boothill y retrasa su acción en un <orangeStrong>{{2, percent}}%</orangeStrong>.",
         "shortDesc": "<orangeStrong>Aplica Debilidad Física</orangeStrong> a un enemigo. Además, inflige gran cantidad de Daño Físico y retrasa la acción del enemigo."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Cinco guisantes en la vaina",
+        "fullDesc": "Cada acumulación de Ventaja en el bolsillo aumenta la Reducción de Firmeza del ATQ básico potenciado en un {{4, percent}}%, hasta un máximo de {{5}} acumulaciones.<br>Si el enemigo está afectado por Ruptura de Debilidad cuando usa el ATQ básico potenciado, inflige a ese enemigo un Daño de Ruptura equivalente al <orangeStrong>{{1, percent}}%</orangeStrong>/<orangeStrong>{{2, percent}}%</orangeStrong>/<orangeStrong>{{3, percent}}%</orangeStrong> del Daño de Ruptura Físico de Boothill, en función de las acumulaciones de Ventaja en el bolsillo. La Firmeza máxima calculada para este daño no puede superar {{6}} veces la Reducción de Firmeza de base que tiene el ATQ básico \"Espuelas rompetestas\".<br>Tras ganar el combate, Boothill mantiene Ventaja en el bolsillo para el siguiente combate.",
+        "shortDesc": "Ventaja en el bolsillo hace que el ATQ básico potenciado tenga más Reducción de Firmeza e inflija <orangeStrong>Daño de Ruptura</orangeStrong> Físico extra al <orangeStrong>enemigo afectado por Ruptura de Debilidad</orangeStrong>. Tras ganar el combate, Ventaja en el bolsillo se mantiene para el siguiente combate."
       }
     },
     "technique": {

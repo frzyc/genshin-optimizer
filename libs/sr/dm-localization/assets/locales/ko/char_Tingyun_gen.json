@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "정다운 화음",
-        "fullDesc": "지정된 단일 아군에게 [축복]을 제공한다. 대상의 공격력을 <orangeStrong>{{2, percent}}%</orangeStrong> 증가시키며 현재 정운 공격력의 <orangeStrong>{{4, percent}}%</orangeStrong>을 넘지 않는다.\\n[축복]을 획득한 대상은 공격 발동 후 추가로 자신의 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 번개 속성 <u>추가 피해</u>를 1회 가한다.\\n[축복] 지속 시간: {{3}}턴. 최근 정운의 전투 스킬 대상이 된 아군에게만 적용된다",
-        "shortDesc": "단일 아군의 <orangeStrong>공격력이 증가</orangeStrong>하고 [축복]을 획득한다. [축복] 상태에서 공격 시 소량의 <orangeStrong>번개 속성 <u>추가 피해</u></orangeStrong>를 추가로 가한다"
+        "fullDesc": "지정된 단일 아군에게 [축복]을 제공한다. 대상의 공격력을 <orangeStrong>{{2, percent}}%</orangeStrong> 증가시키며 현재 정운 공격력의 <orangeStrong>{{4, percent}}%</orangeStrong>을 넘지 않는다.<br>[축복]을 획득한 대상은 공격 발동 후 추가로 자신의 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 번개 속성 추가 피해를 1회 가한다.<br>[축복] 지속 시간: {{3}}턴. 최근 정운의 전투 스킬 대상이 된 아군에게만 적용된다",
+        "shortDesc": "단일 아군의 <orangeStrong>공격력이 증가</orangeStrong>하고 [축복]을 획득한다. [축복] 상태에서 공격 시 소량의 <orangeStrong>번개 속성 추가 피해</orangeStrong>를 추가로 가한다"
       }
     },
     "ult": {
@@ -20,6 +20,13 @@
         "name": "상서로운 구름의 기원",
         "fullDesc": "지정된 단일 아군의 에너지를 {{1}}pt 회복하고, 목표가 가하는 피해가 <orangeStrong>{{3, percent}}%</orangeStrong> 증가한다. 지속 시간: {{2}}턴",
         "shortDesc": "단일 아군이 <orangeStrong>에너지를 회복</orangeStrong>하고, <orangeStrong>가하는 피해가 증가</orangeStrong>한다"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "자전 폭풍",
+        "fullDesc": "적이 정운의 공격을 받으면 [축복]을 획득한 목표는 즉시 해당 대상에게 자신 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 번개 속성 추가 피해를 가한다",
+        "shortDesc": "적이 정운에게 피격된 후 [축복]을 획득한 목표는 즉시 해당 대상에게 소량의 번개 속성 추가 피해를 가한다"
       }
     },
     "technique": {

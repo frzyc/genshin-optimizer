@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "Âm Điệu Nhịp Nhàng",
-        "fullDesc": "Cung cấp \"Ban Phúc\" cho 1 đồng đội, khiến đồng đội đó tăng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công, tối đa không vượt quá <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công hiện tại của Tingyun.\\nSau khi mục tiêu được \"Ban Phúc\" thực hiện tấn công sẽ gây thêm 1 lần <u>Sát Thương Lôi kèm theo</u> bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của bản thân mục tiêu đó.\\n\"Ban Phúc\" duy trì {{3}} hiệp và chỉ có hiệu lực với mục tiêu thi triển Chiến Kỹ mới nhất của Tingyun.",
-        "shortDesc": "<orangeStrong>Tăng tấn công</orangeStrong> của 1 đồng đội và nhận Ban Phúc. Khi tấn công trong trạng thái Ban Phúc sẽ gây thêm lượng nhỏ <orangeStrong>Sát Thương Lôi <u>Kèm Theo</u></orangeStrong>."
+        "fullDesc": "Cung cấp \"Ban Phúc\" cho 1 đồng đội, khiến đồng đội đó tăng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công, tối đa không vượt quá <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công hiện tại của Tingyun.<br>Sau khi mục tiêu được \"Ban Phúc\" thực hiện tấn công sẽ gây thêm 1 lần Sát Thương Lôi kèm theo bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của bản thân mục tiêu đó.<br>\"Ban Phúc\" duy trì {{3}} hiệp và chỉ có hiệu lực với mục tiêu thi triển Chiến Kỹ mới nhất của Tingyun.",
+        "shortDesc": "<orangeStrong>Tăng tấn công</orangeStrong> của 1 đồng đội và nhận Ban Phúc. Khi tấn công trong trạng thái Ban Phúc sẽ gây thêm lượng nhỏ <orangeStrong>Sát Thương Lôi Kèm Theo</orangeStrong>."
       }
     },
     "ult": {
@@ -20,6 +20,13 @@
         "name": "Nghi Lễ Áng Mây Lành",
         "fullDesc": "Hồi phục {{1}} Năng Lượng cho 1 đồng đội, đồng thời khiến sát thương mà mục tiêu gây ra tăng <orangeStrong>{{3, percent}}%</orangeStrong>, duy trì {{2}} hiệp.",
         "shortDesc": "<orangeStrong>Hồi năng lượng</orangeStrong> cho 1 đồng đội và <orangeStrong>tăng sát thương đồng đội đó gây ra</orangeStrong>."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Cơn Lốc Điện Tím",
+        "fullDesc": "Sau khi kẻ địch bị Tingyun tấn công, mục tiêu nhận \"Ban Phúc\" sẽ lập tức gây cho kẻ địch đó Sát Thương Lôi kèm theo tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của bản thân.",
+        "shortDesc": "Sau khi kẻ địch bị Tingyun tấn công, thì đồng đội nhận Ban Phúc sẽ gây lượng nhỏ Sát Thương Lôi Kèm Theo lên kẻ địch đó."
       }
     },
     "technique": {

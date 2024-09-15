@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Dreamdiver",
-        "fullDesc": "Meningkatkan CRIT DMG 1 rekan tim yang ditargetkan, peningkatannya sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> CRIT DMG Sparkle + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, berlangsung selama {{3}} giliran, dan mendahulukan aksi rekan tersebut sebesar {{4, percent}}%.\\nSaat Sparkle melancarkan Kemampuan ini pada dirinya sendiri, efek pendahuluan aksi tidak akan terpicu.",
+        "fullDesc": "Meningkatkan CRIT DMG 1 rekan tim yang ditargetkan, peningkatannya sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> CRIT DMG Sparkle + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, berlangsung selama {{3}} giliran, dan mendahulukan aksi rekan tersebut sebesar {{4, percent}}%.<br>Saat Sparkle melancarkan Kemampuan ini pada dirinya sendiri, efek pendahuluan aksi tidak akan terpicu.",
         "shortDesc": "Meningkatkan <orangeStrong>CRIT DMG</orangeStrong> 1 rekan tim dan mendahulukan aksi rekan tersebut."
       }
     },
@@ -20,6 +20,13 @@
         "name": "The Hero with a Thousand Faces",
         "fullDesc": "Memulihkan {{2}} Poin Skill untuk rekan tim dan memberikan efek \"Cipher\" pada seluruh rekan tim. Untuk rekan tim yang memiliki \"Cipher\", setiap lapis efek peningkatan DMG dari Talent Sparkle akan meningkat ekstra <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, berlangsung selama {{4}} giliran.",
         "shortDesc": "Memulihkan <orangeStrong>Poin Skill</orangeStrong> rekan tim dan membuat efek peningkatan DMG dari terpicunya Talent Sparkle meningkat ekstra."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Red Herring",
+        "fullDesc": "Saat Sparkle berada di medan pertempuran, jumlah batas maksimal Poin Skill meningkat {{3}}. Setiap kali rekan tim mengonsumsi 1 Poin Skill, DMG yang diakibatkan oleh seluruh rekan tim akan meningkat <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> selama {{1}} giliran. Efek ini dapat ditumpuk hingga {{4}} lapis.",
+        "shortDesc": "Meningkatkan <orangeStrong>batas maksimum Poin Skill </orangeStrong> rekan tim. Saat rekan tim mengonsumsi Poin Skill, akan meningkatkan <orangeStrong>DMG yang diakibatkan</orangeStrong> seluruh rekan tim."
       }
     },
     "technique": {

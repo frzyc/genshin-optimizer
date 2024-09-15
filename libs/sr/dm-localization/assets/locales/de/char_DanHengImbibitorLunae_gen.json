@@ -26,7 +26,7 @@
     "skill": {
       "0": {
         "name": "Zügellos",
-        "fullDesc": "Verstärkt den Standardangriff bis zu 3-mal hintereinander. Der Einsatz dieser Fähigkeit verbraucht keinen Fertigkeitspunkt und gilt nicht als Einsatz einer Fertigkeit.\\nDurch einmalige Verstärkung des Standardangriffs verwandelt sich „Segensreicher Lotus“ in „Transzendenz“, durch zweimalige Verstärkung in „Himmlischer Speer“ und durch dreimalige Verstärkung in „Blitzartiger Sprung“.\\nBeim Einsatz von „Himmlischer Speer“ oder „Blitzartiger Sprung“ erhält Dan Heng – Imbibitor Lunae ab dem vierten Treffer dieses Angriffs vor jedem Treffer jeweils 1 Stapelung „Beherrschendes Gebrüll“. Jede Stapelung von „Beherrschendes Gebrüll“ erhöht den KRIT-SCH von Dan Heng – Imbibitor Lunae um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Dieser Effekt ist bis zu {{2}}-fach stapelbar und hält bis zum Ende seiner Runde an.",
+        "fullDesc": "Verstärkt den Standardangriff bis zu 3-mal hintereinander. Der Einsatz dieser Fähigkeit verbraucht keinen Fertigkeitspunkt und gilt nicht als Einsatz einer Fertigkeit.<br>Durch einmalige Verstärkung des Standardangriffs verwandelt sich „Segensreicher Lotus“ in „Transzendenz“, durch zweimalige Verstärkung in „Himmlischer Speer“ und durch dreimalige Verstärkung in „Blitzartiger Sprung“.<br>Beim Einsatz von „Himmlischer Speer“ oder „Blitzartiger Sprung“ erhält Dan Heng – Imbibitor Lunae ab dem vierten Treffer dieses Angriffs vor jedem Treffer jeweils 1 Stapelung „Beherrschendes Gebrüll“. Jede Stapelung von „Beherrschendes Gebrüll“ erhöht den KRIT-SCH von Dan Heng – Imbibitor Lunae um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Dieser Effekt ist bis zu {{2}}-fach stapelbar und hält bis zum Ende seiner Runde an.",
         "shortDesc": "Verstärkt den Standardangriff Segensreicher Lotus zu <orangeStrong>Transzendenz</orangeStrong>, <orangeStrong>Himmlischer Speer</orangeStrong> oder <orangeStrong>Blitzartiger Sprung</orangeStrong>."
       },
       "1": {
@@ -38,8 +38,15 @@
     "ult": {
       "0": {
         "name": "Säuberung der Welt",
-        "fullDesc": "Führt einen Angriff mit 3 Treffern aus und fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG von Dan Heng – Imbibitor Lunae zu. Fügt gleichzeitig angrenzenden Einheiten imaginären SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> des ANG von Dan Heng – Imbibitor Lunae zu. Erhält {{3}} „Unantastbare Schuppen“.\\n„Unantastbare Schuppe“ kann bis zu <orangeStrong>{{4}}</orangeStrong>-mal erhalten werden. Dan Heng – Imbibitor Lunae kann eine entsprechende Anzahl von „Unantastbaren Schuppen“ anstelle von Fertigkeitspunkten verbrauchen. Das Verbrauchen von „Unantastbaren Schuppen“ wird dem Verbrauchen von Fertigkeitspunkten gleichgesetzt.",
+        "fullDesc": "Führt einen Angriff mit 3 Treffern aus und fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG von Dan Heng – Imbibitor Lunae zu. Fügt gleichzeitig angrenzenden Einheiten imaginären SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> des ANG von Dan Heng – Imbibitor Lunae zu. Erhält {{3}} „Unantastbare Schuppen“.<br>„Unantastbare Schuppe“ kann bis zu <orangeStrong>{{4}}</orangeStrong>-mal erhalten werden. Dan Heng – Imbibitor Lunae kann eine entsprechende Anzahl von „Unantastbaren Schuppen“ anstelle von Fertigkeitspunkten verbrauchen. Das Verbrauchen von „Unantastbaren Schuppen“ wird dem Verbrauchen von Fertigkeitspunkten gleichgesetzt.",
         "shortDesc": "Fügt einem Gegner massiven imaginären SCH zu, fügt angrenzenden Einheiten imaginären SCH zu und verleiht Dan Heng – Imbibitor Lunae 2 „Unantastbare Schuppen“. Dan Heng – Imbibitor Lunae kann <orangeStrong>anstelle von Fertigkeitspunkten</orangeStrong> die gleiche Anzahl von Unantastbaren Schuppen verbrauchen. Der Verbrauch von „Unantastbaren Schuppen“ wird mit dem <orangeStrong>Verbrauch von Fertigkeitspunkten</orangeStrong> gleichgesetzt."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Aufrichtiges Herz",
+        "fullDesc": "Dan Heng – Imbibitor Lunae erhält nach jedem Treffer, den er während eines Angriffs auslöst, 1 Stapelung „Aufrichtiges Herz“, die seinen verursachten SCH um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> erhöht. Dieser Effekt ist bis zu {{2}}-fach stapelbar und hält bis zum Ende seiner Runde an.",
+        "shortDesc": "Erhöht den verursachten SCH nach jedem Treffer. Dieser Effekt ist stapelbar und hält bis zum Ende der Runde dieser Figur an."
       }
     },
     "technique": {

@@ -22,6 +22,13 @@
         "shortDesc": "<orangeStrong>Tăng tốc</orangeStrong> cho toàn bộ phe ta."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Chiêm Tinh Học",
+        "fullDesc": "Mỗi khi đánh trúng 1 kẻ địch khác nhau sẽ nhận được 1 tầng Tụ Năng, nếu điểm yếu của mục tiêu địch bị tấn công là thuộc tính Hỏa thì sẽ nhận thêm 1 tầng Tụ Năng.<br>Asta cứ có 1 tầng Tụ Năng, sẽ khiến toàn bộ phe ta tăng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Tấn Công, hiệu ứng này tối đa cộng dồn {{2}} tầng.<br>Bắt đầu từ hiệp thứ 2 của bản thân, khi mỗi hiệp bắt đầu, số tầng Tụ Năng của Asta sẽ giảm {{3}} tầng.",
+        "shortDesc": "Cứ đánh trúng 1 kẻ địch khác nhau sẽ nhận 1 tầng Tụ Năng, tối đa cộng dồn 5 tầng. Mỗi tầng Tụ Năng tăng tấn công của toàn bộ phe ta. Khi bắt đầu hiệp của bản thân sẽ giảm số tầng Tụ Năng."
+      }
+    },
     "technique": {
       "0": {
         "name": "Ánh Chớp Diệu Kỳ",
@@ -39,7 +46,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Tia Lửa",
-        "fullDesc": "Khi thi triển tấn công thường có {{1, percent}}% xác suất cơ bản khiến kẻ địch rơi vào trạng thái Thiêu Đốt, duy trì {{2}} hiệp.\\nTrong trạng thái Thiêu Đốt, khi bắt đầu mỗi hiệp, kẻ địch chịu Sát Thương Hỏa duy trì tương đương {{3, percent}}% Tấn Công Thường của Asta.",
+        "fullDesc": "Khi thi triển tấn công thường có {{1, percent}}% xác suất cơ bản khiến kẻ địch rơi vào trạng thái Thiêu Đốt, duy trì {{2}} hiệp.<br>Trong trạng thái Thiêu Đốt, khi bắt đầu mỗi hiệp, kẻ địch chịu Sát Thương Hỏa duy trì tương đương {{3, percent}}% Tấn Công Thường của Asta.",
         "shortDesc": ""
       }
     },

@@ -22,6 +22,13 @@
         "shortDesc": "<orangeStrong>Erhöht die GES</orangeStrong> aller Verbündeten."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Astrometrie",
+        "fullDesc": "Erhält 1 Aufladestapelung für jeden von Asta angegriffenen Gegner plus 1 zusätzliche Aufladestapelung für jeden dabei getroffenen Gegner mit Feuer-Schwäche.<br>Für jede Aufladestapelung von Asta wird der ANG aller Verbündeten um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> erhöht. Dieser Effekt ist bis zu {{2}}-mal stapelbar.<br>Ab Astas zweiter Runde wird die Anzahl dieser Aufladestapelungen zu Beginn jeder Runde um {{3}} reduziert.",
+        "shortDesc": "Erhält 1 Aufladestapelung für jeden verschiedenen angegriffenen Gegner, bis max. 5 Stapelungen. Für jede Aufladestapelung wird der ANG aller Verbündeten erhöht. Zu Beginn ihrer Runde wird die Aufladestapelung reduziert."
+      }
+    },
     "technique": {
       "0": {
         "name": "Wunderblitz",
@@ -39,7 +46,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Funken",
-        "fullDesc": "Beim Einsatz des Standardangriffs besteht eine Grundchance von {{1, percent}}%, bei Gegnern für {{2}} Rd. Brennen zu verursachen.\\nBrennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von {{3, percent}}% von Astas Standardangriffs.",
+        "fullDesc": "Beim Einsatz des Standardangriffs besteht eine Grundchance von {{1, percent}}%, bei Gegnern für {{2}} Rd. Brennen zu verursachen.<br>Brennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von {{3, percent}}% von Astas Standardangriffs.",
         "shortDesc": ""
       }
     },

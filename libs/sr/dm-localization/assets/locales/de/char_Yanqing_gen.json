@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Regenreiche Schwalbenjagd",
-        "fullDesc": "Erhöht Yanqings KRIT-Rate um {{1, percent}}%. Erhöht Yanqings KRIT-SCH bei aktiver „Empathischer Schwertverbindung“ zusätzlich für 1 Rd. um <orangeStrong>{{2, percent}}%</orangeStrong>. Der <u>Buff</u> hält 1 Rd. an. Fügt dann einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Yanqings ANG zu.",
+        "fullDesc": "Erhöht Yanqings KRIT-Rate um {{1, percent}}%. Erhöht Yanqings KRIT-SCH bei aktiver „Empathischer Schwertverbindung“ zusätzlich für 1 Rd. um <orangeStrong>{{2, percent}}%</orangeStrong>. Der Buff hält 1 Rd. an. Fügt dann einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Yanqings ANG zu.",
         "shortDesc": "Erhöht KRIT-Rate, verstärkt „Empathische Schwertverbindung“ und fügt einem Gegner massiven Eis-SCH zu."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Scharfer Gefährte",
+        "fullDesc": "Ist „Empathische Schwertverbindung“ aktiv, sinkt die Chance, dass Yanqing angegriffen wird. Außerdem wird seine KRIT-Rate um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> und sein KRIT-SCH um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht. Beim Angriff besteht eine feste Chance von <orangeStrong>{{3, percent}}%</orangeStrong>, einen Folgeangriff auszuführen, der dem Ziel Eis-SCH in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von Yanqings ANG zufügt und mit einer Grundchance von {{6, percent}}% für 1 Rd. Gefroren verursacht.<br>Der eingefrorene Gegner ist handlungsunfähig und erleidet zu Beginn jeder Runde zusätzlichen Eis-SCH in Höhe von <orangeStrong>{{5, percent}}%</orangeStrong> von Yanqings ANG. <br>Wenn Yanqing SCH erleidet, verschwindet die „Empathische Schwertverbindung“.",
+        "shortDesc": "Verringert <orangeStrong>während „Empathische Schwertverbindung“</orangeStrong> die Chance, angegriffen zu werden und <orangeStrong>erhöht die KRIT-Rate und den KRIT-SCH</orangeStrong> der Figur. <orangeStrong>Nach einem Angriff</orangeStrong> auf einen Gegner kann die Figur einen Folgeangriff auslösen, der Eis-SCH verursacht und die Chance hat, den Gegner einzufrieren. <br>„Empathische Schwertverbindung“ wird entfernt, sobald diese Figur Schaden erleidet."
       }
     },
     "technique": {

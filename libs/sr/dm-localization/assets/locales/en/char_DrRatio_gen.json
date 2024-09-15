@@ -18,14 +18,21 @@
     "ult": {
       "0": {
         "name": "Syllogistic Paradox",
-        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Dr. Ratio's ATK to a single target enemy and applies Wiseman's Folly. When Dr. Ratio's allies attack a target afflicted with Wiseman's Folly, Dr. Ratio launches his Talent's <u>follow-up attack</u> for 1 time against this target.\\nWiseman's Folly can be triggered for up to {{2}} times and only affects the most recent target of Dr. Ratio's Ultimate. This trigger count resets after Dr. Ratio's Ultimate is used.",
-        "shortDesc": "Deals Imaginary DMG to a single target enemy and applies Wiseman's Folly. When Dr. Ratio's allies attack a target afflicted with Wiseman's Folly, Dr. Ratio launches 1 <orangeStrong><u>follow-up attack</u></orangeStrong> on this target."
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Dr. Ratio's ATK to a single target enemy and applies Wiseman's Folly. When Dr. Ratio's allies attack a target afflicted with Wiseman's Folly, Dr. Ratio launches his Talent's follow-up attack for 1 time against this target.<br>Wiseman's Folly can be triggered for up to {{2}} times and only affects the most recent target of Dr. Ratio's Ultimate. This trigger count resets after Dr. Ratio's Ultimate is used.",
+        "shortDesc": "Deals Imaginary DMG to a single target enemy and applies Wiseman's Folly. When Dr. Ratio's allies attack a target afflicted with Wiseman's Folly, Dr. Ratio launches 1 <orangeStrong>follow-up attack</orangeStrong> on this target."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Cogito, Ergo Sum",
+        "fullDesc": "When using his Skill, Dr. Ratio has a {{2, percent}}% fixed chance of launching a follow-up attack against his target for 1 time, dealing Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Dr. Ratio's ATK. For each debuff the target enemy has, the fixed chance of launching follow-up attack increases by {{3, percent}}%. If the target enemy is defeated before the follow-up attack triggers, the follow-up attack will be directed at a single random enemy instead.",
+        "shortDesc": "When using the Skill, there is a chance of launching a <orangeStrong>follow-up attack</orangeStrong> against the target for 1 time."
       }
     },
     "technique": {
       "0": {
         "name": "Mold of Idolatry",
-        "fullDesc": "After using Technique, creates a special dimension that Taunts nearby enemies, lasting for {{1}} second(s). After entering battle with enemies in this special dimension, there is a {{2, percent}}% <u>base chance</u> to reduce each single enemy target's SPD by {{3, percent}}% for {{4}} turn(s). Only 1 dimension created by allies can exist at the same time.",
+        "fullDesc": "After using Technique, creates a special dimension that Taunts nearby enemies, lasting for {{1}} second(s). After entering battle with enemies in this special dimension, there is a {{2, percent}}% base chance to reduce each single enemy target's SPD by {{3, percent}}% for {{4}} turn(s). Only 1 dimension created by allies can exist at the same time.",
         "shortDesc": "Creates a special dimension. Enemies within the dimension are Taunted. After entering battle with enemies in this dimension, there is a high chance to <orangeStrong>reduce SPD</orangeStrong> of enemy targets."
       }
     },
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Know Thyself",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Ignorance Is Blight",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Sic Itur Ad Astra",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Vincit Omnia Veritas",

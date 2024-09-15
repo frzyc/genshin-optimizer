@@ -27,10 +27,17 @@
         "shortDesc": "Consome <orangeStrong>{{4}}</orangeStrong> de Energia e causa Dano Físico a todos os inimigos e adicionalmente causa Dano Físico leve a inimigos-alvo únicos por 6 Ricochetes."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Objeto Sublime",
+        "fullDesc": "Para cada inimigo atingido quando Argenti usa seu ATQ Básico, Perícia ou Perícia Suprema, regenera a Energia de Argenti em {{1}}, e concede a ele um acúmulo de Apoteose, além de aumentar sua Chance de CRIT em <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. Este efeito pode acumular até {{3}} vez(es).",
+        "shortDesc": "Quando Argenti usa seu ATQ Básico, Perícia ou Perícia Suprema, ele <orangeStrong>regenera Energia</orangeStrong> e aumenta sua <orangeStrong>Chance de CRIT</orangeStrong> para cada inimigo-alvo atingido."
+      }
+    },
     "technique": {
       "0": {
         "name": "Manifesto da Mais Pura Virtude",
-        "fullDesc": "Após usar sua Técnica, inflige Confusão por {{1}} segundo(s) aos inimigos dentro de uma área definida. Inimigos com Confusão não atacarão a equipe ativamente.\\nAo atacar um inimigo com Confusão para entrar em combate, causa Dano Físico de {{2, percent}}% do ATQ de Argenti a todos os inimigos e regenera a Energia de Argenti em {{3}}.",
+        "fullDesc": "Após usar sua Técnica, inflige Confusão por {{1}} segundo(s) aos inimigos dentro de uma área definida. Inimigos com Confusão não atacarão a equipe ativamente.<br>Ao atacar um inimigo com Confusão para entrar em combate, causa Dano Físico de {{2, percent}}% do ATQ de Argenti a todos os inimigos e regenera a Energia de Argenti em {{3}}.",
         "shortDesc": "Inflige Confusão em todos os inimigos em uma área definida. Ao atacar um inimigo com Confusão para entrar em combate, causa Dano Físico leve a todos os inimigos e regenera energia de Argenti."
       }
     },
@@ -74,7 +81,7 @@
     },
     "3": {
       "name": "Glória do Caminho de Espinhos",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "4": {
       "name": "Devoção do Clarim",
@@ -82,7 +89,7 @@
     },
     "5": {
       "name": "Neve, de Algum Lugar no Cosmos",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "6": {
       "name": "\"Vossa\" Resplandecência",

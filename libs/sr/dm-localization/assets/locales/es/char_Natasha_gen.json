@@ -22,10 +22,17 @@
         "shortDesc": "<orangeStrong>Regenera los PV</orangeStrong> de todos los aliados."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Inervación",
+        "fullDesc": "La curación realizada por Natasha aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong> para los objetivos aliados que tengan un porcentaje de PV igual o inferior al {{1, percent}}%. También aplica a la curación continua.",
+        "shortDesc": "La curación realizada aumenta para los objetivos aliados que tengan un porcentaje de PV bajo. También aplica a la curación continua."
+      }
+    },
     "technique": {
       "0": {
         "name": "Investigación sobre hipnosis",
-        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{4, percent}}% del ATQ de Natasha como Daño Físico a un enemigo al azar. Además, cada enemigo tiene una <u>probabilidad base</u> del {{1, percent}}% de ser afectado por Debilitación.\\nEl daño que infligen los enemigos debilitados se reduce en un {{2, percent}}% durante {{3}} turno.",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{4, percent}}% del ATQ de Natasha como Daño Físico a un enemigo al azar. Además, cada enemigo tiene una probabilidad base del {{1, percent}}% de ser afectado por Debilitación.<br>El daño que infligen los enemigos debilitados se reduce en un {{2, percent}}% durante {{3}} turno.",
         "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de Daño Físico a un enemigo al azar. Además, cada enemigo tiene una gran probabilidad de ser afectado por Debilitación."
       }
     },

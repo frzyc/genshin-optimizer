@@ -11,21 +11,28 @@
     "skill": {
       "0": {
         "name": "可愛即是正義",
-        "fullDesc": "為指定我方單體提供能夠抵消等同於三月七<orangeStrong>{{1, percent}}%</orangeStrong>防禦力+<orangeStrong>{{4}}</orangeStrong>傷害的護盾，持續{{2}}回合。\\n若該目標現有生命值百分比大於等於{{3, percent}}%，則遭到敵方攻擊的機率大幅提高。",
+        "fullDesc": "為指定我方單體提供能夠抵消等同於三月七<orangeStrong>{{1, percent}}%</orangeStrong>防禦力+<orangeStrong>{{4}}</orangeStrong>傷害的護盾，持續{{2}}回合。<br>若該目標現有生命值百分比大於等於{{3, percent}}%，則遭到敵方攻擊的機率大幅提高。",
         "shortDesc": "為我方單體<orangeStrong>施加護盾</orangeStrong>。"
       }
     },
     "ult": {
       "0": {
         "name": "冰刻箭雨之時",
-        "fullDesc": "對敵方全體造成等同於三月七<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的冰屬性傷害。受到攻擊的敵方目標有{{2, percent}}%<u>基礎機率</u>陷入凍結狀態，持續{{3}}回合。\\n凍結狀態下，敵方目標不能行動同時每回合開始時受到等同於三月七<orangeStrong>{{4, percent}}%</orangeStrong>攻擊力的冰屬性<u>附加傷害</u>。",
+        "fullDesc": "對敵方全體造成等同於三月七<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的冰屬性傷害。受到攻擊的敵方目標有{{2, percent}}%基礎機率陷入凍結狀態，持續{{3}}回合。<br>凍結狀態下，敵方目標不能行動同時每回合開始時受到等同於三月七<orangeStrong>{{4, percent}}%</orangeStrong>攻擊力的冰屬性附加傷害。",
         "shortDesc": "對敵方<orangeStrong>全體</orangeStrong>造成冰屬性傷害，<orangeStrong>有機率施加凍結狀態</orangeStrong>。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "少女的特權",
+        "fullDesc": "當持有護盾的我方目標受到敵方目標攻擊後，三月七立即向攻擊者發動反擊，對其造成等同於三月七<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的冰屬性傷害，該效果每回合可觸發{{2}}次。",
+        "shortDesc": "持有護盾的我方目標受到敵方攻擊後，三月七<orangeStrong>立即對其發動反擊</orangeStrong>，造成少量冰屬性傷害。"
       }
     },
     "technique": {
       "0": {
         "name": "凍人的瞬間",
-        "fullDesc": "立即攻擊敵人，進入戰鬥後有{{1, percent}}%的<u>基礎機率</u>使隨機敵方單體陷入凍結狀態，持續{{2}}回合。\\n凍結狀態下，敵方目標不能行動，同時每回合開始時受到等同於三月七{{3, percent}}%攻擊力的冰屬性<u>附加傷害</u>。",
+        "fullDesc": "立即攻擊敵人，進入戰鬥後有{{1, percent}}%的基礎機率使隨機敵方單體陷入凍結狀態，持續{{2}}回合。<br>凍結狀態下，敵方目標不能行動，同時每回合開始時受到等同於三月七{{3, percent}}%攻擊力的冰屬性附加傷害。",
         "shortDesc": "攻擊敵人，進入戰鬥後有高機率使敵方隨機單體陷入凍結狀態。"
       }
     },

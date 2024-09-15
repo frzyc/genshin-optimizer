@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "G—Gonna Be Late!",
-        "fullDesc": "Memiliki {{1}} Hits Per Action secara default. Pertama-tama, akan melancarkan 1 Hit serangan pada 1 musuh yang ditargetkan dan mengakibatkan Ice DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Misha. Kemudian, sisa Hit-nya akan mengakibatkan Ice DMG pada musuh secara acak sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Misha. Sebelum setiap Hit-nya mengenai target, memiliki <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> <u>Peluang Dasar</u> untuk membuat target memasuki status Frozen selama 1 giliran.\\nTarget musuh tidak dapat beraksi saat berada dalam status Frozen, di saat bersamaan setiap saat gilirannya dimulai, target juga akan menerima Ice <u>DMG tambahan</u> sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK Misha.\\nUltimate ini maksimal dapat memiliki {{5}} Hits Per Action. Setelah melancarkan Ultimate, jumlah Hits Per Action di-reset kembali ke jumlah default.",
+        "fullDesc": "Memiliki {{1}} Hits Per Action secara default. Pertama-tama, akan melancarkan 1 Hit serangan pada 1 musuh yang ditargetkan dan mengakibatkan Ice DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Misha. Kemudian, sisa Hit-nya akan mengakibatkan Ice DMG pada musuh secara acak sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Misha. Sebelum setiap Hit-nya mengenai target, memiliki <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> Peluang Dasar untuk membuat target memasuki status Frozen selama 1 giliran.<br>Target musuh tidak dapat beraksi saat berada dalam status Frozen, di saat bersamaan setiap saat gilirannya dimulai, target juga akan menerima Ice DMG tambahan sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK Misha.<br>Ultimate ini maksimal dapat memiliki {{5}} Hits Per Action. Setelah melancarkan Ultimate, jumlah Hits Per Action di-reset kembali ke jumlah default.",
         "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh. Total dapat Bounce <orangeStrong>{{1}}</orangeStrong> kali secara default, maksimal dapat Bounce <orangeStrong>{{5}}</orangeStrong> kali. Sebelum setiap Hit-nya mengenai target, berpeluang kecil untuk <orangeStrong>membuat target memasuki status Frozen</orangeStrong>."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Horological Escapement",
+        "fullDesc": "Setiap 1 Poin Skill yang dikonsumsi oleh seluruh rekan tim akan menambah {{2}} Hits Per Action untuk Ultimate Misha yang berikutnya, dan juga memulihkan <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> Energy Misha.",
+        "shortDesc": "Setiap <orangeStrong>1 Poin Skill yang dikonsumsi</orangeStrong> seluruh rekan tim akan menambah <orangeStrong>jumlah Hits Per Action untuk Ultimate</orangeStrong> Misha yang berikutnya, dan juga memulihkan Energy Misha."
       }
     },
     "technique": {

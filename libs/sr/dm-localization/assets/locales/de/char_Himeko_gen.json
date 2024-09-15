@@ -22,10 +22,17 @@
         "shortDesc": "Fügt allen Gegnern Feuer-SCH zu und stellt Energie beim Besiegen des Gegners wieder her."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Siegesrausch",
+        "fullDesc": "Wenn die Schwäche eines Gegners gebrochen wird, erhält Himeko 1 Pkt. Aufladung, maximal {{2}} Pkt.<br>Wenn ein Verbündeter einen Angriff ausführt und Himeko voll aufgeladen ist, führt sie sofort 1 Folgeangriff aus, der allen Gegnern Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Himekos ANG zufügt und alle Aufladungen verbraucht.<br>Erhält beim Kampfeintritt 1 Pkt. Aufladung.",
+        "shortDesc": "Erhält 1 Aufladung, wenn die Schwäche eines Gegners gebrochen wird.<br>Nach einem voll aufgeladenen Angriff eines Verbündeten führt dieser <orangeStrong>sofort</orangeStrong> einen Folgeangriff aus und fügt <orangeStrong>allen Gegnern</orangeStrong> Feuer-SCH zu, wobei alle Aufladungen verbraucht werden.<br>Erhält zu Beginn jedes Kampfes 1 Aufladung."
+      }
+    },
     "technique": {
       "0": {
         "name": "Unvollständige Verbrennung",
-        "fullDesc": "Erzeugt nach dem Einsatz der Technik für {{4}} s eine spezielle Dimension. Nach Kampfeintritt mit Gegnern in dieser Dimension besteht eine <u>Grundchance</u> von {{1, percent}}%, den von den Gegnern erlittenen Feuer-SCH für {{3}} Rd. um {{2, percent}}% zu erhöhen. Es kann nur eine von Verbündeten erschaffene Dimension zur gleichen Zeit existieren.",
+        "fullDesc": "Erzeugt nach dem Einsatz der Technik für {{4}} s eine spezielle Dimension. Nach Kampfeintritt mit Gegnern in dieser Dimension besteht eine Grundchance von {{1, percent}}%, den von den Gegnern erlittenen Feuer-SCH für {{3}} Rd. um {{2, percent}}% zu erhöhen. Es kann nur eine von Verbündeten erschaffene Dimension zur gleichen Zeit existieren.",
         "shortDesc": "Erschafft eine Dimension. Wenn du mit Gegnern in der Dimension kämpfst, besteht eine hohe Chance, dass <orangeStrong>der ihnen zugefügte Feuer-SCH erhöht wird</orangeStrong>."
       }
     },
@@ -39,7 +46,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Sternenfeuer",
-        "fullDesc": "Nach dem Einsatz eines Angriffs besteht eine Grundchance von {{1, percent}}%, bei den Gegnern für {{2}} Rd. Brennen zu verursachen.\\nGegner im Status Brennen erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von {{3, percent}}% von Himekos ANG.",
+        "fullDesc": "Nach dem Einsatz eines Angriffs besteht eine Grundchance von {{1, percent}}%, bei den Gegnern für {{2}} Rd. Brennen zu verursachen.<br>Gegner im Status Brennen erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von {{3, percent}}% von Himekos ANG.",
         "shortDesc": ""
       }
     },

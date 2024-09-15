@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Recepção Escaldante",
-        "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Guinaifen como Dano de Fogo a um único inimigo, além de <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Guinaifen como Dano de Fogo a inimigos adjacentes, com {{3, percent}}% de <u>chance-base</u> de infligir Queimadura no alvo e alvos adjacentes. Enquanto estiverem afligidos com Queimadura, inimigos recebem <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de Guinaifen como um Dano de Fogo Contínuo no início de cada rodada, com duração de {{5}} rodada(s).",
+        "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Guinaifen como Dano de Fogo a um único inimigo, além de <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Guinaifen como Dano de Fogo a inimigos adjacentes, com {{3, percent}}% de chance-base de infligir Queimadura no alvo e alvos adjacentes. Enquanto estiverem afligidos com Queimadura, inimigos recebem <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de Guinaifen como um Dano de Fogo Contínuo no início de cada rodada, com duração de {{5}} rodada(s).",
         "shortDesc": "Causa Dano de Fogo a um único inimigo e Dano de Fogo leve a inimigos adjacentes, com altas chances de causar <orangeStrong>Queimadura</orangeStrong> a eles."
       }
     },
@@ -22,10 +22,17 @@
         "shortDesc": "Causa Dano de Fogo a todos os inimigos. Se os inimigos já estiverem com Queimadura, o estado de Queimadura causa Dano 1 vez extra."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Benefícios do PatrAeon",
+        "fullDesc": "Quando Guinaifen estiver em campo, há {{1, percent}}% de chance-base de aplicar Beijo de Fogo em um inimigo após seu estado de Queimadura causar Dano. Enquanto estiver afligido com Beijo de Fogo, o inimigo recebe <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> a mais de Dano por {{5}} rodada(s), podendo acumular até {{6}} vez(es).",
+        "shortDesc": "Após o <orangeStrong>estado de Queimadura causar Dano</orangeStrong> no inimigo, há altas chances de aplicar <orangeStrong>Beijo de Fogo</orangeStrong> no inimigo."
+      }
+    },
     "technique": {
       "0": {
         "name": "Demonstração de Habilidades",
-        "fullDesc": "Ataca o inimigo imediatamente. Depois de entrar na batalha, causa Dano {{2}} vez(es), causando {{1, percent}}% do ATQ de Guinaifen como Dano de Fogo a um único inimigo-alvo aleatório a cada vez, com uma <u>chance-base</u> de {{3, percent}}% de infligir Beijo de Fogo a ele.",
+        "fullDesc": "Ataca o inimigo imediatamente. Depois de entrar na batalha, causa Dano {{2}} vez(es), causando {{1, percent}}% do ATQ de Guinaifen como Dano de Fogo a um único inimigo-alvo aleatório a cada vez, com uma chance-base de {{3, percent}}% de infligir Beijo de Fogo a ele.",
         "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano de Fogo leve a um único alvo e aplica <orangeStrong>Beijo de Fogo</orangeStrong>, rebatendo um total de 4 vezes."
       }
     },
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Destruindo Pedras com o Peito",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Bloqueando Lanças com o Pescoço",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Engolindo Espadas",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "Pegando Projéteis com as Mãos",

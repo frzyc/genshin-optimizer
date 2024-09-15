@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "위협의 일격",
-        "fullDesc": "지정된 단일 적에게 게파드 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 주며 피격된 적은 {{2, percent}}%의 <u>기본 확률</u>로 빙결 상태에 빠진다. 지속 시간: {{3}}턴.\\n빙결 상태의 적은 행동할 수 없으며 턴이 시작될 때마다 게파드 공격력 <orangeStrong>{{4, percent}}%</orangeStrong>만큼의 얼음 속성 <u>추가 피해</u>를 받는다",
+        "fullDesc": "지정된 단일 적에게 게파드 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 주며 피격된 적은 {{2, percent}}%의 기본 확률로 빙결 상태에 빠진다. 지속 시간: {{3}}턴.<br>빙결 상태의 적은 행동할 수 없으며 턴이 시작될 때마다 게파드 공격력 <orangeStrong>{{4, percent}}%</orangeStrong>만큼의 얼음 속성 추가 피해를 받는다",
         "shortDesc": "단일 적에게 얼음 속성 피해를 가하고 <orangeStrong>일정 확률로 해당 적에게 빙결 상태를 부여</orangeStrong>한다"
       }
     },
@@ -20,6 +20,13 @@
         "name": "영원의 벽",
         "fullDesc": "모든 아군에게 게파드 방어력 <orangeStrong>{{1, percent}}%</orangeStrong>+<orangeStrong>{{3}}</orangeStrong>만큼의 피해를 상쇄할 수 있는 실드를 제공한다. 지속 시간: {{2}}턴",
         "shortDesc": "모든 아군에게 <orangeStrong>실드를 제공</orangeStrong>한다"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "불굴의 몸",
+        "fullDesc": "게파드는 치명적인 공격을 받아도 전투 불능 상태에 빠지지 않으며 자신의 HP 최대치 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 HP를 즉시 회복한다. 해당 효과는 단일 전투에서 1회만 발동한다",
+        "shortDesc": "치명적인 공격을 받아도 <orangeStrong>전투 불능 상태에 빠지지 않으며</orangeStrong> 즉시 HP를 회복한다. 단일 전투 중에서 1회만 발동한다"
       }
     },
     "technique": {

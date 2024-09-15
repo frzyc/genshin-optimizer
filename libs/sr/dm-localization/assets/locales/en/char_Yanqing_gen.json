@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Amidst the Raining Bliss",
-        "fullDesc": "Increases Yanqing's CRIT Rate by {{1, percent}}%. When Soulsteel Sync is active, increases Yanqing's CRIT DMG by an extra <orangeStrong>{{2, percent}}%</orangeStrong>. This <u>buff</u> lasts for one turn. Afterwards, deals Ice DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Yanqing's ATK to a single enemy.",
+        "fullDesc": "Increases Yanqing's CRIT Rate by {{1, percent}}%. When Soulsteel Sync is active, increases Yanqing's CRIT DMG by an extra <orangeStrong>{{2, percent}}%</orangeStrong>. This buff lasts for one turn. Afterwards, deals Ice DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Yanqing's ATK to a single enemy.",
         "shortDesc": "Increases Yanqing's CRIT Rate. Enhances \"Soulsteel Sync\" and deals massive Ice DMG to a single enemy."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "One With the Sword",
+        "fullDesc": "When Soulsteel Sync is active, Yanqing is less likely to be attacked by enemies. Yanqing's CRIT Rate increases by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> and his CRIT DMG increases by <orangeStrong>{{2, percent}}%</orangeStrong>. After Yanqing attacks an enemy, there is a <orangeStrong>{{3, percent}}%</orangeStrong> fixed chance to perform a follow-up attack, dealing Ice DMG equal to <orangeStrong>{{4, percent}}%</orangeStrong> of Yanqing's ATK to the enemy, which has a {{6, percent}}% base chance to Freeze the enemy for 1 turn.<br>The Frozen target cannot take action and receives Additional Ice DMG equal to <orangeStrong>{{5, percent}}%</orangeStrong> of Yanqing's ATK at the beginning of each turn.<br>When Yanqing receives DMG, the Soulsteel Sync effect will disappear.",
+        "shortDesc": "<orangeStrong>During Soulsteel Sync</orangeStrong>, reduces the chance of this character being attacked and <orangeStrong>increases their CRIT Rate and CRIT DMG</orangeStrong>. <orangeStrong>After attacking an enemy</orangeStrong>, there is a chance of launching a follow-up attack, dealing Ice DMG with a chance to Freeze the target.<br>Soulsteel Sync will be removed after this character receives damage."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Sword Savant",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Searing Sting",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Surging Strife",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Swift Swoop",

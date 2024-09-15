@@ -11,21 +11,28 @@
     "skill": {
       "0": {
         "name": "The Power of Cuteness",
-        "fullDesc": "Memberikan Shield yang dapat menahan DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> DEF March 7th + <orangeStrong>{{4}}</orangeStrong> pada 1 rekan tim selama {{2}} giliran.\\nJika persentase HP rekan tersebut lebih dari atau sama dengan {{3, percent}}%, maka peluangnya diserang musuh akan meningkat pesat.",
+        "fullDesc": "Memberikan Shield yang dapat menahan DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> DEF March 7th + <orangeStrong>{{4}}</orangeStrong> pada 1 rekan tim selama {{2}} giliran.<br>Jika persentase HP rekan tersebut lebih dari atau sama dengan {{3, percent}}%, maka peluangnya diserang musuh akan meningkat pesat.",
         "shortDesc": "<orangeStrong>Memberikan Shield</orangeStrong> pada 1 rekan tim."
       }
     },
     "ult": {
       "0": {
         "name": "Glacial Cascade",
-        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK March 7th pada seluruh musuh. Target musuh yang terkena serangan memiliki {{2, percent}}% <u>peluang dasar</u> untuk memasuki status Frozen selama {{3}} giliran.\\nSaat berstatus Frozen, target musuh tidak dapat beraksi dan di saat bersamaan akan menerima Ice <u>DMG Tambahan</u> sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK March 7th setiap saat gilirannya dimulai.",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK March 7th pada seluruh musuh. Target musuh yang terkena serangan memiliki {{2, percent}}% peluang dasar untuk memasuki status Frozen selama {{3}} giliran.<br>Saat berstatus Frozen, target musuh tidak dapat beraksi dan di saat bersamaan akan menerima Ice DMG Tambahan sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK March 7th setiap saat gilirannya dimulai.",
         "shortDesc": "Mengakibatkan Ice DMG pada <orangeStrong>seluruh</orangeStrong> musuh, dan <orangeStrong>berpeluang untuk mengakibatkan status Frozen</orangeStrong>."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Girl Power",
+        "fullDesc": "Setelah rekan tim yang memiliki Shield terkena serangan target musuh, March 7th akan segera melancarkan Serangan Balasan pada penyerang dan mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK March 7th. Efek ini dapat terpicu {{2}} kali di setiap giliran.",
+        "shortDesc": "Saat rekan tim yang dilindungi Shield terkena serangan musuh, March 7th akan <orangeStrong>segera melancarkan Serangan Balasan pada penyerang</orangeStrong>, yang akan mengakibatkan Ice DMG dalam jumlah kecil."
       }
     },
     "technique": {
       "0": {
         "name": "Freezing Beauty",
-        "fullDesc": "Segera menyerang musuh dan setelah memasuki pertempuran, memiliki {{1, percent}}% <u>peluang dasar</u> untuk mengakibatkan 1 musuh memasuki status Frozen secara acak selama {{2}} giliran.\\nSaat dalam status Frozen, target musuh tidak dapat beraksi dan di saat bersamaan akan menerima Ice <u>DMG tambahan</u> sebesar {{3, percent}}% ATK March 7th setiap kali gilirannya dimulai.",
+        "fullDesc": "Segera menyerang musuh dan setelah memasuki pertempuran, memiliki {{1, percent}}% peluang dasar untuk mengakibatkan 1 musuh memasuki status Frozen secara acak selama {{2}} giliran.<br>Saat dalam status Frozen, target musuh tidak dapat beraksi dan di saat bersamaan akan menerima Ice DMG tambahan sebesar {{3, percent}}% ATK March 7th setiap kali gilirannya dimulai.",
         "shortDesc": "Menyerang musuh dan berpeluang besar untuk membuat 1 musuh secara acak memasuki status Frozen setelah memasuki pertempuran."
       }
     },

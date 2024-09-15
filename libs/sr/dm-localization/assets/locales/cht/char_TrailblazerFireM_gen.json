@@ -16,7 +16,7 @@
     "skill": {
       "0": {
         "name": "熾燃不滅的琥珀",
-        "fullDesc": "施放戰技後，開拓者受到的傷害降低<orangeStrong>{{1, percent}}%</orangeStrong>並疊加1層【灼熱意志】，此外有{{2, percent}}%<u>基礎機率</u>使敵方全體陷入嘲諷狀態，持續{{3}}回合。",
+        "fullDesc": "施放戰技後，開拓者受到的傷害降低<orangeStrong>{{1, percent}}%</orangeStrong>並疊加1層【灼熱意志】，此外有{{2, percent}}%基礎機率使敵方全體陷入嘲諷狀態，持續{{3}}回合。",
         "shortDesc": "降低自身受到的傷害，並獲得【灼熱意志】，高機率使敵方全體陷入嘲諷狀態。"
       }
     },
@@ -25,6 +25,13 @@
         "name": "陷陣無回的炎槍",
         "fullDesc": "對敵方全體造成等同於開拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力+<orangeStrong>{{2, percent}}%</orangeStrong>防禦力的火屬性傷害。下一次發動普通攻擊時，自動獲得強化且不消耗【灼熱意志】。",
         "shortDesc": "對敵方全體造成火屬性傷害、強化下一次普通攻擊。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "築城者遺寶",
+        "fullDesc": "每受到1次攻擊，便疊加1層【灼熱意志】，最多可疊加{{3}}層。<br>【灼熱意志】層數不低於4時，普通攻擊將獲得強化，對指定敵方單體及其相鄰目標同時造成傷害。<br>開拓者發動普通攻擊或施放戰技/終結技後，為我方全體提供能夠抵消等同於開拓者<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>防禦力+<orangeStrong>{{4}}</orangeStrong>傷害的護盾，持續{{2}}回合。",
+        "shortDesc": ""
       }
     },
     "technique": {

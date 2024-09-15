@@ -18,7 +18,7 @@
     "ult": {
       "0": {
         "name": "Stardust Ace",
-        "fullDesc": "Choose between two attack modes to deliver a full strike.\\nBlowout: Farewell Hit deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of the Trailblazer's ATK to a single enemy.\\nBlowout: RIP Home Run deals Physical DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of the Trailblazer's ATK to a single enemy, and Physical DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of the Trailblazer's ATK to enemies adjacent to it.",
+        "fullDesc": "Choose between two attack modes to deliver a full strike.<br>Blowout: Farewell Hit deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of the Trailblazer's ATK to a single enemy.<br>Blowout: RIP Home Run deals Physical DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of the Trailblazer's ATK to a single enemy, and Physical DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of the Trailblazer's ATK to enemies adjacent to it.",
         "shortDesc": "Uses Single Target ATK or Blast to strike with full force."
       },
       "1": {
@@ -30,6 +30,13 @@
         "name": "Blowout: RIP Home Run",
         "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Trailblazer's ATK to a single enemy and Physical DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Trailblazer's ATK to enemies adjacent to it.",
         "shortDesc": "Deals Physical DMG to a single enemy and enemies adjacent to it."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Perfect Pickoff",
+        "fullDesc": "Each time after this character inflicts Weakness Break on an enemy, ATK increases by <orangeStrong>{{1, percent}}%</orangeStrong>. This effect stacks up to {{2}} time(s).",
+        "shortDesc": ""
       }
     },
     "technique": {
@@ -79,7 +86,7 @@
     },
     "3": {
       "name": "A Leading Whisper",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "4": {
       "name": "A Destructing Glance",
@@ -87,7 +94,7 @@
     },
     "5": {
       "name": "A Surviving Hope",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "6": {
       "name": "A Trailblazing Will",

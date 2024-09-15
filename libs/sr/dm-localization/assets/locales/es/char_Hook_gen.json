@@ -11,26 +11,33 @@
     "skill": {
       "0": {
         "name": "Hey, ¿te acuerdas de Hook?",
-        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Hook como Daño de Fuego a un enemigo. Además, tiene un {{2, percent}}% de <u>probabilidad base</u> de afectar con Quemadura al enemigo atacado durante {{3}} turnos.\\nLos enemigos quemados reciben al principio de cada turno un <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ de Hook como Daño de Fuego con el tiempo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Hook como Daño de Fuego a un enemigo. Además, tiene un {{2, percent}}% de probabilidad base de afectar con Quemadura al enemigo atacado durante {{3}} turnos.<br>Los enemigos quemados reciben al principio de cada turno un <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ de Hook como Daño de Fuego con el tiempo.",
         "shortDesc": "Inflige Daño de Fuego a un enemigo y tiene una gran probabilidad de causarle Quemadura."
       },
       "1": {
         "name": "Hey, ¿te acuerdas de Hook?",
-        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Hook como Daño de Fuego a un enemigo y tiene un {{2, percent}}% de <u>probabilidad base</u> de afectarlo con Quemadura durante {{3}} turnos. Además, inflige un Daño de Fuego equivalente al <orangeStrong>{{5, percent}}%</orangeStrong> del ATQ de Hook a los enemigos adyacentes al objetivo.\\nLos enemigos quemados reciben al principio de cada turno un <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ de Hook como Daño de Fuego con el tiempo.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Hook como Daño de Fuego a un enemigo y tiene un {{2, percent}}% de probabilidad base de afectarlo con Quemadura durante {{3}} turnos. Además, inflige un Daño de Fuego equivalente al <orangeStrong>{{5, percent}}%</orangeStrong> del ATQ de Hook a los enemigos adyacentes al objetivo.<br>Los enemigos quemados reciben al principio de cada turno un <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ de Hook como Daño de Fuego con el tiempo.",
         "shortDesc": "Inflige Daño de Fuego a un enemigo y tiene una gran probabilidad de causarle Quemadura. También inflige una pequeña cantidad de Daño de Fuego a los enemigos adyacentes."
       }
     },
     "ult": {
       "0": {
         "name": "¡Bum! ¡Aquí viene el fuego!",
-        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Hook como Daño de Fuego a un enemigo.\\nTras usar la habilidad definitiva, potencia la habilidad básica la siguiente vez que se use. La habilidad básica potenciada inflige daño a un enemigo y a los enemigos adyacentes.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Hook como Daño de Fuego a un enemigo.<br>Tras usar la habilidad definitiva, potencia la habilidad básica la siguiente vez que se use. La habilidad básica potenciada inflige daño a un enemigo y a los enemigos adyacentes.",
         "shortDesc": "Inflige una gran cantidad de Daño de Fuego a un enemigo y <orangeStrong>potencia el siguiente uso de la habilidad básica</orangeStrong>."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "¡Ja! ¡Leña al fuego!",
+        "fullDesc": "Al atacar a un enemigo afectado por Quemadura, inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Hook como Daño de Fuego adicional y recupera {{2}} pts. de energía adicionales.",
+        "shortDesc": "Al atacar a un enemigo afectado por Quemadura, <orangeStrong>inflige una pequeña cantidad de Daño de Fuego adicional</orangeStrong> y recupera energía."
       }
     },
     "technique": {
       "0": {
         "name": "¡Vaya, qué desastre!",
-        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{4, percent}}% del ATQ de Hook como Daño de Fuego a un enemigo al azar. Además, cada enemigo tiene un {{1, percent}}% de <u>probabilidad base</u> de ser afectado por Quemadura durante {{3}} turnos.\\nLos enemigos quemados reciben un Daño de Fuego con el tiempo equivalente al {{2, percent}}% del ATQ de Hook al comienzo de cada turno.",
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{4, percent}}% del ATQ de Hook como Daño de Fuego a un enemigo al azar. Además, cada enemigo tiene un {{1, percent}}% de probabilidad base de ser afectado por Quemadura durante {{3}} turnos.<br>Los enemigos quemados reciben un Daño de Fuego con el tiempo equivalente al {{2, percent}}% del ATQ de Hook al comienzo de cada turno.",
         "shortDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige Daño de Fuego a un enemigo al azar y tiene una gran probabilidad de afectar con Quemadura a cada enemigo."
       }
     },

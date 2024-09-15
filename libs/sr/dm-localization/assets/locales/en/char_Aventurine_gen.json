@@ -22,10 +22,17 @@
         "shortDesc": "Gains a random amount of Blind Bet points and inflicts Unnerved on a single enemy, dealing Imaginary DMG. When an ally hits an Unnerved enemy, <orangeStrong>the CRIT DMG dealt increases</orangeStrong>."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Shot Loaded Right",
+        "fullDesc": "For any single ally with Fortified Wager, their Effect RES increases by <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>, and when they get attacked, Aventurine gains 1 point of Blind Bet. When Aventurine has Fortified Wager, he can resist Crowd Control debuffs. This effect can trigger again after {{5}} turn(s). Aventurine additionally gains {{1}} point(s) of Blind Bet after getting attacked. Upon reaching 7 points of Blind Bet, Aventurine consumes the 7 points to launch a {{2}}-hit follow-up attack, with each hit dealing Imaginary DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Aventurine's DEF to a single random enemy. Blind Bet is capped at 10 points.",
+        "shortDesc": "For any single ally with Fortified Wager, their Effect RES increases, and when they get attacked, Aventurine accumulates Blind Bet. When Aventurine has Fortified Wager, he can resist Crowd Control debuffs. Upon reaching 7 points of Blind Bet, Aventurine consumes the 7 points to launch a <orangeStrong>follow-up attack</orangeStrong> that deals minor Imaginary DMG to random single enemy targets, bouncing a total of 7 times."
+      }
+    },
     "technique": {
       "0": {
         "name": "The Red or the Black",
-        "fullDesc": "After using the Technique, 1 of the following effects will be granted:\\nThere is a chance for DEF to increase by {{1, percent}}%.\\nThere is a high chance for DEF to increase by {{2, percent}}%.\\nThere is a small chance for DEF to increase by {{3, percent}}%.\\n\\nWhen this Technique is used repeatedly, the acquired effect with the highest buff value is retained.\\nWhen the next battle starts, increases all allies' DEF by the corresponding value, lasting for {{4}} turn(s).",
+        "fullDesc": "After using the Technique, 1 of the following effects will be granted:<br>There is a chance for DEF to increase by {{1, percent}}%.<br>There is a high chance for DEF to increase by {{2, percent}}%.<br>There is a small chance for DEF to increase by {{3, percent}}%.<br><br>When this Technique is used repeatedly, the acquired effect with the highest buff value is retained.<br>When the next battle starts, increases all allies' DEF by the corresponding value, lasting for {{4}} turn(s).",
         "shortDesc": "Using the Technique randomly grants one out of the three DEF Boost effects with different buff values. After entering the next battle, increases all allies' DEF by the corresponding value."
       }
     },
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Droprate Maxing",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Unexpected Hanging Paradox",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Ambiguity Aversion",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Stag Hunt Game",

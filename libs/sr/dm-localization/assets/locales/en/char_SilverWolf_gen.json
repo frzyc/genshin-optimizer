@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "Allow Changes?",
-        "fullDesc": "There is a <orangeStrong>{{2, percent}}%</orangeStrong> <u>base chance</u> to add 1 Weakness of an on-field character's Type to the target enemy. This also reduces the enemy's DMG RES to that Weakness Type by {{4, percent}}% for {{3}} turn(s). If the enemy already has that Type Weakness, the effect of DMG RES reduction to that Weakness Type will not be triggered.\\nEach enemy can only have 1 Weakness implanted by Silver Wolf. When Silver Wolf implants another Weakness to the target, only the most recent implanted Weakness will be kept.\\nIn addition, there is a {{5, percent}}% <u>base chance</u> to further reduce the All-Type RES of the enemy by <orangeStrong>{{6, percent(fixed: 1)}}%</orangeStrong> for {{7}} turn(s).\\nDeals Quantum DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Silver Wolf's ATK to this enemy.",
+        "fullDesc": "There is a <orangeStrong>{{2, percent}}%</orangeStrong> base chance to add 1 Weakness of an on-field character's Type to the target enemy. This also reduces the enemy's DMG RES to that Weakness Type by {{4, percent}}% for {{3}} turn(s). If the enemy already has that Type Weakness, the effect of DMG RES reduction to that Weakness Type will not be triggered.<br>Each enemy can only have 1 Weakness implanted by Silver Wolf. When Silver Wolf implants another Weakness to the target, only the most recent implanted Weakness will be kept.<br>In addition, there is a {{5, percent}}% base chance to further reduce the All-Type RES of the enemy by <orangeStrong>{{6, percent(fixed: 1)}}%</orangeStrong> for {{7}} turn(s).<br>Deals Quantum DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Silver Wolf's ATK to this enemy.",
         "shortDesc": "There is a high chance to <orangeStrong>apply additional Type Weaknesses</orangeStrong> to a single enemy and deals Quantum DMG to this target enemy."
       }
     },
     "ult": {
       "0": {
         "name": "User Banned",
-        "fullDesc": "There's a <orangeStrong>{{2, percent}}%</orangeStrong> <u>base chance</u> to decrease the target enemy's DEF by <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> for {{4}} turn(s). And at the same time, deals Quantum DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Silver Wolf's ATK to the target enemy.",
+        "fullDesc": "There's a <orangeStrong>{{2, percent}}%</orangeStrong> base chance to decrease the target enemy's DEF by <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> for {{4}} turn(s). And at the same time, deals Quantum DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Silver Wolf's ATK to the target enemy.",
         "shortDesc": "There is a high chance of <orangeStrong>lowering a single enemy's DEF</orangeStrong> and deals massive Quantum DMG to this target enemy."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Awaiting System Response...",
+        "fullDesc": "Silver Wolf can create three types of Bugs: Reduce ATK by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, reduce DEF by <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, and reduce SPD by <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.<br>Every time Silver Wolf attacks, she has a <orangeStrong>{{4, percent}}%</orangeStrong> base chance to implant a random Bug that lasts for {{5}} turn(s) in an enemy target.",
+        "shortDesc": "After each attack, there is a chance of inflicting the attacked enemy with 1 random <orangeStrong>Bug</orangeStrong>."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Payload",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "4": {
       "name": "Bounce Attack",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Brute Force Attack",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "6": {
       "name": "Overlay Network",

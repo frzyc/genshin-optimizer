@@ -22,6 +22,13 @@
         "shortDesc": "Gây lượng lớn Sát Thương Lôi cho 1 kẻ địch, gây Sát Thương Lôi cho mục tiêu lân cận."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Đau Đớn Cùng Cực",
+        "fullDesc": "Tăng sát thương dựa trên phần trăm HP mất đi hiện tại của Arlan, tối đa tăng <orangeStrong>{{1, percent}}%</orangeStrong> sát thương Arlan gây ra.",
+        "shortDesc": "<orangeStrong>Tăng sát thương dựa theo Phần Trăm HP đã mất hiện tại</orangeStrong> <orangeStrong>của bản thân</orangeStrong>."
+      }
+    },
     "technique": {
       "0": {
         "name": "Dứt Điểm Cực Tốc",

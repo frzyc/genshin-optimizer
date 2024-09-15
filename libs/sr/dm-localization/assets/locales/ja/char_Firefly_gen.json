@@ -16,8 +16,8 @@
     "skill": {
       "0": {
         "name": "コマンド-{RUBY_B#てんかごうげき}天火轟撃{RUBY_E#}",
-        "fullDesc": "自身の最大HP{{2, percent}}%分のHPを消費し、自身の最大EP<orangeStrong>{{3, percent}}%</orangeStrong>分のEPを固定で回復する。指定した敵単体に装甲「サム」の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与える。残りHPが足りない場合、戦闘スキルを発動する時、装甲「サム」の残りHPが1になる。自身の次の<u>行動順</u>を{{4, percent}}%<u>早める</u>。",
-        "shortDesc": "自身のHPを一部消費してEPを回復し、指定した敵単体に炎属性ダメージを与える。自身の次の<u>行動順を早める</u>。"
+        "fullDesc": "自身の最大HP{{2, percent}}%分のHPを消費し、自身の最大EP<orangeStrong>{{3, percent}}%</orangeStrong>分のEPを固定で回復する。指定した敵単体に装甲「サム」の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与える。残りHPが足りない場合、戦闘スキルを発動する時、装甲「サム」の残りHPが1になる。自身の次の行動順を{{4, percent}}%早める。",
+        "shortDesc": "自身のHPを一部消費してEPを回復し、指定した敵単体に炎属性ダメージを与える。自身の次の行動順を早める。"
       },
       "1": {
         "name": "ファイアフライ-IV-{RUBY_B#しせい}死星{RUBY_E#}オーバーロード",
@@ -28,8 +28,15 @@
     "ult": {
       "0": {
         "name": "ファイアフライ-IV-{RUBY_B#かんぜんねんしょう}完全燃焼{RUBY_E#}",
-        "fullDesc": "「完全燃焼」状態に入り、自身の行動順を100%早める。また、通常攻撃が「ファイアフライ-IV-底火斬撃」に、戦闘スキルが「ファイアフライ-IV-死星オーバーロード」に強化される。「完全燃焼」状態の時、速度+<orangeStrong>{{3}}</orangeStrong>。さらに、強化通常攻撃または強化戦闘スキルを発動する時、自身の弱点撃破効率+{{2, percent}}%、敵が装甲「サム」から受ける弱点撃破ダメージ+<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>、その回の攻撃が終了するまで継続。\\nアクションバーに「完全燃焼」のカウントダウンが出現する。カウントダウンのターンが回ってきた時、装甲「サム」は「完全燃焼」状態を解除する。カウントダウンの速度は{{4}}に固定される。\\n「完全燃焼」状態の装甲「サム」は必殺技を発動できない。",
+        "fullDesc": "「完全燃焼」状態に入り、自身の行動順を100%早める。また、通常攻撃が「ファイアフライ-IV-底火斬撃」に、戦闘スキルが「ファイアフライ-IV-死星オーバーロード」に強化される。「完全燃焼」状態の時、速度+<orangeStrong>{{3}}</orangeStrong>。さらに、強化通常攻撃または強化戦闘スキルを発動する時、自身の弱点撃破効率+{{2, percent}}%、敵が装甲「サム」から受ける弱点撃破ダメージ+<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>、その回の攻撃が終了するまで継続。<br>アクションバーに「完全燃焼」のカウントダウンが出現する。カウントダウンのターンが回ってきた時、装甲「サム」は「完全燃焼」状態を解除する。カウントダウンの速度は{{4}}に固定される。<br>「完全燃焼」状態の装甲「サム」は必殺技を発動できない。",
         "shortDesc": "「完全燃焼」状態に入り、<orangeStrong>自身の行動順を<unbreak>100%</orangeStrong>早める</color>。<orangeStrong>強化通常攻撃</orangeStrong>と<orangeStrong>強化戦闘スキル</orangeStrong>を獲得し、カウントダウンが終了するまで自身の<orangeStrong>速度、弱点撃破効率、敵の受ける弱点撃破ダメージ</orangeStrong>をアップする。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "ホタル{RUBY_B#しき}式{RUBY_E#}{RUBY_B#げんかちゅうすう}源火中枢{RUBY_E#}",
+        "fullDesc": "残りHPが少ないほど受けるダメージがダウンする。残りHPが{{3, percent}}%以下の時、ダメージ軽減効果が最大値に達する、最大で受けるダメージ-<orangeStrong>{{1, percent}}%</orangeStrong>。「完全燃焼」状態の時、ダメージ軽減効果は最大値を維持し、効果抵抗+<orangeStrong>{{4, percent}}%</orangeStrong>。<br>戦闘開始時、EPが{{2, percent}}%未満の場合、EPを{{2, percent}}%まで回復する。EPが満タンになる時、自身にあるデバフをすべて解除する。",
+        "shortDesc": "残りHPが少ないほど受けるダメージがダウンする。「完全燃焼」状態の時、ダメージ軽減効果は最大値を維持し、効果抵抗がアップする。戦闘開始時、EPが<orangeStrong>{{2, percent}}%</orangeStrong>未満の場合、EPを<orangeStrong>{{2, percent}}%</orangeStrong>まで回復する。EPが満タンになる時、自身にあるデバフをすべて解除する。"
       }
     },
     "technique": {
@@ -70,7 +77,7 @@
   },
   "ranks": {
     "1": {
-      "name": "かつて{RUBY_B#あんみん}安眠{RUBY_E#}せし\\n{RUBY_B#あかぞめ}赤染{RUBY_E#}の{RUBY_B#まゆ}繭{RUBY_E#}",
+      "name": "かつて{RUBY_B#あんみん}安眠{RUBY_E#}せし<br>{RUBY_B#あかぞめ}赤染{RUBY_E#}の{RUBY_B#まゆ}繭{RUBY_E#}",
       "desc": "強化戦闘スキル「ファイアフライ-IV-死星オーバーロード」を発動する時、ターゲットの防御力を{{1, percent}}%無視し、SPを消費しない。"
     },
     "2": {
@@ -82,15 +89,15 @@
       "desc": "戦闘スキルのLv.+2、最大Lv.15まで。通常攻撃のLv.+1、最大Lv.10まで。"
     },
     "4": {
-      "name": "いつか{RUBY_B#ほたるび}蛍火{RUBY_E#}を\\nこの{RUBY_B#め}目{RUBY_E#}に",
+      "name": "いつか{RUBY_B#ほたるび}蛍火{RUBY_E#}を<br>この{RUBY_B#め}目{RUBY_E#}に",
       "desc": "「完全燃焼」状態の時、装甲「サム」の効果抵抗+{{1, percent}}%。"
     },
     "5": {
-      "name": "{RUBY_B#ゆめ}夢{RUBY_E#}なき{RUBY_B#なが}長{RUBY_E#}い{RUBY_B#よる}夜{RUBY_E#}が\\n{RUBY_B#あ}明{RUBY_E#}ける",
+      "name": "{RUBY_B#ゆめ}夢{RUBY_E#}なき{RUBY_B#なが}長{RUBY_E#}い{RUBY_B#よる}夜{RUBY_E#}が<br>{RUBY_B#あ}明{RUBY_E#}ける",
       "desc": "必殺技のLv.+2、最大Lv.15まで。天賦のLv.+2、最大Lv.15まで。"
     },
     "6": {
-      "name": "{RUBY_B#お}終{RUBY_E#}わりの{RUBY_B#あす}明日{RUBY_E#}に\\n{RUBY_B#さ}咲{RUBY_E#}き{RUBY_B#ほこ}誇{RUBY_E#}る",
+      "name": "{RUBY_B#お}終{RUBY_E#}わりの{RUBY_B#あす}明日{RUBY_E#}に<br>{RUBY_B#さ}咲{RUBY_E#}き{RUBY_B#ほこ}誇{RUBY_E#}る",
       "desc": "「完全燃焼」状態の時、装甲「サム」の炎属性耐性貫通+{{1, percent}}%。強化通常攻撃「ファイアフライ-IV-底火斬撃」または強化戦闘スキル「ファイアフライ-IV-死星オーバーロード」を発動する時、弱点撃破効率+{{2, percent}}%。"
     }
   }

@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Vox Harmonique, Opus Cosmique",
-        "fullDesc": "Robin enters the Concerto state and makes all other allies immediately take action.\\nWhile in the Concerto state, increases all allies' ATK by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Robin's ATK plus <orangeStrong>{{3}}</orangeStrong>. Moreover, after every attack by allies, Robin deals <u>Additional Physical DMG</u> equal to <orangeStrong>{{4, percent}}%</orangeStrong> of her ATK for 1 time, with a fixed CRIT Rate for this damage set at {{5, percent}}% and fixed CRIT DMG set at {{6, percent}}%.\\nWhile in the Concerto state, Robin is immune to <u>Crowd Control debuffs</u> and cannot enter her turn or take action until the Concerto state ends.\\nA Concerto countdown appears on the Action Order bar. When the countdown's turn begins, Robin exits the Concerto state and immediately takes action. The countdown has its own fixed SPD of {{2}}.",
-        "shortDesc": "Enters the Concerto state, <orangeStrong>increases all allies' ATK</orangeStrong>, and causes all teammates to immediately take action. After an attack, Robin deals <orangeStrong><u>Additional Physical DMG</u></orangeStrong>. While Concerto lasts, Robin is immune to <u>Crowd Control debuffs</u>. Before Concerto ends, Robin won't take turn or action, lasting until the end of the countdown."
+        "fullDesc": "Robin enters the Concerto state and makes all other allies immediately take action.<br>While in the Concerto state, increases all allies' ATK by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Robin's ATK plus <orangeStrong>{{3}}</orangeStrong>. Moreover, after every attack by allies, Robin deals Additional Physical DMG equal to <orangeStrong>{{4, percent}}%</orangeStrong> of her ATK for 1 time, with a fixed CRIT Rate for this damage set at {{5, percent}}% and fixed CRIT DMG set at {{6, percent}}%.<br>While in the Concerto state, Robin is immune to Crowd Control debuffs and cannot enter her turn or take action until the Concerto state ends.<br>A Concerto countdown appears on the Action Order bar. When the countdown's turn begins, Robin exits the Concerto state and immediately takes action. The countdown has its own fixed SPD of {{2}}.",
+        "shortDesc": "Enters the Concerto state, <orangeStrong>increases all allies' ATK</orangeStrong>, and causes all teammates to immediately take action. After an attack, Robin deals <orangeStrong>Additional Physical DMG</orangeStrong>. While Concerto lasts, Robin is immune to Crowd Control debuffs. Before Concerto ends, Robin won't take turn or action, lasting until the end of the countdown."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Tonal Resonance",
+        "fullDesc": "Increase all allies' CRIT DMG by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Moreover, after allies attack enemy targets, Robin additionally regenerates {{2}} Energy for herself.",
+        "shortDesc": "Increase all allies' <orangeStrong>CRIT DMG</orangeStrong>, and Robin additionally regenerates Energy after allies attack enemies."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Inverted Tuning",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nUltimate Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Ultimate Lv. +2, up to a maximum of Lv. 15."
     },
     "4": {
       "name": "Raindrop Key",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Lonestar's Lament",
-      "desc": "Basic ATK Lv. +1, up to a maximum of Lv. 10.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Basic ATK Lv. +1, up to a maximum of Lv. 10.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Moonless Midnight",

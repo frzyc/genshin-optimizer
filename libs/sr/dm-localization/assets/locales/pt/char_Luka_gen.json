@@ -9,28 +9,35 @@
       },
       "1": {
         "name": "Punho Demolidor de Céus",
-        "fullDesc": "Consome 2 acúmulos de Desejo de Lutar. Primeiramente, usa o Punho Certeiro para dar 3 golpes, com cada golpe causando Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Luka a um único inimigo-alvo.\\nEntão, usa o Gancho Ascendente para dar 1 golpe, causando Dano Físico igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Luka a um único inimigo-alvo.",
+        "fullDesc": "Consome 2 acúmulos de Desejo de Lutar. Primeiramente, usa o Punho Certeiro para dar 3 golpes, com cada golpe causando Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Luka a um único inimigo-alvo.<br>Então, usa o Gancho Ascendente para dar 1 golpe, causando Dano Físico igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Luka a um único inimigo-alvo.",
         "shortDesc": "Consome 2 acúmulos de Desejo de Lutar para causar Dano Físico a um único inimigo."
       }
     },
     "skill": {
       "0": {
         "name": "Punho Lacerante",
-        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Luka a um único inimigo-alvo. Além disso, há uma <u>chance-base</u> de {{2, percent}}% de infligir Sangramento a ele, durando {{5}} rodada(s).\\nEnquanto estiver com Sangramento, o inimigo recebe {{3, percent(fixed: 1)}}% de seus PV máximos como Dano Físico Contínuo ao início de cada rodada. Este Dano não pode exceder <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de Luka.",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Luka a um único inimigo-alvo. Além disso, há uma chance-base de {{2, percent}}% de infligir Sangramento a ele, durando {{5}} rodada(s).<br>Enquanto estiver com Sangramento, o inimigo recebe {{3, percent(fixed: 1)}}% de seus PV máximos como Dano Físico Contínuo ao início de cada rodada. Este Dano não pode exceder <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de Luka.",
         "shortDesc": "Causa Dano Físico a um único inimigo, com uma alta chance de causar <orangeStrong>Sangramento</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Golpe de Misericórdia",
-        "fullDesc": "Recebe {{5}} acúmulo(s) de Desejo de Lutar, com uma <u>chance-base</u> de {{2, percent}}% de aumentar o Dano recebido de um único inimigo-alvo em <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> por {{4}} rodada(s). Então, causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Luka ao alvo.",
+        "fullDesc": "Recebe {{5}} acúmulo(s) de Desejo de Lutar, com uma chance-base de {{2, percent}}% de aumentar o Dano recebido de um único inimigo-alvo em <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> por {{4}} rodada(s). Então, causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Luka ao alvo.",
         "shortDesc": "Recebe <orangeStrong>{{5}}</orangeStrong> acúmulo(s) de Desejo de Lutar, com uma alta chance de aumentar o Dano recebido pelo alvo, e causa Dano Físico massivo ao alvo."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Faíscas Voadoras",
+        "fullDesc": "Após Luka usar seu ATQ Básico \"Punho Certeiro\" ou sua Perícia \"Punho Lacerante\", ele recebe {{1}} acúmulo de Desejo de Lutar, até um máximo de 4 acúmulos. Quando ele tiver 2 ou mais acúmulos de Desejo de Lutar, seu ATQ Básico \"Punho Certeiro\" é aprimorado para \"Punho Demolidor de Céus\". Depois que o \"Gancho Ascendente\" do seu ATQ Básico Aprimorado atinge um inimigo-alvo com Sangramento, o Sangramento causa Dano ao alvo imediatamente por 1 vez igual a <orangeStrong>{{2, percent}}%</orangeStrong> do Dano original. No início da batalha, Luka possuirá 1 acúmulo de Desejo de Lutar.",
+        "shortDesc": "Após usar seu ATQ Básico \"Punho Certeiro\" ou sua Perícia \"Punho Lacerante\", recebe 1 acúmulo de Desejo de Lutar. Quando 2 ou mais acúmulos de Desejo de Lutar estão presentes, o <orangeStrong>ATQ Básico se torna Aprimorado</orangeStrong>.<br>Se o inimigo estiver com Sangramento, o ATQ Básico Aprimorado <orangeStrong>causa Dano extra de Sangramento 1 vez</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Antecipador",
-        "fullDesc": "Ataca imediatamente o inimigo. Ao entrar em batalha, Luka causa Dano Físico igual a {{1, percent}}% de seu ATQ a um único inimigo aleatório, com {{2, percent}}% de <u>chance-base</u> de infligir o efeito de Sangramento da sua Perícia no alvo. Depois, Luka ganha 1 acúmulo adicional de Desejo de Lutar.",
+        "fullDesc": "Ataca imediatamente o inimigo. Ao entrar em batalha, Luka causa Dano Físico igual a {{1, percent}}% de seu ATQ a um único inimigo aleatório, com {{2, percent}}% de chance-base de infligir o efeito de Sangramento da sua Perícia no alvo. Depois, Luka ganha 1 acúmulo adicional de Desejo de Lutar.",
         "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano Físico leve a um único inimigo aleatório, com uma alta chance de infligir <orangeStrong>Sangramento</orangeStrong> ao alvo. Depois, ganha 1 acúmulo de Desejo de Lutar."
       }
     },
@@ -74,7 +81,7 @@
     },
     "3": {
       "name": "Nascido Para o Ringue",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "4": {
       "name": "Nunca Recuar",
@@ -82,7 +89,7 @@
     },
     "5": {
       "name": "O Espírito da Fogo Vivo",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "6": {
       "name": "Aplausos de um Campeão",

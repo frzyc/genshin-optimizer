@@ -18,7 +18,7 @@
     "ult": {
       "0": {
         "name": "스타더스트의 에이스",
-        "fullDesc": "두 가지 모드 중 하나를 선택해 전력의 일격을 가한다.\\n[압승•끝내기 안타]: 지정된 단일 적에게 개척자 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 물리 속성 피해를 준다.\\n[압승•안식 홈런]: 지정된 단일 적에게 개척자 공격력 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 물리 속성 피해를 주고, 인접한 목표에게도 개척자 공격력 <orangeStrong>{{3, percent}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
+        "fullDesc": "두 가지 모드 중 하나를 선택해 전력의 일격을 가한다.<br>[압승•끝내기 안타]: 지정된 단일 적에게 개척자 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 물리 속성 피해를 준다.<br>[압승•안식 홈런]: 지정된 단일 적에게 개척자 공격력 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 물리 속성 피해를 주고, 인접한 목표에게도 개척자 공격력 <orangeStrong>{{3, percent}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
         "shortDesc": "단일 공격 또는 확산 공격으로 전력의 일격을 가한다"
       },
       "1": {
@@ -30,6 +30,13 @@
         "name": "압승•안식 홈런",
         "fullDesc": "지정된 단일 적에게 개척자 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 물리 속성 피해를 주며, 인접한 목표에게 개척자 공격력 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
         "shortDesc": "단일 적 및 대상의 인접한 목표에게 물리 속성 피해를 가한다"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "도루 견제",
+        "fullDesc": "적의 약점을 격파할 때마다 개척자의 공격력이 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 해당 효과 최대 중첩수: {{2}}스택",
+        "shortDesc": ""
       }
     },
     "technique": {

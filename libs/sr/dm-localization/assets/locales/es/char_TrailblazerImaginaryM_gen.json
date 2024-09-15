@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Desfile clamoroso de luces",
-        "fullDesc": "Aplica a todos los aliados el efecto Bailarín de apoyo durante {{1}} turnos. La duración del efecto se reduce en 1 cada vez que comience el turno {F#de la}{M#del} Trazacaminos. El efecto de Ruptura de los aliados bajo el efecto de Bailarín de apoyo aumenta en un <orangeStrong>{{3, percent}}%</orangeStrong>. Cuando atacan a enemigos con <u>Ruptura de Debilidad</u>, convierten la Reducción de Firmeza de este ataque en <u>Daño de Ultrarruptura</u> 1 vez.",
-        "shortDesc": "Aplica el efecto Bailarín de apoyo a todos los aliados. Los aliados bajo el efecto de Bailarín de apoyo tienen <orangeStrong>mayor efecto de Ruptura</orangeStrong> e infligen adicionalmente 1 vez <orangeStrong><u>Daño de Ultrarruptura</u></orangeStrong> cuando atacan a enemigos con <u>Ruptura de Debilidad</u>."
+        "fullDesc": "Aplica a todos los aliados el efecto Bailarín de apoyo durante {{1}} turnos. La duración del efecto se reduce en 1 cada vez que comience el turno {F#de la}{M#del} Trazacaminos. El efecto de Ruptura de los aliados bajo el efecto de Bailarín de apoyo aumenta en un <orangeStrong>{{3, percent}}%</orangeStrong>. Cuando atacan a enemigos con Ruptura de Debilidad, convierten la Reducción de Firmeza de este ataque en Daño de Ultrarruptura 1 vez.",
+        "shortDesc": "Aplica el efecto Bailarín de apoyo a todos los aliados. Los aliados bajo el efecto de Bailarín de apoyo tienen <orangeStrong>mayor efecto de Ruptura</orangeStrong> e infligen adicionalmente 1 vez <orangeStrong>Daño de Ultrarruptura</orangeStrong> cuando atacan a enemigos con Ruptura de Debilidad."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Danza aérea panorámica",
+        "fullDesc": "{F#La}{M#El} Trazacaminos recupera inmediatamente <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> pts. de energía cuando se rompe la Debilidad de un enemigo.",
+        "shortDesc": "{F#La}{M#El} Trazacaminos recupera energía cuando se rompe la Debilidad de un enemigo."
       }
     },
     "technique": {

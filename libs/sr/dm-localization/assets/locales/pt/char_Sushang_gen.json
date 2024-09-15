@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "Arte do Espadachim das Nuvens: Queda Montanhosa",
-        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Sushang a um inimigo. Além disso, há {{3, percent}}% de chance de ativar a Postura da Espada no último golpe, causando Dano Físico <u>Adicional</u> igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Sushang ao inimigo.\\nSe o inimigo estiver infligido com <u>Quebra de Fraqueza</u>, a ativação da Postura da Espada é garantida.",
-        "shortDesc": "Causa Dano Físico a um inimigo, com<orangeStrong> poucas chances de ativar Postura da Espada</orangeStrong>. Se o inimigo tiver <u>Quebra de Fraqueza</u>, <orangeStrong>a ativação da Postura da Espada é garantida</orangeStrong>."
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Sushang a um inimigo. Além disso, há {{3, percent}}% de chance de ativar a Postura da Espada no último golpe, causando Dano Físico Adicional igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Sushang ao inimigo.<br>Se o inimigo estiver infligido com Quebra de Fraqueza, a ativação da Postura da Espada é garantida.",
+        "shortDesc": "Causa Dano Físico a um inimigo, com<orangeStrong> poucas chances de ativar Postura da Espada</orangeStrong>. Se o inimigo tiver Quebra de Fraqueza, <orangeStrong>a ativação da Postura da Espada é garantida</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Forma de Taixu: Anúncio do Amanhecer",
-        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Sushang a um único inimigo-alvo e ela age imediatamente. Além disso, o ATQ de Sushang aumenta em <orangeStrong>{{4, percent}}%</orangeStrong> e usar sua Perícia concede 2 chances extras de ativar a Postura da Espada por {{2}} rodada(s).\\nQuando ativada graças às chances extras, a Postura da Espada causa {{3, percent}}% do Dano original.",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Sushang a um único inimigo-alvo e ela age imediatamente. Além disso, o ATQ de Sushang aumenta em <orangeStrong>{{4, percent}}%</orangeStrong> e usar sua Perícia concede 2 chances extras de ativar a Postura da Espada por {{2}} rodada(s).<br>Quando ativada graças às chances extras, a Postura da Espada causa {{3, percent}}% do Dano original.",
         "shortDesc": "Causa Dano Físico massivo a um único inimigo, aprimora o efeito da Postura da Espada e <orangeStrong>realiza uma ação imediatamente</orangeStrong>."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Lâmina Dançante",
+        "fullDesc": "Quando um inimigo sofre Quebra de Fraqueza no campo, a VEL de Sushang aumenta em <orangeStrong>{{1, percent(fixed: 2)}}%</orangeStrong> por {{2}} rodada(s).",
+        "shortDesc": "Quando um inimigo no campo tem sua Fraqueza Quebrada, a VEL desta personagem aumenta."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Surgir da Fama",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "4": {
       "name": "Golpeie com o Coração",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Prevalecer por Taixu",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "6": {
       "name": "Permanecer Como Água",

@@ -11,21 +11,28 @@
     "skill": {
       "0": {
         "name": "月光摩挲连绵",
-        "fullDesc": "对指定敌方单体造成等同于卡芙卡<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的雷属性伤害，同时对其相邻目标造成等同于卡芙卡<orangeStrong>{{3, percent}}%</orangeStrong>攻击力的雷属性伤害。\\n若指定敌方单体处于持续伤害状态，其当前承受的所有持续伤害立即产生相当于原伤害<orangeStrong>{{2, percent}}%</orangeStrong>的伤害。",
-        "shortDesc": "对敌方单体造成雷属性伤害，对相邻目标造成少量雷属性伤害。\\n若主目标处于持续伤害类负面状态，则使持续伤害类负面状态<orangeStrong>额外产生1次伤害</orangeStrong>。"
+        "fullDesc": "对指定敌方单体造成等同于卡芙卡<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的雷属性伤害，同时对其相邻目标造成等同于卡芙卡<orangeStrong>{{3, percent}}%</orangeStrong>攻击力的雷属性伤害。<br>若指定敌方单体处于持续伤害状态，其当前承受的所有持续伤害立即产生相当于原伤害<orangeStrong>{{2, percent}}%</orangeStrong>的伤害。",
+        "shortDesc": "对敌方单体造成雷属性伤害，对相邻目标造成少量雷属性伤害。<br>若主目标处于持续伤害类负面状态，则使持续伤害类负面状态<orangeStrong>额外产生1次伤害</orangeStrong>。"
       }
     },
     "ult": {
       "0": {
         "name": "悲剧尽头的颤音",
-        "fullDesc": "对敌方全体造成等同于卡芙卡<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的雷属性伤害，有{{2, percent}}%的<u>基础概率</u>使受到攻击的敌方目标陷入触电状态，并使其当前承受的触电状态立即产生相当于原伤害<orangeStrong>{{5, percent}}%</orangeStrong>的伤害。触电状态持续{{3}}回合。\\n触电状态下，敌方目标每回合开始时受到等同于卡芙卡<orangeStrong>{{4, percent}}%</orangeStrong>攻击力的雷属性持续伤害。",
-        "shortDesc": "对敌方全体造成少量雷属性伤害，大概率<orangeStrong>施加触电状态</orangeStrong>。\\n若敌方目标处于触电状态，则使触电状态<orangeStrong>额外产生1次伤害</orangeStrong>。"
+        "fullDesc": "对敌方全体造成等同于卡芙卡<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的雷属性伤害，有{{2, percent}}%的基础概率使受到攻击的敌方目标陷入触电状态，并使其当前承受的触电状态立即产生相当于原伤害<orangeStrong>{{5, percent}}%</orangeStrong>的伤害。触电状态持续{{3}}回合。<br>触电状态下，敌方目标每回合开始时受到等同于卡芙卡<orangeStrong>{{4, percent}}%</orangeStrong>攻击力的雷属性持续伤害。",
+        "shortDesc": "对敌方全体造成少量雷属性伤害，大概率<orangeStrong>施加触电状态</orangeStrong>。<br>若敌方目标处于触电状态，则使触电状态<orangeStrong>额外产生1次伤害</orangeStrong>。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "温柔亦同残酷",
+        "fullDesc": "当卡芙卡的队友对敌方目标施放普攻后，卡芙卡立即发动追加攻击，对该目标造成等同于卡芙卡<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的雷属性伤害，并有{{2, percent}}%的基础概率使受到攻击的敌方目标陷入与终结技相同的触电状态，持续{{3}}回合，该效果每回合只能触发1次。",
+        "shortDesc": "当队友对敌方目标施放普攻后，卡芙卡立即发动追加攻击，对该目标造成雷属性伤害，并有大概率<orangeStrong>施加触电状态</orangeStrong>。该效果每回合只能触发1次。"
       }
     },
     "technique": {
       "0": {
         "name": "宽恕无关慈悲",
-        "fullDesc": "立即攻击一定范围内的所有敌人，进入战斗后对敌方全体造成等同于卡芙卡{{3, percent}}%攻击力的雷属性伤害，同时有{{1, percent}}%的<u>基础概率</u>使敌方每个单体目标陷入与终结技相同的触电状态，持续{{2}}回合。",
+        "fullDesc": "立即攻击一定范围内的所有敌人，进入战斗后对敌方全体造成等同于卡芙卡{{3, percent}}%攻击力的雷属性伤害，同时有{{1, percent}}%的基础概率使敌方每个单体目标陷入与终结技相同的触电状态，持续{{2}}回合。",
         "shortDesc": "攻击范围内的所有敌人，进入战斗后对敌方全体造成少量雷属性伤害，大概率<orangeStrong>施加触电状态</orangeStrong>。"
       }
     },

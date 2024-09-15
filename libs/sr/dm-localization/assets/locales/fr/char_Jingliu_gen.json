@@ -27,10 +27,17 @@
         "shortDesc": "Inflige des DGT de glace massifs à une cible ennemie et inflige des DGT de glace aux cibles adjacentes. Obtient <orangeStrong>1 cumul de Syzygie</orangeStrong>."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Migration du croissant",
+        "fullDesc": "Lorsque Jingliu possède {{5}} cumuls de Syzygie, elle entre en état de Migration spectrale, ce qui avance son action de {{6, percent}}% et augmente ses chances de coup critique de <orangeStrong>{{7, percent}}%</orangeStrong>. La compétence de Jingliu Éclair transcendant est alors renforcée pour se transformer en Reflet de lune sur rivière glacée, et devient la seule capacité disponible en combat. Lorsque Jingliu utilise une attaque dans l'état Migration spectrale, elle consomme {{2, percent}}% des PV max respectifs des alliés (les PV des alliés ne peuvent pas être réduits en dessous de 1). L'ATQ de Jingliu augmente à hauteur de {{3, percent}}% du total de PV consommés chez tous les alliés lors de cette attaque, sans excéder <orangeStrong>{{4, percent}}%</orangeStrong> de son ATQ de base, jusqu'à la fin de l'attaque en cours. Jingliu ne peut pas entrer à nouveau dans l'état Migration spectrale jusqu'à ce que l'état Migration spectrale actuel se termine. Syzygie peut se cumuler jusqu'à 3 fois. Jingliu sort de l'état Migration spectrale lorsque les cumuls de Syzygie tombent à 0.",
+        "shortDesc": "Lorsque Jingliu possède <orangeStrong>{{5}}</orangeStrong> cumuls de Syzygie, elle entre en état de Migration spectrale, ce qui avance son action de 100 %, augmente ses chances de coup critique et <orangeStrong>renforce sa compétence</orangeStrong>. Utiliser une attaque dans cet état consomme les PV de tous les autres alliés et <orangeStrong>augmente l'ATQ de Jingliu</orangeStrong> en fonction du total de PV consommés. Jingliu sort de l'état Migration spectrale lorsque les cumuls de Syzygie tombent à 0."
+      }
+    },
     "technique": {
       "0": {
         "name": "Éclat de la vérité",
-        "fullDesc": "Crée une dimension spéciale autour de Jingliu qui dure {{3}} secondes. Tous les ennemis dans cette dimension spéciale sont gelés. Jingliu génère immédiatement {{6}} points d'énergie et obtient {{1}} cumul de Syzygie, avec {{2, percent}}% de <u>chances de base</u> de geler les cibles ennemies pendant {{4}} tours lorsque le combat est engagé avec des ennemis de la dimension spéciale. Les cibles ennemies gelées ne peuvent pas agir et subissent des <u>DGT de glace additionnels</u> équivalents à {{5, percent}}% de l'ATQ de Jingliu au début de chaque tour. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "fullDesc": "Crée une dimension spéciale autour de Jingliu qui dure {{3}} secondes. Tous les ennemis dans cette dimension spéciale sont gelés. Jingliu génère immédiatement {{6}} points d'énergie et obtient {{1}} cumul de Syzygie, avec {{2, percent}}% de chances de base de geler les cibles ennemies pendant {{4}} tours lorsque le combat est engagé avec des ennemis de la dimension spéciale. Les cibles ennemies gelées ne peuvent pas agir et subissent des DGT de glace additionnels équivalents à {{5, percent}}% de l'ATQ de Jingliu au début de chaque tour. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
         "shortDesc": "Crée une dimension spéciale autour du personnage. Les ennemis qui s'y trouvent sont <orangeStrong>gelés</orangeStrong>. Le personnage génère de l'énergie et obtient 1 cumul de Syzygie avec de fortes chances d'appliquer <orangeStrong>Gelé</orangeStrong> aux ennemis lorsque le combat est engagé avec des ennemis de la dimension."
       }
     },
@@ -74,7 +81,7 @@
     },
     "3": {
       "name": "Demi-lune dans la brume",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "4": {
       "name": "Lueur de la lance lunaire",
@@ -82,7 +89,7 @@
     },
     "5": {
       "name": "Éclat nocturne des astres",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "6": {
       "name": "Vide de l'éclipse",

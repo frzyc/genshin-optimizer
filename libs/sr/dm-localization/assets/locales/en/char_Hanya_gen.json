@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Samsara, Locked",
-        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Hanya's ATK to a single target enemy, then applies Burden to them.\\nFor every 2 Basic ATKs, Skills, or Ultimates allies use on an enemy with Burden, allies will immediately recover 1 Skill Point. Burden is only active on the latest target it is applied to, and will be dispelled automatically after the Skill Point recovery effect has been triggered {{2}} times.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Hanya's ATK to a single target enemy, then applies Burden to them.<br>For every 2 Basic ATKs, Skills, or Ultimates allies use on an enemy with Burden, allies will immediately recover 1 Skill Point. Burden is only active on the latest target it is applied to, and will be dispelled automatically after the Skill Point recovery effect has been triggered {{2}} times.",
         "shortDesc": "Deals Physical DMG to a single enemy and applies Burden to them. For every 2 Basic ATKs, Skills, or Ultimates allies use on an enemy with Burden, allies <orangeStrong>recover 1 Skill Point</orangeStrong>."
       }
     },
@@ -20,6 +20,13 @@
         "name": "Ten-Lords' Decree, All Shall Obey",
         "fullDesc": "Increases the SPD of a target ally by <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> of Hanya's SPD and increases the same target ally's ATK by <orangeStrong>{{1, percent}}%</orangeStrong>, lasting for {{2}} turn(s).",
         "shortDesc": "Increases an ally's <orangeStrong>SPD and ATK</orangeStrong>."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Sanction",
+        "fullDesc": "When an ally uses a Basic ATK, Skill, or Ultimate on an enemy inflicted with Burden, the DMG dealt increases by <orangeStrong>{{1, percent}}%</orangeStrong>, lasting for {{2}} turn(s).",
+        "shortDesc": "Ally deals more DMG when attacking enemies inflicted with Burden."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Three Temptations",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Four Truths",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Five Skandhas",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Six Reverences",

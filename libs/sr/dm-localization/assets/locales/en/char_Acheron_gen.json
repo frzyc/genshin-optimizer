@@ -18,7 +18,7 @@
     "ult": {
       "0": {
         "name": "Slashed Dream Cries in Red",
-        "fullDesc": "Sequentially unleash Rainblade 3 times and Stygian Resurge 1 time, dealing Lightning DMG up to <orangeStrong>{{6, percent}}%</orangeStrong> of Acheron's ATK to a single target enemy, as well as Lightning DMG up to <orangeStrong>{{7, percent}}%</orangeStrong> of Acheron's ATK to other targets.\\n\\nRainblade: Deals Lightning DMG equal to <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Acheron's ATK to a single target enemy and removes up to 3 stacks of Crimson Knot from the target. When Crimson Knot is removed, immediately deals Lightning DMG equal to <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> of Acheron's ATK to all enemies. For every stack of Crimson Knot removed, this DMG Multiplier is additionally increased, up to a maximum of <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.\\n\\nStygian Resurge: Deals Lightning DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Acheron's ATK to all enemies and remove all Crimson Knots.\\n\\nCrimson Knot cannot be applied to enemies during the Ultimate.",
+        "fullDesc": "Sequentially unleash Rainblade 3 times and Stygian Resurge 1 time, dealing Lightning DMG up to <orangeStrong>{{6, percent}}%</orangeStrong> of Acheron's ATK to a single target enemy, as well as Lightning DMG up to <orangeStrong>{{7, percent}}%</orangeStrong> of Acheron's ATK to other targets.<br><br>Rainblade: Deals Lightning DMG equal to <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Acheron's ATK to a single target enemy and removes up to 3 stacks of Crimson Knot from the target. When Crimson Knot is removed, immediately deals Lightning DMG equal to <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> of Acheron's ATK to all enemies. For every stack of Crimson Knot removed, this DMG Multiplier is additionally increased, up to a maximum of <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.<br><br>Stygian Resurge: Deals Lightning DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Acheron's ATK to all enemies and remove all Crimson Knots.<br><br>Crimson Knot cannot be applied to enemies during the Ultimate.",
         "shortDesc": "Deals 3 hits of minor Lightning DMG to a single enemy. If Crimson Knot is removed from the target, then deals minor Lightning DMG to all enemies. Finally, deals 1 hit of Lightning DMG to all enemies and removes all Crimson Knots."
       },
       "1": {
@@ -42,11 +42,18 @@
         "shortDesc": "Deals Lightning DMG to all enemies and removes all Crimson Knots."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Atop Rainleaf Hangs Oneness",
+        "fullDesc": "When Slashed Dream reaches {{1}} point(s), the Ultimate can be activated. During the Ultimate, reduces enemies' Toughness regardless of Weakness Types and reduces all enemies' All-Type RES by <orangeStrong>{{2, percent}}%</orangeStrong>, lasting until the end of the Ultimate.<br>When any unit inflicts debuffs on an enemy target while using their ability, Acheron gains 1 point of Slashed Dream and inflicts 1 stack of Crimson Knot on a target. If debuffs are inflicted on multiple targets, then the 1 stack of Crimson Knot will be inflicted on the enemy target with the most Crimson Knot stacks. This effect can only trigger once for every ability use.<br>After an enemy target exits the field or gets defeated by any unit while Acheron is on the field, their Crimson Knot stacks will be transferred to the enemy target with the most Crimson Knot stacks on the whole field.",
+        "shortDesc": "When Slashed Dream reaches its upper limit, the Ultimate can be activated. During the Ultimate, reduces enemies' Toughness <orangeStrong>regardless of Weakness Types</orangeStrong> and reduces all enemies' <orangeStrong>All-Type RES</orangeStrong>.<br>When any unit inflicts debuffs on an enemy target while using their ability, Acheron gains Slashed Dream and inflicts Crimson Knot on an enemy target."
+      }
+    },
     "technique": {
       "0": {
         "name": "Quadrivalent Ascendance",
-        "fullDesc": "Immediately attacks the enemy. At the start of each wave, gains Quadrivalent Ascendance, dealing Lightning DMG equal to {{1, percent}}% of Acheron's ATK to all enemies and reducing Toughness of all enemies irrespective of Weakness Types. When breaking Weaknesses, triggers the Lightning Weakness Break effect.\\nQuadrivalent Ascendance: After using the Ultimate, Acheron gains {{2}} point(s) of Slashed Dream and inflicts {{2}} stack(s) of Crimson Knot on a single random enemy.\\nIf attacking a normal enemy, immediately defeats them without entering combat. When not hitting enemies, no Technique Points are consumed.",
-        "shortDesc": "Attacks the enemy. At the start of each wave, gains Quadrivalent Ascendance, dealing Lightning DMG to all enemies and reducing Toughness <orangeStrong>regardless of Weakness Types</orangeStrong>.\\nIf attacking a normal enemy, <orangeStrong>immediately defeats them</orangeStrong> without entering combat. When not hitting enemies, no Technique Points are consumed."
+        "fullDesc": "Immediately attacks the enemy. At the start of each wave, gains Quadrivalent Ascendance, dealing Lightning DMG equal to {{1, percent}}% of Acheron's ATK to all enemies and reducing Toughness of all enemies irrespective of Weakness Types. When breaking Weaknesses, triggers the Lightning Weakness Break effect.<br>Quadrivalent Ascendance: After using the Ultimate, Acheron gains {{2}} point(s) of Slashed Dream and inflicts {{2}} stack(s) of Crimson Knot on a single random enemy.<br>If attacking a normal enemy, immediately defeats them without entering combat. When not hitting enemies, no Technique Points are consumed.",
+        "shortDesc": "Attacks the enemy. At the start of each wave, gains Quadrivalent Ascendance, dealing Lightning DMG to all enemies and reducing Toughness <orangeStrong>regardless of Weakness Types</orangeStrong>.<br>If attacking a normal enemy, <orangeStrong>immediately defeats them</orangeStrong> without entering combat. When not hitting enemies, no Technique Points are consumed."
       }
     },
     "overworld": {
@@ -89,7 +96,7 @@
     },
     "3": {
       "name": "Frost Bites in Death",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Shrined Fire for Mirrored Soul",
@@ -97,7 +104,7 @@
     },
     "5": {
       "name": "Strewn Souls on Erased Earths",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Apocalypse, the Emancipator",

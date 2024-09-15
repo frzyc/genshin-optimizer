@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Divine Castigation",
-        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Xueyi's ATK to a single target enemy. This attack ignores Weakness Types and reduces the enemy's Toughness. When the enemy's Weakness is Broken, the Quantum Weakness Break effect is triggered.\\nIn this attack, the more Toughness is reduced, the higher the DMG will be dealt, up to a max of <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> increase.",
+        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Xueyi's ATK to a single target enemy. This attack ignores Weakness Types and reduces the enemy's Toughness. When the enemy's Weakness is Broken, the Quantum Weakness Break effect is triggered.<br>In this attack, the more Toughness is reduced, the higher the DMG will be dealt, up to a max of <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> increase.",
         "shortDesc": "Deals massive Quantum DMG to a single enemy. This attack <orangeStrong>ignores Weakness Types</orangeStrong> and reduces the target's Toughness. The more Toughness is reduced, the higher the DMG will be dealt."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Karmic Perpetuation",
+        "fullDesc": "When Xueyi reduces enemy Toughness with attacks, Karma will be stacked. The more Toughness is reduced, the more stacks of Karma are added, up to {{1}} stacks.<br>When Xueyi's allies reduce enemy Toughness with attacks, Xueyi gains {{3}} stack(s) of Karma.<br>When Karma reaches the max number of stacks, consumes all current Karma stacks and immediately launches a follow-up attack against an enemy target, dealing DMG for 3 times, with each time dealing Quantum DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Xueyi's ATK to a single random enemy. This follow-up attack will not add Karma stacks.",
+        "shortDesc": "When Xueyi or her allies reduce enemy Toughness with attacks, she gains stacks of Karma. When Karma reaches the max number of stacks, <orangeStrong>immediately launches a follow-up attack</orangeStrong>, dealing minor Quantum DMG to a single enemy target, bouncing for 3 times and consuming all Karma."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Duḥkha, Ceased",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Karma, Severed",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Deva, Enthralled",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Saṃsāra, Mastered",

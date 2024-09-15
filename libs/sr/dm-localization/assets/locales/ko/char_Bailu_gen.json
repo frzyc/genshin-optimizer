@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "천둥이 알리는 교룡의 도약",
-        "fullDesc": "모든 아군이 백로 HP 최대치 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>만큼의 HP를 회복한다.\\n백로는 [생명] 효과가 없는 아군에게 [생명] 효과를 부여하며, [생명] 효과를 보유한 아군에게는 [생명] 효과 지속 시간을 1턴 늘려준다\\n[생명] 지속 시간: {{3}}턴. 해당 효과는 중첩될 수 없다",
+        "fullDesc": "모든 아군이 백로 HP 최대치 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>만큼의 HP를 회복한다.<br>백로는 [생명] 효과가 없는 아군에게 [생명] 효과를 부여하며, [생명] 효과를 보유한 아군에게는 [생명] 효과 지속 시간을 1턴 늘려준다<br>[생명] 지속 시간: {{3}}턴. 해당 효과는 중첩될 수 없다",
         "shortDesc": "모든 아군의 HP를 회복하고, [생명] 효과를 부여하거나 [생명]의 지속 시간을 늘린다"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "발로 뛰는 구원의 의술",
+        "fullDesc": "[생명] 효과를 보유한 아군은 피격 후 백로 HP 최대치의 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>만큼 회복한다. 해당 효과는 {{5}}회 발동할 수 있다.<br>백로의 동료는 치명적인 공격을 받아도 전투 불능 상태에 빠지지 않고, 백로가 즉시 대상에게 치유를 제공해 HP를 백로 HP 최대치의 <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>만큼 회복한다. 해당 효과는 단일 전투에서 1회 발동할 수 있다",
+        "shortDesc": "<orangeStrong>[생명]</orangeStrong>을 보유한 아군은 피격된 후 <orangeStrong>HP를 회복</orangeStrong>한다.<br>동료가 <orangeStrong>치명적인 공격을 받으면</orangeStrong> 백로가 <orangeStrong>즉시 대상의 HP를 회복</orangeStrong>시킨다. 해당 효과는 단일 전투에서 1회 발동할 수 있다"
       }
     },
     "technique": {

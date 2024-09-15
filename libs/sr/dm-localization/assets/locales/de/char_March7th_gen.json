@@ -11,21 +11,28 @@
     "skill": {
       "0": {
         "name": "Die Macht der Niedlichkeit",
-        "fullDesc": "Gewährt einem anvisierten Verbündeten einen Schild, der {{2}} Rd. hält und SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von 7. März’ VTD plus <orangeStrong>{{4}}</orangeStrong> absorbieren kann.\\nWenn der Verbündete aktuell min. {{3, percent}}% seiner LP hat, wird die Chance, vom Gegner angegriffen zu werden, stark erhöht.",
+        "fullDesc": "Gewährt einem anvisierten Verbündeten einen Schild, der {{2}} Rd. hält und SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von 7. März’ VTD plus <orangeStrong>{{4}}</orangeStrong> absorbieren kann.<br>Wenn der Verbündete aktuell min. {{3, percent}}% seiner LP hat, wird die Chance, vom Gegner angegriffen zu werden, stark erhöht.",
         "shortDesc": "Gewährt einem Verbündeten einen <orangeStrong>Schild</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Gletscherkaskade",
-        "fullDesc": "Fügt allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von 7. März’ ANG zu und friert die getroffenen Gegner mit einer <u>Grundchance</u> von {{2, percent}}% für {{3}} Rd. ein.\\nEingefrorene Gegner können keine Aktionen ausführen und erleiden zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von 7. März’ ANG.",
+        "fullDesc": "Fügt allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von 7. März’ ANG zu und friert die getroffenen Gegner mit einer Grundchance von {{2, percent}}% für {{3}} Rd. ein.<br>Eingefrorene Gegner können keine Aktionen ausführen und erleiden zu Beginn jeder Runde zusätzlichen Eis-SCH in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von 7. März’ ANG.",
         "shortDesc": "Fügt <orangeStrong>allen Gegnern</orangeStrong> Eis-SCH zu und <orangeStrong>hat eine Chance, sie einzufrieren</orangeStrong>."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Mädchenpower",
+        "fullDesc": "Wird ein Verbündeter mit Schild von einem Gegner angegriffen, führt 7. März sofort einen Konter aus, der dem Angreifer Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> ihres ANG zufügt. Dieser Effekt kann pro Runde {{2}}-mal ausgelöst werden.",
+        "shortDesc": "Nachdem ein Verbündeter mit Schild von einem Gegner angegriffen wird, startet 7. März <orangeStrong>sofort einen Konter</orangeStrong> gegen den Angreifer, der geringen Eis-SCH verursacht."
       }
     },
     "technique": {
       "0": {
         "name": "Eiskalte Schönheit",
-        "fullDesc": "Greift den Gegner unmittelbar an. Nach Kampfeintritt besteht eine <u>Grundchance</u> von {{1, percent}}%, einen zufällig ausgewählten Gegner für {{2}} Rd. einzufrieren.\\nEingefrorene Gegner können sich nicht bewegen und erleiden zu Beginn jeder Runde <u>zusätzlichen</u> Eis-SCH in Höhe von {{3, percent}}% von 7. März’ ANG.",
+        "fullDesc": "Greift den Gegner unmittelbar an. Nach Kampfeintritt besteht eine Grundchance von {{1, percent}}%, einen zufällig ausgewählten Gegner für {{2}} Rd. einzufrieren.<br>Eingefrorene Gegner können sich nicht bewegen und erleiden zu Beginn jeder Runde zusätzlichen Eis-SCH in Höhe von {{3, percent}}% von 7. März’ ANG.",
         "shortDesc": "Greift den Gegner an. Hat eine hohe Chance, einen zufälligen Gegner nach Kampfeintritt einzufrieren."
       }
     },

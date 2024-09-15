@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Emboldening Salvo",
-        "fullDesc": "ได้รับ \"Roaring Bowstrings\" {{1}} ชั้น โดยสูงสุดไม่เกิน 2 ชั้น เมื่อ Yukong มี \"Roaring Bowstrings\" แล้ว ATK ของฝ่ายเราทั้งหมดจะเพิ่มขึ้น <orangeStrong>{{2, percent}}%</orangeStrong> ทุกครั้งที่เทิร์นของเป้าหมายฝ่ายเราสิ้นสุดลง จะลบ \"Roaring Bowstrings\" ของ Yukong ออก 1 ชั้น\\nโดยในเทิร์นที่ Yukong ใช้สกิลต่อสู้และได้รับ \"Roaring Bowstrings\" จะไม่มีการลบ \"Roaring Bowstrings\" ออก",
+        "fullDesc": "ได้รับ \"Roaring Bowstrings\" {{1}} ชั้น โดยสูงสุดไม่เกิน 2 ชั้น เมื่อ Yukong มี \"Roaring Bowstrings\" แล้ว ATK ของฝ่ายเราทั้งหมดจะเพิ่มขึ้น <orangeStrong>{{2, percent}}%</orangeStrong> ทุกครั้งที่เทิร์นของเป้าหมายฝ่ายเราสิ้นสุดลง จะลบ \"Roaring Bowstrings\" ของ Yukong ออก 1 ชั้น<br>โดยในเทิร์นที่ Yukong ใช้สกิลต่อสู้และได้รับ \"Roaring Bowstrings\" จะไม่มีการลบ \"Roaring Bowstrings\" ออก",
         "shortDesc": "ได้รับ \"Roaring Bowstrings\" 2 ชั้น เมื่อตัวเองมี \"Roaring Bowstrings\" แล้ว <orangeStrong>ATK</orangeStrong> ของฝ่ายเราทั้งหมดจะเพิ่มขึ้น"
       }
     },
@@ -20,6 +20,13 @@
         "name": "Diving Kestrel",
         "fullDesc": "เมื่อใช้ท่าไม้ตาย หาก Yukong มี \"Roaring Bowstrings\" จะทำให้อัตราคริติคอลของฝ่ายตัวเองทั้งหมด เพิ่มขึ้นอีก <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> และ DMG คริติคอลเพิ่มขึ้น <orangeStrong>{{3, percent}}%</orangeStrong> พร้อมทั้งสร้าง DMG จินตภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Yukong แก่ศัตรูที่กำหนดหนึ่งตัว",
         "shortDesc": "เมื่อตัวเองได้รับ \"Roaring Bowstrings\" <orangeStrong>อัตราคริติคอลและ DMG คริติคอล</orangeStrong> ของฝ่ายตัวเองทั้งหมดจะเพิ่มขึ้น และสร้าง DMG จินตภาพอย่างรุนแรงแก่ศัตรูหนึ่งตัว"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Seven Layers, One Arrow",
+        "fullDesc": "การโจมตีปกติสามารถสร้าง DMG จินตภาพเพิ่มอีก <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Yukong และทำให้การลดค่าความทนทานของการโจมตีครั้งนี้เพิ่มขึ้น {{2, percent}}% ซึ่งเอฟเฟกต์นี้จะสามารถเกิดได้อีกครั้งในทุกๆ {{3}} เทิร์น",
+        "shortDesc": "ทำให้การโจมตีปกติสร้าง DMG เพิ่มเล็กน้อย และเพิ่มการลดค่าความทนทานของการโจมตีปกติครั้งนี้ โดยจะสามารถเกิดเอฟเฟกต์นี้ได้อีกครั้ง หลังจากผ่านไป 1 เทิร์น"
       }
     },
     "technique": {

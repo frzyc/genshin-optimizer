@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Ritter-Speertechnik: Sturzflut",
-        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Dan Hengs ANG zu.\\nVerringert die GES des Ziels mit einer <u>Grundchance</u> von {{4, percent}}% für {{3}} Rd. um {{2, percent}}%, wenn der durch Fertigkeiten verursachte SCH einen kritischen Treffer auslöst.",
+        "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Dan Hengs ANG zu.<br>Verringert die GES des Ziels mit einer Grundchance von {{4, percent}}% für {{3}} Rd. um {{2, percent}}%, wenn der durch Fertigkeiten verursachte SCH einen kritischen Treffer auslöst.",
         "shortDesc": "Fügt einem Gegner Wind-SCH zu. Nach einem KRIT wird das Ziel mit hoher Wahrscheinlichkeit verlangsamt."
       }
     },
@@ -20,6 +20,13 @@
         "name": "Ätherischer Traum",
         "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Dan Hengs ANG zu. Erhöht den durch Ultimates verursachten SCH-Multiplikator um <orangeStrong>{{2, percent}}%</orangeStrong>, wenn der getroffene Gegner verlangsamt ist.",
         "shortDesc": "Fügt einem Gegner massiven Wind-SCH zu. Wenn der Gegner verlangsamt wird, steigt der verursachte SCH."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Überlegene Reichweite",
+        "fullDesc": "Ist Dan Heng Ziel einer Fähigkeit eines Verbündeten, so steigt die Wind-WDS-DUR seines nächsten Angriffs um <orangeStrong>{{1, percent}}%</orangeStrong>. Dieser Effekt kann nach {{2}} Rd. erneut ausgelöst werden.",
+        "shortDesc": "Ist Dan Heng Ziel einer Fähigkeit eines Verbündeten, so <orangeStrong>steigt die Wind-WDS-DUR</orangeStrong> seines nächsten Angriffs. Dieser Effekt kann nach 2 Rd. erneut ausgelöst werden."
       }
     },
     "technique": {

@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "별의 움직임, 미래의 그림자",
-        "fullDesc": "[궁관진]을 활성화하여, 부현의 동료가 실드로 막기 전에 받은 피해의 {{1, percent}}%를 부현이 <u>분담</u>한다. 지속 시간: {{3}}턴.\\n[궁관진] 상태의 모든 아군이 [감식] 효과를 획득한다. [감식]: 아군 HP 최대치가 부현 HP 최대치의 <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>만큼 증가하고, 치명타 확률이 <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong> 증가한다.\\n부현이 <u>전투 불능 상태</u>가 되면 [궁관진]도 해제된다",
-        "shortDesc": "[궁관진]을 활성화하여, 아군이 <orangeStrong>받은 피해를 부현이 <u>분담</u></orangeStrong>한다. 모든 아군의 HP 최대치와 <orangeStrong>치명타 확률이 증가</orangeStrong>한다"
+        "fullDesc": "[궁관진]을 활성화하여, 부현의 동료가 실드로 막기 전에 받은 피해의 {{1, percent}}%를 부현이 분담한다. 지속 시간: {{3}}턴.<br>[궁관진] 상태의 모든 아군이 [감식] 효과를 획득한다. [감식]: 아군 HP 최대치가 부현 HP 최대치의 <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>만큼 증가하고, 치명타 확률이 <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong> 증가한다.<br>부현이 전투 불능 상태가 되면 [궁관진]도 해제된다",
+        "shortDesc": "[궁관진]을 활성화하여, 아군이 <orangeStrong>받은 피해를 부현이 분담</orangeStrong>한다. 모든 아군의 HP 최대치와 <orangeStrong>치명타 확률이 증가</orangeStrong>한다"
       }
     },
     "ult": {
@@ -20,6 +20,13 @@
         "name": "천률의 규칙, 돌고 도는 역겁",
         "fullDesc": "모든 적에게 부현 HP 최대치의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 양자 속성 피해를 주고, 부현 특성의 HP 회복 효과 발동 횟수를 1회 획득한다",
         "shortDesc": "모든 적에게 양자 속성 피해를 주고 부현의 특성 발동 횟수가 증가한다"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "건청곤이, 불행 끝 행운 시작",
+        "fullDesc": "부현이 전투 가능 상태일 때 모든 아군에게 [피액(避厄)] 효과를 부여한다. [피액]: 아군이 받는 피해가 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> 감소한다.<br>부현의 현재 HP 백분율이 {{2, percent}}% 이하가 되면 HP를 자신이 손실한 HP의 <orangeStrong>{{3, percent}}%</orangeStrong>만큼 회복한다. 치명적인 공격을 받을 경우 해당 효과는 발동되지 않는다. 해당 효과는 기본 상태에서 1회의 발동 횟수를 보유하며, 최대 2회의 발동 횟수를 보유할 수 있다",
+        "shortDesc": "부현이 전투 가능 상태일 때 모든 아군이 받는 피해가 감소한다.<br>HP가 일정 수준 이하로 떨어지면 손실한 HP 백분율에 따라 <orangeStrong>자동</orangeStrong>으로 <orangeStrong>자신의 HP를 회복</orangeStrong>한다. 해당 효과 발동 횟수는 최대 2회까지 보유할 수 있다"
       }
     },
     "technique": {
@@ -81,7 +88,7 @@
     },
     "6": {
       "name": "종릉(種陵)",
-      "desc": "[궁관진] 활성화 시 모든 아군의 이번 전투에서 누적 손실한 HP를 기록한다. 부현이 필살기로 가하는 피해가 이번 전투에서 누적 손실한 HP의 {{1, percent}}%만큼 증가한다.\\n이번 전투에서 기록되는 누적 손실 HP는 부현 HP 최대치의 {{2, percent}}%를 넘지 않으며, 필살기를 발동하면 리셋하고 다시 누적된다"
+      "desc": "[궁관진] 활성화 시 모든 아군의 이번 전투에서 누적 손실한 HP를 기록한다. 부현이 필살기로 가하는 피해가 이번 전투에서 누적 손실한 HP의 {{1, percent}}%만큼 증가한다.<br>이번 전투에서 기록되는 누적 손실 HP는 부현 HP 최대치의 {{2, percent}}%를 넘지 않으며, 필살기를 발동하면 리셋하고 다시 누적된다"
     }
   }
 }

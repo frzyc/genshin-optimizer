@@ -27,6 +27,13 @@
         "shortDesc": "Belegt alle Gegner mit <orangeStrong>Berauschung</orangeStrong> und fügt ihnen Feuer-SCH zu. Verstärkt den nächsten Standardangriff zu „Hopfenschwall“."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Trunken vom Kampf",
+        "fullDesc": "„Berauschung“ erhöht den von Zielen erlittenen Bruch-SCH um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Jedes Mal, wenn ein berauschtes Ziel von einem Verbündeten angegriffen wird, werden die LP des Angreifers um <orangeStrong>{{2}}</orangeStrong> Pkt. wiederhergestellt.",
+        "shortDesc": "„Berauschung“ erhöht den von Zielen <orangeStrong>erlittenen Bruch-SCH</orangeStrong>. Wenn Verbündete das Ziel angreifen, <orangeStrong>werden ihre LP wiederhergestellt</orangeStrong>."
+      }
+    },
     "technique": {
       "0": {
         "name": "Edler Tropfen",

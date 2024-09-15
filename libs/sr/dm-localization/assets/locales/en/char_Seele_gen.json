@@ -22,6 +22,13 @@
         "shortDesc": "Enters the <orangeStrong>buffed state</orangeStrong> and deals massive Quantum DMG to a single enemy."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Resurgence",
+        "fullDesc": "Enters the buffed state upon defeating an enemy with Basic ATK, Skill, or Ultimate, and receives an extra turn. While in the buffed state, the DMG of Seele's attacks increases by <orangeStrong>{{1, percent}}%</orangeStrong> for {{2}} turn(s).<br>Enemies defeated in the extra turn provided by \"Resurgence\" will not trigger another \"Resurgence.\"",
+        "shortDesc": "Use Basic ATK, Skill, and Ultimate to <orangeStrong>defeat enemies</orangeStrong>, gain <orangeStrong>extra turns, and enter a buffed state</orangeStrong>. When in a buffed state, DMG dealt is increased."
+      }
+    },
     "technique": {
       "0": {
         "name": "Phantom Illusion",
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Dazzling Tumult",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "4": {
       "name": "Flitting Phantasm",
@@ -77,11 +84,11 @@
     },
     "5": {
       "name": "Piercing Shards",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "6": {
       "name": "Shattering Shambles",
-      "desc": "After Seele uses her Ultimate, inflict the target enemy with Butterfly Flurry for {{2}} turn(s). Enemies suffering from Butterfly Flurry will take Additional Quantum DMG equal to {{1, percent}}% of Seele's Ultimate DMG every time they are attacked. If the target enemy is defeated by the Butterfly Flurry DMG triggered by other allies' attacks, Seele's Talent will not be triggered.\\nWhen Seele is knocked down, the Butterfly Flurry inflicted on the enemies will be removed."
+      "desc": "After Seele uses her Ultimate, inflict the target enemy with Butterfly Flurry for {{2}} turn(s). Enemies suffering from Butterfly Flurry will take Additional Quantum DMG equal to {{1, percent}}% of Seele's Ultimate DMG every time they are attacked. If the target enemy is defeated by the Butterfly Flurry DMG triggered by other allies' attacks, Seele's Talent will not be triggered.<br>When Seele is knocked down, the Butterfly Flurry inflicted on the enemies will be removed."
     }
   }
 }

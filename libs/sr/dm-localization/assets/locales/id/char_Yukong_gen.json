@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Emboldening Salvo",
-        "fullDesc": "Mendapatkan {{1}} lapis \"Roaring Bowstrings\", maksimal 2 lapis. Saat Yukong memiliki \"Roaring Bowstrings\", ATK dari seluruh rekan tim akan meningkat <orangeStrong>{{2, percent}}%</orangeStrong>. Yukong akan kehilangan 1 lapis \"Roaring Bowstrings\" setiap kali giliran dari rekan tim berakhir.\\nYukong tidak akan kehilangan \"Roaring Bowstrings\" pada giliran dirinya mendapatkan \"Roaring Bowstrings\" dengan cara melancarkan Skill.",
+        "fullDesc": "Mendapatkan {{1}} lapis \"Roaring Bowstrings\", maksimal 2 lapis. Saat Yukong memiliki \"Roaring Bowstrings\", ATK dari seluruh rekan tim akan meningkat <orangeStrong>{{2, percent}}%</orangeStrong>. Yukong akan kehilangan 1 lapis \"Roaring Bowstrings\" setiap kali giliran dari rekan tim berakhir.<br>Yukong tidak akan kehilangan \"Roaring Bowstrings\" pada giliran dirinya mendapatkan \"Roaring Bowstrings\" dengan cara melancarkan Skill.",
         "shortDesc": "Memperoleh 2 lapis \"Roaring Bowstrings\". <orangeStrong>Meningkatkan ATK</orangeStrong> seluruh rekan tim saat memiliki \"Roaring Bowstrings\"."
       }
     },
@@ -20,6 +20,13 @@
         "name": "Diving Kestrel",
         "fullDesc": "Saat melancarkan Ultimate, jika Yukong memiliki \"Roaring Bowstrings\", seluruh rekan tim akan mendapatkan tambahan <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> CRIT Rate, dan CRIT DMG meningkat <orangeStrong>{{3, percent}}%</orangeStrong>. Di saat yang bersamaan, mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Yukong pada 1 musuh yang ditargetkan.",
         "shortDesc": "Saat Yukong memiliki \"Roaring Bowstrings\", <orangeStrong>meningkatkan CRIT Rate dan CRIT DMG</orangeStrong> seluruh rekan tim, serta mengakibatkan Imaginary DMG dalam jumlah besar pada 1 musuh."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Seven Layers, One Arrow",
+        "fullDesc": "Basic ATK akan mengakibatkan Imaginary DMG tambahan sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Yukong pada target musuh, serta meningkatkan {{2, percent}}% Pengurangan Toughness. Efek ini dapat dipicu lagi setelah {{3}} giliran.",
+        "shortDesc": "Membuat Basic Attack mengakibatkan DMG tambahan dalam jumlah kecil dan meningkatkan Pengurangan Toughness dari Basic Attack kali ini. Efek ini dapat dipicu lagi setelah 1 giliran."
       }
     },
     "technique": {

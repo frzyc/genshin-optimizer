@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "靈符•保命護身",
-        "fullDesc": "解除指定我方單體的{{5}}個<u>負面效果</u>，立即為指定我方單體回復等同於藿藿<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{2}}</orangeStrong>的生命值，同時為其相鄰目標回復等同於藿藿<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{4}}</orangeStrong>的生命值。",
-        "shortDesc": "解除我方單體1個<u>負面效果</u>，並為我方單體及其相鄰目標<orangeStrong>回復生命值</orangeStrong>。"
+        "fullDesc": "解除指定我方單體的{{5}}個負面效果，立即為指定我方單體回復等同於藿藿<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{2}}</orangeStrong>的生命值，同時為其相鄰目標回復等同於藿藿<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{4}}</orangeStrong>的生命值。",
+        "shortDesc": "解除我方單體1個負面效果，並為我方單體及其相鄰目標<orangeStrong>回復生命值</orangeStrong>。"
       }
     },
     "ult": {
@@ -22,10 +22,17 @@
         "shortDesc": "為除自身以外的隊友<orangeStrong>恢復能量</orangeStrong>，並使其<orangeStrong>攻擊力提高</orangeStrong>。"
       }
     },
+    "talent": {
+      "0": {
+        "name": "憑附•氣通天真",
+        "fullDesc": "施放戰技後藿藿獲得【禳命】，持續{{1}}回合，藿藿每回合開始時持續回合數減1。當藿藿擁有【禳命】時，我方目標回合開始或施放終結技時回復自身等同於藿藿<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{5}}</orangeStrong>的生命值，同時對每個現有生命值百分比小於等於{{6, percent}}%的我方目標各產生1次回復效果。<br>觸發【禳命】為我方目標提供治療時，解除該目標{{2}}個負面效果，該效果可以觸發{{7}}次，再次施放戰技後將重置效果可觸發次數。",
+        "shortDesc": "施放戰技後藿藿獲得【禳命】。當藿藿擁有【禳命】時，我方目標回合開始或施放終結技時<orangeStrong>回復自身生命值</orangeStrong>，同時對<orangeStrong>每個</orangeStrong>生命值較低的<orangeStrong>我方目標各產生1次回復效果</orangeStrong>。觸發【禳命】為我方目標提供治療時，<orangeStrong>解除該目標1個負面效果</orangeStrong>。"
+      }
+    },
     "technique": {
       "0": {
         "name": "凶煞•劾壓鬼物",
-        "fullDesc": "藿藿恐嚇周圍的敵人，使其陷入【魄散】狀態。【魄散】狀態下的敵人會向遠離藿藿的方向逃跑，持續{{4}}秒。與陷入【魄散】狀態的敵人進入戰鬥後，有{{1, percent}}%的<u>基礎機率</u>使敵方每個單體目標攻擊力降低{{2, percent}}%，持續{{3}}回合。",
+        "fullDesc": "藿藿恐嚇周圍的敵人，使其陷入【魄散】狀態。【魄散】狀態下的敵人會向遠離藿藿的方向逃跑，持續{{4}}秒。與陷入【魄散】狀態的敵人進入戰鬥後，有{{1, percent}}%的基礎機率使敵方每個單體目標攻擊力降低{{2, percent}}%，持續{{3}}回合。",
         "shortDesc": "使周圍的敵人陷入【魄散】狀態。與陷入【魄散】狀態的敵人進入戰鬥後，有高機率使敵方目標<orangeStrong>攻擊力降低</orangeStrong>。"
       }
     },

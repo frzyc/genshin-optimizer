@@ -22,10 +22,17 @@
         "shortDesc": "Gây Sát Thương Hỏa cho toàn phe địch, khi tiêu diệt kẻ địch sẽ hồi Năng Lượng."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Truy Kích Dồn Dập",
+        "fullDesc": "Khi Điểm Yếu của mục tiêu địch bị phá vỡ, Himeko sẽ nhận Nạp Năng Lượng, giới hạn là {{2}} điểm.<br>Sau khi phe ta tấn công, nếu Nạp Năng Lượng của Himeko đạt giới hạn sẽ phát động ngay 1 lần Đòn Đánh Theo Sau, gây Sát Thương Hỏa cho toàn phe địch tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Himeko, đồng thời tiêu hao toàn bộ Nạp Năng Lượng.<br>Khi bắt đầu chiến đấu sẽ nhận 1 điểm Nạp Năng Lượng.",
+        "shortDesc": "Khi điểm yếu của kẻ địch bị phá vỡ sẽ nhận nạp năng lượng.<br>Sau khi mục tiêu phe ta tấn công, nếu nạp năng lượng đạt giới hạn, <orangeStrong>sẽ phát động ngay Đòn Đánh Theo Sau</orangeStrong>, gây Sát Thương Hỏa cho <orangeStrong>toàn bộ kẻ địch</orangeStrong> và tiêu hao tất cả nạp năng lượng.<br>Khi bắt đầu chiến đấu sẽ nhận 1 điểm nạp năng lượng."
+      }
+    },
     "technique": {
       "0": {
         "name": "Lửa Thiêu Âm Ỉ",
-        "fullDesc": "Sau khi dùng Bí Kỹ sẽ tạo ra vùng đặc biệt trong {{4}} giây. Khi vào chiến đấu với kẻ địch trong vùng này có {{1, percent}}% <u>xác suất cơ bản</u> khiến Sát Thương Hỏa mà kẻ địch phải chịu tăng {{2, percent}}%, duy trì {{3}} hiệp. Cùng một lúc tối đa chỉ tồn tại 1 hiệu ứng vùng do phe ta tạo ra.",
+        "fullDesc": "Sau khi dùng Bí Kỹ sẽ tạo ra vùng đặc biệt trong {{4}} giây. Khi vào chiến đấu với kẻ địch trong vùng này có {{1, percent}}% xác suất cơ bản khiến Sát Thương Hỏa mà kẻ địch phải chịu tăng {{2, percent}}%, duy trì {{3}} hiệp. Cùng một lúc tối đa chỉ tồn tại 1 hiệu ứng vùng do phe ta tạo ra.",
         "shortDesc": "Tạo một khu vực đặc biệt. Sau khi vào chiến đấu với kẻ địch trong khu vực, sẽ có xác suất lớn <orangeStrong>tăng Sát Thương Hỏa mà kẻ địch phải chịu</orangeStrong>."
       }
     },
@@ -39,7 +46,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Ngôi Sao Lửa",
-        "fullDesc": "Khi thi triển tấn công có {{1, percent}}% xác suất cơ bản khiến kẻ địch rơi vào trạng thái Thiêu Đốt, duy trì {{2}} hiệp.\\nTrong trạng thái Thiêu Đốt, khi bắt đầu mỗi hiệp, kẻ địch chịu Sát Thương Hỏa duy trì tương đương {{3, percent}}% Tấn Công của Himeko.",
+        "fullDesc": "Khi thi triển tấn công có {{1, percent}}% xác suất cơ bản khiến kẻ địch rơi vào trạng thái Thiêu Đốt, duy trì {{2}} hiệp.<br>Trong trạng thái Thiêu Đốt, khi bắt đầu mỗi hiệp, kẻ địch chịu Sát Thương Hỏa duy trì tương đương {{3, percent}}% Tấn Công của Himeko.",
         "shortDesc": ""
       }
     },

@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "운기 창술•질우",
-        "fullDesc": "지정된 단일 적에게 단항 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 바람 속성 피해를 가한다.\\n전투 스킬로 가하는 피해가 치명타 발동 시 {{4, percent}}%의 <u>기본 확률</u>로 피격된 적의 속도를 {{2, percent}}% 감소시킨다. 지속 시간: {{3}}턴",
+        "fullDesc": "지정된 단일 적에게 단항 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 바람 속성 피해를 가한다.<br>전투 스킬로 가하는 피해가 치명타 발동 시 {{4, percent}}%의 기본 확률로 피격된 적의 속도를 {{2, percent}}% 감소시킨다. 지속 시간: {{3}}턴",
         "shortDesc": "단일 적에게 바람 속성 피해를 주고, 치명타 발생 시 높은 확률로 감속 상태를 부여한다"
       }
     },
@@ -20,6 +20,13 @@
         "name": "동천환화, 기나긴 꿈",
         "fullDesc": "지정된 단일 적에게 단항 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 바람 속성 피해를 가한다. 피격된 적이 감속 상태인 경우 필살기로 가하는 피해 배율이 <orangeStrong>{{2, percent}}%</orangeStrong> 증가한다",
         "shortDesc": "단일 적에게 대량의 바람 속성 피해를 주고, 감속 상태의 적에게 가하는 피해 배율이 증가한다"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "각자의 장점",
+        "fullDesc": "단항이 아군 스킬의 발동 목표가 되면, 다음 공격의 바람 속성 저항 관통이 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 해당 효과는 {{2}}턴 후 다시 발동할 수 있다",
+        "shortDesc": "아군 스킬의 발동 목표가 되면, 다음 공격의 <orangeStrong>바람 속성 저항 관통이 증가</orangeStrong>한다. 해당 효과는 2턴 후 다시 발동할 수 있다"
       }
     },
     "technique": {

@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "要……要遲到了！",
-        "fullDesc": "初始擁有{{1}}段攻擊段數。首先發動1段攻擊對指定敵方單體造成等同於米沙<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的冰屬性傷害，其餘每段攻擊對敵方隨機單體造成等同於米沙<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的冰屬性傷害。每段攻擊前有<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>的<u>基礎機率</u>使目標陷入凍結狀態，持續1回合。\\n凍結狀態下，敵方目標不能行動，同時每回合開始時受到等同於米沙<orangeStrong>{{4, percent}}%</orangeStrong>攻擊力的冰屬性<u>附加傷害</u>。\\n終結技最多累積{{5}}段攻擊段數，施放終結技後攻擊段數恢復至初始狀態。",
+        "fullDesc": "初始擁有{{1}}段攻擊段數。首先發動1段攻擊對指定敵方單體造成等同於米沙<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的冰屬性傷害，其餘每段攻擊對敵方隨機單體造成等同於米沙<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的冰屬性傷害。每段攻擊前有<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>的基礎機率使目標陷入凍結狀態，持續1回合。<br>凍結狀態下，敵方目標不能行動，同時每回合開始時受到等同於米沙<orangeStrong>{{4, percent}}%</orangeStrong>攻擊力的冰屬性附加傷害。<br>終結技最多累積{{5}}段攻擊段數，施放終結技後攻擊段數恢復至初始狀態。",
         "shortDesc": "對敵方單體造成少量冰屬性傷害，初始共彈射<orangeStrong>{{1}}</orangeStrong>次，最多共彈射<orangeStrong>{{5}}</orangeStrong>次。每段攻擊前有低機率使目標<orangeStrong>凍結</orangeStrong>。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "擒縱機構",
+        "fullDesc": "我方全體每消耗1個戰技點，便增加{{2}}段米沙下一次終結技的攻擊段數，同時米沙恢復<orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong>點能量。",
+        "shortDesc": "我方全體每<orangeStrong>消耗1個戰技點</orangeStrong>，增加米沙下一次<orangeStrong>終結技的攻擊段數</orangeStrong>，同時米沙恢復能量。"
       }
     },
     "technique": {

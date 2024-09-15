@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "祥音和韻",
-        "fullDesc": "為指定我方單體提供【賜福】，使其攻擊力提高<orangeStrong>{{2, percent}}%</orangeStrong>，最高不超過停雲當下攻擊力的<orangeStrong>{{4, percent}}%</orangeStrong>。\\n獲得【賜福】的目標發動攻擊後，會額外造成1次等同於其自身<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性<u>附加傷害</u>。\\n【賜福】持續{{3}}回合且僅對停雲戰技最新的施放目標生效。",
-        "shortDesc": "使我方單體<orangeStrong>攻擊力提高</orangeStrong>，並獲得【賜福】。【賜福】狀態下攻擊時額外造成少量<orangeStrong>雷屬性<u>附加傷害</u></orangeStrong>。"
+        "fullDesc": "為指定我方單體提供【賜福】，使其攻擊力提高<orangeStrong>{{2, percent}}%</orangeStrong>，最高不超過停雲當下攻擊力的<orangeStrong>{{4, percent}}%</orangeStrong>。<br>獲得【賜福】的目標發動攻擊後，會額外造成1次等同於其自身<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性附加傷害。<br>【賜福】持續{{3}}回合且僅對停雲戰技最新的施放目標生效。",
+        "shortDesc": "使我方單體<orangeStrong>攻擊力提高</orangeStrong>，並獲得【賜福】。【賜福】狀態下攻擊時額外造成少量<orangeStrong>雷屬性附加傷害</orangeStrong>。"
       }
     },
     "ult": {
@@ -20,6 +20,13 @@
         "name": "慶雲光覆儀禱",
         "fullDesc": "為指定我方單體恢復{{1}}點能量，同時使目標造成的傷害提高<orangeStrong>{{3, percent}}%</orangeStrong>，持續{{2}}回合。",
         "shortDesc": "為我方單體<orangeStrong>恢復能量</orangeStrong>，並使其<orangeStrong>造成的傷害提高</orangeStrong>。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "紫電扶搖",
+        "fullDesc": "敵方目標受到停雲攻擊後，獲得【賜福】的目標立即對其造成等同於自身<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性附加傷害。",
+        "shortDesc": "敵人受到停雲攻擊後，獲得【賜福】的目標立即對其造成少量雷屬性附加傷害。"
       }
     },
     "technique": {

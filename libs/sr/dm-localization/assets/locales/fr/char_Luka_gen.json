@@ -9,28 +9,35 @@
       },
       "1": {
         "name": "Poing destructeur d'étoiles",
-        "fullDesc": "Consomme 2 cumuls de Soif de combat. Utilise d'abord Direct du droit pour lancer 3 coups, chacun infligeant des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Luka à la cible ennemie.\\nPuis, utilise Uppercut du droit pour lancer 1 coup, infligeant des DGT physiques équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Luka à la cible ennemie.",
+        "fullDesc": "Consomme 2 cumuls de Soif de combat. Utilise d'abord Direct du droit pour lancer 3 coups, chacun infligeant des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Luka à la cible ennemie.<br>Puis, utilise Uppercut du droit pour lancer 1 coup, infligeant des DGT physiques équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Luka à la cible ennemie.",
         "shortDesc": "Consomme 2 cumuls de Soif de combat pour infliger des DGT physiques à une cible unique."
       }
     },
     "skill": {
       "0": {
         "name": "Poing lacérateur",
-        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Luka à une cible ennemie unique, avec {{2, percent}}% de <u>chances de base</u> de lui infliger Saignement pendant {{5}} tours.\\nLes ennemis qui souffrent de Saignement subissent des dégâts physiques sur la durée équivalents à {{3, percent(fixed: 1)}}% de leurs PV max au début de chaque tour. Ces DGT ne peuvent pas excéder <orangeStrong>{{4, percent}}%</orangeStrong> de l'ATQ de Luka.",
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Luka à une cible ennemie unique, avec {{2, percent}}% de chances de base de lui infliger Saignement pendant {{5}} tours.<br>Les ennemis qui souffrent de Saignement subissent des dégâts physiques sur la durée équivalents à {{3, percent(fixed: 1)}}% de leurs PV max au début de chaque tour. Ces DGT ne peuvent pas excéder <orangeStrong>{{4, percent}}%</orangeStrong> de l'ATQ de Luka.",
         "shortDesc": "Inflige des DGT physiques à un ennemi unique, avec de fortes chances de provoquer <orangeStrong>Saignement</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Coup de grâce",
-        "fullDesc": "Accorde {{5}} cumuls de Soif de combat, avec {{2, percent}}% de <u>chances de base</u> d'augmenter les DGT subis par une cible ennemie unique de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> pendant {{4}} tours. Puis inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Luka à la cible.",
+        "fullDesc": "Accorde {{5}} cumuls de Soif de combat, avec {{2, percent}}% de chances de base d'augmenter les DGT subis par une cible ennemie unique de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> pendant {{4}} tours. Puis inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Luka à la cible.",
         "shortDesc": "Accorde <orangeStrong>{{5}}</orangeStrong> cumuls de Soif de combat, avec de fortes chances d'augmenter les DGT subis par la cible ennemie et lui inflige des DGT physiques massifs."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Étincelles volantes",
+        "fullDesc": "Luka reçoit {{1}} cumul de Soif de combat après avoir utilisé son ATQ normale Direct du droit ou sa compétence Poing lacérateur jusqu'à un maximum de 4 cumuls. À 2 cumuls de Soif de combat, son ATQ normale Direct du droit est renforcée en Poing destructeur d'étoiles. Lorsque l'Uppercut du droit de son ATQ normale renforcée touche une cible ennemie victime de Saignement, l'effet Saignement inflige immédiatement des DGT équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> des DGT de Saignement initiaux 1 fois. Luka dispose d'1 cumul de Soif de combat en début de combat.",
+        "shortDesc": "Reçoit 1 cumul de Soif de combat après avoir utilisé l'ATQ normale Direct du droit ou la compétence Poing lacérateur. À 2 cumuls ou plus de Soif de combat, <orangeStrong>l'ATQ normale devient renforcée</orangeStrong>.<br>Si l'ennemi est victime de Saignement, l'ATQ normale renforcée <orangeStrong>augmente les DGT de Saignement 1 fois</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Anticipation",
-        "fullDesc": "Engage immédiatement le combat contre les ennemis. Luka inflige des DGT physiques équivalents à {{1, percent}}% de son ATQ à un ennemi aléatoire en entrant en combat, avec {{2, percent}}% de <u>chances de base</u> de lui infliger l'effet Saignement de sa compétence, à la suite de quoi Luka obtient un cumul supplémentaire de Soif de combat.",
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Luka inflige des DGT physiques équivalents à {{1, percent}}% de son ATQ à un ennemi aléatoire en entrant en combat, avec {{2, percent}}% de chances de base de lui infliger l'effet Saignement de sa compétence, à la suite de quoi Luka obtient un cumul supplémentaire de Soif de combat.",
         "shortDesc": "Attaque les ennemis. Inflige des DGT physiques mineurs à un ennemi unique aléatoire après être entré en combat, avec de fortes chances d'infliger <orangeStrong>Saignement</orangeStrong> à la cible. Puis gagne 1 cumul de Soif de combat."
       }
     },
@@ -74,7 +81,7 @@
     },
     "3": {
       "name": "Né pour l'arène",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "4": {
       "name": "Sans jamais se retourner",
@@ -82,7 +89,7 @@
     },
     "5": {
       "name": "L'esprit des Feux sauvages",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "6": {
       "name": "Un champion acclamé",

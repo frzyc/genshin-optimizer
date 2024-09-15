@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "{RUBY_B#かいう}快雨{RUBY_E#}に{RUBY_B#たわむ}戯{RUBY_E#}れる{RUBY_B#つばめ}燕{RUBY_E#}",
-        "fullDesc": "自身の会心率+{{1, percent}}%、彦卿に「智剣連心」がある場合、さらに会心ダメージ+<orangeStrong>{{2, percent}}%</orangeStrong>、<u>バフ</u>は1ターン継続。その後、指定した敵単体に彦卿の攻撃力<orangeStrong>{{3, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
+        "fullDesc": "自身の会心率+{{1, percent}}%、彦卿に「智剣連心」がある場合、さらに会心ダメージ+<orangeStrong>{{2, percent}}%</orangeStrong>、バフは1ターン継続。その後、指定した敵単体に彦卿の攻撃力<orangeStrong>{{3, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
         "shortDesc": "自身の会心率アップ、「智剣連心」を強化、敵単体に大量の氷属性ダメージを与える。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#こえいけん}呼影剣{RUBY_E#}",
+        "fullDesc": "彦卿に「智剣連心」がある場合、攻撃を受ける確率ダウン、自身の会心率+<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>、会心ダメージ+<orangeStrong>{{2, percent}}%</orangeStrong>。敵に攻撃を行った後、<orangeStrong>{{3, percent}}%</orangeStrong>の固定確率で追加攻撃を行い、敵に彦卿の攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の氷属性ダメージを与え、{{6, percent}}%の基礎確率で敵を凍結状態にする、1ターン継続。<br>凍結状態の敵は行動できず、ターンが回ってくるたびに彦卿の攻撃力<orangeStrong>{{5, percent}}%</orangeStrong>分の氷属性付加ダメージを受ける。<br>彦卿がダメージを受けると「智剣連心」が解除される。",
+        "shortDesc": "<orangeStrong>「智剣連心」がある時</orangeStrong>、攻撃を受ける確率がダウンし、自身の<orangeStrong>会心率と会心ダメージがアップする</orangeStrong>。敵に<orangeStrong>攻撃を行った後</orangeStrong>、確率で追加攻撃を発動して氷属性ダメージを与え、確率で凍結状態にする。<br>自身がダメージを受けた後、「智剣連心」は解除される。"
       }
     },
     "technique": {

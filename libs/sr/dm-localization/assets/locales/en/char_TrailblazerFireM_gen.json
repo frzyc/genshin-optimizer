@@ -16,7 +16,7 @@
     "skill": {
       "0": {
         "name": "Ever-Burning Amber",
-        "fullDesc": "Increases the Trailblazer's DMG Reduction by <orangeStrong>{{1, percent}}%</orangeStrong> and gains 1 stack of Magma Will, with a {{2, percent}}% <u>base chance</u> to Taunt all enemies for {{3}} turn(s).",
+        "fullDesc": "Increases the Trailblazer's DMG Reduction by <orangeStrong>{{1, percent}}%</orangeStrong> and gains 1 stack of Magma Will, with a {{2, percent}}% base chance to Taunt all enemies for {{3}} turn(s).",
         "shortDesc": "Reduces DMG taken and gains Magma Will, with a high chance to Taunt all enemies."
       }
     },
@@ -25,6 +25,13 @@
         "name": "War-Flaming Lance",
         "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of the Trailblazer's ATK plus <orangeStrong>{{2, percent}}%</orangeStrong> of the Trailblazer's DEF to all enemies. The next Basic ATK will be automatically enhanced and does not cost Magma Will.",
         "shortDesc": "Deals Fire DMG to all enemies and enhances the next Basic ATK."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Treasure of the Architects",
+        "fullDesc": "Each time the Trailblazer is hit, they gain 1 stack of Magma Will for a max of {{3}} stack(s).<br>When Magma Will has no fewer than 4 stacks, the Trailblazer's Basic ATK becomes enhanced, dealing DMG to a single enemy and enemies adjacent to it.<br>When the Trailblazer uses Basic ATK, Skill, or Ultimate, apply a Shield to all allies that absorbs DMG equal to <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of the Trailblazer's DEF plus <orangeStrong>{{4}}</orangeStrong>. The Shield lasts for {{2}} turn(s).",
+        "shortDesc": ""
       }
     },
     "technique": {
@@ -74,7 +81,7 @@
     },
     "3": {
       "name": "Trail-Blazing Blueprint",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "4": {
       "name": "Nation-Building Oath",
@@ -82,7 +89,7 @@
     },
     "5": {
       "name": "Spirit-Warming Flame",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "6": {
       "name": "City-Forging Bulwarks",

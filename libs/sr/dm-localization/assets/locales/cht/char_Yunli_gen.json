@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "劍為地紀，刃驚天宗",
-        "fullDesc": "消耗{{8}}點能量，雲璃獲得【格擋】並使敵方全體陷入嘲諷狀態，持續至下一個我方或敵方回合結束時。雲璃下一次反擊造成的暴擊傷害提高<orangeStrong>{{2, percent}}%</orangeStrong>。觸發天賦的反擊效果時，將替換為發動<u>反擊</u>【勘破•滅】同時移除【格擋】效果。若【格擋】狀態期間沒有觸發反擊，則狀態結束時雲璃立即對隨機敵方目標發動<u>反擊</u>【勘破•斬】。 \\n【勘破•斬】：對目標造成等同於雲璃<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害，對其相鄰目標造成等同於雲璃<orangeStrong>{{6, percent}}%</orangeStrong>攻擊力的物理屬性傷害。\\n【勘破•滅】：對目標造成等同於雲璃<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害，對其相鄰目標造成等同於雲璃<orangeStrong>{{6, percent}}%</orangeStrong>攻擊力的物理屬性傷害，隨後額外造成{{4}}次傷害，每次傷害對隨機敵方單體造成等同於雲璃<orangeStrong>{{7, percent}}%</orangeStrong>攻擊力的物理傷害。\\n雲璃透過此技能造成傷害時，被視為造成了終結技傷害。",
-        "shortDesc": "進入【格擋】並嘲諷敵方全體，期間受到攻擊後觸發<orangeStrong>強力<u>反擊</u></orangeStrong>，對攻擊者與其相鄰目標<orangeStrong>造成物理屬性傷害</orangeStrong>，隨後對敵方單體造成少量物理屬性傷害，共彈射6次。若【格擋】狀態期間沒有觸發反擊，狀態結束時對隨機敵方目標與其相鄰目標造成物理屬性傷害。"
+        "fullDesc": "消耗{{8}}點能量，雲璃獲得【格擋】並使敵方全體陷入嘲諷狀態，持續至下一個我方或敵方回合結束時。雲璃下一次反擊造成的暴擊傷害提高<orangeStrong>{{2, percent}}%</orangeStrong>。觸發天賦的反擊效果時，將替換為發動反擊【勘破•滅】同時移除【格擋】效果。若【格擋】狀態期間沒有觸發反擊，則狀態結束時雲璃立即對隨機敵方目標發動反擊【勘破•斬】。 <br>【勘破•斬】：對目標造成等同於雲璃<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害，對其相鄰目標造成等同於雲璃<orangeStrong>{{6, percent}}%</orangeStrong>攻擊力的物理屬性傷害。<br>【勘破•滅】：對目標造成等同於雲璃<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害，對其相鄰目標造成等同於雲璃<orangeStrong>{{6, percent}}%</orangeStrong>攻擊力的物理屬性傷害，隨後額外造成{{4}}次傷害，每次傷害對隨機敵方單體造成等同於雲璃<orangeStrong>{{7, percent}}%</orangeStrong>攻擊力的物理傷害。<br>雲璃透過此技能造成傷害時，被視為造成了終結技傷害。",
+        "shortDesc": "進入【格擋】並嘲諷敵方全體，期間受到攻擊後觸發<orangeStrong>強力反擊</orangeStrong>，對攻擊者與其相鄰目標<orangeStrong>造成物理屬性傷害</orangeStrong>，隨後對敵方單體造成少量物理屬性傷害，共彈射6次。若【格擋】狀態期間沒有觸發反擊，狀態結束時對隨機敵方目標與其相鄰目標造成物理屬性傷害。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "閃鑠",
+        "fullDesc": "當雲璃受到敵方目標攻擊後，額外恢復{{3}}點能量，並立即向攻擊者發動反擊，對其造成等同於雲璃<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害，對其相鄰目標造成等同於雲璃<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的物理屬性傷害。<br>若沒有可反擊的目標，則反擊敵方隨機目標。",
+        "shortDesc": "當雲璃受到敵方目標攻擊時，額外恢復能量並立即向攻擊者與其相鄰目標發動反擊。"
       }
     },
     "technique": {

@@ -22,6 +22,13 @@
         "shortDesc": "对敌方单体造成大量雷属性伤害，对相邻目标造成雷属性伤害。"
       }
     },
+    "talent": {
+      "0": {
+        "name": "至痛至怒",
+        "fullDesc": "根据阿兰当前损失的生命值百分比获得伤害加成，最多使阿兰造成的伤害提高<orangeStrong>{{1, percent}}%</orangeStrong>。",
+        "shortDesc": "<orangeStrong>根据</orangeStrong>自身<orangeStrong>当前已损失的生命值百分比提高伤害</orangeStrong>。"
+      }
+    },
     "technique": {
       "0": {
         "name": "极速收割",

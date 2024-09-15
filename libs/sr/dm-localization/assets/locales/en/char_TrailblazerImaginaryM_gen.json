@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "All-Out Footlight Parade",
-        "fullDesc": "Grants all allies the Backup Dancer effect, lasting for {{1}} turn(s). This duration decreases by 1 at the start of Trailblazer's every turn. Allies with the Backup Dancer effect have their Break Effect increased by <orangeStrong>{{3, percent}}%</orangeStrong>. And when they attack enemy targets that are in the <u>Weakness Broken state</u>, the Toughness Reduction of the attack will be converted into 1 instance of <u>Super Break DMG</u>.",
-        "shortDesc": "Grants all allies the Backup Dancer effect. Allies with Backup Dancer have their <orangeStrong>Break Effect increased</orangeStrong> and additionally deals <orangeStrong><u>Super Break DMG</u></orangeStrong> 1 time when they attack enemy targets that are <u>Weakness Broken</u>."
+        "fullDesc": "Grants all allies the Backup Dancer effect, lasting for {{1}} turn(s). This duration decreases by 1 at the start of Trailblazer's every turn. Allies with the Backup Dancer effect have their Break Effect increased by <orangeStrong>{{3, percent}}%</orangeStrong>. And when they attack enemy targets that are in the Weakness Broken state, the Toughness Reduction of the attack will be converted into 1 instance of Super Break DMG.",
+        "shortDesc": "Grants all allies the Backup Dancer effect. Allies with Backup Dancer have their <orangeStrong>Break Effect increased</orangeStrong> and additionally deals <orangeStrong>Super Break DMG</orangeStrong> 1 time when they attack enemy targets that are Weakness Broken."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Full-on Aerial Dance",
+        "fullDesc": "The Trailblazer immediately regenerates <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> Energy when an enemy target's Weakness is Broken.",
+        "shortDesc": "The Trailblazer regenerates Energy when an enemy target's Weakness is Broken."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Sanatorium for Rest Notes",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "4": {
       "name": "Dove in Tophat",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Poem Favors Rhythms of Old",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "6": {
       "name": "Tomorrow, Rest in Spotlight",

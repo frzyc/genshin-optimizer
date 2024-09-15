@@ -22,6 +22,13 @@
         "shortDesc": "<orangeStrong>Increases SPD</orangeStrong> for all allies."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Astrometry",
+        "fullDesc": "Gains 1 stack of Charging for every different enemy hit by Asta plus an extra stack if the enemy hit has Fire Weakness.<br>For every stack of Charging Asta has, all allies' ATK increases by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, up to {{2}} time(s).<br>Starting from her second turn, Asta's Charging stack count is reduced by {{3}} at the beginning of every turn.",
+        "shortDesc": "The character will receive 1 stack of Charging for every different enemy they hit, for a maximum of 5 stacks. Every stack of Charging increases ATK for all allies. At the beginning of their turn, reduce Charging stacks."
+      }
+    },
     "technique": {
       "0": {
         "name": "Miracle Flash",
@@ -39,7 +46,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Sparks",
-        "fullDesc": "Asta's Basic ATK has a {{1, percent}}% base chance to Burn an enemy target for {{2}} turn(s).\\nBurned enemies take Fire DoT equal to {{3, percent}}% of DMG dealt by Asta's Basic ATK at the start of each turn.",
+        "fullDesc": "Asta's Basic ATK has a {{1, percent}}% base chance to Burn an enemy target for {{2}} turn(s).<br>Burned enemies take Fire DoT equal to {{3, percent}}% of DMG dealt by Asta's Basic ATK at the start of each turn.",
         "shortDesc": ""
       }
     },
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Meteor Showers for Wish and Want",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "4": {
       "name": "Aurora Basks in Beauty and Bliss",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Nebula Secludes in Runes and Riddles",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "6": {
       "name": "Cosmos Dreams in Calm and Comfort",

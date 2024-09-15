@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "Garantie der Annexion",
-        "fullDesc": "Lässt einen Verbündeten zum „Schuldeneintreiber“ werden und erhöht seine GES für {{4}} Rd. um {{1}} Pkt.\\nNachdem der Schuldeneintreiber angegriffen hat, fügt er allen getroffenen Gegnern 1-mal <u>zusätzlichen Quanten-SCH</u> in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Jades ANG zu und verbraucht {{2, percent}}% seiner max. LP. Wenn die aktuellen LP nicht ausreichen, werden sie auf 1 reduziert.\\nWenn Jade zur Schuldeneintreiberin wird, kann sie den Effekt der GES-Erhöhung nicht erhalten und ihre Angriffe verbrauchen keine LP.\\nWenn auf dem Feld der Schuldeneintreiber existiert, kann Jade ihre Fertigkeit nicht einsetzen. Zu Beginn jeder ihrer Runden wird die Dauer des Status Schuldeneintreiber um 1 verringert.",
-        "shortDesc": "Lässt einen Verbündeten zum <orangeStrong>Schuldeneintreiber</orangeStrong> werden und erhöht seine GES. Nachdem der <orangeStrong>Schuldeneintreiber</orangeStrong> angegriffen hat, verbraucht er seine eigenen LP und fügt allen getroffenen Gegnern geringen <u>zusätzlichen Quanten-SCH</u> zu. Wenn Jade zur Schuldeneintreiberin wird, kann sie den Effekt der GES-Erhöhung nicht erhalten und ihre Angriffe verbrauchen keine LP."
+        "fullDesc": "Lässt einen Verbündeten zum „Schuldeneintreiber“ werden und erhöht seine GES für {{4}} Rd. um {{1}} Pkt.<br>Nachdem der Schuldeneintreiber angegriffen hat, fügt er allen getroffenen Gegnern 1-mal zusätzlichen Quanten-SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Jades ANG zu und verbraucht {{2, percent}}% seiner max. LP. Wenn die aktuellen LP nicht ausreichen, werden sie auf 1 reduziert.<br>Wenn Jade zur Schuldeneintreiberin wird, kann sie den Effekt der GES-Erhöhung nicht erhalten und ihre Angriffe verbrauchen keine LP.<br>Wenn auf dem Feld der Schuldeneintreiber existiert, kann Jade ihre Fertigkeit nicht einsetzen. Zu Beginn jeder ihrer Runden wird die Dauer des Status Schuldeneintreiber um 1 verringert.",
+        "shortDesc": "Lässt einen Verbündeten zum <orangeStrong>Schuldeneintreiber</orangeStrong> werden und erhöht seine GES. Nachdem der <orangeStrong>Schuldeneintreiber</orangeStrong> angegriffen hat, verbraucht er seine eigenen LP und fügt allen getroffenen Gegnern geringen zusätzlichen Quanten-SCH zu. Wenn Jade zur Schuldeneintreiberin wird, kann sie den Effekt der GES-Erhöhung nicht erhalten und ihre Angriffe verbrauchen keine LP."
       }
     },
     "ult": {
       "0": {
         "name": "Vertrag im Abgrund",
-        "fullDesc": "Fügt allen Gegnern Quanten-SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Jades ANG zu. Verstärkt gleichzeitig den <u>Folgeangriff</u> von Jades Talent, indem sein SCH-Multiplikator um <orangeStrong>{{1, percent}}%</orangeStrong> erhöht wird. Der Verstärkungseffekt kann {{2}}-mal wirksam werden.",
-        "shortDesc": "Fügt allen Gegnern Quanten-SCH zu und erhält einen erhöhten SCH-Multiplikator für <orangeStrong><u>Folgeangriffe</u></orangeStrong>."
+        "fullDesc": "Fügt allen Gegnern Quanten-SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Jades ANG zu. Verstärkt gleichzeitig den Folgeangriff von Jades Talent, indem sein SCH-Multiplikator um <orangeStrong>{{1, percent}}%</orangeStrong> erhöht wird. Der Verstärkungseffekt kann {{2}}-mal wirksam werden.",
+        "shortDesc": "Fügt allen Gegnern Quanten-SCH zu und erhält einen erhöhten SCH-Multiplikator für <orangeStrong>Folgeangriffe</orangeStrong>."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Reißender Fangzahn",
+        "fullDesc": "Nachdem Jade oder der „Schuldeneintreiber“ angegriffen hat, erhält Jade für jeden getroffenen Gegner 1 Pkt. Aufladung. Wenn die Aufladung {{3}} Pkt. erreicht, werden {{3}} Pkt. Aufladungen verbraucht, um 1-mal einen Folgeangriff auszuführen, der allen Gegnern Quanten-SCH in Höhe von <orangeStrong>{{5, percent}}%</orangeStrong> von Jades ANG zufügt. Durch diesen Folgeangriff wird keine Aufladung erhalten.<br>Wenn Jade den Folgeangriff ihres Talents startet, erhält sie {{4}} Stapelungen „Verpfändung“, wobei jede Stapelung ihren KRIT-SCH um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> erhöht. Dieser Effekt ist bis zu {{2}}-fach stapelbar.",
+        "shortDesc": "Nachdem Jade oder der <orangeStrong>Schuldeneintreiber</orangeStrong> angegriffen hat, erhält Jade für jeden getroffenen Gegner 1 Pkt. Aufladung. Wenn die Aufladung <orangeStrong>{{3}}</orangeStrong> Pkt. erreicht, werden <orangeStrong>{{3}}</orangeStrong> Pkt. Aufladungen verbraucht, um 1-mal einen <orangeStrong>Folgeangriff</orangeStrong> auszuführen, der allen Gegnern Quanten-SCH zufügt.<br>Wenn Jade den <orangeStrong>Folgeangriff</orangeStrong> startet, erhält sie „Verpfändung“, wodurch ihr KRIT-SCH erhöht wird. Dieser Effekt ist bis zu <orangeStrong>{{2}}</orangeStrong>-fach stapelbar."
       }
     },
     "technique": {

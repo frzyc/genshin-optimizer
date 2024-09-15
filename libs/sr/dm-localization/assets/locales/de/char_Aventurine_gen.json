@@ -22,10 +22,17 @@
         "shortDesc": "Erhält zufällig „Blinde Wette“. Verursacht bei einem Gegner „Panik“ und fügt ihm imaginären SCH zu. Wenn ein Verbündeter einen Gegner im Status Panik angreift, wird der verursachte <orangeStrong>KRIT-SCH</orangeStrong> erhöht."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Ziele nach rechts",
+        "fullDesc": "Besitzt ein Verbündeter „Verstärkter Einsatz“, wird sein Effekt-WDS um <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> erhöht. Nachdem er angegriffen wird, erhält Aventurin 1 Pkt. „Blinde Wette“. Besitzt Aventurin Verstärkter Einsatz, kann er Mengenkontrolle-Debuffs widerstehen. Dieser Effekt kann nach {{5}} Rd. erneut ausgelöst werden und Aventurin erhält nach dem erlittenen Angriff zusätzlich {{1}} Pkt. Blinde Wette. Nachdem Blinde Wette 7 Pkt. erreicht, verbraucht Aventurin diese 7 Pkt. Aufladung, um einen Folgeangriff mit {{2}} Treffern zu starten und bei jedem Treffer einem zufälligen Gegner imaginären SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Aventurins VTD zuzufügen. Blinde Wette ist auf 10 Pkt. begrenzt.",
+        "shortDesc": "Besitzt ein Verbündeter „Verstärkter Einsatz“, wird sein Effekt-WDS erhöht. Wenn er angegriffen wird, sammelt er für Aventurin „Blinde Wette“. Besitzt Aventurin Verstärkter Einsatz, kann er Mengenkontrolle-Debuffs widerstehen. Wenn Blinde Wette 7 Pkt. erreicht, verbraucht Aventurin diese Punkte, um einen <orangeStrong>Folgeangriff</orangeStrong> zu starten und einem zufälligen Gegner geringen imaginären SCH zuzufügen, wobei der Angriff 7-mal abprallt."
+      }
+    },
     "technique": {
       "0": {
         "name": "Zwischen Rot und Schwarz",
-        "fullDesc": "Nach dem Einsatz der Technik wird 1 der folgenden Effekte gewährt:\\nEs besteht eine bestimmte Chance, dass die VTD um {{1, percent}}% erhöht wird.\\nEs besteht eine hohe Chance, dass die VTD um {{2, percent}}% erhöht wird.\\nEs besteht eine geringe Chance, dass die VTD um {{3, percent}}% erhöht wird.\\nBei erneutem Einsatz wird der Effekt mit dem höchsten Verstärkungswert beibehalten.\\nZu Beginn des nächsten Kampfes wird die VTD aller Verbündeten für {{4}} Rd. entsprechend erhöht.",
+        "fullDesc": "Nach dem Einsatz der Technik wird 1 der folgenden Effekte gewährt:<br>Es besteht eine bestimmte Chance, dass die VTD um {{1, percent}}% erhöht wird.<br>Es besteht eine hohe Chance, dass die VTD um {{2, percent}}% erhöht wird.<br>Es besteht eine geringe Chance, dass die VTD um {{3, percent}}% erhöht wird.<br>Bei erneutem Einsatz wird der Effekt mit dem höchsten Verstärkungswert beibehalten.<br>Zu Beginn des nächsten Kampfes wird die VTD aller Verbündeten für {{4}} Rd. entsprechend erhöht.",
         "shortDesc": "Der Einsatz der Technik gewährt zufällig 1 von 3 Arten von Effekten zur VTD-Erhöhung. Nach dem nächsten Kampfeintritt wird die VTD aller Verbündeten entsprechend erhöht."
       }
     },

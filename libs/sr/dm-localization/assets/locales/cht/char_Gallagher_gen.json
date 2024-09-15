@@ -27,6 +27,13 @@
         "shortDesc": "使敵方全體<orangeStrong>陷入【酩酊】狀態</orangeStrong>，同時對敵方全體造成火屬性傷害。下一次普通攻擊強化為【酒花奔湧】。"
       }
     },
+    "talent": {
+      "0": {
+        "name": "鏖戰正酣",
+        "fullDesc": "【酩酊】使目標受到的擊破傷害提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>。陷入【酩酊】狀態的目標每次受到我方角色攻擊後，會回復攻擊者<orangeStrong>{{2}}</orangeStrong>點生命值。",
+        "shortDesc": "【酩酊】使目標<orangeStrong>受到的擊破傷害提高</orangeStrong>，目標每次受到我方角色攻擊後，<orangeStrong>攻擊者回復生命值</orangeStrong>。"
+      }
+    },
     "technique": {
       "0": {
         "name": "親啟佳釀",

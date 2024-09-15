@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "Acquisition Surety",
-        "fullDesc": "Makes a single target ally become the Debt Collector and increases their SPD by {{1}}, lasting for {{4}} turn(s).\\nAfter the Debt Collector attacks, deals 1 instance of <u>Additional</u> Quantum DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Jade's ATK to each enemy target hit, and consumes the Debt Collector's HP by an amount equal to {{2, percent}}% of their Max HP. If the current HP is insufficient, reduces HP to 1.\\nIf Jade becomes the Debt Collector, she cannot gain the SPD boost effect, and her attacks do not consume HP.\\nWhen the Debt Collector exists on the field, Jade cannot use her Skill. At the start of Jade's every turn, the Debt Collector's duration decreases by 1 turn.",
-        "shortDesc": "Makes a single ally become the <orangeStrong>Debt Collector</orangeStrong> and increases their SPD. After the <orangeStrong>Debt Collector</orangeStrong> attacks, they deal minor <u>Additional</u> Quantum DMG to each enemy target hit and consume their own HP. When Jade becomes the Debt Collector, she cannot gain the SPD boost effect, and her attacks do not consume HP."
+        "fullDesc": "Makes a single target ally become the Debt Collector and increases their SPD by {{1}}, lasting for {{4}} turn(s).<br>After the Debt Collector attacks, deals 1 instance of Additional Quantum DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Jade's ATK to each enemy target hit, and consumes the Debt Collector's HP by an amount equal to {{2, percent}}% of their Max HP. If the current HP is insufficient, reduces HP to 1.<br>If Jade becomes the Debt Collector, she cannot gain the SPD boost effect, and her attacks do not consume HP.<br>When the Debt Collector exists on the field, Jade cannot use her Skill. At the start of Jade's every turn, the Debt Collector's duration decreases by 1 turn.",
+        "shortDesc": "Makes a single ally become the <orangeStrong>Debt Collector</orangeStrong> and increases their SPD. After the <orangeStrong>Debt Collector</orangeStrong> attacks, they deal minor Additional Quantum DMG to each enemy target hit and consume their own HP. When Jade becomes the Debt Collector, she cannot gain the SPD boost effect, and her attacks do not consume HP."
       }
     },
     "ult": {
       "0": {
         "name": "Vow of the Deep",
-        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Jade's ATK to all enemies. At the same time, Jade enhances her Talent's <u>follow-up attack</u>, increasing its DMG multiplier by <orangeStrong>{{1, percent}}%</orangeStrong>. This enhancement can take effect {{2}} time(s).",
-        "shortDesc": "Deals Quantum DMG to all enemies and gains increased the multiplier for <orangeStrong><u>follow-up attack</u></orangeStrong> DMG."
+        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Jade's ATK to all enemies. At the same time, Jade enhances her Talent's follow-up attack, increasing its DMG multiplier by <orangeStrong>{{1, percent}}%</orangeStrong>. This enhancement can take effect {{2}} time(s).",
+        "shortDesc": "Deals Quantum DMG to all enemies and gains increased the multiplier for <orangeStrong>follow-up attack</orangeStrong> DMG."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Fang of Flare Flaying",
+        "fullDesc": "After Jade or the Debt Collector unit attacks, gains 1 point of Charge for each enemy target hit. Upon reaching {{3}} points of Charge, consumes the {{3}} points to launch 1 instance of follow-up attack, dealing Quantum DMG equal to <orangeStrong>{{5, percent}}%</orangeStrong> of Jade's ATK to all enemies. This follow-up attack does not generate Charge.<br>When launching her Talent's follow-up attack, Jade immediately gains {{4}} stack(s) of Pawned Asset, with each stack increasing CRIT DMG by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, stacking up to {{2}} times.",
+        "shortDesc": "After Jade or the <orangeStrong>Debt Collector</orangeStrong> unit attacks, gains 1 point of Charge for each enemy target hit. Upon reaching <orangeStrong>{{3}}</orangeStrong> points of Charge, consumes the <orangeStrong>{{3}}</orangeStrong> points to launch 1 instance of <orangeStrong>follow-up attack</orangeStrong>, dealing Quantum DMG to all enemies.<br>When Jade launches the <orangeStrong>follow-up attack</orangeStrong>, gains Pawned Asset and increases CRIT DMG, stacking up to <orangeStrong>{{2}}</orangeStrong> times."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Honesty? Soon Mortgaged",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "4": {
       "name": "Sincerity? Put Option Only",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Hope? Hitherto Forfeited",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "6": {
       "name": "Equity? Pending Sponsorship",

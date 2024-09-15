@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "匏蛟躍淵先雷音",
-        "fullDesc": "立即為我方全體回復等同於白露<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{2}}</orangeStrong>的生命值。\\n為沒有【生息】的我方目標附加【生息】，對於已擁有【生息】的我方目標，則使其既有的【生息】持續時間延長1回合。\\n【生息】可持續{{3}}回合，該效果不可疊加。",
+        "fullDesc": "立即為我方全體回復等同於白露<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{2}}</orangeStrong>的生命值。<br>為沒有【生息】的我方目標附加【生息】，對於已擁有【生息】的我方目標，則使其既有的【生息】持續時間延長1回合。<br>【生息】可持續{{3}}回合，該效果不可疊加。",
         "shortDesc": "為我方全體回復生命值，並附上【生息】，或延長【生息】持續時間。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "奔走懸壺濟世長",
+        "fullDesc": "擁有【生息】的我方目標，在受到攻擊後會回復等同於白露<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{2}}</orangeStrong>的生命值，該效果可以觸發{{5}}次。<br>當白露的隊友受到致命攻擊時，不會陷入無法戰鬥狀態，而由白露立即為其提供治療，回復等同於白露<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{4}}</orangeStrong>的生命值。該效果單場戰鬥中可以觸發1次。",
+        "shortDesc": "擁有<orangeStrong>【生息】</orangeStrong>的我方目標受到攻擊後會<orangeStrong>回復生命值</orangeStrong>。<br>當隊友<orangeStrong>受到致命攻擊時</orangeStrong>，白露<orangeStrong>立即為其回復生命值</orangeStrong>。該效果單場戰鬥中可以觸發1次。"
       }
     },
     "technique": {

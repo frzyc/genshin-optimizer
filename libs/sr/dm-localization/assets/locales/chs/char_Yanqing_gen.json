@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "快雨燕相逐",
-        "fullDesc": "提高自身{{1, percent}}%暴击率，若彦卿处于【智剑连心】效果，则使其暴击伤害额外提高<orangeStrong>{{2, percent}}%</orangeStrong>，<u>增益效果</u>持续1回合。随后对指定敌方单体造成等同于彦卿<orangeStrong>{{3, percent}}%</orangeStrong>攻击力的冰属性伤害。",
+        "fullDesc": "提高自身{{1, percent}}%暴击率，若彦卿处于【智剑连心】效果，则使其暴击伤害额外提高<orangeStrong>{{2, percent}}%</orangeStrong>，增益效果持续1回合。随后对指定敌方单体造成等同于彦卿<orangeStrong>{{3, percent}}%</orangeStrong>攻击力的冰属性伤害。",
         "shortDesc": "提高自身暴击率，并强化【智剑连心】，对敌方单体造成大量冰属性伤害。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "呼剑如影",
+        "fullDesc": "彦卿处于【智剑连心】效果时，受到攻击的概率降低，并为自身提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>暴击率和<orangeStrong>{{2, percent}}%</orangeStrong>暴击伤害。对敌方目标施放攻击后，有<orangeStrong>{{3, percent}}%</orangeStrong>的固定概率发动追加攻击，对目标造成等同于彦卿<orangeStrong>{{4, percent}}%</orangeStrong>攻击力的冰属性伤害，并有{{6, percent}}%的基础概率使其陷入冻结状态，持续1回合。<br>冻结状态下，敌方目标不能行动，同时每回合开始时受到等同于彦卿<orangeStrong>{{5, percent}}%</orangeStrong>攻击力的冰属性附加伤害。<br>当彦卿受到伤害后，【智剑连心】将会消失。",
+        "shortDesc": "<orangeStrong>处于【智剑连心】时</orangeStrong>受到攻击的概率降低，自身<orangeStrong>暴击率和暴击伤害提高</orangeStrong>。对敌方目标<orangeStrong>施放攻击后</orangeStrong>，有概率发动追加攻击，对其造成冰属性伤害并有概率使其陷入冻结状态。<br>自身受到伤害后，【智剑连心】消失。"
       }
     },
     "technique": {

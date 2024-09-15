@@ -9,7 +9,7 @@
       },
       "1": {
         "name": "Cherry on Top!",
-        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Qingque pada 1 target musuh, serta mengakibatkan Quantum DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Qingque pada musuh di sekitar target.\\n\"Cherry on Top!\" tidak dapat memulihkan Poin Skill.",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Qingque pada 1 target musuh, serta mengakibatkan Quantum DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Qingque pada musuh di sekitar target.<br>\"Cherry on Top!\" tidak dapat memulihkan Poin Skill.",
         "shortDesc": "Mengakibatkan Quantum DMG pada 1 musuh, dan Quantum DMG dalam jumlah kecil pada target di sekitarnya."
       }
     },
@@ -25,6 +25,13 @@
         "name": "A Quartet? Woo-hoo!",
         "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Qingque pada seluruh musuh, serta mendapatkan 4 Jade Tile dengan pola yang sama.",
         "shortDesc": "Mengakibatkan Quantum DMG pada seluruh musuh, serta mendapatkan 4 lembar Jade Tile dengan pola yang sama."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Celestial Jade",
+        "fullDesc": "Saat giliran rekan tim dimulai, Qingque akan mengambil secara acak 1 dari 3 Jade Tile dengan pola yang berbeda, Qingque maksimal memiliki 4 Jade Tile.<br>Saat gilirannya dimulai, jika Qingque memiliki 4 Jade Tile berpola sama, Qingque akan mengonsumsi semua Jade Tile dan memasuki status \"Hidden Hand\".<br>Dalam status \"Hidden Hand\", Qingque tidak dapat melancarkan Skill lagi, di saat yang bersamaan akan meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> ATK dirinya sendiri, lalu Basic ATK \"Flower Pick\" akan diperkuat menjadi \"Cherry on Top!\". Status \"Hidden Hand\" akan hilang setelah melancarkan \"Cherry on Top!\".",
+        "shortDesc": "Mengambil Jade Tile saat giliran rekan tim dimulai. Saat giliran dirinya dimulai, jika memiliki 4 Jade Tile dengan pola yang sama, kartu akan dikonsumsi dan <orangeStrong>Basic Attack kali ini akan mengalami peningkatan</orangeStrong>. ATK dirinya juga akan meningkat."
       }
     },
     "technique": {
@@ -78,7 +85,7 @@
     },
     "4": {
       "name": "Right on the Tiles",
-      "desc": "Setelah melancarkan Skill, memiliki {{1, percent}}% peluang tetap untuk memperoleh status \"Self-Sufficer\" hingga akhir giliran saat ini.\\nSetelah melancarkan Basic Attack atau Enhanced Basic Attack dalam status \"Self-Sufficer\", Qingque akan langsung melancarkan 1 Serangan Lanjutan yang mengakibatkan Quantum DMG pada target sebesar 100% dari Basic Attack DMG atau Enhanced Basic Attack DMG."
+      "desc": "Setelah melancarkan Skill, memiliki {{1, percent}}% peluang tetap untuk memperoleh status \"Self-Sufficer\" hingga akhir giliran saat ini.<br>Setelah melancarkan Basic Attack atau Enhanced Basic Attack dalam status \"Self-Sufficer\", Qingque akan langsung melancarkan 1 Serangan Lanjutan yang mengakibatkan Quantum DMG pada target sebesar 100% dari Basic Attack DMG atau Enhanced Basic Attack DMG."
     },
     "5": {
       "name": "Gambit for the Tiles",

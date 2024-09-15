@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Éclair rapide",
-        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Serval à un ennemi unique et des DGT de foudre équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Serval aux ennemis adjacents, avec {{3, percent}}% de <u>chances de base</u> de stupéfier les ennemis touchés pendant {{4}} tours.\\nLes ennemis stupéfiés subissent des dégâts de foudre sur la durée équivalents à <orangeStrong>{{5, percent}}%</orangeStrong> de l'ATQ de Serval au début de chaque tour.",
+        "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Serval à un ennemi unique et des DGT de foudre équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Serval aux ennemis adjacents, avec {{3, percent}}% de chances de base de stupéfier les ennemis touchés pendant {{4}} tours.<br>Les ennemis stupéfiés subissent des dégâts de foudre sur la durée équivalents à <orangeStrong>{{5, percent}}%</orangeStrong> de l'ATQ de Serval au début de chaque tour.",
         "shortDesc": "Inflige des DGT de foudre à un ennemi et aux cibles adjacentes, avec de fortes chances de provoquer <orangeStrong>Stupéfaction</orangeStrong>."
       }
     },
@@ -22,10 +22,17 @@
         "shortDesc": "Inflige des DGT de foudre à tous les ennemis et augmente la durée de Stupéfaction."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Accords galvaniques",
+        "fullDesc": "Serval inflige des DGT de foudre additionnels équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de son ATQ à tous les ennemis stupéfiés après avoir attaqué.",
+        "shortDesc": "Inflige des <orangeStrong>DGT additionnels mineurs</orangeStrong> à tous les ennemis stupéfiés après avoir attaqué."
+      }
+    },
     "technique": {
       "0": {
         "name": "Bonsoir Belobog",
-        "fullDesc": "Engage immédiatement le combat contre les ennemis. Inflige des DGT de foudre équivalents à {{4, percent}}% de l'ATQ de Serval à un ennemi aléatoire après être entré en combat, avec {{1, percent}}% de <u>chances de base</u> que tous les ennemis soient stupéfiés pendant {{3}} tours.\\nLes ennemis stupéfiés subissent des dégâts de foudre sur la durée équivalents à {{2, percent}}% de l'ATQ de Serval au début de chaque tour.",
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Inflige des DGT de foudre équivalents à {{4, percent}}% de l'ATQ de Serval à un ennemi aléatoire après être entré en combat, avec {{1, percent}}% de chances de base que tous les ennemis soient stupéfiés pendant {{3}} tours.<br>Les ennemis stupéfiés subissent des dégâts de foudre sur la durée équivalents à {{2, percent}}% de l'ATQ de Serval au début de chaque tour.",
         "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT mineurs de foudre à un ennemi unique aléatoire, avec de fortes chances d'appliquer <orangeStrong>Stupéfaction</orangeStrong> à toutes les cibles ennemies après être entré en combat."
       }
     },
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Battements mécaniques",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "4": {
       "name": "Faites du bruit !",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Le plus gros son de Belobog !",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "6": {
       "name": "Une chanson qui envoie du lourd !",

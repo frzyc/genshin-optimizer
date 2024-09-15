@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "Talisman de protection",
-        "fullDesc": "Dissipe {{5}} <u>malus</u> d'une cible alliée unique et lui rend immédiatement un montant de PV équivalent à <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> des PV max de Huohuo + <orangeStrong>{{2}}</orangeStrong>. Restaure également aux alliés adjacents à la cible un montant de PV équivalent à <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> des PV max de Huohuo + <orangeStrong>{{4}}</orangeStrong>.",
-        "shortDesc": "Dissipe 1 <u>malus</u> d'un allié et <orangeStrong>restaure des PV</orangeStrong> à cet allié et aux alliés adjacents."
+        "fullDesc": "Dissipe {{5}} malus d'une cible alliée unique et lui rend immédiatement un montant de PV équivalent à <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> des PV max de Huohuo + <orangeStrong>{{2}}</orangeStrong>. Restaure également aux alliés adjacents à la cible un montant de PV équivalent à <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> des PV max de Huohuo + <orangeStrong>{{4}}</orangeStrong>.",
+        "shortDesc": "Dissipe 1 malus d'un allié et <orangeStrong>restaure des PV</orangeStrong> à cet allié et aux alliés adjacents."
       }
     },
     "ult": {
@@ -22,10 +22,17 @@
         "shortDesc": "<orangeStrong>Régénère des points d'énergie</orangeStrong> pour tous les alliés, hormis Huohuo, et <orangeStrong>augmente leur ATQ</orangeStrong>."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Connexion métaphysique éthérée",
+        "fullDesc": "Huohuo gagne Intervention divine après avoir utilisé sa compétence, pour une durée de {{1}} tours. Cette durée diminue de 1 au début de chaque tour de Huohuo. Si Huohuo bénéficie d'Intervention divine au début du tour d'un allié ou lorsqu'un allié utilise un ultime, restaure les PV de cet allié à hauteur de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> des PV max de Huohuo + <orangeStrong>{{5}}</orangeStrong>. Aussi, soigne une fois tous les alliés dont les PV sont inférieurs ou égaux à {{6, percent}}% de leurs PV max.<br>Quand Intervention divine se déclenche pour soigner un allié, dissipe {{2}} malus dont souffre cet allié. Cet effet peut être déclenché {{7}} fois. Utiliser la compétence réinitialise le décompte.",
+        "shortDesc": "Huohuo obtient Intervention divine après avoir utilisé sa compétence. Si Huohuo bénéficie d'Intervention divine au début du tour d'un allié ou lorsqu'un allié utilise un ultime, <orangeStrong>restaure les PV de cet allié</orangeStrong>. Aussi, <orangeStrong>soigne une fois</orangeStrong> <orangeStrong>tous les alliés</orangeStrong> dont les PV sont bas. Lorsqu'Intervention divine se déclenche pour soigner un allié, <orangeStrong>dissipe 1 malus dont souffre cet allié</orangeStrong>."
+      }
+    },
     "technique": {
       "0": {
         "name": "Répression du mal",
-        "fullDesc": "Huohuo terrorise les ennemis à proximité et leur inflige l'état Frappé par l'horreur. Les ennemis frappés par l'horreur fuient Huohuo pendant {{4}} secondes. Il y a {{1, percent}}% de <u>chances de base</u> de réduire l'ATQ de chacun d'entre eux de {{2, percent}}% pendant {{3}} tours après être entré en combat avec des ennemis frappés par l'horreur.",
+        "fullDesc": "Huohuo terrorise les ennemis à proximité et leur inflige l'état Frappé par l'horreur. Les ennemis frappés par l'horreur fuient Huohuo pendant {{4}} secondes. Il y a {{1, percent}}% de chances de base de réduire l'ATQ de chacun d'entre eux de {{2, percent}}% pendant {{3}} tours après être entré en combat avec des ennemis frappés par l'horreur.",
         "shortDesc": "Plonge les ennemis à proximité dans l'état Frappé par l'horreur. Il y a de fortes chances d'appliquer une <orangeStrong>réduction d'ATQ</orangeStrong> aux cibles ennemies après être entré en combat avec des ennemis frappés par l'horreur."
       }
     },
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Malédiction à laquelle les papillons ont cédé",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "4": {
       "name": "Cœurs qui s'emballent mais pourtant liés",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Mandatée par décret, maux évincés",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "6": {
       "name": "Destins en osmose à jamais",

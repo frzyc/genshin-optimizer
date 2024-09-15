@@ -22,6 +22,13 @@
         "shortDesc": "敵全体に氷属性ダメージを与える。"
       }
     },
+    "talent": {
+      "0": {
+        "name": "やっぱり{RUBY_B#わたし}私{RUBY_E#}がやる",
+        "fullDesc": "味方の攻撃が敵の残りHPを{{1, percent}}%以下にした時、ヘルタは追加攻撃を発動し、敵全体にヘルタの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
+        "shortDesc": ""
+      }
+    },
     "technique": {
       "0": {
         "name": "{RUBY_B#かいぜん}改善{RUBY_E#}すべきだよ",

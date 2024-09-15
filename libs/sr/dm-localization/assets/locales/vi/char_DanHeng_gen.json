@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Thương Thuật Vân Kỵ - Lũ Cuốn",
-        "fullDesc": "Gây Sát Thương Phong cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Dan Heng.\\nKhi Chiến Kỹ gây sát thương kích hoạt bạo kích, có {{4, percent}}% <u>xác suất cơ bản</u> khiến mục tiêu phe địch bị tấn công giảm tốc {{2, percent}}%, duy trì {{3}} hiệp.",
+        "fullDesc": "Gây Sát Thương Phong cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Dan Heng.<br>Khi Chiến Kỹ gây sát thương kích hoạt bạo kích, có {{4, percent}}% xác suất cơ bản khiến mục tiêu phe địch bị tấn công giảm tốc {{2, percent}}%, duy trì {{3}} hiệp.",
         "shortDesc": "Gây Sát Thương Phong cho 1 kẻ địch, khi bạo kích có xác suất lớn thi triển trạng thái Giảm Tốc."
       }
     },
@@ -20,6 +20,13 @@
         "name": "Giấc Mơ Bồng Lai",
         "fullDesc": "Gây Sát Thương Phong cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Dan Heng. Khi mục tiêu bị tấn công đang trong trạng thái Giảm Tốc, Bội Số Sát Thương Tuyệt Kỹ gây ra tăng <orangeStrong>{{2, percent}}%</orangeStrong>.",
         "shortDesc": "Gây lượng lớn Sát Thương Phong cho 1 kẻ địch, tăng Bội Số Sát Thương của mục tiêu đang trong trạng thái Giảm Tốc."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Đi Một Ngày Đàng, Học Một Sàng Khôn",
+        "fullDesc": "Khi Dan Heng trở thành mục tiêu thi triển kỹ năng của phe ta, Xuyên Kháng Phong của lần tấn công tiếp theo tăng <orangeStrong>{{1, percent}}%</orangeStrong>. Hiệu ứng này sau {{2}} hiệp có thể kích hoạt lại.",
+        "shortDesc": "Khi trở thành mục tiêu thi triển kỹ năng của phe ta, sẽ <orangeStrong>tăng Xuyên Kháng Phong</orangeStrong> của lần tấn công tiếp theo. Hiệu ứng này sau 2 hiệp có thể kích hoạt lại."
       }
     },
     "technique": {

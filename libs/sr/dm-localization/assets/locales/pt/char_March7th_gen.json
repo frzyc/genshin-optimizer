@@ -11,21 +11,28 @@
     "skill": {
       "0": {
         "name": "O Poder da Fofura",
-        "fullDesc": "Concede a um único aliado um Escudo que pode absorver Dano igual a <orangeStrong>{{1, percent}}%</orangeStrong> da DEF de 7 de Março + <orangeStrong>{{4}}</orangeStrong> por {{2}} rodada(s).\\nSe esse aliado tiver {{3, percent}}% ou mais de PV, aumenta significativamente a chance de inimigos atacarem esse aliado.",
+        "fullDesc": "Concede a um único aliado um Escudo que pode absorver Dano igual a <orangeStrong>{{1, percent}}%</orangeStrong> da DEF de 7 de Março + <orangeStrong>{{4}}</orangeStrong> por {{2}} rodada(s).<br>Se esse aliado tiver {{3, percent}}% ou mais de PV, aumenta significativamente a chance de inimigos atacarem esse aliado.",
         "shortDesc": "<orangeStrong>Aplica um Escudo</orangeStrong> em um único aliado."
       }
     },
     "ult": {
       "0": {
         "name": "Cascata Glacial",
-        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de 7 de Março a todos os inimigos. Ao serem atingidos, os inimigos têm {{2, percent}}% de <u>chance-base</u> de sofrer Congelamento por {{3}} rodada(s).\\nDurante o Congelamento, os inimigos não podem agir e recebem <u>Dano de Gelo Adicional</u> igual a <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de 7 de Março no início de cada rodada.",
+        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de 7 de Março a todos os inimigos. Ao serem atingidos, os inimigos têm {{2, percent}}% de chance-base de sofrer Congelamento por {{3}} rodada(s).<br>Durante o Congelamento, os inimigos não podem agir e recebem Dano de Gelo Adicional igual a <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de 7 de Março no início de cada rodada.",
         "shortDesc": "Causa Dano de Gelo a <orangeStrong>todos os inimigos</orangeStrong>, com <orangeStrong>uma chance de aplicar o efeito de Congelamento</orangeStrong>"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Poder Feminino",
+        "fullDesc": "Quando um aliado com Escudo é atacado por um inimigo, 7 de Março Contra-Ataca imediatamente, causando Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ dela. Esse efeito pode ser ativado {{2}} vez(es) por rodada.",
+        "shortDesc": "Depois que um aliado com Escudo é atacado por um inimigo, 7 de Março <orangeStrong>realiza imediatamente um Contra-Ataque</orangeStrong> contra o atacante, causando Dano de Gelo leve."
       }
     },
     "technique": {
       "0": {
         "name": "Beleza Glacial",
-        "fullDesc": "Ataca o inimigo imediatamente. Após entrar na batalha, tem {{1, percent}}% de <u>chance-base</u> de causar Congelamento a um inimigo aleatório por {{2}} rodada(s).\\nDurante o Congelamento, o inimigo não pode agir e recebe {{3, percent}}% do ATQ de 7 de Março como Dano de Gelo <u>Adicional</u> no início de cada rodada.",
+        "fullDesc": "Ataca o inimigo imediatamente. Após entrar na batalha, tem {{1, percent}}% de chance-base de causar Congelamento a um inimigo aleatório por {{2}} rodada(s).<br>Durante o Congelamento, o inimigo não pode agir e recebe {{3, percent}}% do ATQ de 7 de Março como Dano de Gelo Adicional no início de cada rodada.",
         "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, existe uma alta chance de infligir Congelamento em um inimigo aleatório."
       }
     },
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Memória de Tudo",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Nunca se Renda de Novo",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Nunca se Esqueça de Novo",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "É Sempre Assim...",

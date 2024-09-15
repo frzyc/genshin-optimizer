@@ -18,7 +18,7 @@
     "ult": {
       "0": {
         "name": "Lágrimas Vermelhas do Sonho Retalhado",
-        "fullDesc": "Utiliza sequencialmente Lâmina Pluvial 3 vezes e Ressurreição Estígia 1 vez, causando Dano de Raio até <orangeStrong>{{6, percent}}%</orangeStrong> do ATQ de Acheron a um único inimigo-alvo, e causa Dano de Raio até de <orangeStrong>{{7, percent}}%</orangeStrong> do ATQ de Acheron a todos os outros inimigos.\\nLâmina Pluvial: Causa Dano de Raio igual a <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> do ATQ de Acheron a um único inimigo-alvo e remove até 3 acúmulos de Nó Rubro do alvo. Quando o Nó Rubro é removido, imediatamente causa Dano de Raio igual a <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> do ATQ de Acheron a todos os inimigos. Para cada acúmulo de Nó Rubro removido, o Multiplicador de Dano desta aplicação de Dano é adicionalmente aumentado, até um aumento de <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.\\nRessurreição Estígia: Causa Dano de Raio igual a <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de Acheron a todos os inimigos e remove todos os Nós Rubros.\\n\\nNós Rubros não podem ser aplicados a inimigos durante a Perícia Suprema.",
+        "fullDesc": "Utiliza sequencialmente Lâmina Pluvial 3 vezes e Ressurreição Estígia 1 vez, causando Dano de Raio até <orangeStrong>{{6, percent}}%</orangeStrong> do ATQ de Acheron a um único inimigo-alvo, e causa Dano de Raio até de <orangeStrong>{{7, percent}}%</orangeStrong> do ATQ de Acheron a todos os outros inimigos.<br>Lâmina Pluvial: Causa Dano de Raio igual a <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> do ATQ de Acheron a um único inimigo-alvo e remove até 3 acúmulos de Nó Rubro do alvo. Quando o Nó Rubro é removido, imediatamente causa Dano de Raio igual a <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> do ATQ de Acheron a todos os inimigos. Para cada acúmulo de Nó Rubro removido, o Multiplicador de Dano desta aplicação de Dano é adicionalmente aumentado, até um aumento de <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.<br>Ressurreição Estígia: Causa Dano de Raio igual a <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de Acheron a todos os inimigos e remove todos os Nós Rubros.<br><br>Nós Rubros não podem ser aplicados a inimigos durante a Perícia Suprema.",
         "shortDesc": "Causa 3 golpes de Dano de Raio Leve a um único inimigo. Se Nó Rubro for removido do alvo, então causa Dano de Raio leve a todos os inimigos. Finalmente, causa 1 golpe de Dano de Raio a todos os inimigos e remove Nó Rubro."
       },
       "1": {
@@ -42,11 +42,18 @@
         "shortDesc": "Causa Dano de Raio a todos os inimigos e remove todos os acúmulos de Nó Rubro."
       }
     },
+    "talent": {
+      "0": {
+        "name": "As Folhas de Outono Carregam Singularidades",
+        "fullDesc": "Quando Sonho Retalhado chega a {{1}} ponto(s), a Perícia Suprema pode ser utilizada. Durante a Perícia Suprema, reduz a Tenacidade dos inimigos independentemente dos Tipos de Fraquezas e reduz a RES a Todos os Tipos de todos os inimigos em <orangeStrong>{{2, percent}}%</orangeStrong>, durando até o final da Perícia Suprema.<br>Quando qualquer unidade inflige penalidades a um inimigo-alvo enquanto usa sua habilidade, Acheron ganha 1 ponto de Sonho Retalhado e inflige 1 acúmulo de Nó Rubro no alvo. Se a habilidade utilizada infligir penalidade a múltiplos inimigos, então um acúmulo de Nó Rubro será infligido no inimigo-alvo com o maior número de acúmulos de Nó Rubro. Este efeito pode ser acionado até 1 vez por uso da habilidade.<br>Quando Acheron está no campo de batalha e após um inimigo-alvo sair do campo de batalha ou ser derrotado por qualquer unidade, seus acúmulos de Nó Rubro serão redirecionados ao inimigo-alvo com o maior número de acúmulos de Nó Rubro em campo.",
+        "shortDesc": "Quando Sonho Retalhado chega ao seu máximo, a Perícia Suprema pode ser utilizada. Durante a Perícia Suprema, exaure a Tenacidade dos inimigos <orangeStrong>independentemente dos Tipos de Fraqueza</orangeStrong> e reduz a <orangeStrong>RES a Todos os Tipos</orangeStrong> de todos os inimigos.<br>Quando qualquer unidade inflige penalidades em um inimigo-alvo enquanto usa uma habilidade, Acheron ganha Sonho Retalhado e inflige Nó Rubro no inimigo-alvo."
+      }
+    },
     "technique": {
       "0": {
         "name": "Ascendência Quadrivalente",
-        "fullDesc": "Imediatamente ataca o inimigo. No início de cada onda, ganha Ascendência Quadrivalente, causando Dano de Raio igual a {{1, percent}}% do ATQ de Acheron a todos os inimigos e reduzindo a Tenacidade te todos os inimigos independentemente dos Tipos de Fraqueza. Ao infligir Quebra de Fraqueza, aciona o efeito de Quebra de Fraqueza de Raio.\\nAscendência Quadrivalente: depois de usar sua Perícia Suprema, Acheron ganha {{2}} ponto(s) de Sonho Retalhado e inflige {{2}} acúmulo(s) de Nó Rubro em um único inimigo aleatório.\\nSe o ataque for realizado contra um inimigo normal, ele é derrotado imediatamente sem entrar em combate. Nenhum Ponto de Técnica será consumido caso nenhum inimigo seja atingido.",
-        "shortDesc": "Ataca o inimigo. Recebe Ascendência Quadrivalente no início de cada onda, causando Dano de Raio a todos os inimigos e reduzindo sua Tenacidade <orangeStrong>independentemente dos Tipos de Fraqueza</orangeStrong>.\\nSe estiver atacando um inimigo comum, <orangeStrong>imediatamente o derrota</orangeStrong> sem entrar em combate. O Ponto de Técnica não é gasto se o ataque não atingir um inimigo."
+        "fullDesc": "Imediatamente ataca o inimigo. No início de cada onda, ganha Ascendência Quadrivalente, causando Dano de Raio igual a {{1, percent}}% do ATQ de Acheron a todos os inimigos e reduzindo a Tenacidade te todos os inimigos independentemente dos Tipos de Fraqueza. Ao infligir Quebra de Fraqueza, aciona o efeito de Quebra de Fraqueza de Raio.<br>Ascendência Quadrivalente: depois de usar sua Perícia Suprema, Acheron ganha {{2}} ponto(s) de Sonho Retalhado e inflige {{2}} acúmulo(s) de Nó Rubro em um único inimigo aleatório.<br>Se o ataque for realizado contra um inimigo normal, ele é derrotado imediatamente sem entrar em combate. Nenhum Ponto de Técnica será consumido caso nenhum inimigo seja atingido.",
+        "shortDesc": "Ataca o inimigo. Recebe Ascendência Quadrivalente no início de cada onda, causando Dano de Raio a todos os inimigos e reduzindo sua Tenacidade <orangeStrong>independentemente dos Tipos de Fraqueza</orangeStrong>.<br>Se estiver atacando um inimigo comum, <orangeStrong>imediatamente o derrota</orangeStrong> sem entrar em combate. O Ponto de Técnica não é gasto se o ataque não atingir um inimigo."
       }
     },
     "overworld": {
@@ -89,7 +96,7 @@
     },
     "3": {
       "name": "Mordidas Gélidas na Morte",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Fogo Sagrado da Alma Refletida",
@@ -97,7 +104,7 @@
     },
     "5": {
       "name": "Almas Espalhadas em Terras Apagadas",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "Apocalipse, o Emancipador",

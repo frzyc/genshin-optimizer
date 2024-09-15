@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Chim Én Vỗ Mưa",
-        "fullDesc": "Tăng cho bản thân {{1, percent}}% Tỷ Lệ Bạo Kích, nếu Yanqing đang ở hiệu ứng Kiếm Khôn Hiểu Lòng Người, sẽ giúp sát thương Bạo Kích của Yanqing tăng thêm <orangeStrong>{{2, percent}}%</orangeStrong>, <u>hiệu ứng buff</u> duy trì 1 hiệp. Sau đó gây cho 1 kẻ địch chỉ định Sát Thương Băng bằng <orangeStrong>{{3, percent}}%</orangeStrong> Tấn Công của Yanqing.",
+        "fullDesc": "Tăng cho bản thân {{1, percent}}% Tỷ Lệ Bạo Kích, nếu Yanqing đang ở hiệu ứng Kiếm Khôn Hiểu Lòng Người, sẽ giúp sát thương Bạo Kích của Yanqing tăng thêm <orangeStrong>{{2, percent}}%</orangeStrong>, hiệu ứng buff duy trì 1 hiệp. Sau đó gây cho 1 kẻ địch chỉ định Sát Thương Băng bằng <orangeStrong>{{3, percent}}%</orangeStrong> Tấn Công của Yanqing.",
         "shortDesc": "Tăng Tỷ Lệ Bạo Kích cho bản thân và cường hóa Kiếm Khôn Hiểu Lòng Người, gây lượng lớn Sát Thương Băng cho 1 kẻ địch."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Bóng Kiếm Kề Bên",
+        "fullDesc": "Khi Yanqing ở trong hiệu ứng Kiếm Khôn Hiểu Lòng Người, sẽ giảm xác suất bị tấn công, đồng thời tăng cho bản thân <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Tỷ Lệ Bạo Kích và <orangeStrong>{{2, percent}}%</orangeStrong> Sát Thương Bạo Kích. Sau khi thi triển tấn công lên mục tiêu địch, có <orangeStrong>{{3, percent}}%</orangeStrong> xác suất cố định thi triển Đòn Đánh Theo Sau, gây Sát Thương Băng cho mục tiêu tương đương <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công của Yanqing, đồng thời có {{6, percent}}% xác suất cơ bản khiến kẻ đó rơi vào trạng thái Đóng Băng, duy trì 1 hiệp.<br>Trong trạng thái Đóng Băng, kẻ địch không thể hành động, đồng thời khi bắt đầu mỗi hiệp sẽ chịu lượng sát thương Băng kèm theo bằng <orangeStrong>{{5, percent}}%</orangeStrong> Tấn Công của Yanqing.<br>Sau khi Yanqing chịu sát thương, Kiếm Khôn Hiểu Lòng Người sẽ biến mất.",
+        "shortDesc": "<orangeStrong>Khi trong Kiếm Khôn Hiểu Lòng Người</orangeStrong>, sẽ giảm xác suất bị tấn công, <orangeStrong>tăng Tỷ Lệ Bạo Kích và Sát Thương Bạo Kích</orangeStrong> của bản thân. <orangeStrong>Sau khi tấn công</orangeStrong> kẻ địch, có xác suất phát động Đòn Đánh Theo Sau, gây Sát Thương Băng cho kẻ đó và có xác suất khiến kẻ đó Đóng Băng.<br>Sau khi bản thân chịu sát thương, Kiếm Khôn Hiểu Lòng Người sẽ biến mất."
       }
     },
     "technique": {

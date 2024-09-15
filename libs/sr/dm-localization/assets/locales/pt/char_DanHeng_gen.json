@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Arte de Lanceiro das Nuvens: Enxurrada",
-        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Dan Heng a um único inimigo.\\nQuando o Dano causado pela Perícia ativa um Acerto CRIT, há uma <u>chance-base</u> de {{4, percent}}% de reduzir a VEL do alvo em {{2, percent}}%, durando por {{3}} rodada(s).",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Dan Heng a um único inimigo.<br>Quando o Dano causado pela Perícia ativa um Acerto CRIT, há uma chance-base de {{4, percent}}% de reduzir a VEL do alvo em {{2, percent}}%, durando por {{3}} rodada(s).",
         "shortDesc": "Causa Dano de Vento a um único inimigo. Ao realizar um Acerto CRIT, há altas chances de causar Lentidão no inimigo."
       }
     },
@@ -20,6 +20,13 @@
         "name": "Sonho Etéreo",
         "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Dan Heng a um único inimigo-alvo. Se o inimigo atacado estiver com Lentidão, o multiplicador do Dano causado pela Perícia Suprema aumenta em <orangeStrong>{{2, percent}}%</orangeStrong>.",
         "shortDesc": "Causa Dano de Vento massivo a um inimigo. Se o inimigo estiver sofrendo de Lentidão, o multiplicador de Dano causado será maior."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Superioridade de Alcance",
+        "fullDesc": "Quando Dan Heng é alvo da habilidade de um aliado, a PEN de RES a Vento de seu próximo ataque recebe um aumento de <orangeStrong>{{1, percent}}%</orangeStrong>. Este efeito pode ser ativado novamente depois de {{2}} rodada(s).",
+        "shortDesc": "Ao se tornar o alvo de uma habilidade de um aliado, a PEN de RES a <orangeStrong>Vento</orangeStrong> de seu próximo ataque aumenta. Este efeito pode ser ativado novamente depois de 2 rodadas."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Visível e Despercebido",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Dragão Rugindo e Sol Crescente",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Uma Gota de Chuva Alimenta Uma Torrente",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "A Alma Inquieta Aguarda",

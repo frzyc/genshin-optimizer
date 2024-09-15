@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "鹽漬野營罐頭",
-        "fullDesc": "為指定我方單體附加【求生反應】，提高等同於玲可<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{2}}</orangeStrong>的生命上限，若該目標為「毀滅」或「存護」命途，則被敵方攻擊的機率大幅提高，【求生反應】持續{{3}}回合。\\n使該目標回復等同於玲可<orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{5}}</orangeStrong>的生命值。",
+        "fullDesc": "為指定我方單體附加【求生反應】，提高等同於玲可<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{2}}</orangeStrong>的生命上限，若該目標為「毀滅」或「存護」命途，則被敵方攻擊的機率大幅提高，【求生反應】持續{{3}}回合。<br>使該目標回復等同於玲可<orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{5}}</orangeStrong>的生命值。",
         "shortDesc": "使我方單體獲得【求生反應】，使其<orangeStrong>生命上限提高</orangeStrong>，同時為其回復生命值。"
       }
     },
     "ult": {
       "0": {
         "name": "雪原急救方案",
-        "fullDesc": "解除我方全體的{{1}}個<u>負面效果</u>，並立即為我方全體回復等同於玲可<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{3}}</orangeStrong>的生命值。",
-        "shortDesc": "解除<orangeStrong>我方全體1個<u>負面效果</u></orangeStrong>，並為我方全體回復生命值。"
+        "fullDesc": "解除我方全體的{{1}}個負面效果，並立即為我方全體回復等同於玲可<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{3}}</orangeStrong>的生命值。",
+        "shortDesc": "解除<orangeStrong>我方全體1個負面效果</orangeStrong>，並為我方全體回復生命值。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "戶外生存經驗",
+        "fullDesc": "施放戰技或終結技時，使我方目標獲得{{1}}回合的持續治療效果，目標每回合開始時回復等同於玲可<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{3}}</orangeStrong>的生命值。若該目標持有【求生反應】，則持續治療效果額外回復等同於玲可<orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{5}}</orangeStrong>的生命值。",
+        "shortDesc": "施放戰技或終結技時，使我方目標獲得<orangeStrong>持續回復生命值</orangeStrong>效果，若目標持有【求生反應】則持續回復生命值效果額外提高。"
       }
     },
     "technique": {

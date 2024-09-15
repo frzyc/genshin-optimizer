@@ -16,7 +16,7 @@
     "skill": {
       "0": {
         "name": "Ámbar inextinguible",
-        "fullDesc": "Tras usar la habilidad básica, el daño que recibe {F#la}{M#el} Trazacaminos se reduce en un <orangeStrong>{{1, percent}}%</orangeStrong> y obtiene una acumulación de Voluntad magmática. Además, tiene un {{2, percent}}% de <u>probabilidad base</u> de afectar a todos los enemigos con Provocación durante {{3}} turno.",
+        "fullDesc": "Tras usar la habilidad básica, el daño que recibe {F#la}{M#el} Trazacaminos se reduce en un <orangeStrong>{{1, percent}}%</orangeStrong> y obtiene una acumulación de Voluntad magmática. Además, tiene un {{2, percent}}% de probabilidad base de afectar a todos los enemigos con Provocación durante {{3}} turno.",
         "shortDesc": "Reduce el daño recibido y obtiene Voluntad magmática. Gran probabilidad de afectar con Provocación a todos los enemigos."
       }
     },
@@ -25,6 +25,13 @@
         "name": "Lanza llameante tras las líneas enemigas",
         "fullDesc": "Inflige a todos los enemigos un Daño de Fuego equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ + <orangeStrong>{{2, percent}}%</orangeStrong> de la DEF {F#de la}{M#del} Trazacaminos. La siguiente vez que se use el ATQ básico, gana automáticamente una potenciación sin consumir Voluntad magmática.",
         "shortDesc": "Inflige Daño de Fuego a todos los enemigos y potencia su siguiente ATQ básico."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Tesoro de los Arquitectos",
+        "fullDesc": "Por cada ataque recibido, obtiene 1 acumulación de Voluntad magmática (puede tener hasta {{3}} acumulaciones).<br>Cuando tiene 4 o más, el ATQ básico se potencia e inflige daño tanto al objetivo como a los enemigos adyacentes.<br>Después de que {F#la}{M#el} Trazacaminos use el ATQ básico, la habilidad básica o la habilidad definitiva, todos los aliados obtienen un escudo que absorbe un daño equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de la DEF {F#de la}{M#del} Trazacaminos + <orangeStrong>{{4}}</orangeStrong> durante {{2}} turnos.",
+        "shortDesc": ""
       }
     },
     "technique": {

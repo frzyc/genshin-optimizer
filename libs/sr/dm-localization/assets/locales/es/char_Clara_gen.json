@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "Svarog te vigila",
-        "fullDesc": "Clara inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Físico a todos los enemigos, y además inflige un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño Físico extra a los objetivos que tengan la Marca de represalia de Svarog.\\nTras usar la habilidad básica, se eliminan todas las Marcas de represalia.",
+        "fullDesc": "Clara inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Físico a todos los enemigos, y además inflige un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño Físico extra a los objetivos que tengan la Marca de represalia de Svarog.<br>Tras usar la habilidad básica, se eliminan todas las Marcas de represalia.",
         "shortDesc": "Inflige Daño Físico a todos los enemigos y además <orangeStrong>inflige Daño Físico extra</orangeStrong> a los que tengan Marca de represalia."
       }
     },
     "ult": {
       "0": {
         "name": "Es una promesa, no una orden",
-        "fullDesc": "Tras usar su habilidad definitiva, el daño que recibe Clara se reduce en un <orangeStrong>{{4, percent}}%</orangeStrong> adicional y la probabilidad de ser atacada aumenta enormemente durante {{3}} turnos.\\nAdemás, el efecto de <u>contraataque</u> de Svarog se potencia. Cuando un aliado recibe un ataque, Svarog lanza un <u>contraataque</u> inmediatamente, su multiplicador de daño aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong> e inflige un 50% del daño que reciba el objetivo principal a los enemigos adyacentes. El efecto de potenciación se puede activar {{5}} veces.",
-        "shortDesc": "<orangeStrong>Reduce el daño recibido</orangeStrong>, aumenta la probabilidad ser atacada y potencia el efecto de <u>contraataque</u>."
+        "fullDesc": "Tras usar su habilidad definitiva, el daño que recibe Clara se reduce en un <orangeStrong>{{4, percent}}%</orangeStrong> adicional y la probabilidad de ser atacada aumenta enormemente durante {{3}} turnos.<br>Además, el efecto de contraataque de Svarog se potencia. Cuando un aliado recibe un ataque, Svarog lanza un contraataque inmediatamente, su multiplicador de daño aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong> e inflige un 50% del daño que reciba el objetivo principal a los enemigos adyacentes. El efecto de potenciación se puede activar {{5}} veces.",
+        "shortDesc": "<orangeStrong>Reduce el daño recibido</orangeStrong>, aumenta la probabilidad ser atacada y potencia el efecto de contraataque."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Porque somos familia",
+        "fullDesc": "Clara está bajo la protección de Svarog y el daño que recibe de los ataques enemigos se reduce en un {{3, percent}}%. Svarog marca a los enemigos que ataquen a Clara con su Marca de represalia y se venga con un contraataque que inflige un <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Clara como Daño Físico.",
+        "shortDesc": "<orangeStrong>Reduce el daño que recibe de los ataques enemigos</orangeStrong>. Los enemigos que atacan quedan marcados con la Marca de represalia y <orangeStrong>reciben un contraataque de Svarog</orangeStrong> que inflige Daño Físico."
       }
     },
     "technique": {

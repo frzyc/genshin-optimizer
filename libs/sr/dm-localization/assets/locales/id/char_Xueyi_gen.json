@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Divine Castigation",
-        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Xueyi pada 1 target musuh. Serangan ini mengabaikan Tipe Weakness dan mengurangi Toughness musuh tersebut. Jika mengakibatkan Weakness Break dengan cara ini, maka akan memicu efek Quantum Weakness Break.\\nDalam serangan kali ini, semakin banyak Toughness yang berkurang, semakin tinggi DMG yang diakibatkan, maksimal hingga <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.",
+        "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Xueyi pada 1 target musuh. Serangan ini mengabaikan Tipe Weakness dan mengurangi Toughness musuh tersebut. Jika mengakibatkan Weakness Break dengan cara ini, maka akan memicu efek Quantum Weakness Break.<br>Dalam serangan kali ini, semakin banyak Toughness yang berkurang, semakin tinggi DMG yang diakibatkan, maksimal hingga <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.",
         "shortDesc": "Mengakibatkan Quantum DMG dalam jumlah besar pada satu musuh. Serangan ini <orangeStrong>mengabaikan Tipe Weakness</orangeStrong> dan mengurangi Toughness musuh tersebut. Semakin banyak Toughness yang berkurang, semakin tinggi DMG yang diakibatkan."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Karmic Perpetuation",
+        "fullDesc": "Saat serangan yang dilancarkan Xueyi mengurangi Toughness musuh, Xueyi akan menumpuk lapisan \"Karma\". Semakin banyak Toughness yang berkurang, semakin banyak lapisan \"Karma\" yang diperoleh, dapat ditumpuk hingga {{1}} lapis.<br>Setelah serangan yang dilancarkan rekan tim Xueyi mengurangi Toughness musuh, Xueyi akan memperoleh {{3}} lapis \"Karma\".<br>Saat tumpukan lapisan \"Karma\" mencapai batas maksimum, semua lapisan \"Karma\" saat ini akan dikonsumsi, dan Xueyi akan segera melancarkan Serangan Lanjutan pada target musuh, mengakibatkan DMG sebanyak 3 kali, yang masing-masing mengakibatkan Quantum DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Xueyi pada musuh secara acak. Serangan Lanjutan ini tidak akan menambah lapisan \"Karma\".",
+        "shortDesc": "Saat serangan yang dilancarkan Xueyi atau setelah serangan yang dilancarkan rekan tim Xueyi mengurangi Toughness musuh, Xueyi akan memperoleh lapisan \"Karma\". Saat tumpukan \"Karma\" mencapai batas maksimum, Xueyi akan <orangeStrong>segera melancarkan Serangan Lanjutan</orangeStrong> yang mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh, total Bounce 3 kali dan mengonsumsi semua \"Karma.\""
       }
     },
     "technique": {

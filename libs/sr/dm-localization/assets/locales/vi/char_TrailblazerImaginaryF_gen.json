@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Diễu Hành Đèn Sân Khấu Huyên Náo",
-        "fullDesc": "Gắn hiệu ứng Bạn Nhảy cho toàn thể phe ta, duy trì {{1}} hiệp. Khi bắt đầu mỗi hiệp của Nhà Khai Phá, số hiệp duy trì giảm 1. Mục tiêu phe ta có Bạn Nhảy sẽ tăng <orangeStrong>{{3, percent}}%</orangeStrong> Tấn Công Kích Phá, đồng thời, sau khi tấn công kẻ địch trong <u>trạng thái Phá Vỡ Điểm Yếu</u>, sẽ khiến điểm Giảm Sức Bền của lần tấn công này chuyển hóa thành 1 lần <u>Siêu Sát Thương Phá Vỡ</u>.",
-        "shortDesc": "Thi triển hiệu ứng Bạn Nhảy cho toàn bộ phe ta. Mục tiêu phe ta có Bạn Nhảy sẽ <orangeStrong>tăng Tấn Công Kích Phá</orangeStrong>, đồng thời, sau khi tấn công kẻ địch trong <u>trạng thái Phá Vỡ Điểm Yếu</u> sẽ gây thêm 1 lần <orangeStrong><u>Siêu Sát Thương Phá Vỡ</u></orangeStrong>."
+        "fullDesc": "Gắn hiệu ứng Bạn Nhảy cho toàn thể phe ta, duy trì {{1}} hiệp. Khi bắt đầu mỗi hiệp của Nhà Khai Phá, số hiệp duy trì giảm 1. Mục tiêu phe ta có Bạn Nhảy sẽ tăng <orangeStrong>{{3, percent}}%</orangeStrong> Tấn Công Kích Phá, đồng thời, sau khi tấn công kẻ địch trong trạng thái Phá Vỡ Điểm Yếu, sẽ khiến điểm Giảm Sức Bền của lần tấn công này chuyển hóa thành 1 lần Siêu Sát Thương Phá Vỡ.",
+        "shortDesc": "Thi triển hiệu ứng Bạn Nhảy cho toàn bộ phe ta. Mục tiêu phe ta có Bạn Nhảy sẽ <orangeStrong>tăng Tấn Công Kích Phá</orangeStrong>, đồng thời, sau khi tấn công kẻ địch trong trạng thái Phá Vỡ Điểm Yếu sẽ gây thêm 1 lần <orangeStrong>Siêu Sát Thương Phá Vỡ</orangeStrong>."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Ca Múa Trên Không Toàn Màn Hình",
+        "fullDesc": "Khi có điểm yếu của kẻ địch bị phá vỡ, Nhà Khai Phá sẽ hồi ngay <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> Năng Lượng.",
+        "shortDesc": "Khi có điểm yếu của kẻ địch bị phá vỡ, Nhà Khai Phá sẽ hồi Năng Lượng."
       }
     },
     "technique": {

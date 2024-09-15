@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "{RUBY_B#しおづ}塩漬{RUBY_E#}け{RUBY_B#やえいかんづめ}野営缶詰{RUBY_E#}",
-        "fullDesc": "指定した味方単体に「サバイバル反応」を付与し、最大HPをリンクスの最大HP<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>分アップさせる。その味方が「壊滅」または「存護」の運命にある場合、敵に攻撃される確率が大アップする。「サバイバル反応」は{{3}}ターン継続。\\n「サバイバル反応」を付与された味方は、HPをリンクスの最大HP<orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{5}}</orangeStrong>回復する。",
+        "fullDesc": "指定した味方単体に「サバイバル反応」を付与し、最大HPをリンクスの最大HP<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>分アップさせる。その味方が「壊滅」または「存護」の運命にある場合、敵に攻撃される確率が大アップする。「サバイバル反応」は{{3}}ターン継続。<br>「サバイバル反応」を付与された味方は、HPをリンクスの最大HP<orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{5}}</orangeStrong>回復する。",
         "shortDesc": "味方単体に「サバイバル反応」を与え、<orangeStrong>最大HPをアップ</orangeStrong>し、HPを回復する。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#せつげんきゅうきゅうしょち}雪原救急処置{RUBY_E#}",
-        "fullDesc": "味方全体の<u>デバフ</u>を{{1}}つ解除し、味方全体のHPをリンクスの最大HP<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{3}}</orangeStrong>回復する。",
-        "shortDesc": "<orangeStrong>味方全体の<u>デバフ</u>を1つ解除し</orangeStrong>、味方全体のHPを回復する。"
+        "fullDesc": "味方全体のデバフを{{1}}つ解除し、味方全体のHPをリンクスの最大HP<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{3}}</orangeStrong>回復する。",
+        "shortDesc": "<orangeStrong>味方全体のデバフを1つ解除し</orangeStrong>、味方全体のHPを回復する。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#やがい}野外{RUBY_E#}サバイバル{RUBY_B#けいけん}経験{RUBY_E#}",
+        "fullDesc": "戦闘スキルまたは必殺技を発動した時、ターゲットに{{1}}ターン継続する持続治癒効果を付与する。その味方のターンが回ってくるたびに、リンクスの最大HP<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{3}}</orangeStrong>のHPを回復する。味方が「サバイバル反応」を持つ場合、持続治癒効果がさらにリンクスの最大HP<orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{5}}</orangeStrong>アップする。",
+        "shortDesc": "戦闘スキルまたは必殺技を発動した時、味方に<orangeStrong>持続HP回復効果</orangeStrong>を付与し、その味方が「サバイバル反応」を有している場合、持続回復効果がアップする。"
       }
     },
     "technique": {

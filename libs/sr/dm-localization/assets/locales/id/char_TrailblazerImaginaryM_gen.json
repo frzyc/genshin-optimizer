@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "All-Out Footlight Parade",
-        "fullDesc": "Menambahkan efek \"Backup Dancer\" pada seluruh rekan tim, berlangsung selama {{1}} giliran. Durasi giliran akan berkurang 1 setiap kali giliran Trailblazer dimulai. Break Effect rekan tim berstatus \"Backup Dancer\" akan meningkat <orangeStrong>{{3, percent}}%</orangeStrong>, dan setelah menyerang target musuh <u>berstatus Weakness Break</u>, akan mengubah pengurangan nilai Toughness dari serangan kali ini menjadi 1 kali <u>Super Break DMG</u>.",
-        "shortDesc": "Menambahkan efek \"Backup Dancer\" pada seluruh rekan tim. <orangeStrong>Break Effect</orangeStrong> rekan tim yang memiliki \"Backup Dancer\" akan meningkat, dan setelah menyerang target musuh berstatus <u>Weakness Break</u>, akan mengakibatkan 1 kali <orangeStrong><u>Super Break DMG</u></orangeStrong> tambahan."
+        "fullDesc": "Menambahkan efek \"Backup Dancer\" pada seluruh rekan tim, berlangsung selama {{1}} giliran. Durasi giliran akan berkurang 1 setiap kali giliran Trailblazer dimulai. Break Effect rekan tim berstatus \"Backup Dancer\" akan meningkat <orangeStrong>{{3, percent}}%</orangeStrong>, dan setelah menyerang target musuh berstatus Weakness Break, akan mengubah pengurangan nilai Toughness dari serangan kali ini menjadi 1 kali Super Break DMG.",
+        "shortDesc": "Menambahkan efek \"Backup Dancer\" pada seluruh rekan tim. <orangeStrong>Break Effect</orangeStrong> rekan tim yang memiliki \"Backup Dancer\" akan meningkat, dan setelah menyerang target musuh berstatus Weakness Break, akan mengakibatkan 1 kali <orangeStrong>Super Break DMG</orangeStrong> tambahan."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Full-on Aerial Dance",
+        "fullDesc": "Saat ada target musuh yang terkena Weakness Break, Trailblazer akan segera memulihkan <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> Energy.",
+        "shortDesc": "Saat ada target musuh yang terkena Weakness Break, Trailblazer akan memulihkan Energy."
       }
     },
     "technique": {

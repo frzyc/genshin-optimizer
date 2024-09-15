@@ -27,10 +27,17 @@
         "shortDesc": "Verbraucht <orangeStrong>{{4}}</orangeStrong> Pkt. Energie und fügt allen Gegnern physischen SCH zu. Verursacht darüber hinaus bei einem zufälligen Gegner geringen physischen SCH mit insgesamt 6 Abprallungen."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Erhabene Moral",
+        "fullDesc": "Nach dem Einsatz des Standardangriffs, der Fertigkeit oder des Ultimates stellt Argenti für jeden getroffenen Gegner {{1}} Pkt. Energie wieder her und erhält 1 Stapelung „Apotheose“, wodurch seine KRIT-Rate um <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> erhöht wird. Dieser Effekt ist bis zu {{3}}-fach stapelbar.",
+        "shortDesc": "Beim Einsatz des Standardangriffs, der Fertigkeit oder des Ultimates wird Argenti für jeden getroffenen Gegner <orangeStrong>Energie wiederhergestellt</orangeStrong> und seine <orangeStrong>KRIT-Rate</orangeStrong> erhöht."
+      }
+    },
     "technique": {
       "0": {
         "name": "Manifest der reinen Tugend",
-        "fullDesc": "Nach dem Einsatz der Technik werden Gegner in einem bestimmten Bereich {{1}} s lang von Schwindel betroffen und können nicht angreifen.\\nGreift man aktiv einen von Schwindel betroffenen Gegner an, verursacht Argenti nach Kampfeintritt bei allen Gegnern physischen SCH in Höhe von {{2, percent}}% seines ANG und stellt {{3}} Pkt. Energie wieder her.",
+        "fullDesc": "Nach dem Einsatz der Technik werden Gegner in einem bestimmten Bereich {{1}} s lang von Schwindel betroffen und können nicht angreifen.<br>Greift man aktiv einen von Schwindel betroffenen Gegner an, verursacht Argenti nach Kampfeintritt bei allen Gegnern physischen SCH in Höhe von {{2, percent}}% seines ANG und stellt {{3}} Pkt. Energie wieder her.",
         "shortDesc": "Verursacht bei Gegnern in einem bestimmten Bereich Schwindel. Beim Angriff eines von Schwindel betroffenen Gegners verursacht Argenti nach Kampfeintritt bei allen Gegnern geringen physischen SCH und stellt Energie wieder her."
       }
     },

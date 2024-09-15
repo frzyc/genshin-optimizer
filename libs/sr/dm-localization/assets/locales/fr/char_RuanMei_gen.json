@@ -18,14 +18,21 @@
     "ult": {
       "0": {
         "name": "Ondée de pétales",
-        "fullDesc": "Ruan Mei déploie une zone qui dure {{2}} tours. La durée de cette zone diminue de 1 au début de son tour.\\nLa PÉN de RÉS à tous les types de tous les alliés augmente de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> lorsqu'ils se trouvent à l'intérieur de la zone et leurs attaques appliquent Floraison incomplète aux ennemis touchés.\\nFloraison incomplète se déclenche lorsque ces ennemis tentent de se rétablir d'une <u>Rupture de faiblesse</u>, ce qui prolonge la durée de leur état de <u>Rupture de faiblesse</u> et <u>retarde leur action</u> à hauteur de {{3, percent}}% de l'effet de Rupture de Ruan Mei + {{4, percent}}%, tout en infligeant des DGT de rupture équivalents à <orangeStrong>{{5, percent}}%</orangeStrong> des <u>DGT de rupture</u> de glace de Ruan Mei.\\nLes cibles ennemies ne peuvent pas subir à nouveau Floraison incomplète tant qu'elles n'ont pas récupéré de l'état de <u>Rupture de faiblesse</u>.",
+        "fullDesc": "Ruan Mei déploie une zone qui dure {{2}} tours. La durée de cette zone diminue de 1 au début de son tour.<br>La PÉN de RÉS à tous les types de tous les alliés augmente de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> lorsqu'ils se trouvent à l'intérieur de la zone et leurs attaques appliquent Floraison incomplète aux ennemis touchés.<br>Floraison incomplète se déclenche lorsque ces ennemis tentent de se rétablir d'une Rupture de faiblesse, ce qui prolonge la durée de leur état de Rupture de faiblesse et retarde leur action à hauteur de {{3, percent}}% de l'effet de Rupture de Ruan Mei + {{4, percent}}%, tout en infligeant des DGT de rupture équivalents à <orangeStrong>{{5, percent}}%</orangeStrong> des DGT de rupture de glace de Ruan Mei.<br>Les cibles ennemies ne peuvent pas subir à nouveau Floraison incomplète tant qu'elles n'ont pas récupéré de l'état de Rupture de faiblesse.",
         "shortDesc": "Augmente la <orangeStrong>PÉN de RÉS à tous les types</orangeStrong> pour tous les alliés. Leurs attaques appliquent Floraison incomplète aux ennemis touchés."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Spirale fractale",
+        "fullDesc": "Augmente la VIT de toute l'équipe de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> (à l'exception de ce personnage). Lorsqu'un allié inflige une Rupture de faiblesse à une cible ennemie, Ruan Mei inflige des DGT de rupture équivalents à <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> de ses propres DGT de rupture de glace à cette cible.",
+        "shortDesc": "Augmente la <orangeStrong>VIT</orangeStrong> de tous les alliés (à l'exception de ce personnage). Infliger une Rupture de faiblesse à une cible ennemie lui inflige des <orangeStrong>DGT de rupture de glace supplémentaires</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Sérénade de soie",
-        "fullDesc": "Obtient Sérénade de soie après avoir utilisé la technique. Déclenche automatiquement la compétence sans utiliser de point de compétence {{1}} fois au début du combat suivant.\\nDans l'Univers simulé ou parallèle, lorsque Ruan Mei bénéficie de Sérénade de soie et que l'équipe attaque activement une cible ennemie, la Faiblesse de l'ennemi est toujours considérée comme ayant été attaquée pour entrer en combat, et cette attaque peut réduire la robustesse de tous les ennemis quel que soit leur type de faiblesse. Lorsque vous infligez une Rupture de faiblesse, vous déclenchez l'effet de Rupture correspondant au type de faiblesse de l'assaillant. Augmente la réduction de robustesse de cette attaque de {{2, percent}}% pour chaque bénédiction possédée (un maximum de {{4}} bénédictions sont prises en compte). D'autre part, inflige à l'ennemi des DGT de rupture équivalents à {{3, percent}}% des DGT de rupture de glace de Ruan Mei si cette attaque provoque une Rupture de faiblesse à un ennemi.",
+        "fullDesc": "Obtient Sérénade de soie après avoir utilisé la technique. Déclenche automatiquement la compétence sans utiliser de point de compétence {{1}} fois au début du combat suivant.<br>Dans l'Univers simulé ou parallèle, lorsque Ruan Mei bénéficie de Sérénade de soie et que l'équipe attaque activement une cible ennemie, la Faiblesse de l'ennemi est toujours considérée comme ayant été attaquée pour entrer en combat, et cette attaque peut réduire la robustesse de tous les ennemis quel que soit leur type de faiblesse. Lorsque vous infligez une Rupture de faiblesse, vous déclenchez l'effet de Rupture correspondant au type de faiblesse de l'assaillant. Augmente la réduction de robustesse de cette attaque de {{2, percent}}% pour chaque bénédiction possédée (un maximum de {{4}} bénédictions sont prises en compte). D'autre part, inflige à l'ennemi des DGT de rupture équivalents à {{3, percent}}% des DGT de rupture de glace de Ruan Mei si cette attaque provoque une Rupture de faiblesse à un ennemi.",
         "shortDesc": "Déclenche automatiquement la compétence de ce personnage <orangeStrong>{{1}}</orangeStrong> fois la prochaine fois qu'il entre en combat. Après avoir utilisé la technique, les alliés qui attaquent des ennemis dans l'Univers simulé ou parallèle sont toujours considérés comme entrant en combat après avoir attaqué la Faiblesse des ennemis, et la robustesse des ennemis est réduite <orangeStrong>quel que soit leur type de faiblesse</orangeStrong>. Augmente la réduction de robustesse et les DGT de rupture infligés en cas de Rupture de faiblesse pour chaque bénédiction possédée."
       }
     },
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Virevolte viridescente",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "4": {
       "name": "Éclat chatoyant",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Barrette de languissement",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "6": {
       "name": "Cascade de rubans",

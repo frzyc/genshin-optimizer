@@ -22,6 +22,13 @@
         "shortDesc": "Entre dans l'<orangeStrong>état amélioré</orangeStrong> et inflige des DGT quantiques massifs à un ennemi unique."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Résurgence",
+        "fullDesc": "Lorsqu'elle élimine un ennemi avec son ATQ normale, sa compétence ou son ultime, Seele entre dans l'état amélioré et bénéficie d'un tour supplémentaire. Lorsqu'elle est dans l'état amélioré, les DGT de ses attaques augmentent de <orangeStrong>{{1, percent}}%</orangeStrong> pendant {{2}} tour.<br>Les ennemis vaincus pendant le tour supplémentaire accordé par « Résurgence » ne déclenchent pas « Résurgence » à nouveau.",
+        "shortDesc": "Utilise l'ATQ normale, la compétence et l'ultime pour <orangeStrong>éliminer les ennemis</orangeStrong>, gagner des <orangeStrong>tours supplémentaires et entrer dans l'état amélioré</orangeStrong>. Les DGT infligés augmentent dans l'état amélioré."
+      }
+    },
     "technique": {
       "0": {
         "name": "Illusion fantôme",
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Tumulte éblouissant",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "4": {
       "name": "Phantasme d'un instant",
@@ -77,11 +84,11 @@
     },
     "5": {
       "name": "Éclats perçants",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "6": {
       "name": "Ébranlements éclatants",
-      "desc": "Après utilisation de l'ultime de Seele, inflige l'effet Volée de papillons à la cible ennemie pendant {{2}} tour. Les ennemis affectés par Volée de papillons subissent des DGT quantiques additionnels équivalents à {{1, percent}}% des DGT de l'ultime de Seele chaque fois qu'ils sont attaqués. Si la cible ennemie est vaincue par les DGT de Volée de papillons provoqués par les attaques d'autres alliés, le talent de Seele ne se déclenche pas.\\nLorsque Seele est à terre, l'effet Volée de papillons infligé aux ennemis est supprimé."
+      "desc": "Après utilisation de l'ultime de Seele, inflige l'effet Volée de papillons à la cible ennemie pendant {{2}} tour. Les ennemis affectés par Volée de papillons subissent des DGT quantiques additionnels équivalents à {{1, percent}}% des DGT de l'ultime de Seele chaque fois qu'ils sont attaqués. Si la cible ennemie est vaincue par les DGT de Volée de papillons provoqués par les attaques d'autres alliés, le talent de Seele ne se déclenche pas.<br>Lorsque Seele est à terre, l'effet Volée de papillons infligé aux ennemis est supprimé."
     }
   }
 }

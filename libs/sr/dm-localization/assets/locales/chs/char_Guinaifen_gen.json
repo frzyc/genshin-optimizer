@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "迎面开门红",
-        "fullDesc": "对指定敌方单体造成等同于桂乃芬<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的火属性伤害，并对相邻目标造成等同于桂乃芬<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的火属性伤害，有{{3, percent}}%的<u>基础概率</u>使目标与相邻目标陷入灼烧状态。灼烧状态下，敌方目标每回合开始时受到等同于桂乃芬<orangeStrong>{{4, percent}}%</orangeStrong>攻击力的火属性持续伤害，持续{{5}}回合。",
+        "fullDesc": "对指定敌方单体造成等同于桂乃芬<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的火属性伤害，并对相邻目标造成等同于桂乃芬<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的火属性伤害，有{{3, percent}}%的基础概率使目标与相邻目标陷入灼烧状态。灼烧状态下，敌方目标每回合开始时受到等同于桂乃芬<orangeStrong>{{4, percent}}%</orangeStrong>攻击力的火属性持续伤害，持续{{5}}回合。",
         "shortDesc": "对敌方单体造成火属性伤害，对相邻目标造成少量火属性伤害，大概率施加<orangeStrong>灼烧状态</orangeStrong>。"
       }
     },
@@ -22,10 +22,17 @@
         "shortDesc": "对敌方全体造成火属性伤害，若敌方目标处于灼烧状态，则使灼烧状态额外产生1次伤害。"
       }
     },
+    "talent": {
+      "0": {
+        "name": "古来君子养艺人",
+        "fullDesc": "桂乃芬在场时，敌方受到的灼烧状态触发伤害后，有{{1, percent}}%的基础概率陷入【吞火】状态，【吞火】状态下敌方目标受到的伤害提高<orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>，持续{{5}}回合，最多叠加{{6}}层。",
+        "shortDesc": "敌方受到的<orangeStrong>灼烧状态触发伤害后</orangeStrong>，大概率施加<orangeStrong>【吞火】状态</orangeStrong>。"
+      }
+    },
     "technique": {
       "0": {
         "name": "耍耍把式卖卖艺",
-        "fullDesc": "立即攻击敌人，进入战斗后造成{{2}}次伤害，每次伤害对敌方随机单体造成等同于桂乃芬{{1, percent}}%攻击力的火属性伤害并有{{3, percent}}%的<u>基础概率</u>使目标陷入【吞火】状态。",
+        "fullDesc": "立即攻击敌人，进入战斗后造成{{2}}次伤害，每次伤害对敌方随机单体造成等同于桂乃芬{{1, percent}}%攻击力的火属性伤害并有{{3, percent}}%的基础概率使目标陷入【吞火】状态。",
         "shortDesc": "攻击敌人，进战后对敌方单体造成少量火属性伤害并施加<orangeStrong>【吞火】状态</orangeStrong>，共弹射4次。"
       }
     },

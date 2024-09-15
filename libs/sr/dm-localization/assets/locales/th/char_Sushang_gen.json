@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "Cloudfencer Art: Mountainfall",
-        "fullDesc": "สร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Sushang แก่ศัตรูที่กำหนดหนึ่งตัว ขณะเดียวกัน หลังจากการโจมตีครั้งสุดท้าย จะมีโอกาส {{3, percent}}% ที่จะปล่อย \"Sword Stance\" เพื่อสร้าง <u>DMG กายภาพเพิ่มเติม</u> <orangeStrong>{{2, percent}}%</orangeStrong> ของ ATK ของ Sushang แก่เป้าหมาย\\nหากเป้าหมายนั้นติด<u>สถานะทำลายจุดอ่อน</u> \"Sword Stance\" จะถูกปล่อยอย่างแน่นอน",
-        "shortDesc": "สร้าง DMG กายภาพแก่ศัตรูหนึ่งตัว และ<orangeStrong>มีโอกาสเล็กน้อยที่จะปล่อย \"Sword Stance\"</orangeStrong> หากเป้าหมายติด <u>สถานะทำลายจุดอ่อน</u> <orangeStrong>\"Sword Stance\" จะถูกปล่อยอย่างแน่นอน</orangeStrong>"
+        "fullDesc": "สร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Sushang แก่ศัตรูที่กำหนดหนึ่งตัว ขณะเดียวกัน หลังจากการโจมตีครั้งสุดท้าย จะมีโอกาส {{3, percent}}% ที่จะปล่อย \"Sword Stance\" เพื่อสร้าง DMG กายภาพเพิ่มเติม <orangeStrong>{{2, percent}}%</orangeStrong> ของ ATK ของ Sushang แก่เป้าหมาย<br>หากเป้าหมายนั้นติดสถานะทำลายจุดอ่อน \"Sword Stance\" จะถูกปล่อยอย่างแน่นอน",
+        "shortDesc": "สร้าง DMG กายภาพแก่ศัตรูหนึ่งตัว และ<orangeStrong>มีโอกาสเล็กน้อยที่จะปล่อย \"Sword Stance\"</orangeStrong> หากเป้าหมายติด สถานะทำลายจุดอ่อน <orangeStrong>\"Sword Stance\" จะถูกปล่อยอย่างแน่นอน</orangeStrong>"
       }
     },
     "ult": {
       "0": {
         "name": "Shape of Taixu: Dawn Herald",
-        "fullDesc": "สร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Sushang แก่ศัตรูที่กำหนดหนึ่งตัว และทำให้ Sushang แอ็กชันทันที พร้อมทั้งทำให้ ATK เพิ่มขึ้น <orangeStrong>{{4, percent}}%</orangeStrong> และเมื่อใช้สกิลต่อสู้ จะเพิ่มโอกาสเกิด \"Sword Stance\" อีก 2 ครั้ง เป็นเวลา {{2}} เทิร์น\\n\"Sword Stance\" ที่เกิดจากโอกาสเพิ่มเติมนี้ จะสร้าง DMG {{3, percent}}% ของค่า DMG เดิม",
+        "fullDesc": "สร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Sushang แก่ศัตรูที่กำหนดหนึ่งตัว และทำให้ Sushang แอ็กชันทันที พร้อมทั้งทำให้ ATK เพิ่มขึ้น <orangeStrong>{{4, percent}}%</orangeStrong> และเมื่อใช้สกิลต่อสู้ จะเพิ่มโอกาสเกิด \"Sword Stance\" อีก 2 ครั้ง เป็นเวลา {{2}} เทิร์น<br>\"Sword Stance\" ที่เกิดจากโอกาสเพิ่มเติมนี้ จะสร้าง DMG {{3, percent}}% ของค่า DMG เดิม",
         "shortDesc": "สร้าง DMG กายภาพ อย่างรุนแรงแก่ฝ่ายศัตรูหนึ่งตัว พร้อมเสริมพลังเอฟเฟกต์ \"Sword Stance\" และ<orangeStrong>ทำการแอ็กชันทันที</orangeStrong>"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Dancing Blade",
+        "fullDesc": "หากในการต่อสู้มีศัตรูเป้าหมายที่ถูกทำลายจุดอ่อน ความเร็วของ Sushang จะเพิ่มขึ้น <orangeStrong>{{1, percent(fixed: 2)}}%</orangeStrong> เป็นเวลา {{2}} เทิร์น",
+        "shortDesc": "เมื่อจุดอ่อนของศัตรูที่อยู่ในการต่อสู้ถูกทำลาย ความเร็วของตัวเองจะเพิ่มขึ้น"
       }
     },
     "technique": {
@@ -81,7 +88,7 @@
     },
     "6": {
       "name": "Dwell Like Water",
-      "desc": "เอฟเฟกต์เร่งความเร็วของพรสวรรค์ สามารถซ้อนทับได้ โดยสามารถซ้อนทับได้มากสุด 2 ชั้น และหลังจากเข้าสู่การต่อสู้\\nSushang จะได้รับเอฟเฟกต์เร่งความเร็ว จากพรสวรรค์ 1 ชั้นทันที"
+      "desc": "เอฟเฟกต์เร่งความเร็วของพรสวรรค์ สามารถซ้อนทับได้ โดยสามารถซ้อนทับได้มากสุด 2 ชั้น และหลังจากเข้าสู่การต่อสู้<br>Sushang จะได้รับเอฟเฟกต์เร่งความเร็ว จากพรสวรรค์ 1 ชั้นทันที"
     }
   }
 }

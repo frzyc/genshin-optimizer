@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "Redéploiement de combat",
-        "fullDesc": "Dissipe un <u>malus</u> d'un allié, lui permet d'agir immédiatement et augmente ses DGT de <orangeStrong>{{1, percent}}%</orangeStrong> pendant {{3}} tour.\\nLorsque cette compétence est utilisée sur Bronya, elle ne peut pas agir immédiatement à nouveau.",
-        "shortDesc": "<orangeStrong>Dissipe</orangeStrong> 1 <orangeStrong><u>malus</u></orangeStrong> subi par un allié unique, <orangeStrong>augmente les DGT qu'il inflige</orangeStrong>, et lui permet d'<orangeStrong>agir immédiatement</orangeStrong>."
+        "fullDesc": "Dissipe un malus d'un allié, lui permet d'agir immédiatement et augmente ses DGT de <orangeStrong>{{1, percent}}%</orangeStrong> pendant {{3}} tour.<br>Lorsque cette compétence est utilisée sur Bronya, elle ne peut pas agir immédiatement à nouveau.",
+        "shortDesc": "<orangeStrong>Dissipe</orangeStrong> 1 <orangeStrong>malus</orangeStrong> subi par un allié unique, <orangeStrong>augmente les DGT qu'il inflige</orangeStrong>, et lui permet d'<orangeStrong>agir immédiatement</orangeStrong>."
       }
     },
     "ult": {
@@ -20,6 +20,13 @@
         "name": "La marche de Belobog",
         "fullDesc": "Augmente l'ATQ de tous les alliés de <orangeStrong>{{1, percent}}%</orangeStrong> et augmente leurs DGT critiques d'un montant équivalent à <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> des DGT critiques de Bronya + <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> pendant {{4}} tours.",
         "shortDesc": "Augmente l'<orangeStrong>ATQ</orangeStrong> et les <orangeStrong>DGT critiques</orangeStrong> de tous les alliés."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Première de cordée",
+        "fullDesc": "Après utilisation de son ATQ normale, l'action suivante de Bronya est avancée de <orangeStrong>{{1, percent}}%</orangeStrong>.",
+        "shortDesc": "Après avoir lancée l'ATQ normale, la prochaine action est avancée."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Bombardement",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "4": {
       "name": "Embuscade",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Inarrêtable",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "6": {
       "name": "Au-delà de l'arc-en-ciel",

@@ -18,7 +18,7 @@
     "ult": {
       "0": {
         "name": "As estelar",
-        "fullDesc": "Elige entre dos formas de dar un fuerte golpe.\\nVictoria total: Golpe de despedida inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Físico a un enemigo.\\nVictoria total: Carrera final inflige un <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Físico a un objetivo y un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Físico a los enemigos adyacentes.",
+        "fullDesc": "Elige entre dos formas de dar un fuerte golpe.<br>Victoria total: Golpe de despedida inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Físico a un enemigo.<br>Victoria total: Carrera final inflige un <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Físico a un objetivo y un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ {F#de la}{M#del} Trazacaminos como Daño Físico a los enemigos adyacentes.",
         "shortDesc": "Elige entre ATQ individual o Ráfaga para dar un fuerte golpe."
       },
       "1": {
@@ -30,6 +30,13 @@
         "name": "Victoria total: Carrera final",
         "fullDesc": "{F#La}{M#El} Trazacaminos inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Físico a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño Físico a los enemigos adyacentes.",
         "shortDesc": "Inflige Daño Físico a un objetivo y a los enemigos adyacentes."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Recogida perfecta",
+        "fullDesc": "Cada Ruptura de Debilidad que inflige al objetivo enemigo aumenta el ATQ {F#de la}{M#del} Trazacaminos en un <orangeStrong>{{1, percent}}%</orangeStrong>. Este efecto puede acumularse hasta {{2}} veces.",
+        "shortDesc": ""
       }
     },
     "technique": {

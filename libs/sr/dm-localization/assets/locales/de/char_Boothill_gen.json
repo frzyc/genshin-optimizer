@@ -9,22 +9,29 @@
       },
       "1": {
         "name": "Finger am Abzug",
-        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Boothills ANG zu.\\nDer verstärkte Standardangriff stellt keine Fertigkeitspunkte wieder her und kann nur gegnerische Ziele im Status „Tödliche Konfrontation“ angreifen.",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Boothills ANG zu.<br>Der verstärkte Standardangriff stellt keine Fertigkeitspunkte wieder her und kann nur gegnerische Ziele im Status „Tödliche Konfrontation“ angreifen.",
         "shortDesc": "Fügt einem Gegner physischen SCH zu. Kann nur das Ziel von „Tödliche Konfrontation“ angreifen."
       }
     },
     "skill": {
       "0": {
         "name": "Tango des Tänzers auf brennendem Kies",
-        "fullDesc": "Lässt einen anvisierten Gegner und Boothill in den Status „Tödliche Konfrontation“ eintreten. Boothill erhält für {{3}} Rd. einen verstärkten Standardangriff und kann seine Fertigkeit nicht einsetzen. Diese Dauer wird jeweils zu Beginn von Boothills Rd. um 1 verringert.\\nDas gegnerische Ziel mit Tödliche Konfrontation wird verspottet. Wenn das Ziel / Boothill voneinander angegriffen wird, erleiden sie jeweils <orangeStrong>{{1, percent}}%</orangeStrong>/{{2, percent}}% mehr SCH.\\nNachdem das Ziel besiegt wurde oder Schwächebruch erlitten hat, erhält Boothill 1 Stapelung „Trumpf in der Tasche“ und Tödliche Konfrontation wird dann aufgehoben.\\nDiese Fertigkeit stellt keine Energie wieder her. Nach dem Einsatz dieser Fertigkeit wird die aktuelle Runde nicht beendet.",
+        "fullDesc": "Lässt einen anvisierten Gegner und Boothill in den Status „Tödliche Konfrontation“ eintreten. Boothill erhält für {{3}} Rd. einen verstärkten Standardangriff und kann seine Fertigkeit nicht einsetzen. Diese Dauer wird jeweils zu Beginn von Boothills Rd. um 1 verringert.<br>Das gegnerische Ziel mit Tödliche Konfrontation wird verspottet. Wenn das Ziel / Boothill voneinander angegriffen wird, erleiden sie jeweils <orangeStrong>{{1, percent}}%</orangeStrong>/{{2, percent}}% mehr SCH.<br>Nachdem das Ziel besiegt wurde oder Schwächebruch erlitten hat, erhält Boothill 1 Stapelung „Trumpf in der Tasche“ und Tödliche Konfrontation wird dann aufgehoben.<br>Diese Fertigkeit stellt keine Energie wieder her. Nach dem Einsatz dieser Fertigkeit wird die aktuelle Runde nicht beendet.",
         "shortDesc": "Aktiviert <orangeStrong>Tödliche Konfrontation</orangeStrong>. Nachdem das Ziel von Tödliche Konfrontation <orangeStrong>besiegt wurde oder Schwächebruch erlitten hat</orangeStrong>, erhält Boothill „Trumpf in der Tasche“ und Tödliche Konfrontation wird aufgehoben. Boothill <orangeStrong>erhält einen verstärkten Standardangriff</orangeStrong> und die aktuelle Runde wird nicht beendet."
       }
     },
     "ult": {
       "0": {
         "name": "Staubteufels Tanz bei Sonnenuntergang",
-        "fullDesc": "Fügt einem anvisierten Gegner für {{3}} Rd. eine physische Schwäche hinzu.\\nFügt dem Ziel physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Boothills ANG zu und <u>verzögert die Aktion</u> des Ziels um <orangeStrong>{{2, percent}}%</orangeStrong>.",
+        "fullDesc": "Fügt einem anvisierten Gegner für {{3}} Rd. eine physische Schwäche hinzu.<br>Fügt dem Ziel physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Boothills ANG zu und verzögert die Aktion des Ziels um <orangeStrong>{{2, percent}}%</orangeStrong>.",
         "shortDesc": "Fügt einem Gegner eine <orangeStrong>physische Schwäche</orangeStrong> hinzu, verursacht beim Ziel massiven physischen SCH und verzögert dessen Aktion."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Fünf Bohnen, eine Schote",
+        "fullDesc": "Jede Stapelung „Trumpf in der Tasche“ erhöht den WDS-Reduzierungswert des verstärkten Standardangriffs um {{4, percent}}%, bis zu {{5}} Stapelungen.<br>Befindet sich das Ziel im Schwächebruch, wenn der verstärkte Standardangriff eingesetzt wird, wird diesem Ziel Bruch-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong>/<orangeStrong>{{2, percent}}%</orangeStrong>/<orangeStrong>{{3, percent}}%</orangeStrong> von Boothills physischem Bruch-SCH basierend auf der Stapelzahl von Trumpf in der Tasche zugefügt. Die max. Menge an WDS, die bei diesem SCH gezählt werden kann, darf die {{6}}-fache Menge des Basis-WDS-Reduzierungswerts, der durch den Standardangriff „Schädelsplitter-Hufeisen“ verursacht wird, nicht überschreiten.<br>Nach einem gewonnenen Kampf wird Boothill Trumpf in der Tasche bis zum nächsten Kampf beibehalten.",
+        "shortDesc": "„Trumpf in der Tasche“ erhöht den WDS-Reduzierungswert des verstärkten Standardangriffs und fügt <orangeStrong>Gegnern mit Schwächebruch</orangeStrong> zusätzlichen physischen <orangeStrong>Bruch-SCH</orangeStrong> zu. Nach einem gewonnenen Kampf wird Trumpf in der Tasche bis zum nächsten Kampf beibehalten."
       }
     },
     "technique": {

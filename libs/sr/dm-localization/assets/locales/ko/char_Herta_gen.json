@@ -22,6 +22,13 @@
         "shortDesc": "모든 적에게 얼음 속성 피해를 가한다"
       }
     },
+    "talent": {
+      "0": {
+        "name": "그냥 내가 할게",
+        "fullDesc": "임의의 아군 공격으로 적의 현재 HP 백분율이 {{1, percent}}% 이하일 시, 헤르타는 추가 공격을 발동하여 모든 적에게 헤르타 공격력 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 준다",
+        "shortDesc": ""
+      }
+    },
     "technique": {
       "0": {
         "name": "최적화가 필요해",

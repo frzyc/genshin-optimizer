@@ -27,6 +27,13 @@
         "shortDesc": "<orangeStrong>Inflige Inebriação</orangeStrong> a todos os inimigos e causa Dano de Fogo a eles ao mesmo tempo. Aprimora o próximo ATQ Básico para Blitz de Néctar."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Luta Embriagante",
+        "fullDesc": "O estado de Inebriação faz com que alvos recebam <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> a mais de Dano de Quebra. Sempre que um alvo com Inebriação é atacado por um aliado, os PV do atacante são curados em <orangeStrong>{{2}}</orangeStrong>.",
+        "shortDesc": "O estado de Inebriação <orangeStrong>faz com que alvos recebam mais Dano de Quebra</orangeStrong>. Sempre que o alvo é atacado por um aliado, <orangeStrong>os PV do atacante são restaurados</orangeStrong>."
+      }
+    },
     "technique": {
       "0": {
         "name": "Artesão de Elixires",
@@ -74,7 +81,7 @@
     },
     "3": {
       "name": "Reanimador de Cadáveres",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Última Palavra",
@@ -82,7 +89,7 @@
     },
     "5": {
       "name": "Morte ao Meio-Dia",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "Sangue e Areia",

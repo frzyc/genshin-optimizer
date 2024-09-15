@@ -27,10 +27,17 @@
         "shortDesc": "Mengonsumsi <orangeStrong>{{4}}</orangeStrong> Energy dan mengakibatkan Physical DMG pada seluruh musuh, serta mengakibatkan ekstra Physical DMG dalam jumlah kecil pada 1 musuh secara acak, total 6 kali Bounce."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Sublime Object",
+        "fullDesc": "Saat melancarkan Basic Attack, Skill, atau Ultimate, setiap 1 target musuh yang terkena serangan akan memulihkan {{1}} Energy Argenti dan memberikan 1 lapis \"Apotheosis\", yang akan meningkatkan <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> CRIT Rate Argenti. Efek ini dapat ditumpuk hingga {{3}} lapis.",
+        "shortDesc": "Saat melancarkan Basic Attack, Skill, atau Ultimate, setiap mengenai 1 target musuh akan <orangeStrong>memulihkan Energy</orangeStrong> Argenti dan meningkatkan <orangeStrong>CRIT Rate</orangeStrong> dirinya."
+      }
+    },
     "technique": {
       "0": {
         "name": "Manifesto of Purest Virtue",
-        "fullDesc": "Setelah menggunakan Technique, membuat musuh dalam area tertentu memasuki status Daze selama {{1}} detik. Musuh berstatus Daze tidak akan menyerang rekan tim secara aktif.\\nJika Argenti secara aktif menyerang musuh berstatus Daze, saat memasuki pertempuran, Argenti akan mengakibatkan Physical DMG sebesar {{2, percent}}% ATK-nya pada seluruh musuh dan memulihkan {{3}} Energy-nya.",
+        "fullDesc": "Setelah menggunakan Technique, membuat musuh dalam area tertentu memasuki status Daze selama {{1}} detik. Musuh berstatus Daze tidak akan menyerang rekan tim secara aktif.<br>Jika Argenti secara aktif menyerang musuh berstatus Daze, saat memasuki pertempuran, Argenti akan mengakibatkan Physical DMG sebesar {{2, percent}}% ATK-nya pada seluruh musuh dan memulihkan {{3}} Energy-nya.",
         "shortDesc": "Membuat musuh dalam area tertentu memasuki status Daze. Jika menyerang musuh berstatus Daze, setelah memasuki pertempuran, Argenti akan mengakibatkan Physical DMG dalam jumlah kecil pada seluruh musuh, dan memulihkan Energy-nya."
       }
     },

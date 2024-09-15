@@ -22,10 +22,17 @@
         "shortDesc": "Ngẫu nhiên nhận Cược Mù khiến 1 kẻ địch rơi vào trạng thái Hoảng Hốt, đồng thời gây Sát Thương Số Ảo cho mục tiêu, khi mục tiêu phe ta đánh trúng kẻ địch trong trạng thái Hoảng Hốt, sẽ <orangeStrong>tăng Sát Thương Bạo Kích</orangeStrong> gây ra."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Nòng Súng Bên Phải",
+        "fullDesc": "Tăng <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> Kháng Hiệu Ứng cho 1 đồng đội phe ta có \"Xu Cược Kiên Cố\" và khi đồng đội này bị tấn công, Aventurine sẽ nhận 1 điểm \"Cược Mù\", khi Aventurine có \"Xu Cược Kiên Cố\" có thể kháng hiệu ứng xấu loại khống chế, hiệu ứng này sau {{5}} hiệp có thể kích hoạt lần nữa, và sau khi bị tấn công sẽ nhận thêm {{1}} điểm \"Cược Mù\". Sau khi \"Cược Mù\" đạt 7 điểm, Aventurine sẽ tiêu hao 7 điểm phát động Đòn Đánh Theo Sau gồm {{2}} đòn đánh, mỗi đòn đánh sẽ gây cho 1 kẻ địch ngẫu nhiên Sát Thương Số Ảo bằng <orangeStrong>{{3, percent}}%</orangeStrong> Phòng Thủ của Aventurine. \"Cược Mù\" tối đa giới hạn 10 điểm.",
+        "shortDesc": "Tăng Kháng Hiệu Ứng cho 1 đồng đội phe ta có \"Xu Cược Kiên Cố\", và khi đồng đội này bị tấn công, sẽ tích lũy \"Cược Mù\" cho Aventurine, khi Aventurine có \"Xu Cược Kiên Cố\" có thể kháng hiệu ứng xấu loại khống chế. Sau khi \"Cược Mù\" đạt 7 điểm, Aventurine sẽ tiêu hao 7 điểm \"Cược Mù\" phát động <orangeStrong>Đòn Đánh Theo Sau</orangeStrong>, gây lượng nhỏ Sát Thương Số Ảo cho 1 kẻ địch ngẫu nhiên, tổng cộng nảy bật 7 lần."
+      }
+    },
     "technique": {
       "0": {
         "name": "Đỏ Hay Là Đen",
-        "fullDesc": "Sau khi dùng Bí Kỹ sẽ nhận 1 loại trong số các hiệu ứng sau:\\nCó xác suất nhất định tăng {{1, percent}}% Phòng Thủ;\\nCó xác suất lớn tăng {{2, percent}}% Phòng Thủ;\\nCó xác suất nhỏ tăng {{3, percent}}% Phòng Thủ.\\nKhi sử dụng trùng sẽ giữ lại hiệu ứng có giá trị cao nhất.\\nKhi bắt đầu trận đấu tiếp theo, toàn bộ phe ta tăng Phòng Thủ với giá trị tương ứng, duy trì {{4}} hiệp.",
+        "fullDesc": "Sau khi dùng Bí Kỹ sẽ nhận 1 loại trong số các hiệu ứng sau:<br>Có xác suất nhất định tăng {{1, percent}}% Phòng Thủ;<br>Có xác suất lớn tăng {{2, percent}}% Phòng Thủ;<br>Có xác suất nhỏ tăng {{3, percent}}% Phòng Thủ.<br>Khi sử dụng trùng sẽ giữ lại hiệu ứng có giá trị cao nhất.<br>Khi bắt đầu trận đấu tiếp theo, toàn bộ phe ta tăng Phòng Thủ với giá trị tương ứng, duy trì {{4}} hiệp.",
         "shortDesc": "Dùng Bí Kỹ, ngẫu nhiên nhận 1 trong 3 loại hiệu ứng tăng Phòng Thủ, sau khi vào trận đấu tiếp theo sẽ tăng Phòng Thủ của toàn bộ phe ta với giá trị tương ứng."
       }
     },

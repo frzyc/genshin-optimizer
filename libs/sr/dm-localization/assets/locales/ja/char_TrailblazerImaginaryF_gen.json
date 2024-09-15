@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "{RUBY_B#にぎ}賑{RUBY_E#}やかなパレード",
-        "fullDesc": "味方全体に「バックダンス」を付与する、{{1}}ターン継続。開拓者のターンが回ってくるたびに「バックダンス」の継続時間-1ターン。「バックダンス」を持つ味方の撃破特効+<orangeStrong>{{3, percent}}%</orangeStrong>、<u>弱点撃破状態</u>の敵に攻撃を行った後、その回の攻撃の削靭値を1回の<u>超撃破ダメージ</u>に転換する。",
-        "shortDesc": "味方全体に「バックダンス」を付与する。「バックダンス」を持つ味方の<orangeStrong>撃破特効がアップする</orangeStrong>。また、<u>弱点撃破状態</u>の敵に攻撃を行った後、さらに<orangeStrong><u>超撃破ダメージ</u></orangeStrong>を1回与える。"
+        "fullDesc": "味方全体に「バックダンス」を付与する、{{1}}ターン継続。開拓者のターンが回ってくるたびに「バックダンス」の継続時間-1ターン。「バックダンス」を持つ味方の撃破特効+<orangeStrong>{{3, percent}}%</orangeStrong>、弱点撃破状態の敵に攻撃を行った後、その回の攻撃の削靭値を1回の超撃破ダメージに転換する。",
+        "shortDesc": "味方全体に「バックダンス」を付与する。「バックダンス」を持つ味方の<orangeStrong>撃破特効がアップする</orangeStrong>。また、弱点撃破状態の敵に攻撃を行った後、さらに<orangeStrong>超撃破ダメージ</orangeStrong>を1回与える。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "エアリアルステップ",
+        "fullDesc": "敵が弱点撃破された時、開拓者はEPを<orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong>回復する。",
+        "shortDesc": "敵が弱点撃破された時、開拓者はEPを回復する。"
       }
     },
     "technique": {
@@ -80,7 +87,7 @@
       "desc": "必殺技のLv.+2、最大Lv.15まで。通常攻撃のLv.+1、最大Lv.10まで。"
     },
     "6": {
-      "name": "{RUBY_B#あす}明日{RUBY_E#}\\nスポットライトの{RUBY_B#した}下{RUBY_E#}で",
+      "name": "{RUBY_B#あす}明日{RUBY_E#}<br>スポットライトの{RUBY_B#した}下{RUBY_E#}で",
       "desc": "戦闘スキルのヒット数+{{1}}。"
     }
   }

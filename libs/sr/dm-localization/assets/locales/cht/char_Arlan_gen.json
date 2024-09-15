@@ -22,6 +22,13 @@
         "shortDesc": "對敵方單體造成大量雷屬性傷害，對相鄰目標造成雷屬性傷害。"
       }
     },
+    "talent": {
+      "0": {
+        "name": "至痛至怒",
+        "fullDesc": "根據阿蘭目前損失的生命值百分比獲得傷害加成，最多使阿蘭造成的傷害提高<orangeStrong>{{1, percent}}%</orangeStrong>。",
+        "shortDesc": "<orangeStrong>根據</orangeStrong>自身<orangeStrong>目前已損失的生命值百分比提高傷害</orangeStrong>。"
+      }
+    },
     "technique": {
       "0": {
         "name": "極速收割",

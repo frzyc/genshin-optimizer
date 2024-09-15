@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Blazing Welcome",
-        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Guinaifen pada 1 musuh yang ditarget, dan mengakibatkan Fire DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Guinaifen pada musuh di sekitar target, memiliki {{3, percent}}% <u>peluang dasar</u> untuk membuat musuh dan target di sekitarnya memasuki status Burn. Target musuh dengan status Burn akan menerima Fire DoT sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK Guinaifen setiap saat gilirannya dimulai selama {{5}} giliran.",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Guinaifen pada 1 musuh yang ditarget, dan mengakibatkan Fire DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Guinaifen pada musuh di sekitar target, memiliki {{3, percent}}% peluang dasar untuk membuat musuh dan target di sekitarnya memasuki status Burn. Target musuh dengan status Burn akan menerima Fire DoT sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK Guinaifen setiap saat gilirannya dimulai selama {{5}} giliran.",
         "shortDesc": "Mengakibatkan Fire DMG pada 1 musuh, dan mengakibatkan Fire DMG dalam jumlah kecil pada musuh di sekitar target. Berpeluang besar untuk menambahkan <orangeStrong>status Burn</orangeStrong>."
       }
     },
@@ -19,13 +19,20 @@
       "0": {
         "name": "Watch This Showstopper",
         "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> ATK Guinaifen pada seluruh musuh. Jika target berstatus Burn, maka status Burn tersebut akan segera mengakibatkan DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> DMG awal.",
-        "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada seluruh musuh.\\nJika target musuh berstatus Burn, maka status Burn tersebut akan mengakibatkan 1 kali DMG tambahan."
+        "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada seluruh musuh.<br>Jika target musuh berstatus Burn, maka status Burn tersebut akan mengakibatkan 1 kali DMG tambahan."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "PatrAeon Benefits",
+        "fullDesc": "Saat Guinaifen berada di medan pertempuran, setelah status Burn yang diterima musuh memicu DMG, musuh tersebut memiliki {{1, percent}}% peluang dasar memasuki status \"Firekiss\". Saat berstatus \"Firekiss\", DMG yang diterima target musuh akan meningkat <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> selama {{5}} giliran. Efek ini dapat ditumpuk hingga {{6}} lapis.",
+        "shortDesc": "Setelah <orangeStrong>status Burn yang diterima musuh memicu DMG</orangeStrong>, berpeluang besar untuk memberikan <orangeStrong>status \"Firekiss\"</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Skill Showcase",
-        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan {{2}} kali DMG yang masing-masing mengakibatkan Fire DMG sebesar {{1, percent}}% ATK Guinaifen pada musuh secara acak, serta memiliki {{3, percent}}% <u>Peluang Dasar</u> untuk membuat target memasuki status \"Firekiss\".",
+        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan {{2}} kali DMG yang masing-masing mengakibatkan Fire DMG sebesar {{1, percent}}% ATK Guinaifen pada musuh secara acak, serta memiliki {{3, percent}}% Peluang Dasar untuk membuat target memasuki status \"Firekiss\".",
         "shortDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh, dan memberikan <orangeStrong>status \"Firekiss\"</orangeStrong>. Total Bounce 4 kali."
       }
     },

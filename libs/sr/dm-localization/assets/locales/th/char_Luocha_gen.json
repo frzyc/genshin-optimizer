@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "Prayer of Abyss Flower",
-        "fullDesc": "หลังจากปล่อยสกิลต่อสู้ จะฟื้นฟู HP เท่ากับ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Luocha +<orangeStrong>{{2}}</orangeStrong> ให้กับฝ่ายตัวเองที่กำหนดหนึ่งตัวทันที และทำให้ Luocha ได้รับ \"Abyss Flower\" 1 ชั้น\\nเมื่อเปอร์เซ็นต์ HP ปัจจุบัน ของเป้าหมายตัวใดตัวหนึ่งในฝ่ายตัวเอง เท่ากับหรือน้อยกว่า {{3, percent}}% Luocha จะปล่อยเอฟเฟกต์ ที่เทียบเท่ากับสกิลต่อสู้ ให้กับเป้าหมายดังกล่าว 1 ครั้งทันที โดยการปล่อยเอฟเฟกต์ครั้งนี้ จะไม่เสียแต้มสกิลต่อสู้แต่อย่างใด ซึ่งเอฟเฟกต์นี้ จะปล่อยได้อีกหลังจากผ่านไป {{4}} เทิร์น",
+        "fullDesc": "หลังจากปล่อยสกิลต่อสู้ จะฟื้นฟู HP เท่ากับ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Luocha +<orangeStrong>{{2}}</orangeStrong> ให้กับฝ่ายตัวเองที่กำหนดหนึ่งตัวทันที และทำให้ Luocha ได้รับ \"Abyss Flower\" 1 ชั้น<br>เมื่อเปอร์เซ็นต์ HP ปัจจุบัน ของเป้าหมายตัวใดตัวหนึ่งในฝ่ายตัวเอง เท่ากับหรือน้อยกว่า {{3, percent}}% Luocha จะปล่อยเอฟเฟกต์ ที่เทียบเท่ากับสกิลต่อสู้ ให้กับเป้าหมายดังกล่าว 1 ครั้งทันที โดยการปล่อยเอฟเฟกต์ครั้งนี้ จะไม่เสียแต้มสกิลต่อสู้แต่อย่างใด ซึ่งเอฟเฟกต์นี้ จะปล่อยได้อีกหลังจากผ่านไป {{4}} เทิร์น",
         "shortDesc": "<orangeStrong>ฟื้นฟู</orangeStrong> HP ให้กับฝ่ายตัวเองหนึ่งตัว และจะได้รับ \"Abyss Flower\" 1 ชั้น"
       }
     },
     "ult": {
       "0": {
         "name": "Death Wish",
-        "fullDesc": "ลบ<u>เอฟเฟกต์ Buff</u> ของฝ่ายศัตรูทั้งหมด {{2}} เอฟเฟกต์ และสร้าง DMG จินตภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Luocha แก่ฝ่ายศัตรูทั้งหมด พร้อมทั้งทำให้ Luocha ได้รับ \"Abyss Flower\" 1 ชั้น",
-        "shortDesc": "<orangeStrong>ลบ</orangeStrong><orangeStrong><u>เอฟเฟกต์ Buff</u></orangeStrong> ของฝ่ายศัตรูทั้งหมด 1 เอฟเฟกต์ และสร้าง DMG จินตภาพแก่ศัตรูทั้งหมด พร้อมทั้งได้รับ \"Abyss Flower\" 1 ชั้น"
+        "fullDesc": "ลบเอฟเฟกต์ Buff ของฝ่ายศัตรูทั้งหมด {{2}} เอฟเฟกต์ และสร้าง DMG จินตภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Luocha แก่ฝ่ายศัตรูทั้งหมด พร้อมทั้งทำให้ Luocha ได้รับ \"Abyss Flower\" 1 ชั้น",
+        "shortDesc": "<orangeStrong>ลบ</orangeStrong><orangeStrong>เอฟเฟกต์ Buff</orangeStrong> ของฝ่ายศัตรูทั้งหมด 1 เอฟเฟกต์ และสร้าง DMG จินตภาพแก่ศัตรูทั้งหมด พร้อมทั้งได้รับ \"Abyss Flower\" 1 ชั้น"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Cycle of Life",
+        "fullDesc": "เมื่อมี \"Abyss Flower\" ถึง {{1}} ชั้นแล้ว Luocha จะใช้ \"Abyss Flower\" ทั้งหมดมาสร้างเขตแดน<br>หลังจากที่ศัตรูเป้าหมายตัวใดก็ได้ ที่อยู่ในเขตแดนโดนโจมตี เป้าหมายฝ่ายตัวเองที่ทำการโจมตีจะฟื้นฟู HP <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> ของ ATK ของ Luocha +<orangeStrong>{{4}}</orangeStrong> ทันที<br>เอฟเฟกต์เขตแดนจะคงอยู่เป็นเวลา {{3}} เทิร์น และเมื่อ Luocha หมดสติ เขตแดนก็จะถูกลบไปด้วย",
+        "shortDesc": "เมื่อมี \"Abyss Flower\" 2 ชั้น จะ<orangeStrong>สร้างเขตแดน</orangeStrong>ขึ้นมา และเมื่อมีเขตแดนอยู่ ฝ่ายเราจะ<orangeStrong>ฟื้นฟู HP หลังจากที่ทำการโจมตี</orangeStrong>"
       }
     },
     "technique": {

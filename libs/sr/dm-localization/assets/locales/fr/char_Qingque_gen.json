@@ -9,7 +9,7 @@
       },
       "1": {
         "name": "C'est la tuile !",
-        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Qingque à un ennemi unique et des DGT quantiques équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Qingque aux ennemis adjacents.\\n« C'est la tuile ! » ne permet pas de récupérer de points de compétence.",
+        "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Qingque à un ennemi unique et des DGT quantiques équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Qingque aux ennemis adjacents.<br>« C'est la tuile ! » ne permet pas de récupérer de points de compétence.",
         "shortDesc": "Inflige des DGT quantiques à un ennemi unique et des DGT quantiques mineurs aux ennemis adjacents."
       }
     },
@@ -25,6 +25,13 @@
         "name": "Quatre pungs en main ? Tout va bien !",
         "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Qingque à tous les ennemis et accorde 4 tuiles de jade de la même série.",
         "shortDesc": "Inflige des DGT quantiques à tous les ennemis et accorde 4 tuiles de jade de la même série."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Jade céleste",
+        "fullDesc": "Qingque pioche 1 tuile au hasard au début du tour de chaque allié, parmi 3 séries différentes et peut posséder jusqu'à 4 tuiles à la fois.<br>Si Qingque commence son tour avec 4 tuiles de la même série, elle les utilise toutes et entre dans l'état « Kong caché ».<br>Dans cet état, Qingque ne peut plus utiliser sa compétence. D'autre part, son ATQ augmente de <orangeStrong>{{1, percent}}%</orangeStrong> et son ATQ normale « Bonne pioche » est renforcée pour devenir « C'est la tuile ! ». L'état « Kong caché » prend fin après utilisation de « C'est la tuile ! ».",
+        "shortDesc": "Pioche une tuile au début du tour de chaque allié. Si au début de son tour, le personnage détient 4 tuiles de la même série, il se défausse de toutes ses tuiles et <orangeStrong>renforce son ATQ normale</orangeStrong> tout en augmentant son ATQ."
       }
     },
     "technique": {
@@ -74,15 +81,15 @@
     },
     "3": {
       "name": "Lire entre les tuiles",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "4": {
       "name": "Mets de la tuile",
-      "desc": "Après avoir utilisé la compétence, il y a {{1, percent}}% de chances fixes d'obtenir Autonome, qui dure jusqu'à la fin du tour en cours.\\nLorsque l'état Autonome est actif, utiliser l'ATQ normale ou l'ATQ normale renforcée lance immédiatement 1 attaque de suivi sur le ou les mêmes cibles, infligeant des DGT quantiques équivalents à 100 % des DGT d'ATQ normale (ou d'ATQ normale renforcée)."
+      "desc": "Après avoir utilisé la compétence, il y a {{1, percent}}% de chances fixes d'obtenir Autonome, qui dure jusqu'à la fin du tour en cours.<br>Lorsque l'état Autonome est actif, utiliser l'ATQ normale ou l'ATQ normale renforcée lance immédiatement 1 attaque de suivi sur le ou les mêmes cibles, infligeant des DGT quantiques équivalents à 100 % des DGT d'ATQ normale (ou d'ATQ normale renforcée)."
     },
     "5": {
       "name": "Tuiles piochées, la chance a tourné",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "6": {
       "name": "Prête à gagner, dans le calme et la sérénité",

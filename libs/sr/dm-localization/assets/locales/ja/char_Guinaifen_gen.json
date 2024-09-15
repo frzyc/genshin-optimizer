@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "{RUBY_B#で}出{RUBY_E#}だし{RUBY_B#こうちょう}好調{RUBY_E#}",
-        "fullDesc": "指定した敵単体に桂乃芬の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与え、隣接する敵に桂乃芬の攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の炎属性ダメージを与える。{{3, percent}}%の<u>基礎確率</u>で指定した敵とその隣接する敵に燃焼状態を付与する。燃焼状態の敵は、ターンが回ってくるたびに桂乃芬の攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の炎属性持続ダメージを受ける、{{5}}ターン継続。",
+        "fullDesc": "指定した敵単体に桂乃芬の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与え、隣接する敵に桂乃芬の攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の炎属性ダメージを与える。{{3, percent}}%の基礎確率で指定した敵とその隣接する敵に燃焼状態を付与する。燃焼状態の敵は、ターンが回ってくるたびに桂乃芬の攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の炎属性持続ダメージを受ける、{{5}}ターン継続。",
         "shortDesc": "敵単体に炎属性ダメージを与え、隣接する敵に少量の炎属性ダメージを与え、高確率で<orangeStrong>燃焼状態</orangeStrong>を付与する。"
       }
     },
@@ -22,10 +22,17 @@
         "shortDesc": "敵全体に炎属性ダメージを与え、敵が燃焼状態の場合、燃焼状態がさらにダメージを1回発生する。"
       }
     },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#こらい}古来{RUBY_E#}、{RUBY_B#げいにん}芸人{RUBY_E#}は{RUBY_B#くんし}君子{RUBY_E#}に{RUBY_B#たよ}頼{RUBY_E#}る",
+        "fullDesc": "桂乃芬がフィールド上にいる時、敵が燃焼状態によるダメージを受けた後、{{1, percent}}%の基礎確率で「火喰い」状態になる。「火喰い」状態の敵の受けるダメージ+<orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>、{{5}}ターン継続。最大で{{6}}層累積できる。",
+        "shortDesc": "敵に付与された<orangeStrong>燃焼状態がダメージを発生すると</orangeStrong>、高確率で<orangeStrong>「火喰い」状態</orangeStrong>を付与する。"
+      }
+    },
     "technique": {
       "0": {
         "name": "{RUBY_B#だいどうげい}大道芸{RUBY_E#}",
-        "fullDesc": "敵を攻撃。戦闘に入った後、敵にダメージを{{2}}回与える。1ヒットごとにランダムな敵単体に桂乃芬の攻撃力{{1, percent}}%分の炎属性ダメージを与え、{{3, percent}}%の<u>基礎確率</u>でその敵を「火喰い」状態にする。",
+        "fullDesc": "敵を攻撃。戦闘に入った後、敵にダメージを{{2}}回与える。1ヒットごとにランダムな敵単体に桂乃芬の攻撃力{{1, percent}}%分の炎属性ダメージを与え、{{3, percent}}%の基礎確率でその敵を「火喰い」状態にする。",
         "shortDesc": "敵を攻撃し、戦闘に入った後に敵単体に少量の炎属性ダメージを与え、<orangeStrong>「火喰い」状態</orangeStrong>を付与する。4回バウンドする。"
       }
     },

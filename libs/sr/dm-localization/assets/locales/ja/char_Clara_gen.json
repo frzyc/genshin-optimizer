@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "スヴァローグが{RUBY_B#み}見{RUBY_E#}てる",
-        "fullDesc": "敵全体にクラーラの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の物理属性ダメージを与える。スヴァローグに「反撃の印」を付与された敵に対し、さらにクラーラの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の物理属性ダメージを与える。\\n戦闘スキルを発動した後、すべての「反撃の印」が失効する。",
+        "fullDesc": "敵全体にクラーラの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の物理属性ダメージを与える。スヴァローグに「反撃の印」を付与された敵に対し、さらにクラーラの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の物理属性ダメージを与える。<br>戦闘スキルを発動した後、すべての「反撃の印」が失効する。",
         "shortDesc": "敵全体に物理属性ダメージを与え、「反撃の印」がある敵には<orangeStrong>さらに物理属性ダメージを与える</orangeStrong>。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#めいれい}命令{RUBY_E#}じゃなくて{RUBY_B#やくそく}約束{RUBY_E#}",
-        "fullDesc": "必殺技を発動した後、さらにクラーラの受けるダメージ-<orangeStrong>{{4, percent}}%</orangeStrong>、敵に攻撃される確率が大アップする、{{3}}ターン継続。\\nスヴァローグの<u>カウンター</u>を強化。任意の味方が攻撃を受けた後、スヴァローグが攻撃者に<u>カウンター</u>を行い、<u>カウンター</u>のダメージ倍率+<orangeStrong>{{2, percent}}%</orangeStrong>、隣接する敵にメインターゲットに与えるダメージ50%分のダメージを与える。強化効果は{{5}}回発動できる。",
-        "shortDesc": "自身の<orangeStrong>受けるダメージダウン</orangeStrong>、攻撃される確率アップ、<u>カウンター</u>を強化。"
+        "fullDesc": "必殺技を発動した後、さらにクラーラの受けるダメージ-<orangeStrong>{{4, percent}}%</orangeStrong>、敵に攻撃される確率が大アップする、{{3}}ターン継続。<br>スヴァローグのカウンターを強化。任意の味方が攻撃を受けた後、スヴァローグが攻撃者にカウンターを行い、カウンターのダメージ倍率+<orangeStrong>{{2, percent}}%</orangeStrong>、隣接する敵にメインターゲットに与えるダメージ50%分のダメージを与える。強化効果は{{5}}回発動できる。",
+        "shortDesc": "自身の<orangeStrong>受けるダメージダウン</orangeStrong>、攻撃される確率アップ、カウンターを強化。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#かぞく}家族{RUBY_E#}なんだから",
+        "fullDesc": "クラーラはスヴァローグの保護により受けるダメージ-{{3, percent}}%。クラーラを攻撃した敵に対し、スヴァローグが「反撃の印」を付与してカウンターし、クラーラの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の物理属性ダメージを与える。",
+        "shortDesc": "自身の<orangeStrong>受けるダメージがダウンする</orangeStrong>。攻撃者は「反撃の印」を付与され、<orangeStrong>スヴァローグのカウンターを受け</orangeStrong>、物理属性ダメージを受ける。"
       }
     },
     "technique": {

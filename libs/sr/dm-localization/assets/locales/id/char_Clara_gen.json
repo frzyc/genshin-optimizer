@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "Svarog Watches Over You",
-        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Clara pada seluruh musuh, dan mengakibatkan Physical DMG tambahan sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Clara pada target musuh yang ditandai \"Mark of Counter\" oleh Svarog.\\nSemua \"Mark of Counter\" akan dihapus setelah Skill ini dilancarkan.",
+        "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Clara pada seluruh musuh, dan mengakibatkan Physical DMG tambahan sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Clara pada target musuh yang ditandai \"Mark of Counter\" oleh Svarog.<br>Semua \"Mark of Counter\" akan dihapus setelah Skill ini dilancarkan.",
         "shortDesc": "Mengakibatkan Physical DMG pada seluruh musuh dan <orangeStrong>mengakibatkan Physical DMG tambahan</orangeStrong> pada target dengan \"Mark of Counter\"."
       }
     },
     "ult": {
       "0": {
         "name": "Promise, Not Command",
-        "fullDesc": "Setelah melancarkan Ultimate, DMG yang diterima Clara mengalami <orangeStrong>{{4, percent}}%</orangeStrong> pengurangan DMG tambahan, dan peluang Clara terkena serangan musuh meningkat pesat selama {{3}} giliran.\\nSelain itu, <u>Serangan Balasan</u> Svarog akan diperkuat. Saat rekan tim terkena serangan, Svarog akan segera melancarkan <u>Serangan Balasan</u> pada penyerang, dan DMG Multiplier pada penyerang meningkat <orangeStrong>{{2, percent}}%</orangeStrong>. Target di sekitar penyerang juga akan terkena 50% DMG yang diterima penyerang. Efek <u>Serangan Balasan</u> yang diperkuat berlaku {{5}} kali.",
-        "shortDesc": "<orangeStrong>Mengurangi DMG yang diterima</orangeStrong> diri sendiri, meningkatkan peluang terkena serangan, dan meningkatkan efek <u>Serangan Balasan</u>."
+        "fullDesc": "Setelah melancarkan Ultimate, DMG yang diterima Clara mengalami <orangeStrong>{{4, percent}}%</orangeStrong> pengurangan DMG tambahan, dan peluang Clara terkena serangan musuh meningkat pesat selama {{3}} giliran.<br>Selain itu, Serangan Balasan Svarog akan diperkuat. Saat rekan tim terkena serangan, Svarog akan segera melancarkan Serangan Balasan pada penyerang, dan DMG Multiplier pada penyerang meningkat <orangeStrong>{{2, percent}}%</orangeStrong>. Target di sekitar penyerang juga akan terkena 50% DMG yang diterima penyerang. Efek Serangan Balasan yang diperkuat berlaku {{5}} kali.",
+        "shortDesc": "<orangeStrong>Mengurangi DMG yang diterima</orangeStrong> diri sendiri, meningkatkan peluang terkena serangan, dan meningkatkan efek Serangan Balasan."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Because We're Family",
+        "fullDesc": "Mengurangi {{3, percent}}% DMG yang diterima Clara saat dilindungi Svarog. Target musuh yang menyerang Clara akan ditandai Svarog dengan \"Mark of Counter\", lalu mendapat Serangan Balasan dari Svarog yang akan mengakibatkan Physical DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Clara.",
+        "shortDesc": "<orangeStrong>Mengurangi DMG yang diterima dari serangan musuh</orangeStrong> pada diri sendiri. Musuh yang menyerang akan ditandai dengan \"Mark of Counter\" dan <orangeStrong>menerima Serangan Balasan dari Svarog</orangeStrong> yang mengakibatkan Physical DMG."
       }
     },
     "technique": {

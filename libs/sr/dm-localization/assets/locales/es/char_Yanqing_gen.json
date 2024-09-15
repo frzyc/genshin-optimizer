@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Persecución pluvial de la golondrina",
-        "fullDesc": "Aumenta su Prob. CRIT en un {{1, percent}}%. Cuando Estocada empática está activa, su Daño CRIT aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong> adicional. Estos <u>efectos positivos</u> duran 1 turno. A continuación, inflige un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Yanqing como Daño de Hielo a un enemigo.",
+        "fullDesc": "Aumenta su Prob. CRIT en un {{1, percent}}%. Cuando Estocada empática está activa, su Daño CRIT aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong> adicional. Estos efectos positivos duran 1 turno. A continuación, inflige un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Yanqing como Daño de Hielo a un enemigo.",
         "shortDesc": "Aumenta su Prob. CRIT y potencia Estocada empática. Inflige una gran cantidad de Daño de Hielo a un enemigo."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Compañera afilada",
+        "fullDesc": "Cuando Estocada empática está activa, Yanqing tiene menos probabilidades de recibir un ataque. Además, su Prob. CRIT aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> y su Daño CRIT en un <orangeStrong>{{2, percent}}%</orangeStrong>. Tras atacar a un enemigo, tiene un <orangeStrong>{{3, percent}}%</orangeStrong> de probabilidad fija de activar un ataque adicional que inflige un <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ de Yanqing como Daño de Hielo y tiene una probabilidad base del {{6, percent}}% de afectar con Congelación al objetivo durante 1 turno.<br>Los enemigos congelados no pueden actuar, y al principio de cada turno reciben un <orangeStrong>{{5, percent}}%</orangeStrong> del ATQ de Yanqing como Daño de Hielo adicional.<br>Estocada empática se elimina cuando Yanqing recibe daño.",
+        "shortDesc": "<orangeStrong>Cuando Estocada empática está activa</orangeStrong>, tiene menos probabilidades de recibir un ataque y <orangeStrong>su Prob. CRIT y Daño CRIT aumentan</orangeStrong>. Tras <orangeStrong>atacar</orangeStrong> a un enemigo, tiene cierta probabilidad de activar un ataque adicional que inflige Daño de Hielo. Además, tiene cierta probabilidad de afectar con Congelación al enemigo. Estocada empática desaparece al recibir daño."
       }
     },
     "technique": {

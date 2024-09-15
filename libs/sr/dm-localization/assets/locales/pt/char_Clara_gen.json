@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "Svarog Cuida de Você",
-        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Clara a todos os inimigos e adicionalmente causa Dano Físico igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Clara a inimigos marcados por Svarog com uma Marca do Contra-Ataque.\\nApós o uso desta Perícia, todas as Marcas do Contra-Ataque serão removidas.",
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Clara a todos os inimigos e adicionalmente causa Dano Físico igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Clara a inimigos marcados por Svarog com uma Marca do Contra-Ataque.<br>Após o uso desta Perícia, todas as Marcas do Contra-Ataque serão removidas.",
         "shortDesc": "Causa Dano Físico a todos os inimigos. <orangeStrong>Adicionalmente, causa Dano Físico</orangeStrong> a alvos com Marcas do Contra-Ataque."
       }
     },
     "ult": {
       "0": {
         "name": "É Uma Promessa, Não Uma Ordem",
-        "fullDesc": "Após Clara usar sua Perícia Suprema, o Dano causado a ela é reduzido em <orangeStrong>{{4, percent}}%</orangeStrong> extra, e ela terá muito mais chances de ser atacada por inimigos por {{3}} rodada(s).\\nAlém disso, o <u>Contra-Ataque</u> de Svarog é aprimorado. Quando um aliado é atacado, Svarog usa um <u>Contra-Ataque</u> imediatamente, e seu multiplicador de Dano contra o inimigo aumenta em <orangeStrong>{{2, percent}}%</orangeStrong>. Inimigos adjacentes a ele sofrem 50% do Dano causado ao inimigo-alvo principal. <u>Contra-Ataque(s)</u> aprimorado(s) podem entrar em vigor {{5}} vez(es).",
-        "shortDesc": "<orangeStrong>Reduz o Dano recebido</orangeStrong>, aumenta as chances de receber ataques de inimigos, e aprimora <u>Contra-Ataques</u>."
+        "fullDesc": "Após Clara usar sua Perícia Suprema, o Dano causado a ela é reduzido em <orangeStrong>{{4, percent}}%</orangeStrong> extra, e ela terá muito mais chances de ser atacada por inimigos por {{3}} rodada(s).<br>Além disso, o Contra-Ataque de Svarog é aprimorado. Quando um aliado é atacado, Svarog usa um Contra-Ataque imediatamente, e seu multiplicador de Dano contra o inimigo aumenta em <orangeStrong>{{2, percent}}%</orangeStrong>. Inimigos adjacentes a ele sofrem 50% do Dano causado ao inimigo-alvo principal. Contra-Ataque(s) aprimorado(s) podem entrar em vigor {{5}} vez(es).",
+        "shortDesc": "<orangeStrong>Reduz o Dano recebido</orangeStrong>, aumenta as chances de receber ataques de inimigos, e aprimora Contra-Ataques."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Porque Somos Uma Família",
+        "fullDesc": "Sob a proteção de Svarog, o Dano recebido por Clara ao ser atingida por ataques inimigos é reduzido em {{3, percent}}%. Svarog marca inimigos que atacarem Clara com sua Marca do Contra-Ataque e então Contra-Ataca, causando Dano Físico igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Clara.",
+        "shortDesc": "<orangeStrong>O Dano recebido de ataques inimigos é reduzido</orangeStrong>. Inimigos que atacarem Clara serão marcados com uma Marca do Contra-Ataque, e <orangeStrong>receberão um Contra-Ataque</orangeStrong> de Svarog que causa Dano Físico."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Armadura de Aço Fria",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Aconchego Familiar",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Uma Pequena Promessa",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "Longa Companhia",

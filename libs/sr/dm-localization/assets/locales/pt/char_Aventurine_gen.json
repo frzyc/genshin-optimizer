@@ -22,10 +22,17 @@
         "shortDesc": "Ganha um número aleatório de pontos na Aposta Cega e inflige Perturbação em um único inimigo, causando Dano Imaginário. Quando um aliado golpeia um inimigo com Perturbação, aumenta o <orangeStrong>Dano CRIT causado</orangeStrong>."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Bem na Mira",
+        "fullDesc": "Para qualquer único aliado com Aposta Fortificada, sua RES a Efeito aumenta em <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>, e quando eles são atacados, Aventurine ganha 1 ponto de Aposta Cega. Quando Aventurine tem Aposta Fortificada, ele pode resistir a penalidades de Controle Negativo. Esse efeito pode ser acionado novamente após {{5}} rodada(s). Aventurine adicionalmente ganha {{1}} ponto(s) de Aposta Cega após ser atacado. Ao alcançar 7 pontos de Aposta Cega, Aventurine consome os 7 pontos para lançar um Ataque Extra de {{2}} golpes, com cada golpe causando Dano Imaginário equivalente a <orangeStrong>{{3, percent}}%</orangeStrong> da DEF de Aventurine a um único inimigo aleatório. Aposta Cega tem um limite máximo de 10 pontos.",
+        "shortDesc": "Para qualquer único aliado com Aposta Fortificada, sua RES a Efeito aumenta e, quando ele é atacado, Aventurine acumula Aposta Cega. Quando Aventurine possui Aposta Fortificada, ele pode resistir a penalidades de Controle Negativo. Ao alcançar 7 pontos de Aposta Cega, Aventurine consome os 7 pontos para realizar um <orangeStrong>Ataque Extra</orangeStrong> que causa Dano Imaginário leve a inimigos aleatórios, ricocheteando um total de 7 vezes."
+      }
+    },
     "technique": {
       "0": {
         "name": "O Vermelho ou o Preto",
-        "fullDesc": "Depois de usar a Técnica, 1 dos seguintes efeitos será concedido:\\nExiste uma chance de aumentar a DEF em {{1, percent}}%.\\nExiste uma chance alta de aumentar a DEF em {{2, percent}}%.\\nExiste uma chance pequena de aumentar a DEF em {{3, percent}}%.\\n\\nQuando essa Técnica for usada várias vezes, só o último efeito adquirido com o maior valor de melhoria será mantido.\\nQuando a próxima batalha começar, aumenta a DEF de todos os aliados pelo valor correspondente, durando por {{4}} rodada(s).",
+        "fullDesc": "Depois de usar a Técnica, 1 dos seguintes efeitos será concedido:<br>Existe uma chance de aumentar a DEF em {{1, percent}}%.<br>Existe uma chance alta de aumentar a DEF em {{2, percent}}%.<br>Existe uma chance pequena de aumentar a DEF em {{3, percent}}%.<br><br>Quando essa Técnica for usada várias vezes, só o último efeito adquirido com o maior valor de melhoria será mantido.<br>Quando a próxima batalha começar, aumenta a DEF de todos os aliados pelo valor correspondente, durando por {{4}} rodada(s).",
         "shortDesc": "Usar a Técnica concederá 1 de 3 tipos de efeitos de Bônus de DEF de diferentes valores de melhoria aleatoriamente. Depois de entrar na próxima batalha, a DEF de todos os aliados aumenta pelo valor correspondente."
       }
     },
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Taxa Máxima",
-      "desc": "Nv. de Perícia Suprema +2, até no máximo Nv. 15.\\nNv. de ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. de Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. de ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Paradoxo Suspenso Inesperado",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Aversão Ambígua",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "Caça ao Cervo",

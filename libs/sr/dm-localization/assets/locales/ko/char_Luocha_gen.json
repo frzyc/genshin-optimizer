@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "백화의 기원",
-        "fullDesc": "전투 스킬 발동 후 지정한 단일 아군의 HP를 즉시 나찰 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>만큼 회복시키고, 나찰은 [백화의 순간]을 1스택 획득한다.\\n임의의 단일 아군의 현재 HP 백분율이 {{3, percent}}% 이하가 되면, 나찰은 즉시 해당 아군에게 전투 스킬과 동일한 효과를 1회 발동한다. 해당 효과 발동 시 전투 스킬 포인트를 소모하지 않고, {{4}}턴 후 다시 발동할 수 있다",
+        "fullDesc": "전투 스킬 발동 후 지정한 단일 아군의 HP를 즉시 나찰 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>만큼 회복시키고, 나찰은 [백화의 순간]을 1스택 획득한다.<br>임의의 단일 아군의 현재 HP 백분율이 {{3, percent}}% 이하가 되면, 나찰은 즉시 해당 아군에게 전투 스킬과 동일한 효과를 1회 발동한다. 해당 효과 발동 시 전투 스킬 포인트를 소모하지 않고, {{4}}턴 후 다시 발동할 수 있다",
         "shortDesc": "단일 아군의 HP를 <orangeStrong>회복</orangeStrong>하고, [백화의 순간]을 1스택 획득한다"
       }
     },
     "ult": {
       "0": {
         "name": "망자의 숙원",
-        "fullDesc": "모든 적의 <u>버프 효과</u>를 {{2}}개 해제하고, 모든 적에게 나찰 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 허수 속성 피해를 준다. 동시에 나찰은 [백화의 순간]을 1스택 획득한다",
-        "shortDesc": "모든 적의 <orangeStrong><u>버프 효과</u></orangeStrong>를 1개 <orangeStrong>해제</orangeStrong>하고, 모든 적에게 허수 속성 피해를 준다. 동시에 [백화의 순간]을 1스택 획득한다"
+        "fullDesc": "모든 적의 버프 효과를 {{2}}개 해제하고, 모든 적에게 나찰 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 허수 속성 피해를 준다. 동시에 나찰은 [백화의 순간]을 1스택 획득한다",
+        "shortDesc": "모든 적의 <orangeStrong>버프 효과</orangeStrong>를 1개 <orangeStrong>해제</orangeStrong>하고, 모든 적에게 허수 속성 피해를 준다. 동시에 [백화의 순간]을 1스택 획득한다"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "생명의 윤회",
+        "fullDesc": "[백화의 순간]이 {{1}}스택이 되면 나찰은 모든 [백화의 순간]을 소모해 결계를 펼친다.<br>결계에 있는 임의의 적이 피격되면 공격을 발동한 아군은 즉시 나찰 공격력 <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>만큼의 HP를 회복한다.<br>결계 효과 지속 시간: {{3}}턴. 나찰이 전투 불능 상태에 빠지면 결계도 해제된다",
+        "shortDesc": "[백화의 순간] 효과가 2스택 중첩되면 <orangeStrong>결계를 펼친다</orangeStrong>. 결계가 있을 때 아군이 <orangeStrong>공격하면 HP를 회복한다</orangeStrong>"
       }
     },
     "technique": {

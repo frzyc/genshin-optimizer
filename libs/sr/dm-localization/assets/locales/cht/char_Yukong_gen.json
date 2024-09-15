@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "天闕鳴弦",
-        "fullDesc": "獲得{{1}}層【鳴弦號令】，最多持有不超過2層。當馭空持有【鳴弦號令】時，我方全體攻擊力提高<orangeStrong>{{2, percent}}%</orangeStrong>，且每次我方目標回合結束時，移除馭空1層【鳴弦號令】。\\n馭空施放戰技獲得【鳴弦號令】的回合，不會移除【鳴弦號令】。",
+        "fullDesc": "獲得{{1}}層【鳴弦號令】，最多持有不超過2層。當馭空持有【鳴弦號令】時，我方全體攻擊力提高<orangeStrong>{{2, percent}}%</orangeStrong>，且每次我方目標回合結束時，移除馭空1層【鳴弦號令】。<br>馭空施放戰技獲得【鳴弦號令】的回合，不會移除【鳴弦號令】。",
         "shortDesc": "獲得2層【鳴弦號令】，自身持有【鳴弦號令】時我方全體<orangeStrong>攻擊力提高</orangeStrong>。"
       }
     },
@@ -20,6 +20,13 @@
         "name": "貫雲飲羽",
         "fullDesc": "施放終結技時，若馭空持有【鳴弦號令】，則額外使我方全體暴擊率提高<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>、暴擊傷害提高<orangeStrong>{{3, percent}}%</orangeStrong>，同時對指定敵方單體造成等同於馭空<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的虛數屬性傷害。",
         "shortDesc": "自身持有【鳴弦號令】時我方全體<orangeStrong>暴擊率和暴擊傷害提高</orangeStrong>，並對敵方單體造成大量虛數屬性傷害。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "箭徹七札",
+        "fullDesc": "發動普通攻擊可額外造成等同於馭空<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的虛數屬性傷害，並使本次攻擊的削韌值提高{{2, percent}}%，該效果在{{3}}回合後可再次觸發。",
+        "shortDesc": "使普通攻擊額外造成少量傷害並提高本次普通攻擊削韌值。該效果1回合後可再次觸發。"
       }
     },
     "technique": {

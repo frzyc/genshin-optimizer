@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Cloudlancer Art: Torrent",
-        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Dan Heng pada 1 target musuh.\\nSaat DMG yang diakibatkan Skill memicu CRIT Hit, ada {{4, percent}}% <u>peluang dasar</u> untuk mengurangi {{2, percent}}% SPD target musuh selama {{3}} giliran.",
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Dan Heng pada 1 target musuh.<br>Saat DMG yang diakibatkan Skill memicu CRIT Hit, ada {{4, percent}}% peluang dasar untuk mengurangi {{2, percent}}% SPD target musuh selama {{3}} giliran.",
         "shortDesc": "Mengakibatkan Wind DMG pada 1 musuh. Berpeluang memberikan status Slow jika memicu CRIT Hit."
       }
     },
@@ -20,6 +20,13 @@
         "name": "Ethereal Dream",
         "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Dan Heng pada 1 target musuh. Jika musuh tersebut sedang berstatus Slow, maka DMG Multiplier dari DMG yang diakibatkan Ultimate Dan Heng akan meningkat <orangeStrong>{{2, percent}}%</orangeStrong>.",
         "shortDesc": "Mengakibatkan Wind DMG dalam jumlah besar pada 1 musuh, meningkatkan DMG Multiplier jika musuh berstatus Slow."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Superiority of Reach",
+        "fullDesc": "Saat Dan Heng menjadi target Kemampuan yang dilancarkan oleh rekan tim, Wind RES PEN serangan berikutnya akan meningkat <orangeStrong>{{1, percent}}%</orangeStrong>. Efek ini dapat dipicu lagi setelah {{2}} giliran.",
+        "shortDesc": "Saat menjadi target Kemampuan rekan tim, <orangeStrong>Wind RES PEN dari serangan berikutnya akan meningkat</orangeStrong>. Efek ini dapat terpicu lagi setelah 2 giliran."
       }
     },
     "technique": {

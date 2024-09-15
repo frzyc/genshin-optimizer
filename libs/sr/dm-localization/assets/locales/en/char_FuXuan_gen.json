@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "Known by Stars, Shown by Hearts",
-        "fullDesc": "Activates Matrix of Prescience, via which other team members will <u>Distribute</u> {{1, percent}}% of the DMG they receive (before this DMG is mitigated by any Shields) to Fu Xuan for {{3}} turn(s).\\nWhile affected by Matrix of Prescience, all team members gain the Knowledge effect, which increases their respective Max HP by <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> of Fu Xuan's Max HP, and increases CRIT Rate by <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.\\nWhen Fu Xuan is <u>knocked down</u>, the Matrix of Prescience will be dispelled.",
-        "shortDesc": "Activates Matrix of Prescience. <orangeStrong>DMG received by Fu Xuan's allies is <u>Distributed</u></orangeStrong> to her. Also <orangeStrong>increases CRIT Rate</orangeStrong> and Max HP of all allies."
+        "fullDesc": "Activates Matrix of Prescience, via which other team members will Distribute {{1, percent}}% of the DMG they receive (before this DMG is mitigated by any Shields) to Fu Xuan for {{3}} turn(s).<br>While affected by Matrix of Prescience, all team members gain the Knowledge effect, which increases their respective Max HP by <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> of Fu Xuan's Max HP, and increases CRIT Rate by <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.<br>When Fu Xuan is knocked down, the Matrix of Prescience will be dispelled.",
+        "shortDesc": "Activates Matrix of Prescience. <orangeStrong>DMG received by Fu Xuan's allies is Distributed</orangeStrong> to her. Also <orangeStrong>increases CRIT Rate</orangeStrong> and Max HP of all allies."
       }
     },
     "ult": {
@@ -20,6 +20,13 @@
         "name": "Woes of Many Morphed to One",
         "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Fu Xuan's Max HP to all enemies and obtains 1 trigger count for the HP Restore effect granted by Fu Xuan's Talent.",
         "shortDesc": "Deals Quantum DMG to all enemies and increases Fu Xuan's Talent trigger count."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Bleak Breeds Bliss",
+        "fullDesc": "While Fu Xuan is still active in battle, Misfortune Avoidance is applied to the entire team. With Misfortune Avoidance, allies take <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> less DMG.<br>When Fu Xuan's current HP falls to {{2, percent}}% of her Max HP or less, HP Restore will be triggered for Fu Xuan, restoring her HP by <orangeStrong>{{3, percent}}%</orangeStrong> of the amount of HP she is currently missing. This effect cannot be triggered if she receives a killing blow. This effect has 1 trigger count by default and can hold up to a maximum of 2 trigger counts.",
+        "shortDesc": "While Fu Xuan is still active in battle, the DMG taken by all team members is reduced.<br>When her HP is low, <orangeStrong>automatically</orangeStrong> <orangeStrong>restores her own HP</orangeStrong> based on the percentage of HP already lost. This effect can have up to 2 trigger counts at any given time."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Apex Nexus",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "4": {
       "name": "Fortuna Stellaris",
@@ -77,11 +84,11 @@
     },
     "5": {
       "name": "Arbiter Primus",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "6": {
       "name": "Omnia Vita",
-      "desc": "Once Matrix of Prescience is activated, it will keep a tally of the total HP lost by all team members in the current battle. The DMG dealt by Fu Xuan's Ultimate will increase by {{1, percent}}% of this tally of HP loss.\\nThis tally is also capped at {{2, percent}}% of Fu Xuan's Max HP and the tally value will reset and re-accumulate after Fu Xuan's Ultimate is used."
+      "desc": "Once Matrix of Prescience is activated, it will keep a tally of the total HP lost by all team members in the current battle. The DMG dealt by Fu Xuan's Ultimate will increase by {{1, percent}}% of this tally of HP loss.<br>This tally is also capped at {{2, percent}}% of Fu Xuan's Max HP and the tally value will reset and re-accumulate after Fu Xuan's Ultimate is used."
     }
   }
 }

@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "夢遊魚",
-        "fullDesc": "使指定我方單體的暴擊傷害提高，提高數值等同於花火<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>暴擊傷害+<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>，持續{{3}}回合，並使該目標行動提前{{4, percent}}%。\\n當花火對自身施放該技能時，無法觸發行動提前效果。",
+        "fullDesc": "使指定我方單體的暴擊傷害提高，提高數值等同於花火<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>暴擊傷害+<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>，持續{{3}}回合，並使該目標行動提前{{4, percent}}%。<br>當花火對自身施放該技能時，無法觸發行動提前效果。",
         "shortDesc": "使我方單體<orangeStrong>暴擊傷害</orangeStrong>提高，並使該目標行動提前。"
       }
     },
@@ -20,6 +20,13 @@
         "name": "一人千役",
         "fullDesc": "為我方恢復{{2}}個戰技點，並使我方全體獲得【謎詭】。持有【謎詭】的我方目標觸發花火天賦造成的傷害提高效果每層額外提高<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>，持續{{4}}回合。",
         "shortDesc": "為我方恢復<orangeStrong>戰技點</orangeStrong>，使觸發花火天賦的傷害提高效果額外提高。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "敘述性詭計",
+        "fullDesc": "花火在場時，戰技點上限額外增加{{3}}點。當我方目標每消耗1點戰技點，則使我方全體造成的傷害提高<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>，該效果持續{{1}}回合，最多可疊加{{4}}層。",
+        "shortDesc": "我方的<orangeStrong>戰技點上限</orangeStrong>提高，我方目標消耗戰技點時，使我方全體<orangeStrong>造成的傷害</orangeStrong>提高。"
       }
     },
     "technique": {

@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Mergulhadora de Sonhos",
-        "fullDesc": "Aumenta o Dano CRIT de um único aliado-alvo em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> do Dano CRIT de Sparkle + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, durando por {{3}} rodada(s). E ao mesmo tempo, Avança Adiante a ação deste aliado em {{4, percent}}%.\\nQuando Sparkle usa essa habilidade em si, sua ação não será Avançada Adiante.",
+        "fullDesc": "Aumenta o Dano CRIT de um único aliado-alvo em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> do Dano CRIT de Sparkle + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, durando por {{3}} rodada(s). E ao mesmo tempo, Avança Adiante a ação deste aliado em {{4, percent}}%.<br>Quando Sparkle usa essa habilidade em si, sua ação não será Avançada Adiante.",
         "shortDesc": "Aumenta o <orangeStrong>Dano CRIT</orangeStrong> de um aliado e sua ação é Avançada Adiante."
       }
     },
@@ -20,6 +20,13 @@
         "name": "A Heroína de Mil Faces",
         "fullDesc": "Recupera {{2}} Pontos de Perícia para a equipe e concede Criptografia a todos os aliados. Para aliados com Criptografia, cada acúmulo do efeito de Bônus de Dano concedido pelo Talento de Sparkle aumenta adicionalmente em <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, durando por {{4}} rodada(s).",
         "shortDesc": "Recupera <orangeStrong>Pontos de Perícia</orangeStrong> para a equipe e habilita que o Bônus de Dano provido pelo Talento de Sparkle seja adicionalmente aprimorado."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Pista Falsa",
+        "fullDesc": "Enquanto Sparkle estiver no campo de batalha, aumenta adicionalmente o número máximo de Pontos de Perícia em {{3}}. Sempre que um aliado consome 1 Ponto de Perícia, o Dano causado por todos os aliados será aumentado em <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. Este efeito dura por {{1}} rodada(s) e pode ser acumulado até {{4}} veze(s).",
+        "shortDesc": "Aumenta o <orangeStrong>máximo de Pontos de Perícia</orangeStrong> da equipe. Sempre que um aliado consome Pontos de Perícia, permite que todos os aliados <orangeStrong>causem mais Dano</orangeStrong>."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Sonho Impossível",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "A Vida É uma Aposta",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Verdade Paraláctica",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "Narrativa Polissêmica",

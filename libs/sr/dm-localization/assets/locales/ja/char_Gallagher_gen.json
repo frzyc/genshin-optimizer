@@ -27,6 +27,13 @@
         "shortDesc": "敵全体を<orangeStrong>「酩酊」状態</orangeStrong>にし、敵全体に炎属性ダメージを与える。次の通常攻撃を「極上の泡立ち」に強化する。"
       }
     },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#の}飲{RUBY_E#}み{RUBY_B#くら}比{RUBY_E#}べ",
+        "fullDesc": "「酩酊」状態の敵が受ける弱点撃破ダメージ+<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>。「酩酊」状態の敵が味方の攻撃を受けるたびに、攻撃者のHPを<orangeStrong>{{2}}</orangeStrong>回復する。",
+        "shortDesc": "「酩酊」状態の敵が<orangeStrong>受ける弱点撃破ダメージがアップ</orangeStrong>する。「酩酊」状態の敵が味方の攻撃を受けた後、<orangeStrong>攻撃者のHPを回復</orangeStrong>する。"
+      }
+    },
     "technique": {
       "0": {
         "name": "ヴィンテージ{RUBY_B#かいふう}開封{RUBY_E#}",
@@ -81,11 +88,11 @@
       "desc": "ギャラガーの必殺技が付与する「酩酊」状態の継続時間+{{1}}ターン。"
     },
     "5": {
-      "name": "デス・イン・ジ・\\nアフタヌーン",
+      "name": "デス・イン・ジ・<br>アフタヌーン",
       "desc": "必殺技のLv.+2、最大Lv.15まで。天賦のLv.+2、最大Lv.15まで。"
     },
     "6": {
-      "name": "ブラッド・アンド・\\nサンド",
+      "name": "ブラッド・アンド・<br>サンド",
       "desc": "ギャラガーの撃破特効+{{1, percent}}%、弱点撃破効率+{{2, percent}}%。"
     }
   }

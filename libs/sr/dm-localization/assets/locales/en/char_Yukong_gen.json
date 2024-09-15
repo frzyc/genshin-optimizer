@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Emboldening Salvo",
-        "fullDesc": "Obtains {{1}} stack(s) of \"Roaring Bowstrings\" (to a maximum of 2 stacks). When \"Roaring Bowstrings\" is active, the ATK of all allies increases by <orangeStrong>{{2, percent}}%</orangeStrong>, and every time an ally's turn (including Yukong's) ends, Yukong loses 1 stack of \"Roaring Bowstrings.\"\\nWhen it's the turn where Yukong gains \"Roaring Bowstrings\" by using Skill, \"Roaring Bowstrings\" will not be removed.",
+        "fullDesc": "Obtains {{1}} stack(s) of \"Roaring Bowstrings\" (to a maximum of 2 stacks). When \"Roaring Bowstrings\" is active, the ATK of all allies increases by <orangeStrong>{{2, percent}}%</orangeStrong>, and every time an ally's turn (including Yukong's) ends, Yukong loses 1 stack of \"Roaring Bowstrings.\"<br>When it's the turn where Yukong gains \"Roaring Bowstrings\" by using Skill, \"Roaring Bowstrings\" will not be removed.",
         "shortDesc": "Obtains 2 stacks of Roaring Bowstrings. All allies' <orangeStrong>ATK increases</orangeStrong> when Roaring Bowstrings is active on this character."
       }
     },
@@ -20,6 +20,13 @@
         "name": "Diving Kestrel",
         "fullDesc": "If \"Roaring Bowstrings\" is active on Yukong when her Ultimate is used, additionally increases all allies' CRIT Rate by <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> and CRIT DMG by <orangeStrong>{{3, percent}}%</orangeStrong>. At the same time, deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Yukong's ATK to a single enemy.",
         "shortDesc": "When Roaring Bowstrings is active on this character, <orangeStrong>increases the CRIT Rate and CRIT DMG</orangeStrong> of all allies and deals massive Imaginary DMG to a single enemy."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Seven Layers, One Arrow",
+        "fullDesc": "Basic ATK additionally deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Yukong's ATK, and increases the Toughness Reduction of this attack by {{2, percent}}%. This effect can be triggered again after {{3}} turn(s).",
+        "shortDesc": "Basic Attack additionally deals minor DMG, and the Toughness Reduction of this Basic Attack is increased. This effect can be triggered again after 1 turn have passed."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Torrential Fusillade",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Zephyrean Echoes",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "August Deadshot",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Bowstring Thunderclap",

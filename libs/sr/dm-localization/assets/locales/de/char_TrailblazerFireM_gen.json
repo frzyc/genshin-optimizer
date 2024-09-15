@@ -16,7 +16,7 @@
     "skill": {
       "0": {
         "name": "Ewig brennender Bernstein",
-        "fullDesc": "Nach dem Einsatz der Fertigkeit erleidet {M#der Trailblazer}{F#die Trailblazerin} <orangeStrong>{{1, percent}}%</orangeStrong> weniger SCH und erhält 1-fach „Magma-Wille“. Außerdem besteht eine <u>Grundchance</u> von {{2, percent}}%, bei allen Gegnern für {{3}} Rd. Verspotten zu verursachen.",
+        "fullDesc": "Nach dem Einsatz der Fertigkeit erleidet {M#der Trailblazer}{F#die Trailblazerin} <orangeStrong>{{1, percent}}%</orangeStrong> weniger SCH und erhält 1-fach „Magma-Wille“. Außerdem besteht eine Grundchance von {{2, percent}}%, bei allen Gegnern für {{3}} Rd. Verspotten zu verursachen.",
         "shortDesc": "Verringert den erlittenen SCH und erhält „Magma-Wille“. Hat eine hohe Chance, bei allen Gegner Verspotten zu verursachen."
       }
     },
@@ -25,6 +25,13 @@
         "name": "Flammenlanze hinter den gegnerischen Linien",
         "fullDesc": "Fügt allen Gegnern Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} plus <orangeStrong>{{2, percent}}%</orangeStrong> {M#seiner}{F#ihrer} VTD zu. Der nächste Standardangriff wird automatisch verstärkt und kostet keinen „Magma-Willen“.",
         "shortDesc": "Fügt allen Gegnern Feuer-SCH zu und verstärkt den nächsten Standardangriff."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Schatz der Architekten",
+        "fullDesc": "Wenn {M#der Trailblazer}{F#die Trailblazerin} angegriffen wird, erhält {F#sie}{M#er} 1 Stapelung „Magma-Wille“, bis zu max. {{3}}-fach stapelbar.<br>Ab 4 Stapelungen Magma-Willen wird der Standardangriff verstärkt und fügt einem anvisierten Gegner sowie angrenzenden Zielen SCH zu.<br>{M#Der Trailblazer}{F#Die Trailblazerin} gewährt allen Verbündeten einen Schild, nachdem {F#sie}{M#er} den Standardangriff, die Fertigkeit oder den Ultimate eingesetzt hat, der SCH in Höhe von <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von der VTD {M#des Trailblazers}{F#der Trailblazerin} plus <orangeStrong>{{4}}</orangeStrong> für {{2}} Rd. blockieren kann.",
+        "shortDesc": ""
       }
     },
     "technique": {

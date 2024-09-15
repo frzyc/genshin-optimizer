@@ -22,6 +22,13 @@
         "shortDesc": "Deals massive Lightning DMG to a single enemy and Lightning DMG to enemies adjacent to it."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Pain and Anger",
+        "fullDesc": "Increases Arlan's DMG for every percent of HP below his Max HP, up to a max of <orangeStrong>{{1, percent}}%</orangeStrong> more DMG.",
+        "shortDesc": "Gain DMG bonus <orangeStrong>based on</orangeStrong> <orangeStrong>percent of HP lost</orangeStrong>."
+      }
+    },
     "technique": {
       "0": {
         "name": "Swift Harvest",
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Power Through",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Turn the Tables",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Hammer and Tongs",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Self-Sacrifice",

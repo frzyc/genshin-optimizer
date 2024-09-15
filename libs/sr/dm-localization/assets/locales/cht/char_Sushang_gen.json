@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "雲騎劍經•山傾",
-        "fullDesc": "對指定敵方單體造成等同於素裳<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害。同時最後一擊後有{{3, percent}}%機率發動【劍勢】，對目標造成等同於素裳<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的物理屬性<u>附加傷害</u>。\\n若該目標處於<u>弱點擊破狀態</u>，則必定發動【劍勢】。",
-        "shortDesc": "對敵方單體造成物理屬性傷害，有<orangeStrong>低機率發動【劍勢】</orangeStrong>。若目標處於<u>弱點擊破狀態</u>則<orangeStrong>【劍勢】必定發動</orangeStrong>。"
+        "fullDesc": "對指定敵方單體造成等同於素裳<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害。同時最後一擊後有{{3, percent}}%機率發動【劍勢】，對目標造成等同於素裳<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的物理屬性附加傷害。<br>若該目標處於弱點擊破狀態，則必定發動【劍勢】。",
+        "shortDesc": "對敵方單體造成物理屬性傷害，有<orangeStrong>低機率發動【劍勢】</orangeStrong>。若目標處於弱點擊破狀態則<orangeStrong>【劍勢】必定發動</orangeStrong>。"
       }
     },
     "ult": {
       "0": {
         "name": "太虛形蘊•燭夜",
-        "fullDesc": "對指定敵方單體造成等同於素裳<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害，並使素裳立即行動。同時使其攻擊力提高<orangeStrong>{{4, percent}}%</orangeStrong>，且施放戰技時額外增加2次【劍勢】的發動判定，持續{{2}}回合。\\n通過額外判定發動的【劍勢】傷害為原傷害的{{3, percent}}%。",
+        "fullDesc": "對指定敵方單體造成等同於素裳<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害，並使素裳立即行動。同時使其攻擊力提高<orangeStrong>{{4, percent}}%</orangeStrong>，且施放戰技時額外增加2次【劍勢】的發動判定，持續{{2}}回合。<br>通過額外判定發動的【劍勢】傷害為原傷害的{{3, percent}}%。",
         "shortDesc": "對敵方單體造成大量物理屬性傷害，強化【劍勢】效果並<orangeStrong>立即行動</orangeStrong>。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "遊刃若水",
+        "fullDesc": "當場上有敵方目標的弱點被擊破時，素裳的速度提高<orangeStrong>{{1, percent(fixed: 2)}}%</orangeStrong>，持續{{2}}回合。",
+        "shortDesc": "當場上有敵人的弱點被擊破時，自身速度提高。"
       }
     },
     "technique": {

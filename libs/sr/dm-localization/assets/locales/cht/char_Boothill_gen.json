@@ -9,22 +9,29 @@
       },
       "1": {
         "name": "擊錘連弩",
-        "fullDesc": "對指定敵方單體造成等同於波提歐<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害。\\n強化普通攻擊無法恢復戰技點，且僅能以處於【絕命對峙】的敵方目標為目標。",
+        "fullDesc": "對指定敵方單體造成等同於波提歐<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害。<br>強化普通攻擊無法恢復戰技點，且僅能以處於【絕命對峙】的敵方目標為目標。",
         "shortDesc": "對敵方單體造成物理屬性傷害，僅能攻擊【絕命對峙】的目標。"
       }
     },
     "skill": {
       "0": {
         "name": "熾礫舞者的探戈",
-        "fullDesc": "使指定敵方單體及自身進入【絕命對峙】狀態，波提歐普通攻擊獲得強化且無法施放戰技，持續{{3}}回合，波提歐每回合開始時持續回合數減1。\\n處於【絕命對峙】的敵方目標陷入嘲諷狀態。該目標/波提歐受到對方攻擊時，受到的傷害提高<orangeStrong>{{1, percent}}%</orangeStrong>/{{2, percent}}%。\\n該目標被消滅或弱點被擊破後，波提歐均可獲得1層【優勢口袋】，隨後解除【絕命對峙】。\\n該戰技無法恢復能量。發動該戰技後，本回合不會結束。",
+        "fullDesc": "使指定敵方單體及自身進入【絕命對峙】狀態，波提歐普通攻擊獲得強化且無法施放戰技，持續{{3}}回合，波提歐每回合開始時持續回合數減1。<br>處於【絕命對峙】的敵方目標陷入嘲諷狀態。該目標/波提歐受到對方攻擊時，受到的傷害提高<orangeStrong>{{1, percent}}%</orangeStrong>/{{2, percent}}%。<br>該目標被消滅或弱點被擊破後，波提歐均可獲得1層【優勢口袋】，隨後解除【絕命對峙】。<br>該戰技無法恢復能量。發動該戰技後，本回合不會結束。",
         "shortDesc": "開啟<orangeStrong>【絕命對峙】</orangeStrong>。【絕命對峙】的目標<orangeStrong>被消滅或弱點被擊破</orangeStrong>後，波提歐獲得【優勢口袋】並解除【絕命對峙】。使自身<orangeStrong>獲得強化普通攻擊</orangeStrong>，且本回合不會結束。"
       }
     },
     "ult": {
       "0": {
         "name": "塵魔舞者的日落秀",
-        "fullDesc": "向指定敵方單體附加物理弱點，持續{{3}}回合。\\n對該目標造成等同於波提歐<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害，並使其<u>行動延後</u><orangeStrong>{{2, percent}}%</orangeStrong>。",
+        "fullDesc": "向指定敵方單體附加物理弱點，持續{{3}}回合。<br>對該目標造成等同於波提歐<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害，並使其行動延後<orangeStrong>{{2, percent}}%</orangeStrong>。",
         "shortDesc": "向敵方單體<orangeStrong>附加物理弱點</orangeStrong>，並對其造成大量物理屬性傷害，使目標行動延後。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "輪中五豆",
+        "fullDesc": "每層【優勢口袋】使強化普通攻擊的削韌值傷害提高{{4, percent}}%，最多疊加{{5}}層。<br>發動強化普通攻擊期間，若目標處於弱點擊破狀態，則根據【優勢口袋】層數對目標造成等同於波提歐<orangeStrong>{{1, percent}}%</orangeStrong>/<orangeStrong>{{2, percent}}%</orangeStrong>/<orangeStrong>{{3, percent}}%</orangeStrong>物理屬性擊破傷害的擊破傷害，該傷害計入的韌性上限不超過普通攻擊【蹄鐵裂顱】基礎削韌值的{{6}}倍。<br>戰鬥勝利後，波提歐能夠將【優勢口袋】保留至下一次戰鬥中。",
+        "shortDesc": "【優勢口袋】使強化普通攻擊削韌值提高，並對<orangeStrong>被擊破的敵人</orangeStrong>額外造成物理屬性<orangeStrong>擊破傷害</orangeStrong>。戰鬥勝利後，將【優勢口袋】保留至下一次戰鬥中。"
       }
     },
     "technique": {

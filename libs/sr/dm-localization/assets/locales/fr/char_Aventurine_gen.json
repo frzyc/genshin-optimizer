@@ -22,10 +22,17 @@
         "shortDesc": "Récupère un nombre aléatoire de Paris aveugles et applique Sur les nerfs à un ennemi unique, tout en infligeant des DGT imaginaires. Lorsqu'un allié touche un ennemi qui subit Sur les nerfs, les <orangeStrong>DGT critiques qu'il inflige augmentent</orangeStrong>."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Visé juste",
+        "fullDesc": "Tout allié qui bénéficie de Mise renforcée voit sa RÉS aux effets augmenter de <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>, et chaque fois qu'il est attaqué, Aventurine récupère 1 Pari aveugle. Lorsqu'Aventurine bénéficie de Mise renforcée, il peut résister aux malus de contrôle 1 fois tous les {{5}} tours et il récupère {{1}} Pari aveugle supplémentaire lorsqu'il est attaqué. À 7 Paris aveugles, Aventurine utilise tous les paris pour lancer une attaque de suivi qui inflige {{2}} frappes. Chacune de ces frappes inflige des DGT imaginaires équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> de la DÉF d'Aventurine à un ennemi aléatoire. Aventurine peut cumuler un maximum de 10 Paris aveugles.",
+        "shortDesc": "Tout allié qui bénéficie de Mise renforcée voit sa RÉS aux effets augmenter, et chaque fois qu'il est attaqué, Aventurine récupère des Paris aveugles. Lorsqu'Aventurine bénéficie de Mise renforcée, il peut résister aux malus de contrôle. À 7 Paris aveugles, Aventurine utilise tous les paris pour lancer une <orangeStrong>attaque de suivi</orangeStrong> qui inflige des DGT imaginaires mineurs à des ennemis uniques aléatoires, pour un total de 7 rebonds."
+      }
+    },
     "technique": {
       "0": {
         "name": "Rouge ou noir",
-        "fullDesc": "L'utilisation de la technique accorde 1 des effets suivants :\\nIl y a une chance que la DÉF augmente de {{1, percent}}%.\\nIl y a de fortes chances que la DÉF augmente de {{2, percent}}%.\\nIl y a une faible chance que la DÉF augmente de {{3, percent}}%.\\n\\nEn cas d'utilisation répétée de la technique, c'est l'effet obtenu avec la valeur la plus élevée qui est conservé.\\nLa DÉF de tous les alliés augmente de la valeur correspondante pendant {{4}} tours lors du prochain combat.",
+        "fullDesc": "L'utilisation de la technique accorde 1 des effets suivants :<br>Il y a une chance que la DÉF augmente de {{1, percent}}%.<br>Il y a de fortes chances que la DÉF augmente de {{2, percent}}%.<br>Il y a une faible chance que la DÉF augmente de {{3, percent}}%.<br><br>En cas d'utilisation répétée de la technique, c'est l'effet obtenu avec la valeur la plus élevée qui est conservé.<br>La DÉF de tous les alliés augmente de la valeur correspondante pendant {{4}} tours lors du prochain combat.",
         "shortDesc": "L'utilisation de la technique accorde de manière aléatoire un des trois effets d'augmentation de DÉF avec différentes valeurs. La DÉF de tous les alliés augmente de la valeur correspondante après être entré en combat."
       }
     },
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Rendement maximal",
-      "desc": "Niv. de l'ultime +2, jusqu'au niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au niv. 10 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au niv. 10 maximum."
     },
     "4": {
       "name": "Paradoxe inattendu",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Aversion à l'incertitude",
-      "desc": "Niv. de la compétence +2, jusqu'au niv. 15 maximum.\\nNiv. du talent +2, jusqu'au niv. 15 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au niv. 15 maximum.<br>Niv. du talent +2, jusqu'au niv. 15 maximum."
     },
     "6": {
       "name": "Jeu de chasse",

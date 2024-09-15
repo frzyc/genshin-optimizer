@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Sắp... Sắp Trễ Rồi!",
-        "fullDesc": "Ban đầu mặc định có {{1}} đòn đánh trong một lượt. Đầu tiên thi triển 1 đòn đánh gây Sát Thương Băng lên 1 kẻ địch chỉ định bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Misha, mỗi đòn đánh còn lại gây Sát Thương Băng lên 1 kẻ địch ngẫu nhiên bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Misha. Trước mỗi đòn đánh có <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> <u>xác suất cơ bản</u> khiến mục tiêu rơi vào trạng thái Đóng Băng, duy trì 1 hiệp.\\nỞ trạng thái Đóng Băng, kẻ địch không thể hành động, đồng thời khi bắt đầu mỗi hiệp sẽ chịu <u>Sát Thương Băng kèm theo</u> bằng <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công của Misha.\\nTuyệt Kỹ tối đa tích lũy {{5}} đòn đánh trong một lượt, sau khi thi triển Tuyệt Kỹ, số đòn đánh trong một lượt sẽ hồi phục về trạng thái ban đầu.",
+        "fullDesc": "Ban đầu mặc định có {{1}} đòn đánh trong một lượt. Đầu tiên thi triển 1 đòn đánh gây Sát Thương Băng lên 1 kẻ địch chỉ định bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Misha, mỗi đòn đánh còn lại gây Sát Thương Băng lên 1 kẻ địch ngẫu nhiên bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Misha. Trước mỗi đòn đánh có <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> xác suất cơ bản khiến mục tiêu rơi vào trạng thái Đóng Băng, duy trì 1 hiệp.<br>Ở trạng thái Đóng Băng, kẻ địch không thể hành động, đồng thời khi bắt đầu mỗi hiệp sẽ chịu Sát Thương Băng kèm theo bằng <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công của Misha.<br>Tuyệt Kỹ tối đa tích lũy {{5}} đòn đánh trong một lượt, sau khi thi triển Tuyệt Kỹ, số đòn đánh trong một lượt sẽ hồi phục về trạng thái ban đầu.",
         "shortDesc": "Gây lượng nhỏ Sát Thương Băng lên 1 kẻ địch, ban đầu tổng cộng Nảy Bật <orangeStrong>{{1}}</orangeStrong> lần, tối đa Nảy Bật <orangeStrong>{{5}}</orangeStrong> lần. Trước mỗi đòn tấn công có xác suất nhỏ khiến mục tiêu <orangeStrong>Đóng Băng</orangeStrong>."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Kết Cấu Dẫn Truyền",
+        "fullDesc": "Toàn bộ phe ta cứ tiêu hao 1 Điểm Chiến Kỹ sẽ tăng {{2}} đòn đánh trong một lượt của Tuyệt Kỹ lần sau của Misha, đồng thời Misha hồi phục <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> điểm Năng Lượng.",
+        "shortDesc": "Toàn bộ phe ta cứ <orangeStrong>tiêu hao 1 Điểm Chiến Kỹ</orangeStrong> sẽ tăng <orangeStrong>số đòn đánh trong một lượt của Tuyệt Kỹ</orangeStrong> lần sau của Misha, đồng thời Misha hồi phục Năng Lượng."
       }
     },
     "technique": {

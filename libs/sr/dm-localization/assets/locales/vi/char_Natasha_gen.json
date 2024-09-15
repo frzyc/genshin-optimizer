@@ -22,10 +22,17 @@
         "shortDesc": "<orangeStrong>Hồi HP</orangeStrong> cho toàn bộ phe ta."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Bừng Bừng Sức Sống",
+        "fullDesc": "Khi trị liệu cho mục tiêu của phe ta có phần trăm HP hiện tại nhỏ hơn hoặc bằng {{1, percent}}%, thì lượng trị liệu của Natasha sẽ tăng <orangeStrong>{{2, percent}}%</orangeStrong>, hiệu ứng này cũng có hiệu lực với hiệu ứng trị liệu liên tục.",
+        "shortDesc": "Khi trị liệu cho mục tiêu có Phần Trăm HP tương đối thấp của phe ta, sẽ tăng lượng trị liệu, cũng có hiệu lực với hiệu ứng trị liệu liên tục."
+      }
+    },
     "technique": {
       "0": {
         "name": "Nghiên Cứu Thôi Miên",
-        "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu, gây cho 1 kẻ địch ngẫu nhiên một lượng Sát Thương Vật Lý bằng {{4, percent}}% Tấn Công của Natasha, và có {{1, percent}}% <u>xác suất cơ bản</u> khiến mỗi kẻ địch rơi vào trạng thái Suy Yếu.\\nSát thương do kẻ địch ở trạng thái Suy Yếu gây cho phe ta giảm {{2, percent}}%, duy trì {{3}} hiệp.",
+        "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu, gây cho 1 kẻ địch ngẫu nhiên một lượng Sát Thương Vật Lý bằng {{4, percent}}% Tấn Công của Natasha, và có {{1, percent}}% xác suất cơ bản khiến mỗi kẻ địch rơi vào trạng thái Suy Yếu.<br>Sát thương do kẻ địch ở trạng thái Suy Yếu gây cho phe ta giảm {{2, percent}}%, duy trì {{3}} hiệp.",
         "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch ngẫu nhiên, và có xác suất lớn khiến mỗi kẻ địch rơi vào trạng thái Suy Yếu."
       }
     },

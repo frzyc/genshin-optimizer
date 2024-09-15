@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "灵符•保命护身",
-        "fullDesc": "解除指定我方单体的{{5}}个<u>负面效果</u>，立即为指定我方单体回复等同于藿藿<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{2}}</orangeStrong>的生命值，同时为其相邻目标回复等同于藿藿<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{4}}</orangeStrong>的生命值。",
-        "shortDesc": "解除我方单体1个<u>负面效果</u>，并为我方单体及其相邻目标<orangeStrong>回复生命值</orangeStrong>。"
+        "fullDesc": "解除指定我方单体的{{5}}个负面效果，立即为指定我方单体回复等同于藿藿<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{2}}</orangeStrong>的生命值，同时为其相邻目标回复等同于藿藿<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{4}}</orangeStrong>的生命值。",
+        "shortDesc": "解除我方单体1个负面效果，并为我方单体及其相邻目标<orangeStrong>回复生命值</orangeStrong>。"
       }
     },
     "ult": {
@@ -22,10 +22,17 @@
         "shortDesc": "为除自身以外的队友<orangeStrong>恢复能量</orangeStrong>，并使其<orangeStrong>攻击力提高</orangeStrong>。"
       }
     },
+    "talent": {
+      "0": {
+        "name": "凭附•气通天真",
+        "fullDesc": "施放战技后藿藿获得【禳命】，持续{{1}}回合，藿藿每回合开始时持续回合数减1。当藿藿拥有【禳命】时，我方目标回合开始或施放终结技时回复自身等同于藿藿<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{5}}</orangeStrong>的生命值，同时对每个当前生命值百分比小于等于{{6, percent}}%的我方目标各产生1次回复效果。<br>触发【禳命】为我方目标提供治疗时，解除该目标{{2}}个负面效果，该效果可以触发{{7}}次，再次施放战技后将刷新效果可触发次数。",
+        "shortDesc": "施放战技后藿藿获得【禳命】。当藿藿拥有【禳命】时，我方目标回合开始或施放终结技时<orangeStrong>回复自身生命值</orangeStrong>，同时对<orangeStrong>每个</orangeStrong>生命值较低的<orangeStrong>我方目标各产生1次回复效果</orangeStrong>。触发【禳命】为我方目标提供治疗时，<orangeStrong>解除该目标1个负面效果</orangeStrong>。"
+      }
+    },
     "technique": {
       "0": {
         "name": "凶煞•劾压鬼物",
-        "fullDesc": "藿藿恐吓周围的敌人，使其陷入【魄散】状态。【魄散】状态下的敌人会向远离藿藿的方向逃跑，持续{{4}}秒。与陷入【魄散】状态的敌人进入战斗后，有{{1, percent}}%的<u>基础概率</u>使敌方每个单体目标攻击力降低{{2, percent}}%，持续{{3}}回合。",
+        "fullDesc": "藿藿恐吓周围的敌人，使其陷入【魄散】状态。【魄散】状态下的敌人会向远离藿藿的方向逃跑，持续{{4}}秒。与陷入【魄散】状态的敌人进入战斗后，有{{1, percent}}%的基础概率使敌方每个单体目标攻击力降低{{2, percent}}%，持续{{3}}回合。",
         "shortDesc": "使周围的敌人陷入【魄散】状态。与陷入【魄散】状态的敌人进入战斗后，大概率使敌方目标<orangeStrong>攻击力降低</orangeStrong>。"
       }
     },

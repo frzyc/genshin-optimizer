@@ -26,7 +26,7 @@
     "skill": {
       "0": {
         "name": "Dracore Libre",
-        "fullDesc": "Memperkuat Basic ATK. Penguatan dapat dilakukan maksimal 3 kali berturut-turut. Melancarkan kemampuan ini tidak mengonsumsi Poin Skill dan tidak dianggap sebagai pelancaran Skill.\\nPerkuat sebanyak 1 kali untuk mengubah Basic ATK \"Beneficent Lotus\" menjadi \"Transcendence\".\\nPerkuat sebanyak 2 kali untuk mengubah Basic ATK \"Beneficent Lotus\" menjadi \"Divine Spear\".\\nPerkuat sebanyak 3 kali untuk mengubah Basic ATK \"Beneficent Lotus\" menjadi \"Fulgurant Leap\".\\nSaat melancarkan \"Divine Spear\" atau \"Fulgurant Leap\", akan memperoleh 1 lapis \"Outroar\" sebelum pelancaran setiap Hit serangan (dimulai dari Hit ke-4). Setiap lapis \"Outroar\" meningkatkan <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> CRIT DMG Dan Heng · Imbibitor Lunae. Efek ini dapat ditumpuk hingga {{2}} lapis, dan berlangsung hingga giliran dirinya berakhir.",
+        "fullDesc": "Memperkuat Basic ATK. Penguatan dapat dilakukan maksimal 3 kali berturut-turut. Melancarkan kemampuan ini tidak mengonsumsi Poin Skill dan tidak dianggap sebagai pelancaran Skill.<br>Perkuat sebanyak 1 kali untuk mengubah Basic ATK \"Beneficent Lotus\" menjadi \"Transcendence\".<br>Perkuat sebanyak 2 kali untuk mengubah Basic ATK \"Beneficent Lotus\" menjadi \"Divine Spear\".<br>Perkuat sebanyak 3 kali untuk mengubah Basic ATK \"Beneficent Lotus\" menjadi \"Fulgurant Leap\".<br>Saat melancarkan \"Divine Spear\" atau \"Fulgurant Leap\", akan memperoleh 1 lapis \"Outroar\" sebelum pelancaran setiap Hit serangan (dimulai dari Hit ke-4). Setiap lapis \"Outroar\" meningkatkan <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> CRIT DMG Dan Heng · Imbibitor Lunae. Efek ini dapat ditumpuk hingga {{2}} lapis, dan berlangsung hingga giliran dirinya berakhir.",
         "shortDesc": "Memperkuat Basic Attack \"Beneficent Lotus\" menjadi <orangeStrong>\"Transcendence\"</orangeStrong>, <orangeStrong>\"Divine Spear\" atau \"Fulgurant Leap\"</orangeStrong>."
       },
       "1": {
@@ -38,8 +38,15 @@
     "ult": {
       "0": {
         "name": "Azure's Aqua Ablutes All",
-        "fullDesc": "Melancarkan 3 Hit serangan untuk mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Dan Heng · Imbibitor Lunae pada 1 target musuh, serta mengakibatkan Imaginary DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Dan Heng · Imbibitor Lunae pada musuh di sekitar target. Selain itu, dirinya akan memperoleh {{3}} \"Squama Sacrosancta\".\\nMaksimal jumlah \"Squama Sacrosancta\" yang dapat dimiliki adalah {{4}}. Dan Heng · Imbibitor Lunae dapat mengonsumsi \"Squama Sacrosancta\" untuk menggantikan konsumsi Poin Skill. Mengonsumsi \"Squama Sacrosancta\" akan dianggap sama dengan mengonsumsi Poin Skill.",
+        "fullDesc": "Melancarkan 3 Hit serangan untuk mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Dan Heng · Imbibitor Lunae pada 1 target musuh, serta mengakibatkan Imaginary DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Dan Heng · Imbibitor Lunae pada musuh di sekitar target. Selain itu, dirinya akan memperoleh {{3}} \"Squama Sacrosancta\".<br>Maksimal jumlah \"Squama Sacrosancta\" yang dapat dimiliki adalah {{4}}. Dan Heng · Imbibitor Lunae dapat mengonsumsi \"Squama Sacrosancta\" untuk menggantikan konsumsi Poin Skill. Mengonsumsi \"Squama Sacrosancta\" akan dianggap sama dengan mengonsumsi Poin Skill.",
         "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah besar pada 1 musuh dan mengakibatkan Imaginary DMG pada musuh di sekitar target. Mendapatkan 2 \"Squama Sacrosancta\": Dapat digunakan untuk <orangeStrong>Mengurangi</orangeStrong> konsumsi Poin Skill dari Dan Heng · Imbibitor Lunae. Mengonsumsi \"Squama Sacrosancta\" dianggap sama dengan <orangeStrong>mengonsumsi Poin Skill</orangeStrong>."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Righteous Heart",
+        "fullDesc": "Dan Heng · Imbibitor Lunae akan memperoleh 1 lapis \"Righteous Heart\" setelah setiap Hit serangan yang dilancarkannya. \"Righteous Heart\" meningkatkan <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> DMG yang diakibatkan dirinya, efek ini dapat ditumpuk hingga {{2}} lapis dan berlangsung hingga giliran dirinya berakhir.",
+        "shortDesc": "Setiap Hit serangan yang dilancarkan dapat meningkatkan DMG yang diakibatkan diri sendiri. Efek ini dapat ditumpuk dan berlangsung hingga giliran dirinya berakhir."
       }
     },
     "technique": {

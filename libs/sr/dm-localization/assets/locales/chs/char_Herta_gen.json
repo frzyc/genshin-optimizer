@@ -22,6 +22,13 @@
         "shortDesc": "对敌方全体造成冰属性伤害。"
       }
     },
+    "talent": {
+      "0": {
+        "name": "还是我来吧",
+        "fullDesc": "当任意我方目标的攻击使敌方目标的当前生命值百分比小于等于{{1, percent}}%时，黑塔发动追加攻击，对敌方全体造成等同于黑塔<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的冰属性伤害。",
+        "shortDesc": ""
+      }
+    },
     "technique": {
       "0": {
         "name": "可以优化一下",

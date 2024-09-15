@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Foudroyés par la félicité",
-        "fullDesc": "Soigne immédiatement tous les alliés à hauteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> des PV max de Bailu + <orangeStrong>{{2}}</orangeStrong>.\\nBailu accorde Revigoration aux alliés qui ne bénéficient pas encore de cet effet et prolonge l'effet d'1 tour pour ceux qui en bénéficient déjà.\\nL'effet de Revigoration peut durer jusqu'à {{3}} tours. Cet effet n'est pas cumulable.",
+        "fullDesc": "Soigne immédiatement tous les alliés à hauteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> des PV max de Bailu + <orangeStrong>{{2}}</orangeStrong>.<br>Bailu accorde Revigoration aux alliés qui ne bénéficient pas encore de cet effet et prolonge l'effet d'1 tour pour ceux qui en bénéficient déjà.<br>L'effet de Revigoration peut durer jusqu'à {{3}} tours. Cet effet n'est pas cumulable.",
         "shortDesc": "Restaure des PV à tous les alliés et leur accorde Revigoration ou prolonge sa durée."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Gourde d'élixir",
+        "fullDesc": "Lorsqu'un allié qui bénéficie de Revigoration est touché, restaure ses PV à hauteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> des PV max de Bailu + <orangeStrong>{{2}}</orangeStrong>. Cet effet peut se déclencher {{5}} fois.<br>Quand un allié subit un coup fatal, il ne tombe pas à terre, mais Bailu le soigne immédiatement à hauteur de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de ses propres PV max + <orangeStrong>{{4}}</orangeStrong>. Cet effet peut être déclenché 1 fois par combat.",
+        "shortDesc": "Les alliés qui bénéficient de <orangeStrong>Revigoration</orangeStrong> <orangeStrong>regagnent des PV</orangeStrong> après avoir été attaqués.<br>Lorsqu'un allié subit un <orangeStrong>coup fatal</orangeStrong>, Bailu lui <orangeStrong>restaure immédiatement des PV</orangeStrong>. Cet effet ne peut être déclenché qu'1 seule fois par combat."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Opulence omnisciente",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "4": {
       "name": "Suppression du mal",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Inquiétudes oubliées",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "6": {
       "name": "Mucus de divinité draconique",

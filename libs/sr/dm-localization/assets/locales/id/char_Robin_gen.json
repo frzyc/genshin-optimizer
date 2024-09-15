@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Vox Harmonique, Opus Cosmique",
-        "fullDesc": "Robin memasuki status \"Concerto\", membuat rekan tim selain dirinya segera beraksi.\\nSaat berstatus \"Concerto\", meningkatkan ATK seluruh rekan tim, peningkatannya adalah sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> ATK Robin + <orangeStrong>{{3}}</orangeStrong>, dan setiap kali setelah rekan tim melancarkan serangan, Robin akan mengakibatkan 1 kali Physical <u>DMG tambahan</u> sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK dirinya (serangan ini memiliki CRIT Rate tetap sebesar {{5, percent}}% dan CRIT DMG tetap sebesar {{6, percent}}%).\\nSaat berstatus \"Concerto\", Robin kebal terhadap <u>Crowd Control Debuff</u>, dan Robin tidak akan memasuki gilirannya serta tidak dapat beraksi hingga hitung mundur berakhir.\\nHitung mundur \"Concerto\" akan muncul di Susunan Aksi. Saat giliran hitung mundur dimulai, Robin akan keluar dari status \"Concerto\" dan segera beraksi. Hitung mundur memiliki SPD tetap sebesar {{2}}.",
-        "shortDesc": "Memasuki status \"Concerto\" dan <orangeStrong>meningkatkan ATK</orangeStrong> seluruh rekan tim, serta membuat seluruh rekan tim selain dirinya sendiri segera beraksi. Setelah rekan tim menyerang, Robin akan mengakibatkan <orangeStrong>Physical <u>DMG Tambahan</u></orangeStrong>. Selama berstatus \"Concerto\", Robin kebal terhadap <u>Crowd Control Debuff</u>, dan Robin tidak akan memasuki gilirannya serta tidak dapat beraksi hingga hitung mundur berakhir."
+        "fullDesc": "Robin memasuki status \"Concerto\", membuat rekan tim selain dirinya segera beraksi.<br>Saat berstatus \"Concerto\", meningkatkan ATK seluruh rekan tim, peningkatannya adalah sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> ATK Robin + <orangeStrong>{{3}}</orangeStrong>, dan setiap kali setelah rekan tim melancarkan serangan, Robin akan mengakibatkan 1 kali Physical DMG tambahan sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK dirinya (serangan ini memiliki CRIT Rate tetap sebesar {{5, percent}}% dan CRIT DMG tetap sebesar {{6, percent}}%).<br>Saat berstatus \"Concerto\", Robin kebal terhadap Crowd Control Debuff, dan Robin tidak akan memasuki gilirannya serta tidak dapat beraksi hingga hitung mundur berakhir.<br>Hitung mundur \"Concerto\" akan muncul di Susunan Aksi. Saat giliran hitung mundur dimulai, Robin akan keluar dari status \"Concerto\" dan segera beraksi. Hitung mundur memiliki SPD tetap sebesar {{2}}.",
+        "shortDesc": "Memasuki status \"Concerto\" dan <orangeStrong>meningkatkan ATK</orangeStrong> seluruh rekan tim, serta membuat seluruh rekan tim selain dirinya sendiri segera beraksi. Setelah rekan tim menyerang, Robin akan mengakibatkan <orangeStrong>Physical DMG Tambahan</orangeStrong>. Selama berstatus \"Concerto\", Robin kebal terhadap Crowd Control Debuff, dan Robin tidak akan memasuki gilirannya serta tidak dapat beraksi hingga hitung mundur berakhir."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Tonal Resonance",
+        "fullDesc": "Meningkatkan <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> CRIT DMG seluruh rekan tim, dan Robin akan memulihkan {{2}} Energy tambahan untuk dirinya sendiri setelah rekan tim menyerang target musuh.",
+        "shortDesc": "Meningkatkan <orangeStrong>CRIT DMG</orangeStrong> seluruh rekan tim, dan Robin akan memulihkan Energy tambahan setelah rekan tim menyerang musuh."
       }
     },
     "technique": {

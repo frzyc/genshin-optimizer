@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Rồng Vượt Vực Sâu",
-        "fullDesc": "Lập tức hồi cho toàn phe ta lượng HP bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Bailu +<orangeStrong>{{2}}</orangeStrong>.\\nĐối với mục tiêu không có Sinh Mệnh của phe ta, Bailu sẽ cộng Sinh Mệnh vào cho mục tiêu đó, còn mục tiêu đã có Sinh Mệnh, sẽ được kéo dài thời gian Sinh Mệnh thêm 1 hiệp.\\n\"Sinh Mệnh\" có thể duy trì {{3}} hiệp, hiệu ứng này không thể cộng dồn.",
+        "fullDesc": "Lập tức hồi cho toàn phe ta lượng HP bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Bailu +<orangeStrong>{{2}}</orangeStrong>.<br>Đối với mục tiêu không có Sinh Mệnh của phe ta, Bailu sẽ cộng Sinh Mệnh vào cho mục tiêu đó, còn mục tiêu đã có Sinh Mệnh, sẽ được kéo dài thời gian Sinh Mệnh thêm 1 hiệp.<br>\"Sinh Mệnh\" có thể duy trì {{3}} hiệp, hiệu ứng này không thể cộng dồn.",
         "shortDesc": "Hồi HP cho toàn thể phe ta, đồng thời kèm thêm Sinh Mệnh hoặc kéo dài thời gian duy trì Sinh Mệnh."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Hành Y Giúp Đời",
+        "fullDesc": "Mục tiêu phe ta có \"Sinh Mệnh\", sau khi bị tấn công sẽ hồi lượng HP bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Bailu +<orangeStrong>{{2}}</orangeStrong>, hiệu ứng này có thể kích hoạt {{5}} lần.<br>Khi đồng đội của Bailu chịu tấn công chí tử, sẽ không rơi vào trạng thái không thể chiến đấu, Bailu sẽ trị liệu ngay cho đồng đội đó, hồi HP bằng <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Bailu +<orangeStrong>{{4}}</orangeStrong>. Hiệu ứng này có thể kích hoạt 1 lần trong 1 trận.",
+        "shortDesc": "Mục tiêu có <orangeStrong>\"Sinh Mệnh\"</orangeStrong> của phe ta sau khi bị tấn công sẽ <orangeStrong>hồi HP</orangeStrong>.<br>Khi đồng đội <orangeStrong>chịu tấn công chí tử</orangeStrong>, Bailu <orangeStrong>sẽ hồi ngay HP cho đồng đội đó</orangeStrong>. Hiệu ứng này có thể kích hoạt 1 lần trong 1 trận."
       }
     },
     "technique": {

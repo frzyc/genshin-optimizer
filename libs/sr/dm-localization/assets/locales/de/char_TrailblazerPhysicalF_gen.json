@@ -18,7 +18,7 @@
     "ult": {
       "0": {
         "name": "Sternenstaub-Ass",
-        "fullDesc": "Für einen vollen Schlag stehen zwei Angriffsmodi zur Auswahl.\\n„Blowout: Abschiedstreffer“ fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu.\\n„Blowout: Todes-Homerun“ fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu und fügt angrenzenden Zielen physischen SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu.",
+        "fullDesc": "Für einen vollen Schlag stehen zwei Angriffsmodi zur Auswahl.<br>„Blowout: Abschiedstreffer“ fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu.<br>„Blowout: Todes-Homerun“ fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu und fügt angrenzenden Zielen physischen SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu.",
         "shortDesc": "Verwendet Einzelangriff oder Ausdehnung, um einen vollen Schlag auszuführen."
       },
       "1": {
@@ -30,6 +30,13 @@
         "name": "Blowout: Todes-Homerun",
         "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu und fügt angrenzenden Zielen physischen SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu.",
         "shortDesc": "Fügt einem Gegner und angrenzenden Zielen physischen SCH zu."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Perfekte Abnahme",
+        "fullDesc": "Jedes Mal, wenn die Schwäche eines Gegners gebrochen wird, wird der ANG um <orangeStrong>{{1, percent}}%</orangeStrong> erhöht. Dieser Effekt ist bis zu {{2}}-fach stapelbar.",
+        "shortDesc": ""
       }
     },
     "technique": {

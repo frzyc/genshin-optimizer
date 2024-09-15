@@ -9,7 +9,7 @@
       },
       "1": {
         "name": "Bộ Tứ Thêm Hoa!",
-        "fullDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Qingque, đồng thời gây cho mục tiêu lân cận kẻ đó Sát Thương Lượng Tử tương đương <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Qingque.\\n\"Bộ Tứ Thêm Hoa!\" không thể hồi điểm Chiến Kỹ.",
+        "fullDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Qingque, đồng thời gây cho mục tiêu lân cận kẻ đó Sát Thương Lượng Tử tương đương <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Qingque.<br>\"Bộ Tứ Thêm Hoa!\" không thể hồi điểm Chiến Kỹ.",
         "shortDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch, đồng thời gây lượng nhỏ Sát Thương Lượng Tử cho mục tiêu lân cận."
       }
     },
@@ -25,6 +25,13 @@
         "name": "Bộ Tứ? Ngon Lành!",
         "fullDesc": "Gây cho toàn bộ phe địch sát thương Lượng Tử bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Qingque, và nhận 4 Quân Bài Quỳnh Ngọc cùng hoa văn.",
         "shortDesc": "Gây Sát Thương Lượng Tử cho toàn phe địch, nhận 4 quân bài hoa văn giống nhau."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Quỳnh Ngọc Đế Viên",
+        "fullDesc": "Khi mục tiêu phe ta bắt đầu hiệp, Qingque sẽ ngẫu nhiên rút 1 quân bài từ 3 Quân Bài Quỳnh Ngọc có hoa văn khác nhau, tối đa cầm 4 Quân Bài Quỳnh Ngọc.<br>Khi Qingque bắt đầu hiệp, nếu số Quân Bài Quỳnh Ngọc có được là 4 và hoa văn giống nhau, Qingque sẽ tiêu hao tất cả Quân Bài Quỳnh Ngọc và vào trạng thái Khung Xám.<br>Ở trạng thái Khung Xám không thể thi triển Chiến Kỹ lần nữa, đồng thời khiến Tấn Công của bản thân tăng <orangeStrong>{{1, percent}}%</orangeStrong>, Tấn Công Thường \"Tự Ù\" cường hóa thành \"Bộ Tứ Thêm Hoa!\", trạng thái Khung Xám sẽ kết thúc sau khi thi triển \"Bộ Tứ Thêm Hoa!\".",
+        "shortDesc": "Khi mục tiêu phe ta bắt đầu hiệp, rút bài. Khi bắt đầu hiệp của bản thân, nếu cầm 4 quân cùng hoa văn, thì sẽ xóa bài đã có và <orangeStrong>cường hóa lần tấn công thường này</orangeStrong>, đồng thời tăng tấn công của bản thân."
       }
     },
     "technique": {
@@ -78,7 +85,7 @@
     },
     "4": {
       "name": "Thế Bài Thắng Trong Tầm Tay",
-      "desc": "Sau khi thi triển Chiến Kỹ, có {{1, percent}}% xác suất cố định nhận trạng thái Bất Cầu Nhân, duy trì đến khi hiệp này kết thúc.\\nTrong trạng thái Bất Cầu Nhân, sau khi thi triển Tấn Công Thường hoặc Tấn Công Thường Cường Hóa, sẽ lập tức tiến hành 1 Đòn Đánh Theo Sau, gây cho mục tiêu này một lượng Sát Thương Lượng Tử bằng 100% Sát Thương Tấn Công Thường hoặc Tấn Công Thường Cường Hóa."
+      "desc": "Sau khi thi triển Chiến Kỹ, có {{1, percent}}% xác suất cố định nhận trạng thái Bất Cầu Nhân, duy trì đến khi hiệp này kết thúc.<br>Trong trạng thái Bất Cầu Nhân, sau khi thi triển Tấn Công Thường hoặc Tấn Công Thường Cường Hóa, sẽ lập tức tiến hành 1 Đòn Đánh Theo Sau, gây cho mục tiêu này một lượng Sát Thương Lượng Tử bằng 100% Sát Thương Tấn Công Thường hoặc Tấn Công Thường Cường Hóa."
     },
     "5": {
       "name": "Thế Bài Đánh Cược Vận Mệnh",

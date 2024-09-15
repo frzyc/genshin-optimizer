@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Cá Nhỏ Cõi Mơ",
-        "fullDesc": "Tăng Sát Thương Bạo Kích của 1 đồng đội chỉ định, mức tăng bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Sát Thương Bạo Kích của Sparkle +<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, duy trì {{3}} hiệp, đồng thời khiến mục tiêu này ưu tiên hành động {{4, percent}}%.\\nKhi Sparkle thi triển kỹ năng này lên bản thân, sẽ không thể kích hoạt hiệu ứng Ưu Tiên Hành Động.",
+        "fullDesc": "Tăng Sát Thương Bạo Kích của 1 đồng đội chỉ định, mức tăng bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Sát Thương Bạo Kích của Sparkle +<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, duy trì {{3}} hiệp, đồng thời khiến mục tiêu này ưu tiên hành động {{4, percent}}%.<br>Khi Sparkle thi triển kỹ năng này lên bản thân, sẽ không thể kích hoạt hiệu ứng Ưu Tiên Hành Động.",
         "shortDesc": "Tăng <orangeStrong>Sát Thương Bạo Kích</orangeStrong> của 1 đồng đội, và khiến mục tiêu này ưu tiên hành động."
       }
     },
@@ -20,6 +20,13 @@
         "name": "Cô Gái Nghìn Mặt",
         "fullDesc": "Hồi phục {{2}} Điểm Chiến Kỹ cho phe ta, đồng thời khiến toàn thể phe ta nhận được Câu Đố Kỳ Dị. Khi mục tiêu phe ta có Câu Đố Kỳ Dị kích hoạt hiệu ứng Tăng Sát Thương từ Thiên Phú của Sparkle, mỗi tầng sẽ tăng thêm <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, duy trì {{4}} hiệp.",
         "shortDesc": "Hồi phục <orangeStrong>Điểm Chiến Kỹ</orangeStrong> cho phe ta, tăng thêm hiệu ứng Tăng Sát Thương khi kích hoạt Thiên Phú Sparkle."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Ngụy Biện Cá Trích Đỏ",
+        "fullDesc": "Khi Sparkle trong trận, giới hạn Điểm Chiến Kỹ sẽ tăng thêm {{3}} điểm. Mục tiêu phe ta mỗi khi tiêu hao 1 Điểm Chiến Kỹ, sẽ tăng <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> sát thương do toàn bộ phe ta gây ra, hiệu ứng này duy trì {{1}} hiệp, tối đa có thể cộng dồn {{4}} tầng.",
+        "shortDesc": "Tăng <orangeStrong>giới hạn Điểm Chiến Kỹ</orangeStrong> của phe ta, khi mục tiêu phe ta tiêu hao Điểm Chiến Kỹ, sẽ tăng <orangeStrong>sát thương gây ra</orangeStrong> của toàn bộ phe ta."
       }
     },
     "technique": {

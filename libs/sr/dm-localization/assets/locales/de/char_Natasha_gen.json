@@ -22,10 +22,17 @@
         "shortDesc": "<orangeStrong>Stellt die LP aller Verbündeten wieder her</orangeStrong>."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Innervation",
+        "fullDesc": "Heilt Natasha Verbündete mit LP-Prozentsatz von {{1, percent}}% oder niedriger, wird die bewirkte Heilung um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht. Dieser Effekt wirkt auch bei der kontinuierlichen Heilung.",
+        "shortDesc": "Wenn Verbündete mit wenig LP geheilt werden, wird die bewirkte Heilung erhöht. Dieser Effekt gilt auch für kontinuierliche Heilung."
+      }
+    },
     "technique": {
       "0": {
         "name": "Hypnoseforschung",
-        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt einem zufälligen Gegner physischen SCH in Höhe von {{4, percent}}% von Natashas ANG zu und verursacht bei allen Gegnern mit einer <u>Grundchance</u> von {{1, percent}}% Schwächung.\\nGeschwächte Gegner fügen Verbündeten für {{3}} Rd. {{2, percent}}% weniger SCH zu.",
+        "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt einem zufälligen Gegner physischen SCH in Höhe von {{4, percent}}% von Natashas ANG zu und verursacht bei allen Gegnern mit einer Grundchance von {{1, percent}}% Schwächung.<br>Geschwächte Gegner fügen Verbündeten für {{3}} Rd. {{2, percent}}% weniger SCH zu.",
         "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt einem zufälligen Gegner geringen physischen SCH zu, mit einer hohen Chance, allen gegnerischen Zielen Schwächung zuzufügen."
       }
     },

@@ -27,6 +27,13 @@
         "shortDesc": "<orangeStrong>Inflicts Besotted</orangeStrong> on all enemies and deals Fire DMG to them at the same time. Enhances the next Basic ATK to Nectar Blitz."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Tipsy Tussle",
+        "fullDesc": "The Besotted state makes targets receive <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> more Break DMG. Every time a Besotted target gets attacked by an ally, the attacking ally's HP is restored by <orangeStrong>{{2}}</orangeStrong>.",
+        "shortDesc": "The Besotted state <orangeStrong>makes targets receive more Break DMG</orangeStrong>. Every time the target gets attacked by an ally, <orangeStrong>the attacker's HP is restored</orangeStrong>."
+      }
+    },
     "technique": {
       "0": {
         "name": "Artisan Elixir",
@@ -74,7 +81,7 @@
     },
     "3": {
       "name": "Corpse Reviver",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Last Word",
@@ -82,7 +89,7 @@
     },
     "5": {
       "name": "Death in the Afternoon",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Blood and Sand",

@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "V-Vou me Atrasar!",
-        "fullDesc": "Possui {{1}} Golpes por Ação por padrão. Primeiro, usa 1 golpe para causar Dano de Gelo igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Misha a um único inimigo-alvo. Então, cada um dos golpes restantes causa Dano de Gelo igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Misha a um único inimigo aleatório. Logo antes do acerto de cada golpe, existe uma <u>chance-base</u> de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de causar Congelamento ao alvo, durando por 1 rodada.\\nEnquanto no estado de Congelamento, inimigos-alvo não podem agir, e no início de suas rodadas, eles recebem <u>Dano de Gelo Adicional</u> igual a <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de Misha.\\nEssa Perícia Suprema pode possuir até {{5}} Golpes por Ação. Depois que a Perícia Suprema é utilizada, seus Golpes por Ação serão redefinidos ao nível padrão.",
+        "fullDesc": "Possui {{1}} Golpes por Ação por padrão. Primeiro, usa 1 golpe para causar Dano de Gelo igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Misha a um único inimigo-alvo. Então, cada um dos golpes restantes causa Dano de Gelo igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Misha a um único inimigo aleatório. Logo antes do acerto de cada golpe, existe uma chance-base de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de causar Congelamento ao alvo, durando por 1 rodada.<br>Enquanto no estado de Congelamento, inimigos-alvo não podem agir, e no início de suas rodadas, eles recebem Dano de Gelo Adicional igual a <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de Misha.<br>Essa Perícia Suprema pode possuir até {{5}} Golpes por Ação. Depois que a Perícia Suprema é utilizada, seus Golpes por Ação serão redefinidos ao nível padrão.",
         "shortDesc": "Causa Dano de Gelo leve a inimigos únicos. O ataque ricocheteia <orangeStrong>{{1}}</orangeStrong> vezes por padrão, até um máximo de <orangeStrong>{{5}}</orangeStrong> vezes. Antes que cada golpe acerte, há uma pequena chance de infligir <orangeStrong>Congelamento</orangeStrong> no alvo."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Escapada Horológica",
+        "fullDesc": "Para cada 1 Ponto de Perícia consumido por um aliado, a próxima Perícia Suprema de Misha desfere {{2}} Golpe(s) por Ação a mais e Misha regenera <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> de Energia.",
+        "shortDesc": "Para <orangeStrong>cada 1 Ponto de Perícia consumido por aliados</orangeStrong>, a próxima Perícia Suprema de Misha <orangeStrong>realiza mais Golpes por Ação</orangeStrong>, e Misha regenera sua Energia."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Vestígio de Felicidade",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Visão de Afinidade",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Gênesis do Primeiro Amor",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "Alienação do Sonho",

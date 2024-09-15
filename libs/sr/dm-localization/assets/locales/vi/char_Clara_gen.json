@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "Svarog Đang Nhìn Ngươi",
-        "fullDesc": "Gây Sát Thương Vật Lý cho toàn phe địch tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Clara, và gây thêm cho tất cả địch bị Svarog đánh dấu \"Ký Hiệu Phản Kích\" một lượng Sát Thương Vật Lý bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Clara.\\nSau khi thi triển Chiến Kỹ, tất cả \"Ký Hiệu Phản Kích\" sẽ mất hiệu lực.",
+        "fullDesc": "Gây Sát Thương Vật Lý cho toàn phe địch tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Clara, và gây thêm cho tất cả địch bị Svarog đánh dấu \"Ký Hiệu Phản Kích\" một lượng Sát Thương Vật Lý bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Clara.<br>Sau khi thi triển Chiến Kỹ, tất cả \"Ký Hiệu Phản Kích\" sẽ mất hiệu lực.",
         "shortDesc": "Gây Sát Thương Vật Lý cho toàn phe địch, <orangeStrong>gây thêm Sát Thương Vật Lý</orangeStrong> cho mục tiêu mang Ký Hiệu Phản Kích."
       }
     },
     "ult": {
       "0": {
         "name": "Là Hẹn Ước, Không Phải Mệnh Lệnh",
-        "fullDesc": "Sau khi thi triển Tuyệt Kỹ, sát thương Clara phải chịu giảm thêm <orangeStrong>{{4, percent}}%</orangeStrong>, đồng thời tăng xác suất bị phe địch tấn công, duy trì {{3}} hiệp.\\nĐồng thời <u>Phản Kích</u> của Svarog được cường hóa, sau khi mục tiêu bất kỳ của phe ta bị tấn công, Svarog sẽ thi triển ngay <u>phản kích</u>, Bội Số Sát Thương gây ra cho mục tiêu địch tăng <orangeStrong>{{2, percent}}%</orangeStrong>, và gây sát thương cho mục tiêu lân cận kẻ đó bằng 50% của mục tiêu chính. Hiệu ứng cường hóa có thể hiệu lực {{5}} lần.",
-        "shortDesc": "<orangeStrong>Giảm sát thương bản thân phải chịu</orangeStrong>, tăng xác suất bị tấn công, và cường hóa hiệu ứng <u>Phản Kích</u>."
+        "fullDesc": "Sau khi thi triển Tuyệt Kỹ, sát thương Clara phải chịu giảm thêm <orangeStrong>{{4, percent}}%</orangeStrong>, đồng thời tăng xác suất bị phe địch tấn công, duy trì {{3}} hiệp.<br>Đồng thời Phản Kích của Svarog được cường hóa, sau khi mục tiêu bất kỳ của phe ta bị tấn công, Svarog sẽ thi triển ngay phản kích, Bội Số Sát Thương gây ra cho mục tiêu địch tăng <orangeStrong>{{2, percent}}%</orangeStrong>, và gây sát thương cho mục tiêu lân cận kẻ đó bằng 50% của mục tiêu chính. Hiệu ứng cường hóa có thể hiệu lực {{5}} lần.",
+        "shortDesc": "<orangeStrong>Giảm sát thương bản thân phải chịu</orangeStrong>, tăng xác suất bị tấn công, và cường hóa hiệu ứng Phản Kích."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Vì Chúng Ta Là Người Một Nhà",
+        "fullDesc": "Dưới sự bảo vệ của Svarog, sát thương Clara phải chịu giảm {{3, percent}}%. Kẻ đã tấn công Clara sẽ bị Svarog đánh dấu \"Ký Hiệu Phản Kích\" đồng thời chịu sự phản kích của Svarog, gây cho kẻ đó Sát Thương Vật Lý bằng <orangeStrong>{{2, percent}}%</orangeStrong> tấn công của Clara.",
+        "shortDesc": "<orangeStrong>Giảm sát thương bản thân phải chịu khi bị kẻ địch tấn công</orangeStrong>. Kẻ địch tấn công Clara sẽ bị đánh dấu \"Ký Hiệu Phản Kích\" và <orangeStrong>chịu đòn Phản Kích của Svarog</orangeStrong>, gây Sát Thương Vật Lý."
       }
     },
     "technique": {

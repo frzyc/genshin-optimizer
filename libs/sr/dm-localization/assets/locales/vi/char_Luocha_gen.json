@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "Lời Cầu Nguyện Của Hoa Trắng",
-        "fullDesc": "Sau khi dùng Chiến Kỹ sẽ lập tức giúp mục tiêu chỉ định phe ta hồi HP bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Luocha + <orangeStrong>{{2}}</orangeStrong>, đồng thời khiến Luocha nhận 1 tầng Khoảnh Khắc Hoa Trắng.\\nKhi Phần Trăm HP hiện tại của đồng đội bất kỳ thấp hơn hoặc bằng {{3, percent}}%, Luocha sẽ kích hoạt ngay 1 lần hiệu ứng giống với Chiến Kỹ lên mục tiêu đó, không tiêu hao điểm Chiến Kỹ, hiệu ứng này có thể kích hoạt lần nữa sau {{4}} hiệp.",
+        "fullDesc": "Sau khi dùng Chiến Kỹ sẽ lập tức giúp mục tiêu chỉ định phe ta hồi HP bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Luocha + <orangeStrong>{{2}}</orangeStrong>, đồng thời khiến Luocha nhận 1 tầng Khoảnh Khắc Hoa Trắng.<br>Khi Phần Trăm HP hiện tại của đồng đội bất kỳ thấp hơn hoặc bằng {{3, percent}}%, Luocha sẽ kích hoạt ngay 1 lần hiệu ứng giống với Chiến Kỹ lên mục tiêu đó, không tiêu hao điểm Chiến Kỹ, hiệu ứng này có thể kích hoạt lần nữa sau {{4}} hiệp.",
         "shortDesc": "Giúp 1 đồng đội <orangeStrong>hồi</orangeStrong> HP, nhận 1 tầng \"Khoảnh Khắc Hoa Trắng\"."
       }
     },
     "ult": {
       "0": {
         "name": "Di Nguyện Chôn Cất",
-        "fullDesc": "Xóa {{2}} <u>hiệu ứng buff</u> của toàn bộ phe địch, và gây cho chúng Sát Thương Số Ảo tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Luocha, đồng thời khiến Luocha nhận 1 tầng Khoảnh Khắc Hoa Trắng.",
-        "shortDesc": "<orangeStrong>Giải trừ</orangeStrong> 1 <orangeStrong><u>hiệu ứng buff</u></orangeStrong> của toàn bộ phe địch, và gây Sát Thương Số Ảo cho chúng, nhận 1 tầng Khoảnh Khắc Hoa Trắng."
+        "fullDesc": "Xóa {{2}} hiệu ứng buff của toàn bộ phe địch, và gây cho chúng Sát Thương Số Ảo tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Luocha, đồng thời khiến Luocha nhận 1 tầng Khoảnh Khắc Hoa Trắng.",
+        "shortDesc": "<orangeStrong>Giải trừ</orangeStrong> 1 <orangeStrong>hiệu ứng buff</orangeStrong> của toàn bộ phe địch, và gây Sát Thương Số Ảo cho chúng, nhận 1 tầng Khoảnh Khắc Hoa Trắng."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Sự Luân Chuyển Sinh Mệnh",
+        "fullDesc": "Khi Khoảnh Khắc Hoa Trắng đạt {{1}} tầng, Luocha sẽ tiêu hao toàn bộ Khoảnh Khắc Hoa Trắng để mở Kết Giới.<br>Sau khi kẻ địch bất kỳ trong Kết Giới bị tấn công, mục tiêu thi triển tấn công của phe ta sẽ hồi ngay lượng HP bằng <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> Tấn Công của Luocha +<orangeStrong>{{4}}</orangeStrong>.<br>Hiệu ứng Kết Giới duy trì {{3}} hiệp. Khi Luocha không thể chiến đấu, kết giới sẽ bị giải trừ.",
+        "shortDesc": "Khi Khoảnh Khắc Hoa Trắng đạt tầng 2 sẽ <orangeStrong>mở kết giới</orangeStrong>. Khi kết giới còn tồn tại, sẽ <orangeStrong>hồi HP sau khi phe ta tấn công</orangeStrong>."
       }
     },
     "technique": {

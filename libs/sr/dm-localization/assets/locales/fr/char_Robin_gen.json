@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Vox Harmonique, Opus Cosmique",
-        "fullDesc": "Robin entre dans l'état Concerto, et permet à tous les alliés d'attaquer immédiatement.\\nLorsque Robin est dans l'état Concerto, l'attaque de tous les alliés augmente à hauteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de l'ATQ de Robin + <orangeStrong>{{3}}</orangeStrong>. D'autre part, après chaque attaque d'un allié, Robin inflige des <u>DGT physiques additionnels</u> équivalents à <orangeStrong>{{4, percent}}%</orangeStrong> de son ATQ 1 fois, avec des chances de coup critique fixées à {{5, percent}}% et des DGT critiques fixés à {{6, percent}}%.\\nLorsque Robin est dans l'état Concerto, elle devient immunisée aux <u>malus de contrôle</u> et ne peut ni agir ni jouer son tour tant que l'état Concerto n'est pas terminé.\\nUn compte à rebours pour Concerto s'affiche dans la barre d'ordre d'action. Lorsque ce compte à rebours débute, Robin quitte l'état Concerto et agit immédiatement. Le compte à rebours a sa propre VIT fixe qui est de {{2}}.",
-        "shortDesc": "Entre dans l'état Concerto, ce qui <orangeStrong>augmente l'ATQ de tous les alliés</orangeStrong> et permet à tous les coéquipiers d'agir immédiatement. Robin inflige des <orangeStrong><u>DGT physiques additionnels</u></orangeStrong> après une attaque. Lorsque Robin est dans l'état Concerto, elle est immunisée aux <u>malus de contrôle</u>. Pendant toute la durée de cet état, Robin ne peut ni agir ni jouer son tour jusqu'à la fin du compte à rebours."
+        "fullDesc": "Robin entre dans l'état Concerto, et permet à tous les alliés d'attaquer immédiatement.<br>Lorsque Robin est dans l'état Concerto, l'attaque de tous les alliés augmente à hauteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de l'ATQ de Robin + <orangeStrong>{{3}}</orangeStrong>. D'autre part, après chaque attaque d'un allié, Robin inflige des DGT physiques additionnels équivalents à <orangeStrong>{{4, percent}}%</orangeStrong> de son ATQ 1 fois, avec des chances de coup critique fixées à {{5, percent}}% et des DGT critiques fixés à {{6, percent}}%.<br>Lorsque Robin est dans l'état Concerto, elle devient immunisée aux malus de contrôle et ne peut ni agir ni jouer son tour tant que l'état Concerto n'est pas terminé.<br>Un compte à rebours pour Concerto s'affiche dans la barre d'ordre d'action. Lorsque ce compte à rebours débute, Robin quitte l'état Concerto et agit immédiatement. Le compte à rebours a sa propre VIT fixe qui est de {{2}}.",
+        "shortDesc": "Entre dans l'état Concerto, ce qui <orangeStrong>augmente l'ATQ de tous les alliés</orangeStrong> et permet à tous les coéquipiers d'agir immédiatement. Robin inflige des <orangeStrong>DGT physiques additionnels</orangeStrong> après une attaque. Lorsque Robin est dans l'état Concerto, elle est immunisée aux malus de contrôle. Pendant toute la durée de cet état, Robin ne peut ni agir ni jouer son tour jusqu'à la fin du compte à rebours."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Résonance du chœur",
+        "fullDesc": "Augmente les DGT critiques de tous les alliés de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. D'autre part, Robin régénère {{2}} points d'énergie lorsqu'un allié attaque une cible ennemie.",
+        "shortDesc": "Augmente les <orangeStrong>DGT critiques</orangeStrong> de tous les alliés, et Robin régénère de l'énergie lorsqu'un allié attaque un ennemi."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Accordage inversé",
-      "desc": "Niv. de la compétence +2, jusqu'au niv. 15 maximum.\\nNiv. de l'ultime +2, jusqu'au niv. 15 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au niv. 15 maximum.<br>Niv. de l'ultime +2, jusqu'au niv. 15 maximum."
     },
     "4": {
       "name": "Clé de la goutte de pluie",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Lamentation de l'étoile solitaire",
-      "desc": "Niv. de l'ATQ normale +1, jusqu'au niv. 10 maximum.\\nNiv. du talent +2, jusqu'au niv. 15 maximum."
+      "desc": "Niv. de l'ATQ normale +1, jusqu'au niv. 10 maximum.<br>Niv. du talent +2, jusqu'au niv. 15 maximum."
     },
     "6": {
       "name": "Minuit sans lune",

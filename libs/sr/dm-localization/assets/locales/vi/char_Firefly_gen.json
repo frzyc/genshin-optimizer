@@ -16,8 +16,8 @@
     "skill": {
       "0": {
         "name": "Chỉ Lệnh: Oanh Tạc Trên Không",
-        "fullDesc": "Tiêu hao HP bằng {{2, percent}}% Giới Hạn HP của bản thân để hồi phục cố định một lượng năng lượng bằng <orangeStrong>{{3, percent}}%</orangeStrong> Giới Hạn Năng Lượng của bản thân, gây Sát Thương Hỏa bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Chiến Giáp SAM cho một kẻ địch chỉ định. Nếu HP hiện tại không đủ, khi thi triển Chiến Kỹ thì HP hiện tại của Chiến Giáp SAM sẽ giảm còn 1 điểm. Khiến bản thân lần sau <u>Ưu Tiên Hành Động</u> {{4, percent}}%.",
-        "shortDesc": "Tiêu hao một phần HP của bản thân để hồi năng lượng, gây Sát Thương Hỏa cho một kẻ địch. Khiến bản thân lần sau <u>Ưu Tiên Hành Động</u>."
+        "fullDesc": "Tiêu hao HP bằng {{2, percent}}% Giới Hạn HP của bản thân để hồi phục cố định một lượng năng lượng bằng <orangeStrong>{{3, percent}}%</orangeStrong> Giới Hạn Năng Lượng của bản thân, gây Sát Thương Hỏa bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Chiến Giáp SAM cho một kẻ địch chỉ định. Nếu HP hiện tại không đủ, khi thi triển Chiến Kỹ thì HP hiện tại của Chiến Giáp SAM sẽ giảm còn 1 điểm. Khiến bản thân lần sau Ưu Tiên Hành Động {{4, percent}}%.",
+        "shortDesc": "Tiêu hao một phần HP của bản thân để hồi năng lượng, gây Sát Thương Hỏa cho một kẻ địch. Khiến bản thân lần sau Ưu Tiên Hành Động."
       },
       "1": {
         "name": "Đom Đóm IV - Sao Chết Quá Tải",
@@ -28,8 +28,15 @@
     "ult": {
       "0": {
         "name": "Đom Đóm IV: Thiêu Đốt Hoàn Toàn",
-        "fullDesc": "Bước vào trạng thái Thiêu Đốt Hoàn Toàn, bản thân ưu tiên hành động 100% đồng thời nhận được Tấn Công Thường Cường Hóa và Chiến Kỹ Cường Hóa. Ở trạng thái Thiêu Đốt Hoàn Toàn, Tốc Độ tăng <orangeStrong>{{3}}</orangeStrong> điểm, hơn nữa khi thi triển Tấn Công Thường Cường Hóa và Chiến Kỹ Cường Hóa, hiệu suất Phá Vỡ Điểm Yếu của bản thân tăng {{2, percent}}%, khiến Sát Thương Phá Vỡ mà kẻ địch phải chịu do Chiến Giáp SAM gây ra tăng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, duy trì đến khi kết thúc lần tấn công này.\\nKhi xuất hiện đếm ngược Thiêu Đốt Hoàn Toàn ở thứ tự hành động, thì khi hiệp đếm ngược bắt đầu, Chiến Giáp SAM sẽ giải trừ trạng thái Thiêu Đốt Hoàn Toàn, đếm ngược sở hữu cố định {{4}} Tốc Độ.\\nỞ trạng thái Thiêu Đốt Hoàn Toàn, Chiến Giáp SAM không thể thi triển Tuyệt Kỹ.",
+        "fullDesc": "Bước vào trạng thái Thiêu Đốt Hoàn Toàn, bản thân ưu tiên hành động 100% đồng thời nhận được Tấn Công Thường Cường Hóa và Chiến Kỹ Cường Hóa. Ở trạng thái Thiêu Đốt Hoàn Toàn, Tốc Độ tăng <orangeStrong>{{3}}</orangeStrong> điểm, hơn nữa khi thi triển Tấn Công Thường Cường Hóa và Chiến Kỹ Cường Hóa, hiệu suất Phá Vỡ Điểm Yếu của bản thân tăng {{2, percent}}%, khiến Sát Thương Phá Vỡ mà kẻ địch phải chịu do Chiến Giáp SAM gây ra tăng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, duy trì đến khi kết thúc lần tấn công này.<br>Khi xuất hiện đếm ngược Thiêu Đốt Hoàn Toàn ở thứ tự hành động, thì khi hiệp đếm ngược bắt đầu, Chiến Giáp SAM sẽ giải trừ trạng thái Thiêu Đốt Hoàn Toàn, đếm ngược sở hữu cố định {{4}} Tốc Độ.<br>Ở trạng thái Thiêu Đốt Hoàn Toàn, Chiến Giáp SAM không thể thi triển Tuyệt Kỹ.",
         "shortDesc": "Bước vào trạng thái Thiêu Đốt Hoàn Toàn, <orangeStrong>khiến bản thân ưu tiên hành động <unbreak>100%</orangeStrong></color>, nhận được <orangeStrong>Tấn Công Thường Cường Hóa</orangeStrong> và <orangeStrong>Chiến Kỹ Cường Hóa</orangeStrong>, đồng thời tăng <orangeStrong>tốc độ, Hiệu Suất Phá Vỡ Điểm Yếu của bản thân, và Sát Thương Phá Vỡ mà kẻ địch phải chịu</orangeStrong>, cho đến khi đếm ngược kết thúc."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Trung Khu Kén Lửa",
+        "fullDesc": "HP càng thấp, sát thương phải chịu càng thấp, khi HP từ {{3, percent}}% trở xuống, hiệu ứng Giảm Sát Thương sẽ đạt mức tối đa, tối đa giảm <orangeStrong>{{1, percent}}%</orangeStrong>. Hiệu ứng Giảm Sát Thương trong trạng thái Thiêu Đốt Hoàn Toàn duy trì mức tối đa, Kháng Hiệu Ứng tăng <orangeStrong>{{4, percent}}%</orangeStrong>.<br>Nếu năng lượng không đủ {{2, percent}}% thì khi bắt đầu chiến đấu, năng lượng sẽ hồi đến {{2, percent}}%. Khi năng lượng hồi đến giới hạn sẽ giải trừ tất cả Hiệu Ứng Xấu của bản thân.",
+        "shortDesc": "HP càng thấp, sát thương phải chịu càng thấp. Hiệu ứng Giảm Sát Thương trong trạng thái Thiêu Đốt Hoàn Toàn duy trì mức tối đa, tăng Kháng Hiệu Ứng. Nếu năng lượng không đủ <orangeStrong>{{2, percent}}%</orangeStrong> thì khi bắt đầu chiến đấu, năng lượng sẽ hồi đến <orangeStrong>{{2, percent}}%</orangeStrong>. Khi năng lượng hồi đến giới hạn sẽ giải trừ tất cả Hiệu Ứng Xấu của bản thân."
       }
     },
     "technique": {

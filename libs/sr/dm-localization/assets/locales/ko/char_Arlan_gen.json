@@ -22,6 +22,13 @@
         "shortDesc": "단일 적에게 대량의 번개 속성 피해를 가하고, 인접한 목표에게 번개 속성 피해를 가한다"
       }
     },
+    "talent": {
+      "0": {
+        "name": "고통과 분노",
+        "fullDesc": "아를란이 현재 잃은 HP 백분율에 따라 피해 보너스를 획득하며, 아를란이 가하는 피해가 최대 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다",
+        "shortDesc": "<orangeStrong>자신</orangeStrong>의 <orangeStrong>현재 잃은 HP 백분율에 따라 피해가 증가</orangeStrong>한다"
+      }
+    },
     "technique": {
       "0": {
         "name": "신속한 수확",

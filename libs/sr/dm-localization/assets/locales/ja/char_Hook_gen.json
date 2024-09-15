@@ -11,26 +11,33 @@
     "skill": {
       "0": {
         "name": "おい！フックを{RUBY_B#おぼ}覚{RUBY_E#}えてるか？",
-        "fullDesc": "指定した敵単体にフックの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与え、{{2, percent}}%の<u>基礎確率</u>で敵を燃焼状態にする、{{3}}ターン継続。\\n燃焼状態の敵はターンが回ってくるたびに、フックの攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の炎属性持続ダメージを受ける。",
+        "fullDesc": "指定した敵単体にフックの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与え、{{2, percent}}%の基礎確率で敵を燃焼状態にする、{{3}}ターン継続。<br>燃焼状態の敵はターンが回ってくるたびに、フックの攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の炎属性持続ダメージを受ける。",
         "shortDesc": "敵単体に炎属性ダメージを与え、高確率で燃焼状態を付与。"
       },
       "1": {
         "name": "おい！フックを{RUBY_B#おぼ}覚{RUBY_E#}えてるか？",
-        "fullDesc": "指定した敵単体にフックの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与え、{{2, percent}}%の<u>基礎確率</u>で敵を燃焼状態にする、{{3}}ターン継続。さらに、その敵に隣接する敵にフックの攻撃力<orangeStrong>{{5, percent}}%</orangeStrong>分の炎属性ダメージを与える。\\n燃焼状態の敵はターンが回ってくるたびに、フックの攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の炎属性持続ダメージを受ける。",
+        "fullDesc": "指定した敵単体にフックの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与え、{{2, percent}}%の基礎確率で敵を燃焼状態にする、{{3}}ターン継続。さらに、その敵に隣接する敵にフックの攻撃力<orangeStrong>{{5, percent}}%</orangeStrong>分の炎属性ダメージを与える。<br>燃焼状態の敵はターンが回ってくるたびに、フックの攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の炎属性持続ダメージを受ける。",
         "shortDesc": "敵単体に炎属性ダメージを与え、高確率で燃焼状態にする、隣接する敵に少量の炎属性ダメージを与える。"
       }
     },
     "ult": {
       "0": {
         "name": "ドカン！{RUBY_B#と}飛{RUBY_E#}んでけ{RUBY_B#はなび}花火{RUBY_E#}！",
-        "fullDesc": "指定した敵単体にフックの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与える。\\n必殺技を発動した後、次に発動する戦闘スキルを強化、強化後の戦闘スキルは指定した敵単体および隣接する敵にダメージを与える。",
+        "fullDesc": "指定した敵単体にフックの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与える。<br>必殺技を発動した後、次に発動する戦闘スキルを強化、強化後の戦闘スキルは指定した敵単体および隣接する敵にダメージを与える。",
         "shortDesc": "敵単体に大量の炎属性ダメージを与え、<orangeStrong>次に発動する戦闘スキルを強化する</orangeStrong>。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "はっ！{RUBY_B#ひ}火{RUBY_E#}に{RUBY_B#あぶら}油{RUBY_E#}を{RUBY_B#そそ}注{RUBY_E#}ぐ",
+        "fullDesc": "燃焼状態の敵を攻撃する時、さらにフックの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性付加ダメージを1回与え、さらにEPを{{2}}回復する。",
+        "shortDesc": "燃焼状態の敵を攻撃する時、<orangeStrong>少量の炎属性付加ダメージを与え</orangeStrong>、さらにEPを回復する。"
       }
     },
     "technique": {
       "0": {
         "name": "ほら！{RUBY_B#めちゃくちゃ}滅茶苦茶{RUBY_E#}になってる",
-        "fullDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体にフックの攻撃力{{4, percent}}%分の炎属性ダメージを与え、{{1, percent}}%の<u>基礎確率</u>で敵単体それぞれに燃焼状態を付与する、{{3}}ターン継続。\\n燃焼状態の敵はターンが回ってくるたびに、フックの攻撃力{{2, percent}}%分の炎属性持続ダメージを受ける。",
+        "fullDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体にフックの攻撃力{{4, percent}}%分の炎属性ダメージを与え、{{1, percent}}%の基礎確率で敵単体それぞれに燃焼状態を付与する、{{3}}ターン継続。<br>燃焼状態の敵はターンが回ってくるたびに、フックの攻撃力{{2, percent}}%分の炎属性持続ダメージを受ける。",
         "shortDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体に炎ダメージを与え、高確率で敵それぞれを燃焼状態にする。"
       }
     },

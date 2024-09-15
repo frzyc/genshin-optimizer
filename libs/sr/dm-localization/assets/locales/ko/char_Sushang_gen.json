@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "운기검경 • 산경",
-        "fullDesc": "지정된 단일 적에게 소상 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 물리 속성 피해를 준다. 동시에 마지막 일격 후 {{3, percent}}% 확률로 [검세]를 발동해 적에게 소상 공격력 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 물리 속성 <u>추가 피해</u>를 준다.\\n해당 목표가 <u>약점 격파 상태</u>일 경우 [검세]는 반드시 발동한다",
-        "shortDesc": "단일 적에게 물리 속성 피해를 주고, <orangeStrong>낮은 확률로 [검세]를 발동</orangeStrong>한다. 적이 <u>약점 격파 상태</u>일 경우 <orangeStrong>[검세]를 반드시 발동</orangeStrong>한다"
+        "fullDesc": "지정된 단일 적에게 소상 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 물리 속성 피해를 준다. 동시에 마지막 일격 후 {{3, percent}}% 확률로 [검세]를 발동해 적에게 소상 공격력 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 물리 속성 추가 피해를 준다.<br>해당 목표가 약점 격파 상태일 경우 [검세]는 반드시 발동한다",
+        "shortDesc": "단일 적에게 물리 속성 피해를 주고, <orangeStrong>낮은 확률로 [검세]를 발동</orangeStrong>한다. 적이 약점 격파 상태일 경우 <orangeStrong>[검세]를 반드시 발동</orangeStrong>한다"
       }
     },
     "ult": {
       "0": {
         "name": "태허형온 • 촉야",
-        "fullDesc": "지정된 단일 적에게 소상 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 물리 속성 피해를 주고 소상은 즉시 행동한다. 동시에 소상의 공격력이 <orangeStrong>{{4, percent}}%</orangeStrong> 증가하고 전투 스킬 발동 시 [검세]의 발동 판정이 추가로 2회 증가한다. 지속 시간: {{2}}턴.\\n추가 판정으로 발동된 [검세]의 피해는 기존 피해의 {{3, percent}}%이다",
+        "fullDesc": "지정된 단일 적에게 소상 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 물리 속성 피해를 주고 소상은 즉시 행동한다. 동시에 소상의 공격력이 <orangeStrong>{{4, percent}}%</orangeStrong> 증가하고 전투 스킬 발동 시 [검세]의 발동 판정이 추가로 2회 증가한다. 지속 시간: {{2}}턴.<br>추가 판정으로 발동된 [검세]의 피해는 기존 피해의 {{3, percent}}%이다",
         "shortDesc": "단일 적에게 대량의 물리 속성 피해를 가하고, [검세] 효과를 강화하며 <orangeStrong>즉시 행동</orangeStrong>한다"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "자유자재의 칼날",
+        "fullDesc": "필드 위 적의 약점이 격파될 시 소상의 속도가 <orangeStrong>{{1, percent(fixed: 2)}}%</orangeStrong> 증가한다. 지속 시간: {{2}}턴",
+        "shortDesc": "필드 위 적의 약점이 격파되면 자신의 속도가 증가한다"
       }
     },
     "technique": {

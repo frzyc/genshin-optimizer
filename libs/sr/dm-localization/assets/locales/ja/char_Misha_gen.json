@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "ち…{RUBY_B#ちこく}遅刻{RUBY_E#}する！",
-        "fullDesc": "初期状態の攻撃段数は{{1}}。最初に1段の攻撃を行い、指定した敵単体にミーシャの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の氷属性ダメージを与え、以降の各段攻撃は、ランダムな敵単体にミーシャの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の氷属性ダメージを与える。各段攻撃の前に、<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>の<u>基礎確率</u>で敵を凍結状態にする、1ターン継続。\\n凍結状態の敵は行動できず、ターンが回ってくるたびにミーシャの攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の氷属性<u>付加ダメージ</u>を受ける。\\n必殺技の最大攻撃段数は{{5}}。必殺技を発動した後、攻撃段数が初期状態にリセットされる。",
+        "fullDesc": "初期状態の攻撃段数は{{1}}。最初に1段の攻撃を行い、指定した敵単体にミーシャの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の氷属性ダメージを与え、以降の各段攻撃は、ランダムな敵単体にミーシャの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の氷属性ダメージを与える。各段攻撃の前に、<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>の基礎確率で敵を凍結状態にする、1ターン継続。<br>凍結状態の敵は行動できず、ターンが回ってくるたびにミーシャの攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の氷属性付加ダメージを受ける。<br>必殺技の最大攻撃段数は{{5}}。必殺技を発動した後、攻撃段数が初期状態にリセットされる。",
         "shortDesc": "敵単体に少量の氷属性ダメージを与える。初期状態では<orangeStrong>{{1}}</orangeStrong>回バウンドする。最大で<orangeStrong>{{5}}</orangeStrong>回バウンドできる。各段攻撃の前に、低確率で敵を<orangeStrong>凍結</orangeStrong>状態にする。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#だっしんき}脱進機{RUBY_E#}",
+        "fullDesc": "味方がSPを1消費するたびに、ミーシャの次の必殺技の攻撃段数+{{2}}、ミーシャのEPを<orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong>回復する。",
+        "shortDesc": "味方が<orangeStrong>SPを1消費</orangeStrong>するたびに、ミーシャの次の<orangeStrong>必殺技の攻撃段数</orangeStrong>がアップし、ミーシャのEPを回復する。"
       }
     },
     "technique": {

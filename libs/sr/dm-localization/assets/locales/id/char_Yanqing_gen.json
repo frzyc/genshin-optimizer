@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Amidst the Raining Bliss",
-        "fullDesc": "Meningkatkan {{1, percent}}% CRIT Rate Yanqing. Efek \"Soulsteel Sync\" Yanqing yang aktif akan meningkatkan <orangeStrong>{{2, percent}}%</orangeStrong> CRIT DMG tambahan. Efek <u>buff</u> berlangsung selama 1 giliran. Setelah itu Yanqing akan mengakibatkan Ice DMG sebesar <orangeStrong>{{3, percent}}%</orangeStrong> ATK Yanqing pada 1 target musuh.",
+        "fullDesc": "Meningkatkan {{1, percent}}% CRIT Rate Yanqing. Efek \"Soulsteel Sync\" Yanqing yang aktif akan meningkatkan <orangeStrong>{{2, percent}}%</orangeStrong> CRIT DMG tambahan. Efek buff berlangsung selama 1 giliran. Setelah itu Yanqing akan mengakibatkan Ice DMG sebesar <orangeStrong>{{3, percent}}%</orangeStrong> ATK Yanqing pada 1 target musuh.",
         "shortDesc": "Meningkatkan CRIT Rate dan memperkuat \"Soulsteel Sync\" Yanqing, mengakibatkan Ice DMG dalam jumlah besar pada 1 musuh."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "One With the Sword",
+        "fullDesc": "Efek \"Soulsteel Sync\" Yanqing yang aktif akan mengurangi peluangnya terkena serangan, serta meningkatkan <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> CRIT Rate dan <orangeStrong>{{2, percent}}%</orangeStrong> CRIT DMG Yanqing. Setelah menyerang target musuh, Yanqing memiliki <orangeStrong>{{3, percent}}%</orangeStrong> peluang tetap untuk melancarkan Serangan Lanjutan yang mengakibatkan Ice DMG sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK Yanqing pada target dan {{6, percent}}% peluang dasar untuk membuat target memasuki status Frozen selama 1 giliran.<br>Saat dalam status Frozen, target musuh tidak dapat beraksi dan juga akan menerima Ice DMG tambahan sebesar <orangeStrong>{{5, percent}}%</orangeStrong> ATK Yanqing setiap gilirannya dimulai.<br>Efek \"Soulsteel Sync\" akan hilang saat Yanqing menerima DMG.",
+        "shortDesc": "<orangeStrong>Saat berada dalam status \"Soulsteel Sync\"</orangeStrong>, kemungkinan diserang akan berkurang dan <orangeStrong>meningkatkan CRIT Rate dan CRIT DMG</orangeStrong> dirinya. Setelah <orangeStrong>melancarkan serangan</orangeStrong> pada target musuh, ada peluang untuk memicu Serangan Lanjutan yang mengakibatkan Ice DMG serta berpeluang untuk membuat target memasuki status Frozen.<br>\"Soulsteel Sync\" akan hilang setelah dirinya terkena serangan."
       }
     },
     "technique": {

@@ -22,6 +22,13 @@
         "shortDesc": "สร้าง DMG สายฟ้า อย่างรุนแรงแก่ฝ่ายศัตรูหนึ่งตัว และจะสร้าง DMG สายฟ้า แก่ตัวที่อยู่ใกล้เคียง กับเป้าหมายด้วย"
       }
     },
+    "talent": {
+      "0": {
+        "name": "Pain and Anger",
+        "fullDesc": "เพิ่ม DMG ตามเปอร์เซ็นต์ HP ที่ Arlan เสียไปในปัจจุบัน โดยจะทำให้ Arlan สามารถสร้าง DMG ได้สูงสุดถึง <orangeStrong>{{1, percent}}%</orangeStrong>",
+        "shortDesc": "<orangeStrong>เพิ่ม DMG ตามเปอร์เซ็นต์ HP ปัจจุบัน</orangeStrong> ของตัวเอง<orangeStrong>ที่เสียไป</orangeStrong>"
+      }
+    },
     "technique": {
       "0": {
         "name": "Swift Harvest",

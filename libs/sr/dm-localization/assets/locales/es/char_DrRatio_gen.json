@@ -18,14 +18,21 @@
     "ult": {
       "0": {
         "name": "Paradoja silogística",
-        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ del Dr. Ratio como Daño Imaginario a un enemigo y le aplica Locura de los sabios. Cuando un aliado del Dr. Ratio ataca a un objetivo afectado por Locura de los sabios, el Dr. Ratio lanza el <u>ataque adicional</u> del talento contra dicho objetivo.\\nLocura de los sabios se puede activar hasta {{2}} veces y solo afecta al último objetivo afectado por la habilidad definitiva del Dr. Ratio. Tras usar la habilidad definitiva, se reinicia el contador de activaciones.",
-        "shortDesc": "Inflige Daño Imaginario a un enemigo y le aplica Locura de los sabios. Cuando un aliado del Dr. Ratio ataca a un objetivo afectado por Locura de los sabios, el Dr. Ratio lanza un <orangeStrong><u>ataque adicional</u></orangeStrong> contra dicho objetivo."
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ del Dr. Ratio como Daño Imaginario a un enemigo y le aplica Locura de los sabios. Cuando un aliado del Dr. Ratio ataca a un objetivo afectado por Locura de los sabios, el Dr. Ratio lanza el ataque adicional del talento contra dicho objetivo.<br>Locura de los sabios se puede activar hasta {{2}} veces y solo afecta al último objetivo afectado por la habilidad definitiva del Dr. Ratio. Tras usar la habilidad definitiva, se reinicia el contador de activaciones.",
+        "shortDesc": "Inflige Daño Imaginario a un enemigo y le aplica Locura de los sabios. Cuando un aliado del Dr. Ratio ataca a un objetivo afectado por Locura de los sabios, el Dr. Ratio lanza un <orangeStrong>ataque adicional</orangeStrong> contra dicho objetivo."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Pienso, luego existo",
+        "fullDesc": "Al usar su habilidad básica, el Dr. Ratio tiene una probabilidad fija del {{2, percent}}% de lanzar un ataque adicional contra el objetivo e infligir un Daño Imaginario equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ. Por cada estado negativo que tenga el objetivo, la probabilidad fija de lanzar el ataque adicional aumenta en un {{3, percent}}%. Si el objetivo es derrotado antes de que se lance el ataque adicional, el ataque adicional se dirige contra otro enemigo al azar.",
+        "shortDesc": "Al usar su habilidad básica, hay una probabilidad de lanzar un <orangeStrong>ataque adicional</orangeStrong> contra el objetivo."
       }
     },
     "technique": {
       "0": {
         "name": "Molde de la idolatría",
-        "fullDesc": "Tras usar la técnica, crea una zona especial que afecta con Provocación a los enemigos cercanos durante {{1}} s. Al entrar en combate con los enemigos dentro de la zona especial, hay una <u>probabilidad base</u> del {{2, percent}}% de que la VEL de cada enemigo se reduzca en un {{3, percent}}% durante {{4}} turnos. Solo puedes tener una zona especial creada por los aliados a la vez.",
+        "fullDesc": "Tras usar la técnica, crea una zona especial que afecta con Provocación a los enemigos cercanos durante {{1}} s. Al entrar en combate con los enemigos dentro de la zona especial, hay una probabilidad base del {{2, percent}}% de que la VEL de cada enemigo se reduzca en un {{3, percent}}% durante {{4}} turnos. Solo puedes tener una zona especial creada por los aliados a la vez.",
         "shortDesc": "Crea una zona especial. Los enemigos que se encuentren dentro de la zona son afectados por Provocación. Al entrar en combate con los enemigos de la zona, hay una gran probabilidad de que <orangeStrong>la velocidad del objetivo enemigo se reduzca</orangeStrong>."
       }
     },

@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Trovão Oportuno",
-        "fullDesc": "Cura todos os aliados em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Bailu + <orangeStrong>{{2}}</orangeStrong>.\\nBailu aplica Revigoramento nos aliados que ainda não tiverem Revigoramento. Para os que já possuírem Revigoramento, Bailu estende a sua duração em 1 rodada.\\nO efeito de Revigoramento pode durar por {{3}} rodada(s). Este efeito não pode acumular.",
+        "fullDesc": "Cura todos os aliados em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Bailu + <orangeStrong>{{2}}</orangeStrong>.<br>Bailu aplica Revigoramento nos aliados que ainda não tiverem Revigoramento. Para os que já possuírem Revigoramento, Bailu estende a sua duração em 1 rodada.<br>O efeito de Revigoramento pode durar por {{3}} rodada(s). Este efeito não pode acumular.",
         "shortDesc": "Restaura os PV e concede Revigoramento ou prolonga a duração de Revigoramento de todos os aliados."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Cabaça Cheia de Elixir",
+        "fullDesc": "Depois que um aliado com Revigoramento é atingido, restaura <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Bailu + <orangeStrong>{{2}}</orangeStrong>. Este efeito pode ser ativado {{5}} vez(es). Quando um aliado receber um golpe fatal, ele não será derrubado. Bailu o cura imediatamente em <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Bailu + <orangeStrong>{{4}}</orangeStrong> de PV. Este efeito pode ser ativado uma vez por batalha.",
+        "shortDesc": "Quando um aliado com <orangeStrong>Revigoramento</orangeStrong> é atacado, <orangeStrong>restaura PV</orangeStrong> do aliado.<br>Quando um aliado sofre um <orangeStrong>golpe fatal</orangeStrong>, Bailu <orangeStrong>restaura imediatamente os PV dele</orangeStrong>. Este efeito só pode ser ativado 1 vez por batalha."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Opulência Onisciente",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "4": {
       "name": "Extração Maléfica",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Preocupações Minguantes",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "6": {
       "name": "Gota de Divindade Dracônica",

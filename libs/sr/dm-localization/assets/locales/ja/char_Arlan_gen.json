@@ -22,6 +22,13 @@
         "shortDesc": "敵単体に大量の雷属性ダメージを与え、隣接する敵に雷属性ダメージを与える。"
       }
     },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#いた}痛{RUBY_E#}みと{RUBY_B#いか}怒{RUBY_E#}りの{RUBY_B#きわ}極{RUBY_E#}み",
+        "fullDesc": "アーランの失ったHPの割合に応じて与ダメージアップ、最大でアーランの与ダメージ+<orangeStrong>{{1, percent}}%</orangeStrong>",
+        "shortDesc": "自身の<orangeStrong>失ったHPの割合に応じて与ダメージをアップ</orangeStrong>する。"
+      }
+    },
     "technique": {
       "0": {
         "name": "{RUBY_B#とっきゅう}特急{RUBY_E#}ハーベスト",

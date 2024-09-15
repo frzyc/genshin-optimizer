@@ -11,21 +11,28 @@
     "skill": {
       "0": {
         "name": "{RUBY_B#ていおんぼうがい}低温妨害{RUBY_E#}",
-        "fullDesc": "指定した敵単体の<u>バフ</u>を{{2}}つ解除し、ペラの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
-        "shortDesc": "敵単体の<orangeStrong><u>バフ</u></orangeStrong>を1つ<orangeStrong>解除</orangeStrong>し、敵単体に氷属性ダメージを与える。"
+        "fullDesc": "指定した敵単体のバフを{{2}}つ解除し、ペラの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
+        "shortDesc": "敵単体の<orangeStrong>バフ</orangeStrong>を1つ<orangeStrong>解除</orangeStrong>し、敵単体に氷属性ダメージを与える。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#りょういきせいあつ}領域制圧{RUBY_E#}",
-        "fullDesc": "{{1, percent}}%の<u>基礎確率</u>で敵単体それぞれを「一般解」状態にし、敵全体にペラの攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の氷属性ダメージを与える。\\n「一般解」状態の敵の防御力-<orangeStrong>{{2, percent}}%</orangeStrong>、{{3}}ターン継続。",
+        "fullDesc": "{{1, percent}}%の基礎確率で敵単体それぞれを「一般解」状態にし、敵全体にペラの攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の氷属性ダメージを与える。<br>「一般解」状態の敵の防御力-<orangeStrong>{{2, percent}}%</orangeStrong>、{{3}}ターン継続。",
         "shortDesc": "高確率で敵の<orangeStrong>防御力をダウン</orangeStrong>し、敵全体に少量の氷属性ダメージを与える。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "データ{RUBY_B#さいしゅ}採取{RUBY_E#}",
+        "fullDesc": "攻撃を行った後、敵にデバフがある場合、ペラはさらにEPを<orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong>回復する。この効果は1回の攻撃で1回まで発動できる。",
+        "shortDesc": "攻撃後、敵にデバフがある場合、ペラはEPを回復する。"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#せんてひっしょう}先手必勝{RUBY_E#}",
-        "fullDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体にペラの攻撃力{{4, percent}}%分の氷属性ダメージを与え、{{1, percent}}%の<u>基礎確率</u>で敵単体それぞれの防御力-{{2, percent}}%、{{3}}ターン継続。",
+        "fullDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体にペラの攻撃力{{4, percent}}%分の氷属性ダメージを与え、{{1, percent}}%の基礎確率で敵単体それぞれの防御力-{{2, percent}}%、{{3}}ターン継続。",
         "shortDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体に少量のダメージを与え、高確率で敵それぞれの防御力ダウン。"
       }
     },

@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "恣肆吞併的擔保",
-        "fullDesc": "指定我方單體成為【收債人】，使其速度提高{{1}}點，持續{{4}}回合。\\n【收債人】發動攻擊後，對每個命中的敵方目標造成1次等同於翡翠<orangeStrong>{{3, percent}}%</orangeStrong>攻擊力的量子屬性<u>附加傷害</u>，並消耗【收債人】生命上限{{2, percent}}%的生命值，若現有生命值不足，則現有生命值降至1點。\\n若翡翠成為【收債人】時，無法獲得速度提高效果且攻擊後不消耗生命值。\\n當場上存在【收債人】時，翡翠無法施放戰技，翡翠每回合開始時【收債人】狀態持續回合數減1。",
-        "shortDesc": "使我方單體成為<orangeStrong>【收債人】</orangeStrong>，使其速度提高。<orangeStrong>【收債人】</orangeStrong>發動攻擊後，對每個命中的敵方目標造成少量量子屬性<u>附加傷害</u>並消耗自身生命值。翡翠成為【收債人】時，無法獲得速度提高效果且攻擊後不消耗生命值。"
+        "fullDesc": "指定我方單體成為【收債人】，使其速度提高{{1}}點，持續{{4}}回合。<br>【收債人】發動攻擊後，對每個命中的敵方目標造成1次等同於翡翠<orangeStrong>{{3, percent}}%</orangeStrong>攻擊力的量子屬性附加傷害，並消耗【收債人】生命上限{{2, percent}}%的生命值，若現有生命值不足，則現有生命值降至1點。<br>若翡翠成為【收債人】時，無法獲得速度提高效果且攻擊後不消耗生命值。<br>當場上存在【收債人】時，翡翠無法施放戰技，翡翠每回合開始時【收債人】狀態持續回合數減1。",
+        "shortDesc": "使我方單體成為<orangeStrong>【收債人】</orangeStrong>，使其速度提高。<orangeStrong>【收債人】</orangeStrong>發動攻擊後，對每個命中的敵方目標造成少量量子屬性附加傷害並消耗自身生命值。翡翠成為【收債人】時，無法獲得速度提高效果且攻擊後不消耗生命值。"
       }
     },
     "ult": {
       "0": {
         "name": "墮此欲淵，立此獄契",
-        "fullDesc": "對敵方全體造成等同於翡翠<orangeStrong>{{3, percent}}%</orangeStrong>攻擊力的量子屬性傷害。同時使翡翠天賦的<u>追加攻擊</u>獲得強化，追加攻擊造成的傷害倍率提高<orangeStrong>{{1, percent}}%</orangeStrong>。強化效果可生效{{2}}次。",
-        "shortDesc": "對敵方全體造成量子屬性傷害，使自身獲得<orangeStrong><u>追加攻擊</u></orangeStrong>傷害倍率提高。"
+        "fullDesc": "對敵方全體造成等同於翡翠<orangeStrong>{{3, percent}}%</orangeStrong>攻擊力的量子屬性傷害。同時使翡翠天賦的追加攻擊獲得強化，追加攻擊造成的傷害倍率提高<orangeStrong>{{1, percent}}%</orangeStrong>。強化效果可生效{{2}}次。",
+        "shortDesc": "對敵方全體造成量子屬性傷害，使自身獲得<orangeStrong>追加攻擊</orangeStrong>傷害倍率提高。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "剔爍之牙",
+        "fullDesc": "翡翠或成為【收債人】的目標發動攻擊後，每命中1名敵方目標均可獲得1點充能。當充能到達{{3}}點後，消耗{{3}}點充能，發動1次追加攻擊，對敵方全體目標造成等同於翡翠<orangeStrong>{{5, percent}}%</orangeStrong>攻擊力的量子屬性傷害，本次追加攻擊無法獲得充能。<br>翡翠發動天賦的追加攻擊時立即獲得{{4}}層【當品】，每層【當品】使暴擊傷害提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>，最多疊加{{2}}層。",
+        "shortDesc": "翡翠或成為<orangeStrong>【收債人】</orangeStrong>的目標發動攻擊後，每命中1個敵方目標均可獲得1點充能。當充能到達<orangeStrong>{{3}}</orangeStrong>點後，消耗<orangeStrong>{{3}}</orangeStrong>點充能，發動1次<orangeStrong>追加攻擊</orangeStrong>，對敵方全體造成量子屬性傷害。<br>翡翠發動<orangeStrong>追加攻擊</orangeStrong>時獲得【當品】，使暴擊傷害提高，最多疊加<orangeStrong>{{2}}</orangeStrong>層。"
       }
     },
     "technique": {

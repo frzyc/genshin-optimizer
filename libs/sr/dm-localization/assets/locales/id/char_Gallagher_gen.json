@@ -27,6 +27,13 @@
         "shortDesc": "Membuat seluruh musuh memasuki <orangeStrong>status \"Besotted\"</orangeStrong>, dan di saat yang bersamaan mengakibatkan Fire DMG pada seluruh musuh. Basic Attack berikutnya akan diperkuat menjadi \"Nectar Blitz\"."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Tipsy Tussle",
+        "fullDesc": "\"Besotted\" meningkatkan Break DMG yang diterima target sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Setiap kali setelah target berstatus \"Besotted\" terkena serangan rekan tim, akan memulihkan <orangeStrong>{{2}}</orangeStrong> HP penyerang.",
+        "shortDesc": "\"Besotted\" <orangeStrong>meningkatkan Break DMG yang diterima</orangeStrong> target. Setiap kali setelah target berstatus \"Besotted\" terkena serangan rekan tim, akan <orangeStrong>memulihkan HP penyerang</orangeStrong>."
+      }
+    },
     "technique": {
       "0": {
         "name": "Artisan Elixir",

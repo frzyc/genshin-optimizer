@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Blazing Welcome",
-        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Guinaifen's ATK to a single enemy and Fire DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Guinaifen's ATK to any adjacent enemies, with a {{3, percent}}% <u>base chance</u> to Burn the target and adjacent targets. When Burned, enemies will take a Fire DoT equal to <orangeStrong>{{4, percent}}%</orangeStrong> of Guinaifen's ATK at the beginning of each turn, lasting for {{5}} turn(s).",
+        "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Guinaifen's ATK to a single enemy and Fire DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Guinaifen's ATK to any adjacent enemies, with a {{3, percent}}% base chance to Burn the target and adjacent targets. When Burned, enemies will take a Fire DoT equal to <orangeStrong>{{4, percent}}%</orangeStrong> of Guinaifen's ATK at the beginning of each turn, lasting for {{5}} turn(s).",
         "shortDesc": "Deals Fire DMG to a single enemy and minor Fire DMG to adjacent enemies, with a high chance of <orangeStrong>Burning</orangeStrong> them."
       }
     },
@@ -22,10 +22,17 @@
         "shortDesc": "Deals Fire DMG to all enemies. If the enemies are inflicted with Burn, the Burn status deals DMG 1 extra time."
       }
     },
+    "talent": {
+      "0": {
+        "name": "PatrAeon Benefits",
+        "fullDesc": "When Guinaifen is on the field, there is a {{1, percent}}% base chance to apply Firekiss to an enemy after their Burn status causes DMG. While inflicted with Firekiss, the enemy receives <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> increased DMG, which lasts for {{5}} turn(s) and can stack up to {{6}} time(s).",
+        "shortDesc": "After the <orangeStrong>Burn status causes DMG</orangeStrong> on the enemy, there is a high chance of applying <orangeStrong>Firekiss</orangeStrong> to the enemy."
+      }
+    },
     "technique": {
       "0": {
         "name": "Skill Showcase",
-        "fullDesc": "Immediately attacks the enemy. After entering battle, deals DMG for {{2}} time(s), dealing Fire DMG equal to {{1, percent}}% of Guinaifen's ATK to a random single enemy target each time, with a {{3, percent}}% <u>base chance</u> of inflicting Firekiss on them.",
+        "fullDesc": "Immediately attacks the enemy. After entering battle, deals DMG for {{2}} time(s), dealing Fire DMG equal to {{1, percent}}% of Guinaifen's ATK to a random single enemy target each time, with a {{3, percent}}% base chance of inflicting Firekiss on them.",
         "shortDesc": "Attacks the enemy. After entering battle, deals minor Fire DMG to a single target while applying <orangeStrong>Firekiss</orangeStrong>, with a total of 4 Bounces."
       }
     },
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Smashing Boulder on Chest",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Blocking Pike with Neck",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Swallowing Sword to Stomach",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Catching Bullet with Hands",

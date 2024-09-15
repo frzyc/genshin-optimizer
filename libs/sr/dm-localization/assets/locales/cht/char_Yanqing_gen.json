@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "快雨燕相逐",
-        "fullDesc": "提高自身{{1, percent}}%暴擊率，若彥卿擁有【智劍連心】效果，則使其暴擊傷害額外提高<orangeStrong>{{2, percent}}%</orangeStrong>，<u>增益效果</u>持續1回合。隨後對指定敵方單體造成等同於彥卿<orangeStrong>{{3, percent}}%</orangeStrong>攻擊力的冰屬性傷害。",
+        "fullDesc": "提高自身{{1, percent}}%暴擊率，若彥卿擁有【智劍連心】效果，則使其暴擊傷害額外提高<orangeStrong>{{2, percent}}%</orangeStrong>，增益效果持續1回合。隨後對指定敵方單體造成等同於彥卿<orangeStrong>{{3, percent}}%</orangeStrong>攻擊力的冰屬性傷害。",
         "shortDesc": "提高自身暴擊率，並強化【智劍連心】，對敵方單體造成大量冰屬性傷害。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "呼劍如影",
+        "fullDesc": "彥卿擁有【智劍連心】效果時，受到攻擊的機率降低，並為自身提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>暴擊率和<orangeStrong>{{2, percent}}%</orangeStrong>暴擊傷害。對敵方目標發動攻擊後，有<orangeStrong>{{3, percent}}%</orangeStrong>的固定機率發動追加攻擊，對目標造成等同於彥卿<orangeStrong>{{4, percent}}%</orangeStrong>攻擊力的冰屬性傷害，並有{{6, percent}}%的基礎機率使其陷入凍結狀態，持續1回合。<br>凍結狀態下，敵方目標不能行動，且每回合開始時受到等同於彥卿<orangeStrong>{{5, percent}}%</orangeStrong>攻擊力的冰屬性附加傷害。<br>當彥卿受到傷害後，【智劍連心】將會消失。",
+        "shortDesc": "<orangeStrong>處於【智劍連心】時</orangeStrong>受到攻擊的機率降低，自身<orangeStrong>暴擊率和暴擊傷害提高</orangeStrong>。對敵方目標<orangeStrong>發動攻擊後</orangeStrong>，有機率發動追加攻擊對其造成冰屬性傷害，並有機率使其陷入凍結狀態。<br>自身受到傷害後，【智劍連心】消失。"
       }
     },
     "technique": {

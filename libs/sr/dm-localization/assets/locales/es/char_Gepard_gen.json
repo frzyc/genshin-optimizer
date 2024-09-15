@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Golpe sobrecogedor",
-        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Gepard como Daño de Hielo a un enemigo. Tiene un {{2, percent}}% de <u>probabilidad base</u> de afectar con Congelación al enemigo atacado durante {{3}} turno.\\nEl enemigo congelado no puede actuar, y al comienzo de cada turno recibe un <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ de Gepard como Daño de Hielo <u>adicional</u>.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Gepard como Daño de Hielo a un enemigo. Tiene un {{2, percent}}% de probabilidad base de afectar con Congelación al enemigo atacado durante {{3}} turno.<br>El enemigo congelado no puede actuar, y al comienzo de cada turno recibe un <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ de Gepard como Daño de Hielo adicional.",
         "shortDesc": "Inflige Daño de Hielo a un enemigo y <orangeStrong>tiene una probabilidad de causarle Congelación</orangeStrong>."
       }
     },
@@ -20,6 +20,13 @@
         "name": "Bastión duradero",
         "fullDesc": "Otorga a todos los aliados un escudo que absorbe un daño equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> de la DEF de Gepard + <orangeStrong>{{3}}</orangeStrong> durante {{2}} turnos.",
         "shortDesc": "<orangeStrong>Otorga escudos</orangeStrong> a todos los aliados."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Voluntad de hierro",
+        "fullDesc": "Al recibir un golpe letal, en vez de caer derrotado, Gepard regenera un <orangeStrong>{{1, percent}}%</orangeStrong> de sus PV máx. Este efecto solo se puede activar una vez en cada batalla.",
+        "shortDesc": "Al recibir un golpe letal, <orangeStrong>en vez de caer derrotado</orangeStrong>, regenera inmediatamente PV. Solo se puede activar 1 vez por batalla."
       }
     },
     "technique": {

@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "Kiếm Thuật Vân Kỵ - Núi Đổ",
-        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Sushang. Đồng thời sau khi thi triển đòn cuối cùng sẽ có {{3, percent}}% xác suất kích hoạt Kiếm Thế, gây <u>sát thương Vật Lý kèm theo</u> bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Sushang.\\nNếu mục tiêu này ở <u>trạng thái Phá Vỡ Điểm Yếu</u>, chắc chắn sẽ thi triển Kiếm Thế.",
-        "shortDesc": "Gây sát thương Vật Lý cho 1 kẻ địch, có <orangeStrong>xác suất nhỏ kích hoạt Kiếm Thế</orangeStrong>. Nếu mục tiêu ở <u>trạng thái Phá Vỡ Điểm Yếu</u>, <orangeStrong>chắc chắn sẽ kích hoạt Kiếm Thế</orangeStrong>."
+        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Sushang. Đồng thời sau khi thi triển đòn cuối cùng sẽ có {{3, percent}}% xác suất kích hoạt Kiếm Thế, gây sát thương Vật Lý kèm theo bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Sushang.<br>Nếu mục tiêu này ở trạng thái Phá Vỡ Điểm Yếu, chắc chắn sẽ thi triển Kiếm Thế.",
+        "shortDesc": "Gây sát thương Vật Lý cho 1 kẻ địch, có <orangeStrong>xác suất nhỏ kích hoạt Kiếm Thế</orangeStrong>. Nếu mục tiêu ở trạng thái Phá Vỡ Điểm Yếu, <orangeStrong>chắc chắn sẽ kích hoạt Kiếm Thế</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Vũ Trụ Tiềm Ẩn - Nến Đêm",
-        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Sushang, và khiến Sushang hành động ngay. Đồng thời tăng <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công của Sushang, và khi thi triển Chiến Kỹ sẽ tăng thêm 2 lần thi triển Kiếm Thế, duy trì {{2}} hiệp.\\nSát thương của Kiếm Thế được kích hoạt thêm sẽ bằng {{3, percent}}% sát thương ban đầu.",
+        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Sushang, và khiến Sushang hành động ngay. Đồng thời tăng <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công của Sushang, và khi thi triển Chiến Kỹ sẽ tăng thêm 2 lần thi triển Kiếm Thế, duy trì {{2}} hiệp.<br>Sát thương của Kiếm Thế được kích hoạt thêm sẽ bằng {{3, percent}}% sát thương ban đầu.",
         "shortDesc": "Gây lượng lớn Sát Thương Vật Lý cho 1 kẻ địch, cường hóa hiệu ứng Kiếm Thế và <orangeStrong>hành động ngay</orangeStrong>."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Lưỡi Kiếm Như Nước",
+        "fullDesc": "Khi trong trận có Điểm Yếu của mục tiêu địch bị phá vỡ, Tốc Độ của Sushang sẽ tăng <orangeStrong>{{1, percent(fixed: 2)}}%</orangeStrong>, kéo dài {{2}} hiệp.",
+        "shortDesc": "Khi điểm yếu của kẻ địch trong trận bị phá vỡ, sẽ tăng tốc độ của bản thân."
       }
     },
     "technique": {

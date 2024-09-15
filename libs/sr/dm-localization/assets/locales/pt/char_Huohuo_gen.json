@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "Talismã: Proteção",
-        "fullDesc": "Remove {{5}} <u>penalidade(s)</u> de um único aliado-alvo e restaura imediatamente PV deste aliado em uma quantidade igual a <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Huohuo + <orangeStrong>{{2}}</orangeStrong>. Ao mesmo tempo, restaura PV dos aliados adjacentes a este aliado-alvo em uma quantidade igual a <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Huohuo + <orangeStrong>{{4}}</orangeStrong>.",
-        "shortDesc": "Remove 1 <u>penalidade</u> de um aliado e <orangeStrong>restaura PV</orangeStrong> daquele aliado e dos aliados adjacentes a ele."
+        "fullDesc": "Remove {{5}} penalidade(s) de um único aliado-alvo e restaura imediatamente PV deste aliado em uma quantidade igual a <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Huohuo + <orangeStrong>{{2}}</orangeStrong>. Ao mesmo tempo, restaura PV dos aliados adjacentes a este aliado-alvo em uma quantidade igual a <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Huohuo + <orangeStrong>{{4}}</orangeStrong>.",
+        "shortDesc": "Remove 1 penalidade de um aliado e <orangeStrong>restaura PV</orangeStrong> daquele aliado e dos aliados adjacentes a ele."
       }
     },
     "ult": {
@@ -22,10 +22,17 @@
         "shortDesc": "<orangeStrong>Regenera a Energia</orangeStrong> de todos os aliados (excluindo este personagem) e <orangeStrong>aumenta o ATQ</orangeStrong> deles."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Possessão: Metafluxo Etéreo",
+        "fullDesc": "Após usar sua Perícia, Huohuo ganha Provisão Divina, durando por {{1}} rodada(s). Esta duração diminui por 1 rodada no início de cada rodada de Huohuo. Se Huohuo tiver Provisão Divina quando a rodada de um aliado começa ou quando um aliado utiliza sua Perícia Suprema, restaura PV para aquele aliado em uma quantidade igual a <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Huohuo + <orangeStrong>{{5}}</orangeStrong>. Ao mesmo tempo, cada aliado com {{6, percent}}% de PV ou menos é curado uma vez.<br>Quando Provisão Divina é ativada para curar um aliado, remove {{2}} penalidade(s) daquele aliado. Este efeito pode ser ativado até um máximo de {{7}} vez(es). Usar a habilidade novamente reinicia o efeito da contagem de ativação.",
+        "shortDesc": "Huohuo ganha Provisão Divina depois de usar sua Perícia. Se Huohuo possuir Vida Sacrificada no início da rodada de um aliado ou quando um aliado usa sua Perícia Suprema, <orangeStrong>restaura os PV do aliado</orangeStrong>. Ao mesmo tempo, <orangeStrong>todos os aliados</orangeStrong> com PV baixos <orangeStrong>recebem uma cura</orangeStrong>. Quando Provisão Divina é ativada para curar um aliado, <orangeStrong>remove 1 penalidade daquele aliado</orangeStrong>."
+      }
+    },
     "technique": {
       "0": {
         "name": "Demônio: Destituição do Mal",
-        "fullDesc": "Huohuo aterroriza inimigos próximos, deixando-os Horrorizados. Inimigos Horrorizados fogem de Huohuo por {{4}} segundos. Ao entrar numa batalha com inimigos Horrorizados, há {{1, percent}}% de <u>chance-base</u> de reduzir o ATQ de todos os inimigos em {{2, percent}}% por {{3}} rodada(s).",
+        "fullDesc": "Huohuo aterroriza inimigos próximos, deixando-os Horrorizados. Inimigos Horrorizados fogem de Huohuo por {{4}} segundos. Ao entrar numa batalha com inimigos Horrorizados, há {{1, percent}}% de chance-base de reduzir o ATQ de todos os inimigos em {{2, percent}}% por {{3}} rodada(s).",
         "shortDesc": "Deixa inimigos próximos Horrorizados. Ao entrar numa luta com inimigos Horrorizados, há altas chances de aplicar <orangeStrong>redução de ATQ</orangeStrong> nos inimigos-alvos."
       }
     },
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Amaldiçoada pelo Destino, Mariposas às Chamas",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "4": {
       "name": "Presa à Vida, Atada à Contenda",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Exigido pelo Decreto, Males Expulsos",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "6": {
       "name": "Tecido em Conjunto, Adesão Eterna",

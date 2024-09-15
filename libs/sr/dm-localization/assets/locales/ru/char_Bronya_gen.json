@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "Боевая передислокация",
-        "fullDesc": "Снимает 1 <u>ослабление</u> с союзника и позволяет ему выполнить действие немедленно, а также повышает его урон на <orangeStrong>{{1, percent}}%</orangeStrong> на {{3}} ход.\\nКогда это умение используется на самой Броне, она не может совершить действие повторно.",
-        "shortDesc": "<orangeStrong>Снимает</orangeStrong> 1 <orangeStrong><u>ослабление</u></orangeStrong> с союзника, <orangeStrong>повышает его урон</orangeStrong> и заставляет его <orangeStrong>немедленно выполнить действие</orangeStrong>."
+        "fullDesc": "Снимает 1 ослабление с союзника и позволяет ему выполнить действие немедленно, а также повышает его урон на <orangeStrong>{{1, percent}}%</orangeStrong> на {{3}} ход.<br>Когда это умение используется на самой Броне, она не может совершить действие повторно.",
+        "shortDesc": "<orangeStrong>Снимает</orangeStrong> 1 <orangeStrong>ослабление</orangeStrong> с союзника, <orangeStrong>повышает его урон</orangeStrong> и заставляет его <orangeStrong>немедленно выполнить действие</orangeStrong>."
       }
     },
     "ult": {
@@ -20,6 +20,13 @@
         "name": "Марш Белобога",
         "fullDesc": "Повышает силу атаки всех союзников на <orangeStrong>{{1, percent}}%</orangeStrong>, а их крит. урон на <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> от крит. урона Брони плюс <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> на {{4}} хода.",
         "shortDesc": "<orangeStrong>Повышает силу атаки</orangeStrong> и <orangeStrong>крит. урон</orangeStrong> всех союзников."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "На шаг впереди",
+        "fullDesc": "После использования базовой атаки следующее действие Брони продвигается вперёд на <orangeStrong>{{1, percent}}%</orangeStrong>.",
+        "shortDesc": "После использования базовой атаки продвигает вперёд своё следующее действие."
       }
     },
     "technique": {

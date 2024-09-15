@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "{RUBY_B#へんこう}変更{RUBY_E#}を{RUBY_B#きょか}許可{RUBY_E#}しますか？",
-        "fullDesc": "<orangeStrong>{{2, percent}}%</orangeStrong>の<u>基礎確率</u>で指定した敵単体に、フィールド上の味方が有する属性の内1つを弱点として埋め込む、さらにその弱点属性の属性耐性-{{4, percent}}%、{{3}}ターン継続。元からあった弱点を埋め込んだ場合、対応属性の属性耐性がダウンする効果は発動されない。\\n1体の敵に対し、銀狼が埋め込める弱点は1つまで。銀狼が同じ敵に対して再度弱点を埋め込む時、最後に埋め込んだ弱点のみが残される。\\n{{5, percent}}%の<u>基礎確率</u>でさらにその敵の全属性耐性-<orangeStrong>{{6, percent(fixed: 1)}}%</orangeStrong>、{{7}}ターン継続。\\nその敵に銀狼の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の量子属性ダメージを与える。",
+        "fullDesc": "<orangeStrong>{{2, percent}}%</orangeStrong>の基礎確率で指定した敵単体に、フィールド上の味方が有する属性の内1つを弱点として埋め込む、さらにその弱点属性の属性耐性-{{4, percent}}%、{{3}}ターン継続。元からあった弱点を埋め込んだ場合、対応属性の属性耐性がダウンする効果は発動されない。<br>1体の敵に対し、銀狼が埋め込める弱点は1つまで。銀狼が同じ敵に対して再度弱点を埋め込む時、最後に埋め込んだ弱点のみが残される。<br>{{5, percent}}%の基礎確率でさらにその敵の全属性耐性-<orangeStrong>{{6, percent(fixed: 1)}}%</orangeStrong>、{{7}}ターン継続。<br>その敵に銀狼の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の量子属性ダメージを与える。",
         "shortDesc": "高確率で敵単体に<orangeStrong>追加の弱点を付与</orangeStrong>し、量子属性ダメージを与える。"
       }
     },
     "ult": {
       "0": {
         "name": "|アカウントがBANされた|",
-        "fullDesc": "<orangeStrong>{{2, percent}}%</orangeStrong>の<u>基礎確率</u>で指定した敵単体の防御力-<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>、{{4}}ターン継続。その敵に銀狼の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の量子属性ダメージを与える。",
+        "fullDesc": "<orangeStrong>{{2, percent}}%</orangeStrong>の基礎確率で指定した敵単体の防御力-<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>、{{4}}ターン継続。その敵に銀狼の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の量子属性ダメージを与える。",
         "shortDesc": "高確率で敵単体の<orangeStrong>防御力をダウン</orangeStrong>させ、大量の量子属性ダメージを与える。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "プログラム{RUBY_B#おうとう}応答{RUBY_E#}なし…",
+        "fullDesc": "銀狼は以下の3つの「欠陥」を作成できる：攻撃力-<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>、防御力-<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>、速度-<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>。<br>銀狼が攻撃を行った後、<orangeStrong>{{4, percent}}%</orangeStrong>の基礎確率で攻撃を受けた敵にランダムな「欠陥」を1つ埋め込む、{{5}}ターン継続。",
+        "shortDesc": "攻撃後、確率で敵に<orangeStrong>「欠陥」</orangeStrong>を1つ埋め込む。"
       }
     },
     "technique": {
@@ -80,7 +87,7 @@
       "desc": "必殺技のLv.+2、最大Lv.15まで。通常攻撃のLv.+1、最大Lv.10まで。"
     },
     "6": {
-      "name": "オーバーレイ\\nネットワーク",
+      "name": "オーバーレイ<br>ネットワーク",
       "desc": "敵にあるデバフ1つにつき、その敵に対する銀狼の与ダメージ+{{1, percent}}%、最大で+{{2, percent}}%。"
     }
   }

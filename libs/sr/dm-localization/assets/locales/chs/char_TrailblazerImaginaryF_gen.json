@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "喧嚣的舞灯巡游",
-        "fullDesc": "为我方全体附上【伴舞】效果，持续{{1}}回合，开拓者每回合开始时持续回合数减1。持有【伴舞】的我方目标击破特攻提高<orangeStrong>{{3, percent}}%</orangeStrong>，并且攻击处于<u>弱点击破状态</u>下的敌方目标后，会将本次攻击的削韧值转化为1次<u>超击破伤害</u>。",
-        "shortDesc": "为我方全体施加【伴舞】效果。持有【伴舞】的我方目标<orangeStrong>击破特攻提高</orangeStrong>，并且攻击处于<u>弱点击破状态</u>下的敌方目标后，额外造成1次<orangeStrong><u>超击破伤害</u></orangeStrong>。"
+        "fullDesc": "为我方全体附上【伴舞】效果，持续{{1}}回合，开拓者每回合开始时持续回合数减1。持有【伴舞】的我方目标击破特攻提高<orangeStrong>{{3, percent}}%</orangeStrong>，并且攻击处于弱点击破状态下的敌方目标后，会将本次攻击的削韧值转化为1次超击破伤害。",
+        "shortDesc": "为我方全体施加【伴舞】效果。持有【伴舞】的我方目标<orangeStrong>击破特攻提高</orangeStrong>，并且攻击处于弱点击破状态下的敌方目标后，额外造成1次<orangeStrong>超击破伤害</orangeStrong>。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "全屏段的高空踏歌",
+        "fullDesc": "当有敌方目标的弱点被击破时，开拓者立即恢复<orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong>点能量。",
+        "shortDesc": "当有敌方目标的弱点被击破时，开拓者恢复能量。"
       }
     },
     "technique": {

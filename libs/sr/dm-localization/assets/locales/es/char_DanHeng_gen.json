@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Lanza del Nimbocaballero: Torrente",
-        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Dan Heng como Daño de Viento a un enemigo.\\nCuando el daño infligido por la habilidad básica causa un golpe CRIT, hay una <u>probabilidad base</u> del {{4, percent}}% de reducir la VEL del objetivo en un {{2, percent}}% durante {{3}} turnos.",
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Dan Heng como Daño de Viento a un enemigo.<br>Cuando el daño infligido por la habilidad básica causa un golpe CRIT, hay una probabilidad base del {{4, percent}}% de reducir la VEL del objetivo en un {{2, percent}}% durante {{3}} turnos.",
         "shortDesc": "Inflige Daño de Viento a un enemigo. Cuando asesta un golpe CRIT, tiene una gran probabilidad de causar Ralentización."
       }
     },
@@ -20,6 +20,13 @@
         "name": "Sueño etéreo",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Dan Heng como Daño de Viento a un enemigo. Cuando el objetivo está afectado por Ralentización, el multiplicador del daño que inflige la habilidad definitiva de Dan Heng aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong>.",
         "shortDesc": "Inflige una gran cantidad de Daño de Viento a un enemigo. Aumenta el multiplicador de daño contra los objetivos afectados por Ralentización."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Alcance superior",
+        "fullDesc": "Cuando Dan Heng es el objetivo de la habilidad de un aliado, la PEN de la RES a Viento de su siguiente ataque aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong>. Este efecto puede volver a activarse después de {{2}} turnos.",
+        "shortDesc": "Al convertirse en objetivo de la habilidad de un aliado, <orangeStrong>aumenta la PEN de la RES a Viento</orangeStrong> de su siguiente ataque. Este efecto puede volver a activarse después de 2 turnos."
       }
     },
     "technique": {

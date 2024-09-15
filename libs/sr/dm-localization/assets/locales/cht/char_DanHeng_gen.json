@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "雲騎槍術•疾雨",
-        "fullDesc": "對指定敵方單體造成等同於丹恆<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的風屬性傷害。\\n戰技造成的傷害觸發暴擊時，有{{4, percent}}%的<u>基礎機率</u>使受到攻擊的敵方目標速度降低{{2, percent}}%，持續{{3}}回合。",
+        "fullDesc": "對指定敵方單體造成等同於丹恆<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的風屬性傷害。<br>戰技造成的傷害觸發暴擊時，有{{4, percent}}%的基礎機率使受到攻擊的敵方目標速度降低{{2, percent}}%，持續{{3}}回合。",
         "shortDesc": "對敵方單體造成風屬性傷害，暴擊時高機率施加減速狀態。"
       }
     },
@@ -20,6 +20,13 @@
         "name": "洞天幻化，長夢一覺",
         "fullDesc": "對指定敵方單體造成等同於丹恆<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的風屬性傷害。當受到攻擊的敵方目標處於減速狀態時，終結技造成的傷害倍率提高<orangeStrong>{{2, percent}}%</orangeStrong>。",
         "shortDesc": "對敵方單體造成大量風屬性傷害，對減速狀態的目標傷害倍率提高。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "寸長寸強",
+        "fullDesc": "當丹恆成為我方技能施放目標時，下一次攻擊的風屬性抗性穿透提高<orangeStrong>{{1, percent}}%</orangeStrong>。該效果在{{2}}回合後可再次觸發。",
+        "shortDesc": "成為我方技能施放目標時，下一次攻擊<orangeStrong>風屬性抗性穿透提高</orangeStrong>。該效果2回合後可再次觸發。"
       }
     },
     "technique": {

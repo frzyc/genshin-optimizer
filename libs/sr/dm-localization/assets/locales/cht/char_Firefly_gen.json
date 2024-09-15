@@ -16,8 +16,8 @@
     "skill": {
       "0": {
         "name": "指令-天火轟擊",
-        "fullDesc": "消耗等同於自身生命上限{{2, percent}}%的生命值固定恢復等同於自身<orangeStrong>{{3, percent}}%</orangeStrong>能量上限的能量，對指定敵方單體造成等同於裝甲「薩姆」<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的火屬性傷害。若現有生命值不足，發動戰技時裝甲「薩姆」的現有生命值降至1點。使自身下一次<u>行動提前</u>{{4, percent}}%。",
-        "shortDesc": "消耗自身部分生命值恢復能量，對敵方單體造成火屬性傷害。使自身下一次<u>行動提前</u>。"
+        "fullDesc": "消耗等同於自身生命上限{{2, percent}}%的生命值固定恢復等同於自身<orangeStrong>{{3, percent}}%</orangeStrong>能量上限的能量，對指定敵方單體造成等同於裝甲「薩姆」<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的火屬性傷害。若現有生命值不足，發動戰技時裝甲「薩姆」的現有生命值降至1點。使自身下一次行動提前{{4, percent}}%。",
+        "shortDesc": "消耗自身部分生命值恢復能量，對敵方單體造成火屬性傷害。使自身下一次行動提前。"
       },
       "1": {
         "name": "火螢Ⅳ型-死星超載",
@@ -28,8 +28,15 @@
     "ult": {
       "0": {
         "name": "火螢Ⅳ型-完全燃燒",
-        "fullDesc": "進入「完全燃燒」狀態，自身行動提前100%並獲得強化普通攻擊和強化戰技。「完全燃燒」狀態下速度提高<orangeStrong>{{3}}</orangeStrong>點，且發動強化普通攻擊、強化戰技時自身弱點擊破效率提高{{2, percent}}%、使敵方目標受到裝甲「薩姆」造成的擊破傷害提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>，持續至本次攻擊結束。\\n行動序列上出現「完全燃燒」倒數計時，倒數計時回合開始時裝甲「薩姆」解除「完全燃燒」狀態，倒數計時固定擁有{{4}}速度。\\n「完全燃燒」狀態下裝甲「薩姆」無法施放終結技。",
+        "fullDesc": "進入「完全燃燒」狀態，自身行動提前100%並獲得強化普通攻擊和強化戰技。「完全燃燒」狀態下速度提高<orangeStrong>{{3}}</orangeStrong>點，且發動強化普通攻擊、強化戰技時自身弱點擊破效率提高{{2, percent}}%、使敵方目標受到裝甲「薩姆」造成的擊破傷害提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>，持續至本次攻擊結束。<br>行動序列上出現「完全燃燒」倒數計時，倒數計時回合開始時裝甲「薩姆」解除「完全燃燒」狀態，倒數計時固定擁有{{4}}速度。<br>「完全燃燒」狀態下裝甲「薩姆」無法施放終結技。",
         "shortDesc": "進入「完全燃燒」狀態，<orangeStrong>使自身行動提前<unbreak>100%</orangeStrong></color>，獲得<orangeStrong>強化普通攻擊</orangeStrong>和<orangeStrong>強化戰技</orangeStrong>，並提高自身<orangeStrong>速度、弱點擊破效率和敵方目標受到的擊破傷害</orangeStrong>，直至倒數計時結束。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "繭式源火中樞",
+        "fullDesc": "生命值越低，受到的傷害越低，生命值小於等於{{3, percent}}%時減傷效果達到最大值，最多降低<orangeStrong>{{1, percent}}%</orangeStrong>。「完全燃燒」狀態下減傷效果維持最大值、效果抗性提高<orangeStrong>{{4, percent}}%</orangeStrong>。<br>戰鬥開始時若能量不足{{2, percent}}%，則使其恢復至{{2, percent}}%。當能量恢復至上限時，解除自身所有負面效果。",
+        "shortDesc": "生命值越低，受到的傷害越低。「完全燃燒」狀態下，減傷效果維持最大值、效果抗性提高。戰鬥開始時若能量不足<orangeStrong>{{2, percent}}%</orangeStrong>，則使其恢復至<orangeStrong>{{2, percent}}%</orangeStrong>。當能量恢復至上限時，解除自身所有負面效果。"
       }
     },
     "technique": {

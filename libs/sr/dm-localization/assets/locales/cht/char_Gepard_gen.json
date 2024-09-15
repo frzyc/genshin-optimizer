@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "震懾之擊",
-        "fullDesc": "對指定敵方單體造成等同於傑帕德<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的冰屬性傷害，同時有{{2, percent}}%的<u>基礎機率</u>使受到攻擊的敵方目標陷入凍結狀態，持續{{3}}回合。\\n凍結狀態下，敵方目標不能行動同時每回合開始時受到等同於傑帕德<orangeStrong>{{4, percent}}%</orangeStrong>攻擊力的冰屬性<u>附加傷害</u>。",
+        "fullDesc": "對指定敵方單體造成等同於傑帕德<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的冰屬性傷害，同時有{{2, percent}}%的基礎機率使受到攻擊的敵方目標陷入凍結狀態，持續{{3}}回合。<br>凍結狀態下，敵方目標不能行動同時每回合開始時受到等同於傑帕德<orangeStrong>{{4, percent}}%</orangeStrong>攻擊力的冰屬性附加傷害。",
         "shortDesc": "對敵方單體造成冰屬性傷害，<orangeStrong>有機率對目標施加凍結狀態</orangeStrong>。"
       }
     },
@@ -20,6 +20,13 @@
         "name": "永屹之壁",
         "fullDesc": "為我方全體提供強度等同於傑帕德<orangeStrong>{{1, percent}}%</orangeStrong>防禦力+<orangeStrong>{{3}}</orangeStrong>的護盾，持續{{2}}回合。",
         "shortDesc": "為我方全體<orangeStrong>提供護盾</orangeStrong>。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "不屈之身",
+        "fullDesc": "受到致命攻擊時傑帕德不會陷入無法戰鬥狀態，並立即回復等同於自身生命上限<orangeStrong>{{1, percent}}%</orangeStrong>的生命值。該效果單場戰鬥中只能觸發1次。",
+        "shortDesc": "受到致命攻擊時<orangeStrong>不會陷入無法戰鬥狀態</orangeStrong>，立即回復生命值。單場戰鬥中僅觸發1次。"
       }
     },
     "technique": {

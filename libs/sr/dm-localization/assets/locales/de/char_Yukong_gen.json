@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Ermutigende Salve",
-        "fullDesc": "Erhält {{1}}-fach „Surrende Bogensehnen“, bis zu 2-fach stapelbar. Wenn „Surrende Bogensehnen“ aktiv ist, wird der ANG aller Verbündeten um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht. Jedes Mal, wenn die Runde eines Verbündeten endet, wird 1-fach „Surrende Bogensehnen“ von Yukong entfernt.\\nWenn Yukong in ihrer Runde „Surrende Bogensehnen“ durch den Einsatz der Fertigkeit erhält, wird „Surrende Bogensehnen“ nicht entfernt.",
+        "fullDesc": "Erhält {{1}}-fach „Surrende Bogensehnen“, bis zu 2-fach stapelbar. Wenn „Surrende Bogensehnen“ aktiv ist, wird der ANG aller Verbündeten um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht. Jedes Mal, wenn die Runde eines Verbündeten endet, wird 1-fach „Surrende Bogensehnen“ von Yukong entfernt.<br>Wenn Yukong in ihrer Runde „Surrende Bogensehnen“ durch den Einsatz der Fertigkeit erhält, wird „Surrende Bogensehnen“ nicht entfernt.",
         "shortDesc": "Erhält 2-fach „Surrende Bogensehnen“. Wenn „Surrende Bogensehnen“ aktiv ist, wird der <orangeStrong>ANG</orangeStrong> aller Verbündeten erhöht."
       }
     },
@@ -20,6 +20,13 @@
         "name": "Turmfalke im Sturzflug",
         "fullDesc": "Wenn Yukong ihren Ultimate einsetzt und „Surrende Bogensehnen“ aktiv ist, werden die KRIT-Rate aller Verbündeten zusätzlich um <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> und der KRIT-SCH aller Verbündeten um <orangeStrong>{{3, percent}}%</orangeStrong> erhöht. Fügt gleichzeitig einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Yukongs ANG zu.",
         "shortDesc": "Wenn „Surrende Bogensehnen“ aktiv ist, werden die <orangeStrong>KRIT-Rate und der KRIT-SCH</orangeStrong> aller Verbündeten erhöht. Fügt gleichzeitig einem Gegner massiven imaginären SCH zu."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Sieben Schichten, ein Pfeil",
+        "fullDesc": "Der Standardangriff fügt zusätzlichen imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Yukongs ANG zu und erhöht außerdem die WDS-Reduzierung dieses Angriffs um {{2, percent}}%. Dieser Effekt kann nach {{3}} Rd. erneut ausgelöst werden.",
+        "shortDesc": "Der Standardangriff fügt geringen zusätzlichen imaginären SCH zu und erhöht die WDS-Reduzierung dieses Angriffs. Dieser Effekt kann nach 1 Rd. erneut ausgelöst werden."
       }
     },
     "technique": {

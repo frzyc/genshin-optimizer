@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "{RUBY_B#びゃっか}白花{RUBY_E#}の{RUBY_B#きぼう}祈望{RUBY_E#}",
-        "fullDesc": "戦闘スキルを発動した後、指定した味方単体のHPを、羅刹の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>回復し、羅刹は「白花の刻」を1層獲得する。\\n任意の味方単体の残りHPが{{3, percent}}%以下の時、その味方をターゲットとして、羅刹の戦闘スキルと同等の効果が1回発動される、この行動はSPを消費しない。この効果は{{4}}ターン後に再度発動できる。",
+        "fullDesc": "戦闘スキルを発動した後、指定した味方単体のHPを、羅刹の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>回復し、羅刹は「白花の刻」を1層獲得する。<br>任意の味方単体の残りHPが{{3, percent}}%以下の時、その味方をターゲットとして、羅刹の戦闘スキルと同等の効果が1回発動される、この行動はSPを消費しない。この効果は{{4}}ターン後に再度発動できる。",
         "shortDesc": "味方単体のHPを<orangeStrong>回復</orangeStrong>し、「白花の刻」を1層獲得。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#きそう}帰葬{RUBY_E#}の{RUBY_B#じょうじゅ}成就{RUBY_E#}",
-        "fullDesc": "敵全体の<u>バフ</u>を{{2}}つ解除し、敵全体に羅刹の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与える。羅刹は「白花の刻」を1層獲得する。",
-        "shortDesc": "敵全体の<orangeStrong><u>バフ</u></orangeStrong>を1つ<orangeStrong>解除</orangeStrong>し、敵全体に虚数属性ダメージを与え、「白花の刻」を1層獲得する。"
+        "fullDesc": "敵全体のバフを{{2}}つ解除し、敵全体に羅刹の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与える。羅刹は「白花の刻」を1層獲得する。",
+        "shortDesc": "敵全体の<orangeStrong>バフ</orangeStrong>を1つ<orangeStrong>解除</orangeStrong>し、敵全体に虚数属性ダメージを与え、「白花の刻」を1層獲得する。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#いのち}生命{RUBY_E#}の{RUBY_B#りんね}輪廻{RUBY_E#}",
+        "fullDesc": "「白花の刻」が{{1}}層に達した時、羅刹が「白花の刻」をすべて消費し、結界を展開する。<br>結界内の任意の敵が攻撃を受けた後、攻撃を行った味方は羅刹の攻撃力<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>のHPを回復する。<br>結界は{{3}}ターン継続する。羅刹が戦闘不能状態になった時、結界は解除される。",
+        "shortDesc": "「白花の刻」が2層になると<orangeStrong>結界を展開する</orangeStrong>。結界が展開されている間、味方は<orangeStrong>攻撃後</orangeStrong>にHPを<orangeStrong>回復</orangeStrong>する。"
       }
     },
     "technique": {

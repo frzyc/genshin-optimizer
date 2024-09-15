@@ -11,21 +11,28 @@
     "skill": {
       "0": {
         "name": "{RUBY_B#かわい}可愛{RUBY_E#}いは{RUBY_B#せいぎ}正義{RUBY_E#}",
-        "fullDesc": "指定した味方単体に三月なのかの防御力<orangeStrong>{{1, percent}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>の耐久値を持つバリアを与える、{{2}}ターン継続。\\nその味方の残りHPが{{3, percent}}%以上の場合、敵に攻撃される確率が大アップする。",
+        "fullDesc": "指定した味方単体に三月なのかの防御力<orangeStrong>{{1, percent}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>の耐久値を持つバリアを与える、{{2}}ターン継続。<br>その味方の残りHPが{{3, percent}}%以上の場合、敵に攻撃される確率が大アップする。",
         "shortDesc": "味方単体に<orangeStrong>バリアを付与</orangeStrong>。"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#ひょうこく}氷刻{RUBY_E#}{RUBY_B#やう}矢雨{RUBY_E#}の{RUBY_B#とき}時{RUBY_E#}",
-        "fullDesc": "敵全体に三月なのかの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与える。攻撃を受けた敵は{{2, percent}}%の<u>基礎確率</u>で凍結状態になる、{{3}}ターン継続。\\n凍結状態の敵は行動できなくなり、ターンが回ってくるたびに三月なのかの攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の氷属性<u>付加ダメージ</u>を受ける。",
+        "fullDesc": "敵全体に三月なのかの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与える。攻撃を受けた敵は{{2, percent}}%の基礎確率で凍結状態になる、{{3}}ターン継続。<br>凍結状態の敵は行動できなくなり、ターンが回ってくるたびに三月なのかの攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の氷属性付加ダメージを受ける。",
         "shortDesc": "敵<orangeStrong>全体</orangeStrong>に氷属性ダメージを与え、<orangeStrong>確率で凍結状態にする</orangeStrong>。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#しょうじょ}少女{RUBY_E#}の{RUBY_B#とっけん}特権{RUBY_E#}",
+        "fullDesc": "バリアを持つ味方が敵に攻撃された後、三月なのかは攻撃者にカウンターを発動し、三月なのかの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与える。この効果はターンが回ってくるたびに{{2}}回発動できる。",
+        "shortDesc": "バリアを持つ味方が敵に攻撃された後、三月なのかは<orangeStrong>即座に攻撃者にカウンター</orangeStrong>を発動し、少量の氷属性ダメージを与える。"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#こお}凍{RUBY_E#}る{RUBY_B#しゅんかん}瞬間{RUBY_E#}",
-        "fullDesc": "敵を攻撃。戦闘に入った後、{{1, percent}}%の<u>基礎確率</u>でランダムな敵単体を凍結状態にする、{{2}}ターン継続。\\n凍結状態の敵は行動できなくなり、ターンが回ってくるたびに三月なのかの攻撃力{{3, percent}}%分の氷属性<u>付加ダメージ</u>を受ける。",
+        "fullDesc": "敵を攻撃。戦闘に入った後、{{1, percent}}%の基礎確率でランダムな敵単体を凍結状態にする、{{2}}ターン継続。<br>凍結状態の敵は行動できなくなり、ターンが回ってくるたびに三月なのかの攻撃力{{3, percent}}%分の氷属性付加ダメージを受ける。",
         "shortDesc": "敵を攻撃。戦闘に入った後、高確率でランダムな敵単体を凍結状態にする。"
       }
     },

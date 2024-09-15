@@ -27,10 +27,17 @@
         "shortDesc": "Consumes <orangeStrong>{{4}}</orangeStrong> Energy and deals Physical DMG to all enemies and additionally deals minor Physical DMG to random single enemy targets for 6 Bounces."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Sublime Object",
+        "fullDesc": "For every enemy hit when Argenti uses his Basic Attack, Skill, or Ultimate, regenerates Argenti's Energy by {{1}}, and grants him a stack of Apotheosis, increasing his CRIT Rate by <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. This effect can stack up to {{3}} time(s).",
+        "shortDesc": "When Argenti uses his Basic ATK, Skill, or Ultimate, he <orangeStrong>regenerates Energy</orangeStrong> and increases his <orangeStrong>CRIT Rate</orangeStrong> for every enemy target hit."
+      }
+    },
     "technique": {
       "0": {
         "name": "Manifesto of Purest Virtue",
-        "fullDesc": "After using the Technique, enemies in a set area are inflicted with Daze for {{1}} second(s). Dazed enemies will not actively attack the team.\\nWhen attacking a Dazed enemy to enter combat, deals Physical DMG to all enemies equal to {{2, percent}}% of Argenti's ATK and regenerates his Energy by {{3}}.",
+        "fullDesc": "After using the Technique, enemies in a set area are inflicted with Daze for {{1}} second(s). Dazed enemies will not actively attack the team.<br>When attacking a Dazed enemy to enter combat, deals Physical DMG to all enemies equal to {{2, percent}}% of Argenti's ATK and regenerates his Energy by {{3}}.",
         "shortDesc": "Inflicts Daze on all enemies within a set area. When attacking a Dazed enemy to enter combat, deals minor Physical DMG to all enemies and regenerates energy for Argenti."
       }
     },
@@ -74,7 +81,7 @@
     },
     "3": {
       "name": "Thorny Road's Glory",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "4": {
       "name": "Trumpet's Dedication",
@@ -82,7 +89,7 @@
     },
     "5": {
       "name": "Snow, From Somewhere in Cosmos",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "6": {
       "name": "\"Your\" Resplendence",

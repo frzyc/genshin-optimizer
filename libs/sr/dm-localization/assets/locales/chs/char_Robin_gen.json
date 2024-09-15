@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "千音迭奏，群星赋格",
-        "fullDesc": "知更鸟进入【协奏】状态，使除自身以外的队友立即行动。\\n处于【协奏】状态时，我方全体攻击力提高，提高数值等同于知更鸟攻击力的<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{3}}</orangeStrong>点，且我方目标每次施放攻击后，知更鸟会额外造成1次等同于其自身<orangeStrong>{{4, percent}}%</orangeStrong>攻击力的物理属性<u>附加伤害</u>，该伤害暴击率固定为{{5, percent}}%，暴击伤害固定为{{6, percent}}%。\\n处于【协奏】状态时，知更鸟免疫<u>控制类负面状态</u>，【协奏】状态结束前不会进入自己的回合且无法行动。\\n行动序列上出现【协奏】倒计时，倒计时回合开始时知更鸟退出【协奏】状态并立即行动，倒计时固定拥有{{2}}点速度。",
-        "shortDesc": "进入【协奏】状态，使我方全体<orangeStrong>攻击力提高</orangeStrong>，并使队友立即行动，攻击后知更鸟额外造成<orangeStrong>物理属性<u>附加伤害</u></orangeStrong>。【协奏】状态期间自身免疫<u>控制类负面状态</u>，状态结束前不会进入自己回合且无法行动，直至倒计时结束。"
+        "fullDesc": "知更鸟进入【协奏】状态，使除自身以外的队友立即行动。<br>处于【协奏】状态时，我方全体攻击力提高，提高数值等同于知更鸟攻击力的<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{3}}</orangeStrong>点，且我方目标每次施放攻击后，知更鸟会额外造成1次等同于其自身<orangeStrong>{{4, percent}}%</orangeStrong>攻击力的物理属性附加伤害，该伤害暴击率固定为{{5, percent}}%，暴击伤害固定为{{6, percent}}%。<br>处于【协奏】状态时，知更鸟免疫控制类负面状态，【协奏】状态结束前不会进入自己的回合且无法行动。<br>行动序列上出现【协奏】倒计时，倒计时回合开始时知更鸟退出【协奏】状态并立即行动，倒计时固定拥有{{2}}点速度。",
+        "shortDesc": "进入【协奏】状态，使我方全体<orangeStrong>攻击力提高</orangeStrong>，并使队友立即行动，攻击后知更鸟额外造成<orangeStrong>物理属性附加伤害</orangeStrong>。【协奏】状态期间自身免疫控制类负面状态，状态结束前不会进入自己回合且无法行动，直至倒计时结束。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "调性合颂",
+        "fullDesc": "使我方全体暴击伤害提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>，且我方目标攻击敌方目标后，知更鸟额外为自身恢复{{2}}点能量。",
+        "shortDesc": "使我方全体<orangeStrong>暴击伤害</orangeStrong>提高，且我方角色攻击敌方后知更鸟额外恢复能量。"
       }
     },
     "technique": {

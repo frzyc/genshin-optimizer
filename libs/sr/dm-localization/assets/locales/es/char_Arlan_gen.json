@@ -22,6 +22,13 @@
         "shortDesc": "Inflige una gran cantidad de Daño de Rayo a un enemigo y Daño de Rayo a los enemigos adyacentes."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Ira y dolor",
+        "fullDesc": "Arlan obtiene una bonificación de daño según el porcentaje de PV que haya perdido hasta el momento. Como máximo puede infligir un <orangeStrong>{{1, percent}}%</orangeStrong> más de daño.",
+        "shortDesc": "<orangeStrong>Aumenta el daño</orangeStrong> según el <orangeStrong>porcentaje de PV que haya perdido hasta el momento</orangeStrong>."
+      }
+    },
     "technique": {
       "0": {
         "name": "Cosecha rápida",

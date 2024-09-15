@@ -18,15 +18,22 @@
     "ult": {
       "0": {
         "name": "Presente Surpresa",
-        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Sampo a todos os inimigos, com {{4, percent}}% de <u>chance-base</u> de aumentar o Dano Contínuo recebido pelo alvo em <orangeStrong>{{2, percent}}%</orangeStrong> por {{3}} rodada(s).",
+        "fullDesc": "Causa Dano de Vento igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Sampo a todos os inimigos, com {{4, percent}}% de chance-base de aumentar o Dano Contínuo recebido pelo alvo em <orangeStrong>{{2, percent}}%</orangeStrong> por {{3}} rodada(s).",
         "shortDesc": "Causa Dano de Vento a todos os inimigos, com altas chances de causar <orangeStrong>Dano Contínuo aumentado</orangeStrong> a eles."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Adaga da Ventania",
+        "fullDesc": "Os ataques de Sampo têm {{1, percent}}% de chance-base de infligir Cisalhamento de Vento por {{3}} rodada(s).<br>Inimigos infligidos com Cisalhamento de Vento recebem Dano de Vento Contínuo igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Sampo no início de cada rodada. Cisalhamento de Vento pode se acumular até {{4}} vez(es).",
+        "shortDesc": "Depois golpear um inimigo, existe uma chance de infligir <orangeStrong>Cisalhamento de Vento</orangeStrong> no alvo."
       }
     },
     "technique": {
       "0": {
         "name": "Brilho Ofuscante",
-        "fullDesc": "Após usar a Técnica de Sampo, inflige Cegueira em inimigos em uma área definida por {{1}} segundos. Inimigos com Cegueira não conseguem detectar sua equipe.\\nAo iniciar o combate contra um inimigo com Cegueira, há {{2, percent}}% de <u>chance fixa</u> de atrasar as ações de todos os inimigos em {{3, percent}}%.",
-        "shortDesc": "Inimigos em uma determinada área recebem Cegueira. Ao iniciar uma batalha contra um inimigo com Cegueira, existe uma alta chance de <u>atrasar</u> todas as ações inimigas."
+        "fullDesc": "Após usar a Técnica de Sampo, inflige Cegueira em inimigos em uma área definida por {{1}} segundos. Inimigos com Cegueira não conseguem detectar sua equipe.<br>Ao iniciar o combate contra um inimigo com Cegueira, há {{2, percent}}% de chance fixa de atrasar as ações de todos os inimigos em {{3, percent}}%.",
+        "shortDesc": "Inimigos em uma determinada área recebem Cegueira. Ao iniciar uma batalha contra um inimigo com Cegueira, existe uma alta chance de atrasar todas as ações inimigas."
       }
     },
     "overworld": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Riquinho!",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Quanto Maior o Amor, Maior o Ódio",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Cheeeeio de Grana!",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "Aumento de Gasto",

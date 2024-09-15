@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "匏蛟跃渊先雷音",
-        "fullDesc": "立即为我方全体回复等同于白露<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{2}}</orangeStrong>的生命值。\\n对于没有【生息】的我方目标，白露使其附上【生息】，对于已拥有【生息】的我方目标，白露使其已有的【生息】持续时间延长1回合。\\n【生息】可持续{{3}}回合，该效果不可叠加。",
+        "fullDesc": "立即为我方全体回复等同于白露<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{2}}</orangeStrong>的生命值。<br>对于没有【生息】的我方目标，白露使其附上【生息】，对于已拥有【生息】的我方目标，白露使其已有的【生息】持续时间延长1回合。<br>【生息】可持续{{3}}回合，该效果不可叠加。",
         "shortDesc": "为我方全体回复生命值，并附上【生息】，或延长【生息】持续时间。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "奔走悬壶济世长",
+        "fullDesc": "拥有【生息】的我方目标，在受到攻击后会回复等同于白露<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{2}}</orangeStrong>的生命值，该效果可以触发{{5}}次。<br>当白露的队友受到致命攻击时，不会陷入无法战斗状态，白露会立即为其提供治疗，回复等同于白露<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{4}}</orangeStrong>的生命值。该效果单场战斗中可以触发1次。",
+        "shortDesc": "拥有<orangeStrong>【生息】</orangeStrong>的我方目标受到攻击后会<orangeStrong>回复生命值</orangeStrong>。<br>当队友<orangeStrong>受到致命攻击时</orangeStrong>，白露<orangeStrong>立即为其回复生命值</orangeStrong>。该效果单场战斗中可以触发1次。"
       }
     },
     "technique": {

@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "Prière de la Fleur de l'abîme",
-        "fullDesc": "Après utilisation de la compétence, restaure immédiatement des PV à une cible alliée à hauteur de <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Luocha + <orangeStrong>{{2}}</orangeStrong>. D'autre part, Luocha obtient 1 cumul de Fleur de l'abîme.\\nLorsque le pourcentage de PV d'un allié devient inférieur ou égal à {{3, percent}}%, un effet équivalent à celui de la compétence est immédiatement déclenché et appliqué une fois à cet allié (sans consommer de points de compétence). Cet effet peut se déclencher à nouveau après {{4}} tours.",
+        "fullDesc": "Après utilisation de la compétence, restaure immédiatement des PV à une cible alliée à hauteur de <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Luocha + <orangeStrong>{{2}}</orangeStrong>. D'autre part, Luocha obtient 1 cumul de Fleur de l'abîme.<br>Lorsque le pourcentage de PV d'un allié devient inférieur ou égal à {{3, percent}}%, un effet équivalent à celui de la compétence est immédiatement déclenché et appliqué une fois à cet allié (sans consommer de points de compétence). Cet effet peut se déclencher à nouveau après {{4}} tours.",
         "shortDesc": "<orangeStrong>Restaure</orangeStrong> les PV d'un allié unique et gagne 1 cumul de Fleur de l'abîme."
       }
     },
     "ult": {
       "0": {
         "name": "Pulsion de mort",
-        "fullDesc": "Supprime {{2}} <u>bonus</u> chez tous les ennemis et inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Luocha à tous les ennemis. Luocha gagne 1 cumul de Fleur de l'abîme.",
-        "shortDesc": "<orangeStrong>Supprime</orangeStrong> 1 <orangeStrong><u>bonus</u></orangeStrong> chez tous les ennemis, inflige des DGT imaginaires à tous les ennemis, et accorde 1 cumul de Fleur de l'abîme."
+        "fullDesc": "Supprime {{2}} bonus chez tous les ennemis et inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Luocha à tous les ennemis. Luocha gagne 1 cumul de Fleur de l'abîme.",
+        "shortDesc": "<orangeStrong>Supprime</orangeStrong> 1 <orangeStrong>bonus</orangeStrong> chez tous les ennemis, inflige des DGT imaginaires à tous les ennemis, et accorde 1 cumul de Fleur de l'abîme."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Cycle de la vie",
+        "fullDesc": "Lorsque le nombre de cumuls de Fleur de l'abîme atteint {{1}}, Luocha consomme tous les cumuls de Fleur de l'abîme pour déployer une zone hostile aux ennemis.<br>Lorsqu'un ennemi situé dans la zone est attaqué par un allié, les PV de ce dernier sont immédiatement restaurés à hauteur de <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> de l'ATQ de Luocha + <orangeStrong>{{4}}</orangeStrong>.<br>L'effet de la zone dure {{3}} tours. La zone se dissipe lorsque Luocha est à terre.",
+        "shortDesc": "Déploie une <orangeStrong>zone</orangeStrong> lorsque Fleur de l'abîme atteint 2 cumuls. Tant que la zone est active, les alliés <orangeStrong>récupèrent des PV après avoir attaqué</orangeStrong>."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Épreuve du fou",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "4": {
       "name": "Lourde est la couronne",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Stigmates du tourment",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "6": {
       "name": "Retour à la poussière",

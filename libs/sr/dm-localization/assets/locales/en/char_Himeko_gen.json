@@ -22,10 +22,17 @@
         "shortDesc": "Deals Fire DMG to all enemies and regenerates Energy if enemies are defeated."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Victory Rush",
+        "fullDesc": "When an enemy is inflicted with Weakness Break, Himeko gains 1 point of Charge (max {{2}} points).<br>If Himeko is fully Charged when an ally performs an attack, Himeko immediately performs 1 follow-up attack and deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of her ATK to all enemies, consuming all Charge points.<br>At the start of the battle, Himeko gains 1 point of Charge.",
+        "shortDesc": "Gains Charge when an enemy's Weakness is Broken.<br>After an ally performs an attack, if fully Charged, <orangeStrong>immediately performs a follow-up attack</orangeStrong> and deals Fire DMG to <orangeStrong>all enemies</orangeStrong>, consuming all Charge points.<br>Gains 1 Charge point at the start of each battle."
+      }
+    },
     "technique": {
       "0": {
         "name": "Incomplete Combustion",
-        "fullDesc": "After using Technique, creates a special dimension that lasts for {{4}} second(s). After entering battle with enemies in the special dimension, there is a {{1, percent}}% <u>base chance</u> to increase Fire DMG taken by enemies by {{2, percent}}% for {{3}} turn(s). Only 1 dimension created by allies can exist at the same time.",
+        "fullDesc": "After using Technique, creates a special dimension that lasts for {{4}} second(s). After entering battle with enemies in the special dimension, there is a {{1, percent}}% base chance to increase Fire DMG taken by enemies by {{2, percent}}% for {{3}} turn(s). Only 1 dimension created by allies can exist at the same time.",
         "shortDesc": "Creates a special dimension. After entering combat with enemies in the dimension, there is a high chance to <orangeStrong>increase Fire DMG taken by enemies</orangeStrong>."
       }
     },
@@ -39,7 +46,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Starfire",
-        "fullDesc": "After using an attack, there is a {{1, percent}}% base chance to inflict Burn on enemies for {{2}} turn(s).\\nWhen afflicted with Burn, enemies take Fire DoT equal to {{3, percent}}% of Himeko's ATK at the start of each turn.",
+        "fullDesc": "After using an attack, there is a {{1, percent}}% base chance to inflict Burn on enemies for {{2}} turn(s).<br>When afflicted with Burn, enemies take Fire DoT equal to {{3, percent}}% of Himeko's ATK at the start of each turn.",
         "shortDesc": ""
       }
     },
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Poised",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Dedication",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Aspiration",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Trailblaze!",

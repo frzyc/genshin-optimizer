@@ -18,14 +18,21 @@
     "ult": {
       "0": {
         "name": "Pétalas na Corrente, Repouso Indolente",
-        "fullDesc": "Ruan Mei implanta um Campo que dura por {{2}} rodadas. A duração do campo diminui em 1 no início da rodada dela.\\nEnquanto estiver dentro do Campo, a PEN de RES a Todos os Tipos de todos os aliados aumenta em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> e os ataques deles aplicam Reflorescer da Ameixa aos inimigos atingidos.\\nQuando esses inimigos tentam se recuperar da <u>Quebra de Fraqueza</u>, Reflorescer da Ameixa é ativado, estendendo a duração da sua <u>Quebra de Fraqueza</u>, <u>atrasando sua ação</u> em uma quantidade igual a {{3, percent}}% do Efeito de Quebra de Ruan Mei + {{4, percent}}%, e causando Dano de Quebra igual a <orangeStrong>{{5, percent}}%</orangeStrong> do <u>Dano de Quebra</u> de Gelo de Ruan Mei.\\nReflorescer da Ameixa não pode ser aplicado novamente aos inimigos-alvo até eles se recuperarem da <u>Quebra de Fraqueza</u>.",
+        "fullDesc": "Ruan Mei implanta um Campo que dura por {{2}} rodadas. A duração do campo diminui em 1 no início da rodada dela.<br>Enquanto estiver dentro do Campo, a PEN de RES a Todos os Tipos de todos os aliados aumenta em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> e os ataques deles aplicam Reflorescer da Ameixa aos inimigos atingidos.<br>Quando esses inimigos tentam se recuperar da Quebra de Fraqueza, Reflorescer da Ameixa é ativado, estendendo a duração da sua Quebra de Fraqueza, atrasando sua ação em uma quantidade igual a {{3, percent}}% do Efeito de Quebra de Ruan Mei + {{4, percent}}%, e causando Dano de Quebra igual a <orangeStrong>{{5, percent}}%</orangeStrong> do Dano de Quebra de Gelo de Ruan Mei.<br>Reflorescer da Ameixa não pode ser aplicado novamente aos inimigos-alvo até eles se recuperarem da Quebra de Fraqueza.",
         "shortDesc": "Aumenta a <orangeStrong>PEN de RES a Todos os Tipos</orangeStrong> para todos os aliados, e seus ataques aplicam Reflorescer da Ameixa aos inimigos atingidos."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Hélice Somatotípica",
+        "fullDesc": "Aumenta a VEL em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> para a equipe (excluindo este personagem). Quando os aliados aplicam Quebra de Fraqueza a um inimigo-alvo, Ruan Mei causa Dano de Quebra a esse inimigo igual a <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> de seu Dano de Quebra de Gelo.",
+        "shortDesc": "Aumenta a <orangeStrong>VEL</orangeStrong> para todos os aliados (com exceção deste personagem). Quebrar a Fraqueza de um inimigo-alvo <orangeStrong>causará adicionalmente Dano de Quebra de Gelo</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Serenata de Seda",
-        "fullDesc": "Depois de usar a Técnica, ganha Serenata de Seda. No início da próxima batalha, ativa automaticamente a Perícia {{1}} vez(es) sem consumir Pontos de Perícia.\\nNo Universo Simulado ou no Universo Divergente, quando Ruan Mei possuir Serenata de Seda, a equipe atacando inimigos será considerada como se sempre estivesse atacando sua Fraqueza para entrar em batalha, e este ataque pode reduzir a Tenacidade de todos os inimigos independente dos Tipos de Fraqueza. Ao aplicar Quebra de Fraqueza, ativa o Efeito de Quebra de Fraqueza correspondente ao Tipo do atacante. Para cada Bênção em posse (até um máximo de {{4}} Bênção(s) será(ão) considerada(s)), adicionalmente aumenta a Redução de Tenacidade deste ataque em {{2, percent}}%. Após aplicar a Quebra de Fraqueza a um inimigo-alvo, causa adicionalmente Dano de Quebra igual a {{3, percent}}% do Dano de Quebra de Gelo de Ruan Mei ao inimigo-alvo.",
+        "fullDesc": "Depois de usar a Técnica, ganha Serenata de Seda. No início da próxima batalha, ativa automaticamente a Perícia {{1}} vez(es) sem consumir Pontos de Perícia.<br>No Universo Simulado ou no Universo Divergente, quando Ruan Mei possuir Serenata de Seda, a equipe atacando inimigos será considerada como se sempre estivesse atacando sua Fraqueza para entrar em batalha, e este ataque pode reduzir a Tenacidade de todos os inimigos independente dos Tipos de Fraqueza. Ao aplicar Quebra de Fraqueza, ativa o Efeito de Quebra de Fraqueza correspondente ao Tipo do atacante. Para cada Bênção em posse (até um máximo de {{4}} Bênção(s) será(ão) considerada(s)), adicionalmente aumenta a Redução de Tenacidade deste ataque em {{2, percent}}%. Após aplicar a Quebra de Fraqueza a um inimigo-alvo, causa adicionalmente Dano de Quebra igual a {{3, percent}}% do Dano de Quebra de Gelo de Ruan Mei ao inimigo-alvo.",
         "shortDesc": "Da próxima vez que entrar em batalha, ativa automaticamente a Perícia por <orangeStrong>{{1}}</orangeStrong> vez(es). Depois de usar a Técnica, aliados atacando inimigos no Universo Simulado ou no Universo Divergente sempre serão considerados como se estivessem atacando a Fraqueza para entrar em batalha, e sua Tenacidade é reduzida <orangeStrong>independente dos Tipos de Fraqueza</orangeStrong>. Para cada Bênção em posse, aumenta a Redução de Tenacidade e causa adicionalmente Dano de Quebra ao infligir Quebra de Fraqueza."
       }
     },
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Pirueta Viridescente",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "4": {
       "name": "Chatoyant Éclat",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Presilha Lânguida",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "6": {
       "name": "Cascada de Lenços",

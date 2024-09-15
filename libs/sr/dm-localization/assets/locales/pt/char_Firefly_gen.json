@@ -16,8 +16,8 @@
     "skill": {
       "0": {
         "name": "Ordem: Bombardeio Aéreo",
-        "fullDesc": "Consome PV igual a {{2, percent}}% dos PV máximos desta unidade e regenera uma quantidade fixa de Energia igual a <orangeStrong>{{3, percent}}%</orangeStrong> da Energia máxima desta unidade. Causa Dano de Fogo equivalente a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de SAM a um único inimigo-alvo. Se os PV atuais não forem suficientes, os PV de SAM serão reduzidos a 1 ao usar esta Perícia. A próxima ação desta unidade é <u>Avançada Adiante</u> em {{4, percent}}%.",
-        "shortDesc": "Consome uma parte dos PV desta unidade para regenerar Energia. Causa Dano de Fogo a um único inimigo. Faz com que a próxima ação do personagem seja <u>Avançada Adiante</u>."
+        "fullDesc": "Consome PV igual a {{2, percent}}% dos PV máximos desta unidade e regenera uma quantidade fixa de Energia igual a <orangeStrong>{{3, percent}}%</orangeStrong> da Energia máxima desta unidade. Causa Dano de Fogo equivalente a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de SAM a um único inimigo-alvo. Se os PV atuais não forem suficientes, os PV de SAM serão reduzidos a 1 ao usar esta Perícia. A próxima ação desta unidade é Avançada Adiante em {{4, percent}}%.",
+        "shortDesc": "Consome uma parte dos PV desta unidade para regenerar Energia. Causa Dano de Fogo a um único inimigo. Faz com que a próxima ação do personagem seja Avançada Adiante."
       },
       "1": {
         "name": "Vaga-lume Tipo-IV: Sobrecarga da Estrela da Morte",
@@ -28,8 +28,15 @@
     "ult": {
       "0": {
         "name": "Vaga-lume Tipo-IV: Combustão Completa",
-        "fullDesc": "Entra no estado de Combustão Completa, a ação desta unidade é Avançada Adiante em 100% e ganha ATQ Básico Aprimorado e Perícia Aprimorada. Enquanto em Combustão Completa, aumenta a VEL de SAM em <orangeStrong>{{3}}</orangeStrong>, e ao usar o ATQ Básico Aprimorado ou a Perícia Aprimorada, aumenta a eficiência de Quebra de Fraqueza desta unidade em {{2, percent}}%, e aumenta o Dano de Quebra causado por SAM aos inimigos-alvo em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, durando até o fim do ataque atual.\\nUm contador de tempo para o estado de Combustão Completa aparece na Ordem de Ação. Quando a rodada do contador começa, SAM sai do estado de Combustão Completa. O contador tem uma VEL fixa de {{4}}.\\nSAM não pode usar a Perícia Suprema enquanto estiver em Combustão Completa.",
+        "fullDesc": "Entra no estado de Combustão Completa, a ação desta unidade é Avançada Adiante em 100% e ganha ATQ Básico Aprimorado e Perícia Aprimorada. Enquanto em Combustão Completa, aumenta a VEL de SAM em <orangeStrong>{{3}}</orangeStrong>, e ao usar o ATQ Básico Aprimorado ou a Perícia Aprimorada, aumenta a eficiência de Quebra de Fraqueza desta unidade em {{2, percent}}%, e aumenta o Dano de Quebra causado por SAM aos inimigos-alvo em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, durando até o fim do ataque atual.<br>Um contador de tempo para o estado de Combustão Completa aparece na Ordem de Ação. Quando a rodada do contador começa, SAM sai do estado de Combustão Completa. O contador tem uma VEL fixa de {{4}}.<br>SAM não pode usar a Perícia Suprema enquanto estiver em Combustão Completa.",
         "shortDesc": "Entra no estado de Combustão Completa. A Ação de SAM é <orangeStrong>Avançada Adiante em <unbreak>100%</orangeStrong></color>, ganha <orangeStrong>ATQ Básico Aprimorado</orangeStrong> e <orangeStrong>Perícia Aprimorada</orangeStrong>. Aumenta a <orangeStrong>VEL e Eficiência de Quebra de Fraqueza</orangeStrong> desta unidade, e aumenta o Dano de Quebra recebido pelos inimigos-alvo, durando até o fim da contagem regressiva."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Pironexus de Crisálida",
+        "fullDesc": "Quanto menores os PV, menor o Dano recebido. Quando os PV estiverem em <orangeStrong>{{3, percent}}%</orangeStrong> ou menos, a Redução de Dano alcança seu efeito máximo, reduzindo até <orangeStrong>{{1, percent}}%</orangeStrong>. Durante a Combustão Completa, a Redução de Dano permanece em seu efeito máximo, e a RES a Efeitos aumenta em <orangeStrong>{{4, percent}}%</orangeStrong>.<br>Se a Energia estiver abaixo de <orangeStrong>{{2, percent}}%</orangeStrong> quando a batalha começar, a Energia será regenerada até <orangeStrong>{{2, percent}}%</orangeStrong>. Quando a Energia for regenerada ao máximo, todas as penalidades desta unidade serão dissipadas.",
+        "shortDesc": "Quanto menores os PV, menor o Dano recebido. Durante a Combustão Completa, a redução de Dano permanece em seu efeito máximo, e a RES a Efeitos aumenta. Se a Energia estiver abaixo de <orangeStrong>{{2, percent}}%</orangeStrong> quando a batalha começar, a Energia será regenerada até <orangeStrong>{{2, percent}}%</orangeStrong>. Quando a energia for regenerada ao máximo, todas as penalidades desta unidade serão dissipadas."
       }
     },
     "technique": {
@@ -79,7 +86,7 @@
     },
     "3": {
       "name": "Sono Profundo Entre os Astros",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Sobre os Vaga-lumes Iluminados, Eu Logo Olho",
@@ -87,7 +94,7 @@
     },
     "5": {
       "name": "Das Noites Sem Sonhos, Eu Então Brilho",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "No Amanhã Findado, Eu Floresço",

@@ -11,26 +11,33 @@
     "skill": {
       "0": {
         "name": "헤이! 후크 기억해?",
-        "fullDesc": "지정된 단일 적에게 후크 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 화염 속성 피해를 주고, 피격된 적은 {{2, percent}}%의 <u>기본 확률</u>로 연소 상태에 빠진다. 지속 시간: {{3}}턴.\\n연소 상태의 적은 새로운 턴이 시작될 때마다 후크 공격력 <orangeStrong>{{4, percent}}%</orangeStrong>만큼의 화염 속성 지속 피해를 받는다",
+        "fullDesc": "지정된 단일 적에게 후크 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 화염 속성 피해를 주고, 피격된 적은 {{2, percent}}%의 기본 확률로 연소 상태에 빠진다. 지속 시간: {{3}}턴.<br>연소 상태의 적은 새로운 턴이 시작될 때마다 후크 공격력 <orangeStrong>{{4, percent}}%</orangeStrong>만큼의 화염 속성 지속 피해를 받는다",
         "shortDesc": "단일 적에게 화염 속성 피해를 가하고, 높은 확률로 연소 상태를 부여한다"
       },
       "1": {
         "name": "헤이! 후크 기억해?",
-        "fullDesc": "지정된 단일 적에게 후크 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 화염 속성 피해를 주고, 피격된 적은 {{2, percent}}%의 <u>기본 확률</u>로 연소 상태에 빠진다. 지속 시간: {{3}}턴. 또한, 인접한 목표에게 후크 공격력 <orangeStrong>{{5, percent}}%</orangeStrong>만큼의 화염 속성 피해를 준다.\\n연소 상태의 적은 새로운 턴이 시작될 때마다 후크 공격력 <orangeStrong>{{4, percent}}%</orangeStrong>만큼의 화염 속성 지속 피해를 받는다",
+        "fullDesc": "지정된 단일 적에게 후크 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 화염 속성 피해를 주고, 피격된 적은 {{2, percent}}%의 기본 확률로 연소 상태에 빠진다. 지속 시간: {{3}}턴. 또한, 인접한 목표에게 후크 공격력 <orangeStrong>{{5, percent}}%</orangeStrong>만큼의 화염 속성 피해를 준다.<br>연소 상태의 적은 새로운 턴이 시작될 때마다 후크 공격력 <orangeStrong>{{4, percent}}%</orangeStrong>만큼의 화염 속성 지속 피해를 받는다",
         "shortDesc": "단일 적에게 화염 속성 피해를 가하고, 높은 확률로 연소 상태를 부여한다. 인접한 목표에게 소량의 화염 속성 피해를 가한다"
       }
     },
     "ult": {
       "0": {
         "name": "펑! 날아드는 불꽃",
-        "fullDesc": "지정된 단일 적에게 후크 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 화염 속성 피해를 준다.\\n필살기 발동 후 다음 발동 전투 스킬이 강화된다. 강화 후의 전투 스킬은 지정된 단일 적과 인접한 목표에게 동시에 피해를 준다",
+        "fullDesc": "지정된 단일 적에게 후크 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 화염 속성 피해를 준다.<br>필살기 발동 후 다음 발동 전투 스킬이 강화된다. 강화 후의 전투 스킬은 지정된 단일 적과 인접한 목표에게 동시에 피해를 준다",
         "shortDesc": "단일 적에게 대량의 화염 속성 피해를 가하고, <orangeStrong>자신의 다음번 전투 스킬을 강화</orangeStrong>한다"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "하! 불난 집에 부채질",
+        "fullDesc": "연소 상태의 적 공격 시, 추가로 후크 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 화염 속성 추가 피해를 주고, 에너지를 추가로 {{2}}pt 회복한다",
+        "shortDesc": "연소 상태의 적 공격 시 <orangeStrong>소량의 화염 속성 추가 피해를 가하고</orangeStrong> 에너지를 추가로 회복한다"
       }
     },
     "technique": {
       "0": {
         "name": "윽! 완전 난장판",
-        "fullDesc": "적을 바로 공격하며, 전투 진입 후 임의의 단일 적에게 후크 공격력 {{4, percent}}%만큼의 화염 속성 피해를 주고, 각 단일 적을 {{1, percent}}%의 <u>기본 확률</u>로 연소 상태에 빠트린다. 지속 시간: {{3}}턴.\\n연소 상태의 적은 새로운 턴이 시작될 때마다 후크 공격력 {{2, percent}}%만큼의 화염 속성 지속 피해를 받는다",
+        "fullDesc": "적을 바로 공격하며, 전투 진입 후 임의의 단일 적에게 후크 공격력 {{4, percent}}%만큼의 화염 속성 피해를 주고, 각 단일 적을 {{1, percent}}%의 기본 확률로 연소 상태에 빠트린다. 지속 시간: {{3}}턴.<br>연소 상태의 적은 새로운 턴이 시작될 때마다 후크 공격력 {{2, percent}}%만큼의 화염 속성 지속 피해를 받는다",
         "shortDesc": "적을 공격하며, 전투 진입 후 임의의 단일 적에게 화염 물리 속성 피해를 가하고, 높은 확률로 모든 적을 연소 상태에 빠트린다"
       }
     },

@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "Cloudfencer Art: Mountainfall",
-        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Sushang's ATK to a single enemy. In addition, there is a {{3, percent}}% chance to trigger Sword Stance on the final hit, dealing <u>Additional</u> Physical DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Sushang's ATK to the enemy.\\nIf the enemy is inflicted with <u>Weakness Break</u>, Sword Stance is guaranteed to trigger.",
-        "shortDesc": "Deals Physical DMG to a single enemy with <orangeStrong>a small chance of triggering Sword Stance</orangeStrong>. If the enemy has <u>Weakness Break</u>, <orangeStrong>Sword Stance is guaranteed to trigger</orangeStrong>."
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Sushang's ATK to a single enemy. In addition, there is a {{3, percent}}% chance to trigger Sword Stance on the final hit, dealing Additional Physical DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Sushang's ATK to the enemy.<br>If the enemy is inflicted with Weakness Break, Sword Stance is guaranteed to trigger.",
+        "shortDesc": "Deals Physical DMG to a single enemy with <orangeStrong>a small chance of triggering Sword Stance</orangeStrong>. If the enemy has Weakness Break, <orangeStrong>Sword Stance is guaranteed to trigger</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Shape of Taixu: Dawn Herald",
-        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Sushang's ATK to a single enemy target, and she immediately takes action. In addition, Sushang's ATK increases by <orangeStrong>{{4, percent}}%</orangeStrong> and using her Skill has 2 extra chances to trigger Sword Stance for {{2}} turn(s).\\nSword Stance triggered from the extra chances deals {{3, percent}}% of the original DMG.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Sushang's ATK to a single enemy target, and she immediately takes action. In addition, Sushang's ATK increases by <orangeStrong>{{4, percent}}%</orangeStrong> and using her Skill has 2 extra chances to trigger Sword Stance for {{2}} turn(s).<br>Sword Stance triggered from the extra chances deals {{3, percent}}% of the original DMG.",
         "shortDesc": "Deals massive Physical DMG to a single enemy, enhances Sword Stance's effect, and <orangeStrong>takes action immediately</orangeStrong>."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Dancing Blade",
+        "fullDesc": "When an enemy has their Weakness Broken on the field, Sushang's SPD increases by <orangeStrong>{{1, percent(fixed: 2)}}%</orangeStrong> for {{2}} turn(s).",
+        "shortDesc": "When an enemy on the field has its Weakness Broken, this character's SPD increases."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Rise From Fame",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "4": {
       "name": "Cleave With Heart",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Prevail via Taixu",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "6": {
       "name": "Dwell Like Water",

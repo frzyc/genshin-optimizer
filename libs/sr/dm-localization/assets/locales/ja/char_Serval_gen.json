@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "スパーク",
-        "fullDesc": "指定した敵単体にセーバルの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性ダメージを与え、隣接する敵にセーバルの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の雷属性ダメージを与える。さらに{{3, percent}}%の<u>基礎確率</u>で攻撃を受けた敵を感電状態にする、{{4}}ターン継続。\\n感電状態の敵はターンが回ってくるたびに、セーバルの攻撃力<orangeStrong>{{5, percent}}%</orangeStrong>分の雷属性持続ダメージを受ける。",
+        "fullDesc": "指定した敵単体にセーバルの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性ダメージを与え、隣接する敵にセーバルの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の雷属性ダメージを与える。さらに{{3, percent}}%の基礎確率で攻撃を受けた敵を感電状態にする、{{4}}ターン継続。<br>感電状態の敵はターンが回ってくるたびに、セーバルの攻撃力<orangeStrong>{{5, percent}}%</orangeStrong>分の雷属性持続ダメージを受ける。",
         "shortDesc": "敵単体および隣接する敵に少量の雷属性ダメージを与え、高確率で<orangeStrong>感電状態を付与</orangeStrong>する。"
       }
     },
@@ -22,10 +22,17 @@
         "shortDesc": "敵全体に雷属性ダメージを与え、敵の感電状態を延長。"
       }
     },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#じょうねつ}情熱{RUBY_E#}コード",
+        "fullDesc": "攻撃を行った後、すべての感電状態の敵にセーバルの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性付加ダメージを与える。",
+        "shortDesc": "攻撃を行った後、感電状態にあるすべての敵に<orangeStrong>少量の付加ダメージを与える</orangeStrong>。"
+      }
+    },
     "technique": {
       "0": {
         "name": "おやすみ、ベロブルグ",
-        "fullDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体にセーバルの攻撃力{{4, percent}}%分の雷属性ダメージを与え、{{1, percent}}%の<u>基礎確率</u>で敵単体それぞれに感電状態を付与する、{{3}}ターン継続。\\n感電状態の敵はターンが回ってくるたびに、セーバルの攻撃力{{2, percent}}%分の雷属性持続ダメージを受ける。",
+        "fullDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体にセーバルの攻撃力{{4, percent}}%分の雷属性ダメージを与え、{{1, percent}}%の基礎確率で敵単体それぞれに感電状態を付与する、{{3}}ターン継続。<br>感電状態の敵はターンが回ってくるたびに、セーバルの攻撃力{{2, percent}}%分の雷属性持続ダメージを受ける。",
         "shortDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体に少量の雷属性ダメージを与え、高確率で敵それぞれを<orangeStrong>感電状態</orangeStrong>にする。"
       }
     },
@@ -80,7 +87,7 @@
       "desc": "必殺技のLv.+2、最大Lv.15まで。天賦のLv.+2、最大Lv.15まで。"
     },
     "6": {
-      "name": "この{RUBY_B#いっきょく}一曲{RUBY_E#}、\\n{RUBY_B#てんきゅう}天穹{RUBY_E#}を{RUBY_B#つらぬ}貫{RUBY_E#}く！",
+      "name": "この{RUBY_B#いっきょく}一曲{RUBY_E#}、<br>{RUBY_B#てんきゅう}天穹{RUBY_E#}を{RUBY_B#つらぬ}貫{RUBY_E#}く！",
       "desc": "感電状態の敵に対するセーバルの与ダメージ+{{1, percent}}%。"
     }
   }

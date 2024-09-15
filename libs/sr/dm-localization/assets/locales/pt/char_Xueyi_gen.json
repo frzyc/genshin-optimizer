@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Castigo Divino",
-        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Xueyi a um único inimigo-alvo. Este ataque ignora os Tipos de Fraqueza e reduz a Tenacidade do inimigo. Quando o inimigo sofrer a Quebra de Fraqueza, o efeito Quebra de Fraqueza contra Quântico é ativado.\\nNeste ataque, quanto mais Tenacidade for reduzida, maior será o Dano causado, até um máximo de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de aumento.",
+        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Xueyi a um único inimigo-alvo. Este ataque ignora os Tipos de Fraqueza e reduz a Tenacidade do inimigo. Quando o inimigo sofrer a Quebra de Fraqueza, o efeito Quebra de Fraqueza contra Quântico é ativado.<br>Neste ataque, quanto mais Tenacidade for reduzida, maior será o Dano causado, até um máximo de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de aumento.",
         "shortDesc": "Causa Dano Quântico massivo a um único inimigo. Este ataque <orangeStrong>ignora Tipos de Fraqueza</orangeStrong> e reduz a Tenacidade do alvo. Quanto mais Tenacidade é reduzida, mais alto é o Dano causado."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Perpetuação Cármica",
+        "fullDesc": "Quando Xueyi reduz a Tenacidade do inimigo com seus ataques, ela acumula Carma. Quando mais a Tenacidade é reduzida, mais acúmulos de Carma são adicionados, até {{1}} acúmulos.<br>Quando os aliados de Xueyi reduzem a Tenacidade do inimigo com seus ataques, Xueyi ganha {{3}} acúmulo(s) de Carma.<br>Quando o Carma atingir o número máximo de acúmulos e consumir todos os acúmulos de Carma atuais, imediatamente lança um Ataque Extra contra um inimigo-alvo, causando Dano por 3 vezes, com cada vez causando Dano Quântico igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Xueyi a um único inimigo aleatório. Este Ataque Extra não pode adicionar acúmulos de Carma.",
+        "shortDesc": "Quando Xueyi ou seus aliados reduzem a Tenacidade do inimigo, ela ganha acúmulos de Carma. Quando Carma atingir o número máximo de acúmulos, <orangeStrong>ativa imediatamente um Ataque Extra</orangeStrong> causando Dano Quântico leve a um único inimigo-alvo, saltando por 3 vezes e consumindo todo o Carma."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Duhkha, Cessada",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Carma, Partido",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Deva, Encantada",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "Samsara, Dominada",

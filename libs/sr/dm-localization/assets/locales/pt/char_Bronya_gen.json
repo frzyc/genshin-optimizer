@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "Redistribuição de Combate",
-        "fullDesc": "Dissipa uma <u>penalidade</u> de um único aliado, permite que ele aja imediatamente, e aumenta seu Dano em <orangeStrong>{{1, percent}}%</orangeStrong> por {{3}} rodada(s).\\nQuando esta Perícia é usada na própria Bronya, ela não pode agir imediatamente novamente.",
-        "shortDesc": "<orangeStrong>Remove</orangeStrong> 1 <orangeStrong><u>penalidade</u></orangeStrong> de um único aliado, <orangeStrong>aumenta o dano que ele causa</orangeStrong> e permite que ele <orangeStrong>aja imediatamente</orangeStrong>."
+        "fullDesc": "Dissipa uma penalidade de um único aliado, permite que ele aja imediatamente, e aumenta seu Dano em <orangeStrong>{{1, percent}}%</orangeStrong> por {{3}} rodada(s).<br>Quando esta Perícia é usada na própria Bronya, ela não pode agir imediatamente novamente.",
+        "shortDesc": "<orangeStrong>Remove</orangeStrong> 1 <orangeStrong>penalidade</orangeStrong> de um único aliado, <orangeStrong>aumenta o dano que ele causa</orangeStrong> e permite que ele <orangeStrong>aja imediatamente</orangeStrong>."
       }
     },
     "ult": {
@@ -20,6 +20,13 @@
         "name": "A Marcha de Belobog",
         "fullDesc": "Aumenta o ATQ de todos os aliados em <orangeStrong>{{1, percent}}%</orangeStrong> e aumenta o Dano CRIT em <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> do Dano CRIT de Bronya mais <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> por {{4}} rodada(s).",
         "shortDesc": "Aumenta o <orangeStrong>ATQ</orangeStrong> e o <orangeStrong>Dano CRIT</orangeStrong> de todos os aliados"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Liderança",
+        "fullDesc": "Após usar o ATQ Básico, a próxima ação de Bronya será Avançada Adiante em <orangeStrong>{{1, percent}}%</orangeStrong>.",
+        "shortDesc": "Depois que esta personagem usa o ATQ Básico, a próxima ação dela será Avançada Adiante."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Bombardeio",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "4": {
       "name": "Pegue de Surpresa",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Incontrolável",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "6": {
       "name": "Arco-íris Perfurante",

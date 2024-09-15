@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "Ritter-Schwertkunst: Bergfall",
-        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Sushangs ANG zu. Es besteht eine Chance von {{3, percent}}%, nach dem letzten Treffer die „Schwerthaltung“ auszulösen, die dem Ziel <u>zusätzlichen</u> physischen SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Sushangs ANG zufügt.\\nBefindet das Ziel sich im Zustand <u>Schwächebruch</u>, wird die „Schwerthaltung“ garantiert ausgelöst.",
-        "shortDesc": "Fügt einem Gegner physischen SCH zu und <orangeStrong>besteht eine geringe Chance, „Schwerthaltung“ auszulösen</orangeStrong>. Bei Gegner mit <u>Schwächebruch</u> wird die <orangeStrong>„Schwerthaltung“ garantiert ausgelöst</orangeStrong>."
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Sushangs ANG zu. Es besteht eine Chance von {{3, percent}}%, nach dem letzten Treffer die „Schwerthaltung“ auszulösen, die dem Ziel zusätzlichen physischen SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Sushangs ANG zufügt.<br>Befindet das Ziel sich im Zustand Schwächebruch, wird die „Schwerthaltung“ garantiert ausgelöst.",
+        "shortDesc": "Fügt einem Gegner physischen SCH zu und <orangeStrong>besteht eine geringe Chance, „Schwerthaltung“ auszulösen</orangeStrong>. Bei Gegner mit Schwächebruch wird die <orangeStrong>„Schwerthaltung“ garantiert ausgelöst</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Die Gestalt von Taixu: Herold der Morgenröte",
-        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Sushangs ANG zu und sie tritt sofort in Aktion. Erhöht außerdem ihren ANG um <orangeStrong>{{4, percent}}%</orangeStrong> und beim Einsatz der Fertigkeit 2 zusätzliche Chancen für {{2}} Rd., „Schwerthaltung“ auszulösen.\\nWird die „Schwerthaltung“ durch eine zusätzliche Chance ausgelöst, wird {{3, percent}}% des ursprünglichen SCH verursacht.",
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Sushangs ANG zu und sie tritt sofort in Aktion. Erhöht außerdem ihren ANG um <orangeStrong>{{4, percent}}%</orangeStrong> und beim Einsatz der Fertigkeit 2 zusätzliche Chancen für {{2}} Rd., „Schwerthaltung“ auszulösen.<br>Wird die „Schwerthaltung“ durch eine zusätzliche Chance ausgelöst, wird {{3, percent}}% des ursprünglichen SCH verursacht.",
         "shortDesc": "Fügt einem Gegner massiven physischen SCH zu, verstärkt den Effekt der „Schwerthaltung“ und gewährt Sushang <orangeStrong>eine sofortige Aktion</orangeStrong>."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Fließende Klinge",
+        "fullDesc": "Wird die Schwäche eines Gegners gebrochen, steigt Sushangs GES für {{2}} Rd. um <orangeStrong>{{1, percent(fixed: 2)}}%</orangeStrong>.",
+        "shortDesc": "Erhöht die eigene GES, wenn ein Gegner im Kampf Schwächebruch erleidet."
       }
     },
     "technique": {

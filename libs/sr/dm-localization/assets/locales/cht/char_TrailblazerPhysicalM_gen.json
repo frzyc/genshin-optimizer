@@ -18,7 +18,7 @@
     "ult": {
       "0": {
         "name": "星塵王牌",
-        "fullDesc": "在兩種攻擊模式中選擇其一揮出全力一擊。\\n【全勝•再見安打】：對指定敵方單體造成等同於開拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害。\\n【全勝•安息全壘打】：對指定敵方單體造成等同於開拓者<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的物理屬性傷害，並對其相鄰目標造成等同於開拓者<orangeStrong>{{3, percent}}%</orangeStrong>攻擊力的物理屬性傷害。",
+        "fullDesc": "在兩種攻擊模式中選擇其一揮出全力一擊。<br>【全勝•再見安打】：對指定敵方單體造成等同於開拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害。<br>【全勝•安息全壘打】：對指定敵方單體造成等同於開拓者<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的物理屬性傷害，並對其相鄰目標造成等同於開拓者<orangeStrong>{{3, percent}}%</orangeStrong>攻擊力的物理屬性傷害。",
         "shortDesc": "選擇單體或擴散的攻擊方式，揮出全力一擊。"
       },
       "1": {
@@ -30,6 +30,13 @@
         "name": "全勝•安息全壘打",
         "fullDesc": "對指定敵方單體造成等同於開拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害，同時對其相鄰目標造成等同於開拓者<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的物理屬性傷害。",
         "shortDesc": "對敵方單體及其相鄰目標造成物理屬性傷害。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "牽制盜壘",
+        "fullDesc": "每次擊破敵方目標的弱點後，攻擊力提高<orangeStrong>{{1, percent}}%</orangeStrong>，最多疊加{{2}}層。",
+        "shortDesc": ""
       }
     },
     "technique": {

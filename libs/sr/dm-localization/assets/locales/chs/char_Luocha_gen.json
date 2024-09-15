@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "白花的祈望",
-        "fullDesc": "施放战技后立即为指定我方单体回复等同于罗刹<orangeStrong>{{1, percent}}%</orangeStrong>攻击力+<orangeStrong>{{2}}</orangeStrong>的生命值，并使罗刹获得1层【白花之刻】。\\n当我方任意单体当前生命值百分比小于等于{{3, percent}}%时，罗刹会立即对其触发1次等同于战技的效果，此次触发不消耗战技点。该效果在{{4}}回合后可再次触发。",
+        "fullDesc": "施放战技后立即为指定我方单体回复等同于罗刹<orangeStrong>{{1, percent}}%</orangeStrong>攻击力+<orangeStrong>{{2}}</orangeStrong>的生命值，并使罗刹获得1层【白花之刻】。<br>当我方任意单体当前生命值百分比小于等于{{3, percent}}%时，罗刹会立即对其触发1次等同于战技的效果，此次触发不消耗战技点。该效果在{{4}}回合后可再次触发。",
         "shortDesc": "为我方单体<orangeStrong>回复</orangeStrong>生命值，获得1层【白花之刻】。"
       }
     },
     "ult": {
       "0": {
         "name": "归葬的遂愿",
-        "fullDesc": "解除敌方全体{{2}}个<u>增益效果</u>，并对敌方全体造成等同于罗刹<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的虚数属性伤害，同时使罗刹获得1层【白花之刻】。",
-        "shortDesc": "<orangeStrong>解除</orangeStrong>敌方全体1个<orangeStrong><u>增益效果</u></orangeStrong>，并对敌方全体造成虚数属性伤害，获得1层【白花之刻】。"
+        "fullDesc": "解除敌方全体{{2}}个增益效果，并对敌方全体造成等同于罗刹<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的虚数属性伤害，同时使罗刹获得1层【白花之刻】。",
+        "shortDesc": "<orangeStrong>解除</orangeStrong>敌方全体1个<orangeStrong>增益效果</orangeStrong>，并对敌方全体造成虚数属性伤害，获得1层【白花之刻】。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "生息的轮转",
+        "fullDesc": "当【白花之刻】达到{{1}}层时，罗刹会消耗全部【白花之刻】展开结界。<br>处于结界中的任意敌方目标受到攻击后，施放攻击的我方目标立即回复等同于罗刹<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>攻击力+<orangeStrong>{{4}}</orangeStrong>的生命值。<br>结界效果持续{{3}}回合。当罗刹陷入无法战斗状态时，结界也会被解除。",
+        "shortDesc": "当【白花之刻】2层时<orangeStrong>展开结界</orangeStrong>。结界存在时我方<orangeStrong>攻击后回复</orangeStrong>生命值。"
       }
     },
     "technique": {

@@ -18,7 +18,7 @@
     "ult": {
       "0": {
         "name": "Ás de Poeira Estelar",
-        "fullDesc": "Escolha entre dois modos de ataque para desferir um golpe completo.\\nRuptura: Golpe de Despedida causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ {F#da}{M#do} Desbrava{M#dor}{F#dora} a um único inimigo.\\nRuptura: Home Run Fatal causa Dano Físico igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ {F#da}{M#do} Desbrava{M#dor}{F#dora} a um único inimigo, e Dano Físico igual a <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ {F#da}{M#do} Desbrava{M#dor}{F#dora} aos inimigos adjacentes a ele",
+        "fullDesc": "Escolha entre dois modos de ataque para desferir um golpe completo.<br>Ruptura: Golpe de Despedida causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ {F#da}{M#do} Desbrava{M#dor}{F#dora} a um único inimigo.<br>Ruptura: Home Run Fatal causa Dano Físico igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ {F#da}{M#do} Desbrava{M#dor}{F#dora} a um único inimigo, e Dano Físico igual a <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ {F#da}{M#do} Desbrava{M#dor}{F#dora} aos inimigos adjacentes a ele",
         "shortDesc": "Usa ATQ de alvo único ou uma Explosão para realizar um golpe com força máxima."
       },
       "1": {
@@ -30,6 +30,13 @@
         "name": "Ruptura: Home Run Fatal",
         "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo e Dano Físico igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a quaisquer inimigos adjacentes a ele.",
         "shortDesc": "Causa Dano Físico a um único inimigo e aos inimigos adjacentes a ele."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Arremesso Perfeito",
+        "fullDesc": "Sempre depois que este personagem inflige uma Quebra de Fraqueza a um inimigo, o ATQ aumenta em <orangeStrong>{{1, percent}}%</orangeStrong>. Este efeito pode acumular até {{2}} vez(es).",
+        "shortDesc": ""
       }
     },
     "technique": {
@@ -79,7 +86,7 @@
     },
     "3": {
       "name": "Um Sussurro Condutor",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "4": {
       "name": "Um Olhar Destruidor",
@@ -87,7 +94,7 @@
     },
     "5": {
       "name": "Uma Esperança Sobrevivente",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "6": {
       "name": "Um Desejo de Exploração",

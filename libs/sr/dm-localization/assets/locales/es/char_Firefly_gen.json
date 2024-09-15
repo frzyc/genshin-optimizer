@@ -16,8 +16,8 @@
     "skill": {
       "0": {
         "name": "Orden: Bombardeo aéreo",
-        "fullDesc": "Consume una cantidad de PV equivalente al {{2, percent}}% de sus PV máx., recupera una cantidad fija de energía equivalente al <orangeStrong>{{3, percent}}%</orangeStrong> de su energía máxima e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de SAM como Daño de Fuego a un enemigo. Si no hay suficientes PV, al usar la habilidad básica los PV actuales de SAM se reducen a 1. Su próxima <u>acción se adelanta</u> un {{4, percent}}%.",
-        "shortDesc": "Consume una parte de sus PV para recuperar energía e infligir Daño de Fuego a un enemigo. Su próxima <u>acción se adelanta</u>."
+        "fullDesc": "Consume una cantidad de PV equivalente al {{2, percent}}% de sus PV máx., recupera una cantidad fija de energía equivalente al <orangeStrong>{{3, percent}}%</orangeStrong> de su energía máxima e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de SAM como Daño de Fuego a un enemigo. Si no hay suficientes PV, al usar la habilidad básica los PV actuales de SAM se reducen a 1. Su próxima acción se adelanta un {{4, percent}}%.",
+        "shortDesc": "Consume una parte de sus PV para recuperar energía e infligir Daño de Fuego a un enemigo. Su próxima acción se adelanta."
       },
       "1": {
         "name": "Luciérnaga tipo IV: Sobrecarga de estrella moribunda",
@@ -28,8 +28,15 @@
     "ult": {
       "0": {
         "name": "Luciérnaga tipo IV: Combustión completa",
-        "fullDesc": "Entra en el estado de Combustión completa, su acción se adelanta un 100% y su ATQ básico y su habilidad básica se potencian. En el estado de Combustión completa, su VEL aumenta en <orangeStrong>{{3}}</orangeStrong> pts. y, al usar su ATQ básico potenciado o habilidad básica potenciada, su eficiencia de la Ruptura de Debilidad aumenta en un {{2, percent}}% y el Daño de Ruptura infligido por SAM que reciben los enemigos aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> hasta que termine el ataque actual.\\nEn el orden de acción aparece una cuenta regresiva de Combustión completa. Cuando comience el turno de la cuenta regresiva, SAM saldrá del estado de Combustión completa. La cuenta regresiva tiene una VEL fija de {{4}}.\\nEn el estado de Combustión completa, SAM no puede usar la habilidad definitiva.",
+        "fullDesc": "Entra en el estado de Combustión completa, su acción se adelanta un 100% y su ATQ básico y su habilidad básica se potencian. En el estado de Combustión completa, su VEL aumenta en <orangeStrong>{{3}}</orangeStrong> pts. y, al usar su ATQ básico potenciado o habilidad básica potenciada, su eficiencia de la Ruptura de Debilidad aumenta en un {{2, percent}}% y el Daño de Ruptura infligido por SAM que reciben los enemigos aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> hasta que termine el ataque actual.<br>En el orden de acción aparece una cuenta regresiva de Combustión completa. Cuando comience el turno de la cuenta regresiva, SAM saldrá del estado de Combustión completa. La cuenta regresiva tiene una VEL fija de {{4}}.<br>En el estado de Combustión completa, SAM no puede usar la habilidad definitiva.",
         "shortDesc": "Entra en el estado de Combustión completa y <orangeStrong>su acción se adelanta un <unbreak>100%</orangeStrong></color>. Su <orangeStrong>ATQ básico y su habilidad básica se potencian</orangeStrong>. Su VEL, <orangeStrong>su eficiencia de la Ruptura de Debilidad, y el Daño de Ruptura que reciben los enemigos</orangeStrong> aumentan. Dura hasta que termine la cuenta regresiva."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Núcleo ígneo de crisálida",
+        "fullDesc": "Cuantos menos PV tenga, menos daño recibe. Cuando tenga un {{3, percent}}% o menos de PV, alcanza el máximo efecto de reducción de daño, hasta una reducción máxima del <orangeStrong>{{1, percent}}%</orangeStrong>. Mientras esté en el estado de Combustión completa, el efecto de reducción de daño se mantiene al máximo y su RES a efecto aumenta en un <orangeStrong>{{4, percent}}%</orangeStrong>.<br>Al comenzar la batalla, si su energía no llega al {{2, percent}}%, recupera energía hasta alcanzar el {{2, percent}}%. Cuando la energía se recupera al máximo, se disipan todos los estados negativos que tenga.",
+        "shortDesc": "Cuantos menos PV tenga, menos daño recibe. Mientras esté en el estado de Combustión completa, el efecto de reducción de daño se mantiene al máximo y aumenta su RES a efecto. Al comenzar la batalla, si su energía no llega al <orangeStrong>{{2, percent}}%</orangeStrong>, recupera energía hasta alcanzar el <orangeStrong>{{2, percent}}%</orangeStrong>. Cuando la energía se recupera al máximo, se disipan todos los estados negativos que tenga."
       }
     },
     "technique": {

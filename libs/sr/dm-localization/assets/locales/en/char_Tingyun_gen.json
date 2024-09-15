@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "Soothing Melody",
-        "fullDesc": "Grants a single ally with Benediction to increase their ATK by <orangeStrong>{{2, percent}}%</orangeStrong>, up to <orangeStrong>{{4, percent}}%</orangeStrong> of Tingyun's current ATK.\\nWhen the ally with Benediction attacks, they will deal <u>Additional</u> Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of that ally's ATK for 1 time.\\nBenediction lasts for {{3}} turn(s) and is only effective on the most recent receiver of Tingyun's Skill.",
-        "shortDesc": "<orangeStrong>Increases the ATK</orangeStrong> of a single ally and grants them Benediction. Ally with Benediction additionally deals minor <orangeStrong>Lightning <u>Additional DMG</u></orangeStrong> when attacking."
+        "fullDesc": "Grants a single ally with Benediction to increase their ATK by <orangeStrong>{{2, percent}}%</orangeStrong>, up to <orangeStrong>{{4, percent}}%</orangeStrong> of Tingyun's current ATK.<br>When the ally with Benediction attacks, they will deal Additional Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of that ally's ATK for 1 time.<br>Benediction lasts for {{3}} turn(s) and is only effective on the most recent receiver of Tingyun's Skill.",
+        "shortDesc": "<orangeStrong>Increases the ATK</orangeStrong> of a single ally and grants them Benediction. Ally with Benediction additionally deals minor <orangeStrong>Lightning Additional DMG</orangeStrong> when attacking."
       }
     },
     "ult": {
@@ -20,6 +20,13 @@
         "name": "Amidst the Rejoicing Clouds",
         "fullDesc": "Regenerates {{1}} Energy for a single ally and increases the target's DMG by <orangeStrong>{{3, percent}}%</orangeStrong> for {{2}} turn(s).",
         "shortDesc": "Regenerates a target ally's <orangeStrong>Energy</orangeStrong> and <orangeStrong>increases their DMG dealt</orangeStrong>."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Violet Sparknado",
+        "fullDesc": "When an enemy is attacked by Tingyun, the ally with Benediction immediately deals Additional Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of that ally's ATK to the same enemy.",
+        "shortDesc": "When an enemy is attacked by Tingyun, the ally with Benediction immediately deals minor Lightning Additional DMG to the same enemy."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Halcyon Bequest",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Jovial Versatility",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Sauntering Coquette",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Peace Brings Wealth to All",

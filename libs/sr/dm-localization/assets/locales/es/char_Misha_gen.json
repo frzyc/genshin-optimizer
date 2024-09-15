@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "¡Voy a llegar tarde!",
-        "fullDesc": "Tiene {{1}} golpes por acción por defecto. Primero, Misha golpea a un enemigo con 1 golpe que inflige un <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Misha como Daño de Hielo. El resto de golpes alcanzan a enemigos al azar e infligen un <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Misha como Daño de Hielo. Antes de que cada golpe alcance a su objetivo, hay un <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de <u>probabilidad base</u> de afectar con Congelación al objetivo durante 1 turno.\\nLos enemigos congelados no pueden actuar, y al principio de cada turno reciben un <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ de Misha como Daño de Hielo <u>adicional</u>.\\nLa habilidad definitiva puede acumular {{5}} golpes por acción como máximo. Tras usar la habilidad definitiva, los golpes por acción se restablecen a su cantidad inicial.",
+        "fullDesc": "Tiene {{1}} golpes por acción por defecto. Primero, Misha golpea a un enemigo con 1 golpe que inflige un <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Misha como Daño de Hielo. El resto de golpes alcanzan a enemigos al azar e infligen un <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Misha como Daño de Hielo. Antes de que cada golpe alcance a su objetivo, hay un <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de probabilidad base de afectar con Congelación al objetivo durante 1 turno.<br>Los enemigos congelados no pueden actuar, y al principio de cada turno reciben un <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ de Misha como Daño de Hielo adicional.<br>La habilidad definitiva puede acumular {{5}} golpes por acción como máximo. Tras usar la habilidad definitiva, los golpes por acción se restablecen a su cantidad inicial.",
         "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo. Por defecto, rebota <orangeStrong>{{1}}</orangeStrong> veces entre los enemigos y puede llegar hasta un máximo de <orangeStrong>{{5}}</orangeStrong> rebotes. Antes de que cada golpe alcance al objetivo, tiene una pequeña probabilidad de <orangeStrong>congelarlo</orangeStrong>."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Rueda de escape horológica",
+        "fullDesc": "Cada vez que un aliado consuma 1 pt. de habilidad básica, los golpes por acción de la habilidad definitiva de Misha aumentan en {{2}} la siguiente vez que la use. Además, Misha recupera <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> pt. de energía.",
+        "shortDesc": "Cada vez que un aliado <orangeStrong>consuma 1 pt. de habilidad básica</orangeStrong>, aumentan los <orangeStrong>golpes por acción de la habilidad definitiva</orangeStrong> de Misha la siguiente vez que la use. Además, Misha recupera energía."
       }
     },
     "technique": {

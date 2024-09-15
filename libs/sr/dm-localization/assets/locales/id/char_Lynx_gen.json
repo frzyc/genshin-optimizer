@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "Salted Camping Cans",
-        "fullDesc": "Memberikan \"Survival Response\" pada 1 rekan tim yang ditargetkan dan meningkatkan Max HP-nya sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Max HP Lynx + <orangeStrong>{{2}}</orangeStrong>. Jika rekan tersebut adalah karakter dengan Path \"Destruction\" atau \"Preservation\", maka peluang rekan tersebut untuk diserang musuh akan meningkat pesat. \"Survival Response\" berlangsung selama {{3}} giliran.\\nMemulihkan HP rekan tersebut sebesar <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> Max HP Lynx + <orangeStrong>{{5}}</orangeStrong>.",
+        "fullDesc": "Memberikan \"Survival Response\" pada 1 rekan tim yang ditargetkan dan meningkatkan Max HP-nya sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Max HP Lynx + <orangeStrong>{{2}}</orangeStrong>. Jika rekan tersebut adalah karakter dengan Path \"Destruction\" atau \"Preservation\", maka peluang rekan tersebut untuk diserang musuh akan meningkat pesat. \"Survival Response\" berlangsung selama {{3}} giliran.<br>Memulihkan HP rekan tersebut sebesar <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> Max HP Lynx + <orangeStrong>{{5}}</orangeStrong>.",
         "shortDesc": "Memberikan \"Survival Response\" pada 1 rekan tim, <orangeStrong>meningkatkan Max HP-nya</orangeStrong>, dan di saat yang bersamaan juga memulihkan HP-nya."
       }
     },
     "ult": {
       "0": {
         "name": "Snowfield First Aid",
-        "fullDesc": "Menghapus masing-masing {{1}} efek <u>Debuff</u> dari seluruh rekan tim, serta segera memulihkan HP seluruh rekan tim sebesar <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> Max HP Lynx + <orangeStrong>{{3}}</orangeStrong>.",
-        "shortDesc": "Menghapus masing-masing <orangeStrong>1 efek <u>Debuff</u> dari seluruh rekan tim</orangeStrong>, serta memulihkan HP seluruh rekan tim."
+        "fullDesc": "Menghapus masing-masing {{1}} efek Debuff dari seluruh rekan tim, serta segera memulihkan HP seluruh rekan tim sebesar <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> Max HP Lynx + <orangeStrong>{{3}}</orangeStrong>.",
+        "shortDesc": "Menghapus masing-masing <orangeStrong>1 efek Debuff dari seluruh rekan tim</orangeStrong>, serta memulihkan HP seluruh rekan tim."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Outdoor Survival Experience",
+        "fullDesc": "Saat Lynx melancarkan Skill atau Ultimate, rekan tim yang dijadikan target Skill atau Ultimate Lynx akan mendapatkan efek pemulihan berkelanjutan selama {{1}} giliran. Saat setiap giliran target dimulai, HP-nya akan pulih sebesar <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> Max HP Lynx + <orangeStrong>{{3}}</orangeStrong>. Jika target memiliki \"Survival Response\", maka efek pemulihan berkelanjutan akan meningkat sebesar <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> Max HP Lynx + <orangeStrong>{{5}}</orangeStrong>.",
+        "shortDesc": "Saat Lynx melancarkan Skill atau Ultimate, rekan tim yang dijadikan target Skill atau Ultimate Lynx akan mendapatkan efek <orangeStrong>pemulihan berkelanjutan</orangeStrong>. Jika target memiliki \"Survival Response\", maka efek pemulihan berkelanjutan akan meningkat."
       }
     },
     "technique": {

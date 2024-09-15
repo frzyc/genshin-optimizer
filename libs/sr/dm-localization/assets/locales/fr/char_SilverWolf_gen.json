@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "Autoriser les modifications ?",
-        "fullDesc": "Il y a <orangeStrong>{{2, percent}}%</orangeStrong> de <u>chances de base</u> d'appliquer 1 Faiblesse du type d'un personnage présent sur le champ de bataille à une cible ennemie. Réduit également la RÉS aux DGT de ce type de faiblesse de l'ennemi de {{4, percent}}% pendant {{3}} tours. Si l'ennemi a déjà ce type de faiblesse, l'effet de réduction de RÉS aux DGT ne sera pas déclenché.\\nChaque ennemi ne peut avoir qu'une seule Faiblesse appliquée par Louve d'argent à la fois. Si Louve d'argent applique une nouvelle Faiblesse, elle remplace la précédente.\\nD'autre part, il y a {{5, percent}}% de <u>chances de base</u> de réduire toutes les RÉS de type de l'ennemi de <orangeStrong>{{6, percent(fixed: 1)}}%</orangeStrong> pendant {{7}} tours.\\nInflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Louve d'argent à cet ennemi.",
+        "fullDesc": "Il y a <orangeStrong>{{2, percent}}%</orangeStrong> de chances de base d'appliquer 1 Faiblesse du type d'un personnage présent sur le champ de bataille à une cible ennemie. Réduit également la RÉS aux DGT de ce type de faiblesse de l'ennemi de {{4, percent}}% pendant {{3}} tours. Si l'ennemi a déjà ce type de faiblesse, l'effet de réduction de RÉS aux DGT ne sera pas déclenché.<br>Chaque ennemi ne peut avoir qu'une seule Faiblesse appliquée par Louve d'argent à la fois. Si Louve d'argent applique une nouvelle Faiblesse, elle remplace la précédente.<br>D'autre part, il y a {{5, percent}}% de chances de base de réduire toutes les RÉS de type de l'ennemi de <orangeStrong>{{6, percent(fixed: 1)}}%</orangeStrong> pendant {{7}} tours.<br>Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Louve d'argent à cet ennemi.",
         "shortDesc": "Fortes chances d'<orangeStrong>appliquer une Faiblesse de type supplémentaire</orangeStrong> à un ennemi unique et de lui infliger des DGT quantiques."
       }
     },
     "ult": {
       "0": {
         "name": "Compte bloqué",
-        "fullDesc": "Il y a <orangeStrong>{{2, percent}}%</orangeStrong> de <u>chances de base</u> de réduire la DÉF d'une cible ennemie de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> pendant {{4}} tours. D'autre part, inflige à la cible ennemie des DGT quantiques équivalent à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Louve d'argent.",
+        "fullDesc": "Il y a <orangeStrong>{{2, percent}}%</orangeStrong> de chances de base de réduire la DÉF d'une cible ennemie de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> pendant {{4}} tours. D'autre part, inflige à la cible ennemie des DGT quantiques équivalent à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Louve d'argent.",
         "shortDesc": "Fortes chances de <orangeStrong>réduire la DÉF d'un ennemi unique</orangeStrong> et inflige des DGT quantiques massifs à cette cible ennemie."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "En attente de la réponse du système...",
+        "fullDesc": "Louve d'argent peut créer trois types de Bugs : une réduction d'ATQ de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, une réduction de DÉF de <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> ou une réduction de VIT de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.<br>Chaque fois que Louve d'argent attaque, elle a <orangeStrong>{{4, percent}}%</orangeStrong> de chances de base d'implanter un Bug aléatoire qui dure {{5}} tours aux cibles attaquées.",
+        "shortDesc": "Après chaque attaque, il y a une chance d'implanter 1 <orangeStrong>Bug</orangeStrong> aléatoire à l'ennemi attaqué."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Charge utile",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "4": {
       "name": "Cyberattaque",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Attaque par force brute",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "6": {
       "name": "Réseau superposé",

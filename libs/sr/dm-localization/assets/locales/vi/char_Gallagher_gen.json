@@ -27,6 +27,13 @@
         "shortDesc": "Khiến toàn bộ kẻ địch <orangeStrong>rơi vào trạng thái \"Say Mèm\"</orangeStrong>, đồng thời gây Sát Thương Hỏa cho toàn bộ kẻ địch. Tấn Công Thường lần sau cường hóa thành \"Hoa Rượu Tuôn Trào\"."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Cuộc Chiến Say Ngà",
+        "fullDesc": "\"Say Mèm\" sẽ tăng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Sát Thương Phá Vỡ mà mục tiêu phải chịu. Sau mỗi lần mục tiêu ở trạng thái \"Say Mèm\" bị nhân vật phe ta tấn công, sẽ hồi <orangeStrong>{{2}}</orangeStrong> HP cho người tấn công.",
+        "shortDesc": "\"Say Mèm\" sẽ <orangeStrong>tăng Sát Thương Phá Vỡ mà mục tiêu phải chịu</orangeStrong>, sau mỗi lần mục tiêu bị nhân vật phe ta tấn công, <orangeStrong>người tấn công sẽ hồi HP</orangeStrong>."
+      }
+    },
     "technique": {
       "0": {
         "name": "Rượu Ngọt Thủ Công",

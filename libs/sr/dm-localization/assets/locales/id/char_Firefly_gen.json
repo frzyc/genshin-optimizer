@@ -16,8 +16,8 @@
     "skill": {
       "0": {
         "name": "Order: Aerial Bombardment",
-        "fullDesc": "Mengonsumsi HP sebesar {{2, percent}}% Max HP SAM dan memulihkan Energy dalam jumlah tetap sebesar <orangeStrong>{{3, percent}}%</orangeStrong> dari Max Energy SAM, serta mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK SAM pada 1 musuh yang ditargetkan. Jika HP saat ini tidak cukup, maka HP SAM saat ini akan berkurang hingga 1 saat melancarkan Skill ini. Membuat aksi SAM yang berikutnya <u>didahulukan</u> sebesar {{4, percent}}%.",
-        "shortDesc": "Mengonsumsi sebagian HP diri sendiri dan memulihkan Energy, serta mengakibatkan Fire DMG pada 1 musuh. Membuat aksi dirinya yang berikutnya <u>didahulukan</u>."
+        "fullDesc": "Mengonsumsi HP sebesar {{2, percent}}% Max HP SAM dan memulihkan Energy dalam jumlah tetap sebesar <orangeStrong>{{3, percent}}%</orangeStrong> dari Max Energy SAM, serta mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK SAM pada 1 musuh yang ditargetkan. Jika HP saat ini tidak cukup, maka HP SAM saat ini akan berkurang hingga 1 saat melancarkan Skill ini. Membuat aksi SAM yang berikutnya didahulukan sebesar {{4, percent}}%.",
+        "shortDesc": "Mengonsumsi sebagian HP diri sendiri dan memulihkan Energy, serta mengakibatkan Fire DMG pada 1 musuh. Membuat aksi dirinya yang berikutnya didahulukan."
       },
       "1": {
         "name": "Fyrefly Type-IV: Deathstar Overload",
@@ -28,8 +28,15 @@
     "ult": {
       "0": {
         "name": "Fyrefly Type-IV: Complete Combustion",
-        "fullDesc": "Memasuki status \"Complete Combustion\", mendahulukan aksi diri sendiri sebesar 100%, serta memperoleh Enhanced Basic Attack dan Enhanced Skill. Saat dalam status \"Complete Combustion\", SPD meningkat <orangeStrong>{{3}}</orangeStrong>. Selain itu, saat melancarkan Enhanced Basic Attack atau Enhanced Skill, Weakness Break Efficiency dirinya meningkat {{2, percent}}%, dan Break DMG yang diterima target musuh (yang diakibatkan SAM) meningkat <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, berlangsung hingga serangan kali ini berakhir.\\nHitung mundur \"Complete Combustion\" akan muncul di Susunan Aksi, dan status \"Complete Combustion\" SAM akan dihapus saat giliran hitung mundur dimulai. Hitung mundur memiliki SPD tetap sebesar {{4}}.\\nSAM yang berstatus \"Complete Combustion\" tidak dapat melancarkan Ultimate.",
+        "fullDesc": "Memasuki status \"Complete Combustion\", mendahulukan aksi diri sendiri sebesar 100%, serta memperoleh Enhanced Basic Attack dan Enhanced Skill. Saat dalam status \"Complete Combustion\", SPD meningkat <orangeStrong>{{3}}</orangeStrong>. Selain itu, saat melancarkan Enhanced Basic Attack atau Enhanced Skill, Weakness Break Efficiency dirinya meningkat {{2, percent}}%, dan Break DMG yang diterima target musuh (yang diakibatkan SAM) meningkat <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, berlangsung hingga serangan kali ini berakhir.<br>Hitung mundur \"Complete Combustion\" akan muncul di Susunan Aksi, dan status \"Complete Combustion\" SAM akan dihapus saat giliran hitung mundur dimulai. Hitung mundur memiliki SPD tetap sebesar {{4}}.<br>SAM yang berstatus \"Complete Combustion\" tidak dapat melancarkan Ultimate.",
         "shortDesc": "Memasuki status \"Complete Combustion\", <orangeStrong>mendahulukan aksi diri sendiri sebesar <unbreak>100%</orangeStrong></color>, memperoleh <orangeStrong>Enhanced Basic Attack</orangeStrong> dan <orangeStrong>Enhanced Skill</orangeStrong>, serta meningkatkan <orangeStrong>SPD dirinya, Weakness Break Efficiency dirinya, dan Break DMG yang diterima target musuh</orangeStrong>, berlangsung hingga hitung mundur berakhir."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Chrysalid Pyronexus",
+        "fullDesc": "Semakin rendah HP, maka semakin rendah DMG yang diterima. Saat HP kurang dari atau sama dengan {{3, percent}}%, maka efek pengurangan DMG akan mencapai nilai maksimum, maksimal berkurang hingga <orangeStrong>{{1, percent}}%</orangeStrong>. Saat dalam status \"Complete Combustion\", efek pengurangan DMG ini akan selalu dalam nilai maksimal, dan Effect RES akan meningkat <orangeStrong>{{4, percent}}%</orangeStrong>.<br>Saat pertempuran dimulai, jika Energy kurang dari {{2, percent}}%, maka akan memulihkan Energy hingga {{2, percent}}%. Saat Energy pulih hingga batas maksimal, akan menghapus semua efek Debuff pada SAM.",
+        "shortDesc": "Semakin rendah HP, maka semakin rendah DMG yang diterima. Dalam status \"Complete Combustion\", efek pengurangan DMG ini akan selalu dalam nilai maksimal, dan Effect RES akan meningkat. Saat pertempuran dimulai, jika Energy kurang dari <orangeStrong>{{2, percent}}%</orangeStrong>, maka akan memulihkan Energy hingga <orangeStrong>{{2, percent}}%</orangeStrong>. Saat Energy pulih hingga batas maksimal, akan menghapus semua efek Debuff pada diri sendiri."
       }
     },
     "technique": {

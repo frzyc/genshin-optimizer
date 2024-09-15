@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "{RUBY_B#れいふ}霊符{RUBY_E#}・{RUBY_B#ごしん}護身{RUBY_E#}",
-        "fullDesc": "指定した味方単体の<u>デバフ</u>を{{5}}つ解除し、フォフォの最大HP<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>のHPを回復する。同時にターゲットに隣接する味方のHPをフォフォの最大HP<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>回復する。",
-        "shortDesc": "味方単体の<u>デバフ</u>を1つ解除し、その味方および隣接する味方の<orangeStrong>HPを回復</orangeStrong>する。"
+        "fullDesc": "指定した味方単体のデバフを{{5}}つ解除し、フォフォの最大HP<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>のHPを回復する。同時にターゲットに隣接する味方のHPをフォフォの最大HP<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>回復する。",
+        "shortDesc": "味方単体のデバフを1つ解除し、その味方および隣接する味方の<orangeStrong>HPを回復</orangeStrong>する。"
       }
     },
     "ult": {
@@ -22,10 +22,17 @@
         "shortDesc": "自身以外の味方の<orangeStrong>EPを回復</orangeStrong>し、それら味方の<orangeStrong>攻撃力をアップ</orangeStrong>する。"
       }
     },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#ひょうい}憑依{RUBY_E#}・{RUBY_B#しんきつうてん}真気通天{RUBY_E#}",
+        "fullDesc": "戦闘スキルを発動した後、フォフォは{{1}}ターン継続する「厄払い」を獲得する。フォフォのターンが回ってくるたびに「厄払い」の継続時間-1ターン。フォフォに「厄払い」がある場合、味方のターンが回ってきた時、または味方が必殺技を発動した時に、その味方のHPをフォフォの最大HP<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{5}}</orangeStrong>回復する。同時に、残りHPが{{6, percent}}%以下の味方それぞれに回復効果を1回発動する。<br>「厄払い」が発動され、味方が治癒された時、その味方に付与されたデバフを{{2}}つ解除する。この効果は{{7}}回発動できる。再度戦闘スキルを発動すると、発動可能回数がリセットされる。",
+        "shortDesc": "戦闘スキルを発動した後、フォフォは「厄払い」を獲得する。フォフォに「厄払い」がある場合、味方のターンが回ってきた時、または味方が必殺技を発動した時に、<orangeStrong>自身のHPを回復</orangeStrong>し、同時にHPが低い味方<orangeStrong>それぞれ</orangeStrong>に<orangeStrong>回復効果を1回発動</orangeStrong>する。「厄払い」が発動され、味方が治癒された時、<orangeStrong>その味方に付与されたデバフを1つ解除する</orangeStrong>。"
+      }
+    },
     "technique": {
       "0": {
         "name": "{RUBY_B#きょうそう}凶相{RUBY_E#}・{RUBY_B#きぶつあっぷく}鬼物圧伏{RUBY_E#}",
-        "fullDesc": "フォフォが周囲の敵を威嚇し、敵を「魂魄飛散」状態にする。「魂魄飛散」状態の敵はフォフォの反対方向に向けて逃げる、{{4}}秒継続。「魂魄飛散」状態の敵と戦闘に入った後、{{1, percent}}%の<u>基礎確率</u>で敵それぞれの攻撃力-{{2, percent}}%、{{3}}ターン継続。",
+        "fullDesc": "フォフォが周囲の敵を威嚇し、敵を「魂魄飛散」状態にする。「魂魄飛散」状態の敵はフォフォの反対方向に向けて逃げる、{{4}}秒継続。「魂魄飛散」状態の敵と戦闘に入った後、{{1, percent}}%の基礎確率で敵それぞれの攻撃力-{{2, percent}}%、{{3}}ターン継続。",
         "shortDesc": "周囲の敵を「魂魄飛散」状態にする。「魂魄飛散」状態の敵と戦闘に入った後、高確率で敵の<orangeStrong>攻撃力をダウン</orangeStrong>する。"
       }
     },
@@ -72,7 +79,7 @@
       "desc": "必殺技のLv.+2、最大Lv.15まで。天賦のLv.+2、最大Lv.15まで。"
     },
     "4": {
-      "name": "{RUBY_B#はな}離{RUBY_E#}れぬ{RUBY_B#あっき}悪鬼{RUBY_E#}\\n{RUBY_B#た}絶{RUBY_E#}えぬ{RUBY_B#も}揉{RUBY_E#}め{RUBY_B#ごと}事{RUBY_E#}",
+      "name": "{RUBY_B#はな}離{RUBY_E#}れぬ{RUBY_B#あっき}悪鬼{RUBY_E#}<br>{RUBY_B#た}絶{RUBY_E#}えぬ{RUBY_B#も}揉{RUBY_E#}め{RUBY_B#ごと}事{RUBY_E#}",
       "desc": "戦闘スキルまたは天賦を発動し、味方に治癒を行った時、その味方の残りHPが少ないほど治癒量がアップする、最大でフォフォの治癒量+{{1, percent}}%。"
     },
     "5": {

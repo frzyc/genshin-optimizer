@@ -4,29 +4,36 @@
     "basic": {
       "0": {
         "name": "Percipience, Silent Dawn",
-        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Black Swan's ATK to a single target enemy, with a <orangeStrong>{{2, percent}}%</orangeStrong> <u>base chance</u> of inflicting 1 stack of <u>Arcana</u> on the target. Additionally, when attacking a target that suffers Wind Shear, Bleed, Burn, or Shock, there is respectively a <orangeStrong>{{3, percent}}%</orangeStrong> <u>base chance</u> of inflicting 1 extra stack of <u>Arcana</u> on the target.",
-        "shortDesc": "Deals minor Wind DMG to a single enemy and has a chance of applying <u>Arcana</u> to the target. After attacking a target that suffers <orangeStrong>Wind Shear, Bleed, Burn, or Shock</orangeStrong>, there is respectively a chance of <orangeStrong>additionally applying <u>Arcana</u></orangeStrong>."
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Black Swan's ATK to a single target enemy, with a <orangeStrong>{{2, percent}}%</orangeStrong> base chance of inflicting 1 stack of Arcana on the target. Additionally, when attacking a target that suffers Wind Shear, Bleed, Burn, or Shock, there is respectively a <orangeStrong>{{3, percent}}%</orangeStrong> base chance of inflicting 1 extra stack of Arcana on the target.",
+        "shortDesc": "Deals minor Wind DMG to a single enemy and has a chance of applying Arcana to the target. After attacking a target that suffers <orangeStrong>Wind Shear, Bleed, Burn, or Shock</orangeStrong>, there is respectively a chance of <orangeStrong>additionally applying Arcana</orangeStrong>."
       }
     },
     "skill": {
       "0": {
         "name": "Decadence, False Twilight",
-        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Black Swan's ATK to a single target enemy and any adjacent targets. At the same time, there is a {{2, percent}}% <u>base chance</u> of inflicting 1 stack of <u>Arcana</u> on the target enemy and the adjacent targets. Additionally, there is a {{3, percent}}% <u>base chance</u> of reducing the DEF of the target enemy and the adjacent targets by <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>, lasting for {{5}} turn(s).",
-        "shortDesc": "Deals minor Wind DMG to a single enemy target and any adjacent targets, with a high chance of <orangeStrong>inflicting <u>Arcana</u></orangeStrong> on the targets and lowering their DEF."
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Black Swan's ATK to a single target enemy and any adjacent targets. At the same time, there is a {{2, percent}}% base chance of inflicting 1 stack of Arcana on the target enemy and the adjacent targets. Additionally, there is a {{3, percent}}% base chance of reducing the DEF of the target enemy and the adjacent targets by <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>, lasting for {{5}} turn(s).",
+        "shortDesc": "Deals minor Wind DMG to a single enemy target and any adjacent targets, with a high chance of <orangeStrong>inflicting Arcana</orangeStrong> on the targets and lowering their DEF."
       }
     },
     "ult": {
       "0": {
         "name": "Bliss of Otherworld's Embrace",
-        "fullDesc": "Inflicts Epiphany on all enemies for {{2}} turn(s).\\nWhile afflicted with Epiphany, enemies take <orangeStrong>{{3, percent}}%</orangeStrong> increased DMG in their turn. Additionally, if enemies are also inflicted with <u>Arcana</u>, they are considered to be simultaneously afflicted with Wind Shear, Bleed, Burn, and Shock. After <u>Arcana</u> causes DMG at the start of each turn, its stacks are not reset. This non-reset effect of <u>Arcana</u> stacks can be triggered up to {{4}} time(s) for the duration of Epiphany. And the trigger count resets when Epiphany is applied again.\\nDeals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Black Swan's ATK to all enemies.",
-        "shortDesc": "Inflicts Epiphany on all enemies, increasing the DMG the targets take in their turn. Additionally, <orangeStrong>having <u>Arcana</u> is regarded as having Wind Shear, Bleed, Burn, and Shock</orangeStrong>. Furthermore, <u>Arcana</u> will not reset its stacks after causing DMG at the start of the next turn. Deals Wind DMG to all enemies."
+        "fullDesc": "Inflicts Epiphany on all enemies for {{2}} turn(s).<br>While afflicted with Epiphany, enemies take <orangeStrong>{{3, percent}}%</orangeStrong> increased DMG in their turn. Additionally, if enemies are also inflicted with Arcana, they are considered to be simultaneously afflicted with Wind Shear, Bleed, Burn, and Shock. After Arcana causes DMG at the start of each turn, its stacks are not reset. This non-reset effect of Arcana stacks can be triggered up to {{4}} time(s) for the duration of Epiphany. And the trigger count resets when Epiphany is applied again.<br>Deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Black Swan's ATK to all enemies.",
+        "shortDesc": "Inflicts Epiphany on all enemies, increasing the DMG the targets take in their turn. Additionally, <orangeStrong>having Arcana is regarded as having Wind Shear, Bleed, Burn, and Shock</orangeStrong>. Furthermore, Arcana will not reset its stacks after causing DMG at the start of the next turn. Deals Wind DMG to all enemies."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Loom of Fate's Caprice",
+        "fullDesc": "Every time an enemy target receives DoT at the start of each turn, there is a <orangeStrong>{{2, percent}}%</orangeStrong> base chance for it to be inflicted with 1 stack of Arcana.<br>While afflicted with Arcana, enemy targets receive Wind DoT equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Black Swan's ATK at the start of each turn. Each stack of Arcana increases this DMG multiplier by <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>. Then Arcana resets to 1 stack. Arcana can stack up to {{8}} times.<br>Only when Arcana causes DMG at the start of an enemy target's turn, Black Swan triggers additional effects based on the number of Arcana stacks inflicted on the target:<br>When there are {{4}} or more Arcana stacks, deals Wind DoT equal to <orangeStrong>{{5, percent}}%</orangeStrong> of Black Swan's ATK to adjacent targets, with a <orangeStrong>{{2, percent}}%</orangeStrong> base chance of inflicting 1 stack of Arcana on adjacent targets.<br>When there are {{6}} or more Arcana stacks, enables the current DoT dealt this time to ignore {{7, percent}}% of the target's and adjacent targets' DEF.",
+        "shortDesc": "When an enemy target receives DoT at the start of each turn, there is a chance for it to be inflicted with Arcana. They receive <orangeStrong>Wind DoT</orangeStrong> at the start of the turn, and Black Swan triggers <orangeStrong>additional effects</orangeStrong> based on the number of Arcana stacks."
       }
     },
     "technique": {
       "0": {
         "name": "From Façade to Vérité",
-        "fullDesc": "After this Technique is used, there is a {{1, percent}}% <u>base chance</u> for each enemy to be inflicted with 1 stack of <u>Arcana</u> at the start of the next battle. For each successful application of <u>Arcana</u> on a target, inflicts another stack of <u>Arcana</u> on the same target. This process repeats until <u>Arcana</u> fails to be inflicted on this target. For each successive application of <u>Arcana</u> on a target, its <u>base chance</u> of success is equal to {{2, percent}}% of the <u>base chance</u> of the previous successful infliction of <u>Arcana</u> on that target.",
-        "shortDesc": "After this Technique is used, at the start of the next battle, there is a high chance for each enemy to be <orangeStrong>inflicted with Arcana repeatedly until <u>Arcana</u> fails to be inflicted</orangeStrong>."
+        "fullDesc": "After this Technique is used, there is a {{1, percent}}% base chance for each enemy to be inflicted with 1 stack of Arcana at the start of the next battle. For each successful application of Arcana on a target, inflicts another stack of Arcana on the same target. This process repeats until Arcana fails to be inflicted on this target. For each successive application of Arcana on a target, its base chance of success is equal to {{2, percent}}% of the base chance of the previous successful infliction of Arcana on that target.",
+        "shortDesc": "After this Technique is used, at the start of the next battle, there is a high chance for each enemy to be <orangeStrong>inflicted with Arcana repeatedly until Arcana fails to be inflicted</orangeStrong>."
       }
     },
     "overworld": {
@@ -46,7 +53,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Goblet's Dredges",
-        "fullDesc": "When an enemy target enters battle, there is a {{1, percent}}% base chance for it to be inflicted with 1 stack of Arcana.\\nEvery time an enemy target receives DoT during a single attack by an ally, there is a {{1, percent}}% base chance for the target to be inflicted with 1 stack of Arcana. The maximum number of stacks that can be inflicted during 1 single attack is {{2}}.",
+        "fullDesc": "When an enemy target enters battle, there is a {{1, percent}}% base chance for it to be inflicted with 1 stack of Arcana.<br>Every time an enemy target receives DoT during a single attack by an ally, there is a {{1, percent}}% base chance for the target to be inflicted with 1 stack of Arcana. The maximum number of stacks that can be inflicted during 1 single attack is {{2}}.",
         "shortDesc": ""
       }
     },
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "As Above, So Below",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "4": {
       "name": "In Tears We Gift",
@@ -77,11 +84,11 @@
     },
     "5": {
       "name": "Linnutee Flyway",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "6": {
       "name": "Pantheon Merciful, Masses Pitiful",
-      "desc": "When an enemy target gets attacked by Black Swan's allies, Black Swan has a {{2, percent}}% base chance of inflicting 1 stack of Arcana on the target.\\nEvery time Black Swan inflicts Arcana on an enemy target, there is a {{1, percent}}% fixed chance to additionally increase the number of Arcana stacked this time by {{3}}."
+      "desc": "When an enemy target gets attacked by Black Swan's allies, Black Swan has a {{2, percent}}% base chance of inflicting 1 stack of Arcana on the target.<br>Every time Black Swan inflicts Arcana on an enemy target, there is a {{1, percent}}% fixed chance to additionally increase the number of Arcana stacked this time by {{3}}."
     }
   }
 }

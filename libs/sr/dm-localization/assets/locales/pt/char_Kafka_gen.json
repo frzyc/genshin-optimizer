@@ -11,21 +11,28 @@
     "skill": {
       "0": {
         "name": "Luar Carinhoso",
-        "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Kafka como Dano de Raio a um inimigo-alvo e <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de Kafka como Dano de Raio aos inimigos adjacentes a ele.\\nSe o inimigo-alvo estiver recebendo Dano Contínuo, todos os Danos Contínuos sobre aquele inimigo causarão imediatamente Dano de <orangeStrong>{{2, percent}}%</orangeStrong> do seu Dano original.",
-        "shortDesc": "Causa Dano de Raio a um único inimigo e Dano de Raio leve a alvos adjacentes.\\nSe o inimigo-alvo principal estiver atualmente infligido com efeito de Dano Contínuo, este efeito <orangeStrong>causa Dano mais 1 vez</orangeStrong>."
+        "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Kafka como Dano de Raio a um inimigo-alvo e <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de Kafka como Dano de Raio aos inimigos adjacentes a ele.<br>Se o inimigo-alvo estiver recebendo Dano Contínuo, todos os Danos Contínuos sobre aquele inimigo causarão imediatamente Dano de <orangeStrong>{{2, percent}}%</orangeStrong> do seu Dano original.",
+        "shortDesc": "Causa Dano de Raio a um único inimigo e Dano de Raio leve a alvos adjacentes.<br>Se o inimigo-alvo principal estiver atualmente infligido com efeito de Dano Contínuo, este efeito <orangeStrong>causa Dano mais 1 vez</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Vibração do Crepúsculo",
-        "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Kafka como Dano de Raio a todos os inimigos. Há {{2, percent}}% de <u>chance-base</u> de os inimigos atingidos serem afligidos com Choque e imediatamente receberem Dano do estado de Choque atual igual a <orangeStrong>{{5, percent}}%</orangeStrong> do Dano original. Choque dura {{3}} rodada(s).\\nEnquanto em Choque, inimigos recebem <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de Kafka como Dano de Raio Contínuo no início de cada rodada.",
-        "shortDesc": "Causa Dano de Raio leve a todos os inimigos, com altas chances de causar <orangeStrong>Choque</orangeStrong>.\\nSe os inimigos já estiverem com Choque, o estado de Choque <orangeStrong>causa Dano mais 1 vez</orangeStrong>."
+        "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Kafka como Dano de Raio a todos os inimigos. Há {{2, percent}}% de chance-base de os inimigos atingidos serem afligidos com Choque e imediatamente receberem Dano do estado de Choque atual igual a <orangeStrong>{{5, percent}}%</orangeStrong> do Dano original. Choque dura {{3}} rodada(s).<br>Enquanto em Choque, inimigos recebem <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de Kafka como Dano de Raio Contínuo no início de cada rodada.",
+        "shortDesc": "Causa Dano de Raio leve a todos os inimigos, com altas chances de causar <orangeStrong>Choque</orangeStrong>.<br>Se os inimigos já estiverem com Choque, o estado de Choque <orangeStrong>causa Dano mais 1 vez</orangeStrong>."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Gentil, Mas Cruel",
+        "fullDesc": "Após um aliado de Kafka usar um ATQ Básico em um inimigo-alvo, Kafka imediatamente realiza 1 Ataque Extra e causa Dano de Raio igual a <orangeStrong>{{1, percent}}%</orangeStrong> do seu ATQ ao alvo, com {{2, percent}}% de chance-base de infligir Choque equivalente àquele aplicado pela Perícia Suprema dela ao inimigo-alvo atacado, durando por {{3}} rodadas. Este efeito só pode ser ativado 1 vez por rodada.",
+        "shortDesc": "Após um aliado usar um ATQ Básico em um inimigo, Kafka realiza imediatamente um Ataque Extra e causa Dano de Raio, com altas chances de <orangeStrong>infligir Choque</orangeStrong> a este alvo. Este efeito só pode ser ativado 1 vez por rodada."
       }
     },
     "technique": {
       "0": {
         "name": "Misericórdia Não É Perdão",
-        "fullDesc": "Ataca imediatamente todos os inimigos dentro de um alcance específico. Depois de entrar em batalha, causa Dano de Raio igual a {{3, percent}}% do ATQ de Kafka a todos os inimigos, com uma <u>chance-base</u> de {{1, percent}}% de infligir Choque equivalente àquele aplicado pela Perícia Suprema dela a todos os inimigos-alvo por {{2}} rodada(s).",
+        "fullDesc": "Ataca imediatamente todos os inimigos dentro de um alcance específico. Depois de entrar em batalha, causa Dano de Raio igual a {{3, percent}}% do ATQ de Kafka a todos os inimigos, com uma chance-base de {{1, percent}}% de infligir Choque equivalente àquele aplicado pela Perícia Suprema dela a todos os inimigos-alvo por {{2}} rodada(s).",
         "shortDesc": "Ataca todos os inimigos num certo alcance. Depois de entrar em batalha, causa Dano de Raio leve a todos os inimigos com alta chance de <orangeStrong>infligir Choque</orangeStrong> neles."
       }
     },
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Capriccio",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Recitativo",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Doloroso",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "Leggiero",

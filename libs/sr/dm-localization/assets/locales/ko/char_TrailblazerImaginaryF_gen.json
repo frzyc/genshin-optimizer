@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "떠들썩한 풋라이트 퍼레이드",
-        "fullDesc": "모든 아군에게 [댄스 파트너] 효과를 부여한다. 지속 시간: {{1}}턴. 개척자의 턴이 시작될 때마다 지속 턴 수가 1 감소한다. [댄스 파트너]를 보유한 아군의 격파 특수효과가 <orangeStrong>{{3, percent}}%</orangeStrong> 증가하고, <u>약점 격파 상태</u>의 적을 공격하면 이번 공격의 강인성 감소 수치가 1회의 <u>슈퍼 격파 피해</u>로 전환된다",
-        "shortDesc": "모든 아군에게 [댄스 파트너] 효과를 부여한다. [댄스 파트너]를 보유한 아군의 <orangeStrong>격파 특수효과</orangeStrong>가 증가하고, <u>약점 격파 상태</u>의 적을 공격하면 추가로 <orangeStrong><u>슈퍼 격파 피해</u></orangeStrong>를 1회 가한다"
+        "fullDesc": "모든 아군에게 [댄스 파트너] 효과를 부여한다. 지속 시간: {{1}}턴. 개척자의 턴이 시작될 때마다 지속 턴 수가 1 감소한다. [댄스 파트너]를 보유한 아군의 격파 특수효과가 <orangeStrong>{{3, percent}}%</orangeStrong> 증가하고, 약점 격파 상태의 적을 공격하면 이번 공격의 강인성 감소 수치가 1회의 슈퍼 격파 피해로 전환된다",
+        "shortDesc": "모든 아군에게 [댄스 파트너] 효과를 부여한다. [댄스 파트너]를 보유한 아군의 <orangeStrong>격파 특수효과</orangeStrong>가 증가하고, 약점 격파 상태의 적을 공격하면 추가로 <orangeStrong>슈퍼 격파 피해</orangeStrong>를 1회 가한다"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "올 채널 에어리얼 댄스",
+        "fullDesc": "적의 약점이 격파되면 개척자는 즉시 에너지를 <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong>pt 회복한다",
+        "shortDesc": "적의 약점이 격파되면 개척자는 에너지를 회복한다"
       }
     },
     "technique": {

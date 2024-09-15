@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Anguille sous roche",
-        "fullDesc": "Augmente les DGT critiques d'une cible alliée unique à hauteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> des DGT critiques de Sparkle + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> pendant {{3}} tour et avance de {{4, percent}}% l'action de cet allié.\\nLorsque Sparkle utilise cette capacité sur elle-même, son action n'est pas avancée.",
+        "fullDesc": "Augmente les DGT critiques d'une cible alliée unique à hauteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> des DGT critiques de Sparkle + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> pendant {{3}} tour et avance de {{4, percent}}% l'action de cet allié.<br>Lorsque Sparkle utilise cette capacité sur elle-même, son action n'est pas avancée.",
         "shortDesc": "Augmente les <orangeStrong>DGT critiques</orangeStrong> d'un allié et avance son action."
       }
     },
@@ -20,6 +20,13 @@
         "name": "Personnage aux mille visages",
         "fullDesc": "Régénère {{2}} points de compétence pour l'équipe et accorde Énigme à tous les alliés. Chaque cumul de l'effet d'augmentation de DGT accordé par le talent de Sparkle augmente de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> supplémentaires pour les alliés qui bénéficient d'Énigme. Dure {{4}} tours.",
         "shortDesc": "Régénère des <orangeStrong>points de compétence</orangeStrong> pour l'équipe et permet d'accroître l'augmentation de DGT accordée par son talent."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Fausse piste",
+        "fullDesc": "Tant que Sparkle est sur le champ de bataille, le nombre maximum de points de compétence augmente de {{3}}. Chaque fois qu'un allié utilise 1 point de compétence, les DGT infligés par tous les alliés augmentent de <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. Cet effet dure {{1}} tours et peut être cumulé jusqu'à {{4}} fois.",
+        "shortDesc": "Augmente le <orangeStrong>maximum de points de compétence</orangeStrong> de l'équipe. Chaque fois qu'un allié utilise des points de compétence, il <orangeStrong>augmente les DGT infligés</orangeStrong> par tous les alliés."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Rêve irréalisable",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "4": {
       "name": "La vie est un jeu",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Vérité aux deux visages",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "6": {
       "name": "Choix multiples",

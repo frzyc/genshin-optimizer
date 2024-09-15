@@ -9,7 +9,7 @@
       },
       "1": {
         "name": "Sieg mit dem Kong!",
-        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Qingques ANG zu und fügt angrenzenden Zielen Quanten-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Qingques ANG zu.\\n„Sieg mit dem Kong!“ kann keine Fertigkeitspunkte wiederherstellen.",
+        "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Qingques ANG zu und fügt angrenzenden Zielen Quanten-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Qingques ANG zu.<br>„Sieg mit dem Kong!“ kann keine Fertigkeitspunkte wiederherstellen.",
         "shortDesc": "Fügt einem Gegner Quanten-SCH zu und fügt angrenzenden Zielen geringen Quanten-SCH zu."
       }
     },
@@ -25,6 +25,13 @@
         "name": "Vier verborgene Fische? Gewonnen!",
         "fullDesc": "Fügt allen Gegnern Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Qingques ANG zu und zieht 4 Jadesteine derselben Farbe.",
         "shortDesc": "Fügt allen Gegnern Quanten-SCH zu und zieht dann 4 Jadesteine derselben Farbe."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Himmelische Jade",
+        "fullDesc": "Zu Beginn der Runde eines Verbündeten zieht Qingque zufällig 1 von 3 Steinen unterschiedlicher Farbe. Bis zu 4 Steine können auf einmal gehalten werden.<br>Wenn Qingque zu Beginn ihrer Runde 4 Steine derselben Farbe hat, wird sie alle Steine verwenden und in den Status „Verdeckter Kong“ übergehen.<br>Solange sich Qingque im Status „Verdeckter Kong“ befindet, kann sie die Fertigkeit nicht erneut einsetzen. Gleichzeitig erhöht sich der ANG von Qingque um <orangeStrong>{{1, percent}}%</orangeStrong> und ihr Standardangriff „Selbstgezogener Sieg“ wird zu „Sieg mit dem Kong!“ verstärkt. Der Status „Verdeckter Kong“ ist beendet, wenn ein verstärkter Standardangriff erfolgt ist.",
+        "shortDesc": "Zu Beginn der Runde eines Verbündeten zieht Qingque Steine. Wenn sie zu Beginn ihrer Runde 4 Steine derselben Farbe hat, werden alle Steine verbraucht und <orangeStrong>ihr Standardangriff wird verstärkt</orangeStrong>. Gleichzeitig wird ihr ANG erhöht."
       }
     },
     "technique": {
@@ -78,7 +85,7 @@
     },
     "4": {
       "name": "Glückliche Kombination, der letzte Stein wartet",
-      "desc": "Nach dem Einsatz der Fertigkeit besteht eine feste Chance von {{1, percent}}%, den Status „Autarkie“ zu erhalten. Dieser Status hält bis zum Ende dieser Runde.\\nIm Status Autarkie führt Qingque nach dem Einsatz des Standardangriffs oder verstärkten Standardangriffs sofort einen Folgeangriff aus und fügt dem Ziel Quanten-SCH in Höhe von 100 % des Standardangriff-SCH oder verstärkten Standardangriff-SCH zu."
+      "desc": "Nach dem Einsatz der Fertigkeit besteht eine feste Chance von {{1, percent}}%, den Status „Autarkie“ zu erhalten. Dieser Status hält bis zum Ende dieser Runde.<br>Im Status Autarkie führt Qingque nach dem Einsatz des Standardangriffs oder verstärkten Standardangriffs sofort einen Folgeangriff aus und fügt dem Ziel Quanten-SCH in Höhe von 100 % des Standardangriff-SCH oder verstärkten Standardangriff-SCH zu."
     },
     "5": {
       "name": "Selbst gezogene Steine, das Glück verschmäht",

@@ -22,6 +22,13 @@
         "shortDesc": "Mengakibatkan Ice DMG pada seluruh musuh."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Fine, I'll Do It Myself",
+        "fullDesc": "Saat serangan rekan tim mengakibatkan persentase HP target musuh saat ini kurang dari atau sama dengan {{1, percent}}%, Herta akan melancarkan Serangan Lanjutan dan mengakibatkan Ice DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Herta pada seluruh musuh.",
+        "shortDesc": ""
+      }
+    },
     "technique": {
       "0": {
         "name": "It Can Still Be Optimized",

@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "梦游鱼",
-        "fullDesc": "使指定我方单体的暴击伤害提高，提高数值等同于花火<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>暴击伤害+<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>，持续{{3}}回合，并使该目标行动提前{{4, percent}}%。\\n当花火对自身施放该技能时，无法触发行动提前效果。",
+        "fullDesc": "使指定我方单体的暴击伤害提高，提高数值等同于花火<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>暴击伤害+<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>，持续{{3}}回合，并使该目标行动提前{{4, percent}}%。<br>当花火对自身施放该技能时，无法触发行动提前效果。",
         "shortDesc": "使我方单体<orangeStrong>暴击伤害</orangeStrong>提高，并使该目标行动提前。"
       }
     },
@@ -20,6 +20,13 @@
         "name": "一人千役",
         "fullDesc": "为我方恢复{{2}}个战技点，并使我方全体获得【谜诡】。持有【谜诡】的我方目标触发花火天赋造成的伤害提高效果每层额外提高<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>，持续{{4}}回合。",
         "shortDesc": "为我方恢复<orangeStrong>战技点</orangeStrong>，使触发花火天赋的伤害提高效果额外提高。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "叙述性诡计",
+        "fullDesc": "花火在场时，战技点上限额外增加{{3}}点。当我方目标每消耗1点战技点，则使我方全体造成的伤害提高<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>，该效果持续{{1}}回合，最多可叠加{{4}}层。",
+        "shortDesc": "我方的<orangeStrong>战技点上限</orangeStrong>提高，我方目标消耗战技点时，使我方全体<orangeStrong>造成的伤害</orangeStrong>提高。"
       }
     },
     "technique": {

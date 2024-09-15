@@ -9,28 +9,35 @@
       },
       "1": {
         "name": "Nắm Đấm Phá Trời Trực Diện",
-        "fullDesc": "Tiêu hao 2 tầng Ý Chí Chiến Đấu, dùng Nắm Đấm Trực Diện trước thi triển 3 đòn tấn công, mỗi đòn gây cho 1 kẻ địch chỉ định lượng Sát Thương Vật Lý bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Luka.\\nDùng tiếp Nắm Đấm Phá Trời thi triển 1 đòn tấn công, gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Luka.",
+        "fullDesc": "Tiêu hao 2 tầng Ý Chí Chiến Đấu, dùng Nắm Đấm Trực Diện trước thi triển 3 đòn tấn công, mỗi đòn gây cho 1 kẻ địch chỉ định lượng Sát Thương Vật Lý bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Luka.<br>Dùng tiếp Nắm Đấm Phá Trời thi triển 1 đòn tấn công, gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Luka.",
         "shortDesc": "Tiêu hao 2 tầng Ý Chí Chiến Đấu và gây Sát Thương Vật Lý cho 1 kẻ địch."
       }
     },
     "skill": {
       "0": {
         "name": "Nắm Đấm Vỡ Nát",
-        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Luka, sau đó có {{2, percent}}% <u>xác suất cơ bản</u> khiến mục tiêu rơi vào trạng thái Chảy Máu, duy trì {{5}} hiệp.\\nTrong trạng thái Chảy Máu, khi bắt đầu mỗi hiệp, kẻ địch sẽ chịu Sát Thương Vật Lý Duy Trì bằng {{3, percent(fixed: 1)}}% Giới Hạn HP của bản thân, tối đa không quá <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công của Luka.",
+        "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Luka, sau đó có {{2, percent}}% xác suất cơ bản khiến mục tiêu rơi vào trạng thái Chảy Máu, duy trì {{5}} hiệp.<br>Trong trạng thái Chảy Máu, khi bắt đầu mỗi hiệp, kẻ địch sẽ chịu Sát Thương Vật Lý Duy Trì bằng {{3, percent(fixed: 1)}}% Giới Hạn HP của bản thân, tối đa không quá <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công của Luka.",
         "shortDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch, có xác suất lớn khiến mục tiêu <orangeStrong>Chảy Máu</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "Đòn Chiến Thắng",
-        "fullDesc": "Nhận {{5}} tầng Ý Chí Chiến Đấu và có {{2, percent}}% <u>xác suất cơ bản</u> khiến 1 kẻ địch chỉ định tăng <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> sát thương phải chịu, duy trì {{4}} hiệp, sau đó gây Sát Thương Vật Lý cho mục tiêu này bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Luka.",
+        "fullDesc": "Nhận {{5}} tầng Ý Chí Chiến Đấu và có {{2, percent}}% xác suất cơ bản khiến 1 kẻ địch chỉ định tăng <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> sát thương phải chịu, duy trì {{4}} hiệp, sau đó gây Sát Thương Vật Lý cho mục tiêu này bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Luka.",
         "shortDesc": "Nhận <orangeStrong>{{5}}</orangeStrong> tầng Ý Chí Chiến Đấu, xác suất lớn tăng sát thương của 1 kẻ địch phải chịu, đồng thời gây lượng lớn Sát Thương Vật Lý cho kẻ địch này."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Tia Lửa Bắn Tóe",
+        "fullDesc": "Sau khi Luka thi triển tấn công thường là Nắm Đấm Trực Diện và Chiến Kỹ là Nắm Đấm Vỡ Nát, sẽ nhận {{1}} tầng Ý Chí Chiến Đấu, tối đa 4 tầng. Khi số tầng Ý Chí Chiến Đấu từ 2 tầng trở lên, tấn công thường Nắm Đấm Trực Diện sẽ cường hóa thành Nắm Đấm Phá Trời Trực Diện. Sau khi tấn công thường cường hóa là \"Nắm Đấm Phá Trời\" đánh trúng kẻ địch đang Chảy Máu, sẽ khiến trạng thái Chảy Máu mà kẻ đó đang phải chịu lập tức sinh ra 1 lần sát thương tương đương <orangeStrong>{{2, percent}}%</orangeStrong> sát thương ban đầu. Khi bắt đầu chiến đấu, Luka có 1 tầng Ý Chí Chiến Đấu.",
+        "shortDesc": "Sau khi thi triển Tấn Công Thường là Nắm Đấm Trực Diện và Chiến Kỹ là Nắm Đấm Vỡ Nát, sẽ nhận 1 tầng Ý Chí Chiến Đấu. Khi Ý Chí Chiến Đấu đạt 2 tầng trở lên, <orangeStrong>sẽ cường hóa Tấn Công Thường</orangeStrong>.<br>Nếu kẻ địch ở trạng thái Chảy Máu, thì đòn Tấn Công Thường được cường hóa <orangeStrong>sẽ khiến trạng thái Chảy Máu sinh ra thêm 1 lần sát thương</orangeStrong>."
       }
     },
     "technique": {
       "0": {
         "name": "Người Tiên Phong",
-        "fullDesc": "Tấn công kẻ địch ngay, sau khi vào chiến đấu sẽ gây Sát Thương Vật Lý bằng {{1, percent}}% Tấn Công của Luka cho 1 kẻ địch ngẫu nhiên, đồng thời có {{2, percent}}% <u>xác suất cơ bản</u> khiến kẻ này rơi vào trạng thái Chảy Máu giống với Chiến Kỹ. Sau đó Luka sẽ nhận thêm 1 tầng Ý Chí Chiến Đấu.",
+        "fullDesc": "Tấn công kẻ địch ngay, sau khi vào chiến đấu sẽ gây Sát Thương Vật Lý bằng {{1, percent}}% Tấn Công của Luka cho 1 kẻ địch ngẫu nhiên, đồng thời có {{2, percent}}% xác suất cơ bản khiến kẻ này rơi vào trạng thái Chảy Máu giống với Chiến Kỹ. Sau đó Luka sẽ nhận thêm 1 tầng Ý Chí Chiến Đấu.",
         "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch ngẫu nhiên, đồng thời có xác suất lớn khiến mục tiêu <orangeStrong>Chảy Máu</orangeStrong>, sau đó nhận thêm 1 tầng Ý Chí Chiến Đấu."
       }
     },

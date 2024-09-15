@@ -18,7 +18,7 @@
     "ult": {
       "0": {
         "name": "Stardust Ace",
-        "fullDesc": "Pilih satu dari antara dua mode serangan untuk melancarkan satu serangan penuh.\\n\"Blowout: Farewell Hit\" mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Trailblazer pada 1 target musuh.\\n\"Blowout: RIP Home Run\" mengakibatkan Physical DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Trailblazer pada 1 target musuh, serta mengakibatkan Physical DMG sebesar <orangeStrong>{{3, percent}}%</orangeStrong> ATK Trailblazer pada musuh di sekitar target.",
+        "fullDesc": "Pilih satu dari antara dua mode serangan untuk melancarkan satu serangan penuh.<br>\"Blowout: Farewell Hit\" mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Trailblazer pada 1 target musuh.<br>\"Blowout: RIP Home Run\" mengakibatkan Physical DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Trailblazer pada 1 target musuh, serta mengakibatkan Physical DMG sebesar <orangeStrong>{{3, percent}}%</orangeStrong> ATK Trailblazer pada musuh di sekitar target.",
         "shortDesc": "Pilih serangan Single Target atau Blast untuk melancarkan satu serangan penuh."
       },
       "1": {
@@ -30,6 +30,13 @@
         "name": "Blowout: RIP Home Run",
         "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Trailblazer pada 1 target musuh, dan di saat bersamaan mengakibatkan Physical DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Trailblazer pada musuh di sekitar target.",
         "shortDesc": "Mengakibatkan Physical DMG pada 1 musuh dan target di sekitarnya."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Perfect Pickoff",
+        "fullDesc": "Setiap kali mengakibatkan Weakness Break pada target musuh, ATK meningkat <orangeStrong>{{1, percent}}%</orangeStrong>, efek ini dapat ditumpuk hingga {{2}} lapis.",
+        "shortDesc": ""
       }
     },
     "technique": {

@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "지… 지각하겠어!",
-        "fullDesc": "기본 상태에서 공격 단수를 {{1}}단 보유한다. 우선 1단 공격을 발동하여 지정된 단일 적에게 미샤 공격력의 <orangeStrong>{{2, percent}}%</orangeStrong>만큼 얼음 속성 피해를 가하고 나머지 단수별 공격은 랜덤 단일 적에게 미샤 공격력의 <orangeStrong>{{2, percent}}%</orangeStrong>만큼 얼음 속성 피해를 가한다. 단수별 공격 전 <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>의 <u>기본 확률</u>로 목표를 빙결 상태에 빠뜨린다. 지속 시간: 1턴.\\n빙결 상태에서 적은 행동할 수 없으며, 턴이 시작될 때마다 미샤 공격력의 <orangeStrong>{{4, percent}}%</orangeStrong>만큼 얼음 속성 <u>추가 피해</u>를 받는다.\\n필살기 공격 단수는 최대 {{5}}단까지 누적되며, 필살기 발동 후 공격 단수는 기본 상태로 복구된다",
+        "fullDesc": "기본 상태에서 공격 단수를 {{1}}단 보유한다. 우선 1단 공격을 발동하여 지정된 단일 적에게 미샤 공격력의 <orangeStrong>{{2, percent}}%</orangeStrong>만큼 얼음 속성 피해를 가하고 나머지 단수별 공격은 랜덤 단일 적에게 미샤 공격력의 <orangeStrong>{{2, percent}}%</orangeStrong>만큼 얼음 속성 피해를 가한다. 단수별 공격 전 <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>의 기본 확률로 목표를 빙결 상태에 빠뜨린다. 지속 시간: 1턴.<br>빙결 상태에서 적은 행동할 수 없으며, 턴이 시작될 때마다 미샤 공격력의 <orangeStrong>{{4, percent}}%</orangeStrong>만큼 얼음 속성 추가 피해를 받는다.<br>필살기 공격 단수는 최대 {{5}}단까지 누적되며, 필살기 발동 후 공격 단수는 기본 상태로 복구된다",
         "shortDesc": "단일 적에게 소량의 얼음 속성 피해를 가하고 기본 상태에서 총 <orangeStrong>{{1}}</orangeStrong>회 바운스하며, 최대 총 <orangeStrong>{{5}}</orangeStrong>회 바운스한다. 단수별 공격 전 낮은 확률로 목표를 <orangeStrong>빙결</orangeStrong>시킨다"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "탈진기",
+        "fullDesc": "모든 아군이 전투 스킬 포인트를 1pt 소모할 때마다 미샤의 다음 필살기 공격 단수가 {{2}}단 증가하고, 미샤의 에너지가 <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong>pt 회복된다",
+        "shortDesc": "모든 아군이 <orangeStrong>전투 스킬 포인트를 1pt 소모</orangeStrong>할 때마다 미샤의 다음 <orangeStrong>필살기 공격 단수</orangeStrong>가 증가하며, 미샤의 에너지가 회복된다"
       }
     },
     "technique": {

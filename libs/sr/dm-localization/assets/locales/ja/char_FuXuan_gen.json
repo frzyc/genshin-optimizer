@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "{RUBY_B#たいび}太微{RUBY_E#}の{RUBY_B#ぎょうき}行棋{RUBY_E#}、{RUBY_B#かげ}影{RUBY_E#}{RUBY_B#しめ}示{RUBY_E#}す{RUBY_B#れいだい}霊台{RUBY_E#}",
-        "fullDesc": "「窮観の陣」を起動し、符玄以外の味方が受ける、バリアに防がれる前のダメージの{{1, percent}}%を符玄が<u>分担</u>する、{{3}}ターン継続。\\n「窮観の陣」の中にいる味方全体は「鑑知」を得る。「鑑知」状態の味方は、最大HPが符玄の最大HPの<orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>分アップし、会心率+<orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>。\\n符玄が<u>戦闘不能状態</u>になった時、「窮観の陣」は解除される。",
-        "shortDesc": "「窮観の陣」を起動し、味方が<orangeStrong>受けたダメージを符玄が<u>分担</u></orangeStrong>する。味方全体の最大HP、<orangeStrong>会心率</orangeStrong>をアップさせる。"
+        "fullDesc": "「窮観の陣」を起動し、符玄以外の味方が受ける、バリアに防がれる前のダメージの{{1, percent}}%を符玄が分担する、{{3}}ターン継続。<br>「窮観の陣」の中にいる味方全体は「鑑知」を得る。「鑑知」状態の味方は、最大HPが符玄の最大HPの<orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>分アップし、会心率+<orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>。<br>符玄が戦闘不能状態になった時、「窮観の陣」は解除される。",
+        "shortDesc": "「窮観の陣」を起動し、味方が<orangeStrong>受けたダメージを符玄が分担</orangeStrong>する。味方全体の最大HP、<orangeStrong>会心率</orangeStrong>をアップさせる。"
       }
     },
     "ult": {
@@ -20,6 +20,13 @@
         "name": "{RUBY_B#てんりつたいえん}天律大衍{RUBY_E#}、{RUBY_B#れきごうきいつ}歴劫帰一{RUBY_E#}",
         "fullDesc": "敵全体に符玄の最大HPの<orangeStrong>{{1, percent}}%</orangeStrong>分の量子属性ダメージを与え、天賦によるHP回復の発動回数+1。",
         "shortDesc": "敵全体に量子属性ダメージを与え、符玄の天賦の発動可能回数アップ。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#けんこんせいい}乾坤清夷{RUBY_E#}、{RUBY_B#いちようらいふく}一陽来復{RUBY_E#}",
+        "fullDesc": "符玄が戦闘可能状態の時、味方全体に「避邪」を付与する。「避邪」状態の味方の受けるダメージ-<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>。<br>符玄の残りHP割合が{{2, percent}}%以下になった時、自身の失ったHP<orangeStrong>{{3, percent}}%</orangeStrong>分のHPを回復する。HPが0になる攻撃を受けた時、この効果は発動できない。この効果の初期の発動可能回数は1回、最大で2回まで累積できる。",
+        "shortDesc": "符玄が戦闘可能状態の時、味方全体の受けるダメージダウン。<br>残りHPが少ない時、失ったHPの割合に応じて、<orangeStrong>自動で自身のHPを回復</orangeStrong>する。この効果の発動可能回数は最大で2回累積できる。"
       }
     },
     "technique": {
@@ -81,7 +88,7 @@
     },
     "6": {
       "name": "{RUBY_B#しゅりょう}種陵{RUBY_E#}",
-      "desc": "「窮観の陣」が起動している時、味方全体が戦闘中失った累計HPをカウントする。符玄の必殺技によるダメージが、戦闘中失った累計HP{{1, percent}}%分アップする。\\n戦闘中失った累計HPのカウントは、符玄の最大HPの{{2, percent}}%を超えず、必殺技を発動した後にリセットされる。"
+      "desc": "「窮観の陣」が起動している時、味方全体が戦闘中失った累計HPをカウントする。符玄の必殺技によるダメージが、戦闘中失った累計HP{{1, percent}}%分アップする。<br>戦闘中失った累計HPのカウントは、符玄の最大HPの{{2, percent}}%を超えず、必殺技を発動した後にリセットされる。"
     }
   }
 }

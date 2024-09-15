@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "병탄 합병의 담보",
-        "fullDesc": "지정된 단일 아군을 [빚 수금업자]로 만들며, 해당 목표의 속도가 {{1}}pt 증가한다, 지속 시간: {{4}}턴\\n[빚 수금업자]가 공격 발동 후 명중한 모든 적에게 제이드 공격력의 <orangeStrong>{{3, percent}}%</orangeStrong>만큼 양자 속성 <u>추가 피해</u>를 1회 가하고, [빚 수금업자] HP 최대치의 {{2, percent}}%만큼 HP를 소모한다. 현재 HP가 부족하면 HP가 1pt로 감소한다.\\n제이드가 [빚 수금업자]가 되면 속도 증가 효과를 획득할 수 없고 공격 후 HP를 소모하지 않는다.\\n필드에 [빚 수금업자]가 존재할 시 제이드는 전투 스킬을 발동할 수 없으며, 제이드의 턴이 시작될 때마다 [빚 수금업자] 상태의 지속 턴 수가 1 감소한다",
-        "shortDesc": "단일 아군이 <orangeStrong>[빚 수금업자]</orangeStrong>가 되며, 속도가 증가한다. <orangeStrong>[빚 수금업자]</orangeStrong>가 공격을 발동하면 명중한 모든 적에게 소량의 양자 속성 <u>추가 피해</u>를 가하고 자신의 HP를 소모한다. 제이드가 [빚 수금업자]가 되면 속도 증가 효과를 획득할 수 없고 공격 후 HP를 소모하지 않는다"
+        "fullDesc": "지정된 단일 아군을 [빚 수금업자]로 만들며, 해당 목표의 속도가 {{1}}pt 증가한다, 지속 시간: {{4}}턴<br>[빚 수금업자]가 공격 발동 후 명중한 모든 적에게 제이드 공격력의 <orangeStrong>{{3, percent}}%</orangeStrong>만큼 양자 속성 추가 피해를 1회 가하고, [빚 수금업자] HP 최대치의 {{2, percent}}%만큼 HP를 소모한다. 현재 HP가 부족하면 HP가 1pt로 감소한다.<br>제이드가 [빚 수금업자]가 되면 속도 증가 효과를 획득할 수 없고 공격 후 HP를 소모하지 않는다.<br>필드에 [빚 수금업자]가 존재할 시 제이드는 전투 스킬을 발동할 수 없으며, 제이드의 턴이 시작될 때마다 [빚 수금업자] 상태의 지속 턴 수가 1 감소한다",
+        "shortDesc": "단일 아군이 <orangeStrong>[빚 수금업자]</orangeStrong>가 되며, 속도가 증가한다. <orangeStrong>[빚 수금업자]</orangeStrong>가 공격을 발동하면 명중한 모든 적에게 소량의 양자 속성 추가 피해를 가하고 자신의 HP를 소모한다. 제이드가 [빚 수금업자]가 되면 속도 증가 효과를 획득할 수 없고 공격 후 HP를 소모하지 않는다"
       }
     },
     "ult": {
       "0": {
         "name": "서약의 심연, 영원의 계약",
-        "fullDesc": "모든 적에게 제이드 공격력의 <orangeStrong>{{3, percent}}%</orangeStrong>만큼 양자 속성 피해를 가한다. 또한 제이드 특성의 <u>추가 공격</u>이 강화되고, 추가 공격으로 가하는 피해 배율이 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 강화 효과는 {{2}}회 적용된다",
-        "shortDesc": "모든 적에게 양자 속성 피해를 가하고, 자신의 <orangeStrong><u>추가 공격</u></orangeStrong> 피해 배율이 증가한다"
+        "fullDesc": "모든 적에게 제이드 공격력의 <orangeStrong>{{3, percent}}%</orangeStrong>만큼 양자 속성 피해를 가한다. 또한 제이드 특성의 추가 공격이 강화되고, 추가 공격으로 가하는 피해 배율이 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 강화 효과는 {{2}}회 적용된다",
+        "shortDesc": "모든 적에게 양자 속성 피해를 가하고, 자신의 <orangeStrong>추가 공격</orangeStrong> 피해 배율이 증가한다"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "보석을 골라내는 이빨",
+        "fullDesc": "제이드 혹은 [빚 수금업자]가 된 목표가 공격 발동 후, 적을 1기 명중할 때마다 충전을 1pt 획득한다. 충전이 {{3}}pt에 도달하면 충전을 {{3}}pt 소모하여 추가 공격을 1회 발동하고, 모든 적에게 제이드 공격력의 <orangeStrong>{{5, percent}}%</orangeStrong>만큼 양자 속성 피해를 가한다. 이번 추가 공격은 충전을 획득할 수 없다.<br>제이드가 특성의 추가 공격을 발동하면 즉시 [전당품]을 {{4}}스택 획득하며, [전당품] 스택마다 치명타 피해가 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> 증가한다, 최대 중첩수: {{2}}스택",
+        "shortDesc": "제이드 혹은 <orangeStrong>[빚 수금업자]</orangeStrong>가 된 목표가 공격 발동 후, 적을 1기 명중할 때마다 충전을 1pt 획득한다. 충전이 <orangeStrong>{{3}}</orangeStrong>pt에 도달하면 충전을 <orangeStrong>{{3}}</orangeStrong>pt 소모하여 <orangeStrong>추가 공격</orangeStrong>을 1회 발동하고, 모든 적에게 양자 속성 피해를 가한다.<br>제이드가 <orangeStrong>추가 공격</orangeStrong> 발동 시 [전당품]을 획득하고 치명타 피해가 증가한다, 최대 중첩수: <orangeStrong>{{2}}</orangeStrong>스택"
       }
     },
     "technique": {

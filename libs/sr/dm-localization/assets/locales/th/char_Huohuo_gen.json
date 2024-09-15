@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "Talisman: Protection",
-        "fullDesc": "ลบล้าง<u>เอฟเฟกต์ Debuff</u> {{5}} เอฟเฟกต์ของฝ่ายเราที่กำหนดหนึ่งตัว และฟื้นฟู HP <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> ของ HP สูงสุดของ Huohuo +<orangeStrong>{{2}}</orangeStrong> แก่ฝ่ายเราที่กำหนดหนึ่งตัวทันที พร้อมทั้งฟื้นฟู HP <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> ของ HP สูงสุดของ Huohuo +<orangeStrong>{{4}}</orangeStrong> แก่ตัวที่อยู่ใกล้เคียงกับเป้าหมายด้วย",
-        "shortDesc": "ลบล้าง<u>เอฟเฟกต์ Debuff</u> 1 เอฟเฟกต์ของฝ่ายเราหนึ่งตัว และ<orangeStrong>ฟื้นฟู HP</orangeStrong> ให้แก่ฝ่ายเราหนึ่งตัว รวมถึงตัวที่อยู่ใกล้เคียงด้วย"
+        "fullDesc": "ลบล้างเอฟเฟกต์ Debuff {{5}} เอฟเฟกต์ของฝ่ายเราที่กำหนดหนึ่งตัว และฟื้นฟู HP <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> ของ HP สูงสุดของ Huohuo +<orangeStrong>{{2}}</orangeStrong> แก่ฝ่ายเราที่กำหนดหนึ่งตัวทันที พร้อมทั้งฟื้นฟู HP <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> ของ HP สูงสุดของ Huohuo +<orangeStrong>{{4}}</orangeStrong> แก่ตัวที่อยู่ใกล้เคียงกับเป้าหมายด้วย",
+        "shortDesc": "ลบล้างเอฟเฟกต์ Debuff 1 เอฟเฟกต์ของฝ่ายเราหนึ่งตัว และ<orangeStrong>ฟื้นฟู HP</orangeStrong> ให้แก่ฝ่ายเราหนึ่งตัว รวมถึงตัวที่อยู่ใกล้เคียงด้วย"
       }
     },
     "ult": {
@@ -22,10 +22,17 @@
         "shortDesc": "<orangeStrong>ฟื้นฟูพลังงาน</orangeStrong>ให้กับเพื่อนในทีม ที่นอกเหนือไปจากตัวเอง และทำให้ <orangeStrong>ATK</orangeStrong> ของเป้าหมายดังกล่าวเพิ่มขึ้น"
       }
     },
+    "talent": {
+      "0": {
+        "name": "Possession: Ethereal Metaflow",
+        "fullDesc": "หลังจากปล่อยสกิลต่อสู้ Huohuo จะได้รับ \"Divine Provision\" เป็นเวลา {{1}} เทิร์น และเมื่อเริ่มต้นเทิร์นของ Huohuo ระยะเวลาดังกล่าวจะลดลง 1 เทิร์น ในขณะที่ Huohuo มี \"Divine Provision\" เมื่อเป้าหมายฝ่ายเราเริ่มต้นเทิร์น หรือปล่อยท่าไม้ตาย จะฟื้นฟู HP ของเป้าหมายนั้นๆ <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> ของ HP สูงสุดของ Huohuo +<orangeStrong>{{5}}</orangeStrong> พร้อมทั้งสร้างเอฟเฟกต์ฟื้นฟู แก่เป้าหมายฝ่ายเราทุกตัวที่มี HP ปัจจุบันน้อยกว่าหรือเท่ากับ {{6, percent}}% เป็นจำนวน 1 ครั้ง<br>เมื่อปล่อย \"Divine Provision\" เพื่อให้การรักษาแก่เป้าหมายฝ่ายเรา จะลบล้างเอฟเฟกต์ Debuff ของเป้าหมายดังกล่าว {{2}} เอฟเฟกต์ โดยเอฟเฟกต์นี้สามารถเกิดขึ้นได้ {{7}} ครั้ง หลังจากที่ปล่อยสกิลต่อสู้อีกครั้ง จะรีเฟรชจำนวนการเกิดเอฟเฟกต์",
+        "shortDesc": "หลังจากปล่อยสกิลต่อสู้ Huohuo จะได้รับ \"Divine Provision\" ในขณะที่ Huohuo มี \"Divine Provision\" เมื่อเป้าหมายฝ่ายเราเริ่มต้นเทิร์น หรือปล่อยท่าไม้ตาย จะ<orangeStrong>ฟื้นฟู HP ของเป้าหมายนั้นๆ</orangeStrong> พร้อมทั้ง<orangeStrong>สร้างเอฟเฟกต์ฟื้นฟู 1 ครั้ง</orangeStrong> แก่<orangeStrong>เป้าหมายฝ่ายเราทุกตัว</orangeStrong>ที่มี HP ค่อนข้างต่ำ เมื่อปล่อย \"Divine Provision\" เพื่อให้การรักษาแก่เป้าหมายฝ่ายเรา จะ<orangeStrong>ลบล้างเอฟเฟกต์ Debuff ของเป้าหมายดังกล่าว 1 เอฟเฟกต์</orangeStrong>"
+      }
+    },
     "technique": {
       "0": {
         "name": "Fiend: Impeachment of Evil",
-        "fullDesc": "Huohuo ข่มขู่ศัตรูรอบตัว และทำให้ศัตรูติดสถานะ \"Horror-Struck\" ซึ่งศัตรูที่ติดสถานะ \"Horror-Struck\" จะหลบหนีไปยังทิศทางที่อยู่ห่างจาก Huohuo เป็นเวลา {{4}} วินาที เมื่อเข้าสู่การต่อสู้ พร้อมกับศัตรูที่ติดสถานะ \"Horror-Struck\" จะมี <u>โอกาสพื้นฐาน</u> {{1, percent}}% ที่จะทำให้ ATK ของศัตรูเป้าหมายแต่ละตัวลดลง {{2, percent}}% เป็นเวลา {{3}} เทิร์น",
+        "fullDesc": "Huohuo ข่มขู่ศัตรูรอบตัว และทำให้ศัตรูติดสถานะ \"Horror-Struck\" ซึ่งศัตรูที่ติดสถานะ \"Horror-Struck\" จะหลบหนีไปยังทิศทางที่อยู่ห่างจาก Huohuo เป็นเวลา {{4}} วินาที เมื่อเข้าสู่การต่อสู้ พร้อมกับศัตรูที่ติดสถานะ \"Horror-Struck\" จะมี โอกาสพื้นฐาน {{1, percent}}% ที่จะทำให้ ATK ของศัตรูเป้าหมายแต่ละตัวลดลง {{2, percent}}% เป็นเวลา {{3}} เทิร์น",
         "shortDesc": "ทำให้ศัตรูรอบๆ ติดสถานะ \"Horror-Struck\" เมื่อเข้าสู่การต่อสู้ พร้อมศัตรูที่ติดสถานะ \"Horror-Struck\" จะมีโอกาสอย่างมาก ที่จะทำให้ <orangeStrong>ATK ของศัตรูเป้าหมายลดลง</orangeStrong>"
       }
     },
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Cursed by Fate, Moths to Flame",
-      "desc": "เลเวลท่าไม้ตาย +2 สูงสุดไม่เกิน Lv.15 และเลเวลพรสวรรค์ +2 สูงสุดไม่เกิน\\nLv.15"
+      "desc": "เลเวลท่าไม้ตาย +2 สูงสุดไม่เกิน Lv.15 และเลเวลพรสวรรค์ +2 สูงสุดไม่เกิน<br>Lv.15"
     },
     "4": {
       "name": "Tied in Life, Bound to Strife",

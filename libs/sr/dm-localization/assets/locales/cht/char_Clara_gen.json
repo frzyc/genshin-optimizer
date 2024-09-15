@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "史瓦羅在看著你",
-        "fullDesc": "對敵方全體造成等同於克拉拉<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害，並對所有被史瓦羅標上【反擊標記】的敵方目標額外造成等同於克拉拉<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的物理屬性傷害。\\n戰技施放後所有【反擊標記】失效。",
+        "fullDesc": "對敵方全體造成等同於克拉拉<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害，並對所有被史瓦羅標上【反擊標記】的敵方目標額外造成等同於克拉拉<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的物理屬性傷害。<br>戰技施放後所有【反擊標記】失效。",
         "shortDesc": "對敵方全體造成物理屬性傷害，對持有【反擊標記】的目標<orangeStrong>額外造成物理傷害</orangeStrong>。"
       }
     },
     "ult": {
       "0": {
         "name": "是約定不是命令",
-        "fullDesc": "施放終結技後克拉拉受到的傷害額外降低<orangeStrong>{{4, percent}}%</orangeStrong>且被敵方攻擊的機率大幅提高，持續{{3}}回合。\\n同時史瓦羅的<u>反擊</u>得到強化，當任意我方目標受到攻擊後，史瓦羅會立即發動<u>反擊</u>，對敵方目標造成的傷害倍率提高<orangeStrong>{{2, percent}}%</orangeStrong>，並對其相鄰目標造成相當於主目標50%的傷害。強化效果可生效{{5}}次。",
-        "shortDesc": "自身<orangeStrong>受到的傷害降低</orangeStrong>、被攻擊的機率提高，並強化<u>反擊</u>的效果。"
+        "fullDesc": "施放終結技後克拉拉受到的傷害額外降低<orangeStrong>{{4, percent}}%</orangeStrong>且被敵方攻擊的機率大幅提高，持續{{3}}回合。<br>同時史瓦羅的反擊得到強化，當任意我方目標受到攻擊後，史瓦羅會立即發動反擊，對敵方目標造成的傷害倍率提高<orangeStrong>{{2, percent}}%</orangeStrong>，並對其相鄰目標造成相當於主目標50%的傷害。強化效果可生效{{5}}次。",
+        "shortDesc": "自身<orangeStrong>受到的傷害降低</orangeStrong>、被攻擊的機率提高，並強化反擊的效果。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "因為我們是家人",
+        "fullDesc": "克拉拉在史瓦羅的保護下，受到敵方目標攻擊的傷害降低{{3, percent}}%。攻擊克拉拉的敵方目標會被史瓦羅標上【反擊標記】，並遭到史瓦羅的反擊，對其造成等同於克拉拉<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的物理屬性傷害。",
+        "shortDesc": "自身<orangeStrong>受到敵方目標攻擊的傷害降低</orangeStrong>。發動攻擊的敵方目標會被標上【反擊標記】，並<orangeStrong>遭到史瓦羅的反擊</orangeStrong>，受到物理屬性傷害。"
       }
     },
     "technique": {

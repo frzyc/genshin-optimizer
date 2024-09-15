@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "Combat Redeployment",
-        "fullDesc": "Dispels a <u>debuff</u> from a single ally, allows them to immediately take action, and increases their DMG by <orangeStrong>{{1, percent}}%</orangeStrong> for {{3}} turn(s).\\nWhen this Skill is used on Bronya herself, she cannot immediately take action again.",
-        "shortDesc": "<orangeStrong>Dispels</orangeStrong> 1 <orangeStrong><u>debuff</u></orangeStrong> from a single ally, <orangeStrong>increases the damage they deal</orangeStrong>, and allows them to <orangeStrong>immediately take action</orangeStrong>."
+        "fullDesc": "Dispels a debuff from a single ally, allows them to immediately take action, and increases their DMG by <orangeStrong>{{1, percent}}%</orangeStrong> for {{3}} turn(s).<br>When this Skill is used on Bronya herself, she cannot immediately take action again.",
+        "shortDesc": "<orangeStrong>Dispels</orangeStrong> 1 <orangeStrong>debuff</orangeStrong> from a single ally, <orangeStrong>increases the damage they deal</orangeStrong>, and allows them to <orangeStrong>immediately take action</orangeStrong>."
       }
     },
     "ult": {
@@ -20,6 +20,13 @@
         "name": "The Belobog March",
         "fullDesc": "Increases the ATK of all allies by <orangeStrong>{{1, percent}}%</orangeStrong>, and increases their CRIT DMG equal to <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> of Bronya's CRIT DMG plus <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> for {{4}} turn(s).",
         "shortDesc": "Increases <orangeStrong>ATK</orangeStrong> and <orangeStrong>CRIT DMG</orangeStrong> of all allies"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Leading the Way",
+        "fullDesc": "After using her Basic ATK, Bronya's next action will be Advanced Forward by <orangeStrong>{{1, percent}}%</orangeStrong>.",
+        "shortDesc": "After this character uses Basic ATK, their next action will be Advanced Forward."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Bombardment",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "4": {
       "name": "Take by Surprise",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Unstoppable",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "6": {
       "name": "Piercing Rainbow",

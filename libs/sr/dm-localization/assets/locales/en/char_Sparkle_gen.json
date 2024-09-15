@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Dreamdiver",
-        "fullDesc": "Increases the CRIT DMG of a single target ally by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Sparkle's CRIT DMG plus <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, lasting for {{3}} turn(s). And at the same time, Advances Forward this ally's action by {{4, percent}}%.\\nWhen Sparkle uses this ability on herself, the Action Advance effect will not trigger.",
+        "fullDesc": "Increases the CRIT DMG of a single target ally by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Sparkle's CRIT DMG plus <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, lasting for {{3}} turn(s). And at the same time, Advances Forward this ally's action by {{4, percent}}%.<br>When Sparkle uses this ability on herself, the Action Advance effect will not trigger.",
         "shortDesc": "Increases an ally's <orangeStrong>CRIT DMG</orangeStrong> and Advances Forward their action."
       }
     },
@@ -20,6 +20,13 @@
         "name": "The Hero with a Thousand Faces",
         "fullDesc": "Recovers {{2}} Skill Points for the team and grants all allies Cipher. For allies with Cipher, each stack of the DMG Boost effect provided by Sparkle's Talent additionally increases by <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, lasting for {{4}} turns.",
         "shortDesc": "Recovers <orangeStrong>Skill Points</orangeStrong> for the team, and enables the DMG Boost provided by Sparkle's Talent to be additionally enhanced."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Red Herring",
+        "fullDesc": "While Sparkle is on the battlefield, additionally increases the max number of Skill Points by {{3}}. Whenever an ally consumes 1 Skill Point, all allies' DMG dealt increases by <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. This effect lasts for {{1}} turn(s) and can stack up to {{4}} time(s).",
+        "shortDesc": "Increases the team's <orangeStrong>Max Skill Points</orangeStrong>. Whenever an ally consumes Skill Points, enables all allies to <orangeStrong>deal more damage</orangeStrong>."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Pipedream",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Life Is a Gamble",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Parallax Truth",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Narrative Polysemy",

@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "Garantía de adquisición",
-        "fullDesc": "Convierte a un aliado en Cobrador de deudas y aumenta su VEL en {{1}} pts. durante {{4}} turnos.\\nDespués de que el Cobrador de deudas ataque, inflige a cada enemigo golpeado un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Jade como <u>daño adicional</u> de tipo Cuántico, y el Cobrador de deudas consume una cantidad de PV equivalente al {{2, percent}}% de sus PV máx. Si no tiene suficientes PV, sus PV se reducen a 1.\\nSi Jade se convierte en Cobrador de deudas, no recibe el efecto de aumento de VEL ni consume PV tras atacar.\\nMientras en el campo de batalla haya un Cobrador de deudas, Jade no puede usar la habilidad básica. Al comienzo de cada turno de Jade, la duración del estado de Cobrador de deudas se reduce en 1.",
-        "shortDesc": "Convierte a un aliado en <orangeStrong>Cobrador de deudas</orangeStrong> y aumenta su VEL. Después de que el <orangeStrong>Cobrador de deudas</orangeStrong> ataque, consume PV e inflige una pequeña cantidad de <u>daño adicional</u> de tipo Cuántico a cada enemigo golpeado. Si Jade se convierte en Cobrador de deudas, no recibe el efecto de aumento de VEL ni consume PV tras atacar."
+        "fullDesc": "Convierte a un aliado en Cobrador de deudas y aumenta su VEL en {{1}} pts. durante {{4}} turnos.<br>Después de que el Cobrador de deudas ataque, inflige a cada enemigo golpeado un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Jade como daño adicional de tipo Cuántico, y el Cobrador de deudas consume una cantidad de PV equivalente al {{2, percent}}% de sus PV máx. Si no tiene suficientes PV, sus PV se reducen a 1.<br>Si Jade se convierte en Cobrador de deudas, no recibe el efecto de aumento de VEL ni consume PV tras atacar.<br>Mientras en el campo de batalla haya un Cobrador de deudas, Jade no puede usar la habilidad básica. Al comienzo de cada turno de Jade, la duración del estado de Cobrador de deudas se reduce en 1.",
+        "shortDesc": "Convierte a un aliado en <orangeStrong>Cobrador de deudas</orangeStrong> y aumenta su VEL. Después de que el <orangeStrong>Cobrador de deudas</orangeStrong> ataque, consume PV e inflige una pequeña cantidad de daño adicional de tipo Cuántico a cada enemigo golpeado. Si Jade se convierte en Cobrador de deudas, no recibe el efecto de aumento de VEL ni consume PV tras atacar."
       }
     },
     "ult": {
       "0": {
         "name": "Juramento de lo profundo",
-        "fullDesc": "Inflige un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Jade como Daño Cuántico a todos los enemigos. Además, potencia el <u>ataque adicional</u> del talento de Jade. El multiplicador del daño que infligen los ataques adicionales aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong>. El efecto de potenciación se puede activar {{2}} veces.",
-        "shortDesc": "Inflige Daño Cuántico a todos los enemigos y aumenta el <orangeStrong>multiplicador del daño de <u>ataque adicional</u></orangeStrong>."
+        "fullDesc": "Inflige un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Jade como Daño Cuántico a todos los enemigos. Además, potencia el ataque adicional del talento de Jade. El multiplicador del daño que infligen los ataques adicionales aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong>. El efecto de potenciación se puede activar {{2}} veces.",
+        "shortDesc": "Inflige Daño Cuántico a todos los enemigos y aumenta el <orangeStrong>multiplicador del daño de ataque adicional</orangeStrong>."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Colmillo de destello fulgurante",
+        "fullDesc": "Después de que Jade o un aliado convertido en Cobrador de deudas ataque, Jade obtiene 1 pt. de carga por cada enemigo golpeado. Tras alcanzar {{3}} cargas, consume {{3}} y lanza 1 ataque adicional que inflige un <orangeStrong>{{5, percent}}%</orangeStrong> del ATQ de Jade como Daño Cuántico a todos los enemigos. Este ataque adicional no genera cargas.<br>Jade obtiene inmediatamente {{4}} acumulaciones de Prenda cuando activa el ataque adicional del talento. Cada acumulación aumenta su Daño CRIT en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Puede acumularse hasta {{2}} veces.",
+        "shortDesc": "Después de que Jade o un aliado convertido en <orangeStrong>Cobrador de deudas</orangeStrong> ataque, Jade obtiene 1 pt. de carga por cada enemigo golpeado. Cuando se alcanzan <orangeStrong>{{3}}</orangeStrong> pts. de carga, consume <orangeStrong>{{3}}</orangeStrong> pts. de carga y lanza 1 <orangeStrong>ataque adicional</orangeStrong> que inflige Daño Cuántico a todos los enemigos.<br>Jade obtiene <orangeStrong>Prenda</orangeStrong> al lanzar el ataque adicional, lo que hace aumentar su Daño CRIT. Puede acumularse hasta <orangeStrong>{{2}}</orangeStrong> veces."
       }
     },
     "technique": {

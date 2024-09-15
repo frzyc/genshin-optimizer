@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "千音迭奏，群星賦格",
-        "fullDesc": "知更鳥進入【協奏】狀態，使除自身以外的隊友立即行動。\\n處於【協奏】狀態時，我方全體攻擊力提高，提高數值等同於知更鳥攻擊力的<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{3}}</orangeStrong>點，且我方目標每次發動攻擊後，知更鳥會額外造成1次等同於其自身<orangeStrong>{{4, percent}}%</orangeStrong>攻擊力的物理屬性<u>附加傷害</u>，該傷害暴擊率固定為{{5, percent}}%，暴擊傷害固定為{{6, percent}}%。\\n處於【協奏】狀態時，知更鳥免疫<u>控制類負面狀態</u>，【協奏】狀態結束前不會進入自己的回合且無法行動。\\n行動序列上出現【協奏】倒數計時，倒數計時回合開始時知更鳥退出【協奏】狀態並立即行動，倒數計時固定擁有{{2}}點速度。",
-        "shortDesc": "進入【協奏】狀態，使我方全體<orangeStrong>攻擊力提高</orangeStrong>，並使隊友立即行動，攻擊後知更鳥額外造成<orangeStrong>物理屬性<u>附加傷害</u></orangeStrong>。【協奏】狀態期間自身免疫<u>控制類負面狀態</u>，狀態結束前不會進入自己回合且無法行動，直至倒數計時結束。"
+        "fullDesc": "知更鳥進入【協奏】狀態，使除自身以外的隊友立即行動。<br>處於【協奏】狀態時，我方全體攻擊力提高，提高數值等同於知更鳥攻擊力的<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{3}}</orangeStrong>點，且我方目標每次發動攻擊後，知更鳥會額外造成1次等同於其自身<orangeStrong>{{4, percent}}%</orangeStrong>攻擊力的物理屬性附加傷害，該傷害暴擊率固定為{{5, percent}}%，暴擊傷害固定為{{6, percent}}%。<br>處於【協奏】狀態時，知更鳥免疫控制類負面狀態，【協奏】狀態結束前不會進入自己的回合且無法行動。<br>行動序列上出現【協奏】倒數計時，倒數計時回合開始時知更鳥退出【協奏】狀態並立即行動，倒數計時固定擁有{{2}}點速度。",
+        "shortDesc": "進入【協奏】狀態，使我方全體<orangeStrong>攻擊力提高</orangeStrong>，並使隊友立即行動，攻擊後知更鳥額外造成<orangeStrong>物理屬性附加傷害</orangeStrong>。【協奏】狀態期間自身免疫控制類負面狀態，狀態結束前不會進入自己回合且無法行動，直至倒數計時結束。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "調性合頌",
+        "fullDesc": "使我方全體暴擊傷害提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>，且我方目標攻擊敵方目標後，知更鳥額外為自身恢復{{2}}點能量。",
+        "shortDesc": "使我方全體<orangeStrong>暴擊傷害</orangeStrong>提高，且我方角色攻擊敵方後知更鳥額外恢復能量。"
       }
     },
     "technique": {

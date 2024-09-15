@@ -22,6 +22,13 @@
         "shortDesc": "Inflige Daño de Hielo a todos los enemigos."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Mejor lo hago yo",
+        "fullDesc": "Cuando el ataque de un aliado reduce el porcentaje de PV del objetivo al {{1, percent}}% o menos, Herta lanza un ataque adicional que inflige un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño de Hielo a todos los enemigos.",
+        "shortDesc": ""
+      }
+    },
     "technique": {
       "0": {
         "name": "Todavía se puede optimizar",

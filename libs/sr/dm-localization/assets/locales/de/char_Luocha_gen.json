@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "Gebet der Abgrundblume",
-        "fullDesc": "Nach dem Einsatz der Fertigkeit stellt er sofort die LP eines anvisierten Verbündeten um <orangeStrong>{{1, percent}}%</orangeStrong> von Luochas ANG plus <orangeStrong>{{2}}</orangeStrong> wieder her. In der Zwischenzeit erhält Luocha 1 Stapelung „Abgrundblume“.\\nWenn der LP-Prozentsatz eines beliebigen Verbündeten bei {{3, percent}}% oder niedriger liegt, wird ein Effekt, der Luochas Fertigkeit entspricht, sofort ausgelöst (ohne dabei Fertigkeitspunkte zu verbrauchen). Dieser Effekt kann nach {{4}} Rd. erneut ausgelöst werden.",
+        "fullDesc": "Nach dem Einsatz der Fertigkeit stellt er sofort die LP eines anvisierten Verbündeten um <orangeStrong>{{1, percent}}%</orangeStrong> von Luochas ANG plus <orangeStrong>{{2}}</orangeStrong> wieder her. In der Zwischenzeit erhält Luocha 1 Stapelung „Abgrundblume“.<br>Wenn der LP-Prozentsatz eines beliebigen Verbündeten bei {{3, percent}}% oder niedriger liegt, wird ein Effekt, der Luochas Fertigkeit entspricht, sofort ausgelöst (ohne dabei Fertigkeitspunkte zu verbrauchen). Dieser Effekt kann nach {{4}} Rd. erneut ausgelöst werden.",
         "shortDesc": "<orangeStrong>Stellt</orangeStrong> LP eines Verbündeten <orangeStrong>wieder her</orangeStrong> und erhält 1-fach „Abgrundblume“."
       }
     },
     "ult": {
       "0": {
         "name": "Todestrieb",
-        "fullDesc": "Entfernt {{2}} <u>Buff</u> von allen Gegnern und fügt ihnen imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Luochas ANG zu. In der Zwischenzeit erhält Luocha 1 Stapelung „Abgrundblume“.",
-        "shortDesc": "<orangeStrong>Entfernt</orangeStrong> 1 <orangeStrong><u>Buff</u></orangeStrong> von allen Gegnern, fügt ihnen imaginären SCH zu und erhält 1 Stapelung „Abgrundblume“."
+        "fullDesc": "Entfernt {{2}} Buff von allen Gegnern und fügt ihnen imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Luochas ANG zu. In der Zwischenzeit erhält Luocha 1 Stapelung „Abgrundblume“.",
+        "shortDesc": "<orangeStrong>Entfernt</orangeStrong> 1 <orangeStrong>Buff</orangeStrong> von allen Gegnern, fügt ihnen imaginären SCH zu und erhält 1 Stapelung „Abgrundblume“."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Zyklus des Lebens",
+        "fullDesc": "Wird Abgrundblume {{1}}-fach gestapelt, verbraucht Luocha alle Abgrundblumen, um ein Feld zu erzeugen.<br>Wird ein Gegner innerhalb des Felds von einem Verbündeten angegriffen, erhält der Verbündete unmittelbar LP in Höhe von <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> von Luochas ANG plus <orangeStrong>{{4}}</orangeStrong> zurück.<br>Das Feld hält {{3}} Rd. an. Wenn Luocha handlungsunfähig wird, verschwindet das Feld.",
+        "shortDesc": "Wenn „Abgrundblume“ 2-fach gestapelt wird, wird ein <orangeStrong>Feld erzeugt</orangeStrong>. Solange das Feld aktiv ist, werden die LP der Verbündeten wiederhergestellt, <orangeStrong>nachdem sie einen Angriff ausgeführt</orangeStrong> haben."
       }
     },
     "technique": {

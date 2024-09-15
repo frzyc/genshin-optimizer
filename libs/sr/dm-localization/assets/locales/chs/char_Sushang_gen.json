@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "云骑剑经 • 山倾",
-        "fullDesc": "对指定敌方单体造成等同于素裳<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害。同时最后一击后有{{3, percent}}%概率发动【剑势】，对目标造成等同于素裳<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的物理属性<u>附加伤害</u>。\\n若该目标处于<u>弱点击破状态</u>，则【剑势】必定发动。",
-        "shortDesc": "对敌方单体造成物理属性伤害，有<orangeStrong>小概率发动【剑势】</orangeStrong>。若目标处于<u>弱点击破状态</u>则<orangeStrong>【剑势】必定发动</orangeStrong>。"
+        "fullDesc": "对指定敌方单体造成等同于素裳<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害。同时最后一击后有{{3, percent}}%概率发动【剑势】，对目标造成等同于素裳<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的物理属性附加伤害。<br>若该目标处于弱点击破状态，则【剑势】必定发动。",
+        "shortDesc": "对敌方单体造成物理属性伤害，有<orangeStrong>小概率发动【剑势】</orangeStrong>。若目标处于弱点击破状态则<orangeStrong>【剑势】必定发动</orangeStrong>。"
       }
     },
     "ult": {
       "0": {
         "name": "太虚形蕴 • 烛夜",
-        "fullDesc": "对指定敌方单体造成等同于素裳<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害，并使素裳立即行动。同时使其攻击力提高<orangeStrong>{{4, percent}}%</orangeStrong>，且施放战技时额外增加2次【剑势】的发动判定，持续{{2}}回合。\\n通过额外判定发动的【剑势】伤害为原伤害的{{3, percent}}%。",
+        "fullDesc": "对指定敌方单体造成等同于素裳<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害，并使素裳立即行动。同时使其攻击力提高<orangeStrong>{{4, percent}}%</orangeStrong>，且施放战技时额外增加2次【剑势】的发动判定，持续{{2}}回合。<br>通过额外判定发动的【剑势】伤害为原伤害的{{3, percent}}%。",
         "shortDesc": "对敌方单体造成大量物理属性伤害，强化【剑势】效果并<orangeStrong>立即行动</orangeStrong>。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "游刃若水",
+        "fullDesc": "当场上有敌方目标的弱点被击破，素裳的速度提高<orangeStrong>{{1, percent(fixed: 2)}}%</orangeStrong>，持续{{2}}回合。",
+        "shortDesc": "当场上有敌人的弱点被击破时，自身速度提高。"
       }
     },
     "technique": {

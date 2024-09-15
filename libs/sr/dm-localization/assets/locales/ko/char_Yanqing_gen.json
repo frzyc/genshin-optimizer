@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "비바람을 가르는 제비",
-        "fullDesc": "자신의 치명타 확률이 {{1, percent}}% 증가하고 만일 연경이 [신검합일] 효과를 가지고 있다면 치명타 피해가 추가로 <orangeStrong>{{2, percent}}%</orangeStrong> 증가한다. <u>버프 효과</u>는 1턴 동안 지속된다. 이후 지정된 단일 적에게 연경 공격력 <orangeStrong>{{3, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 준다",
+        "fullDesc": "자신의 치명타 확률이 {{1, percent}}% 증가하고 만일 연경이 [신검합일] 효과를 가지고 있다면 치명타 피해가 추가로 <orangeStrong>{{2, percent}}%</orangeStrong> 증가한다. 버프 효과는 1턴 동안 지속된다. 이후 지정된 단일 적에게 연경 공격력 <orangeStrong>{{3, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 준다",
         "shortDesc": "자신의 치명타 확률이 증가하고 [신검합일] 효과가 강화된다. 또한 단일 적에게 대량의 얼음 속성 피해를 준다"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "호검여영(呼劍如影)",
+        "fullDesc": "연경이 [신검합일] 상태일 경우 피격될 확률이 감소하고 자신의 치명타 확률이 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, 치명타 피해가 <orangeStrong>{{2, percent}}%</orangeStrong> 증가한다. 적에게 공격을 발동한 후, <orangeStrong>{{3, percent}}%</orangeStrong>의 고정 확률로 추가 공격을 발동해 연경 공격력 <orangeStrong>{{4, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 주고 {{6, percent}}%의 기본 확률로 1턴 동안 대상을 빙결 상태에 빠트린다.<br>빙결 상태인 적은 행동할 수 없으며, 턴이 시작될 때마다 연경 공격력 <orangeStrong>{{5, percent}}%</orangeStrong>만큼의 얼음 속성 추가 피해를 받는다.<br>연경이 피해를 받으면 [신검합일] 효과는 소멸된다",
+        "shortDesc": "<orangeStrong>[신검합일] 상태일 경우</orangeStrong> 피격될 확률이 감소하고 자신의 <orangeStrong>치명타 확률과 치명타 피해가 증가</orangeStrong>한다. 적에게 <orangeStrong>공격 발동 후</orangeStrong>, 일정 확률로 추가 공격을 발동해 얼음 속성 피해를 가하고 일정 확률로 대상을 빙결 상태에 빠트린다.<br>자신이 피해를 받으면 [신검합일] 효과는 소멸된다"
       }
     },
     "technique": {

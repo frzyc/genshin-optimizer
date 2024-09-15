@@ -16,8 +16,8 @@
     "skill": {
       "0": {
         "name": "Order: Aerial Bombardment",
-        "fullDesc": "Consumes HP equal to {{2, percent}}% of this unit's Max HP and regenerates a fixed amount of Energy equal to <orangeStrong>{{3, percent}}%</orangeStrong> of this unit's Max Energy. Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of SAM's ATK to a single target enemy. If the current HP is not sufficient, reduces SAM's HP to 1 when using this Skill. <u>Advances</u> this unit's next Action by {{4, percent}}%.",
-        "shortDesc": "Consumes a portion of this unit's own HP to regenerate Energy. Deals Fire DMG to a single enemy. <u>Advances</u> this unit's next Action."
+        "fullDesc": "Consumes HP equal to {{2, percent}}% of this unit's Max HP and regenerates a fixed amount of Energy equal to <orangeStrong>{{3, percent}}%</orangeStrong> of this unit's Max Energy. Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of SAM's ATK to a single target enemy. If the current HP is not sufficient, reduces SAM's HP to 1 when using this Skill. Advances this unit's next Action by {{4, percent}}%.",
+        "shortDesc": "Consumes a portion of this unit's own HP to regenerate Energy. Deals Fire DMG to a single enemy. Advances this unit's next Action."
       },
       "1": {
         "name": "Fyrefly Type-IV: Deathstar Overload",
@@ -28,8 +28,15 @@
     "ult": {
       "0": {
         "name": "Fyrefly Type-IV: Complete Combustion",
-        "fullDesc": "Enters the Complete Combustion state, advances this unit's Action by 100%, and gains Enhanced Basic ATK and Enhanced Skill. While in Complete Combustion, increases SPD by <orangeStrong>{{3}}</orangeStrong>, and when using the Enhanced Basic ATK or Enhanced Skill, increases this unit's Weakness Break efficiency by {{2, percent}}% and the Break DMG dealt by SAM to the enemy targets by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, lasting until this current attack ends.\\nA countdown timer for the Complete Combustion state appears on the Action Order. When the countdown timer's turn starts, SAM exits the Complete Combustion state. The countdown timer has a fixed SPD of {{4}}.\\nSAM cannot use Ultimate while in Complete Combustion.",
+        "fullDesc": "Enters the Complete Combustion state, advances this unit's Action by 100%, and gains Enhanced Basic ATK and Enhanced Skill. While in Complete Combustion, increases SPD by <orangeStrong>{{3}}</orangeStrong>, and when using the Enhanced Basic ATK or Enhanced Skill, increases this unit's Weakness Break efficiency by {{2, percent}}% and the Break DMG dealt by SAM to the enemy targets by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, lasting until this current attack ends.<br>A countdown timer for the Complete Combustion state appears on the Action Order. When the countdown timer's turn starts, SAM exits the Complete Combustion state. The countdown timer has a fixed SPD of {{4}}.<br>SAM cannot use Ultimate while in Complete Combustion.",
         "shortDesc": "Enters the Complete Combustion state. <orangeStrong>Advances this unit's Action by <unbreak>100%</orangeStrong></color>. Gains <orangeStrong>Enhanced Basic ATK</orangeStrong> and <orangeStrong>Enhanced Skill</orangeStrong>. Increases this unit's <orangeStrong>SPD, Weakness Break efficiency, and the Break DMG received by the enemy targets</orangeStrong>, lasting until the countdown ends."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Chrysalid Pyronexus",
+        "fullDesc": "The lower the HP, the less DMG received. When HP is {{3, percent}}% or lower, the DMG Reduction reaches its maximum effect, reducing up to <orangeStrong>{{1, percent}}%</orangeStrong>. During the Complete Combustion, the DMG Reduction remains at its maximum effect, and the Effect RES increases by <orangeStrong>{{4, percent}}%</orangeStrong>.<br>If Energy is lower than {{2, percent}}% when the battle starts, regenerates Energy to {{2, percent}}%. Once Energy is regenerated to its maximum, dispels all debuffs on this unit.",
+        "shortDesc": "The lower the HP, the less DMG received. During the Complete Combustion, the DMG Reduction remains at its maximum effect, and the Effect RES increases. If Energy is lower than <orangeStrong>{{2, percent}}%</orangeStrong> when the battle starts, regenerates Energy to <orangeStrong>{{2, percent}}%</orangeStrong>. Once Energy is regenerated to its maximum, dispels all debuffs on this unit."
       }
     },
     "technique": {
@@ -79,7 +86,7 @@
     },
     "3": {
       "name": "Amidst Silenced Stars, I Deep Sleep",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Upon Lighted Fyrefly, I Soon Gaze",
@@ -87,7 +94,7 @@
     },
     "5": {
       "name": "From Undreamt Night, I Thence Shine",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "In Finalized Morrow, I Full Bloom",

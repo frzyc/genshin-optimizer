@@ -18,7 +18,7 @@
     "ult": {
       "0": {
         "name": "スターダストエース",
-        "fullDesc": "2つの攻撃モードの内の1つを選択し全力のバッティングをお見舞いする。\\n「全勝・サヨナラ安打」：指定した敵単体に開拓者の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の物理属性ダメージを与える。\\n「全勝・安息ホームラン」：指定した敵単体に開拓者の攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の物理属性ダメージを与え、隣接する敵に開拓者の攻撃力<orangeStrong>{{3, percent}}%</orangeStrong>分の物理属性ダメージを与える。",
+        "fullDesc": "2つの攻撃モードの内の1つを選択し全力のバッティングをお見舞いする。<br>「全勝・サヨナラ安打」：指定した敵単体に開拓者の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の物理属性ダメージを与える。<br>「全勝・安息ホームラン」：指定した敵単体に開拓者の攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の物理属性ダメージを与え、隣接する敵に開拓者の攻撃力<orangeStrong>{{3, percent}}%</orangeStrong>分の物理属性ダメージを与える。",
         "shortDesc": "単体攻撃または拡散攻撃を選択し、全力のバッティングを振り出す。"
       },
       "1": {
@@ -30,6 +30,13 @@
         "name": "{RUBY_B#ぜんしょう}全勝{RUBY_E#}・{RUBY_B#あんそく}安息{RUBY_E#}ホームラン",
         "fullDesc": "指定した敵単体に開拓者の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の物理属性ダメージを与え、隣接する敵に開拓者の攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の物理属性ダメージを与える。",
         "shortDesc": "敵単体および隣接する敵に物理属性ダメージを与える。"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#とうるいけんせい}盗塁牽制{RUBY_E#}",
+        "fullDesc": "敵を弱点撃破した後、攻撃力+<orangeStrong>{{1, percent}}%</orangeStrong>、最大で{{2}}回累積できる。",
+        "shortDesc": ""
       }
     },
     "technique": {

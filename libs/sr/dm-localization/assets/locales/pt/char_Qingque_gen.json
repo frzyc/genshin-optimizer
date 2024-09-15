@@ -9,7 +9,7 @@
       },
       "1": {
         "name": "Cereja do Bolo!",
-        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Qingque a um único inimigo e Dano Quântico igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Qingque aos inimigos adjacentes a ele.\\n\"Cereja do Bolo!\" não pode recuperar Pontos de Perícia.",
+        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Qingque a um único inimigo e Dano Quântico igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Qingque aos inimigos adjacentes a ele.<br>\"Cereja do Bolo!\" não pode recuperar Pontos de Perícia.",
         "shortDesc": "Causa Dano Quântico a um único inimigo e Dano Quântico leve a inimigos adjacentes a ele."
       }
     },
@@ -25,6 +25,13 @@
         "name": "Um Quarteto? Uhul!",
         "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Qingque a todos os inimigos e obtém 4 peças de jade do mesmo naipe.",
         "shortDesc": "Causa Dano Quântico a todos os inimigos, depois obtêm 4 peças do mesmo naipe."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Jade Celestial",
+        "fullDesc": "Quando a rodada de um aliado começa, Qingque pega aleatoriamente 1 peça de 3 naipes diferentes. Até 4 peças podem ser seguradas por vez.<br>Se Qingque começar sua rodada com 4 peças de um mesmo naipe, ela consumirá todas as peças para entrar no estado \"Mão Oculta\". Enquanto estiver neste estado, Qingque não pode usar sua Perícia novamente. Ao mesmo tempo, o ATQ de Qingque aumenta em <orangeStrong>{{1, percent}}%</orangeStrong>, e o seu ATQ Básico \"Colher Flores\" é aprimorado, tornando-se \"Cereja do Bolo!\". O estado \"Mão Oculta\" acabará ao usar \"Cereja do Bolo!\".",
+        "shortDesc": "Pega uma peça no início da rodada de qualquer aliado. No início da rodada deste personagem, se este personagem possuir 4 peças de um mesmo naipe, remove todas as peças em posse e <orangeStrong>Aprimora o ATQ Básico</orangeStrong> enquanto aumenta o ATQ deste personagem."
       }
     },
     "technique": {
@@ -74,15 +81,15 @@
     },
     "3": {
       "name": "Ler Entre as Peças",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "4": {
       "name": "Bem nas Peças",
-      "desc": "Depois que a Perícia deste personagem é usada, tem {{1, percent}}% de chance fixa de ganhar Autarquia, que dura até o fim da rodada.\\nCom Autarquia, usar o ATQ Básico ou o ATQ Básico Aprimorado ativa imediatamente 1 Ataque Extra no mesmo alvo, causando Dano Quântico igual a 100% do Dano do ATQ Básico ou do ATQ Básico Aprimorado."
+      "desc": "Depois que a Perícia deste personagem é usada, tem {{1, percent}}% de chance fixa de ganhar Autarquia, que dura até o fim da rodada.<br>Com Autarquia, usar o ATQ Básico ou o ATQ Básico Aprimorado ativa imediatamente 1 Ataque Extra no mesmo alvo, causando Dano Quântico igual a 100% do Dano do ATQ Básico ou do ATQ Básico Aprimorado."
     },
     "5": {
       "name": "Estratégia para as Peças",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "6": {
       "name": "Prevalecer Além das Peças",

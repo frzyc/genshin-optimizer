@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Schlafschwimmer",
-        "fullDesc": "Erhöht für {{3}} Rd. den KRIT-SCH eines anvisierten Verbündeten um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Sparkles KRIT-SCH plus <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. Zieht außerdem die Aktion des Ziels um {{4, percent}}% vor.\\nWenn Sparkle diese Fähigkeit an sich selbst einsetzt, wird der Aktionsvorzug nicht ausgelöst.",
+        "fullDesc": "Erhöht für {{3}} Rd. den KRIT-SCH eines anvisierten Verbündeten um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Sparkles KRIT-SCH plus <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. Zieht außerdem die Aktion des Ziels um {{4, percent}}% vor.<br>Wenn Sparkle diese Fähigkeit an sich selbst einsetzt, wird der Aktionsvorzug nicht ausgelöst.",
         "shortDesc": "Erhöht den <orangeStrong>KRIT-SCH</orangeStrong> eines Verbündeten und zieht seine Aktion vor."
       }
     },
@@ -20,6 +20,13 @@
         "name": "Ein Leben in tausend Rollen",
         "fullDesc": "Stellt für alle Verbündeten {{2}} Fertigkeitspunkte wieder her und verleiht ihnen „Rätselhaft“. Für Verbündete mit Rätselhaft erhöht jede Stapelung der SCH-Erhöhung durch Sparkles Talent für {{4}} Rd. zusätzlich um <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.",
         "shortDesc": "Stellt <orangeStrong>Fertigkeitspunkte</orangeStrong> wieder her und erhöht zusätzlich die SCH-Erhöhung von Sparkles Talent."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Narrative Intrige",
+        "fullDesc": "Wenn Sparkle auf dem Kampffeld ist, wird die max. Anzahl an Fertigkeitspunkten zusätzlich um {{3}} erhöht. Wenn Verbündete 1 Fertigkeitspunkt verbrauchen, wird der verursachte SCH aller Verbündeten für {{1}} Rd. um <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> erhöht. Dieser Effekt ist bis zu {{4}}-fach stapelbar.",
+        "shortDesc": "Erhöht die <orangeStrong>max. Anzahl der Fertigkeitspunkte</orangeStrong>. Wenn ein Verbündeter Fertigkeitspunkte verbraucht, wird der <orangeStrong>verursachte SCH</orangeStrong> aller Verbündeten erhöht."
       }
     },
     "technique": {

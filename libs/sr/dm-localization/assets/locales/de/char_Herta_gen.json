@@ -22,6 +22,13 @@
         "shortDesc": "Fügt allen Gegnern Eis-SCH zu."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Muss man alles selbst machen?",
+        "fullDesc": "Wenn der LP-Prozentsatz eines Gegners durch den Angriff eines Verbündeten auf {{1, percent}}% oder weniger fallen, führt Herta einen Folgeangriff aus, der allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Hertas ANG zufügt.",
+        "shortDesc": ""
+      }
+    },
     "technique": {
       "0": {
         "name": "Das kann noch optimiert werden",

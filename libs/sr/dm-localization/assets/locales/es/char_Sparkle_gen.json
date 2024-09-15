@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Pez de los sueños",
-        "fullDesc": "Aumenta el Daño CRIT de un aliado en un valor equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> del Daño CRIT de Sparkle + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> durante {{3}} turno y adelanta la acción de ese aliado en un {{4, percent}}%.\\nSi Sparkle usa esta habilidad consigo misma, no adelanta su acción.",
+        "fullDesc": "Aumenta el Daño CRIT de un aliado en un valor equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> del Daño CRIT de Sparkle + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> durante {{3}} turno y adelanta la acción de ese aliado en un {{4, percent}}%.<br>Si Sparkle usa esta habilidad consigo misma, no adelanta su acción.",
         "shortDesc": "Aumenta el <orangeStrong>Daño CRIT</orangeStrong> de un aliado y adelanta su acción."
       }
     },
@@ -20,6 +20,13 @@
         "name": "Heroína de mil caras",
         "fullDesc": "Recupera {{2}} pts. de habilidad básica para el equipo y otorga Adivinanza a todos los aliados. Para los aliados con Adivinanza, el efecto de aumento de daño que proporciona el talento de Sparkle se incrementa de forma adicional en un <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> por cada acumulación durante {{4}} turnos.",
         "shortDesc": "Recupera <orangeStrong>pts. de habilidad básica</orangeStrong> para el equipo e incrementa de forma adicional el aumento de daño que proporciona el talento de Sparkle."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Truco narrativo",
+        "fullDesc": "Cuando Sparkle está en el campo de batalla, el límite de pts. de habilidad básica aumenta en {{3}}. Cuando un aliado consume 1 pt. de habilidad básica, el daño de todos los aliados aumenta en un <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> durante {{1}} turnos. Se puede acumular hasta {{4}} veces.",
+        "shortDesc": "Aumenta el <orangeStrong>límite de pts. de habilidad básica</orangeStrong> de los aliados. Cuando un aliado consume pts. de habilidad básica, aumenta el <orangeStrong>daño que infligen</orangeStrong> todos los aliados."
       }
     },
     "technique": {

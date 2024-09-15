@@ -22,10 +22,17 @@
         "shortDesc": "Inflige Daño de Fuego a todos los enemigos y recupera energía si elimina a alguno."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Carrera de la victoria",
+        "fullDesc": "Cuando se rompe la Debilidad de un enemigo, Himeko consigue una carga (hasta un máximo de {{2}}).<br>Después de que un aliado ataque, si Himeko ha acumulado el máximo de cargas, lanza inmediatamente un ataque adicional que inflige a todos los enemigos un Daño de Fuego equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Himeko y consume todas sus cargas.<br>Al comenzar la batalla obtiene 1 carga.",
+        "shortDesc": "Cuando se rompe la Debilidad del enemigo, consigue una carga.<br>Después de que un aliado ataque, si ha acumulado el máximo de cargas, <orangeStrong>lanza inmediatamente un ataque adicional</orangeStrong> que inflige Daño de Fuego a <orangeStrong>todos los enemigos</orangeStrong> y consume todas sus cargas.<br>Al comenzar la batalla obtiene 1 carga."
+      }
+    },
     "technique": {
       "0": {
         "name": "Combustión incompleta",
-        "fullDesc": "Tras usar la técnica, crea una zona especial que dura {{4}} s. Al entrar en combate con enemigos dentro de la zona especial, tiene una <u>probabilidad base</u> del {{1, percent}}% de que los objetivos enemigos reciban un {{2, percent}}% más de Daño de Fuego durante {{3}} turnos. Solo puede haber 1 zona especial creada por los aliados a la vez.",
+        "fullDesc": "Tras usar la técnica, crea una zona especial que dura {{4}} s. Al entrar en combate con enemigos dentro de la zona especial, tiene una probabilidad base del {{1, percent}}% de que los objetivos enemigos reciban un {{2, percent}}% más de Daño de Fuego durante {{3}} turnos. Solo puede haber 1 zona especial creada por los aliados a la vez.",
         "shortDesc": "Crea una zona especial. Al entrar en combate con enemigos en la zona especial, hay una gran probabilidad de que <orangeStrong>el Daño de Fuego que reciben los enemigos aumente</orangeStrong>."
       }
     },
@@ -39,7 +46,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Fuego estelar",
-        "fullDesc": "Al lanzar un ataque, hay un {{1, percent}}% de probabilidad base de infligir Quemadura a los objetivos durante {{2}} turnos.\\nLos enemigos afectados por Quemadura reciben al comienzo de cada turno un Daño de Fuego con el tiempo equivalente al {{3, percent}}% del ATQ de Himeko.",
+        "fullDesc": "Al lanzar un ataque, hay un {{1, percent}}% de probabilidad base de infligir Quemadura a los objetivos durante {{2}} turnos.<br>Los enemigos afectados por Quemadura reciben al comienzo de cada turno un Daño de Fuego con el tiempo equivalente al {{3, percent}}% del ATQ de Himeko.",
         "shortDesc": ""
       }
     },

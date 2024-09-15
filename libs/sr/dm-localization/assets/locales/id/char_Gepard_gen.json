@@ -11,7 +11,7 @@
     "skill": {
       "0": {
         "name": "Daunting Smite",
-        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Gepard pada 1 target musuh. Di saat bersamaan, target musuh yang terkena serangan memiliki {{2, percent}}% <u>peluang dasar</u> untuk memasuki status Frozen selama {{3}} giliran.\\nSelama dalam status Frozen, target musuh tidak dapat beraksi dan di saat bersamaan akan menerima <u>Ice DMG tambahan</u> sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK Gepard setiap gilirannya dimulai.",
+        "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Gepard pada 1 target musuh. Di saat bersamaan, target musuh yang terkena serangan memiliki {{2, percent}}% peluang dasar untuk memasuki status Frozen selama {{3}} giliran.<br>Selama dalam status Frozen, target musuh tidak dapat beraksi dan di saat bersamaan akan menerima Ice DMG tambahan sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK Gepard setiap gilirannya dimulai.",
         "shortDesc": "Mengakibatkan Ice DMG pada 1 musuh dan <orangeStrong>berpeluang untuk memberikan status Frozen pada target</orangeStrong>."
       }
     },
@@ -20,6 +20,13 @@
         "name": "Enduring Bulwark",
         "fullDesc": "Memberikan Shield yang dapat menahan DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> DEF Gepard +<orangeStrong>{{3}}</orangeStrong> pada seluruh rekan tim selama {{2}} giliran.",
         "shortDesc": "<orangeStrong>Memberikan Shield</orangeStrong> pada seluruh rekan tim."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Unyielding Will",
+        "fullDesc": "Saat menerima serangan mematikan, Gepard tidak akan gugur dan segera memulihkan HP-nya sebesar <orangeStrong>{{1, percent}}%</orangeStrong> dari Max HP-nya. Efek ini hanya dapat terpicu sekali dalam 1 pertempuran.",
+        "shortDesc": "<orangeStrong>Tidak akan gugur</orangeStrong> saat terkena serangan mematikan dan akan segera memulihkan HP. Hanya dapat dipicu 1 kali dalam setiap pertempuran."
       }
     },
     "technique": {

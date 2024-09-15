@@ -11,8 +11,8 @@
     "skill": {
       "0": {
         "name": "Maravilla astronómica",
-        "fullDesc": "Activa Matriz del Presagio y todos los aliados de Fu Xuan <u>traspasan</u> un {{1, percent}}% del daño que reciben (antes de que un escudo mitigue el daño) a Fu Xuan durante {{3}} turnos.\\nMientras están afectados por Matriz del Presagio, todos los aliados obtienen Conocimiento. En este estado, los PV máx. de los aliados aumentan en una cantidad equivalente al <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Fu Xuan y su Prob. CRIT aumenta en un <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.\\nCuando Fu Xuan es <u>derrotada</u>, Matriz del Presagio se disipa.",
-        "shortDesc": "Activa Matriz del Presagio y los aliados <u>traspasan</u> a Fu Xuan <orangeStrong>parte del daño que reciben</orangeStrong>. Además, aumentan los PV máx. y la <orangeStrong>Prob. CRIT</orangeStrong> de todos los aliados."
+        "fullDesc": "Activa Matriz del Presagio y todos los aliados de Fu Xuan traspasan un {{1, percent}}% del daño que reciben (antes de que un escudo mitigue el daño) a Fu Xuan durante {{3}} turnos.<br>Mientras están afectados por Matriz del Presagio, todos los aliados obtienen Conocimiento. En este estado, los PV máx. de los aliados aumentan en una cantidad equivalente al <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Fu Xuan y su Prob. CRIT aumenta en un <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.<br>Cuando Fu Xuan es derrotada, Matriz del Presagio se disipa.",
+        "shortDesc": "Activa Matriz del Presagio y los aliados traspasan a Fu Xuan <orangeStrong>parte del daño que reciben</orangeStrong>. Además, aumentan los PV máx. y la <orangeStrong>Prob. CRIT</orangeStrong> de todos los aliados."
       }
     },
     "ult": {
@@ -20,6 +20,13 @@
         "name": "Evolución definitiva",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de los PV máx. de Fu Xuan como Daño Cuántico a todos los enemigos y obtiene 1 activación adicional de la regeneración de PV del talento de Fu Xuan.",
         "shortDesc": "Inflige Daño Cuántico a todos los enemigos y aumenta las veces que se puede activar el talento de Fu Xuan."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Tras la adversidad viene la felicidad",
+        "fullDesc": "Mientras Fu Xuan no haya sido derrotada, todos los aliados obtienen Escape del infortunio. En este estado, el daño que reciben todos los aliados se reduce en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>.<br>Fu Xuan regenera sus PV cuando tiene un porcentaje de PV inferior o igual al {{2, percent}}%. Este efecto regenera un <orangeStrong>{{3, percent}}%</orangeStrong> de los PV que le falten en ese momento, y no puede activarse cuando recibe un golpe letal. Al inicio, este efecto cuenta con 1 activación, y se pueden tener un máximo de 2 activaciones.",
+        "shortDesc": "Mientras Fu Xuan no haya sido derrotada, el daño que reciben todos los aliados se reduce.<br>Cuando tiene pocos PV, <orangeStrong>regenera sus propios PV</orangeStrong> <orangeStrong>automáticamente</orangeStrong> según el porcentaje de PV que le falte en ese momento. Este efecto puede tener un máximo de 2 activaciones."
       }
     },
     "technique": {
@@ -81,7 +88,7 @@
     },
     "6": {
       "name": "Salvación",
-      "desc": "Cuando se activa Matriz del Presagio, se hace un recuento de los PV perdidos por todos los aliados en esta batalla. El daño infligido por la habilidad definitiva de Fu Xuan aumenta en un {{1, percent}}% de este recuento de PV perdidos.\\nEl recuento de PV perdidos en esta batalla no puede superar el {{2, percent}}% de los PV máx. de Fu Xuan. Al usar su habilidad definitiva, este recuento se reinicia."
+      "desc": "Cuando se activa Matriz del Presagio, se hace un recuento de los PV perdidos por todos los aliados en esta batalla. El daño infligido por la habilidad definitiva de Fu Xuan aumenta en un {{1, percent}}% de este recuento de PV perdidos.<br>El recuento de PV perdidos en esta batalla no puede superar el {{2, percent}}% de los PV máx. de Fu Xuan. Al usar su habilidad definitiva, este recuento se reinicia."
     }
   }
 }

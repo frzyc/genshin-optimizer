@@ -9,28 +9,35 @@
       },
       "1": {
         "name": "Zwischen die Augenbrauen und mitten ins Herz",
-        "fullDesc": "Anfänglich wird {{4}}-mal SCH verursacht. Jeder Treffer fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von 7. März’ ANG zu. Immer wenn der letzte Treffer zugefügt wird, besteht eine <u>feste Chance</u> von {{2, percent}}%, noch 1 weiteren Treffer zu verursachen, bis zu {{3}} zusätzlichen Treffern. Die Energie, die der verstärkte Standardangriff wiederherstellt, wird nicht mit der Trefferzahl erhöht.\\nDer verstärkte Standardangriff kann keine Fertigkeitspunkte wiederherstellen.",
+        "fullDesc": "Anfänglich wird {{4}}-mal SCH verursacht. Jeder Treffer fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von 7. März’ ANG zu. Immer wenn der letzte Treffer zugefügt wird, besteht eine feste Chance von {{2, percent}}%, noch 1 weiteren Treffer zu verursachen, bis zu {{3}} zusätzlichen Treffern. Die Energie, die der verstärkte Standardangriff wiederherstellt, wird nicht mit der Trefferzahl erhöht.<br>Der verstärkte Standardangriff kann keine Fertigkeitspunkte wiederherstellen.",
         "shortDesc": "Fügt einem Gegner imaginären SCH zu. Anfänglich wird <orangeStrong>{{4}}</orangeStrong>-mal SCH verursacht. <orangeStrong>Es besteht eine Chance, zusätzlich bis zu <color=#f29e38ff>#3[i]</orangeStrong>-mal SCH zu verursachen.</color>"
       }
     },
     "skill": {
       "0": {
         "name": "Meister, trink etwas Tee!",
-        "fullDesc": "Lässt einen Verbündeten außer der Figur selbst zum „Meister“ werden. Seine GES wird um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> erhöht. Nur das letzte Ziel der Fertigkeit gilt als Meister von 7. März.\\nWenn der Meister mit bestimmten Pfaden auf dem Kampffeld ist, werden entsprechende Effekte beim Einsatz von Standardangriffen oder beim Verursachen von SCH durch verstärkte Standardangriffe mit 1 Treffer ausgelöst:\\nDie Gelehrsamkeit, Die Zerstörung, Die Jagd: Verursacht basierend auf dem Typ des Meisters <u>zusätzlichen SCH</u> in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von 7. März’ ANG.\\nDie Harmonie, Die Nichtigkeit, Die Bewahrung, Der Überfluss: Der WDS-Reduzierungswert des verursachten SCH wird um {{3, percent}}% erhöht.",
-        "shortDesc": "Lässt einen Verbündeten zum „Meister“ werden. Wenn er seinen Standardangriff einsetzt oder SCH durch einen verstärkten Standardangriff verursacht, wird basierend auf dem <orangeStrong>Pfad des Meisters</orangeStrong> der entsprechende Effekt ausgelöst.\\nDie Gelehrsamkeit, Die Zerstörung, Die Jagd: Verursacht basierend auf dem Typ des Meisters <orangeStrong><u>zusätzlichen SCH</u></orangeStrong>.\\nDie Harmonie, Die Nichtigkeit, Die Bewahrung, Der Überfluss: Erhöht <orangeStrong>WDS-Reduzierungswert</orangeStrong>."
+        "fullDesc": "Lässt einen Verbündeten außer der Figur selbst zum „Meister“ werden. Seine GES wird um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> erhöht. Nur das letzte Ziel der Fertigkeit gilt als Meister von 7. März.<br>Wenn der Meister mit bestimmten Pfaden auf dem Kampffeld ist, werden entsprechende Effekte beim Einsatz von Standardangriffen oder beim Verursachen von SCH durch verstärkte Standardangriffe mit 1 Treffer ausgelöst:<br>Die Gelehrsamkeit, Die Zerstörung, Die Jagd: Verursacht basierend auf dem Typ des Meisters zusätzlichen SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von 7. März’ ANG.<br>Die Harmonie, Die Nichtigkeit, Die Bewahrung, Der Überfluss: Der WDS-Reduzierungswert des verursachten SCH wird um {{3, percent}}% erhöht.",
+        "shortDesc": "Lässt einen Verbündeten zum „Meister“ werden. Wenn er seinen Standardangriff einsetzt oder SCH durch einen verstärkten Standardangriff verursacht, wird basierend auf dem <orangeStrong>Pfad des Meisters</orangeStrong> der entsprechende Effekt ausgelöst.<br>Die Gelehrsamkeit, Die Zerstörung, Die Jagd: Verursacht basierend auf dem Typ des Meisters <orangeStrong>zusätzlichen SCH</orangeStrong>.<br>Die Harmonie, Die Nichtigkeit, Die Bewahrung, Der Überfluss: Erhöht <orangeStrong>WDS-Reduzierungswert</orangeStrong>."
       }
     },
     "ult": {
       "0": {
         "name": "7. März, Heldin der Welt",
-        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von 7. März’ ANG zu.\\nErhöht die anfängliche Trefferzahl des nächsten verstärkten Standardangriffs um {{2}}. Erhöht die <u>feste Chance</u> für zusätzlichen SCH um {{3, percent}}%.",
+        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von 7. März’ ANG zu.<br>Erhöht die anfängliche Trefferzahl des nächsten verstärkten Standardangriffs um {{2}}. Erhöht die feste Chance für zusätzlichen SCH um {{3, percent}}%.",
         "shortDesc": "Fügt einem Gegner imaginären SCH zu und <orangeStrong>erhöht</orangeStrong> die Trefferzahl und die Chance auf SCH des <orangeStrong>nächsten verstärkten Standardangriffs</orangeStrong>."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Meister, jetzt verstehe ich!",
+        "fullDesc": "Nachdem der Meister einen Angriff oder seinen Ultimate eingesetzt hat, erhält 7. März jedes Mal bis zu 1 Pkt. Aufladung.<br>Wenn die Aufladung {{1}} Pkt. oder mehr erreicht, führt 7. März sofort eine Aktion aus, wobei ihr verursachter SCH um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht wird. Außerdem wird ihr Standardangriff verstärkt und ihre Fertigkeit kann nicht verwendet werden. Verbraucht nach dem Einsatz ihres verstärkten Standardangriffs {{1}} Pkt. Aufladung, bis zu {{3}} Pkt.",
+        "shortDesc": "Nachdem der <orangeStrong>Meister einen Angriff oder seinen Ultimate eingesetzt</orangeStrong> hat, erhält 7. März eine Aufladung. Wenn die Aufladung <orangeStrong>{{1}}</orangeStrong> Pkt. erreicht, führt 7. März sofort eine Aktion aus, wobei ihr verursachter SCH erhöht und ihr <orangeStrong>Standardangriff verstärkt</orangeStrong> wird."
       }
     },
     "technique": {
       "0": {
         "name": "Drei Mahlzeiten in einem Zug",
-        "fullDesc": "Wenn 7. März im Team ist, erhält sie zu Beginn des nächsten Kampfes 1 Pkt. Aufladung für jedes Teammitglied, das eine Technik eingesetzt hat, bis zu {{1}} Pkt.\\nNach Einsatz der Technik stellt 7. März zu Beginn des nächsten Kampfes {{2}} Pkt. Energie wieder her.",
+        "fullDesc": "Wenn 7. März im Team ist, erhält sie zu Beginn des nächsten Kampfes 1 Pkt. Aufladung für jedes Teammitglied, das eine Technik eingesetzt hat, bis zu {{1}} Pkt.<br>Nach Einsatz der Technik stellt 7. März zu Beginn des nächsten Kampfes {{2}} Pkt. Energie wieder her.",
         "shortDesc": "Jedes Mal, wenn ein Teammitglied seine Technik einsetzt, erhält 7. März beim nächsten Kampfeintritt Aufladung. Nach Einsatz der Technik stellt sie beim nächsten Kampfeintritt Energie wieder her."
       }
     },

@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "Svarog Watches Over You",
-        "fullDesc": "สร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Clara แก่ฝ่ายศัตรูทั้งหมด และสร้าง DMG กายภาพเพิ่มเติม <orangeStrong>{{2, percent}}%</orangeStrong> ของ ATK ของ Clara แก่ศัตรูเป้าหมายที่ถูก Svarog ทำเครื่องหมาย \"Mark of Counter\"\\nโดยหลังจากปล่อยสกิลต่อสู้แล้ว \"Mark of Counter\" ทั้งหมดจะไม่มีผล",
+        "fullDesc": "สร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Clara แก่ฝ่ายศัตรูทั้งหมด และสร้าง DMG กายภาพเพิ่มเติม <orangeStrong>{{2, percent}}%</orangeStrong> ของ ATK ของ Clara แก่ศัตรูเป้าหมายที่ถูก Svarog ทำเครื่องหมาย \"Mark of Counter\"<br>โดยหลังจากปล่อยสกิลต่อสู้แล้ว \"Mark of Counter\" ทั้งหมดจะไม่มีผล",
         "shortDesc": "สร้าง DMG กายภาพแก่ศัตรูทั้งหมด และจะ<orangeStrong>สร้าง DMG กายภาพเพิ่มเติม</orangeStrong> แก่เป้าหมายที่มี \"Mark of Counter\""
       }
     },
     "ult": {
       "0": {
         "name": "Promise, Not Command",
-        "fullDesc": "หลังจากใช้ท่าไม้ตาย DMG ที่ Clara ได้รับจะลดลงเพิ่มเติม <orangeStrong>{{4, percent}}%</orangeStrong> และโอกาสที่จะถูกศัตรูเป้าหมายโจมตี จะเพิ่มขึ้นอย่างมาก เป็นเวลา {{3}} เทิร์น\\nในขณะเดียวกัน <u>การโต้กลับ</u> ของ Svarog ก็จะได้รับการเสริมพลัง เมื่อเป้าหมายใดก็ได้ในฝ่ายตัวเองถูกโจมตี Svarog จะทำ<u>การโต้กลับ</u> ทันที ซึ่งจะสร้างตัวคูณ DMG แก่ศัตรูเป้าหมายเพิ่มขึ้น <orangeStrong>{{2, percent}}%</orangeStrong> และสร้าง DMG 50% ของ DMG ที่เป้าหมายหลักได้รับแก่ศัตรูที่อยู่ใกล้เคียงด้วย ซึ่งเอฟเฟกต์เสริมพลังนี้สามารถเกิดขึ้นได้ {{5}} ครั้ง",
-        "shortDesc": "ตัวเอง<orangeStrong>ได้รับ DMG ลดลง</orangeStrong> และโอกาสที่ถูกโจมตีจะเพิ่มขึ้น พร้อมทั้งเสริมพลัง เอฟเฟกต์<u>โต้กลับ</u>"
+        "fullDesc": "หลังจากใช้ท่าไม้ตาย DMG ที่ Clara ได้รับจะลดลงเพิ่มเติม <orangeStrong>{{4, percent}}%</orangeStrong> และโอกาสที่จะถูกศัตรูเป้าหมายโจมตี จะเพิ่มขึ้นอย่างมาก เป็นเวลา {{3}} เทิร์น<br>ในขณะเดียวกัน การโต้กลับ ของ Svarog ก็จะได้รับการเสริมพลัง เมื่อเป้าหมายใดก็ได้ในฝ่ายตัวเองถูกโจมตี Svarog จะทำการโต้กลับ ทันที ซึ่งจะสร้างตัวคูณ DMG แก่ศัตรูเป้าหมายเพิ่มขึ้น <orangeStrong>{{2, percent}}%</orangeStrong> และสร้าง DMG 50% ของ DMG ที่เป้าหมายหลักได้รับแก่ศัตรูที่อยู่ใกล้เคียงด้วย ซึ่งเอฟเฟกต์เสริมพลังนี้สามารถเกิดขึ้นได้ {{5}} ครั้ง",
+        "shortDesc": "ตัวเอง<orangeStrong>ได้รับ DMG ลดลง</orangeStrong> และโอกาสที่ถูกโจมตีจะเพิ่มขึ้น พร้อมทั้งเสริมพลัง เอฟเฟกต์โต้กลับ"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Because We're Family",
+        "fullDesc": "ภายใต้การป้องกันของ Svarog ความเสียหายที่ Clara ได้รับจากการโจมตีของศัตรูเป้าหมายจะลดลง {{3, percent}}% ศัตรูเป้าหมายที่โจมตี Clara จะถูก Svarog ทำเครื่องหมาย \"Mark of Counter\" และถูก Svarog โต้กลับ โดยจะสร้าง DMG กายภาพ <orangeStrong>{{2, percent}}%</orangeStrong> ของ ATK ของ Clara แก่เป้าหมายดังกล่าว",
+        "shortDesc": "ตัวเอง<orangeStrong>ได้รับ DMG จากการโจมตีของศัตรูเป้าหมายลดลง</orangeStrong> ศัตรูเป้าหมายที่โจมตีจะถูกทำเครื่องหมาย \"Mark of Counter\" และ<orangeStrong>ถูก Svarog โต้กลับ</orangeStrong> โดยจะสร้าง DMG กายภาพ"
       }
     },
     "technique": {

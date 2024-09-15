@@ -16,7 +16,7 @@
     "skill": {
       "0": {
         "name": "Ever-Burning Amber",
-        "fullDesc": "Setelah melancarkan Skill, mengurangi <orangeStrong>{{1, percent}}%</orangeStrong> DMG yang diterima Trailblazer dan memperoleh 1 lapis \"Magma Will\", serta memiliki {{2, percent}}% <u>peluang dasar</u> untuk membuat musuh memasuki status \"Taunt\" selama {{3}} giliran.",
+        "fullDesc": "Setelah melancarkan Skill, mengurangi <orangeStrong>{{1, percent}}%</orangeStrong> DMG yang diterima Trailblazer dan memperoleh 1 lapis \"Magma Will\", serta memiliki {{2, percent}}% peluang dasar untuk membuat musuh memasuki status \"Taunt\" selama {{3}} giliran.",
         "shortDesc": "Mengurangi DMG yang diterima diri sendiri dan memperoleh \"Magma Will\". Berpeluang besar untuk memberikan efek Taunt pada seluruh musuh."
       }
     },
@@ -25,6 +25,13 @@
         "name": "War-Flaming Lance",
         "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK +<orangeStrong>{{2, percent}}%</orangeStrong> DEF Trailblazer pada seluruh musuh. Saat melancarkan Basic Attack selanjutnya, Trailblazer akan otomatis memperoleh peningkatan tanpa mengonsumsi \"Magma Will\".",
         "shortDesc": "Mengakibatkan Fire DMG pada seluruh musuh dan meningkatkan Basic Attack selanjutnya."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Treasure of the Architects",
+        "fullDesc": "Setiap 1 serangan yang diterima akan menambah 1 lapis \"Magma Will\", maksimal hingga {{3}} lapis.<br>Saat jumlah \"Magma Will\" tidak kurang dari 4 lapis, Basic Attack akan memperoleh peningkatan dan dapat mengakibatkan DMG pada satu target musuh dan target di sekitarnya.<br>Setelah Trailblazer melancarkan Basic Attack, Skill, atau Ultimate, akan memberikan Shield yang dapat menahan DMG sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> DEF Trailblazer +<orangeStrong>{{4}}</orangeStrong> selama {{2}} giliran pada seluruh rekan tim.",
+        "shortDesc": ""
       }
     },
     "technique": {

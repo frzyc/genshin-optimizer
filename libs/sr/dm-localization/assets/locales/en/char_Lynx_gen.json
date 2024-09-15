@@ -11,15 +11,22 @@
     "skill": {
       "0": {
         "name": "Salted Camping Cans",
-        "fullDesc": "Applies \"Survival Response\" to a single target ally and increases their Max HP by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Lynx's Max HP plus <orangeStrong>{{2}}</orangeStrong>. If the target ally is a character on the Path of Destruction or Preservation, the chance of them being attacked by enemies will greatly increase. \"Survival Response\" lasts for {{3}} turn(s).\\nRestores the target's HP by <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> of Lynx's Max HP plus <orangeStrong>{{5}}</orangeStrong>.",
+        "fullDesc": "Applies \"Survival Response\" to a single target ally and increases their Max HP by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Lynx's Max HP plus <orangeStrong>{{2}}</orangeStrong>. If the target ally is a character on the Path of Destruction or Preservation, the chance of them being attacked by enemies will greatly increase. \"Survival Response\" lasts for {{3}} turn(s).<br>Restores the target's HP by <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> of Lynx's Max HP plus <orangeStrong>{{5}}</orangeStrong>.",
         "shortDesc": "Applies \"Survival Response\" to a single ally, <orangeStrong>increases their Max HP</orangeStrong>, and restores their HP."
       }
     },
     "ult": {
       "0": {
         "name": "Snowfield First Aid",
-        "fullDesc": "Dispels {{1}} <u>debuff(s)</u> from all allies and immediately restores their respective HP by an amount equal to <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> of Lynx's Max HP plus <orangeStrong>{{3}}</orangeStrong>.",
-        "shortDesc": "Dispels <orangeStrong>1 <u>debuff</u> from all allies</orangeStrong> and restores their HP."
+        "fullDesc": "Dispels {{1}} debuff(s) from all allies and immediately restores their respective HP by an amount equal to <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> of Lynx's Max HP plus <orangeStrong>{{3}}</orangeStrong>.",
+        "shortDesc": "Dispels <orangeStrong>1 debuff from all allies</orangeStrong> and restores their HP."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Outdoor Survival Experience",
+        "fullDesc": "When using Lynx's Skill or Ultimate, applies continuous healing to the target ally for {{1}} turn(s), restoring the target ally's HP by an amount equal to <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> of Lynx's Max HP plus <orangeStrong>{{3}}</orangeStrong> at the start of each turn. If the target has \"Survival Response,\" the continuous healing effect additionally restores HP by an amount equal to <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> of Lynx's Max HP plus <orangeStrong>{{5}}</orangeStrong>.",
+        "shortDesc": "When using Skill or Ultimate, applies <orangeStrong>continuous healing</orangeStrong> on the target ally. If the target has \"Survival Response,\" the continuous healing effect additionally increases."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Afternoon of Avalanche Beacon",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Dusk of Warm Campfire",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Night of Aurora Tea",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Dawn of Explorers' Chart",

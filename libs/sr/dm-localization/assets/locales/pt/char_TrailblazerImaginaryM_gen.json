@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Desfile Clamoroso das Luzes",
-        "fullDesc": "Concede a todos os aliados o efeito de Dançarino de Apoio, com duração de {{1}} rodada(s). A duração diminui em 1 a cada início de rodada {M#do Desbravador}{F#da Desbravadora}. Aliados com o efeito Dançarino de Apoio têm seu Efeito de Quebra aumentado em <orangeStrong>{{3, percent}}%</orangeStrong>. Quando atacam alvos que estão no estado de <u>Quebra de Fraqueza</u>, a Redução de Tenacidade desse ataque será convertida em uma instância de <u>Super Dano de Quebra</u>.",
-        "shortDesc": "Concede a todos os aliados o efeito de Dançarino de Apoio. Aliados com Dançarino de Apoio têm seus <orangeStrong>Efeitos de Quebra</orangeStrong> aumentados e causam adicionalmente <orangeStrong><u>Super Dano de Quebra</u></orangeStrong> 1 vez quando atacam inimigos-alvo que estão com <u>Quebra de Fraqueza</u>."
+        "fullDesc": "Concede a todos os aliados o efeito de Dançarino de Apoio, com duração de {{1}} rodada(s). A duração diminui em 1 a cada início de rodada {M#do Desbravador}{F#da Desbravadora}. Aliados com o efeito Dançarino de Apoio têm seu Efeito de Quebra aumentado em <orangeStrong>{{3, percent}}%</orangeStrong>. Quando atacam alvos que estão no estado de Quebra de Fraqueza, a Redução de Tenacidade desse ataque será convertida em uma instância de Super Dano de Quebra.",
+        "shortDesc": "Concede a todos os aliados o efeito de Dançarino de Apoio. Aliados com Dançarino de Apoio têm seus <orangeStrong>Efeitos de Quebra</orangeStrong> aumentados e causam adicionalmente <orangeStrong>Super Dano de Quebra</orangeStrong> 1 vez quando atacam inimigos-alvo que estão com Quebra de Fraqueza."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Dança Aérea Absoluta",
+        "fullDesc": "{F#A Desbravadora}{M#O Desbravador} regenera imediatamente <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> de Energia sempre que um inimigo-alvo tem sua Fraqueza Quebrada.",
+        "shortDesc": "{F#A Desbravadora}{M#O Desbravador} regenera Energia quando um inimigo-alvo tem sua Fraqueza Quebrada."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Sanatório do Descanso",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "4": {
       "name": "Pomba na Cartola",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Os Poemas Favorecem os Ritmos do Passado",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "6": {
       "name": "Amanhã, Descanse no Holofote",

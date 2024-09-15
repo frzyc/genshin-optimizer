@@ -18,8 +18,15 @@
     "ult": {
       "0": {
         "name": "Em Meio à Chuva de Bênçãos",
-        "fullDesc": "Aumenta a Chance de CRIT de Yanqing em {{1, percent}}%. Quando a Sincronia d'Alma de Ferro está ativa, aumenta o Dano CRIT de Yanqing em mais <orangeStrong>{{2, percent}}%</orangeStrong>. Essa <u>melhoria</u> dura por uma rodada. Depois, causa Dano de Gelo igual a <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de Yanqing a um único inimigo.",
+        "fullDesc": "Aumenta a Chance de CRIT de Yanqing em {{1, percent}}%. Quando a Sincronia d'Alma de Ferro está ativa, aumenta o Dano CRIT de Yanqing em mais <orangeStrong>{{2, percent}}%</orangeStrong>. Essa melhoria dura por uma rodada. Depois, causa Dano de Gelo igual a <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de Yanqing a um único inimigo.",
         "shortDesc": "Aumenta a Chance de CRIT de Yanqing. Aprimora a Sincronia d'Alma de Ferro e causa Dano de Gelo massivo a um único inimigo."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Eu e a Espada Somos Um",
+        "fullDesc": "Quando a Sincronia d'Alma de Ferro está ativa, Yanqing tem menos chance de ser atacado por inimigos. A Chance de CRIT de Yanqing aumenta em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> e o Dano CRIT em <orangeStrong>{{2, percent}}%</orangeStrong>. Depois que Yanqing ataca um inimigo, há uma chance fixa de <orangeStrong>{{3, percent}}%</orangeStrong> </color> de executar um Ataque Extra, causando Dano de Gelo igual a <orangeStrong><unbreak>#4[i]%</orangeStrong> do ATQ de Yanqing ao alvo, com uma chance-base de {{6, percent}}% de causar Congelamento no alvo por 1 rodada.<br>O alvo com Congelamento não pode realizar ações e sofre Dano Adicional de Gelo igual a <orangeStrong>{{5, percent}}%</orangeStrong> do ATQ de Yanqing no início de cada rodada. <br>Quando Yanqing recebe Dano, o efeito da Sincronia d'Alma de Ferro desaparece.",
+        "shortDesc": "<orangeStrong>Durante Sincronia d'Alma de Ferro</orangeStrong>, reduz a chance deste personagem ser atacado e <orangeStrong>aumenta a Chance de CRIT e Dano CRIT</orangeStrong>. <orangeStrong>Depois de atacar um inimigo</orangeStrong>, tem uma chance de realizar um Ataque Extra, causando Dano de Gelo com uma chance de causar Congelamento ao alvo.<br>Sincronia d'Alma de Ferro será removida depois que este personagem recebe Dano."
       }
     },
     "technique": {
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Espada Erudita",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Perfuração Flamejante",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Conflito Crescente",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "Ataque Rápido",

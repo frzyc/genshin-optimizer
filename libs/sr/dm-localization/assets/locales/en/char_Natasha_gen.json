@@ -22,10 +22,17 @@
         "shortDesc": "<orangeStrong>Restores HP</orangeStrong> for all allies."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Innervation",
+        "fullDesc": "When healing allies with HP percentage at {{1, percent}}% or lower, increases Natasha's Outgoing Healing by <orangeStrong>{{2, percent}}%</orangeStrong>. This effect also works on continuous healing.",
+        "shortDesc": "When healing allies with low HP, increases Outgoing Healing. This effect also works on continuous healing."
+      }
+    },
     "technique": {
       "0": {
         "name": "Hypnosis Research",
-        "fullDesc": "Immediately attacks the enemy. After entering battle, deals Physical DMG equal to {{4, percent}}% of Natasha's ATK to a random enemy, with a {{1, percent}}% <u>base chance</u> to Weaken all enemies.\\nWhile Weakened, enemies deal {{2, percent}}% less DMG to allies for {{3}} turn(s).",
+        "fullDesc": "Immediately attacks the enemy. After entering battle, deals Physical DMG equal to {{4, percent}}% of Natasha's ATK to a random enemy, with a {{1, percent}}% base chance to Weaken all enemies.<br>While Weakened, enemies deal {{2, percent}}% less DMG to allies for {{3}} turn(s).",
         "shortDesc": "Attacks the enemy. After entering battle, deals minor Physical DMG to a random single enemy, with a high chance to inflict Weaken to all enemy targets."
       }
     },
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "The Right Cure",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Miracle Cure",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "Preventive Treatment",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Doctor's Grace",

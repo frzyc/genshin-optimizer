@@ -27,6 +27,13 @@
         "shortDesc": "使敌方全体<orangeStrong>陷入【酩酊】状态</orangeStrong>，同时对敌方全体造成火属性伤害。下一次普攻强化为【酒花奔涌】。"
       }
     },
+    "talent": {
+      "0": {
+        "name": "鏖战正酣",
+        "fullDesc": "【酩酊】使目标受到的击破伤害提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>。陷入【酩酊】状态的目标每次受到我方角色攻击后，会回复攻击者<orangeStrong>{{2}}</orangeStrong>点生命值。",
+        "shortDesc": "【酩酊】使目标<orangeStrong>受到的击破伤害提高</orangeStrong>，目标每次受到我方角色攻击后，<orangeStrong>攻击者回复生命值</orangeStrong>。"
+      }
+    },
     "technique": {
       "0": {
         "name": "亲启佳酿",

@@ -26,7 +26,7 @@
     "skill": {
       "0": {
         "name": "Libre de ataduras",
-        "fullDesc": "Potencia el ATQ básico un máximo de 3 veces consecutivas. Esta habilidad no consume pts. de habilidad básica y no se considera como un uso de la habilidad básica.\\nAl potenciarse 1 vez, Loto benéfico se transforma en Trascendencia.\\nAl potenciarse 2 veces, Loto benéfico se transforma en Lanza divina.\\nAl potenciarse 3 veces, Loto benéfico se transforma en Salto fulgurante.\\nAl lanzar Lanza divina o Salto fulgurante, a partir del 4.º golpe obtiene 1 acumulación de Rugido dominante antes de cada golpe. Rugido dominante hace que el Daño CRIT de Dan Heng - Imbibitor Lunae aumente en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Este efecto se puede acumular un máximo de {{2}} veces y dura hasta el final de su turno.",
+        "fullDesc": "Potencia el ATQ básico un máximo de 3 veces consecutivas. Esta habilidad no consume pts. de habilidad básica y no se considera como un uso de la habilidad básica.<br>Al potenciarse 1 vez, Loto benéfico se transforma en Trascendencia.<br>Al potenciarse 2 veces, Loto benéfico se transforma en Lanza divina.<br>Al potenciarse 3 veces, Loto benéfico se transforma en Salto fulgurante.<br>Al lanzar Lanza divina o Salto fulgurante, a partir del 4.º golpe obtiene 1 acumulación de Rugido dominante antes de cada golpe. Rugido dominante hace que el Daño CRIT de Dan Heng - Imbibitor Lunae aumente en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Este efecto se puede acumular un máximo de {{2}} veces y dura hasta el final de su turno.",
         "shortDesc": "El ATQ básico Loto benéfico <orangeStrong>se potencia y se transforma en Trascendencia</orangeStrong>, <orangeStrong>Lanza divina o Salto fulgurante</orangeStrong>."
       },
       "1": {
@@ -38,8 +38,15 @@
     "ult": {
       "0": {
         "name": "Purificación del mundo",
-        "fullDesc": "Realiza un ataque de 3 golpes e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Dan Heng - Imbibitor Lunae como Daño Imaginario a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño Imaginario a los enemigos adyacentes. Además, obtiene {{3}} acumulaciones de Escama sacrosanta.\\nPuede tener hasta {{4}} acumulaciones de Escama sacrosanta como máximo y se pueden utilizar para compensar el consumo de pts. de habilidad básica de Dan Heng - Imbibitor Lunae. Consumir Escama sacrosanta se considera equivalente a consumir pts. de habilidad básica.",
+        "fullDesc": "Realiza un ataque de 3 golpes e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Dan Heng - Imbibitor Lunae como Daño Imaginario a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño Imaginario a los enemigos adyacentes. Además, obtiene {{3}} acumulaciones de Escama sacrosanta.<br>Puede tener hasta {{4}} acumulaciones de Escama sacrosanta como máximo y se pueden utilizar para compensar el consumo de pts. de habilidad básica de Dan Heng - Imbibitor Lunae. Consumir Escama sacrosanta se considera equivalente a consumir pts. de habilidad básica.",
         "shortDesc": "Inflige una gran cantidad de Daño Imaginario a un enemigo y Daño Imaginario a los enemigos adyacentes. Obtiene 2 acumulaciones de Escama sacrosanta. Dan Heng - Imbibitor Lunae puede <orangeStrong>consumir</orangeStrong> Escamas sacrosantas en lugar de <orangeStrong>pts. de habilidad básica</orangeStrong>."
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Corazón justo",
+        "fullDesc": "Dan Heng - Imbibitor Lunae obtiene 1 acumulación de Corazón justo después de cada golpe y el daño que inflige aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Este efecto se puede acumular un máximo de {{2}} veces y dura hasta el final de su turno.",
+        "shortDesc": "Aumenta el daño que inflige después de cada golpe. Este efecto se puede acumular y dura hasta el final de su turno."
       }
     },
     "technique": {

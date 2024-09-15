@@ -22,6 +22,13 @@
         "shortDesc": "<orangeStrong>Aumenta a VEL</orangeStrong> de todos os aliados."
       }
     },
+    "talent": {
+      "0": {
+        "name": "Astrometria",
+        "fullDesc": "Ganha 1 acúmulo de Carga para cada inimigo diferente que Asta atingir, além de um acúmulo extra se o inimigo atingido tiver Fraqueza contra Fogo.<br>Para cada acúmulo de Carga que Asta tiver, aumenta em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> o ATQ de todos os aliados, até {{2}} vez(es).<br>A partir da segunda rodada, reduz em {{3}} a contagem de acúmulos de Carga de Asta no início de cada rodada.",
+        "shortDesc": "O personagem receberá 1 acúmulo de Carga para cada inimigo diferente que atacar, com um máximo de 5 acúmulos. Cada acúmulo de Carga aumenta o ATQ de todos os aliados. Os acúmulos de Carga são reduzidos no início de cada rodada."
+      }
+    },
     "technique": {
       "0": {
         "name": "Lampejo Milagroso",
@@ -39,7 +46,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Faíscas",
-        "fullDesc": "O ATQ Básico de Asta tem {{1, percent}}% de chance-base de causar Queimadura ao inimigo-alvo por {{2}} rodada(s).\\nOs inimigos afetados por Queimadura recebem Dano de Fogo Contínuo igual a {{3, percent}}% do Dano causado pelo ATQ Básico de Asta no início de cada rodada.",
+        "fullDesc": "O ATQ Básico de Asta tem {{1, percent}}% de chance-base de causar Queimadura ao inimigo-alvo por {{2}} rodada(s).<br>Os inimigos afetados por Queimadura recebem Dano de Fogo Contínuo igual a {{3, percent}}% do Dano causado pelo ATQ Básico de Asta no início de cada rodada.",
         "shortDesc": ""
       }
     },
@@ -69,7 +76,7 @@
     },
     "3": {
       "name": "Chuva de Meteoros do Desejo",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "4": {
       "name": "A Aurora Aquece com Beleza e Alegria",
@@ -77,7 +84,7 @@
     },
     "5": {
       "name": "A Nebulosa se Isola em Runas e Enigmas",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "6": {
       "name": "Sonhos Cósmicos Tranquilos e Confortáveis",
