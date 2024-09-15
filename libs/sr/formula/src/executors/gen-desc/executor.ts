@@ -37,6 +37,24 @@ export default async function runExecutor(
     }
     return undefined
   })
+  const buffs = extractFormulaMetadata(data, (tag: Tag, value) => {
+    if (
+      // sheet-specific
+      tag.sheet != 'agg' &&
+      // formula listing
+      tag.qt == 'listing' &&
+      tag.q == 'buffs' &&
+      // pattern from `registerBuffs`
+      value.op == 'tag' &&
+      'name' in value.tag &&
+      'q' in value.tag
+    ) {
+      const sheet = tag.sheet!
+      const name = value.tag['name']!
+      return { sheet, name, tag: { ...tag, ...value.tag } }
+    }
+    return undefined
+  })
 
   const cwd = path.join(workspaceRoot, outputPath)
   const prettierRc = await prettier.resolveConfig(cwd)
@@ -45,6 +63,7 @@ export default async function runExecutor(
 // WARNING: Generated file, do not modify
 export const conditionals = ${JSON.stringify(conditionals)} as const
 export const formulas = ${JSON.stringify(formulas)} as const
+export const buffs = ${JSON.stringify(buffs)} as const
 `,
     { ...prettierRc, parser: 'typescript' }
   )

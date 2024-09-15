@@ -144,7 +144,6 @@ describe('example', () => {
       test(`with name ${name}`, () => {
         expect(tag).toEqual({
           src: '0',
-          dst: null,
           et: 'own',
           sheet: 'Nahida',
           qt: 'formula',
