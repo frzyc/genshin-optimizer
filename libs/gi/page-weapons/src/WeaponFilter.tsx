@@ -119,9 +119,7 @@ function WeaponFilter({
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
         <Grid container>
           <Grid item>
-            <Typography variant="h6">
-                {t`weaponFilterTitle`}
-            </Typography>
+            <Typography variant="h6">{t`weaponFilterTitle`}</Typography>
           </Grid>
           <Grid
             item

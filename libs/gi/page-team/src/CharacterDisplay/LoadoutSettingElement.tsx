@@ -128,7 +128,7 @@ function BuildManagementContent() {
         </Grid>
 
         <Box sx={{ display: 'flex', gap: 2 }}>
-          <Typography variant="h6">{ t`loadoutSettings.builds`}</Typography>
+          <Typography variant="h6">{t`loadoutSettings.builds`}</Typography>
           <Button
             startIcon={<AddIcon />}
             color="info"

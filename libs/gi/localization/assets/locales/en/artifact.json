@@ -123,9 +123,9 @@
     "current": "RV"
   },
   "optExcludeModal": {
-    "excludeAllMsg": "Are you sure you want to exclude {{count}} artifacts from build optimization?",
-    "includeAllMsg": "Are you sure you want to include {{count}} artifacts to build optimization?",
-    "excludeAllBtn": "Exclude Artifacts",
-    "includeAllBtn": "Include Artifacts"
+    "excludeMsg": "Are you sure you want to exclude {{count}} artifacts from build optimization?",
+    "includeMsg": "Are you sure you want to include {{count}} artifacts to build optimization?",
+    "excludeBtn": "Exclude Artifacts",
+    "includeBtn": "Include Artifacts"
   }
 }

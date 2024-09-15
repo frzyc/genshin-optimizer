@@ -85,9 +85,9 @@
     "tcBadge": "TC",
     "equipped": "Equipped Build"
   },
-  "teamComponents":{
-    "teamBuffs":"Received Team Buffs",
-    "tcBadge":"TC Build"
+  "teamComponents": {
+    "teamBuffs": "Received Team Buffs",
+    "tcBadge": "TC Build"
   },
   "buildInfo": {
     "equipped": "This is the build currently equipped to your character, this represents in-game equipement and is persistent outside of the Loadout.",

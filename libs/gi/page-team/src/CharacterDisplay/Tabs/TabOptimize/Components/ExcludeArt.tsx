@@ -237,10 +237,10 @@ function ExcludeArtRedButtons({
   }, [artifactIds, artExclusion])
 
   const excludeArtifacts = () =>
-    window.confirm(t('optExcludeModal.excludeAllMsg', { count: numExclude })) &&
+    window.confirm(t('optExcludeModal.excludeMsg', { count: numExclude })) &&
     onExclude(artifactIds)
   const includeArtifacts = () =>
-    window.confirm(t('optExcludeModal.includeAllMsg', { count: numInclude })) &&
+    window.confirm(t('optExcludeModal.includeMsg', { count: numInclude })) &&
     onInclude(artifactIds)
 
   return (
@@ -253,7 +253,7 @@ function ExcludeArtRedButtons({
           onClick={excludeArtifacts}
           startIcon={<ExcludeIcon />}
         >
-          {t`optExcludeModal.excludeAllBtn`}
+          {t`optExcludeModal.excludeBtn`}
           <SqBadge sx={{ ml: 1 }} color={numExclude ? 'success' : 'secondary'}>
             {numExclude}
           </SqBadge>
@@ -267,7 +267,7 @@ function ExcludeArtRedButtons({
           onClick={includeArtifacts}
           startIcon={<OptimizationIcon />}
         >
-          {t`optExcludeModal.includeAllBtn`}
+          {t`optExcludeModal.includeBtn`}
           <SqBadge sx={{ ml: 1 }} color={numInclude ? 'success' : 'secondary'}>
             {numInclude}
           </SqBadge>
