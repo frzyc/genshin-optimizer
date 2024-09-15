@@ -1,6 +1,6 @@
 {
   "name": "genshin-optimizer",
-  "version": "10.13.2",
+  "version": "10.13.3",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "mini-ci": "nx format:write && nx affected -t typecheck && nx affected -t eslint:lint --max-warnings=0 && CI=true nx affected -t test",
     "reload-dm": "git submodule update --init",
     "update-dm": "git submodule update --remote",
+    "gen-file": "nx run-many -t gen-file",
     "test": "nx run-many -t test"
   },
   "devDependencies": {

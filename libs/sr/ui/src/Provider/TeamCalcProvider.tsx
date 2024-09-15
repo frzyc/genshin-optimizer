@@ -48,11 +48,11 @@ type MemberIndexMap = Partial<Record<CharacterKey | 'all', Member | 'all'>>
 
 export function TeamCalcProvider({
   teamId,
-  src,
+  currentIndex,
   children,
 }: {
   teamId: string
-  src: '1' | '2' | '3' | '0'
+  currentIndex: '1' | '2' | '3' | '0'
   children: ReactNode
 }) {
   const team = useTeam(teamId)!
@@ -112,7 +112,10 @@ export function TeamCalcProvider({
     [member0, member1, member2, member3, team.loadoutMetadata]
   )
 
-  const calcWithTag = useMemo(() => calc?.withTag({ src }) ?? null, [calc, src])
+  const calcWithTag = useMemo(
+    () => calc?.withTag({ src: currentIndex, dst: currentIndex }) ?? null,
+    [calc, currentIndex]
+  )
 
   return (
     <CalcContext.Provider value={calcWithTag}>{children}</CalcContext.Provider>

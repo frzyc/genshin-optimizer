@@ -79,11 +79,13 @@ alter table "public"."characters" drop column "account";
 
 alter table "public"."characters" add column "account_id" uuid not null;
 
-alter table "public"."characters" alter column "id" set default gen_random_uuid();
-
 alter table "public"."characters" alter column "id" drop identity;
 
+alter table "public"."characters" alter column "id" set data type char;
+
 alter table "public"."characters" alter column "id" set data type uuid using "id"::uuid;
+
+alter table "public"."characters" alter column "id" set default gen_random_uuid();
 
 alter table "public"."weapons" drop column "account";
 

@@ -73,6 +73,7 @@ export const entryTypes = [
   'teamBuff',
   'notOwnBuff',
   'enemyDeBuff', // Ends with 'Buff' so `Calculator` can pick up on this tag
+  'display', // Display-only, not participating in any buffs
 ] as const
 export const sheets = [
   'agg',

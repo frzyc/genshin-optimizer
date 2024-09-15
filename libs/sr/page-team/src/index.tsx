@@ -120,7 +120,10 @@ function Page({ teamId }: { teamId: string }) {
   }, [loadoutMetadatum, team, loadout, loadoutId, teamId])
 
   return (
-    <TeamCalcProvider teamId={teamId} src={members[loadoutMetadatumIndex]}>
+    <TeamCalcProvider
+      teamId={teamId}
+      currentIndex={members[loadoutMetadatumIndex]}
+    >
       <Box
         sx={{ display: 'flex', gap: 1, flexDirection: 'column', mx: 1, mt: 2 }}
       >
