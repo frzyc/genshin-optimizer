@@ -130,7 +130,10 @@ export const ownTag = {
     breakDmg: prep,
   },
   listing: {
+    // Anything that is intended to be allowed as an optimization target.
     formulas: aggStr,
+    // Flat buffs that don't scale off of a stat.
+    buffs: aggStr,
   },
 } as const
 export const enemyTag = {

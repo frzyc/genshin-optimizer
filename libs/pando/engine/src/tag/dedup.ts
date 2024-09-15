@@ -51,7 +51,9 @@ class Leaf<V> {
   internal: Internal<V>
 
   constructor(tag: Tag, id: TagId, keys: TagMapKeys, internal: Internal<V>) {
-    this.tag = tag
+    this.tag = Object.fromEntries(
+      Object.entries(tag).filter(([_, v]) => v !== null && v !== undefined)
+    )
     this.id = id
     this.keys = keys
     this.internal = internal

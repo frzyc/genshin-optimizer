@@ -2,12 +2,20 @@ import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import type { UISheet } from '@genshin-optimizer/pando/ui-sheet'
 import { characterAsset } from '@genshin-optimizer/sr/assets'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import { conditionals, formulas, own } from '@genshin-optimizer/sr/formula'
+import {
+  buffs,
+  conditionals,
+  formulas,
+  own,
+} from '@genshin-optimizer/sr/formula'
 import { getInterpolateObject } from '@genshin-optimizer/sr/stats'
 import { trans } from '../../util'
 import type { TalentSheetElementKey } from '../consts'
 const key: CharacterKey = 'RuanMei'
 const [chg, _ch] = trans('char', key)
+const formula = formulas.RuanMei
+const cond = conditionals.RuanMei
+const buff = buffs.RuanMei
 const sheet: UISheet<TalentSheetElementKey> = {
   basic: {
     name: chg('abilities.basic.0.name'),
@@ -30,7 +38,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         fields: [
           {
             title: chg('abilities.basic.0.shortDesc'),
-            fieldRef: formulas.RuanMei.basicDmg_0.tag,
+            fieldRef: formula.basicDmg_0.tag,
           },
         ],
       },
@@ -60,11 +68,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
             text: 'skill active',
             additional: <SqBadge>Skill</SqBadge>,
           },
-          metadata: conditionals.RuanMei.skillOvertone,
+          metadata: cond.skillOvertone,
           label: 'Overtone',
           fields: [
+            {
+              title: 'Ally DMG Increase',
+              fieldRef: buff.skillOvertone_dmg_.tag,
+            },
+            { title: 'weakness', fieldRef: buff.skillOvertone_weakness_.tag },
             // TODO:
-            // {title:"Ally DMG Increase", ???},
             // {title:"Break Efficiency",???}
             { title: 'Duration', fieldValue: 3 },
           ],
@@ -88,6 +100,24 @@ const sheet: UISheet<TalentSheetElementKey> = {
             )
           ),
       },
+      {
+        type: 'conditional',
+        conditional: {
+          header: {
+            icon: <ImgIcon src={characterAsset(key, 'ult_0')} />,
+            text: 'ult active',
+            additional: <SqBadge>Ult</SqBadge>,
+          },
+          metadata: cond.ultZone,
+          label: 'Ult zone',
+          fields: [
+            {
+              title: 'resPen_',
+              fieldRef: buff.ultZone_resPen_.tag,
+            },
+          ],
+        },
+      },
     ],
   },
   talent: {
@@ -106,6 +136,34 @@ const sheet: UISheet<TalentSheetElementKey> = {
             )
           ),
       },
+      {
+        type: 'fields',
+        fields: [
+          {
+            title: 'spd_',
+            fieldRef: buff.talent_spd_.tag,
+          },
+        ],
+      },
+      // TODO: Move this to proper document, just want to visualize it for now.
+      {
+        type: 'fields',
+        fields: [
+          {
+            title: 'ba3 buff',
+            fieldRef: buff.ba3_brEff_.tag,
+          },
+        ],
+      },
+      {
+        type: 'fields',
+        fields: [
+          {
+            title: 'ba3 formula',
+            fieldRef: formula.ba3_brEff_.tag,
+          },
+        ],
+      },
     ],
   },
   eidolon1: {
@@ -115,6 +173,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
       {
         type: 'text',
         text: chg(`ranks.1.desc`),
+      },
+      {
+        type: 'fields',
+        fields: [
+          {
+            title: 'defIgn_',
+            fieldRef: buff.e1_defIgn_.tag,
+          },
+        ],
       },
     ],
   },
@@ -126,6 +193,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
         type: 'text',
         text: chg(`ranks.2.desc`),
       },
+      {
+        type: 'fields',
+        fields: [
+          {
+            title: 'atk_',
+            fieldRef: buff.e2_atk_.tag,
+          },
+        ],
+      },
     ],
   },
   eidolon3: {
@@ -135,6 +211,19 @@ const sheet: UISheet<TalentSheetElementKey> = {
       {
         type: 'text',
         text: chg(`ranks.3.desc`),
+      },
+      {
+        type: 'fields',
+        fields: [
+          {
+            title: 'talent',
+            fieldRef: buff.eidolon3_talent.tag,
+          },
+          {
+            title: 'ult',
+            fieldRef: buff.eidolon3_ult.tag,
+          },
+        ],
       },
     ],
   },
@@ -154,11 +243,11 @@ const sheet: UISheet<TalentSheetElementKey> = {
             text: chg('ranks.4.name'),
             additional: <SqBadge>Eidolon 4</SqBadge>,
           },
-          metadata: conditionals.RuanMei.e4Broken,
+          metadata: cond.e4Broken,
           label: 'Enemy Weakness Broken',
           fields: [
             // TODO: display node?
-            // {title:"Break Effect",fieldRef:formulas.RuanMei.e4Broken},
+            { title: 'Break Effect', fieldRef: buff.e4_break_.tag },
             { title: 'Turns', fieldValue: 2 },
           ],
         },
@@ -172,6 +261,19 @@ const sheet: UISheet<TalentSheetElementKey> = {
       {
         type: 'text',
         text: chg(`ranks.5.desc`),
+      },
+      {
+        type: 'fields',
+        fields: [
+          {
+            title: 'basic',
+            fieldRef: buff.eidolon5_basic.tag,
+          },
+          {
+            title: 'skill',
+            fieldRef: buff.eidolon5_skill.tag,
+          },
+        ],
       },
     ],
   },
