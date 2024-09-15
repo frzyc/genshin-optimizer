@@ -68,7 +68,8 @@ const charArray = Object.entries(avatarConfig).map(([charId, charConfig]) => {
   SkillList.forEach((skillId) => {
     const { SkillName, SkillDesc, SimpleSkillDesc, AttackType } =
       avatarSkillConfig[skillId][0]
-    const ability = DmAttackTypeMap[AttackType!]
+    const ability =
+      AttackType !== undefined ? DmAttackTypeMap[AttackType] : 'talent'
     abilities[ability]?.push({
       name: SkillName.Hash.toString(),
       fullDesc: SkillDesc.Hash.toString(),
