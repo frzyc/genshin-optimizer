@@ -18,7 +18,7 @@ export const minTotalStatKeys = [
   'crit_dmg_',
   'eff_',
   'eff_res_',
-  'brEff_',
+  'brEffect_',
 ] as const
 export type MinTotalStatKey = (typeof minTotalStatKeys)[number]
 

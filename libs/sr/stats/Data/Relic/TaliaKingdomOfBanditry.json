@@ -3,7 +3,7 @@
     {
       "numRequired": 2,
       "passiveStats": {
-        "brEff_": 0.16
+        "brEffect_": 0.16
       },
       "otherStats": [
         0.16,

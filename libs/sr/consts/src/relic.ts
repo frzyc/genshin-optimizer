@@ -72,7 +72,7 @@ export const allRelicSubStatKeys = [
   'crit_dmg_',
   'eff_',
   'eff_res_',
-  'brEff_',
+  'brEffect_',
 ] as const
 export type RelicSubStatKey = (typeof allRelicSubStatKeys)[number]
 
@@ -94,7 +94,7 @@ export const allRelicMainStatKeys = [
   'wind_dmg_',
   'quantum_dmg_',
   'imaginary_dmg_',
-  'brEff_',
+  'brEffect_',
   'enerRegen_',
 ] as const
 export type RelicMainStatKey = (typeof allRelicMainStatKeys)[number]
@@ -140,5 +140,5 @@ export const relicSlotToMainStatKeys: Record<RelicSlotKey, RelicMainStatKey[]> =
       'quantum_dmg_',
       'imaginary_dmg_',
     ],
-    rope: ['hp_', 'atk_', 'def_', 'brEff_', 'enerRegen_'],
+    rope: ['hp_', 'atk_', 'def_', 'brEffect_', 'enerRegen_'],
   }

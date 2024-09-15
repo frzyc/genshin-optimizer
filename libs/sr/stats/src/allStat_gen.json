@@ -18836,7 +18836,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.053
+                "brEffect_": 0.053
               }
             }
           ],
@@ -18904,7 +18904,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.08
+                "brEffect_": 0.08
               }
             }
           ],
@@ -18955,7 +18955,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.107
+                "brEffect_": 0.107
               }
             }
           ],
@@ -21473,7 +21473,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.053
+                "brEffect_": 0.053
               }
             }
           ],
@@ -21507,7 +21507,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.053
+                "brEffect_": 0.053
               }
             }
           ],
@@ -21541,7 +21541,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.08
+                "brEffect_": 0.08
               }
             }
           ],
@@ -21575,7 +21575,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.08
+                "brEffect_": 0.08
               }
             }
           ],
@@ -21626,7 +21626,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.107
+                "brEffect_": 0.107
               }
             }
           ],
@@ -24736,7 +24736,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.053
+                "brEffect_": 0.053
               }
             }
           ],
@@ -24804,7 +24804,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.08
+                "brEffect_": 0.08
               }
             }
           ],
@@ -25989,7 +25989,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.053
+                "brEffect_": 0.053
               }
             }
           ],
@@ -26023,7 +26023,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.053
+                "brEffect_": 0.053
               }
             }
           ],
@@ -26057,7 +26057,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.08
+                "brEffect_": 0.08
               }
             }
           ],
@@ -26091,7 +26091,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.08
+                "brEffect_": 0.08
               }
             }
           ],
@@ -26142,7 +26142,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.107
+                "brEffect_": 0.107
               }
             }
           ],
@@ -30995,7 +30995,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.053
+                "brEffect_": 0.053
               }
             }
           ],
@@ -31029,7 +31029,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.053
+                "brEffect_": 0.053
               }
             }
           ],
@@ -31063,7 +31063,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.08
+                "brEffect_": 0.08
               }
             }
           ],
@@ -31097,7 +31097,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.08
+                "brEffect_": 0.08
               }
             }
           ],
@@ -31148,7 +31148,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.107
+                "brEffect_": 0.107
               }
             }
           ],
@@ -32979,7 +32979,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.053
+                "brEffect_": 0.053
               }
             }
           ],
@@ -33013,7 +33013,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.053
+                "brEffect_": 0.053
               }
             }
           ],
@@ -33047,7 +33047,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.08
+                "brEffect_": 0.08
               }
             }
           ],
@@ -33081,7 +33081,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.08
+                "brEffect_": 0.08
               }
             }
           ],
@@ -33132,7 +33132,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.107
+                "brEffect_": 0.107
               }
             }
           ],
@@ -36035,7 +36035,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.053
+                "brEffect_": 0.053
               }
             }
           ],
@@ -36069,7 +36069,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.053
+                "brEffect_": 0.053
               }
             }
           ],
@@ -36103,7 +36103,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.08
+                "brEffect_": 0.08
               }
             }
           ],
@@ -36137,7 +36137,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.08
+                "brEffect_": 0.08
               }
             }
           ],
@@ -36188,7 +36188,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.107
+                "brEffect_": 0.107
               }
             }
           ],
@@ -36592,7 +36592,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.053
+                "brEffect_": 0.053
               }
             }
           ],
@@ -36626,7 +36626,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.053
+                "brEffect_": 0.053
               }
             }
           ],
@@ -36660,7 +36660,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.08
+                "brEffect_": 0.08
               }
             }
           ],
@@ -36694,7 +36694,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.08
+                "brEffect_": 0.08
               }
             }
           ],
@@ -36745,7 +36745,7 @@
           "levels": [
             {
               "stats": {
-                "brEff_": 0.107
+                "brEffect_": 0.107
               }
             }
           ],
@@ -40125,7 +40125,7 @@
           ]
         ],
         "passiveStats": {
-          "brEff_": [
+          "brEffect_": [
             -1,
             0.28,
             0.35,
@@ -42527,7 +42527,7 @@
           ]
         ],
         "passiveStats": {
-          "brEff_": [
+          "brEffect_": [
             -1,
             0.16,
             0.2,
@@ -44287,7 +44287,7 @@
           ]
         ],
         "passiveStats": {
-          "brEff_": [
+          "brEffect_": [
             -1,
             0.24,
             0.3,
@@ -45278,7 +45278,7 @@
           ]
         ],
         "passiveStats": {
-          "brEff_": [
+          "brEffect_": [
             -1,
             0.28,
             0.35,
@@ -45688,7 +45688,7 @@
           ]
         ],
         "passiveStats": {
-          "brEff_": [
+          "brEffect_": [
             -1,
             0.28,
             0.35,
@@ -49144,7 +49144,7 @@
           ]
         ],
         "passiveStats": {
-          "brEff_": [
+          "brEffect_": [
             -1,
             0.6,
             0.7,
@@ -50084,7 +50084,7 @@
           ]
         ],
         "passiveStats": {
-          "brEff_": [
+          "brEffect_": [
             -1,
             0.6,
             0.7,
@@ -50383,7 +50383,7 @@
           ]
         ],
         "passiveStats": {
-          "brEff_": [
+          "brEffect_": [
             -1,
             0.6,
             0.7,
@@ -51314,7 +51314,7 @@
           ]
         ],
         "passiveStats": {
-          "brEff_": [
+          "brEffect_": [
             -1,
             0.2,
             0.25,
@@ -51384,7 +51384,7 @@
           "step": 0.0017280006,
           "numSteps": 2
         },
-        "brEff_": {
+        "brEffect_": {
           "base": 0.020736001,
           "step": 0.0025920009,
           "numSteps": 2
@@ -51446,7 +51446,7 @@
           "step": 0.0025920009,
           "numSteps": 2
         },
-        "brEff_": {
+        "brEffect_": {
           "base": 0.031104,
           "step": 0.003888001,
           "numSteps": 2
@@ -51508,7 +51508,7 @@
           "step": 0.0034560005,
           "numSteps": 2
         },
-        "brEff_": {
+        "brEffect_": {
           "base": 0.041472,
           "step": 0.0051840004,
           "numSteps": 2
@@ -51570,7 +51570,7 @@
           "step": 0.0043200003,
           "numSteps": 2
         },
-        "brEff_": {
+        "brEffect_": {
           "base": 0.05184,
           "step": 0.0064800004,
           "numSteps": 2
@@ -51647,7 +51647,7 @@
           "base": 0.024883,
           "add": 0.008709
         },
-        "brEff_": {
+        "brEffect_": {
           "base": 0.041472,
           "add": 0.014515
         },
@@ -51725,7 +51725,7 @@
           "base": 0.037325,
           "add": 0.013064001
         },
-        "brEff_": {
+        "brEffect_": {
           "base": 0.062208,
           "add": 0.021773001
         },
@@ -51803,7 +51803,7 @@
           "base": 0.049766,
           "add": 0.017418
         },
-        "brEff_": {
+        "brEffect_": {
           "base": 0.082944,
           "add": 0.029029999
         },
@@ -51881,7 +51881,7 @@
           "base": 0.062208,
           "add": 0.021773001
         },
-        "brEff_": {
+        "brEffect_": {
           "base": 0.10368,
           "add": 0.036288
         },
@@ -52102,7 +52102,7 @@
         {
           "numRequired": 2,
           "passiveStats": {
-            "brEff_": 0.16
+            "brEffect_": 0.16
           },
           "otherStats": [
             0.16
@@ -52111,7 +52111,7 @@
         {
           "numRequired": 4,
           "passiveStats": {
-            "brEff_": 0.16
+            "brEffect_": 0.16
           },
           "otherStats": [
             0.16,
@@ -52255,7 +52255,7 @@
         {
           "numRequired": 2,
           "passiveStats": {
-            "brEff_": 0.16
+            "brEffect_": 0.16
           },
           "otherStats": [
             0.16
@@ -52276,7 +52276,7 @@
         {
           "numRequired": 2,
           "passiveStats": {
-            "brEff_": 0.16
+            "brEffect_": 0.16
           },
           "otherStats": [
             0.16
@@ -52413,7 +52413,7 @@
         {
           "numRequired": 2,
           "passiveStats": {
-            "brEff_": 0.16
+            "brEffect_": 0.16
           },
           "otherStats": [
             0.16,

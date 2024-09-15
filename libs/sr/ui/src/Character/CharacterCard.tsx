@@ -40,7 +40,7 @@ export function CharacterCard({
           <Typography>ATK: {calc.compute(own.final.atk).val}</Typography>
 
           <Typography>
-            Break effect: {calc.compute(own.final.brEff_).val}
+            Break effect: {calc.compute(own.final.brEffect_).val}
           </Typography>
           <Typography>
             CRIT Rate: {calc.compute(own.final.crit_).val}

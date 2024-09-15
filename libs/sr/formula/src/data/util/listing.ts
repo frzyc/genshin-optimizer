@@ -15,7 +15,7 @@ const stats = [
   'spd_',
   'crit_',
   'crit_dmg_',
-  'brEff_',
+  'brEffect_',
   'eff_',
   'eff_res_',
   'enerRegen_',
@@ -23,6 +23,7 @@ const stats = [
   'dmg_',
   'resPen_',
   'weakness_',
+  'brEfficiency_',
 ] as const
 
 export const bonusAbilities = [

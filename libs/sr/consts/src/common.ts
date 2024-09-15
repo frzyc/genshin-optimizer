@@ -13,7 +13,7 @@ export const allStatKeys = [
   'def_',
   'crit_',
   'crit_dmg_',
-  'brEff_',
+  'brEffect_',
   'eff_',
   'eff_res_',
   'enerRegen_',

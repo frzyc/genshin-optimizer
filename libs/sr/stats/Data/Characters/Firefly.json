@@ -486,7 +486,7 @@
       "levels": [
         {
           "stats": {
-            "brEff_": 0.053
+            "brEffect_": 0.053
           }
         }
       ],
@@ -520,7 +520,7 @@
       "levels": [
         {
           "stats": {
-            "brEff_": 0.053
+            "brEffect_": 0.053
           }
         }
       ],
@@ -554,7 +554,7 @@
       "levels": [
         {
           "stats": {
-            "brEff_": 0.08
+            "brEffect_": 0.08
           }
         }
       ],
@@ -588,7 +588,7 @@
       "levels": [
         {
           "stats": {
-            "brEff_": 0.08
+            "brEffect_": 0.08
           }
         }
       ],
@@ -639,7 +639,7 @@
       "levels": [
         {
           "stats": {
-            "brEff_": 0.107
+            "brEffect_": 0.107
           }
         }
       ],
