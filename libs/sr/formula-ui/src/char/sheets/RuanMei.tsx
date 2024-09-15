@@ -19,6 +19,7 @@ const buff = buffs.RuanMei
 const sheet: UISheet<TalentSheetElementKey> = {
   basic: {
     name: chg('abilities.basic.0.name'),
+    tag: chg('abilities.basic.0.tag'),
     img: characterAsset(key, 'basic_0'),
     documents: [
       {
@@ -46,6 +47,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
   },
   skill: {
     name: chg('abilities.skill.0.name'),
+    tag: chg('abilities.skill.0.tag'),
     img: characterAsset(key, 'skill_0'),
     documents: [
       {
@@ -86,6 +88,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
   },
   ult: {
     name: chg('abilities.ult.0.name'),
+    tag: chg('abilities.ult.0.tag'),
     img: characterAsset(key, 'ult_0'),
     documents: [
       {
@@ -122,6 +125,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
   },
   talent: {
     name: chg('abilities.talent.0.name'),
+    tag: chg('abilities.talent.0.tag'),
     img: characterAsset(key, 'talent_0'),
     documents: [
       {

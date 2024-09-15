@@ -31,6 +31,7 @@ type AbilityData = {
   name: string
   fullDesc: string
   shortDesc: string
+  tag: string
 }
 type Ranks = Record<Rank, RankData>
 type RankData = {
@@ -48,6 +49,7 @@ function addBonusAbility(
       name: convertToHash(config.PointName).toString(),
       fullDesc: convertToHash(config.PointDesc).toString(),
       shortDesc: '',
+      tag: '',
     },
   ]
 }
@@ -66,7 +68,7 @@ const charArray = Object.entries(avatarConfig).map(([charId, charConfig]) => {
     allAbilityKeys.map((key) => [key, []])
   )
   SkillList.forEach((skillId) => {
-    const { SkillName, SkillDesc, SimpleSkillDesc, AttackType } =
+    const { SkillName, SkillDesc, SimpleSkillDesc, SkillTag, AttackType } =
       avatarSkillConfig[skillId][0]
     const ability =
       AttackType !== undefined ? DmAttackTypeMap[AttackType] : 'talent'
@@ -74,6 +76,7 @@ const charArray = Object.entries(avatarConfig).map(([charId, charConfig]) => {
       name: SkillName.Hash.toString(),
       fullDesc: SkillDesc.Hash.toString(),
       shortDesc: SimpleSkillDesc.Hash.toString(),
+      tag: SkillTag.Hash.toString(),
     })
   })
 
