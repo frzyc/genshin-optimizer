@@ -2,6 +2,7 @@ import type {
   NonTrailblazerCharacterKey,
   TrailblazerGenderedKey,
 } from '@genshin-optimizer/sr/consts'
+import type { Rank } from '@genshin-optimizer/sr/dm'
 import * as allStat_gen from './allStat_gen.json'
 import type { AllStats } from './executors/gen-stats/executor'
 
@@ -35,13 +36,22 @@ export function getCharStat(
  */
 export function getInterpolateObject(
   ck: NonTrailblazerCharacterKey | TrailblazerGenderedKey,
-  skType: 'basic' | 'skill' | 'ult' | 'talent' | 'technique',
+  skType: 'basic' | 'skill' | 'ult' | 'talent' | 'technique' | 'eidolon',
   skLevel: number,
   skIndex = 0
 ) {
-  return Object.fromEntries(
-    allStats.char[ck].skillTree[skType].skillParamList[skIndex].map(
-      (skills, index) => [index + 1, skills[skLevel]]
+  if (skType === 'eidolon') {
+    return Object.fromEntries(
+      allStats.char[ck].rankMap[skLevel as Rank].params.map((param, index) => [
+        index + 1,
+        param,
+      ])
     )
-  )
+  } else {
+    return Object.fromEntries(
+      allStats.char[ck].skillTree[skType].skillParamList[skIndex].map(
+        (skills, index) => [index + 1, skills[skLevel]]
+      )
+    )
+  }
 }
