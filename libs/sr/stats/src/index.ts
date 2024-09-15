@@ -30,7 +30,7 @@ export function getCharStat(
  * Creates an interpolation object for i18n'ing the datamined strings with the proper numeric values
  * @param ck Character key
  * @param skType Skill tree type
- * @param skLevel Level of skill to lookup
+ * @param skLevel Level of skill to lookup. If skType is 'eidolon', this is the eidolon to look up (1-6).
  * @param skIndex (optional) Which skill to use from this skill tree type. For niche cases, like Firefly who has multiple 'basic's
  * @returns Interpolation object to be fed to translate function
  */
