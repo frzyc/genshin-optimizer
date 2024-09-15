@@ -20,6 +20,7 @@ import {
   Typography,
 } from '@mui/material'
 import { useCallback } from 'react'
+import { Trans, useTranslation } from 'react-i18next'
 
 export function RemoveLoadout({
   show,
@@ -36,6 +37,7 @@ export function RemoveLoadout({
   onDelete: () => void
   conditionalCount: number
 }) {
+  const { t } = useTranslation('page_character')
   const database = useDatabase()
   const {
     name,
@@ -60,7 +62,9 @@ export function RemoveLoadout({
         <CardHeader
           title={
             <span>
-              Delete Loadout: <strong>{name}</strong>?
+              <Trans t={t} i18nKey={'loadoutDelModal.title'} name={name}>
+                Delete Loadout: <strong>{{ name } as any}</strong>?
+              </Trans>
             </span>
           }
           action={
@@ -76,14 +80,13 @@ export function RemoveLoadout({
               <CardContent>{description}</CardContent>
             </CardThemed>
           )}
-          <Typography>
-            Deleting the Loadout will also delete the following data:
-          </Typography>
+          <Typography>{t`loadoutDelModal.desc`}</Typography>
           <List sx={{ listStyleType: 'disc', pl: 4 }}>
             {!!buildIds.length && (
               <ListItem sx={{ display: 'list-item' }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  All saved builds: {buildIds.length}{' '}
+                  {t`loadoutDelModal.builds`}
+                  {buildIds.length}{' '}
                   <Tooltip
                     title={
                       <Box>
@@ -112,7 +115,8 @@ export function RemoveLoadout({
             {!!buildTcIds.length && (
               <ListItem sx={{ display: 'list-item' }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  All saved TC builds: {buildTcIds.length}{' '}
+                  {t`loadoutDelModal.tcBuilds`}
+                  {buildTcIds.length}{' '}
                   <Tooltip
                     title={
                       <Box>
@@ -141,7 +145,8 @@ export function RemoveLoadout({
             {!!customMultiTargets.length && (
               <ListItem sx={{ display: 'list-item' }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  All Custom Multi-targets: {customMultiTargets.length}{' '}
+                  {t`loadoutDelModal.mTargets`}
+                  {customMultiTargets.length}{' '}
                   <Tooltip
                     title={
                       <Box>
@@ -169,24 +174,25 @@ export function RemoveLoadout({
 
             {!!Object.keys(bonusStats).length && (
               <ListItem sx={{ display: 'list-item' }}>
-                Bonus stats: {Object.keys(bonusStats).length}
+                {t`loadoutDelModal.bonus`}
+                {Object.keys(bonusStats).length}
               </ListItem>
             )}
             {!!conditionalCount && (
               <ListItem sx={{ display: 'list-item' }}>
-                Conditionals: {conditionalCount}
+                {t`loadoutDelModal.condi`}
+                {conditionalCount}
               </ListItem>
             )}
             <ListItem sx={{ display: 'list-item' }}>
-              Optimization Configuration
+              {t`loadoutDelModal.optConfig`}
             </ListItem>
 
             {!!teamIds.length && (
               <ListItem sx={{ display: 'list-item' }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                   <span>
-                    Any teams with this loadout will have this loadout removed
-                    from the team. Teams will not be deleted. Teams affected:{' '}
+                    {t`loadoutDelModal.affected`}
                     {teamIds.length}
                   </span>
 
@@ -218,14 +224,14 @@ export function RemoveLoadout({
         </CardContent>
         <CardActions sx={{ float: 'right' }}>
           <Button startIcon={<CloseIcon />} color="secondary" onClick={onHide}>
-            Cancel
+            {t`loadoutDelModal.cancel`}
           </Button>
           <Button
             startIcon={<DeleteForeverIcon />}
             color="error"
             onClick={onDeleteLoadout}
           >
-            Delete
+            {t`loadoutDelModal.delete`}
           </Button>
         </CardActions>
       </CardThemed>

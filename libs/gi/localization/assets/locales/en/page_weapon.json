@@ -20,5 +20,13 @@
     "general": "General",
     "inventory": "Inventory"
   },
-  "refinement": "Refinement <1>{{rank}}</1>"
+  "refinement": "Refinement <1>{{rank}}</1>",
+  "weaponType": {
+    "sword": "Sword",
+    "claymore": "Claymore",
+    "polearm": "Polearm",
+    "bow": "Bow",
+    "catalyst": "Catalyst"
+  },
+  "tcBuild": "TC Build"
 }

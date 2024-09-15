@@ -404,7 +404,7 @@ function LoadoutSetting({
                 <ListItemText
                   primary={
                     <Box>
-                      {buildTc.name} <SqBadge>{t`exportModal.tc`}</SqBadge>
+                      {buildTc.name} <SqBadge>{t`exportModal.tcBadge`}</SqBadge>
                     </Box>
                   }
                 />

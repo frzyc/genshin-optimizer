@@ -141,7 +141,7 @@ export function WeaponSwapCard({
   weaponTypeKey: WeaponTypeKey
   onChangeId: (id: string) => void
 }) {
-  const { t } = useTranslation('ui')
+  const { t } = useTranslation('page_weapon')
   const [show, onOpen, onClose] = useBoolState()
   return (
     <CardThemed

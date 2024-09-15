@@ -168,7 +168,7 @@ function LoadoutDisplay({
               <Typography>
                 {inTeams.length === 1
                   ? t`teamDelModal.onlyCrrTeam`
-                  : t('teamDelModal.useMltTeams', { count: inTeams.length })}
+                  : t('teamDelModal.usingMltTeams', { count: inTeams.length })}
               </Typography>
             </ColorText>
           </LoadoutHeaderContent>

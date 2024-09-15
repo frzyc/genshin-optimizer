@@ -20,7 +20,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import type { ButtonProps } from '@mui/material'
 import { Alert, Box, Button, CardContent, Grid } from '@mui/material'
 import { Suspense, useMemo, useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import BuildDropdown from '../BuildDropdown'
 import { LoadoutDropdown } from '../LoadoutDropdown'
@@ -185,7 +185,12 @@ function TeamEditor({
           <AdResponsive bgt="light" dataAdSlot="5102492054" maxHeight={400} />
         </Grid>
       </Grid>
-      <Alert severity="info">{t`teamSettings.alert.first`}</Alert>
+      <Alert severity="info">
+        <Trans t={t} i18nKey={'teamSettings.alert.first'}>
+          The first character in the team receives any "active on-field
+          character" buffs, and cannot be empty.
+        </Trans>
+      </Alert>
       <Grid container columns={{ xs: 1, md: 2, lg: 4 }} spacing={2}>
         {loadoutData.map((loadoutDatum, ind) => (
           <Grid item xs={1} key={loadoutDatum?.teamCharId ?? ind}>

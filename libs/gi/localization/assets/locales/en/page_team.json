@@ -13,7 +13,7 @@
     "importBtn": "Import",
     "error": {
       "verifi": "Data verification failed.",
-      "import": "Data Import failed. {{msg}}"
+      "import": "Data Import failed."
     }
   },
   "teamDelModal": {
@@ -21,11 +21,11 @@
     "alert": "Removing the team will remove: resonance buffs, and enemy configs stored in the team. Loadouts that are only in this team are also selected by default for deletion.",
     "delBtn": "Delete",
     "onlyCrrTeam": "Only in current team",
-    "useMltTeams": "In {{count}} teams"
+    "usingMltTeams": "In {{count}} teams"
   },
   "loadoutHeader": {
     "builds": "Builds: ",
-    "TcBuilds": "TC Builds: ",
+    "tcBuilds": "TC Builds: ",
     "mltTargets": "Custom multi-targets: ",
     "optTarget": "Optimization Target:"
   },
@@ -56,7 +56,7 @@
     "mTargets": "Mtargets to Export",
     "builds": "Builds to Export",
     "equipped": "Equipped Build",
-    "tc": "TC Build"
+    "tcBadge": "TC Build"
   },
   "enemyEditor": {
     "enemyLevel": "Enemy ",

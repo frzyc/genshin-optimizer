@@ -77,7 +77,7 @@
     "usingState": "Using"
   },
   "useTeamArts": "Use artifacts in teammates' active builds",
-  "teamUsedTc": "TC build",
+  "tcBadge": "TC build",
   "allowPartial": "Allow Partial Builds (<5 artifacts)",
   "constraintFilter": {
     "title": "Minimum Build Constraints",
@@ -134,7 +134,7 @@
     "cancel": "Cancel",
     "generateBuilds": "Generate Builds"
   },
-  "buildShowingNum": "Showing <2>{{count}}</2> build generated for <5/>.",
+  "buildShowingNum": "Showing <2>{{count}}</2> build generated for <6/>.",
   "generatedOn": "Build generated on: ",
   "selectChar": "Select a character to generate builds.",
   "clearBuildsBtn": "Clear Builds",

@@ -57,7 +57,7 @@ export function CharacterCardEquipmentRowTC({
 }: {
   weapon: ICachedWeapon
 }) {
-  const { t } = useTranslation('ui')
+  const { t } = useTranslation('page_weapon')
   return (
     <Box>
       <Grid container columns={weapon ? 6 : 5} spacing={0.5} sx={{}}>

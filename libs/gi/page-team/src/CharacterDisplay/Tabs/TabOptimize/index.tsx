@@ -796,7 +796,7 @@ export default function TabBuild() {
                       count={buildShowingCount}
                     >
                       Showing{' '}
-                      <strong>{{ count: buildShowingCount } as any}</strong>
+                      <strong>{{ count: buildShowingCount } as any}</strong>{' '}
                       build generated for{' '}
                       <CharacterName
                         characterKey={characterKey}

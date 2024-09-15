@@ -96,7 +96,7 @@ export const UseTeammateArt = memo(function UseTeammateArt({
                         <Typography>
                           <SqBadge
                             sx={{ width: '100%' }}
-                          >{t`teamUsedTc`}</SqBadge>
+                          >{t`tcBadge`}</SqBadge>
                         </Typography>
                       )}
                     </CardThemed>

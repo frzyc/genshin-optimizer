@@ -55,7 +55,7 @@ export function LoadoutHeaderContent({
         <Box sx={{ display: 'flex', justifyItems: 'center', gap: 1 }}>
           <CheckroomIcon />
           <Typography>
-            {t`loadoutHeader.TcBuilds`}
+            {t`loadoutHeader.tcBuilds`}
             <strong>{buildTcIds.length}</strong>
           </Typography>
         </Box>

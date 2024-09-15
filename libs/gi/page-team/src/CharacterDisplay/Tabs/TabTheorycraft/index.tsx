@@ -399,9 +399,17 @@ export default function TabTheorycraft() {
                   ))
                   .flatMap((value, index, array) => {
                     if (index === array.length - 2)
-                      return [value, <span key="and">, and </span>]
+                      return [
+                        value,
+                        <span key="and">{t`tabTheorycraft.optAlert.last`}</span>,
+                      ]
                     if (index === array.length - 1) return value
-                    return [value, <span key={index}>, </span>]
+                    return [
+                      value,
+                      <span
+                        key={index}
+                      >{t`tabTheorycraft.optAlert.other`}</span>,
+                    ]
                   })}
                 <Trans t={t} i18nKey="tabTheorycraft.optAlert.distribute">
                   . The solver will only distribute stats to these substats.

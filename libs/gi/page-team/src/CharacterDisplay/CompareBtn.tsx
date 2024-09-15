@@ -41,7 +41,7 @@ export default function CompareBtn({
       <span>
         {database.buildTcs.get(compareBuildTcId)?.name ?? ''}{' '}
         <SqBadge color="info" sx={{ ml: 1 }}>
-          {t`compareBtn.tc`}
+          {t`compareBtn.tcBadge`}
         </SqBadge>
       </span>
     ) : (
@@ -74,7 +74,7 @@ export default function CompareBtn({
             {selectedLabel}{' '}
             {current && (
               <SqBadge color="info" sx={{ ml: 1 }}>
-                {t`compareBtn.current`}
+                {t`compareBtn.crrBadge`}
               </SqBadge>
             )}
           </>
@@ -91,7 +91,7 @@ export default function CompareBtn({
           {t`compareBtn.equipped`}
           {buildType === 'equipped' && (
             <SqBadge color="info" sx={{ ml: 1 }}>
-              {t`compareBtn.current`}
+              {t`compareBtn.crrBadge`}
             </SqBadge>
           )}
         </MenuItem>
@@ -109,7 +109,7 @@ export default function CompareBtn({
             {database.builds.get(bId)!.name}{' '}
             {buildType === 'real' && bId === buildId && (
               <SqBadge color="info" sx={{ ml: 1 }}>
-                {t`compareBtn.current`}
+                {t`compareBtn.crrBadge`}
               </SqBadge>
             )}
           </MenuItem>
@@ -126,11 +126,11 @@ export default function CompareBtn({
           >
             {database.buildTcs.get(bTcId)?.name ?? ''}{' '}
             <SqBadge color="info" sx={{ ml: 1 }}>
-              {t`compareBtn.tc`}
+              {t`compareBtn.tcBadge`}
             </SqBadge>
             {buildType === 'tc' && bTcId === buildTcId && (
               <SqBadge color="info" sx={{ ml: 1 }}>
-                {t`compareBtn.current`}
+                {t`compareBtn.crrBadge`}
               </SqBadge>
             )}
           </MenuItem>
