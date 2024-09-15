@@ -5,63 +5,72 @@
       "0": {
         "name": "驭风的子弹",
         "fullDesc": "对指定敌方单体造成等同于布洛妮娅<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的风属性伤害。",
-        "shortDesc": "对敌方单体造成少量风属性伤害。"
+        "shortDesc": "对敌方单体造成少量风属性伤害。",
+        "tag": "单攻"
       }
     },
     "skill": {
       "0": {
         "name": "作战再部署",
         "fullDesc": "解除指定我方单体的1个负面效果，并使该目标立即行动，造成的伤害提高<orangeStrong>{{1, percent}}%</orangeStrong>，持续{{3}}回合。<br>当对自身施放该技能时，无法触发立即行动效果。",
-        "shortDesc": "<orangeStrong>解除</orangeStrong>我方单体1个<orangeStrong>负面效果</orangeStrong>，使其<orangeStrong>造成的伤害提高</orangeStrong>，并<orangeStrong>立刻行动</orangeStrong>。"
+        "shortDesc": "<orangeStrong>解除</orangeStrong>我方单体1个<orangeStrong>负面效果</orangeStrong>，使其<orangeStrong>造成的伤害提高</orangeStrong>，并<orangeStrong>立刻行动</orangeStrong>。",
+        "tag": "辅助"
       }
     },
     "ult": {
       "0": {
         "name": "贝洛伯格进行曲",
         "fullDesc": "使我方全体攻击力提高<orangeStrong>{{1, percent}}%</orangeStrong>，同时提高等同于布洛妮娅<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>暴击伤害+<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>的暴击伤害，持续{{4}}回合。",
-        "shortDesc": "使我方全体<orangeStrong>攻击力提高</orangeStrong>，<orangeStrong>暴击伤害提高</orangeStrong>。"
+        "shortDesc": "使我方全体<orangeStrong>攻击力提高</orangeStrong>，<orangeStrong>暴击伤害提高</orangeStrong>。",
+        "tag": "辅助"
       }
     },
     "talent": {
       "0": {
         "name": "先人一步",
         "fullDesc": "施放普攻后，布洛妮娅的下一次行动提前<orangeStrong>{{1, percent}}%</orangeStrong>。",
-        "shortDesc": "施放普攻后，自身下一次行动提前。"
+        "shortDesc": "施放普攻后，自身下一次行动提前。",
+        "tag": "强化"
       }
     },
     "technique": {
       "0": {
         "name": "在旗帜下",
         "fullDesc": "使用秘技后，下一次战斗开始时使我方全体攻击力提高{{1, percent}}%，持续{{2}}回合。",
-        "shortDesc": "使用秘技，下一次战斗开始时我方全体攻击力提高。"
+        "shortDesc": "使用秘技，下一次战斗开始时我方全体攻击力提高。",
+        "tag": "辅助"
       }
     },
     "overworld": {
       "0": {
         "name": "攻击",
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "号令",
         "fullDesc": "普攻的暴击率提高至100%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "阵地",
         "fullDesc": "战斗开始时，我方全体的防御力提高{{2, percent}}%，持续{{1}}回合。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "军势",
         "fullDesc": "布洛妮娅在场时，我方全体造成的伤害提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,63 +5,72 @@
       "0": {
         "name": "Tir du mistral",
         "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Bronya à un ennemi unique.",
-        "shortDesc": "Inflige des DGT de vent mineurs à un ennemi unique."
+        "shortDesc": "Inflige des DGT de vent mineurs à un ennemi unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Redéploiement de combat",
         "fullDesc": "Dissipe un malus d'un allié, lui permet d'agir immédiatement et augmente ses DGT de <orangeStrong>{{1, percent}}%</orangeStrong> pendant {{3}} tour.<br>Lorsque cette compétence est utilisée sur Bronya, elle ne peut pas agir immédiatement à nouveau.",
-        "shortDesc": "<orangeStrong>Dissipe</orangeStrong> 1 <orangeStrong>malus</orangeStrong> subi par un allié unique, <orangeStrong>augmente les DGT qu'il inflige</orangeStrong>, et lui permet d'<orangeStrong>agir immédiatement</orangeStrong>."
+        "shortDesc": "<orangeStrong>Dissipe</orangeStrong> 1 <orangeStrong>malus</orangeStrong> subi par un allié unique, <orangeStrong>augmente les DGT qu'il inflige</orangeStrong>, et lui permet d'<orangeStrong>agir immédiatement</orangeStrong>.",
+        "tag": "Soutien"
       }
     },
     "ult": {
       "0": {
         "name": "La marche de Belobog",
         "fullDesc": "Augmente l'ATQ de tous les alliés de <orangeStrong>{{1, percent}}%</orangeStrong> et augmente leurs DGT critiques d'un montant équivalent à <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> des DGT critiques de Bronya + <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> pendant {{4}} tours.",
-        "shortDesc": "Augmente l'<orangeStrong>ATQ</orangeStrong> et les <orangeStrong>DGT critiques</orangeStrong> de tous les alliés."
+        "shortDesc": "Augmente l'<orangeStrong>ATQ</orangeStrong> et les <orangeStrong>DGT critiques</orangeStrong> de tous les alliés.",
+        "tag": "Soutien"
       }
     },
     "talent": {
       "0": {
         "name": "Première de cordée",
         "fullDesc": "Après utilisation de son ATQ normale, l'action suivante de Bronya est avancée de <orangeStrong>{{1, percent}}%</orangeStrong>.",
-        "shortDesc": "Après avoir lancée l'ATQ normale, la prochaine action est avancée."
+        "shortDesc": "Après avoir lancée l'ATQ normale, la prochaine action est avancée.",
+        "tag": "Renforcement"
       }
     },
     "technique": {
       "0": {
         "name": "Bannière de commandement",
         "fullDesc": "Après utilisation de la technique de Bronya, l'ATQ de tous les alliés augmente de {{1, percent}}% pendant {{2}} tours au début du combat suivant.",
-        "shortDesc": "Après utilisation de la technique, l'ATQ de tous les alliés augmente au début du combat suivant."
+        "shortDesc": "Après utilisation de la technique, l'ATQ de tous les alliés augmente au début du combat suivant.",
+        "tag": "Soutien"
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Commandement",
         "fullDesc": "L'ATQ normale a 100 % de chances de coup critique.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "À l'épreuve du combat",
         "fullDesc": "La DÉF de tous les alliés augmente de {{2, percent}}% pendant {{1}} tours en début de combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Puissance militaire",
         "fullDesc": "Lorsque Bronya est sur le champ de bataille, les DGT de tous les alliés augmentent de {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,63 +5,72 @@
       "0": {
         "name": "如雷疾行",
         "fullDesc": "對指定敵方單體造成等同於阿蘭<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性傷害。",
-        "shortDesc": "對敵方單體造成少量雷屬性傷害。"
+        "shortDesc": "對敵方單體造成少量雷屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "禁錮解除",
         "fullDesc": "消耗等同於阿蘭生命上限{{1, percent}}%的生命值對指定敵方單體造成等同於阿蘭<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的雷屬性傷害。若現有生命值不足，則施放戰技時阿蘭的現有生命值降至1點。",
-        "shortDesc": "消耗自身部分生命值，對敵方單體造成雷屬性傷害。"
+        "shortDesc": "消耗自身部分生命值，對敵方單體造成雷屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "ult": {
       "0": {
         "name": "狂者制裁",
         "fullDesc": "對指定敵方單體造成等同於阿蘭<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性傷害，同時對其相鄰目標造成等同於阿蘭<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的雷屬性傷害。",
-        "shortDesc": "對敵方單體造成大量雷屬性傷害，對相鄰目標造成雷屬性傷害。"
+        "shortDesc": "對敵方單體造成大量雷屬性傷害，對相鄰目標造成雷屬性傷害。",
+        "tag": "擴散"
       }
     },
     "talent": {
       "0": {
         "name": "至痛至怒",
         "fullDesc": "根據阿蘭目前損失的生命值百分比獲得傷害加成，最多使阿蘭造成的傷害提高<orangeStrong>{{1, percent}}%</orangeStrong>。",
-        "shortDesc": "<orangeStrong>根據</orangeStrong>自身<orangeStrong>目前已損失的生命值百分比提高傷害</orangeStrong>。"
+        "shortDesc": "<orangeStrong>根據</orangeStrong>自身<orangeStrong>目前已損失的生命值百分比提高傷害</orangeStrong>。",
+        "tag": "強化"
       }
     },
     "technique": {
       "0": {
         "name": "極速收割",
         "fullDesc": "立即攻擊敵人，進入戰鬥後對敵方全體造成等同於阿蘭{{1, percent}}%攻擊力的雷屬性傷害。",
-        "shortDesc": "攻擊敵人，進入戰鬥後對敵方全體造成少量雷屬性傷害。"
+        "shortDesc": "攻擊敵人，進入戰鬥後對敵方全體造成少量雷屬性傷害。",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "甦生",
         "fullDesc": "消滅敵方目標時，若現有生命值百分比小於等於{{1, percent}}%，則立即回復等同於自身生命上限{{2, percent}}%的生命值。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "堅忍",
         "fullDesc": "抵抗持續傷害類負面狀態的機率提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "抗禦",
         "fullDesc": "進入戰鬥時，若現有生命值百分比小於等於{{1, percent}}%，則阿蘭可以抵抗除持續傷害外的所有傷害。當阿蘭受到攻擊後，該效果解除。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

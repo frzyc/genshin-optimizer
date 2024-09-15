@@ -5,63 +5,72 @@
       "0": {
         "name": "Pique scindemara",
         "fullDesc": "Inflige des DGT quantiques à hauteur de <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Xueyi à une cible unique.",
-        "shortDesc": "Inflige des DGT quantiques mineurs à un ennemi unique."
+        "shortDesc": "Inflige des DGT quantiques mineurs à un ennemi unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Éradication des péchés",
         "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Xueyi à un ennemi unique et des DGT quantiques équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de son ATQ aux ennemis adjacents.",
-        "shortDesc": "Inflige des DGT quantiques à un ennemi unique et des DGT quantiques mineurs aux ennemis adjacents."
+        "shortDesc": "Inflige des DGT quantiques à un ennemi unique et des DGT quantiques mineurs aux ennemis adjacents.",
+        "tag": "Propagation"
       }
     },
     "ult": {
       "0": {
         "name": "Châtiment divin",
         "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Xueyi à un ennemi unique. Cette attaque ignore les types de faiblesse et réduit la robustesse de la cible. L'effet de la Rupture de faiblesse quantique se déclenche en cas de Rupture de faiblesse.<br>Plus la robustesse est faible, plus les DGT infligés par cette attaque sont élevés, jusqu'à un maximum de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.",
-        "shortDesc": "Inflige des DGT quantiques massifs à un ennemi. Cette attaque <orangeStrong>ignore les types de faiblesse</orangeStrong> et réduit la robustesse de la cible. Plus la robustesse de l'ennemi est réduite, plus les DGT sont élevés."
+        "shortDesc": "Inflige des DGT quantiques massifs à un ennemi. Cette attaque <orangeStrong>ignore les types de faiblesse</orangeStrong> et réduit la robustesse de la cible. Plus la robustesse de l'ennemi est réduite, plus les DGT sont élevés.",
+        "tag": "Cible unique"
       }
     },
     "talent": {
       "0": {
         "name": "Rétribution karmique",
         "fullDesc": "Lorsque les attaques de Xueyi réduisent la robustesse ennemie, elle cumule du Karma. Plus la robustesse est réduite, plus elle gagne de cumuls de Karma, avec un maximum de {{1}} cumuls.<br>Lorsque les alliés de Xueyi réduisent la robustesse ennemie avec des attaques, Xueyi gagne {{3}} cumul de Karma.<br>Lorsque le nombre de cumuls de Karma atteint son maximum, elle consomme tous les cumuls de Karma et déclenche immédiatement une attaque de suivi, qui inflige des DGT à 3 reprises. Chaque instance de DGT inflige des DGT quantiques équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Xueyi à une cible aléatoire unique. Cette attaque de suivi ne permet pas d'accumuler de Karma.",
-        "shortDesc": "Lorsque Xueyi ou ses alliés réduisent la robustesse des ennemis avec des attaques, Xueyi obtient des cumuls de Karma. Lorsque le nombre de cumuls de Karma atteint son maximum, elle <orangeStrong>déclenche immédiatement une attaque de suivi</orangeStrong> qui inflige des DGT quantiques mineurs à une cible ennemie unique, rebondissant 3 fois et consommant tout le Karma."
+        "shortDesc": "Lorsque Xueyi ou ses alliés réduisent la robustesse des ennemis avec des attaques, Xueyi obtient des cumuls de Karma. Lorsque le nombre de cumuls de Karma atteint son maximum, elle <orangeStrong>déclenche immédiatement une attaque de suivi</orangeStrong> qui inflige des DGT quantiques mineurs à une cible ennemie unique, rebondissant 3 fois et consommant tout le Karma.",
+        "tag": "Rebond"
       }
     },
     "technique": {
       "0": {
         "name": "Exécution sommaire",
         "fullDesc": "Engage immédiatement le combat contre les ennemis. Inflige des DGT quantiques équivalents à {{1, percent}}% de l'ATQ de Xueyi à tous les ennemis après être entré en combat.",
-        "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT quantiques mineurs à tous les ennemis après être entré en combat."
+        "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT quantiques mineurs à tous les ennemis après être entré en combat.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Présage clairvoyant",
         "fullDesc": "Augmente les DGT infligés par le personnage à hauteur de {{1, percent}}% de son effet de Rupture, jusqu'à une augmentation maximale de DGT de {{2, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Rouages du destin",
         "fullDesc": "L'ultime inflige {{2, percent}}% de DGT supplémentaires aux cibles ennemies qui ont {{1, percent}}% ou plus de leur robustesse max.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Intelligence robotique",
         "fullDesc": "Xueyi enregistre le nombre de cumuls de Karma qui dépassent la limite maximale de cumuls, jusqu'à un maximum de {{1}} cumuls. Lorsque le talent de Xueyi est déclenché, elle gagne le nombre correspondant de cumuls de Karma enregistrés.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

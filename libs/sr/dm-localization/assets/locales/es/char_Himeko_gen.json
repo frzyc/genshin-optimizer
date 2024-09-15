@@ -5,63 +5,72 @@
       "0": {
         "name": "Afinación de sierra",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Himeko como Daño de Fuego a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Detonación fundida",
         "fullDesc": "Himeko inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño de Fuego a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño de Fuego a los enemigos adyacentes.",
-        "shortDesc": "Inflige Daño de Fuego a un enemigo y una pequeña cantidad de Daño de Fuego a los enemigos adyacentes."
+        "shortDesc": "Inflige Daño de Fuego a un enemigo y una pequeña cantidad de Daño de Fuego a los enemigos adyacentes.",
+        "tag": "Ráfaga"
       }
     },
     "ult": {
       "0": {
         "name": "Llamas celestiales",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Himeko como Daño de Fuego a todos los enemigos. Por cada enemigo eliminado, Himeko recupera {{2}} pts. de energía adicionales.",
-        "shortDesc": "Inflige Daño de Fuego a todos los enemigos y recupera energía si elimina a alguno."
+        "shortDesc": "Inflige Daño de Fuego a todos los enemigos y recupera energía si elimina a alguno.",
+        "tag": "ATQ AdE"
       }
     },
     "talent": {
       "0": {
         "name": "Carrera de la victoria",
         "fullDesc": "Cuando se rompe la Debilidad de un enemigo, Himeko consigue una carga (hasta un máximo de {{2}}).<br>Después de que un aliado ataque, si Himeko ha acumulado el máximo de cargas, lanza inmediatamente un ataque adicional que inflige a todos los enemigos un Daño de Fuego equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Himeko y consume todas sus cargas.<br>Al comenzar la batalla obtiene 1 carga.",
-        "shortDesc": "Cuando se rompe la Debilidad del enemigo, consigue una carga.<br>Después de que un aliado ataque, si ha acumulado el máximo de cargas, <orangeStrong>lanza inmediatamente un ataque adicional</orangeStrong> que inflige Daño de Fuego a <orangeStrong>todos los enemigos</orangeStrong> y consume todas sus cargas.<br>Al comenzar la batalla obtiene 1 carga."
+        "shortDesc": "Cuando se rompe la Debilidad del enemigo, consigue una carga.<br>Después de que un aliado ataque, si ha acumulado el máximo de cargas, <orangeStrong>lanza inmediatamente un ataque adicional</orangeStrong> que inflige Daño de Fuego a <orangeStrong>todos los enemigos</orangeStrong> y consume todas sus cargas.<br>Al comenzar la batalla obtiene 1 carga.",
+        "tag": "ATQ AdE"
       }
     },
     "technique": {
       "0": {
         "name": "Combustión incompleta",
         "fullDesc": "Tras usar la técnica, crea una zona especial que dura {{4}} s. Al entrar en combate con enemigos dentro de la zona especial, tiene una probabilidad base del {{1, percent}}% de que los objetivos enemigos reciban un {{2, percent}}% más de Daño de Fuego durante {{3}} turnos. Solo puede haber 1 zona especial creada por los aliados a la vez.",
-        "shortDesc": "Crea una zona especial. Al entrar en combate con enemigos en la zona especial, hay una gran probabilidad de que <orangeStrong>el Daño de Fuego que reciben los enemigos aumente</orangeStrong>."
+        "shortDesc": "Crea una zona especial. Al entrar en combate con enemigos en la zona especial, hay una gran probabilidad de que <orangeStrong>el Daño de Fuego que reciben los enemigos aumente</orangeStrong>.",
+        "tag": "Alteración"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Fuego estelar",
         "fullDesc": "Al lanzar un ataque, hay un {{1, percent}}% de probabilidad base de infligir Quemadura a los objetivos durante {{2}} turnos.<br>Los enemigos afectados por Quemadura reciben al comienzo de cada turno un Daño de Fuego con el tiempo equivalente al {{3, percent}}% del ATQ de Himeko.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Magma",
         "fullDesc": "El daño que la habilidad básica inflige a los enemigos afectados por Quemadura aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "El estándar",
         "fullDesc": "Si el porcentaje de PV es igual o superior al {{1, percent}}%, la Prob. CRIT aumenta en un {{2, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

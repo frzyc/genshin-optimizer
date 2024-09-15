@@ -5,63 +5,72 @@
       "0": {
         "name": "Tia Quang Phổ",
         "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Asta.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Bão Sao Băng",
         "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Asta, đồng thời gây thêm 4 lần sát thương. Mỗi lần sát thương gây Sát Thương Hỏa cho kẻ địch ngẫu nhiên tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Asta.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch, tổng cộng Nảy Bật 5 lần."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch, tổng cộng Nảy Bật 5 lần.",
+        "tag": "Nảy Bật"
       }
     },
     "ult": {
       "0": {
         "name": "Lời Cầu Chúc Astral",
         "fullDesc": "Khiến Tốc Độ của toàn phe ta tăng <orangeStrong>{{1}}</orangeStrong> điểm, duy trì {{2}} hiệp.",
-        "shortDesc": "<orangeStrong>Tăng tốc</orangeStrong> cho toàn bộ phe ta."
+        "shortDesc": "<orangeStrong>Tăng tốc</orangeStrong> cho toàn bộ phe ta.",
+        "tag": "Hỗ Trợ"
       }
     },
     "talent": {
       "0": {
         "name": "Chiêm Tinh Học",
         "fullDesc": "Mỗi khi đánh trúng 1 kẻ địch khác nhau sẽ nhận được 1 tầng Tụ Năng, nếu điểm yếu của mục tiêu địch bị tấn công là thuộc tính Hỏa thì sẽ nhận thêm 1 tầng Tụ Năng.<br>Asta cứ có 1 tầng Tụ Năng, sẽ khiến toàn bộ phe ta tăng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Tấn Công, hiệu ứng này tối đa cộng dồn {{2}} tầng.<br>Bắt đầu từ hiệp thứ 2 của bản thân, khi mỗi hiệp bắt đầu, số tầng Tụ Năng của Asta sẽ giảm {{3}} tầng.",
-        "shortDesc": "Cứ đánh trúng 1 kẻ địch khác nhau sẽ nhận 1 tầng Tụ Năng, tối đa cộng dồn 5 tầng. Mỗi tầng Tụ Năng tăng tấn công của toàn bộ phe ta. Khi bắt đầu hiệp của bản thân sẽ giảm số tầng Tụ Năng."
+        "shortDesc": "Cứ đánh trúng 1 kẻ địch khác nhau sẽ nhận 1 tầng Tụ Năng, tối đa cộng dồn 5 tầng. Mỗi tầng Tụ Năng tăng tấn công của toàn bộ phe ta. Khi bắt đầu hiệp của bản thân sẽ giảm số tầng Tụ Năng.",
+        "tag": "Hỗ Trợ"
       }
     },
     "technique": {
       "0": {
         "name": "Ánh Chớp Diệu Kỳ",
         "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu, gây Sát Thương Hỏa cho toàn bộ kẻ địch tương đương {{1, percent}}% Tấn Công của Asta.",
-        "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây lượng nhỏ sát thương cho toàn bộ địch."
+        "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây lượng nhỏ sát thương cho toàn bộ địch.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Tia Lửa",
         "fullDesc": "Khi thi triển tấn công thường có {{1, percent}}% xác suất cơ bản khiến kẻ địch rơi vào trạng thái Thiêu Đốt, duy trì {{2}} hiệp.<br>Trong trạng thái Thiêu Đốt, khi bắt đầu mỗi hiệp, kẻ địch chịu Sát Thương Hỏa duy trì tương đương {{3, percent}}% Tấn Công Thường của Asta.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Đốt Cháy",
         "fullDesc": "Khi Asta trong trận, Sát Thương Hỏa của toàn bộ phe ta tăng {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Chòm Sao",
         "fullDesc": "Mỗi khi Asta có 1 tầng Tụ Năng, Phòng Thủ của bản thân sẽ tăng {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

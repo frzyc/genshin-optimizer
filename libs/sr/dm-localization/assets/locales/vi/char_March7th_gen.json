@@ -5,63 +5,72 @@
       "0": {
         "name": "Mũi Tên Giá Lạnh",
         "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của March 7th.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Băng cho 1 kẻ địch."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Băng cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Dễ Thương Là Chính Nghĩa",
         "fullDesc": "Cung cấp cho 1 đồng đội tấm khiên có thể triệt tiêu lượng sát thương bằng <orangeStrong>{{1, percent}}%</orangeStrong> Phòng Thủ của March 7th +<orangeStrong>{{4}}</orangeStrong>, duy trì {{2}} hiệp.<br>Nếu phần trăm HP hiện tại của mục tiêu này lớn hơn hoặc bằng {{3, percent}}%, thì xác suất bị kẻ địch tấn công sẽ tăng cao.",
-        "shortDesc": "<orangeStrong>Thi triển Khiên</orangeStrong> cho 1 đồng đội."
+        "shortDesc": "<orangeStrong>Thi triển Khiên</orangeStrong> cho 1 đồng đội.",
+        "tag": "Phòng Thủ"
       }
     },
     "ult": {
       "0": {
         "name": "Mưa Tên Băng Giá",
         "fullDesc": "Gây Sát Thương Băng cho toàn bộ kẻ địch tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của March 7th. Kẻ địch bị tấn công có {{2, percent}}% xác suất cơ bản bị Đóng Băng, duy trì {{3}} hiệp.<br>Trong trạng thái Đóng Băng, kẻ địch không thể hành động, đồng thời mỗi hiệp đấu bắt đầu sẽ chịu lượng sát thương kèm theo thuộc tính Băng bằng <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công của March 7th.",
-        "shortDesc": "Gây Sát Thương Băng cho <orangeStrong>toàn bộ</orangeStrong> kẻ địch, có <orangeStrong>xác suất thi triển Đóng Băng</orangeStrong>."
+        "shortDesc": "Gây Sát Thương Băng cho <orangeStrong>toàn bộ</orangeStrong> kẻ địch, có <orangeStrong>xác suất thi triển Đóng Băng</orangeStrong>.",
+        "tag": "Đánh Lan"
       }
     },
     "talent": {
       "0": {
         "name": "Đặc Quyền Thiếu Nữ",
         "fullDesc": "Sau khi mục tiêu phe ta có Khiên bị mục tiêu địch tấn công, March 7th sẽ lập tức Phản Kích lại kẻ tấn công, gây Sát Thương Băng tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của March 7th. Hiệu ứng này mỗi hiệp có thể kích hoạt {{2}} lần.",
-        "shortDesc": "Sau khi mục tiêu có Khiên của phe ta bị kẻ địch tấn công, March 7th <orangeStrong>lập tức phản kích lên kẻ địch đó</orangeStrong>, gây lượng nhỏ Sát Thương Băng."
+        "shortDesc": "Sau khi mục tiêu có Khiên của phe ta bị kẻ địch tấn công, March 7th <orangeStrong>lập tức phản kích lên kẻ địch đó</orangeStrong>, gây lượng nhỏ Sát Thương Băng.",
+        "tag": "Đánh Đơn"
       }
     },
     "technique": {
       "0": {
         "name": "Khoảnh Khắc Đóng Băng",
         "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu có {{1, percent}}% xác suất cơ bản khiến 1 kẻ địch ngẫu nhiên bị Đóng Băng, duy trì {{2}} hiệp.<br>Trong trạng thái Đóng Băng, kẻ địch không thể hành động, đồng thời mỗi hiệp đấu bắt đầu sẽ chịu lượng Sát Thương Băng kèm theo bằng {{3, percent}}% Tấn Công của March 7th.",
-        "shortDesc": "Tấn công kẻ địch, sau khi vào trận có xác suất lớn khiến 1 kẻ địch ngẫu nhiên rơi vào trạng thái Đóng Băng."
+        "shortDesc": "Tấn công kẻ địch, sau khi vào trận có xác suất lớn khiến 1 kẻ địch ngẫu nhiên rơi vào trạng thái Đóng Băng.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Thuần Khiết",
         "fullDesc": "Khi thi triển Chiến Kỹ, giải trừ 1 Hiệu Ứng Xấu của 1 đồng đội chỉ định.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Củng Cố",
         "fullDesc": "Thời gian duy trì của khiên tạo bởi Chiến Kỹ tăng {{1}} hiệp.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Lời Nguyền Băng Giá",
         "fullDesc": "Khi thi triển Tuyệt Kỹ, xác suất cơ bản đóng băng kẻ địch tăng {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

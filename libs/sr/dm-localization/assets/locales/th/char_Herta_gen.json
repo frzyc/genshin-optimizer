@@ -5,63 +5,72 @@
       "0": {
         "name": "What Are You Looking At?",
         "fullDesc": "สร้าง DMG น้ำแข็ง <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Herta แก่ศัตรูที่กำหนดหนึ่งตัว",
-        "shortDesc": "สร้าง DMG น้ำแข็งเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว"
+        "shortDesc": "สร้าง DMG น้ำแข็งเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว",
+        "tag": "โจมตีเดี่ยว"
       }
     },
     "skill": {
       "0": {
         "name": "One-Time Offer",
         "fullDesc": "สร้าง DMG น้ำแข็ง <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Herta แก่ศัตรูทั้งหมด หากเปอร์เซ็นต์ HP ปัจจุบันของศัตรูเป้าหมายเท่ากับหรือมากกว่า {{2, percent}}% จะสร้าง DMG เพิ่มขึ้น {{3, percent}}% ให้กับเป้าหมายดังกล่าว",
-        "shortDesc": "สร้าง DMG น้ำแข็งเล็กน้อยแก่ฝ่ายศัตรูทั้งหมด และสร้าง DMG แก่เป้าหมายที่มี HP ค่อนข้างสูงเพิ่มขึ้น"
+        "shortDesc": "สร้าง DMG น้ำแข็งเล็กน้อยแก่ฝ่ายศัตรูทั้งหมด และสร้าง DMG แก่เป้าหมายที่มี HP ค่อนข้างสูงเพิ่มขึ้น",
+        "tag": "โจมตีหมู่"
       }
     },
     "ult": {
       "0": {
         "name": "It's Magic, I Added Some Magic",
         "fullDesc": "สร้าง DMG น้ำแข็ง <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Herta แก่ศัตรูทั้งหมด",
-        "shortDesc": "สร้าง DMG น้ำแข็งแก่ฝ่ายศัตรูทั้งหมด"
+        "shortDesc": "สร้าง DMG น้ำแข็งแก่ฝ่ายศัตรูทั้งหมด",
+        "tag": "โจมตีหมู่"
       }
     },
     "talent": {
       "0": {
         "name": "Fine, I'll Do It Myself",
         "fullDesc": "เมื่อการโจมตีของเป้าหมายใดก็ได้ในฝ่ายตัวเอง ทำให้เปอร์เซ็นต์ HP ปัจจุบันของศัตรูเป้าหมายเท่ากับหรือน้อยกว่า {{1, percent}}% Herta จะโจมตีต่อเนื่อง และสร้าง DMG น้ำแข็ง <orangeStrong>{{2, percent}}%</orangeStrong> ของ ATK ของ Herta แก่ศัตรูทั้งหมด",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "โจมตีหมู่"
       }
     },
     "technique": {
       "0": {
         "name": "It Can Still Be Optimized",
         "fullDesc": "หลังจากที่ใช้เทคนิคแล้ว เมื่อเริ่มการต่อสู้ครั้งต่อไป ATK ของ Herta จะเพิ่มขึ้น {{1, percent}}% เป็นเวลา {{2}} เทิร์น",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "เสริมพลัง"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Efficiency",
         "fullDesc": "เมื่อปล่อยสกิลต่อสู้ จะสร้างเอฟเฟกต์เพิ่ม DMG เพิ่มเติมแก่ศัตรูเป้าหมาย {{1, percent}}%",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Puppet",
         "fullDesc": "โอกาสต้านทานสถานะ Debuff ประเภทควบคุมเพิ่มขึ้น {{1, percent}}%",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Icing",
         "fullDesc": "เมื่อปล่อยท่าไม้ตาย จะสร้าง DMG แก่ศัตรูที่ติดสถานะแช่แข็งเพิ่มขึ้น {{1, percent}}%",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

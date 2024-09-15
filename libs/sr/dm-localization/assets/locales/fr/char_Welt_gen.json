@@ -5,63 +5,72 @@
       "0": {
         "name": "Suppression de la gravité",
         "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Welt à un ennemi unique.",
-        "shortDesc": "Inflige des DGT imaginaires mineurs à un ennemi unique."
+        "shortDesc": "Inflige des DGT imaginaires mineurs à un ennemi unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Frontière du vide",
         "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Welt à un ennemi unique et inflige des DGT 2 fois supplémentaires, infligeant à chaque fois des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Welt à un ennemi aléatoire. Les attaques qui touchent un ennemi ont <orangeStrong>{{2, percent}}%</orangeStrong> de chances de base de réduire sa VIT de {{3, percent}}% pendant {{4}} tours.",
-        "shortDesc": "Inflige des DGT imaginaires mineurs à un ennemi. Cette attaque peut rebondir 3 fois et a une chance de <orangeStrong>ralentir</orangeStrong> les ennemis touchés."
+        "shortDesc": "Inflige des DGT imaginaires mineurs à un ennemi. Cette attaque peut rebondir 3 fois et a une chance de <orangeStrong>ralentir</orangeStrong> les ennemis touchés.",
+        "tag": "Rebond"
       }
     },
     "ult": {
       "0": {
         "name": "Trou noir synthétique",
         "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Welt à tous les ennemis, avec {{3, percent}}% de chances de base d'emprisonner les ennemis touchés pendant 1 tour.<br>Les ennemis emprisonnés voient leurs actions retardées de <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> et leur VIT réduite de {{4, percent}}%.",
-        "shortDesc": "Inflige des DGT imaginaires à tous les ennemis, avec <orangeStrong>de fortes chances de les emprisonner</orangeStrong>."
+        "shortDesc": "Inflige des DGT imaginaires à tous les ennemis, avec <orangeStrong>de fortes chances de les emprisonner</orangeStrong>.",
+        "tag": "ZdE"
       }
     },
     "talent": {
       "0": {
         "name": "Distorsion temporelle",
         "fullDesc": "Lorsqu'il touche un ennemi qui est ralenti, Welt lui inflige des DGT imaginaires additionnels équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de son ATQ.",
-        "shortDesc": "Après avoir attaqué des ennemis ralentis, <orangeStrong>inflige des DGT additionnels imaginaires mineurs</orangeStrong>."
+        "shortDesc": "Après avoir attaqué des ennemis ralentis, <orangeStrong>inflige des DGT additionnels imaginaires mineurs</orangeStrong>.",
+        "tag": "Renforcement"
       }
     },
     "technique": {
       "0": {
         "name": "Emprisonnement gravitationnel",
         "fullDesc": "Crée une dimension spéciale qui dure {{4}} secondes. Les ennemis dans cette dimension spéciale voient leur vitesse de déplacement réduite de {{5, percent}}%. Il y a {{1, percent}}% de chances de base d'emprisonner les ennemis pour 1 tour après être entré en combat avec des ennemis dans la dimension spéciale.<br>Les ennemis emprisonnés voient leur action retardée de {{2, percent}}% et leur VIT réduite de {{3, percent}}%. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
-        "shortDesc": "Crée une dimension spéciale. La vitesse de déplacement des ennemis à l'intérieur de la dimension est réduite. Il y a de <orangeStrong>fortes chances d'infliger Emprisonné aux ennemis</orangeStrong> lorsque le combat est engagé avec des ennemis de la dimension."
+        "shortDesc": "Crée une dimension spéciale. La vitesse de déplacement des ennemis à l'intérieur de la dimension est réduite. Il y a de <orangeStrong>fortes chances d'infliger Emprisonné aux ennemis</orangeStrong> lorsque le combat est engagé avec des ennemis de la dimension.",
+        "tag": "Incapacitation"
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Acharnement",
         "fullDesc": "Il y a {{1, percent}}% de chances de base d'augmenter les DGT subis par les cibles de {{2, percent}}% pendant {{3}} tours lors de l'utilisation de l'ultime.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Jugement",
         "fullDesc": "Régénère {{1}} points d'énergie supplémentaires lorsque le personnage utilise son ultime.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Châtiment",
         "fullDesc": "Inflige {{1, percent}}% de DGT supplémentaires aux ennemis qui subissent une Rupture de faiblesse.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

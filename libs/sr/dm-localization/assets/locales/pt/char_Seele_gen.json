@@ -5,63 +5,72 @@
       "0": {
         "name": "Agressão",
         "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Seele a um único inimigo.",
-        "shortDesc": "Causa Dano Quântico leve a um único inimigo."
+        "shortDesc": "Causa Dano Quântico leve a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Lâmina Embainhada",
         "fullDesc": "Aumenta a VEL de Seele em {{2, percent}}% por {{3}} rodada(s) e causa Dano Quântico equivalente a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Seele a um inimigo.",
-        "shortDesc": "Causa Dano Quântico a um único inimigo e aumenta a VEL."
+        "shortDesc": "Causa Dano Quântico a um único inimigo e aumenta a VEL.",
+        "tag": "Alvo Único"
       }
     },
     "ult": {
       "0": {
         "name": "Enxurrada de Borboletas",
         "fullDesc": "Seele entra no modo melhorado e causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ dela a um único inimigo.",
-        "shortDesc": "Entra no <orangeStrong>modo melhorado</orangeStrong> e causa Dano Quântico massivo a um único inimigo."
+        "shortDesc": "Entra no <orangeStrong>modo melhorado</orangeStrong> e causa Dano Quântico massivo a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "talent": {
       "0": {
         "name": "Ressurgimento",
         "fullDesc": "Entra no modo melhorado ao derrotar um inimigo com ATQ Básico, Perícia ou Perícia Suprema, e recebe uma rodada extra. Enquanto estiver nesse modo, o Dano dos ataques de Seele aumenta em <orangeStrong>{{1, percent}}%</orangeStrong> por {{2}} rodada(s).<br>Inimigos derrotados durante a rodada extra concedida pelo efeito de \"Ressurgimento\" não ativarão outro \"Ressurgimento\".",
-        "shortDesc": "Usa ATQ Básico, Perícia ou Perícia Suprema para <orangeStrong>derrotar inimigos</orangeStrong>, ganha <orangeStrong>rodadas extras, e entra no modo melhorado</orangeStrong>. Quando estiver no modo melhorado, o Dano causado é aumentado."
+        "shortDesc": "Usa ATQ Básico, Perícia ou Perícia Suprema para <orangeStrong>derrotar inimigos</orangeStrong>, ganha <orangeStrong>rodadas extras, e entra no modo melhorado</orangeStrong>. Quando estiver no modo melhorado, o Dano causado é aumentado.",
+        "tag": "Aprimoramento"
       }
     },
     "technique": {
       "0": {
         "name": "Ilusão Factícia",
         "fullDesc": "Após usar a sua Técnica, Seele ganha Furtividade por {{1}}s. Enquanto o efeito de Furtividade estiver ativo, Seele não pode ser detectada por inimigos. Ao entrar em uma batalha atacando inimigos, Seele entrará no modo melhorado imediatamente.",
-        "shortDesc": "Entra no modo de <orangeStrong>Furtividade</orangeStrong>. Após atacar um inimigo e entrar em batalha, entra no <orangeStrong>modo melhorado</orangeStrong>."
+        "shortDesc": "Entra no modo de <orangeStrong>Furtividade</orangeStrong>. Após atacar um inimigo e entrar em batalha, entra no <orangeStrong>modo melhorado</orangeStrong>.",
+        "tag": "Aprimoramento"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Sombra Noturna",
         "fullDesc": "Quando os PV atuais forem iguais a {{1, percent}}% ou inferiores, reduz a chance de ser atacada por inimigos.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Laceração",
         "fullDesc": "Enquanto Seele estiver com Melhoria, a PEN de RES a Dano Quântico dela aumenta em {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Ondulação",
         "fullDesc": "Após usar um ATQ Básico, a próxima ação de Seele será Avançada Adiante em {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

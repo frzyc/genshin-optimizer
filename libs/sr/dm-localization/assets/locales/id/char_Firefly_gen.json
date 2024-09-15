@@ -5,73 +5,84 @@
       "0": {
         "name": "Order: Flare Propulsion",
         "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK SAM pada 1 musuh yang ditargetkan.",
-        "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       },
       "1": {
         "name": "Fyrefly Type-IV: Pyrogenic Decimation",
         "fullDesc": "Memulihkan HP sebesar {{2, percent}}% Max HP SAM. Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK SAM pada 1 musuh yang ditargetkan.",
-        "shortDesc": "Memulihkan sebagian HP diri sendiri dan mengakibatkan Fire DMG pada 1 musuh."
+        "shortDesc": "Memulihkan sebagian HP diri sendiri dan mengakibatkan Fire DMG pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Order: Aerial Bombardment",
         "fullDesc": "Mengonsumsi HP sebesar {{2, percent}}% Max HP SAM dan memulihkan Energy dalam jumlah tetap sebesar <orangeStrong>{{3, percent}}%</orangeStrong> dari Max Energy SAM, serta mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK SAM pada 1 musuh yang ditargetkan. Jika HP saat ini tidak cukup, maka HP SAM saat ini akan berkurang hingga 1 saat melancarkan Skill ini. Membuat aksi SAM yang berikutnya didahulukan sebesar {{4, percent}}%.",
-        "shortDesc": "Mengonsumsi sebagian HP diri sendiri dan memulihkan Energy, serta mengakibatkan Fire DMG pada 1 musuh. Membuat aksi dirinya yang berikutnya didahulukan."
+        "shortDesc": "Mengonsumsi sebagian HP diri sendiri dan memulihkan Energy, serta mengakibatkan Fire DMG pada 1 musuh. Membuat aksi dirinya yang berikutnya didahulukan.",
+        "tag": "Single Target"
       },
       "1": {
         "name": "Fyrefly Type-IV: Deathstar Overload",
         "fullDesc": "Memulihkan HP sebesar {{3, percent}}% Max HP SAM. Menambahkan Fire Weakness pada 1 musuh yang ditargetkan, berlangsung selama {{4}} giliran. Mengakibatkan Fire DMG sebesar ({{5, fixed(fixed: 1)}} × Break Effect + <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>) ATK SAM pada target tersebut, dan di saat bersamaan mengakibatkan Fire DMG sebesar ({{6, fixed(fixed: 1)}} × Break Effect + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>) ATK SAM pada musuh di sekitar target. Maksimal menghitung hingga {{7, percent}}% Break Effect.",
-        "shortDesc": "Memulihkan sebagian HP diri sendiri, <orangeStrong>menambahkan Fire Weakness</orangeStrong> pada 1 musuh, serta mengakibatkan Fire DMG dalam jumlah besar padanya dan mengakibatkan Fire DMG pada target di sekitarnya."
+        "shortDesc": "Memulihkan sebagian HP diri sendiri, <orangeStrong>menambahkan Fire Weakness</orangeStrong> pada 1 musuh, serta mengakibatkan Fire DMG dalam jumlah besar padanya dan mengakibatkan Fire DMG pada target di sekitarnya.",
+        "tag": "Blast"
       }
     },
     "ult": {
       "0": {
         "name": "Fyrefly Type-IV: Complete Combustion",
         "fullDesc": "Memasuki status \"Complete Combustion\", mendahulukan aksi diri sendiri sebesar 100%, serta memperoleh Enhanced Basic Attack dan Enhanced Skill. Saat dalam status \"Complete Combustion\", SPD meningkat <orangeStrong>{{3}}</orangeStrong>. Selain itu, saat melancarkan Enhanced Basic Attack atau Enhanced Skill, Weakness Break Efficiency dirinya meningkat {{2, percent}}%, dan Break DMG yang diterima target musuh (yang diakibatkan SAM) meningkat <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, berlangsung hingga serangan kali ini berakhir.<br>Hitung mundur \"Complete Combustion\" akan muncul di Susunan Aksi, dan status \"Complete Combustion\" SAM akan dihapus saat giliran hitung mundur dimulai. Hitung mundur memiliki SPD tetap sebesar {{4}}.<br>SAM yang berstatus \"Complete Combustion\" tidak dapat melancarkan Ultimate.",
-        "shortDesc": "Memasuki status \"Complete Combustion\", <orangeStrong>mendahulukan aksi diri sendiri sebesar <unbreak>100%</orangeStrong></color>, memperoleh <orangeStrong>Enhanced Basic Attack</orangeStrong> dan <orangeStrong>Enhanced Skill</orangeStrong>, serta meningkatkan <orangeStrong>SPD dirinya, Weakness Break Efficiency dirinya, dan Break DMG yang diterima target musuh</orangeStrong>, berlangsung hingga hitung mundur berakhir."
+        "shortDesc": "Memasuki status \"Complete Combustion\", <orangeStrong>mendahulukan aksi diri sendiri sebesar <unbreak>100%</orangeStrong></color>, memperoleh <orangeStrong>Enhanced Basic Attack</orangeStrong> dan <orangeStrong>Enhanced Skill</orangeStrong>, serta meningkatkan <orangeStrong>SPD dirinya, Weakness Break Efficiency dirinya, dan Break DMG yang diterima target musuh</orangeStrong>, berlangsung hingga hitung mundur berakhir.",
+        "tag": "Enhance"
       }
     },
     "talent": {
       "0": {
         "name": "Chrysalid Pyronexus",
         "fullDesc": "Semakin rendah HP, maka semakin rendah DMG yang diterima. Saat HP kurang dari atau sama dengan {{3, percent}}%, maka efek pengurangan DMG akan mencapai nilai maksimum, maksimal berkurang hingga <orangeStrong>{{1, percent}}%</orangeStrong>. Saat dalam status \"Complete Combustion\", efek pengurangan DMG ini akan selalu dalam nilai maksimal, dan Effect RES akan meningkat <orangeStrong>{{4, percent}}%</orangeStrong>.<br>Saat pertempuran dimulai, jika Energy kurang dari {{2, percent}}%, maka akan memulihkan Energy hingga {{2, percent}}%. Saat Energy pulih hingga batas maksimal, akan menghapus semua efek Debuff pada SAM.",
-        "shortDesc": "Semakin rendah HP, maka semakin rendah DMG yang diterima. Dalam status \"Complete Combustion\", efek pengurangan DMG ini akan selalu dalam nilai maksimal, dan Effect RES akan meningkat. Saat pertempuran dimulai, jika Energy kurang dari <orangeStrong>{{2, percent}}%</orangeStrong>, maka akan memulihkan Energy hingga <orangeStrong>{{2, percent}}%</orangeStrong>. Saat Energy pulih hingga batas maksimal, akan menghapus semua efek Debuff pada diri sendiri."
+        "shortDesc": "Semakin rendah HP, maka semakin rendah DMG yang diterima. Dalam status \"Complete Combustion\", efek pengurangan DMG ini akan selalu dalam nilai maksimal, dan Effect RES akan meningkat. Saat pertempuran dimulai, jika Energy kurang dari <orangeStrong>{{2, percent}}%</orangeStrong>, maka akan memulihkan Energy hingga <orangeStrong>{{2, percent}}%</orangeStrong>. Saat Energy pulih hingga batas maksimal, akan menghapus semua efek Debuff pada diri sendiri.",
+        "tag": "Defense"
       }
     },
     "technique": {
       "0": {
         "name": "Δ Order: Meteoric Incineration",
         "fullDesc": "Melompat ke udara dan bergerak dengan bebas selama {{1}} detik. Melancarkan Plunging Attack selama periode tersebut dapat mengakhiri waktu gerak bebas lebih awal. Setelah waktu gerak bebas berakhir, SAM akan turun dan segera menyerang semua musuh dalam jangkauan tertentu. Saat setiap gelombang pertempuran dimulai, akan menambahkan Fire Weakness pada seluruh musuh, berlangsung selama {{3}} giliran. Setelahnya, akan mengakibatkan Fire DMG sebesar {{2, percent}}% ATK SAM pada seluruh musuh.",
-        "shortDesc": "Melompat ke udara dan bergerak dengan bebas. Setelah bergerak bebas selama beberapa detik, akan turun dan menyerang semua musuh dalam jangkauan. Saat <orangeStrong>setiap gelombang pertempuran</orangeStrong> dimulai, <orangeStrong>menambahkan Fire Weakness</orangeStrong> pada seluruh musuh dan mengakibatkan Fire DMG pada seluruh musuh."
+        "shortDesc": "Melompat ke udara dan bergerak dengan bebas. Setelah bergerak bebas selama beberapa detik, akan turun dan menyerang semua musuh dalam jangkauan. Saat <orangeStrong>setiap gelombang pertempuran</orangeStrong> dimulai, <orangeStrong>menambahkan Fire Weakness</orangeStrong> pada seluruh musuh dan mengakibatkan Fire DMG pada seluruh musuh.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Module α: Antilag Outburst",
         "fullDesc": "Saat dalam status \"Complete Combustion\", menyerang musuh yang tidak memiliki Fire Weakness juga dapat mengakibatkan Pengurangan Toughness, yang efek Pengurangan Toughness-nya adalah {{1, percent}}% dari Pengurangan Toughness asli kemampuan.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Module β: Autoreactive Armor",
         "fullDesc": "Saat berstatus \"Complete Combustion\", jika Break Effect SAM lebih dari atau sama dengan {{1, percent}}%/{{2, percent}}%, maka setelah menyerang target musuh yang berstatus Weakness Break, akan mengonversi pengurangan Toughness dari serangan kali ini menjadi 1 kali {{3, percent}}%/{{4, percent}}% Super Break DMG.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Module γ: Core Overload",
         "fullDesc": "Jika ATK SAM lebih dari {{1}}, maka untuk setiap {{2}} ATK yang berlebih akan meningkatkan {{3, percent(fixed: 1)}}% Break Effect.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

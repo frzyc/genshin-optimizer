@@ -5,73 +5,84 @@
       "0": {
         "name": "Abschiedstreffer",
         "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu.",
-        "shortDesc": "Fügt einem Gegner geringen physischen SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen physischen SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Todes-Homerun",
         "fullDesc": "Fügt einem anvisierten Gegner sowie angrenzenden Zielen physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu.",
-        "shortDesc": "Fügt einem Gegner und angrenzenden Zielen physischen SCH zu."
+        "shortDesc": "Fügt einem Gegner und angrenzenden Zielen physischen SCH zu.",
+        "tag": "Ausdehnung"
       }
     },
     "ult": {
       "0": {
         "name": "Sternenstaub-Ass",
         "fullDesc": "Für einen vollen Schlag stehen zwei Angriffsmodi zur Auswahl.<br>„Blowout: Abschiedstreffer“ fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu.<br>„Blowout: Todes-Homerun“ fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu und fügt angrenzenden Zielen physischen SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu.",
-        "shortDesc": "Verwendet Einzelangriff oder Ausdehnung, um einen vollen Schlag auszuführen."
+        "shortDesc": "Verwendet Einzelangriff oder Ausdehnung, um einen vollen Schlag auszuführen.",
+        "tag": "Verstärkung"
       },
       "1": {
         "name": "Blowout: Abschiedstreffer",
         "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu.",
-        "shortDesc": "Fügt einem Gegner massiven physischen SCH zu."
+        "shortDesc": "Fügt einem Gegner massiven physischen SCH zu.",
+        "tag": "Einzelangriff"
       },
       "2": {
         "name": "Blowout: Todes-Homerun",
         "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu und fügt angrenzenden Zielen physischen SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu.",
-        "shortDesc": "Fügt einem Gegner und angrenzenden Zielen physischen SCH zu."
+        "shortDesc": "Fügt einem Gegner und angrenzenden Zielen physischen SCH zu.",
+        "tag": "Ausdehnung"
       }
     },
     "talent": {
       "0": {
         "name": "Perfekte Abnahme",
         "fullDesc": "Jedes Mal, wenn die Schwäche eines Gegners gebrochen wird, wird der ANG um <orangeStrong>{{1, percent}}%</orangeStrong> erhöht. Dieser Effekt ist bis zu {{2}}-fach stapelbar.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "Verstärkung"
       }
     },
     "technique": {
       "0": {
         "name": "Unsterblicher dritter Schlag",
         "fullDesc": "Stellt unmittelbar nach dem Einsatz der Technik allen Verbündeten {{1, percent}}% ihrer max. LP wieder her.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "Wiederherstellung"
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Bereit für den Kampf",
         "fullDesc": "Stellt zu Beginn des Kampfes unmittelbar {{1}} Pkt. Energie wieder her.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Beharrlichkeit",
         "fullDesc": "Jede Stapelung des Talents erhöht die VTD um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Kampfeswille",
         "fullDesc": "Erhöht beim Einsatz der Fertigkeit oder des Ultimates „Blowout: Todes-Homerun“ den zugefügten SCH am anvisierten Gegner um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

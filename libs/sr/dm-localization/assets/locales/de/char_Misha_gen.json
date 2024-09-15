@@ -5,63 +5,72 @@
       "0": {
         "name": "Entschuldigung! Aus dem Weg, bitte ...!",
         "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Mishas ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Zi... Zimmerservice!",
         "fullDesc": "Erhöht die Trefferzahl von Mishas nächstem Ultimate um {{3}}. Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Mishas ANG zu und fügt angrenzenden Zielen Eis-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Mishas ANG zu.",
-        "shortDesc": "Fügt einem Gegner Eis-SCH zu und angrenzenden Einheiten geringen Eis-SCH zu. Erhöht die <orangeStrong>Trefferzahl von Mishas nächstem Ultimate</orangeStrong>."
+        "shortDesc": "Fügt einem Gegner Eis-SCH zu und angrenzenden Einheiten geringen Eis-SCH zu. Erhöht die <orangeStrong>Trefferzahl von Mishas nächstem Ultimate</orangeStrong>.",
+        "tag": "Ausdehnung"
       }
     },
     "ult": {
       "0": {
         "name": "Ich bin spät dran!",
         "fullDesc": "Mishas Ultimate hat zunächst eine Trefferzahl von {{1}}. Anfangs verursacht er einen Treffer und fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> seines ANG zu. Mit seinen weiteren Treffern fügt er jeweils einem zufälligen Gegner Eis-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> seines ANG zu. Vor jedem Treffer besteht eine Grundchance von <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, das Ziel für 1 Rd. einzufrieren.<br>Ein gefrorener Gegner kann keine Aktionen ausführen und erleidet zu Beginn jeder Runde zusätzlichen Eis-SCH in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von Mishas ANG.<br>Mishas Ultimate kann eine Trefferzahl von bis zu {{5}} haben. Nach dem Einsatz seines Ultimates wird die Trefferzahl auf die ursprüngliche Anzahl zurückgesetzt.",
-        "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu. Der Angriff prallt zunächst <orangeStrong>{{1}}</orangeStrong>-mal und max. <orangeStrong>{{5}}</orangeStrong>-mal ab. Vor jedem Treffer besteht eine geringe Chance, das Ziel <orangeStrong>einzufrieren</orangeStrong>."
+        "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu. Der Angriff prallt zunächst <orangeStrong>{{1}}</orangeStrong>-mal und max. <orangeStrong>{{5}}</orangeStrong>-mal ab. Vor jedem Treffer besteht eine geringe Chance, das Ziel <orangeStrong>einzufrieren</orangeStrong>.",
+        "tag": "Abprallung"
       }
     },
     "talent": {
       "0": {
         "name": "Hemmungsvorrichtung",
         "fullDesc": "Für jeden verbrauchten Fertigkeitspunkt des Teams wird die Trefferzahl von Mishas nächstem Ultimate um {{2}} erhöht und er stellt <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> Pkt. Energie wieder her.",
-        "shortDesc": "Für <orangeStrong>jeden verbrauchten Fertigkeitspunkt</orangeStrong> des Teams wird die <orangeStrong>Trefferzahl von Mishas nächstem Ultimate</orangeStrong> erhöht und er stellt Energie wieder her."
+        "shortDesc": "Für <orangeStrong>jeden verbrauchten Fertigkeitspunkt</orangeStrong> des Teams wird die <orangeStrong>Trefferzahl von Mishas nächstem Ultimate</orangeStrong> erhöht und er stellt Energie wieder her.",
+        "tag": "Verstärkung"
       }
     },
     "technique": {
       "0": {
         "name": "Verweile doch, du bist so schön!",
         "fullDesc": "Erzeugt nach dem Einsatz der Technik für {{1}} Sek. eine spezielle Dimension. Gegner in der Dimension werden mit „Traumgefängnis“ belegt und ihre Aktionen angehalten. Nach Kampfeintritt mit Gegnern, die mit Traumgefängnis belegt sind, wird die Trefferzahl von Mishas nächstem Ultimate um {{2}} erhöht. Es kann nur eine von Verbündeten erschaffene Dimension zur gleichen Zeit existieren.",
-        "shortDesc": "Erschafft eine spezielle Dimension, die alle Gegner in ihr anhält. Nach Kampfeintritt mit Gegnern in der Dimension wird die <orangeStrong>Trefferzahl von Mishas nächstem Ultimate</orangeStrong> erhöht."
+        "shortDesc": "Erschafft eine spezielle Dimension, die alle Gegner in ihr anhält. Nach Kampfeintritt mit Gegnern in der Dimension wird die <orangeStrong>Trefferzahl von Mishas nächstem Ultimate</orangeStrong> erhöht.",
+        "tag": "Beeinträchtigung"
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Befreiung",
         "fullDesc": "Erhöht vor dem ersten Treffer des Ultimates die Grundchance, Gegner einzufrieren, um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Verriegelung",
         "fullDesc": "Erhöht beim Einsatz des Ultimates die Effekt-Trefferrate um {{1, percent}}%. Dieser Effekt hält bis zum Ende der Aktion des Ultimates an.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Transmission",
         "fullDesc": "Erhöht den KRIT-SCH bei eingefrorenen Gegnern um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

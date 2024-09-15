@@ -5,63 +5,72 @@
       "0": {
         "name": "石火流光",
         "fullDesc": "對指定敵方單體造成等同於景元<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性傷害。",
-        "shortDesc": "對敵方單體造成少量雷屬性傷害。"
+        "shortDesc": "對敵方單體造成少量雷屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "紫霄震曜",
         "fullDesc": "對敵方全體造成等同於景元<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性傷害，同時使【神君】下回合的攻擊段數+{{2}}。",
-        "shortDesc": "對敵方全體造成少量雷屬性傷害，<orangeStrong>增加【神君】的攻擊段數</orangeStrong>。"
+        "shortDesc": "對敵方全體造成少量雷屬性傷害，<orangeStrong>增加【神君】的攻擊段數</orangeStrong>。",
+        "tag": "群體攻擊"
       }
     },
     "ult": {
       "0": {
         "name": "吾身光明",
         "fullDesc": "對敵方全體造成等同於景元<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性傷害，同時使【神君】下回合的攻擊段數+{{2}}。",
-        "shortDesc": "對敵方全體造成雷屬性傷害，並<orangeStrong>增加【神君】的攻擊段數</orangeStrong>。"
+        "shortDesc": "對敵方全體造成雷屬性傷害，並<orangeStrong>增加【神君】的攻擊段數</orangeStrong>。",
+        "tag": "群體攻擊"
       }
     },
     "talent": {
       "0": {
         "name": "斬勘神形",
         "fullDesc": "戰鬥開始時召喚【神君】。【神君】初始的速度為{{1}}、攻擊段數為{{4}}，將於行動時發動追加攻擊，每段攻擊對隨機敵方單體造成等同於景元攻擊力<orangeStrong>{{2, percent}}%</orangeStrong>的雷屬性傷害，同時對其相鄰目標造成等同於主目標{{5, percent}}%的雷屬性傷害。<br>【神君】的攻擊段數最多可累積{{6}}段，且每增加1段，速度便提高{{3}}點，行動結束後速度和攻擊段數恢復至初始狀態。<br>景元陷入無法戰鬥狀態時，【神君】便會消失。<br>景元受到控制類負面狀態影響時，【神君】也會無法行動。",
-        "shortDesc": "戰鬥開始時召喚【神君】，【神君】<orangeStrong>自動</orangeStrong>對隨機敵方單體及其相鄰目標<orangeStrong>造成少量雷屬性傷害</orangeStrong>。"
+        "shortDesc": "戰鬥開始時召喚【神君】，【神君】<orangeStrong>自動</orangeStrong>對隨機敵方單體及其相鄰目標<orangeStrong>造成少量雷屬性傷害</orangeStrong>。",
+        "tag": "彈射"
       }
     },
     "technique": {
       "0": {
         "name": "攝召威靈",
         "fullDesc": "使用秘技後，下一次戰鬥開始時【神君】第一回合的攻擊段數+{{1}}。",
-        "shortDesc": "使用秘技，下一次進入戰鬥時<orangeStrong>增加【神君】的攻擊段數</orangeStrong>。"
+        "shortDesc": "使用秘技，下一次進入戰鬥時<orangeStrong>增加【神君】的攻擊段數</orangeStrong>。",
+        "tag": "強化"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "破陣",
         "fullDesc": "若【神君】下回合的攻擊段數大於等於{{1}}，則其下回合的暴擊傷害提高{{2, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "綢繆",
         "fullDesc": "戰鬥開始時，立即恢復{{1}}點能量。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "遣將",
         "fullDesc": "施放戰技後，暴擊率提升{{1, percent}}%，持續{{2}}回合。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

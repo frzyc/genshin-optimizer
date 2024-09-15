@@ -5,68 +5,78 @@
       "0": {
         "name": "Colher Flores",
         "fullDesc": "Lança 1 peça de jade do naipe com o menor número de peças nas mãos para causar Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Qingque a um único inimigo.",
-        "shortDesc": "Lança uma peça que causa Dano Quântico leve a um único inimigo."
+        "shortDesc": "Lança uma peça que causa Dano Quântico leve a um único inimigo.",
+        "tag": "Alvo Único"
       },
       "1": {
         "name": "Cereja do Bolo!",
         "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Qingque a um único inimigo e Dano Quântico igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Qingque aos inimigos adjacentes a ele.<br>\"Cereja do Bolo!\" não pode recuperar Pontos de Perícia.",
-        "shortDesc": "Causa Dano Quântico a um único inimigo e Dano Quântico leve a inimigos adjacentes a ele."
+        "shortDesc": "Causa Dano Quântico a um único inimigo e Dano Quântico leve a inimigos adjacentes a ele.",
+        "tag": "Explosão"
       }
     },
     "skill": {
       "0": {
         "name": "Uma Colherada da Lua",
         "fullDesc": "Pega {{1}} peça(s) de jade imediatamente e aumenta o Dano em <orangeStrong>{{2, percent}}%</orangeStrong> até o fim da rodada atual. Esse efeito pode acumular até {{3}} vez(es). A rodada não acaba após a utilização dessa Perícia.",
-        "shortDesc": "<orangeStrong>Pega peças</orangeStrong> e aumenta o Dano causado. <orangeStrong>Esta rodada não termina</orangeStrong> após esta ação."
+        "shortDesc": "<orangeStrong>Pega peças</orangeStrong> e aumenta o Dano causado. <orangeStrong>Esta rodada não termina</orangeStrong> após esta ação.",
+        "tag": "Aprimoramento"
       }
     },
     "ult": {
       "0": {
         "name": "Um Quarteto? Uhul!",
         "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Qingque a todos os inimigos e obtém 4 peças de jade do mesmo naipe.",
-        "shortDesc": "Causa Dano Quântico a todos os inimigos, depois obtêm 4 peças do mesmo naipe."
+        "shortDesc": "Causa Dano Quântico a todos os inimigos, depois obtêm 4 peças do mesmo naipe.",
+        "tag": "Área"
       }
     },
     "talent": {
       "0": {
         "name": "Jade Celestial",
         "fullDesc": "Quando a rodada de um aliado começa, Qingque pega aleatoriamente 1 peça de 3 naipes diferentes. Até 4 peças podem ser seguradas por vez.<br>Se Qingque começar sua rodada com 4 peças de um mesmo naipe, ela consumirá todas as peças para entrar no estado \"Mão Oculta\". Enquanto estiver neste estado, Qingque não pode usar sua Perícia novamente. Ao mesmo tempo, o ATQ de Qingque aumenta em <orangeStrong>{{1, percent}}%</orangeStrong>, e o seu ATQ Básico \"Colher Flores\" é aprimorado, tornando-se \"Cereja do Bolo!\". O estado \"Mão Oculta\" acabará ao usar \"Cereja do Bolo!\".",
-        "shortDesc": "Pega uma peça no início da rodada de qualquer aliado. No início da rodada deste personagem, se este personagem possuir 4 peças de um mesmo naipe, remove todas as peças em posse e <orangeStrong>Aprimora o ATQ Básico</orangeStrong> enquanto aumenta o ATQ deste personagem."
+        "shortDesc": "Pega uma peça no início da rodada de qualquer aliado. No início da rodada deste personagem, se este personagem possuir 4 peças de um mesmo naipe, remove todas as peças em posse e <orangeStrong>Aprimora o ATQ Básico</orangeStrong> enquanto aumenta o ATQ deste personagem.",
+        "tag": "Aprimoramento"
       }
     },
     "technique": {
       "0": {
         "name": "Jogo de Paciência",
         "fullDesc": "Após usar sua Técnica, Qingque pega {{1}} peça(s) de jade quando a batalha começa.",
-        "shortDesc": "Após usar sua Técnica, pega peça(s) no início da próxima batalha."
+        "shortDesc": "Após usar sua Técnica, pega peça(s) no início da próxima batalha.",
+        "tag": "Aprimoramento"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Batalha de Peças",
         "fullDesc": "Restaura 1 Ponto de Perícia ao usar a Perícia. Este efeito só pode ser ativado 1 vez por batalha.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Enrolar",
         "fullDesc": "Usar a Perícia aumenta o efeito do bônus de Dano dos ataques em {{1, percent}}% extra.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Mão Vitoriosa",
         "fullDesc": "Aumenta em {{1, percent}}% a VEL de Qingque por 1 rodada após usar o ATQ Básico Aprimorado.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

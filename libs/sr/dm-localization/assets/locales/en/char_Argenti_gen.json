@@ -5,68 +5,78 @@
       "0": {
         "name": "Fleeting Fragrance",
         "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Argenti's ATK to a single target enemy.",
-        "shortDesc": "Deals minor Physical DMG to a single enemy."
+        "shortDesc": "Deals minor Physical DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Justice, Hereby Blooms",
         "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Argenti's ATK to all enemies.",
-        "shortDesc": "Deals minor Physical DMG to all enemies."
+        "shortDesc": "Deals minor Physical DMG to all enemies.",
+        "tag": "AoE"
       }
     },
     "ult": {
       "0": {
         "name": "For In This Garden, Supreme Beauty Bestows",
         "fullDesc": "Consumes {{2}} Energy and deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Argenti's ATK to all enemies.",
-        "shortDesc": "Consumes <orangeStrong>{{2}}</orangeStrong> Energy and deals Physical DMG to all enemies."
+        "shortDesc": "Consumes <orangeStrong>{{2}}</orangeStrong> Energy and deals Physical DMG to all enemies.",
+        "tag": "AoE"
       },
       "1": {
         "name": "Merit Bestowed in \"My\" Garden",
         "fullDesc": "Consumes {{4}} Energy and deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Argenti's ATK to all enemies. And further deals DMG for {{2}} extra time(s), with each time dealing Physical DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Argenti's ATK to a random enemy.",
-        "shortDesc": "Consumes <orangeStrong>{{4}}</orangeStrong> Energy and deals Physical DMG to all enemies and additionally deals minor Physical DMG to random single enemy targets for 6 Bounces."
+        "shortDesc": "Consumes <orangeStrong>{{4}}</orangeStrong> Energy and deals Physical DMG to all enemies and additionally deals minor Physical DMG to random single enemy targets for 6 Bounces.",
+        "tag": "AoE"
       }
     },
     "talent": {
       "0": {
         "name": "Sublime Object",
         "fullDesc": "For every enemy hit when Argenti uses his Basic Attack, Skill, or Ultimate, regenerates Argenti's Energy by {{1}}, and grants him a stack of Apotheosis, increasing his CRIT Rate by <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. This effect can stack up to {{3}} time(s).",
-        "shortDesc": "When Argenti uses his Basic ATK, Skill, or Ultimate, he <orangeStrong>regenerates Energy</orangeStrong> and increases his <orangeStrong>CRIT Rate</orangeStrong> for every enemy target hit."
+        "shortDesc": "When Argenti uses his Basic ATK, Skill, or Ultimate, he <orangeStrong>regenerates Energy</orangeStrong> and increases his <orangeStrong>CRIT Rate</orangeStrong> for every enemy target hit.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Manifesto of Purest Virtue",
         "fullDesc": "After using the Technique, enemies in a set area are inflicted with Daze for {{1}} second(s). Dazed enemies will not actively attack the team.<br>When attacking a Dazed enemy to enter combat, deals Physical DMG to all enemies equal to {{2, percent}}% of Argenti's ATK and regenerates his Energy by {{3}}.",
-        "shortDesc": "Inflicts Daze on all enemies within a set area. When attacking a Dazed enemy to enter combat, deals minor Physical DMG to all enemies and regenerates energy for Argenti."
+        "shortDesc": "Inflicts Daze on all enemies within a set area. When attacking a Dazed enemy to enter combat, deals minor Physical DMG to all enemies and regenerates energy for Argenti.",
+        "tag": "Impair"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Piety",
         "fullDesc": "At the start of a turn, immediately gains {{1}} stack(s) of Apotheosis.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Generosity",
         "fullDesc": "When enemy targets enter battle, immediately regenerates {{1}} Energy for self.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Courage",
         "fullDesc": "Deals {{2, percent}}% more DMG to enemies whose HP percentage is {{1, percent}}% or less.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

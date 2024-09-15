@@ -5,63 +5,72 @@
       "0": {
         "name": "얼음 등반 갈고리 기술",
         "fullDesc": "지정된 단일 적에게 자신의 HP 최대치의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 양자 속성 피해를 준다",
-        "shortDesc": "단일 적에게 소량의 양자 속성 피해를 가한다"
+        "shortDesc": "단일 적에게 소량의 양자 속성 피해를 가한다",
+        "tag": "단일 공격"
       }
     },
     "skill": {
       "0": {
         "name": "캠핑용 절임 통조림",
         "fullDesc": "지정된 단일 아군에게 [생존 반응]을 부여하며, HP 최대치가 링스 HP 최대치의 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>만큼 증가하고, 해당 목표가 「파멸」 혹은 「보존」 운명의 길이면 적에게 피격될 확률이 대폭 증가한다. [생존 반응]은 {{3}}턴간 지속된다.<br>해당 목표의 HP를 링스 HP 최대치의 <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{5}}</orangeStrong>만큼 회복시킨다",
-        "shortDesc": "단일 아군에게 [생존 반응]을 부여하고, 대상의 <orangeStrong>HP 최대치를 증가</orangeStrong>시키며 동시에 HP를 회복시킨다"
+        "shortDesc": "단일 아군에게 [생존 반응]을 부여하고, 대상의 <orangeStrong>HP 최대치를 증가</orangeStrong>시키며 동시에 HP를 회복시킨다",
+        "tag": "회복"
       }
     },
     "ult": {
       "0": {
         "name": "설원 구급 방침",
         "fullDesc": "모든 아군의 디버프 효과를 {{1}}개 해제하고, 모든 아군의 HP를 즉시 링스 HP 최대치의 <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{3}}</orangeStrong>만큼 회복시킨다",
-        "shortDesc": "<orangeStrong>모든 아군의 디버프 효과를 1개</orangeStrong> 해제하고, 모든 아군의 HP를 회복시킨다"
+        "shortDesc": "<orangeStrong>모든 아군의 디버프 효과를 1개</orangeStrong> 해제하고, 모든 아군의 HP를 회복시킨다",
+        "tag": "회복"
       }
     },
     "talent": {
       "0": {
         "name": "야외 생존 경험",
         "fullDesc": "전투 스킬 혹은 필살기 발동 시 아군은 {{1}}턴의 지속 치유 효과를 획득하고, 해당 목표는 턴이 시작될 때마다 HP를 링스 HP 최대치의 <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{3}}</orangeStrong>만큼 회복한다. 해당 목표가 [생존 반응]을 보유하고 있으면 지속 치유되는 HP가 추가로 링스 HP 최대치의 <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{5}}</orangeStrong>만큼 증가한다",
-        "shortDesc": "전투 스킬 혹은 필살기 발동 시 아군은 <orangeStrong>HP 지속 회복</orangeStrong> 효과를 획득하고, 해당 목표가 [생존 반응]을 보유하고 있으면 HP 지속 회복 효과가 추가로 증가한다"
+        "shortDesc": "전투 스킬 혹은 필살기 발동 시 아군은 <orangeStrong>HP 지속 회복</orangeStrong> 효과를 획득하고, 해당 목표가 [생존 반응]을 보유하고 있으면 HP 지속 회복 효과가 추가로 증가한다",
+        "tag": "회복"
       }
     },
     "technique": {
       "0": {
         "name": "초콜릿 에너지바",
         "fullDesc": "비술 발동 후 다음 전투 시작 시 모든 아군에게 링스 특성과 동일한 지속 치유 효과를 부여한다. 지속 시간: {{1}}턴",
-        "shortDesc": "비술을 발동하면 다음 전투 시작 시 모든 아군에게 지속 치유 효과를 부여한다"
+        "shortDesc": "비술을 발동하면 다음 전투 시작 시 모든 아군에게 지속 치유 효과를 부여한다",
+        "tag": "회복"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "단일 공격"
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "사전 탐측",
         "fullDesc": "[생존 반응]을 보유한 목표가 피격되면 링스는 즉시 에너지를 {{1}}pt 회복한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "탐험 스킬",
         "fullDesc": "제어류 디버프 상태 저항 확률이 {{1, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "극지 생존",
         "fullDesc": "특성으로 발동한 지속 회복 효과를 {{1}}턴 연장한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

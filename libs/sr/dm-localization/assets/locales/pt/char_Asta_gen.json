@@ -5,63 +5,72 @@
       "0": {
         "name": "Raio Espectral",
         "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Asta a um único inimigo.",
-        "shortDesc": "Causa Dano de Fogo leve a um único inimigo."
+        "shortDesc": "Causa Dano de Fogo leve a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Tempestade de Meteoros",
         "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Asta a um único inimigo e causa Dano mais 4 vezes, com cada acerto causando Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Asta a um inimigo aleatório.",
-        "shortDesc": "Causa Dano de Fogo leve a alvos únicos inimigos e é rebatido 5 vezes."
+        "shortDesc": "Causa Dano de Fogo leve a alvos únicos inimigos e é rebatido 5 vezes.",
+        "tag": "Rebote"
       }
     },
     "ult": {
       "0": {
         "name": "Bênção Astral",
         "fullDesc": "Aumenta a VEL de todos os aliados em <orangeStrong>{{1}}</orangeStrong> por {{2}} rodada(s).",
-        "shortDesc": "<orangeStrong>Aumenta a VEL</orangeStrong> de todos os aliados."
+        "shortDesc": "<orangeStrong>Aumenta a VEL</orangeStrong> de todos os aliados.",
+        "tag": "Suporte"
       }
     },
     "talent": {
       "0": {
         "name": "Astrometria",
         "fullDesc": "Ganha 1 acúmulo de Carga para cada inimigo diferente que Asta atingir, além de um acúmulo extra se o inimigo atingido tiver Fraqueza contra Fogo.<br>Para cada acúmulo de Carga que Asta tiver, aumenta em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> o ATQ de todos os aliados, até {{2}} vez(es).<br>A partir da segunda rodada, reduz em {{3}} a contagem de acúmulos de Carga de Asta no início de cada rodada.",
-        "shortDesc": "O personagem receberá 1 acúmulo de Carga para cada inimigo diferente que atacar, com um máximo de 5 acúmulos. Cada acúmulo de Carga aumenta o ATQ de todos os aliados. Os acúmulos de Carga são reduzidos no início de cada rodada."
+        "shortDesc": "O personagem receberá 1 acúmulo de Carga para cada inimigo diferente que atacar, com um máximo de 5 acúmulos. Cada acúmulo de Carga aumenta o ATQ de todos os aliados. Os acúmulos de Carga são reduzidos no início de cada rodada.",
+        "tag": "Suporte"
       }
     },
     "technique": {
       "0": {
         "name": "Lampejo Milagroso",
         "fullDesc": "Ataca o inimigo imediatamente. Depois de entrar na batalha, causa {{1, percent}}% do ATQ de Asta como Dano de Fogo a todos os inimigos.",
-        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano leve a todos os inimigos."
+        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano leve a todos os inimigos.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Faíscas",
         "fullDesc": "O ATQ Básico de Asta tem {{1, percent}}% de chance-base de causar Queimadura ao inimigo-alvo por {{2}} rodada(s).<br>Os inimigos afetados por Queimadura recebem Dano de Fogo Contínuo igual a {{3, percent}}% do Dano causado pelo ATQ Básico de Asta no início de cada rodada.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Acender",
         "fullDesc": "Quando Asta está no campo, o Dano de Fogo de todos os aliados aumenta em {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Constelação",
         "fullDesc": "A DEF de Asta aumenta em {{1, percent}}% para cada acúmulo de Carga que ela tem.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

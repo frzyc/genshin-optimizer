@@ -5,73 +5,84 @@
       "0": {
         "name": "끝내기 안타",
         "fullDesc": "지정된 단일 적에게 개척자 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
-        "shortDesc": "단일 적에게 소량의 물리 속성 피해를 가한다"
+        "shortDesc": "단일 적에게 소량의 물리 속성 피해를 가한다",
+        "tag": "단일 공격"
       }
     },
     "skill": {
       "0": {
         "name": "안식 홈런",
         "fullDesc": "지정된 단일 적과 인접한 목표에게 개척자 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
-        "shortDesc": "단일 적 및 인접한 목표에게 물리 속성 피해를 준다"
+        "shortDesc": "단일 적 및 인접한 목표에게 물리 속성 피해를 준다",
+        "tag": "확산"
       }
     },
     "ult": {
       "0": {
         "name": "스타더스트의 에이스",
         "fullDesc": "두 가지 모드 중 하나를 선택해 전력의 일격을 가한다.<br>[압승•끝내기 안타]: 지정된 단일 적에게 개척자 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 물리 속성 피해를 준다.<br>[압승•안식 홈런]: 지정된 단일 적에게 개척자 공격력 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 물리 속성 피해를 주고, 인접한 목표에게도 개척자 공격력 <orangeStrong>{{3, percent}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
-        "shortDesc": "단일 공격 또는 확산 공격으로 전력의 일격을 가한다"
+        "shortDesc": "단일 공격 또는 확산 공격으로 전력의 일격을 가한다",
+        "tag": "강화"
       },
       "1": {
         "name": "압승•끝내기 안타",
         "fullDesc": "지정된 단일 적에게 개척자 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
-        "shortDesc": "단일 적에게 대량의 물리 속성 피해를 준다"
+        "shortDesc": "단일 적에게 대량의 물리 속성 피해를 준다",
+        "tag": "단일 공격"
       },
       "2": {
         "name": "압승•안식 홈런",
         "fullDesc": "지정된 단일 적에게 개척자 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 물리 속성 피해를 주며, 인접한 목표에게 개척자 공격력 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
-        "shortDesc": "단일 적 및 대상의 인접한 목표에게 물리 속성 피해를 가한다"
+        "shortDesc": "단일 적 및 대상의 인접한 목표에게 물리 속성 피해를 가한다",
+        "tag": "확산"
       }
     },
     "talent": {
       "0": {
         "name": "도루 견제",
         "fullDesc": "적의 약점을 격파할 때마다 개척자의 공격력이 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 해당 효과 최대 중첩수: {{2}}스택",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "강화"
       }
     },
     "technique": {
       "0": {
         "name": "불멸의 삼진",
         "fullDesc": "비술 발동 후 즉시 모든 아군은 자신의 HP 최대치 {{1, percent}}%만큼의 HP를 회복한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "회복"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "전투 준비",
         "fullDesc": "전투 시작 시 즉시 에너지를 {{1}}pt 회복한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "강인",
         "fullDesc": "특성의 효과는 스택마다 동시에 개척자의 방어력을 {{1, percent}}% 증가시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "투지",
         "fullDesc": "전투 스킬 또는 필살기 [압승•안식 홈런] 발동 시 지정된 적에게 가하는 피해가 {{1, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

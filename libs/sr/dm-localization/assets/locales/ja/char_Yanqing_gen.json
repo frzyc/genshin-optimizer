@@ -5,63 +5,72 @@
       "0": {
         "name": "{RUBY_B#かんこう}寒光{RUBY_E#}{RUBY_B#さ}刺{RUBY_E#}す{RUBY_B#そうほう}霜鋒{RUBY_E#}",
         "fullDesc": "指定した敵単体に彦卿の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の氷属性ダメージを与える。"
+        "shortDesc": "敵単体に少量の氷属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#さんじゃくしゅうすい}三尺秋水{RUBY_E#}",
         "fullDesc": "指定した敵単体に彦卿の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与え、彦卿に「智剣連心」を付与する、1ターン継続。",
-        "shortDesc": "敵単体に氷属性ダメージを与え、自身に「智剣連心」を付与。"
+        "shortDesc": "敵単体に氷属性ダメージを与え、自身に「智剣連心」を付与。",
+        "tag": "単体攻撃"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#かいう}快雨{RUBY_E#}に{RUBY_B#たわむ}戯{RUBY_E#}れる{RUBY_B#つばめ}燕{RUBY_E#}",
         "fullDesc": "自身の会心率+{{1, percent}}%、彦卿に「智剣連心」がある場合、さらに会心ダメージ+<orangeStrong>{{2, percent}}%</orangeStrong>、バフは1ターン継続。その後、指定した敵単体に彦卿の攻撃力<orangeStrong>{{3, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
-        "shortDesc": "自身の会心率アップ、「智剣連心」を強化、敵単体に大量の氷属性ダメージを与える。"
+        "shortDesc": "自身の会心率アップ、「智剣連心」を強化、敵単体に大量の氷属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "talent": {
       "0": {
         "name": "{RUBY_B#こえいけん}呼影剣{RUBY_E#}",
         "fullDesc": "彦卿に「智剣連心」がある場合、攻撃を受ける確率ダウン、自身の会心率+<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>、会心ダメージ+<orangeStrong>{{2, percent}}%</orangeStrong>。敵に攻撃を行った後、<orangeStrong>{{3, percent}}%</orangeStrong>の固定確率で追加攻撃を行い、敵に彦卿の攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の氷属性ダメージを与え、{{6, percent}}%の基礎確率で敵を凍結状態にする、1ターン継続。<br>凍結状態の敵は行動できず、ターンが回ってくるたびに彦卿の攻撃力<orangeStrong>{{5, percent}}%</orangeStrong>分の氷属性付加ダメージを受ける。<br>彦卿がダメージを受けると「智剣連心」が解除される。",
-        "shortDesc": "<orangeStrong>「智剣連心」がある時</orangeStrong>、攻撃を受ける確率がダウンし、自身の<orangeStrong>会心率と会心ダメージがアップする</orangeStrong>。敵に<orangeStrong>攻撃を行った後</orangeStrong>、確率で追加攻撃を発動して氷属性ダメージを与え、確率で凍結状態にする。<br>自身がダメージを受けた後、「智剣連心」は解除される。"
+        "shortDesc": "<orangeStrong>「智剣連心」がある時</orangeStrong>、攻撃を受ける確率がダウンし、自身の<orangeStrong>会心率と会心ダメージがアップする</orangeStrong>。敵に<orangeStrong>攻撃を行った後</orangeStrong>、確率で追加攻撃を発動して氷属性ダメージを与え、確率で凍結状態にする。<br>自身がダメージを受けた後、「智剣連心」は解除される。",
+        "tag": "単体攻撃"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#ぎょけんしんけつ}御剣真訣{RUBY_E#}",
         "fullDesc": "秘技を使用した後、次の戦闘開始時、残りHPが{{1, percent}}%以上の敵に対して、彦卿の与ダメージ+{{2, percent}}%、{{3}}ターン継続。",
-        "shortDesc": "秘技を使用、次の戦闘開始時、残りHPが50%以上の敵に対して、自身の与ダメージがアップする。"
+        "shortDesc": "秘技を使用、次の戦闘開始時、残りHPが50%以上の敵に対して、自身の与ダメージがアップする。",
+        "tag": "強化"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#はんぴょう}頒氷{RUBY_E#}",
         "fullDesc": "攻撃を行った後、氷属性の弱点がある敵に、彦卿の攻撃力{{1, percent}}%分の氷属性付加ダメージを与える。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#りょうそう}凌霜{RUBY_E#}",
         "fullDesc": "「智剣連心」がある場合、効果抵抗+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#けいりょ}軽呂{RUBY_E#}",
         "fullDesc": "会心が発生した時、速度+{{1, percent}}%、{{2}}ターン継続。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

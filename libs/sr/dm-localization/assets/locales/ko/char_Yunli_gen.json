@@ -5,63 +5,72 @@
       "0": {
         "name": "건곤을 뒤엎는 검기",
         "fullDesc": "지정된 단일 적에게 운리 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 물리 속성 피해를 가한다",
-        "shortDesc": "단일 적에게 소량의 물리 속성 피해를 가한다"
+        "shortDesc": "단일 적에게 소량의 물리 속성 피해를 가한다",
+        "tag": "단일 공격"
       }
     },
     "skill": {
       "0": {
         "name": "천지를 뒤흔드는 대검",
         "fullDesc": "운리 공격력의 <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>pt만큼 HP를 회복하며, 지정된 단일 적에게 운리 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 물리 속성 피해를 가하고, 인접한 목표에게 운리 공격력의 <orangeStrong>{{2, percent}}%</orangeStrong>만큼 물리 속성 피해를 가한다",
-        "shortDesc": "자신의 HP를 회복하고, 단일 적과 인접한 목표에게 소량의 물리 속성 피해를 가한다"
+        "shortDesc": "자신의 HP를 회복하고, 단일 적과 인접한 목표에게 소량의 물리 속성 피해를 가한다",
+        "tag": "확산"
       }
     },
     "ult": {
       "0": {
         "name": "대지의 검신, 천궁을 베는 검날",
         "fullDesc": "에너지를 {{8}}pt 소모하며, 운리가 [막기]를 획득하고 모든 적을 도발 상태에 빠트리며, 아군 또는 적의 다음 턴이 종료될 때까지 지속된다. 또한 운리의 다음 반격이 가하는 치명타 피해가 <orangeStrong>{{2, percent}}%</orangeStrong> 증가한다. 특성의 반격 효과 발동 시 반격 [간파•멸]을 발동하는 것으로 대체되고, 동시에 [막기] 효과가 해제된다. [막기] 상태에서 반격이 발동되지 않으면, 상태 종료 시 운리는 즉시 랜덤 적에게 반격 [간파•참]을 발동한다.<br>[간파•참]: 목표에게 운리 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 물리 속성 피해를 가하고, 인접한 목표에게 운리 공격력의 <orangeStrong>{{6, percent}}%</orangeStrong>만큼 물리 속성 피해를 가한다.<br>[간파•멸]: 목표에게 운리 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 물리 속성 피해를 가하고, 인접한 목표에게 운리 공격력의 <orangeStrong>{{6, percent}}%</orangeStrong>만큼 물리 속성 피해를 가한다. 이후 추가로 피해를 {{4}}회 가하며, 피해 1회당 랜덤 단일 적에게 운리 공격력의 <orangeStrong>{{7, percent}}%</orangeStrong>만큼 물리 피해를 가한다.<br>운리가 해당 스킬을 통해 피해를 가할 시 필살기 피해를 가한 것으로 간주한다",
-        "shortDesc": "[막기]에 진입하고 모든 적을 도발한다. 도중에 피격되면 <orangeStrong>강력한 반격</orangeStrong>을 발동해 공격자 및 인접한 목표에게 <orangeStrong>물리 속성 피해를 가하고</orangeStrong>, 이후 단일 적에게 소량의 물리 속성 피해를 가하며 총 6회 바운스한다. [막기] 상태에서 반격이 발동되지 않으면 상태 종료 시 랜덤 적 및 인접한 목표에게 물리 속성 피해를 가한다"
+        "shortDesc": "[막기]에 진입하고 모든 적을 도발한다. 도중에 피격되면 <orangeStrong>강력한 반격</orangeStrong>을 발동해 공격자 및 인접한 목표에게 <orangeStrong>물리 속성 피해를 가하고</orangeStrong>, 이후 단일 적에게 소량의 물리 속성 피해를 가하며 총 6회 바운스한다. [막기] 상태에서 반격이 발동되지 않으면 상태 종료 시 랜덤 적 및 인접한 목표에게 물리 속성 피해를 가한다",
+        "tag": "강화"
       }
     },
     "talent": {
       "0": {
         "name": "단조의 섬광",
         "fullDesc": "운리가 적에게 피격된 후, 추가로 에너지를 {{3}}pt 회복하고 즉시 공격자에게 반격을 발동해 해당 목표에게 운리 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 물리 속성 피해를 가하며, 인접한 목표에게 운리 공격력의 <orangeStrong>{{2, percent}}%</orangeStrong>만큼 물리 속성 피해를 가한다.<br>반격 가능한 목표가 없을 경우 랜덤 적에게 반격한다",
-        "shortDesc": "운리가 적에게 피격될 시, 추가로 에너지를 회복하고 즉시 공격자 및 인접한 목표에게 반격을 발동한다"
+        "shortDesc": "운리가 적에게 피격될 시, 추가로 에너지를 회복하고 즉시 공격자 및 인접한 목표에게 반격을 발동한다",
+        "tag": "확산"
       }
     },
     "technique": {
       "0": {
         "name": "후발선지",
         "fullDesc": "자신이 {{2}}초 동안 [튕겨내기] 효과를 획득한다. 지속 시간 동안 적을 공격하거나 피격되어 전투에 진입하면 즉시 랜덤 단일 적에게 [간파•멸]을 발동하고, 이번 공격이 가하는 피해가 {{1, percent}}% 증가한다",
-        "shortDesc": "자신이 [튕겨내기] 효과를 획득한다, 지속 시간: 20초. 도중에 적을 공격하거나 적에게 피격되어 전투에 진입하면 즉시 랜덤 단일 적에게 [간파•멸]을 발동한다"
+        "shortDesc": "자신이 [튕겨내기] 효과를 획득한다, 지속 시간: 20초. 도중에 적을 공격하거나 적에게 피격되어 전투에 진입하면 즉시 랜덤 단일 적에게 [간파•멸]을 발동한다",
+        "tag": "강화"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "화륜",
         "fullDesc": "[간파•참]을 1회 발동할 때마다 다음번 [간파•참]이 [간파•멸]로 변경된다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "각사",
         "fullDesc": "[막기] 상태에서 받는 제어류 디버프 효과에 저항하며, 받는 피해가 {{1, percent}}% 감소한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "진강",
         "fullDesc": "반격 발동 시, 운리의 공격력이 {{1, percent}}% 증가한다. 지속 시간: 1턴",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

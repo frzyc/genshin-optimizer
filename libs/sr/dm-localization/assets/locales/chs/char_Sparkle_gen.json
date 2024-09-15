@@ -5,63 +5,72 @@
       "0": {
         "name": "独角戏",
         "fullDesc": "对指定敌方单体造成等同于花火<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的量子属性伤害。",
-        "shortDesc": "对敌方单体造成少量量子属性伤害。"
+        "shortDesc": "对敌方单体造成少量量子属性伤害。",
+        "tag": "单攻"
       }
     },
     "skill": {
       "0": {
         "name": "梦游鱼",
         "fullDesc": "使指定我方单体的暴击伤害提高，提高数值等同于花火<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>暴击伤害+<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>，持续{{3}}回合，并使该目标行动提前{{4, percent}}%。<br>当花火对自身施放该技能时，无法触发行动提前效果。",
-        "shortDesc": "使我方单体<orangeStrong>暴击伤害</orangeStrong>提高，并使该目标行动提前。"
+        "shortDesc": "使我方单体<orangeStrong>暴击伤害</orangeStrong>提高，并使该目标行动提前。",
+        "tag": "辅助"
       }
     },
     "ult": {
       "0": {
         "name": "一人千役",
         "fullDesc": "为我方恢复{{2}}个战技点，并使我方全体获得【谜诡】。持有【谜诡】的我方目标触发花火天赋造成的伤害提高效果每层额外提高<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>，持续{{4}}回合。",
-        "shortDesc": "为我方恢复<orangeStrong>战技点</orangeStrong>，使触发花火天赋的伤害提高效果额外提高。"
+        "shortDesc": "为我方恢复<orangeStrong>战技点</orangeStrong>，使触发花火天赋的伤害提高效果额外提高。",
+        "tag": "辅助"
       }
     },
     "talent": {
       "0": {
         "name": "叙述性诡计",
         "fullDesc": "花火在场时，战技点上限额外增加{{3}}点。当我方目标每消耗1点战技点，则使我方全体造成的伤害提高<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>，该效果持续{{1}}回合，最多可叠加{{4}}层。",
-        "shortDesc": "我方的<orangeStrong>战技点上限</orangeStrong>提高，我方目标消耗战技点时，使我方全体<orangeStrong>造成的伤害</orangeStrong>提高。"
+        "shortDesc": "我方的<orangeStrong>战技点上限</orangeStrong>提高，我方目标消耗战技点时，使我方全体<orangeStrong>造成的伤害</orangeStrong>提高。",
+        "tag": "辅助"
       }
     },
     "technique": {
       "0": {
         "name": "不可靠叙事者",
         "fullDesc": "使用秘技后，我方全体进入持续{{2}}秒的【迷误】状态。【迷误】状态下不会被敌人发现。【迷误】状态期间进入战斗时为我方恢复{{1}}个战技点。",
-        "shortDesc": "使用秘技后，我方全体进入【迷误】状态。【迷误】状态下不会被敌人发现。【迷误】状态期间进入战斗时为我方恢复<orangeStrong>战技点</orangeStrong>。"
+        "shortDesc": "使用秘技后，我方全体进入【迷误】状态。【迷误】状态下不会被敌人发现。【迷误】状态期间进入战斗时为我方恢复<orangeStrong>战技点</orangeStrong>。",
+        "tag": "辅助"
       }
     },
     "overworld": {
       "0": {
         "name": "攻击",
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "岁时记",
         "fullDesc": "施放普攻时额外恢复{{1}}点能量。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "人造花",
         "fullDesc": "战技提供的暴击伤害提高效果会延长到目标下一个回合开始。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "夜想曲",
         "fullDesc": "我方全体的攻击力提高{{4, percent}}%。当我方队伍中存在1名/2名/3名量子属性的角色时，我方量子属性的角色的攻击力额外提高{{1, percent}}%/{{2, percent}}%/{{3, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

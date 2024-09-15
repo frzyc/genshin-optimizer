@@ -5,63 +5,72 @@
       "0": {
         "name": "적자…",
         "fullDesc": "지정된 단일 적에게 토파즈 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 화염 속성 피해를 준다",
-        "shortDesc": "단일 적에게 소량의 화염 속성 피해를 가한다"
+        "shortDesc": "단일 적에게 소량의 화염 속성 피해를 가한다",
+        "tag": "단일 공격"
       }
     },
     "skill": {
       "0": {
         "name": "결제 불가?",
         "fullDesc": "지정된 단일 적을 [부채 증명] 상태에 빠트려 적이 받는 추가 공격 피해를 <orangeStrong>{{2, percent}}%</orangeStrong> 증가시킨다. [부채 증명]은 가장 최근에 부여한 목표에게만 적용된다. 아군 턴 시작 또는 행동 시 필드 위에 [부채 증명] 상태에 빠진 적이 없으면 토파즈가 임의의 적을 [부채 증명] 상태에 빠트린다.<br>복순이는 해당 목표에게 토파즈 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 화염 속성 피해를 준다. 해당 전투 스킬 발동으로 피해를 가할 시 추가 공격을 발동한 것으로 간주한다",
-        "shortDesc": "단일 적을 [부채 증명] 상태에 빠트리고, 해당 적이 <orangeStrong>받는 추가 공격 피해를 증가</orangeStrong>시킨다. 복순이는 목표에게 화염 속성 피해를 가한다"
+        "shortDesc": "단일 적을 [부채 증명] 상태에 빠트리고, 해당 적이 <orangeStrong>받는 추가 공격 피해를 증가</orangeStrong>시킨다. 복순이는 목표에게 화염 속성 피해를 가한다",
+        "tag": "단일 공격"
       }
     },
     "ult": {
       "0": {
         "name": "흑자 전환!",
         "fullDesc": "복순이가 [폭증!] 상태에 진입하고 복순이의 피해 배율이 <orangeStrong>{{1, percent}}%</orangeStrong>, 치명타 피해가 <orangeStrong>{{2, percent}}%</orangeStrong> 증가한다. [부채 증명] 상태에 빠진 적이 아군의 일반 공격, 전투 스킬 혹은 필살기로 공격을 받을 시 복순이의 행동 게이지가 {{3, percent}}% 증가한다. 복순이가 {{4}}회 공격 후 [폭증!] 상태가 해제된다",
-        "shortDesc": "복순이가 [폭증!] 상태에 진입하고 <orangeStrong>피해 배율과 치명타 피해가 증가</orangeStrong>한다"
+        "shortDesc": "복순이가 [폭증!] 상태에 진입하고 <orangeStrong>피해 배율과 치명타 피해가 증가</orangeStrong>한다",
+        "tag": "강화"
       }
     },
     "talent": {
       "0": {
         "name": "피그 마켓?!",
         "fullDesc": "전투 시작 시 복순이를 소환한다. 복순이의 기본 속도는 {{1}}pt이며, 행동 시 추가 공격을 발동한다. [부채 증명] 상태에 빠진 단일 적에게 토파즈 공격력 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 화염 속성 피해를 준다.<br>[부채 증명] 상태에 빠진 적이 아군의 추가 공격을 받으면 복순이의 행동 게이지가 {{3, percent}}% 증가한다. 복순이 자신의 턴에는 행동 게이지 증가 효과가 발동하지 않는다.<br>토파즈가 전투 불능 상태에 빠지면 복순이도 사라진다",
-        "shortDesc": "전투 시작 시 <orangeStrong>복순이를 소환</orangeStrong>하고 복순이가 행동 시 <orangeStrong>[부채 증명] 상태에 빠진 단일 적에게 추가 공격을 발동</orangeStrong>한다. [부채 증명] 상태에 빠진 적이 추가 공격을 받으면 <orangeStrong>복순이의 행동 게이지가 증가</orangeStrong>한다"
+        "shortDesc": "전투 시작 시 <orangeStrong>복순이를 소환</orangeStrong>하고 복순이가 행동 시 <orangeStrong>[부채 증명] 상태에 빠진 단일 적에게 추가 공격을 발동</orangeStrong>한다. [부채 증명] 상태에 빠진 적이 추가 공격을 받으면 <orangeStrong>복순이의 행동 게이지가 증가</orangeStrong>한다",
+        "tag": "단일 공격"
       }
     },
     "technique": {
       "0": {
         "name": "공적 지원금",
         "fullDesc": "토파즈는 필드 입장 시 복순이를 소환하고, 복순이는 일정 범위 내의 일반 전리품과 저금통을 자동으로 탐색한다.<br>비술을 직접 발동하면 다음 전투에서 복순이가 첫 공격 발동 후 토파즈가 에너지를 {{1}}pt 회복한다.<br>비술을 발동하고 맵에서 적과 전투하여 승리한 후, 토파즈가 여전히 파티에 있으면 신용 포인트 획득 단계에서 추가로 소량의 신용 포인트를 획득한다. 신용 포인트는 하루에 최대 추가로 {{2}} 포인트 획득할 수 있다.<br>비술을 발동하고 시뮬레이션 우주, 차분화 우주에서 적과 전투하여 승리하면 추가로 소량의 우주 조각을 획득하고 낮은 확률로 랜덤 기물을 1개 획득한다",
-        "shortDesc": "미궁 안에서 <orangeStrong>뒤따라 이동하는 복순이를 소환</orangeStrong>한다. 복순이는 자동으로 <orangeStrong>근처의 일반 전리품과 저금통을 탐색</orangeStrong>한다. 비술을 발동하면 다음 전투에서 복순이가 첫 공격 후 토파즈가 에너지를 회복한다"
+        "shortDesc": "미궁 안에서 <orangeStrong>뒤따라 이동하는 복순이를 소환</orangeStrong>한다. 복순이는 자동으로 <orangeStrong>근처의 일반 전리품과 저금통을 탐색</orangeStrong>한다. 비술을 발동하면 다음 전투에서 복순이가 첫 공격 후 토파즈가 에너지를 회복한다",
+        "tag": "강화"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "당좌 대월",
         "fullDesc": "토파즈가 일반 공격으로 피해를 가할 시 추가 공격을 발동한 것으로 간주한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "금융 불안",
         "fullDesc": "토파즈와 복순이가 화염 속성 약점을 보유한 적에게 가하는 피해가 {{1, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "기술적 조정",
         "fullDesc": "복순이가 [폭증!] 상태일 때 적에게 공격을 발동하면 토파즈는 에너지를 추가로 {{1}}pt 회복한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

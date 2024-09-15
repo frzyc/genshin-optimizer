@@ -5,63 +5,72 @@
       "0": {
         "name": "{RUBY_B#ちしき}知識{RUBY_E#}は{RUBY_B#ちから}力{RUBY_E#}なり",
         "fullDesc": "指定した敵単体にDr.レイシオの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与える。",
-        "shortDesc": "指定した敵単体に少量の虚数属性ダメージを与える。"
+        "shortDesc": "指定した敵単体に少量の虚数属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#さんばじゅつ}産婆術{RUBY_E#}",
         "fullDesc": "指定した敵単体にDr.レイシオの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与える。",
-        "shortDesc": "指定した敵単体に虚数属性ダメージを与える。"
+        "shortDesc": "指定した敵単体に虚数属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#さんだんかい}三段階{RUBY_E#}のパラドックス",
         "fullDesc": "指定した敵単体にDr.レイシオの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与え、「智者の短慮」を付与する。Dr.レイシオ以外の味方が「智者の短慮」を持つ敵に攻撃を行う時、Dr.レイシオはその敵に天賦の追加攻撃を1回行う。<br>「智者の短慮」の効果は{{2}}回まで発動でき、Dr.レイシオの必殺技の最後のターゲットにのみ効果を発揮する。必殺技を発動した後にこの効果の発動可能回数がリセットされる。",
-        "shortDesc": "指定した敵単体に虚数属性ダメージを与え、「智者の短慮」を付与する。Dr.レイシオ以外の味方が「智者の短慮」を持つ敵に攻撃を行う時、Dr.レイシオはその敵に<orangeStrong>追加攻撃</orangeStrong>を1回行う。"
+        "shortDesc": "指定した敵単体に虚数属性ダメージを与え、「智者の短慮」を付与する。Dr.レイシオ以外の味方が「智者の短慮」を持つ敵に攻撃を行う時、Dr.レイシオはその敵に<orangeStrong>追加攻撃</orangeStrong>を1回行う。",
+        "tag": "単体攻撃"
       }
     },
     "talent": {
       "0": {
         "name": "{RUBY_B#われおも}我思{RUBY_E#}う、{RUBY_B#ゆえ}故{RUBY_E#}に{RUBY_B#われ}我{RUBY_E#}あり",
         "fullDesc": "戦闘スキルを発動する時、{{2, percent}}%の固定確率でターゲットに追加攻撃を1回行い、Dr.レイシオの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与える。敵にあるデバフ1つにつき、追加攻撃を行う固定確率+{{3, percent}}%。追加攻撃を行う前にターゲットが倒された場合、ランダムな敵単体に追加攻撃を行う。",
-        "shortDesc": "戦闘スキルを発動する時、確率でターゲットに<orangeStrong>追加攻撃</orangeStrong>を1回行う。"
+        "shortDesc": "戦闘スキルを発動する時、確率でターゲットに<orangeStrong>追加攻撃</orangeStrong>を1回行う。",
+        "tag": "単体攻撃"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#ぐうぞう}偶像{RUBY_E#}の{RUBY_B#たんじょう}誕生{RUBY_E#}",
         "fullDesc": "秘技を使用した後、{{1}}秒間継続する敵を挑発できる特殊領域を作り出す。特殊領域内の敵と戦闘に入った後、{{2, percent}}%の基礎確率で敵それぞれの速度-{{3, percent}}%、{{4}}ターン継続。味方が作り出した領域は1つまで存在できる。",
-        "shortDesc": "特殊領域を作り出す。領域内の敵を挑発する。領域内の敵と戦闘に入った後、高確率で敵の<orangeStrong>速度をダウン</orangeStrong>する。"
+        "shortDesc": "特殊領域を作り出す。領域内の敵を挑発する。領域内の敵と戦闘に入った後、高確率で敵の<orangeStrong>速度をダウン</orangeStrong>する。",
+        "tag": "妨害"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#きのう}帰納{RUBY_E#}",
         "fullDesc": "戦闘スキルを発動する時、ターゲットにあるデバフ1つにつき、Dr.レイシオの会心率+{{1, percent(fixed: 1)}}%、会心ダメージ+{{2, percent}}%、最大で{{3}}層累積できる。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#えんえき}演繹{RUBY_E#}",
         "fullDesc": "戦闘スキルを発動した後、{{1, percent}}%の基礎確率で攻撃を受けた敵の効果抵抗-{{2, percent}}%、{{3}}ターン継続。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#すいろん}推論{RUBY_E#}",
         "fullDesc": "ダメージを与える時、敵にあるデバフが{{1}}つ以上の場合、デバフ1つにつき、その敵に対するDr.レイシオの与ダメージ+{{2, percent}}%、最大で+{{3, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

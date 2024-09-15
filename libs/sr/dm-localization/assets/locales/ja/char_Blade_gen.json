@@ -5,68 +5,78 @@
       "0": {
         "name": "{RUBY_B#しりけん}支離剣{RUBY_E#}",
         "fullDesc": "指定した敵単体に刃の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の風属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の風属性ダメージを与える。"
+        "shortDesc": "敵単体に少量の風属性ダメージを与える。",
+        "tag": "単体攻撃"
       },
       "1": {
         "name": "{RUBY_B#むげんけんじゅ}無間剣樹{RUBY_E#}",
         "fullDesc": "刃のHPを最大HP{{1, percent}}%分消費し、指定した敵単体に刃の攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>+最大HP<orangeStrong>{{4, percent}}%</orangeStrong>分の風属性ダメージを与え、隣接する敵に刃の攻撃力<orangeStrong>{{3, percent}}%</orangeStrong>+最大HP<orangeStrong>{{5, percent}}%</orangeStrong>分の風属性ダメージを与える。<br>残りHPが足りない場合、「無間剣樹」を発動した時、刃の残りHPが1になる。<br>「無間剣樹」はSPを回復できない。",
-        "shortDesc": "自身のHPを消費し、敵単体に風属性ダメージを与え、隣接する敵に少量の風属性ダメージを与える。"
+        "shortDesc": "自身のHPを消費し、敵単体に風属性ダメージを与え、隣接する敵に少量の風属性ダメージを与える。",
+        "tag": "拡散攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#じごくへん}地獄変{RUBY_E#}",
         "fullDesc": "刃のHPを最大HP{{1, percent}}%分消費して「地獄変」状態に入る。<br>「地獄変」状態では戦闘スキルを発動できず、自身の与ダメージ+<orangeStrong>{{4, percent}}%</orangeStrong>、通常攻撃「支離剣」が「無間剣樹」に強化される、{{2}}ターン継続。<br>残りHPが足りない場合、戦闘スキルを発動した時、刃の残りHPが1になる。<br>この戦闘スキルはEPを回復できない。この戦闘スキルを発動した後、ターンは終了しない。",
-        "shortDesc": "自身のHPを消費し、<orangeStrong>通常攻撃を強化</orangeStrong>する。ターンは終了しない。"
+        "shortDesc": "自身のHPを消費し、<orangeStrong>通常攻撃を強化</orangeStrong>する。ターンは終了しない。",
+        "tag": "強化"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#たいへきばんし}大辟万死{RUBY_E#}",
         "fullDesc": "刃の残りHPを最大HPの50%にし、敵単体に刃の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>+最大HP<orangeStrong>{{2, percent}}%</orangeStrong>+戦闘中失ったHPの累計<orangeStrong>{{5, percent}}%</orangeStrong>分の風属性ダメージを与え、隣接する敵に刃の攻撃力<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>+最大HP<orangeStrong>{{4, percent}}%</orangeStrong>+戦闘中失ったHPの累計<orangeStrong>{{6, percent}}%</orangeStrong>分の風属性ダメージを与える。<br>戦闘中失ったHPの累計のカウントは、刃の最大HPの<orangeStrong>{{7, percent}}%</orangeStrong>を超えず、必殺技を発動した後にリセットされる。",
-        "shortDesc": "残りHPを最大HPの50%にし、敵単体に大量の風属性ダメージを与え、隣接する敵に風属性ダメージを与える。"
+        "shortDesc": "残りHPを最大HPの50%にし、敵単体に大量の風属性ダメージを与え、隣接する敵に風属性ダメージを与える。",
+        "tag": "拡散攻撃"
       }
     },
     "talent": {
       "0": {
         "name": "{RUBY_B#しゅっこつ}倏忽{RUBY_E#}の{RUBY_B#おんし}恩賜{RUBY_E#}",
         "fullDesc": "刃がダメージを受ける、またはHPを消費した時、チャージを1層獲得する。チャージは最大で5層累積できる。この効果は攻撃を1回受けるたびに1層まで累積できる。<br>チャージが上限に達した時、敵全体に追加攻撃を1回行い、刃の攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>+最大HP<orangeStrong>{{4, percent}}%</orangeStrong>分の風属性ダメージを与え、刃の最大HP{{3, percent}}%分のHPを回復する。追加攻撃を行った後、すべてのチャージを消費する。",
-        "shortDesc": "刃のHPが減った時、チャージを1層獲得する。チャージが上限に達した時、<orangeStrong>敵全体に風属性ダメージを与え</orangeStrong>、HPを回復する。その後、チャージをすべて消費する。"
+        "shortDesc": "刃のHPが減った時、チャージを1層獲得する。チャージが上限に達した時、<orangeStrong>敵全体に風属性ダメージを与え</orangeStrong>、HPを回復する。その後、チャージをすべて消費する。",
+        "tag": "全体攻撃"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#ごうとふう}業途風{RUBY_E#}",
         "fullDesc": "敵を攻撃。戦闘に入った後、刃の最大HP{{2, percent}}%分のHPを消費し、敵全体に刃の最大HP{{1, percent}}%分の風属性ダメージを与える。<br>残りHPが足りない場合、秘技を発動した時、刃の残りHPが1になる。",
-        "shortDesc": "敵を攻撃。戦闘に入った後、自身のHPを消費し、敵全体に風属性ダメージを与える。"
+        "shortDesc": "敵を攻撃。戦闘に入った後、自身のHPを消費し、敵全体に風属性ダメージを与える。",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃、戦闘突入後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#むじんけいじゅ}無尽形寿{RUBY_E#}",
         "fullDesc": "刃の残りHPが50%以下の時、治癒を受けた時の回復量+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#ひゃくしたいにん}百死耐忍{RUBY_E#}",
         "fullDesc": "「無間剣樹」を発動した後、弱点撃破状態の敵に命中した場合、刃は自身の最大HP{{1, percent}}%+{{2}}のHPを回復する。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#えこうめつぼう}壊劫滅亡{RUBY_E#}",
         "fullDesc": "天賦による追加攻撃ダメージ+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

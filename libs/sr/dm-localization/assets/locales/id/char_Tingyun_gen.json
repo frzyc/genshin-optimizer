@@ -5,63 +5,72 @@
       "0": {
         "name": "Dislodged",
         "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Tingyun pada 1 target musuh.",
-        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Soothing Melody",
         "fullDesc": "Memberikan \"Benediction\" pada 1 rekan tim dan meningkatkan <orangeStrong>{{2, percent}}%</orangeStrong> ATK-nya. Nilai peningkatan ATK tidak dapat melebihi <orangeStrong>{{4, percent}}%</orangeStrong> ATK Tingyun saat ini.<br>Setelah rekan yang mendapatkan \"Benediction\" melancarkan serangan, rekan tersebut akan mengakibatkan 1 kali Lightning DMG tambahan sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK-nya.<br>\"Benediction\" berlangsung selama {{3}} giliran dan hanya efektif pada target skill terbaru Tingyun.",
-        "shortDesc": "<orangeStrong>Meningkatkan ATK</orangeStrong> 1 rekan tim dan memberinya \"Benediction\". Saat rekan berstatus \"Benediction\" melancarkan serangan, akan mengakibatkan <orangeStrong>Lightning DMG tambahan</orangeStrong> dalam jumlah kecil."
+        "shortDesc": "<orangeStrong>Meningkatkan ATK</orangeStrong> 1 rekan tim dan memberinya \"Benediction\". Saat rekan berstatus \"Benediction\" melancarkan serangan, akan mengakibatkan <orangeStrong>Lightning DMG tambahan</orangeStrong> dalam jumlah kecil.",
+        "tag": "Support"
       }
     },
     "ult": {
       "0": {
         "name": "Amidst the Rejoicing Clouds",
         "fullDesc": "Memulihkan {{1}} Energy 1 rekan tim yang ditargetkan dan di saat bersamaan meningkatkan <orangeStrong>{{3, percent}}%</orangeStrong> DMG rekan tersebut selama {{2}} giliran.",
-        "shortDesc": "<orangeStrong>Memulihkan Energy</orangeStrong> 1 rekan tim dan <orangeStrong>meningkatkan DMG yang diakibatkan</orangeStrong> rekan tersebut."
+        "shortDesc": "<orangeStrong>Memulihkan Energy</orangeStrong> 1 rekan tim dan <orangeStrong>meningkatkan DMG yang diakibatkan</orangeStrong> rekan tersebut.",
+        "tag": "Support"
       }
     },
     "talent": {
       "0": {
         "name": "Violet Sparknado",
         "fullDesc": "Setelah target musuh terkena serangan Tingyun, rekan tim yang mendapatkan \"Benediction\" akan segera mengakibatkan Lightning DMG tambahan sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK-nya pada musuh tersebut.",
-        "shortDesc": "Setelah musuh terkena serangan dari Tingyun, target berstatus \"Benediction\" akan segera mengakibatkan Lightning DMG tambahan dalam jumlah kecil pada musuh tersebut."
+        "shortDesc": "Setelah musuh terkena serangan dari Tingyun, target berstatus \"Benediction\" akan segera mengakibatkan Lightning DMG tambahan dalam jumlah kecil pada musuh tersebut.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Gentle Breeze",
         "fullDesc": "Setelah menggunakan Technique, Tingyun akan segera memulihkan {{1}} Energy.",
-        "shortDesc": "Akan segera memulihkan Energy dirinya setelah menggunakan Technique."
+        "shortDesc": "Akan segera memulihkan Energy dirinya setelah menggunakan Technique.",
+        "tag": "Support"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Nourished Joviality",
         "fullDesc": "Saat melancarkan Skill, meningkatkan {{1, percent}}% SPD Tingyun selama 1 giliran.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Knell Subdual",
         "fullDesc": "Meningkatkan {{1, percent}}% DMG yang diakibatkan Basic Attack.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Jubilant Passage",
         "fullDesc": "Segera memulihkan {{1}} Energy Tingyun saat gilirannya dimulai.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

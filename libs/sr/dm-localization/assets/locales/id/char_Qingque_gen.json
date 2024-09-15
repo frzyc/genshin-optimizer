@@ -5,68 +5,78 @@
       "0": {
         "name": "Flower Pick",
         "fullDesc": "Melemparkan 1 Jade Tile yang jumlah polanya paling sedikit dan mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Qingque pada 1 target musuh.",
-        "shortDesc": "Melemparkan 1 lembar Jade Tile dan mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Melemparkan 1 lembar Jade Tile dan mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       },
       "1": {
         "name": "Cherry on Top!",
         "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Qingque pada 1 target musuh, serta mengakibatkan Quantum DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Qingque pada musuh di sekitar target.<br>\"Cherry on Top!\" tidak dapat memulihkan Poin Skill.",
-        "shortDesc": "Mengakibatkan Quantum DMG pada 1 musuh, dan Quantum DMG dalam jumlah kecil pada target di sekitarnya."
+        "shortDesc": "Mengakibatkan Quantum DMG pada 1 musuh, dan Quantum DMG dalam jumlah kecil pada target di sekitarnya.",
+        "tag": "Blast"
       }
     },
     "skill": {
       "0": {
         "name": "A Scoop of Moon",
         "fullDesc": "Segera mengambil {{1}} lembar Jade Tile dan meningkatkan <orangeStrong>{{2, percent}}%</orangeStrong> DMG Qingque hingga gilirannya berakhir, efek ini dapat ditumpuk hingga {{3}} lapis. Giliran saat ini tidak akan berakhir setelah melancarkan Skill ini.",
-        "shortDesc": "<orangeStrong>Menarik Jade Tile</orangeStrong>, meningkatkan DMG yang diakibatkan dirinya, dan <orangeStrong>giliran kali ini tidak akan berakhir</orangeStrong>."
+        "shortDesc": "<orangeStrong>Menarik Jade Tile</orangeStrong>, meningkatkan DMG yang diakibatkan dirinya, dan <orangeStrong>giliran kali ini tidak akan berakhir</orangeStrong>.",
+        "tag": "Enhance"
       }
     },
     "ult": {
       "0": {
         "name": "A Quartet? Woo-hoo!",
         "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Qingque pada seluruh musuh, serta mendapatkan 4 Jade Tile dengan pola yang sama.",
-        "shortDesc": "Mengakibatkan Quantum DMG pada seluruh musuh, serta mendapatkan 4 lembar Jade Tile dengan pola yang sama."
+        "shortDesc": "Mengakibatkan Quantum DMG pada seluruh musuh, serta mendapatkan 4 lembar Jade Tile dengan pola yang sama.",
+        "tag": "AoE"
       }
     },
     "talent": {
       "0": {
         "name": "Celestial Jade",
         "fullDesc": "Saat giliran rekan tim dimulai, Qingque akan mengambil secara acak 1 dari 3 Jade Tile dengan pola yang berbeda, Qingque maksimal memiliki 4 Jade Tile.<br>Saat gilirannya dimulai, jika Qingque memiliki 4 Jade Tile berpola sama, Qingque akan mengonsumsi semua Jade Tile dan memasuki status \"Hidden Hand\".<br>Dalam status \"Hidden Hand\", Qingque tidak dapat melancarkan Skill lagi, di saat yang bersamaan akan meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> ATK dirinya sendiri, lalu Basic ATK \"Flower Pick\" akan diperkuat menjadi \"Cherry on Top!\". Status \"Hidden Hand\" akan hilang setelah melancarkan \"Cherry on Top!\".",
-        "shortDesc": "Mengambil Jade Tile saat giliran rekan tim dimulai. Saat giliran dirinya dimulai, jika memiliki 4 Jade Tile dengan pola yang sama, kartu akan dikonsumsi dan <orangeStrong>Basic Attack kali ini akan mengalami peningkatan</orangeStrong>. ATK dirinya juga akan meningkat."
+        "shortDesc": "Mengambil Jade Tile saat giliran rekan tim dimulai. Saat giliran dirinya dimulai, jika memiliki 4 Jade Tile dengan pola yang sama, kartu akan dikonsumsi dan <orangeStrong>Basic Attack kali ini akan mengalami peningkatan</orangeStrong>. ATK dirinya juga akan meningkat.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Game Solitaire",
         "fullDesc": "Setelah menggunakan Technique, Qingque akan mengambil {{1}} lembar Jade Tile saat memasuki pertempuran.",
-        "shortDesc": "Setelah menggunakan Technique, akan mengambil kartu saat memasuki pertempuran berikutnya."
+        "shortDesc": "Setelah menggunakan Technique, akan mengambil kartu saat memasuki pertempuran berikutnya.",
+        "tag": "Enhance"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Tile Battle",
         "fullDesc": "Memulihkan 1 Poin Skill saat melancarkan Skill. Efek ini hanya dapat dipicu sekali dalam 1 pertempuran.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Bide Time",
         "fullDesc": "Efek peningkatan DMG dari Skill Qingque meningkat {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Robbing the Kong",
         "fullDesc": "Meningkatkan {{1, percent}}% SPD Qingque selama 1 giliran setelah melancarkan Enhanced Basic Attack.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

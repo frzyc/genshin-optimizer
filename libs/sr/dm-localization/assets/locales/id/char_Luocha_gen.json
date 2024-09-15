@@ -5,63 +5,72 @@
       "0": {
         "name": "Thorns of the Abyss",
         "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Luocha pada 1 target musuh.",
-        "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Prayer of Abyss Flower",
         "fullDesc": "Setelah melancarkan Skill, segera memulihkan HP 1 rekan yang ditarget sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Luocha + <orangeStrong>{{2}}</orangeStrong> dan membuat Luocha memperoleh 1 lapis \"Abyss Flower\".<br>Saat Persentase HP salah satu rekan tim saat ini kurang dari atau sama dengan {{3, percent}}%, Luocha akan segera memicu sebuah efek yang sama dengan Skill ini pada rekan tersebut sebanyak 1 kali tanpa perlu mengonsumsi Poin Skill. Efek ini dapat dipicu lagi setelah {{4}} giliran.",
-        "shortDesc": "<orangeStrong>Memulihkan</orangeStrong> HP 1 rekan tim dan memperoleh 1 lapis \"Abyss Flower\"."
+        "shortDesc": "<orangeStrong>Memulihkan</orangeStrong> HP 1 rekan tim dan memperoleh 1 lapis \"Abyss Flower\".",
+        "tag": "Restore"
       }
     },
     "ult": {
       "0": {
         "name": "Death Wish",
         "fullDesc": "Menghapus masing-masing {{2}} Buff dari seluruh target musuh dan mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Luocha ke seluruh musuh, serta memberikan Luocha 1 lapis \"Abyss Flower\".",
-        "shortDesc": "<orangeStrong>Menghapus</orangeStrong> masing-masing 1 <orangeStrong>efek Buff</orangeStrong> dari seluruh musuh dan mengakibatkan Imaginary DMG pada seluruh musuh, serta memperoleh 1 lapis \"Abyss Flower\"."
+        "shortDesc": "<orangeStrong>Menghapus</orangeStrong> masing-masing 1 <orangeStrong>efek Buff</orangeStrong> dari seluruh musuh dan mengakibatkan Imaginary DMG pada seluruh musuh, serta memperoleh 1 lapis \"Abyss Flower\".",
+        "tag": "AoE"
       }
     },
     "talent": {
       "0": {
         "name": "Cycle of Life",
         "fullDesc": "Saat tumpukan \"Abyss Flower\" mencapai {{1}} lapis, Luocha akan mengonsumsi semua \"Abyss Flower\" dan membuat sebuah area pembatas pada musuh.<br>Setelah musuh dalam area pembatas diserang rekan tim, rekan tim yang menyerang akan segera memulihkan HP sebesar <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> ATK Luocha +<orangeStrong>{{4}}</orangeStrong>.<br>Efek area pembatas berlangsung selama {{3}} giliran. Saat Luocha gugur, efek area pembatas akan menghilang.",
-        "shortDesc": "Saat memiliki 2 lapis \"Abyss Flower\", <orangeStrong>sebuah area pembatas akan dihasilkan</orangeStrong>. Selama durasi area pembatas, <orangeStrong>setiap rekan yang menyerang akan memperoleh pemulihan HP</orangeStrong>."
+        "shortDesc": "Saat memiliki 2 lapis \"Abyss Flower\", <orangeStrong>sebuah area pembatas akan dihasilkan</orangeStrong>. Selama durasi area pembatas, <orangeStrong>setiap rekan yang menyerang akan memperoleh pemulihan HP</orangeStrong>.",
+        "tag": "Restore"
       }
     },
     "technique": {
       "0": {
         "name": "Mercy of a Fool",
         "fullDesc": "Setelah menggunakan Technique, Talent akan langsung terpicu saat pertempuran selanjutnya dimulai.",
-        "shortDesc": "Setelah menggunakan Technique, efek Talent akan segera dipicu setelah memasuki pertempuran berikutnya."
+        "shortDesc": "Setelah menggunakan Technique, efek Talent akan segera dipicu setelah memasuki pertempuran berikutnya.",
+        "tag": "Restore"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Cleansing Revival",
         "fullDesc": "Saat memicu efek Skill, menghilangkan {{1}} Debuff dari 1 rekan tim yang ditargetkan.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Sanctified",
         "fullDesc": "Setelah target musuh mana pun dalam area pembatas terkena serangan rekan tim, seluruh rekan tim (selain penyerang) akan memulihkan HP sebesar {{1, percent(fixed: 1)}}% ATK Luocha +{{2}}.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Through the Valley",
         "fullDesc": "Meningkatkan {{1, percent}}% peluang untuk menahan Crowd Control Debuff.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

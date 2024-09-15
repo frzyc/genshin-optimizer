@@ -5,63 +5,72 @@
       "0": {
         "name": "Frigid Cold Arrow",
         "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK March 7th pada 1 musuh yang ditargetkan.",
-        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "The Power of Cuteness",
         "fullDesc": "Memberikan Shield yang dapat menahan DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> DEF March 7th + <orangeStrong>{{4}}</orangeStrong> pada 1 rekan tim selama {{2}} giliran.<br>Jika persentase HP rekan tersebut lebih dari atau sama dengan {{3, percent}}%, maka peluangnya diserang musuh akan meningkat pesat.",
-        "shortDesc": "<orangeStrong>Memberikan Shield</orangeStrong> pada 1 rekan tim."
+        "shortDesc": "<orangeStrong>Memberikan Shield</orangeStrong> pada 1 rekan tim.",
+        "tag": "Defense"
       }
     },
     "ult": {
       "0": {
         "name": "Glacial Cascade",
         "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK March 7th pada seluruh musuh. Target musuh yang terkena serangan memiliki {{2, percent}}% peluang dasar untuk memasuki status Frozen selama {{3}} giliran.<br>Saat berstatus Frozen, target musuh tidak dapat beraksi dan di saat bersamaan akan menerima Ice DMG Tambahan sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK March 7th setiap saat gilirannya dimulai.",
-        "shortDesc": "Mengakibatkan Ice DMG pada <orangeStrong>seluruh</orangeStrong> musuh, dan <orangeStrong>berpeluang untuk mengakibatkan status Frozen</orangeStrong>."
+        "shortDesc": "Mengakibatkan Ice DMG pada <orangeStrong>seluruh</orangeStrong> musuh, dan <orangeStrong>berpeluang untuk mengakibatkan status Frozen</orangeStrong>.",
+        "tag": "AoE"
       }
     },
     "talent": {
       "0": {
         "name": "Girl Power",
         "fullDesc": "Setelah rekan tim yang memiliki Shield terkena serangan target musuh, March 7th akan segera melancarkan Serangan Balasan pada penyerang dan mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK March 7th. Efek ini dapat terpicu {{2}} kali di setiap giliran.",
-        "shortDesc": "Saat rekan tim yang dilindungi Shield terkena serangan musuh, March 7th akan <orangeStrong>segera melancarkan Serangan Balasan pada penyerang</orangeStrong>, yang akan mengakibatkan Ice DMG dalam jumlah kecil."
+        "shortDesc": "Saat rekan tim yang dilindungi Shield terkena serangan musuh, March 7th akan <orangeStrong>segera melancarkan Serangan Balasan pada penyerang</orangeStrong>, yang akan mengakibatkan Ice DMG dalam jumlah kecil.",
+        "tag": "Single Target"
       }
     },
     "technique": {
       "0": {
         "name": "Freezing Beauty",
         "fullDesc": "Segera menyerang musuh dan setelah memasuki pertempuran, memiliki {{1, percent}}% peluang dasar untuk mengakibatkan 1 musuh memasuki status Frozen secara acak selama {{2}} giliran.<br>Saat dalam status Frozen, target musuh tidak dapat beraksi dan di saat bersamaan akan menerima Ice DMG tambahan sebesar {{3, percent}}% ATK March 7th setiap kali gilirannya dimulai.",
-        "shortDesc": "Menyerang musuh dan berpeluang besar untuk membuat 1 musuh secara acak memasuki status Frozen setelah memasuki pertempuran."
+        "shortDesc": "Menyerang musuh dan berpeluang besar untuk membuat 1 musuh secara acak memasuki status Frozen setelah memasuki pertempuran.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Purify",
         "fullDesc": "Saat melancarkan Skill, akan menghilangkan 1 Debuff dari rekan tim yang ditargetkan.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Reinforce",
         "fullDesc": "Durasi Shield yang diberikan Skill bertambah {{1}} giliran.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Ice Spell",
         "fullDesc": "Saat melancarkan Ultimate, meningkatkan {{1, percent}}% peluang dasar untuk menyebabkan status Frozen pada target musuh.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,63 +5,72 @@
       "0": {
         "name": "Threading Fragrance",
         "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Ruan Mei's ATK to a single target enemy.",
-        "shortDesc": "Deals minor Ice DMG to a single enemy."
+        "shortDesc": "Deals minor Ice DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "String Sings Slow Swirls",
         "fullDesc": "After using her Skill, Ruan Mei gains Overtone, lasting for {{3}} turn(s). This duration decreases by 1 at the start of Ruan Mei's every turn. When Ruan Mei has Overtone, all allies' DMG increases by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> and Weakness Break Efficiency increases by {{2, percent}}%.",
-        "shortDesc": "After using her Skill, Ruan Mei gains Overtone. When Ruan Mei has Overtone, increase all allies' <orangeStrong>DMG</orangeStrong> and <orangeStrong>Weakness Break efficiency</orangeStrong>."
+        "shortDesc": "After using her Skill, Ruan Mei gains Overtone. When Ruan Mei has Overtone, increase all allies' <orangeStrong>DMG</orangeStrong> and <orangeStrong>Weakness Break efficiency</orangeStrong>.",
+        "tag": "Support"
       }
     },
     "ult": {
       "0": {
         "name": "Petals to Stream, Repose in Dream",
         "fullDesc": "Ruan Mei deploys a Zone that lasts for {{2}} turns. The Zone's duration decreases by 1 at the start of her turn.<br>While inside the Zone, all allies' All-Type RES PEN increases by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> and their attacks apply Thanatoplum Rebloom to the enemies hit.<br>When these enemies attempt to recover from Weakness Break, Thanatoplum Rebloom is triggered, extending the duration of their Weakness Break, delaying their action by an amount equal to {{3, percent}}% of Ruan Mei's Break Effect plus {{4, percent}}%, and dealing Break DMG equal to <orangeStrong>{{5, percent}}%</orangeStrong> of Ruan Mei's Ice Break DMG.<br>Enemy targets cannot have Thanatoplum Rebloom re-applied to them until they recover from Weakness Break.",
-        "shortDesc": "Increases <orangeStrong>All-Type RES PEN</orangeStrong> for all allies, and their attacks apply Thanatoplum Rebloom to enemies hit."
+        "shortDesc": "Increases <orangeStrong>All-Type RES PEN</orangeStrong> for all allies, and their attacks apply Thanatoplum Rebloom to enemies hit.",
+        "tag": "Support"
       }
     },
     "talent": {
       "0": {
         "name": "Somatotypical Helix",
         "fullDesc": "Increases SPD by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> for the team (excluding this character). When allies Break an enemy target's Weakness, Ruan Mei deals to this enemy target Break DMG equal to <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> of her Ice Break DMG.",
-        "shortDesc": "Increases <orangeStrong>SPD</orangeStrong> for all allies (excluding this character). Breaking an enemy target's Weakness will <orangeStrong>additionally deal Ice Break DMG</orangeStrong>."
+        "shortDesc": "Increases <orangeStrong>SPD</orangeStrong> for all allies (excluding this character). Breaking an enemy target's Weakness will <orangeStrong>additionally deal Ice Break DMG</orangeStrong>.",
+        "tag": "Support"
       }
     },
     "technique": {
       "0": {
         "name": "Silken Serenade",
         "fullDesc": "After using the Technique, gains Silken Serenade. At the start of the next battle, automatically triggers the Skill for {{1}} time(s) without consuming Skill Points.<br>In Simulated Universe or Divergent Universe, when Ruan Mei has Silken Serenade, the team actively attacking enemies will always be regarded as attacking their Weakness to enter battle, and this attack can reduce all enemies' Toughness regardless of Weakness types. When breaking Weakness, triggers Weakness Break Effect corresponding to the attacker's Type. For every Blessing in possession (up to a max of {{4}} Blessings will be taken into account), additionally increases the Toughness Reduction of this attack by {{2, percent}}%. After breaking an enemy target's Weakness, additionally deals to the enemy target Break DMG equal to {{3, percent}}% of Ruan Mei's Ice Break DMG.",
-        "shortDesc": "The next time entering battle, automatically triggers the Skill for <orangeStrong>{{1}}</orangeStrong> time(s). After using the Technique, allies attacking enemies in Simulated Universe or Divergent Universe will always be regarded as attacking their Weakness to enter battle, and their Toughness is reduced <orangeStrong>regardless of Weakness types</orangeStrong>. For every Blessing in possession, increases Toughness Reduction and additionally deals Break DMG when breaking Weakness."
+        "shortDesc": "The next time entering battle, automatically triggers the Skill for <orangeStrong>{{1}}</orangeStrong> time(s). After using the Technique, allies attacking enemies in Simulated Universe or Divergent Universe will always be regarded as attacking their Weakness to enter battle, and their Toughness is reduced <orangeStrong>regardless of Weakness types</orangeStrong>. For every Blessing in possession, increases Toughness Reduction and additionally deals Break DMG when breaking Weakness.",
+        "tag": "Enhance"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Inert Respiration",
         "fullDesc": "Increases Break Effect by {{1, percent}}% for all allies.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Days Wane, Thoughts Wax",
         "fullDesc": "Ruan Mei regenerates {{1}} Energy at the start of her turn.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Candle Lights on Still Waters",
         "fullDesc": "In battle, for every {{2, percent}}% of Ruan Mei's Break Effect that exceeds {{1, percent}}%, her Skill additionally increases allies' DMG by {{3, percent}}%, up to a maximum of {{4, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

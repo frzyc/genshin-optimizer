@@ -5,63 +5,72 @@
       "0": {
         "name": "翻風轉日",
         "fullDesc": "對指定敵方單體造成等同於雲璃<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害。",
-        "shortDesc": "對敵方單體造成少量物理屬性傷害。"
+        "shortDesc": "對敵方單體造成少量物理屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "飛鋏震赫",
         "fullDesc": "回復等同於雲璃<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>攻擊力+<orangeStrong>{{4}}</orangeStrong>的生命值，並對指定敵方單體造成等同於雲璃<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害，對其相鄰目標造成等同於雲璃<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的物理屬性傷害。",
-        "shortDesc": "回復自身生命值，並對敵方單體與相鄰目標造成少量物理屬性傷害。"
+        "shortDesc": "回復自身生命值，並對敵方單體與相鄰目標造成少量物理屬性傷害。",
+        "tag": "擴散"
       }
     },
     "ult": {
       "0": {
         "name": "劍為地紀，刃驚天宗",
         "fullDesc": "消耗{{8}}點能量，雲璃獲得【格擋】並使敵方全體陷入嘲諷狀態，持續至下一個我方或敵方回合結束時。雲璃下一次反擊造成的暴擊傷害提高<orangeStrong>{{2, percent}}%</orangeStrong>。觸發天賦的反擊效果時，將替換為發動反擊【勘破•滅】同時移除【格擋】效果。若【格擋】狀態期間沒有觸發反擊，則狀態結束時雲璃立即對隨機敵方目標發動反擊【勘破•斬】。 <br>【勘破•斬】：對目標造成等同於雲璃<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害，對其相鄰目標造成等同於雲璃<orangeStrong>{{6, percent}}%</orangeStrong>攻擊力的物理屬性傷害。<br>【勘破•滅】：對目標造成等同於雲璃<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害，對其相鄰目標造成等同於雲璃<orangeStrong>{{6, percent}}%</orangeStrong>攻擊力的物理屬性傷害，隨後額外造成{{4}}次傷害，每次傷害對隨機敵方單體造成等同於雲璃<orangeStrong>{{7, percent}}%</orangeStrong>攻擊力的物理傷害。<br>雲璃透過此技能造成傷害時，被視為造成了終結技傷害。",
-        "shortDesc": "進入【格擋】並嘲諷敵方全體，期間受到攻擊後觸發<orangeStrong>強力反擊</orangeStrong>，對攻擊者與其相鄰目標<orangeStrong>造成物理屬性傷害</orangeStrong>，隨後對敵方單體造成少量物理屬性傷害，共彈射6次。若【格擋】狀態期間沒有觸發反擊，狀態結束時對隨機敵方目標與其相鄰目標造成物理屬性傷害。"
+        "shortDesc": "進入【格擋】並嘲諷敵方全體，期間受到攻擊後觸發<orangeStrong>強力反擊</orangeStrong>，對攻擊者與其相鄰目標<orangeStrong>造成物理屬性傷害</orangeStrong>，隨後對敵方單體造成少量物理屬性傷害，共彈射6次。若【格擋】狀態期間沒有觸發反擊，狀態結束時對隨機敵方目標與其相鄰目標造成物理屬性傷害。",
+        "tag": "強化"
       }
     },
     "talent": {
       "0": {
         "name": "閃鑠",
         "fullDesc": "當雲璃受到敵方目標攻擊後，額外恢復{{3}}點能量，並立即向攻擊者發動反擊，對其造成等同於雲璃<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害，對其相鄰目標造成等同於雲璃<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的物理屬性傷害。<br>若沒有可反擊的目標，則反擊敵方隨機目標。",
-        "shortDesc": "當雲璃受到敵方目標攻擊時，額外恢復能量並立即向攻擊者與其相鄰目標發動反擊。"
+        "shortDesc": "當雲璃受到敵方目標攻擊時，額外恢復能量並立即向攻擊者與其相鄰目標發動反擊。",
+        "tag": "擴散"
       }
     },
     "technique": {
       "0": {
         "name": "後發先至",
         "fullDesc": "使自身獲得【招架】效果，持續{{2}}秒，期間攻擊敵人或受到攻擊進入戰鬥後，立即對隨機敵方單體施放【勘破•滅】，並使本次攻擊造成的傷害提高{{1, percent}}%。",
-        "shortDesc": "使自身獲得【招架】效果，持續20秒，期間攻擊敵人或受到攻擊進入戰鬥後，立即對隨機敵方單體施放【勘破•滅】。"
+        "shortDesc": "使自身獲得【招架】效果，持續20秒，期間攻擊敵人或受到攻擊進入戰鬥後，立即對隨機敵方單體施放【勘破•滅】。",
+        "tag": "強化"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "灼轂",
         "fullDesc": "每發動1次【勘破•斬】後，下一次【勘破•斬】將替換為【勘破•滅】。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "卻邪",
         "fullDesc": "【格擋】狀態下抵抗受到的控制類負面效果，並使受到的傷害降低{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "真剛",
         "fullDesc": "發動反擊時，雲璃的攻擊力提高{{1, percent}}%，持續1回合。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

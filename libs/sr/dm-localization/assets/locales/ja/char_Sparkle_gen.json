@@ -5,63 +5,72 @@
       "0": {
         "name": "{RUBY_B#ひと}独{RUBY_E#}り{RUBY_B#しばい}芝居{RUBY_E#}",
         "fullDesc": "指定した敵単体に花火の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の量子属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の量子属性ダメージを与える。"
+        "shortDesc": "敵単体に少量の量子属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#ゆめ}夢{RUBY_E#}を{RUBY_B#およ}泳{RUBY_E#}ぐ{RUBY_B#さかな}魚{RUBY_E#}",
         "fullDesc": "指定した味方単体の会心ダメージを、花火の会心ダメージ<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>分アップする、{{3}}ターン継続。その味方の行動順を{{4, percent}}%早める。<br>自身に対してこのスキルを発動した時、行動順を早める効果は発動しない。",
-        "shortDesc": "味方単体の<orangeStrong>会心ダメージ</orangeStrong>をアップし、その味方の行動順を早める。"
+        "shortDesc": "味方単体の<orangeStrong>会心ダメージ</orangeStrong>をアップし、その味方の行動順を早める。",
+        "tag": "サポート"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#ひとりせんやく}一人千役{RUBY_E#}",
         "fullDesc": "SPを{{2}}回復し、味方全体に「奇怪な謎」を付与する。「奇怪な謎」が付与されている味方は、花火の天賦の与ダメージアップ効果がさらに各層<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>アップする、{{4}}ターン継続。",
-        "shortDesc": "<orangeStrong>SP</orangeStrong>を回復し、花火の天賦による与ダメージアップ効果を強化する。"
+        "shortDesc": "<orangeStrong>SP</orangeStrong>を回復し、花火の天賦による与ダメージアップ効果を強化する。",
+        "tag": "サポート"
       }
     },
     "talent": {
       "0": {
         "name": "{RUBY_B#じょじゅつ}叙述{RUBY_E#}トリック",
         "fullDesc": "花火がフィールド上にいる時、最大SP+{{3}}。味方がSPを1消費するたびに、味方全体の与ダメージ+<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>、{{1}}ターン継続、最大で{{4}}層累積できる。",
-        "shortDesc": "<orangeStrong>最大SP</orangeStrong>がアップする。味方がSPを消費する時、味方全体の<orangeStrong>与ダメージ</orangeStrong>をアップする。"
+        "shortDesc": "<orangeStrong>最大SP</orangeStrong>がアップする。味方がSPを消費する時、味方全体の<orangeStrong>与ダメージ</orangeStrong>をアップする。",
+        "tag": "サポート"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#しんよう}信用{RUBY_E#}できない{RUBY_B#かた}語{RUBY_E#}り{RUBY_B#て}手{RUBY_E#}",
         "fullDesc": "秘技を使用した後、味方全体は{{2}}秒の「ミスリード」状態になる。「ミスリード」状態になると敵に発見されなくなり、敵を先制攻撃して戦闘に入る時、SPを{{1}}回復する。",
-        "shortDesc": "秘技を使用した後、味方全体は「ミスリード」状態になる。「ミスリード」状態になると敵に発見されなくなり、敵を先制攻撃して戦闘に入る時、<orangeStrong>SP</orangeStrong>を回復する。"
+        "shortDesc": "秘技を使用した後、味方全体は「ミスリード」状態になる。「ミスリード」状態になると敵に発見されなくなり、敵を先制攻撃して戦闘に入る時、<orangeStrong>SP</orangeStrong>を回復する。",
+        "tag": "サポート"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#さいじき}歳時記{RUBY_E#}",
         "fullDesc": "通常攻撃を行う時、EPを{{1}}回復する。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#じんぞう}人造{RUBY_E#}の{RUBY_B#はな}花{RUBY_E#}",
         "fullDesc": "戦闘スキルの会心ダメージアップ効果の継続時間が、ターゲットの次のターンが回ってくるまで延長される。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#やそうきょく}夜想曲{RUBY_E#}",
         "fullDesc": "味方全体の攻撃力+{{4, percent}}%。パーティに量子属性キャラが1名/2名/3名いる時、さらに味方量子属性キャラの攻撃力+{{1, percent}}%/{{2, percent}}%/{{3, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

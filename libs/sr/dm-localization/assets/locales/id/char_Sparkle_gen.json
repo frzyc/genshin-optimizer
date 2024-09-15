@@ -5,63 +5,72 @@
       "0": {
         "name": "Monodrama",
         "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Sparkle pada 1 target musuh.",
-        "shortDesc": "Mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Dreamdiver",
         "fullDesc": "Meningkatkan CRIT DMG 1 rekan tim yang ditargetkan, peningkatannya sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> CRIT DMG Sparkle + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, berlangsung selama {{3}} giliran, dan mendahulukan aksi rekan tersebut sebesar {{4, percent}}%.<br>Saat Sparkle melancarkan Kemampuan ini pada dirinya sendiri, efek pendahuluan aksi tidak akan terpicu.",
-        "shortDesc": "Meningkatkan <orangeStrong>CRIT DMG</orangeStrong> 1 rekan tim dan mendahulukan aksi rekan tersebut."
+        "shortDesc": "Meningkatkan <orangeStrong>CRIT DMG</orangeStrong> 1 rekan tim dan mendahulukan aksi rekan tersebut.",
+        "tag": "Support"
       }
     },
     "ult": {
       "0": {
         "name": "The Hero with a Thousand Faces",
         "fullDesc": "Memulihkan {{2}} Poin Skill untuk rekan tim dan memberikan efek \"Cipher\" pada seluruh rekan tim. Untuk rekan tim yang memiliki \"Cipher\", setiap lapis efek peningkatan DMG dari Talent Sparkle akan meningkat ekstra <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, berlangsung selama {{4}} giliran.",
-        "shortDesc": "Memulihkan <orangeStrong>Poin Skill</orangeStrong> rekan tim dan membuat efek peningkatan DMG dari terpicunya Talent Sparkle meningkat ekstra."
+        "shortDesc": "Memulihkan <orangeStrong>Poin Skill</orangeStrong> rekan tim dan membuat efek peningkatan DMG dari terpicunya Talent Sparkle meningkat ekstra.",
+        "tag": "Support"
       }
     },
     "talent": {
       "0": {
         "name": "Red Herring",
         "fullDesc": "Saat Sparkle berada di medan pertempuran, jumlah batas maksimal Poin Skill meningkat {{3}}. Setiap kali rekan tim mengonsumsi 1 Poin Skill, DMG yang diakibatkan oleh seluruh rekan tim akan meningkat <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> selama {{1}} giliran. Efek ini dapat ditumpuk hingga {{4}} lapis.",
-        "shortDesc": "Meningkatkan <orangeStrong>batas maksimum Poin Skill </orangeStrong> rekan tim. Saat rekan tim mengonsumsi Poin Skill, akan meningkatkan <orangeStrong>DMG yang diakibatkan</orangeStrong> seluruh rekan tim."
+        "shortDesc": "Meningkatkan <orangeStrong>batas maksimum Poin Skill </orangeStrong> rekan tim. Saat rekan tim mengonsumsi Poin Skill, akan meningkatkan <orangeStrong>DMG yang diakibatkan</orangeStrong> seluruh rekan tim.",
+        "tag": "Support"
       }
     },
     "technique": {
       "0": {
         "name": "Unreliable Narrator",
         "fullDesc": "Setelah menggunakan Technique, seluruh rekan tim akan memasuki status \"Misdirect\" yang berlangsung selama {{2}} detik. Rekan tim dalam status \"Misdirect\" tidak akan terdeteksi musuh. Saat memasuki pertempuran selama durasi status \"Misdirect\", akan memulihkan {{1}} Poin Skill untuk tim.",
-        "shortDesc": "Setelah menggunakan Technique, seluruh rekan tim akan memasuki status \"Misdirect\". Rekan tim dalam status \"Misdirect\" tidak akan terdeteksi musuh. Saat memasuki pertempuran selama durasi status \"Misdirect\", akan memulihkan <orangeStrong>Poin Skill</orangeStrong> untuk tim."
+        "shortDesc": "Setelah menggunakan Technique, seluruh rekan tim akan memasuki status \"Misdirect\". Rekan tim dalam status \"Misdirect\" tidak akan terdeteksi musuh. Saat memasuki pertempuran selama durasi status \"Misdirect\", akan memulihkan <orangeStrong>Poin Skill</orangeStrong> untuk tim.",
+        "tag": "Support"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Almanac",
         "fullDesc": "Saat melancarkan Basic Attack, akan memulihkan {{1}} Energy tambahan.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Artificial Flower",
         "fullDesc": "Efek peningkatan CRIT DMG yang diberikan oleh Skill akan diperpanjang hingga awal giliran target yang berikutnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Nocturne",
         "fullDesc": "Meningkatkan {{4, percent}}% ATK seluruh rekan tim. Saat ada 1/2/3 karakter Tipe Quantum di dalam tim, ATK dari rekan tim Tipe Quantum meningkat {{1, percent}}%/{{2, percent}}%/{{3, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

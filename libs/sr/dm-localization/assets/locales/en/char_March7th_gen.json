@@ -5,63 +5,72 @@
       "0": {
         "name": "Frigid Cold Arrow",
         "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of March 7th's ATK to a single enemy.",
-        "shortDesc": "Deals minor Ice DMG to a single enemy."
+        "shortDesc": "Deals minor Ice DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "The Power of Cuteness",
         "fullDesc": "Provides a single ally with a Shield that can absorb DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of March 7th's DEF plus <orangeStrong>{{4}}</orangeStrong> for {{2}} turn(s).<br>If the ally's current HP percentage is {{3, percent}}% or higher, greatly increases the chance of enemies attacking that ally.",
-        "shortDesc": "<orangeStrong>Applies a Shield</orangeStrong> on a single ally."
+        "shortDesc": "<orangeStrong>Applies a Shield</orangeStrong> on a single ally.",
+        "tag": "Defense"
       }
     },
     "ult": {
       "0": {
         "name": "Glacial Cascade",
         "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of March 7th's ATK to all enemies. Hit enemies have a {{2, percent}}% base chance to be Frozen for {{3}} turn(s).<br>While Frozen, enemies cannot take action and will receive Additional Ice DMG equal to <orangeStrong>{{4, percent}}%</orangeStrong> of March 7th's ATK at the beginning of each turn.",
-        "shortDesc": "Deals Ice DMG to <orangeStrong>all enemies</orangeStrong>, with <orangeStrong>a chance to apply the Freeze effect</orangeStrong>"
+        "shortDesc": "Deals Ice DMG to <orangeStrong>all enemies</orangeStrong>, with <orangeStrong>a chance to apply the Freeze effect</orangeStrong>",
+        "tag": "AoE"
       }
     },
     "talent": {
       "0": {
         "name": "Girl Power",
         "fullDesc": "After a Shielded ally is attacked by an enemy, March 7th immediately Counters, dealing Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of her ATK. This effect can be triggered {{2}} time(s) each turn.",
-        "shortDesc": "After a Shielded ally is attacked by an enemy, March 7th <orangeStrong>immediately launches a Counter</orangeStrong> against the attacker, dealing minor Ice DMG."
+        "shortDesc": "After a Shielded ally is attacked by an enemy, March 7th <orangeStrong>immediately launches a Counter</orangeStrong> against the attacker, dealing minor Ice DMG.",
+        "tag": "Single Target"
       }
     },
     "technique": {
       "0": {
         "name": "Freezing Beauty",
         "fullDesc": "Immediately attacks the enemy. After entering battle, there is a {{1, percent}}% base chance to Freeze a random enemy for {{2}} turn(s).<br>While Frozen, the enemy cannot take action and will take Additional Ice DMG equal to {{3, percent}}% of March 7th's ATK at the beginning of each turn.",
-        "shortDesc": "Attacks the enemy. After entering battle, there is a high chance of inflicting Freeze on a random enemy."
+        "shortDesc": "Attacks the enemy. After entering battle, there is a high chance of inflicting Freeze on a random enemy.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Purify",
         "fullDesc": "When using the Skill, removes 1 debuff from a target ally.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Reinforce",
         "fullDesc": "The duration of the Shield generated from Skill is extended for {{1}} turn(s).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Ice Spell",
         "fullDesc": "Increases the Ultimate's base chance to Freeze enemies by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

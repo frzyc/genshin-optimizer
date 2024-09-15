@@ -5,63 +5,72 @@
       "0": {
         "name": "スペクトル{RUBY_B#こうせん}光線{RUBY_E#}",
         "fullDesc": "指定した敵単体にアスターの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の炎属性ダメージを与える。"
+        "shortDesc": "敵単体に少量の炎属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "スターフォール",
         "fullDesc": "指定した敵単体にアスターの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与え、さらに4ヒットする。1ヒットごとに、ランダムな敵単体にアスターの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の炎属性ダメージを与える、5回バウンドする。"
+        "shortDesc": "敵単体に少量の炎属性ダメージを与える、5回バウンドする。",
+        "tag": "バウンド"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#ほしぞらしゅうげん}星空祝言{RUBY_E#}",
         "fullDesc": "味方全体の速度+<orangeStrong>{{1}}</orangeStrong>、{{2}}ターン継続。",
-        "shortDesc": "味方全体の<orangeStrong>速度アップさせる</orangeStrong>。"
+        "shortDesc": "味方全体の<orangeStrong>速度アップさせる</orangeStrong>。",
+        "tag": "サポート"
       }
     },
     "talent": {
       "0": {
         "name": "{RUBY_B#てんしょうがく}天象学{RUBY_E#}",
         "fullDesc": "異なる敵に攻撃が命中するごとに蓄エネを1層獲得する。攻撃を受けた敵の弱点が炎属性の場合、さらに蓄エネを1層獲得する。<br>アスターが持つ蓄エネ1層につき、味方全体の攻撃力+<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>、最大で{{2}}回累積できる。<br>自身の2ターン目から、アスターのターンが回ってくるたびに蓄エネ層数-{{3}}。",
-        "shortDesc": "異なる敵に命中するごとに蓄エネを1層獲得、最大で5層。蓄エネの層数に応じて味方全体の攻撃力アップ。自身のターン開始時に蓄エネ層数ダウン。"
+        "shortDesc": "異なる敵に命中するごとに蓄エネを1層獲得、最大で5層。蓄エネの層数に応じて味方全体の攻撃力アップ。自身のターン開始時に蓄エネ層数ダウン。",
+        "tag": "サポート"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#ちゃくそう}着想{RUBY_E#}の{RUBY_B#いっせん}一閃{RUBY_E#}",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵全体にアスターの攻撃力{{1, percent}}%分の炎属性ダメージを与える。",
-        "shortDesc": "敵を攻撃。戦闘に入った後、敵全体に少量のダメージを与える。"
+        "shortDesc": "敵を攻撃。戦闘に入った後、敵全体に少量のダメージを与える。",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#ひばな}火花{RUBY_E#}",
         "fullDesc": "通常攻撃を行った時、{{1, percent}}%の基礎確率で敵を燃焼状態にする、{{2}}ターン継続。<br>燃焼状態の敵はターンが回ってくるたびに、アスターの通常攻撃ダメージ{{3, percent}}%分の炎属性持続ダメージを受ける。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#てんか}点火{RUBY_E#}",
         "fullDesc": "アスターがフィールド上にいる時、味方全体の炎属性ダメージ+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#せいざ}星座{RUBY_E#}",
         "fullDesc": "アスターが持つ蓄エネ1層につき、自身の防御力+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

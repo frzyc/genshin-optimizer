@@ -5,63 +5,72 @@
       "0": {
         "name": "{RUBY_B#しげきさいせい}始撃歳星{RUBY_E#}",
         "fullDesc": "指定した敵単体に符玄の最大HPの<orangeStrong>{{1, percent}}%</orangeStrong>分の量子属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の量子属性ダメージを与える。"
+        "shortDesc": "敵単体に少量の量子属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#たいび}太微{RUBY_E#}の{RUBY_B#ぎょうき}行棋{RUBY_E#}、{RUBY_B#かげ}影{RUBY_E#}{RUBY_B#しめ}示{RUBY_E#}す{RUBY_B#れいだい}霊台{RUBY_E#}",
         "fullDesc": "「窮観の陣」を起動し、符玄以外の味方が受ける、バリアに防がれる前のダメージの{{1, percent}}%を符玄が分担する、{{3}}ターン継続。<br>「窮観の陣」の中にいる味方全体は「鑑知」を得る。「鑑知」状態の味方は、最大HPが符玄の最大HPの<orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>分アップし、会心率+<orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>。<br>符玄が戦闘不能状態になった時、「窮観の陣」は解除される。",
-        "shortDesc": "「窮観の陣」を起動し、味方が<orangeStrong>受けたダメージを符玄が分担</orangeStrong>する。味方全体の最大HP、<orangeStrong>会心率</orangeStrong>をアップさせる。"
+        "shortDesc": "「窮観の陣」を起動し、味方が<orangeStrong>受けたダメージを符玄が分担</orangeStrong>する。味方全体の最大HP、<orangeStrong>会心率</orangeStrong>をアップさせる。",
+        "tag": "防御"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#てんりつたいえん}天律大衍{RUBY_E#}、{RUBY_B#れきごうきいつ}歴劫帰一{RUBY_E#}",
         "fullDesc": "敵全体に符玄の最大HPの<orangeStrong>{{1, percent}}%</orangeStrong>分の量子属性ダメージを与え、天賦によるHP回復の発動回数+1。",
-        "shortDesc": "敵全体に量子属性ダメージを与え、符玄の天賦の発動可能回数アップ。"
+        "shortDesc": "敵全体に量子属性ダメージを与え、符玄の天賦の発動可能回数アップ。",
+        "tag": "全体攻撃"
       }
     },
     "talent": {
       "0": {
         "name": "{RUBY_B#けんこんせいい}乾坤清夷{RUBY_E#}、{RUBY_B#いちようらいふく}一陽来復{RUBY_E#}",
         "fullDesc": "符玄が戦闘可能状態の時、味方全体に「避邪」を付与する。「避邪」状態の味方の受けるダメージ-<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>。<br>符玄の残りHP割合が{{2, percent}}%以下になった時、自身の失ったHP<orangeStrong>{{3, percent}}%</orangeStrong>分のHPを回復する。HPが0になる攻撃を受けた時、この効果は発動できない。この効果の初期の発動可能回数は1回、最大で2回まで累積できる。",
-        "shortDesc": "符玄が戦闘可能状態の時、味方全体の受けるダメージダウン。<br>残りHPが少ない時、失ったHPの割合に応じて、<orangeStrong>自動で自身のHPを回復</orangeStrong>する。この効果の発動可能回数は最大で2回累積できる。"
+        "shortDesc": "符玄が戦闘可能状態の時、味方全体の受けるダメージダウン。<br>残りHPが少ない時、失ったHPの割合に応じて、<orangeStrong>自動で自身のHPを回復</orangeStrong>する。この効果の発動可能回数は最大で2回累積できる。",
+        "tag": "回復"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#ひたいしる}否泰記{RUBY_E#}す{RUBY_B#しかくこ}四郭固{RUBY_E#}",
         "fullDesc": "秘技を使用した後、味方全体は{{1}}秒間継続するバリアを獲得する。このバリアは敵のすべての攻撃を防ぎ、敵の攻撃を受けても戦闘に入らない。バリア継続期間中、戦闘に入る時、符玄は自動で「窮観の陣」を起動する、{{2}}ターン継続。",
-        "shortDesc": "バリアを展開し、敵の攻撃を受けても戦闘に入らない。戦闘に入る時、自動で「窮観の陣」を起動する。"
+        "shortDesc": "バリアを展開し、敵の攻撃を受けても戦闘に入らない。戦闘に入る時、自動で「窮観の陣」を起動する。",
+        "tag": "防御"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#たいいつしんすう}太乙神数{RUBY_E#}",
         "fullDesc": "「窮観の陣」が起動している時、符玄が戦闘スキルを発動すると、さらにEPを{{1}}回復する。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#きもんとんこう}奇門遁甲{RUBY_E#}",
         "fullDesc": "必殺技を発動した時、符玄以外の味方のHPを、符玄の最大HPの{{1, percent}}%分+{{2}}回復する。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#りくじんしんか}六壬神課{RUBY_E#}",
         "fullDesc": "「窮観の陣」が起動している時、敵が味方に行動制限系デバフを付与する場合、味方全体がその行動中に付与されるすべての行動制限系デバフに抵抗する。この効果は1回まで発動できる。再度「窮観の陣」を起動すると、発動可能回数がリセットされる。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

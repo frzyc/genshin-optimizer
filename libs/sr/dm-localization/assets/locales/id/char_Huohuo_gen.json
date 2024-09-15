@@ -5,63 +5,72 @@
       "0": {
         "name": "Banner: Stormcaller",
         "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> Max HP Huohuo pada 1 musuh yang ditarget.",
-        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Talisman: Protection",
         "fullDesc": "Menghapus {{5}} Debuff milik 1 rekan tim yang ditargetkan dan segera memulihkan HP sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Max HP Huohuo + <orangeStrong>{{2}}</orangeStrong> pada rekan tersebut. Di saat yang bersamaan, memulihkan HP sebesar <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> Max HP Huohuo + <orangeStrong>{{4}}</orangeStrong> pada target di sekitarnya.",
-        "shortDesc": "Menghapus 1 Debuff milik 1 rekan tim dan <orangeStrong>memulihkan HP</orangeStrong> rekan tersebut dan target di sekitarnya."
+        "shortDesc": "Menghapus 1 Debuff milik 1 rekan tim dan <orangeStrong>memulihkan HP</orangeStrong> rekan tersebut dan target di sekitarnya.",
+        "tag": "Restore"
       }
     },
     "ult": {
       "0": {
         "name": "Tail: Spiritual Domination",
         "fullDesc": "Memulihkan Energy rekan tim selain diri sendiri sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Max Energy mereka masing-masing. Di saat yang bersamaan, meningkatkan ATK mereka sebesar <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> selama {{3}} giliran.",
-        "shortDesc": "<orangeStrong>Memulihkan Energy</orangeStrong> untuk rekan tim selain diri sendiri, serta <orangeStrong>meningkatkan ATK</orangeStrong> mereka."
+        "shortDesc": "<orangeStrong>Memulihkan Energy</orangeStrong> untuk rekan tim selain diri sendiri, serta <orangeStrong>meningkatkan ATK</orangeStrong> mereka.",
+        "tag": "Support"
       }
     },
     "talent": {
       "0": {
         "name": "Possession: Ethereal Metaflow",
         "fullDesc": "Setelah melancarkan Skill, Huohuo akan memperoleh \"Divine Provision\" yang berlangsung selama {{1}} giliran. Setiap saat giliran Huohuo dimulai, durasi \"Divine Provision\" akan berkurang 1 giliran. Saat Huohuo memiliki \"Divine Provision\", saat giliran rekan tim dimulai atau saat rekan tim melancarkan Ultimate, akan memulihkan HP rekan tersebut sebesar <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> Max HP Huohuo + <orangeStrong>{{5}}</orangeStrong>. Di saat yang bersamaan, akan menciptakan 1 kali efek pemulihan pada setiap rekan tim yang persentase HP-nya saat ini kurang dari atau sama dengan {{6, percent}}%.<br>Saat memicu \"Divine Provision\" untuk memberikan efek pemulihan pada rekan tim, akan menghapus {{2}} efek Debuff dari rekan tersebut. Efek penghapusan ini dapat terpicu {{7}} kali. Setelah melancarkan Skill, jumlah pemicuan akan di-refresh kembali.",
-        "shortDesc": "Setelah melancarkan Skill, Huohuo akan memperoleh \"Divine Provision\". Saat Huohuo memiliki \"Divine Provision\", saat giliran rekan tim dimulai atau saat rekan tim melancarkan Ultimate, akan <orangeStrong>memulihkan HP rekan tersebut</orangeStrong>. Di saat yang bersamaan, akan <orangeStrong>menciptakan 1 kali efek pemulihan</orangeStrong> pada <orangeStrong>setiap rekan tim</orangeStrong> yang persentase HP-nya agak rendah. Saat memicu \"Divine Provision\" untuk memberikan efek pemulihan pada rekan tim, akan <orangeStrong>menghapus 1 efek Debuff dari rekan tersebut</orangeStrong>."
+        "shortDesc": "Setelah melancarkan Skill, Huohuo akan memperoleh \"Divine Provision\". Saat Huohuo memiliki \"Divine Provision\", saat giliran rekan tim dimulai atau saat rekan tim melancarkan Ultimate, akan <orangeStrong>memulihkan HP rekan tersebut</orangeStrong>. Di saat yang bersamaan, akan <orangeStrong>menciptakan 1 kali efek pemulihan</orangeStrong> pada <orangeStrong>setiap rekan tim</orangeStrong> yang persentase HP-nya agak rendah. Saat memicu \"Divine Provision\" untuk memberikan efek pemulihan pada rekan tim, akan <orangeStrong>menghapus 1 efek Debuff dari rekan tersebut</orangeStrong>.",
+        "tag": "Restore"
       }
     },
     "technique": {
       "0": {
         "name": "Fiend: Impeachment of Evil",
         "fullDesc": "Huohuo meneror musuh di sekitarnya, membuat musuh memasuki status \"Horror-Struck\". Musuh yang berstatus \"Horror-Struck\" akan lari menjauhi Huohuo selama {{4}} detik. Setelah memasuki pertempuran dengan musuh yang berstatus \"Horror-Struck\", memiliki {{1, percent}}% peluang dasar untuk mengurangi {{2, percent}}% ATK setiap target selama {{3}} giliran.",
-        "shortDesc": "Membuat musuh di sekitarnya memasuki status \"Horror-Struck\". Setelah memasuki pertempuran dengan musuh yang berstatus \"Horror-Struck\", berpeluang besar <orangeStrong>mengurangi ATK</orangeStrong> target musuh."
+        "shortDesc": "Membuat musuh di sekitarnya memasuki status \"Horror-Struck\". Setelah memasuki pertempuran dengan musuh yang berstatus \"Horror-Struck\", berpeluang besar <orangeStrong>mengurangi ATK</orangeStrong> target musuh.",
+        "tag": "Impair"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Fearful to Act",
         "fullDesc": "Saat pertempuran dimulai, Huohuo akan memperoleh \"Divine Provision\", berlangsung selama {{1}} giliran.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "The Cursed One",
         "fullDesc": "Meningkatkan {{1, percent}}% peluang untuk menahan Crowd Control Debuff.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Stress Reaction to Horror",
         "fullDesc": "Saat Talent terpicu untuk memulihkan rekan tim, Huohuo akan memulihkan {{1}} Energy.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

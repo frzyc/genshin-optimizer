@@ -5,63 +5,72 @@
       "0": {
         "name": "Explosão Supernova",
         "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> dos PV máximos de Fu Xuan a um único inimigo.",
-        "shortDesc": "Causa Dano Quântico leve a um único inimigo."
+        "shortDesc": "Causa Dano Quântico leve a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Conhecida pelas Estrelas, Exibida pelos Corações",
         "fullDesc": "Ativa a Matriz de Presciência através da qual outros membros da equipe vão Distribuir {{1, percent}}% do Dano que eles receberem (antes deste Dano ser mitigado por quaisquer Escudos) com Fu Xuan por {{3}} rodada(s).<br>Enquanto afetados pela Matriz de Presciência, todos os membros da equipe ganham o efeito de Conhecimento, que aumenta seus respectivos PV máximos em <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Fu Xuan, e aumenta a Chance de CRIT em <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.<br>Quando Fu Xuan é derrubada, a Matriz de Presciência é desfeita.",
-        "shortDesc": "Ativa a Matriz de Presciência. <orangeStrong>O Dano recebido pelos aliados de Fu Xuan é Distribuído</orangeStrong> com ela. Além disso, <orangeStrong>aumenta a Chance de CRIT</orangeStrong> e os PV máximos de todos os aliados."
+        "shortDesc": "Ativa a Matriz de Presciência. <orangeStrong>O Dano recebido pelos aliados de Fu Xuan é Distribuído</orangeStrong> com ela. Além disso, <orangeStrong>aumenta a Chance de CRIT</orangeStrong> e os PV máximos de todos os aliados.",
+        "tag": "Defesa"
       }
     },
     "ult": {
       "0": {
         "name": "Os Lamentos de Muitos Transformaram-se em Um",
         "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> dos PV máximos de Fu Xuan a todos os inimigos e obtém 1 contagem de ativação para o efeito de Restauração de PV concedido pelo Talento de Fu Xuan.",
-        "shortDesc": "Causa Dano Quântico a todos os inimigos e aumenta a contagem de ativação do Talento de Fu Xuan."
+        "shortDesc": "Causa Dano Quântico a todos os inimigos e aumenta a contagem de ativação do Talento de Fu Xuan.",
+        "tag": "Área"
       }
     },
     "talent": {
       "0": {
         "name": "Das Sombras à Alegria",
         "fullDesc": "Enquanto Fu Xuan estiver ativa em combate, a \"Prevenção de Infortúnio\" é aplicada a toda a equipe. Enquanto estiverem com Prevenção de Infortúnio, os aliados recebem <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> a menos de Dano.<br>Quando os PV atuais de Fu Xuan caírem para {{2, percent}}% ou menos dos seus PV máximos, a Restauração de PV será ativada para Fu Xuan, recuperando os PV dela em <orangeStrong>{{3, percent}}%</orangeStrong> da quantidade de PV perdida no momento. Este efeito não pode ser ativado se ela receber um golpe fatal. Este efeito possui 1 contagem de ativação por padrão, e pode possuir um máximo de 2 contagens de ativação.",
-        "shortDesc": "Enquanto Fu Xuan estiver ativa em batalha, o Dano recebido pela equipe inteira é reduzido.<br>Quando os PV dela estiverem baixos, ela <orangeStrong>automaticamente</orangeStrong> <orangeStrong>restaura seus próprios PV</orangeStrong> com base na porcentagem de PV já perdidos. Este efeito pode ter até 2 contagens de ativação em qualquer momento."
+        "shortDesc": "Enquanto Fu Xuan estiver ativa em batalha, o Dano recebido pela equipe inteira é reduzido.<br>Quando os PV dela estiverem baixos, ela <orangeStrong>automaticamente</orangeStrong> <orangeStrong>restaura seus próprios PV</orangeStrong> com base na porcentagem de PV já perdidos. Este efeito pode ter até 2 contagens de ativação em qualquer momento.",
+        "tag": "Restauração"
       }
     },
     "technique": {
       "0": {
         "name": "Da Sorte Vem o Destino",
         "fullDesc": "Depois que a Técnica é utilizada, todos os membros da equipe recebem uma Barreira que dura {{1}} segundos. Esta Barreira pode bloquear todos os ataques inimigos e a equipe não entrará em batalha quando atacada. Entrar em batalha enquanto a Barreira estiver ativa fará com que Fu Xuan ative a Matriz de Presciência automaticamente no início da batalha por {{2}} rodada(s).",
-        "shortDesc": "Ativa uma Barreira. Aliados não entrarão em batalha quando forem atacados por inimigos. Entrar em batalha ativará a Matriz de Presciência automaticamente."
+        "shortDesc": "Ativa uma Barreira. Aliados não entrarão em batalha quando forem atacados por inimigos. Entrar em batalha ativará a Matriz de Presciência automaticamente.",
+        "tag": "Defesa"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Taiyi, o Macrocósmico",
         "fullDesc": "Quando a Matriz de Presciência está ativa, Fu Xuan recuperará {{1}} de Energia extra ao usar sua Perícia.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Dunjia, o Metamístico",
         "fullDesc": "Quando a Perícia Suprema de Fu Xuan é utilizada, cura todos os aliados em uma quantidade igual a {{1, percent}}% dos PV máximos de Fu Xuan + {{2}}.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Liuren, o Sexagenário",
         "fullDesc": "Se um inimigo-alvo aplicar penalidades de Controle Negativo a aliados enquanto a Matriz de Presciência estiver ativa, todos os aliados resistirão a todas as penalidades de Controle Negativo aplicadas pelo inimigo-alvo durante a ação atual. Este efeito só pode ser acionado uma única vez. Quando a Matriz de Presciência é reativada, o número de vezes que este efeito pode ser ativado será redefinido.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

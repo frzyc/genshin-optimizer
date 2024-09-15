@@ -5,68 +5,78 @@
       "0": {
         "name": "Ánh Trăng Soi Bóng",
         "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Băng bằng <orangeStrong>{{1, percent}}%</orangeStrong> tấn công của Jingliu.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Băng cho 1 kẻ địch chỉ định."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Băng cho 1 kẻ địch chỉ định.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Vô Hạ Phi Quang",
         "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Băng bằng <orangeStrong>{{1, percent}}%</orangeStrong> tấn công của Jingliu, và nhận {{2}} tầng \"Sóc Vọng\".",
-        "shortDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định, đồng thời nhận <orangeStrong>1 tầng Sóc Vọng</orangeStrong>."
+        "shortDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định, đồng thời nhận <orangeStrong>1 tầng Sóc Vọng</orangeStrong>.",
+        "tag": "Đánh Đơn"
       },
       "1": {
         "name": "Ánh Trăng Sông Băng",
         "fullDesc": "Gây Sát Thương Băng lên 1 kẻ địch chỉ định bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Jingliu, đồng thời gây Sát Thương Băng cho mục tiêu ở gần bằng <orangeStrong>{{3, percent}}%</orangeStrong> Tấn Công của Jingliu. Tiêu hao {{2}} tầng Sóc Vọng. Thi triển kỹ năng này không tiêu hao Điểm Chiến Kỹ.",
-        "shortDesc": "Gây Sát Thương Băng lên 1 kẻ địch chỉ định, gây Sát Thương Băng lên mục tiêu ở gần, đồng thời tiêu hao 1 tầng Sóc Vọng."
+        "shortDesc": "Gây Sát Thương Băng lên 1 kẻ địch chỉ định, gây Sát Thương Băng lên mục tiêu ở gần, đồng thời tiêu hao 1 tầng Sóc Vọng.",
+        "tag": "Khuếch Tán"
       }
     },
     "ult": {
       "0": {
         "name": "Đàm Hoa Sinh Diệt, Thiên Hà Dệt Mộng",
         "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Băng bằng <orangeStrong>{{1, percent}}%</orangeStrong> tấn công của Jingliu, đồng thời gây cho các mục tiêu gần đó Sát Thương Băng bằng <orangeStrong>{{3, percent}}%</orangeStrong> tấn công của Jingliu. Sau khi tấn công kết thúc sẽ nhận {{2}} tầng Sóc Vọng.",
-        "shortDesc": "Gây lượng lớn Sát Thương Băng cho 1 kẻ địch chỉ định, gây Sát Thương Băng cho mục tiêu ở gần, đồng thời <orangeStrong>nhận 1 tầng Sóc Vọng</orangeStrong>."
+        "shortDesc": "Gây lượng lớn Sát Thương Băng cho 1 kẻ địch chỉ định, gây Sát Thương Băng cho mục tiêu ở gần, đồng thời <orangeStrong>nhận 1 tầng Sóc Vọng</orangeStrong>.",
+        "tag": "Khuếch Tán"
       }
     },
     "talent": {
       "0": {
         "name": "Lưỡi Trăng Chuyển Hồn",
         "fullDesc": "Khi có {{5}} tầng Sóc Vọng, Jingliu sẽ vào trạng thái Chuyển Hồn và ưu tiên hành động {{6, percent}}%, Tỷ Lệ Bạo Kích tăng <orangeStrong>{{7, percent}}%</orangeStrong>, sau đó Chiến Kỹ Vô Hạ Phi Quang cường hóa thành Ánh Trăng Sông Băng, hơn nữa chỉ có thể dùng Chiến Kỹ này. Ở trạng thái Chuyển Hồn, khi tấn công, sẽ tiêu hao {{2, percent}}% Giới Hạn HP của đồng đội (Tối đa chỉ có thể giảm đến 1 HP). Tấn công của Jingliu sẽ tăng dựa theo {{3, percent}}% của tổng lượng HP tiêu hao của toàn bộ đồng đội trong lần này, tối đa không vượt quá <orangeStrong>{{4, percent}}%</orangeStrong> tấn công cơ bản của Jingliu, duy trì đến khi kết thúc lần tấn công này. Trước khi trạng thái Chuyển Hồn kết thúc sẽ không thể vào trạng thái Chuyển Hồn lần nữa. Sóc Vọng tối đa tích lũy đến 3 tầng, khi số tầng Sóc Vọng còn 0 sẽ thoát khỏi trạng thái Chuyển Hồn.",
-        "shortDesc": "Khi có <orangeStrong>{{5}}</orangeStrong> tầng Sóc Vọng, vào trạng thái Chuyển Hồn, <orangeStrong>khiến ưu tiên hành động <unbreak>100%</orangeStrong></color>, tăng Tỷ Lệ Bạo Kích của bản thân và <orangeStrong>cường hóa Chiến Kỹ</orangeStrong>. Khi tấn công, tiêu hao HP của đồng đội và <orangeStrong>tăng tấn công của Jingliu</orangeStrong> theo tổng lượng tiêu hao. Khi số tầng Sóc Vọng bằng 0 sẽ rời khỏi trạng thái Chuyển Hồn."
+        "shortDesc": "Khi có <orangeStrong>{{5}}</orangeStrong> tầng Sóc Vọng, vào trạng thái Chuyển Hồn, <orangeStrong>khiến ưu tiên hành động <unbreak>100%</orangeStrong></color>, tăng Tỷ Lệ Bạo Kích của bản thân và <orangeStrong>cường hóa Chiến Kỹ</orangeStrong>. Khi tấn công, tiêu hao HP của đồng đội và <orangeStrong>tăng tấn công của Jingliu</orangeStrong> theo tổng lượng tiêu hao. Khi số tầng Sóc Vọng bằng 0 sẽ rời khỏi trạng thái Chuyển Hồn.",
+        "tag": "Cường Hóa"
       }
     },
     "technique": {
       "0": {
         "name": "Thần Chiếu Cổ Kính",
         "fullDesc": "Sau khi dùng Bí Kỹ, sẽ tạo một vùng đặc biệt xung quanh bản thân, duy trì trong {{3}}s, kẻ địch trong vùng đặc biệt này sẽ rơi vào trạng thái Đóng Băng. Sau khi vào chiến đấu với kẻ địch trong vùng đặc biệt, sẽ hồi ngay {{6}} năng lượng cho bản thân và nhận {{1}} tầng Sóc Vọng, đồng thời có {{2, percent}}% xác suất cơ bản khiến kẻ địch bị Đóng Băng, duy trì {{4}} hiệp. Ở trạng thái Đóng Băng, kẻ địch không thể hành động, đồng thời khi bắt đầu mỗi hiệp sẽ chịu Sát Thương Băng kèm theo bằng {{5, percent}}% tấn công của Jingliu. Tối đa chỉ tồn tại 1 hiệu ứng vùng do phe ta tạo ra.",
-        "shortDesc": "Tạo một vùng đặc biệt xung quanh bản thân. Kẻ địch trong vùng này sẽ rơi vào <orangeStrong>trạng thái Đóng Băng</orangeStrong>. Sau khi vào chiến đấu với kẻ địch trong vùng này, sẽ hồi năng lượng, và nhận 1 tầng Sóc Vọng đồng thời có xác suất lớn khiến kẻ địch rơi vào <orangeStrong>trạng thái Đóng Băng</orangeStrong>."
+        "shortDesc": "Tạo một vùng đặc biệt xung quanh bản thân. Kẻ địch trong vùng này sẽ rơi vào <orangeStrong>trạng thái Đóng Băng</orangeStrong>. Sau khi vào chiến đấu với kẻ địch trong vùng này, sẽ hồi năng lượng, và nhận 1 tầng Sóc Vọng đồng thời có xác suất lớn khiến kẻ địch rơi vào <orangeStrong>trạng thái Đóng Băng</orangeStrong>.",
+        "tag": "Quấy Nhiễu"
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Không Lối Thoát",
         "fullDesc": "Ở trạng thái Chuyển Hồn, Kháng Hiệu Ứng tăng {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Kiếm Thủ Hàng Đầu",
         "fullDesc": "Sau khi thi triển Vô Hạ Phi Quang, lần sau ưu tiên hành động {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Linh Hồn Sương Giá",
         "fullDesc": "Ở trạng thái Chuyển Hồn, sát thương Tuyệt Kỹ gây ra tăng {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

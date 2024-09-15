@@ -5,63 +5,72 @@
       "0": {
         "name": "Poing de la conviction",
         "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Gepard à un ennemi unique.",
-        "shortDesc": "Inflige des DGT de glace mineurs à un ennemi unique."
+        "shortDesc": "Inflige des DGT de glace mineurs à un ennemi unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Frappe intimidante",
         "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Gepard à un ennemi unique avec {{2, percent}}% de chances de base de geler l'ennemi pendant {{3}} tour.<br>Un ennemi gelé ne peut pas agir et subit des DGT de glace additionnels équivalents à <orangeStrong>{{4, percent}}%</orangeStrong> de l'ATQ de Gepard au début de chaque tour.",
-        "shortDesc": "Inflige des DGT de glace à un ennemi unique, avec une <orangeStrong>chance de le geler</orangeStrong>."
+        "shortDesc": "Inflige des DGT de glace à un ennemi unique, avec une <orangeStrong>chance de le geler</orangeStrong>.",
+        "tag": "Cible unique"
       }
     },
     "ult": {
       "0": {
         "name": "Rempart d'endurance",
         "fullDesc": "Accorde à tous les alliés un bouclier qui absorbe une quantité de DGT équivalente à <orangeStrong>{{1, percent}}%</orangeStrong> de la DÉF de Gepard + <orangeStrong>{{3}}</orangeStrong> pendant {{2}} tours.",
-        "shortDesc": "<orangeStrong>Accorde un bouclier</orangeStrong> à tous les alliés."
+        "shortDesc": "<orangeStrong>Accorde un bouclier</orangeStrong> à tous les alliés.",
+        "tag": "Défense"
       }
     },
     "talent": {
       "0": {
         "name": "Volonté inflexible",
         "fullDesc": "Au lieu de tomber à terre lorsqu'il subit un coup fatal, Gepard restaure immédiatement <orangeStrong>{{1, percent}}%</orangeStrong> de ses PV max. Cet effet ne peut se déclencher qu'une fois par combat.",
-        "shortDesc": "<orangeStrong>Au lieu de tomber à terre</orangeStrong> lorsqu'il subit un coup fatal, restaure immédiatement des PV. Cet effet ne peut se déclencher qu'1 fois par combat."
+        "shortDesc": "<orangeStrong>Au lieu de tomber à terre</orangeStrong> lorsqu'il subit un coup fatal, restaure immédiatement des PV. Cet effet ne peut se déclencher qu'1 fois par combat.",
+        "tag": "Restauration"
       }
     },
     "technique": {
       "0": {
         "name": "Camaraderie",
         "fullDesc": "Après utilisation de la technique de Gepard, tous les alliés gagnent un bouclier qui absorbe des DGT équivalents à {{1, percent}}% de la DÉF de Gepard + {{3}} pendant {{2}} tours au début du combat suivant.",
-        "shortDesc": "Après utilisation de la technique, tous les alliés obtiennent un bouclier au début du combat suivant."
+        "shortDesc": "Après utilisation de la technique, tous les alliés obtiennent un bouclier au début du combat suivant.",
+        "tag": "Défense"
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Intégrité",
         "fullDesc": "Gepard a de plus grandes chances d'être attaqué par les ennemis.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Commandant",
         "fullDesc": "Lorsque Volonté inflexible est déclenchée, Gepard régénère toute son énergie.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Esprit combatif",
         "fullDesc": "L'ATQ de Gepard augmente à hauteur de {{1, percent}}% de sa DÉF actuelle. Cet effet s'actualise au début de chaque tour.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

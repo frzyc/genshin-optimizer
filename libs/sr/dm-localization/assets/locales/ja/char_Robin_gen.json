@@ -5,63 +5,72 @@
       "0": {
         "name": "{RUBY_B#は}羽{RUBY_E#}ばたくホワイトノイズ",
         "fullDesc": "指定した敵単体にロビンの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の物理属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の物理属性ダメージを与える。"
+        "shortDesc": "敵単体に少量の物理属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#ひしょう}飛翔{RUBY_E#}のアリア",
         "fullDesc": "味方全体の与ダメージ+<orangeStrong>{{1, percent}}%</orangeStrong>、{{2}}ターン継続。ロビンのターンが回ってくるたびに継続時間-1ターン。",
-        "shortDesc": "味方全体の<orangeStrong>与ダメージをアップ</orangeStrong>する。"
+        "shortDesc": "味方全体の<orangeStrong>与ダメージをアップ</orangeStrong>する。",
+        "tag": "サポート"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#せん}千{RUBY_E#}の{RUBY_B#おと}音{RUBY_E#}で、{RUBY_B#ぐんせい}群星{RUBY_E#}にフーガを",
         "fullDesc": "ロビンが「協奏」状態に入り、自身以外の味方を即座に行動させる。<br>「協奏」状態の時、味方全体の攻撃力を、ロビンの攻撃力<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>分+<orangeStrong>{{3}}</orangeStrong>アップする。また、味方が攻撃を行った後、ロビンは自身の攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の物理属性付加ダメージを敵に1回与える、このダメージの会心率は{{5, percent}}%、会心ダメージは{{6, percent}}%に固定される。<br>「協奏」状態の時、ロビンは行動制限系デバフに抵抗できる。ロビンは「協奏」状態が終了するまで自身のターンに入らず、行動できない。<br>アクションバーに「協奏」のカウントダウンが出現する。カウントダウンのターンが回ってきた時、ロビンは「協奏」状態を解除し、即座に行動する。カウントダウンの速度は{{2}}に固定される。",
-        "shortDesc": "「協奏」状態に入り、味方全体の<orangeStrong>攻撃力をアップ</orangeStrong>し、自身以外の味方を即座に行動させる。味方が攻撃を行った後、ロビンは<orangeStrong>物理属性付加ダメージ</orangeStrong>を敵に与える。「協奏」状態の間、自身は行動制限系デバフに抵抗できる。ロビンは「協奏」状態が終了するまで自身のターンに入らず、行動できない。"
+        "shortDesc": "「協奏」状態に入り、味方全体の<orangeStrong>攻撃力をアップ</orangeStrong>し、自身以外の味方を即座に行動させる。味方が攻撃を行った後、ロビンは<orangeStrong>物理属性付加ダメージ</orangeStrong>を敵に与える。「協奏」状態の間、自身は行動制限系デバフに抵抗できる。ロビンは「協奏」状態が終了するまで自身のターンに入らず、行動できない。",
+        "tag": "サポート"
       }
     },
     "talent": {
       "0": {
         "name": "{RUBY_B#ちょうわ}調和{RUBY_E#}の{RUBY_B#じゅんせいりつ}純正律{RUBY_E#}",
         "fullDesc": "味方全体の会心ダメージ+<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>。味方が敵に攻撃を行った後、ロビンは自身のEPを{{2}}回復する。",
-        "shortDesc": "味方全体の<orangeStrong>会心ダメージ</orangeStrong>をアップする。味方が敵に攻撃を行った後、ロビンのEPが回復する。"
+        "shortDesc": "味方全体の<orangeStrong>会心ダメージ</orangeStrong>をアップする。味方が敵に攻撃を行った後、ロビンのEPが回復する。",
+        "tag": "サポート"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#めいてい}酩酊{RUBY_E#}のオーバーチュア",
         "fullDesc": "秘技を発動した後、自身の周囲に{{1}}秒間継続する特殊領域を作り出す。特殊領域内の敵はロビンを攻撃せず、領域が存在する間はロビンに追随する。領域展開中に戦闘に入った後、各ウェーブ開始時にロビンはEPを{{2}}回復する。味方が作り出した領域は1つまで存在できる。",
-        "shortDesc": "自身の周囲に特殊領域を作り出す。領域内の敵はロビンを攻撃しない。領域展開中に戦闘に入った後、各ウェーブ開始時にロビンはEPを<orangeStrong>{{2}}</orangeStrong>回復する。"
+        "shortDesc": "自身の周囲に特殊領域を作り出す。領域内の敵はロビンを攻撃しない。領域展開中に戦闘に入った後、各ウェーブ開始時にロビンはEPを<orangeStrong>{{2}}</orangeStrong>回復する。",
+        "tag": "サポート"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#かさい}華彩{RUBY_E#}のコロラトゥーラ",
         "fullDesc": "戦闘開始時、自身の行動順が{{1, percent}}%早まる。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "アドリブの{RUBY_B#そうしょくきょく}装飾曲{RUBY_E#}",
         "fullDesc": "「協奏」状態の時、味方全体の追加攻撃ダメージの会心ダメージ+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#はんぷく}反復{RUBY_E#}するピリオド",
         "fullDesc": "戦闘スキルを発動する時、さらにEPを{{1}}回復する。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

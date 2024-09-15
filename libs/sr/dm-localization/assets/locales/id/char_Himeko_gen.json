@@ -5,63 +5,72 @@
       "0": {
         "name": "Sawblade Tuning",
         "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Himeko pada 1 target musuh.",
-        "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Molten Detonation",
         "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Himeko pada 1 target musuh, dan di saat bersamaan mengakibatkan Fire DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Himeko pada musuh di sekitar target.",
-        "shortDesc": "Mengakibatkan Fire DMG pada 1 target musuh dan Fire DMG dalam jumlah kecil pada musuh di sekitar target."
+        "shortDesc": "Mengakibatkan Fire DMG pada 1 target musuh dan Fire DMG dalam jumlah kecil pada musuh di sekitar target.",
+        "tag": "Blast"
       }
     },
     "ult": {
       "0": {
         "name": "Heavenly Flare",
         "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Himeko pada seluruh musuh. Setiap 1 musuh yang dikalahkan akan memulihkan {{2}} Energy tambahan untuk Himeko.",
-        "shortDesc": "Mengakibatkan Fire DMG pada seluruh musuh dan memulihkan Energy jika ada musuh yang dikalahkan."
+        "shortDesc": "Mengakibatkan Fire DMG pada seluruh musuh dan memulihkan Energy jika ada musuh yang dikalahkan.",
+        "tag": "AoE"
       }
     },
     "talent": {
       "0": {
         "name": "Victory Rush",
         "fullDesc": "Saat ada target musuh yang terkena Weakness Break, Himeko akan memperoleh 1 Charge, maksimal {{2}}.<br>Jika rekan tim melancarkan serangan saat Charge Himeko sudah penuh, Himeko akan segera melancarkan 1 Serangan Lanjutan yang mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Himeko pada seluruh musuh dan semua poin Charge akan terkonsumsi.<br>Memperoleh 1 Charge pada saat pertempuran dimulai.",
-        "shortDesc": "Mendapatkan Charge saat ada musuh yang terkena Weakness Break.<br>Jika Charge penuh setelah rekan tim menyerang, akan <orangeStrong>segera memicu Serangan Lanjutan</orangeStrong> yang mengakibatkan Fire DMG pada <orangeStrong>seluruh musuh</orangeStrong> dan mengonsumsi semua poin Charge.<br>Memperoleh 1 Charge saat pertempuran dimulai."
+        "shortDesc": "Mendapatkan Charge saat ada musuh yang terkena Weakness Break.<br>Jika Charge penuh setelah rekan tim menyerang, akan <orangeStrong>segera memicu Serangan Lanjutan</orangeStrong> yang mengakibatkan Fire DMG pada <orangeStrong>seluruh musuh</orangeStrong> dan mengonsumsi semua poin Charge.<br>Memperoleh 1 Charge saat pertempuran dimulai.",
+        "tag": "AoE"
       }
     },
     "technique": {
       "0": {
         "name": "Incomplete Combustion",
         "fullDesc": "Setelah menggunakan Technique, Himeko akan menciptakan sebuah dimensi khusus selama {{4}} detik. Setelah memasuki pertempuran bersama musuh dalam dimensi khusus, ada {{1, percent}}% peluang dasar untuk meningkatkan {{2, percent}}% Fire DMG yang diterima target musuh selama {{3}} giliran. Hanya boleh ada 1 efek dimensi khusus ciptaan rekan tim dalam satu waktu.",
-        "shortDesc": "Menciptakan dimensi khusus. Setelah memasuki pertempuran dengan musuh dalam dimensi khusus, berpeluang besar untuk <orangeStrong>meningkatkan Fire DMG yang diterima</orangeStrong> oleh target musuh."
+        "shortDesc": "Menciptakan dimensi khusus. Setelah memasuki pertempuran dengan musuh dalam dimensi khusus, berpeluang besar untuk <orangeStrong>meningkatkan Fire DMG yang diterima</orangeStrong> oleh target musuh.",
+        "tag": "Impair"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Starfire",
         "fullDesc": "Setelah melancarkan serangan, memiliki {{1, percent}}% peluang dasar untuk membuat target musuh terkena status Burn selama {{2}} giliran.<br>Saat dalam status Burn, target musuh akan menerima Fire DoT sebesar {{3, percent}}% ATK Himeko setiap kali gilirannya dimulai.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Magma",
         "fullDesc": "Meningkatkan {{1, percent}}% Skill DMG pada target musuh dengan status Burn.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Benchmark",
         "fullDesc": "Meningkatkan {{2, percent}}% CRIT Rate jika persentase HP saat ini lebih dari atau sama dengan {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

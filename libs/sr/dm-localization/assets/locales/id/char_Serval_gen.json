@@ -5,63 +5,72 @@
       "0": {
         "name": "Roaring Thunderclap",
         "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Serval pada 1 target musuh.",
-        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Lightning Flash",
         "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Serval pada 1 target musuh, dan di saat bersamaan mengakibatkan Lightning DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Serval pada musuh di sekitar target. Selain itu, target musuh yang terkena serangan memiliki {{3, percent}}% peluang dasar untuk memasuki status Shock selama {{4}} giliran.<br>Selama dalam status Shock, target musuh akan menerima Lightning DoT sebesar <orangeStrong>{{5, percent}}%</orangeStrong> ATK Serval setiap gilirannya dimulai.",
-        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil terhadap 1 musuh dan target di sekitarnya, dan berpeluang besar <orangeStrong>menambahkan status Shock</orangeStrong> pada target."
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil terhadap 1 musuh dan target di sekitarnya, dan berpeluang besar <orangeStrong>menambahkan status Shock</orangeStrong> pada target.",
+        "tag": "Blast"
       }
     },
     "ult": {
       "0": {
         "name": "Here Comes the Mechanical Fever",
         "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Serval pada seluruh musuh, dan menambah durasi status Shock musuh selama {{2}} giliran.",
-        "shortDesc": "Mengakibatkan Lightning DMG pada seluruh musuh dan memperpanjang durasi status Shock musuh."
+        "shortDesc": "Mengakibatkan Lightning DMG pada seluruh musuh dan memperpanjang durasi status Shock musuh.",
+        "tag": "AoE"
       }
     },
     "talent": {
       "0": {
         "name": "Galvanic Chords",
         "fullDesc": "Setelah menyerang, mengakibatkan Lightning DMG tambahan sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Serval pada seluruh target musuh dengan status Shock.",
-        "shortDesc": "Setelah melancarkan serangan, <orangeStrong>mengakibatkan DMG tambahan dalam jumlah kecil</orangeStrong> terhadap seluruh target musuh yang berstatus Shock."
+        "shortDesc": "Setelah melancarkan serangan, <orangeStrong>mengakibatkan DMG tambahan dalam jumlah kecil</orangeStrong> terhadap seluruh target musuh yang berstatus Shock.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Good Night, Belobog",
         "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Lightning DMG sebesar {{4, percent}}% ATK Serval pada musuh secara acak, dan di saat bersamaan memiliki {{1, percent}}% peluang dasar untuk membuat setiap target musuh memasuki status Shock selama {{3}} giliran.<br>Dalam status Shock, target musuh akan menerima Lightning DoT sebesar {{2, percent}}% ATK Serval setiap gilirannya dimulai.",
-        "shortDesc": "Menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Lightning DMG dalam jumlah kecil pada musuh secara acak, dan berpeluang besar membuat setiap target musuh <orangeStrong>memasuki status Shock</orangeStrong>."
+        "shortDesc": "Menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Lightning DMG dalam jumlah kecil pada musuh secara acak, dan berpeluang besar membuat setiap target musuh <orangeStrong>memasuki status Shock</orangeStrong>.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Rock 'n' Roll",
         "fullDesc": "Saat melancarkan Skill, meningkatkan {{1, percent}}% peluang dasar untuk membuat target musuh yang terserang memasuki status Shock.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "String Vibration",
         "fullDesc": "Segera memulihkan {{1}} Energy saat pertempuran dimulai.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Mania",
         "fullDesc": "Meningkatkan {{1, percent}}% ATK selama {{2}} giliran setelah mengalahkan target musuh.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,63 +5,72 @@
       "0": {
         "name": "Apuesta directa",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de la DEF de Aventurino como Daño Imaginario a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Piedra angular de la prosperidad",
         "fullDesc": "Otorga a todos los aliados un escudo Apuesta reforzada que absorbe un daño equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de la DEF de Aventurino + <orangeStrong>{{2}}</orangeStrong> durante {{3}} turnos. Al obtener Apuesta reforzada varias veces, el efecto de escudo se puede acumular hasta un máximo del {{4, percent}}% del efecto de escudo que proporciona la habilidad básica actual.",
-        "shortDesc": "Otorga a todos los aliados un escudo Apuesta reforzada con <orangeStrong>efecto de escudo acumulable</orangeStrong>."
+        "shortDesc": "Otorga a todos los aliados un escudo Apuesta reforzada con <orangeStrong>efecto de escudo acumulable</orangeStrong>.",
+        "tag": "Defensa"
       }
     },
     "ult": {
       "0": {
         "name": "Prodigio de la ruleta",
         "fullDesc": "Obtiene de 1 a {{1}} pts. de Apuesta ciega al azar y después aplica Sobresalto a un enemigo durante {{4}} turnos. Además, inflige al enemigo un <orangeStrong>{{2, percent}}%</orangeStrong> de la DEF de Aventurino como Daño Imaginario. Cuando un objetivo aliado golpea a un enemigo con Sobresalto, el Daño CRIT infligido aumenta en un <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.",
-        "shortDesc": "Obtiene Apuesta ciega al azar y afecta con Sobresalto a un enemigo. Además, inflige Daño Imaginario al objetivo. Cuando un aliado ataca a un enemigo con Sobresalto, el <orangeStrong>Daño CRIT que inflige aumenta</orangeStrong>."
+        "shortDesc": "Obtiene Apuesta ciega al azar y afecta con Sobresalto a un enemigo. Además, inflige Daño Imaginario al objetivo. Cuando un aliado ataca a un enemigo con Sobresalto, el <orangeStrong>Daño CRIT que inflige aumenta</orangeStrong>.",
+        "tag": "ATQ individual"
       }
     },
     "talent": {
       "0": {
         "name": "Bala cargada a la derecha",
         "fullDesc": "La RES a efecto de un aliado con Apuesta reforzada aumenta en un <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>, y cuando ese aliado recibe un ataque, Aventurino obtiene 1 pt. de Apuesta ciega. Aventurino es inmune a los estados negativos de Control cuando tiene Apuesta reforzada. Este efecto se puede activar de nuevo después de {{5}} turnos, y al recibir un ataque obtiene adicionalmente {{1}} pt. de Apuesta ciega. Tras alcanzar 7 pts. de Apuesta ciega, Aventurino los consume y lanza un ataque adicional de {{2}} golpes. Cada golpe inflige a un enemigo aleatorio un <orangeStrong>{{3, percent}}%</orangeStrong> de la DEF de Aventurino como Daño Imaginario. Apuesta ciega puede acumular 10 pts. como máximo.",
-        "shortDesc": "La RES a efecto de un aliado con Apuesta reforzada aumenta y, cuando ese aliado recibe un ataque, Aventurino acumula Apuesta ciega. Aventurino es inmune a los estados negativos de Control cuando tiene Apuesta reforzada. Tras alcanzar 7 pts. de Apuesta ciega, Aventurino los consume y lanza un <orangeStrong>ataque adicional</orangeStrong> que inflige una pequeña cantidad de Daño Imaginario a un enemigo al azar. Se dispara 7 veces."
+        "shortDesc": "La RES a efecto de un aliado con Apuesta reforzada aumenta y, cuando ese aliado recibe un ataque, Aventurino acumula Apuesta ciega. Aventurino es inmune a los estados negativos de Control cuando tiene Apuesta reforzada. Tras alcanzar 7 pts. de Apuesta ciega, Aventurino los consume y lanza un <orangeStrong>ataque adicional</orangeStrong> que inflige una pequeña cantidad de Daño Imaginario a un enemigo al azar. Se dispara 7 veces.",
+        "tag": "Rebote"
       }
     },
     "technique": {
       "0": {
         "name": "Rojo o negro",
         "fullDesc": "Tras usar la técnica, se obtiene 1 de los siguientes efectos:<br>Probabilidad de aumentar la DEF en un {{1, percent}}%.<br>Gran probabilidad de aumentar la DEF en un {{2, percent}}%.<br>Pequeña probabilidad de aumentar la DEF en un {{3, percent}}%.<br>Si se usa repetidas veces, solo se conserva el efecto con el valor más alto.<br>Cuando comienza la siguiente batalla, la DEF de todos los aliados aumenta en la cantidad correspondiente durante {{4}} turnos.",
-        "shortDesc": "Al usar la técnica se obtiene 1 de 3 posibles efectos de aumento de DEF al azar. Al entrar en el siguiente combate, la DEF de todos los aliados aumenta en la cantidad correspondiente."
+        "shortDesc": "Al usar la técnica se obtiene 1 de 3 posibles efectos de aumento de DEF al azar. Al entrar en el siguiente combate, la DEF de todos los aliados aumenta en la cantidad correspondiente.",
+        "tag": "Defensa"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Apalancamiento",
         "fullDesc": "Si la DEF de Aventurino es superior a {{3}}, por cada 100 pts. de DEF que superen ese valor, su Prob. CRIT aumenta en un {{1, percent}}%. Aumento máximo: {{2, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Mano caliente",
         "fullDesc": "Al comienzo de la batalla, proporciona un escudo Apuesta reforzada a todos los aliados. El efecto de escudo es equivalente al {{2, percent}}% del que proporciona la habilidad básica y dura {{1}} turnos.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "¡Bingo!",
         "fullDesc": "Cuando un aliado con Apuesta reforzada lanza un ataque adicional, Aventurino acumula 1 pt. de Apuesta ciega. Este efecto se puede activar hasta {{3}} veces y el contador de activaciones se reinicia cuando comienza el turno de Aventurino. Cuando Aventurino activa el ataque adicional del talento, proporciona a todos los aliados un escudo Apuesta reforzada que puede absorber un daño equivalente al {{1, percent}}% de la DEF de Aventurino + {{2}}. Adicionalmente, proporciona al aliado que tenga el menor valor de escudo un escudo Apuesta reforzada que puede absorber un daño equivalente al {{4, percent}}% de la DEF de Aventurino + {{5}}. Dura 3 turnos.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,68 +5,78 @@
       "0": {
         "name": "穿徹堅冰的烈芒",
         "fullDesc": "對指定敵方單體造成等同於開拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的火屬性傷害並疊加1層【灼熱意志】。",
-        "shortDesc": "對敵方單體造成少量火屬性傷害，獲得【灼熱意志】。"
+        "shortDesc": "對敵方單體造成少量火屬性傷害，獲得【灼熱意志】。",
+        "tag": "單體攻擊"
       },
       "1": {
         "name": "穿徹堅冰的烈芒",
         "fullDesc": "消耗4層【灼熱意志】，強化普通攻擊。對指定敵方單體造成等同於開拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的火屬性傷害，同時對其相鄰目標造成等同於開拓者<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的火屬性傷害。",
-        "shortDesc": "消耗【灼熱意志】，對敵方單體造成火屬性傷害，對相鄰目標造成少量火屬性傷害。"
+        "shortDesc": "消耗【灼熱意志】，對敵方單體造成火屬性傷害，對相鄰目標造成少量火屬性傷害。",
+        "tag": "擴散"
       }
     },
     "skill": {
       "0": {
         "name": "熾燃不滅的琥珀",
         "fullDesc": "施放戰技後，開拓者受到的傷害降低<orangeStrong>{{1, percent}}%</orangeStrong>並疊加1層【灼熱意志】，此外有{{2, percent}}%基礎機率使敵方全體陷入嘲諷狀態，持續{{3}}回合。",
-        "shortDesc": "降低自身受到的傷害，並獲得【灼熱意志】，高機率使敵方全體陷入嘲諷狀態。"
+        "shortDesc": "降低自身受到的傷害，並獲得【灼熱意志】，高機率使敵方全體陷入嘲諷狀態。",
+        "tag": "防禦"
       }
     },
     "ult": {
       "0": {
         "name": "陷陣無回的炎槍",
         "fullDesc": "對敵方全體造成等同於開拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力+<orangeStrong>{{2, percent}}%</orangeStrong>防禦力的火屬性傷害。下一次發動普通攻擊時，自動獲得強化且不消耗【灼熱意志】。",
-        "shortDesc": "對敵方全體造成火屬性傷害、強化下一次普通攻擊。"
+        "shortDesc": "對敵方全體造成火屬性傷害、強化下一次普通攻擊。",
+        "tag": "群體攻擊"
       }
     },
     "talent": {
       "0": {
         "name": "築城者遺寶",
         "fullDesc": "每受到1次攻擊，便疊加1層【灼熱意志】，最多可疊加{{3}}層。<br>【灼熱意志】層數不低於4時，普通攻擊將獲得強化，對指定敵方單體及其相鄰目標同時造成傷害。<br>開拓者發動普通攻擊或施放戰技/終結技後，為我方全體提供能夠抵消等同於開拓者<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>防禦力+<orangeStrong>{{4}}</orangeStrong>傷害的護盾，持續{{2}}回合。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "強化"
       }
     },
     "technique": {
       "0": {
         "name": "守護者召令",
         "fullDesc": "使用秘技後，下一次戰鬥開始時為自身提供強度等同於開拓者{{1, percent}}%防禦力+{{2}}的護盾，持續{{3}}回合。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "防禦"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "強援弱",
         "fullDesc": "施放戰技後，我方全體受到的傷害降低{{2, percent}}%，持續{{3}}回合。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "生先死",
         "fullDesc": "開拓者發動強化普通攻擊後，回復等同於自身生命上限{{1, percent}}%的生命值。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "行勝思",
         "fullDesc": "回合開始時，若開拓者持有護盾保護，則攻擊力提高{{2, percent}}%並恢復{{1}}點能量，持續到行動結束。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

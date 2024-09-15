@@ -5,63 +5,72 @@
       "0": {
         "name": "Spektralstrahl",
         "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Astas ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Meteoritensturm",
         "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Astas ANG zu. Löst zusätzlich 4 Angriffe gegen zufällige Gegner aus, die jeweils Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Astas ANG verursachen.",
-        "shortDesc": "Fügt einem Gegner mit insgesamt 5-mal Abprall geringen Feuer-SCH zu."
+        "shortDesc": "Fügt einem Gegner mit insgesamt 5-mal Abprall geringen Feuer-SCH zu.",
+        "tag": "Abprallung"
       }
     },
     "ult": {
       "0": {
         "name": "Astraler Segen",
         "fullDesc": "Erhöht die GES aller Verbündeten für {{2}} Rd. um <orangeStrong>{{1}}</orangeStrong>.",
-        "shortDesc": "<orangeStrong>Erhöht die GES</orangeStrong> aller Verbündeten."
+        "shortDesc": "<orangeStrong>Erhöht die GES</orangeStrong> aller Verbündeten.",
+        "tag": "Unterstützung"
       }
     },
     "talent": {
       "0": {
         "name": "Astrometrie",
         "fullDesc": "Erhält 1 Aufladestapelung für jeden von Asta angegriffenen Gegner plus 1 zusätzliche Aufladestapelung für jeden dabei getroffenen Gegner mit Feuer-Schwäche.<br>Für jede Aufladestapelung von Asta wird der ANG aller Verbündeten um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> erhöht. Dieser Effekt ist bis zu {{2}}-mal stapelbar.<br>Ab Astas zweiter Runde wird die Anzahl dieser Aufladestapelungen zu Beginn jeder Runde um {{3}} reduziert.",
-        "shortDesc": "Erhält 1 Aufladestapelung für jeden verschiedenen angegriffenen Gegner, bis max. 5 Stapelungen. Für jede Aufladestapelung wird der ANG aller Verbündeten erhöht. Zu Beginn ihrer Runde wird die Aufladestapelung reduziert."
+        "shortDesc": "Erhält 1 Aufladestapelung für jeden verschiedenen angegriffenen Gegner, bis max. 5 Stapelungen. Für jede Aufladestapelung wird der ANG aller Verbündeten erhöht. Zu Beginn ihrer Runde wird die Aufladestapelung reduziert.",
+        "tag": "Unterstützung"
       }
     },
     "technique": {
       "0": {
         "name": "Wunderblitz",
         "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt allen Gegnern Feuer-SCH in Höhe von {{1, percent}}% von Astas ANG zu.",
-        "shortDesc": "Greift Gegner an. Fügt nach Kampfeintritt allen Gegnern geringen SCH zu."
+        "shortDesc": "Greift Gegner an. Fügt nach Kampfeintritt allen Gegnern geringen SCH zu.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Funken",
         "fullDesc": "Beim Einsatz des Standardangriffs besteht eine Grundchance von {{1, percent}}%, bei Gegnern für {{2}} Rd. Brennen zu verursachen.<br>Brennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von {{3, percent}}% von Astas Standardangriffs.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Entzünden",
         "fullDesc": "Erhöht den Feuer-SCH aller Verbündeten um {{1, percent}}%, wenn Asta mitkämpft.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Konstellation",
         "fullDesc": "Erhöht die VTD für jede Aufladestapelung um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,68 +5,78 @@
       "0": {
         "name": "Hehe! Não Vai se Queimar!",
         "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Hook a um único inimigo.",
-        "shortDesc": "Causa Dano de Fogo leve a um único inimigo."
+        "shortDesc": "Causa Dano de Fogo leve a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Ei! Lembra da Hook?",
         "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Hook a um inimigo-alvo. Além disso, há {{2, percent}}% de chance-base de infligir Queimadura por {{3}} rodada(s).<br>Enquanto tiverem Queimadura, inimigos recebem Dano de Fogo Contínuo igual a <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de Hook no início de cada rodada.",
-        "shortDesc": "Causa Dano de Fogo a um único inimigo, com altas chances de infligir Queimadura nele."
+        "shortDesc": "Causa Dano de Fogo a um único inimigo, com altas chances de infligir Queimadura nele.",
+        "tag": "Alvo Único"
       },
       "1": {
         "name": "Ei! Lembra da Hook?",
         "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Hook a um único inimigo, com {{2, percent}}% de chance-base de infligir Queimadura nele por {{3}} rodada(s). Adicionalmente, causa Dano de Fogo igual a <orangeStrong>{{5, percent}}%</orangeStrong> do ATQ de Hook a qualquer inimigo adjacente a ele.<br>Enquanto tiverem Queimadura, inimigos recebem Dano de Fogo Contínuo igual a <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de Hook no início de cada rodada.",
-        "shortDesc": "Causa Dano de Fogo a um único inimigo, com altas chances de infligir Queimadura, e Dano de Fogo leve a inimigos adjacentes a ele."
+        "shortDesc": "Causa Dano de Fogo a um único inimigo, com altas chances de infligir Queimadura, e Dano de Fogo leve a inimigos adjacentes a ele.",
+        "tag": "Explosão"
       }
     },
     "ult": {
       "0": {
         "name": "Bum! Lá Vem Fogo!",
         "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Hook como Dano de Fogo a um inimigo-alvo.<br>Após usar a Perícia Suprema, a próxima Perícia usada é Aprimorada, causando Dano a um único inimigo e aos inimigos adjacentes a ele.",
-        "shortDesc": "Causa Dano de Fogo massivo a um único inimigo e <orangeStrong>Aprimora a próxima Perícia dessa unidade</orangeStrong>."
+        "shortDesc": "Causa Dano de Fogo massivo a um único inimigo e <orangeStrong>Aprimora a próxima Perícia dessa unidade</orangeStrong>.",
+        "tag": "Alvo Único"
       }
     },
     "talent": {
       "0": {
         "name": "Ha! Óleo nas Chamas!",
         "fullDesc": "Ao atacar um alvo afetado com Queimadura, causa Dano de Fogo Adicional igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Hook e regenera {{2}} de Energia extra.",
-        "shortDesc": "Ao atacar um inimigo com Queimadura, <orangeStrong>causa uma quantidade moderada de Dano de Fogo Adicional</orangeStrong>, e adicionalmente regenera Energia."
+        "shortDesc": "Ao atacar um inimigo com Queimadura, <orangeStrong>causa uma quantidade moderada de Dano de Fogo Adicional</orangeStrong>, e adicionalmente regenera Energia.",
+        "tag": "Aprimoramento"
       }
     },
     "technique": {
       "0": {
         "name": "Argh! Olha Essa Bagunça!",
         "fullDesc": "Ataca imediatamente o inimigo. Ao entrar em batalha, Hook causa Dano de Fogo igual a {{4, percent}}% de seu ATQ a um inimigo aleatório. Além disso, há {{1, percent}}% de chance-base de infligir Queimadura em todos os inimigos por {{3}} rodada(s).<br>Enquanto tiverem Queimadura, inimigos recebem {{2, percent}}% do ATQ de Hook como Dano de Fogo Contínuo no início de cada rodada.",
-        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano de Fogo a um único inimigo aleatório, com uma alta chance de infligir Queimadura a todos os inimigos-alvo."
+        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano de Fogo a um único inimigo aleatório, com uma alta chance de infligir Queimadura a todos os inimigos-alvo.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Inocência",
         "fullDesc": "Hook restaura {{1, percent}}% de seus PV máximos sempre que utilizar seu Talento.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Ingenuidade",
         "fullDesc": "A chance de resistir a penalidades de Controle Negativo aumenta em {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Brincando com Fogo",
         "fullDesc": "Ao usar a Perícia Suprema, Hook tem sua ação Avançada Adiante em {{2, percent}}% e regenera mais {{1}} de Energia.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

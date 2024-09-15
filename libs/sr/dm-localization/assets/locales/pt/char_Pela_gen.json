@@ -5,63 +5,72 @@
       "0": {
         "name": "Tiro Gélido",
         "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Pela a um único inimigo-alvo.",
-        "shortDesc": "Causa Dano de Gelo leve a um único inimigo."
+        "shortDesc": "Causa Dano de Gelo leve a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Geladura",
         "fullDesc": "Remove {{2}} melhoria(s) e causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Pela a um único inimigo-alvo.",
-        "shortDesc": "<orangeStrong>Remove</orangeStrong> 1 <orangeStrong>melhoria</orangeStrong> de um único inimigo-alvo e causa Dano de Gelo ao inimigo-alvo."
+        "shortDesc": "<orangeStrong>Remove</orangeStrong> 1 <orangeStrong>melhoria</orangeStrong> de um único inimigo-alvo e causa Dano de Gelo ao inimigo-alvo.",
+        "tag": "Alvo Único"
       }
     },
     "ult": {
       "0": {
         "name": "Supressão de Zona",
         "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de Pela a todos os inimigos, com uma chance-base de {{1, percent}}% de infligir a condição Exposto em todos os inimigos.<br>Inimigos Expostos têm a DEF reduzida em <orangeStrong>{{2, percent}}%</orangeStrong> por {{3}} rodada(s).",
-        "shortDesc": "Tem altas chances de <orangeStrong>reduzir a DEF dos inimigos</orangeStrong>, além de causar Dano de Gelo leve a todos os inimigos."
+        "shortDesc": "Tem altas chances de <orangeStrong>reduzir a DEF dos inimigos</orangeStrong>, além de causar Dano de Gelo leve a todos os inimigos.",
+        "tag": "Área"
       }
     },
     "talent": {
       "0": {
         "name": "Coleta de Dados",
         "fullDesc": "Se o inimigo estiver sofrendo uma penalidade depois do ataque de Pela, ela recuperará <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> de Energia adicional. Esse efeito só pode ser acionado uma vez por ataque.",
-        "shortDesc": "Após usar um ataque, se o inimigo-alvo estiver com alguma penalidade, Pela regenera Energia."
+        "shortDesc": "Após usar um ataque, se o inimigo-alvo estiver com alguma penalidade, Pela regenera Energia.",
+        "tag": "Suporte"
       }
     },
     "technique": {
       "0": {
         "name": "Ataque Premeditado",
         "fullDesc": "Ataca o inimigo imediatamente. Ao entrar na batalha, Pela causa Dano de Gelo igual a {{4, percent}}% do seu ATQ a um inimigo aleatório, com {{1, percent}}% de chance-base de reduzir a DEF de todos os inimigos em {{2, percent}}% por {{3}} rodada(s).",
-        "shortDesc": "Ataca o inimigo. Após entrar na batalha, causa uma pequena quantidade de Dano a um inimigo aleatório, com alta chance de diminuir a DEF de todos os inimigos-alvo."
+        "shortDesc": "Ataca o inimigo. Após entrar na batalha, causa uma pequena quantidade de Dano a um inimigo aleatório, com alta chance de diminuir a DEF de todos os inimigos-alvo.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Pancada",
         "fullDesc": "Causa {{1, percent}}% a mais de Dano a inimigos com penalidades.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "A Estratégia Secreta",
         "fullDesc": "Quando Pela está no campo, a Taxa de Acerto de Efeito de todos os aliados aumenta em {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Exterminar",
         "fullDesc": "Usar a Perícia para remover melhoria(s) aumenta em {{1, percent}}% o Dano do próximo ataque.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

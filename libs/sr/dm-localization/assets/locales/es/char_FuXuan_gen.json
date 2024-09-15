@@ -5,63 +5,72 @@
       "0": {
         "name": "Novaestallido",
         "fullDesc": "Inflige un Daño Cuántico equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> de los PV máx. de Fu Xuan a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño Cuántico a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño Cuántico a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Maravilla astronómica",
         "fullDesc": "Activa Matriz del Presagio y todos los aliados de Fu Xuan traspasan un {{1, percent}}% del daño que reciben (antes de que un escudo mitigue el daño) a Fu Xuan durante {{3}} turnos.<br>Mientras están afectados por Matriz del Presagio, todos los aliados obtienen Conocimiento. En este estado, los PV máx. de los aliados aumentan en una cantidad equivalente al <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Fu Xuan y su Prob. CRIT aumenta en un <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.<br>Cuando Fu Xuan es derrotada, Matriz del Presagio se disipa.",
-        "shortDesc": "Activa Matriz del Presagio y los aliados traspasan a Fu Xuan <orangeStrong>parte del daño que reciben</orangeStrong>. Además, aumentan los PV máx. y la <orangeStrong>Prob. CRIT</orangeStrong> de todos los aliados."
+        "shortDesc": "Activa Matriz del Presagio y los aliados traspasan a Fu Xuan <orangeStrong>parte del daño que reciben</orangeStrong>. Además, aumentan los PV máx. y la <orangeStrong>Prob. CRIT</orangeStrong> de todos los aliados.",
+        "tag": "Defensa"
       }
     },
     "ult": {
       "0": {
         "name": "Evolución definitiva",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de los PV máx. de Fu Xuan como Daño Cuántico a todos los enemigos y obtiene 1 activación adicional de la regeneración de PV del talento de Fu Xuan.",
-        "shortDesc": "Inflige Daño Cuántico a todos los enemigos y aumenta las veces que se puede activar el talento de Fu Xuan."
+        "shortDesc": "Inflige Daño Cuántico a todos los enemigos y aumenta las veces que se puede activar el talento de Fu Xuan.",
+        "tag": "ATQ AdE"
       }
     },
     "talent": {
       "0": {
         "name": "Tras la adversidad viene la felicidad",
         "fullDesc": "Mientras Fu Xuan no haya sido derrotada, todos los aliados obtienen Escape del infortunio. En este estado, el daño que reciben todos los aliados se reduce en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>.<br>Fu Xuan regenera sus PV cuando tiene un porcentaje de PV inferior o igual al {{2, percent}}%. Este efecto regenera un <orangeStrong>{{3, percent}}%</orangeStrong> de los PV que le falten en ese momento, y no puede activarse cuando recibe un golpe letal. Al inicio, este efecto cuenta con 1 activación, y se pueden tener un máximo de 2 activaciones.",
-        "shortDesc": "Mientras Fu Xuan no haya sido derrotada, el daño que reciben todos los aliados se reduce.<br>Cuando tiene pocos PV, <orangeStrong>regenera sus propios PV</orangeStrong> <orangeStrong>automáticamente</orangeStrong> según el porcentaje de PV que le falte en ese momento. Este efecto puede tener un máximo de 2 activaciones."
+        "shortDesc": "Mientras Fu Xuan no haya sido derrotada, el daño que reciben todos los aliados se reduce.<br>Cuando tiene pocos PV, <orangeStrong>regenera sus propios PV</orangeStrong> <orangeStrong>automáticamente</orangeStrong> según el porcentaje de PV que le falte en ese momento. Este efecto puede tener un máximo de 2 activaciones.",
+        "tag": "Regeneración"
       }
     },
     "technique": {
       "0": {
         "name": "De la fortuna viene el destino",
         "fullDesc": "Tras usar la técnica, todos los aliados obtienen una barrera durante {{1}} segundos. Esta barrera bloquea los ataques de los enemigos e impide que se entre en combate al recibir un ataque. Si se entra en combate mientras la barrera está activa, Fu Xuan activa automáticamente Matriz del Presagio durante {{2}} turnos.",
-        "shortDesc": "Activa una barrera y no se entra en combate al recibir ataques de los enemigos. Al entrar en combate, Matriz del Presagio se activa de manera automática."
+        "shortDesc": "Activa una barrera y no se entra en combate al recibir ataques de los enemigos. Al entrar en combate, Matriz del Presagio se activa de manera automática.",
+        "tag": "Defensa"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Adivinación Tai Yi",
         "fullDesc": "Cuando Matriz del Presagio está activa, Fu Xuan recupera adicionalmente {{1}} pts. de energía al usar su habilidad básica.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Adivinación Dun Jia",
         "fullDesc": "Al usar la habilidad definitiva de Fu Xuan, los demás aliados regeneran una cantidad de PV equivalente al {{1, percent}}% de los PV máx. de Fu Xuan + {{2}}.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Adivinación Liu Ren",
         "fullDesc": "Si un enemigo intenta aplicar un estado negativo de Control a un aliado mientras Matriz del Presagio está activa, todos los aliados resisten todos los estados negativos de Control del enemigo hasta que finalice la acción. Este efecto solo se puede activar 1 vez. Cuando se vuelve a activar Matriz del Presagio, el número de veces que se puede usar este efecto se reinicia.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

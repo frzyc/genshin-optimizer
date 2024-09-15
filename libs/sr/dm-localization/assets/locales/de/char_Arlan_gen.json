@@ -5,63 +5,72 @@
       "0": {
         "name": "Blitzrausch",
         "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Arlans ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Kettensprenger",
         "fullDesc": "Verbraucht {{1, percent}}% von Arlans max. LP, um einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Arlans ANG zuzufügen. Hat Arlan nicht genügend LP, werden seine LP beim Einsatz der Fertigkeit auf 1 reduziert.",
-        "shortDesc": "Verbraucht einen Teil von Arlans LP, um einem Gegner Blitz-SCH zuzufügen."
+        "shortDesc": "Verbraucht einen Teil von Arlans LP, um einem Gegner Blitz-SCH zuzufügen.",
+        "tag": "Einzelangriff"
       }
     },
     "ult": {
       "0": {
         "name": "Rasende Strafe",
         "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Arlans ANG zu und fügt angrenzenden Zielen Blitz-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Arlans ANG zu.",
-        "shortDesc": "Fügt einem Gegner massiven Blitz-SCH und angrenzenden Zielen Blitz-SCH zu."
+        "shortDesc": "Fügt einem Gegner massiven Blitz-SCH und angrenzenden Zielen Blitz-SCH zu.",
+        "tag": "Ausdehnung"
       }
     },
     "talent": {
       "0": {
         "name": "Schmerz und Wut",
         "fullDesc": "Erhöht Arlans SCH basierend auf seinem verlorenen LP-Prozentsatz, bis zu einer maximalen Erhöhung um <orangeStrong>{{1, percent}}%</orangeStrong>.",
-        "shortDesc": "<orangeStrong>Erhöht den SCH</orangeStrong> basierend auf dem <orangeStrong>Prozentsatz der verlorenen LP</orangeStrong>."
+        "shortDesc": "<orangeStrong>Erhöht den SCH</orangeStrong> basierend auf dem <orangeStrong>Prozentsatz der verlorenen LP</orangeStrong>.",
+        "tag": "Verstärkung"
       }
     },
     "technique": {
       "0": {
         "name": "Rasche Ernte",
         "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt allen Gegnern Blitz-SCH in Höhe von {{1, percent}}% von Arlans ANG zu.",
-        "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt allen Gegnern geringen Blitz-SCH zu."
+        "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt allen Gegnern geringen Blitz-SCH zu.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Wiederbelebung",
         "fullDesc": "Liegt der LP-Prozentsatz bei {{1, percent}}% oder niedriger beim Besiegen eines Gegners, erhält Arlan unmittelbar {{2, percent}}% seiner max. LP zurück.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Beharrlichkeit",
         "fullDesc": "Erhöht die Chance von WDS gegen DoT-Debuffs um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Abwehren",
         "fullDesc": "Besitzt Arlan beim Kampfeintritt {{1, percent}}% oder weniger LP, kann er allen SCH außer DoT blocken, bis er angegriffen wird.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

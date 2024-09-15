@@ -5,63 +5,72 @@
       "0": {
         "name": "Sternschlag",
         "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> der max. LP von Fu Xuan zu.",
-        "shortDesc": "Fügt einem Gegner geringen Quanten-SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen Quanten-SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Astronomisches Wunder",
         "fullDesc": "Aktiviert die „Matrix der Voraussicht“. Für {{3}} Rd. wird {{1, percent}}% des SCH, den Fu Xuans Verbündete erleiden (und bevor dieser Schaden durch eventuell vorhandene Schilde absorbiert wird), mit Fu Xuan geteilt.<br>Alle Verbündeten, die von der „Matrix der Voraussicht“ betroffen sind, erhalten den Status „Wissen“, der ihre max. LP um <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> der max. LP von Fu Xuan und ihre KRIT-Rate um <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong> erhöht.<br>Wenn Fu Xuan handlungsunfähig wird, verschwindet die „Matrix der Voraussicht“.",
-        "shortDesc": "Aktiviert die „Matrix der Voraussicht“, wodurch <orangeStrong>der erlittene SCH</orangeStrong> von Verbündeten mit Fu Xuan geteilt wird. <orangeStrong>Erhöht die KRIT-Rate</orangeStrong> und die max. LP aller Verbündeten."
+        "shortDesc": "Aktiviert die „Matrix der Voraussicht“, wodurch <orangeStrong>der erlittene SCH</orangeStrong> von Verbündeten mit Fu Xuan geteilt wird. <orangeStrong>Erhöht die KRIT-Rate</orangeStrong> und die max. LP aller Verbündeten.",
+        "tag": "Verteidigung"
       }
     },
     "ult": {
       "0": {
         "name": "Ultimative Evolution",
         "fullDesc": "Fügt allen Gegnern Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> der max. LP von Fu Xuan zu und verleiht 1 Auslösepunkt für die LP-Wiederherstellung von Fu Xuans Talent.",
-        "shortDesc": "Fügt allen Gegnern Quanten-SCH zu und erhöht die Auslösungsanzahl von Fu Xuans Talent."
+        "shortDesc": "Fügt allen Gegnern Quanten-SCH zu und erhöht die Auslösungsanzahl von Fu Xuans Talent.",
+        "tag": "Flächenangriff"
       }
     },
     "talent": {
       "0": {
         "name": "Nach Weh kommt Wohl",
         "fullDesc": "Solange Fu Xuan kampffähig ist, wird „Unglücksvermeidung“ auf alle Verbündeten angewendet. Im Status „Unglücksvermeidung“ erleiden die Verbündeten <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> weniger SCH.<br>LP-Wiederherstellung wird für Fu Xuan ausgelöst, wenn ihr LP-Prozentsatz auf {{2, percent}}% oder weniger liegt. Dieser Effekt stellt ihre LP in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> der bisher verlorenen LP wieder her. Er kann nicht ausgelöst werden, wenn sie einen Todesstoß erleidet. Dieser Effekt kann anfangs 1-mal ausgelöst werden und hat eine max. Auslösungsanzahl von 2.",
-        "shortDesc": "Solange Fu Xuan kampffähig ist, wird der von allen Verbündeten erlittene SCH reduziert.<br>Wenn die LP niedrig sind, werden <orangeStrong>automatisch</orangeStrong> LP anhand des Prozentsatzes der verlorenen LP <orangeStrong>wiederhergestellt</orangeStrong>. Dieser Effekt kann höchstens 2-mal ausgelöst werden."
+        "shortDesc": "Solange Fu Xuan kampffähig ist, wird der von allen Verbündeten erlittene SCH reduziert.<br>Wenn die LP niedrig sind, werden <orangeStrong>automatisch</orangeStrong> LP anhand des Prozentsatzes der verlorenen LP <orangeStrong>wiederhergestellt</orangeStrong>. Dieser Effekt kann höchstens 2-mal ausgelöst werden.",
+        "tag": "Wiederherstellung"
       }
     },
     "technique": {
       "0": {
         "name": "Die Gunst des Schicksals",
         "fullDesc": "Nach dem Einsatz der Technik erhalten alle Verbündeten für {{1}} Sek. eine Barriere. Diese Barriere blockt alle gegnerischen Angriffe ab und die Verbündeten treten nicht in den Kampf ein. Beim Kampfeintritt während der Wirkungszeit der Barriere wird Fu Xuans „Matrix der Voraussicht“ automatisch für {{2}} Rd. aktiviert.",
-        "shortDesc": "Aktiviert eine Barriere. Verbündete treten nicht in den Kampf ein, wenn sie von Gegnern angegriffen werden. Beim Kampfeintritt wird die „Matrix der Voraussicht“ automatisch aktiviert."
+        "shortDesc": "Aktiviert eine Barriere. Verbündete treten nicht in den Kampf ein, wenn sie von Gegnern angegriffen werden. Beim Kampfeintritt wird die „Matrix der Voraussicht“ automatisch aktiviert.",
+        "tag": "Verteidigung"
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und reduziert nach Kampfeintritt den Widerstand des gegnerischen Ziels des entsprechenden Typs.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Tai-Yi-Wahrsagung",
         "fullDesc": "Ist die „Matrix der Voraussicht“ aktiv, stellt Fu Xuan beim Einsatz der Fertigkeit zusätzlich {{1}} Pkt. Energie wieder her.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Dun-Jia-Wahrsagung",
         "fullDesc": "Beim Einsatz des Ultimates werden die LP aller anderen Verbündeten um {{1, percent}}% der max. LP von Fu Xuan plus {{2}} wiederhergestellt.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Liu-Ren-Wahrsagung",
         "fullDesc": "Wenn Gegner versuchen, Mengenkontrolle-Debuffs auf Verbündete anzuwenden, während die „Matrix der Voraussicht“ aktiv ist, widerstehen die Verbündeten allen Mengenkontrolle-Debuffs, die das gegnerische Ziel während der aktuellen Aktion anwendet. Dieser Effekt kann nur 1-mal ausgelöst werden. Nach erneuter Aktivierung der „Matrix der Voraussicht“ wird die Auslösungsanzahl dieses Effekts zurückgesetzt.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

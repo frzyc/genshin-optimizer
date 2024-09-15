@@ -5,73 +5,84 @@
       "0": {
         "name": "指令-閃燃推進",
         "fullDesc": "對指定敵方單體造成等同於裝甲「薩姆」<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的火屬性傷害。",
-        "shortDesc": "對敵方單體造成少量火屬性傷害。"
+        "shortDesc": "對敵方單體造成少量火屬性傷害。",
+        "tag": "單體攻擊"
       },
       "1": {
         "name": "火螢Ⅳ型-底火斬擊",
         "fullDesc": "回復等同於自身{{2, percent}}%生命上限的生命值。對指定敵方單體造成等同於裝甲「薩姆」<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的火屬性傷害。",
-        "shortDesc": "回復自身部分生命值，對敵方單體造成火屬性傷害。"
+        "shortDesc": "回復自身部分生命值，對敵方單體造成火屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "指令-天火轟擊",
         "fullDesc": "消耗等同於自身生命上限{{2, percent}}%的生命值固定恢復等同於自身<orangeStrong>{{3, percent}}%</orangeStrong>能量上限的能量，對指定敵方單體造成等同於裝甲「薩姆」<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的火屬性傷害。若現有生命值不足，發動戰技時裝甲「薩姆」的現有生命值降至1點。使自身下一次行動提前{{4, percent}}%。",
-        "shortDesc": "消耗自身部分生命值恢復能量，對敵方單體造成火屬性傷害。使自身下一次行動提前。"
+        "shortDesc": "消耗自身部分生命值恢復能量，對敵方單體造成火屬性傷害。使自身下一次行動提前。",
+        "tag": "單體攻擊"
       },
       "1": {
         "name": "火螢Ⅳ型-死星超載",
         "fullDesc": "回復等同於自身{{3, percent}}%生命上限的生命值。為指定敵方單體新增火屬性弱點，持續{{4}}回合。對該目標造成等同於裝甲「薩姆」（{{5, fixed(fixed: 1)}}*擊破特攻+<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>）攻擊力的火屬性傷害。同時對其相鄰目標造成等同於裝甲「薩姆」（{{6, fixed(fixed: 1)}}*擊破特攻+<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>）攻擊力的火屬性傷害。最多計算{{7, percent}}%擊破特攻。",
-        "shortDesc": "回復自身部分生命值，向敵方單體<orangeStrong>附加火屬性弱點</orangeStrong>，並對其造成大量火屬性傷害，也對相鄰目標造成火屬性傷害。"
+        "shortDesc": "回復自身部分生命值，向敵方單體<orangeStrong>附加火屬性弱點</orangeStrong>，並對其造成大量火屬性傷害，也對相鄰目標造成火屬性傷害。",
+        "tag": "擴散"
       }
     },
     "ult": {
       "0": {
         "name": "火螢Ⅳ型-完全燃燒",
         "fullDesc": "進入「完全燃燒」狀態，自身行動提前100%並獲得強化普通攻擊和強化戰技。「完全燃燒」狀態下速度提高<orangeStrong>{{3}}</orangeStrong>點，且發動強化普通攻擊、強化戰技時自身弱點擊破效率提高{{2, percent}}%、使敵方目標受到裝甲「薩姆」造成的擊破傷害提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>，持續至本次攻擊結束。<br>行動序列上出現「完全燃燒」倒數計時，倒數計時回合開始時裝甲「薩姆」解除「完全燃燒」狀態，倒數計時固定擁有{{4}}速度。<br>「完全燃燒」狀態下裝甲「薩姆」無法施放終結技。",
-        "shortDesc": "進入「完全燃燒」狀態，<orangeStrong>使自身行動提前<unbreak>100%</orangeStrong></color>，獲得<orangeStrong>強化普通攻擊</orangeStrong>和<orangeStrong>強化戰技</orangeStrong>，並提高自身<orangeStrong>速度、弱點擊破效率和敵方目標受到的擊破傷害</orangeStrong>，直至倒數計時結束。"
+        "shortDesc": "進入「完全燃燒」狀態，<orangeStrong>使自身行動提前<unbreak>100%</orangeStrong></color>，獲得<orangeStrong>強化普通攻擊</orangeStrong>和<orangeStrong>強化戰技</orangeStrong>，並提高自身<orangeStrong>速度、弱點擊破效率和敵方目標受到的擊破傷害</orangeStrong>，直至倒數計時結束。",
+        "tag": "強化"
       }
     },
     "talent": {
       "0": {
         "name": "繭式源火中樞",
         "fullDesc": "生命值越低，受到的傷害越低，生命值小於等於{{3, percent}}%時減傷效果達到最大值，最多降低<orangeStrong>{{1, percent}}%</orangeStrong>。「完全燃燒」狀態下減傷效果維持最大值、效果抗性提高<orangeStrong>{{4, percent}}%</orangeStrong>。<br>戰鬥開始時若能量不足{{2, percent}}%，則使其恢復至{{2, percent}}%。當能量恢復至上限時，解除自身所有負面效果。",
-        "shortDesc": "生命值越低，受到的傷害越低。「完全燃燒」狀態下，減傷效果維持最大值、效果抗性提高。戰鬥開始時若能量不足<orangeStrong>{{2, percent}}%</orangeStrong>，則使其恢復至<orangeStrong>{{2, percent}}%</orangeStrong>。當能量恢復至上限時，解除自身所有負面效果。"
+        "shortDesc": "生命值越低，受到的傷害越低。「完全燃燒」狀態下，減傷效果維持最大值、效果抗性提高。戰鬥開始時若能量不足<orangeStrong>{{2, percent}}%</orangeStrong>，則使其恢復至<orangeStrong>{{2, percent}}%</orangeStrong>。當能量恢復至上限時，解除自身所有負面效果。",
+        "tag": "防禦"
       }
     },
     "technique": {
       "0": {
         "name": "Δ指令-焦土隕擊",
         "fullDesc": "跳躍至空中並自由移動，持續{{1}}秒，此時發動下落攻擊可以提前結束持續時間。持續時間結束後，下落並立即攻擊一定範圍內的所有敵人。每一波開始時向敵方全體附加火屬性弱點，持續{{3}}回合，此後對敵方全體造成等同於裝甲「薩姆」{{2, percent}}%攻擊力的火屬性傷害。",
-        "shortDesc": "跳躍至空中並自由移動，移動數秒後下落並攻擊範圍內的所有敵人。<orangeStrong>每一波</orangeStrong>開始時向敵方全體<orangeStrong>附加火屬性弱點</orangeStrong>，並對敵方全體造成火屬性傷害。"
+        "shortDesc": "跳躍至空中並自由移動，移動數秒後下落並攻擊範圍內的所有敵人。<orangeStrong>每一波</orangeStrong>開始時向敵方全體<orangeStrong>附加火屬性弱點</orangeStrong>，並對敵方全體造成火屬性傷害。",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "α模組-偏時迸發",
         "fullDesc": "「完全燃燒」狀態下，攻擊沒有火屬性弱點的敵人也能削減韌性，效果等同於原技能削韌值的{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "β模組-自限裝甲",
         "fullDesc": "「完全燃燒」狀態下，當裝甲「薩姆」的擊破特攻大於等於{{1, percent}}%/{{2, percent}}%時，攻擊處於弱點擊破狀態下的敵方目標後，會將本次攻擊的削韌值轉化為1次{{3, percent}}%/{{4, percent}}%的超擊破傷害。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "γ模組-超載核心",
         "fullDesc": "若裝甲「薩姆」的攻擊力高於{{1}}點，每超過{{2}}點攻擊力可使自身擊破特攻提高{{3, percent(fixed: 1)}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

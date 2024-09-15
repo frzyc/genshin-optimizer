@@ -5,63 +5,72 @@
       "0": {
         "name": "Tir givré",
         "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Pela à une cible ennemie unique.",
-        "shortDesc": "Inflige des DGT de glace mineurs à un ennemi unique."
+        "shortDesc": "Inflige des DGT de glace mineurs à un ennemi unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Morsure du givre",
         "fullDesc": "Supprime {{2}} bonus et inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Pela à une cible ennemie unique.",
-        "shortDesc": "<orangeStrong>Dissipe</orangeStrong> 1 <orangeStrong>bonus</orangeStrong> d'une cible ennemie unique, et inflige des DGT de glace à la cible ennemie."
+        "shortDesc": "<orangeStrong>Dissipe</orangeStrong> 1 <orangeStrong>bonus</orangeStrong> d'une cible ennemie unique, et inflige des DGT de glace à la cible ennemie.",
+        "tag": "Cible unique"
       }
     },
     "ult": {
       "0": {
         "name": "Suppression de zone",
         "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{4, percent}}%</orangeStrong> de l'ATQ de Pela à tous les ennemis, avec {{1, percent}}% de chances de base d'infliger Exposé à tous les ennemis.<br>Lorsqu'ils sont exposés, les ennemis voient leur DÉF réduite de <orangeStrong>{{2, percent}}%</orangeStrong> pendant {{3}} tours.",
-        "shortDesc": "A de fortes chances de <orangeStrong>diminuer la DÉF des ennemis</orangeStrong> et inflige des DGT de glace mineurs à tous les ennemis."
+        "shortDesc": "A de fortes chances de <orangeStrong>diminuer la DÉF des ennemis</orangeStrong> et inflige des DGT de glace mineurs à tous les ennemis.",
+        "tag": "ZdE"
       }
     },
     "talent": {
       "0": {
         "name": "Collecte de données",
         "fullDesc": "Si l'ennemi subit un malus après l'attaque de Pela, cette dernière régénère <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> points d'énergie supplémentaires. Cet effet ne peut être déclenché qu'1 fois par attaque.",
-        "shortDesc": "Si la cible ennemie subit un malus après l'attaque de Pela, cette dernière régénère de l'énergie."
+        "shortDesc": "Si la cible ennemie subit un malus après l'attaque de Pela, cette dernière régénère de l'énergie.",
+        "tag": "Soutien"
       }
     },
     "technique": {
       "0": {
         "name": "Frappe préventive",
         "fullDesc": "Engage immédiatement le combat contre les ennemis. Pela inflige des DGT de glace équivalents à {{4, percent}}% de son ATQ à un ennemi aléatoire en entrant en combat, avec {{1, percent}}% de chances de base de diminuer la DÉF de tous les ennemis de {{2, percent}}% pendant {{3}} tours.",
-        "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT mineurs à un ennemi unique aléatoire après être entré en combat, avec de fortes chances de réduire la DÉF de toutes les cibles ennemies."
+        "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT mineurs à un ennemi unique aléatoire après être entré en combat, avec de fortes chances de réduire la DÉF de toutes les cibles ennemies.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Frappe douloureuse",
         "fullDesc": "Inflige {{1, percent}}% de DGT supplémentaires aux ennemis qui subissent un malus.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Stratégie secrète",
         "fullDesc": "Augmente les chances d'appliquer des effets de tous les alliés de {{1, percent}}% lorsque Pela est sur le champ de bataille.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Anéantissement",
         "fullDesc": "Augmente les DGT de la prochaine attaque de {{1, percent}}% lorsque le personnage utilise sa compétence pour supprimer un bonus.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

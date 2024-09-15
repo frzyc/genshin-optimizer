@@ -5,63 +5,72 @@
       "0": {
         "name": "소란스러운 밤",
         "fullDesc": "지정된 단일 적에게 카프카 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 번개 속성 피해를 가한다",
-        "shortDesc": "단일 적에게 소량의 번개 속성 피해를 준다"
+        "shortDesc": "단일 적에게 소량의 번개 속성 피해를 준다",
+        "tag": "단일 공격"
       }
     },
     "skill": {
       "0": {
         "name": "달빛의 어루만짐",
         "fullDesc": "지정된 단일 적에게 카프카 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 번개 속성 피해를 가하고, 인접한 목표에게 카프카 공격력의 <orangeStrong>{{3, percent}}%</orangeStrong>만큼 번개 속성 피해를 가한다.<br>지정된 단일 적이 지속 피해 상태인 경우, 현재 해당 적이 받는 모든 지속 피해는 즉시 기존 피해 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 피해를 생성한다",
-        "shortDesc": "단일 적에게 번개 속성 피해를 가하고, 인접한 목표에게 소량의 번개 속성 피해를 가한다.<br>주목표가 지속 피해류 디버프 상태인 경우 지속 피해류 디버프 상태의 <orangeStrong>피해가 추가로 1회 생성</orangeStrong>된다"
+        "shortDesc": "단일 적에게 번개 속성 피해를 가하고, 인접한 목표에게 소량의 번개 속성 피해를 가한다.<br>주목표가 지속 피해류 디버프 상태인 경우 지속 피해류 디버프 상태의 <orangeStrong>피해가 추가로 1회 생성</orangeStrong>된다",
+        "tag": "확산"
       }
     },
     "ult": {
       "0": {
         "name": "비극 끝의 떨리는 소리",
         "fullDesc": "모든 적에게 카프카 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 번개 속성 피해를 가하고, 피격된 적을 {{2, percent}}%의 기본 확률로 감전 상태에 빠트리며, 현재 받는 감전 상태는 즉시 기존 피해 <orangeStrong>{{5, percent}}%</orangeStrong>만큼의 피해를 생성한다. 감전 상태 지속 시간: {{3}}턴<br>감전 상태인 적은 턴이 시작될 때마다 카프카 공격력의 <orangeStrong>{{4, percent}}%</orangeStrong>만큼 번개 속성 지속 피해를 받는다",
-        "shortDesc": "모든 적에게 소량의 번개 속성 피해를 가하고, 높은 확률로 <orangeStrong>감전 상태를 부여</orangeStrong>한다.<br>적이 감전 상태인 경우 감전 상태의 <orangeStrong>피해가 추가로 1회 생성</orangeStrong>된다"
+        "shortDesc": "모든 적에게 소량의 번개 속성 피해를 가하고, 높은 확률로 <orangeStrong>감전 상태를 부여</orangeStrong>한다.<br>적이 감전 상태인 경우 감전 상태의 <orangeStrong>피해가 추가로 1회 생성</orangeStrong>된다",
+        "tag": "범위 공격"
       }
     },
     "talent": {
       "0": {
         "name": "상냥함이 곧 잔혹함",
         "fullDesc": "카프카의 동료가 적에게 일반 공격을 발동하면 카프카는 즉시 추가 공격을 발동하고 해당 목표에게 카프카 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 번개 속성 피해를 주며, {{2, percent}}%의 기본 확률로 피격된 적을 필살기와 동일한 감전 상태에 빠트린다. 감전 상태 지속 시간: {{3}}턴. 해당 효과는 턴마다 1회만 발동한다",
-        "shortDesc": "동료가 적에게 일반 공격을 발동하면 카프카는 즉시 추가 공격을 발동하고, 해당 목표에게 번개 속성 피해를 가하며 높은 확률로 <orangeStrong>감전 상태를 부여</orangeStrong>한다. 해당 효과는 턴마다 1회만 발동한다"
+        "shortDesc": "동료가 적에게 일반 공격을 발동하면 카프카는 즉시 추가 공격을 발동하고, 해당 목표에게 번개 속성 피해를 가하며 높은 확률로 <orangeStrong>감전 상태를 부여</orangeStrong>한다. 해당 효과는 턴마다 1회만 발동한다",
+        "tag": "단일 공격"
       }
     },
     "technique": {
       "0": {
         "name": "자비와 무관한 용서",
         "fullDesc": "일정 범위 내 모든 적을 바로 공격하며, 전투 진입 후 모든 적에게 카프카 공격력의 {{3, percent}}%만큼 번개 속성 피해를 가하고, {{1, percent}}%의 기본 확률로 각 단일 적을 필살기와 동일한 감전 상태에 빠트린다. 지속 시간: {{2}}턴",
-        "shortDesc": "범위 내의 모든 적을 공격하며, 전투 진입 후 모든 적에게 소량의 번개 속성 피해를 가하고 높은 확률로 <orangeStrong>감전 상태를 부여</orangeStrong>한다"
+        "shortDesc": "범위 내의 모든 적을 공격하며, 전투 진입 후 모든 적에게 소량의 번개 속성 피해를 가하고 높은 확률로 <orangeStrong>감전 상태를 부여</orangeStrong>한다",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "고통",
         "fullDesc": "필살기 발동 시 적은 「현재 받는 감전 상태가 즉시 피해를 생성」에서 「현재 받는 모든 지속 피해류 디버프 상태가 즉시 피해를 생성」으로 변경된다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "약탈",
         "fullDesc": "감전 상태인 적이 처치될 시 카프카는 추가로 에너지를 {{1}}pt 회복한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "가시",
         "fullDesc": "필살기, 비술, 특성으로 발동한 추가 공격이 적을 감전 상태에 빠트릴 기본 확률이 {{1, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,63 +5,72 @@
       "0": {
         "name": "Bannière de tempête",
         "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> des PV max de Huohuo à une cible ennemie.",
-        "shortDesc": "Inflige des DGT de vent mineurs à un ennemi unique."
+        "shortDesc": "Inflige des DGT de vent mineurs à un ennemi unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Talisman de protection",
         "fullDesc": "Dissipe {{5}} malus d'une cible alliée unique et lui rend immédiatement un montant de PV équivalent à <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> des PV max de Huohuo + <orangeStrong>{{2}}</orangeStrong>. Restaure également aux alliés adjacents à la cible un montant de PV équivalent à <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> des PV max de Huohuo + <orangeStrong>{{4}}</orangeStrong>.",
-        "shortDesc": "Dissipe 1 malus d'un allié et <orangeStrong>restaure des PV</orangeStrong> à cet allié et aux alliés adjacents."
+        "shortDesc": "Dissipe 1 malus d'un allié et <orangeStrong>restaure des PV</orangeStrong> à cet allié et aux alliés adjacents.",
+        "tag": "Restauration"
       }
     },
     "ult": {
       "0": {
         "name": "Domination spirituelle de Plumeau",
         "fullDesc": "Régénère des points d'énergie pour tous les alliés, hormis Huohuo, à hauteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de leur énergie max respective. Augmente aussi leur ATQ de <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> pendant {{3}} tours.",
-        "shortDesc": "<orangeStrong>Régénère des points d'énergie</orangeStrong> pour tous les alliés, hormis Huohuo, et <orangeStrong>augmente leur ATQ</orangeStrong>."
+        "shortDesc": "<orangeStrong>Régénère des points d'énergie</orangeStrong> pour tous les alliés, hormis Huohuo, et <orangeStrong>augmente leur ATQ</orangeStrong>.",
+        "tag": "Soutien"
       }
     },
     "talent": {
       "0": {
         "name": "Connexion métaphysique éthérée",
         "fullDesc": "Huohuo gagne Intervention divine après avoir utilisé sa compétence, pour une durée de {{1}} tours. Cette durée diminue de 1 au début de chaque tour de Huohuo. Si Huohuo bénéficie d'Intervention divine au début du tour d'un allié ou lorsqu'un allié utilise un ultime, restaure les PV de cet allié à hauteur de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> des PV max de Huohuo + <orangeStrong>{{5}}</orangeStrong>. Aussi, soigne une fois tous les alliés dont les PV sont inférieurs ou égaux à {{6, percent}}% de leurs PV max.<br>Quand Intervention divine se déclenche pour soigner un allié, dissipe {{2}} malus dont souffre cet allié. Cet effet peut être déclenché {{7}} fois. Utiliser la compétence réinitialise le décompte.",
-        "shortDesc": "Huohuo obtient Intervention divine après avoir utilisé sa compétence. Si Huohuo bénéficie d'Intervention divine au début du tour d'un allié ou lorsqu'un allié utilise un ultime, <orangeStrong>restaure les PV de cet allié</orangeStrong>. Aussi, <orangeStrong>soigne une fois</orangeStrong> <orangeStrong>tous les alliés</orangeStrong> dont les PV sont bas. Lorsqu'Intervention divine se déclenche pour soigner un allié, <orangeStrong>dissipe 1 malus dont souffre cet allié</orangeStrong>."
+        "shortDesc": "Huohuo obtient Intervention divine après avoir utilisé sa compétence. Si Huohuo bénéficie d'Intervention divine au début du tour d'un allié ou lorsqu'un allié utilise un ultime, <orangeStrong>restaure les PV de cet allié</orangeStrong>. Aussi, <orangeStrong>soigne une fois</orangeStrong> <orangeStrong>tous les alliés</orangeStrong> dont les PV sont bas. Lorsqu'Intervention divine se déclenche pour soigner un allié, <orangeStrong>dissipe 1 malus dont souffre cet allié</orangeStrong>.",
+        "tag": "Restauration"
       }
     },
     "technique": {
       "0": {
         "name": "Répression du mal",
         "fullDesc": "Huohuo terrorise les ennemis à proximité et leur inflige l'état Frappé par l'horreur. Les ennemis frappés par l'horreur fuient Huohuo pendant {{4}} secondes. Il y a {{1, percent}}% de chances de base de réduire l'ATQ de chacun d'entre eux de {{2, percent}}% pendant {{3}} tours après être entré en combat avec des ennemis frappés par l'horreur.",
-        "shortDesc": "Plonge les ennemis à proximité dans l'état Frappé par l'horreur. Il y a de fortes chances d'appliquer une <orangeStrong>réduction d'ATQ</orangeStrong> aux cibles ennemies après être entré en combat avec des ennemis frappés par l'horreur."
+        "shortDesc": "Plonge les ennemis à proximité dans l'état Frappé par l'horreur. Il y a de fortes chances d'appliquer une <orangeStrong>réduction d'ATQ</orangeStrong> aux cibles ennemies après être entré en combat avec des ennemis frappés par l'horreur.",
+        "tag": "Incapacitation"
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Paralysée",
         "fullDesc": "Huohuo obtient Intervention divine pendant {{1}} tour en début de combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Maudite",
         "fullDesc": "Les chances de résister aux malus de contrôle augmentent de {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Stressée",
         "fullDesc": "Lorsque le talent de Huohuo se déclenche pour soigner des alliés, elle régénère aussi {{1}} point d'énergie.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

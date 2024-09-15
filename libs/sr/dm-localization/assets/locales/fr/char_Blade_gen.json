@@ -5,68 +5,78 @@
       "0": {
         "name": "Lame d'éclat",
         "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Blade à une cible ennemie.",
-        "shortDesc": "Inflige des DGT de vent mineurs à un ennemi."
+        "shortDesc": "Inflige des DGT de vent mineurs à un ennemi.",
+        "tag": "Cible unique"
       },
       "1": {
         "name": "Forêt de lames",
         "fullDesc": "Consomme <orangeStrong>{{1, percent}}%</orangeStrong> des PV max de Blade pour infliger des DGT de vent équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de son ATQ + <orangeStrong>{{4, percent}}%</orangeStrong> de ses PV max à une cible unique. Inflige également des DGT de vent équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> de l'ATQ de Blade + <orangeStrong>{{5, percent}}%</orangeStrong> de ses PV max aux cibles adjacentes. Si les PV de Blade sont insuffisants, ils tombent à 1 après utilisation de Forêt de lames.<br>Forêt de lames ne permet pas de régénérer de points de compétence.",
-        "shortDesc": "Consomme des PV et inflige des DGT de vent à un ennemi ainsi que des DGT de vent mineurs aux cibles adjacentes."
+        "shortDesc": "Consomme des PV et inflige des DGT de vent à un ennemi ainsi que des DGT de vent mineurs aux cibles adjacentes.",
+        "tag": "Propagation"
       }
     },
     "skill": {
       "0": {
         "name": "Vue de l'enfer",
         "fullDesc": "Consomme {{1, percent}}% des PV max de Blade pour entrer dans l'état Vue de l'enfer.<br>Lorsque l'état Vue de l'enfer est actif, Blade ne peut plus utiliser sa compétence, mais les DGT qu'il inflige augmentent de <orangeStrong>{{4, percent}}%</orangeStrong>, et son ATQ normale Lame d'éclat se renforce en Forêt de lames pendant {{2}} tours.<br>Si les PV de Blade sont insuffisants pour utiliser la compétence, ils tombent à 1 après utilisation de la compétence.<br>Cette compétence ne régénère pas l'énergie. Utiliser cette compétence ne met pas fin au tour.",
-        "shortDesc": "Consomme des PV pour <orangeStrong>renforcer son ATQ normale</orangeStrong> sans mettre fin au tour."
+        "shortDesc": "Consomme des PV pour <orangeStrong>renforcer son ATQ normale</orangeStrong> sans mettre fin au tour.",
+        "tag": "Renforcement"
       }
     },
     "ult": {
       "0": {
         "name": "Condamnation à mort",
         "fullDesc": "Les PV de Blade passent à 50 % de ses PV max, et il inflige des DGT de vent équivalents à la somme de <orangeStrong>{{1, percent}}%</orangeStrong> de son ATQ, <orangeStrong>{{2, percent}}%</orangeStrong> de ses PV max, et <orangeStrong>{{5, percent}}%</orangeStrong> du total des PV qu'il a perdus au cours du combat à une cible unique, tout en infligeant des DGT de vent équivalents à la somme de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de son ATQ, <orangeStrong>{{4, percent}}%</orangeStrong> de ses PV max, et <orangeStrong>{{6, percent}}%</orangeStrong> du total des PV qu'il a perdus au cours du combat aux cibles adjacentes.<br>Le total des PV qu'il a perdus au cours du combat est plafonné à {{7, percent}}% de ses PV max. Ce montant est réinitialisé et recommence à s'accumuler après utilisation de l'ultime.",
-        "shortDesc": "Les PV du personnage passent à 50 % de ses PV max, et il inflige des DGT de vent massifs à une cible unique ainsi que des DGT de vent aux cibles adjacentes."
+        "shortDesc": "Les PV du personnage passent à 50 % de ses PV max, et il inflige des DGT de vent massifs à une cible unique ainsi que des DGT de vent aux cibles adjacentes.",
+        "tag": "Propagation"
       }
     },
     "talent": {
       "0": {
         "name": "Don de Shuhu",
         "fullDesc": "Chaque fois que Blade subit des DGT ou consomme ses PV, il gagne 1 cumul de Charge, jusqu'à un maximum de 5 cumuls. Blade ne peut gagner qu'1 cumul de Charge au maximum pour chaque attaque qu'il subit.<br>Lorsque le nombre de cumuls de Charge atteint son maximum, il lance immédiatement une attaque de suivi sur tous les ennemis, infligeant des DGT de vent équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de son ATQ + <orangeStrong>{{4, percent}}%</orangeStrong> de ses PV max. Blade restaure également {{3, percent}}% de ses PV max. Toutes les Charges sont consommées après avoir déclenché l'attaque de suivi.",
-        "shortDesc": "Chaque fois que Blade perd des PV, il gagne 1 cumul de Charge. Lorsque le nombre de cumuls de Charge est au maximum, Blade <orangeStrong>inflige immédiatement des DGT de vent à tous les ennemis</orangeStrong> et restaure des PV, consommant tous les cumuls de Charge."
+        "shortDesc": "Chaque fois que Blade perd des PV, il gagne 1 cumul de Charge. Lorsque le nombre de cumuls de Charge est au maximum, Blade <orangeStrong>inflige immédiatement des DGT de vent à tous les ennemis</orangeStrong> et restaure des PV, consommant tous les cumuls de Charge.",
+        "tag": "ZdE"
       }
     },
     "technique": {
       "0": {
         "name": "Vent de karma",
         "fullDesc": "Engage immédiatement le combat contre les ennemis. Consomme {{2, percent}}% des PV max de Blade après être entré en combat pour infliger des DGT de vent équivalents à {{1, percent}}% de ses PV max à tous les ennemis.<br>Si les PV de Blade sont insuffisants, ils tombent à 1 après utilisation de cette technique.",
-        "shortDesc": "Engage le combat contre les ennemis. Consomme ses propres PV après être entré en combat pour infliger des DGT de vent à tous les ennemis."
+        "shortDesc": "Engage le combat contre les ennemis. Consomme ses propres PV après être entré en combat pour infliger des DGT de vent à tous les ennemis.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Ad vitam æternam",
         "fullDesc": "Lorsque les PV actuels de Blade sont inférieurs ou égaux à 50 %, les soins reçus augmentent de {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Morts sans fin",
         "fullDesc": "Lorsque Blade touche un ennemi qui subit une Rupture de faiblesse avec Forêt de lames, il restaure {{1, percent}}% de ses PV max + {{2}}.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Cyclone de destruction",
         "fullDesc": "Augmente les DGT d'attaque de suivi du talent de {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

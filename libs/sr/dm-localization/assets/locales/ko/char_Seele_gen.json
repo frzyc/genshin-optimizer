@@ -5,63 +5,72 @@
       "0": {
         "name": "강습",
         "fullDesc": "지정된 단일 적에게 제레 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 양자 속성 피해를 가한다",
-        "shortDesc": "단일 적에게 소량의 양자 속성 피해를 가한다"
+        "shortDesc": "단일 적에게 소량의 양자 속성 피해를 가한다",
+        "tag": "단일 공격"
       }
     },
     "skill": {
       "0": {
         "name": "귀인(歸刃)",
         "fullDesc": "제레의 속도가 {{2, percent}}% 증가하고, 지정된 단일 적에게 제레 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 양자 속성 피해를 준다. 속도 증가 효과 지속 시간: {{3}}턴",
-        "shortDesc": "단일 적에게 양자 속성 피해를 주고, 자신의 속도가 증가한다"
+        "shortDesc": "단일 적에게 양자 속성 피해를 주고, 자신의 속도가 증가한다",
+        "tag": "단일 공격"
       }
     },
     "ult": {
       "0": {
         "name": "혼란의 나비",
         "fullDesc": "즉시 증폭 상태에 진입하여 지정된 단일 적에게 제레 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 양자 속성 피해를 가한다",
-        "shortDesc": "<orangeStrong>증폭 상태</orangeStrong>에 진입하고, 단일 적에게 대량의 양자 속성 피해를 가한다"
+        "shortDesc": "<orangeStrong>증폭 상태</orangeStrong>에 진입하고, 단일 적에게 대량의 양자 속성 피해를 가한다",
+        "tag": "단일 공격"
       }
     },
     "talent": {
       "0": {
         "name": "재현",
         "fullDesc": "일반 공격, 전투 스킬, 필살기를 발동해 적을 처치한 후 즉시 보너스 턴을 1턴 획득하고 증폭 상태에 진입한다. 증폭 상태의 제레는 공격 발동으로 가하는 피해가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 지속 시간: {{2}}턴.<br>제레가 특성 [재현]으로 획득한 보너스 턴에서 적 처치 시 해당 특성은 적용되지 않는다",
-        "shortDesc": "일반 공격, 전투 스킬, 필살기를 발동해 <orangeStrong>적 처치</orangeStrong> 시, <orangeStrong>보너스 턴을 획득하고 증폭 상태에 진입</orangeStrong>한다. 증폭 상태에서 자신이 가하는 피해가 증가한다"
+        "shortDesc": "일반 공격, 전투 스킬, 필살기를 발동해 <orangeStrong>적 처치</orangeStrong> 시, <orangeStrong>보너스 턴을 획득하고 증폭 상태에 진입</orangeStrong>한다. 증폭 상태에서 자신이 가하는 피해가 증가한다",
+        "tag": "강화"
       }
     },
     "technique": {
       "0": {
         "name": "환신(幻身)",
         "fullDesc": "비술 사용 후 {{1}}초 동안 은신 상태에 진입한다. 은신 상태에선 적에게 들키지 않으며, 선공을 가해 적과의 전투 진입 시 제레는 즉시 증폭 상태에 진입한다",
-        "shortDesc": "<orangeStrong>은신</orangeStrong> 상태에 진입한다. 적을 공격해 전투에 진입하면 즉시 <orangeStrong>증폭 상태</orangeStrong>에 진입한다"
+        "shortDesc": "<orangeStrong>은신</orangeStrong> 상태에 진입한다. 적을 공격해 전투에 진입하면 즉시 <orangeStrong>증폭 상태</orangeStrong>에 진입한다",
+        "tag": "강화"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "야행",
         "fullDesc": "현재 HP 백분율이 {{1, percent}}% 이하인 경우, 적에게 피격될 확률이 감소한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "절단",
         "fullDesc": "증폭 상태일 때 제레의 양자 속성 저항 관통이 {{1, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "파문",
         "fullDesc": "일반 공격 발동 후 제레의 다음 행동 게이지가 {{1, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

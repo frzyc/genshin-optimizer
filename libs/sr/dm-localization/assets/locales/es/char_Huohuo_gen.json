@@ -5,63 +5,72 @@
       "0": {
         "name": "Estandarte: Llamatormentas",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de los PV máx. de Huohuo como Daño de Viento a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Talismán: Protección",
         "fullDesc": "Elimina {{5}} estado negativo de un aliado y regenera inmediatamente una cantidad de PV equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Huohuo + <orangeStrong>{{2}}</orangeStrong> para ese aliado. Al mismo tiempo, regenera a los aliados adyacentes una cantidad de PV equivalente al <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Huohuo + <orangeStrong>{{4}}</orangeStrong>.",
-        "shortDesc": "Elimina 1 estado negativo de un aliado y <orangeStrong>regenera los PV</orangeStrong> de un aliado y los aliados adyacentes."
+        "shortDesc": "Elimina 1 estado negativo de un aliado y <orangeStrong>regenera los PV</orangeStrong> de un aliado y los aliados adyacentes.",
+        "tag": "Regeneración"
       }
     },
     "ult": {
       "0": {
         "name": "Cola: Dominación espiritual",
         "fullDesc": "Recupera para todos los demás aliados (excepto Huohuo) una cantidad de energía equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de su respectiva energía máx. y aumenta su ATQ en un <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> durante {{3}} turnos.",
-        "shortDesc": "<orangeStrong>Recupera energía</orangeStrong> para todos los demás aliados y <orangeStrong>aumenta su ATQ</orangeStrong>."
+        "shortDesc": "<orangeStrong>Recupera energía</orangeStrong> para todos los demás aliados y <orangeStrong>aumenta su ATQ</orangeStrong>.",
+        "tag": "Apoyo"
       }
     },
     "talent": {
       "0": {
         "name": "Posesión: Conexión metafísica",
         "fullDesc": "Tras usar su habilidad básica, Huohuo obtiene Vida sacrificada durante {{1}} turnos y, al comenzar cada turno, la duración se reduce en 1 turno. Mientras Huohuo tenga Vida sacrificada, al inicio del turno de un aliado o al usar una habilidad definitiva, ese aliado regenera una cantidad de PV equivalente al <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Huohuo + <orangeStrong>{{5}}</orangeStrong>. Al mismo tiempo, todos los aliados que tengan un porcentaje de PV del {{6, percent}}% o menos regeneran PV una vez.<br>Cuando Vida sacrificada se activa para regenerar los PV de un aliado, se disipa {{2}} estado negativo de ese objetivo. Este efecto se puede activar {{7}} veces y el contador de activaciones se reinicia tras volver a usar la habilidad básica.",
-        "shortDesc": "Tras usar su habilidad básica, Huohuo obtiene Vida sacrificada. Mientras Huohuo tenga Vida sacrificada, al inicio del turno de cada aliado o al usar una habilidad definitiva se <orangeStrong>regeneran los PV de ese aliado</orangeStrong>. Al mismo tiempo, <orangeStrong>todos</orangeStrong> los aliados que tengan pocos PV <orangeStrong>regeneran PV una vez</orangeStrong>. Cuando Vida sacrificada se activa para regenerar los PV de un aliado, <orangeStrong>se disipa 1 estado negativo de ese objetivo</orangeStrong>."
+        "shortDesc": "Tras usar su habilidad básica, Huohuo obtiene Vida sacrificada. Mientras Huohuo tenga Vida sacrificada, al inicio del turno de cada aliado o al usar una habilidad definitiva se <orangeStrong>regeneran los PV de ese aliado</orangeStrong>. Al mismo tiempo, <orangeStrong>todos</orangeStrong> los aliados que tengan pocos PV <orangeStrong>regeneran PV una vez</orangeStrong>. Cuando Vida sacrificada se activa para regenerar los PV de un aliado, <orangeStrong>se disipa 1 estado negativo de ese objetivo</orangeStrong>.",
+        "tag": "Regeneración"
       }
     },
     "technique": {
       "0": {
         "name": "Demonio: Destitución del mal",
         "fullDesc": "Huohuo asusta a los enemigos cercanos y los afecta con Terror. Los enemigos aterrorizados huirán de Huohuo durante {{4}} s. Al entrar en combate con enemigos afectados por Terror, hay un {{1, percent}}% de probabilidad base de reducir el ATQ de cada enemigo en un {{2, percent}}% durante {{3}} turnos.",
-        "shortDesc": "Afecta a los enemigos cercanos con Terror. Al entrar en combate con enemigos afectados por Terror, hay una gran probabilidad de aplicar una <orangeStrong>reducción de ATQ</orangeStrong> a los objetivos."
+        "shortDesc": "Afecta a los enemigos cercanos con Terror. Al entrar en combate con enemigos afectados por Terror, hay una gran probabilidad de aplicar una <orangeStrong>reducción de ATQ</orangeStrong> a los objetivos.",
+        "tag": "Alteración"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Miedo a actuar",
         "fullDesc": "Al comenzar la batalla, Huohuo obtiene Vida sacrificada durante {{1}} turno.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Maldición",
         "fullDesc": "La probabilidad de resistir estados negativos de Control aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Reacción al terror",
         "fullDesc": "Cuando el talento se activa para curar aliados, Huohuo recupera {{1}} pt. de energía.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

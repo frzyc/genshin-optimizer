@@ -5,63 +5,72 @@
       "0": {
         "name": "Ruido blanco de aleteo",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Robin como Daño Físico a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Aria de la pluma",
         "fullDesc": "Aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong> el daño que infligen todos los aliados durante {{2}} turnos. Cada vez que comience el turno de Robin, la duración se reduce en 1 turno.",
-        "shortDesc": "<orangeStrong>Aumenta el daño</orangeStrong> que infligen todos los aliados."
+        "shortDesc": "<orangeStrong>Aumenta el daño</orangeStrong> que infligen todos los aliados.",
+        "tag": "Apoyo"
       }
     },
     "ult": {
       "0": {
         "name": "Canon de mil voces, fuga estelar",
         "fullDesc": "Robin entra en el estado de Concierto y hace que todos los aliados excepto ella actúen inmediatamente.<br>Mientras está en el estado de Concierto, el ATQ de todos los aliados aumenta en una cantidad equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> + <orangeStrong>{{3}}</orangeStrong> del ATQ de Robin. Después de cada ataque de los aliados, Robin inflige 1 vez un <orangeStrong>{{4, percent}}%</orangeStrong> de su ATQ como Daño Físico adicional. La Prob. CRIT de este daño se fija en el {{5, percent}}% y el Daño CRIT se fija en el {{6, percent}}%.<br>Mientras está en el estado de Concierto, Robin obtiene inmunidad a estados negativos de Control y no puede realizar ninguna acción ni usar su turno hasta que termine el estado de Concierto.<br>En el orden de acción aparece una cuenta regresiva de Concierto. Cuando comienza el turno de la cuenta regresiva, Robin sale del estado de Concierto y actúa inmediatamente. La cuenta regresiva tiene una VEL fija de {{2}}.",
-        "shortDesc": "Entra en el estado de Concierto, <orangeStrong>aumenta el ATQ</orangeStrong> de todos los aliados y hace que todos excepto ella actúen inmediatamente. Después de que un aliado ataque, Robin inflige <orangeStrong>Daño Físico adicional</orangeStrong>. En el estado de Concierto, Robin es inmune a estados negativos de Control. Antes de que Concierto termine, Robin no puede actuar ni entrar en su turno hasta que termine la cuenta regresiva."
+        "shortDesc": "Entra en el estado de Concierto, <orangeStrong>aumenta el ATQ</orangeStrong> de todos los aliados y hace que todos excepto ella actúen inmediatamente. Después de que un aliado ataque, Robin inflige <orangeStrong>Daño Físico adicional</orangeStrong>. En el estado de Concierto, Robin es inmune a estados negativos de Control. Antes de que Concierto termine, Robin no puede actuar ni entrar en su turno hasta que termine la cuenta regresiva.",
+        "tag": "Apoyo"
       }
     },
     "talent": {
       "0": {
         "name": "Oda melodiosa",
         "fullDesc": "Aumenta el Daño CRIT de todos los aliados en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Después de que un aliado ataque a un enemigo, Robin recupera {{2}} pts. de energía adicionales.",
-        "shortDesc": "Aumenta el <orangeStrong>Daño CRIT</orangeStrong> de todos los aliados. Después de que un aliado ataque a un enemigo, Robin recupera energía adicional."
+        "shortDesc": "Aumenta el <orangeStrong>Daño CRIT</orangeStrong> de todos los aliados. Después de que un aliado ataque a un enemigo, Robin recupera energía adicional.",
+        "tag": "Apoyo"
       }
     },
     "technique": {
       "0": {
         "name": "Obertura embriagadora",
         "fullDesc": "Tras usar la técnica, crea una zona especial a su alrededor que dura {{1}} s. Los enemigos que estén en la zona no pueden atacar a Robin y la siguen mientras la zona permanezca activa. Tras entrar en combate mientras la zona especial está activa, Robin recupera {{2}} pts. de energía al comienzo de cada oleada. Solo puede haber 1 efecto del área creado por los aliados a la vez.",
-        "shortDesc": "Crea una zona especial a su alrededor. Los enemigos que estén en la zona no pueden atacar a Robin. Tras entrar en combate mientras la zona especial está activa, Robin recupera <orangeStrong>{{2}}</orangeStrong> pts. de energía adicionales al comienzo de cada oleada."
+        "shortDesc": "Crea una zona especial a su alrededor. Los enemigos que estén en la zona no pueden atacar a Robin. Tras entrar en combate mientras la zona especial está activa, Robin recupera <orangeStrong>{{2}}</orangeStrong> pts. de energía adicionales al comienzo de cada oleada.",
+        "tag": "Apoyo"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Coloratura de cadenza",
         "fullDesc": "Al comenzar la batalla, su acción se adelanta un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Adorno improvisado",
         "fullDesc": "Cuando está en el estado de Concierto, el Daño CRIT que infligen todos los aliados con sus ataques adicionales aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Pasaje secuencial",
         "fullDesc": "Al usar la habilidad básica, recupera {{1}} pts. de energía adicionales.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

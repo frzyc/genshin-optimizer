@@ -5,63 +5,72 @@
       "0": {
         "name": "Sawblade Tuning",
         "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Himeko's ATK to a single enemy.",
-        "shortDesc": "Deals minor Fire DMG to a single enemy."
+        "shortDesc": "Deals minor Fire DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Molten Detonation",
         "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Himeko's ATK to a single enemy and Fire DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Himeko's ATK to enemies adjacent to it.",
-        "shortDesc": "Deals Fire DMG to a single enemy and minor Fire DMG to enemies adjacent to it."
+        "shortDesc": "Deals Fire DMG to a single enemy and minor Fire DMG to enemies adjacent to it.",
+        "tag": "Blast"
       }
     },
     "ult": {
       "0": {
         "name": "Heavenly Flare",
         "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Himeko's ATK to all enemies. Himeko regenerates {{2}} extra Energy for each enemy defeated.",
-        "shortDesc": "Deals Fire DMG to all enemies and regenerates Energy if enemies are defeated."
+        "shortDesc": "Deals Fire DMG to all enemies and regenerates Energy if enemies are defeated.",
+        "tag": "AoE"
       }
     },
     "talent": {
       "0": {
         "name": "Victory Rush",
         "fullDesc": "When an enemy is inflicted with Weakness Break, Himeko gains 1 point of Charge (max {{2}} points).<br>If Himeko is fully Charged when an ally performs an attack, Himeko immediately performs 1 follow-up attack and deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of her ATK to all enemies, consuming all Charge points.<br>At the start of the battle, Himeko gains 1 point of Charge.",
-        "shortDesc": "Gains Charge when an enemy's Weakness is Broken.<br>After an ally performs an attack, if fully Charged, <orangeStrong>immediately performs a follow-up attack</orangeStrong> and deals Fire DMG to <orangeStrong>all enemies</orangeStrong>, consuming all Charge points.<br>Gains 1 Charge point at the start of each battle."
+        "shortDesc": "Gains Charge when an enemy's Weakness is Broken.<br>After an ally performs an attack, if fully Charged, <orangeStrong>immediately performs a follow-up attack</orangeStrong> and deals Fire DMG to <orangeStrong>all enemies</orangeStrong>, consuming all Charge points.<br>Gains 1 Charge point at the start of each battle.",
+        "tag": "AoE"
       }
     },
     "technique": {
       "0": {
         "name": "Incomplete Combustion",
         "fullDesc": "After using Technique, creates a special dimension that lasts for {{4}} second(s). After entering battle with enemies in the special dimension, there is a {{1, percent}}% base chance to increase Fire DMG taken by enemies by {{2, percent}}% for {{3}} turn(s). Only 1 dimension created by allies can exist at the same time.",
-        "shortDesc": "Creates a special dimension. After entering combat with enemies in the dimension, there is a high chance to <orangeStrong>increase Fire DMG taken by enemies</orangeStrong>."
+        "shortDesc": "Creates a special dimension. After entering combat with enemies in the dimension, there is a high chance to <orangeStrong>increase Fire DMG taken by enemies</orangeStrong>.",
+        "tag": "Impair"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Starfire",
         "fullDesc": "After using an attack, there is a {{1, percent}}% base chance to inflict Burn on enemies for {{2}} turn(s).<br>When afflicted with Burn, enemies take Fire DoT equal to {{3, percent}}% of Himeko's ATK at the start of each turn.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Magma",
         "fullDesc": "Skill deals {{1, percent}}% more DMG to enemies currently afflicted with Burn.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Benchmark",
         "fullDesc": "When current HP percentage is {{1, percent}}% or higher, CRIT Rate increases by {{2, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

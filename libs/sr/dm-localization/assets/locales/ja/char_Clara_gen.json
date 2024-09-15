@@ -5,63 +5,72 @@
       "0": {
         "name": "クラーラもお{RUBY_B#てつだ}手伝{RUBY_E#}いします",
         "fullDesc": "指定した敵単体にクラーラの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の物理属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の物理属性ダメージを与える。"
+        "shortDesc": "敵単体に少量の物理属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "スヴァローグが{RUBY_B#み}見{RUBY_E#}てる",
         "fullDesc": "敵全体にクラーラの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の物理属性ダメージを与える。スヴァローグに「反撃の印」を付与された敵に対し、さらにクラーラの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の物理属性ダメージを与える。<br>戦闘スキルを発動した後、すべての「反撃の印」が失効する。",
-        "shortDesc": "敵全体に物理属性ダメージを与え、「反撃の印」がある敵には<orangeStrong>さらに物理属性ダメージを与える</orangeStrong>。"
+        "shortDesc": "敵全体に物理属性ダメージを与え、「反撃の印」がある敵には<orangeStrong>さらに物理属性ダメージを与える</orangeStrong>。",
+        "tag": "全体攻撃"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#めいれい}命令{RUBY_E#}じゃなくて{RUBY_B#やくそく}約束{RUBY_E#}",
         "fullDesc": "必殺技を発動した後、さらにクラーラの受けるダメージ-<orangeStrong>{{4, percent}}%</orangeStrong>、敵に攻撃される確率が大アップする、{{3}}ターン継続。<br>スヴァローグのカウンターを強化。任意の味方が攻撃を受けた後、スヴァローグが攻撃者にカウンターを行い、カウンターのダメージ倍率+<orangeStrong>{{2, percent}}%</orangeStrong>、隣接する敵にメインターゲットに与えるダメージ50%分のダメージを与える。強化効果は{{5}}回発動できる。",
-        "shortDesc": "自身の<orangeStrong>受けるダメージダウン</orangeStrong>、攻撃される確率アップ、カウンターを強化。"
+        "shortDesc": "自身の<orangeStrong>受けるダメージダウン</orangeStrong>、攻撃される確率アップ、カウンターを強化。",
+        "tag": "強化"
       }
     },
     "talent": {
       "0": {
         "name": "{RUBY_B#かぞく}家族{RUBY_E#}なんだから",
         "fullDesc": "クラーラはスヴァローグの保護により受けるダメージ-{{3, percent}}%。クラーラを攻撃した敵に対し、スヴァローグが「反撃の印」を付与してカウンターし、クラーラの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の物理属性ダメージを与える。",
-        "shortDesc": "自身の<orangeStrong>受けるダメージがダウンする</orangeStrong>。攻撃者は「反撃の印」を付与され、<orangeStrong>スヴァローグのカウンターを受け</orangeStrong>、物理属性ダメージを受ける。"
+        "shortDesc": "自身の<orangeStrong>受けるダメージがダウンする</orangeStrong>。攻撃者は「反撃の印」を付与され、<orangeStrong>スヴァローグのカウンターを受け</orangeStrong>、物理属性ダメージを受ける。",
+        "tag": "単体攻撃"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#しょうり}勝利{RUBY_E#}の{RUBY_B#ちい}小{RUBY_E#}さな{RUBY_B#たいか}対価{RUBY_E#}",
         "fullDesc": "敵を攻撃。戦闘に入った後、クラーラが敵に攻撃される確率がアップする、{{1}}ターン継続。",
-        "shortDesc": "敵を攻撃。戦闘に入った後、敵に攻撃される確率がアップする。"
+        "shortDesc": "敵を攻撃。戦闘に入った後、敵に攻撃される確率がアップする。",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#かぞく}家族{RUBY_E#}",
         "fullDesc": "攻撃を受けた時、{{1, percent}}%の固定確率で自身のデバフを1つ解除する。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#しゅご}守護{RUBY_E#}",
         "fullDesc": "行動制限系デバフに抵抗する確率+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#ふくしゅう}復讐{RUBY_E#}",
         "fullDesc": "スヴァローグのカウンターの与ダメージ+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,63 +5,72 @@
       "0": {
         "name": "Nghi Thức Điệu Swing",
         "fullDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Nhà Khai Phá.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Số Ảo cho 1 kẻ địch."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Số Ảo cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Cơn Mưa Tiền Đột Ngột",
         "fullDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Nhà Khai Phá, đồng thời gây thêm 4 lần sát thương. Mỗi lần sát thương sẽ gây Sát Thương Số Ảo tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Nhà Khai Phá cho 1 kẻ địch ngẫu nhiên.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Số Ảo cho 1 kẻ địch, tổng cộng nảy bật 5 lần."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Số Ảo cho 1 kẻ địch, tổng cộng nảy bật 5 lần.",
+        "tag": "Nảy Bật"
       }
     },
     "ult": {
       "0": {
         "name": "Diễu Hành Đèn Sân Khấu Huyên Náo",
         "fullDesc": "Gắn hiệu ứng Bạn Nhảy cho toàn thể phe ta, duy trì {{1}} hiệp. Khi bắt đầu mỗi hiệp của Nhà Khai Phá, số hiệp duy trì giảm 1. Mục tiêu phe ta có Bạn Nhảy sẽ tăng <orangeStrong>{{3, percent}}%</orangeStrong> Tấn Công Kích Phá, đồng thời, sau khi tấn công kẻ địch trong trạng thái Phá Vỡ Điểm Yếu, sẽ khiến điểm Giảm Sức Bền của lần tấn công này chuyển hóa thành 1 lần Siêu Sát Thương Phá Vỡ.",
-        "shortDesc": "Thi triển hiệu ứng Bạn Nhảy cho toàn bộ phe ta. Mục tiêu phe ta có Bạn Nhảy sẽ <orangeStrong>tăng Tấn Công Kích Phá</orangeStrong>, đồng thời, sau khi tấn công kẻ địch trong trạng thái Phá Vỡ Điểm Yếu sẽ gây thêm 1 lần <orangeStrong>Siêu Sát Thương Phá Vỡ</orangeStrong>."
+        "shortDesc": "Thi triển hiệu ứng Bạn Nhảy cho toàn bộ phe ta. Mục tiêu phe ta có Bạn Nhảy sẽ <orangeStrong>tăng Tấn Công Kích Phá</orangeStrong>, đồng thời, sau khi tấn công kẻ địch trong trạng thái Phá Vỡ Điểm Yếu sẽ gây thêm 1 lần <orangeStrong>Siêu Sát Thương Phá Vỡ</orangeStrong>.",
+        "tag": "Hỗ Trợ"
       }
     },
     "talent": {
       "0": {
         "name": "Ca Múa Trên Không Toàn Màn Hình",
         "fullDesc": "Khi có điểm yếu của kẻ địch bị phá vỡ, Nhà Khai Phá sẽ hồi ngay <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> Năng Lượng.",
-        "shortDesc": "Khi có điểm yếu của kẻ địch bị phá vỡ, Nhà Khai Phá sẽ hồi Năng Lượng."
+        "shortDesc": "Khi có điểm yếu của kẻ địch bị phá vỡ, Nhà Khai Phá sẽ hồi Năng Lượng.",
+        "tag": "Hỗ Trợ"
       }
     },
     "technique": {
       "0": {
         "name": "Ngay Và Luôn! Nhóm Độc Tấu",
         "fullDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu trận kế tiếp, sẽ tăng {{1, percent}}% Tấn Công Kích Phá của toàn bộ phe ta, duy trì {{2}} hiệp.",
-        "shortDesc": "Khi bắt đầu trận kế tiếp sẽ tăng Tấn Công Kích Phá của toàn bộ phe ta."
+        "shortDesc": "Khi bắt đầu trận kế tiếp sẽ tăng Tấn Công Kích Phá của toàn bộ phe ta.",
+        "tag": "Hỗ Trợ"
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của kẻ địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Bảo Vệ Tôi Khiêu Vũ",
         "fullDesc": "Khi số lượng kẻ địch trong trận bằng 5 (hoặc trên 5)/4/3/2/1, Siêu Sát Thương Phá Vỡ do hiệu ứng Bạn Nhảy kích hoạt sẽ tăng {{1, percent}}%/{{2, percent}}%/{{3, percent}}%/{{4, percent}}%/{{5, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Cuốn Theo Dòng Chảy",
         "fullDesc": "Khi thi triển Chiến Kỹ, điểm Giảm Sức Bền của sát thương lần đầu tiên sẽ tăng thêm {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Chiếc Mũ Nhà Hát",
         "fullDesc": "Sau khi mục tiêu phe ta gây Phá Vỡ Điểm Yếu sẽ khiến kẻ địch Trì Hoãn Hành Động thêm {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

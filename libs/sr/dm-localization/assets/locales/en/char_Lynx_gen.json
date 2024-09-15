@@ -5,63 +5,72 @@
       "0": {
         "name": "Ice Crampon Technique",
         "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of this character's Max HP to a single enemy.",
-        "shortDesc": "Deals minor Quantum DMG to a single enemy."
+        "shortDesc": "Deals minor Quantum DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Salted Camping Cans",
         "fullDesc": "Applies \"Survival Response\" to a single target ally and increases their Max HP by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Lynx's Max HP plus <orangeStrong>{{2}}</orangeStrong>. If the target ally is a character on the Path of Destruction or Preservation, the chance of them being attacked by enemies will greatly increase. \"Survival Response\" lasts for {{3}} turn(s).<br>Restores the target's HP by <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> of Lynx's Max HP plus <orangeStrong>{{5}}</orangeStrong>.",
-        "shortDesc": "Applies \"Survival Response\" to a single ally, <orangeStrong>increases their Max HP</orangeStrong>, and restores their HP."
+        "shortDesc": "Applies \"Survival Response\" to a single ally, <orangeStrong>increases their Max HP</orangeStrong>, and restores their HP.",
+        "tag": "Restore"
       }
     },
     "ult": {
       "0": {
         "name": "Snowfield First Aid",
         "fullDesc": "Dispels {{1}} debuff(s) from all allies and immediately restores their respective HP by an amount equal to <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> of Lynx's Max HP plus <orangeStrong>{{3}}</orangeStrong>.",
-        "shortDesc": "Dispels <orangeStrong>1 debuff from all allies</orangeStrong> and restores their HP."
+        "shortDesc": "Dispels <orangeStrong>1 debuff from all allies</orangeStrong> and restores their HP.",
+        "tag": "Restore"
       }
     },
     "talent": {
       "0": {
         "name": "Outdoor Survival Experience",
         "fullDesc": "When using Lynx's Skill or Ultimate, applies continuous healing to the target ally for {{1}} turn(s), restoring the target ally's HP by an amount equal to <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> of Lynx's Max HP plus <orangeStrong>{{3}}</orangeStrong> at the start of each turn. If the target has \"Survival Response,\" the continuous healing effect additionally restores HP by an amount equal to <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> of Lynx's Max HP plus <orangeStrong>{{5}}</orangeStrong>.",
-        "shortDesc": "When using Skill or Ultimate, applies <orangeStrong>continuous healing</orangeStrong> on the target ally. If the target has \"Survival Response,\" the continuous healing effect additionally increases."
+        "shortDesc": "When using Skill or Ultimate, applies <orangeStrong>continuous healing</orangeStrong> on the target ally. If the target has \"Survival Response,\" the continuous healing effect additionally increases.",
+        "tag": "Restore"
       }
     },
     "technique": {
       "0": {
         "name": "Chocolate Energy Bar",
         "fullDesc": "After Lynx uses her Technique, at the start of the next battle, all allies are granted her Talent's continuous healing effect, lasting for {{1}} turn(s).",
-        "shortDesc": "After this character uses her Technique, at the start of the next battle, all allies are granted a continuous healing effect."
+        "shortDesc": "After this character uses her Technique, at the start of the next battle, all allies are granted a continuous healing effect.",
+        "tag": "Restore"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "Single Target"
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Advance Surveying",
         "fullDesc": "After a target with \"Survival Response\" is hit, Lynx regenerates {{1}} Energy immediately.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Exploration Techniques",
         "fullDesc": "Increases the chance to resist Crowd Control debuffs by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Survival in the Extreme",
         "fullDesc": "Extends the duration of the continuous healing effect granted by Talent for {{1}} turn(s).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,68 +5,78 @@
       "0": {
         "name": "{RUBY_B#れっちけん}裂地拳{RUBY_E#}",
         "fullDesc": "指定した敵単体にルカの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の物理属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の物理属性ダメージを与える。"
+        "shortDesc": "敵単体に少量の物理属性ダメージを与える。",
+        "tag": "単体攻撃"
       },
       "1": {
         "name": "{RUBY_B#れっちさいてんけん}裂地砕天拳{RUBY_E#}",
         "fullDesc": "「闘志」を2層消費し、「裂地拳」で3段の攻撃を行う。1段の攻撃で指定した敵単体にルカの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の物理属性ダメージを与える。<br>そして「砕天拳」で1段の攻撃を行い、指定した敵単体にルカの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の物理属性ダメージを与える。",
-        "shortDesc": "「闘志」を2層消費し、敵単体に物理属性ダメージを与える。"
+        "shortDesc": "「闘志」を2層消費し、敵単体に物理属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#れっそうけん}裂創拳{RUBY_E#}",
         "fullDesc": "指定した敵単体にルカの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の物理属性ダメージを与え、{{2, percent}}%の基礎確率で敵を裂創状態にする、{{5}}ターン継続。<br>裂創状態の敵はターンが回ってくるたびに、自身の最大HP{{3, percent(fixed: 1)}}%分の物理属性持続ダメージを受ける。このダメージは最大でルカの攻撃力の<orangeStrong>{{4, percent}}%</orangeStrong>を超えない。",
-        "shortDesc": "敵単体に物理属性ダメージを与え、高確率で敵を<orangeStrong>裂創状態</orangeStrong>にする。"
+        "shortDesc": "敵単体に物理属性ダメージを与え、高確率で敵を<orangeStrong>裂創状態</orangeStrong>にする。",
+        "tag": "単体攻撃"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#しょうり}勝利{RUBY_E#}の{RUBY_B#いちげき}一撃{RUBY_E#}",
         "fullDesc": "「闘志」を{{5}}層獲得し、{{2, percent}}%の基礎確率で指定した敵単体の受けるダメージ+<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>、{{4}}ターン継続。その後、指定した敵単体にルカの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の物理属性ダメージを与える。",
-        "shortDesc": "「闘志」を<orangeStrong>{{5}}</orangeStrong>層獲得する。高確率で敵単体の受けるダメージをアップし、大量の物理属性ダメージを与える。"
+        "shortDesc": "「闘志」を<orangeStrong>{{5}}</orangeStrong>層獲得する。高確率で敵単体の受けるダメージをアップし、大量の物理属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "talent": {
       "0": {
         "name": "{RUBY_B#と}飛{RUBY_E#}び{RUBY_B#ち}散{RUBY_E#}る{RUBY_B#ひばな}火花{RUBY_E#}",
         "fullDesc": "ルカが通常攻撃「裂地拳」または戦闘スキル「裂創拳」を発動した後、「闘志」を{{1}}層獲得する。「闘志」は最大で4層累積できる。「闘志」が2層以上の時、通常攻撃「裂地拳」が「裂地砕天拳」に強化される。強化通常攻撃の「砕天拳」が裂創状態の敵に命中した後、その敵に付与された裂創状態が、本来のダメージ<orangeStrong>{{2, percent}}%</orangeStrong>分のダメージを発生する。戦闘開始時、ルカは「闘志」を1層獲得する。",
-        "shortDesc": "通常攻撃「裂地拳」または戦闘スキル「裂創拳」を発動した後、「闘志」を1層獲得。「闘志」が2層以上の時、<orangeStrong>通常攻撃を強化</orangeStrong>する。<br>敵が裂創状態の場合、強化通常攻撃により<orangeStrong>裂創状態がダメージを1回発生</orangeStrong>する。"
+        "shortDesc": "通常攻撃「裂地拳」または戦闘スキル「裂創拳」を発動した後、「闘志」を1層獲得。「闘志」が2層以上の時、<orangeStrong>通常攻撃を強化</orangeStrong>する。<br>敵が裂創状態の場合、強化通常攻撃により<orangeStrong>裂創状態がダメージを1回発生</orangeStrong>する。",
+        "tag": "強化"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#さき}先{RUBY_E#}を{RUBY_B#い}行{RUBY_E#}く{RUBY_B#もの}者{RUBY_E#}",
         "fullDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体にルカの攻撃力{{1, percent}}%分の物理属性ダメージを与え、{{2, percent}}%の基礎確率でその敵を、戦闘スキルが与えるものと同じ裂創状態にする。その後、ルカは「闘志」をさらに1層獲得する。",
-        "shortDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体に少量の物理属性ダメージを与え、高確率でその敵を<orangeStrong>裂創状態</orangeStrong>にする。その後、「闘志」をさらに1層獲得する。"
+        "shortDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体に少量の物理属性ダメージを与え、高確率でその敵を<orangeStrong>裂創状態</orangeStrong>にする。その後、「闘志」をさらに1層獲得する。",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "オーバーロード",
         "fullDesc": "戦闘スキルを発動した時、敵のバフを{{1}}つ解除する。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#じゅんかんせいどう}循環制動{RUBY_E#}",
         "fullDesc": "「闘志」を1層獲得するたび、さらにEPを{{1}}回復する。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#とうしふんさい}闘志粉砕{RUBY_E#}",
         "fullDesc": "強化通常攻撃を行った時、1段の「裂地拳」ごとに、{{1, percent}}%の固定確率でルカが「裂地拳」をさらに1段行う。追加能力「闘志粉砕」によって行われた「裂地拳」では、この効果は発動しない。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

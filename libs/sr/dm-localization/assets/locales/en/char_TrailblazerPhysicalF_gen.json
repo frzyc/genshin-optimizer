@@ -5,73 +5,84 @@
       "0": {
         "name": "Farewell Hit",
         "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of the Trailblazer's ATK to a single enemy.",
-        "shortDesc": "Deals minor Physical DMG to a single enemy."
+        "shortDesc": "Deals minor Physical DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "RIP Home Run",
         "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of the Trailblazer's ATK to a single enemy and enemies adjacent to it.",
-        "shortDesc": "Deals Physical DMG to a single enemy and enemies adjacent to it."
+        "shortDesc": "Deals Physical DMG to a single enemy and enemies adjacent to it.",
+        "tag": "Blast"
       }
     },
     "ult": {
       "0": {
         "name": "Stardust Ace",
         "fullDesc": "Choose between two attack modes to deliver a full strike.<br>Blowout: Farewell Hit deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of the Trailblazer's ATK to a single enemy.<br>Blowout: RIP Home Run deals Physical DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of the Trailblazer's ATK to a single enemy, and Physical DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of the Trailblazer's ATK to enemies adjacent to it.",
-        "shortDesc": "Uses Single Target ATK or Blast to strike with full force."
+        "shortDesc": "Uses Single Target ATK or Blast to strike with full force.",
+        "tag": "Enhance"
       },
       "1": {
         "name": "Blowout: Farewell Hit",
         "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of the Trailblazer's ATK to a single enemy.",
-        "shortDesc": "Deals massive Physical DMG to a single enemy."
+        "shortDesc": "Deals massive Physical DMG to a single enemy.",
+        "tag": "Single Target"
       },
       "2": {
         "name": "Blowout: RIP Home Run",
         "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Trailblazer's ATK to a single enemy and Physical DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Trailblazer's ATK to enemies adjacent to it.",
-        "shortDesc": "Deals Physical DMG to a single enemy and enemies adjacent to it."
+        "shortDesc": "Deals Physical DMG to a single enemy and enemies adjacent to it.",
+        "tag": "Blast"
       }
     },
     "talent": {
       "0": {
         "name": "Perfect Pickoff",
         "fullDesc": "Each time after this character inflicts Weakness Break on an enemy, ATK increases by <orangeStrong>{{1, percent}}%</orangeStrong>. This effect stacks up to {{2}} time(s).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Immortal Third Strike",
         "fullDesc": "Immediately heals all allies for {{1, percent}}% of their respective Max HP after using this Technique.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "Restore"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Ready for Battle",
         "fullDesc": "At the start of the battle, immediately regenerates {{1}} Energy.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Tenacity",
         "fullDesc": "Each Talent stack increases the Trailblazer's DEF by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Fighting Will",
         "fullDesc": "When using Skill or Ultimate \"Blowout: RIP Home Run,\" DMG dealt to the target enemy is increased by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

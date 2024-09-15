@@ -5,63 +5,72 @@
       "0": {
         "name": "Behind the Kindness",
         "fullDesc": "สร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Natasha แก่ศัตรูที่กำหนดหนึ่งตัว",
-        "shortDesc": "สร้าง DMG กายภาพเล็กน้อย แก่ฝ่ายศัตรูหนึ่งตัว"
+        "shortDesc": "สร้าง DMG กายภาพเล็กน้อย แก่ฝ่ายศัตรูหนึ่งตัว",
+        "tag": "โจมตีเดี่ยว"
       }
     },
     "skill": {
       "0": {
         "name": "Love, Heal, and Choose",
         "fullDesc": "ฟื้นฟู HP แก่ฝ่ายตัวเองที่กำหนดหนึ่งตัว <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> ของ HP สูงสุดของ Natasha +<orangeStrong>{{4}}</orangeStrong> ทันที พร้อมทั้งฟื้นฟู HP <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> ของ HP สูงสุดของ Natasha +<orangeStrong>{{5}}</orangeStrong> เมื่อเป้าหมายเริ่มต้นในแต่ละเทิร์น เป็นเวลา {{3}} เทิร์น",
-        "shortDesc": "<orangeStrong>ฟื้นฟู HP</orangeStrong> ให้กับฝ่ายเราหนึ่งตัว และทำให้เป้าหมาย<orangeStrong>ฟื้นฟู HP อย่างต่อเนื่อง</orangeStrong>"
+        "shortDesc": "<orangeStrong>ฟื้นฟู HP</orangeStrong> ให้กับฝ่ายเราหนึ่งตัว และทำให้เป้าหมาย<orangeStrong>ฟื้นฟู HP อย่างต่อเนื่อง</orangeStrong>",
+        "tag": "ฟื้นฟู"
       }
     },
     "ult": {
       "0": {
         "name": "Gift of Rebirth",
         "fullDesc": "ฟื้นฟู HP ให้กับฝ่ายตัวเองทั้งหมด <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> ของ HP สูงสุดของ Natasha +<orangeStrong>{{2}}</orangeStrong>",
-        "shortDesc": "<orangeStrong>ฟื้นฟู HP</orangeStrong> ให้กับฝ่ายตัวเองทั้งหมด"
+        "shortDesc": "<orangeStrong>ฟื้นฟู HP</orangeStrong> ให้กับฝ่ายตัวเองทั้งหมด",
+        "tag": "ฟื้นฟู"
       }
     },
     "talent": {
       "0": {
         "name": "Innervation",
         "fullDesc": "เมื่อทำการรักษาเป้าหมายฝ่ายตัวเอง ที่มีเปอร์เซ็นต์ HP ปัจจุบันเท่ากับหรือน้อยกว่า {{1, percent}}% ปริมาณการรักษาของ Natasha จะเพิ่มขึ้น <orangeStrong>{{2, percent}}%</orangeStrong> และเอฟเฟกต์นี้ยังมีผลกับเอฟเฟกต์การรักษาต่อเนื่องด้วย",
-        "shortDesc": "เมื่อทำการรักษาเป้าหมายฝ่ายตัวเอง ที่มีเปอร์เซ็นต์ HP ปัจจุบันค่อนข้างต่ำ ปริมาณการรักษาจะเพิ่มขึ้น และเอฟเฟกต์นี้ยังมีผลกับเอฟเฟกต์การรักษาต่อเนื่องด้วย"
+        "shortDesc": "เมื่อทำการรักษาเป้าหมายฝ่ายตัวเอง ที่มีเปอร์เซ็นต์ HP ปัจจุบันค่อนข้างต่ำ ปริมาณการรักษาจะเพิ่มขึ้น และเอฟเฟกต์นี้ยังมีผลกับเอฟเฟกต์การรักษาต่อเนื่องด้วย",
+        "tag": "เสริมพลัง"
       }
     },
     "technique": {
       "0": {
         "name": "Hypnosis Research",
         "fullDesc": "เมื่อโจมตีศัตรูทันทีและเข้าสู่การต่อสู้ จะสุ่มสร้าง DMG กายภาพ {{4, percent}}% ของ ATK ของ Natasha แก่ศัตรูหนึ่งตัว และจะมีโอกาสพื้นฐาน {{1, percent}}% ที่จะทำให้ศัตรูแต่ละตัวติดสถานะอ่อนแอ<br>ศัตรูเป้าหมายที่ติดสถานะอ่อนแอจะสร้าง DMG ต่อฝ่ายเราลดลง {{2, percent}}% เป็นเวลา {{3}} เทิร์น",
-        "shortDesc": "เมื่อโจมตีศัตรูและเข้าสู่การต่อสู้ จะสุ่มสร้าง DMG กายภาพเล็กน้อยแก่ศัตรูหนึ่งตัว และมีโอกาสอย่างมากที่จะทำให้ ศัตรูเป้าหมายแต่ละตัวติดสถานะอ่อนแอ"
+        "shortDesc": "เมื่อโจมตีศัตรูและเข้าสู่การต่อสู้ จะสุ่มสร้าง DMG กายภาพเล็กน้อยแก่ศัตรูหนึ่งตัว และมีโอกาสอย่างมากที่จะทำให้ ศัตรูเป้าหมายแต่ละตัวติดสถานะอ่อนแอ",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Soothe",
         "fullDesc": "เมื่อปล่อยสกิลต่อสู้ จะลบเอฟเฟกต์ Debuff {{1}} เอฟเฟกต์ ของฝ่ายตัวเองที่กำหนดหนึ่งตัว",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Healer",
         "fullDesc": "ปริมาณการรักษาของ Natasha เพิ่มขึ้น {{1, percent}}%",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Recuperation",
         "fullDesc": "การปล่อยสกิลต่อสู้ จะช่วยขยายระยะเวลาการฟื้นฟูต่อเนื่อง เป็นเวลา {{1}} เทิร์น",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

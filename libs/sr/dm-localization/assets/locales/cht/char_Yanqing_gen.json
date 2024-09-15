@@ -5,63 +5,72 @@
       "0": {
         "name": "霜鋒點寒芒",
         "fullDesc": "對指定敵方單體造成等同於彥卿<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的冰屬性傷害。",
-        "shortDesc": "對敵方單體造成少量冰屬性傷害。"
+        "shortDesc": "對敵方單體造成少量冰屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "遙擊三尺水",
         "fullDesc": "對指定敵方單體造成等同於彥卿<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的冰屬性傷害，並為彥卿附加【智劍連心】，持續1回合。",
-        "shortDesc": "對敵方單體造成冰屬性傷害，並為自身附加【智劍連心】。"
+        "shortDesc": "對敵方單體造成冰屬性傷害，並為自身附加【智劍連心】。",
+        "tag": "單體攻擊"
       }
     },
     "ult": {
       "0": {
         "name": "快雨燕相逐",
         "fullDesc": "提高自身{{1, percent}}%暴擊率，若彥卿擁有【智劍連心】效果，則使其暴擊傷害額外提高<orangeStrong>{{2, percent}}%</orangeStrong>，增益效果持續1回合。隨後對指定敵方單體造成等同於彥卿<orangeStrong>{{3, percent}}%</orangeStrong>攻擊力的冰屬性傷害。",
-        "shortDesc": "提高自身暴擊率，並強化【智劍連心】，對敵方單體造成大量冰屬性傷害。"
+        "shortDesc": "提高自身暴擊率，並強化【智劍連心】，對敵方單體造成大量冰屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "talent": {
       "0": {
         "name": "呼劍如影",
         "fullDesc": "彥卿擁有【智劍連心】效果時，受到攻擊的機率降低，並為自身提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>暴擊率和<orangeStrong>{{2, percent}}%</orangeStrong>暴擊傷害。對敵方目標發動攻擊後，有<orangeStrong>{{3, percent}}%</orangeStrong>的固定機率發動追加攻擊，對目標造成等同於彥卿<orangeStrong>{{4, percent}}%</orangeStrong>攻擊力的冰屬性傷害，並有{{6, percent}}%的基礎機率使其陷入凍結狀態，持續1回合。<br>凍結狀態下，敵方目標不能行動，且每回合開始時受到等同於彥卿<orangeStrong>{{5, percent}}%</orangeStrong>攻擊力的冰屬性附加傷害。<br>當彥卿受到傷害後，【智劍連心】將會消失。",
-        "shortDesc": "<orangeStrong>處於【智劍連心】時</orangeStrong>受到攻擊的機率降低，自身<orangeStrong>暴擊率和暴擊傷害提高</orangeStrong>。對敵方目標<orangeStrong>發動攻擊後</orangeStrong>，有機率發動追加攻擊對其造成冰屬性傷害，並有機率使其陷入凍結狀態。<br>自身受到傷害後，【智劍連心】消失。"
+        "shortDesc": "<orangeStrong>處於【智劍連心】時</orangeStrong>受到攻擊的機率降低，自身<orangeStrong>暴擊率和暴擊傷害提高</orangeStrong>。對敵方目標<orangeStrong>發動攻擊後</orangeStrong>，有機率發動追加攻擊對其造成冰屬性傷害，並有機率使其陷入凍結狀態。<br>自身受到傷害後，【智劍連心】消失。",
+        "tag": "單體攻擊"
       }
     },
     "technique": {
       "0": {
         "name": "御劍真訣",
         "fullDesc": "使用秘技後，下一次戰鬥開始時彥卿對目前生命值百分比大於等於{{1, percent}}%的敵方目標造成的傷害提高{{2, percent}}%，持續{{3}}回合。",
-        "shortDesc": "使用秘技，下一次戰鬥開始時自身對生命值百分比大於等於50%的敵方目標造成的傷害提高。"
+        "shortDesc": "使用秘技，下一次戰鬥開始時自身對生命值百分比大於等於50%的敵方目標造成的傷害提高。",
+        "tag": "強化"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "頒冰",
         "fullDesc": "發動攻擊後，對攜帶冰屬性弱點的敵方目標造成等同於彥卿{{1, percent}}%攻擊力的冰屬性附加傷害。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "凌霜",
         "fullDesc": "擁有【智劍連心】效果時，效果抗性提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "輕呂",
         "fullDesc": "觸發暴擊時，速度提高{{1, percent}}%，持續{{2}}回合。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

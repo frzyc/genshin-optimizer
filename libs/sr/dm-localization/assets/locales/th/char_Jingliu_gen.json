@@ -5,68 +5,78 @@
       "0": {
         "name": "Lucent Moonglow",
         "fullDesc": "สร้าง DMG น้ำแข็ง <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Jingliu แก่ศัตรูที่กำหนดหนึ่งตัว",
-        "shortDesc": "สร้าง DMG น้ำแข็งเล็กน้อย แก่ศัตรูที่กำหนดหนึ่งตัว"
+        "shortDesc": "สร้าง DMG น้ำแข็งเล็กน้อย แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "tag": "โจมตีเดี่ยว"
       }
     },
     "skill": {
       "0": {
         "name": "Transcendent Flash",
         "fullDesc": "สร้าง DMG น้ำแข็ง <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Jingliu แก่ศัตรูที่กำหนดหนึ่งตัว และได้รับ \"Syzygy\" {{2}} ชั้น",
-        "shortDesc": "สร้าง DMG น้ำแข็งแก่ศัตรูที่กำหนดหนึ่งตัว และได้รับ <orangeStrong>\"Syzygy\" 1 ชั้น</orangeStrong>"
+        "shortDesc": "สร้าง DMG น้ำแข็งแก่ศัตรูที่กำหนดหนึ่งตัว และได้รับ <orangeStrong>\"Syzygy\" 1 ชั้น</orangeStrong>",
+        "tag": "โจมตีเดี่ยว"
       },
       "1": {
         "name": "Moon On Glacial River",
         "fullDesc": "สร้าง DMG น้ำแข็ง <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Jingliu แก่ศัตรูที่กำหนดหนึ่งตัว และสร้าง DMG น้ำแข็ง <orangeStrong>{{3, percent}}%</orangeStrong> ของ ATK ของ Jingliu แก่เป้าหมายที่อยู่ใกล้เคียง โดยจะใช้ \"Syzygy\" ไป {{2}} ชั้น ซึ่งการปล่อยสกิลนี้ จะไม่ใช้แต้มสกิลต่อสู้",
-        "shortDesc": "สร้าง DMG น้ำแข็งแก่ศัตรูที่กำหนดหนึ่งตัว และสร้าง DMG น้ำแข็งแก่เป้าหมายที่อยู่ใกล้เคียง โดยจะใช้ \"Syzygy\" 1 ชั้น"
+        "shortDesc": "สร้าง DMG น้ำแข็งแก่ศัตรูที่กำหนดหนึ่งตัว และสร้าง DMG น้ำแข็งแก่เป้าหมายที่อยู่ใกล้เคียง โดยจะใช้ \"Syzygy\" 1 ชั้น",
+        "tag": "กระจาย"
       }
     },
     "ult": {
       "0": {
         "name": "Florephemeral Dreamflux",
         "fullDesc": "สร้าง DMG น้ำแข็ง <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Jingliu แก่ศัตรูที่กำหนดหนึ่งตัว และสร้าง DMG น้ำแข็ง <orangeStrong>{{3, percent}}%</orangeStrong> ของ ATK ของ Jingliu แก่เป้าหมายที่อยู่ใกล้เคียง หลังจากการโจมตีสิ้นสุดลง จะได้รับ \"Syzygy\" {{2}} ชั้น",
-        "shortDesc": "สร้าง DMG น้ำแข็งอย่างรุนแรง แก่ฝ่ายศัตรูที่กำหนดหนึ่งตัว และสร้าง DMG น้ำแข็งแก่เป้าหมายที่อยู่ใกล้เคียง พร้อมทั้ง<orangeStrong>ได้รับ \"Syzygy\" 1 ชั้น</orangeStrong>"
+        "shortDesc": "สร้าง DMG น้ำแข็งอย่างรุนแรง แก่ฝ่ายศัตรูที่กำหนดหนึ่งตัว และสร้าง DMG น้ำแข็งแก่เป้าหมายที่อยู่ใกล้เคียง พร้อมทั้ง<orangeStrong>ได้รับ \"Syzygy\" 1 ชั้น</orangeStrong>",
+        "tag": "กระจาย"
       }
     },
     "talent": {
       "0": {
         "name": "Crescent Transmigration",
         "fullDesc": "เมื่อมี \"Syzygy\" {{5}} ชั้น Jingliu จะเข้าสู่สถานะ \"Spectral Transmigration\" พร้อมเร่งแอ็กชันขึ้น {{6, percent}}% และมีอัตราคริติคอลเพิ่มขึ้น <orangeStrong>{{7, percent}}%</orangeStrong> จากนั้นสกิลต่อสู้ \"Transcendent Flash\" จะถูกเสริมพลังกลายเป็น \"Moon On Glacial River\" โดยจะใช้ได้แค่สกิลต่อสู้นี้เท่านั้น เมื่อทำการโจมตีขณะที่อยู่ในสถานะ \"Spectral Transmigration\" จะใช้ HP {{2, percent}}% ของ HP สูงสุดของเพื่อนร่วมทีม (ซึ่งจะใช้ HP ของแต่ละตัวมากสุดจนเหลือ 1 หน่วย) โดย ATK ของ Jingliu จะเพิ่มขึ้นตาม {{3, percent}}% ของปริมาณ HP ทั้งหมดที่ฝ่ายเราทุกตัวใช้ไปในครั้งนี้ ซึ่งสูงสุดไม่เกิน <orangeStrong>{{4, percent}}%</orangeStrong> ของ ATK พื้นฐานของ Jingliu และคงอยู่จนกว่าการโจมตีครั้งนี้จะสิ้นสุดลง ก่อนที่สถานะ \"Spectral Transmigration\" จะสิ้นสุดลง จะไม่สามารถเข้าสู่สถานะดังกล่าวอีกครั้งได้ และ \"Syzygy\" สามารถสะสมได้สูงสุด 3 ชั้น เมื่อจำนวนชั้นของ \"Syzygy\" เท่ากับ 0 จะออกจากสถานะ \"Spectral Transmigration\"",
-        "shortDesc": "เมื่อมี \"Syzygy\" <orangeStrong>{{5}}</orangeStrong> ชั้น จะเข้าสู่สถานะ \"Spectral Transmigration\" <orangeStrong>ทำให้เร่งแอ็กชัน <unbreak>100%</orangeStrong></color> และเพิ่มอัตราคริติคอลของตัวเอง อีกทั้งได้รับ<orangeStrong>สกิลต่อสู้แบบเสริมพลัง</orangeStrong> เมื่อปล่อยการโจมตีจะใช้ HP ของเพื่อนร่วมทีม และ<orangeStrong>เพิ่ม ATK ของ Jingliu</orangeStrong> ตามปริมาณ HP ทั้งหมดที่ใช้ไป เมื่อจำนวนชั้นของ \"Syzygy\" เท่ากับ 0 จะออกจากสถานะ \"Spectral Transmigration\""
+        "shortDesc": "เมื่อมี \"Syzygy\" <orangeStrong>{{5}}</orangeStrong> ชั้น จะเข้าสู่สถานะ \"Spectral Transmigration\" <orangeStrong>ทำให้เร่งแอ็กชัน <unbreak>100%</orangeStrong></color> และเพิ่มอัตราคริติคอลของตัวเอง อีกทั้งได้รับ<orangeStrong>สกิลต่อสู้แบบเสริมพลัง</orangeStrong> เมื่อปล่อยการโจมตีจะใช้ HP ของเพื่อนร่วมทีม และ<orangeStrong>เพิ่ม ATK ของ Jingliu</orangeStrong> ตามปริมาณ HP ทั้งหมดที่ใช้ไป เมื่อจำนวนชั้นของ \"Syzygy\" เท่ากับ 0 จะออกจากสถานะ \"Spectral Transmigration\"",
+        "tag": "เสริมพลัง"
       }
     },
     "technique": {
       "0": {
         "name": "Shine of Truth",
         "fullDesc": "หลังจากใช้เทคนิค จะสร้างพื้นที่พิเศษ 1 วงรอบตัวเอง เป็นเวลา {{3}} วินาที และศัตรูภายในพื้นที่พิเศษ จะติดสถานะแช่แข็ง เมื่อเข้าสู่การต่อสู้พร้อมศัตรูในพื้นที่พิเศษ จะฟื้นฟูพลังงานให้กับตัวเองทันที {{6}} หน่วย และได้รับ \"Syzygy\" {{1}} ชั้น อีกทั้งมี โอกาสพื้นฐาน {{2, percent}}% ที่จะทำให้ศัตรูเป้าหมายติดสถานะแช่แข็ง เป็นเวลา {{4}} เทิร์น เมื่ออยู่ในสถานะแช่แข็ง ศัตรูเป้าหมายจะไม่สามารถแอ็กชัน และตอนเริ่มต้นของแต่ละเทิร์น จะได้รับ DMG น้ำแข็งเพิ่มเติม {{5, percent}}% ของ ATK ของ Jingliu ทั้งนี้พื้นที่เอฟเฟกต์ที่ฝ่ายเราสร้างขึ้น สามารถมีได้สูงสุด 1 จุดเท่านั้น",
-        "shortDesc": "สร้างพื้นที่พิเศษขึ้นมารอบตัวเอง โดยศัตรูในพื้นที่จะติด<orangeStrong>สถานะแช่แข็ง</orangeStrong> เมื่อเข้าสู่การต่อสู้พร้อมศัตรูในพื้นที่ จะฟื้นฟูพลังงาน และได้รับ \"Syzygy\" 1 ชั้น อีกทั้งมีโอกาสอย่างมาก ที่จะทำให้ศัตรูเป้าหมายติด<orangeStrong>สถานะแช่แข็ง</orangeStrong>"
+        "shortDesc": "สร้างพื้นที่พิเศษขึ้นมารอบตัวเอง โดยศัตรูในพื้นที่จะติด<orangeStrong>สถานะแช่แข็ง</orangeStrong> เมื่อเข้าสู่การต่อสู้พร้อมศัตรูในพื้นที่ จะฟื้นฟูพลังงาน และได้รับ \"Syzygy\" 1 ชั้น อีกทั้งมีโอกาสอย่างมาก ที่จะทำให้ศัตรูเป้าหมายติด<orangeStrong>สถานะแช่แข็ง</orangeStrong>",
+        "tag": "สกัดกั้น"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Deathrealm",
         "fullDesc": "เมื่ออยู่ภายใต้สถานะ \"Spectral Transmigration\" การต้านทานสถานะจะเพิ่มขึ้น {{1, percent}}%",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Sword Champion",
         "fullDesc": "หลังจากปล่อย \"Transcendent Flash\" จะเร่งแอ็กชันครั้งต่อไป {{1, percent}}%",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Frost Wraith",
         "fullDesc": "เมื่ออยู่ภายใต้สถานะ \"Spectral Transmigration\" ท่าไม้ตายจะสร้าง DMG เพิ่มขึ้น {{1, percent}}%",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

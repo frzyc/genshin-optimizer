@@ -5,83 +5,96 @@
       "0": {
         "name": "Loto benéfico",
         "fullDesc": "Lanza un ataque de 2 golpes e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Dan Heng - Imbibitor Lunae como Daño Imaginario a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo.",
+        "tag": "ATQ individual"
       },
       "1": {
         "name": "Trascendencia",
         "fullDesc": "Lanza un ataque de 3 golpes e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Dan Heng - Imbibitor Lunae como Daño Imaginario a un enemigo.",
-        "shortDesc": "Lanza un ataque de <orangeStrong>3 golpes</orangeStrong> e inflige Daño Imaginario a un enemigo."
+        "shortDesc": "Lanza un ataque de <orangeStrong>3 golpes</orangeStrong> e inflige Daño Imaginario a un enemigo.",
+        "tag": "ATQ individual"
       },
       "2": {
         "name": "Lanza divina",
         "fullDesc": "Dan Heng - Imbibitor Lunae lanza un ataque de 5 golpes que inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Imaginario a un enemigo. A partir del 4.º golpe también inflige un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño Imaginario a los enemigos adyacentes.",
-        "shortDesc": "Lanza un ataque de <orangeStrong>5 golpes</orangeStrong> e inflige una gran cantidad de Daño Imaginario a un enemigo y una pequeña cantidad de Daño Imaginario a los enemigos adyacentes. Los 2 últimos golpes obtienen 1 acumulación de Rugido dominante cada uno antes de lanzarse, lo que aumenta su Daño CRIT."
+        "shortDesc": "Lanza un ataque de <orangeStrong>5 golpes</orangeStrong> e inflige una gran cantidad de Daño Imaginario a un enemigo y una pequeña cantidad de Daño Imaginario a los enemigos adyacentes. Los 2 últimos golpes obtienen 1 acumulación de Rugido dominante cada uno antes de lanzarse, lo que aumenta su Daño CRIT.",
+        "tag": "Ráfaga"
       },
       "3": {
         "name": "Salto fulgurante",
         "fullDesc": "Dan Heng - Imbibitor Lunae lanza un ataque de 7 golpes que inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Imaginario a un enemigo. A partir del 4.º golpe también inflige un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño Imaginario a los enemigos adyacentes.",
-        "shortDesc": "Lanza un ataque de <orangeStrong>7 golpes</orangeStrong> e inflige una gran cantidad de Daño Imaginario a un enemigo y Daño Imaginario a los enemigos adyacentes. Los 4 últimos golpes obtienen 1 acumulación de Rugido dominante cada uno antes de lanzarse, lo que aumenta su Daño CRIT."
+        "shortDesc": "Lanza un ataque de <orangeStrong>7 golpes</orangeStrong> e inflige una gran cantidad de Daño Imaginario a un enemigo y Daño Imaginario a los enemigos adyacentes. Los 4 últimos golpes obtienen 1 acumulación de Rugido dominante cada uno antes de lanzarse, lo que aumenta su Daño CRIT.",
+        "tag": "Ráfaga"
       }
     },
     "skill": {
       "0": {
         "name": "Libre de ataduras",
         "fullDesc": "Potencia el ATQ básico un máximo de 3 veces consecutivas. Esta habilidad no consume pts. de habilidad básica y no se considera como un uso de la habilidad básica.<br>Al potenciarse 1 vez, Loto benéfico se transforma en Trascendencia.<br>Al potenciarse 2 veces, Loto benéfico se transforma en Lanza divina.<br>Al potenciarse 3 veces, Loto benéfico se transforma en Salto fulgurante.<br>Al lanzar Lanza divina o Salto fulgurante, a partir del 4.º golpe obtiene 1 acumulación de Rugido dominante antes de cada golpe. Rugido dominante hace que el Daño CRIT de Dan Heng - Imbibitor Lunae aumente en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Este efecto se puede acumular un máximo de {{2}} veces y dura hasta el final de su turno.",
-        "shortDesc": "El ATQ básico Loto benéfico <orangeStrong>se potencia y se transforma en Trascendencia</orangeStrong>, <orangeStrong>Lanza divina o Salto fulgurante</orangeStrong>."
+        "shortDesc": "El ATQ básico Loto benéfico <orangeStrong>se potencia y se transforma en Trascendencia</orangeStrong>, <orangeStrong>Lanza divina o Salto fulgurante</orangeStrong>.",
+        "tag": "Potenciación"
       },
       "1": {
         "name": "Cancelar",
         "fullDesc": "Cancela la potenciación.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "Cancelar"
       }
     },
     "ult": {
       "0": {
         "name": "Purificación del mundo",
         "fullDesc": "Realiza un ataque de 3 golpes e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Dan Heng - Imbibitor Lunae como Daño Imaginario a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño Imaginario a los enemigos adyacentes. Además, obtiene {{3}} acumulaciones de Escama sacrosanta.<br>Puede tener hasta {{4}} acumulaciones de Escama sacrosanta como máximo y se pueden utilizar para compensar el consumo de pts. de habilidad básica de Dan Heng - Imbibitor Lunae. Consumir Escama sacrosanta se considera equivalente a consumir pts. de habilidad básica.",
-        "shortDesc": "Inflige una gran cantidad de Daño Imaginario a un enemigo y Daño Imaginario a los enemigos adyacentes. Obtiene 2 acumulaciones de Escama sacrosanta. Dan Heng - Imbibitor Lunae puede <orangeStrong>consumir</orangeStrong> Escamas sacrosantas en lugar de <orangeStrong>pts. de habilidad básica</orangeStrong>."
+        "shortDesc": "Inflige una gran cantidad de Daño Imaginario a un enemigo y Daño Imaginario a los enemigos adyacentes. Obtiene 2 acumulaciones de Escama sacrosanta. Dan Heng - Imbibitor Lunae puede <orangeStrong>consumir</orangeStrong> Escamas sacrosantas en lugar de <orangeStrong>pts. de habilidad básica</orangeStrong>.",
+        "tag": "Ráfaga"
       }
     },
     "talent": {
       "0": {
         "name": "Corazón justo",
         "fullDesc": "Dan Heng - Imbibitor Lunae obtiene 1 acumulación de Corazón justo después de cada golpe y el daño que inflige aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Este efecto se puede acumular un máximo de {{2}} veces y dura hasta el final de su turno.",
-        "shortDesc": "Aumenta el daño que inflige después de cada golpe. Este efecto se puede acumular y dura hasta el final de su turno."
+        "shortDesc": "Aumenta el daño que inflige después de cada golpe. Este efecto se puede acumular y dura hasta el final de su turno.",
+        "tag": "Potenciación"
       }
     },
     "technique": {
       "0": {
         "name": "Prismadragón atraviesacielos",
         "fullDesc": "Tras usar la técnica, Dan Heng - Imbibitor Lunae entra en el estado de Salto en espiral durante {{2}} segundos. En este estado, al lanzar un ataque, avanza rápidamente una cierta distancia, ataca a todos los enemigos con los que entra en contacto y bloquea sus ataques. Al entrar en combate tras atacar a un enemigo en el estado Salto en espiral, inflige un Daño Imaginario equivalente al {{3, percent}}% de su ATQ a todos los enemigos y obtiene {{1}} acumulación de Escama sacrosanta.",
-        "shortDesc": "Entra en el estado Salto en espiral. Al lanzar un ataque, avanza rápidamente una cierta distancia y ataca a los enemigos con los que entra en contacto. Tras atacar al enemigo y entrar en combate, inflige Daño Imaginario a todos los enemigos y obtiene 1 acumulación de Escama sacrosanta."
+        "shortDesc": "Entra en el estado Salto en espiral. Al lanzar un ataque, avanza rápidamente una cierta distancia y ataca a los enemigos con los que entra en contacto. Tras atacar al enemigo y entrar en combate, inflige Daño Imaginario a todos los enemigos y obtiene 1 acumulación de Escama sacrosanta.",
+        "tag": "Potenciación"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Estrella oculta",
         "fullDesc": "Recupera {{1}} pts. de energía al comenzar la batalla.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Contención de inundaciones",
         "fullDesc": "La probabilidad de resistir estados negativos de Control aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Nuevo despertar",
         "fullDesc": "Cuando inflige daño a enemigos con Debilidad Imaginaria, el Daño CRIT aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,63 +5,72 @@
       "0": {
         "name": "{RUBY_B#じゅうりょくせいあつ}重力制圧{RUBY_E#}",
         "fullDesc": "指定した敵単体にヴェルトの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の虚数属性ダメージを与える。"
+        "shortDesc": "敵単体に少量の虚数属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#こくうだんかい}虚空断界{RUBY_E#}",
         "fullDesc": "指定した敵単体にヴェルトの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与え、さらに2ヒットする。1ヒットごとに、ランダムな敵単体にヴェルトの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与える。攻撃が命中すると、<orangeStrong>{{2, percent}}%</orangeStrong>の基礎確率で攻撃を受けた敵の速度-{{3, percent}}%、{{4}}ターン継続。",
-        "shortDesc": "敵単体に少量の虚数属性ダメージを与える、3回バウンドし、確率で敵に<orangeStrong>減速状態を付与する</orangeStrong>。"
+        "shortDesc": "敵単体に少量の虚数属性ダメージを与える、3回バウンドし、確率で敵に<orangeStrong>減速状態を付与する</orangeStrong>。",
+        "tag": "バウンド"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#ぎじ}疑似{RUBY_E#}ブラックホール",
         "fullDesc": "敵全体にヴェルトの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与え、{{3, percent}}%の基礎確率で攻撃を受けた敵を禁錮状態にする、1ターン継続。<br>禁錮状態の敵の行動順は<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>遅延し、速度-{{4, percent}}%。",
-        "shortDesc": "敵全体に虚数属性ダメージを与え、<orangeStrong>高確率で禁錮状態にする</orangeStrong>。"
+        "shortDesc": "敵全体に虚数属性ダメージを与え、<orangeStrong>高確率で禁錮状態にする</orangeStrong>。",
+        "tag": "全体攻撃"
       }
     },
     "talent": {
       "0": {
         "name": "{RUBY_B#じくう}時空{RUBY_E#}の{RUBY_B#ゆが}歪{RUBY_E#}み",
         "fullDesc": "攻撃が減速状態の敵に命中した時、さらにヴェルトの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性付加ダメージを1回与える。",
-        "shortDesc": "減速状態の敵に命中した時、<orangeStrong>さらに少量の虚数属性付加ダメージを与える</orangeStrong>。"
+        "shortDesc": "減速状態の敵に命中した時、<orangeStrong>さらに少量の虚数属性付加ダメージを与える</orangeStrong>。",
+        "tag": "強化"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#がちいろう}画地為牢{RUBY_E#}",
         "fullDesc": "秘技を使用した後、{{4}}秒間継続する特殊領域を作り出す、特殊領域内にいる敵の移動速度-{{5, percent}}%。特殊領域内にいる敵と戦闘に入った後、{{1, percent}}%の基礎確率で敵を禁錮状態にする、1ターン継続。<br>禁錮状態の敵は行動順が{{2, percent}}%遅延し、速度-{{3, percent}}%。味方が作り出した領域は1つまで存在できる。",
-        "shortDesc": "特殊領域を作り出す。領域内の移動速度をダウンする。領域内の敵と戦闘に入った後、<orangeStrong>高確率で敵を禁錮状態にする</orangeStrong>。"
+        "shortDesc": "特殊領域を作り出す。領域内の移動速度をダウンする。領域内の敵と戦闘に入った後、<orangeStrong>高確率で敵を禁錮状態にする</orangeStrong>。",
+        "tag": "妨害"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#ちょうかい}懲戒{RUBY_E#}",
         "fullDesc": "必殺技を発動する時、{{1, percent}}%の基礎確率で敵の受けるダメージ+{{2, percent}}%、{{3}}ターン継続。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#しんぱん}審判{RUBY_E#}",
         "fullDesc": "必殺技を発動した時、さらにEPを{{1}}回復する。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#さいけつ}裁決{RUBY_E#}",
         "fullDesc": "弱点撃破された敵に対して与ダメージ+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

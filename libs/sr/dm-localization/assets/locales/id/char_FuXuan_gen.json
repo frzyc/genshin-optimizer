@@ -5,63 +5,72 @@
       "0": {
         "name": "Novaburst",
         "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> Max HP Fu Xuan pada 1 musuh yang ditarget.",
-        "shortDesc": "Mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Known by Stars, Shown by Hearts",
         "fullDesc": "Mengaktifkan \"Matrix of Prescience\". Seluruh rekan tim Fu Xuan akan membagikan {{1, percent}}% dari semua DMG yang diterima mereka pada Fu Xuan (sebelum DMG ini ditahan oleh efek Shield apa pun) selama {{3}} giliran.<br>Rekan tim yang terkena pengaruh \"Matrix of Prescience\" akan memperoleh status \"Knowledge\". Rekan tim berstatus \"Knowledge\" akan mendapat peningkatan Max HP sebesar <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> Max HP Fu Xuan, dan peningkatan CRIT Rate sebesar <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.<br>Saat Fu Xuan gugur, \"Matrix of Prescience\" juga akan dihapus.",
-        "shortDesc": "Mengaktifkan \"Matrix of Prescience\", <orangeStrong>membagi sebagian DMG yang diterima</orangeStrong> seluruh rekan tim Fu Xuan kepada Fu Xuan. Selain itu juga akan meningkatkan Max HP dan <orangeStrong>CRIT Rate</orangeStrong> seluruh rekan tim."
+        "shortDesc": "Mengaktifkan \"Matrix of Prescience\", <orangeStrong>membagi sebagian DMG yang diterima</orangeStrong> seluruh rekan tim Fu Xuan kepada Fu Xuan. Selain itu juga akan meningkatkan Max HP dan <orangeStrong>CRIT Rate</orangeStrong> seluruh rekan tim.",
+        "tag": "Defense"
       }
     },
     "ult": {
       "0": {
         "name": "Woes of Many Morphed to One",
         "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> Max HP Fu Xuan pada seluruh musuh, serta memperoleh 1 kali jumlah kesempatan terpicunya pemulihan HP dari Talent Fu Xuan.",
-        "shortDesc": "Mengakibatkan Quantum DMG pada seluruh musuh dan menambah jumlah kesempatan terpicunya Talent Fu Xuan."
+        "shortDesc": "Mengakibatkan Quantum DMG pada seluruh musuh dan menambah jumlah kesempatan terpicunya Talent Fu Xuan.",
+        "tag": "AoE"
       }
     },
     "talent": {
       "0": {
         "name": "Bleak Breeds Bliss",
         "fullDesc": "Saat Fu Xuan berada dalam kondisi siap bertempur (tidak gugur), seluruh rekan tim akan memperoleh \"Misfortune Avoidance\". DMG yang diterima rekan tim berstatus \"Misfortune Avoidance\" akan berkurang <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>.<br>Saat persentase HP Fu Xuan kurang dari atau sama dengan {{2, percent}}%, pemulihan HP akan terpicu. Efek pemulihan HP ini akan memulihkan HP dirinya sebesar <orangeStrong>{{3, percent}}%</orangeStrong> jumlah HP dirinya yang sudah berkurang. Efek ini tidak akan terpicu saat menerima serangan mematikan. Efek ini secara default dapat dipicu 1 kali dalam setiap pertempuran, maksimal dapat menyimpan 2 kali jumlah kesempatan terpicu.",
-        "shortDesc": "Saat Fu Xuan berada dalam kondisi siap bertempur (tidak gugur), DMG yang diterima seluruh rekan tim akan berkurang.<br>Saat persentase HP Fu Xuan rendah, <orangeStrong>secara otomatis</orangeStrong> memulihkan HP dirinya berdasarkan <orangeStrong>persentase HP dirinya yang sudah berkurang</orangeStrong>. Efek ini maksimal dapat menyimpan 2 kali jumlah kesempatan terpicu."
+        "shortDesc": "Saat Fu Xuan berada dalam kondisi siap bertempur (tidak gugur), DMG yang diterima seluruh rekan tim akan berkurang.<br>Saat persentase HP Fu Xuan rendah, <orangeStrong>secara otomatis</orangeStrong> memulihkan HP dirinya berdasarkan <orangeStrong>persentase HP dirinya yang sudah berkurang</orangeStrong>. Efek ini maksimal dapat menyimpan 2 kali jumlah kesempatan terpicu.",
+        "tag": "Restore"
       }
     },
     "technique": {
       "0": {
         "name": "Of Fortune Comes Fate",
         "fullDesc": "Setelah menggunakan Technique, seluruh rekan tim akan memperoleh Barrier selama {{1}} detik. Barrier dapat menahan semua serangan musuh dan mencegah rekan tim memasuki pertempuran. Jika memasuki pertempuran saat Barrier aktif, akan mengakibatkan Fu Xuan langsung mengaktifkan \"Matrix of Prescience\" setelah memasuki pertempuran, berlangsung selama {{2}} giliran.",
-        "shortDesc": "Mengaktifkan Barrier yang akan mencegahmu memasuki pertempuran saat diserang musuh. Memasuki pertempuran akan otomatis mengaktifkan \"Matrix of Prescience\"."
+        "shortDesc": "Mengaktifkan Barrier yang akan mencegahmu memasuki pertempuran saat diserang musuh. Memasuki pertempuran akan otomatis mengaktifkan \"Matrix of Prescience\".",
+        "tag": "Defense"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Taiyi, the Macrocosmic",
         "fullDesc": "Saat \"Matrix of Prescience\" aktif, Fu Xuan akan memulihkan {{1}} Energy tambahan saat dirinya melancarkan Skill.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Dunjia, the Metamystic",
         "fullDesc": "Saat Fu Xuan melancarkan Ultimate, seluruh rekan tim selain dirinya akan memulihkan HP sebesar {{1, percent}}% Max HP Fu Xuan + {{2}}.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Liuren, the Sexagenary",
         "fullDesc": "Saat \"Matrix of Prescience\" aktif, jika target musuh menambahkan status Crowd Control Debuff pada rekan tim, maka seluruh rekan tim akan menahan semua status Crowd Control Debuff yang diberikan oleh target musuh pada aksi kali ini. Efek ini dapat dipicu 1 kali. Jumlah batas terpicu akan di-reset setelah \"Matrix of Prescience\" diaktifkan ulang.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

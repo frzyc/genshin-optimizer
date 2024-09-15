@@ -5,63 +5,72 @@
       "0": {
         "name": "Lanzaflechas",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Yukong como Daño Imaginario a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Salva alentadora",
         "fullDesc": "Obtiene {{1}} acumulaciones de Sonido de cuerda (se pueden tener 2 como máximo). Cuando Yukong tiene Sonido de cuerda, el ATQ de todos los aliados aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong>. Cada vez que un aliado termina su turno, Yukong pierde 1 acumulación de Sonido de cuerda.<br>Durante el turno en el que Yukong usa su habilidad básica y obtiene Sonido de cuerda, no pierde ninguna acumulación de Sonido de cuerda.",
-        "shortDesc": "Obtiene 2 acumulaciones de Sonido de cuerda. El <orangeStrong>ATQ de todos los aliados aumenta</orangeStrong> cuando Sonido de cuerda está activo."
+        "shortDesc": "Obtiene 2 acumulaciones de Sonido de cuerda. El <orangeStrong>ATQ de todos los aliados aumenta</orangeStrong> cuando Sonido de cuerda está activo.",
+        "tag": "Apoyo"
       }
     },
     "ult": {
       "0": {
         "name": "Cernícalo en picado",
         "fullDesc": "Tras usar la habilidad definitiva, si Yukong tiene Sonido de cuerda, la Prob. CRIT de todos los aliados aumenta en un <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> y el Daño CRIT en un <orangeStrong>{{3, percent}}%</orangeStrong>. Además, inflige a un enemigo un Daño Imaginario equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Yukong.",
-        "shortDesc": "Si tiene Sonido de cuerda, <orangeStrong>aumenta la Prob. CRIT y el Daño CRIT</orangeStrong> de todos los aliados. Inflige una gran cantidad de Daño Imaginario a un enemigo."
+        "shortDesc": "Si tiene Sonido de cuerda, <orangeStrong>aumenta la Prob. CRIT y el Daño CRIT</orangeStrong> de todos los aliados. Inflige una gran cantidad de Daño Imaginario a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "talent": {
       "0": {
         "name": "Una flecha por siete capas",
         "fullDesc": "El ATQ básico inflige de forma adicional un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Yukong como Daño Imaginario. Además, la reducción de Firmeza del ataque actual aumenta en un {{2, percent}}%. Este efecto se puede volver a activar después de {{3}} turno.",
-        "shortDesc": "Hace que el ATQ básico inflija una pequeña cantidad de daño extra y aumenta la reducción de Firmeza que causa con este ATQ básico. Este efecto puede volver a activarse después de 1 turno."
+        "shortDesc": "Hace que el ATQ básico inflija una pequeña cantidad de daño extra y aumenta la reducción de Firmeza que causa con este ATQ básico. Este efecto puede volver a activarse después de 1 turno.",
+        "tag": "Potenciación"
       }
     },
     "technique": {
       "0": {
         "name": "Persiguiendo el viento",
         "fullDesc": "Tras usar la técnica, entra en modo de esprintar durante {{1}} s. En este estado, su VEL de movimiento aumenta en un {{2, percent}}%. Además, al entrar en combate tras atacar a un enemigo, Yukong obtiene {{3}} acumulaciones de Sonido de cuerda.",
-        "shortDesc": "<orangeStrong>Aumenta su VEL de movimiento</orangeStrong>. Tras atacar al enemigo y entrar en combate, obtiene 2 acumulaciones de Sonido de Cuerda."
+        "shortDesc": "<orangeStrong>Aumenta su VEL de movimiento</orangeStrong>. Tras atacar al enemigo y entrar en combate, obtiene 2 acumulaciones de Sonido de Cuerda.",
+        "tag": "Potenciación"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Arquera cortés",
         "fullDesc": "Yukong puede bloquear un estado negativo cuando se lo aplican. Este efecto puede volver a activarse tras {{1}} turnos.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Arco del legado",
         "fullDesc": "Cuando Yukong está en la batalla, el Daño Imaginario que infligen todos los aliados aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Porte noble",
         "fullDesc": "Cuando tiene Sonido de cuerda, Yukong recupera {{1}} pts. de energía adicionales cada vez que un aliado realiza una acción.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

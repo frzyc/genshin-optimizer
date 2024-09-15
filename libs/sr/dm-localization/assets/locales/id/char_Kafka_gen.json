@@ -5,63 +5,72 @@
       "0": {
         "name": "Midnight Tumult",
         "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Kafka pada 1 target musuh.",
-        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Caressing Moonlight",
         "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Kafka pada 1 target musuh, serta mengakibatkan Lightning DMG sebesar <orangeStrong>{{3, percent}}%</orangeStrong> ATK Kafka pada musuh di sekitar target.<br>Jika target musuh sedang terkena DoT, seluruh DoT yang diterimanya akan segera mengakibatkan DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> DMG awal DoT Debuff-nya.",
-        "shortDesc": "Mengakibatkan Lightning DMG pada 1 musuh dan mengakibatkan Lightning DMG dalam jumlah kecil pada target di sekitarnya.<br>Jika target utama berada dalam status DoT Debuff, maka DoT Debuff yang dimilikinya akan <orangeStrong>mengakibatkan 1 kali DMG tambahan</orangeStrong>."
+        "shortDesc": "Mengakibatkan Lightning DMG pada 1 musuh dan mengakibatkan Lightning DMG dalam jumlah kecil pada target di sekitarnya.<br>Jika target utama berada dalam status DoT Debuff, maka DoT Debuff yang dimilikinya akan <orangeStrong>mengakibatkan 1 kali DMG tambahan</orangeStrong>.",
+        "tag": "Blast"
       }
     },
     "ult": {
       "0": {
         "name": "Twilight Trill",
         "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Kafka pada seluruh musuh. Musuh yang terkena serangan memiliki {{2, percent}}% peluang dasar untuk memasuki status Shock, dan membuat semua status Shock yang saat ini dimiliki oleh target segera mengakibatkan DMG sebesar <orangeStrong>{{5, percent}}%</orangeStrong> DMG awal DoT-nya.<br>Saat dalam status Shock, target musuh akan menerima Lightning DoT sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK Kafka saat setiap gilirannya dimulai.",
-        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada seluruh musuh, berpeluang besar <orangeStrong>menambahkan status Shock</orangeStrong> pada musuh.<br>Jika target musuh berstatus Shock, maka status Shock tersebut akan <orangeStrong>mengakibatkan 1 kali DMG tambahan</orangeStrong>."
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada seluruh musuh, berpeluang besar <orangeStrong>menambahkan status Shock</orangeStrong> pada musuh.<br>Jika target musuh berstatus Shock, maka status Shock tersebut akan <orangeStrong>mengakibatkan 1 kali DMG tambahan</orangeStrong>.",
+        "tag": "AoE"
       }
     },
     "talent": {
       "0": {
         "name": "Gentle but Cruel",
         "fullDesc": "Setelah rekan Kafka melancarkan Basic ATK pada target musuh, Kafka akan segera memicu Serangan Lanjutan yang mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Kafka pada target tersebut, serta memiliki {{2, percent}}% peluang dasar untuk membuat target musuh yang terkena serangan ini memasuki status Shock yang sama dengan status Shock dari Ultimate Kafka, berlangsung selama {{3}} giliran. Efek ini hanya dapat dipicu 1 kali setiap giliran.",
-        "shortDesc": "Setelah rekan Kafka melancarkan Basic ATK pada target musuh, Kafka akan segera memicu Serangan Lanjutan yang mengakibatkan Lightning DMG pada target, serta berpeluang besar untuk <orangeStrong>menambahkan status Shock</orangeStrong> padanya. Efek ini hanya dapat dipicu 1 kali setiap giliran."
+        "shortDesc": "Setelah rekan Kafka melancarkan Basic ATK pada target musuh, Kafka akan segera memicu Serangan Lanjutan yang mengakibatkan Lightning DMG pada target, serta berpeluang besar untuk <orangeStrong>menambahkan status Shock</orangeStrong> padanya. Efek ini hanya dapat dipicu 1 kali setiap giliran.",
+        "tag": "Single Target"
       }
     },
     "technique": {
       "0": {
         "name": "Mercy Is Not Forgiveness",
         "fullDesc": "Segera menyerang musuh dalam cakupan area tertentu. Setelah memasuki pertempuran, mengakibatkan Lightning DMG sebesar {{3, percent}}% ATK Kafka pada seluruh musuh, dan di saat bersamaan memiliki {{1, percent}}% peluang dasar untuk membuat setiap target musuh memasuki status Shock yang sama dengan status Shock dari Ultimate Kafka selama {{2}} giliran.",
-        "shortDesc": "Menyerang seluruh musuh dalam cakupan area, setelah memasuki pertempuran, mengakibatkan Lightning DMG dalam jumlah kecil pada seluruh musuh, serta berpeluang besar <orangeStrong>menambahkan status Shock</orangeStrong>."
+        "shortDesc": "Menyerang seluruh musuh dalam cakupan area, setelah memasuki pertempuran, mengakibatkan Lightning DMG dalam jumlah kecil pada seluruh musuh, serta berpeluang besar <orangeStrong>menambahkan status Shock</orangeStrong>.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Torture",
         "fullDesc": "Saat melancarkan Ultimate, target musuh akan mengalami perubahan dari \"segera menerima DMG dari status Shock saat ini\" menjadi \"segera menerima DMG dari semua DoT Debuff saat ini\".",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Plunder",
         "fullDesc": "Saat target musuh berstatus Shock dikalahkan, Kafka akan memperoleh {{1}} Energy tambahan.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Thorns",
         "fullDesc": "Peluang dasar dari Ultimate, Technique, dan Serangan Lanjutan yang dipicu Talent untuk membuat target memasuki status Shock meningkat {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

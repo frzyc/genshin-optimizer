@@ -5,63 +5,72 @@
       "0": {
         "name": "Tumulte de minuit",
         "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Kafka à un ennemi unique.",
-        "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique."
+        "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Caresse du clair de lune",
         "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Kafka à une cible ennemie et des DGT de foudre équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> de l'ATQ de Kafka aux ennemis adjacents.<br>Si la cible ennemie est soumise à des dégâts sur la durée, tous les dégâts sur la durée qu'elle subit actuellement produisent immédiatement des DGT équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> des DGT initiaux.",
-        "shortDesc": "Inflige des DGT de foudre à un ennemi unique et des DGT de foudre mineurs aux cibles adjacentes.<br>Si la cible principale est actuellement affectée par un effet de dégâts sur la durée, les dégâts sur la durée <orangeStrong>infligent des DGT 1 fois supplémentaire</orangeStrong>."
+        "shortDesc": "Inflige des DGT de foudre à un ennemi unique et des DGT de foudre mineurs aux cibles adjacentes.<br>Si la cible principale est actuellement affectée par un effet de dégâts sur la durée, les dégâts sur la durée <orangeStrong>infligent des DGT 1 fois supplémentaire</orangeStrong>.",
+        "tag": "Propagation"
       }
     },
     "ult": {
       "0": {
         "name": "Trille crépusculaire",
         "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Kafka à tous les ennemis. Les ennemis touchés ont {{2, percent}}% de chances de base d'être stupéfiés et de subir immédiatement des dégâts équivalents à <orangeStrong>{{5, percent}}%</orangeStrong> des DGT initiaux de l'effet Stupéfaction. Stupéfaction dure {{3}} tours.<br>Les ennemis stupéfiés subissent des dégâts de foudre sur la durée équivalents à <orangeStrong>{{4, percent}}%</orangeStrong> de l'ATQ de Kafka au début de chaque tour.",
-        "shortDesc": "Inflige des DGT de foudre mineurs à tous les ennemis, avec de fortes chances de les <orangeStrong>stupéfier</orangeStrong>.<br>Si les ennemis sont déjà stupéfiés, l'état Stupéfaction <orangeStrong>inflige des DGT 1 fois supplémentaire</orangeStrong>."
+        "shortDesc": "Inflige des DGT de foudre mineurs à tous les ennemis, avec de fortes chances de les <orangeStrong>stupéfier</orangeStrong>.<br>Si les ennemis sont déjà stupéfiés, l'état Stupéfaction <orangeStrong>inflige des DGT 1 fois supplémentaire</orangeStrong>.",
+        "tag": "ZdE"
       }
     },
     "talent": {
       "0": {
         "name": "Douce mais cruelle",
         "fullDesc": "Lorsqu'un allié de Kafka utilise une ATQ normale sur une cible ennemie, Kafka lance immédiatement 1 attaque de suivi et inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de son ATQ à cette cible, avec {{2, percent}}% de chances de base de lui infliger l'effet Stupéfaction de son ultime pendant {{3}} tours. Cet effet ne peut être déclenché que 1 fois par tour.",
-        "shortDesc": "Lorsqu'un allié utilise son ATQ normale sur un ennemi, Kafka lance immédiatement une attaque de suivi et inflige des DGT de foudre, avec de fortes chances d'<orangeStrong>infliger Stupéfaction</orangeStrong> à cette cible. Cet effet ne peut être déclenché que 1 fois par tour."
+        "shortDesc": "Lorsqu'un allié utilise son ATQ normale sur un ennemi, Kafka lance immédiatement une attaque de suivi et inflige des DGT de foudre, avec de fortes chances d'<orangeStrong>infliger Stupéfaction</orangeStrong> à cette cible. Cet effet ne peut être déclenché que 1 fois par tour.",
+        "tag": "Cible unique"
       }
     },
     "technique": {
       "0": {
         "name": "La pitié n'est pas un pardon",
         "fullDesc": "Attaque immédiatement tous les ennemis dans un rayon déterminé. Inflige des DGT de foudre équivalents à {{3, percent}}% de l'ATQ de Kafka à tous les ennemis après être entrée en combat, avec {{1, percent}}% de chances de base d'infliger l'effet Stupéfaction de l'ultime à chaque ennemi pendant {{2}} tours.",
-        "shortDesc": "Attaque tous les ennemis à portée. Après être entré en combat, inflige des DGT de foudre mineurs à tous les ennemis, avec une forte probabilité de leur infliger <orangeStrong>Stupéfaction</orangeStrong>."
+        "shortDesc": "Attaque tous les ennemis à portée. Après être entré en combat, inflige des DGT de foudre mineurs à tous les ennemis, avec une forte probabilité de leur infliger <orangeStrong>Stupéfaction</orangeStrong>.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Torture",
         "fullDesc": "Les cibles ennemies subissent immédiatement les dégâts infligés par tous les effets de dégâts sur la durée actuels au lieu de subir immédiatement les dégâts de Stupéfaction lors de l'utilisation de l'ultime.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Pillage",
         "fullDesc": "Lorsqu'un ennemi affecté par l'effet Stupéfaction est vaincu, Kafka régénère en plus {{1}} points d'énergie.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Épines",
         "fullDesc": "La chance de base d'infliger Stupéfaction aux ennemis avec l'ultime, la technique et l'attaque de suivi déclenchée par le talent augmente de {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,63 +5,72 @@
       "0": {
         "name": "Sương Giá Đầy Trời",
         "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Yanqing.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Băng cho 1 kẻ địch."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Băng cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Xuyên Ba Tấc Nước",
         "fullDesc": "Gây Sát Thương Băng cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Yanqing, kèm thêm cho Yanqing Kiếm Khôn Hiểu Lòng Người, duy trì 1 hiệp.",
-        "shortDesc": "Gây Sát Thương Băng cho 1 kẻ địch, kèm thêm cho bản thân Kiếm Khôn Hiểu Lòng Người."
+        "shortDesc": "Gây Sát Thương Băng cho 1 kẻ địch, kèm thêm cho bản thân Kiếm Khôn Hiểu Lòng Người.",
+        "tag": "Đánh Đơn"
       }
     },
     "ult": {
       "0": {
         "name": "Chim Én Vỗ Mưa",
         "fullDesc": "Tăng cho bản thân {{1, percent}}% Tỷ Lệ Bạo Kích, nếu Yanqing đang ở hiệu ứng Kiếm Khôn Hiểu Lòng Người, sẽ giúp sát thương Bạo Kích của Yanqing tăng thêm <orangeStrong>{{2, percent}}%</orangeStrong>, hiệu ứng buff duy trì 1 hiệp. Sau đó gây cho 1 kẻ địch chỉ định Sát Thương Băng bằng <orangeStrong>{{3, percent}}%</orangeStrong> Tấn Công của Yanqing.",
-        "shortDesc": "Tăng Tỷ Lệ Bạo Kích cho bản thân và cường hóa Kiếm Khôn Hiểu Lòng Người, gây lượng lớn Sát Thương Băng cho 1 kẻ địch."
+        "shortDesc": "Tăng Tỷ Lệ Bạo Kích cho bản thân và cường hóa Kiếm Khôn Hiểu Lòng Người, gây lượng lớn Sát Thương Băng cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       }
     },
     "talent": {
       "0": {
         "name": "Bóng Kiếm Kề Bên",
         "fullDesc": "Khi Yanqing ở trong hiệu ứng Kiếm Khôn Hiểu Lòng Người, sẽ giảm xác suất bị tấn công, đồng thời tăng cho bản thân <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Tỷ Lệ Bạo Kích và <orangeStrong>{{2, percent}}%</orangeStrong> Sát Thương Bạo Kích. Sau khi thi triển tấn công lên mục tiêu địch, có <orangeStrong>{{3, percent}}%</orangeStrong> xác suất cố định thi triển Đòn Đánh Theo Sau, gây Sát Thương Băng cho mục tiêu tương đương <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công của Yanqing, đồng thời có {{6, percent}}% xác suất cơ bản khiến kẻ đó rơi vào trạng thái Đóng Băng, duy trì 1 hiệp.<br>Trong trạng thái Đóng Băng, kẻ địch không thể hành động, đồng thời khi bắt đầu mỗi hiệp sẽ chịu lượng sát thương Băng kèm theo bằng <orangeStrong>{{5, percent}}%</orangeStrong> Tấn Công của Yanqing.<br>Sau khi Yanqing chịu sát thương, Kiếm Khôn Hiểu Lòng Người sẽ biến mất.",
-        "shortDesc": "<orangeStrong>Khi trong Kiếm Khôn Hiểu Lòng Người</orangeStrong>, sẽ giảm xác suất bị tấn công, <orangeStrong>tăng Tỷ Lệ Bạo Kích và Sát Thương Bạo Kích</orangeStrong> của bản thân. <orangeStrong>Sau khi tấn công</orangeStrong> kẻ địch, có xác suất phát động Đòn Đánh Theo Sau, gây Sát Thương Băng cho kẻ đó và có xác suất khiến kẻ đó Đóng Băng.<br>Sau khi bản thân chịu sát thương, Kiếm Khôn Hiểu Lòng Người sẽ biến mất."
+        "shortDesc": "<orangeStrong>Khi trong Kiếm Khôn Hiểu Lòng Người</orangeStrong>, sẽ giảm xác suất bị tấn công, <orangeStrong>tăng Tỷ Lệ Bạo Kích và Sát Thương Bạo Kích</orangeStrong> của bản thân. <orangeStrong>Sau khi tấn công</orangeStrong> kẻ địch, có xác suất phát động Đòn Đánh Theo Sau, gây Sát Thương Băng cho kẻ đó và có xác suất khiến kẻ đó Đóng Băng.<br>Sau khi bản thân chịu sát thương, Kiếm Khôn Hiểu Lòng Người sẽ biến mất.",
+        "tag": "Đánh Đơn"
       }
     },
     "technique": {
       "0": {
         "name": "Ngự Kiếm Chân Quyết",
         "fullDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu trận tiếp theo, sát thương Yanqing gây cho kẻ địch có Phần Trăm HP hiện tại lớn hơn hoặc bằng {{1, percent}}% sẽ tăng {{2, percent}}%, duy trì {{3}} hiệp.",
-        "shortDesc": "Dùng Bí Kỹ, khi bắt đầu trận kế tiếp, sẽ tăng sát thương mà bản thân gây ra cho kẻ địch có Phần Trăm HP từ 50% trở lên."
+        "shortDesc": "Dùng Bí Kỹ, khi bắt đầu trận kế tiếp, sẽ tăng sát thương mà bản thân gây ra cho kẻ địch có Phần Trăm HP từ 50% trở lên.",
+        "tag": "Cường Hóa"
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Thưởng Băng",
         "fullDesc": "Sau khi tấn công, gây cho kẻ địch có Điểm Yếu Băng một lượng Sát Thương Băng kèm theo bằng {{1, percent}}% Tấn Công của Yanqing.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Sương Sớm",
         "fullDesc": "Khi ở hiệu ứng \"Kiếm Khôn Hiểu Lòng Người\", Kháng Hiệu Ứng tăng {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Âm Thanh Nhẹ Nhàng",
         "fullDesc": "Khi kích hoạt Bạo Kích, Tốc Độ tăng {{1, percent}}%, duy trì {{2}} hiệp.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

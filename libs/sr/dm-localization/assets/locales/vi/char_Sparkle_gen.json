@@ -5,63 +5,72 @@
       "0": {
         "name": "Hài Độc Thoại",
         "fullDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Sparkle.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Lượng Tử cho 1 kẻ địch."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lượng Tử cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Cá Nhỏ Cõi Mơ",
         "fullDesc": "Tăng Sát Thương Bạo Kích của 1 đồng đội chỉ định, mức tăng bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Sát Thương Bạo Kích của Sparkle +<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, duy trì {{3}} hiệp, đồng thời khiến mục tiêu này ưu tiên hành động {{4, percent}}%.<br>Khi Sparkle thi triển kỹ năng này lên bản thân, sẽ không thể kích hoạt hiệu ứng Ưu Tiên Hành Động.",
-        "shortDesc": "Tăng <orangeStrong>Sát Thương Bạo Kích</orangeStrong> của 1 đồng đội, và khiến mục tiêu này ưu tiên hành động."
+        "shortDesc": "Tăng <orangeStrong>Sát Thương Bạo Kích</orangeStrong> của 1 đồng đội, và khiến mục tiêu này ưu tiên hành động.",
+        "tag": "Hỗ Trợ"
       }
     },
     "ult": {
       "0": {
         "name": "Cô Gái Nghìn Mặt",
         "fullDesc": "Hồi phục {{2}} Điểm Chiến Kỹ cho phe ta, đồng thời khiến toàn thể phe ta nhận được Câu Đố Kỳ Dị. Khi mục tiêu phe ta có Câu Đố Kỳ Dị kích hoạt hiệu ứng Tăng Sát Thương từ Thiên Phú của Sparkle, mỗi tầng sẽ tăng thêm <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, duy trì {{4}} hiệp.",
-        "shortDesc": "Hồi phục <orangeStrong>Điểm Chiến Kỹ</orangeStrong> cho phe ta, tăng thêm hiệu ứng Tăng Sát Thương khi kích hoạt Thiên Phú Sparkle."
+        "shortDesc": "Hồi phục <orangeStrong>Điểm Chiến Kỹ</orangeStrong> cho phe ta, tăng thêm hiệu ứng Tăng Sát Thương khi kích hoạt Thiên Phú Sparkle.",
+        "tag": "Hỗ Trợ"
       }
     },
     "talent": {
       "0": {
         "name": "Ngụy Biện Cá Trích Đỏ",
         "fullDesc": "Khi Sparkle trong trận, giới hạn Điểm Chiến Kỹ sẽ tăng thêm {{3}} điểm. Mục tiêu phe ta mỗi khi tiêu hao 1 Điểm Chiến Kỹ, sẽ tăng <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> sát thương do toàn bộ phe ta gây ra, hiệu ứng này duy trì {{1}} hiệp, tối đa có thể cộng dồn {{4}} tầng.",
-        "shortDesc": "Tăng <orangeStrong>giới hạn Điểm Chiến Kỹ</orangeStrong> của phe ta, khi mục tiêu phe ta tiêu hao Điểm Chiến Kỹ, sẽ tăng <orangeStrong>sát thương gây ra</orangeStrong> của toàn bộ phe ta."
+        "shortDesc": "Tăng <orangeStrong>giới hạn Điểm Chiến Kỹ</orangeStrong> của phe ta, khi mục tiêu phe ta tiêu hao Điểm Chiến Kỹ, sẽ tăng <orangeStrong>sát thương gây ra</orangeStrong> của toàn bộ phe ta.",
+        "tag": "Hỗ Trợ"
       }
     },
     "technique": {
       "0": {
         "name": "Kẻ Kể Chuyện Không Đáng Tin",
         "fullDesc": "Sau khi dùng Bí Kỹ, toàn thể phe ta sẽ vào trạng thái Lạc Lối trong {{2}} giây liên tục. Ở trạng thái Lạc Lối sẽ không bị kẻ địch phát hiện. Khi vào chiến đấu trong thời gian Lạc Lối sẽ hồi {{1}} Điểm Chiến Kỹ cho phe ta.",
-        "shortDesc": "Sau khi dùng Bí Kỹ, toàn thể phe ta sẽ vào trạng thái Lạc Lối. Ở trạng thái Lạc Lối sẽ không bị kẻ địch phát hiện. Khi vào chiến đấu trong thời gian Lạc Lối sẽ hồi <orangeStrong>Điểm Chiến Kỹ</orangeStrong> cho phe ta."
+        "shortDesc": "Sau khi dùng Bí Kỹ, toàn thể phe ta sẽ vào trạng thái Lạc Lối. Ở trạng thái Lạc Lối sẽ không bị kẻ địch phát hiện. Khi vào chiến đấu trong thời gian Lạc Lối sẽ hồi <orangeStrong>Điểm Chiến Kỹ</orangeStrong> cho phe ta.",
+        "tag": "Hỗ Trợ"
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Ghi Dấu Năm Tháng",
         "fullDesc": "Khi thi triển Tấn Công Thường sẽ hồi thêm {{1}} Năng Lượng.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Hoa Nhân Tạo",
         "fullDesc": "Hiệu ứng Tăng Sát Thương Bạo Kích cung cấp bởi Chiến Kỹ sẽ kéo dài đến khi bắt đầu hiệp kế tiếp của mục tiêu.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Dạ Khúc Tưởng Nhớ",
         "fullDesc": "Tấn Công của toàn phe ta tăng {{4, percent}}%. Khi trong đội phe ta có 1/2/3 nhân vật thuộc tính Lượng Tử, tấn công của nhân vật có thuộc tính Lượng Tử phe ta tăng thêm {{1, percent}}%/{{2, percent}}%/{{3, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

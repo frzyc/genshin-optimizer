@@ -5,63 +5,72 @@
       "0": {
         "name": "Was schaust du so?",
         "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Hertas ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Einmaliges Angebot",
         "fullDesc": "Fügt allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Hertas ANG zu. Ziele mit LP-Prozentsatz von {{2, percent}}% oder höher erleiden {{3, percent}}% mehr SCH.",
-        "shortDesc": "Fügt allen Gegnern geringen Eis-SCH zu. Ziele mit höheren LP erleiden mehr SCH."
+        "shortDesc": "Fügt allen Gegnern geringen Eis-SCH zu. Ziele mit höheren LP erleiden mehr SCH.",
+        "tag": "Flächenangriff"
       }
     },
     "ult": {
       "0": {
         "name": "Ich arbeite mit Magie",
         "fullDesc": "Fügt allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Hertas ANG zu.",
-        "shortDesc": "Fügt allen Gegnern Eis-SCH zu."
+        "shortDesc": "Fügt allen Gegnern Eis-SCH zu.",
+        "tag": "Flächenangriff"
       }
     },
     "talent": {
       "0": {
         "name": "Muss man alles selbst machen?",
         "fullDesc": "Wenn der LP-Prozentsatz eines Gegners durch den Angriff eines Verbündeten auf {{1, percent}}% oder weniger fallen, führt Herta einen Folgeangriff aus, der allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Hertas ANG zufügt.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "Flächenangriff"
       }
     },
     "technique": {
       "0": {
         "name": "Das kann noch optimiert werden",
         "fullDesc": "Erhöht nach dem Einsatz der Technik Hertas ANG zu Beginn des nächstes Kampfes für {{2}} Rd. um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "Verstärkung"
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Effizienz",
         "fullDesc": "Erhöht beim Einsatz der Fertigkeit den erhöhten SCH zusätzlich um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Marionette",
         "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Frost",
         "fullDesc": "Erhöht den eingefrorenen Gegnern beim Einsatz des Ultimates zugefügten SCH um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

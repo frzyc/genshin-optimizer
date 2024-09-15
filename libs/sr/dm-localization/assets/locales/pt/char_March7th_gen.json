@@ -5,63 +5,72 @@
       "0": {
         "name": "Flecha Glacial",
         "fullDesc": "Causa Dano de Gelo equivalente a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de 7 de Março a um único inimigo.",
-        "shortDesc": "Causa Dano de Gelo leve a um único inimigo."
+        "shortDesc": "Causa Dano de Gelo leve a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "O Poder da Fofura",
         "fullDesc": "Concede a um único aliado um Escudo que pode absorver Dano igual a <orangeStrong>{{1, percent}}%</orangeStrong> da DEF de 7 de Março + <orangeStrong>{{4}}</orangeStrong> por {{2}} rodada(s).<br>Se esse aliado tiver {{3, percent}}% ou mais de PV, aumenta significativamente a chance de inimigos atacarem esse aliado.",
-        "shortDesc": "<orangeStrong>Aplica um Escudo</orangeStrong> em um único aliado."
+        "shortDesc": "<orangeStrong>Aplica um Escudo</orangeStrong> em um único aliado.",
+        "tag": "Defesa"
       }
     },
     "ult": {
       "0": {
         "name": "Cascata Glacial",
         "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de 7 de Março a todos os inimigos. Ao serem atingidos, os inimigos têm {{2, percent}}% de chance-base de sofrer Congelamento por {{3}} rodada(s).<br>Durante o Congelamento, os inimigos não podem agir e recebem Dano de Gelo Adicional igual a <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de 7 de Março no início de cada rodada.",
-        "shortDesc": "Causa Dano de Gelo a <orangeStrong>todos os inimigos</orangeStrong>, com <orangeStrong>uma chance de aplicar o efeito de Congelamento</orangeStrong>"
+        "shortDesc": "Causa Dano de Gelo a <orangeStrong>todos os inimigos</orangeStrong>, com <orangeStrong>uma chance de aplicar o efeito de Congelamento</orangeStrong>",
+        "tag": "Área"
       }
     },
     "talent": {
       "0": {
         "name": "Poder Feminino",
         "fullDesc": "Quando um aliado com Escudo é atacado por um inimigo, 7 de Março Contra-Ataca imediatamente, causando Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ dela. Esse efeito pode ser ativado {{2}} vez(es) por rodada.",
-        "shortDesc": "Depois que um aliado com Escudo é atacado por um inimigo, 7 de Março <orangeStrong>realiza imediatamente um Contra-Ataque</orangeStrong> contra o atacante, causando Dano de Gelo leve."
+        "shortDesc": "Depois que um aliado com Escudo é atacado por um inimigo, 7 de Março <orangeStrong>realiza imediatamente um Contra-Ataque</orangeStrong> contra o atacante, causando Dano de Gelo leve.",
+        "tag": "Alvo Único"
       }
     },
     "technique": {
       "0": {
         "name": "Beleza Glacial",
         "fullDesc": "Ataca o inimigo imediatamente. Após entrar na batalha, tem {{1, percent}}% de chance-base de causar Congelamento a um inimigo aleatório por {{2}} rodada(s).<br>Durante o Congelamento, o inimigo não pode agir e recebe {{3, percent}}% do ATQ de 7 de Março como Dano de Gelo Adicional no início de cada rodada.",
-        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, existe uma alta chance de infligir Congelamento em um inimigo aleatório."
+        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, existe uma alta chance de infligir Congelamento em um inimigo aleatório.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Pureza",
         "fullDesc": "Ao usar a Perícia, remove 1 penalidade de um aliado-alvo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Reforço",
         "fullDesc": "A duração do Escudo gerado pela Perícia é estendida por {{1}} rodada(s).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Feitiço de Gelo",
         "fullDesc": "Aumenta em {{1, percent}}% a chance-base da Perícia Suprema causar Congelamento a inimigos.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,63 +5,72 @@
       "0": {
         "name": "Freundliche Fassade",
         "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Natashas ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen physischen SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen physischen SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Lieben, heilen und wählen",
         "fullDesc": "Stellt LP eines anvisierten Verbündeten sofort um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Natashas max. LP plus <orangeStrong>{{4}}</orangeStrong> wieder her. Stellt außerdem LP des Verbündeten zu Beginn jeder Runde um <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> von Natashas max. LP plus <orangeStrong>{{5}}</orangeStrong> für {{3}} Rd. wieder her.",
-        "shortDesc": "Stellt LP <orangeStrong>eines einzelnen Verbündeten</orangeStrong> wieder her und <orangeStrong>heilt ihn kontinuierlich</orangeStrong>."
+        "shortDesc": "Stellt LP <orangeStrong>eines einzelnen Verbündeten</orangeStrong> wieder her und <orangeStrong>heilt ihn kontinuierlich</orangeStrong>.",
+        "tag": "Wiederherstellung"
       }
     },
     "ult": {
       "0": {
         "name": "Geschenk der Wiedergeburt",
         "fullDesc": "Stellt LP aller Verbündeten sofort um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Natashas max. LP plus <orangeStrong>{{2}}</orangeStrong> wieder her.",
-        "shortDesc": "<orangeStrong>Stellt die LP aller Verbündeten wieder her</orangeStrong>."
+        "shortDesc": "<orangeStrong>Stellt die LP aller Verbündeten wieder her</orangeStrong>.",
+        "tag": "Wiederherstellung"
       }
     },
     "talent": {
       "0": {
         "name": "Innervation",
         "fullDesc": "Heilt Natasha Verbündete mit LP-Prozentsatz von {{1, percent}}% oder niedriger, wird die bewirkte Heilung um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht. Dieser Effekt wirkt auch bei der kontinuierlichen Heilung.",
-        "shortDesc": "Wenn Verbündete mit wenig LP geheilt werden, wird die bewirkte Heilung erhöht. Dieser Effekt gilt auch für kontinuierliche Heilung."
+        "shortDesc": "Wenn Verbündete mit wenig LP geheilt werden, wird die bewirkte Heilung erhöht. Dieser Effekt gilt auch für kontinuierliche Heilung.",
+        "tag": "Verstärkung"
       }
     },
     "technique": {
       "0": {
         "name": "Hypnoseforschung",
         "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt einem zufälligen Gegner physischen SCH in Höhe von {{4, percent}}% von Natashas ANG zu und verursacht bei allen Gegnern mit einer Grundchance von {{1, percent}}% Schwächung.<br>Geschwächte Gegner fügen Verbündeten für {{3}} Rd. {{2, percent}}% weniger SCH zu.",
-        "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt einem zufälligen Gegner geringen physischen SCH zu, mit einer hohen Chance, allen gegnerischen Zielen Schwächung zuzufügen."
+        "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt einem zufälligen Gegner geringen physischen SCH zu, mit einer hohen Chance, allen gegnerischen Zielen Schwächung zuzufügen.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Beruhigung",
         "fullDesc": "Entfernt beim Einsatz der Fertigkeit {{1}} Debuff von einem anvisierten Verbündeten.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Heilerin",
         "fullDesc": "Erhöht Natashas bewirkte Heilung um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Genesung",
         "fullDesc": "Verlängert die kontinuierliche Heilung durch die Fertigkeit um {{1}} Rd.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

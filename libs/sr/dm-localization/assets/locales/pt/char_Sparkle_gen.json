@@ -5,63 +5,72 @@
       "0": {
         "name": "Monodrama",
         "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Sparkle a um único inimigo-alvo.",
-        "shortDesc": "Causa Dano Quântico leve a um único inimigo."
+        "shortDesc": "Causa Dano Quântico leve a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Mergulhadora de Sonhos",
         "fullDesc": "Aumenta o Dano CRIT de um único aliado-alvo em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> do Dano CRIT de Sparkle + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, durando por {{3}} rodada(s). E ao mesmo tempo, Avança Adiante a ação deste aliado em {{4, percent}}%.<br>Quando Sparkle usa essa habilidade em si, sua ação não será Avançada Adiante.",
-        "shortDesc": "Aumenta o <orangeStrong>Dano CRIT</orangeStrong> de um aliado e sua ação é Avançada Adiante."
+        "shortDesc": "Aumenta o <orangeStrong>Dano CRIT</orangeStrong> de um aliado e sua ação é Avançada Adiante.",
+        "tag": "Suporte"
       }
     },
     "ult": {
       "0": {
         "name": "A Heroína de Mil Faces",
         "fullDesc": "Recupera {{2}} Pontos de Perícia para a equipe e concede Criptografia a todos os aliados. Para aliados com Criptografia, cada acúmulo do efeito de Bônus de Dano concedido pelo Talento de Sparkle aumenta adicionalmente em <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, durando por {{4}} rodada(s).",
-        "shortDesc": "Recupera <orangeStrong>Pontos de Perícia</orangeStrong> para a equipe e habilita que o Bônus de Dano provido pelo Talento de Sparkle seja adicionalmente aprimorado."
+        "shortDesc": "Recupera <orangeStrong>Pontos de Perícia</orangeStrong> para a equipe e habilita que o Bônus de Dano provido pelo Talento de Sparkle seja adicionalmente aprimorado.",
+        "tag": "Suporte"
       }
     },
     "talent": {
       "0": {
         "name": "Pista Falsa",
         "fullDesc": "Enquanto Sparkle estiver no campo de batalha, aumenta adicionalmente o número máximo de Pontos de Perícia em {{3}}. Sempre que um aliado consome 1 Ponto de Perícia, o Dano causado por todos os aliados será aumentado em <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. Este efeito dura por {{1}} rodada(s) e pode ser acumulado até {{4}} veze(s).",
-        "shortDesc": "Aumenta o <orangeStrong>máximo de Pontos de Perícia</orangeStrong> da equipe. Sempre que um aliado consome Pontos de Perícia, permite que todos os aliados <orangeStrong>causem mais Dano</orangeStrong>."
+        "shortDesc": "Aumenta o <orangeStrong>máximo de Pontos de Perícia</orangeStrong> da equipe. Sempre que um aliado consome Pontos de Perícia, permite que todos os aliados <orangeStrong>causem mais Dano</orangeStrong>.",
+        "tag": "Suporte"
       }
     },
     "technique": {
       "0": {
         "name": "Narradora Nada Confiável",
         "fullDesc": "Usar a Técnica oferece a todos os aliados Desorientação por {{2}} segundos. Personagens em Desorientação não serão detectados por inimigos, e entrar em batalha enquanto estão no estado de Desorientação recupera {{1}} Ponto(s) de Perícia para a equipe.",
-        "shortDesc": "Usar a Técnica oferece a todos os aliados Desorientação. Personagens com Desorientação não serão detectados pelos inimigos, e entrar em batalha enquanto em Desorientação recupera <orangeStrong>Pontos de Perícia</orangeStrong> para os aliados."
+        "shortDesc": "Usar a Técnica oferece a todos os aliados Desorientação. Personagens com Desorientação não serão detectados pelos inimigos, e entrar em batalha enquanto em Desorientação recupera <orangeStrong>Pontos de Perícia</orangeStrong> para os aliados.",
+        "tag": "Suporte"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Almanaque",
         "fullDesc": "Ao usar o ATQ Básico, regenera adicionalmente {{1}} de Energia.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Flor Artificial",
         "fullDesc": "O efeito de Bônus de Dano CRIT fornecido pela Perícia será estendido para durar até o início da próxima rodada do alvo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Noturna",
         "fullDesc": "Aumenta o ATQ de todos os aliados em {{4, percent}}%. Quando há 1/2/3 aliado(s) do Tipo Quânticos na equipe, adicionalmente, o ATQ dos aliados é aumentado em {{1, percent}}%/{{2, percent}}%/{{3, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,63 +5,72 @@
       "0": {
         "name": "Chute de Diagnóstico",
         "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Bailu a um único inimigo.",
-        "shortDesc": "Causa Dano de Raio leve a um único inimigo."
+        "shortDesc": "Causa Dano de Raio leve a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Cantoria Entre as Nuvens",
         "fullDesc": "Cura um aliado em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Bailu + <orangeStrong>{{2}}</orangeStrong>. Bailu então cura aliados aleatórios {{4}} vez(es). Após cada cura, os PV restaurados da próxima cura reduzem em {{3, percent}}%.",
-        "shortDesc": "Restaura os PV de um único aliado, depois cura aleatoriamente outros aliados."
+        "shortDesc": "Restaura os PV de um único aliado, depois cura aleatoriamente outros aliados.",
+        "tag": "Restauração"
       }
     },
     "ult": {
       "0": {
         "name": "Trovão Oportuno",
         "fullDesc": "Cura todos os aliados em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Bailu + <orangeStrong>{{2}}</orangeStrong>.<br>Bailu aplica Revigoramento nos aliados que ainda não tiverem Revigoramento. Para os que já possuírem Revigoramento, Bailu estende a sua duração em 1 rodada.<br>O efeito de Revigoramento pode durar por {{3}} rodada(s). Este efeito não pode acumular.",
-        "shortDesc": "Restaura os PV e concede Revigoramento ou prolonga a duração de Revigoramento de todos os aliados."
+        "shortDesc": "Restaura os PV e concede Revigoramento ou prolonga a duração de Revigoramento de todos os aliados.",
+        "tag": "Restauração"
       }
     },
     "talent": {
       "0": {
         "name": "Cabaça Cheia de Elixir",
         "fullDesc": "Depois que um aliado com Revigoramento é atingido, restaura <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Bailu + <orangeStrong>{{2}}</orangeStrong>. Este efeito pode ser ativado {{5}} vez(es). Quando um aliado receber um golpe fatal, ele não será derrubado. Bailu o cura imediatamente em <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Bailu + <orangeStrong>{{4}}</orangeStrong> de PV. Este efeito pode ser ativado uma vez por batalha.",
-        "shortDesc": "Quando um aliado com <orangeStrong>Revigoramento</orangeStrong> é atacado, <orangeStrong>restaura PV</orangeStrong> do aliado.<br>Quando um aliado sofre um <orangeStrong>golpe fatal</orangeStrong>, Bailu <orangeStrong>restaura imediatamente os PV dele</orangeStrong>. Este efeito só pode ser ativado 1 vez por batalha."
+        "shortDesc": "Quando um aliado com <orangeStrong>Revigoramento</orangeStrong> é atacado, <orangeStrong>restaura PV</orangeStrong> do aliado.<br>Quando um aliado sofre um <orangeStrong>golpe fatal</orangeStrong>, Bailu <orangeStrong>restaura imediatamente os PV dele</orangeStrong>. Este efeito só pode ser ativado 1 vez por batalha.",
+        "tag": "Restauração"
       }
     },
     "technique": {
       "0": {
         "name": "Passeio na Chuva",
         "fullDesc": "Após usar sua Técnica, no início da próxima batalha, todos os aliados recebem Revigoramento por {{1}} rodada(s).",
-        "shortDesc": "Depois que esta personagem usa sua Técnica, no início da próxima batalha, todos os aliados recebem Revigoramento."
+        "shortDesc": "Depois que esta personagem usa sua Técnica, no início da próxima batalha, todos os aliados recebem Revigoramento.",
+        "tag": "Restauração"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Analectos de Qihuang",
         "fullDesc": "Quando Bailu concede uma cura a um aliado-alvo que ultrapasse os PV máximos normais dele, os PV máximos do alvo aumentam em {{1, percent}}% por {{2}} rodada(s).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Linhas de Icor Vidyadhara",
         "fullDesc": "O Revigoramento pode ser acionado mais {{1}} vez(es).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Bênção Aquática",
         "fullDesc": "Personagens com Revigoramento recebem {{1, percent}}% a menos de Dano.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

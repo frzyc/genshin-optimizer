@@ -5,63 +5,72 @@
       "0": {
         "name": "看什麼看",
         "fullDesc": "對指定敵方單體造成等同於黑塔<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的冰屬性傷害。",
-        "shortDesc": "對敵方單體造成少量冰屬性傷害。"
+        "shortDesc": "對敵方單體造成少量冰屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "一錘子買賣",
         "fullDesc": "對敵方全體造成等同於黑塔<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的冰屬性傷害。若敵方目標現有生命值百分比大於等於{{2, percent}}%，則對該目標造成的傷害提高{{3, percent}}%。",
-        "shortDesc": "對敵方全體造成少量冰屬性傷害，對生命值較高的目標造成的傷害提高。"
+        "shortDesc": "對敵方全體造成少量冰屬性傷害，對生命值較高的目標造成的傷害提高。",
+        "tag": "群體攻擊"
       }
     },
     "ult": {
       "0": {
         "name": "是魔法，我加了魔法",
         "fullDesc": "對敵方全體造成等同於黑塔<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的冰屬性傷害。",
-        "shortDesc": "對敵方全體造成冰屬性傷害。"
+        "shortDesc": "對敵方全體造成冰屬性傷害。",
+        "tag": "群體攻擊"
       }
     },
     "talent": {
       "0": {
         "name": "還是我來吧",
         "fullDesc": "當任意我方目標的攻擊使敵方目標的現有生命值百分比小於等於{{1, percent}}%時，黑塔發動追加攻擊，對敵方全體造成等同於黑塔<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的冰屬性傷害。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "群體攻擊"
       }
     },
     "technique": {
       "0": {
         "name": "可以改良一下",
         "fullDesc": "使用秘技後，下一次戰鬥開始時黑塔攻擊力提高{{1, percent}}%，持續{{2}}回合。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "強化"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "效率",
         "fullDesc": "施放戰技時，對目標造成的傷害提高效果額外再提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "人偶",
         "fullDesc": "抵抗控制類負面狀態的機率提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "冰結",
         "fullDesc": "施放終結技時，對凍結狀態下的敵人造成的傷害提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

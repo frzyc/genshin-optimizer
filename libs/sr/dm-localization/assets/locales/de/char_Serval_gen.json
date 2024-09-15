@@ -5,63 +5,72 @@
       "0": {
         "name": "Grollender Donner",
         "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Servals ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Heller Blitz",
         "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Servals ANG zu und fügt angrenzenden Zielen Blitz-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Servals ANG zu. Verursacht außerdem bei den getroffenen Gegnern mit einer Grundchance von {{3, percent}}% für {{4}} Rd. Schock.<br>Geschockte Gegner erleiden zu Beginn jeder Runde Blitz-DoT in Höhe von <orangeStrong>{{5, percent}}%</orangeStrong> von Servals ANG.",
-        "shortDesc": "Fügt einem Gegner und angrenzenden Einheiten geringen Blitz-SCH zu und bewirkt bei den Gegnern mit hoher Chance <orangeStrong>Schock</orangeStrong>."
+        "shortDesc": "Fügt einem Gegner und angrenzenden Einheiten geringen Blitz-SCH zu und bewirkt bei den Gegnern mit hoher Chance <orangeStrong>Schock</orangeStrong>.",
+        "tag": "Ausdehnung"
       }
     },
     "ult": {
       "0": {
         "name": "Hier kommt das mechanische Fieber",
         "fullDesc": "Fügt allen Gegnern Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Servals ANG zu. Verlängert die Dauer von Schock von Gegnern um {{2}} Rd.",
-        "shortDesc": "Fügt allen Gegnern Blitz-SCH zu und verlängert die Dauer von Schock."
+        "shortDesc": "Fügt allen Gegnern Blitz-SCH zu und verlängert die Dauer von Schock.",
+        "tag": "Flächenangriff"
       }
     },
     "talent": {
       "0": {
         "name": "Galvanische Bänder",
         "fullDesc": "Fügt nach dem Angriff allen geschockten Gegnern zusätzlichen Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Servals ANG zu.",
-        "shortDesc": "Fügt nach dem Angriff allen geschockten Gegnern <orangeStrong>geringen zusätzlichen SCH</orangeStrong> zu."
+        "shortDesc": "Fügt nach dem Angriff allen geschockten Gegnern <orangeStrong>geringen zusätzlichen SCH</orangeStrong> zu.",
+        "tag": "Verstärkung"
       }
     },
     "technique": {
       "0": {
         "name": "Gute Nacht, Belobog",
         "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt einem zufälligen Gegner Blitz-SCH in Höhe von {{4, percent}}% von Servals ANG zu. Verursacht gleichzeitig bei allen Gegner mit einer Grundchance von {{1, percent}}% für {{3}} Rd. Schock.<br>Geschockte Gegner erleiden zu Beginn jeder Runde Blitz-DoT in Höhe von {{2, percent}}% von Servals ANG.",
-        "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt einem zufälligen Gegner geringen Blitz-SCH zu und hat eine hohe Chance, jedem Gegner <orangeStrong>Schock zuzufügen</orangeStrong>."
+        "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt einem zufälligen Gegner geringen Blitz-SCH zu und hat eine hohe Chance, jedem Gegner <orangeStrong>Schock zuzufügen</orangeStrong>.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Rock ’n’ Roll",
         "fullDesc": "Erhöht die Grundchance, dass die Fertigkeit bei Gegnern Schock verursacht, um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Schwingen der Saiten",
         "fullDesc": "Stellt zu Beginn des Kampfes unmittelbar {{1}} Pkt. Energie wieder her.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Manie",
         "fullDesc": "Erhöht den ANG für {{2}} Rd. um {{1, percent}}%, wenn ein Gegner besiegt wird.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

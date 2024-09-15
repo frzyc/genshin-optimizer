@@ -5,68 +5,78 @@
       "0": {
         "name": "Entkorkungsgebühr",
         "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Gallaghers ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu.",
+        "tag": "Einzelangriff"
       },
       "1": {
         "name": "Hopfenschwall",
         "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Gallaghers ANG zu. Reduziert den ANG des Ziels für {{3}} Rd. um <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>.",
-        "shortDesc": "Fügt einem Gegner Feuer-SCH zu und reduziert seinen ANG."
+        "shortDesc": "Fügt einem Gegner Feuer-SCH zu und reduziert seinen ANG.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Spezialmischung in der Dose",
         "fullDesc": "Stellt sofort <orangeStrong>{{1}}</orangeStrong> Pkt. LP eines Verbündeten wieder her.",
-        "shortDesc": "Stellt sofort die LP eines Verbündeten wieder her."
+        "shortDesc": "Stellt sofort die LP eines Verbündeten wieder her.",
+        "tag": "Wiederherstellung"
       }
     },
     "ult": {
       "0": {
         "name": "Champagner-Zeremonie",
         "fullDesc": "Belegt alle Gegner für {{2}} Rd. mit „Berauschung“ und fügt ihnen gleichzeitig Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Gallaghers ANG zu. Verstärkt den nächsten Standardangriff zu „Hopfenschwall“.",
-        "shortDesc": "Belegt alle Gegner mit <orangeStrong>Berauschung</orangeStrong> und fügt ihnen Feuer-SCH zu. Verstärkt den nächsten Standardangriff zu „Hopfenschwall“."
+        "shortDesc": "Belegt alle Gegner mit <orangeStrong>Berauschung</orangeStrong> und fügt ihnen Feuer-SCH zu. Verstärkt den nächsten Standardangriff zu „Hopfenschwall“.",
+        "tag": "Flächenangriff"
       }
     },
     "talent": {
       "0": {
         "name": "Trunken vom Kampf",
         "fullDesc": "„Berauschung“ erhöht den von Zielen erlittenen Bruch-SCH um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Jedes Mal, wenn ein berauschtes Ziel von einem Verbündeten angegriffen wird, werden die LP des Angreifers um <orangeStrong>{{2}}</orangeStrong> Pkt. wiederhergestellt.",
-        "shortDesc": "„Berauschung“ erhöht den von Zielen <orangeStrong>erlittenen Bruch-SCH</orangeStrong>. Wenn Verbündete das Ziel angreifen, <orangeStrong>werden ihre LP wiederhergestellt</orangeStrong>."
+        "shortDesc": "„Berauschung“ erhöht den von Zielen <orangeStrong>erlittenen Bruch-SCH</orangeStrong>. Wenn Verbündete das Ziel angreifen, <orangeStrong>werden ihre LP wiederhergestellt</orangeStrong>.",
+        "tag": "Wiederherstellung"
       }
     },
     "technique": {
       "0": {
         "name": "Edler Tropfen",
         "fullDesc": "Greift sofort den Gegner an. Belegt nach Kampfeintritt alle Gegner für {{1}} Rd. mit „Berauschung“ und fügt ihnen Feuer-SCH in Höhe von {{2, percent}}% von Gallaghers ANG zu.",
-        "shortDesc": "Greift den Gegner an. Belegt nach Kampfeintritt alle Gegner mit <orangeStrong>Berauschung</orangeStrong> und fügt ihnen geringen Feuer-SCH zu."
+        "shortDesc": "Greift den Gegner an. Belegt nach Kampfeintritt alle Gegner mit <orangeStrong>Berauschung</orangeStrong> und fügt ihnen geringen Feuer-SCH zu.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Brandneues Rezept",
         "fullDesc": "Erhöht die von Gallagher bewirkte Heilung in Höhe von {{1, percent}}% des Brucheffekts. Die bewirkte Heilung kann durch diesen Effekt um bis zu {{2, percent}}% erhöht werden.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Natürliche Hefe",
         "fullDesc": "Nach dem Einsatz des Ultimates wird die eigene Aktion um 100 % vorgezogen.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Zum Wohl",
         "fullDesc": "Wenn Gallagher „Hopfenschwall“ einsetzt, um Gegner im Status Berauschung anzugreifen, wirkt die LP-Wiederherstellung seines Talents für diesen Angriff auch auf andere Verbündeten.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

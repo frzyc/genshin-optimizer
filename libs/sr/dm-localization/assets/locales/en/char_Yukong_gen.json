@@ -5,63 +5,72 @@
       "0": {
         "name": "Arrowslinger",
         "fullDesc": "Deals <orangeStrong>{{1, percent}}%</orangeStrong> of Yukong's ATK as Imaginary DMG to a target enemy.",
-        "shortDesc": "Deals minor Imaginary DMG to an enemy."
+        "shortDesc": "Deals minor Imaginary DMG to an enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Emboldening Salvo",
         "fullDesc": "Obtains {{1}} stack(s) of \"Roaring Bowstrings\" (to a maximum of 2 stacks). When \"Roaring Bowstrings\" is active, the ATK of all allies increases by <orangeStrong>{{2, percent}}%</orangeStrong>, and every time an ally's turn (including Yukong's) ends, Yukong loses 1 stack of \"Roaring Bowstrings.\"<br>When it's the turn where Yukong gains \"Roaring Bowstrings\" by using Skill, \"Roaring Bowstrings\" will not be removed.",
-        "shortDesc": "Obtains 2 stacks of Roaring Bowstrings. All allies' <orangeStrong>ATK increases</orangeStrong> when Roaring Bowstrings is active on this character."
+        "shortDesc": "Obtains 2 stacks of Roaring Bowstrings. All allies' <orangeStrong>ATK increases</orangeStrong> when Roaring Bowstrings is active on this character.",
+        "tag": "Support"
       }
     },
     "ult": {
       "0": {
         "name": "Diving Kestrel",
         "fullDesc": "If \"Roaring Bowstrings\" is active on Yukong when her Ultimate is used, additionally increases all allies' CRIT Rate by <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> and CRIT DMG by <orangeStrong>{{3, percent}}%</orangeStrong>. At the same time, deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Yukong's ATK to a single enemy.",
-        "shortDesc": "When Roaring Bowstrings is active on this character, <orangeStrong>increases the CRIT Rate and CRIT DMG</orangeStrong> of all allies and deals massive Imaginary DMG to a single enemy."
+        "shortDesc": "When Roaring Bowstrings is active on this character, <orangeStrong>increases the CRIT Rate and CRIT DMG</orangeStrong> of all allies and deals massive Imaginary DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "talent": {
       "0": {
         "name": "Seven Layers, One Arrow",
         "fullDesc": "Basic ATK additionally deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Yukong's ATK, and increases the Toughness Reduction of this attack by {{2, percent}}%. This effect can be triggered again after {{3}} turn(s).",
-        "shortDesc": "Basic Attack additionally deals minor DMG, and the Toughness Reduction of this Basic Attack is increased. This effect can be triggered again after 1 turn have passed."
+        "shortDesc": "Basic Attack additionally deals minor DMG, and the Toughness Reduction of this Basic Attack is increased. This effect can be triggered again after 1 turn have passed.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Windchaser",
         "fullDesc": "After using her Technique, Yukong enters Sprint mode for {{1}} seconds. In Sprint mode, her Movement SPD increases by {{2, percent}}%, and Yukong gains {{3}} stack(s) of \"Roaring Bowstrings\" when she enters battle by attacking enemies.",
-        "shortDesc": "<orangeStrong>Increases Movement Speed</orangeStrong>. After attacking an enemy and entering battle, receive 2 stacks of Roaring Bowstrings."
+        "shortDesc": "<orangeStrong>Increases Movement Speed</orangeStrong>. After attacking an enemy and entering battle, receive 2 stacks of Roaring Bowstrings.",
+        "tag": "Enhance"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Archerion",
         "fullDesc": "Yukong can resist 1 debuff application for 1 time. This effect can be triggered again after {{1}} turn(s).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Bowmaster",
         "fullDesc": "When Yukong is on the field, Imaginary DMG dealt by all allies increases by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Majestas",
         "fullDesc": "When \"Roaring Bowstrings\" is active, Yukong regenerates {{1}} additional Energy every time an ally takes action.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,63 +5,72 @@
       "0": {
         "name": "仁慈的背面",
         "fullDesc": "對指定敵方單體造成等同於娜塔莎<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害。",
-        "shortDesc": "對敵方單體造成少量物理屬性傷害。"
+        "shortDesc": "對敵方單體造成少量物理屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "愛，救護與抉擇",
         "fullDesc": "立即為指定我方單體回復等同於娜塔莎<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{4}}</orangeStrong>的生命值，同時目標每回合開始時為其回復等同於娜塔莎<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{5}}</orangeStrong>的生命值，持續{{3}}回合。",
-        "shortDesc": "為我方單體<orangeStrong>回復生命值</orangeStrong>，並使目標<orangeStrong>持續回復生命值</orangeStrong>。"
+        "shortDesc": "為我方單體<orangeStrong>回復生命值</orangeStrong>，並使目標<orangeStrong>持續回復生命值</orangeStrong>。",
+        "tag": "回復"
       }
     },
     "ult": {
       "0": {
         "name": "新生之禮",
         "fullDesc": "立即為我方全體回復等同於娜塔莎<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{2}}</orangeStrong>的生命值。",
-        "shortDesc": "為我方全體<orangeStrong>回復生命值</orangeStrong>。"
+        "shortDesc": "為我方全體<orangeStrong>回復生命值</orangeStrong>。",
+        "tag": "回復"
       }
     },
     "talent": {
       "0": {
         "name": "生機煥發",
         "fullDesc": "為現有生命值百分比小於等於{{1, percent}}%的我方目標提供治療時，娜塔莎的治療量提高<orangeStrong>{{2, percent}}%</orangeStrong>。該效果對持續治療效果也會生效。",
-        "shortDesc": "為現有生命值百分比較低的我方目標提供治療時，治療量提高。該效果對持續治療效果也會生效。"
+        "shortDesc": "為現有生命值百分比較低的我方目標提供治療時，治療量提高。該效果對持續治療效果也會生效。",
+        "tag": "強化"
       }
     },
     "technique": {
       "0": {
         "name": "催眠研習",
         "fullDesc": "立即攻擊敵人，進入戰鬥後對敵方隨機單體造成等同於娜塔莎{{4, percent}}%攻擊力的物理屬性傷害，並有{{1, percent}}%的基礎機率使敵方每個單體目標陷入虛弱狀態。<br>虛弱狀態下的敵方目標對我方造成的傷害降低{{2, percent}}%，持續{{3}}回合。",
-        "shortDesc": "攻擊敵人，進入戰鬥後對敵方隨機單體造成少量物理屬性傷害，有高機率使敵方每個單體目標陷入虛弱狀態。"
+        "shortDesc": "攻擊敵人，進入戰鬥後對敵方隨機單體造成少量物理屬性傷害，有高機率使敵方每個單體目標陷入虛弱狀態。",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "舒緩",
         "fullDesc": "施放戰技時，解除指定我方單體的{{1}}個負面效果。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "醫者",
         "fullDesc": "娜塔莎提供的治療量提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "調理",
         "fullDesc": "施放戰技產生的持續回復效果延長{{1}}回合。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

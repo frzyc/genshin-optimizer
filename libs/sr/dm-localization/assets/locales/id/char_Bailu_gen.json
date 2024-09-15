@@ -5,63 +5,72 @@
       "0": {
         "name": "Diagnostic Kick",
         "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Bailu pada 1 target musuh.",
-        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Singing Among Clouds",
         "fullDesc": "Segera memulihkan HP 1 rekan sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Max HP Bailu + <orangeStrong>{{2}}</orangeStrong>. Lalu, Bailu akan memberikan {{4}} kali pemulihan pada rekan tim secara acak. Jumlah HP yang dipulihkan akan berkurang {{3, percent}}% dari setiap pemulihan ke pemulihan berikutnya.",
-        "shortDesc": "Memulihkan HP 1 rekan tim, lalu memulihkan rekan yang lain secara acak."
+        "shortDesc": "Memulihkan HP 1 rekan tim, lalu memulihkan rekan yang lain secara acak.",
+        "tag": "Restore"
       }
     },
     "ult": {
       "0": {
         "name": "Felicitous Thunderleap",
         "fullDesc": "Segera memulihkan HP seluruh rekan tim sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Max HP Bailu +<orangeStrong>{{2}}</orangeStrong>.<br>Bailu akan memberikan efek \"Invigoration\" pada rekan tim yang belum memiliki \"Invigoration\". Bailu akan menambah durasi \"Invigoration\" selama 1 giliran untuk rekan tim yang sudah memiliki \"Invigoration\".<br>\"Invigoration\" dapat berlangsung selama {{3}} giliran dan tidak dapat ditumpuk.",
-        "shortDesc": "Memulihkan HP seluruh rekan tim, memberikan \"Invigoration\" atau menambah durasi \"Invigoration\"."
+        "shortDesc": "Memulihkan HP seluruh rekan tim, memberikan \"Invigoration\" atau menambah durasi \"Invigoration\".",
+        "tag": "Restore"
       }
     },
     "talent": {
       "0": {
         "name": "Gourdful of Elixir",
         "fullDesc": "Setelah rekan tim yang memiliki \"Invigoration\" terkena serangan, HP mereka akan pulih sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Max HP Bailu +<orangeStrong>{{2}}</orangeStrong>, efek ini dapat terpicu {{5}} kali.<br>Saat rekan tim Bailu terkena serangan mematikan, rekan tersebut tidak akan gugur. Bailu akan segera memberikan pemulihan HP kepadanya sebesar <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> Max HP Bailu +<orangeStrong>{{4}}</orangeStrong>. Efek ini dapat dipicu sekali dalam 1 pertempuran.",
-        "shortDesc": "Rekan tim yang memiliki <orangeStrong>\"Invigoration\"</orangeStrong> akan <orangeStrong>memulihkan HP</orangeStrong> setelah terkena serangan.<br>Saat rekan tim <orangeStrong>terkena serangan mematikan</orangeStrong>, Bailu akan <orangeStrong>segera memulihkan HP rekan tersebut</orangeStrong>. Efek ini hanya dapat dipicu 1 kali dalam setiap pertempuran."
+        "shortDesc": "Rekan tim yang memiliki <orangeStrong>\"Invigoration\"</orangeStrong> akan <orangeStrong>memulihkan HP</orangeStrong> setelah terkena serangan.<br>Saat rekan tim <orangeStrong>terkena serangan mematikan</orangeStrong>, Bailu akan <orangeStrong>segera memulihkan HP rekan tersebut</orangeStrong>. Efek ini hanya dapat dipicu 1 kali dalam setiap pertempuran.",
+        "tag": "Restore"
       }
     },
     "technique": {
       "0": {
         "name": "Saunter in the Rain",
         "fullDesc": "Setelah menggunakan Technique, memberikan \"Invigoration\" pada seluruh rekan tim saat pertempuran berikutnya dimulai. Efek berlangsung selama {{1}} giliran.",
-        "shortDesc": "Setelah menggunakan Technique, seluruh rekan tim akan mendapatkan \"Invigoration\" saat pertempuran berikutnya dimulai."
+        "shortDesc": "Setelah menggunakan Technique, seluruh rekan tim akan mendapatkan \"Invigoration\" saat pertempuran berikutnya dimulai.",
+        "tag": "Restore"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Qihuang Analects",
         "fullDesc": "Saat Bailu mengakibatkan pemulihan berlebihan pada rekan tim, akan meningkatkan {{1, percent}}% Max HP target tersebut selama {{2}} giliran.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Vidyadhara Ichor Lines",
         "fullDesc": "Pemicuan efek \"Invigoration\" bertambah {{1}} kali.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Aquatic Benediction",
         "fullDesc": "Mengurangi {{1, percent}}% DMG yang diterima karakter berefek \"Invigoration\".",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

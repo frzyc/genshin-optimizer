@@ -5,63 +5,72 @@
       "0": {
         "name": "Frostschuss",
         "fullDesc": "Fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Pelas ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Frostbeule",
         "fullDesc": "Entfernt {{2}} Buff des anvisierten Gegners und fügt dem Ziel Eis-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Pelas ANG zu.",
-        "shortDesc": "<orangeStrong>Entfernt</orangeStrong> 1 <orangeStrong>Buff</orangeStrong> eines Gegners und fügt einem Gegner Eis-SCH zu."
+        "shortDesc": "<orangeStrong>Entfernt</orangeStrong> 1 <orangeStrong>Buff</orangeStrong> eines Gegners und fügt einem Gegner Eis-SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "ult": {
       "0": {
         "name": "Zonenunterdrückung",
         "fullDesc": "Fügt allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von Pelas ANG zu und hat eine Grundchance von {{1, percent}}%, bei jedem Gegner „Universelle Beherrschung“ zu verursachen.<br>Die VTD der Gegner im Status „Universelle Beherrschung“ wird für {{3}} Rd. um <orangeStrong>{{2, percent}}%</orangeStrong> reduziert.",
-        "shortDesc": "Hat eine hohe Chance, die <orangeStrong>VTD</orangeStrong> aller Gegner zu <orangeStrong>reduzieren</orangeStrong> und fügt allen Gegnern geringen Eis-SCH zu."
+        "shortDesc": "Hat eine hohe Chance, die <orangeStrong>VTD</orangeStrong> aller Gegner zu <orangeStrong>reduzieren</orangeStrong> und fügt allen Gegnern geringen Eis-SCH zu.",
+        "tag": "Flächenangriff"
       }
     },
     "talent": {
       "0": {
         "name": "Datensammlung",
         "fullDesc": "Wenn der Gegner nach Pelas Angriff einen Debuff hat, stellt Pela zusätzlich <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> Pkt. Energie wieder her. Dieser Effekt kann nur 1-mal pro Angriff ausgelöst werden.",
-        "shortDesc": "Wenn der Gegner nach Pelas Angriff einen Debuff hat, stellt Pela Energie wieder her."
+        "shortDesc": "Wenn der Gegner nach Pelas Angriff einen Debuff hat, stellt Pela Energie wieder her.",
+        "tag": "Unterstützung"
       }
     },
     "technique": {
       "0": {
         "name": "Präventivschlag",
         "fullDesc": "Greift den Gegner unmittelbar an. Fügt nach Kampfeintritt einem zufälligen Gegner Eis-SCH in Höhe von {{4, percent}}% von Pelas ANG zu und hat eine Grundchance von {{1, percent}}%, die VTD aller Gegner für {{3}} Rd. um {{2, percent}}% zu reduzieren.",
-        "shortDesc": "Greift Gegner an. Fügt nach Kampfeintritt einem zufälligen Gegner geringen Eis-SCH zu und hat eine hohe Chance, die VTD aller Gegner zu reduzieren."
+        "shortDesc": "Greift Gegner an. Fügt nach Kampfeintritt einem zufälligen Gegner geringen Eis-SCH zu und hat eine hohe Chance, die VTD aller Gegner zu reduzieren.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Schlägerei",
         "fullDesc": "Erhöht den SCH an Gegnern mit Debuff um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Geheimstrategie",
         "fullDesc": "Erhöht die Effekt-Trefferrate aller Verbündeten um {{1, percent}}%, wenn Pela mitkämpft.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Auslöschung",
         "fullDesc": "Erhöht den SCH durch den nächsten Angriff um {{1, percent}}%, wenn beim Einsatz der Fertigkeit ein Buff entfernt wird.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

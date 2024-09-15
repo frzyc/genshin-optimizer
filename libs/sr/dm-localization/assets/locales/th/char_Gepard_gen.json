@@ -5,63 +5,72 @@
       "0": {
         "name": "Fist of Conviction",
         "fullDesc": "สร้าง DMG น้ำแข็ง <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Gepard แก่ศัตรูที่กำหนดหนึ่งตัว",
-        "shortDesc": "สร้าง DMG น้ำแข็งเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว"
+        "shortDesc": "สร้าง DMG น้ำแข็งเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว",
+        "tag": "โจมตีเดี่ยว"
       }
     },
     "skill": {
       "0": {
         "name": "Daunting Smite",
         "fullDesc": "สร้าง DMG น้ำแข็ง <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Gepard แก่ศัตรูที่กำหนดหนึ่งตัว ในขณะเดียวกันศัตรูเป้าหมายที่ถูกโจมตี จะมีโอกาสพื้นฐาน {{2, percent}}% ที่จะติดสถานะแช่แข็ง เป็นเวลา {{3}} เทิร์น<br>โดยขณะที่ติดสถานะแช่แข็ง ศัตรูเป้าหมายจะไม่สามารถแอ็กชันได้ พร้อมทั้งได้รับ DMG น้ำแข็งเพิ่มเติม <orangeStrong>{{4, percent}}%</orangeStrong> ของ ATK ของ Gepard เมื่อเริ่มต้นในแต่ละเทิร์นด้วย",
-        "shortDesc": "สร้าง DMG น้ำแข็งแก่ศัตรูเป้าหมายหนึ่งตัว <orangeStrong>และมีโอกาสทำให้เป้าหมายติดสถานะแช่แข็ง</orangeStrong>"
+        "shortDesc": "สร้าง DMG น้ำแข็งแก่ศัตรูเป้าหมายหนึ่งตัว <orangeStrong>และมีโอกาสทำให้เป้าหมายติดสถานะแช่แข็ง</orangeStrong>",
+        "tag": "โจมตีเดี่ยว"
       }
     },
     "ult": {
       "0": {
         "name": "Enduring Bulwark",
         "fullDesc": "มอบโล่ที่สามารถดูดซับ DMG ได้เท่ากับ <orangeStrong>{{1, percent}}%</orangeStrong> ของ DEF ของ Gepard +<orangeStrong>{{3}}</orangeStrong> ให้กับฝ่ายตัวเองทั้งหมดเป็นเวลา {{2}} เทิร์น",
-        "shortDesc": "<orangeStrong>มอบโล่</orangeStrong>ให้กับฝ่ายเราทั้งหมด"
+        "shortDesc": "<orangeStrong>มอบโล่</orangeStrong>ให้กับฝ่ายเราทั้งหมด",
+        "tag": "ป้องกัน"
       }
     },
     "talent": {
       "0": {
         "name": "Unyielding Will",
         "fullDesc": "เมื่อถูกโจมตีจนถึงตาย Gepard จะไม่หมดสติ และจะฟื้นฟู HP <orangeStrong>{{1, percent}}%</orangeStrong> ของ HP สูงสุดของตัวเองในทันที โดยเอฟเฟกต์นี้จะปล่อยได้แค่ 1 ครั้งต่อการต่อสู้",
-        "shortDesc": "เมื่อถูกโจมตีจนถึงตาย <orangeStrong>จะไม่หมดสติ</orangeStrong> และจะฟื้นฟู HP ทันที ซึ่งสามารถเกิดขึ้นได้เพียงแค่ 1 ครั้งต่อหนึ่งการต่อสู้"
+        "shortDesc": "เมื่อถูกโจมตีจนถึงตาย <orangeStrong>จะไม่หมดสติ</orangeStrong> และจะฟื้นฟู HP ทันที ซึ่งสามารถเกิดขึ้นได้เพียงแค่ 1 ครั้งต่อหนึ่งการต่อสู้",
+        "tag": "ฟื้นฟู"
       }
     },
     "technique": {
       "0": {
         "name": "Comradery",
         "fullDesc": "หลังจากใช้เทคนิคแล้ว เมื่อเริ่มการต่อสู้ครั้งต่อไป จะมอบโล่ที่สามารถดูดซับ DMG {{1, percent}}% ของ DEF ของ Gepard +{{3}} ให้กับฝ่ายตัวเองทั้งหมด เป็นเวลา {{2}} เทิร์น",
-        "shortDesc": "ใช้เทคนิคและเมื่อเริ่มการต่อสู้ครั้งต่อไป ฝ่ายตัวเองทั้งหมดจะได้รับโล่"
+        "shortDesc": "ใช้เทคนิคและเมื่อเริ่มการต่อสู้ครั้งต่อไป ฝ่ายตัวเองทั้งหมดจะได้รับโล่",
+        "tag": "ป้องกัน"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Integrity",
         "fullDesc": "Gepard มีโอกาสถูกศัตรูโจมตีเพิ่มขึ้น",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Commander",
         "fullDesc": "หลังจากปล่อย \"Unyielding Will\" แล้ว พลังงานของ Gepard จะฟื้นฟูจนถึง 100% ทันที",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "วิญญาณนักสู้",
         "fullDesc": "ATK ของ Gepard จะเพิ่มขึ้น {{1, percent}}% ของ DEF ของตัวเองในขณะนั้น โดยเอฟเฟกต์นี้จะรีเฟรชเมื่อเริ่มต้นแต่ละเทิร์น",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

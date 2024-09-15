@@ -5,63 +5,72 @@
       "0": {
         "name": "Eu Quero Ajudar",
         "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Clara a um único inimigo.",
-        "shortDesc": "Causa Dano Físico leve a um único inimigo."
+        "shortDesc": "Causa Dano Físico leve a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Svarog Cuida de Você",
         "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Clara a todos os inimigos e adicionalmente causa Dano Físico igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Clara a inimigos marcados por Svarog com uma Marca do Contra-Ataque.<br>Após o uso desta Perícia, todas as Marcas do Contra-Ataque serão removidas.",
-        "shortDesc": "Causa Dano Físico a todos os inimigos. <orangeStrong>Adicionalmente, causa Dano Físico</orangeStrong> a alvos com Marcas do Contra-Ataque."
+        "shortDesc": "Causa Dano Físico a todos os inimigos. <orangeStrong>Adicionalmente, causa Dano Físico</orangeStrong> a alvos com Marcas do Contra-Ataque.",
+        "tag": "Área"
       }
     },
     "ult": {
       "0": {
         "name": "É Uma Promessa, Não Uma Ordem",
         "fullDesc": "Após Clara usar sua Perícia Suprema, o Dano causado a ela é reduzido em <orangeStrong>{{4, percent}}%</orangeStrong> extra, e ela terá muito mais chances de ser atacada por inimigos por {{3}} rodada(s).<br>Além disso, o Contra-Ataque de Svarog é aprimorado. Quando um aliado é atacado, Svarog usa um Contra-Ataque imediatamente, e seu multiplicador de Dano contra o inimigo aumenta em <orangeStrong>{{2, percent}}%</orangeStrong>. Inimigos adjacentes a ele sofrem 50% do Dano causado ao inimigo-alvo principal. Contra-Ataque(s) aprimorado(s) podem entrar em vigor {{5}} vez(es).",
-        "shortDesc": "<orangeStrong>Reduz o Dano recebido</orangeStrong>, aumenta as chances de receber ataques de inimigos, e aprimora Contra-Ataques."
+        "shortDesc": "<orangeStrong>Reduz o Dano recebido</orangeStrong>, aumenta as chances de receber ataques de inimigos, e aprimora Contra-Ataques.",
+        "tag": "Aprimoramento"
       }
     },
     "talent": {
       "0": {
         "name": "Porque Somos Uma Família",
         "fullDesc": "Sob a proteção de Svarog, o Dano recebido por Clara ao ser atingida por ataques inimigos é reduzido em {{3, percent}}%. Svarog marca inimigos que atacarem Clara com sua Marca do Contra-Ataque e então Contra-Ataca, causando Dano Físico igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Clara.",
-        "shortDesc": "<orangeStrong>O Dano recebido de ataques inimigos é reduzido</orangeStrong>. Inimigos que atacarem Clara serão marcados com uma Marca do Contra-Ataque, e <orangeStrong>receberão um Contra-Ataque</orangeStrong> de Svarog que causa Dano Físico."
+        "shortDesc": "<orangeStrong>O Dano recebido de ataques inimigos é reduzido</orangeStrong>. Inimigos que atacarem Clara serão marcados com uma Marca do Contra-Ataque, e <orangeStrong>receberão um Contra-Ataque</orangeStrong> de Svarog que causa Dano Físico.",
+        "tag": "Alvo Único"
       }
     },
     "technique": {
       "0": {
         "name": "Um Preço Baixo pela Vitória",
         "fullDesc": "Ataca o inimigo imediatamente. Ao entrar na batalha, a chance de Clara ser atacada por inimigos aumenta por {{1}} rodada(s).",
-        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, a chance desta personagem ser atacada por inimigos aumenta."
+        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, a chance desta personagem ser atacada por inimigos aumenta.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Afinidade",
         "fullDesc": "Ao receber um ataque, este personagem tem uma chance fixa de {{1, percent}}% de remover uma penalidade que tiver sido aplicada a ele.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Sob Proteção",
         "fullDesc": "A chance de resistir a penalidades de Controle Negativo aumenta em {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Vingança",
         "fullDesc": "Aumenta em {{1, percent}}% o Dano de Contra-Ataque de Svarog.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

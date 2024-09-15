@@ -5,63 +5,72 @@
       "0": {
         "name": "石火流光",
         "fullDesc": "对指定敌方单体造成等同于景元<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的雷属性伤害。",
-        "shortDesc": "对敌方单体造成少量雷属性伤害。"
+        "shortDesc": "对敌方单体造成少量雷属性伤害。",
+        "tag": "单攻"
       }
     },
     "skill": {
       "0": {
         "name": "紫霄震曜",
         "fullDesc": "对敌方全体造成等同于景元<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的雷属性伤害，同时增加{{2}}段【神君】下回合的攻击段数。",
-        "shortDesc": "对敌方全体造成少量雷属性伤害，<orangeStrong>增加【神君】的攻击段数</orangeStrong>。"
+        "shortDesc": "对敌方全体造成少量雷属性伤害，<orangeStrong>增加【神君】的攻击段数</orangeStrong>。",
+        "tag": "群攻"
       }
     },
     "ult": {
       "0": {
         "name": "吾身光明",
         "fullDesc": "对敌方全体造成等同于景元<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的雷属性伤害。同时增加{{2}}段【神君】下回合的攻击段数。",
-        "shortDesc": "对敌方全体造成雷属性伤害，<orangeStrong>增加【神君】的攻击段数</orangeStrong>。"
+        "shortDesc": "对敌方全体造成雷属性伤害，<orangeStrong>增加【神君】的攻击段数</orangeStrong>。",
+        "tag": "群攻"
       }
     },
     "talent": {
       "0": {
         "name": "斩勘神形",
         "fullDesc": "战斗开始时召唤【神君】。【神君】初始拥有{{1}}点速度以及{{4}}段攻击段数，行动时发动追加攻击，每段攻击对随机敌方单体造成等同于景元攻击力<orangeStrong>{{2, percent}}%</orangeStrong>的雷属性伤害，同时对其相邻目标造成等同于主目标{{5, percent}}%的雷属性伤害。<br>【神君】最多累计{{6}}段攻击段数且每增加1段攻击段数，速度提高{{3}}点，行动结束后速度和攻击段数恢复至初始状态。<br>当景元陷入无法战斗状态时【神君】消失。<br>当景元受到控制类负面状态影响时【神君】也无法行动。",
-        "shortDesc": "战斗开始时召唤【神君】，【神君】<orangeStrong>自动</orangeStrong>对随机敌方单体及其相邻目标<orangeStrong>造成少量雷属性伤害</orangeStrong>。"
+        "shortDesc": "战斗开始时召唤【神君】，【神君】<orangeStrong>自动</orangeStrong>对随机敌方单体及其相邻目标<orangeStrong>造成少量雷属性伤害</orangeStrong>。",
+        "tag": "弹射"
       }
     },
     "technique": {
       "0": {
         "name": "摄召威灵",
         "fullDesc": "使用秘技后，下一次战斗开始时【神君】第1回合的攻击段数增加{{1}}段。",
-        "shortDesc": "使用秘技，下一次进战时<orangeStrong>增加【神君】的攻击段数</orangeStrong>。"
+        "shortDesc": "使用秘技，下一次进战时<orangeStrong>增加【神君】的攻击段数</orangeStrong>。",
+        "tag": "强化"
       }
     },
     "overworld": {
       "0": {
         "name": "攻击",
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "破阵",
         "fullDesc": "若【神君】下回合的攻击段数大于等于{{1}}段，则其下回合的暴击伤害提高{{2, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "绸缪",
         "fullDesc": "战斗开始时，立即恢复{{1}}点能量。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "遣将",
         "fullDesc": "施放战技后，暴击率提升{{1, percent}}%，持续{{2}}回合。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

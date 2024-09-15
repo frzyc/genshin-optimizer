@@ -5,63 +5,72 @@
       "0": {
         "name": "Lightning Rush",
         "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Arlan pada 1 target musuh.",
-        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Shackle Breaker",
         "fullDesc": "Mengonsumsi HP sebesar {{1, percent}}% Max HP Arlan dan mengakibatkan Lightning DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Arlan pada 1 target musuh. Jika HP saat ini tidak cukup, HP Arlan saat ini akan berkurang hingga 1 saat melancarkan skill.",
-        "shortDesc": "Mengonsumsi sebagian HP diri sendiri dan mengakibatkan Lightning DMG pada 1 musuh."
+        "shortDesc": "Mengonsumsi sebagian HP diri sendiri dan mengakibatkan Lightning DMG pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "ult": {
       "0": {
         "name": "Frenzied Punishment",
         "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Arlan pada 1 target musuh, dan di saat bersamaan mengakibatkan Lightning DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Arlan pada musuh di sekitar target.",
-        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah besar pada 1 musuh, dan mengakibatkan Lightning DMG pada musuh di sekitar target."
+        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah besar pada 1 musuh, dan mengakibatkan Lightning DMG pada musuh di sekitar target.",
+        "tag": "Blast"
       }
     },
     "talent": {
       "0": {
         "name": "Pain and Anger",
         "fullDesc": "Memperoleh bonus DMG berdasarkan persentase HP Arlan yang berkurang saat ini, maksimal dapat meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> DMG.",
-        "shortDesc": "<orangeStrong>Meningkatkan DMG berdasarkan persentase HP</orangeStrong> diri sendiri <orangeStrong>yang berkurang</orangeStrong>."
+        "shortDesc": "<orangeStrong>Meningkatkan DMG berdasarkan persentase HP</orangeStrong> diri sendiri <orangeStrong>yang berkurang</orangeStrong>.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Swift Harvest",
         "fullDesc": "Segera menyerang musuh dan setelah memasuki pertempuran, mengakibatkan Lightning DMG sebesar {{1, percent}}% ATK Arlan pada seluruh musuh.",
-        "shortDesc": "Menyerang musuh dan mengakibatkan Lightning DMG dalam jumlah kecil pada seluruh musuh setelah memasuki pertempuran."
+        "shortDesc": "Menyerang musuh dan mengakibatkan Lightning DMG dalam jumlah kecil pada seluruh musuh setelah memasuki pertempuran.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Revival",
         "fullDesc": "Saat mengalahkan target musuh, jika persentase HP saat ini kurang dari atau sama dengan {{1, percent}}%, maka Arlan akan segera memulihkan HP sebesar {{2, percent}}% Max HP dirinya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Endurance",
         "fullDesc": "Meningkatkan {{1, percent}}% peluang untuk menahan DoT Debuff.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Repel",
         "fullDesc": "Saat memasuki pertempuran, jika persentase HP Arlan saat ini kurang dari atau sama dengan {{1, percent}}%, Arlan dapat menahan semua DMG selain DoT. Efek ini akan hilang setelah Arlan terkena serangan.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

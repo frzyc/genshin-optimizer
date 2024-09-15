@@ -5,63 +5,72 @@
       "0": {
         "name": "Flecha helada",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Siete de Marzo como Daño de Hielo a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "El poder de la belleza",
         "fullDesc": "Otorga a un aliado un escudo que absorbe un daño equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> de la DEF de Siete de Marzo + <orangeStrong>{{4}}</orangeStrong> durante {{2}} turnos.<br>Si el porcentaje de PV de ese aliado es igual o superior al {{3, percent}}%, la probabilidad de que reciba un ataque enemigo será mucho mayor.",
-        "shortDesc": "Otorga un <orangeStrong>escudo</orangeStrong> a un aliado."
+        "shortDesc": "Otorga un <orangeStrong>escudo</orangeStrong> a un aliado.",
+        "tag": "Defensa"
       }
     },
     "ult": {
       "0": {
         "name": "Lluvia glacial",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Siete de Marzo como Daño de Hielo a todos los enemigos. Cada enemigo atacado tiene un {{2, percent}}% de probabilidad base de ser afectado por Congelación durante {{3}} turno.<br>Los enemigos congelados no pueden actuar, y al principio de cada turno reciben un <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ de Siete de Marzo como Daño de Hielo adicional.",
-        "shortDesc": "Inflige Daño de Hielo a <orangeStrong>todos los enemigos</orangeStrong> y hay una <orangeStrong>probabilidad de congelarlos</orangeStrong>."
+        "shortDesc": "Inflige Daño de Hielo a <orangeStrong>todos los enemigos</orangeStrong> y hay una <orangeStrong>probabilidad de congelarlos</orangeStrong>.",
+        "tag": "ATQ AdE"
       }
     },
     "talent": {
       "0": {
         "name": "Poder femenino",
         "fullDesc": "Cuando un aliado con un escudo recibe un ataque enemigo, Siete de Marzo lanza inmediatamente un contraataque contra dicho enemigo y le inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño de Hielo. Este efecto puede activarse {{2}} veces en cada turno.",
-        "shortDesc": "Cuando un aliado con un escudo recibe un ataque enemigo, Siete de Marzo <orangeStrong>contraataca inmediatamente</orangeStrong> e inflige una pequeña cantidad de Daño de Hielo al atacante."
+        "shortDesc": "Cuando un aliado con un escudo recibe un ataque enemigo, Siete de Marzo <orangeStrong>contraataca inmediatamente</orangeStrong> e inflige una pequeña cantidad de Daño de Hielo al atacante.",
+        "tag": "ATQ individual"
       }
     },
     "technique": {
       "0": {
         "name": "Belleza heladora",
         "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Tiene un {{1, percent}}% de probabilidad base de afectar con Congelación a un enemigo al azar durante {{2}} turno.<br>Los enemigos congelados no pueden actuar, y al principio de cada turno reciben un {{3, percent}}% del ATQ de Siete de Marzo como Daño de Hielo adicional.",
-        "shortDesc": "Ataca al enemigo y entra en combate. Gran probabilidad de afectar con Congelación a un enemigo al azar."
+        "shortDesc": "Ataca al enemigo y entra en combate. Gran probabilidad de afectar con Congelación a un enemigo al azar.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Purificación",
         "fullDesc": "Al usar la habilidad básica, se elimina 1 estado negativo del objetivo aliado.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Refuerzo",
         "fullDesc": "La duración del escudo que proporciona la habilidad básica aumenta en {{1}} turno.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Conjuro helado",
         "fullDesc": "Al usar la habilidad definitiva, la probabilidad base de congelar al objetivo aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

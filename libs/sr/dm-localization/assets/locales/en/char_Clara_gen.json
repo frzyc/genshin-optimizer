@@ -5,63 +5,72 @@
       "0": {
         "name": "I Want to Help",
         "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Clara's ATK to a single enemy.",
-        "shortDesc": "Deals minor Physical DMG to a single enemy."
+        "shortDesc": "Deals minor Physical DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Svarog Watches Over You",
         "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Clara's ATK to all enemies, and additionally deals Physical DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Clara's ATK to enemies marked by Svarog with a Mark of Counter.<br>All Marks of Counter will be removed after this Skill is used.",
-        "shortDesc": "Deals Physical DMG to all enemies. <orangeStrong>Additionally deals Physical DMG</orangeStrong> to targets with Marks of Counter."
+        "shortDesc": "Deals Physical DMG to all enemies. <orangeStrong>Additionally deals Physical DMG</orangeStrong> to targets with Marks of Counter.",
+        "tag": "AoE"
       }
     },
     "ult": {
       "0": {
         "name": "Promise, Not Command",
         "fullDesc": "After Clara uses Ultimate, DMG dealt to her is reduced by an extra <orangeStrong>{{4, percent}}%</orangeStrong>, and she has greatly increased chances of being attacked by enemies for {{3}} turn(s).<br>In addition, Svarog's Counter is enhanced. When an ally is attacked, Svarog immediately launches a Counter, and its DMG multiplier against the enemy increases by <orangeStrong>{{2, percent}}%</orangeStrong>. Enemies adjacent to it take 50% of the DMG dealt to the primary target enemy. Enhanced Counter(s) can take effect {{5}} time(s).",
-        "shortDesc": "<orangeStrong>Reduces DMG received</orangeStrong>, increases chance to be attacked by enemies, and enhances Counters."
+        "shortDesc": "<orangeStrong>Reduces DMG received</orangeStrong>, increases chance to be attacked by enemies, and enhances Counters.",
+        "tag": "Enhance"
       }
     },
     "talent": {
       "0": {
         "name": "Because We're Family",
         "fullDesc": "Under the protection of Svarog, DMG taken by Clara when hit by enemy attacks is reduced by {{3, percent}}%. Svarog will mark enemies who attack Clara with his Mark of Counter and retaliate with a Counter, dealing Physical DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Clara's ATK.",
-        "shortDesc": "<orangeStrong>DMG received from enemy attacks is reduced</orangeStrong>. Enemies who attack Clara will be marked with a Mark of Counter and <orangeStrong>met with Svarog's Counter</orangeStrong>, dealing Physical DMG."
+        "shortDesc": "<orangeStrong>DMG received from enemy attacks is reduced</orangeStrong>. Enemies who attack Clara will be marked with a Mark of Counter and <orangeStrong>met with Svarog's Counter</orangeStrong>, dealing Physical DMG.",
+        "tag": "Single Target"
       }
     },
     "technique": {
       "0": {
         "name": "A Small Price for Victory",
         "fullDesc": "Immediately attacks the enemy. Upon entering battle, the chance Clara will be attacked by enemies increases for {{1}} turn(s).",
-        "shortDesc": "Attacks the enemy. After entering battle, this character's chance of being attacked by enemies increases."
+        "shortDesc": "Attacks the enemy. After entering battle, this character's chance of being attacked by enemies increases.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Kinship",
         "fullDesc": "When attacked, this character has a {{1, percent}}% fixed chance to remove a debuff placed on them.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Under Protection",
         "fullDesc": "The chance to resist Crowd Control Debuffs increases by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Revenge",
         "fullDesc": "Increases Svarog's Counter DMG by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

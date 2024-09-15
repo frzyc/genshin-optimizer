@@ -5,63 +5,72 @@
       "0": {
         "name": "{RUBY_B#ゆ}揺{RUBY_E#}らめく{RUBY_B#れいぎ}礼儀{RUBY_E#}",
         "fullDesc": "指定した敵単体に開拓者の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の虚数属性ダメージを与える。"
+        "shortDesc": "敵単体に少量の虚数属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#かんそうきょく}間奏曲{RUBY_E#}が{RUBY_B#ふ}降{RUBY_E#}らす{RUBY_B#あめ}雨{RUBY_E#}",
         "fullDesc": "指定した敵単体に開拓者の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与え、さらに4ヒットする。1ヒットごとに、ランダムな敵単体に開拓者の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の虚数属性ダメージを与える、5回バウンドする。"
+        "shortDesc": "敵単体に少量の虚数属性ダメージを与える、5回バウンドする。",
+        "tag": "バウンド"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#にぎ}賑{RUBY_E#}やかなパレード",
         "fullDesc": "味方全体に「バックダンス」を付与する、{{1}}ターン継続。開拓者のターンが回ってくるたびに「バックダンス」の継続時間-1ターン。「バックダンス」を持つ味方の撃破特効+<orangeStrong>{{3, percent}}%</orangeStrong>、弱点撃破状態の敵に攻撃を行った後、その回の攻撃の削靭値を1回の超撃破ダメージに転換する。",
-        "shortDesc": "味方全体に「バックダンス」を付与する。「バックダンス」を持つ味方の<orangeStrong>撃破特効がアップする</orangeStrong>。また、弱点撃破状態の敵に攻撃を行った後、さらに<orangeStrong>超撃破ダメージ</orangeStrong>を1回与える。"
+        "shortDesc": "味方全体に「バックダンス」を付与する。「バックダンス」を持つ味方の<orangeStrong>撃破特効がアップする</orangeStrong>。また、弱点撃破状態の敵に攻撃を行った後、さらに<orangeStrong>超撃破ダメージ</orangeStrong>を1回与える。",
+        "tag": "サポート"
       }
     },
     "talent": {
       "0": {
         "name": "エアリアルステップ",
         "fullDesc": "敵が弱点撃破された時、開拓者はEPを<orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong>回復する。",
-        "shortDesc": "敵が弱点撃破された時、開拓者はEPを回復する。"
+        "shortDesc": "敵が弱点撃破された時、開拓者はEPを回復する。",
+        "tag": "サポート"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#そっきょう}即興{RUBY_E#}！{RUBY_B#どくそうだん}独奏団{RUBY_E#}",
         "fullDesc": "秘技を使用した後、次の戦闘開始時、味方全体の撃破特効+{{1, percent}}%、{{2}}ターン継続。",
-        "shortDesc": "次の戦闘開始時、味方全体の撃破特効をアップする。"
+        "shortDesc": "次の戦闘開始時、味方全体の撃破特効をアップする。",
+        "tag": "サポート"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "ダンス・フォー・ミー",
         "fullDesc": "フィールド上の敵の数が5以上/4/3/2/1の場合、「バックダンス」が触発する超撃破ダメージ+{{1, percent}}%/{{2, percent}}%/{{3, percent}}%/{{4, percent}}%/{{5, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#なが}流{RUBY_E#}れに{RUBY_B#み}身{RUBY_E#}を{RUBY_B#まか}任{RUBY_E#}せて",
         "fullDesc": "戦闘スキルを発動する時、1ヒット目の削靭値+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "シアターハット",
         "fullDesc": "味方が敵を弱点撃破した後、さらに敵の行動順を{{1, percent}}%遅延させる。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

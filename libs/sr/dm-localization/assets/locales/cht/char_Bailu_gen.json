@@ -5,63 +5,72 @@
       "0": {
         "name": "望、聞、問……蹴！",
         "fullDesc": "對指定敵方單體造成等同於白露<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性傷害。",
-        "shortDesc": "對敵方單體造成少量雷屬性傷害。"
+        "shortDesc": "對敵方單體造成少量雷屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "雲吟乍湧墜珠露",
         "fullDesc": "立即為指定我方單體回復等同於白露<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{2}}</orangeStrong>的生命值，然後白露隨機為我方單體進行{{4}}次治療，每提供1次治療，下一次的治療量便會降低{{3, percent}}%。",
-        "shortDesc": "為我方單體回復生命值，然後隨機治療我方單體。"
+        "shortDesc": "為我方單體回復生命值，然後隨機治療我方單體。",
+        "tag": "回復"
       }
     },
     "ult": {
       "0": {
         "name": "匏蛟躍淵先雷音",
         "fullDesc": "立即為我方全體回復等同於白露<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{2}}</orangeStrong>的生命值。<br>為沒有【生息】的我方目標附加【生息】，對於已擁有【生息】的我方目標，則使其既有的【生息】持續時間延長1回合。<br>【生息】可持續{{3}}回合，該效果不可疊加。",
-        "shortDesc": "為我方全體回復生命值，並附上【生息】，或延長【生息】持續時間。"
+        "shortDesc": "為我方全體回復生命值，並附上【生息】，或延長【生息】持續時間。",
+        "tag": "回復"
       }
     },
     "talent": {
       "0": {
         "name": "奔走懸壺濟世長",
         "fullDesc": "擁有【生息】的我方目標，在受到攻擊後會回復等同於白露<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{2}}</orangeStrong>的生命值，該效果可以觸發{{5}}次。<br>當白露的隊友受到致命攻擊時，不會陷入無法戰鬥狀態，而由白露立即為其提供治療，回復等同於白露<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{4}}</orangeStrong>的生命值。該效果單場戰鬥中可以觸發1次。",
-        "shortDesc": "擁有<orangeStrong>【生息】</orangeStrong>的我方目標受到攻擊後會<orangeStrong>回復生命值</orangeStrong>。<br>當隊友<orangeStrong>受到致命攻擊時</orangeStrong>，白露<orangeStrong>立即為其回復生命值</orangeStrong>。該效果單場戰鬥中可以觸發1次。"
+        "shortDesc": "擁有<orangeStrong>【生息】</orangeStrong>的我方目標受到攻擊後會<orangeStrong>回復生命值</orangeStrong>。<br>當隊友<orangeStrong>受到致命攻擊時</orangeStrong>，白露<orangeStrong>立即為其回復生命值</orangeStrong>。該效果單場戰鬥中可以觸發1次。",
+        "tag": "回復"
       }
     },
     "technique": {
       "0": {
         "name": "徜徉靈澤病恙短",
         "fullDesc": "使用秘技後，下一次戰鬥開始時為我方全體附加【生息】，持續{{1}}回合。",
-        "shortDesc": "使用秘技，下一次戰鬥開始時為我方全體附上【生息】。"
+        "shortDesc": "使用秘技，下一次戰鬥開始時為我方全體附上【生息】。",
+        "tag": "回復"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "岐黃精義",
         "fullDesc": "白露對我方目標造成過量治療時會提高目標{{1, percent}}%的生命上限，持續{{2}}回合。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "持明龍脈",
         "fullDesc": "【生息】效果的觸發次數增加{{1}}次。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "鱗淵福澤",
         "fullDesc": "擁有【生息】的角色受到的傷害降低{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

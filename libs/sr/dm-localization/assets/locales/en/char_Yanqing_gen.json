@@ -5,63 +5,72 @@
       "0": {
         "name": "Frost Thorn",
         "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Yanqing's ATK to a single enemy.",
-        "shortDesc": "Deals minor Ice DMG to a single enemy."
+        "shortDesc": "Deals minor Ice DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Darting Ironthorn",
         "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Yanqing's ATK to a single enemy and activates Soulsteel Sync for 1 turn.",
-        "shortDesc": "Deals Ice DMG to a single enemy and activates the Soulsteel Sync."
+        "shortDesc": "Deals Ice DMG to a single enemy and activates the Soulsteel Sync.",
+        "tag": "Single Target"
       }
     },
     "ult": {
       "0": {
         "name": "Amidst the Raining Bliss",
         "fullDesc": "Increases Yanqing's CRIT Rate by {{1, percent}}%. When Soulsteel Sync is active, increases Yanqing's CRIT DMG by an extra <orangeStrong>{{2, percent}}%</orangeStrong>. This buff lasts for one turn. Afterwards, deals Ice DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Yanqing's ATK to a single enemy.",
-        "shortDesc": "Increases Yanqing's CRIT Rate. Enhances \"Soulsteel Sync\" and deals massive Ice DMG to a single enemy."
+        "shortDesc": "Increases Yanqing's CRIT Rate. Enhances \"Soulsteel Sync\" and deals massive Ice DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "talent": {
       "0": {
         "name": "One With the Sword",
         "fullDesc": "When Soulsteel Sync is active, Yanqing is less likely to be attacked by enemies. Yanqing's CRIT Rate increases by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> and his CRIT DMG increases by <orangeStrong>{{2, percent}}%</orangeStrong>. After Yanqing attacks an enemy, there is a <orangeStrong>{{3, percent}}%</orangeStrong> fixed chance to perform a follow-up attack, dealing Ice DMG equal to <orangeStrong>{{4, percent}}%</orangeStrong> of Yanqing's ATK to the enemy, which has a {{6, percent}}% base chance to Freeze the enemy for 1 turn.<br>The Frozen target cannot take action and receives Additional Ice DMG equal to <orangeStrong>{{5, percent}}%</orangeStrong> of Yanqing's ATK at the beginning of each turn.<br>When Yanqing receives DMG, the Soulsteel Sync effect will disappear.",
-        "shortDesc": "<orangeStrong>During Soulsteel Sync</orangeStrong>, reduces the chance of this character being attacked and <orangeStrong>increases their CRIT Rate and CRIT DMG</orangeStrong>. <orangeStrong>After attacking an enemy</orangeStrong>, there is a chance of launching a follow-up attack, dealing Ice DMG with a chance to Freeze the target.<br>Soulsteel Sync will be removed after this character receives damage."
+        "shortDesc": "<orangeStrong>During Soulsteel Sync</orangeStrong>, reduces the chance of this character being attacked and <orangeStrong>increases their CRIT Rate and CRIT DMG</orangeStrong>. <orangeStrong>After attacking an enemy</orangeStrong>, there is a chance of launching a follow-up attack, dealing Ice DMG with a chance to Freeze the target.<br>Soulsteel Sync will be removed after this character receives damage.",
+        "tag": "Single Target"
       }
     },
     "technique": {
       "0": {
         "name": "The One True Sword",
         "fullDesc": "After using his Technique, at the start of the next battle, Yanqing deals {{2, percent}}% more DMG for {{3}} turn(s) to enemies whose current HP is {{1, percent}}% or higher.",
-        "shortDesc": "After this character uses Technique, at the start of the next battle, increases the DMG dealt by this character to enemy targets whose HP is 50% or higher."
+        "shortDesc": "After this character uses Technique, at the start of the next battle, increases the DMG dealt by this character to enemy targets whose HP is 50% or higher.",
+        "tag": "Enhance"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Icing on the Kick",
         "fullDesc": "When Yanqing attacks, deals Additional Ice DMG equal to {{1, percent}}% of Yanqing's ATK to enemies with Ice Weakness.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Frost Favors the Brave",
         "fullDesc": "When Soulsteel Sync is active, Effect RES increases by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Gentle Blade",
         "fullDesc": "When a CRIT Hit is triggered, increases SPD by {{1, percent}}% for {{2}} turn(s).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

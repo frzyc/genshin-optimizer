@@ -5,68 +5,78 @@
       "0": {
         "name": "Ê! Coi Chừng Cháy Nổ",
         "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Hook.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Hey! Còn Nhớ Hook Không?",
         "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Hook, đồng thời có {{2, percent}}% xác suất cơ bản khiến mục tiêu rơi vào trạng thái Thiêu Đốt, duy trì {{3}} hiệp.<br>Trong trạng thái Thiêu Đốt, khi bắt đầu mỗi hiệp, kẻ địch sẽ chịu Sát Thương Hỏa duy trì tương đương <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công của Hook.",
-        "shortDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch, xác suất lớn gây trạng thái Thiêu Đốt cho mục tiêu."
+        "shortDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch, xác suất lớn gây trạng thái Thiêu Đốt cho mục tiêu.",
+        "tag": "Đánh Đơn"
       },
       "1": {
         "name": "Hey! Còn Nhớ Hook Không?",
         "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Hook, đồng thời có {{2, percent}}% xác suất cơ bản khiến mục tiêu rơi vào trạng thái Thiêu Đốt, duy trì {{3}} hiệp. Ngoài ra gây cho mục tiêu lân cận của kẻ đó Sát Thương Hỏa bằng <orangeStrong>{{5, percent}}%</orangeStrong> Tấn Công của Hook.<br>Kẻ địch trong trạng thái Thiêu Đốt khi bắt đầu mỗi hiệp sẽ chịu Sát Thương Hỏa duy trì tương đương <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công của Hook.",
-        "shortDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch, có xác suất lớn thi triển trạng thái Thiêu Đốt lên mục tiêu, gây lượng nhỏ Sát Thương Hỏa cho mục tiêu lân cận."
+        "shortDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch, có xác suất lớn thi triển trạng thái Thiêu Đốt lên mục tiêu, gây lượng nhỏ Sát Thương Hỏa cho mục tiêu lân cận.",
+        "tag": "Khuếch Tán"
       }
     },
     "ult": {
       "0": {
         "name": "Pùm! Pháo Hoa Tới Đây!",
         "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Hook.<br>Sau khi thi triển Tuyệt Kỹ, Chiến Kỹ thi triển lần sau sẽ được cường hóa. Chiến Kỹ sau khi cường hóa sẽ gây sát thương cho kẻ địch chỉ định và cả mục tiêu lân cận kẻ đó.",
-        "shortDesc": "Gây lượng lớn Sát Thương Hỏa cho 1 kẻ địch, và <orangeStrong>cường hóa Chiến Kỹ của bản thân ở lần sau</orangeStrong>."
+        "shortDesc": "Gây lượng lớn Sát Thương Hỏa cho 1 kẻ địch, và <orangeStrong>cường hóa Chiến Kỹ của bản thân ở lần sau</orangeStrong>.",
+        "tag": "Đánh Đơn"
       }
     },
     "talent": {
       "0": {
         "name": "Ha! Thêm Dầu Vào Lửa",
         "fullDesc": "Khi tấn công kẻ địch đang trong trạng thái Thiêu Đốt, sẽ bồi thêm 1 lần sát thương kèm theo thuộc tính Hỏa tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Hook, đồng thời hồi thêm {{2}} Năng Lượng.",
-        "shortDesc": "Khi tấn công kẻ địch ở trạng thái Thiêu Đốt, <orangeStrong>gây lượng nhỏ Sát Thương Hỏa Kèm Theo</orangeStrong> và hồi thêm năng lượng."
+        "shortDesc": "Khi tấn công kẻ địch ở trạng thái Thiêu Đốt, <orangeStrong>gây lượng nhỏ Sát Thương Hỏa Kèm Theo</orangeStrong> và hồi thêm năng lượng.",
+        "tag": "Cường Hóa"
       }
     },
     "technique": {
       "0": {
         "name": "Haiz! Xem Mớ Bòng Bong Này!",
         "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu, sẽ gây Sát Thương Hỏa cho 1 kẻ địch ngẫu nhiên bằng {{4, percent}}% Tấn Công của Hook, đồng thời có {{1, percent}}% xác suất cơ bản khiến mỗi kẻ địch rơi vào trạng thái Thiêu Đốt, duy trì {{3}} hiệp.<br>Trong trạng thái Thiêu Đốt, kẻ địch mỗi khi bắt đầu hiệp sẽ chịu Sát Thương Hỏa duy trì tương đương {{2, percent}}% Tấn Công của Hook.",
-        "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây Sát Thương Hỏa cho 1 kẻ địch ngẫu nhiên, và có xác suất lớn khiến toàn bộ kẻ địch rơi vào trạng thái Thiêu Đốt."
+        "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây Sát Thương Hỏa cho 1 kẻ địch ngẫu nhiên, và có xác suất lớn khiến toàn bộ kẻ địch rơi vào trạng thái Thiêu Đốt.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Chất Phác",
         "fullDesc": "Khi kích hoạt Thiên Phú, sẽ hồi HP bằng {{1, percent}}% Giới Hạn HP của Hook.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Ngây Thơ",
         "fullDesc": "Tăng {{1, percent}}% tỷ lệ Kháng Hiệu Ứng Xấu dạng Khống Chế.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Chơi Với Lửa",
         "fullDesc": "Sau khi thi triển Tuyệt Kỹ, Hook Ưu Tiên Hành Động {{2, percent}}% và hồi thêm {{1}} điểm Năng Lượng.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

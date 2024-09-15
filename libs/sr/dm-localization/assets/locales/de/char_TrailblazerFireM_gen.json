@@ -5,68 +5,78 @@
       "0": {
         "name": "Eisbrechendes Licht",
         "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu und erhält 1-fach „Magma-Wille“.",
-        "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu und erhält „Magma-Wille“."
+        "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu und erhält „Magma-Wille“.",
+        "tag": "Einzelangriff"
       },
       "1": {
         "name": "Eisbrechendes Licht",
         "fullDesc": "Verbraucht 4 Stapelungen „Magma-Wille“, um Standardangriff zu verstärken, der einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} und angrenzenden Zielen Feuer-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zufügt.",
-        "shortDesc": "Verbraucht „Magma-Willen“, um einem Gegner Feuer-SCH zuzufügen. Angrenzende Ziel erleiden geringen Feuer-SCH."
+        "shortDesc": "Verbraucht „Magma-Willen“, um einem Gegner Feuer-SCH zuzufügen. Angrenzende Ziel erleiden geringen Feuer-SCH.",
+        "tag": "Ausdehnung"
       }
     },
     "skill": {
       "0": {
         "name": "Ewig brennender Bernstein",
         "fullDesc": "Nach dem Einsatz der Fertigkeit erleidet {M#der Trailblazer}{F#die Trailblazerin} <orangeStrong>{{1, percent}}%</orangeStrong> weniger SCH und erhält 1-fach „Magma-Wille“. Außerdem besteht eine Grundchance von {{2, percent}}%, bei allen Gegnern für {{3}} Rd. Verspotten zu verursachen.",
-        "shortDesc": "Verringert den erlittenen SCH und erhält „Magma-Wille“. Hat eine hohe Chance, bei allen Gegner Verspotten zu verursachen."
+        "shortDesc": "Verringert den erlittenen SCH und erhält „Magma-Wille“. Hat eine hohe Chance, bei allen Gegner Verspotten zu verursachen.",
+        "tag": "Verteidigung"
       }
     },
     "ult": {
       "0": {
         "name": "Flammenlanze hinter den gegnerischen Linien",
         "fullDesc": "Fügt allen Gegnern Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} plus <orangeStrong>{{2, percent}}%</orangeStrong> {M#seiner}{F#ihrer} VTD zu. Der nächste Standardangriff wird automatisch verstärkt und kostet keinen „Magma-Willen“.",
-        "shortDesc": "Fügt allen Gegnern Feuer-SCH zu und verstärkt den nächsten Standardangriff."
+        "shortDesc": "Fügt allen Gegnern Feuer-SCH zu und verstärkt den nächsten Standardangriff.",
+        "tag": "Flächenangriff"
       }
     },
     "talent": {
       "0": {
         "name": "Schatz der Architekten",
         "fullDesc": "Wenn {M#der Trailblazer}{F#die Trailblazerin} angegriffen wird, erhält {F#sie}{M#er} 1 Stapelung „Magma-Wille“, bis zu max. {{3}}-fach stapelbar.<br>Ab 4 Stapelungen Magma-Willen wird der Standardangriff verstärkt und fügt einem anvisierten Gegner sowie angrenzenden Zielen SCH zu.<br>{M#Der Trailblazer}{F#Die Trailblazerin} gewährt allen Verbündeten einen Schild, nachdem {F#sie}{M#er} den Standardangriff, die Fertigkeit oder den Ultimate eingesetzt hat, der SCH in Höhe von <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von der VTD {M#des Trailblazers}{F#der Trailblazerin} plus <orangeStrong>{{4}}</orangeStrong> für {{2}} Rd. blockieren kann.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "Verstärkung"
       }
     },
     "technique": {
       "0": {
         "name": "Ruf des Wächters",
         "fullDesc": "Erhält nach dem Einsatz der Technik und zu Beginn des nächsten Kampfes einen Schild, der SCH in Höhe von {{1, percent}}% von der VTD {M#des Trailblazers}{F#der Trailblazerin} plus {{2}} für {{3}} Rd. blockieren kann.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "Verteidigung"
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Die Starken verteidigen die Schwachen",
         "fullDesc": "Verringert nach dem Einsatz der Fertigkeit den erlittenen SCH aller Verbündeten für {{3}} Rd. um {{2, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Unerschütterliche Tapferkeit",
         "fullDesc": "Stellt nach dem Einsatz des verstärkten Standardangriffs {{1, percent}}% der max. LP {M#des Trailblazers}{F#der Trailblazer} wieder her.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Handeln ist besser als Nachdenken",
         "fullDesc": "Wenn {M#der Trailblazer}{F#die Trailblazerin} zu Beginn der Runde einen Schild hat, werden der ANG bis zum Ende der Aktion um {{2, percent}}% erhöht und {{1}} Pkt. Energie wiederhergestellt.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

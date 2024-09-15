@@ -5,63 +5,72 @@
       "0": {
         "name": "Expulsión",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Tingyun como Daño de Rayo a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Melodía tranquilizadora",
         "fullDesc": "Otorga una Gracia a un aliado y aumenta el ATQ de ese aliado en un <orangeStrong>{{2, percent}}%</orangeStrong> (sin superar el <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ actual de Tingyun).<br>Cuando el aliado que ha recibido la Gracia lanza un ataque, inflige un Daño de Rayo adicional equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ.<br>La Gracia dura {{3}} turnos y solo tiene efecto en el último aliado que haya sido objetivo de la habilidad básica de Tingyun.",
-        "shortDesc": "<orangeStrong>Aumenta el ATQ</orangeStrong> de un aliado y le otorga una Gracia. En este estado, el aliado inflige una pequeña cantidad de <orangeStrong>Daño de Rayo adicional</orangeStrong> al lanzar un ataque."
+        "shortDesc": "<orangeStrong>Aumenta el ATQ</orangeStrong> de un aliado y le otorga una Gracia. En este estado, el aliado inflige una pequeña cantidad de <orangeStrong>Daño de Rayo adicional</orangeStrong> al lanzar un ataque.",
+        "tag": "Apoyo"
       }
     },
     "ult": {
       "0": {
         "name": "Ritual de la nube auspiciosa",
         "fullDesc": "Hace que un aliado recupere {{1}} pts. de energía e inflija un <orangeStrong>{{3, percent}}%</orangeStrong> más de daño durante {{2}} turnos.",
-        "shortDesc": "Hace que un aliado <orangeStrong>recupere energía</orangeStrong> e <orangeStrong>inflija más daño</orangeStrong>."
+        "shortDesc": "Hace que un aliado <orangeStrong>recupere energía</orangeStrong> e <orangeStrong>inflija más daño</orangeStrong>.",
+        "tag": "Apoyo"
       }
     },
     "talent": {
       "0": {
         "name": "Ciclón de chispas violetas",
         "fullDesc": "Cuando un enemigo recibe un ataque de Tingyun, el aliado que tiene la Gracia le inflige inmediatamente un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño de Rayo adicional.",
-        "shortDesc": "Cuando un enemigo recibe un ataque de Tingyun, el aliado que tiene la Gracia le inflige inmediatamente una pequeña cantidad de Daño de Rayo adicional."
+        "shortDesc": "Cuando un enemigo recibe un ataque de Tingyun, el aliado que tiene la Gracia le inflige inmediatamente una pequeña cantidad de Daño de Rayo adicional.",
+        "tag": "Potenciación"
       }
     },
     "technique": {
       "0": {
         "name": "Brisa acariciadora",
         "fullDesc": "Tras usar la técnica, Tingyun recupera {{1}} pts. de energía.",
-        "shortDesc": "Tras usar la técnica, recupera energía."
+        "shortDesc": "Tras usar la técnica, recupera energía.",
+        "tag": "Apoyo"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Jovialidad nutrida",
         "fullDesc": "La VEL de Tingyun aumenta en un {{1, percent}}% durante 1 turno al usar la habilidad básica.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Represión de la sentencia",
         "fullDesc": "El daño que inflige el ATQ básico aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Pasaje jubiloso",
         "fullDesc": "Tingyun recupera {{1}} pts. de energía al comienzo de su turno.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

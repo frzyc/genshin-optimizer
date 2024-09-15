@@ -5,63 +5,72 @@
       "0": {
         "name": "Diagnostic musclé",
         "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Bailu à un ennemi unique.",
-        "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique."
+        "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Chanter parmi les nuages",
         "fullDesc": "Soigne immédiatement un allié unique à hauteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> des PV max de Bailu + <orangeStrong>{{2}}</orangeStrong>. Bailu soigne ensuite les alliés de manière aléatoire {{4}} fois. Après chaque soin, les PV restaurés par le soin suivant diminuent de {{3, percent}}%.",
-        "shortDesc": "Restaure les PV d'un allié unique, puis soigne des alliés de manière aléatoire."
+        "shortDesc": "Restaure les PV d'un allié unique, puis soigne des alliés de manière aléatoire.",
+        "tag": "Restauration"
       }
     },
     "ult": {
       "0": {
         "name": "Foudroyés par la félicité",
         "fullDesc": "Soigne immédiatement tous les alliés à hauteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> des PV max de Bailu + <orangeStrong>{{2}}</orangeStrong>.<br>Bailu accorde Revigoration aux alliés qui ne bénéficient pas encore de cet effet et prolonge l'effet d'1 tour pour ceux qui en bénéficient déjà.<br>L'effet de Revigoration peut durer jusqu'à {{3}} tours. Cet effet n'est pas cumulable.",
-        "shortDesc": "Restaure des PV à tous les alliés et leur accorde Revigoration ou prolonge sa durée."
+        "shortDesc": "Restaure des PV à tous les alliés et leur accorde Revigoration ou prolonge sa durée.",
+        "tag": "Restauration"
       }
     },
     "talent": {
       "0": {
         "name": "Gourde d'élixir",
         "fullDesc": "Lorsqu'un allié qui bénéficie de Revigoration est touché, restaure ses PV à hauteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> des PV max de Bailu + <orangeStrong>{{2}}</orangeStrong>. Cet effet peut se déclencher {{5}} fois.<br>Quand un allié subit un coup fatal, il ne tombe pas à terre, mais Bailu le soigne immédiatement à hauteur de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de ses propres PV max + <orangeStrong>{{4}}</orangeStrong>. Cet effet peut être déclenché 1 fois par combat.",
-        "shortDesc": "Les alliés qui bénéficient de <orangeStrong>Revigoration</orangeStrong> <orangeStrong>regagnent des PV</orangeStrong> après avoir été attaqués.<br>Lorsqu'un allié subit un <orangeStrong>coup fatal</orangeStrong>, Bailu lui <orangeStrong>restaure immédiatement des PV</orangeStrong>. Cet effet ne peut être déclenché qu'1 seule fois par combat."
+        "shortDesc": "Les alliés qui bénéficient de <orangeStrong>Revigoration</orangeStrong> <orangeStrong>regagnent des PV</orangeStrong> après avoir été attaqués.<br>Lorsqu'un allié subit un <orangeStrong>coup fatal</orangeStrong>, Bailu lui <orangeStrong>restaure immédiatement des PV</orangeStrong>. Cet effet ne peut être déclenché qu'1 seule fois par combat.",
+        "tag": "Restauration"
       }
     },
     "technique": {
       "0": {
         "name": "Flânerie sous la pluie",
         "fullDesc": "Après utilisation de la technique, tous les alliés sont revigorés pendant {{1}} tours au début du combat suivant.",
-        "shortDesc": "Après utilisation de la technique, octroie Revigoration à tous les alliés au début du combat suivant."
+        "shortDesc": "Après utilisation de la technique, octroie Revigoration à tous les alliés au début du combat suivant.",
+        "tag": "Restauration"
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Analectes du Qihuang",
         "fullDesc": "Lorsque Bailu soigne une cible alliée au-delà de ses PV max normaux, les PV max de la cible augmentent de {{1, percent}}% pendant {{2}} tours.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Ichor vidyadharien",
         "fullDesc": "Revigoration peut se déclencher {{1}} fois supplémentaire.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Bénédiction aquatique",
         "fullDesc": "Les personnages revigorés subissent {{1, percent}}% de DGT en moins.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,63 +5,72 @@
       "0": {
         "name": "Coup de tonnerre rugissant",
         "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Serval à un ennemi unique.",
-        "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique."
+        "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Éclair rapide",
         "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Serval à un ennemi unique et des DGT de foudre équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Serval aux ennemis adjacents, avec {{3, percent}}% de chances de base de stupéfier les ennemis touchés pendant {{4}} tours.<br>Les ennemis stupéfiés subissent des dégâts de foudre sur la durée équivalents à <orangeStrong>{{5, percent}}%</orangeStrong> de l'ATQ de Serval au début de chaque tour.",
-        "shortDesc": "Inflige des DGT de foudre à un ennemi et aux cibles adjacentes, avec de fortes chances de provoquer <orangeStrong>Stupéfaction</orangeStrong>."
+        "shortDesc": "Inflige des DGT de foudre à un ennemi et aux cibles adjacentes, avec de fortes chances de provoquer <orangeStrong>Stupéfaction</orangeStrong>.",
+        "tag": "Propagation"
       }
     },
     "ult": {
       "0": {
         "name": "Fièvre mécanique",
         "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Serval à tous les ennemis. Augmente la durée de l'effet Stupéfaction de {{2}} tours pour les ennemis souffrant déjà de cet effet.",
-        "shortDesc": "Inflige des DGT de foudre à tous les ennemis et augmente la durée de Stupéfaction."
+        "shortDesc": "Inflige des DGT de foudre à tous les ennemis et augmente la durée de Stupéfaction.",
+        "tag": "ZdE"
       }
     },
     "talent": {
       "0": {
         "name": "Accords galvaniques",
         "fullDesc": "Serval inflige des DGT de foudre additionnels équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de son ATQ à tous les ennemis stupéfiés après avoir attaqué.",
-        "shortDesc": "Inflige des <orangeStrong>DGT additionnels mineurs</orangeStrong> à tous les ennemis stupéfiés après avoir attaqué."
+        "shortDesc": "Inflige des <orangeStrong>DGT additionnels mineurs</orangeStrong> à tous les ennemis stupéfiés après avoir attaqué.",
+        "tag": "Renforcement"
       }
     },
     "technique": {
       "0": {
         "name": "Bonsoir Belobog",
         "fullDesc": "Engage immédiatement le combat contre les ennemis. Inflige des DGT de foudre équivalents à {{4, percent}}% de l'ATQ de Serval à un ennemi aléatoire après être entré en combat, avec {{1, percent}}% de chances de base que tous les ennemis soient stupéfiés pendant {{3}} tours.<br>Les ennemis stupéfiés subissent des dégâts de foudre sur la durée équivalents à {{2, percent}}% de l'ATQ de Serval au début de chaque tour.",
-        "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT mineurs de foudre à un ennemi unique aléatoire, avec de fortes chances d'appliquer <orangeStrong>Stupéfaction</orangeStrong> à toutes les cibles ennemies après être entré en combat."
+        "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT mineurs de foudre à un ennemi unique aléatoire, avec de fortes chances d'appliquer <orangeStrong>Stupéfaction</orangeStrong> à toutes les cibles ennemies après être entré en combat.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Rock 'n' roll",
         "fullDesc": "Les chances de base de la compétence de stupéfier les ennemis augmentent de {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Vibration des cordes",
         "fullDesc": "Régénère immédiatement {{1}} points d'énergie en début de combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Maniaque",
         "fullDesc": "L'ATQ augmente de {{1, percent}}% pendant {{2}} tours après avoir vaincu un ennemi.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,63 +5,72 @@
       "0": {
         "name": "むしり{RUBY_B#と}取{RUBY_E#}る{RUBY_B#むちう}鞭打{RUBY_E#}ち",
         "fullDesc": "指定した敵単体にジェイドの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の量子属性ダメージを与え、隣接する敵にジェイドの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の量子属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の量子属性ダメージを与え、隣接する敵に少量の量子属性ダメージを与える。"
+        "shortDesc": "敵単体に少量の量子属性ダメージを与え、隣接する敵に少量の量子属性ダメージを与える。",
+        "tag": "拡散攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "ほしいままに{RUBY_B#の}呑{RUBY_E#}み{RUBY_B#こ}込{RUBY_E#}む{RUBY_B#ばいしゅう}買収{RUBY_E#}",
         "fullDesc": "指定した味方単体を「債権回収者」状態にし、その味方の速度+{{1}}、{{4}}ターン継続。<br>「債権回収者」状態の味方単体が攻撃を行った後、命中した敵にジェイドの攻撃力<orangeStrong>{{3, percent}}%</orangeStrong>分の量子属性付加ダメージを1回与え、その味方のHPを最大HP{{2, percent}}%分消費する。残りHPが足りない場合、その味方の残りHPが1になる。<br>ジェイドが「債権回収者」状態の時、ジェイドは速度アップ効果を獲得せず、攻撃を行った後にHPを消費しない。<br>フィールド上に「債権回収者」状態の味方が存在する時、ジェイドは戦闘スキルを発動できない。ジェイドのターンが回ってくるたびに、「債権回収者」状態の継続時間-1ターン。",
-        "shortDesc": "味方単体を<orangeStrong>「債権回収者」</orangeStrong>状態にし、その味方の速度をアップさせる。<orangeStrong>「債権回収者」</orangeStrong>状態の味方は攻撃を行った後にHPを消費し、命中した敵に少量の量子属性付加ダメージを与える。ジェイドが「債権回収者」状態の時、速度アップ効果を獲得せず、攻撃後もHPを消費しない。"
+        "shortDesc": "味方単体を<orangeStrong>「債権回収者」</orangeStrong>状態にし、その味方の速度をアップさせる。<orangeStrong>「債権回収者」</orangeStrong>状態の味方は攻撃を行った後にHPを消費し、命中した敵に少量の量子属性付加ダメージを与える。ジェイドが「債権回収者」状態の時、速度アップ効果を獲得せず、攻撃後もHPを消費しない。",
+        "tag": "サポート"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#よくぼう}欲望{RUBY_E#}の{RUBY_B#ふち}淵{RUBY_E#}での{RUBY_B#じごく}地獄{RUBY_E#}の{RUBY_B#ちぎ}契{RUBY_E#}り",
         "fullDesc": "敵全体にジェイドの攻撃力<orangeStrong>{{3, percent}}%</orangeStrong>分の量子属性ダメージを与える。ジェイドの天賦の追加攻撃を強化し、追加攻撃のダメージ倍率+<orangeStrong>{{1, percent}}%</orangeStrong>、この強化追加攻撃は{{2}}回まで発動できる。",
-        "shortDesc": "敵全体に量子属性ダメージを与え、自身の<orangeStrong>追加攻撃</orangeStrong>ダメージ倍率をアップする。"
+        "shortDesc": "敵全体に量子属性ダメージを与え、自身の<orangeStrong>追加攻撃</orangeStrong>ダメージ倍率をアップする。",
+        "tag": "全体攻撃"
       }
     },
     "talent": {
       "0": {
         "name": "{RUBY_B#とみ}富{RUBY_E#}を{RUBY_B#そ}削{RUBY_E#}ぐ{RUBY_B#どくが}毒牙{RUBY_E#}",
         "fullDesc": "ジェイドまたは「債権回収者」状態の味方が攻撃を行った後、命中した敵1体につき、チャージを1獲得する。チャージが{{3}}に到達した後、チャージを{{3}}消費して追加攻撃を1回行い、敵全体にジェイドの攻撃力<orangeStrong>{{5, percent}}%</orangeStrong>分の量子属性ダメージを与える。この追加攻撃はチャージを獲得しない。<br>ジェイドが天賦の追加攻撃を行う時、即座に「質草」を{{4}}層獲得する。「質草」1層につき、会心ダメージ+<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>、最大で{{2}}層累積できる。",
-        "shortDesc": "ジェイドまたは<orangeStrong>「債権回収者」</orangeStrong>状態の味方が攻撃を行った後、命中した敵1体につき、チャージを1獲得する。チャージが<orangeStrong>{{3}}</orangeStrong>に到達した後、チャージを<orangeStrong>{{3}}</orangeStrong>消費して<orangeStrong>追加攻撃</orangeStrong>を1回行い、敵全体に量子属性ダメージを与える。<br>ジェイドが<orangeStrong>追加攻撃</orangeStrong>を行う時、「質草」を獲得し、会心ダメージがアップする、最大で<orangeStrong>{{2}}</orangeStrong>層累積できる。"
+        "shortDesc": "ジェイドまたは<orangeStrong>「債権回収者」</orangeStrong>状態の味方が攻撃を行った後、命中した敵1体につき、チャージを1獲得する。チャージが<orangeStrong>{{3}}</orangeStrong>に到達した後、チャージを<orangeStrong>{{3}}</orangeStrong>消費して<orangeStrong>追加攻撃</orangeStrong>を1回行い、敵全体に量子属性ダメージを与える。<br>ジェイドが<orangeStrong>追加攻撃</orangeStrong>を行う時、「質草」を獲得し、会心ダメージがアップする、最大で<orangeStrong>{{2}}</orangeStrong>層累積できる。",
+        "tag": "全体攻撃"
       }
     },
     "technique": {
       "0": {
         "name": "ハンターの{RUBY_B#しかい}視界{RUBY_E#}",
         "fullDesc": "秘技を使用した後、一定範囲内の敵を{{1}}秒間の「盲従」状態にする。「盲従」状態の敵は味方を攻撃しない。「盲従」状態の敵を先制攻撃すると、すべての「盲従」状態の敵と戦闘に入る。戦闘開始後、敵全体にジェイドの攻撃力{{2, percent}}%分の量子属性ダメージを与え、「質草」を{{3}}層獲得する。",
-        "shortDesc": "一定範囲内の敵を「盲従」状態にする。「盲従」状態の敵を攻撃すると、すべての「盲従」状態の敵と戦闘に入る。戦闘に入った後、敵全体に少量の量子属性ダメージを与え、「質草」を<orangeStrong>{{3}}</orangeStrong>層獲得する。"
+        "shortDesc": "一定範囲内の敵を「盲従」状態にする。「盲従」状態の敵を攻撃すると、すべての「盲従」状態の敵と戦闘に入る。戦闘に入った後、敵全体に少量の量子属性ダメージを与え、「質草」を<orangeStrong>{{3}}</orangeStrong>層獲得する。",
+        "tag": "妨害"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "リバースレポ",
         "fullDesc": "敵が戦闘に入る時、ジェイドは「質草」を{{2}}層獲得する。「債権回収者」状態の味方のターンが回ってくる時、ジェイドは「質草」を{{1}}層獲得する。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#しちふだ}質札{RUBY_E#}",
         "fullDesc": "戦闘開始時、ジェイドの行動順が{{1, percent}}%早まる。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#なが}流{RUBY_E#}れ{RUBY_B#もの}物{RUBY_E#}",
         "fullDesc": "「質草」1層につき、ジェイドの攻撃力+{{1, percent(fixed: 1)}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,63 +5,72 @@
       "0": {
         "name": "Azote de Mara",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Xueyi como Daño Cuántico a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño Cuántico a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño Cuántico a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Aniquilación del mal",
         "fullDesc": "Xueyi inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Cuántico a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño Cuántico a los enemigos adyacentes.",
-        "shortDesc": "Inflige Daño Cuántico a un enemigo y una pequeña cantidad de Daño Cuántico a los enemigos adyacentes."
+        "shortDesc": "Inflige Daño Cuántico a un enemigo y una pequeña cantidad de Daño Cuántico a los enemigos adyacentes.",
+        "tag": "Ráfaga"
       }
     },
     "ult": {
       "0": {
         "name": "Castigo divino",
         "fullDesc": "Inflige un Daño Cuántico equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Xueyi a un enemigo. Este ataque ignora los tipos de Debilidad y consume la Firmeza del objetivo. Al romper la Debilidad, se activa el efecto de Ruptura Cuántica.<br>Durante este ataque, cuanta más Firmeza consuma, más daño inflige, hasta un aumento máximo de un <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.",
-        "shortDesc": "Inflige una gran cantidad de Daño Cuántico a un enemigo. Este ataque <orangeStrong>ignora los tipos de Debilidad</orangeStrong> y reduce la Firmeza del enemigo. Además, causa más daño cuanta más Firmeza consuma."
+        "shortDesc": "Inflige una gran cantidad de Daño Cuántico a un enemigo. Este ataque <orangeStrong>ignora los tipos de Debilidad</orangeStrong> y reduce la Firmeza del enemigo. Además, causa más daño cuanta más Firmeza consuma.",
+        "tag": "ATQ individual"
       }
     },
     "talent": {
       "0": {
         "name": "Perpetuación kármica",
         "fullDesc": "Xueyi acumula Karma cuando su ataque consume la Firmeza del enemigo. Cuanta más Firmeza consuma, más Karma acumulará, hasta un máximo de {{1}} acumulaciones.<br>Cuando un aliado de Xueyi ataca y consume la Firmeza del enemigo, Xueyi obtiene {{3}} acumulación de Karma.<br>Cuando las acumulaciones de Karma llegan al máximo, las consume todas y lanza un ataque adicional a un enemigo que inflige daño 3 veces. Cada vez inflige a un enemigo al azar un Daño Cuántico equivalente al <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Xueyi. Este ataque adicional no acumula Karma.",
-        "shortDesc": "Acumula Karma cuando Xueyi ataca o después de que un aliado de Xueyi ataque y se consuma la Firmeza del enemigo. Cuando las acumulaciones de Karma llegan al máximo, <orangeStrong>lanza un ataque adicional</orangeStrong> que inflige una pequeña cantidad de Daño Cuántico a un enemigo. Se dispara 3 veces y consume todas las acumulaciones de Karma."
+        "shortDesc": "Acumula Karma cuando Xueyi ataca o después de que un aliado de Xueyi ataque y se consuma la Firmeza del enemigo. Cuando las acumulaciones de Karma llegan al máximo, <orangeStrong>lanza un ataque adicional</orangeStrong> que inflige una pequeña cantidad de Daño Cuántico a un enemigo. Se dispara 3 veces y consume todas las acumulaciones de Karma.",
+        "tag": "Rebote"
       }
     },
     "technique": {
       "0": {
         "name": "Ejecución sumaria",
         "fullDesc": "Ataca inmediatamente a un enemigo y entra en combate. Inflige un {{1, percent}}% del ATQ de Xueyi como Daño Cuántico a todos los enemigos.",
-        "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de Daño Cuántico a todos los enemigos."
+        "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de Daño Cuántico a todos los enemigos.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Telar clarividente",
         "fullDesc": "Aumenta el daño que inflige en una cantidad equivalente al {{1, percent}}% del efecto de Ruptura. El daño puede aumentar hasta un máximo del {{2, percent}}% mediante este efecto.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Engranajes intrépidos",
         "fullDesc": "Si la Firmeza del objetivo enemigo es igual o superior al {{1, percent}}% de su Firmeza máxima, el daño de la habilidad definitiva aumenta en un {{2, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Centro de control perspicaz",
         "fullDesc": "Xueyi registra las acumulaciones de Karma que hayan excedido el límite, hasta un máximo de {{1}}. Cuando se active el talento de Xueyi, obtendrá tantas acumulaciones de Karma como acumulaciones adicionales haya registrado.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

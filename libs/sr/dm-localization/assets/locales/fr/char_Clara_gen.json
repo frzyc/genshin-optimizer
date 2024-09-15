@@ -5,63 +5,72 @@
       "0": {
         "name": "Je veux aider",
         "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Clara à un ennemi unique.",
-        "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique."
+        "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Svarog veille sur toi",
         "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Clara à tous les ennemis et des DGT physiques supplémentaires équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Clara aux ennemis marqués par Svarog d'une Marque de contre.<br>Toutes les Marques de contre sont supprimées après utilisation de cette compétence.",
-        "shortDesc": "Inflige des DGT physiques à tous les ennemis et des <orangeStrong>DGT physiques supplémentaires</orangeStrong> aux cibles qui portent une Marque de contre."
+        "shortDesc": "Inflige des DGT physiques à tous les ennemis et des <orangeStrong>DGT physiques supplémentaires</orangeStrong> aux cibles qui portent une Marque de contre.",
+        "tag": "ZdE"
       }
     },
     "ult": {
       "0": {
         "name": "C'est une promesse, pas un ordre",
         "fullDesc": "Après utilisation de l'ultime de Clara, les DGT qu'elle subit sont réduits de <orangeStrong>{{4, percent}}%</orangeStrong> supplémentaires et ses chances d'être attaquée par les ennemis sont considérablement augmentées pendant {{3}} tours.<br>D'autre part, le contre de Svarog est renforcé. Lorsqu'un allié est attaqué, Svarog lance immédiatement un contre et son multiplicateur de DGT contre l'ennemi augmente de <orangeStrong>{{2, percent}}%</orangeStrong>. Les ennemis adjacents subissent 50 % des DGT infligés à la cible ennemie principale. Le contre renforcé peut prendre effet {{5}} fois.",
-        "shortDesc": "<orangeStrong>Réduit les DGT subis</orangeStrong>, augmente les chances d'être attaqué par les ennemis et renforce les contres."
+        "shortDesc": "<orangeStrong>Réduit les DGT subis</orangeStrong>, augmente les chances d'être attaqué par les ennemis et renforce les contres.",
+        "tag": "Renforcement"
       }
     },
     "talent": {
       "0": {
         "name": "Parce qu'on est une famille",
         "fullDesc": "Sous la protection de Svarog, les DGT subis par Clara lorsqu'elle est touchée par des attaques ennemies sont réduits de {{3, percent}}%. Svarog marque les ennemis qui attaquent Clara de sa Marque de contre et riposte avec un contre, infligeant des DGT physiques équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Clara.",
-        "shortDesc": "<orangeStrong>Réduit les DGT infligés par les attaques ennemies</orangeStrong>. Les ennemis qui attaquent Clara obtiennent une Marque de contre, et <orangeStrong>subissent le contre de Svarog</orangeStrong> qui inflige des DGT physiques."
+        "shortDesc": "<orangeStrong>Réduit les DGT infligés par les attaques ennemies</orangeStrong>. Les ennemis qui attaquent Clara obtiennent une Marque de contre, et <orangeStrong>subissent le contre de Svarog</orangeStrong> qui inflige des DGT physiques.",
+        "tag": "Cible unique"
       }
     },
     "technique": {
       "0": {
         "name": "Le prix de la victoire",
         "fullDesc": "Engage immédiatement le combat contre les ennemis. Les chances de Clara de se faire attaquer par des ennemis augmentent pendant {{1}} tours en entrant en combat.",
-        "shortDesc": "Engage le combat contre les ennemis. Les chances de ce personnage d'être attaqué par les ennemis augmentent après être entré en combat."
+        "shortDesc": "Engage le combat contre les ennemis. Les chances de ce personnage d'être attaqué par les ennemis augmentent après être entré en combat.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Une vraie famille",
         "fullDesc": "Lorsque le personnage est attaqué, il a {{1, percent}}% de chances fixes de supprimer un malus qu'il subit.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Sous bonne garde",
         "fullDesc": "Les chances de résister aux malus de contrôle augmentent de {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Vengeance",
         "fullDesc": "Augmente les DGT de contre de Svarog de {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

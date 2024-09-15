@@ -5,63 +5,72 @@
       "0": {
         "name": "Bala del vendaval",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Bronya como Daño de Viento a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Reorganización del combate",
         "fullDesc": "Elimina un estado negativo de un aliado, hace que realice una acción inmediatamente y aumenta el daño que inflige en un <orangeStrong>{{1, percent}}%</orangeStrong> durante {{3}} turno.<br>Si utiliza esta habilidad consigo misma, no se activará la acción inmediata.",
-        "shortDesc": "<orangeStrong>Elimina</orangeStrong> 1 <orangeStrong>estado negativo</orangeStrong> de un aliado, <orangeStrong>aumenta el daño que inflige</orangeStrong> y <orangeStrong>hace que realice una acción inmediatamente</orangeStrong>."
+        "shortDesc": "<orangeStrong>Elimina</orangeStrong> 1 <orangeStrong>estado negativo</orangeStrong> de un aliado, <orangeStrong>aumenta el daño que inflige</orangeStrong> y <orangeStrong>hace que realice una acción inmediatamente</orangeStrong>.",
+        "tag": "Apoyo"
       }
     },
     "ult": {
       "0": {
         "name": "Marcha de Belobog",
         "fullDesc": "El ATQ de todos los aliados aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong> y el Daño CRIT se incrementa en un <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> del Daño CRIT de Bronya + <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> durante {{4}} turnos.",
-        "shortDesc": "Aumenta el <orangeStrong>ATQ</orangeStrong> y el <orangeStrong>Daño CRIT</orangeStrong> de todos los aliados."
+        "shortDesc": "Aumenta el <orangeStrong>ATQ</orangeStrong> y el <orangeStrong>Daño CRIT</orangeStrong> de todos los aliados.",
+        "tag": "Apoyo"
       }
     },
     "talent": {
       "0": {
         "name": "Liderazgo",
         "fullDesc": "Tras usar el ATQ básico, la siguiente acción de Bronya se adelanta un <orangeStrong>{{1, percent}}%</orangeStrong>.",
-        "shortDesc": "Tras usar el ATQ básico, su siguiente acción se adelanta."
+        "shortDesc": "Tras usar el ATQ básico, su siguiente acción se adelanta.",
+        "tag": "Potenciación"
       }
     },
     "technique": {
       "0": {
         "name": "Estandarte de mando",
         "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, el ATQ de todos los aliados aumenta en un {{1, percent}}% durante {{2}} turnos.",
-        "shortDesc": "Tras usar la técnica, el ATQ de todos los aliados aumenta en la siguiente batalla."
+        "shortDesc": "Tras usar la técnica, el ATQ de todos los aliados aumenta en la siguiente batalla.",
+        "tag": "Apoyo"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Orden",
         "fullDesc": "La Prob. CRIT del ATQ básico aumenta hasta el 100%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Campo de batalla",
         "fullDesc": "Al comenzar la batalla, la DEF de todos los aliados aumenta en un {{2, percent}}% durante {{1}} turnos.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Poder militar",
         "fullDesc": "Cuando Bronya está en la batalla, el daño que infligen todos los aliados aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

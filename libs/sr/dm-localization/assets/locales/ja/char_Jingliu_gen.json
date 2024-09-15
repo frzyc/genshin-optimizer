@@ -5,68 +5,78 @@
       "0": {
         "name": "{RUBY_B#りゅうえいせん}流影穿{RUBY_E#}",
         "fullDesc": "指定した敵単体に鏡流の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の氷属性ダメージを与える。"
+        "shortDesc": "敵単体に少量の氷属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#むか}無罅{RUBY_E#}の{RUBY_B#ひこう}飛光{RUBY_E#}",
         "fullDesc": "指定した敵単体に鏡流の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与え、「朔望」を{{2}}層獲得する。",
-        "shortDesc": "指定した敵単体に氷属性ダメージを与え、<orangeStrong>「朔望」を1層</orangeStrong>獲得する。"
+        "shortDesc": "指定した敵単体に氷属性ダメージを与え、<orangeStrong>「朔望」を1層</orangeStrong>獲得する。",
+        "tag": "単体攻撃"
       },
       "1": {
         "name": "{RUBY_B#かんせんえいげつ}寒川映月{RUBY_E#}",
         "fullDesc": "指定した敵単体に鏡流の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与え、隣接する敵に鏡流の攻撃力<orangeStrong>{{3, percent}}%</orangeStrong>分の氷属性ダメージを与える。「朔望」を{{2}}層消費する。このスキルを使用してもSPは消費されない。",
-        "shortDesc": "指定した敵単体と隣接する敵に氷属性ダメージを与え、「朔望」を1層消費する。"
+        "shortDesc": "指定した敵単体と隣接する敵に氷属性ダメージを与え、「朔望」を1層消費する。",
+        "tag": "拡散攻撃"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#どんげしょうめつ}曇華生滅{RUBY_E#}、{RUBY_B#ゆめくだ}夢瀉{RUBY_E#}す{RUBY_B#てんが}天河{RUBY_E#}",
         "fullDesc": "指定した敵単体に鏡流の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与え、隣接する敵に鏡流の攻撃力<orangeStrong>{{3, percent}}%</orangeStrong>分の氷属性ダメージを与える。攻撃を行った後に「朔望」を{{2}}層獲得する。",
-        "shortDesc": "指定した敵単体に大量の氷属性ダメージを与え、隣接する敵に氷属性ダメージを与える。<orangeStrong>「朔望」を1層獲得する</orangeStrong>。"
+        "shortDesc": "指定した敵単体に大量の氷属性ダメージを与え、隣接する敵に氷属性ダメージを与える。<orangeStrong>「朔望」を1層獲得する</orangeStrong>。",
+        "tag": "拡散攻撃"
       }
     },
     "talent": {
       "0": {
         "name": "{RUBY_B#たんげつてんはく}淡月転魄{RUBY_E#}",
         "fullDesc": "「朔望」を{{5}}層所持する時、鏡流は「転魄」状態に入り、会心率+<orangeStrong>{{7, percent}}%</orangeStrong>。同時に行動順を{{6, percent}}%早め、戦闘スキル「無罅の飛光」が「寒川映月」に強化される。「転魄」状態の鏡流はこの強化戦闘スキルのみを使用できる。「転魄」状態で攻撃を行った時、自身以外の味方のHPをそれぞれの最大HP{{2, percent}}%分消費し（残りHPが足りない場合、攻撃を行った時、自身以外の味方の残りHPが1になる）、鏡流の攻撃力が、その回に消費したHP{{3, percent}}%分アップする。攻撃力アップ量は鏡流の基礎攻撃力の<orangeStrong>{{4, percent}}%</orangeStrong>を超えず、その回の攻撃が終了するまで継続。「転魄」状態が終了するまで、再度「転魄」状態に入ることはできない。「朔望」は最大で3層累積できる。「朔望」が0層になると、「転魄」状態が解除される。",
-        "shortDesc": "「朔望」を<orangeStrong>{{5}}</orangeStrong>層持つと「転魄」状態に入り、<orangeStrong>行動順を<unbreak>100%</orangeStrong>早め</color>、自身の会心率をアップして<orangeStrong>戦闘スキルを強化</orangeStrong>する。攻撃を行った時、自身以外の味方のHPを消費し、消費したHPに応じて<orangeStrong>鏡流の攻撃力をアップ</orangeStrong>する。「朔望」が0層になると「転魄」状態は終了する。"
+        "shortDesc": "「朔望」を<orangeStrong>{{5}}</orangeStrong>層持つと「転魄」状態に入り、<orangeStrong>行動順を<unbreak>100%</orangeStrong>早め</color>、自身の会心率をアップして<orangeStrong>戦闘スキルを強化</orangeStrong>する。攻撃を行った時、自身以外の味方のHPを消費し、消費したHPに応じて<orangeStrong>鏡流の攻撃力をアップ</orangeStrong>する。「朔望」が0層になると「転魄」状態は終了する。",
+        "tag": "強化"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#しんしきて}神識照{RUBY_E#}らす{RUBY_B#げつえい}月影{RUBY_E#}",
         "fullDesc": "秘技を使用した後、自身の周囲に{{3}}秒間継続する特殊領域を作り出す。特殊領域内の敵は凍結状態になる。特殊領域内の敵と戦闘に入った後、自身のEPを{{6}}回復し、「朔望」を{{1}}層獲得して{{2, percent}}%の基礎確率で敵を凍結状態にする、{{4}}ターン継続。凍結状態の敵は行動できず、ターンが回ってくるたびに鏡流の攻撃力{{5, percent}}%分の氷属性付加ダメージを受ける。味方が作り出した領域は1つまで存在できる。",
-        "shortDesc": "自身の周囲に特殊領域を作り出す。領域内の敵は<orangeStrong>凍結状態</orangeStrong>になる。領域内の敵と戦闘に入った後、EPを回復し、朔望を1層獲得して高確率で敵を<orangeStrong>凍結状態</orangeStrong>にする。"
+        "shortDesc": "自身の周囲に特殊領域を作り出す。領域内の敵は<orangeStrong>凍結状態</orangeStrong>になる。領域内の敵と戦闘に入った後、EPを回復し、朔望を1層獲得して高確率で敵を<orangeStrong>凍結状態</orangeStrong>にする。",
+        "tag": "妨害"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#しきょう}死境{RUBY_E#}",
         "fullDesc": "「転魄」状態の時、効果抵抗+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#けんしゅ}剣首{RUBY_E#}",
         "fullDesc": "「無罅の飛光」を発動した後、次の行動順が{{1, percent}}%早まる。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#そうはく}霜魄{RUBY_E#}",
         "fullDesc": "「転魄」状態の時、必殺技によるダメージ+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

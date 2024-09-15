@@ -5,63 +5,72 @@
       "0": {
         "name": "Dornen des Abgrunds",
         "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Luochas ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Gebet der Abgrundblume",
         "fullDesc": "Nach dem Einsatz der Fertigkeit stellt er sofort die LP eines anvisierten Verbündeten um <orangeStrong>{{1, percent}}%</orangeStrong> von Luochas ANG plus <orangeStrong>{{2}}</orangeStrong> wieder her. In der Zwischenzeit erhält Luocha 1 Stapelung „Abgrundblume“.<br>Wenn der LP-Prozentsatz eines beliebigen Verbündeten bei {{3, percent}}% oder niedriger liegt, wird ein Effekt, der Luochas Fertigkeit entspricht, sofort ausgelöst (ohne dabei Fertigkeitspunkte zu verbrauchen). Dieser Effekt kann nach {{4}} Rd. erneut ausgelöst werden.",
-        "shortDesc": "<orangeStrong>Stellt</orangeStrong> LP eines Verbündeten <orangeStrong>wieder her</orangeStrong> und erhält 1-fach „Abgrundblume“."
+        "shortDesc": "<orangeStrong>Stellt</orangeStrong> LP eines Verbündeten <orangeStrong>wieder her</orangeStrong> und erhält 1-fach „Abgrundblume“.",
+        "tag": "Wiederherstellung"
       }
     },
     "ult": {
       "0": {
         "name": "Todestrieb",
         "fullDesc": "Entfernt {{2}} Buff von allen Gegnern und fügt ihnen imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Luochas ANG zu. In der Zwischenzeit erhält Luocha 1 Stapelung „Abgrundblume“.",
-        "shortDesc": "<orangeStrong>Entfernt</orangeStrong> 1 <orangeStrong>Buff</orangeStrong> von allen Gegnern, fügt ihnen imaginären SCH zu und erhält 1 Stapelung „Abgrundblume“."
+        "shortDesc": "<orangeStrong>Entfernt</orangeStrong> 1 <orangeStrong>Buff</orangeStrong> von allen Gegnern, fügt ihnen imaginären SCH zu und erhält 1 Stapelung „Abgrundblume“.",
+        "tag": "Flächenangriff"
       }
     },
     "talent": {
       "0": {
         "name": "Zyklus des Lebens",
         "fullDesc": "Wird Abgrundblume {{1}}-fach gestapelt, verbraucht Luocha alle Abgrundblumen, um ein Feld zu erzeugen.<br>Wird ein Gegner innerhalb des Felds von einem Verbündeten angegriffen, erhält der Verbündete unmittelbar LP in Höhe von <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> von Luochas ANG plus <orangeStrong>{{4}}</orangeStrong> zurück.<br>Das Feld hält {{3}} Rd. an. Wenn Luocha handlungsunfähig wird, verschwindet das Feld.",
-        "shortDesc": "Wenn „Abgrundblume“ 2-fach gestapelt wird, wird ein <orangeStrong>Feld erzeugt</orangeStrong>. Solange das Feld aktiv ist, werden die LP der Verbündeten wiederhergestellt, <orangeStrong>nachdem sie einen Angriff ausgeführt</orangeStrong> haben."
+        "shortDesc": "Wenn „Abgrundblume“ 2-fach gestapelt wird, wird ein <orangeStrong>Feld erzeugt</orangeStrong>. Solange das Feld aktiv ist, werden die LP der Verbündeten wiederhergestellt, <orangeStrong>nachdem sie einen Angriff ausgeführt</orangeStrong> haben.",
+        "tag": "Wiederherstellung"
       }
     },
     "technique": {
       "0": {
         "name": "Gnade eines Narren",
         "fullDesc": "Nach dem Einsatz der Technik wird das Talent zu Beginn des nächsten Kampfs sofort ausgelöst.",
-        "shortDesc": "Nach dem Einsatz der Technik wird zu Beginn des nächsten Kampfs der Effekt des Talents sofort ausgelöst."
+        "shortDesc": "Nach dem Einsatz der Technik wird zu Beginn des nächsten Kampfs der Effekt des Talents sofort ausgelöst.",
+        "tag": "Wiederherstellung"
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Reinigende Wiederbelebung",
         "fullDesc": "Wenn der Effekt der Fertigkeit ausgelöst wird, wird {{1}} Debuff von einem anvisierten Verbündeten entfernt.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Geheiligt",
         "fullDesc": "Wenn ein Gegner innerhalb des Felds von einem Verbündeten angegriffen wird, werden die LP aller Verbündeten außer dem Angreifer um {{1, percent(fixed: 1)}}% von Luochas ANG plus {{2}} wiederhergestellt.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Durch das Tal",
         "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

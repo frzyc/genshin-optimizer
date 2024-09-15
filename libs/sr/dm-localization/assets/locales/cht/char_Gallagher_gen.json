@@ -5,68 +5,78 @@
       "0": {
         "name": "開瓶費",
         "fullDesc": "對指定敵方單體造成等同於加拉赫<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的火屬性傷害。",
-        "shortDesc": "對敵方單體造成少量火屬性傷害。"
+        "shortDesc": "對敵方單體造成少量火屬性傷害。",
+        "tag": "單體攻擊"
       },
       "1": {
         "name": "酒花奔湧",
         "fullDesc": "對指定敵方單體造成等同於加拉赫<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的火屬性傷害。並使目標攻擊力降低<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>，持續{{3}}回合。",
-        "shortDesc": "對敵方單體造成火屬性傷害，並降低其攻擊力。"
+        "shortDesc": "對敵方單體造成火屬性傷害，並降低其攻擊力。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "罐裝特調",
         "fullDesc": "立即為指定我方單體回復<orangeStrong>{{1}}</orangeStrong>點生命值。",
-        "shortDesc": "立即為我方單體回復生命值。"
+        "shortDesc": "立即為我方單體回復生命值。",
+        "tag": "回復"
       }
     },
     "ult": {
       "0": {
         "name": "香檳儀禮",
         "fullDesc": "使敵方全體陷入【酩酊】狀態，持續{{2}}回合，同時對敵方全體造成等同於加拉赫<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的火屬性傷害，並將下一次普通攻擊強化為【酒花奔湧】。",
-        "shortDesc": "使敵方全體<orangeStrong>陷入【酩酊】狀態</orangeStrong>，同時對敵方全體造成火屬性傷害。下一次普通攻擊強化為【酒花奔湧】。"
+        "shortDesc": "使敵方全體<orangeStrong>陷入【酩酊】狀態</orangeStrong>，同時對敵方全體造成火屬性傷害。下一次普通攻擊強化為【酒花奔湧】。",
+        "tag": "群體攻擊"
       }
     },
     "talent": {
       "0": {
         "name": "鏖戰正酣",
         "fullDesc": "【酩酊】使目標受到的擊破傷害提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>。陷入【酩酊】狀態的目標每次受到我方角色攻擊後，會回復攻擊者<orangeStrong>{{2}}</orangeStrong>點生命值。",
-        "shortDesc": "【酩酊】使目標<orangeStrong>受到的擊破傷害提高</orangeStrong>，目標每次受到我方角色攻擊後，<orangeStrong>攻擊者回復生命值</orangeStrong>。"
+        "shortDesc": "【酩酊】使目標<orangeStrong>受到的擊破傷害提高</orangeStrong>，目標每次受到我方角色攻擊後，<orangeStrong>攻擊者回復生命值</orangeStrong>。",
+        "tag": "回復"
       }
     },
     "technique": {
       "0": {
         "name": "親啟佳釀",
         "fullDesc": "立即攻擊敵人，進入戰鬥後使敵方全體陷入【酩酊】狀態，持續{{1}}回合，並對敵方全體造成等同於加拉赫{{2, percent}}%攻擊力的火屬性傷害。",
-        "shortDesc": "攻擊敵人，進入戰鬥後使敵方全體<orangeStrong>陷入【酩酊】狀態</orangeStrong>，並對敵方全體造成少量火屬性傷害。"
+        "shortDesc": "攻擊敵人，進入戰鬥後使敵方全體<orangeStrong>陷入【酩酊】狀態</orangeStrong>，並對敵方全體造成少量火屬性傷害。",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "嶄新配方",
         "fullDesc": "使自身提供的治療量提高，提高數值等同於擊破特攻的{{1, percent}}%，最多使提供的治療量提高{{2, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "天然酵母",
         "fullDesc": "施放終結技後，立刻使自己行動提前100%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "敬請乾杯",
         "fullDesc": "加拉赫施放【酒花奔湧】攻擊陷入【酩酊】狀態的目標時，此次天賦提供的生命回復效果也會對我方隊友生效。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

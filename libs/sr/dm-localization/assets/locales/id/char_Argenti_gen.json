@@ -5,68 +5,78 @@
       "0": {
         "name": "Fleeting Fragrance",
         "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Argenti pada 1 target musuh.",
-        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Justice, Hereby Blooms",
         "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Argenti pada seluruh musuh.",
-        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada seluruh musuh."
+        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada seluruh musuh.",
+        "tag": "AoE"
       }
     },
     "ult": {
       "0": {
         "name": "For In This Garden, Supreme Beauty Bestows",
         "fullDesc": "Mengonsumsi {{2}} Energy dan mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Argenti pada seluruh musuh.",
-        "shortDesc": "Mengonsumsi <orangeStrong>{{2}}</orangeStrong> Energy dan mengakibatkan Physical DMG pada seluruh musuh."
+        "shortDesc": "Mengonsumsi <orangeStrong>{{2}}</orangeStrong> Energy dan mengakibatkan Physical DMG pada seluruh musuh.",
+        "tag": "AoE"
       },
       "1": {
         "name": "Merit Bestowed in \"My\" Garden",
         "fullDesc": "Mengonsumsi {{4}} Energy, dan mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Argenti pada seluruh musuh, serta mengakibatkan ekstra {{2}} kali DMG, yang setiap serangannya mengakibatkan Physical DMG sebesar <orangeStrong>{{3, percent}}%</orangeStrong> ATK Argenti pada 1 musuh secara acak.",
-        "shortDesc": "Mengonsumsi <orangeStrong>{{4}}</orangeStrong> Energy dan mengakibatkan Physical DMG pada seluruh musuh, serta mengakibatkan ekstra Physical DMG dalam jumlah kecil pada 1 musuh secara acak, total 6 kali Bounce."
+        "shortDesc": "Mengonsumsi <orangeStrong>{{4}}</orangeStrong> Energy dan mengakibatkan Physical DMG pada seluruh musuh, serta mengakibatkan ekstra Physical DMG dalam jumlah kecil pada 1 musuh secara acak, total 6 kali Bounce.",
+        "tag": "AoE"
       }
     },
     "talent": {
       "0": {
         "name": "Sublime Object",
         "fullDesc": "Saat melancarkan Basic Attack, Skill, atau Ultimate, setiap 1 target musuh yang terkena serangan akan memulihkan {{1}} Energy Argenti dan memberikan 1 lapis \"Apotheosis\", yang akan meningkatkan <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> CRIT Rate Argenti. Efek ini dapat ditumpuk hingga {{3}} lapis.",
-        "shortDesc": "Saat melancarkan Basic Attack, Skill, atau Ultimate, setiap mengenai 1 target musuh akan <orangeStrong>memulihkan Energy</orangeStrong> Argenti dan meningkatkan <orangeStrong>CRIT Rate</orangeStrong> dirinya."
+        "shortDesc": "Saat melancarkan Basic Attack, Skill, atau Ultimate, setiap mengenai 1 target musuh akan <orangeStrong>memulihkan Energy</orangeStrong> Argenti dan meningkatkan <orangeStrong>CRIT Rate</orangeStrong> dirinya.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Manifesto of Purest Virtue",
         "fullDesc": "Setelah menggunakan Technique, membuat musuh dalam area tertentu memasuki status Daze selama {{1}} detik. Musuh berstatus Daze tidak akan menyerang rekan tim secara aktif.<br>Jika Argenti secara aktif menyerang musuh berstatus Daze, saat memasuki pertempuran, Argenti akan mengakibatkan Physical DMG sebesar {{2, percent}}% ATK-nya pada seluruh musuh dan memulihkan {{3}} Energy-nya.",
-        "shortDesc": "Membuat musuh dalam area tertentu memasuki status Daze. Jika menyerang musuh berstatus Daze, setelah memasuki pertempuran, Argenti akan mengakibatkan Physical DMG dalam jumlah kecil pada seluruh musuh, dan memulihkan Energy-nya."
+        "shortDesc": "Membuat musuh dalam area tertentu memasuki status Daze. Jika menyerang musuh berstatus Daze, setelah memasuki pertempuran, Argenti akan mengakibatkan Physical DMG dalam jumlah kecil pada seluruh musuh, dan memulihkan Energy-nya.",
+        "tag": "Impair"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Piety",
         "fullDesc": "Saat giliran dimulai, segera memperoleh {{1}} lapis \"Apotheosis\".",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Generosity",
         "fullDesc": "Segera memulihkan {{1}} Energy diri sendiri saat target musuh memasuki pertempuran.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Courage",
         "fullDesc": "Meningkatkan {{2, percent}}% DMG pada target musuh yang persentase HP-nya kurang dari atau sama dengan {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

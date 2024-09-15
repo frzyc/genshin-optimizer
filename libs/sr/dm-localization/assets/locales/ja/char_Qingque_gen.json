@@ -5,68 +5,78 @@
       "0": {
         "name": "{RUBY_B#メンゼンチン}門前清{RUBY_E#}",
         "fullDesc": "数が一番少ない絵柄の美玉牌を1枚使用し、指定した敵単体に青雀の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の量子属性ダメージを与える。",
-        "shortDesc": "牌を1枚使用し、敵単体に少量の量子属性ダメージを与える。"
+        "shortDesc": "牌を1枚使用し、敵単体に少量の量子属性ダメージを与える。",
+        "tag": "単体攻撃"
       },
       "1": {
         "name": "{RUBY_B#リンシャンカイホウ}嶺上開花{RUBY_E#}！",
         "fullDesc": "指定した敵単体に青雀の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の量子属性ダメージを与え、隣接する敵に青雀の攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の量子属性ダメージを与える。<br>「嶺上開花！」はSPを回復できない。",
-        "shortDesc": "敵単体に量子属性ダメージを与え、隣接する敵に少量の量子属性ダメージを与える。"
+        "shortDesc": "敵単体に量子属性ダメージを与え、隣接する敵に少量の量子属性ダメージを与える。",
+        "tag": "拡散攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#ハイテイラオユエ}海底撈月{RUBY_E#}",
         "fullDesc": "牌を{{1}}枚取り、自身の与ダメージ+<orangeStrong>{{2, percent}}%</orangeStrong>、このターンが終了するまで継続。この効果は最大で{{3}}層累積できる。この戦闘スキルを発動した後、ターンは終了しない。",
-        "shortDesc": "<orangeStrong>牌を取り</orangeStrong>、自身の与ダメージをアップする。<orangeStrong>ターンは終了しない</orangeStrong>。"
+        "shortDesc": "<orangeStrong>牌を取り</orangeStrong>、自身の与ダメージをアップする。<orangeStrong>ターンは終了しない</orangeStrong>。",
+        "tag": "強化"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#ヤオユイアン}幺魚暗{RUBY_E#}カン？アガリ！",
         "fullDesc": "敵全体に青雀の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の量子属性ダメージを与え、同じ絵柄の美玉牌を4枚獲得する。",
-        "shortDesc": "敵全体に量子属性ダメージを与え、同じ絵柄の牌を4枚獲得する。"
+        "shortDesc": "敵全体に量子属性ダメージを与え、同じ絵柄の牌を4枚獲得する。",
+        "tag": "全体攻撃"
       }
     },
     "talent": {
       "0": {
         "name": "{RUBY_B#ていえんびぎょく}帝垣美玉{RUBY_E#}",
         "fullDesc": "味方のターンが回ってきた時、青雀は3つの絵柄の美玉牌の中からランダムに1枚取る、手持ちの美玉牌は最大で4枚まで。<br>青雀のターンが回ってきた時、手持ちに同じ絵柄の美玉牌が4枚ある場合、青雀はすべての美玉牌を消費して「暗カン」状態に入る。<br>「暗カン」状態の時は戦闘スキルを発動できず、自身の攻撃力+<orangeStrong>{{1, percent}}%</orangeStrong>、通常攻撃「門前清」が「嶺上開花！」に強化される。「暗カン」状態は「嶺上開花！」を発動した後に終了する。",
-        "shortDesc": "味方のターンが回ってきた時、牌を取る。自身のターンが回ってきた時、同じ絵柄の牌が4つある場合、牌を全部消費してその回の<orangeStrong>通常攻撃を強化</orangeStrong>し、自身の攻撃力をアップする。"
+        "shortDesc": "味方のターンが回ってきた時、牌を取る。自身のターンが回ってきた時、同じ絵柄の牌が4つある場合、牌を全部消費してその回の<orangeStrong>通常攻撃を強化</orangeStrong>し、自身の攻撃力をアップする。",
+        "tag": "強化"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#どくえき}独奕{RUBY_E#}の{RUBY_B#たの}楽{RUBY_E#}しみ",
         "fullDesc": "秘技を使用した後、戦闘に入る時、青雀は美玉牌を{{1}}枚取る。",
-        "shortDesc": "秘技を使用、次の戦闘に入った時に牌を取る。"
+        "shortDesc": "秘技を使用、次の戦闘に入った時に牌を取る。",
+        "tag": "強化"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#そうはん}争番{RUBY_E#}",
         "fullDesc": "戦闘スキルを発動した時、SPを1回復する。この効果は一度の戦闘で1回まで発動できる。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#テンパイ}聴牌{RUBY_E#}",
         "fullDesc": "戦闘スキルによる、自身の与ダメージアップ効果がさらに{{1, percent}}%アップする。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "チャンカン",
         "fullDesc": "強化通常攻撃を行った後、青雀の速度+{{1, percent}}%、1ターン継続。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

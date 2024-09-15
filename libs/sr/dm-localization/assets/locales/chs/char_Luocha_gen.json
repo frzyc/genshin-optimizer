@@ -5,63 +5,72 @@
       "0": {
         "name": "黑渊的棘刺",
         "fullDesc": "对指定敌方单体造成等同于罗刹<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的虚数属性伤害。",
-        "shortDesc": "对敌方单体造成少量虚数属性伤害。"
+        "shortDesc": "对敌方单体造成少量虚数属性伤害。",
+        "tag": "单攻"
       }
     },
     "skill": {
       "0": {
         "name": "白花的祈望",
         "fullDesc": "施放战技后立即为指定我方单体回复等同于罗刹<orangeStrong>{{1, percent}}%</orangeStrong>攻击力+<orangeStrong>{{2}}</orangeStrong>的生命值，并使罗刹获得1层【白花之刻】。<br>当我方任意单体当前生命值百分比小于等于{{3, percent}}%时，罗刹会立即对其触发1次等同于战技的效果，此次触发不消耗战技点。该效果在{{4}}回合后可再次触发。",
-        "shortDesc": "为我方单体<orangeStrong>回复</orangeStrong>生命值，获得1层【白花之刻】。"
+        "shortDesc": "为我方单体<orangeStrong>回复</orangeStrong>生命值，获得1层【白花之刻】。",
+        "tag": "回复"
       }
     },
     "ult": {
       "0": {
         "name": "归葬的遂愿",
         "fullDesc": "解除敌方全体{{2}}个增益效果，并对敌方全体造成等同于罗刹<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的虚数属性伤害，同时使罗刹获得1层【白花之刻】。",
-        "shortDesc": "<orangeStrong>解除</orangeStrong>敌方全体1个<orangeStrong>增益效果</orangeStrong>，并对敌方全体造成虚数属性伤害，获得1层【白花之刻】。"
+        "shortDesc": "<orangeStrong>解除</orangeStrong>敌方全体1个<orangeStrong>增益效果</orangeStrong>，并对敌方全体造成虚数属性伤害，获得1层【白花之刻】。",
+        "tag": "群攻"
       }
     },
     "talent": {
       "0": {
         "name": "生息的轮转",
         "fullDesc": "当【白花之刻】达到{{1}}层时，罗刹会消耗全部【白花之刻】展开结界。<br>处于结界中的任意敌方目标受到攻击后，施放攻击的我方目标立即回复等同于罗刹<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>攻击力+<orangeStrong>{{4}}</orangeStrong>的生命值。<br>结界效果持续{{3}}回合。当罗刹陷入无法战斗状态时，结界也会被解除。",
-        "shortDesc": "当【白花之刻】2层时<orangeStrong>展开结界</orangeStrong>。结界存在时我方<orangeStrong>攻击后回复</orangeStrong>生命值。"
+        "shortDesc": "当【白花之刻】2层时<orangeStrong>展开结界</orangeStrong>。结界存在时我方<orangeStrong>攻击后回复</orangeStrong>生命值。",
+        "tag": "回复"
       }
     },
     "technique": {
       "0": {
         "name": "愚者的悲悯",
         "fullDesc": "使用秘技后，下一次战斗开始时立即触发天赋。",
-        "shortDesc": "使用秘技，下一次进战后立即触发天赋效果。"
+        "shortDesc": "使用秘技，下一次进战后立即触发天赋效果。",
+        "tag": "回复"
       }
     },
     "overworld": {
       "0": {
         "name": "攻击",
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "浸池苏生",
         "fullDesc": "触发战技效果时，解除指定我方单体的{{1}}个负面效果。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "浇灌尘身",
         "fullDesc": "处于结界中的任意敌方目标受到我方攻击后，除攻击者外的我方目标也会回复等同于罗刹{{1, percent(fixed: 1)}}%攻击力+{{2}}的生命值。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "行过幽谷",
         "fullDesc": "抵抗控制类负面状态的概率提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

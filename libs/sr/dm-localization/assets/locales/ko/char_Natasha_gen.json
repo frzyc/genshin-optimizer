@@ -5,63 +5,72 @@
       "0": {
         "name": "인자함의 이면",
         "fullDesc": "지정된 단일 적에게 나타샤 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 물리 속성 피해를 준다",
-        "shortDesc": "단일 적에게 소량의 물리 속성 피해를 가한다"
+        "shortDesc": "단일 적에게 소량의 물리 속성 피해를 가한다",
+        "tag": "단일 공격"
       }
     },
     "skill": {
       "0": {
         "name": "사랑, 구조와 선택",
         "fullDesc": "지정된 단일 아군의 HP를 즉시 나타샤 HP 최대치의 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>만큼 회복하고, 턴이 시작될 때마다 대상의 HP를 나타샤 HP 최대치의 <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{5}}</orangeStrong>만큼 회복한다. 지속 시간: {{3}}턴",
-        "shortDesc": "단일 아군의 <orangeStrong>HP를 회복하고</orangeStrong> 목표가 <orangeStrong>지속적으로 HP를 회복</orangeStrong>하게 한다"
+        "shortDesc": "단일 아군의 <orangeStrong>HP를 회복하고</orangeStrong> 목표가 <orangeStrong>지속적으로 HP를 회복</orangeStrong>하게 한다",
+        "tag": "회복"
       }
     },
     "ult": {
       "0": {
         "name": "신생의 의례",
         "fullDesc": "모든 아군이 즉시 나타샤 HP 최대치 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>만큼의 HP를 회복한다",
-        "shortDesc": "모든 아군의 <orangeStrong>HP를 회복</orangeStrong>한다"
+        "shortDesc": "모든 아군의 <orangeStrong>HP를 회복</orangeStrong>한다",
+        "tag": "회복"
       }
     },
     "talent": {
       "0": {
         "name": "생기발랄",
         "fullDesc": "현재 HP 백분율이 {{1, percent}}% 이하인 아군에게 치유 제공 시 나타샤의 치유량이 <orangeStrong>{{2, percent}}%</orangeStrong> 증가한다. 해당 효과는 지속 치유 효과에도 적용된다",
-        "shortDesc": "현재 HP 백분율이 낮은 아군에게 치유 제공 시 치유량이 증가한다. 해당 효과는 지속 치유 효과에도 적용된다"
+        "shortDesc": "현재 HP 백분율이 낮은 아군에게 치유 제공 시 치유량이 증가한다. 해당 효과는 지속 치유 효과에도 적용된다",
+        "tag": "강화"
       }
     },
     "technique": {
       "0": {
         "name": "최면 연구",
         "fullDesc": "적을 바로 공격하며, 전투 진입 후 임의의 단일 적에게 나타샤 공격력 {{4, percent}}%만큼의 물리 속성 피해를 준다. 동시에 {{1, percent}}%의 기본 확률로 각 단일 적을 허약 상태에 빠트린다.<br>허약 상태의 적은 아군에게 가하는 피해가 {{2, percent}}% 감소한다. 지속 시간: {{3}}턴",
-        "shortDesc": "적을 공격하며, 전투 진입 후 임의의 단일 적에게 소량의 물리 속성 피해를 가하고, 높은 확률로 각 단일 적을 허약 상태에 빠트린다"
+        "shortDesc": "적을 공격하며, 전투 진입 후 임의의 단일 적에게 소량의 물리 속성 피해를 가하고, 높은 확률로 각 단일 적을 허약 상태에 빠트린다",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "완화",
         "fullDesc": "전투 스킬 발동 시 지정된 단일 아군의 디버프 효과를 {{1}}개 해제한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "의사",
         "fullDesc": "나타샤가 제공하는 치유량이 {{1, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "회복",
         "fullDesc": "전투 스킬 발동으로 생긴 지속 회복 효과를 {{1}}턴 연장한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

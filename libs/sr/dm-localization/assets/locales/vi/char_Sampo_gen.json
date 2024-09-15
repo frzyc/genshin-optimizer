@@ -5,63 +5,72 @@
       "0": {
         "name": "Lưỡi Đao Lóe Sáng",
         "fullDesc": "Gây Sát Thương Phong cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Sampo.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Phong cho 1 kẻ địch."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Phong cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Tình Yêu Rộn Ràng",
         "fullDesc": "Gây sát thương Phong cho 1 kẻ địch chỉ định bằng <orangeStrong>{{2, percent}}%</orangeStrong> tấn công của Sampo, và gây thêm {{1}} lần sát thương, mỗi lần sát thương sẽ gây sát thương Phong cho 1 kẻ địch ngẫu nhiên bằng <orangeStrong>{{2, percent}}%</orangeStrong> tấn công của Sampo.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Phong cho 1 kẻ địch, tổng cộng nảy bật 5 lần."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Phong cho 1 kẻ địch, tổng cộng nảy bật 5 lần.",
+        "tag": "Nảy Bật"
       }
     },
     "ult": {
       "0": {
         "name": "Món Quà Bất Ngờ",
         "fullDesc": "Gây Sát Thương Phong tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Sampo lên toàn phe địch, đồng thời có {{4, percent}}% xác suất cơ bản khiến sát thương duy trì mà kẻ địch bị tấn công phải chịu tăng <orangeStrong>{{2, percent}}%</orangeStrong>, duy trì {{3}} hiệp.",
-        "shortDesc": "Gây Sát Thương Phong cho toàn bộ kẻ địch, có xác suất lớn khiến chúng <orangeStrong>tăng Sát Thương Duy Trì phải chịu</orangeStrong>."
+        "shortDesc": "Gây Sát Thương Phong cho toàn bộ kẻ địch, có xác suất lớn khiến chúng <orangeStrong>tăng Sát Thương Duy Trì phải chịu</orangeStrong>.",
+        "tag": "Đánh Lan"
       }
     },
     "talent": {
       "0": {
         "name": "Dao Găm Xé Gió",
         "fullDesc": "Sampo đánh trúng kẻ địch sẽ có {{1, percent}}% xác suất cơ bản khiến kẻ đó rơi vào trạng thái Bào Mòn, duy trì {{3}} hiệp.<br>Trong trạng thái Bào Mòn, khi bắt đầu mỗi hiệp, kẻ địch phải chịu Sát Thương Phong liên tục tương đương <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Sampo. Trạng thái Bào Mòn tối đa cộng dồn {{4}} tầng.",
-        "shortDesc": "Sau khi bản thân đánh trúng kẻ địch sẽ có xác suất khiến mục tiêu <orangeStrong>rơi vào trạng thái Bào Mòn</orangeStrong>."
+        "shortDesc": "Sau khi bản thân đánh trúng kẻ địch sẽ có xác suất khiến mục tiêu <orangeStrong>rơi vào trạng thái Bào Mòn</orangeStrong>.",
+        "tag": "Cường Hóa"
       }
     },
     "technique": {
       "0": {
         "name": "Tỏa Sáng Rực Rỡ",
         "fullDesc": "Sau khi dùng Bí Kỹ sẽ khiến kẻ địch trong khu vực nhất định rơi vào trạng thái Mù {{1}} giây, kẻ địch ở trạng thái Mù không thể phát hiện mục tiêu phe ta.<br>Nếu chủ động tấn công kẻ địch rơi vào trạng thái Mù thì khi vào chiến đấu sẽ có {{2, percent}}% xác suất cố định khiến mỗi kẻ địch Trì Hoãn Hành Động {{3, percent}}%.",
-        "shortDesc": "Khiến kẻ địch trong khu vực nhất định rơi vào trạng thái Mù. Tấn công kẻ địch trong trạng thái Mù, vào chiến đấu sẽ có xác suất lớn khiến mỗi một kẻ địch trì hoãn hành động."
+        "shortDesc": "Khiến kẻ địch trong khu vực nhất định rơi vào trạng thái Mù. Tấn công kẻ địch trong trạng thái Mù, vào chiến đấu sẽ có xác suất lớn khiến mỗi một kẻ địch trì hoãn hành động.",
+        "tag": "Quấy Nhiễu"
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Bẫy",
         "fullDesc": "Thiên Phú khiến thời gian duy trì trạng thái Bào Mòn của địch kéo dài {{1}} hiệp.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Vị Trí Phòng Thủ",
         "fullDesc": "Khi thi triển Tuyệt Kỹ sẽ hồi thêm {{1}} Năng Lượng.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Sắc Màu Cuộc Sống",
         "fullDesc": "Sát thương mà kẻ địch trong trạng thái Bào Mòn gây cho Sampo giảm {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

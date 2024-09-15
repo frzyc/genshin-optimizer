@@ -5,63 +5,72 @@
       "0": {
         "name": "Dùi Phá Ma",
         "fullDesc": "Gây cho 1 kẻ địch chỉ định sát thương Lượng Tử bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Xueyi.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Lượng Tử cho 1 kẻ địch."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lượng Tử cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Xóa Sổ Ác Nghiệp",
         "fullDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Xueyi, đồng thời gây cho mục tiêu lân cận kẻ đó Sát Thương Lượng Tử tương đương <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Xueyi.",
-        "shortDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch, đồng thời gây lượng nhỏ Sát Thương Lượng Tử cho mục tiêu lân cận."
+        "shortDesc": "Gây Sát Thương Lượng Tử cho 1 kẻ địch, đồng thời gây lượng nhỏ Sát Thương Lượng Tử cho mục tiêu lân cận.",
+        "tag": "Khuếch Tán"
       }
     },
     "ult": {
       "0": {
         "name": "Thiên Phạt Quán Thân",
         "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Lượng Tử bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Xueyi, lần tấn công này bỏ qua các thuộc tính Điểm Yếu và làm giảm Sức Bền của 1 kẻ địch. Khi phá vỡ Điểm Yếu sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu thuộc tính Lượng Tử.<br>Trong lần tấn công này, Sức Bền giảm càng nhiều, Sát Thương gây ra càng cao, tối đa tăng <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.",
-        "shortDesc": "Gây lượng lớn Sát Thương Lượng Tử cho 1 kẻ địch, lần tấn công này <orangeStrong>bỏ qua các thuộc tính Điểm Yếu</orangeStrong> và làm giảm Sức Bền của 1 kẻ địch, Sức Bền giảm càng nhiều, sát thương gây ra càng cao."
+        "shortDesc": "Gây lượng lớn Sát Thương Lượng Tử cho 1 kẻ địch, lần tấn công này <orangeStrong>bỏ qua các thuộc tính Điểm Yếu</orangeStrong> và làm giảm Sức Bền của 1 kẻ địch, Sức Bền giảm càng nhiều, sát thương gây ra càng cao.",
+        "tag": "Đánh Đơn"
       }
     },
     "talent": {
       "0": {
         "name": "Nghiệp Báo Vĩnh Hằng",
         "fullDesc": "Khi Xueyi tấn công làm giảm Sức Bền phe địch sẽ cộng dồn số tầng Ác Báo, Sức Bền giảm càng nhiều, số tầng Ác Báo cộng dồn càng nhiều, có thể cộng dồn {{1}} tầng.<br>Sau khi đồng đội của Xueyi tấn công làm giảm Sức Bền phe địch, Xueyi sẽ cộng dồn {{3}} tầng Ác Báo.<br>Khi Ác Báo cộng dồn đến giới hạn, sẽ tiêu hao tất cả Ác Báo hiện tại, lập tức phát động Đòn Đánh Theo Sau lên kẻ địch, gây ra 3 lần sát thương, mỗi lần sát thương sẽ gây ra Sát Thương Lượng Tử lên 1 kẻ địch ngẫu nhiên bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Xueyi. Đòn Đánh Theo Sau lần này không thể cộng dồn Ác Báo.",
-        "shortDesc": "Khi Xueyi tấn công hoặc sau khi đồng đội của Xueyi tấn công làm giảm Sức Bền của phe địch, Xueyi sẽ cộng dồn Ác Báo. Khi Ác Báo cộng dồn đến giới hạn, <orangeStrong>lập tức phát động Đòn Đánh Theo Sau</orangeStrong>, gây lượng nhỏ Sát Thương Lượng Tử lên 1 kẻ địch, tổng cộng Nảy Bật 3 lần, đồng thời tiêu hao toàn bộ Ác Báo."
+        "shortDesc": "Khi Xueyi tấn công hoặc sau khi đồng đội của Xueyi tấn công làm giảm Sức Bền của phe địch, Xueyi sẽ cộng dồn Ác Báo. Khi Ác Báo cộng dồn đến giới hạn, <orangeStrong>lập tức phát động Đòn Đánh Theo Sau</orangeStrong>, gây lượng nhỏ Sát Thương Lượng Tử lên 1 kẻ địch, tổng cộng Nảy Bật 3 lần, đồng thời tiêu hao toàn bộ Ác Báo.",
+        "tag": "Nảy Bật"
       }
     },
     "technique": {
       "0": {
         "name": "Hành Quyết",
         "fullDesc": "Lập tức tấn công kẻ địch, sau khi vào chiến đấu sẽ gây cho toàn phe địch sát thương Lượng Tử bằng {{1, percent}}% Tấn Công của Xueyi.",
-        "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây một lượng nhỏ Sát Thương Lượng Tử cho toàn bộ kẻ địch."
+        "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây một lượng nhỏ Sát Thương Lượng Tử cho toàn bộ kẻ địch.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Khung Dệt Điềm Báo",
         "fullDesc": "Tăng Sát Thương do bản thân gây ra, mức tăng bằng {{1, percent}}% Tấn Công Kích Phá, tối đa khiến sát thương gây ra tăng {{2, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Ổ Trục Phá Hủy",
         "fullDesc": "Nếu Sức Bền hiện tại của kẻ địch lớn hơn hoặc bằng {{1, percent}}% Giới Hạn Sức Bền của chính kẻ đó, thì sát thương Tuyệt Kỹ gây ra tăng {{2, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Trung Khu Quan Sát",
         "fullDesc": "Xueyi sẽ tích lũy số tầng Ác Báo vượt mức, tối đa tích lũy {{1}} tầng. Sau khi Xueyi kích hoạt Thiên Phú sẽ nhận lại được số tầng Ác Báo tích lũy tương ứng.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,63 +5,72 @@
       "0": {
         "name": "始击岁星",
         "fullDesc": "对指定敌方单体造成等同于符玄<orangeStrong>{{1, percent}}%</orangeStrong>生命上限的量子属性伤害。",
-        "shortDesc": "对敌方单体造成少量量子属性伤害。"
+        "shortDesc": "对敌方单体造成少量量子属性伤害。",
+        "tag": "单攻"
       }
     },
     "skill": {
       "0": {
         "name": "太微行棋，灵台示影",
         "fullDesc": "开启【穷观阵】，使符玄队友所承受的未受护盾抵挡之前的伤害的{{1, percent}}%分摊给符玄，持续{{3}}回合。<br>处于【穷观阵】的我方全体获得【鉴知】。【鉴知】状态下的我方目标生命上限提高，提高数值等同于符玄生命上限的<orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>，暴击率提高<orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>。<br>当符玄陷入无法战斗状态时，【穷观阵】也会被解除。",
-        "shortDesc": "开启【穷观阵】，队友<orangeStrong>所受伤害分摊</orangeStrong>给符玄。并使我方全体生命上限、<orangeStrong>暴击率提高</orangeStrong>。"
+        "shortDesc": "开启【穷观阵】，队友<orangeStrong>所受伤害分摊</orangeStrong>给符玄。并使我方全体生命上限、<orangeStrong>暴击率提高</orangeStrong>。",
+        "tag": "防御"
       }
     },
     "ult": {
       "0": {
         "name": "天律大衍，历劫归一",
         "fullDesc": "对敌方全体造成等同于符玄<orangeStrong>{{1, percent}}%</orangeStrong>生命上限的量子属性伤害，并获得1次符玄天赋生命回复的触发次数。",
-        "shortDesc": "对敌方全体造成量子属性伤害，增加符玄天赋的触发次数。"
+        "shortDesc": "对敌方全体造成量子属性伤害，增加符玄天赋的触发次数。",
+        "tag": "群攻"
       }
     },
     "talent": {
       "0": {
         "name": "乾清坤夷，否极泰来",
         "fullDesc": "当符玄处于可战斗状态时，为我方全体附加【避厄】。【避厄】状态下的我方目标受到的伤害降低<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>。<br>当符玄当前生命值百分比小于等于{{2, percent}}%时触发生命回复，使自身回复等同于已损失生命值<orangeStrong>{{3, percent}}%</orangeStrong>的生命值，受到致命攻击时无法触发该效果。该效果初始拥有1次触发次数，最多可拥有2次触发次数。",
-        "shortDesc": "当符玄处于可战斗状态时，我方全体受到的伤害降低。<br>生命值较低时<orangeStrong>自动</orangeStrong>按已损失生命值百分比<orangeStrong>回复自身生命</orangeStrong>。该效果最多拥有2次触发次数。"
+        "shortDesc": "当符玄处于可战斗状态时，我方全体受到的伤害降低。<br>生命值较低时<orangeStrong>自动</orangeStrong>按已损失生命值百分比<orangeStrong>回复自身生命</orangeStrong>。该效果最多拥有2次触发次数。",
+        "tag": "回复"
       }
     },
     "technique": {
       "0": {
         "name": "岁记否泰，固守四郭",
         "fullDesc": "使用秘技后，我方全体获得持续{{1}}秒的屏障。该屏障可抵挡敌人的所有攻击，不会进入战斗。屏障持续期间进入战斗时符玄自动开启【穷观阵】，持续{{2}}回合。",
-        "shortDesc": "开启屏障，受到敌人攻击时不会进入战斗。进战后自动开启【穷观阵】。"
+        "shortDesc": "开启屏障，受到敌人攻击时不会进入战斗。进战后自动开启【穷观阵】。",
+        "tag": "防御"
       }
     },
     "overworld": {
       "0": {
         "name": "攻击",
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "太乙式盘",
         "fullDesc": "【穷观阵】开启时，符玄施放战技将额外恢复{{1}}点能量。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "遁甲星舆",
         "fullDesc": "施放终结技时为我方其他目标回复等同于符玄{{1, percent}}%生命上限+{{2}}的生命值。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "六壬兆堪",
         "fullDesc": "【穷观阵】开启时，若敌方目标对我方施加了控制类负面状态，则我方全体抵抗本次行动中敌方目标施加的所有控制类负面状态。该效果可以触发1次。再次开启【穷观阵】后将刷新效果可触发次数。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

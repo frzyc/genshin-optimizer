@@ -5,68 +5,78 @@
       "0": {
         "name": "穿彻坚冰的烈芒",
         "fullDesc": "对指定敌方单体造成等同于开拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的火属性伤害并叠加1层【灼热意志】。",
-        "shortDesc": "对敌方单体造成少量火属性伤害，获得【灼热意志】。"
+        "shortDesc": "对敌方单体造成少量火属性伤害，获得【灼热意志】。",
+        "tag": "单攻"
       },
       "1": {
         "name": "穿彻坚冰的烈芒",
         "fullDesc": "消耗4层【灼热意志】，强化普攻。对指定敌方单体造成等同于开拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的火属性伤害，同时对其相邻目标造成等同于开拓者<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的火属性伤害。",
-        "shortDesc": "消耗【灼热意志】，对敌方单体造成火属性伤害，对相邻目标造成少量火属性伤害。"
+        "shortDesc": "消耗【灼热意志】，对敌方单体造成火属性伤害，对相邻目标造成少量火属性伤害。",
+        "tag": "扩散"
       }
     },
     "skill": {
       "0": {
         "name": "炽燃不灭的琥珀",
         "fullDesc": "施放战技后，开拓者受到的伤害降低<orangeStrong>{{1, percent}}%</orangeStrong>并叠加1层【灼热意志】，此外有{{2, percent}}%基础概率使敌方全体陷入嘲讽状态，持续{{3}}回合。",
-        "shortDesc": "降低自身受到的伤害，并获得【灼热意志】，大概率使敌方全体陷入嘲讽状态。"
+        "shortDesc": "降低自身受到的伤害，并获得【灼热意志】，大概率使敌方全体陷入嘲讽状态。",
+        "tag": "防御"
       }
     },
     "ult": {
       "0": {
         "name": "陷阵无回的炎枪",
         "fullDesc": "对敌方全体造成等同于开拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻击力+<orangeStrong>{{2, percent}}%</orangeStrong>防御力的火属性伤害。下一次施放普攻时，自动获得强化且不消耗【灼热意志】。",
-        "shortDesc": "对敌方全体造成火属性伤害，强化下一次的普攻。"
+        "shortDesc": "对敌方全体造成火属性伤害，强化下一次的普攻。",
+        "tag": "群攻"
       }
     },
     "talent": {
       "0": {
         "name": "筑城者遗宝",
         "fullDesc": "每受到1次攻击，叠加1层【灼热意志】，最多可叠加{{3}}层。<br>【灼热意志】层数不低于4时，普攻将获得强化，对指定敌方单体及其相邻目标同时造成伤害。<br>开拓者施放普攻、战技、终结技后，为我方全体提供能够抵消等同于开拓者<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>防御力+<orangeStrong>{{4}}</orangeStrong>伤害的护盾，持续{{2}}回合。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "强化"
       }
     },
     "technique": {
       "0": {
         "name": "守护者召令",
         "fullDesc": "使用秘技后，下一次战斗开始时给自身提供能够抵消等同于开拓者{{1, percent}}%防御力+{{2}}伤害的护盾，持续{{3}}回合。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "防御"
       }
     },
     "overworld": {
       "0": {
         "name": "攻击",
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "强援弱",
         "fullDesc": "施放战技后，我方全体受到的伤害降低{{2, percent}}%，持续{{3}}回合。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "生先死",
         "fullDesc": "开拓者施放强化普攻后，回复等同于自身生命上限{{1, percent}}%的生命值。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "行胜思",
         "fullDesc": "回合开始时，若开拓者持有护盾保护，则攻击力提高{{2, percent}}%并恢复{{1}}点能量，持续到行动结束。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

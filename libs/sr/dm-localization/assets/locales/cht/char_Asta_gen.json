@@ -5,63 +5,72 @@
       "0": {
         "name": "光譜射線",
         "fullDesc": "對指定敵方單體造成等同於艾絲妲<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的火屬性傷害。",
-        "shortDesc": "對敵方單體造成少量火屬性傷害。"
+        "shortDesc": "對敵方單體造成少量火屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "流星群落",
         "fullDesc": "對指定敵方單體造成等同於艾絲妲<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的火屬性傷害，並額外造成4次傷害。每次傷害對隨機敵方單體造成等同於艾絲妲<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的火屬性傷害。",
-        "shortDesc": "對敵方單體造成少量火屬性傷害，共彈射5次。"
+        "shortDesc": "對敵方單體造成少量火屬性傷害，共彈射5次。",
+        "tag": "彈射"
       }
     },
     "ult": {
       "0": {
         "name": "星空祝言",
         "fullDesc": "使我方全體速度提高<orangeStrong>{{1}}</orangeStrong>點，持續{{2}}回合。",
-        "shortDesc": "使我方全體<orangeStrong>速度提高</orangeStrong>。"
+        "shortDesc": "使我方全體<orangeStrong>速度提高</orangeStrong>。",
+        "tag": "輔助"
       }
     },
     "talent": {
       "0": {
         "name": "天象學",
         "fullDesc": "每擊中1名不同的敵方目標獲得1層蓄能，若受到攻擊的敵方目標弱點為火屬性，則額外獲得1層蓄能。<br>艾絲妲每擁有1層蓄能，便使我方全體攻擊力提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>，最多疊加{{2}}層。<br>從自身的第2回合開始，艾絲妲每回合開始時蓄能層數減少{{3}}層。",
-        "shortDesc": "每命中1名不同敵人便獲得1層蓄能，最多疊加5層。每層蓄能提高我方全體攻擊力。自身回合開始時降低蓄能層數。"
+        "shortDesc": "每命中1名不同敵人便獲得1層蓄能，最多疊加5層。每層蓄能提高我方全體攻擊力。自身回合開始時降低蓄能層數。",
+        "tag": "輔助"
       }
     },
     "technique": {
       "0": {
         "name": "靈光一現",
         "fullDesc": "立即攻擊敵人，進入戰鬥後對敵方全體目標造成等同於艾絲妲{{1, percent}}%攻擊力的火屬性傷害。",
-        "shortDesc": "攻擊敵人，進入戰鬥後對敵方全體造成少量傷害。"
+        "shortDesc": "攻擊敵人，進入戰鬥後對敵方全體造成少量傷害。",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "火花",
         "fullDesc": "發動普通攻擊時，有{{1, percent}}%的基礎機率使敵方目標陷入灼燒狀態，持續{{2}}回合。<br>灼燒狀態下，敵方目標每回合開始時受到等同於艾絲妲普通攻擊{{3, percent}}%的火屬性持續傷害。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "點燃",
         "fullDesc": "艾絲妲在場時，我方全體的火屬性傷害提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "星座",
         "fullDesc": "艾絲妲每擁有1層蓄能，自身防禦力便提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

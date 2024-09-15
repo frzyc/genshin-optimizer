@@ -5,63 +5,72 @@
       "0": {
         "name": "운기 창술•삭풍",
         "fullDesc": "지정된 단일 적에게 단항 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 바람 속성 피해를 가한다",
-        "shortDesc": "단일 적에게 소량의 바람 속성 피해를 가한다"
+        "shortDesc": "단일 적에게 소량의 바람 속성 피해를 가한다",
+        "tag": "단일 공격"
       }
     },
     "skill": {
       "0": {
         "name": "운기 창술•질우",
         "fullDesc": "지정된 단일 적에게 단항 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 바람 속성 피해를 가한다.<br>전투 스킬로 가하는 피해가 치명타 발동 시 {{4, percent}}%의 기본 확률로 피격된 적의 속도를 {{2, percent}}% 감소시킨다. 지속 시간: {{3}}턴",
-        "shortDesc": "단일 적에게 바람 속성 피해를 주고, 치명타 발생 시 높은 확률로 감속 상태를 부여한다"
+        "shortDesc": "단일 적에게 바람 속성 피해를 주고, 치명타 발생 시 높은 확률로 감속 상태를 부여한다",
+        "tag": "단일 공격"
       }
     },
     "ult": {
       "0": {
         "name": "동천환화, 기나긴 꿈",
         "fullDesc": "지정된 단일 적에게 단항 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 바람 속성 피해를 가한다. 피격된 적이 감속 상태인 경우 필살기로 가하는 피해 배율이 <orangeStrong>{{2, percent}}%</orangeStrong> 증가한다",
-        "shortDesc": "단일 적에게 대량의 바람 속성 피해를 주고, 감속 상태의 적에게 가하는 피해 배율이 증가한다"
+        "shortDesc": "단일 적에게 대량의 바람 속성 피해를 주고, 감속 상태의 적에게 가하는 피해 배율이 증가한다",
+        "tag": "단일 공격"
       }
     },
     "talent": {
       "0": {
         "name": "각자의 장점",
         "fullDesc": "단항이 아군 스킬의 발동 목표가 되면, 다음 공격의 바람 속성 저항 관통이 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 해당 효과는 {{2}}턴 후 다시 발동할 수 있다",
-        "shortDesc": "아군 스킬의 발동 목표가 되면, 다음 공격의 <orangeStrong>바람 속성 저항 관통이 증가</orangeStrong>한다. 해당 효과는 2턴 후 다시 발동할 수 있다"
+        "shortDesc": "아군 스킬의 발동 목표가 되면, 다음 공격의 <orangeStrong>바람 속성 저항 관통이 증가</orangeStrong>한다. 해당 효과는 2턴 후 다시 발동할 수 있다",
+        "tag": "강화"
       }
     },
     "technique": {
       "0": {
         "name": "섬멸의 칼날",
         "fullDesc": "비술 발동 후 다음 전투 시작 시 단항의 공격력이 {{1, percent}}% 증가한다. 지속 시간: {{2}}턴",
-        "shortDesc": "비술을 발동하며, 다음 전투 진입 후 공격력이 증가한다"
+        "shortDesc": "비술을 발동하며, 다음 전투 진입 후 공격력이 증가한다",
+        "tag": "강화"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "잠룡",
         "fullDesc": "현재 HP 백분율이 {{1, percent}}% 이하인 경우, 적에게 피격될 확률이 감소한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "절영",
         "fullDesc": "공격 발동 후 {{1, percent}}%의 고정 확률로 자신의 속도가 {{2, percent}}% 증가한다. 지속 시간: {{3}}턴",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "세찬 바람",
         "fullDesc": "일반 공격이 감속 상태의 적에게 가하는 피해가 {{1, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

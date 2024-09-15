@@ -5,63 +5,72 @@
       "0": {
         "name": "Thorns of the Abyss",
         "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Luocha's ATK to a single enemy.",
-        "shortDesc": "Deals minor Imaginary DMG to a single enemy."
+        "shortDesc": "Deals minor Imaginary DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Prayer of Abyss Flower",
         "fullDesc": "After using his Skill, Luocha immediately restores the target ally's HP equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Luocha's ATK plus <orangeStrong>{{2}}</orangeStrong>. Meanwhile, Luocha gains 1 stack of Abyss Flower.<br>When any ally's HP percentage drops to {{3, percent}}% or lower, an effect equivalent to Luocha's Skill will immediately be triggered and applied to this ally for one time (without consuming Skill Points). This effect can be triggered again after {{4}} turn(s).",
-        "shortDesc": "<orangeStrong>Restores</orangeStrong> a single ally's HP and gains 1 stack of Abyss Flower."
+        "shortDesc": "<orangeStrong>Restores</orangeStrong> a single ally's HP and gains 1 stack of Abyss Flower.",
+        "tag": "Restore"
       }
     },
     "ult": {
       "0": {
         "name": "Death Wish",
         "fullDesc": "Removes {{2}} buff(s) from all enemies and deals all enemies Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Luocha's ATK. At the same time, Luocha gains 1 stack of Abyss Flower.",
-        "shortDesc": "<orangeStrong>Removes</orangeStrong> 1 <orangeStrong>buff</orangeStrong> from all enemies, deals Imaginary DMG to all enemies, and gains 1 stack of Abyss Flower."
+        "shortDesc": "<orangeStrong>Removes</orangeStrong> 1 <orangeStrong>buff</orangeStrong> from all enemies, deals Imaginary DMG to all enemies, and gains 1 stack of Abyss Flower.",
+        "tag": "AoE"
       }
     },
     "talent": {
       "0": {
         "name": "Cycle of Life",
         "fullDesc": "When Abyss Flower reaches {{1}} stacks, Luocha consumes all stacks of Abyss Flower to deploy a Zone against the enemy.<br>When any enemy in the Zone is attacked by an ally, the attacking ally's HP is immediately restored by an amount equal to <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> of Luocha's ATK plus <orangeStrong>{{4}}</orangeStrong>.<br>The Zone's effect lasts for {{3}} turns. When Luocha is knocked down, the Zone will be dispelled.",
-        "shortDesc": "Deploys a <orangeStrong>Zone</orangeStrong> when Abyss Flower reaches 2 stacks. While the Zone is active, allies will <orangeStrong>restore HP after they attack</orangeStrong>."
+        "shortDesc": "Deploys a <orangeStrong>Zone</orangeStrong> when Abyss Flower reaches 2 stacks. While the Zone is active, allies will <orangeStrong>restore HP after they attack</orangeStrong>.",
+        "tag": "Restore"
       }
     },
     "technique": {
       "0": {
         "name": "Mercy of a Fool",
         "fullDesc": "After the Technique is used, the Talent will be immediately triggered at the start of the next battle.",
-        "shortDesc": "After the Technique is used, immediately trigger the effect of the Talent at the start of the next battle."
+        "shortDesc": "After the Technique is used, immediately trigger the effect of the Talent at the start of the next battle.",
+        "tag": "Restore"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Cleansing Revival",
         "fullDesc": "When the Skill's effect is triggered, removes {{1}} debuff(s) from a target ally.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Sanctified",
         "fullDesc": "When any enemy in the Zone is attacked by an ally, all allies (except the attacker) restore HP equal to {{1, percent(fixed: 1)}}% of Luocha's ATK plus {{2}}.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Through the Valley",
         "fullDesc": "The chance to resist Crowd Control debuffs increases by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

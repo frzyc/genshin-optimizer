@@ -5,63 +5,72 @@
       "0": {
         "name": "Monodrama",
         "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Sparkle's ATK to a single target enemy.",
-        "shortDesc": "Deals minor Quantum DMG to a single enemy."
+        "shortDesc": "Deals minor Quantum DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Dreamdiver",
         "fullDesc": "Increases the CRIT DMG of a single target ally by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Sparkle's CRIT DMG plus <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, lasting for {{3}} turn(s). And at the same time, Advances Forward this ally's action by {{4, percent}}%.<br>When Sparkle uses this ability on herself, the Action Advance effect will not trigger.",
-        "shortDesc": "Increases an ally's <orangeStrong>CRIT DMG</orangeStrong> and Advances Forward their action."
+        "shortDesc": "Increases an ally's <orangeStrong>CRIT DMG</orangeStrong> and Advances Forward their action.",
+        "tag": "Support"
       }
     },
     "ult": {
       "0": {
         "name": "The Hero with a Thousand Faces",
         "fullDesc": "Recovers {{2}} Skill Points for the team and grants all allies Cipher. For allies with Cipher, each stack of the DMG Boost effect provided by Sparkle's Talent additionally increases by <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, lasting for {{4}} turns.",
-        "shortDesc": "Recovers <orangeStrong>Skill Points</orangeStrong> for the team, and enables the DMG Boost provided by Sparkle's Talent to be additionally enhanced."
+        "shortDesc": "Recovers <orangeStrong>Skill Points</orangeStrong> for the team, and enables the DMG Boost provided by Sparkle's Talent to be additionally enhanced.",
+        "tag": "Support"
       }
     },
     "talent": {
       "0": {
         "name": "Red Herring",
         "fullDesc": "While Sparkle is on the battlefield, additionally increases the max number of Skill Points by {{3}}. Whenever an ally consumes 1 Skill Point, all allies' DMG dealt increases by <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. This effect lasts for {{1}} turn(s) and can stack up to {{4}} time(s).",
-        "shortDesc": "Increases the team's <orangeStrong>Max Skill Points</orangeStrong>. Whenever an ally consumes Skill Points, enables all allies to <orangeStrong>deal more damage</orangeStrong>."
+        "shortDesc": "Increases the team's <orangeStrong>Max Skill Points</orangeStrong>. Whenever an ally consumes Skill Points, enables all allies to <orangeStrong>deal more damage</orangeStrong>.",
+        "tag": "Support"
       }
     },
     "technique": {
       "0": {
         "name": "Unreliable Narrator",
         "fullDesc": "Using the Technique grants all allies Misdirect for {{2}} seconds. Characters with Misdirect will not be detected by enemies, and entering battle in the Misdirect state recovers {{1}} Skill Point(s) for the team.",
-        "shortDesc": "Using the Technique grants all allies Misdirect. Characters with Misdirect will not be detected by enemies, and entering battle while in Misdirect recovers <orangeStrong>Skill Points</orangeStrong> for allies."
+        "shortDesc": "Using the Technique grants all allies Misdirect. Characters with Misdirect will not be detected by enemies, and entering battle while in Misdirect recovers <orangeStrong>Skill Points</orangeStrong> for allies.",
+        "tag": "Support"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Almanac",
         "fullDesc": "When using Basic ATK, additionally regenerates {{1}} Energy.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Artificial Flower",
         "fullDesc": "The CRIT DMG Boost effect provided by the Skill will be extended until the start of the target's next turn.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Nocturne",
         "fullDesc": "Increases all allies' ATK by {{4, percent}}%. When there are 1/2/3 Quantum-Type allies in the team, additionally increases Quantum-Type allies' ATK by {{1, percent}}%/{{2, percent}}%/{{3, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

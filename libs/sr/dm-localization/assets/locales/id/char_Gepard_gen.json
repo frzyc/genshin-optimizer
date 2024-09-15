@@ -5,63 +5,72 @@
       "0": {
         "name": "Fist of Conviction",
         "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Gepard pada 1 target musuh.",
-        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Daunting Smite",
         "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Gepard pada 1 target musuh. Di saat bersamaan, target musuh yang terkena serangan memiliki {{2, percent}}% peluang dasar untuk memasuki status Frozen selama {{3}} giliran.<br>Selama dalam status Frozen, target musuh tidak dapat beraksi dan di saat bersamaan akan menerima Ice DMG tambahan sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK Gepard setiap gilirannya dimulai.",
-        "shortDesc": "Mengakibatkan Ice DMG pada 1 musuh dan <orangeStrong>berpeluang untuk memberikan status Frozen pada target</orangeStrong>."
+        "shortDesc": "Mengakibatkan Ice DMG pada 1 musuh dan <orangeStrong>berpeluang untuk memberikan status Frozen pada target</orangeStrong>.",
+        "tag": "Single Target"
       }
     },
     "ult": {
       "0": {
         "name": "Enduring Bulwark",
         "fullDesc": "Memberikan Shield yang dapat menahan DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> DEF Gepard +<orangeStrong>{{3}}</orangeStrong> pada seluruh rekan tim selama {{2}} giliran.",
-        "shortDesc": "<orangeStrong>Memberikan Shield</orangeStrong> pada seluruh rekan tim."
+        "shortDesc": "<orangeStrong>Memberikan Shield</orangeStrong> pada seluruh rekan tim.",
+        "tag": "Defense"
       }
     },
     "talent": {
       "0": {
         "name": "Unyielding Will",
         "fullDesc": "Saat menerima serangan mematikan, Gepard tidak akan gugur dan segera memulihkan HP-nya sebesar <orangeStrong>{{1, percent}}%</orangeStrong> dari Max HP-nya. Efek ini hanya dapat terpicu sekali dalam 1 pertempuran.",
-        "shortDesc": "<orangeStrong>Tidak akan gugur</orangeStrong> saat terkena serangan mematikan dan akan segera memulihkan HP. Hanya dapat dipicu 1 kali dalam setiap pertempuran."
+        "shortDesc": "<orangeStrong>Tidak akan gugur</orangeStrong> saat terkena serangan mematikan dan akan segera memulihkan HP. Hanya dapat dipicu 1 kali dalam setiap pertempuran.",
+        "tag": "Restore"
       }
     },
     "technique": {
       "0": {
         "name": "Comradery",
         "fullDesc": "Setelah menggunakan Technique, saat pertempuran selanjutnya dimulai, akan memberikan Shield yang dapat menahan DMG sebesar {{1, percent}}% DEF Gepard + {{3}} kepada seluruh rekan selama {{2}} giliran.",
-        "shortDesc": "Setelah menggunakan Technique, seluruh rekan tim memperoleh Shield saat pertempuran selanjutnya dimulai."
+        "shortDesc": "Setelah menggunakan Technique, seluruh rekan tim memperoleh Shield saat pertempuran selanjutnya dimulai.",
+        "tag": "Defense"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Integrity",
         "fullDesc": "Meningkatkan peluang Gepard diserang oleh musuh.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Commander",
         "fullDesc": "Segera memulihkan Energy Gepard hingga 100% setelah memicu \"Unyielding Will\".",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Grit",
         "fullDesc": "Meningkatkan ATK Gepard sebesar {{1, percent}}% DEF-nya saat ini. Efek ini di-refresh setiap gilirannya dimulai.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

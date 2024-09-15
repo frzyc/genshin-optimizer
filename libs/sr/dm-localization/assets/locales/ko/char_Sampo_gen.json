@@ -5,63 +5,72 @@
       "0": {
         "name": "화려한 도흔",
         "fullDesc": "지정된 단일 적에게 삼포 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 바람 속성 피해를 준다",
-        "shortDesc": "단일 적에게 소량의 바람 속성 피해를 가한다"
+        "shortDesc": "단일 적에게 소량의 바람 속성 피해를 가한다",
+        "tag": "단일 공격"
       }
     },
     "skill": {
       "0": {
         "name": "변덕스러운 사랑",
         "fullDesc": "지정된 단일 적에게 삼포 공격력 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 바람 속성 피해를 주고, 추가로 {{1}}회 피해를 가한다. 피해마다 임의의 단일 적에게 삼포 공격력 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 바람 속성 피해를 가한다",
-        "shortDesc": "단일 적에게 소량의 바람 속성 피해를 가하고, 총 5회 바운스한다"
+        "shortDesc": "단일 적에게 소량의 바람 속성 피해를 가하고, 총 5회 바운스한다",
+        "tag": "바운스"
       }
     },
     "ult": {
       "0": {
         "name": "서프라이즈 선물 상자",
         "fullDesc": "모든 적에게 삼포 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 바람 속성 피해를 주고, {{4, percent}}%의 기본 확률로 피격된 적이 받는 지속 피해가 <orangeStrong>{{2, percent}}%</orangeStrong> 증가한다. 지속 시간: {{3}}턴",
-        "shortDesc": "모든 적에게 바람 속성 피해를 가하고, 높은 확률로 <orangeStrong>받는 지속 피해가 증가</orangeStrong>한다"
+        "shortDesc": "모든 적에게 바람 속성 피해를 가하고, 높은 확률로 <orangeStrong>받는 지속 피해가 증가</orangeStrong>한다",
+        "tag": "범위 공격"
       }
     },
     "talent": {
       "0": {
         "name": "바람을 찢는 비수",
         "fullDesc": "삼포는 적 공격 후 {{1, percent}}%의 기본 확률로 적을 풍화 상태에 빠트린다. 지속 시간: {{3}}턴.<br>풍화 상태의 적은 새로운 턴이 시작될 때마다 삼포 공격력 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 바람 속성 지속 피해를 받는다. 풍화 상태 최대 중첩수: {{4}}스택",
-        "shortDesc": "자신이 적을 명중하면 일정 확률로 적을 <orangeStrong>풍화 상태에 빠트린다</orangeStrong>"
+        "shortDesc": "자신이 적을 명중하면 일정 확률로 적을 <orangeStrong>풍화 상태에 빠트린다</orangeStrong>",
+        "tag": "강화"
       }
     },
     "technique": {
       "0": {
         "name": "네가 가장 빛나",
         "fullDesc": "비술 사용 후 일정 영역 내의 적을 {{1}}초 동안 실명 상태에 빠트린다. 실명 상태에 진입한 적은 아군을 발견할 수 없다.<br>실명 상태의 적을 선공하여 전투 진입 시 {{2, percent}}%의 고정 확률로 각 단일 적의 행동 게이지가 {{3, percent}}% 감소한다",
-        "shortDesc": "일정 구역 내의 적을 실명 상태에 빠트린다. 실명 상태에 빠진 적을 공격하면 전투 진입 후 높은 확률로 각 단일 적의 행동 게이지가 감소한다"
+        "shortDesc": "일정 구역 내의 적을 실명 상태에 빠트린다. 실명 상태에 빠진 적을 공격하면 전투 진입 후 높은 확률로 각 단일 적의 행동 게이지가 감소한다",
+        "tag": "방해"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "올가미",
         "fullDesc": "특성으로 적이 풍화 상태에 빠지는 지속 시간이 {{1}}턴 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "후공",
         "fullDesc": "필살기 발동 시 추가로 에너지를 {{1}}pt 회복한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "첨가",
         "fullDesc": "풍화 상태의 적이 삼포에게 가하는 피해가 {{1, percent}}% 감소한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

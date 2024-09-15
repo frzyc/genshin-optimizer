@@ -5,68 +5,78 @@
       "0": {
         "name": "Direct du droit",
         "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Luka à un ennemi unique.",
-        "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique."
+        "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique.",
+        "tag": "Cible unique"
       },
       "1": {
         "name": "Poing destructeur d'étoiles",
         "fullDesc": "Consomme 2 cumuls de Soif de combat. Utilise d'abord Direct du droit pour lancer 3 coups, chacun infligeant des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Luka à la cible ennemie.<br>Puis, utilise Uppercut du droit pour lancer 1 coup, infligeant des DGT physiques équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Luka à la cible ennemie.",
-        "shortDesc": "Consomme 2 cumuls de Soif de combat pour infliger des DGT physiques à une cible unique."
+        "shortDesc": "Consomme 2 cumuls de Soif de combat pour infliger des DGT physiques à une cible unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Poing lacérateur",
         "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Luka à une cible ennemie unique, avec {{2, percent}}% de chances de base de lui infliger Saignement pendant {{5}} tours.<br>Les ennemis qui souffrent de Saignement subissent des dégâts physiques sur la durée équivalents à {{3, percent(fixed: 1)}}% de leurs PV max au début de chaque tour. Ces DGT ne peuvent pas excéder <orangeStrong>{{4, percent}}%</orangeStrong> de l'ATQ de Luka.",
-        "shortDesc": "Inflige des DGT physiques à un ennemi unique, avec de fortes chances de provoquer <orangeStrong>Saignement</orangeStrong>."
+        "shortDesc": "Inflige des DGT physiques à un ennemi unique, avec de fortes chances de provoquer <orangeStrong>Saignement</orangeStrong>.",
+        "tag": "Cible unique"
       }
     },
     "ult": {
       "0": {
         "name": "Coup de grâce",
         "fullDesc": "Accorde {{5}} cumuls de Soif de combat, avec {{2, percent}}% de chances de base d'augmenter les DGT subis par une cible ennemie unique de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> pendant {{4}} tours. Puis inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Luka à la cible.",
-        "shortDesc": "Accorde <orangeStrong>{{5}}</orangeStrong> cumuls de Soif de combat, avec de fortes chances d'augmenter les DGT subis par la cible ennemie et lui inflige des DGT physiques massifs."
+        "shortDesc": "Accorde <orangeStrong>{{5}}</orangeStrong> cumuls de Soif de combat, avec de fortes chances d'augmenter les DGT subis par la cible ennemie et lui inflige des DGT physiques massifs.",
+        "tag": "Cible unique"
       }
     },
     "talent": {
       "0": {
         "name": "Étincelles volantes",
         "fullDesc": "Luka reçoit {{1}} cumul de Soif de combat après avoir utilisé son ATQ normale Direct du droit ou sa compétence Poing lacérateur jusqu'à un maximum de 4 cumuls. À 2 cumuls de Soif de combat, son ATQ normale Direct du droit est renforcée en Poing destructeur d'étoiles. Lorsque l'Uppercut du droit de son ATQ normale renforcée touche une cible ennemie victime de Saignement, l'effet Saignement inflige immédiatement des DGT équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> des DGT de Saignement initiaux 1 fois. Luka dispose d'1 cumul de Soif de combat en début de combat.",
-        "shortDesc": "Reçoit 1 cumul de Soif de combat après avoir utilisé l'ATQ normale Direct du droit ou la compétence Poing lacérateur. À 2 cumuls ou plus de Soif de combat, <orangeStrong>l'ATQ normale devient renforcée</orangeStrong>.<br>Si l'ennemi est victime de Saignement, l'ATQ normale renforcée <orangeStrong>augmente les DGT de Saignement 1 fois</orangeStrong>."
+        "shortDesc": "Reçoit 1 cumul de Soif de combat après avoir utilisé l'ATQ normale Direct du droit ou la compétence Poing lacérateur. À 2 cumuls ou plus de Soif de combat, <orangeStrong>l'ATQ normale devient renforcée</orangeStrong>.<br>Si l'ennemi est victime de Saignement, l'ATQ normale renforcée <orangeStrong>augmente les DGT de Saignement 1 fois</orangeStrong>.",
+        "tag": "Renforcement"
       }
     },
     "technique": {
       "0": {
         "name": "Anticipation",
         "fullDesc": "Engage immédiatement le combat contre les ennemis. Luka inflige des DGT physiques équivalents à {{1, percent}}% de son ATQ à un ennemi aléatoire en entrant en combat, avec {{2, percent}}% de chances de base de lui infliger l'effet Saignement de sa compétence, à la suite de quoi Luka obtient un cumul supplémentaire de Soif de combat.",
-        "shortDesc": "Attaque les ennemis. Inflige des DGT physiques mineurs à un ennemi unique aléatoire après être entré en combat, avec de fortes chances d'infliger <orangeStrong>Saignement</orangeStrong> à la cible. Puis gagne 1 cumul de Soif de combat."
+        "shortDesc": "Attaque les ennemis. Inflige des DGT physiques mineurs à un ennemi unique aléatoire après être entré en combat, avec de fortes chances d'infliger <orangeStrong>Saignement</orangeStrong> à la cible. Puis gagne 1 cumul de Soif de combat.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Surcharge cinétique",
         "fullDesc": "Dissipe immédiatement {{1}} bonus de la cible ennemie lors de l'utilisation de la compétence.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Freinage cyclique",
         "fullDesc": "Régénère {{1}} points d'énergie supplémentaires pour chaque cumul de Soif de combat obtenu.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Soif de combat écrasante",
         "fullDesc": "Lors de l'utilisation de l'ATQ normale renforcée, chaque coup porté par Direct du droit accorde à Luka {{1, percent}}% de chances fixes d'utiliser 1 attaque supplémentaire. Cet effet ne s'applique pas aux coups supplémentaires assénés de cette manière.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

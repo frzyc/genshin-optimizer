@@ -5,63 +5,72 @@
       "0": {
         "name": "Técnica de espada de la Nimbocaballera: Halo estelar",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Sushang como Daño Físico a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Técnica de espada de la Nimbocaballera: Caída",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Sushang como Daño Físico a un enemigo. Además, hay una probabilidad del {{3, percent}}% de activar Postura espadachina tras el último golpe e infligir al objetivo un Daño Físico adicional equivalente al <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Sushang.<br>Si el objetivo está afectado por Ruptura de Debilidad, la activación de Postura espadachina estará garantizada.",
-        "shortDesc": "Inflige Daño Físico a un enemigo y tiene una <orangeStrong>pequeña probabilidad de activar Postura espadachina</orangeStrong>. Si el objetivo está afectado por Ruptura de Debilidad, <orangeStrong>la activación de Postura espadachina estará garantizada</orangeStrong>."
+        "shortDesc": "Inflige Daño Físico a un enemigo y tiene una <orangeStrong>pequeña probabilidad de activar Postura espadachina</orangeStrong>. Si el objetivo está afectado por Ruptura de Debilidad, <orangeStrong>la activación de Postura espadachina estará garantizada</orangeStrong>.",
+        "tag": "ATQ individual"
       }
     },
     "ult": {
       "0": {
         "name": "Forma de Taixu: Heraldo del alba",
         "fullDesc": "Sushang inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Físico a un enemigo y vuelve a actuar inmediatamente. Además, su ATQ aumenta en un <orangeStrong>{{4, percent}}%</orangeStrong> y al usar la habilidad básica tiene 2 oportunidades extra de activar Postura espadachina durante {{2}} turnos.<br>Si Postura espadachina se activa con las oportunidades extra, el daño que inflige es un {{3, percent}}% del daño original.",
-        "shortDesc": "Inflige una gran cantidad de Daño Físico a un enemigo, potencia el efecto de Postura espadachina y <orangeStrong>realiza otra acción inmediatamente</orangeStrong>."
+        "shortDesc": "Inflige una gran cantidad de Daño Físico a un enemigo, potencia el efecto de Postura espadachina y <orangeStrong>realiza otra acción inmediatamente</orangeStrong>.",
+        "tag": "ATQ individual"
       }
     },
     "talent": {
       "0": {
         "name": "Filo fluido",
         "fullDesc": "Cuando se rompe la Debilidad de un enemigo en la batalla, la VEL de Sushang aumenta en un <orangeStrong>{{1, percent(fixed: 2)}}%</orangeStrong> durante {{2}} turnos.",
-        "shortDesc": "Su VEL aumenta cuando se rompe la Debilidad de un enemigo en el campo de batalla."
+        "shortDesc": "Su VEL aumenta cuando se rompe la Debilidad de un enemigo en el campo de batalla.",
+        "tag": "Potenciación"
       }
     },
     "technique": {
       "0": {
         "name": "Técnica de espada de la Nimbocaballera: Premura",
         "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{1, percent}}% del ATQ de Sushang como Daño Físico a todos los enemigos.",
-        "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de Daño Físico a todos los enemigos."
+        "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de Daño Físico a todos los enemigos.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Nacimiento primaveral",
         "fullDesc": "Cuando el porcentaje de PV es igual o inferior al {{1, percent}}%, se reduce la probabilidad de recibir un ataque enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Espantaenemigos",
         "fullDesc": "El daño que inflige Postura espadachina aumenta en un {{1, percent}}% cada vez que se activa. Este efecto se puede acumular hasta {{2}} veces.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Vencedora",
         "fullDesc": "Tras usar el ATQ básico o la habilidad básica, si en el campo de batalla hay enemigos afectados por Ruptura de Debilidad, la acción de Sushang se adelanta un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

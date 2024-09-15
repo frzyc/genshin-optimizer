@@ -5,68 +5,78 @@
       "0": {
         "name": "빛나는 달빛",
         "fullDesc": "지정된 단일 적에게 경류 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 준다",
-        "shortDesc": "지정된 단일 적에게 소량의 얼음 속성 피해를 준다"
+        "shortDesc": "지정된 단일 적에게 소량의 얼음 속성 피해를 준다",
+        "tag": "단일 공격"
       }
     },
     "skill": {
       "0": {
         "name": "무결의 섬광",
         "fullDesc": "지정된 단일 적에게 경류 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 주고 [삭망]을 {{2}}스택 획득한다",
-        "shortDesc": "지정된 단일 적에게 얼음 속성 피해를 가하고, <orangeStrong>[삭망] 1스택</orangeStrong>을 획득한다"
+        "shortDesc": "지정된 단일 적에게 얼음 속성 피해를 가하고, <orangeStrong>[삭망] 1스택</orangeStrong>을 획득한다",
+        "tag": "단일 공격"
       },
       "1": {
         "name": "한천(寒川)에 비친 달",
         "fullDesc": "지정된 단일 적에게 경류 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 주고 인접한 목표에게 경류 공격력 <orangeStrong>{{3, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 준다. [삭망]을 {{2}}스택 소모한다. 해당 스킬 발동 시 전투 스킬 포인트가 소모되지 않는다",
-        "shortDesc": "지정된 단일 적에게 얼음 속성 피해를 주고, 인접한 적에게 얼음 속성 피해를 주며, [삭망]을 1스택 소모한다"
+        "shortDesc": "지정된 단일 적에게 얼음 속성 피해를 주고, 인접한 적에게 얼음 속성 피해를 주며, [삭망]을 1스택 소모한다",
+        "tag": "확산"
       }
     },
     "ult": {
       "0": {
         "name": "담화생멸, 범람하는 은하",
         "fullDesc": "지정된 단일 적에게 경류 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 주고 인접한 목표에게 경류 공격력 <orangeStrong>{{3, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 준다. 공격 종료 후 [삭망]을 {{2}}스택 획득한다",
-        "shortDesc": "지정된 단일 적에게 대량의 얼음 속성 피해를 가하고, 인접한 적에게 얼음 속성 피해를 가하며, <orangeStrong>[삭망] 1스택</orangeStrong>을 획득한다"
+        "shortDesc": "지정된 단일 적에게 대량의 얼음 속성 피해를 가하고, 인접한 적에게 얼음 속성 피해를 가하며, <orangeStrong>[삭망] 1스택</orangeStrong>을 획득한다",
+        "tag": "확산"
       }
     },
     "talent": {
       "0": {
         "name": "담월전백",
         "fullDesc": "[삭망] {{5}}스택 보유 시, 경류가 [전백(轉魄)] 상태에 진입하고 행동 게이지가 {{6, percent}}% 증가, 치명타 확률이 <orangeStrong>{{7, percent}}%</orangeStrong> 증가한다. 이후 전투 스킬 [무결의 섬광]이 [한천(寒川)에 비친 달]로 강화되며 해당 전투 스킬만 사용할 수 있다. [전백] 상태일 때 공격을 발동하면 동료 HP를 각각 동료 HP 최대치의 {{2, percent}}%만큼 소모한다(모든 동료의 HP는 최대 1까지 소모 가능). 이번에 모든 아군이 소모한 HP 총량의 {{3, percent}}%만큼 경류의 공격력이 증가하고 최대 경류 기초 공격력의 <orangeStrong>{{4, percent}}%</orangeStrong>를 넘지 않는다. 해당 효과는 이번 공격이 종료될 때까지 지속된다. [전백] 상태가 종료되기 전에는 다시 [전백] 상태에 진입할 수 없다. [삭망]은 최대 3스택까지 중첩된다. [삭망] 스택이 0이 되면, [전백] 상태가 종료된다",
-        "shortDesc": "[삭망] <orangeStrong>{{5}}</orangeStrong>스택 보유 시, [전백(轉魄)] 상태에 진입하고 <orangeStrong>행동 게이지가 <unbreak>100%</orangeStrong> 증가하며</color>, 자신의 치명타 확률이 증가하고 <orangeStrong>전투 스킬이 강화</orangeStrong>된다. 공격을 발동하면 동료의 HP를 소모하고, 소모 총량에 따라 <orangeStrong>경류의 공격력이 증가</orangeStrong>한다. [삭망] 스택 수가 0이 되면 [전백] 상태가 종료된다"
+        "shortDesc": "[삭망] <orangeStrong>{{5}}</orangeStrong>스택 보유 시, [전백(轉魄)] 상태에 진입하고 <orangeStrong>행동 게이지가 <unbreak>100%</orangeStrong> 증가하며</color>, 자신의 치명타 확률이 증가하고 <orangeStrong>전투 스킬이 강화</orangeStrong>된다. 공격을 발동하면 동료의 HP를 소모하고, 소모 총량에 따라 <orangeStrong>경류의 공격력이 증가</orangeStrong>한다. [삭망] 스택 수가 0이 되면 [전백] 상태가 종료된다",
+        "tag": "강화"
       }
     },
     "technique": {
       "0": {
         "name": "참나를 비추는 거울",
         "fullDesc": "비술 사용 후 자신의 주위에 {{3}}초 동안 지속되는 특수 영역을 1개 만든다. 특수 영역 내의 적은 빙결 상태에 빠진다. 특수 영역 내의 적과 전투에 진입하면 즉시 자신의 에너지가 {{6}}pt 회복되고, 삭망을 {{1}}스택 획득하며, {{2, percent}}%의 기본 확률로 적이 빙결 상태에 빠진다. 지속 시간: {{4}}턴. 빙결 상태일 때 적은 행동할 수 없고, 턴이 시작될 때마다 경류 공격력의 {{5, percent}}%만큼 얼음 속성 추가 피해를 받는다. 아군이 만든 영역 효과는 최대 1개만 존재할 수 있다",
-        "shortDesc": "자신의 주위에 특수 영역을 만든다. 영역 내의 적이 <orangeStrong>빙결 상태</orangeStrong>에 빠진다. 영역 내의 적과 전투에 진입하면 에너지를 회복하고, 삭망을 1스택 획득하며, 높은 확률로 적이 <orangeStrong>빙결 상태</orangeStrong>에 빠진다"
+        "shortDesc": "자신의 주위에 특수 영역을 만든다. 영역 내의 적이 <orangeStrong>빙결 상태</orangeStrong>에 빠진다. 영역 내의 적과 전투에 진입하면 에너지를 회복하고, 삭망을 1스택 획득하며, 높은 확률로 적이 <orangeStrong>빙결 상태</orangeStrong>에 빠진다",
+        "tag": "방해"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "사경",
         "fullDesc": "[전백(轉魄)] 상태일 때 효과 저항이 {{1, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "검술의 일인자",
         "fullDesc": "[무결의 섬광] 발동 후 다음 행동 게이지가 {{1, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "서리 혼",
         "fullDesc": "[전백(轉魄)] 상태일 때 필살기가 가하는 피해가 {{1, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

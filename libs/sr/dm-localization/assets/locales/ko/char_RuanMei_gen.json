@@ -5,63 +5,72 @@
       "0": {
         "name": "그윽한 일침",
         "fullDesc": "지정된 단일 적에게 완•매 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 얼음 속성 피해를 가한다",
-        "shortDesc": "단일 적에게 소량의 얼음 속성 피해를 가한다"
+        "shortDesc": "단일 적에게 소량의 얼음 속성 피해를 가한다",
+        "tag": "단일 공격"
       }
     },
     "skill": {
       "0": {
         "name": "우아한 연주",
         "fullDesc": "전투 스킬 발동 후 완•매는 [현의 여음]을 획득한다. 지속 시간: {{3}}턴. 완•매의 턴이 시작될 때마다 지속 턴 수가 1 감소한다. 완•매가 [현의 여음]을 보유하면 모든 아군의 피해가 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> 증가하며 약점 격파 효율이 {{2, percent}}% 증가한다",
-        "shortDesc": "전투 스킬 발동 후 완•매는 [현의 여음]을 획득한다. 완•매가 [현의 여음]을 보유하면 모든 아군의 <orangeStrong>피해</orangeStrong>와 <orangeStrong>약점 격파 효율</orangeStrong>이 증가한다"
+        "shortDesc": "전투 스킬 발동 후 완•매는 [현의 여음]을 획득한다. 완•매가 [현의 여음]을 보유하면 모든 아군의 <orangeStrong>피해</orangeStrong>와 <orangeStrong>약점 격파 효율</orangeStrong>이 증가한다",
+        "tag": "서포트"
       }
     },
     "ult": {
       "0": {
         "name": "꽃잎에 인 물결, 옷을 물들인 꽃",
         "fullDesc": "완•매가 {{2}}턴간 결계를 펼치고, 자신의 턴이 시작될 때마다 지속 턴 수가 1 감소한다.<br>결계 안에 있는 모든 아군의 모든 속성 저항 관통이 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> 증가하고, 공격 시 적에게 [다시 핀 매화]를 부여한다.<br>[다시 핀 매화]는 적이 약점 격파 상태에서 회복하려고 할 때 발동하며, 목표의 약점 격파 상태를 연장하고 행동 게이지를 감소시킨다. 감소 수치는 완매 격파 특수효과의 {{3, percent}}%에 {{4, percent}}%를 더한 값이며, 해당 목표에게 격파 피해를 완•매의 얼음 속성 격파 피해의 <orangeStrong>{{5, percent}}%</orangeStrong>만큼 가한다.<br>적이 약점 격파 상태에서 회복하기 전까지는 [다시 핀 매화]를 추가로 부여할 수 없다",
-        "shortDesc": "모든 아군의 <orangeStrong>모든 속성 저항 관통</orangeStrong>이 증가하고, 공격 시 적에게 [다시 핀 매화]를 부여한다"
+        "shortDesc": "모든 아군의 <orangeStrong>모든 속성 저항 관통</orangeStrong>이 증가하고, 공격 시 적에게 [다시 핀 매화]를 부여한다",
+        "tag": "서포트"
       }
     },
     "talent": {
       "0": {
         "name": "프랙탈 나선",
         "fullDesc": "자신을 제외한 동료의 속도가 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> 증가한다. 모든 아군이 적의 약점을 격파하면 완•매는 해당 목표에게 자신의 얼음 속성 격파 피해의 <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>만큼 격파 피해를 가한다",
-        "shortDesc": "자신을 제외한 동료의 <orangeStrong>속도</orangeStrong>가 증가하고, 적의 약점을 격파하면 해당 적에게 <orangeStrong>추가로 얼음 속성 격파 피해를 가한다</orangeStrong>"
+        "shortDesc": "자신을 제외한 동료의 <orangeStrong>속도</orangeStrong>가 증가하고, 적의 약점을 격파하면 해당 적에게 <orangeStrong>추가로 얼음 속성 격파 피해를 가한다</orangeStrong>",
+        "tag": "서포트"
       }
     },
     "technique": {
       "0": {
         "name": "매무새를 가다듬으며",
         "fullDesc": "비술을 사용하면 [매무새를 가다듬으며]를 획득하고 다음 전투가 시작될 때 자동으로 전투 스킬을 {{1}}회 발동하며, 이번 발동은 전투 스킬 포인트를 소모하지 않는다.<br>시뮬레이션 우주 및 차분화 우주에서 완•매가 [매무새를 가다듬으며]를 보유했을 때 아군이 적을 선공하면 약점을 이용해 전투에 진입한 것으로 간주되며, 이번 공격은 약점 속성을 무시하고 모든 적의 강인성을 감소시킨다. 약점을 격파하면 공격자 속성의 약점 격파 효과를 발동한다. 축복을 1개 보유할 때마다 이번 공격의 강인성 감소 수치가 추가로 {{2, percent}}% 증가하고, 적의 약점을 격파한 후 해당 적에게 격파 피해를 완•매의 얼음 속성 격파 피해의 {{3, percent}}%만큼 가한다. (최대 {{4}}개의 축복까지 계산)",
-        "shortDesc": "다음 전투 진입 후 전투 스킬을 <orangeStrong>{{1}}</orangeStrong>회 자동으로 발동한다. 비술 사용 후 아군이 시뮬레이션 우주 및 차분화 우주의 적을 공격하면 약점 공격으로 전투에 진입한 것으로 간주한다. 또한 <orangeStrong>약점 속성을 무시</orangeStrong>하고 강인성을 감소시킨다. 축복을 1개 보유할 때마다 강인성 감소 수치가 증가하고 격파 시 격파 피해를 추가로 가한다"
+        "shortDesc": "다음 전투 진입 후 전투 스킬을 <orangeStrong>{{1}}</orangeStrong>회 자동으로 발동한다. 비술 사용 후 아군이 시뮬레이션 우주 및 차분화 우주의 적을 공격하면 약점 공격으로 전투에 진입한 것으로 간주한다. 또한 <orangeStrong>약점 속성을 무시</orangeStrong>하고 강인성을 감소시킨다. 축복을 1개 보유할 때마다 강인성 감소 수치가 증가하고 격파 시 격파 피해를 추가로 가한다",
+        "tag": "강화"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "물체 호흡 중",
         "fullDesc": "모든 아군의 격파 특수효과가 {{1, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "해가 질수록 늘어나는 생각",
         "fullDesc": "완•매의 턴 시작 시 자신의 에너지를 {{1}}pt 회복한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "수면에 일렁이는 촛불",
         "fullDesc": "전투 중 완•매의 격파 특수효과가 {{1, percent}}%를 초과할 시 {{2, percent}}% 초과할 때마다 전투 스킬로 인한 모든 아군의 피해 증가 효과가 추가로 {{3, percent}}% 증가한다. (최대 {{4, percent}}%까지 증가)",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

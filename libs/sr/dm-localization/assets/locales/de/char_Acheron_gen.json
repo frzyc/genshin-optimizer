@@ -5,83 +5,96 @@
       "0": {
         "name": "Welke Pfade der Schreckenstriade",
         "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Acherons ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Oktett des Donners",
         "fullDesc": "Erhält {{3}} Pkt. „Zerbrochener Traum“. Belegt einen anvisierten Gegner mit {{3}} Stapelung „Karminroter Knoten“ und fügt ihm Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Acherons ANG sowie angrenzenden Einheiten Blitz-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Acherons ANG zu.",
-        "shortDesc": "Erhält <orangeStrong><color=#f29e38ff>#3[i]</orangeStrong> Pkt. „Zerbrochener Traum“</color>. Belegt einen Gegner mit <orangeStrong>{{3}}</orangeStrong> Stapelung „Karminroter Knoten“ und fügt ihm Blitz-SCH sowie angrenzenden Einheiten geringen Blitz-SCH zu."
+        "shortDesc": "Erhält <orangeStrong><color=#f29e38ff>#3[i]</orangeStrong> Pkt. „Zerbrochener Traum“</color>. Belegt einen Gegner mit <orangeStrong>{{3}}</orangeStrong> Stapelung „Karminroter Knoten“ und fügt ihm Blitz-SCH sowie angrenzenden Einheiten geringen Blitz-SCH zu.",
+        "tag": "Ausdehnung"
       }
     },
     "ult": {
       "0": {
         "name": "Verblassende Träume, ein Klingenstreich",
         "fullDesc": "Löst aufeinanderfolgend 3-mal „Regnerische Klage“ und 1-mal „Zurück ins Jenseits“ aus, wobei einem anvisierten Gegner Blitz-SCH in Höhe von bis zu <orangeStrong>{{6, percent}}%</orangeStrong> von Acherons ANG und anderen Zielen Blitz-SCH in Höhe von bis zu <orangeStrong>{{7, percent}}%</orangeStrong> von Acherons ANG zugefügt wird.<br>Regnerische Klage: Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Acherons ANG zu und entfernt bis zu 3 Stapelungen „Karminroter Knoten“ des Ziels. Verursacht bei allen Gegnern sofort Blitz-SCH in Höhe von <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> von Acherons ANG, wenn Karminroter Knoten entfernt wird, wobei der SCH-Multiplikator mit jeder entfernten Stapelung zusätzlich erhöht wird, bis zu <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.<br>Zurück ins Jenseits: Fügt allen Gegnern Blitz-SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Acherons ANG zu und entfernt alle Stapelungen Karminroter Knoten.<br>Gegner können nicht während des Ultimates mit Karminroter Knoten belegt werden.",
-        "shortDesc": "Fügt einem Gegner 3-mal geringen Blitz-SCH zu. Wenn „Karminroter Knoten“ vom Ziel entfernt wird, erleiden alle Gegner geringen Blitz-SCH. Fügt schließlich allen Gegnern 1-mal Blitz-SCH zu und entfernt alle Stapelungen Karminroter Knoten."
+        "shortDesc": "Fügt einem Gegner 3-mal geringen Blitz-SCH zu. Wenn „Karminroter Knoten“ vom Ziel entfernt wird, erleiden alle Gegner geringen Blitz-SCH. Fügt schließlich allen Gegnern 1-mal Blitz-SCH zu und entfernt alle Stapelungen Karminroter Knoten.",
+        "tag": "Flächenangriff"
       },
       "1": {
         "name": "Regnerische Klage",
         "fullDesc": "",
-        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu und entfernt bis zu 3 Stapelungen „Karminroter Knoten“ des Ziels. Verursacht 1-mal geringen Blitz-SCH bei allen Gegnern, wenn Karminroter Knoten entfernt wird, wobei der SCH-Multiplikator mit jeder entfernten Stapelung erhöht wird."
+        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu und entfernt bis zu 3 Stapelungen „Karminroter Knoten“ des Ziels. Verursacht 1-mal geringen Blitz-SCH bei allen Gegnern, wenn Karminroter Knoten entfernt wird, wobei der SCH-Multiplikator mit jeder entfernten Stapelung erhöht wird.",
+        "tag": "Flächenangriff"
       },
       "2": {
         "name": "Regnerische Klage",
         "fullDesc": "",
-        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu und entfernt bis zu 3 Stapelungen „Karminroter Knoten“ des Ziels. Verursacht 1-mal geringen Blitz-SCH bei allen Gegnern, wenn Karminroter Knoten entfernt wird, wobei der SCH-Multiplikator mit jeder entfernten Stapelung erhöht wird."
+        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu und entfernt bis zu 3 Stapelungen „Karminroter Knoten“ des Ziels. Verursacht 1-mal geringen Blitz-SCH bei allen Gegnern, wenn Karminroter Knoten entfernt wird, wobei der SCH-Multiplikator mit jeder entfernten Stapelung erhöht wird.",
+        "tag": "Flächenangriff"
       },
       "3": {
         "name": "Regnerische Klage",
         "fullDesc": "",
-        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu und entfernt bis zu 3 Stapelungen „Karminroter Knoten“ des Ziels. Verursacht 1-mal geringen Blitz-SCH bei allen Gegnern, wenn Karminroter Knoten entfernt wird, wobei der SCH-Multiplikator mit jeder entfernten Stapelung erhöht wird."
+        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu und entfernt bis zu 3 Stapelungen „Karminroter Knoten“ des Ziels. Verursacht 1-mal geringen Blitz-SCH bei allen Gegnern, wenn Karminroter Knoten entfernt wird, wobei der SCH-Multiplikator mit jeder entfernten Stapelung erhöht wird.",
+        "tag": "Flächenangriff"
       },
       "4": {
         "name": "Zurück ins Jenseits",
         "fullDesc": "",
-        "shortDesc": "Fügt allen Gegnern Blitz-SCH zu und entfernt alle Stapelungen „Karminroter Knoten“."
+        "shortDesc": "Fügt allen Gegnern Blitz-SCH zu und entfernt alle Stapelungen „Karminroter Knoten“.",
+        "tag": "Flächenangriff"
       }
     },
     "talent": {
       "0": {
         "name": "Tropfen auf den roten Blättern, Leere",
         "fullDesc": "Wenn „Zerbrochener Traum“ {{1}} Pkt. erreicht, kann der Ultimate aktiviert werden. Der Ultimate ignoriert Schwächetypen, verringert den Widerstand aller Gegner und reduziert ihren WDS aller Typen um <orangeStrong>{{2, percent}}%</orangeStrong>. Dies dauert bis zum Ende des Ultimates an.<br>Wenn eine beliebige Einheit einem gegnerischen Ziel mit einer Fähigkeit einen Debuff zufügt, erhält Acheron 1 Pkt. Zerbrochener Traum und belegt ein Ziel mit 1 Stapelung „Karminroter Knoten“. Wenn die Fähigkeit mehrere Gegner mit Debuffs belegt, wird 1 Stapelung Karminroter Knoten dem Gegner mit den meisten Stapelungen Karminroter Knoten zugefügt. Dieser Effekt kann bis zu 1-mal pro Einsatz der Fähigkeit ausgelöst werden.<br>Wenn Acheron auf dem Kampffeld ist und ein gegnerisches Ziel das Feld verlässt oder von einer beliebigen Einheit besiegt wird, werden seine Stapelungen von Karminroter Knoten auf den Gegner mit den meisten Stapelungen Karminroter Knoten übertragen.",
-        "shortDesc": "Wenn „Zerbrochener Traum“ die max. Anzahl erreicht, kann der Ultimate aktiviert werden. Der Ultimate <orangeStrong>ignoriert Schwächetypen</orangeStrong>, verringert den Widerstand aller Gegner und reduziert ihren <orangeStrong>WDS aller Typen</orangeStrong>.<br>Wenn eine beliebige Einheit mit ihrer Fähigkeit einem gegnerischen Ziel einen Debuff zufügt, erhält Acheron Zerbrochener Traum und belegt ein Ziel mit „Karminroter Knoten“."
+        "shortDesc": "Wenn „Zerbrochener Traum“ die max. Anzahl erreicht, kann der Ultimate aktiviert werden. Der Ultimate <orangeStrong>ignoriert Schwächetypen</orangeStrong>, verringert den Widerstand aller Gegner und reduziert ihren <orangeStrong>WDS aller Typen</orangeStrong>.<br>Wenn eine beliebige Einheit mit ihrer Fähigkeit einem gegnerischen Ziel einen Debuff zufügt, erhält Acheron Zerbrochener Traum und belegt ein Ziel mit „Karminroter Knoten“.",
+        "tag": "Verstärkung"
       }
     },
     "technique": {
       "0": {
         "name": "Vier Phasen des Ich",
         "fullDesc": "Greift den Gegner an. Erhält zu Beginn jeder Kampfwelle „Vier Phasen des Ich“, fügt allen Gegnern Blitz-SCH in Höhe von {{1, percent}}% von Acherons ANG zu und reduziert ihr Widerstand ungeachtet des Schwächetyps. Beim Schwächebruch wird der Effekt „Schwächebruch: Blitz“ ausgelöst.<br>Vier Phasen des Ich: Acheron erhält nach dem Einsatz des Ultimates {{2}} Pkt. „Zerbrochener Traum“ und belegt einen zufälligen Gegner mit {{2}} Stapelung „Karminroter Knoten“.<br>Wenn gewöhnliche Gegner angegriffen werden, werden sie sofort besiegt, ohne den Kampf zu betreten. Der Technikpunkt wird nicht verbraucht, wenn der Angriff keinen Gegner trifft.",
-        "shortDesc": "Greift den Gegner an. Erhält zu Beginn jeder Kampfwelle „Vier Phasen des Ich“ und fügt allen Gegnern Blitz-SCH zu, der <orangeStrong>Schwächetypen ignoriert</orangeStrong> und Widerstand reduziert.<br>Wenn gewöhnliche Gegner angegriffen werden, werden sie <orangeStrong>sofort besiegt</orangeStrong>, ohne den Kampf zu betreten. Der Technikpunkt wird nicht verbraucht, wenn der Angriff keinen Gegner trifft."
+        "shortDesc": "Greift den Gegner an. Erhält zu Beginn jeder Kampfwelle „Vier Phasen des Ich“ und fügt allen Gegnern Blitz-SCH zu, der <orangeStrong>Schwächetypen ignoriert</orangeStrong> und Widerstand reduziert.<br>Wenn gewöhnliche Gegner angegriffen werden, werden sie <orangeStrong>sofort besiegt</orangeStrong>, ohne den Kampf zu betreten. Der Technikpunkt wird nicht verbraucht, wenn der Angriff keinen Gegner trifft.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Roter Oni",
         "fullDesc": "Erhält zu Beginn eines Kampfes sofort {{1}} Pkt. „Zerbrochener Traum“ und belegt einen zufälligen Gegner mit {{1}} Stapelungen „Karminroter Knoten“. Wenn Zerbrochener Traum das Maximum erreicht, wird für jeden überschüssigen Pkt. Zerbrochener Traum eine Stapelung „Vier Phasen des Ich“ erhalten. Vier Phasen des Ich ist bis zu {{2}}-fach stapelbar.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Unterwelt",
         "fullDesc": "Wenn noch 1/2 weitere Figur(en) auf dem Pfad der Nichtigkeit im Team sind, beträgt der verursachte SCH von Acherons Standardangriff, Fertigkeit und Ultimate {{1, percent}}%/{{2, percent}}% des ursprünglichen SCH.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Blitzherz",
         "fullDesc": "Wenn „Regnerische Klage“ des Ultimates Gegner mit „Karminroter Knoten“ trifft, wird Acherons verursachter SCH für {{3}} Rd. um {{1, percent}}% erhöht. Dieser Effekt ist bis zu {{2}}-fach stapelbar. Fügt außerdem zusätzlich {{4}}-mal SCH zu, wenn „Zurück ins Jenseits“ ausgelöst wird. Jedes Mal wird bei einem zufälligen Gegner Blitz-SCH in Höhe von {{5, percent}}% von Acherons ANG verursacht und dieser SCH wird als Ultimate-SCH betrachtet.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,63 +5,72 @@
       "0": {
         "name": "洞見，緘默的黎明",
         "fullDesc": "對指定敵方單體造成等同於黑天鵝<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的風屬性傷害，有<orangeStrong>{{2, percent}}%</orangeStrong>的基礎機率使目標陷入1層【奧跡】，且攻擊陷入風化、裂傷、灼燒、觸電狀態的目標後，分別各有<orangeStrong>{{3, percent}}%</orangeStrong>的基礎機率額外使目標陷入1層【奧跡】。",
-        "shortDesc": "對敵方單體造成少量風屬性傷害，有機率對目標施加【奧跡】。攻擊陷入<orangeStrong>風化、裂傷、灼燒、觸電</orangeStrong>狀態的目標後，分別有機率<orangeStrong>額外施加【奧跡】</orangeStrong>。"
+        "shortDesc": "對敵方單體造成少量風屬性傷害，有機率對目標施加【奧跡】。攻擊陷入<orangeStrong>風化、裂傷、灼燒、觸電</orangeStrong>狀態的目標後，分別有機率<orangeStrong>額外施加【奧跡】</orangeStrong>。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "失墜，偽神的黃昏",
         "fullDesc": "對指定敵方單體及其相鄰目標造成等同於黑天鵝<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的風屬性傷害，同時有{{2, percent}}%的基礎機率使目標與相鄰目標陷入1層【奧跡】，此外有{{3, percent}}%的基礎機率使目標與相鄰目標防禦力降低<orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>，持續{{5}}回合。",
-        "shortDesc": "對敵方單體及其相鄰目標造成少量風屬性傷害，有高機率對目標<orangeStrong>施加【奧跡】</orangeStrong>，並有高機率使目標防禦力降低。"
+        "shortDesc": "對敵方單體及其相鄰目標造成少量風屬性傷害，有高機率對目標<orangeStrong>施加【奧跡】</orangeStrong>，並有高機率使目標防禦力降低。",
+        "tag": "擴散"
       }
     },
     "ult": {
       "0": {
         "name": "沉醉於彼界的臂灣",
         "fullDesc": "使敵方全體陷入【揭露】狀態，持續{{2}}回合。<br>【揭露】狀態下，敵方目標自身回合內受到的傷害提高<orangeStrong>{{3, percent}}%</orangeStrong>，且當敵方目標處於【奧跡】狀態時，也會視為同時陷入了風化、裂傷、灼燒、觸電狀態，並且【奧跡】每回合開始造成傷害後不會重置層數。【奧跡】不會重置層數的效果在【揭露】狀態持續時間內最多觸發{{4}}次，再次陷入【揭露】狀態會刷新觸發次數。<br>對敵方全體造成等同於黑天鵝<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的風屬性傷害。",
-        "shortDesc": "對敵方全體施加【揭露】狀態，使目標回合內受到的傷害提高，並<orangeStrong>將【奧跡】視為風化、裂傷、灼燒、觸電</orangeStrong>狀態，此外使【奧跡】下一次回合開始造成傷害後不重置層數。對敵方全體造成風屬性傷害。"
+        "shortDesc": "對敵方全體施加【揭露】狀態，使目標回合內受到的傷害提高，並<orangeStrong>將【奧跡】視為風化、裂傷、灼燒、觸電</orangeStrong>狀態，此外使【奧跡】下一次回合開始造成傷害後不重置層數。對敵方全體造成風屬性傷害。",
+        "tag": "群體攻擊"
       }
     },
     "talent": {
       "0": {
         "name": "無端命運的機杼",
         "fullDesc": "敵方目標每回合開始時每受到1次持續傷害，有<orangeStrong>{{2, percent}}%</orangeStrong>的基礎機率陷入1層【奧跡】。<br>【奧跡】狀態下，敵方目標每回合開始時受到等同於黑天鵝<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的風屬性持續傷害，每層【奧跡】使此傷害倍率提高<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>，隨後重置為1層。【奧跡】最多疊加{{8}}層。<br>僅在敵方目標回合開始【奧跡】造成傷害時，黑天鵝根據目標陷入的【奧跡】層數觸發額外效果：<br>大於等於{{4}}層：對相鄰目標造成等同於黑天鵝<orangeStrong>{{5, percent}}%</orangeStrong>攻擊力的風屬性持續傷害，並且有<orangeStrong>{{2, percent}}%</orangeStrong>的基礎機率使相鄰目標陷入1層【奧跡】。<br>大於等於{{6}}層：使本次造成的持續傷害無視該目標及其相鄰目標{{7, percent}}%的防禦力。",
-        "shortDesc": "敵方目標每回合開始受到持續傷害時，有機率陷入【奧跡】，在回合開始時受到<orangeStrong>風屬性持續傷害</orangeStrong>，並且黑天鵝根據【奧跡】層數觸發<orangeStrong>額外效果</orangeStrong>。"
+        "shortDesc": "敵方目標每回合開始受到持續傷害時，有機率陷入【奧跡】，在回合開始時受到<orangeStrong>風屬性持續傷害</orangeStrong>，並且黑天鵝根據【奧跡】層數觸發<orangeStrong>額外效果</orangeStrong>。",
+        "tag": "妨害"
       }
     },
     "technique": {
       "0": {
         "name": "取此真相，棄捨表徵",
         "fullDesc": "使用秘技後，下一次戰鬥開始時有{{1, percent}}%的基礎機率使敵方每個單體目標陷入1層【奧跡】。使其中每個成功陷入【奧跡】的目標再次陷入1層【奧跡】，重複此效果直到未能成功使該目標陷入【奧跡】。每次使目標陷入【奧跡】的基礎機率等同於上一次成功使該目標陷入【奧跡】時的基礎機率的{{2, percent}}%。",
-        "shortDesc": "使用秘技後，下一次戰鬥開始時有高機率對敵方每個單體目標<orangeStrong>施加【奧跡】，重複數次直到施加失敗</orangeStrong>。"
+        "shortDesc": "使用秘技後，下一次戰鬥開始時有高機率對敵方每個單體目標<orangeStrong>施加【奧跡】，重複數次直到施加失敗</orangeStrong>。",
+        "tag": "強化"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "臟中躁動",
         "fullDesc": "施放戰技攻擊陷入風化、裂傷、灼燒、觸電狀態的指定敵方單體後，分別各有{{1, percent}}%的基礎機率額外使目標陷入1層【奧跡】。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "杯底端倪",
         "fullDesc": "在敵方目標進入戰鬥時，有{{1, percent}}%的基礎機率陷入1層【奧跡】。<br>敵方目標在我方單次攻擊內每受到1次持續傷害，便有{{1, percent}}%的基礎機率陷入1層【奧跡】，單次攻擊內最多陷入{{2}}層。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "燭影朕兆",
         "fullDesc": "使自身造成的傷害提高，提高數值等同於效果命中的{{1, percent}}%，最多使造成的傷害提高{{2, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

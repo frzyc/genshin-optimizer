@@ -5,68 +5,78 @@
       "0": {
         "name": "{RUBY_B#ようま}妖魔{RUBY_E#}を{RUBY_B#はら}祓{RUBY_E#}う{RUBY_B#るりけん}瑠璃剣{RUBY_E#}",
         "fullDesc": "指定した敵単体に三月なのかの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与え、チャージを{{2}}獲得する。",
-        "shortDesc": "敵単体に少量の虚数属性ダメージを与え、チャージを<orangeStrong>{{2}}</orangeStrong>獲得する。"
+        "shortDesc": "敵単体に少量の虚数属性ダメージを与え、チャージを<orangeStrong>{{2}}</orangeStrong>獲得する。",
+        "tag": "単体攻撃"
       },
       "1": {
         "name": "{RUBY_B#いち}一{RUBY_E#}に{RUBY_B#みけん}眉間{RUBY_E#}、{RUBY_B#に}二{RUBY_E#}に{RUBY_B#しんぞう}心臓{RUBY_E#}",
         "fullDesc": "初期攻撃段数は{{4}}。1段の攻撃につき、指定した敵単体に三月なのかの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与える。最後の1段の攻撃を行うたびに、{{2, percent}}%の固定確率でさらに1段の攻撃を行う、追加で行える攻撃は最大{{3}}段まで。攻撃段数の増加は、強化通常攻撃によるEP回復に影響しない。<br>また、強化通常攻撃はSPを回復できない。",
-        "shortDesc": "敵単体に虚数属性ダメージを与える、初期攻撃段数は<orangeStrong>{{4}}</orangeStrong>。<orangeStrong>確率でさらに<color=#f29e38ff>#3[i]</orangeStrong>段までの攻撃を行う</color>。"
+        "shortDesc": "敵単体に虚数属性ダメージを与える、初期攻撃段数は<orangeStrong>{{4}}</orangeStrong>。<orangeStrong>確率でさらに<color=#f29e38ff>#3[i]</orangeStrong>段までの攻撃を行う</color>。",
+        "tag": "単体攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#ししょう}師匠{RUBY_E#}、お{RUBY_B#ちゃ}茶{RUBY_E#}をどうぞ！",
         "fullDesc": "指定した自身以外の味方単体を「師匠」にする。「師匠」の速度+<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>。戦闘スキルで最後に指定したターゲットのみ、三月なのかの「師匠」と見なされる。<br>通常攻撃を行う、または強化通常攻撃「一に眉間、二に心臓」によるダメージを1段与える時、フィールド上に特定の運命を歩む「師匠」が存在する場合、「師匠」の歩む運命に応じて特定の効果を発動する。<br><br>「師匠」の歩む運命が「知恵」、「壊滅」または「巡狩」の場合：三月なのかの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の、「師匠」の属性に応じた付加ダメージを与える。<br><br>「師匠」の歩む運命が「調和」、「虚無」、「存護」または「豊穣」の場合：その回の攻撃の削靭値+{{3, percent}}%。",
-        "shortDesc": "味方単体を「師匠」にする。通常攻撃、または強化通常攻撃を行ってダメージを与える時、<orangeStrong>「師匠」の運命</orangeStrong>に応じて以下の効果を発動する：<br>「師匠」の運命が「知恵」、「壊滅」、「巡狩」の場合：「師匠」の属性に応じた<orangeStrong>付加ダメージ</orangeStrong>をさらに与える。<br>「師匠」の運命が「調和」、「虚無」、「存護」、「豊穣」の場合：<orangeStrong>削靭値</orangeStrong>がアップする。"
+        "shortDesc": "味方単体を「師匠」にする。通常攻撃、または強化通常攻撃を行ってダメージを与える時、<orangeStrong>「師匠」の運命</orangeStrong>に応じて以下の効果を発動する：<br>「師匠」の運命が「知恵」、「壊滅」、「巡狩」の場合：「師匠」の属性に応じた<orangeStrong>付加ダメージ</orangeStrong>をさらに与える。<br>「師匠」の運命が「調和」、「虚無」、「存護」、「豊穣」の場合：<orangeStrong>削靭値</orangeStrong>がアップする。",
+        "tag": "サポート"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#がいせい}蓋世{RUBY_E#}の{RUBY_B#けつぶつ}傑物{RUBY_E#}、{RUBY_B#みつき}三月{RUBY_E#}なのか",
         "fullDesc": "指定した敵単体に三月なのかの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与える。<br>次の強化通常攻撃「一に眉間、二に心臓」の初期攻撃段数+{{2}}。また、攻撃段数が増加する固定確率+{{3, percent}}%。",
-        "shortDesc": "敵単体に虚数属性ダメージを与え、<orangeStrong>次の強化通常攻撃</orangeStrong>の攻撃段数、および段数が増加する確率が<orangeStrong>アップ</orangeStrong>する。"
+        "shortDesc": "敵単体に虚数属性ダメージを与え、<orangeStrong>次の強化通常攻撃</orangeStrong>の攻撃段数、および段数が増加する確率が<orangeStrong>アップ</orangeStrong>する。",
+        "tag": "単体攻撃"
       }
     },
     "talent": {
       "0": {
         "name": "{RUBY_B#ししょう}師匠{RUBY_E#}、わかりました！",
         "fullDesc": "「師匠」が攻撃を行う、または必殺技を発動した後、三月なのかは一度に最大でチャージを1獲得する。<br>チャージが{{1}}以上の時、三月なのかは即座に行動し、与ダメージ+<orangeStrong>{{2, percent}}%</orangeStrong>。通常攻撃が「一に眉間、二に心臓」に強化され、戦闘スキルが発動できなくなる。強化通常攻撃を行った後、チャージを{{1}}消費する。チャージの上限は{{3}}。",
-        "shortDesc": "<orangeStrong>「師匠」が攻撃を行う、または必殺技を発動した後</orangeStrong>、三月なのかはチャージを獲得する。チャージが<orangeStrong>{{1}}</orangeStrong>に達すると即座に行動して与ダメージをアップし、<orangeStrong>通常攻撃を強化</orangeStrong>する。"
+        "shortDesc": "<orangeStrong>「師匠」が攻撃を行う、または必殺技を発動した後</orangeStrong>、三月なのかはチャージを獲得する。チャージが<orangeStrong>{{1}}</orangeStrong>に達すると即座に行動して与ダメージをアップし、<orangeStrong>通常攻撃を強化</orangeStrong>する。",
+        "tag": "強化"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#いっき}一気{RUBY_E#}に{RUBY_B#さんしょく}三食{RUBY_E#}",
         "fullDesc": "三月なのかがパーティに編成されている場合、三月なのか以外の味方が秘技を使用した回数1回につき、次の戦闘開始時、三月なのかはチャージを1獲得する、最大で{{1}}獲得できる。<br>三月なのかが秘技を使用した後、次の戦闘開始時、三月なのかはEPを{{2}}回復する。",
-        "shortDesc": "自身以外の味方が秘技を使用するたびに、次の戦闘開始時、三月なのかはチャージを獲得する。秘技を使用すると、次の戦闘開始時にEPを回復する。"
+        "shortDesc": "自身以外の味方が秘技を使用するたびに、次の戦闘開始時、三月なのかはチャージを獲得する。秘技を使用すると、次の戦闘開始時にEPを回復する。",
+        "tag": "強化"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#きょうこう}驚鴻{RUBY_E#}",
         "fullDesc": "戦闘開始時、三月なのかの行動順が{{1, percent}}%早まる。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#れいろう}玲瓏{RUBY_E#}",
         "fullDesc": "三月なのかは「師匠」の属性に応じる弱点属性を持つ敵の靭性を削れる。敵を弱点撃破する時、虚数属性の弱点撃破効果が触発される。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#はろう}破浪{RUBY_E#}",
         "fullDesc": "強化通常攻撃を行った後、「師匠」の会心ダメージ+{{1, percent}}%、撃破特効+{{2, percent}}%、{{3}}ターン継続。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

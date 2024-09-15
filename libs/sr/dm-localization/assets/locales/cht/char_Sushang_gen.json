@@ -5,63 +5,72 @@
       "0": {
         "name": "雲騎劍經•素霓",
         "fullDesc": "對指定敵方單體造成等同於素裳<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害。",
-        "shortDesc": "對敵方單體造成少量物理屬性傷害。"
+        "shortDesc": "對敵方單體造成少量物理屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "雲騎劍經•山傾",
         "fullDesc": "對指定敵方單體造成等同於素裳<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害。同時最後一擊後有{{3, percent}}%機率發動【劍勢】，對目標造成等同於素裳<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的物理屬性附加傷害。<br>若該目標處於弱點擊破狀態，則必定發動【劍勢】。",
-        "shortDesc": "對敵方單體造成物理屬性傷害，有<orangeStrong>低機率發動【劍勢】</orangeStrong>。若目標處於弱點擊破狀態則<orangeStrong>【劍勢】必定發動</orangeStrong>。"
+        "shortDesc": "對敵方單體造成物理屬性傷害，有<orangeStrong>低機率發動【劍勢】</orangeStrong>。若目標處於弱點擊破狀態則<orangeStrong>【劍勢】必定發動</orangeStrong>。",
+        "tag": "單體攻擊"
       }
     },
     "ult": {
       "0": {
         "name": "太虛形蘊•燭夜",
         "fullDesc": "對指定敵方單體造成等同於素裳<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害，並使素裳立即行動。同時使其攻擊力提高<orangeStrong>{{4, percent}}%</orangeStrong>，且施放戰技時額外增加2次【劍勢】的發動判定，持續{{2}}回合。<br>通過額外判定發動的【劍勢】傷害為原傷害的{{3, percent}}%。",
-        "shortDesc": "對敵方單體造成大量物理屬性傷害，強化【劍勢】效果並<orangeStrong>立即行動</orangeStrong>。"
+        "shortDesc": "對敵方單體造成大量物理屬性傷害，強化【劍勢】效果並<orangeStrong>立即行動</orangeStrong>。",
+        "tag": "單體攻擊"
       }
     },
     "talent": {
       "0": {
         "name": "遊刃若水",
         "fullDesc": "當場上有敵方目標的弱點被擊破時，素裳的速度提高<orangeStrong>{{1, percent(fixed: 2)}}%</orangeStrong>，持續{{2}}回合。",
-        "shortDesc": "當場上有敵人的弱點被擊破時，自身速度提高。"
+        "shortDesc": "當場上有敵人的弱點被擊破時，自身速度提高。",
+        "tag": "強化"
       }
     },
     "technique": {
       "0": {
         "name": "雲騎劍經•叩陣",
         "fullDesc": "立即攻擊敵人，進入戰鬥後對敵方全體造成等同於素裳{{1, percent}}%攻擊力的物理屬性傷害。",
-        "shortDesc": "攻擊敵人，進入戰鬥後對敵方全體造成少量物理屬性傷害。"
+        "shortDesc": "攻擊敵人，進入戰鬥後對敵方全體造成少量物理屬性傷害。",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "赤子",
         "fullDesc": "若現有生命值百分比小於等於{{1, percent}}%，則被敵方目標攻擊的機率降低。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "逐寇",
         "fullDesc": "每發動1次【劍勢】，【劍勢】的傷害便提高{{1, percent}}%，最多疊加{{2}}層。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "破敵",
         "fullDesc": "發動普通攻擊或施放戰技後，若場上有敵方目標處於弱點擊破狀態，則素裳的行動提前{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

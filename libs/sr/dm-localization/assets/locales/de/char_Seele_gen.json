@@ -5,63 +5,72 @@
       "0": {
         "name": "Prügel",
         "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Seeles ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen Quanten-SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen Quanten-SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Ungezückte Klinge",
         "fullDesc": "Erhöht Seeles GES für {{3}} Rd. um {{2, percent}}% und fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> ihres ANG zu.",
-        "shortDesc": "Fügt einem Gegner Quanten-SCH zu und erhöht die GES."
+        "shortDesc": "Fügt einem Gegner Quanten-SCH zu und erhöht die GES.",
+        "tag": "Einzelangriff"
       }
     },
     "ult": {
       "0": {
         "name": "Schmetterlingssturm",
         "fullDesc": "Tritt in den verstärkten Zustand ein und fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Seeles ANG zu.",
-        "shortDesc": "Tritt in den <orangeStrong>verstärkten Zustand</orangeStrong> ein und fügt einem Gegner massiven Quanten-SCH zu."
+        "shortDesc": "Tritt in den <orangeStrong>verstärkten Zustand</orangeStrong> ein und fügt einem Gegner massiven Quanten-SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "talent": {
       "0": {
         "name": "Erneute Erscheinung",
         "fullDesc": "Seele tritt beim Besiegen eines Gegners durch Standardangriff, Fertigkeit oder Ultimate in den verstärkten Zustand ein und erhält unmittelbar eine zusätzliche Runde. Während des verstärkten Zustands wird ihr SCH für {{2}} Rd. um <orangeStrong>{{1, percent}}%</orangeStrong> erhöht.<br>Gegner, die in der zusätzlichen Runde des Talents „Erneute Erscheinung“ besiegt werden, lösen das Talent nicht aus.",
-        "shortDesc": "Seele tritt beim <orangeStrong>Besiegen eines Gegners</orangeStrong> durch Standardangriff, Fertigkeit oder Ultimate <orangeStrong>in den verstärkten Zustand ein und erhält unmittelbar eine zusätzliche Runde</orangeStrong>. Während des verstärkten Zustands wird ihr SCH erhöht."
+        "shortDesc": "Seele tritt beim <orangeStrong>Besiegen eines Gegners</orangeStrong> durch Standardangriff, Fertigkeit oder Ultimate <orangeStrong>in den verstärkten Zustand ein und erhält unmittelbar eine zusätzliche Runde</orangeStrong>. Während des verstärkten Zustands wird ihr SCH erhöht.",
+        "tag": "Verstärkung"
       }
     },
     "technique": {
       "0": {
         "name": "Phantomillusion",
         "fullDesc": "Nach dem Einsatz der Technik erhält Seele für {{1}} s Tarnung. Während Tarnung aktiv ist, ist Seele für Gegner unsichtbar und tritt zu Beginn des Kampfs sofort in den verstärkten Zustand ein, wenn sie einen Gegner aktiv angreift.",
-        "shortDesc": "Tritt in den Zustand <orangeStrong>Tarnung</orangeStrong> ein. Seele tritt zu Beginn des Kampfs sofort in den <orangeStrong>verstärkten Zustand</orangeStrong> ein, wenn sie einen Gegner aktiv angreift."
+        "shortDesc": "Tritt in den Zustand <orangeStrong>Tarnung</orangeStrong> ein. Seele tritt zu Beginn des Kampfs sofort in den <orangeStrong>verstärkten Zustand</orangeStrong> ein, wenn sie einen Gegner aktiv angreift.",
+        "tag": "Verstärkung"
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Nachtschatten",
         "fullDesc": "Liegt der LP-Prozentsatz bei {{1, percent}}% oder niedriger, sinkt die Chance, von Gegnern angegriffen zu werden.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Zerreißen",
         "fullDesc": "Erhöht beim Buff die Quanten-WDS-DUR von Seele um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Gekräuselte Oberfläche",
         "fullDesc": "Zieht nach einem Standardangriff Seeles nächste Aktion um {{1, percent}}% vor.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

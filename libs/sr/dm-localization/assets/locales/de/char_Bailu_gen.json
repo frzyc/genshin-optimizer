@@ -5,63 +5,72 @@
       "0": {
         "name": "Diagnosetritt",
         "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Bailus ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Unter den Wolken singen",
         "fullDesc": "Stellt LP eines anvisierten Verbündeten sofort um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Bailus max. LP plus <orangeStrong>{{2}}</orangeStrong> wieder her. Anschließend heilt Bailu {{4}}-mal zufällige Verbündete. Nach jeder Heilung werden die wiederhergestellten LP beim nächsten Mal um {{3, percent}}% reduziert.",
-        "shortDesc": "Stellt LP für einen Verbündeten wieder her und heilt dann einen weiteren zufälligen Verbündeten."
+        "shortDesc": "Stellt LP für einen Verbündeten wieder her und heilt dann einen weiteren zufälligen Verbündeten.",
+        "tag": "Wiederherstellung"
       }
     },
     "ult": {
       "0": {
         "name": "Sprung des Sumpfdrachen",
         "fullDesc": "Stellt LP aller Verbündeten sofort um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Bailus max. LP plus <orangeStrong>{{2}}</orangeStrong> wieder her.<br>Verbündete, die noch nicht belebt sind, werden von Bailu belebt. Bei Verbündeten mit Belebung hält die Belebungsdauer 1 weitere Runde lang an.<br>Die „Belebung“ hält bis zu {{3}} Rd. lang an. Dieser Effekt ist nicht stapelbar.",
-        "shortDesc": "Stellt LP für alle Verbündeten wieder her. Belebt die Verbündeten oder verlängert die Dauer der „Belebung“."
+        "shortDesc": "Stellt LP für alle Verbündeten wieder her. Belebt die Verbündeten oder verlängert die Dauer der „Belebung“.",
+        "tag": "Wiederherstellung"
       }
     },
     "talent": {
       "0": {
         "name": "Flaschenkürbis voller Elixier",
         "fullDesc": "Nachdem ein Verbündeter mit „Belebung“ getroffen worden ist, werden seine LP um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Bailus max. LP plus <orangeStrong>{{2}}</orangeStrong> wiederhergestellt. Dieser Effekt kann {{5}}-mal ausgelöst werden. <br>Erleidet ein Verbündeter einen Todesstoß, wird dieser nicht handlungsunfähig. Stattdessen heilt Bailu den Verbündeten sofort um <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> von Bailus max. LP plus <orangeStrong>{{4}}</orangeStrong>. Dieser Effekt kann 1-mal pro Kampf ausgelöst werden.",
-        "shortDesc": "Verbündete mit <orangeStrong>Belebung</orangeStrong> stellen ihre <orangeStrong>LP</orangeStrong> wieder her, nachdem sie angegriffen wurden.<br>Wenn ein Verbündeter einen <orangeStrong>Todesstoß erleidet</orangeStrong>, stellt Bailu <orangeStrong>sofort seine LP</orangeStrong> wieder her. Dieser Effekt kann nur 1-mal pro Kampf ausgelöst werden."
+        "shortDesc": "Verbündete mit <orangeStrong>Belebung</orangeStrong> stellen ihre <orangeStrong>LP</orangeStrong> wieder her, nachdem sie angegriffen wurden.<br>Wenn ein Verbündeter einen <orangeStrong>Todesstoß erleidet</orangeStrong>, stellt Bailu <orangeStrong>sofort seine LP</orangeStrong> wieder her. Dieser Effekt kann nur 1-mal pro Kampf ausgelöst werden.",
+        "tag": "Wiederherstellung"
       }
     },
     "technique": {
       "0": {
         "name": "Im Regen spazieren",
         "fullDesc": "Gewährt nach dem Einsatz der Technik allen Verbündeten zu Beginn des nächsten Kampfes für {{1}} Rd. „Belebung“.",
-        "shortDesc": "Nach dem Einsatz der Technik erhalten alle Verbündeten zu Beginn des nächsten Kampfes „Belebung“."
+        "shortDesc": "Nach dem Einsatz der Technik erhalten alle Verbündeten zu Beginn des nächsten Kampfes „Belebung“.",
+        "tag": "Wiederherstellung"
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Qihuang-Analekten",
         "fullDesc": "Erhöht die max. LP des Ziels für {{2}} Rd. um {{1, percent}}%, wenn Bailu einen Verbündeten über dessen max. LP hinaus heilt.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Vidyadharas Geo-Adern",
         "fullDesc": "Erhöht die Auslösungsanzahl der „Belebung“ um {{1}}.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Aquatischer Segen",
         "fullDesc": "Verringert den erlittenen SCH der belebten Figuren um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

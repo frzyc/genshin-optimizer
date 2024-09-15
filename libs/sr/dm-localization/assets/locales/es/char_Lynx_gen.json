@@ -5,63 +5,72 @@
       "0": {
         "name": "Técnica de crampón",
         "fullDesc": "Inflige un Daño Cuántico equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> de sus PV máx. a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño Cuántico a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño Cuántico a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Latas de acampada",
         "fullDesc": "Aplica Reacción de supervivencia a un aliado y aumenta sus PV máx. en una cantidad equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Lynx + <orangeStrong>{{2}}</orangeStrong>. Si el aliado es de la Vía de la Destrucción o de la Conservación, aumenta en gran medida la probabilidad de que reciba un ataque enemigo. Reacción de supervivencia dura {{3}} turnos.<br>El objetivo aliado regenera una cantidad de PV equivalente al <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Lynx + <orangeStrong>{{5}}</orangeStrong>.",
-        "shortDesc": "Un aliado obtiene Reacción de supervivencia, lo que <orangeStrong>aumenta sus PV máx.</orangeStrong> Además, sus PV se regeneran."
+        "shortDesc": "Un aliado obtiene Reacción de supervivencia, lo que <orangeStrong>aumenta sus PV máx.</orangeStrong> Además, sus PV se regeneran.",
+        "tag": "Regeneración"
       }
     },
     "ult": {
       "0": {
         "name": "Botiquín de las llanuras nevadas",
         "fullDesc": "Elimina {{1}} estado negativo de todos los aliados y todos los aliados regeneran una cantidad de PV equivalente al <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Lynx + <orangeStrong>{{3}}</orangeStrong>.",
-        "shortDesc": "Elimina <orangeStrong>1 estado negativo de todos los aliados</orangeStrong>. Todos los aliados regeneran PV."
+        "shortDesc": "Elimina <orangeStrong>1 estado negativo de todos los aliados</orangeStrong>. Todos los aliados regeneran PV.",
+        "tag": "Regeneración"
       }
     },
     "talent": {
       "0": {
         "name": "Supervivencia al aire libre",
         "fullDesc": "Al usar la habilidad básica o la habilidad definitiva, un objetivo aliado obtiene un efecto de curación continua durante {{1}} turnos. Al comenzar cada turno, el objetivo regenera una cantidad de PV equivalente al <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Lynx + <orangeStrong>{{3}}</orangeStrong>. Si el objetivo está afectado por Reacción de supervivencia, el efecto de curación continua regenera de forma adicional una cantidad de PV equivalente al <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Lynx + <orangeStrong>{{5}}</orangeStrong>.",
-        "shortDesc": "Al usar la habilidad básica o la habilidad definitiva, un aliado obtiene un efecto de <orangeStrong>regeneración continua de PV</orangeStrong>. Si el objetivo está afectado por Reacción de supervivencia, el efecto de regeneración continua de PV aumenta de forma adicional."
+        "shortDesc": "Al usar la habilidad básica o la habilidad definitiva, un aliado obtiene un efecto de <orangeStrong>regeneración continua de PV</orangeStrong>. Si el objetivo está afectado por Reacción de supervivencia, el efecto de regeneración continua de PV aumenta de forma adicional.",
+        "tag": "Regeneración"
       }
     },
     "technique": {
       "0": {
         "name": "Barrita energética de chocolate",
         "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, se aplica el efecto de curación continua del talento de Lynx a todos los aliados durante {{1}} turnos.",
-        "shortDesc": "Tras usar la técnica, al comenzar la siguiente batalla, todos los aliados obtienen un efecto de curación continua."
+        "shortDesc": "Tras usar la técnica, al comenzar la siguiente batalla, todos los aliados obtienen un efecto de curación continua.",
+        "tag": "Regeneración"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "ATQ individual"
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Investigación previa",
         "fullDesc": "Cuando un objetivo con Reacción de supervivencia recibe un ataque, Lynx recupera {{1}} pts. de energía inmediatamente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Técnicas de exploración",
         "fullDesc": "La probabilidad de resistir estados negativos de Control aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Supervivencia extrema",
         "fullDesc": "El efecto de curación continua del talento dura {{1}} turno más.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,63 +5,72 @@
       "0": {
         "name": "Ajuste de Lâmina de Serra",
         "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Himeko a um único inimigo.",
-        "shortDesc": "Causa Dano de Fogo leve a um único inimigo."
+        "shortDesc": "Causa Dano de Fogo leve a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Detonação por Fusão",
         "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Himeko a um único inimigo e <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Himeko como Dano de Fogo aos inimigos adjacentes a ele.",
-        "shortDesc": "Causa Dano de Fogo a um único inimigo e Dano de Fogo leve a inimigos adjacentes a ele."
+        "shortDesc": "Causa Dano de Fogo a um único inimigo e Dano de Fogo leve a inimigos adjacentes a ele.",
+        "tag": "Explosão"
       }
     },
     "ult": {
       "0": {
         "name": "Chama Celestial",
         "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Himeko a todos os inimigos. Além disso, Himeko regenera {{2}} de Energia extra para cada inimigo derrotado.",
-        "shortDesc": "Causa Dano de Fogo a todos os inimigos. Se inimigos forem derrotados, regenera Energia."
+        "shortDesc": "Causa Dano de Fogo a todos os inimigos. Se inimigos forem derrotados, regenera Energia.",
+        "tag": "Área"
       }
     },
     "talent": {
       "0": {
         "name": "Corrida da Vitória",
         "fullDesc": "Quando um inimigo é infligido com Quebra de Fraqueza, Himeko ganha 1 ponto de Carga (máximo de {{2}} pontos).<br>Se Himeko estiver com carga total quando um aliado atacar, ela imediatamente realiza 1 Ataque Extra e causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ dela como Dano de Fogo a todos os inimigos, consumindo todos os pontos de Carga.<br>No início da batalha, Himeko ganha 1 ponto de Carga.",
-        "shortDesc": "Ganha Carga quando um inimigo sofre a Quebra de Fraqueza.<br>Depois que um aliado realiza um ataque, se estiver completamente Carregado, <orangeStrong>realiza imediatamente um Ataque Extra</orangeStrong> e causa Dano de Fogo a <orangeStrong>todos os inimigos</orangeStrong>, consumindo todos os pontos de Carga.<br>Ganha 1 ponto de Carga no início de cada batalha."
+        "shortDesc": "Ganha Carga quando um inimigo sofre a Quebra de Fraqueza.<br>Depois que um aliado realiza um ataque, se estiver completamente Carregado, <orangeStrong>realiza imediatamente um Ataque Extra</orangeStrong> e causa Dano de Fogo a <orangeStrong>todos os inimigos</orangeStrong>, consumindo todos os pontos de Carga.<br>Ganha 1 ponto de Carga no início de cada batalha.",
+        "tag": "Área"
       }
     },
     "technique": {
       "0": {
         "name": "Combustão Incompleta",
         "fullDesc": "Após usar a Técnica, cria uma dimensão especial que dura {{4}}s. Depois de entrar em batalha com inimigos na dimensão especial, há {{1, percent}}% de chance-base de aumentar o Dano de Fogo que os inimigos recebem em {{2, percent}}% por {{3}} rodada(s). Só 1 dimensão criada por aliados pode existir ao mesmo tempo.",
-        "shortDesc": "Cria uma dimensão especial. Depois de entrar em combate com inimigos na dimensão, existe uma alta chance de <orangeStrong>aumentar o Dano de Fogo recebido pelos inimigos</orangeStrong>."
+        "shortDesc": "Cria uma dimensão especial. Depois de entrar em combate com inimigos na dimensão, existe uma alta chance de <orangeStrong>aumentar o Dano de Fogo recebido pelos inimigos</orangeStrong>.",
+        "tag": "Incapacitação"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Chama Estelar",
         "fullDesc": "Depois de usar um ataque, tem {{1, percent}}% de chance-base de infligir Queimadura a inimigos por {{2}} rodada(s).<br>Quando afligidos por Queimadura, os inimigos recebem Dano de Fogo Contínuo igual a {{3, percent}}% do ATQ de Himeko no início de cada rodada.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Magma",
         "fullDesc": "A Perícia causa {{1, percent}}% a mais de Dano a inimigos atualmente sob efeito de Queimadura.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Marco",
         "fullDesc": "Quando os PV estiverem em {{1, percent}}% ou mais, a Chance de CRIT aumenta em {{2, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

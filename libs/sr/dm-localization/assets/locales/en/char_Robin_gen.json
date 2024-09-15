@@ -5,63 +5,72 @@
       "0": {
         "name": "Wingflip White Noise",
         "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Robin's ATK to a single target enemy.",
-        "shortDesc": "Deals minor Physical DMG to a single enemy."
+        "shortDesc": "Deals minor Physical DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Pinion's Aria",
         "fullDesc": "Increase DMG dealt by all allies by <orangeStrong>{{1, percent}}%</orangeStrong>, lasting for {{2}} turn(s). This duration decreases by 1 at the start of Robin's every turn.",
-        "shortDesc": "<orangeStrong>Increases DMG dealt</orangeStrong> by all allies."
+        "shortDesc": "<orangeStrong>Increases DMG dealt</orangeStrong> by all allies.",
+        "tag": "Support"
       }
     },
     "ult": {
       "0": {
         "name": "Vox Harmonique, Opus Cosmique",
         "fullDesc": "Robin enters the Concerto state and makes all other allies immediately take action.<br>While in the Concerto state, increases all allies' ATK by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Robin's ATK plus <orangeStrong>{{3}}</orangeStrong>. Moreover, after every attack by allies, Robin deals Additional Physical DMG equal to <orangeStrong>{{4, percent}}%</orangeStrong> of her ATK for 1 time, with a fixed CRIT Rate for this damage set at {{5, percent}}% and fixed CRIT DMG set at {{6, percent}}%.<br>While in the Concerto state, Robin is immune to Crowd Control debuffs and cannot enter her turn or take action until the Concerto state ends.<br>A Concerto countdown appears on the Action Order bar. When the countdown's turn begins, Robin exits the Concerto state and immediately takes action. The countdown has its own fixed SPD of {{2}}.",
-        "shortDesc": "Enters the Concerto state, <orangeStrong>increases all allies' ATK</orangeStrong>, and causes all teammates to immediately take action. After an attack, Robin deals <orangeStrong>Additional Physical DMG</orangeStrong>. While Concerto lasts, Robin is immune to Crowd Control debuffs. Before Concerto ends, Robin won't take turn or action, lasting until the end of the countdown."
+        "shortDesc": "Enters the Concerto state, <orangeStrong>increases all allies' ATK</orangeStrong>, and causes all teammates to immediately take action. After an attack, Robin deals <orangeStrong>Additional Physical DMG</orangeStrong>. While Concerto lasts, Robin is immune to Crowd Control debuffs. Before Concerto ends, Robin won't take turn or action, lasting until the end of the countdown.",
+        "tag": "Support"
       }
     },
     "talent": {
       "0": {
         "name": "Tonal Resonance",
         "fullDesc": "Increase all allies' CRIT DMG by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Moreover, after allies attack enemy targets, Robin additionally regenerates {{2}} Energy for herself.",
-        "shortDesc": "Increase all allies' <orangeStrong>CRIT DMG</orangeStrong>, and Robin additionally regenerates Energy after allies attack enemies."
+        "shortDesc": "Increase all allies' <orangeStrong>CRIT DMG</orangeStrong>, and Robin additionally regenerates Energy after allies attack enemies.",
+        "tag": "Support"
       }
     },
     "technique": {
       "0": {
         "name": "Overture of Inebriation",
         "fullDesc": "After using Technique, creates a special dimension around the character that lasts for {{1}} seconds. Enemies within this dimension will not attack Robin and will follow Robin while the dimension is active. After entering battle while the dimension is active, Robin regenerates {{2}} Energy at the start of each wave. Only 1 dimension created by allies can exist at the same time.",
-        "shortDesc": "Creates a special dimension around the character. Enemies within this dimension will not attack Robin. After entering battle while the dimension is active, Robin additionally regenerates <orangeStrong>{{2}}</orangeStrong> Energy at the start of each wave."
+        "shortDesc": "Creates a special dimension around the character. Enemies within this dimension will not attack Robin. After entering battle while the dimension is active, Robin additionally regenerates <orangeStrong>{{2}}</orangeStrong> Energy at the start of each wave.",
+        "tag": "Support"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Coloratura Cadenza",
         "fullDesc": "When the battle begins, this character's action is Advanced Forward by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Impromptu Flourish",
         "fullDesc": "While the Concerto state is active, the CRIT DMG dealt when all allies launch follow-up attacks increases by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Sequential Passage",
         "fullDesc": "When using Skill, additionally regenerates {{1}} Energy.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

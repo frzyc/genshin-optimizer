@@ -5,68 +5,78 @@
       "0": {
         "name": "Taxa de Rolha",
         "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Gallagher a um único inimigo-alvo.",
-        "shortDesc": "Causa Dano de Fogo leve a um único inimigo."
+        "shortDesc": "Causa Dano de Fogo leve a um único inimigo.",
+        "tag": "Alvo Único"
       },
       "1": {
         "name": "Blitz de Néctar",
         "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Gallagher a um único inimigo-alvo e reduz o ATQ do alvo em <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, durando por {{3}} rodada(s).",
-        "shortDesc": "Causa Dano de Fogo a um único inimigo e reduz o ATQ."
+        "shortDesc": "Causa Dano de Fogo a um único inimigo e reduz o ATQ.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Bebida Especial",
         "fullDesc": "Cura imediatamente <orangeStrong>{{1}}</orangeStrong> de PV de um aliado-alvo.",
-        "shortDesc": "Imediatamente recupera os PV de um aliado."
+        "shortDesc": "Imediatamente recupera os PV de um aliado.",
+        "tag": "Restauração"
       }
     },
     "ult": {
       "0": {
         "name": "Etiqueta de Champanhe",
         "fullDesc": "Inflige Inebriação a todos os inimigos, durando por {{2}} rodada(s). Ao mesmo tempo, causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Gallagher a todos os inimigos e aprimora o próximo ATQ Básico para Blitz de Néctar.",
-        "shortDesc": "<orangeStrong>Inflige Inebriação</orangeStrong> a todos os inimigos e causa Dano de Fogo a eles ao mesmo tempo. Aprimora o próximo ATQ Básico para Blitz de Néctar."
+        "shortDesc": "<orangeStrong>Inflige Inebriação</orangeStrong> a todos os inimigos e causa Dano de Fogo a eles ao mesmo tempo. Aprimora o próximo ATQ Básico para Blitz de Néctar.",
+        "tag": "Área"
       }
     },
     "talent": {
       "0": {
         "name": "Luta Embriagante",
         "fullDesc": "O estado de Inebriação faz com que alvos recebam <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> a mais de Dano de Quebra. Sempre que um alvo com Inebriação é atacado por um aliado, os PV do atacante são curados em <orangeStrong>{{2}}</orangeStrong>.",
-        "shortDesc": "O estado de Inebriação <orangeStrong>faz com que alvos recebam mais Dano de Quebra</orangeStrong>. Sempre que o alvo é atacado por um aliado, <orangeStrong>os PV do atacante são restaurados</orangeStrong>."
+        "shortDesc": "O estado de Inebriação <orangeStrong>faz com que alvos recebam mais Dano de Quebra</orangeStrong>. Sempre que o alvo é atacado por um aliado, <orangeStrong>os PV do atacante são restaurados</orangeStrong>.",
+        "tag": "Restauração"
       }
     },
     "technique": {
       "0": {
         "name": "Artesão de Elixires",
         "fullDesc": "Ataca o inimigo imediatamente. Ao entrar na batalha, inflige Inebriação a todos os inimigos, durando por {{1}} rodada(s). Causa Dano de Fogo igual a {{2, percent}}% do ATQ de Gallagher a todos os inimigos.",
-        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, <orangeStrong>inflige Inebriação</orangeStrong> a todos os inimigos e causa Dano de Fogo leve a todos os inimigos."
+        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, <orangeStrong>inflige Inebriação</orangeStrong> a todos os inimigos e causa Dano de Fogo leve a todos os inimigos.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Mistura Nova",
         "fullDesc": "Aumenta a Cura Realizada desta unidade em uma quantidade igual a {{1, percent}}% do Efeito de Quebra, até um máximo de {{2, percent}}% de aumento da Cura Realizada.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Fermento Orgânico",
         "fullDesc": "Após utilizar sua Perícia Suprema, imediatamente Avança Adiante a ação desta unidade em 100%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Virar o Copo",
         "fullDesc": "Quando Gallagher usa Blitz de Néctar para atacar inimigos no estado de Inebriação, o efeito de Recuperação de PV do Talento dele será aplicado a outros aliados também desta vez.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

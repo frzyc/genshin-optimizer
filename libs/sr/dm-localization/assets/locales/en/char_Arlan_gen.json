@@ -5,63 +5,72 @@
       "0": {
         "name": "Lightning Rush",
         "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Arlan's ATK to a single enemy.",
-        "shortDesc": "Deals minor Lightning DMG to a single enemy."
+        "shortDesc": "Deals minor Lightning DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Shackle Breaker",
         "fullDesc": "Consumes Arlan's HP equal to {{1, percent}}% of his Max HP to deal Lightning DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Arlan's ATK to a single enemy. If Arlan does not have sufficient HP, his HP will be reduced to 1 after using his Skill.",
-        "shortDesc": "Consumes a portion of HP to deal Lightning DMG to a single enemy."
+        "shortDesc": "Consumes a portion of HP to deal Lightning DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "ult": {
       "0": {
         "name": "Frenzied Punishment",
         "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Arlan's ATK to a single enemy and Lightning DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Arlan's ATK to enemies adjacent to it.",
-        "shortDesc": "Deals massive Lightning DMG to a single enemy and Lightning DMG to enemies adjacent to it."
+        "shortDesc": "Deals massive Lightning DMG to a single enemy and Lightning DMG to enemies adjacent to it.",
+        "tag": "Blast"
       }
     },
     "talent": {
       "0": {
         "name": "Pain and Anger",
         "fullDesc": "Increases Arlan's DMG for every percent of HP below his Max HP, up to a max of <orangeStrong>{{1, percent}}%</orangeStrong> more DMG.",
-        "shortDesc": "Gain DMG bonus <orangeStrong>based on</orangeStrong> <orangeStrong>percent of HP lost</orangeStrong>."
+        "shortDesc": "Gain DMG bonus <orangeStrong>based on</orangeStrong> <orangeStrong>percent of HP lost</orangeStrong>.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Swift Harvest",
         "fullDesc": "Immediately attacks the enemy. After entering battle, deals Lightning DMG equal to {{1, percent}}% of Arlan's ATK to all enemies.",
-        "shortDesc": "Attacks the enemy. After entering battle, deals minor Lightning DMG to all enemies."
+        "shortDesc": "Attacks the enemy. After entering battle, deals minor Lightning DMG to all enemies.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Revival",
         "fullDesc": "If the current HP percentage is {{1, percent}}% or lower when defeating an enemy, immediately restores HP equal to {{2, percent}}% of Max HP.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Endurance",
         "fullDesc": "The chance to resist DoT Debuffs increases by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Repel",
         "fullDesc": "Upon entering battle, if Arlan's HP is less than or equal to {{1, percent}}%, he can nullify all DMG received except for DoTs until he is attacked.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

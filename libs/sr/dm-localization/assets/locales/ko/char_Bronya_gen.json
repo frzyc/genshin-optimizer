@@ -5,63 +5,72 @@
       "0": {
         "name": "바람의 탄환",
         "fullDesc": "지정된 단일 적에게 브로냐 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 바람 속성 피해를 가한다",
-        "shortDesc": "단일 적에게 소량의 바람 속성 피해를 가한다"
+        "shortDesc": "단일 적에게 소량의 바람 속성 피해를 가한다",
+        "tag": "단일 공격"
       }
     },
     "skill": {
       "0": {
         "name": "작전 재배치",
         "fullDesc": "지정된 단일 아군의 디버프 효과를 1개 해제하며, 해당 목표는 즉시 행동하고, 가하는 피해가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 지속 시간: {{3}}턴.<br>자신에게 해당 스킬을 발동하면 즉시 행동 효과는 발동되지 않는다",
-        "shortDesc": "단일 아군의 <orangeStrong>디버프 효과</orangeStrong>를 1개 <orangeStrong>해제</orangeStrong>하고, 해당 아군이 <orangeStrong>가하는 피해가 증가</orangeStrong>하며 <orangeStrong>즉시 행동</orangeStrong>한다"
+        "shortDesc": "단일 아군의 <orangeStrong>디버프 효과</orangeStrong>를 1개 <orangeStrong>해제</orangeStrong>하고, 해당 아군이 <orangeStrong>가하는 피해가 증가</orangeStrong>하며 <orangeStrong>즉시 행동</orangeStrong>한다",
+        "tag": "서포트"
       }
     },
     "ult": {
       "0": {
         "name": "벨로보그 행진곡",
         "fullDesc": "모든 아군의 공격력이 <orangeStrong>{{1, percent}}%</orangeStrong> 증가하고, 동시에 브로냐 치명타 피해 <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>만큼의 치명타 피해가 증가한다. 지속 시간: {{4}}턴",
-        "shortDesc": "모든 아군의 <orangeStrong>공격력이 증가</orangeStrong>하고 <orangeStrong>치명타 피해가 증가</orangeStrong>한다"
+        "shortDesc": "모든 아군의 <orangeStrong>공격력이 증가</orangeStrong>하고 <orangeStrong>치명타 피해가 증가</orangeStrong>한다",
+        "tag": "서포트"
       }
     },
     "talent": {
       "0": {
         "name": "앞선 한 발",
         "fullDesc": "일반 공격 발동 후 브로냐의 다음번 행동 게이지가 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다",
-        "shortDesc": "일반 공격 발동 후 자신의 다음 행동 게이지가 증가한다"
+        "shortDesc": "일반 공격 발동 후 자신의 다음 행동 게이지가 증가한다",
+        "tag": "강화"
       }
     },
     "technique": {
       "0": {
         "name": "깃발 아래",
         "fullDesc": "비술 발동 후 다음 전투 시작 시 모든 아군의 공격력이 {{1, percent}}% 증가한다. 지속 시간: {{2}}턴",
-        "shortDesc": "비술을 발동하고 다음 전투 시작 시 모든 아군의 공격력이 증가한다"
+        "shortDesc": "비술을 발동하고 다음 전투 시작 시 모든 아군의 공격력이 증가한다",
+        "tag": "서포트"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "호령",
         "fullDesc": "일반 공격의 치명타 확률이 100%까지 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "진영",
         "fullDesc": "전투 시작 시 모든 아군의 방어력이 {{2, percent}}% 증가한다. 지속 시간: {{1}}턴",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "군세",
         "fullDesc": "브로냐가 필드에 있으면 모든 아군이 가하는 피해가 {{1, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

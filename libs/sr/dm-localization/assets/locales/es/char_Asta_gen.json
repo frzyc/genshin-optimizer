@@ -5,63 +5,72 @@
       "0": {
         "name": "Haz espectral",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Asta como Daño de Fuego a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Tormenta de meteoritos",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Asta como Daño de Fuego a un enemigo y después inflige daño 4 veces más. Cada golpe inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Asta como Daño de Fuego a un enemigo al azar.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo. Se dispara 5 veces."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo. Se dispara 5 veces.",
+        "tag": "Rebote"
       }
     },
     "ult": {
       "0": {
         "name": "Bendición astral",
         "fullDesc": "La VEL de todos los aliados aumenta en <orangeStrong>{{1}}</orangeStrong> pts. durante {{2}} turnos.",
-        "shortDesc": "<orangeStrong>Aumenta la VEL</orangeStrong> de todos los aliados."
+        "shortDesc": "<orangeStrong>Aumenta la VEL</orangeStrong> de todos los aliados.",
+        "tag": "Apoyo"
       }
     },
     "talent": {
       "0": {
         "name": "Astrometría",
         "fullDesc": "Obtiene una acumulación de Recarga por cada objetivo distinto golpeado. Si el objetivo tiene Debilidad de Fuego, obtiene una acumulación adicional.<br>Por cada acumulación de Recarga que tenga Asta, el ATQ de todos los aliados aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Este efecto se puede acumular hasta {{2}} veces.<br>A partir de su segundo turno, Asta pierde {{3}} acumulaciones de Recarga al principio de cada turno.",
-        "shortDesc": "Obtiene una acumulación de Recarga por cada objetivo distinto golpeado, hasta un máximo de 5 acumulaciones. Cada acumulación aumenta el ATQ de todos los aliados. Las acumulaciones de Recarga se reducen al comenzar su turno."
+        "shortDesc": "Obtiene una acumulación de Recarga por cada objetivo distinto golpeado, hasta un máximo de 5 acumulaciones. Cada acumulación aumenta el ATQ de todos los aliados. Las acumulaciones de Recarga se reducen al comenzar su turno.",
+        "tag": "Apoyo"
       }
     },
     "technique": {
       "0": {
         "name": "Destello milagroso",
         "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{1, percent}}% del ATQ de Asta como Daño de Fuego a todos los enemigos.",
-        "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de daño a todos los enemigos."
+        "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de daño a todos los enemigos.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Chispas",
         "fullDesc": "Al usar el ATQ básico, hay un {{1, percent}}% de probabilidad base de infligir Quemadura al objetivo durante {{2}} turnos.<br>Los enemigos afectados por Quemadura reciben al comienzo de cada turno un Daño de Fuego con el tiempo equivalente al {{3, percent}}% del daño que inflige el ATQ básico de Asta.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Ignición",
         "fullDesc": "Cuando Asta está en la batalla, el Daño de Fuego que infligen todos los aliados aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Constelación",
         "fullDesc": "Por cada acumulación de Recarga que tenga Asta, su DEF aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

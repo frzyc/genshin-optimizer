@@ -5,63 +5,72 @@
       "0": {
         "name": "Dislodged",
         "fullDesc": "Tingyun deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of her ATK to a single enemy.",
-        "shortDesc": "Deals minor Lightning DMG to a single enemy."
+        "shortDesc": "Deals minor Lightning DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Soothing Melody",
         "fullDesc": "Grants a single ally with Benediction to increase their ATK by <orangeStrong>{{2, percent}}%</orangeStrong>, up to <orangeStrong>{{4, percent}}%</orangeStrong> of Tingyun's current ATK.<br>When the ally with Benediction attacks, they will deal Additional Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of that ally's ATK for 1 time.<br>Benediction lasts for {{3}} turn(s) and is only effective on the most recent receiver of Tingyun's Skill.",
-        "shortDesc": "<orangeStrong>Increases the ATK</orangeStrong> of a single ally and grants them Benediction. Ally with Benediction additionally deals minor <orangeStrong>Lightning Additional DMG</orangeStrong> when attacking."
+        "shortDesc": "<orangeStrong>Increases the ATK</orangeStrong> of a single ally and grants them Benediction. Ally with Benediction additionally deals minor <orangeStrong>Lightning Additional DMG</orangeStrong> when attacking.",
+        "tag": "Support"
       }
     },
     "ult": {
       "0": {
         "name": "Amidst the Rejoicing Clouds",
         "fullDesc": "Regenerates {{1}} Energy for a single ally and increases the target's DMG by <orangeStrong>{{3, percent}}%</orangeStrong> for {{2}} turn(s).",
-        "shortDesc": "Regenerates a target ally's <orangeStrong>Energy</orangeStrong> and <orangeStrong>increases their DMG dealt</orangeStrong>."
+        "shortDesc": "Regenerates a target ally's <orangeStrong>Energy</orangeStrong> and <orangeStrong>increases their DMG dealt</orangeStrong>.",
+        "tag": "Support"
       }
     },
     "talent": {
       "0": {
         "name": "Violet Sparknado",
         "fullDesc": "When an enemy is attacked by Tingyun, the ally with Benediction immediately deals Additional Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of that ally's ATK to the same enemy.",
-        "shortDesc": "When an enemy is attacked by Tingyun, the ally with Benediction immediately deals minor Lightning Additional DMG to the same enemy."
+        "shortDesc": "When an enemy is attacked by Tingyun, the ally with Benediction immediately deals minor Lightning Additional DMG to the same enemy.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Gentle Breeze",
         "fullDesc": "Tingyun immediately regenerates {{1}} Energy upon using her Technique.",
-        "shortDesc": "After using this Technique, this character immediately regenerates Energy for themselves."
+        "shortDesc": "After using this Technique, this character immediately regenerates Energy for themselves.",
+        "tag": "Support"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Nourished Joviality",
         "fullDesc": "Tingyun's SPD increases by {{1, percent}}% for 1 turn after using Skill.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Knell Subdual",
         "fullDesc": "DMG dealt by Basic ATK increases by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Jubilant Passage",
         "fullDesc": "Tingyun immediately regenerates {{1}} Energy at the start of her turn.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,63 +5,72 @@
       "0": {
         "name": "Frappe stellaire",
         "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> des PV max de Fu Xuan à un ennemi unique.",
-        "shortDesc": "Inflige des DGT quantiques mineurs à un ennemi unique."
+        "shortDesc": "Inflige des DGT quantiques mineurs à un ennemi unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Merveille des étoiles",
         "fullDesc": "Active Matrice de prémonition, ce qui permet aux autres membres de l'équipe de Fu Xuan de lui transférer {{1, percent}}% des DGT qu'ils subissent (avant que ces DGT ne soient atténués par d'éventuels boucliers) pendant {{3}} tours.<br>Lorsqu'ils sont affectés par Matrice de prémonition, tous les membres de l'équipe bénéficient de l'effet Connaissance, qui augmente leurs PV max respectifs à hauteur de <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> des PV max de Fu Xuan, et leurs chances de coup critique de <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.<br>Matrice de prémonition se dissipe lorsque Fu Xuan est à terre.",
-        "shortDesc": "Active Matrice de prémonition. <orangeStrong>Les DGT subis par les alliés de Fu Xuan lui sont transférés</orangeStrong>. D'autre part, <orangeStrong>augmente les chances de coup critique</orangeStrong> et les PV max de tous les alliés."
+        "shortDesc": "Active Matrice de prémonition. <orangeStrong>Les DGT subis par les alliés de Fu Xuan lui sont transférés</orangeStrong>. D'autre part, <orangeStrong>augmente les chances de coup critique</orangeStrong> et les PV max de tous les alliés.",
+        "tag": "Défense"
       }
     },
     "ult": {
       "0": {
         "name": "Évolution ultime",
         "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> des PV max de Fu Xuan à tous les ennemis et obtient 1 déclenchement pour l'effet de restauration de PV accordé par le talent de Fu Xuan.",
-        "shortDesc": "Inflige des DGT quantiques à tous les ennemis et augmente le nombre de fois où le talent de Fu Xuan se déclenche."
+        "shortDesc": "Inflige des DGT quantiques à tous les ennemis et augmente le nombre de fois où le talent de Fu Xuan se déclenche.",
+        "tag": "ZdE"
       }
     },
     "talent": {
       "0": {
         "name": "Coup du sort",
         "fullDesc": "Tant que Fu Xuan n'a pas été mise à terre, Évitement d'infortune s'applique à toute l'équipe. Lorsqu'ils bénéficient d'Évitement d'infortune, les alliés subissent <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de DGT en moins.<br>La restauration de PV de Fu Xuan se déclenche lorsque ses PV tombent à {{2, percent}}% de ses PV max ou moins. Cela lui permet de récupérer <orangeStrong>{{3, percent}}%</orangeStrong> de ses PV manquants. Cet effet ne peut pas être déclenché en cas de coup fatal. Il est disponible 1 fois par défaut, et peut passer à 2 fois au maximum.",
-        "shortDesc": "Tant que Fu Xuan n'est pas à terre, les DGT subis par tous les membres de l'équipe sont réduits.<br>Si les PV de Fu Xuan sont faibles, elle <orangeStrong>restaure automatiquement ses propres PV</orangeStrong> en fonction du pourcentage de PV perdus. Cet effet peut être déclenché 2 fois au maximum."
+        "shortDesc": "Tant que Fu Xuan n'est pas à terre, les DGT subis par tous les membres de l'équipe sont réduits.<br>Si les PV de Fu Xuan sont faibles, elle <orangeStrong>restaure automatiquement ses propres PV</orangeStrong> en fonction du pourcentage de PV perdus. Cet effet peut être déclenché 2 fois au maximum.",
+        "tag": "Restauration"
       }
     },
     "technique": {
       "0": {
         "name": "De la chance au destin",
         "fullDesc": "Après utilisation de la technique, tous les membres de l'équipe bénéficient d'une barrière qui dure {{1}} secondes. Cette barrière bloque toutes les attaques ennemies, et empêche l'équipe d'entrer en combat lorsqu'elle est attaquée. Lorsque vous engagez le combat avec la barrière active, Fu Xuan active automatiquement Matrice de prémonition en début de combat pour {{2}} tours.",
-        "shortDesc": "Active une barrière. Les alliés n'entrent pas en combat lorsqu'ils sont attaqués par des ennemis. Matrice de prémonition s'active automatiquement lorsque vous engagez le combat."
+        "shortDesc": "Active une barrière. Les alliés n'entrent pas en combat lorsqu'ils sont attaqués par des ennemis. Matrice de prémonition s'active automatiquement lorsque vous engagez le combat.",
+        "tag": "Défense"
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Taiyi et le macrocospique",
         "fullDesc": "Lorsque Matrice de prémonition est active, Fu Xuan régénère {{1}} points d'énergie supplémentaires lorsqu'elle utilise sa compétence.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Dunjia et la métaphysique",
         "fullDesc": "Fu Xuan soigne tous les autres alliés à hauteur de {{1, percent}}% de ses PV max + {{2}} lorsqu'elle utilise son ultime.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Liu Ren et le cycle sexagésimal",
         "fullDesc": "Si un ennemi applique des malus de contrôle aux alliés alors que Matrice de prémonition est active, tous les alliés résistent à tous les malus de contrôle appliqués par la cible ennemie pendant l'action en cours. Cet effet ne peut être déclenché qu'une seule fois. Le nombre de déclenchements de l'effet est réinitialisé lorsque Matrice de prémonition est activée à nouveau.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

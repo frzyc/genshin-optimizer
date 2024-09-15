@@ -5,63 +5,72 @@
       "0": {
         "name": "Glistening Light",
         "fullDesc": "สร้าง DMG สายฟ้า <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Jing Yuan แก่ศัตรูที่กำหนดหนึ่งตัว",
-        "shortDesc": "สร้าง DMG สายฟ้าเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว"
+        "shortDesc": "สร้าง DMG สายฟ้าเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว",
+        "tag": "โจมตีเดี่ยว"
       }
     },
     "skill": {
       "0": {
         "name": "Rifting Zenith",
         "fullDesc": "สร้าง DMG สายฟ้า <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Jing Yuan แก่ศัตรูทั้งหมด พร้อมทั้งเพิ่มจำนวนการโจมตีในเทิร์นถัดไปของ \"Lightning-Lord\" {{2}} ครั้ง",
-        "shortDesc": "สร้าง DMG สายฟ้าเล็กน้อยแก่ฝ่ายศัตรูทั้งหมด และ<orangeStrong>เพิ่มจำนวนการโจมตีของ \"Lightning-Lord\"</orangeStrong>"
+        "shortDesc": "สร้าง DMG สายฟ้าเล็กน้อยแก่ฝ่ายศัตรูทั้งหมด และ<orangeStrong>เพิ่มจำนวนการโจมตีของ \"Lightning-Lord\"</orangeStrong>",
+        "tag": "โจมตีหมู่"
       }
     },
     "ult": {
       "0": {
         "name": "Lightbringer",
         "fullDesc": "สร้าง DMG สายฟ้า <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Jing Yuan แก่ศัตรูทั้งหมด พร้อมทั้งเพิ่มจำนวนการโจมตีในเทิร์นถัดไปของ \"Lightning-Lord\" {{2}} ครั้ง",
-        "shortDesc": "สร้าง DMG สายฟ้าแก่ฝ่ายศัตรูทั้งหมด และ<orangeStrong>เพิ่มจำนวนการโจมตีของ \"Lightning-Lord\"</orangeStrong>"
+        "shortDesc": "สร้าง DMG สายฟ้าแก่ฝ่ายศัตรูทั้งหมด และ<orangeStrong>เพิ่มจำนวนการโจมตีของ \"Lightning-Lord\"</orangeStrong>",
+        "tag": "โจมตีหมู่"
       }
     },
     "talent": {
       "0": {
         "name": "Prana Extirpated",
         "fullDesc": "เมื่ออัญเชิญ \"Lightning-Lord\" ออกมาในช่วงเริ่มต้นการต่อสู้ \"Lightning-Lord\" จะมีความเร็วเริ่มต้น {{1}} หน่วย และจำนวนการโจมตี {{4}} ครั้ง เมื่อแอ็กชันและทำการโจมตีต่อเนื่อง การโจมตีแต่ละครั้งจะสุ่มสร้าง DMG สายฟ้า <orangeStrong>{{2, percent}}%</orangeStrong> ของ ATK ของ Jing Yuan แก่ศัตรูหนึ่งตัว พร้อมทั้งสร้าง DMG สายฟ้า {{5, percent}}% ของ DMG ที่เกิดกับเป้าหมายหลัก แก่ศัตรูที่อยู่ใกล้เคียงกับเป้าหมายด้วย<br>จำนวนการโจมตีของ Lightning-Lord สะสมได้สูงสุดถึง {{6}} ครั้ง และทุกครั้งที่จำนวนการโจมตีของ \"Lightning-Lord\" เพิ่มขึ้น 1 ครั้ง ความเร็วจะเพิ่มขึ้น {{3}} หน่วย หลังจากจบการแอ็กชัน ความเร็วและจำนวนการโจมตีจะฟื้นกลับคืนสู่ค่าเริ่มต้น<br>หาก Jing Yuan หมดสติ แล้ว \"Lightning-Lord\" จะหายไป<br>เมื่อ Jing Yuan ได้รับผลกระทบจากสถานะ Debuff ประเภทควบคุม \"Lightning-Lord\" จะไม่สามารถแอ็กชันได้",
-        "shortDesc": "อัญเชิญ \"Lightning-Lord\" ออกมาเมื่อเริ่มต้นการต่อสู้ \"Lightning-Lord\" จะสุ่ม<orangeStrong>สร้าง DMG สายฟ้าเล็กน้อย</orangeStrong> แก่ศัตรูหนึ่งตัว รวมถึงตัวที่อยู่ใกล้เคียงกับเป้าหมาย<orangeStrong>โดยอัตโนมัติ</orangeStrong>"
+        "shortDesc": "อัญเชิญ \"Lightning-Lord\" ออกมาเมื่อเริ่มต้นการต่อสู้ \"Lightning-Lord\" จะสุ่ม<orangeStrong>สร้าง DMG สายฟ้าเล็กน้อย</orangeStrong> แก่ศัตรูหนึ่งตัว รวมถึงตัวที่อยู่ใกล้เคียงกับเป้าหมาย<orangeStrong>โดยอัตโนมัติ</orangeStrong>",
+        "tag": "จู่โจม"
       }
     },
     "technique": {
       "0": {
         "name": "Spiritus Invocation",
         "fullDesc": "หลังจากที่ใช้เทคนิคแล้ว เมื่อเริ่มการต่อสู้ครั้งต่อไป จำนวนการโจมตีของ \"Lightning-Lord\" ในเทิร์นที่ 1 จะเพิ่มขึ้น {{1}} ครั้ง",
-        "shortDesc": "หลังจากที่ใช้เทคนิคแล้ว เมื่อเข้าสู่การต่อสู้ครั้งถัดไป <orangeStrong>จะเพิ่มจำนวนการโจมตีของ \"Lightning-Lord\"</orangeStrong>"
+        "shortDesc": "หลังจากที่ใช้เทคนิคแล้ว เมื่อเข้าสู่การต่อสู้ครั้งถัดไป <orangeStrong>จะเพิ่มจำนวนการโจมตีของ \"Lightning-Lord\"</orangeStrong>",
+        "tag": "เสริมพลัง"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Battalia Crush",
         "fullDesc": "หากจำนวนการโจมตีในเทิร์นถัดไปของ \"Lightning-Lord\" มากกว่าหรือเท่ากับ {{1}} ครั้ง DMG คริติคอลในเทิร์นถัดไปของ \"Lightning-Lord\" จะเพิ่มขึ้น {{2, percent}}%",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Savant Providence",
         "fullDesc": "เมื่อเริ่มต้นการต่อสู้ จะฟื้นฟูพลังงาน {{1}} หน่วยทันที",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "War Marshal",
         "fullDesc": "หลังจากปล่อยสกิลต่อสู้ อัตราคริติคอลจะเพิ่มขึ้น {{1, percent}}% เป็นเวลา {{2}} เทิร์น",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

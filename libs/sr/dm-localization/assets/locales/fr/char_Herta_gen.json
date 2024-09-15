@@ -5,63 +5,72 @@
       "0": {
         "name": "Qu'est-ce que tu regardes ?",
         "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Herta à un ennemi unique.",
-        "shortDesc": "Inflige des DGT de glace mineurs à un ennemi unique."
+        "shortDesc": "Inflige des DGT de glace mineurs à un ennemi unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Une offre à ne pas manquer",
         "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Herta à tous les ennemis. Lorsque le pourcentage de PV d'un ennemi est supérieur ou égal à {{2, percent}}%, les DGT qui lui sont infligés augmentent de {{3, percent}}%.",
-        "shortDesc": "Inflige des DGT de glace mineurs à tous les ennemis. Les cibles qui ont le plus de PV subissent des DGT plus importants."
+        "shortDesc": "Inflige des DGT de glace mineurs à tous les ennemis. Les cibles qui ont le plus de PV subissent des DGT plus importants.",
+        "tag": "ZdE"
       }
     },
     "ult": {
       "0": {
         "name": "La magie, c'est exquis",
         "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Herta à tous les ennemis.",
-        "shortDesc": "Inflige des DGT de glace à tous les ennemis."
+        "shortDesc": "Inflige des DGT de glace à tous les ennemis.",
+        "tag": "ZdE"
       }
     },
     "talent": {
       "0": {
         "name": "La chance a tourné !",
         "fullDesc": "Lorsque l'attaque d'un allié réduit le pourcentage de PV d'un ennemi à {{1, percent}}% ou moins, Herta lance une attaque de suivi qui inflige des DGT de glace équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de son ATQ à tous les ennemis.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "ZdE"
       }
     },
     "technique": {
       "0": {
         "name": "Il y a de la marge de progression",
         "fullDesc": "Après utilisation de sa technique, l'ATQ de Herta augmente de {{1, percent}}% pendant {{2}} tours au début du combat suivant.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "Renforcement"
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Efficacité",
         "fullDesc": "L'effet d'augmentation des DGT actif lors de l'utilisation de la compétence est majoré de {{1, percent}}% supplémentaires.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Marionnette",
         "fullDesc": "Les chances de résister aux malus de contrôle augmentent de {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Glaçage",
         "fullDesc": "Inflige {{1, percent}}% de DGT supplémentaires aux ennemis gelés lors de l'utilisation de l'ultime.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

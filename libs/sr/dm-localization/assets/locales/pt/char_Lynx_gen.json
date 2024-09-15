@@ -5,63 +5,72 @@
       "0": {
         "name": "Técnica de Grampos de Neve",
         "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> dos PV máximos deste personagem a um único inimigo.",
-        "shortDesc": "Causa Dano Quântico leve a um único inimigo."
+        "shortDesc": "Causa Dano Quântico leve a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Latas de Acampamento Salgadas",
         "fullDesc": "Aplica \"Resposta de Sobrevivência\" em um único aliado-alvo e aumenta seus PV máximos em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Lynx + <orangeStrong>{{2}}</orangeStrong>. Se o alvo for um personagem do Caminho da Destruição ou da Preservação, a chance de que ele seja atacado pelos inimigos aumentará drasticamente. A \"Resposta de Sobrevivência\" dura por {{3}} rodada(s).<br>Restaura os PV do alvo em <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Lynx + <orangeStrong>{{5}}</orangeStrong>.",
-        "shortDesc": "Aplica \"Resposta de Sobrevivência\" a um único aliado, <orangeStrong>aumentando os PV máximos</orangeStrong>, e restaurando os PV dele."
+        "shortDesc": "Aplica \"Resposta de Sobrevivência\" a um único aliado, <orangeStrong>aumentando os PV máximos</orangeStrong>, e restaurando os PV dele.",
+        "tag": "Restauração"
       }
     },
     "ult": {
       "0": {
         "name": "Primeiros Socorros do Campo de Neve",
         "fullDesc": "Remove {{1}} penalidade(s) de todos os aliados e imediatamente restaura seus respectivos PV em uma quantidade igual a <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Lynx + <orangeStrong>{{3}}</orangeStrong>.",
-        "shortDesc": "Remove <orangeStrong>1 penalidade de todos os aliados</orangeStrong> e restaura seus PV."
+        "shortDesc": "Remove <orangeStrong>1 penalidade de todos os aliados</orangeStrong> e restaura seus PV.",
+        "tag": "Restauração"
       }
     },
     "talent": {
       "0": {
         "name": "Experiência de Sobrevivência na Neve",
         "fullDesc": "Ao usar a Perícia ou a Perícia Suprema de Lynx, aplica cura contínua ao aliado-alvo por {{1}} rodada(s), restaurando uma quantidade de PV do aliado-alvo igual a <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Lynx + <orangeStrong>{{3}}</orangeStrong> no início de cada rodada do aliado. Se o alvo tiver \"Resposta de Sobrevivência\", o efeito da cura contínua restaura adicionalmente uma quantidade de PV igual a <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Lynx + <orangeStrong>{{5}}</orangeStrong>.",
-        "shortDesc": "Ao usar a Perícia ou a Perícia Suprema, aplica <orangeStrong>cura contínua</orangeStrong> ao aliado-alvo. Se o alvo tiver uma \"Resposta de Sobrevivência\" ativa, então o efeito da cura contínua aumenta adicionalmente."
+        "shortDesc": "Ao usar a Perícia ou a Perícia Suprema, aplica <orangeStrong>cura contínua</orangeStrong> ao aliado-alvo. Se o alvo tiver uma \"Resposta de Sobrevivência\" ativa, então o efeito da cura contínua aumenta adicionalmente.",
+        "tag": "Restauração"
       }
     },
     "technique": {
       "0": {
         "name": "Barra de Chocolate Energética",
         "fullDesc": "Depois que Lynx usa sua Técnica, no início da próxima batalha, todos os aliados recebem o efeito de cura contínua do Talento dela, durando por {{1}} rodada(s).",
-        "shortDesc": "Depois que esta personagem usa sua Técnica, no início da próxima batalha, todos os aliados recebem um efeito de cura contínua."
+        "shortDesc": "Depois que esta personagem usa sua Técnica, no início da próxima batalha, todos os aliados recebem um efeito de cura contínua.",
+        "tag": "Restauração"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "Alvo Único"
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Pesquisa de Avanço",
         "fullDesc": "Após um alvo com \"Resposta de Sobrevivência\" ser atingido, Lynx regenera {{1}} de Energia imediatamente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Técnicas de Exploração",
         "fullDesc": "Aumenta a chance de resistir a penalidades de Controle Negativo em {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Sobrevivência ao Extremo",
         "fullDesc": "Estende a duração do efeito de cura contínua concedido pelo Talento por {{1}} rodada(s).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

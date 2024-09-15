@@ -5,63 +5,72 @@
       "0": {
         "name": "Lightning Rush",
         "fullDesc": "สร้าง DMG สายฟ้า <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Arlan แก่ศัตรูที่กำหนดหนึ่งตัว",
-        "shortDesc": "สร้าง DMG สายฟ้าเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว"
+        "shortDesc": "สร้าง DMG สายฟ้าเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว",
+        "tag": "โจมตีเดี่ยว"
       }
     },
     "skill": {
       "0": {
         "name": "Shackle Breaker",
         "fullDesc": "ใช้ HP {{1, percent}}% ของ HP สูงสุดของ Arlan เพื่อสร้าง DMG สายฟ้า <orangeStrong>{{2, percent}}%</orangeStrong> ของ ATK ของ Arlan แก่ศัตรูที่กำหนดหนึ่งตัว หาก HP ปัจจุบันไม่เพียงพอ เมื่อใช้สกิลต่อสู้ HP ปัจจุบันของ Arlan จะลดลงเหลือ 1 หน่วย",
-        "shortDesc": "ใช้ HP บางส่วนของตัวเอง เพื่อสร้าง DMG สายฟ้าแก่ศัตรูหนึ่งตัว"
+        "shortDesc": "ใช้ HP บางส่วนของตัวเอง เพื่อสร้าง DMG สายฟ้าแก่ศัตรูหนึ่งตัว",
+        "tag": "โจมตีเดี่ยว"
       }
     },
     "ult": {
       "0": {
         "name": "Frenzied Punishment",
         "fullDesc": "สร้าง DMG สายฟ้า <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Arlan แก่ศัตรูที่กำหนดหนึ่งตัว พร้อมกับสร้าง DMG สายฟ้า <orangeStrong>{{2, percent}}%</orangeStrong> ของ ATK ของ Arlan แก่เป้าหมายที่อยู่ใกล้เคียงด้วย",
-        "shortDesc": "สร้าง DMG สายฟ้า อย่างรุนแรงแก่ฝ่ายศัตรูหนึ่งตัว และจะสร้าง DMG สายฟ้า แก่ตัวที่อยู่ใกล้เคียง กับเป้าหมายด้วย"
+        "shortDesc": "สร้าง DMG สายฟ้า อย่างรุนแรงแก่ฝ่ายศัตรูหนึ่งตัว และจะสร้าง DMG สายฟ้า แก่ตัวที่อยู่ใกล้เคียง กับเป้าหมายด้วย",
+        "tag": "กระจาย"
       }
     },
     "talent": {
       "0": {
         "name": "Pain and Anger",
         "fullDesc": "เพิ่ม DMG ตามเปอร์เซ็นต์ HP ที่ Arlan เสียไปในปัจจุบัน โดยจะทำให้ Arlan สามารถสร้าง DMG ได้สูงสุดถึง <orangeStrong>{{1, percent}}%</orangeStrong>",
-        "shortDesc": "<orangeStrong>เพิ่ม DMG ตามเปอร์เซ็นต์ HP ปัจจุบัน</orangeStrong> ของตัวเอง<orangeStrong>ที่เสียไป</orangeStrong>"
+        "shortDesc": "<orangeStrong>เพิ่ม DMG ตามเปอร์เซ็นต์ HP ปัจจุบัน</orangeStrong> ของตัวเอง<orangeStrong>ที่เสียไป</orangeStrong>",
+        "tag": "เสริมพลัง"
       }
     },
     "technique": {
       "0": {
         "name": "Swift Harvest",
         "fullDesc": "เมื่อโจมตีศัตรูทันทีและเข้าสู่การต่อสู้ จะสร้าง DMG สายฟ้า {{1, percent}}% ของ ATK ของ Arlan แก่ฝ่ายศัตรูทั้งหมด",
-        "shortDesc": "เมื่อโจมตีศัตรูและเข้าสู่การต่อสู้ จะสร้าง DMG สายฟ้าเล็กน้อยแก่ฝ่ายศัตรูทั้งหมด"
+        "shortDesc": "เมื่อโจมตีศัตรูและเข้าสู่การต่อสู้ จะสร้าง DMG สายฟ้าเล็กน้อยแก่ฝ่ายศัตรูทั้งหมด",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Revival",
         "fullDesc": "เมื่อกำจัดศัตรูเป้าหมายได้ หากเปอร์เซ็นต์ HP ปัจจุบันเท่ากับหรือน้อยกว่า {{1, percent}}% จะฟื้นฟู HP เท่ากับ {{2, percent}}% ของ HP สูงสุดของตัวเองทันที",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Endurance",
         "fullDesc": "โอกาสต้านทานสถานะ Debuff ประเภท DMG ต่อเนื่องเพิ่มขึ้น {{1, percent}}%",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Repel",
         "fullDesc": "เมื่อเข้าสู่การต่อสู้ หากเปอร์เซ็นต์ HP ปัจจุบันน้อยกว่าหรือเท่ากับ {{1, percent}}% Arlan จะสามารถต้านทาน DMG ทั้งหมด ที่นอกเหนือจาก DMG ต่อเนื่องได้ เมื่อ Arlan โดนโจมตี เอฟเฟกต์ดังกล่าวจะหายไป",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

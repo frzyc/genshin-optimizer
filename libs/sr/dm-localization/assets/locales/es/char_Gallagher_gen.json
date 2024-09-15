@@ -5,68 +5,78 @@
       "0": {
         "name": "Tarifa de descorche",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Gallagher como Daño de Fuego a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo.",
+        "tag": "ATQ individual"
       },
       "1": {
         "name": "Espuma desbordante",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Gallagher como Daño de Fuego a un enemigo y reduce su ATQ en un <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> durante {{3}} turnos.",
-        "shortDesc": "Inflige Daño de Fuego a un enemigo y reduce su ATQ."
+        "shortDesc": "Inflige Daño de Fuego a un enemigo y reduce su ATQ.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Mezcla especial",
         "fullDesc": "Regenera inmediatamente <orangeStrong>{{1}}</orangeStrong> PV de un aliado.",
-        "shortDesc": "Regenera inmediatamente los PV de un aliado."
+        "shortDesc": "Regenera inmediatamente los PV de un aliado.",
+        "tag": "Regeneración"
       }
     },
     "ult": {
       "0": {
         "name": "Hora del champán",
         "fullDesc": "Afecta con Melopea a todos los enemigos durante {{2}} turnos. Al mismo tiempo, inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Gallagher como Daño de Fuego a todos los enemigos, y su siguiente ATQ básico se potencia y se convierte en Espuma desbordante.",
-        "shortDesc": "<orangeStrong>Afecta con Melopea</orangeStrong> a todos los enemigos y al mismo tiempo les inflige Daño de Fuego. El siguiente ATQ básico se potencia y se convierte en Espuma desbordante."
+        "shortDesc": "<orangeStrong>Afecta con Melopea</orangeStrong> a todos los enemigos y al mismo tiempo les inflige Daño de Fuego. El siguiente ATQ básico se potencia y se convierte en Espuma desbordante.",
+        "tag": "ATQ AdE"
       }
     },
     "talent": {
       "0": {
         "name": "Pelea embriagante",
         "fullDesc": "Melopea aumenta el Daño de Ruptura que reciben los objetivos en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Cada vez que un objetivo afectado por Melopea recibe el ataque de un aliado, el atacante regenera <orangeStrong>{{2}}</orangeStrong> PV.",
-        "shortDesc": "Melopea <orangeStrong>aumenta el Daño de Ruptura</orangeStrong> que reciben los objetivos. Cada vez que un objetivo con Melopea recibe el ataque de un aliado, <orangeStrong>el atacante regenera PV</orangeStrong>."
+        "shortDesc": "Melopea <orangeStrong>aumenta el Daño de Ruptura</orangeStrong> que reciben los objetivos. Cada vez que un objetivo con Melopea recibe el ataque de un aliado, <orangeStrong>el atacante regenera PV</orangeStrong>.",
+        "tag": "Regeneración"
       }
     },
     "technique": {
       "0": {
         "name": "Cosecha propia",
         "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Afecta con Melopea a todos los enemigos durante {{1}} turnos y les inflige un {{2, percent}}% del ATQ de Gallagher como Daño de Fuego.",
-        "shortDesc": "Ataca al enemigo y entra en combate. <orangeStrong>Afecta con Melopea</orangeStrong> a todos los enemigos y les inflige una pequeña cantidad de Daño de Fuego."
+        "shortDesc": "Ataca al enemigo y entra en combate. <orangeStrong>Afecta con Melopea</orangeStrong> a todos los enemigos y les inflige una pequeña cantidad de Daño de Fuego.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Brebaje innovador",
         "fullDesc": "Aumenta su curación realizada en una cantidad equivalente al {{1, percent}}% del efecto de Ruptura. La curación realizada puede aumentar un {{2, percent}}% como máximo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Fermentación natural",
         "fullDesc": "Tras lanzar la habilidad definitiva, su acción se adelanta un 100%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "¡Salud!",
         "fullDesc": "Cuando Gallagher usa Espuma desbordante para atacar a objetivos en el estado de Melopea, el efecto de regeneración de PV del talento de este ataque se aplica también a los demás aliados.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

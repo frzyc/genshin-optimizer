@@ -5,63 +5,72 @@
       "0": {
         "name": "Espinhos do Abismo",
         "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Luocha a um único inimigo.",
-        "shortDesc": "Causa Dano Imaginário leve a um único inimigo."
+        "shortDesc": "Causa Dano Imaginário leve a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Prece da Flor do Abismo",
         "fullDesc": "Após usar a sua Perícia, Luocha restaura os PV do aliado-alvo imediatamente em <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Luocha + <orangeStrong>{{2}}</orangeStrong>. Enquanto isso, Luocha ganha 1 acúmulo de Flor do Abismo.<br>Quando a porcentagem dos PV de qualquer aliado chega a {{3, percent}}% ou menos, um efeito equivalente à Perícia de Luocha será imediatamente ativado e aplicado a este aliado uma vez (sem consumir Pontos de Perícia). Este efeito pode ser ativado novamente após {{4}} rodada(s).",
-        "shortDesc": "<orangeStrong>Restaura</orangeStrong> PV de um único aliado e ganha 1 acúmulo de Flor do Abismo."
+        "shortDesc": "<orangeStrong>Restaura</orangeStrong> PV de um único aliado e ganha 1 acúmulo de Flor do Abismo.",
+        "tag": "Restauração"
       }
     },
     "ult": {
       "0": {
         "name": "Desejo de Morte",
         "fullDesc": "Remove {{2}} melhoria(s) de todos os inimigos e causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Luocha como Dano Imaginário a todos os inimigos. Ao mesmo tempo, Luocha ganha 1 acúmulo de Flor do Abismo.",
-        "shortDesc": "<orangeStrong>Remove </orangeStrong>1<orangeStrong> melhoria </orangeStrong>de todos os inimigos, causa Dano Imaginário a todos os inimigos, e ganha 1 acúmulo de Flor do Abismo."
+        "shortDesc": "<orangeStrong>Remove </orangeStrong>1<orangeStrong> melhoria </orangeStrong>de todos os inimigos, causa Dano Imaginário a todos os inimigos, e ganha 1 acúmulo de Flor do Abismo.",
+        "tag": "Área"
       }
     },
     "talent": {
       "0": {
         "name": "Ciclo da Vida",
         "fullDesc": "Quando a Flor do Abismo alcança {{1}} acúmulo(s), Luocha consome todos os acúmulos de Flor do Abismo para ativar um Campo contra o inimigo.<br>Quando qualquer inimigo dentro do Campo é atacado por um aliado, o PV desse aliado é imediatamente restaurado em uma quantidade igual a <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> do ATQ de Luocha mais <orangeStrong>{{4}}</orangeStrong>.<br>O efeito do Campo dura {{3}} rodadas. Quando Luocha é derrubado, o Campo é desativado.",
-        "shortDesc": "Cria um <orangeStrong>Campo</orangeStrong> ao obter 2 acúmulos de Flor do Abismo. Enquanto o Campo estiver ativo, os aliados<orangeStrong> restauram PV após atacar</orangeStrong>."
+        "shortDesc": "Cria um <orangeStrong>Campo</orangeStrong> ao obter 2 acúmulos de Flor do Abismo. Enquanto o Campo estiver ativo, os aliados<orangeStrong> restauram PV após atacar</orangeStrong>.",
+        "tag": "Restauração"
       }
     },
     "technique": {
       "0": {
         "name": "Misericórdia dos Tolos",
         "fullDesc": "Após a Técnica ser utilizada, o Talento será acionado imediatamente no início da próxima batalha.",
-        "shortDesc": "Após a Técnica ser utilizada, ativa imediatamente o efeito do Talento no início da próxima batalha."
+        "shortDesc": "Após a Técnica ser utilizada, ativa imediatamente o efeito do Talento no início da próxima batalha.",
+        "tag": "Restauração"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Ressurgimento Purificador",
         "fullDesc": "Quando o efeito da Perícia é ativado, remove {{1}} penalidade(s) de um aliado-alvo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Santificado",
         "fullDesc": "Quando um inimigo no Campo é atacado por um aliado, todos os aliados, exceto o atacante, restauram PV igual a {{1, percent(fixed: 1)}}% do ATQ de Luocha + {{2}}.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Através do Vale",
         "fullDesc": "A chance de resistir a penalidades de Controle Negativo aumenta em {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

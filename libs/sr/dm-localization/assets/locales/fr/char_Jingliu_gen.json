@@ -5,68 +5,78 @@
       "0": {
         "name": "Lueur sélénite",
         "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Jingliu à un ennemi unique.",
-        "shortDesc": "Inflige des DGT de glace mineurs à une cible ennemie unique."
+        "shortDesc": "Inflige des DGT de glace mineurs à une cible ennemie unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Éclair transcendant",
         "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Jingliu à un ennemi unique et obtient {{2}} cumul de Syzygie.",
-        "shortDesc": "Inflige des DGT de glace à une cible ennemie et obtient <orangeStrong>1 cumul de Syzygie</orangeStrong>."
+        "shortDesc": "Inflige des DGT de glace à une cible ennemie et obtient <orangeStrong>1 cumul de Syzygie</orangeStrong>.",
+        "tag": "Cible unique"
       },
       "1": {
         "name": "Reflet de lune sur rivière glacée",
         "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Jingliu à un ennemi unique et des DGT de glace équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> de l'ATQ de Jingliu aux ennemis adjacents. Consomme {{2}} cumul de Syzygie. L'utilisation de cette capacité ne consomme pas de point de compétence.",
-        "shortDesc": "Inflige des DGT de glace à une cible ennemie unique et des DGT de glace aux cibles adjacentes. Consomme 1 cumul de Syzygie."
+        "shortDesc": "Inflige des DGT de glace à une cible ennemie unique et des DGT de glace aux cibles adjacentes. Consomme 1 cumul de Syzygie.",
+        "tag": "Propagation"
       }
     },
     "ult": {
       "0": {
         "name": "Rêves floréphémères",
         "fullDesc": "Inflige des DGT de glace équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Jingliu à un ennemi unique et des DGT de glace équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> de l'ATQ de Jingliu aux ennemis adjacents. Obtient {{2}} cumul de Syzygie à la fin de l'attaque.",
-        "shortDesc": "Inflige des DGT de glace massifs à une cible ennemie et inflige des DGT de glace aux cibles adjacentes. Obtient <orangeStrong>1 cumul de Syzygie</orangeStrong>."
+        "shortDesc": "Inflige des DGT de glace massifs à une cible ennemie et inflige des DGT de glace aux cibles adjacentes. Obtient <orangeStrong>1 cumul de Syzygie</orangeStrong>.",
+        "tag": "Propagation"
       }
     },
     "talent": {
       "0": {
         "name": "Migration du croissant",
         "fullDesc": "Lorsque Jingliu possède {{5}} cumuls de Syzygie, elle entre en état de Migration spectrale, ce qui avance son action de {{6, percent}}% et augmente ses chances de coup critique de <orangeStrong>{{7, percent}}%</orangeStrong>. La compétence de Jingliu Éclair transcendant est alors renforcée pour se transformer en Reflet de lune sur rivière glacée, et devient la seule capacité disponible en combat. Lorsque Jingliu utilise une attaque dans l'état Migration spectrale, elle consomme {{2, percent}}% des PV max respectifs des alliés (les PV des alliés ne peuvent pas être réduits en dessous de 1). L'ATQ de Jingliu augmente à hauteur de {{3, percent}}% du total de PV consommés chez tous les alliés lors de cette attaque, sans excéder <orangeStrong>{{4, percent}}%</orangeStrong> de son ATQ de base, jusqu'à la fin de l'attaque en cours. Jingliu ne peut pas entrer à nouveau dans l'état Migration spectrale jusqu'à ce que l'état Migration spectrale actuel se termine. Syzygie peut se cumuler jusqu'à 3 fois. Jingliu sort de l'état Migration spectrale lorsque les cumuls de Syzygie tombent à 0.",
-        "shortDesc": "Lorsque Jingliu possède <orangeStrong>{{5}}</orangeStrong> cumuls de Syzygie, elle entre en état de Migration spectrale, ce qui avance son action de 100 %, augmente ses chances de coup critique et <orangeStrong>renforce sa compétence</orangeStrong>. Utiliser une attaque dans cet état consomme les PV de tous les autres alliés et <orangeStrong>augmente l'ATQ de Jingliu</orangeStrong> en fonction du total de PV consommés. Jingliu sort de l'état Migration spectrale lorsque les cumuls de Syzygie tombent à 0."
+        "shortDesc": "Lorsque Jingliu possède <orangeStrong>{{5}}</orangeStrong> cumuls de Syzygie, elle entre en état de Migration spectrale, ce qui avance son action de 100 %, augmente ses chances de coup critique et <orangeStrong>renforce sa compétence</orangeStrong>. Utiliser une attaque dans cet état consomme les PV de tous les autres alliés et <orangeStrong>augmente l'ATQ de Jingliu</orangeStrong> en fonction du total de PV consommés. Jingliu sort de l'état Migration spectrale lorsque les cumuls de Syzygie tombent à 0.",
+        "tag": "Renforcement"
       }
     },
     "technique": {
       "0": {
         "name": "Éclat de la vérité",
         "fullDesc": "Crée une dimension spéciale autour de Jingliu qui dure {{3}} secondes. Tous les ennemis dans cette dimension spéciale sont gelés. Jingliu génère immédiatement {{6}} points d'énergie et obtient {{1}} cumul de Syzygie, avec {{2, percent}}% de chances de base de geler les cibles ennemies pendant {{4}} tours lorsque le combat est engagé avec des ennemis de la dimension spéciale. Les cibles ennemies gelées ne peuvent pas agir et subissent des DGT de glace additionnels équivalents à {{5, percent}}% de l'ATQ de Jingliu au début de chaque tour. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
-        "shortDesc": "Crée une dimension spéciale autour du personnage. Les ennemis qui s'y trouvent sont <orangeStrong>gelés</orangeStrong>. Le personnage génère de l'énergie et obtient 1 cumul de Syzygie avec de fortes chances d'appliquer <orangeStrong>Gelé</orangeStrong> aux ennemis lorsque le combat est engagé avec des ennemis de la dimension."
+        "shortDesc": "Crée une dimension spéciale autour du personnage. Les ennemis qui s'y trouvent sont <orangeStrong>gelés</orangeStrong>. Le personnage génère de l'énergie et obtient 1 cumul de Syzygie avec de fortes chances d'appliquer <orangeStrong>Gelé</orangeStrong> aux ennemis lorsque le combat est engagé avec des ennemis de la dimension.",
+        "tag": "Incapacitation"
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Royaume des morts",
         "fullDesc": "Augmente la RÉS aux effets de {{1, percent}}% dans l'état Migration spectrale.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Championne de l'épée",
         "fullDesc": "La prochaine action est avancée de {{1, percent}}% après avoir utilisé Éclair transcendant.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Spectre du froid",
         "fullDesc": "Augmente les DGT infligés par l'ultime dans l'état Migration spectrale de {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,63 +5,72 @@
       "0": {
         "name": "Midnight Tumult",
         "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Kafka's ATK to a single enemy.",
-        "shortDesc": "Deals minor Lightning DMG to a single enemy."
+        "shortDesc": "Deals minor Lightning DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Caressing Moonlight",
         "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Kafka's ATK to a target enemy and Lightning DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Kafka's ATK to enemies adjacent to it.<br>If the target enemy is currently receiving DoT, all DoTs currently placed on that enemy immediately produce DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of their original DMG.",
-        "shortDesc": "Deals Lightning DMG to a single enemy and minor Lightning DMG to adjacent targets.<br>If the primary target is currently afflicted with a DoT effect, the DoT <orangeStrong>deals DMG 1 extra time</orangeStrong>."
+        "shortDesc": "Deals Lightning DMG to a single enemy and minor Lightning DMG to adjacent targets.<br>If the primary target is currently afflicted with a DoT effect, the DoT <orangeStrong>deals DMG 1 extra time</orangeStrong>.",
+        "tag": "Blast"
       }
     },
     "ult": {
       "0": {
         "name": "Twilight Trill",
         "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Kafka's ATK to all enemies, with a {{2, percent}}% base chance for enemies hit to become Shocked and immediately take DMG from their current Shock state, equal to <orangeStrong>{{5, percent}}%</orangeStrong> of its original DMG. Shock lasts for {{3}} turn(s).<br>While Shocked, enemies receive Lightning DoT equal to <orangeStrong>{{4, percent}}%</orangeStrong> of Kafka's ATK at the beginning of each turn.",
-        "shortDesc": "Deals minor Lightning DMG to all enemies, with a high chance of <orangeStrong>Shocking them</orangeStrong>.<br>If the enemies are currently Shocked, the Shock status <orangeStrong>deals DMG 1 extra time</orangeStrong>."
+        "shortDesc": "Deals minor Lightning DMG to all enemies, with a high chance of <orangeStrong>Shocking them</orangeStrong>.<br>If the enemies are currently Shocked, the Shock status <orangeStrong>deals DMG 1 extra time</orangeStrong>.",
+        "tag": "AoE"
       }
     },
     "talent": {
       "0": {
         "name": "Gentle but Cruel",
         "fullDesc": "After an ally of Kafka's uses Basic ATK on an enemy target, Kafka immediately launches 1 follow-up attack and deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of her ATK to that target, with a {{2, percent}}% base chance to inflict Shock equivalent to that applied by her Ultimate to the attacked enemy target, lasting for {{3}} turns. This effect can only be triggered 1 time per turn.",
-        "shortDesc": "After an ally uses Basic ATK on an enemy, Kafka immediately launches a follow-up attack and deals Lightning DMG with a high chance of <orangeStrong>inflicting Shock</orangeStrong> to that target. This effect can only be triggered 1 time per turn."
+        "shortDesc": "After an ally uses Basic ATK on an enemy, Kafka immediately launches a follow-up attack and deals Lightning DMG with a high chance of <orangeStrong>inflicting Shock</orangeStrong> to that target. This effect can only be triggered 1 time per turn.",
+        "tag": "Single Target"
       }
     },
     "technique": {
       "0": {
         "name": "Mercy Is Not Forgiveness",
         "fullDesc": "Immediately attacks all enemies within a set range. After entering battle, deals Lightning DMG equal to {{3, percent}}% of Kafka's ATK to all enemies, with a {{1, percent}}% base chance to inflict Shock equivalent to that applied by her Ultimate on every enemy target for {{2}} turn(s).",
-        "shortDesc": "Attacks all enemies within range. After entering battle, deals minor Lightning DMG to all enemies, with a high chance to <orangeStrong>Shock</orangeStrong> them."
+        "shortDesc": "Attacks all enemies within range. After entering battle, deals minor Lightning DMG to all enemies, with a high chance to <orangeStrong>Shock</orangeStrong> them.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Torture",
         "fullDesc": "When the Ultimate is used, enemy targets will now receive DMG immediately from all currently applied DoT sources instead of just receiving DMG immediately from the currently applied Shock state.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Plunder",
         "fullDesc": "If an enemy is defeated while Shocked, Kafka additionally regenerates {{1}} Energy.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Thorns",
         "fullDesc": "The base chance for target enemies to get Shocked by the Ultimate, the Technique, or the Talent-triggered follow-up attack increases by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

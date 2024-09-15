@@ -5,68 +5,78 @@
       "0": {
         "name": "Skullcrush Spurs",
         "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Boothill pada 1 musuh yang ditargetkan.",
-        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       },
       "1": {
         "name": "Fanning the Hammer",
         "fullDesc": "Mengakibatkan Physical DMG pada 1 musuh yang ditargetkan sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Boothill.<br>Enhanced Basic Attack ini tidak dapat memulihkan Poin Skill dan hanya bisa menargetkan target musuh berstatus \"Standoff\".",
-        "shortDesc": "Mengakibatkan Physical DMG pada 1 musuh. Hanya dapat menyerang target berstatus \"Standoff\"."
+        "shortDesc": "Mengakibatkan Physical DMG pada 1 musuh. Hanya dapat menyerang target berstatus \"Standoff\".",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Sizzlin' Tango",
         "fullDesc": "Membuat 1 musuh yang ditargetkan dan Boothill memasuki status \"Standoff\". Basic Attack Boothill akan diperkuat, dan tidak dapat melancarkan Skill, berlangsung selama {{3}} giliran. Durasi giliran akan berkurang 1 setiap kali giliran Boothill dimulai.<br>Musuh yang berstatus \"Standoff\" akan memasuki status Taunt. Saat target musuh tersebut/Boothill terkena serangan dari satu sama lain, DMG yang diterima meningkat <orangeStrong>{{1, percent}}%</orangeStrong>/{{2, percent}}%.<br>Setelah target tersebut dikalahkan atau terkena Weakness Break, Boothill akan memperoleh 1 lapis \"Pocket Trickshot\", lalu menghapus \"Standoff\".<br>Skill ini tidak dapat memulihkan Energy. Giliran kali ini tidak akan berakhir setelah melancarkan Skill ini.",
-        "shortDesc": "Mengaktifkan <orangeStrong>\"Standoff\"</orangeStrong>. Setelah target berstatus \"Standoff\" <orangeStrong>dikalahkan atau terkena Weakness Break</orangeStrong>, Boothill akan memperoleh \"Pocket Trickshot\" dan menghapus \"Standoff\". Membuat Boothill <orangeStrong>memperoleh penguatan Basic Attack</orangeStrong> dan giliran kali ini tidak akan berakhir."
+        "shortDesc": "Mengaktifkan <orangeStrong>\"Standoff\"</orangeStrong>. Setelah target berstatus \"Standoff\" <orangeStrong>dikalahkan atau terkena Weakness Break</orangeStrong>, Boothill akan memperoleh \"Pocket Trickshot\" dan menghapus \"Standoff\". Membuat Boothill <orangeStrong>memperoleh penguatan Basic Attack</orangeStrong> dan giliran kali ini tidak akan berakhir.",
+        "tag": "Impair"
       }
     },
     "ult": {
       "0": {
         "name": "Dust Devil's Sunset Rodeo",
         "fullDesc": "Menambahkan Physical Weakness pada 1 musuh yang ditargetkan, berlangsung selama {{3}} giliran.<br>Mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Boothill pada target tersebut dan menunda aksinya sebesar <orangeStrong>{{2, percent}}%</orangeStrong>.",
-        "shortDesc": "<orangeStrong>Menambahkan Physical Weakness</orangeStrong> pada 1 musuh dan mengakibatkan Physical DMG dalam jumlah besar pada musuh tersebut serta menunda aksinya."
+        "shortDesc": "<orangeStrong>Menambahkan Physical Weakness</orangeStrong> pada 1 musuh dan mengakibatkan Physical DMG dalam jumlah besar pada musuh tersebut serta menunda aksinya.",
+        "tag": "Single Target"
       }
     },
     "talent": {
       "0": {
         "name": "Five Peas in a Pod",
         "fullDesc": "Setiap lapis \"Pocket Trickshot\" akan meningkatkan {{4, percent}}% pengurangan nilai Toughness yang diakibatkan Enhanced Basic Attack, dapat ditumpuk hingga {{5}} lapis.<br>Jika target berstatus Weakness Break saat Enhanced Basic Attack dilancarkan, maka berdasarkan jumlah lapisan \"Pocket Trickshot\", akan mengakibatkan Break DMG pada target sebesar <orangeStrong>{{1, percent}}%</orangeStrong>/<orangeStrong>{{2, percent}}%</orangeStrong>/<orangeStrong>{{3, percent}}%</orangeStrong> Physical Break DMG Boothill. Maksimal nilai Toughness yang masuk dalam perhitungan Break DMG ini tidak bisa melebihi ×{{6}} dari pengurangan nilai Toughness yang diakibatkan Basic Attack \"Skullcrush Spurs\".<br>Setelah memenangkan pertempuran, Boothill akan menyimpan \"Pocket Trickshot\" hingga pertempuran berikutnya.",
-        "shortDesc": "\"Pocket Trickshot\" membuat Enhanced Basic Attack karakter ini mengurangi lebih banyak nilai Toughness dan mengakibatkan <orangeStrong>Physical Break DMG</orangeStrong> tambahan pada <orangeStrong>target musuh yang berstatus Weakness Break</orangeStrong>. Setelah memenangkan pertempuran, \"Pocket Trickshot\" akan disimpan hingga pertempuran berikutnya."
+        "shortDesc": "\"Pocket Trickshot\" membuat Enhanced Basic Attack karakter ini mengurangi lebih banyak nilai Toughness dan mengakibatkan <orangeStrong>Physical Break DMG</orangeStrong> tambahan pada <orangeStrong>target musuh yang berstatus Weakness Break</orangeStrong>. Setelah memenangkan pertempuran, \"Pocket Trickshot\" akan disimpan hingga pertempuran berikutnya.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "3-9× Smile",
         "fullDesc": "Setelah menggunakan Technique, saat melancarkan Skill untuk pertama kalinya dalam pertempuran berikutnya, akan menambahkan Physical Weakness yang sama dengan Ultimate pada target, berlangsung selama {{1}} giliran.",
-        "shortDesc": "Setelah melancarkan Technique, akan <orangeStrong>menambahkan Physical Weakness</orangeStrong> pada 1 musuh setelah melancarkan Skill unit ini untuk pertama kalinya dalam pertempuran berikutnya."
+        "shortDesc": "Setelah melancarkan Technique, akan <orangeStrong>menambahkan Physical Weakness</orangeStrong> pada 1 musuh setelah melancarkan Skill unit ini untuk pertama kalinya dalam pertempuran berikutnya.",
+        "tag": "Enhance"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Ghost Load",
         "fullDesc": "Meningkatkan CRIT Rate/CRIT DMG karakter ini. Peningkatan CRIT Rate/CRIT DMG adalah sebesar {{1, percent}}%/{{3, percent}}% dari Break Effect, peningkatannya maksimal hingga {{2, percent}}%/{{4, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Above Snakes",
         "fullDesc": "Saat Boothill berada dalam status \"Standoff\", DMG yang diterima Boothill dari target yang tidak berstatus \"Standoff\" berkurang {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Point Blank",
         "fullDesc": "Saat memperoleh \"Pocket Trickshot\" ketika berada dalam status \"Standoff\", akan memulihkan {{1}} Energy. Efek ini akan tetap terpicu saat memperoleh \"Pocket Trickshot\" yang melebihi batas maksimal.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

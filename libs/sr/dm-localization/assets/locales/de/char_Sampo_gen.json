@@ -5,63 +5,72 @@
       "0": {
         "name": "Schwirrende Klingen",
         "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Sampos ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Zurückprallende Liebe",
         "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Sampos ANG zu und verursacht zusätzlich {{1}}-mal SCH. Jeder Treffer fügt einem zufälligen Gegner Wind-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Sampos ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu und prallt insgesamt 5-mal ab."
+        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu und prallt insgesamt 5-mal ab.",
+        "tag": "Abprallung"
       }
     },
     "ult": {
       "0": {
         "name": "Überraschungsgeschenk",
         "fullDesc": "Fügt allen Gegnern Wind-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Sampos ANG zu und hat eine Grundchance von {{4, percent}}%, den erlittenen DoT des Ziels für {{3}} Rd. um <orangeStrong>{{2, percent}}%</orangeStrong> zu erhöhen.",
-        "shortDesc": "Fügt allen Gegnern Wind-SCH zu. Hat eine hohe Chance, <orangeStrong>den erlittenen DoT zu erhöhen</orangeStrong>."
+        "shortDesc": "Fügt allen Gegnern Wind-SCH zu. Hat eine hohe Chance, <orangeStrong>den erlittenen DoT zu erhöhen</orangeStrong>.",
+        "tag": "Flächenangriff"
       }
     },
     "talent": {
       "0": {
         "name": "Windzerschlissener Dolch",
         "fullDesc": "Sampos Angriffe verursachen mit einer Grundchance von {{1, percent}}% für {{3}} Rd. Windscherung. <br>Davon betroffene Gegner erleiden zu Beginn jeder Runde Wind-DoT in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Sampos ANG. Windscherung ist bis zu {{4}}-fach stapelbar.",
-        "shortDesc": "Nach dem Treffen eines Gegners besteht die Chance, dass beim Gegner <orangeStrong>Windscherung verursacht wird</orangeStrong>."
+        "shortDesc": "Nach dem Treffen eines Gegners besteht die Chance, dass beim Gegner <orangeStrong>Windscherung verursacht wird</orangeStrong>.",
+        "tag": "Verstärkung"
       }
     },
     "technique": {
       "0": {
         "name": "Helles Leuchten",
         "fullDesc": "Nach dem Einsatz der Technik werden Gegner in einem bestimmten Bereich {{1}} s lang geblendet. Die Verbündeten sind für geblendete Gegner unsichtbar.<br>Greift man einen geblendeten Gegner aktiv an, besteht eine Grundchance von {{2, percent}}%, die Aktionen aller Gegner um {{3, percent}}% zu verzögern.",
-        "shortDesc": "Gegner in einem bestimmten Gebiet werden geblendet. Beim Kämpfen gegen einen geblendeten Gegner besteht eine hohe Chance, nach Kampfeintritt die Aktionen aller Gegner zu verzögern."
+        "shortDesc": "Gegner in einem bestimmten Gebiet werden geblendet. Beim Kämpfen gegen einen geblendeten Gegner besteht eine hohe Chance, nach Kampfeintritt die Aktionen aller Gegner zu verzögern.",
+        "tag": "Beeinträchtigung"
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Falle",
         "fullDesc": "Verlängert die Dauer der Windscherung durch das Talent um {{1}} Rd.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Defensivstellung",
         "fullDesc": "Stellt beim Einsatz des Ultimates zusätzlich {{1}} Pkt. Energie wieder her.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Mehr Würze",
         "fullDesc": "Von Windscherung betroffene Gegner fügen Sampo {{1, percent}}% weniger SCH zu.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

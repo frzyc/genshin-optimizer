@@ -5,68 +5,78 @@
       "0": {
         "name": "流影方暉",
         "fullDesc": "對指定敵方單體造成等同於鏡流<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的冰屬性傷害。",
-        "shortDesc": "對指定敵方單體造成少量冰屬性傷害。"
+        "shortDesc": "對指定敵方單體造成少量冰屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "無罅飛光",
         "fullDesc": "對指定敵方單體造成等同於鏡流<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的冰屬性傷害，並獲得{{2}}層【朔望】。",
-        "shortDesc": "對指定敵方單體造成冰屬性傷害，並獲得<orangeStrong>1層【朔望】</orangeStrong>。"
+        "shortDesc": "對指定敵方單體造成冰屬性傷害，並獲得<orangeStrong>1層【朔望】</orangeStrong>。",
+        "tag": "單體攻擊"
       },
       "1": {
         "name": "寒川映月",
         "fullDesc": "對指定敵方單體造成等同於鏡流<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的冰屬性傷害，並對其相鄰目標造成等同於鏡流<orangeStrong>{{3, percent}}%</orangeStrong>攻擊力的冰屬性傷害。消耗{{2}}層【朔望】。施放本技能不消耗戰技點。",
-        "shortDesc": "對指定敵方單體造成冰屬性傷害，對相鄰目標造成冰屬性傷害，並消耗1層【朔望】。"
+        "shortDesc": "對指定敵方單體造成冰屬性傷害，對相鄰目標造成冰屬性傷害，並消耗1層【朔望】。",
+        "tag": "擴散"
       }
     },
     "ult": {
       "0": {
         "name": "曇華生滅，天河瀉夢",
         "fullDesc": "對指定敵方單體造成等同於鏡流<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的冰屬性傷害，並對其相鄰目標造成等同於鏡流<orangeStrong>{{3, percent}}%</orangeStrong>攻擊力的冰屬性傷害。攻擊結束後獲得{{2}}層【朔望】。",
-        "shortDesc": "對指定敵方單體造成大量冰屬性傷害，對相鄰目標造成冰屬性傷害，並<orangeStrong>獲得1層【朔望】</orangeStrong>。"
+        "shortDesc": "對指定敵方單體造成大量冰屬性傷害，對相鄰目標造成冰屬性傷害，並<orangeStrong>獲得1層【朔望】</orangeStrong>。",
+        "tag": "擴散"
       }
     },
     "talent": {
       "0": {
         "name": "澹月轉魄",
         "fullDesc": "當擁有{{5}}層【朔望】時，鏡流將進入【轉魄】狀態，並使行動提前{{6, percent}}%、暴擊率提高<orangeStrong>{{7, percent}}%</orangeStrong>，隨後戰技【無罅飛光】強化為【寒川映月】且僅能使用該戰技。【轉魄】狀態下發動攻擊時，消耗隊友{{2, percent}}%生命上限的生命值（最多消耗到每位隊友生命值等於1）。根據本次我方全體生命值消耗總量的{{3, percent}}%提高鏡流攻擊力，最高不超過鏡流基礎攻擊力的<orangeStrong>{{4, percent}}%</orangeStrong>，持續至本次攻擊結束。【轉魄】狀態結束前無法再次進入【轉魄】狀態。【朔望】最多可累積3層，當【朔望】層數為0時，退出【轉魄】狀態。",
-        "shortDesc": "當擁有<orangeStrong>{{5}}</orangeStrong>層【朔望】時，進入【轉魄】狀態，<orangeStrong>使行動提前<unbreak>100%</orangeStrong></color>、提高自身暴擊率，並獲得<orangeStrong>強化戰技</orangeStrong>。發動攻擊時，消耗隊友的生命值並根據消耗總量<orangeStrong>提升鏡流的攻擊力</orangeStrong>。當【朔望】層數為0時，退出【轉魄】狀態。"
+        "shortDesc": "當擁有<orangeStrong>{{5}}</orangeStrong>層【朔望】時，進入【轉魄】狀態，<orangeStrong>使行動提前<unbreak>100%</orangeStrong></color>、提高自身暴擊率，並獲得<orangeStrong>強化戰技</orangeStrong>。發動攻擊時，消耗隊友的生命值並根據消耗總量<orangeStrong>提升鏡流的攻擊力</orangeStrong>。當【朔望】層數為0時，退出【轉魄】狀態。",
+        "tag": "強化"
       }
     },
     "technique": {
       "0": {
         "name": "古鏡照神",
         "fullDesc": "使用秘技後，在自身周圍製造1片持續{{3}}秒的特殊領域，處於特殊領域內的敵人陷入凍結狀態。與處於特殊領域內的敵人進入戰鬥後，立即為自身恢復{{6}}點能量、獲得{{1}}層【朔望】並有{{2, percent}}%的基礎機率使敵方目標陷入凍結狀態，持續{{4}}回合。凍結狀態下，敵方目標無法行動，且每回合開始時受到等同於鏡流{{5, percent}}%攻擊力的冰屬性附加傷害。我方製造的領域效果最多存在1個。",
-        "shortDesc": "在自身周圍製造特殊領域。領域內敵人陷入<orangeStrong>凍結狀態</orangeStrong>。與領域內敵人進入戰鬥後，恢復能量、獲得1層朔望並有高機率使敵方目標陷入<orangeStrong>凍結狀態</orangeStrong>。"
+        "shortDesc": "在自身周圍製造特殊領域。領域內敵人陷入<orangeStrong>凍結狀態</orangeStrong>。與領域內敵人進入戰鬥後，恢復能量、獲得1層朔望並有高機率使敵方目標陷入<orangeStrong>凍結狀態</orangeStrong>。",
+        "tag": "妨害"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "死境",
         "fullDesc": "【轉魄】狀態下，效果抗性提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "劍首",
         "fullDesc": "施放【無罅飛光】後，下次行動提前{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "霜魄",
         "fullDesc": "【轉魄】狀態下，終結技造成的傷害提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

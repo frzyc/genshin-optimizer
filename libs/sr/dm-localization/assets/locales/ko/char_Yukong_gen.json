@@ -5,63 +5,72 @@
       "0": {
         "name": "떠도는 화살",
         "fullDesc": "지정된 단일 적에게 어공 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 허수 속성 피해를 가한다",
-        "shortDesc": "단일 적에게 소량의 허수 속성 피해를 준다"
+        "shortDesc": "단일 적에게 소량의 허수 속성 피해를 준다",
+        "tag": "단일 공격"
       }
     },
     "skill": {
       "0": {
         "name": "천궁에 울리는 활",
         "fullDesc": "[활시위 호령] {{1}}스택을 획득한다. (최대 2스택 보유) 어공이 [활시위 호령] 효과를 보유할 경우 모든 아군의 공격력이 <orangeStrong>{{2, percent}}%</orangeStrong> 증가한다. 아군의 턴이 종료될 때마다 어공의 [활시위 호령] 효과가 1스택 감소한다.<br>어공이 전투 스킬을 발동해 [활시위 호령]을 획득한 턴은 [활시위 호령]이 감소하지 않는다",
-        "shortDesc": "[활시위 호령] 2스택을 획득한다. 자신이 [활시위 호령] 효과를 보유 중일 경우 모든 아군의 <orangeStrong>공격력이 증가</orangeStrong>한다"
+        "shortDesc": "[활시위 호령] 2스택을 획득한다. 자신이 [활시위 호령] 효과를 보유 중일 경우 모든 아군의 <orangeStrong>공격력이 증가</orangeStrong>한다",
+        "tag": "서포트"
       }
     },
     "ult": {
       "0": {
         "name": "창공 꿰뚫기",
         "fullDesc": "필살기 발동 시, 어공이 [활시위 호령]을 보유 중이면 추가로 모든 아군의 치명타 확률이 <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, 치명타 피해가 <orangeStrong>{{3, percent}}%</orangeStrong> 증가한다. 동시에 지정된 단일 적에게 어공 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 허수 속성 피해를 가한다",
-        "shortDesc": "자신이 [활시위 호령] 효과를 보유 중일 경우 모든 아군의 <orangeStrong>치명타 확률과 치명타 피해가 증가</orangeStrong>하고, 단일 적에게 대량의 허수 속성 피해를 가한다"
+        "shortDesc": "자신이 [활시위 호령] 효과를 보유 중일 경우 모든 아군의 <orangeStrong>치명타 확률과 치명타 피해가 증가</orangeStrong>하고, 단일 적에게 대량의 허수 속성 피해를 가한다",
+        "tag": "단일 공격"
       }
     },
     "talent": {
       "0": {
         "name": "7겹 관통화살",
         "fullDesc": "일반 공격 발동 시 어공 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 허수 속성 피해를 추가로 가한다. 이번 공격의 강인성 감소 수치가 {{2, percent}}% 증가한다. 해당 효과는 {{3}}턴 후 다시 발동할 수 있다",
-        "shortDesc": "일반 공격으로 소량의 추가 피해를 가하고 이번 일반 공격의 강인성 감소 수치가 증가한다. 해당 효과는 1턴 후에 다시 발동할 수 있다"
+        "shortDesc": "일반 공격으로 소량의 추가 피해를 가하고 이번 일반 공격의 강인성 감소 수치가 증가한다. 해당 효과는 1턴 후에 다시 발동할 수 있다",
+        "tag": "강화"
       }
     },
     "technique": {
       "0": {
         "name": "바람을 가르는 연",
         "fullDesc": "비술 사용 후 {{1}}초 동안 질주 상태에 진입한다. 질주 상태에선 자신의 이동 속도가 {{2, percent}}% 증가하며, 선공을 가해 적과의 전투 진입 시 어공은 [활시위 호령]을 {{3}}스택 획득한다",
-        "shortDesc": "자신의 <orangeStrong>이동 속도가 증가</orangeStrong>하며 적과의 전투 진입 후 [활시위 호령]을 2스택 획득한다"
+        "shortDesc": "자신의 <orangeStrong>이동 속도가 증가</orangeStrong>하며 적과의 전투 진입 후 [활시위 호령]을 2스택 획득한다",
+        "tag": "강화"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "양보",
         "fullDesc": "어공에게 디버프 효과가 가해질 경우 디버프 효과에 1회 저항할 수 있다. 해당 효과는 {{1}}턴 후 다시 발동할 수 있다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "전승의 활",
         "fullDesc": "어공이 필드에 있으면 모든 아군이 가하는 허수 속성 피해가 {{1, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "기개",
         "fullDesc": "[활시위 호령] 효과 보유 시 아군이 행동할 때마다 어공은 추가로 에너지를 {{1}}pt 회복한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

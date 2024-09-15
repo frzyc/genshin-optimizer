@@ -5,68 +5,78 @@
       "0": {
         "name": "판쓸이",
         "fullDesc": "가장 적은 문양의 경옥패 1장을 사용해 지정된 단일 적에게 청작 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 양자 속성 피해를 가한다",
-        "shortDesc": "패 1장을 사용해 단일 적에게 소량의 양자 속성 피해를 가한다"
+        "shortDesc": "패 1장을 사용해 단일 적에게 소량의 양자 속성 피해를 가한다",
+        "tag": "단일 공격"
       },
       "1": {
         "name": "아싸~ 가오리!",
         "fullDesc": "지정된 단일 적에게 청작 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 양자 속성 피해를 가하고, 인접한 목표에게 청작 공격력 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 양자 속성 피해를 준다.<br>[아싸~ 가오리!]는 전투 스킬 포인트를 회복할 수 없다",
-        "shortDesc": "단일 적에게 양자 속성 피해를 가하고, 인접한 목표에게 소량의 양자 속성 피해를 가한다"
+        "shortDesc": "단일 적에게 양자 속성 피해를 가하고, 인접한 목표에게 소량의 양자 속성 피해를 가한다",
+        "tag": "확산"
       }
     },
     "skill": {
       "0": {
         "name": "끝내기 조합",
         "fullDesc": "즉시 경옥패를 {{1}}장 뽑는다. 자신이 가하는 피해가 <orangeStrong>{{2, percent}}%</orangeStrong> 증가하며, 이번 턴이 끝날 때까지 지속된다. 최대 중첩수: {{3}}스택. 해당 전투 스킬 발동 후 그 턴은 종료되지 않는다",
-        "shortDesc": "<orangeStrong>패를 뽑고</orangeStrong> 자신이 가하는 피해가 증가하며, <orangeStrong>이번 턴이 종료되지 않는다</orangeStrong>"
+        "shortDesc": "<orangeStrong>패를 뽑고</orangeStrong> 자신이 가하는 피해가 증가하며, <orangeStrong>이번 턴이 종료되지 않는다</orangeStrong>",
+        "tag": "강화"
       }
     },
     "ult": {
       "0": {
         "name": "물고기 4장? 났다!",
         "fullDesc": "모든 적에게 청작 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 양자 속성 피해를 가하며, 같은 문양의 경옥패를 4장 획득한다",
-        "shortDesc": "모든 적에게 양자 속성 피해를 가하며, 같은 문양의 패를 4장 획득한다"
+        "shortDesc": "모든 적에게 양자 속성 피해를 가하며, 같은 문양의 패를 4장 획득한다",
+        "tag": "범위 공격"
       }
     },
     "talent": {
       "0": {
         "name": "제원 경옥",
         "fullDesc": "아군 턴 시작 시 청작은 3가지 각각 다른 문양의 경옥패에서 랜덤으로 1장을 뽑는다. 경옥패는 최대 4장까지 보유할 수 있다.<br>청작의 턴이 시작될 때 보유 중인 경옥패의 수가 4개고 문양이 모두 동일할 경우 경옥패를 전부 소모해서 [꿀조합]에 진입한다.<br>[꿀조합] 상태일 때는 전투 스킬을 다시 발동할 수 없으며 자신의 공격력이 <orangeStrong>{{1, percent}}%</orangeStrong> 증가하고, 일반 공격 [판쓸이]가 [아싸~ 가오리!]로 강화되며 [아싸~ 가오리!] 발동 후 [꿀조합] 상태는 종료된다",
-        "shortDesc": "아군의 턴이 시작되면 패를 뽑는다. 자신의 턴이 시작될 때 같은 문양의 패를 4장 보유하고 있으면 가진 패를 모두 소진하여 <orangeStrong>이번 일반 공격을 강화</orangeStrong>하고 공격력이 증가한다"
+        "shortDesc": "아군의 턴이 시작되면 패를 뽑는다. 자신의 턴이 시작될 때 같은 문양의 패를 4장 보유하고 있으면 가진 패를 모두 소진하여 <orangeStrong>이번 일반 공격을 강화</orangeStrong>하고 공격력이 증가한다",
+        "tag": "강화"
       }
     },
     "technique": {
       "0": {
         "name": "나 홀로 대결의 즐거움",
         "fullDesc": "비술을 사용한 이후에 전투에 진입할 경우 청작이 경옥패를 {{1}}장 뽑는다",
-        "shortDesc": "비술을 발동하며, 다음 전투 진입 시 패를 뽑는다"
+        "shortDesc": "비술을 발동하며, 다음 전투 진입 시 패를 뽑는다",
+        "tag": "강화"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "순위 경쟁",
         "fullDesc": "전투 스킬 발동 시 전투 스킬 포인트를 1pt 회복한다. 해당 효과는 단일 전투에서 1회만 발동한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "한 끗 차",
         "fullDesc": "전투 스킬로 자신이 가하는 피해 증가 효과가 추가로 {{1, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "맞불",
         "fullDesc": "일반 공격 강화 발동 후 청작의 속도가 {{1, percent}}% 증가한다. 지속 시간: 1턴",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

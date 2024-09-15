@@ -5,63 +5,72 @@
       "0": {
         "name": "Intuitiver Einsatz",
         "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Aventurins VTD zu.",
-        "shortDesc": "Fügt einem anvisierten Gegner geringen imaginären SCH zu."
+        "shortDesc": "Fügt einem anvisierten Gegner geringen imaginären SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Eckpfeiler des Wohlstands",
         "fullDesc": "Gewährt allen Verbündeten für {{3}} Rd. den Schild „Verstärkter Einsatz“, der in Höhe von <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Aventurins VTD plus <orangeStrong>{{2}}</orangeStrong> absorbiert. Wenn Verstärkter Einsatz wiederholt erhalten wird, wird der Schild bis zu {{4, percent}}% der durch die aktuelle Fertigkeit gewährten Schildmenge gestapelt.",
-        "shortDesc": "Gewährt allen Verbündeten den <orangeStrong>stapelbaren Schild</orangeStrong> „Verstärkter Einsatz“."
+        "shortDesc": "Gewährt allen Verbündeten den <orangeStrong>stapelbaren Schild</orangeStrong> „Verstärkter Einsatz“.",
+        "tag": "Verteidigung"
       }
     },
     "ult": {
       "0": {
         "name": "Lord Roulette",
         "fullDesc": "Erhält zufällig 1 bis {{1}} Pkt. „Blinde Wette“ und verursacht dann bei einem anvisierten Gegner für {{4}} Rd. „Panik“. Außerdem wird dem anvisierten Gegner imaginärer SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Aventurins VTD zugefügt. Wenn Verbündete panische Gegner angreifen, wird der verursachte KRIT-SCH um <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> erhöht.",
-        "shortDesc": "Erhält zufällig „Blinde Wette“. Verursacht bei einem Gegner „Panik“ und fügt ihm imaginären SCH zu. Wenn ein Verbündeter einen Gegner im Status Panik angreift, wird der verursachte <orangeStrong>KRIT-SCH</orangeStrong> erhöht."
+        "shortDesc": "Erhält zufällig „Blinde Wette“. Verursacht bei einem Gegner „Panik“ und fügt ihm imaginären SCH zu. Wenn ein Verbündeter einen Gegner im Status Panik angreift, wird der verursachte <orangeStrong>KRIT-SCH</orangeStrong> erhöht.",
+        "tag": "Einzelangriff"
       }
     },
     "talent": {
       "0": {
         "name": "Ziele nach rechts",
         "fullDesc": "Besitzt ein Verbündeter „Verstärkter Einsatz“, wird sein Effekt-WDS um <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> erhöht. Nachdem er angegriffen wird, erhält Aventurin 1 Pkt. „Blinde Wette“. Besitzt Aventurin Verstärkter Einsatz, kann er Mengenkontrolle-Debuffs widerstehen. Dieser Effekt kann nach {{5}} Rd. erneut ausgelöst werden und Aventurin erhält nach dem erlittenen Angriff zusätzlich {{1}} Pkt. Blinde Wette. Nachdem Blinde Wette 7 Pkt. erreicht, verbraucht Aventurin diese 7 Pkt. Aufladung, um einen Folgeangriff mit {{2}} Treffern zu starten und bei jedem Treffer einem zufälligen Gegner imaginären SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Aventurins VTD zuzufügen. Blinde Wette ist auf 10 Pkt. begrenzt.",
-        "shortDesc": "Besitzt ein Verbündeter „Verstärkter Einsatz“, wird sein Effekt-WDS erhöht. Wenn er angegriffen wird, sammelt er für Aventurin „Blinde Wette“. Besitzt Aventurin Verstärkter Einsatz, kann er Mengenkontrolle-Debuffs widerstehen. Wenn Blinde Wette 7 Pkt. erreicht, verbraucht Aventurin diese Punkte, um einen <orangeStrong>Folgeangriff</orangeStrong> zu starten und einem zufälligen Gegner geringen imaginären SCH zuzufügen, wobei der Angriff 7-mal abprallt."
+        "shortDesc": "Besitzt ein Verbündeter „Verstärkter Einsatz“, wird sein Effekt-WDS erhöht. Wenn er angegriffen wird, sammelt er für Aventurin „Blinde Wette“. Besitzt Aventurin Verstärkter Einsatz, kann er Mengenkontrolle-Debuffs widerstehen. Wenn Blinde Wette 7 Pkt. erreicht, verbraucht Aventurin diese Punkte, um einen <orangeStrong>Folgeangriff</orangeStrong> zu starten und einem zufälligen Gegner geringen imaginären SCH zuzufügen, wobei der Angriff 7-mal abprallt.",
+        "tag": "Abprallung"
       }
     },
     "technique": {
       "0": {
         "name": "Zwischen Rot und Schwarz",
         "fullDesc": "Nach dem Einsatz der Technik wird 1 der folgenden Effekte gewährt:<br>Es besteht eine bestimmte Chance, dass die VTD um {{1, percent}}% erhöht wird.<br>Es besteht eine hohe Chance, dass die VTD um {{2, percent}}% erhöht wird.<br>Es besteht eine geringe Chance, dass die VTD um {{3, percent}}% erhöht wird.<br>Bei erneutem Einsatz wird der Effekt mit dem höchsten Verstärkungswert beibehalten.<br>Zu Beginn des nächsten Kampfes wird die VTD aller Verbündeten für {{4}} Rd. entsprechend erhöht.",
-        "shortDesc": "Der Einsatz der Technik gewährt zufällig 1 von 3 Arten von Effekten zur VTD-Erhöhung. Nach dem nächsten Kampfeintritt wird die VTD aller Verbündeten entsprechend erhöht."
+        "shortDesc": "Der Einsatz der Technik gewährt zufällig 1 von 3 Arten von Effekten zur VTD-Erhöhung. Nach dem nächsten Kampfeintritt wird die VTD aller Verbündeten entsprechend erhöht.",
+        "tag": "Verteidigung"
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Hebelwirkung",
         "fullDesc": "Wenn Aventurins VTD höher als {{3}} ist, steigt seine KRIT-Rate für jede 100 Pkt. VTD über diesem Wert um {{1, percent}}%, bis max. {{2, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Heiße Hand",
         "fullDesc": "Gewährt allen Verbündeten zu Beginn des Kampfes für {{1}} Rd. den Schild „Verstärkter Einsatz“. Die Schildmenge entspricht {{2, percent}}% der durch die Fertigkeit gewährten Schildmenge.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Bingo!",
         "fullDesc": "Aventurin sammelt 1 Pkt. „Blinde Wette“, nachdem ein Verbündeter mit „Verstärkter Einsatz“ einen Folgeangriff startet. Dieser Effekt kann max. {{3}}-mal ausgelöst werden. Zu Beginn von Aventurins Runde wird seine Auslösungsanzahl zurückgesetzt. Nachdem Aventurin einen Folgeangriff seines Talents startet, erhalten alle Verbündeten Verstärkter Einsatz, welcher SCH in Höhe von {{1, percent}}% von Aventurins VTD plus {{2}} absorbiert. Der Verbündete mit der momentan geringsten Schildmenge erhält für 3 Rd. zusätzlich Verstärkter Einsatz, welcher SCH in Höhe von {{4, percent}}% von Aventurins VTD plus {{5}} absorbiert.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

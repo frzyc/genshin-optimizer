@@ -5,63 +5,72 @@
       "0": {
         "name": "Banner: Durch Wind und Regen",
         "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Huohuos max. LP zu.",
-        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Talisman: Schutz des Lebens",
         "fullDesc": "Entfernt {{5}} Debuff(s) von einem Verbündeten und stellt unmittelbar dessen LP in Höhe von <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Huohuos max. LP plus <orangeStrong>{{2}}</orangeStrong> wieder her. Stellt gleichzeitig die LP der angrenzenden Verbündeten des anvisierten Verbündeten in Höhe von <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> von Huohuos max. LP plus <orangeStrong>{{4}}</orangeStrong> wieder her.",
-        "shortDesc": "Entfernt 1 Debuff von einem Verbündeten und <orangeStrong>stellt die LP</orangeStrong> dieses Verbündeten und angrenzender Verbündeter wieder her."
+        "shortDesc": "Entfernt 1 Debuff von einem Verbündeten und <orangeStrong>stellt die LP</orangeStrong> dieses Verbündeten und angrenzender Verbündeter wieder her.",
+        "tag": "Wiederherstellung"
       }
     },
     "ult": {
       "0": {
         "name": "Schweif: Unterwerfung von Teufeln",
         "fullDesc": "Stellt Energie für alle Verbündeten außer Huohuo in Höhe von <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> ihrer jeweiligen max. Energie wieder her. Erhöht gleichzeitig den ANG für {{3}} Rd. um <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>.",
-        "shortDesc": "<orangeStrong>Energie-Wiederherstellung</orangeStrong> für alle Verbündeten außer Huohuo und <orangeStrong>ANG-Erhöhung</orangeStrong>."
+        "shortDesc": "<orangeStrong>Energie-Wiederherstellung</orangeStrong> für alle Verbündeten außer Huohuo und <orangeStrong>ANG-Erhöhung</orangeStrong>.",
+        "tag": "Unterstützung"
       }
     },
     "talent": {
       "0": {
         "name": "Besessenheit: Metaphysische Verbindung",
         "fullDesc": "Nach dem Einsatz der Fertigkeit erhält Huohuo für {{1}} Rd. „Gesegnete Heilung“. Diese Dauer verringert sich zu Beginn jeder Runde von Huohuo um 1. Besitzt Huohuo Gesegnete Heilung, wird zu Beginn jeder Runde eines Verbündeten oder beim Einsatz eines Ultimates seine LP um <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> von Huohuos max. LP plus <orangeStrong>{{5}}</orangeStrong> wiederhergestellt. Gleichzeitig werden alle Verbündeten, deren LP-Prozentsatz zu diesem Zeitpunkt bei {{6, percent}}% oder niedriger liegt, einmal geheilt.<br>Wird ein Verbündeter durch den Einsatz von Gesegnete Heilung geheilt, werden {{2}} Debuff(s) von ihm entfernt. Dieser Effekt kann {{7}}-mal ausgelöst werden. Bei erneutem Einsatz der Fertigkeit wird die Anzahl der Auslösungen zurückgesetzt.",
-        "shortDesc": "Nach dem Einsatz der Fertigkeit erhält Huohuo „Gesegnete Heilung“. Besitzt Huohuo Gesegnete Heilung, wird zu Beginn jeder Runde eines Verbündeten oder beim Einsatz eines Ultimates <orangeStrong>seine LP wiederhergestellt</orangeStrong> und gleichzeitig <orangeStrong>alle Verbündeten</orangeStrong> mit niedrigen LP <orangeStrong>1-mal geheilt</orangeStrong>.Wird ein Verbündeter durch den Einsatz von Gesegnete Heilung geheilt, <orangeStrong>wird 1 Debuff von ihm entfernt</orangeStrong>."
+        "shortDesc": "Nach dem Einsatz der Fertigkeit erhält Huohuo „Gesegnete Heilung“. Besitzt Huohuo Gesegnete Heilung, wird zu Beginn jeder Runde eines Verbündeten oder beim Einsatz eines Ultimates <orangeStrong>seine LP wiederhergestellt</orangeStrong> und gleichzeitig <orangeStrong>alle Verbündeten</orangeStrong> mit niedrigen LP <orangeStrong>1-mal geheilt</orangeStrong>.Wird ein Verbündeter durch den Einsatz von Gesegnete Heilung geheilt, <orangeStrong>wird 1 Debuff von ihm entfernt</orangeStrong>.",
+        "tag": "Wiederherstellung"
       }
     },
     "technique": {
       "0": {
         "name": "Unhold: Unterdrückung von Dämonen",
         "fullDesc": "Huohuo terrorisiert angrenzende Gegner und verursacht bei ihnen Verängstigung. Verängstigte Gegner fliehen vor Huohuo für {{4}} Sek. Falls ein Gegner bei Kampfbeginn verängstigt ist, besteht eine Grundchance von {{1, percent}}%, dass der ANG jedes Gegners für {{3}} Rd. um {{2, percent}}% gesenkt wird.",
-        "shortDesc": "Angrenzende Gegner werden von Verängstigung gepackt. Nach Kampfbeginn gegen verängstigte Gegner besteht eine hohe Chance, bei gegnerischen Zielen <orangeStrong>ANG-Reduktion</orangeStrong> zu verursachen."
+        "shortDesc": "Angrenzende Gegner werden von Verängstigung gepackt. Nach Kampfbeginn gegen verängstigte Gegner besteht eine hohe Chance, bei gegnerischen Zielen <orangeStrong>ANG-Reduktion</orangeStrong> zu verursachen.",
+        "tag": "Beeinträchtigung"
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Starr vor Scheu",
         "fullDesc": "Zu Beginn des Kampfes erhält Huohuo für {{1}} Rd. „Gesegnete Heilung“.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Verfluchtes Schicksal",
         "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Stressreaktion auf Horror",
         "fullDesc": "Wenn das Talent ausgelöst wird, um Verbündete zu heilen, erhält Huohuo {{1}} Pkt. Energie zurück.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,63 +5,72 @@
       "0": {
         "name": "{RUBY_B#うんきそうじゅつ}雲騎槍術{RUBY_E#}・{RUBY_B#さくふう}朔風{RUBY_E#}",
         "fullDesc": "指定した敵単体に丹恒の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の風属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の風属性ダメージを与える。"
+        "shortDesc": "敵単体に少量の風属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#うんきそうじゅつ}雲騎槍術{RUBY_E#}・{RUBY_B#しつう}疾雨{RUBY_E#}",
         "fullDesc": "指定した敵単体に丹恒の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の風属性ダメージを与える。<br>戦闘スキルによるダメージで会心が発生した時、{{4, percent}}%の基礎確率で攻撃を受けた敵の速度-{{2, percent}}%、{{3}}ターン継続。",
-        "shortDesc": "敵単体に風属性ダメージを与え、会心時に高確率で減速状態を付与。"
+        "shortDesc": "敵単体に風属性ダメージを与え、会心時に高確率で減速状態を付与。",
+        "tag": "単体攻撃"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#どうてん}洞天{RUBY_E#}{RUBY_B#げんげ}幻化{RUBY_E#}、{RUBY_B#ちょうむ}長夢{RUBY_E#}{RUBY_B#いっかく}一覚{RUBY_E#}",
         "fullDesc": "指定した敵単体に丹恒の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の風属性ダメージを与える。攻撃を受けた敵が減速状態の場合、必殺技によるダメージのダメージ倍率+<orangeStrong>{{2, percent}}%</orangeStrong>。",
-        "shortDesc": "敵単体に大量の風属性ダメージを与える、減速状態の敵に対してダメージ倍率アップ。"
+        "shortDesc": "敵単体に大量の風属性ダメージを与える、減速状態の敵に対してダメージ倍率アップ。",
+        "tag": "単体攻撃"
       }
     },
     "talent": {
       "0": {
         "name": "{RUBY_B#すんちょうすんきょう}寸長寸強{RUBY_E#}",
         "fullDesc": "丹恒が味方スキルのターゲットになった時、次の攻撃の風属性耐性貫通+<orangeStrong>{{1, percent}}%</orangeStrong>。この効果は{{2}}ターン後に再度発動できる。",
-        "shortDesc": "味方スキルのターゲットになった時、次の攻撃の<orangeStrong>風属性耐性貫通をアップ</orangeStrong>する。この効果は2ターン後に再度発動できる。"
+        "shortDesc": "味方スキルのターゲットになった時、次の攻撃の<orangeStrong>風属性耐性貫通をアップ</orangeStrong>する。この効果は2ターン後に再度発動できる。",
+        "tag": "強化"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#はてき}破敵{RUBY_E#}の{RUBY_B#ほこさき}矛先{RUBY_E#}",
         "fullDesc": "秘技を使用した後、次の戦闘開始時、丹恒の攻撃力+{{1, percent}}%、{{2}}ターン継続。",
-        "shortDesc": "秘技を使用、次の戦闘に入った後に攻撃力アップ。"
+        "shortDesc": "秘技を使用、次の戦闘に入った後に攻撃力アップ。",
+        "tag": "強化"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#せんりゅう}潜龍{RUBY_E#}",
         "fullDesc": "残りHPが{{1, percent}}%以下の場合、敵に攻撃される確率ダウン。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#ぜつえい}絶影{RUBY_E#}",
         "fullDesc": "攻撃を行った後、{{1, percent}}%の固定確率で自身の速度+{{2, percent}}%、{{3}}ターン継続。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#ごうふう}剛風{RUBY_E#}",
         "fullDesc": "減速状態の敵に対する、通常攻撃によるダメージ+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

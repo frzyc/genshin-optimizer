@@ -5,63 +5,72 @@
       "0": {
         "name": "Deficit...",
         "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Topaz pada 1 musuh yang ditargetkan.",
-        "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Difficulty Paying?",
         "fullDesc": "Mengakibatkan 1 musuh yang ditarget memasuki status \"Proof of Debt\" dan mengakibatkan DMG Serangan Lanjutan yang diterima target meningkat <orangeStrong>{{2, percent}}%</orangeStrong>. \"Proof of Debt\" hanya akan efektif pada target terbaru yang menerima efeknya. Saat giliran rekan tim dimulai atau saat rekan tim beraksi, jika tidak ada target musuh berstatus \"Proof of Debt\" di medan pertempuran, Topaz akan mengakibatkan 1 target musuh secara acak untuk memasuki status \"Proof of Debt\".<br>Numby akan mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Topaz pada target tersebut. Saat melancarkan Skill ini untuk mengakibatkan DMG, akan dianggap sama dengan memicu Serangan Lanjutan.",
-        "shortDesc": "Mengakibatkan 1 musuh memasuki status \"Proof of Debt\", dan <orangeStrong>DMG Serangan Lanjutan yang diterimanya akan meningkat</orangeStrong>. Numby mengakibatkan Fire DMG pada target."
+        "shortDesc": "Mengakibatkan 1 musuh memasuki status \"Proof of Debt\", dan <orangeStrong>DMG Serangan Lanjutan yang diterimanya akan meningkat</orangeStrong>. Numby mengakibatkan Fire DMG pada target.",
+        "tag": "Single Target"
       }
     },
     "ult": {
       "0": {
         "name": "Turn a Profit!",
         "fullDesc": "Membuat Numby memasuki status \"Windfall Bonanza!\", meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> DMG Multiplier dan <orangeStrong>{{2, percent}}%</orangeStrong> CRIT DMG. Saat target musuh berstatus \"Proof of Debt\" menerima serangan dari Basic Attack, Skill, atau Ultimate dari rekan tim, aksi Numby akan didahulukan sebesar {{3, percent}}%. Setelah Numby melancarkan {{4}} kali serangan, Numby akan keluar dari status \"Windfall Bonanza!\".",
-        "shortDesc": "Membuat Numby memasuki status \"Windfall Bonanza!\" dan <orangeStrong>mendapatkan peningkatan DMG Multiplier dan CRIT DMG</orangeStrong>."
+        "shortDesc": "Membuat Numby memasuki status \"Windfall Bonanza!\" dan <orangeStrong>mendapatkan peningkatan DMG Multiplier dan CRIT DMG</orangeStrong>.",
+        "tag": "Enhance"
       }
     },
     "talent": {
       "0": {
         "name": "Trotter Market!?",
         "fullDesc": "Memanggil Numby saat pertempuran dimulai. Numby memiliki {{1}} SPD dasar. Saat beraksi, Numby akan melancarkan Serangan Lanjutan pada 1 musuh yang berstatus \"Proof of Debt\", mengakibatkan Fire DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Topaz.<br>Saat target musuh berstatus \"Proof of Debt\" terkena Serangan Lanjutan dari rekan tim, aksi Numby akan didahulukan sebesar {{3, percent}}%. Saat dalam giliran Numby sendiri, efek pendahuluan aksi tidak dapat dipicu.<br>Saat Topaz gugur, Numby akan menghilang.",
-        "shortDesc": "<orangeStrong>Memanggil Numby</orangeStrong> saat pertempuran dimulai. Saat Numby beraksi, ia akan <orangeStrong>melancarkan Serangan Lanjutan pada 1 musuh yang berstatus \"Proof of Debt\"</orangeStrong>. Saat musuh dengan \"Proof of Debt\" terkena Serangan Lanjutan, <orangeStrong>aksi Numby akan didahulukan</orangeStrong>."
+        "shortDesc": "<orangeStrong>Memanggil Numby</orangeStrong> saat pertempuran dimulai. Saat Numby beraksi, ia akan <orangeStrong>melancarkan Serangan Lanjutan pada 1 musuh yang berstatus \"Proof of Debt\"</orangeStrong>. Saat musuh dengan \"Proof of Debt\" terkena Serangan Lanjutan, <orangeStrong>aksi Numby akan didahulukan</orangeStrong>.",
+        "tag": "Single Target"
       }
     },
     "technique": {
       "0": {
         "name": "Explicit Subsidy",
         "fullDesc": "Saat Topaz adalah karakter yang digunakan di latar tempat, akan memanggil Numby. Numby akan secara otomatis mencari Peti Harta biasa dan Trotter dalam jangkauan tertentu.<br>Melancarkan Technique akan membuat Topaz memulihkan {{1}} Energy setelah Numby melancarkan serangan pertamanya pada pertempuran berikutnya.<br>Setelah melancarkan Technique ini, jika Topaz masih berada dalam tim setelah memenangkan pertempuran dengan musuh di latar tempat, kamu akan memperoleh Credit tambahan dalam jumlah kecil saat menerima Credit. Setiap hari dalam kalender bumi, kamu hanya dapat menerima maksimal {{2}} Credit tambahan.<br>Setelah melancarkan Technique ini dan mengalahkan musuh di Simulated Universe atau Divergent Universe, kamu akan memperoleh Cosmic Fragment tambahan dalam jumlah kecil, serta memiliki peluang kecil untuk memperoleh 1 Benda Langka acak.",
-        "shortDesc": "<orangeStrong>Memanggil Numby untuk mengikuti pergerakanmu</orangeStrong> di dalam latar tempat. Numby akan <orangeStrong>mencari Peti Harta biasa dan Trotter di sekitar</orangeStrong> secara otomatis. Melancarkan Technique akan membuat Topaz memulihkan Energy setelah Numby melancarkan serangan pertamanya pada pertempuran berikutnya."
+        "shortDesc": "<orangeStrong>Memanggil Numby untuk mengikuti pergerakanmu</orangeStrong> di dalam latar tempat. Numby akan <orangeStrong>mencari Peti Harta biasa dan Trotter di sekitar</orangeStrong> secara otomatis. Melancarkan Technique akan membuat Topaz memulihkan Energy setelah Numby melancarkan serangan pertamanya pada pertempuran berikutnya.",
+        "tag": "Enhance"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Overdraft",
         "fullDesc": "Saat Topaz melancarkan Basic Attack untuk mengakibatkan DMG, serangan tersebut akan dianggap sebagai Serangan Lanjutan.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Financial Turmoil",
         "fullDesc": "Meningkatkan {{1, percent}}% DMG yang diakibatkan Topaz dan Numby terhadap target musuh dengan Fire Weakness.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Stonks Market",
         "fullDesc": "Setelah Numby melancarkan serangan saat berstatus \"Windfall Bonanza!\", Topaz akan memulihkan {{1}} Energy tambahan.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

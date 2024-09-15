@@ -5,68 +5,78 @@
       "0": {
         "name": "门前清",
         "fullDesc": "使用1张当前花色最少的琼玉牌，对指定敌方单体造成等同于青雀<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的量子属性伤害。",
-        "shortDesc": "使用1张牌，对敌方单体造成少量量子属性伤害。"
+        "shortDesc": "使用1张牌，对敌方单体造成少量量子属性伤害。",
+        "tag": "单攻"
       },
       "1": {
         "name": "杠上开花！",
         "fullDesc": "对指定敌方单体造成等同于青雀<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的量子属性伤害，并对其相邻目标造成等同于青雀<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的量子属性伤害。<br>【杠上开花！】无法恢复战技点。",
-        "shortDesc": "对敌方单体造成量子属性伤害，并对相邻目标造成少量量子属性伤害。"
+        "shortDesc": "对敌方单体造成量子属性伤害，并对相邻目标造成少量量子属性伤害。",
+        "tag": "扩散"
       }
     },
     "skill": {
       "0": {
         "name": "海底捞月",
         "fullDesc": "立即抽取{{1}}张琼玉牌，使自身造成的伤害提高<orangeStrong>{{2, percent}}%</orangeStrong>，持续至本回合结束。该效果可以叠加{{3}}层。施放该战技后，本回合不会结束。",
-        "shortDesc": "<orangeStrong>抽牌</orangeStrong>，使自身造成的伤害提高，且<orangeStrong>本回合不会结束</orangeStrong>。"
+        "shortDesc": "<orangeStrong>抽牌</orangeStrong>，使自身造成的伤害提高，且<orangeStrong>本回合不会结束</orangeStrong>。",
+        "tag": "强化"
       }
     },
     "ult": {
       "0": {
         "name": "四幺暗刻？和！",
         "fullDesc": "对敌方全体造成等同于青雀<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的量子属性伤害，并获得4张相同花色的琼玉牌。",
-        "shortDesc": "对敌方全体造成量子属性伤害，获得4张相同花色的牌。"
+        "shortDesc": "对敌方全体造成量子属性伤害，获得4张相同花色的牌。",
+        "tag": "群攻"
       }
     },
     "talent": {
       "0": {
         "name": "帝垣琼玉",
         "fullDesc": "我方目标回合开始时，青雀会从3种不同花色的琼玉牌中随机抽取1张，最多持有4张琼玉牌。<br>青雀回合开始时，若持有的琼玉牌数为4且花色相同，青雀消耗所有琼玉牌进入【暗杠】状态。<br>处于【暗杠】状态时无法再次施放战技，同时使自身攻击力提高<orangeStrong>{{1, percent}}%</orangeStrong>，普攻【门前清】强化为【杠上开花！】，【暗杠】状态会在施放【杠上开花！】后结束。",
-        "shortDesc": "我方目标回合开始时，抽牌。自身回合开始时，若持有4张同花色牌，则清空已有牌并<orangeStrong>强化本次普攻</orangeStrong>，同时使自身攻击力提高。"
+        "shortDesc": "我方目标回合开始时，抽牌。自身回合开始时，若持有4张同花色牌，则清空已有牌并<orangeStrong>强化本次普攻</orangeStrong>，同时使自身攻击力提高。",
+        "tag": "强化"
       }
     },
     "technique": {
       "0": {
         "name": "独弈之乐",
         "fullDesc": "使用秘技后，进入战斗时青雀会抽取{{1}}张琼玉牌。",
-        "shortDesc": "使用秘技，下一次进战时抽牌。"
+        "shortDesc": "使用秘技，下一次进战时抽牌。",
+        "tag": "强化"
       }
     },
     "overworld": {
       "0": {
         "name": "攻击",
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "争番",
         "fullDesc": "施放战技时，恢复1个战技点。该效果单场战斗中只能触发1次。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "听牌",
         "fullDesc": "战技使自身造成的伤害提高效果额外提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "抢杠",
         "fullDesc": "施放强化普攻后，青雀的速度提高{{1, percent}}%，持续1回合。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

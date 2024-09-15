@@ -5,63 +5,72 @@
       "0": {
         "name": "Frost Shot",
         "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Pela pada 1 target musuh.",
-        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Frostbite",
         "fullDesc": "Menghilangkan {{2}} Buff dan mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Pela pada 1 target musuh.",
-        "shortDesc": "<orangeStrong>Menghapus</orangeStrong> 1 efek <orangeStrong>Buff</orangeStrong> dari 1 musuh, dan mengakibatkan Ice DMG pada target tersebut."
+        "shortDesc": "<orangeStrong>Menghapus</orangeStrong> 1 efek <orangeStrong>Buff</orangeStrong> dari 1 musuh, dan mengakibatkan Ice DMG pada target tersebut.",
+        "tag": "Single Target"
       }
     },
     "ult": {
       "0": {
         "name": "Zone Suppression",
         "fullDesc": "Memiliki {{1, percent}}% peluang dasar membuat setiap target musuh memasuki status \"Exposed\", di saat yang bersamaan juga mengakibatkan Ice DMG sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK Pela pada seluruh musuh.<br>Target musuh yang berstatus \"Exposed\" akan mengalami <orangeStrong>{{2, percent}}%</orangeStrong> pengurangan DEF selama {{3}} giliran.",
-        "shortDesc": "Berpeluang besar untuk <orangeStrong>mengurangi DEF</orangeStrong> target musuh, serta mengakibatkan Ice DMG dalam jumlah kecil pada seluruh musuh."
+        "shortDesc": "Berpeluang besar untuk <orangeStrong>mengurangi DEF</orangeStrong> target musuh, serta mengakibatkan Ice DMG dalam jumlah kecil pada seluruh musuh.",
+        "tag": "AoE"
       }
     },
     "talent": {
       "0": {
         "name": "Data Collecting",
         "fullDesc": "Jika Pela melancarkan serangan pada musuh yang berada dalam status Debuff, Pela akan memulihkan <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> Energy tambahan. Efek ini hanya dapat dipicu sekali per serangan.",
-        "shortDesc": "Setelah melancarkan serangan, jika target musuh memasuki status Debuff, Energy Pela akan dipulihkan."
+        "shortDesc": "Setelah melancarkan serangan, jika target musuh memasuki status Debuff, Energy Pela akan dipulihkan.",
+        "tag": "Support"
       }
     },
     "technique": {
       "0": {
         "name": "Preemptive Strike",
         "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Ice DMG sebesar {{4, percent}}% ATK Pela pada musuh secara acak, dan di saat bersamaan seluruh target musuh memiliki {{1, percent}}% peluang dasar untuk mengalami {{2, percent}}% penurunan DEF selama {{3}} giliran.",
-        "shortDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengakibatkan DMG dalam jumlah kecil pada musuh secara acak dan berpeluang besar mengurangi DEF setiap target musuh."
+        "shortDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengakibatkan DMG dalam jumlah kecil pada musuh secara acak dan berpeluang besar mengurangi DEF setiap target musuh.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Bash",
         "fullDesc": "Meningkatkan {{1, percent}}% DMG yang diakibatkan pada target musuh yang terkena efek Debuff.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "The Secret Strategy",
         "fullDesc": "Meningkatkan {{1, percent}}% Effect Hit Rate seluruh rekan tim saat Pela berada di medan pertempuran.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Wipe Out",
         "fullDesc": "Saat melancarkan Skill untuk menghilangkan Buff, DMG serangan Pela selanjutnya akan meningkat {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
