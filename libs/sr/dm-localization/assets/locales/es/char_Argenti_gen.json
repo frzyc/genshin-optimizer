@@ -5,61 +5,78 @@
       "0": {
         "name": "Fragancia fugaz",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Argenti como Daño Físico a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Florecimiento de la justicia",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Argenti como Daño Físico a todos los enemigos.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño Físico a todos los enemigos."
+        "shortDesc": "Inflige una pequeña cantidad de Daño Físico a todos los enemigos.",
+        "tag": "ATQ AdE"
       }
     },
     "ult": {
       "0": {
         "name": "Este jardín otorga la belleza suprema",
         "fullDesc": "Consume {{2}} pts. de energía e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Argenti como Daño Físico a todos los enemigos.",
-        "shortDesc": "Consume <orangeStrong>{{2}}</orangeStrong> pts. de energía e inflige Daño Físico a todos los enemigos."
+        "shortDesc": "Consume <orangeStrong>{{2}}</orangeStrong> pts. de energía e inflige Daño Físico a todos los enemigos.",
+        "tag": "ATQ AdE"
       },
       "1": {
         "name": "Mérito otorgado en \"mi\" jardín",
         "fullDesc": "Consume {{4}} pts. de energía e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Argenti como Daño Físico a todos los enemigos. Además, inflige daño {{2}} veces más, y cada vez inflige un Daño Físico equivalente al <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Argenti a un enemigo al azar.",
-        "shortDesc": "Consume <orangeStrong>{{4}}</orangeStrong> pts. de energía e inflige Daño Físico a todos los enemigos. Además, inflige una pequeña cantidad de Daño Físico a enemigos al azar. Rebota 6 veces."
+        "shortDesc": "Consume <orangeStrong>{{4}}</orangeStrong> pts. de energía e inflige Daño Físico a todos los enemigos. Además, inflige una pequeña cantidad de Daño Físico a enemigos al azar. Rebota 6 veces.",
+        "tag": "ATQ AdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Objeto sublime",
+        "fullDesc": "Por cada enemigo que golpee con su ATQ básico, habilidad básica o habilidad definitiva, Argenti recupera {{1}} pts. de energía y obtiene 1 acumulación de Elevación, que aumenta su Prob. CRIT en un <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. Este efecto se puede acumular hasta {{3}} veces.",
+        "shortDesc": "Al usar el ATQ básico, la habilidad básica o la habilidad definitiva, por cada enemigo golpeado Argenti <orangeStrong>recupera energía</orangeStrong> y aumenta su <orangeStrong>Prob. CRIT</orangeStrong>.",
+        "tag": "Potenciación"
       }
     },
     "technique": {
       "0": {
         "name": "Manifiesto de la virtud pura",
-        "fullDesc": "Tras usar la técnica, los enemigos de una zona determinada quedan afectados por Mareo durante {{1}} s, lo que les impide atacar activamente a los aliados.\\nAl entrar en combate tras atacar a un enemigo mareado, inflige a todos los enemigos un Daño Físico equivalente al {{2, percent}}% del ATQ de Argenti y recupera {{3}} pts. de energía.",
-        "shortDesc": "Afecta con Mareo a los enemigos de una zona. Al atacar a un enemigo mareado y entrar en combate, inflige una pequeña cantidad de Daño Físico a todos los enemigos y Argenti recupera energía."
+        "fullDesc": "Tras usar la técnica, los enemigos de una zona determinada quedan afectados por Mareo durante {{1}} s, lo que les impide atacar activamente a los aliados.<br>Al entrar en combate tras atacar a un enemigo mareado, inflige a todos los enemigos un Daño Físico equivalente al {{2, percent}}% del ATQ de Argenti y recupera {{3}} pts. de energía.",
+        "shortDesc": "Afecta con Mareo a los enemigos de una zona. Al atacar a un enemigo mareado y entrar en combate, inflige una pequeña cantidad de Daño Físico a todos los enemigos y Argenti recupera energía.",
+        "tag": "Alteración"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Devoción",
         "fullDesc": "Al comenzar el turno, obtiene inmediatamente {{1}} acumulación de Elevación.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Generosidad",
         "fullDesc": "Cuando el enemigo entra en combate, Argenti recupera {{1}} pts. de energía.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Valentía",
         "fullDesc": "Cuando el objetivo tiene un porcentaje de PV igual o inferior al {{1, percent}}%, recibe un {{2, percent}}% más de daño.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -74,7 +91,7 @@
     },
     "3": {
       "name": "Gloria del camino de espinas",
-      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15).\\nNiv. de talento +2 (máximo: nivel 15)."
+      "desc": "Niv. de habilidad básica +2 (máximo: nivel 15).<br>Niv. de talento +2 (máximo: nivel 15)."
     },
     "4": {
       "name": "Consagración de la corneta",
@@ -82,7 +99,7 @@
     },
     "5": {
       "name": "Nieve en algún lugar del universo",
-      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15).\\nNiv. de ATQ básico +1 (máximo: nivel 10)."
+      "desc": "Niv. de habilidad definitiva +2 (máximo: nivel 15).<br>Niv. de ATQ básico +1 (máximo: nivel 10)."
     },
     "6": {
       "name": "\"Tu\" resplandor",

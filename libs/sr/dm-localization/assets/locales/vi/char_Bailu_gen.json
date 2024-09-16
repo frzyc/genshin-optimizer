@@ -5,56 +5,72 @@
       "0": {
         "name": "Nhìn, Nghe, Hỏi... Đá!",
         "fullDesc": "Gây Sát Thương Lôi bằng <orangeStrong>{{1, percent}}%</orangeStrong> tấn công của Bailu cho kẻ địch chỉ định.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho 1 kẻ địch."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Châu Rơi Giữa Mây Ngàn",
         "fullDesc": "Hồi ngay cho 1 đồng đội chỉ định một lượng HP bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Bailu +<orangeStrong>{{2}}</orangeStrong>. Sau đó Bailu sẽ trị liệu {{4}} lần cho 1 đồng đội ngẫu nhiên, mỗi 1 lần trị liệu thì lượng HP hồi phục cho lần sau sẽ giảm {{3, percent}}%.",
-        "shortDesc": "Hồi HP cho 1 đồng đội, sau đó trị liệu cho đồng đội ngẫu nhiên của phe ta."
+        "shortDesc": "Hồi HP cho 1 đồng đội, sau đó trị liệu cho đồng đội ngẫu nhiên của phe ta.",
+        "tag": "Hồi Phục"
       }
     },
     "ult": {
       "0": {
         "name": "Rồng Vượt Vực Sâu",
-        "fullDesc": "Lập tức hồi cho toàn phe ta lượng HP bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Bailu +<orangeStrong>{{2}}</orangeStrong>.\\nĐối với mục tiêu không có Sinh Mệnh của phe ta, Bailu sẽ cộng Sinh Mệnh vào cho mục tiêu đó, còn mục tiêu đã có Sinh Mệnh, sẽ được kéo dài thời gian Sinh Mệnh thêm 1 hiệp.\\n\"Sinh Mệnh\" có thể duy trì {{3}} hiệp, hiệu ứng này không thể cộng dồn.",
-        "shortDesc": "Hồi HP cho toàn thể phe ta, đồng thời kèm thêm Sinh Mệnh hoặc kéo dài thời gian duy trì Sinh Mệnh."
+        "fullDesc": "Lập tức hồi cho toàn phe ta lượng HP bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Bailu +<orangeStrong>{{2}}</orangeStrong>.<br>Đối với mục tiêu không có Sinh Mệnh của phe ta, Bailu sẽ cộng Sinh Mệnh vào cho mục tiêu đó, còn mục tiêu đã có Sinh Mệnh, sẽ được kéo dài thời gian Sinh Mệnh thêm 1 hiệp.<br>\"Sinh Mệnh\" có thể duy trì {{3}} hiệp, hiệu ứng này không thể cộng dồn.",
+        "shortDesc": "Hồi HP cho toàn thể phe ta, đồng thời kèm thêm Sinh Mệnh hoặc kéo dài thời gian duy trì Sinh Mệnh.",
+        "tag": "Hồi Phục"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Hành Y Giúp Đời",
+        "fullDesc": "Mục tiêu phe ta có \"Sinh Mệnh\", sau khi bị tấn công sẽ hồi lượng HP bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Bailu +<orangeStrong>{{2}}</orangeStrong>, hiệu ứng này có thể kích hoạt {{5}} lần.<br>Khi đồng đội của Bailu chịu tấn công chí tử, sẽ không rơi vào trạng thái không thể chiến đấu, Bailu sẽ trị liệu ngay cho đồng đội đó, hồi HP bằng <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Bailu +<orangeStrong>{{4}}</orangeStrong>. Hiệu ứng này có thể kích hoạt 1 lần trong 1 trận.",
+        "shortDesc": "Mục tiêu có <orangeStrong>\"Sinh Mệnh\"</orangeStrong> của phe ta sau khi bị tấn công sẽ <orangeStrong>hồi HP</orangeStrong>.<br>Khi đồng đội <orangeStrong>chịu tấn công chí tử</orangeStrong>, Bailu <orangeStrong>sẽ hồi ngay HP cho đồng đội đó</orangeStrong>. Hiệu ứng này có thể kích hoạt 1 lần trong 1 trận.",
+        "tag": "Hồi Phục"
       }
     },
     "technique": {
       "0": {
         "name": "Thong Thả Trong Mưa",
         "fullDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu lần chiến đấu tiếp theo sẽ kèm thêm Sinh Mệnh cho toàn phe ta, duy trì {{1}} hiệp.",
-        "shortDesc": "Dùng Bí Kỹ, khi bắt đầu trận kế tiếp sẽ kèm thêm \"Sinh Mệnh\" cho toàn bộ phe ta."
+        "shortDesc": "Dùng Bí Kỹ, khi bắt đầu trận kế tiếp sẽ kèm thêm \"Sinh Mệnh\" cho toàn bộ phe ta.",
+        "tag": "Hồi Phục"
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Lý Luận Kỳ Hoàng",
         "fullDesc": "Khi Bailu trị liệu quá mức cho mục tiêu của phe ta sẽ tăng {{1, percent}}% Giới Hạn HP của mục tiêu, duy trì {{2}} hiệp.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Long Mạch Vidyadhara",
         "fullDesc": "Số lần kích hoạt hiệu ứng Sinh Mệnh tăng {{1}} lần.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Phúc Trạch Lân Uyên",
         "fullDesc": "Giảm {{1, percent}}% sát thương mà nhân vật sở hữu \"Sinh Mệnh\" phải chịu.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

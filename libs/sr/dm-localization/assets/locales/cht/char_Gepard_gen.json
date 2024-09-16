@@ -5,56 +5,72 @@
       "0": {
         "name": "一意之拳",
         "fullDesc": "對指定敵方單體造成等同於傑帕德<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的冰屬性傷害。",
-        "shortDesc": "對敵方單體造成少量冰屬性傷害。"
+        "shortDesc": "對敵方單體造成少量冰屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "震懾之擊",
-        "fullDesc": "對指定敵方單體造成等同於傑帕德<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的冰屬性傷害，同時有{{2, percent}}%的<u>基礎機率</u>使受到攻擊的敵方目標陷入凍結狀態，持續{{3}}回合。\\n凍結狀態下，敵方目標不能行動同時每回合開始時受到等同於傑帕德<orangeStrong>{{4, percent}}%</orangeStrong>攻擊力的冰屬性<u>附加傷害</u>。",
-        "shortDesc": "對敵方單體造成冰屬性傷害，<orangeStrong>有機率對目標施加凍結狀態</orangeStrong>。"
+        "fullDesc": "對指定敵方單體造成等同於傑帕德<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的冰屬性傷害，同時有{{2, percent}}%的基礎機率使受到攻擊的敵方目標陷入凍結狀態，持續{{3}}回合。<br>凍結狀態下，敵方目標不能行動同時每回合開始時受到等同於傑帕德<orangeStrong>{{4, percent}}%</orangeStrong>攻擊力的冰屬性附加傷害。",
+        "shortDesc": "對敵方單體造成冰屬性傷害，<orangeStrong>有機率對目標施加凍結狀態</orangeStrong>。",
+        "tag": "單體攻擊"
       }
     },
     "ult": {
       "0": {
         "name": "永屹之壁",
         "fullDesc": "為我方全體提供強度等同於傑帕德<orangeStrong>{{1, percent}}%</orangeStrong>防禦力+<orangeStrong>{{3}}</orangeStrong>的護盾，持續{{2}}回合。",
-        "shortDesc": "為我方全體<orangeStrong>提供護盾</orangeStrong>。"
+        "shortDesc": "為我方全體<orangeStrong>提供護盾</orangeStrong>。",
+        "tag": "防禦"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "不屈之身",
+        "fullDesc": "受到致命攻擊時傑帕德不會陷入無法戰鬥狀態，並立即回復等同於自身生命上限<orangeStrong>{{1, percent}}%</orangeStrong>的生命值。該效果單場戰鬥中只能觸發1次。",
+        "shortDesc": "受到致命攻擊時<orangeStrong>不會陷入無法戰鬥狀態</orangeStrong>，立即回復生命值。單場戰鬥中僅觸發1次。",
+        "tag": "回復"
       }
     },
     "technique": {
       "0": {
         "name": "有情之證",
         "fullDesc": "使用秘技後，下一次戰鬥開始時為我方全體提供強度等同於傑帕德{{1, percent}}%防禦力+{{3}}的護盾，持續{{2}}回合。",
-        "shortDesc": "使用秘技，下一次戰鬥開始時我方全體獲得護盾。"
+        "shortDesc": "使用秘技，下一次戰鬥開始時我方全體獲得護盾。",
+        "tag": "防禦"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "剛正",
         "fullDesc": "傑帕德被敵方攻擊的機率提高。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "統領",
         "fullDesc": "【不屈之身】觸發後，傑帕德的能量立即回復至100%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "戰意",
         "fullDesc": "傑帕德提高等同於自身當下防禦力{{1, percent}}%的攻擊力，每回合開始時更新。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

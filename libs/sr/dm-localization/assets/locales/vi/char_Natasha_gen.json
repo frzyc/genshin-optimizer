@@ -5,56 +5,72 @@
       "0": {
         "name": "Phía Sau Sự Nhân Từ",
         "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Natasha.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Tình Yêu, Chữa Lành Và Sự Chọn Lựa",
         "fullDesc": "Lập tức hồi phục cho 1 đồng đội chỉ định một lượng HP bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Natasha +<orangeStrong>{{4}}</orangeStrong>, đồng thời khi mục tiêu bắt đầu mỗi hiệp, sẽ hồi cho đơn vị đó lượng HP bằng <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Natasha +<orangeStrong>{{5}}</orangeStrong>, duy trì {{3}} hiệp.",
-        "shortDesc": "<orangeStrong>Hồi HP</orangeStrong> cho 1 đồng đội, đồng thời khiến mục tiêu <orangeStrong>duy trì hồi HP</orangeStrong>."
+        "shortDesc": "<orangeStrong>Hồi HP</orangeStrong> cho 1 đồng đội, đồng thời khiến mục tiêu <orangeStrong>duy trì hồi HP</orangeStrong>.",
+        "tag": "Hồi Phục"
       }
     },
     "ult": {
       "0": {
         "name": "Món Quà Tái Sinh",
         "fullDesc": "Lập tức hồi cho toàn phe ta lượng HP bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Natasha +<orangeStrong>{{2}}</orangeStrong>.",
-        "shortDesc": "<orangeStrong>Hồi HP</orangeStrong> cho toàn bộ phe ta."
+        "shortDesc": "<orangeStrong>Hồi HP</orangeStrong> cho toàn bộ phe ta.",
+        "tag": "Hồi Phục"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Bừng Bừng Sức Sống",
+        "fullDesc": "Khi trị liệu cho mục tiêu của phe ta có phần trăm HP hiện tại nhỏ hơn hoặc bằng {{1, percent}}%, thì lượng trị liệu của Natasha sẽ tăng <orangeStrong>{{2, percent}}%</orangeStrong>, hiệu ứng này cũng có hiệu lực với hiệu ứng trị liệu liên tục.",
+        "shortDesc": "Khi trị liệu cho mục tiêu có Phần Trăm HP tương đối thấp của phe ta, sẽ tăng lượng trị liệu, cũng có hiệu lực với hiệu ứng trị liệu liên tục.",
+        "tag": "Cường Hóa"
       }
     },
     "technique": {
       "0": {
         "name": "Nghiên Cứu Thôi Miên",
-        "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu, gây cho 1 kẻ địch ngẫu nhiên một lượng Sát Thương Vật Lý bằng {{4, percent}}% Tấn Công của Natasha, và có {{1, percent}}% <u>xác suất cơ bản</u> khiến mỗi kẻ địch rơi vào trạng thái Suy Yếu.\\nSát thương do kẻ địch ở trạng thái Suy Yếu gây cho phe ta giảm {{2, percent}}%, duy trì {{3}} hiệp.",
-        "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch ngẫu nhiên, và có xác suất lớn khiến mỗi kẻ địch rơi vào trạng thái Suy Yếu."
+        "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu, gây cho 1 kẻ địch ngẫu nhiên một lượng Sát Thương Vật Lý bằng {{4, percent}}% Tấn Công của Natasha, và có {{1, percent}}% xác suất cơ bản khiến mỗi kẻ địch rơi vào trạng thái Suy Yếu.<br>Sát thương do kẻ địch ở trạng thái Suy Yếu gây cho phe ta giảm {{2, percent}}%, duy trì {{3}} hiệp.",
+        "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch ngẫu nhiên, và có xác suất lớn khiến mỗi kẻ địch rơi vào trạng thái Suy Yếu.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Nhẹ Nhàng",
         "fullDesc": "Khi thi triển Chiến Kỹ, giải trừ {{1}} Hiệu Ứng Xấu của 1 đồng đội chỉ định.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Thầy Thuốc",
         "fullDesc": "Lượng trị liệu Natasha cung cấp tăng {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Điều Dưỡng",
         "fullDesc": "Hiệu ứng hồi phục liên tục sinh ra khi thi triển Chiến Kỹ sẽ kéo dài trong {{1}} hiệp.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

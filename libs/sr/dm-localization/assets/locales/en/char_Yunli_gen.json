@@ -5,56 +5,72 @@
       "0": {
         "name": "Galespin Summersault",
         "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Yunli's ATK to a single target enemy.",
-        "shortDesc": "Deals minor Physical DMG to a single enemy."
+        "shortDesc": "Deals minor Physical DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Bladeborne Quake",
         "fullDesc": "Restores HP equal to <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> of Yunli's ATK plus <orangeStrong>{{4}}</orangeStrong>. Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Yunli's ATK to a single target enemy and Physical DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Yunli's ATK to adjacent targets.",
-        "shortDesc": "Restores this unit's HP and deals minor Physical DMG to a single enemy and adjacent targets."
+        "shortDesc": "Restores this unit's HP and deals minor Physical DMG to a single enemy and adjacent targets.",
+        "tag": "Blast"
       }
     },
     "ult": {
       "0": {
         "name": "Earthbind, Etherbreak",
-        "fullDesc": "Consumes {{8}} Energy. Yunli gains Parry and Taunts all enemies, lasting until the end of the next ally's or enemy's turn. Increases the CRIT DMG dealt by Yunli's next Counter by <orangeStrong>{{2, percent}}%</orangeStrong>. When triggering the Counter effect from Talent, launches the <u>Counter</u> \"Intuit: Cull\" instead and removes the Parry effect. If no Counter is triggered while Parry is active, Yunli will immediately launch the <u>Counter</u> \"Intuit: Slash\" on a random enemy target.\\n\\n\"Intuit: Slash\": Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Yunli's ATK to the target, and deals Physical DMG equal to <orangeStrong>{{6, percent}}%</orangeStrong> of Yunli's ATK to adjacent targets.\\n\"Intuit: Cull\": Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Yunli's ATK to the target, and deals Physical DMG equal to <orangeStrong>{{6, percent}}%</orangeStrong> of Yunli's ATK to adjacent targets. Then, additionally deals {{4}} instances of DMG, each dealing Physical DMG equal to <orangeStrong>{{7, percent}}%</orangeStrong> of Yunli's ATK to a random single enemy.\\n\\nWhen Yunli deals DMG via this ability, it's considered as dealing Ultimate DMG.",
-        "shortDesc": "Enters \"Parry\" and taunts all enemies. When attacked during this period, triggers <orangeStrong>powerful <u>Counter</u></orangeStrong> and <orangeStrong>deals Physical DMG</orangeStrong> to the attacker and adjacent targets. Then, deals minor Physical DMG to a single enemy that bounces 6 times. If no Counter is triggered during the Parry state, deals Physical DMG to a random enemy target and adjacent targets when Parry ends."
+        "fullDesc": "Consumes {{8}} Energy. Yunli gains Parry and Taunts all enemies, lasting until the end of the next ally's or enemy's turn. Increases the CRIT DMG dealt by Yunli's next Counter by <orangeStrong>{{2, percent}}%</orangeStrong>. When triggering the Counter effect from Talent, launches the Counter \"Intuit: Cull\" instead and removes the Parry effect. If no Counter is triggered while Parry is active, Yunli will immediately launch the Counter \"Intuit: Slash\" on a random enemy target.<br><br>\"Intuit: Slash\": Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Yunli's ATK to the target, and deals Physical DMG equal to <orangeStrong>{{6, percent}}%</orangeStrong> of Yunli's ATK to adjacent targets.<br>\"Intuit: Cull\": Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Yunli's ATK to the target, and deals Physical DMG equal to <orangeStrong>{{6, percent}}%</orangeStrong> of Yunli's ATK to adjacent targets. Then, additionally deals {{4}} instances of DMG, each dealing Physical DMG equal to <orangeStrong>{{7, percent}}%</orangeStrong> of Yunli's ATK to a random single enemy.<br><br>When Yunli deals DMG via this ability, it's considered as dealing Ultimate DMG.",
+        "shortDesc": "Enters \"Parry\" and taunts all enemies. When attacked during this period, triggers <orangeStrong>powerful Counter</orangeStrong> and <orangeStrong>deals Physical DMG</orangeStrong> to the attacker and adjacent targets. Then, deals minor Physical DMG to a single enemy that bounces 6 times. If no Counter is triggered during the Parry state, deals Physical DMG to a random enemy target and adjacent targets when Parry ends.",
+        "tag": "Enhance"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Flashforge",
+        "fullDesc": "When Yunli gets attacked by an enemy target, additionally regenerates {{3}} Energy and immediately launches a Counter on the attacker, dealing Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Yunli's ATK to the attacker and Physical DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Yunli's ATK to adjacent targets.<br>If there is no immediate target to Counter, then Counters a random enemy target instead.",
+        "shortDesc": "When Yunli gets attacked by an enemy target, additionally regenerates Energy and immediately launches a Counter against the attacker and adjacent targets.",
+        "tag": "Blast"
       }
     },
     "technique": {
       "0": {
         "name": "Posterior Precedence",
         "fullDesc": "This unit gains the Ward effect, lasting for {{2}} seconds. During this time, upon entering combat by either attacking enemies or receiving an attack, immediately casts \"Intuit: Cull\" on a random enemy, and increases the DMG dealt by this attack by {{1, percent}}%.",
-        "shortDesc": "This unit gains the Ward effect, lasting for 20 seconds. During this time, upon entering combat by either attacking enemies or receiving an attack, immediately casts \"Intuit: Cull\" on a random enemy."
+        "shortDesc": "This unit gains the Ward effect, lasting for 20 seconds. During this time, upon entering combat by either attacking enemies or receiving an attack, immediately casts \"Intuit: Cull\" on a random enemy.",
+        "tag": "Enhance"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Fiery Wheel",
         "fullDesc": "After each use of \"Intuit: Slash,\" the next \"Intuit: Slash\" will be replaced by \"Intuit: Cull.\"",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Demon Quell",
         "fullDesc": "While in the Parry state, resists Crowd Control debuffs received and reduces DMG received by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "True Sunder",
         "fullDesc": "When using a Counter, increases Yunli's ATK by {{1, percent}}%, lasting for 1 turn.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Mastlength Twirls Mountweight",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Artisan's Ironsong",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Blade of Old Outlasts All",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Walk in Blade, Talk in Zither",

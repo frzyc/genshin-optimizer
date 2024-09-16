@@ -5,56 +5,72 @@
       "0": {
         "name": "Attaque au pic à glace",
         "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> des PV max de Lynx à un ennemi unique.",
-        "shortDesc": "Inflige des DGT quantiques mineurs à un ennemi unique."
+        "shortDesc": "Inflige des DGT quantiques mineurs à un ennemi unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Sardines en conserve",
-        "fullDesc": "Applique Instinct de survie à une cible alliée unique et augmente ses PV max d'un montant équivalent à <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> des PV max de Lynx + <orangeStrong>{{2}}</orangeStrong>. Si la cible est un personnage de la Voie de la Destruction ou de la Préservation, elle voit ses chances d'être attaquée par les ennemis considérablement augmenter. Instinct de survie dure {{3}} tours.\\nRestaure les PV de la cible à hauteur de <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> des PV max de Lynx + <orangeStrong>{{5}}</orangeStrong>.",
-        "shortDesc": "Applique Instinct de survie à un allié unique, <orangeStrong>augmente ses PV max</orangeStrong>, et lui restaure des PV."
+        "fullDesc": "Applique Instinct de survie à une cible alliée unique et augmente ses PV max d'un montant équivalent à <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> des PV max de Lynx + <orangeStrong>{{2}}</orangeStrong>. Si la cible est un personnage de la Voie de la Destruction ou de la Préservation, elle voit ses chances d'être attaquée par les ennemis considérablement augmenter. Instinct de survie dure {{3}} tours.<br>Restaure les PV de la cible à hauteur de <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> des PV max de Lynx + <orangeStrong>{{5}}</orangeStrong>.",
+        "shortDesc": "Applique Instinct de survie à un allié unique, <orangeStrong>augmente ses PV max</orangeStrong>, et lui restaure des PV.",
+        "tag": "Restauration"
       }
     },
     "ult": {
       "0": {
         "name": "Plan de secours des Plaines des neiges",
-        "fullDesc": "Dissipe {{1}} <u>malus</u> à tous les alliés et leur redonne immédiatement un montant de PV équivalent à <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> des PV max de Lynx + <orangeStrong>{{3}}</orangeStrong>.",
-        "shortDesc": "Dissipe <orangeStrong>1 <u>malus</u> à tous les alliés</orangeStrong> et leur redonne des PV."
+        "fullDesc": "Dissipe {{1}} malus à tous les alliés et leur redonne immédiatement un montant de PV équivalent à <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> des PV max de Lynx + <orangeStrong>{{3}}</orangeStrong>.",
+        "shortDesc": "Dissipe <orangeStrong>1 malus à tous les alliés</orangeStrong> et leur redonne des PV.",
+        "tag": "Restauration"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Expérience de survie en pleine nature",
+        "fullDesc": "Chaque fois que Lynx utilise sa compétence ou son ultime, elle applique des soins continus pour {{1}} tours sur les alliés affectés. Ils restaurent donc un montant de PV équivalent à <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> des PV max de Lynx + <orangeStrong>{{3}}</orangeStrong> au début de chaque tour. L'effet des soins continus restaure en plus un montant de PV équivalent à <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> des PV max de Lynx + <orangeStrong>{{5}}</orangeStrong> aux cibles qui bénéficient d'Instinct de survie.",
+        "shortDesc": "Chaque fois que Lynx utilise sa compétence ou son ultime, elle applique des <orangeStrong>soins continus</orangeStrong> à la cible alliée. L'effet des soins continus est augmenté sur les cibles qui bénéficient d'Instinct de survie.",
+        "tag": "Restauration"
       }
     },
     "technique": {
       "0": {
         "name": "Barre énergétique chocolatée",
         "fullDesc": "Lorsque Lynx utilise sa technique, tous les alliés bénéficient de l'effet de soins continus de son talent pendant {{1}} tours au début du combat suivant.",
-        "shortDesc": "Après utilisation de la technique, tous les alliés bénéficient d'un effet de soins continus au début du combat suivant."
+        "shortDesc": "Après utilisation de la technique, tous les alliés bénéficient d'un effet de soins continus au début du combat suivant.",
+        "tag": "Restauration"
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "Cible unique"
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Connaissance du terrain",
         "fullDesc": "Lorsqu'une cible qui bénéficie d'Instinct de survie est touchée, Lynx régénère immédiatement {{1}} points d'énergie.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Techniques d'exploration",
         "fullDesc": "Augmente les chances de résister aux malus de contrôle de {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Survie en conditions extrêmes",
         "fullDesc": "Prolonge la durée de l'effet de soins continus accordé par le talent d'{{1}} tour.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Détecteur d'avalanche de l'après-midi",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "4": {
       "name": "Feu de camp du soir",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Thé de l'aurore de minuit",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "6": {
       "name": "Aube des explorateurs",

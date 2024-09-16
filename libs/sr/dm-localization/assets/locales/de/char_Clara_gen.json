@@ -5,56 +5,72 @@
       "0": {
         "name": "Ich will helfen",
         "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Claras ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen physischen SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen physischen SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Svarogs Auge ruht auf dir",
-        "fullDesc": "Fügt allen Gegnern physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Claras ANG zu. Gegner mit Svarogs „Kontermarkierung“ erleiden zusätzlichen physischen SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Claras ANG.\\nAlle „Kontermarkierungen“ werden nach dem Einsatz der Fertigkeit entfernt.",
-        "shortDesc": "Fügt allen Gegnern physischen SCH zu. Bei Gegnern mit Kontermarkierung wird zusätzlich <orangeStrong>physischer SCH bewirkt</orangeStrong>."
+        "fullDesc": "Fügt allen Gegnern physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Claras ANG zu. Gegner mit Svarogs „Kontermarkierung“ erleiden zusätzlichen physischen SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Claras ANG.<br>Alle „Kontermarkierungen“ werden nach dem Einsatz der Fertigkeit entfernt.",
+        "shortDesc": "Fügt allen Gegnern physischen SCH zu. Bei Gegnern mit Kontermarkierung wird zusätzlich <orangeStrong>physischer SCH bewirkt</orangeStrong>.",
+        "tag": "Flächenangriff"
       }
     },
     "ult": {
       "0": {
         "name": "Ein Versprechen, kein Befehl",
-        "fullDesc": "Reduziert nach dem Einsatz des Ultimates den von Clara erlittenen SCH zusätzlich um <orangeStrong>{{4, percent}}%</orangeStrong> und erhöht stark für {{3}} Rd. die Chance, von Gegnern angegriffen zu werden.\\nAußerdem wird Svarogs <u>Konter</u> verstärkt. Wird ein Verbündeter angegriffen, führt Svarog sofort einen <u>Konter</u> aus. Dieser Konter erhöht den SCH-Multiplikator gegen den Gegner um <orangeStrong>{{2, percent}}%</orangeStrong> und fügt angrenzenden Zielen 50 % des vom anvisierten Gegner erlittenen SCH zu. Der verstärkte <u>Konter</u> kann {{5}}-mal ausgelöst werden.",
-        "shortDesc": "<orangeStrong>Reduziert den selbst erlittenen SCH</orangeStrong> und erhöht die Chance, angegriffen zu werden. Der Effekt von <u>Konter</u> wird verstärkt."
+        "fullDesc": "Reduziert nach dem Einsatz des Ultimates den von Clara erlittenen SCH zusätzlich um <orangeStrong>{{4, percent}}%</orangeStrong> und erhöht stark für {{3}} Rd. die Chance, von Gegnern angegriffen zu werden.<br>Außerdem wird Svarogs Konter verstärkt. Wird ein Verbündeter angegriffen, führt Svarog sofort einen Konter aus. Dieser Konter erhöht den SCH-Multiplikator gegen den Gegner um <orangeStrong>{{2, percent}}%</orangeStrong> und fügt angrenzenden Zielen 50 % des vom anvisierten Gegner erlittenen SCH zu. Der verstärkte Konter kann {{5}}-mal ausgelöst werden.",
+        "shortDesc": "<orangeStrong>Reduziert den selbst erlittenen SCH</orangeStrong> und erhöht die Chance, angegriffen zu werden. Der Effekt von Konter wird verstärkt.",
+        "tag": "Verstärkung"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Weil wir eine Familie sind",
+        "fullDesc": "Unter Svarogs Schutz erleidet Clara {{3, percent}}% weniger SCH. Svarog markiert Gegner, die Clara angreifen, mit „Kontermarkierung“ und führt einen Konter aus, der physischen SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Claras ANG verursacht.",
+        "shortDesc": "<orangeStrong>Der von gegnerischen Angriffen erhaltene SCH wird reduziert</orangeStrong>. Gegner, die Clara angreifen, werden mit einer Kontermarkierung markiert und <orangeStrong>von Svarogs Konter getroffen</orangeStrong>, der physischen SCH zufügt.",
+        "tag": "Einzelangriff"
       }
     },
     "technique": {
       "0": {
         "name": "Ein geringer Preis für den Sieg",
         "fullDesc": "Greift den Gegner unmittelbar an. Nach Kampfeintritt wird Clara für {{1}} Rd. mit höherer Chance angegriffen.",
-        "shortDesc": "Greift den Gegner an. Nach Kampfeintritt wird die Chance erhöht, von Gegnern angegriffen zu werden."
+        "shortDesc": "Greift den Gegner an. Nach Kampfeintritt wird die Chance erhöht, von Gegnern angegriffen zu werden.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Teil der Familie",
         "fullDesc": "Wenn Clara angegriffen wird, besteht eine feste Chance von {{1, percent}}%, einen Debuff zu entfernen.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Unter Schutz",
         "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Rache",
         "fullDesc": "Erhöht den durch Svarogs Konter verursachten SCH um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

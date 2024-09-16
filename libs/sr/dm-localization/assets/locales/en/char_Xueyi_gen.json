@@ -5,56 +5,72 @@
       "0": {
         "name": "Mara-Sunder Awl",
         "fullDesc": "Deals <orangeStrong>{{1, percent}}%</orangeStrong> of Xueyi's ATK as Quantum DMG to a single target enemy.",
-        "shortDesc": "Deals minor Quantum DMG to a single enemy."
+        "shortDesc": "Deals minor Quantum DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Iniquity Obliteration",
         "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Xueyi's ATK to a single enemy, and Quantum DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Xueyi's ATK to any adjacent enemies.",
-        "shortDesc": "Deals Quantum DMG to a single enemy and minor Quantum DMG to enemies adjacent to it."
+        "shortDesc": "Deals Quantum DMG to a single enemy and minor Quantum DMG to enemies adjacent to it.",
+        "tag": "Blast"
       }
     },
     "ult": {
       "0": {
         "name": "Divine Castigation",
-        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Xueyi's ATK to a single target enemy. This attack ignores Weakness Types and reduces the enemy's Toughness. When the enemy's Weakness is Broken, the Quantum Weakness Break effect is triggered.\\nIn this attack, the more Toughness is reduced, the higher the DMG will be dealt, up to a max of <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> increase.",
-        "shortDesc": "Deals massive Quantum DMG to a single enemy. This attack <orangeStrong>ignores Weakness Types</orangeStrong> and reduces the target's Toughness. The more Toughness is reduced, the higher the DMG will be dealt."
+        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Xueyi's ATK to a single target enemy. This attack ignores Weakness Types and reduces the enemy's Toughness. When the enemy's Weakness is Broken, the Quantum Weakness Break effect is triggered.<br>In this attack, the more Toughness is reduced, the higher the DMG will be dealt, up to a max of <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> increase.",
+        "shortDesc": "Deals massive Quantum DMG to a single enemy. This attack <orangeStrong>ignores Weakness Types</orangeStrong> and reduces the target's Toughness. The more Toughness is reduced, the higher the DMG will be dealt.",
+        "tag": "Single Target"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Karmic Perpetuation",
+        "fullDesc": "When Xueyi reduces enemy Toughness with attacks, Karma will be stacked. The more Toughness is reduced, the more stacks of Karma are added, up to {{1}} stacks.<br>When Xueyi's allies reduce enemy Toughness with attacks, Xueyi gains {{3}} stack(s) of Karma.<br>When Karma reaches the max number of stacks, consumes all current Karma stacks and immediately launches a follow-up attack against an enemy target, dealing DMG for 3 times, with each time dealing Quantum DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Xueyi's ATK to a single random enemy. This follow-up attack will not add Karma stacks.",
+        "shortDesc": "When Xueyi or her allies reduce enemy Toughness with attacks, she gains stacks of Karma. When Karma reaches the max number of stacks, <orangeStrong>immediately launches a follow-up attack</orangeStrong>, dealing minor Quantum DMG to a single enemy target, bouncing for 3 times and consuming all Karma.",
+        "tag": "Bounce"
       }
     },
     "technique": {
       "0": {
         "name": "Summary Execution",
         "fullDesc": "Immediately attacks the enemy. After entering combat, deals {{1, percent}}% of Xueyi's ATK as Quantum DMG to all enemies.",
-        "shortDesc": "Attacks the enemy. After entering battle, deals minor Quantum DMG to all enemies."
+        "shortDesc": "Attacks the enemy. After entering battle, deals minor Quantum DMG to all enemies.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Clairvoyant Loom",
         "fullDesc": "Increases DMG dealt by this unit by an amount equal to {{1, percent}}% of Break Effect, up to a maximum DMG increase of {{2, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Intrepid Rollerbearings",
         "fullDesc": "If the enemy target's Toughness is equal to or higher than {{1, percent}}% of their Max Toughness, deals {{2, percent}}% more DMG when using Ultimate.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Perspicacious Mainframe",
         "fullDesc": "Xueyi will keep a tally of the number of Karma stacks that exceed the max stack limit, up to {{1}} stacks in the tally. After Xueyi's Talent is triggered, she will gain a corresponding number of tallied Karma stacks.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Duḥkha, Ceased",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Karma, Severed",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Deva, Enthralled",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Saṃsāra, Mastered",

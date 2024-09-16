@@ -5,56 +5,72 @@
       "0": {
         "name": "Systemwarnung",
         "fullDesc": "Fügt einem anvisierten Gegner Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Silberwolfs ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen Quanten-SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen Quanten-SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Änderungen zulassen?",
-        "fullDesc": "Es besteht eine <u>Grundchance</u> von <orangeStrong>{{2, percent}}%</orangeStrong>, einem anvisierten Gegner 1 Schwäche des Typs eines Verbündeten zu implantieren. Damit wird auch der SCH-WDS des Gegners gegenüber diesem Schwächetyp für {{3}} Rd. um {{4, percent}}% reduziert. Wenn der Gegner bereits eine Schwäche dieses Typs hat, wird der Effekt der SCH-WDS-Reduzierung für diesen Schwächetyp nicht ausgelöst.\\nJedem Gegner kann nur 1 Schwäche von Silberwolf implantiert werden. Wenn Silberwolf dem Ziel eine weitere Schwäche implantiert, wird nur die letzte Schwäche beibehalten.\\nAußerdem gibt es eine <u>Grundchance</u> von {{5, percent}}%, den WDS aller Typen des Ziels zusätzlich um <orangeStrong>{{6, percent(fixed: 1)}}%</orangeStrong> für {{7}} Rd. zu reduzieren.\\nFügt diesem Gegner Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Silberwolfs ANG zu.",
-        "shortDesc": "Es besteht eine hohe Chance, einem Gegner <orangeStrong>zusätzliche Schwächen</orangeStrong> und Quanten-SCH zuzufügen."
+        "fullDesc": "Es besteht eine Grundchance von <orangeStrong>{{2, percent}}%</orangeStrong>, einem anvisierten Gegner 1 Schwäche des Typs eines Verbündeten zu implantieren. Damit wird auch der SCH-WDS des Gegners gegenüber diesem Schwächetyp für {{3}} Rd. um {{4, percent}}% reduziert. Wenn der Gegner bereits eine Schwäche dieses Typs hat, wird der Effekt der SCH-WDS-Reduzierung für diesen Schwächetyp nicht ausgelöst.<br>Jedem Gegner kann nur 1 Schwäche von Silberwolf implantiert werden. Wenn Silberwolf dem Ziel eine weitere Schwäche implantiert, wird nur die letzte Schwäche beibehalten.<br>Außerdem gibt es eine Grundchance von {{5, percent}}%, den WDS aller Typen des Ziels zusätzlich um <orangeStrong>{{6, percent(fixed: 1)}}%</orangeStrong> für {{7}} Rd. zu reduzieren.<br>Fügt diesem Gegner Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Silberwolfs ANG zu.",
+        "shortDesc": "Es besteht eine hohe Chance, einem Gegner <orangeStrong>zusätzliche Schwächen</orangeStrong> und Quanten-SCH zuzufügen.",
+        "tag": "Einzelangriff"
       }
     },
     "ult": {
       "0": {
         "name": "Benutzer gebannt",
-        "fullDesc": "Es besteht eine <u>Grundchance</u> von <orangeStrong>{{2, percent}}%</orangeStrong>, die VTD eines anvisierten Gegners für {{4}} Rd. um <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> zu reduzieren und dem Ziel Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Silberwolfs ANG zuzufügen.",
-        "shortDesc": "Hat eine hohe Chance, die <orangeStrong>VTD</orangeStrong> eines Gegners zu <orangeStrong>reduzieren</orangeStrong> und ihm massiven Quanten-SCH zuzufügen."
+        "fullDesc": "Es besteht eine Grundchance von <orangeStrong>{{2, percent}}%</orangeStrong>, die VTD eines anvisierten Gegners für {{4}} Rd. um <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> zu reduzieren und dem Ziel Quanten-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Silberwolfs ANG zuzufügen.",
+        "shortDesc": "Hat eine hohe Chance, die <orangeStrong>VTD</orangeStrong> eines Gegners zu <orangeStrong>reduzieren</orangeStrong> und ihm massiven Quanten-SCH zuzufügen.",
+        "tag": "Einzelangriff"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Warten auf Systemantwort ...",
+        "fullDesc": "Silberwolf kann drei Arten von „Fehlern“ erzeugen: ANG um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> reduzieren, VTD um <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> reduzieren und GES um <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> reduzieren.<br>Jeder Angriff von Silberwolf hat eine Grundchance von <orangeStrong>{{4, percent}}%</orangeStrong>, dem getroffenen Gegner für {{5}} Rd. einen zufälligen „Fehler“ zu implantieren.",
+        "shortDesc": "Nach einem Angriff besteht eine Chance, dem Ziel 1 zufälligen <orangeStrong>Fehler</orangeStrong> zu implantieren.",
+        "tag": "Beeinträchtigung"
       }
     },
     "technique": {
       "0": {
         "name": "Programmschließung erzwingen",
         "fullDesc": "Greift Gegner unmittelbar an. Nach Kampfeintritt wird allen Gegnern Quanten-SCH in Höhe von {{1, percent}}% von Silberwolfs ANG zugefügt und ungeachtet des Schwächetyps wird WDS aller Gegner reduziert. Bei Gegnern, deren Schwäche auf diese Weise gebrochen wird, wird der Effekt von Quanten-Schwächebruch ausgelöst.",
-        "shortDesc": "Greift Gegner an. Nach Kampfeintritt wird allen Gegner geringer SCH zugefügt und ungeachtet des Schwächetyps Widerstand reduziert."
+        "shortDesc": "Greift Gegner an. Nach Kampfeintritt wird allen Gegner geringer SCH zugefügt und ungeachtet des Schwächetyps Widerstand reduziert.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Generieren",
         "fullDesc": "Verlängert die Dauer von „Fehler“ um {{1}} Rd. Jedes Mal, wenn ein Gegner Schwächebruch erleidet, hat Silberwolf eine Grundchance von {{2, percent}}%, dem Ziel einen zufälligen „Fehler“ zu implantieren.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Injizieren",
         "fullDesc": "Verlängert die Dauer der durch Silberwolfs Fertigkeit hinzugefügten Schwäche um {{1}} Rd.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Annotation",
         "fullDesc": "Hat der Gegner beim Einsatz der Fertigkeit {{1}} oder mehr Debuffs, wird der WDS aller Typen des Gegners zusätzlich um {{2, percent}}% reduziert.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

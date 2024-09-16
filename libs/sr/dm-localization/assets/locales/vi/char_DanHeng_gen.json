@@ -5,56 +5,72 @@
       "0": {
         "name": "Thương Thuật Vân Kỵ - Gió Bắc",
         "fullDesc": "Gây Sát Thương Phong cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Dan Heng.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Phong cho 1 kẻ địch."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Phong cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Thương Thuật Vân Kỵ - Lũ Cuốn",
-        "fullDesc": "Gây Sát Thương Phong cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Dan Heng.\\nKhi Chiến Kỹ gây sát thương kích hoạt bạo kích, có {{4, percent}}% <u>xác suất cơ bản</u> khiến mục tiêu phe địch bị tấn công giảm tốc {{2, percent}}%, duy trì {{3}} hiệp.",
-        "shortDesc": "Gây Sát Thương Phong cho 1 kẻ địch, khi bạo kích có xác suất lớn thi triển trạng thái Giảm Tốc."
+        "fullDesc": "Gây Sát Thương Phong cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Dan Heng.<br>Khi Chiến Kỹ gây sát thương kích hoạt bạo kích, có {{4, percent}}% xác suất cơ bản khiến mục tiêu phe địch bị tấn công giảm tốc {{2, percent}}%, duy trì {{3}} hiệp.",
+        "shortDesc": "Gây Sát Thương Phong cho 1 kẻ địch, khi bạo kích có xác suất lớn thi triển trạng thái Giảm Tốc.",
+        "tag": "Đánh Đơn"
       }
     },
     "ult": {
       "0": {
         "name": "Giấc Mơ Bồng Lai",
         "fullDesc": "Gây Sát Thương Phong cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Dan Heng. Khi mục tiêu bị tấn công đang trong trạng thái Giảm Tốc, Bội Số Sát Thương Tuyệt Kỹ gây ra tăng <orangeStrong>{{2, percent}}%</orangeStrong>.",
-        "shortDesc": "Gây lượng lớn Sát Thương Phong cho 1 kẻ địch, tăng Bội Số Sát Thương của mục tiêu đang trong trạng thái Giảm Tốc."
+        "shortDesc": "Gây lượng lớn Sát Thương Phong cho 1 kẻ địch, tăng Bội Số Sát Thương của mục tiêu đang trong trạng thái Giảm Tốc.",
+        "tag": "Đánh Đơn"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Đi Một Ngày Đàng, Học Một Sàng Khôn",
+        "fullDesc": "Khi Dan Heng trở thành mục tiêu thi triển kỹ năng của phe ta, Xuyên Kháng Phong của lần tấn công tiếp theo tăng <orangeStrong>{{1, percent}}%</orangeStrong>. Hiệu ứng này sau {{2}} hiệp có thể kích hoạt lại.",
+        "shortDesc": "Khi trở thành mục tiêu thi triển kỹ năng của phe ta, sẽ <orangeStrong>tăng Xuyên Kháng Phong</orangeStrong> của lần tấn công tiếp theo. Hiệu ứng này sau 2 hiệp có thể kích hoạt lại.",
+        "tag": "Cường Hóa"
       }
     },
     "technique": {
       "0": {
         "name": "Mũi Nhọn Tiên Phong",
         "fullDesc": "Sau khi dùng Bí Kỹ, Tấn Công của Dan Heng khi bắt đầu lần chiến đấu tiếp theo tăng {{1, percent}}%, duy trì {{2}} hiệp.",
-        "shortDesc": "Dùng Bí Kỹ, lần sau vào trận sẽ tăng tấn công."
+        "shortDesc": "Dùng Bí Kỹ, lần sau vào trận sẽ tăng tấn công.",
+        "tag": "Cường Hóa"
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Rồng Ẩn",
         "fullDesc": "Nếu Phần Trăm HP hiện tại nhỏ hơn hoặc bằng {{1, percent}}%, sẽ giảm xác suất bị kẻ địch tấn công.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Tuyệt Ảnh",
         "fullDesc": "Sau khi tấn công có {{1, percent}}% xác suất cố định khiến Tốc Độ bản thân tăng {{2, percent}}%, duy trì {{3}} hiệp.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Gió Lốc",
         "fullDesc": "Sát thương tấn công thường gây ra cho mục tiêu địch đang ở trạng thái giảm tốc tăng {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

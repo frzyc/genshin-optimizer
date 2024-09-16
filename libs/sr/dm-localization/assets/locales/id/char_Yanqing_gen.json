@@ -5,56 +5,72 @@
       "0": {
         "name": "Frost Thorn",
         "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Yanqing pada 1 target musuh.",
-        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Darting Ironthorn",
         "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Yanqing pada 1 target musuh dan mengaktifkan \"Soulsteel Sync\" Yanqing selama 1 giliran.",
-        "shortDesc": "Mengakibatkan Ice DMG pada 1 musuh dan mengaktifkan \"Soulsteel Sync\" pada diri sendiri."
+        "shortDesc": "Mengakibatkan Ice DMG pada 1 musuh dan mengaktifkan \"Soulsteel Sync\" pada diri sendiri.",
+        "tag": "Single Target"
       }
     },
     "ult": {
       "0": {
         "name": "Amidst the Raining Bliss",
-        "fullDesc": "Meningkatkan {{1, percent}}% CRIT Rate Yanqing. Efek \"Soulsteel Sync\" Yanqing yang aktif akan meningkatkan <orangeStrong>{{2, percent}}%</orangeStrong> CRIT DMG tambahan. Efek <u>buff</u> berlangsung selama 1 giliran. Setelah itu Yanqing akan mengakibatkan Ice DMG sebesar <orangeStrong>{{3, percent}}%</orangeStrong> ATK Yanqing pada 1 target musuh.",
-        "shortDesc": "Meningkatkan CRIT Rate dan memperkuat \"Soulsteel Sync\" Yanqing, mengakibatkan Ice DMG dalam jumlah besar pada 1 musuh."
+        "fullDesc": "Meningkatkan {{1, percent}}% CRIT Rate Yanqing. Efek \"Soulsteel Sync\" Yanqing yang aktif akan meningkatkan <orangeStrong>{{2, percent}}%</orangeStrong> CRIT DMG tambahan. Efek buff berlangsung selama 1 giliran. Setelah itu Yanqing akan mengakibatkan Ice DMG sebesar <orangeStrong>{{3, percent}}%</orangeStrong> ATK Yanqing pada 1 target musuh.",
+        "shortDesc": "Meningkatkan CRIT Rate dan memperkuat \"Soulsteel Sync\" Yanqing, mengakibatkan Ice DMG dalam jumlah besar pada 1 musuh.",
+        "tag": "Single Target"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "One With the Sword",
+        "fullDesc": "Efek \"Soulsteel Sync\" Yanqing yang aktif akan mengurangi peluangnya terkena serangan, serta meningkatkan <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> CRIT Rate dan <orangeStrong>{{2, percent}}%</orangeStrong> CRIT DMG Yanqing. Setelah menyerang target musuh, Yanqing memiliki <orangeStrong>{{3, percent}}%</orangeStrong> peluang tetap untuk melancarkan Serangan Lanjutan yang mengakibatkan Ice DMG sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK Yanqing pada target dan {{6, percent}}% peluang dasar untuk membuat target memasuki status Frozen selama 1 giliran.<br>Saat dalam status Frozen, target musuh tidak dapat beraksi dan juga akan menerima Ice DMG tambahan sebesar <orangeStrong>{{5, percent}}%</orangeStrong> ATK Yanqing setiap gilirannya dimulai.<br>Efek \"Soulsteel Sync\" akan hilang saat Yanqing menerima DMG.",
+        "shortDesc": "<orangeStrong>Saat berada dalam status \"Soulsteel Sync\"</orangeStrong>, kemungkinan diserang akan berkurang dan <orangeStrong>meningkatkan CRIT Rate dan CRIT DMG</orangeStrong> dirinya. Setelah <orangeStrong>melancarkan serangan</orangeStrong> pada target musuh, ada peluang untuk memicu Serangan Lanjutan yang mengakibatkan Ice DMG serta berpeluang untuk membuat target memasuki status Frozen.<br>\"Soulsteel Sync\" akan hilang setelah dirinya terkena serangan.",
+        "tag": "Single Target"
       }
     },
     "technique": {
       "0": {
         "name": "The One True Sword",
         "fullDesc": "Setelah menggunakan Technique, saat pertempuran berikutnya dimulai, akan meningkatkan {{2, percent}}% DMG Yanqing terhadap target musuh yang persentase HP-nya lebih dari atau sama dengan {{1, percent}}% selama {{3}} giliran.",
-        "shortDesc": "Setelah menggunakan Technique, meningkatkan DMG yang diakibatkan oleh dirinya pada target musuh dengan persentase HP lebih dari atau sama dengan 50% saat pertempuran berikutnya dimulai."
+        "shortDesc": "Setelah menggunakan Technique, meningkatkan DMG yang diakibatkan oleh dirinya pada target musuh dengan persentase HP lebih dari atau sama dengan 50% saat pertempuran berikutnya dimulai.",
+        "tag": "Enhance"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Icing on the Kick",
         "fullDesc": "Setelah melancarkan serangan, akan mengakibatkan Ice DMG tambahan sebesar {{1, percent}}% ATK Yanqing pada target musuh dengan Ice Weakness.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Frost Favors the Brave",
         "fullDesc": "Saat \"Soulsteel Sync\" aktif, Effect RES meningkat {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Gentle Blade",
         "fullDesc": "Saat CRIT Hit terpicu, meningkatkan {{1, percent}}% SPD selama {{2}} giliran.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

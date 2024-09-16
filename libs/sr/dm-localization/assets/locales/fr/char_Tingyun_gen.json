@@ -5,56 +5,72 @@
       "0": {
         "name": "Expulsion",
         "fullDesc": "Tingyun inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de son ATQ à un ennemi unique.",
-        "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique."
+        "shortDesc": "Inflige des DGT de foudre mineurs à un ennemi unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Mélodie apaisante",
-        "fullDesc": "Accorde une bénédiction à un allié unique qui augmente son ATQ de <orangeStrong>{{2, percent}}%</orangeStrong>, dans la limite de <orangeStrong>{{4, percent}}%</orangeStrong> de l'ATQ actuelle de Tingyun.\\nLorsque l'allié béni attaque, il inflige des DGT de foudre <u>additionnels</u> équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de sa propre ATQ 1 fois.\\nLa bénédiction dure {{3}} tours et n'est effective que sur le dernier personnage à bénéficier de la compétence de Tingyun.",
-        "shortDesc": "<orangeStrong>Augmente l'ATQ</orangeStrong> d'un allié et lui accorde une bénédiction. L'allié avec la bénédiction inflige également des <orangeStrong>DGT de foudre <u>additionnels</u> mineurs</orangeStrong> lorsqu'elle attaque."
+        "fullDesc": "Accorde une bénédiction à un allié unique qui augmente son ATQ de <orangeStrong>{{2, percent}}%</orangeStrong>, dans la limite de <orangeStrong>{{4, percent}}%</orangeStrong> de l'ATQ actuelle de Tingyun.<br>Lorsque l'allié béni attaque, il inflige des DGT de foudre additionnels équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de sa propre ATQ 1 fois.<br>La bénédiction dure {{3}} tours et n'est effective que sur le dernier personnage à bénéficier de la compétence de Tingyun.",
+        "shortDesc": "<orangeStrong>Augmente l'ATQ</orangeStrong> d'un allié et lui accorde une bénédiction. L'allié avec la bénédiction inflige également des <orangeStrong>DGT de foudre additionnels mineurs</orangeStrong> lorsqu'elle attaque.",
+        "tag": "Soutien"
       }
     },
     "ult": {
       "0": {
         "name": "Bienveillance des nuages",
         "fullDesc": "Régénère {{1}} points d'énergie à un allié unique et augmente les DGT qu'il inflige de <orangeStrong>{{3, percent}}%</orangeStrong> pendant {{2}} tours.",
-        "shortDesc": "Régénère de l'<orangeStrong>énergie</orangeStrong> pour une cible alliée et <orangeStrong>augmente les DGT qu'elle inflige</orangeStrong>."
+        "shortDesc": "Régénère de l'<orangeStrong>énergie</orangeStrong> pour une cible alliée et <orangeStrong>augmente les DGT qu'elle inflige</orangeStrong>.",
+        "tag": "Soutien"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Déluge d'étincelles pourpres",
+        "fullDesc": "Lorsque Tingyun attaque un ennemi, l'allié béni inflige immédiatement des DGT de foudre additionnels équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de sa propre ATQ au même ennemi.",
+        "shortDesc": "Lorsque Tingyun attaque un ennemi, l'allié béni inflige immédiatement des DGT de foudre additionnels mineurs à ce même ennemi.",
+        "tag": "Renforcement"
       }
     },
     "technique": {
       "0": {
         "name": "Douce brise",
         "fullDesc": "Tingyun régénère immédiatement {{1}} points d'énergie lorsqu'elle utilise sa technique.",
-        "shortDesc": "Le personnage régénère immédiatement son énergie après avoir utilisé cette technique."
+        "shortDesc": "Le personnage régénère immédiatement son énergie après avoir utilisé cette technique.",
+        "tag": "Soutien"
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Jovialité nourrie",
         "fullDesc": "La VIT de Tingyun augmente de {{1, percent}}% pendant 1 tour après utilisation de sa compétence.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Subjugation de la peine",
         "fullDesc": "Augmente les DGT infligés par l'ATQ normale de {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Passage jubilatoire",
         "fullDesc": "Tingyun régénère immédiatement {{1}} points d'énergie au début de son tour.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Héritage des jours bénis",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "4": {
       "name": "Versatilité joviale",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Passante coquette",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "6": {
       "name": "Paix et richesse pour tous",

@@ -5,56 +5,72 @@
       "0": {
         "name": "翻风转日",
         "fullDesc": "对指定敌方单体造成等同于云璃<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害。",
-        "shortDesc": "对敌方单体造成少量物理属性伤害。"
+        "shortDesc": "对敌方单体造成少量物理属性伤害。",
+        "tag": "单攻"
       }
     },
     "skill": {
       "0": {
         "name": "飞铗震赫",
         "fullDesc": "回复等同于云璃<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>攻击力+<orangeStrong>{{4}}</orangeStrong>的生命值，并对指定敌方单体造成等同于云璃<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害，对其相邻目标造成等同于云璃<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的物理属性伤害。",
-        "shortDesc": "回复自身生命值，并对敌方单体与相邻目标造成少量物理属性伤害。"
+        "shortDesc": "回复自身生命值，并对敌方单体与相邻目标造成少量物理属性伤害。",
+        "tag": "扩散"
       }
     },
     "ult": {
       "0": {
         "name": "剑为地纪，刃惊天宗",
-        "fullDesc": "消耗{{8}}点能量，云璃获得【格挡】并使敌方全体陷入嘲讽状态，持续至下一个我方或敌方回合结束时。并使云璃下一次反击造成的暴击伤害提高<orangeStrong>{{2, percent}}%</orangeStrong>。触发天赋的反击效果时，将替换为发动<u>反击</u>【勘破•灭】同时移除【格挡】效果。若【格挡】状态期间没有触发反击，状态结束时云璃立即对随机敌方目标发动<u>反击</u>【勘破•斩】。 \\n【勘破•斩】：对目标造成等同于云璃<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害，对其相邻目标造成等同于云璃<orangeStrong>{{6, percent}}%</orangeStrong>攻击力的物理属性伤害。\\n【勘破•灭】：对目标造成等同于云璃<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害，对其相邻目标造成等同于云璃<orangeStrong>{{6, percent}}%</orangeStrong>攻击力的物理属性伤害，随后额外造成{{4}}次伤害，每次伤害对随机敌方单体造成等同于云璃<orangeStrong>{{7, percent}}%</orangeStrong>攻击力的物理伤害。\\n云璃通过此技能造成伤害时，被视为造成了终结技伤害。",
-        "shortDesc": "进入【格挡】并嘲讽敌方全体，期间受到攻击后触发<orangeStrong>强力<u>反击</u></orangeStrong>，对攻击者与其相邻目标<orangeStrong>造成物理属性伤害</orangeStrong>，随后对敌方单体造成少量物理属性伤害，共弹射6次。若【格挡】状态期间没有触发反击，状态结束时对随机敌方目标与其相邻目标造成物理属性伤害。"
+        "fullDesc": "消耗{{8}}点能量，云璃获得【格挡】并使敌方全体陷入嘲讽状态，持续至下一个我方或敌方回合结束时。并使云璃下一次反击造成的暴击伤害提高<orangeStrong>{{2, percent}}%</orangeStrong>。触发天赋的反击效果时，将替换为发动反击【勘破•灭】同时移除【格挡】效果。若【格挡】状态期间没有触发反击，状态结束时云璃立即对随机敌方目标发动反击【勘破•斩】。 <br>【勘破•斩】：对目标造成等同于云璃<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害，对其相邻目标造成等同于云璃<orangeStrong>{{6, percent}}%</orangeStrong>攻击力的物理属性伤害。<br>【勘破•灭】：对目标造成等同于云璃<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害，对其相邻目标造成等同于云璃<orangeStrong>{{6, percent}}%</orangeStrong>攻击力的物理属性伤害，随后额外造成{{4}}次伤害，每次伤害对随机敌方单体造成等同于云璃<orangeStrong>{{7, percent}}%</orangeStrong>攻击力的物理伤害。<br>云璃通过此技能造成伤害时，被视为造成了终结技伤害。",
+        "shortDesc": "进入【格挡】并嘲讽敌方全体，期间受到攻击后触发<orangeStrong>强力反击</orangeStrong>，对攻击者与其相邻目标<orangeStrong>造成物理属性伤害</orangeStrong>，随后对敌方单体造成少量物理属性伤害，共弹射6次。若【格挡】状态期间没有触发反击，状态结束时对随机敌方目标与其相邻目标造成物理属性伤害。",
+        "tag": "强化"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "闪铄",
+        "fullDesc": "当云璃受到敌方目标攻击后，额外恢复{{3}}点能量，并立即向攻击者发起反击，对其造成等同于云璃<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害，对其相邻目标造成等同于云璃<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的物理属性伤害。<br>若不存在可反击的目标，则反击敌方随机目标。",
+        "shortDesc": "当云璃受到敌方目标攻击时，额外恢复能量并立即向攻击者与其相邻目标发起反击。",
+        "tag": "扩散"
       }
     },
     "technique": {
       "0": {
         "name": "后发先至",
         "fullDesc": "使自身获得【招架】效果，持续{{2}}秒，期间攻击敌人或受到攻击进入战斗后，立即对随机敌方单体施放【勘破•灭】，并使本次攻击造成的伤害提高{{1, percent}}%。",
-        "shortDesc": "使自身获得【招架】效果，持续20秒，期间攻击敌人或受到攻击进入战斗后，立即对随机敌方单体施放【勘破•灭】。"
+        "shortDesc": "使自身获得【招架】效果，持续20秒，期间攻击敌人或受到攻击进入战斗后，立即对随机敌方单体施放【勘破•灭】。",
+        "tag": "强化"
       }
     },
     "overworld": {
       "0": {
         "name": "攻击",
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "灼毂",
         "fullDesc": "每发动1次【勘破•斩】后，下一次【勘破•斩】将替换为【勘破•灭】。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "却邪",
         "fullDesc": "【格挡】状态下抵抗受到的控制类负面效果，并使受到的伤害降低{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "真刚",
         "fullDesc": "施放反击时，云璃的攻击力提高{{1, percent}}%，持续1回合。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

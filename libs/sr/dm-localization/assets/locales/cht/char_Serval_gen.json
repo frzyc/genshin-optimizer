@@ -5,56 +5,72 @@
       "0": {
         "name": "雷鳴音階",
         "fullDesc": "對指定敵方單體造成等同於希露瓦<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性傷害。",
-        "shortDesc": "對敵方單體造成少量雷屬性傷害。"
+        "shortDesc": "對敵方單體造成少量雷屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "電光石火間",
-        "fullDesc": "對指定敵方單體造成等同於希露瓦<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性傷害，同時對其相鄰目標造成等同於希露瓦<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的雷屬性傷害，此外有{{3, percent}}%的<u>基礎機率</u>使受到攻擊的敵方目標陷入觸電狀態，持續{{4}}回合。\\n觸電狀態下，敵方目標每回合開始時受到等同於希露瓦<orangeStrong>{{5, percent}}%</orangeStrong>攻擊力的雷屬性持續傷害。",
-        "shortDesc": "對敵方單體及其相鄰目標造成少量雷屬性傷害，有高機率對目標<orangeStrong>施加觸電狀態</orangeStrong>。"
+        "fullDesc": "對指定敵方單體造成等同於希露瓦<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性傷害，同時對其相鄰目標造成等同於希露瓦<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的雷屬性傷害，此外有{{3, percent}}%的基礎機率使受到攻擊的敵方目標陷入觸電狀態，持續{{4}}回合。<br>觸電狀態下，敵方目標每回合開始時受到等同於希露瓦<orangeStrong>{{5, percent}}%</orangeStrong>攻擊力的雷屬性持續傷害。",
+        "shortDesc": "對敵方單體及其相鄰目標造成少量雷屬性傷害，有高機率對目標<orangeStrong>施加觸電狀態</orangeStrong>。",
+        "tag": "擴散"
       }
     },
     "ult": {
       "0": {
         "name": "機械熱潮登場！",
         "fullDesc": "對全體造成等同於希露瓦<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性傷害，並使觸電狀態下的敵方目標延長{{2}}回合的觸電狀態。",
-        "shortDesc": "對敵方全體造成雷屬性傷害，並延長目標觸電狀態的持續時間。"
+        "shortDesc": "對敵方全體造成雷屬性傷害，並延長目標觸電狀態的持續時間。",
+        "tag": "群體攻擊"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "燃情和弦",
+        "fullDesc": "發動攻擊後，對所有觸電狀態下的敵方目標造成等同於希露瓦<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性附加傷害。",
+        "shortDesc": "發動攻擊後，對所有觸電狀態敵方目標<orangeStrong>造成少量附加傷害</orangeStrong>。",
+        "tag": "強化"
       }
     },
     "technique": {
       "0": {
         "name": "晚安，貝洛伯格",
-        "fullDesc": "立即攻擊敵人，進入戰鬥後對敵方隨機單體造成等同於希露瓦{{4, percent}}%攻擊力的雷屬性傷害，同時有{{1, percent}}%的<u>基礎機率</u>使敵方每個單體目標陷入觸電狀態，持續{{3}}回合。\\n觸電狀態下，敵方目標每回合開始時受到等同於希露瓦{{2, percent}}%攻擊力的雷屬性持續傷害。",
-        "shortDesc": "攻擊敵人，進入戰鬥後對敵方隨機單體造成少量雷屬性傷害，並有高機率使敵方每個單體目標<orangeStrong>陷入觸電狀態</orangeStrong>。"
+        "fullDesc": "立即攻擊敵人，進入戰鬥後對敵方隨機單體造成等同於希露瓦{{4, percent}}%攻擊力的雷屬性傷害，同時有{{1, percent}}%的基礎機率使敵方每個單體目標陷入觸電狀態，持續{{3}}回合。<br>觸電狀態下，敵方目標每回合開始時受到等同於希露瓦{{2, percent}}%攻擊力的雷屬性持續傷害。",
+        "shortDesc": "攻擊敵人，進入戰鬥後對敵方隨機單體造成少量雷屬性傷害，並有高機率使敵方每個單體目標<orangeStrong>陷入觸電狀態</orangeStrong>。",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "搖滾",
         "fullDesc": "施放戰技時，使受到攻擊的敵方目標陷入觸電狀態的基礎機率提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "電音",
         "fullDesc": "戰鬥開始時，立即恢復{{1}}點能量。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "狂熱",
         "fullDesc": "消滅敵方目標後，攻擊力提高{{1, percent}}%，持續{{2}}回合。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

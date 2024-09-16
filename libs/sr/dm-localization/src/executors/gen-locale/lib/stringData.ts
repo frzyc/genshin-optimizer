@@ -58,6 +58,12 @@ function processString(str: string | undefined) {
     }
   )
 
+  // Remove underlines (used in-game to show clickable information)
+  str = str.replace(/(<u>)|(<\/u>)/g, '')
+
+  // Insert <br> to replace newline
+  str = str.replace(/\\n/g, '<br>')
+
   return str
 }
 

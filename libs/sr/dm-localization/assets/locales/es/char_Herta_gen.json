@@ -5,56 +5,72 @@
       "0": {
         "name": "¿Y tú qué miras?",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Herta como Daño de Hielo a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Oferta única",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Herta como Daño de Hielo a todos los enemigos. Si el porcentaje de PV del enemigo es igual o superior al {{2, percent}}%, el daño infligido a ese objetivo aumenta en un {{3, percent}}%.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a todos los enemigos. Los enemigos con más PV reciben más daño."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a todos los enemigos. Los enemigos con más PV reciben más daño.",
+        "tag": "ATQ AdE"
       }
     },
     "ult": {
       "0": {
         "name": "Es magia, le puse algo de magia",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Herta como Daño de Hielo a todos los enemigos.",
-        "shortDesc": "Inflige Daño de Hielo a todos los enemigos."
+        "shortDesc": "Inflige Daño de Hielo a todos los enemigos.",
+        "tag": "ATQ AdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Mejor lo hago yo",
+        "fullDesc": "Cuando el ataque de un aliado reduce el porcentaje de PV del objetivo al {{1, percent}}% o menos, Herta lanza un ataque adicional que inflige un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño de Hielo a todos los enemigos.",
+        "shortDesc": "",
+        "tag": "ATQ AdE"
       }
     },
     "technique": {
       "0": {
         "name": "Todavía se puede optimizar",
         "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, el ATQ de Herta aumenta en un {{1, percent}}% durante {{2}} turnos.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "Potenciación"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Eficiencia",
         "fullDesc": "Al usar la habilidad básica, el efecto de incremento de daño aumenta en un {{1, percent}}% adicional.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Marioneta",
         "fullDesc": "La probabilidad de resistir estados negativos de Control aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Congelamiento",
         "fullDesc": "La habilidad definitiva de Herta inflige un {{1, percent}}% más de daño a los enemigos afectados por Congelación.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

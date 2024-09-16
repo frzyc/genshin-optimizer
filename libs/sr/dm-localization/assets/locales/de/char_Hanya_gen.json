@@ -5,56 +5,72 @@
       "0": {
         "name": "Schrift des Orakels",
         "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Hanyas ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen physischen SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen physischen SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Die Fesseln des Samsara",
-        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Hanyas ANG zu und belegt ihn mit „Aufbürden“.\\nJedes Mal, wenn Verbündete 2 Standardangriffe, Fertigkeiten oder Ultimates gegen einen mit Aufbürden belegten Gegner einsetzen, erhält das Team 1 Fertigkeitspunkt zurück. Aufbürden wirkt sich nur auf den letzten Gegner aus, der damit belegt wurde, und wird automatisch entfernt, sobald die Fertigkeitspunkte {{2}}-mal wiederhergestellt wurden.",
-        "shortDesc": "Fügt einem Gegner physischen SCH zu und belegt ihn mit „Aufbürden“. Jedes Mal, wenn Verbündete 2 Standardangriffe, Fertigkeiten oder Ultimates gegen einen mit Aufbürden belegten Gegner einsetzen, erhält das Team <orangeStrong>1 Fertigkeitspunkt zurück</orangeStrong>."
+        "fullDesc": "Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Hanyas ANG zu und belegt ihn mit „Aufbürden“.<br>Jedes Mal, wenn Verbündete 2 Standardangriffe, Fertigkeiten oder Ultimates gegen einen mit Aufbürden belegten Gegner einsetzen, erhält das Team 1 Fertigkeitspunkt zurück. Aufbürden wirkt sich nur auf den letzten Gegner aus, der damit belegt wurde, und wird automatisch entfernt, sobald die Fertigkeitspunkte {{2}}-mal wiederhergestellt wurden.",
+        "shortDesc": "Fügt einem Gegner physischen SCH zu und belegt ihn mit „Aufbürden“. Jedes Mal, wenn Verbündete 2 Standardangriffe, Fertigkeiten oder Ultimates gegen einen mit Aufbürden belegten Gegner einsetzen, erhält das Team <orangeStrong>1 Fertigkeitspunkt zurück</orangeStrong>.",
+        "tag": "Einzelangriff"
       }
     },
     "ult": {
       "0": {
         "name": "Bedingungsloser Gehorsam",
         "fullDesc": "Erhöht die GES eines anvisierten Verbündeten um <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> von Hanyas GES und erhöht den ANG des Verbündeten für {{2}} Rd. um <orangeStrong>{{1, percent}}%</orangeStrong>.",
-        "shortDesc": "<orangeStrong>Erhöht den ANG und die GES</orangeStrong> eines Verbündeten."
+        "shortDesc": "<orangeStrong>Erhöht den ANG und die GES</orangeStrong> eines Verbündeten.",
+        "tag": "Verstärkung"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Sanktion",
+        "fullDesc": "Wenn ein Verbündeter einen Standardangriff, eine Fertigkeit oder einen Ultimate gegen einen Gegner einsetzt, der mit „Aufbürden“ belegt ist, wird der zugefügte SCH für {{2}} Rd. um <orangeStrong>{{1, percent}}%</orangeStrong> erhöht.",
+        "shortDesc": "Verbündete fügen Gegnern, die mit „Aufbürden“ belegt wurden, mehr SCH zu.",
+        "tag": "Unterstützung"
       }
     },
     "technique": {
       "0": {
         "name": "Urteil der Unterwelt",
         "fullDesc": "Greift den Gegner unmittelbar an. Belegt nach Kampfeintritt einen zufälligen Gegner entsprechend der Fertigkeit mit Aufbürden.",
-        "shortDesc": "Greift den Gegner an. Belegt nach Kampfeintritt einen zufälligen Gegner entsprechend der Fertigkeit mit „Aufbürden“."
+        "shortDesc": "Greift den Gegner an. Belegt nach Kampfeintritt einen zufälligen Gegner entsprechend der Fertigkeit mit „Aufbürden“.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Schriftführerin",
         "fullDesc": "Erhöht den ANG von Verbündeten, die die Fertigkeitspunkt-Wiederherstellung von Aufbürden auslösen, für {{2}} Rd. um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Totenreich",
         "fullDesc": "Stellt zusätzlich {{1}} Fertigkeitspunkt(e) wieder her, wenn mit Aufbürden belegte Gegner besiegt werden und die Auslösungsanzahl für die Fertigkeitspunkt-Wiederherstellung von Aufbürden {{2}} oder weniger beträgt.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Wiederbeleben",
         "fullDesc": "Stellt {{1}} Pkt. Energie wieder her, wenn die Fertigkeitspunkt-Wiederherstellung von Aufbürden ausgelöst wird.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

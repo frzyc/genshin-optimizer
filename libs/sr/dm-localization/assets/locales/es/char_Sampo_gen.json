@@ -5,56 +5,72 @@
       "0": {
         "name": "Filos cegadores",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Sampo como Daño de Viento a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Amor que rebota",
         "fullDesc": "Inflige un <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Sampo como Daño de Viento a un enemigo. También inflige daño {{1}} veces más, y cada vez inflige un Daño de Viento equivalente al <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Sampo a un enemigo al azar.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo. Se dispara 5 veces en total."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Viento a un enemigo. Se dispara 5 veces en total.",
+        "tag": "Rebote"
       }
     },
     "ult": {
       "0": {
         "name": "Regalo sorpresa",
-        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Sampo como Daño de Viento a todos los enemigos y tiene una <u>probabilidad base</u> del {{4, percent}}% de aumentar el Daño con el tiempo que reciben los enemigos atacados en un <orangeStrong>{{2, percent}}%</orangeStrong> durante {{3}} turnos.",
-        "shortDesc": "Inflige Daño de Viento a todos los enemigos y tiene una gran probabilidad de que <orangeStrong>aumente el Daño con el tiempo que reciben</orangeStrong>."
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Sampo como Daño de Viento a todos los enemigos y tiene una probabilidad base del {{4, percent}}% de aumentar el Daño con el tiempo que reciben los enemigos atacados en un <orangeStrong>{{2, percent}}%</orangeStrong> durante {{3}} turnos.",
+        "shortDesc": "Inflige Daño de Viento a todos los enemigos y tiene una gran probabilidad de que <orangeStrong>aumente el Daño con el tiempo que reciben</orangeStrong>.",
+        "tag": "ATQ AdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Viento cortante",
+        "fullDesc": "Cuando Sampo golpea a un enemigo, tiene una probabilidad base del {{1, percent}}% de afectar al objetivo golpeado con Intemperie durante {{3}} turnos.<br>En el estado de Intemperie, los objetivos enemigos reciben un Daño de Viento con el tiempo equivalente al <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Sampo al comienzo de cada turno. Intemperie se puede acumular {{4}} veces como máximo.",
+        "shortDesc": "Cuando golpea a un enemigo, tiene una probabilidad de <orangeStrong>afectarlo con Intemperie</orangeStrong>.",
+        "tag": "Potenciación"
       }
     },
     "technique": {
       "0": {
         "name": "Brillo resplandeciente",
-        "fullDesc": "Tras usar la técnica, los enemigos de un área determinada quedan afectados por Ceguera durante {{1}} s, lo que les impide detectar a los aliados.\\nAl iniciar combate contra enemigos cegados, cada enemigo tiene una <u>probabilidad fija</u> del {{2, percent}}% de que su acción se retrase en un {{3, percent}}%.",
-        "shortDesc": "Hace que los enemigos de un área determinada sean afectados por Ceguera. Al entrar en combate contra enemigos cegados, cada enemigo tiene una gran probabilidad de que su <u>acción se retrase</u>."
+        "fullDesc": "Tras usar la técnica, los enemigos de un área determinada quedan afectados por Ceguera durante {{1}} s, lo que les impide detectar a los aliados.<br>Al iniciar combate contra enemigos cegados, cada enemigo tiene una probabilidad fija del {{2, percent}}% de que su acción se retrase en un {{3, percent}}%.",
+        "shortDesc": "Hace que los enemigos de un área determinada sean afectados por Ceguera. Al entrar en combate contra enemigos cegados, cada enemigo tiene una gran probabilidad de que su acción se retrase.",
+        "tag": "Alteración"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Trampa",
         "fullDesc": "La duración del estado de Intemperie que el talento aplica a los enemigos se alarga en {{1}} turno.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Posición defensiva",
         "fullDesc": "Al usar la habilidad definitiva, recupera {{1}} pts. de energía adicionales.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Picante",
         "fullDesc": "El daño que los enemigos afectados por Intemperie infligen a Sampo se reduce en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

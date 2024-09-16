@@ -5,56 +5,72 @@
       "0": {
         "name": "{RUBY_B#めいちょうてんひつ}冥兆天筆{RUBY_E#}",
         "fullDesc": "指定した敵単体に寒鴉の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の物理属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の物理属性ダメージを与える。"
+        "shortDesc": "敵単体に少量の物理属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#しょうめつほばく}生滅捕縛{RUBY_E#}",
-        "fullDesc": "敵単体に「承負」状態を付与して、寒鴉の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の物理属性ダメージを与える。\\n味方が「承負」状態の敵に通常攻撃、戦闘スキル、または必殺技のうち任意のスキルを合わせて2回発動するたびに、SPを1回復する。「承負」は最後に付与されたターゲットにのみ効果を発揮し、SP回復効果が{{2}}回発動した後に自動で解除される。",
-        "shortDesc": "敵単体に「承負」状態を付与して、物理属性ダメージを与える。味方が「承負」状態の敵に通常攻撃、戦闘スキルまたは必殺技のうち任意のスキルを合わせて2回発動した後、<orangeStrong>SPを1回復</orangeStrong>する。"
+        "fullDesc": "敵単体に「承負」状態を付与して、寒鴉の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の物理属性ダメージを与える。<br>味方が「承負」状態の敵に通常攻撃、戦闘スキル、または必殺技のうち任意のスキルを合わせて2回発動するたびに、SPを1回復する。「承負」は最後に付与されたターゲットにのみ効果を発揮し、SP回復効果が{{2}}回発動した後に自動で解除される。",
+        "shortDesc": "敵単体に「承負」状態を付与して、物理属性ダメージを与える。味方が「承負」状態の敵に通常攻撃、戦闘スキルまたは必殺技のうち任意のスキルを合わせて2回発動した後、<orangeStrong>SPを1回復</orangeStrong>する。",
+        "tag": "単体攻撃"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#じゅうおう}十王{RUBY_E#}の{RUBY_B#ちょくれい}勅令{RUBY_E#}、{RUBY_B#あまね}遍{RUBY_E#}く{RUBY_B#じゅんこう}遵行{RUBY_E#}せよ",
         "fullDesc": "指定した味方の速度を、寒鴉の速度の<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>分アップし、その味方の攻撃力+<orangeStrong>{{1, percent}}%</orangeStrong>、{{2}}ターン継続。",
-        "shortDesc": "味方単体の<orangeStrong>速度と攻撃力をアップ</orangeStrong>する。"
+        "shortDesc": "味方単体の<orangeStrong>速度と攻撃力をアップ</orangeStrong>する。",
+        "tag": "強化"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#ちょうあく}懲悪{RUBY_E#}",
+        "fullDesc": "味方が「承負」状態の敵に通常攻撃、戦闘スキル、または必殺技を発動した時、与ダメージ+<orangeStrong>{{1, percent}}%</orangeStrong>、{{2}}ターン継続。",
+        "shortDesc": "味方が「承負」状態の敵に攻撃を行った時、与ダメージがアップする。",
+        "tag": "サポート"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#はんめい}判冥{RUBY_E#}",
         "fullDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体に戦闘スキルが与えるものと同じ「承負」状態を付与する。",
-        "shortDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体に戦闘スキルが与えるものと同じ「承負」を付与する。"
+        "shortDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体に戦闘スキルが与えるものと同じ「承負」を付与する。",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#ろくじ}録事{RUBY_E#}",
         "fullDesc": "「承負」によるSP回復効果を発動させた味方の攻撃力+{{1, percent}}%、{{2}}ターン継続。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#ゆうふ}幽府{RUBY_E#}",
         "fullDesc": "「承負」を持つ敵が倒された時、その敵が持つ「承負」によるSP回復効果の発動回数が{{1}}回以下の場合、さらにSPを{{2}}回復する。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#かんよう}還陽{RUBY_E#}",
         "fullDesc": "「承負」によるSP回復効果が発動された時、自身のEPを{{1}}回復する。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

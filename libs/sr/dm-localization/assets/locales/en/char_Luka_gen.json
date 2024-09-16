@@ -5,61 +5,78 @@
       "0": {
         "name": "Direct Punch",
         "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Luka's ATK to a single enemy.",
-        "shortDesc": "Deals minor Physical DMG to a single enemy."
+        "shortDesc": "Deals minor Physical DMG to a single enemy.",
+        "tag": "Single Target"
       },
       "1": {
         "name": "Sky-Shatter Fist",
-        "fullDesc": "Consumes 2 stacks of Fighting Will. First, uses Direct Punch to deal 3 hits, with each hit dealing Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Luka's ATK to a single enemy target.\\nThen, uses Rising Uppercut to deal 1 hit, dealing Physical DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Luka's ATK to the single enemy target.",
-        "shortDesc": "Consumes 2 stacks of Fighting Will to deal Physical DMG to a single enemy."
+        "fullDesc": "Consumes 2 stacks of Fighting Will. First, uses Direct Punch to deal 3 hits, with each hit dealing Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Luka's ATK to a single enemy target.<br>Then, uses Rising Uppercut to deal 1 hit, dealing Physical DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Luka's ATK to the single enemy target.",
+        "shortDesc": "Consumes 2 stacks of Fighting Will to deal Physical DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Lacerating Fist",
-        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Luka's ATK to a single enemy target. In addition, there is a {{2, percent}}% <u>base chance</u> to inflict Bleed on them, lasting for {{5}} turn(s).\\nWhile Bleeding, the enemy will take {{3, percent(fixed: 1)}}% of their Max HP as Physical DoT at the start of each turn. This DMG will not exceed more than <orangeStrong>{{4, percent}}%</orangeStrong> of Luka's ATK.",
-        "shortDesc": "Deals Physical DMG to a single enemy, with a high chance of causing <orangeStrong>Bleed</orangeStrong>."
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Luka's ATK to a single enemy target. In addition, there is a {{2, percent}}% base chance to inflict Bleed on them, lasting for {{5}} turn(s).<br>While Bleeding, the enemy will take {{3, percent(fixed: 1)}}% of their Max HP as Physical DoT at the start of each turn. This DMG will not exceed more than <orangeStrong>{{4, percent}}%</orangeStrong> of Luka's ATK.",
+        "shortDesc": "Deals Physical DMG to a single enemy, with a high chance of causing <orangeStrong>Bleed</orangeStrong>.",
+        "tag": "Single Target"
       }
     },
     "ult": {
       "0": {
         "name": "Coup de Grâce",
-        "fullDesc": "Receives {{5}} stack(s) of Fighting Will, with a {{2, percent}}% <u>base chance</u> to increase a single enemy target's DMG received by <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> for {{4}} turn(s). Then, deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Luka's ATK to the target.",
-        "shortDesc": "Receives <orangeStrong>{{5}}</orangeStrong> stack(s) of Fighting Will, with a high chance of increasing the target's DMG received, and deals massive Physical DMG to the target."
+        "fullDesc": "Receives {{5}} stack(s) of Fighting Will, with a {{2, percent}}% base chance to increase a single enemy target's DMG received by <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> for {{4}} turn(s). Then, deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Luka's ATK to the target.",
+        "shortDesc": "Receives <orangeStrong>{{5}}</orangeStrong> stack(s) of Fighting Will, with a high chance of increasing the target's DMG received, and deals massive Physical DMG to the target.",
+        "tag": "Single Target"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Flying Sparks",
+        "fullDesc": "After Luka uses his Basic ATK \"Direct Punch\" or Skill \"Lacerating Fist,\" he receives {{1}} stack of Fighting Will, up to 4 stacks. When he has 2 or more stacks of Fighting Will, his Basic ATK \"Direct Punch\" is enhanced to \"Sky-Shatter Fist.\" After his Enhanced Basic ATK's \"Rising Uppercut\" hits a Bleeding enemy target, the Bleed status will immediately deal DMG for 1 time equal to <orangeStrong>{{2, percent}}%</orangeStrong> of the original DMG to the target. At the start of battle, Luka will possess 1 stack of Fighting Will.",
+        "shortDesc": "After using the Basic ATK \"Direct Punch\" or the Skill \"Lacerating Fist,\" receives 1 stack of Fighting Will. When 2 or more stacks of Fighting Will are present, <orangeStrong>Basic ATK becomes Enhanced</orangeStrong>.<br>If the enemy is Bleeding, the Enhanced Basic ATK will <orangeStrong>cause Bleed to deal extra DMG for 1 time</orangeStrong>.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Anticipator",
-        "fullDesc": "Immediately attacks the enemy. Upon entering battle, Luka deals Physical DMG equal to {{1, percent}}% of his ATK to a random single enemy with a {{2, percent}}% <u>base chance</u> to inflict his Skill's Bleed effect on the target. Then, Luka gains 1 additional stack of Fighting Will.",
-        "shortDesc": "Attacks the enemy. After entering battle, deals minor Physical DMG to a random single enemy, with a high chance to inflict <orangeStrong>Bleed</orangeStrong> to the target. Then, gains 1 stack of Fighting Will."
+        "fullDesc": "Immediately attacks the enemy. Upon entering battle, Luka deals Physical DMG equal to {{1, percent}}% of his ATK to a random single enemy with a {{2, percent}}% base chance to inflict his Skill's Bleed effect on the target. Then, Luka gains 1 additional stack of Fighting Will.",
+        "shortDesc": "Attacks the enemy. After entering battle, deals minor Physical DMG to a random single enemy, with a high chance to inflict <orangeStrong>Bleed</orangeStrong> to the target. Then, gains 1 stack of Fighting Will.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Kinetic Overload",
         "fullDesc": "When the Skill is used, immediately dispels {{1}} buff from the enemy target.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Cycle Braking",
         "fullDesc": "For every stack of Fighting Will obtained, additionally regenerates {{1}} Energy.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Crush Fighting Will",
         "fullDesc": "When using Enhanced Basic ATK, every hit Direct Punch deals has a {{1, percent}}% fixed chance for Luka to use 1 additional hit. This effect does not apply to additional hits generated in this way.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -74,7 +91,7 @@
     },
     "3": {
       "name": "Born for the Ring",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "4": {
       "name": "Never Turning Back",
@@ -82,7 +99,7 @@
     },
     "5": {
       "name": "The Spirit of Wildfire",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "6": {
       "name": "A Champion's Applause",

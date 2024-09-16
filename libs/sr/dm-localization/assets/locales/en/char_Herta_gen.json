@@ -5,56 +5,72 @@
       "0": {
         "name": "What Are You Looking At?",
         "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Herta's ATK to a single enemy.",
-        "shortDesc": "Deals minor Ice DMG to a single enemy."
+        "shortDesc": "Deals minor Ice DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "One-Time Offer",
         "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Herta's ATK to all enemies. If the enemy's HP percentage is {{2, percent}}% or higher, DMG dealt to this target increases by {{3, percent}}%.",
-        "shortDesc": "Deals minor Ice DMG to all enemies. Targets with higher HP will receive increased DMG."
+        "shortDesc": "Deals minor Ice DMG to all enemies. Targets with higher HP will receive increased DMG.",
+        "tag": "AoE"
       }
     },
     "ult": {
       "0": {
         "name": "It's Magic, I Added Some Magic",
         "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Herta's ATK to all enemies.",
-        "shortDesc": "Deals Ice DMG to all enemies."
+        "shortDesc": "Deals Ice DMG to all enemies.",
+        "tag": "AoE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Fine, I'll Do It Myself",
+        "fullDesc": "When an ally's attack causes an enemy's HP percentage to fall to {{1, percent}}% or lower, Herta will launch a follow-up attack, dealing Ice DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Herta's ATK to all enemies.",
+        "shortDesc": "",
+        "tag": "AoE"
       }
     },
     "technique": {
       "0": {
         "name": "It Can Still Be Optimized",
         "fullDesc": "After using her Technique, Herta's ATK increases by {{1, percent}}% for {{2}} turn(s) at the beginning of the next battle.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "Enhance"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Efficiency",
         "fullDesc": "When Skill is used, the DMG Boost effect on target enemies increases by an extra {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Puppet",
         "fullDesc": "The chance to resist Crowd Control Debuffs increases by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Icing",
         "fullDesc": "When Ultimate is used, deals {{1, percent}}% more DMG to Frozen enemies.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "That's the Kind of Girl I Am",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Hit Where It Hurts",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Cuss Big or Cuss Nothing",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "No One Can Betray Me",

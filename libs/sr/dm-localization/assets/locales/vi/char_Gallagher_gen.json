@@ -5,61 +5,78 @@
       "0": {
         "name": "Phí Mở Chai",
         "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Gallagher.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       },
       "1": {
         "name": "Hoa Rượu Tuôn Trào",
         "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Gallagher. Đồng thời giảm <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> Tấn Công của mục tiêu, duy trì {{3}} hiệp.",
-        "shortDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch, và giảm Tấn Công của kẻ này."
+        "shortDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch, và giảm Tấn Công của kẻ này.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Thức Uống Ủ Đặc Biệt",
         "fullDesc": "Hồi phục ngay <orangeStrong>{{1}}</orangeStrong> HP cho 1 đồng đội chỉ định.",
-        "shortDesc": "Lập tức hồi phục HP cho 1 đồng đội phe ta."
+        "shortDesc": "Lập tức hồi phục HP cho 1 đồng đội phe ta.",
+        "tag": "Hồi Phục"
       }
     },
     "ult": {
       "0": {
         "name": "Nghi Lễ Champagne",
         "fullDesc": "Khiến toàn bộ phe địch rơi vào trạng thái \"Say Mèm\", duy trì {{2}} hiệp, đồng thời gây Sát Thương Hỏa cho toàn bộ phe địch bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Gallagher, và cường hóa Tấn Công Thường lần sau thành \"Hoa Rượu Tuôn Trào\".",
-        "shortDesc": "Khiến toàn bộ kẻ địch <orangeStrong>rơi vào trạng thái \"Say Mèm\"</orangeStrong>, đồng thời gây Sát Thương Hỏa cho toàn bộ kẻ địch. Tấn Công Thường lần sau cường hóa thành \"Hoa Rượu Tuôn Trào\"."
+        "shortDesc": "Khiến toàn bộ kẻ địch <orangeStrong>rơi vào trạng thái \"Say Mèm\"</orangeStrong>, đồng thời gây Sát Thương Hỏa cho toàn bộ kẻ địch. Tấn Công Thường lần sau cường hóa thành \"Hoa Rượu Tuôn Trào\".",
+        "tag": "Đánh Lan"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Cuộc Chiến Say Ngà",
+        "fullDesc": "\"Say Mèm\" sẽ tăng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Sát Thương Phá Vỡ mà mục tiêu phải chịu. Sau mỗi lần mục tiêu ở trạng thái \"Say Mèm\" bị nhân vật phe ta tấn công, sẽ hồi <orangeStrong>{{2}}</orangeStrong> HP cho người tấn công.",
+        "shortDesc": "\"Say Mèm\" sẽ <orangeStrong>tăng Sát Thương Phá Vỡ mà mục tiêu phải chịu</orangeStrong>, sau mỗi lần mục tiêu bị nhân vật phe ta tấn công, <orangeStrong>người tấn công sẽ hồi HP</orangeStrong>.",
+        "tag": "Hồi Phục"
       }
     },
     "technique": {
       "0": {
         "name": "Rượu Ngọt Thủ Công",
         "fullDesc": "Lập tức tấn công kẻ địch, sau khi vào chiến đấu khiến toàn thể phe địch rơi vào trạng thái Say Mèm, duy trì {{1}} hiệp, đồng thời gây Sát Thương Hỏa lên toàn bộ phe địch bằng {{2, percent}}% Tấn Công của Gallagher.",
-        "shortDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ khiến toàn bộ phe địch <orangeStrong>rơi vào trạng thái \"Say Mèm\"</orangeStrong>, và gây lượng nhỏ Sát Thương Hỏa lên toàn bộ phe địch."
+        "shortDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ khiến toàn bộ phe địch <orangeStrong>rơi vào trạng thái \"Say Mèm\"</orangeStrong>, và gây lượng nhỏ Sát Thương Hỏa lên toàn bộ phe địch.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Công Thức Mới Mẻ",
         "fullDesc": "Tăng Lượng Trị Liệu do bản thân cung cấp, mức tăng bằng {{1, percent}}% Tấn Công Kích Phá, tối đa tăng {{2, percent}}% Lượng Trị Liệu cung cấp.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Men Ủ Tự Nhiên",
         "fullDesc": "Sau khi thi triển Tuyệt Kỹ, sẽ lập tức khiến bản thân Ưu Tiên Hành Động 100%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Xin Mời Cạn Ly",
         "fullDesc": "Khi Gallagher thi triển \"Hoa Rượu Tuôn Trào\" tấn công mục tiêu trong trạng thái \"Say Mèm\", sẽ khiến hiệu ứng hồi HP do Thiên Phú này cung cấp cũng hiệu lực với đồng đội phe ta trong lần này.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

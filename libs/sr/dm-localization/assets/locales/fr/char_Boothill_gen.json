@@ -5,61 +5,78 @@
       "0": {
         "name": "Coup de talon brise-crâne",
         "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ du Fossoyeur à une cible ennemie unique.",
-        "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique."
+        "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique.",
+        "tag": "Cible unique"
       },
       "1": {
         "name": "Tir en rafale",
-        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ du Fossoyeur à une cible ennemie unique.\\nL'ATQ normale renforcée ne permet pas de récupérer de points de compétence et ne peut cibler que l'ennemi qui est actuellement dans l'état Confrontation.",
-        "shortDesc": "Inflige des DGT physiques à un ennemi unique. Ne peut attaquer que la cible avec Confrontation."
+        "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ du Fossoyeur à une cible ennemie unique.<br>L'ATQ normale renforcée ne permet pas de récupérer de points de compétence et ne peut cibler que l'ennemi qui est actuellement dans l'état Confrontation.",
+        "shortDesc": "Inflige des DGT physiques à un ennemi unique. Ne peut attaquer que la cible avec Confrontation.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Tango endiablé",
-        "fullDesc": "Force le Fossoyeur à entrer en état de Confrontation avec une cible ennemie unique. L'ATQ normale du Fossoyeur devient renforcée et il ne peut pas utiliser sa compétence pour une durée de {{3}} tours. Cette durée diminue de 1 au début de chaque tour du Fossoyeur.\\nLa cible ennemie qui est en état de Confrontation est provoquée. Lorsque la cible ennemie/le Fossoyeur subit une attaque de la part de l'autre partie, les DGT reçus augmentent de <orangeStrong>{{1, percent}}%</orangeStrong>/{{2, percent}}%.\\nLorsque la cible est éliminée ou qu'elle subit une Rupture de faiblesse, le Fossoyeur obtient 1 cumul d'Avantage en poche, et dissipe Confrontation.\\nCette compétence ne régénère pas d'énergie. Le tour ne se termine pas après l'utilisation de la compétence.",
-        "shortDesc": "Initie une <orangeStrong>Confrontation</orangeStrong>. Lorsque la cible de la Confrontation <orangeStrong>est éliminée ou subit une Rupture de faiblesse</orangeStrong>, le Fossoyeur bénéficie d'Avantage en poche et dissipe Confrontation. Le Fossoyeur utilise désormais son <orangeStrong>ATQ normale renforcée</orangeStrong> et le tour ne se termine pas."
+        "fullDesc": "Force le Fossoyeur à entrer en état de Confrontation avec une cible ennemie unique. L'ATQ normale du Fossoyeur devient renforcée et il ne peut pas utiliser sa compétence pour une durée de {{3}} tours. Cette durée diminue de 1 au début de chaque tour du Fossoyeur.<br>La cible ennemie qui est en état de Confrontation est provoquée. Lorsque la cible ennemie/le Fossoyeur subit une attaque de la part de l'autre partie, les DGT reçus augmentent de <orangeStrong>{{1, percent}}%</orangeStrong>/{{2, percent}}%.<br>Lorsque la cible est éliminée ou qu'elle subit une Rupture de faiblesse, le Fossoyeur obtient 1 cumul d'Avantage en poche, et dissipe Confrontation.<br>Cette compétence ne régénère pas d'énergie. Le tour ne se termine pas après l'utilisation de la compétence.",
+        "shortDesc": "Initie une <orangeStrong>Confrontation</orangeStrong>. Lorsque la cible de la Confrontation <orangeStrong>est éliminée ou subit une Rupture de faiblesse</orangeStrong>, le Fossoyeur bénéficie d'Avantage en poche et dissipe Confrontation. Le Fossoyeur utilise désormais son <orangeStrong>ATQ normale renforcée</orangeStrong> et le tour ne se termine pas.",
+        "tag": "Incapacitation"
       }
     },
     "ult": {
       "0": {
         "name": "Crépuscule des plaines du sud",
-        "fullDesc": "Applique une Faiblesse physique à une cible ennemie unique pour {{3}} tours.\\nInflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ du Fossoyeur à la cible et <u>retarde son action</u> de <orangeStrong>{{2, percent}}%</orangeStrong>.",
-        "shortDesc": "<orangeStrong>Applique une Faiblesse physique</orangeStrong> à un ennemi unique et lui inflige une quantité massive de DGT physiques, tout en retardant son action."
+        "fullDesc": "Applique une Faiblesse physique à une cible ennemie unique pour {{3}} tours.<br>Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ du Fossoyeur à la cible et retarde son action de <orangeStrong>{{2, percent}}%</orangeStrong>.",
+        "shortDesc": "<orangeStrong>Applique une Faiblesse physique</orangeStrong> à un ennemi unique et lui inflige une quantité massive de DGT physiques, tout en retardant son action.",
+        "tag": "Cible unique"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Barillet plein",
+        "fullDesc": "Chaque cumul d'Avantage en poche accentue la réduction de robustesse de l'ATQ normale renforcée de {{4, percent}}%, cumulable jusqu'à {{5}} fois.<br>Si la cible est en état de Rupture de faiblesse lors de l'utilisation de l'ATQ normale renforcée, inflige à la cible des DGT de rupture équivalents à <orangeStrong>{{1, percent}}%</orangeStrong>/<orangeStrong>{{2, percent}}%</orangeStrong>/<orangeStrong>{{3, percent}}%</orangeStrong> des DGT de rupture physiques du Fossoyeur pour chaque cumul d'Avantage en poche. La robustesse maximale prise en compte pour ces DGT ne peut pas dépasser {{6}} fois la réduction de robustesse de base de l'ATQ normale « Coup de talon brise-crâne ».<br>En cas de victoire, le Fossoyeur peut conserver Avantage en poche pour le prochain combat.",
+        "shortDesc": "Avantage en poche accentue la réduction de robustesse de l'ATQ normale renforcée et inflige des <orangeStrong>DGT de rupture</orangeStrong> physiques supplémentaires <orangeStrong>si la cible est en état de Rupture de faiblesse</orangeStrong>. En cas de victoire, Avantage en poche est conservé pour le prochain combat.",
+        "tag": "Renforcement"
       }
     },
     "technique": {
       "0": {
         "name": "Sourire carnassier",
         "fullDesc": "Après utilisation de la technique, lors de la première utilisation de la compétence au cours du prochain combat, applique une Faiblesse physique équivalente à celle appliquée par l'ultime à la cible pour {{1}} tours.",
-        "shortDesc": "Après utilisation de la technique, <orangeStrong>applique une Faiblesse physique</orangeStrong> à un ennemi unique lors de la première utilisation de la compétence au cours du prochain combat."
+        "shortDesc": "Après utilisation de la technique, <orangeStrong>applique une Faiblesse physique</orangeStrong> à un ennemi unique lors de la première utilisation de la compétence au cours du prochain combat.",
+        "tag": "Renforcement"
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Réduit la robustesse de l'ennemi au type correspondant en entrant en combat après l'avoir attaqué.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Recharge fantôme",
         "fullDesc": "Augmente les chances de coup critique / DGT critiques du personnage. L'augmentation est équivalente à {{1, percent}}% / {{3, percent}}% de l'effet de Rupture. Les chances de coup critique / DGT critiques peuvent être augmentés au maximum de {{2, percent}}% / {{4, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Panier de crabes",
         "fullDesc": "Lorsque le Fossoyeur est en état de Confrontation, réduit les DGT qu'il subit de la part des cibles qui ne sont pas en état de Confrontation de {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "À bout portant",
         "fullDesc": "Lorsque le Fossoyeur gagne Avantage en poche dans l'état Confrontation, il régénère {{1}} points d'énergie. Cet effet peut également se déclencher lors de l'obtention de cumuls d'Avantage en poche qui dépassent le maximum.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -74,7 +91,7 @@
     },
     "3": {
       "name": "Gardien du verger de marbre",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "4": {
       "name": "Spécialiste de la viande froide",
@@ -82,7 +99,7 @@
     },
     "5": {
       "name": "Discours de la souche",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "6": {
       "name": "Raton laveur du Motel Pied-de-biche",

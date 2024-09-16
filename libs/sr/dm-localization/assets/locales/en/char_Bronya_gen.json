@@ -5,56 +5,72 @@
       "0": {
         "name": "Windrider Bullet",
         "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Bronya's ATK to a single enemy.",
-        "shortDesc": "Deals minor Wind DMG to a single enemy."
+        "shortDesc": "Deals minor Wind DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Combat Redeployment",
-        "fullDesc": "Dispels a <u>debuff</u> from a single ally, allows them to immediately take action, and increases their DMG by <orangeStrong>{{1, percent}}%</orangeStrong> for {{3}} turn(s).\\nWhen this Skill is used on Bronya herself, she cannot immediately take action again.",
-        "shortDesc": "<orangeStrong>Dispels</orangeStrong> 1 <orangeStrong><u>debuff</u></orangeStrong> from a single ally, <orangeStrong>increases the damage they deal</orangeStrong>, and allows them to <orangeStrong>immediately take action</orangeStrong>."
+        "fullDesc": "Dispels a debuff from a single ally, allows them to immediately take action, and increases their DMG by <orangeStrong>{{1, percent}}%</orangeStrong> for {{3}} turn(s).<br>When this Skill is used on Bronya herself, she cannot immediately take action again.",
+        "shortDesc": "<orangeStrong>Dispels</orangeStrong> 1 <orangeStrong>debuff</orangeStrong> from a single ally, <orangeStrong>increases the damage they deal</orangeStrong>, and allows them to <orangeStrong>immediately take action</orangeStrong>.",
+        "tag": "Support"
       }
     },
     "ult": {
       "0": {
         "name": "The Belobog March",
         "fullDesc": "Increases the ATK of all allies by <orangeStrong>{{1, percent}}%</orangeStrong>, and increases their CRIT DMG equal to <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> of Bronya's CRIT DMG plus <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> for {{4}} turn(s).",
-        "shortDesc": "Increases <orangeStrong>ATK</orangeStrong> and <orangeStrong>CRIT DMG</orangeStrong> of all allies"
+        "shortDesc": "Increases <orangeStrong>ATK</orangeStrong> and <orangeStrong>CRIT DMG</orangeStrong> of all allies",
+        "tag": "Support"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Leading the Way",
+        "fullDesc": "After using her Basic ATK, Bronya's next action will be Advanced Forward by <orangeStrong>{{1, percent}}%</orangeStrong>.",
+        "shortDesc": "After this character uses Basic ATK, their next action will be Advanced Forward.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Banner of Command",
         "fullDesc": "After using Bronya's Technique, at the start of the next battle, all allies' ATK increases by {{1, percent}}% for {{2}} turn(s).",
-        "shortDesc": "After this character uses Technique, increases all allies' ATK at the start of the next battle."
+        "shortDesc": "After this character uses Technique, increases all allies' ATK at the start of the next battle.",
+        "tag": "Support"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Command",
         "fullDesc": "The CRIT Rate for Basic ATK increases to 100%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Battlefield",
         "fullDesc": "At the start of the battle, all allies' DEF increases by {{2, percent}}% for {{1}} turn(s).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Military Might",
         "fullDesc": "When Bronya is on the field, all allies deal {{1, percent}}% more DMG.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Bombardment",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "4": {
       "name": "Take by Surprise",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Unstoppable",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "6": {
       "name": "Piercing Rainbow",

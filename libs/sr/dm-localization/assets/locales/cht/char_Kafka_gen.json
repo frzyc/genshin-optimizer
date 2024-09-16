@@ -5,56 +5,72 @@
       "0": {
         "name": "夜間喧囂不止",
         "fullDesc": "對指定敵方單體造成等同於卡芙卡<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性傷害。",
-        "shortDesc": "對敵方單體造成少量雷屬性傷害。"
+        "shortDesc": "對敵方單體造成少量雷屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "月光摩挲連綿",
-        "fullDesc": "對指定敵方單體造成等同於卡芙卡<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性傷害，同時對其相鄰目標造成等同於卡芙卡<orangeStrong>{{3, percent}}%</orangeStrong>攻擊力的雷屬性傷害。\\n若指定敵方單體處於持續傷害狀態，其當下承受的所有持續傷害立即產生相當於原傷害<orangeStrong>{{2, percent}}%</orangeStrong>的傷害。",
-        "shortDesc": "對敵方單體造成雷屬性傷害，對相鄰目標造成少量雷屬性傷害。\\n若主目標處於持續傷害類負面狀態，則使持續傷害類負面狀態<orangeStrong>額外產生1次傷害</orangeStrong>。"
+        "fullDesc": "對指定敵方單體造成等同於卡芙卡<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性傷害，同時對其相鄰目標造成等同於卡芙卡<orangeStrong>{{3, percent}}%</orangeStrong>攻擊力的雷屬性傷害。<br>若指定敵方單體處於持續傷害狀態，其當下承受的所有持續傷害立即產生相當於原傷害<orangeStrong>{{2, percent}}%</orangeStrong>的傷害。",
+        "shortDesc": "對敵方單體造成雷屬性傷害，對相鄰目標造成少量雷屬性傷害。<br>若主目標處於持續傷害類負面狀態，則使持續傷害類負面狀態<orangeStrong>額外產生1次傷害</orangeStrong>。",
+        "tag": "擴散"
       }
     },
     "ult": {
       "0": {
         "name": "悲劇盡頭的顫音",
-        "fullDesc": "對敵方全體造成等同於卡芙卡<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性傷害，有{{2, percent}}%的<u>基礎機率</u>使受到攻擊的敵方目標陷入觸電狀態，並使其當下承受的觸電狀態立即產生相當於原傷害<orangeStrong>{{5, percent}}%</orangeStrong>的傷害。觸電狀態持續{{3}}回合。\\n觸電狀態下，敵方目標每回合開始時受到等同於卡芙卡<orangeStrong>{{4, percent}}%</orangeStrong>攻擊力的雷屬性持續傷害。",
-        "shortDesc": "對敵方全體造成少量雷屬性傷害，有高機率<orangeStrong>施加觸電狀態</orangeStrong>。\\n若敵方目標處於觸電狀態，則使觸電狀態<orangeStrong>額外產生1次傷害</orangeStrong>。"
+        "fullDesc": "對敵方全體造成等同於卡芙卡<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性傷害，有{{2, percent}}%的基礎機率使受到攻擊的敵方目標陷入觸電狀態，並使其當下承受的觸電狀態立即產生相當於原傷害<orangeStrong>{{5, percent}}%</orangeStrong>的傷害。觸電狀態持續{{3}}回合。<br>觸電狀態下，敵方目標每回合開始時受到等同於卡芙卡<orangeStrong>{{4, percent}}%</orangeStrong>攻擊力的雷屬性持續傷害。",
+        "shortDesc": "對敵方全體造成少量雷屬性傷害，有高機率<orangeStrong>施加觸電狀態</orangeStrong>。<br>若敵方目標處於觸電狀態，則使觸電狀態<orangeStrong>額外產生1次傷害</orangeStrong>。",
+        "tag": "群體攻擊"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "溫柔亦同殘酷",
+        "fullDesc": "當卡芙卡的隊友對敵方目標發動普通攻擊後，卡芙卡立即發動追加攻擊，對該目標造成等同於卡芙卡<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性傷害，並有{{2, percent}}%的基礎機率使受到攻擊的敵方目標陷入與終結技相同的觸電狀態，持續{{3}}回合，該效果每回合只能觸發1次。",
+        "shortDesc": "當隊友對敵方目標發動普通攻擊後，卡芙卡立即發動追加攻擊，對該目標造成雷屬性傷害，並有高機率<orangeStrong>施加觸電狀態</orangeStrong>。該效果每回合只能觸發1次。",
+        "tag": "單體攻擊"
       }
     },
     "technique": {
       "0": {
         "name": "寬恕無關慈悲",
-        "fullDesc": "立即攻擊一定範圍內的所有敵人，進入戰鬥後對敵方全體造成等同於卡芙卡{{3, percent}}%攻擊力的雷屬性傷害，同時有{{1, percent}}%的<u>基礎機率</u>使敵方每個單體目標陷入與終結技相同的觸電狀態，持續{{2}}回合。",
-        "shortDesc": "攻擊範圍內的所有敵人，進入戰鬥後對敵方全體造成少量雷屬性傷害，有高機率<orangeStrong>施加觸電狀態</orangeStrong>。"
+        "fullDesc": "立即攻擊一定範圍內的所有敵人，進入戰鬥後對敵方全體造成等同於卡芙卡{{3, percent}}%攻擊力的雷屬性傷害，同時有{{1, percent}}%的基礎機率使敵方每個單體目標陷入與終結技相同的觸電狀態，持續{{2}}回合。",
+        "shortDesc": "攻擊範圍內的所有敵人，進入戰鬥後對敵方全體造成少量雷屬性傷害，有高機率<orangeStrong>施加觸電狀態</orangeStrong>。",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "折磨",
         "fullDesc": "施放終結技時，敵方目標由「其當下承受的觸電狀態立即產生傷害」變更為「其當下承受的所有持續傷害類負面狀態立即產生傷害」。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "掠奪",
         "fullDesc": "觸電狀態下的敵方目標被消滅時，卡芙卡額外回復{{1}}點能量。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "荊棘",
         "fullDesc": "終結技、秘技與天賦觸發的追加攻擊使敵方目標陷入觸電狀態的基礎機率提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

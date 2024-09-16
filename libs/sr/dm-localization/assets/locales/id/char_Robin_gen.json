@@ -5,56 +5,72 @@
       "0": {
         "name": "Wingflip White Noise",
         "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Robin pada 1 musuh yang ditargetkan.",
-        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Pinion's Aria",
         "fullDesc": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> DMG yang diakibatkan seluruh rekan tim, berlangsung selama {{2}} giliran. Setiap kali giliran Robin dimulai, durasi efek ini akan berkurang 1 giliran.",
-        "shortDesc": "<orangeStrong>Meningkatkan DMG</orangeStrong> seluruh rekan tim."
+        "shortDesc": "<orangeStrong>Meningkatkan DMG</orangeStrong> seluruh rekan tim.",
+        "tag": "Support"
       }
     },
     "ult": {
       "0": {
         "name": "Vox Harmonique, Opus Cosmique",
-        "fullDesc": "Robin memasuki status \"Concerto\", membuat rekan tim selain dirinya segera beraksi.\\nSaat berstatus \"Concerto\", meningkatkan ATK seluruh rekan tim, peningkatannya adalah sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> ATK Robin + <orangeStrong>{{3}}</orangeStrong>, dan setiap kali setelah rekan tim melancarkan serangan, Robin akan mengakibatkan 1 kali Physical <u>DMG tambahan</u> sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK dirinya (serangan ini memiliki CRIT Rate tetap sebesar {{5, percent}}% dan CRIT DMG tetap sebesar {{6, percent}}%).\\nSaat berstatus \"Concerto\", Robin kebal terhadap <u>Crowd Control Debuff</u>, dan Robin tidak akan memasuki gilirannya serta tidak dapat beraksi hingga hitung mundur berakhir.\\nHitung mundur \"Concerto\" akan muncul di Susunan Aksi. Saat giliran hitung mundur dimulai, Robin akan keluar dari status \"Concerto\" dan segera beraksi. Hitung mundur memiliki SPD tetap sebesar {{2}}.",
-        "shortDesc": "Memasuki status \"Concerto\" dan <orangeStrong>meningkatkan ATK</orangeStrong> seluruh rekan tim, serta membuat seluruh rekan tim selain dirinya sendiri segera beraksi. Setelah rekan tim menyerang, Robin akan mengakibatkan <orangeStrong>Physical <u>DMG Tambahan</u></orangeStrong>. Selama berstatus \"Concerto\", Robin kebal terhadap <u>Crowd Control Debuff</u>, dan Robin tidak akan memasuki gilirannya serta tidak dapat beraksi hingga hitung mundur berakhir."
+        "fullDesc": "Robin memasuki status \"Concerto\", membuat rekan tim selain dirinya segera beraksi.<br>Saat berstatus \"Concerto\", meningkatkan ATK seluruh rekan tim, peningkatannya adalah sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> ATK Robin + <orangeStrong>{{3}}</orangeStrong>, dan setiap kali setelah rekan tim melancarkan serangan, Robin akan mengakibatkan 1 kali Physical DMG tambahan sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK dirinya (serangan ini memiliki CRIT Rate tetap sebesar {{5, percent}}% dan CRIT DMG tetap sebesar {{6, percent}}%).<br>Saat berstatus \"Concerto\", Robin kebal terhadap Crowd Control Debuff, dan Robin tidak akan memasuki gilirannya serta tidak dapat beraksi hingga hitung mundur berakhir.<br>Hitung mundur \"Concerto\" akan muncul di Susunan Aksi. Saat giliran hitung mundur dimulai, Robin akan keluar dari status \"Concerto\" dan segera beraksi. Hitung mundur memiliki SPD tetap sebesar {{2}}.",
+        "shortDesc": "Memasuki status \"Concerto\" dan <orangeStrong>meningkatkan ATK</orangeStrong> seluruh rekan tim, serta membuat seluruh rekan tim selain dirinya sendiri segera beraksi. Setelah rekan tim menyerang, Robin akan mengakibatkan <orangeStrong>Physical DMG Tambahan</orangeStrong>. Selama berstatus \"Concerto\", Robin kebal terhadap Crowd Control Debuff, dan Robin tidak akan memasuki gilirannya serta tidak dapat beraksi hingga hitung mundur berakhir.",
+        "tag": "Support"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Tonal Resonance",
+        "fullDesc": "Meningkatkan <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> CRIT DMG seluruh rekan tim, dan Robin akan memulihkan {{2}} Energy tambahan untuk dirinya sendiri setelah rekan tim menyerang target musuh.",
+        "shortDesc": "Meningkatkan <orangeStrong>CRIT DMG</orangeStrong> seluruh rekan tim, dan Robin akan memulihkan Energy tambahan setelah rekan tim menyerang musuh.",
+        "tag": "Support"
       }
     },
     "technique": {
       "0": {
         "name": "Overture of Inebriation",
         "fullDesc": "Setelah melancarkan Technique, akan menciptakan dimensi khusus di sekeliling dirinya yang berlangsung selama {{1}} detik. Musuh dalam dimensi khusus tidak akan menyerang Robin dan akan mengikuti Robin selama dimensi khusus aktif. Setelah memasuki pertempuran saat dimensi khusus aktif, Robin akan memulihkan {{2}} Energy saat setiap gelombang pertempuran dimulai. Hanya boleh ada 1 efek dimensi khusus ciptaan rekan tim dalam satu waktu.",
-        "shortDesc": "Menciptakan dimensi khusus di sekitar Robin. Musuh yang berada dalam dimensi khusus tidak akan menyerang Robin. Setelah memasuki pertempuran dengan musuh saat dimensi khusus aktif, Robin akan memulihkan <orangeStrong>{{2}}</orangeStrong> Energy tambahan saat setiap gelombang pertempuran dimulai."
+        "shortDesc": "Menciptakan dimensi khusus di sekitar Robin. Musuh yang berada dalam dimensi khusus tidak akan menyerang Robin. Setelah memasuki pertempuran dengan musuh saat dimensi khusus aktif, Robin akan memulihkan <orangeStrong>{{2}}</orangeStrong> Energy tambahan saat setiap gelombang pertempuran dimulai.",
+        "tag": "Support"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, akan mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Coloratura Cadenza",
         "fullDesc": "Saat pertempuran dimulai, aksi karakter ini akan didahulukan {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Impromptu Flourish",
         "fullDesc": "Saat berada dalam status \"Concerto\", CRIT DMG yang diakibatkan seluruh rekan tim saat melancarkan Serangan Lanjutan meningkat {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Sequential Passage",
         "fullDesc": "Saat melancarkan Skill, akan memulihkan {{1}} Energy tambahan.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

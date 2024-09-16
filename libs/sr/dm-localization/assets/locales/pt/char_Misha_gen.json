@@ -5,56 +5,72 @@
       "0": {
         "name": "C-Com Licença, Por Favor!",
         "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Misha a um único inimigo-alvo.",
-        "shortDesc": "Causa Dano de Gelo leve a um único inimigo."
+        "shortDesc": "Causa Dano de Gelo leve a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "S-Serviço de Quarto!",
         "fullDesc": "Aumenta os Golpes por Ação da próxima Perícia Suprema de Misha em {{3}} golpe(s). Causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Misha a um inimigo, e Dano de Gelo igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Misha a inimigos adjacentes a ele.",
-        "shortDesc": "Causa Dano de Gelo a um inimigo e Dano de Gelo leve a inimigos adjacentes a ele. Além disso, aumenta os <orangeStrong>Golpes por Ação da próxima Perícia Suprema</orangeStrong> de Misha."
+        "shortDesc": "Causa Dano de Gelo a um inimigo e Dano de Gelo leve a inimigos adjacentes a ele. Além disso, aumenta os <orangeStrong>Golpes por Ação da próxima Perícia Suprema</orangeStrong> de Misha.",
+        "tag": "Explosão"
       }
     },
     "ult": {
       "0": {
         "name": "V-Vou me Atrasar!",
-        "fullDesc": "Possui {{1}} Golpes por Ação por padrão. Primeiro, usa 1 golpe para causar Dano de Gelo igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Misha a um único inimigo-alvo. Então, cada um dos golpes restantes causa Dano de Gelo igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Misha a um único inimigo aleatório. Logo antes do acerto de cada golpe, existe uma <u>chance-base</u> de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de causar Congelamento ao alvo, durando por 1 rodada.\\nEnquanto no estado de Congelamento, inimigos-alvo não podem agir, e no início de suas rodadas, eles recebem <u>Dano de Gelo Adicional</u> igual a <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de Misha.\\nEssa Perícia Suprema pode possuir até {{5}} Golpes por Ação. Depois que a Perícia Suprema é utilizada, seus Golpes por Ação serão redefinidos ao nível padrão.",
-        "shortDesc": "Causa Dano de Gelo leve a inimigos únicos. O ataque ricocheteia <orangeStrong>{{1}}</orangeStrong> vezes por padrão, até um máximo de <orangeStrong>{{5}}</orangeStrong> vezes. Antes que cada golpe acerte, há uma pequena chance de infligir <orangeStrong>Congelamento</orangeStrong> no alvo."
+        "fullDesc": "Possui {{1}} Golpes por Ação por padrão. Primeiro, usa 1 golpe para causar Dano de Gelo igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Misha a um único inimigo-alvo. Então, cada um dos golpes restantes causa Dano de Gelo igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Misha a um único inimigo aleatório. Logo antes do acerto de cada golpe, existe uma chance-base de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de causar Congelamento ao alvo, durando por 1 rodada.<br>Enquanto no estado de Congelamento, inimigos-alvo não podem agir, e no início de suas rodadas, eles recebem Dano de Gelo Adicional igual a <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de Misha.<br>Essa Perícia Suprema pode possuir até {{5}} Golpes por Ação. Depois que a Perícia Suprema é utilizada, seus Golpes por Ação serão redefinidos ao nível padrão.",
+        "shortDesc": "Causa Dano de Gelo leve a inimigos únicos. O ataque ricocheteia <orangeStrong>{{1}}</orangeStrong> vezes por padrão, até um máximo de <orangeStrong>{{5}}</orangeStrong> vezes. Antes que cada golpe acerte, há uma pequena chance de infligir <orangeStrong>Congelamento</orangeStrong> no alvo.",
+        "tag": "Rebote"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Escapada Horológica",
+        "fullDesc": "Para cada 1 Ponto de Perícia consumido por um aliado, a próxima Perícia Suprema de Misha desfere {{2}} Golpe(s) por Ação a mais e Misha regenera <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> de Energia.",
+        "shortDesc": "Para <orangeStrong>cada 1 Ponto de Perícia consumido por aliados</orangeStrong>, a próxima Perícia Suprema de Misha <orangeStrong>realiza mais Golpes por Ação</orangeStrong>, e Misha regenera sua Energia.",
+        "tag": "Aprimoramento"
       }
     },
     "technique": {
       "0": {
         "name": "Espere, Você É Tão Linda!",
         "fullDesc": "Usar a Técnica cria uma dimensão especial que dura por {{1}} segundos. Inimigos pegos na dimensão especial são afetados pela Prisão Onírica e todas as suas ações são interrompidas. Ao entrar em batalha contra inimigos afetados pela Prisão Onírica, a próxima Perícia Suprema de Misha causa {{2}} Golpe(s) por Ação a mais. Apenas uma dimensão criada por aliados pode existir ao mesmo tempo.",
-        "shortDesc": "Cria uma dimensão especial que para todos os inimigos que estiverem dentro dela. Ao entrar em batalha contra inimigos na dimensão, <orangeStrong>a próxima Perícia Suprema de Misha causa mais Golpes por Ação</orangeStrong>."
+        "shortDesc": "Cria uma dimensão especial que para todos os inimigos que estiverem dentro dela. Ao entrar em batalha contra inimigos na dimensão, <orangeStrong>a próxima Perícia Suprema de Misha causa mais Golpes por Ação</orangeStrong>.",
+        "tag": "Incapacitação"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Liberação",
         "fullDesc": "Antes do acerto do primeiro golpe da Perícia Suprema, aumenta em {{1, percent}}% a chance-base de causar Congelamento ao alvo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Interligação",
         "fullDesc": "Ao usar a Perícia Suprema, aumenta a Taxa de Acerto de Efeito em {{1, percent}}%, durando até o final da ação da Perícia Suprema atual.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Transmissão",
         "fullDesc": "Ao causar Dano a inimigos com Congelamento, aumenta o Dano CRIT em {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Vestígio de Felicidade",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Visão de Afinidade",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Gênesis do Primeiro Amor",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "Alienação do Sonho",

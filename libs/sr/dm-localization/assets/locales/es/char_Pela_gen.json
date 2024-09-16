@@ -5,56 +5,72 @@
       "0": {
         "name": "Disparo helado",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Pela como Daño de Hielo a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Escarcha",
-        "fullDesc": "Elimina {{2}} <u>efecto positivo</u> de un enemigo y le inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Pela como Daño de Hielo.",
-        "shortDesc": "<orangeStrong>Elimina</orangeStrong> 1 <orangeStrong><u>efecto positivo</u></orangeStrong> de un enemigo y le inflige Daño de Hielo."
+        "fullDesc": "Elimina {{2}} efecto positivo de un enemigo y le inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Pela como Daño de Hielo.",
+        "shortDesc": "<orangeStrong>Elimina</orangeStrong> 1 <orangeStrong>efecto positivo</orangeStrong> de un enemigo y le inflige Daño de Hielo.",
+        "tag": "ATQ individual"
       }
     },
     "ult": {
       "0": {
         "name": "Supresión de área",
-        "fullDesc": "Cada enemigo tiene una <u>probabilidad base</u> del {{1, percent}}% de ser afectado por Desprotección. Además, inflige un <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ de Pela como Daño de Hielo a todos los enemigos.\\nLa DEF de los enemigos afectados por Desprotección se reduce en un <orangeStrong>{{2, percent}}%</orangeStrong> durante {{3}} turnos.",
-        "shortDesc": "Gran probabilidad de <orangeStrong>reducir la DEF</orangeStrong> del enemigo. Inflige una pequeña cantidad de Daño de Hielo a todos los enemigos."
+        "fullDesc": "Cada enemigo tiene una probabilidad base del {{1, percent}}% de ser afectado por Desprotección. Además, inflige un <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ de Pela como Daño de Hielo a todos los enemigos.<br>La DEF de los enemigos afectados por Desprotección se reduce en un <orangeStrong>{{2, percent}}%</orangeStrong> durante {{3}} turnos.",
+        "shortDesc": "Gran probabilidad de <orangeStrong>reducir la DEF</orangeStrong> del enemigo. Inflige una pequeña cantidad de Daño de Hielo a todos los enemigos.",
+        "tag": "ATQ AdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Recopilación de datos",
+        "fullDesc": "Si después de atacar, el objetivo enemigo está afectado por algún estado negativo, Pela recupera <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> pts. de energía adicionales. Este efecto solo puede activarse 1 vez con cada ataque.",
+        "shortDesc": "Tras atacar, si el objetivo enemigo está afectado por un estado negativo, Pela recupera energía.",
+        "tag": "Apoyo"
       }
     },
     "technique": {
       "0": {
         "name": "Iniciadora",
-        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{4, percent}}% del ATQ de Pela como Daño de Hielo a un enemigo al azar. Además, cada enemigo tiene una <u>probabilidad base</u> del {{1, percent}}% de ver reducida su DEF en un {{2, percent}}% durante {{3}} turnos.",
-        "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de daño a un enemigo al azar. Además, cada enemigo tiene una gran probabilidad de ver reducida su DEF."
+        "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige un {{4, percent}}% del ATQ de Pela como Daño de Hielo a un enemigo al azar. Además, cada enemigo tiene una probabilidad base del {{1, percent}}% de ver reducida su DEF en un {{2, percent}}% durante {{3}} turnos.",
+        "shortDesc": "Ataca al enemigo y entra en combate. Inflige una pequeña cantidad de daño a un enemigo al azar. Además, cada enemigo tiene una gran probabilidad de ver reducida su DEF.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Porrazo",
         "fullDesc": "Inflige un {{1, percent}}% más de daño a los enemigos afectados por estados negativos.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Estrategia secreta",
         "fullDesc": "Cuando Pela está en la batalla, el acierto de efecto de todos los aliados aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Barrido",
         "fullDesc": "Cuando la habilidad básica elimina un efecto positivo, el daño del siguiente ataque aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

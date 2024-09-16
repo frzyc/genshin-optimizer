@@ -5,56 +5,72 @@
       "0": {
         "name": "Lames éblouissantes",
         "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Sampo à un ennemi unique.",
-        "shortDesc": "Inflige des DGT de vent mineurs à un ennemi unique."
+        "shortDesc": "Inflige des DGT de vent mineurs à un ennemi unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Amour rebondissant",
         "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Sampo à un ennemi unique et inflige des DGT {{1}} fois supplémentaires, infligeant à chaque fois des DGT de vent équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Sampo à un ennemi aléatoire.",
-        "shortDesc": "Inflige des DGT de vent mineurs à des cibles ennemies uniques pour un total de 5 rebonds."
+        "shortDesc": "Inflige des DGT de vent mineurs à des cibles ennemies uniques pour un total de 5 rebonds.",
+        "tag": "Rebond"
       }
     },
     "ult": {
       "0": {
         "name": "Cadeau surprise",
-        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Sampo à tous les ennemis, avec {{4, percent}}% de <u>chances de base</u> d'augmenter les dégâts sur la durée subis par les cibles de <orangeStrong>{{2, percent}}%</orangeStrong> pendant {{3}} tours.",
-        "shortDesc": "Inflige des DGT de vent à tous les ennemis, avec de fortes chances de leur infliger des <orangeStrong>dégâts sur la durée accrus</orangeStrong>."
+        "fullDesc": "Inflige des DGT de vent équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Sampo à tous les ennemis, avec {{4, percent}}% de chances de base d'augmenter les dégâts sur la durée subis par les cibles de <orangeStrong>{{2, percent}}%</orangeStrong> pendant {{3}} tours.",
+        "shortDesc": "Inflige des DGT de vent à tous les ennemis, avec de fortes chances de leur infliger des <orangeStrong>dégâts sur la durée accrus</orangeStrong>.",
+        "tag": "ZdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Dague de bourrasque",
+        "fullDesc": "Les attaques de Sampo ont {{1, percent}}% de chances de base d'infliger Faille du vent pendant {{3}} tours.<br>Les ennemis affectés par Faille du vent subissent des dégâts de vent sur la durée équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Sampo au début de chaque tour. Faille du vent peut être cumulé jusqu'à {{4}} fois.",
+        "shortDesc": "Il y a une chance d'infliger <orangeStrong>Faille du vent</orangeStrong> à la cible après avoir touché un ennemi.",
+        "tag": "Renforcement"
       }
     },
     "technique": {
       "0": {
         "name": "Éblouissement",
-        "fullDesc": "Après utilisation de la technique de Sampo, les ennemis situés dans une zone définie subissent Aveuglement pendant {{1}} secondes. Les ennemis aveuglés ne peuvent pas détecter votre équipe.\\nLorsqu'un combat est lancé contre un ennemi aveuglé, il y a {{2, percent}}% de <u>chances fixes</u> de retarder l'action de tous les ennemis de {{3, percent}}%.",
-        "shortDesc": "Les ennemis dans une zone définie sont Aveuglés. En engageant le combat contre des ennemis Aveuglés, il y a de fortes chances de <u>retarder</u> leurs actions."
+        "fullDesc": "Après utilisation de la technique de Sampo, les ennemis situés dans une zone définie subissent Aveuglement pendant {{1}} secondes. Les ennemis aveuglés ne peuvent pas détecter votre équipe.<br>Lorsqu'un combat est lancé contre un ennemi aveuglé, il y a {{2, percent}}% de chances fixes de retarder l'action de tous les ennemis de {{3, percent}}%.",
+        "shortDesc": "Les ennemis dans une zone définie sont Aveuglés. En engageant le combat contre des ennemis Aveuglés, il y a de fortes chances de retarder leurs actions.",
+        "tag": "Incapacitation"
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Piège",
         "fullDesc": "Prolonge la durée de la Faille du vent provoquée par le talent d'{{1}} tour.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Position défensive",
         "fullDesc": "Régénère {{1}} points d'énergie supplémentaires lorsque le personnage utilise son ultime.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Pimenter les choses",
         "fullDesc": "Les ennemis affectés par l'effet Faille du vent infligent {{1, percent}}% de DGT en moins à Sampo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Joli cachet !",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "4": {
       "name": "Amour, gloire et... haine",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "TRÈS gros cachet !",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "6": {
       "name": "Envol des dépenses",

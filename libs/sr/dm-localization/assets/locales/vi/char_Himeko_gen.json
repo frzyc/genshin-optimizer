@@ -5,56 +5,72 @@
       "0": {
         "name": "Chỉnh Đốn Vũ Trang",
         "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Himeko.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Hỏa cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Sức Nóng Bùng Nổ",
         "fullDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Himeko, đồng thời gây Sát Thương Hỏa cho mục tiêu lân cận kẻ đó tương đương <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Himeko.",
-        "shortDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch, gây lượng nhỏ Sát Thương Hỏa cho mục tiêu lân cận."
+        "shortDesc": "Gây Sát Thương Hỏa cho 1 kẻ địch, gây lượng nhỏ Sát Thương Hỏa cho mục tiêu lân cận.",
+        "tag": "Khuếch Tán"
       }
     },
     "ult": {
       "0": {
         "name": "Lửa Thiên Giáng Trần",
         "fullDesc": "Gây Sát Thương Hỏa cho toàn bộ kẻ địch tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Himeko. Cứ tiêu diệt 1 kẻ địch sẽ hồi thêm cho Himeko {{2}} Năng Lượng.",
-        "shortDesc": "Gây Sát Thương Hỏa cho toàn phe địch, khi tiêu diệt kẻ địch sẽ hồi Năng Lượng."
+        "shortDesc": "Gây Sát Thương Hỏa cho toàn phe địch, khi tiêu diệt kẻ địch sẽ hồi Năng Lượng.",
+        "tag": "Đánh Lan"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Truy Kích Dồn Dập",
+        "fullDesc": "Khi Điểm Yếu của mục tiêu địch bị phá vỡ, Himeko sẽ nhận Nạp Năng Lượng, giới hạn là {{2}} điểm.<br>Sau khi phe ta tấn công, nếu Nạp Năng Lượng của Himeko đạt giới hạn sẽ phát động ngay 1 lần Đòn Đánh Theo Sau, gây Sát Thương Hỏa cho toàn phe địch tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Himeko, đồng thời tiêu hao toàn bộ Nạp Năng Lượng.<br>Khi bắt đầu chiến đấu sẽ nhận 1 điểm Nạp Năng Lượng.",
+        "shortDesc": "Khi điểm yếu của kẻ địch bị phá vỡ sẽ nhận nạp năng lượng.<br>Sau khi mục tiêu phe ta tấn công, nếu nạp năng lượng đạt giới hạn, <orangeStrong>sẽ phát động ngay Đòn Đánh Theo Sau</orangeStrong>, gây Sát Thương Hỏa cho <orangeStrong>toàn bộ kẻ địch</orangeStrong> và tiêu hao tất cả nạp năng lượng.<br>Khi bắt đầu chiến đấu sẽ nhận 1 điểm nạp năng lượng.",
+        "tag": "Đánh Lan"
       }
     },
     "technique": {
       "0": {
         "name": "Lửa Thiêu Âm Ỉ",
-        "fullDesc": "Sau khi dùng Bí Kỹ sẽ tạo ra vùng đặc biệt trong {{4}} giây. Khi vào chiến đấu với kẻ địch trong vùng này có {{1, percent}}% <u>xác suất cơ bản</u> khiến Sát Thương Hỏa mà kẻ địch phải chịu tăng {{2, percent}}%, duy trì {{3}} hiệp. Cùng một lúc tối đa chỉ tồn tại 1 hiệu ứng vùng do phe ta tạo ra.",
-        "shortDesc": "Tạo một khu vực đặc biệt. Sau khi vào chiến đấu với kẻ địch trong khu vực, sẽ có xác suất lớn <orangeStrong>tăng Sát Thương Hỏa mà kẻ địch phải chịu</orangeStrong>."
+        "fullDesc": "Sau khi dùng Bí Kỹ sẽ tạo ra vùng đặc biệt trong {{4}} giây. Khi vào chiến đấu với kẻ địch trong vùng này có {{1, percent}}% xác suất cơ bản khiến Sát Thương Hỏa mà kẻ địch phải chịu tăng {{2, percent}}%, duy trì {{3}} hiệp. Cùng một lúc tối đa chỉ tồn tại 1 hiệu ứng vùng do phe ta tạo ra.",
+        "shortDesc": "Tạo một khu vực đặc biệt. Sau khi vào chiến đấu với kẻ địch trong khu vực, sẽ có xác suất lớn <orangeStrong>tăng Sát Thương Hỏa mà kẻ địch phải chịu</orangeStrong>.",
+        "tag": "Quấy Nhiễu"
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Ngôi Sao Lửa",
-        "fullDesc": "Khi thi triển tấn công có {{1, percent}}% xác suất cơ bản khiến kẻ địch rơi vào trạng thái Thiêu Đốt, duy trì {{2}} hiệp.\\nTrong trạng thái Thiêu Đốt, khi bắt đầu mỗi hiệp, kẻ địch chịu Sát Thương Hỏa duy trì tương đương {{3, percent}}% Tấn Công của Himeko.",
-        "shortDesc": ""
+        "fullDesc": "Khi thi triển tấn công có {{1, percent}}% xác suất cơ bản khiến kẻ địch rơi vào trạng thái Thiêu Đốt, duy trì {{2}} hiệp.<br>Trong trạng thái Thiêu Đốt, khi bắt đầu mỗi hiệp, kẻ địch chịu Sát Thương Hỏa duy trì tương đương {{3, percent}}% Tấn Công của Himeko.",
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Nóng Bỏng",
         "fullDesc": "Sát thương Chiến Kỹ gây cho mục tiêu địch ở trạng thái Thiêu Đốt tăng {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Chuẩn Mực",
         "fullDesc": "Nếu Phần Trăm HP hiện tại cao hơn hoặc bằng {{1, percent}}%, thì Tỷ Lệ Bạo Kích tăng {{2, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

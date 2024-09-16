@@ -5,56 +5,72 @@
       "0": {
         "name": "Spectrum Beam",
         "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Asta's ATK to a single enemy.",
-        "shortDesc": "Deals minor Fire DMG to a single enemy."
+        "shortDesc": "Deals minor Fire DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Meteor Storm",
         "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Asta's ATK to a single enemy and further deals DMG for 4 extra times, with each time dealing Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Asta's ATK to a random enemy.",
-        "shortDesc": "Deals minor Fire DMG to single enemy targets with 5 Bounces in total."
+        "shortDesc": "Deals minor Fire DMG to single enemy targets with 5 Bounces in total.",
+        "tag": "Bounce"
       }
     },
     "ult": {
       "0": {
         "name": "Astral Blessing",
         "fullDesc": "Increases SPD of all allies by <orangeStrong>{{1}}</orangeStrong> for {{2}} turn(s).",
-        "shortDesc": "<orangeStrong>Increases SPD</orangeStrong> for all allies."
+        "shortDesc": "<orangeStrong>Increases SPD</orangeStrong> for all allies.",
+        "tag": "Support"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Astrometry",
+        "fullDesc": "Gains 1 stack of Charging for every different enemy hit by Asta plus an extra stack if the enemy hit has Fire Weakness.<br>For every stack of Charging Asta has, all allies' ATK increases by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, up to {{2}} time(s).<br>Starting from her second turn, Asta's Charging stack count is reduced by {{3}} at the beginning of every turn.",
+        "shortDesc": "The character will receive 1 stack of Charging for every different enemy they hit, for a maximum of 5 stacks. Every stack of Charging increases ATK for all allies. At the beginning of their turn, reduce Charging stacks.",
+        "tag": "Support"
       }
     },
     "technique": {
       "0": {
         "name": "Miracle Flash",
         "fullDesc": "Immediately attacks the enemy. After entering battle, deals Fire DMG equal to {{1, percent}}% of Asta's ATK to all enemies.",
-        "shortDesc": "Attacks the enemy. After entering battle, deals minor DMG to all enemies."
+        "shortDesc": "Attacks the enemy. After entering battle, deals minor DMG to all enemies.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Sparks",
-        "fullDesc": "Asta's Basic ATK has a {{1, percent}}% base chance to Burn an enemy target for {{2}} turn(s).\\nBurned enemies take Fire DoT equal to {{3, percent}}% of DMG dealt by Asta's Basic ATK at the start of each turn.",
-        "shortDesc": ""
+        "fullDesc": "Asta's Basic ATK has a {{1, percent}}% base chance to Burn an enemy target for {{2}} turn(s).<br>Burned enemies take Fire DoT equal to {{3, percent}}% of DMG dealt by Asta's Basic ATK at the start of each turn.",
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Ignite",
         "fullDesc": "When Asta is on the field, all allies' Fire DMG increases by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Constellation",
         "fullDesc": "Asta's DEF increases by {{1, percent}}% for every current Charging stack she possesses.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Meteor Showers for Wish and Want",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "4": {
       "name": "Aurora Basks in Beauty and Bliss",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Nebula Secludes in Runes and Riddles",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "6": {
       "name": "Cosmos Dreams in Calm and Comfort",

@@ -5,56 +5,72 @@
       "0": {
         "name": "武裝調律",
         "fullDesc": "對指定敵方單體造成等同於姬子<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的火屬性傷害。",
-        "shortDesc": "對敵方單體造成少量火屬性傷害。"
+        "shortDesc": "對敵方單體造成少量火屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "熔核爆裂",
         "fullDesc": "對指定敵方單體造成等同於姬子<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的火屬性傷害，同時對其相鄰目標造成等同於姬子<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的火屬性傷害。",
-        "shortDesc": "對敵方單體造成火屬性傷害，對相鄰目標造成少量火屬性傷害。"
+        "shortDesc": "對敵方單體造成火屬性傷害，對相鄰目標造成少量火屬性傷害。",
+        "tag": "擴散"
       }
     },
     "ult": {
       "0": {
         "name": "天墜之火",
         "fullDesc": "對敵方全體造成等同於姬子<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的火屬性傷害，每消滅1個敵方目標額外恢復姬子{{2}}點能量。",
-        "shortDesc": "對敵方全體造成火屬性傷害，消滅敵人時回復能量。"
+        "shortDesc": "對敵方全體造成火屬性傷害，消滅敵人時回復能量。",
+        "tag": "群體攻擊"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "乘勝追擊",
+        "fullDesc": "當有敵方目標的弱點被擊破時，姬子獲得充能，上限{{2}}點。<br>當我方目標發動攻擊後，若姬子的充能達到上限則立即發動1次追加攻擊，對敵方全體目標造成等同於姬子<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的火屬性傷害，並消耗全部充能。<br>戰鬥開始時獲得1點充能。",
+        "shortDesc": "敵人弱點被擊破時獲得充能。<br>我方目標攻擊後，若充能達到上限則<orangeStrong>立即發動追加攻擊</orangeStrong>，對<orangeStrong>敵方全體</orangeStrong>造成火屬性傷害並消耗全部充能。<br>戰鬥開始時獲得1點充能。",
+        "tag": "群體攻擊"
       }
     },
     "technique": {
       "0": {
         "name": "不完全燃燒",
-        "fullDesc": "使用秘技後，製造1片持續{{4}}秒的特殊領域。與處於特殊領域內的敵人進入戰鬥後，有{{1, percent}}%的<u>基礎機率</u>使敵方目標受到的火屬性傷害提高{{2, percent}}%，持續{{3}}回合。由我方製造的領域效果同時最多只能存在1個。",
-        "shortDesc": "製造特殊領域。與領域內敵人進入戰鬥後，有高機率使敵方目標<orangeStrong>受到的火屬性傷害提高</orangeStrong>。"
+        "fullDesc": "使用秘技後，製造1片持續{{4}}秒的特殊領域。與處於特殊領域內的敵人進入戰鬥後，有{{1, percent}}%的基礎機率使敵方目標受到的火屬性傷害提高{{2, percent}}%，持續{{3}}回合。由我方製造的領域效果同時最多只能存在1個。",
+        "shortDesc": "製造特殊領域。與領域內敵人進入戰鬥後，有高機率使敵方目標<orangeStrong>受到的火屬性傷害提高</orangeStrong>。",
+        "tag": "妨害"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "星火",
-        "fullDesc": "發動攻擊後，有{{1, percent}}%的基礎機率使敵方目標陷入灼燒狀態，持續{{2}}回合。\\n灼燒狀態下，敵方目標每回合開始時受到等同於姬子{{3, percent}}%攻擊力的火屬性持續傷害。",
-        "shortDesc": ""
+        "fullDesc": "發動攻擊後，有{{1, percent}}%的基礎機率使敵方目標陷入灼燒狀態，持續{{2}}回合。<br>灼燒狀態下，敵方目標每回合開始時受到等同於姬子{{3, percent}}%攻擊力的火屬性持續傷害。",
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "灼熱",
         "fullDesc": "戰技對灼燒狀態下的敵方目標造成的傷害提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "道標",
         "fullDesc": "若現有生命值百分比大於等於{{1, percent}}%，則暴擊率提高{{2, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

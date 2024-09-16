@@ -5,61 +5,78 @@
       "0": {
         "name": "Hey! Verbrenn dich nicht!",
         "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Hooks ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen Feuer-SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Hey! Erinnerst du dich an Hook?",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Hooks ANG zu und verursacht bei dem Ziel mit einer <u>Grundchance</u> von {{2, percent}}% für {{3}} Rd. Brennen.\\nBrennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von Hooks ANG.",
-        "shortDesc": "Fügt einem Gegner Feuer-SCH zu und verursacht dem Ziel mit hoher Chance Brennen."
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Hooks ANG zu und verursacht bei dem Ziel mit einer Grundchance von {{2, percent}}% für {{3}} Rd. Brennen.<br>Brennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von Hooks ANG.",
+        "shortDesc": "Fügt einem Gegner Feuer-SCH zu und verursacht dem Ziel mit hoher Chance Brennen.",
+        "tag": "Einzelangriff"
       },
       "1": {
         "name": "Hey! Erinnerst du dich an Hook?",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Hooks ANG zu und verursacht beim Ziel mit einer <u>Grundchance</u> von {{2, percent}}% für {{3}} Rd. Brennen. Fügt außerdem angrenzenden Zielen Feuer-SCH in Höhe von <orangeStrong>{{5, percent}}%</orangeStrong> von Hooks ANG zu.\\nBrennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von Hooks ANG.",
-        "shortDesc": "Fügt einem Gegner Feuer-SCH zu und verursacht beim Ziel mit hoher Chance Brennen. Angrenzende Ziele erleiden geringen Feuer-SCH."
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Hooks ANG zu und verursacht beim Ziel mit einer Grundchance von {{2, percent}}% für {{3}} Rd. Brennen. Fügt außerdem angrenzenden Zielen Feuer-SCH in Höhe von <orangeStrong>{{5, percent}}%</orangeStrong> von Hooks ANG zu.<br>Brennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von Hooks ANG.",
+        "shortDesc": "Fügt einem Gegner Feuer-SCH zu und verursacht beim Ziel mit hoher Chance Brennen. Angrenzende Ziele erleiden geringen Feuer-SCH.",
+        "tag": "Ausdehnung"
       }
     },
     "ult": {
       "0": {
         "name": "Bumm! Hier kommt das Feuer!",
-        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Hooks ANG zu.\\nVerstärkt nach dem Einsatz des Ultimates die nächste Fertigkeit, die dem anvisierten Gegner sowie angrenzenden Zielen SCH zufügt.",
-        "shortDesc": "Fügt einem Gegner massiven Feuer-SCH zu und <orangeStrong>verstärkt Hooks nächste Fertigkeit</orangeStrong>."
+        "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Hooks ANG zu.<br>Verstärkt nach dem Einsatz des Ultimates die nächste Fertigkeit, die dem anvisierten Gegner sowie angrenzenden Zielen SCH zufügt.",
+        "shortDesc": "Fügt einem Gegner massiven Feuer-SCH zu und <orangeStrong>verstärkt Hooks nächste Fertigkeit</orangeStrong>.",
+        "tag": "Einzelangriff"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Ha! Öl ins Feuer!",
+        "fullDesc": "Beim Angriff gegen brennende Gegner wird zusätzlich Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Hooks ANG zugefügt und zusätzlich {{2}} Pkt. Energie wiederhergestellt.",
+        "shortDesc": "Fügt einem Gegner im Status Brennen <orangeStrong>zusätzlich geringen Feuer-SCH</orangeStrong> zu und stellt zusätzlich Energie wiederher.",
+        "tag": "Verstärkung"
       }
     },
     "technique": {
       "0": {
         "name": "Puh! Sieh sich einer das Chaos an!",
-        "fullDesc": "Greift den Gegner unmittelbar an. Nach Kampfeintritt fügt Hook einem zufälligen Gegner Feuer-SCH in Höhe von {{4, percent}}% ihres ANG zu und hat eine <u>Grundchance</u> von {{1, percent}}%, bei allen Gegnern für {{3}} Rd. Brennen zu verursachen.\\nBrennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von {{2, percent}}% von Hooks ANG.",
-        "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt einem zufälligen Gegner Feuer-SCH zu, mit einer hohen Chance, allen Gegnern Brennen zuzufügen."
+        "fullDesc": "Greift den Gegner unmittelbar an. Nach Kampfeintritt fügt Hook einem zufälligen Gegner Feuer-SCH in Höhe von {{4, percent}}% ihres ANG zu und hat eine Grundchance von {{1, percent}}%, bei allen Gegnern für {{3}} Rd. Brennen zu verursachen.<br>Brennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von {{2, percent}}% von Hooks ANG.",
+        "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt einem zufälligen Gegner Feuer-SCH zu, mit einer hohen Chance, allen Gegnern Brennen zuzufügen.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Unschuld",
         "fullDesc": "Stellt bei Auslösung des Talents LP in Höhe von {{1, percent}}% von Hooks max. LP wieder her.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Naivität",
         "fullDesc": "Erhöht die Chance von WDS gegen Mengenkontrolle-Debuffs um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Spiel mit dem Feuer",
         "fullDesc": "Zieht nach dem Einsatz des Ultimates Hooks Aktion um {{2, percent}}% vor und stellt zusätzlich {{1}} Pkt. Energie wieder her.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

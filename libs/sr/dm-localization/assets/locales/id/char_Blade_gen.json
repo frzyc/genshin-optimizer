@@ -5,68 +5,85 @@
       "0": {
         "name": "Shard Sword",
         "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Blade pada 1 target musuh.",
-        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       },
       "1": {
         "name": "Forest of Swords",
-        "fullDesc": "Mengonsumsi HP sebesar {{1, percent}}% Max HP Blade dan mengakibatkan Wind DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Blade + <orangeStrong>{{4, percent}}%</orangeStrong> Max HP Blade pada 1 musuh yang ditargetkan. Di saat bersamaan juga mengakibatkan Wind DMG sebesar <orangeStrong>{{3, percent}}%</orangeStrong> ATK Blade + <orangeStrong>{{5, percent}}%</orangeStrong> Max HP Blade pada musuh di sekitar target.\\nJika HP saat ini tidak cukup, HP Blade saat ini akan langsung berkurang hingga 1 saat melancarkan \"Forest of Swords\".\\n\"Forest of Swords\" tidak dapat memulihkan Poin Skill.",
-        "shortDesc": "Mengonsumsi HP diri sendiri, mengakibatkan Wind DMG pada 1 musuh, dan di saat bersamaan juga mengakibatkan Wind DMG dalam jumlah kecil pada musuh di sekitar target."
+        "fullDesc": "Mengonsumsi HP sebesar {{1, percent}}% Max HP Blade dan mengakibatkan Wind DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Blade + <orangeStrong>{{4, percent}}%</orangeStrong> Max HP Blade pada 1 musuh yang ditargetkan. Di saat bersamaan juga mengakibatkan Wind DMG sebesar <orangeStrong>{{3, percent}}%</orangeStrong> ATK Blade + <orangeStrong>{{5, percent}}%</orangeStrong> Max HP Blade pada musuh di sekitar target.<br>Jika HP saat ini tidak cukup, HP Blade saat ini akan langsung berkurang hingga 1 saat melancarkan \"Forest of Swords\".<br>\"Forest of Swords\" tidak dapat memulihkan Poin Skill.",
+        "shortDesc": "Mengonsumsi HP diri sendiri, mengakibatkan Wind DMG pada 1 musuh, dan di saat bersamaan juga mengakibatkan Wind DMG dalam jumlah kecil pada musuh di sekitar target.",
+        "tag": "Blast"
       }
     },
     "skill": {
       "0": {
         "name": "Hellscape",
-        "fullDesc": "Mengonsumsi HP sebesar {{1, percent}}% Max HP Blade dan memasuki status \"Hellscape\".\\nSaat berstatus \"Hellscape\", Blade tidak dapat melancarkan Skill dan DMG yang diakibatkannya akan meningkat <orangeStrong>{{4, percent}}%</orangeStrong>. Basic Attack \"Shard Sword\" akan meningkat menjadi \"Forest of Swords\" selama {{2}} giliran.\\nJika HP-nya tidak mencukupi, saat melancarkan Skill, HP Blade akan berkurang hingga 1.\\nSkill ini tidak dapat memulihkan Energy. Setelah melancarkan Skill ini, giliran saat ini tidak akan berakhir.",
-        "shortDesc": "Mengonsumsi HP diri, <orangeStrong>memperoleh penguatan Basic Attack</orangeStrong>, dan giliran kali ini tidak akan berakhir."
+        "fullDesc": "Mengonsumsi HP sebesar {{1, percent}}% Max HP Blade dan memasuki status \"Hellscape\".<br>Saat berstatus \"Hellscape\", Blade tidak dapat melancarkan Skill dan DMG yang diakibatkannya akan meningkat <orangeStrong>{{4, percent}}%</orangeStrong>. Basic Attack \"Shard Sword\" akan meningkat menjadi \"Forest of Swords\" selama {{2}} giliran.<br>Jika HP-nya tidak mencukupi, saat melancarkan Skill, HP Blade akan berkurang hingga 1.<br>Skill ini tidak dapat memulihkan Energy. Setelah melancarkan Skill ini, giliran saat ini tidak akan berakhir.",
+        "shortDesc": "Mengonsumsi HP diri, <orangeStrong>memperoleh penguatan Basic Attack</orangeStrong>, dan giliran kali ini tidak akan berakhir.",
+        "tag": "Enhance"
       }
     },
     "ult": {
       "0": {
         "name": "Death Sentence",
-        "fullDesc": "Mengubah HP Blade saat ini menjadi 50% dari Max HP-nya, serta mengakibatkan Wind DMG pada 1 musuh sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK + <orangeStrong>{{2, percent}}%</orangeStrong> Max HP + <orangeStrong>{{5, percent}}%</orangeStrong> perhitungan akumulasi jumlah HP Blade yang berkurang dalam pertempuran ini. Di saat yang bersamaan juga akan mengakibatkan Wind DMG pada target di sekitarnya sebesar <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> ATK + <orangeStrong>{{4, percent}}%</orangeStrong> Max HP + <orangeStrong>{{6, percent}}%</orangeStrong> perhitungan akumulasi jumlah HP Blade yang berkurang dalam pertempuran ini.\\nPerhitungan jumlah akumulasi HP Blade yang berkurang di pertempuran saat ini maksimal tidak dapat melebihi {{7, percent}}% Max HP Blade. Setelah melancarkan Ultimate, perhitungan jumlah akumulasi akan direset ulang dan diakumulasi kembali.",
-        "shortDesc": "Mengonversi HP saat ini menjadi 50% Max HP, dan mengakibatkan Wind DMG dalam jumlah besar pada 1 musuh, serta Wind DMG pada target di sekitarnya."
+        "fullDesc": "Mengubah HP Blade saat ini menjadi 50% dari Max HP-nya, serta mengakibatkan Wind DMG pada 1 musuh sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK + <orangeStrong>{{2, percent}}%</orangeStrong> Max HP + <orangeStrong>{{5, percent}}%</orangeStrong> perhitungan akumulasi jumlah HP Blade yang berkurang dalam pertempuran ini. Di saat yang bersamaan juga akan mengakibatkan Wind DMG pada target di sekitarnya sebesar <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> ATK + <orangeStrong>{{4, percent}}%</orangeStrong> Max HP + <orangeStrong>{{6, percent}}%</orangeStrong> perhitungan akumulasi jumlah HP Blade yang berkurang dalam pertempuran ini.<br>Perhitungan jumlah akumulasi HP Blade yang berkurang di pertempuran saat ini maksimal tidak dapat melebihi {{7, percent}}% Max HP Blade. Setelah melancarkan Ultimate, perhitungan jumlah akumulasi akan direset ulang dan diakumulasi kembali.",
+        "shortDesc": "Mengonversi HP saat ini menjadi 50% Max HP, dan mengakibatkan Wind DMG dalam jumlah besar pada 1 musuh, serta Wind DMG pada target di sekitarnya.",
+        "tag": "Blast"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Shuhu's Gift",
+        "fullDesc": "Saat Blade terkena serangan atau mengonsumsi HP-nya, dia akan mendapatkan 1 lapis Charge, maksimal 5 lapis. Setiap kali Blade terkena serangan, Blade hanya bisa mendapatkan 1 lapis Charge efek ini.<br>Setelah jumlah Charge mencapai batas maksimal, Blade akan segera melancarkan 1 kali Serangan Lanjutan yang mengakibatkan Wind DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Blade + <orangeStrong>{{4, percent}}%</orangeStrong> Max HP Blade pada seluruh musuh. Di saat yang bersamaan, akan memulihkan HP Blade sebesar {{3, percent}}% Max HP-nya. Setelah Serangan Lanjutan ini dilancarkan, semua lapisan Charge akan dihapus.",
+        "shortDesc": "Saat HP Blade berkurang, Blade akan memperoleh 1 lapis Charge. Saat Charge ditumpuk hingga batas maksimum, Blade akan <orangeStrong>segera mengakibatkan Wind DMG pada seluruh musuh</orangeStrong> dan memulihkan HP, kemudian mengonsumsi seluruh Charge.",
+        "tag": "AoE"
       }
     },
     "technique": {
       "0": {
         "name": "Karma Wind",
-        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengonsumsi HP sebesar {{2, percent}}% Max HP Blade dan di saat bersamaan, mengakibatkan Wind DMG sebesar {{1, percent}}% Max HP Blade pada seluruh musuh.\\nJika HP saat ini tidak cukup, saat melancarkan Technique, HP Blade saat ini akan berkurang hingga 1.",
-        "shortDesc": "Menyerang musuh. Setelah memasuki pertempuran, mengonsumsi HP diri sendiri dan mengakibatkan Wind DMG pada seluruh musuh."
+        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengonsumsi HP sebesar {{2, percent}}% Max HP Blade dan di saat bersamaan, mengakibatkan Wind DMG sebesar {{1, percent}}% Max HP Blade pada seluruh musuh.<br>Jika HP saat ini tidak cukup, saat melancarkan Technique, HP Blade saat ini akan berkurang hingga 1.",
+        "shortDesc": "Menyerang musuh. Setelah memasuki pertempuran, mengonsumsi HP diri sendiri dan mengakibatkan Wind DMG pada seluruh musuh.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Vita Infinita",
         "fullDesc": "Saat persentase HP Blade saat ini kurang dari atau sama dengan 50% Max HP-nya, Pemulihan HP yang diterimanya meningkat {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Neverending Deaths",
         "fullDesc": "Setelah melancarkan \"Forest of Sword\", jika serangan mengenai target musuh yang berstatus Weakness Break, maka Blade akan memulihkan HP-nya sebesar {{1, percent}}% Max HP dirinya + {{2}}.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Cyclone of Destruction",
         "fullDesc": "DMG Serangan Lanjutan yang dilancarkan Talent meningkat {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
   "ranks": {
     "1": {
       "name": "Blade Cuts the Deepest in Hell",
-      "desc": "Ultimate DMG yang diakibatkan pada musuh yang ditarget akan meningkat lagi sebanyak {{1, percent}}% perhitungan akumulasi jumlah HP Blade yang berkurang dalam pertempuran ini.\\nPerhitungan jumlah akumulasi HP Blade yang berkurang di pertempuran saat ini maksimal tidak dapat melebihi {{2, percent}}% Max HP Blade. Setelah melancarkan Ultimate, perhitungan jumlah akumulasi akan direset ulang dan diakumulasi kembali."
+      "desc": "Ultimate DMG yang diakibatkan pada musuh yang ditarget akan meningkat lagi sebanyak {{1, percent}}% perhitungan akumulasi jumlah HP Blade yang berkurang dalam pertempuran ini.<br>Perhitungan jumlah akumulasi HP Blade yang berkurang di pertempuran saat ini maksimal tidak dapat melebihi {{2, percent}}% Max HP Blade. Setelah melancarkan Ultimate, perhitungan jumlah akumulasi akan direset ulang dan diakumulasi kembali."
     },
     "2": {
       "name": "Ten Thousand Sorrows From One Broken Dream",

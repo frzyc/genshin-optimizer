@@ -5,56 +5,72 @@
       "0": {
         "name": "破魔锥",
         "fullDesc": "对指定敌方单体造成等同于雪衣<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的量子属性伤害。",
-        "shortDesc": "对敌方单体造成少量量子属性伤害。"
+        "shortDesc": "对敌方单体造成少量量子属性伤害。",
+        "tag": "单攻"
       }
     },
     "skill": {
       "0": {
         "name": "摄伏诸恶",
         "fullDesc": "对指定敌方单体造成等同于雪衣<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的量子属性伤害，同时对其相邻目标造成等同于雪衣<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的量子属性伤害。",
-        "shortDesc": "对敌方单体造成量子属性伤害，对相邻目标造成少量量子属性伤害。"
+        "shortDesc": "对敌方单体造成量子属性伤害，对相邻目标造成少量量子属性伤害。",
+        "tag": "扩散"
       }
     },
     "ult": {
       "0": {
         "name": "天罚贯身",
-        "fullDesc": "对指定敌方单体造成等同于雪衣<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的量子属性伤害，本次攻击无视弱点属性削减敌方单体的韧性。击破弱点时，触发量子属性的弱点击破效果。\\n在本次攻击中，削减的韧性越多，造成的伤害越高，最多提高<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>。",
-        "shortDesc": "对敌方单体造成大量量子属性伤害，本次攻击<orangeStrong>无视弱点属性</orangeStrong>削减敌方单体的韧性，削减的韧性越多造成的伤害越高。"
+        "fullDesc": "对指定敌方单体造成等同于雪衣<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的量子属性伤害，本次攻击无视弱点属性削减敌方单体的韧性。击破弱点时，触发量子属性的弱点击破效果。<br>在本次攻击中，削减的韧性越多，造成的伤害越高，最多提高<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>。",
+        "shortDesc": "对敌方单体造成大量量子属性伤害，本次攻击<orangeStrong>无视弱点属性</orangeStrong>削减敌方单体的韧性，削减的韧性越多造成的伤害越高。",
+        "tag": "单攻"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "十王圣断，业报恒常",
+        "fullDesc": "雪衣施放攻击削减敌方韧性时，会叠加【恶报】层数，削减的韧性越多叠加【恶报】层数越多，可以叠加{{1}}层。<br>当雪衣的队友施放攻击削减敌方韧性后，雪衣叠加{{3}}层【恶报】。<br>当【恶报】叠加至上限时消耗当前所有【恶报】，立即对敌方目标发动追加攻击，造成3次伤害，每次伤害对敌方随机单体造成等同于雪衣<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的量子属性伤害。本次追加攻击无法叠加【恶报】。",
+        "shortDesc": "雪衣施放攻击时或雪衣的队友施放攻击后削减敌方韧性，雪衣会叠加【恶报】。当【恶报】叠加至上限时，<orangeStrong>立即发动追加攻击</orangeStrong>，对敌方单体造成少量量子属性伤害，共弹射3次，并消耗全部【恶报】。",
+        "tag": "弹射"
       }
     },
     "technique": {
       "0": {
         "name": "斩立决",
         "fullDesc": "立即攻击敌人，进入战斗后对敌方全体造成等同于雪衣{{1, percent}}%攻击力的量子属性伤害。",
-        "shortDesc": "攻击敌人，进战后对敌方全体造成少量量子属性伤害。"
+        "shortDesc": "攻击敌人，进战后对敌方全体造成少量量子属性伤害。",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻击",
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "预兆机杼",
         "fullDesc": "使自身造成的伤害提高，提高数值等同于击破特攻的{{1, percent}}%，最多使造成的伤害提高{{2, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "摧锋轴承",
         "fullDesc": "如果敌方目标当前韧性大于等于其自身韧性上限的{{1, percent}}%，施放终结技时造成的伤害提高{{2, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "伺观中枢",
         "fullDesc": "雪衣会累计溢出的【恶报】层数，最多累计{{1}}层。雪衣触发天赋后，获得相应溢出层数的【恶报】。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

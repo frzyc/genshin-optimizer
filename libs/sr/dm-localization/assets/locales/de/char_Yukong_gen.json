@@ -5,56 +5,72 @@
       "0": {
         "name": "Heldin mit Pfeil und Bogen",
         "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Yukongs ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Ermutigende Salve",
-        "fullDesc": "Erhält {{1}}-fach „Surrende Bogensehnen“, bis zu 2-fach stapelbar. Wenn „Surrende Bogensehnen“ aktiv ist, wird der ANG aller Verbündeten um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht. Jedes Mal, wenn die Runde eines Verbündeten endet, wird 1-fach „Surrende Bogensehnen“ von Yukong entfernt.\\nWenn Yukong in ihrer Runde „Surrende Bogensehnen“ durch den Einsatz der Fertigkeit erhält, wird „Surrende Bogensehnen“ nicht entfernt.",
-        "shortDesc": "Erhält 2-fach „Surrende Bogensehnen“. Wenn „Surrende Bogensehnen“ aktiv ist, wird der <orangeStrong>ANG</orangeStrong> aller Verbündeten erhöht."
+        "fullDesc": "Erhält {{1}}-fach „Surrende Bogensehnen“, bis zu 2-fach stapelbar. Wenn „Surrende Bogensehnen“ aktiv ist, wird der ANG aller Verbündeten um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht. Jedes Mal, wenn die Runde eines Verbündeten endet, wird 1-fach „Surrende Bogensehnen“ von Yukong entfernt.<br>Wenn Yukong in ihrer Runde „Surrende Bogensehnen“ durch den Einsatz der Fertigkeit erhält, wird „Surrende Bogensehnen“ nicht entfernt.",
+        "shortDesc": "Erhält 2-fach „Surrende Bogensehnen“. Wenn „Surrende Bogensehnen“ aktiv ist, wird der <orangeStrong>ANG</orangeStrong> aller Verbündeten erhöht.",
+        "tag": "Unterstützung"
       }
     },
     "ult": {
       "0": {
         "name": "Turmfalke im Sturzflug",
         "fullDesc": "Wenn Yukong ihren Ultimate einsetzt und „Surrende Bogensehnen“ aktiv ist, werden die KRIT-Rate aller Verbündeten zusätzlich um <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> und der KRIT-SCH aller Verbündeten um <orangeStrong>{{3, percent}}%</orangeStrong> erhöht. Fügt gleichzeitig einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Yukongs ANG zu.",
-        "shortDesc": "Wenn „Surrende Bogensehnen“ aktiv ist, werden die <orangeStrong>KRIT-Rate und der KRIT-SCH</orangeStrong> aller Verbündeten erhöht. Fügt gleichzeitig einem Gegner massiven imaginären SCH zu."
+        "shortDesc": "Wenn „Surrende Bogensehnen“ aktiv ist, werden die <orangeStrong>KRIT-Rate und der KRIT-SCH</orangeStrong> aller Verbündeten erhöht. Fügt gleichzeitig einem Gegner massiven imaginären SCH zu.",
+        "tag": "Einzelangriff"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Sieben Schichten, ein Pfeil",
+        "fullDesc": "Der Standardangriff fügt zusätzlichen imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Yukongs ANG zu und erhöht außerdem die WDS-Reduzierung dieses Angriffs um {{2, percent}}%. Dieser Effekt kann nach {{3}} Rd. erneut ausgelöst werden.",
+        "shortDesc": "Der Standardangriff fügt geringen zusätzlichen imaginären SCH zu und erhöht die WDS-Reduzierung dieses Angriffs. Dieser Effekt kann nach 1 Rd. erneut ausgelöst werden.",
+        "tag": "Verstärkung"
       }
     },
     "technique": {
       "0": {
         "name": "Jagd nach dem Wind",
         "fullDesc": "Aktiviert nach dem Einsatz der Technik für {{1}} Sek. Sprintmodus. Der Sprintmodus erhöht die Bewegungs-GES um {{2, percent}}% und gewährt Yukong {{3}}-fach „Surrende Bogensehnen“, wenn sie durch Angriff auf den Gegner einen Kampf einleitet.",
-        "shortDesc": "Erhöht ihre <orangeStrong>Bewegungs-GES</orangeStrong>. Gewährt 2-fach „Surrende Bogensehnen“, wenn sie durch Angriff auf den Gegner einen Kampf einleitet."
+        "shortDesc": "Erhöht ihre <orangeStrong>Bewegungs-GES</orangeStrong>. Gewährt 2-fach „Surrende Bogensehnen“, wenn sie durch Angriff auf den Gegner einen Kampf einleitet.",
+        "tag": "Verstärkung"
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Scharfschützin",
         "fullDesc": "Wird ein Debuff auf Yukong ausgeübt, kann sie 1-mal dessen Wirkung widerstehen. Dieser Effekt kann nach {{1}} Rd. erneut ausgelöst werden.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Erbin der Bogenkunst",
         "fullDesc": "Wenn Yukong mitkämpft, verursachen alle Verbündeten {{1, percent}}% mehr imaginären SCH.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Noble Haltung",
         "fullDesc": "Wenn „Surrende Bogensehnen“ aktiv ist, stellt Yukong bei jeder Aktion von Verbündeten zusätzlich {{1}} Pkt. Energie wieder her.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

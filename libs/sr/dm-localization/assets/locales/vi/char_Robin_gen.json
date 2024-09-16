@@ -5,56 +5,72 @@
       "0": {
         "name": "Âm Thanh Trắng Vỗ Cánh",
         "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Robin.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Khúc Hát Ngân Nga Của Đôi Cánh",
         "fullDesc": "Tăng <orangeStrong>{{1, percent}}%</orangeStrong> sát thương do toàn phe ta gây ra, duy trì {{2}} hiệp, mỗi khi bắt đầu hiệp của Robin, số hiệp duy trì giảm 1.",
-        "shortDesc": "<orangeStrong>Tăng sát thương</orangeStrong> do toàn phe ta gây ra."
+        "shortDesc": "<orangeStrong>Tăng sát thương</orangeStrong> do toàn phe ta gây ra.",
+        "tag": "Hỗ Trợ"
       }
     },
     "ult": {
       "0": {
         "name": "Ngàn Âm Hợp Xướng, Tẩu Pháp Vạn Vì Sao",
-        "fullDesc": "Khi Robin vào trạng thái Hợp Tấu, sẽ khiến đồng đội (ngoại trừ bản thân) lập tức hành động.\\nKhi trong trạng thái Hợp Tấu, tấn công của toàn thể phe ta tăng, giá trị tăng bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Tấn Công của Robin +<orangeStrong>{{3}}</orangeStrong>. Sau mỗi lần mục tiêu phe ta tấn công, Robin sẽ gây thêm 1 lần <u>Sát Thương Vật Lý kèm theo</u> bằng <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công của bản thân, tỷ lệ Bạo Kích của sát thương này cố định là {{5, percent}}%, sát thương Bạo Kích cố định là {{6, percent}}%.\\nKhi trong trạng thái Hợp Tấu, Robin miễn dịch <u>Hiệu Ứng Xấu loại Khống Chế</u>, trước khi kết thúc trạng thái Hợp Tấu sẽ không vào hiệp của bản thân và không thể hành động.\\nKhi trên vị trí thứ tự hành động xuất hiện đếm ngược Hợp Tấu, thì lúc bắt đầu hiệp đếm ngược, Robin sẽ thoát khỏi trạng thái Hợp Tấu và lập tức hành động, thời gian đếm ngược cố định có {{2}} điểm Tốc Độ.",
-        "shortDesc": "Vào trạng thái Hợp Tấu, khiến toàn phe ta <orangeStrong>tăng Tấn Công</orangeStrong>, và khiến đồng đội lập tức hành động, sau khi tấn công Robin gây thêm <orangeStrong>Sát Thương Vật Lý kèm theo<u></u></orangeStrong>. Trong thời gian trạng thái Hợp Tấu, miễn dịch <u>Hiệu Ứng Xấu loại Khống Chế</u>, trước khi kết thúc trạng thái sẽ không vào hiệp của bản thân và không thể hành động cho đến khi kết thúc đếm ngược."
+        "fullDesc": "Khi Robin vào trạng thái Hợp Tấu, sẽ khiến đồng đội (ngoại trừ bản thân) lập tức hành động.<br>Khi trong trạng thái Hợp Tấu, tấn công của toàn thể phe ta tăng, giá trị tăng bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Tấn Công của Robin +<orangeStrong>{{3}}</orangeStrong>. Sau mỗi lần mục tiêu phe ta tấn công, Robin sẽ gây thêm 1 lần Sát Thương Vật Lý kèm theo bằng <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công của bản thân, tỷ lệ Bạo Kích của sát thương này cố định là {{5, percent}}%, sát thương Bạo Kích cố định là {{6, percent}}%.<br>Khi trong trạng thái Hợp Tấu, Robin miễn dịch Hiệu Ứng Xấu loại Khống Chế, trước khi kết thúc trạng thái Hợp Tấu sẽ không vào hiệp của bản thân và không thể hành động.<br>Khi trên vị trí thứ tự hành động xuất hiện đếm ngược Hợp Tấu, thì lúc bắt đầu hiệp đếm ngược, Robin sẽ thoát khỏi trạng thái Hợp Tấu và lập tức hành động, thời gian đếm ngược cố định có {{2}} điểm Tốc Độ.",
+        "shortDesc": "Vào trạng thái Hợp Tấu, khiến toàn phe ta <orangeStrong>tăng Tấn Công</orangeStrong>, và khiến đồng đội lập tức hành động, sau khi tấn công Robin gây thêm <orangeStrong>Sát Thương Vật Lý kèm theo</orangeStrong>. Trong thời gian trạng thái Hợp Tấu, miễn dịch Hiệu Ứng Xấu loại Khống Chế, trước khi kết thúc trạng thái sẽ không vào hiệp của bản thân và không thể hành động cho đến khi kết thúc đếm ngược.",
+        "tag": "Hỗ Trợ"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Điệp Khúc Du Dương",
+        "fullDesc": "Tăng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Sát Thương Bạo Kích cho toàn phe ta, và sau khi mục tiêu phe ta tấn công phe địch, Robin sẽ hồi thêm cho bản thân {{2}} Năng Lượng.",
+        "shortDesc": "Tăng <orangeStrong>Sát Thương Bạo Kích</orangeStrong> cho toàn phe ta, và sau khi nhân vật phe ta tấn công phe địch, Robin sẽ hồi thêm Năng Lượng.",
+        "tag": "Hỗ Trợ"
       }
     },
     "technique": {
       "0": {
         "name": "Khúc Dạo Đầu Say Men",
         "fullDesc": "Sau khi thi triển Bí Kỹ, sẽ tạo ra một vùng đặc biệt quanh bản thân duy trì {{1}} giây. Kẻ địch trong vùng này sẽ không tấn công Robin, đồng thời sẽ đi theo Robin trong thời gian vùng này được kích hoạt. Sau khi vào chiến đấu trong thời gian vùng đặc biệt được kích hoạt, khi bắt đầu mỗi đợt, Robin sẽ hồi {{2}} Năng Lượng. Cùng một lúc tối đa chỉ tồn tại 1 hiệu ứng vùng do phe ta tạo ra.",
-        "shortDesc": "Tạo một vùng đặc biệt xung quanh bản thân. Kẻ địch trong vùng này sẽ không tấn công Robin. Sau khi vào chiến đấu trong lúc vùng đặc biệt được kích hoạt, khi bắt đầu mỗi đợt, Robin sẽ hồi thêm <orangeStrong>{{2}}</orangeStrong> Năng Lượng."
+        "shortDesc": "Tạo một vùng đặc biệt xung quanh bản thân. Kẻ địch trong vùng này sẽ không tấn công Robin. Sau khi vào chiến đấu trong lúc vùng đặc biệt được kích hoạt, khi bắt đầu mỗi đợt, Robin sẽ hồi thêm <orangeStrong>{{2}}</orangeStrong> Năng Lượng.",
+        "tag": "Hỗ Trợ"
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của kẻ địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Cadenza Màu Sắc",
         "fullDesc": "Khi bắt đầu chiến đấu, bản thân Ưu Tiên Hành Động {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Khúc Đệm Ngẫu Hứng",
         "fullDesc": "Trong trạng thái Hợp Tấu, Sát Thương Bạo Kích của toàn thể phe ta gây ra khi phát động Đòn Đánh Theo Sau tăng {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Giai Điệu Chuyển Tiến",
         "fullDesc": "Khi thi triển Chiến Kỹ sẽ hồi thêm {{1}} Năng Lượng.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

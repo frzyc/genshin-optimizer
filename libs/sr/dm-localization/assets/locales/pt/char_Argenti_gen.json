@@ -5,61 +5,78 @@
       "0": {
         "name": "Perfume Efêmero",
         "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Argenti a um único inimigo-alvo.",
-        "shortDesc": "Causa Dano Físico leve a um único inimigo."
+        "shortDesc": "Causa Dano Físico leve a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Justiça, Aqui Floresce",
         "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Argenti a todos os inimigos.",
-        "shortDesc": "Causa Dano Físico leve a todos os inimigos."
+        "shortDesc": "Causa Dano Físico leve a todos os inimigos.",
+        "tag": "Área"
       }
     },
     "ult": {
       "0": {
         "name": "Pois Neste Jardim, a Beleza Suprema Concede",
         "fullDesc": "Consome {{2}} de Energia e causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Argenti a todos os inimigos.",
-        "shortDesc": "Consome <orangeStrong>{{2}}</orangeStrong> de Energia e causa Dano Físico a todos os inimigos."
+        "shortDesc": "Consome <orangeStrong>{{2}}</orangeStrong> de Energia e causa Dano Físico a todos os inimigos.",
+        "tag": "Área"
       },
       "1": {
         "name": "Mérito Concedido em \"Meu\" Jardim",
         "fullDesc": "Consome {{4}} de Energia e causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Argenti a todos os inimigos, e ainda causa Dano por {{2}} vez(es) extra(s), com cada vez causando Dano Físico igual a <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de Argenti a um inimigo aleatório.",
-        "shortDesc": "Consome <orangeStrong>{{4}}</orangeStrong> de Energia e causa Dano Físico a todos os inimigos e adicionalmente causa Dano Físico leve a inimigos-alvo únicos por 6 Ricochetes."
+        "shortDesc": "Consome <orangeStrong>{{4}}</orangeStrong> de Energia e causa Dano Físico a todos os inimigos e adicionalmente causa Dano Físico leve a inimigos-alvo únicos por 6 Ricochetes.",
+        "tag": "Área"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Objeto Sublime",
+        "fullDesc": "Para cada inimigo atingido quando Argenti usa seu ATQ Básico, Perícia ou Perícia Suprema, regenera a Energia de Argenti em {{1}}, e concede a ele um acúmulo de Apoteose, além de aumentar sua Chance de CRIT em <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. Este efeito pode acumular até {{3}} vez(es).",
+        "shortDesc": "Quando Argenti usa seu ATQ Básico, Perícia ou Perícia Suprema, ele <orangeStrong>regenera Energia</orangeStrong> e aumenta sua <orangeStrong>Chance de CRIT</orangeStrong> para cada inimigo-alvo atingido.",
+        "tag": "Aprimoramento"
       }
     },
     "technique": {
       "0": {
         "name": "Manifesto da Mais Pura Virtude",
-        "fullDesc": "Após usar sua Técnica, inflige Confusão por {{1}} segundo(s) aos inimigos dentro de uma área definida. Inimigos com Confusão não atacarão a equipe ativamente.\\nAo atacar um inimigo com Confusão para entrar em combate, causa Dano Físico de {{2, percent}}% do ATQ de Argenti a todos os inimigos e regenera a Energia de Argenti em {{3}}.",
-        "shortDesc": "Inflige Confusão em todos os inimigos em uma área definida. Ao atacar um inimigo com Confusão para entrar em combate, causa Dano Físico leve a todos os inimigos e regenera energia de Argenti."
+        "fullDesc": "Após usar sua Técnica, inflige Confusão por {{1}} segundo(s) aos inimigos dentro de uma área definida. Inimigos com Confusão não atacarão a equipe ativamente.<br>Ao atacar um inimigo com Confusão para entrar em combate, causa Dano Físico de {{2, percent}}% do ATQ de Argenti a todos os inimigos e regenera a Energia de Argenti em {{3}}.",
+        "shortDesc": "Inflige Confusão em todos os inimigos em uma área definida. Ao atacar um inimigo com Confusão para entrar em combate, causa Dano Físico leve a todos os inimigos e regenera energia de Argenti.",
+        "tag": "Incapacitação"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Piedade",
         "fullDesc": "No início de uma rodada, ganha imediatamente {{1}} acúmulo(s) de Apoteose.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Generosidade",
         "fullDesc": "Quando inimigos-alvo entram na batalha, regenera {{1}} de Energia imediatamente para si.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Coragem",
         "fullDesc": "Causa {{2, percent}}% de Dano extra a inimigos cuja porcentagem de PV for igual ou menor que {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -74,7 +91,7 @@
     },
     "3": {
       "name": "Glória do Caminho de Espinhos",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "4": {
       "name": "Devoção do Clarim",
@@ -82,7 +99,7 @@
     },
     "5": {
       "name": "Neve, de Algum Lugar no Cosmos",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "6": {
       "name": "\"Vossa\" Resplandecência",

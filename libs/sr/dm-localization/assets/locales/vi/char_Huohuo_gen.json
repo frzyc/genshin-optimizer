@@ -5,56 +5,72 @@
       "0": {
         "name": "Cờ Lệnh - Hô Mưa Gọi Gió",
         "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Phong bằng <orangeStrong>{{1, percent}}%</orangeStrong> Giới Hạn HP của Huohuo.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Phong cho 1 kẻ địch."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Phong cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Linh Phù - Hộ Thân",
-        "fullDesc": "Giải trừ {{5}} <u>Hiệu Ứng Xấu</u> cho 1 đồng đội chỉ định, lập tức hồi phục cho 1 đồng đội chỉ định một lượng HP bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Huohuo +<orangeStrong>{{2}}</orangeStrong>, đồng thời hồi phục cho mục tiêu ở gần một lượng HP bằng <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Huohuo +<orangeStrong>{{4}}</orangeStrong>.",
-        "shortDesc": "Giải trừ 1 <u>Hiệu Ứng Xấu</u> cho 1 đồng đội, đồng thời <orangeStrong>hồi phục HP</orangeStrong> cho 1 đồng đội và mục tiêu ở gần."
+        "fullDesc": "Giải trừ {{5}} Hiệu Ứng Xấu cho 1 đồng đội chỉ định, lập tức hồi phục cho 1 đồng đội chỉ định một lượng HP bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Huohuo +<orangeStrong>{{2}}</orangeStrong>, đồng thời hồi phục cho mục tiêu ở gần một lượng HP bằng <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Huohuo +<orangeStrong>{{4}}</orangeStrong>.",
+        "shortDesc": "Giải trừ 1 Hiệu Ứng Xấu cho 1 đồng đội, đồng thời <orangeStrong>hồi phục HP</orangeStrong> cho 1 đồng đội và mục tiêu ở gần.",
+        "tag": "Hồi Phục"
       }
     },
     "ult": {
       "0": {
         "name": "Lão Đuôi - Chế Ngự Tâm Linh",
         "fullDesc": "Hồi phục Năng Lượng cho đồng đội ngoài bản thân bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Giới Hạn Năng Lượng của mỗi người, đồng thời tăng <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> Tấn Công cho người này, duy trì {{3}} hiệp.",
-        "shortDesc": "<orangeStrong>Hồi phục Năng Lượng</orangeStrong> cho đồng đội ngoài bản thân, đồng thời <orangeStrong>tăng Tấn Công</orangeStrong> cho người này."
+        "shortDesc": "<orangeStrong>Hồi phục Năng Lượng</orangeStrong> cho đồng đội ngoài bản thân, đồng thời <orangeStrong>tăng Tấn Công</orangeStrong> cho người này.",
+        "tag": "Hỗ Trợ"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Nhập Thể - Kết Nối Siêu Hình",
+        "fullDesc": "Sau khi thi triển Chiến Kỹ, Huohuo nhận Cầu Mệnh, duy trì {{1}} hiệp, mỗi khi Huohuo bắt đầu hiệp, số hiệp duy trì giảm 1. Khi Huohuo có Cầu Mệnh, và mục tiêu phe ta bắt đầu hiệp hoặc dùng Tuyệt Kỹ, sẽ hồi HP bằng <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Huohuo +<orangeStrong>{{5}}</orangeStrong> cho bản thân, đồng thời sinh ra 1 lần hiệu ứng hồi phục cho mỗi một mục tiêu phe ta có phần trăm HP hiện tại từ {{6, percent}}% trở xuống.<br>Khi kích hoạt Cầu Mệnh trị liệu cho mục tiêu phe ta, sẽ giải trừ {{2}} Hiệu Ứng Xấu của mục tiêu này, hiệu ứng này có thể kích hoạt {{7}} lần, sau khi thi triển Chiến Kỹ lần nữa sẽ làm mới số lần kích hoạt hiệu ứng.",
+        "shortDesc": "Sau khi thi triển Chiến Kỹ, Huohuo sẽ nhận \"Cầu Mệnh\". Khi Huohuo có \"Cầu Mệnh\", và mục tiêu phe ta bắt đầu hiệp hoặc thi triển Tuyệt Kỹ sẽ <orangeStrong>hồi phục HP bản thân</orangeStrong>, đồng thời <orangeStrong>sinh ra 1 lần hiệu ứng hồi phục</orangeStrong> lên <orangeStrong>mỗi mục tiêu có HP tương đối thấp của phe ta</orangeStrong>. Khi kích hoạt Cầu Mệnh trị liệu cho mục tiêu phe ta, sẽ <orangeStrong>giải trừ 1 Hiệu Ứng Xấu</orangeStrong> của mục tiêu này.",
+        "tag": "Hồi Phục"
       }
     },
     "technique": {
       "0": {
         "name": "Hung Sát - Trấn Áp Yêu Tà",
-        "fullDesc": "Huohuo hù dọa kẻ địch xung quanh, khiến kẻ địch rơi vào trạng thái \"Phách Tán\". Kẻ địch ở trạng thái \"Phách Tán\" sẽ trốn chạy thật xa khỏi Huohuo, duy trì {{4}} giây. Sau khi vào chiến đấu với kẻ địch ở trạng thái \"Phách Tán\", có {{1, percent}}% <u>xác suất cơ bản</u> giảm {{2, percent}}% Tấn Công của mỗi một kẻ địch, duy trì {{3}} hiệp.",
-        "shortDesc": "Khiến kẻ địch xung quanh rơi vào trạng thái \"Phách Tán\". Sau khi vào chiến đấu với kẻ địch ở trạng thái \"Phách Tán\", có xác suất lớn <orangeStrong>giảm Tấn Công</orangeStrong> của kẻ địch."
+        "fullDesc": "Huohuo hù dọa kẻ địch xung quanh, khiến kẻ địch rơi vào trạng thái \"Phách Tán\". Kẻ địch ở trạng thái \"Phách Tán\" sẽ trốn chạy thật xa khỏi Huohuo, duy trì {{4}} giây. Sau khi vào chiến đấu với kẻ địch ở trạng thái \"Phách Tán\", có {{1, percent}}% xác suất cơ bản giảm {{2, percent}}% Tấn Công của mỗi một kẻ địch, duy trì {{3}} hiệp.",
+        "shortDesc": "Khiến kẻ địch xung quanh rơi vào trạng thái \"Phách Tán\". Sau khi vào chiến đấu với kẻ địch ở trạng thái \"Phách Tán\", có xác suất lớn <orangeStrong>giảm Tấn Công</orangeStrong> của kẻ địch.",
+        "tag": "Quấy Nhiễu"
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm sức bền thuộc tính tương ứng của kẻ địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Không Dám Chuyên Quyền",
         "fullDesc": "Khi bắt đầu chiến đấu, Huohuo nhận Cầu Mệnh, duy trì {{1}} hiệp.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Mệnh Trấn Hung",
         "fullDesc": "Tăng {{1, percent}}% xác suất Kháng Hiệu Ứng Xấu dạng Khống Chế.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Nỗi Sợ Kinh Hoàng",
         "fullDesc": "Khi kích hoạt Thiên Phú trị liệu cho mục tiêu phe ta, Huohuo sẽ hồi phục {{1}} điểm Năng Lượng.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

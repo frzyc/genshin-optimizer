@@ -5,56 +5,72 @@
       "0": {
         "name": "Mélodrame",
         "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Sparkle à une cible unique.",
-        "shortDesc": "Inflige des DGT quantiques mineurs à une cible unique."
+        "shortDesc": "Inflige des DGT quantiques mineurs à une cible unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Anguille sous roche",
-        "fullDesc": "Augmente les DGT critiques d'une cible alliée unique à hauteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> des DGT critiques de Sparkle + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> pendant {{3}} tour et avance de {{4, percent}}% l'action de cet allié.\\nLorsque Sparkle utilise cette capacité sur elle-même, son action n'est pas avancée.",
-        "shortDesc": "Augmente les <orangeStrong>DGT critiques</orangeStrong> d'un allié et avance son action."
+        "fullDesc": "Augmente les DGT critiques d'une cible alliée unique à hauteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> des DGT critiques de Sparkle + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> pendant {{3}} tour et avance de {{4, percent}}% l'action de cet allié.<br>Lorsque Sparkle utilise cette capacité sur elle-même, son action n'est pas avancée.",
+        "shortDesc": "Augmente les <orangeStrong>DGT critiques</orangeStrong> d'un allié et avance son action.",
+        "tag": "Soutien"
       }
     },
     "ult": {
       "0": {
         "name": "Personnage aux mille visages",
         "fullDesc": "Régénère {{2}} points de compétence pour l'équipe et accorde Énigme à tous les alliés. Chaque cumul de l'effet d'augmentation de DGT accordé par le talent de Sparkle augmente de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> supplémentaires pour les alliés qui bénéficient d'Énigme. Dure {{4}} tours.",
-        "shortDesc": "Régénère des <orangeStrong>points de compétence</orangeStrong> pour l'équipe et permet d'accroître l'augmentation de DGT accordée par son talent."
+        "shortDesc": "Régénère des <orangeStrong>points de compétence</orangeStrong> pour l'équipe et permet d'accroître l'augmentation de DGT accordée par son talent.",
+        "tag": "Soutien"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Fausse piste",
+        "fullDesc": "Tant que Sparkle est sur le champ de bataille, le nombre maximum de points de compétence augmente de {{3}}. Chaque fois qu'un allié utilise 1 point de compétence, les DGT infligés par tous les alliés augmentent de <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>. Cet effet dure {{1}} tours et peut être cumulé jusqu'à {{4}} fois.",
+        "shortDesc": "Augmente le <orangeStrong>maximum de points de compétence</orangeStrong> de l'équipe. Chaque fois qu'un allié utilise des points de compétence, il <orangeStrong>augmente les DGT infligés</orangeStrong> par tous les alliés.",
+        "tag": "Soutien"
       }
     },
     "technique": {
       "0": {
         "name": "Histoire bancale",
         "fullDesc": "L'utilisation de cette technique accorde Tromperie à tous les alliés pendant {{2}} secondes. Les personnages qui bénéficient de l'effet Tromperie ne sont pas détectés par les ennemis, et le fait d'engager le combat dans cet état permet de récupérer {{1}} points de compétence pour l'équipe.",
-        "shortDesc": "L'utilisation de cette technique accorde Tromperie à tous les alliés. Les personnages qui bénéficient de l'effet Tromperie ne sont pas détectés par les ennemis, et le fait d'engager le combat dans cet état permet de récupérer des <orangeStrong>points de compétence</orangeStrong> pour les alliés."
+        "shortDesc": "L'utilisation de cette technique accorde Tromperie à tous les alliés. Les personnages qui bénéficient de l'effet Tromperie ne sont pas détectés par les ennemis, et le fait d'engager le combat dans cet état permet de récupérer des <orangeStrong>points de compétence</orangeStrong> pour les alliés.",
+        "tag": "Soutien"
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Chroniques",
         "fullDesc": "Régénère {{1}} points d'énergie supplémentaires lors de l'utilisation de l'ATQ normale.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Fleur artificielle",
         "fullDesc": "L'effet d'augmentation des DGT critiques accordé par la compétence est prolongé jusqu'au début du prochain tour de la cible.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Rêverie nocturne",
         "fullDesc": "Augmente l'ATQ de tous les alliés de {{4, percent}}%. Lorsqu'il y a 1/2/3 alliés de type quantique dans l'équipe, l'ATQ des alliés de type quantique augmente de {{1, percent}}%/{{2, percent}}%/{{3, percent}}% supplémentaires.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Rêve irréalisable",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "4": {
       "name": "La vie est un jeu",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Vérité aux deux visages",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "6": {
       "name": "Choix multiples",

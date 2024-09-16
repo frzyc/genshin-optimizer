@@ -5,56 +5,72 @@
       "0": {
         "name": "Punho da Condenação",
         "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Gepard a um único inimigo.",
-        "shortDesc": "Causa Dano de Gelo leve a um único inimigo."
+        "shortDesc": "Causa Dano de Gelo leve a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Golpe Intimidador",
-        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Gepard a um único inimigo, com {{2, percent}}% de <u>chance-base</u> de o inimigo sofrer Congelamento por {{3}} rodada(s).\\nDurante o Congelamento, o inimigo não pode agir e sofre Dano <u>Adicional</u> de Gelo igual a <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de Gepard no início de cada rodada.",
-        "shortDesc": "Causa Dano de Gelo a um único inimigo, <orangeStrong>com uma chance de causar Congelamento</orangeStrong>."
+        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Gepard a um único inimigo, com {{2, percent}}% de chance-base de o inimigo sofrer Congelamento por {{3}} rodada(s).<br>Durante o Congelamento, o inimigo não pode agir e sofre Dano Adicional de Gelo igual a <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de Gepard no início de cada rodada.",
+        "shortDesc": "Causa Dano de Gelo a um único inimigo, <orangeStrong>com uma chance de causar Congelamento</orangeStrong>.",
+        "tag": "Alvo Único"
       }
     },
     "ult": {
       "0": {
         "name": "Muralha Resistente",
         "fullDesc": "Aplica um Escudo a todos os aliados, absorvendo Dano igual a <orangeStrong><unbreak>#1[i]%</orangeStrong> </color>da DEF de Gepard + <orangeStrong><unbreak>#3[i]</orangeStrong> </color>por {{2}} rodada(s).",
-        "shortDesc": "<orangeStrong>Fornece um Escudo</orangeStrong> para todos os aliados."
+        "shortDesc": "<orangeStrong>Fornece um Escudo</orangeStrong> para todos os aliados.",
+        "tag": "Defesa"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Vontade Inabalável",
+        "fullDesc": "Ao ser alvo de um golpe fatal, ao invés de ser derrubado, Gepard restaura imediatamente <orangeStrong>{{1, percent}}%</orangeStrong> de seus PV máximos. Este efeito só pode ser ativado uma vez por batalha.",
+        "shortDesc": "Ao ser alvo de um golpe fatal, <orangeStrong>ao invés de ser derrubado</orangeStrong>, restaura PV imediatamente. Este efeito só pode ser ativado 1 vez por batalha.",
+        "tag": "Restauração"
       }
     },
     "technique": {
       "0": {
         "name": "Camaradagem",
         "fullDesc": "Após Gepard usar sua Técnica, quando a próxima batalha começar, um Escudo será aplicado a todos os aliados, absorvendo Dano igual a {{1, percent}}% da DEF de Gepard + {{3}} por {{2}} rodada(s).",
-        "shortDesc": "Depois que este personagem usa a Técnica, todos os aliados ganham um Escudo no início da próxima batalha."
+        "shortDesc": "Depois que este personagem usa a Técnica, todos os aliados ganham um Escudo no início da próxima batalha.",
+        "tag": "Defesa"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Integridade",
         "fullDesc": "Gepard tem mais chance de ser atacado por inimigos.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Comandante",
         "fullDesc": "Quando a \"Vontade Inabalável\" for ativada, a Energia de Gepard será restaurada para 100%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Bravura",
         "fullDesc": "O ATQ de Gepard aumenta em {{1, percent}}% de sua DEF atual. Este efeito é renovado no início de cada rodada.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Nunca Se Renda",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "4": {
       "name": "A Fé Move Montanhas",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Punho de Ferro Gélido",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "6": {
       "name": "Determinação Inabalável",

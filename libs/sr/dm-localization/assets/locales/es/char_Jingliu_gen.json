@@ -5,61 +5,78 @@
       "0": {
         "name": "Brillo resplandeciente",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Destello trascendental",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a un enemigo y obtiene {{2}} acumulación de Sizigia.",
-        "shortDesc": "Inflige Daño de Hielo a un enemigo y obtiene <orangeStrong>1 acumulación de Sizigia</orangeStrong>."
+        "shortDesc": "Inflige Daño de Hielo a un enemigo y obtiene <orangeStrong>1 acumulación de Sizigia</orangeStrong>.",
+        "tag": "ATQ individual"
       },
       "1": {
         "name": "Reflejo helado de la luna",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a un enemigo y un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a los enemigos adyacentes. Consume {{2}} acumulación de Sizigia. Esta habilidad no consume pts. de habilidad básica.",
-        "shortDesc": "Inflige Daño de Hielo a un enemigo y a los enemigos adyacentes. Consume 1 acumulación de Sizigia."
+        "shortDesc": "Inflige Daño de Hielo a un enemigo y a los enemigos adyacentes. Consume 1 acumulación de Sizigia.",
+        "tag": "Ráfaga"
       }
     },
     "ult": {
       "0": {
         "name": "Sueño de flores efímeras",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a un enemigo y un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Jingliu como Daño de Hielo a los enemigos adyacentes. Cuando termina el ataque, obtiene {{2}} acumulación de Sizigia.",
-        "shortDesc": "Inflige una gran cantidad de Daño de Hielo a un enemigo y Daño de Hielo a los enemigos adyacentes. Además, obtiene <orangeStrong>1 acumulación de Sizigia</orangeStrong>."
+        "shortDesc": "Inflige una gran cantidad de Daño de Hielo a un enemigo y Daño de Hielo a los enemigos adyacentes. Además, obtiene <orangeStrong>1 acumulación de Sizigia</orangeStrong>.",
+        "tag": "Ráfaga"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Transmigración creciente",
+        "fullDesc": "Cuando Jingliu tiene {{5}} acumulaciones de Sizigia, entra en el estado de Transmigración espectral, su acción se adelanta un {{6, percent}}% y su Prob. CRIT aumenta en un <orangeStrong>{{7, percent}}%</orangeStrong>. Después, la habilidad básica Destello trascendental se potencia y se convierte en Reflejo helado de la luna (solo puede usar esta habilidad básica). Al lanzar un ataque en el estado de Transmigración espectral, consume un {{2, percent}}% de los PV máx. de los aliados (como máximo, consume PV hasta que a cada aliado solo le quede 1). El ATQ de Jingliu aumenta en un {{3, percent}}% de la cantidad total de PV consumidos a todos los aliados, hasta un máximo del <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ base de Jingliu. Dura hasta que termine el ataque actual. No puede volver a entrar en el estado de Transmigración espectral antes de que este acabe. Sizigia se puede acumular hasta 3 veces. Cuando no quedan acumulaciones de Sizigia, sale del estado de Transmigración espectral.",
+        "shortDesc": "Cuando tiene <orangeStrong>{{5}}</orangeStrong> acumulaciones de Sizigia, entra en el estado Transmigración espectral, <orangeStrong>su acción se adelanta un <unbreak>100%</orangeStrong></color>, su Prob. CRIT aumenta y <orangeStrong>potencia su habilidad básica</orangeStrong>. Al lanzar un ataque, consume PV de los aliados y <orangeStrong>aumenta el ATQ de Jingliu</orangeStrong> según la cantidad consumida. Cuando no quedan acumulaciones de Sizigia, sale del estado de Transmigración espectral.",
+        "tag": "Potenciación"
       }
     },
     "technique": {
       "0": {
         "name": "Resplandor de la verdad",
-        "fullDesc": "Tras usar la técnica, crea una zona especial a su alrededor que dura {{3}} segundos. Los enemigos que estén en la zona especial son afectados con Congelación. Al entrar en combate con los enemigos dentro de la zona, recupera {{6}} pts. de energía, obtiene {{1}} acumulación de Sizigia y tiene una <u>probabilidad base</u> del {{2, percent}}% de congelar a los enemigos durante {{4}} turno. Los enemigos congelados no pueden actuar y al principio de cada turno reciben un Daño de Hielo <u>adicional</u> equivalente al {{5, percent}}% del ATQ de Jingliu. Solo puede haber una zona especial creada por los aliados a la vez.",
-        "shortDesc": "Crea una zona especial a su alrededor. Los enemigos que estén en la zona <orangeStrong>se congelan</orangeStrong>. Al entrar en combate con los enemigos dentro de la zona, recupera energía, obtiene 1 acumulación de Sizigia y tiene una gran probabilidad de <orangeStrong>congelar</orangeStrong> a los enemigos."
+        "fullDesc": "Tras usar la técnica, crea una zona especial a su alrededor que dura {{3}} segundos. Los enemigos que estén en la zona especial son afectados con Congelación. Al entrar en combate con los enemigos dentro de la zona, recupera {{6}} pts. de energía, obtiene {{1}} acumulación de Sizigia y tiene una probabilidad base del {{2, percent}}% de congelar a los enemigos durante {{4}} turno. Los enemigos congelados no pueden actuar y al principio de cada turno reciben un Daño de Hielo adicional equivalente al {{5, percent}}% del ATQ de Jingliu. Solo puede haber una zona especial creada por los aliados a la vez.",
+        "shortDesc": "Crea una zona especial a su alrededor. Los enemigos que estén en la zona <orangeStrong>se congelan</orangeStrong>. Al entrar en combate con los enemigos dentro de la zona, recupera energía, obtiene 1 acumulación de Sizigia y tiene una gran probabilidad de <orangeStrong>congelar</orangeStrong> a los enemigos.",
+        "tag": "Alteración"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Paisaje infernal",
         "fullDesc": "En el estado Transmigración espectral, la RES a efecto aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Maestra de espadas",
         "fullDesc": "Tras usar Destello trascendental, la siguiente acción se adelanta un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Espectro gélido",
         "fullDesc": "En el estado Transmigración espectral, el daño que inflige la habilidad definitiva aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

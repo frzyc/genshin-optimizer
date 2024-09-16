@@ -5,56 +5,72 @@
       "0": {
         "name": "Lash of Riches",
         "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Jade's ATK to a single target enemy, and Quantum DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Jade's ATK to adjacent enemies.",
-        "shortDesc": "Deals minor Quantum DMG to a single enemy and minor Quantum DMG to enemies adjacent to it."
+        "shortDesc": "Deals minor Quantum DMG to a single enemy and minor Quantum DMG to enemies adjacent to it.",
+        "tag": "Blast"
       }
     },
     "skill": {
       "0": {
         "name": "Acquisition Surety",
-        "fullDesc": "Makes a single target ally become the Debt Collector and increases their SPD by {{1}}, lasting for {{4}} turn(s).\\nAfter the Debt Collector attacks, deals 1 instance of <u>Additional</u> Quantum DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Jade's ATK to each enemy target hit, and consumes the Debt Collector's HP by an amount equal to {{2, percent}}% of their Max HP. If the current HP is insufficient, reduces HP to 1.\\nIf Jade becomes the Debt Collector, she cannot gain the SPD boost effect, and her attacks do not consume HP.\\nWhen the Debt Collector exists on the field, Jade cannot use her Skill. At the start of Jade's every turn, the Debt Collector's duration decreases by 1 turn.",
-        "shortDesc": "Makes a single ally become the <orangeStrong>Debt Collector</orangeStrong> and increases their SPD. After the <orangeStrong>Debt Collector</orangeStrong> attacks, they deal minor <u>Additional</u> Quantum DMG to each enemy target hit and consume their own HP. When Jade becomes the Debt Collector, she cannot gain the SPD boost effect, and her attacks do not consume HP."
+        "fullDesc": "Makes a single target ally become the Debt Collector and increases their SPD by {{1}}, lasting for {{4}} turn(s).<br>After the Debt Collector attacks, deals 1 instance of Additional Quantum DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Jade's ATK to each enemy target hit, and consumes the Debt Collector's HP by an amount equal to {{2, percent}}% of their Max HP. If the current HP is insufficient, reduces HP to 1.<br>If Jade becomes the Debt Collector, she cannot gain the SPD boost effect, and her attacks do not consume HP.<br>When the Debt Collector exists on the field, Jade cannot use her Skill. At the start of Jade's every turn, the Debt Collector's duration decreases by 1 turn.",
+        "shortDesc": "Makes a single ally become the <orangeStrong>Debt Collector</orangeStrong> and increases their SPD. After the <orangeStrong>Debt Collector</orangeStrong> attacks, they deal minor Additional Quantum DMG to each enemy target hit and consume their own HP. When Jade becomes the Debt Collector, she cannot gain the SPD boost effect, and her attacks do not consume HP.",
+        "tag": "Support"
       }
     },
     "ult": {
       "0": {
         "name": "Vow of the Deep",
-        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Jade's ATK to all enemies. At the same time, Jade enhances her Talent's <u>follow-up attack</u>, increasing its DMG multiplier by <orangeStrong>{{1, percent}}%</orangeStrong>. This enhancement can take effect {{2}} time(s).",
-        "shortDesc": "Deals Quantum DMG to all enemies and gains increased the multiplier for <orangeStrong><u>follow-up attack</u></orangeStrong> DMG."
+        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{3, percent}}%</orangeStrong> of Jade's ATK to all enemies. At the same time, Jade enhances her Talent's follow-up attack, increasing its DMG multiplier by <orangeStrong>{{1, percent}}%</orangeStrong>. This enhancement can take effect {{2}} time(s).",
+        "shortDesc": "Deals Quantum DMG to all enemies and gains increased the multiplier for <orangeStrong>follow-up attack</orangeStrong> DMG.",
+        "tag": "AoE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Fang of Flare Flaying",
+        "fullDesc": "After Jade or the Debt Collector unit attacks, gains 1 point of Charge for each enemy target hit. Upon reaching {{3}} points of Charge, consumes the {{3}} points to launch 1 instance of follow-up attack, dealing Quantum DMG equal to <orangeStrong>{{5, percent}}%</orangeStrong> of Jade's ATK to all enemies. This follow-up attack does not generate Charge.<br>When launching her Talent's follow-up attack, Jade immediately gains {{4}} stack(s) of Pawned Asset, with each stack increasing CRIT DMG by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, stacking up to {{2}} times.",
+        "shortDesc": "After Jade or the <orangeStrong>Debt Collector</orangeStrong> unit attacks, gains 1 point of Charge for each enemy target hit. Upon reaching <orangeStrong>{{3}}</orangeStrong> points of Charge, consumes the <orangeStrong>{{3}}</orangeStrong> points to launch 1 instance of <orangeStrong>follow-up attack</orangeStrong>, dealing Quantum DMG to all enemies.<br>When Jade launches the <orangeStrong>follow-up attack</orangeStrong>, gains Pawned Asset and increases CRIT DMG, stacking up to <orangeStrong>{{2}}</orangeStrong> times.",
+        "tag": "AoE"
       }
     },
     "technique": {
       "0": {
         "name": "Visionary Predation",
         "fullDesc": "After using the Technique, inflicts enemies within a set area with Blind Fealty for {{1}} second(s). Enemies inflicted with Blind Fealty will not initiate attacks on allies. When entering battle via actively attacking enemies inflicted with Blind Fealty, all enemies with Blind Fealty will enter combat simultaneously. After entering battle, deals Quantum DMG equal to {{2, percent}}% of Jade's ATK to all enemies, and immediately gains {{3}} stack(s) of Pawned Asset.",
-        "shortDesc": "Inflicts Blind Fealty on enemies within a set area. Attacking an enemy with Blind Fealty causes all enemies with Blind Fealty to enter combat simultaneously. Upon entering combat, deals minor Quantum DMG to all enemies and immediately gains <orangeStrong>{{3}}</orangeStrong> stack(s) of Pawned Asset."
+        "shortDesc": "Inflicts Blind Fealty on enemies within a set area. Attacking an enemy with Blind Fealty causes all enemies with Blind Fealty to enter combat simultaneously. Upon entering combat, deals minor Quantum DMG to all enemies and immediately gains <orangeStrong>{{3}}</orangeStrong> stack(s) of Pawned Asset.",
+        "tag": "Impair"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Reverse Repo",
         "fullDesc": "When an enemy target enters combat, Jade gains {{2}} stack(s) of Pawned Asset. When the Debt Collector character's turn starts, additionally gains {{1}} stack(s) of Pawned Asset.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Collateral Ticket",
         "fullDesc": "When the battle starts, Jade's action is advanced forward by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Asset Forfeiture",
         "fullDesc": "Each Pawned Asset stack from the Talent additionally increases Jade's ATK by {{1, percent(fixed: 1)}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Honesty? Soon Mortgaged",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "4": {
       "name": "Sincerity? Put Option Only",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Hope? Hitherto Forfeited",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "6": {
       "name": "Equity? Pending Sponsorship",

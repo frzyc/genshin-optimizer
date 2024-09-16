@@ -5,56 +5,72 @@
       "0": {
         "name": "{RUBY_B#しっこう}疾行{RUBY_E#}する{RUBY_B#かみなり}雷{RUBY_E#}の{RUBY_B#ごと}如{RUBY_E#}し",
         "fullDesc": "指定した敵単体にアーランの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の雷属性ダメージを与える。"
+        "shortDesc": "敵単体に少量の雷属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#きんこ}禁錮{RUBY_E#}{RUBY_B#かいじょ}解除{RUBY_E#}",
         "fullDesc": "アーランのHPを最大HP{{1, percent}}%分消費して、指定した敵単体にアーランの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の雷属性ダメージを与える。残りHPが足りない場合、戦闘スキルを発動する時、アーランの残りHPが1になる。",
-        "shortDesc": "自身のHPを消費し、敵単体に雷属性ダメージを与える。"
+        "shortDesc": "自身のHPを消費し、敵単体に雷属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#きょうしゃ}狂者{RUBY_E#}の{RUBY_B#せいさい}制裁{RUBY_E#}",
         "fullDesc": "指定した敵単体にアーランの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性ダメージを与え、隣接する敵にアーランの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の雷属性ダメージを与える。",
-        "shortDesc": "敵単体に大量の雷属性ダメージを与え、隣接する敵に雷属性ダメージを与える。"
+        "shortDesc": "敵単体に大量の雷属性ダメージを与え、隣接する敵に雷属性ダメージを与える。",
+        "tag": "拡散攻撃"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#いた}痛{RUBY_E#}みと{RUBY_B#いか}怒{RUBY_E#}りの{RUBY_B#きわ}極{RUBY_E#}み",
+        "fullDesc": "アーランの失ったHPの割合に応じて与ダメージアップ、最大でアーランの与ダメージ+<orangeStrong>{{1, percent}}%</orangeStrong>",
+        "shortDesc": "自身の<orangeStrong>失ったHPの割合に応じて与ダメージをアップ</orangeStrong>する。",
+        "tag": "強化"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#とっきゅう}特急{RUBY_E#}ハーベスト",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵全体にアーランの攻撃力{{1, percent}}%分の雷属性ダメージを与える。",
-        "shortDesc": "敵を攻撃。戦闘に入った後、敵全体に少量の雷属性ダメージを与える。"
+        "shortDesc": "敵を攻撃。戦闘に入った後、敵全体に少量の雷属性ダメージを与える。",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#そせい}蘇生{RUBY_E#}",
         "fullDesc": "敵を倒した時、残りHPが{{1, percent}}%以下の場合、自身の最大HP{{2, percent}}%分のHPを回復する。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#けんにん}堅忍{RUBY_E#}",
         "fullDesc": "持続ダメージ系デバフに抵抗する確率+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#こうきょ}抗拒{RUBY_E#}",
         "fullDesc": "戦闘に入る時、残りHPが{{1, percent}}%以下の場合、アーランは持続ダメージ以外のすべてのダメージを防ぐ。アーランが攻撃を受けた後、この効果は解除される。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

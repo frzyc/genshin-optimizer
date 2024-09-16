@@ -19,6 +19,7 @@ const buff = buffs.RuanMei
 const sheet: UISheet<TalentSheetElementKey> = {
   basic: {
     name: chg('abilities.basic.0.name'),
+    tag: chg('abilities.basic.0.tag'),
     img: characterAsset(key, 'basic_0'),
     documents: [
       {
@@ -46,6 +47,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
   },
   skill: {
     name: chg('abilities.skill.0.name'),
+    tag: chg('abilities.skill.0.tag'),
     img: characterAsset(key, 'skill_0'),
     documents: [
       {
@@ -86,6 +88,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
   },
   ult: {
     name: chg('abilities.ult.0.name'),
+    tag: chg('abilities.ult.0.tag'),
     img: characterAsset(key, 'ult_0'),
     documents: [
       {
@@ -122,6 +125,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
   },
   talent: {
     name: chg('abilities.talent.0.name'),
+    tag: chg('abilities.talent.0.tag'),
     img: characterAsset(key, 'talent_0'),
     documents: [
       {
@@ -172,7 +176,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
     documents: [
       {
         type: 'text',
-        text: chg(`ranks.1.desc`),
+        text: chg(`ranks.1.desc`, getInterpolateObject(key, 'eidolon', 1)),
       },
       {
         type: 'fields',
@@ -191,7 +195,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
     documents: [
       {
         type: 'text',
-        text: chg(`ranks.2.desc`),
+        text: chg(`ranks.2.desc`, getInterpolateObject(key, 'eidolon', 2)),
       },
       {
         type: 'fields',
@@ -210,7 +214,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
     documents: [
       {
         type: 'text',
-        text: chg(`ranks.3.desc`),
+        text: chg(`ranks.3.desc`, getInterpolateObject(key, 'eidolon', 3)),
       },
       {
         type: 'fields',
@@ -233,7 +237,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
     documents: [
       {
         type: 'text',
-        text: chg(`ranks.4.desc`),
+        text: chg(`ranks.4.desc`, getInterpolateObject(key, 'eidolon', 4)),
       },
       {
         type: 'conditional',
@@ -248,7 +252,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
           fields: [
             // TODO: display node?
             { title: 'Break Effect', fieldRef: buff.e4_break_.tag },
-            { title: 'Turns', fieldValue: 2 },
+            { title: 'Turns', fieldValue: 3 },
           ],
         },
       },
@@ -260,7 +264,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
     documents: [
       {
         type: 'text',
-        text: chg(`ranks.5.desc`),
+        text: chg(`ranks.5.desc`, getInterpolateObject(key, 'eidolon', 5)),
       },
       {
         type: 'fields',
@@ -283,7 +287,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
     documents: [
       {
         type: 'text',
-        text: chg(`ranks.6.desc`),
+        text: chg(`ranks.6.desc`, getInterpolateObject(key, 'eidolon', 6)),
       },
     ],
   },

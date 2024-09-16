@@ -5,56 +5,72 @@
       "0": {
         "name": "갈취의 채찍",
         "fullDesc": "지정된 단일 적에게 제이드 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 양자 속성 피해를 가하고, 동시에 인접한 목표에게 제이드 공격력의 <orangeStrong>{{2, percent}}%</orangeStrong>만큼 양자 속성 피해를 가한다",
-        "shortDesc": "단일 적에게 소량의 양자 속성 피해를 가하고, 인접한 목표에게 소량의 양자 속성 피해를 가한다"
+        "shortDesc": "단일 적에게 소량의 양자 속성 피해를 가하고, 인접한 목표에게 소량의 양자 속성 피해를 가한다",
+        "tag": "확산"
       }
     },
     "skill": {
       "0": {
         "name": "병탄 합병의 담보",
-        "fullDesc": "지정된 단일 아군을 [빚 수금업자]로 만들며, 해당 목표의 속도가 {{1}}pt 증가한다, 지속 시간: {{4}}턴\\n[빚 수금업자]가 공격 발동 후 명중한 모든 적에게 제이드 공격력의 <orangeStrong>{{3, percent}}%</orangeStrong>만큼 양자 속성 <u>추가 피해</u>를 1회 가하고, [빚 수금업자] HP 최대치의 {{2, percent}}%만큼 HP를 소모한다. 현재 HP가 부족하면 HP가 1pt로 감소한다.\\n제이드가 [빚 수금업자]가 되면 속도 증가 효과를 획득할 수 없고 공격 후 HP를 소모하지 않는다.\\n필드에 [빚 수금업자]가 존재할 시 제이드는 전투 스킬을 발동할 수 없으며, 제이드의 턴이 시작될 때마다 [빚 수금업자] 상태의 지속 턴 수가 1 감소한다",
-        "shortDesc": "단일 아군이 <orangeStrong>[빚 수금업자]</orangeStrong>가 되며, 속도가 증가한다. <orangeStrong>[빚 수금업자]</orangeStrong>가 공격을 발동하면 명중한 모든 적에게 소량의 양자 속성 <u>추가 피해</u>를 가하고 자신의 HP를 소모한다. 제이드가 [빚 수금업자]가 되면 속도 증가 효과를 획득할 수 없고 공격 후 HP를 소모하지 않는다"
+        "fullDesc": "지정된 단일 아군을 [빚 수금업자]로 만들며, 해당 목표의 속도가 {{1}}pt 증가한다, 지속 시간: {{4}}턴<br>[빚 수금업자]가 공격 발동 후 명중한 모든 적에게 제이드 공격력의 <orangeStrong>{{3, percent}}%</orangeStrong>만큼 양자 속성 추가 피해를 1회 가하고, [빚 수금업자] HP 최대치의 {{2, percent}}%만큼 HP를 소모한다. 현재 HP가 부족하면 HP가 1pt로 감소한다.<br>제이드가 [빚 수금업자]가 되면 속도 증가 효과를 획득할 수 없고 공격 후 HP를 소모하지 않는다.<br>필드에 [빚 수금업자]가 존재할 시 제이드는 전투 스킬을 발동할 수 없으며, 제이드의 턴이 시작될 때마다 [빚 수금업자] 상태의 지속 턴 수가 1 감소한다",
+        "shortDesc": "단일 아군이 <orangeStrong>[빚 수금업자]</orangeStrong>가 되며, 속도가 증가한다. <orangeStrong>[빚 수금업자]</orangeStrong>가 공격을 발동하면 명중한 모든 적에게 소량의 양자 속성 추가 피해를 가하고 자신의 HP를 소모한다. 제이드가 [빚 수금업자]가 되면 속도 증가 효과를 획득할 수 없고 공격 후 HP를 소모하지 않는다",
+        "tag": "서포트"
       }
     },
     "ult": {
       "0": {
         "name": "서약의 심연, 영원의 계약",
-        "fullDesc": "모든 적에게 제이드 공격력의 <orangeStrong>{{3, percent}}%</orangeStrong>만큼 양자 속성 피해를 가한다. 또한 제이드 특성의 <u>추가 공격</u>이 강화되고, 추가 공격으로 가하는 피해 배율이 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 강화 효과는 {{2}}회 적용된다",
-        "shortDesc": "모든 적에게 양자 속성 피해를 가하고, 자신의 <orangeStrong><u>추가 공격</u></orangeStrong> 피해 배율이 증가한다"
+        "fullDesc": "모든 적에게 제이드 공격력의 <orangeStrong>{{3, percent}}%</orangeStrong>만큼 양자 속성 피해를 가한다. 또한 제이드 특성의 추가 공격이 강화되고, 추가 공격으로 가하는 피해 배율이 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 강화 효과는 {{2}}회 적용된다",
+        "shortDesc": "모든 적에게 양자 속성 피해를 가하고, 자신의 <orangeStrong>추가 공격</orangeStrong> 피해 배율이 증가한다",
+        "tag": "범위 공격"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "보석을 골라내는 이빨",
+        "fullDesc": "제이드 혹은 [빚 수금업자]가 된 목표가 공격 발동 후, 적을 1기 명중할 때마다 충전을 1pt 획득한다. 충전이 {{3}}pt에 도달하면 충전을 {{3}}pt 소모하여 추가 공격을 1회 발동하고, 모든 적에게 제이드 공격력의 <orangeStrong>{{5, percent}}%</orangeStrong>만큼 양자 속성 피해를 가한다. 이번 추가 공격은 충전을 획득할 수 없다.<br>제이드가 특성의 추가 공격을 발동하면 즉시 [전당품]을 {{4}}스택 획득하며, [전당품] 스택마다 치명타 피해가 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> 증가한다, 최대 중첩수: {{2}}스택",
+        "shortDesc": "제이드 혹은 <orangeStrong>[빚 수금업자]</orangeStrong>가 된 목표가 공격 발동 후, 적을 1기 명중할 때마다 충전을 1pt 획득한다. 충전이 <orangeStrong>{{3}}</orangeStrong>pt에 도달하면 충전을 <orangeStrong>{{3}}</orangeStrong>pt 소모하여 <orangeStrong>추가 공격</orangeStrong>을 1회 발동하고, 모든 적에게 양자 속성 피해를 가한다.<br>제이드가 <orangeStrong>추가 공격</orangeStrong> 발동 시 [전당품]을 획득하고 치명타 피해가 증가한다, 최대 중첩수: <orangeStrong>{{2}}</orangeStrong>스택",
+        "tag": "범위 공격"
       }
     },
     "technique": {
       "0": {
         "name": "사냥꾼의 시야",
         "fullDesc": "비술 사용 후 일정 구역 내의 적을 {{1}}초 동안 [맹종] 상태에 빠트린다. [맹종] 상태의 적은 아군을 선공하지 않는다. [맹종] 상태의 적을 선공해 전투 진입 시 모든 [맹종] 상태의 적이 동시에 전투에 진입한다. 전투 진입 후 모든 적에게 제이드 공격력의 {{2, percent}}%만큼 양자 속성 피해를 가하고, 즉시 [전당품]을 {{3}}스택 획득한다",
-        "shortDesc": "일정 구역 내의 적을 [맹종] 상태에 빠트린다. [맹종] 상태의 적을 공격하면 모든 [맹종] 상태의 적이 동시에 전투에 진입하며, 전투 진입 후 모든 적에게 소량의 양자 속성 피해를 가하고 즉시 [전당품]을 <orangeStrong>{{3}}</orangeStrong>스택 획득한다"
+        "shortDesc": "일정 구역 내의 적을 [맹종] 상태에 빠트린다. [맹종] 상태의 적을 공격하면 모든 [맹종] 상태의 적이 동시에 전투에 진입하며, 전투 진입 후 모든 적에게 소량의 양자 속성 피해를 가하고 즉시 [전당품]을 <orangeStrong>{{3}}</orangeStrong>스택 획득한다",
+        "tag": "방해"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "리버스 레포",
         "fullDesc": "적이 전투에 진입하면 제이드는 [전당품]을 {{2}}스택 획득한다. [빚 수금업자] 상태인 캐릭터의 턴이 시작되면 [전당품]을 추가로 {{1}}스택 획득한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "전당표",
         "fullDesc": "전투 시작 시 제이드의 행동 게이지가 {{1, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "유전물",
         "fullDesc": "특성의 [전당품] 1스택마다 추가로 제이드의 공격력을 {{1, percent(fixed: 1)}}% 증가시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

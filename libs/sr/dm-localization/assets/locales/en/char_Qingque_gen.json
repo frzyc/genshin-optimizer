@@ -5,61 +5,78 @@
       "0": {
         "name": "Flower Pick",
         "fullDesc": "Tosses 1 jade tile from the suit with the fewest tiles in hand to deal Quantum DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Qingque's ATK to a single enemy.",
-        "shortDesc": "Tosses a tile to deal minor Quantum DMG to a single enemy."
+        "shortDesc": "Tosses a tile to deal minor Quantum DMG to a single enemy.",
+        "tag": "Single Target"
       },
       "1": {
         "name": "Cherry on Top!",
-        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Qingque's ATK to a single enemy, and deals Quantum DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Qingque's ATK to enemies adjacent to it.\\n\"Cherry on Top!\" cannot recover Skill Points.",
-        "shortDesc": "Deals Quantum DMG to a single enemy and minor Quantum DMG to enemies adjacent to it."
+        "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Qingque's ATK to a single enemy, and deals Quantum DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Qingque's ATK to enemies adjacent to it.<br>\"Cherry on Top!\" cannot recover Skill Points.",
+        "shortDesc": "Deals Quantum DMG to a single enemy and minor Quantum DMG to enemies adjacent to it.",
+        "tag": "Blast"
       }
     },
     "skill": {
       "0": {
         "name": "A Scoop of Moon",
         "fullDesc": "Immediately draws {{1}} jade tile(s) and increases DMG by <orangeStrong>{{2, percent}}%</orangeStrong> until the end of the current turn. This effect can stack up to {{3}} time(s). The turn will not end after this Skill is used.",
-        "shortDesc": "<orangeStrong>Draws tiles</orangeStrong> and increases DMG dealt. <orangeStrong>This turn does not end</orangeStrong> after this action."
+        "shortDesc": "<orangeStrong>Draws tiles</orangeStrong> and increases DMG dealt. <orangeStrong>This turn does not end</orangeStrong> after this action.",
+        "tag": "Enhance"
       }
     },
     "ult": {
       "0": {
         "name": "A Quartet? Woo-hoo!",
         "fullDesc": "Deals Quantum DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Qingque's ATK to all enemies, and obtains 4 jade tiles of the same suit.",
-        "shortDesc": "Deals Quantum DMG to all enemies, then obtains 4 tiles of the same suit."
+        "shortDesc": "Deals Quantum DMG to all enemies, then obtains 4 tiles of the same suit.",
+        "tag": "AoE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Celestial Jade",
+        "fullDesc": "When an ally's turn starts, Qingque randomly draws 1 tile from 3 different suits and can hold up to 4 tiles at one time.<br>If Qingque starts her turn with 4 tiles of the same suit, she consumes all tiles to enter the \"Hidden Hand\" state.<br>While in this state, Qingque cannot use her Skill again. At the same time, Qingque's ATK increases by <orangeStrong>{{1, percent}}%</orangeStrong>, and her Basic ATK \"Flower Pick\" is enhanced, becoming \"Cherry on Top!\" The \"Hidden Hand\" state ends after using \"Cherry on Top!\".",
+        "shortDesc": "At the start of any ally's turn, draws a tile. At the start of this character's turn, if this character holds 4 tiles from the same suit, remove all tiles in possession and <orangeStrong>Enhance this Basic ATK</orangeStrong> while increasing this character's ATK.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Game Solitaire",
         "fullDesc": "After using Technique, Qingque draws {{1}} jade tile(s) when the battle starts.",
-        "shortDesc": "After they use their Technique, draw tile(s) at the start of the next battle."
+        "shortDesc": "After they use their Technique, draw tile(s) at the start of the next battle.",
+        "tag": "Enhance"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Tile Battle",
         "fullDesc": "Restores 1 Skill Point when using the Skill. This effect can only be triggered 1 time per battle.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Bide Time",
         "fullDesc": "Using the Skill increases DMG Boost effect of attacks by an extra {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Winning Hand",
         "fullDesc": "Qingque's SPD increases by {{1, percent}}% for 1 turn after using the Enhanced Basic ATK.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -74,15 +91,15 @@
     },
     "3": {
       "name": "Read Between the Tiles",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "4": {
       "name": "Right on the Tiles",
-      "desc": "After using Skill, there is a {{1, percent}}% fixed chance to gain Self-Sufficer, lasting until the end of the current turn. \\nWith Self-Sufficer, using Basic ATK or Enhanced Basic ATK immediately launches 1 follow-up attack on the same target, dealing Quantum DMG equal to 100% of Basic ATK DMG or Enhanced Basic ATK DMG."
+      "desc": "After using Skill, there is a {{1, percent}}% fixed chance to gain Self-Sufficer, lasting until the end of the current turn. <br>With Self-Sufficer, using Basic ATK or Enhanced Basic ATK immediately launches 1 follow-up attack on the same target, dealing Quantum DMG equal to 100% of Basic ATK DMG or Enhanced Basic ATK DMG."
     },
     "5": {
       "name": "Gambit for the Tiles",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "6": {
       "name": "Prevail Beyond the Tiles",

@@ -5,56 +5,72 @@
       "0": {
         "name": "Fist of Conviction",
         "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Gepard's ATK to a single enemy.",
-        "shortDesc": "Deals minor Ice DMG to a single enemy."
+        "shortDesc": "Deals minor Ice DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Daunting Smite",
-        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Gepard's ATK to a single enemy, with a {{2, percent}}% <u>base chance</u> to Freeze the enemy for {{3}} turn(s).\\nWhile Frozen, the enemy cannot take action and will take <u>Additional</u> Ice DMG equal to <orangeStrong>{{4, percent}}%</orangeStrong> of Gepard's ATK at the beginning of each turn.",
-        "shortDesc": "Deals Ice DMG to a single enemy, <orangeStrong>with a chance of Freezing them</orangeStrong>."
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Gepard's ATK to a single enemy, with a {{2, percent}}% base chance to Freeze the enemy for {{3}} turn(s).<br>While Frozen, the enemy cannot take action and will take Additional Ice DMG equal to <orangeStrong>{{4, percent}}%</orangeStrong> of Gepard's ATK at the beginning of each turn.",
+        "shortDesc": "Deals Ice DMG to a single enemy, <orangeStrong>with a chance of Freezing them</orangeStrong>.",
+        "tag": "Single Target"
       }
     },
     "ult": {
       "0": {
         "name": "Enduring Bulwark",
         "fullDesc": "Applies a Shield to all allies, absorbing DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Gepard's DEF plus <orangeStrong>{{3}}</orangeStrong> for {{2}} turn(s).",
-        "shortDesc": "<orangeStrong>Provides a Shield</orangeStrong> to all allies."
+        "shortDesc": "<orangeStrong>Provides a Shield</orangeStrong> to all allies.",
+        "tag": "Defense"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Unyielding Will",
+        "fullDesc": "When struck with a killing blow, instead of becoming knocked down, Gepard's HP immediately restores to <orangeStrong>{{1, percent}}%</orangeStrong> of his Max HP. This effect can only trigger once per battle.",
+        "shortDesc": "When struck by a killing blow, <orangeStrong>instead of being knocked down</orangeStrong>, immediately restores HP. This effect can only trigger 1 time per battle.",
+        "tag": "Restore"
       }
     },
     "technique": {
       "0": {
         "name": "Comradery",
         "fullDesc": "After Gepard uses his Technique, when the next battle begins, a Shield will be applied to all allies, absorbing DMG equal to {{1, percent}}% of Gepard's DEF plus {{3}} for {{2}} turn(s).",
-        "shortDesc": "After this character uses Technique, all allies gain a Shield at the start of the next battle."
+        "shortDesc": "After this character uses Technique, all allies gain a Shield at the start of the next battle.",
+        "tag": "Defense"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Integrity",
         "fullDesc": "Gepard has a higher chance to be attacked by enemies.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Commander",
         "fullDesc": "When \"Unyielding Will\" is triggered, Gepard's Energy will be restored to 100%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Grit",
         "fullDesc": "Gepard's ATK increases by {{1, percent}}% of his current DEF. This effect will refresh at the start of each turn.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Never Surrender",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "4": {
       "name": "Faith Moves Mountains",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Cold Iron Fist",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "6": {
       "name": "Unyielding Resolve",

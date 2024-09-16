@@ -5,56 +5,72 @@
       "0": {
         "name": "What Are You Looking At?",
         "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Herta pada 1 target musuh.",
-        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "One-Time Offer",
         "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Herta pada seluruh musuh. Jika persentase HP target musuh saat ini lebih dari atau sama dengan {{2, percent}}%, maka DMG yang diakibatkan pada target akan meningkat {{3, percent}}%.",
-        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada seluruh musuh, DMG yang diakibatkan akan lebih tinggi pada target yang persentase HP-nya tinggi."
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada seluruh musuh, DMG yang diakibatkan akan lebih tinggi pada target yang persentase HP-nya tinggi.",
+        "tag": "AoE"
       }
     },
     "ult": {
       "0": {
         "name": "It's Magic, I Added Some Magic",
         "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Herta pada seluruh musuh.",
-        "shortDesc": "Mengakibatkan Ice DMG pada seluruh musuh."
+        "shortDesc": "Mengakibatkan Ice DMG pada seluruh musuh.",
+        "tag": "AoE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Fine, I'll Do It Myself",
+        "fullDesc": "Saat serangan rekan tim mengakibatkan persentase HP target musuh saat ini kurang dari atau sama dengan {{1, percent}}%, Herta akan melancarkan Serangan Lanjutan dan mengakibatkan Ice DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Herta pada seluruh musuh.",
+        "shortDesc": "",
+        "tag": "AoE"
       }
     },
     "technique": {
       "0": {
         "name": "It Can Still Be Optimized",
         "fullDesc": "Setelah menggunakan Technique, meningkatkan {{1, percent}}% ATK Herta selama {{2}} giliran pada saat pertempuran selanjutnya dimulai.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "Enhance"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Efficiency",
         "fullDesc": "Saat melancarkan Skill, efek peningkatan DMG pada target akan bertambah {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Puppet",
         "fullDesc": "Meningkatkan {{1, percent}}% peluang untuk menahan Crowd Control Debuff.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Icing",
         "fullDesc": "Saat melancarkan Ultimate, meningkatkan {{1, percent}}% DMG pada musuh dengan status Frozen.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

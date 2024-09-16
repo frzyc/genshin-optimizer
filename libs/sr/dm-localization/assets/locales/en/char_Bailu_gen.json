@@ -5,56 +5,72 @@
       "0": {
         "name": "Diagnostic Kick",
         "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Bailu's ATK to a single enemy.",
-        "shortDesc": "Deals minor Lightning DMG to a single enemy."
+        "shortDesc": "Deals minor Lightning DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Singing Among Clouds",
         "fullDesc": "Heals a single ally for <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Bailu's Max HP plus <orangeStrong>{{2}}</orangeStrong>. Bailu then heals random allies {{4}} time(s). After each healing, HP restored from the next healing is reduced by {{3, percent}}%.",
-        "shortDesc": "Restores HP for a single ally, then heals random allies."
+        "shortDesc": "Restores HP for a single ally, then heals random allies.",
+        "tag": "Restore"
       }
     },
     "ult": {
       "0": {
         "name": "Felicitous Thunderleap",
-        "fullDesc": "Heals all allies for <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Bailu's Max HP plus <orangeStrong>{{2}}</orangeStrong>.\\nBailu applies Invigoration to allies that are not already Invigorated. For those already Invigorated, Bailu extends the duration of their Invigoration by 1 turn.\\nThe effect of Invigoration can last for {{3}} turn(s). This effect cannot stack.",
-        "shortDesc": "Restores HP for all allies, and grants them Invigoration, or prolongs the duration of their Invigoration."
+        "fullDesc": "Heals all allies for <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Bailu's Max HP plus <orangeStrong>{{2}}</orangeStrong>.<br>Bailu applies Invigoration to allies that are not already Invigorated. For those already Invigorated, Bailu extends the duration of their Invigoration by 1 turn.<br>The effect of Invigoration can last for {{3}} turn(s). This effect cannot stack.",
+        "shortDesc": "Restores HP for all allies, and grants them Invigoration, or prolongs the duration of their Invigoration.",
+        "tag": "Restore"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Gourdful of Elixir",
+        "fullDesc": "After an ally with Invigoration is hit, restores the ally's HP for <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Bailu's Max HP plus <orangeStrong>{{2}}</orangeStrong>. This effect can trigger {{5}} time(s).<br>When an ally receives a killing blow, they will not be knocked down. Bailu immediately heals the ally for <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> of Bailu's Max HP plus <orangeStrong>{{4}}</orangeStrong> HP. This effect can be triggered 1 time per battle.",
+        "shortDesc": "When an ally with <orangeStrong>Invigoration</orangeStrong> is attacked, <orangeStrong>restores HP</orangeStrong> for the ally.<br>When an ally suffers a <orangeStrong>killing blow</orangeStrong>, Bailu <orangeStrong>immediately restores their HP</orangeStrong>. This effect can only trigger 1 time per battle.",
+        "tag": "Restore"
       }
     },
     "technique": {
       "0": {
         "name": "Saunter in the Rain",
         "fullDesc": "After Technique is used, at the start of the next battle, all allies are granted Invigoration for {{1}} turn(s).",
-        "shortDesc": "After this character uses Technique, at the start of the next battle, all allies are granted Invigoration."
+        "shortDesc": "After this character uses Technique, at the start of the next battle, all allies are granted Invigoration.",
+        "tag": "Restore"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Qihuang Analects",
         "fullDesc": "When Bailu heals a target ally above their normal Max HP, the target's Max HP increases by {{1, percent}}% for {{2}} turns.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Vidyadhara Ichor Lines",
         "fullDesc": "Invigoration can trigger {{1}} more time(s).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Aquatic Benediction",
         "fullDesc": "Characters with Invigoration receive {{1, percent}}% less DMG.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Omniscient Opulence",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "4": {
       "name": "Evil Excision",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Waning Worries",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "6": {
       "name": "Drooling Drop of Draconic Divinity",

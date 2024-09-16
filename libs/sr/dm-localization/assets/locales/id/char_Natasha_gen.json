@@ -5,56 +5,72 @@
       "0": {
         "name": "Behind the Kindness",
         "fullDesc": "Mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Natasha pada 1 target musuh.",
-        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Physical DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Love, Heal, and Choose",
         "fullDesc": "Segera memulihkan HP sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Max HP Natasha +<orangeStrong>{{4}}</orangeStrong> pada 1 rekan tim yang ditargetkan, dan di saat bersamaan memulihkan HP sebesar <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> Max HP Natasha +<orangeStrong>{{5}}</orangeStrong> pada target setiap gilirannya dimulai, berlangsung selama {{3}} giliran.",
-        "shortDesc": "<orangeStrong>Memulihkan HP</orangeStrong> 1 rekan tim, dan memberikan target <orangeStrong>Pemulihan Berkelanjutan</orangeStrong>."
+        "shortDesc": "<orangeStrong>Memulihkan HP</orangeStrong> 1 rekan tim, dan memberikan target <orangeStrong>Pemulihan Berkelanjutan</orangeStrong>.",
+        "tag": "Restore"
       }
     },
     "ult": {
       "0": {
         "name": "Gift of Rebirth",
         "fullDesc": "Segera memulihkan HP sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Max HP Natasha +<orangeStrong>{{2}}</orangeStrong> pada seluruh rekan tim.",
-        "shortDesc": "<orangeStrong>Memulihkan HP</orangeStrong> seluruh rekan tim."
+        "shortDesc": "<orangeStrong>Memulihkan HP</orangeStrong> seluruh rekan tim.",
+        "tag": "Restore"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Innervation",
+        "fullDesc": "Saat memulihkan rekan tim dengan persentase HP kurang dari atau sama dengan {{1, percent}}%, pemulihan yang diberikan Natasha meningkat <orangeStrong>{{2, percent}}%</orangeStrong>. Efek ini juga berlaku pada efek pemulihan berkelanjutan.",
+        "shortDesc": "Meningkatkan pemulihan yang diberikan pada rekan tim yang persentase HP-nya rendah. Efek ini juga berlaku pada efek pemulihan berkelanjutan.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Hypnosis Research",
-        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Physical DMG sebesar {{4, percent}}% ATK Natasha pada musuh secara acak dan setiap target memiliki {{1, percent}}% <u>peluang dasar</u> untuk memasuki status Weaken.\\nUntuk target musuh berstatus Weaken, DMG yang diakibatkannya pada rekan tim akan berkurang {{2, percent}}% selama {{3}} giliran.",
-        "shortDesc": "Menyerang musuh dan mengakibatkan Physical DMG dalam jumlah kecil pada musuh secara acak. Berpeluang besar untuk membuat setiap target memasuki status Weaken."
+        "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Physical DMG sebesar {{4, percent}}% ATK Natasha pada musuh secara acak dan setiap target memiliki {{1, percent}}% peluang dasar untuk memasuki status Weaken.<br>Untuk target musuh berstatus Weaken, DMG yang diakibatkannya pada rekan tim akan berkurang {{2, percent}}% selama {{3}} giliran.",
+        "shortDesc": "Menyerang musuh dan mengakibatkan Physical DMG dalam jumlah kecil pada musuh secara acak. Berpeluang besar untuk membuat setiap target memasuki status Weaken.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Soothe",
         "fullDesc": "Saat melancarkan Skill, menghilangkan {{1}} Debuff dari 1 rekan tim yang ditargetkan.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Healer",
         "fullDesc": "Pemulihan yang diberikan oleh Natasha meningkat {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Recuperation",
         "fullDesc": "Memperpanjang durasi efek pemulihan berkelanjutan dari Skill selama {{1}} giliran.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

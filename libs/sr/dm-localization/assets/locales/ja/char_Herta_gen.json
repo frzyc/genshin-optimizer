@@ -5,56 +5,72 @@
       "0": {
         "name": "{RUBY_B#なに}何{RUBY_E#}{RUBY_B#み}見{RUBY_E#}てるの？",
         "fullDesc": "指定した敵単体にヘルタの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の氷属性ダメージを与える。"
+        "shortDesc": "敵単体に少量の氷属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#いちど}一度{RUBY_E#}{RUBY_B#かぎ}限{RUBY_E#}りの{RUBY_B#とりひき}取引{RUBY_E#}",
         "fullDesc": "敵全体にヘルタの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与える。敵の残りHPが{{2, percent}}%以上の場合、その敵に対して与ダメージ+{{3, percent}}%。",
-        "shortDesc": "敵全体に少量の氷属性ダメージを与える、残りHP割合が高い敵に対する与ダメージがアップする。"
+        "shortDesc": "敵全体に少量の氷属性ダメージを与える、残りHP割合が高い敵に対する与ダメージがアップする。",
+        "tag": "全体攻撃"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#わたし}私{RUBY_E#}がかけた{RUBY_B#まほう}魔法{RUBY_E#}だよ",
         "fullDesc": "敵全体にヘルタの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
-        "shortDesc": "敵全体に氷属性ダメージを与える。"
+        "shortDesc": "敵全体に氷属性ダメージを与える。",
+        "tag": "全体攻撃"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "やっぱり{RUBY_B#わたし}私{RUBY_E#}がやる",
+        "fullDesc": "味方の攻撃が敵の残りHPを{{1, percent}}%以下にした時、ヘルタは追加攻撃を発動し、敵全体にヘルタの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
+        "shortDesc": "",
+        "tag": "全体攻撃"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#かいぜん}改善{RUBY_E#}すべきだよ",
         "fullDesc": "秘技を使用した後、次の戦闘開始時、ヘルタの攻撃力+{{1, percent}}%、{{2}}ターン継続。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "強化"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#こうりつ}効率{RUBY_E#}",
         "fullDesc": "戦闘スキルを発動した時、さらに与ダメージ+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#にんぎょう}人形{RUBY_E#}",
         "fullDesc": "行動制限系デバフに抵抗する確率+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#ひょうけつ}氷結{RUBY_E#}",
         "fullDesc": "必殺技を発動した時、凍結状態の敵に対する与ダメージ+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

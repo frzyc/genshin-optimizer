@@ -5,61 +5,78 @@
       "0": {
         "name": "开瓶费",
         "fullDesc": "对指定敌方单体造成等同于加拉赫<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的火属性伤害。",
-        "shortDesc": "对敌方单体造成少量火属性伤害。"
+        "shortDesc": "对敌方单体造成少量火属性伤害。",
+        "tag": "单攻"
       },
       "1": {
         "name": "酒花奔涌",
         "fullDesc": "对指定敌方单体造成等同于加拉赫<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的火属性伤害。并使目标攻击力降低<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>，持续{{3}}回合。",
-        "shortDesc": "对敌方单体造成火属性伤害，并降低其攻击力。"
+        "shortDesc": "对敌方单体造成火属性伤害，并降低其攻击力。",
+        "tag": "单攻"
       }
     },
     "skill": {
       "0": {
         "name": "罐装特调",
         "fullDesc": "立即为指定我方单体回复<orangeStrong>{{1}}</orangeStrong>点生命值。",
-        "shortDesc": "立即为我方单体回复生命值。"
+        "shortDesc": "立即为我方单体回复生命值。",
+        "tag": "回复"
       }
     },
     "ult": {
       "0": {
         "name": "香槟仪礼",
         "fullDesc": "使敌方全体陷入【酩酊】状态，持续{{2}}回合，同时对敌方全体造成等同于加拉赫<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的火属性伤害，并将下一次普攻强化为【酒花奔涌】。",
-        "shortDesc": "使敌方全体<orangeStrong>陷入【酩酊】状态</orangeStrong>，同时对敌方全体造成火属性伤害。下一次普攻强化为【酒花奔涌】。"
+        "shortDesc": "使敌方全体<orangeStrong>陷入【酩酊】状态</orangeStrong>，同时对敌方全体造成火属性伤害。下一次普攻强化为【酒花奔涌】。",
+        "tag": "群攻"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "鏖战正酣",
+        "fullDesc": "【酩酊】使目标受到的击破伤害提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>。陷入【酩酊】状态的目标每次受到我方角色攻击后，会回复攻击者<orangeStrong>{{2}}</orangeStrong>点生命值。",
+        "shortDesc": "【酩酊】使目标<orangeStrong>受到的击破伤害提高</orangeStrong>，目标每次受到我方角色攻击后，<orangeStrong>攻击者回复生命值</orangeStrong>。",
+        "tag": "回复"
       }
     },
     "technique": {
       "0": {
         "name": "亲启佳酿",
         "fullDesc": "立即攻击敌人，进入战斗后使敌方全体陷入【酩酊】状态，持续{{1}}回合，并对敌方全体造成等同于加拉赫{{2, percent}}%攻击力的火属性伤害。",
-        "shortDesc": "攻击敌人，进战后使敌方全体<orangeStrong>陷入【酩酊】状态</orangeStrong>，并对敌方全体造成少量火属性伤害。"
+        "shortDesc": "攻击敌人，进战后使敌方全体<orangeStrong>陷入【酩酊】状态</orangeStrong>，并对敌方全体造成少量火属性伤害。",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻击",
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "崭新配方",
         "fullDesc": "使自身提供的治疗量提高，提高数值等同于击破特攻的{{1, percent}}%，最多使提供的治疗量提高{{2, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "天然酵母",
         "fullDesc": "施放终结技后，立刻使自己行动提前100%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "敬请干杯",
         "fullDesc": "加拉赫施放【酒花奔涌】攻击陷入【酩酊】状态的目标时，使此次天赋提供的生命回复效果对我方队友也会生效。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

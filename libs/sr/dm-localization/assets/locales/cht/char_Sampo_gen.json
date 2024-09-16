@@ -5,56 +5,72 @@
       "0": {
         "name": "酷炫的刀花",
         "fullDesc": "對指定敵方單體造成等同於桑博<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的風屬性傷害。",
-        "shortDesc": "對敵方單體造成少量風屬性傷害。"
+        "shortDesc": "對敵方單體造成少量風屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "反覆橫跳的愛",
         "fullDesc": "對指定敵方單體造成等同於桑博<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的風屬性傷害，並額外造成{{1}}次傷害，每次傷害對敵方隨機單體造成等同於桑博<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的風屬性傷害。",
-        "shortDesc": "對敵方單體造成少量風屬性傷害，共彈射5次。"
+        "shortDesc": "對敵方單體造成少量風屬性傷害，共彈射5次。",
+        "tag": "彈射"
       }
     },
     "ult": {
       "0": {
         "name": "驚喜禮盒",
-        "fullDesc": "對敵方全體造成等同於桑博<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的風屬性傷害，同時有{{4, percent}}%的<u>基礎機率</u>使被攻擊的敵方目標受到的持續傷害提高<orangeStrong>{{2, percent}}%</orangeStrong>，持續{{3}}回合。",
-        "shortDesc": "對敵方全體造成風屬性傷害，有高機率使其<orangeStrong>受到的持續傷害提高</orangeStrong>。"
+        "fullDesc": "對敵方全體造成等同於桑博<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的風屬性傷害，同時有{{4, percent}}%的基礎機率使被攻擊的敵方目標受到的持續傷害提高<orangeStrong>{{2, percent}}%</orangeStrong>，持續{{3}}回合。",
+        "shortDesc": "對敵方全體造成風屬性傷害，有高機率使其<orangeStrong>受到的持續傷害提高</orangeStrong>。",
+        "tag": "群體攻擊"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "撕風的匕首",
+        "fullDesc": "桑博命中敵方目標後有{{1, percent}}%的基礎機率使目標陷入風化狀態，持續{{3}}回合。<br>風化狀態下，敵方目標每回合開始時受到等同於桑博<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的風屬性持續傷害。風化狀態最多疊加{{4}}層。",
+        "shortDesc": "自身命中敵方目標後，有機率使目標<orangeStrong>陷入風化狀態</orangeStrong>。",
+        "tag": "強化"
       }
     },
     "technique": {
       "0": {
         "name": "你最閃亮",
-        "fullDesc": "使用秘技後使一定區域內的敵人陷入{{1}}秒的目盲狀態，目盲狀態下的敵人無法發現我方目標。\\n若主動攻擊陷入目盲狀態的敵人，則進入戰鬥時有{{2, percent}}%<u>固定機率</u>使敵方每個單體目標行動延後{{3, percent}}%。",
-        "shortDesc": "使一定區域內敵人陷入目盲狀態。攻擊陷入目盲狀態敵人，進入戰鬥後有高機率使敵方每個單體目標<u>行動延後</u>。"
+        "fullDesc": "使用秘技後使一定區域內的敵人陷入{{1}}秒的目盲狀態，目盲狀態下的敵人無法發現我方目標。<br>若主動攻擊陷入目盲狀態的敵人，則進入戰鬥時有{{2, percent}}%固定機率使敵方每個單體目標行動延後{{3, percent}}%。",
+        "shortDesc": "使一定區域內敵人陷入目盲狀態。攻擊陷入目盲狀態敵人，進入戰鬥後有高機率使敵方每個單體目標行動延後。",
+        "tag": "妨害"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "圈套",
         "fullDesc": "天賦使敵方陷入風化狀態的持續時間延長{{1}}回合。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "後手",
         "fullDesc": "施放終結技時，額外回復{{1}}點能量。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "加料",
         "fullDesc": "風化狀態下的敵方目標對桑博造成的傷害降低{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

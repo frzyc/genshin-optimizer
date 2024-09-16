@@ -5,56 +5,72 @@
       "0": {
         "name": "Kỹ Thuật Trèo Băng",
         "fullDesc": "Gây cho 1 kẻ địch Sát Thương Lượng Tử bằng <orangeStrong>{{1, percent}}%</orangeStrong> Giới Hạn HP của bản thân.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Lượng Tử cho 1 kẻ địch."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lượng Tử cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Đồ Hộp Cắm Trại Ủ Muối",
-        "fullDesc": "Cộng thêm \"Phản Ứng Sinh Tồn\" cho 1 đồng đội chỉ định, tăng Giới Hạn HP bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Lynx +<orangeStrong>{{2}}</orangeStrong>, nếu mục tiêu này thuộc vận mệnh Hủy Diệt hoặc Bảo Hộ, sẽ tăng cao xác suất bị phe địch tấn công, \"Phản Ứng Sinh Tồn\" duy trì {{3}} hiệp.\\nKhiến mục tiêu này hồi HP bằng <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Lynx +<orangeStrong>{{5}}</orangeStrong>.",
-        "shortDesc": "Khiến 1 đồng đội nhận \"Phản Ứng Sinh Tồn\", <orangeStrong>tăng Giới Hạn HP</orangeStrong> và hồi HP cho đồng đội đó."
+        "fullDesc": "Cộng thêm \"Phản Ứng Sinh Tồn\" cho 1 đồng đội chỉ định, tăng Giới Hạn HP bằng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Lynx +<orangeStrong>{{2}}</orangeStrong>, nếu mục tiêu này thuộc vận mệnh Hủy Diệt hoặc Bảo Hộ, sẽ tăng cao xác suất bị phe địch tấn công, \"Phản Ứng Sinh Tồn\" duy trì {{3}} hiệp.<br>Khiến mục tiêu này hồi HP bằng <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Lynx +<orangeStrong>{{5}}</orangeStrong>.",
+        "shortDesc": "Khiến 1 đồng đội nhận \"Phản Ứng Sinh Tồn\", <orangeStrong>tăng Giới Hạn HP</orangeStrong> và hồi HP cho đồng đội đó.",
+        "tag": "Hồi Phục"
       }
     },
     "ult": {
       "0": {
         "name": "Sơ Cứu Vùng Tuyết",
-        "fullDesc": "Giải trừ {{1}} <u>Hiệu Ứng Xấu</u> của toàn bộ phe ta, hồi ngay cho toàn phe ta một lượng HP bằng <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Lynx +<orangeStrong>{{3}}</orangeStrong>.",
-        "shortDesc": "Giải trừ <orangeStrong>1 <u>Hiệu Ứng Xấu</u> cho toàn bộ phe ta</orangeStrong>, hồi HP cho toàn bộ phe ta."
+        "fullDesc": "Giải trừ {{1}} Hiệu Ứng Xấu của toàn bộ phe ta, hồi ngay cho toàn phe ta một lượng HP bằng <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Lynx +<orangeStrong>{{3}}</orangeStrong>.",
+        "shortDesc": "Giải trừ <orangeStrong>1 Hiệu Ứng Xấu cho toàn bộ phe ta</orangeStrong>, hồi HP cho toàn bộ phe ta.",
+        "tag": "Hồi Phục"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Kinh Nghiệm Sinh Tồn",
+        "fullDesc": "Khi thi triển Chiến Kỹ hoặc Tuyệt Kỹ, sẽ khiến mục tiêu phe ta nhận hiệu ứng trị liệu liên tục trong {{1}} hiệp, khi bắt đầu mỗi hiệp mục tiêu hồi HP bằng <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Lynx +<orangeStrong>{{3}}</orangeStrong>. Nếu mục tiêu này có \"Phản Ứng Sinh Tồn\", thì hiệu ứng trị liệu liên tục sẽ hồi thêm HP bằng <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> Giới Hạn HP của Lynx +<orangeStrong>{{5}}</orangeStrong>.",
+        "shortDesc": "Khi thi triển Chiến Kỹ hoặc Tuyệt Kỹ, khiến mục tiêu phe ta nhận hiệu ứng <orangeStrong>hồi HP liên tục</orangeStrong>, nếu mục tiêu có \"Phản Ứng Sinh Tồn\" đang hiệu lực, sẽ tăng thêm hiệu ứng hồi HP liên tục.",
+        "tag": "Hồi Phục"
       }
     },
     "technique": {
       "0": {
         "name": "Thanh Năng Lượng Socola",
         "fullDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu trận tiếp theo sẽ kèm thêm hiệu ứng trị liệu liên tục từ Thiên Phú của Lynx cho toàn bộ phe ta, duy trì {{1}} hiệp.",
-        "shortDesc": "Dùng Bí Kỹ, khi bắt đầu trận tiếp theo sẽ kèm thêm hiệu ứng trị liệu liên tục cho toàn bộ phe ta."
+        "shortDesc": "Dùng Bí Kỹ, khi bắt đầu trận tiếp theo sẽ kèm thêm hiệu ứng trị liệu liên tục cho toàn bộ phe ta.",
+        "tag": "Hồi Phục"
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "Đánh Đơn"
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Thăm Dò Trước",
         "fullDesc": "Sau khi mục tiêu có Phản Ứng Sinh Tồn bị tấn công, Lynx sẽ hồi ngay {{1}} điểm năng lượng.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Kỹ Thuật Thám Hiểm",
         "fullDesc": "Tăng {{1, percent}}% xác suất Kháng Hiệu Ứng Xấu dạng Khống Chế.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Sống Sót Trong Nghịch Cảnh",
         "fullDesc": "Hiệu ứng hồi liên tục của Thiên Phú kéo dài {{1}} hiệp.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

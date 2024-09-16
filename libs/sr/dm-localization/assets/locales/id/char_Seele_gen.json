@@ -5,56 +5,72 @@
       "0": {
         "name": "Thwack",
         "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Seele pada 1 target musuh.",
-        "shortDesc": "Mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Quantum DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Sheathed Blade",
         "fullDesc": "Meningkatkan {{2, percent}}% SPD Seele, serta mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Seele pada 1 target musuh. Efek peningkatan SPD berlangsung selama {{3}} giliran.",
-        "shortDesc": "Mengakibatkan Quantum DMG pada 1 musuh dan meningkatkan SPD diri sendiri."
+        "shortDesc": "Mengakibatkan Quantum DMG pada 1 musuh dan meningkatkan SPD diri sendiri.",
+        "tag": "Single Target"
       }
     },
     "ult": {
       "0": {
         "name": "Butterfly Flurry",
         "fullDesc": "Langsung memasuki status Buff dan mengakibatkan Quantum DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Seele pada 1 target musuh.",
-        "shortDesc": "Memasuki <orangeStrong>status Buff</orangeStrong> dan mengakibatkan Quantum DMG dalam jumlah besar pada 1 musuh."
+        "shortDesc": "Memasuki <orangeStrong>status Buff</orangeStrong> dan mengakibatkan Quantum DMG dalam jumlah besar pada 1 musuh.",
+        "tag": "Single Target"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Resurgence",
+        "fullDesc": "Saat mengalahkan target musuh dengan Basic Attack, Skill, atau Ultimate, Seele akan segera mendapatkan 1 giliran tambahan dan akan memasuki status Buff. Saat berada dalam status Buff, DMG Seele meningkat <orangeStrong>{{1, percent}}%</orangeStrong> selama {{2}} giliran.<br>Jika Seele mengalahkan musuh lagi pada saat giliran tambahan yang diperoleh dari Talent \"Resurgence\", maka efek Talent ini tidak akan terpicu lagi.",
+        "shortDesc": "Saat <orangeStrong>mengalahkan target musuh</orangeStrong> dengan melancarkan Basic Attack, Skill, atau Ultimate, akan memperoleh <orangeStrong>giliran tambahan dan memasuki status Buff</orangeStrong>. DMG yang diakibatkan dalam status Buff akan meningkat.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Phantom Illusion",
         "fullDesc": "Setelah menggunakan Technique, Seele akan memasuki status Stealth selama {{1}} detik. Selama berada dalam status Stealth, Seele tidak akan terdeteksi musuh. Jika memulai pertempuran dengan cara menyerang musuh, Seele akan segera memasuki status Buff.",
-        "shortDesc": "Memasuki status <orangeStrong>Stealth</orangeStrong>. Setelah menyerang musuh dan memasuki pertempuran, akan langsung memasuki <orangeStrong>status Buff</orangeStrong>."
+        "shortDesc": "Memasuki status <orangeStrong>Stealth</orangeStrong>. Setelah menyerang musuh dan memasuki pertempuran, akan langsung memasuki <orangeStrong>status Buff</orangeStrong>.",
+        "tag": "Enhance"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Nightshade",
         "fullDesc": "Mengurangi peluang diserang oleh target musuh jika persentase HP saat ini kurang dari atau sama dengan {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Lacerate",
         "fullDesc": "Saat Seele dalam status buff, Quantum RES PEN dia meningkat {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Rippling Waves",
         "fullDesc": "Setelah melancarkan Basic Attack, mendahulukan {{1, percent}}% aksi Seele yang selanjutnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -81,7 +97,7 @@
     },
     "6": {
       "name": "Shattering Shambles",
-      "desc": "Setelah melancarkan Ultimate, musuh yang diserang akan memasuki status \"Butterfly Flurry\" selama {{2}} giliran. Target musuh yang berada dalam status \"Butterfly Flurry\" akan menerima Quantum DMG tambahan sebesar {{1, percent}}% dari Ultimate DMG Seele setiap kali terkena serangan. Jika target tersebut gugur akibat DMG Tambahan dari \"Butterfly Flurry\" yang dipicu oleh rekan lain, maka Talent Seele tidak akan terpicu.\\nJika Seele gugur, maka status \"Butterfly Flurry\" yang ada pada musuh akan dihapus."
+      "desc": "Setelah melancarkan Ultimate, musuh yang diserang akan memasuki status \"Butterfly Flurry\" selama {{2}} giliran. Target musuh yang berada dalam status \"Butterfly Flurry\" akan menerima Quantum DMG tambahan sebesar {{1, percent}}% dari Ultimate DMG Seele setiap kali terkena serangan. Jika target tersebut gugur akibat DMG Tambahan dari \"Butterfly Flurry\" yang dipicu oleh rekan lain, maka Talent Seele tidak akan terpicu.<br>Jika Seele gugur, maka status \"Butterfly Flurry\" yang ada pada musuh akan dihapus."
     }
   }
 }

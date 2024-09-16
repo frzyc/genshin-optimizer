@@ -5,56 +5,72 @@
       "0": {
         "name": "搖擺的禮儀",
         "fullDesc": "對指定敵方單體造成等同於開拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的虛數屬性傷害。",
-        "shortDesc": "對敵方單體造成少量虛數屬性傷害。"
+        "shortDesc": "對敵方單體造成少量虛數屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "中場饋贈的雨",
         "fullDesc": "對指定敵方單體造成等同於開拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的虛數屬性傷害，並額外造成4次傷害。每次傷害對隨機敵方單體造成等同於開拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的虛數屬性傷害。",
-        "shortDesc": "對敵方單體造成少量虛數屬性傷害，共彈射5次。"
+        "shortDesc": "對敵方單體造成少量虛數屬性傷害，共彈射5次。",
+        "tag": "彈射"
       }
     },
     "ult": {
       "0": {
         "name": "喧囂的舞燈巡遊",
-        "fullDesc": "為我方全體附上【伴舞】效果，持續{{1}}回合，開拓者每回合開始時持續回合數減1。持有【伴舞】的我方目標擊破特攻提高<orangeStrong>{{3, percent}}%</orangeStrong>，並且攻擊處於<u>弱點擊破狀態</u>下的敵方目標後，會將本次攻擊的削韌值轉化為1次<u>超擊破傷害</u>。",
-        "shortDesc": "為我方全體施加【伴舞】效果。持有【伴舞】的我方目標<orangeStrong>擊破特攻提高</orangeStrong>，並且攻擊處於<u>弱點擊破狀態</u>下的敵方目標後，額外造成1次<orangeStrong><u>超擊破傷害</u></orangeStrong>。"
+        "fullDesc": "為我方全體附上【伴舞】效果，持續{{1}}回合，開拓者每回合開始時持續回合數減1。持有【伴舞】的我方目標擊破特攻提高<orangeStrong>{{3, percent}}%</orangeStrong>，並且攻擊處於弱點擊破狀態下的敵方目標後，會將本次攻擊的削韌值轉化為1次超擊破傷害。",
+        "shortDesc": "為我方全體施加【伴舞】效果。持有【伴舞】的我方目標<orangeStrong>擊破特攻提高</orangeStrong>，並且攻擊處於弱點擊破狀態下的敵方目標後，額外造成1次<orangeStrong>超擊破傷害</orangeStrong>。",
+        "tag": "輔助"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "全屏段的高空踏歌",
+        "fullDesc": "當有敵方目標的弱點被擊破時，開拓者立即恢復<orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong>點能量。",
+        "shortDesc": "當有敵方目標的弱點被擊破時，開拓者恢復能量。",
+        "tag": "輔助"
       }
     },
     "technique": {
       "0": {
         "name": "即刻！獨奏團",
         "fullDesc": "使用秘技後，下一次戰鬥開始時使我方全體的擊破特攻提高{{1, percent}}%，持續{{2}}回合。",
-        "shortDesc": "下一次戰鬥開始時使我方全體的擊破特攻提高。"
+        "shortDesc": "下一次戰鬥開始時使我方全體的擊破特攻提高。",
+        "tag": "輔助"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "衛我起舞",
         "fullDesc": "若場上敵方目標數量為1/2/3/4/5以上，則【伴舞】效果觸發的超擊破傷害提高{{5, percent}}%/{{4, percent}}%/{{3, percent}}%/{{2, percent}}%/{{1, percent}}%/。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "隨波逐流",
         "fullDesc": "施放戰技時，第一次傷害的削韌值額外提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "劇院之帽",
         "fullDesc": "我方目標造成弱點擊破後額外使敵方目標行動延後{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

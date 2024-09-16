@@ -5,56 +5,72 @@
       "0": {
         "name": "Gai Vực Sâu",
         "fullDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Luocha.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Số Ảo cho 1 kẻ địch."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Số Ảo cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Lời Cầu Nguyện Của Hoa Trắng",
-        "fullDesc": "Sau khi dùng Chiến Kỹ sẽ lập tức giúp mục tiêu chỉ định phe ta hồi HP bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Luocha + <orangeStrong>{{2}}</orangeStrong>, đồng thời khiến Luocha nhận 1 tầng Khoảnh Khắc Hoa Trắng.\\nKhi Phần Trăm HP hiện tại của đồng đội bất kỳ thấp hơn hoặc bằng {{3, percent}}%, Luocha sẽ kích hoạt ngay 1 lần hiệu ứng giống với Chiến Kỹ lên mục tiêu đó, không tiêu hao điểm Chiến Kỹ, hiệu ứng này có thể kích hoạt lần nữa sau {{4}} hiệp.",
-        "shortDesc": "Giúp 1 đồng đội <orangeStrong>hồi</orangeStrong> HP, nhận 1 tầng \"Khoảnh Khắc Hoa Trắng\"."
+        "fullDesc": "Sau khi dùng Chiến Kỹ sẽ lập tức giúp mục tiêu chỉ định phe ta hồi HP bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Luocha + <orangeStrong>{{2}}</orangeStrong>, đồng thời khiến Luocha nhận 1 tầng Khoảnh Khắc Hoa Trắng.<br>Khi Phần Trăm HP hiện tại của đồng đội bất kỳ thấp hơn hoặc bằng {{3, percent}}%, Luocha sẽ kích hoạt ngay 1 lần hiệu ứng giống với Chiến Kỹ lên mục tiêu đó, không tiêu hao điểm Chiến Kỹ, hiệu ứng này có thể kích hoạt lần nữa sau {{4}} hiệp.",
+        "shortDesc": "Giúp 1 đồng đội <orangeStrong>hồi</orangeStrong> HP, nhận 1 tầng \"Khoảnh Khắc Hoa Trắng\".",
+        "tag": "Hồi Phục"
       }
     },
     "ult": {
       "0": {
         "name": "Di Nguyện Chôn Cất",
-        "fullDesc": "Xóa {{2}} <u>hiệu ứng buff</u> của toàn bộ phe địch, và gây cho chúng Sát Thương Số Ảo tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Luocha, đồng thời khiến Luocha nhận 1 tầng Khoảnh Khắc Hoa Trắng.",
-        "shortDesc": "<orangeStrong>Giải trừ</orangeStrong> 1 <orangeStrong><u>hiệu ứng buff</u></orangeStrong> của toàn bộ phe địch, và gây Sát Thương Số Ảo cho chúng, nhận 1 tầng Khoảnh Khắc Hoa Trắng."
+        "fullDesc": "Xóa {{2}} hiệu ứng buff của toàn bộ phe địch, và gây cho chúng Sát Thương Số Ảo tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Luocha, đồng thời khiến Luocha nhận 1 tầng Khoảnh Khắc Hoa Trắng.",
+        "shortDesc": "<orangeStrong>Giải trừ</orangeStrong> 1 <orangeStrong>hiệu ứng buff</orangeStrong> của toàn bộ phe địch, và gây Sát Thương Số Ảo cho chúng, nhận 1 tầng Khoảnh Khắc Hoa Trắng.",
+        "tag": "Đánh Lan"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Sự Luân Chuyển Sinh Mệnh",
+        "fullDesc": "Khi Khoảnh Khắc Hoa Trắng đạt {{1}} tầng, Luocha sẽ tiêu hao toàn bộ Khoảnh Khắc Hoa Trắng để mở Kết Giới.<br>Sau khi kẻ địch bất kỳ trong Kết Giới bị tấn công, mục tiêu thi triển tấn công của phe ta sẽ hồi ngay lượng HP bằng <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> Tấn Công của Luocha +<orangeStrong>{{4}}</orangeStrong>.<br>Hiệu ứng Kết Giới duy trì {{3}} hiệp. Khi Luocha không thể chiến đấu, kết giới sẽ bị giải trừ.",
+        "shortDesc": "Khi Khoảnh Khắc Hoa Trắng đạt tầng 2 sẽ <orangeStrong>mở kết giới</orangeStrong>. Khi kết giới còn tồn tại, sẽ <orangeStrong>hồi HP sau khi phe ta tấn công</orangeStrong>.",
+        "tag": "Hồi Phục"
       }
     },
     "technique": {
       "0": {
         "name": "Lòng Trắc Ẩn Của Kẻ Ngốc",
         "fullDesc": "Sau khi dùng Bí Kỹ, sẽ kích hoạt ngay Thiên Phú khi bắt đầu lần chiến đấu tiếp theo.",
-        "shortDesc": "Dùng Bí Kỹ, lần sau vào trận sẽ kích hoạt ngay hiệu ứng Thiên Phú."
+        "shortDesc": "Dùng Bí Kỹ, lần sau vào trận sẽ kích hoạt ngay hiệu ứng Thiên Phú.",
+        "tag": "Hồi Phục"
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Hồi Sinh",
         "fullDesc": "Khi kích hoạt hiệu ứng Chiến Kỹ, giải trừ {{1}} Hiệu Ứng Xấu của 1 đồng đội chỉ định.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Thánh Hóa",
         "fullDesc": "Sau khi kẻ địch bất kỳ trong kết giới bị phe ta tấn công, toàn bộ phe ta ngoại trừ người tấn công cũng sẽ hồi lượng HP bằng {{1, percent(fixed: 1)}}% Tấn Công của Luocha +{{2}}.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Đi Qua Thung Lũng",
         "fullDesc": "Tăng {{1, percent}}% xác suất Kháng Hiệu Ứng Xấu dạng Khống Chế.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,56 +5,72 @@
       "0": {
         "name": "流镝",
         "fullDesc": "对指定敌方单体造成等同于驭空<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的虚数属性伤害。",
-        "shortDesc": "对敌方单体造成少量虚数属性伤害。"
+        "shortDesc": "对敌方单体造成少量虚数属性伤害。",
+        "tag": "单攻"
       }
     },
     "skill": {
       "0": {
         "name": "天阙鸣弦",
-        "fullDesc": "获得{{1}}层【鸣弦号令】，最多持有不超过2层。当驭空持有【鸣弦号令】时，我方全体攻击力提高<orangeStrong>{{2, percent}}%</orangeStrong>，且每次我方目标回合结束时，移除驭空1层【鸣弦号令】。\\n驭空施放战技获得【鸣弦号令】的回合，不会移除【鸣弦号令】。",
-        "shortDesc": "获得2层【鸣弦号令】，自身持有【鸣弦号令】时我方全体<orangeStrong>攻击力提高</orangeStrong>。"
+        "fullDesc": "获得{{1}}层【鸣弦号令】，最多持有不超过2层。当驭空持有【鸣弦号令】时，我方全体攻击力提高<orangeStrong>{{2, percent}}%</orangeStrong>，且每次我方目标回合结束时，移除驭空1层【鸣弦号令】。<br>驭空施放战技获得【鸣弦号令】的回合，不会移除【鸣弦号令】。",
+        "shortDesc": "获得2层【鸣弦号令】，自身持有【鸣弦号令】时我方全体<orangeStrong>攻击力提高</orangeStrong>。",
+        "tag": "辅助"
       }
     },
     "ult": {
       "0": {
         "name": "贯云饮羽",
         "fullDesc": "施放终结技时，若驭空持有【鸣弦号令】，则额外使我方全体暴击率提高<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>，暴击伤害提高<orangeStrong>{{3, percent}}%</orangeStrong>。同时对指定敌方单体造成等同于驭空<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的虚数属性伤害。",
-        "shortDesc": "自身持有【鸣弦号令】时我方全体<orangeStrong>暴击率和暴击伤害提高</orangeStrong>，并对敌方单体造成大量虚数属性伤害。"
+        "shortDesc": "自身持有【鸣弦号令】时我方全体<orangeStrong>暴击率和暴击伤害提高</orangeStrong>，并对敌方单体造成大量虚数属性伤害。",
+        "tag": "单攻"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "箭彻七札",
+        "fullDesc": "施放普攻可额外造成等同于驭空<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的虚数属性伤害，并使本次攻击的削韧值提高{{2, percent}}%，该效果在{{3}}回合后可再次触发。",
+        "shortDesc": "使普攻额外造成少量伤害并提高本次普攻削韧值。该效果1回合后可再次触发。",
+        "tag": "强化"
       }
     },
     "technique": {
       "0": {
         "name": "云鸢逐风",
         "fullDesc": "使用秘技后进入持续{{1}}秒的冲刺状态。冲刺状态下自身移动速度提高{{2, percent}}%，且主动攻击敌人进入战斗时，驭空获得{{3}}层【鸣弦号令】。",
-        "shortDesc": "使自身<orangeStrong>移动速度提高</orangeStrong>。攻击敌人进战后获得2层【鸣弦号令】。"
+        "shortDesc": "使自身<orangeStrong>移动速度提高</orangeStrong>。攻击敌人进战后获得2层【鸣弦号令】。",
+        "tag": "强化"
       }
     },
     "overworld": {
       "0": {
         "name": "攻击",
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "襄尺",
         "fullDesc": "驭空被施加负面效果时可抵抗1次负面效果，该效果在{{1}}回合后可再次触发。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "迟彝",
         "fullDesc": "驭空在场时，我方全体造成的虚数属性伤害提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "气壮",
         "fullDesc": "持有【鸣弦号令】时，每当我方目标行动后，驭空将额外恢复{{1}}点能量。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

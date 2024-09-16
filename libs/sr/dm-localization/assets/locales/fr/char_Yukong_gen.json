@@ -5,56 +5,72 @@
       "0": {
         "name": "Tir de flèche",
         "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Yukong à une cible ennemie.",
-        "shortDesc": "Inflige des DGT imaginaires mineurs à un ennemi."
+        "shortDesc": "Inflige des DGT imaginaires mineurs à un ennemi.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Salve de courage",
-        "fullDesc": "Obtient {{1}} cumuls de « Rugissement des cordes » (maximum de 2 cumuls). Lorsque « Rugissement des cordes » est actif, l'ATQ de tous les alliés augmente de <orangeStrong>{{2, percent}}%</orangeStrong>, et Yukong perd 1 cumul de « Rugissement des cordes » à la fin de chaque tour allié (y compris celui de Yukong).\\nAu cours du tour où Yukong obtient « Rugissement des cordes » en utilisant sa compétence, elle ne perd pas de cumul de « Rugissement des cordes ».",
-        "shortDesc": "Gagne 2 cumuls de Rugissement des cordes. L'<orangeStrong>ATQ de tous les alliés augmente</orangeStrong> lorsque Rugissement des cordes est actif sur ce personnage."
+        "fullDesc": "Obtient {{1}} cumuls de « Rugissement des cordes » (maximum de 2 cumuls). Lorsque « Rugissement des cordes » est actif, l'ATQ de tous les alliés augmente de <orangeStrong>{{2, percent}}%</orangeStrong>, et Yukong perd 1 cumul de « Rugissement des cordes » à la fin de chaque tour allié (y compris celui de Yukong).<br>Au cours du tour où Yukong obtient « Rugissement des cordes » en utilisant sa compétence, elle ne perd pas de cumul de « Rugissement des cordes ».",
+        "shortDesc": "Gagne 2 cumuls de Rugissement des cordes. L'<orangeStrong>ATQ de tous les alliés augmente</orangeStrong> lorsque Rugissement des cordes est actif sur ce personnage.",
+        "tag": "Soutien"
       }
     },
     "ult": {
       "0": {
         "name": "Crécerelle en piqué",
         "fullDesc": "Si Yukong bénéficie de « Rugissement des cordes » lorsqu'elle utilise son ultime, les chances de coup critique de tous les alliés augmentent de <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> et leurs DGT critiques de <orangeStrong>{{3, percent}}%</orangeStrong>. D'autre part, inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Yukong à un ennemi unique.",
-        "shortDesc": "<orangeStrong>Augmente les chances de coup critique et les DGT critiques</orangeStrong> de tous les alliés quand Rugissement des cordes est actif sur ce personnage et inflige des DGT imaginaires massifs à un ennemi unique."
+        "shortDesc": "<orangeStrong>Augmente les chances de coup critique et les DGT critiques</orangeStrong> de tous les alliés quand Rugissement des cordes est actif sur ce personnage et inflige des DGT imaginaires massifs à un ennemi unique.",
+        "tag": "Cible unique"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Sept épaisseurs, une flèche",
+        "fullDesc": "Les ATQ normales infligent des DGT imaginaires supplémentaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Yukong et la réduction de robustesse de ces attaques augmente de {{2, percent}}%. Cet effet peut se déclencher à nouveau après {{3}} tour.",
+        "shortDesc": "L'ATQ normale inflige des DGT supplémentaires mineurs, et la réduction de robustesse de l'ATQ normale augmente. Cet effet peut se déclencher à nouveau après 1 tour.",
+        "tag": "Renforcement"
       }
     },
     "technique": {
       "0": {
         "name": "À la poursuite du vent",
         "fullDesc": "Après utilisation de la technique, Yukong entre en mode Sprint pendant {{1}} secondes. En mode Sprint, la vitesse de déplacement augmente de {{2, percent}}% et Yukong obtient {{3}} cumuls de « Rugissement des cordes » lorsqu'elle entre en combat en attaquant des ennemis.",
-        "shortDesc": "Augmente la <orangeStrong>vitesse de déplacement</orangeStrong>. Reçoit 2 cumuls de Rugissement des cordes après être entré en combat en attaquant un ennemi."
+        "shortDesc": "Augmente la <orangeStrong>vitesse de déplacement</orangeStrong>. Reçoit 2 cumuls de Rugissement des cordes après être entré en combat en attaquant un ennemi.",
+        "tag": "Renforcement"
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Archerion",
         "fullDesc": "Yukong est capable de bloquer 1 malus. Cet effet peut être déclenché une fois tous les {{1}} tours.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Archère émérite",
         "fullDesc": "Lorsque Yukong est sur le champ de bataille, les DGT imaginaires infligés par les alliés augmentent de {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Majesté",
         "fullDesc": "Lorsque « Rugissement des cordes » est actif, Yukong régénère {{1}} points d'énergie supplémentaires à chaque action alliée.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Pluie de flèches",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "4": {
       "name": "Échos du zéphyr",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Tir mortel majestueux",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "6": {
       "name": "Claquement des cordes du tonnerre",

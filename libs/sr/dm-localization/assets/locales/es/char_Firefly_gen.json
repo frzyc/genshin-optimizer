@@ -5,66 +5,84 @@
       "0": {
         "name": "Orden: propulsión fulgurante",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de SAM como Daño de Fuego a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Fuego a un enemigo.",
+        "tag": "ATQ individual"
       },
       "1": {
         "name": "Luciérnaga tipo IV: Corte pirotécnico",
         "fullDesc": "Regenera una cantidad de PV equivalente al {{2, percent}}% de sus PV máx. e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de SAM como Daño de Fuego a un enemigo.",
-        "shortDesc": "Regenera una parte de sus PV e inflige Daño de Fuego a un enemigo."
+        "shortDesc": "Regenera una parte de sus PV e inflige Daño de Fuego a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Orden: Bombardeo aéreo",
-        "fullDesc": "Consume una cantidad de PV equivalente al {{2, percent}}% de sus PV máx., recupera una cantidad fija de energía equivalente al <orangeStrong>{{3, percent}}%</orangeStrong> de su energía máxima e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de SAM como Daño de Fuego a un enemigo. Si no hay suficientes PV, al usar la habilidad básica los PV actuales de SAM se reducen a 1. Su próxima <u>acción se adelanta</u> un {{4, percent}}%.",
-        "shortDesc": "Consume una parte de sus PV para recuperar energía e infligir Daño de Fuego a un enemigo. Su próxima <u>acción se adelanta</u>."
+        "fullDesc": "Consume una cantidad de PV equivalente al {{2, percent}}% de sus PV máx., recupera una cantidad fija de energía equivalente al <orangeStrong>{{3, percent}}%</orangeStrong> de su energía máxima e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de SAM como Daño de Fuego a un enemigo. Si no hay suficientes PV, al usar la habilidad básica los PV actuales de SAM se reducen a 1. Su próxima acción se adelanta un {{4, percent}}%.",
+        "shortDesc": "Consume una parte de sus PV para recuperar energía e infligir Daño de Fuego a un enemigo. Su próxima acción se adelanta.",
+        "tag": "ATQ individual"
       },
       "1": {
         "name": "Luciérnaga tipo IV: Sobrecarga de estrella moribunda",
         "fullDesc": "Regenera una cantidad de PV equivalente al {{3, percent}}% de sus PV máx. Aplica Debilidad de Fuego a un enemigo durante {{4}} turnos. Inflige a ese enemigo un Daño de Fuego equivalente al (efecto de Ruptura de SAM × {{5, fixed(fixed: 1)}} + el <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> del ATQ de SAM). También inflige un Daño de Fuego equivalente al (efecto de Ruptura de SAM × {{6, fixed(fixed: 1)}} + el <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> del ATQ de SAM) a los enemigos adyacentes. En el cálculo se puede incluir hasta un máximo del {{7, percent}}% del efecto de Ruptura.",
-        "shortDesc": "Regenera una parte de sus PV. Aplica <orangeStrong>Debilidad de Fuego</orangeStrong> a un enemigo y le inflige una gran cantidad de Daño de Fuego a él y Daño de Fuego a los objetivos adyacentes."
+        "shortDesc": "Regenera una parte de sus PV. Aplica <orangeStrong>Debilidad de Fuego</orangeStrong> a un enemigo y le inflige una gran cantidad de Daño de Fuego a él y Daño de Fuego a los objetivos adyacentes.",
+        "tag": "Ráfaga"
       }
     },
     "ult": {
       "0": {
         "name": "Luciérnaga tipo IV: Combustión completa",
-        "fullDesc": "Entra en el estado de Combustión completa, su acción se adelanta un 100% y su ATQ básico y su habilidad básica se potencian. En el estado de Combustión completa, su VEL aumenta en <orangeStrong>{{3}}</orangeStrong> pts. y, al usar su ATQ básico potenciado o habilidad básica potenciada, su eficiencia de la Ruptura de Debilidad aumenta en un {{2, percent}}% y el Daño de Ruptura infligido por SAM que reciben los enemigos aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> hasta que termine el ataque actual.\\nEn el orden de acción aparece una cuenta regresiva de Combustión completa. Cuando comience el turno de la cuenta regresiva, SAM saldrá del estado de Combustión completa. La cuenta regresiva tiene una VEL fija de {{4}}.\\nEn el estado de Combustión completa, SAM no puede usar la habilidad definitiva.",
-        "shortDesc": "Entra en el estado de Combustión completa y <orangeStrong>su acción se adelanta un <unbreak>100%</orangeStrong></color>. Su <orangeStrong>ATQ básico y su habilidad básica se potencian</orangeStrong>. Su VEL, <orangeStrong>su eficiencia de la Ruptura de Debilidad, y el Daño de Ruptura que reciben los enemigos</orangeStrong> aumentan. Dura hasta que termine la cuenta regresiva."
+        "fullDesc": "Entra en el estado de Combustión completa, su acción se adelanta un 100% y su ATQ básico y su habilidad básica se potencian. En el estado de Combustión completa, su VEL aumenta en <orangeStrong>{{3}}</orangeStrong> pts. y, al usar su ATQ básico potenciado o habilidad básica potenciada, su eficiencia de la Ruptura de Debilidad aumenta en un {{2, percent}}% y el Daño de Ruptura infligido por SAM que reciben los enemigos aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> hasta que termine el ataque actual.<br>En el orden de acción aparece una cuenta regresiva de Combustión completa. Cuando comience el turno de la cuenta regresiva, SAM saldrá del estado de Combustión completa. La cuenta regresiva tiene una VEL fija de {{4}}.<br>En el estado de Combustión completa, SAM no puede usar la habilidad definitiva.",
+        "shortDesc": "Entra en el estado de Combustión completa y <orangeStrong>su acción se adelanta un <unbreak>100%</orangeStrong></color>. Su <orangeStrong>ATQ básico y su habilidad básica se potencian</orangeStrong>. Su VEL, <orangeStrong>su eficiencia de la Ruptura de Debilidad, y el Daño de Ruptura que reciben los enemigos</orangeStrong> aumentan. Dura hasta que termine la cuenta regresiva.",
+        "tag": "Potenciación"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Núcleo ígneo de crisálida",
+        "fullDesc": "Cuantos menos PV tenga, menos daño recibe. Cuando tenga un {{3, percent}}% o menos de PV, alcanza el máximo efecto de reducción de daño, hasta una reducción máxima del <orangeStrong>{{1, percent}}%</orangeStrong>. Mientras esté en el estado de Combustión completa, el efecto de reducción de daño se mantiene al máximo y su RES a efecto aumenta en un <orangeStrong>{{4, percent}}%</orangeStrong>.<br>Al comenzar la batalla, si su energía no llega al {{2, percent}}%, recupera energía hasta alcanzar el {{2, percent}}%. Cuando la energía se recupera al máximo, se disipan todos los estados negativos que tenga.",
+        "shortDesc": "Cuantos menos PV tenga, menos daño recibe. Mientras esté en el estado de Combustión completa, el efecto de reducción de daño se mantiene al máximo y aumenta su RES a efecto. Al comenzar la batalla, si su energía no llega al <orangeStrong>{{2, percent}}%</orangeStrong>, recupera energía hasta alcanzar el <orangeStrong>{{2, percent}}%</orangeStrong>. Cuando la energía se recupera al máximo, se disipan todos los estados negativos que tenga.",
+        "tag": "Defensa"
       }
     },
     "technique": {
       "0": {
         "name": "Orden Δ: Calcinación meteórica",
         "fullDesc": "Salta en el aire y se mueve libremente durante {{1}} s. Puede usar el ataque en picado para terminar antes este vuelo. Cuando termina este movimiento, SAM cae y ataca inmediatamente a todos los enemigos en un área determinada. Al comenzar cada oleada, aplica Debilidad de Fuego a todos los enemigos durante {{3}} turnos, e inflige un {{2, percent}}% del ATQ de SAM como Daño de Fuego a todos los enemigos.",
-        "shortDesc": "Salta en el aire y se mueve libremente. Desciende tras unos segundos para golpear a todos los enemigos en el área de efecto determinada. Al comenzar <orangeStrong>cada oleada</orangeStrong>, <orangeStrong>aplica Debilidad de Fuego</orangeStrong> a todos los enemigos y les inflige Daño de Fuego."
+        "shortDesc": "Salta en el aire y se mueve libremente. Desciende tras unos segundos para golpear a todos los enemigos en el área de efecto determinada. Al comenzar <orangeStrong>cada oleada</orangeStrong>, <orangeStrong>aplica Debilidad de Fuego</orangeStrong> a todos los enemigos y les inflige Daño de Fuego.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Módulo α: Estallido de desfase",
         "fullDesc": "En el estado de Combustión completa, los ataques contra enemigos que no tengan Debilidad de Fuego también pueden reducir su Firmeza. Este efecto equivale al {{1, percent}}% de la Reducción de Firmeza de la habilidad original.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Módulo β: Armadura autorreactiva",
         "fullDesc": "Si el efecto de Ruptura de SAM es igual o superior al {{1, percent}}%/{{2, percent}}% cuando está en el estado de Combustión completa, tras atacar a un enemigo con Ruptura de Debilidad, la Reducción de Firmeza de este ataque se convertirá 1 vez en un {{3, percent}}%/{{4, percent}}% de Daño de Ultrarruptura.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Módulo γ: Núcleo de sobrecarga",
         "fullDesc": "Si el ATQ de SAM es superior a {{1}}, por cada {{2}} pts. de ATQ que superen este valor, el efecto de Ruptura de SAM aumenta en un {{3, percent(fixed: 1)}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

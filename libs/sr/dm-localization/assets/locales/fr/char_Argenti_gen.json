@@ -5,61 +5,78 @@
       "0": {
         "name": "Fragrance fugace",
         "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ d'Argenti à une cible ennemie unique.",
-        "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique."
+        "shortDesc": "Inflige des DGT physiques mineurs à un ennemi unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Épines de la justice",
         "fullDesc": "Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ d'Argenti à tous les ennemis.",
-        "shortDesc": "Inflige des DGT physiques mineurs à tous les ennemis."
+        "shortDesc": "Inflige des DGT physiques mineurs à tous les ennemis.",
+        "tag": "ZdE"
       }
     },
     "ult": {
       "0": {
         "name": "Beauté infinie du jardin des roses",
         "fullDesc": "Consomme <orangeStrong>{{2}}</orangeStrong> points d'énergie et inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ d'Argenti à tous les ennemis.",
-        "shortDesc": "Consomme <orangeStrong>{{2}}</orangeStrong> points d'énergie et inflige des DGT physiques à tous les ennemis."
+        "shortDesc": "Consomme <orangeStrong>{{2}}</orangeStrong> points d'énergie et inflige des DGT physiques à tous les ennemis.",
+        "tag": "ZdE"
       },
       "1": {
         "name": "En mon propre jardin",
         "fullDesc": "Consomme {{4}} points d'énergie, inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ d'Argenti à tous les ennemis et inflige des DGT {{2}} fois supplémentaires à un ennemi aléatoire, infligeant à chaque fois des DGT physiques équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> de l'ATQ d'Argenti.",
-        "shortDesc": "Consomme <orangeStrong>{{4}}</orangeStrong> points d'énergie et inflige des DGT physiques à tous les ennemis, ainsi que des DGT physiques mineurs à une cible aléatoire, pour un total de 6 rebonds."
+        "shortDesc": "Consomme <orangeStrong>{{4}}</orangeStrong> points d'énergie et inflige des DGT physiques à tous les ennemis, ainsi que des DGT physiques mineurs à une cible aléatoire, pour un total de 6 rebonds.",
+        "tag": "ZdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Objet de convoitise",
+        "fullDesc": "Quand Argenti utilise son ATQ normale, sa compétence ou son ultime, chaque ennemi touché lui permet de régénérer {{1}} points d'énergie et lui accorde un cumul d'Ascension, effet qui augmente de <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> ses chances de coup critique. Cet effet peut être cumulé jusqu'à {{3}} fois.",
+        "shortDesc": "Quand Argenti utilise son ATQ normale, sa compétence ou son ultime, il <orangeStrong>régénère de l'énergie</orangeStrong> et augmente ses <orangeStrong>chances de coup critique</orangeStrong> pour chaque cible ennemie touchée.",
+        "tag": "Renforcement"
       }
     },
     "technique": {
       "0": {
         "name": "Manifeste de la vertu",
-        "fullDesc": "Après utilisation de la technique, les ennemis situés dans une zone définie subissent Hébété pendant {{1}} secondes. Les ennemis hébétés ne peuvent pas attaquer activement votre équipe.\\nEngager le combat en attaquant un ennemi hébété inflige des DGT équivalents à {{2, percent}}% de l'ATQ d'Argenti à tous les ennemis et régénère son énergie de {{3}} points.",
-        "shortDesc": "Inflige Hébété à tous les ennemis dans une zone définie. Lorsque vous engagez le combat contre des ennemis hébétés, vous leur infligez des DGT physiques mineurs et régénérez l'énergie d'Argenti."
+        "fullDesc": "Après utilisation de la technique, les ennemis situés dans une zone définie subissent Hébété pendant {{1}} secondes. Les ennemis hébétés ne peuvent pas attaquer activement votre équipe.<br>Engager le combat en attaquant un ennemi hébété inflige des DGT équivalents à {{2, percent}}% de l'ATQ d'Argenti à tous les ennemis et régénère son énergie de {{3}} points.",
+        "shortDesc": "Inflige Hébété à tous les ennemis dans une zone définie. Lorsque vous engagez le combat contre des ennemis hébétés, vous leur infligez des DGT physiques mineurs et régénérez l'énergie d'Argenti.",
+        "tag": "Incapacitation"
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Piété",
         "fullDesc": "Obtient immédiatement {{1}} cumul d'Ascension en début de tour.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Générosité",
         "fullDesc": "Le personnage régénère immédiatement {{1}} points d'énergie lorsque les cibles ennemies entrent en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Courage",
         "fullDesc": "Inflige {{2, percent}}% de DGT supplémentaires aux ennemis dont le pourcentage de PV est inférieur ou égal à {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -74,7 +91,7 @@
     },
     "3": {
       "name": "Gloire du chemin d'épines",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "4": {
       "name": "Dévotion des trompettes de la guerre",
@@ -82,7 +99,7 @@
     },
     "5": {
       "name": "Merveille de l'univers",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "6": {
       "name": "Resplendissance",

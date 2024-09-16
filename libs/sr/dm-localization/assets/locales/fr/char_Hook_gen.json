@@ -5,61 +5,78 @@
       "0": {
         "name": "Héhé ! Attention, ça brûle !",
         "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Hook à un ennemi unique.",
-        "shortDesc": "Inflige des DGT de feu mineurs à un ennemi unique."
+        "shortDesc": "Inflige des DGT de feu mineurs à un ennemi unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Hé ! Tu te souviens de moi ?",
-        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Hook à un ennemi unique, avec {{2, percent}}% de <u>chances de base</u> de lui infliger Brûlure pendant {{3}} tours.\\nLes ennemis affectés par l'état Brûlure subissent des dégâts de feu sur la durée équivalents à <orangeStrong>{{4, percent}}%</orangeStrong> de l'ATQ de Hook au début de chaque tour.",
-        "shortDesc": "Inflige des DGT de feu à un ennemi unique, avec de fortes chances de lui infliger Brûlure."
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Hook à un ennemi unique, avec {{2, percent}}% de chances de base de lui infliger Brûlure pendant {{3}} tours.<br>Les ennemis affectés par l'état Brûlure subissent des dégâts de feu sur la durée équivalents à <orangeStrong>{{4, percent}}%</orangeStrong> de l'ATQ de Hook au début de chaque tour.",
+        "shortDesc": "Inflige des DGT de feu à un ennemi unique, avec de fortes chances de lui infliger Brûlure.",
+        "tag": "Cible unique"
       },
       "1": {
         "name": "Hé ! Tu te souviens de moi ?",
-        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Hook à un ennemi unique, avec {{2, percent}}% de <u>chances de base</u> de lui infliger Brûlure pendant {{3}} tours. Inflige également des DGT de feu équivalents à <orangeStrong>{{5, percent}}%</orangeStrong> de l'ATQ de Hook aux ennemis adjacents.\\nLes ennemis affectés par l'état Brûlure subissent des dégâts de feu sur la durée équivalents à <orangeStrong>{{4, percent}}%</orangeStrong> de l'ATQ de Hook au début de chaque tour.",
-        "shortDesc": "Inflige des DGT de feu à un ennemi unique, avec de fortes chances de lui infliger Brûlure, et inflige des DGT de feu mineurs aux ennemis adjacents."
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Hook à un ennemi unique, avec {{2, percent}}% de chances de base de lui infliger Brûlure pendant {{3}} tours. Inflige également des DGT de feu équivalents à <orangeStrong>{{5, percent}}%</orangeStrong> de l'ATQ de Hook aux ennemis adjacents.<br>Les ennemis affectés par l'état Brûlure subissent des dégâts de feu sur la durée équivalents à <orangeStrong>{{4, percent}}%</orangeStrong> de l'ATQ de Hook au début de chaque tour.",
+        "shortDesc": "Inflige des DGT de feu à un ennemi unique, avec de fortes chances de lui infliger Brûlure, et inflige des DGT de feu mineurs aux ennemis adjacents.",
+        "tag": "Propagation"
       }
     },
     "ult": {
       "0": {
         "name": "Boom ! Ça prend feu !",
-        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Hook à un ennemi unique.\\nAprès utilisation de l'ultime, la prochaine compétence utilisée est renforcée, infligeant des DGT à la cible ennemie et aux ennemis adjacents.",
-        "shortDesc": "Inflige des DGT de feu massifs à un ennemi unique et <orangeStrong>renforce la compétence lors de sa prochaine utilisation</orangeStrong>."
+        "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Hook à un ennemi unique.<br>Après utilisation de l'ultime, la prochaine compétence utilisée est renforcée, infligeant des DGT à la cible ennemie et aux ennemis adjacents.",
+        "shortDesc": "Inflige des DGT de feu massifs à un ennemi unique et <orangeStrong>renforce la compétence lors de sa prochaine utilisation</orangeStrong>.",
+        "tag": "Cible unique"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Ha ! De l'huile sur le feu !",
+        "fullDesc": "Lorsque Hook attaque une cible affectée par l'état Brûlure, elle inflige des DGT de feu additionnels équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de son ATQ et régénère {{2}} points d'énergie supplémentaires.",
+        "shortDesc": "Lorsque Hook attaque une cible qui souffre de Brûlure, elle inflige des <orangeStrong>DGT de feu additionnels moyens</orangeStrong> et régénère de l'énergie supplémentaires.",
+        "tag": "Renforcement"
       }
     },
     "technique": {
       "0": {
         "name": "Aïe ! Regarde-moi ce bazar !",
-        "fullDesc": "Engage immédiatement le combat contre les ennemis. Hook inflige des DGT de feu équivalents à {{4, percent}}% de son ATQ à un ennemi aléatoire en entrant en combat. D'autre part, il y a {{1, percent}}% de <u>chances de base</u> d'infliger Brûlure à tous les ennemis pendant {{3}} tours.\\nLes ennemis affectés par l'état Brûlure subissent des dégâts de feu sur la durée équivalents à {{2, percent}}% de l'ATQ de Hook au début de chaque tour.",
-        "shortDesc": "Attaque l'ennemi. Inflige des DGT de feu à un ennemi unique aléatoire, avec de fortes chances d'appliquer Brûlure à toutes les cibles ennemies après être entré en combat."
+        "fullDesc": "Engage immédiatement le combat contre les ennemis. Hook inflige des DGT de feu équivalents à {{4, percent}}% de son ATQ à un ennemi aléatoire en entrant en combat. D'autre part, il y a {{1, percent}}% de chances de base d'infliger Brûlure à tous les ennemis pendant {{3}} tours.<br>Les ennemis affectés par l'état Brûlure subissent des dégâts de feu sur la durée équivalents à {{2, percent}}% de l'ATQ de Hook au début de chaque tour.",
+        "shortDesc": "Attaque l'ennemi. Inflige des DGT de feu à un ennemi unique aléatoire, avec de fortes chances d'appliquer Brûlure à toutes les cibles ennemies après être entré en combat.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Innocence",
         "fullDesc": "Hook restaure {{1, percent}}% de ses PV max lorsque son talent est déclenché.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Naïveté",
         "fullDesc": "Les chances de résister aux malus de contrôle augmentent de {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Jouer avec le feu",
         "fullDesc": "L'action de Hook est avancée de {{2, percent}}% et elle régénère {{1}} points d'énergie supplémentaires lorsqu'elle utilise son ultime.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -74,7 +91,7 @@
     },
     "3": {
       "name": "Pas la peine de faire la fine bouche",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "4": {
       "name": "C'est normal de ne pas savoir",
@@ -82,7 +99,7 @@
     },
     "5": {
       "name": "Gloire aux Taupes",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "6": {
       "name": "Toujours prête à en découdre",

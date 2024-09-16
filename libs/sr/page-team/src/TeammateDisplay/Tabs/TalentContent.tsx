@@ -334,7 +334,10 @@ function SkillDisplayCard({
             </Grid>
             <Grid item flexGrow={1} sx={{ pl: 1 }}>
               <Typography variant="h6">{sheetElement?.name}</Typography>
-              <Typography variant="subtitle1">{subtitle}</Typography>
+              <Typography variant="subtitle1">
+                {subtitle}
+                {sheetElement.tag && <> • {sheetElement.tag}</>}
+              </Typography>
             </Grid>
           </Grid>
         </ConditionalWrapper>

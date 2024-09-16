@@ -5,56 +5,72 @@
       "0": {
         "name": "獨角戲",
         "fullDesc": "對指定敵方單體造成等同於花火<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的量子屬性傷害。",
-        "shortDesc": "對敵方單體造成少量量子屬性傷害。"
+        "shortDesc": "對敵方單體造成少量量子屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "夢遊魚",
-        "fullDesc": "使指定我方單體的暴擊傷害提高，提高數值等同於花火<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>暴擊傷害+<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>，持續{{3}}回合，並使該目標行動提前{{4, percent}}%。\\n當花火對自身施放該技能時，無法觸發行動提前效果。",
-        "shortDesc": "使我方單體<orangeStrong>暴擊傷害</orangeStrong>提高，並使該目標行動提前。"
+        "fullDesc": "使指定我方單體的暴擊傷害提高，提高數值等同於花火<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>暴擊傷害+<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>，持續{{3}}回合，並使該目標行動提前{{4, percent}}%。<br>當花火對自身施放該技能時，無法觸發行動提前效果。",
+        "shortDesc": "使我方單體<orangeStrong>暴擊傷害</orangeStrong>提高，並使該目標行動提前。",
+        "tag": "輔助"
       }
     },
     "ult": {
       "0": {
         "name": "一人千役",
         "fullDesc": "為我方恢復{{2}}個戰技點，並使我方全體獲得【謎詭】。持有【謎詭】的我方目標觸發花火天賦造成的傷害提高效果每層額外提高<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>，持續{{4}}回合。",
-        "shortDesc": "為我方恢復<orangeStrong>戰技點</orangeStrong>，使觸發花火天賦的傷害提高效果額外提高。"
+        "shortDesc": "為我方恢復<orangeStrong>戰技點</orangeStrong>，使觸發花火天賦的傷害提高效果額外提高。",
+        "tag": "輔助"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "敘述性詭計",
+        "fullDesc": "花火在場時，戰技點上限額外增加{{3}}點。當我方目標每消耗1點戰技點，則使我方全體造成的傷害提高<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>，該效果持續{{1}}回合，最多可疊加{{4}}層。",
+        "shortDesc": "我方的<orangeStrong>戰技點上限</orangeStrong>提高，我方目標消耗戰技點時，使我方全體<orangeStrong>造成的傷害</orangeStrong>提高。",
+        "tag": "輔助"
       }
     },
     "technique": {
       "0": {
         "name": "不可靠敘事者",
         "fullDesc": "使用秘技後，我方全體進入持續{{2}}秒的【迷誤】狀態。在【迷誤】狀態下不會被敵人發現。【迷誤】狀態期間進入戰鬥時為我方恢復{{1}}個戰技點。",
-        "shortDesc": "使用秘技後，我方全體進入【迷誤】狀態。在【迷誤】狀態下不會被敵人發現。【迷誤】狀態期間進入戰鬥時為我方恢復<orangeStrong>戰技點</orangeStrong>。"
+        "shortDesc": "使用秘技後，我方全體進入【迷誤】狀態。在【迷誤】狀態下不會被敵人發現。【迷誤】狀態期間進入戰鬥時為我方恢復<orangeStrong>戰技點</orangeStrong>。",
+        "tag": "輔助"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "歲時記",
         "fullDesc": "發動普通攻擊時額外恢復{{1}}點能量。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "人造花",
         "fullDesc": "戰技提供的暴擊傷害提高效果會延長到目標下一個回合開始。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "夜想曲",
         "fullDesc": "我方全體的攻擊力提高{{4, percent}}%。當我方隊伍中包含1名/2名/3名量子屬性的角色時，我方量子屬性的角色的攻擊力額外提高{{1, percent}}%/{{2, percent}}%/{{3, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,56 +5,72 @@
       "0": {
         "name": "Aposta Direta",
         "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> da DEF de Aventurine a um único inimigo-alvo.",
-        "shortDesc": "Causa Dano Imaginário leve a um único inimigo-alvo."
+        "shortDesc": "Causa Dano Imaginário leve a um único inimigo-alvo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Alicerce de Luxo",
         "fullDesc": "Fornece um Escudo de Aposta Fortificada que pode bloquear Dano igual a <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> da DEF de Aventurine + <orangeStrong>{{2}}</orangeStrong> para todos os aliados por {{3}} rodada(s). Ao ganhar Aposta Fortificada repetidamente, o efeito de Escudo pode se acumular, até {{4, percent}}% do efeito de Escudo atual fornecido pela Perícia.",
-        "shortDesc": "Fornece um escudo de Aposta Fortificada para todos os aliados, <orangeStrong>cujo efeito de Escudo é acumulável</orangeStrong>."
+        "shortDesc": "Fornece um escudo de Aposta Fortificada para todos os aliados, <orangeStrong>cujo efeito de Escudo é acumulável</orangeStrong>.",
+        "tag": "Defesa"
       }
     },
     "ult": {
       "0": {
         "name": "Tubarão das Apostas",
         "fullDesc": "Recebe aleatoriamente de 1 a {{1}} pontos de Aposta Cega e inflige Perturbação a um único inimigo, durando por {{4}} rodada(s). Causa Dano Imaginário igual a <orangeStrong>{{2, percent}}%</orangeStrong> da DEF de Aventurine a um único inimigo-alvo. Quando um aliado atinge um inimigo-alvo com Perturbação, o Dano CRIT causado aumenta em <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.",
-        "shortDesc": "Ganha um número aleatório de pontos na Aposta Cega e inflige Perturbação em um único inimigo, causando Dano Imaginário. Quando um aliado golpeia um inimigo com Perturbação, aumenta o <orangeStrong>Dano CRIT causado</orangeStrong>."
+        "shortDesc": "Ganha um número aleatório de pontos na Aposta Cega e inflige Perturbação em um único inimigo, causando Dano Imaginário. Quando um aliado golpeia um inimigo com Perturbação, aumenta o <orangeStrong>Dano CRIT causado</orangeStrong>.",
+        "tag": "Alvo Único"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Bem na Mira",
+        "fullDesc": "Para qualquer único aliado com Aposta Fortificada, sua RES a Efeito aumenta em <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>, e quando eles são atacados, Aventurine ganha 1 ponto de Aposta Cega. Quando Aventurine tem Aposta Fortificada, ele pode resistir a penalidades de Controle Negativo. Esse efeito pode ser acionado novamente após {{5}} rodada(s). Aventurine adicionalmente ganha {{1}} ponto(s) de Aposta Cega após ser atacado. Ao alcançar 7 pontos de Aposta Cega, Aventurine consome os 7 pontos para lançar um Ataque Extra de {{2}} golpes, com cada golpe causando Dano Imaginário equivalente a <orangeStrong>{{3, percent}}%</orangeStrong> da DEF de Aventurine a um único inimigo aleatório. Aposta Cega tem um limite máximo de 10 pontos.",
+        "shortDesc": "Para qualquer único aliado com Aposta Fortificada, sua RES a Efeito aumenta e, quando ele é atacado, Aventurine acumula Aposta Cega. Quando Aventurine possui Aposta Fortificada, ele pode resistir a penalidades de Controle Negativo. Ao alcançar 7 pontos de Aposta Cega, Aventurine consome os 7 pontos para realizar um <orangeStrong>Ataque Extra</orangeStrong> que causa Dano Imaginário leve a inimigos aleatórios, ricocheteando um total de 7 vezes.",
+        "tag": "Rebote"
       }
     },
     "technique": {
       "0": {
         "name": "O Vermelho ou o Preto",
-        "fullDesc": "Depois de usar a Técnica, 1 dos seguintes efeitos será concedido:\\nExiste uma chance de aumentar a DEF em {{1, percent}}%.\\nExiste uma chance alta de aumentar a DEF em {{2, percent}}%.\\nExiste uma chance pequena de aumentar a DEF em {{3, percent}}%.\\n\\nQuando essa Técnica for usada várias vezes, só o último efeito adquirido com o maior valor de melhoria será mantido.\\nQuando a próxima batalha começar, aumenta a DEF de todos os aliados pelo valor correspondente, durando por {{4}} rodada(s).",
-        "shortDesc": "Usar a Técnica concederá 1 de 3 tipos de efeitos de Bônus de DEF de diferentes valores de melhoria aleatoriamente. Depois de entrar na próxima batalha, a DEF de todos os aliados aumenta pelo valor correspondente."
+        "fullDesc": "Depois de usar a Técnica, 1 dos seguintes efeitos será concedido:<br>Existe uma chance de aumentar a DEF em {{1, percent}}%.<br>Existe uma chance alta de aumentar a DEF em {{2, percent}}%.<br>Existe uma chance pequena de aumentar a DEF em {{3, percent}}%.<br><br>Quando essa Técnica for usada várias vezes, só o último efeito adquirido com o maior valor de melhoria será mantido.<br>Quando a próxima batalha começar, aumenta a DEF de todos os aliados pelo valor correspondente, durando por {{4}} rodada(s).",
+        "shortDesc": "Usar a Técnica concederá 1 de 3 tipos de efeitos de Bônus de DEF de diferentes valores de melhoria aleatoriamente. Depois de entrar na próxima batalha, a DEF de todos os aliados aumenta pelo valor correspondente.",
+        "tag": "Defesa"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Alavancamento",
         "fullDesc": "Para cada 100 de DEF de Aventurine que exceder {{3}}, aumenta sua própria Chance de CRIT em {{1, percent}}%, até um aumento máximo de {{2, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Mão Quente",
         "fullDesc": "Quando a batalha começa, concede um Escudo de Aposta Fortificada para todos os aliados, cujo efeito de Escudo é igual a {{2, percent}}% do Escudo concedido pela Perícia, durando por {{1}} rodada(s).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Bingo!",
         "fullDesc": "Aventurine acumula 1 Aposta Cega depois que um aliado com Aposta Fortificada realiza um Ataque Extra. Este efeito pode ser acionado um máximo de {{3}} vez(es). A contagem de acionamento deste efeito é reiniciada no início da rodada de Aventurine. Depois que Aventurine realiza um Ataque Extra do seu Talento, fornece Aposta Fortificada para todos os aliados, que pode bloquear Dano igual a {{1, percent}}% da DEF de Aventurine + {{2}}, e fornece adicionalmente Aposta Fortificada que pode bloquear Dano igual a {{4, percent}}% da DEF de Aventurine + {{5}} ao aliado com o efeito de Escudo mais baixo no momento, durando por 3 rodadas.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Taxa Máxima",
-      "desc": "Nv. de Perícia Suprema +2, até no máximo Nv. 15.\\nNv. de ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. de Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. de ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Paradoxo Suspenso Inesperado",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Aversão Ambígua",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "Caça ao Cervo",

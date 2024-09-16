@@ -5,56 +5,72 @@
       "0": {
         "name": "Luz fría, filo helado",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Yanqing como Daño de Hielo a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Arista apedreadracos",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Yanqing como Daño de Hielo a un enemigo y activa Estocada empática durante 1 turno.",
-        "shortDesc": "Inflige Daño de Hielo a un enemigo y activa Estocada empática."
+        "shortDesc": "Inflige Daño de Hielo a un enemigo y activa Estocada empática.",
+        "tag": "ATQ individual"
       }
     },
     "ult": {
       "0": {
         "name": "Persecución pluvial de la golondrina",
-        "fullDesc": "Aumenta su Prob. CRIT en un {{1, percent}}%. Cuando Estocada empática está activa, su Daño CRIT aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong> adicional. Estos <u>efectos positivos</u> duran 1 turno. A continuación, inflige un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Yanqing como Daño de Hielo a un enemigo.",
-        "shortDesc": "Aumenta su Prob. CRIT y potencia Estocada empática. Inflige una gran cantidad de Daño de Hielo a un enemigo."
+        "fullDesc": "Aumenta su Prob. CRIT en un {{1, percent}}%. Cuando Estocada empática está activa, su Daño CRIT aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong> adicional. Estos efectos positivos duran 1 turno. A continuación, inflige un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Yanqing como Daño de Hielo a un enemigo.",
+        "shortDesc": "Aumenta su Prob. CRIT y potencia Estocada empática. Inflige una gran cantidad de Daño de Hielo a un enemigo.",
+        "tag": "ATQ individual"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Compañera afilada",
+        "fullDesc": "Cuando Estocada empática está activa, Yanqing tiene menos probabilidades de recibir un ataque. Además, su Prob. CRIT aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> y su Daño CRIT en un <orangeStrong>{{2, percent}}%</orangeStrong>. Tras atacar a un enemigo, tiene un <orangeStrong>{{3, percent}}%</orangeStrong> de probabilidad fija de activar un ataque adicional que inflige un <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ de Yanqing como Daño de Hielo y tiene una probabilidad base del {{6, percent}}% de afectar con Congelación al objetivo durante 1 turno.<br>Los enemigos congelados no pueden actuar, y al principio de cada turno reciben un <orangeStrong>{{5, percent}}%</orangeStrong> del ATQ de Yanqing como Daño de Hielo adicional.<br>Estocada empática se elimina cuando Yanqing recibe daño.",
+        "shortDesc": "<orangeStrong>Cuando Estocada empática está activa</orangeStrong>, tiene menos probabilidades de recibir un ataque y <orangeStrong>su Prob. CRIT y Daño CRIT aumentan</orangeStrong>. Tras <orangeStrong>atacar</orangeStrong> a un enemigo, tiene cierta probabilidad de activar un ataque adicional que inflige Daño de Hielo. Además, tiene cierta probabilidad de afectar con Congelación al enemigo. Estocada empática desaparece al recibir daño.",
+        "tag": "ATQ individual"
       }
     },
     "technique": {
       "0": {
         "name": "Maestría de espada",
         "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, Yanqing inflige un {{2, percent}}% más de daño durante {{3}} turnos a los enemigos que tengan un porcentaje de PV igual o superior al {{1, percent}}%.",
-        "shortDesc": "Tras usar la técnica, al comenzar la siguiente batalla, aumenta el daño que inflige a los enemigos que tengan un porcentaje de PV igual o superior al 50%."
+        "shortDesc": "Tras usar la técnica, al comenzar la siguiente batalla, aumenta el daño que inflige a los enemigos que tengan un porcentaje de PV igual o superior al 50%.",
+        "tag": "Potenciación"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Beneficio congelado",
         "fullDesc": "Tras lanzar un ataque, los objetivos con Debilidad de Hielo reciben un Daño de Hielo adicional equivalente al {{1, percent}}% del ATQ de Yanqing.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Cabeza alta",
         "fullDesc": "Cuando Estocada empática está activa, la RES a efecto aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Acero de la estepa",
         "fullDesc": "Al lograr un Golpe CRIT, la VEL aumenta en un {{1, percent}}% durante {{2}} turnos.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

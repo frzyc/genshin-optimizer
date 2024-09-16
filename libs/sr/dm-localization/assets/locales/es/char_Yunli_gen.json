@@ -5,56 +5,72 @@
       "0": {
         "name": "Tornasol vuelvevientos",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Yunli como Daño Físico a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño Físico a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Mandoble sísmico",
         "fullDesc": "Yunli regenera una cantidad de PV equivalente al <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de su ATQ + <orangeStrong>{{4}}</orangeStrong> e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Físico a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño Físico a los enemigos adyacentes.",
-        "shortDesc": "Regenera sus propios PV e inflige una pequeña cantidad de Daño Físico a un enemigo y a los enemigos adyacentes."
+        "shortDesc": "Regenera sus propios PV e inflige una pequeña cantidad de Daño Físico a un enemigo y a los enemigos adyacentes.",
+        "tag": "Ráfaga"
       }
     },
     "ult": {
       "0": {
         "name": "Ceñidora del mundo, rompedora del cielo",
-        "fullDesc": "Consume {{8}} pts. de energía. Yunli obtiene Bloqueo y todos los enemigos son afectados con Provocación hasta que termine el próximo turno de un aliado o un enemigo. Además, el Daño CRIT infligido por el siguiente contraataque de Yunli aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong>. Cuando se activa el efecto de contraataque del talento mientras dura el estado de Bloqueo, se reemplaza por el <u>contraataque</u> Capción: Exterminio y se disipa el estado de Bloqueo. Si no activa ningún contraataque mientras dura el estado de Bloqueo, Yunli lanza inmediatamente al terminar este estado el <u>contraataque</u> Capción: Sajadura a un enemigo al azar.\\nCapción: Sajadura: Yunli inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Físico a un enemigo y un <orangeStrong>{{6, percent}}%</orangeStrong> de su ATQ como Daño Físico a los enemigos adyacentes.\\nCapción: Exterminio: Yunli inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Físico a un enemigo y un <orangeStrong>{{6, percent}}%</orangeStrong> de su ATQ como Daño Físico a los enemigos adyacentes, y a continuación inflige daño {{4}} veces más. Cada vez, inflige un <orangeStrong>{{7, percent}}%</orangeStrong> del ATQ de Yunli como Daño Físico a un enemigo al azar.\\nEl daño infligido por Yunli con esta habilidad se considera daño de habilidad definitiva.",
-        "shortDesc": "Entra en el estado de Bloqueo y todos los enemigos son afectados con Provocación. Tras recibir un ataque durante este periodo, lanza un poderoso <orangeStrong><u>contraataque</u></orangeStrong> e inflige <orangeStrong>Daño Físico</orangeStrong> al atacante y a los objetivos adyacentes. A continuación, inflige una pequeña cantidad de Daño Físico a un enemigo; se dispara 6 veces. Si durante el estado de Bloqueo no ha activado ningún contraataque, inflige Daño Físico a un enemigo al azar y a los objetivos adyacentes cuando termina el estado de Bloqueo."
+        "fullDesc": "Consume {{8}} pts. de energía. Yunli obtiene Bloqueo y todos los enemigos son afectados con Provocación hasta que termine el próximo turno de un aliado o un enemigo. Además, el Daño CRIT infligido por el siguiente contraataque de Yunli aumenta en un <orangeStrong>{{2, percent}}%</orangeStrong>. Cuando se activa el efecto de contraataque del talento mientras dura el estado de Bloqueo, se reemplaza por el contraataque Capción: Exterminio y se disipa el estado de Bloqueo. Si no activa ningún contraataque mientras dura el estado de Bloqueo, Yunli lanza inmediatamente al terminar este estado el contraataque Capción: Sajadura a un enemigo al azar.<br>Capción: Sajadura: Yunli inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Físico a un enemigo y un <orangeStrong>{{6, percent}}%</orangeStrong> de su ATQ como Daño Físico a los enemigos adyacentes.<br>Capción: Exterminio: Yunli inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Físico a un enemigo y un <orangeStrong>{{6, percent}}%</orangeStrong> de su ATQ como Daño Físico a los enemigos adyacentes, y a continuación inflige daño {{4}} veces más. Cada vez, inflige un <orangeStrong>{{7, percent}}%</orangeStrong> del ATQ de Yunli como Daño Físico a un enemigo al azar.<br>El daño infligido por Yunli con esta habilidad se considera daño de habilidad definitiva.",
+        "shortDesc": "Entra en el estado de Bloqueo y todos los enemigos son afectados con Provocación. Tras recibir un ataque durante este periodo, lanza un poderoso <orangeStrong>contraataque</orangeStrong> e inflige <orangeStrong>Daño Físico</orangeStrong> al atacante y a los objetivos adyacentes. A continuación, inflige una pequeña cantidad de Daño Físico a un enemigo; se dispara 6 veces. Si durante el estado de Bloqueo no ha activado ningún contraataque, inflige Daño Físico a un enemigo al azar y a los objetivos adyacentes cuando termina el estado de Bloqueo.",
+        "tag": "Potenciación"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Forja fulgurante",
+        "fullDesc": "Cuando Yunli recibe un ataque enemigo, recupera {{3}} pts. de energía adicionales y lanza inmediatamente un contraataque contra dicho enemigo y le inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Físico. También inflige un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño Físico a los enemigos adyacentes.<br>Si no existe el objetivo del contraataque, contraataca a un objetivo enemigo al azar.",
+        "shortDesc": "Cuando Yunli recibe un ataque enemigo, recupera energía adicional y lanza inmediatamente un contraataque contra dicho enemigo y los objetivos adyacentes.",
+        "tag": "Ráfaga"
       }
     },
     "technique": {
       "0": {
         "name": "Atacar después y golpear primero",
         "fullDesc": "Obtiene el efecto de Resistencia durante {{2}} s. Si en este tiempo entra en combate tras atacar a un enemigo o recibir un ataque, lanza inmediatamente Capción: Exterminio a un enemigo al azar y aumenta el daño que inflige este ataque en un {{1, percent}}%.",
-        "shortDesc": "Obtiene el efecto de Resistencia durante 20 s. Si en este tiempo entra en combate tras atacar a un enemigo o recibir un ataque, lanza inmediatamente Capción: Exterminio a un enemigo al azar."
+        "shortDesc": "Obtiene el efecto de Resistencia durante 20 s. Si en este tiempo entra en combate tras atacar a un enemigo o recibir un ataque, lanza inmediatamente Capción: Exterminio a un enemigo al azar.",
+        "tag": "Potenciación"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Buje incinerado",
         "fullDesc": "Después de usar 1 vez Capción: Sajadura, la próxima Capción: Sajadura se reemplaza con Capción: Exterminio.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Sometedemonios",
         "fullDesc": "En el estado de Bloqueo, resiste los estados negativos de Control que reciba y reduce el daño recibido en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Hendetierras",
         "fullDesc": "Al lanzar un contraataque, el ATQ de Yunli aumenta en un {{1, percent}}% durante 1 turno.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

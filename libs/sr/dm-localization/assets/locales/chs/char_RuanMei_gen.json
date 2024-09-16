@@ -5,56 +5,72 @@
       "0": {
         "name": "一针幽兰",
         "fullDesc": "对指定敌方单体造成等同于阮•梅<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的冰属性伤害。",
-        "shortDesc": "对敌方单体造成少量冰属性伤害。"
+        "shortDesc": "对敌方单体造成少量冰属性伤害。",
+        "tag": "单攻"
       }
     },
     "skill": {
       "0": {
         "name": "慢捻抹复挑",
         "fullDesc": "施放战技后阮•梅获得【弦外音】，持续{{3}}回合，阮•梅每回合开始时持续回合数减1。当阮•梅拥有【弦外音】时，我方全体伤害提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>，弱点击破效率提高{{2, percent}}%。",
-        "shortDesc": "施放战技后阮•梅获得【弦外音】。当阮•梅拥有【弦外音】时，提高我方全体的<orangeStrong>伤害</orangeStrong>和<orangeStrong>弱点击破效率</orangeStrong>。"
+        "shortDesc": "施放战技后阮•梅获得【弦外音】。当阮•梅拥有【弦外音】时，提高我方全体的<orangeStrong>伤害</orangeStrong>和<orangeStrong>弱点击破效率</orangeStrong>。",
+        "tag": "辅助"
       }
     },
     "ult": {
       "0": {
         "name": "摇花缎水，沾衣不摘",
-        "fullDesc": "阮•梅展开结界，持续{{2}}回合，自身每回合开始时结界持续回合数减1。\\n处于结界中时我方全体全属性抗性穿透提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>，且攻击后会对敌方目标施加【残梅绽】。\\n【残梅绽】会在敌方目标尝试从<u>弱点击破状态</u>恢复时触发，延长目标的<u>弱点击破状态</u>并使其<u>行动延后</u>，延后数值等同于阮•梅{{3, percent}}%的击破特攻+{{4, percent}}%，并对其造成等同于阮•梅<orangeStrong>{{5, percent}}%</orangeStrong>冰属性击破伤害的<u>击破伤害</u>。\\n敌方目标从<u>弱点击破状态</u>恢复前不可被再次附加【残梅绽】。",
-        "shortDesc": "使我方全体<orangeStrong>全属性抗性穿透</orangeStrong>提高，且攻击后对敌方目标施加【残梅绽】。"
+        "fullDesc": "阮•梅展开结界，持续{{2}}回合，自身每回合开始时结界持续回合数减1。<br>处于结界中时我方全体全属性抗性穿透提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>，且攻击后会对敌方目标施加【残梅绽】。<br>【残梅绽】会在敌方目标尝试从弱点击破状态恢复时触发，延长目标的弱点击破状态并使其行动延后，延后数值等同于阮•梅{{3, percent}}%的击破特攻+{{4, percent}}%，并对其造成等同于阮•梅<orangeStrong>{{5, percent}}%</orangeStrong>冰属性击破伤害的击破伤害。<br>敌方目标从弱点击破状态恢复前不可被再次附加【残梅绽】。",
+        "shortDesc": "使我方全体<orangeStrong>全属性抗性穿透</orangeStrong>提高，且攻击后对敌方目标施加【残梅绽】。",
+        "tag": "辅助"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "分型的螺旋",
+        "fullDesc": "使除自身以外的队友速度提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>。我方全体击破敌方目标弱点时，阮•梅对其造成等同于自身<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>冰属性击破伤害的击破伤害。",
+        "shortDesc": "使除自身以外的队友<orangeStrong>速度</orangeStrong>提高，击破敌方目标弱点时对其<orangeStrong>额外造成冰属性击破伤害</orangeStrong>。",
+        "tag": "辅助"
       }
     },
     "technique": {
       "0": {
         "name": "拭琴抚罗袂",
-        "fullDesc": "使用秘技后，获得【拭琴抚罗袂】，使下一次战斗开始时自动触发{{1}}次战技，此次触发不消耗战技点。\\n在模拟宇宙、差分宇宙中，当阮•梅拥有【拭琴抚罗袂】时，我方主动攻击敌人时总会视为利用弱点进入战斗，且本次攻击可以无视弱点属性削减敌方全体的韧性。击破弱点时，触发攻击者自身属性的弱点击破效果。每拥有1个祝福，本次攻击的削韧值额外提高{{2, percent}}%，且击破敌方目标弱点后对其额外造成等同于阮•梅{{3, percent}}%冰属性击破伤害的击破伤害，最多计入{{4}}个祝福。",
-        "shortDesc": "下一次进战后自动触发<orangeStrong>{{1}}</orangeStrong>次战技。使用秘技后，我方攻击模拟宇宙、差分宇宙的敌人总视为弱点进战，且<orangeStrong>无视弱点属性</orangeStrong>削减韧性。每拥有1个祝福，削韧值提高且击破时额外造成击破伤害。"
+        "fullDesc": "使用秘技后，获得【拭琴抚罗袂】，使下一次战斗开始时自动触发{{1}}次战技，此次触发不消耗战技点。<br>在模拟宇宙、差分宇宙中，当阮•梅拥有【拭琴抚罗袂】时，我方主动攻击敌人时总会视为利用弱点进入战斗，且本次攻击可以无视弱点属性削减敌方全体的韧性。击破弱点时，触发攻击者自身属性的弱点击破效果。每拥有1个祝福，本次攻击的削韧值额外提高{{2, percent}}%，且击破敌方目标弱点后对其额外造成等同于阮•梅{{3, percent}}%冰属性击破伤害的击破伤害，最多计入{{4}}个祝福。",
+        "shortDesc": "下一次进战后自动触发<orangeStrong>{{1}}</orangeStrong>次战技。使用秘技后，我方攻击模拟宇宙、差分宇宙的敌人总视为弱点进战，且<orangeStrong>无视弱点属性</orangeStrong>削减韧性。每拥有1个祝福，削韧值提高且击破时额外造成击破伤害。",
+        "tag": "强化"
       }
     },
     "overworld": {
       "0": {
         "name": "攻击",
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "物体呼吸中",
         "fullDesc": "我方全体击破特攻提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "日消遐思长",
         "fullDesc": "阮•梅的回合开始时，自身恢复{{1}}点能量。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "落烛照水燃",
         "fullDesc": "战斗中阮•梅的击破特攻大于{{1, percent}}%时，每超过{{2, percent}}%，则战技使我方全体伤害提高的效果额外提高{{3, percent}}%，最高不超过{{4, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

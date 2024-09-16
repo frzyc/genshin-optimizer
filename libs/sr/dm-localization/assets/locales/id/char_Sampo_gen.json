@@ -5,56 +5,72 @@
       "0": {
         "name": "Dazzling Blades",
         "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Sampo pada 1 target musuh.",
-        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Ricochet Love",
         "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Sampo pada 1 target musuh, serta mengakibatkan {{1}} kali Wind DMG tambahan masing-masing sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Sampo pada musuh secara acak.",
-        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh. Total Bounce 5 kali."
+        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh. Total Bounce 5 kali.",
+        "tag": "Bounce"
       }
     },
     "ult": {
       "0": {
         "name": "Surprise Present",
-        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Sampo pada seluruh musuh, di saat bersamaan memiliki {{4, percent}}% <u>peluang dasar</u> untuk meningkatkan <orangeStrong>{{2, percent}}%</orangeStrong> DoT yang diterima musuh yang terkena serangan selama {{3}} giliran.",
-        "shortDesc": "Mengakibatkan Wind DMG pada seluruh musuh dan berpeluang besar <orangeStrong>meningkatkan DoT yang diterima musuh</orangeStrong>."
+        "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Sampo pada seluruh musuh, di saat bersamaan memiliki {{4, percent}}% peluang dasar untuk meningkatkan <orangeStrong>{{2, percent}}%</orangeStrong> DoT yang diterima musuh yang terkena serangan selama {{3}} giliran.",
+        "shortDesc": "Mengakibatkan Wind DMG pada seluruh musuh dan berpeluang besar <orangeStrong>meningkatkan DoT yang diterima musuh</orangeStrong>.",
+        "tag": "AoE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Windtorn Dagger",
+        "fullDesc": "Serangan Sampo memiliki {{1, percent}}% peluang dasar untuk membuat target musuh memasuki status Wind Shear selama {{3}} giliran.<br>Selama berstatus Wind Shear, target musuh akan menerima Wind DoT sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Sampo setiap gilirannya dimulai. Status Wind Shear dapat ditumpuk hingga {{4}} lapis.",
+        "shortDesc": "Setelah dirinya menyerang target musuh, berpeluang untuk membuat target memasuki <orangeStrong>status Wind Shear</orangeStrong>.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Shining Bright",
-        "fullDesc": "Setelah menggunakan Technique, musuh dalam jangkauan tertentu akan terkena status Blind selama {{1}} detik. Musuh yang terkena status Blind tidak akan bisa mendeteksi timmu.\\nJika menyerang musuh yang terkena status Blind, akan ada {{2, percent}}% <u>peluang tetap</u> untuk menunda {{3, percent}}% aksi seluruh musuh saat memasuki pertempuran.",
-        "shortDesc": "Membuat musuh dalam jangkauan tertentu memasuki status Blind dan berpeluang besar untuk <u>menunda</u> aksi setiap target musuh setelah memasuki pertempuran."
+        "fullDesc": "Setelah menggunakan Technique, musuh dalam jangkauan tertentu akan terkena status Blind selama {{1}} detik. Musuh yang terkena status Blind tidak akan bisa mendeteksi timmu.<br>Jika menyerang musuh yang terkena status Blind, akan ada {{2, percent}}% peluang tetap untuk menunda {{3, percent}}% aksi seluruh musuh saat memasuki pertempuran.",
+        "shortDesc": "Membuat musuh dalam jangkauan tertentu memasuki status Blind dan berpeluang besar untuk menunda aksi setiap target musuh setelah memasuki pertempuran.",
+        "tag": "Impair"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Trap",
         "fullDesc": "Memperpanjang durasi status Wind Shear yang diberikan Talent sebanyak {{1}} giliran.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Defensive Position",
         "fullDesc": "Memulihkan {{1}} Energy tambahan saat melancarkan Ultimate.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Spice Up",
         "fullDesc": "Mengurangi {{1, percent}}% DMG yang diakibatkan target musuh berstatus Wind Shear pada Sampo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

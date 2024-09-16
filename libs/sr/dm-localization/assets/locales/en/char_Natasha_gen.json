@@ -5,56 +5,72 @@
       "0": {
         "name": "Behind the Kindness",
         "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Natasha's ATK to a single enemy.",
-        "shortDesc": "Deals minor Physical DMG to a single enemy."
+        "shortDesc": "Deals minor Physical DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Love, Heal, and Choose",
         "fullDesc": "Restores a single ally for <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Natasha's Max HP plus <orangeStrong>{{4}}</orangeStrong>. Restores the ally for another <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> of Natasha's Max HP plus <orangeStrong>{{5}}</orangeStrong> at the beginning of each turn for {{3}} turn(s).",
-        "shortDesc": "<orangeStrong>Restores HP</orangeStrong> for a single ally and provides <orangeStrong>Healing Over Time</orangeStrong> to them."
+        "shortDesc": "<orangeStrong>Restores HP</orangeStrong> for a single ally and provides <orangeStrong>Healing Over Time</orangeStrong> to them.",
+        "tag": "Restore"
       }
     },
     "ult": {
       "0": {
         "name": "Gift of Rebirth",
         "fullDesc": "Heals all allies for <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Natasha's Max HP plus <orangeStrong>{{2}}</orangeStrong>.",
-        "shortDesc": "<orangeStrong>Restores HP</orangeStrong> for all allies."
+        "shortDesc": "<orangeStrong>Restores HP</orangeStrong> for all allies.",
+        "tag": "Restore"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Innervation",
+        "fullDesc": "When healing allies with HP percentage at {{1, percent}}% or lower, increases Natasha's Outgoing Healing by <orangeStrong>{{2, percent}}%</orangeStrong>. This effect also works on continuous healing.",
+        "shortDesc": "When healing allies with low HP, increases Outgoing Healing. This effect also works on continuous healing.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Hypnosis Research",
-        "fullDesc": "Immediately attacks the enemy. After entering battle, deals Physical DMG equal to {{4, percent}}% of Natasha's ATK to a random enemy, with a {{1, percent}}% <u>base chance</u> to Weaken all enemies.\\nWhile Weakened, enemies deal {{2, percent}}% less DMG to allies for {{3}} turn(s).",
-        "shortDesc": "Attacks the enemy. After entering battle, deals minor Physical DMG to a random single enemy, with a high chance to inflict Weaken to all enemy targets."
+        "fullDesc": "Immediately attacks the enemy. After entering battle, deals Physical DMG equal to {{4, percent}}% of Natasha's ATK to a random enemy, with a {{1, percent}}% base chance to Weaken all enemies.<br>While Weakened, enemies deal {{2, percent}}% less DMG to allies for {{3}} turn(s).",
+        "shortDesc": "Attacks the enemy. After entering battle, deals minor Physical DMG to a random single enemy, with a high chance to inflict Weaken to all enemy targets.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Soothe",
         "fullDesc": "The Skill removes {{1}} debuff(s) from a target ally.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Healer",
         "fullDesc": "Natasha's Outgoing Healing increases by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Recuperation",
         "fullDesc": "Increases the duration of Skill's continuous healing effect for {{1}} turn(s).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "The Right Cure",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Miracle Cure",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Preventive Treatment",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Doctor's Grace",
