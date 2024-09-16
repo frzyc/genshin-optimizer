@@ -162,6 +162,7 @@ function TeamEditor({
 
   const [showMultiSelect, setShowMultiSelect] = useState(false)
   const onMultiSelect = (cKeys: (CharacterKey | '')[]) => {
+    // Condense character key list so there are no empty team slots between characters
     const filteredKeys = cKeys.filter((key) => key !== '')
     for (let i = 0; i < filteredKeys.length; ++i)
     {
@@ -170,6 +171,7 @@ function TeamEditor({
     }
     for (let j = filteredKeys.length; j < team.loadoutData.length; ++j)
     {
+      // If there are empty slots, clear them
       database.teams.set(teamId, (team) => {
         team.loadoutData[j] = undefined
       })
@@ -202,7 +204,6 @@ function TeamEditor({
       </Suspense>
       <Suspense fallback={false}>
         <CharacterMultiSelectionModal
-          filter={(c) => c !== charKeyAtIndex}
           show={showMultiSelect}
           onHide={() => {
             setShowMultiSelect(false)

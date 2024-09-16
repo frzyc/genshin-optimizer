@@ -23,15 +23,13 @@ import {
   allElementKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
-import type { ICachedCharacter } from '@genshin-optimizer/gi/db'
 import {
   useCharMeta,
   useCharacter,
   useDBMeta,
   useDatabase,
+  useTeam,
 } from '@genshin-optimizer/gi/db-ui'
-import type { CharacterSheet } from '@genshin-optimizer/gi/sheets'
-import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import CloseIcon from '@mui/icons-material/Close'
@@ -72,19 +70,12 @@ import {
 } from './CharacterSort'
 import { CharacterName } from './Trans'
 
-type characterFilter = (
-  characterKey: CharacterKey,
-  character: ICachedCharacter | undefined,
-  sheet: CharacterSheet
-) => boolean
-
 type CharacterMultiSelectionModalProps = {
   show: boolean
   newFirst?: boolean
   onHide: () => void
   onMultiSelect?: (cKeys: (CharacterKey | '')[]) => void
   teamId: string
-  filter?: characterFilter
 }
 const sortKeys = Object.keys(characterSortMap)
 export function CharacterMultiSelectionModal({
@@ -92,7 +83,6 @@ export function CharacterMultiSelectionModal({
   onHide,
   onMultiSelect,
   teamId,
-  filter = () => true,
   newFirst = false,
 }: CharacterMultiSelectionModalProps) {
   const { t } = useTranslation([
@@ -109,17 +99,12 @@ export function CharacterMultiSelectionModal({
     [database, setState]
   )
 
-  const team = database.teams.get(teamId)!
-  const { loadoutData } = team
-  const currentTeamCharKeys : (CharacterKey | '')[] = useMemo(() => {
-    const keys = [] as (CharacterKey | '')[]
-    loadoutData.forEach((loadoutDatum) => {
-      keys.push(database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? '')
-    })
-    return keys
-  }, [database, loadoutData])
-
-  const { gender } = useDBMeta()
+  const { loadoutData } = useTeam(teamId)!
+  const [teamCharKeys, setTeamCharKeys] = useState(['','','',''] as (CharacterKey | '')[])
+  // update teamCharKeys when loadoutData changes
+  useEffect( () => setTeamCharKeys(loadoutData.map((loadoutDatum) =>
+    database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? ''
+  )),[database, loadoutData, setTeamCharKeys])
 
   const [dbDirty, forceUpdate] = useForceUpdate()
 
@@ -139,11 +124,11 @@ export function CharacterMultiSelectionModal({
       ...(newFirst ? ['new'] : []),
       ...(characterSortMap[sortType] ?? []),
     ] as CharacterSortKey[]
-    return (
-      deferredDbDirty &&
-      allCharacterKeys
-        .filter((key) =>
-          filter(key, database.chars.get(key), getCharSheet(key, gender))
+    if (deferredDbDirty)
+    {
+      const filteredKeys = allCharacterKeys
+        .filter(
+          (key) => teamCharKeys.indexOf(key) === -1
         )
         .filter(
           filterFunction(
@@ -159,16 +144,17 @@ export function CharacterMultiSelectionModal({
             ['new', 'favorite']
           )
         )
-    )
+      return teamCharKeys.filter((key) => key !== '').concat(filteredKeys)
+    }
+    return deferredDbDirty
   }, [
     deferredState,
     newFirst,
     deferredDbDirty,
     deferredSearchTerm,
     database,
+    teamCharKeys,
     silly,
-    filter,
-    gender,
   ])
 
   const weaponTotals = useMemo(
@@ -197,24 +183,30 @@ export function CharacterMultiSelectionModal({
 
   const { weaponType, element, sortType, ascending } = state
 
-  // TODO: Should selected characters automatically be moved to the front of the list when the quick select UI is opened?
-  //       Selected characters should bypass all filters
+  // TODO: Should selected characters automatically be moved when selected/deselected?
   //       Currently selected characters should probably also be outlined in the single select UI? Can modals be merged into one with different functionality depending on multi select bool?
-  //       Selection border doesn't appear until after mouse is moved away if not using state or sometimes renders normally?
   const onClick = (key: CharacterKey) => {
-    const keySlotIndex = currentTeamCharKeys.indexOf(key)
-    const firstOpenIndex = currentTeamCharKeys.indexOf('')
+    const keySlotIndex = teamCharKeys.indexOf(key)
+    const firstOpenIndex = teamCharKeys.indexOf('')
     if (keySlotIndex === -1)
     {
       // Selected character was previously unselected, add to the list of currently selected keys if team is not full
       if (firstOpenIndex === -1) return
-      currentTeamCharKeys.splice(firstOpenIndex, 1, key)
+      setTeamCharKeys([
+        ...teamCharKeys.slice(0, firstOpenIndex),
+        key,
+        ...teamCharKeys.slice(firstOpenIndex + 1)
+      ])
     }
     else
     {
       // Selected character was previously selected, so replace the slot with
       // '' to indicate the slot is currently empty
-      currentTeamCharKeys.splice(keySlotIndex, 1, '')
+      setTeamCharKeys([
+        ...teamCharKeys.slice(0, keySlotIndex),
+        '',
+        ...teamCharKeys.slice(keySlotIndex + 1)
+      ])
     }
   }
 
@@ -223,7 +215,7 @@ export function CharacterMultiSelectionModal({
       open={show}
       onClose={() => {
         setSearchTerm('')
-        onMultiSelect?.(currentTeamCharKeys)
+        onMultiSelect?.(teamCharKeys)
         onHide()
       }}
       containerProps={{
@@ -317,7 +309,7 @@ export function CharacterMultiSelectionModal({
                   <SelectionCard
                     characterKey={characterKey}
                     onClick={() => onClick(characterKey)}
-                    selectedCharKeys={currentTeamCharKeys}
+                    selectedIndex = {teamCharKeys.indexOf(characterKey)}
                   />
                 </Grid>
               ))}
@@ -340,11 +332,11 @@ const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
 function SelectionCard({
   characterKey,
   onClick,
-  selectedCharKeys,
+  selectedIndex,
 }: {
   characterKey: CharacterKey
   onClick: () => void
-  selectedCharKeys: (CharacterKey | '')[]
+  selectedIndex: number
 }) {
   const { gender } = useDBMeta()
   const character = useCharacter(characterKey)
@@ -358,7 +350,7 @@ function SelectionCard({
   const banner = characterAsset(characterKey, 'banner', gender)
   const rarity = getCharStat(characterKey).rarity
 
-  const isSelected = selectedCharKeys.indexOf(characterKey) !== -1
+  const isSelected = selectedIndex !== -1
   return (
     <CustomTooltip
       enterDelay={300}
@@ -402,7 +394,7 @@ function SelectionCard({
                 color={'charSelected'}
                 sx={{ position: 'absolute', top: 60, left: 205, zIndex: 2, textShadow: '0 0 5px gray' }}
               >
-                {selectedCharKeys.indexOf(characterKey) + 1}
+                {selectedIndex + 1}
               </SqBadge>
             </Typography>
           )}
