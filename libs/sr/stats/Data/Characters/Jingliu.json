@@ -348,27 +348,21 @@
       "skillParamList": [
         [
           [
-            -1,
             1
           ],
           [
-            -1,
             1
           ],
           [
-            -1,
             20
           ],
           [
-            -1,
             1
           ],
           [
-            -1,
             0.8
           ],
           [
-            -1,
             15
           ]
         ]
@@ -381,7 +375,6 @@
       "skillParamList": [
         [
           [
-            -1,
             0.35
           ]
         ]
@@ -394,7 +387,6 @@
       "skillParamList": [
         [
           [
-            -1,
             0.1
           ]
         ]
@@ -407,7 +399,6 @@
       "skillParamList": [
         [
           [
-            -1,
             0.2
           ]
         ]
@@ -426,9 +417,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -445,9 +434,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -464,9 +451,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -483,9 +468,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -502,9 +485,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -521,9 +502,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -540,9 +519,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -559,9 +536,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -578,9 +553,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     },
@@ -597,9 +570,7 @@
       "pointType": 1,
       "skillParamList": [
         [
-          [
-            -1
-          ]
+          []
         ]
       ]
     }

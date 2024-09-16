@@ -8,7 +8,7 @@
   "def_": "DEF",
   "crit_": "CRIT Rate",
   "crit_dmg_": "CRIT DMG",
-  "brEff_": "Break Effect",
+  "brEffect_": "Break Effect",
   "eff_": "Effect Hit Rate",
   "eff_res_": "Effect RES",
   "enerRegen_": "Energy Regeneration Rate",

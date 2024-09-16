@@ -55,7 +55,7 @@
       "step": 0.0017280006,
       "numSteps": 2
     },
-    "brEff_": {
+    "brEffect_": {
       "base": 0.020736001,
       "step": 0.0025920009,
       "numSteps": 2
@@ -117,7 +117,7 @@
       "step": 0.0025920009,
       "numSteps": 2
     },
-    "brEff_": {
+    "brEffect_": {
       "base": 0.031104,
       "step": 0.003888001,
       "numSteps": 2
@@ -179,7 +179,7 @@
       "step": 0.0034560005,
       "numSteps": 2
     },
-    "brEff_": {
+    "brEffect_": {
       "base": 0.041472,
       "step": 0.0051840004,
       "numSteps": 2
@@ -241,7 +241,7 @@
       "step": 0.0043200003,
       "numSteps": 2
     },
-    "brEff_": {
+    "brEffect_": {
       "base": 0.05184,
       "step": 0.0064800004,
       "numSteps": 2

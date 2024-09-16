@@ -22,7 +22,7 @@ export * from './icons/RelicSlot/RopeIcon'
 export * from './icons/RelicSlot/SphereIcon'
 
 export * from './icons/Stats/AtkIcon'
-export * from './icons/Stats/BrEffIcon'
+export * from './icons/Stats/BrEffectIcon'
 export * from './icons/Stats/CritDmgIcon'
 export * from './icons/Stats/CritRateIcon'
 export * from './icons/Stats/DefIcon'

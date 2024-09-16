@@ -8,7 +8,7 @@
   "def_": "DEF",
   "crit_": "Prob. CRIT",
   "crit_dmg_": "Daño CRIT",
-  "brEff_": "Efecto de Ruptura",
+  "brEffect_": "Efecto de Ruptura",
   "eff_": "Acierto de efecto",
   "eff_res_": "RES a efecto",
   "enerRegen_": "Recuperación de energía",

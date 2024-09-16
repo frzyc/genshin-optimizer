@@ -53,7 +53,7 @@ export const statKeyMap: Record<
 
   StatusProbabilityBase: 'eff_',
   StatusResistanceBase: 'eff_res_',
-  BreakDamageAddedRatioBase: 'brEff_',
+  BreakDamageAddedRatioBase: 'brEffect_',
 
   SPRatioBase: 'enerRegen_',
 } as const

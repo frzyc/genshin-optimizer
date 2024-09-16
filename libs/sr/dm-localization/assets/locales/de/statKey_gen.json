@@ -8,7 +8,7 @@
   "def_": "VTD",
   "crit_": "KRIT-Rate",
   "crit_dmg_": "KRIT-SCH",
-  "brEff_": "Brucheffekt",
+  "brEffect_": "Brucheffekt",
   "eff_": "Effekt-Trefferrate",
   "eff_res_": "Effekt-WDS",
   "enerRegen_": "Energie-Wiederherstellungsrate",

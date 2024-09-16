@@ -45,9 +45,9 @@ const dm = {
     triggers: talent[0][ta++][0],
   },
   technique: {
-    freezeChance: technique[0][te++][0],
-    freezeDuration: technique[0][te++][0],
-    dmg: technique[0][te++][0],
+    freezeChance: technique[te++],
+    freezeDuration: technique[te++],
+    dmg: technique[te++],
   },
   e2: {
     shieldMult: eidolon[2][0],

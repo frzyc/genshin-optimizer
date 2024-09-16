@@ -5824,7 +5824,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'Boothill',
         name: 'statBoost1',
       },
@@ -5835,7 +5835,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'Boothill',
         name: 'statBoost10',
       },
@@ -5857,7 +5857,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'Boothill',
         name: 'statBoost3',
       },
@@ -5879,7 +5879,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'Boothill',
         name: 'statBoost5',
       },
@@ -5901,7 +5901,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'Boothill',
         name: 'statBoost7',
       },
@@ -6778,7 +6778,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'Firefly',
         name: 'statBoost1',
       },
@@ -6789,7 +6789,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'Firefly',
         name: 'statBoost10',
       },
@@ -6811,7 +6811,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'Firefly',
         name: 'statBoost3',
       },
@@ -6833,7 +6833,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'Firefly',
         name: 'statBoost5',
       },
@@ -6855,7 +6855,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'Firefly',
         name: 'statBoost7',
       },
@@ -7112,7 +7112,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'Gallagher',
         name: 'statBoost2',
       },
@@ -7156,7 +7156,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'Gallagher',
         name: 'statBoost6',
       },
@@ -7431,7 +7431,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'Guinaifen',
         name: 'statBoost2',
       },
@@ -7477,7 +7477,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'Guinaifen',
         name: 'statBoost6',
       },
@@ -7511,7 +7511,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'Guinaifen',
         name: 'statBoost9',
       },
@@ -10521,7 +10521,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'RuanMei',
         name: 'ba1_break_',
       },
@@ -10565,7 +10565,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'RuanMei',
         name: 'e4_break_',
       },
@@ -10642,7 +10642,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'RuanMei',
         name: 'statBoost1',
       },
@@ -10653,7 +10653,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'RuanMei',
         name: 'statBoost10',
       },
@@ -10675,7 +10675,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'RuanMei',
         name: 'statBoost3',
       },
@@ -10697,7 +10697,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'RuanMei',
         name: 'statBoost5',
       },
@@ -10719,7 +10719,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'RuanMei',
         name: 'statBoost7',
       },
@@ -12236,7 +12236,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'Xueyi',
         name: 'statBoost1',
       },
@@ -12247,7 +12247,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'Xueyi',
         name: 'statBoost10',
       },
@@ -12269,7 +12269,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'Xueyi',
         name: 'statBoost3',
       },
@@ -12292,7 +12292,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'Xueyi',
         name: 'statBoost5',
       },
@@ -12314,7 +12314,7 @@ export const buffs = {
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'brEff_',
+        q: 'brEffect_',
         sheet: 'Xueyi',
         name: 'statBoost7',
       },

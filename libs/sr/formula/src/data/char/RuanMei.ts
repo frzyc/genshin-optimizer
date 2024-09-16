@@ -63,22 +63,22 @@ const dm = {
     breakDmg: talent[0][ta++],
   },
   technique: {
-    triggers: technique[0][te++][1],
-    toughness_: technique[0][te++][1],
-    breakDmg: technique[0][te++][1],
-    maxBlessings: technique[0][te++][1],
+    triggers: technique[te++],
+    toughness_: technique[te++],
+    breakDmg: technique[te++],
+    maxBlessings: technique[te++],
   },
   b1: {
-    break_: bonusAbility1[0][0][1],
+    break_: bonusAbility1[0],
   },
   b2: {
-    energy: bonusAbility2[0][0][1],
+    energy: bonusAbility2[0],
   },
   b3: {
-    breakThreshold: bonusAbility3[0][0][1],
-    breakPer: bonusAbility3[0][0][2],
-    dmg_per: bonusAbility3[0][0][3],
-    max_dmg_: bonusAbility3[0][0][4],
+    breakThreshold: bonusAbility3[0],
+    breakPer: bonusAbility3[1],
+    dmg_per: bonusAbility3[2],
+    max_dmg_: bonusAbility3[3],
   },
   e1: {
     defIgn_: eidolon[1][0],
@@ -149,7 +149,7 @@ const sheet = register(
   ),
   registerBuff(
     'ba1_break_',
-    teamBuff.premod.brEff_.add(cmpEq(char.bonusAbility1, 1, dm.b1.break_))
+    teamBuff.premod.brEffect_.add(cmpEq(char.bonusAbility1, 1, dm.b1.break_))
   ),
   registerBuffFormula(
     'ba3_brEff_',
@@ -161,7 +161,7 @@ const sheet = register(
           max(
             // (brEff_ - breakThreshold) / breakPer * dmgPer
             prod(
-              sum(own.final.brEff_, -dm.b3.breakThreshold),
+              sum(own.final.brEffect_, -dm.b3.breakThreshold),
               1 / dm.b3.breakPer,
               dm.b3.dmg_per
             ),
@@ -183,7 +183,7 @@ const sheet = register(
   ),
   registerBuff(
     'e4_break_',
-    ownBuff.premod.brEff_.add(
+    ownBuff.premod.brEffect_.add(
       cmpGE(char.eidolon, 4, e4Broken.ifOn(dm.e4.break_))
     )
   )

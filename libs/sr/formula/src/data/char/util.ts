@@ -1,4 +1,5 @@
 import { objMap } from '@genshin-optimizer/common/util'
+import type { NumNode } from '@genshin-optimizer/pando/engine'
 import {
   cmpEq,
   cmpGE,
@@ -59,12 +60,26 @@ export function scalingParams(data_gen: CharacterDatum) {
     skill: skill.skillParamList,
     ult: ult.skillParamList,
     talent: talent.skillParamList,
-    technique: technique.skillParamList,
-    bonusAbility1: bonusAbility1.skillParamList,
-    bonusAbility2: bonusAbility2.skillParamList,
-    bonusAbility3: bonusAbility3.skillParamList,
+    // Assume only 1 technique
+    // Technique only has one level, so we can simplify the array.
+    technique: technique.skillParamList[0].map((params) => params[0]),
+    // Only 1 bonus ability skill config, and only 1 level
+    bonusAbility1: bonusAbility1.skillParamList[0][0],
+    bonusAbility2: bonusAbility2.skillParamList[0][0],
+    bonusAbility3: bonusAbility3.skillParamList[0][0],
     eidolon,
   }
+}
+
+// TODO: Add checking for ascension/level/previous nodes
+/**
+ * Checks if a bonus ability + (TODO) prerequisites are active. If so, returns the value specified.
+ * @param baIndex Bonus ability index to check
+ * @param value Node to return
+ * @returns value, if bonusAbility and prereqs are active
+ */
+export function isBonusAbilityActive(baIndex: 1 | 2 | 3, value: NumNode) {
+  return cmpEq(own.char[`bonusAbility${baIndex}`], 1, value)
 }
 
 /**
@@ -140,15 +155,16 @@ export function heal(
   name: string,
   stat: Stat,
   levelScalingMulti: number[],
-  levelScalingFlat: number[],
+  levelScalingFlat: number[] | undefined,
   abilityScalingType: AbilityScalingType,
   arg: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   const abilityLevel = own.char[abilityScalingType]
   const multi = percent(subscript(abilityLevel, levelScalingMulti))
-  const flat = subscript(abilityLevel, levelScalingFlat)
-  const base = sum(prod(own.final[stat], multi), flat)
+  const flat = levelScalingFlat ? subscript(abilityLevel, levelScalingFlat) : 0
+  const baseScaling = prod(own.final[stat], multi)
+  const base = flat ? sum(baseScaling, flat) : baseScaling
   return customHeal(name, base, arg, ...extra)
 }
 
@@ -232,7 +248,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ownBuff.listing.formulas.add(listingItem(own.final.enerRegen_)),
     ownBuff.listing.formulas.add(listingItem(own.final.eff_)),
     ownBuff.listing.formulas.add(listingItem(own.final.eff_res_)),
-    ownBuff.listing.formulas.add(listingItem(own.final.brEff_)),
+    ownBuff.listing.formulas.add(listingItem(own.final.brEffect_)),
     ownBuff.listing.formulas.add(listingItem(own.common.cappedCrit_)),
     ownBuff.listing.formulas.add(listingItem(own.final.crit_dmg_)),
     ownBuff.listing.formulas.add(listingItem(own.final.heal_)),

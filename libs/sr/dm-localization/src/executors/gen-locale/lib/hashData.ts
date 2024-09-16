@@ -55,7 +55,7 @@ export const HashData = {
     def_: '-615378225',
     crit_: '528301800',
     crit_dmg_: '-220753499',
-    brEff_: '-1668395853',
+    brEffect_: '-1668395853',
     eff_: '284076746',
     eff_res_: '-952827954',
     enerRegen_: '-1155541365',
