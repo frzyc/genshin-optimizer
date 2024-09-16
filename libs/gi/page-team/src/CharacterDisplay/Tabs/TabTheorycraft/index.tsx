@@ -390,27 +390,19 @@ export default function TabTheorycraft() {
                 <Trans t={t} i18nKey="tabTheorycraft.optAlert.scalesWith">
                   The selected Optimization target and constraints scales with:{' '}
                 </Trans>
-                {[...scalesWith]
-                  .map((k) => (
-                    <strong key={k}>
-                      <StatIcon statKey={k} iconProps={iconInlineProps} />
-                      <ArtifactStatWithUnit statKey={k} />
-                    </strong>
-                  ))
-                  .flatMap((value, index, array) => {
-                    if (index === array.length - 2)
-                      return [
-                        value,
-                        <span key="and">{t`tabTheorycraft.optAlert.last`}</span>,
-                      ]
-                    if (index === array.length - 1) return value
-                    return [
-                      value,
-                      <span
-                        key={index}
-                      >{t`tabTheorycraft.optAlert.other`}</span>,
-                    ]
-                  })}
+                {new Intl.ListFormat()
+                  .format(Array.from(Array(scalesWith.size).fill('\u200B')))
+                  .split('')
+                  .map((str, i) =>
+                    str === '\u200B'
+                      ? ((k = [...scalesWith].map((k) => k)[i / 2]) => (
+                          <strong key={k}>
+                            <StatIcon statKey={k} iconProps={iconInlineProps} />
+                            <ArtifactStatWithUnit statKey={k} />
+                          </strong>
+                        ))()
+                      : str
+                  )}
                 <Trans t={t} i18nKey="tabTheorycraft.optAlert.distribute">
                   . The solver will only distribute stats to these substats.
                 </Trans>{' '}
