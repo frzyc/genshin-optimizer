@@ -65,6 +65,7 @@ export const allWeaponClaymoreKeys = [
   'BloodtaintedGreatsword',
   'DebateClub',
   'EarthShaker',
+  'FangOfTheMountainKing',
   'FavoniusGreatsword',
   'FerrousShadow',
   'ForestRegalia',
