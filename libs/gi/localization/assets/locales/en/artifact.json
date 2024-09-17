@@ -121,11 +121,5 @@
   "rvSliderBtn": {
     "maximum": "MRV",
     "current": "RV"
-  },
-  "optExcludeModal": {
-    "excludeMsg": "Are you sure you want to exclude {{count}} artifacts from build optimization?",
-    "includeMsg": "Are you sure you want to include {{count}} artifacts to build optimization?",
-    "excludeBtn": "Exclude Artifacts",
-    "includeBtn": "Include Artifacts"
   }
 }

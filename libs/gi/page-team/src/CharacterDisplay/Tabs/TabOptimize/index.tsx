@@ -1010,7 +1010,7 @@ const BuildItemWrapper = memo(function BuildItemWrapper({
   )
 })
 function CopyTcButton({ build }: { build: GeneratedBuild }) {
-  const { t } = useTranslation('page_character_optimize')
+  const { t } = useTranslation('build')
   const [name, setName] = useState('')
   const [showTcPrompt, onShowTcPrompt, OnHideTcPrompt] = useBoolState()
 
@@ -1091,7 +1091,7 @@ function CopyBuildButton({
 }: {
   build: GeneratedBuild
 }) {
-  const { t } = useTranslation('page_character_optimize')
+  const { t } = useTranslation('build')
   const [name, setName] = useState('')
   const [showPrompt, onShowPrompt, OnHidePrompt] = useBoolState()
 

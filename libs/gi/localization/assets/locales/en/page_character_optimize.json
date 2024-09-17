@@ -58,6 +58,12 @@
     "includeArtifactTip": "Including an artifact will allow the build generator to use it for this character.",
     "includeArtifactButton": "Include this artifact in optimization"
   },
+  "optExcludeModal": {
+    "excludeMsg": "Are you sure you want to exclude {{count}} artifacts from build optimization?",
+    "includeMsg": "Are you sure you want to include {{count}} artifacts to build optimization?",
+    "excludeBtn": "Exclude Artifacts",
+    "includeBtn": "Include Artifacts"
+  },
   "excludeChar": {
     "title": "Use Equipped Artifacts",
     "modal": {
@@ -138,31 +144,6 @@
   "generatedOn": "Build generated on: ",
   "selectChar": "Select a character to generate builds.",
   "clearBuildsBtn": "Clear Builds",
-  "createBuildTc": {
-    "button": "New TC Build",
-    "title": "New Theorycraft Build",
-    "desc": "Copy over this build to a new TC Build",
-    "label": "TC Build Name",
-    "cancel": "Cancel",
-    "create": "Create"
-  },
-  "createBuildReal": {
-    "button": "New Build",
-    "title": "New Build",
-    "desc": "Copy over this build to a new build",
-    "label": "Build Name",
-    "cancel": "Cancel",
-    "create": "Create"
-  },
-  "buildDisplay": {
-    "equippedBadge": "(Equipped)",
-    "currentBadge": "(current build)",
-    "equipped": "Equipped",
-    "equipToCrr": "Equip to Current Build",
-    "oldWeapon": "Old Weapon",
-    "tcWeapon": "TC Weapon",
-    "newWeapon": "New Weapon"
-  },
   "removeBuildButton": "Remove Build",
   "theorycraftButton": "Theorycraft",
   "currentlyEquippedBuild": "Currently Equipped",

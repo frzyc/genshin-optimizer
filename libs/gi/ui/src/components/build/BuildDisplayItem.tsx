@@ -89,7 +89,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
   disabled,
   mainStatAssumptionLevel,
 }: BuildDisplayItemProps) {
-  const { t } = useTranslation('page_character_optimize')
+  const { t } = useTranslation('build')
   const {
     loadoutDatum: { buildType, buildId },
     teamChar: { buildIds = [] },
@@ -452,7 +452,7 @@ function CompareWeaponModal({
   showWeapon: boolean
   onClose: () => void
 }) {
-  const { t } = useTranslation('page_character_optimize')
+  const { t } = useTranslation('build')
   const database = useDatabase()
   const diffCurrentWeap = oldId !== newId
 

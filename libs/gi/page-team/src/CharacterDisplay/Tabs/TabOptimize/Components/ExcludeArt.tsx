@@ -226,7 +226,7 @@ function ExcludeArtRedButtons({
   onExclude: (ids: string[]) => void
   onInclude: (ids: string[]) => void
 }) {
-  const { t } = useTranslation('artifact')
+  const { t } = useTranslation('page_character_optimize')
   const { numExclude, numInclude } = useMemo(() => {
     const excludedFiltered = artExclusion.filter((i) => artifactIds.includes(i))
 

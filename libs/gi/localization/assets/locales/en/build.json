@@ -56,5 +56,30 @@
     "equipped": "Equipped ",
     "crrBadge": "Current",
     "tcBadge": "TC"
+  },
+  "createBuildTc": {
+    "button": "New TC Build",
+    "title": "New Theorycraft Build",
+    "desc": "Copy over this build to a new TC Build",
+    "label": "TC Build Name",
+    "cancel": "Cancel",
+    "create": "Create"
+  },
+  "createBuildReal": {
+    "button": "New Build",
+    "title": "New Build",
+    "desc": "Copy over this build to a new build",
+    "label": "Build Name",
+    "cancel": "Cancel",
+    "create": "Create"
+  },
+  "buildDisplay": {
+    "equippedBadge": "(Equipped)",
+    "currentBadge": "(current build)",
+    "equipped": "Equipped",
+    "equipToCrr": "Equip to Current Build",
+    "oldWeapon": "Old Weapon",
+    "tcWeapon": "TC Weapon",
+    "newWeapon": "New Weapon"
   }
 }
