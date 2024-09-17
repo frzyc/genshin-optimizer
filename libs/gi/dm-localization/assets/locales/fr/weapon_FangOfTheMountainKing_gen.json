@@ -1,0 +1,24 @@
+{
+  "name": "Croc du roi de la montagne",
+  "description": {
+    "0": "Une épée géante forgée à partir de turquoise pure. En raison de son poids supérieur à celui de la plupart des armes ordinaires, elle doit son nom à Kongomato, le roi de la montagne."
+  },
+  "passiveName": "Chasse de turquoise",
+  "passiveDescription": {
+    "0": {
+      "0": "Toucher un ennemi avec une compétence élémentaire accorde un cumul de faveur canopéenne, cet effet pouvant être déclenché une fois toutes les 0,5 s ; de plus, le personnage équipé de l'arme obtient 3 cumuls de faveur canopéenne lorsqu'un membre de l'équipe à proximité a déclenché une réaction de Brûlure ou de Bourgeonnement, cet effet pouvant être déclenché une fois toutes les 2 s, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé. Faveur canopéenne : augmente les DGT des compétences et déchaînements élémentaires de <cryo>10 %</cryo> pendant 6 s ; cet effet peut être cumulé 6 fois maximum, la durée de chaque cumul étant calculée de façon indépendante."
+    },
+    "1": {
+      "0": "Toucher un ennemi avec une compétence élémentaire accorde un cumul de faveur canopéenne, cet effet pouvant être déclenché une fois toutes les 0,5 s ; de plus, le personnage équipé de l'arme obtient 3 cumuls de faveur canopéenne lorsqu'un membre de l'équipe à proximité a déclenché une réaction de Brûlure ou de Bourgeonnement, cet effet pouvant être déclenché une fois toutes les 2 s, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé. Faveur canopéenne : augmente les DGT des compétences et déchaînements élémentaires de <cryo>12,5 %</cryo> pendant 6 s ; cet effet peut être cumulé 6 fois maximum, la durée de chaque cumul étant calculée de façon indépendante."
+    },
+    "2": {
+      "0": "Toucher un ennemi avec une compétence élémentaire accorde un cumul de faveur canopéenne, cet effet pouvant être déclenché une fois toutes les 0,5 s ; de plus, le personnage équipé de l'arme obtient 3 cumuls de faveur canopéenne lorsqu'un membre de l'équipe à proximité a déclenché une réaction de Brûlure ou de Bourgeonnement, cet effet pouvant être déclenché une fois toutes les 2 s, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé. Faveur canopéenne : augmente les DGT des compétences et déchaînements élémentaires de <cryo>15 %</cryo> pendant 6 s ; cet effet peut être cumulé 6 fois maximum, la durée de chaque cumul étant calculée de façon indépendante."
+    },
+    "3": {
+      "0": "Toucher un ennemi avec une compétence élémentaire accorde un cumul de faveur canopéenne, cet effet pouvant être déclenché une fois toutes les 0,5 s ; de plus, le personnage équipé de l'arme obtient 3 cumuls de faveur canopéenne lorsqu'un membre de l'équipe à proximité a déclenché une réaction de Brûlure ou de Bourgeonnement, cet effet pouvant être déclenché une fois toutes les 2 s, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé. Faveur canopéenne : augmente les DGT des compétences et déchaînements élémentaires de <cryo>17,5 %</cryo> pendant 6 s ; cet effet peut être cumulé 6 fois maximum, la durée de chaque cumul étant calculée de façon indépendante."
+    },
+    "4": {
+      "0": "Toucher un ennemi avec une compétence élémentaire accorde un cumul de faveur canopéenne, cet effet pouvant être déclenché une fois toutes les 0,5 s ; de plus, le personnage équipé de l'arme obtient 3 cumuls de faveur canopéenne lorsqu'un membre de l'équipe à proximité a déclenché une réaction de Brûlure ou de Bourgeonnement, cet effet pouvant être déclenché une fois toutes les 2 s, même lorsque le personnage fait partie de l'équipe mais n'est pas déployé. Faveur canopéenne : augmente les DGT des compétences et déchaînements élémentaires de <cryo>20 %</cryo> pendant 6 s ; cet effet peut être cumulé 6 fois maximum, la durée de chaque cumul étant calculée de façon indépendante."
+    }
+  }
+}

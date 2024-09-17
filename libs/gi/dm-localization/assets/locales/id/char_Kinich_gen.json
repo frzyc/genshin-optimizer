@@ -1,0 +1,182 @@
+{
+  "name": "Kinich",
+  "title": "Turnfire Hunt",
+  "description": "Pemburu Saurian dari Huitztlan, ahli dalam menghitung biaya.",
+  "constellationName": "Chimaera Alebriius",
+  "auto": {
+    "name": "Nightsun Style",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 3 serangan berturut-turut.",
+        "2": "Setelah serangan putaran mengayun di udara melalui Elemental Skill \"Canopy Hunter: Riding High\", akan melancarkan satu kali Normal Attack di udara sebelum mendarat di tanah."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk berputar dan melemparkan Claymore-nya terhadap musuh."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah, menyerang musuh di jalur terjangan dan mengakibatkan DMG Area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Normal Attack di udara",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Canopy Hunter: Riding High",
+    "description": {
+      "0": "Berbekal pengalamannya dalam berburu, Kinich dapat bergerak atau menyerang musuhnya dengan cepat.",
+      "1": "Jika ada musuh atau objek yang bisa diserang di sekitar, akan mengaitkan pengait ke tubuh target, dan memasuki status Nightsoul dengan biaya 0 poin Nightsoul. Jika tidak ada apa pun, akan menembakkan pengait ke arah depan dan mengayunkannya di udara, membuat CD Skill berkurang 60%.",
+      "2": "Saat ditahan, akan membidik untuk menentukan arah lemparan pengait.",
+      "3": "<br/>",
+      "4": "<strong>Nightsoul's Blessing: Kinich</strong>",
+      "5": "Status Nightsoul's Blessing Kinich berlangsung 10 detik, dan akan menghasilkan 2 poin Nightsoul setiap detiknya.",
+      "6": "Dalam status Nightsoul's Blessing, Kinich akan mengaitkan pengait ke musuh di sisinya, dan akan melancarkan berbagai pola serangan:",
+      "7": [
+        "Saat melancarkan Normal Attack: dengan arah pergerakannya saat ini sebagai landasannya, Kinich akan melakukan Loop Shot dengan target pengait sebagai pusat serangannya, mengakibatkan <dendro>Dendro DMG</dendro> dengan atribut Nightsoul, serta menghasilkan 3 poin Nightsoul. DMG yang diakibatkan oleh Loop Shot akan dianggap sebagai DMG Elemental Skill.",
+        "Saat nilai Nightsoul mencapai batas maksimumnya, akan bisa melancarkan Elemental Skill \"Scalespiker Cannon\": Mengonsumsi seluruh poin Nightsoul dan mengakibatkan <dendro>Dendro DMG</dendro> dengan atribut Nightsoul. Saat \"Scalespiker Cannon\" dilancarkan dengan cara ditahan, akan bisa membidik untuk menentukan target serangan. Setelah Scalespiker Cannon dilancarkan, Kinich akan mencoba untuk mengait target."
+      ],
+      "8": "Dalam status Nightsoul's Blessing, setelah musuh terkait atau setelah Scalespiker Cannon dilancarkan, akan membentuk sebuah Blind Spot di sisi musuh. Saat Kinich memasuki Blind Spot, 4 poin Nightsoul akan dipulihkan dan Blind Spot akan hilang.",
+      "9": "Jika kaitan terputus karena melebihi jarak atau alasan lainnya, Normal Attack yang dilancarkan akan kembali membentuk hubungan yang baru dengan musuh di sekitar dan akan melancarkan Loop Shot.",
+      "10": "<br/>",
+      "11": "<i>\"Semua kan ada harganya. Aku sarankan kamu tawar dengan harga yang cocok deh ... Hah? Cicilan? Tidak terima cicilan, bos.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Loop Shot",
+      "1": "DMG Scalespiker Cannon",
+      "2": "Batas Poin Nightsoul",
+      "3": "Cooldown",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Hail to the Almighty Dragonlord",
+    "description": {
+      "0": "Melepaskan kekuatan Yang Mulia Raja Naga Ajaw (secara terbatas, bersyarat, tertentu, sesuai kontrak, sebagian, sementara) dan mengakibatkan <dendro>Dendro DMG Area</dendro> dengan atribut Nightsoul. Ajaw akan terus mengembuskan napas naga secara berkala yang mengakibatkan <dendro>Dendro DMG Area</dendro> dengan atribut Nightsoul.",
+      "1": "Saat dilancarkan, jika Kinich sedang berada dalam status Nightsoul's Blessing, durasi Nightsoul's Blessing kali ini diperpanjang 1,7 detik.",
+      "2": "<br/>",
+      "3": "<i>\"Benar sekali! Yang ada di hadapan kalian sekarang adalah Yang Mulia Raja Naga, K'uhul Ajaw! Majulah, berlutut, dan cium kakiku!\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Dragon Breath",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "The Price of Desolation",
+    "description": {
+      "0": "Saat dalam status Nightsoul's Blessing dan Elemental Skill Kinich mengenai musuh, akan memasuki status Desolation: Saat menerima DMG reaksi Burning atau Burgeon, akan memulihkan 7 poin Nightsoul bagi Kinich, maksimum pemulihan Nightsoul yang bisa diperoleh dengan cara ini adalah sekali setiap 0,8 detik. Status Desolation berlangsung hingga status Nightsoul's Blessing Kinich kali ini berakhir."
+    }
+  },
+  "passive2": {
+    "name": "Flame Spirit Pact",
+    "description": {
+      "0": "Setelah anggota party di sekitar memicu status Nightsoul Burst, Kinich akan mendapatkan 1 lapis Hunter's Experience yang berlangsung 15 detik, maksimum 2 lapis. Saat Kinich melancarkan Scalespiker Cannon dari <strong>Canopy Hunter: Riding High</strong>, seluruh lapisan Hunter's Experience akan dikonsumsi, dan setiap lapisnya akan meningkatkan DMG Scalespiker Cannon kali ini sebesar 320% ATK Kinich."
+    }
+  },
+  "passive3": {
+    "name": "Night Realm's Gift: Repaid in Full",
+    "description": {
+      "0": "Saat Kinich sedang melayang setelah mengayun di udara melalui <strong>Canopy Hunter: Riding High</strong>, dia dapat mengonsumsi 10 poin Phlogiston untuk mengayun kembali di udara.",
+      "1": "Saat berada di lokasi yang memiliki Phlogiston Mechanic di Natlan, bisa melancarkan Nightsoul Transmission: Kinich. Saat Karakter aktif sedang berlari atau sedang bergerak yang dikarenakan oleh Talenta tertentu, atau saat berada di udara, dan mengganti Karakter menjadi Kinich akan melakukan tindakan berikut berdasarkan syarat yang dipenuhi:",
+      "2": [
+        "Saat menghadap ke Coilgrass Sigil yang bisa berinteraksi, akan melemparkan pengait ke arahnya dan bergerak;",
+        "Saat ada musuh di sekitar diri sendiri dan berada dalam kondisi bertempur: Melancarkan Canopy Hunter: Riding High ke arah musuh ini untuk bergerak;"
+      ],
+      "3": "Jika tidak, Kinich akan melemparkan pengait dan mengayun di udara. Kinich akan menjadikan Coilgrass Sigil yang memenuhi syarat untuk menjadi prioritas target kaitannya.",
+      "4": "Nightsoul Transmission party sendiri dapat terpicu sekali setiap 10 detik.",
+      "5": "<br/>",
+      "6": "Saat berinteraksi dengan Coilgrass Sigil dan item lain yang bisa berinteraksi dengan Yumkasaurus, \"Canopy Hunter: Riding High\" akan diganti menjadi \"Yumkasaurus Mimesis\" yang membuat interaksi terhadap item-item jenis tersebut mengikuti peraturan yang berlaku terhadap Yumkasaurus, dan tidak akan membuat Canopy Hunter: Riding High memasuki CD."
+    }
+  },
+  "passive": {
+    "name": "Swift Envoy",
+    "description": {
+      "0": "Saat ada area dengan Phlogiston Mechanic di Natlan, berinteraksi dengan item tertentu yang bisa dikumpulkan, akan meningkatkan 15% Movement SPD Karakter sendiri yang berada di dalam party selama 10 detik. Selain ini, akan menunjukkan posisi <strong>Produk Khas Natlan</strong> yang ada di sekitar pada peta kecil."
+    }
+  },
+  "constellation1": {
+    "name": "Parrot's Beak",
+    "description": {
+      "0": "Setelah Kinich mendarat melalui ayunan di udara <strong>Canopy Hunter: Riding High</strong>, Movement SPD meningkat 30% selama 6 detik.",
+      "1": "Selain itu, CRIT DMG Scalespiker Cannon meningkat 100%."
+    }
+  },
+  "constellation2": {
+    "name": "Tiger Beetle's Palm",
+    "description": {
+      "0": "Saat Elemental Skill Kinich mengenai musuh, akan membuat <dendro>Dendro RES</dendro> musuh yang bersangkutan berkurang 30% selama 6 detik.",
+      "1": "Selain itu, radius serangan Scalespiker Cannon pertama yang ditembakkan Kinich setelah memasuki Nightsoul's Blessing akan meningkat, dan DMG-nya juga meningkat 100%."
+    }
+  },
+  "constellation3": {
+    "name": "Protosuchian's Claw",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Canopy Hunter: Riding High</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Hummingbird's Feather",
+    "description": {
+      "0": "Saat dalam status Nightsoul's Blessing, setelah Kinich melancarkan Loop Shot atau setelah melancarkan Scalespiker Cannon, akan memulihkan 5 poin Energy baginya. Pemulihan Energy dengan cara ini dapat dilakukan maksimum sekali setiap 2,8 detik.",
+      "1": "Selain itu, DMG <strong>Hail to the Almighty Dragonlord</strong> meningkat 70%."
+    }
+  },
+  "constellation5": {
+    "name": "Howler Monkey's Tail",
+    "description": {
+      "0": "Meningkatkan 3 level <strong>Hail to the Almighty Dragonlord</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Auspicious Beast's Shape",
+    "description": {
+      "0": "Setelah Scalespiker Cannon mengenai musuh, akan melambung satu kali di antara musuh dan mengakibatkan <dendro>Dendro DMG</dendro> sebesar 700% ATK Kinich.",
+      "1": "Jika Scalespiker Cannon kali ini memicu efek penguatan pada meriam dari Talenta Pasif \"Flame Spirit Pact\" atau Konstelasi \"Tiger Beetle's Palm\", maka seluruh serangan dari lambungan yang dihasilkan akan mendapatkan efek penguatan yang disebutkan di atas."
+    }
+  }
+}

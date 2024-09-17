@@ -1,0 +1,182 @@
+{
+  "name": "Kinich",
+  "title": "Cacciatore del Voltafuoco",
+  "description": "Un Cacciatore di Saurici di Huitztlan, abile nel valutare i costi.",
+  "constellationName": "Chimaera Alebriius",
+  "auto": {
+    "name": "Stile del sole notturno",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra fino a 3 colpi rapidi.",
+        "2": "Dopo aver eseguito l'oscillazione a mezz'aria della sua abilità elementale Cacciatore delle Vette: Al settimo cielo, può eseguire un attacco normale a mezz'aria prima di atterrare."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per far roteare la sua claymore e lanciarla in avanti per attaccare gli avversari."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi contro il suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da ATT normale a mezz'aria",
+      "4": "DAN da ATT caricato",
+      "5": "Costo vigore ATT caricato",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Cacciatore delle Vette: Al settimo cielo",
+    "description": {
+      "0": "Kinich usa le sue abilità di caccia grossa per spostarsi a gran velocità o per attaccare il suo avversario.",
+      "1": "Quando nelle vicinanze ci sono oggetti o avversari che è possibile attaccare, usa una corda da arrampicata per aggrapparsi al bersaglio ed entrare nello stato di Grazia dell'Anima della Notte con 0 punti Anima della Notte. In assenza di oggetti o avversari, usa una corda da arrampicata per oscillare a mezz'aria davanti a sé, riducendo il TdR di quest'abilità di un 60%.",
+      "2": "La pressione prolungata permette di prendere la mira con la corda da arrampicata.",
+      "3": "<br/>",
+      "4": "<strong>Grazia dell'Anima della Notte: Kinich</strong>",
+      "5": "La Grazia di Kinich dura 10 s e genera 2 punti Anima della Notte al secondo.",
+      "6": "Quando è in questo stato, Kinich afferra con la corda da arrampicata uno degli avversari vicini ed esegue un attacco variabile.",
+      "7": [
+        " Quando usa l'attacco normale, Kinich spara dei Colpi ciclici al bersaglio afferrato, girandogli attorno in base alla direzione di movimento, infliggendo <dendro>DAN da Dendro</dendro> con attributo Anima della Notte e generando 3 punti Anima della Notte. I DAN inflitti dai Colpi ciclici vengono considerati DAN da abilità elementale.",
+        " Quando i punti Anima della Notte sono al massimo, Kinich può usare l'abilità elementale Cannone Squamocuspide, che consuma tutti i punti Anima della Notte per infliggere <dendro>DAN da Dendro</dendro> con attributo Anima della Notte. La pressione prolungata di Cannone Squamocuspide permette a Kinich di mirare e scegliere il bersaglio da colpire. Dopo aver fatto fuoco, Kinich tenta di aggrapparsi al bersaglio."
+      ],
+      "8": "Mentre è in stato di Grazia dell'Anima della Notte, Kinich genera un Punto cieco accanto all'avversario dopo essersi aggrappato a esso o aver sparato col Cannone Squamocuspide. Quando Kinich entra nel Punto cieco, quest'ultimo svanisce generando 4 punti Anima della Notte per Kinich.",
+      "9": "Se la corda si stacca a causa della distanza eccessiva o per qualsiasi altro motivo, usare l'attacco normale ne stabilisce una nuova con un altro avversario circostante, permettendo a Kinich di sferrare Colpi ciclici.",
+      "10": "<br/>",
+      "11": "<i>\"Tutto ha il suo costo. Ti suggerisco di fare un'offerta adeguata... Cosa? No, niente rateizzazioni.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Colpo ciclico",
+      "1": "DAN da Cannone Squamocuspide",
+      "2": "Limite punti Anima della Notte",
+      "3": "TdR",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Sia lode all'onnipotente Signore dei Draghi",
+    "description": {
+      "0": "Scatena il potere dell'onnipotente Signore dei Draghi Ajaw (a titolo limitato, condizionato, riservato, contrattato, parziale e temporaneo), infliggendo <dendro>DAN da Dendro ad area</dendro> con attributo Anima della Notte. Ajaw sprigiona il suo Alito di Drago a intervalli regolari, infliggendo <dendro>DAN da Dendro ad area</dendro> con attributo Anima della Notte.",
+      "1": "Se Kinich usa il Tripudio mentre è in stato di Grazia dell'Anima della Notte, la durata di quest'ultimo si estende di 1,7 s.",
+      "2": "<br/>",
+      "3": "<i>\"Oh, sì! Dinanzi a te si erge K'uhul Ajaw, l'onnipotente Signore dei Draghi! Orsù, dunque! Vieni avanti, prostrati a Noi e baciaCi i piedi!\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "DAN da Alito di Drago",
+      "2": "Durata",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Il prezzo della desolazione",
+    "description": {
+      "0": "Quando Kinich è in stato di Grazia dell'Anima della Notte, gli avversari che colpisce con l'abilità elementale entrano in stato di Desolazione, e quando subiscono DAN da reazione di Ustione o Germinazione ripristinano 7 punti Anima della Notte di Kinich. È possibile ottenere punti Anima della Notte in questo modo una volta ogni 0,8 s. Lo stato di Desolazione persiste fino alla fine della Grazia dell'Anima della Notte di Kinich."
+    }
+  },
+  "passive2": {
+    "name": "Patto dello Spirito fiammeggiante",
+    "description": {
+      "0": "Dopo che un membro vicino del gruppo innesca un Impeto dell'Anima della Notte, Kinich ottiene un accumulo di Esperienza del cacciatore che dura 15 s, fino a un massimo di 2 accumuli. Quando usa Cannone Squamocuspide di <strong>Cacciatore delle Vette: Al settimo cielo</strong>, Kinich consuma tutti gli accumuli, aumentando i DAN inflitti dal Cannone di un 320% del suo ATT per ogni accumulo consumato."
+    }
+  },
+  "passive3": {
+    "name": "Dono del Reame notturno: Estinzione del debito",
+    "description": {
+      "0": "Quando Kinich è sospeso dopo aver compiuto l'oscillazione a mezz'aria di <strong>Cacciatore delle Vette: Al settimo cielo</strong>, può consumare 10 punti Flogisto per eseguire un'ulteriore oscillazione.",
+      "1": "Se si trova in un'area di Natlan dove sono presenti uno o più Meccanismi flogistici, può usare Trasmissione dell'Anima della Notte: Kinich. Quando il personaggio attivo sta eseguendo uno Scatto, sta compiendo un movimento causato da determinati talenti, oppure è sospeso in aria, passare il controllo a Kinich permette a quest'ultimo di eseguire una delle seguenti azioni in base alle condizioni soddisfatte.",
+      "2": [
+        " Quando si trova di fronte a un Sigillo Spiralerba con cui è possibile interagire, Kinich usa la sua corda da arrampicata per proiettarsi nella sua direzione.",
+        " Se ci sono avversari circostanti contro cui stai combattendo, Kinich usa Cacciatore delle Vette: Al settimo cielo nella direzione degli avversari."
+      ],
+      "3": "In alternativa, Kinich usa la corda da arrampicata per compiere un'oscillazione, scegliendo come bersagli prioritari per aggrapparsi i Sigilli Spiralerba validi.",
+      "4": "Trasmissione dell'Anima della Notte può attivarsi una volta ogni 10 s all'interno del tuo gruppo.",
+      "5": "<br/>",
+      "6": "Quando interagisce con i Sigilli Spiralerba e altri oggetti con cui possono interagire gli Yumkasauri, \"Cacciatore delle Vette: Al settimo cielo\" viene convertito in \"Mimesi yumkasaurica\", facendo in modo che le interazioni con questi oggetti seguano le stesse regole applicate agli Yumkasauri, senza attivare il TdR di Cacciatore delle Vette: Al settimo cielo."
+    }
+  },
+  "passive": {
+    "name": "Emissario alacre",
+    "description": {
+      "0": "Quando si trova in un'area di Natlan dove sono presenti dei Meccanismi flogistici, interagire con alcuni materiali da raccolta aumenta la VEL di movimento dei personaggi del tuo gruppo di un 15% per 10 s. Inoltre, la posizione delle <strong>risorse uniche di Natlan</strong> circostanti viene mostrata sulla minimappa."
+    }
+  },
+  "constellation1": {
+    "name": "Becco del pappagallo",
+    "description": {
+      "0": "Quando Kinich atterra dopo aver effettuato l'oscillazione a mezz'aria di <strong>Cacciatore delle Vette: Al settimo cielo</strong>, la sua VEL di movimento aumenta di un 30% per 6 s.",
+      "1": "Inoltre, i DAN da CRIT di Cannone Squamocuspide aumentano di un 100%."
+    }
+  },
+  "constellation2": {
+    "name": "Zampa della cicindela",
+    "description": {
+      "0": "Quando Kinich colpisce un avversario con l'abilità elementale, la <dendro>RES a Dendro</dendro> di quest'ultimo si riduce di un 30% per 6 s.",
+      "1": "Inoltre, il primo colpo di Cannone Squamocuspide sparato da Kinich dopo l'inizio dello stato di Grazia dell'Anima della Notte possiede un'area d'effetto maggiore e DAN aumentati del 100%."
+    }
+  },
+  "constellation3": {
+    "name": "Artiglio del protosuco",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Cacciatore delle Vette: Al settimo cielo</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Piuma del colibrì",
+    "description": {
+      "0": "Quando Kinich è nello stato di Grazia dell'Anima della Notte, la sua energia si ripristina di 5 dopo aver scagliato i suoi Colpi ciclici o aver sparato un colpo di Cannone Squamocuspide. È possibile ripristinare l'energia in questo modo una volta ogni 2,8 s.",
+      "1": "Inoltre, <strong>Sia lode all'onnipotente Signore dei Draghi</strong> infligge un 70% di DAN in più."
+    }
+  },
+  "constellation5": {
+    "name": "Coda della scimmia urlatrice",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Sia lode all'onnipotente Signore dei Draghi</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Forma della bestia propizia",
+    "description": {
+      "0": "Dopo aver colpito un avversario, il proiettile di Cannone Squamocuspide rimbalza tra gli avversari una volta infliggendo <dendro>DAN da Dendro</dendro> pari a un 700% dell'ATT di Kinich.",
+      "1": "Se questa iterazione di Cannone Squamocuspide attiva i potenziamenti conferiti dal talento passivo Patto dello Spirito fiammeggiante o dalla costellazione Zampa della cicindela, anche l'attacco rimbalzante riceve i relativi potenziamenti."
+    }
+  }
+}

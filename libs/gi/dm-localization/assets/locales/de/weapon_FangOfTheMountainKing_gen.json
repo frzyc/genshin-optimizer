@@ -1,0 +1,24 @@
+{
+  "name": "Zahn des Bergkönigs",
+  "description": {
+    "0": "Ein riesiges Schwert aus reinem Türkis. Weil es viel schwerer ist als eine gewöhnliche Waffe, wurde es nach dem „Bergkönig“ Kongamato benannt."
+  },
+  "passiveName": "Türkisjagd",
+  "passiveDescription": {
+    "0": {
+      "0": "Erschafft nach dem Treffen von Gegnern mit Elementarfähigkeiten 1 Stapelung „Baumkronensegnung“, 0,5 s Abklingzeit. Verleiht, wenn Truppenmitglieder in der Nähe die Reaktionen „In Flammen“ oder „Flammenspross“ auslösen, dem Träger 3 Stapelungen Baumkronensegnung, 2 s Abklingzeit, kann auch ausgelöst werden, wenn die jeweilige Figur inaktiv in der Truppe ist. Baumkronensegnung: Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden 6 s lang um je <cryo>10 %</cryo>, 6-fach stapelbar. Die Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet."
+    },
+    "1": {
+      "0": "Erschafft nach dem Treffen von Gegnern mit Elementarfähigkeiten 1 Stapelung „Baumkronensegnung“, 0,5 s Abklingzeit. Verleiht, wenn Truppenmitglieder in der Nähe die Reaktionen „In Flammen“ oder „Flammenspross“ auslösen, dem Träger 3 Stapelungen Baumkronensegnung, 2 s Abklingzeit, kann auch ausgelöst werden, wenn die jeweilige Figur inaktiv in der Truppe ist. Baumkronensegnung: Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden 6 s lang um je <cryo>12,5 %</cryo>, 6-fach stapelbar. Die Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet."
+    },
+    "2": {
+      "0": "Erschafft nach dem Treffen von Gegnern mit Elementarfähigkeiten 1 Stapelung „Baumkronensegnung“, 0,5 s Abklingzeit. Verleiht, wenn Truppenmitglieder in der Nähe die Reaktionen „In Flammen“ oder „Flammenspross“ auslösen, dem Träger 3 Stapelungen Baumkronensegnung, 2 s Abklingzeit, kann auch ausgelöst werden, wenn die jeweilige Figur inaktiv in der Truppe ist. Baumkronensegnung: Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden 6 s lang um je <cryo>15 %</cryo>, 6-fach stapelbar. Die Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet."
+    },
+    "3": {
+      "0": "Erschafft nach dem Treffen von Gegnern mit Elementarfähigkeiten 1 Stapelung „Baumkronensegnung“, 0,5 s Abklingzeit. Verleiht, wenn Truppenmitglieder in der Nähe die Reaktionen „In Flammen“ oder „Flammenspross“ auslösen, dem Träger 3 Stapelungen Baumkronensegnung, 2 s Abklingzeit, kann auch ausgelöst werden, wenn die jeweilige Figur inaktiv in der Truppe ist. Baumkronensegnung: Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden 6 s lang um je <cryo>17,5 %</cryo>, 6-fach stapelbar. Die Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet."
+    },
+    "4": {
+      "0": "Erschafft nach dem Treffen von Gegnern mit Elementarfähigkeiten 1 Stapelung „Baumkronensegnung“, 0,5 s Abklingzeit. Verleiht, wenn Truppenmitglieder in der Nähe die Reaktionen „In Flammen“ oder „Flammenspross“ auslösen, dem Träger 3 Stapelungen Baumkronensegnung, 2 s Abklingzeit, kann auch ausgelöst werden, wenn die jeweilige Figur inaktiv in der Truppe ist. Baumkronensegnung: Erhöht den mit Elementarfähigkeiten und Spezialfähigkeiten verursachten Schaden 6 s lang um je <cryo>20 %</cryo>, 6-fach stapelbar. Die Wirkungsdauer jeder Stapelung wird unabhängig voneinander berechnet."
+    }
+  }
+}
