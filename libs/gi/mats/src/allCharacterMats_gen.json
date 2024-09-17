@@ -55789,6 +55789,627 @@
       }
     }
   },
+  "Kinich": {
+    "talents": {
+      "normal": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfKindling",
+              "amount": 3
+            },
+            {
+              "item": "JuvenileFang",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 2
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 4
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 6
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 9
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 4
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 4
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 6
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 6
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 12
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 9
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 16
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 12
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "skill": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfKindling",
+              "amount": 3
+            },
+            {
+              "item": "JuvenileFang",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 2
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 4
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 6
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 9
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 4
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 4
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 6
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 6
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 12
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 9
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 16
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 12
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "burst": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfKindling",
+              "amount": 3
+            },
+            {
+              "item": "JuvenileFang",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 2
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 4
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 6
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToKindling",
+              "amount": 9
+            },
+            {
+              "item": "SeasonedFang",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 4
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 4
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 6
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 6
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 12
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 9
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfKindling",
+              "amount": 16
+            },
+            {
+              "item": "TyrantsFang",
+              "amount": 12
+            },
+            {
+              "item": "DenialAndJudgment",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      }
+    },
+    "ascension": {
+      "0": {
+        "cost": 0,
+        "items": []
+      },
+      "1": {
+        "cost": 20000,
+        "items": [
+          {
+            "item": "NagadusEmeraldSliver",
+            "amount": 1
+          },
+          {
+            "item": "SaurianClawSucculent",
+            "amount": 3
+          },
+          {
+            "item": "JuvenileFang",
+            "amount": 3
+          }
+        ]
+      },
+      "2": {
+        "cost": 40000,
+        "items": [
+          {
+            "item": "NagadusEmeraldFragment",
+            "amount": 3
+          },
+          {
+            "item": "OverripeFlamegranate",
+            "amount": 2
+          },
+          {
+            "item": "SaurianClawSucculent",
+            "amount": 10
+          },
+          {
+            "item": "JuvenileFang",
+            "amount": 15
+          }
+        ]
+      },
+      "3": {
+        "cost": 60000,
+        "items": [
+          {
+            "item": "NagadusEmeraldFragment",
+            "amount": 6
+          },
+          {
+            "item": "OverripeFlamegranate",
+            "amount": 4
+          },
+          {
+            "item": "SaurianClawSucculent",
+            "amount": 20
+          },
+          {
+            "item": "SeasonedFang",
+            "amount": 12
+          }
+        ]
+      },
+      "4": {
+        "cost": 80000,
+        "items": [
+          {
+            "item": "NagadusEmeraldChunk",
+            "amount": 3
+          },
+          {
+            "item": "OverripeFlamegranate",
+            "amount": 8
+          },
+          {
+            "item": "SaurianClawSucculent",
+            "amount": 30
+          },
+          {
+            "item": "SeasonedFang",
+            "amount": 18
+          }
+        ]
+      },
+      "5": {
+        "cost": 100000,
+        "items": [
+          {
+            "item": "NagadusEmeraldChunk",
+            "amount": 6
+          },
+          {
+            "item": "OverripeFlamegranate",
+            "amount": 12
+          },
+          {
+            "item": "SaurianClawSucculent",
+            "amount": 45
+          },
+          {
+            "item": "TyrantsFang",
+            "amount": 12
+          }
+        ]
+      },
+      "6": {
+        "cost": 120000,
+        "items": [
+          {
+            "item": "NagadusEmeraldGemstone",
+            "amount": 6
+          },
+          {
+            "item": "OverripeFlamegranate",
+            "amount": 20
+          },
+          {
+            "item": "SaurianClawSucculent",
+            "amount": 60
+          },
+          {
+            "item": "TyrantsFang",
+            "amount": 24
+          }
+        ]
+      }
+    }
+  },
   "Mualani": {
     "talents": {
       "normal": {

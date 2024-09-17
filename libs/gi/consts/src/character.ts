@@ -107,6 +107,7 @@ export const nonTravelerCharacterKeys = [
   'KamisatoAyato',
   'Kaveh',
   'Keqing',
+  'Kinich',
   'Kirara',
   'Klee',
   'KujouSara',

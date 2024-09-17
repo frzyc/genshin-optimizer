@@ -1,0 +1,24 @@
+{
+  "name": "Dağ Kralı'nın Dişi",
+  "description": {
+    "0": "Saf turkuazdan dövülmüş devasa bir kılıç. Sıradan silahlara kıyasla çok daha ağır olduğu için adını Dağ Kralı Kongamato'dan almış."
+  },
+  "passiveName": "Turkuaz Avı",
+  "passiveDescription": {
+    "0": {
+      "0": "Bir Element Becerisi ile bir düşmana vurduktan sonra 1 Kubbenin Lütfu kademesi kazanılır. Bu etki her 0,5 saniyede bir tetiklenebilir. Yakındaki bir grup üyesi Yanma veya Filizlenme tepkimesi tetiklediğinde bunu kuşanan karakter 3 kademe kazanır. Bu etki ise 2 saniyede bir ve tetikleyen grup üyesi savaş alanında olmasa da tetiklenebilir. Kubbenin Lütfu: 6 saniyeliğine Element Becerisi ve Element Patlaması Hasarı <cryo>%10</cryo> artar. 6 kademeye kadar birikebilir. Her kademenin süresi birbirinden bağımsızdır."
+    },
+    "1": {
+      "0": "Bir Element Becerisi ile bir düşmana vurduktan sonra 1 Kubbenin Lütfu kademesi kazanılır. Bu etki her 0,5 saniyede bir tetiklenebilir. Yakındaki bir grup üyesi Yanma veya Filizlenme tepkimesi tetiklediğinde bunu kuşanan karakter 3 kademe kazanır. Bu etki ise 2 saniyede bir ve tetikleyen grup üyesi savaş alanında olmasa da tetiklenebilir. Kubbenin Lütfu: 6 saniyeliğine Element Becerisi ve Element Patlaması Hasarı <cryo>%12,5</cryo> artar. 6 kademeye kadar birikebilir. Her kademenin süresi birbirinden bağımsızdır."
+    },
+    "2": {
+      "0": "Bir Element Becerisi ile bir düşmana vurduktan sonra 1 Kubbenin Lütfu kademesi kazanılır. Bu etki her 0,5 saniyede bir tetiklenebilir. Yakındaki bir grup üyesi Yanma veya Filizlenme tepkimesi tetiklediğinde bunu kuşanan karakter 3 kademe kazanır. Bu etki ise 2 saniyede bir ve tetikleyen grup üyesi savaş alanında olmasa da tetiklenebilir. Kubbenin Lütfu: 6 saniyeliğine Element Becerisi ve Element Patlaması Hasarı <cryo>%15</cryo> artar. 6 kademeye kadar birikebilir. Her kademenin süresi birbirinden bağımsızdır."
+    },
+    "3": {
+      "0": "Bir Element Becerisi ile bir düşmana vurduktan sonra 1 Kubbenin Lütfu kademesi kazanılır. Bu etki her 0,5 saniyede bir tetiklenebilir. Yakındaki bir grup üyesi Yanma veya Filizlenme tepkimesi tetiklediğinde bunu kuşanan karakter 3 kademe kazanır. Bu etki ise 2 saniyede bir ve tetikleyen grup üyesi savaş alanında olmasa da tetiklenebilir. Kubbenin Lütfu: 6 saniyeliğine Element Becerisi ve Element Patlaması Hasarı <cryo>%17,5</cryo> artar. 6 kademeye kadar birikebilir. Her kademenin süresi birbirinden bağımsızdır."
+    },
+    "4": {
+      "0": "Bir Element Becerisi ile bir düşmana vurduktan sonra 1 Kubbenin Lütfu kademesi kazanılır. Bu etki her 0,5 saniyede bir tetiklenebilir. Yakındaki bir grup üyesi Yanma veya Filizlenme tepkimesi tetiklediğinde bunu kuşanan karakter 3 kademe kazanır. Bu etki ise 2 saniyede bir ve tetikleyen grup üyesi savaş alanında olmasa da tetiklenebilir. Kubbenin Lütfu: 6 saniyeliğine Element Becerisi ve Element Patlaması Hasarı <cryo>%20</cryo> artar. 6 kademeye kadar birikebilir. Her kademenin süresi birbirinden bağımsızdır."
+    }
+  }
+}
