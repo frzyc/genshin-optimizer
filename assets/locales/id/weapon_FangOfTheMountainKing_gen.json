@@ -1,0 +1,24 @@
+{
+  "name": "Fang of the Mountain King",
+  "description": {
+    "0": "Pedang raksasa yang ditempa dari batu pirus murni. Karena beratnya yang jauh melebihi senjata biasa ini, pedang ini diberi nama \"Raja Gunung\" Kongamato."
+  },
+  "passiveName": "Turquoise Hunt",
+  "passiveDescription": {
+    "0": {
+      "0": "Setelah Elemental Skill mengenai musuh, maka akan mendapatkan 1 lapis Canopy's Favor. Bisa terpicu sekali setiap 0,5 detik. Saat anggota party di sekitar memicu reaksi Burning atau Burgeon, maka Karakter yang mengenakan senjata ini akan mendapatkan 3 lapis Canopy's Favor. Efek ini bisa terpicu sekali setiap 2 detik dan dapat terpicu meskipun Karakter party ada di dalam party namun sedang tidak berada di medan pertempuran. Canopy's Favor: Meningkatkan DMG Elemental Burst dan Elemental Skill sebanyak <cryo>10%</cryo> selama 6 detik. Maksimum 6 lapis. Durasi setiap lapisnya dihitung secara terpisah."
+    },
+    "1": {
+      "0": "Setelah Elemental Skill mengenai musuh, maka akan mendapatkan 1 lapis Canopy's Favor. Bisa terpicu sekali setiap 0,5 detik. Saat anggota party di sekitar memicu reaksi Burning atau Burgeon, maka Karakter yang mengenakan senjata ini akan mendapatkan 3 lapis Canopy's Favor. Efek ini bisa terpicu sekali setiap 2 detik dan dapat terpicu meskipun Karakter party ada di dalam party namun sedang tidak berada di medan pertempuran. Canopy's Favor: Meningkatkan DMG Elemental Burst dan Elemental Skill sebanyak <cryo>12,5%</cryo> selama 6 detik. Maksimum 6 lapis. Durasi setiap lapisnya dihitung secara terpisah."
+    },
+    "2": {
+      "0": "Setelah Elemental Skill mengenai musuh, maka akan mendapatkan 1 lapis Canopy's Favor. Bisa terpicu sekali setiap 0,5 detik. Saat anggota party di sekitar memicu reaksi Burning atau Burgeon, maka Karakter yang mengenakan senjata ini akan mendapatkan 3 lapis Canopy's Favor. Efek ini bisa terpicu sekali setiap 2 detik dan dapat terpicu meskipun Karakter party ada di dalam party namun sedang tidak berada di medan pertempuran. Canopy's Favor: Meningkatkan DMG Elemental Burst dan Elemental Skill sebanyak <cryo>15%</cryo> selama 6 detik. Maksimum 6 lapis. Durasi setiap lapisnya dihitung secara terpisah."
+    },
+    "3": {
+      "0": "Setelah Elemental Skill mengenai musuh, maka akan mendapatkan 1 lapis Canopy's Favor. Bisa terpicu sekali setiap 0,5 detik. Saat anggota party di sekitar memicu reaksi Burning atau Burgeon, maka Karakter yang mengenakan senjata ini akan mendapatkan 3 lapis Canopy's Favor. Efek ini bisa terpicu sekali setiap 2 detik dan dapat terpicu meskipun Karakter party ada di dalam party namun sedang tidak berada di medan pertempuran. Canopy's Favor: Meningkatkan DMG Elemental Burst dan Elemental Skill sebanyak <cryo>17,5%</cryo> selama 6 detik. Maksimum 6 lapis. Durasi setiap lapisnya dihitung secara terpisah."
+    },
+    "4": {
+      "0": "Setelah Elemental Skill mengenai musuh, maka akan mendapatkan 1 lapis Canopy's Favor. Bisa terpicu sekali setiap 0,5 detik. Saat anggota party di sekitar memicu reaksi Burning atau Burgeon, maka Karakter yang mengenakan senjata ini akan mendapatkan 3 lapis Canopy's Favor. Efek ini bisa terpicu sekali setiap 2 detik dan dapat terpicu meskipun Karakter party ada di dalam party namun sedang tidak berada di medan pertempuran. Canopy's Favor: Meningkatkan DMG Elemental Burst dan Elemental Skill sebanyak <cryo>20%</cryo> selama 6 detik. Maksimum 6 lapis. Durasi setiap lapisnya dihitung secara terpisah."
+    }
+  }
+}
