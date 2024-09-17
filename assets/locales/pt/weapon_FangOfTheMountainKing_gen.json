@@ -1,0 +1,24 @@
+{
+  "name": "Presa do Rei da Montanha",
+  "description": {
+    "0": "Uma espada gigante forjada de turquesa pura. Recebeu o nome de Rei da Montanha pelo seu peso considerável e tamanho muito maior do que uma lâmina comum."
+  },
+  "passiveName": "Caça à Turquesa",
+  "passiveDescription": {
+    "0": {
+      "0": "Ganha 1 acúmulo de Favor da Copa ao acertar um oponente com uma Habilidade Elemental. Isso pode ser desencadeado uma vez a cada 0.5s; após um membro da equipe próximo desencadear uma reação de Queimadura ou Germinação, o personagem que está com essa arma equipada ganhará 3 acúmulos de Favor da Copa. Este efeito pode ser desencadeado uma vez a cada 2s e pode ser desencadeado mesmo quando o personagem não é o personagem ativo. Favor da Copa: o Dano da Habilidade Elemental e do Supremo é aumentado em <cryo>10%</cryo> por 6s. Máximo de 6 acúmulos. A duração de cada acúmulo é contabilizada de forma independente."
+    },
+    "1": {
+      "0": "Ganha 1 acúmulo de Favor da Copa ao acertar um oponente com uma Habilidade Elemental. Isso pode ser desencadeado uma vez a cada 0.5s; após um membro da equipe próximo desencadear uma reação de Queimadura ou Germinação, o personagem que está com essa arma equipada ganhará 3 acúmulos de Favor da Copa. Este efeito pode ser desencadeado uma vez a cada 2s e pode ser desencadeado mesmo quando o personagem não é o personagem ativo. Favor da Copa: o Dano da Habilidade Elemental e do Supremo é aumentado em <cryo>12.5%</cryo> por 6s. Máximo de 6 acúmulos. A duração de cada acúmulo é contabilizada de forma independente."
+    },
+    "2": {
+      "0": "Ganha 1 acúmulo de Favor da Copa ao acertar um oponente com uma Habilidade Elemental. Isso pode ser desencadeado uma vez a cada 0.5s; após um membro da equipe próximo desencadear uma reação de Queimadura ou Germinação, o personagem que está com essa arma equipada ganhará 3 acúmulos de Favor da Copa. Este efeito pode ser desencadeado uma vez a cada 2s e pode ser desencadeado mesmo quando o personagem não é o personagem ativo. Favor da Copa: o Dano da Habilidade Elemental e do Supremo é aumentado em <cryo>15%</cryo> por 6s. Máximo de 6 acúmulos. A duração de cada acúmulo é contabilizada de forma independente."
+    },
+    "3": {
+      "0": "Ganha 1 acúmulo de Favor da Copa ao acertar um oponente com uma Habilidade Elemental. Isso pode ser desencadeado uma vez a cada 0.5s; após um membro da equipe próximo desencadear uma reação de Queimadura ou Germinação, o personagem que está com essa arma equipada ganhará 3 acúmulos de Favor da Copa. Este efeito pode ser desencadeado uma vez a cada 2s e pode ser desencadeado mesmo quando o personagem não é o personagem ativo. Favor da Copa: o Dano da Habilidade Elemental e do Supremo é aumentado em <cryo>17.5%</cryo> por 6s. Máximo de 6 acúmulos. A duração de cada acúmulo é contabilizada de forma independente."
+    },
+    "4": {
+      "0": "Ganha 1 acúmulo de Favor da Copa ao acertar um oponente com uma Habilidade Elemental. Isso pode ser desencadeado uma vez a cada 0.5s; após um membro da equipe próximo desencadear uma reação de Queimadura ou Germinação, o personagem que está com essa arma equipada ganhará 3 acúmulos de Favor da Copa. Este efeito pode ser desencadeado uma vez a cada 2s e pode ser desencadeado mesmo quando o personagem não é o personagem ativo. Favor da Copa: o Dano da Habilidade Elemental e do Supremo é aumentado em <cryo>20%</cryo> por 6s. Máximo de 6 acúmulos. A duração de cada acúmulo é contabilizada de forma independente."
+    }
+  }
+}

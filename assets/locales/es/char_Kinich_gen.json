@@ -1,0 +1,182 @@
+{
+  "name": "Kinich",
+  "title": "El Cazador del Fuego Reminiscente",
+  "description": "Un cazasaurios de Huitztlán experto en calcular el precio de las cosas.",
+  "constellationName": "Chimaera Alebriius",
+  "auto": {
+    "name": "Técnica del sol nocturno",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 3 ataques consecutivos.",
+        "2": "Tras usar la Habilidad Elemental, “Caza en suspensión: Persecución aérea” para ejecutar un balanceo aéreo, puede realizar un Ataque Normal en el aire antes de aterrizar."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Consume cierta cantidad de Aguante para lanzar y hacer girar su espada contra sus oponentes."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Se lanza desde el aire para golpear el suelo, infligiendo Daño en el AdE a los enemigos cercanos en el momento del impacto."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de ATQ Normal aéreo",
+      "4": "Daño de ATQ Cargado",
+      "5": "Coste de Aguante de ATQ Cargado",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Caza en suspensión: Persecución aérea",
+    "description": {
+      "0": "Kinich hace uso de sus habilidades de caza mayor para moverse con presteza y atacar a su enemigo.",
+      "1": "Cuando en las cercanías haya un enemigo o un objeto que pueda ser atacado, le disparará el gancho de agarre y entrará en el estado de “bendición noctámbula” con 0 pts. de noctambulismo. Cuando no haya enemigos cerca, lanzará un gancho de agarre para ejecutar un balanceo aéreo y, además, el TdE de la habilidad se reducirá en un 60%.",
+      "2": "Podrás mantener pulsada esta habilidad para apuntar con el gancho de agarre.",
+      "3": "<br/>",
+      "4": "<strong>Bendición noctámbula: Kinich</strong>",
+      "5": "La bendición noctámbula de Kinich dura 10 s y genera 2 pts. de noctambulismo por segundo.",
+      "6": "Cuando esté en este estado, Kinich lanzará su gancho a un enemigo cercano y cambiará su estilo de ataque:",
+      "7": [
+        "Al ejecutar un Ataque Normal, realizará un ataque circundante alrededor del objetivo del gancho de agarre según la dirección de movimiento actual, lo que infligirá <dendro>Daño Dendro</dendro> de naturaleza noctámbula y generará 3 pts. de noctambulismo. El daño del ataque circundante se considera daño de Habilidad Elemental.",
+        "Al alcanzar el máximo de pts. de noctambulismo, Kinich podrá usar la Habilidad Elemental “Cañón perforaescamas”, lo que consumirá todos los pts. de noctambulismo para infligir <dendro>Daño Dendro</dendro> de naturaleza noctámbula. Al mantener pulsado “Cañón perforaescamas”, Kinich podrá apuntar a su objetivo y, tras disparar, intentará engancharse a él."
+      ],
+      "8": "Durante el estado de bendición noctámbula, tras haberse enganchado a un enemigo o haber disparado el Cañón perforaescamas, Kinich generará un área segura al lado del enemigo. Al entrar en dicha área, obtendrá 4 pts. de noctambulismo, tras lo que el área desaparecerá.",
+      "9": "Si el gancho de agarre se suelta debido al exceso de distancia u otras razones, al ejecutar un Ataque Normal, Kinich se reenganchará a otro enemigo cercano y realizará un ataque circundante.",
+      "10": "<br/>",
+      "11": "<i>“Todo tiene un precio, y espero que tu oferta sea adecuada... ¿Eh? No, no acepto pagos fraccionados”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de ataque circundante",
+      "1": "Daño de Cañón perforaescamas",
+      "2": "Límite de pts. de noctambulismo",
+      "3": "TdE",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Alabado sea el todopoderoso Señor de los Dragones",
+    "description": {
+      "0": "Desata el poder de Ahau, Señor de los Dragones (de forma limitada, condicional, restrictiva, contractual, parcial y temporal), para infligir <dendro>Daño Dendro en el AdE</dendro> de naturaleza noctámbula. Mientras este efecto esté activo, K'uhul Ahau liberará cada cierto tiempo su dragoaliento para infligir <dendro>Daño Dendro en el AdE</dendro> de naturaleza noctámbula.",
+      "1": "Si al hacerlo, Kinich se encuentra bajo los efectos del estado de bendición noctámbula, la duración de dicho estado aumenta 1.7 s.",
+      "2": "<br/>",
+      "3": "<i>“¡En efecto! ¡Estás ante la presencia del todopoderoso Señor de los Dragones, K'uhul Ahau! ¡Da un paso al frente, arrodíllate y bésame los pies!”.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de habilidad",
+      "1": "Daño de dragoaliento",
+      "2": "Duración",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "El precio de la desolación",
+    "description": {
+      "0": "Cuando Kinich esté bajo el estado de bendición noctámbula, los enemigos que sean golpeados por su Habilidad Elemental entrarán en estado de “desolación”, y cuando reciban daño de las reacciones de Quemadura o Crepitar, Kinich generará 7 pts. de noctambulismo. Solo se pueden obtener pts. de noctambulismo una vez cada 0.8 s de esta manera. El estado de desolación dura hasta que termine el de bendición noctámbula de Kinich."
+    }
+  },
+  "passive2": {
+    "name": "Pacto del espíritu flamígero",
+    "description": {
+      "0": "Cuando un personaje cercano del equipo causa una explosión noctámbula, Kinich obtiene 1 carga de “pericia del cazador” que dura 15 s y puede acumularse hasta 2 veces. Cuando Kinich use el Cañón perforaescamas de <strong>Caza en suspensión: Persecución aérea</strong>, se consumirán todas las cargas de pericia del cazador y el daño infligido por dicho Cañón aumentará en una cantidad equivalente al 320% del ATQ de Kinich por cada carga consumida."
+    }
+  },
+  "passive3": {
+    "name": "Gracia de la noche: Compensación de deudas",
+    "description": {
+      "0": "Cuando Kinich está en el aire tras ejecutar el balanceo aéreo de <strong>Caza en suspensión: Persecución aérea</strong>, puede consumir 10 pts. de flogisto para realizar un segundo balanceo aéreo.",
+      "1": "Si se encuentra en una zona con alguna mecánica de flogisto de Natlan, podrá utilizar “Transmisión noctambular: Kinich”. Cuando el personaje en uso esté esprintando, se encuentre en estado de movimiento derivado de algún talento o esté en el aire, al cambiar a Kinich, este realizará una de las siguientes acciones según ciertas condiciones:",
+      "2": [
+        "Al apuntar a un sigilo hojavoluta con el que se pueda interactuar, le disparará un gancho de agarre para moverse.",
+        "Si está en combate y hay algún enemigo cerca, usará Caza en suspensión: Persecución aérea contra dicho enemigo."
+      ],
+      "3": "Si no, lanzará el gancho de agarre y ejecutará un balanceo aéreo. Kinich priorizará los sigilos hojavoluta válidos como objetivos para el gancho de agarre.",
+      "4": "Tu equipo solo puede activar Transmisión noctambular una vez cada 10 s.",
+      "5": "<br/>",
+      "6": "Al interactuar con algún sigilo hojavoluta u otros objetos que puedan interactuar con Yumkasaurios, Caza en suspensión: Persecución aérea se convertirá en “Biomímesis del Yumkasaurio”, lo que hace que las interacciones con dichos objetos sigan las reglas aplicables a los Yumkasaurios y evita que Caza en suspensión: Persecución aérea entre en TdE."
+    }
+  },
+  "passive": {
+    "name": "Emisario presto",
+    "description": {
+      "0": "La Vel. Movimiento de tus personajes del equipo aumenta en un 15% durante 10 s al interactuar con algunos objetos recolectables en zonas de Natlan con mecánicas de flogisto. Además, muestra la ubicación de los <strong>objetos típicos de Natlan</strong> cercanos en el minimapa."
+    }
+  },
+  "constellation1": {
+    "name": "Pico de loro",
+    "description": {
+      "0": "Después de que Kinich aterrice tras ejecutar el balanceo aéreo de <strong>Caza en suspensión: Persecución aérea</strong>, su Vel. Movimiento aumentará en un 30% durante 6 s.",
+      "1": "Además, aumenta en un 100% el Daño CRIT del Cañón perforaescamas."
+    }
+  },
+  "constellation2": {
+    "name": "Palma de cicindelino",
+    "description": {
+      "0": "Cuando Kinich golpea a un enemigo con su Habilidad Elemental, la <dendro>RES Dendro</dendro> de dicho enemigo se reduce en un 30% durante 6 s.",
+      "1": "Además, Cuando Kinich entra en el estado de bendición noctámbula, aumenta el AdE del primer Cañón perforaescamas que dispare y, a su vez, el daño infligido por este en un 100%."
+    }
+  },
+  "constellation3": {
+    "name": "Garra de protosuquio",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Caza en suspensión: Persecución aérea</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Pluma de colibrí",
+    "description": {
+      "0": "Cuando Kinich ejecuta un ataque circundante o usa el Cañón perforaescamas mientras está en estado de bendición noctámbula, recupera 5 pts. de Energía Elemental. Solo puede regenerar Energía Elemental una vez cada 2.8 s de esta manera.",
+      "1": "Además, aumenta en un 70% el daño infligido con <strong>Alabado sea el todopoderoso Señor de los Dragones</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Cola de mono aullador",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Alabado sea el todopoderoso Señor de los Dragones</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Forma de bestia auspiciosa",
+    "description": {
+      "0": "Tras golpear a un enemigo con el Cañón perforaescamas, el disparo rebotará una vez entre los enemigos para infligir una cantidad equivalente al 700% del ATQ de Kinich como <dendro>Daño Dendro</dendro>.",
+      "1": "Si el Cañón perforaescamas activa su fortalecimiento por medio de los efectos del talento “Pacto del espíritu flamígero” o la constelación “Palma de cicindelino”, el rebote que produzca también se verá fortalecido por dichos efectos."
+    }
+  }
+}

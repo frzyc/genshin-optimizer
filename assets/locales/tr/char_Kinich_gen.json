@@ -1,0 +1,182 @@
+{
+  "name": "Kinich",
+  "title": "Bedel Ateşi Avı",
+  "description": "Huitztlan'ın bedel hesaplama konusunda yetenekli Sürüngen Avcısı.",
+  "constellationName": "Kimera",
+  "auto": {
+    "name": "Gece Güneşi Tarzı",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "En fazla 3 hızlı saldırı yapar.",
+        "2": "Kinich, \"Kubbe Avcısı: Yükseklere Doğru\" Element Becerisinin havada savurma özelliğini kullandıktan sonra, yere inmeden önce havada bir Normal Saldırı yapabilir."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak döner ve Çift Elli Kılıcını ileri doğru savurup düşmanlara saldırır."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "Havada Normal Saldırı Hasarı",
+      "4": "Yüklü Saldırı Hasarı",
+      "5": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kubbe Avcısı: Yükseklere Doğru",
+    "description": {
+      "0": "Kinich, üstün avcılık yeteneklerini kullanarak süratle hareket eder veya düşmanına saldırır.",
+      "1": "Yakında saldırılabilen bir düşman veya nesne varsa kancayı hedefe ateşler ve 0 Gece Ruhu puanıyla Gece Ruhunun Lütfu durumuna girer. Yakında düşman veya nesne yoksa ileri doğru bir kanca ateşleyip havada süzülür ve bu Becerinin Bekleme Süresi %60 azalır.",
+      "2": "Bu beceri Basılı Tutulup bırakılabilir. Basılı Tutulduğunda Kinich kanca için nişan alabilir.",
+      "3": "<br/>",
+      "4": "<strong>Gece Ruhunun Lütfu: Kinich</strong>",
+      "5": "Kinich'in Gece Ruhu Lütfu 10sn sürer ve her saniyede bir 2 Gece Ruhu puanı oluşturur.",
+      "6": "Kinich bu durumdayken yakındaki bir düşmana kancayla tutunur ve değişken bir saldırı yapar:",
+      "7": [
+        "Normal Saldırı kullandığında kancayla tutunduğu hedefin etrafında dönerken mevcut hareket yönüne göre Döngü Atışı yapar. Bu saldırı Gece Ruhu tesirli <dendro>Doğa Hasarı</dendro> verir ve 3 Gece Ruhu puanı oluşturur. Döngü Atışı Hasarı, Element Becerisi Hasarı sayılır.",
+        "Kinich, maksimum Gece Ruhu puanına sahipken \"Puldelen Topu\" Element Becerisini kullanarak tüm Gece Ruhu puanlarını tüketip Gece Ruhu tesirli <dendro>Doğa Hasarı</dendro> verebilir. \"Puldelen Topu\" Basılı Tutulduğunda Kinich bu atışı nişan alabilir. Top ateşlendikten sonra Kinich hedefe kancayla tutunmaya çalışır."
+      ],
+      "8": "Kinich, Gece Ruhunun Lütfu durumundayken bir düşmana kancayla tutunduğunda veya Puldelen Topunu ateşlediğinde düşmanın yanında bir Kör Nokta oluşur. Kinich bu Kör Noktaya girdiğinde Nokta kaybolur ve Kinich 4 Gece Ruhu puanı kazanır.",
+      "9": "Kanca bağlantısı menzil aşımından veya başka bir sebepten dolayı koparsa Kinich, Normal Saldırı kullanarak yakındaki başka bir düşmana bağlanır ve Döngü Atışları yapar.",
+      "10": "<br/>",
+      "11": "<i>\"Her şeyin bir bedeli vardır. Uygun bir teklifte bulunmanı tavsiye ederim... Ne? Hayır, taksit yapmıyorum.\"</i>"
+    },
+    "skillParams": {
+      "0": "Döngü Atışı Hasarı",
+      "1": "Puldelen Topu Hasarı",
+      "2": "Gece Ruhu Puanı Sınırı",
+      "3": "BS",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Yüce Ejder Lorduna Selam Olsun",
+    "description": {
+      "0": "Yüce Ejder Lordu K'uhul Ajaw'ın gücünü sınırlı, şartlı, kısıtlı, sözleşmeli, kısmen ve geçici olarak serbest bırakarak Gece Ruhu tesirli <dendro>Doğa Alan Hasarı</dendro> verir. Ajaw belirli aralıklarla Ejder Nefesini kullanarak Gece Ruhu tesirli <dendro>Doğa Alan Hasarı</dendro> verir.",
+      "1": "Kinich, bu beceri kullanıldığında Gece Ruhunun Lütfu durumundaysa bu Lütfun süresi 1,7sn uzar.",
+      "2": "<br/>",
+      "3": "<i>\"Evet, evet! Yüce Ejder Lordu K'uhul Ajaw'ın huzurundasın. Yaklaş bakalım! Diz çök ve ayaklarımızı öp!\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Ejder Nefesi Hasarı",
+      "2": "Süre",
+      "3": "BS",
+      "4": "Enerji Maliyeti",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Viranlığın Bedeli",
+    "description": {
+      "0": "Kinich Gece Ruhunun Lütfu durumundayken Element Becerisinden isabet alan düşmanlar Virane durumuna girer. Bu düşmanlar Yanma veya Filizlenme tepkimelerinden Hasar aldığında Kinich için 7 Gece Ruhu puanı yenilenir. Gece Ruhu puanları bu şekilde 0,8 saniyede bir yenilenebilir. Virane durumu, Kinich'in mevcut Gece Ruhunun Lütfu durumu sona erene kadar devam eder."
+    }
+  },
+  "passive2": {
+    "name": "Alev Ruhu Sözleşmesi",
+    "description": {
+      "0": "Yakındaki bir grup üyesi Gece Ruhu Patlaması tetikledikten sonra Kinich, 1 kademe Avcının Deneyimi kazanır. Her kademe 15sn sürer ve 2 kademeye kadar birikebilir. Kinich, <strong>Kubbe Avcısı: Yükseklere Doğru</strong> becerisinin Puldelen Topunu kullandığında tüm Avcının Deneyimi kademeleri tüketilir ve tüketilen her kademe, bu Top atışının verdiği Hasarı Kinich'in Saldırısının %320'si kadar artırır."
+    }
+  },
+  "passive3": {
+    "name": "Gece Diyarının Armağanı: Eksiksiz Ödeme",
+    "description": {
+      "0": "Kinich, <strong>Kubbe Avcısı: Yükseklere Doğru</strong> becerisinin havada savurma özelliğini kullanırken 10 Filojiston puanı harcayıp bu özelliği bir defa daha kullanabilir.",
+      "1": "Kinich, Natlan'da Filojiston Mekanikleri bulunan bir bölgedeyken \"Gece Ruhu Aktarımı: Kinich\" kullanabilir. Aktif karakter depar atarken, belirli Yeteneklerden kaynaklı bir hareket modundayken veya havadayken Kinich'e geçildiğinde Kinich, karşılanan koşullara bağlı olarak şu eylemlerden birini gerçekleştirir:",
+      "2": [
+        "Etkileşime geçilebilen bir Yaprak Tomarı Mührüne dönükse Mühre doğru bir kanca atar ve o yöne hareket eder.",
+        "Yakında düşman varsa ve savaştaysa Kinich, düşmanların olduğu yöne doğru Kubbe Avcısı: Yükseklere Doğru becerisini kullanır."
+      ],
+      "3": "Yukarıdaki iki koşul da yoksa Kinich bir kanca ateşleyip sallanır ve kanca hedefi olarak geçerli Yaprak Tomarı Mühürlerine öncelik verir.",
+      "4": "Gece Ruhu Aktarımı kendi grubun tarafından 10 saniyede bir tetiklenebilir.",
+      "5": "<br/>",
+      "6": "Kinich, Yaprak Tomarı Mühürleriyle ve Yumkazorların etkileşime geçebildiği diğer eşyalarla etkileşime geçtiğinde \"Kubbe Avcısı: Yükseklere Doğru\" becerisi, \"Yumkazor Taklidi\"ne dönüşür. \"Yumkazor Taklidi\", bahsi geçen eşyalarla olan etkileşimlerde Yumkazorlar için geçerli kuralların uygulanmasına sebep olur. \"Yumkazor Taklidi\" kullanıldığında \"Kubbe Avcısı: Yükseklere Doğru\" Bekleme Süresine girmez."
+    }
+  },
+  "passive": {
+    "name": "Hızlı Elçi",
+    "description": {
+      "0": "Natlan'da Filojiston Mekanikleri olan bir bölgedeyken bazı toplanabilir eşyalarla etkileşime geçtiğinde 10 saniyeliğine grup üyelerinin Hareket Hızı %15 artar. Ayrıca yakındaki <strong>Natlan'a özgü kaynakların</strong> konumu mini haritada belirir."
+    }
+  },
+  "constellation1": {
+    "name": "Papağan Gagası",
+    "description": {
+      "0": "Kinich, <strong>Kubbe Avcısı: Yükseklere Doğru</strong> becerisinin havada savurma özelliğini kullandıktan sonra yere indiğinde 6 saniyeliğine Hareket Hızı %30 artar.",
+      "1": "Buna ek olarak Puldelen Topunun Kritik Hasarı %100 artar."
+    }
+  },
+  "constellation2": {
+    "name": "Kaplan Böceği Avucu",
+    "description": {
+      "0": "Kinich'in Element Becerisi bir düşmana isabet ettiğinde 6 saniyeliğine düşmanın <dendro>Doğa Direncini</dendro> %30 azaltır.",
+      "1": "Buna ek olarak Kinich'in, Gece Ruhunun Lütfuna girdikten sonra ateşlediği ilk Puldelen Topunun Etki Alanı genişler ve verdiği Hasar %100 artar."
+    }
+  },
+  "constellation3": {
+    "name": "İlkel Timsah Pençesi",
+    "description": {
+      "0": "<strong>Kubbe Avcısı: Yükseklere Doğru</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Sinek Kuşu Tüyü",
+    "description": {
+      "0": "Kinich, Gece Ruhunun Lütfundayken Döngü Atışlarını veya Puldelen Topunu kullandığında 5 Enerji yeniler. Enerji bu şekilde 2,8 saniyede bir yenilenebilir.",
+      "1": "Ayrıca <strong>Yüce Ejder Lorduna Selam Olsun</strong> Hasarı %70 artar."
+    }
+  },
+  "constellation5": {
+    "name": "Uluyan Maymun Kuyruğu",
+    "description": {
+      "0": "<strong>Yüce Ejder Lorduna Selam Olsun</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Uğurlu Canavar Sureti",
+    "description": {
+      "0": "Puldelen Topu bir düşmana isabet ettiğinde düşmanlar arasında bir defa seker ve Kinich'in Saldırısının %700'ü kadar <dendro>Doğa Hasarı</dendro> verir.",
+      "1": "Eğer bu Puldelen Topu, \"Alev Ruhu Sözleşmesi\" Pasif Yeteneğinin veya \"Kaplan Böceği Avucu\" Takımyıldızının Topa verdiği güçlendirmeleri tetiklerse söz konusu güçlendirmeler seken saldırıya da uygulanır."
+    }
+  }
+}

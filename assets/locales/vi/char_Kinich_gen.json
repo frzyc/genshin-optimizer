@@ -1,0 +1,182 @@
+{
+  "name": "Kinich",
+  "title": "Thợ Săn Hồi Hỏa",
+  "description": "Thợ Săn Saurian của Huitztlan, giỏi đo lường cái giá phải trả.",
+  "constellationName": "Cung Huyễn Thụy Thú",
+  "auto": {
+    "name": "Mặt Trời Đêm",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 3 lần tấn công liên tiếp.",
+        "2": "Sau khi thông qua Kỹ Năng Nguyên Tố \"Săn Mồi Trên Cao\" để đu trên không, có thể thực hiện một lần Tấn Công Thường trên không trước khi tiếp đất."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, xoay và ném Trọng Kiếm để tấn công kẻ địch."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Tấn Công Thường Trên Không",
+      "4": "Sát Thương Trọng Kích",
+      "5": "Thể lực Trọng Kích tiêu hao",
+      "6": "Sát Thương Khi Đáp",
+      "7": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Săn Mồi Trên Cao",
+    "description": {
+      "0": "Dựa vào kinh nghiệm săn thú khổng lồ, Kinich di chuyển nhanh hoặc phát động tấn công kẻ địch.",
+      "1": "Nếu bên cạnh có tồn tại kẻ địch hoặc những vật thể tấn công được, Kinich sẽ kết nối dây móc với mục tiêu và tiến vào trạng thái Dạ Hồn Chúc Phúc với 0 điểm Dạ Hồn; Nếu không, sẽ phóng dây móc về phía trước tiến hành đu trên không và đồng thời giảm 60% thời gian chờ;",
+      "2": "Có thể nhấn giữ thi triển. Khi nhấn giữ sẽ quyết định hướng bắn của dây móc.",
+      "3": "<br/>",
+      "4": "<strong>Dạ Hồn Chúc Phúc - Kinich</strong>",
+      "5": "Trạng thái Dạ Hồn Chúc Phúc của Kinich duy trì 10s, mỗi giây sản sinh 2 điểm Dạ Hồn.",
+      "6": "Trong trạng thái Dạ Hồn Chúc Phúc, Kinich sẽ dùng dây móc kết nối với kẻ địch ở gần và dựa vào đó để thay đổi cách thức tấn công:",
+      "7": [
+        "Tấn Công Thường sẽ căn cứ vào hướng di chuyển hiện tại và lấy mục tiêu kết nối làm trung tâm để tiến hành Bắn Vòng Quanh, gây <dendro>Sát Thương Nguyên Tố Thảo</dendro> mang thuộc tính Dạ Hồn, đồng thời sản sinh 3 điểm Dạ Hồn. Sát thương Bắn Vòng Quanh sẽ được tính là sát thương Kỹ Năng Nguyên Tố.",
+        "Khi điểm Dạ Hồn đạt tối đa, sẽ có thể thi triển Kỹ Năng Nguyên Tố \"Pháo Xuyên Thấu\": Tiêu hao tất cả điểm Dạ Hồn để gây <dendro>Sát Thương Nguyên Tố Thảo</dendro> mang thuộc tính Dạ Hồn. Khi nhấn giữ thi triển Pháo Xuyên Thấu, sẽ ngắm chuẩn để quyết định mục tiêu tấn công. Sau khi thi triển Pháo Xuyên Thấu, Kinich sẽ thử kết nối với mục tiêu đó."
+      ],
+      "8": "Trong trạng thái Dạ Hồn Chúc Phúc, sau khi kết nối với kẻ địch hoặc thi triển Pháo Xuyên Thấu, sẽ sinh ra Khu Vực Chết Chóc bên cạnh kẻ địch. Kinich tiến vào Khu Vực Chết Chóc sẽ sản sinh 4 điểm Dạ Hồn và giải trừ Khu Vực Chết Chóc.",
+      "9": "Khi liên kết bị đứt do vượt quá khoảng cách, tiến hành Tấn Công Thường sẽ kết nối lại với kẻ địch bên cạnh và tiến hành Bắn Vòng Quanh.",
+      "10": "<br/>",
+      "11": "<i>\"Mọi thứ đều có cái giá của nó, hy vọng {F#cô}{M#cậu} có thể đưa ra cái giá hợp lý... Cái gì? Tôi không chấp nhận trả góp đâu nhé.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Bắn Vòng Quanh",
+      "1": "Sát Thương Pháo Xuyên Thấu",
+      "2": "Giới Hạn Điểm Dạ Hồn",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Kính Chào Thánh Long Toàn Năng",
+    "description": {
+      "0": "Giải phóng sức mạnh của Thánh Long K'uhul Ajaw Toàn Năng (Trên cơ sở có giới hạn, có điều kiện, hạn chế khu vực, dựa theo hợp đồng, một phần, tạm thời), gây <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> mang thuộc tính Dạ Hồn. Trong thời gian duy trì, Ajaw cứ cách một khoảng thời gian sẽ thi triển Hơi Thở Của Rồng, gây <dendro>Sát Thương Phạm Vi Nguyên Tố Thảo</dendro> mang thuộc tính Dạ Hồn.",
+      "1": "Khi thi triển, nếu Kinich ở trong trạng thái Dạ Hồn Chúc Phúc, thì lần Dạ Hồn Chúc Phúc đó sẽ duy trì thêm 1.7s.",
+      "2": "<br/>",
+      "3": "<i>\"Đúng vậy, ngươi đang đứng trước Thánh Long K'uhul Ajaw Toàn Năng đấy! Còn không mau quỳ xuống và hôn lên chân ta đi!\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Hơi Thở Của Rồng",
+      "2": "Thời Gian Kéo Dài",
+      "3": "CD",
+      "4": "Năng Lượng Nguyên Tố",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Cái Giá Của Nơi Nguy Hiểm",
+    "description": {
+      "0": "Khi ở trong trạng thái Dạ Hồn Chúc Phúc, kẻ địch bị Kỹ Năng Nguyên Tố của Kinich đánh trúng sẽ chịu trạng thái \"Nguy Hiểm\", khi nhận phải sát thương phản ứng Thiêu Đốt hoặc Bung Tỏa, sẽ sản sinh cho Kinich 7 điểm Dạ Hồn. Mỗi 0.8s tối đa sản sinh một lần điểm Dạ Hồn bằng cách này. Trạng thái Nguy Hiểm sẽ duy trì cho tới khi lần trạng thái Dạ Hồn Chúc Phúc này của Kinich kết thúc."
+    }
+  },
+  "passive2": {
+    "name": "Khế Ước Của Linh Hồn Lửa",
+    "description": {
+      "0": "Sau khi nhân vật trong đội ở gần kích hoạt \"Dạ Hồn Bùng Nổ\", sẽ cung cấp cho Kinich một tầng Kinh Nghiệm Thợ Săn trong 15s, tối đa cộng dồn 2 tầng. Khi Kinich thi triển Pháo Xuyên Thấu của <strong>Săn Mồi Trên Cao</strong>, sẽ tiêu hao toàn bộ Kinh Nghiệm Thợ Săn, đồng thời mỗi tầng sẽ tăng sát thương Pháo Xuyên Thấu gây ra trong lần đó bằng 320% Tấn Công của Kinich."
+    }
+  },
+  "passive3": {
+    "name": "Món Quà Dạ Vực - Hoàn Trả Đầy Đủ",
+    "description": {
+      "0": "Khi Kinich thông qua <strong>Săn Mồi Trên Cao</strong> để đu trên không, có thể tiêu hao 10 điểm Phlogiston để đu thêm lần nữa.",
+      "1": "Khi ở trong khu vực có cơ chế Phlogiston của Natlan, có thể tiến hành Dạ Hồn Chuyển Hóa - Kinich. Nhân vật trong trận khi xung kích, trong trạng thái di chuyển đặc biệt của Thiên Phú chỉ định hoặc đang ở trên không, tiến hành đổi sang Kinich ra trận, Kinich sẽ căn cứ vào điều kiện để tiến hành một trong các hành động sau:",
+      "2": [
+        "Khi hướng đến Ấn Lá Cuộn có thể tương tác: Bắn dây móc vào đó để di chuyển;",
+        "Có kẻ địch ở gần và đang trong trạng thái chiến đấu: Thi triển Săn Mồi Trên Cao lên kẻ địch này;"
+      ],
+      "3": "Nếu không, sẽ bắn dây móc tiến hành đu trên không. Kinich sẽ ưu tiên chọn Ấn Lá Cuộn phù hợp để làm mục tiêu bắn dây móc.",
+      "4": "Đội của bản thân mỗi 10s chỉ được kích hoạt một lần Dạ Hồn Chuyển Hóa.",
+      "5": "<br/>",
+      "6": "Khi tương tác với Ấn Lá Cuộn hoặc vật có thể tương tác với Yumkasaur, \"Săn Mồi Trên Cao\" sẽ được thay thế bằng \"Mô Phỏng Yumkasaur\". Khi dùng Mô Phỏng Yumkasaur để tương tác với những vật này thì quy luật tương tác sẽ tuân theo các quy tắc áp dụng cho Yumkasaur, đồng thời không khiến \"Săn Mồi Trên Cao\" vào thời gian chờ."
+    }
+  },
+  "passive": {
+    "name": "Sứ Giả Tốc Hành",
+    "description": {
+      "0": "Trong khu vực có cơ chế Phlogiston tại Natlan, tương tác với một số vật thu thập có thể khiến nhân vật trong đội bản thân tăng 15% Tốc Độ Di Chuyển trong 10s. Ngoài ra, hiển thị vị trí <strong>đặc sản khu vực Natlan</strong> trên bản đồ nhỏ."
+    }
+  },
+  "constellation1": {
+    "name": "Mỏ Của Chim Vẹt",
+    "description": {
+      "0": "Sau khi Kinich tiếp đất từ việc đu trên không thông qua <strong>Săn Mồi Trên Cao</strong>, tốc độ di chuyển tăng 30% trong 6s.",
+      "1": "Ngoài ra, Sát Thương Bạo Kích của Pháo Xuyên Thấu tăng 100%."
+    }
+  },
+  "constellation2": {
+    "name": "Chi Của Bọ Hổ",
+    "description": {
+      "0": "Kỹ Năng Nguyên Tố của Kinich khi trúng kẻ địch, sẽ khiến <dendro>Kháng Nguyên Tố Thảo</dendro> của chúng giảm 30% trong 6s.",
+      "1": "Ngoài ra, tăng 100% sát thương gây ra và phạm vi ảnh hưởng của lần Pháo Xuyên Thấu đầu tiên khi Kinich bước vào trạng thái Dạ Hồn Chúc Phúc."
+    }
+  },
+  "constellation3": {
+    "name": "Vuốt Của Protosuchian",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Săn Mồi Trên Cao</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Lông Của Chim Ruồi",
+    "description": {
+      "0": "Khi ở trong trạng thái Dạ Hồn Chúc Phúc, Kinich sẽ hồi phục 5 điểm Năng Lượng Nguyên Tố sau khi tiến hành Bắn Vòng Quanh hoặc thi triển Pháo Xuyên Thấu. Mỗi 2.8s tối đa hồi phục một lần Năng Lượng Nguyên Tố thông qua cách này.",
+      "1": "Ngoài ra, sát thương gây ra từ <strong>Kính Chào Thánh Long Toàn Năng</strong> tăng 70%."
+    }
+  },
+  "constellation5": {
+    "name": "Đuôi Của Khỉ Hú",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Kính Chào Thánh Long Toàn Năng</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Hình Dạng Thụy Thú",
+    "description": {
+      "0": "Sau khi Pháo Xuyên Thấu đánh trúng kẻ địch, sẽ nảy một lần giữa các kẻ địch, gây <dendro>Sát Thương Nguyên Tố Thảo</dendro> bằng 700% Tấn Công của Kinich.",
+      "1": "Nếu lần Pháo Xuyên Thấu đó kích hoạt hiệu quả tăng cường Pháo Xuyên Thấu từ Thiên Phú Cố Định \"Khế Ước Của Linh Hồn Lửa\" hoặc Cung Mệnh \"Chi Của Bọ Hổ\", thì đòn tấn công nảy mà Pháo Xuyên Thấu gây ra cũng sẽ nhận được hiệu quả tăng cường nêu trên."
+    }
+  }
+}
