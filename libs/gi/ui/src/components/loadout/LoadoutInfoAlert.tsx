@@ -2,7 +2,7 @@ import { Alert } from '@mui/material'
 import { Trans, useTranslation } from 'react-i18next'
 
 export function LoadoutInfoAlert() {
-  const { t } = useTranslation('page_character')
+  const { t } = useTranslation('loadout')
   return (
     <Alert severity="info">
       <Trans t={t} i18nKey={'loadoutSettings.alert'}>

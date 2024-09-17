@@ -19,7 +19,7 @@ export function LoadoutHeaderContent({
   showSetting?: boolean
   children?: ReactNode
 }) {
-  const { t } = useTranslation('page_team')
+  const { t } = useTranslation('loadout')
   const database = useDatabase()
   const {
     name,

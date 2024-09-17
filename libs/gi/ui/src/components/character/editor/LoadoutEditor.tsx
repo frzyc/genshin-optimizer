@@ -57,7 +57,7 @@ export function LoadoutEditor({
   teamCharId: string
   teamIds: string[]
 }) {
-  const { t } = useTranslation('page_character')
+  const { t } = useTranslation('loadout')
   const [showRemoval, onShowRemoval, onHideRemoval] = useBoolState()
   const navigate = useNavigate()
   const database = useDatabase()
@@ -313,7 +313,7 @@ function BonusStatsCard({
 }: {
   bonusStats: TeamCharacter['bonusStats']
 }) {
-  const { t } = useTranslation('page_character')
+  const { t } = useTranslation('loadout')
   return (
     <CardThemed bgt="light">
       <CardHeader
@@ -352,7 +352,7 @@ function MultiTargetCard({
 }: {
   customMultiTargets: TeamCharacter['customMultiTargets']
 }) {
-  const { t } = useTranslation('page_character')
+  const { t } = useTranslation('loadout')
   return (
     <CardThemed bgt="light">
       <CardHeader

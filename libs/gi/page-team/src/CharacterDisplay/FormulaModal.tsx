@@ -44,7 +44,7 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 export default function FormulaModal() {
-  const { t } = useTranslation('page_character')
+  const { t } = useTranslation('loadout')
   const { modalOpen } = useContext(FormulaDataContext)
   const { setFormulaData } = useContext(FormulaDataContext)
   const onCloseHandler = useCallback(

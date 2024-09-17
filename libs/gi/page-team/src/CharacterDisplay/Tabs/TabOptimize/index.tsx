@@ -1046,13 +1046,13 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
         startIcon={<Science />}
         onClick={onShowTcPrompt}
       >
-        {t`newTcBuild.button`}
+        {t`createBuildTc.button`}
       </Button>
       {/* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
       <ModalWrapper open={showTcPrompt} onClose={OnHideTcPrompt}>
         <CardThemed>
           <CardHeader
-            title={t`newTcBuild.title`}
+            title={t`createBuildTc.title`}
             action={
               <IconButton onClick={OnHideTcPrompt}>
                 <CloseIcon />
@@ -1063,19 +1063,21 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
           <CardContent
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
-            <Typography>{t`newTcBuild.desc`}</Typography>
+            <Typography>{t`createBuildTc.desc`}</Typography>
             <TextField
               value={name}
               onChange={(e) => setName(e.target.value)}
               autoFocus
               margin="dense"
-              label={t`newTcBuild.label`}
+              label={t`createBuildTc.label`}
               fullWidth
             />
             <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
-              <Button onClick={OnHideTcPrompt}>{t`newTcBuild.cancel`}</Button>
+              <Button
+                onClick={OnHideTcPrompt}
+              >{t`createBuildTc.cancel`}</Button>
               <Button color="success" disabled={!name} onClick={toTc}>
-                {t`newTcBuild.create`}
+                {t`createBuildTc.create`}
               </Button>
             </Box>
           </CardContent>
@@ -1115,7 +1117,7 @@ function CopyBuildButton({
         startIcon={<CheckroomIcon />}
         onClick={onShowPrompt}
       >
-        {t`newBuild.button`}
+        {t`createBuildReal.button`}
       </Button>
       {/* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
       <ModalWrapper
@@ -1125,7 +1127,7 @@ function CopyBuildButton({
       >
         <CardThemed>
           <CardHeader
-            title={t`newBuild.title`}
+            title={t`createBuildReal.title`}
             action={
               <IconButton onClick={OnHidePrompt}>
                 <CloseIcon />
@@ -1136,20 +1138,22 @@ function CopyBuildButton({
           <CardContent
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
-            <Typography>{t`newBuild.desc`}</Typography>
+            <Typography>{t`createBuildReal.desc`}</Typography>
             <form onSubmit={toLoadout}>
               <TextField
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 autoFocus
                 margin="dense"
-                label={t`newBuild.label`}
+                label={t`createBuildReal.label`}
                 fullWidth
               />
               <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
-                <Button onClick={OnHidePrompt}>{t`newBuild.cancel`}</Button>
+                <Button
+                  onClick={OnHidePrompt}
+                >{t`createBuildReal.cancel`}</Button>
                 <Button type="submit" color="success" disabled={!name}>
-                  {t`newBuild.create`}
+                  {t`createBuildReal.create`}
                 </Button>
               </Box>
             </form>

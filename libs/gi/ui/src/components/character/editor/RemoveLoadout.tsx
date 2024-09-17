@@ -37,7 +37,7 @@ export function RemoveLoadout({
   onDelete: () => void
   conditionalCount: number
 }) {
-  const { t } = useTranslation('page_character')
+  const { t } = useTranslation('loadout')
   const database = useDatabase()
   const {
     name,

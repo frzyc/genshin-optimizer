@@ -15,7 +15,7 @@ import { Grid } from '@mui/material'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 export function BuildEquipped({ active = false }: { active?: boolean }) {
-  const { t } = useTranslation('page_character')
+  const { t } = useTranslation('build')
   const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const {
     character: { key: characterKey, equippedArtifacts, equippedWeapon },
@@ -27,7 +27,7 @@ export function BuildEquipped({ active = false }: { active?: boolean }) {
     })
   const onDupe = () =>
     database.teamChars.newBuild(teamCharId, {
-      name: t`buildEquipped.copy.name`,
+      name: t`buildEqCard.copy.nameReal`,
       artifactIds: equippedArtifacts,
       weaponId: equippedWeapon,
     })
@@ -42,14 +42,14 @@ export function BuildEquipped({ active = false }: { active?: boolean }) {
     if (!newBuildTcId) return
     // copy over name
     database.buildTcs.set(newBuildTcId, {
-      name: t`buildEquipped.copy.tcName`,
-      description: t`buildEquipped.copy.desc`,
+      name: t`buildEqCard.copy.nameTc`,
+      description: t`buildEqCard.copy.desc`,
     })
   }
 
   return (
     <BuildCard
-      name={t`buildEquipped.name`}
+      name={t`buildEqCard.name`}
       active={active}
       onActive={onActive}
       onCopyToTc={copyToTc}

@@ -97,7 +97,7 @@ export default function LoadoutSettingElement() {
 }
 
 function BuildManagementContent() {
-  const { t } = useTranslation('page_character')
+  const { t } = useTranslation('loadout')
   const database = useDatabase()
   const {
     teamCharId,
@@ -112,7 +112,7 @@ function BuildManagementContent() {
         title={
           <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
             <CheckroomIcon />
-            <span>{t`loadoutSettings.management`}</span>
+            <span>{t`loadoutSettings.title`}</span>
           </Box>
         }
       />
@@ -135,7 +135,7 @@ function BuildManagementContent() {
             size="small"
             onClick={() => database.teamChars.newBuild(teamCharId)}
           >
-            {t`loadoutSettings.newBuild`}
+            {t`loadoutSettings.newBuildBtn`}
           </Button>
         </Box>
         <BuildInfoAlert />
@@ -165,7 +165,7 @@ function BuildManagementContent() {
               database.teamChars.newBuildTcFromBuild(teamCharId, weaponTypeKey)
             }
           >
-            {t`loadoutSettings.newTcBuild`}
+            {t`loadoutSettings.newTcBuildBtn`}
           </Button>
         </Box>
         <TCBuildInfoAlert />
@@ -215,7 +215,7 @@ function DetailStatButton({ buttonProps = {} }: { buttonProps?: ButtonProps }) {
   )
 }
 function FormulasButton({ buttonProps = {} }: { buttonProps?: ButtonProps }) {
-  const { t } = useTranslation('page_character')
+  const { t } = useTranslation('loadout')
   const { onModalOpen } = useContext(FormulaDataContext)
   return (
     <Button

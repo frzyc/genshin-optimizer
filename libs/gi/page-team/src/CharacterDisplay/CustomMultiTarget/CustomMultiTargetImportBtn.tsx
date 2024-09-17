@@ -22,7 +22,7 @@ export default function CustomMultiTargetImportBtn({
   setCustomMultiTarget: (t: CustomMultiTarget) => void
   btnProps?: ButtonProps
 }) {
-  const { t } = useTranslation('page_character')
+  const { t } = useTranslation('loadout')
   const [show, onShow, onHide] = useBoolState()
   const [data, setData] = useState('')
 

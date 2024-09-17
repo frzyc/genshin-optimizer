@@ -17,7 +17,7 @@ export default function CompareBtn({
 }: {
   buttonGroupProps?: ButtonGroupProps
 }) {
-  const { t } = useTranslation('page_character')
+  const { t } = useTranslation('build')
   const database = useDatabase()
   const {
     teamId,

@@ -391,16 +391,16 @@ export default function TabTheorycraft() {
                   The selected Optimization target and constraints scales with:{' '}
                 </Trans>
                 {new Intl.ListFormat()
-                  .format(Array.from(Array(scalesWith.size).fill('\u200B')))
-                  .split('')
+                  .format(Array(scalesWith.size).fill('\u200B'))
+                  .split(/([^\u200B]+)/)
                   .map((str, i) =>
                     str === '\u200B'
-                      ? ((k = [...scalesWith].map((k) => k)[i / 2]) => (
+                      ? ((k) => (
                           <strong key={k}>
                             <StatIcon statKey={k} iconProps={iconInlineProps} />
                             <ArtifactStatWithUnit statKey={k} />
                           </strong>
-                        ))()
+                        ))([...scalesWith][i / 2])
                       : str
                   )}
                 <Trans t={t} i18nKey="tabTheorycraft.optAlert.distribute">

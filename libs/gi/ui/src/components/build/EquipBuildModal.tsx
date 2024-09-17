@@ -58,7 +58,7 @@ export function EquipBuildModal(props: Props & { show: boolean }) {
   )
 }
 function Content(props: Props) {
-  const { t } = useTranslation('page_character_optimize')
+  const { t } = useTranslation('build')
   const {
     currentName,
     currentWeaponId,

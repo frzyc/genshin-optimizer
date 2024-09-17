@@ -32,7 +32,7 @@ export function LoadoutDropdown({
   dropdownBtnProps?: Omit<DropdownButtonProps, 'children' | 'title'>
   label?: boolean
 }) {
-  const { t } = useTranslation('page_team')
+  const { t } = useTranslation('loadout')
   const database = useDatabase()
   const { key: characterKey, name } = database.teamChars.get(teamCharId)!
   const { gender } = useDBMeta()
@@ -59,7 +59,7 @@ export function LoadoutDropdown({
         <CardThemed>
           <CardHeader
             title={
-              <Trans t={t} i18nKey={'loDropdown.popup.title'}>
+              <Trans t={t} i18nKey={'loDropdown.createModal.title'}>
                 Create a new Loadout For{' '}
                 <CharacterName characterKey={characterKey} gender={gender} />
               </Trans>
@@ -71,14 +71,14 @@ export function LoadoutDropdown({
           >
             <TextField
               fullWidth
-              label={t`loDropdown.popup.label`}
-              placeholder={t`loDropdown.popup.placeholder`}
+              label={t`loDropdown.createModal.label`}
+              placeholder={t`loDropdown.createModal.placeholder`}
               value={newName}
               onChange={(e) => setNewName(e.target.value)}
             />
             <TextField
               fullWidth
-              label={t`loDropdown.popup.desc`}
+              label={t`loDropdown.createModal.desc`}
               value={newDesc}
               onChange={(e) => setNewDesc(e.target.value)}
               multiline
@@ -86,7 +86,7 @@ export function LoadoutDropdown({
             />
             <Box sx={{ display: 'flex', gap: 2 }}>
               <Button color="error" fullWidth onClick={onHide}>
-                {t`loDropdown.popup.cancel`}
+                {t`loDropdown.createModal.cancel`}
               </Button>
               <Button
                 color="success"
@@ -94,7 +94,7 @@ export function LoadoutDropdown({
                 onClick={newLoadout}
                 disabled={!newName}
               >
-                {t`loDropdown.popup.confirm`}
+                {t`loDropdown.createModal.confirm`}
               </Button>
             </Box>
           </CardContent>

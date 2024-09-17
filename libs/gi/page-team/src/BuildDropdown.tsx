@@ -15,7 +15,7 @@ export default function BuildDropdown({
   loadoutDatum: LoadoutDatum
   dropdownBtnProps?: Omit<DropdownButtonProps, 'children' | 'title'>
 }) {
-  const { t } = useTranslation('page_team')
+  const { t } = useTranslation('build')
   const database = useDatabase()
   const { teamCharId, buildType, buildId, buildTcId } = loadoutDatum
   const teamChar = database.teamChars.get(teamCharId)!

@@ -42,7 +42,7 @@ export function BuildCard({
   onRemove?: () => void
   hideFooter?: boolean
 }) {
-  const { t } = useTranslation('page_character')
+  const { t } = useTranslation('build')
   const clickableAreaContent = (
     <>
       <CardHeader

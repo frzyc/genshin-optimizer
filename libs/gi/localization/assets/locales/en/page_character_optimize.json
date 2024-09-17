@@ -138,7 +138,7 @@
   "generatedOn": "Build generated on: ",
   "selectChar": "Select a character to generate builds.",
   "clearBuildsBtn": "Clear Builds",
-  "newTcBuild": {
+  "createBuildTc": {
     "button": "New TC Build",
     "title": "New Theorycraft Build",
     "desc": "Copy over this build to a new TC Build",
@@ -146,7 +146,7 @@
     "cancel": "Cancel",
     "create": "Create"
   },
-  "newBuild": {
+  "createBuildReal": {
     "button": "New Build",
     "title": "New Build",
     "desc": "Copy over this build to a new build",
@@ -162,15 +162,6 @@
     "oldWeapon": "Old Weapon",
     "tcWeapon": "TC Weapon",
     "newWeapon": "New Weapon"
-  },
-  "equipBuildModal": {
-    "title": "Confirm Equipment Changes for <2>{{currentName}}</2>",
-    "desc": "Do you want to make the changes shown below?",
-    "overwrite": "Copy the current equipment in <2>{{currentName}}</2> to a new build. Otherwise, they will be overwritten.",
-    "label": "Build Name",
-    "newName": "Duplicate of {{currentName}}",
-    "cancel": "Cancel",
-    "equip": "Equip"
   },
   "removeBuildButton": "Remove Build",
   "theorycraftButton": "Theorycraft",

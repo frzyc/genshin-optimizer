@@ -44,7 +44,7 @@ export default function BuildTc({
   buildTcId: string
   active?: boolean
 }) {
-  const { t } = useTranslation('page_character')
+  const { t } = useTranslation('build')
   const [open, onOpen, onClose] = useBoolState()
   const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const database = useDatabase()
@@ -62,7 +62,7 @@ export default function BuildTc({
   const onDupe = () =>
     database.teamChars.newBuildTc(teamCharId, {
       ...structuredClone(buildTc),
-      name: t('buildTc.copy.tcName', { name }),
+      name: t('buildTcCard.copy.nameTc', { name }),
     })
   return (
     <>
@@ -235,7 +235,7 @@ function BuildTcEditor({
   buildTcId: string
   onClose: () => void
 }) {
-  const { t } = useTranslation('page_character')
+  const { t } = useTranslation('build')
   const database = useDatabase()
   const build = useBuildTc(buildTcId)!
 
@@ -271,7 +271,7 @@ function BuildTcEditor({
   return (
     <CardThemed>
       <CardHeader
-        title={t`buildTc.edit.title`}
+        title={t`buildTcCard.edit.title`}
         action={
           <IconButton onClick={onClose}>
             <CloseIcon />
@@ -282,14 +282,14 @@ function BuildTcEditor({
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
         <TextField
           fullWidth
-          label={t`buildTc.edit.label`}
-          placeholder={t`buildTc.edit.placeholder`}
+          label={t`buildTcCard.edit.label`}
+          placeholder={t`buildTcCard.edit.placeholder`}
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <TextField
           fullWidth
-          label={t`buildTc.edit.desc`}
+          label={t`buildTcCard.edit.desc`}
           value={desc}
           onChange={(e) => setDesc(e.target.value)}
           multiline
