@@ -59,6 +59,7 @@
   },
   "tabTheorycraft": {
     "distribute": "Distribute",
+    "distInput": "Substats",
     "compareToggle": {
       "equipped": "Compare vs. equipped",
       "tc": "Show TC stats"

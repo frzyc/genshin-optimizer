@@ -336,7 +336,7 @@ export default function TabTheorycraft() {
                 value={distributedSubstats}
                 disabled={!optimizationTarget || solving}
                 onChange={(v) => v !== undefined && setDistributedSubstats(v)}
-                endAdornment={'Substats'}
+                endAdornment={t`tabTheorycraft.distInput`}
                 sx={{
                   borderRadius: 1,
                   px: 1,
