@@ -126,6 +126,7 @@ function Page({ teamId }: { teamId: string }) {
     'sillyWisher_charNames',
     'charNames_gen',
     'page_character',
+    'page_team',
   ])
 
   useTitle(
@@ -136,11 +137,11 @@ function Page({ teamId }: { teamId: string }) {
               silly ? 'sillyWisher_charNames' : 'charNames_gen'
             }:${charKeyToLocGenderedCharKey(characterKey, gender)}`
           )
-        : t('Team Settings')
+        : t`page_team:teamSettings.tab.team`
       const tabName = tab
         ? t(`page_character:tabs.${tab}`)
         : characterKey
-        ? t('Loadout/Build')
+        ? t`page_character:tabs.setting`
         : tab
       return tabName
         ? `${team.name} - ${charName} - ${tabName}`

@@ -547,6 +547,9 @@ export default function TabBuild() {
   )
   const getNormBuildLabel = useCallback((index: number) => `#${index + 1}`, [])
 
+  const buildShowingCount =
+    builds.length + (graphBuilds ? graphBuilds.length : 0)
+
   return (
     <Box display="flex" flexDirection="column" gap={1}>
       {noArtifact && <NoArtWarning />}
@@ -787,20 +790,29 @@ export default function TabBuild() {
               <Typography sx={{ flexGrow: 1 }}>
                 {builds ? (
                   <span>
-                    Showing{' '}
-                    <strong>
-                      {builds.length + (graphBuilds ? graphBuilds.length : 0)}
-                    </strong>{' '}
-                    build generated for {characterName}.{' '}
+                    <Trans
+                      t={t}
+                      i18nKey="buildShowingNum"
+                      count={buildShowingCount}
+                    >
+                      Showing{' '}
+                      <strong>{{ count: buildShowingCount } as any}</strong>{' '}
+                      build generated for{' '}
+                      <CharacterName
+                        characterKey={characterKey}
+                        gender={gender}
+                      />
+                      .
+                    </Trans>{' '}
                     {!!buildDate && (
                       <span>
-                        Build generated on:{' '}
+                        {t`generatedOn`}
                         <strong>{new Date(buildDate).toLocaleString()}</strong>
                       </span>
                     )}
                   </span>
                 ) : (
-                  <span>Select a character to generate builds.</span>
+                  <span>{t`selectChar`}</span>
                 )}
               </Typography>
               <Button
@@ -814,7 +826,7 @@ export default function TabBuild() {
                   })
                 }}
               >
-                Clear Builds
+                {t`clearBuildsBtn`}
               </Button>
             </Box>
             <Grid container display="flex" spacing={1}>
@@ -998,6 +1010,7 @@ const BuildItemWrapper = memo(function BuildItemWrapper({
   )
 })
 function CopyTcButton({ build }: { build: GeneratedBuild }) {
+  const { t } = useTranslation('build')
   const [name, setName] = useState('')
   const [showTcPrompt, onShowTcPrompt, OnHideTcPrompt] = useBoolState()
 
@@ -1033,14 +1046,13 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
         startIcon={<Science />}
         onClick={onShowTcPrompt}
       >
-        New TC Build
+        {t`createBuildTc.button`}
       </Button>
       {/* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
-      {/* TODO: Translation */}
       <ModalWrapper open={showTcPrompt} onClose={OnHideTcPrompt}>
         <CardThemed>
           <CardHeader
-            title="New Theorycraft Build"
+            title={t`createBuildTc.title`}
             action={
               <IconButton onClick={OnHideTcPrompt}>
                 <CloseIcon />
@@ -1051,19 +1063,21 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
           <CardContent
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
-            <Typography>Copy over this build to a new TC Build</Typography>
+            <Typography>{t`createBuildTc.desc`}</Typography>
             <TextField
               value={name}
               onChange={(e) => setName(e.target.value)}
               autoFocus
               margin="dense"
-              label="TC Build Name"
+              label={t`createBuildTc.label`}
               fullWidth
             />
             <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
-              <Button onClick={OnHideTcPrompt}>Cancel</Button>
+              <Button
+                onClick={OnHideTcPrompt}
+              >{t`createBuildTc.cancel`}</Button>
               <Button color="success" disabled={!name} onClick={toTc}>
-                Create
+                {t`createBuildTc.create`}
               </Button>
             </Box>
           </CardContent>
@@ -1077,6 +1091,7 @@ function CopyBuildButton({
 }: {
   build: GeneratedBuild
 }) {
+  const { t } = useTranslation('build')
   const [name, setName] = useState('')
   const [showPrompt, onShowPrompt, OnHidePrompt] = useBoolState()
 
@@ -1102,10 +1117,9 @@ function CopyBuildButton({
         startIcon={<CheckroomIcon />}
         onClick={onShowPrompt}
       >
-        New Build
+        {t`createBuildReal.button`}
       </Button>
       {/* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
-      {/* TODO: Translation */}
       <ModalWrapper
         open={showPrompt}
         onClose={OnHidePrompt}
@@ -1113,7 +1127,7 @@ function CopyBuildButton({
       >
         <CardThemed>
           <CardHeader
-            title="New Build"
+            title={t`createBuildReal.title`}
             action={
               <IconButton onClick={OnHidePrompt}>
                 <CloseIcon />
@@ -1124,20 +1138,22 @@ function CopyBuildButton({
           <CardContent
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
-            <Typography>Copy over this build to a new build</Typography>
+            <Typography>{t`createBuildReal.desc`}</Typography>
             <form onSubmit={toLoadout}>
               <TextField
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 autoFocus
                 margin="dense"
-                label="Build Name"
+                label={t`createBuildReal.label`}
                 fullWidth
               />
               <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
-                <Button onClick={OnHidePrompt}>Cancel</Button>
+                <Button
+                  onClick={OnHidePrompt}
+                >{t`createBuildReal.cancel`}</Button>
                 <Button type="submit" color="success" disabled={!name}>
-                  Create
+                  {t`createBuildReal.create`}
                 </Button>
               </Box>
             </form>

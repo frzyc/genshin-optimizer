@@ -27,6 +27,7 @@ import {
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useContext, useMemo, useState } from 'react'
+import { Trans, useTranslation } from 'react-i18next'
 import type { dataContextObj } from '../../context'
 import { DataContext } from '../../context'
 import { useCharData, useTeamData } from '../../hooks'
@@ -56,8 +57,8 @@ export function EquipBuildModal(props: Props & { show: boolean }) {
     </ModalWrapper>
   )
 }
-/* TODO: Translation */
 function Content(props: Props) {
+  const { t } = useTranslation('build')
   const {
     currentName,
     currentWeaponId,
@@ -81,7 +82,8 @@ function Content(props: Props) {
   const toEquip = () => {
     if (copyCurrent) {
       database.teamChars.newBuild(teamCharId, {
-        name: name !== '' ? name : `Duplicate of ${currentName}`,
+        name:
+          name !== '' ? name : t('equipBuildModal.newName', { currentName }),
         artifactIds: currentArtifactIds,
         weaponId: currentWeaponId,
       })
@@ -99,7 +101,10 @@ function Content(props: Props) {
           <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
             <CheckroomIcon />
             <span>
-              Confirm Equipment Changes for <strong>{currentName}</strong>
+              <Trans t={t} i18nKey={'equipBuildModal.title'}>
+                Confirm Equipment Changes for{' '}
+                <strong>{{ currentName } as any}</strong>
+              </Trans>
             </span>
           </Box>
         }
@@ -118,16 +123,15 @@ function Content(props: Props) {
         }}
       >
         {/* Confirmation Message */}
-        <Typography sx={{ fontSize: 20 }}>
-          Do you want to make the changes shown below?
-        </Typography>
+        <Typography sx={{ fontSize: 20 }}>{t`equipBuildModal.desc`}</Typography>
         {teamCharId && (
           <FormControlLabel
             label={
-              <>
-                Copy the current equipment in <strong>{currentName}</strong> to
-                a new build. Otherwise, they will be overwritten.
-              </>
+              <Trans t={t} i18nKey={'equipBuildModal.overwrite'}>
+                Copy the current equipment in{' '}
+                <strong>{{ currentName } as any}</strong> to a new build.
+                Otherwise, they will be overwritten.
+              </Trans>
             }
             control={
               <Checkbox
@@ -140,8 +144,8 @@ function Content(props: Props) {
         )}
         {copyCurrent && (
           <TextField
-            label="Build Name"
-            placeholder={`Duplicate of ${currentName}`}
+            label={t`equipBuildModal.label`}
+            placeholder={t('equipBuildModal.newName', { currentName })}
             value={name}
             onChange={(e) => setName(e.target.value)}
             size="small"
@@ -157,10 +161,10 @@ function Content(props: Props) {
           }}
         >
           <Button color="error" onClick={onHide}>
-            Cancel
+            {t`equipBuildModal.cancel`}
           </Button>
           <Button color="success" onClick={toEquip}>
-            Equip
+            {t`equipBuildModal.equip`}
           </Button>
         </Box>
         {/* Active Build */}

@@ -55,8 +55,6 @@ import { getBuildTcArtifactData, iconAsset } from '../../util'
 import { ArtifactSlotName } from '../artifact'
 import { TeamDelModal } from './TeamDelModal'
 
-// TODO: Translation
-
 export function TeamCard({
   teamId,
   onClick,

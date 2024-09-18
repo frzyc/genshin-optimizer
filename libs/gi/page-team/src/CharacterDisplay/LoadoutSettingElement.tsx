@@ -33,7 +33,6 @@ import BuildTc from './Build/BuildTc'
 import { CustomMultiTargetButton } from './CustomMultiTarget'
 import StatModal from './StatModal'
 
-// TODO: Translation
 const columns = { xs: 1, sm: 1, md: 2, lg: 2 }
 export default function LoadoutSettingElement() {
   const database = useDatabase()
@@ -98,6 +97,7 @@ export default function LoadoutSettingElement() {
 }
 
 function BuildManagementContent() {
+  const { t } = useTranslation('loadout')
   const database = useDatabase()
   const {
     teamCharId,
@@ -112,7 +112,7 @@ function BuildManagementContent() {
         title={
           <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
             <CheckroomIcon />
-            <span>Build Management</span>
+            <span>{t`loadoutSettings.title`}</span>
           </Box>
         }
       />
@@ -128,14 +128,14 @@ function BuildManagementContent() {
         </Grid>
 
         <Box sx={{ display: 'flex', gap: 2 }}>
-          <Typography variant="h6">Builds</Typography>
+          <Typography variant="h6">{t`loadoutSettings.builds`}</Typography>
           <Button
             startIcon={<AddIcon />}
             color="info"
             size="small"
             onClick={() => database.teamChars.newBuild(teamCharId)}
           >
-            New Build
+            {t`loadoutSettings.newBuildBtn`}
           </Button>
         </Box>
         <BuildInfoAlert />
@@ -156,7 +156,7 @@ function BuildManagementContent() {
         </Box>
 
         <Box sx={{ display: 'flex', gap: 2 }}>
-          <Typography variant="h6">TC Builds</Typography>
+          <Typography variant="h6">{t`loadoutSettings.tcBuilds`}</Typography>
           <Button
             startIcon={<AddIcon />}
             color="info"
@@ -165,7 +165,7 @@ function BuildManagementContent() {
               database.teamChars.newBuildTcFromBuild(teamCharId, weaponTypeKey)
             }
           >
-            New TC Build
+            {t`loadoutSettings.newTcBuildBtn`}
           </Button>
         </Box>
         <TCBuildInfoAlert />
@@ -215,6 +215,7 @@ function DetailStatButton({ buttonProps = {} }: { buttonProps?: ButtonProps }) {
   )
 }
 function FormulasButton({ buttonProps = {} }: { buttonProps?: ButtonProps }) {
+  const { t } = useTranslation('loadout')
   const { onModalOpen } = useContext(FormulaDataContext)
   return (
     <Button
@@ -223,7 +224,7 @@ function FormulasButton({ buttonProps = {} }: { buttonProps?: ButtonProps }) {
       onClick={onModalOpen}
       {...buttonProps}
     >
-      Show Formulas {'&'} Calcs
+      {t`showFormulas.button`}
     </Button>
   )
 }

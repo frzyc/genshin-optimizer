@@ -41,15 +41,25 @@
     "duplicate": "Duplicate",
     "target_one": "<0>{{count}}</0> Target",
     "target_other": "<0>{{count}}</0> Targets",
-    "jsonDescWarning": "It seems like you're trying to import a multi-opt config. This isn't the right place for that! Please go back one modal and press <strong>Import Multi-Opt.</strong>"
+    "jsonDescWarning": "It seems like you're trying to import a multi-opt config. This isn't the right place for that! Please go back one modal and press <strong>Import Multi-Opt.</strong>",
+    "label": "Custom Multi-target Name",
+    "desc": "Custom Multi-target Description",
+    "export": "Export",
+    "confirm": "Are you sure you want to delete this target?",
+    "copyMsg": "Copied configuration to clipboard."
   },
   "addStats": {
     "title": "Bonus Stats",
     "info": "You can use these fields to add buffs/debuffs not directly supported in GO, such as food buffs, Abyss cards, or Superconduct. Please refer to the <1>Genshin Impact Wiki</1> for specific values.",
-    "label": "New Bonus Stat"
+    "label": "New Bonus Stat",
+    "main": "Main Stats",
+    "other": "Other Stats",
+    "misc": "Misc Stats",
+    "special": "<0>Special:</0> "
   },
   "tabTheorycraft": {
     "distribute": "Distribute",
+    "distInput": "Substats",
     "compareToggle": {
       "equipped": "Compare vs. equipped",
       "tc": "Show TC stats"
@@ -107,5 +117,10 @@
   "teammateUsing": {
     "weapon": "Teammate <strong><1></1></strong> is using this weapon.",
     "artifact": "Teammate <strong><1></1></strong> is using this <3></3>"
+  },
+  "charContentModal": {
+    "loadoutsWith": "Team Loadouts with <2/>",
+    "addLoAndTeam": "Add new Loadout+Team",
+    "addTeam": "Add new Team"
   }
 }

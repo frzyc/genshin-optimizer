@@ -4,7 +4,8 @@ import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import CheckroomIcon from '@mui/icons-material/Checkroom'
 import { Box, MenuItem } from '@mui/material'
-// TODO: Translation
+import { useTranslation } from 'react-i18next'
+
 export default function BuildDropdown({
   teamId,
   loadoutDatum,
@@ -14,6 +15,7 @@ export default function BuildDropdown({
   loadoutDatum: LoadoutDatum
   dropdownBtnProps?: Omit<DropdownButtonProps, 'children' | 'title'>
 }) {
+  const { t } = useTranslation('build')
   const database = useDatabase()
   const { teamCharId, buildType, buildId, buildTcId } = loadoutDatum
   const teamChar = database.teamChars.get(teamCharId)!
@@ -27,7 +29,9 @@ export default function BuildDropdown({
       title={
         <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
           <span>{database.teams.getActiveBuildName(loadoutDatum)}</span>
-          {buildType === 'tc' && <SqBadge color="success">TC</SqBadge>}
+          {buildType === 'tc' && (
+            <SqBadge color="success">{t`buildDropdown.tcBadge`}</SqBadge>
+          )}
         </Box>
       }
       {...dropdownBtnProps}
@@ -37,7 +41,7 @@ export default function BuildDropdown({
         onClick={() => onChangeLoadoutDatum({ buildType: 'equipped' })}
         sx={{ display: 'flex', gap: 1 }}
       >
-        Equipped Build
+        {t`buildDropdown.equipped`}
       </MenuItem>
       {buildIds.map((bId) => {
         const { name } = database.builds.get(bId)!
@@ -67,7 +71,7 @@ export default function BuildDropdown({
             sx={{ display: 'flex', gap: 1 }}
           >
             <span>{name}</span>
-            <SqBadge color="success">TC</SqBadge>
+            <SqBadge color="success">{t`buildDropdown.tcBadge`}</SqBadge>
           </MenuItem>
         )
       })}

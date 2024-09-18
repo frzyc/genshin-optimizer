@@ -226,7 +226,7 @@ function ExcludeArtRedButtons({
   onExclude: (ids: string[]) => void
   onInclude: (ids: string[]) => void
 }) {
-  const { t } = useTranslation(['artifact', 'ui'])
+  const { t } = useTranslation('page_character_optimize')
   const { numExclude, numInclude } = useMemo(() => {
     const excludedFiltered = artExclusion.filter((i) => artifactIds.includes(i))
 
@@ -237,13 +237,11 @@ function ExcludeArtRedButtons({
   }, [artifactIds, artExclusion])
 
   const excludeArtifacts = () =>
-    window.confirm(
-      `Are you sure you want to exclude ${numExclude} artifacts from build optimization?`
-    ) && onExclude(artifactIds)
+    window.confirm(t('optExcludeModal.excludeMsg', { count: numExclude })) &&
+    onExclude(artifactIds)
   const includeArtifacts = () =>
-    window.confirm(
-      `Are you sure you want to include ${numInclude} artifacts to build optimization?`
-    ) && onInclude(artifactIds)
+    window.confirm(t('optExcludeModal.includeMsg', { count: numInclude })) &&
+    onInclude(artifactIds)
 
   return (
     <Grid container spacing={1} alignItems="center">
@@ -255,9 +253,7 @@ function ExcludeArtRedButtons({
           onClick={excludeArtifacts}
           startIcon={<ExcludeIcon />}
         >
-          <Trans t={t} i18nKey="button.excludeArtifacts">
-            Exclude Artifacts
-          </Trans>
+          {t`optExcludeModal.excludeBtn`}
           <SqBadge sx={{ ml: 1 }} color={numExclude ? 'success' : 'secondary'}>
             {numExclude}
           </SqBadge>
@@ -271,9 +267,7 @@ function ExcludeArtRedButtons({
           onClick={includeArtifacts}
           startIcon={<OptimizationIcon />}
         >
-          <Trans t={t} i18nKey={'button.includeArtifacts'}>
-            Include Artifacts
-          </Trans>
+          {t`optExcludeModal.includeBtn`}
           <SqBadge sx={{ ml: 1 }} color={numInclude ? 'success' : 'secondary'}>
             {numInclude}
           </SqBadge>

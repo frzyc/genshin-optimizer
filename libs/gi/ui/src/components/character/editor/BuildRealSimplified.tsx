@@ -7,7 +7,6 @@ import { ArtifactCardNano } from '../../artifact'
 import { BuildCard } from '../../build'
 import { WeaponCardNano } from '../../weapon'
 
-// TODO: Translation
 export function BuildRealSimplified({
   buildId,
   characterKey,

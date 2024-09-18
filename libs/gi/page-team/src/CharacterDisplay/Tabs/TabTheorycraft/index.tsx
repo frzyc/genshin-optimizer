@@ -336,7 +336,7 @@ export default function TabTheorycraft() {
                 value={distributedSubstats}
                 disabled={!optimizationTarget || solving}
                 onChange={(v) => v !== undefined && setDistributedSubstats(v)}
-                endAdornment={'Substats'}
+                endAdornment={t`tabTheorycraft.distInput`}
                 sx={{
                   borderRadius: 1,
                   px: 1,
@@ -390,19 +390,19 @@ export default function TabTheorycraft() {
                 <Trans t={t} i18nKey="tabTheorycraft.optAlert.scalesWith">
                   The selected Optimization target and constraints scales with:{' '}
                 </Trans>
-                {[...scalesWith]
-                  .map((k) => (
-                    <strong key={k}>
-                      <StatIcon statKey={k} iconProps={iconInlineProps} />
-                      <ArtifactStatWithUnit statKey={k} />
-                    </strong>
-                  ))
-                  .flatMap((value, index, array) => {
-                    if (index === array.length - 2)
-                      return [value, <span key="and">, and </span>]
-                    if (index === array.length - 1) return value
-                    return [value, <span key={index}>, </span>]
-                  })}
+                {new Intl.ListFormat()
+                  .format(Array(scalesWith.size).fill('\u200B'))
+                  .split(/([^\u200B]+)/)
+                  .map((str, i) =>
+                    str === '\u200B'
+                      ? ((k) => (
+                          <strong key={k}>
+                            <StatIcon statKey={k} iconProps={iconInlineProps} />
+                            <ArtifactStatWithUnit statKey={k} />
+                          </strong>
+                        ))([...scalesWith][i / 2])
+                      : str
+                  )}
                 <Trans t={t} i18nKey="tabTheorycraft.optAlert.distribute">
                   . The solver will only distribute stats to these substats.
                 </Trans>{' '}

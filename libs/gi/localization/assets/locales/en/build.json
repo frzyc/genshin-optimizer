@@ -1,0 +1,85 @@
+{
+  "buildDropdown": {
+    "tcBadge": "TC",
+    "equipped": "Equipped Build"
+  },
+  "buildCardTip": {
+    "edit": "Edit Build Settings",
+    "copyTc": "Copy to TC Builds",
+    "duplicate": "Duplicate Build",
+    "equip": "Equip Build",
+    "delete": "Delete Build"
+  },
+  "buildEqCard": {
+    "name": "Equipped Build",
+    "copy": {
+      "nameReal": "Duplicate of Equipped",
+      "nameTc": "Equipped Build - Copied",
+      "desc": "Copied from Equipped Build"
+    }
+  },
+  "buildRealCard": {
+    "copy": {
+      "nameReal": "Duplicate of {{name}}",
+      "nameTc": "{{name}} - Copied",
+      "equipped": "Equipped"
+    },
+    "edit": {
+      "title": "Build Settings",
+      "label": "Build Name",
+      "placeholder": "Build Name",
+      "desc": "Build Description"
+    }
+  },
+  "buildTcCard": {
+    "copy": {
+      "nameTc": "Duplicate of {{name}}"
+    },
+    "edit": {
+      "title": "Build Settings",
+      "label": "Build Name",
+      "placeholder": "Build Name",
+      "desc": "Build Description"
+    }
+  },
+  "equipBuildModal": {
+    "title": "Confirm Equipment Changes for <2>{{currentName}}</2>",
+    "desc": "Do you want to make the changes shown below?",
+    "overwrite": "Copy the current equipment in <2>{{currentName}}</2> to a new build. Otherwise, they will be overwritten.",
+    "label": "Build Name",
+    "newName": "Duplicate of {{currentName}}",
+    "cancel": "Cancel",
+    "equip": "Equip"
+  },
+  "compareBtn": {
+    "compare": "Compare",
+    "equipped": "Equipped ",
+    "crrBadge": "Current",
+    "tcBadge": "TC"
+  },
+  "createBuildTc": {
+    "button": "New TC Build",
+    "title": "New Theorycraft Build",
+    "desc": "Copy over this build to a new TC Build",
+    "label": "TC Build Name",
+    "cancel": "Cancel",
+    "create": "Create"
+  },
+  "createBuildReal": {
+    "button": "New Build",
+    "title": "New Build",
+    "desc": "Copy over this build to a new build",
+    "label": "Build Name",
+    "cancel": "Cancel",
+    "create": "Create"
+  },
+  "buildDisplay": {
+    "equippedBadge": "(Equipped)",
+    "currentBadge": "(current build)",
+    "equipped": "Equipped",
+    "equipToCrr": "Equip to Current Build",
+    "oldWeapon": "Old Weapon",
+    "tcWeapon": "TC Weapon",
+    "newWeapon": "New Weapon"
+  }
+}

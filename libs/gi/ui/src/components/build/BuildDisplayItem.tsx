@@ -81,7 +81,6 @@ type BuildDisplayItemProps = {
   mainStatAssumptionLevel: number
 }
 
-// TODO: Translation for build UI
 //for displaying each artifact build
 export const BuildDisplayItem = memo(function BuildDisplayItem({
   label,
@@ -90,6 +89,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
   disabled,
   mainStatAssumptionLevel,
 }: BuildDisplayItemProps) {
+  const { t } = useTranslation('build')
   const {
     loadoutDatum: { buildType, buildId },
     teamChar: { buildIds = [] },
@@ -345,8 +345,9 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
               <SqBadge color={currentlyEquipped ? 'success' : 'info'}>
                 <Typography sx={{ display: 'flex', gap: 1 }}>
                   <strong>{label}</strong>
-                  {/* TODO: Translation */}
-                  {currentlyEquipped && <span>(Equipped)</span>}
+                  {currentlyEquipped && (
+                    <span>{t`buildDisplay.equippedBadge`}</span>
+                  )}
                 </Typography>
               </SqBadge>
             )}
@@ -361,8 +362,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
                       )?.name
                     }
                   </span>
-                  {/* TODO: Translation */}
-                  {isActiveBuild && <span>(current build)</span>}
+                  {isActiveBuild && <span>{t`buildDisplay.currentBadge`}</span>}
                   {sameAsBuildIds.length > 1 && (
                     <Tooltip
                       arrow
@@ -398,7 +398,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
               currentName={
                 buildType === 'real'
                   ? database.builds.get(buildId)!.name
-                  : 'Equipped'
+                  : t`buildDisplay.equipped`
               }
               currentWeaponId={currentWeaponId}
               currentArtifactIds={currentArtifactIds}
@@ -418,7 +418,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
               disabled={disabled || isActiveBuild}
               startIcon={<Checkroom />}
             >
-              Equip to Current Build
+              {t`buildDisplay.equipToCrr`}
             </Button>
             {extraButtonsRight}
           </Box>
@@ -452,6 +452,7 @@ function CompareWeaponModal({
   showWeapon: boolean
   onClose: () => void
 }) {
+  const { t } = useTranslation('build')
   const database = useDatabase()
   const diffCurrentWeap = oldId !== newId
 
@@ -479,12 +480,12 @@ function CompareWeaponModal({
             <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
               <CardThemed bgt="light" sx={{ p: 1 }}>
                 <Typography variant="h6" textAlign="center">
-                  Old Weapon
+                  {t`buildDisplay.oldWeapon`}
                 </Typography>
               </CardThemed>
               {oldId === 'tc' ? (
                 <Typography variant="h6" textAlign="center" color="info">
-                  <SqBadge>TC Weapon</SqBadge>
+                  <SqBadge>{t`buildDisplay.tcWeapon`}</SqBadge>
                 </Typography>
               ) : (
                 <WeaponCard weaponId={oldId!} onDelete={deleteWeapon} />
@@ -501,7 +502,7 @@ function CompareWeaponModal({
           <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
             <CardThemed bgt="light" sx={{ p: 1 }}>
               <Typography variant="h6" textAlign="center">
-                New Weapon
+                {t`buildDisplay.newWeapon`}
               </Typography>
             </CardThemed>
             <WeaponCard weaponId={newId} onDelete={deleteWeapon} />

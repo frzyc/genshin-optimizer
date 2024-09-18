@@ -20,7 +20,7 @@ import CloseIcon from '@mui/icons-material/Close'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import { Box, Button, Grid, IconButton, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { DataContext, SillyContext } from '../../../context'
 import { AddTeamInfo } from '../../AddTeamInfo'
@@ -202,6 +202,7 @@ function EquipmentSection() {
   )
 }
 function InTeam() {
+  const { t } = useTranslation('page_character')
   const navigate = useNavigate()
 
   const {
@@ -243,12 +244,13 @@ function InTeam() {
     })
     navigate(`/teams/${teamId}`)
   }
-  // TODO: Translation
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
       <Typography variant={'h6'}>
-        Team Loadouts with{' '}
-        <CharacterName characterKey={characterKey} gender={gender} />
+        <Trans t={t} i18nKey={'charContentModal.loadoutsWith'}>
+          Team Loadouts with{' '}
+          <CharacterName characterKey={characterKey} gender={gender} />
+        </Trans>
       </Typography>
       {!Object.values(loadoutTeamMap).length && <AddTeamInfo />}
 
@@ -267,7 +269,7 @@ function InTeam() {
         variant="outlined"
         sx={{ backgroundColor: 'contentLight.main' }}
       >
-        Add new Loadout+Team
+        {t`charContentModal.addLoAndTeam`}
       </Button>
       <CardThemed bgt="light"></CardThemed>
     </Box>

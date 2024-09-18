@@ -5,18 +5,19 @@ import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import type { ButtonGroupProps } from '@mui/material'
 import { Button, ButtonGroup, MenuItem } from '@mui/material'
 import { useContext } from 'react'
+import { useTranslation } from 'react-i18next'
 
 /**
  * The UI component that modifies the compare data in a TeamChar.
  * This is used in conjuction with useCompareData hook to supply a compareData to the compare UI.
  */
 
-// TODO: Translation
 export default function CompareBtn({
   buttonGroupProps = {},
 }: {
   buttonGroupProps?: ButtonGroupProps
 }) {
+  const { t } = useTranslation('build')
   const database = useDatabase()
   const {
     teamId,
@@ -40,11 +41,11 @@ export default function CompareBtn({
       <span>
         {database.buildTcs.get(compareBuildTcId)?.name ?? ''}{' '}
         <SqBadge color="info" sx={{ ml: 1 }}>
-          TC
+          {t`compareBtn.tcBadge`}
         </SqBadge>
       </span>
     ) : (
-      'Equipped'
+      t`compareBtn.equipped`
     )
   const current =
     (compareType === 'equipped' && buildType === 'equipped') ||
@@ -65,7 +66,7 @@ export default function CompareBtn({
           })
         }
       >
-        Compare
+        {t`compareBtn.compare`}
       </Button>
       <DropdownButton
         title={
@@ -73,7 +74,7 @@ export default function CompareBtn({
             {selectedLabel}{' '}
             {current && (
               <SqBadge color="info" sx={{ ml: 1 }}>
-                Current
+                {t`compareBtn.crrBadge`}
               </SqBadge>
             )}
           </>
@@ -87,10 +88,10 @@ export default function CompareBtn({
             })
           }
         >
-          Equipped{' '}
+          {t`compareBtn.equipped`}
           {buildType === 'equipped' && (
             <SqBadge color="info" sx={{ ml: 1 }}>
-              Current
+              {t`compareBtn.crrBadge`}
             </SqBadge>
           )}
         </MenuItem>
@@ -108,7 +109,7 @@ export default function CompareBtn({
             {database.builds.get(bId)!.name}{' '}
             {buildType === 'real' && bId === buildId && (
               <SqBadge color="info" sx={{ ml: 1 }}>
-                Current
+                {t`compareBtn.crrBadge`}
               </SqBadge>
             )}
           </MenuItem>
@@ -125,11 +126,11 @@ export default function CompareBtn({
           >
             {database.buildTcs.get(bTcId)?.name ?? ''}{' '}
             <SqBadge color="info" sx={{ ml: 1 }}>
-              TC
+              {t`compareBtn.tcBadge`}
             </SqBadge>
             {buildType === 'tc' && bTcId === buildTcId && (
               <SqBadge color="info" sx={{ ml: 1 }}>
-                Current
+                {t`compareBtn.crrBadge`}
               </SqBadge>
             )}
           </MenuItem>

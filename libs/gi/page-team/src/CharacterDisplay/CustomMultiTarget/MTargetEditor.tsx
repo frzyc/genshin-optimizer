@@ -72,7 +72,7 @@ export default function MTargetEditor({
   setTargetIndex: (ind?: number) => void
   onDup: () => void
 }) {
-  const { t } = useTranslation('page_character')
+  const { t } = useTranslation(['page_character', 'loadout'])
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
@@ -146,14 +146,16 @@ export default function MTargetEditor({
           }}
           onClick={() => setcollapse((c) => !c)}
         >
-          <Typography variant="h6">Target Editor</Typography>
+          <Typography variant="h6">{t`loadout:mTargetEditor.title`}</Typography>
           {collapse ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
         </CardActionArea>
         <TextFieldLazy
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                {isMobile ? '#' : 'Rank #'}
+                {isMobile
+                  ? t`loadout:mTargetEditor.rankMobile`
+                  : t`loadout:mTargetEditor.rank`}
               </InputAdornment>
             ),
           }}
@@ -286,7 +288,7 @@ export default function MTargetEditor({
               <Grid item xs={1}>
                 <TextFieldLazy
                   fullWidth
-                  label="Target Description"
+                  label={t`loadout:mTargetEditor.desc`}
                   value={description}
                   onChange={(description) =>
                     setCustomTarget({ ...customTarget, description })
@@ -315,7 +317,7 @@ function ReactionDropdown({
   infusionAura?: InfusionAuraElementKey
 }) {
   const ele = node.info.variant ?? 'physical'
-  const { t } = useTranslation('page_character')
+  const { t } = useTranslation(['page_character', 'loadout'])
 
   if (
     !['pyro', 'hydro', 'cryo', 'electro', 'dendro'].some(
@@ -343,7 +345,7 @@ function ReactionDropdown({
   return (
     <DropdownButton title={title} sx={{ ml: 'auto' }}>
       <MenuItem value="" disabled={!reaction} onClick={() => setReactionMode()}>
-        No Reactions
+        {t`loadout:mTargetEditor.noReaction`}
       </MenuItem>
       {reactions.map((rm) => (
         <MenuItem
