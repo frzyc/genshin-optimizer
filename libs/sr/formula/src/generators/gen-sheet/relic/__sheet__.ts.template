@@ -1,6 +1,6 @@
 import { cmpGE } from '@genshin-optimizer/pando/engine'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
-import { allStats } from '@genshin-optimizer/sr/stats'
+import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
 import {
   allBoolConditionals,
   allListConditionals,
@@ -9,24 +9,14 @@ import {
   own,
   ownBuff,
   register,
+  registerBuff,
   teamBuff,
-} from '../util'
-import { entriesForRelic } from './util'
+} from '../../util'
+import { entriesForRelic } from '../util'
 
 const key: RelicSetKey = '<%= sheet %>'
 const data_gen = allStats.relic[key]
-
-let t = 0,
-  f = 0
-// TODO: Load scalings
-const dm = {
-  2: {
-    dmg: data_gen.setEffects[0].otherStats[t++] ?? 1,
-  },
-  4: {
-    dmg: data_gen.setEffects[1].otherStats[f++] ?? 1,
-  },
-}
+const dm = mappedStats.relic[key]
 
 const relicCount = own.common.count.sheet(key)
 
@@ -42,10 +32,16 @@ const sheet = register(
 
   // TODO: Add formulas/buffs
   // Conditional buffs
-  ownBuff.premod.dmg_.add(
-    boolConditional.ifOn(cmpGE(relicCount, 4, dm[4].dmg))
+  registerBuff(
+    'set2_dmg_',
+    ownBuff.premod.dmg_.add(
+      boolConditional.ifOn(cmpGE(relicCount, 2, dm[2].cond_dmg_))
+    )
   ),
-  teamBuff.premod.dmg_.add(listConditional.map({ val1: 1, val2: 2 })),
-  enemyDebuff.common.defIgn_.add(numConditional)
+  registerBuff(
+    'team_dmg_',
+    teamBuff.premod.dmg_.add(listConditional.map({ val1: 1, val2: 2 }))
+  ),
+  registerBuff('enemy_defIgn_', enemyDebuff.common.defIgn_.add(numConditional))
 )
 export default sheet

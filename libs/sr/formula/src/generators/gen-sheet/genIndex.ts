@@ -30,7 +30,9 @@ async function writeCharIndex(path: string) {
   const index = prettier.format(
     `
 import type { TagMapNodeEntries } from '../util'
-${keys.map((charKey) => `import ${charKey} from './${charKey}'`).join('\n')}
+${keys
+  .map((charKey) => `import ${charKey} from './sheets/${charKey}'`)
+  .join('\n')}
 
 const data: TagMapNodeEntries[] = [
   ${keys.join('\n,  ')}
@@ -49,7 +51,7 @@ async function writeRelicIndex(path: string) {
     `
 import type { TagMapNodeEntries } from '../util'
 ${allRelicSetKeys
-  .map((setKey) => `import ${setKey} from './${setKey}'`)
+  .map((setKey) => `import ${setKey} from './sheets/${setKey}'`)
   .join('\n')}
 
 const data: TagMapNodeEntries[] = [
@@ -69,7 +71,9 @@ async function writeLightConeIndex(path: string) {
     `
 import type { TagMapNodeEntries } from '../util'
 ${allLightConeKeys
-  .map((lightConeKey) => `import ${lightConeKey} from './${lightConeKey}'`)
+  .map(
+    (lightConeKey) => `import ${lightConeKey} from './sheets/${lightConeKey}'`
+  )
   .join('\n')}
 
 const data: TagMapNodeEntries[] = [

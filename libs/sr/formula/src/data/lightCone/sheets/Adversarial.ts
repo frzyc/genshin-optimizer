@@ -14,7 +14,7 @@ import {
 } from '../../util'
 import { entriesForLightCone } from '../util'
 
-const key: LightConeKey = '<%= sheet %>'
+const key: LightConeKey = 'Adversarial'
 const data_gen = allStats.lightCone[key]
 const dm = mappedStats.lightCone[key]
 

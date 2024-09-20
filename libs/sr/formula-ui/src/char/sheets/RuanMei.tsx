@@ -8,7 +8,7 @@ import {
   formulas,
   own,
 } from '@genshin-optimizer/sr/formula'
-import { getInterpolateObject } from '@genshin-optimizer/sr/stats'
+import { getInterpolateObject, mappedStats } from '@genshin-optimizer/sr/stats'
 import { trans } from '../../util'
 import type { TalentSheetElementKey } from '../consts'
 const key: CharacterKey = 'RuanMei'
@@ -16,6 +16,7 @@ const [chg, _ch] = trans('char', key)
 const formula = formulas.RuanMei
 const cond = conditionals.RuanMei
 const buff = buffs.RuanMei
+const dm = mappedStats.char[key]
 const sheet: UISheet<TalentSheetElementKey> = {
   basic: {
     name: chg('abilities.basic.0.name'),
@@ -80,7 +81,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
             { title: 'weakness', fieldRef: buff.skillOvertone_weakness_.tag },
             // TODO:
             // {title:"Break Efficiency",???}
-            { title: 'Duration', fieldValue: 3 },
+            { title: 'Duration', fieldValue: dm.skill.duration },
           ],
         },
       },
@@ -252,7 +253,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
           fields: [
             // TODO: display node?
             { title: 'Break Effect', fieldRef: buff.e4_break_.tag },
-            { title: 'Turns', fieldValue: 3 },
+            { title: 'Turns', fieldValue: dm.e4.duration },
           ],
         },
       },

@@ -1,5 +1,5 @@
-import { subscript } from '@genshin-optimizer/pando/engine'
-import type { LightConeKey } from '@genshin-optimizer/sr/consts'
+import { cmpGE } from '@genshin-optimizer/pando/engine'
+import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
 import {
   allBoolConditionals,
@@ -12,13 +12,13 @@ import {
   registerBuff,
   teamBuff,
 } from '../../util'
-import { entriesForLightCone } from '../util'
+import { entriesForRelic } from '../util'
 
-const key: LightConeKey = '<%= sheet %>'
-const data_gen = allStats.lightCone[key]
-const dm = mappedStats.lightCone[key]
+const key: RelicSetKey = 'BandOfSizzlingThunder'
+const data_gen = allStats.relic[key]
+const dm = mappedStats.relic[key]
 
-const { superimpose } = own.lightCone
+const relicCount = own.common.count.sheet(key)
 
 // TODO: Add conditionals
 const { boolConditional } = allBoolConditionals(key)
@@ -27,15 +27,15 @@ const { numConditional } = allNumConditionals(key, true, 0, 2)
 
 const sheet = register(
   key,
-  // Handles base stats and passive buffs
-  entriesForLightCone(data_gen),
+  // Handles passive buffs
+  entriesForRelic(key, data_gen),
 
   // TODO: Add formulas/buffs
   // Conditional buffs
   registerBuff(
-    'cond_dmg_',
+    'set2_dmg_',
     ownBuff.premod.dmg_.add(
-      boolConditional.ifOn(subscript(superimpose, dm.cond_dmg_))
+      boolConditional.ifOn(cmpGE(relicCount, 2, dm[2].cond_dmg_))
     )
   ),
   registerBuff(

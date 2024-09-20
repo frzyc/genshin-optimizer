@@ -3,22 +3,16 @@ import type {
   TrailblazerGenderedKey,
 } from '@genshin-optimizer/sr/consts'
 import type { Rank } from '@genshin-optimizer/sr/dm'
-import * as allStat_gen from './allStat_gen.json'
-import type { AllStats } from './executors/gen-stats/executor'
+import { allStats } from './allStats'
+import { mappedStats } from './mappedStats'
 
-// Make sure these are type-only imports/exports.
-// Importing the executor is quite costly.
 export type {
   CharacterDatum,
   LightConeDatum,
   RelicSetDatum,
   SkillTreeNodeBonusStat,
 } from './executors/gen-stats/executor'
-
-const allStats = allStat_gen as AllStats
-
-export { allStats }
-export type { AllStats }
+export { allStats, mappedStats }
 
 export function getCharStat(
   ck: NonTrailblazerCharacterKey | TrailblazerGenderedKey
