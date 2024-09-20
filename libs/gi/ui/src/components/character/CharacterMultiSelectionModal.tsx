@@ -106,6 +106,13 @@ export function CharacterMultiSelectionModal({
     database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? ''
   )),[database, loadoutData, setTeamCharKeys])
 
+  // used for generating characterKeyList below, only updated when filter/sort/search is applied to prevent characters
+  // from moving around as soon as they as selected/deselected for the team
+  const [cachedTeamCharKeys, setCachedTeamCharKeys] = useState(['','','',''] as (CharacterKey | '')[])
+  useEffect( () => setCachedTeamCharKeys(loadoutData.map((loadoutDatum) =>
+    database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? ''
+  )),[database, loadoutData, setCachedTeamCharKeys])
+
   const [dbDirty, forceUpdate] = useForceUpdate()
 
   // character favorite updater
@@ -128,7 +135,7 @@ export function CharacterMultiSelectionModal({
     {
       const filteredKeys = allCharacterKeys
         .filter(
-          (key) => teamCharKeys.indexOf(key) === -1
+          (key) => cachedTeamCharKeys.indexOf(key) === -1
         )
         .filter(
           filterFunction(
@@ -144,7 +151,7 @@ export function CharacterMultiSelectionModal({
             ['new', 'favorite']
           )
         )
-      return teamCharKeys.filter((key) => key !== '').concat(filteredKeys)
+      return cachedTeamCharKeys.filter((key) => key !== '').concat(filteredKeys)
     }
     return deferredDbDirty
   }, [
@@ -153,7 +160,7 @@ export function CharacterMultiSelectionModal({
     deferredDbDirty,
     deferredSearchTerm,
     database,
-    teamCharKeys,
+    cachedTeamCharKeys,
     silly,
   ])
 
@@ -183,8 +190,7 @@ export function CharacterMultiSelectionModal({
 
   const { weaponType, element, sortType, ascending } = state
 
-  // TODO: Should selected characters automatically be moved when selected/deselected?
-  //       Currently selected characters should probably also be outlined in the single select UI? Can modals be merged into one with different functionality depending on multi select bool?
+  // TODO: Currently selected characters should probably also be outlined in the single select UI? Can modals be merged into one with different functionality depending on multi select bool?
   const onClick = (key: CharacterKey) => {
     const keySlotIndex = teamCharKeys.indexOf(key)
     const firstOpenIndex = teamCharKeys.indexOf('')
@@ -242,17 +248,19 @@ export function CharacterMultiSelectionModal({
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
               <WeaponToggle
-                onChange={(weaponType) =>
+                onChange={(weaponType) => {
                   database.displayCharacter.set({ weaponType })
-                }
+                  setCachedTeamCharKeys(teamCharKeys)
+                }}
                 value={weaponType}
                 totals={weaponTotals}
                 size="small"
               />
               <ElementToggle
-                onChange={(element) =>
+                onChange={(element) => {
                   database.displayCharacter.set({ element })
-                }
+                  setCachedTeamCharKeys(teamCharKeys)
+                }}
                 value={element}
                 totals={elementTotals}
                 size="small"
@@ -273,9 +281,10 @@ export function CharacterMultiSelectionModal({
             <TextField
               autoFocus
               value={searchTerm}
-              onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+              onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
                 setSearchTerm(e.target.value)
-              }
+                false && setCachedTeamCharKeys(teamCharKeys)
+              }}
               label={t('characterName')}
               size="small"
               sx={{ height: '100%', mr: 'auto' }}
@@ -286,13 +295,15 @@ export function CharacterMultiSelectionModal({
             <SortByButton
               sortKeys={sortKeys}
               value={sortType}
-              onChange={(sortType) =>
+              onChange={(sortType) => {
                 database.displayCharacter.set({ sortType })
-              }
+                setCachedTeamCharKeys(teamCharKeys)
+              }}
               ascending={ascending}
-              onChangeAsc={(ascending) =>
+              onChangeAsc={(ascending) => {
                 database.displayCharacter.set({ ascending })
-              }
+                setCachedTeamCharKeys(teamCharKeys)
+              }}
             />
           </Box>
         </CardContent>
