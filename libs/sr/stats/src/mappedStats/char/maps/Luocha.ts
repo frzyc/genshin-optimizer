@@ -1,5 +1,5 @@
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import { allStats } from '../../..'
+import { allStats } from '../../../allStats'
 import { scalingParams } from '../util'
 
 const key: CharacterKey = 'Luocha'

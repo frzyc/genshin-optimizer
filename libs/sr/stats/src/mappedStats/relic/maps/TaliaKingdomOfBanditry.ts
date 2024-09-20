@@ -1,5 +1,5 @@
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
-import { allStats } from '../../..'
+import { allStats } from '../../../allStats'
 
 const key: RelicSetKey = 'TaliaKingdomOfBanditry'
 const data_gen = allStats.relic[key]
