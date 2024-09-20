@@ -180,13 +180,6 @@ export const conditionals = {
       min: 0,
       max: 2,
     },
-    numConditionalNoMax: {
-      sheet: 'Arlan',
-      name: 'numConditionalNoMax',
-      type: 'num',
-      int_only: true,
-      min: 0,
-    },
   },
   Arrows: {
     boolConditional: { sheet: 'Arrows', name: 'boolConditional', type: 'bool' },
@@ -2652,13 +2645,24 @@ export const conditionals = {
     },
   },
   TheSeriousnessOfBreakfast: {
-    stackCount: {
+    boolConditional: {
       sheet: 'TheSeriousnessOfBreakfast',
-      name: 'stackCount',
+      name: 'boolConditional',
+      type: 'bool',
+    },
+    listConditional: {
+      sheet: 'TheSeriousnessOfBreakfast',
+      name: 'listConditional',
+      type: 'list',
+      list: ['val1', 'val2'],
+    },
+    numConditional: {
+      sheet: 'TheSeriousnessOfBreakfast',
+      name: 'numConditional',
       type: 'num',
       int_only: true,
       min: 0,
-      max: -1,
+      max: 2,
     },
   },
   TheUnreachableSide: {
@@ -4509,7 +4513,53 @@ export const formulas = {
   },
 } as const
 export const buffs = {
+  ASecretVow: {
+    cond_dmg_: {
+      sheet: 'ASecretVow',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ASecretVow',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'ASecretVow',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'ASecretVow',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'ASecretVow',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ASecretVow',
+        name: 'team_dmg_',
+      },
+    },
+  },
   Acheron: {
+    e6_dmg_: {
+      sheet: 'Acheron',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Acheron',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Acheron',
       name: 'eidolon3_basic',
@@ -4552,6 +4602,17 @@ export const buffs = {
         q: 'talent',
         sheet: 'Acheron',
         name: 'eidolon5_talent',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Acheron',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Acheron',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -4664,10 +4725,207 @@ export const buffs = {
         q: 'crit_dmg_',
         sheet: 'Acheron',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Acheron',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Acheron',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  Adversarial: {
+    cond_dmg_: {
+      sheet: 'Adversarial',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Adversarial',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Adversarial',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Adversarial',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Adversarial',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Adversarial',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  AfterTheCharmonyFall: {
+    cond_dmg_: {
+      sheet: 'AfterTheCharmonyFall',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'AfterTheCharmonyFall',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'AfterTheCharmonyFall',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'AfterTheCharmonyFall',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'AfterTheCharmonyFall',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'AfterTheCharmonyFall',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  AlongThePassingShore: {
+    cond_dmg_: {
+      sheet: 'AlongThePassingShore',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'AlongThePassingShore',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'AlongThePassingShore',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'AlongThePassingShore',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'AlongThePassingShore',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'AlongThePassingShore',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  Amber: {
+    cond_dmg_: {
+      sheet: 'Amber',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Amber',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Amber',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Amber',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Amber',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Amber',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  AnInstantBeforeAGaze: {
+    cond_dmg_: {
+      sheet: 'AnInstantBeforeAGaze',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'AnInstantBeforeAGaze',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'AnInstantBeforeAGaze',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'AnInstantBeforeAGaze',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'AnInstantBeforeAGaze',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'AnInstantBeforeAGaze',
+        name: 'team_dmg_',
       },
     },
   },
   Argenti: {
+    e6_dmg_: {
+      sheet: 'Argenti',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Argenti',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_skill: {
       sheet: 'Argenti',
       name: 'eidolon3_skill',
@@ -4710,6 +4968,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Argenti',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Argenti',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Argenti',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -4823,10 +5092,32 @@ export const buffs = {
         sheet: 'Argenti',
         elementalType: 'physical',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Argenti',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Argenti',
+        name: 'team_dmg_',
       },
     },
   },
   Arlan: {
+    e6_dmg_: {
+      sheet: 'Arlan',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Arlan',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Arlan',
       name: 'eidolon3_basic',
@@ -4869,6 +5160,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Arlan',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Arlan',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Arlan',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -4979,10 +5281,67 @@ export const buffs = {
         q: 'eff_res_',
         sheet: 'Arlan',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Arlan',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Arlan',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  Arrows: {
+    cond_dmg_: {
+      sheet: 'Arrows',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Arrows',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Arrows',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Arrows',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Arrows',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Arrows',
+        name: 'team_dmg_',
       },
     },
   },
   Asta: {
+    e6_dmg_: {
+      sheet: 'Asta',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Asta',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_skill: {
       sheet: 'Asta',
       name: 'eidolon3_skill',
@@ -5025,6 +5384,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Asta',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Asta',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Asta',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -5140,10 +5510,32 @@ export const buffs = {
         q: 'def_',
         sheet: 'Asta',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Asta',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Asta',
+        name: 'team_dmg_',
       },
     },
   },
   Aventurine: {
+    e6_dmg_: {
+      sheet: 'Aventurine',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Aventurine',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Aventurine',
       name: 'eidolon3_basic',
@@ -5186,6 +5578,17 @@ export const buffs = {
         q: 'talent',
         sheet: 'Aventurine',
         name: 'eidolon5_talent',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Aventurine',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Aventurine',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -5299,10 +5702,32 @@ export const buffs = {
         sheet: 'Aventurine',
         elementalType: 'imaginary',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Aventurine',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Aventurine',
+        name: 'team_dmg_',
       },
     },
   },
   Bailu: {
+    e6_dmg_: {
+      sheet: 'Bailu',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Bailu',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_skill: {
       sheet: 'Bailu',
       name: 'eidolon3_skill',
@@ -5345,6 +5770,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Bailu',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Bailu',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Bailu',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -5455,10 +5891,137 @@ export const buffs = {
         q: 'def_',
         sheet: 'Bailu',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Bailu',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Bailu',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  BaptismOfPureThought: {
+    cond_dmg_: {
+      sheet: 'BaptismOfPureThought',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'BaptismOfPureThought',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'BaptismOfPureThought',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'BaptismOfPureThought',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'BaptismOfPureThought',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'BaptismOfPureThought',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  BeforeDawn: {
+    cond_dmg_: {
+      sheet: 'BeforeDawn',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'BeforeDawn',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'BeforeDawn',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'BeforeDawn',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'BeforeDawn',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'BeforeDawn',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  BeforeTheTutorialMissionStarts: {
+    cond_dmg_: {
+      sheet: 'BeforeTheTutorialMissionStarts',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'BeforeTheTutorialMissionStarts',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'BeforeTheTutorialMissionStarts',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'BeforeTheTutorialMissionStarts',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'BeforeTheTutorialMissionStarts',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'BeforeTheTutorialMissionStarts',
+        name: 'team_dmg_',
       },
     },
   },
   BlackSwan: {
+    e6_dmg_: {
+      sheet: 'BlackSwan',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'BlackSwan',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_skill: {
       sheet: 'BlackSwan',
       name: 'eidolon3_skill',
@@ -5501,6 +6064,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'BlackSwan',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'BlackSwan',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'BlackSwan',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -5614,10 +6188,32 @@ export const buffs = {
         sheet: 'BlackSwan',
         elementalType: 'wind',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'BlackSwan',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'BlackSwan',
+        name: 'team_dmg_',
       },
     },
   },
   Blade: {
+    e6_dmg_: {
+      sheet: 'Blade',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Blade',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_talent: {
       sheet: 'Blade',
       name: 'eidolon3_talent',
@@ -5660,6 +6256,17 @@ export const buffs = {
         q: 'skill',
         sheet: 'Blade',
         name: 'eidolon5_skill',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Blade',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Blade',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -5770,10 +6377,32 @@ export const buffs = {
         q: 'crit_',
         sheet: 'Blade',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Blade',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Blade',
+        name: 'team_dmg_',
       },
     },
   },
   Boothill: {
+    e6_dmg_: {
+      sheet: 'Boothill',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Boothill',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Boothill',
       name: 'eidolon3_basic',
@@ -5816,6 +6445,17 @@ export const buffs = {
         q: 'talent',
         sheet: 'Boothill',
         name: 'eidolon5_talent',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Boothill',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Boothill',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -5926,10 +6566,102 @@ export const buffs = {
         q: 'atk_',
         sheet: 'Boothill',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Boothill',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Boothill',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  BoundlessChoreo: {
+    cond_dmg_: {
+      sheet: 'BoundlessChoreo',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'BoundlessChoreo',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'BoundlessChoreo',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'BoundlessChoreo',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'BoundlessChoreo',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'BoundlessChoreo',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  BrighterThanTheSun: {
+    cond_dmg_: {
+      sheet: 'BrighterThanTheSun',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'BrighterThanTheSun',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'BrighterThanTheSun',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'BrighterThanTheSun',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'BrighterThanTheSun',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'BrighterThanTheSun',
+        name: 'team_dmg_',
       },
     },
   },
   Bronya: {
+    e6_dmg_: {
+      sheet: 'Bronya',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Bronya',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_talent: {
       sheet: 'Bronya',
       name: 'eidolon3_talent',
@@ -5972,6 +6704,17 @@ export const buffs = {
         q: 'skill',
         sheet: 'Bronya',
         name: 'eidolon5_skill',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Bronya',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Bronya',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -6087,10 +6830,137 @@ export const buffs = {
         q: 'crit_dmg_',
         sheet: 'Bronya',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Bronya',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Bronya',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  ButTheBattleIsntOver: {
+    cond_dmg_: {
+      sheet: 'ButTheBattleIsntOver',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ButTheBattleIsntOver',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'ButTheBattleIsntOver',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'ButTheBattleIsntOver',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'ButTheBattleIsntOver',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ButTheBattleIsntOver',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  CarveTheMoonWeaveTheClouds: {
+    cond_dmg_: {
+      sheet: 'CarveTheMoonWeaveTheClouds',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'CarveTheMoonWeaveTheClouds',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'CarveTheMoonWeaveTheClouds',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'CarveTheMoonWeaveTheClouds',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'CarveTheMoonWeaveTheClouds',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'CarveTheMoonWeaveTheClouds',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  Chorus: {
+    cond_dmg_: {
+      sheet: 'Chorus',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Chorus',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Chorus',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Chorus',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Chorus',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Chorus',
+        name: 'team_dmg_',
       },
     },
   },
   Clara: {
+    e6_dmg_: {
+      sheet: 'Clara',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Clara',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Clara',
       name: 'eidolon3_basic',
@@ -6133,6 +7003,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Clara',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Clara',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Clara',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -6246,10 +7127,172 @@ export const buffs = {
         sheet: 'Clara',
         elementalType: 'physical',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Clara',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Clara',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  CollapsingSky: {
+    cond_dmg_: {
+      sheet: 'CollapsingSky',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'CollapsingSky',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'CollapsingSky',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'CollapsingSky',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'CollapsingSky',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'CollapsingSky',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  ConcertForTwo: {
+    cond_dmg_: {
+      sheet: 'ConcertForTwo',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ConcertForTwo',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'ConcertForTwo',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'ConcertForTwo',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'ConcertForTwo',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ConcertForTwo',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  Cornucopia: {
+    cond_dmg_: {
+      sheet: 'Cornucopia',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Cornucopia',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Cornucopia',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Cornucopia',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Cornucopia',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Cornucopia',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  CruisingInTheStellarSea: {
+    cond_dmg_: {
+      sheet: 'CruisingInTheStellarSea',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'CruisingInTheStellarSea',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'CruisingInTheStellarSea',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'CruisingInTheStellarSea',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'CruisingInTheStellarSea',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'CruisingInTheStellarSea',
+        name: 'team_dmg_',
       },
     },
   },
   DanHeng: {
+    e6_dmg_: {
+      sheet: 'DanHeng',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'DanHeng',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'DanHeng',
       name: 'eidolon3_basic',
@@ -6292,6 +7335,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'DanHeng',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'DanHeng',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'DanHeng',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -6407,10 +7461,32 @@ export const buffs = {
         q: 'atk_',
         sheet: 'DanHeng',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'DanHeng',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'DanHeng',
+        name: 'team_dmg_',
       },
     },
   },
   DanHengImbibitorLunae: {
+    e6_dmg_: {
+      sheet: 'DanHengImbibitorLunae',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'DanHengImbibitorLunae',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'DanHengImbibitorLunae',
       name: 'eidolon3_basic',
@@ -6453,6 +7529,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'DanHengImbibitorLunae',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'DanHengImbibitorLunae',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'DanHengImbibitorLunae',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -6568,10 +7655,277 @@ export const buffs = {
         q: 'crit_',
         sheet: 'DanHengImbibitorLunae',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'DanHengImbibitorLunae',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'DanHengImbibitorLunae',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  DanceAtSunset: {
+    cond_dmg_: {
+      sheet: 'DanceAtSunset',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'DanceAtSunset',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'DanceAtSunset',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'DanceAtSunset',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'DanceAtSunset',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'DanceAtSunset',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  DanceDanceDance: {
+    cond_dmg_: {
+      sheet: 'DanceDanceDance',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'DanceDanceDance',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'DanceDanceDance',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'DanceDanceDance',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'DanceDanceDance',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'DanceDanceDance',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  DartingArrow: {
+    cond_dmg_: {
+      sheet: 'DartingArrow',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'DartingArrow',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'DartingArrow',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'DartingArrow',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'DartingArrow',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'DartingArrow',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  DataBank: {
+    cond_dmg_: {
+      sheet: 'DataBank',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'DataBank',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'DataBank',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'DataBank',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'DataBank',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'DataBank',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  DayOneOfMyNewLife: {
+    cond_dmg_: {
+      sheet: 'DayOneOfMyNewLife',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'DayOneOfMyNewLife',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'DayOneOfMyNewLife',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'DayOneOfMyNewLife',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'DayOneOfMyNewLife',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'DayOneOfMyNewLife',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  Defense: {
+    cond_dmg_: {
+      sheet: 'Defense',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Defense',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Defense',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Defense',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Defense',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Defense',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  DestinysThreadsForewoven: {
+    cond_dmg_: {
+      sheet: 'DestinysThreadsForewoven',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'DestinysThreadsForewoven',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'DestinysThreadsForewoven',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'DestinysThreadsForewoven',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'DestinysThreadsForewoven',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'DestinysThreadsForewoven',
+        name: 'team_dmg_',
       },
     },
   },
   DrRatio: {
+    e6_dmg_: {
+      sheet: 'DrRatio',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'DrRatio',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'DrRatio',
       name: 'eidolon3_basic',
@@ -6614,6 +7968,17 @@ export const buffs = {
         q: 'talent',
         sheet: 'DrRatio',
         name: 'eidolon5_talent',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'DrRatio',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'DrRatio',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -6724,10 +8089,277 @@ export const buffs = {
         q: 'crit_',
         sheet: 'DrRatio',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'DrRatio',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'DrRatio',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  DreamvilleAdventure: {
+    cond_dmg_: {
+      sheet: 'DreamvilleAdventure',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'DreamvilleAdventure',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'DreamvilleAdventure',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'DreamvilleAdventure',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'DreamvilleAdventure',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'DreamvilleAdventure',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  EarthlyEscapade: {
+    cond_dmg_: {
+      sheet: 'EarthlyEscapade',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'EarthlyEscapade',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'EarthlyEscapade',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'EarthlyEscapade',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'EarthlyEscapade',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'EarthlyEscapade',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  EchoesOfTheCoffin: {
+    cond_dmg_: {
+      sheet: 'EchoesOfTheCoffin',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'EchoesOfTheCoffin',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'EchoesOfTheCoffin',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'EchoesOfTheCoffin',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'EchoesOfTheCoffin',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'EchoesOfTheCoffin',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  EyesOfThePrey: {
+    cond_dmg_: {
+      sheet: 'EyesOfThePrey',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'EyesOfThePrey',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'EyesOfThePrey',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'EyesOfThePrey',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'EyesOfThePrey',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'EyesOfThePrey',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  Fermata: {
+    cond_dmg_: {
+      sheet: 'Fermata',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Fermata',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Fermata',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Fermata',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Fermata',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Fermata',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  FinalVictor: {
+    cond_dmg_: {
+      sheet: 'FinalVictor',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'FinalVictor',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'FinalVictor',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'FinalVictor',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'FinalVictor',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'FinalVictor',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  FineFruit: {
+    cond_dmg_: {
+      sheet: 'FineFruit',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'FineFruit',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'FineFruit',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'FineFruit',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'FineFruit',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'FineFruit',
+        name: 'team_dmg_',
       },
     },
   },
   Firefly: {
+    e6_dmg_: {
+      sheet: 'Firefly',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Firefly',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Firefly',
       name: 'eidolon3_basic',
@@ -6770,6 +8402,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Firefly',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Firefly',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Firefly',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -6880,10 +8523,102 @@ export const buffs = {
         q: 'eff_res_',
         sheet: 'Firefly',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Firefly',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Firefly',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  FlamesAfar: {
+    cond_dmg_: {
+      sheet: 'FlamesAfar',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'FlamesAfar',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'FlamesAfar',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'FlamesAfar',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'FlamesAfar',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'FlamesAfar',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  FlowingNightglow: {
+    cond_dmg_: {
+      sheet: 'FlowingNightglow',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'FlowingNightglow',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'FlowingNightglow',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'FlowingNightglow',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'FlowingNightglow',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'FlowingNightglow',
+        name: 'team_dmg_',
       },
     },
   },
   FuXuan: {
+    e6_dmg_: {
+      sheet: 'FuXuan',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'FuXuan',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_skill: {
       sheet: 'FuXuan',
       name: 'eidolon3_skill',
@@ -6926,6 +8661,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'FuXuan',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'FuXuan',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'FuXuan',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -7036,10 +8782,32 @@ export const buffs = {
         q: 'hp_',
         sheet: 'FuXuan',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'FuXuan',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'FuXuan',
+        name: 'team_dmg_',
       },
     },
   },
   Gallagher: {
+    e6_dmg_: {
+      sheet: 'Gallagher',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Gallagher',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Gallagher',
       name: 'eidolon3_basic',
@@ -7082,6 +8850,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Gallagher',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Gallagher',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Gallagher',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -7192,10 +8971,67 @@ export const buffs = {
         q: 'eff_res_',
         sheet: 'Gallagher',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Gallagher',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Gallagher',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  GeniusesRepose: {
+    cond_dmg_: {
+      sheet: 'GeniusesRepose',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'GeniusesRepose',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'GeniusesRepose',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'GeniusesRepose',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'GeniusesRepose',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'GeniusesRepose',
+        name: 'team_dmg_',
       },
     },
   },
   Gepard: {
+    e6_dmg_: {
+      sheet: 'Gepard',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Gepard',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_talent: {
       sheet: 'Gepard',
       name: 'eidolon3_talent',
@@ -7238,6 +9074,17 @@ export const buffs = {
         q: 'skill',
         sheet: 'Gepard',
         name: 'eidolon5_skill',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Gepard',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Gepard',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -7353,10 +9200,67 @@ export const buffs = {
         q: 'eff_res_',
         sheet: 'Gepard',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Gepard',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Gepard',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  GoodNightAndSleepWell: {
+    cond_dmg_: {
+      sheet: 'GoodNightAndSleepWell',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'GoodNightAndSleepWell',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'GoodNightAndSleepWell',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'GoodNightAndSleepWell',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'GoodNightAndSleepWell',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'GoodNightAndSleepWell',
+        name: 'team_dmg_',
       },
     },
   },
   Guinaifen: {
+    e6_dmg_: {
+      sheet: 'Guinaifen',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Guinaifen',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Guinaifen',
       name: 'eidolon3_basic',
@@ -7399,6 +9303,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Guinaifen',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Guinaifen',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Guinaifen',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -7514,10 +9429,32 @@ export const buffs = {
         q: 'brEffect_',
         sheet: 'Guinaifen',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Guinaifen',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Guinaifen',
+        name: 'team_dmg_',
       },
     },
   },
   Hanya: {
+    e6_dmg_: {
+      sheet: 'Hanya',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Hanya',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Hanya',
       name: 'eidolon3_basic',
@@ -7560,6 +9497,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Hanya',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Hanya',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Hanya',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -7670,10 +9618,32 @@ export const buffs = {
         q: 'spd',
         sheet: 'Hanya',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Hanya',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Hanya',
+        name: 'team_dmg_',
       },
     },
   },
   Herta: {
+    e6_dmg_: {
+      sheet: 'Herta',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Herta',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Herta',
       name: 'eidolon3_basic',
@@ -7716,6 +9686,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Herta',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Herta',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Herta',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -7831,10 +9812,102 @@ export const buffs = {
         q: 'def_',
         sheet: 'Herta',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Herta',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Herta',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  HeyOverHere: {
+    cond_dmg_: {
+      sheet: 'HeyOverHere',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'HeyOverHere',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'HeyOverHere',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'HeyOverHere',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'HeyOverHere',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'HeyOverHere',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  HiddenShadow: {
+    cond_dmg_: {
+      sheet: 'HiddenShadow',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'HiddenShadow',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'HiddenShadow',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'HiddenShadow',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'HiddenShadow',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'HiddenShadow',
+        name: 'team_dmg_',
       },
     },
   },
   Himeko: {
+    e6_dmg_: {
+      sheet: 'Himeko',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Himeko',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Himeko',
       name: 'eidolon3_basic',
@@ -7877,6 +9950,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Himeko',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Himeko',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Himeko',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -7992,10 +10076,32 @@ export const buffs = {
         q: 'atk_',
         sheet: 'Himeko',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Himeko',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Himeko',
+        name: 'team_dmg_',
       },
     },
   },
   Hook: {
+    e6_dmg_: {
+      sheet: 'Hook',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Hook',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Hook',
       name: 'eidolon3_basic',
@@ -8038,6 +10144,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Hook',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Hook',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Hook',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -8148,10 +10265,32 @@ export const buffs = {
         q: 'hp_',
         sheet: 'Hook',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Hook',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Hook',
+        name: 'team_dmg_',
       },
     },
   },
   Huohuo: {
+    e6_dmg_: {
+      sheet: 'Huohuo',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Huohuo',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_talent: {
       sheet: 'Huohuo',
       name: 'eidolon3_talent',
@@ -8194,6 +10333,17 @@ export const buffs = {
         q: 'skill',
         sheet: 'Huohuo',
         name: 'eidolon5_skill',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Huohuo',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Huohuo',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -8304,10 +10454,277 @@ export const buffs = {
         q: 'eff_res_',
         sheet: 'Huohuo',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Huohuo',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Huohuo',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  IShallBeMyOwnSword: {
+    cond_dmg_: {
+      sheet: 'IShallBeMyOwnSword',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'IShallBeMyOwnSword',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'IShallBeMyOwnSword',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'IShallBeMyOwnSword',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'IShallBeMyOwnSword',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'IShallBeMyOwnSword',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  InTheNameOfTheWorld: {
+    cond_dmg_: {
+      sheet: 'InTheNameOfTheWorld',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'InTheNameOfTheWorld',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'InTheNameOfTheWorld',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'InTheNameOfTheWorld',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'InTheNameOfTheWorld',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'InTheNameOfTheWorld',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  InTheNight: {
+    cond_dmg_: {
+      sheet: 'InTheNight',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'InTheNight',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'InTheNight',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'InTheNight',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'InTheNight',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'InTheNight',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  IncessantRain: {
+    cond_dmg_: {
+      sheet: 'IncessantRain',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'IncessantRain',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'IncessantRain',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'IncessantRain',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'IncessantRain',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'IncessantRain',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  IndeliblePromise: {
+    cond_dmg_: {
+      sheet: 'IndeliblePromise',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'IndeliblePromise',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'IndeliblePromise',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'IndeliblePromise',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'IndeliblePromise',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'IndeliblePromise',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  InherentlyUnjustDestiny: {
+    cond_dmg_: {
+      sheet: 'InherentlyUnjustDestiny',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'InherentlyUnjustDestiny',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'InherentlyUnjustDestiny',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'InherentlyUnjustDestiny',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'InherentlyUnjustDestiny',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'InherentlyUnjustDestiny',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  ItsShowtime: {
+    cond_dmg_: {
+      sheet: 'ItsShowtime',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ItsShowtime',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'ItsShowtime',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'ItsShowtime',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'ItsShowtime',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ItsShowtime',
+        name: 'team_dmg_',
       },
     },
   },
   Jade: {
+    e6_dmg_: {
+      sheet: 'Jade',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Jade',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_skill: {
       sheet: 'Jade',
       name: 'eidolon3_skill',
@@ -8350,6 +10767,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Jade',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Jade',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Jade',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -8465,10 +10893,32 @@ export const buffs = {
         q: 'atk_',
         sheet: 'Jade',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Jade',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Jade',
+        name: 'team_dmg_',
       },
     },
   },
   JingYuan: {
+    e6_dmg_: {
+      sheet: 'JingYuan',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'JingYuan',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'JingYuan',
       name: 'eidolon3_basic',
@@ -8511,6 +10961,17 @@ export const buffs = {
         q: 'talent',
         sheet: 'JingYuan',
         name: 'eidolon5_talent',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'JingYuan',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'JingYuan',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -8621,10 +11082,32 @@ export const buffs = {
         q: 'crit_',
         sheet: 'JingYuan',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'JingYuan',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'JingYuan',
+        name: 'team_dmg_',
       },
     },
   },
   Jingliu: {
+    e6_dmg_: {
+      sheet: 'Jingliu',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Jingliu',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_talent: {
       sheet: 'Jingliu',
       name: 'eidolon3_talent',
@@ -8669,6 +11152,17 @@ export const buffs = {
         name: 'eidolon5_skill',
       },
     },
+    enemy_defIgn_: {
+      sheet: 'Jingliu',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Jingliu',
+        name: 'enemy_defIgn_',
+      },
+    },
     statBoost1: {
       sheet: 'Jingliu',
       name: 'statBoost1',
@@ -8779,8 +11273,30 @@ export const buffs = {
         name: 'statBoost9',
       },
     },
+    team_dmg_: {
+      sheet: 'Jingliu',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Jingliu',
+        name: 'team_dmg_',
+      },
+    },
   },
   Kafka: {
+    e6_dmg_: {
+      sheet: 'Kafka',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Kafka',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Kafka',
       name: 'eidolon3_basic',
@@ -8825,6 +11341,17 @@ export const buffs = {
         name: 'eidolon5_ult',
       },
     },
+    enemy_defIgn_: {
+      sheet: 'Kafka',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Kafka',
+        name: 'enemy_defIgn_',
+      },
+    },
     statBoost1: {
       sheet: 'Kafka',
       name: 'statBoost1',
@@ -8935,8 +11462,100 @@ export const buffs = {
         name: 'statBoost9',
       },
     },
+    team_dmg_: {
+      sheet: 'Kafka',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Kafka',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  LandausChoice: {
+    cond_dmg_: {
+      sheet: 'LandausChoice',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'LandausChoice',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'LandausChoice',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'LandausChoice',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'LandausChoice',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'LandausChoice',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  Loop: {
+    cond_dmg_: {
+      sheet: 'Loop',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Loop',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Loop',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Loop',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Loop',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Loop',
+        name: 'team_dmg_',
+      },
+    },
   },
   Luka: {
+    e6_dmg_: {
+      sheet: 'Luka',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Luka',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_skill: {
       sheet: 'Luka',
       name: 'eidolon3_skill',
@@ -8981,6 +11600,17 @@ export const buffs = {
         name: 'eidolon5_ult',
       },
     },
+    enemy_defIgn_: {
+      sheet: 'Luka',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Luka',
+        name: 'enemy_defIgn_',
+      },
+    },
     statBoost1: {
       sheet: 'Luka',
       name: 'statBoost1',
@@ -9089,10 +11719,32 @@ export const buffs = {
         q: 'eff_',
         sheet: 'Luka',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Luka',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Luka',
+        name: 'team_dmg_',
       },
     },
   },
   Luocha: {
+    e6_dmg_: {
+      sheet: 'Luocha',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Luocha',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Luocha',
       name: 'eidolon3_basic',
@@ -9135,6 +11787,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Luocha',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Luocha',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Luocha',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -9245,10 +11908,32 @@ export const buffs = {
         q: 'hp_',
         sheet: 'Luocha',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Luocha',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Luocha',
+        name: 'team_dmg_',
       },
     },
   },
   Lynx: {
+    e6_dmg_: {
+      sheet: 'Lynx',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Lynx',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Lynx',
       name: 'eidolon3_basic',
@@ -9291,6 +11976,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Lynx',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Lynx',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Lynx',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -9401,6 +12097,52 @@ export const buffs = {
         q: 'def_',
         sheet: 'Lynx',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Lynx',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Lynx',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  MakeTheWorldClamor: {
+    cond_dmg_: {
+      sheet: 'MakeTheWorldClamor',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'MakeTheWorldClamor',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'MakeTheWorldClamor',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'MakeTheWorldClamor',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'MakeTheWorldClamor',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'MakeTheWorldClamor',
+        name: 'team_dmg_',
       },
     },
   },
@@ -9566,6 +12308,17 @@ export const buffs = {
     },
   },
   March7thTheHunt: {
+    e6_dmg_: {
+      sheet: 'March7thTheHunt',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'March7thTheHunt',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'March7thTheHunt',
       name: 'eidolon3_basic',
@@ -9608,6 +12361,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'March7thTheHunt',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'March7thTheHunt',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'March7thTheHunt',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -9720,8 +12484,135 @@ export const buffs = {
         name: 'statBoost9',
       },
     },
+    team_dmg_: {
+      sheet: 'March7thTheHunt',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'March7thTheHunt',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  Mediation: {
+    cond_dmg_: {
+      sheet: 'Mediation',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Mediation',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Mediation',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Mediation',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Mediation',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Mediation',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  MemoriesOfThePast: {
+    cond_dmg_: {
+      sheet: 'MemoriesOfThePast',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'MemoriesOfThePast',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'MemoriesOfThePast',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'MemoriesOfThePast',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'MemoriesOfThePast',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'MemoriesOfThePast',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  MeshingCogs: {
+    cond_dmg_: {
+      sheet: 'MeshingCogs',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'MeshingCogs',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'MeshingCogs',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'MeshingCogs',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'MeshingCogs',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'MeshingCogs',
+        name: 'team_dmg_',
+      },
+    },
   },
   Misha: {
+    e6_dmg_: {
+      sheet: 'Misha',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Misha',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Misha',
       name: 'eidolon3_basic',
@@ -9766,6 +12657,17 @@ export const buffs = {
         name: 'eidolon5_talent',
       },
     },
+    enemy_defIgn_: {
+      sheet: 'Misha',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Misha',
+        name: 'enemy_defIgn_',
+      },
+    },
     statBoost1: {
       sheet: 'Misha',
       name: 'statBoost1',
@@ -9879,10 +12781,137 @@ export const buffs = {
         q: 'def_',
         sheet: 'Misha',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Misha',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Misha',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  MomentOfVictory: {
+    cond_dmg_: {
+      sheet: 'MomentOfVictory',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'MomentOfVictory',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'MomentOfVictory',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'MomentOfVictory',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'MomentOfVictory',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'MomentOfVictory',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  Multiplication: {
+    cond_dmg_: {
+      sheet: 'Multiplication',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Multiplication',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Multiplication',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Multiplication',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Multiplication',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Multiplication',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  MutualDemise: {
+    cond_dmg_: {
+      sheet: 'MutualDemise',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'MutualDemise',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'MutualDemise',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'MutualDemise',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'MutualDemise',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'MutualDemise',
+        name: 'team_dmg_',
       },
     },
   },
   Natasha: {
+    e6_dmg_: {
+      sheet: 'Natasha',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Natasha',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Natasha',
       name: 'eidolon3_basic',
@@ -9925,6 +12954,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Natasha',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Natasha',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Natasha',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -10035,10 +13075,347 @@ export const buffs = {
         q: 'eff_res_',
         sheet: 'Natasha',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Natasha',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Natasha',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  NightOfFright: {
+    cond_dmg_: {
+      sheet: 'NightOfFright',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'NightOfFright',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'NightOfFright',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'NightOfFright',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'NightOfFright',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'NightOfFright',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  NightOnTheMilkyWay: {
+    cond_dmg_: {
+      sheet: 'NightOnTheMilkyWay',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'NightOnTheMilkyWay',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'NightOnTheMilkyWay',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'NightOnTheMilkyWay',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'NightOnTheMilkyWay',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'NightOnTheMilkyWay',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  NowhereToRun: {
+    cond_dmg_: {
+      sheet: 'NowhereToRun',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'NowhereToRun',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'NowhereToRun',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'NowhereToRun',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'NowhereToRun',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'NowhereToRun',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  OnTheFallOfAnAeon: {
+    cond_dmg_: {
+      sheet: 'OnTheFallOfAnAeon',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'OnTheFallOfAnAeon',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'OnTheFallOfAnAeon',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'OnTheFallOfAnAeon',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'OnTheFallOfAnAeon',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'OnTheFallOfAnAeon',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  OnlySilenceRemains: {
+    cond_dmg_: {
+      sheet: 'OnlySilenceRemains',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'OnlySilenceRemains',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'OnlySilenceRemains',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'OnlySilenceRemains',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'OnlySilenceRemains',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'OnlySilenceRemains',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  Passkey: {
+    cond_dmg_: {
+      sheet: 'Passkey',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Passkey',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Passkey',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Passkey',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Passkey',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Passkey',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  PastAndFuture: {
+    cond_dmg_: {
+      sheet: 'PastAndFuture',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'PastAndFuture',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'PastAndFuture',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'PastAndFuture',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'PastAndFuture',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'PastAndFuture',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  PastSelfInMirror: {
+    cond_dmg_: {
+      sheet: 'PastSelfInMirror',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'PastSelfInMirror',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'PastSelfInMirror',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'PastSelfInMirror',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'PastSelfInMirror',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'PastSelfInMirror',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  PatienceIsAllYouNeed: {
+    cond_dmg_: {
+      sheet: 'PatienceIsAllYouNeed',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'PatienceIsAllYouNeed',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'PatienceIsAllYouNeed',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'PatienceIsAllYouNeed',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'PatienceIsAllYouNeed',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'PatienceIsAllYouNeed',
+        name: 'team_dmg_',
       },
     },
   },
   Pela: {
+    e6_dmg_: {
+      sheet: 'Pela',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Pela',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Pela',
       name: 'eidolon3_basic',
@@ -10081,6 +13458,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Pela',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Pela',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Pela',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -10198,8 +13586,205 @@ export const buffs = {
         name: 'statBoost9',
       },
     },
+    team_dmg_: {
+      sheet: 'Pela',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Pela',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  PerfectTiming: {
+    cond_dmg_: {
+      sheet: 'PerfectTiming',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'PerfectTiming',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'PerfectTiming',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'PerfectTiming',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'PerfectTiming',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'PerfectTiming',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  Pioneering: {
+    cond_dmg_: {
+      sheet: 'Pioneering',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Pioneering',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Pioneering',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Pioneering',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Pioneering',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Pioneering',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  PlanetaryRendezvous: {
+    cond_dmg_: {
+      sheet: 'PlanetaryRendezvous',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'PlanetaryRendezvous',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'PlanetaryRendezvous',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'PlanetaryRendezvous',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'PlanetaryRendezvous',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'PlanetaryRendezvous',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  PoisedToBloom: {
+    cond_dmg_: {
+      sheet: 'PoisedToBloom',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'PoisedToBloom',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'PoisedToBloom',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'PoisedToBloom',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'PoisedToBloom',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'PoisedToBloom',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  PostOpConversation: {
+    cond_dmg_: {
+      sheet: 'PostOpConversation',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'PostOpConversation',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'PostOpConversation',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'PostOpConversation',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'PostOpConversation',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'PostOpConversation',
+        name: 'team_dmg_',
+      },
+    },
   },
   Qingque: {
+    e6_dmg_: {
+      sheet: 'Qingque',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Qingque',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_talent: {
       sheet: 'Qingque',
       name: 'eidolon3_talent',
@@ -10244,6 +13829,17 @@ export const buffs = {
         name: 'eidolon5_skill',
       },
     },
+    enemy_defIgn_: {
+      sheet: 'Qingque',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Qingque',
+        name: 'enemy_defIgn_',
+      },
+    },
     statBoost1: {
       sheet: 'Qingque',
       name: 'statBoost1',
@@ -10357,8 +13953,205 @@ export const buffs = {
         name: 'statBoost9',
       },
     },
+    team_dmg_: {
+      sheet: 'Qingque',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Qingque',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  QuidProQuo: {
+    cond_dmg_: {
+      sheet: 'QuidProQuo',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'QuidProQuo',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'QuidProQuo',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'QuidProQuo',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'QuidProQuo',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'QuidProQuo',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  ReforgedRemembrance: {
+    cond_dmg_: {
+      sheet: 'ReforgedRemembrance',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ReforgedRemembrance',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'ReforgedRemembrance',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'ReforgedRemembrance',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'ReforgedRemembrance',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ReforgedRemembrance',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  ResolutionShinesAsPearlsOfSweat: {
+    cond_dmg_: {
+      sheet: 'ResolutionShinesAsPearlsOfSweat',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ResolutionShinesAsPearlsOfSweat',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'ResolutionShinesAsPearlsOfSweat',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'ResolutionShinesAsPearlsOfSweat',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'ResolutionShinesAsPearlsOfSweat',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ResolutionShinesAsPearlsOfSweat',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  ReturnToDarkness: {
+    cond_dmg_: {
+      sheet: 'ReturnToDarkness',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ReturnToDarkness',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'ReturnToDarkness',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'ReturnToDarkness',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'ReturnToDarkness',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ReturnToDarkness',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  RiverFlowsInSpring: {
+    cond_dmg_: {
+      sheet: 'RiverFlowsInSpring',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'RiverFlowsInSpring',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'RiverFlowsInSpring',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'RiverFlowsInSpring',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'RiverFlowsInSpring',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'RiverFlowsInSpring',
+        name: 'team_dmg_',
+      },
+    },
   },
   Robin: {
+    e6_dmg_: {
+      sheet: 'Robin',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Robin',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_skill: {
       sheet: 'Robin',
       name: 'eidolon3_skill',
@@ -10403,6 +14196,17 @@ export const buffs = {
         name: 'eidolon5_talent',
       },
     },
+    enemy_defIgn_: {
+      sheet: 'Robin',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Robin',
+        name: 'enemy_defIgn_',
+      },
+    },
     statBoost1: {
       sheet: 'Robin',
       name: 'statBoost1',
@@ -10511,6 +14315,17 @@ export const buffs = {
         q: 'hp_',
         sheet: 'Robin',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Robin',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Robin',
+        name: 'team_dmg_',
       },
     },
   },
@@ -10769,7 +14584,88 @@ export const buffs = {
       },
     },
   },
+  Sagacity: {
+    cond_dmg_: {
+      sheet: 'Sagacity',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Sagacity',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Sagacity',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Sagacity',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Sagacity',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Sagacity',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  SailingTowardsASecondLife: {
+    cond_dmg_: {
+      sheet: 'SailingTowardsASecondLife',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'SailingTowardsASecondLife',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'SailingTowardsASecondLife',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'SailingTowardsASecondLife',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'SailingTowardsASecondLife',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'SailingTowardsASecondLife',
+        name: 'team_dmg_',
+      },
+    },
+  },
   Sampo: {
+    e6_dmg_: {
+      sheet: 'Sampo',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Sampo',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Sampo',
       name: 'eidolon3_basic',
@@ -10812,6 +14708,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Sampo',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Sampo',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Sampo',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -10922,10 +14829,32 @@ export const buffs = {
         q: 'eff_',
         sheet: 'Sampo',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Sampo',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Sampo',
+        name: 'team_dmg_',
       },
     },
   },
   Seele: {
+    e6_dmg_: {
+      sheet: 'Seele',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Seele',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_skill: {
       sheet: 'Seele',
       name: 'eidolon3_skill',
@@ -10968,6 +14897,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Seele',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Seele',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Seele',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -11078,10 +15018,32 @@ export const buffs = {
         q: 'crit_dmg_',
         sheet: 'Seele',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Seele',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Seele',
+        name: 'team_dmg_',
       },
     },
   },
   Serval: {
+    e6_dmg_: {
+      sheet: 'Serval',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Serval',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Serval',
       name: 'eidolon3_basic',
@@ -11124,6 +15086,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Serval',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Serval',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Serval',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -11234,10 +15207,137 @@ export const buffs = {
         q: 'eff_',
         sheet: 'Serval',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Serval',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Serval',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  SharedFeeling: {
+    cond_dmg_: {
+      sheet: 'SharedFeeling',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'SharedFeeling',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'SharedFeeling',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'SharedFeeling',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'SharedFeeling',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'SharedFeeling',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  ShatteredHome: {
+    cond_dmg_: {
+      sheet: 'ShatteredHome',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ShatteredHome',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'ShatteredHome',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'ShatteredHome',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'ShatteredHome',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ShatteredHome',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  SheAlreadyShutHerEyes: {
+    cond_dmg_: {
+      sheet: 'SheAlreadyShutHerEyes',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'SheAlreadyShutHerEyes',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'SheAlreadyShutHerEyes',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'SheAlreadyShutHerEyes',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'SheAlreadyShutHerEyes',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'SheAlreadyShutHerEyes',
+        name: 'team_dmg_',
       },
     },
   },
   SilverWolf: {
+    e6_dmg_: {
+      sheet: 'SilverWolf',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'SilverWolf',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_skill: {
       sheet: 'SilverWolf',
       name: 'eidolon3_skill',
@@ -11280,6 +15380,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'SilverWolf',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'SilverWolf',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'SilverWolf',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -11392,10 +15503,137 @@ export const buffs = {
         q: 'eff_',
         sheet: 'SilverWolf',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'SilverWolf',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'SilverWolf',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  SleepLikeTheDead: {
+    cond_dmg_: {
+      sheet: 'SleepLikeTheDead',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'SleepLikeTheDead',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'SleepLikeTheDead',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'SleepLikeTheDead',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'SleepLikeTheDead',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'SleepLikeTheDead',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  SolitaryHealing: {
+    cond_dmg_: {
+      sheet: 'SolitaryHealing',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'SolitaryHealing',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'SolitaryHealing',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'SolitaryHealing',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'SolitaryHealing',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'SolitaryHealing',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  SomethingIrreplaceable: {
+    cond_dmg_: {
+      sheet: 'SomethingIrreplaceable',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'SomethingIrreplaceable',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'SomethingIrreplaceable',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'SomethingIrreplaceable',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'SomethingIrreplaceable',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'SomethingIrreplaceable',
+        name: 'team_dmg_',
       },
     },
   },
   Sparkle: {
+    e6_dmg_: {
+      sheet: 'Sparkle',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Sparkle',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Sparkle',
       name: 'eidolon3_basic',
@@ -11438,6 +15676,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Sparkle',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Sparkle',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Sparkle',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -11550,8 +15799,65 @@ export const buffs = {
         name: 'statBoost9',
       },
     },
+    team_dmg_: {
+      sheet: 'Sparkle',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Sparkle',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  SubscribeForMore: {
+    cond_dmg_: {
+      sheet: 'SubscribeForMore',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'SubscribeForMore',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'SubscribeForMore',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'SubscribeForMore',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'SubscribeForMore',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'SubscribeForMore',
+        name: 'team_dmg_',
+      },
+    },
   },
   Sushang: {
+    e6_dmg_: {
+      sheet: 'Sushang',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Sushang',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_talent: {
       sheet: 'Sushang',
       name: 'eidolon3_talent',
@@ -11596,6 +15902,17 @@ export const buffs = {
         name: 'eidolon5_skill',
       },
     },
+    enemy_defIgn_: {
+      sheet: 'Sushang',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Sushang',
+        name: 'enemy_defIgn_',
+      },
+    },
     statBoost1: {
       sheet: 'Sushang',
       name: 'statBoost1',
@@ -11704,10 +16021,347 @@ export const buffs = {
         q: 'hp_',
         sheet: 'Sushang',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Sushang',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Sushang',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  Swordplay: {
+    cond_dmg_: {
+      sheet: 'Swordplay',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Swordplay',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Swordplay',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Swordplay',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Swordplay',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Swordplay',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  TextureOfMemories: {
+    cond_dmg_: {
+      sheet: 'TextureOfMemories',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TextureOfMemories',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'TextureOfMemories',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'TextureOfMemories',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'TextureOfMemories',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TextureOfMemories',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  TheBirthOfTheSelf: {
+    cond_dmg_: {
+      sheet: 'TheBirthOfTheSelf',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TheBirthOfTheSelf',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'TheBirthOfTheSelf',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'TheBirthOfTheSelf',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'TheBirthOfTheSelf',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TheBirthOfTheSelf',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  TheDayTheCosmosFell: {
+    cond_dmg_: {
+      sheet: 'TheDayTheCosmosFell',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TheDayTheCosmosFell',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'TheDayTheCosmosFell',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'TheDayTheCosmosFell',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'TheDayTheCosmosFell',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TheDayTheCosmosFell',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  TheMolesWelcomeYou: {
+    cond_dmg_: {
+      sheet: 'TheMolesWelcomeYou',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TheMolesWelcomeYou',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'TheMolesWelcomeYou',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'TheMolesWelcomeYou',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'TheMolesWelcomeYou',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TheMolesWelcomeYou',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  TheSeriousnessOfBreakfast: {
+    cond_dmg_: {
+      sheet: 'TheSeriousnessOfBreakfast',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TheSeriousnessOfBreakfast',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'TheSeriousnessOfBreakfast',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'TheSeriousnessOfBreakfast',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'TheSeriousnessOfBreakfast',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TheSeriousnessOfBreakfast',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  TheUnreachableSide: {
+    cond_dmg_: {
+      sheet: 'TheUnreachableSide',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TheUnreachableSide',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'TheUnreachableSide',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'TheUnreachableSide',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'TheUnreachableSide',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TheUnreachableSide',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  ThisIsMe: {
+    cond_dmg_: {
+      sheet: 'ThisIsMe',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ThisIsMe',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'ThisIsMe',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'ThisIsMe',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'ThisIsMe',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'ThisIsMe',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  TimeWaitsForNoOne: {
+    cond_dmg_: {
+      sheet: 'TimeWaitsForNoOne',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TimeWaitsForNoOne',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'TimeWaitsForNoOne',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'TimeWaitsForNoOne',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'TimeWaitsForNoOne',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TimeWaitsForNoOne',
+        name: 'team_dmg_',
       },
     },
   },
   Tingyun: {
+    e6_dmg_: {
+      sheet: 'Tingyun',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Tingyun',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Tingyun',
       name: 'eidolon3_basic',
@@ -11750,6 +16404,17 @@ export const buffs = {
         q: 'talent',
         sheet: 'Tingyun',
         name: 'eidolon5_talent',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Tingyun',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Tingyun',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -11862,10 +16527,67 @@ export const buffs = {
         q: 'def_',
         sheet: 'Tingyun',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Tingyun',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Tingyun',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  TodayIsAnotherPeacefulDay: {
+    cond_dmg_: {
+      sheet: 'TodayIsAnotherPeacefulDay',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TodayIsAnotherPeacefulDay',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'TodayIsAnotherPeacefulDay',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'TodayIsAnotherPeacefulDay',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'TodayIsAnotherPeacefulDay',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TodayIsAnotherPeacefulDay',
+        name: 'team_dmg_',
       },
     },
   },
   TopazAndNumby: {
+    e6_dmg_: {
+      sheet: 'TopazAndNumby',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TopazAndNumby',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'TopazAndNumby',
       name: 'eidolon3_basic',
@@ -11908,6 +16630,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'TopazAndNumby',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'TopazAndNumby',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'TopazAndNumby',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -12023,10 +16756,242 @@ export const buffs = {
         q: 'crit_',
         sheet: 'TopazAndNumby',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'TopazAndNumby',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TopazAndNumby',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  TrendOfTheUniversalMarket: {
+    cond_dmg_: {
+      sheet: 'TrendOfTheUniversalMarket',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TrendOfTheUniversalMarket',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'TrendOfTheUniversalMarket',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'TrendOfTheUniversalMarket',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'TrendOfTheUniversalMarket',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'TrendOfTheUniversalMarket',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  UnderTheBlueSky: {
+    cond_dmg_: {
+      sheet: 'UnderTheBlueSky',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'UnderTheBlueSky',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'UnderTheBlueSky',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'UnderTheBlueSky',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'UnderTheBlueSky',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'UnderTheBlueSky',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  Void: {
+    cond_dmg_: {
+      sheet: 'Void',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Void',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Void',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Void',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Void',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Void',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  WarmthShortensColdNights: {
+    cond_dmg_: {
+      sheet: 'WarmthShortensColdNights',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'WarmthShortensColdNights',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'WarmthShortensColdNights',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'WarmthShortensColdNights',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'WarmthShortensColdNights',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'WarmthShortensColdNights',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  WeAreWildfire: {
+    cond_dmg_: {
+      sheet: 'WeAreWildfire',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'WeAreWildfire',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'WeAreWildfire',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'WeAreWildfire',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'WeAreWildfire',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'WeAreWildfire',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  WeWillMeetAgain: {
+    cond_dmg_: {
+      sheet: 'WeWillMeetAgain',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'WeWillMeetAgain',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'WeWillMeetAgain',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'WeWillMeetAgain',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'WeWillMeetAgain',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'WeWillMeetAgain',
+        name: 'team_dmg_',
       },
     },
   },
   Welt: {
+    e6_dmg_: {
+      sheet: 'Welt',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Welt',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Welt',
       name: 'eidolon3_basic',
@@ -12069,6 +17034,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Welt',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Welt',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Welt',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -12182,10 +17158,172 @@ export const buffs = {
         sheet: 'Welt',
         elementalType: 'imaginary',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Welt',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Welt',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  WhatIsReal: {
+    cond_dmg_: {
+      sheet: 'WhatIsReal',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'WhatIsReal',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'WhatIsReal',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'WhatIsReal',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'WhatIsReal',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'WhatIsReal',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  WhereaboutsShouldDreamsRest: {
+    cond_dmg_: {
+      sheet: 'WhereaboutsShouldDreamsRest',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'WhereaboutsShouldDreamsRest',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'WhereaboutsShouldDreamsRest',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'WhereaboutsShouldDreamsRest',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'WhereaboutsShouldDreamsRest',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'WhereaboutsShouldDreamsRest',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  WoofWalkTime: {
+    cond_dmg_: {
+      sheet: 'WoofWalkTime',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'WoofWalkTime',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'WoofWalkTime',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'WoofWalkTime',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'WoofWalkTime',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'WoofWalkTime',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  WorrisomeBlissful: {
+    cond_dmg_: {
+      sheet: 'WorrisomeBlissful',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'WorrisomeBlissful',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'WorrisomeBlissful',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'WorrisomeBlissful',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'WorrisomeBlissful',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'WorrisomeBlissful',
+        name: 'team_dmg_',
       },
     },
   },
   Xueyi: {
+    e6_dmg_: {
+      sheet: 'Xueyi',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Xueyi',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Xueyi',
       name: 'eidolon3_basic',
@@ -12228,6 +17366,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Xueyi',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Xueyi',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Xueyi',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -12340,10 +17489,32 @@ export const buffs = {
         q: 'hp_',
         sheet: 'Xueyi',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Xueyi',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Xueyi',
+        name: 'team_dmg_',
       },
     },
   },
   Yanqing: {
+    e6_dmg_: {
+      sheet: 'Yanqing',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Yanqing',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Yanqing',
       name: 'eidolon3_basic',
@@ -12386,6 +17557,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Yanqing',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Yanqing',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Yanqing',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -12499,10 +17681,67 @@ export const buffs = {
         sheet: 'Yanqing',
         elementalType: 'ice',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Yanqing',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Yanqing',
+        name: 'team_dmg_',
+      },
+    },
+  },
+  YetHopeIsPriceless: {
+    cond_dmg_: {
+      sheet: 'YetHopeIsPriceless',
+      name: 'cond_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'YetHopeIsPriceless',
+        name: 'cond_dmg_',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'YetHopeIsPriceless',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'YetHopeIsPriceless',
+        name: 'enemy_defIgn_',
+      },
+    },
+    team_dmg_: {
+      sheet: 'YetHopeIsPriceless',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'YetHopeIsPriceless',
+        name: 'team_dmg_',
       },
     },
   },
   Yukong: {
+    e6_dmg_: {
+      sheet: 'Yukong',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Yukong',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Yukong',
       name: 'eidolon3_basic',
@@ -12545,6 +17784,17 @@ export const buffs = {
         q: 'ult',
         sheet: 'Yukong',
         name: 'eidolon5_ult',
+      },
+    },
+    enemy_defIgn_: {
+      sheet: 'Yukong',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Yukong',
+        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -12662,8 +17912,30 @@ export const buffs = {
         name: 'statBoost9',
       },
     },
+    team_dmg_: {
+      sheet: 'Yukong',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Yukong',
+        name: 'team_dmg_',
+      },
+    },
   },
   Yunli: {
+    e6_dmg_: {
+      sheet: 'Yunli',
+      name: 'e6_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Yunli',
+        name: 'e6_dmg_',
+      },
+    },
     eidolon3_basic: {
       sheet: 'Yunli',
       name: 'eidolon3_basic',
@@ -12708,6 +17980,17 @@ export const buffs = {
         name: 'eidolon5_talent',
       },
     },
+    enemy_defIgn_: {
+      sheet: 'Yunli',
+      name: 'enemy_defIgn_',
+      tag: {
+        et: 'display',
+        qt: 'common',
+        q: 'defIgn_',
+        sheet: 'Yunli',
+        name: 'enemy_defIgn_',
+      },
+    },
     statBoost1: {
       sheet: 'Yunli',
       name: 'statBoost1',
@@ -12816,6 +18099,17 @@ export const buffs = {
         q: 'hp_',
         sheet: 'Yunli',
         name: 'statBoost9',
+      },
+    },
+    team_dmg_: {
+      sheet: 'Yunli',
+      name: 'team_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'premod',
+        q: 'dmg_',
+        sheet: 'Yunli',
+        name: 'team_dmg_',
       },
     },
   },
