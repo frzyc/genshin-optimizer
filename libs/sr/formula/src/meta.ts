@@ -952,11 +952,6 @@ export const conditionals = {
     },
   },
   Firefly: {
-    boolConditional: {
-      sheet: 'Firefly',
-      name: 'boolConditional',
-      type: 'bool',
-    },
     listConditional: {
       sheet: 'Firefly',
       name: 'listConditional',
@@ -970,6 +965,16 @@ export const conditionals = {
       int_only: true,
       min: 0,
       max: 2,
+    },
+    techFireWeakness: {
+      sheet: 'Firefly',
+      name: 'techFireWeakness',
+      type: 'bool',
+    },
+    ultInCompleteCombustion: {
+      sheet: 'Firefly',
+      name: 'ultInCompleteCombustion',
+      type: 'bool',
     },
   },
   FlamesAfar: {
@@ -3446,15 +3451,37 @@ export const formulas = {
     },
   },
   Firefly: {
-    basicDmg_0: {
+    basic0Dmg_0: {
       sheet: 'Firefly',
-      name: 'basicDmg_0',
+      name: 'basic0Dmg_0',
       tag: {
         et: 'own',
         qt: 'formula',
         q: 'dmg',
         sheet: 'Firefly',
-        name: 'basicDmg_0',
+        name: 'basic0Dmg_0',
+      },
+    },
+    basic1Dmg_0: {
+      sheet: 'Firefly',
+      name: 'basic1Dmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Firefly',
+        name: 'basic1Dmg_0',
+      },
+    },
+    basic1Heal: {
+      sheet: 'Firefly',
+      name: 'basic1Heal',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'heal',
+        sheet: 'Firefly',
+        name: 'basic1Heal',
       },
     },
     breakDmg: {
@@ -3466,6 +3493,50 @@ export const formulas = {
         q: 'breakDmg',
         sheet: 'Firefly',
         name: 'breakDmg',
+      },
+    },
+    skill0Dmg_0: {
+      sheet: 'Firefly',
+      name: 'skill0Dmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Firefly',
+        name: 'skill0Dmg_0',
+      },
+    },
+    skill1DmgBlast_0: {
+      sheet: 'Firefly',
+      name: 'skill1DmgBlast_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Firefly',
+        name: 'skill1DmgBlast_0',
+      },
+    },
+    skill1Dmg_0: {
+      sheet: 'Firefly',
+      name: 'skill1Dmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Firefly',
+        name: 'skill1Dmg_0',
+      },
+    },
+    techDmg_0: {
+      sheet: 'Firefly',
+      name: 'techDmg_0',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Firefly',
+        name: 'techDmg_0',
       },
     },
   },
@@ -8349,15 +8420,15 @@ export const buffs = {
     },
   },
   Firefly: {
-    e6_dmg_: {
+    ba3_brEffect_: {
       sheet: 'Firefly',
-      name: 'e6_dmg_',
+      name: 'ba3_brEffect_',
       tag: {
         et: 'display',
         qt: 'premod',
-        q: 'dmg_',
+        q: 'brEffect_',
         sheet: 'Firefly',
-        name: 'e6_dmg_',
+        name: 'ba3_brEffect_',
       },
     },
     eidolon3_basic: {
@@ -8402,17 +8473,6 @@ export const buffs = {
         q: 'ult',
         sheet: 'Firefly',
         name: 'eidolon5_ult',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'Firefly',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'Firefly',
-        name: 'enemy_defIgn_',
       },
     },
     statBoost1: {
@@ -8523,17 +8583,6 @@ export const buffs = {
         q: 'eff_res_',
         sheet: 'Firefly',
         name: 'statBoost9',
-      },
-    },
-    team_dmg_: {
-      sheet: 'Firefly',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'dmg_',
-        sheet: 'Firefly',
-        name: 'team_dmg_',
       },
     },
   },
