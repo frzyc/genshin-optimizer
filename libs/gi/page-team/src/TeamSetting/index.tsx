@@ -19,8 +19,14 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import type { ButtonProps } from '@mui/material'
-import { Typography } from '@mui/material'
-import { Alert, Box, Button, CardContent, Grid } from '@mui/material'
+import {
+  Alert,
+  Box,
+  Button,
+  CardContent,
+  Grid,
+  Typography,
+} from '@mui/material'
 import { Suspense, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
@@ -139,9 +145,7 @@ function TeamEditor({
           team.loadoutData[selectedIndex] = existingLoadoutDatum
           team.loadoutData[existingIndex] = destinationLoadoutDatum
         })
-      }
-      else
-      {
+      } else {
         // No teamChar at destination, place existing teamChar in that slot
         database.teams.set(teamId, (team) => {
           team.loadoutData[selectedIndex] = loadoutData[existingIndex]
@@ -165,13 +169,11 @@ function TeamEditor({
   const onMultiSelect = (cKeys: (CharacterKey | '')[]) => {
     // Condense character key list so there are no empty team slots between characters
     const filteredKeys = cKeys.filter((key) => key !== '')
-    for (let i = 0; i < filteredKeys.length; ++i)
-    {
+    for (let i = 0; i < filteredKeys.length; ++i) {
       const key = filteredKeys[i]
       onSelect(key, i)
     }
-    for (let j = filteredKeys.length; j < team.loadoutData.length; ++j)
-    {
+    for (let j = filteredKeys.length; j < team.loadoutData.length; ++j) {
       // If there are empty slots, clear them
       database.teams.set(teamId, (team) => {
         team.loadoutData[j] = undefined
@@ -198,7 +200,7 @@ function TeamEditor({
       <Suspense fallback={false}>
         <CharacterSelectionModal
           filter={(c) => c !== charKeyAtIndex}
-          show={!showMultiSelect && (charSelectIndex !== undefined)}
+          show={!showMultiSelect && charSelectIndex !== undefined}
           onHide={() => setCharSelectIndex(undefined)}
           onSelect={onSingleSelect}
         />
@@ -231,18 +233,12 @@ function TeamEditor({
           character" buffs, and cannot be empty.
         </Trans>
       </Alert>
-      <Grid container sx={{justifyContent: 'space-between'}} spacing={2}>
+      <Grid container sx={{ justifyContent: 'space-between' }} spacing={2}>
         <Grid item>
-          <Typography variant="h5">
-            Selected Team Members
-          </Typography>
+          <Typography variant="h5">Selected Team Members</Typography>
         </Grid>
         <Grid item>
-          <Button
-            onClick={() => setShowMultiSelect(true)}
-          >
-            Quick Select
-          </Button>
+          <Button onClick={() => setShowMultiSelect(true)}>Quick Select</Button>
         </Grid>
       </Grid>
       <Grid container columns={{ xs: 1, md: 2, lg: 4 }} spacing={2}>

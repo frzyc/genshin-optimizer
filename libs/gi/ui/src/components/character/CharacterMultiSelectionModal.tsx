@@ -100,18 +100,40 @@ export function CharacterMultiSelectionModal({
   )
 
   const { loadoutData } = useTeam(teamId)!
-  const [teamCharKeys, setTeamCharKeys] = useState(['','','',''] as (CharacterKey | '')[])
+  const [teamCharKeys, setTeamCharKeys] = useState(['', '', '', ''] as (
+    | CharacterKey
+    | ''
+  )[])
   // update teamCharKeys when loadoutData changes
-  useEffect( () => setTeamCharKeys(loadoutData.map((loadoutDatum) =>
-    database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? ''
-  )),[database, loadoutData, setTeamCharKeys])
+  useEffect(
+    () =>
+      setTeamCharKeys(
+        loadoutData.map(
+          (loadoutDatum) =>
+            database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? ''
+        )
+      ),
+    [database, loadoutData, setTeamCharKeys]
+  )
 
   // used for generating characterKeyList below, only updated when filter/sort/search is applied to prevent characters
   // from moving around as soon as they as selected/deselected for the team
-  const [cachedTeamCharKeys, setCachedTeamCharKeys] = useState(['','','',''] as (CharacterKey | '')[])
-  useEffect( () => setCachedTeamCharKeys(loadoutData.map((loadoutDatum) =>
-    database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? ''
-  )),[database, loadoutData, setCachedTeamCharKeys])
+  const [cachedTeamCharKeys, setCachedTeamCharKeys] = useState([
+    '',
+    '',
+    '',
+    '',
+  ] as (CharacterKey | '')[])
+  useEffect(
+    () =>
+      setCachedTeamCharKeys(
+        loadoutData.map(
+          (loadoutDatum) =>
+            database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? ''
+        )
+      ),
+    [database, loadoutData, setCachedTeamCharKeys]
+  )
 
   const [dbDirty, forceUpdate] = useForceUpdate()
 
@@ -131,12 +153,9 @@ export function CharacterMultiSelectionModal({
       ...(newFirst ? ['new'] : []),
       ...(characterSortMap[sortType] ?? []),
     ] as CharacterSortKey[]
-    if (deferredDbDirty)
-    {
+    if (deferredDbDirty) {
       const filteredKeys = allCharacterKeys
-        .filter(
-          (key) => cachedTeamCharKeys.indexOf(key) === -1
-        )
+        .filter((key) => cachedTeamCharKeys.indexOf(key) === -1)
         .filter(
           filterFunction(
             { element, weaponType, name: deferredSearchTerm },
@@ -193,24 +212,21 @@ export function CharacterMultiSelectionModal({
   const onClick = (key: CharacterKey) => {
     const keySlotIndex = teamCharKeys.indexOf(key)
     const firstOpenIndex = teamCharKeys.indexOf('')
-    if (keySlotIndex === -1)
-    {
+    if (keySlotIndex === -1) {
       // Selected character was previously unselected, add to the list of currently selected keys if team is not full
       if (firstOpenIndex === -1) return
       setTeamCharKeys([
         ...teamCharKeys.slice(0, firstOpenIndex),
         key,
-        ...teamCharKeys.slice(firstOpenIndex + 1)
+        ...teamCharKeys.slice(firstOpenIndex + 1),
       ])
-    }
-    else
-    {
+    } else {
       // Selected character was previously selected, so replace the slot with
       // '' to indicate the slot is currently empty
       setTeamCharKeys([
         ...teamCharKeys.slice(0, keySlotIndex),
         '',
-        ...teamCharKeys.slice(keySlotIndex + 1)
+        ...teamCharKeys.slice(keySlotIndex + 1),
       ])
     }
   }
@@ -320,7 +336,7 @@ export function CharacterMultiSelectionModal({
                   <SelectionCard
                     characterKey={characterKey}
                     onClick={() => onClick(characterKey)}
-                    selectedIndex = {teamCharKeys.indexOf(characterKey)}
+                    selectedIndex={teamCharKeys.indexOf(characterKey)}
                   />
                 </Grid>
               ))}
@@ -385,9 +401,7 @@ function SelectionCard({
             flexGrow: 1,
             display: 'flex',
             flexDirection: 'column',
-            outline: isSelected
-              ? 'solid #f7bd10'
-              : undefined,
+            outline: isSelected ? 'solid #f7bd10' : undefined,
           }}
         >
           <IconButton
@@ -403,7 +417,13 @@ function SelectionCard({
             <Typography variant="body2" sx={{ flexGrow: 1 }}>
               <SqBadge
                 color={'warning'}
-                sx={{ position: 'absolute', top: 60, left: 204, zIndex: 2, textShadow: '0 0 5px gray' }}
+                sx={{
+                  position: 'absolute',
+                  top: 60,
+                  left: 204,
+                  zIndex: 2,
+                  textShadow: '0 0 5px gray',
+                }}
               >
                 {selectedIndex + 1}
               </SqBadge>
