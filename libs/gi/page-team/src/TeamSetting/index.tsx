@@ -19,6 +19,7 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import type { ButtonProps } from '@mui/material'
+import { Typography } from '@mui/material'
 import { Alert, Box, Button, CardContent, Grid } from '@mui/material'
 import { Suspense, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -230,11 +231,20 @@ function TeamEditor({
           character" buffs, and cannot be empty.
         </Trans>
       </Alert>
-      <Button
-        onClick={() => setShowMultiSelect(true)}
-      >
-        Quick Select
-      </Button>
+      <Grid container sx={{justifyContent: 'space-between'}} spacing={2}>
+        <Grid item>
+          <Typography variant="h5">
+            Selected Team Members
+          </Typography>
+        </Grid>
+        <Grid item>
+          <Button
+            onClick={() => setShowMultiSelect(true)}
+          >
+            Quick Select
+          </Button>
+        </Grid>
+      </Grid>
       <Grid container columns={{ xs: 1, md: 2, lg: 4 }} spacing={2}>
         {loadoutData.map((loadoutDatum, ind) => (
           <Grid item xs={1} key={loadoutDatum?.teamCharId ?? ind}>

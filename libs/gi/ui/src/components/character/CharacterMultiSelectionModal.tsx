@@ -190,7 +190,6 @@ export function CharacterMultiSelectionModal({
 
   const { weaponType, element, sortType, ascending } = state
 
-  // TODO: Currently selected characters should probably also be outlined in the single select UI? Can modals be merged into one with different functionality depending on multi select bool?
   const onClick = (key: CharacterKey) => {
     const keySlotIndex = teamCharKeys.indexOf(key)
     const firstOpenIndex = teamCharKeys.indexOf('')
@@ -270,6 +269,7 @@ export function CharacterMultiSelectionModal({
               sx={{ ml: 'auto' }}
               onClick={() => {
                 setSearchTerm('')
+                onMultiSelect?.(teamCharKeys)
                 onHide()
               }}
             >
@@ -283,7 +283,7 @@ export function CharacterMultiSelectionModal({
               value={searchTerm}
               onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
                 setSearchTerm(e.target.value)
-                false && setCachedTeamCharKeys(teamCharKeys)
+                setCachedTeamCharKeys(teamCharKeys)
               }}
               label={t('characterName')}
               size="small"
@@ -386,7 +386,7 @@ function SelectionCard({
             display: 'flex',
             flexDirection: 'column',
             outline: isSelected
-              ? 'solid gold'
+              ? 'solid #f7bd10'
               : undefined,
           }}
         >
@@ -402,8 +402,8 @@ function SelectionCard({
           {isSelected && (
             <Typography variant="body2" sx={{ flexGrow: 1 }}>
               <SqBadge
-                color={'charSelected'}
-                sx={{ position: 'absolute', top: 60, left: 205, zIndex: 2, textShadow: '0 0 5px gray' }}
+                color={'warning'}
+                sx={{ position: 'absolute', top: 60, left: 204, zIndex: 2, textShadow: '0 0 5px gray' }}
               >
                 {selectedIndex + 1}
               </SqBadge>
