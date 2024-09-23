@@ -60,7 +60,7 @@ function CharacterWrapper({ artId, weaponId, onHide, onEquip }: WrapperProps) {
   const newArt = database.arts.get(artId ?? '')
   const currentArtifactIds = equippedArtifacts
   const newArtifactIds = objMap(currentArtifactIds, (art, slot) =>
-    slot === newArt?.slotKey ? artId : art
+    slot === artId ? undefined : newArt?.slotKey === slot ? artId : art
   )
   const currentWeaponId = equippedWeapon
   const newWeaponId = weaponId ?? currentWeaponId
