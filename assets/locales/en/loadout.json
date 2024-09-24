@@ -1,0 +1,79 @@
+{
+  "loadoutSettings": {
+    "alert": "<strong>Loadouts</strong> provides character context data, including bonus stats, conditionals, multi-targets, optimization config, and stores builds. A single <strong>Loadout</strong> can be used for many teams.",
+    "title": "Build Management",
+    "builds": "Builds",
+    "newBuildBtn": "New Build",
+    "tcBuilds": "TC Builds",
+    "newTcBuildBtn": "New TC Build"
+  },
+  "mTargetEditor": {
+    "title": "Target Editor",
+    "rankMobile": "#",
+    "rank": "Rank #",
+    "desc": "Target Description",
+    "noReaction": "No Reactions"
+  },
+  "mTargetImport": {
+    "invalid": "Invalid Multi-Optimization Config",
+    "failed": "Data Import failed.",
+    "button": "Import Multi-Opt",
+    "title": "Import Multi-Opt",
+    "desc": "Import a Multi-opt in JSON form below.",
+    "label": "JSON Data",
+    "placeholder": "Paste your Team JSON here",
+    "import": "Import"
+  },
+  "showFormulas": {
+    "button": "Show Formulas & Calcs",
+    "title": "Formulas & Calculations"
+  },
+  "loDropdown": {
+    "createModal": {
+      "title": "Create a new Loadout For <2/>",
+      "label": "New Loadout Name",
+      "placeholder": "New Loadout Name",
+      "desc": "New Loadout Description",
+      "cancel": "Cancel",
+      "confirm": "Confirm"
+    },
+    "label": "Loadout: ",
+    "create": "Create a new Loadout",
+    "builds": "{{count}} Builds",
+    "tcs": "{{count}} TC Builds",
+    "multi": "{{count}} Multi-Opt"
+  },
+  "loadoutHeader": {
+    "builds": "Builds: ",
+    "tcBuilds": "TC Builds: ",
+    "mltTargets": "Custom multi-targets: ",
+    "optTarget": "Optimization Target:"
+  },
+  "loadoutEditor": {
+    "label": "Loadout Name",
+    "placeholder": "Loadout Name",
+    "desc": "Loadout Description",
+    "dupBtn": "Duplicate Loadout",
+    "delBtn": "Delete Loadout",
+    "optTarget": "Optimization Target",
+    "conditionals": "Conditionals: ",
+    "builds": "Builds",
+    "teams": "Teams",
+    "addNewTeam": "Add new Team",
+    "bonusStats": "Bonus Stats",
+    "mltTargets": "Custom multi-targets"
+  },
+  "loadoutDelModal": {
+    "title": "Delete Loadout: <1>{{name}}</１>?",
+    "desc": "Deleting the Loadout will also delete the following data:",
+    "builds": "All saved builds: ",
+    "tcBuilds": "All saved TC builds: ",
+    "mTargets": "All Custom Multi-targets: ",
+    "bonus": "Bonus stats: ",
+    "condi": "Conditionals: ",
+    "optConfig": "Optimization Configuration",
+    "affected": "Any teams with this loadout will have this loadout removed from the team. Teams will not be deleted. Teams affected: ",
+    "cancel": "Cancel",
+    "delete": "Delete"
+  }
+}
