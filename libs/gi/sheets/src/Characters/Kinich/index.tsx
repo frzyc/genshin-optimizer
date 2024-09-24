@@ -128,6 +128,13 @@ const c4_burst_dmg_ = greaterEq(
   dm.constellation4.burst_dmg_
 )
 
+const cannonAddl = {
+  premod: {
+    skill_dmgInc: a4Stacks_cannon_dmgInc,
+    skill_critDMG_: c1Cannon_critDMG_,
+    skill_dmg_: c2FirstHit_cannon_dmg_,
+  },
+}
 const dmgFormulas = {
   normal: {
     ...Object.fromEntries(
@@ -140,13 +147,7 @@ const dmgFormulas = {
   plunging: plungingDmgNodes('atk', dm.plunging),
   skill: {
     shotDmg: dmgNode('atk', dm.skill.shotDmg, 'skill'),
-    cannonDmg: dmgNode('atk', dm.skill.cannonDmg, 'skill', {
-      premod: {
-        skill_dmgInc: a4Stacks_cannon_dmgInc,
-        skill_critDMG_: c1Cannon_critDMG_,
-        skill_dmg_: c2FirstHit_cannon_dmg_,
-      },
-    }),
+    cannonDmg: dmgNode('atk', dm.skill.cannonDmg, 'skill', cannonAddl),
   },
   burst: {
     skillDmg: dmgNode('atk', dm.burst.skillDmg, 'burst'),
@@ -162,7 +163,10 @@ const dmgFormulas = {
       customDmgNode(
         prod(percent(dm.constellation6.dmg), input.total.atk),
         'elemental',
-        { hit: { ele: constant('dendro') } }
+        {
+          hit: { ele: constant('dendro') },
+          ...cannonAddl,
+        }
       )
     ),
   },
