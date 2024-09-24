@@ -198,7 +198,7 @@ export function ArtifactSwapModal({
               }
             >
               <CompareBuildWrapper
-                artId={swapArtId}
+                artIdOrSlot={swapArtId}
                 onHide={() => setSwapArtId('')}
                 onEquip={clickHandler}
               />
