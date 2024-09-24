@@ -138,12 +138,17 @@ function TeamEditor({
     } else {
       if (selectedIndex === existingIndex) return
       if (loadoutData[selectedIndex]) {
-        // Already have a teamChar at destination, move to existing Index
+        // Already have a teamChar at destination, move to existingIndex
         const existingLoadoutDatum = loadoutData[existingIndex]
         const destinationLoadoutDatum = loadoutData[selectedIndex]
         database.teams.set(teamId, (team) => {
           team.loadoutData[selectedIndex] = existingLoadoutDatum
-          team.loadoutData[existingIndex] = destinationLoadoutDatum
+          // Multi-selection can result in the character at existingIndex being intentionally
+          // replaced by a different character in team.loadoutData, in which case this should
+          // not move the teamChar at selectedIndex to existingIndex
+          if (team.loadoutData[existingIndex] === existingLoadoutDatum) {
+            team.loadoutData[existingIndex] = destinationLoadoutDatum
+          }
         })
       } else {
         // No teamChar at destination, place existing teamChar in that slot
