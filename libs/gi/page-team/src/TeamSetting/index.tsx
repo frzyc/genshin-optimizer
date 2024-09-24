@@ -178,10 +178,14 @@ function TeamEditor({
       const key = filteredKeys[i]
       onSelect(key, i)
     }
-    for (let j = filteredKeys.length; j < team.loadoutData.length; ++j) {
-      // If there are empty slots, clear them
+
+    const numSlotsEmpty = team.loadoutData.length - filteredKeys.length
+    for (let j = 1; j <= numSlotsEmpty; ++j) {
+      // If there are empty slots, clear them. Clear in reverse from the last team slot
+      // to avoid potentially missing slots due to characters being automatically moved
+      // to the first slot.
       database.teams.set(teamId, (team) => {
-        team.loadoutData[j] = undefined
+        team.loadoutData[team.loadoutData.length - j] = undefined
       })
     }
   }
