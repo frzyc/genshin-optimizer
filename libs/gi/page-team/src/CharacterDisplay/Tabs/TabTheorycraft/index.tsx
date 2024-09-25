@@ -1,4 +1,3 @@
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { CardThemed, CustomNumberInput } from '@genshin-optimizer/common/ui'
 import { objMap, toPercent } from '@genshin-optimizer/common/util'
 import { artSubstatRollData } from '@genshin-optimizer/gi/consts'
@@ -15,14 +14,11 @@ import {
   getMinSubAndOtherRolls,
 } from '@genshin-optimizer/gi/solver-tc'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
-import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
-  ArtifactStatWithUnit,
   BuildAlert,
   DataContext,
   HitModeToggle,
-  OptTargetContext,
   ReactionToggle,
   StatDisplayComponent,
   getBuildTcArtifactData,
@@ -48,6 +44,7 @@ import { ArtifactMainStatAndSetEditor } from './ArtifactMainStatAndSetEditor'
 import { ArtifactSubCard } from './ArtifactSubCard'
 import GcsimButton from './GcsimButton'
 import KQMSButton from './KQMSButton'
+import ScalesWith from './ScalesWith'
 import { WeaponEditorCard } from './WeaponEditorCard'
 export default function TabTheorycraft() {
   const { t } = useTranslation('page_character')
@@ -61,7 +58,6 @@ export default function TabTheorycraft() {
   const { buildTc, setBuildTc } = useContext(BuildTcContext)
   const optConfig = useOptConfig(optConfigId)!
   const { optimizationTarget, statFilters } = optConfig
-  const { scalesWith } = useContext(OptTargetContext)
 
   const weaponTypeKey = getCharStat(characterKey).weaponType
 
@@ -368,36 +364,7 @@ export default function TabTheorycraft() {
                 Log Optimized Substats
               </Button>
             )}
-            {!!scalesWith.size && (
-              <Alert severity="info" variant="filled">
-                <Trans t={t} i18nKey="tabTheorycraft.optAlert.scalesWith">
-                  The selected Optimization target and constraints scales with:{' '}
-                </Trans>
-                {new Intl.ListFormat()
-                  .format(Array(scalesWith.size).fill('\u200B'))
-                  .split(/([^\u200B]+)/)
-                  .map((str, i) =>
-                    str === '\u200B'
-                      ? ((k) => (
-                          <strong key={k}>
-                            <StatIcon statKey={k} iconProps={iconInlineProps} />
-                            <ArtifactStatWithUnit statKey={k} />
-                          </strong>
-                        ))([...scalesWith][i / 2])
-                      : str
-                  )}
-                <Trans t={t} i18nKey="tabTheorycraft.optAlert.distribute">
-                  . The solver will only distribute stats to these substats.
-                </Trans>{' '}
-                {minOtherRolls > 0 && (
-                  <Trans t={t} i18nKey="tabTheorycraft.optAlert.feasibilty">
-                    There may be additional leftover substats that should be
-                    distributed to non-scaling stats to ensure the solution is
-                    feasible.
-                  </Trans>
-                )}
-              </Alert>
-            )}
+            <ScalesWith minOtherRolls={minOtherRolls} />
             <BuildAlert
               status={status}
               characterKey={characterKey}

@@ -112,6 +112,7 @@ import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import StatFilterCard from './Components/StatFilterCard'
 import UseEquipped from './Components/UseEquipped'
 import { UseTeammateArt } from './Components/UseTeammateArt'
+import ScalesWith from './ScalesWith'
 
 const audio = new Audio('assets/notification.mp3')
 export default function TabBuild() {
@@ -750,6 +751,7 @@ export default function TabBuild() {
           </span>
         </BootstrapTooltip>
       </ButtonGroup>
+      <ScalesWith />
       {!!characterKey && (
         <BuildAlert
           {...{ status: buildStatus, characterName, maxBuildsToShow }}
