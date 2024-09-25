@@ -185,6 +185,7 @@ function OptimizationTargetEditorItem({
         disabled={disabled}
         onChange={onChange}
         placeholder="Stat Value"
+        size="small"
         inputProps={{ sx: { textAlign: 'right' } }}
         InputProps={{
           endAdornment: (
