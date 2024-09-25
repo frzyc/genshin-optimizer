@@ -143,15 +143,22 @@ function TeamEditor({
         const destinationLoadoutDatum = loadoutData[selectedIndex]
         database.teams.set(teamId, (team) => {
           team.loadoutData[selectedIndex] = existingLoadoutDatum
-          // Multi-selection can result in the character at existingIndex being intentionally
-          // replaced by a different character in team.loadoutData, in which case this should
-          // not move the teamChar at selectedIndex to existingIndex
-          if (team.loadoutData[existingIndex] === existingLoadoutDatum) {
+          // Technically only relevant during single selection so re-selecting a teammate in a different slot
+          // simply flips the slots but does not interfere with multi-selection.
+          if (
+            team.loadoutData[existingIndex]?.teamCharId ===
+            existingLoadoutDatum?.teamCharId
+          ) {
             team.loadoutData[existingIndex] = destinationLoadoutDatum
           }
         })
-      } else {
-        // No teamChar at destination, place existing teamChar in that slot
+      } else if (
+        team.loadoutData[existingIndex]?.teamCharId !==
+        loadoutData[existingIndex]!.teamCharId
+      ) {
+        // Only relevant during multi-selection when the teamChar at loadoutData[existingIndex] is moved to
+        // selectedIndex due to inserting a different teamChar at existingIndex, but loadoutData[selectedIndex]
+        // is undefined. This condition should never be true during single selection.
         database.teams.set(teamId, (team) => {
           team.loadoutData[selectedIndex] = loadoutData[existingIndex]
         })
