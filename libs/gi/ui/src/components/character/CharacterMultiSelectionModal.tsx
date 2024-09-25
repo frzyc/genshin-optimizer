@@ -24,15 +24,13 @@ import {
   allElementKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
-import type { ICachedCharacter } from '@genshin-optimizer/gi/db'
 import {
   useCharMeta,
   useCharacter,
   useDBMeta,
   useDatabase,
+  useTeam,
 } from '@genshin-optimizer/gi/db-ui'
-import type { CharacterSheet } from '@genshin-optimizer/gi/sheets'
-import { getCharSheet } from '@genshin-optimizer/gi/sheets'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
 import CloseIcon from '@mui/icons-material/Close'
@@ -73,27 +71,21 @@ import {
 } from './CharacterSort'
 import { CharacterName } from './Trans'
 
-type characterFilter = (
-  characterKey: CharacterKey,
-  character: ICachedCharacter | undefined,
-  sheet: CharacterSheet
-) => boolean
-
-type CharacterSelectionModalProps = {
+type CharacterMultiSelectionModalProps = {
   show: boolean
   newFirst?: boolean
   onHide: () => void
-  onSelect?: (ckey: CharacterKey) => void
-  filter?: characterFilter
+  onMultiSelect?: (cKeys: (CharacterKey | '')[]) => void
+  teamId: string
 }
 const sortKeys = Object.keys(characterSortMap)
-export function CharacterSelectionModal({
+export function CharacterMultiSelectionModal({
   show,
   onHide,
-  onSelect,
-  filter = () => true,
+  onMultiSelect,
+  teamId,
   newFirst = false,
-}: CharacterSelectionModalProps) {
+}: CharacterMultiSelectionModalProps) {
   const { t } = useTranslation([
     'page_character',
     // Always load these 2 so character names are loaded for searching/sorting
@@ -104,7 +96,41 @@ export function CharacterSelectionModal({
   const database = useDatabase()
   const state = useDataEntryBase(database.displayCharacter)
 
-  const { gender } = useDBMeta()
+  const { loadoutData } = useTeam(teamId)!
+  const [teamCharKeys, setTeamCharKeys] = useState(['', '', '', ''] as (
+    | CharacterKey
+    | ''
+  )[])
+  // update teamCharKeys when loadoutData changes
+  useEffect(
+    () =>
+      setTeamCharKeys(
+        loadoutData.map(
+          (loadoutDatum) =>
+            database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? ''
+        )
+      ),
+    [database, loadoutData, setTeamCharKeys]
+  )
+
+  // used for generating characterKeyList below, only updated when filter/sort/search is applied to prevent characters
+  // from moving around as soon as they as selected/deselected for the team
+  const [cachedTeamCharKeys, setCachedTeamCharKeys] = useState([
+    '',
+    '',
+    '',
+    '',
+  ] as (CharacterKey | '')[])
+  useEffect(
+    () =>
+      setCachedTeamCharKeys(
+        loadoutData.map(
+          (loadoutDatum) =>
+            database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? ''
+        )
+      ),
+    [database, loadoutData, setCachedTeamCharKeys]
+  )
 
   const [dbDirty, forceUpdate] = useForceUpdate()
 
@@ -124,12 +150,10 @@ export function CharacterSelectionModal({
       ...(newFirst ? ['new'] : []),
       ...(characterSortMap[sortType] ?? []),
     ] as CharacterSortKey[]
-    return (
+    const filteredKeys =
       deferredDbDirty &&
       allCharacterKeys
-        .filter((key) =>
-          filter(key, database.chars.get(key), getCharSheet(key, gender))
-        )
+        .filter((key) => cachedTeamCharKeys.indexOf(key) === -1)
         .filter(
           filterFunction(
             { element, weaponType, name: deferredSearchTerm },
@@ -144,16 +168,15 @@ export function CharacterSelectionModal({
             ['new', 'favorite']
           )
         )
-    )
+    return cachedTeamCharKeys.filter((key) => key !== '').concat(filteredKeys)
   }, [
     deferredState,
     newFirst,
     deferredDbDirty,
     deferredSearchTerm,
     database,
+    cachedTeamCharKeys,
     silly,
-    filter,
-    gender,
   ])
 
   const weaponTotals = useMemo(
@@ -182,11 +205,34 @@ export function CharacterSelectionModal({
 
   const { weaponType, element, sortType, ascending } = state
 
+  const onClick = (key: CharacterKey) => {
+    const keySlotIndex = teamCharKeys.indexOf(key)
+    const firstOpenIndex = teamCharKeys.indexOf('')
+    if (keySlotIndex === -1) {
+      // Selected character was previously unselected, add to the list of currently selected keys if team is not full
+      if (firstOpenIndex === -1) return
+      setTeamCharKeys([
+        ...teamCharKeys.slice(0, firstOpenIndex),
+        key,
+        ...teamCharKeys.slice(firstOpenIndex + 1),
+      ])
+    } else {
+      // Selected character was previously selected, so replace the slot with
+      // '' to indicate the slot is currently empty
+      setTeamCharKeys([
+        ...teamCharKeys.slice(0, keySlotIndex),
+        '',
+        ...teamCharKeys.slice(keySlotIndex + 1),
+      ])
+    }
+  }
+
   return (
     <ModalWrapper
       open={show}
       onClose={() => {
         setSearchTerm('')
+        onMultiSelect?.(teamCharKeys)
         onHide()
       }}
       containerProps={{
@@ -213,17 +259,19 @@ export function CharacterSelectionModal({
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
               <WeaponToggle
-                onChange={(weaponType) =>
+                onChange={(weaponType) => {
                   database.displayCharacter.set({ weaponType })
-                }
+                  setCachedTeamCharKeys(teamCharKeys)
+                }}
                 value={weaponType}
                 totals={weaponTotals}
                 size="small"
               />
               <ElementToggle
-                onChange={(element) =>
+                onChange={(element) => {
                   database.displayCharacter.set({ element })
-                }
+                  setCachedTeamCharKeys(teamCharKeys)
+                }}
                 value={element}
                 totals={elementTotals}
                 size="small"
@@ -233,6 +281,7 @@ export function CharacterSelectionModal({
               sx={{ ml: 'auto' }}
               onClick={() => {
                 setSearchTerm('')
+                onMultiSelect?.(teamCharKeys)
                 onHide()
               }}
             >
@@ -244,9 +293,10 @@ export function CharacterSelectionModal({
             <TextField
               autoFocus
               value={searchTerm}
-              onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+              onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
                 setSearchTerm(e.target.value)
-              }
+                setCachedTeamCharKeys(teamCharKeys)
+              }}
               label={t('characterName')}
               size="small"
               sx={{ height: '100%', mr: 'auto' }}
@@ -257,13 +307,15 @@ export function CharacterSelectionModal({
             <SortByButton
               sortKeys={sortKeys}
               value={sortType}
-              onChange={(sortType) =>
+              onChange={(sortType) => {
                 database.displayCharacter.set({ sortType })
-              }
+                setCachedTeamCharKeys(teamCharKeys)
+              }}
               ascending={ascending}
-              onChangeAsc={(ascending) =>
+              onChangeAsc={(ascending) => {
                 database.displayCharacter.set({ ascending })
-              }
+                setCachedTeamCharKeys(teamCharKeys)
+              }}
             />
           </Box>
         </CardContent>
@@ -279,11 +331,8 @@ export function CharacterSelectionModal({
                 <Grid item key={characterKey} xs={1}>
                   <SelectionCard
                     characterKey={characterKey}
-                    onClick={() => {
-                      setSearchTerm('')
-                      onHide()
-                      onSelect?.(characterKey)
-                    }}
+                    onClick={() => onClick(characterKey)}
+                    selectedIndex={teamCharKeys.indexOf(characterKey)}
                   />
                 </Grid>
               ))}
@@ -306,9 +355,11 @@ const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
 function SelectionCard({
   characterKey,
   onClick,
+  selectedIndex,
 }: {
   characterKey: CharacterKey
   onClick: () => void
+  selectedIndex: number
 }) {
   const { gender } = useDBMeta()
   const character = useCharacter(characterKey)
@@ -321,6 +372,8 @@ function SelectionCard({
   const { level = 1, ascension = 0, constellation = 0 } = character ?? {}
   const banner = characterAsset(characterKey, 'banner', gender)
   const rarity = getCharStat(characterKey).rarity
+
+  const isSelected = selectedIndex !== -1
   return (
     <CustomTooltip
       enterDelay={300}
@@ -344,6 +397,7 @@ function SelectionCard({
             flexGrow: 1,
             display: 'flex',
             flexDirection: 'column',
+            outline: isSelected ? 'solid #f7bd10' : undefined,
           }}
         >
           <IconButton
@@ -355,6 +409,22 @@ function SelectionCard({
           >
             {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
           </IconButton>
+          {isSelected && (
+            <Typography variant="body2" sx={{ flexGrow: 1 }}>
+              <SqBadge
+                color={'warning'}
+                sx={{
+                  position: 'absolute',
+                  top: 60,
+                  left: 204,
+                  zIndex: 2,
+                  textShadow: '0 0 5px gray',
+                }}
+              >
+                {selectedIndex + 1}
+              </SqBadge>
+            </Typography>
+          )}
           <CardActionArea onClick={onClick}>
             <Box
               display="flex"
