@@ -2,14 +2,12 @@ import { SandboxStorage } from '@genshin-optimizer/common/database'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { BuildTc, LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
-import {
-  optimizeTcGetNodes,
-  optimizeTcUsingNodes,
-} from '@genshin-optimizer/gi/solver-tc'
+import { optimizeTcUsingNodes } from '@genshin-optimizer/gi/solver-tc'
 import {
   getBuildTcArtifactData,
   getBuildTcWeaponData,
   getTeamDataCalc,
+  optimizeNodesForScaling,
 } from '../'
 
 describe('A general optimizeTC usecase', () => {
@@ -59,7 +57,6 @@ describe('A general optimizeTC usecase', () => {
           critRate_: 10,
           critDMG_: 10,
         },
-        minTotal: { enerRech_: 150 },
       },
     })
     const buildTc: BuildTc = database.buildTcs.get(buildTcId)!
@@ -161,13 +158,23 @@ describe('A general optimizeTC usecase', () => {
     )!
 
     expect(teamData).toBeTruthy()
-    const { nodes } = optimizeTcGetNodes(teamData, characterKey, buildTc, [
-      'normal',
-      '0',
-    ])
+    const statFilters = {
+      '["basic","enerRech_"]': [
+        {
+          value: 150,
+          disabled: false,
+        },
+      ],
+    }
+    const { nodes, valueFilter } = optimizeNodesForScaling(
+      teamData,
+      characterKey,
+      ['normal', '0'],
+      statFilters
+    )
     expect(nodes).toBeTruthy()
     nodes &&
-      optimizeTcUsingNodes(nodes, buildTc, (data) => {
+      optimizeTcUsingNodes(nodes, valueFilter, buildTc, (data) => {
         if (data.resultType !== 'finalize') return
         expect(data.maxBufferRolls).toEqual({
           atk: 0,

@@ -103,10 +103,6 @@
       "scalesWith": "The selected Optimization target and constraints scales with: ",
       "distribute": ". The solver will only distribute stats to these substats.",
       "feasibilty": "There may be additional leftover substats that should be distributed to non-scaling stats to ensure the solution is feasible."
-    },
-    "constraint": {
-      "title": "Stat Constraints",
-      "add": "Add a Stat Constraint"
     }
   },
   "tabTeambuff": {

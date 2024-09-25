@@ -1,6 +1,5 @@
 import { cachedArtifact, validateArtifact } from './ArtifactDataManager'
-import type { MinTotalStatKey } from './BuildTcDataManager'
-import { initCharTC, minTotalStatKeys, toBuildTc } from './BuildTcDataManager'
+import { initCharTC,  toBuildTc } from './BuildTcDataManager'
 import {
   MAX_DESC_LENGTH,
   MAX_NAME_LENGTH,
@@ -12,6 +11,7 @@ import type {
   ArtSetExclusion,
   ArtSetExclusionKey,
   GeneratedBuild,
+  OptConfig,
   StatFilterSetting,
   StatFilters,
 } from './OptConfigDataManager'
@@ -48,7 +48,6 @@ export {
   initCustomTarget,
   initialWeapon,
   maxBuildsToShowList,
-  minTotalStatKeys,
   toBuildTc,
   validateArtifact,
   validateCustomMultiTarget,
@@ -61,7 +60,7 @@ export type {
   LoadoutDataExportSetting,
   LoadoutDatum,
   LoadoutExportSetting,
-  MinTotalStatKey,
+  OptConfig,
   StatFilterSetting,
   StatFilters,
   Team,

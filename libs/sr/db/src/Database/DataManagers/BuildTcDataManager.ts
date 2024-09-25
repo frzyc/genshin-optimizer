@@ -13,7 +13,7 @@ import {
 } from '@genshin-optimizer/sr/consts'
 import { validateLevelAsc } from '@genshin-optimizer/sr/util'
 import type { ICachedLightCone, ICachedRelic } from '../../Interfaces'
-import { minTotalStatKeys, type IBuildTc } from '../../Interfaces/IBuildTc'
+import { type IBuildTc } from '../../Interfaces/IBuildTc'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
 
@@ -104,7 +104,6 @@ export function initCharTC(): IBuildTc {
     optimization: {
       distributedSubstats: 45,
       maxSubstats: initCharTcOptimizationMaxSubstats(),
-      minTotal: {},
     },
   }
 }
@@ -183,7 +182,7 @@ function validateCharTcOptimization(
   optimization: unknown
 ): IBuildTc['optimization'] | undefined {
   if (typeof optimization !== 'object') return undefined
-  let { distributedSubstats, maxSubstats, minTotal } =
+  let { distributedSubstats, maxSubstats } =
     optimization as IBuildTc['optimization']
   if (typeof distributedSubstats !== 'number') distributedSubstats = 20
   if (typeof maxSubstats !== 'object')
@@ -191,14 +190,8 @@ function validateCharTcOptimization(
   maxSubstats = objKeyMap([...allRelicSubStatKeys], (k) =>
     typeof maxSubstats[k] === 'number' ? maxSubstats[k] : 0
   )
-  if (typeof minTotal !== 'object') minTotal = {}
-  minTotal = Object.fromEntries(
-    Object.entries(minTotal).filter(
-      ([k, v]) => minTotalStatKeys.includes(k) && typeof v === 'number'
-    )
-  )
 
-  return { distributedSubstats, maxSubstats, minTotal }
+  return { distributedSubstats, maxSubstats }
 }
 function initCharTcOptimizationMaxSubstats(): IBuildTc['optimization']['maxSubstats'] {
   return objKeyMap(

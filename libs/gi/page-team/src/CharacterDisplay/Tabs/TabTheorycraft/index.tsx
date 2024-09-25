@@ -1,10 +1,7 @@
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { CardThemed, CustomNumberInput } from '@genshin-optimizer/common/ui'
 import { objMap, toPercent } from '@genshin-optimizer/common/util'
-import {
-  artSubstatRollData,
-  type SubstatKey,
-} from '@genshin-optimizer/gi/consts'
+import { artSubstatRollData } from '@genshin-optimizer/gi/consts'
 import type { BuildTc } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
@@ -16,8 +13,6 @@ import type { TCWorkerResult } from '@genshin-optimizer/gi/solver-tc'
 import {
   TCWorker,
   getMinSubAndOtherRolls,
-  getScalesWith,
-  optimizeTcGetNodes,
 } from '@genshin-optimizer/gi/solver-tc'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import { StatIcon } from '@genshin-optimizer/gi/svgicons'
@@ -27,6 +22,7 @@ import {
   BuildAlert,
   DataContext,
   HitModeToggle,
+  OptTargetContext,
   ReactionToggle,
   StatDisplayComponent,
   getBuildTcArtifactData,
@@ -34,6 +30,7 @@ import {
   getTeamDataCalc,
   initialBuildStatus,
   isDev,
+  optimizeNodesForScaling,
 } from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import CalculateIcon from '@mui/icons-material/Calculate'
@@ -46,9 +43,9 @@ import CharacterProfileCard from '../../../CharProfileCard'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
+import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
 import { ArtifactMainStatAndSetEditor } from './ArtifactMainStatAndSetEditor'
 import { ArtifactSubCard } from './ArtifactSubCard'
-import { BuildConstaintCard } from './BuildConstaintCard'
 import GcsimButton from './GcsimButton'
 import KQMSButton from './KQMSButton'
 import { WeaponEditorCard } from './WeaponEditorCard'
@@ -62,7 +59,9 @@ export default function TabTheorycraft() {
     teamChar: { key: characterKey, optConfigId },
   } = useContext(TeamCharacterContext)
   const { buildTc, setBuildTc } = useContext(BuildTcContext)
-  const { optimizationTarget } = useOptConfig(optConfigId)!
+  const optConfig = useOptConfig(optConfigId)!
+  const { optimizationTarget, statFilters } = optConfig
+  const { scalesWith } = useContext(OptTargetContext)
 
   const weaponTypeKey = getCharStat(characterKey).weaponType
 
@@ -119,20 +118,6 @@ export default function TabTheorycraft() {
     [buildTc]
   )
 
-  const { scalesWith } = useMemo(() => {
-    const { nodes } = optimizeTcGetNodes(
-      dataContextValue.teamData,
-      characterKey,
-      buildTc,
-      optimizationTarget
-    )
-    const scalesWith = nodes ? getScalesWith(nodes) : new Set<SubstatKey>()
-    return {
-      nodes,
-      scalesWith,
-    }
-  }, [dataContextValue.teamData, characterKey, buildTc, optimizationTarget])
-  console.log({ scalesWith })
   const optimizeSubstats = (apply: boolean) => {
     if (!workerRef.current) return
     /**
@@ -149,13 +134,14 @@ export default function TabTheorycraft() {
       getBuildTcWeaponData(buildTc)
     )
     if (!tempTeamData) return
-    const { nodes } = optimizeTcGetNodes(
+    const { nodes, valueFilter } = optimizeNodesForScaling(
       tempTeamData,
       characterKey,
-      buildTc,
-      optimizationTarget
+      optimizationTarget,
+      statFilters
     )
-    workerRef.current.postMessage({ buildTc, nodes })
+    if (!nodes || !valueFilter) return
+    workerRef.current.postMessage({ buildTc, nodes, valueFilter })
     setStatus((s) => ({
       ...s,
       type: 'active',
@@ -292,7 +278,7 @@ export default function TabTheorycraft() {
                   weaponTypeKey={weaponTypeKey}
                   disabled={solving}
                 />
-                <BuildConstaintCard disabled={solving} />
+                <StatFilterCard disabled={solving} />
               </Grid>
               <Grid item sx={{ flexGrow: -1 }}>
                 <ArtifactMainStatAndSetEditor disabled={solving} />

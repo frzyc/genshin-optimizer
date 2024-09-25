@@ -1,21 +1,13 @@
-import { objMap, objPathValue, toDecimal } from '@genshin-optimizer/common/util'
+import { objMap } from '@genshin-optimizer/common/util'
 import type { SubstatKey } from '@genshin-optimizer/gi/consts'
 import {
   allSubstatKeys,
   artSubstatRollData,
-  type CharacterKey,
 } from '@genshin-optimizer/gi/consts'
 import type { BuildTc } from '@genshin-optimizer/gi/db'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import type { NumNode, OptNode } from '@genshin-optimizer/gi/wr'
-import {
-  constant,
-  mapFormulas,
-  mergeData,
-  optimize,
-  precompute,
-} from '@genshin-optimizer/gi/wr'
-import { dynamicData } from './foreground'
+import { precompute } from '@genshin-optimizer/gi/wr'
 
 export type TCWorkerResult = TotalResult | CountResult | FinalizeResult
 
@@ -45,71 +37,6 @@ export interface FinalizeResult {
 // where $N$ are the natural numbers and $k$ is the number of `SubstatKey`s
 // We brute force iterate over all substats in the graph and compute the maximum
 // n.b. some substat combinations may not be materializable into real artifacts
-export function optimizeTcGetNodes(
-  teamDataProp: any, //TeamData FIXME: TeamData has UIData, which can't be lib'd as a TS lib dependency.
-  characterKey: CharacterKey,
-  buildTc: BuildTc,
-  optimizationTarget: string[] | undefined
-) {
-  const {
-    artifact: { sets: artSets },
-    optimization: { minTotal },
-  } = buildTc
-  if (!optimizationTarget) return {}
-  const workerData = teamDataProp[characterKey]?.target.data![0]
-  if (!workerData) return {}
-  // TODO: It may be better to use different dynamic data and add extra nodes to workerData during optimize so that you don't need to re-constant fold artifact set nodes later.
-  // https://github.com/frzyc/genshin-optimizer/pull/781#discussion_r1138023281
-  Object.assign(workerData, mergeData([workerData, dynamicData])) // Mark art fields as dynamic
-  const unoptimizedOptimizationTargetNode = objPathValue(
-    workerData.display ?? {},
-    optimizationTarget
-  ) as NumNode | undefined
-  if (!unoptimizedOptimizationTargetNode) return {}
-
-  const constraints = Object.keys(minTotal)
-    .map((k) => workerData.total![k])
-    .filter((n) => n) as NumNode[]
-
-  let nodes = optimize(
-    [unoptimizedOptimizationTargetNode, ...constraints],
-    workerData,
-    ({ path: [p] }) => p !== 'dyn'
-  )
-  // Const fold read nodes
-  nodes = mapFormulas(
-    nodes,
-    (f) => {
-      if (f.operation === 'read' && f.path[0] === 'dyn') {
-        const a = artSets[f.path[1]]
-        if (a) return constant(a)
-        if (!(allSubstatKeys as readonly string[]).includes(f.path[1]))
-          return constant(0)
-      }
-      return f
-    },
-    (f) => f
-  )
-  nodes = optimize(nodes, {}, (_) => false)
-  return {
-    nodes,
-  }
-}
-
-export function getScalesWith(nodes: OptNode[]) {
-  const scalesWith = new Set<string>()
-  precompute(
-    nodes,
-    {},
-    (f) => {
-      const val = f.path[1]
-      scalesWith.add(val)
-      return val
-    },
-    1
-  )
-  return scalesWith as Set<SubstatKey>
-}
 
 export function getMinSubAndOtherRolls(charTC: BuildTc) {
   const {
@@ -135,6 +62,7 @@ export function getMinSubAndOtherRolls(charTC: BuildTc) {
 
 export function optimizeTcUsingNodes(
   nodes: OptNode[],
+  valueFilter: Array<{ value: NumNode; minimum: number }>,
   charTC: BuildTc,
   callback: (r: TCWorkerResult) => void,
   debug = false
@@ -145,7 +73,7 @@ export function optimizeTcUsingNodes(
       slots,
       substats: { stats: substats, type: substatsType, rarity },
     },
-    optimization: { distributedSubstats, maxSubstats, minTotal },
+    optimization: { distributedSubstats, maxSubstats },
   } = charTC
 
   const scalesWith = new Set<string>()
@@ -201,7 +129,6 @@ export function optimizeTcUsingNodes(
   let tested = 0
   let failed = 0
   let skipped = 0
-  const constraints = Object.entries(minTotal).map(([k, v]) => toDecimal(v, k))
   const permute = (toAssign: number, [x, ...xs]: string[]) => {
     if (xs.length === 0) {
       if (toAssign > maxSubsAssignable[x]) return
@@ -221,7 +148,7 @@ export function optimizeTcUsingNodes(
         return
       }
       // check constraints
-      if (constraints.some((c, i) => results[i + 1] < c)) {
+      if (valueFilter.some((c, i) => results[i + 1] < c.minimum)) {
         failed++
         return
       }
