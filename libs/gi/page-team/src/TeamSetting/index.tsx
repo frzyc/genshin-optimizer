@@ -18,6 +18,7 @@ import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import Filter4Icon from '@mui/icons-material/Filter4'
 import type { ButtonProps } from '@mui/material'
 import {
   Alert,
@@ -254,7 +255,12 @@ function TeamEditor({
           <Typography variant="h5">Selected Team Members</Typography>
         </Grid>
         <Grid item>
-          <Button onClick={() => setShowMultiSelect(true)}>Quick Select</Button>
+          <Button
+            startIcon={<Filter4Icon />}
+            onClick={() => setShowMultiSelect(true)}
+          >
+            Quick Select
+          </Button>
         </Grid>
       </Grid>
       <Grid container columns={{ xs: 1, md: 2, lg: 4 }} spacing={2}>

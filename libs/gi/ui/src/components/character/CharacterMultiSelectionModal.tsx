@@ -1,4 +1,5 @@
 'use client'
+import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import {
   useBoolState,
   useForceUpdate,
@@ -93,11 +94,7 @@ export function CharacterMultiSelectionModal({
   ])
   const { silly } = useContext(SillyContext)
   const database = useDatabase()
-  const [state, setState] = useState(() => database.displayCharacter.get())
-  useEffect(
-    () => database.displayCharacter.follow((r, s) => setState(s)),
-    [database, setState]
-  )
+  const state = useDataEntryBase(database.displayCharacter)
 
   const { loadoutData } = useTeam(teamId)!
   const [teamCharKeys, setTeamCharKeys] = useState(['', '', '', ''] as (
@@ -153,8 +150,9 @@ export function CharacterMultiSelectionModal({
       ...(newFirst ? ['new'] : []),
       ...(characterSortMap[sortType] ?? []),
     ] as CharacterSortKey[]
-    if (deferredDbDirty) {
-      const filteredKeys = allCharacterKeys
+    const filteredKeys =
+      deferredDbDirty &&
+      allCharacterKeys
         .filter((key) => cachedTeamCharKeys.indexOf(key) === -1)
         .filter(
           filterFunction(
@@ -170,9 +168,7 @@ export function CharacterMultiSelectionModal({
             ['new', 'favorite']
           )
         )
-      return cachedTeamCharKeys.filter((key) => key !== '').concat(filteredKeys)
-    }
-    return deferredDbDirty
+    return cachedTeamCharKeys.filter((key) => key !== '').concat(filteredKeys)
   }, [
     deferredState,
     newFirst,
