@@ -126,7 +126,7 @@ export function getMinSubAndOtherRolls(charTC: BuildTc) {
   return {
     minSubLines,
     minOtherRolls: getMinOtherRolls(
-      Object.entries(existingRolls),
+      Object.entries(existingRolls) as Array<[SubstatKey, number]>,
       mainStatsCount,
       minSubLines
     ),
@@ -184,7 +184,7 @@ export function optimizeTcUsingNodes(
 
   const alreadyFeasible =
     getMinOtherRolls(
-      Object.entries(existingRolls),
+      Object.entries(existingRolls) as Array<[SubstatKey, number]>,
       mainStatsCount,
       minSubLines
     ) <= 0

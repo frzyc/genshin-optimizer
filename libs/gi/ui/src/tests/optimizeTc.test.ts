@@ -3,12 +3,14 @@ import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import type { BuildTc, LoadoutDatum } from '@genshin-optimizer/gi/db'
 import { ArtCharDatabase } from '@genshin-optimizer/gi/db'
 import {
+  optimizeTcGetNodes,
+  optimizeTcUsingNodes,
+} from '@genshin-optimizer/gi/solver-tc'
+import {
   getBuildTcArtifactData,
   getBuildTcWeaponData,
   getTeamDataCalc,
-} from '@genshin-optimizer/gi/ui'
-import { optimizeTcGetNodes, optimizeTcUsingNodes } from './optimizeTc'
-// FIXME: Should not be importing from @go/gi/ui, since this means this TS lib is importing from a React Lib
+} from '../'
 
 describe('A general optimizeTC usecase', () => {
   it('generate correct distribution', () => {

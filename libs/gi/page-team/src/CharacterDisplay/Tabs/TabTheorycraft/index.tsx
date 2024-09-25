@@ -27,7 +27,6 @@ import {
   BuildAlert,
   DataContext,
   HitModeToggle,
-  OptimizationTargetContext,
   ReactionToggle,
   StatDisplayComponent,
   getBuildTcArtifactData,
@@ -133,7 +132,7 @@ export default function TabTheorycraft() {
       scalesWith,
     }
   }, [dataContextValue.teamData, characterKey, buildTc, optimizationTarget])
-
+  console.log({ scalesWith })
   const optimizeSubstats = (apply: boolean) => {
     if (!workerRef.current) return
     /**
@@ -262,17 +261,15 @@ export default function TabTheorycraft() {
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
             <CardThemed bgt="light" sx={{ flexGrow: 1, p: 1 }}>
-              <OptimizationTargetContext.Provider value={optimizationTarget}>
-                {dataContextValueWithCompare ? (
-                  <DataContext.Provider value={dataContextValueWithCompare}>
-                    <StatDisplayComponent
-                      columns={{ xs: 1, sm: 1, md: 2, lg: 2, xl: 3 }}
-                    />
-                  </DataContext.Provider>
-                ) : (
-                  <Skeleton variant="rectangular" width="100%" height={500} />
-                )}
-              </OptimizationTargetContext.Provider>
+              {dataContextValueWithCompare ? (
+                <DataContext.Provider value={dataContextValueWithCompare}>
+                  <StatDisplayComponent
+                    columns={{ xs: 1, sm: 1, md: 2, lg: 2, xl: 3 }}
+                  />
+                </DataContext.Provider>
+              ) : (
+                <Skeleton variant="rectangular" width="100%" height={500} />
+              )}
             </CardThemed>
           </Grid>
         </Grid>

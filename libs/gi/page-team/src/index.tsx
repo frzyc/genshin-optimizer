@@ -20,6 +20,7 @@ import {
   DataContext,
   FormulaDataWrapper,
   GraphContext,
+  OptTargetWrapper,
   SillyContext,
   useTeamDataNoContext,
   type ChartData,
@@ -285,11 +286,13 @@ function InnerContent({ tab }: { tab?: string }) {
       <BuildTcContext.Provider value={buildTCContextObj}>
         <GraphContext.Provider value={graphContextValue}>
           <FormulaDataWrapper>
-            <Routes>
-              <Route path=":characterKey">
-                <Route path="*" index element={<Content tab={tab} />} />
-              </Route>
-            </Routes>
+            <OptTargetWrapper>
+              <Routes>
+                <Route path=":characterKey">
+                  <Route path="*" index element={<Content tab={tab} />} />
+                </Route>
+              </Routes>
+            </OptTargetWrapper>
           </FormulaDataWrapper>
         </GraphContext.Provider>
       </BuildTcContext.Provider>

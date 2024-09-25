@@ -46,7 +46,6 @@ import {
   GraphContext,
   HitModeToggle,
   NoArtWarning,
-  OptimizationTargetContext,
   ReactionToggle,
   getTeamData,
   resolveInfo,
@@ -845,25 +844,23 @@ export default function TabBuild() {
         </CardThemed>
       )}
 
-      <OptimizationTargetContext.Provider value={optimizationTarget}>
-        {graphBuilds && (
-          <BuildList
-            builds={graphBuilds}
-            compareData={compareData}
-            disabled={!!generatingBuilds}
-            getLabel={getGraphBuildLabel}
-            setBuilds={setGraphBuilds}
-            mainStatAssumptionLevel={mainStatAssumptionLevel}
-          />
-        )}
+      {graphBuilds && (
         <BuildList
-          builds={builds}
+          builds={graphBuilds}
           compareData={compareData}
           disabled={!!generatingBuilds}
-          getLabel={getNormBuildLabel}
+          getLabel={getGraphBuildLabel}
+          setBuilds={setGraphBuilds}
           mainStatAssumptionLevel={mainStatAssumptionLevel}
         />
-      </OptimizationTargetContext.Provider>
+      )}
+      <BuildList
+        builds={builds}
+        compareData={compareData}
+        disabled={!!generatingBuilds}
+        getLabel={getNormBuildLabel}
+        mainStatAssumptionLevel={mainStatAssumptionLevel}
+      />
     </Box>
   )
 }
