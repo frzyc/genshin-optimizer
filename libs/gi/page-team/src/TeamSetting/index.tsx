@@ -6,6 +6,7 @@ import type { TeamData, dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
   AdResponsive,
   CharIconSide,
+  CharacterMultiSelectionModal,
   CharacterName,
   CharacterSelectionModal,
   EnemyExpandCard,
@@ -17,8 +18,16 @@ import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
+import Filter4Icon from '@mui/icons-material/Filter4'
 import type { ButtonProps } from '@mui/material'
-import { Alert, Box, Button, CardContent, Grid } from '@mui/material'
+import {
+  Alert,
+  Box,
+  Button,
+  CardContent,
+  Grid,
+  Typography,
+} from '@mui/material'
 import { Suspense, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
@@ -107,12 +116,7 @@ function TeamEditor({
   const database = useDatabase()
   const team = database.teams.get(teamId)!
   const { loadoutData } = team
-  const [charSelectIndex, setCharSelectIndex] = useState(
-    undefined as number | undefined
-  )
-  const onSelect = (cKey: CharacterKey) => {
-    if (charSelectIndex === undefined) return
-
+  const onSelect = (cKey: CharacterKey, selectedIndex: number) => {
     // Make sure character exists
     database.chars.getWithInitWeapon(cKey)
 
@@ -130,24 +134,69 @@ function TeamEditor({
       if (!teamCharId) teamCharId = database.teamChars.new(cKey)
       database.teams.set(teamId, (team) => {
         if (!teamCharId) return
-        team.loadoutData[charSelectIndex] = { teamCharId } as LoadoutDatum
+        team.loadoutData[selectedIndex] = { teamCharId } as LoadoutDatum
       })
     } else {
-      if (charSelectIndex === existingIndex) return
-      if (loadoutData[charSelectIndex]) {
-        // Already have a teamChar at destination, move to existing Index
+      if (selectedIndex === existingIndex) return
+      if (loadoutData[selectedIndex]) {
+        // Already have a teamChar at destination, move to existingIndex
         const existingLoadoutDatum = loadoutData[existingIndex]
-        const destinationLoadoutDatum = loadoutData[charSelectIndex]
+        const destinationLoadoutDatum = loadoutData[selectedIndex]
         database.teams.set(teamId, (team) => {
-          team.loadoutData[charSelectIndex] = existingLoadoutDatum
-          team.loadoutData[existingIndex] = destinationLoadoutDatum
+          team.loadoutData[selectedIndex] = existingLoadoutDatum
+          // Technically only relevant during single selection so re-selecting a teammate in a different slot
+          // simply flips the slots but does not interfere with multi-selection.
+          if (
+            team.loadoutData[existingIndex]?.teamCharId ===
+            existingLoadoutDatum?.teamCharId
+          ) {
+            team.loadoutData[existingIndex] = destinationLoadoutDatum
+          }
+        })
+      } else if (
+        team.loadoutData[existingIndex]?.teamCharId !==
+        loadoutData[existingIndex]!.teamCharId
+      ) {
+        // Only relevant during multi-selection when the teamChar at loadoutData[existingIndex] is moved to
+        // selectedIndex due to inserting a different teamChar at existingIndex, but loadoutData[selectedIndex]
+        // is undefined. This condition should never be true during single selection.
+        database.teams.set(teamId, (team) => {
+          team.loadoutData[selectedIndex] = loadoutData[existingIndex]
         })
       }
     }
   }
+
+  const [charSelectIndex, setCharSelectIndex] = useState(
+    undefined as number | undefined
+  )
   const charKeyAtIndex = database.teamChars.get(
     loadoutData[charSelectIndex as number]?.teamCharId
   )?.key
+  const onSingleSelect = (cKey: CharacterKey) => {
+    if (charSelectIndex === undefined) return
+    onSelect(cKey, charSelectIndex)
+  }
+
+  const [showMultiSelect, setShowMultiSelect] = useState(false)
+  const onMultiSelect = (cKeys: (CharacterKey | '')[]) => {
+    // Condense character key list so there are no empty team slots between characters
+    const filteredKeys = cKeys.filter((key) => key !== '')
+    for (let i = 0; i < filteredKeys.length; ++i) {
+      const key = filteredKeys[i]
+      onSelect(key, i)
+    }
+
+    const numSlotsEmpty = team.loadoutData.length - filteredKeys.length
+    for (let j = 1; j <= numSlotsEmpty; ++j) {
+      // If there are empty slots, clear them. Clear in reverse from the last team slot
+      // to avoid potentially missing slots due to characters being automatically moved
+      // to the first slot.
+      database.teams.set(teamId, (team) => {
+        team.loadoutData[team.loadoutData.length - j] = undefined
+      })
+    }
+  }
 
   const firstTeamCharId = loadoutData[0]?.teamCharId
   const firstTeamCharKey =
@@ -168,9 +217,19 @@ function TeamEditor({
       <Suspense fallback={false}>
         <CharacterSelectionModal
           filter={(c) => c !== charKeyAtIndex}
-          show={charSelectIndex !== undefined}
+          show={!showMultiSelect && charSelectIndex !== undefined}
           onHide={() => setCharSelectIndex(undefined)}
-          onSelect={onSelect}
+          onSelect={onSingleSelect}
+        />
+      </Suspense>
+      <Suspense fallback={false}>
+        <CharacterMultiSelectionModal
+          show={showMultiSelect}
+          onHide={() => {
+            setShowMultiSelect(false)
+          }}
+          onMultiSelect={onMultiSelect}
+          teamId={teamId}
         />
       </Suspense>
       <Grid container columns={{ xs: 1, md: 2 }} spacing={2}>
@@ -191,6 +250,19 @@ function TeamEditor({
           character" buffs, and cannot be empty.
         </Trans>
       </Alert>
+      <Grid container sx={{ justifyContent: 'space-between' }} spacing={2}>
+        <Grid item>
+          <Typography variant="h5">Selected Team Members</Typography>
+        </Grid>
+        <Grid item>
+          <Button
+            startIcon={<Filter4Icon />}
+            onClick={() => setShowMultiSelect(true)}
+          >
+            Quick Select
+          </Button>
+        </Grid>
+      </Grid>
       <Grid container columns={{ xs: 1, md: 2, lg: 4 }} spacing={2}>
         {loadoutData.map((loadoutDatum, ind) => (
           <Grid item xs={1} key={loadoutDatum?.teamCharId ?? ind}>
