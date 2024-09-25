@@ -48,7 +48,7 @@ export default function StatFilterCard({
           </Box>
         </CardContent>
         <Divider />
-        <Box display="flex" flexDirection="column" gap={0.5}>
+        <Box display="flex" flexDirection="column" gap={1}>
           <OptimizationTargetEditorList
             statFilters={statFilters}
             setStatFilters={setStatFilters}
