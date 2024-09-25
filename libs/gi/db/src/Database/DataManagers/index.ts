@@ -1,5 +1,5 @@
 import { cachedArtifact, validateArtifact } from './ArtifactDataManager'
-import { initCharTC,  toBuildTc } from './BuildTcDataManager'
+import { initCharTC, toBuildTc } from './BuildTcDataManager'
 import {
   MAX_DESC_LENGTH,
   MAX_NAME_LENGTH,
