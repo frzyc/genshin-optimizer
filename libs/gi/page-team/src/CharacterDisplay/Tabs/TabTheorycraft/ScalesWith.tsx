@@ -17,7 +17,7 @@ export default function ScalesWith({
   const { scalesWith } = useContext(OptTargetContext)
   return (
     !!scalesWith.size && (
-      <Alert severity="info" variant="filled">
+      <Alert severity="info" variant="standard">
         <Trans t={t} i18nKey="tabTheorycraft.optAlert.scalesWith">
           The selected Optimization target and constraints scales with:{' '}
         </Trans>
