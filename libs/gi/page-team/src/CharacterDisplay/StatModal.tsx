@@ -42,7 +42,13 @@ const cols = {
   md: 2,
   lg: 3,
 }
-export default function StatModal({ open, onClose }) {
+export default function StatModal({
+  open,
+  onClose,
+}: {
+  open: boolean
+  onClose: () => void
+}) {
   const { t } = useTranslation('page_character')
   return (
     <ModalWrapper open={open} onClose={onClose}>
