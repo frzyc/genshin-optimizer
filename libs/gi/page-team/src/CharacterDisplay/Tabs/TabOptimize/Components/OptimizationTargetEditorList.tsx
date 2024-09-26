@@ -180,6 +180,7 @@ function OptimizationTargetEditorItem({
         />
       </ButtonGroup>
       <NumberInputLazy
+        float
         value={setting.value}
         sx={{ flexBasis: 150, flexGrow: 1, height: '100%' }}
         disabled={disabled}
