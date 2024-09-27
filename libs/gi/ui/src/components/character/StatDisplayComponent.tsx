@@ -10,7 +10,7 @@ import type { MasonryProps } from '@mui/lab'
 import { Masonry } from '@mui/lab'
 import { Box, Divider, ListItem } from '@mui/material'
 import { useContext, useMemo } from 'react'
-import { DataContext, OptimizationTargetContext } from '../../context'
+import { DataContext, OptTargetContext } from '../../context'
 import { getDisplayHeader, getDisplaySections } from '../../util'
 import { FieldDisplayList, NodeFieldDisplay } from '../FieldDisplay'
 
@@ -74,7 +74,7 @@ function Section({
   compareDisplayNs?: DisplaySub<CalcResult>
   sectionKey: string
 }) {
-  const optimizationTarget = useContext(OptimizationTargetContext)
+  const { target: optimizationTarget } = useContext(OptTargetContext)
   const { data, compareData } = useContext(DataContext)
   const database = useDatabase()
   const header = useMemo(

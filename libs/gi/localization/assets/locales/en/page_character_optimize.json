@@ -129,6 +129,9 @@
   "build_other": "<0>{{count}}</0> Builds",
   "thread_one": "<0>{{count}}</0> Thread",
   "thread_other": "<0>{{count}}</0> Threads",
+  "optAlert": {
+    "scalesWith": "The selected Optimization target and constraints scales with: "
+  },
   "targetSelector": {
     "selectOptTarget": "Select an Optimization Target",
     "selectGraphTarget": "Select a Graph Target",

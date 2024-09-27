@@ -35,7 +35,7 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import type { OptProblemInput } from '@genshin-optimizer/gi/solver'
 import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
-import { compactArtifacts, dynamicData } from '@genshin-optimizer/gi/solver-tc'
+import { compactArtifacts } from '@genshin-optimizer/gi/solver-tc'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
   AdResponsive,
@@ -46,10 +46,10 @@ import {
   GraphContext,
   HitModeToggle,
   NoArtWarning,
-  OptimizationTargetContext,
   ReactionToggle,
   getTeamData,
   resolveInfo,
+  statFilterToNumNode,
   useGlobalError,
   useNumWorkers,
   useTeamData,
@@ -57,7 +57,7 @@ import {
 import type { UIData } from '@genshin-optimizer/gi/uidata'
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
-import { mergeData, optimize } from '@genshin-optimizer/gi/wr'
+import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -112,6 +112,7 @@ import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import StatFilterCard from './Components/StatFilterCard'
 import UseEquipped from './Components/UseEquipped'
 import { UseTeammateArt } from './Components/UseTeammateArt'
+import ScalesWith from './ScalesWith'
 
 const audio = new Audio('assets/notification.mp3')
 export default function TabBuild() {
@@ -339,25 +340,7 @@ export default function TabBuild() {
     ) as NumNode | undefined
     if (!unoptimizedOptimizationTargetNode) return
     const targetNode = unoptimizedOptimizationTargetNode
-    const valueFilter: { value: NumNode; minimum: number }[] = Object.entries(
-      statFilters
-    )
-      .flatMap(([pathStr, settings]) =>
-        settings
-          .filter((setting) => !setting.disabled)
-          .map((setting) => {
-            const filterNode: NumNode = objPathValue(
-              workerData.display ?? {},
-              JSON.parse(pathStr)
-            )
-            const infoResolved =
-              filterNode?.info && resolveInfo(filterNode.info)
-            const minimum =
-              infoResolved?.unit === '%' ? setting.value / 100 : setting.value // TODO: Conversion
-            return { value: filterNode, minimum: minimum }
-          })
-      )
-      .filter((x) => x.value && x.minimum > -Infinity)
+    const valueFilter = statFilterToNumNode(workerData, statFilters)
 
     setChartData(undefined)
 
@@ -768,6 +751,7 @@ export default function TabBuild() {
           </span>
         </BootstrapTooltip>
       </ButtonGroup>
+      <ScalesWith />
       {!!characterKey && (
         <BuildAlert
           {...{ status: buildStatus, characterName, maxBuildsToShow }}
@@ -845,25 +829,23 @@ export default function TabBuild() {
         </CardThemed>
       )}
 
-      <OptimizationTargetContext.Provider value={optimizationTarget}>
-        {graphBuilds && (
-          <BuildList
-            builds={graphBuilds}
-            compareData={compareData}
-            disabled={!!generatingBuilds}
-            getLabel={getGraphBuildLabel}
-            setBuilds={setGraphBuilds}
-            mainStatAssumptionLevel={mainStatAssumptionLevel}
-          />
-        )}
+      {graphBuilds && (
         <BuildList
-          builds={builds}
+          builds={graphBuilds}
           compareData={compareData}
           disabled={!!generatingBuilds}
-          getLabel={getNormBuildLabel}
+          getLabel={getGraphBuildLabel}
+          setBuilds={setGraphBuilds}
           mainStatAssumptionLevel={mainStatAssumptionLevel}
         />
-      </OptimizationTargetContext.Provider>
+      )}
+      <BuildList
+        builds={builds}
+        compareData={compareData}
+        disabled={!!generatingBuilds}
+        getLabel={getNormBuildLabel}
+        mainStatAssumptionLevel={mainStatAssumptionLevel}
+      />
     </Box>
   )
 }
