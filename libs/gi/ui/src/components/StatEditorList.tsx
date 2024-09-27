@@ -1,8 +1,7 @@
 import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
 import {
-  CustomNumberInput,
-  CustomNumberInputButtonGroupWrapper,
   GeneralAutocomplete,
+  NumberInputLazy,
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr } from '@genshin-optimizer/common/util'
 import type { MainStatKey, SubstatKey } from '@genshin-optimizer/gi/consts'
@@ -13,8 +12,9 @@ import type { InputPremodKey } from '@genshin-optimizer/gi/wr'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import {
   Box,
-  Button,
   ButtonGroup,
+  IconButton,
+  InputAdornment,
   List,
   ListSubheader,
   Popper,
@@ -189,79 +189,89 @@ function StatFilterItem({
     () => statKey && delKey(statKey),
     [delKey, statKey]
   )
-  const buttonStyle = { p: 1, flexBasis: 30, flexGrow: 0, flexShrink: 0 }
   return (
-    <ButtonGroup sx={{ width: '100%' }}>
-      <GeneralAutocomplete
-        size="small"
-        options={statKeyOptions}
-        onChange={onKeyChange}
-        valueKey={statKey}
-        getOptionDisabled={getOptionDisabled}
-        groupBy={(option) => inputPremodKeyToGroupMap[option.key]}
-        renderGroup={(params) => (
-          <List
-            key={params.key}
-            component={Box}
-            sx={{ paddingTop: 0, marginTop: 0 }}
-          >
-            <ListSubheader key={`${params.group}Header`} sx={{ top: '-1em' }}>
-              <strong>{t(`statGroupKey.${params.group}`)}</strong>
-            </ListSubheader>
-            {params.children}
-          </List>
-        )}
-        toImg={(sKey: InputPremodKey) => (
-          <StatIcon
-            statKey={sKey}
-            iconProps={{ color: KeyMap.getVariant(sKey) }}
-          />
-        )}
-        ListboxProps={{
-          style: {
-            display: 'grid',
-            gridTemplateColumns: isOneCol
-              ? '100%'
-              : isThreeCol
-              ? '33% 33% 33%'
-              : '50% 50%',
-          },
-        }}
-        // This needs to be done with `style` prop, not `sx` prop, or it doesn't work
-        PopperComponent={(props) => (
-          <Popper {...props} style={{ width: '60%' }} />
-        )}
-        sx={{ flexGrow: 1, flexBasis: 150 }}
-        textFieldProps={{
-          sx: { '& .MuiInputBase-root': { borderRadius: '4px 0 0 4px' } },
-        }}
-        label={label}
-      />
-      <CustomNumberInputButtonGroupWrapper
-        sx={{ flexBasis: 30, flexGrow: 1, borderRadius: '0 4px 4px 0' }}
-      >
-        <CustomNumberInput
-          disabled={!statKey || disabled}
-          float={isFloat}
-          value={value}
-          placeholder="Stat Value"
-          onChange={onValueChange}
-          sx={{ px: 1 }}
-          inputProps={{ sx: { textAlign: 'right' } }}
-          endAdornment={statKey ? getUnitStr(statKey) : undefined}
+    <Box sx={{ display: 'flex' }}>
+      <ButtonGroup sx={{ flexGrow: 1 }}>
+        <GeneralAutocomplete
+          size="small"
+          options={statKeyOptions}
+          onChange={onKeyChange}
+          valueKey={statKey}
+          getOptionDisabled={getOptionDisabled}
+          groupBy={(option) => inputPremodKeyToGroupMap[option.key]}
+          renderGroup={(params) => (
+            <List
+              key={params.key}
+              component={Box}
+              sx={{ paddingTop: 0, marginTop: 0 }}
+            >
+              <ListSubheader key={`${params.group}Header`} sx={{ top: '-1em' }}>
+                <strong>{t(`statGroupKey.${params.group}`)}</strong>
+              </ListSubheader>
+              {params.children}
+            </List>
+          )}
+          toImg={(sKey: InputPremodKey) => (
+            <StatIcon
+              statKey={sKey}
+              iconProps={{ color: KeyMap.getVariant(sKey) }}
+            />
+          )}
+          ListboxProps={{
+            style: {
+              display: 'grid',
+              gridTemplateColumns: isOneCol
+                ? '100%'
+                : isThreeCol
+                ? '33% 33% 33%'
+                : '50% 50%',
+            },
+          }}
+          // This needs to be done with `style` prop, not `sx` prop, or it doesn't work
+          PopperComponent={(props) => (
+            <Popper {...props} style={{ width: '60%' }} />
+          )}
+          sx={{ flexGrow: 1, flexBasis: 150 }}
+          textFieldProps={{
+            sx: { '& .MuiInputBase-root': { borderRadius: '4px 0 0 4px' } },
+          }}
+          label={label}
         />
-      </CustomNumberInputButtonGroupWrapper>
+      </ButtonGroup>
       {!!statKey && (
-        <Button
-          sx={buttonStyle}
-          color="error"
-          onClick={onDeleteKey}
+        <NumberInputLazy
+          value={value}
+          float={isFloat}
+          sx={{
+            flexBasis: 30,
+            flexGrow: 1,
+          }}
           disabled={disabled}
-        >
-          <DeleteForeverIcon fontSize="small" />
-        </Button>
+          onChange={onValueChange}
+          placeholder="Stat Value"
+          size="small"
+          inputProps={{ sx: { textAlign: 'right' } }}
+          InputProps={{
+            sx: {
+              borderTopLeftRadius: 0,
+              borderBottomLeftRadius: 0,
+            },
+            endAdornment: (
+              <InputAdornment position="end" sx={{ ml: 0 }}>
+                {statKey ? getUnitStr(statKey) : undefined}{' '}
+                <IconButton
+                  aria-label="Delete Stat Constraint"
+                  onClick={onDeleteKey}
+                  edge="end"
+                >
+                  <DeleteForeverIcon fontSize="small" />
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+        />
       )}
-    </ButtonGroup>
+    </Box>
   )
 }
 
