@@ -4582,6 +4582,173 @@ export const formulas = {
       },
     },
   },
+  static: {
+    atk: {
+      sheet: 'static',
+      name: 'atk',
+      tag: {
+        et: 'display',
+        qt: 'formula',
+        q: 'stat',
+        sheet: 'static',
+        name: 'atk',
+      },
+    },
+    brEffect: {
+      sheet: 'static',
+      name: 'brEffect',
+      tag: {
+        et: 'display',
+        qt: 'formula',
+        q: 'stat',
+        sheet: 'static',
+        name: 'brEffect',
+      },
+    },
+    crit: {
+      sheet: 'static',
+      name: 'crit',
+      tag: {
+        et: 'display',
+        qt: 'formula',
+        q: 'stat',
+        sheet: 'static',
+        name: 'crit',
+      },
+    },
+    crit_dmg_: {
+      sheet: 'static',
+      name: 'crit_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'formula',
+        q: 'stat',
+        sheet: 'static',
+        name: 'crit_dmg_',
+      },
+    },
+    def: {
+      sheet: 'static',
+      name: 'def',
+      tag: {
+        et: 'display',
+        qt: 'formula',
+        q: 'stat',
+        sheet: 'static',
+        name: 'def',
+      },
+    },
+    dmg_: {
+      sheet: 'static',
+      name: 'dmg_',
+      tag: {
+        et: 'display',
+        qt: 'formula',
+        q: 'stat',
+        sheet: 'static',
+        name: 'dmg_',
+      },
+    },
+    eff_: {
+      sheet: 'static',
+      name: 'eff_',
+      tag: {
+        et: 'display',
+        qt: 'formula',
+        q: 'stat',
+        sheet: 'static',
+        name: 'eff_',
+      },
+    },
+    eff_res_: {
+      sheet: 'static',
+      name: 'eff_res_',
+      tag: {
+        et: 'display',
+        qt: 'formula',
+        q: 'stat',
+        sheet: 'static',
+        name: 'eff_res_',
+      },
+    },
+    ele_dmg_: {
+      sheet: 'static',
+      name: 'ele_dmg_',
+      tag: {
+        et: 'display',
+        qt: 'formula',
+        q: 'stat',
+        sheet: 'static',
+        name: 'ele_dmg_',
+      },
+    },
+    enerRegen_: {
+      sheet: 'static',
+      name: 'enerRegen_',
+      tag: {
+        et: 'display',
+        qt: 'formula',
+        q: 'stat',
+        sheet: 'static',
+        name: 'enerRegen_',
+      },
+    },
+    heal_: {
+      sheet: 'static',
+      name: 'heal_',
+      tag: {
+        et: 'display',
+        qt: 'formula',
+        q: 'stat',
+        sheet: 'static',
+        name: 'heal_',
+      },
+    },
+    hp: {
+      sheet: 'static',
+      name: 'hp',
+      tag: {
+        et: 'display',
+        qt: 'formula',
+        q: 'stat',
+        sheet: 'static',
+        name: 'hp',
+      },
+    },
+    resPen_: {
+      sheet: 'static',
+      name: 'resPen_',
+      tag: {
+        et: 'display',
+        qt: 'formula',
+        q: 'stat',
+        sheet: 'static',
+        name: 'resPen_',
+      },
+    },
+    spd: {
+      sheet: 'static',
+      name: 'spd',
+      tag: {
+        et: 'display',
+        qt: 'formula',
+        q: 'stat',
+        sheet: 'static',
+        name: 'spd',
+      },
+    },
+    weakness_: {
+      sheet: 'static',
+      name: 'weakness_',
+      tag: {
+        et: 'display',
+        qt: 'formula',
+        q: 'stat',
+        sheet: 'static',
+        name: 'weakness_',
+      },
+    },
+  },
 } as const
 export const buffs = {
   ASecretVow: {

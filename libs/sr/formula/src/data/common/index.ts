@@ -3,10 +3,12 @@ import type { TagMapNodeEntries } from '../util'
 import { own, ownBuff, percent, reader } from '../util'
 import dmg from './dmg'
 import prep from './prep'
+import sheet from './sheet'
 
 const data: TagMapNodeEntries = [
   ...dmg,
   ...prep,
+  ...sheet,
 
   reader.withTag({ sheet: 'iso', et: 'own' }).reread(reader.sheet('custom')),
   reader.withTag({ sheet: 'agg', et: 'own' }).reread(reader.sheet('custom')),

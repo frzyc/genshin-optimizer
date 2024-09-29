@@ -22,10 +22,10 @@ import {
   customHeal,
   customShield,
   getStatFromStatKey,
-  listingItem,
   own,
   ownBuff,
   percent,
+  reader,
   registerBuff,
   type TagMapNodeEntries,
 } from '../util'
@@ -204,24 +204,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       },
       1
     ),
-    // Formula listings for stats
-    // TODO: Reorder this
-    ownBuff.listing.formulas.add(listingItem(own.final.hp)),
-    ownBuff.listing.formulas.add(listingItem(own.final.atk)),
-    ownBuff.listing.formulas.add(listingItem(own.final.def)),
-    ownBuff.listing.formulas.add(listingItem(own.final.spd)),
-    ownBuff.listing.formulas.add(listingItem(own.final.enerRegen_)),
-    ownBuff.listing.formulas.add(listingItem(own.final.eff_)),
-    ownBuff.listing.formulas.add(listingItem(own.final.eff_res_)),
-    ownBuff.listing.formulas.add(listingItem(own.final.brEffect_)),
-    ownBuff.listing.formulas.add(listingItem(own.common.cappedCrit_)),
-    ownBuff.listing.formulas.add(listingItem(own.final.crit_dmg_)),
-    ownBuff.listing.formulas.add(listingItem(own.final.heal_)),
-    ownBuff.listing.formulas.add(
-      listingItem(own.final.dmg_[data_gen.damageType])
-    ),
-    ownBuff.listing.formulas.add(listingItem(own.final.dmg_)),
-    ownBuff.listing.formulas.add(listingItem(own.final.weakness_)),
-    ownBuff.listing.formulas.add(listingItem(own.final.resPen_)),
+    // Listing in static sheet stats
+    ownBuff.listing.formulas.reread(reader.sheet('static')),
   ]
 }
