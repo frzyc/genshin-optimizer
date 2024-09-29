@@ -1,7 +1,15 @@
-import type { AnyNode } from '@genshin-optimizer/pando/engine'
-import { dynTag } from '@genshin-optimizer/pando/engine'
+import type { AnyNode, StrNode } from '@genshin-optimizer/pando/engine'
+import { cmpEq } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
-import { listingItem, own, ownBuff, reader, register, tag } from '../util'
+import {
+  elementalTypes,
+  listingItem,
+  own,
+  ownBuff,
+  reader,
+  register,
+  tag,
+} from '../util'
 
 const data: TagMapNodeEntries = register(
   'static',
@@ -20,16 +28,23 @@ const data: TagMapNodeEntries = register(
   registerStat('crit', own.common.cappedCrit_),
   registerStat('crit_dmg_', own.final.crit_dmg_),
   registerStat('heal_', own.final.heal_),
-  registerStat(
-    'ele_dmg_',
-    dynTag(own.final.dmg_, { elementalType: own.char.ele })
+  elementalTypes.flatMap((ele) =>
+    registerStat(
+      `${ele}_dmg_`,
+      own.final.dmg_[ele],
+      cmpEq(own.char.ele, ele, 'unique', '')
+    )
   ),
   registerStat('dmg_', own.final.dmg_),
   registerStat('weakness_', own.final.weakness_),
   registerStat('resPen_', own.final.resPen_)
 )
 
-function registerStat(name: string, target: AnyNode): TagMapNodeEntries {
+function registerStat(
+  name: string,
+  target: AnyNode,
+  cond?: string | StrNode
+): TagMapNodeEntries {
   const formula = reader.withTag({
     et: 'display',
     qt: 'formula',
@@ -38,7 +53,7 @@ function registerStat(name: string, target: AnyNode): TagMapNodeEntries {
   })
   const listing = ownBuff.listing.formulas
   return [
-    listing.add(listingItem(formula)), // Add formula to listing
+    listing.add(listingItem(formula, cond)), // Add formula to listing
     formula.add(tag(target, { name: null })), // Link formula to target
   ]
 }
