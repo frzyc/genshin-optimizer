@@ -56,7 +56,7 @@ export function registerBuff(
   // Remove unused tags. We cannot use `sheet:null` here because
   // `namedReader` is also used as a `Tag` inside `listingItem`.
   const { sheet: _sheet, ...tag } = entry.tag
-  const namedReader = reader.withTag({ ...tag, et: 'display', name }) // register name:<name>
+  const namedReader = reader.withTag({ ...tag, et: 'display', name })
   const listing = (team ? teamBuff : ownBuff).listing.buffs
   return [
     // Add this buff to listing listing
@@ -87,7 +87,7 @@ export function registerBuffFormula(
   // Remove unused tags. We cannot use `sheet:null` here because
   // `namedReader` is also used as a `Tag` inside `listingItem`.
   const { sheet: _sheet, ...tag } = entry.tag
-  const namedReader = reader.withTag({ ...tag, et: 'display', name }) // register name:<name>
+  const namedReader = reader.withTag({ ...tag, et: 'display', name })
   const buffListing = (team ? teamBuff : ownBuff).listing.buffs
   const formulaListing = (team ? teamBuff : ownBuff).listing.formulas
   return [
@@ -108,7 +108,6 @@ function registerFormula(
   cond: string | StrNode,
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
-  reader.name(name) // register name:<name>
   const listing = (team ? teamBuff : ownBuff).listing.formulas
   return [
     listing.add(
