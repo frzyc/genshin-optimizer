@@ -1,7 +1,7 @@
 import type { MainSubStatKey } from '@genshin-optimizer/gi/consts'
 import { TeamCharacterContext, useOptConfig } from '@genshin-optimizer/gi/db-ui'
 import type { OptNode } from '@genshin-optimizer/gi/wr'
-import { precompute } from '@genshin-optimizer/gi/wr'
+import { forEachNodes } from '@genshin-optimizer/gi/wr'
 import type { ReactNode } from 'react'
 import { createContext, useContext, useMemo } from 'react'
 import { optimizeNodesForScaling } from '../util'
@@ -51,15 +51,9 @@ export function OptTargetWrapper({ children }: { children: ReactNode }) {
 
 function getScalesWith(nodes: OptNode[]) {
   const scalesWith = new Set<string>()
-  precompute(
+  forEachNodes(
     nodes,
-    {},
-    (f) => {
-      const val = f.path[1]
-      scalesWith.add(val)
-      return val
-    },
-    1
+    (node) => node.operation === 'read' && scalesWith.add(node.path[1])
   )
   return scalesWith as Set<MainSubStatKey>
 }

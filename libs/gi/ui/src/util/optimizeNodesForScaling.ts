@@ -6,13 +6,7 @@ import {
 } from '@genshin-optimizer/gi/consts'
 import type { OptConfig } from '@genshin-optimizer/gi/db'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
-import {
-  constant,
-  dynamicData,
-  mapFormulas,
-  mergeData,
-  optimize,
-} from '@genshin-optimizer/gi/wr'
+import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import type { TeamData } from '../type'
 import { statFilterToNumNode } from './statFilterToNumNode'
 export function optimizeNodesForScaling(
@@ -39,26 +33,11 @@ export function optimizeNodesForScaling(
     ...valueFilter.map((x) => x.value),
   ]
 
-  let nodes = optimize(
+  const nodes = optimize(
     unoptimizedNodes,
     workerData,
-    ({ path: [p] }) => p !== 'dyn'
+    ({ path: [p, stat] }) =>
+      p !== 'dyn' || !allMainSubStatKeys.includes(stat as MainSubStatKey)
   )
-  // Const fold read nodes
-  nodes = mapFormulas(
-    nodes,
-    (f) => {
-      if (f.operation === 'read' && f.path[0] === 'dyn') {
-        // const a = artSets[f.path[1]]
-        // if (a) return constant(a)
-        const stat = f.path[1]
-        if (!allMainSubStatKeys.includes(stat as MainSubStatKey))
-          return constant(0)
-      }
-      return f
-    },
-    (f) => f
-  )
-  nodes = optimize(nodes, {}, (_) => false)
   return { nodes, valueFilter }
 }
