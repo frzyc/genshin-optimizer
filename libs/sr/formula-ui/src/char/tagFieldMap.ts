@@ -7,6 +7,7 @@ import { isTagField } from '@genshin-optimizer/pando/ui-sheet'
 import type { Tag } from '@genshin-optimizer/sr/formula'
 import { keys } from '@genshin-optimizer/sr/formula'
 import { uiSheets } from './sheets'
+import { charBaseUiSheet } from './sheets/CharBase'
 
 const tagValue: Array<{ tag: Tag; value: TagField }> = []
 Object.values(uiSheets).forEach((sheet) => {
@@ -21,10 +22,9 @@ Object.values(uiSheets).forEach((sheet) => {
   })
 })
 
-//TODO: This breaks? wtf?
-// charBaseUiSheet.forEach((field) => {
-//   tagValue.push({ tag: field.fieldRef, value: field })
-// })
+charBaseUiSheet.forEach((field) => {
+  tagValue.push({ tag: field.fieldRef, value: field })
+})
 export const tagFieldMap = new TagMapSubset(
   keys,
   compileTagMapValues(keys, tagValue)

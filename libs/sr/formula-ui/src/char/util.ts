@@ -2,10 +2,9 @@ import type { DamageType, Tag } from '@genshin-optimizer/sr/formula'
 
 export function getVariant(tag: Tag) {
   const { qt, q, elementalType } = tag
-  if (qt === 'prep' && q === 'heal') return 'heal'
-  else if (isDmg(tag)) {
-    if (elementalType) return elementalType
-  }
+  if (qt === 'prep' && (q === 'heal' || q === 'heal_')) return 'heal'
+  if (elementalType) return elementalType
+  // TODO: shield?
   return
 }
 export function isDmg(tag: Tag) {

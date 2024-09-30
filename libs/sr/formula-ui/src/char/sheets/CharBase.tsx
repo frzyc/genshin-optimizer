@@ -7,6 +7,12 @@ import {
 import type { Tag } from '@genshin-optimizer/sr/formula'
 import { own } from '@genshin-optimizer/sr/formula'
 import { RelicStatWithUnit } from '@genshin-optimizer/sr/ui'
+/**
+ * TODO:
+ * dng_ general dmg boost
+ * weakness_
+ * resPen_
+ */
 
 export const charBaseUiSheet: TagField[] = allRelicMainSubStatKeys.map(
   (statKey) => {
@@ -16,7 +22,7 @@ export const charBaseUiSheet: TagField[] = allRelicMainSubStatKeys.map(
       )
     ) {
       const tag = {
-        ...own.final.dmg_,
+        ...own.final.dmg_.tag,
         elementalType: statKey.slice(0, -5) as ElementalTypeKey,
       } as Tag
       return {
@@ -24,7 +30,11 @@ export const charBaseUiSheet: TagField[] = allRelicMainSubStatKeys.map(
         fieldRef: tag,
       } as TagField
     }
-    console.log({ statKey })
+    if (statKey === 'crit_')
+      return {
+        fieldRef: own.common.cappedCrit_.tag,
+        title: <RelicStatWithUnit statKey={statKey} />,
+      }
     return {
       fieldRef: own.final[statKey as keyof typeof own.final].tag as Tag,
       title: <RelicStatWithUnit statKey={statKey} />,
