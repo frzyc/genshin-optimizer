@@ -6,7 +6,6 @@ import type { TeamData, dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
   AdResponsive,
   CharIconSide,
-  CharacterMultiSelectionModal,
   CharacterName,
   CharacterSelectionModal,
   EnemyExpandCard,
@@ -116,6 +115,7 @@ function TeamEditor({
   const database = useDatabase()
   const team = database.teams.get(teamId)!
   const { loadoutData } = team
+
   const onSelect = (cKey: CharacterKey, selectedIndex: number) => {
     // Make sure character exists
     database.chars.getWithInitWeapon(cKey)
@@ -170,9 +170,6 @@ function TeamEditor({
   const [charSelectIndex, setCharSelectIndex] = useState(
     undefined as number | undefined
   )
-  const charKeyAtIndex = database.teamChars.get(
-    loadoutData[charSelectIndex as number]?.teamCharId
-  )?.key
   const onSingleSelect = (cKey: CharacterKey) => {
     if (charSelectIndex === undefined) return
     onSelect(cKey, charSelectIndex)
@@ -216,20 +213,21 @@ function TeamEditor({
     <>
       <Suspense fallback={false}>
         <CharacterSelectionModal
-          filter={(c) => c !== charKeyAtIndex}
           show={!showMultiSelect && charSelectIndex !== undefined}
           onHide={() => setCharSelectIndex(undefined)}
+          teamId={teamId}
           onSelect={onSingleSelect}
         />
       </Suspense>
       <Suspense fallback={false}>
-        <CharacterMultiSelectionModal
+        <CharacterSelectionModal
           show={showMultiSelect}
           onHide={() => {
             setShowMultiSelect(false)
           }}
-          onMultiSelect={onMultiSelect}
           teamId={teamId}
+          multiSelect
+          onMultiSelect={onMultiSelect}
         />
       </Suspense>
       <Grid container columns={{ xs: 1, md: 2 }} spacing={2}>
