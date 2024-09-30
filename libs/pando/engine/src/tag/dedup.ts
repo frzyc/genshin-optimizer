@@ -15,7 +15,7 @@ export class DedupTags<V = never> {
   }
 
   /** Object associated with `tag` */
-  at(tag: Tag): DedupTag<V> {
+  at(tag: Tag): Leaf<V> {
     const id = this.keys.get(tag)
     const cur = id.reduce((cur, id) => cur.child(id), this.root)
     if (!cur.leaf) cur.leaf = new Leaf(tag, id, this.keys, cur)

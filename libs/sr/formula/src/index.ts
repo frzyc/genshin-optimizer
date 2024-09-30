@@ -11,6 +11,7 @@ export type { SrcCondInfo } from './calculator'
 export * from './data/util'
 export * from './meta'
 export * from './util'
+export { keys }
 
 export function srCalculatorWithValues(extras: TagMapEntries<number>) {
   return srCalculatorWithEntries(

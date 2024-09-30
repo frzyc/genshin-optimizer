@@ -20,3 +20,7 @@ export type TextField = {
 }
 
 export type Field = TagField | TextField
+
+export function isTagField(field: Field): field is TagField {
+  return 'fieldRef' in field
+}

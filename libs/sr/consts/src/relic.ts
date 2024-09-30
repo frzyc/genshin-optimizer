@@ -75,7 +75,15 @@ export const allRelicSubStatKeys = [
   'brEffect_',
 ] as const
 export type RelicSubStatKey = (typeof allRelicSubStatKeys)[number]
-
+export const allElementalDmgMainStatKeys = [
+  'physical_dmg_',
+  'fire_dmg_',
+  'ice_dmg_',
+  'lightning_dmg_',
+  'wind_dmg_',
+  'quantum_dmg_',
+  'imaginary_dmg_',
+] as const
 export const allRelicMainStatKeys = [
   'hp',
   'atk',
@@ -87,16 +95,11 @@ export const allRelicMainStatKeys = [
   'heal_',
   'eff_',
   'spd',
-  'physical_dmg_',
-  'fire_dmg_',
-  'ice_dmg_',
-  'lightning_dmg_',
-  'wind_dmg_',
-  'quantum_dmg_',
-  'imaginary_dmg_',
+  ...allElementalDmgMainStatKeys,
   'brEffect_',
   'enerRegen_',
 ] as const
+
 export type RelicMainStatKey = (typeof allRelicMainStatKeys)[number]
 
 export const allRelicRarityKeys = [2, 3, 4, 5] as const
@@ -142,3 +145,8 @@ export const relicSlotToMainStatKeys: Record<RelicSlotKey, RelicMainStatKey[]> =
     ],
     rope: ['hp_', 'atk_', 'def_', 'brEffect_', 'enerRegen_'],
   }
+
+export const allRelicMainSubStatKeys = Array.from(
+  new Set([...allRelicSubStatKeys, ...allRelicMainStatKeys] as const)
+)
+export type RelicMainSubStatKey = (typeof allRelicMainSubStatKeys)[number]

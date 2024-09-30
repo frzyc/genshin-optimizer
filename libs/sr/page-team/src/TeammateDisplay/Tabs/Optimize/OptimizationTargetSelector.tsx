@@ -1,8 +1,17 @@
-import { DropdownButton } from '@genshin-optimizer/common/ui'
+import {
+  ColorText,
+  DropdownButton,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import type { Read } from '@genshin-optimizer/sr/formula'
 import { own } from '@genshin-optimizer/sr/formula'
-import { useSrCalcContext } from '@genshin-optimizer/sr/formula-ui'
-import { MenuItem } from '@mui/material'
+import {
+  getDmgType,
+  getVariant,
+  tagFieldMap,
+  useSrCalcContext,
+} from '@genshin-optimizer/sr/formula-ui'
+import { Box, ListItemText, MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
 export function OptimizationTargetSelector({
@@ -25,7 +34,19 @@ export function OptimizationTargetSelector({
           key={`${index}_${read.tag.name || read.tag.q}`}
           onClick={() => setOptTarget(read)}
         >
-          {read.tag.name || read.tag.q}
+          <ListItemText>
+            <ColorText color={getVariant(read.tag)}>
+              {tagFieldMap.subset(read.tag)[0]?.title ||
+                read.tag.name ||
+                read.tag.q}
+            </ColorText>
+          </ListItemText>
+          {/* Show DMG type */}
+          <Box sx={{ display: 'flex', gap: 1, ml: 1 }}>
+            {getDmgType(read.tag).map((dmgType) => (
+              <SqBadge>{dmgType}</SqBadge>
+            ))}
+          </Box>
         </MenuItem>
       ))}
     </DropdownButton>
