@@ -1,18 +1,10 @@
-import {
-  ColorText,
-  DropdownButton,
-  SqBadge,
-} from '@genshin-optimizer/common/ui'
+import { DropdownButton, SqBadge } from '@genshin-optimizer/common/ui'
 import type { Read } from '@genshin-optimizer/sr/formula'
 import { own } from '@genshin-optimizer/sr/formula'
-import {
-  getDmgType,
-  getVariant,
-  tagFieldMap,
-  useSrCalcContext,
-} from '@genshin-optimizer/sr/formula-ui'
+import { getDmgType, useSrCalcContext } from '@genshin-optimizer/sr/formula-ui'
 import { Box, ListItemText, MenuItem } from '@mui/material'
 import { useTranslation } from 'react-i18next'
+import { OptimizationTargetDisplay } from './OptimizationTargetDisplay'
 
 export function OptimizationTargetSelector({
   optTarget,
@@ -25,9 +17,12 @@ export function OptimizationTargetSelector({
   const calc = useSrCalcContext()
   return (
     <DropdownButton
-      title={`${t('optTarget')}${
-        optTarget ? `: ${optTarget.tag.name || optTarget.tag.q}` : ''
-      }`}
+      title={
+        <Box>
+          {t('optTarget')}
+          {optTarget ? <OptimizationTargetDisplay tag={optTarget.tag} /> : null}
+        </Box>
+      }
     >
       {calc?.listFormulas(own.listing.formulas).map((read, index) => (
         <MenuItem
@@ -35,11 +30,7 @@ export function OptimizationTargetSelector({
           onClick={() => setOptTarget(read)}
         >
           <ListItemText>
-            <ColorText color={getVariant(read.tag)}>
-              {tagFieldMap.subset(read.tag)[0]?.title ||
-                read.tag.name ||
-                read.tag.q}
-            </ColorText>
+            <OptimizationTargetDisplay tag={read.tag} />
           </ListItemText>
           {/* Show DMG type */}
           <Box sx={{ display: 'flex', gap: 1, ml: 1 }}>

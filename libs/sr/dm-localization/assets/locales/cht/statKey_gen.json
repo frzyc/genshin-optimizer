@@ -1,5 +1,6 @@
 {
   "spd": "速度",
+  "spd_": "速度",
   "hp": "生命值",
   "hp_": "生命值",
   "atk": "攻擊力",
@@ -19,5 +20,8 @@
   "wind_dmg_": "風屬性傷害提高",
   "lightning_dmg_": "雷屬性傷害提高",
   "quantum_dmg_": "量子屬性傷害提高",
-  "imaginary_dmg_": "虛數屬性傷害提高"
+  "imaginary_dmg_": "虛數屬性傷害提高",
+  "dmg_": "傷害提高",
+  "weakness_": "弱點擊破效率",
+  "resPen_": "抗性穿透"
 }

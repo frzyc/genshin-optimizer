@@ -1,5 +1,6 @@
 {
   "spd": "Tốc Độ",
+  "spd_": "Tốc Độ",
   "hp": "HP",
   "hp_": "HP",
   "atk": "Tấn Công",
@@ -19,5 +20,8 @@
   "wind_dmg_": "Tăng Sát Thương Phong",
   "lightning_dmg_": "Tăng Sát Thương Lôi",
   "quantum_dmg_": "Tăng Sát Thương Lượng Tử",
-  "imaginary_dmg_": "Tăng Sát Thương Số Ảo"
+  "imaginary_dmg_": "Tăng Sát Thương Số Ảo",
+  "dmg_": "Tăng Sát Thương",
+  "weakness_": "Hiệu Suất Phá Vỡ Điểm Yếu",
+  "resPen_": "Xuyên Kháng"
 }
