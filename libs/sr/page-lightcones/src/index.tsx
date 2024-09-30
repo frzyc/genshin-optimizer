@@ -12,7 +12,10 @@ export default function PageLightCones() {
         lightConeIdToEdit={lightConeIdToEdit}
         cancelEdit={() => setLightConeIdToEdit('')}
       />
-      <LightConeInventory onAdd={() => setLightConeIdToEdit('new')} />
+      <LightConeInventory
+        onAdd={() => setLightConeIdToEdit('new')}
+        onEdit={setLightConeIdToEdit}
+      />
     </Box>
   )
 }
