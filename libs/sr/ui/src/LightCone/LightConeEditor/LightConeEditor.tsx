@@ -17,11 +17,12 @@ import {
   allSuperimposeKeys,
   lightConeMaxLevel,
 } from '@genshin-optimizer/sr/consts'
+import type { ICachedLightCone } from '@genshin-optimizer/sr/db'
 import type { ILightCone } from '@genshin-optimizer/sr/srod'
 import { ascensionMaxLevel, milestoneLevels } from '@genshin-optimizer/sr/util'
-import AddIcon from '@mui/icons-material/Add'
-import CloseIcon from '@mui/icons-material/Close'
+import { Add, Close, DeleteForever, Update } from '@mui/icons-material'
 import {
+  Box,
   Button,
   CardContent,
   CardHeader,
@@ -98,6 +99,21 @@ export function LightConeEditor({
     ? tempLightConeSheet
     : undefined
 
+  const {
+    prev,
+    prevEditType,
+  }: {
+    prev: ICachedLightCone | undefined
+    prevEditType: 'edit' | ''
+  } = useMemo(() => {
+    const dbLightCone =
+      dirtyDatabase &&
+      lightConeIdToEdit &&
+      database.lightCones.get(lightConeIdToEdit)
+    if (dbLightCone) return { prev: dbLightCone, prevEditType: 'edit' }
+    return { prev: undefined, prevEditType: '' }
+  }, [lightConeIdToEdit, database, dirtyDatabase])
+
   const update = useCallback(
     (newValue: Partial<ILightCone>) => {
       // const newSheet = newValue.key ? getLightConeSheet(newValue.key) : sheet!
@@ -139,7 +155,7 @@ export function LightConeEditor({
       if (
         !lightConeIdToEdit &&
         lightCone &&
-        !window.confirm(t`editor.clearPrompt` as string)
+        !window.confirm(t('editor.clearPrompt') as string)
       ) {
         e?.preventDefault()
         return
@@ -150,6 +166,9 @@ export function LightConeEditor({
     [t, lightConeIdToEdit, lightCone, setShowEditor, reset]
   )
 
+  const removeId =
+    (lightConeIdToEdit !== 'new' && lightConeIdToEdit) || prev?.id
+
   return (
     <Suspense fallback={false}>
       <ModalWrapper open={showEditor} onClose={onClose}>
@@ -158,7 +177,7 @@ export function LightConeEditor({
             title="Light Cone Editor"
             action={
               <IconButton onClick={onClose}>
-                <CloseIcon />
+                <Close />
               </IconButton>
             }
           />
@@ -178,7 +197,7 @@ export function LightConeEditor({
               {/* superimpose */}
               <Grid item xs={true} md="auto" display="flex">
                 <SuperimpositionDropdown
-                  superimpose={lightCone?.superimpose}
+                  superimpose={lightCone?.superimpose ?? 1}
                   setSuperimposition={(sk: SuperimposeKey) =>
                     update({ superimpose: sk })
                   }
@@ -233,19 +252,61 @@ export function LightConeEditor({
                 />
               </Grid>
             </Grid>
-            <Grid>
-              <Button
-                startIcon={<AddIcon />}
-                onClick={() => {
-                  database.lightCones.new(lightCone!)
-                  reset()
-                }}
-                disabled={!lightCone}
-                color="primary"
-              >
-                {t`editor.btnAdd`}
-              </Button>
-            </Grid>
+            <Box display="flex" gap={2}>
+              {prevEditType === 'edit' ? (
+                <Button
+                  startIcon={<Add />}
+                  onClick={() => {
+                    lightCone && database.lightCones.set(prev!.id, lightCone)
+                    reset()
+                  }}
+                  disabled={!lightCone}
+                  color="primary"
+                >
+                  {t('editor.btnSave')}
+                </Button>
+              ) : (
+                <Button
+                  startIcon={<Add />}
+                  onClick={() => {
+                    database.lightCones.new(lightCone!)
+                    reset()
+                  }}
+                  disabled={!lightCone}
+                  color="primary"
+                >
+                  {t('editor.btnAdd')}
+                </Button>
+              )}
+              {prev && prevEditType !== 'edit' && (
+                <Button
+                  startIcon={<Update />}
+                  onClick={() => {
+                    lightCone && database.lightCones.set(prev.id, lightCone)
+                    reset()
+                  }}
+                  disabled={!lightCone}
+                  color="success"
+                >
+                  {t('editor.btnUpdate')}
+                </Button>
+              )}
+              {!!removeId && (
+                <Button
+                  startIcon={<DeleteForever />}
+                  onClick={() => {
+                    if (!window.confirm(t('editor.confirmDelete'))) return
+                    database.lightCones.remove(removeId)
+                    reset()
+                  }}
+                  disabled={!lightCone}
+                  color="error"
+                  sx={{ top: '2px' }}
+                >
+                  {t('editor.delete')}
+                </Button>
+              )}
+            </Box>
           </CardContent>
         </CardThemed>
       </ModalWrapper>
@@ -265,7 +326,7 @@ export default function LightConeAutocomplete({
   label = '',
 }: LightConeAutocompleteProps) {
   const { t } = useTranslation(['lightCone', 'lightConeNames_gen'])
-  label = label ? label : t('lightCone:autocompleteLabels.key')
+  label = label ? label : t('editor.lightConeName')
 
   const options = useMemo(
     () =>
@@ -306,15 +367,10 @@ function SuperimpositionDropdown({
   setSuperimposition,
   disabled = false,
 }: SuperimpositionDropdownProps) {
-  // TODO: i18n
-  // const { t } = useTranslation('ui')
+  const { t } = useTranslation('lightCone')
   return (
     <DropdownButton
-      // TODO
-      // title={t('superimpose', { value: superimpose })}
-      title={
-        superimpose ? `Superimposition ${superimpose}` : 'Superimposition 1'
-      }
+      title={t('superimpose', { rank: superimpose })}
       color="primary"
       disabled={disabled}
       fullWidth={true}
@@ -326,9 +382,7 @@ function SuperimpositionDropdown({
           disabled={superimpose === sk}
           onClick={() => setSuperimposition(sk)}
         >
-          {/* TODO */}
-          {/* {t('superimpose', { value: sk })} */}
-          Superimposition {sk}
+          {t('superimpose', { rank: sk })}
         </MenuItem>
       ))}
     </DropdownButton>
@@ -351,13 +405,14 @@ function LevelDropdown({
   setLevelAscension,
   disabled = false,
 }: LevelDropdownProps) {
-  // TODO: i18n
-  // const { t } = useTranslation('ui')
+  const { t } = useTranslation('lightCone')
 
   return (
     <DropdownButton
       title={
-        level ? `Lv. ${level}/${ascensionMaxLevel[ascension!]}` : 'Select Level'
+        level
+          ? `${t('level')} ${level}/${ascensionMaxLevel[ascension!]}`
+          : t('editor.levelSelect')
       }
       color="primary"
       disabled={disabled}
@@ -371,8 +426,8 @@ function LevelDropdown({
           onClick={() => setLevelAscension(lv, as)}
         >
           {lv === ascensionMaxLevel[as]
-            ? `Lv. ${lv}`
-            : `Lv. ${lv}/${ascensionMaxLevel[as]}`}
+            ? `${t('level')} ${lv}`
+            : `${t('level')} ${lv}/${ascensionMaxLevel[as]}`}
         </MenuItem>
       ))}
     </DropdownButton>
