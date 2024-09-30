@@ -220,7 +220,7 @@ export function RelicEditor({
       if (
         !relicIdToEdit &&
         relic &&
-        !window.confirm(t`editor.clearPrompt` as string)
+        !window.confirm(t('editor.clearPrompt') as string)
       ) {
         e?.preventDefault()
         return
@@ -235,7 +235,7 @@ export function RelicEditor({
   const grmd = useMediaQuery(theme.breakpoints.up('md'))
   const removeId = (relicIdToEdit !== 'new' && relicIdToEdit) || prev?.id
   const canClearRelic = (): boolean =>
-    window.confirm(t`editor.clearPrompt` as string)
+    window.confirm(t('editor.clearPrompt') as string)
 
   return (
     <Suspense fallback={false}>
@@ -265,7 +265,7 @@ export function RelicEditor({
                       update({ setKey: key as RelicSetKey })
                     }
                     sx={{ flexGrow: 1 }}
-                    label={relic?.setKey ? '' : t`editor.unknownSetName`}
+                    label={relic?.setKey ? '' : t('editor.unknownSetName')}
                   />
                   <RelicRarityDropdown
                     rarity={relic ? rarity : undefined}
@@ -327,7 +327,7 @@ export function RelicEditor({
                         <SlotIcon slotKey={relic.slotKey} />
                       ) : undefined
                     }
-                    title={relic ? tk(relic.slotKey) : t`slot`}
+                    title={relic ? tk(relic.slotKey) : t('slot')}
                     value={slotKey}
                     disabled={disableEditSlot || !sheet}
                     color={relic ? 'success' : 'primary'}
@@ -368,7 +368,7 @@ export function RelicEditor({
                         {relic ? (
                           <RelicStatWithUnit statKey={relic.mainStatKey} />
                         ) : (
-                          t`mainStat`
+                          t('mainStat')
                         )}
                       </b>
                     }
@@ -398,7 +398,7 @@ export function RelicEditor({
                             relic.mainStatKey,
                             level
                           )
-                        : t`mainStat`}
+                        : t('mainStat')}
                     </Typography>
                   </CardThemed>
                   <Button
@@ -446,9 +446,9 @@ export function RelicEditor({
                     >
                       {prevEditType !== 'edit'
                         ? prevEditType === 'duplicate'
-                          ? t`editor.dupeRelic`
-                          : t`editor.updateRelic`
-                        : t`editor.beforeEdit`}
+                          ? t('editor.dupeRelic')
+                          : t('editor.updateRelic')
+                        : t('editor.beforeEdit')}
                     </Typography>
                     <RelicCard relic={prev} />
                   </CardThemed>
@@ -473,7 +473,9 @@ export function RelicEditor({
                       py={1}
                       variant="h6"
                       color="text.secondary"
-                    >{t`editor.preview`}</Typography>
+                    >
+                      {t('editor.preview')}
+                    </Typography>
                     {cRelic && <RelicCard relic={cRelic} />}
                   </CardThemed>
                 </Grid>
@@ -504,7 +506,7 @@ export function RelicEditor({
                   disabled={!relic || !isValid}
                   color="primary"
                 >
-                  {t`editor.btnSave`}
+                  {t('editor.btnSave')}
                 </Button>
               ) : (
                 <Button
@@ -520,7 +522,7 @@ export function RelicEditor({
                   disabled={!relic || !isValid}
                   color={prevEditType === 'duplicate' ? 'warning' : 'primary'}
                 >
-                  {t`editor.btnAdd`}
+                  {t('editor.btnAdd')}
                 </Button>
               )}
               {allowEmpty && (
@@ -531,7 +533,9 @@ export function RelicEditor({
                     canClearRelic() && reset()
                   }}
                   color="error"
-                >{t`editor.btnClear`}</Button>
+                >
+                  {t('editor.btnClear')}
+                </Button>
               )}
               {prev && prevEditType !== 'edit' && (
                 <Button
@@ -543,20 +547,24 @@ export function RelicEditor({
                   }}
                   disabled={!relic || !isValid}
                   color="success"
-                >{t`editor.btnUpdate`}</Button>
+                >
+                  {t('editor.btnUpdate')}
+                </Button>
               )}
               {!!removeId && (
                 <Button
                   startIcon={<DeleteForeverIcon />}
                   onClick={() => {
-                    if (!window.confirm(t`editor.confirmDelete`)) return
+                    if (!window.confirm(t('editor.confirmDelete'))) return
                     database.relics.remove(removeId)
                     reset()
                     if (!allowEmpty) setShowEditor(false)
                   }}
                   disabled={!relic || !isValid}
                   color="error"
-                >{t`editor.delete`}</Button>
+                >
+                  {t('editor.delete')}
+                </Button>
               )}
             </Box>
           </CardContent>
