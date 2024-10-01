@@ -24,6 +24,7 @@ import {
   allElementKeys,
   allWeaponTypeKeys,
 } from '@genshin-optimizer/gi/consts'
+import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import {
   useCharMeta,
   useCharacter,
@@ -76,7 +77,7 @@ type CharacterSelectionModalProps = {
   show: boolean
   newFirst?: boolean
   onHide: () => void
-  teamId?: string
+  loadoutData?: (LoadoutDatum | undefined)[]
   multiSelect?: boolean
   selectedIndex?: number
   onSelect?: (ckey: CharacterKey) => void
@@ -88,7 +89,7 @@ export function CharacterSelectionModal({
   onHide,
   onSelect,
   onMultiSelect,
-  teamId = '',
+  loadoutData = [undefined, undefined, undefined, undefined],
   newFirst = false,
   multiSelect = false,
   selectedIndex = -1,
@@ -103,10 +104,6 @@ export function CharacterSelectionModal({
   const database = useDatabase()
   const state = useDataEntryBase(database.displayCharacter)
 
-  const team = useTeam(teamId)!
-  const loadoutData = useMemo(() => {
-    return team?.loadoutData ?? [undefined, undefined, undefined, undefined]
-  }, [team])
   const [teamCharKeys, setTeamCharKeys] = useState(['', '', '', ''] as (
     | CharacterKey
     | ''
@@ -344,6 +341,7 @@ export function CharacterSelectionModal({
                     <SelectionCard
                       characterKey={characterKey}
                       onClick={() => onClick(characterKey)}
+                      isMulti
                       teamSlotIndex={teamCharKeys.indexOf(characterKey)}
                     />
                   ) : (
@@ -379,11 +377,13 @@ const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
 function SelectionCard({
   characterKey,
   onClick,
+  isMulti = false,
   selectedIndex = -1,
   teamSlotIndex = 0,
 }: {
   characterKey: CharacterKey
   onClick: () => void
+  isMulti?: boolean
   selectedIndex?: number
   teamSlotIndex?: number
 }) {
@@ -400,7 +400,6 @@ function SelectionCard({
   const rarity = getCharStat(characterKey).rarity
 
   const isInTeam = teamSlotIndex !== -1
-  const isMulti = selectedIndex === -1
 
   const flash = keyframes`
     0% {outline-color: #f7bd10}

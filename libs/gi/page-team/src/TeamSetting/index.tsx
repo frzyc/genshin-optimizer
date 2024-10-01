@@ -215,7 +215,7 @@ function TeamEditor({
         <CharacterSelectionModal
           show={!showMultiSelect && charSelectIndex !== undefined}
           onHide={() => setCharSelectIndex(undefined)}
-          teamId={teamId}
+          loadoutData={loadoutData}
           selectedIndex={charSelectIndex}
           onSelect={onSingleSelect}
         />
@@ -226,7 +226,7 @@ function TeamEditor({
           onHide={() => {
             setShowMultiSelect(false)
           }}
-          teamId={teamId}
+          loadoutData={loadoutData}
           multiSelect
           onMultiSelect={onMultiSelect}
         />
