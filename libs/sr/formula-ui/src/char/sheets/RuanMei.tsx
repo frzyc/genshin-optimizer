@@ -9,6 +9,7 @@ import {
   own,
 } from '@genshin-optimizer/sr/formula'
 import { getInterpolateObject, mappedStats } from '@genshin-optimizer/sr/stats'
+import { StatDisplay } from '@genshin-optimizer/sr/ui'
 import { trans } from '../../util'
 import type { TalentSheetElementKey } from '../consts'
 const key: CharacterKey = 'RuanMei'
@@ -39,7 +40,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         type: 'fields',
         fields: [
           {
-            title: chg('abilities.basic.0.shortDesc'),
+            title: chg('abilities.basic.0.name'),
             fieldRef: formula.basicDmg_0.tag,
           },
         ],
@@ -116,7 +117,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
           label: 'Ult zone',
           fields: [
             {
-              title: 'resPen_',
+              title: <StatDisplay statKey={'resPen_'} />,
               fieldRef: buff.ultZone_resPen_.tag,
             },
           ],
@@ -145,7 +146,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         type: 'fields',
         fields: [
           {
-            title: 'spd_',
+            title: <StatDisplay statKey={'spd_'} />,
             fieldRef: buff.talent_spd_.tag,
           },
         ],

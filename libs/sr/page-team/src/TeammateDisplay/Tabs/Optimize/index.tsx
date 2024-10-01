@@ -5,13 +5,7 @@ import type { Read } from '@genshin-optimizer/sr/formula'
 import { useSrCalcContext } from '@genshin-optimizer/sr/formula-ui'
 import type { BuildResult, ProgressResult } from '@genshin-optimizer/sr/solver'
 import { MAX_BUILDS, Solver } from '@genshin-optimizer/sr/solver'
-import {
-  BuildDisplay,
-  OptimizationTargetSelector,
-  StatFilterCard,
-  WorkerSelector,
-  useDatabaseContext,
-} from '@genshin-optimizer/sr/ui'
+import { BuildDisplay, useDatabaseContext } from '@genshin-optimizer/sr/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import {
@@ -24,6 +18,9 @@ import {
 } from '@mui/material'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { OptimizationTargetSelector } from './OptimizationTargetSelector'
+import { StatFilterCard } from './StatFilterCard'
+import { WorkerSelector } from './WorkerSelector'
 
 export default function Optimize() {
   const { t } = useTranslation('optimize')

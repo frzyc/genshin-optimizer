@@ -1,5 +1,6 @@
 {
   "spd": "속도",
+  "spd_": "속도",
   "hp": "HP",
   "hp_": "HP",
   "atk": "공격력",
@@ -19,5 +20,8 @@
   "wind_dmg_": "바람 속성 피해 증가",
   "lightning_dmg_": "번개 속성 피해 증가",
   "quantum_dmg_": "양자 속성 피해 증가",
-  "imaginary_dmg_": "허수 속성 피해 증가"
+  "imaginary_dmg_": "허수 속성 피해 증가",
+  "dmg_": "피해 증가",
+  "weakness_": "약점 격파 효율",
+  "resPen_": "저항 관통"
 }

@@ -1,5 +1,6 @@
 {
   "spd": "ความเร็ว",
+  "spd_": "ความเร็ว",
   "hp": "HP",
   "hp_": "HP",
   "atk": "ATK",
@@ -19,5 +20,8 @@
   "wind_dmg_": "เพิ่ม DMG ลม",
   "lightning_dmg_": "เพิ่ม DMG สายฟ้า",
   "quantum_dmg_": "เพิ่ม DMG ควอนตัม",
-  "imaginary_dmg_": "เพิ่ม DMG จินตภาพ"
+  "imaginary_dmg_": "เพิ่ม DMG จินตภาพ",
+  "dmg_": "เพิ่ม DMG",
+  "weakness_": "ประสิทธิภาพการทำลายจุดอ่อน",
+  "resPen_": "การทะลวงความต้านทาน"
 }

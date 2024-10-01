@@ -47,6 +47,7 @@ export const HashData = {
   },
   statKey: {
     spd: '461357812',
+    spd_: '461357812',
     hp: '-1544419067',
     hp_: '-1544419067',
     atk: '-1126979077',
@@ -67,5 +68,8 @@ export const HashData = {
     lightning_dmg_: '235195444',
     quantum_dmg_: '1819458027',
     imaginary_dmg_: '1031064451',
+    dmg_: '-907763317',
+    weakness_: '-1297647890',
+    resPen_: '-538204877',
   },
 }
