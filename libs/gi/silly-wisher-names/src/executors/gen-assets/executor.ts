@@ -1,5 +1,5 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs'
-import * as YAML from 'yaml'
+import { parse } from 'yaml'
 import type { GenAssetsExecutorSchema } from './schema'
 
 export const PROJROOT_PATH = `${process.env['NX_WORKSPACE_ROOT']}/libs/gi/silly-wisher-names`
@@ -129,7 +129,7 @@ export default async function runExecutor(_options: GenAssetsExecutorSchema) {
   const namesFilePath = `${PROJROOT_PATH}/Translated/I2Languages.asset`
   const localeDir = `${PROJROOT_PATH}/assets/locales/`
 
-  const raw = YAML.parse(readFileSync(namesFilePath).toString())
+  const raw = parse(readFileSync(namesFilePath).toString())
   const source = raw.MonoBehaviour.mSource as AssetSource
 
   const characterNames = Object.fromEntries(
