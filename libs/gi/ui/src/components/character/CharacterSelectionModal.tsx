@@ -47,6 +47,7 @@ import {
   TextField,
   Tooltip,
   Typography,
+  keyframes,
   styled,
   tooltipClasses,
 } from '@mui/material'
@@ -75,8 +76,9 @@ type CharacterSelectionModalProps = {
   show: boolean
   newFirst?: boolean
   onHide: () => void
-  teamId: string
+  teamId?: string
   multiSelect?: boolean
+  selectedIndex?: number
   onSelect?: (ckey: CharacterKey) => void
   onMultiSelect?: (cKeys: (CharacterKey | '')[]) => void
 }
@@ -84,11 +86,12 @@ const sortKeys = Object.keys(characterSortMap)
 export function CharacterSelectionModal({
   show,
   onHide,
-  teamId,
   onSelect,
   onMultiSelect,
+  teamId = '',
   newFirst = false,
   multiSelect = false,
+  selectedIndex = -1,
 }: CharacterSelectionModalProps) {
   const { t } = useTranslation([
     'page_character',
@@ -100,7 +103,10 @@ export function CharacterSelectionModal({
   const database = useDatabase()
   const state = useDataEntryBase(database.displayCharacter)
 
-  const { loadoutData } = useTeam(teamId)!
+  const team = useTeam(teamId)!
+  const loadoutData = useMemo(() => {
+    return team?.loadoutData ?? [undefined, undefined, undefined, undefined]
+  }, [team])
   const [teamCharKeys, setTeamCharKeys] = useState(['', '', '', ''] as (
     | CharacterKey
     | ''
@@ -338,8 +344,7 @@ export function CharacterSelectionModal({
                     <SelectionCard
                       characterKey={characterKey}
                       onClick={() => onClick(characterKey)}
-                      showTeamSlot
-                      selectedIndex={teamCharKeys.indexOf(characterKey)}
+                      teamSlotIndex={teamCharKeys.indexOf(characterKey)}
                     />
                   ) : (
                     <SelectionCard
@@ -349,7 +354,8 @@ export function CharacterSelectionModal({
                         onHide()
                         onSelect?.(characterKey)
                       }}
-                      selectedIndex={teamCharKeys.indexOf(characterKey)}
+                      selectedIndex={selectedIndex}
+                      teamSlotIndex={teamCharKeys.indexOf(characterKey)}
                     />
                   )}
                 </Grid>
@@ -373,13 +379,13 @@ const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
 function SelectionCard({
   characterKey,
   onClick,
-  showTeamSlot = false,
-  selectedIndex = 0,
+  selectedIndex = -1,
+  teamSlotIndex = 0,
 }: {
   characterKey: CharacterKey
   onClick: () => void
-  showTeamSlot?: boolean
   selectedIndex?: number
+  teamSlotIndex?: number
 }) {
   const { gender } = useDBMeta()
   const character = useCharacter(characterKey)
@@ -393,7 +399,15 @@ function SelectionCard({
   const banner = characterAsset(characterKey, 'banner', gender)
   const rarity = getCharStat(characterKey).rarity
 
-  const isSelected = selectedIndex !== -1
+  const isInTeam = teamSlotIndex !== -1
+  const isMulti = selectedIndex === -1
+
+  const flash = keyframes`
+    0% {outline-color: #f7bd10}
+    33% {outline-color: #1b263b}
+    66% {outline-color: #f7bd10}
+    100% {outline-color: #f7bd10}
+  `
   return (
     <CustomTooltip
       enterDelay={300}
@@ -417,7 +431,8 @@ function SelectionCard({
             flexGrow: 1,
             display: 'flex',
             flexDirection: 'column',
-            outline: isSelected ? 'solid #f7bd10' : undefined,
+            outline: isInTeam ? 'solid #f7bd10' : undefined,
+            animation: (!isMulti && (selectedIndex === teamSlotIndex)) ? `${flash} 3s ease infinite` : undefined,
           }}
         >
           <IconButton
@@ -429,7 +444,7 @@ function SelectionCard({
           >
             {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
           </IconButton>
-          {showTeamSlot && isSelected && (
+          {isMulti && isInTeam && (
             <Typography variant="body2" sx={{ flexGrow: 1 }}>
               <SqBadge
                 color={'warning'}
@@ -441,7 +456,7 @@ function SelectionCard({
                   textShadow: '0 0 5px gray',
                 }}
               >
-                {selectedIndex + 1}
+                {teamSlotIndex + 1}
               </SqBadge>
             </Typography>
           )}

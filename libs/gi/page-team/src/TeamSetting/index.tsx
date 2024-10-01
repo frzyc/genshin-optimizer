@@ -216,6 +216,7 @@ function TeamEditor({
           show={!showMultiSelect && charSelectIndex !== undefined}
           onHide={() => setCharSelectIndex(undefined)}
           teamId={teamId}
+          selectedIndex={charSelectIndex}
           onSelect={onSingleSelect}
         />
       </Suspense>
