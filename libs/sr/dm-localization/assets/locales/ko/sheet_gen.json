@@ -33,5 +33,6 @@
     "impair": "방해"
   },
   "eidolonLvl": "성혼 등급:{SPACE}",
-  "lvl": "Lv."
+  "lvl": "Lv.",
+  "superimpose": "중첩"
 }

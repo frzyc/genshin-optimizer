@@ -33,5 +33,6 @@
     "impair": "Beeinträchtigung"
   },
   "eidolonLvl": "Eidolon-Stufe:",
-  "lvl": "St.{SPACE}"
+  "lvl": "St.{SPACE}",
+  "superimpose": "Bündeln"
 }
