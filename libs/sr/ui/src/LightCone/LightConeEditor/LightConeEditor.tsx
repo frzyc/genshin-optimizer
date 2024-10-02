@@ -65,7 +65,7 @@ export function LightConeEditor({
   lightConeIdToEdit = 'new',
   cancelEdit,
 }: LightConeEditorProps) {
-  const { t } = useTranslation('lightCone')
+  const { t } = useTranslation(['lightCone', 'common'])
   const { database } = useDatabaseContext()
   const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
 
@@ -231,7 +231,7 @@ export function LightConeEditor({
                 >
                   <Suspense fallback={<Skeleton width="60%" />}>
                     <Typography color="text.secondary" align="center">
-                      Ascension {lightCone?.ascension || 0}
+                      {t('editor.ascension')} {lightCone?.ascension || 0}
                     </Typography>
                   </Suspense>
                 </CardThemed>
@@ -303,7 +303,7 @@ export function LightConeEditor({
                   color="error"
                   sx={{ top: '2px' }}
                 >
-                  {t('editor.delete')}
+                  {t('common:delete')}
                 </Button>
               )}
             </Box>
@@ -367,10 +367,10 @@ function SuperimpositionDropdown({
   setSuperimposition,
   disabled = false,
 }: SuperimpositionDropdownProps) {
-  const { t } = useTranslation('lightCone')
+  const { t } = useTranslation('sheet_gen')
   return (
     <DropdownButton
-      title={t('superimpose', { rank: superimpose })}
+      title={`${t('superimpose')} ${superimpose}`}
       color="primary"
       disabled={disabled}
       fullWidth={true}
@@ -382,7 +382,7 @@ function SuperimpositionDropdown({
           disabled={superimpose === sk}
           onClick={() => setSuperimposition(sk)}
         >
-          {t('superimpose', { rank: sk })}
+          {t('superimpose')} {sk}
         </MenuItem>
       ))}
     </DropdownButton>
@@ -405,14 +405,14 @@ function LevelDropdown({
   setLevelAscension,
   disabled = false,
 }: LevelDropdownProps) {
-  const { t } = useTranslation('lightCone')
+  const { t } = useTranslation(['sheet_gen', 'common'])
 
   return (
     <DropdownButton
       title={
         level
-          ? `${t('level')} ${level}/${ascensionMaxLevel[ascension!]}`
-          : t('editor.levelSelect')
+          ? `${t('lvl')} ${level}/${ascensionMaxLevel[ascension!]}`
+          : t('common:selectlevel')
       }
       color="primary"
       disabled={disabled}
@@ -426,8 +426,8 @@ function LevelDropdown({
           onClick={() => setLevelAscension(lv, as)}
         >
           {lv === ascensionMaxLevel[as]
-            ? `${t('level')} ${lv}`
-            : `${t('level')} ${lv}/${ascensionMaxLevel[as]}`}
+            ? `${t('lvl')} ${lv}`
+            : `${t('lvl')} ${lv}/${ascensionMaxLevel[as]}`}
         </MenuItem>
       ))}
     </DropdownButton>

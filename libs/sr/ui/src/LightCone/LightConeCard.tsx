@@ -25,7 +25,7 @@ import {
   Typography,
 } from '@mui/material'
 import { Suspense } from 'react'
-import { Trans, useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete } from '../Character'
 import { LightConeName } from './LightConeTrans'
 
@@ -50,7 +50,7 @@ export function LightConeCard({
   setLocation,
   extraButtons,
 }: LightConeCardProps) {
-  const { t } = useTranslation('lightCone')
+  const { t } = useTranslation(['lightCone', 'sheet_gen'])
 
   const { key, level, ascension, superimpose, location = '', lock } = lightCone
   const calc = srCalculatorWithEntries(lightConeData(lightCone))
@@ -106,15 +106,13 @@ export function LightConeCard({
               </Typography>
             </Box>
             <Typography component="span" variant="h5">
-              {t('level')} {level}
+              {t('sheet_gen:lvl')} {level}
             </Typography>
             <Typography component="span" variant="h5" color="text.secondary">
               /{ascensionMaxLevel[ascension]}
             </Typography>
             <Typography variant="h6">
-              <Trans t={t} i18nKey={'superimpose'}>
-                {{ rank: superimpose } as any}
-              </Trans>
+              {t('sheet_gen:superimpose')} {superimpose}
             </Typography>
             <StarsDisplay stars={lcStat.rarity} colored />
           </Box>
@@ -185,7 +183,7 @@ export function LightConeCard({
           >
             {!!onEdit && (
               <BootstrapTooltip
-                title={<Typography>{t('lightCone:edit')}</Typography>}
+                title={<Typography>{t('edit')}</Typography>}
                 placement="top"
                 arrow
               >
@@ -196,7 +194,7 @@ export function LightConeCard({
             )}
             {!!onDelete && (
               <BootstrapTooltip
-                title={lock ? t('lightCone:cantDeleteLock') : ''}
+                title={lock ? t('cantDeleteLock') : ''}
                 placement="top"
               >
                 <span>
