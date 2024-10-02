@@ -26,7 +26,7 @@ export function OptimizationTargetSelector({
     >
       {calc?.listFormulas(own.listing.formulas).map((read, index) => (
         <MenuItem
-          key={`${index}_${read.tag.name || read.tag.q}`}
+          key={`${index}_${read.tag.sheet || read.tag.q}_${read.tag.name}`}
           onClick={() => setOptTarget(read)}
         >
           <ListItemText>

@@ -17,6 +17,7 @@ import {
 } from '@genshin-optimizer/sr/consts'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+import type { DBRead } from './dbRead'
 
 export const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10] as const
 export const maxBuildsToShowDefault = 5
@@ -60,7 +61,7 @@ export interface OptConfig {
   allowLocationsState: AllowLocationsState
   relicExclusion: string[]
   useExcludedRelics: boolean
-  optimizationTarget?: string[]
+  optimizationTarget?: DBRead
   mainStatAssumptionLevel: number
   allowPartial: boolean
   maxBuildsToShow: number
@@ -127,8 +128,8 @@ export class OptConfigDataManager extends DataManager<
       })
     }
 
-    if (!optimizationTarget || !Array.isArray(optimizationTarget))
-      optimizationTarget = undefined
+    // TODO: Read validation
+    if (typeof optimizationTarget !== 'object') optimizationTarget = undefined
     if (
       typeof mainStatAssumptionLevel !== 'number' ||
       mainStatAssumptionLevel < 0 ||
