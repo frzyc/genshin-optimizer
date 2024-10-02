@@ -204,3 +204,14 @@ export function missingObjKeys<K extends string, V>(
 ) {
   return keys.filter((k) => !(Object.keys(obj) as string[]).includes(k))
 }
+
+/**
+ * reverses the keys and values of an object
+ */
+export function reverseMap<K extends string, V extends string>(
+  obj: Record<K, V>
+): Record<V, K> {
+  return Object.fromEntries(
+    Object.entries(obj).map(([k, v]) => [v, k])
+  ) as Record<V, K>
+}
