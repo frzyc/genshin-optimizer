@@ -211,5 +211,7 @@ export function missingObjKeys<K extends string, V>(
 export function reverseMap<K extends string, V extends string>(
   obj: Record<K, V>
 ): Record<V, K> {
-  return Object.fromEntries(Object.entries(obj).map(([k, v]) => [v, k]))
+  return Object.fromEntries(
+    Object.entries(obj).map(([k, v]) => [v, k])
+  ) as Record<V, K>
 }
