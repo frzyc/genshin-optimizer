@@ -24,8 +24,9 @@ export function toRead(
   dbRead: DBRead,
   map: Record<'0' | '1' | '2' | '3', CharacterKey>
 ): Read {
-  const { src, dst } = dbRead.tag
-  const tag: any = dbRead.tag
+  const tempDBRead = structuredClone(dbRead)
+  const { src, dst } = tempDBRead.tag
+  const tag: any = tempDBRead.tag
   const rmap = reverseMap(map)
   if (src) {
     tag.src = rmap[src as CharacterKey]
@@ -33,5 +34,5 @@ export function toRead(
   if (dst) {
     tag.dest = rmap[dst as CharacterKey]
   }
-  return dbRead
+  return tempDBRead
 }

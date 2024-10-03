@@ -1,17 +1,21 @@
-import {
-  CustomNumberInput,
-  CustomNumberInputButtonGroupWrapper,
-} from '@genshin-optimizer/common/ui'
-import type { StatFilterSetting, StatFilters } from '@genshin-optimizer/sr/db'
+import { NumberInputLazy } from '@genshin-optimizer/common/ui'
+import type { UnArray } from '@genshin-optimizer/common/util'
+import { toDBRead, toRead, type StatFilters } from '@genshin-optimizer/sr/db'
 import type { Read } from '@genshin-optimizer/sr/formula'
+import { LoadoutContext } from '@genshin-optimizer/sr/ui'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
   DeleteForever,
 } from '@mui/icons-material'
-import { Button, ButtonGroup } from '@mui/material'
-import { useCallback, useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  IconButton,
+  InputAdornment,
+} from '@mui/material'
+import { useCallback, useContext, useMemo } from 'react'
 import { OptimizationTargetSelector } from './OptimizationTargetSelector'
 
 type OptimizationTargetEditorListProps = {
@@ -25,211 +29,161 @@ export default function OptimizationTargetEditorList({
   setStatFilters,
   disabled = false,
 }: OptimizationTargetEditorListProps) {
+  const { charMap } = useContext(LoadoutContext)
   const setTarget = useCallback(
-    (path: string[], oldPath?: string[], oldIndex?: number) => {
-      const statFilters_ = { ...statFilters }
-      const oldPathStr = JSON.stringify(oldPath)
-      const oldFilterArr = oldPath ? [...statFilters[oldPathStr]!] : undefined
-      const pathStr = JSON.stringify(path)
-      const filterArr = [...(statFilters[pathStr] ?? [])]
-
-      // Copy/create new setting
-      if (oldIndex !== undefined && oldFilterArr)
-        filterArr.push(oldFilterArr[oldIndex])
-      else filterArr.push({ minValue: 0, maxValue: 0, disabled: false })
-      statFilters_[pathStr] = filterArr
-
-      // Remove old setting
-      if (oldIndex !== undefined && oldFilterArr) {
-        oldFilterArr.splice(oldIndex, 1)
-        if (oldFilterArr.length) statFilters_[oldPathStr] = oldFilterArr
-        else delete statFilters_[oldPathStr]
-      }
-      setStatFilters({ ...statFilters_ })
+    (read: Read, oldIndex?: number) => {
+      const statFilters_ = structuredClone(statFilters)
+      const dbRead = toDBRead(read, charMap)
+      if (typeof oldIndex === 'undefined')
+        statFilters_.push({
+          read: dbRead,
+          value: 0,
+          isMax: false,
+          disabled: false,
+        })
+      else statFilters_[oldIndex].read = dbRead
+      setStatFilters(statFilters_)
     },
-    [setStatFilters, statFilters]
+    [charMap, setStatFilters, statFilters]
   )
 
   const delTarget = useCallback(
-    (path: string[], index: number) => {
-      const statFilters_ = { ...statFilters }
-      const pathStr = JSON.stringify(path)
-      const filterArr = [...statFilters[pathStr]!]
-      filterArr.splice(index, 1)
-      if (filterArr.length) statFilters_[pathStr] = filterArr
-      else delete statFilters_[pathStr]
-      setStatFilters({ ...statFilters_ })
+    (index: number) => {
+      const statFilters_ = structuredClone(statFilters)
+      statFilters_.splice(index, 1)
+      setStatFilters(statFilters_)
     },
     [setStatFilters, statFilters]
   )
-
-  const setMinTargetValue = useCallback(
-    (path: string[], index: number, minValue: number) => {
-      const statFilters_ = { ...statFilters }
-      const pathStr = JSON.stringify(path)
-      const filterArr = [...statFilters[pathStr]!]
-      filterArr[index] = { ...filterArr[index], minValue } as StatFilterSetting
-      statFilters_[pathStr] = filterArr
-      setStatFilters({ ...statFilters_ })
+  const setTargetValue = useCallback(
+    (index: number, value: number) => {
+      const statFilters_ = structuredClone(statFilters)
+      statFilters_[index].value = value
+      setStatFilters(statFilters_)
     },
     [setStatFilters, statFilters]
   )
-
-  const setMaxTargetValue = useCallback(
-    (path: string[], index: number, maxValue: number) => {
-      const statFilters_ = { ...statFilters }
-      const pathStr = JSON.stringify(path)
-      const filterArr = [...statFilters[pathStr]!]
-      filterArr[index] = { ...filterArr[index], maxValue } as StatFilterSetting
-      statFilters_[pathStr] = filterArr
-      setStatFilters({ ...statFilters_ })
+  const setTargetisMax = useCallback(
+    (index: number, isMax: boolean) => {
+      const statFilters_ = structuredClone(statFilters)
+      statFilters_[index].isMax = isMax
+      setStatFilters(statFilters_)
     },
     [setStatFilters, statFilters]
   )
-
   const setTargetDisabled = useCallback(
-    (path: string[], index: number, disabled: boolean) => {
-      const statFilters_ = { ...statFilters }
-      const pathStr = JSON.stringify(path)
-      const filterArr = [...statFilters[pathStr]!]
-      filterArr[index] = { ...filterArr[index], disabled } as StatFilterSetting
-      statFilters_[pathStr] = filterArr
-      setStatFilters({ ...statFilters_ })
+    (index: number, disabled: boolean) => {
+      const statFilters_ = structuredClone(statFilters)
+      statFilters_[index].disabled = disabled
+      setStatFilters(statFilters_)
     },
     [setStatFilters, statFilters]
+  )
+  const statFilterWithRead = useMemo(
+    () =>
+      statFilters.map(({ read, value, isMax, disabled }) => ({
+        read: toRead(read, charMap),
+        value,
+        isMax,
+        disabled,
+      })),
+    [charMap, statFilters]
   )
 
   return (
-    <>
-      {Object.entries(statFilters).flatMap(([pathStr, settings]) =>
-        settings?.map((setting, index) => (
-          <OptimizationTargetEditorItem
-            path={JSON.parse(pathStr)}
-            setting={setting}
-            index={index}
-            setTarget={setTarget}
-            delTarget={delTarget}
-            setMinValue={setMinTargetValue}
-            setMaxValue={setMaxTargetValue}
-            setDisabled={setTargetDisabled}
-            disabled={disabled}
-            key={pathStr + index}
-          />
-        ))
-      )}
-      <OptimizationTargetEditorItem
-        delTarget={delTarget}
-        setTarget={setTarget}
-        setMinValue={setMinTargetValue}
-        setMaxValue={setMaxTargetValue}
-        setDisabled={setTargetDisabled}
-        disabled={disabled}
+    <Box display="flex" flexDirection="column" gap={1}>
+      {statFilterWithRead.map((statFilter, i) => (
+        <OptimizationTargetEditorItem
+          statFilter={statFilter}
+          setTarget={(read: Read) => setTarget(read, i)}
+          delTarget={() => delTarget(i)}
+          setTargetValue={(val) => setTargetValue(i, val)}
+          setTargetisMax={(isMax) => setTargetisMax(i, isMax)}
+          setDisabled={(disabled) => setTargetDisabled(i, disabled)}
+          disabled={disabled}
+          key={i + JSON.stringify(statFilter)}
+        />
+      ))}
+      <OptimizationTargetSelector
+        setOptTarget={(target) => setTarget(target)}
       />
-    </>
+    </Box>
   )
 }
 
-type OptimizationTargetEditorItemProps = {
-  path?: string[]
-  setting?: StatFilterSetting
-  index?: number
-  setTarget: (path: string[], oldPath?: string[], oldIndex?: number) => void
-  delTarget: (path: string[], index: number) => void
-  setMinValue: (path: string[], index: number, minValue: number) => void
-  setMaxValue: (path: string[], index: number, maxValue: number) => void
-  setDisabled: (path: string[], index: number, disabled: boolean) => void
-  disabled: boolean
-}
 function OptimizationTargetEditorItem({
-  path,
-  setting,
-  index,
+  statFilter,
+  setTarget,
   delTarget,
-  setMinValue,
-  setMaxValue,
+  setTargetValue,
+  setTargetisMax,
   setDisabled,
   disabled,
-}: OptimizationTargetEditorItemProps) {
-  const { t } = useTranslation('page_character_optimize')
-  const onMinValueChange = useCallback(
-    (val: number | undefined) =>
-      path && index !== undefined && setMinValue(path, index, val ?? 0),
-    [setMinValue, path, index]
-  )
+}: {
+  statFilter: UnArray<StatFilters<Read>>
+  setTarget: (read: Read) => void
+  delTarget: () => void
+  setTargetValue: (value: number) => void
+  setTargetisMax: (isMax: boolean) => void
+  setDisabled: (disabled: boolean) => void
+  disabled: boolean
+}) {
+  const { read, value, isMax, disabled: valueDisabled } = statFilter
 
-  const onMaxValueChange = useCallback(
-    (val: number | undefined) =>
-      path && index !== undefined && setMaxValue(path, index, val ?? Infinity),
-    [setMaxValue, path, index]
-  )
-
-  // TODO: replace with calc results when sheets are built
-  const [optTarget, setOptTarget] = useState<Read | undefined>(undefined)
-
-  const buttonStyle = { p: 1, flexBasis: 30, flexGrow: 0, flexShrink: 0 }
-
+  // TODO: best way to infer percentage from tag?
+  const isPercent = (read.tag.name || read.tag.q)?.endsWith('_')
   return (
-    <ButtonGroup
-      sx={{ '& .MuiButtonGroup-grouped': { minWidth: 24 }, width: '100%' }}
-    >
-      {!!setting && !!path && index !== undefined && (
+    <Box sx={{ display: 'flex', gap: 1 }}>
+      <ButtonGroup
+        sx={{
+          '& .MuiButtonGroup-grouped': { minWidth: 24 },
+          width: '100%',
+          flexGrow: 1,
+        }}
+      >
         <Button
-          sx={buttonStyle}
-          color={setting.disabled ? 'secondary' : 'success'}
-          onClick={() => setDisabled(path, index, !setting.disabled)}
+          color={valueDisabled ? 'secondary' : 'success'}
+          onClick={() => setDisabled(!valueDisabled)}
           disabled={disabled}
+          size="small"
         >
-          {setting.disabled ? <CheckBoxOutlineBlank /> : <CheckBox />}
+          {valueDisabled ? <CheckBoxOutlineBlank /> : <CheckBox />}
         </Button>
-      )}
-      <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 150, flexGrow: 1 }}>
-        <CustomNumberInput
-          float
-          disabled={!path || disabled}
-          value={setting?.minValue}
-          placeholder={t('buildConstraint.minStatValue')}
-          onChange={onMinValueChange}
-          sx={{ px: 1 }}
-          inputProps={{
-            sx: {
-              '& + .MuiOutlinedInput-notchedOutline': { borderRadius: 0 },
-              textAlign: 'right',
-            },
-          }}
-          // endAdornment={isPercent ? '%' : undefined} TODO: depends on sheets/calcs being built
+
+        <OptimizationTargetSelector
+          optTarget={read}
+          setOptTarget={setTarget}
+          buttonProps={{ sx: { flexGrow: 1 }, size: 'small' }}
         />
-      </CustomNumberInputButtonGroupWrapper>
-      <OptimizationTargetSelector
-        optTarget={optTarget}
-        setOptTarget={setOptTarget}
+        <Button onClick={() => setTargetisMax(!isMax)} size="small">
+          <strong>{isMax ? '<=' : '>='}</strong>
+        </Button>
+      </ButtonGroup>
+
+      <NumberInputLazy
+        float
+        value={value}
+        sx={{ flexBasis: 150, flexGrow: 1, height: '100%' }}
+        disabled={disabled}
+        onChange={setTargetValue}
+        placeholder="Stat Value"
+        size="small"
+        inputProps={{ sx: { textAlign: 'right' } }}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end" sx={{ ml: 0 }}>
+              {isPercent ? '%' : undefined}{' '}
+              <IconButton
+                aria-label="Delete Stat Constraint"
+                onClick={delTarget}
+                edge="end"
+              >
+                <DeleteForever fontSize="small" />
+              </IconButton>
+            </InputAdornment>
+          ),
+        }}
       />
-      <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 150, flexGrow: 1 }}>
-        <CustomNumberInput
-          float
-          disabled={!path || disabled}
-          value={setting?.maxValue}
-          placeholder={t('buildConstraint.maxStatValue')}
-          onChange={onMaxValueChange}
-          sx={{ px: 1 }}
-          inputProps={{
-            sx: {
-              '& + .MuiOutlinedInput-notchedOutline': { borderRadius: 0 },
-              textAlign: 'left',
-            },
-          }}
-          // endAdornment={isPercent ? '%' : undefined} TODO: depends on sheets/calcs being built
-        />
-      </CustomNumberInputButtonGroupWrapper>
-      {!!path && index !== undefined && (
-        <Button
-          sx={buttonStyle}
-          color="error"
-          onClick={() => delTarget(path, index)}
-          disabled={disabled}
-        >
-          <DeleteForever fontSize="small" />
-        </Button>
-      )}
-    </ButtonGroup>
+    </Box>
   )
 }

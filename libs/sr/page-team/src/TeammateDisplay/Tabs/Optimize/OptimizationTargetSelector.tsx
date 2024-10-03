@@ -1,3 +1,4 @@
+import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
 import { DropdownButton, SqBadge } from '@genshin-optimizer/common/ui'
 import type { Read } from '@genshin-optimizer/sr/formula'
 import { own } from '@genshin-optimizer/sr/formula'
@@ -9,20 +10,23 @@ import { OptimizationTargetDisplay } from './OptimizationTargetDisplay'
 export function OptimizationTargetSelector({
   optTarget,
   setOptTarget,
+  buttonProps = {},
 }: {
-  optTarget: Read | undefined
+  optTarget?: Read
   setOptTarget: (o: Read) => void
+  buttonProps?: Omit<DropdownButtonProps, 'title' | 'children'>
 }) {
   const { t } = useTranslation('optimize')
   const calc = useSrCalcContext()
   return (
     <DropdownButton
       title={
-        <Box>
+        <Box sx={{ display: 'flex', gap: 1 }}>
           {t('optTarget')}
           {optTarget ? <OptimizationTargetDisplay tag={optTarget.tag} /> : null}
         </Box>
       }
+      {...buttonProps}
     >
       {calc?.listFormulas(own.listing.formulas).map((read, index) => (
         <MenuItem

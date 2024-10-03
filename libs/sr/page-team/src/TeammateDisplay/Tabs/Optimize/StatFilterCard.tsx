@@ -1,13 +1,26 @@
+import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
 import { CardThemed, InfoTooltip } from '@genshin-optimizer/common/ui'
 import type { StatFilters } from '@genshin-optimizer/sr/db'
+import { LoadoutContext, useDatabaseContext } from '@genshin-optimizer/sr/ui'
 import { Box, CardContent, Divider, Typography } from '@mui/material'
-import { useState } from 'react'
+import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import OptimizationTargetEditorList from './OptimizationTargetEditorList'
 
 export function StatFilterCard({ disabled = false }: { disabled?: boolean }) {
   const { t } = useTranslation('page_character_optimize')
-  const [statFilters, setStatFilters] = useState<StatFilters>({})
+  // const [statFilters, setStatFilters] = useState<StatFilters>({})
+  const {
+    loadout: { optConfigId },
+  } = useContext(LoadoutContext)
+  const { database } = useDatabaseContext()
+  const { statFilters } = useDataManagerBase(database.optConfigs, optConfigId)!
+
+  const setStatFilters = useCallback(
+    (statFilters: StatFilters) =>
+      database.optConfigs.set(optConfigId, { statFilters }),
+    [database, optConfigId]
+  )
   return (
     <Box>
       <CardThemed bgt="light">
@@ -29,13 +42,11 @@ export function StatFilterCard({ disabled = false }: { disabled?: boolean }) {
           </Box>
         </CardContent>
         <Divider />
-        <Box display="flex" flexDirection="column" gap={0.5}>
-          <OptimizationTargetEditorList
-            statFilters={statFilters}
-            setStatFilters={setStatFilters}
-            disabled={disabled}
-          />
-        </Box>
+        <OptimizationTargetEditorList
+          statFilters={statFilters}
+          setStatFilters={setStatFilters}
+          disabled={disabled}
+        />
       </CardThemed>
     </Box>
   )
