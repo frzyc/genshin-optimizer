@@ -6,7 +6,7 @@ import {
   StringSelectMenuBuilder,
   StringSelectMenuOptionBuilder,
 } from 'discord.js'
-import { createYattaUrl } from '../../lib/util'
+import { hsrURL } from '../../lib/util'
 import { clean, skillsList } from '../databank'
 
 function getEmbed(
@@ -47,7 +47,7 @@ function baseEmbed(id: CharacterDataKey, name: string) {
     })
     .setAuthor({
       name: name,
-      iconURL: createYattaUrl('avatar/medium', thumbnail),
+      iconURL: hsrURL('avatar/medium', thumbnail),
     })
   //.setColor(elementColors[element])
 }
@@ -68,7 +68,7 @@ function skillEmbed(
   }
   const embed = baseEmbed(id, name).setDescription(clean(text))
   const thumbnail = getAssets(id)[ability]
-  if (thumbnail) embed.setThumbnail(createYattaUrl('skill', thumbnail[0]))
+  if (thumbnail) embed.setThumbnail(hsrURL('skill', thumbnail[0]))
   return embed
 }
 
@@ -94,7 +94,7 @@ function eidolonsEmbed(
   const embed = baseEmbed(id, name).setDescription(clean(text))
   if (data.constellationName) embed.setTitle(data.constellationName)
   const thumbnail = getAssets(id)[`eidolon${showCons[0]}`]
-  if (thumbnail) embed.setThumbnail(createYattaUrl('skill', thumbnail))
+  if (thumbnail) embed.setThumbnail(hsrURL('skill', thumbnail))
   return embed
 }
 

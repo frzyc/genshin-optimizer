@@ -2,20 +2,20 @@
 import * as process from 'process'
 export const cwd = process.env['NX_WORKSPACE_ROOT'] ?? process.cwd()
 
-const AMBR_BASE_URL = 'https://api.ambr.top/assets/UI/'
-export function createAmbrUrl(
+const GI_BASE_URL = 'https://gi.yatta.moe/assets/UI/'
+export function giURL(
   asset: string,
   category = '.',
-  base = AMBR_BASE_URL,
+  base = GI_BASE_URL,
   fileExt = '.png'
 ) {
   return new URL(`${category}/${asset}${fileExt}`, base).toString()
 }
-const YATTA_BASE_URL = 'https://api.yatta.top/hsr/assets/UI/'
-export function createYattaUrl(
+const HSR_BASE_URL = 'https://sr.yatta.moe/hsr/assets/UI/'
+export function hsrURL(
   category: string,
   asset: string,
-  base = YATTA_BASE_URL
+  base = HSR_BASE_URL
 ) {
   const path = asset.split('/')
   const name = path[path.length - 1]

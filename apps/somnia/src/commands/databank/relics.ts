@@ -1,7 +1,7 @@
 import { AssetData } from '@genshin-optimizer/sr/assets-data'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { EmbedBuilder } from 'discord.js'
-import { createYattaUrl } from '../../lib/util'
+import { hsrURL } from '../../lib/util'
 import { clean } from '../archive'
 
 export function relicBank(id: RelicSetKey, name: string, data: any) {
@@ -22,7 +22,7 @@ export function relicBank(id: RelicSetKey, name: string, data: any) {
   let thumbnail = ''
   if ('sphere' in relic) thumbnail = relic.sphere
   else if ('head' in relic) thumbnail = relic.head
-  if (thumbnail) embed.setThumbnail(createYattaUrl('relic', thumbnail))
+  if (thumbnail) embed.setThumbnail(hsrURL('relic', thumbnail))
 
   return {
     content: '',

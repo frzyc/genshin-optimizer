@@ -15,7 +15,7 @@ import {
   StringSelectMenuOptionBuilder,
 } from 'discord.js'
 import { elementColors } from '../../assets/assets'
-import { createAmbrUrl } from '../../lib/util'
+import { giURL } from '../../lib/util'
 import { clean, talentlist, translate } from '../archive'
 import { baseCharStats, getFixed } from '../go/calculator'
 
@@ -62,7 +62,7 @@ function baseEmbed(id: CharacterKey, lang: string) {
     })
     .setAuthor({
       name: getName(id, lang),
-      iconURL: createAmbrUrl(icon),
+      iconURL: giURL(icon),
     })
     .setColor(elementColors[element])
 }
@@ -95,11 +95,11 @@ function profileEmbed(id: CharacterKey, namespace: string, lang: string) {
   embed
     .setAuthor({
       name: getName(id, lang),
-      iconURL: createAmbrUrl(CommonAssetData.elemIcons[element]),
+      iconURL: giURL(CommonAssetData.elemIcons[element]),
     })
     .setDescription(clean(text))
   const thumbnail = getAssets(id).icon
-  if (thumbnail) embed.setThumbnail(createAmbrUrl(thumbnail))
+  if (thumbnail) embed.setThumbnail(giURL(thumbnail))
   return embed
 }
 
@@ -118,7 +118,7 @@ function normalsEmbed(id: CharacterKey, namespace: string, lang: string) {
           '\n\n'
       )
     )
-    .setThumbnail(createAmbrUrl(CommonAssetData.normalIcons[weapon]))
+    .setThumbnail(giURL(CommonAssetData.normalIcons[weapon]))
 }
 
 function skillEmbed(id: CharacterKey, namespace: string, lang: string) {
@@ -127,7 +127,7 @@ function skillEmbed(id: CharacterKey, namespace: string, lang: string) {
     .setTitle(skill.name)
     .setDescription(clean(Object.values(skill.description).flat().join('\n')))
   const thumbnail = getAssets(id).skill
-  if (thumbnail) embed.setThumbnail(createAmbrUrl(thumbnail))
+  if (thumbnail) embed.setThumbnail(giURL(thumbnail))
   return embed
 }
 
@@ -137,7 +137,7 @@ function burstEmbed(id: CharacterKey, namespace: string, lang: string) {
     .setTitle(burst.name)
     .setDescription(clean(Object.values(burst.description).flat().join('\n')))
   const thumbnail = getAssets(id).burst
-  if (thumbnail) embed.setThumbnail(createAmbrUrl(thumbnail))
+  if (thumbnail) embed.setThumbnail(giURL(thumbnail))
   return embed
 }
 
@@ -174,7 +174,7 @@ function passivesEmbed(
   }
   const embed = baseEmbed(id, lang).setDescription(clean(text))
   const thumbnail = getAssets(id)[showPassives[0]]
-  if (thumbnail) embed.setThumbnail(createAmbrUrl(thumbnail))
+  if (thumbnail) embed.setThumbnail(giURL(thumbnail))
   return embed
 }
 
@@ -207,7 +207,7 @@ function constellationsEmbed(
   if (constellationName != 'constellationName')
     embed.setTitle(constellationName)
   const thumbnail = getAssets(id)[`constellation${showCons[0]}`]
-  if (thumbnail) embed.setThumbnail(createAmbrUrl(thumbnail))
+  if (thumbnail) embed.setThumbnail(giURL(thumbnail))
   return embed
 }
 

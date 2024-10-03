@@ -4,7 +4,7 @@ import { i18nInstance } from '@genshin-optimizer/gi/i18n-node'
 import { getArtSetStat } from '@genshin-optimizer/gi/stats'
 import { EmbedBuilder } from 'discord.js'
 import { rarityColors } from '../../assets/assets'
-import { createAmbrUrl } from '../../lib/util'
+import { giURL } from '../../lib/util'
 import { clean, translate } from '../archive'
 
 export async function artifactArchive(id: ArtifactSetKey, lang: string) {
@@ -30,7 +30,7 @@ export async function artifactArchive(id: ArtifactSetKey, lang: string) {
     .setDescription(clean(text))
   const thumbnail =
     AssetData.artifacts[id].flower ?? AssetData.artifacts[id].circlet
-  if (thumbnail) embed.setThumbnail(createAmbrUrl(thumbnail, 'reliquary'))
+  if (thumbnail) embed.setThumbnail(giURL(thumbnail, 'reliquary'))
 
   return {
     content: '',
