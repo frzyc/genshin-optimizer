@@ -207,7 +207,7 @@ const sheet: TalentSheet = {
         {
           node: infoMut(dmgFormulas.charged.dmg, {
             name: ct.chg(`auto.skillParams.4`),
-            multi: 4,
+            multi: 3,
           }),
         },
         {
