@@ -34,4 +34,5 @@ export const sheetHashData = {
   },
   eidolonLvl: '1102721995', //"Eidolon Level:"
   lvl: '982642653', //"Lv."
+  superimpose: '-2008197403', //"Superimposition"
 }

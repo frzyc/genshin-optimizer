@@ -29,9 +29,10 @@ const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
 
 export type LightConeInventoryProps = {
   onAdd?: () => void
+  onEdit?: (id: string) => void
 }
 
-export function LightConeInventory({ onAdd }: LightConeInventoryProps) {
+export function LightConeInventory({ onAdd, onEdit }: LightConeInventoryProps) {
   const { t } = useTranslation('lightCone')
   const { database } = useDatabaseContext()
   const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
@@ -116,7 +117,7 @@ export function LightConeInventory({ onAdd }: LightConeInventoryProps) {
             color="info"
             startIcon={<AddIcon />}
           >
-            {t`addNew`}
+            {t('addNew')}
           </Button>
         </Grid>
       </Grid>
@@ -131,7 +132,15 @@ export function LightConeInventory({ onAdd }: LightConeInventoryProps) {
         <Grid container columns={columns} spacing={1}>
           {lightConeIdsToShow.map((lightConeId) => (
             <Grid item key={lightConeId} xs={1}>
-              <LightConeCard lightConeId={lightConeId} />
+              <LightConeCard
+                lightCone={database.lightCones.get(lightConeId)!}
+                onEdit={() => onEdit?.(lightConeId)}
+                onDelete={() => database.lightCones.remove(lightConeId)}
+                setLocation={(location) =>
+                  database.lightCones.set(lightConeId, { location })
+                }
+                canEquip
+              />
             </Grid>
           ))}
         </Grid>

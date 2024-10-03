@@ -87,7 +87,7 @@ export function RelicInventory({ onAdd, onEdit }: RelicInventoryProps) {
             color="info"
             startIcon={<AddIcon />}
           >
-            {t`addNew`}
+            {t('addNew')}
           </Button>
         </Grid>
       </Grid>

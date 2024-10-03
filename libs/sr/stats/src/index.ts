@@ -1,4 +1,5 @@
 import type {
+  LightConeKey,
   NonTrailblazerCharacterKey,
   TrailblazerGenderedKey,
 } from '@genshin-optimizer/sr/consts'
@@ -48,4 +49,8 @@ export function getInterpolateObject(
       )
     )
   }
+}
+
+export function getLightConeStat(lcKey: LightConeKey) {
+  return allStats.lightCone[lcKey]
 }
