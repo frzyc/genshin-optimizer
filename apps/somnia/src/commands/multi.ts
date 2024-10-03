@@ -37,7 +37,7 @@ async function getMultis(client: Client) {
         multilist[thread.name] = id
       })
     }
-    delete(multilist['Guidelines'])
+    delete multilist['Guidelines']
     console.log('refreshing multi-opt cache')
   }
 }
