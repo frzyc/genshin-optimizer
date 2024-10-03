@@ -25,7 +25,11 @@ export function NumberInputLazy({
   }, [valueProp])
 
   const saveValue = () => {
-    const num = float ? parseFloat(value) : parseInt(value)
+    let num = float ? parseFloat(value) : parseInt(value)
+    if (isNaN(num)) {
+      num = 0
+      setValue(num.toString())
+    }
     if (min !== undefined && num < min) {
       onChange(min)
       setValue(min.toString())

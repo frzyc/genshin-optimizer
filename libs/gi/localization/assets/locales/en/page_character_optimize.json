@@ -1,4 +1,5 @@
 {
+  "specialized": "Specialized:",
   "mainStat": {
     "levelAssTooltip": {
       "title": "Main Stat Level Assumption",
@@ -28,6 +29,22 @@
   "upOptNoResults": "It looks like there aren't any artifacts available for upgrading that could enhance your setup. Your artifact filters might be too restrictive. Alternatively, try the main artifact optimizer to find a better build.",
   "upOptInfo": "The Artifact Upgrader identifies artifacts with high potential to boost the Optimization Target's value, guiding you to artifacts worth leveling up.<br/>As it only swaps one artifact at a time, for the best overall build across all artifacts, use the main artifact optimizer.",
   "upOptEmptyBuild": "You're using a partially empty build. Since the Artifact Upgrader only swaps artifacts individually, completing a set is unlikely. It's recommended to begin with a base build, preferably generated from the main Optimizer.",
+  "upOptShowingNum": "Showing {{count}} out of {{value}} Artifacts",
+  "upOptChart": {
+    "est": " (est.)",
+    "prob": "Prob. upgrade{{est}}: ",
+    "average": "Average increase{{est}}: ",
+    "equipped": "Equipped",
+    "current": "Current on Build",
+    "incLabel": "Relative Increase to Target",
+    "probLabel": "Probability",
+    "const": " Constrained",
+    "exactDist": "Exact{{const}} Distribution",
+    "estimatedDist": "Estimated Distribution",
+    "currentTarget": "Current Target",
+    "currentLine": "Current Target Value",
+    "averageLine": "Average Increase"
+  },
   "excludeArt": {
     "title_exclude": "Excluded Artifacts",
     "title_tooltip": "Add artifacts to this character's exclusion list. Artifacts in the exclusion list will not be considered for build generation.",
@@ -40,6 +57,12 @@
     "deSelectExc": "Click on an artifact to remove it from the exclusion list",
     "includeArtifactTip": "Including an artifact will allow the build generator to use it for this character.",
     "includeArtifactButton": "Include this artifact in optimization"
+  },
+  "optExcludeModal": {
+    "excludeMsg": "Are you sure you want to exclude {{count}} artifacts from build optimization?",
+    "includeMsg": "Are you sure you want to include {{count}} artifacts to build optimization?",
+    "excludeBtn": "Exclude Artifacts",
+    "includeBtn": "Include Artifacts"
   },
   "excludeChar": {
     "title": "Use Equipped Artifacts",
@@ -59,6 +82,8 @@
     },
     "usingState": "Using"
   },
+  "useTeamArts": "Use artifacts in teammates' active builds",
+  "tcBadge": "TC build",
   "allowPartial": "Allow Partial Builds (<5 artifacts)",
   "constraintFilter": {
     "title": "Minimum Build Constraints",
@@ -104,6 +129,9 @@
   "build_other": "<0>{{count}}</0> Builds",
   "thread_one": "<0>{{count}}</0> Thread",
   "thread_other": "<0>{{count}}</0> Threads",
+  "optAlert": {
+    "scalesWith": "The selected Optimization target and constraints scales with: "
+  },
   "targetSelector": {
     "selectOptTarget": "Select an Optimization Target",
     "selectGraphTarget": "Select a Graph Target",
@@ -115,9 +143,14 @@
     "cancel": "Cancel",
     "generateBuilds": "Generate Builds"
   },
+  "buildShowingNum": "Showing <2>{{count}}</2> build generated for <6/>.",
+  "generatedOn": "Build generated on: ",
+  "selectChar": "Select a character to generate builds.",
+  "clearBuildsBtn": "Clear Builds",
   "removeBuildButton": "Remove Build",
   "theorycraftButton": "Theorycraft",
   "currentlyEquippedBuild": "Currently Equipped",
+  "activeBuild": "Active Build",
   "addBuildToList": "Add build to list",
   "graphBuildLabel": "Graph #<1>{{count}}</1>",
   "buildCompleted": "Build Completed",

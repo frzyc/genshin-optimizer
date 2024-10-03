@@ -5,56 +5,72 @@
       "0": {
         "name": "Cloudlancer Art: North Wind",
         "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Dan Heng's ATK to a single enemy.",
-        "shortDesc": "Deals minor Wind DMG to a single enemy."
+        "shortDesc": "Deals minor Wind DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Cloudlancer Art: Torrent",
-        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Dan Heng's ATK to a single enemy.\\nWhen DMG dealt by Skill triggers CRIT Hit, there is a {{4, percent}}% <u>base chance</u> to reduce the target's SPD by {{2, percent}}%, lasting for {{3}} turn(s).",
-        "shortDesc": "Deals Wind DMG to a single enemy. Upon a CRIT Hit, there is a high chance of Slowing the enemy."
+        "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Dan Heng's ATK to a single enemy.<br>When DMG dealt by Skill triggers CRIT Hit, there is a {{4, percent}}% base chance to reduce the target's SPD by {{2, percent}}%, lasting for {{3}} turn(s).",
+        "shortDesc": "Deals Wind DMG to a single enemy. Upon a CRIT Hit, there is a high chance of Slowing the enemy.",
+        "tag": "Single Target"
       }
     },
     "ult": {
       "0": {
         "name": "Ethereal Dream",
         "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Dan Heng's ATK to a single target enemy. If the attacked enemy is Slowed, the multiplier for the DMG dealt by Ultimate increases by <orangeStrong>{{2, percent}}%</orangeStrong>.",
-        "shortDesc": "Deals massive Wind DMG to a single enemy. If the enemy is Slowed, DMG multiplier dealt will be increased."
+        "shortDesc": "Deals massive Wind DMG to a single enemy. If the enemy is Slowed, DMG multiplier dealt will be increased.",
+        "tag": "Single Target"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Superiority of Reach",
+        "fullDesc": "When Dan Heng is the target of an ally's ability, his next attack's Wind RES PEN increases by <orangeStrong>{{1, percent}}%</orangeStrong>. This effect can be triggered again after {{2}} turn(s).",
+        "shortDesc": "When becoming the target of an ally's ability, their next attack's <orangeStrong>Wind RES PEN increases</orangeStrong>. This effect can be triggered again after 2 turns.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Splitting Spearhead",
         "fullDesc": "After Dan Heng uses his Technique, his ATK increases by {{1, percent}}% at the start of the next battle for {{2}} turn(s).",
-        "shortDesc": "After they use their Technique, their ATK is increased at the start of the next battle."
+        "shortDesc": "After they use their Technique, their ATK is increased at the start of the next battle.",
+        "tag": "Enhance"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Hidden Dragon",
         "fullDesc": "When current HP percentage is {{1, percent}}% or lower, reduces the chance of being attacked by enemies.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Faster Than Light",
         "fullDesc": "After launching an attack, there is a {{1, percent}}% fixed chance to increase own SPD by {{2, percent}}% for {{3}} turn(s).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "High Gale",
         "fullDesc": "Basic ATK deals {{1, percent}}% more DMG to Slowed enemies.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Seen and Unseen",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Roaring Dragon and Soaring Sun",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "A Drop of Rain Feeds a Torrent",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "The Troubled Soul Lies in Wait",

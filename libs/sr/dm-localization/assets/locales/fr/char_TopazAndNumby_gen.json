@@ -5,63 +5,79 @@
       "0": {
         "name": "Déficit",
         "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Topaz à un ennemi unique.",
-        "shortDesc": "Inflige des DGT de feu mineurs à un ennemi."
+        "shortDesc": "Inflige des DGT de feu mineurs à un ennemi.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Des difficultés de paiement ?",
-        "fullDesc": "Applique Reconnaissance de dette à une cible ennemie unique, ce qui augmente les DGT d'<u>attaque de suivi</u> qu'elle subit de <orangeStrong>{{2, percent}}%</orangeStrong>. Reconnaissance de dette ne s'applique qu'à sa dernière cible. Si aucun ennemi sur le champ de bataille n'est affecté par Reconnaissance de dette au début du tour ou pendant l'action d'un allié, Topaz applique Reconnaissance de dette à une cible ennemie aléatoire.\\nCompti inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Topaz à cette cible. Les DGT infligés par cette compétence sont considérés comme provenant d'une <u>attaque de suivi</u>.",
-        "shortDesc": "Applique Reconnaissance de dette à un ennemi unique, <orangeStrong>ce qui augmente les DGT d'attaque de suivi qu'il subit</orangeStrong>. Compti inflige des DGT de feu à la cible."
+        "fullDesc": "Applique Reconnaissance de dette à une cible ennemie unique, ce qui augmente les DGT d'attaque de suivi qu'elle subit de <orangeStrong>{{2, percent}}%</orangeStrong>. Reconnaissance de dette ne s'applique qu'à sa dernière cible. Si aucun ennemi sur le champ de bataille n'est affecté par Reconnaissance de dette au début du tour ou pendant l'action d'un allié, Topaz applique Reconnaissance de dette à une cible ennemie aléatoire.<br>Compti inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Topaz à cette cible. Les DGT infligés par cette compétence sont considérés comme provenant d'une attaque de suivi.",
+        "shortDesc": "Applique Reconnaissance de dette à un ennemi unique, <orangeStrong>ce qui augmente les DGT d'attaque de suivi qu'il subit</orangeStrong>. Compti inflige des DGT de feu à la cible.",
+        "tag": "Cible unique"
       }
     },
     "ult": {
       "0": {
         "name": "Pertes et profits",
         "fullDesc": "Compti entre dans l'état Inflation exponentielle. Son multiplicateur de DGT augmente de <orangeStrong>{{1, percent}}%</orangeStrong> et ses DGT critiques de <orangeStrong>{{2, percent}}%</orangeStrong>. D'autre part, lorsque des ennemis affectés par Reconnaissance de dette sont touchés par l'ATQ normale, la compétence ou l'ultime d'un allié, l'action de Compti est avancée de {{3, percent}}%. Compti quitte l'état Inflation exponentielle après avoir utilisé {{4}} attaques.",
-        "shortDesc": "Compti entre dans l'état Inflation exponentielle et <orangeStrong>son multiplicateur de DGT ainsi que ses DGT critiques augmentent</orangeStrong>."
+        "shortDesc": "Compti entre dans l'état Inflation exponentielle et <orangeStrong>son multiplicateur de DGT ainsi que ses DGT critiques augmentent</orangeStrong>.",
+        "tag": "Renforcement"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Magoret porteur",
+        "fullDesc": "Invoque Compti en début de combat. Compti a une VIT de {{1}} par défaut. Lorsque Compti effectue une action, il lance des attaques de suivi sur la cible de Reconnaissance de dette, lui infligeant des DGT de feu équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Topaz.<br>L'action de Compti avance de {{3, percent}}% lorsque les ennemis victimes de Reconnaissance de dette subissent des attaques de suivi de la part des alliés. L'action de Compti ne peut pas être avancée au cours de son propre tour.<br>Compti disparaît quand Topaz tombe à terre.",
+        "shortDesc": "Invoque <orangeStrong>Compti</orangeStrong> en début de combat. <orangeStrong>Compti inflige des attaques de suivi à la cible de Reconnaissance de dette</orangeStrong> lorsqu'il effectue une action. L'action de Compti <orangeStrong>est avancée</orangeStrong> lorsque les ennemis avec Reconnaissance de dette subissent des DGT de la part d'attaques de suivi.",
+        "tag": "Cible unique"
       }
     },
     "technique": {
       "0": {
         "name": "Subvention explicite",
-        "fullDesc": "Topaz invoque Compti lorsqu'elle est en exploration. Compti cherche automatiquement les coffres de base et les Magorets dans un rayon défini.\\nLa technique de Topaz lui permet de régénérer {{1}} points d'énergie après la première attaque de Compti au cours du combat suivant.\\nSi Topaz fait toujours partie de l'équipe après avoir utilisé sa technique et vaincu des ennemis en phase d'exploration, vous recevez un petit bonus de crédits. Vous pouvez recevoir un maximum de {{2}} crédits bonus par jour calendaire.\\nVous obtenez une petite quantité de fragments cosmiques supplémentaires, et avez une faible chance d'obtenir 1 bizarrerie aléatoire après avoir utilisé sa technique et avoir vaincu des ennemis dans l'Univers simulé ou parallèle.",
-        "shortDesc": "<orangeStrong>Invoque Compti à vos côtés</orangeStrong> lorsque vous êtes en exploration. Compti cherche automatiquement les <orangeStrong>coffres de base et Magorets à proximité</orangeStrong>. L'utilisation de la technique permet à Topaz de régénérer des points d'énergie lors de la première attaque de Compti au prochain combat."
+        "fullDesc": "Topaz invoque Compti lorsqu'elle est en exploration. Compti cherche automatiquement les coffres de base et les Magorets dans un rayon défini.<br>La technique de Topaz lui permet de régénérer {{1}} points d'énergie après la première attaque de Compti au cours du combat suivant.<br>Si Topaz fait toujours partie de l'équipe après avoir utilisé sa technique et vaincu des ennemis en phase d'exploration, vous recevez un petit bonus de crédits. Vous pouvez recevoir un maximum de {{2}} crédits bonus par jour calendaire.<br>Vous obtenez une petite quantité de fragments cosmiques supplémentaires, et avez une faible chance d'obtenir 1 bizarrerie aléatoire après avoir utilisé sa technique et avoir vaincu des ennemis dans l'Univers simulé ou parallèle.",
+        "shortDesc": "<orangeStrong>Invoque Compti à vos côtés</orangeStrong> lorsque vous êtes en exploration. Compti cherche automatiquement les <orangeStrong>coffres de base et Magorets à proximité</orangeStrong>. L'utilisation de la technique permet à Topaz de régénérer des points d'énergie lors de la première attaque de Compti au prochain combat.",
+        "tag": "Renforcement"
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Décroissance",
         "fullDesc": "Lorsque Topaz utilise une ATQ normale pour infliger des DGT, l'attaque est considérée comme une attaque de suivi.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Turbulences financières",
         "fullDesc": "Augmente les DGT infligés par Topaz et Compti aux cibles ennemies qui ont une Faiblesse au feu de {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Loi du marché",
         "fullDesc": "Lorsque Compti attaque dans l'état Inflation exponentielle, Topaz régénère {{1}} points d'énergie supplémentaires.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
   "ranks": {
     "1": {
       "name": "Marché à terme",
-      "desc": "Lorsque des ennemis affectés par Reconnaissance de dette subissent des attaques de suivi, ils entrent dans l'état Débiteur. Cet effet ne peut s'activer qu'une fois par attaque.\\nDébiteur augmente les DGT critiques des attaques de suivi infligées aux cibles ennemies de {{1, percent}}%, cumulable jusqu'à {{2}} fois. Débiteur se dissipe en même temps que Reconnaissance de dette."
+      "desc": "Lorsque des ennemis affectés par Reconnaissance de dette subissent des attaques de suivi, ils entrent dans l'état Débiteur. Cet effet ne peut s'activer qu'une fois par attaque.<br>Débiteur augmente les DGT critiques des attaques de suivi infligées aux cibles ennemies de {{1, percent}}%, cumulable jusqu'à {{2}} fois. Débiteur se dissipe en même temps que Reconnaissance de dette."
     },
     "2": {
       "name": "Acquisition de bonne foi",
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Affaire à saisir",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "4": {
       "name": "Transaction rapide",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Loi de l'offre et de la demande",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "6": {
       "name": "Prime d'intéressement",

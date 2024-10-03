@@ -1,0 +1,24 @@
+{
+  "name": "Nanh Sơn Vương",
+  "description": {
+    "0": "Thanh kiếm lớn được đúc từ đá xanh thuần khiết. Vì trọng lượng của nó vượt xa binh khí thông thường nên được gọi là Sơn Vương Kongamato."
+  },
+  "passiveName": "Thợ Săn Lam Ngọc",
+  "passiveDescription": {
+    "0": {
+      "0": "Sau khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch, sẽ nhận được 1 tầng \"Chúc Phúc Vườn Treo\", hiệu quả này mỗi 0.5s tối đa kích hoạt 1 lần. Nhân vật trong đội gần đó sau khi kích hoạt phản ứng Thiêu Đốt hoặc Bung Tỏa, người trang bị sẽ nhận được 3 tầng Chúc Phúc Vườn Treo, hiệu quả này mỗi 2s tối đa kích hoạt 1 lần, nhân vật trong đội không ra trận cũng có thể kích hoạt. Chúc Phúc Vườn Treo: Sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ tăng <cryo>10%</cryo> trong 6s, tối đa cộng dồn 6 tầng, mỗi tầng tính giờ riêng."
+    },
+    "1": {
+      "0": "Sau khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch, sẽ nhận được 1 tầng \"Chúc Phúc Vườn Treo\", hiệu quả này mỗi 0.5s tối đa kích hoạt 1 lần. Nhân vật trong đội gần đó sau khi kích hoạt phản ứng Thiêu Đốt hoặc Bung Tỏa, người trang bị sẽ nhận được 3 tầng Chúc Phúc Vườn Treo, hiệu quả này mỗi 2s tối đa kích hoạt 1 lần, nhân vật trong đội không ra trận cũng có thể kích hoạt. Chúc Phúc Vườn Treo: Sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ tăng <cryo>12.5%</cryo> trong 6s, tối đa cộng dồn 6 tầng, mỗi tầng tính giờ riêng."
+    },
+    "2": {
+      "0": "Sau khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch, sẽ nhận được 1 tầng \"Chúc Phúc Vườn Treo\", hiệu quả này mỗi 0.5s tối đa kích hoạt 1 lần. Nhân vật trong đội gần đó sau khi kích hoạt phản ứng Thiêu Đốt hoặc Bung Tỏa, người trang bị sẽ nhận được 3 tầng Chúc Phúc Vườn Treo, hiệu quả này mỗi 2s tối đa kích hoạt 1 lần, nhân vật trong đội không ra trận cũng có thể kích hoạt. Chúc Phúc Vườn Treo: Sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ tăng <cryo>15%</cryo> trong 6s, tối đa cộng dồn 6 tầng, mỗi tầng tính giờ riêng."
+    },
+    "3": {
+      "0": "Sau khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch, sẽ nhận được 1 tầng \"Chúc Phúc Vườn Treo\", hiệu quả này mỗi 0.5s tối đa kích hoạt 1 lần. Nhân vật trong đội gần đó sau khi kích hoạt phản ứng Thiêu Đốt hoặc Bung Tỏa, người trang bị sẽ nhận được 3 tầng Chúc Phúc Vườn Treo, hiệu quả này mỗi 2s tối đa kích hoạt 1 lần, nhân vật trong đội không ra trận cũng có thể kích hoạt. Chúc Phúc Vườn Treo: Sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ tăng <cryo>17.5%</cryo> trong 6s, tối đa cộng dồn 6 tầng, mỗi tầng tính giờ riêng."
+    },
+    "4": {
+      "0": "Sau khi Kỹ Năng Nguyên Tố đánh trúng kẻ địch, sẽ nhận được 1 tầng \"Chúc Phúc Vườn Treo\", hiệu quả này mỗi 0.5s tối đa kích hoạt 1 lần. Nhân vật trong đội gần đó sau khi kích hoạt phản ứng Thiêu Đốt hoặc Bung Tỏa, người trang bị sẽ nhận được 3 tầng Chúc Phúc Vườn Treo, hiệu quả này mỗi 2s tối đa kích hoạt 1 lần, nhân vật trong đội không ra trận cũng có thể kích hoạt. Chúc Phúc Vườn Treo: Sát thương Kỹ Năng Nguyên Tố và Kỹ Năng Nộ tăng <cryo>20%</cryo> trong 6s, tối đa cộng dồn 6 tầng, mỗi tầng tính giờ riêng."
+    }
+  }
+}

@@ -1,10 +1,6 @@
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { CardThemed, CustomNumberInput } from '@genshin-optimizer/common/ui'
 import { objMap, toPercent } from '@genshin-optimizer/common/util'
-import {
-  artSubstatRollData,
-  type SubstatKey,
-} from '@genshin-optimizer/gi/consts'
+import { artSubstatRollData } from '@genshin-optimizer/gi/consts'
 import type { BuildTc } from '@genshin-optimizer/gi/db'
 import {
   TeamCharacterContext,
@@ -16,18 +12,13 @@ import type { TCWorkerResult } from '@genshin-optimizer/gi/solver-tc'
 import {
   TCWorker,
   getMinSubAndOtherRolls,
-  getScalesWith,
-  optimizeTcGetNodes,
 } from '@genshin-optimizer/gi/solver-tc'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
-import { StatIcon } from '@genshin-optimizer/gi/svgicons'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
-  ArtifactStatWithUnit,
   BuildAlert,
   DataContext,
   HitModeToggle,
-  OptimizationTargetContext,
   ReactionToggle,
   StatDisplayComponent,
   getBuildTcArtifactData,
@@ -35,6 +26,7 @@ import {
   getTeamDataCalc,
   initialBuildStatus,
   isDev,
+  optimizeNodesForScaling,
 } from '@genshin-optimizer/gi/ui'
 import { getSubstatValue } from '@genshin-optimizer/gi/util'
 import CalculateIcon from '@mui/icons-material/Calculate'
@@ -47,11 +39,12 @@ import CharacterProfileCard from '../../../CharProfileCard'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
+import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
 import { ArtifactMainStatAndSetEditor } from './ArtifactMainStatAndSetEditor'
 import { ArtifactSubCard } from './ArtifactSubCard'
-import { BuildConstaintCard } from './BuildConstaintCard'
 import GcsimButton from './GcsimButton'
 import KQMSButton from './KQMSButton'
+import ScalesWith from './ScalesWith'
 import { WeaponEditorCard } from './WeaponEditorCard'
 export default function TabTheorycraft() {
   const { t } = useTranslation('page_character')
@@ -63,7 +56,8 @@ export default function TabTheorycraft() {
     teamChar: { key: characterKey, optConfigId },
   } = useContext(TeamCharacterContext)
   const { buildTc, setBuildTc } = useContext(BuildTcContext)
-  const { optimizationTarget } = useOptConfig(optConfigId)!
+  const optConfig = useOptConfig(optConfigId)!
+  const { optimizationTarget, statFilters } = optConfig
 
   const weaponTypeKey = getCharStat(characterKey).weaponType
 
@@ -120,20 +114,6 @@ export default function TabTheorycraft() {
     [buildTc]
   )
 
-  const { scalesWith } = useMemo(() => {
-    const { nodes } = optimizeTcGetNodes(
-      dataContextValue.teamData,
-      characterKey,
-      buildTc,
-      optimizationTarget
-    )
-    const scalesWith = nodes ? getScalesWith(nodes) : new Set<SubstatKey>()
-    return {
-      nodes,
-      scalesWith,
-    }
-  }, [dataContextValue.teamData, characterKey, buildTc, optimizationTarget])
-
   const optimizeSubstats = (apply: boolean) => {
     if (!workerRef.current) return
     /**
@@ -150,13 +130,14 @@ export default function TabTheorycraft() {
       getBuildTcWeaponData(buildTc)
     )
     if (!tempTeamData) return
-    const { nodes } = optimizeTcGetNodes(
+    const { nodes, valueFilter } = optimizeNodesForScaling(
       tempTeamData,
       characterKey,
-      buildTc,
-      optimizationTarget
+      optimizationTarget,
+      statFilters
     )
-    workerRef.current.postMessage({ buildTc, nodes })
+    if (!nodes || !valueFilter) return
+    workerRef.current.postMessage({ buildTc, nodes, valueFilter })
     setStatus((s) => ({
       ...s,
       type: 'active',
@@ -262,17 +243,15 @@ export default function TabTheorycraft() {
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
             <CardThemed bgt="light" sx={{ flexGrow: 1, p: 1 }}>
-              <OptimizationTargetContext.Provider value={optimizationTarget}>
-                {dataContextValueWithCompare ? (
-                  <DataContext.Provider value={dataContextValueWithCompare}>
-                    <StatDisplayComponent
-                      columns={{ xs: 1, sm: 1, md: 2, lg: 2, xl: 3 }}
-                    />
-                  </DataContext.Provider>
-                ) : (
-                  <Skeleton variant="rectangular" width="100%" height={500} />
-                )}
-              </OptimizationTargetContext.Provider>
+              {dataContextValueWithCompare ? (
+                <DataContext.Provider value={dataContextValueWithCompare}>
+                  <StatDisplayComponent
+                    columns={{ xs: 1, sm: 1, md: 2, lg: 2, xl: 3 }}
+                  />
+                </DataContext.Provider>
+              ) : (
+                <Skeleton variant="rectangular" width="100%" height={500} />
+              )}
             </CardThemed>
           </Grid>
         </Grid>
@@ -295,7 +274,7 @@ export default function TabTheorycraft() {
                   weaponTypeKey={weaponTypeKey}
                   disabled={solving}
                 />
-                <BuildConstaintCard disabled={solving} />
+                <StatFilterCard disabled={solving} />
               </Grid>
               <Grid item sx={{ flexGrow: -1 }}>
                 <ArtifactMainStatAndSetEditor disabled={solving} />
@@ -336,7 +315,7 @@ export default function TabTheorycraft() {
                 value={distributedSubstats}
                 disabled={!optimizationTarget || solving}
                 onChange={(v) => v !== undefined && setDistributedSubstats(v)}
-                endAdornment={'Substats'}
+                endAdornment={t`tabTheorycraft.distInput`}
                 sx={{
                   borderRadius: 1,
                   px: 1,
@@ -385,36 +364,7 @@ export default function TabTheorycraft() {
                 Log Optimized Substats
               </Button>
             )}
-            {!!scalesWith.size && (
-              <Alert severity="info" variant="filled">
-                <Trans t={t} i18nKey="tabTheorycraft.optAlert.scalesWith">
-                  The selected Optimization target and constraints scales with:{' '}
-                </Trans>
-                {[...scalesWith]
-                  .map((k) => (
-                    <strong key={k}>
-                      <StatIcon statKey={k} iconProps={iconInlineProps} />
-                      <ArtifactStatWithUnit statKey={k} />
-                    </strong>
-                  ))
-                  .flatMap((value, index, array) => {
-                    if (index === array.length - 2)
-                      return [value, <span key="and">, and </span>]
-                    if (index === array.length - 1) return value
-                    return [value, <span key={index}>, </span>]
-                  })}
-                <Trans t={t} i18nKey="tabTheorycraft.optAlert.distribute">
-                  . The solver will only distribute stats to these substats.
-                </Trans>{' '}
-                {minOtherRolls > 0 && (
-                  <Trans t={t} i18nKey="tabTheorycraft.optAlert.feasibilty">
-                    There may be additional leftover substats that should be
-                    distributed to non-scaling stats to ensure the solution is
-                    feasible.
-                  </Trans>
-                )}
-              </Alert>
-            )}
+            <ScalesWith minOtherRolls={minOtherRolls} />
             <BuildAlert
               status={status}
               characterKey={characterKey}

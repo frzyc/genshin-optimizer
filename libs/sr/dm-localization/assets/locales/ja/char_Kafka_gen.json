@@ -5,56 +5,72 @@
       "0": {
         "name": "{RUBY_B#や}止{RUBY_E#}まない{RUBY_B#よる}夜{RUBY_E#}の{RUBY_B#けんそう}喧騒{RUBY_E#}",
         "fullDesc": "指定した敵単体にカフカの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の雷属性ダメージを与える。"
+        "shortDesc": "敵単体に少量の雷属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#つき}月{RUBY_E#}{RUBY_B#あ}明{RUBY_E#}かりが{RUBY_B#な}撫{RUBY_E#}でる{RUBY_B#れんめん}連綿{RUBY_E#}",
-        "fullDesc": "指定した敵単体にカフカの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性ダメージを与え、隣接する敵にカフカの攻撃力<orangeStrong>{{3, percent}}%</orangeStrong>分の雷属性ダメージを与える。\\n指定した敵が持続ダメージ系デバフである場合、付与された全持続ダメージ系デバフが、本来のダメージ<orangeStrong>{{2, percent}}%</orangeStrong>分のダメージを発生する。",
-        "shortDesc": "敵単体に雷属性ダメージを与え、隣接する敵に少量の雷属性ダメージを与える。\\nメインターゲットに持続ダメージ系デバフがある場合、持続ダメージ系デバフが<orangeStrong>さらにダメージを1回発生</orangeStrong>する。"
+        "fullDesc": "指定した敵単体にカフカの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性ダメージを与え、隣接する敵にカフカの攻撃力<orangeStrong>{{3, percent}}%</orangeStrong>分の雷属性ダメージを与える。<br>指定した敵が持続ダメージ系デバフである場合、付与された全持続ダメージ系デバフが、本来のダメージ<orangeStrong>{{2, percent}}%</orangeStrong>分のダメージを発生する。",
+        "shortDesc": "敵単体に雷属性ダメージを与え、隣接する敵に少量の雷属性ダメージを与える。<br>メインターゲットに持続ダメージ系デバフがある場合、持続ダメージ系デバフが<orangeStrong>さらにダメージを1回発生</orangeStrong>する。",
+        "tag": "拡散攻撃"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#ひげき}悲劇{RUBY_E#}{RUBY_B#さいは}最果{RUBY_E#}ての{RUBY_B#せんおん}顫音{RUBY_E#}",
-        "fullDesc": "敵全体にカフカの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性ダメージを与え、{{2, percent}}%の<u>基礎確率</u>で攻撃を受けた敵を感電状態にし、付与された感電状態が本来のダメージ<orangeStrong>{{5, percent}}%</orangeStrong>分のダメージを発生する。感電状態は{{3}}ターン継続。\\n感電状態の敵はターンが回ってくるたびに、カフカの攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の雷属性持続ダメージを受ける。",
-        "shortDesc": "敵全体に少量の雷属性ダメージを与え、高確率で<orangeStrong>感電状態を付与</orangeStrong>する。\\n敵が感電状態の場合、感電状態が<orangeStrong>さらにダメージを1回発生</orangeStrong>する。"
+        "fullDesc": "敵全体にカフカの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性ダメージを与え、{{2, percent}}%の基礎確率で攻撃を受けた敵を感電状態にし、付与された感電状態が本来のダメージ<orangeStrong>{{5, percent}}%</orangeStrong>分のダメージを発生する。感電状態は{{3}}ターン継続。<br>感電状態の敵はターンが回ってくるたびに、カフカの攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の雷属性持続ダメージを受ける。",
+        "shortDesc": "敵全体に少量の雷属性ダメージを与え、高確率で<orangeStrong>感電状態を付与</orangeStrong>する。<br>敵が感電状態の場合、感電状態が<orangeStrong>さらにダメージを1回発生</orangeStrong>する。",
+        "tag": "全体攻撃"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#やさ}優{RUBY_E#}しさもまた{RUBY_B#ざんこく}残酷{RUBY_E#}",
+        "fullDesc": "カフカ以外の味方が敵に通常攻撃を行った後、カフカは追加攻撃を行い、その敵にカフカの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性ダメージを与え、{{2, percent}}%の基礎確率で攻撃を受けた敵を必殺技が与えるものと同じ感電状態にする、{{3}}ターン継続。この効果はターンが回って来るたびに1回まで発動できる。",
+        "shortDesc": "カフカ以外の味方が敵に通常攻撃を行った後、カフカは追加攻撃を行い、その敵に雷属性ダメージを与え、高確率で<orangeStrong>感電状態を付与</orangeStrong>する。この効果はターンが回ってくるたびに1回まで発動できる。",
+        "tag": "単体攻撃"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#ゆる}許{RUBY_E#}しは{RUBY_B#じひ}慈悲{RUBY_E#}に{RUBY_B#あら}非{RUBY_E#}ず",
-        "fullDesc": "一定範囲内のすべての敵を攻撃。戦闘に入った後、敵全体にカフカの攻撃力{{3, percent}}%分の雷属性ダメージを与え、{{1, percent}}%の<u>基礎確率</u>で敵単体それぞれを、必殺技が与えるものと同じ感電状態にする、{{2}}ターン継続。",
-        "shortDesc": "範囲内のすべての敵を攻撃。戦闘に入った後、敵全体に少量の雷属性ダメージを与え、高確率で<orangeStrong>感電状態を付与</orangeStrong>する。"
+        "fullDesc": "一定範囲内のすべての敵を攻撃。戦闘に入った後、敵全体にカフカの攻撃力{{3, percent}}%分の雷属性ダメージを与え、{{1, percent}}%の基礎確率で敵単体それぞれを、必殺技が与えるものと同じ感電状態にする、{{2}}ターン継続。",
+        "shortDesc": "範囲内のすべての敵を攻撃。戦闘に入った後、敵全体に少量の雷属性ダメージを与え、高確率で<orangeStrong>感電状態を付与</orangeStrong>する。",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#さいな}苛{RUBY_E#}み",
         "fullDesc": "必殺技を発動した時、敵は「付与された感電状態がダメージを発生する」から「付与されたすべての持続ダメージ系デバフがダメージを発生する」に変更される。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#りゃくだつ}略奪{RUBY_E#}",
         "fullDesc": "感電状態の敵が倒された時、カフカはさらにEPを{{1}}回復する。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "いばら",
         "fullDesc": "必殺技、秘技、天賦による追加攻撃が敵に感電状態を付与する基礎確率+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

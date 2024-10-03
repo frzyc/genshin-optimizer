@@ -5,66 +5,84 @@
       "0": {
         "name": "Farewell Hit",
         "fullDesc": "สร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของผู้บุกเบิก แก่ศัตรูที่กำหนดหนึ่งตัว",
-        "shortDesc": "สร้าง DMG กายภาพเล็กน้อย แก่ฝ่ายศัตรูหนึ่งตัว"
+        "shortDesc": "สร้าง DMG กายภาพเล็กน้อย แก่ฝ่ายศัตรูหนึ่งตัว",
+        "tag": "โจมตีเดี่ยว"
       }
     },
     "skill": {
       "0": {
         "name": "RIP Home Run",
         "fullDesc": "สร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของผู้บุกเบิก แก่ศัตรูที่กำหนดหนึ่งตัว รวมถึงเป้าหมายที่อยู่ใกล้เคียงด้วย",
-        "shortDesc": "สร้าง DMG กายภาพแก่ฝ่ายศัตรูหนึ่งตัว รวมถึงตัวที่อยู่ใกล้เคียง กับเป้าหมายด้วย"
+        "shortDesc": "สร้าง DMG กายภาพแก่ฝ่ายศัตรูหนึ่งตัว รวมถึงตัวที่อยู่ใกล้เคียง กับเป้าหมายด้วย",
+        "tag": "กระจาย"
       }
     },
     "ult": {
       "0": {
         "name": "Stardust Ace",
-        "fullDesc": "เลือกหนึ่งในสองโหมดนี้โจมตี เพื่อปล่อยการโจมตีเต็มรูปแบบ\\nBlowout: Farewell Hit จะสร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของผู้บุกเบิก แก่ศัตรูที่กำหนดหนึ่งตัว\\nBlowout: RIP Home Run จะสร้าง DMG กายภาพ <orangeStrong>{{2, percent}}%</orangeStrong> ของ ATK ของผู้บุกเบิก แก่ศัตรูที่กำหนดหนึ่งตัว และสร้าง DMG กายภาพ <orangeStrong>{{3, percent}}%</orangeStrong> ของ ATK ของผู้บุกเบิก แก่ศัตรูที่อยู่ใกล้เคียงกับเป้าหมายด้วย",
-        "shortDesc": "เลือกการโจมตีเดี่ยว หรือการโจมตีแบบกระจาย เพื่อโจมตีอย่างเต็มที่"
+        "fullDesc": "เลือกหนึ่งในสองโหมดนี้โจมตี เพื่อปล่อยการโจมตีเต็มรูปแบบ<br>Blowout: Farewell Hit จะสร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของผู้บุกเบิก แก่ศัตรูที่กำหนดหนึ่งตัว<br>Blowout: RIP Home Run จะสร้าง DMG กายภาพ <orangeStrong>{{2, percent}}%</orangeStrong> ของ ATK ของผู้บุกเบิก แก่ศัตรูที่กำหนดหนึ่งตัว และสร้าง DMG กายภาพ <orangeStrong>{{3, percent}}%</orangeStrong> ของ ATK ของผู้บุกเบิก แก่ศัตรูที่อยู่ใกล้เคียงกับเป้าหมายด้วย",
+        "shortDesc": "เลือกการโจมตีเดี่ยว หรือการโจมตีแบบกระจาย เพื่อโจมตีอย่างเต็มที่",
+        "tag": "เสริมพลัง"
       },
       "1": {
         "name": "Blowout: Farewell Hit",
         "fullDesc": "สร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของผู้บุกเบิก แก่ศัตรูที่กำหนดหนึ่งตัว",
-        "shortDesc": "สร้าง DMG กายภาพ อย่างรุนแรงแก่ฝ่ายศัตรูหนึ่งตัว"
+        "shortDesc": "สร้าง DMG กายภาพ อย่างรุนแรงแก่ฝ่ายศัตรูหนึ่งตัว",
+        "tag": "โจมตีเดี่ยว"
       },
       "2": {
         "name": "Blowout: RIP Home Run",
         "fullDesc": "สร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของผู้บุกเบิก แก่ศัตรูที่กำหนดหนึ่งตัว พร้อมกับสร้าง DMG กายภาพ <orangeStrong>{{2, percent}}%</orangeStrong> ของ ATK ของผู้บุกเบิก แก่เป้าหมายที่อยู่ใกล้เคียงด้วย",
-        "shortDesc": "สร้าง DMG กายภาพแก่ฝ่ายศัตรูหนึ่งตัว รวมถึงตัวที่อยู่ใกล้เคียง กับเป้าหมายด้วย"
+        "shortDesc": "สร้าง DMG กายภาพแก่ฝ่ายศัตรูหนึ่งตัว รวมถึงตัวที่อยู่ใกล้เคียง กับเป้าหมายด้วย",
+        "tag": "กระจาย"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Perfect Pickoff",
+        "fullDesc": "ทุกครั้งที่ทำลายจุดอ่อนของศัตรูเป้าหมายได้ ATK จะเพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> โดยเอฟเฟกต์นี้สามารถซ้อนทับได้สูงสุด {{2}} ชั้น",
+        "shortDesc": "",
+        "tag": "เสริมพลัง"
       }
     },
     "technique": {
       "0": {
         "name": "Immortal Third Strike",
         "fullDesc": "หลังจากใช้เทคนิคแล้ว จะฟื้นฟู HP ของฝ่ายตัวเองทั้งหมดทันที {{1, percent}}% ของ HP สูงสุดของแต่ละตัว",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "ฟื้นฟู"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Ready for Battle",
         "fullDesc": "เมื่อเริ่มต้นการต่อสู้ จะฟื้นฟูพลังงาน {{1}} หน่วยทันที",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Perseverance",
         "fullDesc": "เอฟเฟกต์ของพรสวรรค์แต่ละชั้นจะทำให้ DEF ของผู้บุกเบิกเพิ่มขึ้น {{1, percent}}%",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Fighting Will",
         "fullDesc": "เมื่อใช้สกิลต่อสู้หรือท่าไม้ตาย \"Blowout: RIP Home Run\" จะสร้าง DMG แก่ศัตรูเป้าหมายที่กำหนดเพิ่มขึ้น {{1, percent}}%",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -75,7 +93,7 @@
     },
     "2": {
       "name": "An Unwilling Host",
-      "desc": "หลังจากโจมตีแล้ว หากโจมตีโดนศัตรูเป้าหมาย ที่มีจุดอ่อนกายภาพ จะฟื้นฟู HP {{1, percent}}%\\nของ ATK ของผู้บุกเบิก"
+      "desc": "หลังจากโจมตีแล้ว หากโจมตีโดนศัตรูเป้าหมาย ที่มีจุดอ่อนกายภาพ จะฟื้นฟู HP {{1, percent}}%<br>ของ ATK ของผู้บุกเบิก"
     },
     "3": {
       "name": "A Leading Whisper",

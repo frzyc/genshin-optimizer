@@ -46,6 +46,7 @@ import EngulfingLightning from './EngulfingLightning'
 import EverlastingMoonglow from './EverlastingMoonglow'
 import EyeOfPerception from './EyeOfPerception'
 import FadingTwilight from './FadingTwilight'
+import FangOfTheMountainKing from './FangOfTheMountainKing'
 import FavoniusCodex from './FavoniusCodex'
 import FavoniusGreatsword from './FavoniusGreatsword'
 import FavoniusLance from './FavoniusLance'
@@ -242,6 +243,7 @@ const data = {
   EverlastingMoonglow,
   EyeOfPerception,
   FadingTwilight,
+  FangOfTheMountainKing,
   FavoniusCodex,
   FavoniusGreatsword,
   FavoniusLance,

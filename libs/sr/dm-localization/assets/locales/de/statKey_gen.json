@@ -1,5 +1,6 @@
 {
   "spd": "GES",
+  "spd_": "GES",
   "hp": "LP",
   "hp_": "LP",
   "atk": "ANG",
@@ -8,7 +9,7 @@
   "def_": "VTD",
   "crit_": "KRIT-Rate",
   "crit_dmg_": "KRIT-SCH",
-  "brEff_": "Brucheffekt",
+  "brEffect_": "Brucheffekt",
   "eff_": "Effekt-Trefferrate",
   "eff_res_": "Effekt-WDS",
   "enerRegen_": "Energie-Wiederherstellungsrate",
@@ -19,5 +20,8 @@
   "wind_dmg_": "Wind-SCH-Erhöhung",
   "lightning_dmg_": "Blitz-SCH-Erhöhung",
   "quantum_dmg_": "Quanten-SCH-Erhöhung",
-  "imaginary_dmg_": "Erhöhung des imaginären SCH"
+  "imaginary_dmg_": "Erhöhung des imaginären SCH",
+  "dmg_": "SCH-Erhöhung",
+  "weakness_": "Schwächebruch-Effizienz",
+  "resPen_": "WDS-DUR"
 }

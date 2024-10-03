@@ -1,7 +1,4 @@
-import {
-  CustomNumberInput,
-  CustomNumberInputButtonGroupWrapper,
-} from '@genshin-optimizer/common/ui'
+import { NumberInputLazy } from '@genshin-optimizer/common/ui'
 import { objPathValue } from '@genshin-optimizer/common/util'
 import type { StatFilterSetting, StatFilters } from '@genshin-optimizer/gi/db'
 import { DataContext, resolveInfo } from '@genshin-optimizer/gi/ui'
@@ -11,7 +8,13 @@ import {
   CheckBoxOutlineBlank,
   DeleteForever,
 } from '@mui/icons-material'
-import { Button, ButtonGroup } from '@mui/material'
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  IconButton,
+  InputAdornment,
+} from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import OptimizationTargetSelector from './OptimizationTargetSelector'
@@ -27,6 +30,7 @@ export default function OptimizationTargetEditorList({
   setStatFilters,
   disabled = false,
 }: OptimizationTargetEditorListProps) {
+  const { t } = useTranslation('page_character_optimize')
   const setTarget = useCallback(
     (path: string[], oldPath?: string[], oldIndex?: number) => {
       const statFilters_ = { ...statFilters }
@@ -104,21 +108,23 @@ export default function OptimizationTargetEditorList({
           />
         ))
       )}
-      <OptimizationTargetEditorItem
-        setTarget={setTarget}
-        delTarget={delTarget}
-        setValue={setTargetValue}
-        setDisabled={setTargetDisabled}
+      <OptimizationTargetSelector
+        showEmptyTargets
+        setTarget={(target) => setTarget(target)}
+        defaultText={t('targetSelector.selectBuildTarget')}
         disabled={disabled}
+        targetSelectorModalProps={{
+          excludeSections: ['custom', 'bounsStats', 'character', 'teamBuff'],
+        }}
       />
     </>
   )
 }
 
 type OptimizationTargetEditorItemProps = {
-  path?: string[]
-  setting?: StatFilterSetting
-  index?: number
+  path: string[]
+  setting: StatFilterSetting
+  index: number
   setTarget: (path: string[], oldPath?: string[], oldIndex?: number) => void
   delTarget: (path: string[], index: number) => void
   setValue: (path: string[], index: number, value: number) => void
@@ -138,25 +144,21 @@ function OptimizationTargetEditorItem({
   const { t } = useTranslation('page_character_optimize')
   const { data } = useContext(DataContext)
   const onChange = useCallback(
-    (val: number | undefined) =>
-      path && index !== undefined && setValue(path, index, val ?? 0),
+    (val: number | undefined) => setValue(path, index, val ?? 0),
     [setValue, path, index]
   )
   const buttonStyle = { p: 1, flexBasis: 30, flexGrow: 0, flexShrink: 0 }
 
-  const buildConstraintNode: CalcResult = objPathValue(
-    data.getDisplay(),
-    path ?? []
-  )
+  const buildConstraintNode: CalcResult = objPathValue(data.getDisplay(), path)
   const resolvedInfo =
     buildConstraintNode?.info && resolveInfo(buildConstraintNode?.info)
   const isPercent = resolvedInfo?.unit === '%'
 
   return (
-    <ButtonGroup
-      sx={{ '& .MuiButtonGroup-grouped': { minWidth: 24 }, width: '100%' }}
-    >
-      {!!setting && !!path && index !== undefined && (
+    <Box sx={{ display: 'flex', gap: 1 }}>
+      <ButtonGroup
+        sx={{ '& .MuiButtonGroup-grouped': { minWidth: 24 }, width: '100%' }}
+      >
         <Button
           sx={buttonStyle}
           color={setting.disabled ? 'secondary' : 'success'}
@@ -165,39 +167,42 @@ function OptimizationTargetEditorItem({
         >
           {setting.disabled ? <CheckBoxOutlineBlank /> : <CheckBox />}
         </Button>
-      )}
-      <OptimizationTargetSelector
-        showEmptyTargets
-        optimizationTarget={path}
-        setTarget={(target) => setTarget(target, path, index)}
-        defaultText={t('targetSelector.selectBuildTarget')}
+
+        <OptimizationTargetSelector
+          showEmptyTargets
+          optimizationTarget={path}
+          setTarget={(target) => setTarget(target, path, index)}
+          defaultText={t('targetSelector.selectBuildTarget')}
+          disabled={disabled}
+          targetSelectorModalProps={{
+            excludeSections: ['custom', 'bounsStats', 'character', 'teamBuff'],
+          }}
+        />
+      </ButtonGroup>
+      <NumberInputLazy
+        float
+        value={setting.value}
+        sx={{ flexBasis: 150, flexGrow: 1, height: '100%' }}
         disabled={disabled}
-        targetSelectorModalProps={{
-          excludeSections: ['custom', 'bounsStats', 'character', 'teamBuff'],
+        onChange={onChange}
+        placeholder="Stat Value"
+        size="small"
+        inputProps={{ sx: { textAlign: 'right' } }}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end" sx={{ ml: 0 }}>
+              {isPercent ? '%' : undefined}{' '}
+              <IconButton
+                aria-label="Delete Stat Constraint"
+                onClick={() => delTarget(path, index)}
+                edge="end"
+              >
+                <DeleteForever fontSize="small" />
+              </IconButton>
+            </InputAdornment>
+          ),
         }}
       />
-      <CustomNumberInputButtonGroupWrapper sx={{ flexBasis: 150, flexGrow: 1 }}>
-        <CustomNumberInput
-          float
-          disabled={!path || disabled}
-          value={setting?.value}
-          placeholder="Stat Value"
-          onChange={onChange}
-          sx={{ px: 1 }}
-          inputProps={{ sx: { textAlign: 'right' } }}
-          endAdornment={isPercent ? '%' : undefined}
-        />
-      </CustomNumberInputButtonGroupWrapper>
-      {!!path && index !== undefined && (
-        <Button
-          sx={buttonStyle}
-          color="error"
-          onClick={() => delTarget(path, index)}
-          disabled={disabled}
-        >
-          <DeleteForever fontSize="small" />
-        </Button>
-      )}
-    </ButtonGroup>
+    </Box>
   )
 }

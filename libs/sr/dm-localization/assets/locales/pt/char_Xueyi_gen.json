@@ -5,56 +5,72 @@
       "0": {
         "name": "Sovela Quebra-mara",
         "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Xueyi como Dano Quântico a um único inimigo-alvo.",
-        "shortDesc": "Causa Dano Quântico leve a um único inimigo."
+        "shortDesc": "Causa Dano Quântico leve a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Obliteração de Iniquidade",
         "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Xueyi a um único inimigo e <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Xueyi como Dano Quântico aos inimigos adjacentes.",
-        "shortDesc": "Causa Dano Quântico a um único inimigo e Dano Quântico leve a inimigos adjacentes a ele."
+        "shortDesc": "Causa Dano Quântico a um único inimigo e Dano Quântico leve a inimigos adjacentes a ele.",
+        "tag": "Explosão"
       }
     },
     "ult": {
       "0": {
         "name": "Castigo Divino",
-        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Xueyi a um único inimigo-alvo. Este ataque ignora os Tipos de Fraqueza e reduz a Tenacidade do inimigo. Quando o inimigo sofrer a Quebra de Fraqueza, o efeito Quebra de Fraqueza contra Quântico é ativado.\\nNeste ataque, quanto mais Tenacidade for reduzida, maior será o Dano causado, até um máximo de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de aumento.",
-        "shortDesc": "Causa Dano Quântico massivo a um único inimigo. Este ataque <orangeStrong>ignora Tipos de Fraqueza</orangeStrong> e reduz a Tenacidade do alvo. Quanto mais Tenacidade é reduzida, mais alto é o Dano causado."
+        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Xueyi a um único inimigo-alvo. Este ataque ignora os Tipos de Fraqueza e reduz a Tenacidade do inimigo. Quando o inimigo sofrer a Quebra de Fraqueza, o efeito Quebra de Fraqueza contra Quântico é ativado.<br>Neste ataque, quanto mais Tenacidade for reduzida, maior será o Dano causado, até um máximo de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de aumento.",
+        "shortDesc": "Causa Dano Quântico massivo a um único inimigo. Este ataque <orangeStrong>ignora Tipos de Fraqueza</orangeStrong> e reduz a Tenacidade do alvo. Quanto mais Tenacidade é reduzida, mais alto é o Dano causado.",
+        "tag": "Alvo Único"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Perpetuação Cármica",
+        "fullDesc": "Quando Xueyi reduz a Tenacidade do inimigo com seus ataques, ela acumula Carma. Quando mais a Tenacidade é reduzida, mais acúmulos de Carma são adicionados, até {{1}} acúmulos.<br>Quando os aliados de Xueyi reduzem a Tenacidade do inimigo com seus ataques, Xueyi ganha {{3}} acúmulo(s) de Carma.<br>Quando o Carma atingir o número máximo de acúmulos e consumir todos os acúmulos de Carma atuais, imediatamente lança um Ataque Extra contra um inimigo-alvo, causando Dano por 3 vezes, com cada vez causando Dano Quântico igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Xueyi a um único inimigo aleatório. Este Ataque Extra não pode adicionar acúmulos de Carma.",
+        "shortDesc": "Quando Xueyi ou seus aliados reduzem a Tenacidade do inimigo, ela ganha acúmulos de Carma. Quando Carma atingir o número máximo de acúmulos, <orangeStrong>ativa imediatamente um Ataque Extra</orangeStrong> causando Dano Quântico leve a um único inimigo-alvo, saltando por 3 vezes e consumindo todo o Carma.",
+        "tag": "Rebote"
       }
     },
     "technique": {
       "0": {
         "name": "Execução Sumária",
         "fullDesc": "Ataca o inimigo imediatamente. Depois de entrar no combate, causa {{1, percent}}% do ATQ de Xueyi como Dano Quântico a todos os inimigos.",
-        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano Quântico leve a todos os inimigos."
+        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano Quântico leve a todos os inimigos.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Tear Clarividente",
         "fullDesc": "Aumenta o Dano causado por esta unidade em uma quantidade igual a {{1, percent}}% do Efeito de Quebra, até um máximo de {{2, percent}}% de aumento de Dano.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Rolamentos Intrépidos",
         "fullDesc": "Se a Tenacidade do inimigo-alvo for igual ou maior que {{1, percent}}% da sua Tenacidade máxima, causa {{2, percent}}% a mais de Dano ao usar a Perícia Suprema.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Mainframe Perspicaz",
         "fullDesc": "Xueyi irá manter os registros do número de acúmulos de Carma que excederem o limite máximo de acúmulos, até {{1}} acúmulos na contagem. Após o Talento de Xueyi ser acionado, ela ganhará um número de acúmulos de Carma correspondente ao número de acúmulos registrados.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Duhkha, Cessada",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Carma, Partido",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Deva, Encantada",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "Samsara, Dominada",

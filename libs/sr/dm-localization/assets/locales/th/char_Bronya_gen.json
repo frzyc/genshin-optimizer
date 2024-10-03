@@ -5,56 +5,72 @@
       "0": {
         "name": "Windrider Bullet",
         "fullDesc": "สร้าง DMG ลม <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Bronya แก่ศัตรูที่กำหนดหนึ่งตัว",
-        "shortDesc": "สร้าง DMG ลมเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว"
+        "shortDesc": "สร้าง DMG ลมเล็กน้อยแก่ฝ่ายศัตรูหนึ่งตัว",
+        "tag": "โจมตีเดี่ยว"
       }
     },
     "skill": {
       "0": {
         "name": "Combat Redeployment",
-        "fullDesc": "ลบ<u>เอฟเฟกต์ Debuff</u> 1 เอฟเฟกต์ของฝ่ายตัวเองที่กำหนดหนึ่งตัว และทำให้เป้าหมายดังกล่าวแอ็กชันทันที อีกทั้งสร้าง DMG เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> เป็นเวลา {{3}} เทิร์น\\nเมื่อใช้สกิลนี้กับตัวเอง เอฟเฟกต์แอ็กชันนี้จะไม่สามารถเกิดขึ้นได้โดยทันที",
-        "shortDesc": "<orangeStrong>ลบล้าง</orangeStrong><orangeStrong> <u>เอฟเฟกต์ Debuff</u> </orangeStrong> 1 เอฟเฟกต์ ของฝ่ายตัวเองหนึ่งตัว และทำให้เป้าหมายดังกล่าว<orangeStrong>สร้าง DMG เพิ่มขึ้น</orangeStrong> อีกทั้งจะ<orangeStrong>แอ็กชันทันที</orangeStrong>"
+        "fullDesc": "ลบเอฟเฟกต์ Debuff 1 เอฟเฟกต์ของฝ่ายตัวเองที่กำหนดหนึ่งตัว และทำให้เป้าหมายดังกล่าวแอ็กชันทันที อีกทั้งสร้าง DMG เพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> เป็นเวลา {{3}} เทิร์น<br>เมื่อใช้สกิลนี้กับตัวเอง เอฟเฟกต์แอ็กชันนี้จะไม่สามารถเกิดขึ้นได้โดยทันที",
+        "shortDesc": "<orangeStrong>ลบล้าง</orangeStrong><orangeStrong> เอฟเฟกต์ Debuff </orangeStrong> 1 เอฟเฟกต์ ของฝ่ายตัวเองหนึ่งตัว และทำให้เป้าหมายดังกล่าว<orangeStrong>สร้าง DMG เพิ่มขึ้น</orangeStrong> อีกทั้งจะ<orangeStrong>แอ็กชันทันที</orangeStrong>",
+        "tag": "สนับสนุน"
       }
     },
     "ult": {
       "0": {
         "name": "The Belobog March",
         "fullDesc": "ทำให้ ATK ของฝ่ายตัวเองทั้งหมดเพิ่มขึ้น <orangeStrong>{{1, percent}}%</orangeStrong> พร้อมทั้งเพิ่ม DMG คริติคอล <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> ของ DMG คริติคอลของ Bronya +<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> เป็นเวลา {{4}} เทิร์น",
-        "shortDesc": "<orangeStrong>เพิ่ม ATK</orangeStrong> และ<orangeStrong>เพิ่ม DMG คริติคอล</orangeStrong> ของฝ่ายเราทั้งหมด"
+        "shortDesc": "<orangeStrong>เพิ่ม ATK</orangeStrong> และ<orangeStrong>เพิ่ม DMG คริติคอล</orangeStrong> ของฝ่ายเราทั้งหมด",
+        "tag": "สนับสนุน"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Leading the Way",
+        "fullDesc": "เมื่อใช้การโจมตีปกติแล้ว จะเร่งแอ็กชัน ครั้งต่อไปของ Bronya <orangeStrong>{{1, percent}}%</orangeStrong>",
+        "shortDesc": "หลังจากทำการโจมตีปกติจะ เร่งแอ็กชัน ครั้งต่อไปของตัวเอง",
+        "tag": "เสริมพลัง"
       }
     },
     "technique": {
       "0": {
         "name": "Banner of Command",
         "fullDesc": "หลังจากใช้เทคนิคแล้ว เมื่อเริ่มการต่อสู้ครั้งต่อไป จะทำให้ ATK ของฝ่ายตัวเองทั้งหมดเพิ่มขึ้น {{1, percent}}% เป็นเวลา {{2}} เทิร์น",
-        "shortDesc": "ใช้เทคนิคและเมื่อเริ่มการต่อสู้ครั้งต่อไป ATK ของฝ่ายตัวเองทั้งหมดจะเพิ่มขึ้น"
+        "shortDesc": "ใช้เทคนิคและเมื่อเริ่มการต่อสู้ครั้งต่อไป ATK ของฝ่ายตัวเองทั้งหมดจะเพิ่มขึ้น",
+        "tag": "สนับสนุน"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Command",
         "fullDesc": "อัตราคริติคอลของการโจมตีปกติจะเพิ่มขึ้นถึง 100%",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Battlefield",
         "fullDesc": "เมื่อเริ่มการต่อสู้ DEF ของฝ่ายตัวเองทั้งหมดจะเพิ่มขึ้น {{2, percent}}% เป็นเวลา {{1}} เทิร์น",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Military Might",
         "fullDesc": "เมื่อ Bronya อยู่ในการต่อสู้ ฝ่ายตัวเองทั้งหมดจะสร้าง DMG เพิ่มขึ้น {{1, percent}}%",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

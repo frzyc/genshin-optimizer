@@ -5,56 +5,72 @@
       "0": {
         "name": "Gravity Suppression",
         "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Welt pada 1 target musuh.",
-        "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Edge of the Void",
-        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Welt pada 1 musuh yang ditarget, serta mengakibatkan 2 serangan tambahan yang masing-masing mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Welt pada musuh secara acak. Saat serangan mengenai musuh, ada <orangeStrong>{{2, percent}}%</orangeStrong> <u>peluang dasar</u> untuk mengurangi {{3, percent}}% SPD musuh tersebut selama {{4}} giliran.",
-        "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh, total Bounce 3 kali dan berpeluang untuk <orangeStrong>memberikan status Slow</orangeStrong> pada target."
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Welt pada 1 musuh yang ditarget, serta mengakibatkan 2 serangan tambahan yang masing-masing mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Welt pada musuh secara acak. Saat serangan mengenai musuh, ada <orangeStrong>{{2, percent}}%</orangeStrong> peluang dasar untuk mengurangi {{3, percent}}% SPD musuh tersebut selama {{4}} giliran.",
+        "shortDesc": "Mengakibatkan Imaginary DMG dalam jumlah kecil pada 1 musuh, total Bounce 3 kali dan berpeluang untuk <orangeStrong>memberikan status Slow</orangeStrong> pada target.",
+        "tag": "Bounce"
       }
     },
     "ult": {
       "0": {
         "name": "Synthetic Black Hole",
-        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Welt pada seluruh musuh. Target musuh yang terkena serangan memiliki {{3, percent}}% <u>peluang dasar</u> untuk memasuki status Imprisonment selama 1 giliran.\\nSelama dalam status Imprisonment, target musuh mengalami <u>penundaan aksi</u> sebesar <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> dan SPD berkurang {{4, percent}}%.",
-        "shortDesc": "Mengakibatkan Imaginary DMG pada seluruh musuh dan <orangeStrong>berpeluang besar memberikan status Imprisonment pada musuh</orangeStrong>."
+        "fullDesc": "Mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Welt pada seluruh musuh. Target musuh yang terkena serangan memiliki {{3, percent}}% peluang dasar untuk memasuki status Imprisonment selama 1 giliran.<br>Selama dalam status Imprisonment, target musuh mengalami penundaan aksi sebesar <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> dan SPD berkurang {{4, percent}}%.",
+        "shortDesc": "Mengakibatkan Imaginary DMG pada seluruh musuh dan <orangeStrong>berpeluang besar memberikan status Imprisonment pada musuh</orangeStrong>.",
+        "tag": "AoE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Time Distortion",
+        "fullDesc": "Saat menyerang target musuh berstatus Slow, akan mengakibatkan 1 kali Imaginary DMG tambahan sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Welt.",
+        "shortDesc": "Saat menyerang target musuh berstatus Slow, akan <orangeStrong>mengakibatkan Imaginary DMG Tambahan dalam jumlah kecil</orangeStrong>.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Gravitational Imprisonment",
-        "fullDesc": "Setelah menggunakan Technique, Welt akan menciptakan sebuah dimensi khusus selama {{4}} detik. Movement SPD musuh yang berada di dalam dimensi khusus akan berkurang {{5, percent}}%. Setelah memasuki pertempuran dengan musuh dalam dimensi khusus, ada {{1, percent}}% <u>peluang dasar</u> untuk membuat target musuh memasuki status Imprisonment selama 1 giliran.\\nSelama dalam status Imprisonment, target musuh akan mengalami {{2, percent}}% <u>penundaan aksi</u> dan SPD berkurang {{3, percent}}%. Hanya boleh ada 1 efek dimensi khusus ciptaan rekan tim dalam satu waktu.",
-        "shortDesc": "Menciptakan dimensi khusus. Movement SPD musuh dalam dimensi khusus akan berkurang. Setelah memasuki pertempuran dengan musuh dalam dimensi khusus, <orangeStrong>berpeluang besar untuk membuat target musuh memasuki status Imprisonment</orangeStrong>."
+        "fullDesc": "Setelah menggunakan Technique, Welt akan menciptakan sebuah dimensi khusus selama {{4}} detik. Movement SPD musuh yang berada di dalam dimensi khusus akan berkurang {{5, percent}}%. Setelah memasuki pertempuran dengan musuh dalam dimensi khusus, ada {{1, percent}}% peluang dasar untuk membuat target musuh memasuki status Imprisonment selama 1 giliran.<br>Selama dalam status Imprisonment, target musuh akan mengalami {{2, percent}}% penundaan aksi dan SPD berkurang {{3, percent}}%. Hanya boleh ada 1 efek dimensi khusus ciptaan rekan tim dalam satu waktu.",
+        "shortDesc": "Menciptakan dimensi khusus. Movement SPD musuh dalam dimensi khusus akan berkurang. Setelah memasuki pertempuran dengan musuh dalam dimensi khusus, <orangeStrong>berpeluang besar untuk membuat target musuh memasuki status Imprisonment</orangeStrong>.",
+        "tag": "Impair"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Retribution",
         "fullDesc": "Saat melancarkan Ultimate, ada {{1, percent}}% peluang dasar untuk meningkatkan {{2, percent}}% DMG yang diterima target selama {{3}} giliran.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Judgment",
         "fullDesc": "Memulihkan {{1}} Energy tambahan saat melancarkan Ultimate.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Punishment",
         "fullDesc": "Meningkatkan {{1, percent}}% DMG pada target musuh yang terkena Weakness Break.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

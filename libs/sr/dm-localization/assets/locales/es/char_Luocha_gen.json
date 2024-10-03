@@ -5,56 +5,72 @@
       "0": {
         "name": "Espinas del abismo",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Luocha como Daño Imaginario a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Oración de la flor abisal",
-        "fullDesc": "Tras usar la habilidad básica, regenera a un aliado determinado una cantidad de PV equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Luocha + <orangeStrong>{{2}}</orangeStrong>. Luocha obtiene una acumulación de Flor abisal.\\nCuando cualquiera de los aliados tiene un porcentaje de PV igual o inferior al {{3, percent}}%, Luocha le aplica una vez un efecto igual al de su habilidad básica y no consume pts. de habilidad básica. Este efecto se puede volver a activar después de {{4}} turnos.",
-        "shortDesc": "<orangeStrong>Regenera</orangeStrong> los PV de un aliado y obtiene una acumulación de Flor abisal."
+        "fullDesc": "Tras usar la habilidad básica, regenera a un aliado determinado una cantidad de PV equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Luocha + <orangeStrong>{{2}}</orangeStrong>. Luocha obtiene una acumulación de Flor abisal.<br>Cuando cualquiera de los aliados tiene un porcentaje de PV igual o inferior al {{3, percent}}%, Luocha le aplica una vez un efecto igual al de su habilidad básica y no consume pts. de habilidad básica. Este efecto se puede volver a activar después de {{4}} turnos.",
+        "shortDesc": "<orangeStrong>Regenera</orangeStrong> los PV de un aliado y obtiene una acumulación de Flor abisal.",
+        "tag": "Regeneración"
       }
     },
     "ult": {
       "0": {
         "name": "Deseo de muerte",
-        "fullDesc": "Elimina {{2}} <u>efecto positivo</u> de todos los enemigos y les inflige un Daño Imaginario equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Luocha. Además, Luocha obtiene 1 acumulación de Flor abisal.",
-        "shortDesc": "<orangeStrong>Elimina</orangeStrong> 1 <orangeStrong><u>efecto positivo</u></orangeStrong> de todos los enemigos y les inflige Daño Imaginario. Obtiene 1 acumulación de Flor abisal."
+        "fullDesc": "Elimina {{2}} efecto positivo de todos los enemigos y les inflige un Daño Imaginario equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Luocha. Además, Luocha obtiene 1 acumulación de Flor abisal.",
+        "shortDesc": "<orangeStrong>Elimina</orangeStrong> 1 <orangeStrong>efecto positivo</orangeStrong> de todos los enemigos y les inflige Daño Imaginario. Obtiene 1 acumulación de Flor abisal.",
+        "tag": "ATQ AdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Ciclo vital",
+        "fullDesc": "Cuando se alcanzan {{1}} acumulaciones de Flor abisal, Luocha las consume todas y genera un campo.<br>Cuando un objetivo enemigo que está dentro del campo recibe un ataque, el aliado atacante regenera una cantidad de PV equivalente al <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> del ATQ de Luocha + <orangeStrong>{{4}}</orangeStrong>.<br>El campo dura {{3}} turnos. Cuando Luocha es derrotado, el campo desaparece.",
+        "shortDesc": "<orangeStrong>Genera un campo</orangeStrong> al alcanzar 2 acumulaciones de Flor abisal. Los aliados <orangeStrong>regeneran PV al atacar</orangeStrong> mientras el campo está activo.",
+        "tag": "Regeneración"
       }
     },
     "technique": {
       "0": {
         "name": "Compasión del necio",
         "fullDesc": "Tras usar la técnica, el talento se activa inmediatamente al comenzar la siguiente batalla.",
-        "shortDesc": "Al usar la técnica, el talento se activa inmediatamente en la siguiente batalla."
+        "shortDesc": "Al usar la técnica, el talento se activa inmediatamente en la siguiente batalla.",
+        "tag": "Regeneración"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Renacimiento acuoso",
         "fullDesc": "Al activar el efecto de la habilidad básica, se elimina {{1}} estado negativo del objetivo aliado.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Santificación",
         "fullDesc": "Cuando un enemigo que está dentro del campo recibe un ataque de un aliado, los demás aliados que no son el atacante también regeneran una cantidad de PV equivalente al {{1, percent(fixed: 1)}}% del ATQ de Luocha + {{2}}.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Travesía del valle",
         "fullDesc": "La probabilidad de resistir estados negativos de Control aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

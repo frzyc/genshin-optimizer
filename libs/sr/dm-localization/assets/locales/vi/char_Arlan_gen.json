@@ -5,56 +5,72 @@
       "0": {
         "name": "Nhanh Như Sấm Chớp",
         "fullDesc": "Gây Sát Thương Lôi cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Arlan.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho 1 kẻ địch."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Giải Trừ Giam Cầm",
         "fullDesc": "Tiêu hao HP bằng {{1, percent}}% Giới Hạn HP của Arlan, để gây cho 1 kẻ địch chỉ định Sát Thương Lôi tương đương <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Arlan. Nếu HP hiện tại không đủ, khi thi triển Chiến Kỹ, HP hiện tại của Arlan sẽ giảm còn 1 điểm.",
-        "shortDesc": "Tiêu hao một phần HP bản thân, gây Sát Thương Lôi cho 1 kẻ địch."
+        "shortDesc": "Tiêu hao một phần HP bản thân, gây Sát Thương Lôi cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       }
     },
     "ult": {
       "0": {
         "name": "Trừng Trị Cuồng Giả",
         "fullDesc": "Gây Sát Thương Lôi cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Arlan, đồng thời gây Sát Thương Lôi cho mục tiêu lân cận kẻ đó tương đương <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Arlan.",
-        "shortDesc": "Gây lượng lớn Sát Thương Lôi cho 1 kẻ địch, gây Sát Thương Lôi cho mục tiêu lân cận."
+        "shortDesc": "Gây lượng lớn Sát Thương Lôi cho 1 kẻ địch, gây Sát Thương Lôi cho mục tiêu lân cận.",
+        "tag": "Khuếch Tán"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Đau Đớn Cùng Cực",
+        "fullDesc": "Tăng sát thương dựa trên phần trăm HP mất đi hiện tại của Arlan, tối đa tăng <orangeStrong>{{1, percent}}%</orangeStrong> sát thương Arlan gây ra.",
+        "shortDesc": "<orangeStrong>Tăng sát thương dựa theo Phần Trăm HP đã mất hiện tại</orangeStrong> <orangeStrong>của bản thân</orangeStrong>.",
+        "tag": "Cường Hóa"
       }
     },
     "technique": {
       "0": {
         "name": "Dứt Điểm Cực Tốc",
         "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu, sẽ gây Sát Thương Lôi cho toàn bộ kẻ địch tương đương {{1, percent}}% Tấn Công của Arlan.",
-        "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây một lượng nhỏ Sát Thương Lôi cho toàn bộ kẻ địch."
+        "shortDesc": "Tấn công kẻ địch, sau khi vào trận sẽ gây một lượng nhỏ Sát Thương Lôi cho toàn bộ kẻ địch.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Hồi Sinh",
         "fullDesc": "Khi tiêu diệt kẻ địch, nếu Phần Trăm HP hiện tại thấp hơn hoặc bằng {{1, percent}}%, sẽ hồi ngay HP bằng {{2, percent}}% Giới Hạn HP của bản thân.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Kiên Nhẫn",
         "fullDesc": "Tăng {{1, percent}}% tỷ lệ Kháng Hiệu Ứng Xấu dạng Sát Thương Duy Trì.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Chống Cự",
         "fullDesc": "Khi vào chiến đấu, nếu Phần Trăm HP hiện tại nhỏ hơn hoặc bằng {{1, percent}}%, thì Arlan có thể kháng tất cả sát thương ngoại trừ sát thương duy trì. Sau khi Arlan bị tấn công, hiệu ứng này sẽ giải trừ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

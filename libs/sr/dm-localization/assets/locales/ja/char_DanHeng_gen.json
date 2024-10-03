@@ -5,82 +5,98 @@
       "0": {
         "name": "{RUBY_B#うんきそうじゅつ}雲騎槍術{RUBY_E#}・{RUBY_B#さくふう}朔風{RUBY_E#}",
         "fullDesc": "指定した敵単体に丹恒の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の風属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の風属性ダメージを与える。"
+        "shortDesc": "敵単体に少量の風属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#うんきそうじゅつ}雲騎槍術{RUBY_E#}・{RUBY_B#しつう}疾雨{RUBY_E#}",
-        "fullDesc": "指定した敵単体に丹恒の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の風属性ダメージを与える。\\n戦闘スキルによるダメージで会心が発生した時、{{4, percent}}%の<u>基礎確率</u>で攻撃を受けた敵の速度-{{2, percent}}%、{{3}}ターン継続。",
-        "shortDesc": "敵単体に風属性ダメージを与え、会心時に高確率で減速状態を付与。"
+        "fullDesc": "指定した敵単体に丹恒の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の風属性ダメージを与える。<br>戦闘スキルによるダメージで会心が発生した時、{{4, percent}}%の基礎確率で攻撃を受けた敵の速度-{{2, percent}}%、{{3}}ターン継続。",
+        "shortDesc": "敵単体に風属性ダメージを与え、会心時に高確率で減速状態を付与。",
+        "tag": "単体攻撃"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#どうてん}洞天{RUBY_E#}{RUBY_B#げんげ}幻化{RUBY_E#}、{RUBY_B#ちょうむ}長夢{RUBY_E#}{RUBY_B#いっかく}一覚{RUBY_E#}",
         "fullDesc": "指定した敵単体に丹恒の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の風属性ダメージを与える。攻撃を受けた敵が減速状態の場合、必殺技によるダメージのダメージ倍率+<orangeStrong>{{2, percent}}%</orangeStrong>。",
-        "shortDesc": "敵単体に大量の風属性ダメージを与える、減速状態の敵に対してダメージ倍率アップ。"
+        "shortDesc": "敵単体に大量の風属性ダメージを与える、減速状態の敵に対してダメージ倍率アップ。",
+        "tag": "単体攻撃"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#すんちょうすんきょう}寸長寸強{RUBY_E#}",
+        "fullDesc": "丹恒が味方スキルのターゲットになった時、次の攻撃の風属性耐性貫通+<orangeStrong>{{1, percent}}%</orangeStrong>。この効果は{{2}}ターン後に再度発動できる。",
+        "shortDesc": "味方スキルのターゲットになった時、次の攻撃の<orangeStrong>風属性耐性貫通をアップ</orangeStrong>する。この効果は2ターン後に再度発動できる。",
+        "tag": "強化"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#はてき}破敵{RUBY_E#}の{RUBY_B#ほこさき}矛先{RUBY_E#}",
         "fullDesc": "秘技を使用した後、次の戦闘開始時、丹恒の攻撃力+{{1, percent}}%、{{2}}ターン継続。",
-        "shortDesc": "秘技を使用、次の戦闘に入った後に攻撃力アップ。"
+        "shortDesc": "秘技を使用、次の戦闘に入った後に攻撃力アップ。",
+        "tag": "強化"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#せんりゅう}潜龍{RUBY_E#}",
         "fullDesc": "残りHPが{{1, percent}}%以下の場合、敵に攻撃される確率ダウン。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#ぜつえい}絶影{RUBY_E#}",
         "fullDesc": "攻撃を行った後、{{1, percent}}%の固定確率で自身の速度+{{2, percent}}%、{{3}}ターン継続。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#ごうふう}剛風{RUBY_E#}",
         "fullDesc": "減速状態の敵に対する、通常攻撃によるダメージ+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
   "ranks": {
     "1": {
-      "name": "{RUBY_B#きょくてんきゅうじん}極天窮尽{RUBY_E#}するも\\n{RUBY_B#たかぶ}昂{RUBY_E#}り{RUBY_B#たも}保{RUBY_E#}てず",
+      "name": "{RUBY_B#きょくてんきゅうじん}極天窮尽{RUBY_E#}するも<br>{RUBY_B#たかぶ}昂{RUBY_E#}り{RUBY_B#たも}保{RUBY_E#}てず",
       "desc": "攻撃が命中した敵の残りHPが{{1, percent}}%以上の場合、会心率+{{2, percent}}%。"
     },
     "2": {
-      "name": "{RUBY_B#はちどくあっとう}八毒圧倒{RUBY_E#}\\n{RUBY_B#えんえんめっきゃく}炎煙滅却{RUBY_E#}",
+      "name": "{RUBY_B#はちどくあっとう}八毒圧倒{RUBY_E#}<br>{RUBY_B#えんえんめっきゃく}炎煙滅却{RUBY_E#}",
       "desc": "天賦のクールタイム-1ターン。"
     },
     "3": {
-      "name": "{RUBY_B#ゆうめい}幽明{RUBY_E#}の{RUBY_B#へんげ}変化{RUBY_E#}\\n{RUBY_B#ゆうりゅう}遊龍{RUBY_E#}の{RUBY_B#ごと}如{RUBY_E#}く{RUBY_B#じざい}自在{RUBY_E#}にあり",
+      "name": "{RUBY_B#ゆうめい}幽明{RUBY_E#}の{RUBY_B#へんげ}変化{RUBY_E#}<br>{RUBY_B#ゆうりゅう}遊龍{RUBY_E#}の{RUBY_B#ごと}如{RUBY_E#}く{RUBY_B#じざい}自在{RUBY_E#}にあり",
       "desc": "戦闘スキルのLv.+2、最大Lv.15まで。通常攻撃のLv.+1、最大Lv.10まで。"
     },
     "4": {
-      "name": "{RUBY_B#ふんじんざんまい}奮迅三昧{RUBY_E#}\\n{RUBY_B#にちりん}日輪{RUBY_E#}が{RUBY_B#ごと}如{RUBY_E#}く",
+      "name": "{RUBY_B#ふんじんざんまい}奮迅三昧{RUBY_E#}<br>{RUBY_B#にちりん}日輪{RUBY_E#}が{RUBY_B#ごと}如{RUBY_E#}く",
       "desc": "必殺技で敵を倒した時、丹恒が即座に行動する。"
     },
     "5": {
-      "name": "{RUBY_B#てんすい}天水{RUBY_E#}{RUBY_B#わ}分{RUBY_E#}かつ{RUBY_B#いっそう}一槍{RUBY_E#}\\n{RUBY_B#ろっきょ}六虚{RUBY_E#}の{RUBY_B#こうりゅうふ}洪流{RUBY_E#}振り{RUBY_B#お}起{RUBY_E#}こす",
+      "name": "{RUBY_B#てんすい}天水{RUBY_E#}{RUBY_B#わ}分{RUBY_E#}かつ{RUBY_B#いっそう}一槍{RUBY_E#}<br>{RUBY_B#ろっきょ}六虚{RUBY_E#}の{RUBY_B#こうりゅうふ}洪流{RUBY_E#}振り{RUBY_B#お}起{RUBY_E#}こす",
       "desc": "必殺技のLv.+2、最大Lv.15まで。天賦のLv.+2、最大Lv.15まで。"
     },
     "6": {
-      "name": "{RUBY_B#こんじょうじょうばく}今生縄縛{RUBY_E#}\\n{RUBY_B#と}解{RUBY_E#}く{RUBY_B#とき}時{RUBY_E#}{RUBY_B#せ}急{RUBY_E#}く{RUBY_B#なか}勿{RUBY_E#}れ",
+      "name": "{RUBY_B#こんじょうじょうばく}今生縄縛{RUBY_E#}<br>{RUBY_B#と}解{RUBY_E#}く{RUBY_B#とき}時{RUBY_E#}{RUBY_B#せ}急{RUBY_E#}く{RUBY_B#なか}勿{RUBY_E#}れ",
       "desc": "戦闘スキルによって減速状態を付与された敵は、さらに速度-{{1, percent}}%。"
     }
   }

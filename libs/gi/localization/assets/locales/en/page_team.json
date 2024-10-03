@@ -1,10 +1,79 @@
 {
+  "searchLabel": {
+    "char": "Characters",
+    "team": "Team Name"
+  },
+  "addTeamBtn": "Add Team",
+  "importTeamBtn": "Import Team",
+  "importForm": {
+    "title": "Import Team",
+    "desc": "Import a team in JSON form below.",
+    "label": "JSON Data",
+    "placeholder": "Paste your Team JSON here",
+    "importBtn": "Import",
+    "error": {
+      "verifi": "Data verification failed.",
+      "import": "Data Import failed."
+    }
+  },
+  "teamDelModal": {
+    "teamName": "Delete Team:",
+    "alert": "Removing the team will remove: resonance buffs, and enemy configs stored in the team. Loadouts that are only in this team are also selected by default for deletion.",
+    "delBtn": "Delete",
+    "onlyCrrTeam": "Only in current team",
+    "usingMltTeams": "In {{count}} teams"
+  },
+  "teamSettings": {
+    "tab": {
+      "team": "Team Settings",
+      "char": "Character {{count}}"
+    },
+    "alert": {
+      "desc": "<strong>Teams</strong> are a container for 4 character loadouts. It provides a way for characters to apply team buffs, and configuration of enemy stats. Loadouts can be shared between teams.",
+      "first": "The first character in the team receives any \"active on-field character\" buffs, and cannot be empty."
+    },
+    "exportBtn": "Export Team",
+    "dupBtn": "Duplicate Team",
+    "deleteBtn": "Delete Team",
+    "addCharBtn": "Add Character",
+    "toFieldBtn": "To Field",
+    "onFieldBtn": "On-field Character"
+  },
+  "exportModal": {
+    "msg": "Copied team data to clipboard.",
+    "title": "Team Export",
+    "alert": "Export the team data to be imported by another user. All the team and loadout data (bonus stats, enemy config, optimize config) are exported. All exported non-TC builds are converted to TC builds.",
+    "selAll": "Select All",
+    "unselAll": "Unselect All",
+    "export": "Export",
+    "target": "Optimization Target:",
+    "mTargets": "Mtargets to Export",
+    "builds": "Builds to Export",
+    "equipped": "Equipped Build",
+    "tcBadge": "TC Build"
+  },
+  "enemyEditor": {
+    "enemyLevel": "Enemy ",
+    "defIgn": "DEF Ignore {{value}}%",
+    "defRed": "DEF Red. {{value}}%",
+    "announceBtn": "To get the specific resistance values of enemies, please visit the wiki.",
+    "note": "Note: Genshin Impact halves resistance shred values below 0%. For the sake of calculations enter the RAW value and GO will do the rest. (e.g. 10% - 20% = -10%)",
+    "immunity": "Immunity"
+  },
+  "teamComponents": {
+    "teamBuffs": "Received Team Buffs",
+    "tcBadge": "TC Build"
+  },
   "buildInfo": {
     "equipped": "This is the build currently equipped to your character, this represents in-game equipement and is persistent outside of the Loadout.",
     "build": "A <strong>Build</strong> is comprised of a weapon and 5 artifacts.",
     "tcbuild": "A <strong>Theorycraft Build</strong> allows defining a build by raw stats."
   },
+  "charProfile": {
+    "button": "EDIT"
+  },
   "buildTcCharOverride": {
+    "tip": "Set a specific level, constellation, ascension, or talent level for this TC build, that is different from the base character",
     "btn": "Override Character Data for This TC build"
   },
   "team": {

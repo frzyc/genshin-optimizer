@@ -11,15 +11,19 @@ const normal_dmg_arr = [-1, 0.006, 0.007, 0.008, 0.009, 0.01]
 const max_normal_dmg_arr = [-1, 0.16, 0.2, 0.24, 0.28, 0.32]
 const [condAfterSkillPath, condAfterSkill] = cond(key, 'afterSkill')
 const afterSkill_normal_dmg_ = equal(
-  condAfterSkill,
-  'on',
-  min(
-    prod(
-      subscript(input.weapon.refinement, normal_dmg_arr, { unit: '%' }),
-      input.total.hp,
-      1 / 1000
-    ),
-    subscript(input.weapon.refinement, max_normal_dmg_arr, { unit: '%' })
+  input.weapon.key,
+  key,
+  equal(
+    condAfterSkill,
+    'on',
+    min(
+      prod(
+        subscript(input.weapon.refinement, normal_dmg_arr, { unit: '%' }),
+        input.total.hp,
+        1 / 1000
+      ),
+      subscript(input.weapon.refinement, max_normal_dmg_arr, { unit: '%' })
+    )
   )
 )
 

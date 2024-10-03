@@ -5,56 +5,72 @@
       "0": {
         "name": "請……請讓一下！",
         "fullDesc": "對指定敵方單體造成等同於米沙<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的冰屬性傷害。",
-        "shortDesc": "對敵方單體造成少量冰屬性傷害。"
+        "shortDesc": "對敵方單體造成少量冰屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "客……客房服務！",
         "fullDesc": "增加{{3}}段米沙下一次終結技的攻擊段數。對指定敵方單體造成等同於米沙<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的冰屬性傷害，並對其相鄰目標造成等同於米沙<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的冰屬性傷害。",
-        "shortDesc": "對敵方單體造成冰屬性傷害、對相鄰目標造成少量冰屬性傷害，增加米沙下一次<orangeStrong>終結技的攻擊段數</orangeStrong>。"
+        "shortDesc": "對敵方單體造成冰屬性傷害、對相鄰目標造成少量冰屬性傷害，增加米沙下一次<orangeStrong>終結技的攻擊段數</orangeStrong>。",
+        "tag": "擴散"
       }
     },
     "ult": {
       "0": {
         "name": "要……要遲到了！",
-        "fullDesc": "初始擁有{{1}}段攻擊段數。首先發動1段攻擊對指定敵方單體造成等同於米沙<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的冰屬性傷害，其餘每段攻擊對敵方隨機單體造成等同於米沙<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的冰屬性傷害。每段攻擊前有<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>的<u>基礎機率</u>使目標陷入凍結狀態，持續1回合。\\n凍結狀態下，敵方目標不能行動，同時每回合開始時受到等同於米沙<orangeStrong>{{4, percent}}%</orangeStrong>攻擊力的冰屬性<u>附加傷害</u>。\\n終結技最多累積{{5}}段攻擊段數，施放終結技後攻擊段數恢復至初始狀態。",
-        "shortDesc": "對敵方單體造成少量冰屬性傷害，初始共彈射<orangeStrong>{{1}}</orangeStrong>次，最多共彈射<orangeStrong>{{5}}</orangeStrong>次。每段攻擊前有低機率使目標<orangeStrong>凍結</orangeStrong>。"
+        "fullDesc": "初始擁有{{1}}段攻擊段數。首先發動1段攻擊對指定敵方單體造成等同於米沙<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的冰屬性傷害，其餘每段攻擊對敵方隨機單體造成等同於米沙<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的冰屬性傷害。每段攻擊前有<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>的基礎機率使目標陷入凍結狀態，持續1回合。<br>凍結狀態下，敵方目標不能行動，同時每回合開始時受到等同於米沙<orangeStrong>{{4, percent}}%</orangeStrong>攻擊力的冰屬性附加傷害。<br>終結技最多累積{{5}}段攻擊段數，施放終結技後攻擊段數恢復至初始狀態。",
+        "shortDesc": "對敵方單體造成少量冰屬性傷害，初始共彈射<orangeStrong>{{1}}</orangeStrong>次，最多共彈射<orangeStrong>{{5}}</orangeStrong>次。每段攻擊前有低機率使目標<orangeStrong>凍結</orangeStrong>。",
+        "tag": "彈射"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "擒縱機構",
+        "fullDesc": "我方全體每消耗1個戰技點，便增加{{2}}段米沙下一次終結技的攻擊段數，同時米沙恢復<orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong>點能量。",
+        "shortDesc": "我方全體每<orangeStrong>消耗1個戰技點</orangeStrong>，增加米沙下一次<orangeStrong>終結技的攻擊段數</orangeStrong>，同時米沙恢復能量。",
+        "tag": "強化"
       }
     },
     "technique": {
       "0": {
         "name": "逗留一下吧，你是那樣美！",
         "fullDesc": "使用秘技後，製造1片持續{{1}}秒的特殊領域。處於特殊領域內的敵人陷入【夢境監牢】狀態。【夢境監牢】狀態下的敵人會停止所有行動。與處於【夢境監牢】狀態下的敵人進入戰鬥後，增加{{2}}段米沙下一次終結技的攻擊段數。我方製造的領域效果最多存在1個。",
-        "shortDesc": "製造特殊領域。領域內敵人行動停止。與領域內敵人進入戰鬥後，增加米沙下一次<orangeStrong>終結技的攻擊段數</orangeStrong>。"
+        "shortDesc": "製造特殊領域。領域內敵人行動停止。與領域內敵人進入戰鬥後，增加米沙下一次<orangeStrong>終結技的攻擊段數</orangeStrong>。",
+        "tag": "妨害"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "釋放",
         "fullDesc": "終結技首段攻擊前，使目標陷入凍結狀態的基礎機率提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "鎖接",
         "fullDesc": "施放終結技時，效果命中提高{{1, percent}}%，持續至本次終結技行動結束。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "傳衝",
         "fullDesc": "對陷入凍結狀態的敵方目標造成傷害時，暴擊傷害提升{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

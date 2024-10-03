@@ -5,56 +5,72 @@
       "0": {
         "name": "Standing Ovation",
         "fullDesc": "สร้าง DMG ไฟ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Guinaifen แก่ศัตรูที่กำหนดหนึ่งตัว",
-        "shortDesc": "สร้าง DMG ไฟเล็กน้อย แก่ฝ่ายศัตรูหนึ่งตัว"
+        "shortDesc": "สร้าง DMG ไฟเล็กน้อย แก่ฝ่ายศัตรูหนึ่งตัว",
+        "tag": "โจมตีเดี่ยว"
       }
     },
     "skill": {
       "0": {
         "name": "Blazing Welcome",
-        "fullDesc": "สร้าง DMG ไฟ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Guinaifen แก่ศัตรูที่กำหนดหนึ่งตัว และสร้าง DMG ไฟ <orangeStrong>{{2, percent}}%</orangeStrong> ของ ATK ของ Guinaifen แก่เป้าหมายที่อยู่ใกล้เคียง โดยจะมี <u>โอกาสพื้นฐาน</u> {{3, percent}}% ที่จะทำให้เป้าหมาย และศัตรูที่อยู่ใกล้เคียงติดสถานะเผาไหม้ เมื่ออยู่ภายใต้สถานะเผาไหม้ ศัตรูเป้าหมายจะได้รับ DMG ไฟต่อเนื่อง <orangeStrong>{{4, percent}}%</orangeStrong> ของ ATK ของ Guinaifen เมื่อเริ่มต้นในแต่ละเทิร์น เป็นเวลา {{5}} เทิร์น",
-        "shortDesc": "สร้าง DMG ไฟแก่ฝ่ายศัตรูหนึ่งตัว และสร้าง DMG ไฟเล็กน้อยแก่ศัตรูตัวที่อยู่ติดกับเป้าหมาย พร้อมทั้งมีโอกาสอย่างมากที่จะเพิ่ม<orangeStrong>สถานะเผาไหม้</orangeStrong>"
+        "fullDesc": "สร้าง DMG ไฟ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Guinaifen แก่ศัตรูที่กำหนดหนึ่งตัว และสร้าง DMG ไฟ <orangeStrong>{{2, percent}}%</orangeStrong> ของ ATK ของ Guinaifen แก่เป้าหมายที่อยู่ใกล้เคียง โดยจะมี โอกาสพื้นฐาน {{3, percent}}% ที่จะทำให้เป้าหมาย และศัตรูที่อยู่ใกล้เคียงติดสถานะเผาไหม้ เมื่ออยู่ภายใต้สถานะเผาไหม้ ศัตรูเป้าหมายจะได้รับ DMG ไฟต่อเนื่อง <orangeStrong>{{4, percent}}%</orangeStrong> ของ ATK ของ Guinaifen เมื่อเริ่มต้นในแต่ละเทิร์น เป็นเวลา {{5}} เทิร์น",
+        "shortDesc": "สร้าง DMG ไฟแก่ฝ่ายศัตรูหนึ่งตัว และสร้าง DMG ไฟเล็กน้อยแก่ศัตรูตัวที่อยู่ติดกับเป้าหมาย พร้อมทั้งมีโอกาสอย่างมากที่จะเพิ่ม<orangeStrong>สถานะเผาไหม้</orangeStrong>",
+        "tag": "กระจาย"
       }
     },
     "ult": {
       "0": {
         "name": "Watch This Showstopper",
         "fullDesc": "สร้าง DMG ไฟ <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> ของ ATK ของ Guinaifen แก่ศัตรูทั้งหมด หากเป้าหมายติดสถานะเผาไหม้อยู่ จะทำให้สถานะเผาไหม้ ที่เป้าหมายได้รับในปัจจุบัน สร้าง DMG <orangeStrong>{{2, percent}}%</orangeStrong> ของ DMG เดิมทันที",
-        "shortDesc": "สร้าง DMG ไฟแก่ศัตรูทั้งหมด หากศัตรูติดสถานะเผาไหม้ จะทำให้สถานะเผาไหม้สร้าง DMG เพิ่มเติม 1 ครั้ง"
+        "shortDesc": "สร้าง DMG ไฟแก่ศัตรูทั้งหมด หากศัตรูติดสถานะเผาไหม้ จะทำให้สถานะเผาไหม้สร้าง DMG เพิ่มเติม 1 ครั้ง",
+        "tag": "โจมตีหมู่"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "PatrAeon Benefits",
+        "fullDesc": "เมื่อ Guinaifen อยู่ในการต่อสู้ หลังจากสถานะเผาไหม้ที่ศัตรูได้รับสร้าง DMG จะมี โอกาสพื้นฐาน {{1, percent}}% ที่จะทำให้ติดสถานะ \"Firekiss\" โดยเมื่ออยู่ภายใต้สถานะ \"Firekiss\" ศัตรูเป้าหมายจะได้รับ DMG เพิ่มขึ้น <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> เป็นเวลา {{5}} เทิร์น โดยสามารถซ้อนทับได้มากสุด {{6}} ชั้น",
+        "shortDesc": "หลังจากศัตรูได้รับ <orangeStrong>DMG จากสถานะเผาไหม้</orangeStrong> จะมีโอกาสอย่างมากที่จะติด<orangeStrong>สถานะ \"Firekiss\"</orangeStrong>",
+        "tag": "สกัดกั้น"
       }
     },
     "technique": {
       "0": {
         "name": "Skill Showcase",
-        "fullDesc": "จะโจมตีศัตรูทันที หลังเข้าสู่การต่อสู้จะสร้าง DMG {{2}} ครั้ง โดยแต่ละครั้งจะสุ่มสร้าง DMG ไฟเท่ากับ {{1, percent}}% ของ ATK ของ Guinaifen แก่ศัตรูหนึ่งตัว และมี <u>โอกาสพื้นฐาน</u> {{3, percent}}% ที่จะทำให้เป้าหมายติดสถานะ \"Firekiss\"",
-        "shortDesc": "เมื่อโจมตีศัตรูและเข้าสู่การต่อสู้ จะสร้าง DMG ไฟเล็กน้อยแก่ศัตรูหนึ่งตัว พร้อมทั้งเพิ่ม<orangeStrong>สถานะ \"Firekiss\"</orangeStrong> และระเบิดทั้งหมด 4 ครั้ง"
+        "fullDesc": "จะโจมตีศัตรูทันที หลังเข้าสู่การต่อสู้จะสร้าง DMG {{2}} ครั้ง โดยแต่ละครั้งจะสุ่มสร้าง DMG ไฟเท่ากับ {{1, percent}}% ของ ATK ของ Guinaifen แก่ศัตรูหนึ่งตัว และมี โอกาสพื้นฐาน {{3, percent}}% ที่จะทำให้เป้าหมายติดสถานะ \"Firekiss\"",
+        "shortDesc": "เมื่อโจมตีศัตรูและเข้าสู่การต่อสู้ จะสร้าง DMG ไฟเล็กน้อยแก่ศัตรูหนึ่งตัว พร้อมทั้งเพิ่ม<orangeStrong>สถานะ \"Firekiss\"</orangeStrong> และระเบิดทั้งหมด 4 ครั้ง",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "High Poles",
         "fullDesc": "การโจมตีปกติมีโอกาสพื้นฐาน {{1, percent}}% ที่จะทำให้ศัตรูเป้าหมายติดสถานะเผาไหม้ เช่นเดียวกันกับสกิลต่อสู้",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Bladed Hoop",
         "fullDesc": "เมื่อเริ่มการต่อสู้ จะเร่งแอ็กชันของ Guinaifen ขึ้น {{1, percent}}%",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Walking on Knives",
         "fullDesc": "สร้าง DMG แก่ศัตรูเป้าหมายที่ติดสถานะเผาไหม้เพิ่มขึ้น {{1, percent}}%",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

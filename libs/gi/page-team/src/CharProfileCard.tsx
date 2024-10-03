@@ -14,10 +14,12 @@ import { input } from '@genshin-optimizer/gi/wr'
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline'
 import { Box, Button, Grid, Typography } from '@mui/material'
 import { useContext } from 'react'
+import { useTranslation } from 'react-i18next'
 import { CharProfileCharEditor } from './CharProfileCharEditor'
 
 /* Image card with star and name and level */
 export default function CharacterProfileCard() {
+  const { t } = useTranslation('page_team')
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
@@ -36,8 +38,7 @@ export default function CharacterProfileCard() {
             onClick={onShowEditor}
             startIcon={<DriveFileRenameOutlineIcon />}
           >
-            {/* TODO: translation */}
-            EDIT
+            {t`charProfile.button`}
           </Button>
         </Box>
 

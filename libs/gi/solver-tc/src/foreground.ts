@@ -1,26 +1,11 @@
-import { deepClone, objKeyMap, objMap } from '@genshin-optimizer/common/util'
-import {
-  allMainStatKeys,
-  allSubstatKeys,
-  artMaxLevel,
-} from '@genshin-optimizer/gi/consts'
+import { objKeyMap } from '@genshin-optimizer/common/util'
+import { artMaxLevel } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact } from '@genshin-optimizer/gi/db'
 import type {
   ArtifactBuildData,
   ArtifactsBySlot,
 } from '@genshin-optimizer/gi/solver'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
-import { input, setReadNodeKeys } from '@genshin-optimizer/gi/wr'
-const dynamic = setReadNodeKeys(
-  deepClone({ dyn: { ...input.art, ...input.artSet } })
-)
-export const dynamicData = {
-  art: objKeyMap(
-    [...allMainStatKeys, ...allSubstatKeys],
-    (key) => dynamic.dyn[key]
-  ),
-  artSet: objMap(input.artSet, (_, key) => dynamic.dyn[key]),
-}
 
 export function compactArtifacts(
   arts: ICachedArtifact[],

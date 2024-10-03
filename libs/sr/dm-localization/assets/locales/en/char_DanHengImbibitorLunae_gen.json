@@ -5,76 +5,96 @@
       "0": {
         "name": "Beneficent Lotus",
         "fullDesc": "Uses a 2-hit attack and deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Dan Heng • Imbibitor Lunae's ATK to a single enemy target.",
-        "shortDesc": "Deals minor Imaginary DMG to a single enemy."
+        "shortDesc": "Deals minor Imaginary DMG to a single enemy.",
+        "tag": "Single Target"
       },
       "1": {
         "name": "Transcendence",
         "fullDesc": "Uses a 3-hit attack and deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Dan Heng • Imbibitor Lunae's ATK to a single enemy target.",
-        "shortDesc": "Unleashes <orangeStrong>3 hits</orangeStrong> in this attack and deals Imaginary DMG to a single enemy target."
+        "shortDesc": "Unleashes <orangeStrong>3 hits</orangeStrong> in this attack and deals Imaginary DMG to a single enemy target.",
+        "tag": "Single Target"
       },
       "2": {
         "name": "Divine Spear",
         "fullDesc": "Uses a 5-hit attack and deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Dan Heng • Imbibitor Lunae's ATK to a single enemy target. From the fourth hit onward, simultaneously deals Imaginary DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Dan Heng • Imbibitor Lunae's ATK to adjacent targets.",
-        "shortDesc": "Unleashes <orangeStrong>5 hits</orangeStrong> in this attack to deal massive Imaginary DMG to a single enemy and minor Imaginary DMG to adjacent targets. For each of the last 2 hits, obtains 1 stack of Outroar just before the hit, increasing CRIT DMG."
+        "shortDesc": "Unleashes <orangeStrong>5 hits</orangeStrong> in this attack to deal massive Imaginary DMG to a single enemy and minor Imaginary DMG to adjacent targets. For each of the last 2 hits, obtains 1 stack of Outroar just before the hit, increasing CRIT DMG.",
+        "tag": "Blast"
       },
       "3": {
         "name": "Fulgurant Leap",
         "fullDesc": "Uses a 7-hit attack and deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Dan Heng • Imbibitor Lunae's ATK to a single enemy target. From the fourth hit onward, simultaneously deal Imaginary DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Dan Heng • Imbibitor Lunae's ATK to adjacent targets.",
-        "shortDesc": "Unleashes <orangeStrong>7 hits</orangeStrong> in this attack to deal massive Imaginary DMG to a single enemy and Imaginary DMG to adjacent targets. For each of the last 4 hits, obtains 1 stack of Outroar just before the hit, increasing CRIT DMG."
+        "shortDesc": "Unleashes <orangeStrong>7 hits</orangeStrong> in this attack to deal massive Imaginary DMG to a single enemy and Imaginary DMG to adjacent targets. For each of the last 4 hits, obtains 1 stack of Outroar just before the hit, increasing CRIT DMG.",
+        "tag": "Blast"
       }
     },
     "skill": {
       "0": {
         "name": "Dracore Libre",
-        "fullDesc": "Enhances Basic ATK. Enhancements may be applied up to 3 times consecutively. Using this ability does not consume Skill Points and is not considered as using a Skill.\\nEnhanced once, Beneficent Lotus becomes Transcendence.\\nEnhanced twice, Beneficent Lotus becomes Divine Spear.\\nEnhanced thrice, Beneficent Lotus becomes Fulgurant Leap.\\nWhen using Divine Spear or Fulgurant Leap, starting from the fourth hit, 1 stack of Outroar is gained before every hit. Each stack of Outroar increases Dan Heng • Imbibitor Lunae's CRIT DMG by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, for a max of {{2}} stacks. These stacks last until the end of his turn.",
-        "shortDesc": "Enhances the Basic ATK Beneficent Lotus to <orangeStrong>Transcendence</orangeStrong>, <orangeStrong>Divine Spear</orangeStrong>, or <orangeStrong>Fulgurant Leap</orangeStrong>."
+        "fullDesc": "Enhances Basic ATK. Enhancements may be applied up to 3 times consecutively. Using this ability does not consume Skill Points and is not considered as using a Skill.<br>Enhanced once, Beneficent Lotus becomes Transcendence.<br>Enhanced twice, Beneficent Lotus becomes Divine Spear.<br>Enhanced thrice, Beneficent Lotus becomes Fulgurant Leap.<br>When using Divine Spear or Fulgurant Leap, starting from the fourth hit, 1 stack of Outroar is gained before every hit. Each stack of Outroar increases Dan Heng • Imbibitor Lunae's CRIT DMG by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, for a max of {{2}} stacks. These stacks last until the end of his turn.",
+        "shortDesc": "Enhances the Basic ATK Beneficent Lotus to <orangeStrong>Transcendence</orangeStrong>, <orangeStrong>Divine Spear</orangeStrong>, or <orangeStrong>Fulgurant Leap</orangeStrong>.",
+        "tag": "Enhance"
       },
       "1": {
         "name": "Cancel",
         "fullDesc": "Cancel Enhancement",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "Cancel"
       }
     },
     "ult": {
       "0": {
         "name": "Azure's Aqua Ablutes All",
-        "fullDesc": "Uses a 3-hit attack and deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Dan Heng • Imbibitor Lunae's ATK to a single enemy target. At the same time, deals Imaginary DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Dan Heng • Imbibitor Lunae's ATK to adjacent targets. Then, obtains {{3}} Squama Sacrosancta.\\nIt's possible to hold up to {{4}} Squama Sacrosancta, which can be used to offset Dan Heng • Imbibitor Lunae's consumption of skill points. Consuming Squama Sacrosancta is considered equivalent to consuming skill points.",
-        "shortDesc": "Deals massive Imaginary DMG to a single enemy, deals Imaginary DMG to adjacent targets, and gains 2 Squama Sacrosancta, which can <orangeStrong>offset</orangeStrong> Dan Heng • Imbibitor Lunae's <orangeStrong>consumption of skill points</orangeStrong>. Consuming Squama Sacrosancta is considered equivalent to consuming skill points."
+        "fullDesc": "Uses a 3-hit attack and deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Dan Heng • Imbibitor Lunae's ATK to a single enemy target. At the same time, deals Imaginary DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Dan Heng • Imbibitor Lunae's ATK to adjacent targets. Then, obtains {{3}} Squama Sacrosancta.<br>It's possible to hold up to {{4}} Squama Sacrosancta, which can be used to offset Dan Heng • Imbibitor Lunae's consumption of skill points. Consuming Squama Sacrosancta is considered equivalent to consuming skill points.",
+        "shortDesc": "Deals massive Imaginary DMG to a single enemy, deals Imaginary DMG to adjacent targets, and gains 2 Squama Sacrosancta, which can <orangeStrong>offset</orangeStrong> Dan Heng • Imbibitor Lunae's <orangeStrong>consumption of skill points</orangeStrong>. Consuming Squama Sacrosancta is considered equivalent to consuming skill points.",
+        "tag": "Blast"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Righteous Heart",
+        "fullDesc": "After each hit dealt during an attack, Dan Heng • Imbibitor Lunae gains 1 stack of Righteous Heart, increasing his DMG by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. This effect can stack up to {{2}} time(s), lasting until the end of his turn.",
+        "shortDesc": "Increases DMG for every hit dealt. This effect is stackable and lasts until the end of this character's turn.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Heaven-Quelling Prismadrakon",
         "fullDesc": "After using his Technique, Dan Heng • Imbibitor Lunae enters the Leaping Dragon state for {{2}} seconds. While in the Leaping Dragon state, using his attack enables him to move forward rapidly for a set distance, attacking all enemies he touches and blocking all incoming attacks. After entering combat via attacking enemies in the Leaping Dragon state, Dan Heng • Imbibitor Lunae deals Imaginary DMG equal to {{3, percent}}% of his ATK to all enemies, and gains {{1}} Squama Sacrosancta.",
-        "shortDesc": "Enters the Leaping Dragon state. Attacking will cause this character to move forward rapidly for a set distance and attack all enemies touched. After entering combat via attacking enemies, deals Imaginary DMG to all enemies, and gains 1 Squama Sacrosancta."
+        "shortDesc": "Enters the Leaping Dragon state. Attacking will cause this character to move forward rapidly for a set distance and attack all enemies touched. After entering combat via attacking enemies, deals Imaginary DMG to all enemies, and gains 1 Squama Sacrosancta.",
+        "tag": "Enhance"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Star Veil",
         "fullDesc": "At the start of the battle, immediately regenerates {{1}} Energy.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Aqua Reign",
         "fullDesc": "Increases the chance to resist Crowd Control debuffs by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Jolt Anew",
         "fullDesc": "When dealing DMG to enemy targets with Imaginary Weakness, CRIT DMG increases by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -89,7 +109,7 @@
     },
     "3": {
       "name": "Clothed in Clouds",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Zephyr's Bliss",
@@ -97,7 +117,7 @@
     },
     "5": {
       "name": "Fall is the Pride",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Reign, Returned",

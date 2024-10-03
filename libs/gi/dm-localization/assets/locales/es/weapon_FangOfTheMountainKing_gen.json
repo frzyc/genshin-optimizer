@@ -1,0 +1,24 @@
+{
+  "name": "Colmillo del Rey de la Montaña",
+  "description": {
+    "0": "Una gran espada forjada con turquesa pura. Recibió el nombre de Kongamato, el Rey de la Montaña, porque pesa muchísimo más que cualquier otra espada normal."
+  },
+  "passiveName": "Caza de la turquesa",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras golpear a un enemigo con la Habilidad Elemental, otorga 1 carga de “bendición arbórea”. Este efecto solo se puede activar una vez cada 0.5 s. Cuando un miembro cercano del equipo causa una reacción de Quemadura o Crepitar, el portador de esta arma obtiene 3 cargas de bendición arbórea. Este efecto solo puede ocurrir una vez cada 2 s y se puede activar incluso cuando el personaje está en tu equipo pero no en uso. La bendición arbórea aumenta en un <cryo>10%</cryo> el daño infligido con la Habilidad Elemental y Definitiva durante 6 s. Esto puede acumularse hasta 6 veces y la duración de cada carga se calcula de manera independiente."
+    },
+    "1": {
+      "0": "Tras golpear a un enemigo con la Habilidad Elemental, otorga 1 carga de “bendición arbórea”. Este efecto solo se puede activar una vez cada 0.5 s. Cuando un miembro cercano del equipo causa una reacción de Quemadura o Crepitar, el portador de esta arma obtiene 3 cargas de bendición arbórea. Este efecto solo puede ocurrir una vez cada 2 s y se puede activar incluso cuando el personaje está en tu equipo pero no en uso. La bendición arbórea aumenta en un <cryo>12.5%</cryo> el daño infligido con la Habilidad Elemental y Definitiva durante 6 s. Esto puede acumularse hasta 6 veces y la duración de cada carga se calcula de manera independiente."
+    },
+    "2": {
+      "0": "Tras golpear a un enemigo con la Habilidad Elemental, otorga 1 carga de “bendición arbórea”. Este efecto solo se puede activar una vez cada 0.5 s. Cuando un miembro cercano del equipo causa una reacción de Quemadura o Crepitar, el portador de esta arma obtiene 3 cargas de bendición arbórea. Este efecto solo puede ocurrir una vez cada 2 s y se puede activar incluso cuando el personaje está en tu equipo pero no en uso. La bendición arbórea aumenta en un <cryo>15%</cryo> el daño infligido con la Habilidad Elemental y Definitiva durante 6 s. Esto puede acumularse hasta 6 veces y la duración de cada carga se calcula de manera independiente."
+    },
+    "3": {
+      "0": "Tras golpear a un enemigo con la Habilidad Elemental, otorga 1 carga de “bendición arbórea”. Este efecto solo se puede activar una vez cada 0.5 s. Cuando un miembro cercano del equipo causa una reacción de Quemadura o Crepitar, el portador de esta arma obtiene 3 cargas de bendición arbórea. Este efecto solo puede ocurrir una vez cada 2 s y se puede activar incluso cuando el personaje está en tu equipo pero no en uso. La bendición arbórea aumenta en un <cryo>17.5%</cryo> el daño infligido con la Habilidad Elemental y Definitiva durante 6 s. Esto puede acumularse hasta 6 veces y la duración de cada carga se calcula de manera independiente."
+    },
+    "4": {
+      "0": "Tras golpear a un enemigo con la Habilidad Elemental, otorga 1 carga de “bendición arbórea”. Este efecto solo se puede activar una vez cada 0.5 s. Cuando un miembro cercano del equipo causa una reacción de Quemadura o Crepitar, el portador de esta arma obtiene 3 cargas de bendición arbórea. Este efecto solo puede ocurrir una vez cada 2 s y se puede activar incluso cuando el personaje está en tu equipo pero no en uso. La bendición arbórea aumenta en un <cryo>20%</cryo> el daño infligido con la Habilidad Elemental y Definitiva durante 6 s. Esto puede acumularse hasta 6 veces y la duración de cada carga se calcula de manera independiente."
+    }
+  }
+}

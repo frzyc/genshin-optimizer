@@ -5,56 +5,72 @@
       "0": {
         "name": "Gravity Suppression",
         "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Welt's ATK to a single enemy.",
-        "shortDesc": "Deals minor Imaginary DMG to a single enemy."
+        "shortDesc": "Deals minor Imaginary DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Edge of the Void",
-        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Welt's ATK to a single enemy and further deals DMG 2 extra times, with each time dealing Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Welt's ATK to a random enemy. On hit, there is a <orangeStrong>{{2, percent}}%</orangeStrong> <u>base chance</u> to reduce the enemy's SPD by {{3, percent}}% for {{4}} turn(s).",
-        "shortDesc": "Deals minor Imaginary DMG to a single enemy. This attack can Bounce 3 times, with a chance of <orangeStrong>Slowing</orangeStrong> the hit enemies."
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Welt's ATK to a single enemy and further deals DMG 2 extra times, with each time dealing Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Welt's ATK to a random enemy. On hit, there is a <orangeStrong>{{2, percent}}%</orangeStrong> base chance to reduce the enemy's SPD by {{3, percent}}% for {{4}} turn(s).",
+        "shortDesc": "Deals minor Imaginary DMG to a single enemy. This attack can Bounce 3 times, with a chance of <orangeStrong>Slowing</orangeStrong> the hit enemies.",
+        "tag": "Bounce"
       }
     },
     "ult": {
       "0": {
         "name": "Synthetic Black Hole",
-        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Welt's ATK to all enemies, with a {{3, percent}}% <u>base chance</u> for enemies hit by this ability to be Imprisoned for 1 turn.\\nImprisoned enemies have their <u>actions delayed</u> by <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> and SPD reduced by {{4, percent}}%.",
-        "shortDesc": "Deals Imaginary DMG to all enemies, with <orangeStrong>a high chance of Imprisoning them</orangeStrong>."
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Welt's ATK to all enemies, with a {{3, percent}}% base chance for enemies hit by this ability to be Imprisoned for 1 turn.<br>Imprisoned enemies have their actions delayed by <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> and SPD reduced by {{4, percent}}%.",
+        "shortDesc": "Deals Imaginary DMG to all enemies, with <orangeStrong>a high chance of Imprisoning them</orangeStrong>.",
+        "tag": "AoE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Time Distortion",
+        "fullDesc": "When hitting an enemy that is already Slowed, Welt deals Additional Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of his ATK to the enemy.",
+        "shortDesc": "When hitting a Slowed enemy, <orangeStrong>additionally deals minor Imaginary Additional DMG</orangeStrong>.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Gravitational Imprisonment",
-        "fullDesc": "After using Welt's Technique, create a special dimension that lasts for {{4}} second(s). Enemies in this special dimension have their Movement SPD reduced by {{5, percent}}%. After entering battle with enemies in the special dimension, there is a {{1, percent}}% <u>base chance</u> to Imprison the enemies for 1 turn.\\nImprisoned enemies have their <u>actions delayed</u> by {{2, percent}}% and SPD reduced by {{3, percent}}%. Only 1 dimension created by allies can exist at the same time.",
-        "shortDesc": "Creates a special dimension. Enemies in this dimension have their Movement SPD reduced. After entering combat with enemies in the dimension, there is a <orangeStrong>high chance for the enemies to become Imprisoned</orangeStrong>."
+        "fullDesc": "After using Welt's Technique, create a special dimension that lasts for {{4}} second(s). Enemies in this special dimension have their Movement SPD reduced by {{5, percent}}%. After entering battle with enemies in the special dimension, there is a {{1, percent}}% base chance to Imprison the enemies for 1 turn.<br>Imprisoned enemies have their actions delayed by {{2, percent}}% and SPD reduced by {{3, percent}}%. Only 1 dimension created by allies can exist at the same time.",
+        "shortDesc": "Creates a special dimension. Enemies in this dimension have their Movement SPD reduced. After entering combat with enemies in the dimension, there is a <orangeStrong>high chance for the enemies to become Imprisoned</orangeStrong>.",
+        "tag": "Impair"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Retribution",
         "fullDesc": "When using Ultimate, there is a {{1, percent}}% base chance to increase the DMG received by the targets by {{2, percent}}% for {{3}} turn(s).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Judgment",
         "fullDesc": "Using Ultimate additionally regenerates {{1}} Energy.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Punishment",
         "fullDesc": "Deals {{1, percent}}% more DMG to enemies inflicted with Weakness Break.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Prayer of Peace",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Appellation of Justice",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Power of Kindness",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Prospect of Glory",

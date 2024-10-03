@@ -5,56 +5,72 @@
       "0": {
         "name": "强袭",
         "fullDesc": "对指定敌方单体造成等同于希儿<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的量子属性伤害。",
-        "shortDesc": "对敌方单体造成少量量子属性伤害。"
+        "shortDesc": "对敌方单体造成少量量子属性伤害。",
+        "tag": "单攻"
       }
     },
     "skill": {
       "0": {
         "name": "归刃",
         "fullDesc": "使希儿的速度提高{{2, percent}}%，并对指定敌方单体造成等同于希儿<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的量子属性伤害，速度提高效果持续{{3}}回合。",
-        "shortDesc": "对敌方单体造成量子属性伤害，并使自身速度提高。"
+        "shortDesc": "对敌方单体造成量子属性伤害，并使自身速度提高。",
+        "tag": "单攻"
       }
     },
     "ult": {
       "0": {
         "name": "乱蝶",
         "fullDesc": "立即进入增幅状态，并对指定敌方单体造成等同于希儿<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的量子属性伤害。",
-        "shortDesc": "进入<orangeStrong>增幅状态</orangeStrong>，对敌方单体造成大量量子属性伤害。"
+        "shortDesc": "进入<orangeStrong>增幅状态</orangeStrong>，对敌方单体造成大量量子属性伤害。",
+        "tag": "单攻"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "再现",
+        "fullDesc": "施放普攻、战技、终结技消灭敌方目标时立即获得1个额外回合并进入增幅状态，增幅状态下希儿施放攻击造成的伤害提高<orangeStrong>{{1, percent}}%</orangeStrong>，持续{{2}}回合。<br>若希儿在因天赋【再现】获得的额外回合中消灭敌方目标，此天赋不会生效。",
+        "shortDesc": "施放普攻、战技、终结技<orangeStrong>消灭敌方目标</orangeStrong>时获得<orangeStrong>额外回合并进入增幅状态</orangeStrong>，增幅状态下自身造成的伤害提高。",
+        "tag": "强化"
       }
     },
     "technique": {
       "0": {
         "name": "幻身",
         "fullDesc": "使用秘技后进入持续{{1}}秒的隐身状态。隐身状态下不会被敌人发现，且主动攻击敌人进入战斗时，希儿立即进入增幅状态。",
-        "shortDesc": "进入<orangeStrong>隐身</orangeStrong>状态。攻击敌人进入战斗后立即进入<orangeStrong>增幅状态</orangeStrong>。"
+        "shortDesc": "进入<orangeStrong>隐身</orangeStrong>状态。攻击敌人进入战斗后立即进入<orangeStrong>增幅状态</orangeStrong>。",
+        "tag": "强化"
       }
     },
     "overworld": {
       "0": {
         "name": "攻击",
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "夜行",
         "fullDesc": "若当前生命值百分比小于等于{{1, percent}}%，则被敌方目标攻击的概率降低。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "割裂",
         "fullDesc": "增幅状态下希儿的量子属性抗性穿透提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "涟漪",
         "fullDesc": "施放普攻后，希儿的下一次行动提前{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -81,7 +97,7 @@
     },
     "6": {
       "name": "离析",
-      "desc": "施放终结技后使受到攻击的敌方单体陷入【乱蝶】状态，持续{{2}}回合。【乱蝶】状态下的敌方目标受到攻击后，额外受到1次等同于希儿终结技伤害{{1, percent}}%的量子属性附加伤害。若该目标被我方其他目标触发【乱蝶】状态的附加伤害消灭，将不会触发希儿的天赋。\\n当希儿陷入无法战斗状态时，敌方目标的【乱蝶】状态被解除。"
+      "desc": "施放终结技后使受到攻击的敌方单体陷入【乱蝶】状态，持续{{2}}回合。【乱蝶】状态下的敌方目标受到攻击后，额外受到1次等同于希儿终结技伤害{{1, percent}}%的量子属性附加伤害。若该目标被我方其他目标触发【乱蝶】状态的附加伤害消灭，将不会触发希儿的天赋。<br>当希儿陷入无法战斗状态时，敌方目标的【乱蝶】状态被解除。"
     }
   }
 }

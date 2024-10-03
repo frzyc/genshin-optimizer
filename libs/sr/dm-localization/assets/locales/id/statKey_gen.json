@@ -1,5 +1,6 @@
 {
   "spd": "SPD",
+  "spd_": "SPD",
   "hp": "HP",
   "hp_": "HP",
   "atk": "ATK",
@@ -8,7 +9,7 @@
   "def_": "DEF",
   "crit_": "CRIT Rate",
   "crit_dmg_": "CRIT DMG",
-  "brEff_": "Break Effect",
+  "brEffect_": "Break Effect",
   "eff_": "Effect Hit Rate",
   "eff_res_": "Effect RES",
   "enerRegen_": "Energy Regeneration Rate",
@@ -19,5 +20,8 @@
   "wind_dmg_": "Wind DMG Meningkat",
   "lightning_dmg_": "Lightning DMG Meningkat",
   "quantum_dmg_": "Quantum DMG Meningkat",
-  "imaginary_dmg_": "Imaginary DMG Meningkat"
+  "imaginary_dmg_": "Imaginary DMG Meningkat",
+  "dmg_": "DMG Meningkat",
+  "weakness_": "Weakness Break Efficiency",
+  "resPen_": "RES PEN"
 }

@@ -5,56 +5,72 @@
       "0": {
         "name": "Tri Thức Là Sức Mạnh",
         "fullDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Dr. Ratio.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Số Ảo cho 1 kẻ địch chỉ định."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Số Ảo cho 1 kẻ địch chỉ định.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Thuật Nâng Cao Trí Tuệ",
         "fullDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Dr. Ratio.",
-        "shortDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch chỉ định."
+        "shortDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch chỉ định.",
+        "tag": "Đánh Đơn"
       }
     },
     "ult": {
       "0": {
         "name": "Tam Đoạn Phản Luận",
-        "fullDesc": "Gây Sát Thương Số Ảo lên 1 kẻ địch chỉ định bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Dr. Ratio, đồng thời kèm theo Sự Mù Quáng Của Trí Giả. Khi đồng đội của Dr. Ratio tấn công mục tiêu đang có Sự Mù Quáng Của Trí Giả, Dr. Ratio sẽ phát động 1 lần <u>Đòn Đánh Theo Sau</u> của Thiên Phú lên mục tiêu này.\\nHiệu ứng Sự Mù Quáng Của Trí Giả tối đa kích hoạt {{2}} lần, hơn nữa chỉ có hiệu lực với mục tiêu mà Dr. Ratio thi triển Tuyệt Kỹ mới nhất lên đó. Sau khi thi triển Tuyệt Kỹ sẽ làm mới số lần kích hoạt hiệu ứng này.",
-        "shortDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch chỉ định, kèm theo Sự Mù Quáng Của Trí Giả lên kẻ này, khi đồng đội của Dr. Ratio tấn công mục tiêu đang có Sự Mù Quáng Của Trí Giả, Dr. Ratio sẽ phát động 1 lần <orangeStrong><u>Đòn Đánh Theo Sau</u></orangeStrong> lên mục tiêu này."
+        "fullDesc": "Gây Sát Thương Số Ảo lên 1 kẻ địch chỉ định bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Dr. Ratio, đồng thời kèm theo Sự Mù Quáng Của Trí Giả. Khi đồng đội của Dr. Ratio tấn công mục tiêu đang có Sự Mù Quáng Của Trí Giả, Dr. Ratio sẽ phát động 1 lần Đòn Đánh Theo Sau của Thiên Phú lên mục tiêu này.<br>Hiệu ứng Sự Mù Quáng Của Trí Giả tối đa kích hoạt {{2}} lần, hơn nữa chỉ có hiệu lực với mục tiêu mà Dr. Ratio thi triển Tuyệt Kỹ mới nhất lên đó. Sau khi thi triển Tuyệt Kỹ sẽ làm mới số lần kích hoạt hiệu ứng này.",
+        "shortDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch chỉ định, kèm theo Sự Mù Quáng Của Trí Giả lên kẻ này, khi đồng đội của Dr. Ratio tấn công mục tiêu đang có Sự Mù Quáng Của Trí Giả, Dr. Ratio sẽ phát động 1 lần <orangeStrong>Đòn Đánh Theo Sau</orangeStrong> lên mục tiêu này.",
+        "tag": "Đánh Đơn"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Tôi Tư Duy, Nên Tôi Tồn Tại",
+        "fullDesc": "Khi thi triển Chiến Kỹ, có {{2, percent}}% xác suất cố định phát động 1 lần Đòn Đánh Theo Sau lên mục tiêu này, gây Sát Thương Số Ảo bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Dr. Ratio. Mỗi khi mục tiêu có 1 Hiệu Ứng Xấu sẽ tăng {{3, percent}}% xác suất cố định phát động Đòn Đánh Theo Sau. Nếu mục tiêu bị tiêu diệt trước khi phát động Đòn Đánh Theo Sau thì sẽ phát động Đòn Đánh Theo Sau lên 1 kẻ địch ngẫu nhiên.",
+        "shortDesc": "Khi thi triển Chiến Kỹ sẽ có xác suất phát động 1 lần <orangeStrong>Đòn Đánh Theo Sau</orangeStrong> lên mục tiêu này.",
+        "tag": "Đánh Đơn"
       }
     },
     "technique": {
       "0": {
         "name": "Hun Đúc Thần Tượng",
-        "fullDesc": "Sau khi dùng Bí Kỹ, sẽ tạo ra 1 vùng đặc biệt khiêu khích kẻ địch ở gần, duy trì {{1}} giây. Sau khi vào chiến đấu với kẻ địch trong vùng đặc biệt, có {{2, percent}}% <u>xác suất cơ bản</u> khiến Tốc Độ của mỗi kẻ địch giảm {{3, percent}}%, duy trì {{4}} hiệp. Tối đa chỉ tồn tại 1 hiệu ứng vùng do phe ta tạo ra.",
-        "shortDesc": "Tạo một vùng đặc biệt. Kẻ địch trong vùng sẽ bị khiêu khích. Sau khi vào chiến đấu với kẻ địch trong vùng, sẽ có xác suất lớn <orangeStrong>giảm Tốc Độ</orangeStrong> của kẻ địch."
+        "fullDesc": "Sau khi dùng Bí Kỹ, sẽ tạo ra 1 vùng đặc biệt khiêu khích kẻ địch ở gần, duy trì {{1}} giây. Sau khi vào chiến đấu với kẻ địch trong vùng đặc biệt, có {{2, percent}}% xác suất cơ bản khiến Tốc Độ của mỗi kẻ địch giảm {{3, percent}}%, duy trì {{4}} hiệp. Tối đa chỉ tồn tại 1 hiệu ứng vùng do phe ta tạo ra.",
+        "shortDesc": "Tạo một vùng đặc biệt. Kẻ địch trong vùng sẽ bị khiêu khích. Sau khi vào chiến đấu với kẻ địch trong vùng, sẽ có xác suất lớn <orangeStrong>giảm Tốc Độ</orangeStrong> của kẻ địch.",
+        "tag": "Quấy Nhiễu"
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Quy Nạp",
         "fullDesc": "Khi thi triển Chiến Kỹ, mỗi khi mục tiêu có 1 Hiệu Ứng Xấu, sẽ tăng {{1, percent(fixed: 1)}}% Tỷ Lệ Bạo Kích, tăng {{2, percent}}% Sát Thương Bạo Kích của Dr. Ratio, hiệu ứng này tối đa cộng dồn {{3}} tầng.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Diễn Giải",
         "fullDesc": "Sau khi thi triển Chiến Kỹ tấn công kẻ địch, có {{1, percent}}% xác suất cơ bản giảm {{2, percent}}% Kháng Hiệu Ứng của kẻ địch bị tấn công, duy trì {{3}} hiệp.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Suy Luận",
         "fullDesc": "Khi gây sát thương, nếu mục tiêu có từ {{1}} Hiệu Ứng Xấu trở lên, thì mỗi một Hiệu Ứng Xấu của mục tiêu sẽ tăng {{2, percent}}% sát thương Dr. Ratio gây ra cho mục tiêu đó, tối đa tăng {{3, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,56 +5,72 @@
       "0": {
         "name": "冰攀前齒技術",
         "fullDesc": "對指定敵方單體造成等同於自身<orangeStrong>{{1, percent}}%</orangeStrong>生命上限的量子屬性傷害。",
-        "shortDesc": "對敵方單體造成少量量子屬性傷害。"
+        "shortDesc": "對敵方單體造成少量量子屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "鹽漬野營罐頭",
-        "fullDesc": "為指定我方單體附加【求生反應】，提高等同於玲可<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{2}}</orangeStrong>的生命上限，若該目標為「毀滅」或「存護」命途，則被敵方攻擊的機率大幅提高，【求生反應】持續{{3}}回合。\\n使該目標回復等同於玲可<orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{5}}</orangeStrong>的生命值。",
-        "shortDesc": "使我方單體獲得【求生反應】，使其<orangeStrong>生命上限提高</orangeStrong>，同時為其回復生命值。"
+        "fullDesc": "為指定我方單體附加【求生反應】，提高等同於玲可<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{2}}</orangeStrong>的生命上限，若該目標為「毀滅」或「存護」命途，則被敵方攻擊的機率大幅提高，【求生反應】持續{{3}}回合。<br>使該目標回復等同於玲可<orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{5}}</orangeStrong>的生命值。",
+        "shortDesc": "使我方單體獲得【求生反應】，使其<orangeStrong>生命上限提高</orangeStrong>，同時為其回復生命值。",
+        "tag": "回復"
       }
     },
     "ult": {
       "0": {
         "name": "雪原急救方案",
-        "fullDesc": "解除我方全體的{{1}}個<u>負面效果</u>，並立即為我方全體回復等同於玲可<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{3}}</orangeStrong>的生命值。",
-        "shortDesc": "解除<orangeStrong>我方全體1個<u>負面效果</u></orangeStrong>，並為我方全體回復生命值。"
+        "fullDesc": "解除我方全體的{{1}}個負面效果，並立即為我方全體回復等同於玲可<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{3}}</orangeStrong>的生命值。",
+        "shortDesc": "解除<orangeStrong>我方全體1個負面效果</orangeStrong>，並為我方全體回復生命值。",
+        "tag": "回復"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "戶外生存經驗",
+        "fullDesc": "施放戰技或終結技時，使我方目標獲得{{1}}回合的持續治療效果，目標每回合開始時回復等同於玲可<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{3}}</orangeStrong>的生命值。若該目標持有【求生反應】，則持續治療效果額外回復等同於玲可<orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong>生命上限+<orangeStrong>{{5}}</orangeStrong>的生命值。",
+        "shortDesc": "施放戰技或終結技時，使我方目標獲得<orangeStrong>持續回復生命值</orangeStrong>效果，若目標持有【求生反應】則持續回復生命值效果額外提高。",
+        "tag": "回復"
       }
     },
     "technique": {
       "0": {
         "name": "巧克力能量棒",
         "fullDesc": "使用秘技後，下一次戰鬥開始時為我方全體附加玲可天賦的持續治療效果，持續{{1}}回合。",
-        "shortDesc": "使用秘技，下一次戰鬥開始時為我方全體附上持續治療效果。"
+        "shortDesc": "使用秘技，下一次戰鬥開始時為我方全體附上持續治療效果。",
+        "tag": "回復"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "單體攻擊"
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "提前勘測",
         "fullDesc": "當持有【求生反應】的目標受到攻擊後，玲可立即恢復{{1}}點能量。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "探險技術",
         "fullDesc": "抵抗控制類負面狀態的機率提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "極境求生",
         "fullDesc": "天賦產生的持續回復效果延長{{1}}回合。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

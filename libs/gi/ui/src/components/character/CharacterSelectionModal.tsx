@@ -1,4 +1,5 @@
 'use client'
+import { useDataEntryBase } from '@genshin-optimizer/common/database-ui'
 import {
   useBoolState,
   useForceUpdate,
@@ -101,11 +102,7 @@ export function CharacterSelectionModal({
   ])
   const { silly } = useContext(SillyContext)
   const database = useDatabase()
-  const [state, setState] = useState(() => database.displayCharacter.get())
-  useEffect(
-    () => database.displayCharacter.follow((r, s) => setState(s)),
-    [database, setState]
-  )
+  const state = useDataEntryBase(database.displayCharacter)
 
   const { gender } = useDBMeta()
 

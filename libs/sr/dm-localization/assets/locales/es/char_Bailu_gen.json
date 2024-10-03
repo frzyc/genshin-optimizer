@@ -5,56 +5,72 @@
       "0": {
         "name": "Patada diagnóstica",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Bailu como Daño de Rayo a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Cantando entre las nubes",
         "fullDesc": "Cura a un aliado con una cantidad de PV equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Bailu + <orangeStrong>{{2}}</orangeStrong>. Después, Bailu cura {{4}} veces a aliados al azar. Cada vez que cura, los PV que regenera la siguiente curación realizada se reducen en un {{3, percent}}%.",
-        "shortDesc": "Regenera PV a un aliado y después cura a aliados al azar."
+        "shortDesc": "Regenera PV a un aliado y después cura a aliados al azar.",
+        "tag": "Regeneración"
       }
     },
     "ult": {
       "0": {
         "name": "Salto del dragón del marjal",
-        "fullDesc": "Cura a todos los aliados con una cantidad de PV equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Bailu + <orangeStrong>{{2}}</orangeStrong>.\\nAplica Vigor a los aliados que no lo tienen y alarga el efecto en 1 turno a los que lo tienen.\\nVigor dura {{3}} turnos y no se puede acumular.",
-        "shortDesc": "Regenera PV a todos los aliados y les aplica Vigor o extiende su duración."
+        "fullDesc": "Cura a todos los aliados con una cantidad de PV equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Bailu + <orangeStrong>{{2}}</orangeStrong>.<br>Aplica Vigor a los aliados que no lo tienen y alarga el efecto en 1 turno a los que lo tienen.<br>Vigor dura {{3}} turnos y no se puede acumular.",
+        "shortDesc": "Regenera PV a todos los aliados y les aplica Vigor o extiende su duración.",
+        "tag": "Regeneración"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Calabaza de elixir",
+        "fullDesc": "Cuando un aliado con Vigor recibe un ataque, regenera una cantidad de PV equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Bailu + <orangeStrong>{{2}}</orangeStrong>. Este efecto se puede activar {{5}} veces.<br>Cuando un aliado de Bailu recibe un golpe letal, no es derrotado, sino que Bailu lo cura inmediatamente con una cantidad de PV equivalente al <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de los PV máx. de Bailu + <orangeStrong>{{4}}</orangeStrong>. Este efecto se puede activar una vez en cada batalla.",
+        "shortDesc": "Los aliados con <orangeStrong>Vigor</orangeStrong> <orangeStrong>regeneran PV</orangeStrong> tras recibir un ataque.<br>Cuando un aliado <orangeStrong>recibe un golpe letal</orangeStrong>, Bailu <orangeStrong>regenera sus PV inmediatamente</orangeStrong>. Este efecto se puede activar 1 vez durante la batalla.",
+        "tag": "Regeneración"
       }
     },
     "technique": {
       "0": {
         "name": "Paseando bajo la lluvia",
         "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, todos los aliados obtienen Vigor durante {{1}} turnos.",
-        "shortDesc": "Tras usar la técnica, al comenzar la siguiente batalla, todos los aliados obtienen Vigor."
+        "shortDesc": "Tras usar la técnica, al comenzar la siguiente batalla, todos los aliados obtienen Vigor.",
+        "tag": "Regeneración"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Analectas de Qihuang",
         "fullDesc": "Cuando Bailu cura a un aliado por encima de sus PV máx., los PV máx. del objetivo aumentan en un {{1, percent}}% durante {{2}} turnos.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Líneas de icor vidyadhara",
         "fullDesc": "La cantidad de veces que se puede activar el efecto de Vigor aumenta en {{1}}.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Bendición acuática",
         "fullDesc": "El daño que reciben los personajes con Vigor se reduce en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

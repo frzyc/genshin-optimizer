@@ -5,56 +5,72 @@
       "0": {
         "name": "|系統警告|",
         "fullDesc": "對指定敵方單體造成等同於銀狼<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的量子屬性傷害。",
-        "shortDesc": "對敵方單體造成少量量子屬性傷害。"
+        "shortDesc": "對敵方單體造成少量量子屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "是否允許更改？",
-        "fullDesc": "有<orangeStrong>{{2, percent}}%</orangeStrong>的<u>基礎機率</u>向指定敵方單體目標附加1個場上我方目標持有屬性的弱點，且該弱點對應屬性的抗性降低{{4, percent}}%，持續{{3}}回合。若附加的是敵方目標原有屬性的弱點，則不會觸發對應屬性的抗性降低效果。\\n同一敵方目標僅能被銀狼附加1個弱點，當銀狼對其再次附加弱點時，僅保留最新附加的弱點。\\n有{{5, percent}}%的<u>基礎機率</u>額外使該目標的全屬性抗性降低<orangeStrong>{{6, percent(fixed: 1)}}%</orangeStrong>，持續{{7}}回合。\\n對該目標造成等同於銀狼<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的量子屬性傷害。",
-        "shortDesc": "有高機率向敵方單體<orangeStrong>附加額外的弱點</orangeStrong>，並對其造成量子屬性傷害。"
+        "fullDesc": "有<orangeStrong>{{2, percent}}%</orangeStrong>的基礎機率向指定敵方單體目標附加1個場上我方目標持有屬性的弱點，且該弱點對應屬性的抗性降低{{4, percent}}%，持續{{3}}回合。若附加的是敵方目標原有屬性的弱點，則不會觸發對應屬性的抗性降低效果。<br>同一敵方目標僅能被銀狼附加1個弱點，當銀狼對其再次附加弱點時，僅保留最新附加的弱點。<br>有{{5, percent}}%的基礎機率額外使該目標的全屬性抗性降低<orangeStrong>{{6, percent(fixed: 1)}}%</orangeStrong>，持續{{7}}回合。<br>對該目標造成等同於銀狼<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的量子屬性傷害。",
+        "shortDesc": "有高機率向敵方單體<orangeStrong>附加額外的弱點</orangeStrong>，並對其造成量子屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "ult": {
       "0": {
         "name": "|帳號封鎖|",
-        "fullDesc": "有<orangeStrong>{{2, percent}}%</orangeStrong>的<u>基礎機率</u>使指定敵方單體防禦力降低<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>，持續{{4}}回合，同時對該目標造成等同於銀狼<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的量子屬性傷害。",
-        "shortDesc": "有高機率使敵方單體<orangeStrong>防禦力降低</orangeStrong>，並對其造成大量量子屬性傷害。"
+        "fullDesc": "有<orangeStrong>{{2, percent}}%</orangeStrong>的基礎機率使指定敵方單體防禦力降低<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>，持續{{4}}回合，同時對該目標造成等同於銀狼<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的量子屬性傷害。",
+        "shortDesc": "有高機率使敵方單體<orangeStrong>防禦力降低</orangeStrong>，並對其造成大量量子屬性傷害。",
+        "tag": "單體攻擊"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "等待程式回應……",
+        "fullDesc": "銀狼能夠製造：攻擊力降低<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>、防禦力降低<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>、速度降低<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>3種【缺陷】。<br>銀狼每次發動攻擊後有<orangeStrong>{{4, percent}}%</orangeStrong>的基礎機率向受到攻擊的敵方目標植入1個隨機【缺陷】，持續{{5}}回合。",
+        "shortDesc": "攻擊後有機率向目標植入1個隨機<orangeStrong>【缺陷】</orangeStrong>。",
+        "tag": "妨害"
       }
     },
     "technique": {
       "0": {
         "name": "|強制結束程式|",
         "fullDesc": "立即攻擊敵人，進入戰鬥後對敵方全體造成等同於銀狼{{1, percent}}%攻擊力的量子屬性傷害，並無視弱點屬性削減敵方全體的韌性，擊破弱點時，觸發量子屬性的弱點擊破效果。",
-        "shortDesc": "攻擊敵人，進入戰鬥後對敵方全體造成少量傷害，並無視弱點屬性削減韌性。"
+        "shortDesc": "攻擊敵人，進入戰鬥後對敵方全體造成少量傷害，並無視弱點屬性削減韌性。",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "生成",
         "fullDesc": "【缺陷】的持續時間增加{{1}}回合。每當有敵方目標的弱點被擊破時，銀狼有{{2, percent}}%的基礎機率對該目標植入1個隨機【缺陷】。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "注入",
         "fullDesc": "施放戰技時，為敵方目標添加的弱點持續時間增加{{1}}回合。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "註解",
         "fullDesc": "施放戰技時，若敵方目標的負面效果數量大於等於{{1}}個，則戰技使目標全屬性抗性降低的效果額外降低{{2, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -88,14 +88,14 @@ export default function CustomMultiTargetCard({
     (index: number) => () => {
       if (
         Object.values(target.targets[index].bonusStats).length &&
-        !window.confirm(`Are you sure you want to delete this target?`)
+        !window.confirm(t`multiTarget.confirm`)
       )
         return
       const targets = [...target.targets]
       targets.splice(index, 1)
       setTarget({ ...target, targets })
     },
-    [target, setTarget]
+    [target, setTarget, t]
   )
 
   const [selectedTarget, setSelectedTarget] = useState(-1)
@@ -124,7 +124,7 @@ export default function CustomMultiTargetCard({
   const copyToClipboard = () =>
     navigator.clipboard
       .writeText(JSON.stringify(target))
-      .then(() => alert('Copied configuration to clipboard.'))
+      .then(() => alert(t`multiTarget.copyMsg`))
       .catch(console.error)
 
   const customTargetDisplays = useMemo(
@@ -192,7 +192,7 @@ export default function CustomMultiTargetCard({
           >
             <TextFieldLazy
               fullWidth
-              label="Custom Multi-target Name"
+              label={t`multiTarget.label`}
               value={name}
               onChange={(name) =>
                 setTarget((target) => ({
@@ -204,7 +204,7 @@ export default function CustomMultiTargetCard({
             {description && descIsJson && <JsonDescWarning />}
             <TextFieldLazy
               fullWidth
-              label="Custom Multi-target Description"
+              label={t`multiTarget.desc`}
               value={description}
               onChange={(description) => {
                 setDescIsJson(
@@ -243,7 +243,7 @@ export default function CustomMultiTargetCard({
                 startIcon={<ContentPasteIcon />}
                 sx={{ flexGrow: 1 }}
               >
-                Export
+                {t`multiTarget.export`}
               </Button>
               <Button color="error" onClick={onDelete}>
                 <DeleteForeverIcon />

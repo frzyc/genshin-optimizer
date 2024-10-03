@@ -4,57 +4,73 @@
     "basic": {
       "0": {
         "name": "Nhìn Thấu, Bình Minh Tĩnh Lặng",
-        "fullDesc": "Gây Sát Thương Phong lên 1 kẻ địch chỉ định bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Black Swan, có <orangeStrong>{{2, percent}}%</orangeStrong> <u>xác suất cơ bản</u> khiến mục tiêu rơi vào 1 tầng <u>Dấu Tích Bí Ẩn</u>, đồng thời sau khi tấn công mục tiêu ở trạng thái Bào Mòn, Chảy Máu, Thiêu Đốt, Sốc Điện, sẽ lần lượt có <orangeStrong>{{3, percent}}%</orangeStrong> <u>xác suất cơ bản</u> khiến mục tiêu rơi thêm vào 1 tầng <u>Dấu Tích Bí Ẩn</u>.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Phong lên 1 kẻ địch, có xác suất thi triển <u>Dấu Tích Bí Ẩn</u> lên mục tiêu. Sau khi tấn công mục tiêu ở trạng thái <orangeStrong>Bào Mòn, Chảy Máu, Thiêu Đốt, Sốc Điện</orangeStrong>, sẽ lần lượt có xác suất <orangeStrong>thi triển thêm <u></u>Dấu Tích Bí Ẩn</orangeStrong>."
+        "fullDesc": "Gây Sát Thương Phong lên 1 kẻ địch chỉ định bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Black Swan, có <orangeStrong>{{2, percent}}%</orangeStrong> xác suất cơ bản khiến mục tiêu rơi vào 1 tầng Dấu Tích Bí Ẩn, đồng thời sau khi tấn công mục tiêu ở trạng thái Bào Mòn, Chảy Máu, Thiêu Đốt, Sốc Điện, sẽ lần lượt có <orangeStrong>{{3, percent}}%</orangeStrong> xác suất cơ bản khiến mục tiêu rơi thêm vào 1 tầng Dấu Tích Bí Ẩn.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Phong lên 1 kẻ địch, có xác suất thi triển Dấu Tích Bí Ẩn lên mục tiêu. Sau khi tấn công mục tiêu ở trạng thái <orangeStrong>Bào Mòn, Chảy Máu, Thiêu Đốt, Sốc Điện</orangeStrong>, sẽ lần lượt có xác suất <orangeStrong>thi triển thêm Dấu Tích Bí Ẩn</orangeStrong>.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Sụp Đổ, Hoàng Hôn Giả Dối",
-        "fullDesc": "Gây Sát Thương Phong lên 1 kẻ địch chỉ định và mục tiêu bên cạnh bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Black Swan, đồng thời có {{2, percent}}% <u>xác suất cơ bản</u> khiến mục tiêu và mục tiêu bên cạnh rơi vào 1 tầng <u>Dấu Tích Bí Ẩn</u>, ngoài ra có {{3, percent}}% <u>xác suất cơ bản</u> giảm <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> Phòng Thủ của mục tiêu và mục tiêu bên cạnh, duy trì {{5}} hiệp.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Phong lên 1 kẻ địch và mục tiêu lân cận kẻ đó, có xác suất lớn thi triển <orangeStrong><u>Dấu Tích Bí Ẩn</u></orangeStrong> lên mục tiêu, và có xác suất lớn giảm Phòng Thủ của mục tiêu."
+        "fullDesc": "Gây Sát Thương Phong lên 1 kẻ địch chỉ định và mục tiêu bên cạnh bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Black Swan, đồng thời có {{2, percent}}% xác suất cơ bản khiến mục tiêu và mục tiêu bên cạnh rơi vào 1 tầng Dấu Tích Bí Ẩn, ngoài ra có {{3, percent}}% xác suất cơ bản giảm <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> Phòng Thủ của mục tiêu và mục tiêu bên cạnh, duy trì {{5}} hiệp.",
+        "shortDesc": "Gây lượng nhỏ Sát Thương Phong lên 1 kẻ địch và mục tiêu lân cận kẻ đó, có xác suất lớn thi triển <orangeStrong>Dấu Tích Bí Ẩn</orangeStrong> lên mục tiêu, và có xác suất lớn giảm Phòng Thủ của mục tiêu.",
+        "tag": "Khuếch Tán"
       }
     },
     "ult": {
       "0": {
         "name": "Trầm Luân Trong Vòng Tay",
-        "fullDesc": "Khiến toàn bộ kẻ địch rơi vào trạng thái Vạch Trần, duy trì {{2}} hiệp.\\nỞ trạng thái Vạch Trần, sát thương phải chịu trong hiệp của chính kẻ địch tăng <orangeStrong>{{3, percent}}%</orangeStrong>, đồng thời khi kẻ địch ở trạng thái <u>Dấu Tích Bí Ẩn</u>, sẽ xem như cùng lúc rơi vào trạng thái Bào Mòn, Chảy Máu, Thiêu Đốt, Sốc Điện, sau khi <u>Dấu Tích Bí Ẩn</u> gây sát thương khi bắt đầu mỗi hiệp sẽ không làm mới số tầng. Hiệu ứng không làm mới số tầng của <u>Dấu Tích Bí Ẩn</u> tối đa kích hoạt {{4}} lần trong thời gian duy trì trạng thái Vạch Trần, rơi vào trạng thái Vạch Trần một lần nữa sẽ làm mới số lần kích hoạt.\\nGây cho toàn bộ kẻ địch Sát Thương Phong bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Black Swan.",
-        "shortDesc": "Thi triển trạng thái Vạch Trần lên toàn bộ phe địch, tăng sát thương mà mục tiêu phải chịu trong hiệp, đồng thời <orangeStrong>xem <u>Dấu Tích Bí Ẩn</u> như là trạng thái Bào Mòn, Chảy Máu, Thiêu Đốt, Sốc Điện</orangeStrong>. Ngoài ra, sau khi <u>Dấu Tích Bí Ẩn</u> gây sát thương lúc bắt đầu hiệp kế tiếp sẽ không làm mới số tầng. Gây Sát Thương Phong lên toàn phe địch."
+        "fullDesc": "Khiến toàn bộ kẻ địch rơi vào trạng thái Vạch Trần, duy trì {{2}} hiệp.<br>Ở trạng thái Vạch Trần, sát thương phải chịu trong hiệp của chính kẻ địch tăng <orangeStrong>{{3, percent}}%</orangeStrong>, đồng thời khi kẻ địch ở trạng thái Dấu Tích Bí Ẩn, sẽ xem như cùng lúc rơi vào trạng thái Bào Mòn, Chảy Máu, Thiêu Đốt, Sốc Điện, sau khi Dấu Tích Bí Ẩn gây sát thương khi bắt đầu mỗi hiệp sẽ không làm mới số tầng. Hiệu ứng không làm mới số tầng của Dấu Tích Bí Ẩn tối đa kích hoạt {{4}} lần trong thời gian duy trì trạng thái Vạch Trần, rơi vào trạng thái Vạch Trần một lần nữa sẽ làm mới số lần kích hoạt.<br>Gây cho toàn bộ kẻ địch Sát Thương Phong bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Black Swan.",
+        "shortDesc": "Thi triển trạng thái Vạch Trần lên toàn bộ phe địch, tăng sát thương mà mục tiêu phải chịu trong hiệp, đồng thời <orangeStrong>xem Dấu Tích Bí Ẩn như là trạng thái Bào Mòn, Chảy Máu, Thiêu Đốt, Sốc Điện</orangeStrong>. Ngoài ra, sau khi Dấu Tích Bí Ẩn gây sát thương lúc bắt đầu hiệp kế tiếp sẽ không làm mới số tầng. Gây Sát Thương Phong lên toàn phe địch.",
+        "tag": "Đánh Lan"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Khung Cửi Vận Mệnh Khó Lường",
+        "fullDesc": "Mỗi khi kẻ địch chịu 1 lần Sát Thương Duy Trì vào đầu mỗi hiệp, có <orangeStrong>{{2, percent}}%</orangeStrong> xác suất cơ bản rơi vào 1 tầng Dấu Tích Bí Ẩn.<br>Ở trạng thái Dấu Tích Bí Ẩn, mỗi khi bắt đầu hiệp kẻ địch sẽ chịu Sát Thương Phong Duy Trì bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Black Swan, mỗi tầng Dấu Tích Bí Ẩn khiến Bội Số Sát Thương này tăng <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, sau đó làm mới về tầng 1. Dấu Tích Bí Ẩn tối đa cộng dồn {{8}} tầng.<br>Chỉ khi Dấu Tích Bí Ẩn gây ra sát thương khi kẻ địch bắt đầu hiệp, Black Swan mới kích hoạt hiệu ứng thêm căn cứ theo số tầng Dấu Tích Bí Ẩn mà mục tiêu rơi vào:<br>Từ {{4}} tầng trở lên: Gây Sát Thương Phong Duy Trì cho mục tiêu lân cận bằng <orangeStrong>{{5, percent}}%</orangeStrong> Tấn Công của Black Swan, và có <orangeStrong>{{2, percent}}%</orangeStrong> xác suất cơ bản khiến mục tiêu lân cận rơi vào 1 tầng Dấu Tích Bí Ẩn.<br>Từ {{6}} tầng trở lên: Khiến Sát Thương Duy Trì gây ra lần này bỏ qua {{7, percent}}% Phòng Thủ của mục tiêu này và mục tiêu lân cận.",
+        "shortDesc": "Khi kẻ địch chịu Sát Thương Duy Trì lúc bắt đầu mỗi hiệp, sẽ có xác suất rơi vào Dấu Tích Bí Ẩn, khi bắt đầu hiệp sẽ chịu <orangeStrong>Sát Thương Phong Duy Trì</orangeStrong>, đồng thời Black Swan sẽ kích hoạt <orangeStrong>hiệu ứng thêm</orangeStrong> căn cứ theo số tầng của Dấu Tích Bí Ẩn.",
+        "tag": "Quấy Nhiễu"
       }
     },
     "technique": {
       "0": {
         "name": "Chân Tướng Ẩn Sau Vỏ Bọc",
-        "fullDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu lần chiến đấu kế tiếp, có {{1, percent}}% <u>xác suất cơ bản</u> khiến từng mục tiêu địch rơi vào 1 tầng <u>Dấu Tích Bí Ẩn</u>. Khiến mỗi mục tiêu thành công rơi vào <u>Dấu Tích Bí Ẩn</u> rơi vào thêm 1 tầng <u>Dấu Tích Bí Ẩn</u> nữa, lặp lại hiệu ứng này cho đến khi không thể khiến mục tiêu này rơi vào <u>Dấu Tích Bí Ẩn</u> nữa. <u>Xác suất cơ bản</u> trong mỗi lần khiến mục tiêu rơi vào <u>Dấu Tích Bí Ẩn</u> bằng {{2, percent}}% <u>xác suất cơ bản</u> khi khiến mục tiêu này rơi vào <u>Dấu Tích Bí Ẩn</u> thành công của lần trước đó.",
-        "shortDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu lần chiến đấu kế tiếp, có xác suất lớn <orangeStrong>thi triển <u>Dấu Tích Bí Ẩn</u> lên từng mục tiêu địch, lặp lại nhiều lần cho đến khi thi triển thất bại</orangeStrong>."
+        "fullDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu lần chiến đấu kế tiếp, có {{1, percent}}% xác suất cơ bản khiến từng mục tiêu địch rơi vào 1 tầng Dấu Tích Bí Ẩn. Khiến mỗi mục tiêu thành công rơi vào Dấu Tích Bí Ẩn rơi vào thêm 1 tầng Dấu Tích Bí Ẩn nữa, lặp lại hiệu ứng này cho đến khi không thể khiến mục tiêu này rơi vào Dấu Tích Bí Ẩn nữa. Xác suất cơ bản trong mỗi lần khiến mục tiêu rơi vào Dấu Tích Bí Ẩn bằng {{2, percent}}% xác suất cơ bản khi khiến mục tiêu này rơi vào Dấu Tích Bí Ẩn thành công của lần trước đó.",
+        "shortDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu lần chiến đấu kế tiếp, có xác suất lớn <orangeStrong>thi triển Dấu Tích Bí Ẩn lên từng mục tiêu địch, lặp lại nhiều lần cho đến khi thi triển thất bại</orangeStrong>.",
+        "tag": "Cường Hóa"
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Rối Loạn Tâm Can",
         "fullDesc": "Sau khi thi triển Chiến Kỹ tấn công kẻ địch chỉ định ở trạng thái Bào Mòn, Chảy Máu, Thiêu Đốt, Sốc Điện, lần lượt có {{1, percent}}% xác suất cơ bản khiến mục tiêu rơi thêm vào 1 tầng Dấu Tích Bí Ẩn.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Manh Mối Dưới Đáy Cốc",
-        "fullDesc": "Khi kẻ địch vào chiến đấu, sẽ có {{1, percent}}% xác suất cơ bản rơi vào 1 tầng Dấu Tích Bí Ẩn.\\nMỗi khi kẻ địch chịu 1 lần Sát Thương Duy Trì trong 1 lần tấn công của phe ta, sẽ có {{1, percent}}% xác suất cơ bản rơi vào 1 tầng Dấu Tích Bí Ẩn, tối đa rơi vào {{2}} tầng trong 1 lần tấn công.",
-        "shortDesc": ""
+        "fullDesc": "Khi kẻ địch vào chiến đấu, sẽ có {{1, percent}}% xác suất cơ bản rơi vào 1 tầng Dấu Tích Bí Ẩn.<br>Mỗi khi kẻ địch chịu 1 lần Sát Thương Duy Trì trong 1 lần tấn công của phe ta, sẽ có {{1, percent}}% xác suất cơ bản rơi vào 1 tầng Dấu Tích Bí Ẩn, tối đa rơi vào {{2}} tầng trong 1 lần tấn công.",
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Điềm Báo Dưới Ánh Nến",
         "fullDesc": "Tăng sát thương do bản thân gây ra, mức tăng bằng {{1, percent}}% Chính Xác Hiệu Ứng, tối đa khiến Sát Thương gây ra tăng {{2, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -81,7 +97,7 @@
     },
     "6": {
       "name": "Vạn Thần Nhân Từ, Chúng Sinh Khổ Đau",
-      "desc": "Khi kẻ địch bị đồng đội của Black Swan tấn công, Black Swan sẽ có {{2, percent}}% xác suất cơ bản khiến mục tiêu rơi vào 1 tầng Dấu Tích Bí Ẩn.\\nMỗi khi Black Swan khiến kẻ địch rơi vào Dấu Tích Bí Ẩn, có {{1, percent}}% xác suất cố định khiến số tầng Dấu Tích Bí Ẩn cộng dồn lần này tăng thêm {{3}} tầng."
+      "desc": "Khi kẻ địch bị đồng đội của Black Swan tấn công, Black Swan sẽ có {{2, percent}}% xác suất cơ bản khiến mục tiêu rơi vào 1 tầng Dấu Tích Bí Ẩn.<br>Mỗi khi Black Swan khiến kẻ địch rơi vào Dấu Tích Bí Ẩn, có {{1, percent}}% xác suất cố định khiến số tầng Dấu Tích Bí Ẩn cộng dồn lần này tăng thêm {{3}} tầng."
     }
   }
 }

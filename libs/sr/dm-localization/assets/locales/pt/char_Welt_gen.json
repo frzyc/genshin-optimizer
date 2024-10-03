@@ -5,56 +5,72 @@
       "0": {
         "name": "Supressão Gravitacional",
         "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Welt a um único inimigo.",
-        "shortDesc": "Causa Dano Imaginário leve a um único inimigo."
+        "shortDesc": "Causa Dano Imaginário leve a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Borda do Vazio",
-        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Welt a um único inimigo e causa Dano mais 2 vezes, causando Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Welt por acerto a um inimigo aleatório. Ao acertar, há uma <u>chance-base</u> de <orangeStrong>{{2, percent}}%</orangeStrong> de reduzir em {{3, percent}}% a VEL do inimigo por {{4}} rodada(s).",
-        "shortDesc": "Causa Dano Imaginário leve a um único inimigo. Este ataque pode ser Rebatido 3 vezes, com chance de causar <orangeStrong>Lentidão</orangeStrong> aos inimigos atingidos."
+        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Welt a um único inimigo e causa Dano mais 2 vezes, causando Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Welt por acerto a um inimigo aleatório. Ao acertar, há uma chance-base de <orangeStrong>{{2, percent}}%</orangeStrong> de reduzir em {{3, percent}}% a VEL do inimigo por {{4}} rodada(s).",
+        "shortDesc": "Causa Dano Imaginário leve a um único inimigo. Este ataque pode ser Rebatido 3 vezes, com chance de causar <orangeStrong>Lentidão</orangeStrong> aos inimigos atingidos.",
+        "tag": "Rebote"
       }
     },
     "ult": {
       "0": {
         "name": "Buraco Negro Sintético",
-        "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Welt como Dano Imaginário a todos os inimigos, com {{3, percent}}% de <u>chance-base</u> de que inimigos atingidos por esta habilidade sejam afetados por Aprisionamento por 1 rodada.\\nInimigos aprisionados têm <u>ações atrasadas</u> em <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> e VEL reduzida em {{4, percent}}%.",
-        "shortDesc": "Causa Dano Imaginário a todos os inimigos, com <orangeStrong>altas chances de também causar Aprisionamento</orangeStrong>."
+        "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Welt como Dano Imaginário a todos os inimigos, com {{3, percent}}% de chance-base de que inimigos atingidos por esta habilidade sejam afetados por Aprisionamento por 1 rodada.<br>Inimigos aprisionados têm ações atrasadas em <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> e VEL reduzida em {{4, percent}}%.",
+        "shortDesc": "Causa Dano Imaginário a todos os inimigos, com <orangeStrong>altas chances de também causar Aprisionamento</orangeStrong>.",
+        "tag": "Área"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Distorção Temporal",
+        "fullDesc": "Ao atingir um inimigo que já está sob Lentidão, Welt causa um Adicional de <orangeStrong>{{1, percent}}%</orangeStrong> do seu ATQ como Dano Imaginário ao inimigo.",
+        "shortDesc": "Ao golpear um inimigo com Lentidão, <orangeStrong>adicionalmente causa Dano Adicional</orangeStrong> Imaginário leve.",
+        "tag": "Aprimoramento"
       }
     },
     "technique": {
       "0": {
         "name": "Aprisionamento Gravitacional",
-        "fullDesc": "Após Welt usar sua Técnica, cria uma dimensão especial que dura {{4}}s. Inimigos nessa dimensão especial têm a VEL de Movimento reduzida em {{5, percent}}%. Depois de entrar em batalha com inimigos na dimensão especial, há {{1, percent}}% de <u>chance-base</u> de Aprisionar os inimigos por 1 rodada.\\nInimigos aprisionados têm <u>ações atrasadas</u> em {{2, percent}}% e a VEL reduzida em {{3, percent}}%. Só 1 dimensão criada por aliados pode existir ao mesmo tempo.",
-        "shortDesc": "Cria uma dimensão especial. Inimigos nessa dimensão têm sua VEL de Movimento reduzida. Depois de entrar em combate com inimigos na dimensão, existe uma <orangeStrong>alta chance dos inimigos sofrerem de Aprisionamento.</orangeStrong>"
+        "fullDesc": "Após Welt usar sua Técnica, cria uma dimensão especial que dura {{4}}s. Inimigos nessa dimensão especial têm a VEL de Movimento reduzida em {{5, percent}}%. Depois de entrar em batalha com inimigos na dimensão especial, há {{1, percent}}% de chance-base de Aprisionar os inimigos por 1 rodada.<br>Inimigos aprisionados têm ações atrasadas em {{2, percent}}% e a VEL reduzida em {{3, percent}}%. Só 1 dimensão criada por aliados pode existir ao mesmo tempo.",
+        "shortDesc": "Cria uma dimensão especial. Inimigos nessa dimensão têm sua VEL de Movimento reduzida. Depois de entrar em combate com inimigos na dimensão, existe uma <orangeStrong>alta chance dos inimigos sofrerem de Aprisionamento.</orangeStrong>",
+        "tag": "Incapacitação"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Retaliação",
         "fullDesc": "Ao usar a Perícia Suprema, há {{1, percent}}% de chance-base de aumentar o Dano recebido pelos alvos em {{2, percent}}% por {{3}} rodada(s).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Julgamento",
         "fullDesc": "Usar a Perícia Suprema regenera um adicional de {{1}} de Energia.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Punição",
         "fullDesc": "Causa {{1, percent}}% a mais de Dano a inimigos afetados por Quebra de Fraqueza.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Prece da Paz",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Apelação da Justiça",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Poder da Bondade",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "Perspectiva Brilhante",

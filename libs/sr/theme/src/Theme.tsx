@@ -12,6 +12,7 @@ declare module '@mui/material/styles' {
     quantum: Palette['primary']
     wind: Palette['primary']
     orange: Palette['primary']
+    heal: Palette['primary']
   }
 
   interface PaletteOptions {
@@ -23,6 +24,7 @@ declare module '@mui/material/styles' {
     quantum?: PaletteOptions['primary']
     wind?: PaletteOptions['primary']
     orange?: Palette['primary']
+    heal?: Palette['primary']
   }
 }
 
@@ -35,6 +37,7 @@ declare module '@mui/material/Button' {
     physical: true
     quantum: true
     wind: true
+    heal: true
   }
 }
 
@@ -47,6 +50,7 @@ declare module '@mui/material/Chip' {
     physical: true
     quantum: true
     wind: true
+    heal: true
   }
 }
 
@@ -59,6 +63,7 @@ declare module '@mui/material/InputBase' {
     physical: true
     quantum: true
     wind: true
+    heal: true
   }
 }
 
@@ -109,6 +114,10 @@ export const theme = createTheme({
     orange: commonTheme.palette.augmentColor({
       color: { main: '#f29e38', contrastText: '#fff' },
       name: 'orange',
+    }),
+    heal: commonTheme.palette.augmentColor({
+      color: { main: '#c0e86c' },
+      name: 'heal',
     }),
   },
 })

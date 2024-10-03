@@ -3,7 +3,7 @@ import { allElementalTypeKeys } from '@genshin-optimizer/sr/consts'
 import type { SvgIconProps } from '@mui/material'
 import {
   AtkIcon,
-  BrEffIcon,
+  BrEffectIcon,
   CritDmgIcon,
   CritRateIcon,
   DefIcon,
@@ -56,8 +56,8 @@ export function StatIcon({
       return <EffIcon {...iconProps} />
     case 'eff_res_':
       return <EffResIcon {...iconProps} />
-    case 'brEff_':
-      return <BrEffIcon {...iconProps} />
+    case 'brEffect_':
+      return <BrEffectIcon {...iconProps} />
   }
 
   const ele = statKey.split('_')[0]

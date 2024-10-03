@@ -35,7 +35,7 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import type { OptProblemInput } from '@genshin-optimizer/gi/solver'
 import { GOSolver, mergeBuilds, mergePlot } from '@genshin-optimizer/gi/solver'
-import { compactArtifacts, dynamicData } from '@genshin-optimizer/gi/solver-tc'
+import { compactArtifacts } from '@genshin-optimizer/gi/solver-tc'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
   AdResponsive,
@@ -46,10 +46,10 @@ import {
   GraphContext,
   HitModeToggle,
   NoArtWarning,
-  OptimizationTargetContext,
   ReactionToggle,
   getTeamData,
   resolveInfo,
+  statFilterToNumNode,
   useGlobalError,
   useNumWorkers,
   useTeamData,
@@ -57,7 +57,7 @@ import {
 import type { UIData } from '@genshin-optimizer/gi/uidata'
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
-import { mergeData, optimize } from '@genshin-optimizer/gi/wr'
+import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -112,6 +112,7 @@ import OptimizationTargetSelector from './Components/OptimizationTargetSelector'
 import StatFilterCard from './Components/StatFilterCard'
 import UseEquipped from './Components/UseEquipped'
 import { UseTeammateArt } from './Components/UseTeammateArt'
+import ScalesWith from './ScalesWith'
 
 const audio = new Audio('assets/notification.mp3')
 export default function TabBuild() {
@@ -339,25 +340,7 @@ export default function TabBuild() {
     ) as NumNode | undefined
     if (!unoptimizedOptimizationTargetNode) return
     const targetNode = unoptimizedOptimizationTargetNode
-    const valueFilter: { value: NumNode; minimum: number }[] = Object.entries(
-      statFilters
-    )
-      .flatMap(([pathStr, settings]) =>
-        settings
-          .filter((setting) => !setting.disabled)
-          .map((setting) => {
-            const filterNode: NumNode = objPathValue(
-              workerData.display ?? {},
-              JSON.parse(pathStr)
-            )
-            const infoResolved =
-              filterNode?.info && resolveInfo(filterNode.info)
-            const minimum =
-              infoResolved?.unit === '%' ? setting.value / 100 : setting.value // TODO: Conversion
-            return { value: filterNode, minimum: minimum }
-          })
-      )
-      .filter((x) => x.value && x.minimum > -Infinity)
+    const valueFilter = statFilterToNumNode(workerData, statFilters)
 
     setChartData(undefined)
 
@@ -546,6 +529,9 @@ export default function TabBuild() {
     [t]
   )
   const getNormBuildLabel = useCallback((index: number) => `#${index + 1}`, [])
+
+  const buildShowingCount =
+    builds.length + (graphBuilds ? graphBuilds.length : 0)
 
   return (
     <Box display="flex" flexDirection="column" gap={1}>
@@ -765,6 +751,7 @@ export default function TabBuild() {
           </span>
         </BootstrapTooltip>
       </ButtonGroup>
+      <ScalesWith />
       {!!characterKey && (
         <BuildAlert
           {...{ status: buildStatus, characterName, maxBuildsToShow }}
@@ -787,20 +774,29 @@ export default function TabBuild() {
               <Typography sx={{ flexGrow: 1 }}>
                 {builds ? (
                   <span>
-                    Showing{' '}
-                    <strong>
-                      {builds.length + (graphBuilds ? graphBuilds.length : 0)}
-                    </strong>{' '}
-                    build generated for {characterName}.{' '}
+                    <Trans
+                      t={t}
+                      i18nKey="buildShowingNum"
+                      count={buildShowingCount}
+                    >
+                      Showing{' '}
+                      <strong>{{ count: buildShowingCount } as any}</strong>{' '}
+                      build generated for{' '}
+                      <CharacterName
+                        characterKey={characterKey}
+                        gender={gender}
+                      />
+                      .
+                    </Trans>{' '}
                     {!!buildDate && (
                       <span>
-                        Build generated on:{' '}
+                        {t`generatedOn`}
                         <strong>{new Date(buildDate).toLocaleString()}</strong>
                       </span>
                     )}
                   </span>
                 ) : (
-                  <span>Select a character to generate builds.</span>
+                  <span>{t`selectChar`}</span>
                 )}
               </Typography>
               <Button
@@ -814,7 +810,7 @@ export default function TabBuild() {
                   })
                 }}
               >
-                Clear Builds
+                {t`clearBuildsBtn`}
               </Button>
             </Box>
             <Grid container display="flex" spacing={1}>
@@ -833,25 +829,23 @@ export default function TabBuild() {
         </CardThemed>
       )}
 
-      <OptimizationTargetContext.Provider value={optimizationTarget}>
-        {graphBuilds && (
-          <BuildList
-            builds={graphBuilds}
-            compareData={compareData}
-            disabled={!!generatingBuilds}
-            getLabel={getGraphBuildLabel}
-            setBuilds={setGraphBuilds}
-            mainStatAssumptionLevel={mainStatAssumptionLevel}
-          />
-        )}
+      {graphBuilds && (
         <BuildList
-          builds={builds}
+          builds={graphBuilds}
           compareData={compareData}
           disabled={!!generatingBuilds}
-          getLabel={getNormBuildLabel}
+          getLabel={getGraphBuildLabel}
+          setBuilds={setGraphBuilds}
           mainStatAssumptionLevel={mainStatAssumptionLevel}
         />
-      </OptimizationTargetContext.Provider>
+      )}
+      <BuildList
+        builds={builds}
+        compareData={compareData}
+        disabled={!!generatingBuilds}
+        getLabel={getNormBuildLabel}
+        mainStatAssumptionLevel={mainStatAssumptionLevel}
+      />
     </Box>
   )
 }
@@ -998,6 +992,7 @@ const BuildItemWrapper = memo(function BuildItemWrapper({
   )
 })
 function CopyTcButton({ build }: { build: GeneratedBuild }) {
+  const { t } = useTranslation('build')
   const [name, setName] = useState('')
   const [showTcPrompt, onShowTcPrompt, OnHideTcPrompt] = useBoolState()
 
@@ -1033,14 +1028,13 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
         startIcon={<Science />}
         onClick={onShowTcPrompt}
       >
-        New TC Build
+        {t`createBuildTc.button`}
       </Button>
       {/* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
-      {/* TODO: Translation */}
       <ModalWrapper open={showTcPrompt} onClose={OnHideTcPrompt}>
         <CardThemed>
           <CardHeader
-            title="New Theorycraft Build"
+            title={t`createBuildTc.title`}
             action={
               <IconButton onClick={OnHideTcPrompt}>
                 <CloseIcon />
@@ -1051,19 +1045,21 @@ function CopyTcButton({ build }: { build: GeneratedBuild }) {
           <CardContent
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
-            <Typography>Copy over this build to a new TC Build</Typography>
+            <Typography>{t`createBuildTc.desc`}</Typography>
             <TextField
               value={name}
               onChange={(e) => setName(e.target.value)}
               autoFocus
               margin="dense"
-              label="TC Build Name"
+              label={t`createBuildTc.label`}
               fullWidth
             />
             <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
-              <Button onClick={OnHideTcPrompt}>Cancel</Button>
+              <Button
+                onClick={OnHideTcPrompt}
+              >{t`createBuildTc.cancel`}</Button>
               <Button color="success" disabled={!name} onClick={toTc}>
-                Create
+                {t`createBuildTc.create`}
               </Button>
             </Box>
           </CardContent>
@@ -1077,6 +1073,7 @@ function CopyBuildButton({
 }: {
   build: GeneratedBuild
 }) {
+  const { t } = useTranslation('build')
   const [name, setName] = useState('')
   const [showPrompt, onShowPrompt, OnHidePrompt] = useBoolState()
 
@@ -1102,10 +1099,9 @@ function CopyBuildButton({
         startIcon={<CheckroomIcon />}
         onClick={onShowPrompt}
       >
-        New Build
+        {t`createBuildReal.button`}
       </Button>
       {/* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
-      {/* TODO: Translation */}
       <ModalWrapper
         open={showPrompt}
         onClose={OnHidePrompt}
@@ -1113,7 +1109,7 @@ function CopyBuildButton({
       >
         <CardThemed>
           <CardHeader
-            title="New Build"
+            title={t`createBuildReal.title`}
             action={
               <IconButton onClick={OnHidePrompt}>
                 <CloseIcon />
@@ -1124,20 +1120,22 @@ function CopyBuildButton({
           <CardContent
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
-            <Typography>Copy over this build to a new build</Typography>
+            <Typography>{t`createBuildReal.desc`}</Typography>
             <form onSubmit={toLoadout}>
               <TextField
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 autoFocus
                 margin="dense"
-                label="Build Name"
+                label={t`createBuildReal.label`}
                 fullWidth
               />
               <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
-                <Button onClick={OnHidePrompt}>Cancel</Button>
+                <Button
+                  onClick={OnHidePrompt}
+                >{t`createBuildReal.cancel`}</Button>
                 <Button type="submit" color="success" disabled={!name}>
-                  Create
+                  {t`createBuildReal.create`}
                 </Button>
               </Box>
             </form>

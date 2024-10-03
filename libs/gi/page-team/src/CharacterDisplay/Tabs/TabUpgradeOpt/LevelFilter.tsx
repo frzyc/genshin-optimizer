@@ -6,7 +6,6 @@ import { CardContent, Divider, Tooltip, Typography } from '@mui/material'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
-// TODO: Translation
 export const LevelFilter = memo(function LevelFilter({
   levelTotal,
   upOptLevelLow,

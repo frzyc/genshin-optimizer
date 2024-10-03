@@ -5,61 +5,78 @@
       "0": {
         "name": "Combinación oculta",
         "fullDesc": "Lanza 1 ficha de jade del palo que menos fichas tenga e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Qingque como Daño Cuántico a un enemigo.",
-        "shortDesc": "Lanza 1 ficha e inflige una pequeña cantidad de Daño Cuántico a un enemigo."
+        "shortDesc": "Lanza 1 ficha e inflige una pequeña cantidad de Daño Cuántico a un enemigo.",
+        "tag": "ATQ individual"
       },
       "1": {
         "name": "¡Fuera la ficha del muro muerto!",
-        "fullDesc": "Qingque inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Cuántico a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño Cuántico a los enemigos adyacentes.\\n\"¡Fuera la ficha del muro muerto!\" no recupera pts. de habilidad básica.",
-        "shortDesc": "Inflige Daño Cuántico a un enemigo y una pequeña cantidad de Daño Cuántico a los enemigos adyacentes."
+        "fullDesc": "Qingque inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Cuántico a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño Cuántico a los enemigos adyacentes.<br>\"¡Fuera la ficha del muro muerto!\" no recupera pts. de habilidad básica.",
+        "shortDesc": "Inflige Daño Cuántico a un enemigo y una pequeña cantidad de Daño Cuántico a los enemigos adyacentes.",
+        "tag": "Ráfaga"
       }
     },
     "skill": {
       "0": {
         "name": "Última ficha posible",
         "fullDesc": "Roba {{1}} fichas de jade e inflige un <orangeStrong>{{2, percent}}%</orangeStrong> más de daño hasta que termine el turno. Este efecto se puede acumular hasta {{3}} veces. Tras usar esta habilidad básica, el turno no termina.",
-        "shortDesc": "<orangeStrong>Roba</orangeStrong>, aumenta el daño infligido y <orangeStrong>el turno no termina</orangeStrong>."
+        "shortDesc": "<orangeStrong>Roba</orangeStrong>, aumenta el daño infligido y <orangeStrong>el turno no termina</orangeStrong>.",
+        "tag": "Potenciación"
       }
     },
     "ult": {
       "0": {
         "name": "¿Cuatro peces ocultos? ¡Victoria!",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Qingque como Daño Cuántico a todos los enemigos y obtiene 4 fichas de jade del mismo palo.",
-        "shortDesc": "Inflige Daño Cuántico a todos los enemigos y obtiene 4 fichas del mismo palo."
+        "shortDesc": "Inflige Daño Cuántico a todos los enemigos y obtiene 4 fichas del mismo palo.",
+        "tag": "ATQ AdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Jade celestial",
+        "fullDesc": "Cuando un aliado comienza su turno, Qingque roba 1 ficha de jade al azar de entre 3 fichas de palos distintos. Puede tener 4 fichas de jade como máximo.<br>Si Qingque tiene 4 fichas de jade del mismo palo al comenzar su turno, consume todas las fichas y entra en el estado de Cuarteto oculto.<br>En este estado, Qingque no puede volver a utilizar la habilidad básica y su ATQ aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong>, su ATQ básico \"Combinación oculta\" se potencia y se convierte en \"¡Fuera la ficha del muro muerto!\". Cuarteto oculto termina cuando se usa \"¡Fuera la ficha del muro muerto!\".",
+        "shortDesc": "Roba una ficha cuando un aliado comienza su turno. Si tiene 4 fichas del mismo palo al comenzar su turno, se deshace de todas sus fichas y <orangeStrong>potencia su ATQ básico</orangeStrong> a la vez que aumenta su ATQ.",
+        "tag": "Potenciación"
       }
     },
     "technique": {
       "0": {
         "name": "Desafío a mí misma",
         "fullDesc": "Tras usar la técnica, al entrar en combate Qingque roba {{1}} fichas de jade.",
-        "shortDesc": "Tras usar la técnica, roba ficha en la siguiente batalla."
+        "shortDesc": "Tras usar la técnica, roba ficha en la siguiente batalla.",
+        "tag": "Potenciación"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Pelea por una ficha",
         "fullDesc": "Al usar la habilidad básica, recupera 1 pt. de habilidad básica. Este efecto solo se puede activar una vez por batalla.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Esperando el palo adecuado",
         "fullDesc": "La habilidad básica hace que inflija un {{1, percent}}% más de daño.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Robo de cuarteto",
         "fullDesc": "Tras utilizar el ATQ básico potenciado, la VEL de Qingque aumenta en un {{1, percent}}% durante 1 turno.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -78,7 +95,7 @@
     },
     "4": {
       "name": "Combo oportuno, la última ficha espera",
-      "desc": "Tras usar su habilidad básica, Qingque tiene un {{1, percent}}% de probabilidad fija de obtener Autosuficiencia hasta que termine el turno.\\nEn el estado de Autosuficiencia, al usar el ATQ básico o el ATQ básico potenciado, se lanza inmediatamente un ataque adicional que inflige al mismo objetivo u objetivos un Daño Cuántico equivalente al 100% del daño de ATQ básico o de ATQ básico potenciado."
+      "desc": "Tras usar su habilidad básica, Qingque tiene un {{1, percent}}% de probabilidad fija de obtener Autosuficiencia hasta que termine el turno.<br>En el estado de Autosuficiencia, al usar el ATQ básico o el ATQ básico potenciado, se lanza inmediatamente un ataque adicional que inflige al mismo objetivo u objetivos un Daño Cuántico equivalente al 100% del daño de ATQ básico o de ATQ básico potenciado."
     },
     "5": {
       "name": "Fichas sacadas, suerte acabada",

@@ -5,56 +5,72 @@
       "0": {
         "name": "Trovoada Estrondosa",
         "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Serval a um único inimigo.",
-        "shortDesc": "Causa Dano de Raio leve a um único inimigo."
+        "shortDesc": "Causa Dano de Raio leve a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Clarão de Raio",
-        "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Serval como Dano de Raio a um único inimigo e <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Serval como Dano de Raio aos inimigos adjacentes a ele, com {{3, percent}}% de <u>chance-base</u> de os inimigos atingidos receberem Choque por {{4}} rodada(s).\\nQuando em Choque, inimigos recebem Dano de Raio Contínuo igual a <orangeStrong>{{5, percent}}%</orangeStrong> do ATQ de Serval no início de cada rodada.",
-        "shortDesc": "Causa Dano de Raio leve a um único inimigo e quaisquer alvos adjacentes, com uma alta chance de causar <orangeStrong>Choque</orangeStrong>."
+        "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Serval como Dano de Raio a um único inimigo e <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Serval como Dano de Raio aos inimigos adjacentes a ele, com {{3, percent}}% de chance-base de os inimigos atingidos receberem Choque por {{4}} rodada(s).<br>Quando em Choque, inimigos recebem Dano de Raio Contínuo igual a <orangeStrong>{{5, percent}}%</orangeStrong> do ATQ de Serval no início de cada rodada.",
+        "shortDesc": "Causa Dano de Raio leve a um único inimigo e quaisquer alvos adjacentes, com uma alta chance de causar <orangeStrong>Choque</orangeStrong>.",
+        "tag": "Explosão"
       }
     },
     "ult": {
       "0": {
         "name": "A Febre Mecânica Ataca",
         "fullDesc": "Causa Dano de Raio igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Serval a todos os inimigos. Inimigos com Choque terão esse estado prolongado por {{2}} rodada(s).",
-        "shortDesc": "Causa Dano de Raio a todos os inimigos e aumenta a duração de Choque."
+        "shortDesc": "Causa Dano de Raio a todos os inimigos e aumenta a duração de Choque.",
+        "tag": "Área"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Cordas Galvânicas",
+        "fullDesc": "Após Serval atacar, causa Dano de Raio Adicional igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Serval a todos os inimigos com Choque.",
+        "shortDesc": "Após atacar, causa <orangeStrong>uma pequena quantidade de Dano Adicional</orangeStrong> a todos os inimigos com Choque.",
+        "tag": "Aprimoramento"
       }
     },
     "technique": {
       "0": {
         "name": "Boa Noite, Belobog",
-        "fullDesc": "Ataca o inimigo imediatamente. Após entrar na batalha, causa {{4, percent}}% do ATQ de Serval como Dano de Raio a um inimigo aleatório, com {{1, percent}}% de <u>chance-base</u> de todos os inimigos receberem Choque por {{3}} rodada(s).\\nQuando em Choque, inimigos recebem {{2, percent}}% do ATQ de Serval como Dano de Raio Contínuo no início de cada rodada.",
-        "shortDesc": "Ataca o inimigo. Após entrar na batalha, causa Dano de Raio leve a um inimigo aleatório, com altas chances de infligir <orangeStrong>Choque</orangeStrong> a todos os inimigos-alvo."
+        "fullDesc": "Ataca o inimigo imediatamente. Após entrar na batalha, causa {{4, percent}}% do ATQ de Serval como Dano de Raio a um inimigo aleatório, com {{1, percent}}% de chance-base de todos os inimigos receberem Choque por {{3}} rodada(s).<br>Quando em Choque, inimigos recebem {{2, percent}}% do ATQ de Serval como Dano de Raio Contínuo no início de cada rodada.",
+        "shortDesc": "Ataca o inimigo. Após entrar na batalha, causa Dano de Raio leve a um inimigo aleatório, com altas chances de infligir <orangeStrong>Choque</orangeStrong> a todos os inimigos-alvo.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Rock 'n' Roll",
         "fullDesc": "A Perícia tem um aumento de chance-base de {{1, percent}}% de causar Choque a inimigos.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Vibração das Cordas",
         "fullDesc": "No início da batalha, regenera {{1}} de Energia imediatamente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Mania",
         "fullDesc": "Ao derrotar um inimigo, o ATQ aumenta em {{1, percent}}% por {{2}} rodada(s).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Ouça o Batimento das Engrenagens",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Faça Barulho!",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "O Rugido Mais Alto de Belobog!",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "Essa Música Abala os Céus!",

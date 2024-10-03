@@ -320,6 +320,10 @@
       "icon": "UI_EquipIcon_Claymore_GoldenVerdict",
       "awakenIcon": "UI_EquipIcon_Claymore_GoldenVerdict_Awaken"
     },
+    "FangOfTheMountainKing": {
+      "icon": "UI_EquipIcon_Claymore_EmeraldSword",
+      "awakenIcon": "UI_EquipIcon_Claymore_EmeraldSword_Awaken"
+    },
     "BeginnersProtector": {
       "icon": "UI_EquipIcon_Pole_Gewalt",
       "awakenIcon": "UI_EquipIcon_Pole_Gewalt_Awaken"
@@ -2588,6 +2592,24 @@
       "constellation4": "UI_Talent_S_Kachina_03",
       "constellation5": "UI_Talent_U_Kachina_02",
       "constellation6": "UI_Talent_S_Kachina_04"
+    },
+    "Kinich": {
+      "icon": "UI_AvatarIcon_Kinich",
+      "iconSide": "UI_AvatarIcon_Side_Kinich",
+      "banner": "UI_NameCardPic_Kinich_P",
+      "bar": "UI_NameCardPic_Kinich_Alpha",
+      "skill": "Skill_S_Kinich_01",
+      "burst": "Skill_E_Kinich_01_HD",
+      "passive1": "UI_Talent_S_Kinich_05",
+      "passive2": "UI_Talent_S_Kinich_06",
+      "passive3": "UI_Talent_S_Kinich_08",
+      "passive": "UI_Talent_S_Kachina_08",
+      "constellation1": "UI_Talent_S_Kinich_01",
+      "constellation2": "UI_Talent_S_Kinich_02",
+      "constellation3": "UI_Talent_U_Kinich_01",
+      "constellation4": "UI_Talent_S_Kinich_03",
+      "constellation5": "UI_Talent_U_Kinich_02",
+      "constellation6": "UI_Talent_S_Kinich_04"
     },
     "Mualani": {
       "icon": "UI_AvatarIcon_Mualani",

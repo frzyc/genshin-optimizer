@@ -35,6 +35,7 @@ import {
   Typography,
 } from '@mui/material'
 import { useContext, useDeferredValue, useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export default function BuildTc({
   buildTcId,
@@ -43,6 +44,7 @@ export default function BuildTc({
   buildTcId: string
   active?: boolean
 }) {
+  const { t } = useTranslation('build')
   const [open, onOpen, onClose] = useBoolState()
   const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const database = useDatabase()
@@ -60,7 +62,7 @@ export default function BuildTc({
   const onDupe = () =>
     database.teamChars.newBuildTc(teamCharId, {
       ...structuredClone(buildTc),
-      name: `Duplicate of ${name}`,
+      name: t('buildTcCard.copy.nameTc', { name }),
     })
   return (
     <>
@@ -233,6 +235,7 @@ function BuildTcEditor({
   buildTcId: string
   onClose: () => void
 }) {
+  const { t } = useTranslation('build')
   const database = useDatabase()
   const build = useBuildTc(buildTcId)!
 
@@ -268,7 +271,7 @@ function BuildTcEditor({
   return (
     <CardThemed>
       <CardHeader
-        title="Build Settings"
+        title={t`buildTcCard.edit.title`}
         action={
           <IconButton onClick={onClose}>
             <CloseIcon />
@@ -279,14 +282,14 @@ function BuildTcEditor({
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
         <TextField
           fullWidth
-          label="Build Name"
-          placeholder="Build Name"
+          label={t`buildTcCard.edit.label`}
+          placeholder={t`buildTcCard.edit.placeholder`}
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <TextField
           fullWidth
-          label="Build Description"
+          label={t`buildTcCard.edit.desc`}
           value={desc}
           onChange={(e) => setDesc(e.target.value)}
           multiline

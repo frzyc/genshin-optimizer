@@ -37,12 +37,5 @@ export type BuildTc = {
   optimization: {
     distributedSubstats: number
     maxSubstats: Record<SubstatKey, number>
-    /** NB: this is in total raw value, not substat count
-     * This includes stats from other sources
-     * e.g. `{enerRech_: 0.3}`
-     */
-    minTotal: Partial<
-      Record<Exclude<SubstatKey, 'hp_' | 'atk_' | 'def_'>, number>
-    >
   }
 }

@@ -42,7 +42,9 @@ import {
   useRef,
   useState,
 } from 'react'
+import { useTranslation } from 'react-i18next'
 export default function FormulaModal() {
+  const { t } = useTranslation('loadout')
   const { modalOpen } = useContext(FormulaDataContext)
   const { setFormulaData } = useContext(FormulaDataContext)
   const onCloseHandler = useCallback(
@@ -53,7 +55,7 @@ export default function FormulaModal() {
     <ModalWrapper open={!!modalOpen} onClose={onCloseHandler}>
       <CardThemed>
         <CardHeader
-          title="Formulas & Calculations"
+          title={t`showFormulas.title`}
           action={
             <IconButton onClick={onCloseHandler}>
               <CloseIcon />

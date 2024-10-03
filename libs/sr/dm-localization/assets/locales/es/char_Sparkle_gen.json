@@ -5,56 +5,72 @@
       "0": {
         "name": "Espectáculo en solitario",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Sparkle como Daño Cuántico a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño Cuántico a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño Cuántico a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Pez de los sueños",
-        "fullDesc": "Aumenta el Daño CRIT de un aliado en un valor equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> del Daño CRIT de Sparkle + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> durante {{3}} turno y adelanta la acción de ese aliado en un {{4, percent}}%.\\nSi Sparkle usa esta habilidad consigo misma, no adelanta su acción.",
-        "shortDesc": "Aumenta el <orangeStrong>Daño CRIT</orangeStrong> de un aliado y adelanta su acción."
+        "fullDesc": "Aumenta el Daño CRIT de un aliado en un valor equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> del Daño CRIT de Sparkle + <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> durante {{3}} turno y adelanta la acción de ese aliado en un {{4, percent}}%.<br>Si Sparkle usa esta habilidad consigo misma, no adelanta su acción.",
+        "shortDesc": "Aumenta el <orangeStrong>Daño CRIT</orangeStrong> de un aliado y adelanta su acción.",
+        "tag": "Apoyo"
       }
     },
     "ult": {
       "0": {
         "name": "Heroína de mil caras",
         "fullDesc": "Recupera {{2}} pts. de habilidad básica para el equipo y otorga Adivinanza a todos los aliados. Para los aliados con Adivinanza, el efecto de aumento de daño que proporciona el talento de Sparkle se incrementa de forma adicional en un <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> por cada acumulación durante {{4}} turnos.",
-        "shortDesc": "Recupera <orangeStrong>pts. de habilidad básica</orangeStrong> para el equipo e incrementa de forma adicional el aumento de daño que proporciona el talento de Sparkle."
+        "shortDesc": "Recupera <orangeStrong>pts. de habilidad básica</orangeStrong> para el equipo e incrementa de forma adicional el aumento de daño que proporciona el talento de Sparkle.",
+        "tag": "Apoyo"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Truco narrativo",
+        "fullDesc": "Cuando Sparkle está en el campo de batalla, el límite de pts. de habilidad básica aumenta en {{3}}. Cuando un aliado consume 1 pt. de habilidad básica, el daño de todos los aliados aumenta en un <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> durante {{1}} turnos. Se puede acumular hasta {{4}} veces.",
+        "shortDesc": "Aumenta el <orangeStrong>límite de pts. de habilidad básica</orangeStrong> de los aliados. Cuando un aliado consume pts. de habilidad básica, aumenta el <orangeStrong>daño que infligen</orangeStrong> todos los aliados.",
+        "tag": "Apoyo"
       }
     },
     "technique": {
       "0": {
         "name": "Narradora poco fiable",
         "fullDesc": "Tras usar la técnica, todos los aliados obtienen Despiste durante {{2}} s. Los aliados con Despiste no pueden ser detectados por los enemigos. Al entrar en combate mientras dura Despiste, el equipo recupera {{1}} pts. de habilidad básica.",
-        "shortDesc": "Tras usar la técnica, todos los aliados obtienen Despiste. Los aliados con Despiste no pueden ser detectados por los enemigos. Al entrar en combate mientras dura Despiste, el equipo recupera <orangeStrong>pts. de habilidad básica</orangeStrong>."
+        "shortDesc": "Tras usar la técnica, todos los aliados obtienen Despiste. Los aliados con Despiste no pueden ser detectados por los enemigos. Al entrar en combate mientras dura Despiste, el equipo recupera <orangeStrong>pts. de habilidad básica</orangeStrong>.",
+        "tag": "Apoyo"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Almanaque",
         "fullDesc": "Al usar el ATQ básico, recupera {{1}} pts. de energía adicionales.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Flor artificial",
         "fullDesc": "El efecto de aumento de Daño CRIT de la habilidad básica se extiende hasta el comienzo del siguiente turno del objetivo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Serenata nocturna",
         "fullDesc": "El ATQ de todos los aliados aumenta en un {{4, percent}}%. Cuando en el equipo aliado hay 1/2/3 personajes de tipo Cuántico, el ATQ de los aliados de tipo Cuántico aumenta en un {{1, percent}}%/{{2, percent}}%/{{3, percent}}% adicional.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

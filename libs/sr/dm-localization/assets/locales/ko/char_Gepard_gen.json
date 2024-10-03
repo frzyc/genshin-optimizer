@@ -5,56 +5,72 @@
       "0": {
         "name": "의지의 주먹",
         "fullDesc": "지정된 단일 적에게 게파드 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 가한다",
-        "shortDesc": "단일 적에게 소량의 얼음 속성 피해를 가한다"
+        "shortDesc": "단일 적에게 소량의 얼음 속성 피해를 가한다",
+        "tag": "단일 공격"
       }
     },
     "skill": {
       "0": {
         "name": "위협의 일격",
-        "fullDesc": "지정된 단일 적에게 게파드 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 주며 피격된 적은 {{2, percent}}%의 <u>기본 확률</u>로 빙결 상태에 빠진다. 지속 시간: {{3}}턴.\\n빙결 상태의 적은 행동할 수 없으며 턴이 시작될 때마다 게파드 공격력 <orangeStrong>{{4, percent}}%</orangeStrong>만큼의 얼음 속성 <u>추가 피해</u>를 받는다",
-        "shortDesc": "단일 적에게 얼음 속성 피해를 가하고 <orangeStrong>일정 확률로 해당 적에게 빙결 상태를 부여</orangeStrong>한다"
+        "fullDesc": "지정된 단일 적에게 게파드 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 주며 피격된 적은 {{2, percent}}%의 기본 확률로 빙결 상태에 빠진다. 지속 시간: {{3}}턴.<br>빙결 상태의 적은 행동할 수 없으며 턴이 시작될 때마다 게파드 공격력 <orangeStrong>{{4, percent}}%</orangeStrong>만큼의 얼음 속성 추가 피해를 받는다",
+        "shortDesc": "단일 적에게 얼음 속성 피해를 가하고 <orangeStrong>일정 확률로 해당 적에게 빙결 상태를 부여</orangeStrong>한다",
+        "tag": "단일 공격"
       }
     },
     "ult": {
       "0": {
         "name": "영원의 벽",
         "fullDesc": "모든 아군에게 게파드 방어력 <orangeStrong>{{1, percent}}%</orangeStrong>+<orangeStrong>{{3}}</orangeStrong>만큼의 피해를 상쇄할 수 있는 실드를 제공한다. 지속 시간: {{2}}턴",
-        "shortDesc": "모든 아군에게 <orangeStrong>실드를 제공</orangeStrong>한다"
+        "shortDesc": "모든 아군에게 <orangeStrong>실드를 제공</orangeStrong>한다",
+        "tag": "방어"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "불굴의 몸",
+        "fullDesc": "게파드는 치명적인 공격을 받아도 전투 불능 상태에 빠지지 않으며 자신의 HP 최대치 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 HP를 즉시 회복한다. 해당 효과는 단일 전투에서 1회만 발동한다",
+        "shortDesc": "치명적인 공격을 받아도 <orangeStrong>전투 불능 상태에 빠지지 않으며</orangeStrong> 즉시 HP를 회복한다. 단일 전투 중에서 1회만 발동한다",
+        "tag": "회복"
       }
     },
     "technique": {
       "0": {
         "name": "감정의 증표",
         "fullDesc": "비술 사용 후 다음 전투 시작 시 모든 아군에게 게파드 방어력 {{1, percent}}%+{{3}}만큼의 피해를 상쇄할 수 있는 실드를 제공한다. 지속 시간: {{2}}턴",
-        "shortDesc": "비술을 발동하고 다음 전투 시작 시 모든 아군이 실드를 획득한다"
+        "shortDesc": "비술을 발동하고 다음 전투 시작 시 모든 아군이 실드를 획득한다",
+        "tag": "방어"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "강직",
         "fullDesc": "게파드가 적에게 피격될 확률이 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "지휘관",
         "fullDesc": "[불굴의 몸] 발동 후 게파드의 에너지가 즉시 100%까지 회복된다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "전의",
         "fullDesc": "게파드의 공격력이 현재 방어력의 {{1, percent}}%만큼 증가하며, 턴이 시작될 때마다 갱신된다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

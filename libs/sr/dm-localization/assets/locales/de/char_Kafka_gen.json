@@ -5,56 +5,72 @@
       "0": {
         "name": "Mitternächtlicher Tumult",
         "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Kafkas ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen Blitz-SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Streichelndes Mondlicht",
-        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Kafkas ANG zu und fügt angrenzenden Einheiten Blitz-SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Kafkas ANG zu.\\nBefindet der anvisierte Gegner sich momentan unter Einfluss von DoT, so erleidet er sofort zusätzlich SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> des aktuell insgesamt erlittenen DoT.",
-        "shortDesc": "Verursacht Blitz-SCH bei einem Gegner und geringen Blitz-SCH bei angrenzenden Einheiten.\\nBefindet das Hauptziel sich momentan unter Einfluss von DoT, so erleidet es sofort <orangeStrong>1-mal zusätzlichen SCH</orangeStrong>."
+        "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Kafkas ANG zu und fügt angrenzenden Einheiten Blitz-SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Kafkas ANG zu.<br>Befindet der anvisierte Gegner sich momentan unter Einfluss von DoT, so erleidet er sofort zusätzlich SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> des aktuell insgesamt erlittenen DoT.",
+        "shortDesc": "Verursacht Blitz-SCH bei einem Gegner und geringen Blitz-SCH bei angrenzenden Einheiten.<br>Befindet das Hauptziel sich momentan unter Einfluss von DoT, so erleidet es sofort <orangeStrong>1-mal zusätzlichen SCH</orangeStrong>.",
+        "tag": "Ausdehnung"
       }
     },
     "ult": {
       "0": {
         "name": "Dämmerungstriller",
-        "fullDesc": "Fügt allen Gegnern Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Kafkas ANG zu und hat eine <u>Grundchance</u> von {{2, percent}}%, bei betroffenen Gegnern Schock zu verursachen und ihnen unmittelbar SCH in Höhe von <orangeStrong>{{5, percent}}%</orangeStrong> des ursprünglichen SCH durch den Status Schock zuzufügen. Der Schock hält {{3}} Rd. an.\\nGeschockte Gegner erleiden zu Beginn jeder Runde Blitz-DoT in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von Kafkas ANG.",
-        "shortDesc": "Fügt allen Gegnern <orangeStrong>geringen Blitz-SCH</orangeStrong> zu mit einer hohen Chance, bei ihnen Schock zu verursachen.\\nWenn die Gegner gerade geschockt sind, fügt der Schock <orangeStrong>1-mal zusätzlichen SCH</orangeStrong> zu."
+        "fullDesc": "Fügt allen Gegnern Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Kafkas ANG zu und hat eine Grundchance von {{2, percent}}%, bei betroffenen Gegnern Schock zu verursachen und ihnen unmittelbar SCH in Höhe von <orangeStrong>{{5, percent}}%</orangeStrong> des ursprünglichen SCH durch den Status Schock zuzufügen. Der Schock hält {{3}} Rd. an.<br>Geschockte Gegner erleiden zu Beginn jeder Runde Blitz-DoT in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von Kafkas ANG.",
+        "shortDesc": "Fügt allen Gegnern <orangeStrong>geringen Blitz-SCH</orangeStrong> zu mit einer hohen Chance, bei ihnen Schock zu verursachen.<br>Wenn die Gegner gerade geschockt sind, fügt der Schock <orangeStrong>1-mal zusätzlichen SCH</orangeStrong> zu.",
+        "tag": "Flächenangriff"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Sanft, aber grausam",
+        "fullDesc": "Nach dem Einsatz des Standardangriffs von einem Verbündeten führt Kafka sofort einen Folgeangriff aus und fügt dem Ziel Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Kafkas ANG zu. Es besteht eine Grundchance von {{2, percent}}%, dem angegriffenen Gegner für {{3}} Rd. Schock zuzufügen, der dem Status Schock des Ultimates entspricht. Dieser Effekt kann nur 1-mal pro Runde ausgelöst werden.",
+        "shortDesc": "Nach dem Einsatz des Standardangriffs von einem Verbündeten führt Kafka sofort einen Folgeangriff aus und fügt diesem Ziel Blitz-SCH zu. Es besteht eine hohe Chance, den <orangeStrong>Status Schock zuzufügen</orangeStrong>. Dieser Effekt kann nur 1-mal pro Runde ausgelöst werden.",
+        "tag": "Einzelangriff"
       }
     },
     "technique": {
       "0": {
         "name": "Gnade ist nicht Vergebung",
-        "fullDesc": "Greift alle Gegner innerhalb einer gewissen Reichweite unmittelbar an und fügt nach Kampfeintritt allen Gegnern Blitz-SCH in Höhe von {{3, percent}}% von Kafkas ANG zu. Es besteht eine <u>Grundchance</u> von {{1, percent}}%, jedem einzelnen Gegner für {{2}} Rd. den Status Schock zuzufügen, der dem Status Schock des Ultimates entspricht.",
-        "shortDesc": "Greift alle Gegner in Reichweite an. Fügt nach Kampfeintritt allen Gegnern geringen Blitz-SCH zu und hat eine hohe Chance, ihnen <orangeStrong>Schock zuzufügen</orangeStrong>."
+        "fullDesc": "Greift alle Gegner innerhalb einer gewissen Reichweite unmittelbar an und fügt nach Kampfeintritt allen Gegnern Blitz-SCH in Höhe von {{3, percent}}% von Kafkas ANG zu. Es besteht eine Grundchance von {{1, percent}}%, jedem einzelnen Gegner für {{2}} Rd. den Status Schock zuzufügen, der dem Status Schock des Ultimates entspricht.",
+        "shortDesc": "Greift alle Gegner in Reichweite an. Fügt nach Kampfeintritt allen Gegnern geringen Blitz-SCH zu und hat eine hohe Chance, ihnen <orangeStrong>Schock zuzufügen</orangeStrong>.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Folter",
         "fullDesc": "Beim Einsatz des Ultimates erleiden Gegner sofort SCH basierend auf allen aktuellen DoT-Debuffs zusätzlich zum SCH durch den Status Schock.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Plünderung",
         "fullDesc": "Wird ein geschockter Gegner besiegt, erhält Kafka zusätzlich {{1}} Pkt. Energie zurück.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Dornen",
         "fullDesc": "Erhöht die Grundchance des Status Schock durch Ultimate, Technik und Folgeangriffe des Talents um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

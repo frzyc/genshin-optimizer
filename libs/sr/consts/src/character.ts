@@ -128,3 +128,6 @@ export const allAbilityKeys = [
   'overworld', // MAZE_NORMAL
 ] as const
 export type AbilityKey = (typeof allAbilityKeys)[number]
+
+// TODO: need to check for correctness
+export const talentLimits = [1, 1, 2, 4, 6, 8, 10] as const

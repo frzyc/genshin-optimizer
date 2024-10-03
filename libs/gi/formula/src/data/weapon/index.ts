@@ -1,5 +1,4 @@
 import type { TagMapNodeEntries } from '../util'
-import AThousandFloatingDreams from './AThousandFloatingDreams'
 import Absolution from './Absolution'
 import Akuoumaru from './Akuoumaru'
 import AlleyHunter from './AlleyHunter'
@@ -8,19 +7,22 @@ import AmosBow from './AmosBow'
 import ApprenticesNotes from './ApprenticesNotes'
 import AquaSimulacra from './AquaSimulacra'
 import AquilaFavonia from './AquilaFavonia'
+import AshGravenDrinkingHorn from './AshGravenDrinkingHorn'
+import AThousandFloatingDreams from './AThousandFloatingDreams'
 import BalladOfTheBoundlessBlue from './BalladOfTheBoundlessBlue'
 import BalladOfTheFjords from './BalladOfTheFjords'
 import BeaconOfTheReedSea from './BeaconOfTheReedSea'
 import BeginnersProtector from './BeginnersProtector'
-import BlackTassel from './BlackTassel'
 import BlackcliffAgate from './BlackcliffAgate'
 import BlackcliffLongsword from './BlackcliffLongsword'
 import BlackcliffPole from './BlackcliffPole'
 import BlackcliffSlasher from './BlackcliffSlasher'
 import BlackcliffWarbow from './BlackcliffWarbow'
+import BlackTassel from './BlackTassel'
 import BloodtaintedGreatsword from './BloodtaintedGreatsword'
 import CalamityQueller from './CalamityQueller'
 import CashflowSupervision from './CashflowSupervision'
+import ChainBreaker from './ChainBreaker'
 import CinnabarSpindle from './CinnabarSpindle'
 import Cloudforged from './Cloudforged'
 import CompoundBow from './CompoundBow'
@@ -36,6 +38,7 @@ import DodocoTales from './DodocoTales'
 import DragonsBane from './DragonsBane'
 import DragonspineSpear from './DragonspineSpear'
 import DullBlade from './DullBlade'
+import EarthShaker from './EarthShaker'
 import ElegyForTheEnd from './ElegyForTheEnd'
 import EmeraldOrb from './EmeraldOrb'
 import EndOfTheLine from './EndOfTheLine'
@@ -54,6 +57,8 @@ import FilletBlade from './FilletBlade'
 import FinaleOfTheDeep from './FinaleOfTheDeep'
 import FleuveCendreFerryman from './FleuveCendreFerryman'
 import FlowingPurity from './FlowingPurity'
+import FluteOfEzpitzal from './FluteOfEzpitzal'
+import FootprintOfTheRainbow from './FootprintOfTheRainbow'
 import ForestRegalia from './ForestRegalia'
 import FreedomSworn from './FreedomSworn'
 import Frostbearer from './Frostbearer'
@@ -80,6 +85,7 @@ import LionsRoar from './LionsRoar'
 import LithicBlade from './LithicBlade'
 import LithicSpear from './LithicSpear'
 import LostPrayerToTheSacredWinds from './LostPrayerToTheSacredWinds'
+import LumidouceElegy from './LumidouceElegy'
 import LuxuriousSeaLord from './LuxuriousSeaLord'
 import MagicGuide from './MagicGuide'
 import MailedFlower from './MailedFlower'
@@ -114,6 +120,7 @@ import RavenBow from './RavenBow'
 import RecurveBow from './RecurveBow'
 import RedhornStonethresher from './RedhornStonethresher'
 import RightfulReward from './RightfulReward'
+import RingOfYaxche from './RingOfYaxche'
 import RoyalBow from './RoyalBow'
 import RoyalGreatsword from './RoyalGreatsword'
 import RoyalGrimoire from './RoyalGrimoire'
@@ -130,6 +137,7 @@ import ScionOfTheBlazingSun from './ScionOfTheBlazingSun'
 import SeasonedHuntersBow from './SeasonedHuntersBow'
 import SerpentSpine from './SerpentSpine'
 import SharpshootersOath from './SharpshootersOath'
+import SilvershowerHeartstrings from './SilvershowerHeartstrings'
 import SilverSword from './SilverSword'
 import SkyriderGreatsword from './SkyriderGreatsword'
 import SkyriderSword from './SkyriderSword'
@@ -147,6 +155,7 @@ import SplendorOfTranquilWaters from './SplendorOfTranquilWaters'
 import StaffOfHoma from './StaffOfHoma'
 import StaffOfTheScarletSands from './StaffOfTheScarletSands'
 import SummitShaper from './SummitShaper'
+import SurfsUp from './SurfsUp'
 import SwordOfDescension from './SwordOfDescension'
 import SwordOfNarzissenkreuz from './SwordOfNarzissenkreuz'
 import TalkingStick from './TalkingStick'
@@ -176,9 +185,9 @@ import VortexVanquisher from './VortexVanquisher'
 import WanderingEvenstar from './WanderingEvenstar'
 import WasterGreatsword from './WasterGreatsword'
 import WavebreakersFin from './WavebreakersFin'
+import Whiteblind from './Whiteblind'
 import WhiteIronGreatsword from './WhiteIronGreatsword'
 import WhiteTassel from './WhiteTassel'
-import Whiteblind from './Whiteblind'
 import WindblumeOde from './WindblumeOde'
 import WineAndSong from './WineAndSong'
 import WolfFang from './WolfFang'
@@ -199,6 +208,7 @@ const data: TagMapNodeEntries[] = [
   FilletBlade,
   FinaleOfTheDeep,
   FleuveCendreFerryman,
+  FluteOfEzpitzal,
   FreedomSworn,
   HaranGeppakuFutsu,
   HarbingerOfDawn,
@@ -234,6 +244,7 @@ const data: TagMapNodeEntries[] = [
   BlackcliffSlasher,
   BloodtaintedGreatsword,
   DebateClub,
+  EarthShaker,
   FavoniusGreatsword,
   FerrousShadow,
   ForestRegalia,
@@ -277,10 +288,12 @@ const data: TagMapNodeEntries[] = [
   DragonspineSpear,
   EngulfingLightning,
   FavoniusLance,
+  FootprintOfTheRainbow,
   Halberd,
   IronPoint,
   KitainCrossSpear,
   LithicSpear,
+  LumidouceElegy,
   MissiveWindspear,
   Moonpiercer,
   PrimordialJadeWingedSpear,
@@ -299,6 +312,7 @@ const data: TagMapNodeEntries[] = [
   AmosBow,
   AquaSimulacra,
   BlackcliffWarbow,
+  ChainBreaker,
   Cloudforged,
   CompoundBow,
   ElegyForTheEnd,
@@ -325,6 +339,7 @@ const data: TagMapNodeEntries[] = [
   ScionOfTheBlazingSun,
   SeasonedHuntersBow,
   SharpshootersOath,
+  SilvershowerHeartstrings,
   SkywardHarp,
   Slingshot,
   SongOfStillness,
@@ -334,6 +349,7 @@ const data: TagMapNodeEntries[] = [
   ThunderingPulse,
   WindblumeOde,
   ApprenticesNotes,
+  AshGravenDrinkingHorn,
   AThousandFloatingDreams,
   BalladOfTheBoundlessBlue,
   BlackcliffAgate,
@@ -359,11 +375,13 @@ const data: TagMapNodeEntries[] = [
   PocketGrimoire,
   PrototypeAmber,
   QuantumCatalyst,
+  RingOfYaxche,
   RoyalGrimoire,
   SacrificialFragments,
   SacrificialJade,
   SkywardAtlas,
   SolarPearl,
+  SurfsUp,
   TheWidsith,
   ThrillingTalesOfDragonSlayers,
   TomeOfTheEternalFlow,

@@ -5,61 +5,78 @@
       "0": {
         "name": "Corkage Fee",
         "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Gallagher's ATK to a single target enemy.",
-        "shortDesc": "Deals minor Fire DMG to a single enemy."
+        "shortDesc": "Deals minor Fire DMG to a single enemy.",
+        "tag": "Single Target"
       },
       "1": {
         "name": "Nectar Blitz",
         "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Gallagher's ATK to a single target enemy. Reduces the target's ATK by <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, lasting for {{3}} turn(s).",
-        "shortDesc": "Deals Fire DMG to a single enemy and reduces ATK."
+        "shortDesc": "Deals Fire DMG to a single enemy and reduces ATK.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Special Brew",
         "fullDesc": "Immediately heals a target ally for <orangeStrong>{{1}}</orangeStrong> HP.",
-        "shortDesc": "Immediately restores an ally's HP."
+        "shortDesc": "Immediately restores an ally's HP.",
+        "tag": "Restore"
       }
     },
     "ult": {
       "0": {
         "name": "Champagne Etiquette",
         "fullDesc": "Inflicts Besotted on all enemies, lasting for {{2}} turn(s). At the same time, deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Gallagher's ATK to all enemies, and enhances his next Basic ATK to Nectar Blitz.",
-        "shortDesc": "<orangeStrong>Inflicts Besotted</orangeStrong> on all enemies and deals Fire DMG to them at the same time. Enhances the next Basic ATK to Nectar Blitz."
+        "shortDesc": "<orangeStrong>Inflicts Besotted</orangeStrong> on all enemies and deals Fire DMG to them at the same time. Enhances the next Basic ATK to Nectar Blitz.",
+        "tag": "AoE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Tipsy Tussle",
+        "fullDesc": "The Besotted state makes targets receive <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> more Break DMG. Every time a Besotted target gets attacked by an ally, the attacking ally's HP is restored by <orangeStrong>{{2}}</orangeStrong>.",
+        "shortDesc": "The Besotted state <orangeStrong>makes targets receive more Break DMG</orangeStrong>. Every time the target gets attacked by an ally, <orangeStrong>the attacker's HP is restored</orangeStrong>.",
+        "tag": "Restore"
       }
     },
     "technique": {
       "0": {
         "name": "Artisan Elixir",
         "fullDesc": "Immediately attacks the enemy. Upon entering battle, inflicts Besotted on all enemies, lasting for {{1}} turn(s). And deals Fire DMG equal to {{2, percent}}% of Gallagher's ATK to all enemies.",
-        "shortDesc": "Attacks the enemy. After entering battle, <orangeStrong>inflicts Besotted</orangeStrong> to all enemies and deals minor Fire DMG to all enemies."
+        "shortDesc": "Attacks the enemy. After entering battle, <orangeStrong>inflicts Besotted</orangeStrong> to all enemies and deals minor Fire DMG to all enemies.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Novel Concoction",
         "fullDesc": "Increases this unit's Outgoing Healing by an amount equal to {{1, percent}}% of Break Effect, up to a maximum Outgoing Healing increase of {{2, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Organic Yeast",
         "fullDesc": "After using the Ultimate, immediately Advances Forward this unit's Action by 100%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Bottoms Up",
         "fullDesc": "When Gallagher uses Nectar Blitz to attack Besotted enemies, the HP Restore effect of his Talent will also apply to other allies for this time.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -74,7 +91,7 @@
     },
     "3": {
       "name": "Corpse Reviver",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "4": {
       "name": "Last Word",
@@ -82,7 +99,7 @@
     },
     "5": {
       "name": "Death in the Afternoon",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "6": {
       "name": "Blood and Sand",

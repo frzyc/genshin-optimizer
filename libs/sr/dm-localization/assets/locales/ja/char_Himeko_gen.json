@@ -5,56 +5,72 @@
       "0": {
         "name": "{RUBY_B#ぶそうちょうりつ}武装調律{RUBY_E#}",
         "fullDesc": "指定した敵単体に姫子の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の炎属性ダメージを与える。"
+        "shortDesc": "敵単体に少量の炎属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#ようかくばくれつ}溶核爆裂{RUBY_E#}",
         "fullDesc": "指定した敵単体に姫子の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与え、隣接する敵に姫子の攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の炎属性ダメージを与える。",
-        "shortDesc": "敵単体に炎属性ダメージを与え、隣接する敵に少量の炎属性ダメージを与える。"
+        "shortDesc": "敵単体に炎属性ダメージを与え、隣接する敵に少量の炎属性ダメージを与える。",
+        "tag": "拡散攻撃"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#てんつい}天墜{RUBY_E#}の{RUBY_B#ひ}火{RUBY_E#}",
         "fullDesc": "敵全体に姫子の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与える。敵を1体倒すごとに、さらに姫子のEPを{{2}}回復する。",
-        "shortDesc": "敵全体に炎属性ダメージを与え、敵を倒した時、EPを回復。"
+        "shortDesc": "敵全体に炎属性ダメージを与え、敵を倒した時、EPを回復。",
+        "tag": "全体攻撃"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#じょうしょうついげき}乗勝追撃{RUBY_E#}",
+        "fullDesc": "敵が弱点撃破された時、姫子はチャージを獲得する、最大で{{2}}層まで。<br>味方が攻撃を行った後、姫子のチャージが最大に達した場合、チャージを全部消費して追加攻撃を1回発動し、敵全体に姫子の攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の炎属性ダメージを与える。<br>戦闘開始時にチャージを1層獲得。",
+        "shortDesc": "敵が弱点撃破された時にチャージを得る。<br>味方が攻撃を行った後、チャージが上限に達した場合、<orangeStrong>追加攻撃を行い</orangeStrong>、<orangeStrong>敵全体</orangeStrong>に炎属性ダメージを与え、すべてのチャージを消費する。<br>戦闘開始時にチャージを1獲得する。",
+        "tag": "全体攻撃"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#ふかんぜんねんしょう}不完全燃焼{RUBY_E#}",
-        "fullDesc": "秘技を使用した後、{{4}}秒間継続する特殊領域を作り出す。特殊領域内にいる敵と戦闘に入った後、{{1, percent}}%の<u>基礎確率</u>で敵の受ける炎属性ダメージ+{{2, percent}}%、{{3}}ターン継続。味方が作り出した領域は1つまで存在できる。",
-        "shortDesc": "特殊領域を作り出す。領域内の敵と戦闘に入った後、高確率で敵の<orangeStrong>受ける炎属性ダメージをアップする</orangeStrong>。"
+        "fullDesc": "秘技を使用した後、{{4}}秒間継続する特殊領域を作り出す。特殊領域内にいる敵と戦闘に入った後、{{1, percent}}%の基礎確率で敵の受ける炎属性ダメージ+{{2, percent}}%、{{3}}ターン継続。味方が作り出した領域は1つまで存在できる。",
+        "shortDesc": "特殊領域を作り出す。領域内の敵と戦闘に入った後、高確率で敵の<orangeStrong>受ける炎属性ダメージをアップする</orangeStrong>。",
+        "tag": "妨害"
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#せいか}星火{RUBY_E#}",
-        "fullDesc": "攻撃を行った時、{{1, percent}}%の基礎確率で敵を燃焼状態にする、{{2}}ターン継続。\\n燃焼状態の敵はターンが回ってくるたびに、姫子の攻撃力{{3, percent}}%分の炎属性持続ダメージを受ける。",
-        "shortDesc": ""
+        "fullDesc": "攻撃を行った時、{{1, percent}}%の基礎確率で敵を燃焼状態にする、{{2}}ターン継続。<br>燃焼状態の敵はターンが回ってくるたびに、姫子の攻撃力{{3, percent}}%分の炎属性持続ダメージを受ける。",
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#しゃくねつ}灼熱{RUBY_E#}",
         "fullDesc": "燃焼状態の敵に対する、戦闘スキルによるダメージ+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#みちしるべ}道標{RUBY_E#}",
         "fullDesc": "残りHPが{{1, percent}}%以上の場合、会心率+{{2, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

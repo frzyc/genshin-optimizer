@@ -31,5 +31,8 @@
     "blast": "拡散攻撃",
     "support": "サポート",
     "impair": "妨害"
-  }
+  },
+  "eidolonLvl": "星魂ランク：",
+  "lvl": "Lv.",
+  "superimpose": "重畳"
 }

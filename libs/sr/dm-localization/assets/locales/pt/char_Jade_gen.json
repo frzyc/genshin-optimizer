@@ -5,56 +5,72 @@
       "0": {
         "name": "Chicote de Riquezas",
         "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Jade a um único inimigo-alvo e <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Jade como Dano Quântico aos inimigos adjacentes.",
-        "shortDesc": "Causa Dano Quântico leve a um único inimigo e Dano Quântico leve a inimigos adjacentes a ele."
+        "shortDesc": "Causa Dano Quântico leve a um único inimigo e Dano Quântico leve a inimigos adjacentes a ele.",
+        "tag": "Explosão"
       }
     },
     "skill": {
       "0": {
         "name": "Fiança de Aquisição",
-        "fullDesc": "Faz com que um único aliado-alvo se torne o Coletor de Dívidas e aumenta sua VEL em {{1}}, durando {{4}} rodada(s).\\nApós um Coletor de Dívidas atacar, causa uma instância de Dano Quântico <u>Adicional</u> igual a <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de Jade a cada inimigo-alvo atingido, e consome os PV do Coletor de Dívidas em uma quantidade igual a {{2, percent}}% dos seus PV máximos. Se seus PV atuais forem insuficientes, seus PV atuais serão reduzidos para 1.\\nSe Jade se tornar a Coletora de Dívidas, ela não pode ganhar o efeito de aumento de VEL, e seus ataques não consomem PV.\\nQuando há o Coletor de Dívidas em campo, Jade não pode usar sua Perícia. No início de cada rodada de Jade, a duração do estado Coletor de Dívidas é reduzida em 1 rodada.",
-        "shortDesc": "Faz com que um único aliado se torne o <orangeStrong>Coletor de Dívidas</orangeStrong> e aumente sua VEL. Após um <orangeStrong>Coletor de Dívidas</orangeStrong> atacar, ele causa Dano Quântico leve <u>Adicional</u> a cada inimigo-alvo atingido e consome seus próprios PV. Quando Jade se torna a Coletora de Dívidas, ela não pode ganhar o efeito de bônus de VEL, e seus ataques não consomem PV."
+        "fullDesc": "Faz com que um único aliado-alvo se torne o Coletor de Dívidas e aumenta sua VEL em {{1}}, durando {{4}} rodada(s).<br>Após um Coletor de Dívidas atacar, causa uma instância de Dano Quântico Adicional igual a <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de Jade a cada inimigo-alvo atingido, e consome os PV do Coletor de Dívidas em uma quantidade igual a {{2, percent}}% dos seus PV máximos. Se seus PV atuais forem insuficientes, seus PV atuais serão reduzidos para 1.<br>Se Jade se tornar a Coletora de Dívidas, ela não pode ganhar o efeito de aumento de VEL, e seus ataques não consomem PV.<br>Quando há o Coletor de Dívidas em campo, Jade não pode usar sua Perícia. No início de cada rodada de Jade, a duração do estado Coletor de Dívidas é reduzida em 1 rodada.",
+        "shortDesc": "Faz com que um único aliado se torne o <orangeStrong>Coletor de Dívidas</orangeStrong> e aumente sua VEL. Após um <orangeStrong>Coletor de Dívidas</orangeStrong> atacar, ele causa Dano Quântico leve Adicional a cada inimigo-alvo atingido e consome seus próprios PV. Quando Jade se torna a Coletora de Dívidas, ela não pode ganhar o efeito de bônus de VEL, e seus ataques não consomem PV.",
+        "tag": "Suporte"
       }
     },
     "ult": {
       "0": {
         "name": "Voto das Profundezas",
-        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de Jade a todos os inimigos. Ao mesmo tempo, Jade aprimora o <u>Ataque Extra</u> do seu Talento, aumentando o multiplicador de Dano do Ataque Extra em <orangeStrong>{{1, percent}}%</orangeStrong>. Esse efeito de aprimoramento pode ser ativado {{2}} vez(es).",
-        "shortDesc": "Causa Dano Quântico a todos os inimigos e ganha Multiplicador de Dano de <orangeStrong><u>Ataque Extra</u></orangeStrong>."
+        "fullDesc": "Causa Dano Quântico igual a <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de Jade a todos os inimigos. Ao mesmo tempo, Jade aprimora o Ataque Extra do seu Talento, aumentando o multiplicador de Dano do Ataque Extra em <orangeStrong>{{1, percent}}%</orangeStrong>. Esse efeito de aprimoramento pode ser ativado {{2}} vez(es).",
+        "shortDesc": "Causa Dano Quântico a todos os inimigos e ganha Multiplicador de Dano de <orangeStrong>Ataque Extra</orangeStrong>.",
+        "tag": "Área"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Presa do Esfolador em Chamas",
+        "fullDesc": "Depois que Jade ou uma unidade no estado de Coletor de Dívidas atacar, ganha 1 Carga para cada inimigo-alvo atingido. Ao atingir {{3}} ponto(s) de Carga, consome os {{3}} ponto(s) para realizar 1 Ataque Extra 1 vez, causando Dano Quântico igual a <orangeStrong>{{5, percent}}%</orangeStrong> do ATQ de Jade a todos os inimigos. Este Ataque Extra não gera Carga.<br>Ao realizar o Ataque Extra do seu Talento, Jade ganha imediatamente {{4}} acúmulo(s) de Ativo Penhorado, com cada acúmulo aumentando seu Dano CRIT em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, acumulando até {{2}} vezes.",
+        "shortDesc": "Depois que Jade ou uma unidade com <orangeStrong>Coletor de Dívidas</orangeStrong> ataca, Jade ganha 1 ponto de Carga para cada inimigo-alvo atingido. Quando a Carga atinge <orangeStrong>{{3}}</orangeStrong> pontos, consome <orangeStrong>{{3}}</orangeStrong> ponto(s) para realizar 1 <orangeStrong>Ataque Extra</orangeStrong>, causando Dano Quântico a todos os inimigos.<br>Quando Jade realiza o <orangeStrong>Ataque Extra</orangeStrong>, ganha Ativo Penhorado e aumenta o Dano CRIT, acumulando até <orangeStrong>{{2}}</orangeStrong> vezes.",
+        "tag": "Área"
       }
     },
     "technique": {
       "0": {
         "name": "Predação Visual",
         "fullDesc": "Após usar a Técnica, inflige Fidelidade Cega a inimigos em uma área definida por {{1}} segundo(s). Inimigos infligidos com Fidelidade Cega não iniciarão ataques em aliados. Ao entrar em combate atacando inimigos infligidos com Fidelidade Cega, todos os inimigos com Fidelidade Cega entrarão em combate simultaneamente. Após entrar em batalha, causa Dano Quântico igual a {{2, percent}}% do ATQ de Jade a todos os inimigos, e ganha imediatamente {{3}} acúmulo(s) de Ativo Penhorado.",
-        "shortDesc": "Inflige Fidelidade Cega a todos os inimigos dentro de uma área definida. Atacar um inimigo com Fidelidade Cega faz com que todos os inimigos com Fidelidade Cega entrem em combate simultaneamente. Ao entrar em combate, causa Dano Quântico leve a todos os inimigos e ganha imediatamente <orangeStrong>{{3}}</orangeStrong> acúmulo(s) de Ativo Penhorado."
+        "shortDesc": "Inflige Fidelidade Cega a todos os inimigos dentro de uma área definida. Atacar um inimigo com Fidelidade Cega faz com que todos os inimigos com Fidelidade Cega entrem em combate simultaneamente. Ao entrar em combate, causa Dano Quântico leve a todos os inimigos e ganha imediatamente <orangeStrong>{{3}}</orangeStrong> acúmulo(s) de Ativo Penhorado.",
+        "tag": "Incapacitação"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Compra Reversa",
         "fullDesc": "Quando um inimigo-alvo entra em combate, Jade ganha {{2}} acúmulo(s) de Ativo Penhorado. Quando a rodada de um personagem com Coletor de Dívidas inicia, ganha adicionalmente {{1}} acúmulo(s) de Ativo Penhorado.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Tíquete de Garantia",
         "fullDesc": "No começo da batalha, a ação de Jade é Avançada Adiante em {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Confisco de Bens",
         "fullDesc": "Cada acúmulo de Ativo Penhorado do Talento aumenta adicionalmente o ATQ de Jade em {{1, percent(fixed: 1)}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Honestidade? Em Breve Hipotecada",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "4": {
       "name": "Sinceridade? Apenas Opcional",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Esperança? Doravante Abdicada",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "6": {
       "name": "Equidade? Patrocínio Pendente",

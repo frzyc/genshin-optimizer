@@ -5,56 +5,72 @@
       "0": {
         "name": "Swing-Etikette",
         "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG {M#des Trailblazers}{F#der Trailblazerin} zu.",
-        "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Regen im Intermezzo",
         "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG {F#der Trailblazerin}{M#des Trailblazers} zu. Verursacht zusätzlich 4-mal SCH, der jedes Mal einem zufälligen Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG {F#der Trailblazerin}{M#des Trailblazers} zufügt.",
-        "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu und prallt insgesamt 5-mal ab."
+        "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu und prallt insgesamt 5-mal ab.",
+        "tag": "Abprallung"
       }
     },
     "ult": {
       "0": {
         "name": "Lärmende Laternenparade",
-        "fullDesc": "Verleiht allen Verbündeten für {{1}} Rd. den Effekt „Backup-Tänzer“. Zu Beginn jeder Runde {F#der Trailblazerin}{M#des Trailblazers} wird die Dauer dieses Effekts um 1 Rd. verringert. Der Brucheffekt von Verbündeten mit Backup-Tänzer wird um <orangeStrong>{{3, percent}}%</orangeStrong> erhöht. Wenn sie Gegner im Status <u>Schwächebruch</u> angreifen, wandeln sie den WDS-Reduzierungswert dieses Angriffs 1-mal in <u>Super-Bruch-SCH</u> um.",
-        "shortDesc": "Verleiht allen Verbündeten den Effekt „Backup-Tänzer“. <orangeStrong>Erhöht den Brucheffekt</orangeStrong> von Verbündeten mit diesem Effekt. Wenn sie einen Gegner im Status <u>Schwächebruch</u> angreifen, wird 1-mal zusätzlich <orangeStrong><u>Super-Bruch-SCH</u></orangeStrong> verursacht."
+        "fullDesc": "Verleiht allen Verbündeten für {{1}} Rd. den Effekt „Backup-Tänzer“. Zu Beginn jeder Runde {F#der Trailblazerin}{M#des Trailblazers} wird die Dauer dieses Effekts um 1 Rd. verringert. Der Brucheffekt von Verbündeten mit Backup-Tänzer wird um <orangeStrong>{{3, percent}}%</orangeStrong> erhöht. Wenn sie Gegner im Status Schwächebruch angreifen, wandeln sie den WDS-Reduzierungswert dieses Angriffs 1-mal in Super-Bruch-SCH um.",
+        "shortDesc": "Verleiht allen Verbündeten den Effekt „Backup-Tänzer“. <orangeStrong>Erhöht den Brucheffekt</orangeStrong> von Verbündeten mit diesem Effekt. Wenn sie einen Gegner im Status Schwächebruch angreifen, wird 1-mal zusätzlich <orangeStrong>Super-Bruch-SCH</orangeStrong> verursacht.",
+        "tag": "Unterstützung"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Tanzlieder auf ganzem Spektrum",
+        "fullDesc": "Wenn die Schwäche eines Gegners gebrochen wird, stellt {F#die Trailblazerin}{M#der Trailblazer} sofort <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> Pkt. Energie wieder her.",
+        "shortDesc": "Wenn die Schwäche eines Gegners gebrochen wird, stellt {F#die Trailblazerin}{M#der Trailblazer} Energie wieder her.",
+        "tag": "Unterstützung"
       }
     },
     "technique": {
       "0": {
         "name": "Jetzt! Solo-Truppe!",
         "fullDesc": "Erhöht nach dem Einsatz der Technik den Brucheffekt aller Verbündeten zu Beginn des nächsten Kampfs für {{2}} Rd. um {{1, percent}}%.",
-        "shortDesc": "Erhöht zu Beginn des nächsten Kampfs den Brucheffekt aller Verbündeten."
+        "shortDesc": "Erhöht zu Beginn des nächsten Kampfs den Brucheffekt aller Verbündeten.",
+        "tag": "Unterstützung"
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den WDS des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Tanz für mich",
         "fullDesc": "Wenn die Anzahl der Gegner auf dem Kampffeld 5 oder mehr/4/3/2/1 beträgt, wird der von „Backup-Tänzer“ ausgelöste Super-Bruch-SCH um {{1, percent}}%/{{2, percent}}%/{{3, percent}}%/{{4, percent}}%/{{5, percent}}% erhöht.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Folge dem Strom",
         "fullDesc": "Erhöht beim Einsatz der Fertigkeit den WDS-Reduzierungswert des ersten SCH zusätzlich um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Theaterhut",
         "fullDesc": "Verzögert die Aktion der Gegner zusätzlich um {{1, percent}}%, nachdem Verbündete ihnen Schwächebruch zugefügt haben.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

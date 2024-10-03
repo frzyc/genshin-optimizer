@@ -1,5 +1,6 @@
 {
   "spd": "速度",
+  "spd_": "速度",
   "hp": "生命值",
   "hp_": "生命值",
   "atk": "攻擊力",
@@ -8,7 +9,7 @@
   "def_": "防禦力",
   "crit_": "暴擊率",
   "crit_dmg_": "暴擊傷害",
-  "brEff_": "擊破特攻",
+  "brEffect_": "擊破特攻",
   "eff_": "效果命中",
   "eff_res_": "效果抗性",
   "enerRegen_": "能量恢復效率",
@@ -19,5 +20,8 @@
   "wind_dmg_": "風屬性傷害提高",
   "lightning_dmg_": "雷屬性傷害提高",
   "quantum_dmg_": "量子屬性傷害提高",
-  "imaginary_dmg_": "虛數屬性傷害提高"
+  "imaginary_dmg_": "虛數屬性傷害提高",
+  "dmg_": "傷害提高",
+  "weakness_": "弱點擊破效率",
+  "resPen_": "抗性穿透"
 }

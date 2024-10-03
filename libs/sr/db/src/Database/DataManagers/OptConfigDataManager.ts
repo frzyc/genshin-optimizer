@@ -1,3 +1,4 @@
+import type { UnArray } from '@genshin-optimizer/common/util'
 import {
   deepClone,
   deepFreeze,
@@ -17,6 +18,7 @@ import {
 } from '@genshin-optimizer/sr/consts'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+import type { DBRead } from './dbRead'
 
 export const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10] as const
 export const maxBuildsToShowDefault = 5
@@ -33,12 +35,12 @@ export type RelicSetExclusionKey = (typeof allRelicSetExclusionKeys)[number]
 
 export type RelicSetExclusion = Partial<Record<RelicSetExclusionKey, (2 | 4)[]>>
 
-export interface StatFilterSetting {
-  minValue: number
-  maxValue: number
+export type StatFilters<R = DBRead> = Array<{
+  read: R
+  value: number
+  isMax: boolean
   disabled: boolean
-}
-export type StatFilters = Record<string, StatFilterSetting[]>
+}>
 
 export type GeneratedBuild = {
   lightConeId?: string
@@ -60,7 +62,7 @@ export interface OptConfig {
   allowLocationsState: AllowLocationsState
   relicExclusion: string[]
   useExcludedRelics: boolean
-  optimizationTarget?: string[]
+  optimizationTarget?: DBRead
   mainStatAssumptionLevel: number
   allowPartial: boolean
   maxBuildsToShow: number
@@ -108,7 +110,17 @@ export class OptConfigDataManager extends DataManager<
       buildDate,
     } = obj as OptConfig
 
-    if (typeof statFilters !== 'object') statFilters = {}
+    if (!Array.isArray(statFilters)) statFilters = []
+    statFilters.filter((statFilter) => {
+      const { read, value, isMax, disabled } =
+        statFilter as UnArray<StatFilters>
+      // TODO: Read validation
+      if (typeof read !== 'object') return false
+      if (typeof value !== 'number') return false
+      if (typeof isMax !== 'boolean') return false
+      if (typeof disabled !== 'boolean') return false
+      return true
+    })
 
     if (
       !mainStatKeys ||
@@ -127,8 +139,8 @@ export class OptConfigDataManager extends DataManager<
       })
     }
 
-    if (!optimizationTarget || !Array.isArray(optimizationTarget))
-      optimizationTarget = undefined
+    // TODO: Read validation
+    if (typeof optimizationTarget !== 'object') optimizationTarget = undefined
     if (
       typeof mainStatAssumptionLevel !== 'number' ||
       mainStatAssumptionLevel < 0 ||
@@ -250,7 +262,7 @@ const initialBuildSettings: OptConfig = deepFreeze({
   relicSetExclusion: {},
   relicExclusion: [],
   useExcludedRelics: false,
-  statFilters: {},
+  statFilters: [],
   mainStatKeys: {
     body: relicSlotToMainStatKeys.body,
     feet: relicSlotToMainStatKeys.feet,

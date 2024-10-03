@@ -22,7 +22,6 @@ import {
   useDatabase,
   useOptConfig,
 } from '@genshin-optimizer/gi/db-ui'
-import { dynamicData } from '@genshin-optimizer/gi/solver-tc'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
   AdResponsive,
@@ -38,7 +37,7 @@ import {
 } from '@genshin-optimizer/gi/ui'
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
-import { mergeData, optimize } from '@genshin-optimizer/gi/wr'
+import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import AddIcon from '@mui/icons-material/Add'
 import {
   Alert,
@@ -573,9 +572,10 @@ function ShowingArt({
   numShowing: number
   total: number
 }) {
+  const { t } = useTranslation('page_character_optimize')
   return (
     <Typography color="text.secondary">
-      <Trans i18nKey="showingNum" count={numShowing} value={total}>
+      <Trans t={t} i18nKey="upOptShowingNum" count={numShowing} value={total}>
         Showing {{ count: numShowing }} out of {{ value: total }} Artifacts
       </Trans>
     </Typography>

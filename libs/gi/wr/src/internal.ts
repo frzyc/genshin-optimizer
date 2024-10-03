@@ -27,7 +27,7 @@ export function deepNodeClone<
 export function forEachNodes<T extends Base<T> = AnyNode>(
   formulas: T[],
   topDown: (formula: T) => void,
-  bottomUp: (formula: T) => void
+  bottomUp: (formula: T) => void = () => {}
 ): void {
   const visiting = new Set<T>(),
     visited = new Set<T>()

@@ -1,4 +1,4 @@
-import { objMap } from '@genshin-optimizer/common/util'
+import type { NumNode } from '@genshin-optimizer/pando/engine'
 import {
   cmpEq,
   cmpGE,
@@ -26,6 +26,7 @@ import {
   own,
   ownBuff,
   percent,
+  registerBuff,
   type TagMapNodeEntries,
 } from '../util'
 
@@ -35,35 +36,15 @@ export function getBaseTag(data_gen: CharacterDatum): DmgTag {
   return { elementalType: data_gen.damageType }
 }
 
+// TODO: Add checking for ascension/level/previous nodes
 /**
- * Returns simple `number` arrays representing scalings of a character's traces
- * @param data_gen Character's entire `data` object from sr-stats:allStats
- * @returns Object with entry for basic, skill, ult, talent, technique and eidolon scalings. Eidolon contains further entries 1-6 for each eidolon.
+ * Checks if a bonus ability + (TODO) prerequisites are active. If so, returns the value specified.
+ * @param baIndex Bonus ability index to check
+ * @param value Node to return
+ * @returns value, if bonusAbility and prereqs are active
  */
-export function scalingParams(data_gen: CharacterDatum) {
-  const {
-    basic,
-    skill,
-    ult,
-    talent,
-    technique,
-    bonusAbility1,
-    bonusAbility2,
-    bonusAbility3,
-  } = data_gen.skillTree
-  const eidolon = objMap(data_gen.rankMap, (rankInfo) => rankInfo.params)
-
-  return {
-    basic: basic.skillParamList,
-    skill: skill.skillParamList,
-    ult: ult.skillParamList,
-    talent: talent.skillParamList,
-    technique: technique.skillParamList,
-    bonusAbility1: bonusAbility1.skillParamList,
-    bonusAbility2: bonusAbility2.skillParamList,
-    bonusAbility3: bonusAbility3.skillParamList,
-    eidolon,
-  }
+export function isBonusAbilityActive(baIndex: 1 | 2 | 3, value: NumNode) {
+  return cmpEq(own.char[`bonusAbility${baIndex}`], 1, value)
 }
 
 /**
@@ -139,15 +120,16 @@ export function heal(
   name: string,
   stat: Stat,
   levelScalingMulti: number[],
-  levelScalingFlat: number[],
+  levelScalingFlat: number[] | undefined,
   abilityScalingType: AbilityScalingType,
   arg: FormulaArg = {},
   ...extra: TagMapNodeEntries
 ): TagMapNodeEntries {
   const abilityLevel = own.char[abilityScalingType]
   const multi = percent(subscript(abilityLevel, levelScalingMulti))
-  const flat = subscript(abilityLevel, levelScalingFlat)
-  const base = sum(prod(own.final[stat], multi), flat)
+  const flat = levelScalingFlat ? subscript(abilityLevel, levelScalingFlat) : 0
+  const baseScaling = prod(own.final[stat], multi)
+  const base = flat ? sum(baseScaling, flat) : baseScaling
   return customHeal(name, base, arg, ...extra)
 }
 
@@ -194,18 +176,23 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ),
     // Small trace stat boosts
     ...statBoosts.flatMap((statBoost, index) =>
-      Object.entries(statBoost).map(([key, amt]) => {
-        return getStatFromStatKey(ownBuff.premod, key).add(
-          // TODO: Add automatic ascension requirement
-          cmpEq(char[`statBoost${(index + 1) as StatBoostKey}`], 1, amt)
+      Object.entries(statBoost).flatMap(([key, amt]) => {
+        const sbKey = `statBoost${(index + 1) as StatBoostKey}` as const
+        const buff = getStatFromStatKey(ownBuff.premod, key).add(
+          // TODO: Add automatic ascension/level/previous node requirement
+          cmpEq(char[sbKey], 1, amt)
         )
+        return registerBuff(sbKey, buff)
       })
     ),
     // Eidolon 3 and 5 ability level boosts
     ...([3, 5] as const).flatMap((ei) =>
-      Object.entries(data_gen.rankMap[3].skillTypeAddLevel).map(
+      Object.entries(data_gen.rankMap[ei].skillTypeAddLevel).flatMap(
         ([abilityKey, levelBoost]) =>
-          ownBuff.char[abilityKey].add(cmpGE(eidolon, ei, levelBoost))
+          registerBuff(
+            `eidolon${ei}_${abilityKey}`,
+            ownBuff.char[abilityKey].add(cmpGE(eidolon, ei, levelBoost))
+          )
       )
     ),
     // Break base DMG
@@ -226,7 +213,7 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
     ownBuff.listing.formulas.add(listingItem(own.final.enerRegen_)),
     ownBuff.listing.formulas.add(listingItem(own.final.eff_)),
     ownBuff.listing.formulas.add(listingItem(own.final.eff_res_)),
-    ownBuff.listing.formulas.add(listingItem(own.final.brEff_)),
+    ownBuff.listing.formulas.add(listingItem(own.final.brEffect_)),
     ownBuff.listing.formulas.add(listingItem(own.common.cappedCrit_)),
     ownBuff.listing.formulas.add(listingItem(own.final.crit_dmg_)),
     ownBuff.listing.formulas.add(listingItem(own.final.heal_)),

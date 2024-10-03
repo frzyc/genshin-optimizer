@@ -18,7 +18,6 @@ import {
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
-import type { TalentSheet } from '../ICharacterSheet'
 import { charTemplates } from '../charTemplates'
 import {
   customDmgNode,
@@ -26,6 +25,7 @@ import {
   dmgNode,
   plungingDmgNodes,
 } from '../dataUtil'
+import type { TalentSheet } from '../ICharacterSheet'
 
 const key: CharacterKey = 'Clorinde'
 const skillParam_gen = allStats.char.skillParam[key]
@@ -138,7 +138,8 @@ const a1Reactions_normal_dmgInc = greaterEq(
       ),
       naught
     )
-  )
+  ),
+  { path: 'normal_dmgInc' }
 )
 const a1Reactions_burst_dmgInc = { ...a1Reactions_normal_dmgInc }
 
@@ -192,6 +193,10 @@ const c6AfterSkill_critDMG_ = greaterEq(
 )
 
 const electroHit = { hit: { ele: constant('electro') } }
+const skillHit = {
+  ...electroHit,
+  premod: { normal_dmgInc: a1Reactions_normal_dmgInc },
+}
 
 const dmgFormulas = {
   normal: {
@@ -208,7 +213,7 @@ const dmgFormulas = {
       'atk',
       dm.skill.normalDmg,
       'normal',
-      electroHit,
+      skillHit,
       undefined,
       'skill'
     ),
@@ -216,7 +221,7 @@ const dmgFormulas = {
       'atk',
       dm.skill.piercingDmg,
       'normal',
-      electroHit,
+      skillHit,
       undefined,
       'skill'
     ),
@@ -224,7 +229,7 @@ const dmgFormulas = {
       'atk',
       dm.skill.thrust1Dmg,
       'normal',
-      electroHit,
+      skillHit,
       undefined,
       'skill'
     ),
@@ -232,7 +237,7 @@ const dmgFormulas = {
       'atk',
       dm.skill.thrust2Dmg,
       'normal',
-      electroHit,
+      skillHit,
       undefined,
       'skill'
     ),
@@ -240,7 +245,7 @@ const dmgFormulas = {
       'atk',
       dm.skill.thrust3Dmg,
       'normal',
-      electroHit,
+      skillHit,
       undefined,
       'skill'
     ),
@@ -283,7 +288,6 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
   premod: {
     skillBoost: skillC3,
     burstBoost: burstC5,
-    normal_dmgInc: a1Reactions_normal_dmgInc,
     burst_dmgInc: a1Reactions_burst_dmgInc,
     critRate_: sum(a4BondChanges_critRate_, c6AfterSkill_critRate_),
     burst_dmg_: c4_burst_dmg_,

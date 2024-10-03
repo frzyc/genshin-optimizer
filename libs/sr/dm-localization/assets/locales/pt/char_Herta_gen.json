@@ -5,56 +5,72 @@
       "0": {
         "name": "Está Olhando o Quê?",
         "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Herta a um único inimigo.",
-        "shortDesc": "Causa Dano de Gelo leve a um único inimigo."
+        "shortDesc": "Causa Dano de Gelo leve a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Oferta Única",
         "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Herta como Dano de Gelo a todos os inimigos. Se o alvo estiver com {{2, percent}}% de PV ou mais, o Dano causado a esse alvo aumenta em {{3, percent}}%.",
-        "shortDesc": "Causa Dano de Gelo leve a todos os inimigos. Alvos com mais PV recebem mais Dano."
+        "shortDesc": "Causa Dano de Gelo leve a todos os inimigos. Alvos com mais PV recebem mais Dano.",
+        "tag": "Área"
       }
     },
     "ult": {
       "0": {
         "name": "É Magia, Eu Adicionei Magia",
         "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Herta a todos os inimigos.",
-        "shortDesc": "Causa Dano de Gelo a todos os inimigos."
+        "shortDesc": "Causa Dano de Gelo a todos os inimigos.",
+        "tag": "Área"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Está Bem, Eu Cuido Disso",
+        "fullDesc": "Quando um ataque de um aliado reduzir os PV de um inimigo a {{1, percent}}% ou menos, Herta usa um Ataque Extra, causando <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Herta como Dano de Gelo a todos os inimigos.",
+        "shortDesc": "",
+        "tag": "Área"
       }
     },
     "technique": {
       "0": {
         "name": "Ainda É Possível Otimizar",
         "fullDesc": "Após usar sua Técnica, no início da próxima batalha o ATQ de Herta aumenta em {{1, percent}}% por {{2}} rodada(s).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "Aprimoramento"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Eficiência",
         "fullDesc": "Quando a Perícia é utilizada, o efeito de Bônus de Dano em inimigos-alvo aumenta em {{1, percent}}% extra.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Marionete",
         "fullDesc": "A chance de resistir a penalidades de Controle Negativo aumenta em {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Geleira",
         "fullDesc": "Quando a Perícia Suprema é utilizada, causa {{1, percent}}% a mais de Dano a inimigos com Congelamento.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Eu Sou Este Tipo de Garota",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Dedo na Ferida",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Se For Xingar, Xingue Direito",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "Ninguém Pode Me Trair",

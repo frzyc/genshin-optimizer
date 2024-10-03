@@ -5,56 +5,72 @@
       "0": {
         "name": "Trancazo",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Seele como Daño Cuántico a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño Cuántico a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño Cuántico a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Hoja envainada",
         "fullDesc": "Seele aumenta su VEL en un {{2, percent}}% durante {{3}} turnos e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Cuántico a un enemigo.",
-        "shortDesc": "Inflige Daño Cuántico a un enemigo y aumenta su propia VEL."
+        "shortDesc": "Inflige Daño Cuántico a un enemigo y aumenta su propia VEL.",
+        "tag": "ATQ individual"
       }
     },
     "ult": {
       "0": {
         "name": "Mariposa desbocada",
         "fullDesc": "Seele entra en un estado potenciado e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Cuántico a un enemigo.",
-        "shortDesc": "Entra en un <orangeStrong>estado potenciado</orangeStrong> e inflige una gran cantidad de Daño Cuántico a un enemigo."
+        "shortDesc": "Entra en un <orangeStrong>estado potenciado</orangeStrong> e inflige una gran cantidad de Daño Cuántico a un enemigo.",
+        "tag": "ATQ individual"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Reaparición",
+        "fullDesc": "Al eliminar a un objetivo enemigo usando su ATQ básico, habilidad básica o habilidad definitiva, obtiene inmediatamente un turno adicional y entra en un estado potenciado. Este estado hace que el daño de los ataques de Seele aumente en un <orangeStrong>{{1, percent}}%</orangeStrong> durante {{2}} turno.<br>Los enemigos eliminados durante el turno adicional obtenido con su talento Reaparición no activarán el talento otra vez.",
+        "shortDesc": "Al <orangeStrong>eliminar a un enemigo</orangeStrong> con el ATQ básico, la habilidad básica o la habilidad definitiva, obtiene un <orangeStrong>turno adicional y entra en un estado potenciado</orangeStrong> en el que aumenta el daño que inflige.",
+        "tag": "Potenciación"
       }
     },
     "technique": {
       "0": {
         "name": "Ilusión fantasmal",
         "fullDesc": "Tras usar la técnica, Seele obtiene Invisibilidad durante {{1}} s. Mientras está en el estado de Invisibilidad, Seele no puede ser detectada por los enemigos. Al entrar en combate tras atacar a un enemigo, Seele entra en el estado potenciado inmediatamente.",
-        "shortDesc": "Entra en el estado de <orangeStrong>Invisibilidad</orangeStrong>. Tras atacar a un enemigo y entrar en combate, entra en el <orangeStrong>estado potenciado</orangeStrong>."
+        "shortDesc": "Entra en el estado de <orangeStrong>Invisibilidad</orangeStrong>. Tras atacar a un enemigo y entrar en combate, entra en el <orangeStrong>estado potenciado</orangeStrong>.",
+        "tag": "Potenciación"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Sombra nocturna",
         "fullDesc": "Cuando el porcentaje de PV es igual o inferior al {{1, percent}}%, se reduce la probabilidad de recibir un ataque enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Laceración",
         "fullDesc": "Cuando Seele está en el estado potenciado, su PEN de la RES a Cuántico aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Olas agitadas",
         "fullDesc": "Tras usar el ATQ básico, la siguiente acción de Seele se adelanta un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -81,7 +97,7 @@
     },
     "6": {
       "name": "Caos destructivo",
-      "desc": "Tras usar la habilidad definitiva de Seele, el objetivo entra en el estado de Mariposa desbocada durante {{2}} turno. Cuando un enemigo afectado por Mariposa desbocada es atacado, recibe un Daño Cuántico adicional equivalente al {{1, percent}}% del daño de habilidad definitiva de Seele. Si el enemigo es eliminado por el daño adicional de Mariposa desbocada activado por el ataque de otro aliado, no se activará el talento de Seele.\\nCuando Seele sea derrotada, se disipará el estado de Mariposa desbocada infligido a los enemigos."
+      "desc": "Tras usar la habilidad definitiva de Seele, el objetivo entra en el estado de Mariposa desbocada durante {{2}} turno. Cuando un enemigo afectado por Mariposa desbocada es atacado, recibe un Daño Cuántico adicional equivalente al {{1, percent}}% del daño de habilidad definitiva de Seele. Si el enemigo es eliminado por el daño adicional de Mariposa desbocada activado por el ataque de otro aliado, no se activará el talento de Seele.<br>Cuando Seele sea derrotada, se disipará el estado de Mariposa desbocada infligido a los enemigos."
     }
   }
 }

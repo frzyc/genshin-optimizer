@@ -250,6 +250,13 @@ export const conditionals = {
       type: 'bool',
     },
   },
+  ObsidianCodex: {
+    someBoolConditional: {
+      sheet: 'ObsidianCodex',
+      name: 'someBoolConditional',
+      type: 'bool',
+    },
+  },
   OceanHuedClam: {
     someBoolConditional: {
       sheet: 'OceanHuedClam',
@@ -309,6 +316,13 @@ export const conditionals = {
   Scholar: {
     someBoolConditional: {
       sheet: 'Scholar',
+      name: 'someBoolConditional',
+      type: 'bool',
+    },
+  },
+  ScrollOfTheHeroOfCinderCity: {
+    someBoolConditional: {
+      sheet: 'ScrollOfTheHeroOfCinderCity',
       name: 'someBoolConditional',
       type: 'bool',
     },
@@ -919,6 +933,20 @@ export const formulas = {
       },
     },
   },
+  Emilie: {
+    normal1: {
+      sheet: 'Emilie',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Emilie',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Eula: {
     normal1: {
       sheet: 'Eula',
@@ -1054,6 +1082,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Jean',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Kachina: {
+    normal1: {
+      sheet: 'Kachina',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Kachina',
         move: 'normal',
         name: 'normal1',
       },
@@ -1278,6 +1320,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Mona',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Mualani: {
+    normal1: {
+      sheet: 'Mualani',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Mualani',
         move: 'normal',
         name: 'normal1',
       },
@@ -1813,6 +1869,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'ShikanoinHeizou',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Sigewinne: {
+    normal1: {
+      sheet: 'Sigewinne',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Sigewinne',
         move: 'normal',
         name: 'normal1',
       },

@@ -5,56 +5,72 @@
       "0": {
         "name": "Supresión de la gravedad",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Welt como Daño Imaginario a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Filo del vacío",
-        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Welt como Daño Imaginario a un enemigo e inflige daño 2 veces más. Cada golpe inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Welt como Daño Imaginario a un enemigo al azar. Al acertar a un enemigo, hay una <u>probabilidad base</u> del <orangeStrong>{{2, percent}}%</orangeStrong> de reducir la VEL del objetivo atacado en un {{3, percent}}% durante {{4}} turnos.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo. Se dispara 3 veces y tiene una probabilidad de <orangeStrong>causar Ralentización</orangeStrong> al objetivo."
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Welt como Daño Imaginario a un enemigo e inflige daño 2 veces más. Cada golpe inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Welt como Daño Imaginario a un enemigo al azar. Al acertar a un enemigo, hay una probabilidad base del <orangeStrong>{{2, percent}}%</orangeStrong> de reducir la VEL del objetivo atacado en un {{3, percent}}% durante {{4}} turnos.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño Imaginario a un enemigo. Se dispara 3 veces y tiene una probabilidad de <orangeStrong>causar Ralentización</orangeStrong> al objetivo.",
+        "tag": "Rebote"
       }
     },
     "ult": {
       "0": {
         "name": "Agujero negro artificial",
-        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Welt como Daño Imaginario a todos los enemigos y tiene una <u>probabilidad base</u> del {{3, percent}}% de afectar con Prisión a los enemigos atacados durante 1 turno.\\nLas acciones de los enemigos aprisionados se <u>retrasan</u> un <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> y su VEL se reduce en un {{4, percent}}%.",
-        "shortDesc": "Inflige Daño Imaginario a todos los enemigos y tiene una <orangeStrong>gran probabilidad de aprisionarlos</orangeStrong>."
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Welt como Daño Imaginario a todos los enemigos y tiene una probabilidad base del {{3, percent}}% de afectar con Prisión a los enemigos atacados durante 1 turno.<br>Las acciones de los enemigos aprisionados se retrasan un <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> y su VEL se reduce en un {{4, percent}}%.",
+        "shortDesc": "Inflige Daño Imaginario a todos los enemigos y tiene una <orangeStrong>gran probabilidad de aprisionarlos</orangeStrong>.",
+        "tag": "ATQ AdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Distorsión temporal",
+        "fullDesc": "Al golpear a un objetivo ya afectado por Ralentización, inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Welt como Daño Imaginario adicional.",
+        "shortDesc": "Al golpear a un objetivo afectado por Ralentización, <orangeStrong>inflige una pequeña cantidad de Daño Imaginario adicional</orangeStrong>.",
+        "tag": "Potenciación"
       }
     },
     "technique": {
       "0": {
         "name": "Prisión gravitacional",
-        "fullDesc": "Tras usar la técnica, crea una zona especial que dura {{4}} s. La VEL de movimiento de los enemigos que estén en la zona especial se reduce en un {{5, percent}}%. Tras entrar en combate con enemigos en la zona especial, tiene una <u>probabilidad base</u> del {{1, percent}}% de afectarlos con Prisión durante 1 turno.\\nLas acciones de los enemigos aprisionados se <u>retrasan</u> un {{2, percent}}% y su VEL se reduce en un {{3, percent}}%. Solo puede haber 1 zona especial creada por los aliados a la vez.",
-        "shortDesc": "Crea una zona especial. La VEL de movimiento de los enemigos que estén en la zona se reduce. Al entrar en combate contra los enemigos en la zona, tiene una <orangeStrong>gran probabilidad de afectarlos con Prisión</orangeStrong>."
+        "fullDesc": "Tras usar la técnica, crea una zona especial que dura {{4}} s. La VEL de movimiento de los enemigos que estén en la zona especial se reduce en un {{5, percent}}%. Tras entrar en combate con enemigos en la zona especial, tiene una probabilidad base del {{1, percent}}% de afectarlos con Prisión durante 1 turno.<br>Las acciones de los enemigos aprisionados se retrasan un {{2, percent}}% y su VEL se reduce en un {{3, percent}}%. Solo puede haber 1 zona especial creada por los aliados a la vez.",
+        "shortDesc": "Crea una zona especial. La VEL de movimiento de los enemigos que estén en la zona se reduce. Al entrar en combate contra los enemigos en la zona, tiene una <orangeStrong>gran probabilidad de afectarlos con Prisión</orangeStrong>.",
+        "tag": "Alteración"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Retribución",
         "fullDesc": "Al usar la habilidad definitiva, hay una probabilidad base del {{1, percent}}% de infligir un {{2, percent}}% más de daño a los objetivos durante {{3}} turnos.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Juicio",
         "fullDesc": "Al usar la habilidad definitiva, recupera {{1}} pts. de energía adicionales.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Castigo",
         "fullDesc": "Inflige un {{1, percent}}% más de daño a los enemigos afectados por Ruptura.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

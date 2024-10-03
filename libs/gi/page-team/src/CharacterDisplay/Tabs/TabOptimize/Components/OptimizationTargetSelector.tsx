@@ -39,6 +39,7 @@ export default function OptimizationTargetSelector({
         onClick={onShow}
         disabled={disabled}
         sx={{ flexGrow: 1 }}
+        size="small"
         {...buttonProps}
       >
         <OptimizationTargetDisplay

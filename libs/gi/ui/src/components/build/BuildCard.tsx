@@ -15,8 +15,8 @@ import {
   Typography,
 } from '@mui/material'
 import type { ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
 
-// TODO: Translation
 export function BuildCard({
   name,
   description,
@@ -42,6 +42,7 @@ export function BuildCard({
   onRemove?: () => void
   hideFooter?: boolean
 }) {
+  const { t } = useTranslation('build')
   const clickableAreaContent = (
     <>
       <CardHeader
@@ -83,7 +84,7 @@ export function BuildCard({
           }}
         >
           <Tooltip
-            title={<Typography>Edit Build Settings</Typography>}
+            title={<Typography>{t`buildCardTip.edit`}</Typography>}
             placement="top"
             arrow
           >
@@ -99,7 +100,7 @@ export function BuildCard({
             </IconButton>
           </Tooltip>
           <Tooltip
-            title={<Typography>Copy to TC Builds</Typography>}
+            title={<Typography>{t`buildCardTip.copyTc`}</Typography>}
             placement="top"
             arrow
           >
@@ -113,7 +114,7 @@ export function BuildCard({
             </IconButton>
           </Tooltip>
           <Tooltip
-            title={<Typography>Duplicate Build</Typography>}
+            title={<Typography>{t`buildCardTip.duplicate`}</Typography>}
             placement="top"
             arrow
           >
@@ -127,7 +128,7 @@ export function BuildCard({
             </IconButton>
           </Tooltip>
           <Tooltip
-            title={<Typography>Equip Build</Typography>}
+            title={<Typography>{t`buildCardTip.equip`}</Typography>}
             placement="top"
             arrow
           >
@@ -141,7 +142,7 @@ export function BuildCard({
             </IconButton>
           </Tooltip>
           <Tooltip
-            title={<Typography>Delete Build</Typography>}
+            title={<Typography>{t`buildCardTip.delete`}</Typography>}
             placement="top"
             arrow
           >

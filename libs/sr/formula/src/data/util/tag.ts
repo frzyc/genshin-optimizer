@@ -1,4 +1,4 @@
-import type { IBareConditionalData } from '@genshin-optimizer/common/formula'
+import type { IBaseConditionalData } from '@genshin-optimizer/common/formula'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import {
@@ -87,7 +87,7 @@ const stats: Record<Stat, Desc> = {
   spd_: agg,
   crit_: agg,
   crit_dmg_: agg,
-  brEff_: agg,
+  brEffect_: agg,
   eff_: agg,
   eff_res_: agg,
   enerRegen_: agg,
@@ -95,6 +95,7 @@ const stats: Record<Stat, Desc> = {
   dmg_: agg,
   resPen_: agg,
   weakness_: agg,
+  brEfficiency_: agg,
 } as const
 export const ownTag = {
   base: { atk: agg, def: agg, hp: agg, spd: agg },
@@ -130,7 +131,10 @@ export const ownTag = {
     breakDmg: prep,
   },
   listing: {
+    // Anything that is intended to be allowed as an optimization target.
     formulas: aggStr,
+    // Flat buffs that don't scale off of a stat.
+    buffs: aggStr,
   },
 } as const
 export const enemyTag = {
@@ -224,7 +228,7 @@ type CondIgnored = 'both' | 'src' | 'dst' | 'none'
 function allConditionals<T>(
   sheet: Sheet,
   shared: CondIgnored = 'src',
-  meta: IBareConditionalData,
+  meta: IBaseConditionalData,
   transform: (r: Read, q: string) => T
 ): Record<string, T> {
   // Keep the base tag "full" here so that `cond` returns consistent tags

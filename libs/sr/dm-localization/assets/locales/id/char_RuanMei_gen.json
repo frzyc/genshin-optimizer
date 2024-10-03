@@ -5,56 +5,72 @@
       "0": {
         "name": "Threading Fragrance",
         "fullDesc": "Mengakibatkan Ice DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Ruan Mei pada 1 target musuh.",
-        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Ice DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "String Sings Slow Swirls",
         "fullDesc": "Setelah Ruan Mei melancarkan Skill, Ruan Mei akan memperoleh \"Overtone\" yang berlangsung selama {{3}} giliran. Setiap giliran Ruan Mei dimulai, durasi giliran akan berkurang 1. Saat Ruan Mei memiliki \"Overtone\", seluruh rekan tim akan mendapat peningkatan <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> DMG dan {{2, percent}}% Weakness Break Efficiency.",
-        "shortDesc": "Setelah melancarkan Skill-nya, Ruan Mei akan memperoleh \"Overtone\". Saat Ruan Mei memiliki \"Overtone\", <orangeStrong>DMG</orangeStrong> dan <orangeStrong>Weakness Break Efficiency</orangeStrong> seluruh rekan tim meningkat."
+        "shortDesc": "Setelah melancarkan Skill-nya, Ruan Mei akan memperoleh \"Overtone\". Saat Ruan Mei memiliki \"Overtone\", <orangeStrong>DMG</orangeStrong> dan <orangeStrong>Weakness Break Efficiency</orangeStrong> seluruh rekan tim meningkat.",
+        "tag": "Support"
       }
     },
     "ult": {
       "0": {
         "name": "Petals to Stream, Repose in Dream",
-        "fullDesc": "Ruan Mei membuka sebuah area pembatas yang berlangsung selama {{2}} giliran. Durasi giliran area pembatas akan berkurang 1 setiap kali giliran Ruan Mei dimulai.\\nSeluruh rekan tim yang berada dalam area pembatas akan mendapat peningkatan <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> RES PEN Seluruh Tipe, dan setelah menyerang, akan menambahkan \"Thanatoplum Rebloom\" pada target musuh.\\n\"Thanatoplum Rebloom\" akan terpicu saat target musuh mencoba pulih dari status <u>Weakness Break</u>, memperpanjang status <u>Weakness Break</u> yang dimilikinya dan <u>menunda aksinya</u>. Penundaan aksinya adalah sebesar {{3, percent}}% Break Effect Ruan Mei + {{4, percent}}%, serta mengakibatkan <u>Break DMG</u> pada target tersebut sebesar <orangeStrong>{{5, percent}}%</orangeStrong> Ice Break DMG Ruan Mei.\\nTarget musuh yang belum pulih dari status <u>Weakness Break</u> tidak dapat terkena \"Thanatoplum Rebloom\" lagi.",
-        "shortDesc": "Meningkatkan <orangeStrong>RES PEN Seluruh Tipe</orangeStrong> dari seluruh rekan tim. Setelah menyerang, akan menambahkan \"Thanatoplum Rebloom\" pada target musuh."
+        "fullDesc": "Ruan Mei membuka sebuah area pembatas yang berlangsung selama {{2}} giliran. Durasi giliran area pembatas akan berkurang 1 setiap kali giliran Ruan Mei dimulai.<br>Seluruh rekan tim yang berada dalam area pembatas akan mendapat peningkatan <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> RES PEN Seluruh Tipe, dan setelah menyerang, akan menambahkan \"Thanatoplum Rebloom\" pada target musuh.<br>\"Thanatoplum Rebloom\" akan terpicu saat target musuh mencoba pulih dari status Weakness Break, memperpanjang status Weakness Break yang dimilikinya dan menunda aksinya. Penundaan aksinya adalah sebesar {{3, percent}}% Break Effect Ruan Mei + {{4, percent}}%, serta mengakibatkan Break DMG pada target tersebut sebesar <orangeStrong>{{5, percent}}%</orangeStrong> Ice Break DMG Ruan Mei.<br>Target musuh yang belum pulih dari status Weakness Break tidak dapat terkena \"Thanatoplum Rebloom\" lagi.",
+        "shortDesc": "Meningkatkan <orangeStrong>RES PEN Seluruh Tipe</orangeStrong> dari seluruh rekan tim. Setelah menyerang, akan menambahkan \"Thanatoplum Rebloom\" pada target musuh.",
+        "tag": "Support"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Somatotypical Helix",
+        "fullDesc": "Meningkatkan <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> SPD seluruh rekan tim selain diri sendiri. Saat mengakibatkan Weakness Break pada target musuh (berlaku untuk seluruh rekan tim), Ruan Mei akan mengakibatkan Break DMG sebesar <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> Ice Break DMG Ruan Mei pada musuh tersebut.",
+        "shortDesc": "Meningkatkan <orangeStrong>SPD</orangeStrong> seluruh rekan tim selain diri sendiri. Saat mengakibatkan Weakness Break pada target musuh, akan mengakibatkan <orangeStrong>Ice Break DMG tambahan</orangeStrong> pada musuh tersebut.",
+        "tag": "Support"
       }
     },
     "technique": {
       "0": {
         "name": "Silken Serenade",
-        "fullDesc": "Setelah menggunakan Technique, akan memperoleh \"Silken Serenade\". Saat pertempuran berikutnya dimulai, akan otomatis memicu Skill dirinya sebanyak {{1}} kali, dan pemicuan kali ini tidak akan mengonsumsi Poin Skill.\\nSaat Ruan Mei memiliki \"Silken Serenade\" di Simulated Universe atau Divergent Universe, saat rekan tim menyerang musuh secara aktif, akan selalu dianggap menyerang Weakness saat memasuki pertempuran, dan serangan kali ini akan mengurangi Toughness seluruh musuh tanpa memedulikan tipe Weakness-nya. Saat mengakibatkan Weakness Break, akan memicu efek Weakness Break yang sesuai dengan Tipe Serangan penyerang. Untuk setiap 1 Blessing yang dimiliki, Pengurangan Toughness dari serangan kali ini akan meningkat ekstra {{2, percent}}%. Jika serangan ini mengakibatkan Weakness Break, maka akan mengakibatkan Break DMG tambahan sebesar {{3, percent}}% Ice Break DMG Ruan Mei pada target musuh tersebut. Berlaku untuk maksimal {{4}} Blessing.",
-        "shortDesc": "Saat memasuki pertempuran berikutnya, akan otomatis memicu Skill sebanyak <orangeStrong>{{1}}</orangeStrong> kali. Setelah melancarkan Technique, saat menyerang musuh di Simulated Universe atau Divergent Universe, akan selalu dianggap menyerang Weakness saat memasuki pertempuran, dan serangan kali ini akan mengurangi Toughness musuh <orangeStrong>tanpa memedulikan tipe Weakness-nya</orangeStrong>. Untuk setiap 1 Blessing yang dimiliki, Pengurangan Toughness akan meningkat dan jika serangan ini mengakibatkan Weakness Break, maka akan mengakibatkan Break DMG tambahan."
+        "fullDesc": "Setelah menggunakan Technique, akan memperoleh \"Silken Serenade\". Saat pertempuran berikutnya dimulai, akan otomatis memicu Skill dirinya sebanyak {{1}} kali, dan pemicuan kali ini tidak akan mengonsumsi Poin Skill.<br>Saat Ruan Mei memiliki \"Silken Serenade\" di Simulated Universe atau Divergent Universe, saat rekan tim menyerang musuh secara aktif, akan selalu dianggap menyerang Weakness saat memasuki pertempuran, dan serangan kali ini akan mengurangi Toughness seluruh musuh tanpa memedulikan tipe Weakness-nya. Saat mengakibatkan Weakness Break, akan memicu efek Weakness Break yang sesuai dengan Tipe Serangan penyerang. Untuk setiap 1 Blessing yang dimiliki, Pengurangan Toughness dari serangan kali ini akan meningkat ekstra {{2, percent}}%. Jika serangan ini mengakibatkan Weakness Break, maka akan mengakibatkan Break DMG tambahan sebesar {{3, percent}}% Ice Break DMG Ruan Mei pada target musuh tersebut. Berlaku untuk maksimal {{4}} Blessing.",
+        "shortDesc": "Saat memasuki pertempuran berikutnya, akan otomatis memicu Skill sebanyak <orangeStrong>{{1}}</orangeStrong> kali. Setelah melancarkan Technique, saat menyerang musuh di Simulated Universe atau Divergent Universe, akan selalu dianggap menyerang Weakness saat memasuki pertempuran, dan serangan kali ini akan mengurangi Toughness musuh <orangeStrong>tanpa memedulikan tipe Weakness-nya</orangeStrong>. Untuk setiap 1 Blessing yang dimiliki, Pengurangan Toughness akan meningkat dan jika serangan ini mengakibatkan Weakness Break, maka akan mengakibatkan Break DMG tambahan.",
+        "tag": "Enhance"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughness-nya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Inert Respiration",
         "fullDesc": "Meningkatkan {{1, percent}}% Break Effect seluruh rekan tim.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Days Wane, Thoughts Wax",
         "fullDesc": "Saat giliran Ruan Mei dimulai, dia akan memulihkan {{1}} Energy.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Candle Lights on Still Waters",
         "fullDesc": "Saat Break Effect Ruan Mei di pertempuran lebih besar dari {{1, percent}}%, untuk setiap {{2, percent}}% yang berlebih, akan meningkatkan {{3, percent}}% efek peningkatan DMG bagi seluruh rekan tim dari Skill Ruan Mei, maksimal tidak lebih dari {{4, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

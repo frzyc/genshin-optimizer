@@ -1,15 +1,14 @@
+import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
-import type { ICachedRelic } from '@genshin-optimizer/sr/db'
+import { toDBRead, toRead, type ICachedRelic } from '@genshin-optimizer/sr/db'
 import type { Read } from '@genshin-optimizer/sr/formula'
 import { useSrCalcContext } from '@genshin-optimizer/sr/formula-ui'
 import type { BuildResult, ProgressResult } from '@genshin-optimizer/sr/solver'
 import { MAX_BUILDS, Solver } from '@genshin-optimizer/sr/solver'
 import {
   BuildDisplay,
-  OptimizationTargetSelector,
-  StatFilterCard,
-  WorkerSelector,
+  LoadoutContext,
   useDatabaseContext,
 } from '@genshin-optimizer/sr/ui'
 import CloseIcon from '@mui/icons-material/Close'
@@ -22,8 +21,18 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 import { useTranslation } from 'react-i18next'
+import { OptimizationTargetSelector } from './OptimizationTargetSelector'
+import { StatFilterCard } from './StatFilterCard'
+import { WorkerSelector } from './WorkerSelector'
 
 export default function Optimize() {
   const { t } = useTranslation('optimize')
@@ -35,9 +44,23 @@ export default function Optimize() {
   const [progress, setProgress] = useState<ProgressResult | undefined>(
     undefined
   )
+  const { loadout, charMap } = useContext(LoadoutContext)
+  const optConfig = useDataManagerBase(database.optConfigs, loadout.optConfigId)
 
-  // Step 1: Pick formula(s); anything that `calc.compute` can handle will work
-  const [optTarget, setOptTarget] = useState<Read | undefined>(undefined)
+  const optTarget = useMemo(
+    () =>
+      optConfig?.optimizationTarget &&
+      toRead(optConfig.optimizationTarget, charMap),
+    [charMap, optConfig]
+  )
+  const setOptTarget = useCallback(
+    (read: Read) => {
+      database.optConfigs.set(loadout.optConfigId, {
+        optimizationTarget: toDBRead(read, charMap),
+      })
+    },
+    [charMap, database.optConfigs, loadout.optConfigId]
+  )
 
   const relicsBySlot = useMemo(
     () =>

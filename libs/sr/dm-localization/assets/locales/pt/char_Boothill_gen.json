@@ -5,61 +5,78 @@
       "0": {
         "name": "Esporas Esmaga-Crânio",
         "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Boothill a um único inimigo-alvo.",
-        "shortDesc": "Causa Dano Físico leve a um único inimigo."
+        "shortDesc": "Causa Dano Físico leve a um único inimigo.",
+        "tag": "Alvo Único"
       },
       "1": {
         "name": "Martelada Sequencial",
-        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Boothill a um único inimigo-alvo.\\nO ATQ Básico Aprimorado não pode recuperar Pontos de Perícia e só pode focar no inimigo-alvo com Confronto.",
-        "shortDesc": "Causa Dano Físico a um único inimigo. Só pode atacar o alvo em Confronto."
+        "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Boothill a um único inimigo-alvo.<br>O ATQ Básico Aprimorado não pode recuperar Pontos de Perícia e só pode focar no inimigo-alvo com Confronto.",
+        "shortDesc": "Causa Dano Físico a um único inimigo. Só pode atacar o alvo em Confronto.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Tango Crepitante",
-        "fullDesc": "Força Boothill e um inimigo-alvo a entrar no estado de Confronto. O ATQ Básico de Boothill é Aprimorado, e ele não pode usar sua Perícia, com duração de {{3}} rodada(s). A duração diminui em 1 no início de cada rodada de Boothill.\\nO inimigo-alvo no Confronto fica Provocado. Quando esse inimigo-alvo ou Boothill é atacado pela outra parte no Confronto, o Dano que recebem aumenta em <orangeStrong>{{1, percent}}%</orangeStrong>/{{2, percent}}%.\\nApós esse alvo ser derrotado ou sofrer Quebra de Fraqueza, Boothill ganha 1 acúmulo de Truque de Bolso e então dissolve o Confronto.\\nEsta Perícia não regenera Energia. Após usar esta Perícia, a rodada atual não termina.",
-        "shortDesc": "Inicia <orangeStrong>Confronto</orangeStrong>. Depois que o alvo no Confronto for <orangeStrong>derrotado ou sofrer Quebra de Fraqueza</orangeStrong>, Boothill recebe Truque de Bolso e desfaz o Confronto. Boothill <orangeStrong>ganha ATQs Básicos Aprimorados</orangeStrong> e esta rodada não termina."
+        "fullDesc": "Força Boothill e um inimigo-alvo a entrar no estado de Confronto. O ATQ Básico de Boothill é Aprimorado, e ele não pode usar sua Perícia, com duração de {{3}} rodada(s). A duração diminui em 1 no início de cada rodada de Boothill.<br>O inimigo-alvo no Confronto fica Provocado. Quando esse inimigo-alvo ou Boothill é atacado pela outra parte no Confronto, o Dano que recebem aumenta em <orangeStrong>{{1, percent}}%</orangeStrong>/{{2, percent}}%.<br>Após esse alvo ser derrotado ou sofrer Quebra de Fraqueza, Boothill ganha 1 acúmulo de Truque de Bolso e então dissolve o Confronto.<br>Esta Perícia não regenera Energia. Após usar esta Perícia, a rodada atual não termina.",
+        "shortDesc": "Inicia <orangeStrong>Confronto</orangeStrong>. Depois que o alvo no Confronto for <orangeStrong>derrotado ou sofrer Quebra de Fraqueza</orangeStrong>, Boothill recebe Truque de Bolso e desfaz o Confronto. Boothill <orangeStrong>ganha ATQs Básicos Aprimorados</orangeStrong> e esta rodada não termina.",
+        "tag": "Incapacitação"
       }
     },
     "ult": {
       "0": {
         "name": "Rodeio Crepuscular do Demônio da Areia",
-        "fullDesc": "Aplica Fraqueza contra Físico a um inimigo-alvo, durando por {{3}} rodada(s).\\nCausa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Boothill ao alvo e <u>retarda suas ações</u> em <orangeStrong>{{2, percent}}%</orangeStrong>.",
-        "shortDesc": "<orangeStrong>Aplica Fraqueza contra Físico</orangeStrong> a um único inimigo, causa uma quantidade massiva de Dano Físico e atrasa suas ações."
+        "fullDesc": "Aplica Fraqueza contra Físico a um inimigo-alvo, durando por {{3}} rodada(s).<br>Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Boothill ao alvo e retarda suas ações em <orangeStrong>{{2, percent}}%</orangeStrong>.",
+        "shortDesc": "<orangeStrong>Aplica Fraqueza contra Físico</orangeStrong> a um único inimigo, causa uma quantidade massiva de Dano Físico e atrasa suas ações.",
+        "tag": "Alvo Único"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Cinco Balas no Tambor",
+        "fullDesc": "Cada acúmulo do Truque de Bolso aumenta a Redução de Tenacidade do ATQ Básico Aprimorado em {{4, percent}}%, podendo acumular até {{5}} vez(es).<br>Se o alvo estiver com Quebra de Fraqueza quando o ATQ Básico Aprimorado for usado, com base no número de acúmulos de Truque de Bolso, causa Dano de Quebra a esse alvo igual a <orangeStrong>{{1, percent}}%</orangeStrong>/<orangeStrong>{{2, percent}}%</orangeStrong>/<orangeStrong>{{3, percent}}%</orangeStrong> do Dano de Quebra Físico de Boothill. A Tenacidade máxima considerada para este dano não pode exceder {{6}} vezes a Redução de Tenacidade base causada pelo ATQ Básico \"Esporas Esmaga-Crânio\".<br>Após vencer a batalha, Boothill pode manter o Truque de Bolso para a próxima batalha.",
+        "shortDesc": "O Truque de Bolso aumenta a Redução de Tenacidade do ATQ Básico Aprimorado e causa <orangeStrong>Dano de Quebra</orangeStrong> de Físico adicional ao <orangeStrong>inimigo que sofreu Quebra de Fraqueza</orangeStrong>. Após vencer a batalha, mantém o Truque de Bolso para a próxima batalha.",
+        "tag": "Aprimoramento"
       }
     },
     "technique": {
       "0": {
         "name": "Sorriso 3x9",
         "fullDesc": "Após a Técnica ser utilizada, ao usar a Perícia pela primeira vez na próxima batalha, adiciona Fraqueza contra Físico igual àquela aplicada pela Perícia Suprema ao alvo, durando por {{1}} rodada(s).",
-        "shortDesc": "Depois que a Técnica é utilizada,<orangeStrong> aplica Fraqueza contra Físico</orangeStrong> contra um único inimigo ao usar a Perícia pela primeira vez na próxima batalha."
+        "shortDesc": "Depois que a Técnica é utilizada,<orangeStrong> aplica Fraqueza contra Físico</orangeStrong> contra um único inimigo ao usar a Perícia pela primeira vez na próxima batalha.",
+        "tag": "Aprimoramento"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Munição Fantasma",
         "fullDesc": "Aumenta a Chance de CRIT / o Dano CRIT deste personagem em uma quantidade igual a {{1, percent}}% / {{3, percent}}% do Efeito de Quebra, com um aumento máximo de {{2, percent}}% / {{4, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Sobre as Cobras",
         "fullDesc": "Enquanto Boothill está em Confronto, diminui o Dano que ele recebe de alvos que não estejam em Confronto em {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "À Queima-Roupa",
         "fullDesc": "Ao obter Truque de Bolso no Confronto, regenera {{1}} de Energia. Esse efeito também é ativado quando são obtidos acúmulos de Truque de Bolso que excedam o limite máximo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -74,7 +91,7 @@
     },
     "3": {
       "name": "Guarda do Jardim de Mármore",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Chef de Carnes Frias",
@@ -82,7 +99,7 @@
     },
     "5": {
       "name": "Discurso do Tronco",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "Guaxinim do Hotel Pé de Cabra",

@@ -5,61 +5,78 @@
       "0": {
         "name": "Móng Sắt Nứt Sọ",
         "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Boothill.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       },
       "1": {
         "name": "Nỏ Chùy Kích",
-        "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Vật Lý bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Boothill.\\nTấn Công Thường Cường Hóa không thể hồi điểm Chiến Kỹ, và chỉ có thể lấy kẻ địch có Đối Đầu Tuyệt Mệnh làm mục tiêu.",
-        "shortDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch, chỉ có thể tấn công mục tiêu \"Đối Đầu Tuyệt Mệnh\"."
+        "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Vật Lý bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Boothill.<br>Tấn Công Thường Cường Hóa không thể hồi điểm Chiến Kỹ, và chỉ có thể lấy kẻ địch có Đối Đầu Tuyệt Mệnh làm mục tiêu.",
+        "shortDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch, chỉ có thể tấn công mục tiêu \"Đối Đầu Tuyệt Mệnh\".",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Điệu Tango Của Vũ Công Cháy Bỏng",
-        "fullDesc": "Khiến 1 kẻ địch chỉ định và bản thân vào trạng thái Đối Đầu Tuyệt Mệnh, Tấn Công Thường của Boothill được cường hóa và không thể thi triển Chiến Kỹ, duy trì {{3}} hiệp. Khi bắt đầu mỗi hiệp của Boothill, số hiệp duy trì giảm 1.\\nKẻ địch có Đối Đầu Tuyệt Mệnh sẽ rơi vào trạng thái Khiêu Khích. Khi mục tiêu này/Boothill bị đối phương tấn công, sát thương phải chịu tăng <orangeStrong>{{1, percent}}%</orangeStrong>/{{2, percent}}%.\\nSau khi mục tiêu này bị tiêu diệt hoặc Điểm Yếu bị phá vỡ, Boothill đều có thể nhận 1 tầng Cú Lừa Bỏ Túi, sau đó giải trừ \"Đối Đầu Tuyệt Mệnh\".\\nChiến Kỹ này không thể hồi Năng Lượng. Sau khi thi triển Chiến Kỹ này, hiệp này sẽ không kết thúc.",
-        "shortDesc": "Mở <orangeStrong>Đối Đầu Tuyệt Mệnh</orangeStrong>, mục tiêu trong trạng thái Đối Đầu Tuyệt Mệnh <orangeStrong>sau khi bị tiêu diệt hoặc Điểm Yếu bị phá vỡ</orangeStrong>, Boothill sẽ nhận được Cú Lừa Bỏ Túi và giải trừ Đối Đầu Tuyệt Mệnh. Boothill nhận được <orangeStrong>Tấn Công Thường Cường Hóa</orangeStrong> đồng thời hiệp này sẽ không kết thúc."
+        "fullDesc": "Khiến 1 kẻ địch chỉ định và bản thân vào trạng thái Đối Đầu Tuyệt Mệnh, Tấn Công Thường của Boothill được cường hóa và không thể thi triển Chiến Kỹ, duy trì {{3}} hiệp. Khi bắt đầu mỗi hiệp của Boothill, số hiệp duy trì giảm 1.<br>Kẻ địch có Đối Đầu Tuyệt Mệnh sẽ rơi vào trạng thái Khiêu Khích. Khi mục tiêu này/Boothill bị đối phương tấn công, sát thương phải chịu tăng <orangeStrong>{{1, percent}}%</orangeStrong>/{{2, percent}}%.<br>Sau khi mục tiêu này bị tiêu diệt hoặc Điểm Yếu bị phá vỡ, Boothill đều có thể nhận 1 tầng Cú Lừa Bỏ Túi, sau đó giải trừ \"Đối Đầu Tuyệt Mệnh\".<br>Chiến Kỹ này không thể hồi Năng Lượng. Sau khi thi triển Chiến Kỹ này, hiệp này sẽ không kết thúc.",
+        "shortDesc": "Mở <orangeStrong>Đối Đầu Tuyệt Mệnh</orangeStrong>, mục tiêu trong trạng thái Đối Đầu Tuyệt Mệnh <orangeStrong>sau khi bị tiêu diệt hoặc Điểm Yếu bị phá vỡ</orangeStrong>, Boothill sẽ nhận được Cú Lừa Bỏ Túi và giải trừ Đối Đầu Tuyệt Mệnh. Boothill nhận được <orangeStrong>Tấn Công Thường Cường Hóa</orangeStrong> đồng thời hiệp này sẽ không kết thúc.",
+        "tag": "Quấy Nhiễu"
       }
     },
     "ult": {
       "0": {
         "name": "Buổi Tranh Tài Hoàng Hôn Của Vũ Công Quỷ Bụi",
-        "fullDesc": "Thêm Điểm Yếu Vật Lý cho 1 kẻ địch chỉ định, duy trì {{3}} hiệp.\\nGây sát thương Vật Lý cho mục tiêu này bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Boothill, và khiến mục tiêu <u>trì hoãn hành động</u> <orangeStrong>{{2, percent}}%</orangeStrong>.",
-        "shortDesc": "<orangeStrong>Thêm Điểm Yếu Vật Lý</orangeStrong> cho 1 kẻ địch, đồng thời gây lượng lớn Sát Thương Vật Lý cho kẻ đó, khiến mục tiêu trì hoãn hành động."
+        "fullDesc": "Thêm Điểm Yếu Vật Lý cho 1 kẻ địch chỉ định, duy trì {{3}} hiệp.<br>Gây sát thương Vật Lý cho mục tiêu này bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Boothill, và khiến mục tiêu trì hoãn hành động <orangeStrong>{{2, percent}}%</orangeStrong>.",
+        "shortDesc": "<orangeStrong>Thêm Điểm Yếu Vật Lý</orangeStrong> cho 1 kẻ địch, đồng thời gây lượng lớn Sát Thương Vật Lý cho kẻ đó, khiến mục tiêu trì hoãn hành động.",
+        "tag": "Đánh Đơn"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Năm Hạt Đậu Nằm Trong Vỏ Đậu",
+        "fullDesc": "Mỗi tầng Cú Lừa Bỏ Túi giúp điểm Giảm Sức Bền của Tấn Công Thường Cường Hóa tăng {{4, percent}}%, tối đa cộng dồn {{5}} tầng.<br>Trong thời gian thi triển Tấn Công Thường Cường Hóa, nếu mục tiêu trong trạng thái Phá Vỡ Điểm Yếu, sẽ căn cứ vào số tầng Cú Lừa Bỏ Túi, gây cho mục tiêu Sát Thương Phá Vỡ bằng <orangeStrong>{{1, percent}}%</orangeStrong>/<orangeStrong>{{2, percent}}%</orangeStrong>/<orangeStrong>{{3, percent}}%</orangeStrong> Sát Thương Phá Vỡ Vật Lý của Boothill. Sức Bền tối đa được tính vào của đòn sát thương này không vượt quá {{6}} lần điểm Giảm Sức Bền cơ bản của đòn Tấn Công Thường Móng Sắt Nứt Sọ.<br>Sau khi chiến thắng, Boothill có thể giữ lại Cú Lừa Bỏ Túi cho trận tiếp theo.",
+        "shortDesc": "Cú Lừa Bỏ Túi tăng điểm Giảm Sức Bền của Tấn Công Thường Cường Hóa, đồng thời gây thêm <orangeStrong>Sát Thương Phá Vỡ</orangeStrong> thuộc tính Vật lý cho <orangeStrong>kẻ địch bị phá vỡ Điểm yếu</orangeStrong>. Sau khi chiến thắng, Cú Lừa Bỏ Túi sẽ được bảo lưu cho lần chiến đấu tiếp theo.",
+        "tag": "Cường Hóa"
       }
     },
     "technique": {
       "0": {
         "name": "Nụ Cười Ba Nhân Chín",
         "fullDesc": "Sau khi sử dụng Bí Kỹ, trong lần chiến đấu tiếp theo, lần đầu thi triển Chiến Kỹ, sẽ thêm cho mục tiêu Điểm Yếu Vật Lý giống với Tuyệt Kỹ, duy trì {{1}} hiệp.",
-        "shortDesc": "Sau khi dùng Bí Kỹ, lần tiếp theo vào trận, lần đầu thi triển Chiến Kỹ sẽ <orangeStrong>thêm Điểm Yếu Vật Lý</orangeStrong> cho 1 kẻ địch."
+        "shortDesc": "Sau khi dùng Bí Kỹ, lần tiếp theo vào trận, lần đầu thi triển Chiến Kỹ sẽ <orangeStrong>thêm Điểm Yếu Vật Lý</orangeStrong> cho 1 kẻ địch.",
+        "tag": "Cường Hóa"
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền thuộc tính tương ứng của kẻ địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Ghost Load",
         "fullDesc": "Tăng Tỷ Lệ Bạo Kích/Sát Thương Bạo Kích của bản thân, mức tăng bằng {{1, percent}}%/{{3, percent}}% Tấn Công Kích Phá, tối đa khiến Tỷ Lệ Bạo Kích/Sát Thương Bạo Kích tăng {{2, percent}}%/{{4, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Above Snakes",
         "fullDesc": "Khi Boothill trong Đối Đầu Tuyệt Mệnh, sát thương phải chịu từ mục tiêu không trong trạng thái Đối Đầu Tuyệt Mệnh giảm {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Point Blank",
         "fullDesc": "Khi trong Đối Đầu Tuyệt Mệnh và nhận Cú Lừa Bỏ Túi sẽ hồi {{1}} Năng Lượng. Hiệu ứng này cũng sẽ kích hoạt khi nhận Cú Lừa Bỏ Túi vượt mức.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

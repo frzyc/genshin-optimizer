@@ -5,56 +5,72 @@
       "0": {
         "name": "Além da Bondade",
         "fullDesc": "Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Natasha a um único inimigo.",
-        "shortDesc": "Causa Dano Físico leve a um único inimigo."
+        "shortDesc": "Causa Dano Físico leve a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Amor, Cura e Escolha",
         "fullDesc": "Cura um único alvo em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Natasha + <orangeStrong>{{4}}</orangeStrong>. Cura o aliado em mais <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Natasha mais <orangeStrong>{{5}}</orangeStrong> no início de cada rodada por {{3}} rodada(s).",
-        "shortDesc": "<orangeStrong>Restaura PV </orangeStrong>de um único aliado e concede a <orangeStrong>Cura Periódica</orangeStrong> a ele."
+        "shortDesc": "<orangeStrong>Restaura PV </orangeStrong>de um único aliado e concede a <orangeStrong>Cura Periódica</orangeStrong> a ele.",
+        "tag": "Restauração"
       }
     },
     "ult": {
       "0": {
         "name": "Presente do Renascimento",
         "fullDesc": "Cura todos os aliados em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Natasha + <orangeStrong>{{2}}</orangeStrong>.",
-        "shortDesc": "<orangeStrong>Restaura PV</orangeStrong> de todos os aliados."
+        "shortDesc": "<orangeStrong>Restaura PV</orangeStrong> de todos os aliados.",
+        "tag": "Restauração"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Enervação",
+        "fullDesc": "Ao curar aliados com PV iguais ou abaixo de {{1, percent}}%, aumenta a Cura Realizada de Natasha em <orangeStrong>{{2, percent}}%</orangeStrong>. Este efeito também funciona na cura contínua.",
+        "shortDesc": "Ao curar aliados com PV baixos, aumenta a Cura Realizada. Esse efeito também funciona em curas contínuas.",
+        "tag": "Aprimoramento"
       }
     },
     "technique": {
       "0": {
         "name": "Pesquisa Hipnótica",
-        "fullDesc": "Ataca o inimigo imediatamente. Após entrar na batalha, causa Dano Físico igual a {{4, percent}}% do ATQ de Natasha a um inimigo aleatório, com {{1, percent}}% de <u>chance-base</u> de causar Enfraquecimento a todos os inimigos.\\nQuando enfraquecidos, inimigos causam {{2, percent}}% a menos de Dano a aliados por {{3}} rodada(s).",
-        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano Físico leve a um único inimigo aleatório, com uma alta chance de infligir Fraqueza a todos os inimigos-alvo."
+        "fullDesc": "Ataca o inimigo imediatamente. Após entrar na batalha, causa Dano Físico igual a {{4, percent}}% do ATQ de Natasha a um inimigo aleatório, com {{1, percent}}% de chance-base de causar Enfraquecimento a todos os inimigos.<br>Quando enfraquecidos, inimigos causam {{2, percent}}% a menos de Dano a aliados por {{3}} rodada(s).",
+        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano Físico leve a um único inimigo aleatório, com uma alta chance de infligir Fraqueza a todos os inimigos-alvo.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Acalmar",
         "fullDesc": "A Perícia remove {{1}} Penalidade(s) de um aliado-alvo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Curandeira",
         "fullDesc": "A Cura Realizada de Natasha aumenta em {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Recuperação",
         "fullDesc": "Aumenta a duração do efeito da cura contínua da Perícia por {{1}} rodada(s).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "A Cura Correta",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Cura Milagrosa",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Tratamento Preventivo",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "Graça da Médica",

@@ -10,6 +10,7 @@ import {
   Divider,
   Grid,
 } from '@mui/material'
+import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { TeamCard } from '../../team'
 import { LoadoutEditor } from './LoadoutEditor'
@@ -19,7 +20,6 @@ const columns = {
   md: 2,
 } as const
 
-// TODO: Translation
 export function LoadoutCard({
   teamCharId,
   teamIds,
@@ -27,6 +27,7 @@ export function LoadoutCard({
   teamCharId: string
   teamIds: string[]
 }) {
+  const { t } = useTranslation('page_character')
   const navigate = useNavigate()
   const database = useDatabase()
   const onAddTeam = (teamCharId: string) => {
@@ -71,7 +72,7 @@ export function LoadoutCard({
                 color="info"
                 startIcon={<AddIcon />}
               >
-                Add new Team
+                {t`charContentModal.addTeam`}
               </Button>
             </Grid>
           </Grid>

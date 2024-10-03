@@ -1,0 +1,36 @@
+{
+  "editor": {
+    "title": "Light Cone Editor",
+    "unknownLightCone": "Unknown Light Cone",
+    "lightConeName": "Light Cone Name",
+    "ascension": "Ascension",
+    "preview": "Light Cone Preview",
+    "beforeEdit": "Before Edit",
+    "btnSave": "Save Light Cone",
+    "btnAdd": "Add Light Cone",
+    "btnUpdate": "Update Light Cone",
+    "clearPrompt": "There is a light cone being edited. Are you sure you want to clear the editor?",
+    "confirmDelete": "Are you sure you want to delete this light cone?"
+  },
+  "lightConeFilterTitle": "Light Cone Filter",
+  "showingNum_one": "Showing <1>{{count}}</1> out of {{value}} Light Cone",
+  "showingNum_other": "Showing <1>{{count}}</1> out of {{value}} Light Cones",
+  "edit": "Edit Light Cone",
+  "removeLightCone": "Are you sure you want to remove {{value}}?",
+  "addNew": "Add New Light Cone",
+  "cantDeleteLock": "Cannot delete light cone because it is locked",
+  "button": {
+    "deleteLightCones": "Delete Light Cones",
+    "lockLightCones": "Lock Light Cones",
+    "unlockLightCones": "Unlock Light Cones"
+  },
+  "buttonHint": "Note: the red buttons above only apply to <1>filtered light cones<1>",
+  "equippedLightCone": "All Equipped Light Cones",
+  "lightConeInInv": "All Unequipped Light Cones",
+  "locationsTooltip": "Disable \"All Equipped Light Cones\" to filter by specific characters",
+  "subheadings": {
+    "general": "General",
+    "inventory": "Inventory"
+  },
+  "tcBuild": "TC Build"
+}

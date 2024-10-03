@@ -5,61 +5,78 @@
       "0": {
         "name": "Brilho da Lua Luzente",
         "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Jingliu como Dano de Gelo a um único inimigo.",
-        "shortDesc": "Causa Dano de Gelo leve a um único inimigo-alvo."
+        "shortDesc": "Causa Dano de Gelo leve a um único inimigo-alvo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Clarão Transcendente",
         "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Jingliu como Dano de Gelo a um único inimigo e obtém {{2}} acúmulo(s) de Sizígia.",
-        "shortDesc": "Causa Dano de Gelo a um inimigo-alvo e obtém <orangeStrong>1 acúmulo de Sizígia</orangeStrong>."
+        "shortDesc": "Causa Dano de Gelo a um inimigo-alvo e obtém <orangeStrong>1 acúmulo de Sizígia</orangeStrong>.",
+        "tag": "Alvo Único"
       },
       "1": {
         "name": "Lua sobre o Rio Glacial",
         "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Jingliu como Dano de Gelo a um único inimigo e <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de Jingliu como Dano de Gelo a inimigos adjacentes. Consome {{2}} acúmulo(s) de Sizígia. Usar esta habilidade não consome Pontos de Perícia.",
-        "shortDesc": "Causa Dano de Gelo a um único inimigo-alvo e Dano de Gelo a alvos adjacentes. Consome 1 acúmulo de Sizígia."
+        "shortDesc": "Causa Dano de Gelo a um único inimigo-alvo e Dano de Gelo a alvos adjacentes. Consome 1 acúmulo de Sizígia.",
+        "tag": "Explosão"
       }
     },
     "ult": {
       "0": {
         "name": "Fluxonírico Florefêmero",
         "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Jingliu como Dano de Gelo a um único inimigo e <orangeStrong>{{3, percent}}%</orangeStrong> do ATQ de Jingliu como Dano de Gelo a inimigos adjacentes. Ganha {{2}} acúmulo(s) de Sizígia depois que o ataque acaba.",
-        "shortDesc": "Causa Dano de Gelo massivo a um inimigo-alvo e causa Dano de Gelo aos alvos adjacentes. Obtém <orangeStrong>1 acúmulo de Sizígia</orangeStrong>."
+        "shortDesc": "Causa Dano de Gelo massivo a um inimigo-alvo e causa Dano de Gelo aos alvos adjacentes. Obtém <orangeStrong>1 acúmulo de Sizígia</orangeStrong>.",
+        "tag": "Explosão"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Transmigração Crescente",
+        "fullDesc": "Quando Jingliu alcança {{5}} acúmulo(s) de Sizígia, ela entra no estado de Transmigração Espectral, Avançando sua Ação em {{6, percent}}% e aumentando sua Chance de CRIT em <orangeStrong>{{7, percent}}%</orangeStrong>. Depois, a Perícia de Jingliu, \"Clarão Transcendente\", é aprimorada em \"Lua Sobre o Rio Glacial\", apenas esta Perícia aprimorada fica disponível na batalha. Quando Jingliu usa um ataque no estado de Transmigração Espectral, ela consome PV de todos os outros aliados igual a {{2, percent}}% dos respectivos PV máximos dos aliados (isso não pode reduzir os PV dos aliados para abaixo de 1). O ATQ de Jingliu aumenta em {{3, percent}}% da quantidade total dos PV consumidos de todos os aliados neste ataque, com um máximo de <orangeStrong>{{4, percent}}%</orangeStrong> de seu ATQ base e dura até o fim do ataque atual. Jingliu não pode entrar no estado de Transmigração Espectral novamente até que o estado atual de Transmigração Espectral tenha acabado. Sizígia pode acumular até 3 vezes. Quando o acúmulo de Sizígia chega a 0, Jingliu sai do estado de Transmigração Espectral.",
+        "shortDesc": "Ao estar em posse de <orangeStrong>{{5}}</orangeStrong> acúmulos de Sizígia, Jingliu entra no estado de Transmigração Espectral Avançando <orangeStrong> Ação em <unbreak>100%</orangeStrong></color>, aumentando sua Chance de CRIT e <orangeStrong>Aprimorando sua Perícia</orangeStrong>. Usar um ataque neste estado consome os PV de todos os outros aliados e <orangeStrong>aumenta o ATQ de Jingliu</orangeStrong> de acordo com o total de PV consumido. Quando os acúmulos de Sizígia chegam a 0, sai do estado de Transmigração Espectral.",
+        "tag": "Aprimoramento"
       }
     },
     "technique": {
       "0": {
         "name": "Brilho da Verdade",
-        "fullDesc": "Após usar esta Técnica, cria uma dimensão especial ao redor de Jingliu que dura por {{3}} segundos, e todos os inimigos nesta dimensão especial sofrerão Congelamento. Após entrar em combate com os inimigos na dimensão especial, Jingliu recupera imediatamente {{6}} de Energia e obtém {{1}} acúmulo(s) de Sizígia, com uma <u>chance-base</u> de {{2, percent}}% de causar Congelamento nos inimigos-alvo por {{4}} rodada(s). Enquanto estiverem com Congelamento, inimigos-alvo não podem agir, e recebem <u>Dano de Gelo Adicional</u> igual a {{5, percent}}% do ATQ de Jingliu no início de cada rodada. Somente 1 dimensão criada por aliados pode existir ao mesmo tempo.",
-        "shortDesc": "Cria uma dimensão especial em volta do personagem. Inimigos dentro desta dimensão sofrerão <orangeStrong>Congelamento</orangeStrong>. Após entrar em combate com inimigos nesta dimensão, este personagem recupera Energia e obtém 1 acúmulo de Sizígia com altas chances de aplicar <orangeStrong>Congelamento</orangeStrong> nos inimigos."
+        "fullDesc": "Após usar esta Técnica, cria uma dimensão especial ao redor de Jingliu que dura por {{3}} segundos, e todos os inimigos nesta dimensão especial sofrerão Congelamento. Após entrar em combate com os inimigos na dimensão especial, Jingliu recupera imediatamente {{6}} de Energia e obtém {{1}} acúmulo(s) de Sizígia, com uma chance-base de {{2, percent}}% de causar Congelamento nos inimigos-alvo por {{4}} rodada(s). Enquanto estiverem com Congelamento, inimigos-alvo não podem agir, e recebem Dano de Gelo Adicional igual a {{5, percent}}% do ATQ de Jingliu no início de cada rodada. Somente 1 dimensão criada por aliados pode existir ao mesmo tempo.",
+        "shortDesc": "Cria uma dimensão especial em volta do personagem. Inimigos dentro desta dimensão sofrerão <orangeStrong>Congelamento</orangeStrong>. Após entrar em combate com inimigos nesta dimensão, este personagem recupera Energia e obtém 1 acúmulo de Sizígia com altas chances de aplicar <orangeStrong>Congelamento</orangeStrong> nos inimigos.",
+        "tag": "Incapacitação"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do alvo inimigo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Reino da Morte",
         "fullDesc": "Aumenta a RES a Efeito em {{1, percent}}% enquanto estiver no estado de Transmigração Espectral.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Campeã da Espada",
         "fullDesc": "Após usar Clarão Transcendente, a próxima ação será Avançada Adiante em {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Ira Gélida",
         "fullDesc": "Aumenta o Dano da Perícia Suprema em {{1, percent}}% enquanto estiver no estado de Transmigração Espectral.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -74,7 +91,7 @@
     },
     "3": {
       "name": "Neblina Mercurial da Crescente",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "4": {
       "name": "Brilho da Lança Lunar",
@@ -82,7 +99,7 @@
     },
     "5": {
       "name": "Brilho Noturno Estelar",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "6": {
       "name": "Esfera Esvaziada pelo Vazio",

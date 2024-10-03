@@ -5,56 +5,72 @@
       "0": {
         "name": "流鏑",
         "fullDesc": "對指定敵方單體造成等同於馭空<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的虛數屬性傷害。",
-        "shortDesc": "對敵方單體造成少量虛數屬性傷害。"
+        "shortDesc": "對敵方單體造成少量虛數屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "天闕鳴弦",
-        "fullDesc": "獲得{{1}}層【鳴弦號令】，最多持有不超過2層。當馭空持有【鳴弦號令】時，我方全體攻擊力提高<orangeStrong>{{2, percent}}%</orangeStrong>，且每次我方目標回合結束時，移除馭空1層【鳴弦號令】。\\n馭空施放戰技獲得【鳴弦號令】的回合，不會移除【鳴弦號令】。",
-        "shortDesc": "獲得2層【鳴弦號令】，自身持有【鳴弦號令】時我方全體<orangeStrong>攻擊力提高</orangeStrong>。"
+        "fullDesc": "獲得{{1}}層【鳴弦號令】，最多持有不超過2層。當馭空持有【鳴弦號令】時，我方全體攻擊力提高<orangeStrong>{{2, percent}}%</orangeStrong>，且每次我方目標回合結束時，移除馭空1層【鳴弦號令】。<br>馭空施放戰技獲得【鳴弦號令】的回合，不會移除【鳴弦號令】。",
+        "shortDesc": "獲得2層【鳴弦號令】，自身持有【鳴弦號令】時我方全體<orangeStrong>攻擊力提高</orangeStrong>。",
+        "tag": "輔助"
       }
     },
     "ult": {
       "0": {
         "name": "貫雲飲羽",
         "fullDesc": "施放終結技時，若馭空持有【鳴弦號令】，則額外使我方全體暴擊率提高<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>、暴擊傷害提高<orangeStrong>{{3, percent}}%</orangeStrong>，同時對指定敵方單體造成等同於馭空<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的虛數屬性傷害。",
-        "shortDesc": "自身持有【鳴弦號令】時我方全體<orangeStrong>暴擊率和暴擊傷害提高</orangeStrong>，並對敵方單體造成大量虛數屬性傷害。"
+        "shortDesc": "自身持有【鳴弦號令】時我方全體<orangeStrong>暴擊率和暴擊傷害提高</orangeStrong>，並對敵方單體造成大量虛數屬性傷害。",
+        "tag": "單體攻擊"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "箭徹七札",
+        "fullDesc": "發動普通攻擊可額外造成等同於馭空<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的虛數屬性傷害，並使本次攻擊的削韌值提高{{2, percent}}%，該效果在{{3}}回合後可再次觸發。",
+        "shortDesc": "使普通攻擊額外造成少量傷害並提高本次普通攻擊削韌值。該效果1回合後可再次觸發。",
+        "tag": "強化"
       }
     },
     "technique": {
       "0": {
         "name": "雲鳶逐風",
         "fullDesc": "使用秘技後進入持續{{1}}秒的衝刺狀態。衝刺狀態下自身移動速度提高{{2, percent}}%，且主動攻擊敵人進入戰鬥時，馭空獲得{{3}}層【鳴弦號令】。",
-        "shortDesc": "使自身<orangeStrong>移動速度提高</orangeStrong>。攻擊敵人進入戰鬥後獲得2層【鳴弦號令】。"
+        "shortDesc": "使自身<orangeStrong>移動速度提高</orangeStrong>。攻擊敵人進入戰鬥後獲得2層【鳴弦號令】。",
+        "tag": "強化"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "襄尺",
         "fullDesc": "馭空被施加負面效果時可抵抗1次負面效果，該效果在{{1}}回合後可再次觸發。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "遲彝",
         "fullDesc": "馭空在場時，我方全體造成的虛數屬性傷害提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "氣壯",
         "fullDesc": "持有【鳴弦號令】時，每當我方目標行動後，馭空將額外恢復{{1}}點能量。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

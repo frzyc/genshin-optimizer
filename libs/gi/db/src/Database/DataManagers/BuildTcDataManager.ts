@@ -4,7 +4,6 @@ import type {
   ArtifactSetKey,
   ArtifactSlotKey,
   MainStatKey,
-  SubstatKey,
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import {
@@ -25,17 +24,6 @@ import type { BuildTc } from '../../Interfaces/BuildTc'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
 import type { IGO, ImportResult } from '../exim'
-
-export type MinTotalStatKey = Exclude<SubstatKey, 'hp_' | 'atk_' | 'def_'>
-export const minTotalStatKeys: MinTotalStatKey[] = [
-  'atk',
-  'hp',
-  'def',
-  'eleMas',
-  'enerRech_',
-  'critRate_',
-  'critDMG_',
-]
 
 export class BuildTcDataManager extends DataManager<
   string,
@@ -148,7 +136,6 @@ export function initCharTC(weaponKey: WeaponKey): BuildTc {
     optimization: {
       distributedSubstats: 45,
       maxSubstats: initBuildTcOptimizationMaxSubstats(),
-      minTotal: {},
     },
   }
 }
@@ -259,7 +246,7 @@ function validateBuildTcOptimization(
   optimization: unknown
 ): BuildTc['optimization'] | undefined {
   if (typeof optimization !== 'object') return undefined
-  let { distributedSubstats, maxSubstats, minTotal } =
+  let { distributedSubstats, maxSubstats } =
     optimization as BuildTc['optimization']
   if (typeof distributedSubstats !== 'number') distributedSubstats = 20
   if (typeof maxSubstats !== 'object')
@@ -267,14 +254,7 @@ function validateBuildTcOptimization(
   maxSubstats = objKeyMap([...allSubstatKeys], (k) =>
     typeof maxSubstats[k] === 'number' ? maxSubstats[k] : 0
   )
-  if (typeof minTotal !== 'object') minTotal = {}
-  minTotal = Object.fromEntries(
-    Object.entries(minTotal).filter(
-      ([k, v]) => minTotalStatKeys.includes(k) && typeof v === 'number'
-    )
-  )
-
-  return { distributedSubstats, maxSubstats, minTotal }
+  return { distributedSubstats, maxSubstats }
 }
 function initBuildTcOptimizationMaxSubstats(): BuildTc['optimization']['maxSubstats'] {
   return objKeyMap(

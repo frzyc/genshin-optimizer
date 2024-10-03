@@ -5,56 +5,72 @@
       "0": {
         "name": "Représailles",
         "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Seele à un ennemi unique.",
-        "shortDesc": "Inflige des DGT quantiques mineurs à un ennemi unique."
+        "shortDesc": "Inflige des DGT quantiques mineurs à un ennemi unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Lame rengainée",
         "fullDesc": "Augmente la VIT de Seele de {{2, percent}}% pendant {{3}} tours et inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Seele à un ennemi unique.",
-        "shortDesc": "Inflige des DGT quantiques à un ennemi unique et augmente la VIT."
+        "shortDesc": "Inflige des DGT quantiques à un ennemi unique et augmente la VIT.",
+        "tag": "Cible unique"
       }
     },
     "ult": {
       "0": {
         "name": "Volée de papillons",
         "fullDesc": "Seele entre immédiatement dans l'état amélioré et inflige des DGT quantiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de son ATQ à un ennemi unique.",
-        "shortDesc": "Entre dans l'<orangeStrong>état amélioré</orangeStrong> et inflige des DGT quantiques massifs à un ennemi unique."
+        "shortDesc": "Entre dans l'<orangeStrong>état amélioré</orangeStrong> et inflige des DGT quantiques massifs à un ennemi unique.",
+        "tag": "Cible unique"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Résurgence",
+        "fullDesc": "Lorsqu'elle élimine un ennemi avec son ATQ normale, sa compétence ou son ultime, Seele entre dans l'état amélioré et bénéficie d'un tour supplémentaire. Lorsqu'elle est dans l'état amélioré, les DGT de ses attaques augmentent de <orangeStrong>{{1, percent}}%</orangeStrong> pendant {{2}} tour.<br>Les ennemis vaincus pendant le tour supplémentaire accordé par « Résurgence » ne déclenchent pas « Résurgence » à nouveau.",
+        "shortDesc": "Utilise l'ATQ normale, la compétence et l'ultime pour <orangeStrong>éliminer les ennemis</orangeStrong>, gagner des <orangeStrong>tours supplémentaires et entrer dans l'état amélioré</orangeStrong>. Les DGT infligés augmentent dans l'état amélioré.",
+        "tag": "Renforcement"
       }
     },
     "technique": {
       "0": {
         "name": "Illusion fantôme",
         "fullDesc": "Après utilisation de sa technique, Seele devient furtive pendant {{1}} secondes. Lorsque Furtivité est active, Seele ne peut pas être détectée par les ennemis. Si elle entre en combat en attaquant un ennemi, elle bénéficie immédiatement de l'état amélioré.",
-        "shortDesc": "Entre en mode <orangeStrong>Furtivité</orangeStrong>. Entre dans l'état <orangeStrong>amélioré</orangeStrong> après avoir attaqué un ennemi et engagé le combat."
+        "shortDesc": "Entre en mode <orangeStrong>Furtivité</orangeStrong>. Entre dans l'état <orangeStrong>amélioré</orangeStrong> après avoir attaqué un ennemi et engagé le combat.",
+        "tag": "Renforcement"
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Ombre dans la nuit",
         "fullDesc": "Réduit les chances du personnage d'être attaqué par des ennemis quand son pourcentage de PV est inférieur ou égal à {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Lacération",
         "fullDesc": "La PÉN de RÉS quantique de Seele augmente de {{1, percent}}% lorsqu'elle est dans l'état amélioré.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Vagues ondulantes",
         "fullDesc": "Après utilisation de son ATQ normale, l'action suivante de Seele est avancée de {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Tumulte éblouissant",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "4": {
       "name": "Phantasme d'un instant",
@@ -77,11 +93,11 @@
     },
     "5": {
       "name": "Éclats perçants",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "6": {
       "name": "Ébranlements éclatants",
-      "desc": "Après utilisation de l'ultime de Seele, inflige l'effet Volée de papillons à la cible ennemie pendant {{2}} tour. Les ennemis affectés par Volée de papillons subissent des DGT quantiques additionnels équivalents à {{1, percent}}% des DGT de l'ultime de Seele chaque fois qu'ils sont attaqués. Si la cible ennemie est vaincue par les DGT de Volée de papillons provoqués par les attaques d'autres alliés, le talent de Seele ne se déclenche pas.\\nLorsque Seele est à terre, l'effet Volée de papillons infligé aux ennemis est supprimé."
+      "desc": "Après utilisation de l'ultime de Seele, inflige l'effet Volée de papillons à la cible ennemie pendant {{2}} tour. Les ennemis affectés par Volée de papillons subissent des DGT quantiques additionnels équivalents à {{1, percent}}% des DGT de l'ultime de Seele chaque fois qu'ils sont attaqués. Si la cible ennemie est vaincue par les DGT de Volée de papillons provoqués par les attaques d'autres alliés, le talent de Seele ne se déclenche pas.<br>Lorsque Seele est à terre, l'effet Volée de papillons infligé aux ennemis est supprimé."
     }
   }
 }

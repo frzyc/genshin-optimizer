@@ -5,56 +5,72 @@
       "0": {
         "name": "A Mente É Poderosa",
         "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ do Dr. Ratio a um único inimigo-alvo.",
-        "shortDesc": "Causa Dano Imaginário leve a um único inimigo-alvo."
+        "shortDesc": "Causa Dano Imaginário leve a um único inimigo-alvo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Obstetrícia Intelectual",
         "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ do Dr. Ratio a um único inimigo.",
-        "shortDesc": "Causa Dano Imaginário a um único inimigo."
+        "shortDesc": "Causa Dano Imaginário a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "ult": {
       "0": {
         "name": "Paradoxo Silogístico",
-        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ do Dr. Ratio a um único inimigo-alvo e aplica a Tolice do Sábio. Quando os aliados do Dr. Ratio atacam um alvo afligido com Tolice do Sábio, o Dr. Ratio realiza o <u>Ataque Extra</u> do seu Talento 1 vez contra o alvo.\\nA Tolice do Sábio pode ser ativada até {{2}} vezes e só afeta o alvo mais recente da Perícia Suprema do Dr. Ratio. Essa contagem de ativação reinicia depois que a Perícia Suprema do Dr. Ratio é utilizada.",
-        "shortDesc": "Causa Dano Imaginário a um único inimigo-alvo e aplica Tolice do Sábio. Quando os aliados do Dr. Ratio atacam um alvo afligido com Tolice do Sábio, o Dr. Ratio realiza 1 <orangeStrong><u>Ataque Extra</u></orangeStrong> contra este alvo."
+        "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ do Dr. Ratio a um único inimigo-alvo e aplica a Tolice do Sábio. Quando os aliados do Dr. Ratio atacam um alvo afligido com Tolice do Sábio, o Dr. Ratio realiza o Ataque Extra do seu Talento 1 vez contra o alvo.<br>A Tolice do Sábio pode ser ativada até {{2}} vezes e só afeta o alvo mais recente da Perícia Suprema do Dr. Ratio. Essa contagem de ativação reinicia depois que a Perícia Suprema do Dr. Ratio é utilizada.",
+        "shortDesc": "Causa Dano Imaginário a um único inimigo-alvo e aplica Tolice do Sábio. Quando os aliados do Dr. Ratio atacam um alvo afligido com Tolice do Sábio, o Dr. Ratio realiza 1 <orangeStrong>Ataque Extra</orangeStrong> contra este alvo.",
+        "tag": "Alvo Único"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Cogito, Ergo Sum",
+        "fullDesc": "Ao usar a sua Perícia, o Dr. Ratio tem uma chance fixa de {{2, percent}}% de realizar um Ataque Extra contra o alvo 1 vez, causando Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ do Dr. Ratio. Para cada penalidade que o inimigo possui, a chance fixa de realizar o Ataque Extra aumenta em {{3, percent}}%. Se o inimigo-alvo for derrotado antes da ativação do Ataque Extra, o Ataque Extra será direcionado a um único inimigo aleatório ao invés disso.",
+        "shortDesc": "Ao usar a Perícia, há uma chance de realizar 1 <orangeStrong>Ataque Extra</orangeStrong> contra o alvo 1 vez.",
+        "tag": "Alvo Único"
       }
     },
     "technique": {
       "0": {
         "name": "Molde da Idolatria",
-        "fullDesc": "Após usar a Técnica, cria uma dimensão especial que causa Provocação nos inimigos próximos, durando por {{1}} segundo(s). Após entrar em combate com inimigos nesta dimensão especial, há uma <u>chance-base</u> de {{2, percent}}% de reduzir a VEL de cada inimigo-alvo em {{3, percent}}% por {{4}} rodada(s). Apenas 1 dimensão criada pelos aliados pode existir ao mesmo tempo.",
-        "shortDesc": "Cria uma dimensão especial. Inimigos dentro dessa dimensão sofrem Provocação. Após entrar em combate com inimigos nesta dimensão, há uma alta chance de reduzir a <orangeStrong>VEL</orangeStrong> dos inimigos-alvo."
+        "fullDesc": "Após usar a Técnica, cria uma dimensão especial que causa Provocação nos inimigos próximos, durando por {{1}} segundo(s). Após entrar em combate com inimigos nesta dimensão especial, há uma chance-base de {{2, percent}}% de reduzir a VEL de cada inimigo-alvo em {{3, percent}}% por {{4}} rodada(s). Apenas 1 dimensão criada pelos aliados pode existir ao mesmo tempo.",
+        "shortDesc": "Cria uma dimensão especial. Inimigos dentro dessa dimensão sofrem Provocação. Após entrar em combate com inimigos nesta dimensão, há uma alta chance de reduzir a <orangeStrong>VEL</orangeStrong> dos inimigos-alvo.",
+        "tag": "Incapacitação"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e, quando a batalha começa, reduz a Tenacidade do inimigo-alvo do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Soma",
         "fullDesc": "Quando o Dr. Ratio usa sua Perícia, para cada penalidade no alvo, aumenta sua Chance de CRIT em {{1, percent(fixed: 1)}}% e seu Dano CRIT em {{2, percent}}%. Esse efeito pode acumular até {{3}} vez(es).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Inferência",
         "fullDesc": "Quando a Perícia é utilizada para atacar um inimigo-alvo, há uma chance-base de {{1, percent}}% de reduzir a RES a Efeito do alvo atacado em {{2, percent}}% por {{3}} rodada(s).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Dedução",
         "fullDesc": "Ao causar Dano a um alvo que possua {{1}} ou mais penalidades, para cada penalidade que o alvo possua, o Dano causado pelo Dr. Ratio a este alvo aumenta em {{2, percent}}%, até um aumento máximo de {{3, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Conhece-te a Ti Mesmo",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "4": {
       "name": "Ignorância É Uma Bênção",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Sic Itur Ad Astra",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "6": {
       "name": "Vincit Omnia Veritas",

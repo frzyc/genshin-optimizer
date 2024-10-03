@@ -5,56 +5,72 @@
       "0": {
         "name": "{RUBY_B#らいめいおんかい}雷鳴音階{RUBY_E#}",
         "fullDesc": "指定した敵単体にセーバルの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の雷属性ダメージを与える。"
+        "shortDesc": "敵単体に少量の雷属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "スパーク",
-        "fullDesc": "指定した敵単体にセーバルの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性ダメージを与え、隣接する敵にセーバルの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の雷属性ダメージを与える。さらに{{3, percent}}%の<u>基礎確率</u>で攻撃を受けた敵を感電状態にする、{{4}}ターン継続。\\n感電状態の敵はターンが回ってくるたびに、セーバルの攻撃力<orangeStrong>{{5, percent}}%</orangeStrong>分の雷属性持続ダメージを受ける。",
-        "shortDesc": "敵単体および隣接する敵に少量の雷属性ダメージを与え、高確率で<orangeStrong>感電状態を付与</orangeStrong>する。"
+        "fullDesc": "指定した敵単体にセーバルの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性ダメージを与え、隣接する敵にセーバルの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の雷属性ダメージを与える。さらに{{3, percent}}%の基礎確率で攻撃を受けた敵を感電状態にする、{{4}}ターン継続。<br>感電状態の敵はターンが回ってくるたびに、セーバルの攻撃力<orangeStrong>{{5, percent}}%</orangeStrong>分の雷属性持続ダメージを受ける。",
+        "shortDesc": "敵単体および隣接する敵に少量の雷属性ダメージを与え、高確率で<orangeStrong>感電状態を付与</orangeStrong>する。",
+        "tag": "拡散攻撃"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#きかい}機械{RUBY_E#}ブーム{RUBY_B#とうじょう}登場{RUBY_E#}！",
         "fullDesc": "敵全体にセーバルの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性ダメージを与え、敵の感電状態+{{2}}ターン。",
-        "shortDesc": "敵全体に雷属性ダメージを与え、敵の感電状態を延長。"
+        "shortDesc": "敵全体に雷属性ダメージを与え、敵の感電状態を延長。",
+        "tag": "全体攻撃"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#じょうねつ}情熱{RUBY_E#}コード",
+        "fullDesc": "攻撃を行った後、すべての感電状態の敵にセーバルの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性付加ダメージを与える。",
+        "shortDesc": "攻撃を行った後、感電状態にあるすべての敵に<orangeStrong>少量の付加ダメージを与える</orangeStrong>。",
+        "tag": "強化"
       }
     },
     "technique": {
       "0": {
         "name": "おやすみ、ベロブルグ",
-        "fullDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体にセーバルの攻撃力{{4, percent}}%分の雷属性ダメージを与え、{{1, percent}}%の<u>基礎確率</u>で敵単体それぞれに感電状態を付与する、{{3}}ターン継続。\\n感電状態の敵はターンが回ってくるたびに、セーバルの攻撃力{{2, percent}}%分の雷属性持続ダメージを受ける。",
-        "shortDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体に少量の雷属性ダメージを与え、高確率で敵それぞれを<orangeStrong>感電状態</orangeStrong>にする。"
+        "fullDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体にセーバルの攻撃力{{4, percent}}%分の雷属性ダメージを与え、{{1, percent}}%の基礎確率で敵単体それぞれに感電状態を付与する、{{3}}ターン継続。<br>感電状態の敵はターンが回ってくるたびに、セーバルの攻撃力{{2, percent}}%分の雷属性持続ダメージを受ける。",
+        "shortDesc": "敵を攻撃。戦闘に入った後、ランダムな敵単体に少量の雷属性ダメージを与え、高確率で敵それぞれを<orangeStrong>感電状態</orangeStrong>にする。",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "ロック",
         "fullDesc": "戦闘スキルを発動した時、攻撃を受けた敵が感電状態になる基礎確率+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#でんしおん}電子音{RUBY_E#}",
         "fullDesc": "戦闘開始時、EPを{{1}}回復する。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#きょうねつ}狂熱{RUBY_E#}",
         "fullDesc": "敵を倒した後、攻撃力+{{1, percent}}%、{{2}}ターン継続。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -80,7 +96,7 @@
       "desc": "必殺技のLv.+2、最大Lv.15まで。天賦のLv.+2、最大Lv.15まで。"
     },
     "6": {
-      "name": "この{RUBY_B#いっきょく}一曲{RUBY_E#}、\\n{RUBY_B#てんきゅう}天穹{RUBY_E#}を{RUBY_B#つらぬ}貫{RUBY_E#}く！",
+      "name": "この{RUBY_B#いっきょく}一曲{RUBY_E#}、<br>{RUBY_B#てんきゅう}天穹{RUBY_E#}を{RUBY_B#つらぬ}貫{RUBY_E#}く！",
       "desc": "感電状態の敵に対するセーバルの与ダメージ+{{1, percent}}%。"
     }
   }

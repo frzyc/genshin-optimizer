@@ -5,56 +5,72 @@
       "0": {
         "name": "Windrider Bullet",
         "fullDesc": "Mengakibatkan Wind DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Bronya pada 1 target musuh.",
-        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh."
+        "shortDesc": "Mengakibatkan Wind DMG dalam jumlah kecil pada 1 musuh.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Combat Redeployment",
-        "fullDesc": "Menghapus 1 <u>Debuff</u> milik 1 rekan tim, membuat target tersebut segera beraksi dan meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> DMG-nya selama {{3}} giliran.\\nSaat skill digunakan pada diri sendiri, efek pendahuluan aksi tidak akan terpicu.",
-        "shortDesc": "<orangeStrong>Menghapus</orangeStrong> 1 <orangeStrong><u>efek Debuff</u></orangeStrong> dari 1 rekan tim, dan <orangeStrong>meningkatkan DMG yang diakibatkan</orangeStrong> rekan tersebut, serta membuatnya <orangeStrong>segera beraksi</orangeStrong>."
+        "fullDesc": "Menghapus 1 Debuff milik 1 rekan tim, membuat target tersebut segera beraksi dan meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> DMG-nya selama {{3}} giliran.<br>Saat skill digunakan pada diri sendiri, efek pendahuluan aksi tidak akan terpicu.",
+        "shortDesc": "<orangeStrong>Menghapus</orangeStrong> 1 <orangeStrong>efek Debuff</orangeStrong> dari 1 rekan tim, dan <orangeStrong>meningkatkan DMG yang diakibatkan</orangeStrong> rekan tersebut, serta membuatnya <orangeStrong>segera beraksi</orangeStrong>.",
+        "tag": "Support"
       }
     },
     "ult": {
       "0": {
         "name": "The Belobog March",
         "fullDesc": "Meningkatkan <orangeStrong>{{1, percent}}%</orangeStrong> ATK seluruh rekan tim serta meningkatkan CRIT DMG seluruh rekan tim sebesar <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> CRIT DMG Bronya +<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> selama {{4}} giliran.",
-        "shortDesc": "Meningkatkan <orangeStrong>ATK</orangeStrong> dan <orangeStrong>CRIT DMG</orangeStrong> seluruh rekan tim"
+        "shortDesc": "Meningkatkan <orangeStrong>ATK</orangeStrong> dan <orangeStrong>CRIT DMG</orangeStrong> seluruh rekan tim",
+        "tag": "Support"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Leading the Way",
+        "fullDesc": "Setelah melancarkan Basic Attack, mendahulukan <orangeStrong>{{1, percent}}%</orangeStrong> aksi Bronya yang selanjutnya.",
+        "shortDesc": "Setelah melancarkan Basic ATK, aksi dirinya yang berikutnya akan didahulukan.",
+        "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Banner of Command",
         "fullDesc": "Setelah menggunakan Technique, meningkatkan {{1, percent}}% ATK seluruh rekan tim selama {{2}} giliran pada saat pertempuran selanjutnya dimulai.",
-        "shortDesc": "Setelah menggunakan Technique, meningkatkan ATK seluruh rekan tim saat pertempuran selanjutnya dimulai."
+        "shortDesc": "Setelah menggunakan Technique, meningkatkan ATK seluruh rekan tim saat pertempuran selanjutnya dimulai.",
+        "tag": "Support"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengurangi Toughness target musuh sesuai dengan tipe Toughnessnya.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Command",
         "fullDesc": "CRIT Rate Basic Attack meningkat hingga 100%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Battlefield",
         "fullDesc": "Meningkatkan {{2, percent}}% DEF seluruh rekan tim selama {{1}} giliran saat pertempuran dimulai.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Military Might",
         "fullDesc": "Meningkatkan {{1, percent}}% DMG yang diakibatkan seluruh rekan tim saat Bronya berada di medan pertempuran.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,56 +5,72 @@
       "0": {
         "name": "Banner: Stormcaller",
         "fullDesc": "Deals Wind DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Huohuo's Max HP to a target enemy.",
-        "shortDesc": "Deals minor Wind DMG to a single enemy."
+        "shortDesc": "Deals minor Wind DMG to a single enemy.",
+        "tag": "Single Target"
       }
     },
     "skill": {
       "0": {
         "name": "Talisman: Protection",
-        "fullDesc": "Dispels {{5}} <u>debuff(s)</u> from a single target ally and immediately restores this ally's HP by an amount equal to <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Huohuo's Max HP plus <orangeStrong>{{2}}</orangeStrong>. At the same time, restores HP for allies that are adjacent to this target ally by an amount equal to <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> of Huohuo's Max HP plus <orangeStrong>{{4}}</orangeStrong>.",
-        "shortDesc": "Dispels 1 <u>debuff</u> from an ally and <orangeStrong>restore HP</orangeStrong> to that ally and their adjacent allies."
+        "fullDesc": "Dispels {{5}} debuff(s) from a single target ally and immediately restores this ally's HP by an amount equal to <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of Huohuo's Max HP plus <orangeStrong>{{2}}</orangeStrong>. At the same time, restores HP for allies that are adjacent to this target ally by an amount equal to <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> of Huohuo's Max HP plus <orangeStrong>{{4}}</orangeStrong>.",
+        "shortDesc": "Dispels 1 debuff from an ally and <orangeStrong>restore HP</orangeStrong> to that ally and their adjacent allies.",
+        "tag": "Restore"
       }
     },
     "ult": {
       "0": {
         "name": "Tail: Spiritual Domination",
         "fullDesc": "Regenerates Energy for all allies (excluding this character) by an amount equal to <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of their respective Max Energy. At the same time, increases their ATK by <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> for {{3}} turn(s).",
-        "shortDesc": "<orangeStrong>Regenerates Energy</orangeStrong> for all allies (excluding this character) and <orangeStrong>increases their ATK</orangeStrong>."
+        "shortDesc": "<orangeStrong>Regenerates Energy</orangeStrong> for all allies (excluding this character) and <orangeStrong>increases their ATK</orangeStrong>.",
+        "tag": "Support"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Possession: Ethereal Metaflow",
+        "fullDesc": "After using her Skill, Huohuo gains Divine Provision, lasting for {{1}} turn(s). This duration decreases by 1 turn at the start of Huohuo's every turn. If Huohuo has Divine Provision when an ally's turn starts or when an ally uses their Ultimate, restores HP for that ally by an amount equal to <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> of Huohuo's Max HP plus <orangeStrong>{{5}}</orangeStrong>. At the same time, every ally with {{6, percent}}% HP or lower receives healing once.<br>When Divine Provision is triggered to heal an ally, dispel {{2}} debuff(s) from that ally. This effect can be triggered up to {{7}} time(s). Using the skill again resets the effect's trigger count.",
+        "shortDesc": "Huohuo gains Divine Provision after using her Skill. If Huohuo possesses Divine Provision when an ally's turn starts or when an ally uses Ultimate, <orangeStrong>restores the ally's HP</orangeStrong>. At the same time, <orangeStrong>every ally</orangeStrong> with low HP <orangeStrong>receives healing once</orangeStrong>. When Divine Provision is triggered to heal an ally, <orangeStrong>dispel 1 debuff from that ally</orangeStrong>.",
+        "tag": "Restore"
       }
     },
     "technique": {
       "0": {
         "name": "Fiend: Impeachment of Evil",
-        "fullDesc": "Huohuo terrorizes surrounding enemies, afflicting Horror-Struck on them. Enemies in Horror-Struck will flee away from Huohuo for {{4}} second(s). When entering battle with enemies in Horror-Struck, there is a {{1, percent}}% <u>base chance</u> of reducing every single enemy's ATK by {{2, percent}}% for {{3}} turn(s).",
-        "shortDesc": "Causes surrounding enemies to become Horror-Struck. After entering battle with enemies afflicted with Horror-Struck, there is a high chance applying <orangeStrong>ATK reduction</orangeStrong> on the enemy targets."
+        "fullDesc": "Huohuo terrorizes surrounding enemies, afflicting Horror-Struck on them. Enemies in Horror-Struck will flee away from Huohuo for {{4}} second(s). When entering battle with enemies in Horror-Struck, there is a {{1, percent}}% base chance of reducing every single enemy's ATK by {{2, percent}}% for {{3}} turn(s).",
+        "shortDesc": "Causes surrounding enemies to become Horror-Struck. After entering battle with enemies afflicted with Horror-Struck, there is a high chance applying <orangeStrong>ATK reduction</orangeStrong> on the enemy targets.",
+        "tag": "Impair"
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "Attacks an enemy, and when the battle starts, reduces their Toughness of the corresponding Type.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Fearful to Act",
         "fullDesc": "When battle starts, Huohuo gains Divine Provision, lasting for {{1}} turn(s).",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "The Cursed One",
         "fullDesc": "The chance to resist Crowd Control Debuffs increases by {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Stress Reaction to Horror",
         "fullDesc": "When her Talent is triggered to heal allies, Huohuo regenerates {{1}} Energy.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Cursed by Fate, Moths to Flame",
-      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.\\nTalent Lv. +2, up to a maximum of Lv. 15."
+      "desc": "Ultimate Lv. +2, up to a maximum of Lv. 15.<br>Talent Lv. +2, up to a maximum of Lv. 15."
     },
     "4": {
       "name": "Tied in Life, Bound to Strife",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Mandated by Edict, Evils Evicted",
-      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.\\nBasic ATK Lv. +1, up to a maximum of Lv. 10."
+      "desc": "Skill Lv. +2, up to a maximum of Lv. 15.<br>Basic ATK Lv. +1, up to a maximum of Lv. 10."
     },
     "6": {
       "name": "Woven Together, Cohere Forever",

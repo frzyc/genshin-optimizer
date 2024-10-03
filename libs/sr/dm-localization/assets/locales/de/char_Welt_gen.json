@@ -5,56 +5,72 @@
       "0": {
         "name": "Schwerkraftunterdrückung",
         "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Welts ANG zu.",
-        "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu."
+        "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu.",
+        "tag": "Einzelangriff"
       }
     },
     "skill": {
       "0": {
         "name": "Rand der Leere",
-        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Welts ANG zu und verursacht 2-mal zusätzlichen SCH. Jeder zusätzlicher Treffer fügt zufälligen Gegnern imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Welts ANG zu. Jeder Treffer hat eine <u>Grundchance</u> von <orangeStrong>{{2, percent}}%</orangeStrong>, die GES des Ziels für {{4}} Rd. um {{3, percent}}% zu verringern.",
-        "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu. Dieser Angriff kann 3-mal abprallen und hat eine Chance, betroffene Ziele zu <orangeStrong>verlangsamen</orangeStrong>."
+        "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Welts ANG zu und verursacht 2-mal zusätzlichen SCH. Jeder zusätzlicher Treffer fügt zufälligen Gegnern imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Welts ANG zu. Jeder Treffer hat eine Grundchance von <orangeStrong>{{2, percent}}%</orangeStrong>, die GES des Ziels für {{4}} Rd. um {{3, percent}}% zu verringern.",
+        "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu. Dieser Angriff kann 3-mal abprallen und hat eine Chance, betroffene Ziele zu <orangeStrong>verlangsamen</orangeStrong>.",
+        "tag": "Abprallung"
       }
     },
     "ult": {
       "0": {
         "name": "Synthetisches Schwarzes Loch",
-        "fullDesc": "Fügt allen Gegnern imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Welts ANG zu und verursacht bei getroffenen Gegnern mit einer <u>Grundchance</u> von {{3, percent}}% den Status Gefangenschaft, der für 1 Rd. hält.\\nDie Aktionen der gefangenen Gegner werden um <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> <u>verzögert</u> und ihre GES sinkt um {{4, percent}}%.",
-        "shortDesc": "Fügt allen Gegnern imaginären SCH zu und <orangeStrong>verursacht mit hoher Chance Gefangenschaft</orangeStrong>."
+        "fullDesc": "Fügt allen Gegnern imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Welts ANG zu und verursacht bei getroffenen Gegnern mit einer Grundchance von {{3, percent}}% den Status Gefangenschaft, der für 1 Rd. hält.<br>Die Aktionen der gefangenen Gegner werden um <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> verzögert und ihre GES sinkt um {{4, percent}}%.",
+        "shortDesc": "Fügt allen Gegnern imaginären SCH zu und <orangeStrong>verursacht mit hoher Chance Gefangenschaft</orangeStrong>.",
+        "tag": "Flächenangriff"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Zeitverzerrung",
+        "fullDesc": "Fügt dem getroffenen Gegner 1-mal zusätzlichen imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Welts ANG zu, wenn der Gegner verlangsamt wird.",
+        "shortDesc": "Fügt einem verlangsamten Gegner <orangeStrong>zusätzlich geringen imaginären SCH</orangeStrong> zu.",
+        "tag": "Verstärkung"
       }
     },
     "technique": {
       "0": {
         "name": "Gravitationsgefängnis",
-        "fullDesc": "Nach dem Einsatz von Welts Technik wird für {{4}} s eine spezielle Dimension erzeugt. Die Bewegungs-GES der Gegner in dieser Dimension wird um {{5, percent}}% reduziert. Nach Kampfeintritt mit Gegnern in der Dimension besteht eine <u>Grundchance</u> von {{1, percent}}%, bei Gegnern für 1 Rd. den Status Gefangenschaft zu verursachen.\\nDie Aktionen von gefangenen Gegnern werden um {{2, percent}}% <u>verzögert</u> und ihre GES um {{3, percent}}% verringert. Es kann nur eine von Verbündeten erschaffene Dimension zur gleichen Zeit existieren.",
-        "shortDesc": "Erschafft eine Dimension. Gegner in dieser Dimension haben reduzierte Bewegungs-GES. Wenn du mit Gegnern in der Dimension kämpfst, <orangeStrong>besteht eine hohe Chance, dass sie in Gefangenschaft geraten</orangeStrong>."
+        "fullDesc": "Nach dem Einsatz von Welts Technik wird für {{4}} s eine spezielle Dimension erzeugt. Die Bewegungs-GES der Gegner in dieser Dimension wird um {{5, percent}}% reduziert. Nach Kampfeintritt mit Gegnern in der Dimension besteht eine Grundchance von {{1, percent}}%, bei Gegnern für 1 Rd. den Status Gefangenschaft zu verursachen.<br>Die Aktionen von gefangenen Gegnern werden um {{2, percent}}% verzögert und ihre GES um {{3, percent}}% verringert. Es kann nur eine von Verbündeten erschaffene Dimension zur gleichen Zeit existieren.",
+        "shortDesc": "Erschafft eine Dimension. Gegner in dieser Dimension haben reduzierte Bewegungs-GES. Wenn du mit Gegnern in der Dimension kämpfst, <orangeStrong>besteht eine hohe Chance, dass sie in Gefangenschaft geraten</orangeStrong>.",
+        "tag": "Beeinträchtigung"
       }
     },
     "overworld": {
       "0": {
         "name": "Angriff",
         "fullDesc": "Greift den Gegner an und schwächt nach Kampfeintritt den Widerstand des Ziels gegen den entsprechenden Typ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Vergeltung",
         "fullDesc": "Beim Einsatz des Ultimates besteht eine Grundchance von {{1, percent}}%, den erlittenen SCH des Ziels für {{3}} Rd. um {{2, percent}}% zu erhöhen.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Urteil",
         "fullDesc": "Stellt beim Einsatz des Ultimates zusätzlich {{1}} Pkt. Energie wieder her.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Bestrafung",
         "fullDesc": "Erhöht den zugefügten SCH an Gegnern mit Schwächebruch um {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

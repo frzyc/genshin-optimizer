@@ -5,61 +5,78 @@
       "0": {
         "name": "Direct Punch",
         "fullDesc": "สร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Luka แก่ศัตรูที่กำหนดหนึ่งตัว",
-        "shortDesc": "สร้าง DMG กายภาพเล็กน้อย แก่ฝ่ายศัตรูหนึ่งตัว"
+        "shortDesc": "สร้าง DMG กายภาพเล็กน้อย แก่ฝ่ายศัตรูหนึ่งตัว",
+        "tag": "โจมตีเดี่ยว"
       },
       "1": {
         "name": "Sky-Shatter Fist",
-        "fullDesc": "ใช้ \"Fighting Will\" 2 ชั้น และจะใช้ \"Direct Punch\" เพื่อปล่อยการโจมตี 3 ครั้ง โดยการโจมตีแต่ละครั้งจะสร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Luka แก่ศัตรูที่กำหนดหนึ่งตัว\\nจากนั้นจะใช้ \"Rising Uppercut\" เพื่อปล่อยการโจมตี 1 ครั้ง ซึ่งสร้าง DMG กายภาพ <orangeStrong>{{2, percent}}%</orangeStrong> ของ ATK ของ Luka แก่ศัตรูที่กำหนดหนึ่งตัว",
-        "shortDesc": "ใช้ Fighting Will 2 ชั้นและสร้าง DMG กายภาพ แก่ฝ่ายศัตรูหนึ่งตัว"
+        "fullDesc": "ใช้ \"Fighting Will\" 2 ชั้น และจะใช้ \"Direct Punch\" เพื่อปล่อยการโจมตี 3 ครั้ง โดยการโจมตีแต่ละครั้งจะสร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Luka แก่ศัตรูที่กำหนดหนึ่งตัว<br>จากนั้นจะใช้ \"Rising Uppercut\" เพื่อปล่อยการโจมตี 1 ครั้ง ซึ่งสร้าง DMG กายภาพ <orangeStrong>{{2, percent}}%</orangeStrong> ของ ATK ของ Luka แก่ศัตรูที่กำหนดหนึ่งตัว",
+        "shortDesc": "ใช้ Fighting Will 2 ชั้นและสร้าง DMG กายภาพ แก่ฝ่ายศัตรูหนึ่งตัว",
+        "tag": "โจมตีเดี่ยว"
       }
     },
     "skill": {
       "0": {
         "name": "Lacerating Fist",
-        "fullDesc": "สร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Luka แก่ศัตรูที่กำหนดหนึ่งตัว จากนั้นจะมี <u>โอกาสพื้นฐาน</u> {{2, percent}}% ที่จะทำให้เป้าหมายติดสถานะเสียเลือด เป็นเวลา {{5}} เทิร์น\\nโดยขณะที่ติดสถานะเสียเลือด เมื่อเริ่มต้นในแต่ละเทิร์น ศัตรูเป้าหมายจะได้รับ DMG กายภาพต่อเนื่อง {{3, percent(fixed: 1)}}% ของ HP สูงสุดของตัวเอง สูงสุดไม่เกิน <orangeStrong>{{4, percent}}%</orangeStrong> ของ ATK ของ Luka",
-        "shortDesc": "สร้าง DMG กายภาพแก่ศัตรูหนึ่งตัว และมีโอกาสอย่างมากที่จะ <orangeStrong>เพิ่มสถานะเสียเลือด</orangeStrong>ให้แก่เป้าหมาย"
+        "fullDesc": "สร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Luka แก่ศัตรูที่กำหนดหนึ่งตัว จากนั้นจะมี โอกาสพื้นฐาน {{2, percent}}% ที่จะทำให้เป้าหมายติดสถานะเสียเลือด เป็นเวลา {{5}} เทิร์น<br>โดยขณะที่ติดสถานะเสียเลือด เมื่อเริ่มต้นในแต่ละเทิร์น ศัตรูเป้าหมายจะได้รับ DMG กายภาพต่อเนื่อง {{3, percent(fixed: 1)}}% ของ HP สูงสุดของตัวเอง สูงสุดไม่เกิน <orangeStrong>{{4, percent}}%</orangeStrong> ของ ATK ของ Luka",
+        "shortDesc": "สร้าง DMG กายภาพแก่ศัตรูหนึ่งตัว และมีโอกาสอย่างมากที่จะ <orangeStrong>เพิ่มสถานะเสียเลือด</orangeStrong>ให้แก่เป้าหมาย",
+        "tag": "โจมตีเดี่ยว"
       }
     },
     "ult": {
       "0": {
         "name": "Coup de Grâce",
-        "fullDesc": "ได้รับ \"Fighting Will\" {{5}} ชั้น และมี <u>โอกาสพื้นฐาน</u> {{2, percent}}% ที่จะทำให้ศัตรูที่กำหนดหนึ่งตัวได้รับ DMG เพิ่มขึ้น <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> เป็นเวลา {{4}} เทิร์น จากนั้นจะสร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Luka แก่เป้าหมายดังกล่าว",
-        "shortDesc": "ได้รับ \"Fighting Will\" <orangeStrong>{{5}}</orangeStrong> ชั้น และมีโอกาสอย่างมากที่จะทำให้ศัตรูหนึ่งตัวได้รับ DMG เพิ่มขึ้น อีกทั้งสร้าง DMG กายภาพอย่างรุนแรง แก่ศัตรูดังกล่าว"
+        "fullDesc": "ได้รับ \"Fighting Will\" {{5}} ชั้น และมี โอกาสพื้นฐาน {{2, percent}}% ที่จะทำให้ศัตรูที่กำหนดหนึ่งตัวได้รับ DMG เพิ่มขึ้น <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> เป็นเวลา {{4}} เทิร์น จากนั้นจะสร้าง DMG กายภาพ <orangeStrong>{{1, percent}}%</orangeStrong> ของ ATK ของ Luka แก่เป้าหมายดังกล่าว",
+        "shortDesc": "ได้รับ \"Fighting Will\" <orangeStrong>{{5}}</orangeStrong> ชั้น และมีโอกาสอย่างมากที่จะทำให้ศัตรูหนึ่งตัวได้รับ DMG เพิ่มขึ้น อีกทั้งสร้าง DMG กายภาพอย่างรุนแรง แก่ศัตรูดังกล่าว",
+        "tag": "โจมตีเดี่ยว"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Flying Sparks",
+        "fullDesc": "หลังจาก Luka ปล่อยการโจมตีปกติ \"Direct Punch\" และสกิลต่อสู้ \"Lacerating Fist\" จะได้รับ \"Fighting Will\" {{1}} ชั้น โดยสามารถมี \"Fighting Will\" ได้มากสุด 4 ชั้น เมื่อมี \"Fighting Will\" มากกว่าหรือเท่ากับ 2 ชั้น การโจมตีปกติ \"Direct Punch\" จะเสริมพลังเป็น \"Sky-Shatter Fist\" และหลังจาก \"Rising Uppercut\" ของการโจมตีปกติแบบเสริมพลัง โจมตีถูกศัตรูเป้าหมายที่ติดสถานะเสียเลือด จะทำให้สถานะเสียเลือด ที่เป้าหมายดังกล่าวได้รับในปัจจุบัน สร้าง DMG <orangeStrong>{{2, percent}}%</orangeStrong> ของ DMG เดิม 1 ครั้งทันที เมื่อเริ่มการต่อสู้ Luka จะมี \"Fighting Will\" อยู่ 1 ชั้น",
+        "shortDesc": "หลังจากปล่อยการโจมตีปกติ \"Direct Punch\" และสกิลต่อสู้ \"Lacerating Fist\" จะได้รับ \"Fighting Will\" 1 ชั้น เมื่อมี \"Fighting Will\" มากกว่าหรือเท่ากับ 2 ชั้น จะ<orangeStrong>ได้รับการโจมตีปกติแบบเสริมพลัง</orangeStrong><br>หากศัตรูเป้าหมายติดสถานะเสียเลือดอยู่ การโจมตีปกติแบบเสริมพลัง จะ<orangeStrong>ทำให้สถานะเสียเลือดสร้าง DMG เพิ่ม 1 ครั้ง</orangeStrong>",
+        "tag": "เสริมพลัง"
       }
     },
     "technique": {
       "0": {
         "name": "Anticipator",
-        "fullDesc": "เมื่อโจมตีศัตรูทันทีและเข้าสู่การต่อสู้ จะสุ่มสร้าง DMG กายภาพ {{1, percent}}% ของ ATK ของ Luka แก่ศัตรูหนึ่งตัว และจะมี <u>โอกาสพื้นฐาน</u> {{2, percent}}% ที่จะทำให้เป้าหมายติดสถานะเสียเลือด ที่เทียบเท่ากับสกิลต่อสู้ จากนั้น Luka จะได้รับ \"Fighting Will\" เพิ่มเติม 1 ชั้น",
-        "shortDesc": "เมื่อโจมตีศัตรูและเข้าสู่การต่อสู้ จะสุ่มสร้าง DMG กายภาพเล็กน้อยแก่ศัตรูหนึ่งตัว และมีโอกาสอย่างมากที่จะทำให้เป้าหมาย<orangeStrong>ติดสถานะเสียเลือด</orangeStrong> จากนั้นจะได้รับ \"Fighting Will\" เพิ่มเติม 1 ชั้น"
+        "fullDesc": "เมื่อโจมตีศัตรูทันทีและเข้าสู่การต่อสู้ จะสุ่มสร้าง DMG กายภาพ {{1, percent}}% ของ ATK ของ Luka แก่ศัตรูหนึ่งตัว และจะมี โอกาสพื้นฐาน {{2, percent}}% ที่จะทำให้เป้าหมายติดสถานะเสียเลือด ที่เทียบเท่ากับสกิลต่อสู้ จากนั้น Luka จะได้รับ \"Fighting Will\" เพิ่มเติม 1 ชั้น",
+        "shortDesc": "เมื่อโจมตีศัตรูและเข้าสู่การต่อสู้ จะสุ่มสร้าง DMG กายภาพเล็กน้อยแก่ศัตรูหนึ่งตัว และมีโอกาสอย่างมากที่จะทำให้เป้าหมาย<orangeStrong>ติดสถานะเสียเลือด</orangeStrong> จากนั้นจะได้รับ \"Fighting Will\" เพิ่มเติม 1 ชั้น",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Attack",
         "fullDesc": "หลังจากโจมตีศัตรูและเข้าสู่การต่อสู้ จะลดทอนความทนทานของประเภทที่สอดคล้องกับศัตรูเป้าหมาย",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Kinetic Overload",
         "fullDesc": "เมื่อปล่อยสกิลต่อสู้ จะลบเอฟเฟกต์ Buff {{1}} เอฟเฟกต์ ของศัตรูเป้าหมายทันที",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Cycle Braking",
         "fullDesc": "ทุกครั้งที่ได้รับ \"Fighting Will\" 1 ชั้น จะฟื้นฟูพลังงาน {{1}} หน่วย",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Crush Fighting Will",
         "fullDesc": "เมื่อปล่อยการโจมตีปกติแบบเสริมพลัง การโจมตีในแต่ละครั้งของ \"Direct Punch\" จะมีโอกาสคงที่ {{1, percent}}% ที่จะทำให้ Luka ปล่อยการโจมตีเพิ่มเติม 1 ครั้ง แต่เอฟเฟกต์นี้จะไม่มีผลกับการโจมตี ที่เพิ่มเติมขึ้นมา",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

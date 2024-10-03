@@ -5,56 +5,72 @@
       "0": {
         "name": "Tumulto a medianoche",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Kafka como Daño de Rayo a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Luna acariciadora",
-        "fullDesc": "Kafka inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño de Rayo a un enemigo y un <orangeStrong>{{3, percent}}%</orangeStrong> de su ATQ como Daño de Rayo a los enemigos adyacentes.\\nSi el objetivo principal está afectado por estados de Daño con el tiempo, todos los efectos de Daño con el tiempo que tenga producen inmediatamente un daño equivalente al <orangeStrong>{{2, percent}}%</orangeStrong> de su daño original.",
-        "shortDesc": "Inflige Daño de Rayo a un enemigo y una pequeña cantidad de Daño de Rayo a los enemigos adyacentes.\\nSi el objetivo principal está afectado por estados negativos de Daño con el tiempo, estos <orangeStrong>infligen daño 1 vez adicional</orangeStrong>."
+        "fullDesc": "Kafka inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño de Rayo a un enemigo y un <orangeStrong>{{3, percent}}%</orangeStrong> de su ATQ como Daño de Rayo a los enemigos adyacentes.<br>Si el objetivo principal está afectado por estados de Daño con el tiempo, todos los efectos de Daño con el tiempo que tenga producen inmediatamente un daño equivalente al <orangeStrong>{{2, percent}}%</orangeStrong> de su daño original.",
+        "shortDesc": "Inflige Daño de Rayo a un enemigo y una pequeña cantidad de Daño de Rayo a los enemigos adyacentes.<br>Si el objetivo principal está afectado por estados negativos de Daño con el tiempo, estos <orangeStrong>infligen daño 1 vez adicional</orangeStrong>.",
+        "tag": "Ráfaga"
       }
     },
     "ult": {
       "0": {
         "name": "Gorjeo del ocaso",
-        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Kafka como Daño de Rayo a todos los enemigos y tiene una <u>probabilidad base</u> del {{2, percent}}% de afectar con Electrocución a los enemigos atacados durante {{3}} turnos y hacer que reciban inmediatamente un <orangeStrong>{{5, percent}}%</orangeStrong> del daño original de Electrocución recibido.\\nLos enemigos electrocutados reciben un Daño de Rayo con el tiempo equivalente al <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ de Kafka al comienzo de cada turno.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a todos los enemigos y tiene una gran probabilidad de <orangeStrong>afectarlos con Electrocución</orangeStrong>.\\nSi los objetivos están ya electrocutados, este estado <orangeStrong>inflige daño 1 vez adicional</orangeStrong>."
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Kafka como Daño de Rayo a todos los enemigos y tiene una probabilidad base del {{2, percent}}% de afectar con Electrocución a los enemigos atacados durante {{3}} turnos y hacer que reciban inmediatamente un <orangeStrong>{{5, percent}}%</orangeStrong> del daño original de Electrocución recibido.<br>Los enemigos electrocutados reciben un Daño de Rayo con el tiempo equivalente al <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ de Kafka al comienzo de cada turno.",
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Rayo a todos los enemigos y tiene una gran probabilidad de <orangeStrong>afectarlos con Electrocución</orangeStrong>.<br>Si los objetivos están ya electrocutados, este estado <orangeStrong>inflige daño 1 vez adicional</orangeStrong>.",
+        "tag": "ATQ AdE"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Dulce pero cruel",
+        "fullDesc": "Cuando un aliado de Kafka usa su ATQ básico contra un enemigo, Kafka lanza inmediatamente un ataque adicional que inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño de Rayo a ese objetivo y tiene un {{2, percent}}% de probabilidad base de afectarlo con una Electrocución equivalente a la de la habilidad definitiva durante {{3}} turnos. Este efecto solo puede activarse 1 vez por turno.",
+        "shortDesc": "Cuando un aliado usa el ATQ básico contra un enemigo, Kafka lanza un ataque adicional a ese objetivo y le inflige Daño de Rayo. Además, tiene una gran probabilidad de <orangeStrong>afectarlo con Electrocución</orangeStrong>. Este efecto solo puede activarse 1 vez por turno.",
+        "tag": "ATQ individual"
       }
     },
     "technique": {
       "0": {
         "name": "La clemencia no es perdón",
-        "fullDesc": "Ataca inmediatamente a todos los enemigos de un área determinada y entra en combate. Inflige un {{3, percent}}% del ATQ de Kafka como Daño de Rayo a todos los enemigos. Además, cada enemigo tiene una <u>probabilidad base</u> del {{1, percent}}% de ser afectado por una Electrocución equivalente a la de la habilidad definitiva durante {{2}} turnos.",
-        "shortDesc": "Ataca a todos los enemigos de un área determinada e inflige una pequeña cantidad de Daño de Rayo a todos ellos tras entrar en combate. Gran probabilidad de <orangeStrong>afectarlos con Electrocución</orangeStrong>."
+        "fullDesc": "Ataca inmediatamente a todos los enemigos de un área determinada y entra en combate. Inflige un {{3, percent}}% del ATQ de Kafka como Daño de Rayo a todos los enemigos. Además, cada enemigo tiene una probabilidad base del {{1, percent}}% de ser afectado por una Electrocución equivalente a la de la habilidad definitiva durante {{2}} turnos.",
+        "shortDesc": "Ataca a todos los enemigos de un área determinada e inflige una pequeña cantidad de Daño de Rayo a todos ellos tras entrar en combate. Gran probabilidad de <orangeStrong>afectarlos con Electrocución</orangeStrong>.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Tortura",
         "fullDesc": "Al usar la habilidad definitiva, los enemigos pasan de recibir el daño provocado por el estado de Electrocución a recibir daño de todos los estados negativos de Daño con el tiempo que tengan en ese momento.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Saqueo",
         "fullDesc": "Cuando se elimina a un enemigo afectado por Electrocución, Kafka recupera {{1}} pts. de energía adicionales.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Espinas",
         "fullDesc": "La probabilidad base de que la habilidad definitiva, la técnica o el ataque adicional del talento afecte con Electrocución a los enemigos aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

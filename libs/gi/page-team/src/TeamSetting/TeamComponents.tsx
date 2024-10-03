@@ -41,9 +41,11 @@ import {
   Typography,
 } from '@mui/material'
 import { Suspense, useContext, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
 export function TeamBuffDisplay() {
+  const { t } = useTranslation('page_team')
   const { data } = useContext(DataContext)
   const nodes = useMemo(() => {
     const teamBuffs = data.getTeamBuff()
@@ -70,7 +72,7 @@ export function TeamBuffDisplay() {
     >
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Typography>Received Team Buffs</Typography>
+          <Typography>{t`teamComponents.teamBuffs`}</Typography>
           <SqBadge sx={{ ml: 1 }} color={nodes.length ? 'success' : 'info'}>
             {nodes.length}
           </SqBadge>
@@ -192,6 +194,7 @@ function TcEquipmentRow({
 }: {
   loadoutDatum: LoadoutDatum
 }) {
+  const { t } = useTranslation('page_team')
   const {
     artifact: { sets },
   } = useBuildTc(buildTcId)!
@@ -205,8 +208,7 @@ function TcEquipmentRow({
           gap: 1,
         }}
       >
-        {/* TODO: Translation */}
-        <SqBadge color="info">TC Build</SqBadge>
+        <SqBadge color="info">{t`teamComponents.tcBadge`}</SqBadge>
         {Object.entries(sets).map(([setKey, number]) => (
           <Box
             key={setKey}

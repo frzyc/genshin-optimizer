@@ -5,56 +5,72 @@
       "0": {
         "name": "Puño de la convicción",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Gepard como Daño de Hielo a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Golpe sobrecogedor",
-        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Gepard como Daño de Hielo a un enemigo. Tiene un {{2, percent}}% de <u>probabilidad base</u> de afectar con Congelación al enemigo atacado durante {{3}} turno.\\nEl enemigo congelado no puede actuar, y al comienzo de cada turno recibe un <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ de Gepard como Daño de Hielo <u>adicional</u>.",
-        "shortDesc": "Inflige Daño de Hielo a un enemigo y <orangeStrong>tiene una probabilidad de causarle Congelación</orangeStrong>."
+        "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Gepard como Daño de Hielo a un enemigo. Tiene un {{2, percent}}% de probabilidad base de afectar con Congelación al enemigo atacado durante {{3}} turno.<br>El enemigo congelado no puede actuar, y al comienzo de cada turno recibe un <orangeStrong>{{4, percent}}%</orangeStrong> del ATQ de Gepard como Daño de Hielo adicional.",
+        "shortDesc": "Inflige Daño de Hielo a un enemigo y <orangeStrong>tiene una probabilidad de causarle Congelación</orangeStrong>.",
+        "tag": "ATQ individual"
       }
     },
     "ult": {
       "0": {
         "name": "Bastión duradero",
         "fullDesc": "Otorga a todos los aliados un escudo que absorbe un daño equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> de la DEF de Gepard + <orangeStrong>{{3}}</orangeStrong> durante {{2}} turnos.",
-        "shortDesc": "<orangeStrong>Otorga escudos</orangeStrong> a todos los aliados."
+        "shortDesc": "<orangeStrong>Otorga escudos</orangeStrong> a todos los aliados.",
+        "tag": "Defensa"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Voluntad de hierro",
+        "fullDesc": "Al recibir un golpe letal, en vez de caer derrotado, Gepard regenera un <orangeStrong>{{1, percent}}%</orangeStrong> de sus PV máx. Este efecto solo se puede activar una vez en cada batalla.",
+        "shortDesc": "Al recibir un golpe letal, <orangeStrong>en vez de caer derrotado</orangeStrong>, regenera inmediatamente PV. Solo se puede activar 1 vez por batalla.",
+        "tag": "Regeneración"
       }
     },
     "technique": {
       "0": {
         "name": "Camaradería",
         "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla otorga un escudo a todos los aliados que absorbe un daño equivalente al {{1, percent}}% de la DEF de Gepard + {{3}} durante {{2}} turnos.",
-        "shortDesc": "Tras usar la técnica, todos los aliados obtienen un escudo al comenzar la siguiente batalla."
+        "shortDesc": "Tras usar la técnica, todos los aliados obtienen un escudo al comenzar la siguiente batalla.",
+        "tag": "Defensa"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Integridad",
         "fullDesc": "Aumenta la probabilidad de que Gepard reciba un ataque enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Comandante",
         "fullDesc": "Tras activar Voluntad de hierro, Gepard recupera inmediatamente el 100% de su energía.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Espíritu combativo",
         "fullDesc": "El ATQ de Gepard aumenta en un {{1, percent}}% de su DEF actual. Se actualiza al comienzo de cada turno.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

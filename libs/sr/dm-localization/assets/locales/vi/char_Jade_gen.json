@@ -5,56 +5,72 @@
       "0": {
         "name": "Cú Quất Tiền Tài",
         "fullDesc": "Gây Sát Thương Lượng Tử bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Jade cho một kẻ địch chỉ định, đồng thời gây Sát Thương Lượng Tử bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Jade cho các mục tiêu ở gần kẻ đó.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Lượng Tử cho một kẻ địch, gây lượng nhỏ Sát Thương Lượng Tử cho các mục tiêu ở gần."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lượng Tử cho một kẻ địch, gây lượng nhỏ Sát Thương Lượng Tử cho các mục tiêu ở gần.",
+        "tag": "Khuếch Tán"
       }
     },
     "skill": {
       "0": {
         "name": "Đảm Bảo Sáp Nhập",
-        "fullDesc": "Khiến một đồng đội chỉ định trở thành Người Thu Nợ, tăng {{1}} điểm Tốc Độ của đồng đội đó, duy trì {{4}} hiệp.\\nSau khi Người Thu Nợ tấn công, sẽ gây 1 lần <u>Sát Thương Lượng Tử Kèm Theo</u> lên mỗi kẻ địch bị đánh trúng bằng <orangeStrong>{{3, percent}}%</orangeStrong> Tấn Công của Jade, đồng thời tiêu hao HP bằng {{2, percent}}% Giới Hạn HP của Người Thu Nợ, nếu HP hiện tại không đủ, HP hiện tại sẽ giảm còn 1 điểm.\\nNếu Jade trở thành Người Thu Nợ, sẽ không thể nhận hiệu ứng tăng Tốc Độ và sau khi tấn công sẽ không tiêu hao HP.\\nKhi trong trận có Người Thu Nợ, Jade sẽ không thể thi triển Chiến Kỹ, khi bắt đầu mỗi hiệp của Jade, số hiệp duy trì trạng thái Người Thu Nợ giảm 1.",
-        "shortDesc": "Khiến 1 đồng đội trở thành <orangeStrong>Người Thu Nợ</orangeStrong>, tăng Tốc Độ của đồng đội đó. Sau khi <orangeStrong>Người Thu Nợ</orangeStrong> tấn công, sẽ gây lượng nhỏ <u>Sát Thương Lượng Tử Kèm Theo</u> lên mỗi kẻ địch bị đánh trúng, đồng thời tiêu hao HP của bản thân. Khi Jade trở thành Người Thu Nợ, sẽ không thể nhận hiệu ứng tăng Tốc Độ, đồng thời sau khi tấn công sẽ không tiêu hao HP."
+        "fullDesc": "Khiến một đồng đội chỉ định trở thành Người Thu Nợ, tăng {{1}} điểm Tốc Độ của đồng đội đó, duy trì {{4}} hiệp.<br>Sau khi Người Thu Nợ tấn công, sẽ gây 1 lần Sát Thương Lượng Tử Kèm Theo lên mỗi kẻ địch bị đánh trúng bằng <orangeStrong>{{3, percent}}%</orangeStrong> Tấn Công của Jade, đồng thời tiêu hao HP bằng {{2, percent}}% Giới Hạn HP của Người Thu Nợ, nếu HP hiện tại không đủ, HP hiện tại sẽ giảm còn 1 điểm.<br>Nếu Jade trở thành Người Thu Nợ, sẽ không thể nhận hiệu ứng tăng Tốc Độ và sau khi tấn công sẽ không tiêu hao HP.<br>Khi trong trận có Người Thu Nợ, Jade sẽ không thể thi triển Chiến Kỹ, khi bắt đầu mỗi hiệp của Jade, số hiệp duy trì trạng thái Người Thu Nợ giảm 1.",
+        "shortDesc": "Khiến 1 đồng đội trở thành <orangeStrong>Người Thu Nợ</orangeStrong>, tăng Tốc Độ của đồng đội đó. Sau khi <orangeStrong>Người Thu Nợ</orangeStrong> tấn công, sẽ gây lượng nhỏ Sát Thương Lượng Tử Kèm Theo lên mỗi kẻ địch bị đánh trúng, đồng thời tiêu hao HP của bản thân. Khi Jade trở thành Người Thu Nợ, sẽ không thể nhận hiệu ứng tăng Tốc Độ, đồng thời sau khi tấn công sẽ không tiêu hao HP.",
+        "tag": "Hỗ Trợ"
       }
     },
     "ult": {
       "0": {
         "name": "Vực Thẳm Dục Vọng, Khế Ước Ngục Tù",
-        "fullDesc": "Gây Sát Thương Lượng Tử bằng <orangeStrong>{{3, percent}}%</orangeStrong> Tấn Công của Jade cho toàn phe địch. Đồng thời khiến <u>Đòn Đánh Theo Sau</u> từ Thiên Phú của Jade được cường hóa, Bội Số Sát Thương của Đòn Đánh Theo Sau gây ra tăng <orangeStrong>{{1, percent}}%</orangeStrong>. Hiệu Ứng Cường Hóa chỉ có hiệu lực {{2}} lần.",
-        "shortDesc": "Gây Sát Thương Lượng Tử cho toàn phe địch, khiến bản thân nhận tăng Bội Số Sát Thương <orangeStrong><u>Đòn Đánh Theo Sau</u></orangeStrong>."
+        "fullDesc": "Gây Sát Thương Lượng Tử bằng <orangeStrong>{{3, percent}}%</orangeStrong> Tấn Công của Jade cho toàn phe địch. Đồng thời khiến Đòn Đánh Theo Sau từ Thiên Phú của Jade được cường hóa, Bội Số Sát Thương của Đòn Đánh Theo Sau gây ra tăng <orangeStrong>{{1, percent}}%</orangeStrong>. Hiệu Ứng Cường Hóa chỉ có hiệu lực {{2}} lần.",
+        "shortDesc": "Gây Sát Thương Lượng Tử cho toàn phe địch, khiến bản thân nhận tăng Bội Số Sát Thương <orangeStrong>Đòn Đánh Theo Sau</orangeStrong>.",
+        "tag": "Đánh Lan"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Răng Nanh Lấp Lánh",
+        "fullDesc": "Sau khi Jade hoặc mục tiêu trở thành Người Thu Nợ tung đòn tấn công, cứ đánh trúng 1 mục tiêu địch sẽ nhận được 1 Điểm Nạp Năng Lượng. Sau khi Nạp Năng Lượng đạt {{3}} điểm, sẽ tiêu hao {{3}} Điểm Nạp Năng Lượng để phát động 1 lần Đòn Đánh Theo Sau, gây Sát Thương Lượng Tử bằng <orangeStrong>{{5, percent}}%</orangeStrong> Tấn Công của Jade cho toàn bộ phe địch, Đòn Đánh Theo Sau này không thể nhận được Nạp Năng Lượng.<br>Khi Jade phát động Đòn Đánh Theo Sau của Thiên Phú, sẽ nhận ngay {{4}} tầng Vật Thế Chấp, mỗi tầng Vật Thế Chấp giúp Sát Thương Bạo Kích tăng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, tối đa cộng dồn {{2}} tầng.",
+        "shortDesc": "Sau khi Jade hoặc mục tiêu trở thành <orangeStrong>Người Thu Nợ</orangeStrong> tung đòn tấn công, cứ đánh trúng 1 mục tiêu địch sẽ nhận được 1 Điểm Nạp Năng Lượng. Sau khi Nạp Năng Lượng đạt <orangeStrong>{{3}}</orangeStrong> điểm, sẽ tiêu hao <orangeStrong>{{3}}</orangeStrong> Điểm Nạp Năng Lượng để phát động 1 lần <orangeStrong>Đòn Đánh Theo Sau</orangeStrong>, gây Sát Thương Lượng Tử cho toàn phe địch.<br>Khi Jade phát động <orangeStrong>Đòn Đánh Theo Sau</orangeStrong> sẽ nhận được Vật Thế Chấp, giúp tăng Sát Thương Bạo Kích, tối đa cộng dồn <orangeStrong>{{2}}</orangeStrong> tầng.",
+        "tag": "Đánh Lan"
       }
     },
     "technique": {
       "0": {
         "name": "Tầm Nhìn Của Thợ Săn",
         "fullDesc": "Sau khi dùng Bí Kỹ sẽ khiến kẻ địch trong khu vực nhất định rơi vào trạng thái Trung Thành Mù Quáng {{1}} giây. Kẻ địch đang ở trong trạng thái Trung Thành Mù Quáng sẽ không chủ động tấn công mục tiêu phe ta. Khi chủ động tấn công kẻ địch đang ở trạng thái Trung Thành Mù Quáng và vào chiến đấu, sẽ khiến tất cả kẻ địch đang ở trạng thái Trung Thành Mù Quáng vào chiến đấu cùng lúc. Sau khi vào chiến đấu sẽ gây Sát Thương Lượng Tử bằng {{2, percent}}% Tấn Công của Jade cho toàn phe địch, nhận ngay {{3}} tầng Vật Thế Chấp.",
-        "shortDesc": "Khiến kẻ địch trong khu vực nhất định rơi vào trạng thái Trung Thành Mù Quáng. Tấn công kẻ địch đang ở trạng thái Trung Thành Mù Quáng, sẽ khiến tất cả kẻ địch đang ở trạng thái Trung Thành Mù Quáng vào chiến đấu cùng lúc, sau khi vào chiến đấu sẽ gây lượng ít Sát Thương Lượng Tử cho toàn phe địch, nhận ngay <orangeStrong>{{3}}</orangeStrong> tầng Vật Thế Chấp."
+        "shortDesc": "Khiến kẻ địch trong khu vực nhất định rơi vào trạng thái Trung Thành Mù Quáng. Tấn công kẻ địch đang ở trạng thái Trung Thành Mù Quáng, sẽ khiến tất cả kẻ địch đang ở trạng thái Trung Thành Mù Quáng vào chiến đấu cùng lúc, sau khi vào chiến đấu sẽ gây lượng ít Sát Thương Lượng Tử cho toàn phe địch, nhận ngay <orangeStrong>{{3}}</orangeStrong> tầng Vật Thế Chấp.",
+        "tag": "Quấy Nhiễu"
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, vào chiến đấu và làm suy yếu Sức Bền thuộc tính tương ứng của kẻ địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Mua Lại Đảo Ngược",
         "fullDesc": "Khi kẻ địch vào chiến đấu, Jade nhận {{2}} tầng Vật Thế Chấp. Nhân vật ở trạng thái Người Thu Nợ khi bắt đầu hiệp, sẽ nhận thêm {{1}} tầng Vật Thế Chấp.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Phiếu Thế Chấp",
         "fullDesc": "Khi bắt đầu trận, Jade sẽ ưu tiên hành động {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Tịch Thu Tài Sản",
         "fullDesc": "Trong Thiên Phú, mỗi tầng Vật Thế Chấp giúp Tấn Công của Jade tăng thêm {{1, percent(fixed: 1)}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

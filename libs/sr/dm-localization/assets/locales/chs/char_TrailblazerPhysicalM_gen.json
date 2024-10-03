@@ -5,66 +5,84 @@
       "0": {
         "name": "再见安打",
         "fullDesc": "对指定敌方单体造成等同于开拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害。",
-        "shortDesc": "对敌方单体造成少量物理属性伤害。"
+        "shortDesc": "对敌方单体造成少量物理属性伤害。",
+        "tag": "单攻"
       }
     },
     "skill": {
       "0": {
         "name": "安息全垒打",
         "fullDesc": "对指定敌方单体及其相邻目标造成等同于开拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害。",
-        "shortDesc": "对敌方单体以及相邻目标造成物理属性伤害。"
+        "shortDesc": "对敌方单体以及相邻目标造成物理属性伤害。",
+        "tag": "扩散"
       }
     },
     "ult": {
       "0": {
         "name": "星尘王牌",
-        "fullDesc": "在两种攻击模式中选择其一挥出全力一击。\\n【全胜•再见安打】：对指定敌方单体造成等同于开拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害。\\n【全胜•安息全垒打】：对指定敌方单体造成等同于开拓者<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的物理属性伤害，并对其相邻目标造成等同于开拓者<orangeStrong>{{3, percent}}%</orangeStrong>攻击力的物理属性伤害。",
-        "shortDesc": "选择单攻或扩散的攻击方式，挥出全力一击。"
+        "fullDesc": "在两种攻击模式中选择其一挥出全力一击。<br>【全胜•再见安打】：对指定敌方单体造成等同于开拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害。<br>【全胜•安息全垒打】：对指定敌方单体造成等同于开拓者<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的物理属性伤害，并对其相邻目标造成等同于开拓者<orangeStrong>{{3, percent}}%</orangeStrong>攻击力的物理属性伤害。",
+        "shortDesc": "选择单攻或扩散的攻击方式，挥出全力一击。",
+        "tag": "强化"
       },
       "1": {
         "name": "全胜•再见安打",
         "fullDesc": "对指定敌方单体造成等同于开拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害。",
-        "shortDesc": "对敌方单体造成大量物理属性伤害。"
+        "shortDesc": "对敌方单体造成大量物理属性伤害。",
+        "tag": "单攻"
       },
       "2": {
         "name": "全胜•安息全垒打",
         "fullDesc": "对指定敌方单体造成等同于开拓者<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害，同时对其相邻目标造成等同于开拓者<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的物理属性伤害。",
-        "shortDesc": "对敌方单体及其相邻目标造成物理属性伤害。"
+        "shortDesc": "对敌方单体及其相邻目标造成物理属性伤害。",
+        "tag": "扩散"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "牵制盗垒",
+        "fullDesc": "每次击破敌方目标的弱点后，攻击力提高<orangeStrong>{{1, percent}}%</orangeStrong>，该效果最多叠加{{2}}层。",
+        "shortDesc": "",
+        "tag": "强化"
       }
     },
     "technique": {
       "0": {
         "name": "不灭三振",
         "fullDesc": "使用秘技后立即为我方全体回复等同于各自生命上限{{1, percent}}%的生命值。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": "回复"
       }
     },
     "overworld": {
       "0": {
         "name": "攻击",
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "蓄势",
         "fullDesc": "战斗开始时，立即恢复{{1}}点能量。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "坚韧",
         "fullDesc": "天赋的效果每层同时使开拓者的防御力提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "斗志",
         "fullDesc": "施放战技或终结技【全胜•安息全垒打】时，对指定敌方目标造成的伤害提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

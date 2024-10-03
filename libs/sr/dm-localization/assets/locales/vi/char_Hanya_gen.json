@@ -5,56 +5,72 @@
       "0": {
         "name": "Thiên Bút Tiên Tri",
         "fullDesc": "Gây Sát Thương Vật Lý cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Hanya.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Vật Lý cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Sinh Diệt Trói Buộc",
-        "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Vật Lý tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Hanya, và khiến kẻ này rơi vào trạng thái \"Sức Nặng\".\\nSau mỗi 2 lần mục tiêu phe ta thi triển Tấn Công Thường, Chiến Kỹ, Tuyệt Kỹ lên kẻ địch ở trạng thái \"Sức Nặng\", sẽ lập tức hồi phục cho phe ta 1 Điểm Chiến Kỹ. \"Sức Nặng\" chỉ hiệu lực với mục tiêu bị thi triển mới nhất, đồng thời sẽ tự động giải trừ sau khi kích hoạt {{2}} lần hiệu ứng hồi phục Điểm Chiến Kỹ.",
-        "shortDesc": "Gây Sát Thương Vật Lý lên 1 kẻ địch, và khiến kẻ này rơi vào trạng thái \"Sức Nặng\". Sau mỗi 2 lần mục tiêu phe ta thi triển Tấn Công Thường, Chiến Kỹ, Tuyệt Kỹ lên kẻ địch ở trạng thái \"Sức Nặng\", sẽ <orangeStrong>hồi 1 Điểm Chiến Kỹ</orangeStrong>."
+        "fullDesc": "Gây cho 1 kẻ địch chỉ định Sát Thương Vật Lý tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Hanya, và khiến kẻ này rơi vào trạng thái \"Sức Nặng\".<br>Sau mỗi 2 lần mục tiêu phe ta thi triển Tấn Công Thường, Chiến Kỹ, Tuyệt Kỹ lên kẻ địch ở trạng thái \"Sức Nặng\", sẽ lập tức hồi phục cho phe ta 1 Điểm Chiến Kỹ. \"Sức Nặng\" chỉ hiệu lực với mục tiêu bị thi triển mới nhất, đồng thời sẽ tự động giải trừ sau khi kích hoạt {{2}} lần hiệu ứng hồi phục Điểm Chiến Kỹ.",
+        "shortDesc": "Gây Sát Thương Vật Lý lên 1 kẻ địch, và khiến kẻ này rơi vào trạng thái \"Sức Nặng\". Sau mỗi 2 lần mục tiêu phe ta thi triển Tấn Công Thường, Chiến Kỹ, Tuyệt Kỹ lên kẻ địch ở trạng thái \"Sức Nặng\", sẽ <orangeStrong>hồi 1 Điểm Chiến Kỹ</orangeStrong>.",
+        "tag": "Đánh Đơn"
       }
     },
     "ult": {
       "0": {
         "name": "Sắc Lệnh Thập Vương, Đồng Loạt Thi Hành",
         "fullDesc": "Tăng tốc độ cho 1 đồng đội chỉ định bằng <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> tốc độ của Hanya, đồng thời khiến mục tiêu này tăng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công, duy trì {{2}} hiệp.",
-        "shortDesc": "<orangeStrong>Tăng Tốc Độ, tăng Tấn Công</orangeStrong> cho 1 đồng đội."
+        "shortDesc": "<orangeStrong>Tăng Tốc Độ, tăng Tấn Công</orangeStrong> cho 1 đồng đội.",
+        "tag": "Cường Hóa"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Trừng Trị Kẻ Ác",
+        "fullDesc": "Khi mục tiêu phe ta thi triển Tấn Công Thường, Chiến Kỹ, Tuyệt Kỹ lên kẻ địch ở trạng thái \"Sức Nặng\", sát thương gây ra tăng <orangeStrong>{{1, percent}}%</orangeStrong>, duy trì {{2}} hiệp.",
+        "shortDesc": "Khi mục tiêu phe ta tấn công kẻ địch ở trạng thái \"Sức Nặng\", sẽ tăng sát thương gây ra.",
+        "tag": "Hỗ Trợ"
       }
     },
     "technique": {
       "0": {
         "name": "Cõi Âm Phán Xét",
         "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào chiến đấu, sẽ kèm theo \"Sức Nặng\" với hiệu ứng giống như Chiến Kỹ cho 1 kẻ địch ngẫu nhiên.",
-        "shortDesc": "Tấn công kẻ địch, sau khi vào chiến đấu, sẽ kèm theo \"Sức Nặng\" với hiệu ứng giống như Chiến Kỹ cho 1 kẻ địch ngẫu nhiên."
+        "shortDesc": "Tấn công kẻ địch, sau khi vào chiến đấu, sẽ kèm theo \"Sức Nặng\" với hiệu ứng giống như Chiến Kỹ cho 1 kẻ địch ngẫu nhiên.",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm sức bền thuộc tính tương ứng của kẻ địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Lục Sự",
         "fullDesc": "Tăng {{1, percent}}% Tấn Công cho đồng đội đang kích hoạt hiệu ứng hồi Điểm Chiến Kỹ \"Sức Nặng\", duy trì {{2}} hiệp.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Cõi Âm",
         "fullDesc": "Khi kẻ địch có \"Sức Nặng\" bị tiêu diệt, nếu số lần kích hoạt \"Sức Nặng\" hồi Điểm Chiến Kỹ cho toàn đội nhỏ hơn hoặc bằng {{1}}, thì sẽ hồi thêm {{2}} Điểm Chiến Kỹ.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Hoàn Dương",
         "fullDesc": "Khi hiệu ứng hồi Điểm Chiến Kỹ của \"Sức Nặng\" được kích hoạt, bản thân sẽ hồi {{1}} điểm Năng Lượng.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

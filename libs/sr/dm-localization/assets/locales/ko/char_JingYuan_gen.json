@@ -5,56 +5,72 @@
       "0": {
         "name": "전광석화",
         "fullDesc": "지정된 단일 적에게 경원 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 번개 속성 피해를 가한다",
-        "shortDesc": "단일 적에게 소량의 번개 속성 피해를 가한다"
+        "shortDesc": "단일 적에게 소량의 번개 속성 피해를 가한다",
+        "tag": "단일 공격"
       }
     },
     "skill": {
       "0": {
         "name": "고공을 가르는 뇌전",
         "fullDesc": "모든 적에게 경원 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 번개 속성 피해를 가하고, 다음 턴 [신군]의 공격 단수가 {{2}}단 증가한다",
-        "shortDesc": "모든 적에게 소량의 번개 속성 피해를 가하고 <orangeStrong>[신군]의 공격 단수가 증가한다</orangeStrong>"
+        "shortDesc": "모든 적에게 소량의 번개 속성 피해를 가하고 <orangeStrong>[신군]의 공격 단수가 증가한다</orangeStrong>",
+        "tag": "범위 공격"
       }
     },
     "ult": {
       "0": {
         "name": "내가 곧 빛이니",
         "fullDesc": "모든 적에게 경원 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 번개 속성 피해를 가하고, 다음 턴 [신군]의 공격 단수가 {{2}}단 증가한다",
-        "shortDesc": "모든 적에게 번개 속성 피해를 가하고 <orangeStrong>[신군]의 공격 단수가 증가한다</orangeStrong>"
+        "shortDesc": "모든 적에게 번개 속성 피해를 가하고 <orangeStrong>[신군]의 공격 단수가 증가한다</orangeStrong>",
+        "tag": "범위 공격"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "퇴마의 형신",
+        "fullDesc": "전투 시작 시 [신군]을 소환한다. [신군]은 기본 상태에서 속도 {{1}}pt 및 공격 단수 {{4}}단을 보유하며, 행동 시 추가 공격을 발동한다. 공격 단수마다 임의의 단일 적에게 경원 공격력 <orangeStrong>{{2, percent}}%</orangeStrong>만큼의 번개 속성 피해를 주고, 인접한 목표에게 주목표 {{5, percent}}%만큼의 번개 속성 피해를 가한다.<br>[신군]은 최대 {{6}}단의 공격 단수를 누적할 수 있으며 공격 단수가 1단 증가할 때마다 속도가 {{3}}pt 증가하고, 행동 종료 후 속도와 공격 단수가 기본 상태로 회복된다.<br>경원이 전투 불능 상태에 빠지면 [신군]은 사라진다.<br>경원이 제어류 디버프 상태에 빠지면 [신군]도 행동할 수 없다",
+        "shortDesc": "전투 시작 시 [신군]을 소환한다. [신군]은 <orangeStrong>자동으로</orangeStrong> 임의의 단일 적 및 인접한 목표에게 <orangeStrong>소량의 번개 속성 피해를 가한다</orangeStrong>",
+        "tag": "바운스"
       }
     },
     "technique": {
       "0": {
         "name": "위령 소환",
         "fullDesc": "비술을 발동하면 다음 전투 시작 시 [신군]의 첫 번째 턴 공격 단수가 {{1}}단 증가한다",
-        "shortDesc": "비술을 발동하면 다음 전투 진입 시 <orangeStrong>[신군]의 공격 단수가 증가한다</orangeStrong>"
+        "shortDesc": "비술을 발동하면 다음 전투 진입 시 <orangeStrong>[신군]의 공격 단수가 증가한다</orangeStrong>",
+        "tag": "강화"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "적진 격파",
         "fullDesc": "다음 턴에서 [신군]의 공격 단수가 {{1}}단 이상일 경우, 신군의 치명타 피해가 {{2, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "사전 대비",
         "fullDesc": "전투 시작 시 즉시 에너지를 {{1}}pt 회복한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "장수 파견",
         "fullDesc": "전투 스킬 발동 후 치명타 확률이 {{1, percent}}% 증가한다. 지속 시간: {{2}}턴",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -81,7 +97,7 @@
     },
     "6": {
       "name": "적을 격멸하는 위령(威霊)",
-      "desc": "[신군]의 공격은 단마다 지정된 적을 추가로 취약 상태에 빠트린다.\\n취약 상태의 적은 받는 피해가 {{1, percent}}% 증가하며, 이번 [신군] 공격 종료까지 지속된다. 해당 효과 최대 중첩수: {{2}}스택"
+      "desc": "[신군]의 공격은 단마다 지정된 적을 추가로 취약 상태에 빠트린다.<br>취약 상태의 적은 받는 피해가 {{1, percent}}% 증가하며, 이번 [신군] 공격 종료까지 지속된다. 해당 효과 최대 중첩수: {{2}}스택"
     }
   }
 }

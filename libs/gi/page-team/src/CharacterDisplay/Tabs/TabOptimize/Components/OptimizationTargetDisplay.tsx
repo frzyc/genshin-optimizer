@@ -58,7 +58,7 @@ export default function OptimizationTargetDisplay({
     <Stack
       direction="row"
       divider={<Divider orientation="vertical" flexItem />}
-      spacing={1}
+      spacing={0.5}
     >
       <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
         {iconDisplay}

@@ -5,56 +5,72 @@
       "0": {
         "name": "Puissance de l'esprit",
         "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Dr Ratio à une cible unique.",
-        "shortDesc": "Inflige des DGT imaginaires mineurs à une cible unique."
+        "shortDesc": "Inflige des DGT imaginaires mineurs à une cible unique.",
+        "tag": "Cible unique"
       }
     },
     "skill": {
       "0": {
         "name": "Déclic intellectuel",
         "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Dr Ratio à une cible unique.",
-        "shortDesc": "Inflige des DGT imaginaires à un ennemi unique."
+        "shortDesc": "Inflige des DGT imaginaires à un ennemi unique.",
+        "tag": "Cible unique"
       }
     },
     "ult": {
       "0": {
         "name": "Paradoxe du syllogisme",
-        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Dr Ratio à une cible ennemie unique et applique Folie du sage. Lorsque les alliés de Dr Ratio attaquent une cible affectée par Folie du sage, Dr Ratio lui inflige l'<u>attaque de suivi</u> de son talent une fois.\\nFolie du sage peut être déclenchée jusqu'à {{2}} fois et n'affecte que la cible la plus récente de l'ultime de Dr Ratio. Le nombre de déclenchements est réinitialisé après que Dr Ratio utilise son ultime.",
-        "shortDesc": "Inflige des DGT imaginaires à une cible ennemie unique et applique Folie du sage. Lorsque les alliés de Dr Ratio attaquent une cible affectée par Folie du sage, Dr Ratio lui inflige 1 <orangeStrong><u>attaque de suivi</u></orangeStrong>."
+        "fullDesc": "Inflige des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Dr Ratio à une cible ennemie unique et applique Folie du sage. Lorsque les alliés de Dr Ratio attaquent une cible affectée par Folie du sage, Dr Ratio lui inflige l'attaque de suivi de son talent une fois.<br>Folie du sage peut être déclenchée jusqu'à {{2}} fois et n'affecte que la cible la plus récente de l'ultime de Dr Ratio. Le nombre de déclenchements est réinitialisé après que Dr Ratio utilise son ultime.",
+        "shortDesc": "Inflige des DGT imaginaires à une cible ennemie unique et applique Folie du sage. Lorsque les alliés de Dr Ratio attaquent une cible affectée par Folie du sage, Dr Ratio lui inflige 1 <orangeStrong>attaque de suivi</orangeStrong>.",
+        "tag": "Cible unique"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Cogito, Ergo Sum",
+        "fullDesc": "Dr Ratio a {{2, percent}}% de chances fixes de déclencher 1 attaque de suivi contre sa cible lorsqu'il utilise sa compétence, lui infligeant des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Dr Ratio. Les chances fixes de déclencher l'attaque de suivi augmentent de {{3, percent}}% pour chaque malus appliqué à la cible ennemie. L'attaque de suivi est lancée sur un autre ennemi aléatoire si la cible ennemie est vaincue avant que l'attaque de suivi ne soit déclenchée.",
+        "shortDesc": "Lors de l'utilisation de la compétence, il y a une chance de lancer une <orangeStrong>attaque de suivi</orangeStrong> contre la cible 1 fois.",
+        "tag": "Cible unique"
       }
     },
     "technique": {
       "0": {
         "name": "Fascination façonnée",
-        "fullDesc": "Crée une dimension spéciale qui provoque les ennemis proches pendant {{1}} secondes après avoir utilisé la technique. Il y a {{2, percent}}% de <u>chances de base</u> de réduire la VIT des ennemis de {{3, percent}}% pendant {{4}} tours en engageant le combat avec des ennemis dans la dimension. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
-        "shortDesc": "Crée une dimension spéciale. Les ennemis dans la dimension subissent l'effet Provocation. Il y a de fortes chances de <orangeStrong>réduire la VIT</orangeStrong> des cibles ennemies après être entré en combat avec des ennemis dans cette dimension."
+        "fullDesc": "Crée une dimension spéciale qui provoque les ennemis proches pendant {{1}} secondes après avoir utilisé la technique. Il y a {{2, percent}}% de chances de base de réduire la VIT des ennemis de {{3, percent}}% pendant {{4}} tours en engageant le combat avec des ennemis dans la dimension. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "shortDesc": "Crée une dimension spéciale. Les ennemis dans la dimension subissent l'effet Provocation. Il y a de fortes chances de <orangeStrong>réduire la VIT</orangeStrong> des cibles ennemies après être entré en combat avec des ennemis dans cette dimension.",
+        "tag": "Incapacitation"
       }
     },
     "overworld": {
       "0": {
         "name": "Attaque",
         "fullDesc": "Attaque un ennemi et réduit sa robustesse au type correspondant en entrant en combat.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Synthèse",
         "fullDesc": "Lorsque Dr Ratio utilise sa compétence, ses chances de coup critique augmentent de {{1, percent(fixed: 1)}}% et ses DGT critiques de {{2, percent}}% pour chaque malus sur la cible. Cet effet peut être cumulé jusqu'à {{3}} fois.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Inférence",
         "fullDesc": "Lorsque la compétence est utilisée pour attaquer une cible ennemie, il y a {{1, percent}}% de chances de base de réduire la RÉS aux effets de la cible attaquée de {{2, percent}}% pendant {{3}} tours.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Déduction",
         "fullDesc": "Lorsque Dr Ratio inflige des DGT à une cible ayant au moins {{1}} malus, les DGT infligés par Dr Ratio à cette cible augmentent de {{2, percent}}% pour chaque malus appliqué à la cible, jusqu'à une augmentation maximale de {{3, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Connais-toi toi-même",
-      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.\\nNiv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
+      "desc": "Niv. de l'ultime +2, jusqu'au Niv. 15 maximum.<br>Niv. de l'ATQ normale +1, jusqu'au Niv. 10 maximum."
     },
     "4": {
       "name": "L'ignorance est aveugle",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Sic Itur Ad Astra",
-      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.\\nNiv. du talent +2, jusqu'au Niv. 15 maximum."
+      "desc": "Niv. de la compétence +2, jusqu'au Niv. 15 maximum.<br>Niv. du talent +2, jusqu'au Niv. 15 maximum."
     },
     "6": {
       "name": "Vincit Omnia Veritas",

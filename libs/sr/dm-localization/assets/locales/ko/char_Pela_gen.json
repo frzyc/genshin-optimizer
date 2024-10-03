@@ -5,56 +5,72 @@
       "0": {
         "name": "빙점 사격",
         "fullDesc": "지정된 단일 적에게 페라 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 준다",
-        "shortDesc": "단일 적에게 소량의 얼음 속성 피해를 가한다"
+        "shortDesc": "단일 적에게 소량의 얼음 속성 피해를 가한다",
+        "tag": "단일 공격"
       }
     },
     "skill": {
       "0": {
         "name": "저온 방해",
-        "fullDesc": "지정된 단일 적의 <u>버프 효과</u> {{2}}개를 해제하고, 페라 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 준다",
-        "shortDesc": "단일 적의 <orangeStrong>버프 효과</orangeStrong>를 1개 <orangeStrong>해제</orangeStrong>하고, 단일 적에게 얼음 속성 피해를 가한다"
+        "fullDesc": "지정된 단일 적의 버프 효과 {{2}}개를 해제하고, 페라 공격력 <orangeStrong>{{1, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 준다",
+        "shortDesc": "단일 적의 <orangeStrong>버프 효과</orangeStrong>를 1개 <orangeStrong>해제</orangeStrong>하고, 단일 적에게 얼음 속성 피해를 가한다",
+        "tag": "단일 공격"
       }
     },
     "ult": {
       "0": {
         "name": "영역 제압",
-        "fullDesc": "{{1, percent}}%의 <u>기본 확률</u>로 각 단일 적을 [분석] 상태에 빠트리는 동시에 모든 적에게 페라 공격력 <orangeStrong>{{4, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 가한다.\\n[분석] 상태의 적은 방어력이 <orangeStrong>{{2, percent}}%</orangeStrong> 감소한다. 지속 시간: {{3}}턴",
-        "shortDesc": "높은 확률로 적의 <orangeStrong>방어력을 감소</orangeStrong>시키고 모든 적에게 소량의 얼음 속성 피해를 가한다"
+        "fullDesc": "{{1, percent}}%의 기본 확률로 각 단일 적을 [분석] 상태에 빠트리는 동시에 모든 적에게 페라 공격력 <orangeStrong>{{4, percent}}%</orangeStrong>만큼의 얼음 속성 피해를 가한다.<br>[분석] 상태의 적은 방어력이 <orangeStrong>{{2, percent}}%</orangeStrong> 감소한다. 지속 시간: {{3}}턴",
+        "shortDesc": "높은 확률로 적의 <orangeStrong>방어력을 감소</orangeStrong>시키고 모든 적에게 소량의 얼음 속성 피해를 가한다",
+        "tag": "범위 공격"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "데이터 수집",
+        "fullDesc": "공격 발동 후 적이 디버프 효과 상태를 보유하면, 페라는 에너지 <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong>pt를 추가로 회복한다. 해당 효과는 공격마다 1회만 발동할 수 있다",
+        "shortDesc": "공격 발동 후 적이 디버프 효과상태에 빠지면, 페라는 에너지를 회복한다",
+        "tag": "서포트"
       }
     },
     "technique": {
       "0": {
         "name": "기선 제압",
-        "fullDesc": "적을 바로 공격하며, 전투 진입 후 임의의 단일 적에게 페라 공격력 {{4, percent}}%만큼의 얼음 속성 피해를 준다. 동시에 {{1, percent}}%의 <u>기본 확률</u>로 각 단일 적의 방어력이 {{2, percent}}% 감소한다. 지속 시간: {{3}}턴",
-        "shortDesc": "적을 공격하며, 전투 진입 후 임의의 단일 적에게 소량의 피해를 가하고, 높은 확률로 각 단일 적의 방어력이 감소한다"
+        "fullDesc": "적을 바로 공격하며, 전투 진입 후 임의의 단일 적에게 페라 공격력 {{4, percent}}%만큼의 얼음 속성 피해를 준다. 동시에 {{1, percent}}%의 기본 확률로 각 단일 적의 방어력이 {{2, percent}}% 감소한다. 지속 시간: {{3}}턴",
+        "shortDesc": "적을 공격하며, 전투 진입 후 임의의 단일 적에게 소량의 피해를 가하고, 높은 확률로 각 단일 적의 방어력이 감소한다",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "통격",
         "fullDesc": "디버프 효과를 보유한 적에게 가하는 피해가 {{1, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "비책",
         "fullDesc": "페라가 필드에 있으면 모든 아군의 효과 명중이 {{1, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "추격 토벌",
         "fullDesc": "전투 스킬 발동으로 버프 효과를 해제할 시 다음 공격으로 가하는 피해가 {{1, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

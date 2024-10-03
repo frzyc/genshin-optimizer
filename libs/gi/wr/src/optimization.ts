@@ -308,7 +308,7 @@ function deduplicate(formulas: OptNode[]): OptNode[] {
 
 /**
  * Replace nodes with known values with appropriate constants,
- * avoiding removal of any nodes that pass `isFixed` predicate
+ * and remove read nodes where `shouldFold(node)` is `true`
  */
 export function constantFold(
   formulas: NumNode[],

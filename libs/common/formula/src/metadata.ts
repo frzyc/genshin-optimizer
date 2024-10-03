@@ -7,7 +7,7 @@ import type {
   TagMapEntries,
 } from '@genshin-optimizer/pando/engine'
 import type {
-  IBareConditionalData,
+  IBaseConditionalData,
   IConditionalData,
   IFormulaData,
 } from './IConditionalData'
@@ -25,7 +25,7 @@ export function extractCondMetadata(
   traverse(
     data.map((e) => e.value).filter((v) => v.op !== 'reread'),
     (n, visit) => {
-      const meta = n.tag?.[condMeta as any] as IBareConditionalData | undefined
+      const meta = n.tag?.[condMeta as any] as IBaseConditionalData | undefined
       if (!meta) {
         n.x.forEach(visit)
         n.br.forEach(visit)

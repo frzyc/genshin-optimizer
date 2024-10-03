@@ -27,7 +27,12 @@ export function CharacterMultiAutocomplete({
   setCharKey: (v: CharacterKey[]) => void
   acProps?: Partial<GeneralAutocompleteMultiProps<CharacterKey>>
 }) {
-  const { t } = useTranslation(['sillyWisher_charNames', 'charNames_gen'])
+  const { t } = useTranslation([
+    'page_team',
+    'sillyWisher_charNames',
+    'charNames_gen',
+  ])
+
   const { silly } = useContext(SillyContext)
   const database = useDatabase()
   const { gender } = useDBMeta()
@@ -129,7 +134,7 @@ export function CharacterMultiAutocomplete({
   return (
     <Suspense fallback={<Skeleton variant="text" width={100} />}>
       <GeneralAutocompleteMulti
-        label="Characters"
+        label={t`searchLabel.char`}
         options={options}
         toImg={toImg}
         valueKeys={charKeys}

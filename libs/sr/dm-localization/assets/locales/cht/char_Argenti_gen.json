@@ -5,61 +5,78 @@
       "0": {
         "name": "芬芳一現",
         "fullDesc": "對指定敵方單體造成等同於銀枝<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害。",
-        "shortDesc": "對敵方單體造成少量物理屬性傷害。"
+        "shortDesc": "對敵方單體造成少量物理屬性傷害。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "公正，此處盛放",
         "fullDesc": "對敵方全體造成等同於銀枝<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害。",
-        "shortDesc": "對敵方全體造成少量物理屬性傷害。"
+        "shortDesc": "對敵方全體造成少量物理屬性傷害。",
+        "tag": "群體攻擊"
       }
     },
     "ult": {
       "0": {
         "name": "駐於花庭，賜與盡美",
         "fullDesc": "消耗{{2}}點能量，對敵方全體造成等同於銀枝<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害。",
-        "shortDesc": "消耗<orangeStrong>{{2}}</orangeStrong>點能量，對敵方全體造成物理屬性傷害。"
+        "shortDesc": "消耗<orangeStrong>{{2}}</orangeStrong>點能量，對敵方全體造成物理屬性傷害。",
+        "tag": "群體攻擊"
       },
       "1": {
         "name": "駐「我」華庭，授予至勳",
         "fullDesc": "消耗{{4}}點能量，對敵方全體造成等同於銀枝<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害，並額外造成{{2}}次傷害，每次傷害對敵方隨機單體造成等同於銀枝<orangeStrong>{{3, percent}}%</orangeStrong>攻擊力的物理屬性傷害。",
-        "shortDesc": "消耗<orangeStrong>{{4}}</orangeStrong>點能量，對敵方全體造成物理屬性傷害，並額外對敵方隨機單體造成少量物理屬性傷害，共彈射6次。"
+        "shortDesc": "消耗<orangeStrong>{{4}}</orangeStrong>點能量，對敵方全體造成物理屬性傷害，並額外對敵方隨機單體造成少量物理屬性傷害，共彈射6次。",
+        "tag": "群體攻擊"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "崇高的客體",
+        "fullDesc": "使用普通攻擊、戰技、終結技時，每命中1個敵方目標，便為銀枝恢復{{1}}點能量並獲得1層【升格】，使銀枝暴擊率提高<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>，該效果最多疊加{{3}}層。",
+        "shortDesc": "使用普通攻擊、戰技、終結技時，每命中1個敵方目標，便為銀枝<orangeStrong>恢復能量</orangeStrong>並提高自身<orangeStrong>暴擊率</orangeStrong>。",
+        "tag": "強化"
       }
     },
     "technique": {
       "0": {
         "name": "純粹高潔宣言",
-        "fullDesc": "使用秘技後使一定區域內的敵人陷入{{1}}秒的暈眩狀態，暈眩狀態下敵人不會主動攻擊我方目標。\\n若主動攻擊陷入暈眩狀態的敵人，則進入戰鬥時，對敵方全體造成等同於銀枝{{2, percent}}%攻擊力的物理屬性傷害，並使銀枝恢復{{3}}點能量。",
-        "shortDesc": "使一定區域內敵人陷入暈眩狀態。攻擊陷入暈眩狀態的敵人，進入戰鬥後對敵方全體造成少量物理屬性傷害，銀枝恢復能量。"
+        "fullDesc": "使用秘技後使一定區域內的敵人陷入{{1}}秒的暈眩狀態，暈眩狀態下敵人不會主動攻擊我方目標。<br>若主動攻擊陷入暈眩狀態的敵人，則進入戰鬥時，對敵方全體造成等同於銀枝{{2, percent}}%攻擊力的物理屬性傷害，並使銀枝恢復{{3}}點能量。",
+        "shortDesc": "使一定區域內敵人陷入暈眩狀態。攻擊陷入暈眩狀態的敵人，進入戰鬥後對敵方全體造成少量物理屬性傷害，銀枝恢復能量。",
+        "tag": "妨害"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "虔誠",
         "fullDesc": "回合開始時，立即獲得{{1}}層【升格】。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "慷慨",
         "fullDesc": "在敵方目標進入戰鬥時，自身立即恢復{{1}}點能量。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "勇氣",
         "fullDesc": "對現有生命值百分比小於等於{{1, percent}}%的敵方目標造成的傷害提高{{2, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

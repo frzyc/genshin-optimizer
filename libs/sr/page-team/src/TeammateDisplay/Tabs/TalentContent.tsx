@@ -1,3 +1,4 @@
+import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
 import {
   CardThemed,
   ConditionalWrapper,
@@ -7,15 +8,17 @@ import {
 import { layeredAssignment, range } from '@genshin-optimizer/common/util'
 import type { UISheetElement } from '@genshin-optimizer/pando/ui-sheet'
 import { DocumentDisplay } from '@genshin-optimizer/pando/ui-sheet'
-import { maxEidolonCount } from '@genshin-optimizer/sr/consts'
+import { maxEidolonCount, talentLimits } from '@genshin-optimizer/sr/consts'
 import { own } from '@genshin-optimizer/sr/formula'
 import {
+  isTalentKey,
   uiSheets,
   useSrCalcContext,
   type TalentSheetElementKey,
 } from '@genshin-optimizer/sr/formula-ui'
 import {
   LoadoutContext,
+  useCharacterContext,
   useDatabaseContext,
   useLoadoutContext,
 } from '@genshin-optimizer/sr/ui'
@@ -30,7 +33,7 @@ import {
   useTheme,
 } from '@mui/material'
 import type { ReactNode } from 'react'
-import { useCallback, useContext } from 'react'
+import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 const talentSpacing = {
@@ -45,12 +48,16 @@ export default function CharacterTalentPane() {
   } = useLoadoutContext()
   const calc = useSrCalcContext()
   const { t } = useTranslation('sheet_gen')
+  const { database } = useDatabaseContext()
+  // TODO: for TC overrides
+  // const { buildTc, setBuildTc } = useContext(BuildTcContext)
 
-  const skillBurstList = [
-    ['basic', t('talents.basic')],
-    ['skill', t('talents.skill')],
-    ['ultimate', t('talents.ultimate')],
-  ] as [TalentSheetElementKey, string][]
+  const skillBurstList: [TalentSheetElementKey, string][] = [
+    ['basic', t('ability.basic')],
+    ['skill', t('ability.skill')],
+    ['ult', t('ability.ult')],
+    ['talent', t('ability.talent')],
+  ] as const
   // const passivesList: [
   //   tKey: TalentSheetElementKey,
   //   tText: string,
@@ -63,33 +70,39 @@ export default function CharacterTalentPane() {
 
   const theme = useTheme()
   const grlg = useMediaQuery(theme.breakpoints.up('lg'))
-  // const constellationCards = useMemo(
-  //   () =>
-  //     range(1, maxConstellationCount).map((i) => (
-  //       <SkillDisplayCard
-  //         talentKey={`constellation${i}` as TalentSheetElementKey}
-  //         subtitle={t('constellationLvl', { level: i })}
-  //         onClickTitle={() =>
-  //           buildTc?.character
-  //             ? setBuildTc((buildTc) => {
-  //                 if (buildTc.character) buildTc.character.constellation = i
-  //               })
-  //             : database.chars.set(characterKey, {
-  //                 constellation: i === constellation ? i - 1 : i,
-  //               })
-  //         }
-  //       />
-  //     )),
-  //   [
-  //     t,
-  //     buildTc?.character,
-  //     setBuildTc,
-  //     database.chars,
-  //     characterKey,
-  //     constellation,
-  //   ]
-  // )
   const characterSheet = uiSheets[characterKey]
+  const eidolon = calc?.compute(own.char.eidolon).val ?? 0
+  const eidolonCards = useMemo(
+    () =>
+      characterSheet &&
+      range(1, maxEidolonCount).map((i) => {
+        const ele = characterSheet[`eidolon${i}` as TalentSheetElementKey]
+        if (!ele) return null
+        return (
+          <SkillDisplayCard
+            talentKey={`eidolon${i}` as TalentSheetElementKey}
+            subtitle={
+              <span>
+                {t('eidolonLvl')} {i}
+              </span>
+            }
+            sheetElement={ele}
+            onClickTitle={() =>
+              // buildTc?.character
+              //   ? setBuildTc((buildTc) => {
+              //       if (buildTc.character) buildTc.character.constellation = i
+              //     })
+              //   :
+              database.chars.set(characterKey, {
+                eidolon: i === eidolon ? i - 1 : i,
+              })
+            }
+          />
+        )
+      }),
+    [characterKey, characterSheet, database.chars, eidolon, t]
+  )
+
   if (!characterSheet || !calc) return
   return (
     <>
@@ -120,12 +133,13 @@ export default function CharacterTalentPane() {
             lg={3}
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
-            <ConstellationDropdown />
-            {/* {constellationCards.map((c, i) => (
-              <Box key={i} sx={{ opacity: constellation >= i + 1 ? 1 : 0.5 }}>
-                {c}
-              </Box>
-            ))} */}
+            <EidolonDropdown />
+            {eidolonCards &&
+              eidolonCards.map((c, i) => (
+                <Box key={i} sx={{ opacity: eidolon >= i + 1 ? 1 : 0.5 }}>
+                  {c}
+                </Box>
+              ))}
           </Grid>
         )}
         <Grid item xs={12} md={12} lg={9} container spacing={1}>
@@ -181,7 +195,7 @@ export default function CharacterTalentPane() {
         {!grlg && (
           <Grid item xs={12} md={12} lg={3} container spacing={1}>
             <Grid item xs={12}>
-              <ConstellationDropdown />
+              <EidolonDropdown />
             </Grid>
             {/* {constellationCards.map((c, i) => (
               <Grid
@@ -228,14 +242,18 @@ export default function CharacterTalentPane() {
 type SkillDisplayCardProps = {
   sheetElement: UISheetElement
   talentKey: TalentSheetElementKey
-  subtitle: string
+  subtitle: ReactNode
   onClickTitle?: () => void
 }
 function SkillDisplayCard({
   sheetElement,
+  talentKey,
   subtitle,
   onClickTitle,
 }: SkillDisplayCardProps) {
+  const {
+    loadout: { key: characterKey },
+  } = useLoadoutContext()
   const actionWrapperFunc = useCallback(
     (children: ReactNode) => (
       <CardActionArea onClick={onClickTitle}>{children}</CardActionArea>
@@ -246,30 +264,30 @@ function SkillDisplayCard({
   let header: ReactNode | null = null
   header = null
 
-  // if (isTalentKey(talentKey)) {
-  //   header = (
-  //     <TalentDropdown
-  //       talentKey={talentKey}
-  //       dropDownButtonProps={{
-  //         sx: {
-  //           borderRadius: 0,
-  //           // color: buildTc?.character ? 'yellow' : undefined,
-  //         },
-  //       }}
-  //       setTalent={
-  //         (talent) => {}
-  //         // buildTc?.character
-  //         //   ? setBuildTc((buildTc) => {
-  //         //       if (buildTc.character?.talent[talentKey])
-  //         //         buildTc.character.talent[talentKey] = talent
-  //         //     })
-  //         //   : database.chars.set(characterKey, (char) => {
-  //         //       char.talent[talentKey] = talent
-  //         //     })
-  //       }
-  //     />
-  //   )
-  // }
+  if (isTalentKey(talentKey)) {
+    header = (
+      <TalentDropdown
+        talentKey={talentKey}
+        dropDownButtonProps={{
+          sx: {
+            borderRadius: 0,
+            // color: buildTc?.character ? 'yellow' : undefined,
+          },
+        }}
+        setTalent={(talent) =>
+          // buildTc?.character
+          //   ? setBuildTc((buildTc) => {
+          //       if (buildTc.character?.talent[talentKey])
+          //         buildTc.character.talent[talentKey] = talent
+          //     })
+          //   :
+          database.chars.set(characterKey, (char) => {
+            char[talentKey] = talent
+          })
+        }
+      />
+    )
+  }
 
   // Hide header if the header matches the current talent
   // const hideHeader = (section: DocumentSection): boolean => {
@@ -316,7 +334,10 @@ function SkillDisplayCard({
             </Grid>
             <Grid item flexGrow={1} sx={{ pl: 1 }}>
               <Typography variant="h6">{sheetElement?.name}</Typography>
-              <Typography variant="subtitle1">{subtitle}</Typography>
+              <Typography variant="subtitle1">
+                {subtitle}
+                {sheetElement.tag && <> • {sheetElement.tag}</>}
+              </Typography>
             </Grid>
           </Grid>
         </ConditionalWrapper>
@@ -335,35 +356,90 @@ function SkillDisplayCard({
   )
 }
 
-export function ConstellationDropdown() {
+export function EidolonDropdown() {
   const { t } = useTranslation('sheet_gen')
   const calc = useSrCalcContext()
+  const {
+    loadout: { key: characterKey },
+  } = useLoadoutContext()
+  const { database } = useDatabaseContext()
   if (!calc) return null
-  const constellation = calc.compute(own.char.eidolon).val
+  const eidolon = calc.compute(own.char.eidolon).val
   return (
     <DropdownButton
       fullWidth
-      title={t('constellationLvl', { level: constellation })}
+      title={
+        <span>
+          {t('eidolonLvl')} {eidolon}
+        </span>
+      }
       color="primary"
       // sx={{ color: buildTc?.character ? 'yellow' : undefined }}
     >
       {range(0, maxEidolonCount).map((i) => (
         <MenuItem
           key={i}
-          selected={constellation === i}
-          disabled={constellation === i}
-          onClick={
-            () => {}
+          selected={eidolon === i}
+          disabled={eidolon === i}
+          onClick={() =>
             // buildTc?.character
             //   ? setBuildTc((buildTc) => {
             //       if (buildTc.character) buildTc.character.constellation = i
             //     })
-            //   : database.chars.set(characterKey, {
-            //       constellation: i,
-            //     })
+            //   :
+            database.chars.set(characterKey, {
+              eidolon: i,
+            })
           }
         >
-          {t(`constellationLvl`, { level: i })}
+          <span>
+            {t('eidolonLvl')} {i}
+          </span>
+        </MenuItem>
+      ))}
+    </DropdownButton>
+  )
+}
+
+export function TalentDropdown({
+  talentKey,
+  setTalent,
+  dropDownButtonProps,
+}: {
+  talentKey: 'basic' | 'skill' | 'ult' | 'talent'
+  setTalent: (talent: number) => void
+  dropDownButtonProps?: Omit<DropdownButtonProps, 'title' | 'children'>
+}) {
+  const { t } = useTranslation('sheet_gen')
+  const { character } = useCharacterContext()
+  const calc = useSrCalcContext()
+  if (!calc || !character) return null
+
+  const levelBoost = 0 //TODO:  data.get(input.total[`${talentKey}Boost`] as NumNode).value
+  const level = calc.compute(own.char[talentKey]).val
+  const asc = calc.compute(own.char.ascension).val
+
+  return (
+    <DropdownButton
+      fullWidth
+      title={
+        <span>
+          {t('lvl')} {level}
+        </span>
+      }
+      color={levelBoost ? 'info' : 'primary'}
+      {...dropDownButtonProps}
+    >
+      {range(1, talentLimits[asc]).map((i) => (
+        <MenuItem
+          key={i}
+          selected={character[talentKey] === i}
+          disabled={character[talentKey] === i}
+          onClick={() => setTalent(i)}
+        >
+          <span>
+            {t('lvl')} {i + levelBoost}
+          </span>
         </MenuItem>
       ))}
     </DropdownButton>

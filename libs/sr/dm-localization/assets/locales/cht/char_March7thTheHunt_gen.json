@@ -5,61 +5,78 @@
       "0": {
         "name": "蕩滌妖邪琉璃劍",
         "fullDesc": "對指定敵方單體造成等同於三月七<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的虛數屬性傷害，隨後獲得{{2}}點充能。",
-        "shortDesc": "對敵方單體造成少量虛數屬性傷害，獲得<orangeStrong>{{2}}</orangeStrong>點充能。"
+        "shortDesc": "對敵方單體造成少量虛數屬性傷害，獲得<orangeStrong>{{2}}</orangeStrong>點充能。",
+        "tag": "單體攻擊"
       },
       "1": {
         "name": "一扎皺眉，二扎心",
-        "fullDesc": "初始造成{{4}}段傷害，每段對指定敵方單體造成等同於三月七<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的虛數屬性傷害。每當造成最後1段傷害後，有{{2, percent}}%的<u>固定機率</u>再造成1段傷害，最多額外造成{{3}}段傷害。發動強化普通攻擊恢復的能量不隨段數提高而提高。\\n強化普通攻擊無法恢復戰技點。",
-        "shortDesc": "對敵方單體造成虛數屬性傷害，初始造成<orangeStrong>{{4}}</orangeStrong>段傷害，<orangeStrong>有機率額外造成最多<color=#f29e38ff>#3[i]</orangeStrong>段傷害</color>。"
+        "fullDesc": "初始造成{{4}}段傷害，每段對指定敵方單體造成等同於三月七<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的虛數屬性傷害。每當造成最後1段傷害後，有{{2, percent}}%的固定機率再造成1段傷害，最多額外造成{{3}}段傷害。發動強化普通攻擊恢復的能量不隨段數提高而提高。<br>強化普通攻擊無法恢復戰技點。",
+        "shortDesc": "對敵方單體造成虛數屬性傷害，初始造成<orangeStrong>{{4}}</orangeStrong>段傷害，<orangeStrong>有機率額外造成最多<color=#f29e38ff>#3[i]</orangeStrong>段傷害</color>。",
+        "tag": "單體攻擊"
       }
     },
     "skill": {
       "0": {
         "name": "師父，請喝茶！",
-        "fullDesc": "使除自身以外的我方指定單體成為【師父】，【師父】的速度提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>。僅戰技最新的施放目標被視為三月七的【師父】。\\n每當發動普通攻擊或造成1段強化普通攻擊的傷害時，若場上存在指定命途的【師父】，則觸發對應效果：\\n「智識」、「毀滅」、「巡獵」：額外造成等同於三月七<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的基於【師父】屬性的<u>附加傷害</u>。\\n「同諧」、「虛無」、「存護」、「豐饒」：本次傷害的削韌值提高{{3, percent}}%。",
-        "shortDesc": "使我方單體成為【師父】。發動普通攻擊或造成強化普通攻擊的傷害時，根據<orangeStrong>【師父】命途</orangeStrong>觸發對應效果：\\n「智識」、「毀滅」、「巡獵」：額外造成基於【師父】屬性的<orangeStrong><u>附加傷害</u></orangeStrong>。\\n「同諧」、「虛無」、「存護」、「豐饒」：<orangeStrong>削韌值</orangeStrong>提高。"
+        "fullDesc": "使除自身以外的我方指定單體成為【師父】，【師父】的速度提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>。僅戰技最新的施放目標被視為三月七的【師父】。<br>每當發動普通攻擊或造成1段強化普通攻擊的傷害時，若場上存在指定命途的【師父】，則觸發對應效果：<br>「智識」、「毀滅」、「巡獵」：額外造成等同於三月七<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的基於【師父】屬性的附加傷害。<br>「同諧」、「虛無」、「存護」、「豐饒」：本次傷害的削韌值提高{{3, percent}}%。",
+        "shortDesc": "使我方單體成為【師父】。發動普通攻擊或造成強化普通攻擊的傷害時，根據<orangeStrong>【師父】命途</orangeStrong>觸發對應效果：<br>「智識」、「毀滅」、「巡獵」：額外造成基於【師父】屬性的<orangeStrong>附加傷害</orangeStrong>。<br>「同諧」、「虛無」、「存護」、「豐饒」：<orangeStrong>削韌值</orangeStrong>提高。",
+        "tag": "輔助"
       }
     },
     "ult": {
       "0": {
         "name": "蓋世女俠三月七",
-        "fullDesc": "對指定敵方單體造成等同於三月七<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的虛數屬性傷害。\\n使下一次強化普通攻擊的初始段數增加{{2}}段，額外造成傷害的<u>固定機率</u>提高{{3, percent}}%。",
-        "shortDesc": "對敵方單體造成虛數屬性傷害，並使<orangeStrong>下一次強化普通攻擊</orangeStrong>的段數和造成傷害的機率<orangeStrong>提高</orangeStrong>。"
+        "fullDesc": "對指定敵方單體造成等同於三月七<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的虛數屬性傷害。<br>使下一次強化普通攻擊的初始段數增加{{2}}段，額外造成傷害的固定機率提高{{3, percent}}%。",
+        "shortDesc": "對敵方單體造成虛數屬性傷害，並使<orangeStrong>下一次強化普通攻擊</orangeStrong>的段數和造成傷害的機率<orangeStrong>提高</orangeStrong>。",
+        "tag": "單體攻擊"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "師父，我悟了！",
+        "fullDesc": "【師父】發動攻擊或施放終結技後，三月七每次獲得最多1點充能。<br>充能大於等於{{1}}點時，三月七立即行動，造成的傷害提高<orangeStrong>{{2, percent}}%</orangeStrong>，普通攻擊得到強化且無法施放戰技。發動強化普通攻擊後，消耗{{1}}點充能。充能上限{{3}}點。",
+        "shortDesc": "<orangeStrong>【師父】發動攻擊或施放終結技</orangeStrong>後，三月七獲得充能。充能達到<orangeStrong>{{1}}</orangeStrong>點時立即行動，造成的傷害提高，<orangeStrong>普通攻擊獲得強化</orangeStrong>。",
+        "tag": "強化"
       }
     },
     "technique": {
       "0": {
         "name": "一氣化三餐",
-        "fullDesc": "若三月七在隊伍中，每當隊友施放1次秘技，下一次戰鬥開始時三月七獲得1點充能，最多獲得{{1}}點。\\n使用秘技後，下一次戰鬥開始時三月七恢復{{2}}點能量。",
-        "shortDesc": "每當隊友施放秘技，下一次進入戰鬥後三月七獲得充能。使用秘技，下一次進入戰鬥後恢復能量。"
+        "fullDesc": "若三月七在隊伍中，每當隊友施放1次秘技，下一次戰鬥開始時三月七獲得1點充能，最多獲得{{1}}點。<br>使用秘技後，下一次戰鬥開始時三月七恢復{{2}}點能量。",
+        "shortDesc": "每當隊友施放秘技，下一次進入戰鬥後三月七獲得充能。使用秘技，下一次進入戰鬥後恢復能量。",
+        "tag": "強化"
       }
     },
     "overworld": {
       "0": {
         "name": "攻擊",
         "fullDesc": "攻擊敵人，進入戰鬥後削弱敵方目標對應屬性韌性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "驚鴻",
         "fullDesc": "戰鬥開始時，三月七的行動提前{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "玲瓏",
         "fullDesc": "三月七能夠削減具有【師父】屬性弱點的敵方目標的韌性。擊破弱點時，觸發虛數屬性的弱點擊破效果。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "斡波",
         "fullDesc": "發動強化普通攻擊後，使【師父】的暴擊傷害提高{{1, percent}}%，擊破特攻提高{{2, percent}}%，持續{{3}}回合。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

@@ -5,56 +5,72 @@
       "0": {
         "name": "깃발•풍우 소환",
         "fullDesc": "지정된 단일 적에게 곽향 HP 최대치의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 바람 속성 피해를 준다",
-        "shortDesc": "단일 적에게 소량의 바람 속성 피해를 준다"
+        "shortDesc": "단일 적에게 소량의 바람 속성 피해를 준다",
+        "tag": "단일 공격"
       }
     },
     "skill": {
       "0": {
         "name": "부적•보명호신",
-        "fullDesc": "지정된 단일 아군의 <u>디버프 효과</u>를 {{5}}개 해제하고, 지정된 단일 아군의 HP를 즉시 곽향 HP 최대치의 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>만큼 회복시킨다. 동시에 인접한 목표의 HP를 곽향 HP 최대치의 <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>만큼 회복시킨다",
-        "shortDesc": "단일 아군의 <u>디버프 효과</u>를 1개 해제하고, 단일 아군 및 인접한 목표의 <orangeStrong>HP를 회복</orangeStrong>시킨다"
+        "fullDesc": "지정된 단일 아군의 디버프 효과를 {{5}}개 해제하고, 지정된 단일 아군의 HP를 즉시 곽향 HP 최대치의 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{2}}</orangeStrong>만큼 회복시킨다. 동시에 인접한 목표의 HP를 곽향 HP 최대치의 <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>만큼 회복시킨다",
+        "shortDesc": "단일 아군의 디버프 효과를 1개 해제하고, 단일 아군 및 인접한 목표의 <orangeStrong>HP를 회복</orangeStrong>시킨다",
+        "tag": "회복"
       }
     },
     "ult": {
       "0": {
         "name": "꼬리•신귀 사역",
         "fullDesc": "자신 이외의 동료에게 각자 에너지 최대치의 <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>만큼 에너지를 회복시키고, 동시에 공격력을 <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> 증가시킨다. 지속 시간: {{3}}턴",
-        "shortDesc": "자신 이외의 동료의 <orangeStrong>에너지를 회복</orangeStrong>시키고, <orangeStrong>공격력을 증가</orangeStrong>시킨다"
+        "shortDesc": "자신 이외의 동료의 <orangeStrong>에너지를 회복</orangeStrong>시키고, <orangeStrong>공격력을 증가</orangeStrong>시킨다",
+        "tag": "서포트"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "빙의•천기합일",
+        "fullDesc": "전투 스킬 발동 후 곽향은 [양명(禳命)]을 획득한다. 지속 시간: {{1}}턴. 곽향의 턴이 시작될 때마다 지속 턴 수가 1 감소한다. 곽향이 [양명]을 보유하고 있으면 아군은 턴 시작 또는 필살기 발동 시, 자신의 HP를 곽향 HP 최대치의 <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{5}}</orangeStrong>만큼 회복한다. 동시에 현재 HP 백분율이 {{6, percent}}% 이하인 모든 아군에게 회복 효과를 1회 생성한다.<br>[양명]을 발동하여 아군에게 치유 제공 시, 해당 대상의 디버프 효과를 {{2}}개 해제한다. 해당 효과는 {{7}}회 발동 가능하다. 전투 스킬을 다시 발동하면 효과 발동 횟수는 갱신된다",
+        "shortDesc": "전투 스킬 발동 후 곽향은 [양명]을 획득한다. 곽향이 [양명]을 보유하고 있으면 아군은 턴 시작 또는 필살기 발동 시, <orangeStrong>자신의 HP를 회복</orangeStrong>한다. 동시에 <orangeStrong>모든</orangeStrong> HP가 낮은 <orangeStrong>아군에게 각각 회복 효과를 1회 생성</orangeStrong>한다. [양명]을 발동해 아군 치유 시 <orangeStrong>해당 목표의 디버프 효과를 1개 해제한다</orangeStrong>",
+        "tag": "회복"
       }
     },
     "technique": {
       "0": {
         "name": "악귀•귀물 제압",
-        "fullDesc": "곽향이 주위의 적을 위협하여 [백산(魄散)] 상태에 빠트린다. [백산] 상태의 적은 곽향에게서 도망친다. 지속 시간: {{4}}초. [백산] 상태의 적과 전투에 진입하면 {{1, percent}}%의 <u>기본 확률</u>로 각 단일 적의 공격력을 {{2, percent}}% 감소시킨다. 지속 시간: {{3}}턴",
-        "shortDesc": "주위의 적을 [백산(魄散)] 상태에 빠트린다. [백산] 상태의 적과 전투에 진입하면 높은 확률로 적의 <orangeStrong>공격력을 감소</orangeStrong>시킨다"
+        "fullDesc": "곽향이 주위의 적을 위협하여 [백산(魄散)] 상태에 빠트린다. [백산] 상태의 적은 곽향에게서 도망친다. 지속 시간: {{4}}초. [백산] 상태의 적과 전투에 진입하면 {{1, percent}}%의 기본 확률로 각 단일 적의 공격력을 {{2, percent}}% 감소시킨다. 지속 시간: {{3}}턴",
+        "shortDesc": "주위의 적을 [백산(魄散)] 상태에 빠트린다. [백산] 상태의 적과 전투에 진입하면 높은 확률로 적의 <orangeStrong>공격력을 감소</orangeStrong>시킨다",
+        "tag": "방해"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "나서지 못하는 마음",
         "fullDesc": "전투 시작 시, 곽향이 [양명]을 획득한다. 지속 시간: {{1}}턴",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "불운의 명",
         "fullDesc": "제어류 디버프 상태 저항 확률이 {{1, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "두려움의 압박",
         "fullDesc": "특성을 발동해 아군에게 치유 제공 시 곽향이 에너지를 {{1}}pt 회복한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

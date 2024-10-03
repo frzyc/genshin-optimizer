@@ -1,5 +1,6 @@
 {
   "spd": "SPD",
+  "spd_": "SPD",
   "hp": "HP",
   "hp_": "HP",
   "atk": "ATK",
@@ -8,7 +9,7 @@
   "def_": "DEF",
   "crit_": "CRIT Rate",
   "crit_dmg_": "CRIT DMG",
-  "brEff_": "Break Effect",
+  "brEffect_": "Break Effect",
   "eff_": "Effect Hit Rate",
   "eff_res_": "Effect RES",
   "enerRegen_": "Energy Regeneration Rate",
@@ -19,5 +20,8 @@
   "wind_dmg_": "Wind DMG Boost",
   "lightning_dmg_": "Lightning DMG Boost",
   "quantum_dmg_": "Quantum DMG Boost",
-  "imaginary_dmg_": "Imaginary DMG Boost"
+  "imaginary_dmg_": "Imaginary DMG Boost",
+  "dmg_": "DMG Boost",
+  "weakness_": "Weakness Break Efficiency",
+  "resPen_": "RES PEN"
 }

@@ -5,61 +5,78 @@
       "0": {
         "name": "두개골을 부수는 발굽",
         "fullDesc": "지정된 단일 적에게 부트힐 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 물리 속성 피해를 가한다",
-        "shortDesc": "단일 적에게 소량의 물리 속성 피해를 가한다"
+        "shortDesc": "단일 적에게 소량의 물리 속성 피해를 가한다",
+        "tag": "단일 공격"
       },
       "1": {
         "name": "리볼버 패닝",
-        "fullDesc": "지정된 단일 적에게 부트힐 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 물리 속성 피해를 가한다.\\n강화된 일반 공격은 전투 스킬 포인트를 회복할 수 없으며, [목숨 건 대치] 상태의 적만을 목표로 삼을 수 있다",
-        "shortDesc": "단일 적에게 물리 속성 피해를 가하고, [목숨 건 대치]의 목표만 공격할 수 있다"
+        "fullDesc": "지정된 단일 적에게 부트힐 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 물리 속성 피해를 가한다.<br>강화된 일반 공격은 전투 스킬 포인트를 회복할 수 없으며, [목숨 건 대치] 상태의 적만을 목표로 삼을 수 있다",
+        "shortDesc": "단일 적에게 물리 속성 피해를 가하고, [목숨 건 대치]의 목표만 공격할 수 있다",
+        "tag": "단일 공격"
       }
     },
     "skill": {
       "0": {
         "name": "뜨거운 자갈 위 탱고",
-        "fullDesc": "지정된 단일 적과 자신이 [목숨 건 대치] 상태에 진입한다. 부트힐의 일반 공격이 강화되고 전투 스킬을 발동할 수 없다, 지속 시간: {{3}}턴. 부트힐의 턴이 시작될 때마다 지속 턴 수가 1 감소한다.\\n[목숨 건 대치] 상태의 적은 도발 상태에 빠진다. 해당 목표/부트힐이 상대의 공격을 받을 시 받는 피해가 <orangeStrong>{{1, percent}}%</orangeStrong>/{{2, percent}}% 증가한다.\\n해당 목표가 처치되거나 약점이 격파된 후, 부트힐은 [포켓 어드벤티지]를 1스택 획득하고, [목숨 건 대치]가 해제된다.\\n해당 전투 스킬은 에너지를 회복할 수 없다. 해당 전투 스킬 발동 후, 이번 턴은 종료되지 않는다",
-        "shortDesc": "<orangeStrong>[목숨 건 대치]</orangeStrong>를 활성화한다. [목숨 건 대치]의 목표가 <orangeStrong>처치되거나 약점이 격파</orangeStrong>되면, 부트힐은 [포켓 어드벤티지]를 획득하고 [목숨 건 대치]를 해제한다. 자신의 <orangeStrong>일반 공격이 강화</orangeStrong>되며, 이번 턴은 종료되지 않는다"
+        "fullDesc": "지정된 단일 적과 자신이 [목숨 건 대치] 상태에 진입한다. 부트힐의 일반 공격이 강화되고 전투 스킬을 발동할 수 없다, 지속 시간: {{3}}턴. 부트힐의 턴이 시작될 때마다 지속 턴 수가 1 감소한다.<br>[목숨 건 대치] 상태의 적은 도발 상태에 빠진다. 해당 목표/부트힐이 상대의 공격을 받을 시 받는 피해가 <orangeStrong>{{1, percent}}%</orangeStrong>/{{2, percent}}% 증가한다.<br>해당 목표가 처치되거나 약점이 격파된 후, 부트힐은 [포켓 어드벤티지]를 1스택 획득하고, [목숨 건 대치]가 해제된다.<br>해당 전투 스킬은 에너지를 회복할 수 없다. 해당 전투 스킬 발동 후, 이번 턴은 종료되지 않는다",
+        "shortDesc": "<orangeStrong>[목숨 건 대치]</orangeStrong>를 활성화한다. [목숨 건 대치]의 목표가 <orangeStrong>처치되거나 약점이 격파</orangeStrong>되면, 부트힐은 [포켓 어드벤티지]를 획득하고 [목숨 건 대치]를 해제한다. 자신의 <orangeStrong>일반 공격이 강화</orangeStrong>되며, 이번 턴은 종료되지 않는다",
+        "tag": "방해"
       }
     },
     "ult": {
       "0": {
         "name": "더스트 데빌의 선셋 로데오",
-        "fullDesc": "지정된 단일 적에게 물리 약점을 부여한다, 지속 시간: {{3}}턴\\n해당 목표에게 부트힐 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 물리 속성 피해를 가하고, <u>행동 게이지를 <orangeStrong>{{2, percent}}%</orangeStrong> 감소</u>시킨다",
-        "shortDesc": "단일 적에게 <orangeStrong>물리 약점을 부여</orangeStrong>하며 대량의 물리 속성 피해를 가하고, 목표의 행동 게이지를 감소시킨다"
+        "fullDesc": "지정된 단일 적에게 물리 약점을 부여한다, 지속 시간: {{3}}턴<br>해당 목표에게 부트힐 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 물리 속성 피해를 가하고, 행동 게이지를 <orangeStrong>{{2, percent}}%</orangeStrong> 감소시킨다",
+        "shortDesc": "단일 적에게 <orangeStrong>물리 약점을 부여</orangeStrong>하며 대량의 물리 속성 피해를 가하고, 목표의 행동 게이지를 감소시킨다",
+        "tag": "단일 공격"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "실린더 속 다섯 발",
+        "fullDesc": "[포켓 어드벤티지] 1스택마다 강화된 일반 공격의 강인성 감소 수치가 {{4, percent}}% 증가한다. 최대 중첩수: {{5}}스택<br>강화된 일반 공격 발동 중에 목표가 약점 격파 상태일 경우, [포켓 어드벤티지] 스택 수에 따라 목표에게 부트힐 물리 속성 격파 피해의 <orangeStrong>{{1, percent}}%</orangeStrong>/<orangeStrong>{{2, percent}}%</orangeStrong>/<orangeStrong>{{3, percent}}%</orangeStrong>만큼 격파 피해를 가한다. 해당 피해에 계산되는 강인성 최대치는 일반 공격 [두개골을 부수는 발굽]의 기초 강인성 감소 수치의 {{6}}배를 넘을 수 없다.<br>전투 승리 후, 부트힐은 [포켓 어드벤티지]를 다음 전투까지 보류할 수 있다",
+        "shortDesc": "[포켓 어드벤티지]는 강화된 일반 공격의 강인성 감소 수치를 증가시키고, <orangeStrong>격파된 적</orangeStrong>에게 추가로 물리 속성 <orangeStrong>격파 피해</orangeStrong>를 가한다. 전투 승리 후, [포켓 어드벤티지]는 다음 전투까지 유지된다",
+        "tag": "강화"
       }
     },
     "technique": {
       "0": {
         "name": "3-9x의 미소",
         "fullDesc": "비술 사용 후 다음번 전투에서 처음 전투 스킬을 발동할 시, 목표에게 필살기와 동일한 물리 약점을 부여한다. 지속 시간: {{1}}턴",
-        "shortDesc": "비술 사용 후 다음 전투 진입 시 처음으로 발동하는 전투 스킬은 단일 적에게 <orangeStrong>물리 약점을 부여</orangeStrong>한다"
+        "shortDesc": "비술 사용 후 다음 전투 진입 시 처음으로 발동하는 전투 스킬은 단일 적에게 <orangeStrong>물리 약점을 부여</orangeStrong>한다",
+        "tag": "강화"
       }
     },
     "overworld": {
       "0": {
         "name": "공격",
         "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "고스트 로딩",
         "fullDesc": "자신의 치명타 확률/치명타 피해가 증가한다. 증가 수치는 격파 특수효과의 {{1, percent}}%/{{3, percent}}%이며, 치명타 확률/치명타 피해는 최대 {{2, percent}}%/{{4, percent}}% 증가한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "어보브 스네이크",
         "fullDesc": "부트힐이 [목숨 건 대치] 상태일 시 [목숨 건 대치] 상태가 아닌 목표에게 받는 피해가 {{1, percent}}% 감소한다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "포인트 블랭크",
         "fullDesc": "[목숨 건 대치] 상태에서 [포켓 어드벤티지] 획득 시, 에너지를 {{1}}pt 회복한다. 해당 효과는 [포켓 어드벤티지]를 초과해 획득할 때도 발동된다",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

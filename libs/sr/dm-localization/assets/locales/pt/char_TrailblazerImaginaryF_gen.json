@@ -5,56 +5,72 @@
       "0": {
         "name": "Etiqueta da Dança de Swing",
         "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo.",
-        "shortDesc": "Causa Dano Imaginário leve a um único inimigo."
+        "shortDesc": "Causa Dano Imaginário leve a um único inimigo.",
+        "tag": "Alvo Único"
       }
     },
     "skill": {
       "0": {
         "name": "Temporal no Intervalo",
         "fullDesc": "Causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um único inimigo e causa Dano mais 4 vezes, causando Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} a um inimigo aleatório cada vez.",
-        "shortDesc": "Causa Dano Imaginário leve a inimigos-alvo únicos e é Rebatido 5 vezes."
+        "shortDesc": "Causa Dano Imaginário leve a inimigos-alvo únicos e é Rebatido 5 vezes.",
+        "tag": "Rebote"
       }
     },
     "ult": {
       "0": {
         "name": "Desfile Clamoroso das Luzes",
-        "fullDesc": "Concede a todos os aliados o efeito de Dançarino de Apoio, com duração de {{1}} rodada(s). A duração diminui em 1 a cada início de rodada {M#do Desbravador}{F#da Desbravadora}. Aliados com o efeito Dançarino de Apoio têm seu Efeito de Quebra aumentado em <orangeStrong>{{3, percent}}%</orangeStrong>. Quando atacam alvos que estão no estado de <u>Quebra de Fraqueza</u>, a Redução de Tenacidade desse ataque será convertida em uma instância de <u>Super Dano de Quebra</u>.",
-        "shortDesc": "Concede a todos os aliados o efeito de Dançarino de Apoio. Aliados com Dançarino de Apoio têm seus <orangeStrong>Efeitos de Quebra</orangeStrong> aumentados e causam adicionalmente <orangeStrong><u>Super Dano de Quebra</u></orangeStrong> 1 vez quando atacam inimigos-alvo que estão com <u>Quebra de Fraqueza</u>."
+        "fullDesc": "Concede a todos os aliados o efeito de Dançarino de Apoio, com duração de {{1}} rodada(s). A duração diminui em 1 a cada início de rodada {M#do Desbravador}{F#da Desbravadora}. Aliados com o efeito Dançarino de Apoio têm seu Efeito de Quebra aumentado em <orangeStrong>{{3, percent}}%</orangeStrong>. Quando atacam alvos que estão no estado de Quebra de Fraqueza, a Redução de Tenacidade desse ataque será convertida em uma instância de Super Dano de Quebra.",
+        "shortDesc": "Concede a todos os aliados o efeito de Dançarino de Apoio. Aliados com Dançarino de Apoio têm seus <orangeStrong>Efeitos de Quebra</orangeStrong> aumentados e causam adicionalmente <orangeStrong>Super Dano de Quebra</orangeStrong> 1 vez quando atacam inimigos-alvo que estão com Quebra de Fraqueza.",
+        "tag": "Suporte"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Dança Aérea Absoluta",
+        "fullDesc": "{F#A Desbravadora}{M#O Desbravador} regenera imediatamente <orangeStrong>{{1, fixed(fixed: 1)}}</orangeStrong> de Energia sempre que um inimigo-alvo tem sua Fraqueza Quebrada.",
+        "shortDesc": "{F#A Desbravadora}{M#O Desbravador} regenera Energia quando um inimigo-alvo tem sua Fraqueza Quebrada.",
+        "tag": "Suporte"
       }
     },
     "technique": {
       "0": {
         "name": "Agora! Eu sou a Banda!",
         "fullDesc": "Após o uso da Técnica, no início da próxima batalha, o Efeito de Quebra de todos os aliados aumenta em {{1, percent}}%, durando por {{2}} rodada(s).",
-        "shortDesc": "No início da próxima batalha, aumenta o Efeito de Quebra de todos os aliados."
+        "shortDesc": "No início da próxima batalha, aumenta o Efeito de Quebra de todos os aliados.",
+        "tag": "Suporte"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca um inimigo, e quando a batalha começa, reduz a Tenacidade dele do Tipo correspondente.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Dance Para Mim",
         "fullDesc": "Quando o número de inimigos-alvo em campo for 5 (ou mais)/4/3/2/1, o Super Dano de Quebra acionado pelo efeito de Dançarino de Apoio aumenta em {{1, percent}}%/{{2, percent}}%/{{3, percent}}%/{{4, percent}}%/{{5, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Siga o Fluxo",
         "fullDesc": "Ao usar a Perícia, aumenta a Redução de Tenacidade adicionalmente da primeira instância de Dano em {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Chapéu do Teatro",
         "fullDesc": "Atrasa adicionalmente a ação do inimigo-alvo em {{1, percent}}% quando aliados causam Quebra de Fraqueza.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },
@@ -69,7 +85,7 @@
     },
     "3": {
       "name": "Sanatório do Descanso",
-      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.\\nNv. do Talento +2, até no máximo Nv. 15."
+      "desc": "Nv. da Perícia +2, até no máximo Nv. 15.<br>Nv. do Talento +2, até no máximo Nv. 15."
     },
     "4": {
       "name": "Pomba na Cartola",
@@ -77,7 +93,7 @@
     },
     "5": {
       "name": "Os Poemas Favorecem os Ritmos do Passado",
-      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.\\nNv. do ATQ Básico +1, até no máximo Nv. 10."
+      "desc": "Nv. da Perícia Suprema +2, até no máximo Nv. 15.<br>Nv. do ATQ Básico +1, até no máximo Nv. 10."
     },
     "6": {
       "name": "Amanhã, Descanse no Holofote",

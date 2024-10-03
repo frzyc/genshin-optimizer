@@ -42,7 +42,13 @@ const cols = {
   md: 2,
   lg: 3,
 }
-export default function StatModal({ open, onClose }) {
+export default function StatModal({
+  open,
+  onClose,
+}: {
+  open: boolean
+  onClose: () => void
+}) {
   const { t } = useTranslation('page_character')
   return (
     <ModalWrapper open={open} onClose={onClose}>
@@ -176,6 +182,7 @@ function StatDisplayContent({
 }
 
 function MainStatsCards() {
+  const { t } = useTranslation('page_character')
   const {
     character: { key: characterKey },
   } = useContext(CharacterContext)
@@ -208,7 +215,7 @@ function MainStatsCards() {
       <CardContent>
         <Grid container columns={cols} spacing={1}>
           <Grid item xs={1}>
-            <StatDisplayCard title="Main Stats">
+            <StatDisplayCard title={t`addStats.main`}>
               <StatDisplayContent
                 nodes={mainReadNodes}
                 extra={
@@ -217,7 +224,9 @@ function MainStatsCards() {
                       sx={{ display: 'flex', justifyContent: 'space-between' }}
                     >
                       <span>
-                        <b>Special:</b>{' '}
+                        <Trans t={t} i18nKey={'addStats.special'}>
+                          <b>Special:</b>{' '}
+                        </Trans>
                         <ColorText
                           color={
                             variant && variant === 'invalid'
@@ -236,13 +245,13 @@ function MainStatsCards() {
             </StatDisplayCard>
           </Grid>
           <Grid item xs={1}>
-            <StatDisplayCard title="Other Stats">
+            <StatDisplayCard title={t`addStats.other`}>
               <StatDisplayContent nodes={otherStatReadNodes} />
             </StatDisplayCard>
           </Grid>
           {!!miscStatReadNodes.length && (
             <Grid item xs={1}>
-              <StatDisplayCard title="Misc Stats">
+              <StatDisplayCard title={t`addStats.misc`}>
                 <StatDisplayContent nodes={miscStatReadNodes} />
               </StatDisplayCard>
             </Grid>

@@ -31,5 +31,8 @@
     "blast": "Khuếch Tán",
     "support": "Hỗ Trợ",
     "impair": "Quấy Nhiễu"
-  }
+  },
+  "eidolonLvl": "Cấp Tinh Hồn:{SPACE}",
+  "lvl": "Lv.",
+  "superimpose": "Tích Tầng"
 }

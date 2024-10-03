@@ -5,56 +5,72 @@
       "0": {
         "name": "{RUBY_B#ごっかん}極寒{RUBY_E#}の{RUBY_B#ゆみや}弓矢{RUBY_E#}",
         "fullDesc": "指定した敵単体に三月なのかの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
-        "shortDesc": "敵単体に少量の氷属性ダメージを与える。"
+        "shortDesc": "敵単体に少量の氷属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "skill": {
       "0": {
         "name": "{RUBY_B#かわい}可愛{RUBY_E#}いは{RUBY_B#せいぎ}正義{RUBY_E#}",
-        "fullDesc": "指定した味方単体に三月なのかの防御力<orangeStrong>{{1, percent}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>の耐久値を持つバリアを与える、{{2}}ターン継続。\\nその味方の残りHPが{{3, percent}}%以上の場合、敵に攻撃される確率が大アップする。",
-        "shortDesc": "味方単体に<orangeStrong>バリアを付与</orangeStrong>。"
+        "fullDesc": "指定した味方単体に三月なのかの防御力<orangeStrong>{{1, percent}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>の耐久値を持つバリアを与える、{{2}}ターン継続。<br>その味方の残りHPが{{3, percent}}%以上の場合、敵に攻撃される確率が大アップする。",
+        "shortDesc": "味方単体に<orangeStrong>バリアを付与</orangeStrong>。",
+        "tag": "防御"
       }
     },
     "ult": {
       "0": {
         "name": "{RUBY_B#ひょうこく}氷刻{RUBY_E#}{RUBY_B#やう}矢雨{RUBY_E#}の{RUBY_B#とき}時{RUBY_E#}",
-        "fullDesc": "敵全体に三月なのかの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与える。攻撃を受けた敵は{{2, percent}}%の<u>基礎確率</u>で凍結状態になる、{{3}}ターン継続。\\n凍結状態の敵は行動できなくなり、ターンが回ってくるたびに三月なのかの攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の氷属性<u>付加ダメージ</u>を受ける。",
-        "shortDesc": "敵<orangeStrong>全体</orangeStrong>に氷属性ダメージを与え、<orangeStrong>確率で凍結状態にする</orangeStrong>。"
+        "fullDesc": "敵全体に三月なのかの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与える。攻撃を受けた敵は{{2, percent}}%の基礎確率で凍結状態になる、{{3}}ターン継続。<br>凍結状態の敵は行動できなくなり、ターンが回ってくるたびに三月なのかの攻撃力<orangeStrong>{{4, percent}}%</orangeStrong>分の氷属性付加ダメージを受ける。",
+        "shortDesc": "敵<orangeStrong>全体</orangeStrong>に氷属性ダメージを与え、<orangeStrong>確率で凍結状態にする</orangeStrong>。",
+        "tag": "全体攻撃"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "{RUBY_B#しょうじょ}少女{RUBY_E#}の{RUBY_B#とっけん}特権{RUBY_E#}",
+        "fullDesc": "バリアを持つ味方が敵に攻撃された後、三月なのかは攻撃者にカウンターを発動し、三月なのかの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の氷属性ダメージを与える。この効果はターンが回ってくるたびに{{2}}回発動できる。",
+        "shortDesc": "バリアを持つ味方が敵に攻撃された後、三月なのかは<orangeStrong>即座に攻撃者にカウンター</orangeStrong>を発動し、少量の氷属性ダメージを与える。",
+        "tag": "単体攻撃"
       }
     },
     "technique": {
       "0": {
         "name": "{RUBY_B#こお}凍{RUBY_E#}る{RUBY_B#しゅんかん}瞬間{RUBY_E#}",
-        "fullDesc": "敵を攻撃。戦闘に入った後、{{1, percent}}%の<u>基礎確率</u>でランダムな敵単体を凍結状態にする、{{2}}ターン継続。\\n凍結状態の敵は行動できなくなり、ターンが回ってくるたびに三月なのかの攻撃力{{3, percent}}%分の氷属性<u>付加ダメージ</u>を受ける。",
-        "shortDesc": "敵を攻撃。戦闘に入った後、高確率でランダムな敵単体を凍結状態にする。"
+        "fullDesc": "敵を攻撃。戦闘に入った後、{{1, percent}}%の基礎確率でランダムな敵単体を凍結状態にする、{{2}}ターン継続。<br>凍結状態の敵は行動できなくなり、ターンが回ってくるたびに三月なのかの攻撃力{{3, percent}}%分の氷属性付加ダメージを受ける。",
+        "shortDesc": "敵を攻撃。戦闘に入った後、高確率でランダムな敵単体を凍結状態にする。",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻撃",
         "fullDesc": "敵を攻撃。戦闘に入った後、敵の対応する属性の靭性を削る。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "{RUBY_B#じゅんけつ}純潔{RUBY_E#}",
         "fullDesc": "戦闘スキルを発動した時、指定した味方単体のデバフを1つ解除する。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "{RUBY_B#かご}加護{RUBY_E#}",
         "fullDesc": "戦闘スキルで付与したバリアの継続時間+{{1}}ターン。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "{RUBY_B#ひょうじゅ}氷呪{RUBY_E#}",
         "fullDesc": "必殺技を発動した時、敵を凍結状態にする基礎確率+{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

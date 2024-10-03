@@ -31,5 +31,8 @@
     "blast": "Ausdehnung",
     "support": "Unterstützung",
     "impair": "Beeinträchtigung"
-  }
+  },
+  "eidolonLvl": "Eidolon-Stufe:",
+  "lvl": "St.{SPACE}",
+  "superimpose": "Bündeln"
 }

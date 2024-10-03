@@ -1,5 +1,6 @@
 {
   "spd": "VEL",
+  "spd_": "VEL",
   "hp": "PV",
   "hp_": "PV",
   "atk": "ATQ",
@@ -8,7 +9,7 @@
   "def_": "DEF",
   "crit_": "Chance de CRIT",
   "crit_dmg_": "Dano CRIT",
-  "brEff_": "Efeito de Quebra",
+  "brEffect_": "Efeito de Quebra",
   "eff_": "Taxa de Acerto de Efeito",
   "eff_res_": "RES a Efeito",
   "enerRegen_": "Taxa de Regeneração de Energia",
@@ -19,5 +20,8 @@
   "wind_dmg_": "Bônus de Dano de Vento",
   "lightning_dmg_": "Bônus de Dano de Raio",
   "quantum_dmg_": "Bônus de Dano Quântico",
-  "imaginary_dmg_": "Bônus de Dano Imaginário"
+  "imaginary_dmg_": "Bônus de Dano Imaginário",
+  "dmg_": "Bônus de Dano",
+  "weakness_": "Eficiência de Quebra de Fraqueza",
+  "resPen_": "PEN de RES"
 }

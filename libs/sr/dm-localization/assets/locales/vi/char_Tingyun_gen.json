@@ -5,56 +5,72 @@
       "0": {
         "name": "Tiễn Khách",
         "fullDesc": "Gây Sát Thương Lôi cho 1 kẻ địch chỉ định tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Tingyun.",
-        "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho 1 kẻ địch."
+        "shortDesc": "Gây lượng nhỏ Sát Thương Lôi cho 1 kẻ địch.",
+        "tag": "Đánh Đơn"
       }
     },
     "skill": {
       "0": {
         "name": "Âm Điệu Nhịp Nhàng",
-        "fullDesc": "Cung cấp \"Ban Phúc\" cho 1 đồng đội, khiến đồng đội đó tăng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công, tối đa không vượt quá <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công hiện tại của Tingyun.\\nSau khi mục tiêu được \"Ban Phúc\" thực hiện tấn công sẽ gây thêm 1 lần <u>Sát Thương Lôi kèm theo</u> bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của bản thân mục tiêu đó.\\n\"Ban Phúc\" duy trì {{3}} hiệp và chỉ có hiệu lực với mục tiêu thi triển Chiến Kỹ mới nhất của Tingyun.",
-        "shortDesc": "<orangeStrong>Tăng tấn công</orangeStrong> của 1 đồng đội và nhận Ban Phúc. Khi tấn công trong trạng thái Ban Phúc sẽ gây thêm lượng nhỏ <orangeStrong>Sát Thương Lôi <u>Kèm Theo</u></orangeStrong>."
+        "fullDesc": "Cung cấp \"Ban Phúc\" cho 1 đồng đội, khiến đồng đội đó tăng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công, tối đa không vượt quá <orangeStrong>{{4, percent}}%</orangeStrong> Tấn Công hiện tại của Tingyun.<br>Sau khi mục tiêu được \"Ban Phúc\" thực hiện tấn công sẽ gây thêm 1 lần Sát Thương Lôi kèm theo bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của bản thân mục tiêu đó.<br>\"Ban Phúc\" duy trì {{3}} hiệp và chỉ có hiệu lực với mục tiêu thi triển Chiến Kỹ mới nhất của Tingyun.",
+        "shortDesc": "<orangeStrong>Tăng tấn công</orangeStrong> của 1 đồng đội và nhận Ban Phúc. Khi tấn công trong trạng thái Ban Phúc sẽ gây thêm lượng nhỏ <orangeStrong>Sát Thương Lôi Kèm Theo</orangeStrong>.",
+        "tag": "Hỗ Trợ"
       }
     },
     "ult": {
       "0": {
         "name": "Nghi Lễ Áng Mây Lành",
         "fullDesc": "Hồi phục {{1}} Năng Lượng cho 1 đồng đội, đồng thời khiến sát thương mà mục tiêu gây ra tăng <orangeStrong>{{3, percent}}%</orangeStrong>, duy trì {{2}} hiệp.",
-        "shortDesc": "<orangeStrong>Hồi năng lượng</orangeStrong> cho 1 đồng đội và <orangeStrong>tăng sát thương đồng đội đó gây ra</orangeStrong>."
+        "shortDesc": "<orangeStrong>Hồi năng lượng</orangeStrong> cho 1 đồng đội và <orangeStrong>tăng sát thương đồng đội đó gây ra</orangeStrong>.",
+        "tag": "Hỗ Trợ"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Cơn Lốc Điện Tím",
+        "fullDesc": "Sau khi kẻ địch bị Tingyun tấn công, mục tiêu nhận \"Ban Phúc\" sẽ lập tức gây cho kẻ địch đó Sát Thương Lôi kèm theo tương đương <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của bản thân.",
+        "shortDesc": "Sau khi kẻ địch bị Tingyun tấn công, thì đồng đội nhận Ban Phúc sẽ gây lượng nhỏ Sát Thương Lôi Kèm Theo lên kẻ địch đó.",
+        "tag": "Cường Hóa"
       }
     },
     "technique": {
       "0": {
         "name": "Làn Gió Êm Dịu",
         "fullDesc": "Sau khi dùng Bí Kỹ bản thân hồi phục ngay {{1}} Năng Lượng.",
-        "shortDesc": "Sau khi dùng Bí Kỹ sẽ hồi năng lượng cho bản thân."
+        "shortDesc": "Sau khi dùng Bí Kỹ sẽ hồi năng lượng cho bản thân.",
+        "tag": "Hỗ Trợ"
       }
     },
     "overworld": {
       "0": {
         "name": "Tấn Công",
         "fullDesc": "Tấn công kẻ địch, sau khi vào chiến đấu sẽ làm giảm Sức Bền mang thuộc tính tương ứng của địch.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Khoảng Trời Lưu Lại",
         "fullDesc": "Khi thi triển Chiến Kỹ, Tốc Độ của Tingyun tăng {{1, percent}}%, duy trì 1 hiệp.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Ngăn Chặn Tai Ương",
         "fullDesc": "Sát thương Tấn Công Thường gây ra tăng {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Hanh Thông",
         "fullDesc": "Khi hiệp của Tingyun bắt đầu, bản thân hồi phục ngay {{1}} điểm Năng Lượng.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

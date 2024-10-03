@@ -5,56 +5,72 @@
       "0": {
         "name": "光谱射线",
         "fullDesc": "对指定敌方单体造成等同于艾丝妲<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的火属性伤害。",
-        "shortDesc": "对敌方单体造成少量火属性伤害。"
+        "shortDesc": "对敌方单体造成少量火属性伤害。",
+        "tag": "单攻"
       }
     },
     "skill": {
       "0": {
         "name": "流星群落",
         "fullDesc": "对指定敌方单体造成等同于艾丝妲<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的火属性伤害，并额外造成4次伤害。每次伤害对随机敌方单体造成等同于艾丝妲<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的火属性伤害。",
-        "shortDesc": "对敌方单体造成少量火属性伤害，共弹射5次。"
+        "shortDesc": "对敌方单体造成少量火属性伤害，共弹射5次。",
+        "tag": "弹射"
       }
     },
     "ult": {
       "0": {
         "name": "星空祝言",
         "fullDesc": "使我方全体速度提高<orangeStrong>{{1}}</orangeStrong>点，持续{{2}}回合。",
-        "shortDesc": "使我方全体<orangeStrong>速度提高</orangeStrong>。"
+        "shortDesc": "使我方全体<orangeStrong>速度提高</orangeStrong>。",
+        "tag": "辅助"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "天象学",
+        "fullDesc": "每击中1名不同的敌方目标获得1层蓄能，若受到攻击的敌方目标弱点为火属性，则额外获得1层蓄能。<br>艾丝妲每拥有1层蓄能，会使我方全体攻击力提高<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>，该效果最多叠加{{2}}层。<br>从自身的第2回合开始，艾丝妲每回合开始时蓄能层数减少{{3}}层。",
+        "shortDesc": "每击中1名不同敌人后获得1层蓄能，最多叠加5层。每层蓄能提高我方全体攻击力。自身回合开始时降低蓄能层数。",
+        "tag": "辅助"
       }
     },
     "technique": {
       "0": {
         "name": "灵光一现",
         "fullDesc": "立即攻击敌人，进入战斗后对敌方全体目标造成等同于艾丝妲{{1, percent}}%攻击力的火属性伤害。",
-        "shortDesc": "攻击敌人，进战后对敌方全体造成少量伤害。"
+        "shortDesc": "攻击敌人，进战后对敌方全体造成少量伤害。",
+        "tag": ""
       }
     },
     "overworld": {
       "0": {
         "name": "攻击",
         "fullDesc": "攻击敌人，进入战斗后削弱敌方目标对应属性韧性。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "火花",
-        "fullDesc": "施放普攻时，有{{1, percent}}%的基础概率使敌方目标陷入灼烧状态，持续{{2}}回合。\\n灼烧状态下，敌方目标每回合开始时受到等同于艾丝妲普攻{{3, percent}}%的火属性持续伤害。",
-        "shortDesc": ""
+        "fullDesc": "施放普攻时，有{{1, percent}}%的基础概率使敌方目标陷入灼烧状态，持续{{2}}回合。<br>灼烧状态下，敌方目标每回合开始时受到等同于艾丝妲普攻{{3, percent}}%的火属性持续伤害。",
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "点燃",
         "fullDesc": "艾丝妲在场时，我方全体的火属性伤害提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "星座",
         "fullDesc": "艾丝妲每拥有1层蓄能，自身防御力提高{{1, percent}}%。",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

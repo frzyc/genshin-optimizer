@@ -5,56 +5,72 @@
       "0": {
         "name": "Aguja de orquídea",
         "fullDesc": "Inflige un <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Ruan Mei como Daño de Hielo a un enemigo.",
-        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo."
+        "shortDesc": "Inflige una pequeña cantidad de Daño de Hielo a un enemigo.",
+        "tag": "ATQ individual"
       }
     },
     "skill": {
       "0": {
         "name": "Las cuerdas cantan con giros suaves",
         "fullDesc": "Tras usar su habilidad básica, Ruan Mei obtiene Sobretono durante {{3}} turnos. Esta duración se reduce en 1 al comienzo del turno de Ruan Mei. Cuando Ruan Mei tiene Sobretono, el daño de todos los aliados aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> y la eficiencia de la Ruptura de Debilidad aumenta en un {{2, percent}}%.",
-        "shortDesc": "Ruan Mei obtiene Sobretono tras usar su habilidad básica. Cuando Ruan Mei tiene Sobretono, aumenta el <orangeStrong>daño</orangeStrong> y la <orangeStrong>eficiencia de la Ruptura de Debilidad</orangeStrong> de todos los aliados."
+        "shortDesc": "Ruan Mei obtiene Sobretono tras usar su habilidad básica. Cuando Ruan Mei tiene Sobretono, aumenta el <orangeStrong>daño</orangeStrong> y la <orangeStrong>eficiencia de la Ruptura de Debilidad</orangeStrong> de todos los aliados.",
+        "tag": "Apoyo"
       }
     },
     "ult": {
       "0": {
         "name": "Flor delicada sobre el agua",
-        "fullDesc": "Ruan Mei crea un campo que dura {{2}} turnos. Al comienzo de cada turno de Ruan Mei, los turnos del campo disminuyen en 1.\\nDentro del campo, la PEN de la RES a todos los tipos de todos los aliados aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> y los ataques aplican al enemigo golpeado Flores de ciruelo rotas.\\nFlores de ciruelo rotas se activará cuando el objetivo enemigo intente recuperarse del <u>estado de Ruptura de Debilidad</u>. Esto prolongará <u>dicho estado</u> y <u>retrasará su acción</u> en una cantidad equivalente al {{3, percent}}% del efecto de Ruptura de Ruan Mei + {{4, percent}}%. Además, inflige un <orangeStrong>{{5, percent}}%</orangeStrong> del Daño de Ruptura de Hielo de Ruan Mei como <u>Daño de Ruptura</u>.\\nEl objetivo enemigo no puede volver a ser afectado por Flores de ciruelo rotas hasta que no se recupere del <u>estado de Ruptura de Debilidad</u>.",
-        "shortDesc": "Aumenta la <orangeStrong>PEN de la RES a todos los tipos</orangeStrong> de todos los aliados y sus ataques infligen Flores de ciruelo rotas a los enemigos."
+        "fullDesc": "Ruan Mei crea un campo que dura {{2}} turnos. Al comienzo de cada turno de Ruan Mei, los turnos del campo disminuyen en 1.<br>Dentro del campo, la PEN de la RES a todos los tipos de todos los aliados aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> y los ataques aplican al enemigo golpeado Flores de ciruelo rotas.<br>Flores de ciruelo rotas se activará cuando el objetivo enemigo intente recuperarse del estado de Ruptura de Debilidad. Esto prolongará dicho estado y retrasará su acción en una cantidad equivalente al {{3, percent}}% del efecto de Ruptura de Ruan Mei + {{4, percent}}%. Además, inflige un <orangeStrong>{{5, percent}}%</orangeStrong> del Daño de Ruptura de Hielo de Ruan Mei como Daño de Ruptura.<br>El objetivo enemigo no puede volver a ser afectado por Flores de ciruelo rotas hasta que no se recupere del estado de Ruptura de Debilidad.",
+        "shortDesc": "Aumenta la <orangeStrong>PEN de la RES a todos los tipos</orangeStrong> de todos los aliados y sus ataques infligen Flores de ciruelo rotas a los enemigos.",
+        "tag": "Apoyo"
+      }
+    },
+    "talent": {
+      "0": {
+        "name": "Espiral somatotípica",
+        "fullDesc": "La VEL de todos los aliados (excepto Ruan Mei) aumenta en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Cuando los aliados rompen la Debilidad de un enemigo, Ruan Mei le inflige un <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> de su Daño de Ruptura de Hielo como Daño de Ruptura.",
+        "shortDesc": "Aumenta la <orangeStrong>VEL</orangeStrong> de todos los demás aliados. Al romper la Debilidad de un enemigo, le inflige <orangeStrong>adicionalmente Daño de Ruptura de Hielo</orangeStrong>.",
+        "tag": "Apoyo"
       }
     },
     "technique": {
       "0": {
         "name": "Serenata sedosa",
-        "fullDesc": "Tras usar la técnica, obtiene Serenata sedosa. Al comenzar la siguiente batalla, se activa automáticamente {{1}} vez la habilidad básica sin consumir pts. de habilidad básica.\\nEn el Universo Simulado o el Universo Diferenciado, cuando Ruan Mei tiene Serenata sedosa, si un aliado ataca de forma proactiva a un enemigo, se considerará como atacar su Debilidad para entrar en combate. Además, este ataque ignora el tipo de Debilidad y reduce la Firmeza de todos los enemigos. Al romper la Debilidad, se activa el efecto de Ruptura de Debilidad del tipo correspondiente del atacante. Por cada bendición que tengas (hasta un máximo de {{4}}), la reducción de Firmeza de este ataque aumenta en un {{2, percent}}% adicional. Tras romper la Debilidad del enemigo, Ruan Mei le inflige de forma adicional un Daño de Ruptura equivalente al {{3, percent}}% de su Daño de Ruptura de Hielo.",
-        "shortDesc": "En la siguiente batalla, activa automáticamente la habilidad básica <orangeStrong>{{1}}</orangeStrong> vez. Después de usar la técnica, se considera que los aliados que atacan a enemigos en el Universo Simulado o el Universo Diferenciado atacan su Debilidad para entrar en combate, y la Firmeza de los enemigos se reducirá <orangeStrong>independientemente de su tipo de Debilidad</orangeStrong>. Por cada bendición que tengas, la reducción de Firmeza aumenta y, al romper la Debilidad, inflige Daño de Ruptura adicional."
+        "fullDesc": "Tras usar la técnica, obtiene Serenata sedosa. Al comenzar la siguiente batalla, se activa automáticamente {{1}} vez la habilidad básica sin consumir pts. de habilidad básica.<br>En el Universo Simulado o el Universo Diferenciado, cuando Ruan Mei tiene Serenata sedosa, si un aliado ataca de forma proactiva a un enemigo, se considerará como atacar su Debilidad para entrar en combate. Además, este ataque ignora el tipo de Debilidad y reduce la Firmeza de todos los enemigos. Al romper la Debilidad, se activa el efecto de Ruptura de Debilidad del tipo correspondiente del atacante. Por cada bendición que tengas (hasta un máximo de {{4}}), la reducción de Firmeza de este ataque aumenta en un {{2, percent}}% adicional. Tras romper la Debilidad del enemigo, Ruan Mei le inflige de forma adicional un Daño de Ruptura equivalente al {{3, percent}}% de su Daño de Ruptura de Hielo.",
+        "shortDesc": "En la siguiente batalla, activa automáticamente la habilidad básica <orangeStrong>{{1}}</orangeStrong> vez. Después de usar la técnica, se considera que los aliados que atacan a enemigos en el Universo Simulado o el Universo Diferenciado atacan su Debilidad para entrar en combate, y la Firmeza de los enemigos se reducirá <orangeStrong>independientemente de su tipo de Debilidad</orangeStrong>. Por cada bendición que tengas, la reducción de Firmeza aumenta y, al romper la Debilidad, inflige Daño de Ruptura adicional.",
+        "tag": "Potenciación"
       }
     },
     "overworld": {
       "0": {
         "name": "Ataque",
         "fullDesc": "Ataca a un enemigo y, tras entrar en combate, consume la Firmeza del tipo correspondiente del enemigo.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility1": {
       "0": {
         "name": "Respiración inerte",
         "fullDesc": "El efecto de Ruptura de todos los aliados aumenta en un {{1, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility2": {
       "0": {
         "name": "Ensoñaciones del pasado",
         "fullDesc": "Ruan Mei recupera {{1}} pts. de energía al comienzo de su turno.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     },
     "bonusAbility3": {
       "0": {
         "name": "Velas sobre el agua",
         "fullDesc": "Durante la batalla, cuando el efecto de Ruptura de Ruan Mei es superior al {{1, percent}}%, por cada {{2, percent}}% de exceso, su habilidad básica aumenta el daño de todos los aliados en un {{3, percent}}% adicional, hasta un máximo del {{4, percent}}%.",
-        "shortDesc": ""
+        "shortDesc": "",
+        "tag": ""
       }
     }
   },

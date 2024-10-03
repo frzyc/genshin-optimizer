@@ -31,5 +31,8 @@
     "blast": "Propagation",
     "support": "Soutien",
     "impair": "Incapacitation"
-  }
+  },
+  "eidolonLvl": "Niveau d'Eidolon :",
+  "lvl": "Niv.{SPACE}",
+  "superimpose": "Superposition"
 }
