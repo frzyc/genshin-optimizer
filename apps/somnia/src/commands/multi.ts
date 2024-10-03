@@ -53,6 +53,7 @@ export async function autocomplete(interaction: AutocompleteInteraction) {
     reply = Object.keys(multilist)
       .filter((e) => e.toLowerCase().includes(text))
       .slice(0, 25)
+      .sort()
       .map((e) => {
         return { name: e, value: e }
       })
