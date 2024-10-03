@@ -43,7 +43,7 @@ async function getMultis(client: Client) {
 }
 
 export async function autocomplete(interaction: AutocompleteInteraction) {
-  getMultis(interaction.client)
+  await getMultis(interaction.client)
 
   const focus = interaction.options.getFocused(true)
   let reply: ApplicationCommandOptionChoiceData[] = []
