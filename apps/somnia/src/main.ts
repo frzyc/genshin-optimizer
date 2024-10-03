@@ -41,24 +41,24 @@ client.on(Events.MessageReactionAdd, (...args) =>
 )
 
 //collect commands
-import * as multi from './commands/multi'
 import * as archive from './commands/archive'
 import * as button from './commands/button'
 import * as debug from './commands/debug'
+import * as multi from './commands/multi'
 // TODO: Enable after i18n of databank
 // import * as databank from './commands/databank'
 export const Commands: Collection<string, any> = new Collection()
-Commands.set(multi.slashcommand.name, multi)
 Commands.set(archive.slashcommand.name, archive)
-// Commands.set(databank.slashcommand.name, databank)
 Commands.set(button.slashcommand.name, button)
+// Commands.set(databank.slashcommand.name, databank)
 Commands.set(debug.slashcommand.name, debug)
+Commands.set(multi.slashcommand.name, multi)
 const setcommands = [
-  multi.slashcommand.toJSON(),
   archive.slashcommand.toJSON(),
-  // databank.slashcommand.toJSON(),
   button.slashcommand.toJSON(),
+  // databank.slashcommand.toJSON(),
   debug.slashcommand.toJSON(),
+  multi.slashcommand.toJSON(),
 ]
 
 //register commands
