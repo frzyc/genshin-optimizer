@@ -162,7 +162,7 @@ const dmgFormulas = {
       6,
       customDmgNode(
         prod(percent(dm.constellation6.dmg), input.total.atk),
-        'elemental',
+        'skill',
         {
           hit: { ele: constant('dendro') },
           ...cannonAddl,
