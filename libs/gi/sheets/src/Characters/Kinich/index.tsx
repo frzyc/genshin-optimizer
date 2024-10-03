@@ -162,7 +162,7 @@ const dmgFormulas = {
       6,
       customDmgNode(
         prod(percent(dm.constellation6.dmg), input.total.atk),
-        'elemental',
+        'skill',
         {
           hit: { ele: constant('dendro') },
           ...cannonAddl,
@@ -207,7 +207,7 @@ const sheet: TalentSheet = {
         {
           node: infoMut(dmgFormulas.charged.dmg, {
             name: ct.chg(`auto.skillParams.4`),
-            multi: 3,
+            multi: 4,
           }),
         },
         {
