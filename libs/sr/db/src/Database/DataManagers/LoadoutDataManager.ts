@@ -2,6 +2,7 @@ import type { DataManagerCallback } from '@genshin-optimizer/common/database'
 import { deepClone } from '@genshin-optimizer/common/util'
 import type { CharacterKey, HitModeKey } from '@genshin-optimizer/sr/consts'
 import { allCharacterKeys, allHitModeKeys } from '@genshin-optimizer/sr/consts'
+import type { Tag } from '@genshin-optimizer/sr/formula'
 import type { ICachedLightCone, ICachedRelic } from '../../Interfaces'
 import type { IBuildTc } from '../../Interfaces/IBuildTc'
 import type { ConditionalValues } from '../../Types/conditional'
@@ -24,6 +25,7 @@ export interface Loadout {
 
   buildTcIds: string[]
   optConfigId: string
+  bonusStats: Array<{ tag: Tag; value: number }>
 }
 
 // Same as TeamCharDataManager in GO
@@ -70,6 +72,7 @@ export class LoadoutDataManager extends DataManager<
       buildIds,
       buildTcIds,
       optConfigId,
+      bonusStats,
     } = obj as Loadout
     if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
 
@@ -98,6 +101,13 @@ export class LoadoutDataManager extends DataManager<
     if (!optConfigId || !this.database.optConfigs.keys.includes(optConfigId))
       optConfigId = this.database.optConfigs.new()
 
+    if (!Array.isArray(bonusStats)) bonusStats = []
+    bonusStats.filter(({ tag, value }) => {
+      //TODO: tag validation
+      if (typeof tag !== 'object') return false
+      if (typeof value !== 'number') return false
+      return true
+    })
     return {
       key: characterKey,
       name,
@@ -108,6 +118,7 @@ export class LoadoutDataManager extends DataManager<
       buildIds,
       buildTcIds,
       optConfigId,
+      bonusStats,
     }
   }
 
