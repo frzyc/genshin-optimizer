@@ -19,6 +19,8 @@
   "info": "Info",
   "close": "Close",
   "delete": "Delete",
+  "clear": "Clear",
+  "randomize": "Randomize",
   "locked": "Locked",
   "unlocked": "Unlocked",
   "excluded": "Excluded",
