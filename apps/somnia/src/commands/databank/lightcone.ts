@@ -9,7 +9,7 @@ import {
   StringSelectMenuOptionBuilder,
 } from 'discord.js'
 import { rarityColors } from '../../assets/assets'
-import { createYattaUrl } from '../../lib/util'
+import { hsrURL } from '../../lib/util'
 import { clean } from '../archive'
 
 const superimpositions: Record<string, string> = {
@@ -71,7 +71,7 @@ export function lightconeBank(
         text: 'Light Cone Databank',
       })
       .setDescription(clean(text))
-      .setThumbnail(createYattaUrl('equipment/medium', thumbnail)),
+      .setThumbnail(hsrURL('equipment/medium', thumbnail)),
   ]
   return msg
 }

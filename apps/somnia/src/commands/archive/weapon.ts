@@ -14,7 +14,7 @@ import {
   StringSelectMenuOptionBuilder,
 } from 'discord.js'
 import { rarityColors } from '../../assets/assets'
-import { createAmbrUrl } from '../../lib/util'
+import { giURL } from '../../lib/util'
 import { clean, translate } from '../archive'
 import { getFixed } from '../go/calculator'
 
@@ -113,7 +113,7 @@ export async function weaponArchive(id: WeaponKey, lang: string, args: string) {
         text: 'Weapon Archive',
       })
       .setDescription(clean(text))
-      .setThumbnail(createAmbrUrl(AssetData.weapons[id].icon)),
+      .setThumbnail(giURL(AssetData.weapons[id].icon)),
   ]
   return msg
 }
