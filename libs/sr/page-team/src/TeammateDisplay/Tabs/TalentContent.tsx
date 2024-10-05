@@ -13,7 +13,6 @@ import { own } from '@genshin-optimizer/sr/formula'
 import {
   isTalentKey,
   uiSheets,
-  useSrCalcContext,
   type TalentSheetElementKey,
 } from '@genshin-optimizer/sr/formula-ui'
 import {
@@ -21,6 +20,7 @@ import {
   useCharacterContext,
   useDatabaseContext,
   useLoadoutContext,
+  useSrCalcContext,
 } from '@genshin-optimizer/sr/ui'
 import {
   Box,

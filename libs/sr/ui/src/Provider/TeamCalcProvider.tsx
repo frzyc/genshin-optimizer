@@ -1,3 +1,4 @@
+import { constant } from '@genshin-optimizer/pando/engine'
 import { CalcContext } from '@genshin-optimizer/pando/ui-sheet'
 import type {
   CharacterKey,
@@ -13,6 +14,7 @@ import type {
 import type {
   Member,
   SrcCondInfo,
+  Tag,
   TagMapNodeEntries,
 } from '@genshin-optimizer/sr/formula'
 import {
@@ -43,6 +45,7 @@ type CharacterFullData = {
   lightCone: ICachedLightCone | undefined
   relics: Record<RelicSlotKey, ICachedRelic | undefined>
   conditionals: SrcCondInfo | undefined // Assumes dst is the character
+  bonusStats: Array<{ tag: Tag; value: number }>
 }
 type MemberIndexMap = Partial<Record<CharacterKey | 'all', Member | 'all'>>
 
@@ -146,14 +149,20 @@ function useCharacterAndEquipment(
   )
 
   return useMemo(
-    () => ({ character, lightCone, relics, conditionals }),
-    [character, lightCone, conditionals, relics]
+    () => ({
+      character,
+      lightCone,
+      relics,
+      conditionals,
+      bonusStats: loadout?.bonusStats ?? [],
+    }),
+    [character, lightCone, relics, conditionals, loadout]
   )
 }
 
 function createMember(
   memberIndex: 0 | 1 | 2 | 3,
-  { character, lightCone, relics, conditionals }: CharacterFullData
+  { character, lightCone, relics, conditionals, bonusStats }: CharacterFullData
 ): TagMapNodeEntries {
   return !character
     ? []
@@ -180,5 +189,13 @@ function createMember(
           )
         ),
         ...conditionalData(`${memberIndex}`, conditionals),
+        ...bonusStats.map(({ tag, value }) => ({
+          tag: {
+            ...tag,
+            src: `${memberIndex}` as Member,
+            dst: `${memberIndex}` as Member,
+          },
+          value: constant(value),
+        })),
       ]
 }
