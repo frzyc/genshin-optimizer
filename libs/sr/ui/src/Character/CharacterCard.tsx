@@ -5,7 +5,6 @@ import {
   own,
   srCalculatorWithEntries,
 } from '@genshin-optimizer/sr/formula'
-import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
 import {
   CardActionArea,
   CardContent,
@@ -13,6 +12,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
+import { useSrCalcContext } from '../Hook'
 
 export function CharacterCard({
   character,
@@ -23,6 +23,7 @@ export function CharacterCard({
 }) {
   const calc =
     useSrCalcContext() ?? srCalculatorWithEntries(charData(character))
+  console.log(own.final.hp.tag)
   return (
     <Stack>
       <CardThemed>
