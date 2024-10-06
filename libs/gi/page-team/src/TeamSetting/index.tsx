@@ -7,7 +7,8 @@ import {
   AdResponsive,
   CharIconSide,
   CharacterName,
-  CharacterSelectionModal,
+  CharacterMultiSelectionModal,
+  CharacterSingleSelectionModal,
   EnemyExpandCard,
   TeamDelModal,
   TeamInfoAlert,
@@ -212,23 +213,22 @@ function TeamEditor({
   return (
     <>
       <Suspense fallback={false}>
-        <CharacterSelectionModal
+        <CharacterSingleSelectionModal
           show={!showMultiSelect && charSelectIndex !== undefined}
           onHide={() => setCharSelectIndex(undefined)}
-          loadoutData={loadoutData}
-          selectedIndex={charSelectIndex}
           onSelect={onSingleSelect}
+          selectedIndex={charSelectIndex}
+          loadoutData={loadoutData}
         />
       </Suspense>
       <Suspense fallback={false}>
-        <CharacterSelectionModal
+        <CharacterMultiSelectionModal
           show={showMultiSelect}
           onHide={() => {
             setShowMultiSelect(false)
           }}
+          onSelect={onMultiSelect}
           loadoutData={loadoutData}
-          multiSelect
-          onMultiSelect={onMultiSelect}
         />
       </Suspense>
       <Grid container columns={{ xs: 1, md: 2 }} spacing={2}>

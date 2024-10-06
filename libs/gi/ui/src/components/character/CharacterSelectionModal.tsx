@@ -18,7 +18,7 @@ import {
   sortFunction,
 } from '@genshin-optimizer/common/util'
 import { characterAsset } from '@genshin-optimizer/gi/assets'
-import type { CharacterKey } from '@genshin-optimizer/gi/consts'
+import type { CharacterKey, ElementKey, WeaponTypeKey } from '@genshin-optimizer/gi/consts'
 import {
   allCharacterKeys,
   allElementKeys,
@@ -30,7 +30,6 @@ import {
   useCharacter,
   useDBMeta,
   useDatabase,
-  useTeam,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import { ascensionMaxLevel } from '@genshin-optimizer/gi/util'
@@ -53,7 +52,7 @@ import {
   tooltipClasses,
 } from '@mui/material'
 import type { ChangeEvent } from 'react'
-import {
+import React, {
   useContext,
   useDeferredValue,
   useEffect,
@@ -73,33 +72,156 @@ import {
 } from './CharacterSort'
 import { CharacterName } from './Trans'
 
-type CharacterSelectionModalProps = {
-  show: boolean
-  newFirst?: boolean
-  onHide: () => void
-  loadoutData?: (LoadoutDatum | undefined)[]
-  multiSelect?: boolean
-  selectedIndex?: number
-  onSelect?: (ckey: CharacterKey) => void
-  onMultiSelect?: (cKeys: (CharacterKey | '')[]) => void
-}
-const sortKeys = Object.keys(characterSortMap)
-export function CharacterSelectionModal({
+export function CharacterSingleSelectionModal({
   show,
   onHide,
   onSelect,
-  onMultiSelect,
-  loadoutData = [undefined, undefined, undefined, undefined],
-  newFirst = false,
-  multiSelect = false,
   selectedIndex = -1,
-}: CharacterSelectionModalProps) {
-  const { t } = useTranslation([
-    'page_character',
-    // Always load these 2 so character names are loaded for searching/sorting
-    'sillyWisher_charNames',
-    'charNames_gen',
+  loadoutData = [undefined, undefined, undefined, undefined],
+  newFirst = false
+} : {
+  show: boolean
+  onHide: () => void
+  onSelect: (cKey: CharacterKey) => void
+  selectedIndex?: number
+  loadoutData?: (LoadoutDatum | undefined)[]
+  newFirst?: boolean
+}) {
+  const { silly } = useContext(SillyContext)
+  const database = useDatabase()
+  const state = useDataEntryBase(database.displayCharacter)
+
+  const teamCharKeys = loadoutData.map(
+    (loadoutDatum) =>
+      database.teamChars.get(loadoutDatum?.teamCharId)?.key ?? ''
+  )
+
+  const [dbDirty, forceUpdate] = useForceUpdate()
+
+  // character favorite updater
+  useEffect(
+    () => database.charMeta.followAny(() => forceUpdate()),
+    [forceUpdate, database]
+  )
+
+  const [searchTerm, setSearchTerm] = useState('')
+  const deferredSearchTerm = useDeferredValue(searchTerm)
+  const deferredState = useDeferredValue(state)
+  const deferredDbDirty = useDeferredValue(dbDirty)
+  const characterKeyList = useMemo(() => {
+    const { element, weaponType, sortType, ascending } = deferredState
+    const sortByKeys = [
+      ...(newFirst ? ['new'] : []),
+      ...(characterSortMap[sortType] ?? []),
+    ] as CharacterSortKey[]
+    const filteredKeys =
+      deferredDbDirty &&
+      allCharacterKeys
+        .filter((key) => teamCharKeys.indexOf(key) === -1)
+        .filter(
+          filterFunction(
+            { element, weaponType, name: deferredSearchTerm },
+            characterFilterConfigs(database, silly)
+          )
+        )
+        .sort(
+          sortFunction(
+            sortByKeys,
+            ascending,
+            characterSortConfigs(database, silly),
+            ['new', 'favorite']
+          )
+        )
+    return teamCharKeys.filter((key) => key !== '').concat(filteredKeys)
+  }, [
+    deferredState,
+    newFirst,
+    deferredDbDirty,
+    deferredSearchTerm,
+    database,
+    teamCharKeys,
+    silly,
   ])
+
+  const onChangeFilter = (type: ElementKey[] | WeaponTypeKey[]) => {
+    database.displayCharacter.set(type)
+  }
+
+  const onChangeSearch = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setSearchTerm(e.target.value)
+  }
+
+  const onChangeSort = (sortType: string) => {
+    database.displayCharacter.set(sortType)
+  }
+
+  const onChangeAsc = (asc: boolean) => {
+    database.displayCharacter.set(asc)
+  }
+
+  const onClose = () => {
+    setSearchTerm('')
+    onHide()
+  }
+
+  const filterSearchSortProps = {
+    searchTerm: searchTerm,
+    onChangeFilter: onChangeFilter,
+    onChangeSearch: onChangeSearch,
+    onChangeSort: onChangeSort,
+    onChangeAsc: onChangeAsc,
+  }
+
+  return (
+    <CharacterSelectionModalBase
+      show={show}
+      charactersToShow={characterKeyList}
+      filterSearchSortProps={filterSearchSortProps}
+      onClose={onClose}
+    >
+      <CardContent sx={{ flex: '1', overflow: 'auto' }}>
+        <Grid
+          container
+          spacing={1}
+          columns={{ xs: 2, sm: 3, md: 4, lg: 5 }}
+        >
+          {characterKeyList.map((characterKey) => (
+            <Grid item key={characterKey} xs={1}>
+              <SingleSelectCardWrapper
+                characterKey={characterKey}
+                selectedIndex={selectedIndex}
+                teamSlotIndex={teamCharKeys.indexOf(characterKey)}
+              >
+                <SelectionCard
+                  characterKey={characterKey}
+                  onClick={() => {
+                    setSearchTerm('')
+                    onHide()
+                    onSelect(characterKey)
+                  }}
+                />
+              </SingleSelectCardWrapper>
+            </Grid>
+          ))}
+        </Grid>
+      </CardContent>
+    </CharacterSelectionModalBase>
+  )
+}
+
+export function CharacterMultiSelectionModal({
+  show,
+  onHide,
+  onSelect,
+  loadoutData = [undefined, undefined, undefined, undefined],
+  newFirst = false
+} : {
+  show: boolean
+  onHide: () => void
+  onSelect: ((cKeys: (CharacterKey | '')[]) => void)
+  loadoutData: (LoadoutDatum | undefined)[]
+  newFirst?: boolean
+}) {
   const { silly } = useContext(SillyContext)
   const database = useDatabase()
   const state = useDataEntryBase(database.displayCharacter)
@@ -186,33 +308,6 @@ export function CharacterSelectionModal({
     silly,
   ])
 
-  const weaponTotals = useMemo(
-    () =>
-      catTotal(allWeaponTypeKeys, (ct) =>
-        allCharacterKeys.forEach((ck) => {
-          const wtk = getCharStat(ck).weaponType
-          ct[wtk].total++
-          if (characterKeyList.includes(ck)) ct[wtk].current++
-        })
-      ),
-    [characterKeyList]
-  )
-
-  const elementTotals = useMemo(
-    () =>
-      catTotal(allElementKeys, (ct) =>
-        allCharacterKeys.forEach((ck) => {
-          const ele = getCharEle(ck)
-          ct[ele].total++
-          if (characterKeyList.includes(ck)) ct[ele].current++
-        })
-      ),
-    [characterKeyList]
-  )
-
-  const { weaponType, element, sortType, ascending } = state
-
-  // multi-select only
   const onClick = (key: CharacterKey) => {
     const keySlotIndex = teamCharKeys.indexOf(key)
     const firstOpenIndex = teamCharKeys.indexOf('')
@@ -235,14 +330,135 @@ export function CharacterSelectionModal({
     }
   }
 
+  const onChangeFilter = (type: ElementKey[] | WeaponTypeKey[]) => {
+    database.displayCharacter.set(type)
+    setCachedTeamCharKeys(teamCharKeys)
+  }
+
+  const onChangeSearch = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setSearchTerm(e.target.value)
+    setCachedTeamCharKeys(teamCharKeys)
+  }
+
+  const onChangeSort = (sortType: string) => {
+    database.displayCharacter.set(sortType)
+    setCachedTeamCharKeys(teamCharKeys)
+  }
+
+  const onChangeAsc = (asc: boolean) => {
+    database.displayCharacter.set(asc)
+    setCachedTeamCharKeys(teamCharKeys)
+  }
+
+  const onClose = () => {
+    setSearchTerm('')
+    onSelect(teamCharKeys)
+    onHide()
+  }
+
+  const filterSearchSortProps = {
+    searchTerm: searchTerm,
+    onChangeFilter: onChangeFilter,
+    onChangeSearch: onChangeSearch,
+    onChangeSort: onChangeSort,
+    onChangeAsc: onChangeAsc,
+  }
+
+  return (
+    <CharacterSelectionModalBase
+      show={show}
+      charactersToShow={characterKeyList}
+      filterSearchSortProps={filterSearchSortProps}
+      onClose={onClose}
+    >
+      <CardContent sx={{ flex: '1', overflow: 'auto' }}>
+        <Grid
+          container
+          spacing={1}
+          columns={{ xs: 2, sm: 3, md: 4, lg: 5 }}
+        >
+          {characterKeyList.map((characterKey) => (
+            <Grid item key={characterKey} xs={1}>
+              <MultiSelectCardWrapper
+                characterKey={characterKey}
+                teamSlotIndex={teamCharKeys.indexOf(characterKey)}
+              >
+                <SelectionCard
+                  characterKey={characterKey}
+                  onClick={() => onClick(characterKey)}
+                />
+              </MultiSelectCardWrapper>
+            </Grid>
+          ))}
+        </Grid>
+      </CardContent>
+    </CharacterSelectionModalBase>
+  )
+}
+
+type FilterSearchSortProps = {
+  searchTerm: string
+  onChangeFilter: (filters: ElementKey[] | WeaponTypeKey[]) => void
+  onChangeSearch: (e: ChangeEvent<HTMLTextAreaElement>) => void
+  onChangeSort: (sortType: string) => void
+  onChangeAsc: (asc: boolean) => void
+}
+
+type CharacterSelectionModalBaseProps = {
+  show: boolean
+  charactersToShow: CharacterKey[]
+  filterSearchSortProps: FilterSearchSortProps
+  onClose: () => void
+  children: React.ReactNode
+}
+const sortKeys = Object.keys(characterSortMap)
+
+function CharacterSelectionModalBase({
+  show,
+  charactersToShow,
+  filterSearchSortProps,
+  onClose,
+  children,
+} : CharacterSelectionModalBaseProps) {
+  const { t } = useTranslation([
+    'page_character',
+    // Always load these 2 so character names are loaded for searching/sorting
+    'sillyWisher_charNames',
+    'charNames_gen',
+  ])
+  const database = useDatabase()
+  const state = useDataEntryBase(database.displayCharacter)
+
+  const weaponTotals = useMemo(
+    () =>
+      catTotal(allWeaponTypeKeys, (ct) =>
+        allCharacterKeys.forEach((ck) => {
+          const wtk = getCharStat(ck).weaponType
+          ct[wtk].total++
+          if (charactersToShow.includes(ck)) ct[wtk].current++
+        })
+      ),
+    [charactersToShow]
+  )
+
+  const elementTotals = useMemo(
+    () =>
+      catTotal(allElementKeys, (ct) =>
+        allCharacterKeys.forEach((ck) => {
+          const ele = getCharEle(ck)
+          ct[ele].total++
+          if (charactersToShow.includes(ck)) ct[ele].current++
+        })
+      ),
+    [charactersToShow]
+  )
+
+  const { weaponType, element, sortType, ascending } = state
+
   return (
     <ModalWrapper
       open={show}
-      onClose={() => {
-        setSearchTerm('')
-        multiSelect && onMultiSelect?.(teamCharKeys)
-        onHide()
-      }}
+      onClose={onClose}
       containerProps={{
         sx: {
           height: '100vh',
@@ -267,19 +483,13 @@ export function CharacterSelectionModal({
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
               <WeaponToggle
-                onChange={(weaponType) => {
-                  database.displayCharacter.set({ weaponType })
-                  setCachedTeamCharKeys(teamCharKeys)
-                }}
+                onChange={(weaponType) => filterSearchSortProps.onChangeFilter({ weaponType })}
                 value={weaponType}
                 totals={weaponTotals}
                 size="small"
               />
               <ElementToggle
-                onChange={(element) => {
-                  database.displayCharacter.set({ element })
-                  setCachedTeamCharKeys(teamCharKeys)
-                }}
+                onChange={(element) => filterSearchSortProps.onChangeFilter({ element })}
                 value={element}
                 totals={elementTotals}
                 size="small"
@@ -287,24 +497,16 @@ export function CharacterSelectionModal({
             </Box>
             <IconButton
               sx={{ ml: 'auto' }}
-              onClick={() => {
-                setSearchTerm('')
-                multiSelect && onMultiSelect?.(teamCharKeys)
-                onHide()
-              }}
+              onClick={() => onClose()}
             >
               <CloseIcon />
             </IconButton>
           </Box>
-
           <Box display="flex" gap={1}>
             <TextField
               autoFocus
-              value={searchTerm}
-              onChange={(e: ChangeEvent<HTMLTextAreaElement>) => {
-                setSearchTerm(e.target.value)
-                setCachedTeamCharKeys(teamCharKeys)
-              }}
+              value={filterSearchSortProps.searchTerm}
+              onChange={(e: ChangeEvent<HTMLTextAreaElement>) => filterSearchSortProps.onChangeSearch(e)}
               label={t('characterName')}
               size="small"
               sx={{ height: '100%', mr: 'auto' }}
@@ -315,51 +517,15 @@ export function CharacterSelectionModal({
             <SortByButton
               sortKeys={sortKeys}
               value={sortType}
-              onChange={(sortType) => {
-                database.displayCharacter.set({ sortType })
-                setCachedTeamCharKeys(teamCharKeys)
-              }}
+              onChange={(sortType) => filterSearchSortProps.onChangeSort({ sortType })}
               ascending={ascending}
-              onChangeAsc={(ascending) => {
-                database.displayCharacter.set({ ascending })
-                setCachedTeamCharKeys(teamCharKeys)
-              }}
+              onChangeAsc={(ascending) => filterSearchSortProps.onChangeAsc({ ascending })}
             />
           </Box>
         </CardContent>
         <Divider />
         <DataContext.Provider value={{ teamData: undefined } as any}>
-          <CardContent sx={{ flex: '1', overflow: 'auto' }}>
-            <Grid
-              container
-              spacing={1}
-              columns={{ xs: 2, sm: 3, md: 4, lg: 5 }}
-            >
-              {characterKeyList.map((characterKey) => (
-                <Grid item key={characterKey} xs={1}>
-                  {multiSelect ? (
-                    <SelectionCard
-                      characterKey={characterKey}
-                      onClick={() => onClick(characterKey)}
-                      isMulti
-                      teamSlotIndex={teamCharKeys.indexOf(characterKey)}
-                    />
-                  ) : (
-                    <SelectionCard
-                      characterKey={characterKey}
-                      onClick={() => {
-                        setSearchTerm('')
-                        onHide()
-                        onSelect?.(characterKey)
-                      }}
-                      selectedIndex={selectedIndex}
-                      teamSlotIndex={teamCharKeys.indexOf(characterKey)}
-                    />
-                  )}
-                </Grid>
-              ))}
-            </Grid>
-          </CardContent>
+          {children}
         </DataContext.Provider>
       </CardThemed>
     </ModalWrapper>
@@ -374,39 +540,29 @@ const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
   },
 })
 
-function SelectionCard({
+function SingleSelectCardWrapper({
   characterKey,
-  onClick,
-  isMulti = false,
+  children,
   selectedIndex = -1,
-  teamSlotIndex = 0,
-}: {
+  teamSlotIndex = -1,
+} : {
   characterKey: CharacterKey
-  onClick: () => void
-  isMulti?: boolean
-  selectedIndex?: number
-  teamSlotIndex?: number
+  children: React.ReactNode
+  selectedIndex: number
+  teamSlotIndex: number
 }) {
-  const { gender } = useDBMeta()
-  const character = useCharacter(characterKey)
   const { favorite } = useCharMeta(characterKey)
   const database = useDatabase()
-  const { silly } = useContext(SillyContext)
 
   const [open, onOpen, onClose] = useBoolState()
 
-  const { level = 1, ascension = 0, constellation = 0 } = character ?? {}
-  const banner = characterAsset(characterKey, 'banner', gender)
-  const rarity = getCharStat(characterKey).rarity
-
-  const isInTeam = teamSlotIndex !== -1
-
   const flash = keyframes`
-    0% {outline-color: #f7bd10}
-    33% {outline-color: #1b263b}
-    66% {outline-color: #f7bd10}
-    100% {outline-color: #f7bd10}
+  0% {outline-color: #f7bd10}
+  33% {outline-color: #1b263b}
+  66% {outline-color: #f7bd10}
+  100% {outline-color: #f7bd10}
   `
+  const isInTeam = teamSlotIndex !== -1
   return (
     <CustomTooltip
       enterDelay={300}
@@ -422,132 +578,205 @@ function SelectionCard({
         </Box>
       }
     >
-      <Box>
-        <CardThemed
-          bgt="light"
-          sx={{
-            position: 'relative',
-            flexGrow: 1,
-            display: 'flex',
-            flexDirection: 'column',
-            outline: isInTeam ? 'solid #f7bd10' : undefined,
-            animation: (!isMulti && (selectedIndex === teamSlotIndex)) ? `${flash} 3s ease infinite` : undefined,
+      <CardThemed
+        bgt="light"
+        sx={{
+          position: 'relative',
+          flexGrow: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          outline: isInTeam ? 'solid #f7bd10' : undefined,
+          animation: (isInTeam && (selectedIndex === teamSlotIndex)) ? `${flash} 3s ease infinite` : undefined,
+        }}
+      >
+        <IconButton
+          sx={{ p: 0.25, position: 'absolute', zIndex: 2, opacity: 0.7 }}
+          onClick={(_) => {
+            onClose()
+            database.charMeta.set(characterKey, { favorite: !favorite })
           }}
         >
-          <IconButton
-            sx={{ p: 0.25, position: 'absolute', zIndex: 2, opacity: 0.7 }}
-            onClick={(_) => {
-              onClose()
-              database.charMeta.set(characterKey, { favorite: !favorite })
-            }}
-          >
-            {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
-          </IconButton>
-          {isMulti && isInTeam && (
-            <Typography variant="body2" sx={{ flexGrow: 1 }}>
-              <SqBadge
-                color={'warning'}
-                sx={{
-                  position: 'absolute',
-                  top: 60,
-                  left: 204,
-                  zIndex: 2,
-                  textShadow: '0 0 5px gray',
-                }}
-              >
-                {teamSlotIndex + 1}
-              </SqBadge>
+          {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+        </IconButton>
+        {children}
+      </CardThemed>
+    </CustomTooltip>
+  )
+}
+
+function MultiSelectCardWrapper({
+  characterKey,
+  teamSlotIndex,
+  children,
+} : {
+  characterKey: CharacterKey
+  teamSlotIndex: number
+  children: React.ReactNode
+}) {
+  const { favorite } = useCharMeta(characterKey)
+  const database = useDatabase()
+
+  const [open, onOpen, onClose] = useBoolState()
+
+  const isInTeam = teamSlotIndex !== -1
+  return (
+    <CustomTooltip
+      enterDelay={300}
+      enterNextDelay={300}
+      arrow
+      placement="bottom"
+      open={open}
+      onClose={onClose}
+      onOpen={onOpen}
+      title={
+        <Box sx={{ width: 300 }}>
+          <CharacterCard hideStats characterKey={characterKey} />
+        </Box>
+      }
+    >
+      <CardThemed
+        bgt="light"
+        sx={{
+          position: 'relative',
+          flexGrow: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          outline: isInTeam ? 'solid #f7bd10' : undefined,
+        }}
+      >
+        <IconButton
+          sx={{ p: 0.25, position: 'absolute', zIndex: 2, opacity: 0.7 }}
+          onClick={(_) => {
+            onClose()
+            database.charMeta.set(characterKey, { favorite: !favorite })
+          }}
+        >
+          {favorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+        </IconButton>
+        {isInTeam && (
+          <Typography variant="body2" sx={{ flexGrow: 1 }}>
+            <SqBadge
+              color={'warning'}
+              sx={{
+                position: 'absolute',
+                top: 60,
+                left: 204,
+                zIndex: 2,
+                textShadow: '0 0 5px gray',
+              }}
+            >
+              {teamSlotIndex + 1}
+            </SqBadge>
+          </Typography>
+        )}
+        {children}
+      </CardThemed>
+    </CustomTooltip>
+  )
+}
+
+function SelectionCard({
+  characterKey,
+  onClick,
+}: {
+  characterKey: CharacterKey
+  onClick: () => void
+}) {
+  const { gender } = useDBMeta()
+  const character = useCharacter(characterKey)
+  const { silly } = useContext(SillyContext)
+
+  const { level = 1, ascension = 0, constellation = 0 } = character ?? {}
+  const banner = characterAsset(characterKey, 'banner', gender)
+  const rarity = getCharStat(characterKey).rarity
+
+  return (
+    <CardActionArea onClick={onClick}>
+      <Box
+        display="flex"
+        position="relative"
+        className={!banner ? `grad-${rarity}star` : undefined}
+        sx={{
+          '&::before': {
+            content: '""',
+            display: 'block',
+            position: 'absolute',
+            left: 0,
+            top: 0,
+            width: '100%',
+            height: '100%',
+            opacity: 0.7,
+            backgroundImage: `url(${banner})`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+          },
+        }}
+        width="100%"
+      >
+        <Box
+          flexShrink={1}
+          sx={{ maxWidth: { xs: '33%', lg: '30%' } }}
+          alignSelf="flex-end"
+          display="flex"
+          flexDirection="column"
+          zIndex={1}
+        >
+          <Box
+            component={NextImage ? NextImage : 'img'}
+            src={iconAsset(characterKey, gender, silly)}
+            width="100%"
+            height="auto"
+            maxWidth={256}
+            sx={{ mt: 'auto' }}
+          />
+        </Box>
+        <Box
+          flexGrow={1}
+          sx={{ pr: 1, pt: 1 }}
+          display="flex"
+          flexDirection="column"
+          zIndex={1}
+          justifyContent="space-evenly"
+        >
+          <Typography variant="body2" sx={{ flexGrow: 1 }}>
+            <SqBadge
+              color={getCharEle(characterKey)}
+              sx={{ opacity: 0.85, textShadow: '0 0 5px gray' }}
+            >
+              <CharacterName
+                characterKey={characterKey}
+                gender={gender}
+              />
+            </SqBadge>
+          </Typography>
+          {character ? (
+            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+              <Box sx={{ textShadow: '0 0 5px gray' }}>
+                <Typography
+                  variant="body2"
+                  component="span"
+                  whiteSpace="nowrap"
+                >
+                  Lv. {level}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  component="span"
+                  color="text.secondary"
+                >
+                  /{ascensionMaxLevel[ascension]}
+                </Typography>
+              </Box>
+              <Typography variant="body2">C{constellation}</Typography>
+            </Box>
+          ) : (
+            <Typography component="span" variant="body2">
+              <SqBadge>NEW</SqBadge>
             </Typography>
           )}
-          <CardActionArea onClick={onClick}>
-            <Box
-              display="flex"
-              position="relative"
-              className={!banner ? `grad-${rarity}star` : undefined}
-              sx={{
-                '&::before': {
-                  content: '""',
-                  display: 'block',
-                  position: 'absolute',
-                  left: 0,
-                  top: 0,
-                  width: '100%',
-                  height: '100%',
-                  opacity: 0.7,
-                  backgroundImage: `url(${banner})`,
-                  backgroundPosition: 'center',
-                  backgroundSize: 'cover',
-                },
-              }}
-              width="100%"
-            >
-              <Box
-                flexShrink={1}
-                sx={{ maxWidth: { xs: '33%', lg: '30%' } }}
-                alignSelf="flex-end"
-                display="flex"
-                flexDirection="column"
-                zIndex={1}
-              >
-                <Box
-                  component={NextImage ? NextImage : 'img'}
-                  src={iconAsset(characterKey, gender, silly)}
-                  width="100%"
-                  height="auto"
-                  maxWidth={256}
-                  sx={{ mt: 'auto' }}
-                />
-              </Box>
-              <Box
-                flexGrow={1}
-                sx={{ pr: 1, pt: 1 }}
-                display="flex"
-                flexDirection="column"
-                zIndex={1}
-                justifyContent="space-evenly"
-              >
-                <Typography variant="body2" sx={{ flexGrow: 1 }}>
-                  <SqBadge
-                    color={getCharEle(characterKey)}
-                    sx={{ opacity: 0.85, textShadow: '0 0 5px gray' }}
-                  >
-                    <CharacterName
-                      characterKey={characterKey}
-                      gender={gender}
-                    />
-                  </SqBadge>
-                </Typography>
-                {character ? (
-                  <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-                    <Box sx={{ textShadow: '0 0 5px gray' }}>
-                      <Typography
-                        variant="body2"
-                        component="span"
-                        whiteSpace="nowrap"
-                      >
-                        Lv. {level}
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        component="span"
-                        color="text.secondary"
-                      >
-                        /{ascensionMaxLevel[ascension]}
-                      </Typography>
-                    </Box>
-                    <Typography variant="body2">C{constellation}</Typography>
-                  </Box>
-                ) : (
-                  <Typography component="span" variant="body2">
-                    <SqBadge>NEW</SqBadge>
-                  </Typography>
-                )}
-                <StarsDisplay stars={rarity} colored />
-              </Box>
-            </Box>
-          </CardActionArea>
-        </CardThemed>
+          <StarsDisplay stars={rarity} colored />
+        </Box>
       </Box>
-    </CustomTooltip>
+    </CardActionArea>
   )
 }
