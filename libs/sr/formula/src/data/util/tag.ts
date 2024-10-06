@@ -174,10 +174,10 @@ export function convert<V extends Record<string, Record<string, Desc>>>(
 
 // Default queries
 const noName = { src: null, name: null }
-export const own = convert(ownTag, { et: 'own', dst: null })
-export const team = convert(ownTag, { et: 'team', dst: null, ...noName })
+export const own = convert(ownTag, { et: 'own' })
+export const team = convert(ownTag, { et: 'team', ...noName })
 export const target = convert(ownTag, { et: 'target', ...noName })
-export const enemy = convert(enemyTag, { et: 'enemy', dst: null, ...noName })
+export const enemy = convert(enemyTag, { et: 'enemy', ...noName })
 
 // Default tag DB keys
 export const ownBuff = convert(ownTag, { et: 'own' })
