@@ -164,38 +164,34 @@ function createMember(
   memberIndex: 0 | 1 | 2 | 3,
   { character, lightCone, relics, conditionals, bonusStats }: CharacterFullData
 ): TagMapNodeEntries {
-  return !character
-    ? []
-    : [
-        ...withMember(
-          `${memberIndex}`,
-          ...charData(character),
-          ...lightConeData(lightCone),
-          ...relicsData(
-            Object.values(relics)
-              .filter((relic): relic is ICachedRelic => !!relic)
-              .map((relic) => ({
-                set: relic.setKey,
-                stats: [
-                  ...relic.substats
-                    .filter(({ key }) => key !== '')
-                    .map((substat) => ({
-                      key: substat.key as RelicSubStatKey, // Safe because of the above filter
-                      value: substat.accurateValue,
-                    })),
-                  { key: relic.mainStatKey, value: relic.mainStatVal },
-                ],
-              }))
-          )
-        ),
-        ...conditionalData(`${memberIndex}`, conditionals),
-        ...bonusStats.map(({ tag, value }) => ({
-          tag: {
-            ...tag,
-            src: `${memberIndex}` as Member,
-            dst: `${memberIndex}` as Member,
-          },
-          value: constant(value),
-        })),
-      ]
+  if (!character) return []
+  const memberData = withMember(
+    `${memberIndex}`,
+    ...charData(character),
+    ...lightConeData(lightCone),
+    ...relicsData(
+      Object.values(relics)
+        .filter((relic): relic is ICachedRelic => !!relic)
+        .map((relic) => ({
+          set: relic.setKey,
+          stats: [
+            ...relic.substats
+              .filter(({ key }) => key !== '')
+              .map((substat) => ({
+                key: substat.key as RelicSubStatKey, // Safe because of the above filter
+                value: substat.accurateValue,
+              })),
+            { key: relic.mainStatKey, value: relic.mainStatVal },
+          ],
+        }))
+    ),
+    ...bonusStats.map(({ tag, value }) => ({
+      tag: {
+        ...tag,
+      },
+      value: constant(value),
+    }))
+  )
+
+  return [...memberData, ...conditionalData(`${memberIndex}`, conditionals)]
 }
