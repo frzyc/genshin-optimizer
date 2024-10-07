@@ -18,7 +18,11 @@ import {
   sortFunction,
 } from '@genshin-optimizer/common/util'
 import { characterAsset } from '@genshin-optimizer/gi/assets'
-import type { CharacterKey, ElementKey, WeaponTypeKey } from '@genshin-optimizer/gi/consts'
+import type {
+  CharacterKey,
+  ElementKey,
+  WeaponTypeKey,
+} from '@genshin-optimizer/gi/consts'
 import {
   allCharacterKeys,
   allElementKeys,
@@ -78,8 +82,8 @@ export function CharacterSingleSelectionModal({
   onSelect,
   selectedIndex = -1,
   loadoutData = [undefined, undefined, undefined, undefined],
-  newFirst = false
-} : {
+  newFirst = false,
+}: {
   show: boolean
   onHide: () => void
   onSelect: (cKey: CharacterKey) => void
@@ -143,22 +147,6 @@ export function CharacterSingleSelectionModal({
     silly,
   ])
 
-  const onChangeFilter = (type: ElementKey[] | WeaponTypeKey[]) => {
-    database.displayCharacter.set(type)
-  }
-
-  const onChangeSearch = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setSearchTerm(e.target.value)
-  }
-
-  const onChangeSort = (sortType: string) => {
-    database.displayCharacter.set(sortType)
-  }
-
-  const onChangeAsc = (asc: boolean) => {
-    database.displayCharacter.set(asc)
-  }
-
   const onClose = () => {
     setSearchTerm('')
     onHide()
@@ -166,10 +154,21 @@ export function CharacterSingleSelectionModal({
 
   const filterSearchSortProps = {
     searchTerm: searchTerm,
-    onChangeFilter: onChangeFilter,
-    onChangeSearch: onChangeSearch,
-    onChangeSort: onChangeSort,
-    onChangeAsc: onChangeAsc,
+    onChangeWeaponFilter: (weaponType: WeaponTypeKey[]) => {
+      database.displayCharacter.set({ weaponType })
+    },
+    onChangeElementFilter: (element: ElementKey[]) => {
+      database.displayCharacter.set({ element })
+    },
+    onChangeSearch: (e: ChangeEvent<HTMLTextAreaElement>) => {
+      setSearchTerm(e.target.value)
+    },
+    onChangeSort: (sortType: CharacterSortKey) => {
+      database.displayCharacter.set({ sortType })
+    },
+    onChangeAsc: (ascending: boolean) => {
+      database.displayCharacter.set({ ascending })
+    },
   }
 
   return (
@@ -180,11 +179,7 @@ export function CharacterSingleSelectionModal({
       onClose={onClose}
     >
       <CardContent sx={{ flex: '1', overflow: 'auto' }}>
-        <Grid
-          container
-          spacing={1}
-          columns={{ xs: 2, sm: 3, md: 4, lg: 5 }}
-        >
+        <Grid container spacing={1} columns={{ xs: 2, sm: 3, md: 4, lg: 5 }}>
           {characterKeyList.map((characterKey) => (
             <Grid item key={characterKey} xs={1}>
               <SingleSelectCardWrapper
@@ -214,11 +209,11 @@ export function CharacterMultiSelectionModal({
   onHide,
   onSelect,
   loadoutData = [undefined, undefined, undefined, undefined],
-  newFirst = false
-} : {
+  newFirst = false,
+}: {
   show: boolean
   onHide: () => void
-  onSelect: ((cKeys: (CharacterKey | '')[]) => void)
+  onSelect: (cKeys: (CharacterKey | '')[]) => void
   loadoutData: (LoadoutDatum | undefined)[]
   newFirst?: boolean
 }) {
@@ -330,26 +325,6 @@ export function CharacterMultiSelectionModal({
     }
   }
 
-  const onChangeFilter = (type: ElementKey[] | WeaponTypeKey[]) => {
-    database.displayCharacter.set(type)
-    setCachedTeamCharKeys(teamCharKeys)
-  }
-
-  const onChangeSearch = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setSearchTerm(e.target.value)
-    setCachedTeamCharKeys(teamCharKeys)
-  }
-
-  const onChangeSort = (sortType: string) => {
-    database.displayCharacter.set(sortType)
-    setCachedTeamCharKeys(teamCharKeys)
-  }
-
-  const onChangeAsc = (asc: boolean) => {
-    database.displayCharacter.set(asc)
-    setCachedTeamCharKeys(teamCharKeys)
-  }
-
   const onClose = () => {
     setSearchTerm('')
     onSelect(teamCharKeys)
@@ -358,10 +333,26 @@ export function CharacterMultiSelectionModal({
 
   const filterSearchSortProps = {
     searchTerm: searchTerm,
-    onChangeFilter: onChangeFilter,
-    onChangeSearch: onChangeSearch,
-    onChangeSort: onChangeSort,
-    onChangeAsc: onChangeAsc,
+    onChangeWeaponFilter: (weaponType: WeaponTypeKey[]) => {
+      database.displayCharacter.set({ weaponType })
+      setCachedTeamCharKeys(teamCharKeys)
+    },
+    onChangeElementFilter: (element: ElementKey[]) => {
+      database.displayCharacter.set({ element })
+      setCachedTeamCharKeys(teamCharKeys)
+    },
+    onChangeSearch: (e: ChangeEvent<HTMLTextAreaElement>) => {
+      setSearchTerm(e.target.value)
+      setCachedTeamCharKeys(teamCharKeys)
+    },
+    onChangeSort: (sortType: CharacterSortKey) => {
+      database.displayCharacter.set({ sortType })
+      setCachedTeamCharKeys(teamCharKeys)
+    },
+    onChangeAsc: (ascending: boolean) => {
+      database.displayCharacter.set({ ascending })
+      setCachedTeamCharKeys(teamCharKeys)
+    },
   }
 
   return (
@@ -372,11 +363,7 @@ export function CharacterMultiSelectionModal({
       onClose={onClose}
     >
       <CardContent sx={{ flex: '1', overflow: 'auto' }}>
-        <Grid
-          container
-          spacing={1}
-          columns={{ xs: 2, sm: 3, md: 4, lg: 5 }}
-        >
+        <Grid container spacing={1} columns={{ xs: 2, sm: 3, md: 4, lg: 5 }}>
           {characterKeyList.map((characterKey) => (
             <Grid item key={characterKey} xs={1}>
               <MultiSelectCardWrapper
@@ -398,9 +385,10 @@ export function CharacterMultiSelectionModal({
 
 type FilterSearchSortProps = {
   searchTerm: string
-  onChangeFilter: (filters: ElementKey[] | WeaponTypeKey[]) => void
+  onChangeWeaponFilter: (weaps: WeaponTypeKey[]) => void
+  onChangeElementFilter: (elements: ElementKey[]) => void
   onChangeSearch: (e: ChangeEvent<HTMLTextAreaElement>) => void
-  onChangeSort: (sortType: string) => void
+  onChangeSort: (sortType: CharacterSortKey) => void
   onChangeAsc: (asc: boolean) => void
 }
 
@@ -419,7 +407,7 @@ function CharacterSelectionModalBase({
   filterSearchSortProps,
   onClose,
   children,
-} : CharacterSelectionModalBaseProps) {
+}: CharacterSelectionModalBaseProps) {
   const { t } = useTranslation([
     'page_character',
     // Always load these 2 so character names are loaded for searching/sorting
@@ -483,22 +471,23 @@ function CharacterSelectionModalBase({
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
               <WeaponToggle
-                onChange={(weaponType) => filterSearchSortProps.onChangeFilter({ weaponType })}
+                onChange={(weaponType) =>
+                  filterSearchSortProps.onChangeWeaponFilter(weaponType)
+                }
                 value={weaponType}
                 totals={weaponTotals}
                 size="small"
               />
               <ElementToggle
-                onChange={(element) => filterSearchSortProps.onChangeFilter({ element })}
+                onChange={(element) =>
+                  filterSearchSortProps.onChangeElementFilter(element)
+                }
                 value={element}
                 totals={elementTotals}
                 size="small"
               />
             </Box>
-            <IconButton
-              sx={{ ml: 'auto' }}
-              onClick={() => onClose()}
-            >
+            <IconButton sx={{ ml: 'auto' }} onClick={() => onClose()}>
               <CloseIcon />
             </IconButton>
           </Box>
@@ -506,7 +495,9 @@ function CharacterSelectionModalBase({
             <TextField
               autoFocus
               value={filterSearchSortProps.searchTerm}
-              onChange={(e: ChangeEvent<HTMLTextAreaElement>) => filterSearchSortProps.onChangeSearch(e)}
+              onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+                filterSearchSortProps.onChangeSearch(e)
+              }
               label={t('characterName')}
               size="small"
               sx={{ height: '100%', mr: 'auto' }}
@@ -517,9 +508,13 @@ function CharacterSelectionModalBase({
             <SortByButton
               sortKeys={sortKeys}
               value={sortType}
-              onChange={(sortType) => filterSearchSortProps.onChangeSort({ sortType })}
+              onChange={(sortType) =>
+                filterSearchSortProps.onChangeSort(sortType)
+              }
               ascending={ascending}
-              onChangeAsc={(ascending) => filterSearchSortProps.onChangeAsc({ ascending })}
+              onChangeAsc={(ascending) =>
+                filterSearchSortProps.onChangeAsc(ascending)
+              }
             />
           </Box>
         </CardContent>
@@ -545,7 +540,7 @@ function SingleSelectCardWrapper({
   children,
   selectedIndex = -1,
   teamSlotIndex = -1,
-} : {
+}: {
   characterKey: CharacterKey
   children: React.ReactNode
   selectedIndex: number
@@ -586,7 +581,10 @@ function SingleSelectCardWrapper({
           display: 'flex',
           flexDirection: 'column',
           outline: isInTeam ? 'solid #f7bd10' : undefined,
-          animation: (isInTeam && (selectedIndex === teamSlotIndex)) ? `${flash} 3s ease infinite` : undefined,
+          animation:
+            isInTeam && selectedIndex === teamSlotIndex
+              ? `${flash} 3s ease infinite`
+              : undefined,
         }}
       >
         <IconButton
@@ -608,7 +606,7 @@ function MultiSelectCardWrapper({
   characterKey,
   teamSlotIndex,
   children,
-} : {
+}: {
   characterKey: CharacterKey
   teamSlotIndex: number
   children: React.ReactNode
@@ -743,10 +741,7 @@ function SelectionCard({
               color={getCharEle(characterKey)}
               sx={{ opacity: 0.85, textShadow: '0 0 5px gray' }}
             >
-              <CharacterName
-                characterKey={characterKey}
-                gender={gender}
-              />
+              <CharacterName characterKey={characterKey} gender={gender} />
             </SqBadge>
           </Typography>
           {character ? (

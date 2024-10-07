@@ -6,8 +6,8 @@ import type { TeamData, dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
   AdResponsive,
   CharIconSide,
-  CharacterName,
   CharacterMultiSelectionModal,
+  CharacterName,
   CharacterSingleSelectionModal,
   EnemyExpandCard,
   TeamDelModal,
