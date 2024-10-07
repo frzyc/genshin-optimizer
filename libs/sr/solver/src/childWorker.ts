@@ -124,7 +124,6 @@ async function start() {
                 rope.stats,
               ])
 
-
               if (
                 constraints.every(({ value, isMax }, i) =>
                   isMax ? results[i + 1] <= value : results[i + 1] >= value

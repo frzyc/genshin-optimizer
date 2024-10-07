@@ -72,7 +72,10 @@ export class Solver {
         command: 'start',
         relicsBySlot: this.relicsBySlot,
         detachedNodes: this.detachNodes(),
-        constraints:this.statFilters.map(({value,isMax})=>({value,isMax})),
+        constraints: this.statFilters.map(({ value, isMax }) => ({
+          value,
+          isMax,
+        })),
         numWorkers: this.numWorkers,
       }
       this.worker.postMessage(message)
