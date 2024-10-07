@@ -1,10 +1,10 @@
 import { detach } from '@genshin-optimizer/pando/engine'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { allRelicSetKeys } from '@genshin-optimizer/sr/consts'
-import type { ICachedRelic } from '@genshin-optimizer/sr/db'
+import type { ICachedRelic, StatFilter } from '@genshin-optimizer/sr/db'
 import type { Calculator, Read, Tag } from '@genshin-optimizer/sr/formula'
 import type {
-  ParentCommand,
+  ParentCommandStart,
   ParentCommandTerminate,
   ParentMessage,
 } from './parentWorker'
@@ -22,6 +22,7 @@ export interface ProgressResult {
 export class Solver {
   private calc: Calculator
   private optTarget: Read
+  private statFilters: Array<Omit<StatFilter, 'disabled'>>
   private relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
   private numWorkers: number
   private setProgress: (progress: ProgressResult) => void
@@ -30,12 +31,14 @@ export class Solver {
   constructor(
     calc: Calculator,
     optTarget: Read,
+    statFilters: Array<Omit<StatFilter, 'disabled'>>,
     relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>,
     numWorkers: number,
     setProgress: (progress: ProgressResult) => void
   ) {
     this.calc = calc
     this.optTarget = optTarget
+    this.statFilters = statFilters
     this.relicsBySlot = relicsBySlot
     this.numWorkers = numWorkers
     this.setProgress = setProgress
@@ -65,10 +68,11 @@ export class Solver {
       }
 
       // Start worker
-      const message: ParentCommand = {
+      const message: ParentCommandStart = {
         command: 'start',
         relicsBySlot: this.relicsBySlot,
         detachedNodes: this.detachNodes(),
+        constraints:this.statFilters.map(({value,isMax})=>({value,isMax})),
         numWorkers: this.numWorkers,
       }
       this.worker.postMessage(message)
@@ -103,16 +107,20 @@ export class Solver {
   private detachNodes() {
     // Step 2: Detach nodes from Calculator
     const relicSetKeys = new Set(allRelicSetKeys)
-    const detachedNodes = detach([this.optTarget], this.calc, (tag: Tag) => {
-      if (tag['src'] !== '0') return undefined // Wrong member
-      if (tag['et'] !== 'own') return undefined // Not applied (only) to self
+    const detachedNodes = detach(
+      [this.optTarget, ...this.statFilters.map(({ read }) => read)],
+      this.calc,
+      (tag: Tag) => {
+        if (tag['src'] !== '0') return undefined // Wrong member
+        if (tag['et'] !== 'own') return undefined // Not applied (only) to self
 
-      if (tag['sheet'] === 'dyn' && tag['qt'] === 'premod')
-        return { q: tag['q']! } // Relic stat bonus
-      if (tag['q'] === 'count' && relicSetKeys.has(tag['sheet'] as any))
-        return { q: tag['sheet']! } // Relic set counter
-      return undefined
-    })
+        if (tag['sheet'] === 'dyn' && tag['qt'] === 'premod')
+          return { q: tag['q']! } // Relic stat bonus
+        if (tag['q'] === 'count' && relicSetKeys.has(tag['sheet'] as any))
+          return { q: tag['sheet']! } // Relic set counter
+        return undefined
+      }
+    )
     return detachedNodes
   }
 }

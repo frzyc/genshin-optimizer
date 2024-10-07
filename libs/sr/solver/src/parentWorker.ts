@@ -7,7 +7,7 @@ import {
 } from '@genshin-optimizer/sr/consts'
 import type { ICachedRelic } from '@genshin-optimizer/sr/db'
 import { getRelicMainStatVal } from '@genshin-optimizer/sr/util'
-import type { ChildCommand, ChildMessage } from './childWorker'
+import type { ChildCommandInit, ChildMessage } from './childWorker'
 import { MAX_BUILDS } from './common'
 import type { BuildResult, ProgressResult } from './solver'
 
@@ -17,6 +17,7 @@ export interface ParentCommandStart {
   command: 'start'
   relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
   detachedNodes: NumTagFree[]
+  constraints: Array<{ value: number; isMax: boolean }>
   numWorkers: number
 }
 export interface ParentCommandTerminate {
@@ -82,6 +83,7 @@ async function handleEvent(e: MessageEvent<ParentCommand>): Promise<void> {
 async function start({
   relicsBySlot,
   detachedNodes,
+  constraints,
   numWorkers,
 }: ParentCommandStart) {
   // Step 3: Optimize nodes, as needed
@@ -96,7 +98,10 @@ async function start({
   const { largestSlot } = Object.entries(relicsBySlot).reduce(
     ({ largestSlot, largestSize }, [currentSlot, relics]) =>
       relics.length > largestSize
-        ? { largestSlot: currentSlot, largestSize: relics.length }
+        ? {
+            largestSlot: currentSlot as RelicSlotKey,
+            largestSize: relics.length,
+          }
         : { largestSlot, largestSize },
     { largestSlot: 'head' as RelicSlotKey, largestSize: -1 }
   )
@@ -165,10 +170,11 @@ async function start({
         }
 
         // Initialize worker
-        const message: ChildCommand = {
+        const message: ChildCommandInit = {
           command: 'init',
           relicStatsBySlot: chunkedRelicStatsBySlot[index],
           detachedNodes,
+          constraints,
         }
         worker.postMessage(message)
       })

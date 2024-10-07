@@ -8,10 +8,12 @@ import type { BuildResult } from './solver'
 const MAX_BUILDS_TO_SEND = 200_000
 let compiledCalcFunction: (relicStats: RelicStats['stats'][]) => number[]
 let relicStatsBySlot: Record<RelicSlotKey, RelicStats[]>
+let constraints: Array<{ value: number; isMax: boolean }> = []
 
 export interface ChildCommandInit {
   command: 'init'
   relicStatsBySlot: Record<RelicSlotKey, RelicStats[]>
+  constraints: Array<{ value: number; isMax: boolean }>
   detachedNodes: NumTagFree[]
 }
 export interface ChildCommandStart {
@@ -71,6 +73,7 @@ async function handleEvent(e: MessageEvent<ChildCommand>): Promise<void> {
 async function init({
   relicStatsBySlot: relics,
   detachedNodes: combinedNodes,
+  constraints: initCons,
 }: ChildCommandInit) {
   // Step 4: Compile for quick iteration
   compiledCalcFunction = compile(
@@ -81,6 +84,7 @@ async function init({
     // Header; includes custom formulas, such as `res`
   )
   relicStatsBySlot = relics
+  constraints = initCons
 
   // Let parent know we are ready to optimize
   postMessage({ resultType: 'initialized' })
@@ -120,17 +124,24 @@ async function start() {
                 rope.stats,
               ])
 
-              builds.push({
-                value: results[0], // We only pass 1 target to calculate, so just grab the 1st result
-                ids: {
-                  head: head.id,
-                  hands: hands.id,
-                  feet: feet.id,
-                  body: body.id,
-                  sphere: sphere.id,
-                  rope: rope.id,
-                },
-              })
+
+              if (
+                constraints.every(({ value, isMax }, i) =>
+                  isMax ? results[i + 1] <= value : results[i + 1] >= value
+                )
+              ) {
+                builds.push({
+                  value: results[0], // We only pass 1 target to calculate, so just grab the 1st result
+                  ids: {
+                    head: head.id,
+                    hands: hands.id,
+                    feet: feet.id,
+                    body: body.id,
+                    sphere: sphere.id,
+                    rope: rope.id,
+                  },
+                })
+              }
               if (builds.length > MAX_BUILDS_TO_SEND) {
                 sliceSortSendBuilds()
               }
