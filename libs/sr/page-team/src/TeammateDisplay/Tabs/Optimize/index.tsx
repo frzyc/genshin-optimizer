@@ -103,7 +103,7 @@ export default function Optimize() {
     const statFilters = (optConfig?.statFilters ?? [])
       .filter(({ disabled }) => !disabled)
       .map(({ read, value, isMax }) => ({
-        read,
+        read: toRead(read, charMap),
         value,
         isMax,
       }))
@@ -124,7 +124,14 @@ export default function Optimize() {
 
     setOptimizing(false)
     setBuild(results[0])
-  }, [calc, numWorkers, optConfig, optTarget, relicsBySlot])
+  }, [
+    calc,
+    charMap,
+    numWorkers,
+    optConfig?.statFilters,
+    optTarget,
+    relicsBySlot,
+  ])
 
   const onCancel = useCallback(() => {
     cancelToken.current()
