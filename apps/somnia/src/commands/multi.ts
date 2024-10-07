@@ -68,7 +68,7 @@ export async function run(interaction: ChatInputCommandInteraction) {
   const name = interaction.options.getString('name', true)
   const threadId = multilist[name]
   if (threadId) {
-    interaction.reply(`[${name} multi-opts](${threadLink}${threadId})`)
+    interaction.reply(`[${name} Community Multi-Opt Thread](${threadLink}${threadId})`)
   } else {
     interaction.reply({ content: 'Unknown Character', ephemeral: true })
   }
