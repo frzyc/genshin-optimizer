@@ -1,0 +1,24 @@
+{
+  "name": "Sturdy Bone",
+  "description": {
+    "0": "A longsword made of bone that has only grown harder after being hit and swung countless times. It is said that this was the hero Wanjiru's reliable weapon."
+  },
+  "passiveName": "Trapper's Pride",
+  "passiveDescription": {
+    "0": {
+      "0": "Sprint or Alternate Sprint Stamina Consumption decreased by 15%. Additionally, after using Sprint or Alternate Sprint, Normal Attack DMG is increased by <cryo>16%</cryo> of ATK. This effect expires after triggering 18 times or 7s."
+    },
+    "1": {
+      "0": "Sprint or Alternate Sprint Stamina Consumption decreased by 15%. Additionally, after using Sprint or Alternate Sprint, Normal Attack DMG is increased by <cryo>20%</cryo> of ATK. This effect expires after triggering 18 times or 7s."
+    },
+    "2": {
+      "0": "Sprint or Alternate Sprint Stamina Consumption decreased by 15%. Additionally, after using Sprint or Alternate Sprint, Normal Attack DMG is increased by <cryo>24%</cryo> of ATK. This effect expires after triggering 18 times or 7s."
+    },
+    "3": {
+      "0": "Sprint or Alternate Sprint Stamina Consumption decreased by 15%. Additionally, after using Sprint or Alternate Sprint, Normal Attack DMG is increased by <cryo>28%</cryo> of ATK. This effect expires after triggering 18 times or 7s."
+    },
+    "4": {
+      "0": "Sprint or Alternate Sprint Stamina Consumption decreased by 15%. Additionally, after using Sprint or Alternate Sprint, Normal Attack DMG is increased by <cryo>32%</cryo> of ATK. This effect expires after triggering 18 times or 7s."
+    }
+  }
+}

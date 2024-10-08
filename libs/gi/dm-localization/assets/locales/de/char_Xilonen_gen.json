@@ -1,0 +1,209 @@
+{
+  "name": "Xilonen",
+  "title": "Im Feuer geschmiedete Seele",
+  "description": "Als Namenschmiedin von Nanatzcayan ist sie besonders geschickt darin, ein gutes Gleichgewicht zwischen der schweren Verantwortung ihres Berufs und einem angenehmen Leben zu finden.",
+  "constellationName": "Panthera Ocelota",
+  "auto": {
+    "name": "Ehecatls Gebrüll",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 3 Schwerthiebe hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer und führt einen Vorwärtstritt aus."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn basierend auf Xilonens VTD an und verursacht beim Aufkommen Flächenschaden."
+      },
+      "nightsoul": {
+        "0": "<strong>Nachtseelensegen – Klingenjägerin</strong>",
+        "1": "Im Zustand „Nachtseelensegen“ wechselt Xilonen in den Modus „Klingenjägerin“, in dem Xilonen mit ihrem Standardangriff bis zu 4 Tritte mittels ihrer Klingen-Rollschuhe ausführen, aber keinen heftigen Schlag einsetzen kann.",
+        "2": "Beim Ausführen von Standardangriffen und Angriffen aus dem Fall in diesem Modus wird auf Basis von Xilonens VTD mit Nachtseelen versehener <geo>Geo-Schaden</geo> verursacht, der nicht von anderen Elementen überdeckt werden kann."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH heftiger Schläge",
+      "4": "Ausdauerverbrauch heftiger Schläge",
+      "5": "SCH beim Fallen",
+      "6": "SCH beim Fallen aus niedriger/großer Höhe",
+      "7": "SCH Klingenjägerin Phase 1",
+      "8": "SCH Klingenjägerin Phase 2",
+      "9": "SCH Klingenjägerin Phase 3",
+      "10": "SCH Klingenjägerin Phase 4",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Yohuals Kratzer",
+    "description": {
+      "0": "Lass den Rhythmus der Leidenschaft im ganzen Land erklingen! Xilonen wechselt in ihre Rollschuhe für Hochgeschwindigkeitskämpfe, stürzt sich eine gewisse Länge nach vorn und verursacht dabei mit Nachtseelen versehenen <geo>Geo-Schaden</geo> basierend auf ihrer VTD.",
+      "1": "Verleiht Xilonen nach dem Anwenden dieser Fähigkeit 45 Nachtseelenpunkte und wechselt in den Zustand „Nachtseelensegen“, wodurch der Klingenjägerin-Modus aktiv wird.",
+      "2": "<br/>",
+      "3": "<strong>Urtonsampler</strong>",
+      "4": "Xilonen besitzt 3 Sampler, die je nach Elementartyp der anderen Truppenmitglieder unterschiedliche Klangmerkmale aufweisen können und bei Aktivierung den jeweiligen Elementar-WDS der Gegner in der Nähe verringern.",
+      "5": "Der anfänglich aufgezeichnete Urton in jedem Sampler ist vom <geo>Geo</geo>-Element und für jedes Truppenmitglied, das vom <pyro>Pyro</pyro>-/<hydro>Hydro</hydro>-/<cryo>Kryo</cryo>-/<electro>Elektro</electro>-Element ist, wechselt 1 <geo>Geo</geo>-Sampler zu dem entsprechenden Element.",
+      "6": "Wenn sich Xilonen im Zustand „Nachtseelensegen“ befindet, bleiben die <geo>Geo</geo>-Sampler, die sie trägt, durchgehend aktiv. Nach dem Freischalten ihres passiven Talents „Netotiliztlis Echos“ kann Xilonen die Effekte dieses passiven Talents auslösen, um für sich selbst Nachtseelenpunkte wiederherzustellen. Wenn ihre Nachtseelenpunkte den Höchstwert erreichen, verbraucht Xilonen die gesamten Nachtseelenpunkte, um so die von ihr getragenen 3 Sampler zu aktivieren, hält 15 s.",
+      "7": "Wenn die Sampler aktiv sind, wird der entsprechende Elementar-WDS der Gegner in der Nähe verringert. Sampler-Effekte desselben Elementartyps können nicht gestapelt werden. Diese Effekte können auch ausgelöst werden, wenn sich Xilonen inaktiv in der Truppe befindet.",
+      "8": "<br/>",
+      "9": "<strong>Nachtseelensegen – Xilonen</strong>",
+      "10": "Verbraucht fortlaufend Nachtseelenpunkte. Wenn diese aufgebraucht sind oder wenn die Fähigkeit erneut eingesetzt wird, endet der Nachtseelensegen-Zustand von Xilonen. Dieser Zustand hat die folgenden Eigenschaften:",
+      "11": [
+        " Wechselt in den Klingenjägerin-Modus, wodurch Xilonens Bewegungsgeschwindigkeit sowie Klettergeschwindigkeit erhöht werden und sie beim Klettern Hochgeschwindigkeitssprünge in Ozelot-Form ausführen kann.",
+        " Der Zustand „Nachtseelensegen“ von Xilonen hat folgende Einschränkungen: Wenn sich Xilonen in diesem Zustand befindet, haben ihre Nachtseelenpunkte ein Zeitlimit von 9 s. Wenn dieses Limit überschritten wird, werden ihre Nachtseelenpunkte sofort aufgebraucht."
+      ],
+      "12": "<br/>",
+      "13": "Wenn Xilonens Nachtseelenpunkte aufgebraucht sind, während sie sich im Zustand „Nachtseelensegen“ befindet, kann sie keine Nachtseelenpunkte mehr über das passive Talent „Netotiliztlis Echos“ erzeugen.",
+      "14": "<br/>",
+      "15": "<i>Das Edelsteinhandwerk und das Abmischen von Tönen haben in gewisser Weise ähnliche Prinzipien: Unreinheiten herausfiltern und nur die strahlendsten Dinge zurückbehalten.",
+      "16": "Xilonen ist jedoch nicht wählerisch, was beides angeht. Schließlich genießt sie beides sehr!</i>"
+    },
+    "skillParams": {
+      "0": "Vorstoß-SCH",
+      "1": "Verringerung des Elementar-WDS",
+      "2": "Aktivierungsdauer des Samplers",
+      "3": "Zeitlimit der Nachtseelenpunkte",
+      "4": "Max. Nachtseelenpunkte",
+      "5": "Abklingzeit",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ozelot-Rhythmus!",
+    "description": {
+      "0": "Aktiviert den Phlogiston-Stereo-Mixer (Tragbare Version) mit voller Leistung und verursacht dabei basierend auf Xilonens VTD mit Nachtseelen versehenen <geo>Geo-Flächenschaden</geo>.",
+      "1": "<br/>",
+      "2": "Außerdem werden die folgenden Effekte auf der Grundlage der verschiedenen Urtonsampler ausgelöst:",
+      "3": [
+        " Wenn Xilonen mindestens 2 Sampler hat, die eine Elementarumwandlung durchlaufen haben, spielt sie einen wogenden Rhythmus, der den aktiven Figuren in der Nähe in regelmäßigen Abständen LP basierend auf ihrer VTD wiederherstellt.",
+        " Wenn Xilonen weniger als 2 Sampler hat, die eine Elementarumwandlung durchlaufen haben, startet sie einen feurigen Rhythmus, der zwei zusätzliche Takte abspielt, die mit Nachtseelen versehenen <geo>Geo-Flächenschaden</geo> basierend auf ihrer VTD verursachen."
+      ],
+      "4": "<br/>",
+      "5": "<i>„Also gut, machen wir erst einmal eine Pause!“",
+      "6": "„Keine Sorge, ich habe die Rhythmen von vorhin aufgenommen. Mal sehen, was dabei herauskommt, wenn wir unsere Rhythmen mischen, ja?“</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Fortlaufende Heilung",
+      "2": "Dauer des wogenden Rhythmus",
+      "3": "SCH zusätzlichen Takts",
+      "4": "Abklingzeit",
+      "5": "Elementarenergie",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Netotiliztlis Echos",
+    "description": {
+      "0": "Während Xilonen sich im Zustand „Nachtseelensegen“ befindet:",
+      "1": [
+        " Sollte sie mindestens 2 Sampler haben, die eine Elementarumwandlung durchlaufen haben, erhält sie 35 Nachtseelenpunkte, sobald sie einen Gegner mit Standardangriffen oder Angriffen aus dem Fall trifft, 0,1 s Abklingzeit.",
+        " Sollte sie weniger als 2 Sampler haben, die eine Elementarumwandlung durchlaufen haben, erhöht dies den durch Standardangriffe und Angriffe aus dem Fall verursachten Schaden um 30 %."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Tragbare gepanzerte Schutzhülle",
+    "description": {
+      "0": "Löst, wenn sich Xilonen im Zustand „Nachtseelensegen“ befindet und ihre Nachtseelenpunkte den Höchstwert erreichen, einen Effekt aus, der dem ihres Nachtseelenaufbruchs entspricht, 14 s Abklingzeit.",
+      "1": "Erhöht außerdem Xilonens VTD 15 s lang um 20 %, wenn ein Truppenmitglied in der Nähe den Nachtseelenaufbruch auslöst."
+    }
+  },
+  "passive3": {
+    "name": "Geschenk des Nachtreichs – Segen des Schmiedefeuers",
+    "description": {
+      "0": "Nachdem ihre Nachtseelenpunkte aufgebraucht sind, wechselt Xilonen zum Verbrauch von Phlogiston, um ihren „Nachtseelensegen“ aufrechtzuerhalten.",
+      "1": "Bei Aufenthalt in einem Gebiet mit Phlogiston-Mechanismus in Natlan kann die Nachtseelen-Übertragung – Xilonen verwendet werden. Wenn die aktuelle Figur gerade rennt, klettert, sich in einem Bewegungsmodus befindet, der durch bestimmte Talente ausgelöst wird, oder sich in einer bestimmten Höhe in der Luft befindet, wird beim Wechsel zu Xilonen Folgendes ausgelöst: Xilonen tritt in den Zustand des Nachtseelensegens ein und erhält 20 Nachtseelenpunkte. In diesem Fall haben Xilonens Nachtseelenpunkte ein Zeitlimit von 4 s. Wenn dieses Limit überschritten wird, werden ihre Nachtseelenpunkte sofort aufgebraucht. Wenn innerhalb des Zeitlimits <strong>Yohuals Kratzer</strong> eingesetzt wurde, wird das Zeitlimit um 9 s verlängert. 10 s Abklingzeit für das Auslösen der Nachtseelen-Übertragung innerhalb der eigenen Truppe.",
+      "2": "<br/>",
+      "3": "Außerdem verbraucht Xilonen keine Ausdauer, wenn sie im Zustand „Nachtseelensegen“ in Natlan klettert."
+    }
+  },
+  "passive": {
+    "name": "Tepeilhuitl-Tour",
+    "description": {
+      "0": "Stellt beim Auslösen der Nachtseelen-Übertragung 15 Punkte Phlogiston wieder her."
+    }
+  },
+  "constellation1": {
+    "name": "Dem sorglosen Schlafen gewidmete Urlaubstage",
+    "description": {
+      "0": "Verringert den Verbrauch von Nachtseelenpunkten sowie Phlogiston durch Xilonens Nachtseelensegen um 30 % und verlängert das Zeitlimit der Nachtseelenpunkte um 45 %.",
+      "1": "Erhöht außerdem beim Aktivieren des „Urtonsamplers“ von Xilonen den Unterbrechungs-WDS der aktuellen Truppenmitglieder in der Nähe."
+    }
+  },
+  "constellation2": {
+    "name": "Der glühenden Wildnis gewidmetes Quintett",
+    "description": {
+      "0": "Die von Xilonen getragenen <geo>Geo</geo>-Sampler bleiben durchgehend aktiv. Verleiht außerdem beim Aktivieren des „Urtonsamplers“ von Xilonen den Truppenmitgliedern in der Nähe mit denselben Elementartypen der Sampler einen Bonuseffekt des entsprechenden Elementartyps basierend auf den Elementartypen der aktivierten Sampler:",
+      "1": [
+        " <geo>Geo</geo>: Erhöht den verursachten Schaden um 50 %.",
+        " <pyro>Pyro</pyro>: Erhöht den ANG um 45 %.",
+        " <hydro>Hydro</hydro>: Erhöht die max. LP um 45 %.",
+        " <cryo>Kryo</cryo>: Erhöht den KSCH um 60 %.",
+        " <electro>Elektro</electro>: Stellt 25 Punkte Elementarenergie wieder her und verringert die Abklingzeit der Spezialfähigkeit um 6 s."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Der Sonnenhitze gewidmete Parade",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Yohuals Kratzer</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Dem Nachmittag gewidmete Traumblumen",
+    "description": {
+      "0": "Nachdem Xilonen <strong>Yohuals Kratzer</strong> eingesetzt hat, verleiht sie allen Truppenmitgliedern in der Nähe den 15 s anhaltenden Effekt „Glorreicher Segen“.",
+      "1": "Erhöht den von den Figuren mit „Glorreicher Segen“ mit Standardangriffen, heftigen Schlägen und Angriffen aus dem Fall verursachten Schaden um 65 % von Xilonens VTD. Dieser Effekt wird aufgehoben, wenn er 6-mal ausgelöst wurde oder die Wirkungsdauer abgelaufen ist.",
+      "2": "Wenn mehrere Gegner gleichzeitig getroffen werden, richtet sich die Anzahl der Auslösungen nach der Anzahl der getroffenen Gegner. Die Zählungen der Auslösungen für jedes Truppenmitglied mit „Glorreicher Segen“ werden unabhängig voneinander berechnet."
+    }
+  },
+  "constellation5": {
+    "name": "Dem Zwielicht gewidmeter Rhythmus",
+    "description": {
+      "0": "Erhöht die Stufe der Fähigkeit <strong>Ozelot-Rhythmus!</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Der ewigen Nacht gewidmeter Karneval",
+    "description": {
+      "0": "Wenn Xilonen sich im Zustand „Nachtseelensegen“ befindet und rennt, springt, Standardangriffe oder Angriffe aus dem Fall einsetzt, erhält sie den Segen der unvergänglichen Nacht, der sie die Beschränkungen des Nachtseelensegens ignorieren lässt und den von ihren Standardangriffen und Angriffen aus dem Fall verursachten Schaden erhöht, hält 5 s.",
+      "1": "Während der Wirkungsdauer:",
+      "2": [
+        " Der Countdown für das Zeitlimit der Nachtseelenpunkte von Xilonen wird angehalten. Xilonens Nachtseelenpunkte, Phlogiston und Ausdauer nehmen nicht ab, und wenn ihre Nachtseelenpunkte den Höchstwert erreichen, endet auch der Zustand des Nachtseelensegens nicht.",
+        " Erhöht den von Xilonens Standardangriffen und Angriffen aus dem Fall im Zustand „Nachtseelensegen“ verursachten Schaden um 300 % von Xilonens VTD.",
+        " Stellt alle 1,5 s allen Truppenmitgliedern in der Nähe LP in Höhe von 120 % von Xilonens VTD wieder her."
+      ],
+      "3": "15 s Abklingzeit für das Erhalten des Segens der unvergänglichen Nacht."
+    }
+  }
+}

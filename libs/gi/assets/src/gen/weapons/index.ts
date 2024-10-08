@@ -63,6 +63,7 @@ import FootprintOfTheRainbow from './FootprintOfTheRainbow'
 import ForestRegalia from './ForestRegalia'
 import FreedomSworn from './FreedomSworn'
 import Frostbearer from './Frostbearer'
+import FruitfulHook from './FruitfulHook'
 import FruitOfFulfillment from './FruitOfFulfillment'
 import HakushinRing from './HakushinRing'
 import Halberd from './Halberd'
@@ -98,10 +99,12 @@ import MissiveWindspear from './MissiveWindspear'
 import MistsplitterReforged from './MistsplitterReforged'
 import MitternachtsWaltz from './MitternachtsWaltz'
 import Moonpiercer from './Moonpiercer'
+import MountainBracingBolt from './MountainBracingBolt'
 import MouunsMoon from './MouunsMoon'
 import OathswornEye from './OathswornEye'
 import OldMercsPal from './OldMercsPal'
 import OtherworldlyStory from './OtherworldlyStory'
+import PeakPatrolSong from './PeakPatrolSong'
 import PocketGrimoire from './PocketGrimoire'
 import PolarStar from './PolarStar'
 import PortablePowerSaw from './PortablePowerSaw'
@@ -155,6 +158,7 @@ import SongOfStillness from './SongOfStillness'
 import SplendorOfTranquilWaters from './SplendorOfTranquilWaters'
 import StaffOfHoma from './StaffOfHoma'
 import StaffOfTheScarletSands from './StaffOfTheScarletSands'
+import SturdyBone from './SturdyBone'
 import SummitShaper from './SummitShaper'
 import SurfsUp from './SurfsUp'
 import SwordOfDescension from './SwordOfDescension'
@@ -261,6 +265,7 @@ const data = {
   FreedomSworn,
   Frostbearer,
   FruitOfFulfillment,
+  FruitfulHook,
   HakushinRing,
   Halberd,
   Hamayumi,
@@ -295,10 +300,12 @@ const data = {
   MistsplitterReforged,
   MitternachtsWaltz,
   Moonpiercer,
+  MountainBracingBolt,
   MouunsMoon,
   OathswornEye,
   OldMercsPal,
   OtherworldlyStory,
+  PeakPatrolSong,
   PocketGrimoire,
   PolarStar,
   PortablePowerSaw,
@@ -352,6 +359,7 @@ const data = {
   SplendorOfTranquilWaters,
   StaffOfHoma,
   StaffOfTheScarletSands,
+  SturdyBone,
   SummitShaper,
   SurfsUp,
   SwordOfDescension,

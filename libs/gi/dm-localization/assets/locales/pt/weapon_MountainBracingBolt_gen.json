@@ -1,0 +1,24 @@
+{
+  "name": "Prego Esmagador de Montanhas",
+  "description": {
+    "0": "Esta arma de haste foi feita por artesãos nas minas como um sacrifício para os espíritos das montanhas."
+  },
+  "passiveName": "Esperança Além dos Picos",
+  "passiveDescription": {
+    "0": {
+      "0": "Reduz o consumo de Stamina ao escalar em 15% e aumenta o Dano causado pela Habilidade Elemental em <cryo>12%</cryo>. Além disso, quando os outros personagens próximos da equipe lançam sua Habilidade Elemental, aumenta o Dano da Habilidade Elemental do personagem que está com essa arma equipada em mais <cryo>12%</cryo> por 8s."
+    },
+    "1": {
+      "0": "Reduz o consumo de Stamina ao escalar em 15% e aumenta o Dano causado pela Habilidade Elemental em <cryo>15%</cryo>. Além disso, quando os outros personagens próximos da equipe lançam sua Habilidade Elemental, aumenta o Dano da Habilidade Elemental do personagem que está com essa arma equipada em mais <cryo>15%</cryo> por 8s."
+    },
+    "2": {
+      "0": "Reduz o consumo de Stamina ao escalar em 15% e aumenta o Dano causado pela Habilidade Elemental em <cryo>18%</cryo>. Além disso, quando os outros personagens próximos da equipe lançam sua Habilidade Elemental, aumenta o Dano da Habilidade Elemental do personagem que está com essa arma equipada em mais <cryo>18%</cryo> por 8s."
+    },
+    "3": {
+      "0": "Reduz o consumo de Stamina ao escalar em 15% e aumenta o Dano causado pela Habilidade Elemental em <cryo>21%</cryo>. Além disso, quando os outros personagens próximos da equipe lançam sua Habilidade Elemental, aumenta o Dano da Habilidade Elemental do personagem que está com essa arma equipada em mais <cryo>21%</cryo> por 8s."
+    },
+    "4": {
+      "0": "Reduz o consumo de Stamina ao escalar em 15% e aumenta o Dano causado pela Habilidade Elemental em <cryo>24%</cryo>. Além disso, quando os outros personagens próximos da equipe lançam sua Habilidade Elemental, aumenta o Dano da Habilidade Elemental do personagem que está com essa arma equipada em mais <cryo>24%</cryo> por 8s."
+    }
+  }
+}

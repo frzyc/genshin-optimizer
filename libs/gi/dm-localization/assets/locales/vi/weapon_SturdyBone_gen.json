@@ -1,0 +1,24 @@
+{
+  "name": "Xương Cứng",
+  "description": {
+    "0": "Thanh kiếm dài bằng xương đã trở nên càng lúc càng cứng sau hàng ngàn lần vung lên đập xuống. Nghe nói từng là vũ khí quen thuộc của vị anh hùng Wanjiru."
+  },
+  "passiveName": "Niềm Kiêu Hãnh Của Kẻ Đặt Bẫy",
+  "passiveDescription": {
+    "0": {
+      "0": "Giảm 15% tiêu hao thể lực khi xung kích hoặc kỹ năng thay thế xung kích. Ngoài ra, sau khi dùng xung kích hoặc kỹ năng thay thế xung kích sẽ tăng sát thương Tấn Công Thường, mức tăng tương ứng với <cryo>16%</cryo> Tấn Công. Hiệu quả này sẽ biến mất sau khi hiệu lực 18 lần hoặc sau 7s."
+    },
+    "1": {
+      "0": "Giảm 15% tiêu hao thể lực khi xung kích hoặc kỹ năng thay thế xung kích. Ngoài ra, sau khi dùng xung kích hoặc kỹ năng thay thế xung kích sẽ tăng sát thương Tấn Công Thường, mức tăng tương ứng với <cryo>20%</cryo> Tấn Công. Hiệu quả này sẽ biến mất sau khi hiệu lực 18 lần hoặc sau 7s."
+    },
+    "2": {
+      "0": "Giảm 15% tiêu hao thể lực khi xung kích hoặc kỹ năng thay thế xung kích. Ngoài ra, sau khi dùng xung kích hoặc kỹ năng thay thế xung kích sẽ tăng sát thương Tấn Công Thường, mức tăng tương ứng với <cryo>24%</cryo> Tấn Công. Hiệu quả này sẽ biến mất sau khi hiệu lực 18 lần hoặc sau 7s."
+    },
+    "3": {
+      "0": "Giảm 15% tiêu hao thể lực khi xung kích hoặc kỹ năng thay thế xung kích. Ngoài ra, sau khi dùng xung kích hoặc kỹ năng thay thế xung kích sẽ tăng sát thương Tấn Công Thường, mức tăng tương ứng với <cryo>28%</cryo> Tấn Công. Hiệu quả này sẽ biến mất sau khi hiệu lực 18 lần hoặc sau 7s."
+    },
+    "4": {
+      "0": "Giảm 15% tiêu hao thể lực khi xung kích hoặc kỹ năng thay thế xung kích. Ngoài ra, sau khi dùng xung kích hoặc kỹ năng thay thế xung kích sẽ tăng sát thương Tấn Công Thường, mức tăng tương ứng với <cryo>32%</cryo> Tấn Công. Hiệu quả này sẽ biến mất sau khi hiệu lực 18 lần hoặc sau 7s."
+    }
+  }
+}

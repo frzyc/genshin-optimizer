@@ -209,6 +209,9 @@
   "ColorfulContemplation": {
     "name": "Renkli Düşünce"
   },
+  "FestiveFervor": {
+    "name": "Festival Coşkusu"
+  },
   "Primogem": {
     "name": "Köken Taşı"
   },
@@ -971,6 +974,9 @@
   "Mualani": {
     "name": "Mualani"
   },
+  "Xilonen": {
+    "name": "Xilonen"
+  },
   "KachinasStellaFortuna": {
     "name": "Kachina'nın Yaşam Yıldızı"
   },
@@ -979,6 +985,9 @@
   },
   "MualanisStellaFortuna": {
     "name": "Mualani'nin Yaşam Yıldızı"
+  },
+  "XilonensStellaFortuna": {
+    "name": "Xilonen'in Yaşam Yıldızı"
   },
   "Apple": {
     "name": "Elma"
@@ -7346,6 +7355,27 @@
   "DeliciousDelightsOfWondrousWanderings": {
     "name": "Enfes Gezi Lezzetleri (Lezzetli)"
   },
+  "SuspiciousBBQBeefHeartSkewers": {
+    "name": "Izgara Dana Yürek Şiş (Tuhaf)"
+  },
+  "BBQBeefHeartSkewers": {
+    "name": "Izgara Dana Yürek Şiş"
+  },
+  "DeliciousBBQBeefHeartSkewers": {
+    "name": "Izgara Dana Yürek Şiş (Lezzetli)"
+  },
+  "SuspiciousXocoatl": {
+    "name": "Xocoatl (Tuhaf)"
+  },
+  "Xocoatl": {
+    "name": "Xocoatl"
+  },
+  "DeliciousXocoatl": {
+    "name": "Xocoatl (Lezzetli)"
+  },
+  "FruitFlavoredMilkCandies": {
+    "name": "Meyve Aromalı Süt Şekerlemesi"
+  },
   "RecipeItem": {
     "name": "Yemek Malzemesi"
   },
@@ -7993,6 +8023,12 @@
   },
   "RecipeDelightsOfWondrousWanderings": {
     "name": "Tarif: Enfes Gezi Lezzetleri"
+  },
+  "RecipeBBQBeefHeartSkewers": {
+    "name": "Tarif: Izgara Dana Yürek Şiş"
+  },
+  "RecipeXocoatl": {
+    "name": "Tarif: Xocoatl"
   },
   "CraftedItems": {
     "name": "Üretilen Malzemeler"
@@ -8656,6 +8692,9 @@
   },
   "OverripeFlamegranate": {
     "name": "Aşırı Olgunlaşmış Alev Narı"
+  },
+  "GoldInscribedSecretSourceCore": {
+    "name": "Altın İşlemeli Gizli Kaynak Çekirdeği"
   },
   "TileOfDecarabiansTower": {
     "name": "Decarabian'ın Kırık Çinisi"
@@ -11261,6 +11300,15 @@
   "TheVolcanoLordAndTheShadowPins": {
     "name": "Yanardağ Lordu ve Gölge İğneleri"
   },
+  "PilgrimsChronicle": {
+    "name": "Yolculuk Günlüğü"
+  },
+  "SomewhatAgedCopyOfTequilTheBrave": {
+    "name": "Biraz Eskimiş \"Cesur Tequil\" Nüshası"
+  },
+  "SpankingNewCopyOfTequilTheBrave": {
+    "name": "Yepyeni \"Cesur Tequil\" Nüshası"
+  },
   "PicturesqueRecords": {
     "name": "Resimsi Kayıtlar"
   },
@@ -11275,6 +11323,12 @@
   },
   "NoteLeftAtTheCamp": {
     "name": "Kampta Bırakılan Not"
+  },
+  "ScarletPhlogistonHoneyPearl": {
+    "name": "Kızıl Filojiston Bal İncisi"
+  },
+  "CapturedPhotos": {
+    "name": "Çekilen Fotoğraflar"
   },
   "TearsAmongTheStars": {
     "name": "Yıldızlar Arasındaki Gözyaşları"
@@ -12878,6 +12932,12 @@
   "CelebrationCrispyAndSweet": {
     "name": "Kutlama: Çıtır ve Tatlı"
   },
+  "XilonenCuePoint": {
+    "name": "Xilonen: Şarkı Geçiş Yeri"
+  },
+  "TravelNotesSabzeruz": {
+    "name": "Gezi Notları: Sabzeruz"
+  },
   "EchoDandelionKnight": {
     "name": "Yankı: Karahindiba Şövalyesi"
   },
@@ -12892,6 +12952,12 @@
   },
   "EchoDarkSideOfDawn": {
     "name": "Yankı: Şafağın Karanlık Yüzü"
+  },
+  "EchoVagoMundo": {
+    "name": "Yankı: Fani Dünya Gezgini"
+  },
+  "EchoDrivingThunder": {
+    "name": "Yankı: Yıldırım Efendisi"
   },
   "AnemoculusResonanceStone": {
     "name": "Rüzgar Özü Rezonans Taşı"
@@ -13415,6 +13481,12 @@
   "StrivingToNegotiate": {
     "name": "Sıkı Pazarlık"
   },
+  "VirtuosoPerformance": {
+    "name": "Virtüöz Performansı"
+  },
+  "AllGreenAndGoodToGo": {
+    "name": "Tüm Hazırlıklar Tamam"
+  },
   "RhodeiaOfLoch": {
     "name": "Lochlu Rhodeia"
   },
@@ -13489,6 +13561,12 @@
   },
   "HydroHilichurlRogue": {
     "name": "Su Tırpanlı Dağ Zebanisi"
+  },
+  "AbyssLectorVioletLightning": {
+    "name": "Hiçlik Vaizi: Mor Şimşek"
+  },
+  "EremiteFloralRingDancer": {
+    "name": "Münzevi Yaprak Tacı Dansçısı"
   },
   "UndividedHeart": {
     "name": "Tek Yürek"
@@ -13784,6 +13862,15 @@
   "HydrodartSlime": {
     "name": "Su Oku Bodurlopu"
   },
+  "InFiveColorsDyed": {
+    "name": "Beş Renk Boya"
+  },
+  "ChainLightningCascade": {
+    "name": "Zincir Yıldırım Çağlayanı"
+  },
+  "SpiritSerpentsSwirl": {
+    "name": "Ruh Yılanının Girdabı"
+  },
   "MagicGuide": {
     "name": "Büyü Rehberi"
   },
@@ -14045,6 +14132,15 @@
   "Koholasaurus": {
     "name": "Koholazor"
   },
+  "PortablePowerSaw": {
+    "name": "Taşınabilir Otomatik Testere"
+  },
+  "ConductorsTopHat": {
+    "name": "Orkestra Şefinin Şapkası"
+  },
+  "Tepetlisaurus": {
+    "name": "Tepetlizor"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Limanı Rıhtımı"
   },
@@ -14197,6 +14293,9 @@
   },
   "Atea": {
     "name": "Atea"
+  },
+  "StageTepetl": {
+    "name": "Tepetl Sahnesi"
   },
   "ElementalResonanceWovenIce": {
     "name": "Element Rezonansı: Örülü Buzlar"
@@ -14387,6 +14486,9 @@
   "EdictOfAbsolution": {
     "name": "Kurtuluş Fermanı"
   },
+  "EremiteTeatime": {
+    "name": "Münzevi Çay Vakti"
+  },
   "Origin": {
     "name": "Köken"
   },
@@ -14437,6 +14539,9 @@
   },
   "Natlan": {
     "name": "Natlan"
+  },
+  "EnkanomiyaEvernight": {
+    "name": "Enkanomiya: Ebedi Gece"
   },
   "BeginnerPlayerBadge": {
     "name": "Acemi Oyuncu Rozeti"
@@ -15005,6 +15110,15 @@
   "MallowWoodMultiModelWardrobe": {
     "name": "Çınar \"Çok Modelli\" Gardırop"
   },
+  "FairsDistribution": {
+    "name": "Pazar Dağıtımı"
+  },
+  "FairsSplendidTextiles": {
+    "name": "Pazardan Harika Kumaşlar"
+  },
+  "PeachPalmWoodFulcrumContainer": {
+    "name": "Şeftali Palmiyesi \"Dayanak\" Dolabı"
+  },
   "TwoTierLibraryBookshelf": {
     "name": "İki Raflı Kitaplık"
   },
@@ -15161,6 +15275,18 @@
   "TeahouseToolQualiteaReview": {
     "name": "Çayevi Gereçleri: Kalite Denetimi"
   },
+  "OneLeggedRoundShield": {
+    "name": "\"Tek Ayaklı Yuvarlak Kalkan\""
+  },
+  "FourLeggedTowerShield": {
+    "name": "Dört Ayaklı Kule Kalkan"
+  },
+  "NamelessAndSilent": {
+    "name": "Sessiz ve İsimsiz"
+  },
+  "CountlessServices": {
+    "name": "Sayısız Hizmet"
+  },
   "BreezeBlessedBed": {
     "name": "Zarif Esinti Yatağı"
   },
@@ -15280,6 +15406,15 @@
   },
   "TeahouseBenchSimpleSeating": {
     "name": "Çayevi Bankı: Basit Oturak"
+  },
+  "StadiumsSpicyFeastBackedChair": {
+    "name": "\"Acılı Lezzetler\" Arkalıklı Stadyum Sandalyesi"
+  },
+  "StadiumRoundSeatingBench": {
+    "name": "\"Yuvarlak\" Stadyum Bankı"
+  },
+  "StadiumSpeedySnackRoundStool": {
+    "name": "\"Hızlı Atıştırmalık\" Stadyum İskemlesi"
   },
   "NorthernStoneHearth": {
     "name": "Taş Şömine"
@@ -15455,6 +15590,15 @@
   "HotelRailingPerfectViewingArc": {
     "name": "Otel Korkuluğu: \"Mükemmel Seyir Kemeri\""
   },
+  "FairsFreshVegetables": {
+    "name": "Pazardan Taze Sebzeler"
+  },
+  "TravelerOnTheRoad": {
+    "name": "Yoldaki Gezgin"
+  },
+  "TheDistanceBetweenItAndTheFlames": {
+    "name": "Alevlerle Arasındaki Mesafe"
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Mondstadt Halısı: Kızıl Coşku"
   },
@@ -15503,6 +15647,18 @@
   "FadingAfterglow": {
     "name": "\"Solan Gün Batımı\""
   },
+  "WearyRugLayDownYourBurden": {
+    "name": "Eskimiş Halı: Yükünü Bırak"
+  },
+  "VibrantPotBornInFlames": {
+    "name": "Renkli Saksı: Alevlerden Doğan"
+  },
+  "BipedalPuppetShakyQuaky": {
+    "name": "İki Ayaklı Kukla: Paytak"
+  },
+  "QuadripedalPuppetReadySteady": {
+    "name": "Dört Ayaklı Kukla: Rahvan"
+  },
   "TrustyPortableLamp": {
     "name": "Sönmeyen Taşınabilir Lamba"
   },
@@ -15538,6 +15694,12 @@
   },
   "SimpleLightingLocallySourcedMaterials": {
     "name": "Basit Aydınlatma: \"Yerel Malzemeler\""
+  },
+  "PhlogistonDeskLampSufficientlyWeighty": {
+    "name": "Filojiston Masa Lambası: Yeterli Ağırlık"
+  },
+  "PhlogistonFloorLampCostEffectiveConvenience": {
+    "name": "Filojiston Lambaderi: Avantajlı Maliyet"
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Çiçek Aranjmanı: Mavi Huzur"
@@ -15704,6 +15866,27 @@
   "MellowTeaInARedClayPot": {
     "name": "\"Kırmızı Kil Demlikte Açık Çay\""
   },
+  "ModelDishNotToBeMissed": {
+    "name": "Yemek Modeli: Bu Lezzet Kaçmaz"
+  },
+  "ModelDishTheUsualSelection": {
+    "name": "Yemek Modeli: Her Zamankinden"
+  },
+  "FairsFeastingAndDrinking": {
+    "name": "Pazardan Yeme İçme Ziyafeti"
+  },
+  "Windtracker": {
+    "name": "Rüzgarın İzinde"
+  },
+  "JavelinImminent": {
+    "name": "Hazırdaki Mızrak"
+  },
+  "TowardsGreaterHeights": {
+    "name": "Daha Yükseklere"
+  },
+  "RidingTheTranquilWaters": {
+    "name": "Sakin Sularda Sörf"
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "\"Bilgelik Diyarı İdrakı\""
   },
@@ -15721,6 +15904,15 @@
   },
   "FloralArrangementArtOfContrast": {
     "name": "Çiçek Aranjmanı: \"Zıtlık Sanatı\""
+  },
+  "EchoesOfTheShore": {
+    "name": "Kıyının Yankıları"
+  },
+  "UnbeatenHero": {
+    "name": "Yenilmez Kahraman"
+  },
+  "MountainFireworks": {
+    "name": "Dağ Havai Fişekleri"
   },
   "LandscapePaintingCountryHome": {
     "name": "Peyzaj: Taşra Evi"
@@ -15805,6 +15997,9 @@
   },
   "MekaLuminaireSilentNightsContemplation": {
     "name": "Meka Lamba: \"Sessiz Gece Düşünceleri\""
+  },
+  "PhlogistonHangingLampRoadGuide": {
+    "name": "Filojiston Asma Lamba: Yol Gösterici"
   },
   "LingeringMoment": {
     "name": "Ölümsüz An"

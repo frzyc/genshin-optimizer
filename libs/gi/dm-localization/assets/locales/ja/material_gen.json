@@ -209,6 +209,9 @@
   "ColorfulContemplation": {
     "name": "色彩アイデア"
   },
+  "FestiveFervor": {
+    "name": "賑わい度"
+  },
   "Primogem": {
     "name": "原石"
   },
@@ -971,6 +974,9 @@
   "Mualani": {
     "name": "ムアラニ"
   },
+  "Xilonen": {
+    "name": "シロネン"
+  },
   "KachinasStellaFortuna": {
     "name": "カチーナの星屑"
   },
@@ -979,6 +985,9 @@
   },
   "MualanisStellaFortuna": {
     "name": "ムアラニの星屑"
+  },
+  "XilonensStellaFortuna": {
+    "name": "シロネンの星屑"
   },
   "Apple": {
     "name": "リンゴ"
@@ -7346,6 +7355,27 @@
   "DeliciousDelightsOfWondrousWanderings": {
     "name": "美味しそうなワンダーボックス"
   },
+  "SuspiciousBBQBeefHeartSkewers": {
+    "name": "微妙な牛ハツの串焼き"
+  },
+  "BBQBeefHeartSkewers": {
+    "name": "牛ハツの串焼き"
+  },
+  "DeliciousBBQBeefHeartSkewers": {
+    "name": "美味しそうな牛ハツの串焼き"
+  },
+  "SuspiciousXocoatl": {
+    "name": "微妙なショコアトゥル水"
+  },
+  "Xocoatl": {
+    "name": "ショコアトゥル水"
+  },
+  "DeliciousXocoatl": {
+    "name": "美味しそうなショコアトゥル水"
+  },
+  "FruitFlavoredMilkCandies": {
+    "name": "フルーツミルクキャンディ"
+  },
   "RecipeItem": {
     "name": "レシピアイテム"
   },
@@ -7993,6 +8023,12 @@
   },
   "RecipeDelightsOfWondrousWanderings": {
     "name": "レシピ：ワンダーボックス"
+  },
+  "RecipeBBQBeefHeartSkewers": {
+    "name": "レシピ：牛ハツの串焼き"
+  },
+  "RecipeXocoatl": {
+    "name": "レシピ：ショコアトゥル水"
   },
   "CraftedItems": {
     "name": "合成産物"
@@ -8656,6 +8692,9 @@
   },
   "OverripeFlamegranate": {
     "name": "フレイムグレネード·爛熟"
+  },
+  "GoldInscribedSecretSourceCore": {
+    "name": "金紋の刻まれた源核"
   },
   "TileOfDecarabiansTower": {
     "name": "高塔の王の瓦"
@@ -11261,6 +11300,15 @@
   "TheVolcanoLordAndTheShadowPins": {
     "name": "火山大王と陰縫いの針"
   },
+  "PilgrimsChronicle": {
+    "name": "聖宵の旅織り"
+  },
+  "SomewhatAgedCopyOfTequilTheBrave": {
+    "name": "やや古びた『勇敢なテクィ』"
+  },
+  "SpankingNewCopyOfTequilTheBrave": {
+    "name": "新品同様の『勇敢なテクィ』"
+  },
   "PicturesqueRecords": {
     "name": "絵のような記録"
   },
@@ -11275,6 +11323,12 @@
   },
   "NoteLeftAtTheCamp": {
     "name": "拠点に残されたノート"
+  },
+  "ScarletPhlogistonHoneyPearl": {
+    "name": "真っ赤な燃素蜜珠"
+  },
+  "CapturedPhotos": {
+    "name": "没収した写真"
   },
   "TearsAmongTheStars": {
     "name": "星間の涙"
@@ -12878,6 +12932,12 @@
   "CelebrationCrispyAndSweet": {
     "name": "祭典·あまあまサクサク"
   },
+  "XilonenCuePoint": {
+    "name": "シロネン・律動"
+  },
+  "TravelNotesSabzeruz": {
+    "name": "紀行・神誕"
+  },
   "EchoDandelionKnight": {
     "name": "軌跡·蒲公英騎士"
   },
@@ -12892,6 +12952,12 @@
   },
   "EchoDarkSideOfDawn": {
     "name": "軌跡·アカツキの裏面"
+  },
+  "EchoVagoMundo": {
+    "name": "軌跡・浮世閑歩"
+  },
+  "EchoDrivingThunder": {
+    "name": "軌跡・疾雷快雨"
   },
   "AnemoculusResonanceStone": {
     "name": "風神の瞳の共鳴石"
@@ -13260,25 +13326,25 @@
     "name": "図譜：雷のトレジャーコンパス"
   },
   "FormulaFruitPasteBait": {
-    "name": "配合：果物餌"
+    "name": "調合書：果物餌"
   },
   "FormulaRedrotBait": {
-    "name": "配合：赤挽肉餌"
+    "name": "調合書：赤挽肉餌"
   },
   "FormulaFalseWormBait": {
-    "name": "配合：ワームの疑似餌"
+    "name": "調合書：ワームの疑似餌"
   },
   "FormulaFakeFlyBait": {
-    "name": "配合：ハエの疑似餌"
+    "name": "調合書：ハエの疑似餌"
   },
   "FormulaSugardewBait": {
-    "name": "配合：甘露餌"
+    "name": "調合書：甘露餌"
   },
   "FormulaSourBait": {
-    "name": "配合：すっぱいオレンジの餌"
+    "name": "調合書：すっぱいオレンジの餌"
   },
   "FormulaFlashingMaintenanceMekBait": {
-    "name": "配合：メンテマシナリーの閃光釣り餌"
+    "name": "調合書：メンテマシナリーの閃光釣り餌"
   },
   "DiagramFluteOfEzpitzal": {
     "name": "鍛造図：エズピツァルの笛"
@@ -13308,10 +13374,10 @@
     "name": "図譜：水のトレジャーコンパス"
   },
   "FormulaPureWater": {
-    "name": "レシピ：「純潔の水」"
+    "name": "調合書：「純潔の水」"
   },
   "RecipeStrengthTonic": {
-    "name": "配合：「ストロングトニック」"
+    "name": "調合書：「ストロングトニック」"
   },
   "InstructionsPyroculusResonanceStone": {
     "name": "説明：炎神の瞳の共鳴石"
@@ -13415,6 +13481,12 @@
   "StrivingToNegotiate": {
     "name": "真面目な交渉"
   },
+  "VirtuosoPerformance": {
+    "name": "音律を奏でる"
+  },
+  "AllGreenAndGoodToGo": {
+    "name": "準備万端"
+  },
   "RhodeiaOfLoch": {
     "name": "純水精霊·ローデシア"
   },
@@ -13489,6 +13561,12 @@
   },
   "HydroHilichurlRogue": {
     "name": "ヒルチャールレンジャー·水"
+  },
+  "AbyssLectorVioletLightning": {
+    "name": "アビスの詠唱者・紫電"
+  },
+  "EremiteFloralRingDancer": {
+    "name": "エルマイト旅団・フローラルリングダンサー"
   },
   "UndividedHeart": {
     "name": "唯一の心"
@@ -13784,6 +13862,15 @@
   "HydrodartSlime": {
     "name": "ハイドロダーツスライム"
   },
+  "InFiveColorsDyed": {
+    "name": "落染五色"
+  },
+  "ChainLightningCascade": {
+    "name": "襲雷閃光"
+  },
+  "SpiritSerpentsSwirl": {
+    "name": "とぐろ巻く霊蛇の威嚇"
+  },
   "MagicGuide": {
     "name": "魔導緒論"
   },
@@ -14045,6 +14132,15 @@
   "Koholasaurus": {
     "name": "コホラ竜"
   },
+  "PortablePowerSaw": {
+    "name": "携帯型チェーンソー"
+  },
+  "ConductorsTopHat": {
+    "name": "指揮者のハット"
+  },
+  "Tepetlisaurus": {
+    "name": "テペトル竜"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -14197,6 +14293,9 @@
   },
   "Atea": {
     "name": "アテア"
+  },
+  "StageTepetl": {
+    "name": "テペトルの舞台"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交錯の氷"
@@ -14387,6 +14486,9 @@
   "EdictOfAbsolution": {
     "name": "赦免の宣告"
   },
+  "EremiteTeatime": {
+    "name": "エルマイト旅団のティータイム"
+  },
   "Origin": {
     "name": "原初"
   },
@@ -14437,6 +14539,9 @@
   },
   "Natlan": {
     "name": "ナタ"
+  },
+  "EnkanomiyaEvernight": {
+    "name": "淵下宮・常夜"
   },
   "BeginnerPlayerBadge": {
     "name": "初心者プレイヤーメダル"
@@ -15005,6 +15110,15 @@
   "MallowWoodMultiModelWardrobe": {
     "name": "マロウ材の「マルチ」クローゼット"
   },
+  "FairsDistribution": {
+    "name": "「市場の整然たる陳列」"
+  },
+  "FairsSplendidTextiles": {
+    "name": "「市場の鮮やかな織物」"
+  },
+  "PeachPalmWoodFulcrumContainer": {
+    "name": "ピーチココナッツ材「支点」商品棚"
+  },
   "TwoTierLibraryBookshelf": {
     "name": "図書館の二段本棚"
   },
@@ -15161,6 +15275,18 @@
   "TeahouseToolQualiteaReview": {
     "name": "茶房の道具-「茶葉の仕分け」"
   },
+  "OneLeggedRoundShield": {
+    "name": "「一本脚の円盾」"
+  },
+  "FourLeggedTowerShield": {
+    "name": "「四本脚の大盾」"
+  },
+  "NamelessAndSilent": {
+    "name": "「静かなる貢献者」"
+  },
+  "CountlessServices": {
+    "name": "「無数のサービス」"
+  },
   "BreezeBlessedBed": {
     "name": "そよ風に守られたベッド"
   },
@@ -15280,6 +15406,15 @@
   },
   "TeahouseBenchSimpleSeating": {
     "name": "茶房の長椅子-「粗朴な長椅子」"
+  },
+  "StadiumsSpicyFeastBackedChair": {
+    "name": "競技場「熱き宴」背もたれ椅子"
+  },
+  "StadiumRoundSeatingBench": {
+    "name": "競技場「車座」ベンチ"
+  },
+  "StadiumSpeedySnackRoundStool": {
+    "name": "競技場「早食い」丸椅子"
   },
   "NorthernStoneHearth": {
     "name": "北地の石造暖炉"
@@ -15455,6 +15590,15 @@
   "HotelRailingPerfectViewingArc": {
     "name": "ホテルの欄干-「広がるアークの風景」"
   },
+  "FairsFreshVegetables": {
+    "name": "「市場の旬」"
+  },
+  "TravelerOnTheRoad": {
+    "name": "「途上の旅人」"
+  },
+  "TheDistanceBetweenItAndTheFlames": {
+    "name": "「炎との距離」"
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "モンドカーペット-「赤い熱意」"
   },
@@ -15503,6 +15647,18 @@
   "FadingAfterglow": {
     "name": "「褪せゆく残光」"
   },
+  "WearyRugLayDownYourBurden": {
+    "name": "草臥絨毯-「重荷を下ろして」"
+  },
+  "VibrantPotBornInFlames": {
+    "name": "絢爛の陶磁器-「烈焔より生まれしもの」"
+  },
+  "BipedalPuppetShakyQuaky": {
+    "name": "二足木偶-「よちよちくん」"
+  },
+  "QuadripedalPuppetReadySteady": {
+    "name": "四足木偶-「あんていくん」"
+  },
   "TrustyPortableLamp": {
     "name": "光り続く提灯"
   },
@@ -15538,6 +15694,12 @@
   },
   "SimpleLightingLocallySourcedMaterials": {
     "name": "シンプルなランプ-「適材適所」"
+  },
+  "PhlogistonDeskLampSufficientlyWeighty": {
+    "name": "燃素テーブルランプ-「重さ十分」"
+  },
+  "PhlogistonFloorLampCostEffectiveConvenience": {
+    "name": "燃素フロアランプ-「コスパ良し」"
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "花瓶-「水色の落着き」"
@@ -15704,6 +15866,27 @@
   "MellowTeaInARedClayPot": {
     "name": "「朱泥に揺らぐ濃茶」"
   },
+  "ModelDishNotToBeMissed": {
+    "name": "料理模型-「欠かせないもの」"
+  },
+  "ModelDishTheUsualSelection": {
+    "name": "料理模型-「いつもの選択」"
+  },
+  "FairsFeastingAndDrinking": {
+    "name": "「市場の乾杯」"
+  },
+  "Windtracker": {
+    "name": "「風追い人」"
+  },
+  "JavelinImminent": {
+    "name": "「機を待つ槍」"
+  },
+  "TowardsGreaterHeights": {
+    "name": "「さらなる高みへ」"
+  },
+  "RidingTheTranquilWaters": {
+    "name": "「穏やかな水面を渡って」"
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "「卓識の地の明察」"
   },
@@ -15721,6 +15904,15 @@
   },
   "FloralArrangementArtOfContrast": {
     "name": "花瓶の生花-「コントラスト·アート」"
+  },
+  "EchoesOfTheShore": {
+    "name": "「水辺のこだま」"
+  },
+  "UnbeatenHero": {
+    "name": "「不敗の勇士」"
+  },
+  "MountainFireworks": {
+    "name": "「山々の花火」"
   },
   "LandscapePaintingCountryHome": {
     "name": "風景画-「田舎の民家」"
@@ -15805,6 +15997,9 @@
   },
   "MekaLuminaireSilentNightsContemplation": {
     "name": "枢機の照明-「静夜の想い」"
+  },
+  "PhlogistonHangingLampRoadGuide": {
+    "name": "燃素ライト-「道しるべ」"
   },
   "LingeringMoment": {
     "name": "「絆の時」"

@@ -1,0 +1,24 @@
+{
+  "name": "Fruitful Hook",
+  "description": {
+    "0": "Bold Burkina from the Scions of the Canopy once made this weapon with the hero Tenoch's help — all for the sake of obtaining Flamegranates unmatched throughout Natlan."
+  },
+  "passiveName": "The Weight of Falling Branches",
+  "passiveDescription": {
+    "0": {
+      "0": "Increase Plunging Attack CRIT Rate by <cryo>16%</cryo>; After a Plunging Attack hits an opponent, Normal, Charged, and Plunging Attack DMG increased by <cryo>16%</cryo> for 10s."
+    },
+    "1": {
+      "0": "Increase Plunging Attack CRIT Rate by <cryo>20%</cryo>; After a Plunging Attack hits an opponent, Normal, Charged, and Plunging Attack DMG increased by <cryo>20%</cryo> for 10s."
+    },
+    "2": {
+      "0": "Increase Plunging Attack CRIT Rate by <cryo>24%</cryo>; After a Plunging Attack hits an opponent, Normal, Charged, and Plunging Attack DMG increased by <cryo>24%</cryo> for 10s."
+    },
+    "3": {
+      "0": "Increase Plunging Attack CRIT Rate by <cryo>28%</cryo>; After a Plunging Attack hits an opponent, Normal, Charged, and Plunging Attack DMG increased by <cryo>28%</cryo> for 10s."
+    },
+    "4": {
+      "0": "Increase Plunging Attack CRIT Rate by <cryo>32%</cryo>; After a Plunging Attack hits an opponent, Normal, Charged, and Plunging Attack DMG increased by <cryo>32%</cryo> for 10s."
+    }
+  }
+}
