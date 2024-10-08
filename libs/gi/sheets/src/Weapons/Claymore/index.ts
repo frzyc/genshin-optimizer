@@ -11,6 +11,7 @@ import FangOfTheMountainKing from './FangOfTheMountainKing'
 import FavoniusGreatsword from './FavoniusGreatsword'
 import FerrousShadow from './FerrousShadow'
 import ForestRegalia from './ForestRegalia'
+import FruitfulHook from './FruitfulHook'
 import KatsuragikiriNagamasa from './KatsuragikiriNagamasa'
 import LithicBlade from './LithicBlade'
 import LuxuriousSeaLord from './LuxuriousSeaLord'
@@ -49,6 +50,7 @@ const claymore: Record<WeaponClaymoreKey, WeaponSheet> = {
   FavoniusGreatsword,
   FerrousShadow,
   ForestRegalia,
+  FruitfulHook,
   KatsuragikiriNagamasa,
   LithicBlade,
   LuxuriousSeaLord,
