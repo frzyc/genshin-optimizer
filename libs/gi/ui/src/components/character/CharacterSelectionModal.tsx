@@ -535,6 +535,10 @@ const CustomTooltip = styled(({ className, ...props }: TooltipProps) => (
   },
 })
 
+// used for wrapping SelectionCards for the single selection variant - passing
+// in the appropriate selectedIndex and teamSlotIndex controls whether outlining
+// and flashing the selected outline is enabled, favorite icon and the character
+// tooltip are always present
 function SingleSelectCardWrapper({
   characterKey,
   children,
@@ -602,6 +606,9 @@ function SingleSelectCardWrapper({
   )
 }
 
+// used for wrapping SelectionCards for the multi select variant - components
+// using this must provide the teamSlotIndex of the character this card is for
+// (0-3 if the character is in the team being selected for, -1 otherwise)
 function MultiSelectCardWrapper({
   characterKey,
   teamSlotIndex,
