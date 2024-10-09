@@ -1,12 +1,12 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import { own } from '@genshin-optimizer/sr/formula'
-import { useSrCalcContext } from '@genshin-optimizer/sr/formula-ui'
 import {
   CharacterCard,
   CharacterEditor,
   useCharacterContext,
   useLoadoutContext,
+  useSrCalcContext,
 } from '@genshin-optimizer/sr/ui'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
