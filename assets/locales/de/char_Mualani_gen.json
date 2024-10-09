@@ -53,10 +53,10 @@
       ],
       "6": "<br/>",
       "7": "<strong>Wellenschwung und Markierung der Beute</strong>",
-      "8": "Erhöht, wenn Mualani den Haifischbiss einsetzt, den von ihr verursachten Schaden basierend auf der Menge an Stapelungen von Wellenschwung. Bei 3 Stapelungen wird der Haifischbiss in Wogender Haibiss umgewandelt, was ihren Schaden weiter erhöht。 Entfernt nach dem Treffen von Gegnern alle Stapelungen von Wellenschwung.",
-      "9": "Entfernt, wenn der Haifischbiss einen Gegner trifft, die Markierung und feuert Haifischgeschosse auf bis zu 5 als Beute markierte Gegner in der Nähe ab, die ihnen Schaden in gleicher Höhe wie dem des diesmaligen Haifischbisses zufügen und ihre Markierungen entfernen. Verringert, wenn mehr als 1 Gegner Ziel von Haifischbiss und Haifischgeschossen ist, den verursachten Schaden, wobei der max. Schaden 72 % des ursprünglichen Schadens beträgt, wenn 3 Gegner betroffen sind.",
+      "8": "Erhöht, wenn Mualani den Haifischbiss einsetzt, den von ihr verursachten Schaden basierend auf der Menge an Stapelungen von Wellenschwung. Bei 3 Stapelungen wird der Haifischbiss in Wogender Haibiss umgewandelt, was ihren Schaden weiter erhöht. Entfernt nach dem Treffen von Gegnern alle Stapelungen von Wellenschwung.",
+      "9": "Entfernt, wenn der Haifischbiss einen Gegner trifft, die Markierung und feuert Haifischgeschosse auf bis zu 5 als Beute markierte Gegner in der Nähe ab, die ihnen Schaden in gleicher Höhe wie dem des diesmaligen Haifischbisses zufügen und ihre Markierungen entfernen. Verringert, wenn mehr als 1 Gegner Ziel von Haifischbiss und Haifischgeschossen ist, den verursachten Schaden, wobei der Schaden 72 % des ursprünglichen Schadens beträgt, wenn 3 oder mehr Gegner betroffen sind.",
       "10": "<br/>",
-      "11": "<i>Erstens ist mein kleiner Hai nicht nur ein Surfbrett, sondern auch ein Süßwasserhai. Zweitens muss er nicht wirklich fressen, aber er beißt trotzdem.</i>"
+      "11": "<i>Erstens ist mein kleiner Hai nicht nur ein Surfbrett, sondern auch ein Süßwasserhai. Zweitens muss er nicht wirklich fressen, aber er beißt trotzdem!</i>"
     },
     "skillParams": {
       "0": "Basis-SCH Haifischbiss",
@@ -112,7 +112,7 @@
   "passive2": {
     "name": "Beste Reiseführerin von Natlan",
     "description": {
-      "0": "Verleiht, sobald ein in der Nähe befindliches Truppenmitglied Nachtseelenaufbruch auslöst, Mualani 1 Stapelung „Wellenreitererfahrung“, hält 20 s, 3-fach stapelbar. Verbraucht, wenn Mualani <strong>Sturmexplosions-Geschoss</strong> einsetzt, alle Stapelungen von „Wellenreitererfahrung“, erhöht den diesmal verursachten Schaden von Haibitzen-Geschoss basierend auf den verbrauchten Stapelungen um 15/30/45 % von Mualanis max. LP."
+      "0": "Verleiht, sobald ein in der Nähe befindliches Truppenmitglied Nachtseelenaufbruch auslöst, Mualani 1 Stapelung „Wellenreitererfahrung“, hält 20 s, 3-fach stapelbar. Verbraucht, wenn Mualani <strong>Haibitzen-Geschoss</strong> einsetzt, alle Stapelungen von „Wellenreitererfahrung“, erhöht den diesmal verursachten Schaden von Haibitzen-Geschoss basierend auf den verbrauchten Stapelungen um 15/30/45 % von Mualanis max. LP."
     }
   },
   "passive3": {

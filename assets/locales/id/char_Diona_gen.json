@@ -42,8 +42,8 @@
   "skill": {
     "name": "Icy Paws",
     "description": {
-      "0": "Menembakkan Icy Paws yang mengakibatkan <cryo>Cryo DMG</cryo> dan membentuk perisai saat Icy Paws mengenai musuh.",
-      "1": "Jumlah DMG yang dapat ditahan perisai ditentukan berdasarkan Max HP Diona, dan durasinya ditentukan berdasarkan jumlah musuh yang terkena Icy Paws.",
+      "0": "Menembakkan Icy Paws yang mengakibatkan <cryo>Cryo DMG</cryo> dan membentuk Perisai saat Icy Paws mengenai musuh.",
+      "1": "Jumlah DMG yang dapat ditahan Perisai ditentukan berdasarkan Max HP Diona, dan durasinya ditentukan berdasarkan jumlah musuh yang terkena Icy Paws.",
       "2": "<br/>",
       "3": "<strong>Tekan</strong>",
       "4": "Menembakkan 2 Icy Paws dengan cepat",
@@ -52,7 +52,7 @@
       "7": "Bergerak mundur dengan cepat, kemudian menembakkan 5 Icy Paws.",
       "8": "Perisai yang terbentuk setelah tombol skill ditahan, akan memperoleh bonus 75% penyerapan DMG.",
       "9": "<br/>",
-      "10": "Perisai ini memiliki bonus 250% penyerapan <cryo>Cryo DMG</cryo>. Saat perisai terbentuk, karakter yang sedang digunakan akan terpengaruh <cryo>Cryo</cryo> dalam waktu singkat.",
+      "10": "Perisai ini memiliki bonus 250% penyerapan <cryo>Cryo DMG</cryo>. Saat Perisai terbentuk, karakter yang sedang digunakan akan terpengaruh <cryo>Cryo</cryo> dalam waktu singkat.",
       "11": "<br/>",
       "12": "<i>Saat Diona baru menjadi bartender, sebanyak apa pun es yang dimasukkannya ke dalam koktail, tidak pernah ada seorang pun pemabuk yang terluka karena dingin. Tetapi setelah Diona mendapatkan Vision — kini dia bisa membuat minuman sangat dingin yang membuat para pemabuk kedinginan hingga sakit kepala. Hebat!</i>"
     },
@@ -110,7 +110,7 @@
   "passive1": {
     "name": "Cat's Tail Secret Menu",
     "description": {
-      "0": "Meningkatkan 10% Movement SPD dan mengurangi 10% konsumsi Stamina untuk Karakter yang dilindungi oleh perisai dari skill <strong>Icy Paws</strong>."
+      "0": "Meningkatkan 10% Movement SPD dan mengurangi 10% konsumsi Stamina untuk Karakter yang dilindungi oleh Perisai dari skill <strong>Icy Paws</strong>."
     }
   },
   "passive2": {
@@ -135,7 +135,7 @@
     "name": "Shaken, Not Purred",
     "description": {
       "0": "Meningkatkan 15% DMG <strong>Icy Paws</strong>, dan meningkatkan 15% kemampuan menahan DMG;",
-      "1": "Selain itu, ketika skill ini mengenai musuh, akan menciptakan sebuah perisai untuk karakter lain di sekitarnya yang dapat menahan hingga 50% dari penahanan DMG perisai <strong>Icy Paws</strong> selama 5 detik."
+      "1": "Selain itu, ketika skill ini mengenai musuh, akan menciptakan sebuah Perisai untuk karakter lain di sekitarnya yang dapat menahan hingga 50% dari penahanan DMG Perisai <strong>Icy Paws</strong> selama 5 detik."
     }
   },
   "constellation3": {

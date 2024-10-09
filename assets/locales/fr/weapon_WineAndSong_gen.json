@@ -6,19 +6,19 @@
   "passiveName": "Versatile",
   "passiveDescription": {
     "0": {
-      "0": "Lorsqu'une attaque normale a touché un ennemi, la consommation d'endurance du sprint ou de l'aptitude qui le remplace diminue de <cryo>14 %</cryo> pendant 5 s. De plus, après l'utilisation du sprint ou de l'aptitude qui le remplace, l'ATQ augmente de <cryo>20 %</cryo> pendant 5 s."
+      "0": "Lorsqu'une attaque normale a touché un ennemi, la consommation d'endurance du sprint ou du sprint alternatif diminue de <cryo>14 %</cryo> pendant 5 s. De plus, après l'utilisation du sprint ou de l'aptitude qui le remplace, l'ATQ augmente de <cryo>20 %</cryo> pendant 5 s."
     },
     "1": {
-      "0": "Lorsqu'une attaque normale a touché un ennemi, la consommation d'endurance du sprint ou de l'aptitude qui le remplace diminue de <cryo>16 %</cryo> pendant 5 s. De plus, après l'utilisation du sprint ou de l'aptitude qui le remplace, l'ATQ augmente de <cryo>25 %</cryo> pendant 5 s."
+      "0": "Lorsqu'une attaque normale a touché un ennemi, la consommation d'endurance du sprint ou du sprint alternatif diminue de <cryo>16 %</cryo> pendant 5 s. De plus, après l'utilisation du sprint ou de l'aptitude qui le remplace, l'ATQ augmente de <cryo>25 %</cryo> pendant 5 s."
     },
     "2": {
-      "0": "Lorsqu'une attaque normale a touché un ennemi, la consommation d'endurance du sprint ou de l'aptitude qui le remplace diminue de <cryo>18 %</cryo> pendant 5 s. De plus, après l'utilisation du sprint ou de l'aptitude qui le remplace, l'ATQ augmente de <cryo>30 %</cryo> pendant 5 s."
+      "0": "Lorsqu'une attaque normale a touché un ennemi, la consommation d'endurance du sprint ou du sprint alternatif diminue de <cryo>18 %</cryo> pendant 5 s. De plus, après l'utilisation du sprint ou de l'aptitude qui le remplace, l'ATQ augmente de <cryo>30 %</cryo> pendant 5 s."
     },
     "3": {
-      "0": "Lorsqu'une attaque normale a touché un ennemi, la consommation d'endurance du sprint ou de l'aptitude qui le remplace diminue de <cryo>20 %</cryo> pendant 5 s. De plus, après l'utilisation du sprint ou de l'aptitude qui le remplace, l'ATQ augmente de <cryo>35 %</cryo> pendant 5 s."
+      "0": "Lorsqu'une attaque normale a touché un ennemi, la consommation d'endurance du sprint ou du sprint alternatif diminue de <cryo>20 %</cryo> pendant 5 s. De plus, après l'utilisation du sprint ou de l'aptitude qui le remplace, l'ATQ augmente de <cryo>35 %</cryo> pendant 5 s."
     },
     "4": {
-      "0": "Lorsqu'une attaque normale a touché un ennemi, la consommation d'endurance du sprint ou de l'aptitude qui le remplace diminue de <cryo>22 %</cryo> pendant 5 s. De plus, après l'utilisation du sprint ou de l'aptitude qui le remplace, l'ATQ augmente de <cryo>40 %</cryo> pendant 5 s."
+      "0": "Lorsqu'une attaque normale a touché un ennemi, la consommation d'endurance du sprint ou du sprint alternatif diminue de <cryo>22 %</cryo> pendant 5 s. De plus, après l'utilisation du sprint ou de l'aptitude qui le remplace, l'ATQ augmente de <cryo>40 %</cryo> pendant 5 s."
     }
   }
 }

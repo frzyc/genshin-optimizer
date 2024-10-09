@@ -1,0 +1,24 @@
+{
+  "name": "Móc Trĩu Quả",
+  "description": {
+    "0": "Để đoạt lấy Lựu Lửa với chất lượng đỉnh cao nhất của Natlan, dũng sĩ Burkina từ Dòng Dõi Vườn Treo đã chế tác vũ khí này dưới sự giúp đỡ của vị anh hùng Tenoch."
+  },
+  "passiveName": "Trọng Lượng Của Cành Rơi",
+  "passiveDescription": {
+    "0": {
+      "0": "Tỷ Lệ Bạo Kích của Tấn Công Khi Đáp tăng <cryo>16%</cryo>; Sau khi Tấn Công Khi Đáp trúng kẻ địch, sát thương của Tấn Công Thường, Trọng Kích và Tấn Công Khi Đáp tăng <cryo>16%</cryo> trong 10s."
+    },
+    "1": {
+      "0": "Tỷ Lệ Bạo Kích của Tấn Công Khi Đáp tăng <cryo>20%</cryo>; Sau khi Tấn Công Khi Đáp trúng kẻ địch, sát thương của Tấn Công Thường, Trọng Kích và Tấn Công Khi Đáp tăng <cryo>20%</cryo> trong 10s."
+    },
+    "2": {
+      "0": "Tỷ Lệ Bạo Kích của Tấn Công Khi Đáp tăng <cryo>24%</cryo>; Sau khi Tấn Công Khi Đáp trúng kẻ địch, sát thương của Tấn Công Thường, Trọng Kích và Tấn Công Khi Đáp tăng <cryo>24%</cryo> trong 10s."
+    },
+    "3": {
+      "0": "Tỷ Lệ Bạo Kích của Tấn Công Khi Đáp tăng <cryo>28%</cryo>; Sau khi Tấn Công Khi Đáp trúng kẻ địch, sát thương của Tấn Công Thường, Trọng Kích và Tấn Công Khi Đáp tăng <cryo>28%</cryo> trong 10s."
+    },
+    "4": {
+      "0": "Tỷ Lệ Bạo Kích của Tấn Công Khi Đáp tăng <cryo>32%</cryo>; Sau khi Tấn Công Khi Đáp trúng kẻ địch, sát thương của Tấn Công Thường, Trọng Kích và Tấn Công Khi Đáp tăng <cryo>32%</cryo> trong 10s."
+    }
+  }
+}

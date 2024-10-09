@@ -1,0 +1,24 @@
+{
+  "name": "Osso tenace",
+  "description": {
+    "0": "Una spada lunga fatta d'osso, induritasi dopo innumerevoli colpi e fendenti. Si dice fosse la fidata arma dell'eroina Wanjiru."
+  },
+  "passiveName": "Orgoglio del capocaccia",
+  "passiveDescription": {
+    "0": {
+      "0": "Il consumo di vigore dello Scatto o dello Scatto alternativo si riduce di un 15%. Inoltre, dopo aver usato una delle due azioni suddette, i DAN da attacco normale aumentano di un <cryo>16%</cryo> dell'ATT. Questo effetto si annulla dopo 18 attivazioni o trascorsi 7 s."
+    },
+    "1": {
+      "0": "Il consumo di vigore dello Scatto o dello Scatto alternativo si riduce di un 15%. Inoltre, dopo aver usato una delle due azioni suddette, i DAN da attacco normale aumentano di un <cryo>20%</cryo> dell'ATT. Questo effetto si annulla dopo 18 attivazioni o trascorsi 7 s."
+    },
+    "2": {
+      "0": "Il consumo di vigore dello Scatto o dello Scatto alternativo si riduce di un 15%. Inoltre, dopo aver usato una delle due azioni suddette, i DAN da attacco normale aumentano di un <cryo>24%</cryo> dell'ATT. Questo effetto si annulla dopo 18 attivazioni o trascorsi 7 s."
+    },
+    "3": {
+      "0": "Il consumo di vigore dello Scatto o dello Scatto alternativo si riduce di un 15%. Inoltre, dopo aver usato una delle due azioni suddette, i DAN da attacco normale aumentano di un <cryo>28%</cryo> dell'ATT. Questo effetto si annulla dopo 18 attivazioni o trascorsi 7 s."
+    },
+    "4": {
+      "0": "Il consumo di vigore dello Scatto o dello Scatto alternativo si riduce di un 15%. Inoltre, dopo aver usato una delle due azioni suddette, i DAN da attacco normale aumentano di un <cryo>32%</cryo> dell'ATT. Questo effetto si annulla dopo 18 attivazioni o trascorsi 7 s."
+    }
+  }
+}
