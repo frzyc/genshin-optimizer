@@ -42,10 +42,10 @@
     "name": "Meow-teor Kick",
     "description": {
       "0": "<strong>Mode Tekan</strong>",
-      "1": "Melompat ke udara dengan lincah layaknya seekor kucing yang berlari di antara semak-semak, dan menggunakan tendangan jungkir baliknya untuk menghantam musuhnya dengan keras dan mengakibatkan <dendro>Dendro DMG Area</dendro> sambil menciptakan sebuah perisai Shield of Safe Transport. Perisai ini juga akan memberikan <dendro>efek Dendro</dendro> singkat terhadap Kirara untuk sesaat. Perisai Shield of Safe Transport memiliki 250% pertahanan terhadap <dendro>Dendro DMG</dendro>. Ketahanan perisai Shield of Safe Transport akan didasarkan pada Max HP Kirara dan tidak bisa melebihi persentase tertentu dari Max HP Kirara. Sisa ketahanan DMG dari perisai Shield of Safe Transport akan ditumpuk ke perisai yang baru saat perisai ini diciptakan kembali, durasi perisainya juga akan diperbarui.",
+      "1": "Melompat ke udara dengan lincah layaknya seekor kucing yang berlari di antara semak-semak, dan menggunakan tendangan jungkir baliknya untuk menghantam musuhnya dengan keras dan mengakibatkan <dendro>Dendro DMG Area</dendro> sambil menciptakan sebuah Perisai Shield of Safe Transport. Perisai ini juga akan memberikan <dendro>efek Dendro</dendro> singkat terhadap Kirara untuk sesaat. Perisai Shield of Safe Transport memiliki 250% pertahanan terhadap <dendro>Dendro DMG</dendro>. Ketahanan Perisai Shield of Safe Transport akan didasarkan pada Max HP Kirara dan tidak bisa melebihi persentase tertentu dari Max HP Kirara. Sisa ketahanan DMG dari Perisai Shield of Safe Transport akan ditumpuk ke Perisai yang baru saat Perisai ini diciptakan kembali, durasi Perisainya juga akan diperbarui.",
       "2": "<br/>",
       "3": "<strong>Mode Tahan</strong>",
-      "4": "Kirara membentuk sebuah perisai yang sama persis dengan Shield of Safe dari Mode Tekan skill ini karena keinginannya untuk \"mengantar paket dalam setengah hari\". Dia juga akan berubah menjadi sebuah kotak pengantaran ekspres spesial dan memasuki status Urgent Neko Parcel agar bisa bergerak dan bertarung dengan lebih lincah.",
+      "4": "Kirara membentuk sebuah Perisai yang sama persis dengan Shield of Safe dari Mode Tekan skill ini karena keinginannya untuk \"mengantar paket dalam setengah hari\". Dia juga akan berubah menjadi sebuah kotak pengantaran ekspres spesial dan memasuki status Urgent Neko Parcel agar bisa bergerak dan bertarung dengan lebih lincah.",
       "5": "<br/>",
       "6": "<strong>Status Urgent Neko Parcel</strong>",
       "7": [
@@ -106,7 +106,7 @@
   "passive1": {
     "name": "Bewitching, Betwitching Tails",
     "description": {
-      "0": "Saat Kirara berada dalam status Urgent Neko Parcel dari skill <strong>Meow-teor Kick</strong>, Kirara akan mendapatkan satu lapis <strong>Reinforced Packaging</strong> setiap kali menabrak musuh. Efek ini dapat terpicu maksimum satu kali setiap 0,5 detik terhadap setiap musuh dan dapat ditumpuk hingga 3 lapis. Saat status Urgent Neko Parcel berakhir, setiap lapis Reinforced Packaging akan membentuk satu buah perisai Shield of Safe Transport untuk Kirara. Perisai yang terbentuk dengan cara ini memiliki ketahanan DMG sebesar 20% dari Shield of Safe Transport yang terbentuk dari skill <strong>Meow-teor Kick</strong>. Jika Kirara sudah berada dalam perlindungan perisai Shield of Safe Transport yang tercipta dari skill Meow-teor Kick, maka sisa ketahanan DMG perisai akan ditumpuk menjadi satu dan durasinya akan diperbarui."
+      "0": "Saat Kirara berada dalam status Urgent Neko Parcel dari skill <strong>Meow-teor Kick</strong>, Kirara akan mendapatkan satu lapis <strong>Reinforced Packaging</strong> setiap kali menabrak musuh. Efek ini dapat terpicu maksimum satu kali setiap 0,5 detik terhadap setiap musuh dan dapat ditumpuk hingga 3 lapis. Saat status Urgent Neko Parcel berakhir, setiap lapis Reinforced Packaging akan membentuk satu buah Perisai Shield of Safe Transport untuk Kirara. Perisai yang terbentuk dengan cara ini memiliki ketahanan DMG sebesar 20% dari Shield of Safe Transport yang terbentuk dari skill <strong>Meow-teor Kick</strong>. Jika Kirara sudah berada dalam perlindungan Perisai Shield of Safe Transport yang tercipta dari skill Meow-teor Kick, maka sisa ketahanan DMG Perisai akan ditumpuk menjadi satu dan durasinya akan diperbarui."
     }
   },
   "passive2": {
@@ -130,8 +130,8 @@
   "constellation2": {
     "name": "Perfectly Packaged",
     "description": {
-      "0": "Saat Kirara berada dalam status Urgent Neko Parcel dari skill <strong>Meow-teor Kick</strong>, dia akan memberikan perisai Critical Transport Shield kepada anggota party lain yang ditabraknya.",
-      "1": "Ketahanan perisai Critical Transport Shield adalah 40% dari batas maksimum ketahanan perisai Shield of Safe Transport normal dari skill <strong>Meow-teor Kick</strong>, dan memiliki 250% pertahanan terhadap <dendro>Dendro DMG</dendro>.",
+      "0": "Saat Kirara berada dalam status Urgent Neko Parcel dari skill <strong>Meow-teor Kick</strong>, dia akan memberikan Perisai Critical Transport Shield kepada anggota party lain yang ditabraknya.",
+      "1": "Ketahanan Perisai Critical Transport Shield adalah 40% dari batas maksimum ketahanan Perisai Shield of Safe Transport normal dari skill <strong>Meow-teor Kick</strong>, dan memiliki 250% pertahanan terhadap <dendro>Dendro DMG</dendro>.",
       "2": "Critical Transport Shield berlangsung selama 12 detik. Efek ini dapat terpicu maksimum sekali setiap 10 detik untuk setiap Karakter."
     }
   },

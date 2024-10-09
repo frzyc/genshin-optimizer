@@ -209,6 +209,9 @@
   "ColorfulContemplation": {
     "name": "Colorful Contemplation"
   },
+  "FestiveFervor": {
+    "name": "Festive Fervor"
+  },
   "Primogem": {
     "name": "Primogem"
   },
@@ -971,6 +974,9 @@
   "Mualani": {
     "name": "Mualani"
   },
+  "Xilonen": {
+    "name": "Xilonen"
+  },
   "KachinasStellaFortuna": {
     "name": "Kachina's Stella Fortuna"
   },
@@ -979,6 +985,9 @@
   },
   "MualanisStellaFortuna": {
     "name": "Mualani's Stella Fortuna"
+  },
+  "XilonensStellaFortuna": {
+    "name": "Xilonen's Stella Fortuna"
   },
   "Apple": {
     "name": "Apple"
@@ -7346,6 +7355,27 @@
   "DeliciousDelightsOfWondrousWanderings": {
     "name": "Delicious Delights of Wondrous Wanderings"
   },
+  "SuspiciousBBQBeefHeartSkewers": {
+    "name": "Suspicious BBQ Beef Heart Skewers"
+  },
+  "BBQBeefHeartSkewers": {
+    "name": "BBQ Beef Heart Skewers"
+  },
+  "DeliciousBBQBeefHeartSkewers": {
+    "name": "Delicious BBQ Beef Heart Skewers"
+  },
+  "SuspiciousXocoatl": {
+    "name": "Suspicious Xocoatl"
+  },
+  "Xocoatl": {
+    "name": "Xocoatl"
+  },
+  "DeliciousXocoatl": {
+    "name": "Delicious Xocoatl"
+  },
+  "FruitFlavoredMilkCandies": {
+    "name": "Fruit-Flavored Milk Candies"
+  },
   "RecipeItem": {
     "name": "Bahan Resep"
   },
@@ -7993,6 +8023,12 @@
   },
   "RecipeDelightsOfWondrousWanderings": {
     "name": "Resep: Delights of Wondrous Wanderings"
+  },
+  "RecipeBBQBeefHeartSkewers": {
+    "name": "Resep: BBQ Beef Heart Skewers"
+  },
+  "RecipeXocoatl": {
+    "name": "Resep: Xocoatl"
   },
   "CraftedItems": {
     "name": "Hasil Craft"
@@ -8656,6 +8692,9 @@
   },
   "OverripeFlamegranate": {
     "name": "Overripe Flamegranate"
+  },
+  "GoldInscribedSecretSourceCore": {
+    "name": "Gold-Inscribed Secret Source Core"
   },
   "TileOfDecarabiansTower": {
     "name": "Tile of Decarabian's Tower"
@@ -11261,6 +11300,15 @@
   "TheVolcanoLordAndTheShadowPins": {
     "name": "Raja Gunung Berapi dan Paku Bayangan"
   },
+  "PilgrimsChronicle": {
+    "name": "Hikayat Ziarah"
+  },
+  "SomewhatAgedCopyOfTequilTheBrave": {
+    "name": "\"Tequil Si Pemberani\" yang Agak Usang"
+  },
+  "SpankingNewCopyOfTequilTheBrave": {
+    "name": "\"Tequil Si Pemberani\" yang Baru dan Rapi"
+  },
   "PicturesqueRecords": {
     "name": "Catatan dengan Sentuhan Goresan Kuas"
   },
@@ -11275,6 +11323,12 @@
   },
   "NoteLeftAtTheCamp": {
     "name": "Catatan yang Ditinggalkan di Kemah"
+  },
+  "ScarletPhlogistonHoneyPearl": {
+    "name": "Mutiara Madu Phlogiston Merah"
+  },
+  "CapturedPhotos": {
+    "name": "Foto yang Diambil"
   },
   "TearsAmongTheStars": {
     "name": "Air Mata di Lautan Bintang"
@@ -12878,6 +12932,12 @@
   "CelebrationCrispyAndSweet": {
     "name": "Perayaan: Renyah dan Manis"
   },
+  "XilonenCuePoint": {
+    "name": "Xilonen: Cue Point"
+  },
+  "TravelNotesSabzeruz": {
+    "name": "Catatan Perjalanan: Sabzeruz"
+  },
   "EchoDandelionKnight": {
     "name": "Echo: Dandelion Knight"
   },
@@ -12892,6 +12952,12 @@
   },
   "EchoDarkSideOfDawn": {
     "name": "Echo: Dark Side of Dawn"
+  },
+  "EchoVagoMundo": {
+    "name": "Echo: Vago Mundo"
+  },
+  "EchoDrivingThunder": {
+    "name": "Echo: Driving Thunder"
   },
   "AnemoculusResonanceStone": {
     "name": "Anemoculus Resonance Stone"
@@ -13415,6 +13481,12 @@
   "StrivingToNegotiate": {
     "name": "Berusaha Negosiasi"
   },
+  "VirtuosoPerformance": {
+    "name": "Penampilan Virtuoso"
+  },
+  "AllGreenAndGoodToGo": {
+    "name": "Sudah Siap Nih"
+  },
   "RhodeiaOfLoch": {
     "name": "Rhodeia of Loch"
   },
@@ -13489,6 +13561,12 @@
   },
   "HydroHilichurlRogue": {
     "name": "Hydro Hilichurl Rogue"
+  },
+  "AbyssLectorVioletLightning": {
+    "name": "Abyss Lector: Violet Lightning"
+  },
+  "EremiteFloralRingDancer": {
+    "name": "Eremite Floral Ring-Dancer"
   },
   "UndividedHeart": {
     "name": "Undivided Heart"
@@ -13784,6 +13862,15 @@
   "HydrodartSlime": {
     "name": "Hydrodart Slime"
   },
+  "InFiveColorsDyed": {
+    "name": "In Five Colors Dyed"
+  },
+  "ChainLightningCascade": {
+    "name": "Chain Lightning Cascade"
+  },
+  "SpiritSerpentsSwirl": {
+    "name": "Spirit Serpent's Swirl"
+  },
   "MagicGuide": {
     "name": "Magic Guide"
   },
@@ -14045,6 +14132,15 @@
   "Koholasaurus": {
     "name": "Koholasaurus"
   },
+  "PortablePowerSaw": {
+    "name": "Portable Power Saw"
+  },
+  "ConductorsTopHat": {
+    "name": "Conductor's Top Hat"
+  },
+  "Tepetlisaurus": {
+    "name": "Tepetlisaurus"
+  },
   "LiyueHarborWharf": {
     "name": "Liyue Harbor Wharf"
   },
@@ -14197,6 +14293,9 @@
   },
   "Atea": {
     "name": "Atea"
+  },
+  "StageTepetl": {
+    "name": "Stage Tepetl"
   },
   "ElementalResonanceWovenIce": {
     "name": "Resonansi Elemental: Woven Ice"
@@ -14387,6 +14486,9 @@
   "EdictOfAbsolution": {
     "name": "Edict of Absolution"
   },
+  "EremiteTeatime": {
+    "name": "Eremite Teatime"
+  },
   "Origin": {
     "name": "Origin"
   },
@@ -14437,6 +14539,9 @@
   },
   "Natlan": {
     "name": "Natlan"
+  },
+  "EnkanomiyaEvernight": {
+    "name": "Enkanomiya: Evernight"
   },
   "BeginnerPlayerBadge": {
     "name": "Lencana Pemain Pemula"
@@ -15005,6 +15110,15 @@
   "MallowWoodMultiModelWardrobe": {
     "name": "Lemari Baju \"Multi Model\" Kayu Mallow"
   },
+  "FairsDistribution": {
+    "name": "\"Persebaran Pasar\""
+  },
+  "FairsSplendidTextiles": {
+    "name": "\"Tekstil Mewah Pasar\""
+  },
+  "PeachPalmWoodFulcrumContainer": {
+    "name": "Rak \"Penunjang\" dari Peach Palm Wood"
+  },
   "TwoTierLibraryBookshelf": {
     "name": "Rak Buku Perpustakaan 2 Lapis"
   },
@@ -15161,6 +15275,18 @@
   "TeahouseToolQualiteaReview": {
     "name": "Peralatan Kedai Teh: Tinjauan Kualitas"
   },
+  "OneLeggedRoundShield": {
+    "name": "\"Perisai Bundar Berkaki Tunggal\""
+  },
+  "FourLeggedTowerShield": {
+    "name": "\"Perisai Menara Berkaki Empat\""
+  },
+  "NamelessAndSilent": {
+    "name": "\"Mereka yang Tak Dikenal\""
+  },
+  "CountlessServices": {
+    "name": "\"Layanan yang Tak Terhitung\""
+  },
   "BreezeBlessedBed": {
     "name": "Ranjang Sesejuk Angin"
   },
@@ -15280,6 +15406,15 @@
   },
   "TeahouseBenchSimpleSeating": {
     "name": "Bangku Kedai Teh: Kursi Sederhana"
+  },
+  "StadiumsSpicyFeastBackedChair": {
+    "name": "Kursi Sandaran Stadion \"Perjamuan Panas\""
+  },
+  "StadiumRoundSeatingBench": {
+    "name": "Bangku Stadion \"Duduk Bersama\""
+  },
+  "StadiumSpeedySnackRoundStool": {
+    "name": "Bangku Bundar Stadion \"Makanan Cepat Saji\""
   },
   "NorthernStoneHearth": {
     "name": "Perapian Batu Northland"
@@ -15455,6 +15590,15 @@
   "HotelRailingPerfectViewingArc": {
     "name": "Pagar Hotel: Lengkung Pandang Sempurna"
   },
+  "FairsFreshVegetables": {
+    "name": "\"Sayuran Segar dari Pasar\""
+  },
+  "TravelerOnTheRoad": {
+    "name": "\"Pengembara di Jalan\""
+  },
+  "TheDistanceBetweenItAndTheFlames": {
+    "name": "\"Jarak Antara Dia dan Api\""
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Karpet Mondstadt: Semangat Membara"
   },
@@ -15503,6 +15647,18 @@
   "FadingAfterglow": {
     "name": "\"Perasaan Senang yang Memudar\""
   },
+  "WearyRugLayDownYourBurden": {
+    "name": "Karpet Kelelahan: \"Lepaskan Beban\""
+  },
+  "VibrantPotBornInFlames": {
+    "name": "Pot Berwarna-Warni: \"Lahir dari Api\""
+  },
+  "BipedalPuppetShakyQuaky": {
+    "name": "Boneka Kayu Dua Kaki: \"Bergoyang\""
+  },
+  "QuadripedalPuppetReadySteady": {
+    "name": "Boneka Kayu Empat Kaki: \"Kestabilan\""
+  },
   "TrustyPortableLamp": {
     "name": "Lentera yang Tidak Pernah Padam"
   },
@@ -15538,6 +15694,12 @@
   },
   "SimpleLightingLocallySourcedMaterials": {
     "name": "Lampu Sederhana: Bahan dari Sumber Setempat"
+  },
+  "PhlogistonDeskLampSufficientlyWeighty": {
+    "name": "Lampu Meja Phlogiston: \"Berat yang Pas\""
+  },
+  "PhlogistonFloorLampCostEffectiveConvenience": {
+    "name": "Lampu Lantai Phlogiston: \"Murah dan Praktis\""
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Karangan Bunga: Biru yang Tenang"
@@ -15704,6 +15866,27 @@
   "MellowTeaInARedClayPot": {
     "name": "\"Teh Lembut dalam Teko Tanah Liat Merah\""
   },
+  "ModelDishNotToBeMissed": {
+    "name": "Model Hidangan: \"Tak Tergantikan\""
+  },
+  "ModelDishTheUsualSelection": {
+    "name": "Model Hidangan: \"Pilihan yang Biasa\""
+  },
+  "FairsFeastingAndDrinking": {
+    "name": "\"Minum Bersama di Pasar\""
+  },
+  "Windtracker": {
+    "name": "\"Pengejar Angin\""
+  },
+  "JavelinImminent": {
+    "name": "\"Lembing yang Siap Dilemparkan\""
+  },
+  "TowardsGreaterHeights": {
+    "name": "\"Lebih Tinggi Lagi\""
+  },
+  "RidingTheTranquilWaters": {
+    "name": "\"Berlayar di Perairan yang Tenang\""
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "\"Kesadaran dari Tanah Kebijaksanaan\""
   },
@@ -15721,6 +15904,15 @@
   },
   "FloralArrangementArtOfContrast": {
     "name": "Merangkai Bunga: \"Refleksi Seni\""
+  },
+  "EchoesOfTheShore": {
+    "name": "\"Gema Tepi Pantai\""
+  },
+  "UnbeatenHero": {
+    "name": "\"Pahlawan yang Tak Terkalahkan\""
+  },
+  "MountainFireworks": {
+    "name": "\"Kembang Api di Pegunungan\""
   },
   "LandscapePaintingCountryHome": {
     "name": "Lukisan Pemandangan: Kampung Halaman"
@@ -15805,6 +15997,9 @@
   },
   "MekaLuminaireSilentNightsContemplation": {
     "name": "Lampu Mekanis: Kontemplasi di Malam yang Tenang"
+  },
+  "PhlogistonHangingLampRoadGuide": {
+    "name": "Lampu Gantung Phlogiston: \"Pelita\""
   },
   "LingeringMoment": {
     "name": "Momen tak Terlupakan"

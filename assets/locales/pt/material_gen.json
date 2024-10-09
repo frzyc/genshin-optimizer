@@ -209,6 +209,9 @@
   "ColorfulContemplation": {
     "name": "Contemplação Colorida"
   },
+  "FestiveFervor": {
+    "name": "Fervor Festivo"
+  },
   "Primogem": {
     "name": "Gema Essencial"
   },
@@ -971,6 +974,9 @@
   "Mualani": {
     "name": "Mualani"
   },
+  "Xilonen": {
+    "name": "Xilonen"
+  },
   "KachinasStellaFortuna": {
     "name": "Stella Fortuna de Kachina"
   },
@@ -979,6 +985,9 @@
   },
   "MualanisStellaFortuna": {
     "name": "Stella Fortuna de Mualani"
+  },
+  "XilonensStellaFortuna": {
+    "name": "Stella Fortuna de Xilonen"
   },
   "Apple": {
     "name": "Maçã"
@@ -7346,6 +7355,27 @@
   "DeliciousDelightsOfWondrousWanderings": {
     "name": "Deleites da Viagem Fantástica Deliciosos"
   },
+  "SuspiciousBBQBeefHeartSkewers": {
+    "name": "Espetinho de Coração Bovino Estranho"
+  },
+  "BBQBeefHeartSkewers": {
+    "name": "Espetinho de Coração Bovino"
+  },
+  "DeliciousBBQBeefHeartSkewers": {
+    "name": "Espetinho de Coração Bovino Delicioso"
+  },
+  "SuspiciousXocoatl": {
+    "name": "Xocoatl Estranho"
+  },
+  "Xocoatl": {
+    "name": "Xocoatl"
+  },
+  "DeliciousXocoatl": {
+    "name": "Xocoatl Delicioso"
+  },
+  "FruitFlavoredMilkCandies": {
+    "name": "Balas de Leite com Sabor de Frutas"
+  },
   "RecipeItem": {
     "name": "Ingredientes"
   },
@@ -7993,6 +8023,12 @@
   },
   "RecipeDelightsOfWondrousWanderings": {
     "name": "Receita: Deleites da Viagem Fantástica"
+  },
+  "RecipeBBQBeefHeartSkewers": {
+    "name": "Receita: Espetinho de Coração Bovino"
+  },
+  "RecipeXocoatl": {
+    "name": "Receita: Xocoatl"
   },
   "CraftedItems": {
     "name": "Produtos Combinados"
@@ -8657,6 +8693,9 @@
   "OverripeFlamegranate": {
     "name": "Fogorromã Madura"
   },
+  "GoldInscribedSecretSourceCore": {
+    "name": "Núcleo da Fonte Secreta com Inscrição Dourada"
+  },
   "TileOfDecarabiansTower": {
     "name": "Fragmento de Azulejo de Decarabian"
   },
@@ -8919,7 +8958,7 @@
     "name": "Pacote de Compartilhamento de Materiais"
   },
   "EminentShareBundle": {
-    "name": "Pacote de Compartilhamento"
+    "name": "Pacote de Compartilhamento Eminente"
   },
   "WeaponAscensionBundleHigh": {
     "name": "Pacote de Ascensão de Arma (Alto)"
@@ -11261,6 +11300,15 @@
   "TheVolcanoLordAndTheShadowPins": {
     "name": "O Lorde do Vulcão e o Prego das Sombras"
   },
+  "PilgrimsChronicle": {
+    "name": "Crônica do Peregrino"
+  },
+  "SomewhatAgedCopyOfTequilTheBrave": {
+    "name": "Cópia Ligeiramente Envelhecida de \"Tequil, o Valente\""
+  },
+  "SpankingNewCopyOfTequilTheBrave": {
+    "name": "Cópia Novinha em Folha de \"Tequil, o Valente\""
+  },
   "PicturesqueRecords": {
     "name": "Registros Pitorescos"
   },
@@ -11275,6 +11323,12 @@
   },
   "NoteLeftAtTheCamp": {
     "name": "Nota Deixada no Acampamento"
+  },
+  "ScarletPhlogistonHoneyPearl": {
+    "name": "Pérola de Mel de Flogisto Carmesim"
+  },
+  "CapturedPhotos": {
+    "name": "Fotos Capturadas"
   },
   "TearsAmongTheStars": {
     "name": "Lágrima das Estrelas"
@@ -12873,10 +12927,16 @@
     "name": "Conquista: Lorde da Noite"
   },
   "TravelNotesPrimalFire": {
-    "name": "Passe de Batalha:: Fogo Original"
+    "name": "Passe de Batalha: Fogo Original"
   },
   "CelebrationCrispyAndSweet": {
     "name": "Celebração: Doce e Crocante"
+  },
+  "XilonenCuePoint": {
+    "name": "Xilonen: Ritmo"
+  },
+  "TravelNotesSabzeruz": {
+    "name": "Passe de Batalha: Nascimento Divino"
   },
   "EchoDandelionKnight": {
     "name": "Eco: Cavaleira de Dandelion"
@@ -12892,6 +12952,12 @@
   },
   "EchoDarkSideOfDawn": {
     "name": "Eco: O Lado Negro do Alvorecer"
+  },
+  "EchoVagoMundo": {
+    "name": "Eco: Andarilho do Reino Mortal"
+  },
+  "EchoDrivingThunder": {
+    "name": "Eco: Trovão Condutor"
   },
   "AnemoculusResonanceStone": {
     "name": "Pedra de Ressonância de Anemoculus"
@@ -13415,6 +13481,12 @@
   "StrivingToNegotiate": {
     "name": "Querendo Negociar"
   },
+  "VirtuosoPerformance": {
+    "name": "Apresentação Virtuosa"
+  },
+  "AllGreenAndGoodToGo": {
+    "name": "Pronto para o Ataque"
+  },
   "RhodeiaOfLoch": {
     "name": "Oceanids - Rhodeia"
   },
@@ -13489,6 +13561,12 @@
   },
   "HydroHilichurlRogue": {
     "name": "Hilichurl Patrulheiro Hydro"
+  },
+  "AbyssLectorVioletLightning": {
+    "name": "Bardo do Abismo - Trovão Violeta"
+  },
+  "EremiteFloralRingDancer": {
+    "name": "Eremita Dançarina Floral"
   },
   "UndividedHeart": {
     "name": "Com Todo Coração"
@@ -13784,6 +13862,15 @@
   "HydrodartSlime": {
     "name": "Slime Hydrodardo"
   },
+  "InFiveColorsDyed": {
+    "name": "Em Cinco Cores Tingidas"
+  },
+  "ChainLightningCascade": {
+    "name": "Relâmpago em Cascata"
+  },
+  "SpiritSerpentsSwirl": {
+    "name": "Turbilhão da Serpente Espiritual"
+  },
   "MagicGuide": {
     "name": "Guia de Magia"
   },
@@ -14045,6 +14132,15 @@
   "Koholasaurus": {
     "name": "Koholassauro"
   },
+  "PortablePowerSaw": {
+    "name": "Serra Elétrica Portátil"
+  },
+  "ConductorsTopHat": {
+    "name": "Chapéu do Comandante"
+  },
+  "Tepetlisaurus": {
+    "name": "Tepetlissauro"
+  },
   "LiyueHarborWharf": {
     "name": "Porto de Liyue"
   },
@@ -14197,6 +14293,9 @@
   },
   "Atea": {
     "name": "Atea"
+  },
+  "StageTepetl": {
+    "name": "Palco Telpochtli"
   },
   "ElementalResonanceWovenIce": {
     "name": "Ressonância Elemental: Entrelaçamento Cryo"
@@ -14387,6 +14486,9 @@
   "EdictOfAbsolution": {
     "name": "Edital de Absolvição"
   },
+  "EremiteTeatime": {
+    "name": "Hora do Chá Eremita"
+  },
   "Origin": {
     "name": "Primordial"
   },
@@ -14437,6 +14539,9 @@
   },
   "Natlan": {
     "name": "Natlan"
+  },
+  "EnkanomiyaEvernight": {
+    "name": "Enkanomiya: Noite Eterna"
   },
   "BeginnerPlayerBadge": {
     "name": "Emblema de Jogador Novato"
@@ -15005,6 +15110,15 @@
   "MallowWoodMultiModelWardrobe": {
     "name": "Armário de Madeira de Malva \"Multimodelos\""
   },
+  "FairsDistribution": {
+    "name": "Distribuição do Mercado"
+  },
+  "FairsSplendidTextiles": {
+    "name": "Tecidos Esplêndidos do Mercado"
+  },
+  "PeachPalmWoodFulcrumContainer": {
+    "name": "Contêiner \"Fulcro\" de Madeira de Palmeira de Pêssego"
+  },
   "TwoTierLibraryBookshelf": {
     "name": "Prateleiras Duplas da Biblioteca"
   },
@@ -15161,6 +15275,18 @@
   "TeahouseToolQualiteaReview": {
     "name": "Utensílio para Casa de Chá: Revisão de Qualidade"
   },
+  "OneLeggedRoundShield": {
+    "name": "Escudo Redondo de Uma Perna"
+  },
+  "FourLeggedTowerShield": {
+    "name": "Escudo Torre de Quatro Pernas"
+  },
+  "NamelessAndSilent": {
+    "name": "Silencioso e Sem Nome"
+  },
+  "CountlessServices": {
+    "name": "Serviços Incontáveis"
+  },
   "BreezeBlessedBed": {
     "name": "Cama Suave Como a Brisa"
   },
@@ -15280,6 +15406,15 @@
   },
   "TeahouseBenchSimpleSeating": {
     "name": "Banco da Casa de Chá: Assento Simples"
+  },
+  "StadiumsSpicyFeastBackedChair": {
+    "name": "Cadeira com Costas do \"Banquete Picante\" do Estádio"
+  },
+  "StadiumRoundSeatingBench": {
+    "name": "Banco de \"Assento em Grupo\" do Estádio"
+  },
+  "StadiumSpeedySnackRoundStool": {
+    "name": "Banco Redondo \"Lanche Veloz\" do Estádio"
   },
   "NorthernStoneHearth": {
     "name": "Lareira de Pedra do Norte"
@@ -15455,6 +15590,15 @@
   "HotelRailingPerfectViewingArc": {
     "name": "Cerca do Hotel: \"Paisagem Circundante\""
   },
+  "FairsFreshVegetables": {
+    "name": "Vegetais Frescos do Mercado"
+  },
+  "TravelerOnTheRoad": {
+    "name": "Viajante na Estrada"
+  },
+  "TheDistanceBetweenItAndTheFlames": {
+    "name": "A Distância Entre Ele e as Chamas"
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Tapete de Mondstadt: \"Paixão Escarlate\""
   },
@@ -15503,6 +15647,18 @@
   "FadingAfterglow": {
     "name": "\"Resplendor Desvanecido\""
   },
+  "WearyRugLayDownYourBurden": {
+    "name": "Tapete Desgastado - Abandone Seu Fardo"
+  },
+  "VibrantPotBornInFlames": {
+    "name": "Vaso Vibrante - Nascido das Chamas"
+  },
+  "BipedalPuppetShakyQuaky": {
+    "name": "Marionete Bípede - Balanço"
+  },
+  "QuadripedalPuppetReadySteady": {
+    "name": "Marionete Quadrúpede - Estabilidade"
+  },
   "TrustyPortableLamp": {
     "name": "Lâmpada Portátil Que Não Se Apaga"
   },
@@ -15538,6 +15694,12 @@
   },
   "SimpleLightingLocallySourcedMaterials": {
     "name": "Iluminação Simples: \"Materiais de Origem Local\""
+  },
+  "PhlogistonDeskLampSufficientlyWeighty": {
+    "name": "Lâmpada de Mesa de Flogisto - Pesada Suficiente"
+  },
+  "PhlogistonFloorLampCostEffectiveConvenience": {
+    "name": "Luminária de Flogisto - Conveniência Barata"
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Arranjo de Flores: \"Graciosidade Azul\""
@@ -15704,6 +15866,27 @@
   "MellowTeaInARedClayPot": {
     "name": "\"Chá Maduro em Jarra de Cerâmica Vermelha\""
   },
+  "ModelDishNotToBeMissed": {
+    "name": "Modelo de Prato - Imperdível"
+  },
+  "ModelDishTheUsualSelection": {
+    "name": "Modelo de Prato - O de Sempre"
+  },
+  "FairsFeastingAndDrinking": {
+    "name": "Comes e Bebes no Mercado"
+  },
+  "Windtracker": {
+    "name": "Rastreador do Vento"
+  },
+  "JavelinImminent": {
+    "name": "Dardo Iminente"
+  },
+  "TowardsGreaterHeights": {
+    "name": "Em Direção a Maiores Alturas"
+  },
+  "RidingTheTranquilWaters": {
+    "name": "Navegando em Águas Calmas"
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "Despertar do Local da Sagacidade"
   },
@@ -15721,6 +15904,15 @@
   },
   "FloralArrangementArtOfContrast": {
     "name": "Arranjo Floral \"Arte do Contraste\""
+  },
+  "EchoesOfTheShore": {
+    "name": "Ecos da Costa"
+  },
+  "UnbeatenHero": {
+    "name": "Herói Imbatível"
+  },
+  "MountainFireworks": {
+    "name": "Fogos de Artifício das Montanhas"
   },
   "LandscapePaintingCountryHome": {
     "name": "Pintura com Paisagem: \"Casa de Campo\""
@@ -15805,6 +15997,9 @@
   },
   "MekaLuminaireSilentNightsContemplation": {
     "name": "Lanterna Mecânica: \"Contemplação Noturna\""
+  },
+  "PhlogistonHangingLampRoadGuide": {
+    "name": "Luminária Suspensa de Flogisto - Guia da Estrada"
   },
   "LingeringMoment": {
     "name": "Momento Marcante"

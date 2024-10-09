@@ -1,0 +1,24 @@
+{
+  "name": "Mountain-Bracing Bolt",
+  "description": {
+    "0": "Tombak yang pernah dibuat oleh pengrajin di tambang. Pada zaman dulu, pernah dijadikan bahan persembahan kepada para peri di pegunungan."
+  },
+  "passiveName": "Hope Beyond the Peaks",
+  "passiveDescription": {
+    "0": {
+      "0": "Konsumsi Stamina saat memanjat berkurang 15%, DMG Elemental Skill meningkat <cryo>12%</cryo>; Selain itu, setelah anggota party lain di sekitar melancarkan Elemental Skill, DMG Elemental Skill Karakter yang mengenakan akan meningkat <cryo>12%</cryo> lagi selama 8 detik."
+    },
+    "1": {
+      "0": "Konsumsi Stamina saat Memanjat berkurang 15%, DMG Elemental Skill meningkat <cryo>15%</cryo>; Selain itu, setelah anggota party lain di sekitar melancarkan Elemental Skill, DMG Elemental Skill Karakter yang mengenakan akan meningkat <cryo>15%</cryo> lagi selama 8 detik."
+    },
+    "2": {
+      "0": "Konsumsi Stamina saat Memanjat berkurang 15%, DMG Elemental Skill meningkat <cryo>18%</cryo>; Selain itu, setelah anggota party lain di sekitar melancarkan Elemental Skill, DMG Elemental Skill Karakter yang mengenakan akan meningkat <cryo>18%</cryo> lagi selama 8 detik."
+    },
+    "3": {
+      "0": "Konsumsi Stamina saat Memanjat berkurang 15%, DMG Elemental Skill meningkat <cryo>21%</cryo>; Selain itu, setelah anggota party lain di sekitar melancarkan Elemental Skill, DMG Elemental Skill Karakter yang mengenakan akan meningkat <cryo>21%</cryo> lagi selama 8 detik."
+    },
+    "4": {
+      "0": "Konsumsi Stamina saat Memanjat berkurang 15%, DMG Elemental Skill meningkat <cryo>24%</cryo>; Selain itu, setelah anggota party lain di sekitar melancarkan Elemental Skill, DMG Elemental Skill Karakter yang mengenakan akan meningkat <cryo>24%</cryo> lagi selama 8 detik."
+    }
+  }
+}

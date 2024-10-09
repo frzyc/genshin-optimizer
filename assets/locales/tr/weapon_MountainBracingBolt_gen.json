@@ -1,0 +1,24 @@
+{
+  "name": "Dağ Sürgüsü",
+  "description": {
+    "0": "Bu mızrak, madenlerdeki zanaatkarlar tarafından dağın ruhlarına adak olarak dövülmüş."
+  },
+  "passiveName": "Tepenin Ardındaki Umut",
+  "passiveDescription": {
+    "0": {
+      "0": "Tırmanma Dayanıklılık Tüketimi %15 azalır ve Element Becerisi Hasarı <cryo>%12</cryo> artar. Ayrıca yakındaki diğer grup üyeleri Element Becerisi kullandığında kuşanan karakterin de 8sn boyunca Element Becerisi Hasarı <cryo>%12</cryo> artar."
+    },
+    "1": {
+      "0": "Tırmanma Dayanıklılık Tüketimi %15 azalır ve Element Becerisi Hasarı <cryo>%15</cryo> artar. Ayrıca yakındaki diğer grup üyeleri Element Becerisi kullandığında kuşanan karakterin de 8sn boyunca Element Becerisi Hasarı <cryo>%15</cryo> artar."
+    },
+    "2": {
+      "0": "Tırmanma Dayanıklılık Tüketimi %15 azalır ve Element Becerisi Hasarı <cryo>%18</cryo> artar. Ayrıca yakındaki diğer grup üyeleri Element Becerisi kullandığında kuşanan karakterin de 8sn boyunca Element Becerisi Hasarı <cryo>%18</cryo> artar."
+    },
+    "3": {
+      "0": "Tırmanma Dayanıklılık Tüketimi %15 azalır ve Element Becerisi Hasarı <cryo>%21</cryo> artar. Ayrıca yakındaki diğer grup üyeleri Element Becerisi kullandığında kuşanan karakterin de 8sn boyunca Element Becerisi Hasarı <cryo>%21</cryo> artar."
+    },
+    "4": {
+      "0": "Tırmanma Dayanıklılık Tüketimi %15 azalır ve Element Becerisi Hasarı <cryo>%24</cryo> artar. Ayrıca yakındaki diğer grup üyeleri Element Becerisi kullandığında kuşanan karakterin de 8sn boyunca Element Becerisi Hasarı <cryo>%24</cryo> artar."
+    }
+  }
+}

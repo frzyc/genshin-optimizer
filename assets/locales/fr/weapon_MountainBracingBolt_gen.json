@@ -1,0 +1,24 @@
+{
+  "name": "Clou soutenant les montagnes",
+  "description": {
+    "0": "Cette arme d'hast était autrefois fabriquée par des artisans dans les mines pour servir de sacrifice aux esprits des montagnes."
+  },
+  "passiveName": "Espoir au-delà des sommets",
+  "passiveDescription": {
+    "0": {
+      "0": "La consommation d'endurance lors de l'escalade diminue de 15 % et les DGT infligés par les compétences élémentaires augmentent de <cryo>12 %</cryo>. De plus, les DGT infligés par les compétences élémentaires du personnage équipé de l'arme augmentent de <cryo>12 %</cryo> supplémentaires pendant 8 s lorsqu'un autre personnage de l'équipe à proximité a utilisé une compétence élémentaire."
+    },
+    "1": {
+      "0": "La consommation d'endurance lors de l'escalade diminue de 15 % et les DGT infligés par les compétences élémentaires augmentent de <cryo>15 %</cryo>. De plus, les DGT infligés par les compétences élémentaires du personnage équipé de l'arme augmentent de <cryo>15 %</cryo> supplémentaires pendant 8 s lorsqu'un autre personnage de l'équipe à proximité a utilisé une compétence élémentaire."
+    },
+    "2": {
+      "0": "La consommation d'endurance lors de l'escalade diminue de 15 % et les DGT infligés par les compétences élémentaires augmentent de <cryo>18 %</cryo>. De plus, les DGT infligés par les compétences élémentaires du personnage équipé de l'arme augmentent de <cryo>18 %</cryo> supplémentaires pendant 8 s lorsqu'un autre personnage de l'équipe à proximité a utilisé une compétence élémentaire."
+    },
+    "3": {
+      "0": "La consommation d'endurance lors de l'escalade diminue de 15 % et les DGT infligés par les compétences élémentaires augmentent de <cryo>21 %</cryo>. De plus, les DGT infligés par les compétences élémentaires du personnage équipé de l'arme augmentent de <cryo>21 %</cryo> supplémentaires pendant 8 s lorsqu'un autre personnage de l'équipe à proximité a utilisé une compétence élémentaire."
+    },
+    "4": {
+      "0": "La consommation d'endurance lors de l'escalade diminue de 15 % et les DGT infligés par les compétences élémentaires augmentent de <cryo>24 %</cryo>. De plus, les DGT infligés par les compétences élémentaires du personnage équipé de l'arme augmentent de <cryo>24 %</cryo> supplémentaires pendant 8 s lorsqu'un autre personnage de l'équipe à proximité a utilisé une compétence élémentaire."
+    }
+  }
+}

@@ -60,7 +60,11 @@
     "burst": "After using Elemental Burst",
     "skillOrBurst": "After using Ele. Skill or Ele. Burst",
     "skillPress": "After using Elemental Skill (Press)",
-    "skillHold": "After using Elemental Skill (Hold)"
+    "skillHold": "After using Elemental Skill (Hold)",
+    "sprint": "After using Sprint or Alternate Sprint"
+  },
+  "otherTeamAfterUse": {
+    "skill": "After other nearby party members use Elemental Skills"
   },
   "reactionOp": {
     "overload": "After triggering an <overloaded>Overloaded</overloaded> reaction"
@@ -225,6 +229,7 @@
     "percentOf": "% of Bond of Life"
   },
   "nightsoul": {
-    "partyBurst": "After nearby party members trigger a Nightsoul Burst"
+    "partyBurst": "After nearby party members trigger a Nightsoul Burst",
+    "blessing": "While in the Nightsoul's Blessing state"
   }
 }
