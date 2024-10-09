@@ -171,7 +171,7 @@
   "constellation6": {
     "name": "This Time, I've Gotta Win",
     "description": {
-      "0": "Saat perisai Karakter aktif di dalam party digantikan atau hancur karena alasan apa pun, maka Kachina akan mengakibatkan <geo>Geo DMG Area</geo> sebesar 200% DEF Kachina saat ini. Efek ini dapat terpicu sekali setiap 5 detik."
+      "0": "Saat Perisai Karakter aktif di dalam party digantikan atau hancur karena alasan apa pun, maka Kachina akan mengakibatkan <geo>Geo DMG Area</geo> sebesar 200% DEF Kachina saat ini. Efek ini dapat terpicu sekali setiap 5 detik."
     }
   }
 }

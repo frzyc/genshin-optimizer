@@ -1,0 +1,24 @@
+{
+  "name": "Fruitful Hook",
+  "description": {
+    "0": "Burkina sang pejuang pemberani dari Tirai Daun pernah secara khusus menempa senjata ini dengan bantuan Tenoch, hanya untuk mendapatkan Flamegranate terbaik yang ada di seluruh Natlan."
+  },
+  "passiveName": "The Weight of Falling Branches",
+  "passiveDescription": {
+    "0": {
+      "0": "CRIT Rate Plunging Attack meningkat <cryo>16%</cryo>; Setelah Plunging Attack mengenai musuh, DMG Normal Attack, Plunging Attack, dan Charged Attack meningkat <cryo>16%</cryo> selama 10 detik."
+    },
+    "1": {
+      "0": "CRIT Rate Plunging Attack meningkat <cryo>20%</cryo>; Setelah Plunging Attack mengenai musuh, DMG Normal Attack, Plunging Attack, dan Charged Attack meningkat <cryo>20%</cryo> selama 10 detik."
+    },
+    "2": {
+      "0": "CRIT Rate Plunging Attack meningkat <cryo>24%</cryo>; Setelah Plunging Attack mengenai musuh, DMG Normal Attack, Plunging Attack, dan Charged Attack meningkat <cryo>24%</cryo> selama 10 detik."
+    },
+    "3": {
+      "0": "CRIT Rate Plunging Attack meningkat <cryo>28%</cryo>; Setelah Plunging Attack mengenai musuh, DMG Normal Attack, Plunging Attack, dan Charged Attack meningkat <cryo>28%</cryo> selama 10 detik."
+    },
+    "4": {
+      "0": "CRIT Rate Plunging Attack meningkat <cryo>32%</cryo>; Setelah Plunging Attack mengenai musuh, DMG Normal Attack, Plunging Attack, dan Charged Attack meningkat <cryo>32%</cryo> selama 10 detik."
+    }
+  }
+}

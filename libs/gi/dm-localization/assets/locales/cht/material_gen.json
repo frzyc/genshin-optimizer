@@ -209,6 +209,9 @@
   "ColorfulContemplation": {
     "name": "形彩思緒"
   },
+  "FestiveFervor": {
+    "name": "慶典熱度"
+  },
   "Primogem": {
     "name": "原石"
   },
@@ -971,6 +974,9 @@
   "Mualani": {
     "name": "瑪拉妮"
   },
+  "Xilonen": {
+    "name": "希諾寧"
+  },
   "KachinasStellaFortuna": {
     "name": "卡齊娜的命星"
   },
@@ -979,6 +985,9 @@
   },
   "MualanisStellaFortuna": {
     "name": "瑪拉妮的命星"
+  },
+  "XilonensStellaFortuna": {
+    "name": "希諾寧的命星"
   },
   "Apple": {
     "name": "蘋果"
@@ -7346,6 +7355,27 @@
   "DeliciousDelightsOfWondrousWanderings": {
     "name": "美味的奇旅饌匣"
   },
+  "SuspiciousBBQBeefHeartSkewers": {
+    "name": "奇怪的串烤牛心"
+  },
+  "BBQBeefHeartSkewers": {
+    "name": "串烤牛心"
+  },
+  "DeliciousBBQBeefHeartSkewers": {
+    "name": "美味的串烤牛心"
+  },
+  "SuspiciousXocoatl": {
+    "name": "奇怪的苦水"
+  },
+  "Xocoatl": {
+    "name": "苦水"
+  },
+  "DeliciousXocoatl": {
+    "name": "美味的苦水"
+  },
+  "FruitFlavoredMilkCandies": {
+    "name": "果味奶糖"
+  },
   "RecipeItem": {
     "name": "食譜道具"
   },
@@ -7993,6 +8023,12 @@
   },
   "RecipeDelightsOfWondrousWanderings": {
     "name": "食譜：奇旅饌匣"
+  },
+  "RecipeBBQBeefHeartSkewers": {
+    "name": "食譜：串烤牛心"
+  },
+  "RecipeXocoatl": {
+    "name": "食譜：苦水"
   },
   "CraftedItems": {
     "name": "合成產物"
@@ -8656,6 +8692,9 @@
   },
   "OverripeFlamegranate": {
     "name": "過熟的火榴果"
+  },
+  "GoldInscribedSecretSourceCore": {
+    "name": "秘刻金紋的源核"
   },
   "TileOfDecarabiansTower": {
     "name": "高塔孤王的破瓦"
@@ -11261,6 +11300,15 @@
   "TheVolcanoLordAndTheShadowPins": {
     "name": "火山大王與縫影針"
   },
+  "PilgrimsChronicle": {
+    "name": "聖夜旅織"
+  },
+  "SomewhatAgedCopyOfTequilTheBrave": {
+    "name": "略顯陳舊的《勇敢的特奎》"
+  },
+  "SpankingNewCopyOfTequilTheBrave": {
+    "name": "整潔嶄新的《勇敢的特奎》"
+  },
   "PicturesqueRecords": {
     "name": "筆觸如畫的紀錄"
   },
@@ -11275,6 +11323,12 @@
   },
   "NoteLeftAtTheCamp": {
     "name": "營地遺留的筆記"
+  },
+  "ScarletPhlogistonHoneyPearl": {
+    "name": "赤紅燃素蜜珠"
+  },
+  "CapturedPhotos": {
+    "name": "繳獲的留影"
   },
   "TearsAmongTheStars": {
     "name": "星間之淚"
@@ -12878,6 +12932,12 @@
   "CelebrationCrispyAndSweet": {
     "name": "慶典·甘脆"
   },
+  "XilonenCuePoint": {
+    "name": "希諾寧·律動"
+  },
+  "TravelNotesSabzeruz": {
+    "name": "紀行·神誕"
+  },
   "EchoDandelionKnight": {
     "name": "遊跡·蒲公英騎士"
   },
@@ -12892,6 +12952,12 @@
   },
   "EchoDarkSideOfDawn": {
     "name": "遊跡·晨曦的暗面"
+  },
+  "EchoVagoMundo": {
+    "name": "遊跡·塵世閒遊"
+  },
+  "EchoDrivingThunder": {
+    "name": "遊跡·霆霓快雨"
   },
   "AnemoculusResonanceStone": {
     "name": "風神瞳共鳴石"
@@ -13415,6 +13481,12 @@
   "StrivingToNegotiate": {
     "name": "努力交涉"
   },
+  "VirtuosoPerformance": {
+    "name": "巧奏音律"
+  },
+  "AllGreenAndGoodToGo": {
+    "name": "蓄勢待發"
+  },
   "RhodeiaOfLoch": {
     "name": "純水精靈·洛蒂婭"
   },
@@ -13489,6 +13561,12 @@
   },
   "HydroHilichurlRogue": {
     "name": "丘丘水行遊俠"
+  },
+  "AbyssLectorVioletLightning": {
+    "name": "深淵詠者·紫電"
+  },
+  "EremiteFloralRingDancer": {
+    "name": "鍍金旅團·葉輪舞者"
   },
   "UndividedHeart": {
     "name": "唯此一心"
@@ -13784,6 +13862,15 @@
   "HydrodartSlime": {
     "name": "水鏢史萊姆"
   },
+  "InFiveColorsDyed": {
+    "name": "落染五色"
+  },
+  "ChainLightningCascade": {
+    "name": "侵雷重閃"
+  },
+  "SpiritSerpentsSwirl": {
+    "name": "靈蛇旋嘶"
+  },
   "MagicGuide": {
     "name": "魔導緒論"
   },
@@ -14045,6 +14132,15 @@
   "Koholasaurus": {
     "name": "鰭游龍"
   },
+  "PortablePowerSaw": {
+    "name": "便攜動力鋸"
+  },
+  "ConductorsTopHat": {
+    "name": "指揮的禮帽"
+  },
+  "Tepetlisaurus": {
+    "name": "嵴鋒龍"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -14197,6 +14293,9 @@
   },
   "Atea": {
     "name": "阿伽婭"
+  },
+  "StageTepetl": {
+    "name": "特佩利舞臺"
   },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交織之冰"
@@ -14387,6 +14486,9 @@
   "EdictOfAbsolution": {
     "name": "赦免宣告"
   },
+  "EremiteTeatime": {
+    "name": "鍍金旅團的茶歇"
+  },
   "Origin": {
     "name": "原初"
   },
@@ -14437,6 +14539,9 @@
   },
   "Natlan": {
     "name": "納塔"
+  },
+  "EnkanomiyaEvernight": {
+    "name": "淵下宮·常夜"
   },
   "BeginnerPlayerBadge": {
     "name": "初級牌手徽章"
@@ -15005,6 +15110,15 @@
   "MallowWoodMultiModelWardrobe": {
     "name": "懸鈴木「多重版型」衣櫃"
   },
+  "FairsDistribution": {
+    "name": "「市集的分布陳列」"
+  },
+  "FairsSplendidTextiles": {
+    "name": "「市集的錦繡染織」"
+  },
+  "PeachPalmWoodFulcrumContainer": {
+    "name": "桃椰子木「支點」貨櫃"
+  },
   "TwoTierLibraryBookshelf": {
     "name": "圖書館雙層書架"
   },
@@ -15161,6 +15275,18 @@
   "TeahouseToolQualiteaReview": {
     "name": "茶坊用具-「審質度葉」"
   },
+  "OneLeggedRoundShield": {
+    "name": "「獨腳的圓盾」"
+  },
+  "FourLeggedTowerShield": {
+    "name": "「四足的塔盾」"
+  },
+  "NamelessAndSilent": {
+    "name": "「默默無名者」"
+  },
+  "CountlessServices": {
+    "name": "「萬千勤務者」"
+  },
   "BreezeBlessedBed": {
     "name": "柔風加護的床榻"
   },
@@ -15280,6 +15406,15 @@
   },
   "TeahouseBenchSimpleSeating": {
     "name": "茶坊條凳-「樸練長座」"
+  },
+  "StadiumsSpicyFeastBackedChair": {
+    "name": "競技場「熱宴」靠背椅"
+  },
+  "StadiumRoundSeatingBench": {
+    "name": "競技場「團坐」長椅"
+  },
+  "StadiumSpeedySnackRoundStool": {
+    "name": "競技場「速食」圓凳"
   },
   "NorthernStoneHearth": {
     "name": "北地石製壁爐"
@@ -15455,6 +15590,15 @@
   "HotelRailingPerfectViewingArc": {
     "name": "飯店護欄-「無餘弧景」"
   },
+  "FairsFreshVegetables": {
+    "name": "「市集的時鮮餚蔬」"
+  },
+  "TravelerOnTheRoad": {
+    "name": "「路上的行者」"
+  },
+  "TheDistanceBetweenItAndTheFlames": {
+    "name": "「它與火焰的距離」"
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "蒙德地毯-「明紅的熱忱」"
   },
@@ -15503,6 +15647,18 @@
   "FadingAfterglow": {
     "name": "「漸褪的餘暉」"
   },
+  "WearyRugLayDownYourBurden": {
+    "name": "倦意地毯-「卸下重擔」"
+  },
+  "VibrantPotBornInFlames": {
+    "name": "炫彩陶罐-「生於烈焰」"
+  },
+  "BipedalPuppetShakyQuaky": {
+    "name": "兩足木偶-「搖搖晃晃」"
+  },
+  "QuadripedalPuppetReadySteady": {
+    "name": "四足木偶-「穩穩當當」"
+  },
   "TrustyPortableLamp": {
     "name": "恆亮不熄的提燈"
   },
@@ -15538,6 +15694,12 @@
   },
   "SimpleLightingLocallySourcedMaterials": {
     "name": "簡易提燈-「因地施材」"
+  },
+  "PhlogistonDeskLampSufficientlyWeighty": {
+    "name": "燃素檯燈-「足量」"
+  },
+  "PhlogistonFloorLampCostEffectiveConvenience": {
+    "name": "燃素地燈-「廉便」"
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "花卉瓶栽-「淡藍的從容」"
@@ -15704,6 +15866,27 @@
   "MellowTeaInARedClayPot": {
     "name": "「赤泥壺中泛醇茶」"
   },
+  "ModelDishNotToBeMissed": {
+    "name": "菜餚模型-「不可或缺」"
+  },
+  "ModelDishTheUsualSelection": {
+    "name": "菜餚模型-「平素之選」"
+  },
+  "FairsFeastingAndDrinking": {
+    "name": "「市集的同歡盡飲」"
+  },
+  "Windtracker": {
+    "name": "「逐風人」"
+  },
+  "JavelinImminent": {
+    "name": "「待發的標槍」"
+  },
+  "TowardsGreaterHeights": {
+    "name": "「向更高處」"
+  },
+  "RidingTheTranquilWaters": {
+    "name": "「行駛在平靜水面」"
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "「卓識之地的餘醒」"
   },
@@ -15721,6 +15904,15 @@
   },
   "FloralArrangementArtOfContrast": {
     "name": "瓶栽插花-「反襯藝術」"
+  },
+  "EchoesOfTheShore": {
+    "name": "「水岸的回聲」"
+  },
+  "UnbeatenHero": {
+    "name": "「不敗的勇士」"
+  },
+  "MountainFireworks": {
+    "name": "「山巒的焰火」"
   },
   "LandscapePaintingCountryHome": {
     "name": "風景畫-「鄉野民居」"
@@ -15805,6 +15997,9 @@
   },
   "MekaLuminaireSilentNightsContemplation": {
     "name": "機樞燈具-「靜夜沉思」"
+  },
+  "PhlogistonHangingLampRoadGuide": {
+    "name": "燃素掛燈-「路引」"
   },
   "LingeringMoment": {
     "name": "「縈絆之刻」"

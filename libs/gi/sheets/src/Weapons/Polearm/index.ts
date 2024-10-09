@@ -21,6 +21,7 @@ import LithicSpear from './LithicSpear'
 import LumidouceElegy from './LumidouceElegy'
 import MissiveWindspear from './MissiveWindspear'
 import Moonpiercer from './Moonpiercer'
+import MountainBracingBolt from './MountainBracingBolt'
 import PrimordialJadeWingedSpear from './PrimordialJadeWingedSpear'
 import ProspectorsDrill from './ProspectorsDrill'
 import PrototypeStarglitter from './PrototypeStarglitter'
@@ -55,6 +56,7 @@ const polearm: Record<WeaponPoleArmKey, WeaponSheet> = {
   LumidouceElegy,
   MissiveWindspear,
   Moonpiercer,
+  MountainBracingBolt,
   PrimordialJadeWingedSpear,
   ProspectorsDrill,
   PrototypeStarglitter,

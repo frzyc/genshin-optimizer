@@ -209,6 +209,9 @@
   "ColorfulContemplation": {
     "name": "Красочные рассуждения"
   },
+  "FestiveFervor": {
+    "name": "Фестивальный ажиотаж"
+  },
   "Primogem": {
     "name": "Камень Истока"
   },
@@ -971,6 +974,9 @@
   "Mualani": {
     "name": "Муалани"
   },
+  "Xilonen": {
+    "name": "Шилонен"
+  },
   "KachinasStellaFortuna": {
     "name": "Удача Качины"
   },
@@ -979,6 +985,9 @@
   },
   "MualanisStellaFortuna": {
     "name": "Удача Муалани"
+  },
+  "XilonensStellaFortuna": {
+    "name": "Удача Шилонен"
   },
   "Apple": {
     "name": "Яблоко"
@@ -7346,6 +7355,27 @@
   "DeliciousDelightsOfWondrousWanderings": {
     "name": "Вкусные «Восхитительные странствия»"
   },
+  "SuspiciousBBQBeefHeartSkewers": {
+    "name": "Странные шашлычки из говяжьего сердца"
+  },
+  "BBQBeefHeartSkewers": {
+    "name": "Шашлычки из говяжьего сердца"
+  },
+  "DeliciousBBQBeefHeartSkewers": {
+    "name": "Вкусные шашлычки из говяжьего сердца"
+  },
+  "SuspiciousXocoatl": {
+    "name": "Странный шокоатль"
+  },
+  "Xocoatl": {
+    "name": "Шокоатль"
+  },
+  "DeliciousXocoatl": {
+    "name": "Вкусный шокоатль"
+  },
+  "FruitFlavoredMilkCandies": {
+    "name": "Фруктово-молочные конфеты"
+  },
   "RecipeItem": {
     "name": "Ингредиенты"
   },
@@ -7993,6 +8023,12 @@
   },
   "RecipeDelightsOfWondrousWanderings": {
     "name": "Рецепт: «Восхитительные странствия»"
+  },
+  "RecipeBBQBeefHeartSkewers": {
+    "name": "Рецепт: Шашлычки из говяжьего сердца"
+  },
+  "RecipeXocoatl": {
+    "name": "Рецепт: Шокоатль"
   },
   "CraftedItems": {
     "name": "Созданные Предметы"
@@ -8656,6 +8692,9 @@
   },
   "OverripeFlamegranate": {
     "name": "Перезревший пламегранат"
+  },
+  "GoldInscribedSecretSourceCore": {
+    "name": "Ядро таинственного источника с золотой надписью"
   },
   "TileOfDecarabiansTower": {
     "name": "Плитка башни Декарабиана"
@@ -11261,6 +11300,15 @@
   "TheVolcanoLordAndTheShadowPins": {
     "name": "Повелитель вулканов и Теневые иглы"
   },
+  "PilgrimsChronicle": {
+    "name": "Хроника Пилигрима"
+  },
+  "SomewhatAgedCopyOfTequilTheBrave": {
+    "name": "Несколько ветхий экземпляр «Текила Храброго»"
+  },
+  "SpankingNewCopyOfTequilTheBrave": {
+    "name": "Новейший экземпляр «Текила Храброго»"
+  },
   "PicturesqueRecords": {
     "name": "Живописные записи"
   },
@@ -11275,6 +11323,12 @@
   },
   "NoteLeftAtTheCamp": {
     "name": "Оставленная в лагере записка"
+  },
+  "ScarletPhlogistonHoneyPearl": {
+    "name": "Алая флогистоновая медовая жемчужина"
+  },
+  "CapturedPhotos": {
+    "name": "Захваченная фотография"
   },
   "TearsAmongTheStars": {
     "name": "Слёзы средь звёзд"
@@ -12878,6 +12932,12 @@
   "CelebrationCrispyAndSweet": {
     "name": "Хрустящие и сладкие"
   },
+  "XilonenCuePoint": {
+    "name": "Ритм"
+  },
+  "TravelNotesSabzeruz": {
+    "name": "Сабзеруз"
+  },
   "EchoDandelionKnight": {
     "name": "Эхо: Рыцарь Одуванчик"
   },
@@ -12892,6 +12952,12 @@
   },
   "EchoDarkSideOfDawn": {
     "name": "Эхо: Тёмный рассвет"
+  },
+  "EchoVagoMundo": {
+    "name": "Эхо: Бренный скиталец"
+  },
+  "EchoDrivingThunder": {
+    "name": "Эхо: Раскаты грома"
   },
   "AnemoculusResonanceStone": {
     "name": "Камень эха анемокула"
@@ -13415,6 +13481,12 @@
   "StrivingToNegotiate": {
     "name": "Стремление к переговорам"
   },
+  "VirtuosoPerformance": {
+    "name": "Виртуозное исполнение"
+  },
+  "AllGreenAndGoodToGo": {
+    "name": "Всё готово к запуску"
+  },
   "RhodeiaOfLoch": {
     "name": "Родия"
   },
@@ -13489,6 +13561,12 @@
   },
   "HydroHilichurlRogue": {
     "name": "Гидро хиличурл-изгой"
+  },
+  "AbyssLectorVioletLightning": {
+    "name": "Чтец Бездны: Пурпурная молния"
+  },
+  "EremiteFloralRingDancer": {
+    "name": "Пустынник: Танцовщица лиственного круга"
   },
   "UndividedHeart": {
     "name": "Неразделённое сердце"
@@ -13784,6 +13862,15 @@
   "HydrodartSlime": {
     "name": "Гидро дротик-слайм"
   },
+  "InFiveColorsDyed": {
+    "name": "Пять цветов ткани"
+  },
+  "ChainLightningCascade": {
+    "name": "Каскад цепной молнии"
+  },
+  "SpiritSerpentsSwirl": {
+    "name": "Вихрь духа змеи"
+  },
   "MagicGuide": {
     "name": "Руководство по магии"
   },
@@ -14045,6 +14132,15 @@
   "Koholasaurus": {
     "name": "Кохолазавр"
   },
+  "PortablePowerSaw": {
+    "name": "Переносная мотопила"
+  },
+  "ConductorsTopHat": {
+    "name": "Цилиндр дирижёра"
+  },
+  "Tepetlisaurus": {
+    "name": "Тепетлизавр"
+  },
   "LiyueHarborWharf": {
     "name": "Гавань Ли Юэ"
   },
@@ -14197,6 +14293,9 @@
   },
   "Atea": {
     "name": "Атея"
+  },
+  "StageTepetl": {
+    "name": "Сцена Тепетли"
   },
   "ElementalResonanceWovenIce": {
     "name": "Элементальный резонанс: Переплетение Крио"
@@ -14387,6 +14486,9 @@
   "EdictOfAbsolution": {
     "name": "Указ об освобождении"
   },
+  "EremiteTeatime": {
+    "name": "Чаепитие Пустынников"
+  },
   "Origin": {
     "name": "Изначальный"
   },
@@ -14437,6 +14539,9 @@
   },
   "Natlan": {
     "name": "Натлан"
+  },
+  "EnkanomiyaEvernight": {
+    "name": "Энканомия: Вечная ночь"
   },
   "BeginnerPlayerBadge": {
     "name": "Значок Новичка"
@@ -15005,6 +15110,15 @@
   "MallowWoodMultiModelWardrobe": {
     "name": "Платяной шкаф из древесины мальвы «Мультимодуль»"
   },
+  "FairsDistribution": {
+    "name": "Ярмарочное распределение"
+  },
+  "FairsSplendidTextiles": {
+    "name": "Великолепный ярмарочный текстиль"
+  },
+  "PeachPalmWoodFulcrumContainer": {
+    "name": "Стеллаж из древесины персиковой пальмы «Фулькрум»"
+  },
   "TwoTierLibraryBookshelf": {
     "name": "Двухуровневая книжная полка для библиотеки"
   },
@@ -15161,6 +15275,18 @@
   "TeahouseToolQualiteaReview": {
     "name": "Чайная утварь: Тончайший контроль"
   },
+  "OneLeggedRoundShield": {
+    "name": "Круглый щит с одной ножкой"
+  },
+  "FourLeggedTowerShield": {
+    "name": "Башенный щит с четырьмя ножками"
+  },
+  "NamelessAndSilent": {
+    "name": "Безымянный и безмолвный"
+  },
+  "CountlessServices": {
+    "name": "Бесчисленные услуги"
+  },
   "BreezeBlessedBed": {
     "name": "Кровать благословения ветра"
   },
@@ -15280,6 +15406,15 @@
   },
   "TeahouseBenchSimpleSeating": {
     "name": "Мебель чайного дома: Простая скамья"
+  },
+  "StadiumsSpicyFeastBackedChair": {
+    "name": "Стадионный стул со спинкой «Острое пиршество»"
+  },
+  "StadiumRoundSeatingBench": {
+    "name": "Стадионная скамья «Единство»"
+  },
+  "StadiumSpeedySnackRoundStool": {
+    "name": "Стадионный круглый табурет «Перекус»"
   },
   "NorthernStoneHearth": {
     "name": "Северный каменный очаг"
@@ -15455,6 +15590,15 @@
   "HotelRailingPerfectViewingArc": {
     "name": "Перила отеля: Идеальные изгибы"
   },
+  "FairsFreshVegetables": {
+    "name": "Свежие овощи с ярмарки"
+  },
+  "TravelerOnTheRoad": {
+    "name": "Путешественник в пути"
+  },
+  "TheDistanceBetweenItAndTheFlames": {
+    "name": "Расстояние до огня"
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Мондштадтский коврик: Пылающий энтузиазм"
   },
@@ -15503,6 +15647,18 @@
   "FadingAfterglow": {
     "name": "Угасающее свечение"
   },
+  "WearyRugLayDownYourBurden": {
+    "name": "Ковёр для усталых: Сбрось свою ношу"
+  },
+  "VibrantPotBornInFlames": {
+    "name": "Яркий кувшин: Рождённый в пламени"
+  },
+  "BipedalPuppetShakyQuaky": {
+    "name": "Кукла на двух лапах: Шалтай-Болтай"
+  },
+  "QuadripedalPuppetReadySteady": {
+    "name": "Кукла на четырёх ногах: На старт, внимание"
+  },
   "TrustyPortableLamp": {
     "name": "Надёжная переносная лампа"
   },
@@ -15538,6 +15694,12 @@
   },
   "SimpleLightingLocallySourcedMaterials": {
     "name": "Простой фонарь: Из местных материалов"
+  },
+  "PhlogistonDeskLampSufficientlyWeighty": {
+    "name": "Флогистоновая настольная лампа: Достаточно весомая"
+  },
+  "PhlogistonFloorLampCostEffectiveConvenience": {
+    "name": "Флогистоновый торшер: Экономичное удобство"
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Цветочная композиция: Бледно-голубое спокойствие"
@@ -15704,6 +15866,27 @@
   "MellowTeaInARedClayPot": {
     "name": "«Нежный чай в сосуде из красной глины»"
   },
+  "ModelDishNotToBeMissed": {
+    "name": "Модель блюда: Незаменимое"
+  },
+  "ModelDishTheUsualSelection": {
+    "name": "Модель блюда: Типичный выбор"
+  },
+  "FairsFeastingAndDrinking": {
+    "name": "Застолье и угощения на ярмарке"
+  },
+  "Windtracker": {
+    "name": "Ветролов"
+  },
+  "JavelinImminent": {
+    "name": "Стремительный бросок"
+  },
+  "TowardsGreaterHeights": {
+    "name": "К новым вершинам"
+  },
+  "RidingTheTranquilWaters": {
+    "name": "Путешествие по спокойным водам"
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "«Постижения из страны мудрости»"
   },
@@ -15721,6 +15904,15 @@
   },
   "FloralArrangementArtOfContrast": {
     "name": "Цветочная композиция: Искусство контраста"
+  },
+  "EchoesOfTheShore": {
+    "name": "Эхо побережья"
+  },
+  "UnbeatenHero": {
+    "name": "Непобедимый воин"
+  },
+  "MountainFireworks": {
+    "name": "Горные фейерверки"
   },
   "LandscapePaintingCountryHome": {
     "name": "Пейзажная живопись: Деревенский дом"
@@ -15805,6 +15997,9 @@
   },
   "MekaLuminaireSilentNightsContemplation": {
     "name": "Механистическая лампа: Полуночные думы"
+  },
+  "PhlogistonHangingLampRoadGuide": {
+    "name": "Флогистоновая подвесная лампа: Путеводитель"
   },
   "LingeringMoment": {
     "name": "Затянувшееся мгновение"

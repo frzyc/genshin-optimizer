@@ -1,0 +1,24 @@
+{
+  "name": "Bergschützer-Bolzen",
+  "description": {
+    "0": "Ein Speer, der von den Handwerkern der Minen gemeinsam geschmiedet wurde. In der Vergangenheit wurde er den Geistern der Berge als Opfergabe dargebracht."
+  },
+  "passiveName": "Hoffnung jenseits der Gipfel",
+  "passiveDescription": {
+    "0": {
+      "0": "Verringert die beim Klettern verbrauchte Ausdauer um 15 % und erhöht den mit Elementarfähigkeiten verursachten Schaden um <cryo>12 %</cryo>. Erhöht außerdem den mit Elementarfähigkeiten des Trägers verursachten Schaden um <cryo>12 %</cryo>, nachdem ein anderes Truppenmitglied in der Nähe eine Elementarfähigkeit ausgelöst hat, hält 8 s."
+    },
+    "1": {
+      "0": "Verringert die beim Klettern verbrauchte Ausdauer um 15 % und erhöht den mit Elementarfähigkeiten verursachten Schaden um <cryo>15 %</cryo>. Erhöht außerdem den mit Elementarfähigkeiten des Trägers verursachten Schaden um <cryo>15 %</cryo>, nachdem ein anderes Truppenmitglied in der Nähe eine Elementarfähigkeit ausgelöst hat, hält 8 s."
+    },
+    "2": {
+      "0": "Verringert die beim Klettern verbrauchte Ausdauer um 15 % und erhöht den mit Elementarfähigkeiten verursachten Schaden um <cryo>18 %</cryo>. Erhöht außerdem den mit Elementarfähigkeiten des Trägers verursachten Schaden um <cryo>18 %</cryo>, nachdem ein anderes Truppenmitglied in der Nähe eine Elementarfähigkeit ausgelöst hat, hält 8 s."
+    },
+    "3": {
+      "0": "Verringert die beim Klettern verbrauchte Ausdauer um 15 % und erhöht den mit Elementarfähigkeiten verursachten Schaden um <cryo>21 %</cryo>. Erhöht außerdem den mit Elementarfähigkeiten des Trägers verursachten Schaden um <cryo>21 %</cryo>, nachdem ein anderes Truppenmitglied in der Nähe eine Elementarfähigkeit ausgelöst hat, hält 8 s."
+    },
+    "4": {
+      "0": "Verringert die beim Klettern verbrauchte Ausdauer um 15 % und erhöht den mit Elementarfähigkeiten verursachten Schaden um <cryo>24 %</cryo>. Erhöht außerdem den mit Elementarfähigkeiten des Trägers verursachten Schaden um <cryo>24 %</cryo>, nachdem ein anderes Truppenmitglied in der Nähe eine Elementarfähigkeit ausgelöst hat, hält 8 s."
+    }
+  }
+}

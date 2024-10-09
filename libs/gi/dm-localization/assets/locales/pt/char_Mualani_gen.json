@@ -12,7 +12,7 @@
       },
       "charged": {
         "0": "<strong>Ataque Carregado</strong>",
-        "1": "Consome uma certa quantidade de Stamina para lançar uma Bola d'Água no ar que causa <hydro>Dano Hydro em AdE</hydro> ao cair no chaõ."
+        "1": "Consome uma certa quantidade de Stamina para lançar uma Bola d'Água no ar que causa <hydro>Dano Hydro em AdE</hydro> ao cair no chão."
       },
       "plunging": {
         "0": "<strong>Ataque Imersivo</strong>",
@@ -48,13 +48,13 @@
       "4": "Consome continuamente pontos de Espírito da Noite. Quando eles acabam ou quando a Habilidade é usada novamente, o estado Bênção do Espírito da Noite de Mualani acaba. O estado possui as seguintes características:",
       "5": [
         " Monta a Prancha Tubarão, aumentando a Veloc. Mov. e Resistência contra Interrupção de Mualani. Mualani pode se mover na água e em Flogisto Líquido enquanto esse estado está ativo, e ela não sofrerá Dano do Flogisto Líquido.",
-        " Ataques Normais serão convertidos em Mordidas do Tubarão, causando <hydro>Dano Hydro</hydro> com alinhamento Espírito da Noite. As Mordidas do Tubarão podem ocorrer no ar. O Dano causado dessa forma é considerado Dano de Ataque Normal.",
+        " Ataques Normais serão convertidos em Mordidas do Tubarão, causando <hydro>Dano Hydro</hydro> com alinhamento de Espírito da Noite. As Mordidas do Tubarão podem ocorrer no ar. O Dano causado dessa forma é considerado Dano de Ataque Normal.",
         " Quando ela entra em contato com oponentes nesse estado, Mualani aplica \"Marcado como Presa\" neles e ganha 1 acúmulo de Impulso da Onda. Máximo de 3 acúmulos. É possível obter 1 acúmulo do mesmo inimigo uma vez a cada 0.7s."
       ],
       "6": "<br/>",
       "7": "<strong>Impulso da Onda e Marcado como Presa</strong>",
-      "8": "Quando Mualani usa Mordida do Tubarão, seu Dano causado aumenta baseado na quantidade de acúmulos de Impulso da Onda. Quando ela possui 3 acúmulos, um Ataque Normal usará ao invés disso a Mordida do Tubarão Gigante aumentando ainda mais seu Dano e removendo todos os acúmulos de Marcado como Presa ao atingir um inimigo.",
-      "9": "Quando Mordidas do Tubarão atingem oponentes, essa marca é removida e ela dispara Mísseis Tubarão em até 5 oponentes Marcados como Presa, causando Dano contra eles equivalente a essa instância de Mordida do Tubarão e removendo Marcado como Presa deles. Se mais de 1 oponente é alvo de Mordida do Tubarão e Míssil Tubarão, o Dano causado será 72% do Dano original quando atingir 3 oponentes.",
+      "8": "Quando Mualani usa Mordida do Tubarão, seu Dano causado aumenta baseado na quantidade de acúmulos de Impulso da Onda. Quando ela possui 3 acúmulos, uma Mordida do Tubarão será convertida em Mordida do Tubarão Gigante aumentando ainda mais seu Dano e removendo todos os acúmulos de Marcado como Presa ao atingir um inimigo.",
+      "9": "Quando Mordidas do Tubarão atingem oponentes, essa marca é removida e ela dispara Mísseis Tubarão em até 5 oponentes Marcados como Presa, causando Dano contra eles equivalente a essa instância de Mordida do Tubarão e removendo Marcado como Presa deles. Se mais de 1 oponente é alvo de Mordida do Tubarão e Míssil Tubarão, o Dano causado será reduzido, alcançando até 72% do Dano original quando atingir 3 oponentes.",
       "10": "<br/>",
       "11": "<i>Primeiro, Tubarão é um tubarão de água doce, bem como uma prancha. Segundo, ele não precisa comer, mas com certeza vai morder.</i>"
     },
@@ -80,7 +80,7 @@
   "burst": {
     "name": "Disparo da Tempestade Explosiva",
     "description": {
-      "0": "Dispara um Super Míssil Tubarão que rastreia os oponentes, causando <hydro>Dano Hydro em AdE</hydro> com alinhamento Espírito da Noite baseado na Vida Máxima de Mualani.",
+      "0": "Dispara um Super Míssil Tubarão que rastreia os oponentes, causando <hydro>Dano Hydro em AdE</hydro> com alinhamento de Espírito da Noite baseado na Vida Máxima de Mualani.",
       "1": "<br/>",
       "2": "<i>Mualani nomeou eles como Mísseis de Tubarão por causa da combinação de água e fogo, deixando o nome mais parecido com fontes termais.</i>"
     },
@@ -159,7 +159,7 @@
     }
   },
   "constellation5": {
-    "name": "Mesma Modelo de Prancha com Desconto!",
+    "name": "Mesmo Modelo de Prancha com Desconto!",
     "description": {
       "0": "Aumenta o nível da <strong>Disparo da Tempestade Explosiva</strong> em 3.",
       "1": "O nível máximo de elevação é 15."

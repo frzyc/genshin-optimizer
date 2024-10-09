@@ -50,11 +50,11 @@
       "5": "A Bênção do Espírito da Noite de Kinich dura 10s e gera 2 pontos de Espírito da Noite por segundo.",
       "6": "Nesse estado, Kinich se prende a um oponente próximo e faz um ataque variável:",
       "7": [
-        " Usar um Ataque Normal fará um Disparo Circular contra o alvo preso de acordo com a direção atual de movimento, causando <dendro>Dano Dendro</dendro> com o alinhamento Espírito da Noite e gerando 3 pontos de Espírito da Noite. O Dano do Disparo Circular é considerado Dano de Habilidade Elemental.",
-        " Quando os pontos de Espírito da Noite estão no máximo, ele pode usar a Habilidade Elemental \"Canhão Perfurador Giratório\": consome todos os pontos de Espírito da Noite para causar <dendro>Dano Dendro</dendro> com o alinhamento Espírito da Noite. Quando mantém pressionado \"Canhão Perfurador Giratório\", é possível mirar no alvo. Após disparar, Kinich tentará se prender a seu alvo."
+        " Usar um Ataque Normal fará um Disparo Circular contra o alvo preso de acordo com a direção atual de movimento, causando <dendro>Dano Dendro</dendro> com o alinhamento de Espírito da Noite e gerando 3 pontos de Espírito da Noite. O Dano do Disparo Circular é considerado Dano de Habilidade Elemental.",
+        " Quando os pontos de Espírito da Noite estão no máximo, ele pode usar a Habilidade Elemental \"Canhão Perfurador Giratório\": consome todos os pontos de Espírito da Noite para causar <dendro>Dano Dendro</dendro> com o alinhamento de Espírito da Noite. Quando mantém pressionado \"Canhão Perfurador Giratório\", é possível mirar no alvo. Após disparar, Kinich tentará se prender a seu alvo."
       ],
       "8": "Enquanto estiver no estado Bênção do Espírito da Noite, depois que se prender a um inimigo ou atirar o Canhão Perfurador Giratório, gera um Ponto Cego ao lado do inimigo, e se Kinich entrar nele, gerará 4 pontos de Espírito da Noite, removendo o Ponto Cego.",
-      "9": "Se a conexão do gancho quebrar devido à distância ou outro motivo, usar um Ataque Normal estabelecerá uma nova conexão com um oponente próximo antes de fazer um ataque giratório.",
+      "9": "Se a conexão do gancho quebrar devido à distância ou outro motivo, usar um Ataque Normal estabelecerá uma nova conexão com um oponente próximo e fará um Disparo Circular.",
       "10": "<br/>",
       "11": "<i>\"Tudo tem um custo. Sugiro você fazer uma oferta aceitável... O quê? Não, eu não aceito prestações.\"</i>"
     },
@@ -80,7 +80,7 @@
   "burst": {
     "name": "Saúdem o Poderoso Dragão Soberano",
     "description": {
-      "0": "Lança o poder do Dragão Soberano Poderoso Ajaw (limitada, condicional, restrita, contratual, parcial e temporariamente), causando<dendro>Dano Dendro em AdE</dendro> com alinhamento Espírito da Noite. Ajaw periodicamente lançará sua Respiração Draconiana, causando <dendro>Dano Dendro em AdE</dendro> com alinhamento Espírito da Noite.",
+      "0": "Lança o poder do Dragão Soberano Poderoso Ajaw (de forma limitada, condicional, restrita, contratual, parcial e temporária), causando <dendro>Dano Dendro em AdE</dendro> com alinhamento de Espírito da Noite. Ajaw periodicamente lançará sua Respiração Draconiana, causando <dendro>Dano Dendro em AdE</dendro> com alinhamento de Espírito da Noite.",
       "1": "Ao lançar, se Kinich estiver no estado Bênção do Espírito da Noite, a duração da Bênção do Espírito da Noite é prolongada em 1.7s.",
       "2": "<br/>",
       "3": "<i>\"Isso mesmo! Você está perante o Dragão Soberano K'uhul Ajaw! Se aproxime, se ajoelhe e beije meus pés!\"</i>"
@@ -119,7 +119,7 @@
   "passive3": {
     "name": "Presente do Reino da Noite: Pagamento Completo",
     "description": {
-      "0": "Quando Kinich está no ar logo após o golpe no ar de <strong>Caçador de Dossel: Montando nas Alturas</strong>, pode consumir 10 de Flogisto para fazer outro ataque no ar.",
+      "0": "Quando Kinich está no ar logo após o golpe no ar de <strong>Caçador de Dossel: Montando nas Alturas</strong>, pode consumir 10 de Flogisto para fazer outro balanço no ar.",
       "1": "Quando estiver em uma área com um Dispositivo de Flogisto em Natlan, ele pode usar Transmissão do Espírito da Noite: Kinich. Quando o personagem ativo estiver correndo, em estados de movimento causados por Talentos específicos, ou no ar, mudar para Kinich ativará uma das seguintes ações de acordo com as circunstâncias:",
       "2": [
         " Quando puder interagir com Selo da Grama na sua direção: dispara uma Corda-gancho nele e se move.",
@@ -140,7 +140,7 @@
   "constellation1": {
     "name": "Bico de Papagaio",
     "description": {
-      "0": "Após Kinich aterrissar do ataque aéreo de <strong>Caçador de Dossel: Montando nas Alturas</strong>, sua Veloc. Mov. aumentará em 30% por 6s. ",
+      "0": "Após Kinich aterrissar do balanço de <strong>Caçador de Dossel: Montando nas Alturas</strong>, sua Veloc. Mov. aumentará em 30% por 6s. ",
       "1": "Além disso, o Dano CRIT do Canhão Perfurador Giratório é aumentado em 100%."
     }
   },
