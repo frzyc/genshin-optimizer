@@ -1185,6 +1185,20 @@ export const formulas = {
       },
     },
   },
+  Kinich: {
+    normal1: {
+      sheet: 'Kinich',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Kinich',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Kirara: {
     normal1: {
       sheet: 'Kirara',
@@ -2107,6 +2121,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Xiao',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Xilonen: {
+    normal1: {
+      sheet: 'Xilonen',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Xilonen',
         move: 'normal',
         name: 'normal1',
       },

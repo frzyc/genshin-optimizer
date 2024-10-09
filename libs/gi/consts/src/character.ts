@@ -146,6 +146,7 @@ export const nonTravelerCharacterKeys = [
   'Xiangling',
   'Xianyun',
   'Xiao',
+  'Xilonen',
   'Xingqiu',
   'Xinyan',
   'YaeMiko',

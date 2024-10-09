@@ -1,0 +1,24 @@
+{
+  "name": "Himno de las Cumbres",
+  "description": {
+    "0": "Una gran espada de obsidiana con una hoja incomparablemente afilada, pero que es tan ligera como una canción. Un artesano instaló en ella un dispositivo de flogisto desmontable que le permite reproducir vinilos."
+  },
+  "passiveName": "Era dorada interminable",
+  "passiveDescription": {
+    "0": {
+      "0": "Al golpear a un enemigo con un Ataque Normal o Descendente, se obtiene el efecto de “himno de las flores”, el cual aumenta la DEF en un <cryo>8%</cryo> y otorga un <cryo>10%</cryo> a todos los Bonos de Daño Elemental durante 6 s. Este efecto se puede acumular hasta 2 veces y solo se puede activar una vez cada 0.1 s. Al acumularse 2 veces o al reiniciarse la duración de las 2 acumulaciones, por cada 1000 pts. de DEF que tenga el portador de esta arma, todos los Bonos de Daño Elemental de todos los personajes cercanos del equipo aumentan durante 15 s en un <cryo>8%</cryo>, hasta un máximo de un <cryo>25.6%</cryo>."
+    },
+    "1": {
+      "0": "Al golpear a un enemigo con un Ataque Normal o Descendente, se obtiene el efecto de “himno de las flores”, el cual aumenta la DEF en un <cryo>10%</cryo> y otorga un <cryo>12.5%</cryo> a todos los Bonos de Daño Elemental durante 6 s. Este efecto se puede acumular hasta 2 veces y solo se puede activar una vez cada 0.1 s. Al acumularse 2 veces o al reiniciarse la duración de las 2 acumulaciones, por cada 1000 pts. de DEF que tenga el portador de esta arma, todos los Bonos de Daño Elemental de todos los personajes cercanos del equipo aumentan durante 15 s en un <cryo>10%</cryo>, hasta un máximo de un <cryo>32%</cryo>."
+    },
+    "2": {
+      "0": "Al golpear a un enemigo con un Ataque Normal o Descendente, se obtiene el efecto de “himno de las flores”, el cual aumenta la DEF en un <cryo>12%</cryo> y otorga un <cryo>15%</cryo> a todos los Bonos de Daño Elemental durante 6 s. Este efecto se puede acumular hasta 2 veces y solo se puede activar una vez cada 0.1 s. Al acumularse 2 veces o al reiniciarse la duración de las 2 acumulaciones, por cada 1000 pts. de DEF que tenga el portador de esta arma, todos los Bonos de Daño Elemental de todos los personajes cercanos del equipo aumentan durante 15 s en un <cryo>12%</cryo>, hasta un máximo de un <cryo>38.4%</cryo>."
+    },
+    "3": {
+      "0": "Al golpear a un enemigo con un Ataque Normal o Descendente, se obtiene el efecto de “himno de las flores”, el cual aumenta la DEF en un <cryo>14%</cryo> y otorga un <cryo>17.5%</cryo> a todos los Bonos de Daño Elemental durante 6 s. Este efecto se puede acumular hasta 2 veces y solo se puede activar una vez cada 0.1 s. Al acumularse 2 veces o al reiniciarse la duración de las 2 acumulaciones, por cada 1000 pts. de DEF que tenga el portador de esta arma, todos los Bonos de Daño Elemental de todos los personajes cercanos del equipo aumentan durante 15 s en un <cryo>14%</cryo>, hasta un máximo de un <cryo>44.8%</cryo>."
+    },
+    "4": {
+      "0": "Al golpear a un enemigo con un Ataque Normal o Descendente, se obtiene el efecto de “himno de las flores”, el cual aumenta la DEF en un <cryo>16%</cryo> y otorga un <cryo>20%</cryo> a todos los Bonos de Daño Elemental durante 6 s. Este efecto se puede acumular hasta 2 veces y solo se puede activar una vez cada 0.1 s. Al acumularse 2 veces o al reiniciarse la duración de las 2 acumulaciones, por cada 1000 pts. de DEF que tenga el portador de esta arma, todos los Bonos de Daño Elemental de todos los personajes cercanos del equipo aumentan durante 15 s en un <cryo>16%</cryo>, hasta un máximo de un <cryo>51.2%</cryo>."
+    }
+  }
+}

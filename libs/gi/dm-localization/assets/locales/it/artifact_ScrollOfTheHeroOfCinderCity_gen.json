@@ -2,7 +2,7 @@
   "setName": "Rotolo dell'Eroe della Città di cenere",
   "setEffects": {
     "2": "Quando un membro vicino del gruppo innesca un Impeto dell'Anima della Notte, il personaggio equipaggiato con questo set rigenera 6 di energia elementale.",
-    "4": "Dopo che il personaggio che equipaggia il set innesca una reazione legata al proprio tipo elementale, tutti i membri del gruppo vicini che possiedono un tipo elementale correlato alla suddetta reazione ottengono un bonus DAN elementali pari a un 12% per 15 s. Se il personaggio che equipaggia il set è in stato di Grazia dell'Anima della Notte quando questo effetto si attiva, il suddetto bonus DAN elementali aumenta di un ulteriore 28% per 20 s. Il personaggio che equipaggia il set può attivare questo effetto anche se non si trova in campo. Il bonus DAN di più set di manufatti con lo stesso nome non si accumula."
+    "4": "Quando il personaggio che equipaggia il set innesca una reazione legata al proprio tipo elementale, tutti i membri del gruppo vicini che possiedono un tipo elementale correlato alla suddetta reazione ottengono un bonus DAN elementali pari a un 12% per 15 s. Se il personaggio che equipaggia il set è in stato di Grazia dell'Anima della Notte quando questo effetto si attiva, il suddetto bonus DAN elementali aumenta di un ulteriore 28% per 20 s. Il personaggio che equipaggia il set può attivare questo effetto anche se non si trova in campo. Il bonus DAN di più set di manufatti con lo stesso nome non si accumula."
   },
   "pieces": {
     "flower": {

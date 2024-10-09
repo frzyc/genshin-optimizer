@@ -1,0 +1,24 @@
+{
+  "name": "Gancho del Triunfo",
+  "description": {
+    "0": "Un arma que Burkina, el guerrero de los Retoños Arbóreos, forjó con la ayuda del héroe Ténoch solamente para recolectar flamigranadas de calidad extraordinaria en Natlan."
+  },
+  "passiveName": "Peso de las ramas",
+  "passiveDescription": {
+    "0": {
+      "0": "La Prob. CRIT del Ataque Descendente aumenta en un <cryo>16%</cryo>. Tras golpear a un enemigo con un Ataque Descendente, el daño del Ataque Normal, Cargado y Descendente aumenta en un <cryo>16%</cryo> durante 10 s."
+    },
+    "1": {
+      "0": "La Prob. CRIT del Ataque Descendente aumenta en un <cryo>20%</cryo>. Tras golpear a un enemigo con un Ataque Descendente, el daño del Ataque Normal, Cargado y Descendente aumenta en un <cryo>20%</cryo> durante 10 s."
+    },
+    "2": {
+      "0": "La Prob. CRIT del Ataque Descendente aumenta en un <cryo>24%</cryo>. Tras golpear a un enemigo con un Ataque Descendente, el daño del Ataque Normal, Cargado y Descendente aumenta en un <cryo>24%</cryo> durante 10 s."
+    },
+    "3": {
+      "0": "La Prob. CRIT del Ataque Descendente aumenta en un <cryo>28%</cryo>. Tras golpear a un enemigo con un Ataque Descendente, el daño del Ataque Normal, Cargado y Descendente aumenta en un <cryo>28%</cryo> durante 10 s."
+    },
+    "4": {
+      "0": "La Prob. CRIT del Ataque Descendente aumenta en un <cryo>32%</cryo>. Tras golpear a un enemigo con un Ataque Descendente, el daño del Ataque Normal, Cargado y Descendente aumenta en un <cryo>32%</cryo> durante 10 s."
+    }
+  }
+}

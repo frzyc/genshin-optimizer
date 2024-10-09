@@ -78,6 +78,7 @@ import Wriothesley from './Character_Wriothesley_Card.jpg'
 import Xiangling from './Character_Xiangling_Card.jpg'
 import Xianyun from './Character_Xianyun_Card.jpg'
 import Xiao from './Character_Xiao_Card.jpg'
+import Xilonen from './Character_Xilonen_Card.jpg'
 import Xingqiu from './Character_Xingqiu_Card.jpg'
 import Xinyan from './Character_Xinyan_Card.jpg'
 import YaeMiko from './Character_Yae_Miko_Card.png'
@@ -172,6 +173,7 @@ const charCards = {
   Xiangling,
   Xianyun,
   Xiao,
+  Xilonen,
   Xingqiu,
   Xinyan,
   YaeMiko,

@@ -85,6 +85,7 @@ import Wriothesley from './Wriothesley'
 import Xiangling from './Xiangling'
 import Xianyun from './Xianyun'
 import Xiao from './Xiao'
+import Xilonen from './Xilonen'
 import Xingqiu from './Xingqiu'
 import Xinyan from './Xinyan'
 import YaeMiko from './YaeMiko'
@@ -182,6 +183,7 @@ const data = {
   Xiangling,
   Xianyun,
   Xiao,
+  Xilonen,
   Xingqiu,
   Xinyan,
   YaeMiko,

@@ -1,0 +1,24 @@
+{
+  "name": "Gancho Frutífero",
+  "description": {
+    "0": "O audacioso Burkina, dos Descendentes das Copas, construiu esta arma com a ajuda do herói Tenoch — tudo para obter Fogorromãs incomparáveis em Natlan."
+  },
+  "passiveName": "Peso dos Galhos Caídos",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta a Taxa CRIT dos Ataques Imersivos em <cryo>16%</cryo>. Quando um Ataque Imersivo atinge um inimigo, aumenta o Dano causado pelos Ataques Normais, Carregados e Imersivos em <cryo>16%</cryo> por 10s."
+    },
+    "1": {
+      "0": "Aumenta a Taxa CRIT dos Ataques Imersivos em <cryo>20%</cryo>. Quando um Ataque Imersivo atinge um inimigo, aumenta o Dano causado pelos Ataques Normais, Carregados e Imersivos em <cryo>20%</cryo> por 10s."
+    },
+    "2": {
+      "0": "Aumenta a Taxa CRIT dos Ataques Imersivos em <cryo>24%</cryo>. Quando um Ataque Imersivo atinge um inimigo, aumenta o Dano causado pelos Ataques Normais, Carregados e Imersivos em <cryo>24%</cryo> por 10s."
+    },
+    "3": {
+      "0": "Aumenta a Taxa CRIT dos Ataques Imersivos em <cryo>28%</cryo>. Quando um Ataque Imersivo atinge um inimigo, aumenta o Dano causado pelos Ataques Normais, Carregados e Imersivos em <cryo>28%</cryo> por 10s."
+    },
+    "4": {
+      "0": "Aumenta a Taxa CRIT dos Ataques Imersivos em <cryo>32%</cryo>. Quando um Ataque Imersivo atinge um inimigo, aumenta o Dano causado pelos Ataques Normais, Carregados e Imersivos em <cryo>32%</cryo> por 10s."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Sturdy Bone",
+  "description": {
+    "0": "Pedang panjang yang sudah menjadi semakin keras setelah ribuan pukulan dan ayunan. Konon katanya, merupakan senjata yang paling sering digunakan oleh pahlawan Wanjiru."
+  },
+  "passiveName": "Trapper's Pride",
+  "passiveDescription": {
+    "0": {
+      "0": "Konsumsi Stamina Sprint atau Alternate Sprint berkurang 15%. Selain itu, setelah menggunakan Sprint atau Alternate Sprint, DMG Normal Attack meningkat sebesar <cryo>16%</cryo> ATK, efek ini akan hilang setelah efektif 18 kali atau setelah 7 detik kemudian."
+    },
+    "1": {
+      "0": "Konsumsi Stamina Sprint atau Alternate Sprint berkurang 15%. Selain itu, setelah menggunakan Sprint atau Alternate Sprint, DMG Normal Attack meningkat sebesar <cryo>20%</cryo> ATK, efek ini akan hilang setelah efektif 18 kali atau setelah 7 detik kemudian."
+    },
+    "2": {
+      "0": "Konsumsi Stamina Sprint atau Alternate Sprint berkurang 15%. Selain itu, setelah menggunakan Sprint atau Alternate Sprint, DMG Normal Attack meningkat sebesar <cryo>24%</cryo> ATK, efek ini akan hilang setelah efektif 18 kali atau setelah 7 detik kemudian."
+    },
+    "3": {
+      "0": "Konsumsi Stamina Sprint atau Alternate Sprint berkurang 15%. Selain itu, setelah menggunakan Sprint atau Alternate Sprint, DMG Normal Attack meningkat sebesar <cryo>28%</cryo> ATK, efek ini akan hilang setelah efektif 18 kali atau setelah 7 detik kemudian."
+    },
+    "4": {
+      "0": "Konsumsi Stamina Sprint atau Alternate Sprint berkurang 15%. Selain itu, setelah menggunakan Sprint atau Alternate Sprint, DMG Normal Attack meningkat sebesar <cryo>32%</cryo> ATK, efek ini akan hilang setelah efektif 18 kali atau setelah 7 detik kemudian."
+    }
+  }
+}
