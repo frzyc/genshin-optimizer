@@ -42,7 +42,7 @@ const relicHashData = {
 }
 
 const lightConeHashData = {
-  superimposition: '-2008197403'
+  superimposition: '-2008197403',
 }
 
 const teamHashData = {
@@ -102,5 +102,5 @@ export const commonHashData = {
     dmg_: '-907763317',
     weakness_: '-1297647890',
     resPen_: '-538204877',
-  }
+  },
 }

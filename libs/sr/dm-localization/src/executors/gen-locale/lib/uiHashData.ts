@@ -46,5 +46,5 @@ export const uiHashData = {
   gender: {
     F: '732414811',
     M: '1491929698',
-  }
+  },
 }
