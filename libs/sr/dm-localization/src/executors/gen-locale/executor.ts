@@ -19,9 +19,7 @@ const runExecutor: PromiseExecutor<GenLocaleExecutorSchema> = async (
           'charNames',
           'lightConeNames',
           'relicNames',
-          'sheet',
-          'slotKey',
-          'statKey',
+          'common',
         ].includes(type)
       )
         return dumpFile(`${fileDir}/${type}_gen.json`, typeData)
