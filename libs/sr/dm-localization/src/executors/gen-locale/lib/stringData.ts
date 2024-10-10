@@ -21,6 +21,10 @@ export type InterpolationTag = keyof typeof interpolationTags
 // Process tags in string to template for i18n
 function processString(str: string | undefined) {
   if (str === undefined) str = ''
+
+  // Remove '{SPACE}' artifacts from certain strings
+  // Do this first to match curly brackets to prevent interfering with later str replacements
+  str = str.replace(/(.*?){SPACE}/g, '$1')
   // Find portion similar to
   // <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>
   // replaces with '<color=#f29e38ff>#1[i]%</color>'
