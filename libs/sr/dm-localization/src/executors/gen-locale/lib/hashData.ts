@@ -8,6 +8,7 @@ import { charHashData } from './charHashData'
 import { lightConeHashData } from './lightConeHashData'
 import { relicHashData } from './relicHashData'
 import { commonHashData } from './commonHashData'
+import { uiHashData } from './uiHashData'
 
 export type LanguageData = typeof HashData
 
@@ -37,4 +38,5 @@ export const HashData = {
   lightConeNames,
 
   common: commonHashData,
+  ui: uiHashData
 }

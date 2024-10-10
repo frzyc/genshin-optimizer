@@ -20,6 +20,7 @@ const runExecutor: PromiseExecutor<GenLocaleExecutorSchema> = async (
           'lightConeNames',
           'relicNames',
           'common',
+          'ui'
         ].includes(type)
       )
         return dumpFile(`${fileDir}/${type}_gen.json`, typeData)
