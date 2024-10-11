@@ -165,7 +165,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
 
 function EquipmentSection() {
   const {
-    character: { key: characterKey },
+    character: { key: characterKey, equippedArtifacts },
   } = useContext(CharacterContext)
   const { data } = useContext(DataContext)
 
@@ -192,10 +192,13 @@ function EquipmentSection() {
             location: charKeyToLocCharKey(characterKey),
           })
         }}
-        setArtifact={(_, id) => {
-          database.arts.set(id, {
-            location: charKeyToLocCharKey(characterKey),
-          })
+        setArtifact={(slotKey, id) => {
+          if (!id)
+            database.arts.set(equippedArtifacts[slotKey], { location: '' })
+          else
+            database.arts.set(id, {
+              location: charKeyToLocCharKey(characterKey),
+            })
         }}
       />
     </Box>
