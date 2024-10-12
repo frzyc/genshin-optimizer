@@ -64,8 +64,8 @@ const dm = {
     thrust3Heal: skillParam_gen.skill[s++][0],
     bondHealConvert: skillParam_gen.skill[s++][0],
     bladeDmg: skillParam_gen.skill[s++],
+    bladeInterval: skillParam_gen.skill[s++][0],
     duration: skillParam_gen.skill[s++][0],
-    idk9: skillParam_gen.skill[s++][0],
     cd: skillParam_gen.skill[s++][0],
   },
   burst: {
@@ -412,9 +412,15 @@ const sheet: TalentSheet = {
           }),
         },
         {
+          text: ct.chg('skill.skillParams.6'),
+          value: dm.skill.bladeInterval,
+          unit: 's',
+        },
+        {
           text: stg('duration'),
           value: dm.skill.duration,
           unit: 's',
+          fixed: 1,
         },
         {
           text: stg('cd'),
