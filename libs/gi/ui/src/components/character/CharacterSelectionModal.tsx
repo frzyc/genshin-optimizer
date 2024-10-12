@@ -555,12 +555,6 @@ function SingleSelectCardWrapper({
 
   const [open, onOpen, onClose] = useBoolState()
 
-  const flash = keyframes`
-  0% {outline-color: #f7bd10}
-  33% {outline-color: #1b263b}
-  66% {outline-color: #f7bd10}
-  100% {outline-color: #f7bd10}
-  `
   const isInTeam = teamSlotIndex !== -1
   return (
     <CustomTooltip
@@ -579,16 +573,26 @@ function SingleSelectCardWrapper({
     >
       <CardThemed
         bgt="light"
-        sx={{
-          position: 'relative',
-          flexGrow: 1,
-          display: 'flex',
-          flexDirection: 'column',
-          outline: isInTeam ? 'solid #f7bd10' : undefined,
-          animation:
-            isInTeam && selectedIndex === teamSlotIndex
-              ? `${flash} 3s ease infinite`
-              : undefined,
+        sx={(theme) => {
+          const warning = theme.palette.warning.main
+          const contentNormal = theme.palette.contentNormal.main
+          const flash = keyframes`
+            0% {outline-color: ${warning}}
+            33% {outline-color: ${contentNormal}}
+            66% {outline-color: ${warning}}
+            100% {outline-color: ${warning}}
+          `
+          return {
+            position: 'relative',
+            flexGrow: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            outline: isInTeam ? `solid ${warning}` : undefined,
+            animation:
+              isInTeam && selectedIndex === teamSlotIndex
+                ? `${flash} 3s ease infinite`
+                : undefined,
+          }
         }}
       >
         <IconButton
@@ -641,13 +645,13 @@ function MultiSelectCardWrapper({
     >
       <CardThemed
         bgt="light"
-        sx={{
+        sx={(theme) => ({
           position: 'relative',
           flexGrow: 1,
           display: 'flex',
           flexDirection: 'column',
-          outline: isInTeam ? 'solid #f7bd10' : undefined,
-        }}
+          outline: isInTeam ? `solid ${theme.palette.warning.main}` : undefined,
+        })}
       >
         <IconButton
           sx={{ p: 0.25, position: 'absolute', zIndex: 2, opacity: 0.7 }}

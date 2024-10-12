@@ -98,12 +98,15 @@ export default function EquipmentSection() {
             setArtifact={(slotKey, id) => {
               if (loadoutEquip)
                 database.builds.set(buildId, (build) => {
-                  build.artifactIds[slotKey] = id
+                  build.artifactIds[slotKey] = id ? id : undefined
                 })
               else
-                database.arts.set(id, {
-                  location: charKeyToLocCharKey(characterKey),
-                })
+                id
+                  ? database.arts.set(id, {
+                      location: charKeyToLocCharKey(characterKey),
+                    })
+                  : artifactIds[slotKey] &&
+                    database.arts.set(artifactIds[slotKey], { location: '' })
             }}
           />
         </Grid>
