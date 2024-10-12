@@ -87,7 +87,12 @@ export function BasicFieldDisplay({
   return (
     <Box
       width="100%"
-      sx={{ display: 'flex', justifyContent: 'space-between', gap: 1 }}
+      sx={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        gap: 1,
+        py: 0.25,
+      }}
       component={component}
     >
       <Typography color={`${variant}.main`}>
