@@ -10,7 +10,7 @@ import { getLevelString } from '@genshin-optimizer/gi/util'
 import { dataObjForWeapon, uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, Typography } from '@mui/material'
 import { useMemo } from 'react'
-import { getCalcDisplay, resolveInfo } from '../../util'
+import { GetCalcDisplay, resolveInfo } from '../../util'
 import { WeaponNameTooltip } from './WeaponNameTooltip'
 
 export function WeaponCardPico({ weaponId }: { weaponId: string }) {
@@ -98,7 +98,7 @@ function WeaponStatPico({ node }: { node: CalcResult }) {
   const { icon } = resolveInfo(node.info)
   return (
     <Typography>
-      {icon} {getCalcDisplay(node).valueString}
+      {icon} {GetCalcDisplay(node).valueString}
     </Typography>
   )
 }

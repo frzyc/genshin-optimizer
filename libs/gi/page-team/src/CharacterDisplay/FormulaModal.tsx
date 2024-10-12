@@ -11,7 +11,7 @@ import {
   AmpReactionModeText,
   DataContext,
   FormulaDataContext,
-  getCalcDisplay,
+  GetCalcDisplay,
   getDisplayHeader,
   getDisplaySections,
   resolveInfo,
@@ -139,7 +139,7 @@ function FormulaAccordian({ node }: { node: CalcResult }) {
   }, [scrollRef, node, contextNode])
 
   const { variant, subVariant } = resolveInfo(node.info)
-  const calcDisplay = getCalcDisplay(node)
+  const calcDisplay = GetCalcDisplay(node)
   return (
     <Accordion
       sx={{ bgcolor: 'contentNormal.main' }}

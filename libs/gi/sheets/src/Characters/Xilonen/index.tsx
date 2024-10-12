@@ -14,7 +14,6 @@ import {
   sum,
   tally,
   target,
-  threshold,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
 import { CharacterSheet } from '../CharacterSheet'
@@ -114,18 +113,13 @@ const [condSourceActivePath, condSourceActive] = cond(key, 'sourceActive')
 const [condNsBlessingPath, condNsBlessing] = cond(key, 'nsBlessing')
 const buffableEle = ['pyro', 'hydro', 'cryo', 'electro'] as const
 const convertedSources = sum(...buffableEle.map((ele) => tally[ele]))
-const geoSourcePossible = threshold(
-  input.constellation,
-  2,
-  1,
-  threshold(convertedSources, 3, equal(condNsBlessing, 'on', 1), 1)
-)
+const geoSourcePossible = lessThan(convertedSources, 3, 1)
 const skill_enemyRes_ = subscript(input.total.skillIndex, dm.skill.enemyRes_, {
   unit: '%',
 })
-const sourceActive_geo_enemyRes_ = equal(
-  condSourceActive,
-  'on',
+const sourceActive_geo_enemyRes_ = greaterEq(
+  sum(equal(condSourceActive, 'on', 1), equal(condNsBlessing, 'on', 1)),
+  1,
   equal(geoSourcePossible, 1, skill_enemyRes_)
 )
 const sourceActive_other_enemyRes_ = objKeyValMap(buffableEle, (ele) => [
@@ -158,13 +152,21 @@ const c2_sourceActive_geo_all_dmg_ = greaterEq(
   equal(
     condSourceActive,
     'on',
-    equal(target.charEle, 'geo', dm.constellation2.geo_critDMG_)
+    equal(
+      geoSourcePossible,
+      1,
+      equal(target.charEle, 'geo', dm.constellation2.geo_critDMG_)
+    )
   )
 )
 const c2_sourceActive_pyro_atk_disp = greaterEq(
   input.constellation,
   2,
-  equal(condSourceActive, 'on', dm.constellation2.pyro_atk_),
+  greaterEq(
+    tally.pyro,
+    1,
+    equal(condSourceActive, 'on', dm.constellation2.pyro_atk_)
+  ),
   { path: 'atk_', isTeamBuff: true }
 )
 const c2_sourceActive_pyro_atk_ = equal(
@@ -175,7 +177,11 @@ const c2_sourceActive_pyro_atk_ = equal(
 const c2_sourceActive_hydro_hp_disp = greaterEq(
   input.constellation,
   2,
-  equal(condSourceActive, 'on', dm.constellation2.hydro_hp_),
+  greaterEq(
+    tally.hydro,
+    1,
+    equal(condSourceActive, 'on', dm.constellation2.hydro_hp_)
+  ),
   { path: 'hp_', isTeamBuff: true }
 )
 const c2_sourceActive_hydro_hp_ = equal(
@@ -186,7 +192,11 @@ const c2_sourceActive_hydro_hp_ = equal(
 const c2_sourceActive_cryo_critDMG_disp = greaterEq(
   input.constellation,
   2,
-  equal(condSourceActive, 'on', dm.constellation2.cryo_critDMG_),
+  greaterEq(
+    tally.cryo,
+    1,
+    equal(condSourceActive, 'on', dm.constellation2.cryo_critDMG_)
+  ),
   { path: 'critDMG_', isTeamBuff: true }
 )
 const c2_sourceActive_cryo_critDMG_ = equal(
@@ -367,6 +377,17 @@ const sheet: TalentSheet = {
         },
       ],
     },
+    ct.headerTem('passive1', {
+      canShow: lessThan(convertedSources, 2, 1),
+      fields: [
+        {
+          node: a1_normal_dmg_,
+        },
+        {
+          node: a1_plunging_dmg_,
+        },
+      ],
+    }),
   ]),
 
   skill: ct.talentTem('skill', [
@@ -402,14 +423,12 @@ const sheet: TalentSheet = {
         on: {
           fields: [
             {
-              node: sourceActive_geo_enemyRes_,
+              text: ct.ch('sourceActive'),
             },
-            ...Object.values(sourceActive_other_enemyRes_).map((node) => ({
-              node,
-            })),
             {
               text: stg('duration'),
               value: dm.skill.sourceDuration,
+              unit: 's',
             },
           ],
         },
@@ -419,6 +438,7 @@ const sheet: TalentSheet = {
       path: condNsBlessingPath,
       value: condNsBlessing,
       name: st('nightsoul.blessing'),
+      canShow: equal(geoSourcePossible, 1, 1),
       teamBuff: true,
       states: {
         on: {
@@ -430,34 +450,53 @@ const sheet: TalentSheet = {
         },
       },
     }),
-    ct.headerTem('passive1', {
-      fields: [
-        {
-          node: a1_normal_dmg_,
-        },
-        {
-          node: a1_plunging_dmg_,
-        },
-      ],
-    }),
-    ct.headerTem('constellation2', {
-      canShow: equal(condSourceActive, 'on', 1),
+    ct.headerTem('skill', {
       teamBuff: true,
       fields: [
         {
+          node: sourceActive_geo_enemyRes_,
+        },
+        ...Object.values(sourceActive_other_enemyRes_).map((node) => ({
+          node,
+        })),
+      ],
+    }),
+    ct.headerTem('constellation2', {
+      teamBuff: true,
+      // Only show when any Source Sample is active
+      canShow: greaterEq(
+        sum(equal(geoSourcePossible, 1, 1), equal(condSourceActive, 'on', 1)),
+        1,
+        1
+      ),
+      fields: [
+        {
+          canShow: (data) => data.get(geoSourcePossible).value === 1,
           text: ct.ch('geoSourceActive'),
         },
         {
-          node: c2_sourceActive_geo_all_dmg_,
+          node: infoMut(
+            { ...c2_sourceActive_geo_all_dmg_ },
+            { variant: 'geo' }
+          ),
         },
         {
-          node: c2_sourceActive_pyro_atk_disp,
+          node: infoMut(
+            { ...c2_sourceActive_pyro_atk_disp },
+            { variant: 'pyro' }
+          ),
         },
         {
-          node: c2_sourceActive_hydro_hp_disp,
+          node: infoMut(
+            { ...c2_sourceActive_hydro_hp_disp },
+            { variant: 'hydro' }
+          ),
         },
         {
-          node: c2_sourceActive_cryo_critDMG_disp,
+          node: infoMut(
+            { ...c2_sourceActive_cryo_critDMG_disp },
+            { variant: 'cryo' }
+          ),
         },
       ],
     }),

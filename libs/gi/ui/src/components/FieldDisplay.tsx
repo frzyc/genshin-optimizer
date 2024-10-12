@@ -26,7 +26,7 @@ import {
 import type { ReactNode } from 'react'
 import React, { Suspense, useCallback, useContext, useMemo } from 'react'
 import { DataContext, FormulaDataContext } from '../context'
-import { getCalcDisplay, resolveInfo } from '../util'
+import { GetCalcDisplay, resolveInfo } from '../util'
 import { AmpReactionModeText } from './AmpReactionModeText'
 
 export function FieldsDisplay({
@@ -87,7 +87,12 @@ export function BasicFieldDisplay({
   return (
     <Box
       width="100%"
-      sx={{ display: 'flex', justifyContent: 'space-between', gap: 1 }}
+      sx={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        gap: 1,
+        py: 0.25,
+      }}
       component={component}
     >
       <Typography color={`${variant}.main`}>
@@ -136,7 +141,7 @@ export function NodeFieldDisplay({
   const { unit, fixed, variant, subVariant } = resolveInfo(
     (calcRes?.info ?? compareCalcRes?.info)!
   )
-  const calcDisplay = getCalcDisplay((calcRes ?? compareCalcRes)!)
+  const calcDisplay = GetCalcDisplay((calcRes ?? compareCalcRes)!)
 
   const diff = calcValue - compareCalcValue
   const pctDiff =
