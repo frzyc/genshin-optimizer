@@ -23,9 +23,9 @@ import { i18n } from '@genshin-optimizer/gi/i18n'
 import { getWeaponSheet } from '@genshin-optimizer/gi/sheets'
 import { getWeaponStat } from '@genshin-optimizer/gi/stats'
 import {
+  GetCalcDisplay,
   SubstatMultiAutocomplete,
   WeaponName,
-  getCalcDisplay,
   resolveInfo,
 } from '@genshin-optimizer/gi/ui'
 import type { CalcResult } from '@genshin-optimizer/gi/uidata'
@@ -126,8 +126,8 @@ export default function TabWeapon() {
         const mainNode = weaponUIData.get(input.weapon.main)
         const subNode = weaponUIData.get(input.weapon.sub)
         cache.set(wKey, {
-          main: getCalcDisplay(mainNode).valueString,
-          sub: getCalcDisplay(subNode).valueString,
+          main: GetCalcDisplay(mainNode).valueString,
+          sub: GetCalcDisplay(subNode).valueString,
         })
       })
       return cache
@@ -367,7 +367,7 @@ function StatDisplay({ node }: { node: CalcResult }) {
       <Typography flexGrow={1}>
         {icon} {name}
       </Typography>
-      <Typography>{getCalcDisplay(node).valueString}</Typography>
+      <Typography>{GetCalcDisplay(node).valueString}</Typography>
     </Box>
   )
 }
