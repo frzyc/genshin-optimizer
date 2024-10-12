@@ -14,10 +14,10 @@ import { getCharEle, isCharMelee } from '@genshin-optimizer/gi/stats'
 import {
   DataContext,
   FieldDisplayList,
+  GetCalcDisplay,
   NodeFieldDisplay,
-  StatEditorList,
-  getCalcDisplay,
   resolveInfo,
+  StatEditorList,
 } from '@genshin-optimizer/gi/ui'
 import type { ReadNode } from '@genshin-optimizer/gi/wr'
 import { allInputPremodKeys, uiInput as input } from '@genshin-optimizer/gi/wr'
@@ -237,7 +237,7 @@ function MainStatsCards() {
                           {icon} {name}
                         </ColorText>
                       </span>
-                      <span>{getCalcDisplay(specialNode).valueString}</span>
+                      <span>{GetCalcDisplay(specialNode).valueString}</span>
                     </ListItem>
                   )
                 }
