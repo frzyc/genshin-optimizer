@@ -118,7 +118,11 @@ const skill_enemyRes_ = subscript(input.total.skillIndex, dm.skill.enemyRes_, {
   unit: '%',
 })
 const sourceActive_geo_enemyRes_ = greaterEq(
-  sum(equal(condSourceActive, 'on', 1), equal(condNsBlessing, 'on', 1)),
+  sum(
+    equal(condSourceActive, 'on', 1),
+    equal(condNsBlessing, 'on', 1),
+    greaterEq(input.constellation, 2, 1)
+  ),
   1,
   equal(geoSourcePossible, 1, skill_enemyRes_)
 )
@@ -149,14 +153,10 @@ const ns_plunge_nodes = plungingDmgNodes('def', dm.plunging, {
 const c2_sourceActive_geo_all_dmg_ = greaterEq(
   input.constellation,
   2,
-  equal(
-    condSourceActive,
-    'on',
-    equal(
-      geoSourcePossible,
-      1,
-      equal(target.charEle, 'geo', dm.constellation2.geo_critDMG_)
-    )
+  lessThan(
+    sourceActive_geo_enemyRes_,
+    -0.01,
+    equal(target.charEle, 'geo', dm.constellation2.geo_critDMG_)
   )
 )
 const c2_sourceActive_pyro_atk_disp = greaterEq(
@@ -438,7 +438,7 @@ const sheet: TalentSheet = {
       path: condNsBlessingPath,
       value: condNsBlessing,
       name: st('nightsoul.blessing'),
-      canShow: equal(geoSourcePossible, 1, 1),
+      canShow: equal(geoSourcePossible, 1, lessThan(input.constellation, 2, 1)),
       teamBuff: true,
       states: {
         on: {
@@ -465,7 +465,10 @@ const sheet: TalentSheet = {
       teamBuff: true,
       // Only show when any Source Sample is active
       canShow: greaterEq(
-        sum(equal(geoSourcePossible, 1, 1), equal(condSourceActive, 'on', 1)),
+        sum(
+          lessThan(sourceActive_geo_enemyRes_, -0.01, 1),
+          greaterEq(convertedSources, 0, equal(condSourceActive, 'on', 1))
+        ),
         1,
         1
       ),
