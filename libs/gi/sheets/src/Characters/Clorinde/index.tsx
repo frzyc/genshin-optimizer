@@ -192,9 +192,8 @@ const c6AfterSkill_critDMG_ = greaterEq(
   equal(condC6AfterSkill, 'on', dm.constellation6.critDMG_)
 )
 
-const electroHit = { hit: { ele: constant('electro') } }
-const skillHit = {
-  ...electroHit,
+const electroNormalHit = {
+  hit: { ele: constant('electro') },
   premod: { normal_dmgInc: a1Reactions_normal_dmgInc },
 }
 
@@ -213,7 +212,7 @@ const dmgFormulas = {
       'atk',
       dm.skill.normalDmg,
       'normal',
-      skillHit,
+      electroNormalHit,
       undefined,
       'skill'
     ),
@@ -221,7 +220,7 @@ const dmgFormulas = {
       'atk',
       dm.skill.piercingDmg,
       'normal',
-      skillHit,
+      electroNormalHit,
       undefined,
       'skill'
     ),
@@ -229,7 +228,7 @@ const dmgFormulas = {
       'atk',
       dm.skill.thrust1Dmg,
       'normal',
-      skillHit,
+      electroNormalHit,
       undefined,
       'skill'
     ),
@@ -237,7 +236,7 @@ const dmgFormulas = {
       'atk',
       dm.skill.thrust2Dmg,
       'normal',
-      skillHit,
+      electroNormalHit,
       undefined,
       'skill'
     ),
@@ -245,7 +244,7 @@ const dmgFormulas = {
       'atk',
       dm.skill.thrust3Dmg,
       'normal',
-      skillHit,
+      electroNormalHit,
       undefined,
       'skill'
     ),
@@ -265,7 +264,7 @@ const dmgFormulas = {
       customDmgNode(
         prod(percent(dm.constellation1.dmg), input.total.atk),
         'normal',
-        electroHit
+        electroNormalHit
       )
     ),
   },
@@ -276,7 +275,7 @@ const dmgFormulas = {
       customDmgNode(
         prod(percent(dm.constellation6.dmg), input.total.atk),
         'normal',
-        electroHit
+        electroNormalHit
       )
     ),
   },
