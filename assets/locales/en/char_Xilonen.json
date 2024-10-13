@@ -1,7 +1,6 @@
 {
-  "sourceCond": "Nighsoul Points hit the maximum",
-  "sourceActive": "Source Samples activated",
-  "geoSourceActive": "<geo>Geo</geo> Source Sample activated",
+  "sourceCond": "Source Samples are active",
+  "geoSourceActive": "Geo Source Sample activated",
   "c4Cond": "Under the Blooming Blessing effect",
   "c6Cond": "In the Imperishable Night's Blessing state",
   "ns_dmg": "Blade Roller Plunge DMG",
