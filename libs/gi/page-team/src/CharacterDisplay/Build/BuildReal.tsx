@@ -48,6 +48,7 @@ export default function BuildReal({
     character: { equippedWeapon, equippedArtifacts },
   } = useContext(CharacterContext)
   const database = useDatabase()
+
   const { name, description, weaponId, artifactIds } = useBuild(buildId)!
   const onActive = () =>
     database.teams.setLoadoutDatum(teamId, teamCharId, {
@@ -107,7 +108,7 @@ export default function BuildReal({
   return (
     <>
       <ModalWrapper open={open} onClose={onClose}>
-        <BuildEditor buildId={buildId} onClose={onClose} />
+        <BuildEditor teamId={teamId} teamCharId={teamCharId} buildId={buildId} onClose={onClose} />
       </ModalWrapper>
       <EquipBuildModal
         currentName={t`buildRealCard.copy.equipped`}
@@ -186,9 +187,13 @@ export default function BuildReal({
 }
 
 function BuildEditor({
+  teamId,
+  teamCharId,
   buildId,
   onClose,
 }: {
+  teamId: string
+  teamCharId: string
   buildId: string
   onClose: () => void
 }) {
@@ -212,7 +217,11 @@ function BuildEditor({
     const { name, description } = newBuild
     setName(name)
     setDesc(description)
-  }, [database, buildId])
+    database.teams.setLoadoutDatum(teamId, teamCharId, {
+      compareType: 'real',
+      compareBuildId: buildId,
+    })
+  }, [database, buildId, teamId, teamCharId])
 
   useEffect(() => {
     database.builds.set(buildId, (build) => {

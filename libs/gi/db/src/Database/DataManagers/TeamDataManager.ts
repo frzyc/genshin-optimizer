@@ -285,6 +285,22 @@ export class TeamDataManager extends DataManager<
     buildId,
     teamCharId,
   }: LoadoutDatum): string | undefined {
+    return this.#getWeaponId(teamCharId, buildType, buildId)
+  }
+
+  getCompareWeaponId({
+    compareType,
+    compareBuildId,
+    teamCharId,
+  }: LoadoutDatum): string | undefined {
+    return this.#getWeaponId(teamCharId, compareType, compareBuildId)
+  }
+
+  #getWeaponId(
+    teamCharId: string,
+    buildType: BuildTypeKey,
+    buildId: string,
+  ): string | undefined {
     const teamChar = this.database.teamChars.get(teamCharId)
     if (!teamChar) return undefined
     const { key: characterKey } = teamChar
@@ -302,6 +318,7 @@ export class TeamDataManager extends DataManager<
     }
     return undefined
   }
+
   /**
    *
    * @param teamCharId
@@ -350,14 +367,31 @@ export class TeamDataManager extends DataManager<
       }
     })
   }
+
   /**
    * Note: this doesnt return any artifacts(all undefined) when the current teamchar is using a TC Build.
    */
   getLoadoutArtifactIds({
-    teamCharId,
     buildType,
     buildId,
+    teamCharId,
   }: LoadoutDatum): Record<ArtifactSlotKey, string | undefined> {
+    return this.#getArtifactIds(teamCharId, buildType, buildId)
+  }
+
+  getCompareArtifactIds({
+    compareType,
+    compareBuildId,
+    teamCharId,
+  }: LoadoutDatum): Record<ArtifactSlotKey, string | undefined> {
+    return this.#getArtifactIds(teamCharId, compareType, compareBuildId)
+  }
+
+  #getArtifactIds(
+    teamCharId: string,
+    buildType: BuildTypeKey,
+    buildId: string,
+  ): Record<ArtifactSlotKey, string | undefined> {
     const teamChar = this.database.teamChars.get(teamCharId)
     if (!teamChar) return objKeyMap(allArtifactSlotKeys, () => undefined)
     const { key: characterKey } = teamChar
@@ -375,6 +409,7 @@ export class TeamDataManager extends DataManager<
     }
     return objKeyMap(allArtifactSlotKeys, () => undefined)
   }
+
   /**
    * Note: this doesnt return any artifacts(all undefined) when the current teamchar is using a TC Build.
    */

@@ -28,7 +28,7 @@ function TeamWrapper({ artIdOrSlot, weaponId, onHide, onEquip }: WrapperProps) {
   const { loadoutDatum } = useContext(TeamCharacterContext)
 
   const newArt = database.arts.get(artIdOrSlot ?? '')
-  const currentArtifactIds = database.teams.getLoadoutArtifactIds(loadoutDatum)
+  const currentArtifactIds = database.teams.getCompareArtifactIds(loadoutDatum)
   const newArtifactIds = objMap(currentArtifactIds, (id, slot) =>
     slot === artIdOrSlot
       ? undefined
@@ -36,13 +36,13 @@ function TeamWrapper({ artIdOrSlot, weaponId, onHide, onEquip }: WrapperProps) {
       ? artIdOrSlot
       : id
   )
-  const currentWeaponId = database.teams.getLoadoutWeaponId(loadoutDatum)
+  const currentWeaponId = database.teams.getCompareWeaponId(loadoutDatum)
   const newWeaponId = weaponId ?? currentWeaponId
   return (
     <EquipBuildModal
       currentName={
-        (loadoutDatum.buildType === 'real' &&
-          database.builds.get(loadoutDatum.buildId)?.name) ||
+        (loadoutDatum.compareType === 'real' &&
+          database.builds.get(loadoutDatum.compareBuildId)?.name) ||
         'Equipped'
       }
       newWeaponId={newWeaponId}
