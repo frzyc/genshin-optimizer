@@ -1,6 +1,5 @@
-import { objKeyMap, range } from '@genshin-optimizer/common/util'
-import { type WeaponKey } from '@genshin-optimizer/gi/consts'
-import { allEleDmgKeys } from '@genshin-optimizer/gi/keymap'
+import { objKeyMap, objKeyValMap, range } from '@genshin-optimizer/common/util'
+import { allElementKeys, type WeaponKey } from '@genshin-optimizer/gi/consts'
 import {
   equal,
   input,
@@ -9,8 +8,6 @@ import {
   naught,
   prod,
   subscript,
-  target,
-  unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
@@ -31,7 +28,8 @@ const odeStacks_def_ = lookup(
   ),
   naught
 )
-const odeStacks_ele_dmg_ = objKeyMap(allEleDmgKeys, () =>
+const odeStacks_ele_dmg_ = objKeyValMap(allElementKeys, (ele) => [
+  `${ele}_dmg_`,
   lookup(
     condOdeStacks,
     objKeyMap(odeStacksArr, (stack) =>
@@ -41,26 +39,23 @@ const odeStacks_ele_dmg_ = objKeyMap(allEleDmgKeys, () =>
       )
     ),
     naught
-  )
-)
+  ),
+])
 
 const [condOdeMaxedPath, condOdeMaxed] = cond(key, 'odeMaxed')
 const ele_dmg_arr = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
 const defFactor = prod(min(input.total.def, 3200), 1 / 1000)
-const ele_dmg_disp = objKeyMap(allEleDmgKeys, (key) =>
+const ele_dmg_ = objKeyValMap(allElementKeys, (key) => [
+  `${key}_dmg_`,
   equal(
     condOdeMaxed,
     'on',
     prod(
       defFactor,
       subscript(input.weapon.refinement, ele_dmg_arr, { unit: '%' })
-    ),
-    { path: key, isTeamBuff: true }
-  )
-)
-const ele_dmg_ = objKeyMap(allEleDmgKeys, (key) =>
-  unequal(input.charKey, target.charKey, ele_dmg_disp[key])
-)
+    )
+  ),
+])
 
 const data = dataObjForWeaponSheet(key, {
   premod: {
@@ -105,7 +100,7 @@ const sheet: IWeaponSheet = {
       states: {
         on: {
           fields: [
-            ...Object.values(ele_dmg_disp).map((node) => ({ node })),
+            ...Object.values(ele_dmg_).map((node) => ({ node })),
             { text: stg('duration'), value: 15, unit: 's' },
           ],
         },
