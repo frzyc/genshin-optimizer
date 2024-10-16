@@ -23,7 +23,7 @@ import {
   Stack,
 } from '@mui/material'
 import { useContext } from 'react'
-import { FrameContext, MemberContext, useComboContext } from '../../context'
+import { MemberContext, PresetContext, useComboContext } from './context'
 
 export function BonusStats() {
   const [open, onOpen, onClose] = useBoolState()
@@ -43,7 +43,7 @@ function BonusStatsModal({
   onClose: () => void
 }) {
   const { database } = useDatabaseContext()
-  const { frameIndex } = useContext(FrameContext)
+  const { presetIndex } = useContext(PresetContext)
   const member = useContext(MemberContext)
   const {
     comboId,
@@ -51,7 +51,7 @@ function BonusStatsModal({
   } = useComboContext()
   const newTarget = (q: InitialStats) => {
     const tag = newTag(q, member)
-    database.combos.setBonusStat(comboId, tag, 0, frameIndex)
+    database.combos.setBonusStat(comboId, tag, 0, presetIndex)
   }
   return (
     <ModalWrapper open={open} onClose={onClose}>
@@ -64,15 +64,15 @@ function BonusStatsModal({
               <BonusStatDisplay
                 key={JSON.stringify(tag) + i}
                 tag={tag}
-                value={values[frameIndex]}
+                value={values[presetIndex]}
                 setValue={(value) =>
-                  database.combos.setBonusStat(comboId, tag, value, frameIndex)
+                  database.combos.setBonusStat(comboId, tag, value, presetIndex)
                 }
                 onDelete={() =>
-                  database.combos.setBonusStat(comboId, tag, 0, frameIndex)
+                  database.combos.setBonusStat(comboId, tag, 0, presetIndex)
                 }
                 setTag={(tag) =>
-                  database.combos.setBonusStat(comboId, tag, 0, frameIndex)
+                  database.combos.setBonusStat(comboId, tag, 0, presetIndex)
                 }
               />
             ))}

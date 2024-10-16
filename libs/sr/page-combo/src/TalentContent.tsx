@@ -5,10 +5,11 @@ import {
   DropdownButton,
   NextImage,
 } from '@genshin-optimizer/common/ui'
-import { layeredAssignment, range } from '@genshin-optimizer/common/util'
+import { range } from '@genshin-optimizer/common/util'
 import type { UISheetElement } from '@genshin-optimizer/pando/ui-sheet'
 import { DocumentDisplay } from '@genshin-optimizer/pando/ui-sheet'
 import { maxEidolonCount, talentLimits } from '@genshin-optimizer/sr/consts'
+import type { Member, Sheet } from '@genshin-optimizer/sr/formula'
 import { own } from '@genshin-optimizer/sr/formula'
 import {
   isTalentKey,
@@ -16,7 +17,6 @@ import {
   type TalentSheetElementKey,
 } from '@genshin-optimizer/sr/formula-ui'
 import {
-  LoadoutContext,
   useCharacterContext,
   useDatabaseContext,
   useSrCalcContext,
@@ -34,7 +34,12 @@ import {
 import type { ReactNode } from 'react'
 import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useComboContext } from '../../context'
+import {
+  ComboContext,
+  MemberContext,
+  PresetContext,
+  useComboContext,
+} from './context'
 
 const talentSpacing = {
   xs: 12,
@@ -299,21 +304,24 @@ function SkillDisplayCard({
   //   return false
   // }
 
-  const { loadoutId } = useContext(LoadoutContext)
+  const { comboId } = useContext(ComboContext)
+  const { presetIndex } = useContext(PresetContext)
+  const member = useContext(MemberContext)
   const { database } = useDatabaseContext()
   const setConditional = useCallback(
-    (srcKey: string, sheetKey: string, condKey: string, condValue: number) => {
-      database.loadouts.set(loadoutId, (loadout) => {
-        loadout = structuredClone(loadout)
-        layeredAssignment(
-          loadout.conditional,
-          [srcKey, sheetKey, condKey],
-          condValue
-        )
-        return loadout
-      })
-    },
-    [database, loadoutId]
+    (srcKey: string, sheetKey: string, condKey: string, condValue: number) =>
+      // assume dst key to be the current character
+      database.combos.setConditional(
+        comboId,
+        sheetKey as Sheet,
+        srcKey as Member,
+        member,
+        condKey,
+        condValue,
+        presetIndex
+      ),
+
+    [comboId, database.combos, member, presetIndex]
   )
 
   return (

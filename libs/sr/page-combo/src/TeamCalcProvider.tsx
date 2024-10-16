@@ -53,7 +53,7 @@ export function TeamCalcProvider({
   children: ReactNode
 }) {
   const combo = useCombo(comboId)!
-  const { preset } = useContext(PresetContext)
+  const { presetIndex } = useContext(PresetContext)
   const currentIndex = useContext(MemberContext)
   const member0 = useCharacterAndEquipment(combo.comboMetadata[0])
   const member1 = useCharacterAndEquipment(combo.comboMetadata[1])
@@ -105,8 +105,12 @@ export function TeamCalcProvider({
 
   const calcWithTag = useMemo(
     () =>
-      calc?.withTag({ src: currentIndex, dst: currentIndex, preset }) ?? null,
-    [calc, currentIndex, preset]
+      calc?.withTag({
+        src: currentIndex,
+        dst: currentIndex,
+        preset: `preset${presetIndex}` as Preset,
+      }) ?? null,
+    [calc, currentIndex, presetIndex]
   )
 
   return (

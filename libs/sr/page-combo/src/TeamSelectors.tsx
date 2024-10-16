@@ -7,12 +7,11 @@ import {
 } from '@genshin-optimizer/sr/ui'
 import { Box } from '@mui/material'
 
-export default function TeamSettings({ comboId }: { comboId: string }) {
+export default function TeamSelectors({ comboId }: { comboId: string }) {
   const combo = useCombo(comboId)!
 
   return (
-    <Box>
-      {comboId}
+    <Box display="flex" flexDirection="column" gap={1}>
       {combo.comboMetadata.map((meta, index) => (
         <TeammateSelector
           key={`${index}_${meta?.characterKey}`}

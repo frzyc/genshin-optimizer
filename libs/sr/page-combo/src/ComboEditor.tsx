@@ -1,5 +1,5 @@
 import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common/ui'
-import { Preset, Read } from '@genshin-optimizer/sr/formula'
+import type { Read } from '@genshin-optimizer/sr/formula'
 import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
 import {
   Box,
@@ -62,22 +62,22 @@ function Combo({
   index: number
   setTarget(read: Read): void
 }) {
-  const { preset, setPreset } = useContext(PresetContext)
+  const { presetIndex, setPresetIndex } = useContext(PresetContext)
   return (
     <CardThemed
       bgt="light"
       sx={(theme) => ({
         flexShrink: 0,
         outline:
-          preset === `preset${index}`
+          presetIndex === index
             ? `solid ${theme.palette.success.main}`
             : undefined,
       })}
     >
       <ConditionalWrapper
-        condition={preset !== `preset${index}`}
+        condition={presetIndex !== index}
         wrapper={(children) => (
-          <CardActionArea onClick={() => setPreset(`preset${index}` as Preset)}>
+          <CardActionArea onClick={() => setPresetIndex(index)}>
             {children}
           </CardActionArea>
         )}

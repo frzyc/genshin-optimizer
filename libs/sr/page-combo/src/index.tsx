@@ -1,6 +1,6 @@
 import { CardThemed, useTitle } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import { members, Preset } from '@genshin-optimizer/sr/formula'
+import { members } from '@genshin-optimizer/sr/formula'
 import type { CharacterContextObj } from '@genshin-optimizer/sr/ui'
 import {
   CharacterContext,
@@ -21,7 +21,6 @@ import {
 } from 'react-router-dom'
 import { ComboCharacterSelector } from './ComboCharacterSelector'
 import { TeamCalcProvider } from './TeamCalcProvider'
-import TeamSettings from './TeamSettings'
 import TeammateDisplay from './TeammateDisplay'
 import type { ComboContextObj, PresetContextObj } from './context'
 import {
@@ -57,14 +56,14 @@ export default function PageTeam() {
 
 function Page({ comboId }: { comboId: string }) {
   const navigate = useNavigate()
-  const [preset, setPreset] = useState<Preset>('preset0')
+  const [presetIndex, setPresetIndex] = useState(0)
   const presetObj = useMemo(
     () =>
       ({
-        preset,
-        setPreset,
+        presetIndex,
+        setPresetIndex,
       } as PresetContextObj),
-    [preset, setPreset]
+    [presetIndex, setPresetIndex]
   )
   const combo = useCombo(comboId)!
   const { comboMetadata } = combo
@@ -76,25 +75,23 @@ function Page({ comboId }: { comboId: string }) {
   }
 
   // validate characterKey
-  const comboMetadatumIndex = useMemo(
-    () =>
-      comboMetadata.findIndex(
-        (comboMetadatum) => comboMetadatum?.characterKey === characterKeyRaw
-      ),
-    [comboMetadata, characterKeyRaw]
-  )
+  const comboMetadatumIndex = useMemo(() => {
+    const index = comboMetadata.findIndex(
+      (comboMetadatum) =>
+        comboMetadatum && comboMetadatum.characterKey === characterKeyRaw
+    )
+    if (index === -1) return 0
+    return index
+  }, [comboMetadata, characterKeyRaw])
   const comboMetadatum = useMemo(
     () => comboMetadata[comboMetadatumIndex],
     [comboMetadata, comboMetadatumIndex]
   )
-  useEffect(() => {
-    window.scrollTo({ top: 0 })
-  }, [])
-  useEffect(() => {
-    if (!comboMetadatum) navigate('', { replace: true })
-  }, [comboMetadatum, navigate])
-
   const characterKey = comboMetadatum?.characterKey
+  useEffect(() => {
+    if (characterKey && characterKey !== characterKeyRaw)
+      navigate(`${characterKey}`, { replace: true })
+  }, [characterKey, characterKeyRaw, comboMetadatum, navigate])
 
   const { t } = useTranslation(['charNames_gen', 'page_character'])
 
@@ -134,7 +131,14 @@ function Page({ comboId }: { comboId: string }) {
               mt: 2,
             }}
           >
-            <CardThemed>
+            <CardThemed
+              sx={{
+                overflow: 'visible',
+                top: 0,
+                position: 'sticky',
+                zIndex: 100,
+              }}
+            >
               <ComboCharacterSelector
                 comboId={comboId}
                 charKey={characterKey}
@@ -153,12 +157,10 @@ function Page({ comboId }: { comboId: string }) {
             //   }
             // }}
             >
-              {comboContextObj ? (
+              {comboContextObj && (
                 <ComboContext.Provider value={comboContextObj}>
                   <TeammateDisplayWrapper />
                 </ComboContext.Provider>
-              ) : (
-                <TeamSettings comboId={comboId} />
               )}
             </Box>
           </Box>

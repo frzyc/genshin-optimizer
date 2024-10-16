@@ -26,6 +26,7 @@ import {
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
+import TeamSelectors from './TeamSelectors'
 
 export function ComboCharacterSelector({
   comboId,
@@ -141,6 +142,7 @@ export function ComboCharacterSelector({
                 multiline
                 minRows={4}
               />
+              <TeamSelectors comboId={comboId} />
             </Box>
           </CardContent>
         </CardThemed>
@@ -151,13 +153,6 @@ export function ComboCharacterSelector({
         value={charKey ?? 'team'}
         orientation={isMobile ? 'vertical' : 'horizontal'}
       >
-        <Tab
-          icon={<GroupsIcon />}
-          iconPosition="start"
-          value={'team'}
-          label={'Team Settings'}
-          onClick={() => navigate(`/combos/${comboId}/`)}
-        />
         {combo.comboMetadata.map((comboMetadatum, ind) => {
           const characterKey = comboMetadatum?.characterKey
           return (

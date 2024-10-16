@@ -19,10 +19,10 @@ import {
   Typography,
 } from '@mui/material'
 import { useState } from 'react'
+import { BonusStats } from '../BonusStats'
 import { ComboEditor } from '../ComboEditor'
 import { useComboContext } from '../context'
-import { BonusStats } from './Tabs/BonusStats'
-import CharacterTalentPane from './Tabs/TalentContent'
+import CharacterTalentPane from '../TalentContent'
 
 export default function TeammateDisplay() {
   const {
