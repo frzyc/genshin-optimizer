@@ -4,7 +4,11 @@ import type {
   ChatInputCommandInteraction,
   Client,
 } from 'discord.js'
-import { ChannelType, SlashCommandBuilder } from 'discord.js'
+import { ChannelType, EmbedBuilder, SlashCommandBuilder } from 'discord.js'
+
+import { isCharacterKey } from '@genshin-optimizer/gi/consts'
+import { getCharEle } from '@genshin-optimizer/gi/stats'
+import { elementColors } from '../assets/assets'
 
 export const slashcommand = new SlashCommandBuilder()
   .setName('multi')
@@ -22,7 +26,7 @@ const multilist: Record<string, string> = {}
 const cacheDuration = 1000 * 60 * 60
 let cacheTime = Date.now() - cacheDuration
 
-async function getMultis(client: Client) {
+async function fetchMultis(client: Client) {
   const now = Date.now()
   if (now - cacheTime > cacheDuration) {
     cacheTime = now
@@ -43,7 +47,7 @@ async function getMultis(client: Client) {
 }
 
 export async function autocomplete(interaction: AutocompleteInteraction) {
-  await getMultis(interaction.client)
+  await fetchMultis(interaction.client)
 
   const focus = interaction.options.getFocused(true)
   let reply: ApplicationCommandOptionChoiceData[] = []
@@ -52,8 +56,8 @@ export async function autocomplete(interaction: AutocompleteInteraction) {
     const text = focus.value.toLowerCase()
     reply = Object.keys(multilist)
       .filter((e) => e.toLowerCase().includes(text))
-      .slice(0, 25)
       .sort()
+      .slice(0, 25)
       .map((e) => {
         return { name: e, value: e }
       })
@@ -67,8 +71,23 @@ const threadLink = 'https://discord.com/channels/785153694478893126/'
 export async function run(interaction: ChatInputCommandInteraction) {
   const name = interaction.options.getString('name', true)
   const threadId = multilist[name]
-  if (threadId) {
-    interaction.reply(`[${name} Community Multi-Opt Thread](${threadLink}${threadId})`)
+  const thread = await interaction.client.channels.fetch(threadId)
+
+  if (thread && thread.isThread()) {
+    const starterMsg = await thread.fetchStarterMessage()
+    const thumbnail = starterMsg?.attachments.first()?.url
+    const charKey = name.replaceAll(' ', '')
+
+    const embed = new EmbedBuilder().setDescription(`
+        ## ${name}\n
+        [Community Multi-Opt Thread](${threadLink}${threadId})
+        `)
+    if (thumbnail) embed.setThumbnail(thumbnail)
+    if (isCharacterKey(charKey)) {
+      embed.setColor(elementColors[getCharEle(charKey)])
+    }
+
+    interaction.reply({ content: '', embeds: [embed] })
   } else {
     interaction.reply({ content: 'Unknown Character', ephemeral: true })
   }
