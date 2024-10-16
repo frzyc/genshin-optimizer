@@ -6,6 +6,7 @@ import type {
 } from 'discord.js'
 import { ChannelType, EmbedBuilder, SlashCommandBuilder } from 'discord.js'
 
+import { nameToKey } from '@genshin-optimizer/common/pipeline'
 import { isCharacterKey } from '@genshin-optimizer/gi/consts'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
 import { elementColors } from '../assets/assets'
@@ -76,7 +77,7 @@ export async function run(interaction: ChatInputCommandInteraction) {
   if (thread && thread.isThread()) {
     const starterMsg = await thread.fetchStarterMessage()
     const thumbnail = starterMsg?.attachments.first()?.url
-    const charKey = name.replaceAll(' ', '')
+    const charKey = nameToKey(name)
 
     const embed = new EmbedBuilder().setDescription(`
         ## ${name}\n
