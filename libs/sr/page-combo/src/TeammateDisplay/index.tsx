@@ -1,0 +1,141 @@
+import { CardThemed } from '@genshin-optimizer/common/ui'
+import type { CharacterKey } from '@genshin-optimizer/sr/consts'
+import { own } from '@genshin-optimizer/sr/formula'
+import {
+  CharacterCard,
+  CharacterEditor,
+  useCharacterContext,
+  useSrCalcContext,
+} from '@genshin-optimizer/sr/ui'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Box,
+  Button,
+  CardContent,
+  Stack,
+  Typography,
+} from '@mui/material'
+import { useState } from 'react'
+import { ComboEditor } from '../ComboEditor'
+import { useComboContext } from '../context'
+import { BonusStats } from './Tabs/BonusStats'
+import CharacterTalentPane from './Tabs/TalentContent'
+
+export default function TeammateDisplay() {
+  const {
+    comboMetadatum: { characterKey },
+  } = useComboContext()
+  const { character } = useCharacterContext()
+  const calc = useSrCalcContext()
+  const [editorKey, setCharacterKey] = useState<CharacterKey | undefined>(
+    undefined
+  )
+
+  return (
+    <Box>
+      <CharacterEditor
+        characterKey={editorKey}
+        onClose={() => setCharacterKey(undefined)}
+      />
+      <CharacterCard character={character!} />
+      <Stack gap={1} pt={1}>
+        <ComboEditor />
+        <CardThemed bgt="dark">
+          <CardContent>
+            <Button
+              disabled={!characterKey}
+              onClick={() => characterKey && setCharacterKey(characterKey)}
+            >
+              Edit Character
+            </Button>
+            <BonusStats />
+            <Accordion>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                All target listings
+              </AccordionSummary>
+              <AccordionDetails>
+                <Stack>
+                  {calc
+                    ?.listFormulas(own.listing.formulas)
+                    .map((read, index) => {
+                      const computed = calc.compute(read)
+                      const name = read.tag.name || read.tag.q
+                      return (
+                        <Box key={`${name}${index}`}>
+                          <Typography>
+                            {name}: {computed.val}
+                          </Typography>
+                          <Accordion>
+                            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                              debug for {name}
+                            </AccordionSummary>
+                            <AccordionDetails>
+                              conds:{' '}
+                              {JSON.stringify(
+                                computed.meta.conds,
+                                undefined,
+                                2
+                              )}
+                              <Typography component="pre">
+                                {JSON.stringify(
+                                  calc.toDebug().compute(read),
+                                  undefined,
+                                  2
+                                )}
+                              </Typography>
+                            </AccordionDetails>
+                          </Accordion>
+                        </Box>
+                      )
+                    })}
+                </Stack>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion>
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                All target buffs
+              </AccordionSummary>
+              <AccordionDetails>
+                <Stack>
+                  {calc?.listFormulas(own.listing.buffs).map((read, index) => {
+                    const computed = calc.compute(read)
+                    const name = read.tag.name || read.tag.q
+                    return (
+                      <Box key={`${name}${index}`}>
+                        <Typography>
+                          {name}: {computed.val}
+                        </Typography>
+                        <Accordion>
+                          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                            debug for {name}
+                          </AccordionSummary>
+                          <AccordionDetails>
+                            conds:{' '}
+                            {JSON.stringify(computed.meta.conds, undefined, 2)}
+                            <Typography component="pre">
+                              {JSON.stringify(
+                                calc.toDebug().compute(read),
+                                undefined,
+                                2
+                              )}
+                            </Typography>
+                          </AccordionDetails>
+                        </Accordion>
+                      </Box>
+                    )
+                  })}
+                </Stack>
+              </AccordionDetails>
+            </Accordion>
+          </CardContent>
+        </CardThemed>
+        <CharacterTalentPane />
+        {/* TODO: Move to a dedicated tab */}
+        {/* <Optimize /> */}
+      </Stack>
+    </Box>
+  )
+}
