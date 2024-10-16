@@ -41,6 +41,8 @@ const sheet = register(
 
   // Formulas
   ...dmg('basicDmg', baseTag, 'atk', dm.basic.dmg, 'basic'),
+  // TODO: should be Ice Break DMG
+  // TODO: should be hidden behind ult conditional
   ...customBreakDmg(
     'zoneBreakDmg',
     { ...baseTag, damageType1: 'break' },
@@ -51,6 +53,7 @@ const sheet = register(
     { ...baseTag, damageType1: 'break' },
     subscript(char.talent, dm.talent.breakDmg)
   ),
+  // TODO: shouldn't this be incorporated to the talentBreakDmg above?
   ...customBreakDmg(
     'techBreakDmg',
     { ...baseTag, damageType1: 'break' },
@@ -75,6 +78,7 @@ const sheet = register(
       ultZone.ifOn(subscript(char.ult, dm.ult.resPen_))
     )
   ),
+  // TODO: ultimate actionDelay_ of 20%*BrEff_ + 10%
   registerBuff(
     'talent_spd_',
     notOwnBuff.premod.spd_.add(subscript(char.talent, dm.talent.spd_))
