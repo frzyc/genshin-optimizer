@@ -39,8 +39,6 @@ export default function CharacterTalentPane({
   character: TeamLoadoutCharacter
   calc: Calculator
 }) {
-  const { t } = useTranslation('sheet_gen')
-
   const skillBurstList = ['auto', 'skill', 'burst'] as TalentSheetElementKey[]
   // const passivesList: [
   //   tKey: TalentSheetElementKey,
