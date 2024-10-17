@@ -48,7 +48,6 @@ export default function CharacterTalentPane() {
     loadout: { key: characterKey },
   } = useLoadoutContext()
   const calc = useSrCalcContext()
-  const { t } = useTranslation('sheet_gen')
   const { database } = useDatabaseContext()
   // TODO: for TC overrides
   // const { buildTc, setBuildTc } = useContext(BuildTcContext)

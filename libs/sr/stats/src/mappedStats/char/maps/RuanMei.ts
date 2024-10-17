@@ -32,7 +32,7 @@ const dm = {
   ult: {
     resPen_: ult[0][u++],
     duration: ult[0][u++][1],
-    delay: ult[0][u++][1],
+    delay: ult[0][u++],
     delayFromBreak: ult[0][u++],
     breakDmg: ult[0][u++],
   },

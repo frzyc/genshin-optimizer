@@ -41,8 +41,6 @@ const sheet = register(
 
   // Formulas
   ...dmg('basicDmg', baseTag, 'atk', dm.basic.dmg, 'basic'),
-  // TODO: should be Ice Break DMG
-  // TODO: should be hidden behind ult conditional
   ...customBreakDmg(
     'zoneBreakDmg',
     { ...baseTag, damageType1: 'break' },
@@ -51,13 +49,7 @@ const sheet = register(
   ...customBreakDmg(
     'talentBreakDmg',
     { ...baseTag, damageType1: 'break' },
-    subscript(char.talent, dm.talent.breakDmg)
-  ),
-  // TODO: shouldn't this be incorporated to the talentBreakDmg above?
-  ...customBreakDmg(
-    'techBreakDmg',
-    { ...baseTag, damageType1: 'break' },
-    sum(dm.technique.breakDmg, e6TechniqueAddMult)
+    sum(subscript(char.talent, dm.talent.breakDmg), e6TechniqueAddMult)
   ),
 
   // Buffs

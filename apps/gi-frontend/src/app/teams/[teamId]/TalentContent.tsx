@@ -41,11 +41,7 @@ export default function CharacterTalentPane({
 }) {
   const { t } = useTranslation('sheet_gen')
 
-  const skillBurstList = [
-    ['auto', t('talents.auto')],
-    ['skill', t('talents.skill')],
-    ['burst', t('talents.burst')],
-  ] as [TalentSheetElementKey, string][]
+  const skillBurstList = ['auto', 'skill', 'burst'] as TalentSheetElementKey[]
   // const passivesList: [
   //   tKey: TalentSheetElementKey,
   //   tText: string,
@@ -125,14 +121,13 @@ export default function CharacterTalentPane({
         )}
         <Grid item xs={12} md={12} lg={9} container spacing={1}>
           {/* auto, skill, burst */}
-          {skillBurstList.map(([tKey, tText]) => {
+          {skillBurstList.map((tKey) => {
             const sheetElement = characterSheet[tKey]
             if (!sheetElement) return null
             return (
               <Grid item key={tKey} {...talentSpacing}>
                 <SkillDisplayCard
                   talentKey={tKey}
-                  subtitle={tText}
                   sheetElement={sheetElement}
                 />
               </Grid>
@@ -142,7 +137,7 @@ export default function CharacterTalentPane({
             <Grid item {...talentSpacing}>
               <SkillDisplayCard
                 talentKey="sprint"
-                subtitle={t('talents.altSprint')}
+                // subtitle={t('talents.altSprint')}
                 sheetElement={characterSheet['sprint']}
               />
             </Grid>
@@ -151,7 +146,6 @@ export default function CharacterTalentPane({
             <Grid item {...talentSpacing}>
               <SkillDisplayCard
                 talentKey="passive"
-                subtitle="Passive"
                 sheetElement={characterSheet['passive']}
               />
             </Grid>
@@ -223,12 +217,10 @@ export default function CharacterTalentPane({
 type SkillDisplayCardProps = {
   sheetElement: UISheetElement
   talentKey: TalentSheetElementKey
-  subtitle: string
   onClickTitle?: () => void
 }
 function SkillDisplayCard({
   sheetElement,
-  subtitle,
   onClickTitle,
 }: SkillDisplayCardProps) {
   const actionWrapperFunc = useCallback(
@@ -293,8 +285,12 @@ function SkillDisplayCard({
               />
             </Grid>
             <Grid item flexGrow={1} sx={{ pl: 1 }}>
-              <Typography variant="h6">{sheetElement?.name}</Typography>
-              <Typography variant="subtitle1">{subtitle}</Typography>
+              <Typography variant="h6">{sheetElement?.title}</Typography>
+              {sheetElement?.subtitle && (
+                <Typography variant="subtitle1">
+                  {sheetElement.subtitle}
+                </Typography>
+              )}
             </Grid>
           </Grid>
         </ConditionalWrapper>

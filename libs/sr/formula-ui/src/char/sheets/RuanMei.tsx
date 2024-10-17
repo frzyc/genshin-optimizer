@@ -1,4 +1,4 @@
-import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
+import { ColorText, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import type { UISheet } from '@genshin-optimizer/pando/ui-sheet'
 import { characterAsset } from '@genshin-optimizer/sr/assets'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
@@ -141,7 +141,11 @@ const sheet: UISheet<TalentSheetElementKey> = {
             // TODO: action delay % on Thanatoplum Rebloom trigger
             {
               // TODO: translate
-              title: 'Thanatoplum Rebloom Break Damage',
+              title: (
+                <ColorText color="ice">
+                  Thanatoplum Rebloom Break Damage
+                </ColorText>
+              ),
               fieldRef: formula.zoneBreakDmg.tag,
             },
             // TODO: show the increase of dmg multipler from e6
@@ -183,7 +187,9 @@ const sheet: UISheet<TalentSheetElementKey> = {
           },
           {
             //TODO: translate
-            title: 'Somatotypical Helix Break DMG',
+            title: (
+              <ColorText color="ice">Somatotypical Helix Break DMG</ColorText>
+            ),
             fieldRef: formula.talentBreakDmg.tag,
           },
         ],
@@ -263,10 +269,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
         type: 'fields',
         fields: [
           {
+            //TODO: Translate
             title: 'talent',
             fieldRef: buff.eidolon3_talent.tag,
           },
           {
+            //TODO: Translate
             title: 'ult',
             fieldRef: buff.eidolon3_ult.tag,
           },
@@ -316,10 +324,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
         type: 'fields',
         fields: [
           {
+            //TODO: Translate
             title: 'basic',
             fieldRef: buff.eidolon5_basic.tag,
           },
           {
+            //TODO: Translate
             title: 'skill',
             fieldRef: buff.eidolon5_skill.tag,
           },
