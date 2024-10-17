@@ -26,13 +26,13 @@ const dm = {
   },
   skill: {
     dmg_: skill[0][s++],
-    weakness_: skill[0][s++][0],
-    duration: skill[0][s++][0],
+    weakness_: skill[0][s++][1],
+    duration: skill[0][s++][1],
   },
   ult: {
     resPen_: ult[0][u++],
-    duration: ult[0][u++][0],
-    delay: ult[0][u++][0],
+    duration: ult[0][u++][1],
+    delay: ult[0][u++],
     delayFromBreak: ult[0][u++],
     breakDmg: ult[0][u++],
   },

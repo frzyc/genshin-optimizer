@@ -13,7 +13,7 @@ const key: CharacterKey = 'Arlan'
 const [chg, _ch] = trans('char', key)
 const sheet: UISheet<TalentSheetElementKey> = {
   skill: {
-    name: chg('abilities.skill.0.name'),
+    title: chg('abilities.skill.0.name'),
     img: characterAsset(key, 'skill_0'),
     documents: [
       {
