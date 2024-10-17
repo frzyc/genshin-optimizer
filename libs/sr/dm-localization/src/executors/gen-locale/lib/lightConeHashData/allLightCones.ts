@@ -41,4 +41,4 @@ const lightConeArray = Object.entries(equipmentConfig).map(
 const data = Object.fromEntries(lightConeArray)
 verifyObjKeys(data, allLightConeKeys)
 
-export const lightConeHashData = data
+export const allLightConeHashData = data

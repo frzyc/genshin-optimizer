@@ -9,7 +9,7 @@ import {
   relicSetIdMap,
   relicSetSkillConfig,
 } from '@genshin-optimizer/sr/dm'
-import { convertToHash } from './util'
+import { convertToHash } from '../util'
 
 type RelicData = {
   setName: string
@@ -43,4 +43,4 @@ const relicArray = Object.entries(relicSetConfig).map(([setId, setConfig]) => {
 
 const data = Object.fromEntries(relicArray)
 verifyObjKeys(data, allRelicSetKeys)
-export const relicHashData = data
+export const allRelicHashData = data

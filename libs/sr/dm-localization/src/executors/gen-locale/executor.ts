@@ -15,9 +15,19 @@ const runExecutor: PromiseExecutor<GenLocaleExecutorSchema> = async (
     Object.entries(data).forEach(([type, typeData]) => {
       //general manual localization namespaces
       if (
-        ['charNames', 'lightConeNames', 'relicNames', 'common', 'ui'].includes(
-          type
-        )
+        [
+          'characters',
+          'charNames',
+          'common',
+          'lightCones',
+          'lightConeNames',
+          'relics',
+          'relicNames',
+          'paths',
+          'statKey',
+          'teams',
+          'ui',
+        ].includes(type)
       )
         return dumpFile(`${fileDir}/${type}_gen.json`, typeData)
 
