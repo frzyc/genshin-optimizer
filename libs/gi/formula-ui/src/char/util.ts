@@ -70,7 +70,7 @@ const talentTemplate = (
   img: string | StaticImageData,
   documents?: Document[]
 ): UISheetElement => ({
-  name: tr(`${talentKey}.name`),
+  title: tr(`${talentKey}.name`),
   img,
   documents: [
     ...(talentKey !== 'auto'

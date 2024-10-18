@@ -4,8 +4,8 @@ import type { Document } from './document'
 
 export type UISheetElement = {
   img: string | StaticImageData
-  name: ReactNode
-  tag?: ReactNode
+  title: ReactNode
+  subtitle?: ReactNode
   documents: Document[]
 }
 
