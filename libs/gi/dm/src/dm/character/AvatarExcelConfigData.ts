@@ -1,10 +1,11 @@
-import { dumpFile, nameToKey } from '@genshin-optimizer/common/pipeline'
+import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import { TextMapEN } from '../../TextMapUtil'
 import { PROJROOT_PATH } from '../../consts'
 import type { CharacterId, DQualityKey, DWeaponTypeKey } from '../../mapping'
 import { characterIdMap } from '../../mapping'
 import { readDMJSON } from '../../util'
 import type { CharacterGrowCurveKey } from './AvatarCurveExcelConfigData'
+import { nameToKey } from '@genshin-optimizer/common/util'
 
 type AvatarExcelConfigData = {
   useType?: string //"AVATAR_FORMAL",

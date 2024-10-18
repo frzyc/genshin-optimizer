@@ -19,15 +19,6 @@ export async function dumpPrettyFile(filename: string, obj: unknown) {
   writeFileSync(filename, fileStr)
 }
 
-export function nameToKey(name: string) {
-  if (!name) name = ''
-  return name
-    .replace(/[^a-zA-Z0-9 ]/g, '')
-    .split(' ')
-    .map((str) => str.charAt(0).toUpperCase() + str.slice(1))
-    .join('')
-}
-
 /**
  * Generate index file(index.ts) using a object as the directory structure, starting from a path.
  * @param obj That defines the structure, with leaves being strings for filenames.
