@@ -22,8 +22,8 @@ import { Box, Button, Grid, IconButton, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import { BuildEditContext, DataContext, SillyContext } from '../../../context'
 import type { BuildEditContextObj } from '../../../context'
+import { BuildEditContext, DataContext, SillyContext } from '../../../context'
 import { AddTeamInfo } from '../../AddTeamInfo'
 import { LevelSelect } from '../../LevelSelect'
 import {
@@ -183,7 +183,7 @@ function EquipmentSection() {
     [data]
   )
 
-  const buildEditContextObj = {buildToEdit: 'equipped'} as BuildEditContextObj
+  const buildEditContextObj = { buildToEdit: 'equipped' } as BuildEditContextObj
 
   return (
     <Box>

@@ -8,11 +8,12 @@ import {
   useDatabase,
   useEquippedInTeam,
 } from '@genshin-optimizer/gi/db-ui'
-import { BuildEditContext, type BuildEditContextObj } from '@genshin-optimizer/gi/ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
+import type { BuildEditContextObj } from '@genshin-optimizer/gi/ui'
 import {
   ArtifactCardNano,
   BuildCard,
+  BuildEditContext,
   EquipBuildModal,
   EquippedGrid,
   TeammateEquippedAlert,
@@ -28,7 +29,13 @@ import {
   IconButton,
   TextField,
 } from '@mui/material'
-import { useContext, useDeferredValue, useEffect, useMemo, useState } from 'react'
+import {
+  useContext,
+  useDeferredValue,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import { useTranslation } from 'react-i18next'
 
 export default function BuildReal({
@@ -109,7 +116,12 @@ export default function BuildReal({
   return (
     <>
       <ModalWrapper open={open} onClose={onClose}>
-        <BuildEditor teamId={teamId} teamCharId={teamCharId} buildId={buildId} onClose={onClose} />
+        <BuildEditor
+          teamId={teamId}
+          teamCharId={teamCharId}
+          buildId={buildId}
+          onClose={onClose}
+        />
       </ModalWrapper>
       <EquipBuildModal
         currentName={t`buildRealCard.copy.equipped`}
@@ -236,9 +248,10 @@ function BuildEditor({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [database, descDeferred])
 
-  const buildEditContextObj = useMemo(() =>
-    ({buildToEdit: buildId} as BuildEditContextObj)
-  , [buildId])
+  const buildEditContextObj = useMemo(
+    () => ({ buildToEdit: buildId } as BuildEditContextObj),
+    [buildId]
+  )
 
   return (
     <CardThemed>

@@ -9,10 +9,11 @@ import {
   TeamCharacterContext,
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
-import { BuildEditContext, type BuildEditContextObj } from '@genshin-optimizer/gi/ui'
 import { dataSetEffects } from '@genshin-optimizer/gi/sheets'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
+import type { BuildEditContextObj } from '@genshin-optimizer/gi/ui'
 import {
+  BuildEditContext,
   DataContext,
   DocumentDisplay,
   EquippedGrid,
@@ -70,8 +71,8 @@ export default function EquipmentSection() {
   )
 
   const buildEditContextObj = useMemo(() => {
-    const buildToEdit = (buildType === 'equipped') ? 'equipped' : buildId
-    return ({buildToEdit} as BuildEditContextObj)
+    const buildToEdit = buildType === 'equipped' ? 'equipped' : buildId
+    return { buildToEdit } as BuildEditContextObj
   }, [buildId, buildType])
 
   return (

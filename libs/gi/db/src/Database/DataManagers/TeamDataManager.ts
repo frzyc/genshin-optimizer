@@ -288,18 +288,15 @@ export class TeamDataManager extends DataManager<
     return this.#getWeaponId(teamCharId, buildType, buildId)
   }
 
-  getEditWeaponId(
-    buildToEdit: string,
-    teamCharId: string,
-  ): string | undefined {
-    const editType = (buildToEdit === 'equipped') ? 'equipped' : 'real'
+  getEditWeaponId(buildToEdit: string, teamCharId: string): string | undefined {
+    const editType = buildToEdit === 'equipped' ? 'equipped' : 'real'
     return this.#getWeaponId(teamCharId, editType, buildToEdit)
   }
 
   #getWeaponId(
     teamCharId: string,
     buildType: BuildTypeKey,
-    buildId: string,
+    buildId: string
   ): string | undefined {
     const teamChar = this.database.teamChars.get(teamCharId)
     if (!teamChar) return undefined
@@ -381,16 +378,16 @@ export class TeamDataManager extends DataManager<
 
   getEditArtifactIds(
     buildToEdit: string,
-    teamCharId: string,
+    teamCharId: string
   ): Record<ArtifactSlotKey, string | undefined> {
-    const editType = (buildToEdit === 'equipped') ? 'equipped' : 'real'
+    const editType = buildToEdit === 'equipped' ? 'equipped' : 'real'
     return this.#getArtifactIds(teamCharId, editType, buildToEdit)
   }
 
   #getArtifactIds(
     teamCharId: string,
     buildType: BuildTypeKey,
-    buildId: string,
+    buildId: string
   ): Record<ArtifactSlotKey, string | undefined> {
     const teamChar = this.database.teamChars.get(teamCharId)
     if (!teamChar) return objKeyMap(allArtifactSlotKeys, () => undefined)
