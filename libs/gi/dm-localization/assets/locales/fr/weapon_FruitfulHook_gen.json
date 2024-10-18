@@ -1,0 +1,24 @@
+{
+  "name": "Crochet fructueux",
+  "description": {
+    "0": "Le courageux Burkina des Êtres des canopées a autrefois construit cette arme avec l'aide du héros Tenoch... Tout cela dans le but d'obtenir des flamboigrenades sans égal dans tout Natlan."
+  },
+  "passiveName": "Poids des branches tombantes",
+  "passiveDescription": {
+    "0": {
+      "0": "Augmente le taux CRIT des attaques plongeantes de <cryo>16 %</cryo>. Lorsqu'une attaque plongeante a touché un ennemi, les DGT infligés par les attaques normales, chargées et plongeantes augmentent de <cryo>16 %</cryo> pendant 10 s."
+    },
+    "1": {
+      "0": "Augmente le taux CRIT des attaques plongeantes de <cryo>20 %</cryo>. Lorsqu'une attaque plongeante a touché un ennemi, les DGT infligés par les attaques normales, chargées et plongeantes augmentent de <cryo>20 %</cryo> pendant 10 s."
+    },
+    "2": {
+      "0": "Augmente le taux CRIT des attaques plongeantes de <cryo>24 %</cryo>. Lorsqu'une attaque plongeante a touché un ennemi, les DGT infligés par les attaques normales, chargées et plongeantes augmentent de <cryo>24 %</cryo> pendant 10 s."
+    },
+    "3": {
+      "0": "Augmente le taux CRIT des attaques plongeantes de <cryo>28 %</cryo>. Lorsqu'une attaque plongeante a touché un ennemi, les DGT infligés par les attaques normales, chargées et plongeantes augmentent de <cryo>28 %</cryo> pendant 10 s."
+    },
+    "4": {
+      "0": "Augmente le taux CRIT des attaques plongeantes de <cryo>32 %</cryo>. Lorsqu'une attaque plongeante a touché un ennemi, les DGT infligés par les attaques normales, chargées et plongeantes augmentent de <cryo>32 %</cryo> pendant 10 s."
+    }
+  }
+}

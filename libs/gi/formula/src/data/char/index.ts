@@ -39,6 +39,7 @@ import KamisatoAyaka from './KamisatoAyaka'
 import KamisatoAyato from './KamisatoAyato'
 import Kaveh from './Kaveh'
 import Keqing from './Keqing'
+import Kinich from './Kinich'
 import Kirara from './Kirara'
 import Klee from './Klee'
 import KujouSara from './KujouSara'
@@ -82,6 +83,7 @@ import Wriothesley from './Wriothesley'
 import Xiangling from './Xiangling'
 import Xianyun from './Xianyun'
 import Xiao from './Xiao'
+import Xilonen from './Xilonen'
 import Xingqiu from './Xingqiu'
 import Xinyan from './Xinyan'
 import YaeMiko from './YaeMiko'
@@ -133,6 +135,7 @@ const data: TagMapNodeEntries[] = [
   KamisatoAyato,
   Kaveh,
   Keqing,
+  Kinich,
   Kirara,
   Klee,
   KujouSara,
@@ -171,6 +174,7 @@ const data: TagMapNodeEntries[] = [
   Xiangling,
   Xianyun,
   Xiao,
+  Xilonen,
   Xingqiu,
   Xinyan,
   YaeMiko,

@@ -94,6 +94,12 @@ function Content(props: Props) {
     setCopyCurrent(false)
     onHide()
   }
+
+  // conditionals for the changed artifact (opacity)
+  const isWeaponChanged = currentWeaponId !== newWeaponId
+  const isArtifactChanged = (slotKey: ArtifactSlotKey) =>
+    currentArtifactIds[slotKey] !== newArtifactIds[slotKey]
+
   return (
     <CardThemed>
       <CardHeader
@@ -183,7 +189,13 @@ function Content(props: Props) {
               columns={{ xs: 2, sm: 3, md: 4, lg: 6 }}
             >
               <Grid item xs={1}>
-                <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
+                <CardThemed
+                  sx={{
+                    height: '100%',
+                    maxHeight: '8em',
+                    opacity: isWeaponChanged ? 1 : 0.5,
+                  }}
+                >
                   <WeaponCardNano
                     weaponId={currentWeaponId}
                     weaponTypeKey={weaponTypeKey}
@@ -193,7 +205,15 @@ function Content(props: Props) {
               </Grid>
               {Object.entries(currentArtifactIds).map(([slotKey, id]) => (
                 <Grid item key={id || slotKey} xs={1}>
-                  <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
+                  <CardThemed
+                    sx={{
+                      height: '100%',
+                      maxHeight: '8em',
+                      opacity: isArtifactChanged(slotKey as ArtifactSlotKey)
+                        ? 1
+                        : 0.5,
+                    }}
+                  >
                     <ArtifactCardNano
                       artifactId={id}
                       slotKey={slotKey}
@@ -235,7 +255,13 @@ function Content(props: Props) {
               columns={{ xs: 2, sm: 3, md: 4, lg: 6 }}
             >
               <Grid item xs={1}>
-                <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
+                <CardThemed
+                  sx={{
+                    height: '100%',
+                    maxHeight: '8em',
+                    opacity: isWeaponChanged ? 1 : 0.5,
+                  }}
+                >
                   <WeaponCardNano
                     weaponId={newWeaponId}
                     weaponTypeKey={weaponTypeKey}
@@ -245,7 +271,15 @@ function Content(props: Props) {
               </Grid>
               {Object.entries(newArtifactIds).map(([slotKey, id]) => (
                 <Grid item key={id || slotKey} xs={1}>
-                  <CardThemed sx={{ height: '100%', maxHeight: '8em' }}>
+                  <CardThemed
+                    sx={{
+                      height: '100%',
+                      maxHeight: '8em',
+                      opacity: isArtifactChanged(slotKey as ArtifactSlotKey)
+                        ? 1
+                        : 0.5,
+                    }}
+                  >
                     <ArtifactCardNano
                       artifactId={id}
                       slotKey={slotKey}

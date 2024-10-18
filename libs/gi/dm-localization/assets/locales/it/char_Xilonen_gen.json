@@ -1,0 +1,209 @@
+{
+  "name": "Xilonen",
+  "title": "Anima forgiata da fiamme ardenti",
+  "description": "Una Forgianomi dei Nanatzcayan, particolarmente brava nel trovare l'equilibrio tra le pesanti responsabilità del lavoro e i piaceri della vita.",
+  "constellationName": "Panthera Ocelota",
+  "auto": {
+    "name": "Ruggito di Ehecatl",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Sferra fino a 3 colpi rapidi."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore ed esegue un calcio in avanti."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Attacca scagliandosi al suolo da mezz'aria, infliggendo DAN agli avversari lungo la traiettoria e DAN ad area all'impatto, entrambi in base alla DIF di Xilonen."
+      },
+      "nightsoul": {
+        "0": "<strong>Grazia dell'Anima della Notte: Caccia su ruote</strong>",
+        "1": "Quando lo stato di Grazia dell'Anima della Notte è attivo, Xilonen entra nella modalità Caccia su ruote e i suoi attacchi normali le permettono di sferrare fino a 4 calci usando i suoi roller blade. In questa modalità, Xilonen non può eseguire attacchi caricati.",
+        "2": "Gli attacchi normali e in picchiata sferrati da Xilonen mentre è in questa modalità si basano sulla sua DIF e infliggono <geo>DAN da Geo</geo> con attributo Anima della Notte non influenzabili da altre infusioni elementali."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da ATT caricato",
+      "4": "Costo vigore ATT caricato",
+      "5": "DAN da ATT in picchiata",
+      "6": "DAN da ATT in picchiata basso/alto",
+      "7": "DAN da 1º colpo Caccia su ruote",
+      "8": "DAN da 2º colpo Caccia su ruote",
+      "9": "DAN da 3º colpo Caccia su ruote",
+      "10": "DAN da 4º colpo Caccia su ruote",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Graffio di Yohual",
+    "description": {
+      "0": "Lascia che il ritmo della passione risuoni per tutta la terra! Xilonen sfodera la sua attrezzatura da combattimento ad alta velocità e carica in avanti per una certa distanza, infliggendo <geo>DAN da Geo</geo> con attributo Anima della Notte basati sulla sua DIF.",
+      "1": "Dopo questa azione, Xilonen ottiene 45 punti Anima della Notte ed entra nello stato di Grazia dell'Anima della Notte, passando immediatamente alla modalità Caccia su ruote.",
+      "2": "<br/>",
+      "3": "<strong>Campioni musicali</strong>",
+      "4": "Xilonen ha 3 Campionatori che possono creare diverse Figure musicali a seconda dei tipi elementali degli altri membri del gruppo, riducendo le RES elementali corrispondenti degli avversari vicini quando sono attivi.",
+      "5": "Il primo Campione musicale registrato in ciascun Campionatore è di <geo>Geo</geo>, e per ogni membro del gruppo di elemento <pyro>Pyro</pyro>/<hydro>Hydro</hydro>/<cryo>Cryo</cryo>/<electro>Electro</electro> il tipo elementale di ciascun Campione di <geo>Geo</geo> cambia nel tipo elementale corrispondente.",
+      "6": "Mentre Xilonen è in stato di Grazia dell'Anima della Notte, i Campioni musicali di <geo>Geo</geo> che porta con sé rimangono sempre attivi. Dopo aver sbloccato il suo talento passivo Echi di Netotiliztli, Xilonen può sfruttarne gli effetti per recuperare punti Anima della Notte. Quando i punti raggiungono il massimo, Xilonen li consuma tutti e attiva i 3 Campioni musicali che ha a disposizione per 15 s.",
+      "7": "Quando i Campioni musicali sono attivi, la RES elementale corrispondente dei nemici vicini diminuisce. I Campioni musicali dello stesso tipo elementale non sono cumulabili. Xilonen può attivare questi effetti anche quando non è in campo.",
+      "8": "<br/>",
+      "9": "<strong>Grazia dell'Anima della Notte: Xilonen</strong>",
+      "10": "Consuma costantemente punti Anima della Notte. Quando vengono consumati tutti o l'abilità viene usata nuovamente, lo stato di Grazia dell'Anima della Notte termina. Lo stato prevede quanto segue.",
+      "11": [
+        " Xilonen entra nella modalità Caccia su ruote, aumentando la sua VEL di movimento e di arrampicata. Quando è nella sua forma Ozelot, può eseguire salti ad alta velocità mentre si arrampica.",
+        " La Grazia dell'Anima della Notte di Xilonen ha le seguenti limitazioni: quando è in questo stato, i punti Anima della Notte di Xilonen hanno un limite di tempo di 9 s. Una volta superato questo limite, tutti i suoi punti Anima della Notte scompaiono."
+      ],
+      "12": "<br/>",
+      "13": "Quando i punti Anima della Notte svaniscono mentre si trova nello stato di Grazia dell'Anima della Notte, Xilonen non è più in grado di generarne altri tramite il talento passivo Echi di Netotiliztli.",
+      "14": "<br/>",
+      "15": "<i>Per certi versi, la gioielleria e il mixaggio musicale condividono principi simili: entrambi si occupano di filtrare le impurità e conservare solo ciò che è più brillante.",
+      "16": "Xilonen non è particolarmente esigente riguardo all'una o all'altra opzione, poiché entrambe le cose la rendono estremamente felice!</i>"
+    },
+    "skillParams": {
+      "0": "DAN da carica",
+      "1": "Riduzione RES elementale",
+      "2": "Durata attivazione Campioni musicali",
+      "3": "Tempo limite punti Anima della Notte",
+      "4": "Limite punti Anima della Notte",
+      "5": "TdR",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "A ritmo dell'ozelot!",
+    "description": {
+      "0": "Attiva la Console da DJ a Flogisto (versione portatile) alla massima potenza per infliggere <geo>DAN da Geo ad area</geo> con attributo Anima della Notte basati sulla DIF di Xilonen.",
+      "1": "<br/>",
+      "2": "Attiva inoltre i seguenti effetti in base ai suoi Campioni musicali:",
+      "3": [
+        " se almeno 2 Campioni musicali hanno subito un cambiamento di tipo elementale, Xilonen suona un Ritmo vivace che ripristina a intervalli i PS dei personaggi attivi vicini, in base alla sua DIF;",
+        " se meno di 2 Campioni musicali hanno subito un cambiamento di tipo elementale, Xilonen suona un Ritmo ardente che produce due battiti aggiuntivi che infliggono <geo>DAN da Geo ad area</geo> con attributo Anima della Notte basati sulla sua DIF."
+      ],
+      "4": "<br/>",
+      "5": "<i>\"Ok, facciamo una pausa!",
+      "6": "Non preoccuparti, quest'ultimo ritmo non mi è sfuggito. Proviamo a mixare entrambe le melodie e vediamo cosa ne esce fuori!\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "Guarigione continua",
+      "2": "Durata Ritmo vivace",
+      "3": "DAN da battito aggiuntivo",
+      "4": "TdR",
+      "5": "Costo energia",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Echi di Netotiliztli",
+    "description": {
+      "0": "Mentre è nello stato di Grazia dell'Anima della Notte:",
+      "1": [
+        " se almeno 2 Campioni musicali hanno subito un cambiamento di tipo elementale, Xilonen ottiene 35 punti Anima della Notte quando colpisce un nemico con un attacco normale o in picchiata. Questo effetto può attivarsi una volta ogni 0,1 s;",
+        " se meno di 2 Campioni musicali hanno subito un cambiamento di tipo elementale, i DAN inflitti dall'attacco normale e in picchiata di Xilonen aumentano di un 30%."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Guaina corazzata portatile",
+    "description": {
+      "0": "Mentre è nello stato di Grazia dell'Anima della Notte, Xilonen attiva un effetto uguale a quello del suo Impeto dell'Anima della Notte quando i suoi punti Anima della Notte raggiungono il massimo. Quest'effetto può attivarsi una volta ogni 14 s.",
+      "1": "Inoltre, quando i membri del gruppo vicini innescano un Impeto dell'Anima della Notte, la DIF di Xilonen aumenta di un 20% per 15 s."
+    }
+  },
+  "passive3": {
+    "name": "Dono del Reame notturno: Benedizione del Fuoco della Forgia",
+    "description": {
+      "0": "Dopo aver esaurito completamente i punti Anima della Notte, Xilonen consuma il Flogisto per conservare la sua Grazia dell'Anima della Notte.",
+      "1": "Se si trova in un'area di Natlan dove sono presenti uno o più Meccanismi flogistici, può usare Trasmissione dell'Anima della Notte: Xilonen. Quando il personaggio attivo sta eseguendo uno Scatto, si sta arrampicando o compiendo un movimento causato da determinati talenti, oppure è sospeso in aria a una certa altezza, passare il controllo a Xilonen attiva il seguente effetto: Xilonen entra nello stato di Grazia dell'Anima della Notte e ottiene 20 punti Anima della Notte. In questa situazione, i punti hanno una durata limite di 4 s, dopo la quale scompaiono immediatamente. Utilizzare <strong>Graffio di Yohual</strong> durante questo limite di tempo ne estenderà la durata di 9 s. Trasmissione dell'Anima della Notte può attivarsi una volta ogni 10 s all'interno del tuo gruppo.",
+      "2": "<br/>",
+      "3": "Inoltre, quando si trova a Natlan, Xilonen può arrampicarsi senza consumare vigore mentre è in stato di Grazia dell'Anima della Notte."
+    }
+  },
+  "passive": {
+    "name": "Percorso del Tepeilhuitl",
+    "description": {
+      "0": "Innescare una Trasmissione dell'Anima della Notte ripristina 15 punti Flogisto."
+    }
+  },
+  "constellation1": {
+    "name": "Fraseggio sabbatico",
+    "description": {
+      "0": "Il consumo di punti Anima della Notte e di Flogisto di Xilonen quando è nello stato di Grazia dell'Anima della Notte è ridotto di un 30% e il limite di tempo dei suoi punti Anima della Notte è esteso di un 45%.",
+      "1": "Inoltre, quando i suoi Campioni musicali sono attivi, Xilonen aumenta la resistenza all'interruzione dei personaggi attivi vicini."
+    }
+  },
+  "constellation2": {
+    "name": "Mixaggio di Chiucue",
+    "description": {
+      "0": "I Campioni musicali di <geo>Geo</geo> di Xilonen rimangono sempre attivi. Inoltre, quando i suoi Campioni musicali si attivano, tutti i membri del gruppo vicini ottengono degli effetti in base ai Campioni musicali corrispondenti al proprio tipo elementale.",
+      "1": [
+        " <geo>Geo</geo>: DAN +50%.",
+        " <pyro>Pyro</pyro>: ATT +45%.",
+        " <hydro>Hydro</hydro>: PS max +45%.",
+        " <cryo>Cryo</cryo>: DAN da CRIT +60%.",
+        " <electro>Electro</electro>: ripristina 25 di energia, il TdR del Tripudio elementale si riduce di 6 s."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Loop di Tonalpohualli",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Graffio di Yohual</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Trance di Suchitl",
+    "description": {
+      "0": "Dopo aver usato <strong>Graffio di Yohual</strong>, Xilonen conferisce a tutti i membri del gruppo vicini l'effetto Benedizione fiorita per 15 s.",
+      "1": "Gli attacchi normali, caricati e in picchiata dei personaggi con Benedizione fiorita infliggono DAN aumentati di un 65% della DIF di Xilonen. Questo effetto viene rimosso dopo 6 attivazioni o quando la sua durata termina.",
+      "2": "Quando si colpisce più di un nemico, il conteggio delle attivazioni cala in base al numero di avversari colpiti. Il conteggio di ciascun membro della squadra con Benedizione fiorita è indipendente dagli altri."
+    }
+  },
+  "constellation5": {
+    "name": "Dissolvenza di Tlaltecuhtli",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>A ritmo dell'ozelot!</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "Carnevale notturno imperituro",
+    "description": {
+      "0": "Quando Xilonen è nello stato di Grazia dell'Anima della Notte, quando compie uno Scatto, salta o usa un attacco normale o in picchiata, ottiene la Benedizione della Notte imperitura, che ignora le limitazioni del suo stato di Grazia dell'Anima della Notte e aumenta i DAN inflitti dai suoi attacchi normali e in picchiata per 5 s.",
+      "1": "Mentre questo effetto è attivo:",
+      "2": [
+        " il limite di tempo della sua Grazia dell'Anima della Notte viene temporaneamente interrotto. I punti Anima della Notte, il Flogisto e il vigore di Xilonen non calano, e quando i punti Anima della Notte raggiungono il massimo il suo stato di Grazia dell'Anima della Notte non termina;",
+        " gli attacchi normali e in picchiata di Xilonen infliggono DAN aumentati di un 300% della sua DIF quando è in stato di Grazia dell'Anima della Notte;",
+        " i PS dei membri del gruppo vicini si ripristinano di un 120% della DIF di Xilonen ogni 1,5 s."
+      ],
+      "3": "Xilonen può ottenere 1 Benedizione della Notte imperitura una volta ogni 15 s."
+    }
+  }
+}

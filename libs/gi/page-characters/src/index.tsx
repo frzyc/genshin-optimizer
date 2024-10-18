@@ -29,7 +29,7 @@ import {
   CharacterCard,
   CharacterEditor,
   CharacterRarityToggle,
-  CharacterSelectionModal,
+  CharacterSingleSelectionModal,
   ElementToggle,
   SillyContext,
   WeaponToggle,
@@ -222,7 +222,7 @@ export default function PageCharacter() {
         />
       )}
       <Suspense fallback={false}>
-        <CharacterSelectionModal
+        <CharacterSingleSelectionModal
           newFirst
           show={newCharacter}
           onHide={() => setnewCharacter(false)}

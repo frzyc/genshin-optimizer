@@ -6,7 +6,7 @@ import type {
 import { StatIcon } from '@genshin-optimizer/sr/svgicons'
 import { Box } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import { statPercent } from '../util'
+import { relicStatPercent } from '../util'
 
 // Special consideration for relic stats, by displaying % behind hp_, atk_ and def_.
 export function RelicStatWithUnit({
@@ -18,7 +18,7 @@ export function RelicStatWithUnit({
   return (
     <span>
       {tk(statKey)}
-      {statPercent(statKey)}
+      {relicStatPercent(statKey)}
     </span>
   )
 }

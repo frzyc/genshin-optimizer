@@ -1,9 +1,6 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
-import {
-  charKeyToLocCharKey,
-  type ArtifactSlotKey,
-} from '@genshin-optimizer/gi/consts'
+import { charKeyToLocCharKey } from '@genshin-optimizer/gi/consts'
 import {
   CharacterContext,
   TeamCharacterContext,
@@ -267,9 +264,9 @@ function BuildEditor({
             setWeapon={(id: string) =>
               database.builds.set(buildId, { weaponId: id })
             }
-            setArtifact={(slotKey: ArtifactSlotKey, id: string) =>
+            setArtifact={(slotKey, id) =>
               database.builds.set(buildId, (build) => {
-                build.artifactIds[slotKey] = id
+                build.artifactIds[slotKey] = id ? id : undefined
               })
             }
           />

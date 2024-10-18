@@ -159,7 +159,7 @@
     "name": "Elimination of Malicious Qi",
     "description": {
       "0": "DMG yang diakibatkan Spiritvein dari skill <strong>Holistic Revivification</strong> meningkat sebesar 8% Max HP Baizhu.",
-      "1": "Selain itu, saat serangan <strong>Gossamer Sprite</strong> atau Gossamer Sprite: Splice mengenai musuh, ada 100% kemungkinan untuk menciptakan perisai Seamless Shield dari skill <strong>Holistic Revivification</strong>. Efek ini hanya dapat terpicu satu kali untuk setiap Gossamer Sprite atau Gossamer Sprite: Splice."
+      "1": "Selain itu, saat serangan <strong>Gossamer Sprite</strong> atau Gossamer Sprite: Splice mengenai musuh, ada 100% kemungkinan untuk menciptakan Perisai Seamless Shield dari skill <strong>Holistic Revivification</strong>. Efek ini hanya dapat terpicu satu kali untuk setiap Gossamer Sprite atau Gossamer Sprite: Splice."
     }
   }
 }

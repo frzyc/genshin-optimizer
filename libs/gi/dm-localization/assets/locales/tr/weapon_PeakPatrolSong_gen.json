@@ -1,0 +1,24 @@
+{
+  "name": "Tepe Devriyesi Şarkısı",
+  "description": {
+    "0": "Eşi benzeri olmayan bir keskinliğe sahip, bir şarkı kadar hafif obsidiyen bir kılıç. Bir zanaatkar onu kayıt çalabilen çıkarılabilir bir Filojiston Cihazı ile donatmış."
+  },
+  "passiveName": "Bitmeyen Altın Çağ",
+  "passiveDescription": {
+    "0": {
+      "0": "Normal veya Havadan Saldırılar bir düşmana isabet ettiğinde \"Çiçek Kasidesi\" etkisi kazanılır: 6sn boyunca Savunma <cryo>%8</cryo> artar ve <cryo>%10</cryo> Tüm Element Hasarları Bonusu kazanılır, en fazla 2 kademe birikebilir. Her 0,1 saniyede bir tetiklenebilir. Bu etki 2 kademeye ulaştığında veya 2. kademenin süresi yenilendiğinde 15sn boyunca yakındaki tüm grup üyelerinin Tüm Element Hasarları Bonusu, kuşanan karakterin sahip olduğu her 1.000 Savunma başına <cryo>%8</cryo> artar, en fazla <cryo>%25,6</cryo> artabilir."
+    },
+    "1": {
+      "0": "Normal veya Havadan Saldırılar bir düşmana isabet ettiğinde \"Çiçek Kasidesi\" etkisi kazanılır: 6sn boyunca Savunma <cryo>%10</cryo> artar ve <cryo>%12,5</cryo> Tüm Element Hasarları Bonusu kazanılır, en fazla 2 kademe birikebilir. Her 0,1 saniyede bir tetiklenebilir. Bu etki 2 kademeye ulaştığında veya 2. kademenin süresi yenilendiğinde 15sn boyunca yakındaki tüm grup üyelerinin Tüm Element Hasarları Bonusu, kuşanan karakterin sahip olduğu her 1.000 Savunma başına <cryo>%10</cryo> artar, en fazla <cryo>%32</cryo> artabilir."
+    },
+    "2": {
+      "0": "Normal veya Havadan Saldırılar bir düşmana isabet ettiğinde \"Çiçek Kasidesi\" etkisi kazanılır: 6sn boyunca Savunma <cryo>%12</cryo> artar ve <cryo>%15</cryo> Tüm Element Hasarları Bonusu kazanılır, en fazla 2 kademe birikebilir. Her 0,1 saniyede bir tetiklenebilir. Bu etki 2 kademeye ulaştığında veya 2. kademenin süresi yenilendiğinde 15sn boyunca yakındaki tüm grup üyelerinin Tüm Element Hasarları Bonusu, kuşanan karakterin sahip olduğu her 1.000 Savunma başına <cryo>%12</cryo> artar, en fazla <cryo>%38,4</cryo> artabilir."
+    },
+    "3": {
+      "0": "Normal veya Havadan Saldırılar bir düşmana isabet ettiğinde \"Çiçek Kasidesi\" etkisi kazanılır: 6sn boyunca Savunma <cryo>%14</cryo> artar ve <cryo>%17,5</cryo> Tüm Element Hasarları Bonusu kazanılır, en fazla 2 kademe birikebilir. Her 0,1 saniyede bir tetiklenebilir. Bu etki 2 kademeye ulaştığında veya 2. kademenin süresi yenilendiğinde 15sn boyunca yakındaki tüm grup üyelerinin Tüm Element Hasarları Bonusu, kuşanan karakterin sahip olduğu her 1.000 Savunma başına <cryo>%14</cryo> artar, en fazla <cryo>%44,8</cryo> artabilir."
+    },
+    "4": {
+      "0": "Normal veya Havadan Saldırılar bir düşmana isabet ettiğinde \"Çiçek Kasidesi\" etkisi kazanılır: 6sn boyunca Savunma <cryo>%16</cryo> artar ve <cryo>%20</cryo> Tüm Element Hasarları Bonusu kazanılır, en fazla 2 kademe birikebilir. Her 0,1 saniyede bir tetiklenebilir. Bu etki 2 kademeye ulaştığında veya 2. kademenin süresi yenilendiğinde 15sn boyunca yakındaki tüm grup üyelerinin Tüm Element Hasarları Bonusu, kuşanan karakterin sahip olduğu her 1.000 Savunma başına <cryo>%16</cryo> artar, en fazla <cryo>%51,2</cryo> artabilir."
+    }
+  }
+}

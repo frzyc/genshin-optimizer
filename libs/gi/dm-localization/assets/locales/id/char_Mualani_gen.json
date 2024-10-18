@@ -47,8 +47,8 @@
       "3": "<strong>Nightsoul's Blessing: Mualani</strong>",
       "4": "Terus mengonsumsi poin Nightsoul. Saat sudah habis dikonsumsi atau saat dilancarkan sekali lagi, Nightsoul's Blessing Mualani akan berakhir. Nightsoul's Blessing memiliki karakteristik sebagai berikut:",
       "5": [
-        "Saat menaiki Sharky Surfboard, meningkatkan Movement SPD Mualani dan ketahanannya terhadap interupsi. Dalam status ini, Mualani akan bisa bergerak di atas permukaan air dan di dalam Phlogiston berwujud cairan, dalam kondisi ini Mualani tidak akan menerima DMG dari Phlogiston.",
-        "Saat melancarkan Normal Attack, akan mengubahnya menjadi Sharky's Bites yang mengakibatkan <hydro>Hydro DMG</hydro> dengan atribut Nightsoul berdasarkan Max HP Mualani. Sharky's Surging Bite bisa dilancarkan saat melayang di udara, dan DMG yang diakibatkan akan dianggap sebagai DMG Normal Attack.",
+        "Saat menaiki Sharky Surfboard, meningkatkan Movement SPD Mualani dan ketahanannya terhadap interupsi. Dalam status ini, Mualani akan bisa bergerak di atas permukaan air dan di dalam Phlogiston berwujud cairan, dalam kondisi ini Mualani tidak akan menerima DMG dari Phlogiston cair.",
+        "Saat melancarkan Normal Attack, akan mengubahnya menjadi Sharky's Bites yang mengakibatkan <hydro>Hydro DMG</hydro> dengan atribut Nightsoul berdasarkan Max HP Mualani. Sharky's Bites bisa dilancarkan saat melayang di udara, dan DMG yang diakibatkan akan dianggap sebagai DMG Normal Attack.",
         "Saat menyentuh musuh dalam kondisi ini, Mualani akan memberikan \"Marked as Prey\" kepada musuh dan mendapatkan 1 lapis Wave Momentum. Wave Momentum dapat ditumpuk sampai 3 lapis. Setiap 0,7 detik, Mualani dapat memperoleh 1 lapis Momentum Wave dari 1 musuh yang sama."
       ],
       "6": "<br/>",

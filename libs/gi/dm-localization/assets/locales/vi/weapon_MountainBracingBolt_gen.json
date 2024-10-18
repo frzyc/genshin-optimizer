@@ -1,0 +1,24 @@
+{
+  "name": "Mũi Đinh Trấn Núi",
+  "description": {
+    "0": "Thương dài được các thợ mỏ hợp sức rèn ra, trước đây là cống phẩm hiến tế cho các linh hồn trong dãy núi."
+  },
+  "passiveName": "Hy Vọng Vượt Qua Đỉnh Núi",
+  "passiveDescription": {
+    "0": {
+      "0": "Giảm 15% tiêu hao thể lực khi leo trèo, tăng <cryo>12%</cryo> sát thương Kỹ Năng Nguyên Tố gây ra; Ngoài ra, sau khi nhân vật khác trong đội gần đó thi triển Kỹ Năng Nguyên Tố, sát thương Kỹ Năng Nguyên Tố của người trang bị sẽ còn tăng <cryo>12%</cryo> trong 8s."
+    },
+    "1": {
+      "0": "Giảm 15% tiêu hao thể lực khi leo trèo, tăng <cryo>15%</cryo> sát thương Kỹ Năng Nguyên Tố gây ra; Ngoài ra, sau khi nhân vật khác trong đội gần đó thi triển Kỹ Năng Nguyên Tố, sát thương Kỹ Năng Nguyên Tố của người trang bị sẽ còn tăng <cryo>15%</cryo> trong 8s."
+    },
+    "2": {
+      "0": "Giảm 15% tiêu hao thể lực khi leo trèo, tăng <cryo>18%</cryo> sát thương Kỹ Năng Nguyên Tố gây ra; Ngoài ra, sau khi nhân vật khác trong đội gần đó thi triển Kỹ Năng Nguyên Tố, sát thương Kỹ Năng Nguyên Tố của người trang bị sẽ còn tăng <cryo>18%</cryo> trong 8s."
+    },
+    "3": {
+      "0": "Giảm 15% tiêu hao thể lực khi leo trèo, tăng <cryo>21%</cryo> sát thương Kỹ Năng Nguyên Tố gây ra; Ngoài ra, sau khi nhân vật khác trong đội gần đó thi triển Kỹ Năng Nguyên Tố, sát thương Kỹ Năng Nguyên Tố của người trang bị sẽ còn tăng <cryo>21%</cryo> trong 8s."
+    },
+    "4": {
+      "0": "Giảm 15% tiêu hao thể lực khi leo trèo, tăng <cryo>24%</cryo> sát thương Kỹ Năng Nguyên Tố gây ra; Ngoài ra, sau khi nhân vật khác trong đội gần đó thi triển Kỹ Năng Nguyên Tố, sát thương Kỹ Năng Nguyên Tố của người trang bị sẽ còn tăng <cryo>24%</cryo> trong 8s."
+    }
+  }
+}

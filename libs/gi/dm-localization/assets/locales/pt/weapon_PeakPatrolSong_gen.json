@@ -1,0 +1,24 @@
+{
+  "name": "Canção da Patrulha do Pico",
+  "description": {
+    "0": "Uma lâmina de obsidiana de afiação incomparável, leve como uma canção. Foi modificada por um certo artesão para vir equipada com um dispositivo de Flogisto destacável que toca discos."
+  },
+  "passiveName": "Juventude Eterna",
+  "passiveDescription": {
+    "0": {
+      "0": "Quando um Ataque Normal ou Imersivo atinge um inimigo, obtém \"Canção de Glória\": aumenta DEF em <cryo>8%</cryo> e obtém <cryo>10%</cryo> de bônus de Dano de todos os Elementos por 6s e acumula até 2 vezes. Esse efeito pode ser desencadeado uma vez a cada 0.1s. Quando esse efeito alcançar ou possuir 2 acúmulos, sua duração será redefinida, para então, com base em cada 1.000 de DEF do personagem que está com essa arma equipada, aumentar o bônus de Dano de todos os Elementos para todos os membros da equipe em <cryo>8%</cryo>, podendo aumentar até <cryo>25.6%</cryo> por 15s."
+    },
+    "1": {
+      "0": "Quando um Ataque Normal ou Imersivo atinge um inimigo, obtém \"Canção de Glória\": aumenta DEF em <cryo>10%</cryo> e obtém <cryo>12.5%</cryo> de bônus de Dano de todos os Elementos por 6s e acumula até 2 vezes. Esse efeito pode ser desencadeado uma vez a cada 0.1s. Quando esse efeito alcançar ou possuir 2 acúmulos, sua duração será redefinida, para então, com base em cada 1.000 de DEF do personagem que está com essa arma equipada, aumentar o bônus de Dano de todos os Elementos para todos os membros da equipe em <cryo>10%</cryo>, podendo aumentar até <cryo>32%</cryo> por 15s."
+    },
+    "2": {
+      "0": "Quando um Ataque Normal ou Imersivo atinge um inimigo, obtém \"Canção de Glória\": aumenta DEF em <cryo>12%</cryo> e obtém <cryo>15%</cryo> de bônus de Dano de todos os Elementos por 6s e acumula até 2 vezes. Esse efeito pode ser desencadeado uma vez a cada 0.1s. Quando esse efeito alcançar ou possuir 2 acúmulos, sua duração será redefinida, para então, com base em cada 1.000 de DEF do personagem que está com essa arma equipada, aumentar o bônus de Dano de todos os Elementos para todos os membros da equipe em <cryo>12%</cryo>, podendo aumentar até <cryo>38.4%</cryo> por 15s."
+    },
+    "3": {
+      "0": "Quando um Ataque Normal ou Imersivo atinge um inimigo, obtém \"Canção de Glória\": aumenta DEF em <cryo>14%</cryo> e obtém <cryo>17.5%</cryo> de bônus de Dano de todos os Elementos por 6s e acumula até 2 vezes. Esse efeito pode ser desencadeado uma vez a cada 0.1s. Quando esse efeito alcançar ou possuir 2 acúmulos, sua duração será redefinida, para então, com base em cada 1.000 de DEF do personagem que está com essa arma equipada, aumentar o bônus de Dano de todos os Elementos para todos os membros da equipe em <cryo>14%</cryo>, podendo aumentar até <cryo>44.8%</cryo> por 15s."
+    },
+    "4": {
+      "0": "Quando um Ataque Normal ou Imersivo atinge um inimigo, obtém \"Canção de Glória\": aumenta DEF em <cryo>16%</cryo> e obtém <cryo>20%</cryo> de bônus de Dano de todos os Elementos por 6s e acumula até 2 vezes. Esse efeito pode ser desencadeado uma vez a cada 0.1s. Quando esse efeito alcançar ou possuir 2 acúmulos, sua duração será redefinida, para então, com base em cada 1.000 de DEF do personagem que está com essa arma equipada, aumentar o bônus de Dano de todos os Elementos para todos os membros da equipe em <cryo>16%</cryo>, podendo aumentar até <cryo>51.2%</cryo> por 15s."
+    }
+  }
+}

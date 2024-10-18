@@ -209,6 +209,9 @@
   "ColorfulContemplation": {
     "name": "색채 영감"
   },
+  "FestiveFervor": {
+    "name": "축제 열기"
+  },
   "Primogem": {
     "name": "원석"
   },
@@ -971,6 +974,9 @@
   "Mualani": {
     "name": "말라니"
   },
+  "Xilonen": {
+    "name": "실로닌"
+  },
   "KachinasStellaFortuna": {
     "name": "카치나의 운명의 별"
   },
@@ -979,6 +985,9 @@
   },
   "MualanisStellaFortuna": {
     "name": "말라니의 운명의 별"
+  },
+  "XilonensStellaFortuna": {
+    "name": "실로닌의 운명의 별"
   },
   "Apple": {
     "name": "사과"
@@ -7346,6 +7355,27 @@
   "DeliciousDelightsOfWondrousWanderings": {
     "name": "맛있는 상자에 담긴 마음"
   },
+  "SuspiciousBBQBeefHeartSkewers": {
+    "name": "이상한 소 염통 꼬치"
+  },
+  "BBQBeefHeartSkewers": {
+    "name": "소 염통 꼬치"
+  },
+  "DeliciousBBQBeefHeartSkewers": {
+    "name": "맛있는 소 염통 꼬치"
+  },
+  "SuspiciousXocoatl": {
+    "name": "이상한 쓴물"
+  },
+  "Xocoatl": {
+    "name": "쓴물"
+  },
+  "DeliciousXocoatl": {
+    "name": "맛있는 쓴물"
+  },
+  "FruitFlavoredMilkCandies": {
+    "name": "과일 맛 우유 사탕"
+  },
   "RecipeItem": {
     "name": "레시피 아이템"
   },
@@ -7993,6 +8023,12 @@
   },
   "RecipeDelightsOfWondrousWanderings": {
     "name": "레시피: 상자에 담긴 마음"
+  },
+  "RecipeBBQBeefHeartSkewers": {
+    "name": "레시피: 소 염통 꼬치"
+  },
+  "RecipeXocoatl": {
+    "name": "레시피: 쓴물"
   },
   "CraftedItems": {
     "name": "합성 산물"
@@ -8656,6 +8692,9 @@
   },
   "OverripeFlamegranate": {
     "name": "과숙한 화염류탄 열매"
+  },
+  "GoldInscribedSecretSourceCore": {
+    "name": "금빛 문양 근원 코어"
   },
   "TileOfDecarabiansTower": {
     "name": "고탑 왕의 잔해"
@@ -11261,6 +11300,15 @@
   "TheVolcanoLordAndTheShadowPins": {
     "name": "화산 대왕과 그림자 바늘"
   },
+  "PilgrimsChronicle": {
+    "name": "밤 여정의 두루마리"
+  },
+  "SomewhatAgedCopyOfTequilTheBrave": {
+    "name": "옛 버전 《용감한 투크우》"
+  },
+  "SpankingNewCopyOfTequilTheBrave": {
+    "name": "새 버전 《용감한 투크우》"
+  },
   "PicturesqueRecords": {
     "name": "그림 같은 필체의 기록"
   },
@@ -11275,6 +11323,12 @@
   },
   "NoteLeftAtTheCamp": {
     "name": "야영지에 남겨진 메모"
+  },
+  "ScarletPhlogistonHoneyPearl": {
+    "name": "붉은 열소 꿀 구슬"
+  },
+  "CapturedPhotos": {
+    "name": "노획한 사진"
   },
   "TearsAmongTheStars": {
     "name": "뭇별 사이의 눈물"
@@ -12878,6 +12932,12 @@
   "CelebrationCrispyAndSweet": {
     "name": "축전·바삭바삭"
   },
+  "XilonenCuePoint": {
+    "name": "실로닌·리듬"
+  },
+  "TravelNotesSabzeruz": {
+    "name": "기행·탄신"
+  },
   "EchoDandelionKnight": {
     "name": "궤적·민들레 기사"
   },
@@ -12892,6 +12952,12 @@
   },
   "EchoDarkSideOfDawn": {
     "name": "궤적·새벽의 어둠"
+  },
+  "EchoVagoMundo": {
+    "name": "궤적·속세 한유"
+  },
+  "EchoDrivingThunder": {
+    "name": "궤적·질뢰쾌우"
   },
   "AnemoculusResonanceStone": {
     "name": "바람 신의 눈동자 공명석"
@@ -13415,6 +13481,12 @@
   "StrivingToNegotiate": {
     "name": "협상 시도"
   },
+  "VirtuosoPerformance": {
+    "name": "절묘한 연주"
+  },
+  "AllGreenAndGoodToGo": {
+    "name": "만반의 준비"
+  },
   "RhodeiaOfLoch": {
     "name": "물의 정령·로데이아"
   },
@@ -13489,6 +13561,12 @@
   },
   "HydroHilichurlRogue": {
     "name": "츄츄 물걸음 순찰자"
+  },
+  "AbyssLectorVioletLightning": {
+    "name": "심연 봉독자·자색 뇌전"
+  },
+  "EremiteFloralRingDancer": {
+    "name": "도금 여단·풀고리 무용수"
   },
   "UndividedHeart": {
     "name": "단 하나의 마음"
@@ -13784,6 +13862,15 @@
   "HydrodartSlime": {
     "name": "물 표창 슬라임"
   },
+  "InFiveColorsDyed": {
+    "name": "오색 염색"
+  },
+  "ChainLightningCascade": {
+    "name": "침식 번개"
+  },
+  "SpiritSerpentsSwirl": {
+    "name": "휘감는 영혼의 뱀"
+  },
   "MagicGuide": {
     "name": "마도 서론"
   },
@@ -14045,6 +14132,15 @@
   "Koholasaurus": {
     "name": "어룡"
   },
+  "PortablePowerSaw": {
+    "name": "휴대용 체인톱"
+  },
+  "ConductorsTopHat": {
+    "name": "지휘의 탑 햇"
+  },
+  "Tepetlisaurus": {
+    "name": "산룡"
+  },
   "LiyueHarborWharf": {
     "name": "리월항"
   },
@@ -14197,6 +14293,9 @@
   },
   "Atea": {
     "name": "아테아"
+  },
+  "StageTepetl": {
+    "name": "테페틀 무대"
   },
   "ElementalResonanceWovenIce": {
     "name": "원소 공명: 뒤엉킨 얼음"
@@ -14387,6 +14486,9 @@
   "EdictOfAbsolution": {
     "name": "사면 선고"
   },
+  "EremiteTeatime": {
+    "name": "도금 여단의 티타임"
+  },
   "Origin": {
     "name": "원초"
   },
@@ -14437,6 +14539,9 @@
   },
   "Natlan": {
     "name": "나타"
+  },
+  "EnkanomiyaEvernight": {
+    "name": "연하궁·상야"
   },
   "BeginnerPlayerBadge": {
     "name": "초급 플레이어 배지"
@@ -15005,6 +15110,15 @@
   "MallowWoodMultiModelWardrobe": {
     "name": "버즘나무 원목 「다중형」 옷장"
   },
+  "FairsDistribution": {
+    "name": "「시장의 분류와 배치」"
+  },
+  "FairsSplendidTextiles": {
+    "name": "「시장의 화려한 비단」"
+  },
+  "PeachPalmWoodFulcrumContainer": {
+    "name": "복숭아야자나무 원목 「지탱」 진열장"
+  },
   "TwoTierLibraryBookshelf": {
     "name": "도서관 이층 책장"
   },
@@ -15161,6 +15275,18 @@
   "TeahouseToolQualiteaReview": {
     "name": "차 공방의 도구-「품질 심사」"
   },
+  "OneLeggedRoundShield": {
+    "name": "「외발 원형 방패」"
+  },
+  "FourLeggedTowerShield": {
+    "name": "「네발 대형 방패」"
+  },
+  "NamelessAndSilent": {
+    "name": "「이름 없는 조연」"
+  },
+  "CountlessServices": {
+    "name": "「만능 일꾼」"
+  },
   "BreezeBlessedBed": {
     "name": "바람의 가호를 받는 침대"
   },
@@ -15280,6 +15406,15 @@
   },
   "TeahouseBenchSimpleSeating": {
     "name": "차 공방의 긴 의자-「소탈한 착석」"
+  },
+  "StadiumsSpicyFeastBackedChair": {
+    "name": "경기장의 「뜨거운 연회」 등받이 의자"
+  },
+  "StadiumRoundSeatingBench": {
+    "name": "경기장의 「단좌」 벤치"
+  },
+  "StadiumSpeedySnackRoundStool": {
+    "name": "경기장의 「간이」 둥근 의자"
   },
   "NorthernStoneHearth": {
     "name": "북대륙 돌 벽난로"
@@ -15455,6 +15590,15 @@
   "HotelRailingPerfectViewingArc": {
     "name": "호텔 울타리-「완벽한 부채꼴」"
   },
+  "FairsFreshVegetables": {
+    "name": "「시장의 제철 식자재」"
+  },
+  "TravelerOnTheRoad": {
+    "name": "「길 위의 행인」"
+  },
+  "TheDistanceBetweenItAndTheFlames": {
+    "name": "「불꽃과의 거리」"
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "몬드풍 카펫-「정열의 빨강」"
   },
@@ -15503,6 +15647,18 @@
   "FadingAfterglow": {
     "name": "「바래진 석양」"
   },
+  "WearyRugLayDownYourBurden": {
+    "name": "피로의 카펫-「부담 덜기」"
+  },
+  "VibrantPotBornInFlames": {
+    "name": "색채 도자기-「화염의 산물」"
+  },
+  "BipedalPuppetShakyQuaky": {
+    "name": "두발 목각 인형-「흔들흔들」"
+  },
+  "QuadripedalPuppetReadySteady": {
+    "name": "네발 목각 인형-「안정적」"
+  },
   "TrustyPortableLamp": {
     "name": "꺼지지 않는 휴대용 등불"
   },
@@ -15538,6 +15694,12 @@
   },
   "SimpleLightingLocallySourcedMaterials": {
     "name": "간이 휴대용 등불-「현지 조달」"
+  },
+  "PhlogistonDeskLampSufficientlyWeighty": {
+    "name": "열소 스탠드-「충족」"
+  },
+  "PhlogistonFloorLampCostEffectiveConvenience": {
+    "name": "열소 바닥 조명-「간편」"
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "화초용 꽃병-「담청색의 여유」"
@@ -15704,6 +15866,27 @@
   "MellowTeaInARedClayPot": {
     "name": "「붉은 주전자 속 진한 차」"
   },
+  "ModelDishNotToBeMissed": {
+    "name": "음식 모형-「필수 요리」"
+  },
+  "ModelDishTheUsualSelection": {
+    "name": "음식 모형-「무난한 선택」"
+  },
+  "FairsFeastingAndDrinking": {
+    "name": "「시장의 즐거운 건배」"
+  },
+  "Windtracker": {
+    "name": "「바람을 쫓는 자」"
+  },
+  "JavelinImminent": {
+    "name": "「준비된 투창」"
+  },
+  "TowardsGreaterHeights": {
+    "name": "「더 높은 곳으로」"
+  },
+  "RidingTheTranquilWaters": {
+    "name": "「평온한 항해」"
+  },
   "RealizationsFromTheLandOfWisdom": {
     "name": "「탁견의 땅의 불변」"
   },
@@ -15721,6 +15904,15 @@
   },
   "FloralArrangementArtOfContrast": {
     "name": "병 꽃꽂이-「대비의 예술」"
+  },
+  "EchoesOfTheShore": {
+    "name": "「물가의 메아리」"
+  },
+  "UnbeatenHero": {
+    "name": "「불패의 용사」"
+  },
+  "MountainFireworks": {
+    "name": "「산맥의 불꽃」"
   },
   "LandscapePaintingCountryHome": {
     "name": "풍경화-「시골 민가」"
@@ -15805,6 +15997,9 @@
   },
   "MekaLuminaireSilentNightsContemplation": {
     "name": "핵심 조명-「조용한 밤의 사색」"
+  },
+  "PhlogistonHangingLampRoadGuide": {
+    "name": "열소 조명-「길잡이」"
   },
   "LingeringMoment": {
     "name": "「유대의 순간」"

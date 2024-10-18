@@ -124,6 +124,10 @@
       "icon": "UI_EquipIcon_Sword_Purewill",
       "awakenIcon": "UI_EquipIcon_Sword_Purewill"
     },
+    "SturdyBone": {
+      "icon": "UI_EquipIcon_Sword_Umpakati",
+      "awakenIcon": "UI_EquipIcon_Sword_Umpakati_Awaken"
+    },
     "FluteOfEzpitzal": {
       "icon": "UI_EquipIcon_Sword_Isikhulu",
       "awakenIcon": "UI_EquipIcon_Sword_Isikhulu_Awaken"
@@ -175,6 +179,10 @@
     "Absolution": {
       "icon": "UI_EquipIcon_Sword_Estoc",
       "awakenIcon": "UI_EquipIcon_Sword_Estoc_Awaken"
+    },
+    "PeakPatrolSong": {
+      "icon": "UI_EquipIcon_Sword_XochitlsTube",
+      "awakenIcon": "UI_EquipIcon_Sword_XochitlsTube_Awaken"
     },
     "WasterGreatsword": {
       "icon": "UI_EquipIcon_Claymore_Aniki",
@@ -287,6 +295,10 @@
     "PortablePowerSaw": {
       "icon": "UI_EquipIcon_Claymore_Mechanic",
       "awakenIcon": "UI_EquipIcon_Claymore_Mechanic_Awaken"
+    },
+    "FruitfulHook": {
+      "icon": "UI_EquipIcon_Claymore_Umpakati",
+      "awakenIcon": "UI_EquipIcon_Claymore_Umpakati_Awaken"
     },
     "EarthShaker": {
       "icon": "UI_EquipIcon_Claymore_Isikhulu",
@@ -415,6 +427,10 @@
     "ProspectorsDrill": {
       "icon": "UI_EquipIcon_Pole_Mechanic",
       "awakenIcon": "UI_EquipIcon_Pole_Mechanic_Awaken"
+    },
+    "MountainBracingBolt": {
+      "icon": "UI_EquipIcon_Pole_Umpakati",
+      "awakenIcon": "UI_EquipIcon_Pole_Umpakati_Awaken"
     },
     "FootprintOfTheRainbow": {
       "icon": "UI_EquipIcon_Pole_Isikhulu",
@@ -2628,6 +2644,24 @@
       "constellation4": "UI_Talent_S_Mualani_03",
       "constellation5": "UI_Talent_U_Mualani_02",
       "constellation6": "UI_Talent_S_Mualani_04"
+    },
+    "Xilonen": {
+      "icon": "UI_AvatarIcon_Xilonen",
+      "iconSide": "UI_AvatarIcon_Side_Xilonen",
+      "banner": "UI_NameCardPic_Xilonen_P",
+      "bar": "UI_NameCardPic_Xilonen_Alpha",
+      "skill": "Skill_S_Xilonen_01",
+      "burst": "Skill_E_Xilonen_01_HD",
+      "passive1": "UI_Talent_S_Xilonen_05",
+      "passive2": "UI_Talent_S_Xilonen_06",
+      "passive3": "UI_Talent_S_Xilonen_07",
+      "passive": "UI_Talent_S_Xilonen_08",
+      "constellation1": "UI_Talent_S_Xilonen_01",
+      "constellation2": "UI_Talent_S_Xilonen_02",
+      "constellation3": "UI_Talent_U_Xilonen_01",
+      "constellation4": "UI_Talent_S_Xilonen_03",
+      "constellation5": "UI_Talent_U_Xilonen_02",
+      "constellation6": "UI_Talent_S_Xilonen_04"
     },
     "TravelerAnemo": {
       "skill": "Skill_S_PlayerWind_01",

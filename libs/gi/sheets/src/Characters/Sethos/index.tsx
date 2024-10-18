@@ -42,16 +42,16 @@ const dm = {
       skillParam_gen.auto[a++], // 3
     ],
   },
-  plunging: {
-    dmg: skillParam_gen.auto[a++],
-    low: skillParam_gen.auto[a++],
-    high: skillParam_gen.auto[a++],
-  },
   charged: {
     aimed: skillParam_gen.auto[a++],
     fullyAimed: skillParam_gen.auto[a++],
     shadowAtk: skillParam_gen.auto[a++],
     shadowEm: skillParam_gen.auto[a++],
+  },
+  plunging: {
+    dmg: skillParam_gen.auto[a++],
+    low: skillParam_gen.auto[a++],
+    high: skillParam_gen.auto[a++],
   },
   skill: {
     dmg: skillParam_gen.skill[s++],

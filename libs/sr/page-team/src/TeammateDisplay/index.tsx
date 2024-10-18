@@ -1,12 +1,12 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import { own } from '@genshin-optimizer/sr/formula'
-import { useSrCalcContext } from '@genshin-optimizer/sr/formula-ui'
 import {
   CharacterCard,
   CharacterEditor,
   useCharacterContext,
   useLoadoutContext,
+  useSrCalcContext,
 } from '@genshin-optimizer/sr/ui'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
@@ -20,6 +20,7 @@ import {
   Typography,
 } from '@mui/material'
 import { useState } from 'react'
+import { BonusStats } from './Tabs/BonusStats'
 import Optimize from './Tabs/Optimize'
 import CharacterTalentPane from './Tabs/TalentContent'
 
@@ -50,6 +51,7 @@ export default function TeammateDisplay({ tab }: { tab?: string }) {
             >
               Edit Character
             </Button>
+            <BonusStats />
             <Accordion>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                 All target listings

@@ -107,7 +107,7 @@
   "passive1": {
     "name": "The Price of Desolation",
     "description": {
-      "0": "Saat dalam status Nightsoul's Blessing dan Elemental Skill Kinich mengenai musuh, akan memasuki status Desolation: Saat menerima DMG reaksi Burning atau Burgeon, akan memulihkan 7 poin Nightsoul bagi Kinich, maksimum pemulihan Nightsoul yang bisa diperoleh dengan cara ini adalah sekali setiap 0,8 detik. Status Desolation berlangsung hingga status Nightsoul's Blessing Kinich kali ini berakhir."
+      "0": "Saat Kinich berada dalam status Nightsoul's Blessing, Elemental Skill Kinich yang mengenai musuh akan membuat musuh tersebut terkena status Desolation: Saat musuh ini terkena DMG dari reaksi Burning atau Burgeon, akan memulihkan 7 poin Nightsoul bagi Kinich. Maksimum pemulihan Nightsoul yang bisa diperoleh dengan cara ini adalah sekali setiap 0,8 detik. Status Desolation berlangsung hingga status Nightsoul's Blessing Kinich kali ini berakhir."
     }
   },
   "passive2": {
