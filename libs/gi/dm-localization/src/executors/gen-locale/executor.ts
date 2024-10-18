@@ -1,6 +1,10 @@
 import type { Language } from '@genshin-optimizer/common/pipeline'
-import { dumpFile, nameToKey } from '@genshin-optimizer/common/pipeline'
-import { crawlObject, layeredAssignment } from '@genshin-optimizer/common/util'
+import { dumpFile } from '@genshin-optimizer/common/pipeline'
+import {
+  crawlObject,
+  layeredAssignment,
+  nameToKey,
+} from '@genshin-optimizer/common/util'
 import type {
   ElementKey,
   LocationGenderedCharacterKey,

@@ -1,5 +1,9 @@
-import { dumpFile, nameToKey } from '@genshin-optimizer/common/pipeline'
-import { objFilterKeys, objKeyValMap } from '@genshin-optimizer/common/util'
+import { dumpFile } from '@genshin-optimizer/common/pipeline'
+import {
+  nameToKey,
+  objFilterKeys,
+  objKeyValMap,
+} from '@genshin-optimizer/common/util'
 import { TextMapEN } from '../../TextMapUtil'
 import { PROJROOT_PATH } from '../../consts'
 import type { RelicSetId } from '../../mapping/relic'

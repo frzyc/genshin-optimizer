@@ -1,5 +1,4 @@
-import { nameToKey } from '@genshin-optimizer/common/pipeline'
-import { layeredAssignment } from '@genshin-optimizer/common/util'
+import { layeredAssignment, nameToKey } from '@genshin-optimizer/common/util'
 import type { AscensionKey, CharacterKey } from '@genshin-optimizer/gi/consts'
 import type {
   AscensionRecord,
