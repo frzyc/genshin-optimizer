@@ -8,6 +8,7 @@ import {
   useDatabase,
   useEquippedInTeam,
 } from '@genshin-optimizer/gi/db-ui'
+import { BuildEditContext, type BuildEditContextObj } from '@genshin-optimizer/gi/ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
   ArtifactCardNano,
@@ -27,7 +28,7 @@ import {
   IconButton,
   TextField,
 } from '@mui/material'
-import { useContext, useDeferredValue, useEffect, useState } from 'react'
+import { useContext, useDeferredValue, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export default function BuildReal({
@@ -217,10 +218,6 @@ function BuildEditor({
     const { name, description } = newBuild
     setName(name)
     setDesc(description)
-    database.teams.setLoadoutDatum(teamId, teamCharId, {
-      compareType: 'real',
-      compareBuildId: buildId,
-    })
   }, [database, buildId, teamId, teamCharId])
 
   useEffect(() => {
@@ -238,6 +235,11 @@ function BuildEditor({
     // Don't need to trigger when buildId is changed, only when the name is changed.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [database, descDeferred])
+
+  const buildEditContextObj = useMemo(() =>
+    ({buildToEdit: buildId} as BuildEditContextObj)
+  , [buildId])
+
   return (
     <CardThemed>
       <CardHeader
@@ -266,19 +268,21 @@ function BuildEditor({
           minRows={2}
         />
         <Box>
-          <EquippedGrid
-            weaponTypeKey={weaponTypeKey}
-            weaponId={build.weaponId}
-            artifactIds={build.artifactIds}
-            setWeapon={(id: string) =>
-              database.builds.set(buildId, { weaponId: id })
-            }
-            setArtifact={(slotKey, id) =>
-              database.builds.set(buildId, (build) => {
-                build.artifactIds[slotKey] = id ? id : undefined
-              })
-            }
-          />
+          <BuildEditContext.Provider value={buildEditContextObj}>
+            <EquippedGrid
+              weaponTypeKey={weaponTypeKey}
+              weaponId={build.weaponId}
+              artifactIds={build.artifactIds}
+              setWeapon={(id: string) =>
+                database.builds.set(buildId, { weaponId: id })
+              }
+              setArtifact={(slotKey, id) =>
+                database.builds.set(buildId, (build) => {
+                  build.artifactIds[slotKey] = id ? id : undefined
+                })
+              }
+            />
+          </BuildEditContext.Provider>
         </Box>
       </CardContent>
     </CardThemed>

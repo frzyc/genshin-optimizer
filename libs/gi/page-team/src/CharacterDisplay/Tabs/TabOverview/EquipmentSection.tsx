@@ -9,6 +9,7 @@ import {
   TeamCharacterContext,
   useDatabase,
 } from '@genshin-optimizer/gi/db-ui'
+import { BuildEditContext, type BuildEditContextObj } from '@genshin-optimizer/gi/ui'
 import { dataSetEffects } from '@genshin-optimizer/gi/sheets'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
@@ -67,6 +68,12 @@ export default function EquipmentSection() {
       ),
     [data]
   )
+
+  const buildEditContextObj = useMemo(() => {
+    const buildToEdit = (buildType === 'equipped') ? 'equipped' : buildId
+    return ({buildToEdit} as BuildEditContextObj)
+  }, [buildId, buildType])
+
   return (
     <Box>
       <Grid container spacing={1}>
@@ -84,31 +91,33 @@ export default function EquipmentSection() {
           </Grid>
         )}
         <Grid item xs={12} md={12} lg={9} xl={9}>
-          <EquippedGrid
-            weaponTypeKey={weaponTypeKey}
-            weaponId={weaponId}
-            artifactIds={artifactIds}
-            setWeapon={(id) => {
-              if (loadoutEquip) database.builds.set(buildId, { weaponId: id })
-              else
-                database.weapons.set(id, {
-                  location: charKeyToLocCharKey(characterKey),
-                })
-            }}
-            setArtifact={(slotKey, id) => {
-              if (loadoutEquip)
-                database.builds.set(buildId, (build) => {
-                  build.artifactIds[slotKey] = id ? id : undefined
-                })
-              else
-                id
-                  ? database.arts.set(id, {
-                      location: charKeyToLocCharKey(characterKey),
-                    })
-                  : artifactIds[slotKey] &&
-                    database.arts.set(artifactIds[slotKey], { location: '' })
-            }}
-          />
+          <BuildEditContext.Provider value={buildEditContextObj}>
+            <EquippedGrid
+              weaponTypeKey={weaponTypeKey}
+              weaponId={weaponId}
+              artifactIds={artifactIds}
+              setWeapon={(id) => {
+                if (loadoutEquip) database.builds.set(buildId, { weaponId: id })
+                else
+                  database.weapons.set(id, {
+                    location: charKeyToLocCharKey(characterKey),
+                  })
+              }}
+              setArtifact={(slotKey, id) => {
+                if (loadoutEquip)
+                  database.builds.set(buildId, (build) => {
+                    build.artifactIds[slotKey] = id ? id : undefined
+                  })
+                else
+                  id
+                    ? database.arts.set(id, {
+                        location: charKeyToLocCharKey(characterKey),
+                      })
+                    : artifactIds[slotKey] &&
+                      database.arts.set(artifactIds[slotKey], { location: '' })
+              }}
+            />
+          </BuildEditContext.Provider>
         </Grid>
         {!breakpoint && (
           <Grid item xs={12} md={12} xl={3} container spacing={1}>

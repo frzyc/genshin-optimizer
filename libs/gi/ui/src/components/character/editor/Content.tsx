@@ -22,7 +22,8 @@ import { Box, Button, Grid, IconButton, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import { DataContext, SillyContext } from '../../../context'
+import { BuildEditContext, DataContext, SillyContext } from '../../../context'
+import type { BuildEditContextObj } from '../../../context'
 import { AddTeamInfo } from '../../AddTeamInfo'
 import { LevelSelect } from '../../LevelSelect'
 import {
@@ -181,26 +182,31 @@ function EquipmentSection() {
       ),
     [data]
   )
+
+  const buildEditContextObj = {buildToEdit: 'equipped'} as BuildEditContextObj
+
   return (
     <Box>
-      <EquippedGrid
-        weaponTypeKey={weaponTypeKey}
-        weaponId={weaponId}
-        artifactIds={artifactIds}
-        setWeapon={(id) => {
-          database.weapons.set(id, {
-            location: charKeyToLocCharKey(characterKey),
-          })
-        }}
-        setArtifact={(slotKey, id) => {
-          if (!id)
-            database.arts.set(equippedArtifacts[slotKey], { location: '' })
-          else
-            database.arts.set(id, {
+      <BuildEditContext.Provider value={buildEditContextObj}>
+        <EquippedGrid
+          weaponTypeKey={weaponTypeKey}
+          weaponId={weaponId}
+          artifactIds={artifactIds}
+          setWeapon={(id) => {
+            database.weapons.set(id, {
               location: charKeyToLocCharKey(characterKey),
             })
-        }}
-      />
+          }}
+          setArtifact={(slotKey, id) => {
+            if (!id)
+              database.arts.set(equippedArtifacts[slotKey], { location: '' })
+            else
+              database.arts.set(id, {
+                location: charKeyToLocCharKey(characterKey),
+              })
+          }}
+        />
+      </BuildEditContext.Provider>
     </Box>
   )
 }

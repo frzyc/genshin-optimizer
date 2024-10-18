@@ -288,12 +288,12 @@ export class TeamDataManager extends DataManager<
     return this.#getWeaponId(teamCharId, buildType, buildId)
   }
 
-  getCompareWeaponId({
-    compareType,
-    compareBuildId,
-    teamCharId,
-  }: LoadoutDatum): string | undefined {
-    return this.#getWeaponId(teamCharId, compareType, compareBuildId)
+  getEditWeaponId(
+    buildToEdit: string,
+    teamCharId: string,
+  ): string | undefined {
+    const editType = (buildToEdit === 'equipped') ? 'equipped' : 'real'
+    return this.#getWeaponId(teamCharId, editType, buildToEdit)
   }
 
   #getWeaponId(
@@ -379,12 +379,12 @@ export class TeamDataManager extends DataManager<
     return this.#getArtifactIds(teamCharId, buildType, buildId)
   }
 
-  getCompareArtifactIds({
-    compareType,
-    compareBuildId,
-    teamCharId,
-  }: LoadoutDatum): Record<ArtifactSlotKey, string | undefined> {
-    return this.#getArtifactIds(teamCharId, compareType, compareBuildId)
+  getEditArtifactIds(
+    buildToEdit: string,
+    teamCharId: string,
+  ): Record<ArtifactSlotKey, string | undefined> {
+    const editType = (buildToEdit === 'equipped') ? 'equipped' : 'real'
+    return this.#getArtifactIds(teamCharId, editType, buildToEdit)
   }
 
   #getArtifactIds(
