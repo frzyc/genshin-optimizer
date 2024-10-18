@@ -1,4 +1,10 @@
-export const sheetHashData = {
+export const charHashData = {
+  label: {
+    one: '-1435714104', // Character
+    many: '-676993900', // Characters
+  },
+  eidolonLvl: '1102721995', // "Eidolon Level:"
+  traces: '1252031000',
   type: {
     physical: '-1101149179',
     quantum: '88513016',
@@ -7,15 +13,6 @@ export const sheetHashData = {
     wind: '-1513894875',
     fire: '-1474263915',
     imaginary: '118034640',
-  },
-  path: {
-    Erudition: '-953720572',
-    Preservation: '-1357005099',
-    Abundance: '1371878256',
-    Nihility: '-1760289626',
-    Destruction: '209078842',
-    Harmony: '-194205685',
-    TheHunt: '612363369',
   },
   ability: {
     basic: '216145179',
@@ -32,7 +29,4 @@ export const sheetHashData = {
     support: '1560729279',
     impair: '397929865',
   },
-  eidolonLvl: '1102721995', //"Eidolon Level:"
-  lvl: '982642653', //"Lv."
-  superimpose: '-2008197403', //"Superimposition"
 }

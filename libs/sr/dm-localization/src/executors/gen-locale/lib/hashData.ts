@@ -4,47 +4,71 @@ import {
   allLightConeKeys,
   allRelicSetKeys,
 } from '@genshin-optimizer/sr/consts'
-import { charHashData } from './charHashData'
-import { lightConeHashData } from './lightConeHashData'
-import { relicHashData } from './relicHashData'
-import { sheetHashData } from './sheetHashData'
+import { allCharHashData, charHashData } from './charHashData'
+import { allLightConeHashData, lightConeHashData } from './lightConeHashData'
+import { allRelicHashData, relicHashData } from './relicHashData'
+import { uiHashData } from './uiHashData'
 
 export type LanguageData = typeof HashData
 
 const charNames = Object.fromEntries(
-  Object.entries(charHashData).map(([key, data]) => [key, data.name])
+  Object.entries(allCharHashData).map(([key, data]) => [key, data.name])
 )
 verifyObjKeys(charNames, allCharacterDataKeys)
 
 const relicNames = Object.fromEntries(
-  Object.entries(relicHashData).map(([key, data]) => [key, data.setName])
+  Object.entries(allRelicHashData).map(([key, data]) => [key, data.setName])
 )
 verifyObjKeys(relicNames, allRelicSetKeys)
 
 const lightConeNames = Object.fromEntries(
-  Object.entries(lightConeHashData).map(([key, data]) => [key, data.name])
+  Object.entries(allLightConeHashData).map(([key, data]) => [key, data.name])
 )
 verifyObjKeys(lightConeNames, allLightConeKeys)
 
 export const HashData = {
-  char: charHashData,
+  char: allCharHashData,
   charNames,
+  characters: charHashData,
 
-  relic: relicHashData,
+  relic: allRelicHashData,
   relicNames,
+  relics: relicHashData,
 
-  lightCone: lightConeHashData,
+  lightCone: allLightConeHashData,
   lightConeNames,
+  lightCones: lightConeHashData,
 
-  sheet: sheetHashData,
-  slotKey: {
-    head: '1826268247',
-    hands: '-2144127003',
-    body: '1799740313',
-    feet: '1154536283',
-    sphere: '1873322474',
-    rope: '74129613',
+  ui: uiHashData,
+
+  common: {
+    level: '-636045037', // Level
+    lv: '982642653', // Lv.
+    rarity: '1898197464',
   },
+
+  teams: {
+    label: '-839489437', // Team
+    name: '858715661', // Team Name
+    editTeam: '-756448810',
+  },
+
+  paths: {
+    label: {
+      one: '-1952347303', // Path
+      many: '-815380608', // Paths
+    },
+    pathKey: {
+      Erudition: '-953720572',
+      Preservation: '-1357005099',
+      Abundance: '1371878256',
+      Nihility: '-1760289626',
+      Destruction: '209078842',
+      Harmony: '-194205685',
+      TheHunt: '612363369',
+    },
+  },
+
   statKey: {
     spd: '461357812',
     spd_: '461357812',
