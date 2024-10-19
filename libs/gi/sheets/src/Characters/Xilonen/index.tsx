@@ -438,7 +438,7 @@ const sheet: TalentSheet = {
       path: condNsBlessingPath,
       value: condNsBlessing,
       name: st('nightsoul.blessing'),
-      canShow: equal(geoSourcePossible, 1, lessThan(input.constellation, 2, 1)),
+      canShow: equal(geoSourcePossible, 1, 1),
       teamBuff: true,
       states: {
         on: {

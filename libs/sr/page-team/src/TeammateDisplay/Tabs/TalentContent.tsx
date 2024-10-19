@@ -32,6 +32,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
+import { Stack } from '@mui/system'
 import type { ReactNode } from 'react'
 import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -47,16 +48,15 @@ export default function CharacterTalentPane() {
     loadout: { key: characterKey },
   } = useLoadoutContext()
   const calc = useSrCalcContext()
-  const { t } = useTranslation('sheet_gen')
   const { database } = useDatabaseContext()
   // TODO: for TC overrides
   // const { buildTc, setBuildTc } = useContext(BuildTcContext)
 
-  const skillBurstList: [TalentSheetElementKey, string][] = [
-    ['basic', t('ability.basic')],
-    ['skill', t('ability.skill')],
-    ['ult', t('ability.ult')],
-    ['talent', t('ability.talent')],
+  const skillBurstList: TalentSheetElementKey[] = [
+    'basic',
+    'skill',
+    'ult',
+    'talent',
   ] as const
   // const passivesList: [
   //   tKey: TalentSheetElementKey,
@@ -81,11 +81,6 @@ export default function CharacterTalentPane() {
         return (
           <SkillDisplayCard
             talentKey={`eidolon${i}` as TalentSheetElementKey}
-            subtitle={
-              <span>
-                {t('eidolonLvl')} {i}
-              </span>
-            }
             sheetElement={ele}
             onClickTitle={() =>
               // buildTc?.character
@@ -100,7 +95,7 @@ export default function CharacterTalentPane() {
           />
         )
       }),
-    [characterKey, characterSheet, database.chars, eidolon, t]
+    [characterKey, characterSheet, database.chars, eidolon]
   )
 
   if (!characterSheet || !calc) return
@@ -144,14 +139,13 @@ export default function CharacterTalentPane() {
         )}
         <Grid item xs={12} md={12} lg={9} container spacing={1}>
           {/* auto, skill, burst */}
-          {skillBurstList.map(([tKey, tText]) => {
+          {skillBurstList.map((tKey) => {
             const sheetElement = characterSheet[tKey]
             if (!sheetElement) return null
             return (
               <Grid item key={tKey} {...talentSpacing}>
                 <SkillDisplayCard
                   talentKey={tKey}
-                  subtitle={tText}
                   sheetElement={sheetElement}
                 />
               </Grid>
@@ -242,13 +236,11 @@ export default function CharacterTalentPane() {
 type SkillDisplayCardProps = {
   sheetElement: UISheetElement
   talentKey: TalentSheetElementKey
-  subtitle: ReactNode
   onClickTitle?: () => void
 }
 function SkillDisplayCard({
   sheetElement,
   talentKey,
-  subtitle,
   onClickTitle,
 }: SkillDisplayCardProps) {
   const {
@@ -333,24 +325,27 @@ function SkillDisplayCard({
               />
             </Grid>
             <Grid item flexGrow={1} sx={{ pl: 1 }}>
-              <Typography variant="h6">{sheetElement?.name}</Typography>
-              <Typography variant="subtitle1">
-                {subtitle}
-                {sheetElement.tag && <> • {sheetElement.tag}</>}
-              </Typography>
+              <Typography variant="h6">{sheetElement?.title}</Typography>
+              {sheetElement.subtitle && (
+                <Typography variant="subtitle1">
+                  {sheetElement.subtitle}
+                </Typography>
+              )}
             </Grid>
           </Grid>
         </ConditionalWrapper>
         {/* Display document sections */}
-        {sheetElement.documents.map((doc, i) => (
-          <DocumentDisplay
-            key={i}
-            document={doc}
-            collapse
-            // hideHeader={hideHeader}
-            setConditional={setConditional}
-          />
-        ))}
+        <Stack spacing={1}>
+          {sheetElement.documents.map((doc, i) => (
+            <DocumentDisplay
+              key={i}
+              document={doc}
+              collapse
+              // hideHeader={hideHeader}
+              setConditional={setConditional}
+            />
+          ))}
+        </Stack>
       </CardContent>
     </CardThemed>
   )

@@ -1,4 +1,4 @@
-import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
+import { ColorText, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import type { UISheet } from '@genshin-optimizer/pando/ui-sheet'
 import { characterAsset } from '@genshin-optimizer/sr/assets'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
@@ -12,6 +12,8 @@ import { getInterpolateObject, mappedStats } from '@genshin-optimizer/sr/stats'
 import { StatDisplay } from '@genshin-optimizer/sr/ui'
 import { trans } from '../../util'
 import type { TalentSheetElementKey } from '../consts'
+import { EidolonSubtitle } from '../EidolonSubtitle'
+import { SkillSubtitle } from '../SkillSubtitle'
 const key: CharacterKey = 'RuanMei'
 const [chg, _ch] = trans('char', key)
 const formula = formulas.RuanMei
@@ -20,8 +22,12 @@ const buff = buffs.RuanMei
 const dm = mappedStats.char[key]
 const sheet: UISheet<TalentSheetElementKey> = {
   basic: {
-    name: chg('abilities.basic.0.name'),
-    tag: chg('abilities.basic.0.tag'),
+    title: chg('abilities.basic.0.name'),
+    subtitle: (
+      <SkillSubtitle talentKey="basic">
+        {chg('abilities.basic.0.tag')}
+      </SkillSubtitle>
+    ),
     img: characterAsset(key, 'basic_0'),
     documents: [
       {
@@ -48,8 +54,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
     ],
   },
   skill: {
-    name: chg('abilities.skill.0.name'),
-    tag: chg('abilities.skill.0.tag'),
+    title: chg('abilities.skill.0.name'),
+    subtitle: (
+      <SkillSubtitle talentKey="skill">
+        {chg('abilities.skill.0.tag')}
+      </SkillSubtitle>
+    ),
     img: characterAsset(key, 'skill_0'),
     documents: [
       {
@@ -69,6 +79,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         conditional: {
           header: {
             icon: <ImgIcon src={characterAsset(key, 'skill_0')} />,
+            // TODO: translate
             text: 'skill active',
             additional: <SqBadge>Skill</SqBadge>,
           },
@@ -76,12 +87,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
           label: 'Overtone',
           fields: [
             {
+              // TODO: translate
               title: 'Ally DMG Increase',
               fieldRef: buff.skillOvertone_dmg_.tag,
             },
-            { title: 'weakness', fieldRef: buff.skillOvertone_weakness_.tag },
-            // TODO:
-            // {title:"Break Efficiency",???}
+            {
+              title: <StatDisplay statKey="weakness_" />,
+              fieldRef: buff.skillOvertone_weakness_.tag,
+            },
+            // TODO: translate DM "Duration"
             { title: 'Duration', fieldValue: dm.skill.duration },
           ],
         },
@@ -89,8 +103,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
     ],
   },
   ult: {
-    name: chg('abilities.ult.0.name'),
-    tag: chg('abilities.ult.0.tag'),
+    title: chg('abilities.ult.0.name'),
+    subtitle: (
+      <SkillSubtitle talentKey="ult">
+        {chg('abilities.ult.0.tag')}
+      </SkillSubtitle>
+    ),
     img: characterAsset(key, 'ult_0'),
     documents: [
       {
@@ -117,17 +135,35 @@ const sheet: UISheet<TalentSheetElementKey> = {
           label: 'Ult zone',
           fields: [
             {
-              title: <StatDisplay statKey={'resPen_'} />,
+              title: <StatDisplay statKey="resPen_" />,
               fieldRef: buff.ultZone_resPen_.tag,
             },
+            // TODO: action delay % on Thanatoplum Rebloom trigger
+            {
+              // TODO: translate
+              title: (
+                <ColorText color="ice">
+                  Thanatoplum Rebloom Break Damage
+                </ColorText>
+              ),
+              fieldRef: formula.zoneBreakDmg.tag,
+            },
+            // TODO: show the increase of dmg multipler from e6
+            // TODO: translate DM "Duration"
+            // TODO: show the increase of zone duration from e6
+            { title: 'Duration', fieldValue: dm.ult.duration },
           ],
         },
       },
     ],
   },
   talent: {
-    name: chg('abilities.talent.0.name'),
-    tag: chg('abilities.talent.0.tag'),
+    title: chg('abilities.talent.0.name'),
+    subtitle: (
+      <SkillSubtitle talentKey="talent">
+        {chg('abilities.talent.0.tag')}
+      </SkillSubtitle>
+    ),
     img: characterAsset(key, 'talent_0'),
     documents: [
       {
@@ -146,8 +182,15 @@ const sheet: UISheet<TalentSheetElementKey> = {
         type: 'fields',
         fields: [
           {
-            title: <StatDisplay statKey={'spd_'} />,
+            title: <StatDisplay statKey="spd_" />,
             fieldRef: buff.talent_spd_.tag,
+          },
+          {
+            //TODO: translate
+            title: (
+              <ColorText color="ice">Somatotypical Helix Break DMG</ColorText>
+            ),
+            fieldRef: formula.talentBreakDmg.tag,
           },
         ],
       },
@@ -156,7 +199,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         type: 'fields',
         fields: [
           {
-            title: 'ba3 buff',
+            title: 'bonus ability 3 buff',
             fieldRef: buff.ba3_brEff_.tag,
           },
         ],
@@ -165,7 +208,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         type: 'fields',
         fields: [
           {
-            title: 'ba3 formula',
+            title: 'bonus ability 3 formula',
             fieldRef: formula.ba3_brEff_.tag,
           },
         ],
@@ -173,7 +216,8 @@ const sheet: UISheet<TalentSheetElementKey> = {
     ],
   },
   eidolon1: {
-    name: chg('ranks.1.name'),
+    title: chg('ranks.1.name'),
+    subtitle: <EidolonSubtitle eidolon={1} />,
     img: characterAsset(key, 'eidolon1'),
     documents: [
       {
@@ -184,7 +228,8 @@ const sheet: UISheet<TalentSheetElementKey> = {
         type: 'fields',
         fields: [
           {
-            title: 'defIgn_',
+            // TODO: defIgn_ translation
+            title: 'Ignore DEF',
             fieldRef: buff.e1_defIgn_.tag,
           },
         ],
@@ -192,7 +237,8 @@ const sheet: UISheet<TalentSheetElementKey> = {
     ],
   },
   eidolon2: {
-    name: chg('ranks.2.name'),
+    title: chg('ranks.2.name'),
+    subtitle: <EidolonSubtitle eidolon={2} />,
     img: characterAsset(key, 'eidolon2'),
     documents: [
       {
@@ -211,7 +257,8 @@ const sheet: UISheet<TalentSheetElementKey> = {
     ],
   },
   eidolon3: {
-    name: chg('ranks.3.name'),
+    title: chg('ranks.3.name'),
+    subtitle: <EidolonSubtitle eidolon={3} />,
     img: characterAsset(key, 'eidolon3'),
     documents: [
       {
@@ -222,10 +269,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
         type: 'fields',
         fields: [
           {
+            //TODO: Translate
             title: 'talent',
             fieldRef: buff.eidolon3_talent.tag,
           },
           {
+            //TODO: Translate
             title: 'ult',
             fieldRef: buff.eidolon3_ult.tag,
           },
@@ -234,7 +283,8 @@ const sheet: UISheet<TalentSheetElementKey> = {
     ],
   },
   eidolon4: {
-    name: chg('ranks.4.name'),
+    title: chg('ranks.4.name'),
+    subtitle: <EidolonSubtitle eidolon={4} />,
     img: characterAsset(key, 'eidolon4'),
     documents: [
       {
@@ -252,8 +302,9 @@ const sheet: UISheet<TalentSheetElementKey> = {
           metadata: cond.e4Broken,
           label: 'Enemy Weakness Broken',
           fields: [
-            // TODO: display node?
+            // TODO: Translation
             { title: 'Break Effect', fieldRef: buff.e4_break_.tag },
+            // TODO: Translation? duration?
             { title: 'Turns', fieldValue: dm.e4.duration },
           ],
         },
@@ -261,7 +312,8 @@ const sheet: UISheet<TalentSheetElementKey> = {
     ],
   },
   eidolon5: {
-    name: chg('ranks.5.name'),
+    title: chg('ranks.5.name'),
+    subtitle: <EidolonSubtitle eidolon={5} />,
     img: characterAsset(key, 'eidolon5'),
     documents: [
       {
@@ -272,10 +324,12 @@ const sheet: UISheet<TalentSheetElementKey> = {
         type: 'fields',
         fields: [
           {
+            //TODO: Translate
             title: 'basic',
             fieldRef: buff.eidolon5_basic.tag,
           },
           {
+            //TODO: Translate
             title: 'skill',
             fieldRef: buff.eidolon5_skill.tag,
           },
@@ -284,7 +338,8 @@ const sheet: UISheet<TalentSheetElementKey> = {
     ],
   },
   eidolon6: {
-    name: chg('ranks.6.name'),
+    title: chg('ranks.6.name'),
+    subtitle: <EidolonSubtitle eidolon={6} />,
     img: characterAsset(key, 'eidolon6'),
     documents: [
       {
