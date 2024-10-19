@@ -94,7 +94,7 @@ async function init({
 async function start() {
   let builds: BuildResult[] = []
 
-  function sliceSortSendBuilds() {
+  function sliceSortSendBuilds(skipped = 0) {
     const numBuildsComputed = builds.length
     if (builds.length > MAX_BUILDS) {
       builds.sort((a, b) => b.value - a.value)
@@ -103,7 +103,7 @@ async function start() {
     postMessage({
       resultType: 'results',
       builds,
-      numBuildsComputed,
+      numBuildsComputed: numBuildsComputed + skipped,
     })
     builds = []
   }
@@ -123,7 +123,7 @@ async function start() {
                 sphere.stats,
                 rope.stats,
               ])
-
+              let skipped = 0
               if (
                 constraints.every(({ value, isMax }, i) =>
                   isMax ? results[i + 1] <= value : results[i + 1] >= value
@@ -140,9 +140,11 @@ async function start() {
                     rope: rope.id,
                   },
                 })
+              } else {
+                skipped++
               }
               if (builds.length > MAX_BUILDS_TO_SEND) {
-                sliceSortSendBuilds()
+                sliceSortSendBuilds(skipped)
               }
             })
           })
