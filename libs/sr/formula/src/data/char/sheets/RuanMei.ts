@@ -49,12 +49,7 @@ const sheet = register(
   ...customBreakDmg(
     'talentBreakDmg',
     { ...baseTag, damageType1: 'break' },
-    subscript(char.talent, dm.talent.breakDmg)
-  ),
-  ...customBreakDmg(
-    'techBreakDmg',
-    { ...baseTag, damageType1: 'break' },
-    sum(dm.technique.breakDmg, e6TechniqueAddMult)
+    sum(subscript(char.talent, dm.talent.breakDmg), e6TechniqueAddMult)
   ),
 
   // Buffs
@@ -75,6 +70,7 @@ const sheet = register(
       ultZone.ifOn(subscript(char.ult, dm.ult.resPen_))
     )
   ),
+  // TODO: ultimate actionDelay_ of 20%*BrEff_ + 10%
   registerBuff(
     'talent_spd_',
     notOwnBuff.premod.spd_.add(subscript(char.talent, dm.talent.spd_))

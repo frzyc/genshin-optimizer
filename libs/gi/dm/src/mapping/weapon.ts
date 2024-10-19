@@ -36,6 +36,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   11425: 'FinaleOfTheDeep',
   11426: 'FleuveCendreFerryman',
   11427: 'TheDockhandsAssistant',
+  11430: 'SturdyBone',
   11431: 'FluteOfEzpitzal',
   11501: 'AquilaFavonia',
   11502: 'SkywardBlade',
@@ -52,6 +53,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   11513: 'SplendorOfTranquilWaters',
   11514: 'UrakuMisugiri',
   11515: 'Absolution',
+  11516: 'PeakPatrolSong',
 
   //claymore
   12101: 'WasterGreatsword',
@@ -84,6 +86,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   12426: 'UltimateOverlordsMegaMagicSword',
   12427: 'PortablePowerSaw',
   11428: 'SwordOfNarzissenkreuz',
+  12430: 'FruitfulHook',
   12431: 'EarthShaker',
   12501: 'SkywardPride',
   12502: 'WolfsGravestone',
@@ -122,6 +125,7 @@ export const weaponIdMap: Record<number | string, WeaponKey> = {
   13425: 'RightfulReward',
   13426: 'DialoguesOfTheDesertSages',
   13427: 'ProspectorsDrill',
+  13430: 'MountainBracingBolt',
   13431: 'FootprintOfTheRainbow',
   13501: 'StaffOfHoma',
   13502: 'SkywardSpine',

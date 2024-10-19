@@ -46,6 +46,7 @@ import EngulfingLightning from './EngulfingLightning'
 import EverlastingMoonglow from './EverlastingMoonglow'
 import EyeOfPerception from './EyeOfPerception'
 import FadingTwilight from './FadingTwilight'
+import FangOfTheMountainKing from './FangOfTheMountainKing'
 import FavoniusCodex from './FavoniusCodex'
 import FavoniusGreatsword from './FavoniusGreatsword'
 import FavoniusLance from './FavoniusLance'
@@ -62,6 +63,7 @@ import FootprintOfTheRainbow from './FootprintOfTheRainbow'
 import ForestRegalia from './ForestRegalia'
 import FreedomSworn from './FreedomSworn'
 import Frostbearer from './Frostbearer'
+import FruitfulHook from './FruitfulHook'
 import FruitOfFulfillment from './FruitOfFulfillment'
 import HakushinRing from './HakushinRing'
 import Halberd from './Halberd'
@@ -97,10 +99,12 @@ import MissiveWindspear from './MissiveWindspear'
 import MistsplitterReforged from './MistsplitterReforged'
 import MitternachtsWaltz from './MitternachtsWaltz'
 import Moonpiercer from './Moonpiercer'
+import MountainBracingBolt from './MountainBracingBolt'
 import MouunsMoon from './MouunsMoon'
 import OathswornEye from './OathswornEye'
 import OldMercsPal from './OldMercsPal'
 import OtherworldlyStory from './OtherworldlyStory'
+import PeakPatrolSong from './PeakPatrolSong'
 import PocketGrimoire from './PocketGrimoire'
 import PolarStar from './PolarStar'
 import PortablePowerSaw from './PortablePowerSaw'
@@ -154,6 +158,7 @@ import SongOfStillness from './SongOfStillness'
 import SplendorOfTranquilWaters from './SplendorOfTranquilWaters'
 import StaffOfHoma from './StaffOfHoma'
 import StaffOfTheScarletSands from './StaffOfTheScarletSands'
+import SturdyBone from './SturdyBone'
 import SummitShaper from './SummitShaper'
 import SurfsUp from './SurfsUp'
 import SwordOfDescension from './SwordOfDescension'
@@ -218,6 +223,7 @@ const data: TagMapNodeEntries[] = [
   LightOfFoliarIncision,
   LionsRoar,
   MistsplitterReforged,
+  PeakPatrolSong,
   PrimordialJadeCutter,
   PrototypeRancour,
   RoyalLongsword,
@@ -227,6 +233,7 @@ const data: TagMapNodeEntries[] = [
   SkyriderSword,
   SkywardBlade,
   SplendorOfTranquilWaters,
+  SturdyBone,
   SummitShaper,
   SwordOfDescension,
   SwordOfNarzissenkreuz,
@@ -245,9 +252,11 @@ const data: TagMapNodeEntries[] = [
   BloodtaintedGreatsword,
   DebateClub,
   EarthShaker,
+  FangOfTheMountainKing,
   FavoniusGreatsword,
   FerrousShadow,
   ForestRegalia,
+  FruitfulHook,
   KatsuragikiriNagamasa,
   LithicBlade,
   LuxuriousSeaLord,
@@ -296,6 +305,7 @@ const data: TagMapNodeEntries[] = [
   LumidouceElegy,
   MissiveWindspear,
   Moonpiercer,
+  MountainBracingBolt,
   PrimordialJadeWingedSpear,
   ProspectorsDrill,
   PrototypeStarglitter,

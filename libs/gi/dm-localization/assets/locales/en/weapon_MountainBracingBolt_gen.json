@@ -1,0 +1,24 @@
+{
+  "name": "Mountain-Bracing Bolt",
+  "description": {
+    "0": "This polearm was once jointly forged by the craftsmen in the mines as a sacrifice to the spirits of the mountains."
+  },
+  "passiveName": "Hope Beyond the Peaks",
+  "passiveDescription": {
+    "0": {
+      "0": "Decreases Climbing Stamina Consumption by 15% and increases Elemental Skill DMG by <cryo>12%</cryo>. Also, after other nearby party members use Elemental Skills, the equipping character's Elemental Skill DMG will also increase by <cryo>12%</cryo> for 8s."
+    },
+    "1": {
+      "0": "Decreases Climbing Stamina Consumption by 15% and increases Elemental Skill DMG by <cryo>15%</cryo>. Also, after other nearby party members use Elemental Skills, the equipping character's Elemental Skill DMG will also increase by <cryo>15%</cryo> for 8s."
+    },
+    "2": {
+      "0": "Decreases Climbing Stamina Consumption by 15% and increases Elemental Skill DMG by <cryo>18%</cryo>. Also, after other nearby party members use Elemental Skills, the equipping character's Elemental Skill DMG will also increase by <cryo>18%</cryo> for 8s."
+    },
+    "3": {
+      "0": "Decreases Climbing Stamina Consumption by 15% and increases Elemental Skill DMG by <cryo>21%</cryo>. Also, after other nearby party members use Elemental Skills, the equipping character's Elemental Skill DMG will also increase by <cryo>21%</cryo> for 8s."
+    },
+    "4": {
+      "0": "Decreases Climbing Stamina Consumption by 15% and increases Elemental Skill DMG by <cryo>24%</cryo>. Also, after other nearby party members use Elemental Skills, the equipping character's Elemental Skill DMG will also increase by <cryo>24%</cryo> for 8s."
+    }
+  }
+}

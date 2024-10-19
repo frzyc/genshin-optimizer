@@ -12,6 +12,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
+import { useSrCalcContext } from '../Hook'
 
 export function CharacterCard({
   character,
@@ -20,8 +21,9 @@ export function CharacterCard({
   character: ICachedCharacter
   onClick?: () => void
 }) {
-  const calc = srCalculatorWithEntries(charData(character))
-
+  const calc =
+    useSrCalcContext() ?? srCalculatorWithEntries(charData(character))
+  console.log(own.final.hp.tag)
   return (
     <Stack>
       <CardThemed>

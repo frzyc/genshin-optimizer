@@ -123,7 +123,7 @@ const sheet: SetEffectSheet = {
           })),
           {
             text: stg('duration'),
-            value: 10,
+            value: 15,
             unit: 's',
           },
         ],
@@ -156,7 +156,7 @@ const sheet: SetEffectSheet = {
           })),
           {
             text: stg('duration'),
-            value: 10,
+            value: 20,
             unit: 's',
           },
         ],

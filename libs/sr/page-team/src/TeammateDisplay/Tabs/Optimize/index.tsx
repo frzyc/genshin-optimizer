@@ -3,13 +3,13 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { toDBRead, toRead, type ICachedRelic } from '@genshin-optimizer/sr/db'
 import type { Read } from '@genshin-optimizer/sr/formula'
-import { useSrCalcContext } from '@genshin-optimizer/sr/formula-ui'
 import type { BuildResult, ProgressResult } from '@genshin-optimizer/sr/solver'
 import { MAX_BUILDS, Solver } from '@genshin-optimizer/sr/solver'
 import {
   BuildDisplay,
   LoadoutContext,
   useDatabaseContext,
+  useSrCalcContext,
 } from '@genshin-optimizer/sr/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'

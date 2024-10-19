@@ -1,3 +1,4 @@
+import { constant } from '@genshin-optimizer/pando/engine'
 import { CalcContext } from '@genshin-optimizer/pando/ui-sheet'
 import type {
   CharacterKey,
@@ -13,6 +14,7 @@ import type {
 import type {
   Member,
   SrcCondInfo,
+  Tag,
   TagMapNodeEntries,
 } from '@genshin-optimizer/sr/formula'
 import {
@@ -43,6 +45,7 @@ type CharacterFullData = {
   lightCone: ICachedLightCone | undefined
   relics: Record<RelicSlotKey, ICachedRelic | undefined>
   conditionals: SrcCondInfo | undefined // Assumes dst is the character
+  bonusStats: Array<{ tag: Tag; value: number }>
 }
 type MemberIndexMap = Partial<Record<CharacterKey | 'all', Member | 'all'>>
 
@@ -146,39 +149,49 @@ function useCharacterAndEquipment(
   )
 
   return useMemo(
-    () => ({ character, lightCone, relics, conditionals }),
-    [character, lightCone, conditionals, relics]
+    () => ({
+      character,
+      lightCone,
+      relics,
+      conditionals,
+      bonusStats: loadout?.bonusStats ?? [],
+    }),
+    [character, lightCone, relics, conditionals, loadout]
   )
 }
 
 function createMember(
   memberIndex: 0 | 1 | 2 | 3,
-  { character, lightCone, relics, conditionals }: CharacterFullData
+  { character, lightCone, relics, conditionals, bonusStats }: CharacterFullData
 ): TagMapNodeEntries {
-  return !character
-    ? []
-    : [
-        ...withMember(
-          `${memberIndex}`,
-          ...charData(character),
-          ...lightConeData(lightCone),
-          ...relicsData(
-            Object.values(relics)
-              .filter((relic): relic is ICachedRelic => !!relic)
-              .map((relic) => ({
-                set: relic.setKey,
-                stats: [
-                  ...relic.substats
-                    .filter(({ key }) => key !== '')
-                    .map((substat) => ({
-                      key: substat.key as RelicSubStatKey, // Safe because of the above filter
-                      value: substat.accurateValue,
-                    })),
-                  { key: relic.mainStatKey, value: relic.mainStatVal },
-                ],
-              }))
-          )
-        ),
-        ...conditionalData(`${memberIndex}`, conditionals),
-      ]
+  if (!character) return []
+  const memberData = withMember(
+    `${memberIndex}`,
+    ...charData(character),
+    ...lightConeData(lightCone),
+    ...relicsData(
+      Object.values(relics)
+        .filter((relic): relic is ICachedRelic => !!relic)
+        .map((relic) => ({
+          set: relic.setKey,
+          stats: [
+            ...relic.substats
+              .filter(({ key }) => key !== '')
+              .map((substat) => ({
+                key: substat.key as RelicSubStatKey, // Safe because of the above filter
+                value: substat.accurateValue,
+              })),
+            { key: relic.mainStatKey, value: relic.mainStatVal },
+          ],
+        }))
+    ),
+    ...bonusStats.map(({ tag, value }) => ({
+      tag: {
+        ...tag,
+      },
+      value: constant(value),
+    }))
+  )
+
+  return [...memberData, ...conditionalData(`${memberIndex}`, conditionals)]
 }

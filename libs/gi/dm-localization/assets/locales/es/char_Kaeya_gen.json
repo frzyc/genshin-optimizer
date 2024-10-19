@@ -135,7 +135,7 @@
     "description": {
       "0": "Cuando la Vida de Kaeya cae por debajo del 20%:",
       "1": [
-        "Crea un escudo que absorbe daño en una cantidad equivalente al 30% de su Vida Máx. durante 20 s.",
+        "Crea un escudo que absorbe daño en una cantidad equivalente al 30% de su Vida Máx. durante 20 s.",
         "El escudo tiene un 250% de efectividad de absorción de <cryo>Daño Cryo</cryo>."
       ],
       "2": "Solo puede ocurrir una vez cada 60 s."

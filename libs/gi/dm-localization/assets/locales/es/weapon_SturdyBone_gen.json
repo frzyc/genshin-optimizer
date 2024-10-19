@@ -1,0 +1,24 @@
+{
+  "name": "Hueso Recio",
+  "description": {
+    "0": "Una larga espada ósea que se ha vuelto más robusta con cada batalla en la que ha luchado. Dicen que se trataba del arma de confianza de la heroína Wanjiru."
+  },
+  "passiveName": "Orgullo del trampero",
+  "passiveDescription": {
+    "0": {
+      "0": "El Coste de Aguante de esprintar o de otras habilidades que sustituyen a esprintar se reduce en un 15%. Además, al esprintar o usar una habilidad que lo sustituya, el daño del Ataque Normal aumenta en una cantidad equivalente al <cryo>16%</cryo> del ATQ. Este efecto se anula tras activarse 18 veces o después de 7 s."
+    },
+    "1": {
+      "0": "El Coste de Aguante de esprintar o de otras habilidades que sustituyen a esprintar se reduce en un 15%. Además, al esprintar o usar una habilidad que lo sustituya, el daño del Ataque Normal aumenta en una cantidad equivalente al <cryo>20%</cryo> del ATQ. Este efecto se anula tras activarse 18 veces o después de 7 s."
+    },
+    "2": {
+      "0": "El Coste de Aguante de esprintar o de otras habilidades que sustituyen a esprintar se reduce en un 15%. Además, al esprintar o usar una habilidad que lo sustituya, el daño del Ataque Normal aumenta en una cantidad equivalente al <cryo>24%</cryo> del ATQ. Este efecto se anula tras activarse 18 veces o después de 7 s."
+    },
+    "3": {
+      "0": "El Coste de Aguante de esprintar o de otras habilidades que sustituyen a esprintar se reduce en un 15%. Además, al esprintar o usar una habilidad que lo sustituya, el daño del Ataque Normal aumenta en una cantidad equivalente al <cryo>28%</cryo> del ATQ. Este efecto se anula tras activarse 18 veces o después de 7 s."
+    },
+    "4": {
+      "0": "El Coste de Aguante de esprintar o de otras habilidades que sustituyen a esprintar se reduce en un 15%. Además, al esprintar o usar una habilidad que lo sustituya, el daño del Ataque Normal aumenta en una cantidad equivalente al <cryo>32%</cryo> del ATQ. Este efecto se anula tras activarse 18 veces o después de 7 s."
+    }
+  }
+}

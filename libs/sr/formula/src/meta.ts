@@ -4247,17 +4247,6 @@ export const formulas = {
         name: 'talentBreakDmg',
       },
     },
-    techBreakDmg: {
-      sheet: 'RuanMei',
-      name: 'techBreakDmg',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'breakDmg',
-        sheet: 'RuanMei',
-        name: 'techBreakDmg',
-      },
-    },
     zoneBreakDmg: {
       sheet: 'RuanMei',
       name: 'zoneBreakDmg',
