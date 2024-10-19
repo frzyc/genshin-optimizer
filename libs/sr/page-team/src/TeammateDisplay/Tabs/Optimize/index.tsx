@@ -99,9 +99,18 @@ export default function Optimize() {
     setProgress(undefined)
     setOptimizing(true)
 
+    // Filter out disabled
+    const statFilters = (optConfig?.statFilters ?? [])
+      .filter(({ disabled }) => !disabled)
+      .map(({ read, value, isMax }) => ({
+        read: toRead(read, charMap),
+        value,
+        isMax,
+      }))
     const optimizer = new Solver(
       calc,
       optTarget,
+      statFilters,
       relicsBySlot,
       numWorkers,
       setProgress
@@ -115,7 +124,14 @@ export default function Optimize() {
 
     setOptimizing(false)
     setBuild(results[0])
-  }, [calc, numWorkers, optTarget, relicsBySlot])
+  }, [
+    calc,
+    charMap,
+    numWorkers,
+    optConfig?.statFilters,
+    optTarget,
+    relicsBySlot,
+  ])
 
   const onCancel = useCallback(() => {
     cancelToken.current()

@@ -35,12 +35,13 @@ export type RelicSetExclusionKey = (typeof allRelicSetExclusionKeys)[number]
 
 export type RelicSetExclusion = Partial<Record<RelicSetExclusionKey, (2 | 4)[]>>
 
-export type StatFilters<R = DBRead> = Array<{
+export type StatFilter<R = DBRead> = {
   read: R
   value: number
   isMax: boolean
   disabled: boolean
-}>
+}
+export type StatFilters<R = DBRead> = Array<StatFilter<R>>
 
 export type GeneratedBuild = {
   lightConeId?: string
