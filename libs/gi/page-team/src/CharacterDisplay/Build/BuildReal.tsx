@@ -9,7 +9,6 @@ import {
   useEquippedInTeam,
 } from '@genshin-optimizer/gi/db-ui'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
-import type { BuildEditContextObj } from '@genshin-optimizer/gi/ui'
 import {
   ArtifactCardNano,
   BuildCard,
@@ -29,13 +28,7 @@ import {
   IconButton,
   TextField,
 } from '@mui/material'
-import {
-  useContext,
-  useDeferredValue,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react'
+import { useContext, useDeferredValue, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export default function BuildReal({
@@ -116,12 +109,7 @@ export default function BuildReal({
   return (
     <>
       <ModalWrapper open={open} onClose={onClose}>
-        <BuildEditor
-          teamId={teamId}
-          teamCharId={teamCharId}
-          buildId={buildId}
-          onClose={onClose}
-        />
+        <BuildEditor buildId={buildId} onClose={onClose} />
       </ModalWrapper>
       <EquipBuildModal
         currentName={t`buildRealCard.copy.equipped`}
@@ -200,13 +188,9 @@ export default function BuildReal({
 }
 
 function BuildEditor({
-  teamId,
-  teamCharId,
   buildId,
   onClose,
 }: {
-  teamId: string
-  teamCharId: string
   buildId: string
   onClose: () => void
 }) {
@@ -230,7 +214,7 @@ function BuildEditor({
     const { name, description } = newBuild
     setName(name)
     setDesc(description)
-  }, [database, buildId, teamId, teamCharId])
+  }, [database, buildId])
 
   useEffect(() => {
     database.builds.set(buildId, (build) => {
@@ -247,11 +231,6 @@ function BuildEditor({
     // Don't need to trigger when buildId is changed, only when the name is changed.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [database, descDeferred])
-
-  const buildEditContextObj = useMemo(
-    () => ({ buildToEdit: buildId } as BuildEditContextObj),
-    [buildId]
-  )
 
   return (
     <CardThemed>
@@ -281,7 +260,7 @@ function BuildEditor({
           minRows={2}
         />
         <Box>
-          <BuildEditContext.Provider value={buildEditContextObj}>
+          <BuildEditContext.Provider value={buildId}>
             <EquippedGrid
               weaponTypeKey={weaponTypeKey}
               weaponId={build.weaponId}

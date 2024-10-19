@@ -27,7 +27,7 @@ export function CompareBuildWrapper(props: WrapperProps) {
 function TeamWrapper({ artIdOrSlot, weaponId, onHide, onEquip }: WrapperProps) {
   const database = useDatabase()
   const { teamCharId } = useContext(TeamCharacterContext)
-  const { buildToEdit } = useContext(BuildEditContext)
+  const buildToEdit = useContext(BuildEditContext)
 
   const newArt = database.arts.get(artIdOrSlot ?? '')
   const currentArtifactIds = database.teams.getEditArtifactIds(
@@ -48,10 +48,7 @@ function TeamWrapper({ artIdOrSlot, weaponId, onHide, onEquip }: WrapperProps) {
   const newWeaponId = weaponId ?? currentWeaponId
   return (
     <EquipBuildModal
-      currentName={
-        (buildToEdit !== '' && database.builds.get(buildToEdit)?.name) ||
-        'Equipped'
-      }
+      currentName={database.builds.get(buildToEdit)?.name ?? 'Equipped'}
       newWeaponId={newWeaponId}
       currentWeaponId={currentWeaponId}
       newArtifactIds={newArtifactIds}

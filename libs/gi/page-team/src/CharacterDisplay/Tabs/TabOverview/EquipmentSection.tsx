@@ -11,7 +11,6 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import { dataSetEffects } from '@genshin-optimizer/gi/sheets'
 import { getCharStat } from '@genshin-optimizer/gi/stats'
-import type { BuildEditContextObj } from '@genshin-optimizer/gi/ui'
 import {
   BuildEditContext,
   DataContext,
@@ -70,10 +69,7 @@ export default function EquipmentSection() {
     [data]
   )
 
-  const buildEditContextObj = useMemo(() => {
-    const buildToEdit = buildType === 'equipped' ? 'equipped' : buildId
-    return { buildToEdit } as BuildEditContextObj
-  }, [buildId, buildType])
+  const editBuildId = buildType === 'equipped' ? 'equipped' : buildId
 
   return (
     <Box>
@@ -92,7 +88,7 @@ export default function EquipmentSection() {
           </Grid>
         )}
         <Grid item xs={12} md={12} lg={9} xl={9}>
-          <BuildEditContext.Provider value={buildEditContextObj}>
+          <BuildEditContext.Provider value={editBuildId}>
             <EquippedGrid
               weaponTypeKey={weaponTypeKey}
               weaponId={weaponId}

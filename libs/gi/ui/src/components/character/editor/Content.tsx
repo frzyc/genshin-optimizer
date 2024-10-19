@@ -22,7 +22,6 @@ import { Box, Button, Grid, IconButton, Typography } from '@mui/material'
 import { useCallback, useContext, useEffect, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import type { BuildEditContextObj } from '../../../context'
 import { BuildEditContext, DataContext, SillyContext } from '../../../context'
 import { AddTeamInfo } from '../../AddTeamInfo'
 import { LevelSelect } from '../../LevelSelect'
@@ -183,11 +182,9 @@ function EquipmentSection() {
     [data]
   )
 
-  const buildEditContextObj = { buildToEdit: 'equipped' } as BuildEditContextObj
-
   return (
     <Box>
-      <BuildEditContext.Provider value={buildEditContextObj}>
+      <BuildEditContext.Provider value={'equipped'}>
         <EquippedGrid
           weaponTypeKey={weaponTypeKey}
           weaponId={weaponId}
