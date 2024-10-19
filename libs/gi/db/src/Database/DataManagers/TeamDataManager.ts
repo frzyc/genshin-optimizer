@@ -285,6 +285,19 @@ export class TeamDataManager extends DataManager<
     buildId,
     teamCharId,
   }: LoadoutDatum): string | undefined {
+    return this.#getWeaponId(teamCharId, buildType, buildId)
+  }
+
+  getEditWeaponId(buildToEdit: string, teamCharId: string): string | undefined {
+    const editType = buildToEdit === 'equipped' ? 'equipped' : 'real'
+    return this.#getWeaponId(teamCharId, editType, buildToEdit)
+  }
+
+  #getWeaponId(
+    teamCharId: string,
+    buildType: BuildTypeKey,
+    buildId: string
+  ): string | undefined {
     const teamChar = this.database.teamChars.get(teamCharId)
     if (!teamChar) return undefined
     const { key: characterKey } = teamChar
@@ -302,6 +315,7 @@ export class TeamDataManager extends DataManager<
     }
     return undefined
   }
+
   /**
    *
    * @param teamCharId
@@ -350,14 +364,31 @@ export class TeamDataManager extends DataManager<
       }
     })
   }
+
   /**
    * Note: this doesnt return any artifacts(all undefined) when the current teamchar is using a TC Build.
    */
   getLoadoutArtifactIds({
-    teamCharId,
     buildType,
     buildId,
+    teamCharId,
   }: LoadoutDatum): Record<ArtifactSlotKey, string | undefined> {
+    return this.#getArtifactIds(teamCharId, buildType, buildId)
+  }
+
+  getEditArtifactIds(
+    buildToEdit: string,
+    teamCharId: string
+  ): Record<ArtifactSlotKey, string | undefined> {
+    const editType = buildToEdit === 'equipped' ? 'equipped' : 'real'
+    return this.#getArtifactIds(teamCharId, editType, buildToEdit)
+  }
+
+  #getArtifactIds(
+    teamCharId: string,
+    buildType: BuildTypeKey,
+    buildId: string
+  ): Record<ArtifactSlotKey, string | undefined> {
     const teamChar = this.database.teamChars.get(teamCharId)
     if (!teamChar) return objKeyMap(allArtifactSlotKeys, () => undefined)
     const { key: characterKey } = teamChar
@@ -375,6 +406,7 @@ export class TeamDataManager extends DataManager<
     }
     return objKeyMap(allArtifactSlotKeys, () => undefined)
   }
+
   /**
    * Note: this doesnt return any artifacts(all undefined) when the current teamchar is using a TC Build.
    */

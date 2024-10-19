@@ -12,6 +12,7 @@ import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
   ArtifactCardNano,
   BuildCard,
+  BuildEditContext,
   EquipBuildModal,
   EquippedGrid,
   TeammateEquippedAlert,
@@ -48,6 +49,7 @@ export default function BuildReal({
     character: { equippedWeapon, equippedArtifacts },
   } = useContext(CharacterContext)
   const database = useDatabase()
+
   const { name, description, weaponId, artifactIds } = useBuild(buildId)!
   const onActive = () =>
     database.teams.setLoadoutDatum(teamId, teamCharId, {
@@ -229,6 +231,7 @@ function BuildEditor({
     // Don't need to trigger when buildId is changed, only when the name is changed.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [database, descDeferred])
+
   return (
     <CardThemed>
       <CardHeader
@@ -257,19 +260,21 @@ function BuildEditor({
           minRows={2}
         />
         <Box>
-          <EquippedGrid
-            weaponTypeKey={weaponTypeKey}
-            weaponId={build.weaponId}
-            artifactIds={build.artifactIds}
-            setWeapon={(id: string) =>
-              database.builds.set(buildId, { weaponId: id })
-            }
-            setArtifact={(slotKey, id) =>
-              database.builds.set(buildId, (build) => {
-                build.artifactIds[slotKey] = id ? id : undefined
-              })
-            }
-          />
+          <BuildEditContext.Provider value={buildId}>
+            <EquippedGrid
+              weaponTypeKey={weaponTypeKey}
+              weaponId={build.weaponId}
+              artifactIds={build.artifactIds}
+              setWeapon={(id: string) =>
+                database.builds.set(buildId, { weaponId: id })
+              }
+              setArtifact={(slotKey, id) =>
+                database.builds.set(buildId, (build) => {
+                  build.artifactIds[slotKey] = id ? id : undefined
+                })
+              }
+            />
+          </BuildEditContext.Provider>
         </Box>
       </CardContent>
     </CardThemed>

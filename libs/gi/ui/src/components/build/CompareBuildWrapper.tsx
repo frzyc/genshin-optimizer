@@ -7,6 +7,7 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import { useContext } from 'react'
 import { EquipBuildModal } from '.'
+import { BuildEditContext } from '../../context/BuildEditContext'
 
 type WrapperProps = {
   artIdOrSlot?: string | ArtifactSlotKey
@@ -25,10 +26,14 @@ export function CompareBuildWrapper(props: WrapperProps) {
 }
 function TeamWrapper({ artIdOrSlot, weaponId, onHide, onEquip }: WrapperProps) {
   const database = useDatabase()
-  const { loadoutDatum } = useContext(TeamCharacterContext)
+  const { teamCharId } = useContext(TeamCharacterContext)
+  const buildToEdit = useContext(BuildEditContext)
 
   const newArt = database.arts.get(artIdOrSlot ?? '')
-  const currentArtifactIds = database.teams.getLoadoutArtifactIds(loadoutDatum)
+  const currentArtifactIds = database.teams.getEditArtifactIds(
+    buildToEdit,
+    teamCharId
+  )
   const newArtifactIds = objMap(currentArtifactIds, (id, slot) =>
     slot === artIdOrSlot
       ? undefined
@@ -36,15 +41,14 @@ function TeamWrapper({ artIdOrSlot, weaponId, onHide, onEquip }: WrapperProps) {
       ? artIdOrSlot
       : id
   )
-  const currentWeaponId = database.teams.getLoadoutWeaponId(loadoutDatum)
+  const currentWeaponId = database.teams.getEditWeaponId(
+    buildToEdit,
+    teamCharId
+  )
   const newWeaponId = weaponId ?? currentWeaponId
   return (
     <EquipBuildModal
-      currentName={
-        (loadoutDatum.buildType === 'real' &&
-          database.builds.get(loadoutDatum.buildId)?.name) ||
-        'Equipped'
-      }
+      currentName={database.builds.get(buildToEdit)?.name ?? 'Equipped'}
       newWeaponId={newWeaponId}
       currentWeaponId={currentWeaponId}
       newArtifactIds={newArtifactIds}
