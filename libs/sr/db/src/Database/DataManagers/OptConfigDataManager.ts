@@ -16,9 +16,10 @@ import {
   allRelicSlotKeys,
   relicSlotToMainStatKeys,
 } from '@genshin-optimizer/sr/consts'
+import type { Read } from '@genshin-optimizer/sr/formula'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
-import type { DBRead } from './dbRead'
+import { validateTag } from '../tagUtil'
 
 export const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10] as const
 export const maxBuildsToShowDefault = 5
@@ -35,13 +36,13 @@ export type RelicSetExclusionKey = (typeof allRelicSetExclusionKeys)[number]
 
 export type RelicSetExclusion = Partial<Record<RelicSetExclusionKey, (2 | 4)[]>>
 
-export type StatFilter<R = DBRead> = {
-  read: R
+export type StatFilter = {
+  read: Read
   value: number
   isMax: boolean
   disabled: boolean
 }
-export type StatFilters<R = DBRead> = Array<StatFilter<R>>
+export type StatFilters = Array<StatFilter>
 
 export type GeneratedBuild = {
   lightConeId?: string
@@ -63,7 +64,7 @@ export interface OptConfig {
   allowLocationsState: AllowLocationsState
   relicExclusion: string[]
   useExcludedRelics: boolean
-  optimizationTarget?: DBRead
+  optimizationTarget?: Read
   mainStatAssumptionLevel: number
   allowPartial: boolean
   maxBuildsToShow: number
@@ -117,6 +118,7 @@ export class OptConfigDataManager extends DataManager<
         statFilter as UnArray<StatFilters>
       // TODO: Read validation
       if (typeof read !== 'object') return false
+      if (!validateTag(read.tag)) return false
       if (typeof value !== 'number') return false
       if (typeof isMax !== 'boolean') return false
       if (typeof disabled !== 'boolean') return false
@@ -142,6 +144,8 @@ export class OptConfigDataManager extends DataManager<
 
     // TODO: Read validation
     if (typeof optimizationTarget !== 'object') optimizationTarget = undefined
+    if (optimizationTarget?.tag && !validateTag(optimizationTarget.tag))
+      optimizationTarget = undefined
     if (
       typeof mainStatAssumptionLevel !== 'number' ||
       mainStatAssumptionLevel < 0 ||

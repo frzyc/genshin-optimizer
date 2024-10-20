@@ -90,7 +90,6 @@ export const sheets = [
   'enemy',
   'custom',
 ] as const
-export const members = ['0', '1', '2', '3'] as const
 export const presets = [
   'preset0',
   'preset1',
@@ -104,6 +103,7 @@ export const presets = [
   'preset9',
 ] as const
 
+export const members = [...allCharacterKeys] as const
 export type Stat = (typeof stats)[number]
 export type BonusAbility = (typeof bonusAbilities)[number]
 export type StatBoost = (typeof statBoosts)[number]
