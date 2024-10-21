@@ -47,7 +47,9 @@ type CharacterFullData = {
   conditionals: SrcCondInfo | undefined // Assumes dst is the character
   bonusStats: Array<{ tag: Tag; value: number }>
 }
-
+/**
+ * @deprecated move to page-team
+ */
 export function TeamCalcProvider({
   teamId,
   currentChar,

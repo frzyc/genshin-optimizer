@@ -42,19 +42,19 @@ const sheet: UISheet<TalentSheetElementKey> = {
           badge: (_, value) => (value === 0 ? null : value === 1 ? '1' : '2'),
         },
       },
-      {
-        type: 'conditional',
-        conditional: {
-          header: {
-            icon: <ImgIcon src={characterAsset(key, 'skill_0')} />,
-            text: 'Num Conditional No Max',
-            additional: <SqBadge>Skill</SqBadge>,
-          },
-          metadata: conditionals.Arlan.numConditionalNoMax,
-          label: 'Num stacks',
-          badge: 'Stacks',
-        },
-      },
+      // {
+      //   type: 'conditional',
+      //   conditional: {
+      //     header: {
+      //       icon: <ImgIcon src={characterAsset(key, 'skill_0')} />,
+      //       text: 'Num Conditional No Max',
+      //       additional: <SqBadge>Skill</SqBadge>,
+      //     },
+      //     metadata: conditionals.Arlan.numConditionalNoMax,
+      //     label: 'Num stacks',
+      //     badge: 'Stacks',
+      //   },
+      // },
       {
         type: 'conditional',
         conditional: {

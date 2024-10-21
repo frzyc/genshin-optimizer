@@ -26,6 +26,8 @@ export type ComboMetaDataum = {
   compareType: BuildTypeKey
   compareBuildId: string
   compareBuildTcId: string
+
+  optConfigId?: string
 }
 export interface Combo {
   name: string
@@ -102,6 +104,7 @@ export class ComboDataManager extends DataManager<
           compareType,
           compareBuildId,
           compareBuildTcId,
+          optConfigId,
         } = comboMetadatum
 
         if (!allCharacterKeys.includes(characterKey)) return undefined
@@ -144,6 +147,9 @@ export class ComboDataManager extends DataManager<
           if (compareType === 'tc') compareType = 'equipped'
         }
 
+        if (optConfigId && !this.database.optConfigs.keys.includes(optConfigId))
+          optConfigId = undefined
+
         return {
           characterKey,
           buildType,
@@ -153,6 +159,7 @@ export class ComboDataManager extends DataManager<
           compareType,
           compareBuildId,
           compareBuildTcId,
+          optConfigId,
         } as ComboMetaDataum
       })
     }
@@ -212,6 +219,15 @@ export class ComboDataManager extends DataManager<
     const id = this.generateKey()
     this.set(id, value)
     return id
+  }
+  override remove(comboId: string, notify?: boolean): Combo | undefined {
+    const rem = super.remove(comboId, notify)
+    if (!rem) return
+    rem.comboMetadata.forEach((comboMetadatum) => {
+      comboMetadatum?.optConfigId &&
+        this.database.optConfigs.remove(comboMetadatum?.optConfigId)
+    })
+    return rem
   }
   override clear(): void {
     super.clear()

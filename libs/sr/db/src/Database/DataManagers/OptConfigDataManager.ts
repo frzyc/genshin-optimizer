@@ -5,11 +5,7 @@ import {
   objKeyMap,
   validateArr,
 } from '@genshin-optimizer/common/util'
-import type {
-  CharacterKey,
-  RelicMainStatKey,
-  RelicSlotKey,
-} from '@genshin-optimizer/sr/consts'
+import type { CharacterKey, RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterKeys,
   allRelicSetKeys,
@@ -53,10 +49,10 @@ export interface OptConfig {
   relicSetExclusion: RelicSetExclusion
   statFilters: StatFilters
   mainStatKeys: {
-    body: RelicMainStatKey[]
-    feet: RelicMainStatKey[]
-    sphere: RelicMainStatKey[]
-    rope: RelicMainStatKey[]
+    body: (typeof relicSlotToMainStatKeys)['body'][number][]
+    feet: (typeof relicSlotToMainStatKeys)['feet'][number][]
+    sphere: (typeof relicSlotToMainStatKeys)['sphere'][number][]
+    rope: (typeof relicSlotToMainStatKeys)['rope'][number][]
     head?: never
     hands?: never
   }

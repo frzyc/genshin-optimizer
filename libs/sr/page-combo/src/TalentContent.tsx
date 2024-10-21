@@ -52,11 +52,11 @@ export default function CharacterTalentPane() {
   // TODO: for TC overrides
   // const { buildTc, setBuildTc } = useContext(BuildTcContext)
 
-  const skillBurstList: [TalentSheetElementKey, string][] = [
-    ['basic', t('ability.basic')],
-    ['skill', t('ability.skill')],
-    ['ult', t('ability.ult')],
-    ['talent', t('ability.talent')],
+  const skillBurstList: TalentSheetElementKey[] = [
+    'basic',
+    'skill',
+    'ult',
+    'talent',
   ] as const
   // const passivesList: [
   //   tKey: TalentSheetElementKey,
@@ -81,11 +81,6 @@ export default function CharacterTalentPane() {
         return (
           <SkillDisplayCard
             talentKey={`eidolon${i}` as TalentSheetElementKey}
-            subtitle={
-              <span>
-                {t('eidolonLvl')} {i}
-              </span>
-            }
             sheetElement={ele}
             onClickTitle={() =>
               // buildTc?.character
@@ -100,7 +95,7 @@ export default function CharacterTalentPane() {
           />
         )
       }),
-    [characterKey, characterSheet, database.chars, eidolon, t]
+    [characterKey, characterSheet, database.chars, eidolon]
   )
 
   if (!characterSheet || !calc) return
@@ -144,14 +139,13 @@ export default function CharacterTalentPane() {
         )}
         <Grid item xs={12} md={12} lg={9} container spacing={1}>
           {/* auto, skill, burst */}
-          {skillBurstList.map(([tKey, tText]) => {
+          {skillBurstList.map((tKey) => {
             const sheetElement = characterSheet[tKey]
             if (!sheetElement) return null
             return (
               <Grid item key={tKey} {...talentSpacing}>
                 <SkillDisplayCard
                   talentKey={tKey}
-                  subtitle={tText}
                   sheetElement={sheetElement}
                 />
               </Grid>
@@ -242,13 +236,11 @@ export default function CharacterTalentPane() {
 type SkillDisplayCardProps = {
   sheetElement: UISheetElement
   talentKey: TalentSheetElementKey
-  subtitle: ReactNode
   onClickTitle?: () => void
 }
 function SkillDisplayCard({
   sheetElement,
   talentKey,
-  subtitle,
   onClickTitle,
 }: SkillDisplayCardProps) {
   const {

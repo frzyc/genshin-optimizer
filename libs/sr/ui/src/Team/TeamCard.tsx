@@ -8,7 +8,9 @@ import {
   Typography,
 } from '@mui/material'
 import { useDatabaseContext } from '../Context'
-
+/**
+ * @deprecated move to page-team
+ */
 export function TeamCard({
   teamId,
   bgTheme = 'light',

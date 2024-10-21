@@ -18,7 +18,9 @@ import { TeamCard } from './TeamCard'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const amtPerSize = { xs: 5, sm: 5, md: 10, lg: 10, xl: 10 }
-
+/**
+ * @deprecated move to page-team
+ */
 export function TeamInventory() {
   const { database } = useDatabaseContext()
   const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()

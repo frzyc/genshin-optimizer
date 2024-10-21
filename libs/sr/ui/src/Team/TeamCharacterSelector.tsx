@@ -26,7 +26,9 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useDatabaseContext } from '../Context'
-
+/**
+ * @deprecated move to page-team
+ */
 export function TeamCharacterSelector({
   teamId,
   charKey,

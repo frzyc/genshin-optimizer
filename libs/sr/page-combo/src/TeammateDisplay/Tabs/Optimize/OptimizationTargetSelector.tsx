@@ -40,7 +40,7 @@ export function OptimizationTargetSelector({
           {/* Show DMG type */}
           <Box sx={{ display: 'flex', gap: 1, ml: 1 }}>
             {getDmgType(read.tag).map((dmgType) => (
-              <SqBadge>{dmgType}</SqBadge>
+              <SqBadge key={dmgType}>{dmgType}</SqBadge>
             ))}
           </Box>
         </MenuItem>
