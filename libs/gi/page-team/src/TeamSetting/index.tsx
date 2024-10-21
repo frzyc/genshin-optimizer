@@ -155,12 +155,14 @@ function TeamEditor({
           }
         })
       } else if (
-        team.loadoutData[existingIndex]?.teamCharId !==
-        loadoutData[existingIndex]!.teamCharId
-      ) {
         // Only relevant during multi-selection when the teamChar at loadoutData[existingIndex] is moved to
         // selectedIndex due to inserting a different teamChar at existingIndex, but loadoutData[selectedIndex]
-        // is undefined. This condition should never be true during single selection.
+        // is undefined. Comparison needs to be done against the team data currently in the database
+        // to account for any changes made by selections that have already been processed. This condition should
+        // never be true during single selection.
+        database.teams.get(teamId)!.loadoutData[existingIndex]?.teamCharId !==
+        loadoutData[existingIndex]!.teamCharId
+      ) {
         database.teams.set(teamId, (team) => {
           team.loadoutData[selectedIndex] = loadoutData[existingIndex]
         })

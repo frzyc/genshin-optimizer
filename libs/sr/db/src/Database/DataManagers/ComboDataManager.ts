@@ -436,13 +436,4 @@ export class ComboDataManager extends DataManager<
       }
     })
   }
-  getMember(comboId: string, characterKey: CharacterKey): Member {
-    const combo = this.get(comboId)
-    if (!combo) return '0'
-    const memberIndex = combo.comboMetadata.findIndex(
-      (comboMetadatum) => comboMetadatum?.characterKey === characterKey
-    )
-    if (memberIndex === -1) return '0'
-    return `${memberIndex}` as Member
-  }
 }

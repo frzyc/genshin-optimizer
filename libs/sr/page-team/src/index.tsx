@@ -1,6 +1,4 @@
 import { CardThemed, useTitle } from '@genshin-optimizer/common/ui'
-import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import { members } from '@genshin-optimizer/sr/formula'
 import type {
   CharacterContextObj,
   LoadoutContextObj,
@@ -117,19 +115,11 @@ function Page({ teamId }: { teamId: string }) {
   const loadout = useLoadout(loadoutId ?? '')
   const loadoutContextObj: LoadoutContextObj | undefined = useMemo(() => {
     if (!loadoutId || !loadout || !loadoutMetadatum) return undefined
-    const charMap = {
-      ...team.loadoutMetadata.map(
-        (ldata) => ldata && database.loadouts.get(ldata.loadoutId)?.key
-      ),
-    } as unknown as Record<'0' | '1' | '2' | '3', CharacterKey>
-    return { teamId, team, loadoutId, loadout, loadoutMetadatum, charMap }
-  }, [loadoutId, loadout, loadoutMetadatum, team, teamId, database])
+    return { teamId, team, loadoutId, loadout, loadoutMetadatum }
+  }, [loadoutId, loadout, loadoutMetadatum, team, teamId])
 
   return (
-    <TeamCalcProvider
-      teamId={teamId}
-      currentIndex={members[loadoutMetadatumIndex]}
-    >
+    <TeamCalcProvider teamId={teamId} currentChar={characterKey}>
       <Box
         sx={{ display: 'flex', gap: 1, flexDirection: 'column', mx: 1, mt: 2 }}
       >

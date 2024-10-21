@@ -1,8 +1,7 @@
 import { NumberInputLazy } from '@genshin-optimizer/common/ui'
 import type { UnArray } from '@genshin-optimizer/common/util'
-import { toDBRead, toRead, type StatFilters } from '@genshin-optimizer/sr/db'
+import { type StatFilters } from '@genshin-optimizer/sr/db'
 import type { Read } from '@genshin-optimizer/sr/formula'
-import { LoadoutContext } from '@genshin-optimizer/sr/ui'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -15,7 +14,7 @@ import {
   IconButton,
   InputAdornment,
 } from '@mui/material'
-import { useCallback, useContext, useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 import { OptimizationTargetSelector } from './OptimizationTargetSelector'
 
 type OptimizationTargetEditorListProps = {
@@ -29,22 +28,20 @@ export default function OptimizationTargetEditorList({
   setStatFilters,
   disabled = false,
 }: OptimizationTargetEditorListProps) {
-  const { charMap } = useContext(LoadoutContext)
   const setTarget = useCallback(
     (read: Read, oldIndex?: number) => {
       const statFilters_ = structuredClone(statFilters)
-      const dbRead = toDBRead(read, charMap)
       if (typeof oldIndex === 'undefined')
         statFilters_.push({
-          read: dbRead,
+          read,
           value: 0,
           isMax: false,
           disabled: false,
         })
-      else statFilters_[oldIndex].read = dbRead
+      else statFilters_[oldIndex].read = read
       setStatFilters(statFilters_)
     },
-    [charMap, setStatFilters, statFilters]
+    [setStatFilters, statFilters]
   )
 
   const delTarget = useCallback(
@@ -82,12 +79,12 @@ export default function OptimizationTargetEditorList({
   const statFilterWithRead = useMemo(
     () =>
       statFilters.map(({ read, value, isMax, disabled }) => ({
-        read: toRead(read, charMap),
+        read,
         value,
         isMax,
         disabled,
       })),
-    [charMap, statFilters]
+    [statFilters]
   )
 
   return (
@@ -120,7 +117,7 @@ function OptimizationTargetEditorItem({
   setDisabled,
   disabled,
 }: {
-  statFilter: UnArray<StatFilters<Read>>
+  statFilter: UnArray<StatFilters>
   setTarget: (read: Read) => void
   delTarget: () => void
   setTargetValue: (value: number) => void

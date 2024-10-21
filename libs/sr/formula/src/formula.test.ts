@@ -35,7 +35,7 @@ describe('character test', () => {
     const charKey: CharacterKey = 'March7th'
     const data: TagMapNodeEntries = [
       ...withMember(
-        '0',
+        'March7th',
         ...charData({
           level: lvl,
           ascension: ascension as AscensionKey,
@@ -52,11 +52,11 @@ describe('character test', () => {
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
 
-    const member0 = convert(ownTag, { et: 'own', src: '0' })
-    expect(calc.compute(member0.final.atk).val).toBeCloseTo(atk)
-    expect(calc.compute(member0.final.def).val).toBeCloseTo(def)
-    expect(calc.compute(member0.final.hp).val).toBeCloseTo(hp)
-    expect(calc.compute(member0.final.spd).val).toBeCloseTo(spd)
+    const m7 = convert(ownTag, { et: 'own', src: 'March7th' })
+    expect(calc.compute(m7.final.atk).val).toBeCloseTo(atk)
+    expect(calc.compute(m7.final.def).val).toBeCloseTo(def)
+    expect(calc.compute(m7.final.hp).val).toBeCloseTo(hp)
+    expect(calc.compute(m7.final.spd).val).toBeCloseTo(spd)
   })
 })
 
@@ -69,7 +69,7 @@ describe('lightCone test', () => {
     const lcKey: LightConeKey = 'Arrows'
     const data: TagMapNodeEntries = [
       ...withMember(
-        '0',
+        'March7th',
         ...charData({
           level: 1,
           ascension: 0,
@@ -96,7 +96,7 @@ describe('lightCone test', () => {
 
     const lightCone0 = convert(ownTag, {
       et: 'own',
-      src: '0',
+      src: 'March7th',
       sheet: 'lightCone',
     })
     expect(calc.compute(lightCone0.base.atk).val).toBeCloseTo(atk)
@@ -112,7 +112,7 @@ describe('char+lightCone test', () => {
 
     const data: TagMapNodeEntries = [
       ...withMember(
-        '0',
+        'March7th',
         ...charData({
           level: 1,
           ascension: 0,
@@ -136,8 +136,8 @@ describe('char+lightCone test', () => {
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
-    const member0 = convert(ownTag, { et: 'own', src: '0' })
-    expect(calc.compute(member0.final.atk).val).toBeCloseTo(81.6)
+    const m7 = convert(ownTag, { et: 'own', src: 'March7th' })
+    expect(calc.compute(m7.final.atk).val).toBeCloseTo(81.6)
   })
 })
 describe('sheet', () => {

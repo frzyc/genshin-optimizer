@@ -1,7 +1,7 @@
 import { ScrollTop } from '@genshin-optimizer/common/ui'
 import '@genshin-optimizer/sr/i18n' // import to load translations
 import { theme } from '@genshin-optimizer/sr/theme'
-import { CharacterProvider, DatabaseProvider } from '@genshin-optimizer/sr/ui'
+import { DatabaseProvider } from '@genshin-optimizer/sr/ui'
 import {
   Box,
   Container,
@@ -35,12 +35,10 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline enableColorScheme />
         <DatabaseProvider>
-          <CharacterProvider>
-            <HashRouter basename="/">
-              <Content />
-              <ScrollTop />
-            </HashRouter>
-          </CharacterProvider>
+          <HashRouter basename="/">
+            <Content />
+            <ScrollTop />
+          </HashRouter>
         </DatabaseProvider>
       </ThemeProvider>
     </StyledEngineProvider>
