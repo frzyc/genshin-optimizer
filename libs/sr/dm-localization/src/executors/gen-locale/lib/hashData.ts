@@ -44,29 +44,9 @@ export const HashData = {
   common: {
     level: '-636045037', // Level
     lv: '982642653', // Lv.
+    path_one: '-1952347303', // Path
+    path_other: '-815380608', // Paths
     rarity: '1898197464',
-  },
-
-  teams: {
-    label: '-839489437', // Team
-    name: '858715661', // Team Name
-    editTeam: '-756448810',
-  },
-
-  paths: {
-    label: {
-      one: '-1952347303', // Path
-      many: '-815380608', // Paths
-    },
-    pathKey: {
-      Erudition: '-953720572',
-      Preservation: '-1357005099',
-      Abundance: '1371878256',
-      Nihility: '-1760289626',
-      Destruction: '209078842',
-      Harmony: '-194205685',
-      TheHunt: '612363369',
-    },
   },
 
   statKey: {
@@ -95,5 +75,11 @@ export const HashData = {
     dmg_: '-907763317',
     weakness_: '-1297647890',
     resPen_: '-538204877',
+  },
+
+  teams: {
+    team: '-839489437', // Team
+    name: '858715661', // Team Name
+    editTeam: '-756448810',
   },
 }

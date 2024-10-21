@@ -1,10 +1,8 @@
 export const charHashData = {
-  label: {
-    one: '-1435714104', // Character
-    many: '-676993900', // Characters
-  },
+  character_one: '-1435714104', // Character
+  character_other: '-676993900', // Characters
   eidolonLvl: '1102721995', // "Eidolon Level:"
-  traces: '1252031000',
+  traces: '1252031000', // Traces
   type: {
     physical: '-1101149179',
     quantum: '88513016',
@@ -13,6 +11,15 @@ export const charHashData = {
     wind: '-1513894875',
     fire: '-1474263915',
     imaginary: '118034640',
+  },
+  path: {
+    Erudition: '-953720572',
+    Preservation: '-1357005099',
+    Abundance: '1371878256',
+    Nihility: '-1760289626',
+    Destruction: '209078842',
+    Harmony: '-194205685',
+    TheHunt: '612363369',
   },
   ability: {
     basic: '216145179',
