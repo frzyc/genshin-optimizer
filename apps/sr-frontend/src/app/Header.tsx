@@ -68,6 +68,13 @@ const teams: ITab = {
   value: 'teams',
   textSuffix: <TeamsTab key="teamAdd" />,
 }
+const combos: ITab = {
+  i18Key: 'tabs.combos',
+  icon: <TeamsIcon />,
+  to: '/combos',
+  value: 'combos',
+  textSuffix: <CombosTab key="teamAdd" />,
+}
 
 const settings: ITab = {
   i18Key: 'tabs.settings',
@@ -102,6 +109,10 @@ function TeamsTab() {
   const { database } = useDatabaseContext()
   return <Tally>{useDatabaseTally(database.teams)}</Tally>
 }
+function CombosTab() {
+  const { database } = useDatabaseContext()
+  return <Tally>{useDatabaseTally(database.combos)}</Tally>
+}
 
 export default function Header({ anchor }: { anchor: string }) {
   return (
@@ -111,7 +122,14 @@ export default function Header({ anchor }: { anchor: string }) {
   )
 }
 
-const maincontent = [relics, lightCones, characters, teams, settings] as const
+const maincontent = [
+  relics,
+  lightCones,
+  characters,
+  teams,
+  combos,
+  settings,
+] as const
 
 function HeaderContent({ anchor }: { anchor: string }) {
   const theme = useTheme()
@@ -209,7 +227,14 @@ function DesktopHeader({
   )
 }
 
-const mobileContent = [relics, lightCones, characters, teams, settings] as const
+const mobileContent = [
+  relics,
+  lightCones,
+  characters,
+  teams,
+  combos,
+  settings,
+] as const
 function MobileHeader({
   anchor,
   currentTab,

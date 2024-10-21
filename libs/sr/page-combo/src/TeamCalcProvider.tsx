@@ -1,4 +1,3 @@
-import { notEmpty } from '@genshin-optimizer/common/util'
 import { constant } from '@genshin-optimizer/pando/engine'
 import { CalcContext } from '@genshin-optimizer/pando/ui-sheet'
 import type {
@@ -7,73 +6,72 @@ import type {
   RelicSubStatKey,
 } from '@genshin-optimizer/sr/consts'
 import type {
+  ComboMetaDataum,
   ICachedCharacter,
   ICachedLightCone,
   ICachedRelic,
-  LoadoutMetadatum,
 } from '@genshin-optimizer/sr/db'
 import type {
-  SrcCondInfo,
-  Tag,
+  Member,
+  Preset,
   TagMapNodeEntries,
 } from '@genshin-optimizer/sr/formula'
 import {
   charData,
-  conditionalData,
+  conditionalEntries,
   enemyDebuff,
   lightConeData,
+  members,
   ownBuff,
   relicsData,
   srCalculatorWithEntries,
   teamData,
   withMember,
+  withPreset,
 } from '@genshin-optimizer/sr/formula'
-import type { ReactNode } from 'react'
-import { useMemo } from 'react'
-import { useDatabaseContext } from '../Context'
 import {
   useBuild,
   useCharacter,
+  useCombo,
   useEquippedRelics,
-  useLoadout,
-  useTeam,
-} from '../Hook'
-import { useLightCone } from '../Hook/useLightCone'
+  useLightCone,
+} from '@genshin-optimizer/sr/ui'
+import type { ReactNode } from 'react'
+import { useContext, useMemo } from 'react'
+import { PresetContext } from './context'
 
 type CharacterFullData = {
   character: ICachedCharacter | undefined
   lightCone: ICachedLightCone | undefined
   relics: Record<RelicSlotKey, ICachedRelic | undefined>
-  conditionals: SrcCondInfo | undefined // Assumes dst is the character
-  bonusStats: Array<{ tag: Tag; value: number }>
 }
 
 export function TeamCalcProvider({
-  teamId,
+  comboId,
   currentChar,
   children,
 }: {
-  teamId: string
+  comboId: string
   currentChar?: CharacterKey
   children: ReactNode
 }) {
-  const { database } = useDatabaseContext()
-  const team = useTeam(teamId)!
-  const member0 = useCharacterAndEquipment(team.loadoutMetadata[0])
-  const member1 = useCharacterAndEquipment(team.loadoutMetadata[1])
-  const member2 = useCharacterAndEquipment(team.loadoutMetadata[2])
-  const member3 = useCharacterAndEquipment(team.loadoutMetadata[3])
+  const combo = useCombo(comboId)!
+  const { presetIndex } = useContext(PresetContext)
+  const member0 = useCharacterAndEquipment(combo.comboMetadata[0])
+  const member1 = useCharacterAndEquipment(combo.comboMetadata[1])
+  const member2 = useCharacterAndEquipment(combo.comboMetadata[2])
+  const member3 = useCharacterAndEquipment(combo.comboMetadata[3])
 
   const calc = useMemo(
     () =>
       srCalculatorWithEntries([
         // Specify members present in the team
         ...teamData(
-          team.loadoutMetadata
-            .map(
-              (meta) => database.loadouts.get(meta?.loadoutId)?.key ?? undefined
+          combo.comboMetadata
+            .map((meta, index) =>
+              meta === undefined ? undefined : members[index]
             )
-            .filter(notEmpty)
+            .filter((m): m is Member => !!m)
         ),
         // Add actual member data
         ...(member0 ? createMember(member0) : []),
@@ -86,15 +84,37 @@ export function TeamCalcProvider({
         enemyDebuff.common.isBroken.add(0),
         enemyDebuff.common.maxToughness.add(100),
         ownBuff.common.critMode.add('avg'),
+        ...combo.conditionals.flatMap(
+          ({ sheet, src, dst, condKey, condValues }) =>
+            condValues.flatMap((condValue, frameIndex) =>
+              withPreset(
+                `preset${frameIndex}` as Preset,
+                conditionalEntries(sheet, src, dst)(condKey, condValue)
+              )
+            )
+        ),
+        ...combo.bonusStats.flatMap(({ tag, values }) =>
+          values.flatMap((value, frameIndex) =>
+            withPreset(`preset${frameIndex}` as Preset, {
+              tag: { ...tag },
+              value: constant(value),
+            })
+          )
+        ),
       ]),
-    [member0, member1, member2, member3, team.loadoutMetadata, database]
+    [combo, member0, member1, member2, member3]
   )
 
   const calcWithTag = useMemo(
     () =>
-      (currentChar && calc?.withTag({ src: currentChar, dst: currentChar })) ??
+      (currentChar &&
+        calc?.withTag({
+          src: currentChar,
+          dst: currentChar,
+          preset: `preset${presetIndex}` as Preset,
+        })) ??
       null,
-    [calc, currentChar]
+    [calc, currentChar, presetIndex]
   )
 
   return (
@@ -103,36 +123,20 @@ export function TeamCalcProvider({
 }
 
 function useCharacterAndEquipment(
-  meta: LoadoutMetadatum | undefined
+  meta: ComboMetaDataum | undefined
 ): CharacterFullData | undefined {
-  const loadout = useLoadout(meta?.loadoutId)
-  const character = useCharacter(loadout?.key)
+  const character = useCharacter(meta?.characterKey)
   // TODO: Handle tc build
   const build = useBuild(meta?.buildId)
   const lightCone = useLightCone(build?.lightConeId)
   const relics = useEquippedRelics(build?.relicIds)
-
-  // Convert dbConditionals {CharacterKey: condobject} to calcConditionals {Member: condObject}
-  const conditionals = useMemo(
-    () =>
-      Object.fromEntries(
-        Object.entries(loadout?.conditional ?? {}).map(([srcKey, srcCond]) => [
-          srcKey,
-          srcCond,
-        ])
-      ),
-    [loadout]
-  )
-
   return useMemo(
     () => ({
       character,
       lightCone,
       relics,
-      conditionals,
-      bonusStats: loadout?.bonusStats ?? [],
     }),
-    [character, lightCone, relics, conditionals, loadout]
+    [character, lightCone, relics]
   )
 }
 
@@ -140,11 +144,10 @@ function createMember({
   character,
   lightCone,
   relics,
-  conditionals,
-  bonusStats,
 }: CharacterFullData): TagMapNodeEntries {
   if (!character) return []
-  const memberData = withMember(
+
+  return withMember(
     character.key,
     ...charData(character),
     ...lightConeData(lightCone),
@@ -163,14 +166,6 @@ function createMember({
             { key: relic.mainStatKey, value: relic.mainStatVal },
           ],
         }))
-    ),
-    ...bonusStats.map(({ tag, value }) => ({
-      tag: {
-        ...tag,
-      },
-      value: constant(value),
-    }))
+    )
   )
-
-  return [...memberData, ...conditionalData(character.key, conditionals)]
 }

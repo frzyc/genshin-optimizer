@@ -75,3 +75,17 @@ export function handleMultiSelect<T>(allKeys: T[]) {
     return [...new Set(toggleArr(arr, v))]
   }
 }
+
+/**
+ * Shorten or pad an array to a certain length, with a default value.
+ * @param array
+ * @param length
+ * @param value
+ */
+export function pruneOrPadArray<T>(array: T[], length: number, value: T) {
+  if (array.length > length) {
+    array.splice(-1, length)
+  } else {
+    array.splice(-1, 0, ...new Array(length - array.length).fill(value))
+  }
+}
