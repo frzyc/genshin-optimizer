@@ -8,6 +8,7 @@ import type { IBuildTc } from '../../Interfaces/IBuildTc'
 import type { ConditionalValues } from '../../Types/conditional'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+import { validateTag } from '../tagUtil'
 import type { Build } from './BuildDataManager'
 import { initCharTC, toBuildTc } from './BuildTcDataManager'
 
@@ -103,8 +104,7 @@ export class LoadoutDataManager extends DataManager<
 
     if (!Array.isArray(bonusStats)) bonusStats = []
     bonusStats.filter(({ tag, value }) => {
-      //TODO: tag validation
-      if (typeof tag !== 'object') return false
+      if (!validateTag(tag)) return false
       if (typeof value !== 'number') return false
       return true
     })

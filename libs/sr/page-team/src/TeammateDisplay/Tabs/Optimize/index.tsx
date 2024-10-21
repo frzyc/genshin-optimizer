@@ -1,7 +1,7 @@
 import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
-import { toDBRead, toRead, type ICachedRelic } from '@genshin-optimizer/sr/db'
+import { type ICachedRelic } from '@genshin-optimizer/sr/db'
 import type { Read } from '@genshin-optimizer/sr/formula'
 import type { BuildResult, ProgressResult } from '@genshin-optimizer/sr/solver'
 import { MAX_BUILDS, Solver } from '@genshin-optimizer/sr/solver'
@@ -44,22 +44,17 @@ export default function Optimize() {
   const [progress, setProgress] = useState<ProgressResult | undefined>(
     undefined
   )
-  const { loadout, charMap } = useContext(LoadoutContext)
+  const { loadout } = useContext(LoadoutContext)
   const optConfig = useDataManagerBase(database.optConfigs, loadout.optConfigId)
 
-  const optTarget = useMemo(
-    () =>
-      optConfig?.optimizationTarget &&
-      toRead(optConfig.optimizationTarget, charMap),
-    [charMap, optConfig]
-  )
+  const optTarget = optConfig?.optimizationTarget
   const setOptTarget = useCallback(
-    (read: Read) => {
+    (optimizationTarget: Read) => {
       database.optConfigs.set(loadout.optConfigId, {
-        optimizationTarget: toDBRead(read, charMap),
+        optimizationTarget,
       })
     },
-    [charMap, database.optConfigs, loadout.optConfigId]
+    [database.optConfigs, loadout.optConfigId]
   )
 
   const relicsBySlot = useMemo(
@@ -103,7 +98,7 @@ export default function Optimize() {
     const statFilters = (optConfig?.statFilters ?? [])
       .filter(({ disabled }) => !disabled)
       .map(({ read, value, isMax }) => ({
-        read: toRead(read, charMap),
+        read,
         value,
         isMax,
       }))
@@ -124,14 +119,7 @@ export default function Optimize() {
 
     setOptimizing(false)
     setBuild(results[0])
-  }, [
-    calc,
-    charMap,
-    numWorkers,
-    optConfig?.statFilters,
-    optTarget,
-    relicsBySlot,
-  ])
+  }, [calc, numWorkers, optConfig?.statFilters, optTarget, relicsBySlot])
 
   const onCancel = useCallback(() => {
     cancelToken.current()

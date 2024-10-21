@@ -1,3 +1,4 @@
+import { notEmpty } from '@genshin-optimizer/common/util'
 import { constant } from '@genshin-optimizer/pando/engine'
 import { CalcContext } from '@genshin-optimizer/pando/ui-sheet'
 import type {
@@ -12,7 +13,6 @@ import type {
   LoadoutMetadatum,
 } from '@genshin-optimizer/sr/db'
 import type {
-  Member,
   SrcCondInfo,
   Tag,
   TagMapNodeEntries,
@@ -22,7 +22,6 @@ import {
   conditionalData,
   enemyDebuff,
   lightConeData,
-  members,
   ownBuff,
   relicsData,
   srCalculatorWithEntries,
@@ -31,6 +30,7 @@ import {
 } from '@genshin-optimizer/sr/formula'
 import type { ReactNode } from 'react'
 import { useMemo } from 'react'
+import { useDatabaseContext } from '../Context'
 import {
   useBuild,
   useCharacter,
@@ -47,47 +47,22 @@ type CharacterFullData = {
   conditionals: SrcCondInfo | undefined // Assumes dst is the character
   bonusStats: Array<{ tag: Tag; value: number }>
 }
-type MemberIndexMap = Partial<Record<CharacterKey | 'all', Member | 'all'>>
 
 export function TeamCalcProvider({
   teamId,
-  currentIndex,
+  currentChar,
   children,
 }: {
   teamId: string
-  currentIndex: '1' | '2' | '3' | '0'
+  currentChar?: CharacterKey
   children: ReactNode
 }) {
+  const { database } = useDatabaseContext()
   const team = useTeam(teamId)!
-  const loadout0 = useLoadout(team.loadoutMetadata[0]?.loadoutId)
-  const loadout1 = useLoadout(team.loadoutMetadata[1]?.loadoutId)
-  const loadout2 = useLoadout(team.loadoutMetadata[2]?.loadoutId)
-  const loadout3 = useLoadout(team.loadoutMetadata[3]?.loadoutId)
-
-  const memberIndexMap = useMemo(() => {
-    const memberIndexMap: MemberIndexMap = { all: 'all' }
-    if (loadout0) memberIndexMap[loadout0.key] = '0'
-    if (loadout1) memberIndexMap[loadout1.key] = '1'
-    if (loadout2) memberIndexMap[loadout2.key] = '2'
-    if (loadout3) memberIndexMap[loadout3.key] = '3'
-    return memberIndexMap
-  }, [loadout0, loadout1, loadout2, loadout3])
-  const member0 = useCharacterAndEquipment(
-    team.loadoutMetadata[0],
-    memberIndexMap
-  )
-  const member1 = useCharacterAndEquipment(
-    team.loadoutMetadata[1],
-    memberIndexMap
-  )
-  const member2 = useCharacterAndEquipment(
-    team.loadoutMetadata[2],
-    memberIndexMap
-  )
-  const member3 = useCharacterAndEquipment(
-    team.loadoutMetadata[3],
-    memberIndexMap
-  )
+  const member0 = useCharacterAndEquipment(team.loadoutMetadata[0])
+  const member1 = useCharacterAndEquipment(team.loadoutMetadata[1])
+  const member2 = useCharacterAndEquipment(team.loadoutMetadata[2])
+  const member3 = useCharacterAndEquipment(team.loadoutMetadata[3])
 
   const calc = useMemo(
     () =>
@@ -95,10 +70,10 @@ export function TeamCalcProvider({
         // Specify members present in the team
         ...teamData(
           team.loadoutMetadata
-            .map((meta, index) =>
-              meta === undefined ? undefined : members[index]
+            .map(
+              (meta) => database.loadouts.get(meta?.loadoutId)?.key ?? undefined
             )
-            .filter((m): m is Member => !!m)
+            .filter(notEmpty)
         ),
         // Add actual member data
         ...(member0 ? createMember(0, member0) : []),
@@ -112,12 +87,14 @@ export function TeamCalcProvider({
         enemyDebuff.common.maxToughness.add(100),
         ownBuff.common.critMode.add('avg'),
       ]),
-    [member0, member1, member2, member3, team.loadoutMetadata]
+    [member0, member1, member2, member3, team.loadoutMetadata, database]
   )
 
   const calcWithTag = useMemo(
-    () => calc?.withTag({ src: currentIndex, dst: currentIndex }) ?? null,
-    [calc, currentIndex]
+    () =>
+      (currentChar && calc?.withTag({ src: currentChar, dst: currentChar })) ??
+      null,
+    [calc, currentChar]
   )
 
   return (
@@ -126,8 +103,7 @@ export function TeamCalcProvider({
 }
 
 function useCharacterAndEquipment(
-  meta: LoadoutMetadatum | undefined,
-  memberIndexMap: MemberIndexMap
+  meta: LoadoutMetadatum | undefined
 ): CharacterFullData | undefined {
   const loadout = useLoadout(meta?.loadoutId)
   const character = useCharacter(loadout?.key)
@@ -141,11 +117,11 @@ function useCharacterAndEquipment(
     () =>
       Object.fromEntries(
         Object.entries(loadout?.conditional ?? {}).map(([srcKey, srcCond]) => [
-          memberIndexMap[srcKey],
+          srcKey,
           srcCond,
         ])
       ),
-    [loadout, memberIndexMap]
+    [loadout]
   )
 
   return useMemo(
@@ -166,7 +142,7 @@ function createMember(
 ): TagMapNodeEntries {
   if (!character) return []
   const memberData = withMember(
-    `${memberIndex}`,
+    character.key,
     ...charData(character),
     ...lightConeData(lightCone),
     ...relicsData(
@@ -193,5 +169,5 @@ function createMember(
     }))
   )
 
-  return [...memberData, ...conditionalData(`${memberIndex}`, conditionals)]
+  return [...memberData, ...conditionalData(character.key, conditionals)]
 }
