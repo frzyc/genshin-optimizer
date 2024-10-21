@@ -1,6 +1,7 @@
 import { constant } from '@genshin-optimizer/pando/engine'
 import { CalcContext } from '@genshin-optimizer/pando/ui-sheet'
 import type {
+  CharacterKey,
   RelicSlotKey,
   RelicSubStatKey,
 } from '@genshin-optimizer/sr/consts'
@@ -37,7 +38,7 @@ import {
 } from '@genshin-optimizer/sr/ui'
 import type { ReactNode } from 'react'
 import { useContext, useMemo } from 'react'
-import { MemberContext, PresetContext } from './context'
+import { PresetContext } from './context'
 
 type CharacterFullData = {
   character: ICachedCharacter | undefined
@@ -47,14 +48,15 @@ type CharacterFullData = {
 
 export function TeamCalcProvider({
   comboId,
+  currentChar,
   children,
 }: {
   comboId: string
+  currentChar?: CharacterKey
   children: ReactNode
 }) {
   const combo = useCombo(comboId)!
   const { presetIndex } = useContext(PresetContext)
-  const currentIndex = useContext(MemberContext)
   const member0 = useCharacterAndEquipment(combo.comboMetadata[0])
   const member1 = useCharacterAndEquipment(combo.comboMetadata[1])
   const member2 = useCharacterAndEquipment(combo.comboMetadata[2])
@@ -72,10 +74,10 @@ export function TeamCalcProvider({
             .filter((m): m is Member => !!m)
         ),
         // Add actual member data
-        ...(member0 ? createMember(0, member0) : []),
-        ...(member1 ? createMember(1, member1) : []),
-        ...(member2 ? createMember(2, member2) : []),
-        ...(member3 ? createMember(3, member3) : []),
+        ...(member0 ? createMember(member0) : []),
+        ...(member1 ? createMember(member1) : []),
+        ...(member2 ? createMember(member2) : []),
+        ...(member3 ? createMember(member3) : []),
         // TODO: Get these from db
         enemyDebuff.common.lvl.add(80),
         enemyDebuff.common.res.add(0.1),
@@ -105,12 +107,14 @@ export function TeamCalcProvider({
 
   const calcWithTag = useMemo(
     () =>
-      calc?.withTag({
-        src: currentIndex,
-        dst: currentIndex,
-        preset: `preset${presetIndex}` as Preset,
-      }) ?? null,
-    [calc, currentIndex, presetIndex]
+      (currentChar &&
+        calc?.withTag({
+          src: currentChar,
+          dst: currentChar,
+          preset: `preset${presetIndex}` as Preset,
+        })) ??
+      null,
+    [calc, currentChar, presetIndex]
   )
 
   return (
@@ -136,14 +140,15 @@ function useCharacterAndEquipment(
   )
 }
 
-function createMember(
-  memberIndex: 0 | 1 | 2 | 3,
-  { character, lightCone, relics }: CharacterFullData
-): TagMapNodeEntries {
+function createMember({
+  character,
+  lightCone,
+  relics,
+}: CharacterFullData): TagMapNodeEntries {
   if (!character) return []
 
   return withMember(
-    `${memberIndex}`,
+    character.key,
     ...charData(character),
     ...lightConeData(lightCone),
     ...relicsData(

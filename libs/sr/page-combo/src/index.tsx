@@ -1,6 +1,4 @@
 import { CardThemed, useTitle } from '@genshin-optimizer/common/ui'
-import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import { members } from '@genshin-optimizer/sr/formula'
 import type { CharacterContextObj } from '@genshin-optimizer/sr/ui'
 import {
   CharacterContext,
@@ -23,12 +21,7 @@ import { ComboCharacterSelector } from './ComboCharacterSelector'
 import { TeamCalcProvider } from './TeamCalcProvider'
 import TeammateDisplay from './TeammateDisplay'
 import type { ComboContextObj, PresetContextObj } from './context'
-import {
-  ComboContext,
-  MemberContext,
-  PresetContext,
-  useComboContext,
-} from './context'
+import { ComboContext, PresetContext, useComboContext } from './context'
 
 const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
 
@@ -106,66 +99,57 @@ function Page({ comboId }: { comboId: string }) {
   )
 
   const comboContextObj: ComboContextObj | undefined = useMemo(() => {
-    if (!comboMetadatum) return undefined
-    const charMap = {
-      ...combo.comboMetadata.map((cmeta) => cmeta?.characterKey),
-    } as unknown as Record<'0' | '1' | '2' | '3', CharacterKey>
+    if (!comboId || !combo || !comboMetadatum) return undefined
     return {
       comboId,
       combo,
       comboMetadatum,
-      charMap,
     }
   }, [comboMetadatum, combo, comboId])
 
   return (
     <PresetContext.Provider value={presetObj}>
-      <MemberContext.Provider value={members[comboMetadatumIndex]}>
-        <TeamCalcProvider comboId={comboId}>
-          <Box
+      <TeamCalcProvider comboId={comboId} currentChar={characterKey}>
+        <Box
+          sx={{
+            display: 'flex',
+            gap: 1,
+            flexDirection: 'column',
+            mx: 1,
+            mt: 2,
+          }}
+        >
+          <CardThemed
             sx={{
-              display: 'flex',
-              gap: 1,
-              flexDirection: 'column',
-              mx: 1,
-              mt: 2,
+              overflow: 'visible',
+              top: 0,
+              position: 'sticky',
+              zIndex: 100,
             }}
           >
-            <CardThemed
-              sx={{
-                overflow: 'visible',
-                top: 0,
-                position: 'sticky',
-                zIndex: 100,
-              }}
-            >
-              <ComboCharacterSelector
-                comboId={comboId}
-                charKey={characterKey}
-              />
-            </CardThemed>
-            <Box
-            // sx={(theme) => {
-            //   const elementKey = characterKey && allStats.char[characterKey]
-            //   if (!elementKey) return {}
-            //   const hex = theme.palette[elementKey].main as string
-            //   const color = hexToColor(hex)
-            //   if (!color) return {}
-            //   const rgba = colorToRgbaString(color, 0.1)
-            //   return {
-            //     background: `linear-gradient(to bottom, ${rgba} 0%, rgba(0,0,0,0)) 25%`,
-            //   }
-            // }}
-            >
-              {comboContextObj && (
-                <ComboContext.Provider value={comboContextObj}>
-                  <TeammateDisplayWrapper />
-                </ComboContext.Provider>
-              )}
-            </Box>
+            <ComboCharacterSelector comboId={comboId} charKey={characterKey} />
+          </CardThemed>
+          <Box
+          // sx={(theme) => {
+          //   const elementKey = characterKey && allStats.char[characterKey]
+          //   if (!elementKey) return {}
+          //   const hex = theme.palette[elementKey].main as string
+          //   const color = hexToColor(hex)
+          //   if (!color) return {}
+          //   const rgba = colorToRgbaString(color, 0.1)
+          //   return {
+          //     background: `linear-gradient(to bottom, ${rgba} 0%, rgba(0,0,0,0)) 25%`,
+          //   }
+          // }}
+          >
+            {comboContextObj && (
+              <ComboContext.Provider value={comboContextObj}>
+                <TeammateDisplayWrapper />
+              </ComboContext.Provider>
+            )}
           </Box>
-        </TeamCalcProvider>
-      </MemberContext.Provider>
+        </Box>
+      </TeamCalcProvider>
     </PresetContext.Provider>
   )
 }

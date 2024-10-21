@@ -23,7 +23,7 @@ import {
   Stack,
 } from '@mui/material'
 import { useContext } from 'react'
-import { MemberContext, PresetContext, useComboContext } from './context'
+import { PresetContext, useComboContext } from './context'
 
 export function BonusStats() {
   const [open, onOpen, onClose] = useBoolState()
@@ -44,13 +44,13 @@ function BonusStatsModal({
 }) {
   const { database } = useDatabaseContext()
   const { presetIndex } = useContext(PresetContext)
-  const member = useContext(MemberContext)
   const {
     comboId,
     combo: { bonusStats },
+    comboMetadatum: { characterKey },
   } = useComboContext()
   const newTarget = (q: InitialStats) => {
-    const tag = newTag(q, member)
+    const tag = newTag(q, characterKey)
     database.combos.setBonusStat(comboId, tag, 0, presetIndex)
   }
   return (

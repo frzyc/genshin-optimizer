@@ -76,10 +76,10 @@ export function TeamCalcProvider({
             .filter(notEmpty)
         ),
         // Add actual member data
-        ...(member0 ? createMember(0, member0) : []),
-        ...(member1 ? createMember(1, member1) : []),
-        ...(member2 ? createMember(2, member2) : []),
-        ...(member3 ? createMember(3, member3) : []),
+        ...(member0 ? createMember(member0) : []),
+        ...(member1 ? createMember(member1) : []),
+        ...(member2 ? createMember(member2) : []),
+        ...(member3 ? createMember(member3) : []),
         // TODO: Get these from db
         enemyDebuff.common.lvl.add(80),
         enemyDebuff.common.res.add(0.1),
@@ -136,10 +136,13 @@ function useCharacterAndEquipment(
   )
 }
 
-function createMember(
-  memberIndex: 0 | 1 | 2 | 3,
-  { character, lightCone, relics, conditionals, bonusStats }: CharacterFullData
-): TagMapNodeEntries {
+function createMember({
+  character,
+  lightCone,
+  relics,
+  conditionals,
+  bonusStats,
+}: CharacterFullData): TagMapNodeEntries {
   if (!character) return []
   const memberData = withMember(
     character.key,

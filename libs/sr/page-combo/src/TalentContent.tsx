@@ -34,12 +34,7 @@ import {
 import type { ReactNode } from 'react'
 import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import {
-  ComboContext,
-  MemberContext,
-  PresetContext,
-  useComboContext,
-} from './context'
+import { ComboContext, PresetContext, useComboContext } from './context'
 
 const talentSpacing = {
   xs: 12,
@@ -306,7 +301,6 @@ function SkillDisplayCard({
 
   const { comboId } = useContext(ComboContext)
   const { presetIndex } = useContext(PresetContext)
-  const member = useContext(MemberContext)
   const { database } = useDatabaseContext()
   const setConditional = useCallback(
     (srcKey: string, sheetKey: string, condKey: string, condValue: number) =>
@@ -315,13 +309,13 @@ function SkillDisplayCard({
         comboId,
         sheetKey as Sheet,
         srcKey as Member,
-        member,
+        characterKey,
         condKey,
         condValue,
         presetIndex
       ),
 
-    [comboId, database.combos, member, presetIndex]
+    [comboId, database.combos, characterKey, presetIndex]
   )
 
   return (
@@ -341,11 +335,12 @@ function SkillDisplayCard({
               />
             </Grid>
             <Grid item flexGrow={1} sx={{ pl: 1 }}>
-              <Typography variant="h6">{sheetElement?.name}</Typography>
-              <Typography variant="subtitle1">
-                {subtitle}
-                {sheetElement.tag && <> • {sheetElement.tag}</>}
-              </Typography>
+              <Typography variant="h6">{sheetElement?.title}</Typography>
+              {sheetElement.subtitle && (
+                <Typography variant="subtitle1">
+                  {sheetElement.subtitle}
+                </Typography>
+              )}
             </Grid>
           </Grid>
         </ConditionalWrapper>
