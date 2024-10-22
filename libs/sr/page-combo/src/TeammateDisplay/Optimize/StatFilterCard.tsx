@@ -1,20 +1,21 @@
-import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
 import { CardThemed, InfoTooltip } from '@genshin-optimizer/common/ui'
 import type { StatFilters } from '@genshin-optimizer/sr/db'
-import { LoadoutContext, useDatabaseContext } from '@genshin-optimizer/sr/ui'
+import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
 import { Box, CardContent, Divider, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
+import { OptConfigContext } from './OptConfigWrapper'
 import OptimizationTargetEditorList from './OptimizationTargetEditorList'
 
 export function StatFilterCard({ disabled = false }: { disabled?: boolean }) {
   const { t } = useTranslation('page_character_optimize')
   // const [statFilters, setStatFilters] = useState<StatFilters>({})
   const {
-    loadout: { optConfigId },
-  } = useContext(LoadoutContext)
+    optConfigId,
+    optConfig: { statFilters },
+  } = useContext(OptConfigContext)
+
   const { database } = useDatabaseContext()
-  const { statFilters } = useDataManagerBase(database.optConfigs, optConfigId)!
 
   const setStatFilters = useCallback(
     (statFilters: StatFilters) =>

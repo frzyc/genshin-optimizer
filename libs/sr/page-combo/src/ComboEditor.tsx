@@ -10,13 +10,20 @@ import {
 } from '@mui/material'
 import { useContext } from 'react'
 import { PresetContext, useComboContext } from './context'
-import { OptimizationTargetSelector } from './TeammateDisplay/Tabs/Optimize/OptimizationTargetSelector'
+import { OptimizationTargetSelector } from './TeammateDisplay/Optimize/OptimizationTargetSelector'
 
 export function ComboEditor() {
   const { database } = useDatabaseContext()
   const { combo, comboId } = useComboContext()
   return (
-    <CardThemed>
+    <CardThemed
+      sx={{
+        overflow: 'visible',
+        top: 137, // height of the team selector
+        position: 'sticky',
+        zIndex: 101,
+      }}
+    >
       <CardHeader title="Combo Editor" />
       <Divider />
       <CardContent

@@ -23,6 +23,7 @@ import { BonusStats } from '../BonusStats'
 import { ComboEditor } from '../ComboEditor'
 import { useComboContext } from '../context'
 import CharacterTalentPane from '../TalentContent'
+import Optimize from './Optimize'
 
 export default function TeammateDisplay() {
   const {
@@ -133,8 +134,7 @@ export default function TeammateDisplay() {
           </CardContent>
         </CardThemed>
         <CharacterTalentPane />
-        {/* TODO: Move to a dedicated tab */}
-        {/* <Optimize /> */}
+        <Optimize />
       </Stack>
     </Box>
   )

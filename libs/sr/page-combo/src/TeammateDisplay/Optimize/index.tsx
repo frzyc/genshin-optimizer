@@ -1,13 +1,10 @@
-import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { type ICachedRelic } from '@genshin-optimizer/sr/db'
-import type { Read } from '@genshin-optimizer/sr/formula'
 import type { BuildResult, ProgressResult } from '@genshin-optimizer/sr/solver'
 import { MAX_BUILDS, Solver } from '@genshin-optimizer/sr/solver'
 import {
   BuildDisplay,
-  LoadoutContext,
   useDatabaseContext,
   useSrCalcContext,
 } from '@genshin-optimizer/sr/ui'
@@ -17,6 +14,8 @@ import {
   Box,
   Button,
   CardContent,
+  CardHeader,
+  Divider,
   LinearProgress,
   Stack,
   Typography,
@@ -30,11 +29,49 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
-import { OptimizationTargetSelector } from './OptimizationTargetSelector'
+import { ComboContext } from '../../context'
+import OptConfigWrapper, { OptConfigContext } from './OptConfigWrapper'
 import { StatFilterCard } from './StatFilterCard'
 import { WorkerSelector } from './WorkerSelector'
 
 export default function Optimize() {
+  const { database } = useDatabaseContext()
+  const { comboMetadatum, comboId } = useContext(ComboContext)
+  const optConfigId = comboMetadatum.optConfigId
+  const createOptConfig = useCallback(() => {
+    if (optConfigId) return
+
+    database.combos.set(comboId, (combo) => {
+      const meta = combo.comboMetadata.find(
+        (meta) => meta?.characterKey === comboMetadatum.characterKey
+      )
+      if (meta) {
+        const newOptConfigId = database.optConfigs.new()
+        meta.optConfigId = newOptConfigId
+      }
+    })
+  }, [comboId, comboMetadatum.characterKey, database, optConfigId])
+  if (optConfigId) {
+    return (
+      <OptConfigWrapper optConfigId={optConfigId}>
+        <OptimizeWrapper />
+      </OptConfigWrapper>
+    )
+  } else {
+    return (
+      <CardThemed>
+        <CardHeader
+          title={
+            <span>Optimize this combo for {comboMetadatum.characterKey}</span>
+          }
+          action={<Button onClick={createOptConfig}>Optimize</Button>}
+        />
+      </CardThemed>
+    )
+  }
+}
+
+function OptimizeWrapper() {
   const { t } = useTranslation('optimize')
   const { database } = useDatabaseContext()
 
@@ -44,18 +81,9 @@ export default function Optimize() {
   const [progress, setProgress] = useState<ProgressResult | undefined>(
     undefined
   )
-  const { loadout } = useContext(LoadoutContext)
-  const optConfig = useDataManagerBase(database.optConfigs, loadout.optConfigId)
+  const { optConfig } = useContext(OptConfigContext)
 
   const optTarget = optConfig?.optimizationTarget
-  const setOptTarget = useCallback(
-    (optimizationTarget: Read) => {
-      database.optConfigs.set(loadout.optConfigId, {
-        optimizationTarget,
-      })
-    },
-    [database.optConfigs, loadout.optConfigId]
-  )
 
   const relicsBySlot = useMemo(
     () =>
@@ -95,7 +123,7 @@ export default function Optimize() {
     setOptimizing(true)
 
     // Filter out disabled
-    const statFilters = (optConfig?.statFilters ?? [])
+    const statFilters = (optConfig.statFilters ?? [])
       .filter(({ disabled }) => !disabled)
       .map(({ read, value, isMax }) => ({
         read,
@@ -104,7 +132,7 @@ export default function Optimize() {
       }))
     const optimizer = new Solver(
       calc,
-      optTarget,
+      optTarget, // TODO: use combo
       statFilters,
       relicsBySlot,
       numWorkers,
@@ -119,7 +147,7 @@ export default function Optimize() {
 
     setOptimizing(false)
     setBuild(results[0])
-  }, [calc, numWorkers, optTarget, relicsBySlot])
+  }, [calc, numWorkers, optConfig, optTarget, relicsBySlot])
 
   const onCancel = useCallback(() => {
     cancelToken.current()
@@ -127,16 +155,11 @@ export default function Optimize() {
   }, [cancelToken])
 
   return (
-    <CardThemed bgt="dark">
-      <CardContent>
-        <StatFilterCard />
-        <Stack>
-          <Typography variant="h5">{t('optimize')}</Typography>
+    <CardThemed>
+      <CardHeader
+        title={t('optimize')}
+        action={
           <Box>
-            <OptimizationTargetSelector
-              optTarget={optTarget}
-              setOptTarget={setOptTarget}
-            />
             <WorkerSelector
               numWorkers={numWorkers}
               setNumWorkers={setNumWorkers}
@@ -149,6 +172,12 @@ export default function Optimize() {
               {optimizing ? t('cancel') : t('optimize')}
             </Button>
           </Box>
+        }
+      />
+      <Divider />
+      <CardContent>
+        <StatFilterCard />
+        <Stack>
           {progress && (
             <ProgressIndicator
               progress={progress}

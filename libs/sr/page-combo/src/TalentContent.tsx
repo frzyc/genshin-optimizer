@@ -47,7 +47,6 @@ export default function CharacterTalentPane() {
     comboMetadatum: { characterKey },
   } = useComboContext()
   const calc = useSrCalcContext()
-  const { t } = useTranslation('sheet_gen')
   const { database } = useDatabaseContext()
   // TODO: for TC overrides
   // const { buildTc, setBuildTc } = useContext(BuildTcContext)
