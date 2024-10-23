@@ -1,14 +1,14 @@
 import type { Tag, TagMapEntry } from '../tag'
-import type { Read } from './type'
+import type { BaseRead } from './type'
 
-export class TypedRead<T extends Tag> implements Read {
+export class TypedRead<T extends Tag> implements BaseRead {
   op = 'read' as const
   x: never[] = []
   br: never[] = []
   tag: T
-  ex: Read['ex']
+  ex: BaseRead['ex']
 
-  constructor(tag: T, ex: Read['ex']) {
+  constructor(tag: T, ex: BaseRead['ex']) {
     this.tag = tag
     this.ex = ex
   }
@@ -18,7 +18,7 @@ export class TypedRead<T extends Tag> implements Read {
   /** Callback for when a tag `<cat>:<val>` is generated */
   register<C extends keyof T>(_cat: C, _val: T[C]) {}
   /** Return an instance with given `tag` and `ex` */
-  ctor(tag: T, ex: Read['ex']): this {
+  ctor(tag: T, ex: BaseRead['ex']): this {
     return new (this.constructor as any)(tag, ex)
   }
 

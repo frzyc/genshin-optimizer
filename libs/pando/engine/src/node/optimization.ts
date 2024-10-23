@@ -5,9 +5,9 @@ import { constant, read } from './construction'
 import { arithmetic, branching } from './formula'
 import type {
   AnyNode,
+  BaseRead,
   Const,
   NumNode,
-  Read,
   StrNode,
   OP as TaggedOP,
 } from './type'
@@ -51,7 +51,7 @@ export function detach(
   dynTag: (_: Tag) => Tag | undefined
 ): AnyTagFree[] {
   type Cache = DedupTag<AnyTagFree[]>
-  function detachRead(cache: Cache, ex: Read['ex']): AnyTagFree[] {
+  function detachRead(cache: Cache, ex: BaseRead['ex']): AnyTagFree[] {
     if (cache.val) return cache.val
     const dyn = dynTag(cache.tag)
     cache.val = dyn
