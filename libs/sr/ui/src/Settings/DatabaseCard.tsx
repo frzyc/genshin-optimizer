@@ -113,7 +113,10 @@ function DataCard({ index }: { index: number }) {
     database.dbMeta.set({ name: tempName })
     database.toExtraLocalDB()
   }, [tempName, database])
-  const onKeyDown = useCallback((e) => e.key === 'Enter' && onBlur(), [onBlur])
+  const onKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLInputElement>) => e.key === 'Enter' && onBlur(),
+    [onBlur]
+  )
 
   return (
     <CardThemed
