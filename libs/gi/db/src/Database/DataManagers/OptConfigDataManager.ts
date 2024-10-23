@@ -70,6 +70,9 @@ export interface OptConfig {
   excludedLocations: LocationCharacterKey[]
   artExclusion: string[]
   useExcludedArts: boolean
+  /**
+   * @deprecated
+   */
   optimizationTarget?: string[]
   mainStatAssumptionLevel: number
   allowPartial: boolean

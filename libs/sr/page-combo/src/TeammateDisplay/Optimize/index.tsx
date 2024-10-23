@@ -76,14 +76,15 @@ function OptimizeWrapper() {
   const { database } = useDatabaseContext()
 
   const calc = useSrCalcContext()
-
+  const {
+    combo,
+    comboMetadatum: { characterKey },
+  } = useContext(ComboContext)
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<ProgressResult | undefined>(
     undefined
   )
   const { optConfig } = useContext(OptConfigContext)
-
-  const optTarget = optConfig?.optimizationTarget
 
   const relicsBySlot = useMemo(
     () =>
@@ -117,7 +118,7 @@ function OptimizeWrapper() {
   useEffect(() => () => cancelToken.current(), [])
 
   const onOptimize = useCallback(async () => {
-    if (!optTarget || !calc) return
+    if (!calc) return
     const cancelled = new Promise<void>((r) => (cancelToken.current = r))
     setProgress(undefined)
     setOptimizing(true)
@@ -131,8 +132,9 @@ function OptimizeWrapper() {
         isMax,
       }))
     const optimizer = new Solver(
+      characterKey,
       calc,
-      optTarget, // TODO: use combo
+      combo.frames,
       statFilters,
       relicsBySlot,
       numWorkers,
@@ -147,7 +149,14 @@ function OptimizeWrapper() {
 
     setOptimizing(false)
     setBuild(results[0])
-  }, [calc, numWorkers, optConfig, optTarget, relicsBySlot])
+  }, [
+    calc,
+    characterKey,
+    combo,
+    numWorkers,
+    optConfig.statFilters,
+    relicsBySlot,
+  ])
 
   const onCancel = useCallback(() => {
     cancelToken.current()

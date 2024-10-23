@@ -1,8 +1,13 @@
-import { detach } from '@genshin-optimizer/pando/engine'
+import { detach, sum } from '@genshin-optimizer/pando/engine'
 import type { CharacterKey, RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { allRelicSetKeys } from '@genshin-optimizer/sr/consts'
-import type { ICachedRelic, StatFilter } from '@genshin-optimizer/sr/db'
-import type { Calculator, Read, Tag } from '@genshin-optimizer/sr/formula'
+import type { Combo, ICachedRelic, StatFilter } from '@genshin-optimizer/sr/db'
+import {
+  Read,
+  type Calculator,
+  type Preset,
+  type Tag,
+} from '@genshin-optimizer/sr/formula'
 import type {
   ParentCommandStart,
   ParentCommandTerminate,
@@ -21,7 +26,7 @@ export interface ProgressResult {
 
 export class Solver {
   private calc: Calculator
-  private optTarget: Read
+  private frames: Combo['frames']
   private statFilters: Array<Omit<StatFilter, 'disabled'>>
   private relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
   private numWorkers: number
@@ -32,7 +37,7 @@ export class Solver {
   constructor(
     characterKey: CharacterKey,
     calc: Calculator,
-    optTarget: Read,
+    frames: Combo['frames'],
     statFilters: Array<Omit<StatFilter, 'disabled'>>,
     relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>,
     numWorkers: number,
@@ -40,7 +45,7 @@ export class Solver {
   ) {
     this.characterKey = characterKey
     this.calc = calc
-    this.optTarget = optTarget
+    this.frames = frames
     this.statFilters = statFilters
     this.relicsBySlot = relicsBySlot
     this.numWorkers = numWorkers
@@ -114,7 +119,16 @@ export class Solver {
     // Step 2: Detach nodes from Calculator
     const relicSetKeys = new Set(allRelicSetKeys)
     const detachedNodes = detach(
-      [this.optTarget, ...this.statFilters.map(({ read }) => read)],
+      [
+        // combo
+        sum(
+          ...this.frames.map((frame, i) =>
+            new Read(frame.tag, frame.ex).with('preset', `preset${i}` as Preset)
+          )
+        ),
+        // stat filters
+        ...this.statFilters.map(({ read }) => read),
+      ],
       this.calc,
       (tag: Tag) => {
         if (tag['src'] !== this.characterKey) return undefined // Wrong member
