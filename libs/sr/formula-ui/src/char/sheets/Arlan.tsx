@@ -47,19 +47,6 @@ const sheet: UISheet<TalentSheetElementKey> = {
         conditional: {
           header: {
             icon: <ImgIcon src={characterAsset(key, 'skill_0')} />,
-            text: 'Num Conditional No Max',
-            additional: <SqBadge>Skill</SqBadge>,
-          },
-          metadata: conditionals.Arlan.numConditionalNoMax,
-          label: 'Num stacks',
-          badge: 'Stacks',
-        },
-      },
-      {
-        type: 'conditional',
-        conditional: {
-          header: {
-            icon: <ImgIcon src={characterAsset(key, 'skill_0')} />,
             text: 'Num Conditional',
             additional: <SqBadge>Skill</SqBadge>,
           },

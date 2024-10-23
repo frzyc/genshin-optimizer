@@ -103,6 +103,7 @@ export default function Optimize() {
         isMax,
       }))
     const optimizer = new Solver(
+      loadout.key,
       calc,
       optTarget,
       statFilters,
