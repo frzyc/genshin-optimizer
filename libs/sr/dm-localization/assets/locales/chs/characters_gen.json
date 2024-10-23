@@ -1,0 +1,39 @@
+{
+  "character_one": "角色",
+  "character_other": "角色",
+  "eidolonLvl": "星魂等级：",
+  "traces": "行迹",
+  "type": {
+    "physical": "物理",
+    "quantum": "量子",
+    "lightning": "雷",
+    "ice": "冰",
+    "wind": "风",
+    "fire": "火",
+    "imaginary": "虚数"
+  },
+  "path": {
+    "Erudition": "智识",
+    "Preservation": "存护",
+    "Abundance": "丰饶",
+    "Nihility": "虚无",
+    "Destruction": "毁灭",
+    "Harmony": "同谐",
+    "TheHunt": "巡猎"
+  },
+  "ability": {
+    "basic": "普攻",
+    "skill": "战技",
+    "ult": "终结技",
+    "talent": "天赋",
+    "technique": "秘技"
+  },
+  "dmgType": {
+    "single": "单攻",
+    "aoe": "群攻",
+    "bounce": "弹射",
+    "blast": "扩散",
+    "support": "辅助",
+    "impair": "妨害"
+  }
+}

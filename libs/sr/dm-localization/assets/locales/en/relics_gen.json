@@ -1,0 +1,14 @@
+{
+  "relics": "Relics",
+  "set": "Relic Set",
+  "mainStat": "Main Stat",
+  "slot": "Slot",
+  "slotKey": {
+    "head": "Head",
+    "hands": "Hands",
+    "body": "Body",
+    "feet": "Feet",
+    "sphere": "Planar Sphere",
+    "rope": "Link Rope"
+  }
+}

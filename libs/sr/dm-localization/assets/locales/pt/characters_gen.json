@@ -1,0 +1,39 @@
+{
+  "character_one": "Personagem",
+  "character_other": "Personagens",
+  "eidolonLvl": "Nível de Eidolon:",
+  "traces": "Rastros",
+  "type": {
+    "physical": "Físico",
+    "quantum": "Quântico",
+    "lightning": "Raio",
+    "ice": "Gelo",
+    "wind": "Vento",
+    "fire": "Fogo",
+    "imaginary": "Imaginário"
+  },
+  "path": {
+    "Erudition": "A Erudição",
+    "Preservation": "A Preservação",
+    "Abundance": "A Abundância",
+    "Nihility": "A Inexistência",
+    "Destruction": "A Destruição",
+    "Harmony": "A Harmonia",
+    "TheHunt": "A Caça"
+  },
+  "ability": {
+    "basic": "ATQ Básico",
+    "skill": "Perícia",
+    "ult": "Perícia Suprema",
+    "talent": "Talento",
+    "technique": "Técnica"
+  },
+  "dmgType": {
+    "single": "Alvo Único",
+    "aoe": "Área",
+    "bounce": "Rebote",
+    "blast": "Explosão",
+    "support": "Suporte",
+    "impair": "Incapacitação"
+  }
+}
