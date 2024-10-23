@@ -1,5 +1,5 @@
 import { detach } from '@genshin-optimizer/pando/engine'
-import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
+import type { CharacterKey, RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { allRelicSetKeys } from '@genshin-optimizer/sr/consts'
 import type { ICachedRelic, StatFilter } from '@genshin-optimizer/sr/db'
 import type { Calculator, Read, Tag } from '@genshin-optimizer/sr/formula'
@@ -27,8 +27,10 @@ export class Solver {
   private numWorkers: number
   private setProgress: (progress: ProgressResult) => void
   private worker: Worker
+  private characterKey: CharacterKey
 
   constructor(
+    characterKey: CharacterKey,
     calc: Calculator,
     optTarget: Read,
     statFilters: Array<Omit<StatFilter, 'disabled'>>,
@@ -36,6 +38,7 @@ export class Solver {
     numWorkers: number,
     setProgress: (progress: ProgressResult) => void
   ) {
+    this.characterKey = characterKey
     this.calc = calc
     this.optTarget = optTarget
     this.statFilters = statFilters
@@ -114,7 +117,7 @@ export class Solver {
       [this.optTarget, ...this.statFilters.map(({ read }) => read)],
       this.calc,
       (tag: Tag) => {
-        if (tag['src'] !== '0') return undefined // Wrong member
+        if (tag['src'] !== this.characterKey) return undefined // Wrong member
         if (tag['et'] !== 'own') return undefined // Not applied (only) to self
 
         if (tag['sheet'] === 'dyn' && tag['qt'] === 'premod')

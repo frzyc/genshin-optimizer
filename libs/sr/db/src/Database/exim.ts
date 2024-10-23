@@ -1,5 +1,4 @@
-import type { ILightCone, IRelic } from '@genshin-optimizer/sr/srod'
-import type { ISroCharacter } from '../Interfaces'
+import type { ICharacter, ILightCone, IRelic } from '@genshin-optimizer/sr/srod'
 
 function newCounter<T>(): ImportResultCounter<T> {
   return {
@@ -47,7 +46,7 @@ export type ImportResult = {
   source: string
   relics: ImportResultCounter<IRelic>
   lightCones: ImportResultCounter<ILightCone>
-  characters: ImportResultCounter<ISroCharacter>
+  characters: ImportResultCounter<ICharacter>
   keepNotInImport: boolean
   ignoreDups: boolean
 }

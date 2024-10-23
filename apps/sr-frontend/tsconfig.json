@@ -3,6 +3,7 @@
     "jsx": "react-jsx",
     "target": "ESNext",
     "useDefineForClassFields": true,
+    "noPropertyAccessFromIndexSignature": false,
     "lib": ["ESNext", "DOM"],
     "moduleResolution": "Node",
     "module": "ESNext",
