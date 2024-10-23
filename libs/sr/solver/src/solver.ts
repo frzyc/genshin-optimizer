@@ -30,7 +30,7 @@ export class Solver {
   private characterKey: CharacterKey
 
   constructor(
-    characteKey: CharacterKey,
+    characterKey: CharacterKey,
     calc: Calculator,
     optTarget: Read,
     statFilters: Array<Omit<StatFilter, 'disabled'>>,
@@ -38,7 +38,7 @@ export class Solver {
     numWorkers: number,
     setProgress: (progress: ProgressResult) => void
   ) {
-    this.characterKey = characteKey
+    this.characterKey = characterKey
     this.calc = calc
     this.optTarget = optTarget
     this.statFilters = statFilters
