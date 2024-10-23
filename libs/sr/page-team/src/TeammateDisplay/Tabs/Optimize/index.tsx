@@ -120,7 +120,14 @@ export default function Optimize() {
 
     setOptimizing(false)
     setBuild(results[0])
-  }, [calc, numWorkers, optConfig?.statFilters, optTarget, relicsBySlot])
+  }, [
+    calc,
+    loadout.key,
+    numWorkers,
+    optConfig?.statFilters,
+    optTarget,
+    relicsBySlot,
+  ])
 
   const onCancel = useCallback(() => {
     cancelToken.current()

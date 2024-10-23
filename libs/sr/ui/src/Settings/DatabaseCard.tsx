@@ -114,7 +114,7 @@ function DataCard({ index }: { index: number }) {
     database.toExtraLocalDB()
   }, [tempName, database])
   const onKeyDown = useCallback(
-    (e: React.KeyboardEvent) => e.key === 'Enter' && onBlur(),
+    (e: React.KeyboardEvent<HTMLInputElement>) => e.key === 'Enter' && onBlur(),
     [onBlur]
   )
 

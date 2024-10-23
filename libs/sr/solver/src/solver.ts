@@ -27,10 +27,10 @@ export class Solver {
   private numWorkers: number
   private setProgress: (progress: ProgressResult) => void
   private worker: Worker
-  private characteKey :CharacterKey
+  private characterKey: CharacterKey
 
   constructor(
-    characteKey:CharacterKey,
+    characteKey: CharacterKey,
     calc: Calculator,
     optTarget: Read,
     statFilters: Array<Omit<StatFilter, 'disabled'>>,
@@ -38,7 +38,7 @@ export class Solver {
     numWorkers: number,
     setProgress: (progress: ProgressResult) => void
   ) {
-    this.characteKey = characteKey
+    this.characterKey = characteKey
     this.calc = calc
     this.optTarget = optTarget
     this.statFilters = statFilters
@@ -117,7 +117,7 @@ export class Solver {
       [this.optTarget, ...this.statFilters.map(({ read }) => read)],
       this.calc,
       (tag: Tag) => {
-        if (tag['src'] !== this.characteKey) return undefined // Wrong member
+        if (tag['src'] !== this.characterKey) return undefined // Wrong member
         if (tag['et'] !== 'own') return undefined // Not applied (only) to self
 
         if (tag['sheet'] === 'dyn' && tag['qt'] === 'premod')
