@@ -1,5 +1,5 @@
 import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common/ui'
-import type { Read } from '@genshin-optimizer/sr/formula'
+import type { Tag } from '@genshin-optimizer/sr/formula'
 import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
 import {
   Box,
@@ -36,7 +36,7 @@ export function ComboEditor() {
         {combo.frames.map((frame, i) => (
           <Combo
             key={i + JSON.stringify(frame ?? {})}
-            read={frame}
+            tag={frame}
             index={i}
             setTarget={(read) =>
               database.combos.set(comboId, (combo) => {
@@ -49,9 +49,9 @@ export function ComboEditor() {
         ))}
         <Box sx={{ flexShrink: 0 }}>
           <OptimizationTargetSelector
-            setOptTarget={(read) =>
+            setOptTarget={(tag) =>
               database.combos.set(comboId, (combo) => {
-                combo.frames = [...combo.frames, read]
+                combo.frames = [...combo.frames, tag]
               })
             }
           />
@@ -61,13 +61,13 @@ export function ComboEditor() {
   )
 }
 function Combo({
-  read,
+  tag,
   index,
   setTarget,
 }: {
-  read: Read
+  tag: Tag
   index: number
-  setTarget(read: Read): void
+  setTarget(tag: Tag): void
 }) {
   const { presetIndex, setPresetIndex } = useContext(PresetContext)
   return (
@@ -93,7 +93,7 @@ function Combo({
       </ConditionalWrapper>
       <Divider />
       <CardContent>
-        <OptimizationTargetSelector optTarget={read} setOptTarget={setTarget} />
+        <OptimizationTargetSelector optTarget={tag} setOptTarget={setTarget} />
       </CardContent>
     </CardThemed>
   )

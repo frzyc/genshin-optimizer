@@ -9,10 +9,11 @@ import {
   allCharacterKeys,
   allRelicSlotKeys,
 } from '@genshin-optimizer/sr/consts'
-import type { Member, Read, Sheet, Tag } from '@genshin-optimizer/sr/formula'
+import type { Member, Sheet, Tag } from '@genshin-optimizer/sr/formula'
 import type { ICachedRelic } from '../../Interfaces'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
+import { validateTag } from '../tagUtil'
 
 const buildTypeKeys = ['equipped', 'real', 'tc'] as const
 type BuildTypeKey = (typeof buildTypeKeys)[number]
@@ -36,7 +37,7 @@ export interface Combo {
   lastEdit: number
 
   // frames, store data as a "sparse 2d array"
-  frames: Array<Read>
+  frames: Array<Tag>
   conditionals: Array<{
     sheet: Sheet
     src: Member | 'all'
@@ -48,7 +49,7 @@ export interface Combo {
     tag: Tag
     values: number[] // should be the same length as `frames`
   }>
-  statConstraints: Array<{ read: Read; values: number[]; isMaxs: boolean[] }>
+  statConstraints: Array<{ tag: Tag; values: number[]; isMaxs: boolean[] }>
 
   // TODO enemy base stats
   comboMetadata: Array<ComboMetaDataum | undefined>
@@ -167,6 +168,7 @@ export class ComboDataManager extends DataManager<
     if (typeof lastEdit !== 'number') lastEdit = Date.now()
 
     if (!Array.isArray(frames)) frames = []
+    frames = frames.filter(validateTag)
     const framesLength = frames.length
     if (!framesLength) {
       conditional = []
@@ -183,15 +185,15 @@ export class ComboDataManager extends DataManager<
         if (condValues.every((v) => !v)) return false
         return true
       })
-      bonusStats = bonusStats.filter(({ values }) => {
-        // TODO: validate bonusStats tag
+      bonusStats = bonusStats.filter(({ tag, values }) => {
+        if (!validateTag(tag)) return false
         if (!Array.isArray(values)) return false
         pruneOrPadArray(values, framesLength, 0)
         return true
       })
 
-      statConstraints = statConstraints.filter(({ values, isMaxs }) => {
-        // TODO: validate statConstraints read
+      statConstraints = statConstraints.filter(({ tag, values, isMaxs }) => {
+        if (!validateTag(tag)) return false
         if (!Array.isArray(values)) return false
         pruneOrPadArray(values, framesLength, 0)
         if (!Array.isArray(isMaxs)) return false
@@ -423,27 +425,27 @@ export class ComboDataManager extends DataManager<
   /**
    *
    * @param comboId
-   * @param read
+   * @param tag
    * @param value number or null, null to delete
    * @param isMax
    * @param frameIndex
    */
   setStatConstraint(
     comboId: string,
-    read: Read,
+    tag: Tag,
     value: number | null,
     isMax: boolean,
     frameIndex: number
   ) {
     this.set(comboId, (combo) => {
       if (frameIndex > combo.frames.length) return
-      const statIndex = combo.statConstraints.findIndex((s) => s.read === read)
+      const statIndex = combo.statConstraints.findIndex((s) => s.tag === tag)
       if (statIndex === -1 && value !== null) {
         const values = new Array(combo.frames.length).fill(0)
         values[frameIndex] = value
         const isMaxs = new Array(combo.frames.length).fill(false)
         isMaxs[frameIndex] = isMax
-        combo.statConstraints.push({ read, values, isMaxs })
+        combo.statConstraints.push({ tag, values, isMaxs })
       } else if (value === null && statIndex > -1) {
         combo.statConstraints.splice(statIndex, 1)
       } else if (value !== null && statIndex > -1) {
