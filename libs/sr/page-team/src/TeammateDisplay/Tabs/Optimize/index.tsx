@@ -2,7 +2,7 @@ import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { type ICachedRelic } from '@genshin-optimizer/sr/db'
-import type { Read } from '@genshin-optimizer/sr/formula'
+import type { Tag } from '@genshin-optimizer/sr/formula'
 import type { BuildResult, ProgressResult } from '@genshin-optimizer/sr/solver'
 import { MAX_BUILDS, Solver } from '@genshin-optimizer/sr/solver'
 import {
@@ -49,7 +49,7 @@ export default function Optimize() {
 
   const optTarget = optConfig?.optimizationTarget
   const setOptTarget = useCallback(
-    (optimizationTarget: Read) => {
+    (optimizationTarget: Tag) => {
       database.optConfigs.set(loadout.optConfigId, {
         optimizationTarget,
       })
@@ -97,8 +97,8 @@ export default function Optimize() {
     // Filter out disabled
     const statFilters = (optConfig?.statFilters ?? [])
       .filter(({ disabled }) => !disabled)
-      .map(({ read, value, isMax }) => ({
-        read,
+      .map(({ tag, value, isMax }) => ({
+        tag,
         value,
         isMax,
       }))
