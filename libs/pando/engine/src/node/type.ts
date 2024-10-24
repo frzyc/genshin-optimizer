@@ -86,7 +86,7 @@ export interface TagValRead<PermitOP extends OP = OP>
   extends Base<'vtag' & PermitOP, never> {
   ex: string
 }
-export interface Read extends Base<'read', never> {
+export interface BaseRead extends Base<'read', never> {
   /** Accumulator for multiple matches */
   ex: (Sum | Prod | Min | Max)['op'] | undefined
   tag: Tag
@@ -118,7 +118,7 @@ export type NumNode<PermitOP extends OP = OP> =
   | Subscript<number, PermitOP>
   | TagOverride<NumNode<PermitOP>, PermitOP>
   | DynamicTag<NumNode<PermitOP>, PermitOP>
-  | Read
+  | BaseRead
   | Custom<NumNode<PermitOP>, PermitOP>
 export type StrNode<PermitOP extends OP = OP> =
   | Const<string>
@@ -129,7 +129,7 @@ export type StrNode<PermitOP extends OP = OP> =
   | TagOverride<StrNode<PermitOP>, PermitOP>
   | DynamicTag<StrNode<PermitOP>, PermitOP>
   | TagValRead<PermitOP>
-  | Read
+  | BaseRead
   | Custom<StrNode<PermitOP>, PermitOP>
 export type AnyNode<PermitOP extends OP = OP> =
   | Const<number | string>
@@ -145,7 +145,7 @@ export type AnyNode<PermitOP extends OP = OP> =
   | TagOverride<AnyNode<PermitOP>, PermitOP>
   | DynamicTag<AnyNode<PermitOP>, PermitOP>
   | TagValRead<PermitOP>
-  | Read
+  | BaseRead
   | Custom<AnyNode<PermitOP>, PermitOP>
 
 export type NumOP = NumNode['op']
