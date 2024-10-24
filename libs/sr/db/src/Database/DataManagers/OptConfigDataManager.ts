@@ -60,6 +60,9 @@ export interface OptConfig {
   allowLocationsState: AllowLocationsState
   relicExclusion: string[]
   useExcludedRelics: boolean
+  /**
+   * @deprecated
+   */
   optimizationTarget?: Tag
   mainStatAssumptionLevel: number
   allowPartial: boolean
