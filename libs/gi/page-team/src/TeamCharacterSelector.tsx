@@ -145,26 +145,18 @@ export default function TeamCharacterSelector({
           <CardContent
             sx={{
               display: 'flex',
+              alignItems: 'center',
               justifyContent: 'center',
               '&:hover': {
                 color: 'info.light',
               },
+              gap: 1,
+              textShadow: '#000 0 0 10px !important',
             }}
           >
-            <Typography
-              noWrap
-              variant="h5"
-              sx={{
-                display: 'flex',
-                gap: 1,
-                alignItems: 'center',
-                textShadow: '#000 0 0 10px !important',
-              }}
-            >
-              <TeamIcon />
-              <Typography noWrap variant="h5">
-                {team.name}
-              </Typography>
+            <TeamIcon />
+            <Typography noWrap variant="h5">
+              {team.name}
             </Typography>
           </CardContent>
         </BootstrapTooltip>
