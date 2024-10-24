@@ -12,7 +12,7 @@ import {
   allRelicSlotKeys,
   relicSlotToMainStatKeys,
 } from '@genshin-optimizer/sr/consts'
-import type { Read } from '@genshin-optimizer/sr/formula'
+import type { Tag } from '@genshin-optimizer/sr/formula'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
 import { validateTag } from '../tagUtil'
@@ -33,7 +33,7 @@ export type RelicSetExclusionKey = (typeof allRelicSetExclusionKeys)[number]
 export type RelicSetExclusion = Partial<Record<RelicSetExclusionKey, (2 | 4)[]>>
 
 export type StatFilter = {
-  read: Read
+  tag: Tag
   value: number
   isMax: boolean
   disabled: boolean
@@ -60,7 +60,7 @@ export interface OptConfig {
   allowLocationsState: AllowLocationsState
   relicExclusion: string[]
   useExcludedRelics: boolean
-  optimizationTarget?: Read
+  optimizationTarget?: Tag
   mainStatAssumptionLevel: number
   allowPartial: boolean
   maxBuildsToShow: number
@@ -109,12 +109,9 @@ export class OptConfigDataManager extends DataManager<
     } = obj as OptConfig
 
     if (!Array.isArray(statFilters)) statFilters = []
-    statFilters.filter((statFilter) => {
-      const { read, value, isMax, disabled } =
-        statFilter as UnArray<StatFilters>
-      // TODO: Read validation
-      if (typeof read !== 'object') return false
-      if (!validateTag(read.tag)) return false
+    statFilters = statFilters.filter((statFilter) => {
+      const { tag, value, isMax, disabled } = statFilter as UnArray<StatFilters>
+      if (!validateTag(tag)) return false
       if (typeof value !== 'number') return false
       if (typeof isMax !== 'boolean') return false
       if (typeof disabled !== 'boolean') return false
@@ -138,9 +135,7 @@ export class OptConfigDataManager extends DataManager<
       })
     }
 
-    // TODO: Read validation
-    if (typeof optimizationTarget !== 'object') optimizationTarget = undefined
-    if (optimizationTarget?.tag && !validateTag(optimizationTarget.tag))
+    if (optimizationTarget && !validateTag(optimizationTarget))
       optimizationTarget = undefined
     if (
       typeof mainStatAssumptionLevel !== 'number' ||

@@ -127,7 +127,7 @@ export class Solver {
           )
         ),
         // stat filters
-        ...this.statFilters.map(({ read }) => read),
+        ...this.statFilters.map(({ tag }) => new Read(tag, 'sum')),
       ],
       this.calc,
       (tag: Tag) => {

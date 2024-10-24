@@ -1,6 +1,6 @@
 import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
 import { DropdownButton, SqBadge } from '@genshin-optimizer/common/ui'
-import type { Read } from '@genshin-optimizer/sr/formula'
+import type { Tag } from '@genshin-optimizer/sr/formula'
 import { own } from '@genshin-optimizer/sr/formula'
 import { getDmgType } from '@genshin-optimizer/sr/formula-ui'
 import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
@@ -13,8 +13,8 @@ export function OptimizationTargetSelector({
   setOptTarget,
   buttonProps = {},
 }: {
-  optTarget?: Read
-  setOptTarget: (o: Read) => void
+  optTarget?: Tag
+  setOptTarget: (o: Tag) => void
   buttonProps?: Omit<DropdownButtonProps, 'title' | 'children'>
 }) {
   const { t } = useTranslation('optimize')
@@ -24,7 +24,7 @@ export function OptimizationTargetSelector({
       title={
         <Box sx={{ display: 'flex', gap: 1 }}>
           {t('optTarget')}
-          {optTarget ? <OptimizationTargetDisplay tag={optTarget.tag} /> : null}
+          {optTarget ? <OptimizationTargetDisplay tag={optTarget} /> : null}
         </Box>
       }
       {...buttonProps}
@@ -32,7 +32,7 @@ export function OptimizationTargetSelector({
       {calc?.listFormulas(own.listing.formulas).map((read, index) => (
         <MenuItem
           key={`${index}_${read.tag.sheet || read.tag.q}_${read.tag.name}`}
-          onClick={() => setOptTarget(read)}
+          onClick={() => setOptTarget(read.tag)}
         >
           <ListItemText>
             <OptimizationTargetDisplay tag={read.tag} />

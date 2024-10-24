@@ -1,7 +1,7 @@
 import { NumberInputLazy } from '@genshin-optimizer/common/ui'
 import type { UnArray } from '@genshin-optimizer/common/util'
 import { type StatFilters } from '@genshin-optimizer/sr/db'
-import type { Read } from '@genshin-optimizer/sr/formula'
+import type { Tag } from '@genshin-optimizer/sr/formula'
 import {
   CheckBox,
   CheckBoxOutlineBlank,
@@ -14,7 +14,7 @@ import {
   IconButton,
   InputAdornment,
 } from '@mui/material'
-import { useCallback, useMemo } from 'react'
+import { useCallback } from 'react'
 import { OptimizationTargetSelector } from './OptimizationTargetSelector'
 
 type OptimizationTargetEditorListProps = {
@@ -29,16 +29,16 @@ export default function OptimizationTargetEditorList({
   disabled = false,
 }: OptimizationTargetEditorListProps) {
   const setTarget = useCallback(
-    (read: Read, oldIndex?: number) => {
+    (tag: Tag, oldIndex?: number) => {
       const statFilters_ = structuredClone(statFilters)
       if (typeof oldIndex === 'undefined')
         statFilters_.push({
-          read,
+          tag,
           value: 0,
           isMax: false,
           disabled: false,
         })
-      else statFilters_[oldIndex].read = read
+      else statFilters_[oldIndex].tag = tag
       setStatFilters(statFilters_)
     },
     [setStatFilters, statFilters]
@@ -76,23 +76,13 @@ export default function OptimizationTargetEditorList({
     },
     [setStatFilters, statFilters]
   )
-  const statFilterWithRead = useMemo(
-    () =>
-      statFilters.map(({ read, value, isMax, disabled }) => ({
-        read,
-        value,
-        isMax,
-        disabled,
-      })),
-    [statFilters]
-  )
 
   return (
     <Box display="flex" flexDirection="column" gap={1}>
-      {statFilterWithRead.map((statFilter, i) => (
+      {statFilters.map((statFilter, i) => (
         <OptimizationTargetEditorItem
           statFilter={statFilter}
-          setTarget={(read: Read) => setTarget(read, i)}
+          setTarget={(tag: Tag) => setTarget(tag, i)}
           delTarget={() => delTarget(i)}
           setTargetValue={(val) => setTargetValue(i, val)}
           setTargetisMax={(isMax) => setTargetisMax(i, isMax)}
@@ -118,17 +108,17 @@ function OptimizationTargetEditorItem({
   disabled,
 }: {
   statFilter: UnArray<StatFilters>
-  setTarget: (read: Read) => void
+  setTarget: (tag: Tag) => void
   delTarget: () => void
   setTargetValue: (value: number) => void
   setTargetisMax: (isMax: boolean) => void
   setDisabled: (disabled: boolean) => void
   disabled: boolean
 }) {
-  const { read, value, isMax, disabled: valueDisabled } = statFilter
+  const { tag, value, isMax, disabled: valueDisabled } = statFilter
 
   // TODO: best way to infer percentage from tag?
-  const isPercent = (read.tag.name || read.tag.q)?.endsWith('_')
+  const isPercent = (tag.name || tag.q)?.endsWith('_')
   return (
     <Box sx={{ display: 'flex', gap: 1 }}>
       <ButtonGroup
@@ -148,7 +138,7 @@ function OptimizationTargetEditorItem({
         </Button>
 
         <OptimizationTargetSelector
-          optTarget={read}
+          optTarget={tag}
           setOptTarget={setTarget}
           buttonProps={{ sx: { flexGrow: 1 }, size: 'small' }}
         />

@@ -126,8 +126,8 @@ function OptimizeWrapper() {
     // Filter out disabled
     const statFilters = (optConfig.statFilters ?? [])
       .filter(({ disabled }) => !disabled)
-      .map(({ read, value, isMax }) => ({
-        read,
+      .map(({ tag, value, isMax }) => ({
+        tag,
         value,
         isMax,
       }))

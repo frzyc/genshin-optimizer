@@ -7,11 +7,11 @@ import {
 } from '../tag'
 import { assertUnreachable, extract, isDebug, tagString } from '../util'
 import { arithmetic, branching } from './formula'
-import type { AnyNode, NumNode, Read, ReRead, StrNode } from './type'
+import type { AnyNode, BaseRead, NumNode, ReRead, StrNode } from './type'
 
 export type TagCache<M> = DedupTag<PreRead<M>>
 export type PreRead<M> = Partial<
-  Record<NonNullable<Read['ex']> | 'unique', CalcResult<number | string, M>>
+  Record<NonNullable<BaseRead['ex']> | 'unique', CalcResult<number | string, M>>
 > & { pre: CalcResult<number | string, M>[] }
 const getV = <V, M>(n: CalcResult<V, M>[]) => extract(n, 'val')
 
