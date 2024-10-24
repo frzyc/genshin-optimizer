@@ -173,24 +173,25 @@ function TabNav({
                   '&:hover': {
                     color: 'info.light',
                   },
+                  alignItems: 'center',
                 }}
               >
+                <PersonIcon />
                 <Typography
                   variant="h6"
+                  noWrap
                   sx={{
-                    display: 'flex',
                     gap: 1,
                     alignItems: 'center',
                     justifyContent: 'center',
                     textShadow: '#000 0 0 10px !important',
                   }}
                 >
-                  <PersonIcon />
                   <strong>{teamChar.name}</strong>
-                  <Divider orientation="vertical" variant="middle" flexItem />
-                  <CheckroomIcon />
-                  {database.teams.getActiveBuildName(loadoutDatum)}
                 </Typography>
+                <Divider orientation="vertical" variant="middle" flexItem />
+                <CheckroomIcon />
+                {database.teams.getActiveBuildName(loadoutDatum)}
               </CardContent>
             </BootstrapTooltip>
           </CardActionArea>
