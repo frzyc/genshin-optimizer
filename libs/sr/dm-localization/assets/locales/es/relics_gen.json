@@ -1,0 +1,14 @@
+{
+  "relics": "Artefactos",
+  "set": "Conjunto de artefactos",
+  "mainStat": "Atributo principal",
+  "slot": "Ranura",
+  "slotKey": {
+    "head": "Cabeza",
+    "hands": "Manos",
+    "body": "Torso",
+    "feet": "Piernas",
+    "sphere": "Esfera de plano",
+    "rope": "Cuerda de unión"
+  }
+}

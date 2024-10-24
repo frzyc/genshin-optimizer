@@ -113,6 +113,7 @@ function TeamEditor({
   teamData?: TeamData
 }) {
   const { t } = useTranslation('page_team')
+  const { t: tk } = useTranslation('teams_gen')
   const database = useDatabase()
   const team = database.teams.get(teamId)!
   const { loadoutData } = team
@@ -253,14 +254,14 @@ function TeamEditor({
       </Alert>
       <Grid container sx={{ justifyContent: 'space-between' }} spacing={2}>
         <Grid item>
-          <Typography variant="h5">Selected Team Members</Typography>
+          <Typography variant="h5">{t('teamSettings.title')}</Typography>
         </Grid>
         <Grid item>
           <Button
             startIcon={<Filter4Icon />}
             onClick={() => setShowMultiSelect(true)}
           >
-            Quick Select
+            {tk('quickSetup')}
           </Button>
         </Grid>
       </Grid>

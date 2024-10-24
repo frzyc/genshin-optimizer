@@ -429,6 +429,7 @@ export default async function runExecutor(_options: GenLocaleExecutorSchema) {
           'weaponNames',
           'artifactNames',
           'statKey',
+          'teams',
         ].includes(type)
       )
         return dumpFile(`${fileDir}/${type}_gen.json`, typeData)

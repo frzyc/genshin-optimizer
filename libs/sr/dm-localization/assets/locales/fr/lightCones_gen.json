@@ -1,0 +1,14 @@
+{
+  "lightCone_one": "Cône de lumière",
+  "lightCone_other": "Cônes de lumière",
+  "superimposition": "Superposition",
+  "path": {
+    "Erudition": "L'Érudition",
+    "Preservation": "La Préservation",
+    "Abundance": "L'Abondance",
+    "Nihility": "La Nihilité",
+    "Destruction": "La Destruction",
+    "Harmony": "L'Harmonie",
+    "TheHunt": "La Chasse"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "lightCone_one": "Light Cone Karakter",
+  "lightCone_other": "Light Cone",
+  "superimposition": "Superimpose",
+  "path": {
+    "Erudition": "Erudition",
+    "Preservation": "Preservation",
+    "Abundance": "Abundance",
+    "Nihility": "Nihility",
+    "Destruction": "Destruction",
+    "Harmony": "Harmony",
+    "TheHunt": "Hunt"
+  }
+}

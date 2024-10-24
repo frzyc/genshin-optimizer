@@ -32,6 +32,7 @@
       "desc": "<strong>Teams</strong> are a container for 4 character loadouts. It provides a way for characters to apply team buffs, and configuration of enemy stats. Loadouts can be shared between teams.",
       "first": "The first character in the team receives any \"active on-field character\" buffs, and cannot be empty."
     },
+    "title": "Team Members",
     "exportBtn": "Export Team",
     "dupBtn": "Duplicate Team",
     "deleteBtn": "Delete Team",

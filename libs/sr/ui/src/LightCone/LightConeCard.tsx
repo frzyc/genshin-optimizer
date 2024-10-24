@@ -50,7 +50,7 @@ export function LightConeCard({
   setLocation,
   extraButtons,
 }: LightConeCardProps) {
-  const { t } = useTranslation(['lightCone', 'sheet_gen'])
+  const { t } = useTranslation(['lightCone', 'lightCones_gen', 'common_gen'])
 
   const { key, level, ascension, superimpose, location = '', lock } = lightCone
   const calc = srCalculatorWithEntries(lightConeData(lightCone))
@@ -106,13 +106,13 @@ export function LightConeCard({
               </Typography>
             </Box>
             <Typography component="span" variant="h5">
-              {t('sheet_gen:lvl')} {level}
+              {t('common_gen:lv')} {level}
             </Typography>
             <Typography component="span" variant="h5" color="text.secondary">
               /{ascensionMaxLevel[ascension]}
             </Typography>
             <Typography variant="h6">
-              {t('sheet_gen:superimpose')} {superimpose}
+              {t('lightCones_gen:superimpose')} {superimpose}
             </Typography>
             <StarsDisplay stars={lcStat.rarity} colored />
           </Box>

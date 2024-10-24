@@ -1,0 +1,14 @@
+{
+  "relics": "遺器",
+  "set": "遺器套裝",
+  "mainStat": "主屬性",
+  "slot": "欄位",
+  "slotKey": {
+    "head": "頭部",
+    "hands": "手部",
+    "body": "軀幹",
+    "feet": "腳部",
+    "sphere": "次元球",
+    "rope": "連結繩"
+  }
+}

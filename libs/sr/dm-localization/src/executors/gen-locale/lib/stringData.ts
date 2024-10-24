@@ -21,6 +21,10 @@ export type InterpolationTag = keyof typeof interpolationTags
 // Process tags in string to template for i18n
 function processString(str: string | undefined) {
   if (str === undefined) str = ''
+
+  // Remove '{SPACE}' artifacts from certain strings
+  // Do this first to match curly brackets to prevent interfering with later str replacements
+  str = str.replace(/(.*?){SPACE}/g, '$1')
   // Find portion similar to
   // <color=#f29e38ff><unbreak>#1[i]%</unbreak></color>
   // replaces with '<color=#f29e38ff>#1[i]%</color>'
@@ -114,7 +118,7 @@ const langArray = Object.entries(languageMap).map(([langKey, strings]) => {
       throw new Error(
         `Trailblazer key ${key} was unable to find an elemental type`
       )
-    const typeString = strings[HashData.sheet.type[type]]
+    const typeString = strings[HashData.characters.type[type]]
 
     const trailblazerKey = allTrailblazerKeys.find((tbKey) =>
       key.includes(tbKey)
@@ -124,7 +128,7 @@ const langArray = Object.entries(languageMap).map(([langKey, strings]) => {
         `Trailblazer key ${key} was unable to find a trailblazer key`
       )
     const path = TrailblazerPathMap[trailblazerKey]
-    const pathString = strings[HashData.sheet.path[path]]
+    const pathString = strings[HashData.characters.path[path]]
 
     // Override name to something like 'Trailblazer (Physical • Destruction)'
     data.char[
@@ -135,7 +139,7 @@ const langArray = Object.entries(languageMap).map(([langKey, strings]) => {
 
   // March 7th (Hunt) name handling
   data.char.March7thTheHunt.name = `${data.char.March7thTheHunt.name} • ${
-    strings[HashData.sheet.path.TheHunt]
+    strings[HashData.characters.path.TheHunt]
   }`
   data.charNames.March7thTheHunt = data.char.March7thTheHunt.name
 

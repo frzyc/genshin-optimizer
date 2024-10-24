@@ -91,6 +91,10 @@ export const mapHashData = {
     cryo_dmg_: 4054347456,
     dendro_dmg_: 1824382851,
   },
+  teams: {
+    team: 1969596378,
+    quickSetup: 3714868212,
+  },
 } as const
 export function mapHashDataOverride() {
   mapHashData.charNames.TravelerF = 3241049361
