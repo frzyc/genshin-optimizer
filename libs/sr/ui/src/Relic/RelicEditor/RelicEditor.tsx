@@ -90,7 +90,7 @@ export function RelicEditor({
   disableSet = false,
 }: RelicEditorProps) {
   const { t } = useTranslation('relic')
-  const { t: tk } = useTranslation(['slotKey_gen', 'statKey_gen'])
+  const { t: tk } = useTranslation(['relics_gen', 'statKey_gen'])
 
   const { database } = useDatabaseContext()
   const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
@@ -349,7 +349,7 @@ export function RelicEditor({
                   <CardThemed bgt="light" sx={{ p: 1, ml: 1, flexGrow: 1 }}>
                     <Suspense fallback={<Skeleton width="60%" />}>
                       <Typography color="text.secondary">
-                        {tk(`slotKey_gen:${slotKey}`)}
+                        {tk(`relics_gen:${slotKey}`)}
                       </Typography>
                     </Suspense>
                   </CardThemed>
