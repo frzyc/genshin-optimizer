@@ -3,6 +3,7 @@ import {
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
 import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
+import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
 import {
   Box,
   Button,
@@ -13,39 +14,36 @@ import {
 } from '@mui/material'
 import { Suspense, useEffect, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useDatabaseContext } from '../Context'
-import { TeamCard } from './TeamCard'
+import { ComboCard } from './ComboCard'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const amtPerSize = { xs: 5, sm: 5, md: 10, lg: 10, xl: 10 }
-/**
- * @deprecated move to page-team
- */
-export function TeamInventory() {
+
+export function ComboInventory() {
   const { database } = useDatabaseContext()
   const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
   useEffect(
-    () => database.teams.followAny(setDirtyDatabase),
+    () => database.combos.followAny(setDirtyDatabase),
     [database, setDirtyDatabase]
   )
 
   const navigate = useNavigate()
 
-  const { teamIds } = useMemo(() => {
-    const teamIds = database.teams.keys
-    return dirtyDatabase && { teamIds }
+  const { comboIds } = useMemo(() => {
+    const comboIds = database.combos.keys
+    return dirtyDatabase && { comboIds }
   }, [database, dirtyDatabase])
 
   const size = useMediaQueryUp()
 
   const { numShow, setTriggerElement } = useInfScroll(
     amtPerSize[size],
-    teamIds.length
+    comboIds.length
   )
 
-  const teamsIdsToShow = useMemo(
-    () => teamIds.slice(0, numShow),
-    [teamIds, numShow]
+  const comboIdsToShow = useMemo(
+    () => comboIds.slice(0, numShow),
+    [comboIds, numShow]
   )
 
   return (
@@ -58,9 +56,9 @@ export function TeamInventory() {
       }
     >
       <CardThemed bgt="dark">
-        <CardHeader title="Teams" />
+        <CardHeader title="Combos" />
         <CardContent>
-          <Button onClick={() => database.teams.new()}>Create Team</Button>
+          <Button onClick={() => database.combos.new()}>Create Combo</Button>
           <Box
             sx={{ overflow: 'auto', maxHeight: '50vh' }}
             my={1}
@@ -69,19 +67,19 @@ export function TeamInventory() {
             gap={1}
           >
             <Grid container spacing={1} columns={columns}>
-              {teamsIdsToShow.map((teamId) => (
-                <Grid item key={teamId} xs={1}>
-                  <TeamCard
-                    teamId={teamId}
+              {comboIdsToShow.map((comboId) => (
+                <Grid item key={comboId} xs={1}>
+                  <ComboCard
+                    teamId={comboId}
                     onClick={(charId) =>
-                      navigate(`${teamId}${charId ? `/${charId}` : ''}`)
+                      navigate(`${comboId}${charId ? `/${charId}` : ''}`)
                     }
                   />
                 </Grid>
               ))}
             </Grid>
 
-            {teamIds.length !== teamsIdsToShow.length && (
+            {comboIds.length !== comboIdsToShow.length && (
               <Skeleton
                 ref={(node) => {
                   if (!node) return

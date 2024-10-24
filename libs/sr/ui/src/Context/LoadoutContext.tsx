@@ -8,9 +8,13 @@ export type LoadoutContextObj = {
   loadout: Loadout
   loadoutMetadatum: LoadoutMetadatum
 }
-
+/**
+ * @deprecated move to page-team
+ */
 export const LoadoutContext = createContext({} as LoadoutContextObj)
-
+/**
+ * @deprecated move to page-team
+ */
 export function useLoadoutContext() {
   return useContext(LoadoutContext)
 }

@@ -1,5 +1,6 @@
 import { CardThemed, InfoTooltip } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
+import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
 import {
   Box,
   CardActionArea,
@@ -7,11 +8,8 @@ import {
   Grid,
   Typography,
 } from '@mui/material'
-import { useDatabaseContext } from '../Context'
-/**
- * @deprecated move to page-team
- */
-export function TeamCard({
+
+export function ComboCard({
   teamId,
   bgTheme = 'light',
   onClick,
@@ -21,7 +19,7 @@ export function TeamCard({
   onClick: (charID?: CharacterKey) => void
 }) {
   const { database } = useDatabaseContext()
-  const team = database.teams.get(teamId)!
+  const team = database.combos.get(teamId)!
   return (
     <CardThemed
       bgt={bgTheme}
@@ -55,12 +53,10 @@ export function TeamCard({
         </Box>
         <CardContent>
           <Grid container columns={4} gap={1}>
-            {team.loadoutMetadata.map((ld, i) =>
-              ld?.loadoutId ? (
-                <CardThemed key={ld.loadoutId} sx={{ flexGrow: 1 }}>
-                  <Typography>
-                    {database.loadouts.get(ld.loadoutId)?.key}
-                  </Typography>
+            {team.comboMetadata.map((cmdata, i) =>
+              cmdata ? (
+                <CardThemed key={i} sx={{ flexGrow: 1 }}>
+                  <Typography>{cmdata.characterKey}</Typography>
                 </CardThemed>
               ) : (
                 <CardThemed key={i} sx={{ flexGrow: 1 }}>
