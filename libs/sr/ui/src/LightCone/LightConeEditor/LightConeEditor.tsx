@@ -367,7 +367,7 @@ function SuperimpositionDropdown({
   setSuperimposition,
   disabled = false,
 }: SuperimpositionDropdownProps) {
-  const { t } = useTranslation('sheet_gen')
+  const { t } = useTranslation('lightCone_gen')
   return (
     <DropdownButton
       title={`${t('superimpose')} ${superimpose}`}
@@ -405,13 +405,13 @@ function LevelDropdown({
   setLevelAscension,
   disabled = false,
 }: LevelDropdownProps) {
-  const { t } = useTranslation(['sheet_gen', 'common'])
+  const { t } = useTranslation(['common_gen', 'common'])
 
   return (
     <DropdownButton
       title={
         level
-          ? `${t('lvl')} ${level}/${ascensionMaxLevel[ascension!]}`
+          ? `${t('lv')} ${level}/${ascensionMaxLevel[ascension!]}`
           : t('common:selectlevel')
       }
       color="primary"
@@ -426,8 +426,8 @@ function LevelDropdown({
           onClick={() => setLevelAscension(lv, as)}
         >
           {lv === ascensionMaxLevel[as]
-            ? `${t('lvl')} ${lv}`
-            : `${t('lvl')} ${lv}/${ascensionMaxLevel[as]}`}
+            ? `${t('lv')} ${lv}`
+            : `${t('lv')} ${lv}/${ascensionMaxLevel[as]}`}
         </MenuItem>
       ))}
     </DropdownButton>

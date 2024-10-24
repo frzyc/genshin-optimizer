@@ -11,7 +11,7 @@ export const st = (
   values?: Record<string, string | number>
 ) => <Translate ns="sheet" key18={strKey} values={values} />
 export const stg = (strKey: string) => (
-  <Translate ns="sheet_gen" key18={strKey} />
+  <Translate ns="characters_gen" key18={strKey} />
 )
 
 type Translated = [

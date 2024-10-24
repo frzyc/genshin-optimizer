@@ -8,7 +8,7 @@ export function SkillSubtitle({
   talentKey: 'basic' | 'skill' | 'ult' | 'talent'
   children: ReactNode
 }) {
-  const { t } = useTranslation('sheet_gen')
+  const { t } = useTranslation('characters_gen')
   return (
     <span>
       {t(`ability.${talentKey}`)} • {children}
