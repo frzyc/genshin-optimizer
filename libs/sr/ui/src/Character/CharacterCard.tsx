@@ -23,7 +23,6 @@ export function CharacterCard({
 }) {
   const calc =
     useSrCalcContext() ?? srCalculatorWithEntries(charData(character))
-  console.log(own.final.hp.tag)
   return (
     <Stack>
       <CardThemed>

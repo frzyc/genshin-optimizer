@@ -69,7 +69,7 @@ export class Solver {
             res(data.buildResults)
             break
           case 'err':
-            console.log(data)
+            console.error(data)
             rej()
             break
         }
@@ -105,7 +105,7 @@ export class Solver {
             res()
             break
           case 'err':
-            console.log(data)
+            console.error(data)
             rej()
             break
         }
