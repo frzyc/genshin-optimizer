@@ -4,7 +4,6 @@ import {
   CharacterContext,
   useCharacter,
   useDatabaseContext,
-  useTeam,
 } from '@genshin-optimizer/sr/ui'
 import { Box, Skeleton } from '@mui/material'
 import { Suspense, useEffect, useMemo, useState } from 'react'
@@ -22,12 +21,13 @@ import { TeamCharacterSelector } from './TeamCharacterSelector'
 import TeammateDisplay from './TeammateDisplay'
 import type { PresetContextObj, TeamContextObj } from './context'
 import { PresetContext, TeamContext, useTeamContext } from './context'
+import { useTeam } from './hooks'
 
 const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
 
 export default function PageTeam() {
   const { database } = useDatabaseContext()
-  const { teamId: teamId } = useParams<{ teamId?: string }>()
+  const { teamId } = useParams<{ teamId?: string }>()
   const invalidKey = !teamId || !database.teams.keys.includes(teamId)
 
   // An edit is triggered whenever a team gets opened even if no edits are done

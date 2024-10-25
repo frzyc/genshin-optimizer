@@ -3,9 +3,9 @@ import type { TeamMetaDataum } from '@genshin-optimizer/sr/db'
 import {
   CharacterAutocomplete,
   useDatabaseContext,
-  useTeam,
 } from '@genshin-optimizer/sr/ui'
 import { Box } from '@mui/material'
+import { useTeam } from './hooks'
 
 export default function TeamSelectors({ teamId }: { teamId: string }) {
   const team = useTeam(teamId)!

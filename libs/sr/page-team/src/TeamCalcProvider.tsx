@@ -34,11 +34,11 @@ import {
   useCharacter,
   useEquippedRelics,
   useLightCone,
-  useTeam,
 } from '@genshin-optimizer/sr/ui'
 import type { ReactNode } from 'react'
 import { useContext, useMemo } from 'react'
 import { PresetContext } from './context'
+import { useTeam } from './hooks'
 
 type CharacterFullData = {
   character: ICachedCharacter | undefined
