@@ -1,11 +1,12 @@
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { allRelicSlotKeys } from '@genshin-optimizer/sr/consts'
+import {
+  EmptyRelicCard,
+  RelicCard,
+  useEquippedRelics,
+} from '@genshin-optimizer/sr/ui'
 import { Grid } from '@mui/material'
-import { useEquippedRelics } from '../Hook'
-import { EmptyRelicCard, RelicCard } from '../Relic'
-/**
- * @deprecated move to page-team
- */
+
 export function BuildDisplay({
   build,
 }: {

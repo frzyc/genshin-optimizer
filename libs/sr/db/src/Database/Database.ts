@@ -14,10 +14,8 @@ import { BuildTcDataManager } from './DataManagers/BuildTcDataManager'
 import { CharMetaDataManager } from './DataManagers/CharMetaDataManager'
 import { CharacterDataManager } from './DataManagers/CharacterDataManager'
 import { LightConeDataManager } from './DataManagers/LightConeDataManager'
-import { LoadoutDataManager } from './DataManagers/LoadoutDataManager'
 import { OptConfigDataManager } from './DataManagers/OptConfigDataManager'
 import { RelicDataManager } from './DataManagers/RelicDataManager'
-import { TeamDataManager } from './DataManagers/TeamDataManager'
 import type { ImportResult } from './exim'
 import { newImportResult } from './exim'
 import {
@@ -33,8 +31,6 @@ export class SroDatabase extends Database {
   optConfigs: OptConfigDataManager
   charMeta: CharMetaDataManager
   builds: BuildDataManager
-  loadouts: LoadoutDataManager
-  teams: TeamDataManager
   combos: ComboDataManager
 
   dbMeta: DBMetaEntry
@@ -73,12 +69,6 @@ export class SroDatabase extends Database {
     this.builds = new BuildDataManager(this)
 
     // Depends on builds, buildTcs, and optConfigs
-    this.loadouts = new LoadoutDataManager(this)
-
-    // Depends on Loadout
-    this.teams = new TeamDataManager(this)
-
-    // Depends on builds, buildTcs, and optConfigs
     this.combos = new ComboDataManager(this)
 
     // Handle DataEntries
@@ -107,8 +97,6 @@ export class SroDatabase extends Database {
       this.buildTcs,
       this.charMeta,
       this.builds,
-      this.loadouts,
-      this.teams,
       this.combos,
     ] as const
   }

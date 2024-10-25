@@ -22,8 +22,6 @@ const PageLightCones = lazy(
 const PageCharacters = lazy(
   () => import('@genshin-optimizer/sr/page-characters')
 )
-const PageTeams = lazy(() => import('@genshin-optimizer/sr/page-teams'))
-const PageTeam = lazy(() => import('@genshin-optimizer/sr/page-team'))
 const PageCombos = lazy(() => import('@genshin-optimizer/sr/page-combos'))
 const PageCombo = lazy(() => import('@genshin-optimizer/sr/page-combo'))
 const PageSettings = lazy(() => import('@genshin-optimizer/sr/page-settings'))
@@ -69,10 +67,6 @@ function Content() {
             <Route path="/relics" element={<PageRelics />} />
             <Route path="/lightcones" element={<PageLightCones />} />
             <Route path="/characters" element={<PageCharacters />} />
-            <Route path="/teams/*">
-              <Route index element={<PageTeams />} />
-              <Route path=":teamId/*" element={<PageTeam />} />
-            </Route>
             <Route path="/combos/*">
               <Route index element={<PageCombos />} />
               <Route path=":teamId/*" element={<PageCombo />} />
