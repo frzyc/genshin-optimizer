@@ -9,7 +9,7 @@ import {
   Typography,
 } from '@mui/material'
 
-export function ComboCard({
+export function TeamCard({
   teamId,
   bgTheme = 'light',
   onClick,
@@ -19,7 +19,7 @@ export function ComboCard({
   onClick: (charID?: CharacterKey) => void
 }) {
   const { database } = useDatabaseContext()
-  const team = database.combos.get(teamId)!
+  const team = database.teams.get(teamId)!
   return (
     <CardThemed
       bgt={bgTheme}
@@ -53,7 +53,7 @@ export function ComboCard({
         </Box>
         <CardContent>
           <Grid container columns={4} gap={1}>
-            {team.comboMetadata.map((cmdata, i) =>
+            {team.teamMetadata.map((cmdata, i) =>
               cmdata ? (
                 <CardThemed key={i} sx={{ flexGrow: 1 }}>
                   <Typography>{cmdata.characterKey}</Typography>

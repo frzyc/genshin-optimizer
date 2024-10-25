@@ -3,11 +3,7 @@ import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { type ICachedRelic } from '@genshin-optimizer/sr/db'
 import type { BuildResult, ProgressResult } from '@genshin-optimizer/sr/solver'
 import { MAX_BUILDS, Solver } from '@genshin-optimizer/sr/solver'
-import {
-  BuildDisplay,
-  useDatabaseContext,
-  useSrCalcContext,
-} from '@genshin-optimizer/sr/ui'
+import { useDatabaseContext, useSrCalcContext } from '@genshin-optimizer/sr/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import {
@@ -29,28 +25,29 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
-import { ComboContext } from '../../context'
+import { TeamContext } from '../../context'
+import { BuildDisplay } from './BuildDisplay'
 import OptConfigWrapper, { OptConfigContext } from './OptConfigWrapper'
 import { StatFilterCard } from './StatFilterCard'
 import { WorkerSelector } from './WorkerSelector'
 
 export default function Optimize() {
   const { database } = useDatabaseContext()
-  const { comboMetadatum, comboId } = useContext(ComboContext)
-  const optConfigId = comboMetadatum.optConfigId
+  const { teamMetadatum, teamId } = useContext(TeamContext)
+  const optConfigId = teamMetadatum.optConfigId
   const createOptConfig = useCallback(() => {
     if (optConfigId) return
 
-    database.combos.set(comboId, (combo) => {
-      const meta = combo.comboMetadata.find(
-        (meta) => meta?.characterKey === comboMetadatum.characterKey
+    database.teams.set(teamId, (team) => {
+      const meta = team.teamMetadata.find(
+        (meta) => meta?.characterKey === teamMetadatum.characterKey
       )
       if (meta) {
         const newOptConfigId = database.optConfigs.new()
         meta.optConfigId = newOptConfigId
       }
     })
-  }, [comboId, comboMetadatum.characterKey, database, optConfigId])
+  }, [teamId, teamMetadatum.characterKey, database, optConfigId])
   if (optConfigId) {
     return (
       <OptConfigWrapper optConfigId={optConfigId}>
@@ -62,7 +59,7 @@ export default function Optimize() {
       <CardThemed>
         <CardHeader
           title={
-            <span>Optimize this combo for {comboMetadatum.characterKey}</span>
+            <span>Optimize this team for {teamMetadatum.characterKey}</span>
           }
           action={<Button onClick={createOptConfig}>Optimize</Button>}
         />
@@ -77,9 +74,9 @@ function OptimizeWrapper() {
 
   const calc = useSrCalcContext()
   const {
-    combo,
-    comboMetadatum: { characterKey },
-  } = useContext(ComboContext)
+    team,
+    teamMetadatum: { characterKey },
+  } = useContext(TeamContext)
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<ProgressResult | undefined>(
     undefined
@@ -134,7 +131,7 @@ function OptimizeWrapper() {
     const optimizer = new Solver(
       characterKey,
       calc,
-      combo.frames,
+      team.frames,
       statFilters,
       relicsBySlot,
       numWorkers,
@@ -152,7 +149,7 @@ function OptimizeWrapper() {
   }, [
     calc,
     characterKey,
-    combo,
+    team,
     numWorkers,
     optConfig.statFilters,
     relicsBySlot,

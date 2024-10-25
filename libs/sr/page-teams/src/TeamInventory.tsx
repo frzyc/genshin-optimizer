@@ -14,36 +14,36 @@ import {
 } from '@mui/material'
 import { Suspense, useEffect, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ComboCard } from './ComboCard'
+import { TeamCard } from './TeamCard'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const amtPerSize = { xs: 5, sm: 5, md: 10, lg: 10, xl: 10 }
 
-export function ComboInventory() {
+export function TeamInventory() {
   const { database } = useDatabaseContext()
   const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
   useEffect(
-    () => database.combos.followAny(setDirtyDatabase),
+    () => database.teams.followAny(setDirtyDatabase),
     [database, setDirtyDatabase]
   )
 
   const navigate = useNavigate()
 
-  const { comboIds } = useMemo(() => {
-    const comboIds = database.combos.keys
-    return dirtyDatabase && { comboIds }
+  const { teamIds } = useMemo(() => {
+    const teamIds = database.teams.keys
+    return dirtyDatabase && { teamIds }
   }, [database, dirtyDatabase])
 
   const size = useMediaQueryUp()
 
   const { numShow, setTriggerElement } = useInfScroll(
     amtPerSize[size],
-    comboIds.length
+    teamIds.length
   )
 
-  const comboIdsToShow = useMemo(
-    () => comboIds.slice(0, numShow),
-    [comboIds, numShow]
+  const teamIdsToShow = useMemo(
+    () => teamIds.slice(0, numShow),
+    [teamIds, numShow]
   )
 
   return (
@@ -56,9 +56,9 @@ export function ComboInventory() {
       }
     >
       <CardThemed bgt="dark">
-        <CardHeader title="Combos" />
+        <CardHeader title="Teams" />
         <CardContent>
-          <Button onClick={() => database.combos.new()}>Create Combo</Button>
+          <Button onClick={() => database.teams.new()}>Create Team</Button>
           <Box
             sx={{ overflow: 'auto', maxHeight: '50vh' }}
             my={1}
@@ -67,19 +67,19 @@ export function ComboInventory() {
             gap={1}
           >
             <Grid container spacing={1} columns={columns}>
-              {comboIdsToShow.map((comboId) => (
-                <Grid item key={comboId} xs={1}>
-                  <ComboCard
-                    teamId={comboId}
+              {teamIdsToShow.map((teamId) => (
+                <Grid item key={teamId} xs={1}>
+                  <TeamCard
+                    teamId={teamId}
                     onClick={(charId) =>
-                      navigate(`${comboId}${charId ? `/${charId}` : ''}`)
+                      navigate(`${teamId}${charId ? `/${charId}` : ''}`)
                     }
                   />
                 </Grid>
               ))}
             </Grid>
 
-            {comboIds.length !== comboIdsToShow.length && (
+            {teamIds.length !== teamIdsToShow.length && (
               <Skeleton
                 ref={(node) => {
                   if (!node) return

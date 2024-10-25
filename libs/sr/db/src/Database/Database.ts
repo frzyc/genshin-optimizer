@@ -8,7 +8,6 @@ import { DBMetaEntry } from './DataEntries/DBMetaEntry'
 import { DisplayCharacterEntry } from './DataEntries/DisplayCharacterEntry'
 import { DisplayLightConeEntry } from './DataEntries/DisplayLightConeEntry'
 import { DisplayRelicEntry } from './DataEntries/DisplayRelicEntry'
-import { ComboDataManager } from './DataManagers'
 import { BuildDataManager } from './DataManagers/BuildDataManager'
 import { BuildTcDataManager } from './DataManagers/BuildTcDataManager'
 import { CharMetaDataManager } from './DataManagers/CharMetaDataManager'
@@ -16,6 +15,7 @@ import { CharacterDataManager } from './DataManagers/CharacterDataManager'
 import { LightConeDataManager } from './DataManagers/LightConeDataManager'
 import { OptConfigDataManager } from './DataManagers/OptConfigDataManager'
 import { RelicDataManager } from './DataManagers/RelicDataManager'
+import { TeamDataManager } from './DataManagers/TeamDataManager'
 import type { ImportResult } from './exim'
 import { newImportResult } from './exim'
 import {
@@ -31,7 +31,7 @@ export class SroDatabase extends Database {
   optConfigs: OptConfigDataManager
   charMeta: CharMetaDataManager
   builds: BuildDataManager
-  combos: ComboDataManager
+  teams: TeamDataManager
 
   dbMeta: DBMetaEntry
   displayCharacter: DisplayCharacterEntry
@@ -69,7 +69,7 @@ export class SroDatabase extends Database {
     this.builds = new BuildDataManager(this)
 
     // Depends on builds, buildTcs, and optConfigs
-    this.combos = new ComboDataManager(this)
+    this.teams = new TeamDataManager(this)
 
     // Handle DataEntries
     this.dbMeta = new DBMetaEntry(this)
@@ -97,7 +97,7 @@ export class SroDatabase extends Database {
       this.buildTcs,
       this.charMeta,
       this.builds,
-      this.combos,
+      this.teams,
     ] as const
   }
   get dataEntries() {

@@ -1,6 +1,5 @@
 export * from './useBuild'
 export * from './useCharacter'
-export * from './useCombo'
 export * from './useEquippedRelics'
 export * from './useLightCone'
 export * from './useLoadout'

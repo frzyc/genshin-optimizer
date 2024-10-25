@@ -17,7 +17,7 @@ import { validateTag } from '../tagUtil'
 
 const buildTypeKeys = ['equipped', 'real', 'tc'] as const
 type BuildTypeKey = (typeof buildTypeKeys)[number]
-export type ComboMetaDataum = {
+export type TeamMetaDataum = {
   characterKey: CharacterKey
 
   buildType: BuildTypeKey
@@ -30,7 +30,7 @@ export type ComboMetaDataum = {
 
   optConfigId?: string
 }
-export interface Combo {
+export interface Team {
   name: string
   description: string
 
@@ -52,51 +52,46 @@ export interface Combo {
   statConstraints: Array<{ tag: Tag; values: number[]; isMaxs: boolean[] }>
 
   // TODO enemy base stats
-  comboMetadata: Array<ComboMetaDataum | undefined>
+  teamMetadata: Array<TeamMetaDataum | undefined>
 }
 
-export class ComboDataManager extends DataManager<
-  string,
-  'combos',
-  Combo,
-  Combo
-> {
+export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
   constructor(database: SroDatabase) {
-    super(database, 'combos')
+    super(database, 'teams')
   }
   newName() {
     const existing = this.values
     for (let num = existing.length + 1; num <= existing.length * 2; num++) {
-      const name = `Combo Name ${num}`
+      const name = `Team Name ${num}`
       if (existing.some((tc) => tc.name !== name)) return name
     }
-    return `Combo Name`
+    return `Team Name`
   }
-  override validate(obj: unknown): Combo | undefined {
+  override validate(obj: unknown): Team | undefined {
     let {
       name,
       description,
-      comboMetadata,
+      teamMetadata,
       lastEdit,
       frames,
       conditionals: conditional,
       bonusStats,
       statConstraints,
-    } = obj as Combo
+    } = obj as Team
     if (typeof name !== 'string') name = this.newName()
     if (typeof description !== 'string') description = ''
 
-    // Validate comboMetadata
+    // Validate teamMetadata
     {
       // validate loadoutIds
-      if (!Array.isArray(comboMetadata))
-        comboMetadata = range(0, 3).map(() => undefined)
+      if (!Array.isArray(teamMetadata))
+        teamMetadata = range(0, 3).map(() => undefined)
 
-      comboMetadata = range(0, 3).map((ind) => {
-        const comboMetadatum = comboMetadata[ind]
-        if (!comboMetadatum || typeof comboMetadatum !== 'object')
+      teamMetadata = range(0, 3).map((ind) => {
+        const teamMetadatum = teamMetadata[ind]
+        if (!teamMetadatum || typeof teamMetadatum !== 'object')
           return undefined
-        const { characterKey } = comboMetadatum
+        const { characterKey } = teamMetadatum
         let {
           buildType,
           buildId,
@@ -106,7 +101,7 @@ export class ComboDataManager extends DataManager<
           compareBuildId,
           compareBuildTcId,
           optConfigId,
-        } = comboMetadatum
+        } = teamMetadatum
 
         if (!allCharacterKeys.includes(characterKey)) return undefined
         if (!buildTypeKeys.includes(buildType)) buildType = 'equipped'
@@ -161,7 +156,7 @@ export class ComboDataManager extends DataManager<
           compareBuildId,
           compareBuildTcId,
           optConfigId,
-        } as ComboMetaDataum
+        } as TeamMetaDataum
       })
     }
 
@@ -208,7 +203,7 @@ export class ComboDataManager extends DataManager<
     return {
       name,
       description,
-      comboMetadata: comboMetadata,
+      teamMetadata: teamMetadata,
       lastEdit,
       frames,
       conditionals: conditional,
@@ -217,17 +212,17 @@ export class ComboDataManager extends DataManager<
     }
   }
 
-  new(value: Partial<Combo> = {}): string {
+  new(value: Partial<Team> = {}): string {
     const id = this.generateKey()
     this.set(id, value)
     return id
   }
-  override remove(comboId: string, notify?: boolean): Combo | undefined {
-    const rem = super.remove(comboId, notify)
+  override remove(teamId: string, notify?: boolean): Team | undefined {
+    const rem = super.remove(teamId, notify)
     if (!rem) return
-    rem.comboMetadata.forEach((comboMetadatum) => {
-      comboMetadatum?.optConfigId &&
-        this.database.optConfigs.remove(comboMetadatum?.optConfigId)
+    rem.teamMetadata.forEach((teamMetadatum) => {
+      teamMetadatum?.optConfigId &&
+        this.database.optConfigs.remove(teamMetadatum?.optConfigId)
     })
     return rem
   }
@@ -257,7 +252,7 @@ export class ComboDataManager extends DataManager<
   //   }
   // }
   // import(data: object): string {
-  //   const { comboMetadata: loadoutMetadata, ...rest } = data as Combo & {
+  //   const { teamMetadata: loadoutMetadata, ...rest } = data as Team & {
   //     loadoutMetadata: object[]
   //   }
   //   const id = this.generateKey()
@@ -265,13 +260,13 @@ export class ComboDataManager extends DataManager<
   //     !this.set(id, {
   //       ...rest,
   //       name: `${rest.name ?? ''} (Imported)`,
-  //       comboMetadata: loadoutMetadata.map(
+  //       teamMetadata: loadoutMetadata.map(
   //         (obj) =>
   //           obj && {
   //             loadoutId: this.database.loadouts.import(obj),
   //           }
   //       ),
-  //     } as Combo)
+  //     } as Team)
   //   )
   //     return ''
   //   return id
@@ -280,11 +275,11 @@ export class ComboDataManager extends DataManager<
   /**
    * Note: this doesnt return any relics (all undefined) when the current teamchar is using a TC Build.
    */
-  getComboRelics({
+  getTeamRelics({
     characterKey,
     buildType,
     buildId,
-  }: ComboMetaDataum): Record<RelicSlotKey, ICachedRelic | undefined> {
+  }: TeamMetaDataum): Record<RelicSlotKey, ICachedRelic | undefined> {
     switch (buildType) {
       case 'equipped': {
         const char = this.database.chars.get(characterKey)
@@ -300,8 +295,8 @@ export class ComboDataManager extends DataManager<
     return objKeyMap(allRelicSlotKeys, () => undefined)
   }
 
-  followComboDatum(
-    { buildType, buildId, buildTcId }: ComboMetaDataum,
+  followTeamDatum(
+    { buildType, buildId, buildTcId }: TeamMetaDataum,
     callback: () => void
   ) {
     if (buildType === 'real') {
@@ -323,8 +318,8 @@ export class ComboDataManager extends DataManager<
       return this.database.buildTcs.follow(buildTcId, callback)
     return () => {}
   }
-  followComboDatumCompare(
-    { compareType, compareBuildId, compareBuildTcId }: ComboMetaDataum,
+  followTeamDatumCompare(
+    { compareType, compareBuildId, compareBuildTcId }: TeamMetaDataum,
     callback: () => void
   ) {
     if (compareType === 'real') {
@@ -350,7 +345,7 @@ export class ComboDataManager extends DataManager<
     return () => {}
   }
   getActiveBuildName(
-    { buildType, buildId, buildTcId }: ComboMetaDataum,
+    { buildType, buildId, buildTcId }: TeamMetaDataum,
     equippedName = 'Equipped Build'
   ) {
     switch (buildType) {
@@ -364,7 +359,7 @@ export class ComboDataManager extends DataManager<
   }
 
   setConditional(
-    comboId: string,
+    teamId: string,
     sheet: Sheet,
     src: Member | 'all',
     dst: Member | 'all',
@@ -372,15 +367,15 @@ export class ComboDataManager extends DataManager<
     condValue: number,
     frameIndex: number
   ) {
-    this.set(comboId, (combo) => {
-      const condIndex = combo.conditionals.findIndex(
+    this.set(teamId, (team) => {
+      const condIndex = team.conditionals.findIndex(
         (c) => c.src === src && c.dst === dst && c.condKey === condKey
       )
-      if (frameIndex > combo.frames.length) return
+      if (frameIndex > team.frames.length) return
       if (condIndex === -1) {
-        const condValues = new Array(combo.frames.length).fill(0)
+        const condValues = new Array(team.frames.length).fill(0)
         condValues[frameIndex] = condValue
-        combo.conditionals.push({
+        team.conditionals.push({
           sheet,
           src,
           dst,
@@ -388,69 +383,69 @@ export class ComboDataManager extends DataManager<
           condValues,
         })
       } else {
-        combo.conditionals[condIndex].condValues[frameIndex] = condValue
+        team.conditionals[condIndex].condValues[frameIndex] = condValue
       }
     })
   }
   /**
    *
-   * @param comboId
+   * @param teamId
    * @param tag
    * @param value number or null, null to delete
    * @param frameIndex
    */
   setBonusStat(
-    comboId: string,
+    teamId: string,
     tag: Tag,
     value: number | null,
     frameIndex: number
   ) {
-    this.set(comboId, (combo) => {
-      if (frameIndex > combo.frames.length) return
+    this.set(teamId, (team) => {
+      if (frameIndex > team.frames.length) return
       //TODO: quick and dirty tag comparasion
-      const statIndex = combo.bonusStats.findIndex(
+      const statIndex = team.bonusStats.findIndex(
         (s) => JSON.stringify(s.tag) === JSON.stringify(tag)
       )
       if (statIndex === -1 && value !== null) {
-        const values = new Array(combo.frames.length).fill(0)
+        const values = new Array(team.frames.length).fill(0)
         values[frameIndex] = value
-        combo.bonusStats.push({ tag, values })
+        team.bonusStats.push({ tag, values })
       } else if (value === null && statIndex > -1) {
-        combo.bonusStats.splice(statIndex, 1)
+        team.bonusStats.splice(statIndex, 1)
       } else if (value !== null && statIndex > -1) {
-        combo.bonusStats[statIndex].values[frameIndex] = value
+        team.bonusStats[statIndex].values[frameIndex] = value
       }
     })
   }
   /**
    *
-   * @param comboId
+   * @param teamId
    * @param tag
    * @param value number or null, null to delete
    * @param isMax
    * @param frameIndex
    */
   setStatConstraint(
-    comboId: string,
+    teamId: string,
     tag: Tag,
     value: number | null,
     isMax: boolean,
     frameIndex: number
   ) {
-    this.set(comboId, (combo) => {
-      if (frameIndex > combo.frames.length) return
-      const statIndex = combo.statConstraints.findIndex((s) => s.tag === tag)
+    this.set(teamId, (team) => {
+      if (frameIndex > team.frames.length) return
+      const statIndex = team.statConstraints.findIndex((s) => s.tag === tag)
       if (statIndex === -1 && value !== null) {
-        const values = new Array(combo.frames.length).fill(0)
+        const values = new Array(team.frames.length).fill(0)
         values[frameIndex] = value
-        const isMaxs = new Array(combo.frames.length).fill(false)
+        const isMaxs = new Array(team.frames.length).fill(false)
         isMaxs[frameIndex] = isMax
-        combo.statConstraints.push({ tag, values, isMaxs })
+        team.statConstraints.push({ tag, values, isMaxs })
       } else if (value === null && statIndex > -1) {
-        combo.statConstraints.splice(statIndex, 1)
+        team.statConstraints.splice(statIndex, 1)
       } else if (value !== null && statIndex > -1) {
-        combo.statConstraints[statIndex].values[frameIndex] = value
-        combo.statConstraints[statIndex].isMaxs[frameIndex] = isMax
+        team.statConstraints[statIndex].values[frameIndex] = value
+        team.statConstraints[statIndex].isMaxs[frameIndex] = isMax
       }
     })
   }

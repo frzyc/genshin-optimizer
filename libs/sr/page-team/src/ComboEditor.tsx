@@ -9,12 +9,12 @@ import {
   Divider,
 } from '@mui/material'
 import { useContext } from 'react'
-import { PresetContext, useComboContext } from './context'
+import { PresetContext, useTeamContext } from './context'
 import { OptimizationTargetSelector } from './TeammateDisplay/Optimize/OptimizationTargetSelector'
 
 export function ComboEditor() {
   const { database } = useDatabaseContext()
-  const { combo, comboId } = useComboContext()
+  const { team, teamId } = useTeamContext()
   return (
     <CardThemed
       sx={{
@@ -33,16 +33,16 @@ export function ComboEditor() {
           overflowX: 'auto',
         }}
       >
-        {combo.frames.map((frame, i) => (
-          <Combo
+        {team.frames.map((frame, i) => (
+          <Team
             key={i + JSON.stringify(frame ?? {})}
             tag={frame}
             index={i}
             setTarget={(read) =>
-              database.combos.set(comboId, (combo) => {
-                const frames = structuredClone(combo.frames)
+              database.teams.set(teamId, (team) => {
+                const frames = structuredClone(team.frames)
                 frames[i] = read
-                combo.frames = frames
+                team.frames = frames
               })
             }
           />
@@ -50,8 +50,8 @@ export function ComboEditor() {
         <Box sx={{ flexShrink: 0 }}>
           <OptimizationTargetSelector
             setOptTarget={(tag) =>
-              database.combos.set(comboId, (combo) => {
-                combo.frames = [...combo.frames, tag]
+              database.teams.set(teamId, (team) => {
+                team.frames = [...team.frames, tag]
               })
             }
           />
@@ -60,7 +60,7 @@ export function ComboEditor() {
     </CardThemed>
   )
 }
-function Combo({
+function Team({
   tag,
   index,
   setTarget,
@@ -89,7 +89,7 @@ function Combo({
           </CardActionArea>
         )}
       >
-        <CardHeader title={`Combo ${index + 1}`} />
+        <CardHeader title={`Team ${index + 1}`} />
       </ConditionalWrapper>
       <Divider />
       <CardContent>

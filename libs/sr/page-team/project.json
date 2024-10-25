@@ -1,7 +1,7 @@
 {
-  "name": "sr-page-combo",
+  "name": "sr-page-team",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/sr/page-combo/src",
+  "sourceRoot": "libs/sr/page-team/src",
   "projectType": "library",
   "tags": [],
   "// targets": "to see all targets run: nx show project sr-page-teams --web",

@@ -5,7 +5,7 @@ import {
   TextFieldLazy,
 } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import { useCombo, useDatabaseContext } from '@genshin-optimizer/sr/ui'
+import { useDatabaseContext, useTeam } from '@genshin-optimizer/sr/ui'
 import BorderColorIcon from '@mui/icons-material/BorderColor'
 import CloseIcon from '@mui/icons-material/Close'
 import GroupsIcon from '@mui/icons-material/Groups'
@@ -28,29 +28,29 @@ import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import TeamSelectors from './TeamSelectors'
 
-export function ComboCharacterSelector({
-  comboId,
+export function TeamCharacterSelector({
+  teamId,
   charKey,
 }: {
-  comboId: string
+  teamId: string
   charKey?: CharacterKey | undefined
 }) {
   const { t } = useTranslation('page_team')
   const navigate = useNavigate()
   const { database } = useDatabaseContext()
 
-  const combo = useCombo(comboId)!
+  const team = useTeam(teamId)!
 
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
   const [editMode, setEditMode] = useState(false)
 
-  const handleName = (comboName: string): void => {
-    database.combos.set(comboId, { name: comboName })
+  const handleName = (teamName: string): void => {
+    database.teams.set(teamId, { name: teamName })
   }
 
-  const handleDesc = (comboDesc: string): void => {
-    database.combos.set(comboId, { description: comboDesc })
+  const handleDesc = (teamDesc: string): void => {
+    database.teams.set(teamId, { description: teamDesc })
   }
 
   return (
@@ -67,7 +67,7 @@ export function ComboCharacterSelector({
           },
           '& .MuiTabs-indicator': {
             height: '4px',
-            backgroundColor: 'rgb(200,200,200,0.5)', //combo settings
+            backgroundColor: 'rgb(200,200,200,0.5)', //team settings
           },
         }
       }}
@@ -83,8 +83,8 @@ export function ComboCharacterSelector({
                   <strong>{t`team.editNameDesc`}</strong>
                 </Typography>
               </Box>
-              {!!combo.description && (
-                <Typography>{combo.description}</Typography>
+              {!!team.description && (
+                <Typography>{team.description}</Typography>
               )}
             </Box>
           }
@@ -109,7 +109,7 @@ export function ComboCharacterSelector({
               }}
             >
               <GroupsIcon />
-              {combo.name}
+              {team.name}
             </Typography>
           </CardContent>
         </BootstrapTooltip>
@@ -131,18 +131,18 @@ export function ComboCharacterSelector({
             <Box display="flex" flexDirection="column" gap={2} sx={{ mt: 2 }}>
               <TextFieldLazy
                 label={t`team.name`}
-                value={combo.name}
+                value={team.name}
                 onChange={(teamName) => handleName(teamName)}
                 autoFocus
               />
               <TextFieldLazy
                 label={t`team.desc`}
-                value={combo.description}
+                value={team.description}
                 onChange={(teamDesc) => handleDesc(teamDesc)}
                 multiline
                 minRows={4}
               />
-              <TeamSelectors comboId={comboId} />
+              <TeamSelectors teamId={teamId} />
             </Box>
           </CardContent>
         </CardThemed>
@@ -150,18 +150,18 @@ export function ComboCharacterSelector({
       <Divider />
       <Tabs
         variant="fullWidth"
-        value={charKey ?? 'team'}
+        value={charKey ?? 0}
         orientation={isMobile ? 'vertical' : 'horizontal'}
       >
-        {combo.comboMetadata.map((comboMetadatum, ind) => {
-          const characterKey = comboMetadatum?.characterKey
+        {team.teamMetadata.map((teamMetadatum, ind) => {
+          const characterKey = teamMetadatum?.characterKey
           return (
             <Tab
               icon={<PersonIcon />}
               iconPosition="start"
               value={characterKey ?? ind}
               key={ind}
-              disabled={!comboMetadatum}
+              disabled={!teamMetadatum}
               label={
                 characterKey ? (
                   <Typography>{t(`charNames_gen:${characterKey}`)}</Typography>
@@ -171,7 +171,7 @@ export function ComboCharacterSelector({
               }
               onClick={() =>
                 // conserve the current tab when switching to another character
-                characterKey && navigate(`/combos/${comboId}/${characterKey}`)
+                characterKey && navigate(`/teams/${teamId}/${characterKey}`)
               }
             />
           )

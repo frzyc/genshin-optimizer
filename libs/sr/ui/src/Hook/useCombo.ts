@@ -1,6 +1,6 @@
 import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
 import { useDatabaseContext } from '../Context'
-export function useCombo(comboId: string) {
+export function useTeam(teamId: string) {
   const { database } = useDatabaseContext()
-  return useDataManagerBase(database.combos, comboId)
+  return useDataManagerBase(database.teams, teamId)
 }

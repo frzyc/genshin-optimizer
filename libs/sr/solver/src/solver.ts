@@ -1,7 +1,7 @@
 import { detach, sum } from '@genshin-optimizer/pando/engine'
 import type { CharacterKey, RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { allRelicSetKeys } from '@genshin-optimizer/sr/consts'
-import type { Combo, ICachedRelic, StatFilter } from '@genshin-optimizer/sr/db'
+import type { ICachedRelic, StatFilter, Team } from '@genshin-optimizer/sr/db'
 import {
   Read,
   type Calculator,
@@ -26,7 +26,7 @@ export interface ProgressResult {
 
 export class Solver {
   private calc: Calculator
-  private frames: Combo['frames']
+  private frames: Team['frames']
   private statFilters: Array<Omit<StatFilter, 'disabled'>>
   private relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
   private numWorkers: number
@@ -37,7 +37,7 @@ export class Solver {
   constructor(
     characterKey: CharacterKey,
     calc: Calculator,
-    frames: Combo['frames'],
+    frames: Team['frames'],
     statFilters: Array<Omit<StatFilter, 'disabled'>>,
     relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>,
     numWorkers: number,
@@ -120,7 +120,7 @@ export class Solver {
     const relicSetKeys = new Set(allRelicSetKeys)
     const detachedNodes = detach(
       [
-        // combo
+        // team
         sum(
           ...this.frames.map((frame, i) =>
             new Read(frame.tag, frame.ex).with('preset', `preset${i}` as Preset)

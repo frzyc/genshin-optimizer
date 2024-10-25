@@ -1,10 +1,10 @@
 import { Box } from '@mui/material'
-import { ComboInventory } from './ComboInventory'
+import { TeamInventory } from './TeamInventory'
 
 export default function PageTeams() {
   return (
     <Box sx={{ mt: 1 }}>
-      <ComboInventory />
+      <TeamInventory />
     </Box>
   )
 }

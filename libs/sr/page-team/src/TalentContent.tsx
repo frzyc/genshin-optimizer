@@ -34,7 +34,7 @@ import {
 import type { ReactNode } from 'react'
 import { useCallback, useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { ComboContext, PresetContext, useComboContext } from './context'
+import { PresetContext, TeamContext, useTeamContext } from './context'
 
 const talentSpacing = {
   xs: 12,
@@ -44,8 +44,8 @@ const talentSpacing = {
 
 export default function CharacterTalentPane() {
   const {
-    comboMetadatum: { characterKey },
-  } = useComboContext()
+    teamMetadatum: { characterKey },
+  } = useTeamContext()
   const calc = useSrCalcContext()
   const { database } = useDatabaseContext()
   // TODO: for TC overrides
@@ -243,8 +243,8 @@ function SkillDisplayCard({
   onClickTitle,
 }: SkillDisplayCardProps) {
   const {
-    comboMetadatum: { characterKey },
-  } = useComboContext()
+    teamMetadatum: { characterKey },
+  } = useTeamContext()
   const actionWrapperFunc = useCallback(
     (children: ReactNode) => (
       <CardActionArea onClick={onClickTitle}>{children}</CardActionArea>
@@ -290,14 +290,14 @@ function SkillDisplayCard({
   //   return false
   // }
 
-  const { comboId } = useContext(ComboContext)
+  const { teamId } = useContext(TeamContext)
   const { presetIndex } = useContext(PresetContext)
   const { database } = useDatabaseContext()
   const setConditional = useCallback(
     (srcKey: string, sheetKey: string, condKey: string, condValue: number) =>
       // assume dst key to be the current character
-      database.combos.setConditional(
-        comboId,
+      database.teams.setConditional(
+        teamId,
         sheetKey as Sheet,
         srcKey as Member,
         characterKey,
@@ -306,7 +306,7 @@ function SkillDisplayCard({
         presetIndex
       ),
 
-    [comboId, database.combos, characterKey, presetIndex]
+    [teamId, database.teams, characterKey, presetIndex]
   )
 
   return (
@@ -354,8 +354,8 @@ export function EidolonDropdown() {
   const { t } = useTranslation('sheet_gen')
   const calc = useSrCalcContext()
   const {
-    comboMetadatum: { characterKey },
-  } = useComboContext()
+    teamMetadatum: { characterKey },
+  } = useTeamContext()
   const { database } = useDatabaseContext()
   if (!calc) return null
   const eidolon = calc.compute(own.char.eidolon).val

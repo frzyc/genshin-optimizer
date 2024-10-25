@@ -21,14 +21,14 @@ import {
 import { useState } from 'react'
 import { BonusStats } from '../BonusStats'
 import { ComboEditor } from '../ComboEditor'
-import { useComboContext } from '../context'
+import { useTeamContext } from '../context'
 import CharacterTalentPane from '../TalentContent'
 import Optimize from './Optimize'
 
 export default function TeammateDisplay() {
   const {
-    comboMetadatum: { characterKey },
-  } = useComboContext()
+    teamMetadatum: { characterKey },
+  } = useTeamContext()
   const { character } = useCharacterContext()
   const calc = useSrCalcContext()
   const [editorKey, setCharacterKey] = useState<CharacterKey | undefined>(

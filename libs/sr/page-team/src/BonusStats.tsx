@@ -23,7 +23,7 @@ import {
   Stack,
 } from '@mui/material'
 import { useContext } from 'react'
-import { PresetContext, useComboContext } from './context'
+import { PresetContext, useTeamContext } from './context'
 
 export function BonusStats() {
   const [open, onOpen, onClose] = useBoolState()
@@ -45,13 +45,13 @@ function BonusStatsModal({
   const { database } = useDatabaseContext()
   const { presetIndex } = useContext(PresetContext)
   const {
-    comboId,
-    combo: { bonusStats },
-    comboMetadatum: { characterKey },
-  } = useComboContext()
+    teamId,
+    team: { bonusStats },
+    teamMetadatum: { characterKey },
+  } = useTeamContext()
   const newTarget = (q: InitialStats) => {
     const tag = newTag(q, characterKey)
-    database.combos.setBonusStat(comboId, tag, 0, presetIndex)
+    database.teams.setBonusStat(teamId, tag, 0, presetIndex)
   }
   return (
     <ModalWrapper open={open} onClose={onClose}>
@@ -66,13 +66,13 @@ function BonusStatsModal({
                 tag={tag}
                 value={values[presetIndex]}
                 setValue={(value) =>
-                  database.combos.setBonusStat(comboId, tag, value, presetIndex)
+                  database.teams.setBonusStat(teamId, tag, value, presetIndex)
                 }
                 onDelete={() =>
-                  database.combos.setBonusStat(comboId, tag, 0, presetIndex)
+                  database.teams.setBonusStat(teamId, tag, 0, presetIndex)
                 }
                 setTag={(tag) =>
-                  database.combos.setBonusStat(comboId, tag, 0, presetIndex)
+                  database.teams.setBonusStat(teamId, tag, 0, presetIndex)
                 }
               />
             ))}

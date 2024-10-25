@@ -6,10 +6,10 @@ import type {
   RelicSubStatKey,
 } from '@genshin-optimizer/sr/consts'
 import type {
-  ComboMetaDataum,
   ICachedCharacter,
   ICachedLightCone,
   ICachedRelic,
+  TeamMetaDataum,
 } from '@genshin-optimizer/sr/db'
 import type {
   Member,
@@ -32,9 +32,9 @@ import {
 import {
   useBuild,
   useCharacter,
-  useCombo,
   useEquippedRelics,
   useLightCone,
+  useTeam,
 } from '@genshin-optimizer/sr/ui'
 import type { ReactNode } from 'react'
 import { useContext, useMemo } from 'react'
@@ -47,27 +47,27 @@ type CharacterFullData = {
 }
 
 export function TeamCalcProvider({
-  comboId,
+  teamId,
   currentChar,
   children,
 }: {
-  comboId: string
+  teamId: string
   currentChar?: CharacterKey
   children: ReactNode
 }) {
-  const combo = useCombo(comboId)!
+  const team = useTeam(teamId)!
   const { presetIndex } = useContext(PresetContext)
-  const member0 = useCharacterAndEquipment(combo.comboMetadata[0])
-  const member1 = useCharacterAndEquipment(combo.comboMetadata[1])
-  const member2 = useCharacterAndEquipment(combo.comboMetadata[2])
-  const member3 = useCharacterAndEquipment(combo.comboMetadata[3])
+  const member0 = useCharacterAndEquipment(team.teamMetadata[0])
+  const member1 = useCharacterAndEquipment(team.teamMetadata[1])
+  const member2 = useCharacterAndEquipment(team.teamMetadata[2])
+  const member3 = useCharacterAndEquipment(team.teamMetadata[3])
 
   const calc = useMemo(
     () =>
       srCalculatorWithEntries([
         // Specify members present in the team
         ...teamData(
-          combo.comboMetadata
+          team.teamMetadata
             .map((meta, index) =>
               meta === undefined ? undefined : members[index]
             )
@@ -84,7 +84,7 @@ export function TeamCalcProvider({
         enemyDebuff.common.isBroken.add(0),
         enemyDebuff.common.maxToughness.add(100),
         ownBuff.common.critMode.add('avg'),
-        ...combo.conditionals.flatMap(
+        ...team.conditionals.flatMap(
           ({ sheet, src, dst, condKey, condValues }) =>
             condValues.flatMap((condValue, frameIndex) =>
               withPreset(
@@ -93,7 +93,7 @@ export function TeamCalcProvider({
               )
             )
         ),
-        ...combo.bonusStats.flatMap(({ tag, values }) =>
+        ...team.bonusStats.flatMap(({ tag, values }) =>
           values.flatMap((value, frameIndex) =>
             withPreset(`preset${frameIndex}` as Preset, {
               tag: { ...tag },
@@ -102,7 +102,7 @@ export function TeamCalcProvider({
           )
         ),
       ]),
-    [combo, member0, member1, member2, member3]
+    [team, member0, member1, member2, member3]
   )
 
   const calcWithTag = useMemo(
@@ -123,7 +123,7 @@ export function TeamCalcProvider({
 }
 
 function useCharacterAndEquipment(
-  meta: ComboMetaDataum | undefined
+  meta: TeamMetaDataum | undefined
 ): CharacterFullData | undefined {
   const character = useCharacter(meta?.characterKey)
   // TODO: Handle tc build

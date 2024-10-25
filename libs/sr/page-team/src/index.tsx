@@ -3,8 +3,8 @@ import type { CharacterContextObj } from '@genshin-optimizer/sr/ui'
 import {
   CharacterContext,
   useCharacter,
-  useCombo,
   useDatabaseContext,
+  useTeam,
 } from '@genshin-optimizer/sr/ui'
 import { Box, Skeleton } from '@mui/material'
 import { Suspense, useEffect, useMemo, useState } from 'react'
@@ -17,37 +17,37 @@ import {
   useNavigate,
   useParams,
 } from 'react-router-dom'
-import { ComboCharacterSelector } from './ComboCharacterSelector'
 import { TeamCalcProvider } from './TeamCalcProvider'
+import { TeamCharacterSelector } from './TeamCharacterSelector'
 import TeammateDisplay from './TeammateDisplay'
-import type { ComboContextObj, PresetContextObj } from './context'
-import { ComboContext, PresetContext, useComboContext } from './context'
+import type { PresetContextObj, TeamContextObj } from './context'
+import { PresetContext, TeamContext, useTeamContext } from './context'
 
 const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
 
 export default function PageTeam() {
   const { database } = useDatabaseContext()
-  const { teamId: comboId } = useParams<{ teamId?: string }>()
-  const invalidKey = !comboId || !database.combos.keys.includes(comboId)
+  const { teamId: teamId } = useParams<{ teamId?: string }>()
+  const invalidKey = !teamId || !database.teams.keys.includes(teamId)
 
   // An edit is triggered whenever a team gets opened even if no edits are done
   useEffect(() => {
     if (invalidKey) return
-    database.combos.set(comboId, { lastEdit: Date.now() })
-  }, [comboId, database.combos, invalidKey])
+    database.teams.set(teamId, { lastEdit: Date.now() })
+  }, [teamId, database.teams, invalidKey])
 
-  if (invalidKey) return <Navigate to="/combos" />
+  if (invalidKey) return <Navigate to="/teams" />
 
   return (
     <Box display="flex" flexDirection="column" gap={1}>
       <Suspense fallback={fallback}>
-        {comboId && <Page comboId={comboId} />}
+        {teamId && <Page teamId={teamId} />}
       </Suspense>
     </Box>
   )
 }
 
-function Page({ comboId }: { comboId: string }) {
+function Page({ teamId }: { teamId: string }) {
   const navigate = useNavigate()
   const [presetIndex, setPresetIndex] = useState(0)
   const presetObj = useMemo(
@@ -58,33 +58,33 @@ function Page({ comboId }: { comboId: string }) {
       } as PresetContextObj),
     [presetIndex, setPresetIndex]
   )
-  const combo = useCombo(comboId)!
-  const { comboMetadata } = combo
+  const team = useTeam(teamId)!
+  const { teamMetadata } = team
   // use the current URL as the "source of truth" for characterKey.
   const {
     params: { characterKey: characterKeyRaw },
-  } = useMatch({ path: '/combos/:teamId/:characterKey', end: false }) ?? {
+  } = useMatch({ path: '/teams/:teamId/:characterKey', end: false }) ?? {
     params: {},
   }
 
   // validate characterKey
-  const comboMetadatumIndex = useMemo(() => {
-    const index = comboMetadata.findIndex(
-      (comboMetadatum) =>
-        comboMetadatum && comboMetadatum.characterKey === characterKeyRaw
+  const teamMetadatumIndex = useMemo(() => {
+    const index = teamMetadata.findIndex(
+      (teamMetadatum) =>
+        teamMetadatum && teamMetadatum.characterKey === characterKeyRaw
     )
     if (index === -1) return 0
     return index
-  }, [comboMetadata, characterKeyRaw])
-  const comboMetadatum = useMemo(
-    () => comboMetadata[comboMetadatumIndex],
-    [comboMetadata, comboMetadatumIndex]
+  }, [teamMetadata, characterKeyRaw])
+  const teamMetadatum = useMemo(
+    () => teamMetadata[teamMetadatumIndex],
+    [teamMetadata, teamMetadatumIndex]
   )
-  const characterKey = comboMetadatum?.characterKey
+  const characterKey = teamMetadatum?.characterKey
   useEffect(() => {
     if (characterKey && characterKey !== characterKeyRaw)
       navigate(`${characterKey}`, { replace: true })
-  }, [characterKey, characterKeyRaw, comboMetadatum, navigate])
+  }, [characterKey, characterKeyRaw, teamMetadatum, navigate])
 
   const { t } = useTranslation(['charNames_gen', 'page_character'])
 
@@ -93,23 +93,23 @@ function Page({ comboId }: { comboId: string }) {
       const charName = characterKey
         ? // TODO: replace Character with CharKeyToName function once it's ported
           t('charNames_gen:Character')
-        : t('Combo Settings')
-      return `${combo.name} - ${charName}`
-    }, [characterKey, t, combo.name])
+        : t('Team Settings')
+      return `${team.name} - ${charName}`
+    }, [characterKey, t, team.name])
   )
 
-  const comboContextObj: ComboContextObj | undefined = useMemo(() => {
-    if (!comboId || !combo || !comboMetadatum) return undefined
+  const teamContextObj: TeamContextObj | undefined = useMemo(() => {
+    if (!teamId || !team || !teamMetadatum) return undefined
     return {
-      comboId,
-      combo,
-      comboMetadatum,
+      teamId,
+      team,
+      teamMetadatum,
     }
-  }, [comboMetadatum, combo, comboId])
+  }, [teamMetadatum, team, teamId])
 
   return (
     <PresetContext.Provider value={presetObj}>
-      <TeamCalcProvider comboId={comboId} currentChar={characterKey}>
+      <TeamCalcProvider teamId={teamId} currentChar={characterKey}>
         <Box
           sx={{
             display: 'flex',
@@ -127,7 +127,7 @@ function Page({ comboId }: { comboId: string }) {
               zIndex: 100,
             }}
           >
-            <ComboCharacterSelector comboId={comboId} charKey={characterKey} />
+            <TeamCharacterSelector teamId={teamId} charKey={characterKey} />
           </CardThemed>
           <Box
           // sx={(theme) => {
@@ -142,10 +142,10 @@ function Page({ comboId }: { comboId: string }) {
           //   }
           // }}
           >
-            {comboContextObj && (
-              <ComboContext.Provider value={comboContextObj}>
+            {teamContextObj && (
+              <TeamContext.Provider value={teamContextObj}>
                 <TeammateDisplayWrapper />
-              </ComboContext.Provider>
+              </TeamContext.Provider>
             )}
           </Box>
         </Box>
@@ -156,8 +156,8 @@ function Page({ comboId }: { comboId: string }) {
 
 function TeammateDisplayWrapper() {
   const {
-    comboMetadatum: { characterKey },
-  } = useComboContext()
+    teamMetadatum: { characterKey },
+  } = useTeamContext()
   const character = useCharacter(characterKey)
   const characterContextValue: CharacterContextObj | undefined = useMemo(
     () =>
