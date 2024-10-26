@@ -1,7 +1,7 @@
 import { ScrollTop } from '@genshin-optimizer/common/ui'
+import { DatabaseProvider } from '@genshin-optimizer/sr/db-ui'
 import '@genshin-optimizer/sr/i18n' // import to load translations
 import { theme } from '@genshin-optimizer/sr/theme'
-import { DatabaseProvider } from '@genshin-optimizer/sr/ui'
 import {
   Box,
   Container,

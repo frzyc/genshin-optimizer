@@ -5,6 +5,7 @@ import {
   StyledInputBase,
 } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
+import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import { Delete, Download, ImportExport, Upload } from '@mui/icons-material'
 import ContentPasteIcon from '@mui/icons-material/ContentPaste'
 import {
@@ -18,7 +19,6 @@ import {
 } from '@mui/material'
 import { useCallback, useEffect, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { useDatabaseContext } from '../Context'
 import { UploadCard } from './UploadCard'
 
 export function DatabaseCard() {

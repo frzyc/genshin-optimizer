@@ -1,10 +1,10 @@
 import { CardThemed, useTitle } from '@genshin-optimizer/common/ui'
-import type { CharacterContextObj } from '@genshin-optimizer/sr/ui'
 import {
   CharacterContext,
   useCharacter,
   useDatabaseContext,
-} from '@genshin-optimizer/sr/ui'
+  useTeam,
+} from '@genshin-optimizer/sr/db-ui'
 import { Box, Skeleton } from '@mui/material'
 import { Suspense, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -21,7 +21,6 @@ import { TeamCharacterSelector } from './TeamCharacterSelector'
 import TeammateDisplay from './TeammateDisplay'
 import type { PresetContextObj, TeamContextObj } from './context'
 import { PresetContext, TeamContext, useTeamContext } from './context'
-import { useTeam } from './hooks'
 
 const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
 
@@ -159,18 +158,11 @@ function TeammateDisplayWrapper() {
     teamMetadatum: { characterKey },
   } = useTeamContext()
   const character = useCharacter(characterKey)
-  const characterContextValue: CharacterContextObj | undefined = useMemo(
-    () =>
-      character && {
-        character,
-      },
-    [character]
-  )
-  if (!characterContextValue)
+  if (!character)
     return <Skeleton variant="rectangular" width="100%" height={1000} />
 
   return (
-    <CharacterContext.Provider value={characterContextValue}>
+    <CharacterContext.Provider value={character}>
       <Routes>
         <Route path=":characterKey">
           <Route path="*" index element={<TeammateDisplay />} />

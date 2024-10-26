@@ -1,11 +1,8 @@
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import type { TeamMetaDataum } from '@genshin-optimizer/sr/db'
-import {
-  CharacterAutocomplete,
-  useDatabaseContext,
-} from '@genshin-optimizer/sr/ui'
+import { useDatabaseContext, useTeam } from '@genshin-optimizer/sr/db-ui'
+import { CharacterAutocomplete } from '@genshin-optimizer/sr/ui'
 import { Box } from '@mui/material'
-import { useTeam } from './hooks'
 
 export default function TeamSelectors({ teamId }: { teamId: string }) {
   const team = useTeam(teamId)!
@@ -38,7 +35,7 @@ function TeammateSelector({
     if (cKey === '') {
       database.teams.set(
         teamId,
-        (team) => (team.loadoutMetadata[teamMetadataIndex] = undefined)
+        (team) => (team.teamMetadata[teamMetadataIndex] = undefined)
       )
       return
     }

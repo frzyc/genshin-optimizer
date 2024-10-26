@@ -5,7 +5,7 @@ import {
 } from '@genshin-optimizer/sr/consts'
 import type { ICachedCharacter, ICachedRelic } from '@genshin-optimizer/sr/db'
 import { useEffect, useMemo, useState } from 'react'
-import { useDatabaseContext } from '../Context/DatabaseContext'
+import { useDatabaseContext } from '../context'
 
 export function useEquippedRelics(
   equippedRelics: ICachedCharacter['equippedRelics'] | undefined

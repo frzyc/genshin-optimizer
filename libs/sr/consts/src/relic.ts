@@ -125,25 +125,26 @@ export const relicSubstatRollData: Record<
   5: { low: 3, high: 4, numUpgrades: 5 },
 } as const
 
-export const relicSlotToMainStatKeys = {
-  head: ['hp'],
-  hands: ['atk'],
-  body: ['hp_', 'atk_', 'def_', 'eff_', 'heal_', 'crit_', 'crit_dmg_'],
-  feet: ['hp_', 'atk_', 'def_', 'spd'],
-  sphere: [
-    'hp_',
-    'atk_',
-    'def_',
-    'physical_dmg_',
-    'fire_dmg_',
-    'ice_dmg_',
-    'wind_dmg_',
-    'lightning_dmg_',
-    'quantum_dmg_',
-    'imaginary_dmg_',
-  ],
-  rope: ['hp_', 'atk_', 'def_', 'brEffect_', 'enerRegen_'],
-} as const
+export const relicSlotToMainStatKeys: Record<RelicSlotKey, RelicMainStatKey[]> =
+  {
+    head: ['hp'],
+    hands: ['atk'],
+    body: ['hp_', 'atk_', 'def_', 'eff_', 'heal_', 'crit_', 'crit_dmg_'],
+    feet: ['hp_', 'atk_', 'def_', 'spd'],
+    sphere: [
+      'hp_',
+      'atk_',
+      'def_',
+      'physical_dmg_',
+      'fire_dmg_',
+      'ice_dmg_',
+      'wind_dmg_',
+      'lightning_dmg_',
+      'quantum_dmg_',
+      'imaginary_dmg_',
+    ],
+    rope: ['hp_', 'atk_', 'def_', 'brEffect_', 'enerRegen_'],
+  }
 
 export const allRelicMainSubStatKeys = Array.from(
   new Set([...allRelicSubStatKeys, ...allRelicMainStatKeys] as const)

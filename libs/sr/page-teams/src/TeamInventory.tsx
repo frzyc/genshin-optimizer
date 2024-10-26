@@ -3,7 +3,7 @@ import {
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
 import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
-import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
+import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import {
   Box,
   Button,

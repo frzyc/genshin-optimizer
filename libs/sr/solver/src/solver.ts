@@ -123,7 +123,7 @@ export class Solver {
         // team
         sum(
           ...this.frames.map((frame, i) =>
-            new Read(frame.tag, frame.ex).with('preset', `preset${i}` as Preset)
+            new Read(frame, 'sum').with('preset', `preset${i}` as Preset)
           )
         ),
         // stat filters

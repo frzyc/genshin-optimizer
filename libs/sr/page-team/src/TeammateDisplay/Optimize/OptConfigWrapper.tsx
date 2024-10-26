@@ -1,6 +1,6 @@
 import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
 import type { OptConfig } from '@genshin-optimizer/sr/db'
-import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
+import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import { createContext, useMemo } from 'react'
 
 export const OptConfigContext = createContext({

@@ -11,6 +11,13 @@ import type {
   ICachedRelic,
   TeamMetaDataum,
 } from '@genshin-optimizer/sr/db'
+import {
+  useBuild,
+  useCharacter,
+  useEquippedRelics,
+  useLightCone,
+  useTeam,
+} from '@genshin-optimizer/sr/db-ui'
 import type {
   Member,
   Preset,
@@ -29,16 +36,9 @@ import {
   withMember,
   withPreset,
 } from '@genshin-optimizer/sr/formula'
-import {
-  useBuild,
-  useCharacter,
-  useEquippedRelics,
-  useLightCone,
-} from '@genshin-optimizer/sr/ui'
 import type { ReactNode } from 'react'
 import { useContext, useMemo } from 'react'
 import { PresetContext } from './context'
-import { useTeam } from './hooks'
 
 type CharacterFullData = {
   character: ICachedCharacter | undefined

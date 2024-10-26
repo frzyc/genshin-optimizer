@@ -1,6 +1,6 @@
 import { CardThemed, InfoTooltip } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
+import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import {
   Box,
   CardActionArea,

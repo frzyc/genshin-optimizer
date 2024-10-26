@@ -1,12 +1,12 @@
 import { useDatabaseTally } from '@genshin-optimizer/common/database-ui'
 import { Tally } from '@genshin-optimizer/common/ui'
+import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import {
   CharacterIcon,
   LightConeIcon,
   RelicIcon,
   TeamsIcon,
 } from '@genshin-optimizer/sr/svgicons'
-import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
 import { Settings } from '@mui/icons-material'
 import MenuIcon from '@mui/icons-material/Menu'
 import {

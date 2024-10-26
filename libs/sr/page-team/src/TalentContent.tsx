@@ -9,6 +9,10 @@ import { range } from '@genshin-optimizer/common/util'
 import type { UISheetElement } from '@genshin-optimizer/pando/ui-sheet'
 import { DocumentDisplay } from '@genshin-optimizer/pando/ui-sheet'
 import { maxEidolonCount, talentLimits } from '@genshin-optimizer/sr/consts'
+import {
+  useCharacterContext,
+  useDatabaseContext,
+} from '@genshin-optimizer/sr/db-ui'
 import type { Member, Sheet } from '@genshin-optimizer/sr/formula'
 import { own } from '@genshin-optimizer/sr/formula'
 import {
@@ -16,11 +20,7 @@ import {
   uiSheets,
   type TalentSheetElementKey,
 } from '@genshin-optimizer/sr/formula-ui'
-import {
-  useCharacterContext,
-  useDatabaseContext,
-  useSrCalcContext,
-} from '@genshin-optimizer/sr/ui'
+import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
 import {
   Box,
   CardActionArea,
@@ -405,7 +405,7 @@ export function TalentDropdown({
   dropDownButtonProps?: Omit<DropdownButtonProps, 'title' | 'children'>
 }) {
   const { t } = useTranslation('sheet_gen')
-  const { character } = useCharacterContext()
+  const character = useCharacterContext()
   const calc = useSrCalcContext()
   if (!calc || !character) return null
 

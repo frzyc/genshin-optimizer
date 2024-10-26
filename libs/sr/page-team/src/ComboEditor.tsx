@@ -1,6 +1,6 @@
 import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common/ui'
+import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import type { Tag } from '@genshin-optimizer/sr/formula'
-import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
 import {
   Box,
   CardActionArea,

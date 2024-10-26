@@ -5,10 +5,7 @@ import {
 import { SroDatabase } from '@genshin-optimizer/sr/db'
 import type { ReactNode } from 'react'
 import { useCallback, useMemo, useState } from 'react'
-import {
-  DatabaseContext,
-  type DatabaseContextObj,
-} from '../Context/DatabaseContext'
+import { DatabaseContext, type DatabaseContextObj } from '../context'
 
 export function DatabaseProvider({ children }: { children: ReactNode }) {
   const dbIndex = parseInt(localStorage.getItem('sro_dbIndex') || '1')

@@ -6,6 +6,7 @@ import type {
   ImportResultCounter,
 } from '@genshin-optimizer/sr/db'
 import { SroDatabase } from '@genshin-optimizer/sr/db'
+import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import { CheckBox, CheckBoxOutlineBlank, FileOpen } from '@mui/icons-material'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import TextSnippetIcon from '@mui/icons-material/TextSnippet'
@@ -22,7 +23,6 @@ import {
 } from '@mui/material'
 import { useCallback, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { useDatabaseContext } from '../Context'
 
 const InvisInput = styled('input')({ display: 'none' })
 

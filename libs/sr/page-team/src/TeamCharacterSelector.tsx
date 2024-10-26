@@ -5,7 +5,7 @@ import {
   TextFieldLazy,
 } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
+import { useDatabaseContext, useTeam } from '@genshin-optimizer/sr/db-ui'
 import BorderColorIcon from '@mui/icons-material/BorderColor'
 import CloseIcon from '@mui/icons-material/Close'
 import GroupsIcon from '@mui/icons-material/Groups'
@@ -27,7 +27,6 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import TeamSelectors from './TeamSelectors'
-import { useTeam } from './hooks'
 
 export function TeamCharacterSelector({
   teamId,

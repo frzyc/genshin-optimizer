@@ -5,6 +5,7 @@ import {
 } from '@genshin-optimizer/common/ui'
 import type { AscensionKey, CharacterKey } from '@genshin-optimizer/sr/consts'
 import { allEidolonKeys } from '@genshin-optimizer/sr/consts'
+import { useCharacter, useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import {
@@ -19,8 +20,6 @@ import {
   Typography,
 } from '@mui/material'
 import { Suspense } from 'react'
-import { useDatabaseContext } from '../Context'
-import { useCharacter } from '../Hook'
 import { AbilityDropdown } from './AbilityDropdown'
 
 export function CharacterEditor({

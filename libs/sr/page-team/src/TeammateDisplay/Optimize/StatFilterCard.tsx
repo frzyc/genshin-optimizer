@@ -1,6 +1,6 @@
 import { CardThemed, InfoTooltip } from '@genshin-optimizer/common/ui'
 import type { StatFilters } from '@genshin-optimizer/sr/db'
-import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
+import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import { Box, CardContent, Divider, Typography } from '@mui/material'
 import { useCallback, useContext } from 'react'
 import { useTranslation } from 'react-i18next'

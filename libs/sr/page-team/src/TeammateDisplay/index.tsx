@@ -1,10 +1,10 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
+import { useCharacterContext } from '@genshin-optimizer/sr/db-ui'
 import { own } from '@genshin-optimizer/sr/formula'
 import {
   CharacterCard,
   CharacterEditor,
-  useCharacterContext,
   useSrCalcContext,
 } from '@genshin-optimizer/sr/ui'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
@@ -29,7 +29,7 @@ export default function TeammateDisplay() {
   const {
     teamMetadatum: { characterKey },
   } = useTeamContext()
-  const { character } = useCharacterContext()
+  const character = useCharacterContext()
   const calc = useSrCalcContext()
   const [editorKey, setCharacterKey] = useState<CharacterKey | undefined>(
     undefined

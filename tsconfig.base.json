@@ -122,6 +122,7 @@
       "@genshin-optimizer/sr/assets-data": ["libs/sr/assets-data/src/index.ts"],
       "@genshin-optimizer/sr/consts": ["libs/sr/consts/src/index.ts"],
       "@genshin-optimizer/sr/db": ["libs/sr/db/src/index.ts"],
+      "@genshin-optimizer/sr/db-ui": ["libs/sr/db-ui/src/index.ts"],
       "@genshin-optimizer/sr/dm": ["libs/sr/dm/src/index.ts"],
       "@genshin-optimizer/sr/dm-localization": [
         "libs/sr/dm-localization/src/index.ts"
@@ -142,8 +143,8 @@
       "@genshin-optimizer/sr/page-settings": [
         "libs/sr/page-settings/src/index.tsx"
       ],
-      "@genshin-optimizer/sr/page-teams": ["libs/sr/page-teams/src/index.tsx"],
       "@genshin-optimizer/sr/page-team": ["libs/sr/page-team/src/index.tsx"],
+      "@genshin-optimizer/sr/page-teams": ["libs/sr/page-teams/src/index.tsx"],
       "@genshin-optimizer/sr/solver": ["libs/sr/solver/src/index.ts"],
       "@genshin-optimizer/sr/srod": ["libs/sr/srod/src/index.ts"],
       "@genshin-optimizer/sr/stats": ["libs/sr/stats/src/index.ts"],

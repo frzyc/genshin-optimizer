@@ -8,9 +8,9 @@ import {
 } from '@genshin-optimizer/common/ui'
 import type { ElementalTypeKey, StatKey } from '@genshin-optimizer/sr/consts'
 import { allElementalTypeKeys } from '@genshin-optimizer/sr/consts'
+import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import type { Member, Tag } from '@genshin-optimizer/sr/formula'
 import { tagFieldMap } from '@genshin-optimizer/sr/formula-ui'
-import { useDatabaseContext } from '@genshin-optimizer/sr/ui'
 import { DeleteForever } from '@mui/icons-material'
 import {
   Button,
