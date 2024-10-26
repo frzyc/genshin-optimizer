@@ -154,7 +154,7 @@ export const getObjectKeysRecursive = (obj: unknown): string[] =>
 export function deepFreeze<T>(obj: T, layers = 5): T {
   if (layers === 0) return obj
   if (obj && typeof obj === 'object')
-    Object.values(Object.freeze(obj)).forEach((o) => deepFreeze(o, layers--))
+    Object.values(Object.freeze(obj)).forEach((o) => deepFreeze(o, layers - 1))
   return obj
 }
 

@@ -3,6 +3,7 @@ import type { TeamMetadatum } from '@genshin-optimizer/sr/db'
 import { useDatabaseContext, useTeam } from '@genshin-optimizer/sr/db-ui'
 import { CharacterAutocomplete } from '@genshin-optimizer/sr/ui'
 import { Box } from '@mui/material'
+import { memo } from 'react'
 
 export default function TeamSelectors({ teamId }: { teamId: string }) {
   const team = useTeam(teamId)!
@@ -20,7 +21,7 @@ export default function TeamSelectors({ teamId }: { teamId: string }) {
   )
 }
 
-function TeammateSelector({
+const TeammateSelector = memo(function TeammateSelector({
   teamMetadataIndex,
   teamId,
 }: {
@@ -75,4 +76,4 @@ function TeammateSelector({
       setCharKey={setCharKey}
     />
   )
-}
+})
