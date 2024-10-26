@@ -227,9 +227,7 @@ export function shallowCompareObj<T extends Record<string, any>>(
   if (keys1.length !== keys2.length) return false
 
   // Check if all keys and their values are the same
-  for (const key of keys1)
-    if (obj1[key] !== obj2[key]) return false
-
+  for (const key of keys1) if (obj1[key] !== obj2[key]) return false
 
   return true
 }

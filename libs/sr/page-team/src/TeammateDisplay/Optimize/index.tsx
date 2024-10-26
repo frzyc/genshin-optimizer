@@ -28,7 +28,7 @@ import {
 import { useTranslation } from 'react-i18next'
 import { TeamContext } from '../../context'
 import { BuildDisplay } from './BuildDisplay'
-import OptConfigWrapper, { OptConfigContext } from './OptConfigWrapper'
+import OptConfigProvider, { OptConfigContext } from './OptConfigWrapper'
 import { StatFilterCard } from './StatFilterCard'
 import { WorkerSelector } from './WorkerSelector'
 
@@ -51,9 +51,9 @@ export default function Optimize() {
   }, [teamId, teamMetadatum.characterKey, database, optConfigId])
   if (optConfigId) {
     return (
-      <OptConfigWrapper optConfigId={optConfigId}>
+      <OptConfigProvider optConfigId={optConfigId}>
         <OptimizeWrapper />
-      </OptConfigWrapper>
+      </OptConfigProvider>
     )
   } else {
     return (

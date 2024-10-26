@@ -40,9 +40,8 @@ export function ComboEditor() {
             index={i}
             setTarget={(read) =>
               database.teams.set(teamId, (team) => {
-                const frames = structuredClone(team.frames)
-                frames[i] = read
-                team.frames = frames
+                team.frames = [...team.frames]
+                team.frames[i] = read
               })
             }
           />

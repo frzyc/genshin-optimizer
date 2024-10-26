@@ -7,7 +7,7 @@ export const OptConfigContext = createContext({
   optConfigId: '',
   optConfig: {} as OptConfig,
 })
-export default function OptConfigWrapper({
+export default function OptConfigProvider({
   optConfigId,
   children,
 }: {

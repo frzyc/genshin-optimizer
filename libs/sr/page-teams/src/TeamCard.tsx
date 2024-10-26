@@ -53,17 +53,14 @@ export function TeamCard({
         </Box>
         <CardContent>
           <Grid container columns={4} gap={1}>
-            {team.teamMetadata.map((cmdata, i) =>
-              cmdata ? (
-                <CardThemed key={i} sx={{ flexGrow: 1 }}>
-                  <Typography>{cmdata.characterKey}</Typography>
-                </CardThemed>
-              ) : (
-                <CardThemed key={i} sx={{ flexGrow: 1 }}>
-                  <Typography>Empty</Typography>
-                </CardThemed>
-              )
-            )}
+            {team.teamMetadata.map((cmdata, i) => (
+              <CardThemed
+                key={`${i}-${cmdata?.characterKey}`}
+                sx={{ flexGrow: 1 }}
+              >
+                <Typography>{cmdata?.characterKey ?? 'Empty'} </Typography>
+              </CardThemed>
+            ))}
           </Grid>
         </CardContent>
       </Box>

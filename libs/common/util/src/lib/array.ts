@@ -78,14 +78,14 @@ export function handleMultiSelect<T>(allKeys: T[]) {
 
 /**
  * Shorten or pad an array to a certain length, with a default value.
+ * Modifies the array in-place.
  * @param array
  * @param length
  * @param value
+ * @returns The modified array
  */
 export function pruneOrPadArray<T>(array: T[], length: number, value: T) {
-  if (array.length > length) {
-    array.splice(-1, length)
-  } else {
-    array.splice(-1, 0, ...new Array(length - array.length).fill(value))
-  }
+  if (array.length > length) array.length = length
+  else array.push(...new Array(length - array.length).fill(value))
+  return array
 }
