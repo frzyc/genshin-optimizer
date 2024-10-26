@@ -135,6 +135,17 @@ function artifactReducer(
 const InputInvis = styled('input')({
   display: 'none',
 })
+
+function getDefaultSlotKey(
+  artifactSet?: ArtifactSetKey
+): Extract<ArtifactSlotKey, 'flower' | 'circlet'> {
+  if (artifactSet?.startsWith('Prayers')) {
+    return 'circlet'
+  } else {
+    return 'flower'
+  }
+}
+
 export type ArtifactEditorProps = {
   artifactIdToEdit?: string
   cancelEdit: () => void
@@ -263,8 +274,11 @@ export function ArtifactEditor({
         // If we're updating an existing artifact, then slotKey should immediately be set to the artifact's slot.
         // Otherwise, if slot selection is disabled but a key has been provided in fixedSlotKey, we assign that
         // value (e.g. when creating a new artifact from the artifact swap UI). If neither, then we default to
-        // 'flower'.
-        newValue.slotKey = artifact?.slotKey ?? fixedSlotKey ?? 'flower'
+        // 'flower' for all sets and 'circlet' for Prayers Set (Which only have circlets).
+        newValue.slotKey =
+          artifact?.slotKey ??
+          fixedSlotKey ??
+          getDefaultSlotKey(newValue.setKey)
       }
       if (newValue.rarity) newValue.level = artifact?.level ?? 0
       if (newValue.level)
