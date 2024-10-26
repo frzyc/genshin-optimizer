@@ -1,5 +1,5 @@
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import type { TeamMetaDataum } from '@genshin-optimizer/sr/db'
+import type { TeamMetadatum } from '@genshin-optimizer/sr/db'
 import { useDatabaseContext, useTeam } from '@genshin-optimizer/sr/db-ui'
 import { CharacterAutocomplete } from '@genshin-optimizer/sr/ui'
 import { Box } from '@mui/material'
@@ -54,7 +54,7 @@ function TeammateSelector({
         // Let the validator handle default properties for everything else
         team.teamMetadata[teamMetadataIndex] = {
           characterKey: cKey,
-        } as TeamMetaDataum
+        } as TeamMetadatum
       })
     }
     // If exists already, swap positions

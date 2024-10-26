@@ -1,10 +1,10 @@
-import type { Team, TeamMetaDataum } from '@genshin-optimizer/sr/db'
+import type { Team, TeamMetadatum } from '@genshin-optimizer/sr/db'
 import { createContext, useContext } from 'react'
 
 export type TeamContextObj = {
   teamId: string
   team: Team
-  teamMetadatum: TeamMetaDataum
+  teamMetadatum: TeamMetadatum
 }
 
 export const TeamContext = createContext({} as TeamContextObj)

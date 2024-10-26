@@ -9,7 +9,7 @@ import type {
   ICachedCharacter,
   ICachedLightCone,
   ICachedRelic,
-  TeamMetaDataum,
+  TeamMetadatum,
 } from '@genshin-optimizer/sr/db'
 import {
   useBuild,
@@ -123,7 +123,7 @@ export function TeamCalcProvider({
 }
 
 function useCharacterAndEquipment(
-  meta: TeamMetaDataum | undefined
+  meta: TeamMetadatum | undefined
 ): CharacterFullData | undefined {
   const character = useCharacter(meta?.characterKey)
   // TODO: Handle tc build

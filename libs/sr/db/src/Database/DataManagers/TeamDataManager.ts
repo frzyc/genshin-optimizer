@@ -3,6 +3,7 @@ import {
   objMap,
   pruneOrPadArray,
   range,
+  shallowCompareObj,
 } from '@genshin-optimizer/common/util'
 import type { CharacterKey, RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import {
@@ -17,7 +18,7 @@ import { validateTag } from '../tagUtil'
 
 const buildTypeKeys = ['equipped', 'real', 'tc'] as const
 type BuildTypeKey = (typeof buildTypeKeys)[number]
-export type TeamMetaDataum = {
+export type TeamMetadatum = {
   characterKey: CharacterKey
 
   buildType: BuildTypeKey
@@ -52,7 +53,7 @@ export interface Team {
   statConstraints: Array<{ tag: Tag; values: number[]; isMaxs: boolean[] }>
 
   // TODO enemy base stats
-  teamMetadata: Array<TeamMetaDataum | undefined>
+  teamMetadata: Array<TeamMetadatum | undefined>
 }
 
 export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
@@ -156,7 +157,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
           compareBuildId,
           compareBuildTcId,
           optConfigId,
-        } as TeamMetaDataum
+        } as TeamMetadatum
       })
     }
 
@@ -279,7 +280,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     characterKey,
     buildType,
     buildId,
-  }: TeamMetaDataum): Record<RelicSlotKey, ICachedRelic | undefined> {
+  }: TeamMetadatum): Record<RelicSlotKey, ICachedRelic | undefined> {
     switch (buildType) {
       case 'equipped': {
         const char = this.database.chars.get(characterKey)
@@ -296,7 +297,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
   }
 
   followTeamDatum(
-    { buildType, buildId, buildTcId }: TeamMetaDataum,
+    { buildType, buildId, buildTcId }: TeamMetadatum,
     callback: () => void
   ) {
     if (buildType === 'real') {
@@ -319,7 +320,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     return () => {}
   }
   followTeamDatumCompare(
-    { compareType, compareBuildId, compareBuildTcId }: TeamMetaDataum,
+    { compareType, compareBuildId, compareBuildTcId }: TeamMetadatum,
     callback: () => void
   ) {
     if (compareType === 'real') {
@@ -345,7 +346,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     return () => {}
   }
   getActiveBuildName(
-    { buildType, buildId, buildTcId }: TeamMetaDataum,
+    { buildType, buildId, buildTcId }: TeamMetadatum,
     equippedName = 'Equipped Build'
   ) {
     switch (buildType) {
@@ -402,9 +403,8 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
   ) {
     this.set(teamId, (team) => {
       if (frameIndex > team.frames.length) return
-      //TODO: quick and dirty tag comparasion
-      const statIndex = team.bonusStats.findIndex(
-        (s) => JSON.stringify(s.tag) === JSON.stringify(tag)
+      const statIndex = team.bonusStats.findIndex((s) =>
+        shallowCompareObj(s.tag, tag)
       )
       if (statIndex === -1 && value !== null) {
         const values = new Array(team.frames.length).fill(0)
@@ -434,7 +434,9 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
   ) {
     this.set(teamId, (team) => {
       if (frameIndex > team.frames.length) return
-      const statIndex = team.statConstraints.findIndex((s) => s.tag === tag)
+      const statIndex = team.statConstraints.findIndex((s) =>
+        shallowCompareObj(s.tag, tag)
+      )
       if (statIndex === -1 && value !== null) {
         const values = new Array(team.frames.length).fill(0)
         values[frameIndex] = value
