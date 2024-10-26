@@ -191,7 +191,18 @@ function TabNav({
                 </Typography>
                 <Divider orientation="vertical" variant="middle" flexItem />
                 <CheckroomIcon />
-                {database.teams.getActiveBuildName(loadoutDatum)}
+                <Typography
+                  variant="h6"
+                  noWrap
+                  sx={{
+                    gap: 1,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    textShadow: '#000 0 0 10px !important',
+                  }}
+                >
+                  {database.teams.getActiveBuildName(loadoutDatum)}
+                </Typography>
               </CardContent>
             </BootstrapTooltip>
           </CardActionArea>
