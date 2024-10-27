@@ -53,7 +53,7 @@ const sheet: UISheet<'2' | '4'> = {
           fields: [
             {
               title: <StatDisplay statKey="brEffect_" />,
-              fieldRef: buff.useUltimateOnAlly_brEffect_.tag,
+              fieldRef: buff.set4_brEffect_.tag,
             },
             /// TODO: translate DM "Duration"
             { title: 'Duration', fieldValue: dm['4'].duration },
