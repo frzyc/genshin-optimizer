@@ -46,7 +46,11 @@ export function BuildCard({
   const clickableAreaContent = (
     <>
       <CardHeader
-        title={name}
+        title={
+          <Typography noWrap gutterBottom variant="h6">
+            {name}
+          </Typography>
+        }
         action={
           description && (
             <Tooltip title={<Typography>{description}</Typography>}>
