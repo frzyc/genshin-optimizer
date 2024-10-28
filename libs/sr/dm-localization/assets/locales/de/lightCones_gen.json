@@ -1,0 +1,14 @@
+{
+  "lightCone_one": "Lichtkegel",
+  "lightCone_other": "Lichtkegel",
+  "superimposition": "Bündeln",
+  "path": {
+    "Erudition": "Die Gelehrsamkeit",
+    "Preservation": "Die Bewahrung",
+    "Abundance": "Der Überfluss",
+    "Nihility": "Die Nichtigkeit",
+    "Destruction": "Die Zerstörung",
+    "Harmony": "Die Harmonie",
+    "TheHunt": "Die Jagd"
+  }
+}

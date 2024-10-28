@@ -1,0 +1,39 @@
+{
+  "character_one": "Character",
+  "character_other": "Characters",
+  "eidolonLvl": "Eidolon Level:",
+  "traces": "Traces",
+  "type": {
+    "physical": "Physical",
+    "quantum": "Quantum",
+    "lightning": "Lightning",
+    "ice": "Ice",
+    "wind": "Wind",
+    "fire": "Fire",
+    "imaginary": "Imaginary"
+  },
+  "path": {
+    "Erudition": "Erudition",
+    "Preservation": "Preservation",
+    "Abundance": "Abundance",
+    "Nihility": "Nihility",
+    "Destruction": "Destruction",
+    "Harmony": "Harmony",
+    "TheHunt": "The Hunt"
+  },
+  "ability": {
+    "basic": "Basic ATK",
+    "skill": "Skill",
+    "ult": "Ultimate",
+    "talent": "Talent",
+    "technique": "Technique"
+  },
+  "dmgType": {
+    "single": "Single Target",
+    "aoe": "AoE",
+    "bounce": "Bounce",
+    "blast": "Blast",
+    "support": "Support",
+    "impair": "Impair"
+  }
+}

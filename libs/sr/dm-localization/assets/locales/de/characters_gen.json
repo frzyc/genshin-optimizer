@@ -1,0 +1,39 @@
+{
+  "character_one": "Figuren",
+  "character_other": "Figuren",
+  "eidolonLvl": "Eidolon-Stufe:",
+  "traces": "Spuren",
+  "type": {
+    "physical": "Physisch",
+    "quantum": "Quanten",
+    "lightning": "Blitz",
+    "ice": "Eis",
+    "wind": "Wind",
+    "fire": "Feuer",
+    "imaginary": "Imaginär"
+  },
+  "path": {
+    "Erudition": "Die Gelehrsamkeit",
+    "Preservation": "Die Bewahrung",
+    "Abundance": "Der Überfluss",
+    "Nihility": "Die Nichtigkeit",
+    "Destruction": "Die Zerstörung",
+    "Harmony": "Die Harmonie",
+    "TheHunt": "Die Jagd"
+  },
+  "ability": {
+    "basic": "Standardangriff",
+    "skill": "Fertigkeit",
+    "ult": "Ultimate",
+    "talent": "Talent",
+    "technique": "Technik"
+  },
+  "dmgType": {
+    "single": "Einzelangriff",
+    "aoe": "Flächenangriff",
+    "bounce": "Abprallung",
+    "blast": "Ausdehnung",
+    "support": "Unterstützung",
+    "impair": "Beeinträchtigung"
+  }
+}
