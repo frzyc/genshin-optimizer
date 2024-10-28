@@ -296,13 +296,13 @@ export function RelicCard({
   )
 }
 function SubstatDisplay({ substat }: { substat: ISubstat }) {
-  const { t } = useTranslation(['relics_gen', 'statKey_gen'])
+  const { t } = useTranslation('statKey_gen')
   const { key, value } = substat
   if (!value || !key) return null
   const displayValue = toPercent(value, key).toFixed(statToFixed(key))
   return (
     <Typography sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-      <StatIcon statKey={key} iconProps={iconInlineProps} />{' '}
+      <StatIcon statKey={key} iconProps={iconInlineProps} />
       {t(`statKey_gen:${key}`)}+{displayValue}
       {getUnitStr(key)}
     </Typography>
