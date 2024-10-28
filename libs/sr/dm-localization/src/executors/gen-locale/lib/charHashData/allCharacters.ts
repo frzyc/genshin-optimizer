@@ -14,7 +14,7 @@ import {
   avatarSkillTreeConfig,
   characterIdMap,
 } from '@genshin-optimizer/sr/dm'
-import { convertToHash } from './util'
+import { convertToHash } from '../util'
 
 type CharData = {
   name: string
@@ -128,4 +128,4 @@ const charArray = Object.entries(avatarConfig).map(([charId, charConfig]) => {
 
 const data = Object.fromEntries(charArray)
 verifyObjKeys(data, allCharacterDataKeys)
-export const charHashData = data
+export const allCharHashData = data

@@ -61,7 +61,7 @@ export function RelicCard({
   excluded = false,
 }: RelicCardProps) {
   const { t } = useTranslation('relic')
-  const { t: tk } = useTranslation(['slotKey_gen', 'statKey_gen'])
+  const { t: tk } = useTranslation(['relics_gen', 'statKey_gen'])
 
   const {
     lock,
@@ -165,7 +165,7 @@ export function RelicCard({
               sx={{ display: 'flex', gap: 0.5, alignItems: 'center' }}
             >
               <SlotIcon iconProps={{ fontSize: 'inherit' }} slotKey={slotKey} />
-              {tk(`slotKey_gen:${slotKey}`)}
+              {tk(`relics_gen:${slotKey}`)}
             </Typography>
             <Typography
               variant="h6"

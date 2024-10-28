@@ -124,7 +124,13 @@ export default function TeamCharacterSelector({
           placement="top"
           title={
             <Box>
-              <Box sx={{ display: 'flex', color: 'info.light', gap: 1 }}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  color: 'info.light',
+                  gap: 1,
+                }}
+              >
                 <BorderColorIcon />
                 <Typography>
                   <strong>{t`team.editNameDesc`}</strong>
@@ -139,23 +145,17 @@ export default function TeamCharacterSelector({
           <CardContent
             sx={{
               display: 'flex',
+              alignItems: 'center',
               justifyContent: 'center',
               '&:hover': {
                 color: 'info.light',
               },
+              gap: 1,
+              textShadow: '#000 0 0 10px !important',
             }}
           >
-            <Typography
-              variant="h5"
-              sx={{
-                display: 'flex',
-                gap: 1,
-                alignItems: 'center',
-                justifyContent: 'center',
-                textShadow: '#000 0 0 10px !important',
-              }}
-            >
-              <TeamIcon />
+            <TeamIcon />
+            <Typography noWrap variant="h5">
               {team.name}
             </Typography>
           </CardContent>

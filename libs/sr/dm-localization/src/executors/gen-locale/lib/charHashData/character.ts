@@ -1,4 +1,8 @@
-export const sheetHashData = {
+export const charHashData = {
+  character_one: '-1435714104', // Character
+  character_other: '-676993900', // Characters
+  eidolonLvl: '1102721995', // "Eidolon Level:"
+  traces: '1252031000', // Traces
   type: {
     physical: '-1101149179',
     quantum: '88513016',
@@ -32,7 +36,4 @@ export const sheetHashData = {
     support: '1560729279',
     impair: '397929865',
   },
-  eidolonLvl: '1102721995', //"Eidolon Level:"
-  lvl: '982642653', //"Lv."
-  superimpose: '-2008197403', //"Superimposition"
 }

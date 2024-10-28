@@ -351,7 +351,7 @@ function SkillDisplayCard({
 }
 
 export function EidolonDropdown() {
-  const { t } = useTranslation('sheet_gen')
+  const { t } = useTranslation('characters_gen')
   const calc = useSrCalcContext()
   const {
     teamMetadatum: { characterKey },
@@ -404,7 +404,7 @@ export function TalentDropdown({
   setTalent: (talent: number) => void
   dropDownButtonProps?: Omit<DropdownButtonProps, 'title' | 'children'>
 }) {
-  const { t } = useTranslation('sheet_gen')
+  const { t } = useTranslation('common_gen')
   const character = useCharacterContext()
   const calc = useSrCalcContext()
   if (!calc || !character) return null
@@ -418,7 +418,7 @@ export function TalentDropdown({
       fullWidth
       title={
         <span>
-          {t('lvl')} {level}
+          {t('lv')} {level}
         </span>
       }
       color={levelBoost ? 'info' : 'primary'}
@@ -432,7 +432,7 @@ export function TalentDropdown({
           onClick={() => setTalent(i)}
         >
           <span>
-            {t('lvl')} {i + levelBoost}
+            {t('lv')} {i + levelBoost}
           </span>
         </MenuItem>
       ))}
