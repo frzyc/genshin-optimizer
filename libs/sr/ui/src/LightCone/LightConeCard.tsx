@@ -26,7 +26,7 @@ import {
 } from '@mui/material'
 import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
-import { LocationAutocomplete } from '../Character'
+import { LocationAutocomplete, StatDisplay } from '../Character'
 import { LightConeName } from './LightConeTrans'
 
 export type LightConeCardProps = {
@@ -142,15 +142,16 @@ export function LightConeCard({
             width: '100%',
           }}
         >
-          <Typography>
-            HP: {calc.compute(own.base.hp.with('sheet', 'lightCone')).val}
-          </Typography>
-          <Typography>
-            ATK: {calc.compute(own.base.atk.with('sheet', 'lightCone')).val}
-          </Typography>
-          <Typography>
-            DEF: {calc.compute(own.base.def.with('sheet', 'lightCone')).val}
-          </Typography>
+          {(['hp', 'atk', 'def'] as const).map((stat) => (
+            <Typography sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              <StatDisplay statKey={stat} />
+              <span>
+                {calc
+                  .compute(own.base[stat].with('sheet', 'lightCone'))
+                  .val.toFixed()}
+              </span>
+            </Typography>
+          ))}
         </CardContent>
         <Box
           sx={{

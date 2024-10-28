@@ -20,7 +20,7 @@ export function StatDisplay({
   )
   if (disableIcon) return text
   return (
-    <Box component="span" display="flex" alignItems="center" gap={1}>
+    <Box component="span" display="inline-flex" alignItems="center" gap={1}>
       {!disableIcon && (
         <StatIcon statKey={statKey} iconProps={iconInlineProps} />
       )}
