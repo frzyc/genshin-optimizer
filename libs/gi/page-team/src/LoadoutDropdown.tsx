@@ -105,10 +105,12 @@ export function LoadoutDropdown({
         title={
           <Box
             sx={{
-              display: 'flex',
               gap: 1,
               flexWrap: 'wrap',
               justifyContent: 'center',
+              textOverflow: 'ellipsis',
+              overflow: 'hidden',
+              whiteSpace: 'nowrap',
             }}
           >
             {label ? (

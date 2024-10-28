@@ -1,0 +1,39 @@
+{
+  "character_one": "Personnage",
+  "character_other": "Personnages",
+  "eidolonLvl": "Niveau d'Eidolon :",
+  "traces": "Traces",
+  "type": {
+    "physical": "Physique",
+    "quantum": "Quantique",
+    "lightning": "Foudre",
+    "ice": "Glace",
+    "wind": "Vent",
+    "fire": "Feu",
+    "imaginary": "Imaginaire"
+  },
+  "path": {
+    "Erudition": "L'Érudition",
+    "Preservation": "La Préservation",
+    "Abundance": "L'Abondance",
+    "Nihility": "La Nihilité",
+    "Destruction": "La Destruction",
+    "Harmony": "L'Harmonie",
+    "TheHunt": "La Chasse"
+  },
+  "ability": {
+    "basic": "ATQ normale",
+    "skill": "Compétence",
+    "ult": "Ultime",
+    "talent": "Talent",
+    "technique": "Technique"
+  },
+  "dmgType": {
+    "single": "Cible unique",
+    "aoe": "ZdE",
+    "bounce": "Rebond",
+    "blast": "Propagation",
+    "support": "Soutien",
+    "impair": "Incapacitation"
+  }
+}
