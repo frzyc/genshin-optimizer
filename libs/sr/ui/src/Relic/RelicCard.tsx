@@ -1,4 +1,3 @@
-import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import {
   BootstrapTooltip,
   CardThemed,
@@ -37,7 +36,7 @@ import {
 } from '@mui/material'
 import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
-import { LocationAutocomplete } from '../Character'
+import { LocationAutocomplete, StatDisplay } from '../Character'
 import { RelicSetName } from './RelicTrans'
 import { relicLevelVariant } from './util'
 
@@ -301,10 +300,12 @@ function SubstatDisplay({ substat }: { substat: ISubstat }) {
   if (!value || !key) return null
   const displayValue = toPercent(value, key).toFixed(statToFixed(key))
   return (
-    <Typography sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-      <StatIcon statKey={key} iconProps={iconInlineProps} />
-      {t(`statKey_gen:${key}`)}+{displayValue}
-      {getUnitStr(key)}
+    <Typography sx={{ display: 'flex', alignItems: 'center' }}>
+      <StatDisplay statKey={key} />
+      <span>
+        +{displayValue}
+        {getUnitStr(key)}
+      </span>
     </Typography>
   )
 }
