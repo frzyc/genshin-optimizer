@@ -1,4 +1,4 @@
-import { clamp } from '@genshin-optimizer/common/util'
+import { clamp, pruneOrPadArray } from '@genshin-optimizer/common/util'
 import type {
   RelicMainStatKey,
   RelicRarityKey,
@@ -488,7 +488,6 @@ function parseSubstats(
 ): ISubstat[] {
   if (!Array.isArray(obj)) return new Array(4).map((_) => defSub())
   const substats = (obj as ISubstat[])
-    .slice(0, 4)
     .map(({ key = '', value = 0 }) => {
       if (
         !allRelicSubStatKeys.includes(key as RelicSubStatKey) ||
@@ -505,7 +504,14 @@ function parseSubstats(
       } else value = 0
       return { key, value }
     })
-  while (substats.length < 4) substats.push(defSub())
+    // SR substats are sorted by the order of allRelicSubStatKeys
+    .sort((a, b) => {
+      function getPrio(key: ISubstat['key']) {
+        if (!key) return 100 // empty subs to to the end
+        return allRelicSubStatKeys.indexOf(key)
+      }
+      return getPrio(a.key) - getPrio(b.key)
+    })
 
-  return substats
+  return pruneOrPadArray(substats, 4, defSub())
 }

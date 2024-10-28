@@ -6,14 +6,18 @@ import {
   NextImage,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
+import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
 import { relicAsset } from '@genshin-optimizer/sr/assets'
 import {
   allElementalDamageKeys,
   type LocationKey,
 } from '@genshin-optimizer/sr/consts'
-import type { IRelic } from '@genshin-optimizer/sr/srod'
+import type { IRelic, ISubstat } from '@genshin-optimizer/sr/srod'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/sr/svgicons'
-import { getRelicMainStatDisplayVal } from '@genshin-optimizer/sr/util'
+import {
+  getRelicMainStatDisplayVal,
+  statToFixed,
+} from '@genshin-optimizer/sr/util'
 import {
   DeleteForever,
   Edit,
@@ -183,6 +187,7 @@ export function RelicCard({
                   color={mainStatLevel !== level ? 'warning' : undefined}
                 >
                   {getRelicMainStatDisplayVal(rarity, mainStatKey, level)}
+                  {getUnitStr(mainStatKey)}
                 </ColorText>
               </strong>
             </Typography>
@@ -216,10 +221,7 @@ export function RelicCard({
           }}
         >
           {substats.map((substat) => (
-            <Typography key={substat.key}>
-              <StatIcon statKey={substat.key} iconProps={iconInlineProps} />{' '}
-              {tk(`statKey_gen:${substat.key}`)}+{substat.value}
-            </Typography>
+            <SubstatDisplay key={substat.key} substat={substat} />
           ))}
           <Box flexGrow={1} />
           <Typography color="success.main">
@@ -291,5 +293,18 @@ export function RelicCard({
         </Box>
       </CardThemed>
     </Suspense>
+  )
+}
+function SubstatDisplay({ substat }: { substat: ISubstat }) {
+  const { t } = useTranslation(['relics_gen', 'statKey_gen'])
+  const { key, value } = substat
+  if (!value || !key) return null
+  const displayValue = toPercent(value, key).toFixed(statToFixed(key))
+  return (
+    <Typography sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+      <StatIcon statKey={key} iconProps={iconInlineProps} />{' '}
+      {t(`statKey_gen:${key}`)}+{displayValue}
+      {getUnitStr(key)}
+    </Typography>
   )
 }

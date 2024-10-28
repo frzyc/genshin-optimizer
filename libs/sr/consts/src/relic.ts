@@ -60,6 +60,7 @@ export const allRelicSetKeys = [
 ] as const
 export type RelicSetKey = (typeof allRelicSetKeys)[number]
 
+// WARN: do not change order, since this is the order of display of substats in game.
 export const allRelicSubStatKeys = [
   'hp',
   'atk',
