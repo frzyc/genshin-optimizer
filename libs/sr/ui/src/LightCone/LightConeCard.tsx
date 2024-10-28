@@ -6,6 +6,7 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { lightConeAsset } from '@genshin-optimizer/sr/assets'
 import type { LocationKey } from '@genshin-optimizer/sr/consts'
+import type { Calculator } from '@genshin-optimizer/sr/formula'
 import {
   lightConeData,
   own,
@@ -143,14 +144,7 @@ export function LightConeCard({
           }}
         >
           {(['hp', 'atk', 'def'] as const).map((stat) => (
-            <Typography sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-              <StatDisplay statKey={stat} />
-              <span>
-                {calc
-                  .compute(own.base[stat].with('sheet', 'lightCone'))
-                  .val.toFixed()}
-              </span>
-            </Typography>
+            <StatRow key={stat} calc={calc} stat={stat} />
           ))}
         </CardContent>
         <Box
@@ -216,5 +210,24 @@ export function LightConeCard({
         </Box>
       </CardThemed>
     </Suspense>
+  )
+}
+function StatRow({
+  calc,
+  stat,
+}: {
+  calc: Calculator
+  stat: 'hp' | 'atk' | 'def'
+}) {
+  return (
+    <Typography
+      key={stat}
+      sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+    >
+      <StatDisplay statKey={stat} />
+      <span>
+        {calc.compute(own.base[stat].with('sheet', 'lightCone')).val.toFixed()}
+      </span>
+    </Typography>
   )
 }

@@ -295,7 +295,6 @@ export function RelicCard({
   )
 }
 function SubstatDisplay({ substat }: { substat: ISubstat }) {
-  const { t } = useTranslation('statKey_gen')
   const { key, value } = substat
   if (!value || !key) return null
   const displayValue = toPercent(value, key).toFixed(statToFixed(key))
