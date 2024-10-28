@@ -5,6 +5,7 @@ import {
 import {
   allCharacterKeys,
   allLightConeKeys,
+  allRelicSetKeys,
   type AscensionKey,
   type CharacterKey,
   type LightConeKey,
@@ -142,7 +143,11 @@ describe('char+lightCone test', () => {
 })
 describe('sheet', () => {
   test('buff entries', () => {
-    const sheets = new Set([...allCharacterKeys, ...allLightConeKeys, 'relic'])
+    const sheets = new Set([
+      ...allCharacterKeys,
+      ...allLightConeKeys,
+      ...allRelicSetKeys,
+    ])
     for (const { tag } of data) {
       if (tag.et && tag.qt && tag.q) {
         switch (tag.et) {
