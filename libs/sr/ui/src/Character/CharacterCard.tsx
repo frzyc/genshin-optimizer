@@ -1,5 +1,5 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { getUnitStr } from '@genshin-optimizer/common/util'
+import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
 import type { ICachedCharacter } from '@genshin-optimizer/sr/db'
 import type { Calculator } from '@genshin-optimizer/sr/formula'
 import {
@@ -75,7 +75,9 @@ function StatLine({
     >
       <StatDisplay statKey={statKey} />
       <span>
-        {calc.compute(own.final[statKey]).val.toFixed(statToFixed(statKey))}
+        {toPercent(calc.compute(own.final[statKey]).val, statKey).toFixed(
+          statToFixed(statKey)
+        )}
         {getUnitStr(statKey)}
       </span>
     </Typography>
