@@ -70,7 +70,6 @@ function StatLine({
 }) {
   return (
     <Typography
-      key={statKey}
       sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
     >
       <StatDisplay statKey={statKey} />
