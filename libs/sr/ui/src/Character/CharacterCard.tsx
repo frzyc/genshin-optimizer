@@ -19,15 +19,17 @@ import { useSrCalcContext } from '../Hook'
 import { StatDisplay } from './StatDisplay'
 
 const stats = [
-  'atk',
   'hp',
+  'atk',
   'def',
-  'brEffect_',
+  'spd',
   'crit_',
   'crit_dmg_',
-  'enerRegen_',
+  'brEffect_',
   'heal_',
-  'spd',
+  'enerRegen_',
+  'eff_',
+  'eff_res_',
 ] as const
 export function CharacterCard({
   character,
@@ -69,7 +71,14 @@ function StatLine({
   statKey: (typeof stats)[number]
 }) {
   return (
-    <Typography sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+    <Typography
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 1,
+        justifyContent: 'space-between',
+      }}
+    >
       <StatDisplay statKey={statKey} />
       <span>
         {toPercent(calc.compute(own.final[statKey]).val, statKey).toFixed(
