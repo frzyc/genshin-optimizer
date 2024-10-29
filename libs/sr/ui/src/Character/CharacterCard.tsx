@@ -69,9 +69,7 @@ function StatLine({
   statKey: (typeof stats)[number]
 }) {
   return (
-    <Typography
-      sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
-    >
+    <Typography sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
       <StatDisplay statKey={statKey} />
       <span>
         {toPercent(calc.compute(own.final[statKey]).val, statKey).toFixed(
