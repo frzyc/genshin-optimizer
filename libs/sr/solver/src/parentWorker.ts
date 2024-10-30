@@ -62,7 +62,7 @@ onmessage = async (e: MessageEvent<ParentCommand>) => {
   try {
     await handleEvent(e)
   } catch (err) {
-    console.log(err)
+    console.error(err)
     postMessage({ resultType: 'err', message: JSON.stringify(err) })
   }
 }
@@ -163,7 +163,7 @@ async function start({
               res()
               break
             case 'err':
-              console.log(data)
+              console.error(data)
               rej()
               break
           }

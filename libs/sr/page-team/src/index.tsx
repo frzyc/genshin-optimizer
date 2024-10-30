@@ -1,21 +1,12 @@
 import { CardThemed, useTitle } from '@genshin-optimizer/common/ui'
-import type {
-  CharacterContextObj,
-  LoadoutContextObj,
-} from '@genshin-optimizer/sr/ui'
 import {
   CharacterContext,
-  LoadoutContext,
-  TeamCalcProvider,
-  TeamCharacterSelector,
   useCharacter,
   useDatabaseContext,
-  useLoadout,
-  useLoadoutContext,
   useTeam,
-} from '@genshin-optimizer/sr/ui'
+} from '@genshin-optimizer/sr/db-ui'
 import { Box, Skeleton } from '@mui/material'
-import { Suspense, useEffect, useMemo } from 'react'
+import { Suspense, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   Navigate,
@@ -25,8 +16,11 @@ import {
   useNavigate,
   useParams,
 } from 'react-router-dom'
-import TeamSettings from './TeamSettings'
+import { TeamCalcProvider } from './TeamCalcProvider'
+import { TeamCharacterSelector } from './TeamCharacterSelector'
 import TeammateDisplay from './TeammateDisplay'
+import type { PresetContextObj, TeamContextObj } from './context'
+import { PresetContext, TeamContext, useTeamContext } from './context'
 
 const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
 
@@ -53,47 +47,43 @@ export default function PageTeam() {
 }
 
 function Page({ teamId }: { teamId: string }) {
-  const { database } = useDatabaseContext()
   const navigate = useNavigate()
-
+  const [presetIndex, setPresetIndex] = useState(0)
+  const presetObj = useMemo(
+    () =>
+      ({
+        presetIndex,
+        setPresetIndex,
+      } as PresetContextObj),
+    [presetIndex, setPresetIndex]
+  )
   const team = useTeam(teamId)!
-  const { loadoutMetadata } = team
-  // use the current URL as the "source of truth" for characterKey and tab.
+  const { teamMetadata } = team
+  // use the current URL as the "source of truth" for characterKey.
   const {
     params: { characterKey: characterKeyRaw },
   } = useMatch({ path: '/teams/:teamId/:characterKey', end: false }) ?? {
     params: {},
   }
-  const {
-    params: { tab },
-  } = useMatch({ path: '/teams/:teamId/:characterKey/:tab' }) ?? {
-    params: {},
-  }
 
   // validate characterKey
-  const loadoutMetadatumIndex = useMemo(
-    () =>
-      loadoutMetadata.findIndex(
-        (loadoutMetadatum) =>
-          loadoutMetadatum?.loadoutId &&
-          database.loadouts.get(loadoutMetadatum.loadoutId)?.key ===
-            characterKeyRaw
-      ),
-    [loadoutMetadata, database.loadouts, characterKeyRaw]
+  const teamMetadatumIndex = useMemo(() => {
+    const index = teamMetadata.findIndex(
+      (teammateDatum) =>
+        teammateDatum && teammateDatum.characterKey === characterKeyRaw
+    )
+    if (index === -1) return 0
+    return index
+  }, [teamMetadata, characterKeyRaw])
+  const teammateDatum = useMemo(
+    () => teamMetadata[teamMetadatumIndex],
+    [teamMetadata, teamMetadatumIndex]
   )
-  const loadoutMetadatum = useMemo(
-    () => loadoutMetadata[loadoutMetadatumIndex],
-    [loadoutMetadata, loadoutMetadatumIndex]
-  )
+  const characterKey = teammateDatum?.characterKey
   useEffect(() => {
-    window.scrollTo({ top: 0 })
-  }, [])
-  useEffect(() => {
-    if (!loadoutMetadatum) navigate('', { replace: true })
-  }, [loadoutMetadatum, navigate])
-
-  const loadoutId = loadoutMetadatum?.loadoutId
-  const characterKey = database.loadouts.get(loadoutId)?.key
+    if (characterKey && characterKey !== characterKeyRaw)
+      navigate(`${characterKey}`, { replace: true })
+  }, [characterKey, characterKeyRaw, teammateDatum, navigate])
 
   const { t } = useTranslation(['charNames_gen', 'page_character'])
 
@@ -103,79 +93,79 @@ function Page({ teamId }: { teamId: string }) {
         ? // TODO: replace Character with CharKeyToName function once it's ported
           t('charNames_gen:Character')
         : t('Team Settings')
-      const tabName = tab
-        ? t(`page_character:tabs.${tab}`)
-        : characterKey
-        ? t('Loadout/Build')
-        : tab
-      return `${team.name} - ${charName}${tabName ? ` - ${tabName}` : ''}`
-    }, [characterKey, t, tab, team.name])
+      return `${team.name} - ${charName}`
+    }, [characterKey, t, team.name])
   )
 
-  const loadout = useLoadout(loadoutId ?? '')
-  const loadoutContextObj: LoadoutContextObj | undefined = useMemo(() => {
-    if (!loadoutId || !loadout || !loadoutMetadatum) return undefined
-    return { teamId, team, loadoutId, loadout, loadoutMetadatum }
-  }, [loadoutId, loadout, loadoutMetadatum, team, teamId])
+  const teamContextObj: TeamContextObj | undefined = useMemo(() => {
+    if (!teamId || !team || !teammateDatum) return undefined
+    return {
+      teamId,
+      team,
+      teammateDatum,
+    }
+  }, [teammateDatum, team, teamId])
 
   return (
-    <TeamCalcProvider teamId={teamId} currentChar={characterKey}>
-      <Box
-        sx={{ display: 'flex', gap: 1, flexDirection: 'column', mx: 1, mt: 2 }}
-      >
-        <CardThemed>
-          <TeamCharacterSelector
-            teamId={teamId}
-            charKey={characterKey}
-            tab={tab}
-          />
-        </CardThemed>
+    <PresetContext.Provider value={presetObj}>
+      <TeamCalcProvider teamId={teamId} currentChar={characterKey}>
         <Box
-        // sx={(theme) => {
-        //   const elementKey = characterKey && allStats.char[characterKey]
-        //   if (!elementKey) return {}
-        //   const hex = theme.palette[elementKey].main as string
-        //   const color = hexToColor(hex)
-        //   if (!color) return {}
-        //   const rgba = colorToRgbaString(color, 0.1)
-        //   return {
-        //     background: `linear-gradient(to bottom, ${rgba} 0%, rgba(0,0,0,0)) 25%`,
-        //   }
-        // }}
+          sx={{
+            display: 'flex',
+            gap: 1,
+            flexDirection: 'column',
+            mx: 1,
+            mt: 2,
+          }}
         >
-          {loadoutContextObj ? (
-            <LoadoutContext.Provider value={loadoutContextObj}>
-              <TeammateDisplayWrapper />
-            </LoadoutContext.Provider>
-          ) : (
-            <TeamSettings teamId={teamId} />
-          )}
+          <CardThemed
+            sx={{
+              overflow: 'visible',
+              top: 0,
+              position: 'sticky',
+              zIndex: 100,
+            }}
+          >
+            <TeamCharacterSelector teamId={teamId} charKey={characterKey} />
+          </CardThemed>
+          <Box
+          // sx={(theme) => {
+          //   const elementKey = characterKey && allStats.char[characterKey]
+          //   if (!elementKey) return {}
+          //   const hex = theme.palette[elementKey].main as string
+          //   const color = hexToColor(hex)
+          //   if (!color) return {}
+          //   const rgba = colorToRgbaString(color, 0.1)
+          //   return {
+          //     background: `linear-gradient(to bottom, ${rgba} 0%, rgba(0,0,0,0)) 25%`,
+          //   }
+          // }}
+          >
+            {teamContextObj && (
+              <TeamContext.Provider value={teamContextObj}>
+                <TeammateDisplayWrapper />
+              </TeamContext.Provider>
+            )}
+          </Box>
         </Box>
-      </Box>
-    </TeamCalcProvider>
+      </TeamCalcProvider>
+    </PresetContext.Provider>
   )
 }
 
-function TeammateDisplayWrapper({ tab }: { tab?: string }) {
+function TeammateDisplayWrapper() {
   const {
-    loadout: { key: characterKey },
-  } = useLoadoutContext()
+    teammateDatum: { characterKey },
+  } = useTeamContext()
   const character = useCharacter(characterKey)
-  const characterContextValue: CharacterContextObj | undefined = useMemo(
-    () =>
-      character && {
-        character,
-      },
-    [character]
-  )
-  if (!characterContextValue)
+  if (!character)
     return <Skeleton variant="rectangular" width="100%" height={1000} />
 
   return (
-    <CharacterContext.Provider value={characterContextValue}>
+    <CharacterContext.Provider value={character}>
       <Routes>
         <Route path=":characterKey">
-          <Route path="*" index element={<TeammateDisplay tab={tab} />} />
+          <Route path="*" index element={<TeammateDisplay />} />
         </Route>
       </Routes>
     </CharacterContext.Provider>

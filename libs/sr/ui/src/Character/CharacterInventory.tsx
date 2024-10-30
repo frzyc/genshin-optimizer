@@ -4,9 +4,9 @@ import {
 } from '@genshin-optimizer/common/react-util'
 import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
+import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import { Box, CardHeader, Grid, Skeleton } from '@mui/material'
 import { Suspense, useEffect, useMemo, useState } from 'react'
-import { useDatabaseContext } from '../Context'
 import { CharacterCard } from './CharacterCard'
 import { CharacterEditor } from './CharacterEditor'
 

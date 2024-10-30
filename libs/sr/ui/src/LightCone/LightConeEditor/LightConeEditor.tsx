@@ -18,6 +18,7 @@ import {
   lightConeMaxLevel,
 } from '@genshin-optimizer/sr/consts'
 import type { ICachedLightCone } from '@genshin-optimizer/sr/db'
+import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import type { ILightCone } from '@genshin-optimizer/sr/srod'
 import { ascensionMaxLevel, milestoneLevels } from '@genshin-optimizer/sr/util'
 import { Add, Close, DeleteForever, Update } from '@mui/icons-material'
@@ -43,7 +44,6 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete } from '../../Character'
-import { useDatabaseContext } from '../../Context'
 import { lightConeReducer } from './reducer'
 
 // TODO: temporary until light cone sheet is implemented

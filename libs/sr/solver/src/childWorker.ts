@@ -50,7 +50,7 @@ onmessage = async (e: MessageEvent<ChildCommand>) => {
   try {
     await handleEvent(e)
   } catch (err) {
-    console.log(err)
+    console.error(err)
     postMessage({ resultType: 'err', message: JSON.stringify(err) })
   }
 }
