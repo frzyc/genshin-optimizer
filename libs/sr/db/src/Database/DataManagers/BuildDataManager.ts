@@ -60,22 +60,7 @@ export class BuildDataManager extends DataManager<
   }
   override remove(key: string, notify?: boolean): Build | undefined {
     const build = super.remove(key, notify)
-    // remove data from loadout first
-    this.database.loadouts.entries.forEach(
-      ([loadoutId, loadout]) =>
-        loadout.buildIds.includes(key) &&
-        this.database.loadouts.set(loadoutId, {})
-    )
-    // once loadouts are validated, teams can be validated as well
-    this.database.teams.entries.forEach(
-      ([teamId, team]) =>
-        team.loadoutMetadata?.some(
-          (loadoutMetadatum) =>
-            loadoutMetadatum?.buildId === key ||
-            loadoutMetadatum?.compareBuildId
-        ) && this.database.teams.set(teamId, {}) // trigger a validation
-    )
-
+    // TODO: remove builds from teams
     return build
   }
 }

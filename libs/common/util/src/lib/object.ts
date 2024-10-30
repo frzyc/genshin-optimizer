@@ -153,8 +153,8 @@ export const getObjectKeysRecursive = (obj: unknown): string[] =>
 
 export function deepFreeze<T>(obj: T, layers = 5): T {
   if (layers === 0) return obj
-  if (typeof obj === 'object')
-    Object.values(Object.freeze(obj)).forEach((o) => deepFreeze(o, layers--))
+  if (obj && typeof obj === 'object')
+    Object.values(Object.freeze(obj)).forEach((o) => deepFreeze(o, layers - 1))
   return obj
 }
 
@@ -214,4 +214,20 @@ export function reverseMap<K extends string, V extends string>(
   return Object.fromEntries(
     Object.entries(obj).map(([k, v]) => [v, k])
   ) as Record<V, K>
+}
+
+export function shallowCompareObj<T extends Record<string, any>>(
+  obj1: T,
+  obj2: T
+) {
+  const keys1 = Object.keys(obj1)
+  const keys2 = Object.keys(obj2)
+
+  // Check if the objects have the same number of keys
+  if (keys1.length !== keys2.length) return false
+
+  // Check if all keys and their values are the same
+  for (const key of keys1) if (obj1[key] !== obj2[key]) return false
+
+  return true
 }

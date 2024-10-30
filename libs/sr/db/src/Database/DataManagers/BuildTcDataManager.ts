@@ -59,21 +59,7 @@ export class BuildTcDataManager extends DataManager<
   }
   override remove(key: string, notify?: boolean): IBuildTc | undefined {
     const buildTc = super.remove(key, notify)
-    // remove data from loadout first
-    this.database.loadouts.entries.forEach(
-      ([loadoutId, loadout]) =>
-        loadout.buildTcIds.includes(key) &&
-        this.database.loadouts.set(loadoutId, {})
-    )
-    // once loadouts are validated, teams can be validated as well
-    this.database.teams.entries.forEach(
-      ([teamId, team]) =>
-        team.loadoutMetadata?.some(
-          (loadoutMetadatum) =>
-            loadoutMetadatum?.buildTcId === key ||
-            loadoutMetadatum?.compareBuildTcId === key
-        ) && this.database.teams.set(teamId, {}) // trigger a validation
-    )
+    // TODO: remove tcbuild from teams?
 
     return buildTc
   }

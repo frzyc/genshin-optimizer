@@ -64,7 +64,6 @@ export interface OptConfig {
   allowLocationsState: AllowLocationsState
   relicExclusion: string[]
   useExcludedRelics: boolean
-  optimizationTarget?: Tag
   mainStatAssumptionLevel: number
   allowPartial: boolean
   maxBuildsToShow: number
@@ -96,7 +95,6 @@ export class OptConfigDataManager extends DataManager<
       useExcludedRelics,
       statFilters,
       mainStatKeys,
-      optimizationTarget,
       mainStatAssumptionLevel,
       excludedLocations,
       allowLocationsState,
@@ -139,8 +137,6 @@ export class OptConfigDataManager extends DataManager<
       })
     }
 
-    if (optimizationTarget && !validateTag(optimizationTarget))
-      optimizationTarget = undefined
     if (
       typeof mainStatAssumptionLevel !== 'number' ||
       mainStatAssumptionLevel < 0 ||
@@ -210,7 +206,6 @@ export class OptConfigDataManager extends DataManager<
       useExcludedRelics,
       statFilters,
       mainStatKeys,
-      optimizationTarget,
       mainStatAssumptionLevel,
       excludedLocations,
       allowLocationsState,
@@ -269,7 +264,6 @@ const initialBuildSettings: OptConfig = deepFreeze({
     sphere: relicSlotToMainStatKeys.sphere,
     rope: relicSlotToMainStatKeys.rope,
   },
-  optimizationTarget: undefined,
   mainStatAssumptionLevel: 0,
   excludedLocations: [],
   allowLocationsState: 'unequippedOnly',

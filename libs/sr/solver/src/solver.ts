@@ -1,8 +1,13 @@
-import { detach } from '@genshin-optimizer/pando/engine'
+import { detach, sum } from '@genshin-optimizer/pando/engine'
 import type { CharacterKey, RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { allRelicSetKeys } from '@genshin-optimizer/sr/consts'
-import type { ICachedRelic, StatFilter } from '@genshin-optimizer/sr/db'
-import { Read, type Calculator, type Tag } from '@genshin-optimizer/sr/formula'
+import type { ICachedRelic, StatFilter, Team } from '@genshin-optimizer/sr/db'
+import {
+  Read,
+  type Calculator,
+  type Preset,
+  type Tag,
+} from '@genshin-optimizer/sr/formula'
 import type {
   ParentCommandStart,
   ParentCommandTerminate,
@@ -21,7 +26,7 @@ export interface ProgressResult {
 
 export class Solver {
   private calc: Calculator
-  private optTarget: Tag
+  private frames: Team['frames']
   private statFilters: Array<Omit<StatFilter, 'disabled'>>
   private relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
   private numWorkers: number
@@ -32,7 +37,7 @@ export class Solver {
   constructor(
     characterKey: CharacterKey,
     calc: Calculator,
-    optTarget: Tag,
+    frames: Team['frames'],
     statFilters: Array<Omit<StatFilter, 'disabled'>>,
     relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>,
     numWorkers: number,
@@ -40,7 +45,7 @@ export class Solver {
   ) {
     this.characterKey = characterKey
     this.calc = calc
-    this.optTarget = optTarget
+    this.frames = frames
     this.statFilters = statFilters
     this.relicsBySlot = relicsBySlot
     this.numWorkers = numWorkers
@@ -64,7 +69,7 @@ export class Solver {
             res(data.buildResults)
             break
           case 'err':
-            console.log(data)
+            console.error(data)
             rej()
             break
         }
@@ -100,7 +105,7 @@ export class Solver {
             res()
             break
           case 'err':
-            console.log(data)
+            console.error(data)
             rej()
             break
         }
@@ -115,7 +120,13 @@ export class Solver {
     const relicSetKeys = new Set(allRelicSetKeys)
     const detachedNodes = detach(
       [
-        new Read(this.optTarget, 'sum'),
+        // team
+        sum(
+          ...this.frames.map((frame, i) =>
+            new Read(frame, 'sum').with('preset', `preset${i}` as Preset)
+          )
+        ),
+        // stat filters
         ...this.statFilters.map(({ tag }) => new Read(tag, 'sum')),
       ],
       this.calc,

@@ -3,6 +3,7 @@ import {
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
 import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
+import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import AddIcon from '@mui/icons-material/Add'
 import {
   Box,
@@ -14,7 +15,6 @@ import {
 } from '@mui/material'
 import { Suspense, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useDatabaseContext } from '../Context'
 import { RelicCard } from './RelicCard'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }

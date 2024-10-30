@@ -2,10 +2,10 @@ import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
 import { GeneralAutocomplete } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import { allCharacterKeys } from '@genshin-optimizer/sr/consts'
+import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import { Skeleton } from '@mui/material'
 import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useDatabaseContext } from '../Context'
 
 type CharacterAutocompleteProps = {
   charKey: CharacterKey | ''
