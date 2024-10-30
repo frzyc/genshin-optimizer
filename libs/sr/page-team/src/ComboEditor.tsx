@@ -88,7 +88,7 @@ function Team({
           </CardActionArea>
         )}
       >
-        <CardHeader title={`Team ${index + 1}`} />
+        <CardHeader title={`Combo ${index + 1}`} />
       </ConditionalWrapper>
       <Divider />
       <CardContent>

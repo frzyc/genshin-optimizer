@@ -45,6 +45,7 @@ export type StatFilter = {
 export type StatFilters = Array<StatFilter>
 
 export type GeneratedBuild = {
+  value: number //TODO: remove this when build display is more refined.
   lightConeId?: string
   relicIds: Record<RelicSlotKey, string | undefined>
 }
@@ -74,6 +75,7 @@ export interface OptConfig {
   useTeammateBuild: boolean
 
   //generated opt builds
+  // TODO: move generated builds to another dataManager to reduce layout rerendering on opt UI
   builds: Array<GeneratedBuild>
   buildDate: number
 }
@@ -186,7 +188,12 @@ export class OptConfigDataManager extends DataManager<
       builds = builds
         .map((build) => {
           if (typeof build !== 'object') return undefined
-          const { lightConeId, relicIds: relicIdsRaw } = build as GeneratedBuild
+          const {
+            lightConeId,
+            relicIds: relicIdsRaw,
+            value,
+          } = build as GeneratedBuild
+          if (typeof value !== 'number') return undefined
           if (!this.database.lightCones.get(lightConeId)) return undefined
           const relicIds = objKeyMap(allRelicSlotKeys, (slotKey) =>
             this.database.relics.get(relicIdsRaw[slotKey])?.slotKey === slotKey
@@ -194,7 +201,7 @@ export class OptConfigDataManager extends DataManager<
               : undefined
           )
 
-          return { relicIds, lightConeId }
+          return { relicIds, lightConeId, value }
         })
         .filter((b) => b) as GeneratedBuild[]
       if (!Number.isInteger(buildDate)) buildDate = 0

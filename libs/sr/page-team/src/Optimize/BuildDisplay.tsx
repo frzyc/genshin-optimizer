@@ -7,7 +7,7 @@ import { Grid } from '@mui/material'
 export function BuildDisplay({
   build,
 }: {
-  build: Record<RelicSlotKey, string> | undefined
+  build: Record<RelicSlotKey, string | undefined>
 }) {
   const relics = useEquippedRelics(build)
   return (

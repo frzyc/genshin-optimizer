@@ -608,7 +608,7 @@ describe('Database', () => {
 
       expect(
         database.chars.get('TrailblazerPhysical')!.equippedRelics.body
-      ).toEqual('')
+      ).toBeUndefined()
       expect(
         database.chars.get('TrailblazerFire')!.equippedRelics.body
       ).toEqual(relic1Id)
@@ -641,9 +641,9 @@ describe('Database', () => {
       expect(
         database.chars.get('TrailblazerPhysical')!.equippedLightCone
       ).toEqual(lightCone2Id)
-      expect(database.chars.get('TrailblazerFire')!.equippedLightCone).toEqual(
-        ''
-      )
+      expect(
+        database.chars.get('TrailblazerFire')!.equippedLightCone
+      ).toBeUndefined()
 
       // deletion dont remove equipment on other trailblazer
       database.chars.remove('TrailblazerFire')
