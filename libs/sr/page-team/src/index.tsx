@@ -69,21 +69,21 @@ function Page({ teamId }: { teamId: string }) {
   // validate characterKey
   const teamMetadatumIndex = useMemo(() => {
     const index = teamMetadata.findIndex(
-      (teamMetadatum) =>
-        teamMetadatum && teamMetadatum.characterKey === characterKeyRaw
+      (teammateDatum) =>
+        teammateDatum && teammateDatum.characterKey === characterKeyRaw
     )
     if (index === -1) return 0
     return index
   }, [teamMetadata, characterKeyRaw])
-  const teamMetadatum = useMemo(
+  const teammateDatum = useMemo(
     () => teamMetadata[teamMetadatumIndex],
     [teamMetadata, teamMetadatumIndex]
   )
-  const characterKey = teamMetadatum?.characterKey
+  const characterKey = teammateDatum?.characterKey
   useEffect(() => {
     if (characterKey && characterKey !== characterKeyRaw)
       navigate(`${characterKey}`, { replace: true })
-  }, [characterKey, characterKeyRaw, teamMetadatum, navigate])
+  }, [characterKey, characterKeyRaw, teammateDatum, navigate])
 
   const { t } = useTranslation(['charNames_gen', 'page_character'])
 
@@ -98,13 +98,13 @@ function Page({ teamId }: { teamId: string }) {
   )
 
   const teamContextObj: TeamContextObj | undefined = useMemo(() => {
-    if (!teamId || !team || !teamMetadatum) return undefined
+    if (!teamId || !team || !teammateDatum) return undefined
     return {
       teamId,
       team,
-      teamMetadatum,
+      teammateDatum,
     }
-  }, [teamMetadatum, team, teamId])
+  }, [teammateDatum, team, teamId])
 
   return (
     <PresetContext.Provider value={presetObj}>
@@ -155,7 +155,7 @@ function Page({ teamId }: { teamId: string }) {
 
 function TeammateDisplayWrapper() {
   const {
-    teamMetadatum: { characterKey },
+    teammateDatum: { characterKey },
   } = useTeamContext()
   const character = useCharacter(characterKey)
   if (!character)

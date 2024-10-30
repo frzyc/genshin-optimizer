@@ -18,7 +18,7 @@ import { validateTag } from '../tagUtil'
 
 const buildTypeKeys = ['equipped', 'real', 'tc'] as const
 type BuildTypeKey = (typeof buildTypeKeys)[number]
-export type TeamMetadatum = {
+export type TeammateDatum = {
   characterKey: CharacterKey
 
   buildType: BuildTypeKey
@@ -53,7 +53,7 @@ export interface Team {
   statConstraints: Array<{ tag: Tag; values: number[]; isMaxs: boolean[] }>
 
   // TODO enemy base stats
-  teamMetadata: Array<TeamMetadatum | undefined>
+  teamMetadata: Array<TeammateDatum | undefined>
 }
 
 export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
@@ -89,10 +89,10 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
         teamMetadata = range(0, 3).map(() => undefined)
 
       teamMetadata = range(0, 3).map((ind) => {
-        const teamMetadatum = teamMetadata[ind]
-        if (!teamMetadatum || typeof teamMetadatum !== 'object')
+        const teammateDatum = teamMetadata[ind]
+        if (!teammateDatum || typeof teammateDatum !== 'object')
           return undefined
-        const { characterKey } = teamMetadatum
+        const { characterKey } = teammateDatum
         let {
           buildType,
           buildId,
@@ -102,7 +102,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
           compareBuildId,
           compareBuildTcId,
           optConfigId,
-        } = teamMetadatum
+        } = teammateDatum
 
         if (!allCharacterKeys.includes(characterKey)) return undefined
         if (!buildTypeKeys.includes(buildType)) buildType = 'equipped'
@@ -157,7 +157,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
           compareBuildId,
           compareBuildTcId,
           optConfigId,
-        } as TeamMetadatum
+        } as TeammateDatum
       })
     }
 
@@ -221,9 +221,9 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
   override remove(teamId: string, notify?: boolean): Team | undefined {
     const rem = super.remove(teamId, notify)
     if (!rem) return
-    rem.teamMetadata.forEach((teamMetadatum) => {
-      teamMetadatum?.optConfigId &&
-        this.database.optConfigs.remove(teamMetadatum?.optConfigId)
+    rem.teamMetadata.forEach((teammateDatum) => {
+      teammateDatum?.optConfigId &&
+        this.database.optConfigs.remove(teammateDatum?.optConfigId)
     })
     return rem
   }
@@ -280,7 +280,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     characterKey,
     buildType,
     buildId,
-  }: TeamMetadatum): Record<RelicSlotKey, ICachedRelic | undefined> {
+  }: TeammateDatum): Record<RelicSlotKey, ICachedRelic | undefined> {
     switch (buildType) {
       case 'equipped': {
         const char = this.database.chars.get(characterKey)
@@ -297,7 +297,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
   }
 
   followTeamDatum(
-    { buildType, buildId, buildTcId }: TeamMetadatum,
+    { buildType, buildId, buildTcId }: TeammateDatum,
     callback: () => void
   ) {
     if (buildType === 'real') {
@@ -320,7 +320,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     return () => {}
   }
   followTeamDatumCompare(
-    { compareType, compareBuildId, compareBuildTcId }: TeamMetadatum,
+    { compareType, compareBuildId, compareBuildTcId }: TeammateDatum,
     callback: () => void
   ) {
     if (compareType === 'real') {
@@ -346,7 +346,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     return () => {}
   }
   getActiveBuildName(
-    { buildType, buildId, buildTcId }: TeamMetadatum,
+    { buildType, buildId, buildTcId }: TeammateDatum,
     equippedName = 'Equipped Build'
   ) {
     switch (buildType) {

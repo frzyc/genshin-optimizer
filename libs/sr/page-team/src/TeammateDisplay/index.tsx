@@ -27,7 +27,7 @@ import Optimize from './Optimize'
 
 export default function TeammateDisplay() {
   const {
-    teamMetadatum: { characterKey },
+    teammateDatum: { characterKey },
   } = useTeamContext()
   const character = useCharacterContext()
   const calc = useSrCalcContext()

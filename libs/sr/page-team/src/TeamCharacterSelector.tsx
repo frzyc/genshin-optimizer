@@ -153,15 +153,15 @@ export function TeamCharacterSelector({
         value={charKey ?? 0}
         orientation={isMobile ? 'vertical' : 'horizontal'}
       >
-        {team.teamMetadata.map((teamMetadatum, ind) => {
-          const characterKey = teamMetadatum?.characterKey
+        {team.teamMetadata.map((teammateDatum, ind) => {
+          const characterKey = teammateDatum?.characterKey
           return (
             <Tab
               icon={<PersonIcon />}
               iconPosition="start"
               value={characterKey ?? ind}
               key={ind}
-              disabled={!teamMetadatum}
+              disabled={!teammateDatum}
               label={
                 characterKey ? (
                   <Typography>{t(`charNames_gen:${characterKey}`)}</Typography>

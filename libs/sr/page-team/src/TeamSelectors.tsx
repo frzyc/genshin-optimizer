@@ -1,5 +1,5 @@
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import type { TeamMetadatum } from '@genshin-optimizer/sr/db'
+import type { TeammateDatum } from '@genshin-optimizer/sr/db'
 import { useDatabaseContext, useTeam } from '@genshin-optimizer/sr/db-ui'
 import { CharacterAutocomplete } from '@genshin-optimizer/sr/ui'
 import { Box } from '@mui/material'
@@ -46,7 +46,7 @@ const TeammateSelector = memo(function TeammateSelector({
 
     // Check if character is already in the team.
     const existingIndex = team.teamMetadata.findIndex(
-      (teamMetadatum) => teamMetadatum?.characterKey === cKey
+      (teammateDatum) => teammateDatum?.characterKey === cKey
     )
     // If not exists, insert it
     if (existingIndex === -1) {
@@ -55,7 +55,7 @@ const TeammateSelector = memo(function TeammateSelector({
         // Let the validator handle default properties for everything else
         team.teamMetadata[teamMetadataIndex] = {
           characterKey: cKey,
-        } as TeamMetadatum
+        } as TeammateDatum
       })
     }
     // If exists already, swap positions

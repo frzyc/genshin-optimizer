@@ -47,7 +47,7 @@ function BonusStatsModal({
   const {
     teamId,
     team: { bonusStats },
-    teamMetadatum: { characterKey },
+    teammateDatum: { characterKey },
   } = useTeamContext()
   const newTarget = (q: InitialStats) => {
     const tag = newTag(q, characterKey)

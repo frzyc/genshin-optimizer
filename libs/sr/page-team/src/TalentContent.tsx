@@ -44,7 +44,7 @@ const talentSpacing = {
 
 export default function CharacterTalentPane() {
   const {
-    teamMetadatum: { characterKey },
+    teammateDatum: { characterKey },
   } = useTeamContext()
   const calc = useSrCalcContext()
   const { database } = useDatabaseContext()
@@ -243,7 +243,7 @@ function SkillDisplayCard({
   onClickTitle,
 }: SkillDisplayCardProps) {
   const {
-    teamMetadatum: { characterKey },
+    teammateDatum: { characterKey },
   } = useTeamContext()
   const actionWrapperFunc = useCallback(
     (children: ReactNode) => (
@@ -354,7 +354,7 @@ export function EidolonDropdown() {
   const { t } = useTranslation('characters_gen')
   const calc = useSrCalcContext()
   const {
-    teamMetadatum: { characterKey },
+    teammateDatum: { characterKey },
   } = useTeamContext()
   const { database } = useDatabaseContext()
   if (!calc) return null

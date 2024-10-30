@@ -34,21 +34,21 @@ import { WorkerSelector } from './WorkerSelector'
 
 export default function Optimize() {
   const { database } = useDatabaseContext()
-  const { teamMetadatum, teamId } = useContext(TeamContext)
-  const optConfigId = teamMetadatum.optConfigId
+  const { teammateDatum, teamId } = useContext(TeamContext)
+  const optConfigId = teammateDatum.optConfigId
   const createOptConfig = useCallback(() => {
     if (optConfigId) return
 
     database.teams.set(teamId, (team) => {
       const meta = team.teamMetadata.find(
-        (meta) => meta?.characterKey === teamMetadatum.characterKey
+        (meta) => meta?.characterKey === teammateDatum.characterKey
       )
       if (meta) {
         const newOptConfigId = database.optConfigs.new()
         meta.optConfigId = newOptConfigId
       }
     })
-  }, [teamId, teamMetadatum.characterKey, database, optConfigId])
+  }, [teamId, teammateDatum.characterKey, database, optConfigId])
   if (optConfigId) {
     return (
       <OptConfigProvider optConfigId={optConfigId}>
@@ -60,7 +60,7 @@ export default function Optimize() {
       <CardThemed>
         <CardHeader
           title={
-            <span>Optimize this team for {teamMetadatum.characterKey}</span>
+            <span>Optimize this team for {teammateDatum.characterKey}</span>
           }
           action={<Button onClick={createOptConfig}>Optimize</Button>}
         />
@@ -76,7 +76,7 @@ function OptimizeWrapper() {
   const calc = useSrCalcContext()
   const {
     team,
-    teamMetadatum: { characterKey },
+    teammateDatum: { characterKey },
   } = useContext(TeamContext)
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<ProgressResult | undefined>(
