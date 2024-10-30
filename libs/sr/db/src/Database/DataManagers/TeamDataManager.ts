@@ -1,17 +1,16 @@
 import {
   objKeyMap,
-  objMap,
   pruneOrPadArray,
   range,
   shallowCompareObj,
 } from '@genshin-optimizer/common/util'
-import type { CharacterKey, RelicSlotKey } from '@genshin-optimizer/sr/consts'
+import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterKeys,
   allRelicSlotKeys,
 } from '@genshin-optimizer/sr/consts'
 import type { Member, Sheet, Tag } from '@genshin-optimizer/sr/formula'
-import type { ICachedRelic } from '../../Interfaces'
+import { RelicIds } from '../../Types'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
 import { validateTag } from '../tagUtil'
@@ -274,26 +273,48 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
   // }
 
   /**
-   * Note: this doesnt return any relics (all undefined) when the current teamchar is using a TC Build.
+   * Note: this doesnt return any ids (all undefined) when the current teamchar is using a TC Build.
    */
-  getTeamRelics({
-    characterKey,
-    buildType,
-    buildId,
-  }: TeammateDatum): Record<RelicSlotKey, ICachedRelic | undefined> {
+  getTeamActiveBuild({ characterKey, buildType, buildId }: TeammateDatum): {
+    relicIds: RelicIds
+    lightConeId: string | undefined
+  } {
+    const def = {
+      relicIds: objKeyMap(allRelicSlotKeys, () => undefined),
+      lightConeId: undefined,
+    }
     switch (buildType) {
       case 'equipped': {
         const char = this.database.chars.get(characterKey)
-        if (!char) return objKeyMap(allRelicSlotKeys, () => undefined)
-        return objMap(char.equippedRelics, (id) => this.database.relics.get(id))
+        if (!char) return def
+        return {
+          relicIds: char.equippedRelics,
+          lightConeId: char.equippedLightCone,
+        }
       }
       case 'real': {
         const build = this.database.builds.get(buildId)
-        if (!build) return objKeyMap(allRelicSlotKeys, () => undefined)
-        return objMap(build.relicIds, (id) => this.database.relics.get(id))
+        if (!build) return def
+        return {
+          relicIds: build.relicIds,
+          lightConeId: build.lightConeId,
+        }
       }
     }
-    return objKeyMap(allRelicSlotKeys, () => undefined)
+    return def
+  }
+  getActiveBuildName(
+    { buildType, buildId, buildTcId }: TeammateDatum,
+    equippedName = 'Equipped Build'
+  ) {
+    switch (buildType) {
+      case 'equipped':
+        return equippedName
+      case 'real':
+        return this.database.builds.get(buildId)?.name ?? ''
+      case 'tc':
+        return this.database.buildTcs.get(buildTcId)?.name ?? ''
+    }
   }
 
   followTeamDatum(
@@ -344,19 +365,6 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     } else if (compareType === 'tc')
       return this.database.buildTcs.follow(compareBuildTcId, callback)
     return () => {}
-  }
-  getActiveBuildName(
-    { buildType, buildId, buildTcId }: TeammateDatum,
-    equippedName = 'Equipped Build'
-  ) {
-    switch (buildType) {
-      case 'equipped':
-        return equippedName
-      case 'real':
-        return this.database.builds.get(buildId)?.name ?? ''
-      case 'tc':
-        return this.database.buildTcs.get(buildTcId)?.name ?? ''
-    }
   }
 
   setConditional(

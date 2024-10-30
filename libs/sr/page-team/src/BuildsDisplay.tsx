@@ -1,17 +1,19 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { allRelicSlotKeys } from '@genshin-optimizer/sr/consts'
+import type { RelicIds } from '@genshin-optimizer/sr/db'
 import {
   useBuild,
   useDatabaseContext,
-  useEquippedRelics,
   useLightCone,
+  useRelics,
 } from '@genshin-optimizer/sr/db-ui'
 import {
   EmptyRelicCard,
   LightConeCard,
   RelicCard,
 } from '@genshin-optimizer/sr/ui'
+import type { GridOwnProps } from '@mui/material'
 import { CardContent, Grid, Stack } from '@mui/material'
 import { useEffect, useMemo } from 'react'
 import { useTeamContext } from './context'
@@ -44,11 +46,23 @@ export function BuildsDisplay() {
 export function BuildDisplay({ buildId }: { buildId: string }) {
   const build = useBuild(buildId)!
   const { relicIds, lightConeId } = build
-  const relics = useEquippedRelics(relicIds)
-  const lightcone = useLightCone(lightConeId)
 
+  return <BuildDisplayBase relicIds={relicIds} lightConeId={lightConeId} />
+}
+
+export function BuildDisplayBase({
+  relicIds,
+  lightConeId,
+  columns = 3,
+}: {
+  relicIds: RelicIds
+  lightConeId?: string
+  columns?: GridOwnProps['columns']
+}) {
+  const relics = useRelics(relicIds)
+  const lightcone = useLightCone(lightConeId)
   return (
-    <Grid container columns={3} spacing={1}>
+    <Grid container columns={columns} spacing={1}>
       {lightcone && (
         <Grid item xs={1}>
           <LightConeCard lightCone={lightcone} />

@@ -219,9 +219,12 @@ export function RelicCard({
             width: '100%',
           }}
         >
-          {substats.map((substat) => (
-            <SubstatDisplay key={substat.key} substat={substat} />
-          ))}
+          {substats.map(
+            (substat) =>
+              substat.key && (
+                <SubstatDisplay key={substat.key} substat={substat} />
+              )
+          )}
           <Box flexGrow={1} />
           <Typography color="success.main">
             {/* TODO: depends on if we swap to using relic set names as card title

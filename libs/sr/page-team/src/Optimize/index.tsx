@@ -17,7 +17,6 @@ import {
   CardHeader,
   Divider,
   LinearProgress,
-  Stack,
   Typography,
 } from '@mui/material'
 import {
@@ -30,7 +29,7 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { TeamContext } from '../context'
-import { BuildDisplay } from './BuildDisplay'
+import GeneratedBuildsDisplay from './GeneratedBuildsDisplay'
 import OptConfigProvider, { OptConfigContext } from './OptConfigWrapper'
 import { StatFilterCard } from './StatFilterCard'
 import { WorkerSelector } from './WorkerSelector'
@@ -234,24 +233,5 @@ function ProgressIndicator({
         value={(progress.numBuildsComputed / totalPermutations) * 100}
       />
     </Box>
-  )
-}
-
-function GeneratedBuildsDisplay() {
-  const { optConfig } = useContext(OptConfigContext)
-  return (
-    <Stack spacing={1}>
-      {optConfig.builds &&
-        optConfig.builds.map((build, i) => (
-          <CardThemed key={i}>
-            <CardContent>
-              <Typography>
-                Build {i + 1}: {build.value}
-              </Typography>
-              <BuildDisplay build={build.relicIds} />
-            </CardContent>
-          </CardThemed>
-        ))}
-    </Stack>
   )
 }

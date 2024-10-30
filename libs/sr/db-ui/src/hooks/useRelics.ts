@@ -3,26 +3,20 @@ import {
   allRelicSlotKeys,
   type RelicSlotKey,
 } from '@genshin-optimizer/sr/consts'
-import type { ICachedCharacter, ICachedRelic } from '@genshin-optimizer/sr/db'
-import { useEffect, useMemo, useState } from 'react'
+import type { ICachedRelic, RelicIds } from '@genshin-optimizer/sr/db'
+import { useEffect, useState } from 'react'
 import { useDatabaseContext } from '../context'
 
-export function useEquippedRelics(
-  equippedRelics: ICachedCharacter['equippedRelics'] | undefined
-) {
-  const relicSlotIds = useMemo(
-    () =>
-      equippedRelics ? equippedRelics : objKeyMap(allRelicSlotKeys, () => ''),
-    [equippedRelics]
-  )
+const emptyRelicIds = objKeyMap(allRelicSlotKeys, () => undefined)
+export function useRelics(relicIds: RelicIds | undefined = emptyRelicIds) {
   const { database } = useDatabaseContext()
   const [relics, setRelics] = useState<
     Record<RelicSlotKey, ICachedRelic | undefined>
-  >(() => objMap(relicSlotIds, (id) => database.relics.get(id)))
+  >(() => objMap(relicIds, (id) => database.relics.get(id)))
 
   useEffect(() => {
-    setRelics(objMap(relicSlotIds, (id) => database.relics.get(id)))
-    const unfollows = Object.values(relicSlotIds).map((relicId) =>
+    setRelics(objMap(relicIds, (id) => database.relics.get(id)))
+    const unfollows = Object.values(relicIds).map((relicId) =>
       relicId
         ? database.relics.follow(relicId, (_k, r, v: ICachedRelic) => {
             if (r === 'update')
@@ -34,7 +28,7 @@ export function useEquippedRelics(
         : () => {}
     )
     return () => unfollows.forEach((unfollow) => unfollow())
-  }, [database, relicSlotIds])
+  }, [database, relicIds])
 
   return relics
 }

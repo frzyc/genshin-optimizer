@@ -3,8 +3,8 @@ import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterKeys,
   allRelicSlotKeys,
-  type RelicSlotKey,
 } from '@genshin-optimizer/sr/consts'
+import type { RelicIds } from '../../Types'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
 export interface Build {
@@ -14,7 +14,7 @@ export interface Build {
   teamId?: string
 
   lightConeId?: string
-  relicIds: Record<RelicSlotKey, string>
+  relicIds: RelicIds
 }
 
 export class BuildDataManager extends DataManager<

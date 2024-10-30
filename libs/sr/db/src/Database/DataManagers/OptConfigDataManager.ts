@@ -8,7 +8,6 @@ import {
 import type {
   CharacterKey,
   RelicMainStatKey,
-  RelicSlotKey,
 } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterKeys,
@@ -17,6 +16,7 @@ import {
   relicSlotToMainStatKeys,
 } from '@genshin-optimizer/sr/consts'
 import type { Tag } from '@genshin-optimizer/sr/formula'
+import type { RelicIds } from '../../Types'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
 import { validateTag } from '../tagUtil'
@@ -47,7 +47,7 @@ export type StatFilters = Array<StatFilter>
 export type GeneratedBuild = {
   value: number //TODO: remove this when build display is more refined.
   lightConeId?: string
-  relicIds: Record<RelicSlotKey, string | undefined>
+  relicIds: RelicIds
 }
 
 export interface OptConfig {
