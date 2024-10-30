@@ -19,11 +19,11 @@ import {
   Typography,
 } from '@mui/material'
 import { useState } from 'react'
-import { BonusStats } from '../BonusStats'
-import { ComboEditor } from '../ComboEditor'
-import { useTeamContext } from '../context'
-import CharacterTalentPane from '../TalentContent'
+import { BonusStats } from './BonusStats'
+import { ComboEditor } from './ComboEditor'
+import { useTeamContext } from './context'
 import Optimize from './Optimize'
+import CharacterTalentPane from './TalentContent'
 
 export default function TeammateDisplay() {
   const {
@@ -41,7 +41,15 @@ export default function TeammateDisplay() {
         characterKey={editorKey}
         onClose={() => setCharacterKey(undefined)}
       />
-      <CharacterCard character={character!} />
+      <Box sx={{ display: 'flex', gap: 1 }}>
+        <Box sx={{ maxWidth: '350px' }}>
+          <CharacterCard character={character!} />
+        </Box>
+        <CardThemed sx={{ flexGrow: 1 }}>
+          <CardContent></CardContent>
+        </CardThemed>
+      </Box>
+
       <Stack gap={1} pt={1}>
         <ComboEditor />
         <CardThemed bgt="dark">

@@ -10,7 +10,7 @@ import {
 } from '@mui/material'
 import { useContext } from 'react'
 import { PresetContext, useTeamContext } from './context'
-import { OptimizationTargetSelector } from './TeammateDisplay/Optimize/OptimizationTargetSelector'
+import { OptimizationTargetSelector } from './Optimize/OptimizationTargetSelector'
 
 export function ComboEditor() {
   const { database } = useDatabaseContext()

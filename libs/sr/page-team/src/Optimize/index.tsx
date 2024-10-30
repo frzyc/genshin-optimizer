@@ -26,7 +26,7 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
-import { TeamContext } from '../../context'
+import { TeamContext } from '../context'
 import { BuildDisplay } from './BuildDisplay'
 import OptConfigProvider, { OptConfigContext } from './OptConfigWrapper'
 import { StatFilterCard } from './StatFilterCard'
