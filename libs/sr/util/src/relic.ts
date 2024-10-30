@@ -41,10 +41,13 @@ export function getRelicMainStatDisplayVal(
   statKey: RelicMainStatKey,
   level: number
 ) {
-  return roundStat(
-    toPercent(getRelicMainStatVal(rarity, statKey, level), statKey),
+  return toPercent(
+    getRelicMainStatVal(rarity, statKey, level),
     statKey
-  )
+  ).toFixed(statToFixed(statKey))
+}
+export function statToFixed(statKey: RelicMainStatKey | RelicSubStatKey) {
+  return statKey.endsWith('_') ? 1 : 0
 }
 
 // TODO: Update this with proper corrected rolls

@@ -1,10 +1,13 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
 import type { ICachedCharacter } from '@genshin-optimizer/sr/db'
+import type { Calculator } from '@genshin-optimizer/sr/formula'
 import {
   charData,
   own,
   srCalculatorWithEntries,
 } from '@genshin-optimizer/sr/formula'
+import { statToFixed } from '@genshin-optimizer/sr/util'
 import {
   CardActionArea,
   CardContent,
@@ -13,7 +16,21 @@ import {
   Typography,
 } from '@mui/material'
 import { useSrCalcContext } from '../Hook'
+import { StatDisplay } from './StatDisplay'
 
+const stats = [
+  'hp',
+  'atk',
+  'def',
+  'spd',
+  'crit_',
+  'crit_dmg_',
+  'brEffect_',
+  'heal_',
+  'enerRegen_',
+  'eff_',
+  'eff_res_',
+] as const
 export function CharacterCard({
   character,
   onClick,
@@ -38,34 +55,37 @@ export function CharacterCard({
           <Typography>Eidolon: {character.eidolon}</Typography>
           <Typography>Level: {character.level}</Typography>
 
-          <Typography>ATK: {calc.compute(own.final.atk).val}</Typography>
-
-          <Typography>
-            Break effect: {calc.compute(own.final.brEffect_).val}
-          </Typography>
-          <Typography>
-            CRIT Rate: {calc.compute(own.final.crit_).val}
-          </Typography>
-          <Typography>
-            CRIT DMG: {calc.compute(own.final.crit_dmg_).val}
-          </Typography>
-          <Typography>DEF: {calc.compute(own.final.def).val}</Typography>
-          <Typography>
-            Effect Hit Rate: {calc.compute(own.final.eff_).val}
-          </Typography>
-          <Typography>
-            Effect RES: {calc.compute(own.final.eff_res_).val}
-          </Typography>
-          <Typography>
-            Energy Regeneration Rate: {calc.compute(own.final.enerRegen_).val}
-          </Typography>
-          <Typography>
-            Heal Boost: {calc.compute(own.final.heal_).val}
-          </Typography>
-          <Typography>HP: {calc.compute(own.final.hp).val}</Typography>
-          <Typography>Speed: {calc.compute(own.final.spd).val}</Typography>
+          {stats.map((statKey) => (
+            <StatLine key={statKey} calc={calc} statKey={statKey} />
+          ))}
         </CardContent>
       </CardThemed>
     </Stack>
+  )
+}
+function StatLine({
+  calc,
+  statKey,
+}: {
+  calc: Calculator
+  statKey: (typeof stats)[number]
+}) {
+  return (
+    <Typography
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 1,
+        justifyContent: 'space-between',
+      }}
+    >
+      <StatDisplay statKey={statKey} />
+      <span>
+        {toPercent(calc.compute(own.final[statKey]).val, statKey).toFixed(
+          statToFixed(statKey)
+        )}
+        {getUnitStr(statKey)}
+      </span>
+    </Typography>
   )
 }
