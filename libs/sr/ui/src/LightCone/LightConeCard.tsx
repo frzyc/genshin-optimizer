@@ -6,6 +6,7 @@ import {
 } from '@genshin-optimizer/common/ui'
 import { lightConeAsset } from '@genshin-optimizer/sr/assets'
 import type { LocationKey } from '@genshin-optimizer/sr/consts'
+import type { Calculator } from '@genshin-optimizer/sr/formula'
 import {
   lightConeData,
   own,
@@ -26,7 +27,7 @@ import {
 } from '@mui/material'
 import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
-import { LocationAutocomplete } from '../Character'
+import { LocationAutocomplete, StatDisplay } from '../Character'
 import { LightConeName } from './LightConeTrans'
 
 export type LightConeCardProps = {
@@ -142,15 +143,9 @@ export function LightConeCard({
             width: '100%',
           }}
         >
-          <Typography>
-            HP: {calc.compute(own.base.hp.with('sheet', 'lightCone')).val}
-          </Typography>
-          <Typography>
-            ATK: {calc.compute(own.base.atk.with('sheet', 'lightCone')).val}
-          </Typography>
-          <Typography>
-            DEF: {calc.compute(own.base.def.with('sheet', 'lightCone')).val}
-          </Typography>
+          {(['hp', 'atk', 'def'] as const).map((stat) => (
+            <StatRow key={stat} calc={calc} stat={stat} />
+          ))}
         </CardContent>
         <Box
           sx={{
@@ -215,5 +210,24 @@ export function LightConeCard({
         </Box>
       </CardThemed>
     </Suspense>
+  )
+}
+function StatRow({
+  calc,
+  stat,
+}: {
+  calc: Calculator
+  stat: 'hp' | 'atk' | 'def'
+}) {
+  return (
+    <Typography
+      key={stat}
+      sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+    >
+      <StatDisplay statKey={stat} />
+      <span>
+        {calc.compute(own.base[stat].with('sheet', 'lightCone')).val.toFixed()}
+      </span>
+    </Typography>
   )
 }
