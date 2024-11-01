@@ -19,7 +19,7 @@ import {
   Typography,
 } from '@mui/material'
 import type { FormEventHandler } from 'react'
-import { useContext, useState } from 'react'
+import { memo, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useTeamContext } from '../context'
 import { GeneratedBuildDisplay } from './GeneratedBuildDisplay'
@@ -32,7 +32,7 @@ function useGeneratedBuildList(listId: string) {
 /**
  * A UI component that renders a list of generated builds
  */
-export default function GeneratedBuildsDisplay() {
+const GeneratedBuildsDisplay = memo(function GeneratedBuildsDisplay() {
   const { optConfig } = useContext(OptConfigContext)
   const generatedBuildList = useGeneratedBuildList(
     optConfig.generatedBuildListId ?? ''
@@ -40,7 +40,11 @@ export default function GeneratedBuildsDisplay() {
   return (
     <Stack spacing={1}>
       {generatedBuildList?.builds.map((build, i) => (
-        <CardThemed key={i}>
+        <CardThemed
+          key={`${build.lightConeId}-${Object.values(build.relicIds).join(
+            '-'
+          )}`}
+        >
           <CardContent>
             <Box
               sx={{
@@ -61,7 +65,8 @@ export default function GeneratedBuildsDisplay() {
       ))}
     </Stack>
   )
-}
+})
+export default GeneratedBuildsDisplay
 
 function NewBuildButton({
   build: { relicIds, lightConeId },

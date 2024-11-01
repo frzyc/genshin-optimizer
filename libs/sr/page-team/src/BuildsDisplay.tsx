@@ -1,7 +1,12 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { allRelicSlotKeys } from '@genshin-optimizer/sr/consts'
-import type { RelicIds, TeammateDatum } from '@genshin-optimizer/sr/db'
+import type {
+  ICachedRelic,
+  RelicIds,
+  TeammateDatum,
+} from '@genshin-optimizer/sr/db'
 import {
   useBuild,
   useCharacterContext,
@@ -24,7 +29,7 @@ import {
   Stack,
 } from '@mui/material'
 import type { ReactNode } from 'react'
-import { useEffect, useMemo } from 'react'
+import { memo, useEffect, useMemo } from 'react'
 import { useTeamContext } from './context'
 export function BuildsDisplay() {
   const { database } = useDatabaseContext()
@@ -38,7 +43,7 @@ export function BuildsDisplay() {
   )
   useEffect(() => {
     database.builds.followAny(setDbDirty)
-  }, [database.builds, dbDirty, setDbDirty])
+  }, [database.builds, setDbDirty])
 
   return (
     <CardThemed bgt="dark">
@@ -76,7 +81,12 @@ function useActiveBuildSwap(
           const teammateDatum = team.teamMetadata.find(
             (teammateDatum) => teammateDatum?.characterKey === characterKey
           )
-          if (!teammateDatum) return
+          if (!teammateDatum) {
+            console.error(
+              `Teammate data not found for character ${characterKey}`
+            )
+            return
+          }
           teammateDatum.buildType = newBuildType
           if (newBuildId) teammateDatum.buildId = newBuildId
         })
@@ -178,18 +188,30 @@ export function BuildGridBase({
           <LightConeCard lightCone={lightcone} />
         </Grid>
       )}
-      {allRelicSlotKeys.map((slot) => {
-        const relic = relics[slot]
-        return (
-          <Grid item xs={1} key={`${slot}_${relic?.id}`}>
-            {relic ? (
-              <RelicCard relic={relic} />
-            ) : (
-              <EmptyRelicCard slot={slot} bgt="light" />
-            )}
-          </Grid>
-        )
-      })}
+      {allRelicSlotKeys.map((slot) => (
+        <GridItem
+          key={`${slot}_${relics[slot]?.id}`}
+          slot={slot}
+          relic={relics[slot]}
+        />
+      ))}
     </Grid>
   )
 }
+const GridItem = memo(function GridItem({
+  slot,
+  relic,
+}: {
+  slot: RelicSlotKey
+  relic?: ICachedRelic
+}) {
+  return (
+    <Grid item xs={1}>
+      {relic ? (
+        <RelicCard relic={relic} />
+      ) : (
+        <EmptyRelicCard slot={slot} bgt="light" />
+      )}
+    </Grid>
+  )
+})
