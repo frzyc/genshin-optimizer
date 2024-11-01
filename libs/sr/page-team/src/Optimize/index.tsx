@@ -151,13 +151,13 @@ function OptimizeWrapper() {
     setOptimizing(false)
     // Save results to optConfig
     if (results.length)
-      database.optConfigs.set(optConfigId, (optConfig) => {
-        optConfig.builds = results.slice(0, 5).map(({ ids, value }) => ({
+      database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
+        builds: results.slice(0, 5).map(({ ids, value }) => ({
           lightConeId: equippedLightCone,
           relicIds: ids,
           value,
-        }))
-        optConfig.buildDate = Date.now()
+        })),
+        buildDate: Date.now(),
       })
   }, [
     calc,

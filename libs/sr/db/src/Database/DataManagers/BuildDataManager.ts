@@ -27,11 +27,13 @@ export class BuildDataManager extends DataManager<
     super(database, 'builds')
   }
   override validate(obj: unknown): Build | undefined {
-    const { characterKey } = obj as Build
-    let { name, teamId, description, lightConeId, relicIds } = obj as Build
+    const { characterKey, teamId } = obj as Build
     if (!allCharacterKeys.includes(characterKey)) return undefined
 
-    if (teamId && !this.database.teams.get(teamId)) teamId = undefined
+    let { name, description, lightConeId, relicIds } = obj as Build
+
+    // Cannot validate teamId, since on db init database.teams do not exist yet.
+    // if (teamId && !this.database.teams.get(teamId)) teamId = undefined
     if (typeof name !== 'string') name = 'Build Name'
     if (typeof description !== 'string') description = ''
     if (lightConeId && !this.database.lightCones.get(lightConeId))

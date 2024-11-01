@@ -8,6 +8,10 @@ import { useEffect, useState } from 'react'
 import { useDatabaseContext } from '../context'
 
 const emptyRelicIds = objKeyMap(allRelicSlotKeys, () => undefined)
+
+/**
+ * A hook to keep a "build" of relics in sync with the database
+ */
 export function useRelics(relicIds: RelicIds | undefined = emptyRelicIds) {
   const { database } = useDatabaseContext()
   const [relics, setRelics] = useState<

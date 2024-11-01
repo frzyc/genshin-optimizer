@@ -4,18 +4,23 @@ import type { GenderKey } from '@genshin-optimizer/sr/consts'
 import type { ISrObjectDescription } from '@genshin-optimizer/sr/srod'
 import type { ISroDatabase } from '../Interfaces'
 import { SroSource } from '../Interfaces'
-import { DBMetaEntry } from './DataEntries/DBMetaEntry'
-import { DisplayCharacterEntry } from './DataEntries/DisplayCharacterEntry'
-import { DisplayLightConeEntry } from './DataEntries/DisplayLightConeEntry'
-import { DisplayRelicEntry } from './DataEntries/DisplayRelicEntry'
-import { BuildDataManager } from './DataManagers/BuildDataManager'
-import { BuildTcDataManager } from './DataManagers/BuildTcDataManager'
-import { CharMetaDataManager } from './DataManagers/CharMetaDataManager'
-import { CharacterDataManager } from './DataManagers/CharacterDataManager'
-import { LightConeDataManager } from './DataManagers/LightConeDataManager'
-import { OptConfigDataManager } from './DataManagers/OptConfigDataManager'
-import { RelicDataManager } from './DataManagers/RelicDataManager'
-import { TeamDataManager } from './DataManagers/TeamDataManager'
+import {
+  DBMetaEntry,
+  DisplayCharacterEntry,
+  DisplayLightConeEntry,
+  DisplayRelicEntry,
+} from './DataEntries/'
+import {
+  BuildDataManager,
+  BuildTcDataManager,
+  CharacterDataManager,
+  CharMetaDataManager,
+  GeneratedBuildListDataManager,
+  LightConeDataManager,
+  OptConfigDataManager,
+  RelicDataManager,
+  TeamDataManager,
+} from './DataManagers/'
 import type { ImportResult } from './exim'
 import { newImportResult } from './exim'
 import {
@@ -32,6 +37,7 @@ export class SroDatabase extends Database {
   charMeta: CharMetaDataManager
   builds: BuildDataManager
   teams: TeamDataManager
+  generatedBuildList: GeneratedBuildListDataManager
 
   dbMeta: DBMetaEntry
   displayCharacter: DisplayCharacterEntry
@@ -59,6 +65,9 @@ export class SroDatabase extends Database {
 
     // Relics needs to be instantiated after character to check for relations
     this.relics = new RelicDataManager(this)
+
+    // Depends on lightcones and Relics
+    this.generatedBuildList = new GeneratedBuildListDataManager(this)
 
     // Depends on relics
     this.optConfigs = new OptConfigDataManager(this)
@@ -93,6 +102,7 @@ export class SroDatabase extends Database {
       this.chars,
       this.lightCones,
       this.relics,
+      this.generatedBuildList,
       this.optConfigs,
       this.buildTcs,
       this.charMeta,

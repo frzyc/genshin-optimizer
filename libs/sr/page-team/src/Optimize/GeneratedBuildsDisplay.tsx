@@ -1,3 +1,4 @@
+import { useDataManagerBase } from '@genshin-optimizer/common/database-ui'
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import { valueString } from '@genshin-optimizer/common/util'
@@ -24,15 +25,22 @@ import { useTeamContext } from '../context'
 import { GeneratedBuildDisplay } from './GeneratedBuildDisplay'
 import { OptConfigContext } from './OptConfigWrapper'
 
+function useGeneratedBuildList(listId: string) {
+  const { database } = useDatabaseContext()
+  return useDataManagerBase(database.generatedBuildList, listId)
+}
 /**
  * A UI component that renders a list of generated builds
  */
 export default function GeneratedBuildsDisplay() {
   const { optConfig } = useContext(OptConfigContext)
+  const generatedBuildList = useGeneratedBuildList(
+    optConfig.generatedBuildListId ?? ''
+  )
   return (
     <Stack spacing={1}>
-      {optConfig.builds &&
-        optConfig.builds.map((build, i) => (
+      {generatedBuildList?.builds &&
+        generatedBuildList.builds.map((build, i) => (
           <CardThemed key={i}>
             <CardContent>
               <Box
