@@ -10,7 +10,7 @@ import {
   allRelicSlotKeys,
 } from '@genshin-optimizer/sr/consts'
 import type { Member, Sheet, Tag } from '@genshin-optimizer/sr/formula'
-import { RelicIds } from '../../Types'
+import type { RelicIds } from '../../Types'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
 import { validateTag } from '../tagUtil'

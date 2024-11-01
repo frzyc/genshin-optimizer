@@ -1,4 +1,5 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
   useCharacterContext,
@@ -25,7 +26,7 @@ import {
 } from '@mui/material'
 import { useMemo, useState } from 'react'
 import { BonusStats } from './BonusStats'
-import { BuildDisplayBase } from './BuildsDisplay'
+import { BuildGridBase, BuildsDisplay } from './BuildsDisplay'
 import { ComboEditor } from './ComboEditor'
 import { useTeamContext } from './context'
 import Optimize from './Optimize'
@@ -161,17 +162,40 @@ function CurrentBuildDisplay() {
     }),
     [database.teams, teammateDatum]
   )
+  const [show, onShow, onHide] = useBoolState()
   return (
     <CardThemed>
-      <CardHeader title={buildName} />
+      <BuildsModal show={show} onClose={onHide} />
+      <CardHeader
+        title={buildName}
+        action={
+          // TODO: translation
+          <Button onClick={onShow} size="small">
+            Change Build
+          </Button>
+        }
+      />
       <Divider />
       <CardContent>
-        <BuildDisplayBase
+        <BuildGridBase
           relicIds={relicIds}
           lightConeId={lightConeId}
           columns={2}
         />
       </CardContent>
     </CardThemed>
+  )
+}
+function BuildsModal({
+  show,
+  onClose,
+}: {
+  show: boolean
+  onClose: () => void
+}) {
+  return (
+    <ModalWrapper open={show} onClose={onClose}>
+      <BuildsDisplay />
+    </ModalWrapper>
   )
 }

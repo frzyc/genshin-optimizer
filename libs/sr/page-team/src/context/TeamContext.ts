@@ -7,7 +7,11 @@ export type TeamContextObj = {
   teammateDatum: TeammateDatum
 }
 
-export const TeamContext = createContext({} as TeamContextObj)
+export const TeamContext = createContext({
+  teamId: '',
+  team: {},
+  teammateDatum: { buildType: 'equipped', buildId: '' },
+} as TeamContextObj)
 
 export function useTeamContext() {
   return useContext(TeamContext)

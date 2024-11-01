@@ -10,6 +10,7 @@ import {
   Button,
   CardContent,
   CardHeader,
+  Checkbox,
   Divider,
   IconButton,
   Stack,
@@ -63,17 +64,26 @@ function NewBuildButton({
   const { t } = useTranslation('build')
   const [name, setName] = useState('')
   const [showPrompt, onShowPrompt, OnHidePrompt] = useBoolState()
+  const [toTCBuild, setToTCBuild] = useState(false)
 
   const { database } = useDatabaseContext()
-  const { teamId } = useTeamContext()
-  const toLoadout: FormEventHandler<HTMLFormElement> = (e) => {
+  const {
+    teamId,
+    teammateDatum: { characterKey },
+  } = useTeamContext()
+  const toNewBuild: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault()
-    database.builds.new({
-      name,
-      teamId,
-      relicIds,
-      lightConeId,
-    })
+
+    if (toTCBuild) {
+      // TODO: to TC build
+    } else
+      database.builds.new({
+        characterKey,
+        name,
+        teamId,
+        relicIds,
+        lightConeId,
+      })
 
     setName('')
     OnHidePrompt()
@@ -108,7 +118,17 @@ function NewBuildButton({
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
             <Typography>{t`createBuildReal.desc`}</Typography>
-            <form onSubmit={toLoadout}>
+            <Box display="flex" alignItems="center" sx={{ ml: -1 }}>
+              <Checkbox
+                size="small"
+                checked={toTCBuild}
+                onChange={() => setToTCBuild(!toTCBuild)}
+              />
+              {/* TODO: Translate */}
+              <Typography>Create a new TC Build</Typography>
+            </Box>
+
+            <form onSubmit={toNewBuild}>
               <TextField
                 value={name}
                 onChange={(e) => setName(e.target.value)}
