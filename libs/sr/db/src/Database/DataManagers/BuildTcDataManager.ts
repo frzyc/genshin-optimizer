@@ -29,12 +29,12 @@ export class BuildTcDataManager extends DataManager<
     super(database, 'buildTcs')
   }
   override validate(obj: unknown): IBuildTc | undefined {
-    if (typeof obj !== 'object') return undefined
+    if (!obj || typeof obj !== 'object') return undefined
     const { characterKey } = obj as IBuildTc
+    if (!allCharacterKeys.includes(characterKey)) return undefined
 
     let { name, teamId, description } = obj as IBuildTc
     const { lightCone, relic, optimization } = obj as IBuildTc
-    if (!allCharacterKeys.includes(characterKey)) return undefined
 
     if (teamId && !this.database.teams.get(teamId)) teamId = undefined
 

@@ -26,7 +26,7 @@ export class GeneratedBuildListDataManager extends DataManager<
     super(database, 'generatedBuildList')
   }
   override validate(obj: object): GeneratedBuildList | undefined {
-    if (typeof obj !== 'object') return undefined
+    if (typeof obj !== 'object' || obj === null) return undefined
     let { builds, buildDate } = obj as GeneratedBuildList
 
     if (!Array.isArray(builds)) {
@@ -35,14 +35,15 @@ export class GeneratedBuildListDataManager extends DataManager<
     } else {
       builds = builds
         .map((build) => {
-          if (typeof build !== 'object') return undefined
-          const {
-            lightConeId,
-            relicIds: relicIdsRaw,
-            value,
-          } = build as GeneratedBuild
+          if (typeof build !== 'object' || build === null) return undefined
+          const { relicIds: relicIdsRaw, value } = build as GeneratedBuild
           if (typeof value !== 'number') return undefined
-          if (!this.database.lightCones.get(lightConeId)) return undefined
+          if (typeof relicIdsRaw !== 'object' || relicIdsRaw === null)
+            return undefined
+          let { lightConeId } = build as GeneratedBuild
+          if (lightConeId && !this.database.lightCones.get(lightConeId))
+            lightConeId = undefined
+
           const relicIds = objKeyMap(allRelicSlotKeys, (slotKey) =>
             this.database.relics.get(relicIdsRaw[slotKey])?.slotKey === slotKey
               ? relicIdsRaw[slotKey]

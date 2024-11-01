@@ -227,14 +227,17 @@ export class OptConfigDataManager extends DataManager<
   }
   newOrSetGeneratedBuildList(optConfigId: string, list: GeneratedBuildList) {
     const optConfig = this.get(optConfigId)
-    if (!optConfig) return
+    if (!optConfig) {
+      console.warn(`OptConfig not found for ID: ${optConfigId}`)
+      return false
+    }
     const listId = optConfig.generatedBuildListId
     const generatedBuildList =
       listId && this.database.generatedBuildList.get(listId)
     if (listId && generatedBuildList)
-      this.database.generatedBuildList.set(listId, list)
+      return this.database.generatedBuildList.set(listId, list)
     else
-      this.database.optConfigs.set(optConfigId, {
+      return this.database.optConfigs.set(optConfigId, {
         generatedBuildListId: this.database.generatedBuildList.new(list),
       }) // Create a new list
   }

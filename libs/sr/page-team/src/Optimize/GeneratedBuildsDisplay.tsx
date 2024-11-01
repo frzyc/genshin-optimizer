@@ -39,27 +39,26 @@ export default function GeneratedBuildsDisplay() {
   )
   return (
     <Stack spacing={1}>
-      {generatedBuildList?.builds &&
-        generatedBuildList.builds.map((build, i) => (
-          <CardThemed key={i}>
-            <CardContent>
-              <Box
-                sx={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  gap: 1,
-                }}
-              >
-                <Typography>
-                  Build {i + 1}: {valueString(build.value)}
-                </Typography>
-                <NewBuildButton build={build} />
-              </Box>
+      {generatedBuildList?.builds.map((build, i) => (
+        <CardThemed key={i}>
+          <CardContent>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                gap: 1,
+              }}
+            >
+              <Typography>
+                Build {i + 1}: {valueString(build.value)}
+              </Typography>
+              <NewBuildButton build={build} />
+            </Box>
 
-              <GeneratedBuildDisplay build={build.relicIds} />
-            </CardContent>
-          </CardThemed>
-        ))}
+            <GeneratedBuildDisplay build={build.relicIds} />
+          </CardContent>
+        </CardThemed>
+      ))}
     </Stack>
   )
 }

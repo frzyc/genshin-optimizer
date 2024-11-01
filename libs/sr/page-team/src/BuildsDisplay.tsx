@@ -138,7 +138,7 @@ function BuildBase({
   description?: string
   buildGrid: ReactNode
   active?: boolean
-  onClick?: () => void | true
+  onClick?: () => void
 }) {
   return (
     <CardThemed

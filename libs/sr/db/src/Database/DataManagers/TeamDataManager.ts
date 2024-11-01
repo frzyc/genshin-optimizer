@@ -300,6 +300,9 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
           lightConeId: build.lightConeId,
         }
       }
+      case 'tc': {
+        return def
+      }
     }
     return def
   }
