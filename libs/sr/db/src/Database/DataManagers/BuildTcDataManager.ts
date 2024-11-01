@@ -1,10 +1,12 @@
 import { clamp, objKeyMap, objMap } from '@genshin-optimizer/common/util'
 import type {
+  CharacterKey,
   RelicMainStatKey,
   RelicSetKey,
   RelicSlotKey,
 } from '@genshin-optimizer/sr/consts'
 import {
+  allCharacterKeys,
   allLightConeKeys,
   allRelicSlotKeys,
   allRelicSubStatKeys,
@@ -27,9 +29,14 @@ export class BuildTcDataManager extends DataManager<
     super(database, 'buildTcs')
   }
   override validate(obj: unknown): IBuildTc | undefined {
-    if (typeof obj !== 'object') return undefined
-    let { name, description } = obj as IBuildTc
+    if (!obj || typeof obj !== 'object') return undefined
+    const { characterKey } = obj as IBuildTc
+    if (!allCharacterKeys.includes(characterKey)) return undefined
+
+    let { name, teamId, description } = obj as IBuildTc
     const { lightCone, relic, optimization } = obj as IBuildTc
+
+    if (teamId && !this.database.teams.get(teamId)) teamId = undefined
 
     if (typeof name !== 'string') name = 'Build(TC) Name'
     if (typeof description !== 'string') description = 'Build(TC) Description'
@@ -41,6 +48,8 @@ export class BuildTcDataManager extends DataManager<
     if (!_optimization) return undefined
     return {
       name,
+      characterKey,
+      teamId,
       description,
       relic: _relic,
       lightCone: _lightCone,
@@ -75,8 +84,9 @@ export class BuildTcDataManager extends DataManager<
   }
 }
 
-export function initCharTC(): IBuildTc {
+export function initCharTC(characterKey: CharacterKey): IBuildTc {
   return {
+    characterKey,
     name: 'Build(TC) Name',
     description: 'Build(TC) Description',
     relic: {

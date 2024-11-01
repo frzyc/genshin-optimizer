@@ -14,8 +14,8 @@ import type {
 import {
   useBuild,
   useCharacter,
-  useEquippedRelics,
   useLightCone,
+  useRelics,
   useTeam,
 } from '@genshin-optimizer/sr/db-ui'
 import type {
@@ -129,7 +129,7 @@ function useCharacterAndEquipment(
   // TODO: Handle tc build
   const build = useBuild(meta?.buildId)
   const lightCone = useLightCone(build?.lightConeId)
-  const relics = useEquippedRelics(build?.relicIds)
+  const relics = useRelics(build?.relicIds)
   return useMemo(
     () => ({
       character,

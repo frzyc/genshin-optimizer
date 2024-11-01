@@ -1,5 +1,6 @@
 import type {
   AscensionKey,
+  CharacterKey,
   LightConeKey,
   RelicMainStatKey,
   RelicSetKey,
@@ -16,6 +17,8 @@ export type BuildTcRelicSlot = {
 export interface IBuildTc {
   name: string
   description: string
+  characterKey: CharacterKey
+  teamId?: string
   lightCone?: {
     key: LightConeKey
     level: number

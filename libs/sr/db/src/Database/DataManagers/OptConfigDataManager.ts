@@ -2,24 +2,22 @@ import type { UnArray } from '@genshin-optimizer/common/util'
 import {
   deepClone,
   deepFreeze,
-  objKeyMap,
   validateArr,
 } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   RelicMainStatKey,
-  RelicSlotKey,
 } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterKeys,
   allRelicSetKeys,
-  allRelicSlotKeys,
   relicSlotToMainStatKeys,
 } from '@genshin-optimizer/sr/consts'
 import type { Tag } from '@genshin-optimizer/sr/formula'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
 import { validateTag } from '../tagUtil'
+import type { GeneratedBuildList } from './GeneratedBuildListDataManager'
 
 export const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10] as const
 export const maxBuildsToShowDefault = 5
@@ -43,11 +41,6 @@ export type StatFilter = {
   disabled: boolean
 }
 export type StatFilters = Array<StatFilter>
-
-export type GeneratedBuild = {
-  lightConeId?: string
-  relicIds: Record<RelicSlotKey, string | undefined>
-}
 
 export interface OptConfig {
   relicSetExclusion: RelicSetExclusion
@@ -74,8 +67,7 @@ export interface OptConfig {
   useTeammateBuild: boolean
 
   //generated opt builds
-  builds: Array<GeneratedBuild>
-  buildDate: number
+  generatedBuildListId?: string
 }
 
 export class OptConfigDataManager extends DataManager<
@@ -87,7 +79,7 @@ export class OptConfigDataManager extends DataManager<
   constructor(database: SroDatabase) {
     super(database, 'optConfigs')
   }
-  override validate(obj: object, key: string): OptConfig | undefined {
+  override validate(obj: object): OptConfig | undefined {
     if (typeof obj !== 'object') return undefined
     let {
       relicSetExclusion,
@@ -106,8 +98,7 @@ export class OptConfigDataManager extends DataManager<
       levelHigh,
       useTeammateBuild,
 
-      builds,
-      buildDate,
+      generatedBuildListId,
     } = obj as OptConfig
 
     if (!Array.isArray(statFilters)) statFilters = []
@@ -152,8 +143,8 @@ export class OptConfigDataManager extends DataManager<
 
     excludedLocations = validateArr(
       excludedLocations,
-      allCharacterKeys.filter((k) => k !== key),
-      [] // Remove self from list
+      allCharacterKeys,
+      []
     ).filter(
       (ck) => this.database.chars.get(ck) // Remove characters who do not exist in the DB
     )
@@ -179,26 +170,11 @@ export class OptConfigDataManager extends DataManager<
     )
     if (typeof useTeammateBuild !== 'boolean') useTeammateBuild = false
 
-    if (!Array.isArray(builds)) {
-      builds = []
-      buildDate = 0
-    } else {
-      builds = builds
-        .map((build) => {
-          if (typeof build !== 'object') return undefined
-          const { lightConeId, relicIds: relicIdsRaw } = build as GeneratedBuild
-          if (!this.database.lightCones.get(lightConeId)) return undefined
-          const relicIds = objKeyMap(allRelicSlotKeys, (slotKey) =>
-            this.database.relics.get(relicIdsRaw[slotKey])?.slotKey === slotKey
-              ? relicIdsRaw[slotKey]
-              : undefined
-          )
-
-          return { relicIds, lightConeId }
-        })
-        .filter((b) => b) as GeneratedBuild[]
-      if (!Number.isInteger(buildDate)) buildDate = 0
-    }
+    if (
+      generatedBuildListId &&
+      !this.database.generatedBuildList.get(generatedBuildListId)
+    )
+      generatedBuildListId = undefined
 
     return {
       relicSetExclusion,
@@ -217,8 +193,7 @@ export class OptConfigDataManager extends DataManager<
       levelHigh,
       useTeammateBuild,
 
-      builds,
-      buildDate,
+      generatedBuildListId,
     }
   }
   new(data: Partial<OptConfig> = {}) {
@@ -240,8 +215,7 @@ export class OptConfigDataManager extends DataManager<
       excludedLocations,
       allowLocationsState,
       relicExclusion,
-      buildDate,
-      builds,
+      generatedBuildListId,
       ...rest
     } = optConfig
     return rest
@@ -250,6 +224,22 @@ export class OptConfigDataManager extends DataManager<
     const id = this.generateKey()
     if (!this.set(id, data)) return ''
     return id
+  }
+  newOrSetGeneratedBuildList(optConfigId: string, list: GeneratedBuildList) {
+    const optConfig = this.get(optConfigId)
+    if (!optConfig) {
+      console.warn(`OptConfig not found for ID: ${optConfigId}`)
+      return false
+    }
+    const listId = optConfig.generatedBuildListId
+    const generatedBuildList =
+      listId && this.database.generatedBuildList.get(listId)
+    if (listId && generatedBuildList)
+      return this.database.generatedBuildList.set(listId, list)
+    else
+      return this.database.optConfigs.set(optConfigId, {
+        generatedBuildListId: this.database.generatedBuildList.new(list),
+      }) // Create a new list
   }
 }
 

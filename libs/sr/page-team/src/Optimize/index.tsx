@@ -1,8 +1,11 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { type ICachedRelic } from '@genshin-optimizer/sr/db'
-import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
-import type { BuildResult, ProgressResult } from '@genshin-optimizer/sr/solver'
+import {
+  useCharacterContext,
+  useDatabaseContext,
+} from '@genshin-optimizer/sr/db-ui'
+import type { ProgressResult } from '@genshin-optimizer/sr/solver'
 import { MAX_BUILDS, Solver } from '@genshin-optimizer/sr/solver'
 import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
 import CloseIcon from '@mui/icons-material/Close'
@@ -14,7 +17,6 @@ import {
   CardHeader,
   Divider,
   LinearProgress,
-  Stack,
   Typography,
 } from '@mui/material'
 import {
@@ -27,7 +29,7 @@ import {
 } from 'react'
 import { useTranslation } from 'react-i18next'
 import { TeamContext } from '../context'
-import { BuildDisplay } from './BuildDisplay'
+import GeneratedBuildsDisplay from './GeneratedBuildsDisplay'
 import OptConfigProvider, { OptConfigContext } from './OptConfigWrapper'
 import { StatFilterCard } from './StatFilterCard'
 import { WorkerSelector } from './WorkerSelector'
@@ -53,6 +55,7 @@ export default function Optimize() {
     return (
       <OptConfigProvider optConfigId={optConfigId}>
         <OptimizeWrapper />
+        <GeneratedBuildsDisplay />
       </OptConfigProvider>
     )
   } else {
@@ -82,8 +85,9 @@ function OptimizeWrapper() {
   const [progress, setProgress] = useState<ProgressResult | undefined>(
     undefined
   )
-  const { optConfig } = useContext(OptConfigContext)
-
+  const { optConfig, optConfigId } = useContext(OptConfigContext)
+  const character = useCharacterContext()!
+  const { equippedLightCone } = character
   const relicsBySlot = useMemo(
     () =>
       database.relics.values.reduce(
@@ -107,7 +111,6 @@ function OptimizeWrapper() {
     1
   )
 
-  const [build, setBuild] = useState<BuildResult | undefined>(undefined)
   const [optimizing, setOptimizing] = useState(false)
 
   // Provides a function to cancel the work
@@ -146,14 +149,26 @@ function OptimizeWrapper() {
     cancelToken.current = () => {}
 
     setOptimizing(false)
-    setBuild(results[0])
+    // Save results to optConfig
+    if (results.length)
+      database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
+        builds: results.slice(0, 5).map(({ ids, value }) => ({
+          lightConeId: equippedLightCone,
+          relicIds: ids,
+          value,
+        })),
+        buildDate: Date.now(),
+      })
   }, [
     calc,
-    characterKey,
-    team,
-    numWorkers,
     optConfig.statFilters,
+    characterKey,
+    team.frames,
     relicsBySlot,
+    numWorkers,
+    database.optConfigs,
+    optConfigId,
+    equippedLightCone,
   ])
 
   const onCancel = useCallback(() => {
@@ -184,20 +199,12 @@ function OptimizeWrapper() {
       <Divider />
       <CardContent>
         <StatFilterCard />
-        <Stack>
-          {progress && (
-            <ProgressIndicator
-              progress={progress}
-              totalPermutations={totalPermutations}
-            />
-          )}
-          {build && (
-            <Box>
-              <Typography>Best: {build.value}</Typography>
-              <BuildDisplay build={build.ids} />
-            </Box>
-          )}
-        </Stack>
+        {progress && (
+          <ProgressIndicator
+            progress={progress}
+            totalPermutations={totalPermutations}
+          />
+        )}
       </CardContent>
     </CardThemed>
   )

@@ -1,6 +1,10 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import { useCharacterContext } from '@genshin-optimizer/sr/db-ui'
+import {
+  useCharacterContext,
+  useDatabaseContext,
+} from '@genshin-optimizer/sr/db-ui'
 import { own } from '@genshin-optimizer/sr/formula'
 import {
   CharacterCard,
@@ -15,11 +19,14 @@ import {
   Box,
   Button,
   CardContent,
+  CardHeader,
+  Divider,
   Stack,
   Typography,
 } from '@mui/material'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { BonusStats } from './BonusStats'
+import { BuildGridBase, BuildsDisplay } from './BuildsDisplay'
 import { ComboEditor } from './ComboEditor'
 import { useTeamContext } from './context'
 import Optimize from './Optimize'
@@ -42,12 +49,10 @@ export default function TeammateDisplay() {
         onClose={() => setCharacterKey(undefined)}
       />
       <Box sx={{ display: 'flex', gap: 1 }}>
-        <Box sx={{ maxWidth: '350px' }}>
+        <Box sx={{ minWidth: '350px' }}>
           <CharacterCard character={character!} />
         </Box>
-        <CardThemed sx={{ flexGrow: 1 }}>
-          <CardContent></CardContent>
-        </CardThemed>
+        <CurrentBuildDisplay />
       </Box>
 
       <Stack gap={1} pt={1}>
@@ -145,5 +150,52 @@ export default function TeammateDisplay() {
         <Optimize />
       </Stack>
     </Box>
+  )
+}
+function CurrentBuildDisplay() {
+  const { teammateDatum } = useTeamContext()
+  const { database } = useDatabaseContext()
+  const { buildName, relicIds, lightConeId } = useMemo(
+    () => ({
+      buildName: database.teams.getActiveBuildName(teammateDatum),
+      ...database.teams.getTeamActiveBuild(teammateDatum),
+    }),
+    [database.teams, teammateDatum]
+  )
+  const [show, onShow, onHide] = useBoolState()
+  return (
+    <CardThemed>
+      <BuildsModal show={show} onClose={onHide} />
+      <CardHeader
+        title={buildName}
+        action={
+          // TODO: translation
+          <Button onClick={onShow} size="small">
+            Change Build
+          </Button>
+        }
+      />
+      <Divider />
+      <CardContent>
+        <BuildGridBase
+          relicIds={relicIds}
+          lightConeId={lightConeId}
+          columns={2}
+        />
+      </CardContent>
+    </CardThemed>
+  )
+}
+function BuildsModal({
+  show,
+  onClose,
+}: {
+  show: boolean
+  onClose: () => void
+}) {
+  return (
+    <ModalWrapper open={show} onClose={onClose}>
+      <BuildsDisplay />
+    </ModalWrapper>
   )
 }
