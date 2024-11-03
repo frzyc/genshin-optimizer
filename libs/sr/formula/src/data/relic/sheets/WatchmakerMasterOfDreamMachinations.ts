@@ -4,9 +4,9 @@ import { allStats, mappedStats } from '@genshin-optimizer/sr/stats'
 import {
   allBoolConditionals,
   own,
-  ownBuff,
   register,
   registerBuff,
+  teamBuff,
 } from '../../util'
 import { entriesForRelic } from '../util'
 
@@ -26,7 +26,7 @@ const sheet = register(
 
   registerBuff(
     'set4_brEffect_',
-    ownBuff.premod.brEffect_.add(
+    teamBuff.premod.brEffect_.add(
       useUltimateOnAlly.ifOn(cmpGE(relicCount, 4, dm[4].brEffect_))
     )
   )

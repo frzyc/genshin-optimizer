@@ -5,8 +5,14 @@ import {
   range,
   toPercent,
 } from '@genshin-optimizer/common/util'
-import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
+import type {
+  RelicCavernSetKey,
+  RelicPlanarSetKey,
+  RelicSetKey,
+  RelicSlotKey,
+} from '@genshin-optimizer/sr/consts'
 import {
+  allRelicCavernSetKeys,
   allRelicCavernSlotKeys,
   allRelicPlanarSetKeys,
   allRelicPlanarSlotKeys,
@@ -164,4 +170,17 @@ export function getSubstatValuesPercent(
 ) {
   console.log('getSubstatValuesPercent', substatKey, rarity)
   return []
+}
+
+export function getDefaultRelicSlot(setKey: RelicSetKey) {
+  if (allRelicCavernSetKeys.includes(setKey as RelicCavernSetKey))
+    return allRelicCavernSlotKeys[0]
+  if (allRelicPlanarSetKeys.includes(setKey as RelicPlanarSetKey))
+    return allRelicPlanarSlotKeys[0]
+  // noopt
+  return allRelicCavernSlotKeys[0]
+}
+
+export function isCavernRelic(setKey: RelicSetKey) {
+  return allRelicCavernSetKeys.includes(setKey as RelicCavernSetKey)
 }

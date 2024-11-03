@@ -74,7 +74,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       teamMetadata,
       lastEdit,
       frames,
-      conditionals: conditional,
+      conditionals,
       bonusStats,
       statConstraints,
     } = obj as Team
@@ -166,20 +166,22 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     frames = frames.filter(validateTag)
     const framesLength = frames.length
     if (!framesLength) {
-      conditional = []
+      conditionals = []
       bonusStats = []
     } else {
-      if (!Array.isArray(conditional)) conditional = []
-      if (!Array.isArray(bonusStats)) bonusStats = []
-      if (!Array.isArray(statConstraints)) statConstraints = []
-      conditional = conditional.filter(({ condValues }) => {
+      if (!Array.isArray(conditionals)) conditionals = []
+      conditionals = conditionals.filter(({ src, dst, condValues }) => {
         // TODO: validate conditionals src dst condKey
+        if (!allCharacterKeys.includes(src as CharacterKey)) return false
+        if (!allCharacterKeys.includes(dst as CharacterKey)) return false
         if (!Array.isArray(condValues)) return false
         pruneOrPadArray(condValues, framesLength, 0)
         // If all values are false, remove the conditional
         if (condValues.every((v) => !v)) return false
         return true
       })
+
+      if (!Array.isArray(bonusStats)) bonusStats = []
       bonusStats = bonusStats.filter(({ tag, values }) => {
         if (!validateTag(tag)) return false
         if (!Array.isArray(values)) return false
@@ -187,6 +189,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
         return true
       })
 
+      if (!Array.isArray(statConstraints)) statConstraints = []
       statConstraints = statConstraints.filter(({ tag, values, isMaxs }) => {
         if (!validateTag(tag)) return false
         if (!Array.isArray(values)) return false
@@ -206,7 +209,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       teamMetadata: teamMetadata,
       lastEdit,
       frames,
-      conditionals: conditional,
+      conditionals,
       bonusStats,
       statConstraints,
     }
@@ -373,18 +376,26 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
   setConditional(
     teamId: string,
     sheet: Sheet,
+    condKey: string,
     src: Member | 'all',
     dst: Member | 'all',
-    condKey: string,
     condValue: number,
     frameIndex: number
   ) {
     this.set(teamId, (team) => {
+      if (frameIndex > team.frames.length) return false
       const condIndex = team.conditionals.findIndex(
-        (c) => c.src === src && c.dst === dst && c.condKey === condKey
+        (c) =>
+          c.condKey === condKey &&
+          c.sheet === sheet &&
+          c.src === src &&
+          c.dst === dst
       )
-      if (frameIndex > team.frames.length) return
+      console.log({
+        condIndex,
+      })
       if (condIndex === -1) {
+        console.log('creating new conditional')
         const condValues = new Array(team.frames.length).fill(0)
         condValues[frameIndex] = condValue
         team.conditionals.push({
@@ -395,8 +406,23 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
           condValues,
         })
       } else {
-        team.conditionals[condIndex].condValues[frameIndex] = condValue
+        const cond = team.conditionals[condIndex]
+        // Check if the value is the same, return false to not propagate the update.
+        if (
+          cond.sheet === sheet &&
+          cond.src === src &&
+          cond.dst === dst &&
+          cond.condKey === condKey &&
+          cond.condValues[frameIndex] === condValue
+        )
+          return false
+        cond.sheet = sheet
+        cond.src = src
+        cond.dst = dst
+        cond.condKey = condKey
+        cond.condValues[frameIndex] = condValue
       }
+      return team
     })
   }
   /**

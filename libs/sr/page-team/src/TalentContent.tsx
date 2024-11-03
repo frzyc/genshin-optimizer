@@ -13,7 +13,6 @@ import {
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/sr/db-ui'
-import type { Member, Sheet } from '@genshin-optimizer/sr/formula'
 import { own } from '@genshin-optimizer/sr/formula'
 import {
   isTalentKey,
@@ -32,9 +31,9 @@ import {
   useTheme,
 } from '@mui/material'
 import type { ReactNode } from 'react'
-import { useCallback, useContext, useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { PresetContext, TeamContext, useTeamContext } from './context'
+import { useTeamContext } from './context'
 
 const talentSpacing = {
   xs: 12,
@@ -127,7 +126,7 @@ export default function CharacterTalentPane() {
             lg={3}
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
-            <EidolonDropdown />
+            <EidolonDropdown eidolon={eidolon} />
             {eidolonCards &&
               eidolonCards.map((c, i) => (
                 <Box key={i} sx={{ opacity: eidolon >= i + 1 ? 1 : 0.5 }}>
@@ -188,7 +187,7 @@ export default function CharacterTalentPane() {
         {!grlg && (
           <Grid item xs={12} md={12} lg={3} container spacing={1}>
             <Grid item xs={12}>
-              <EidolonDropdown />
+              <EidolonDropdown eidolon={eidolon} />
             </Grid>
             {/* {constellationCards.map((c, i) => (
               <Grid
@@ -290,24 +289,7 @@ function SkillDisplayCard({
   //   return false
   // }
 
-  const { teamId } = useContext(TeamContext)
-  const { presetIndex } = useContext(PresetContext)
   const { database } = useDatabaseContext()
-  const setConditional = useCallback(
-    (srcKey: string, sheetKey: string, condKey: string, condValue: number) =>
-      // assume dst key to be the current character
-      database.teams.setConditional(
-        teamId,
-        sheetKey as Sheet,
-        srcKey as Member,
-        characterKey,
-        condKey,
-        condValue,
-        presetIndex
-      ),
-
-    [teamId, database.teams, characterKey, presetIndex]
-  )
 
   return (
     <CardThemed bgt="light" sx={{ height: '100%' }}>
@@ -342,7 +324,6 @@ function SkillDisplayCard({
             document={doc}
             collapse
             // hideHeader={hideHeader}
-            setConditional={setConditional}
           />
         ))}
       </CardContent>
@@ -350,15 +331,12 @@ function SkillDisplayCard({
   )
 }
 
-export function EidolonDropdown() {
+export function EidolonDropdown({ eidolon }: { eidolon: number }) {
   const { t } = useTranslation('characters_gen')
-  const calc = useSrCalcContext()
   const {
     teammateDatum: { characterKey },
   } = useTeamContext()
   const { database } = useDatabaseContext()
-  if (!calc) return null
-  const eidolon = calc.compute(own.char.eidolon).val
   return (
     <DropdownButton
       fullWidth

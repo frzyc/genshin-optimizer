@@ -10,7 +10,7 @@ import type { ListProps, Palette, PaletteColor } from '@mui/material'
 import { Box, List, ListItem, Typography, styled } from '@mui/material'
 import type { ReactNode } from 'react'
 import React, { useContext } from 'react'
-import { CalcContext } from '../context'
+import { CalcContext, TagContext } from '../context'
 import type { Field, TagField, TextField } from '../types'
 
 export function FieldsDisplay({
@@ -88,12 +88,15 @@ export function TagFieldDisplay({
   showZero?: boolean
 }) {
   const calc = useContext(CalcContext)
+  const tag = useContext(TagContext)
   // const compareCalc: null | Calculator = null //TODO: compare calcs
   if (!calc) return null
   // if (!calc && !compareCalc) return null
 
   //TODO: undefined: we assume "unique" accumulator
-  const valueCalcRes = calc.compute(read(field.fieldRef, undefined))
+  const valueCalcRes = calc
+    .withTag(tag)
+    .compute(read(field.fieldRef, undefined))
   // const compareValueCalcRes: CalcResult<number, CalcMeta> | null = null
 
   // const { setFormulaData } = useContext(FormulaDataContext)

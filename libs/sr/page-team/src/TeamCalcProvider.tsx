@@ -1,7 +1,6 @@
 import { constant } from '@genshin-optimizer/pando/engine'
 import { CalcContext } from '@genshin-optimizer/pando/ui-sheet'
 import type {
-  CharacterKey,
   RelicSlotKey,
   RelicSubStatKey,
 } from '@genshin-optimizer/sr/consts'
@@ -37,8 +36,7 @@ import {
   withPreset,
 } from '@genshin-optimizer/sr/formula'
 import type { ReactNode } from 'react'
-import { useContext, useMemo } from 'react'
-import { PresetContext } from './context'
+import { useMemo } from 'react'
 
 type CharacterFullData = {
   character: ICachedCharacter | undefined
@@ -48,15 +46,12 @@ type CharacterFullData = {
 
 export function TeamCalcProvider({
   teamId,
-  currentChar,
   children,
 }: {
   teamId: string
-  currentChar?: CharacterKey
   children: ReactNode
 }) {
   const team = useTeam(teamId)!
-  const { presetIndex } = useContext(PresetContext)
   const member0 = useCharacterAndEquipment(team.teamMetadata[0])
   const member1 = useCharacterAndEquipment(team.teamMetadata[1])
   const member2 = useCharacterAndEquipment(team.teamMetadata[2])
@@ -87,10 +82,12 @@ export function TeamCalcProvider({
         ...team.conditionals.flatMap(
           ({ sheet, src, dst, condKey, condValues }) =>
             condValues.flatMap((condValue, frameIndex) =>
-              withPreset(
-                `preset${frameIndex}` as Preset,
-                conditionalEntries(sheet, src, dst)(condKey, condValue)
-              )
+              condValue
+                ? withPreset(
+                    `preset${frameIndex}` as Preset,
+                    conditionalEntries(sheet, src, dst)(condKey, condValue)
+                  )
+                : []
             )
         ),
         ...team.bonusStats.flatMap(({ tag, values }) =>
@@ -105,21 +102,7 @@ export function TeamCalcProvider({
     [team, member0, member1, member2, member3]
   )
 
-  const calcWithTag = useMemo(
-    () =>
-      (currentChar &&
-        calc?.withTag({
-          src: currentChar,
-          dst: currentChar,
-          preset: `preset${presetIndex}` as Preset,
-        })) ??
-      null,
-    [calc, currentChar, presetIndex]
-  )
-
-  return (
-    <CalcContext.Provider value={calcWithTag}>{children}</CalcContext.Provider>
-  )
+  return <CalcContext.Provider value={calc}>{children}</CalcContext.Provider>
 }
 
 function useCharacterAndEquipment(

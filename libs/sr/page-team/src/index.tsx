@@ -1,12 +1,27 @@
 import { CardThemed, useTitle } from '@genshin-optimizer/common/ui'
 import {
+  moveToFront,
+  notEmpty,
+  objKeyMap,
+} from '@genshin-optimizer/common/util'
+import type { SetConditionalFunc } from '@genshin-optimizer/pando/ui-sheet'
+import {
+  ConditionalValuesContext,
+  SetConditionalContext,
+  SrcDstDisplayContext,
+  TagContext,
+} from '@genshin-optimizer/pando/ui-sheet'
+import type { CharacterKey } from '@genshin-optimizer/sr/consts'
+import {
   CharacterContext,
   useCharacter,
   useDatabaseContext,
   useTeam,
 } from '@genshin-optimizer/sr/db-ui'
+import type { Member, Preset, Sheet, Tag } from '@genshin-optimizer/sr/formula'
+import { CharacterName } from '@genshin-optimizer/sr/ui'
 import { Box, Skeleton } from '@mui/material'
-import { Suspense, useEffect, useMemo, useState } from 'react'
+import { Suspense, useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   Navigate,
@@ -48,6 +63,7 @@ export default function PageTeam() {
 
 function Page({ teamId }: { teamId: string }) {
   const navigate = useNavigate()
+  const { database } = useDatabaseContext()
   const [presetIndex, setPresetIndex] = useState(0)
   const presetObj = useMemo(
     () =>
@@ -105,51 +121,112 @@ function Page({ teamId }: { teamId: string }) {
       teammateDatum,
     }
   }, [teammateDatum, team, teamId])
-
+  const srcDstDisplayContextValue = useMemo(() => {
+    const charDisplay = objKeyMap(
+      moveToFront(
+        team.teamMetadata
+          .filter(notEmpty)
+          .map(({ characterKey }) => characterKey),
+        characterKey as CharacterKey
+      ),
+      (ck) => <CharacterName characterKey={ck} />
+    )
+    return { srcDisplay: charDisplay, dstDisplay: charDisplay }
+  }, [team.teamMetadata, characterKey])
+  const conditionals = useMemo(
+    () =>
+      team.conditionals.map(({ sheet, src, dst, condKey, condValues }) => ({
+        sheet,
+        src,
+        dst,
+        condKey,
+        condValue: condValues[presetIndex],
+      })),
+    [presetIndex, team.conditionals]
+  )
+  const setConditional = useCallback<SetConditionalFunc>(
+    (
+      sheet: string,
+      condKey: string,
+      src: string,
+      dst: string,
+      condValue: number
+    ) => {
+      database.teams.setConditional(
+        teamId,
+        sheet as Sheet,
+        condKey,
+        src as Member | 'all',
+        dst as Member | 'all',
+        condValue,
+        presetIndex
+      )
+    },
+    [database.teams, presetIndex, teamId]
+  )
+  const tag = useMemo<Tag>(
+    () => ({
+      src: characterKey,
+      dst: characterKey,
+      preset: `preset${presetIndex}` as Preset,
+    }),
+    [characterKey, presetIndex]
+  )
   return (
-    <PresetContext.Provider value={presetObj}>
-      <TeamCalcProvider teamId={teamId} currentChar={characterKey}>
-        <Box
-          sx={{
-            display: 'flex',
-            gap: 1,
-            flexDirection: 'column',
-            mx: 1,
-            mt: 2,
-          }}
-        >
-          <CardThemed
-            sx={{
-              overflow: 'visible',
-              top: 0,
-              position: 'sticky',
-              zIndex: 100,
-            }}
-          >
-            <TeamCharacterSelector teamId={teamId} charKey={characterKey} />
-          </CardThemed>
-          <Box
-          // sx={(theme) => {
-          //   const elementKey = characterKey && allStats.char[characterKey]
-          //   if (!elementKey) return {}
-          //   const hex = theme.palette[elementKey].main as string
-          //   const color = hexToColor(hex)
-          //   if (!color) return {}
-          //   const rgba = colorToRgbaString(color, 0.1)
-          //   return {
-          //     background: `linear-gradient(to bottom, ${rgba} 0%, rgba(0,0,0,0)) 25%`,
-          //   }
-          // }}
-          >
-            {teamContextObj && (
-              <TeamContext.Provider value={teamContextObj}>
-                <TeammateDisplayWrapper />
-              </TeamContext.Provider>
-            )}
-          </Box>
-        </Box>
-      </TeamCalcProvider>
-    </PresetContext.Provider>
+    <TagContext.Provider value={tag}>
+      <PresetContext.Provider value={presetObj}>
+        <TeamCalcProvider teamId={teamId}>
+          <SrcDstDisplayContext.Provider value={srcDstDisplayContextValue}>
+            <ConditionalValuesContext.Provider value={conditionals}>
+              <SetConditionalContext.Provider value={setConditional}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    gap: 1,
+                    flexDirection: 'column',
+                    mx: 1,
+                    mt: 2,
+                  }}
+                >
+                  <CardThemed
+                    sx={{
+                      overflow: 'visible',
+                      top: 0,
+                      position: 'sticky',
+                      zIndex: 100,
+                    }}
+                  >
+                    <TeamCharacterSelector
+                      teamId={teamId}
+                      charKey={characterKey}
+                    />
+                  </CardThemed>
+                  <Box
+                  // sx={(theme) => {
+                  //   const elementKey = characterKey && allStats.char[characterKey]
+                  //   if (!elementKey) return {}
+                  //   const hex = theme.palette[elementKey].main as string
+                  //   const color = hexToColor(hex)
+                  //   if (!color) return {}
+                  //   const rgba = colorToRgbaString(color, 0.1)
+                  //   return {
+                  //     background: `linear-gradient(to bottom, ${rgba} 0%, rgba(0,0,0,0)) 25%`,
+                  //   }
+                  // }}
+                  >
+                    {teamContextObj && (
+                      <TeamContext.Provider value={teamContextObj}>
+                        <TeammateDisplayWrapper />
+                      </TeamContext.Provider>
+                    )}
+                  </Box>
+                </Box>
+              </SetConditionalContext.Provider>
+            </ConditionalValuesContext.Provider>
+          </SrcDstDisplayContext.Provider>
+        </TeamCalcProvider>
+      </PresetContext.Provider>
+    </TagContext.Provider>
   )
 }
 

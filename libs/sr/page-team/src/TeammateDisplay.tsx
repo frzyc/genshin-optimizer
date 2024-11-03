@@ -30,6 +30,7 @@ import { BuildGridBase, BuildsDisplay } from './BuildsDisplay'
 import { ComboEditor } from './ComboEditor'
 import { useTeamContext } from './context'
 import Optimize from './Optimize'
+import { RelicSheetsDisplay } from './RelicSheetsDisplay'
 import CharacterTalentPane from './TalentContent'
 
 export default function TeammateDisplay() {
@@ -37,7 +38,6 @@ export default function TeammateDisplay() {
     teammateDatum: { characterKey },
   } = useTeamContext()
   const character = useCharacterContext()
-  const calc = useSrCalcContext()
   const [editorKey, setCharacterKey] = useState<CharacterKey | undefined>(
     undefined
   )
@@ -66,84 +66,8 @@ export default function TeammateDisplay() {
               Edit Character
             </Button>
             <BonusStats />
-            <Accordion>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                All target listings
-              </AccordionSummary>
-              <AccordionDetails>
-                <Stack>
-                  {calc
-                    ?.listFormulas(own.listing.formulas)
-                    .map((read, index) => {
-                      const computed = calc.compute(read)
-                      const name = read.tag.name || read.tag.q
-                      return (
-                        <Box key={`${name}${index}`}>
-                          <Typography>
-                            {name}: {computed.val}
-                          </Typography>
-                          <Accordion>
-                            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                              debug for {name}
-                            </AccordionSummary>
-                            <AccordionDetails>
-                              conds:{' '}
-                              {JSON.stringify(
-                                computed.meta.conds,
-                                undefined,
-                                2
-                              )}
-                              <Typography component="pre">
-                                {JSON.stringify(
-                                  calc.toDebug().compute(read),
-                                  undefined,
-                                  2
-                                )}
-                              </Typography>
-                            </AccordionDetails>
-                          </Accordion>
-                        </Box>
-                      )
-                    })}
-                </Stack>
-              </AccordionDetails>
-            </Accordion>
-            <Accordion>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                All target buffs
-              </AccordionSummary>
-              <AccordionDetails>
-                <Stack>
-                  {calc?.listFormulas(own.listing.buffs).map((read, index) => {
-                    const computed = calc.compute(read)
-                    const name = read.tag.name || read.tag.q
-                    return (
-                      <Box key={`${name}${index}`}>
-                        <Typography>
-                          {name}: {computed.val}
-                        </Typography>
-                        <Accordion>
-                          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                            debug for {name}
-                          </AccordionSummary>
-                          <AccordionDetails>
-                            conds:{' '}
-                            {JSON.stringify(computed.meta.conds, undefined, 2)}
-                            <Typography component="pre">
-                              {JSON.stringify(
-                                calc.toDebug().compute(read),
-                                undefined,
-                                2
-                              )}
-                            </Typography>
-                          </AccordionDetails>
-                        </Accordion>
-                      </Box>
-                    )
-                  })}
-                </Stack>
-              </AccordionDetails>
-            </Accordion>
+            <RelicConditionals />
+            <CalcDebug />
           </CardContent>
         </CardThemed>
         <CharacterTalentPane />
@@ -197,5 +121,94 @@ function BuildsModal({
     <ModalWrapper open={show} onClose={onClose}>
       <BuildsDisplay />
     </ModalWrapper>
+  )
+}
+function RelicConditionals() {
+  const [show, onShow, onHide] = useBoolState()
+  return (
+    <>
+      {/* TODO: translation */}
+      <Button onClick={onShow}>Relic Conditionals</Button>
+      <ModalWrapper open={show} onClose={onHide}>
+        <RelicSheetsDisplay />
+      </ModalWrapper>
+    </>
+  )
+}
+function CalcDebug() {
+  const calc = useSrCalcContext()
+  return (
+    <>
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          All target listings
+        </AccordionSummary>
+        <AccordionDetails>
+          <Stack>
+            {calc?.listFormulas(own.listing.formulas).map((read, index) => {
+              const computed = calc.compute(read)
+              const name = read.tag.name || read.tag.q
+              return (
+                <Box key={`${name}${index}`}>
+                  <Typography>
+                    {name}: {computed.val}
+                  </Typography>
+                  <Accordion>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                      debug for {name}
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      conds: {JSON.stringify(computed.meta.conds, undefined, 2)}
+                      <Typography component="pre">
+                        {JSON.stringify(
+                          calc.toDebug().compute(read),
+                          undefined,
+                          2
+                        )}
+                      </Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                </Box>
+              )
+            })}
+          </Stack>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          All target buffs
+        </AccordionSummary>
+        <AccordionDetails>
+          <Stack>
+            {calc?.listFormulas(own.listing.buffs).map((read, index) => {
+              const computed = calc.compute(read)
+              const name = read.tag.name || read.tag.q
+              return (
+                <Box key={`${name}${index}`}>
+                  <Typography>
+                    {name}: {computed.val}
+                  </Typography>
+                  <Accordion>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                      debug for {name}
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      conds: {JSON.stringify(computed.meta.conds, undefined, 2)}
+                      <Typography component="pre">
+                        {JSON.stringify(
+                          calc.toDebug().compute(read),
+                          undefined,
+                          2
+                        )}
+                      </Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                </Box>
+              )
+            })}
+          </Stack>
+        </AccordionDetails>
+      </Accordion>
+    </>
   )
 }
