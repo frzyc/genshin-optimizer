@@ -99,7 +99,7 @@ function Header({ character }: { character: ICachedCharacter }) {
       />
       <Box sx={{ px: 2, pt: 1 }}>
         <Typography variant="h5">
-          <CharacterName characterKey={characterKey} />
+          <CharacterName genderedKey={genderedKey} />
         </Typography>
         <Typography>
           <StarsDisplay stars={rarity} inline />

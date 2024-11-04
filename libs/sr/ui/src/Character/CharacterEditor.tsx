@@ -62,7 +62,7 @@ function CharacterEditorContent({
     <CardThemed>
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
         <Typography variant="h3">
-          <CharacterName characterKey={characterKey} />
+          <CharacterName genderedKey={genderedKey} />
         </Typography>
         <TextField
           type="number"

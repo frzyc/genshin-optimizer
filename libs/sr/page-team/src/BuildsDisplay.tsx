@@ -1,35 +1,26 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { allRelicSlotKeys } from '@genshin-optimizer/sr/consts'
-import type {
-  ICachedRelic,
-  RelicIds,
-  TeammateDatum,
-} from '@genshin-optimizer/sr/db'
+import type { RelicIds, TeammateDatum } from '@genshin-optimizer/sr/db'
 import {
   useBuild,
   useCharacterContext,
   useDatabaseContext,
-  useLightCone,
-  useRelics,
 } from '@genshin-optimizer/sr/db-ui'
 import {
-  EmptyRelicCard,
-  LightConeCard,
-  RelicCard,
+  LightConeCardCompact,
+  RelicCardCompact,
 } from '@genshin-optimizer/sr/ui'
-import type { GridOwnProps } from '@mui/material'
 import {
+  Box,
   CardActionArea,
   CardContent,
   CardHeader,
   Divider,
-  Grid,
   Stack,
 } from '@mui/material'
 import type { ReactNode } from 'react'
-import { memo, useEffect, useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { useTeamContext } from './context'
 export function BuildsDisplay() {
   const { database } = useDatabaseContext()
@@ -113,10 +104,7 @@ export function EquippedBuild() {
       onClick={onClick}
       active={active}
       buildGrid={
-        <BuildGridBase
-          relicIds={equippedRelics}
-          lightConeId={equippedLightCone}
-        />
+        <EquipRow relicIds={equippedRelics} lightConeId={equippedLightCone} />
       }
     />
   )
@@ -131,9 +119,7 @@ export function Build({ buildId }: { buildId: string }) {
       description={description}
       onClick={onClick}
       active={active}
-      buildGrid={
-        <BuildGridBase relicIds={relicIds} lightConeId={lightConeId} />
-      }
+      buildGrid={<EquipRow relicIds={relicIds} lightConeId={lightConeId} />}
     />
   )
 }
@@ -166,52 +152,24 @@ function BuildBase({
   )
 }
 
-/**
- * A Grid of Lightcone + relics
- * @returns
- */
-export function BuildGridBase({
+export function EquipRow({
   relicIds,
   lightConeId,
-  columns = 3,
 }: {
   relicIds: RelicIds
   lightConeId?: string
-  columns?: GridOwnProps['columns']
 }) {
-  const relics = useRelics(relicIds)
-  const lightcone = useLightCone(lightConeId)
   return (
-    <Grid container columns={columns} spacing={1}>
-      {lightcone && (
-        <Grid item xs={1}>
-          <LightConeCard lightCone={lightcone} />
-        </Grid>
-      )}
+    <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+      <LightConeCardCompact bgt="light" lightConeId={lightConeId} />
       {allRelicSlotKeys.map((slot) => (
-        <GridItem
-          key={`${slot}_${relics[slot]?.id}`}
-          slot={slot}
-          relic={relics[slot]}
+        <RelicCardCompact
+          bgt="light"
+          relicId={relicIds[slot]}
+          slotKey={slot}
+          showLocation
         />
       ))}
-    </Grid>
+    </Box>
   )
 }
-const GridItem = memo(function GridItem({
-  slot,
-  relic,
-}: {
-  slot: RelicSlotKey
-  relic?: ICachedRelic
-}) {
-  return (
-    <Grid item xs={1}>
-      {relic ? (
-        <RelicCard relic={relic} />
-      ) : (
-        <EmptyRelicCard slot={slot} bgt="light" />
-      )}
-    </Grid>
-  )
-})

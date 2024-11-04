@@ -99,11 +99,11 @@ export const allCharacterKeys = [
 ] as const
 export type CharacterKey = (typeof allCharacterKeys)[number]
 
-export const allCharacterDataKeys = [
+export const allCharacterGenderedKeys = [
   ...nonTrailblazerCharacterKeys,
   ...allTrailblazerGenderedKeys,
 ] as const
-export type CharacterDataKey = (typeof allCharacterDataKeys)[number]
+export type CharacterGenderedKey = (typeof allCharacterGenderedKeys)[number]
 
 export const maxEidolonCount = 6 as const
 

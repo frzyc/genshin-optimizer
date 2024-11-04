@@ -1,6 +1,6 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import type {
-  CharacterDataKey,
+  CharacterGenderedKey,
   LightConeKey,
   RelicCavernSetKey,
   RelicCavernSlotKey,
@@ -61,7 +61,7 @@ type RelicIcons = RelicPlanarIcons & RelicCavernIcons
 const assetData = {
   // artifacts: {},
   lightCones: {} as Record<LightConeKey, LightConeIcon>,
-  chars: {} as Record<CharacterDataKey, CharacterIcon>,
+  chars: {} as Record<CharacterGenderedKey, CharacterIcon>,
   relics: {} as RelicIcons,
 }
 export type AssetData = typeof assetData

@@ -26,7 +26,7 @@ import {
 } from '@mui/material'
 import { useMemo, useState } from 'react'
 import { BonusStats } from './BonusStats'
-import { BuildGridBase, BuildsDisplay } from './BuildsDisplay'
+import { BuildsDisplay, EquipRow } from './BuildsDisplay'
 import { ComboEditor } from './ComboEditor'
 import { useTeamContext } from './context'
 import Optimize from './Optimize'
@@ -177,11 +177,7 @@ function CurrentBuildDisplay() {
       />
       <Divider />
       <CardContent>
-        <BuildGridBase
-          relicIds={relicIds}
-          lightConeId={lightConeId}
-          columns={2}
-        />
+        <EquipRow relicIds={relicIds} lightConeId={lightConeId} />
       </CardContent>
     </CardThemed>
   )
@@ -194,7 +190,11 @@ function BuildsModal({
   onClose: () => void
 }) {
   return (
-    <ModalWrapper open={show} onClose={onClose}>
+    <ModalWrapper
+      open={show}
+      onClose={onClose}
+      containerProps={{ maxWidth: 'xl' }}
+    >
       <BuildsDisplay />
     </ModalWrapper>
   )
