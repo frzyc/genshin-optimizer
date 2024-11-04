@@ -30,6 +30,7 @@ import {
 } from '@mui/material'
 import { Suspense } from 'react'
 import { AbilityDropdown } from './AbilityDropdown'
+import { CharacterName } from './CharacterTrans'
 
 export function CharacterEditor({
   characterKey,
@@ -60,7 +61,9 @@ function CharacterEditorContent({
   return (
     <CardThemed>
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-        <Typography variant="h3">{characterKey}</Typography>
+        <Typography variant="h3">
+          <CharacterName characterKey={characterKey} />
+        </Typography>
         <TextField
           type="number"
           label="Level"
