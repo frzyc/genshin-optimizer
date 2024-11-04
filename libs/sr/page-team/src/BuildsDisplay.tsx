@@ -164,6 +164,7 @@ export function EquipRow({
       <LightConeCardCompact bgt="light" lightConeId={lightConeId} />
       {allRelicSlotKeys.map((slot) => (
         <RelicCardCompact
+          key={slot}
           bgt="light"
           relicId={relicIds[slot]}
           slotKey={slot}
