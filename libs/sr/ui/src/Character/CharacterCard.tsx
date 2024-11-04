@@ -1,5 +1,15 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  ColorText,
+  NextImage,
+  StarsDisplay,
+} from '@genshin-optimizer/common/ui'
 import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
+import {
+  characterAsset,
+  characterKeyToGenderedKey,
+} from '@genshin-optimizer/sr/assets'
+import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import type { ICachedCharacter } from '@genshin-optimizer/sr/db'
 import type { Calculator } from '@genshin-optimizer/sr/formula'
 import {
@@ -7,8 +17,11 @@ import {
   own,
   srCalculatorWithEntries,
 } from '@genshin-optimizer/sr/formula'
-import { statToFixed } from '@genshin-optimizer/sr/util'
+import { getCharStat } from '@genshin-optimizer/sr/stats'
+import { ElementIcon, PathIcon } from '@genshin-optimizer/sr/svgicons'
+import { getLevelString, statToFixed } from '@genshin-optimizer/sr/util'
 import {
+  Box,
   CardActionArea,
   CardContent,
   Divider,
@@ -16,6 +29,7 @@ import {
   Typography,
 } from '@mui/material'
 import { useSrCalcContext } from '../Hook'
+import { CharacterName } from './CharacterTrans'
 import { StatDisplay } from './StatDisplay'
 
 const stats = [
@@ -40,33 +54,73 @@ export function CharacterCard({
 }) {
   const calc =
     useSrCalcContext() ?? srCalculatorWithEntries(charData(character))
+
   return (
     <Stack>
       <CardThemed>
-        <CardContent>
-          {onClick ? (
-            <CardActionArea onClick={onClick}>
-              <Typography variant="h4">{character.key}</Typography>
-            </CardActionArea>
-          ) : (
-            <Typography variant="h4">{character.key}</Typography>
-          )}
-          <Divider />
-          <Typography>Eidolon: {character.eidolon}</Typography>
-          <Typography>Level: {character.level}</Typography>
+        {onClick ? (
+          <CardActionArea onClick={onClick}>
+            <Header character={character} />
+          </CardActionArea>
+        ) : (
+          <Header character={character} />
+        )}
 
+        <Divider />
+        <CardContent>
           {stats.map((statKey) => (
-            <StatLine key={statKey} calc={calc} statKey={statKey} />
+            <StatLine
+              key={statKey}
+              calc={calc}
+              statKey={statKey}
+              characterKey={character.key}
+            />
           ))}
         </CardContent>
       </CardThemed>
     </Stack>
   )
 }
+function Header({ character }: { character: ICachedCharacter }) {
+  const { key: characterKey, eidolon, level, ascension } = character
+  const genderedKey = characterKeyToGenderedKey(characterKey)
+  const { damageType, path, rarity } = getCharStat(genderedKey)
+
+  return (
+    <Box sx={{ display: 'flex' }}>
+      <Box
+        component={NextImage ? NextImage : 'img'}
+        alt="Character Icon"
+        src={characterAsset(genderedKey, 'icon')}
+        sx={{
+          maxHeight: '10em',
+          width: 'auto',
+        }}
+      />
+      <Box sx={{ px: 2, pt: 1 }}>
+        <Typography variant="h5">
+          <CharacterName characterKey={characterKey} />
+        </Typography>
+        <Typography>
+          <StarsDisplay stars={rarity} inline />
+        </Typography>
+        <Typography>
+          Lv.{getLevelString(level, ascension)} Eidolon: {eidolon}
+        </Typography>
+        <PathIcon pathKey={path} />
+        <ColorText color={damageType}>
+          <ElementIcon ele={damageType} />
+        </ColorText>
+      </Box>
+    </Box>
+  )
+}
 function StatLine({
+  characterKey,
   calc,
   statKey,
 }: {
+  characterKey: CharacterKey
   calc: Calculator
   statKey: (typeof stats)[number]
 }) {
@@ -81,9 +135,12 @@ function StatLine({
     >
       <StatDisplay statKey={statKey} />
       <span>
-        {toPercent(calc.compute(own.final[statKey]).val, statKey).toFixed(
-          statToFixed(statKey)
-        )}
+        {toPercent(
+          calc
+            .withTag({ src: characterKey, dst: characterKey })
+            .compute(own.final[statKey]).val,
+          statKey
+        ).toFixed(statToFixed(statKey))}
         {getUnitStr(statKey)}
       </span>
     </Typography>

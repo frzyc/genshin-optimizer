@@ -1,9 +1,11 @@
-import type {
-  LightConeKey,
-  NonTrailblazerCharacterKey,
-  RelicSetKey,
-  RelicSlotKey,
-  TrailblazerGenderedKey,
+import type { CharacterKey, TrailblazerKey } from '@genshin-optimizer/sr/consts'
+import {
+  allTrailblazerKeys,
+  type LightConeKey,
+  type NonTrailblazerCharacterKey,
+  type RelicSetKey,
+  type RelicSlotKey,
+  type TrailblazerGenderedKey,
 } from '@genshin-optimizer/sr/consts'
 import chars from './gen/chars'
 import lightCones from './gen/lightCones'
@@ -31,6 +33,16 @@ export function characterAsset(
   asset: characterAssetKey
 ) {
   return chars[ck][asset]
+}
+export function characterKeyToGenderedKey(
+  ck: CharacterKey
+): NonTrailblazerCharacterKey | TrailblazerGenderedKey {
+  if (allTrailblazerKeys.includes(ck as TrailblazerKey)) {
+    // TODO: implement gender
+    return `${ck}F` as TrailblazerGenderedKey | NonTrailblazerCharacterKey
+  } else {
+    return ck as NonTrailblazerCharacterKey
+  }
 }
 type LightConeAssetKey = 'icon' | 'cover'
 export function lightConeAsset(lck: LightConeKey, asset: LightConeAssetKey) {

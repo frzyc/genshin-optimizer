@@ -1,6 +1,7 @@
 import type {
   LightConeKey,
   NonTrailblazerCharacterKey,
+  StatBoostKey,
   TrailblazerGenderedKey,
 } from '@genshin-optimizer/sr/consts'
 import type { Rank } from '@genshin-optimizer/sr/dm'
@@ -53,4 +54,35 @@ export function getInterpolateObject(
 
 export function getLightConeStat(lcKey: LightConeKey) {
   return allStats.lightCone[lcKey]
+}
+
+export function getCharStatBoostStatKey(
+  ck: NonTrailblazerCharacterKey | TrailblazerGenderedKey,
+  bonusStats: StatBoostKey | `${StatBoostKey}`
+) {
+  return getCharStatBoostStat(ck, bonusStats).statKey
+}
+
+export function getCharStatBoostStatValue(
+  ck: NonTrailblazerCharacterKey | TrailblazerGenderedKey,
+  bonusStats: StatBoostKey | `${StatBoostKey}`
+) {
+  return getCharStatBoostStat(ck, bonusStats).value
+}
+
+export function getCharStatBoostStat(
+  ck: NonTrailblazerCharacterKey | TrailblazerGenderedKey,
+  bonusStats: StatBoostKey | `${StatBoostKey}`
+) {
+  const [statKey, value] = Object.entries(
+    getCharStatBoost(ck, bonusStats).levels![0].stats ?? {}
+  )[0]
+  return { statKey, value }
+}
+export function getCharStatBoost(
+  ck: NonTrailblazerCharacterKey | TrailblazerGenderedKey,
+  bonusStats: StatBoostKey | `${StatBoostKey}`
+) {
+  const { skillTree } = getCharStat(ck)
+  return skillTree[`statBoost${bonusStats}`]
 }

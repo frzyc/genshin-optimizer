@@ -1,3 +1,4 @@
+import type { DropdownButtonProps } from '@genshin-optimizer/common/ui'
 import { DropdownButton } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
 import {
@@ -11,11 +12,13 @@ import { MenuItem } from '@mui/material'
 type AbilityDropdownProps = {
   characterKey: CharacterKey | ''
   abilityKey: Exclude<AbilityKey, 'technique' | 'overworld'>
+  dropDownButtonProps?: Omit<DropdownButtonProps, 'title' | 'children'>
 }
 
 export function AbilityDropdown({
   characterKey,
   abilityKey,
+  dropDownButtonProps = {},
 }: AbilityDropdownProps) {
   const character = useCharacter(characterKey)
   const { database } = useDatabaseContext()
@@ -26,6 +29,7 @@ export function AbilityDropdown({
     <DropdownButton
       title={`${displayName} Lv. ${character?.[abilityKey] ?? 1}`}
       disabled={!character}
+      {...dropDownButtonProps}
     >
       {!!characterKey &&
         range(1, allAbilityLimits[abilityKey][character?.ascension ?? 0]).map(
