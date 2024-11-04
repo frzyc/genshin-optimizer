@@ -1,6 +1,6 @@
-import type { CharacterKey, TrailblazerKey } from '@genshin-optimizer/sr/consts'
+import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
-  allTrailblazerKeys,
+  isTrailblazerKey,
   type LightConeKey,
   type NonTrailblazerCharacterKey,
   type RelicSetKey,
@@ -37,9 +37,9 @@ export function characterAsset(
 export function characterKeyToGenderedKey(
   ck: CharacterKey
 ): NonTrailblazerCharacterKey | TrailblazerGenderedKey {
-  if (allTrailblazerKeys.includes(ck as TrailblazerKey)) {
+  if (isTrailblazerKey(ck)) {
     // TODO: implement gender
-    return `${ck}F` as TrailblazerGenderedKey | NonTrailblazerCharacterKey
+    return `${ck}F` as TrailblazerGenderedKey
   } else {
     return ck as NonTrailblazerCharacterKey
   }

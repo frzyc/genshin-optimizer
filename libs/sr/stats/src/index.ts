@@ -74,9 +74,16 @@ export function getCharStatBoostStat(
   ck: NonTrailblazerCharacterKey | TrailblazerGenderedKey,
   bonusStats: StatBoostKey | `${StatBoostKey}`
 ) {
-  const [statKey, value] = Object.entries(
-    getCharStatBoost(ck, bonusStats).levels![0].stats ?? {}
-  )[0]
+  const boost = getCharStatBoost(ck, bonusStats)
+  const levels = boost.levels
+  if (!levels?.length) {
+    throw new Error(`No stat boost levels found for character ${ck}`)
+  }
+  const entries = Object.entries(levels[0].stats ?? {})
+  if (!entries.length) {
+    throw new Error(`No stats found in stat boost for character ${ck}`)
+  }
+  const [statKey, value] = entries[0]
   return { statKey, value }
 }
 export function getCharStatBoost(
