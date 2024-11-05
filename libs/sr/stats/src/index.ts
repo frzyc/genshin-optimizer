@@ -1,7 +1,7 @@
 import type {
+  CharacterGenderedKey,
   LightConeKey,
-  NonTrailblazerCharacterKey,
-  TrailblazerGenderedKey,
+  StatBoostKey,
 } from '@genshin-optimizer/sr/consts'
 import type { Rank } from '@genshin-optimizer/sr/dm'
 import { allStats } from './allStats'
@@ -15,9 +15,7 @@ export type {
 } from './executors/gen-stats/executor'
 export { allStats, mappedStats }
 
-export function getCharStat(
-  ck: NonTrailblazerCharacterKey | TrailblazerGenderedKey
-) {
+export function getCharStat(ck: CharacterGenderedKey) {
   return allStats.char[ck]
 }
 
@@ -30,7 +28,7 @@ export function getCharStat(
  * @returns Interpolation object to be fed to translate function
  */
 export function getInterpolateObject(
-  ck: NonTrailblazerCharacterKey | TrailblazerGenderedKey,
+  ck: CharacterGenderedKey,
   skType: 'basic' | 'skill' | 'ult' | 'talent' | 'technique' | 'eidolon',
   skLevel: number,
   skIndex = 0
@@ -53,4 +51,42 @@ export function getInterpolateObject(
 
 export function getLightConeStat(lcKey: LightConeKey) {
   return allStats.lightCone[lcKey]
+}
+
+export function getCharStatBoostStatKey(
+  ck: CharacterGenderedKey,
+  bonusStats: StatBoostKey | `${StatBoostKey}`
+) {
+  return getCharStatBoostStat(ck, bonusStats).statKey
+}
+
+export function getCharStatBoostStatValue(
+  ck: CharacterGenderedKey,
+  bonusStats: StatBoostKey | `${StatBoostKey}`
+) {
+  return getCharStatBoostStat(ck, bonusStats).value
+}
+
+export function getCharStatBoostStat(
+  ck: CharacterGenderedKey,
+  bonusStats: StatBoostKey | `${StatBoostKey}`
+) {
+  const boost = getCharStatBoost(ck, bonusStats)
+  const levels = boost.levels
+  if (!levels?.length) {
+    throw new Error(`No stat boost levels found for character ${ck}`)
+  }
+  const entries = Object.entries(levels[0].stats ?? {})
+  if (!entries.length) {
+    throw new Error(`No stats found in stat boost for character ${ck}`)
+  }
+  const [statKey, value] = entries[0]
+  return { statKey, value }
+}
+export function getCharStatBoost(
+  ck: CharacterGenderedKey,
+  bonusStats: StatBoostKey | `${StatBoostKey}`
+) {
+  const { skillTree } = getCharStat(ck)
+  return skillTree[`statBoost${bonusStats}`]
 }

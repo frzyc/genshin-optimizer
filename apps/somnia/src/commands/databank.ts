@@ -13,7 +13,7 @@ import { error } from '../lib/message'
 import { cwd } from '../lib/util'
 
 import type {
-  CharacterDataKey,
+  CharacterGenderedKey,
   LightConeKey,
   RelicSetKey,
 } from '@genshin-optimizer/sr/consts'
@@ -179,7 +179,7 @@ export function databankMessage(subcommand: string, id: string, arg: string) {
   if (!(id in databank[subcommand])) throw `Invalid ${subcommand} name.`
   //character archive
   if (subcommand === 'char') {
-    return charBank(id as CharacterDataKey, name, data, arg)
+    return charBank(id as CharacterGenderedKey, name, data, arg)
   }
   //weapons archive
   else if (subcommand === 'lightcone') {

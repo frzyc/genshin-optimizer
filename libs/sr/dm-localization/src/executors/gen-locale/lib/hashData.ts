@@ -1,6 +1,6 @@
 import { verifyObjKeys } from '@genshin-optimizer/common/util'
 import {
-  allCharacterDataKeys,
+  allCharacterGenderedKeys,
   allLightConeKeys,
   allRelicSetKeys,
 } from '@genshin-optimizer/sr/consts'
@@ -14,7 +14,7 @@ export type LanguageData = typeof HashData
 const charNames = Object.fromEntries(
   Object.entries(allCharHashData).map(([key, data]) => [key, data.name])
 )
-verifyObjKeys(charNames, allCharacterDataKeys)
+verifyObjKeys(charNames, allCharacterGenderedKeys)
 
 const relicNames = Object.fromEntries(
   Object.entries(allRelicHashData).map(([key, data]) => [key, data.setName])

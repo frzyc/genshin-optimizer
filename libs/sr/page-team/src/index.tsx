@@ -11,6 +11,7 @@ import {
   SrcDstDisplayContext,
   TagContext,
 } from '@genshin-optimizer/pando/ui-sheet'
+import { characterKeyToGenderedKey } from '@genshin-optimizer/sr/assets'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
   CharacterContext,
@@ -127,7 +128,7 @@ function Page({ teamId }: { teamId: string }) {
       .map(({ characterKey }) => characterKey)
     if (characterKey) moveToFront(charList, characterKey as CharacterKey)
     const charDisplay = objKeyMap(charList, (ck) => (
-      <CharacterName characterKey={ck} />
+      <CharacterName genderedKey={characterKeyToGenderedKey(ck)} />
     ))
     return { srcDisplay: charDisplay, dstDisplay: charDisplay }
   }, [team.teamMetadata, characterKey])

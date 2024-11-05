@@ -21,8 +21,8 @@ import {
 import type { FormEventHandler } from 'react'
 import { memo, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { EquipRow } from '../BuildsDisplay'
 import { useTeamContext } from '../context'
-import { GeneratedBuildDisplay } from './GeneratedBuildDisplay'
 import { OptConfigContext } from './OptConfigWrapper'
 
 function useGeneratedBuildList(listId: string) {
@@ -58,8 +58,10 @@ const GeneratedBuildsDisplay = memo(function GeneratedBuildsDisplay() {
               </Typography>
               <NewBuildButton build={build} />
             </Box>
-
-            <GeneratedBuildDisplay build={build.relicIds} />
+            <EquipRow
+              relicIds={build.relicIds}
+              lightConeId={build.lightConeId}
+            />
           </CardContent>
         </CardThemed>
       ))}

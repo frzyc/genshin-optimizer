@@ -37,6 +37,7 @@ import {
 import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete, StatDisplay } from '../Character'
+import { LocationName } from '../Components'
 import { RelicSetName } from './RelicTrans'
 import { relicLevelVariant } from './util'
 
@@ -250,8 +251,7 @@ export function RelicCard({
             {setLocation ? (
               <LocationAutocomplete locKey={location} setLocKey={setLocation} />
             ) : (
-              // TODO: replace with LocationName component after porting it from GO
-              <Typography>{location}</Typography>
+              <LocationName location={location} />
             )}
           </Box>
           <Box

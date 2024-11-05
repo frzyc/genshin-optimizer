@@ -25,9 +25,10 @@ import {
   Skeleton,
   Typography,
 } from '@mui/material'
-import { Suspense } from 'react'
+import { Suspense, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete, StatDisplay } from '../Character'
+import { LocationName } from '../Components'
 import { LightConeName } from './LightConeTrans'
 
 export type LightConeCardProps = {
@@ -54,7 +55,10 @@ export function LightConeCard({
   const { t } = useTranslation(['lightCone', 'lightCones_gen', 'common_gen'])
 
   const { key, level, ascension, superimpose, location = '', lock } = lightCone
-  const calc = srCalculatorWithEntries(lightConeData(lightCone))
+  const calc = useMemo(
+    () => srCalculatorWithEntries(lightConeData(lightCone)),
+    [lightCone]
+  )
   const lcStat = getLightConeStat(key)
 
   return (
@@ -165,8 +169,7 @@ export function LightConeCard({
                 disableClearable
               />
             ) : (
-              // TODO: replace with LocationName component after porting it from GO
-              <Typography>{location}</Typography>
+              <LocationName location={location} />
             )}
           </Box>
           <Box
