@@ -241,7 +241,7 @@ function BoolConditional({
 function ListConditional({
   conditional,
   setValue,
-  value: value,
+  value,
   disabled,
 }: ConditionalProps) {
   const calc = useContext(CalcContext)
@@ -370,7 +370,7 @@ function CondSrcDst<S extends string, D extends string>({
     <Box display="flex" alignItems="center" justifyContent="space-between">
       {setSrc ? (
         <SrcDstDropDown
-          target={src ?? (Object.keys(srcDisplay)[0] as S)}
+          target={src ?? Object.keys(srcDisplay)[0]}
           targetMap={srcDisplay}
           onChange={setSrc}
         />
@@ -380,7 +380,7 @@ function CondSrcDst<S extends string, D extends string>({
       <ArrowRightAltIcon />
       {setDst ? (
         <SrcDstDropDown
-          target={dst ?? (Object.keys(srcDisplay)[0] as D)}
+          target={dst ?? Object.keys(dstDisplay)[0]}
           targetMap={dstDisplay}
           onChange={setDst}
         />

@@ -122,15 +122,13 @@ function Page({ teamId }: { teamId: string }) {
     }
   }, [teammateDatum, team, teamId])
   const srcDstDisplayContextValue = useMemo(() => {
-    const charDisplay = objKeyMap(
-      moveToFront(
-        team.teamMetadata
-          .filter(notEmpty)
-          .map(({ characterKey }) => characterKey),
-        characterKey as CharacterKey
-      ),
-      (ck) => <CharacterName characterKey={ck} />
-    )
+    const charList = team.teamMetadata
+      .filter(notEmpty)
+      .map(({ characterKey }) => characterKey)
+    if (characterKey) moveToFront(charList, characterKey as CharacterKey)
+    const charDisplay = objKeyMap(charList, (ck) => (
+      <CharacterName characterKey={ck} />
+    ))
     return { srcDisplay: charDisplay, dstDisplay: charDisplay }
   }, [team.teamMetadata, characterKey])
   const conditionals = useMemo(
