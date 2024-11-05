@@ -1,8 +1,11 @@
 import { verifyObjKeys } from '@genshin-optimizer/common/util'
-import type { AbilityKey, CharacterDataKey } from '@genshin-optimizer/sr/consts'
+import type {
+  AbilityKey,
+  CharacterGenderedKey,
+} from '@genshin-optimizer/sr/consts'
 import {
   allAbilityKeys,
-  allCharacterDataKeys,
+  allCharacterGenderedKeys,
   allTrailblazerGenderedKeys,
 } from '@genshin-optimizer/sr/consts'
 import type { AvatarSkillTreeConfig, Rank } from '@genshin-optimizer/sr/dm'
@@ -115,7 +118,7 @@ const charArray = Object.entries(avatarConfig).map(([charId, charConfig]) => {
   const ranks = Object.fromEntries(rankArray)
   verifyObjKeys(ranks, ['1', '2', '3', '4', '5', '6'] as const)
 
-  const tuple: [CharacterDataKey, CharData] = [
+  const tuple: [CharacterGenderedKey, CharData] = [
     charKey,
     {
       name,
@@ -127,5 +130,5 @@ const charArray = Object.entries(avatarConfig).map(([charId, charConfig]) => {
 })
 
 const data = Object.fromEntries(charArray)
-verifyObjKeys(data, allCharacterDataKeys)
+verifyObjKeys(data, allCharacterGenderedKeys)
 export const allCharHashData = data

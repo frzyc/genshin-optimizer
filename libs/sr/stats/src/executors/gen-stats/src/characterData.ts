@@ -4,9 +4,9 @@ import {
   transposeArray,
   verifyObjKeys,
 } from '@genshin-optimizer/common/util'
-import type { CharacterDataKey } from '@genshin-optimizer/sr/consts'
+import type { CharacterGenderedKey } from '@genshin-optimizer/sr/consts'
 import {
-  allCharacterDataKeys,
+  allCharacterGenderedKeys,
   type AbilityKey,
   type ElementalTypeKey,
   type PathKey,
@@ -72,7 +72,7 @@ export type CharacterDatum = {
   rankMap: RankInfoMap
 }
 
-export type CharacterData = Record<CharacterDataKey, CharacterDatum>
+export type CharacterData = Record<CharacterGenderedKey, CharacterDatum>
 export default function characterData(): CharacterData {
   const data = Object.fromEntries(
     Object.entries(avatarConfig).map(
@@ -201,7 +201,7 @@ export default function characterData(): CharacterData {
     )
   )
 
-  verifyObjKeys(data, allCharacterDataKeys)
+  verifyObjKeys(data, allCharacterGenderedKeys)
 
   return data
 }

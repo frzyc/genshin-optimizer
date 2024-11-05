@@ -1,4 +1,5 @@
 export * from './LightConeCard'
+export * from './LightConeCardCompact'
 export * from './LightConeEditor'
 export * from './LightConeInventory'
 export * from './LightConeTrans'
