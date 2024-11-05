@@ -25,12 +25,10 @@ import {
   Typography,
 } from '@mui/material'
 import { useMemo, useState } from 'react'
-import { BonusStats } from './BonusStats'
 import { BuildGridBase, BuildsDisplay } from './BuildsDisplay'
 import { ComboEditor } from './ComboEditor'
 import { useTeamContext } from './context'
 import Optimize from './Optimize'
-import { RelicSheetsDisplay } from './RelicSheetsDisplay'
 import CharacterTalentPane from './TalentContent'
 
 export default function TeammateDisplay() {
@@ -43,37 +41,29 @@ export default function TeammateDisplay() {
   )
 
   return (
-    <Box>
-      <CharacterEditor
-        characterKey={editorKey}
-        onClose={() => setCharacterKey(undefined)}
-      />
+    <Stack gap={1}>
       <Box sx={{ display: 'flex', gap: 1 }}>
         <Box sx={{ minWidth: '350px' }}>
           <CharacterCard character={character!} />
+          <CharacterEditor
+            characterKey={editorKey}
+            onClose={() => setCharacterKey(undefined)}
+          />
+          <Button
+            fullWidth
+            disabled={!characterKey}
+            onClick={() => characterKey && setCharacterKey(characterKey)}
+          >
+            Edit Character
+          </Button>
         </Box>
         <CurrentBuildDisplay />
       </Box>
-
-      <Stack gap={1} pt={1}>
-        <ComboEditor />
-        <CardThemed bgt="dark">
-          <CardContent>
-            <Button
-              disabled={!characterKey}
-              onClick={() => characterKey && setCharacterKey(characterKey)}
-            >
-              Edit Character
-            </Button>
-            <BonusStats />
-            <RelicConditionals />
-            <CalcDebug />
-          </CardContent>
-        </CardThemed>
-        <CharacterTalentPane />
-        <Optimize />
-      </Stack>
-    </Box>
+      <ComboEditor />
+      <CalcDebug />
+      <CharacterTalentPane />
+      <Optimize />
+    </Stack>
   )
 }
 function CurrentBuildDisplay() {
@@ -123,92 +113,85 @@ function BuildsModal({
     </ModalWrapper>
   )
 }
-function RelicConditionals() {
-  const [show, onShow, onHide] = useBoolState()
-  return (
-    <>
-      {/* TODO: translation */}
-      <Button onClick={onShow}>Relic Conditionals</Button>
-      <ModalWrapper open={show} onClose={onHide}>
-        <RelicSheetsDisplay />
-      </ModalWrapper>
-    </>
-  )
-}
+
 function CalcDebug() {
   const calc = useSrCalcContext()
   return (
-    <>
-      <Accordion>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          All target listings
-        </AccordionSummary>
-        <AccordionDetails>
-          <Stack>
-            {calc?.listFormulas(own.listing.formulas).map((read, index) => {
-              const computed = calc.compute(read)
-              const name = read.tag.name || read.tag.q
-              return (
-                <Box key={`${name}${index}`}>
-                  <Typography>
-                    {name}: {computed.val}
-                  </Typography>
-                  <Accordion>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                      debug for {name}
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      conds: {JSON.stringify(computed.meta.conds, undefined, 2)}
-                      <Typography component="pre">
-                        {JSON.stringify(
-                          calc.toDebug().compute(read),
-                          undefined,
-                          2
-                        )}
-                      </Typography>
-                    </AccordionDetails>
-                  </Accordion>
-                </Box>
-              )
-            })}
-          </Stack>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          All target buffs
-        </AccordionSummary>
-        <AccordionDetails>
-          <Stack>
-            {calc?.listFormulas(own.listing.buffs).map((read, index) => {
-              const computed = calc.compute(read)
-              const name = read.tag.name || read.tag.q
-              return (
-                <Box key={`${name}${index}`}>
-                  <Typography>
-                    {name}: {computed.val}
-                  </Typography>
-                  <Accordion>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                      debug for {name}
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      conds: {JSON.stringify(computed.meta.conds, undefined, 2)}
-                      <Typography component="pre">
-                        {JSON.stringify(
-                          calc.toDebug().compute(read),
-                          undefined,
-                          2
-                        )}
-                      </Typography>
-                    </AccordionDetails>
-                  </Accordion>
-                </Box>
-              )
-            })}
-          </Stack>
-        </AccordionDetails>
-      </Accordion>
-    </>
+    <CardThemed bgt="dark">
+      <CardContent>
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            All target listings
+          </AccordionSummary>
+          <AccordionDetails>
+            <Stack>
+              {calc?.listFormulas(own.listing.formulas).map((read, index) => {
+                const computed = calc.compute(read)
+                const name = read.tag.name || read.tag.q
+                return (
+                  <Box key={`${name}${index}`}>
+                    <Typography>
+                      {name}: {computed.val}
+                    </Typography>
+                    <Accordion>
+                      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                        debug for {name}
+                      </AccordionSummary>
+                      <AccordionDetails>
+                        conds:{' '}
+                        {JSON.stringify(computed.meta.conds, undefined, 2)}
+                        <Typography component="pre">
+                          {JSON.stringify(
+                            calc.toDebug().compute(read),
+                            undefined,
+                            2
+                          )}
+                        </Typography>
+                      </AccordionDetails>
+                    </Accordion>
+                  </Box>
+                )
+              })}
+            </Stack>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            All target buffs
+          </AccordionSummary>
+          <AccordionDetails>
+            <Stack>
+              {calc?.listFormulas(own.listing.buffs).map((read, index) => {
+                const computed = calc.compute(read)
+                const name = read.tag.name || read.tag.q
+                return (
+                  <Box key={`${name}${index}`}>
+                    <Typography>
+                      {name}: {computed.val}
+                    </Typography>
+                    <Accordion>
+                      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                        debug for {name}
+                      </AccordionSummary>
+                      <AccordionDetails>
+                        conds:{' '}
+                        {JSON.stringify(computed.meta.conds, undefined, 2)}
+                        <Typography component="pre">
+                          {JSON.stringify(
+                            calc.toDebug().compute(read),
+                            undefined,
+                            2
+                          )}
+                        </Typography>
+                      </AccordionDetails>
+                    </Accordion>
+                  </Box>
+                )
+              })}
+            </Stack>
+          </AccordionDetails>
+        </Accordion>
+      </CardContent>
+    </CardThemed>
   )
 }
