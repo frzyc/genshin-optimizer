@@ -1,3 +1,4 @@
+import type { IConditionalData } from '@genshin-optimizer/common/formula'
 import {
   objKeyMap,
   pruneOrPadArray,
@@ -9,7 +10,12 @@ import {
   allCharacterKeys,
   allRelicSlotKeys,
 } from '@genshin-optimizer/sr/consts'
-import type { Member, Sheet, Tag } from '@genshin-optimizer/sr/formula'
+import {
+  conditionals,
+  type Member,
+  type Sheet,
+  type Tag,
+} from '@genshin-optimizer/sr/formula'
 import type { RelicIds } from '../../Types'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
@@ -170,16 +176,30 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       bonusStats = []
     } else {
       if (!Array.isArray(conditionals)) conditionals = []
-      conditionals = conditionals.filter(({ src, dst, condValues }) => {
-        // TODO: validate conditionals src dst condKey
-        if (!allCharacterKeys.includes(src as CharacterKey)) return false
-        if (!allCharacterKeys.includes(dst as CharacterKey)) return false
-        if (!Array.isArray(condValues)) return false
-        pruneOrPadArray(condValues, framesLength, 0)
-        // If all values are false, remove the conditional
-        if (condValues.every((v) => !v)) return false
-        return true
-      })
+      const hashList: string[] = [] // a hash to ensure sheet:condKey:src:dst is unique
+      conditionals = conditionals.filter(
+        ({ sheet, condKey, src, dst, condValues }) => {
+          const cond = getConditional(sheet, condKey)
+          if (!cond) return false
+          // TODO: handle src/dst 'all'
+          if (!allCharacterKeys.includes(src as CharacterKey)) return false
+          if (!allCharacterKeys.includes(dst as CharacterKey)) return false
+
+          // validate uniqueness
+          const hash = `${sheet}:${condKey}:${src}:${dst}`
+          if (hashList.includes(hash)) return false
+          hashList.push(hash)
+
+          // validate values
+          if (!Array.isArray(condValues)) return false
+          pruneOrPadArray(condValues, framesLength, 0)
+          condValues = condValues.map((v) => correctConditionalValue(cond, v))
+          // If all values are false, remove the conditional
+          if (condValues.every((v) => !v)) return false
+
+          return true
+        }
+      )
 
       if (!Array.isArray(bonusStats)) bonusStats = []
       bonusStats = bonusStats.filter(({ tag, values }) => {
@@ -488,4 +508,28 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       }
     })
   }
+}
+
+export function getConditional(sheet: Sheet, condKey: string) {
+  return (conditionals as any)[sheet]?.[condKey] as IConditionalData | undefined
+}
+function correctConditionalValue(conditional: IConditionalData, value: number) {
+  if (conditional.type === 'bool') {
+    return +!!value
+  } else if (conditional.type === 'num') {
+    if (conditional.int_only && !Number.isInteger(value)) {
+      value = Math.round(value)
+    }
+    if (conditional.min !== undefined && value < conditional.min)
+      value = conditional.min
+    if (conditional.max !== undefined && value > conditional.max)
+      value = conditional.max
+  } else if (conditional.type === 'list') {
+    if (!Number.isInteger(value)) {
+      value = Math.round(value)
+    }
+    if (value < 0) value = 0
+    if (value > conditional.list.length - 1) value = conditional.list.length - 1
+  }
+  return value
 }
