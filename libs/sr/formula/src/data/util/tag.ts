@@ -227,7 +227,7 @@ const condMeta = Symbol.for('condMeta')
 type CondIgnored = 'both' | 'src' | 'dst' | 'none'
 function allConditionals<T>(
   sheet: Sheet,
-  shared: CondIgnored = 'src',
+  shared: CondIgnored = 'none',
   meta: IBaseConditionalData,
   transform: (r: Read, q: string) => T
 ): Record<string, T> {
