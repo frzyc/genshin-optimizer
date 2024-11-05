@@ -110,9 +110,10 @@ function useCharacterAndEquipment(
 ): CharacterFullData | undefined {
   const character = useCharacter(meta?.characterKey)
   // TODO: Handle tc build
+  // TODO: Handle equipped build
   const build = useBuild(meta?.buildId)
   const lightCone = useLightCone(build?.lightConeId)
-  const relics = useRelics(build?.relicIds)
+  const relics = useRelics(build?.relicIds ?? character?.equippedRelics) // TODO: Temporary for testing
   return useMemo(
     () => ({
       character,
