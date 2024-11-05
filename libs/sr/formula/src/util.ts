@@ -5,10 +5,8 @@ import {
   allStatBoostKeys,
 } from '@genshin-optimizer/sr/consts'
 import type { ICharacter, ILightCone } from '@genshin-optimizer/sr/srod'
-import type { SrcCondInfo } from './calculator'
 import type { Member, Preset, TagMapNodeEntries } from './data/util'
 import {
-  conditionalEntries,
   convert,
   getStatFromStatKey,
   own,
@@ -172,23 +170,4 @@ export function teamData(members: readonly Member[]): TagMapNodeEntries {
     // must use `sum` accumulator for a correct result.
     members.map((src) => teamEntry.add(reader.withTag({ src, et: 'own' }).sum)),
   ].flat()
-}
-
-/**
- * Generate conditional TagMapNodeEntry for calculator. Should be provided outside of any member data, in order to preserve specified 'src'
- * @param dst member to apply conditionals to
- * @param data conditional data in `Src: { Sheet: { CondKey: value } }` format. Src can be 'all', unless the buff is possibly duplicated (e.g. relic team buff). In that case, you should specify the src member, if you want to select which one to apply.
- * @returns
- */
-export function conditionalData(
-  dst: Member | 'all',
-  data: SrcCondInfo | undefined
-) {
-  if (!data) return []
-  return Object.entries(data).flatMap(([src, entries]) =>
-    Object.entries(entries).flatMap(([sheet, entries]) => {
-      const conds = conditionalEntries(sheet, src, dst)
-      return Object.entries(entries).map(([k, v]) => conds(k, v))
-    })
-  )
 }
