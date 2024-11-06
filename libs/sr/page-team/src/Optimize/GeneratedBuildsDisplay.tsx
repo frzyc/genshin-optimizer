@@ -110,7 +110,7 @@ function NewBuildButton({
         startIcon={<CheckroomIcon />}
         onClick={onShowPrompt}
       >
-        {t`createBuildReal.button`}
+        {t('createBuildReal.button')}
       </Button>
       {/* TODO: Dialog Wanted to use a Dialog here, but was having some weird issues with closing out of it */}
       <ModalWrapper
@@ -120,7 +120,7 @@ function NewBuildButton({
       >
         <CardThemed>
           <CardHeader
-            title={t`createBuildReal.title`}
+            title={t('createBuildReal.title')}
             action={
               <IconButton onClick={OnHidePrompt}>
                 <CloseIcon />
@@ -131,7 +131,7 @@ function NewBuildButton({
           <CardContent
             sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
           >
-            <Typography>{t`createBuildReal.desc`}</Typography>
+            <Typography>{t('createBuildReal.desc')}</Typography>
             <Box display="flex" alignItems="center" sx={{ ml: -1 }}>
               <Checkbox
                 size="small"
@@ -148,15 +148,15 @@ function NewBuildButton({
                 onChange={(e) => setName(e.target.value)}
                 autoFocus
                 margin="dense"
-                label={t`createBuildReal.label`}
+                label={t('createBuildReal.label')}
                 fullWidth
               />
               <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 1 }}>
-                <Button
-                  onClick={OnHidePrompt}
-                >{t`createBuildReal.cancel`}</Button>
+                <Button onClick={OnHidePrompt}>
+                  {t('createBuildReal.cancel')}
+                </Button>
                 <Button type="submit" color="success" disabled={!name}>
-                  {t`createBuildReal.create`}
+                  {t('createBuildReal.create')}
                 </Button>
               </Box>
             </form>
