@@ -23,7 +23,7 @@ export function LightConeSheetDisplay({ lcKey }: { lcKey: LightConeKey }) {
         <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
           <Box
             component={NextImage ? NextImage : 'img'}
-            alt="Relic Piece Image"
+            alt="Light Cone Cover Image"
             src={lightConeAsset(lcKey, 'cover')}
             sx={{
               maxHeight: '5em',
