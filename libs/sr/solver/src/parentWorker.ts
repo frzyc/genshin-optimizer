@@ -5,7 +5,12 @@ import {
   allRelicSlotKeys,
   type RelicSlotKey,
 } from '@genshin-optimizer/sr/consts'
-import type { ICachedRelic } from '@genshin-optimizer/sr/db'
+import type { ICachedLightCone, ICachedRelic } from '@genshin-optimizer/sr/db'
+import {
+  lightConeData,
+  own,
+  srCalculatorWithEntries,
+} from '@genshin-optimizer/sr/formula'
 import { getRelicMainStatVal } from '@genshin-optimizer/sr/util'
 import type { ChildCommandInit, ChildMessage } from './childWorker'
 import { MAX_BUILDS } from './common'
@@ -15,6 +20,7 @@ let workers: Worker[]
 
 export interface ParentCommandStart {
   command: 'start'
+  lightCones: ICachedLightCone[]
   relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
   detachedNodes: NumTagFree[]
   constraints: Array<{ value: number; isMax: boolean }>
@@ -53,6 +59,10 @@ export type RelicStats = {
   id: string
   stats: Record<string, number>
 }
+export type LightConeStats = {
+  id: string
+  stats: Record<string, number>
+}
 
 // Get proper typings for posting a message back to main thread
 declare function postMessage(message: ParentMessage): void
@@ -81,6 +91,7 @@ async function handleEvent(e: MessageEvent<ParentCommand>): Promise<void> {
 }
 
 async function start({
+  lightCones,
   relicsBySlot,
   detachedNodes,
   constraints,
@@ -89,7 +100,7 @@ async function start({
   // Step 3: Optimize nodes, as needed
   detachedNodes = flatten(detachedNodes)
   detachedNodes = combineConst(detachedNodes)
-
+  const lightConeStats = lightCones.map(convertLightConeToStats)
   const relicStatsBySlot = objKeyMap(allRelicSlotKeys, (slot) =>
     relicsBySlot[slot].map(convertRelicToStats)
   )
@@ -172,6 +183,7 @@ async function start({
         // Initialize worker
         const message: ChildCommandInit = {
           command: 'init',
+          lightConeStats,
           relicStatsBySlot: chunkedRelicStatsBySlot[index],
           detachedNodes,
           constraints,
@@ -213,6 +225,21 @@ function convertRelicToStats(relic: ICachedRelic): RelicStats {
         relic.substats.map((substat) => [substat.key, substat.value])
       ),
       [relic.setKey]: 1,
+    },
+  }
+}
+
+function convertLightConeToStats(lightCone: ICachedLightCone): LightConeStats {
+  const calc = srCalculatorWithEntries(lightConeData(lightCone))
+
+  return {
+    id: lightCone.id,
+    stats: {
+      ...objKeyMap(
+        ['hp', 'atk', 'def'] as const,
+        (stat) => calc.compute(own.base[stat].with('sheet', 'lightCone')).val
+      ),
+      [lightCone.key]: 1,
     },
   }
 }

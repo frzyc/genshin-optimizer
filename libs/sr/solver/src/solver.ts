@@ -1,7 +1,12 @@
 import { detach, sum } from '@genshin-optimizer/pando/engine'
 import type { CharacterKey, RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { allRelicSetKeys } from '@genshin-optimizer/sr/consts'
-import type { ICachedRelic, StatFilter, Team } from '@genshin-optimizer/sr/db'
+import type {
+  ICachedLightCone,
+  ICachedRelic,
+  StatFilter,
+  Team,
+} from '@genshin-optimizer/sr/db'
 import {
   Read,
   type Calculator,
@@ -16,7 +21,8 @@ import type {
 
 export interface BuildResult {
   value: number
-  ids: Record<RelicSlotKey, string>
+  lightConeId: string
+  relicIds: Record<RelicSlotKey, string>
 }
 
 export interface ProgressResult {
@@ -28,6 +34,7 @@ export class Solver {
   private calc: Calculator
   private frames: Team['frames']
   private statFilters: Array<Omit<StatFilter, 'disabled'>>
+  private lightCones: ICachedLightCone[]
   private relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
   private numWorkers: number
   private setProgress: (progress: ProgressResult) => void
@@ -39,6 +46,7 @@ export class Solver {
     calc: Calculator,
     frames: Team['frames'],
     statFilters: Array<Omit<StatFilter, 'disabled'>>,
+    lightCones: ICachedLightCone[],
     relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>,
     numWorkers: number,
     setProgress: (progress: ProgressResult) => void
@@ -47,6 +55,7 @@ export class Solver {
     this.calc = calc
     this.frames = frames
     this.statFilters = statFilters
+    this.lightCones = lightCones
     this.relicsBySlot = relicsBySlot
     this.numWorkers = numWorkers
     this.setProgress = setProgress
@@ -78,6 +87,7 @@ export class Solver {
       // Start worker
       const message: ParentCommandStart = {
         command: 'start',
+        lightCones: this.lightCones,
         relicsBySlot: this.relicsBySlot,
         detachedNodes: this.detachNodes(),
         constraints: this.statFilters.map(({ value, isMax }) => ({

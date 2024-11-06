@@ -2,16 +2,18 @@ import type { NumTagFree } from '@genshin-optimizer/pando/engine'
 import { compile } from '@genshin-optimizer/pando/engine'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { MAX_BUILDS } from './common'
-import type { RelicStats } from './parentWorker'
+import type { LightConeStats, RelicStats } from './parentWorker'
 import type { BuildResult } from './solver'
 
 const MAX_BUILDS_TO_SEND = 200_000
 let compiledCalcFunction: (relicStats: RelicStats['stats'][]) => number[]
+let lightConeStats: LightConeStats[]
 let relicStatsBySlot: Record<RelicSlotKey, RelicStats[]>
 let constraints: Array<{ value: number; isMax: boolean }> = []
 
 export interface ChildCommandInit {
   command: 'init'
+  lightConeStats: LightConeStats[]
   relicStatsBySlot: Record<RelicSlotKey, RelicStats[]>
   constraints: Array<{ value: number; isMax: boolean }>
   detachedNodes: NumTagFree[]
@@ -71,6 +73,7 @@ async function handleEvent(e: MessageEvent<ChildCommand>): Promise<void> {
 
 // Create compiledCalcFunction
 async function init({
+  lightConeStats: lcs,
   relicStatsBySlot: relics,
   detachedNodes: combinedNodes,
   constraints: initCons,
@@ -83,6 +86,7 @@ async function init({
     {} // Initial values
     // Header; includes custom formulas, such as `res`
   )
+  lightConeStats = lcs
   relicStatsBySlot = relics
   constraints = initCons
 
@@ -109,44 +113,47 @@ async function start() {
     builds = []
     skipped = 0
   }
-
-  relicStatsBySlot.head.forEach((head) => {
-    relicStatsBySlot.hands.forEach((hands) => {
-      relicStatsBySlot.feet.forEach((feet) => {
-        relicStatsBySlot.body.forEach((body) => {
-          relicStatsBySlot.sphere.forEach((sphere) => {
-            relicStatsBySlot.rope.forEach((rope) => {
-              // Step 5: Calculate the value
-              const results = compiledCalcFunction([
-                head.stats,
-                hands.stats,
-                feet.stats,
-                body.stats,
-                sphere.stats,
-                rope.stats,
-              ])
-              if (
-                constraints.every(({ value, isMax }, i) =>
-                  isMax ? results[i + 1] <= value : results[i + 1] >= value
-                )
-              ) {
-                builds.push({
-                  value: results[0], // We only pass 1 target to calculate, so just grab the 1st result
-                  ids: {
-                    head: head.id,
-                    hands: hands.id,
-                    feet: feet.id,
-                    body: body.id,
-                    sphere: sphere.id,
-                    rope: rope.id,
-                  },
-                })
-              } else {
-                skipped++
-              }
-              if (builds.length > MAX_BUILDS_TO_SEND) {
-                sliceSortSendBuilds()
-              }
+  lightConeStats.forEach((lightCone) => {
+    relicStatsBySlot.head.forEach((head) => {
+      relicStatsBySlot.hands.forEach((hands) => {
+        relicStatsBySlot.feet.forEach((feet) => {
+          relicStatsBySlot.body.forEach((body) => {
+            relicStatsBySlot.sphere.forEach((sphere) => {
+              relicStatsBySlot.rope.forEach((rope) => {
+                // Step 5: Calculate the value
+                const results = compiledCalcFunction([
+                  lightCone.stats,
+                  head.stats,
+                  hands.stats,
+                  feet.stats,
+                  body.stats,
+                  sphere.stats,
+                  rope.stats,
+                ])
+                if (
+                  constraints.every(({ value, isMax }, i) =>
+                    isMax ? results[i + 1] <= value : results[i + 1] >= value
+                  )
+                ) {
+                  builds.push({
+                    value: results[0], // We only pass 1 target to calculate, so just grab the 1st result
+                    lightConeId: lightCone.id,
+                    relicIds: {
+                      head: head.id,
+                      hands: hands.id,
+                      feet: feet.id,
+                      body: body.id,
+                      sphere: sphere.id,
+                      rope: rope.id,
+                    },
+                  })
+                } else {
+                  skipped++
+                }
+                if (builds.length > MAX_BUILDS_TO_SEND) {
+                  sliceSortSendBuilds()
+                }
+              })
             })
           })
         })
