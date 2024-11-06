@@ -113,3 +113,10 @@ export type EntryType = (typeof entryTypes)[number]
 export type Sheet = (typeof sheets)[number]
 export type Member = (typeof members)[number]
 export type Preset = (typeof presets)[number]
+
+export function isMember(x: string): x is Member {
+  return members.includes(x as Member)
+}
+export function isSheet(x: string): x is Sheet {
+  return sheets.includes(x as Sheet)
+}

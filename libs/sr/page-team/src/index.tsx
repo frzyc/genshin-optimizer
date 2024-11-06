@@ -12,14 +12,20 @@ import {
   TagContext,
 } from '@genshin-optimizer/pando/ui-sheet'
 import { characterKeyToGenderedKey } from '@genshin-optimizer/sr/assets'
-import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
   CharacterContext,
   useCharacter,
   useDatabaseContext,
   useTeam,
 } from '@genshin-optimizer/sr/db-ui'
-import type { Member, Preset, Sheet, Tag } from '@genshin-optimizer/sr/formula'
+import {
+  getConditional,
+  isMember,
+  isSheet,
+  type Preset,
+  type Sheet,
+  type Tag,
+} from '@genshin-optimizer/sr/formula'
 import { CharacterName } from '@genshin-optimizer/sr/ui'
 import { Box, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useEffect, useMemo, useState } from 'react'
@@ -126,7 +132,7 @@ function Page({ teamId }: { teamId: string }) {
     const charList = team.teamMetadata
       .filter(notEmpty)
       .map(({ characterKey }) => characterKey)
-    if (characterKey) moveToFront(charList, characterKey as CharacterKey)
+    if (characterKey) moveToFront(charList, characterKey)
     const charDisplay = objKeyMap(charList, (ck) => (
       <CharacterName genderedKey={characterKeyToGenderedKey(ck)} />
     ))
@@ -151,12 +157,16 @@ function Page({ teamId }: { teamId: string }) {
       dst: string,
       condValue: number
     ) => {
+      if (!isSheet(sheet) || !isMember(src) || !isMember(dst)) return
+      const cond = getConditional(sheet as Sheet, condKey)
+      if (!cond) return
+
       database.teams.setConditional(
         teamId,
-        sheet as Sheet,
+        sheet,
         condKey,
-        src as Member | 'all',
-        dst as Member | 'all',
+        src,
+        dst,
         condValue,
         presetIndex
       )

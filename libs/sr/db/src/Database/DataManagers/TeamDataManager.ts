@@ -11,7 +11,8 @@ import {
   allRelicSlotKeys,
 } from '@genshin-optimizer/sr/consts'
 import {
-  conditionals,
+  getConditional,
+  isMember,
   type Member,
   type Sheet,
   type Tag,
@@ -46,8 +47,8 @@ export interface Team {
   frames: Array<Tag>
   conditionals: Array<{
     sheet: Sheet
-    src: Member | 'all'
-    dst: Member | 'all'
+    src: Member
+    dst: Member
     condKey: string
     condValues: number[] // should be the same length as `frames`
   }>
@@ -179,11 +180,9 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       const hashList: string[] = [] // a hash to ensure sheet:condKey:src:dst is unique
       conditionals = conditionals.filter(
         ({ sheet, condKey, src, dst, condValues }) => {
+          if (!isMember(src) || !isMember(dst)) return false
           const cond = getConditional(sheet, condKey)
           if (!cond) return false
-          // TODO: handle src/dst 'all'
-          if (!allCharacterKeys.includes(src as CharacterKey)) return false
-          if (!allCharacterKeys.includes(dst as CharacterKey)) return false
 
           // validate uniqueness
           const hash = `${sheet}:${condKey}:${src}:${dst}`
@@ -397,8 +396,8 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     teamId: string,
     sheet: Sheet,
     condKey: string,
-    src: Member | 'all',
-    dst: Member | 'all',
+    src: Member,
+    dst: Member,
     condValue: number,
     frameIndex: number
   ) {
@@ -415,7 +414,6 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
         condIndex,
       })
       if (condIndex === -1) {
-        console.log('creating new conditional')
         const condValues = new Array(team.frames.length).fill(0)
         condValues[frameIndex] = condValue
         team.conditionals.push({
@@ -510,9 +508,6 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
   }
 }
 
-export function getConditional(sheet: Sheet, condKey: string) {
-  return (conditionals as any)[sheet]?.[condKey] as IConditionalData | undefined
-}
 function correctConditionalValue(conditional: IConditionalData, value: number) {
   if (conditional.type === 'bool') {
     return +!!value
