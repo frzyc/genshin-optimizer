@@ -2,7 +2,6 @@ import { ColorText, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
 import type { UISheet } from '@genshin-optimizer/pando/ui-sheet'
 import { characterAsset } from '@genshin-optimizer/sr/assets'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
-import type { Tag } from '@genshin-optimizer/sr/formula'
 import {
   buffs,
   conditionals,
@@ -21,7 +20,6 @@ const formula = formulas.RuanMei
 const cond = conditionals.RuanMei
 const buff = buffs.RuanMei
 const dm = mappedStats.char[key]
-const selfTag: Tag = { src: key, dst: key }
 const sheet: UISheet<TalentSheetElementKey> = {
   basic: {
     title: chg('abilities.basic.0.name'),
@@ -40,7 +38,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
             getInterpolateObject(
               key,
               'basic',
-              calculator.withTag(selfTag).compute(own.char.basic).val
+              calculator.compute(own.char.basic).val
             )
           ),
       },
@@ -72,7 +70,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
             getInterpolateObject(
               key,
               'skill',
-              calculator.withTag(selfTag).compute(own.char.skill).val
+              calculator.compute(own.char.skill).val
             )
           ),
       },
@@ -121,7 +119,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
             getInterpolateObject(
               key,
               'ult',
-              calculator.withTag(selfTag).compute(own.char.ult).val
+              calculator.compute(own.char.ult).val
             )
           ),
       },
@@ -176,7 +174,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
             getInterpolateObject(
               key,
               'talent',
-              calculator.withTag(selfTag).compute(own.char.talent).val
+              calculator.compute(own.char.talent).val
             )
           ),
       },

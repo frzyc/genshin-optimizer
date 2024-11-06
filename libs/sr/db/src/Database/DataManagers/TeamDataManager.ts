@@ -410,9 +410,6 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
           c.src === src &&
           c.dst === dst
       )
-      console.log({
-        condIndex,
-      })
       if (condIndex === -1) {
         const condValues = new Array(team.frames.length).fill(0)
         condValues[frameIndex] = condValue
