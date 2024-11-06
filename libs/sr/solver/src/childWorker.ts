@@ -93,7 +93,39 @@ async function init({
   // Let parent know we are ready to optimize
   postMessage({ resultType: 'initialized' })
 }
-
+function* generateCombinations(): Generator<{
+  lightCone: LightConeStats
+  head: RelicStats
+  hands: RelicStats
+  feet: RelicStats
+  body: RelicStats
+  sphere: RelicStats
+  rope: RelicStats
+}> {
+  for (const lightCone of lightConeStats) {
+    for (const head of relicStatsBySlot.head) {
+      for (const hands of relicStatsBySlot.hands) {
+        for (const feet of relicStatsBySlot.feet) {
+          for (const body of relicStatsBySlot.body) {
+            for (const sphere of relicStatsBySlot.sphere) {
+              for (const rope of relicStatsBySlot.rope) {
+                yield {
+                  lightCone,
+                  head,
+                  hands,
+                  feet,
+                  body,
+                  sphere,
+                  rope,
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 // Actually start calculating builds and sending back periodic responses
 async function start() {
   let builds: BuildResult[] = []
@@ -113,53 +145,49 @@ async function start() {
     builds = []
     skipped = 0
   }
-  lightConeStats.forEach((lightCone) => {
-    relicStatsBySlot.head.forEach((head) => {
-      relicStatsBySlot.hands.forEach((hands) => {
-        relicStatsBySlot.feet.forEach((feet) => {
-          relicStatsBySlot.body.forEach((body) => {
-            relicStatsBySlot.sphere.forEach((sphere) => {
-              relicStatsBySlot.rope.forEach((rope) => {
-                // Step 5: Calculate the value
-                const results = compiledCalcFunction([
-                  lightCone.stats,
-                  head.stats,
-                  hands.stats,
-                  feet.stats,
-                  body.stats,
-                  sphere.stats,
-                  rope.stats,
-                ])
-                if (
-                  constraints.every(({ value, isMax }, i) =>
-                    isMax ? results[i + 1] <= value : results[i + 1] >= value
-                  )
-                ) {
-                  builds.push({
-                    value: results[0], // We only pass 1 target to calculate, so just grab the 1st result
-                    lightConeId: lightCone.id,
-                    relicIds: {
-                      head: head.id,
-                      hands: hands.id,
-                      feet: feet.id,
-                      body: body.id,
-                      sphere: sphere.id,
-                      rope: rope.id,
-                    },
-                  })
-                } else {
-                  skipped++
-                }
-                if (builds.length > MAX_BUILDS_TO_SEND) {
-                  sliceSortSendBuilds()
-                }
-              })
-            })
-          })
-        })
+  for (const {
+    lightCone,
+    head,
+    hands,
+    feet,
+    body,
+    sphere,
+    rope,
+  } of generateCombinations()) {
+    // Step 5: Calculate the value
+    const results = compiledCalcFunction([
+      lightCone.stats,
+      head.stats,
+      hands.stats,
+      feet.stats,
+      body.stats,
+      sphere.stats,
+      rope.stats,
+    ])
+    if (
+      constraints.every(({ value, isMax }, i) =>
+        isMax ? results[i + 1] <= value : results[i + 1] >= value
+      )
+    ) {
+      builds.push({
+        value: results[0], // We only pass 1 target to calculate, so just grab the 1st result
+        lightConeId: lightCone.id,
+        relicIds: {
+          head: head.id,
+          hands: hands.id,
+          feet: feet.id,
+          body: body.id,
+          sphere: sphere.id,
+          rope: rope.id,
+        },
       })
-    })
-  })
+    } else {
+      skipped++
+    }
+    if (builds.length > MAX_BUILDS_TO_SEND) {
+      sliceSortSendBuilds()
+    }
+  }
 
   if (builds.length > 0) {
     sliceSortSendBuilds()
