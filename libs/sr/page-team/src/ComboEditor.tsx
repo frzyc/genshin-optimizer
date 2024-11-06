@@ -1,16 +1,25 @@
-import { CardThemed, ConditionalWrapper } from '@genshin-optimizer/common/ui'
+import { useBoolState } from '@genshin-optimizer/common/react-util'
+import {
+  CardThemed,
+  ConditionalWrapper,
+  ModalWrapper,
+} from '@genshin-optimizer/common/ui'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import type { Tag } from '@genshin-optimizer/sr/formula'
 import {
   Box,
+  Button,
   CardActionArea,
   CardContent,
   CardHeader,
   Divider,
+  Stack,
 } from '@mui/material'
 import { useContext } from 'react'
+import { BonusStats } from './BonusStats'
 import { PresetContext, useTeamContext } from './context'
 import { OptimizationTargetSelector } from './Optimize/OptimizationTargetSelector'
+import { RelicSheetsDisplay } from './RelicSheetsDisplay'
 
 export function ComboEditor() {
   const { database } = useDatabaseContext()
@@ -92,8 +101,28 @@ function Team({
       </ConditionalWrapper>
       <Divider />
       <CardContent>
-        <OptimizationTargetSelector optTarget={tag} setOptTarget={setTarget} />
+        <Stack spacing={1}>
+          <OptimizationTargetSelector
+            optTarget={tag}
+            setOptTarget={setTarget}
+          />
+          <BonusStats />
+          <RelicConditionals />
+        </Stack>
       </CardContent>
     </CardThemed>
+  )
+}
+
+function RelicConditionals() {
+  const [show, onShow, onHide] = useBoolState()
+  return (
+    <>
+      {/* TODO: translation */}
+      <Button onClick={onShow}>Relic Conditionals</Button>
+      <ModalWrapper open={show} onClose={onHide}>
+        <RelicSheetsDisplay />
+      </ModalWrapper>
+    </>
   )
 }

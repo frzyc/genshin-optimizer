@@ -1,7 +1,10 @@
-import { CalcContext } from '@genshin-optimizer/pando/ui-sheet'
+import { CalcContext, TagContext } from '@genshin-optimizer/pando/ui-sheet'
 import type { Calculator } from '@genshin-optimizer/sr/formula'
-import { useContext } from 'react'
+import { useContext, useMemo } from 'react'
 
 export function useSrCalcContext() {
-  return useContext(CalcContext) as Calculator | null
+  const _calc = useContext(CalcContext) as Calculator | null
+  const tag = useContext(TagContext)
+
+  return useMemo(() => _calc?.withTag(tag), [_calc, tag])
 }

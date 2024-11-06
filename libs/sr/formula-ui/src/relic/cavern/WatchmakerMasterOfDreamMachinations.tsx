@@ -5,17 +5,18 @@ import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { buffs, conditionals } from '@genshin-optimizer/sr/formula'
 import { mappedStats } from '@genshin-optimizer/sr/stats'
 import { StatDisplay } from '@genshin-optimizer/sr/ui'
+import { getDefaultRelicSlot } from '@genshin-optimizer/sr/util'
 import { trans } from '../../util'
 const key: RelicSetKey = 'WatchmakerMasterOfDreamMachinations'
 const [chg, _ch] = trans('relic', key)
 const dm = mappedStats.relic[key]
-const headAsset = relicAsset(key, 'head')
-const cond = conditionals[key] // TODO: no conditionals for relic in meta.ts
-const buff = buffs[key] // TODO: no buffs for relic in meta.ts
+const icon = relicAsset(key, getDefaultRelicSlot(key))
+const cond = conditionals[key]
+const buff = buffs[key]
 const sheet: UISheet<'2' | '4'> = {
   2: {
     title: '2-Set', // TODO: L10n
-    img: headAsset,
+    img: icon,
     documents: [
       {
         type: 'text',
@@ -34,7 +35,7 @@ const sheet: UISheet<'2' | '4'> = {
   },
   4: {
     title: '4-Set', // TODO: L10n
-    img: relicAsset(key, 'head'),
+    img: icon,
     documents: [
       {
         type: 'text',
@@ -43,8 +44,9 @@ const sheet: UISheet<'2' | '4'> = {
       {
         type: 'conditional',
         conditional: {
+          targeted: true,
           header: {
-            icon: <ImgIcon src={headAsset} />,
+            icon: <ImgIcon src={icon} />,
             text: 'Use Their Ult on an ally', // TODO: L10n
             additional: <SqBadge>4-Set</SqBadge>, // TODO: L10n
           },

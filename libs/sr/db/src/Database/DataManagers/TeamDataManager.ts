@@ -1,3 +1,4 @@
+import type { IConditionalData } from '@genshin-optimizer/common/formula'
 import {
   objKeyMap,
   pruneOrPadArray,
@@ -9,7 +10,13 @@ import {
   allCharacterKeys,
   allRelicSlotKeys,
 } from '@genshin-optimizer/sr/consts'
-import type { Member, Sheet, Tag } from '@genshin-optimizer/sr/formula'
+import {
+  getConditional,
+  isMember,
+  type Member,
+  type Sheet,
+  type Tag,
+} from '@genshin-optimizer/sr/formula'
 import type { RelicIds } from '../../Types'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
@@ -40,8 +47,8 @@ export interface Team {
   frames: Array<Tag>
   conditionals: Array<{
     sheet: Sheet
-    src: Member | 'all'
-    dst: Member | 'all'
+    src: Member
+    dst: Member
     condKey: string
     condValues: number[] // should be the same length as `frames`
   }>
@@ -74,7 +81,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       teamMetadata,
       lastEdit,
       frames,
-      conditionals: conditional,
+      conditionals,
       bonusStats,
       statConstraints,
     } = obj as Team
@@ -166,20 +173,34 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     frames = frames.filter(validateTag)
     const framesLength = frames.length
     if (!framesLength) {
-      conditional = []
+      conditionals = []
       bonusStats = []
     } else {
-      if (!Array.isArray(conditional)) conditional = []
+      if (!Array.isArray(conditionals)) conditionals = []
+      const hashList: string[] = [] // a hash to ensure sheet:condKey:src:dst is unique
+      conditionals = conditionals.filter(
+        ({ sheet, condKey, src, dst, condValues }) => {
+          if (!isMember(src) || !isMember(dst)) return false
+          const cond = getConditional(sheet, condKey)
+          if (!cond) return false
+
+          // validate uniqueness
+          const hash = `${sheet}:${condKey}:${src}:${dst}`
+          if (hashList.includes(hash)) return false
+          hashList.push(hash)
+
+          // validate values
+          if (!Array.isArray(condValues)) return false
+          pruneOrPadArray(condValues, framesLength, 0)
+          condValues = condValues.map((v) => correctConditionalValue(cond, v))
+          // If all values are false, remove the conditional
+          if (condValues.every((v) => !v)) return false
+
+          return true
+        }
+      )
+
       if (!Array.isArray(bonusStats)) bonusStats = []
-      if (!Array.isArray(statConstraints)) statConstraints = []
-      conditional = conditional.filter(({ condValues }) => {
-        // TODO: validate conditionals src dst condKey
-        if (!Array.isArray(condValues)) return false
-        pruneOrPadArray(condValues, framesLength, 0)
-        // If all values are false, remove the conditional
-        if (condValues.every((v) => !v)) return false
-        return true
-      })
       bonusStats = bonusStats.filter(({ tag, values }) => {
         if (!validateTag(tag)) return false
         if (!Array.isArray(values)) return false
@@ -187,6 +208,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
         return true
       })
 
+      if (!Array.isArray(statConstraints)) statConstraints = []
       statConstraints = statConstraints.filter(({ tag, values, isMaxs }) => {
         if (!validateTag(tag)) return false
         if (!Array.isArray(values)) return false
@@ -206,7 +228,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       teamMetadata: teamMetadata,
       lastEdit,
       frames,
-      conditionals: conditional,
+      conditionals,
       bonusStats,
       statConstraints,
     }
@@ -373,17 +395,21 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
   setConditional(
     teamId: string,
     sheet: Sheet,
-    src: Member | 'all',
-    dst: Member | 'all',
     condKey: string,
+    src: Member,
+    dst: Member,
     condValue: number,
     frameIndex: number
   ) {
     this.set(teamId, (team) => {
+      if (frameIndex > team.frames.length) return false
       const condIndex = team.conditionals.findIndex(
-        (c) => c.src === src && c.dst === dst && c.condKey === condKey
+        (c) =>
+          c.condKey === condKey &&
+          c.sheet === sheet &&
+          c.src === src &&
+          c.dst === dst
       )
-      if (frameIndex > team.frames.length) return
       if (condIndex === -1) {
         const condValues = new Array(team.frames.length).fill(0)
         condValues[frameIndex] = condValue
@@ -395,8 +421,23 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
           condValues,
         })
       } else {
-        team.conditionals[condIndex].condValues[frameIndex] = condValue
+        const cond = team.conditionals[condIndex]
+        // Check if the value is the same, return false to not propagate the update.
+        if (
+          cond.sheet === sheet &&
+          cond.src === src &&
+          cond.dst === dst &&
+          cond.condKey === condKey &&
+          cond.condValues[frameIndex] === condValue
+        )
+          return false
+        cond.sheet = sheet
+        cond.src = src
+        cond.dst = dst
+        cond.condKey = condKey
+        cond.condValues[frameIndex] = condValue
       }
+      return team
     })
   }
   /**
@@ -462,4 +503,25 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       }
     })
   }
+}
+
+function correctConditionalValue(conditional: IConditionalData, value: number) {
+  if (conditional.type === 'bool') {
+    return +!!value
+  } else if (conditional.type === 'num') {
+    if (conditional.int_only && !Number.isInteger(value)) {
+      value = Math.round(value)
+    }
+    if (conditional.min !== undefined && value < conditional.min)
+      value = conditional.min
+    if (conditional.max !== undefined && value > conditional.max)
+      value = conditional.max
+  } else if (conditional.type === 'list') {
+    if (!Number.isInteger(value)) {
+      value = Math.round(value)
+    }
+    if (value < 0) value = 0
+    if (value > conditional.list.length - 1) value = conditional.list.length - 1
+  }
+  return value
 }

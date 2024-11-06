@@ -10,4 +10,5 @@ export type Conditional = {
   badge?: ReactNode | ((calc: Calculator, value: number) => ReactNode)
   header?: Header
   fields?: Field[]
+  targeted?: boolean
 }

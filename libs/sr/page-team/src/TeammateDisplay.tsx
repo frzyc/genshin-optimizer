@@ -25,7 +25,6 @@ import {
   Typography,
 } from '@mui/material'
 import { useMemo, useState } from 'react'
-import { BonusStats } from './BonusStats'
 import { BuildsDisplay, EquipRow } from './BuildsDisplay'
 import { ComboEditor } from './ComboEditor'
 import { useTeamContext } from './context'
@@ -37,119 +36,34 @@ export default function TeammateDisplay() {
     teammateDatum: { characterKey },
   } = useTeamContext()
   const character = useCharacterContext()
-  const calc = useSrCalcContext()
   const [editorKey, setCharacterKey] = useState<CharacterKey | undefined>(
     undefined
   )
 
   return (
-    <Box>
-      <CharacterEditor
-        characterKey={editorKey}
-        onClose={() => setCharacterKey(undefined)}
-      />
+    <Stack gap={1}>
       <Box sx={{ display: 'flex', gap: 1 }}>
         <Box sx={{ minWidth: '350px' }}>
           <CharacterCard character={character!} />
+          <CharacterEditor
+            characterKey={editorKey}
+            onClose={() => setCharacterKey(undefined)}
+          />
+          <Button
+            fullWidth
+            disabled={!characterKey}
+            onClick={() => characterKey && setCharacterKey(characterKey)}
+          >
+            Edit Character
+          </Button>
         </Box>
         <CurrentBuildDisplay />
       </Box>
-
-      <Stack gap={1} pt={1}>
-        <ComboEditor />
-        <CardThemed bgt="dark">
-          <CardContent>
-            <Button
-              disabled={!characterKey}
-              onClick={() => characterKey && setCharacterKey(characterKey)}
-            >
-              Edit Character
-            </Button>
-            <BonusStats />
-            <Accordion>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                All target listings
-              </AccordionSummary>
-              <AccordionDetails>
-                <Stack>
-                  {calc
-                    ?.listFormulas(own.listing.formulas)
-                    .map((read, index) => {
-                      const computed = calc.compute(read)
-                      const name = read.tag.name || read.tag.q
-                      return (
-                        <Box key={`${name}${index}`}>
-                          <Typography>
-                            {name}: {computed.val}
-                          </Typography>
-                          <Accordion>
-                            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                              debug for {name}
-                            </AccordionSummary>
-                            <AccordionDetails>
-                              conds:{' '}
-                              {JSON.stringify(
-                                computed.meta.conds,
-                                undefined,
-                                2
-                              )}
-                              <Typography component="pre">
-                                {JSON.stringify(
-                                  calc.toDebug().compute(read),
-                                  undefined,
-                                  2
-                                )}
-                              </Typography>
-                            </AccordionDetails>
-                          </Accordion>
-                        </Box>
-                      )
-                    })}
-                </Stack>
-              </AccordionDetails>
-            </Accordion>
-            <Accordion>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                All target buffs
-              </AccordionSummary>
-              <AccordionDetails>
-                <Stack>
-                  {calc?.listFormulas(own.listing.buffs).map((read, index) => {
-                    const computed = calc.compute(read)
-                    const name = read.tag.name || read.tag.q
-                    return (
-                      <Box key={`${name}${index}`}>
-                        <Typography>
-                          {name}: {computed.val}
-                        </Typography>
-                        <Accordion>
-                          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                            debug for {name}
-                          </AccordionSummary>
-                          <AccordionDetails>
-                            conds:{' '}
-                            {JSON.stringify(computed.meta.conds, undefined, 2)}
-                            <Typography component="pre">
-                              {JSON.stringify(
-                                calc.toDebug().compute(read),
-                                undefined,
-                                2
-                              )}
-                            </Typography>
-                          </AccordionDetails>
-                        </Accordion>
-                      </Box>
-                    )
-                  })}
-                </Stack>
-              </AccordionDetails>
-            </Accordion>
-          </CardContent>
-        </CardThemed>
-        <CharacterTalentPane />
-        <Optimize />
-      </Stack>
-    </Box>
+      <ComboEditor />
+      <CalcDebug />
+      <CharacterTalentPane />
+      <Optimize />
+    </Stack>
   )
 }
 function CurrentBuildDisplay() {
@@ -197,5 +111,87 @@ function BuildsModal({
     >
       <BuildsDisplay />
     </ModalWrapper>
+  )
+}
+
+function CalcDebug() {
+  const calc = useSrCalcContext()
+  return (
+    <CardThemed bgt="dark">
+      <CardContent>
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            All target listings
+          </AccordionSummary>
+          <AccordionDetails>
+            <Stack>
+              {calc?.listFormulas(own.listing.formulas).map((read, index) => {
+                const computed = calc.compute(read)
+                const name = read.tag.name || read.tag.q
+                return (
+                  <Box key={`${name}${index}`}>
+                    <Typography>
+                      {name}: {computed.val}
+                    </Typography>
+                    <Accordion>
+                      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                        debug for {name}
+                      </AccordionSummary>
+                      <AccordionDetails>
+                        conds:{' '}
+                        {JSON.stringify(computed.meta.conds, undefined, 2)}
+                        <Typography component="pre">
+                          {JSON.stringify(
+                            calc.toDebug().compute(read),
+                            undefined,
+                            2
+                          )}
+                        </Typography>
+                      </AccordionDetails>
+                    </Accordion>
+                  </Box>
+                )
+              })}
+            </Stack>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            All target buffs
+          </AccordionSummary>
+          <AccordionDetails>
+            <Stack>
+              {calc?.listFormulas(own.listing.buffs).map((read, index) => {
+                const computed = calc.compute(read)
+                const name = read.tag.name || read.tag.q
+                return (
+                  <Box key={`${name}${index}`}>
+                    <Typography>
+                      {name}: {computed.val}
+                    </Typography>
+                    <Accordion>
+                      <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                        debug for {name}
+                      </AccordionSummary>
+                      <AccordionDetails>
+                        conds:{' '}
+                        {JSON.stringify(computed.meta.conds, undefined, 2)}
+                        <Typography component="pre">
+                          {JSON.stringify(
+                            calc.toDebug().compute(read),
+                            undefined,
+                            2
+                          )}
+                        </Typography>
+                      </AccordionDetails>
+                    </Accordion>
+                  </Box>
+                )
+              })}
+            </Stack>
+          </AccordionDetails>
+        </Accordion>
+      </CardContent>
+    </CardThemed>
   )
 }

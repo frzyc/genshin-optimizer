@@ -11,7 +11,7 @@ import { reader, tagStr } from './data/util'
 const emptyInfo: Info = Object.freeze({ conds: Object.freeze({}) })
 const { arithmetic } = calculation
 
-type MemRec<V> = Partial<Record<Member | 'all', V>>
+type MemRec<V> = Partial<Record<Member, V>>
 type SingleCondInfo = Partial<Record<Sheet, Record<string, string | number>>>
 export type SrcCondInfo = MemRec<SingleCondInfo>
 /// conds[dst][src][sheet][name]
@@ -102,9 +102,10 @@ export class Calculator extends Base<CalcMeta> {
 
     if (tag.qt === 'cond') {
       const { src, dst, sheet, q } = tag
-      meta.conds = {
-        [dst ?? 'all']: { [src ?? 'all']: { [sheet!]: { [q!]: val } } },
-      }
+      if (src && dst && sheet && q)
+        meta.conds = {
+          [dst]: { [src]: { [sheet!]: { [q!]: val } } },
+        }
       dirty = true
     }
     Object.freeze(meta)

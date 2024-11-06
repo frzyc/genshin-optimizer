@@ -89,3 +89,20 @@ export function pruneOrPadArray<T>(array: T[], length: number, value: T) {
   else array.push(...new Array(length - array.length).fill(value))
   return array
 }
+
+/**
+ * Move an element in the array to the front, if it exists.
+ * @param arr
+ * @param key
+ * @returns
+ */
+export function moveToFront<T>(arr: T[], key: T): T[] {
+  const index = arr.indexOf(key)
+  if (index > -1) {
+    // Remove the element from its current position
+    const [element] = arr.splice(index, 1)
+    // Add the element to the front of the array
+    arr.unshift(element)
+  }
+  return arr
+}

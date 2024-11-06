@@ -214,11 +214,8 @@ export const allNumConditionals = (
 ) =>
   allConditionals(sheet, ignored, { type: 'num', int_only, min, max }, (r) => r)
 
-type MemAll = Member | 'all'
-export const conditionalEntries = (sheet: Sheet, src: MemAll, dst: MemAll) => {
-  let tag: Tag = { sheet, qt: 'cond' }
-  if (src !== 'all') tag = { ...tag, src }
-  if (dst !== 'all') tag = { ...tag, dst }
+export const conditionalEntries = (sheet: Sheet, src: Member, dst: Member) => {
+  const tag: Tag = { sheet, qt: 'cond', src, dst }
   const base = own.withTag(tag).withAll('q', [])
   return (name: string, val: string | number) => base[name].add(val)
 }
@@ -227,7 +224,7 @@ const condMeta = Symbol.for('condMeta')
 type CondIgnored = 'both' | 'src' | 'dst' | 'none'
 function allConditionals<T>(
   sheet: Sheet,
-  shared: CondIgnored = 'src',
+  shared: CondIgnored = 'none',
   meta: IBaseConditionalData,
   transform: (r: Read, q: string) => T
 ): Record<string, T> {
