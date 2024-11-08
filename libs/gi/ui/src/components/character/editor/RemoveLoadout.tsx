@@ -80,12 +80,12 @@ export function RemoveLoadout({
               <CardContent>{description}</CardContent>
             </CardThemed>
           )}
-          <Typography>{t`loadoutDelModal.desc`}</Typography>
+          <Typography>{t('loadoutDelModal.desc')}</Typography>
           <List sx={{ listStyleType: 'disc', pl: 4 }}>
             {!!buildIds.length && (
               <ListItem sx={{ display: 'list-item' }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  {t`loadoutDelModal.builds`}
+                  {t('loadoutDelModal.builds')}
                   {buildIds.length}{' '}
                   <Tooltip
                     title={
@@ -115,7 +115,7 @@ export function RemoveLoadout({
             {!!buildTcIds.length && (
               <ListItem sx={{ display: 'list-item' }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  {t`loadoutDelModal.tcBuilds`}
+                  {t('loadoutDelModal.tcBuilds')}
                   {buildTcIds.length}{' '}
                   <Tooltip
                     title={
@@ -145,7 +145,7 @@ export function RemoveLoadout({
             {!!customMultiTargets.length && (
               <ListItem sx={{ display: 'list-item' }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  {t`loadoutDelModal.mTargets`}
+                  {t('loadoutDelModal.mTargets')}
                   {customMultiTargets.length}{' '}
                   <Tooltip
                     title={
@@ -174,25 +174,25 @@ export function RemoveLoadout({
 
             {!!Object.keys(bonusStats).length && (
               <ListItem sx={{ display: 'list-item' }}>
-                {t`loadoutDelModal.bonus`}
+                {t('loadoutDelModal.bonus')}
                 {Object.keys(bonusStats).length}
               </ListItem>
             )}
             {!!conditionalCount && (
               <ListItem sx={{ display: 'list-item' }}>
-                {t`loadoutDelModal.condi`}
+                {t('loadoutDelModal.condi')}
                 {conditionalCount}
               </ListItem>
             )}
             <ListItem sx={{ display: 'list-item' }}>
-              {t`loadoutDelModal.optConfig`}
+              {t('loadoutDelModal.optConfig')}
             </ListItem>
 
             {!!teamIds.length && (
               <ListItem sx={{ display: 'list-item' }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                   <span>
-                    {t`loadoutDelModal.affected`}
+                    {t('loadoutDelModal.affected')}
                     {teamIds.length}
                   </span>
 
@@ -224,14 +224,14 @@ export function RemoveLoadout({
         </CardContent>
         <CardActions sx={{ float: 'right' }}>
           <Button startIcon={<CloseIcon />} color="secondary" onClick={onHide}>
-            {t`loadoutDelModal.cancel`}
+            {t('loadoutDelModal.cancel')}
           </Button>
           <Button
             startIcon={<DeleteForeverIcon />}
             color="error"
             onClick={onDeleteLoadout}
           >
-            {t`loadoutDelModal.delete`}
+            {t('loadoutDelModal.delete')}
           </Button>
         </CardActions>
       </CardThemed>

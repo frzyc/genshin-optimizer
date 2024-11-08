@@ -77,7 +77,7 @@ export function CharacterCardEquipmentRowTC({
             }}
           >
             <Typography>
-              <strong>{t`tcBuild`}</strong>
+              <strong>{t('tcBuild')}</strong>
             </Typography>
           </Card>
         </Grid>

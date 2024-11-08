@@ -124,14 +124,14 @@ export function LoadoutEditor({
           <LoadoutInfoAlert />
           <TextFieldLazy
             fullWidth
-            label={t`loadoutEditor.label`}
-            placeholder={t`loadoutEditor.placeholder`}
+            label={t('loadoutEditor.label')}
+            placeholder={t('loadoutEditor.placeholder')}
             value={name}
             onChange={(name) => database.teamChars.set(teamCharId, { name })}
           />
           <TextFieldLazy
             fullWidth
-            label={t`loadoutEditor.desc`}
+            label={t('loadoutEditor.desc')}
             value={description}
             onChange={(description) =>
               database.teamChars.set(teamCharId, { description })
@@ -148,7 +148,7 @@ export function LoadoutEditor({
                   fullWidth
                   startIcon={<ContentCopyIcon />}
                 >
-                  {t`loadoutEditor.dupBtn`}
+                  {t('loadoutEditor.dupBtn')}
                 </Button>
               </Grid>
               <Grid item xs={1}>
@@ -166,7 +166,7 @@ export function LoadoutEditor({
                   color="error"
                   onClick={onShowRemoval}
                 >
-                  {t`loadoutEditor.delBtn`}
+                  {t('loadoutEditor.delBtn')}
                 </Button>
               </Grid>
             </Grid>
@@ -192,7 +192,7 @@ export function LoadoutEditor({
                           }}
                         >
                           <OptimizationIcon />
-                          <span>{t`loadoutEditor.optTarget`}</span>
+                          <span>{t('loadoutEditor.optTarget')}</span>
                         </Box>
                       }
                     />
@@ -220,7 +220,7 @@ export function LoadoutEditor({
                 <CardThemed bgt="light">
                   <CardContent>
                     <Typography variant="h6">
-                      {t`loadoutEditor.conditionals`}
+                      {t('loadoutEditor.conditionals')}
                       <strong>{conditionalCount}</strong>
                     </Typography>
                   </CardContent>
@@ -234,7 +234,7 @@ export function LoadoutEditor({
           title={
             <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
               <CheckroomIcon />
-              <span>{t`loadoutEditor.builds`}</span>
+              <span>{t('loadoutEditor.builds')}</span>
             </Box>
           }
         />
@@ -270,7 +270,7 @@ export function LoadoutEditor({
           title={
             <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
               <CheckroomIcon />
-              <span>{t`loadoutEditor.teams`}</span>
+              <span>{t('loadoutEditor.teams')}</span>
             </Box>
           }
         />
@@ -298,7 +298,7 @@ export function LoadoutEditor({
                 color="info"
                 startIcon={<AddIcon />}
               >
-                {t`loadoutEditor.addNewTeam`}
+                {t('loadoutEditor.addNewTeam')}
               </Button>
             </Grid>
           </Grid>
@@ -326,7 +326,7 @@ function BonusStatsCard({
             }}
           >
             <BarChartIcon />
-            <span>{t`loadoutEditor.bonusStats`}</span>
+            <span>{t('loadoutEditor.bonusStats')}</span>
           </Box>
         }
         titleTypographyProps={{ variant: 'h6' }}
@@ -365,7 +365,7 @@ function MultiTargetCard({
             }}
           >
             <DashboardCustomizeIcon />
-            <span>{t`loadoutEditor.mltTargets`}</span>
+            <span>{t('loadoutEditor.mltTargets')}</span>
           </Box>
         }
         titleTypographyProps={{ variant: 'h6' }}
