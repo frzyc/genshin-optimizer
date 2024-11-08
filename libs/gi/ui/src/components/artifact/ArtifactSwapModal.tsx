@@ -164,7 +164,7 @@ export function ArtifactSwapModal({
         >
           <Typography variant="h6">
             {slotKey ? <ImgIcon src={imgAssets.slot[slotKey]} /> : null}{' '}
-            {t`tabEquip.swapArt`}
+            {t('tabEquip.swapArt')}
           </Typography>
           <IconButton onClick={onClose} sx={{ ml: 'auto' }}>
             <CloseIcon />
@@ -241,7 +241,9 @@ export function ArtifactSwapModal({
                           }}
                         >
                           <RemoveCircleIcon sx={{ fontSize: '10em' }} />
-                          <Typography>{t`artifact:button.unequipArtifact`}</Typography>
+                          <Typography>
+                            {t('artifact:button.unequipArtifact')}
+                          </Typography>
                         </Box>
                       </CardActionArea>
                     </CardThemed>
