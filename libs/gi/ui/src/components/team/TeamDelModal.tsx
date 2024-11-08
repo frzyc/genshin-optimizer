@@ -80,7 +80,7 @@ export function TeamDelModal({
                 alignItems: 'center',
               }}
             >
-              <Box>{t`teamDelModal.teamName`}</Box>
+              <Box>{t('teamDelModal.teamName')}</Box>
               <strong>{name}</strong>
               {description && (
                 <BootstrapTooltip title={description}>
@@ -123,7 +123,7 @@ export function TeamDelModal({
             startIcon={<DeleteForeverIcon />}
             onClick={onDelete}
           >
-            {t`teamDelModal.delBtn`}
+            {t('teamDelModal.delBtn')}
           </Button>
         </CardContent>
       </CardThemed>
@@ -167,7 +167,7 @@ function LoadoutDisplay({
             <ColorText color={inTeams.length === 1 ? 'success' : 'warning'}>
               <Typography>
                 {inTeams.length === 1
-                  ? t`teamDelModal.onlyCrrTeam`
+                  ? t('teamDelModal.onlyCrrTeam')
                   : t('teamDelModal.usingMltTeams', { count: inTeams.length })}
               </Typography>
             </ColorText>

@@ -138,11 +138,11 @@ function Page({ teamId }: { teamId: string }) {
               silly ? 'sillyWisher_charNames' : 'charNames_gen'
             }:${charKeyToLocGenderedCharKey(characterKey, gender)}`
           )
-        : t`page_team:teamSettings.tab.team`
+        : t('page_team:teamSettings.tab.team')
       const tabName = tab
         ? t(`page_character:tabs.${tab}`)
         : characterKey
-        ? t`page_character:tabs.setting`
+        ? t('page_character:tabs.setting')
         : tab
       return tabName
         ? `${team.name} - ${charName} - ${tabName}`
