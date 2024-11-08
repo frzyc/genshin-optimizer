@@ -129,7 +129,9 @@ function Content(props: Props) {
         }}
       >
         {/* Confirmation Message */}
-        <Typography sx={{ fontSize: 20 }}>{t`equipBuildModal.desc`}</Typography>
+        <Typography sx={{ fontSize: 20 }}>
+          {t('equipBuildModal.desc')}
+        </Typography>
         {teamCharId && (
           <FormControlLabel
             label={
@@ -150,7 +152,7 @@ function Content(props: Props) {
         )}
         {copyCurrent && (
           <TextField
-            label={t`equipBuildModal.label`}
+            label={t('equipBuildModal.label')}
             placeholder={t('equipBuildModal.newName', { currentName })}
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -167,10 +169,10 @@ function Content(props: Props) {
           }}
         >
           <Button color="error" onClick={onHide}>
-            {t`equipBuildModal.cancel`}
+            {t('equipBuildModal.cancel')}
           </Button>
           <Button color="success" onClick={toEquip}>
-            {t`equipBuildModal.equip`}
+            {t('equipBuildModal.equip')}
           </Button>
         </Box>
         {/* Active Build */}
