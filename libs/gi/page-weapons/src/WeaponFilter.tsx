@@ -119,7 +119,7 @@ function WeaponFilter({
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
         <Grid container>
           <Grid item>
-            <Typography variant="h6">{t`weaponFilterTitle`}</Typography>
+            <Typography variant="h6">{t('weaponFilterTitle')}</Typography>
           </Grid>
           <Grid
             item
@@ -212,7 +212,7 @@ function WeaponFilter({
                       })
                     }
                   >
-                    {t`weaponInInv`}{' '}
+                    {t('weaponInInv')}{' '}
                     <Chip
                       sx={{ ml: 1 }}
                       label={equippedTotal['unequipped']}
@@ -228,7 +228,7 @@ function WeaponFilter({
                       })
                     }
                   >
-                    {t`equippedWeapon`}{' '}
+                    {t('equippedWeapon')}{' '}
                     <Chip
                       sx={{ ml: 1 }}
                       label={equippedTotal['equipped']}
@@ -239,7 +239,7 @@ function WeaponFilter({
                 <Stack spacing={1.5} pt={1.5}>
                   <Suspense fallback={null}>
                     <BootstrapTooltip
-                      title={showEquipped ? t`locationsTooltip` : ''}
+                      title={showEquipped ? t('locationsTooltip') : ''}
                       placement="top"
                     >
                       <span>
