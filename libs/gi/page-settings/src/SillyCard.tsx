@@ -22,7 +22,7 @@ export default function SillyCard() {
     <CardThemed bgt="light">
       <CardContent sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <Avatar src={silly_icon} />
-        <Typography variant="h5"> {t`sillyPageTitle`}</Typography>
+        <Typography variant="h5"> {t('sillyPageTitle')}</Typography>
       </CardContent>
       <Divider />
       <CardContent>
@@ -40,8 +40,8 @@ export default function SillyCard() {
             color={silly ? 'success' : 'secondary'}
           >
             {silly
-              ? t`settings:sillyCard.toggle.enabled`
-              : t`settings:sillyCard.toggle.disabled`}
+              ? t('settings:sillyCard.toggle.enabled')
+              : t('settings:sillyCard.toggle.disabled')}
           </Button>
           <Button
             startIcon={<DiscordIcon />}
