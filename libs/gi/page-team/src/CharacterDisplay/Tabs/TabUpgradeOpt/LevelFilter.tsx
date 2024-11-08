@@ -24,11 +24,11 @@ export const LevelFilter = memo(function LevelFilter({
   return (
     <CardThemed bgt="light">
       <CardContent sx={{ display: 'flex', gap: 1 }}>
-        <Typography
-          sx={{ fontWeight: 'bold' }}
-        >{t`upOptLevelFilter`}</Typography>
+        <Typography sx={{ fontWeight: 'bold' }}>
+          {t('upOptLevelFilter')}
+        </Typography>
         <SqBadge color="info">{levelTotal}</SqBadge>
-        <Tooltip title={t`upOptLevelFilterTooltip`}>
+        <Tooltip title={t('upOptLevelFilterTooltip')}>
           <InfoIcon />
         </Tooltip>
       </CardContent>

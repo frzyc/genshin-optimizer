@@ -94,7 +94,9 @@ export const UseTeammateArt = memo(function UseTeammateArt({
                         </Grid>
                       ) : (
                         <Typography>
-                          <SqBadge sx={{ width: '100%' }}>{t`tcBadge`}</SqBadge>
+                          <SqBadge sx={{ width: '100%' }}>
+                            {t('tcBadge')}
+                          </SqBadge>
                         </Typography>
                       )}
                     </CardThemed>
@@ -122,7 +124,7 @@ export const UseTeammateArt = memo(function UseTeammateArt({
           disabled={disabled}
         >
           <Box display="flex" gap={1}>
-            <span>{t`useTeamArts`}</span>
+            <span>{t('useTeamArts')}</span>
             <Chip label={totalTally} size="small" />
           </Box>
         </Button>

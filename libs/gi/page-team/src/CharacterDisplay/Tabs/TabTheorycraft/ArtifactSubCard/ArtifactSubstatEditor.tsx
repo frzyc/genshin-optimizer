@@ -239,7 +239,7 @@ export function ArtifactSubstatEditor({
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                {t`tabTheorycraft.substat.max`}
+                {t('tabTheorycraft.substat.max')}
               </InputAdornment>
             ),
           }}

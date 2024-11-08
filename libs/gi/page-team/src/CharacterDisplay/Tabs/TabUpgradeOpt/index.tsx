@@ -80,7 +80,7 @@ function AddArtifactButton({ onClick }: AddArtifactButtonProps) {
   const { t } = useTranslation(['artifact', 'ui'])
   return (
     <Button fullWidth onClick={onClick} color="info" startIcon={<AddIcon />}>
-      {t`addNew`}
+      {t('addNew')}
     </Button>
   )
 }
@@ -531,7 +531,7 @@ export default function TabUpopt() {
               />
             </Suspense>
             {!upOptCalc?.artifacts.length && (
-              <Alert severity="warning">{t`upOptNoResults`}</Alert>
+              <Alert severity="warning">{t('upOptNoResults')}</Alert>
             )}
             <Suspense
               fallback={

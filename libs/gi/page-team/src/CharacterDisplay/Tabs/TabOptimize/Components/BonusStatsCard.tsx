@@ -25,9 +25,9 @@ export default function BonusStatsCard() {
   return (
     <CardThemed bgt="light">
       <CardContent>
-        <Typography
-          sx={{ fontWeight: 'bold' }}
-        >{t`bonusStats.title`}</Typography>
+        <Typography sx={{ fontWeight: 'bold' }}>
+          {t('bonusStats.title')}
+        </Typography>
       </CardContent>
       <Divider />
       <FieldDisplayList bgt="light">

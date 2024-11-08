@@ -226,13 +226,13 @@ function UpgradeOptChartCardGraph({
 
   const probUpgradeText = (
     <span>
-      {t('upOptChart.prob', { est: isExact ? '' : t`upOptChart.est` })}
+      {t('upOptChart.prob', { est: isExact ? '' : t('upOptChart.est') })}
       <strong>{(100 * reportP).toFixed(1)}%</strong>
     </span>
   )
   const avgIncText = (
     <span>
-      {t('upOptChart.average', { est: isExact ? '' : t`upOptChart.est` })}
+      {t('upOptChart.average', { est: isExact ? '' : t('upOptChart.est') })}
       <strong>
         {reportD <= 0 ? '' : '+'}
         {((100 * reportD) / thr0).toFixed(1)}%
@@ -264,9 +264,9 @@ function UpgradeOptChartCardGraph({
         >
           <Box flexGrow={1}>
             {isCurrentlyEquipped ? (
-              <SqBadge color="secondary">{t`upOptChart.equipped`}</SqBadge>
+              <SqBadge color="secondary">{t('upOptChart.equipped')}</SqBadge>
             ) : (
-              <Typography>{t`upOptChart.current`}</Typography>
+              <Typography>{t('upOptChart.current')}</Typography>
             )}
           </Box>
 
@@ -293,7 +293,7 @@ function UpgradeOptChartCardGraph({
             tickFormatter={(v) => `${v <= 0 ? '' : '+'}${v}%`}
           >
             <Label
-              value={t`upOptChart.incLabel`}
+              value={t('upOptChart.incLabel')}
               position="insideBottom"
               style={{ fill: '#eaebed' }}
               offset={-10}
@@ -305,7 +305,7 @@ function UpgradeOptChartCardGraph({
             tickFormatter={(v) => `${(v * 100).toFixed()}%`}
           >
             <Label
-              value={t`upOptChart.probLabel`}
+              value={t('upOptChart.probLabel')}
               position="insideLeft"
               angle={-90}
               style={{ fill: '#eaebed' }}
@@ -334,11 +334,11 @@ function UpgradeOptChartCardGraph({
             </linearGradient>
           </defs>
 
-          <Line dataKey="dne" stroke="red" name={t`upOptChart.currentLine`} />
+          <Line dataKey="dne" stroke="red" name={t('upOptChart.currentLine')} />
           <Line
             dataKey="dne"
             stroke="rgba(0,200,0)"
-            name={t`upOptChart.averageLine`}
+            name={t('upOptChart.averageLine')}
           />
           {constrained && (
             <Area
@@ -363,9 +363,9 @@ function UpgradeOptChartCardGraph({
             name={
               isExact
                 ? t('upOptChart.exactDist', {
-                    const: constrained ? t`upOptChart.const` : '',
+                    const: constrained ? t('upOptChart.const') : '',
                   })
-                : t`upOptChart.estimatedDist`
+                : t('upOptChart.estimatedDist')
             }
             activeDot={false}
           />
@@ -373,13 +373,13 @@ function UpgradeOptChartCardGraph({
             x={perc(thr0)}
             stroke="red"
             strokeDasharray="3 3"
-            name={t`upOptChart.currentTarget`}
+            name={t('upOptChart.currentTarget')}
           />
           <ReferenceLine
             x={perc(thr0 + reportD)}
             stroke="rgba(0,200,0,1)"
             strokeDasharray="3 3"
-            name={t`upOptChart.currentTarget`}
+            name={t('upOptChart.currentTarget')}
           />
         </ComposedChart>
       </ResponsiveContainer>
