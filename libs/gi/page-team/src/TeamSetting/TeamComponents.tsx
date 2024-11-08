@@ -72,7 +72,7 @@ export function TeamBuffDisplay() {
     >
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Typography>{t`teamComponents.teamBuffs`}</Typography>
+          <Typography>{t('teamComponents.teamBuffs')}</Typography>
           <SqBadge sx={{ ml: 1 }} color={nodes.length ? 'success' : 'info'}>
             {nodes.length}
           </SqBadge>
@@ -208,7 +208,7 @@ function TcEquipmentRow({
           gap: 1,
         }}
       >
-        <SqBadge color="info">{t`teamComponents.tcBadge`}</SqBadge>
+        <SqBadge color="info">{t('teamComponents.tcBadge')}</SqBadge>
         {Object.entries(sets).map(([setKey, number]) => (
           <Box
             key={setKey}

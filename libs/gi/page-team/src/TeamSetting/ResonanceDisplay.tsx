@@ -51,7 +51,7 @@ export function ResonanceDisplay({
               </ColorText>
             </strong>{' '}
             <InfoTooltipInline
-              title={<Typography>{t`tabTeambuff.resonance_tip`}</Typography>}
+              title={<Typography>{t('tabTeambuff.resonance_tip')}</Typography>}
             />
           </span>
         }
