@@ -57,7 +57,7 @@ export default function StatModal({
           title={
             <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
               <BarChartIcon />
-              <span>{t`addStats.title`}</span>
+              <span>{t('addStats.title')}</span>
             </Box>
           }
           action={
@@ -215,7 +215,7 @@ function MainStatsCards() {
       <CardContent>
         <Grid container columns={cols} spacing={1}>
           <Grid item xs={1}>
-            <StatDisplayCard title={t`addStats.main`}>
+            <StatDisplayCard title={t('addStats.main')}>
               <StatDisplayContent
                 nodes={mainReadNodes}
                 extra={
@@ -245,13 +245,13 @@ function MainStatsCards() {
             </StatDisplayCard>
           </Grid>
           <Grid item xs={1}>
-            <StatDisplayCard title={t`addStats.other`}>
+            <StatDisplayCard title={t('addStats.other')}>
               <StatDisplayContent nodes={otherStatReadNodes} />
             </StatDisplayCard>
           </Grid>
           {!!miscStatReadNodes.length && (
             <Grid item xs={1}>
-              <StatDisplayCard title={t`addStats.misc`}>
+              <StatDisplayCard title={t('addStats.misc')}>
                 <StatDisplayContent nodes={miscStatReadNodes} />
               </StatDisplayCard>
             </Grid>
