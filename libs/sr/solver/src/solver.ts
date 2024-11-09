@@ -142,6 +142,10 @@ export class Solver {
       ],
       this.calc,
       (tag: Tag) => {
+        /**
+         * Removes relic and lightcone nodes from the opt character, while retaining data from the rest of the team.
+         * TODO: make lightcone node detachment opt-in.
+         */
         if (tag['src'] !== this.characterKey) return undefined // Wrong member
         if (tag['et'] !== 'own') return undefined // Not applied (only) to self
 

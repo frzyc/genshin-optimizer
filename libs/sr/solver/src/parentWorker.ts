@@ -208,30 +208,30 @@ function terminate() {
 }
 
 function convertRelicToStats(relic: ICachedRelic): RelicStats {
+  const { id, mainStatKey, level, rarity, setKey, substats } = relic
   return {
-    id: relic.id,
+    id,
     stats: {
-      [relic.mainStatKey]: getRelicMainStatVal(
-        relic.rarity,
-        relic.mainStatKey,
-        relic.level
-      ),
+      [mainStatKey]: getRelicMainStatVal(rarity, mainStatKey, level),
       ...Object.fromEntries(
-        relic.substats.map((substat) => [substat.key, substat.value])
+        substats
+          .filter(({ key, value }) => key && value)
+          .map(({ key, value }) => [key, value])
       ),
-      [relic.setKey]: 1,
+      [setKey]: 1,
     },
   }
 }
 
 function convertLightConeToStats(lightCone: ICachedLightCone): LightConeStats {
+  const { id, key, level: lvl, ascension, superimpose } = lightCone
   return {
-    id: lightCone.id,
+    id,
     stats: {
-      lvl: lightCone.level,
-      superimpose: lightCone.superimpose,
-      ascension: lightCone.ascension,
-      [lightCone.key]: 1,
+      lvl,
+      superimpose,
+      ascension,
+      [key]: 1,
     },
   }
 }
