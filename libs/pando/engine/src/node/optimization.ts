@@ -318,12 +318,15 @@ function dedupMapArray<I, O>(x: I[], map: (_: I) => O): O[] {
 
 /**
  * Generates a custom function, "cuz speed".
- * NOTE: `slotCount` should be `n.length` for optimization reaons. the size of `n` should not change when fed into the resulting custom function.
+ *
  * @param n
  * @param dynTagCategory
  * @param slotCount
  * @param initial
  * @param header
+ * @returns a custom function that accepts an array `_` of data.
+ *
+ * NOTE: `slotCount` === `_.length` for optimization reasons.
  */
 export function compile(
   n: NumTagFree[],
