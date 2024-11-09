@@ -82,6 +82,11 @@ export class BuildTcDataManager extends DataManager<
     if (!this.set(id, data)) return ''
     return id
   }
+  getBuildTcIds(characterKey: CharacterKey) {
+    return this.keys.filter(
+      (key) => this.get(key)?.characterKey === characterKey
+    )
+  }
 }
 
 export function initCharTC(characterKey: CharacterKey): IBuildTc {

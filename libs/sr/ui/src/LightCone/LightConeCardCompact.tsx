@@ -23,9 +23,7 @@ import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import { Box, CardActionArea, Chip, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useCallback, useMemo } from 'react'
-
-const ELE_HEIGHT = '7em' as const
-const ELE_WIDTH = '12em' as const
+import { COMPACT_ELE_HEIGHT, COMPACT_ELE_WIDTH } from '../compactConst'
 
 export function LightConeCardCompact({
   lightConeId,
@@ -78,8 +76,8 @@ export function LightConeCardCompactObj({
         bgt={bgt}
         sx={(theme) => ({
           display: 'flex',
-          maxHeight: ELE_HEIGHT,
-          maxWidth: ELE_WIDTH,
+          maxHeight: COMPACT_ELE_HEIGHT,
+          maxWidth: COMPACT_ELE_WIDTH,
           borderLeft: '5px solid',
           borderImage: `${theme.palette[`grad${rarity}`].gradient} 1`,
         })}
@@ -199,8 +197,8 @@ export function LightConeCardCompactEmpty({
       bgt={bgt}
       sx={{
         display: 'flex',
-        height: ELE_HEIGHT,
-        maxWidth: ELE_WIDTH,
+        height: COMPACT_ELE_HEIGHT,
+        width: COMPACT_ELE_WIDTH,
         alignItems: 'center',
         justifyContent: 'center',
       }}

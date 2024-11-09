@@ -1,8 +1,10 @@
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import {
   CardThemed,
   ConditionalWrapper,
   NextImage,
+  SqBadge,
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
 import {
@@ -10,8 +12,16 @@ import {
   characterKeyToGenderedKey,
   relicAsset,
 } from '@genshin-optimizer/sr/assets'
-import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
-import type { ICachedRelic, ICachedSubstat } from '@genshin-optimizer/sr/db'
+import type {
+  RelicSetKey,
+  RelicSlotKey,
+  RelicSubStatKey,
+} from '@genshin-optimizer/sr/consts'
+import type {
+  IBuildTc,
+  ICachedRelic,
+  ICachedSubstat,
+} from '@genshin-optimizer/sr/db'
 import { useRelic } from '@genshin-optimizer/sr/db-ui'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/sr/svgicons'
 import {
@@ -22,9 +32,8 @@ import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import { Box, CardActionArea, Chip, Typography } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useCallback } from 'react'
-
-const ELE_HEIGHT = '7em' as const
-const ELE_WIDTH = '12em' as const
+import { COMPACT_ELE_HEIGHT, COMPACT_ELE_WIDTH } from '../compactConst'
+import { RelicSetName } from './RelicTrans'
 
 export function RelicCardCompact({
   relicId,
@@ -79,8 +88,8 @@ export function RelicCardCompactObj({
         bgt={bgt}
         sx={(theme) => ({
           display: 'flex',
-          height: ELE_HEIGHT,
-          width: ELE_WIDTH,
+          height: COMPACT_ELE_HEIGHT,
+          width: COMPACT_ELE_WIDTH,
           borderLeft: '5px solid',
           borderImage: `${theme.palette[`grad${rarity}`].gradient} 1`,
         })}
@@ -232,8 +241,8 @@ export function RelicCardCompactEmpty({
       bgt={bgt}
       sx={{
         display: 'flex',
-        height: ELE_HEIGHT,
-        width: ELE_WIDTH,
+        height: COMPACT_ELE_HEIGHT,
+        width: COMPACT_ELE_WIDTH,
         alignItems: 'center',
         justifyContent: 'center',
       }}
@@ -242,6 +251,108 @@ export function RelicCardCompactEmpty({
         slotKey={slotKey}
         iconProps={{ sx: { height: '2em', width: 'auto', opacity: 0.7 } }}
       />
+    </CardThemed>
+  )
+}
+
+export function RelicSubCard({
+  relic,
+  keys,
+  bgt,
+}: {
+  relic: IBuildTc['relic']
+  keys: RelicSubStatKey[]
+  bgt?: CardBackgroundColor
+}) {
+  return (
+    <CardThemed
+      bgt={bgt}
+      sx={{
+        height: COMPACT_ELE_HEIGHT,
+        width: COMPACT_ELE_HEIGHT,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'stretch',
+        justifyContent: 'space-between',
+        p: 1,
+      }}
+    >
+      {keys.map((key) => (
+        <Typography
+          key={key}
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            textWrap: 'nowrap',
+          }}
+        >
+          <StatIcon statKey={key} />
+          <span>
+            {relic.substats.stats[key].toFixed(statToFixed(key))}
+            {getUnitStr(key)}
+          </span>
+        </Typography>
+      ))}
+    </CardThemed>
+  )
+}
+export function RelicSetCardCompact({
+  sets,
+  bgt,
+}: {
+  sets: Partial<Record<RelicSetKey, 2 | 4>>
+  bgt?: CardBackgroundColor
+}) {
+  if (!Object.keys(sets).length) return null
+  return (
+    <CardThemed
+      bgt={bgt}
+      sx={{
+        width: COMPACT_ELE_WIDTH,
+        height: COMPACT_ELE_HEIGHT,
+        p: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+      }}
+    >
+      {Object.entries(sets).map(([key, count]) => (
+        <Typography key={key}>
+          <SqBadge>{count}</SqBadge> <RelicSetName setKey={key} />
+        </Typography>
+      ))}
+    </CardThemed>
+  )
+}
+
+export function RelicMainsCardCompact({
+  slots,
+  bgt,
+}: {
+  slots: IBuildTc['relic']['slots']
+  bgt?: CardBackgroundColor
+}) {
+  return (
+    <CardThemed
+      bgt={bgt}
+      sx={{
+        width: COMPACT_ELE_WIDTH,
+        height: COMPACT_ELE_HEIGHT,
+        p: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        alignContent: 'space-between',
+        flexWrap: 'wrap',
+      }}
+    >
+      {Object.entries(slots).map(([slotKey, { level, statKey }]) => (
+        <Typography key={slotKey}>
+          <SlotIcon slotKey={slotKey} iconProps={iconInlineProps} />{' '}
+          <StatIcon statKey={statKey} iconProps={iconInlineProps} />+{level}
+        </Typography>
+      ))}
     </CardThemed>
   )
 }
