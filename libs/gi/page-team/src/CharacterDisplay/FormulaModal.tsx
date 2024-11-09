@@ -55,7 +55,7 @@ export default function FormulaModal() {
     <ModalWrapper open={!!modalOpen} onClose={onCloseHandler}>
       <CardThemed>
         <CardHeader
-          title={t`showFormulas.title`}
+          title={t('showFormulas.title')}
           action={
             <IconButton onClick={onCloseHandler}>
               <CloseIcon />

@@ -275,7 +275,7 @@ function InTeam() {
         variant="outlined"
         sx={{ backgroundColor: 'contentLight.main' }}
       >
-        {t`charContentModal.addLoAndTeam`}
+        {t('charContentModal.addLoAndTeam')}
       </Button>
       <CardThemed bgt="light"></CardThemed>
     </Box>

@@ -187,7 +187,7 @@ export function WeaponSwapModal({
                 {weaponTypeKey ? (
                   <ImgIcon src={imgAssets.weaponTypes[weaponTypeKey]} />
                 ) : null}
-                <span>{t`page_character:tabEquip.swapWeapon`}</span>
+                <span>{t('page_character:tabEquip.swapWeapon')}</span>
               </Typography>
             }
             action={

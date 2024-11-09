@@ -39,11 +39,11 @@ export default function StatFilterCard({
           }}
         >
           <Box display="flex" justifyContent="space-between">
-            <Typography
-              sx={{ fontWeight: 'bold' }}
-            >{t`constraintFilter.title`}</Typography>
+            <Typography sx={{ fontWeight: 'bold' }}>
+              {t('constraintFilter.title')}
+            </Typography>
             <InfoTooltip
-              title={<Typography>{t`constraintFilter.tooltip`}</Typography>}
+              title={<Typography>{t('constraintFilter.tooltip')}</Typography>}
             />
           </Box>
         </CardContent>

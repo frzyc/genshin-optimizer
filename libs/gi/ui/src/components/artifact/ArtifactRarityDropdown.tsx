@@ -20,7 +20,9 @@ export function ArtifactRarityDropdown({
   return (
     <DropdownButton
       {...props}
-      title={rarity ? <StarsDisplay stars={rarity} inline /> : t`editor.rarity`}
+      title={
+        rarity ? <StarsDisplay stars={rarity} inline /> : t('editor.rarity')
+      }
       color={rarity ? 'success' : 'primary'}
     >
       {([5, 4, 3] as ArtifactRarity[]).map((rarity) => (

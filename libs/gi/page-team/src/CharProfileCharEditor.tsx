@@ -103,7 +103,7 @@ function Content({ onClose }: { onClose?: () => void }) {
                 })
               }}
             >
-              {t`buildTcCharOverride.btn`}
+              {t('buildTcCharOverride.btn')}
             </Button>
           </BootstrapTooltip>
         )}

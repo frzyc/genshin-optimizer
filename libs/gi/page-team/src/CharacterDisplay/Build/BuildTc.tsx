@@ -271,7 +271,7 @@ function BuildTcEditor({
   return (
     <CardThemed>
       <CardHeader
-        title={t`buildTcCard.edit.title`}
+        title={t('buildTcCard.edit.title')}
         action={
           <IconButton onClick={onClose}>
             <CloseIcon />
@@ -282,14 +282,14 @@ function BuildTcEditor({
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
         <TextField
           fullWidth
-          label={t`buildTcCard.edit.label`}
-          placeholder={t`buildTcCard.edit.placeholder`}
+          label={t('buildTcCard.edit.label')}
+          placeholder={t('buildTcCard.edit.placeholder')}
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <TextField
           fullWidth
-          label={t`buildTcCard.edit.desc`}
+          label={t('buildTcCard.edit.desc')}
           value={desc}
           onChange={(e) => setDesc(e.target.value)}
           multiline

@@ -112,7 +112,7 @@ function BuildManagementContent() {
         title={
           <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
             <CheckroomIcon />
-            <span>{t`loadoutSettings.title`}</span>
+            <span>{t('loadoutSettings.title')}</span>
           </Box>
         }
       />
@@ -128,14 +128,14 @@ function BuildManagementContent() {
         </Grid>
 
         <Box sx={{ display: 'flex', gap: 2 }}>
-          <Typography variant="h6">{t`loadoutSettings.builds`}</Typography>
+          <Typography variant="h6">{t('loadoutSettings.builds')}</Typography>
           <Button
             startIcon={<AddIcon />}
             color="info"
             size="small"
             onClick={() => database.teamChars.newBuild(teamCharId)}
           >
-            {t`loadoutSettings.newBuildBtn`}
+            {t('loadoutSettings.newBuildBtn')}
           </Button>
         </Box>
         <BuildInfoAlert />
@@ -156,7 +156,7 @@ function BuildManagementContent() {
         </Box>
 
         <Box sx={{ display: 'flex', gap: 2 }}>
-          <Typography variant="h6">{t`loadoutSettings.tcBuilds`}</Typography>
+          <Typography variant="h6">{t('loadoutSettings.tcBuilds')}</Typography>
           <Button
             startIcon={<AddIcon />}
             color="info"
@@ -165,7 +165,7 @@ function BuildManagementContent() {
               database.teamChars.newBuildTcFromBuild(teamCharId, weaponTypeKey)
             }
           >
-            {t`loadoutSettings.newTcBuildBtn`}
+            {t('loadoutSettings.newTcBuildBtn')}
           </Button>
         </Box>
         <TCBuildInfoAlert />
@@ -203,7 +203,7 @@ function DetailStatButton({ buttonProps = {} }: { buttonProps?: ButtonProps }) {
         onClick={onOpen}
         {...buttonProps}
       >
-        {t`addStats.title`}
+        {t('addStats.title')}
         {!!bStatsNum && (
           <SqBadge sx={{ ml: 1 }} color="success">
             {bStatsNum}
@@ -224,7 +224,7 @@ function FormulasButton({ buttonProps = {} }: { buttonProps?: ButtonProps }) {
       onClick={onModalOpen}
       {...buttonProps}
     >
-      {t`showFormulas.button`}
+      {t('showFormulas.button')}
     </Button>
   )
 }

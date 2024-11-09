@@ -111,7 +111,7 @@ export function LocationFilterMultiAutocomplete({
         toImg={toImg}
         toExLabel={toExLabel}
         toExItemLabel={toExItemLabel}
-        label={t`artifact:filterLocation.location`}
+        label={t('artifact:filterLocation.location')}
         chipProps={{ variant: 'outlined' }}
       />
     </Suspense>

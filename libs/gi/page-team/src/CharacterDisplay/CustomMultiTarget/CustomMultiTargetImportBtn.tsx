@@ -30,33 +30,33 @@ export default function CustomMultiTargetImportBtn({
     try {
       const dataObj = JSON.parse(data)
       const validated = validateCustomMultiTarget(dataObj)
-      if (!validated) window.alert(t`mTargetImport.invalid`)
+      if (!validated) window.alert(t('mTargetImport.invalid'))
       else {
         setCustomMultiTarget(validated)
         onHide()
       }
     } catch (e) {
-      window.alert(t`mTargetImport.failed` + `\n${e}`)
+      window.alert(t('mTargetImport.failed') + `\n${e}`)
       return
     }
   }
   return (
     <>
       <Button {...btnProps} onClick={onShow}>
-        {t`mTargetImport.button`}
+        {t('mTargetImport.button')}
       </Button>
       <ModalWrapper open={show} onClose={onHide}>
         <CardThemed>
-          <CardHeader title={t`mTargetImport.title`} />
+          <CardHeader title={t('mTargetImport.title')} />
           <Divider />
           <CardContent
             sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
           >
-            <Typography>{t`mTargetImport.desc`}</Typography>
+            <Typography>{t('mTargetImport.desc')}</Typography>
             <TextField
               fullWidth
-              label={t`mTargetImport.label`}
-              placeholder={t`mTargetImport.placeholder`}
+              label={t('mTargetImport.label')}
+              placeholder={t('mTargetImport.placeholder')}
               value={data}
               onChange={(e) => setData(e.target.value)}
               multiline
@@ -67,7 +67,7 @@ export default function CustomMultiTargetImportBtn({
               disabled={!data}
               onClick={importData}
             >
-              {t`mTargetImport.import`}
+              {t('mTargetImport.import')}
             </Button>
           </CardContent>
         </CardThemed>

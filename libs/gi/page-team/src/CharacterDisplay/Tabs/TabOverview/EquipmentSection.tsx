@@ -177,7 +177,9 @@ function ArtifactSectionCard() {
           onClick={unequipArts}
           fullWidth
           sx={{ borderBottomRightRadius: 0, borderBottomLeftRadius: 0 }}
-        >{t`tabEquip.unequipArts`}</Button>
+        >
+          {t('tabEquip.unequipArts')}
+        </Button>
       )}
       <Box p={1}>
         <Stack spacing={1}>

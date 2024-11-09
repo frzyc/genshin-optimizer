@@ -253,7 +253,7 @@ function ArtifactSwapButton({
   return (
     <>
       <Tooltip
-        title={<Typography>{t`tabEquip.swapArt`}</Typography>}
+        title={<Typography>{t('tabEquip.swapArt')}</Typography>}
         placement="top"
         arrow
       >
@@ -286,7 +286,7 @@ function WeaponSwapButton({
   return (
     <>
       <Tooltip
-        title={<Typography>{t`tabEquip.swapWeapon`}</Typography>}
+        title={<Typography>{t('tabEquip.swapWeapon')}</Typography>}
         placement="top"
         arrow
       >
@@ -317,11 +317,9 @@ function LargeWeaponSwapButton({
   const [show, onOpen, onClose] = useBoolState()
   return (
     <>
-      <Button
-        color="info"
-        onClick={onOpen}
-        startIcon={<SwapHorizIcon />}
-      >{t`tabEquip.swapWeapon`}</Button>
+      <Button color="info" onClick={onOpen} startIcon={<SwapHorizIcon />}>
+        {t('tabEquip.swapWeapon')}
+      </Button>
       <WeaponSwapModal
         weaponId={weaponId}
         weaponTypeKey={weaponTypeKey}

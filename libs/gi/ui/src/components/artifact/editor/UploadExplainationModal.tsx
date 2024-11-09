@@ -28,7 +28,7 @@ export function UploadExplainationModal({
     <ModalWrapper open={modalShow} onClose={hide}>
       <CardThemed>
         <CardContent sx={{ py: 1, display: 'flex' }}>
-          <Typography variant="h6">{t`editor.uploadExp.title`}</Typography>
+          <Typography variant="h6">{t('editor.uploadExp.title')}</Typography>
           <IconButton onClick={hide} sx={{ ml: 'auto' }}>
             <CloseIcon />
           </IconButton>

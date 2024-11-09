@@ -139,7 +139,7 @@ export default function PageArtifact() {
       </Suspense>
       <InfoComponent
         pageKey="artifactPage"
-        modalTitle={t`info.title`}
+        modalTitle={t('info.title')}
         text={t('tipsOfTheDay', { returnObjects: true }) as string[]}
       >
         <ArtifactInfoDisplay />
@@ -176,7 +176,9 @@ export default function PageArtifact() {
             onClick={() => setArtifactIdToEdit('new')}
             color="info"
             startIcon={<AddIcon />}
-          >{t`addNew`}</Button>
+          >
+            {t('addNew')}
+          </Button>
         </Grid>
         <Grid item xs={1}>
           <Button
@@ -184,7 +186,9 @@ export default function PageArtifact() {
             onClick={onShowDup}
             color="info"
             startIcon={<DifferenceIcon />}
-          >{t`showDup`}</Button>
+          >
+            {t('showDup')}
+          </Button>
         </Grid>
       </Grid>
       <Suspense

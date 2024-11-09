@@ -154,7 +154,7 @@ export function CustomMultiTargetButton({
         {...buttonProps}
       >
         <Box display="flex" gap={1}>
-          <span>{t`multiTarget.title`}</span>
+          <span>{t('multiTarget.title')}</span>
           <SqBadge color={customMultiTargets.length ? 'success' : 'secondary'}>
             {customMultiTargets.length}
           </SqBadge>
@@ -171,7 +171,7 @@ export function CustomMultiTargetButton({
               title={
                 <Box display="flex" gap={1} alignItems="center">
                   <DashboardCustomizeIcon />
-                  <Typography variant="h6">{t`multiTarget.title`}</Typography>
+                  <Typography variant="h6">{t('multiTarget.title')}</Typography>
                   <InfoTooltip
                     title={
                       <Typography>
@@ -221,7 +221,9 @@ export function CustomMultiTargetButton({
                       fullWidth
                       onClick={addNewCustomMultiTarget}
                       startIcon={<AddIcon />}
-                    >{t`multiTarget.addNewMTarget`}</Button>
+                    >
+                      {t('multiTarget.addNewMTarget')}
+                    </Button>
                   </Grid>
                   <Grid item xs={1}>
                     <CustomMultiTargetImportBtn

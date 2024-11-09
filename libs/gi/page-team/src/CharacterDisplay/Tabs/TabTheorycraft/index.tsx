@@ -315,7 +315,7 @@ export default function TabTheorycraft() {
                 value={distributedSubstats}
                 disabled={!optimizationTarget || solving}
                 onChange={(v) => v !== undefined && setDistributedSubstats(v)}
-                endAdornment={t`tabTheorycraft.distInput`}
+                endAdornment={t('tabTheorycraft.distInput')}
                 sx={{
                   borderRadius: 1,
                   px: 1,
@@ -343,7 +343,7 @@ export default function TabTheorycraft() {
                   color="success"
                   startIcon={<CalculateIcon />}
                 >
-                  {t`tabTheorycraft.distribute`}
+                  {t('tabTheorycraft.distribute')}
                 </Button>
               ) : (
                 <Button

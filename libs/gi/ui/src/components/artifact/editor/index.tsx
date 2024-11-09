@@ -312,7 +312,7 @@ export function ArtifactEditor({
   )
   const isValid = !errors.length
   const canClearArtifact = (): boolean =>
-    window.confirm(t`editor.clearPrompt` as string)
+    window.confirm(t('editor.clearPrompt') as string)
   const { rarity = 5, level = 0 } = artifact ?? {}
   // Same as above when assigning newValue.slotKey in update.
   const slotKey = useMemo(() => {
@@ -326,7 +326,7 @@ export function ArtifactEditor({
       if (
         !artifactIdToEdit &&
         (queueTotal || artifact) &&
-        !window.confirm(t`editor.clearPrompt` as string)
+        !window.confirm(t('editor.clearPrompt') as string)
       ) {
         e?.preventDefault()
         return
@@ -464,7 +464,7 @@ export function ArtifactEditor({
               <Box component="div" display="flex">
                 <CustomNumberTextField
                   id="filled-basic"
-                  label={t`editor.level`}
+                  label={t('editor.level')}
                   variant="filled"
                   sx={{ flexShrink: 1, flexGrow: 1, mr: 1, my: 0 }}
                   margin="dense"
@@ -532,7 +532,7 @@ export function ArtifactEditor({
                           />
                         </span>
                       ) : (
-                        t`editor.unknownPieceName`
+                        t('editor.unknownPieceName')
                       )}
                     </Typography>
                   </Suspense>
@@ -552,7 +552,7 @@ export function ArtifactEditor({
                       {artifact ? (
                         <ArtifactStatWithUnit statKey={artifact.mainStatKey} />
                       ) : (
-                        t`mainStat`
+                        t('mainStat')
                       )}
                     </b>
                   }
@@ -578,7 +578,7 @@ export function ArtifactEditor({
                           rarity,
                           level
                         )
-                      : t`mainStat`}
+                      : t('mainStat')}
                   </Typography>
                 </CardThemed>
                 <Button
@@ -631,7 +631,7 @@ export function ArtifactEditor({
                               component="span"
                               startIcon={<PhotoCamera />}
                             >
-                              {t`editor.uploadBtn`}
+                              {t('editor.uploadBtn')}
                             </Button>
                           </label>
                         </Grid>
@@ -745,9 +745,9 @@ export function ArtifactEditor({
                   >
                     {oldType !== 'edit'
                       ? oldType === 'duplicate'
-                        ? t`editor.dupArt`
-                        : t`editor.upArt`
-                      : t`editor.beforeEdit`}
+                        ? t('editor.dupArt')
+                        : t('editor.upArt')
+                      : t('editor.beforeEdit')}
                   </Typography>
                   <ArtifactCardObj artifact={old} />
                 </CardThemed>
@@ -772,7 +772,9 @@ export function ArtifactEditor({
                     py={1}
                     variant="h6"
                     color="text.secondary"
-                  >{t`editor.preview`}</Typography>
+                  >
+                    {t('editor.preview')}
+                  </Typography>
                   {cArtifact && <ArtifactCardObj artifact={cArtifact} />}
                 </CardThemed>
               </Grid>
@@ -803,7 +805,7 @@ export function ArtifactEditor({
                 disabled={!artifact || !isValid}
                 color="primary"
               >
-                {t`editor.btnSave`}
+                {t('editor.btnSave')}
               </Button>
             ) : (
               <Button
@@ -819,7 +821,7 @@ export function ArtifactEditor({
                 disabled={!artifact || !isValid}
                 color={oldType === 'duplicate' ? 'warning' : 'primary'}
               >
-                {t`editor.btnAdd`}
+                {t('editor.btnAdd')}
               </Button>
             )}
             {allowEmpty && (
@@ -830,7 +832,9 @@ export function ArtifactEditor({
                   canClearArtifact() && reset()
                 }}
                 color="error"
-              >{t`editor.btnClear`}</Button>
+              >
+                {t('editor.btnClear')}
+              </Button>
             )}
             {process.env['NODE_ENV'] === 'development' && (
               <Button
@@ -842,7 +846,9 @@ export function ArtifactEditor({
                     artifact: randomizeArtifact(),
                   })
                 }
-              >{t`editor.btnRandom`}</Button>
+              >
+                {t('editor.btnRandom')}
+              </Button>
             )}
             {old && oldType !== 'edit' && (
               <Button
@@ -854,20 +860,24 @@ export function ArtifactEditor({
                 }}
                 disabled={!artifact || !isValid}
                 color="success"
-              >{t`editor.btnUpdate`}</Button>
+              >
+                {t('editor.btnUpdate')}
+              </Button>
             )}
             {!!removeId && (
               <Button
                 startIcon={<DeleteForeverIcon />}
                 onClick={() => {
-                  if (!window.confirm(t`editor.confirmDelete`)) return
+                  if (!window.confirm(t('editor.confirmDelete'))) return
                   database.arts.remove(removeId)
                   reset()
                   if (!allowEmpty) setShow(false)
                 }}
                 disabled={!artifact || !isValid}
                 color="error"
-              >{t`editor.delete`}</Button>
+              >
+                {t('editor.delete')}
+              </Button>
             )}
           </Box>
         </CardContent>

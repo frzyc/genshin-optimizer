@@ -125,11 +125,9 @@ export function UploadCard({
                 type="file"
                 onChange={onUpload}
               />
-              <Button
-                component="span"
-                color="info"
-                startIcon={<FileOpen />}
-              >{t`uploadCard.buttons.open`}</Button>
+              <Button component="span" color="info" startIcon={<FileOpen />}>
+                {t('uploadCard.buttons.open')}
+              </Button>
             </label>
           </Grid>
           <Grid item flexGrow={1}>
@@ -154,8 +152,8 @@ export function UploadCard({
             title={
               <Typography>
                 {ignoreDups
-                  ? t`uploadCard.tooltip.ignoreDup`
-                  : t`uploadCard.tooltip.detectdup`}
+                  ? t('uploadCard.tooltip.ignoreDup')
+                  : t('uploadCard.tooltip.detectdup')}
               </Typography>
             }
             placement="top"
@@ -169,7 +167,7 @@ export function UploadCard({
                 onClick={() => setIgnoreDups(!ignoreDups)}
                 startIcon={ignoreDups ? <CheckBoxOutlineBlank /> : <CheckBox />}
               >
-                {t`uploadCard.buttons.detectDups`}
+                {t('uploadCard.buttons.detectDups')}
               </Button>
             </Box>
           </Tooltip>
@@ -177,8 +175,8 @@ export function UploadCard({
             title={
               <Typography>
                 {keepNotInImport
-                  ? t`uploadCard.tooltip.keepNotInImport`
-                  : t`uploadCard.tooltip.delNotInImport`}
+                  ? t('uploadCard.tooltip.keepNotInImport')
+                  : t('uploadCard.tooltip.delNotInImport')}
               </Typography>
             }
             placement="top"
@@ -194,7 +192,7 @@ export function UploadCard({
                   keepNotInImport ? <CheckBoxOutlineBlank /> : <CheckBox />
                 }
               >
-                {t`uploadCard.buttons.delNotInImport`}
+                {t('uploadCard.buttons.delNotInImport')}
               </Button>
             </Box>
           </Tooltip>

@@ -335,7 +335,7 @@ export function ArtifactFilterDisplay({
                   filterOptionDispatch({ showInventory: !showInventory })
                 }
               >
-                {t`artInInv`}{' '}
+                {t('artInInv')}{' '}
                 <Chip
                   sx={{ ml: 1 }}
                   label={equippedTotal['unequipped']}
@@ -350,7 +350,7 @@ export function ArtifactFilterDisplay({
                   filterOptionDispatch({ showEquipped: !showEquipped })
                 }
               >
-                {t`equippedArt`}{' '}
+                {t('equippedArt')}{' '}
                 <Chip
                   sx={{ ml: 1 }}
                   label={equippedTotal['equipped']}
@@ -362,7 +362,7 @@ export function ArtifactFilterDisplay({
               {/* Filter characters */}
               <Suspense fallback={null}>
                 <BootstrapTooltip
-                  title={showEquipped ? t`locationsTooltip` : ''}
+                  title={showEquipped ? t('locationsTooltip') : ''}
                   placement="top"
                 >
                   <span>

@@ -190,31 +190,31 @@ export default function ArtifactSetConfig({
       <CardThemed bgt="light" sx={{ display: 'flex', width: '100%' }}>
         <CardContent sx={{ flexGrow: 1 }}>
           <Typography>
-            <strong>{t`artSetConfig.title`}</strong>
+            <strong>{t('artSetConfig.title')}</strong>
           </Typography>
           <Stack spacing={1}>
             <Typography>
-              {t`artSetConfig.setEffCond`}{' '}
+              {t('artSetConfig.setEffCond')}{' '}
               <SqBadge color={artifactCondCount ? 'success' : 'warning'}>
                 {artifactCondCount} {t('artSetConfig.enabled')}
               </SqBadge>
             </Typography>
             <Typography>
-              {t`sheet:2set`}{' '}
+              {t('sheet:2set')}{' '}
               <SqBadge color="success">
                 {allowTotals['2']} <ShowChartIcon {...iconInlineProps} />{' '}
                 {t('artSetConfig.allowed')}
               </SqBadge>
             </Typography>
             <Typography>
-              {t`sheet:4set`}{' '}
+              {t('sheet:4set')}{' '}
               <SqBadge color="success">
                 {allowTotals['4']} <ShowChartIcon {...iconInlineProps} />{' '}
                 {t('artSetConfig.allowed')}
               </SqBadge>
             </Typography>
             <Typography>
-              {t`artSetConfig.2rainbow`}{' '}
+              {t('artSetConfig.2rainbow')}{' '}
               <SqBadge color={allowRainbow2 ? 'success' : 'secondary'}>
                 {allowRainbow2 ? (
                   <ShowChartIcon {...iconInlineProps} />
@@ -225,7 +225,7 @@ export default function ArtifactSetConfig({
               </SqBadge>
             </Typography>
             <Typography>
-              {t`artSetConfig.4rainbow`}{' '}
+              {t('artSetConfig.4rainbow')}{' '}
               <SqBadge color={allowRainbow4 ? 'success' : 'secondary'}>
                 {allowRainbow4 ? (
                   <ShowChartIcon {...iconInlineProps} />
@@ -251,7 +251,7 @@ export default function ArtifactSetConfig({
       <ModalWrapper open={open} onClose={onClose}>
         <CardThemed>
           <CardContent sx={{ display: 'flex', gap: 1 }}>
-            <Typography variant="h6">{t`artSetConfig.title`}</Typography>
+            <Typography variant="h6">{t('artSetConfig.title')}</Typography>
             <IconButton onClick={onClose} sx={{ ml: 'auto' }}>
               <CloseIcon />
             </IconButton>
@@ -262,7 +262,7 @@ export default function ArtifactSetConfig({
               <CardContent>
                 <Box display="flex" gap={1}>
                   <Typography>
-                    <strong>{t`artSetConfig.modal.setCond.title`}</strong>
+                    <strong>{t('artSetConfig.modal.setCond.title')}</strong>
                   </Typography>
                   <Typography sx={{ flexGrow: 1 }}>
                     <SqBadge color={artifactCondCount ? 'success' : 'warning'}>
@@ -274,9 +274,11 @@ export default function ArtifactSetConfig({
                     onClick={resetArtConds}
                     color="error"
                     startIcon={<Replay />}
-                  >{t`artSetConfig.modal.setCond.reset`}</Button>
+                  >
+                    {t('artSetConfig.modal.setCond.reset')}
+                  </Button>
                 </Box>
-                <Typography>{t`artSetConfig.modal.setCond.text`}</Typography>
+                <Typography>{t('artSetConfig.modal.setCond.text')}</Typography>
               </CardContent>
             </CardThemed>
             <CardThemed bgt="light" sx={{ mb: 1 }}>
@@ -462,7 +464,9 @@ export default function ArtifactSetConfig({
                         endIcon={
                           allowRainbow2 ? <ShowChartIcon /> : <BlockIcon />
                         }
-                      >{t`artSetConfig.2rainbow`}</Button>
+                      >
+                        {t('artSetConfig.2rainbow')}
+                      </Button>
                       <Button
                         fullWidth
                         onClick={() =>
@@ -485,7 +489,9 @@ export default function ArtifactSetConfig({
                         endIcon={
                           allowRainbow4 ? <ShowChartIcon /> : <BlockIcon />
                         }
-                      >{t`artSetConfig.4rainbow`}</Button>
+                      >
+                        {t('artSetConfig.4rainbow')}
+                      </Button>
                     </Box>
                   </CardContent>
                 </CardThemed>
@@ -657,7 +663,7 @@ function ArtifactSetCard({
                     >
                       <Box>
                         <Typography>
-                          <SqBadge color="success">{t`2set`}</SqBadge>
+                          <SqBadge color="success">{t('2set')}</SqBadge>
                         </Typography>
                         <Typography>
                           <Translate
@@ -672,7 +678,7 @@ function ArtifactSetCard({
                           }}
                         >
                           <Typography>
-                            <SqBadge color="success">{t`4set`}</SqBadge>
+                            <SqBadge color="success">{t('4set')}</SqBadge>
                           </Typography>
                           <Typography>
                             <Translate
