@@ -6,11 +6,6 @@ import {
   type RelicSlotKey,
 } from '@genshin-optimizer/sr/consts'
 import type { ICachedLightCone, ICachedRelic } from '@genshin-optimizer/sr/db'
-import {
-  lightConeData,
-  own,
-  srCalculatorWithEntries,
-} from '@genshin-optimizer/sr/formula'
 import { getRelicMainStatVal } from '@genshin-optimizer/sr/util'
 import type { ChildCommandInit, ChildMessage } from './childWorker'
 import { MAX_BUILDS } from './common'
@@ -230,15 +225,12 @@ function convertRelicToStats(relic: ICachedRelic): RelicStats {
 }
 
 function convertLightConeToStats(lightCone: ICachedLightCone): LightConeStats {
-  const calc = srCalculatorWithEntries(lightConeData(lightCone))
-
   return {
     id: lightCone.id,
     stats: {
-      ...objKeyMap(
-        ['hp', 'atk', 'def'] as const,
-        (stat) => calc.compute(own.base[stat].with('sheet', 'lightCone')).val
-      ),
+      lvl: lightCone.level,
+      superimpose: lightCone.superimpose,
+      ascension: lightCone.ascension,
       [lightCone.key]: 1,
     },
   }

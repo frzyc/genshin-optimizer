@@ -1,6 +1,6 @@
 import { detach, sum } from '@genshin-optimizer/pando/engine'
 import type { CharacterKey, RelicSlotKey } from '@genshin-optimizer/sr/consts'
-import { allRelicSetKeys } from '@genshin-optimizer/sr/consts'
+import { allLightConeKeys, allRelicSetKeys } from '@genshin-optimizer/sr/consts'
 import type {
   ICachedLightCone,
   ICachedRelic,
@@ -128,6 +128,7 @@ export class Solver {
   private detachNodes() {
     // Step 2: Detach nodes from Calculator
     const relicSetKeys = new Set(allRelicSetKeys)
+    const lightConeKeys = new Set(allLightConeKeys)
     const detachedNodes = detach(
       [
         // team
@@ -148,6 +149,14 @@ export class Solver {
           return { q: tag['q']! } // Relic stat bonus
         if (tag['q'] === 'count' && relicSetKeys.has(tag['sheet'] as any))
           return { q: tag['sheet']! } // Relic set counter
+        if (
+          tag['qt'] == 'lightCone' &&
+          ['lvl', 'ascension', 'superimpose'].includes(tag['q'] as string)
+        )
+          return { q: tag['q']! } // Light cone bonus
+        if (tag['q'] === 'count' && lightConeKeys.has(tag['sheet'] as any))
+          return { q: tag['sheet']! } // Relic set counter
+
         return undefined
       }
     )

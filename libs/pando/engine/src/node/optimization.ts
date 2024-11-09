@@ -316,6 +316,15 @@ function dedupMapArray<I, O>(x: I[], map: (_: I) => O): O[] {
   return x.every((x, i) => (x as any) === newX[i]) ? (x as any) : newX
 }
 
+/**
+ * Generates a custom function, "cuz speed".
+ * NOTE: `slotCount` should be `n.length` for optimization reaons. the size of `n` should not change when fed into the resulting custom function.
+ * @param n
+ * @param dynTagCategory
+ * @param slotCount
+ * @param initial
+ * @param header
+ */
 export function compile(
   n: NumTagFree[],
   dynTagCategory: string,

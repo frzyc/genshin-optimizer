@@ -82,7 +82,7 @@ async function init({
   compiledCalcFunction = compile(
     combinedNodes,
     'q', // Tag category for object key
-    6, // Number of slots
+    7, // Number of slots
     {} // Initial values
     // Header; includes custom formulas, such as `res`
   )
