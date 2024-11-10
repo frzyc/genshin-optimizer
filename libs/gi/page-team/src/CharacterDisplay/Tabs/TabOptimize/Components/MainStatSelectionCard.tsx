@@ -90,7 +90,7 @@ export default function MainStatSelectionCard({
           <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
             <BootstrapTooltip
               placement="top"
-              title={<Typography>{t(`slotName.flower`)}</Typography>}
+              title={<Typography>{t('slotName.flower')}</Typography>}
             >
               <FlowerIcon fontSize="inherit" />
             </BootstrapTooltip>
@@ -106,7 +106,7 @@ export default function MainStatSelectionCard({
           <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
             <BootstrapTooltip
               placement="top"
-              title={<Typography>{t(`slotName.plume`)}</Typography>}
+              title={<Typography>{t('slotName.plume')}</Typography>}
             >
               <PlumeIcon fontSize="inherit" />
             </BootstrapTooltip>

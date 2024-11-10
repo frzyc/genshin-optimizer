@@ -38,7 +38,7 @@ export default function CharacterProfileCard() {
             onClick={onShowEditor}
             startIcon={<DriveFileRenameOutlineIcon />}
           >
-            {t`charProfile.button`}
+            {t('charProfile.button')}
           </Button>
         </Box>
 

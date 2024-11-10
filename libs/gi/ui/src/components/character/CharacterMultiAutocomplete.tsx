@@ -134,7 +134,7 @@ export function CharacterMultiAutocomplete({
   return (
     <Suspense fallback={<Skeleton variant="text" width={100} />}>
       <GeneralAutocompleteMulti
-        label={t`searchLabel.char`}
+        label={t('searchLabel.char')}
         options={options}
         toImg={toImg}
         valueKeys={charKeys}

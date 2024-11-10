@@ -26,77 +26,77 @@ const team = [
   {
     name: 'frzyc',
     img: frzyc,
-    title: (t) => t`teamCard.jobTitle.leadDev`,
+    title: (t) => t('teamCard.jobTitle.leadDev'),
     subtitle: 'Insomniac in Chief',
     url: process.env.NX_URL_GITHUB_FRZYC,
   },
   {
     name: 'Lantua',
     img: lantua,
-    title: (t) => t`teamCard.jobTitle.dev`,
+    title: (t) => t('teamCard.jobTitle.dev'),
     subtitle: 'Copium Calculator',
     url: process.env.NX_URL_GITHUB_LANTUA,
   },
   {
     name: 'Van',
     img: van,
-    title: (t) => t`teamCard.jobTitle.dev`,
+    title: (t) => t('teamCard.jobTitle.dev'),
     subtitle: 'Waverider Stowaway',
     url: process.env.NX_URL_GITHUB_VAN,
   },
   {
     name: '✦ Sin ✦',
     img: sin,
-    title: (t) => t`teamCard.jobTitle.admin`,
+    title: (t) => t('teamCard.jobTitle.admin'),
     subtitle: 'Ohh, shiny.',
     url: '',
   },
   {
     name: 'Stain',
     img: stain,
-    title: (t) => t`teamCard.jobTitle.admin`,
+    title: (t) => t('teamCard.jobTitle.admin'),
     subtitle: 'Australia Man',
     url: '',
   },
   {
     name: 'yae!',
     img: yae,
-    title: (t) => t`teamCard.jobTitle.dev`,
+    title: (t) => t('teamCard.jobTitle.dev'),
     subtitle: 'eeeqeee',
     url: '',
   },
   {
     name: 'tooflesswulf',
     img: toofless,
-    title: (t) => t`teamCard.jobTitle.dev`,
+    title: (t) => t('teamCard.jobTitle.dev'),
     subtitle: 'Mad Mathematician',
     url: '',
   },
   {
     name: 'Qbe',
     img: qbe,
-    title: (t) => t`teamCard.jobTitle.dev`,
+    title: (t) => t('teamCard.jobTitle.dev'),
     subtitle: 'Irminsul Debugger',
     url: '',
   },
   {
     name: 'Polomo',
     img: polomo,
-    title: (t) => t`teamCard.jobTitle.translator`,
+    title: (t) => t('teamCard.jobTitle.translator'),
     subtitle: 'Director of Text',
     url: '',
   },
   {
     name: 'Vlad',
     img: vlad,
-    title: (t) => t`teamCard.jobTitle.TC`,
+    title: (t) => t('teamCard.jobTitle.TC'),
     subtitle: 'Spreadsheet Renegade',
     url: '',
   },
   {
     name: 'D1firehail',
     img: d1,
-    title: (t) => t`teamCard.jobTitle.mod`,
+    title: (t) => t('teamCard.jobTitle.mod'),
     subtitle: 'Scanner Spy',
     url: '',
   },
@@ -107,7 +107,7 @@ export default function TeamCard() {
   return (
     <CardThemed>
       <CardHeader
-        title={<Typography variant="h5">{t`teamCard.title`}</Typography>}
+        title={<Typography variant="h5">{t('teamCard.title')}</Typography>}
         avatar={<GroupsIcon fontSize="large" />}
       />
       <Divider />

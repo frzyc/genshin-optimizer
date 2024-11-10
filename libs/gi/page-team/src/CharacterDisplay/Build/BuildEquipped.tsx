@@ -27,7 +27,7 @@ export function BuildEquipped({ active = false }: { active?: boolean }) {
     })
   const onDupe = () =>
     database.teamChars.newBuild(teamCharId, {
-      name: t`buildEqCard.copy.nameReal`,
+      name: t('buildEqCard.copy.nameReal'),
       artifactIds: equippedArtifacts,
       weaponId: equippedWeapon,
     })
@@ -42,14 +42,14 @@ export function BuildEquipped({ active = false }: { active?: boolean }) {
     if (!newBuildTcId) return
     // copy over name
     database.buildTcs.set(newBuildTcId, {
-      name: t`buildEqCard.copy.nameTc`,
-      description: t`buildEqCard.copy.desc`,
+      name: t('buildEqCard.copy.nameTc'),
+      description: t('buildEqCard.copy.desc'),
     })
   }
 
   return (
     <BuildCard
-      name={t`buildEqCard.name`}
+      name={t('buildEqCard.name')}
       active={active}
       onActive={onActive}
       onCopyToTc={copyToTc}

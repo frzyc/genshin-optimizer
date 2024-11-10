@@ -112,7 +112,7 @@ export default function BuildReal({
         <BuildEditor buildId={buildId} onClose={onClose} />
       </ModalWrapper>
       <EquipBuildModal
-        currentName={t`buildRealCard.copy.equipped`}
+        currentName={t('buildRealCard.copy.equipped')}
         currentWeaponId={equippedWeapon}
         currentArtifactIds={equippedArtifacts}
         newWeaponId={weaponId}
@@ -235,7 +235,7 @@ function BuildEditor({
   return (
     <CardThemed>
       <CardHeader
-        title={t`buildRealCard.edit.title`}
+        title={t('buildRealCard.edit.title')}
         action={
           <IconButton onClick={onClose}>
             <CloseIcon />
@@ -246,14 +246,14 @@ function BuildEditor({
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
         <TextField
           fullWidth
-          label={t`buildRealCard.edit.label`}
-          placeholder={t`buildRealCard.edit.placeholder`}
+          label={t('buildRealCard.edit.label')}
+          placeholder={t('buildRealCard.edit.placeholder')}
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <TextField
           fullWidth
-          label={t`buildRealCard.edit.desc`}
+          label={t('buildRealCard.edit.desc')}
           value={desc}
           onChange={(e) => setDesc(e.target.value)}
           multiline

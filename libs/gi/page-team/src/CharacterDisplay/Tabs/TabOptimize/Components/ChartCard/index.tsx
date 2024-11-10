@@ -218,7 +218,7 @@ export default function ChartCard({
       <CardContent>
         <Grid container spacing={1} alignItems="center">
           <Grid item>
-            <Typography>{t`tcGraph.vs`}</Typography>
+            <Typography>{t('tcGraph.vs')}</Typography>
           </Grid>
           <Grid item>
             <BootstrapTooltip
@@ -271,7 +271,9 @@ export default function ChartCard({
                 startIcon={showMin ? <CheckBox /> : <CheckBoxOutlineBlank />}
                 color={showMin ? 'success' : 'secondary'}
                 onClick={() => setshowMin(!showMin)}
-              >{t`tcGraph.showStatThr`}</Button>
+              >
+                {t('tcGraph.showStatThr')}
+              </Button>
             </Grid>
           )}
           {!!downloadData && (
@@ -281,7 +283,9 @@ export default function ChartCard({
                 color="info"
                 startIcon={<Download />}
                 onClick={() => setshowDownload(!showDownload)}
-              >{t`tcGraph.downloadData`}</Button>
+              >
+                {t('tcGraph.downloadData')}
+              </Button>
             </Grid>
           )}
         </Grid>
@@ -436,7 +440,7 @@ function Chart({
               ? [
                   {
                     id: 'min',
-                    value: t`tcGraph.statReqThr`,
+                    value: t('tcGraph.statReqThr'),
                     type: 'line' as LegendType,
                     color: lineColor,
                   },
@@ -444,19 +448,19 @@ function Chart({
               : []),
             {
               id: 'trueY',
-              value: t`tcGraph.generatedBuilds`,
+              value: t('tcGraph.generatedBuilds'),
               type: 'circle',
               color: optTargetColor,
             },
             {
               id: 'highlighted',
-              value: t`tcGraph.highlightedBuilds`,
+              value: t('tcGraph.highlightedBuilds'),
               type: 'square',
               color: highlightedColor,
             },
             {
               id: 'current',
-              value: t`tcGraph.currentBuild`,
+              value: t('tcGraph.currentBuild'),
               type: 'diamond',
               color: currentColor,
             },

@@ -61,7 +61,7 @@ const sheet: IWeaponSheet = {
       header: headerTemplate(key, st('conditional')),
       path: condAfterSkillPath,
       value: condAfterSkill,
-      name: st('hitOp.skill'),
+      name: st('afterUse.skill'),
       states: {
         on: {
           fields: [

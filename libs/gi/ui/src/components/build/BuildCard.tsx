@@ -88,7 +88,7 @@ export function BuildCard({
           }}
         >
           <Tooltip
-            title={<Typography>{t`buildCardTip.edit`}</Typography>}
+            title={<Typography>{t('buildCardTip.edit')}</Typography>}
             placement="top"
             arrow
           >
@@ -104,7 +104,7 @@ export function BuildCard({
             </IconButton>
           </Tooltip>
           <Tooltip
-            title={<Typography>{t`buildCardTip.copyTc`}</Typography>}
+            title={<Typography>{t('buildCardTip.copyTc')}</Typography>}
             placement="top"
             arrow
           >
@@ -118,7 +118,7 @@ export function BuildCard({
             </IconButton>
           </Tooltip>
           <Tooltip
-            title={<Typography>{t`buildCardTip.duplicate`}</Typography>}
+            title={<Typography>{t('buildCardTip.duplicate')}</Typography>}
             placement="top"
             arrow
           >
@@ -132,7 +132,7 @@ export function BuildCard({
             </IconButton>
           </Tooltip>
           <Tooltip
-            title={<Typography>{t`buildCardTip.equip`}</Typography>}
+            title={<Typography>{t('buildCardTip.equip')}</Typography>}
             placement="top"
             arrow
           >
@@ -146,7 +146,7 @@ export function BuildCard({
             </IconButton>
           </Tooltip>
           <Tooltip
-            title={<Typography>{t`buildCardTip.delete`}</Typography>}
+            title={<Typography>{t('buildCardTip.delete')}</Typography>}
             placement="top"
             arrow
           >

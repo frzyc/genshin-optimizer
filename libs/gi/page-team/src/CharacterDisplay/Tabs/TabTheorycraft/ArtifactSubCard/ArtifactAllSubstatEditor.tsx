@@ -133,9 +133,9 @@ export function ArtifactAllSubstatEditor({
         }}
         InputProps={{
           startAdornment: (
-            <Box
-              sx={{ whiteSpace: 'nowrap' }}
-            >{t`tabTheorycraft.all.rolls`}</Box>
+            <Box sx={{ whiteSpace: 'nowrap' }}>
+              {t('tabTheorycraft.all.rolls')}
+            </Box>
           ),
         }}
         focused
@@ -152,7 +152,9 @@ export function ArtifactAllSubstatEditor({
         }}
         InputProps={{
           startAdornment: (
-            <Box sx={{ whiteSpace: 'nowrap' }}>{t`tabTheorycraft.all.max`}</Box>
+            <Box sx={{ whiteSpace: 'nowrap' }}>
+              {t('tabTheorycraft.all.max')}
+            </Box>
           ),
         }}
         focused

@@ -233,7 +233,7 @@ export function WeaponCardObj({
           >
             {!!onEdit && (
               <Tooltip
-                title={<Typography>{t`page_weapon:edit`}</Typography>}
+                title={<Typography>{t('page_weapon:edit')}</Typography>}
                 placement="top"
                 arrow
               >

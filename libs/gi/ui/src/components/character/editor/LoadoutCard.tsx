@@ -72,7 +72,7 @@ export function LoadoutCard({
                 color="info"
                 startIcon={<AddIcon />}
               >
-                {t`charContentModal.addTeam`}
+                {t('charContentModal.addTeam')}
               </Button>
             </Grid>
           </Grid>

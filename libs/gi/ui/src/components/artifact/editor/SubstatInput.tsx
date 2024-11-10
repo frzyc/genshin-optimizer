@@ -71,7 +71,8 @@ export function SubstatInput({
   }
   const rollOffset = 7 - rollData.length
 
-  if (!rollNum && key && value) error = error || t`editor.substat.error.noCalc`
+  if (!rollNum && key && value)
+    error = error || t('editor.substat.error.noCalc')
   if (allowedRolls < 0)
     error =
       error ||
@@ -108,7 +109,9 @@ export function SubstatInput({
             {key && (
               <MenuItem
                 onClick={() => setSubstat(index, { key: '', value: 0 })}
-              >{t`editor.substat.noSubstat`}</MenuItem>
+              >
+                {t('editor.substat.noSubstat')}
+              </MenuItem>
             )}
             {allSubstatKeys
               .filter((key) => mainStatKey !== key)
@@ -139,7 +142,7 @@ export function SubstatInput({
               },
             }}
             float={unit === '%'}
-            placeholder={t`editor.substat.selectSub`}
+            placeholder={t('editor.substat.selectSub')}
             value={key ? value : 0}
             onChange={(value) => setSubstat(index, { key, value: value ?? 0 })}
             disabled={!key}
@@ -149,7 +152,7 @@ export function SubstatInput({
             }}
           />
           {!!rollData.length && (
-            <TextButton>{t`editor.substat.nextRolls`}</TextButton>
+            <TextButton>{t('editor.substat.nextRolls')}</TextButton>
           )}
           {rollData.map((v, i) => {
             let newValue = artDisplayValue(accurateValue + v, unit)
@@ -183,7 +186,7 @@ export function SubstatInput({
       </Box>
       <Box sx={{ px: 1, pb: 1 }}>
         {error ? (
-          <SqBadge color="error">{t`ui:error`}</SqBadge>
+          <SqBadge color="error">{t('ui:error')}</SqBadge>
         ) : (
           <Grid container>
             <Grid item>
@@ -196,7 +199,7 @@ export function SubstatInput({
               >
                 {rollNum
                   ? t('editor.substat.RollCount', { count: rollNum })
-                  : t`editor.substat.noRoll`}
+                  : t('editor.substat.noRoll')}
               </SqBadge>
             </Grid>
             <Grid item flexGrow={1}>
@@ -230,7 +233,7 @@ export function SubstatInput({
                     value={
                       efficiency
                         ? efficiency
-                        : (t`editor.substat.noStat` as string)
+                        : (t('editor.substat.noStat') as string)
                     }
                   />
                 </Trans>

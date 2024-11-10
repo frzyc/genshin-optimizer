@@ -30,7 +30,7 @@ export default function BuildDropdown({
         <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
           <span>{database.teams.getActiveBuildName(loadoutDatum)}</span>
           {buildType === 'tc' && (
-            <SqBadge color="success">{t`buildDropdown.tcBadge`}</SqBadge>
+            <SqBadge color="success">{t('buildDropdown.tcBadge')}</SqBadge>
           )}
         </Box>
       }
@@ -41,7 +41,7 @@ export default function BuildDropdown({
         onClick={() => onChangeLoadoutDatum({ buildType: 'equipped' })}
         sx={{ display: 'flex', gap: 1 }}
       >
-        {t`buildDropdown.equipped`}
+        {t('buildDropdown.equipped')}
       </MenuItem>
       {buildIds.map((bId) => {
         const { name } = database.builds.get(bId)!
@@ -71,7 +71,7 @@ export default function BuildDropdown({
             sx={{ display: 'flex', gap: 1 }}
           >
             <span>{name}</span>
-            <SqBadge color="success">{t`buildDropdown.tcBadge`}</SqBadge>
+            <SqBadge color="success">{t('buildDropdown.tcBadge')}</SqBadge>
           </MenuItem>
         )
       })}

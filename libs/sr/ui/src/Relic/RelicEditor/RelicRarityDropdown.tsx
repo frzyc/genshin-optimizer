@@ -23,7 +23,9 @@ export default function RelicRarityDropdown({
   return (
     <DropdownButton
       {...props}
-      title={rarity ? <StarsDisplay stars={rarity} inline /> : t`editor.rarity`}
+      title={
+        rarity ? <StarsDisplay stars={rarity} inline /> : t('editor.rarity')
+      }
       color={rarity ? 'success' : 'primary'}
     >
       {allRelicRarityKeys.map((rarity) => (

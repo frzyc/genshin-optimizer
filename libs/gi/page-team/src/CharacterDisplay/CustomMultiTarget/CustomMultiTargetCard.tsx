@@ -88,7 +88,7 @@ export default function CustomMultiTargetCard({
     (index: number) => () => {
       if (
         Object.values(target.targets[index].bonusStats).length &&
-        !window.confirm(t`multiTarget.confirm`)
+        !window.confirm(t('multiTarget.confirm'))
       )
         return
       const targets = [...target.targets]
@@ -124,7 +124,7 @@ export default function CustomMultiTargetCard({
   const copyToClipboard = () =>
     navigator.clipboard
       .writeText(JSON.stringify(target))
-      .then(() => alert(t`multiTarget.copyMsg`))
+      .then(() => alert(t('multiTarget.copyMsg')))
       .catch(console.error)
 
   const customTargetDisplays = useMemo(
@@ -192,7 +192,7 @@ export default function CustomMultiTargetCard({
           >
             <TextFieldLazy
               fullWidth
-              label={t`multiTarget.label`}
+              label={t('multiTarget.label')}
               value={name}
               onChange={(name) =>
                 setTarget((target) => ({
@@ -204,7 +204,7 @@ export default function CustomMultiTargetCard({
             {description && descIsJson && <JsonDescWarning />}
             <TextFieldLazy
               fullWidth
-              label={t`multiTarget.desc`}
+              label={t('multiTarget.desc')}
               value={description}
               onChange={(description) => {
                 setDescIsJson(
@@ -243,7 +243,7 @@ export default function CustomMultiTargetCard({
                 startIcon={<ContentPasteIcon />}
                 sx={{ flexGrow: 1 }}
               >
-                {t`multiTarget.export`}
+                {t('multiTarget.export')}
               </Button>
               <Button color="error" onClick={onDelete}>
                 <DeleteForeverIcon />
@@ -296,12 +296,9 @@ function AddCustomTargetBtn({
 
   return (
     <>
-      <Button
-        fullWidth
-        onClick={onShow}
-        startIcon={<AddIcon />}
-        sx={{ mb: 1 }}
-      >{t`multiTarget.addNewTarget`}</Button>
+      <Button fullWidth onClick={onShow} startIcon={<AddIcon />} sx={{ mb: 1 }}>
+        {t('multiTarget.addNewTarget')}
+      </Button>
       <TargetSelectorModal
         showEmptyTargets
         flatOnly

@@ -133,7 +133,7 @@ export default function TeamCharacterSelector({
               >
                 <BorderColorIcon />
                 <Typography>
-                  <strong>{t`team.editNameDesc`}</strong>
+                  <strong>{t('team.editNameDesc')}</strong>
                 </Typography>
               </Box>
               {!!team.description && (
@@ -164,7 +164,7 @@ export default function TeamCharacterSelector({
       <ModalWrapper open={editMode} onClose={() => setEditMode(false)}>
         <CardThemed>
           <CardHeader
-            title={t`team.editNameDesc`}
+            title={t('team.editNameDesc')}
             avatar={<TeamIcon />}
             titleTypographyProps={{ variant: 'h6' }}
             action={
@@ -177,13 +177,13 @@ export default function TeamCharacterSelector({
           <CardContent>
             <Box display="flex" flexDirection="column" gap={2} sx={{ mt: 2 }}>
               <TextFieldLazy
-                label={t`team.name`}
+                label={t('team.name')}
                 value={team.name}
                 onChange={(teamName) => handleName(teamName)}
                 autoFocus
               />
               <TextFieldLazy
-                label={t`team.desc`}
+                label={t('team.desc')}
                 value={team.description}
                 onChange={(teamDesc) => handleDesc(teamDesc)}
                 multiline
@@ -203,7 +203,7 @@ export default function TeamCharacterSelector({
           icon={<GroupsIcon />}
           iconPosition="start"
           value={'team'}
-          label={t`teamSettings.tab.team`}
+          label={t('teamSettings.tab.team')}
           onClick={() => navigate(`/teams/${teamId}/`)}
         />
         {loadoutData.map((loadoutDatum, ind) => {

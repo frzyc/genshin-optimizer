@@ -69,7 +69,7 @@ export function EnemyExpandCard({ teamId }: { teamId: string }) {
             color="success"
             label={
               <span>
-                {t`enemyEditor.enemyLevel`}
+                {t('enemyEditor.enemyLevel')}
                 <strong>{enemyLevel}</strong>
               </span>
             }
@@ -157,7 +157,7 @@ export function EnemyEditor({
           target="_blank"
           rel="noreferrer"
         >
-          {t`enemyEditor.announceBtn`}
+          {t('enemyEditor.announceBtn')}
         </Button>
       </Grid>
       <Grid item {...bsProps}>
@@ -225,7 +225,7 @@ export function EnemyEditor({
                   )
                 }
               >
-                {t`enemyEditor.immunity`}
+                {t('enemyEditor.immunity')}
               </Button>
             </StatInput>
           </Grid>
@@ -262,7 +262,7 @@ export function EnemyEditor({
         />
       </Grid>
       <Grid item xs={12}>
-        <small>{t`enemyEditor.note`}</small>
+        <small>{t('enemyEditor.note')}</small>
       </Grid>
     </Grid>
   )

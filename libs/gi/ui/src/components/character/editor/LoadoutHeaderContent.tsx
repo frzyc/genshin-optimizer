@@ -48,21 +48,21 @@ export function LoadoutHeaderContent({
         <Box sx={{ display: 'flex', justifyItems: 'center', gap: 1 }}>
           <CheckroomIcon />
           <Typography>
-            {t`loadoutHeader.builds`}
+            {t('loadoutHeader.builds')}
             <strong>{buildIds.length}</strong>
           </Typography>
         </Box>
         <Box sx={{ display: 'flex', justifyItems: 'center', gap: 1 }}>
           <CheckroomIcon />
           <Typography>
-            {t`loadoutHeader.tcBuilds`}
+            {t('loadoutHeader.tcBuilds')}
             <strong>{buildTcIds.length}</strong>
           </Typography>
         </Box>
         <Box sx={{ display: 'flex', justifyItems: 'center', gap: 1 }}>
           <DashboardCustomizeIcon />
           <Typography>
-            {t`loadoutHeader.mltTargets`}
+            {t('loadoutHeader.mltTargets')}
             <strong>{customMultiTargets.length}</strong>
           </Typography>
         </Box>
@@ -70,7 +70,7 @@ export function LoadoutHeaderContent({
       {optimizationTarget && (
         <Typography sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
           <OptimizationIcon />
-          <Box>{t`loadoutHeader.optTarget`}</Box>
+          <Box>{t('loadoutHeader.optTarget')}</Box>
           <OptimizationTargetDisplay
             customMultiTargets={customMultiTargets}
             optimizationTarget={optimizationTarget}
