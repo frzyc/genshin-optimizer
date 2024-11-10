@@ -1,3 +1,4 @@
+export * from './LightConeAutocomplete'
 export * from './LightConeCard'
 export * from './LightConeCardCompact'
 export * from './LightConeEditor'
