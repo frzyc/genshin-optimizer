@@ -55,7 +55,7 @@ export default function BuildAlert({
   let progress = undefined as undefined | number
 
   if (generatingBuilds) {
-    progress = (tested * 100) / unskipped
+    progress = ((tested + skipped) / total) * 100
     title = (
       <Typography>
         Generating and testing {testedString}
