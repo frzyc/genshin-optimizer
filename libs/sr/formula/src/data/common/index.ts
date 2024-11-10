@@ -1,4 +1,5 @@
 import { max, min, prod } from '@genshin-optimizer/pando/engine'
+import { allLightConeKeys } from '@genshin-optimizer/sr/consts'
 import type { TagMapNodeEntries } from '../util'
 import { own, ownBuff, percent, reader } from '../util'
 import dmg from './dmg'
@@ -14,6 +15,11 @@ const data: TagMapNodeEntries = [
   // convert sheet:<char/lightCone> to sheet:agg for accumulation
   // sheet:<relic> is reread in src/util.ts:relicsData()
   reader.sheet('agg').reread(reader.sheet('char')),
+
+  // add all light cones by default
+  ...allLightConeKeys.map((lc) =>
+    reader.sheet('lightCone').reread(reader.sheet(lc))
+  ),
   reader.sheet('agg').reread(reader.sheet('lightCone')),
 
   // Final <= Premod <= Base

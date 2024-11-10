@@ -88,7 +88,7 @@ export default function InventoryCard() {
   return (
     <CardThemed>
       <CardHeader
-        title={<Typography variant="h5">{t`inventoryCard.title`}</Typography>}
+        title={<Typography variant="h5">{t('inventoryCard.title')}</Typography>}
         avatar={<BusinessCenter fontSize="large" />}
       />
       <Divider />
@@ -108,7 +108,7 @@ export default function InventoryCard() {
             <Chip
               label={
                 <strong>
-                  {t(`ui:tabs.characters`)} {characterTotal}
+                  {t('ui:tabs.characters')} {characterTotal}
                 </strong>
               }
               icon={<People />}
@@ -145,7 +145,7 @@ export default function InventoryCard() {
             <Chip
               label={
                 <strong>
-                  {t(`ui:tabs.weapons`)} {weaponTotal}
+                  {t('ui:tabs.weapons')} {weaponTotal}
                 </strong>
               }
               icon={<AnvilIcon />}
@@ -182,7 +182,7 @@ export default function InventoryCard() {
             <Chip
               label={
                 <strong>
-                  {t(`ui:tabs.artifacts`)} {artifactTotal}
+                  {t('ui:tabs.artifacts')} {artifactTotal}
                 </strong>
               }
               icon={<FlowerIcon />}
@@ -222,7 +222,7 @@ export default function InventoryCard() {
               icon={<TeamIcon />}
               label={
                 <strong>
-                  {t(`ui:tabs.teams`)} {numTeams}
+                  {t('ui:tabs.teams')} {numTeams}
                 </strong>
               }
             />
@@ -232,7 +232,7 @@ export default function InventoryCard() {
               icon={<LoadoutIcon />}
               label={
                 <strong>
-                  {t(`ui:tabs.loadouts`)} {numLoadout}
+                  {t('ui:tabs.loadouts')} {numLoadout}
                 </strong>
               }
             />
@@ -242,7 +242,7 @@ export default function InventoryCard() {
               icon={<BuildIcon />}
               label={
                 <strong>
-                  {t(`ui:tabs.builds`)} {numBuilds}
+                  {t('ui:tabs.builds')} {numBuilds}
                 </strong>
               }
             />

@@ -74,7 +74,7 @@ export default function TeamSetting({
           disabled={noChars}
           onClick={onShow}
         >
-          {t`teamSettings.exportBtn`}
+          {t('teamSettings.exportBtn')}
         </Button>
         <Button
           color="info"
@@ -83,7 +83,7 @@ export default function TeamSetting({
           onClick={onDup}
           startIcon={<ContentCopyIcon />}
         >
-          {t`teamSettings.dupBtn`}
+          {t('teamSettings.dupBtn')}
         </Button>
         <TeamDelModal
           teamId={teamId}
@@ -97,7 +97,7 @@ export default function TeamSetting({
           onClick={noChars ? onDelNoChars : onShowDel}
           startIcon={<DeleteForeverIcon />}
         >
-          {t`teamSettings.deleteBtn`}
+          {t('teamSettings.deleteBtn')}
         </Button>
       </Box>
       <EnemyExpandCard teamId={teamId} />
@@ -285,7 +285,7 @@ function TeamEditor({
                 disabled={!!ind && !loadoutData.some((id) => id)}
                 startIcon={<AddIcon />}
               >
-                {t`teamSettings.addCharBtn`}
+                {t('teamSettings.addCharBtn')}
               </Button>
             )}
           </Grid>
@@ -370,11 +370,11 @@ function CharSelButton({
       />
       {index ? (
         <Button onClick={onActive} color="info">
-          {t`teamSettings.toFieldBtn`}
+          {t('teamSettings.toFieldBtn')}
         </Button>
       ) : (
         <Button disabled color="info">
-          {t`teamSettings.onFieldBtn`}
+          {t('teamSettings.onFieldBtn')}
         </Button>
       )}
       {dataContextValue && (

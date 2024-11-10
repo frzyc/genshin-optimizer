@@ -69,10 +69,10 @@ export default function PageTeams() {
     try {
       const dataObj = JSON.parse(data)
       if (!database.teams.import(dataObj))
-        window.alert(t`importForm.error.verifi`)
+        window.alert(t('importForm.error.verifi'))
       onHideImport()
     } catch (e) {
-      window.alert(t`importForm.error.import` + `\n${e}`)
+      window.alert(t('importForm.error.import') + `\n${e}`)
 
       return
     }
@@ -154,7 +154,7 @@ export default function PageTeams() {
               onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
                 setSearchTerm(e.target.value)
               }
-              label={t`searchLabel.team`}
+              label={t('searchLabel.team')}
               // size="small"
               sx={{ height: '100%', flexGrow: 1 }}
               InputProps={{
@@ -178,20 +178,20 @@ export default function PageTeams() {
 
       <Box sx={{ display: 'flex', gap: 1 }}>
         <Button fullWidth onClick={onAdd} color="info" startIcon={<AddIcon />}>
-          {t`addTeamBtn`}
+          {t('addTeamBtn')}
         </Button>
         <ModalWrapper open={showImport} onClose={onHideImport}>
           <CardThemed>
-            <CardHeader title={t`importForm.title`} />
+            <CardHeader title={t('importForm.title')} />
             <Divider />
             <CardContent
               sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
             >
-              <Typography>{t`importForm.desc`}</Typography>
+              <Typography>{t('importForm.desc')}</Typography>
               <TextField
                 fullWidth
-                label={t`importForm.label`}
-                placeholder={t`importForm.placeholder`}
+                label={t('importForm.label')}
+                placeholder={t('importForm.placeholder')}
                 value={data}
                 onChange={(e) => setData(e.target.value)}
                 multiline
@@ -202,7 +202,7 @@ export default function PageTeams() {
                 disabled={!data}
                 onClick={importData}
               >
-                {t`importForm.importBtn`}
+                {t('importForm.importBtn')}
               </Button>
             </CardContent>
           </CardThemed>
@@ -213,7 +213,7 @@ export default function PageTeams() {
           color="info"
           startIcon={<UploadIcon />}
         >
-          {t`importTeamBtn`}
+          {t('importTeamBtn')}
         </Button>
       </Box>
       <Suspense

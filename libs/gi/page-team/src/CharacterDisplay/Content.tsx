@@ -156,7 +156,7 @@ function TabNav({
                   <Box sx={{ display: 'flex', color: 'info.light', gap: 1 }}>
                     <BorderColorIcon />
                     <Typography>
-                      <strong>{t`loadout.editNameDesc`}</strong>
+                      <strong>{t('loadout.editNameDesc')}</strong>
                     </Typography>
                   </Box>
                   {!!teamChar.description && (
@@ -209,7 +209,7 @@ function TabNav({
           <ModalWrapper open={editMode} onClose={() => setEditMode(false)}>
             <CardThemed>
               <CardHeader
-                title={t`loadout.editNameDesc`}
+                title={t('loadout.editNameDesc')}
                 avatar={<LoadoutIcon />}
                 titleTypographyProps={{ variant: 'h6' }}
                 action={
@@ -227,13 +227,13 @@ function TabNav({
                   sx={{ mt: 2 }}
                 >
                   <TextFieldLazy
-                    label={t`loadout.name`}
+                    label={t('loadout.name')}
                     value={teamChar.name}
                     onChange={handleName}
                     autoFocus
                   />
                   <TextFieldLazy
-                    label={t`loadout.desc`}
+                    label={t('loadout.desc')}
                     value={teamChar.description}
                     onChange={handleDesc}
                     multiline

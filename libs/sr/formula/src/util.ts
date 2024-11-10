@@ -63,7 +63,8 @@ export function lightConeData(data: ILightCone | undefined): TagMapNodeEntries {
   const { lvl, ascension, superimpose } = own.lightCone
 
   return [
-    reader.sheet('lightCone').reread(reader.sheet(data.key)),
+    // Mark light cones as used
+    own.common.count.sheet(data.key).add(1),
 
     lvl.add(data.level),
     ascension.add(data.ascension),

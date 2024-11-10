@@ -64,7 +64,7 @@ export function ArtifactLevelSlider({
                 backgroundColor: 'rgb(30,120,200)',
               }}
             >
-              {t`levelSliderTitle`}
+              {t('levelSliderTitle')}
             </span>
             <Divider orientation="vertical" flexItem />
           </>

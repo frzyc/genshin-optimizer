@@ -1,4 +1,5 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import { characterKeyToGenderedKey } from '@genshin-optimizer/sr/assets'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { type ICachedRelic } from '@genshin-optimizer/sr/db'
 import {
@@ -7,6 +8,7 @@ import {
 } from '@genshin-optimizer/sr/db-ui'
 import type { ProgressResult } from '@genshin-optimizer/sr/solver'
 import { MAX_BUILDS, Solver } from '@genshin-optimizer/sr/solver'
+import { getCharStat, getLightConeStat } from '@genshin-optimizer/sr/stats'
 import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
@@ -106,9 +108,21 @@ function OptimizeWrapper() {
       ),
     [database.relics.values]
   )
-  const totalPermutations = Object.values(relicsBySlot).reduce(
-    (total, relics) => total * relics.length,
-    1
+  const lightCones = useMemo(() => {
+    const { path } = getCharStat(characterKeyToGenderedKey(characterKey))
+    return database.lightCones.values.filter(({ key }) => {
+      // filter by path
+      const { path: lcPath } = getLightConeStat(key)
+      return path === lcPath
+    })
+  }, [characterKey, database.lightCones.values])
+  const totalPermutations = useMemo(
+    () =>
+      Object.values(relicsBySlot).reduce(
+        (total, relics) => total * relics.length,
+        1
+      ) * lightCones.length,
+    [lightCones.length, relicsBySlot]
   )
 
   const [optimizing, setOptimizing] = useState(false)
@@ -137,6 +151,7 @@ function OptimizeWrapper() {
       calc,
       team.frames,
       statFilters,
+      lightCones,
       relicsBySlot,
       numWorkers,
       setProgress
@@ -152,7 +167,7 @@ function OptimizeWrapper() {
     // Save results to optConfig
     if (results.length)
       database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
-        builds: results.slice(0, 5).map(({ ids, value }) => ({
+        builds: results.slice(0, 5).map(({ relicIds: ids, value }) => ({
           lightConeId: equippedLightCone,
           relicIds: ids,
           value,
@@ -164,6 +179,7 @@ function OptimizeWrapper() {
     optConfig.statFilters,
     characterKey,
     team.frames,
+    lightCones,
     relicsBySlot,
     numWorkers,
     database.optConfigs,

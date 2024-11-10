@@ -27,7 +27,7 @@ export function DatabaseCard({ readOnly = false }: { readOnly?: boolean }) {
   return (
     <CardThemed bgt="light">
       <CardContent sx={{ py: 1 }}>
-        <Typography variant="subtitle1">{t`DatabaseCard.title`}</Typography>
+        <Typography variant="subtitle1">{t('DatabaseCard.title')}</Typography>
       </CardContent>
       <Divider />
       <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -147,14 +147,16 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
             onClick={onSwap}
             color="warning"
             disabled={readOnly}
-          >{t`DatabaseCard.button.swap`}</Button>
+          >
+            {t('DatabaseCard.button.swap')}
+          </Button>
         )}
         <Chip
           color={current ? 'success' : 'secondary'}
           label={
             current
-              ? t`DatabaseCard.currentDB`
-              : `${t`DatabaseCard.title`} ${database.dbIndex}`
+              ? t('DatabaseCard.currentDB')
+              : `${t('DatabaseCard.title')} ${database.dbIndex}`
           }
         />
       </CardContent>
@@ -209,7 +211,7 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
                   onClick={onOpen}
                   disabled={readOnly}
                 >
-                  {t`DatabaseCard.button.upload`}
+                  {t('DatabaseCard.button.upload')}
                 </Button>
               </Grid>
               <Grid item xs={1}>
@@ -219,7 +221,7 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
                   onClick={download}
                   startIcon={<Download />}
                 >
-                  {t`DatabaseCard.button.download`}
+                  {t('DatabaseCard.button.download')}
                 </Button>
               </Grid>
               <Grid item xs={1}>
@@ -230,7 +232,7 @@ function DataCard({ index, readOnly }: { index: number; readOnly: boolean }) {
                   onClick={onDelete}
                   startIcon={<Delete />}
                 >
-                  {t`DatabaseCard.button.delete`}
+                  {t('DatabaseCard.button.delete')}
                 </Button>
               </Grid>
             </Grid>

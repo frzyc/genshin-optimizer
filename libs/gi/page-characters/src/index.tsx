@@ -298,7 +298,9 @@ export default function PageCharacter() {
         onClick={() => setnewCharacter(true)}
         color="info"
         startIcon={<AddIcon />}
-      >{t`addNew`}</Button>
+      >
+        {t('addNew')}
+      </Button>
       <Suspense
         fallback={
           <Skeleton

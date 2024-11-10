@@ -133,7 +133,9 @@ export function ReactionToggle(props: ReactionToggleProps) {
       disabled={!teamCharId}
       {...props}
     >
-      <ToggleButton value="" disabled={!reaction}>{t`noReaction`}</ToggleButton>
+      <ToggleButton value="" disabled={!reaction}>
+        {t('noReaction')}
+      </ToggleButton>
       {reactions.map((rm) => (
         <ToggleButton key={rm} value={rm} disabled={reaction === rm}>
           {([...allAmpReactionKeys] as string[]).includes(rm) ? (

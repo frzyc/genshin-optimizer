@@ -76,7 +76,7 @@ export function TargetSelectorModal({
     <ModalWrapper open={show} onClose={onClose}>
       <CardThemed>
         <CardHeader
-          title={t`targetSelectorTitle`}
+          title={t('targetSelectorTitle')}
           action={
             <IconButton onClick={onClose}>
               <CloseIcon />

@@ -5,7 +5,7 @@ import {
   allRelicSlotKeys,
   type RelicSlotKey,
 } from '@genshin-optimizer/sr/consts'
-import type { ICachedRelic } from '@genshin-optimizer/sr/db'
+import type { ICachedLightCone, ICachedRelic } from '@genshin-optimizer/sr/db'
 import { getRelicMainStatVal } from '@genshin-optimizer/sr/util'
 import type { ChildCommandInit, ChildMessage } from './childWorker'
 import { MAX_BUILDS } from './common'
@@ -15,6 +15,7 @@ let workers: Worker[]
 
 export interface ParentCommandStart {
   command: 'start'
+  lightCones: ICachedLightCone[]
   relicsBySlot: Record<RelicSlotKey, ICachedRelic[]>
   detachedNodes: NumTagFree[]
   constraints: Array<{ value: number; isMax: boolean }>
@@ -53,6 +54,10 @@ export type RelicStats = {
   id: string
   stats: Record<string, number>
 }
+export type LightConeStats = {
+  id: string
+  stats: Record<string, number>
+}
 
 // Get proper typings for posting a message back to main thread
 declare function postMessage(message: ParentMessage): void
@@ -81,6 +86,7 @@ async function handleEvent(e: MessageEvent<ParentCommand>): Promise<void> {
 }
 
 async function start({
+  lightCones,
   relicsBySlot,
   detachedNodes,
   constraints,
@@ -89,7 +95,7 @@ async function start({
   // Step 3: Optimize nodes, as needed
   detachedNodes = flatten(detachedNodes)
   detachedNodes = combineConst(detachedNodes)
-
+  const lightConeStats = lightCones.map(convertLightConeToStats)
   const relicStatsBySlot = objKeyMap(allRelicSlotKeys, (slot) =>
     relicsBySlot[slot].map(convertRelicToStats)
   )
@@ -172,6 +178,7 @@ async function start({
         // Initialize worker
         const message: ChildCommandInit = {
           command: 'init',
+          lightConeStats,
           relicStatsBySlot: chunkedRelicStatsBySlot[index],
           detachedNodes,
           constraints,
@@ -201,18 +208,30 @@ function terminate() {
 }
 
 function convertRelicToStats(relic: ICachedRelic): RelicStats {
+  const { id, mainStatKey, level, rarity, setKey, substats } = relic
   return {
-    id: relic.id,
+    id,
     stats: {
-      [relic.mainStatKey]: getRelicMainStatVal(
-        relic.rarity,
-        relic.mainStatKey,
-        relic.level
-      ),
+      [mainStatKey]: getRelicMainStatVal(rarity, mainStatKey, level),
       ...Object.fromEntries(
-        relic.substats.map((substat) => [substat.key, substat.value])
+        substats
+          .filter(({ key, value }) => key && value)
+          .map(({ key, value }) => [key, value])
       ),
-      [relic.setKey]: 1,
+      [setKey]: 1,
+    },
+  }
+}
+
+function convertLightConeToStats(lightCone: ICachedLightCone): LightConeStats {
+  const { id, key, level: lvl, ascension, superimpose } = lightCone
+  return {
+    id,
+    stats: {
+      lvl,
+      superimpose,
+      ascension,
+      [key]: 1,
     },
   }
 }

@@ -303,7 +303,7 @@ export default function UseEquipped({
         <CardThemed>
           {/* Header */}
           <CardHeader
-            title={t`excludeChar.title`}
+            title={t('excludeChar.title')}
             titleTypographyProps={{ variant: 'h6' }}
             action={
               <IconButton onClick={onClose}>
@@ -359,7 +359,7 @@ export default function UseEquipped({
             <Grid container pb={1} gap={1} flexWrap="nowrap">
               <Grid item xs={6}>
                 <Button color="success" fullWidth onClick={allowAll}>
-                  {t`excludeChar.modal.allow_all`}
+                  {t('excludeChar.modal.allow_all')}
                   <SqBadge sx={{ ml: 1 }}>
                     <strong>{locListTotals['allowed']}</strong>
                   </SqBadge>
@@ -367,7 +367,7 @@ export default function UseEquipped({
               </Grid>
               <Grid item xs={6}>
                 <Button fullWidth color="error" onClick={disallowAll}>
-                  {t`excludeChar.modal.disallow_All`}
+                  {t('excludeChar.modal.disallow_All')}
                   <SqBadge sx={{ ml: 1 }}>
                     <strong>{locListTotals['excluded']}</strong>
                   </SqBadge>

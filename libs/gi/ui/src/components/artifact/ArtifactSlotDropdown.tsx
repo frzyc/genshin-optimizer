@@ -36,7 +36,7 @@ export function ArtifactSlotDropdown({
           <ListItemIcon>
             <ReplayIcon />
           </ListItemIcon>
-          <ListItemText>{t`ui:unselect`}</ListItemText>
+          <ListItemText>{t('ui:unselect')}</ListItemText>
         </MenuItem>
       )}
       {hasUnselect && <Divider />}

@@ -41,7 +41,9 @@ export function SetInclusionButton({
         }
         color={exclude2 ? 'secondary' : 'success'}
         endIcon={exclude2 ? <BlockIcon /> : <ShowChartIcon />}
-      >{t`2set`}</Button>
+      >
+        {t('2set')}
+      </Button>
       <Button
         startIcon={exclude4 ? <CheckBoxOutlineBlank /> : <CheckBox />}
         onClick={() =>
@@ -51,7 +53,9 @@ export function SetInclusionButton({
         }
         color={exclude4 ? 'secondary' : 'success'}
         endIcon={exclude4 ? <BlockIcon /> : <ShowChartIcon />}
-      >{t`4set`}</Button>
+      >
+        {t('4set')}
+      </Button>
     </ButtonGroup>
   )
 }

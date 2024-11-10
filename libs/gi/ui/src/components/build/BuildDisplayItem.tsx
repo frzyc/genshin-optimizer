@@ -346,7 +346,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
                 <Typography sx={{ display: 'flex', gap: 1 }}>
                   <strong>{label}</strong>
                   {currentlyEquipped && (
-                    <span>{t`buildDisplay.equippedBadge`}</span>
+                    <span>{t('buildDisplay.equippedBadge')}</span>
                   )}
                 </Typography>
               </SqBadge>
@@ -362,7 +362,9 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
                       )?.name
                     }
                   </span>
-                  {isActiveBuild && <span>{t`buildDisplay.currentBadge`}</span>}
+                  {isActiveBuild && (
+                    <span>{t('buildDisplay.currentBadge')}</span>
+                  )}
                   {sameAsBuildIds.length > 1 && (
                     <Tooltip
                       arrow
@@ -398,7 +400,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
               currentName={
                 buildType === 'real'
                   ? database.builds.get(buildId)!.name
-                  : t`buildDisplay.equipped`
+                  : t('buildDisplay.equipped')
               }
               currentWeaponId={currentWeaponId}
               currentArtifactIds={currentArtifactIds}
@@ -418,7 +420,7 @@ export const BuildDisplayItem = memo(function BuildDisplayItem({
               disabled={disabled || isActiveBuild}
               startIcon={<Checkroom />}
             >
-              {t`buildDisplay.equipToCrr`}
+              {t('buildDisplay.equipToCrr')}
             </Button>
             {extraButtonsRight}
           </Box>
@@ -480,12 +482,12 @@ function CompareWeaponModal({
             <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
               <CardThemed bgt="light" sx={{ p: 1 }}>
                 <Typography variant="h6" textAlign="center">
-                  {t`buildDisplay.oldWeapon`}
+                  {t('buildDisplay.oldWeapon')}
                 </Typography>
               </CardThemed>
               {oldId === 'tc' ? (
                 <Typography variant="h6" textAlign="center" color="info">
-                  <SqBadge>{t`buildDisplay.tcWeapon`}</SqBadge>
+                  <SqBadge>{t('buildDisplay.tcWeapon')}</SqBadge>
                 </Typography>
               ) : (
                 <WeaponCard weaponId={oldId!} onDelete={deleteWeapon} />
@@ -502,7 +504,7 @@ function CompareWeaponModal({
           <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
             <CardThemed bgt="light" sx={{ p: 1 }}>
               <Typography variant="h6" textAlign="center">
-                {t`buildDisplay.newWeapon`}
+                {t('buildDisplay.newWeapon')}
               </Typography>
             </CardThemed>
             <WeaponCard weaponId={newId} onDelete={deleteWeapon} />
@@ -565,12 +567,12 @@ function CompareArtifactModal({
             <Box minWidth={320} display="flex" flexDirection="column" gap={1}>
               <CardThemed bgt="light" sx={{ p: 1 }}>
                 <Typography variant="h6" textAlign="center">
-                  {t`compareArtModal.oldArt`}
+                  {t('compareArtModal.oldArt')}
                 </Typography>
               </CardThemed>
               {oldId === 'tc' ? (
                 <Typography variant="h6" textAlign="center" color="info">
-                  <SqBadge>{t`compareArtModal.tcArt`}</SqBadge>
+                  <SqBadge>{t('compareArtModal.tcArt')}</SqBadge>
                 </Typography>
               ) : (
                 <ArtifactCard
@@ -603,7 +605,7 @@ function CompareArtifactModal({
             {oldId && (
               <CardThemed bgt="light" sx={{ p: 1 }}>
                 <Typography variant="h6" textAlign="center">
-                  {t`compareArtModal.newArt`}
+                  {t('compareArtModal.newArt')}
                 </Typography>
               </CardThemed>
             )}
@@ -661,7 +663,7 @@ function ArtInclusionButton({ id }: { id: string }) {
     <BootstrapTooltip
       title={
         <Box>
-          <Typography>{t`excludeArt.includeArtifactTip`}</Typography>
+          <Typography>{t('excludeArt.includeArtifactTip')}</Typography>
         </Box>
       }
       placement="top"
@@ -673,7 +675,7 @@ function ArtInclusionButton({ id }: { id: string }) {
         size="small"
         startIcon={excluded ? <CheckBoxOutlineBlankIcon /> : <CheckBoxIcon />}
       >
-        {t`excludeArt.includeArtifactButton`}
+        {t('excludeArt.includeArtifactButton')}
       </Button>
     </BootstrapTooltip>
   )
@@ -710,7 +712,7 @@ function ExcludeEquipButton({
       startIcon={excluded ? <CheckBoxOutlineBlankIcon /> : <CheckBoxIcon />}
     >
       <span>
-        {t`excludeChar.allowEquip`}{' '}
+        {t('excludeChar.allowEquip')}{' '}
         <strong>
           <CharacterName characterKey={characterKey} gender={gender} />
         </strong>

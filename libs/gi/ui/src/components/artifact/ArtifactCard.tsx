@@ -312,10 +312,9 @@ export function ArtifactCardObj({
               variant="caption"
               sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
             >
-              <ColorText
-                color="secondary"
-                sx={{ flexGrow: 1 }}
-              >{t`artifact:editor.curSubEff`}</ColorText>
+              <ColorText color="secondary" sx={{ flexGrow: 1 }}>
+                {t('artifact:editor.curSubEff')}
+              </ColorText>
               <PercentBadge
                 value={currentEfficiency}
                 max={9}
@@ -332,10 +331,9 @@ export function ArtifactCardObj({
             </Typography>
             {currentEfficiency !== maxEfficiency && (
               <Typography variant="caption" sx={{ display: 'flex', gap: 1 }}>
-                <ColorText
-                  color="secondary"
-                  sx={{ flexGrow: 1 }}
-                >{t`artifact:editor.maxSubEff`}</ColorText>
+                <ColorText color="secondary" sx={{ flexGrow: 1 }}>
+                  {t('artifact:editor.maxSubEff')}
+                </ColorText>
                 <PercentBadge
                   value={maxEfficiency}
                   max={9}
@@ -391,7 +389,7 @@ export function ArtifactCardObj({
           >
             {!!onEdit && (
               <BootstrapTooltip
-                title={<Typography>{t`artifact:edit`}</Typography>}
+                title={<Typography>{t('artifact:edit')}</Typography>}
                 placement="top"
                 arrow
               >

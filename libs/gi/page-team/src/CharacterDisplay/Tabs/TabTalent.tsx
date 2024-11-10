@@ -355,7 +355,7 @@ export function ConstellationDropdown() {
                 })
           }
         >
-          {t(`constellationLvl`, { level: i })}
+          {t('constellationLvl', { level: i })}
         </MenuItem>
       ))}
     </DropdownButton>

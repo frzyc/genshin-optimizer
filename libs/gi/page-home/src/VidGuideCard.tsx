@@ -27,7 +27,9 @@ export default function VidGuideCard() {
             href={process.env.NX_URL_YOUTUBE_TUTPL}
             target="_blank"
             rel="noopener"
-          >{t`vidGuideCard.title`}</Typography>
+          >
+            {t('vidGuideCard.title')}
+          </Typography>
         }
         avatar={<YouTubeIcon fontSize="large" />}
       />
