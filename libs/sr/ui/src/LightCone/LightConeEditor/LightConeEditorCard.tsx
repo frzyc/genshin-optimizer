@@ -28,11 +28,13 @@ export function LightConeEditorCard({
   lightCone,
   setLightCone,
   footer,
+  hideLocation = false,
 }: {
   onClose: (e: MouseEvent) => void
   lightCone: Partial<ILightCone>
   setLightCone: (lightConeData: Partial<ILightCone>) => void
-  footer: ReactNode
+  footer?: ReactNode
+  hideLocation?: boolean
 }) {
   const { t } = useTranslation(['lightCone', 'common'])
 
@@ -96,19 +98,21 @@ export function LightConeEditorCard({
           </Grid>
 
           {/* character location */}
-          <Grid
-            item
-            xs={1}
-            md={2}
-            display="flex"
-            flexDirection="column"
-            gap={1}
-          >
-            <LocationAutocomplete
-              locKey={lightCone?.location ?? ''}
-              setLocKey={(charKey) => setLightCone({ location: charKey })}
-            />
-          </Grid>
+          {!hideLocation && (
+            <Grid
+              item
+              xs={1}
+              md={2}
+              display="flex"
+              flexDirection="column"
+              gap={1}
+            >
+              <LocationAutocomplete
+                locKey={lightCone?.location ?? ''}
+                setLocKey={(charKey) => setLightCone({ location: charKey })}
+              />
+            </Grid>
+          )}
         </Grid>
         {footer}
       </CardContent>

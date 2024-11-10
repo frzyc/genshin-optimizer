@@ -78,7 +78,7 @@ function CurrentBuildDisplay() {
   )
   const [show, onShow, onHide] = useBoolState()
   return (
-    <CardThemed>
+    <CardThemed sx={{ width: '100%' }}>
       <BuildsModal show={show} onClose={onHide} />
       <CardHeader
         title={buildName}
@@ -109,7 +109,7 @@ function BuildsModal({
       onClose={onClose}
       containerProps={{ maxWidth: 'xl' }}
     >
-      <BuildsDisplay />
+      <BuildsDisplay onClose={onClose} />
     </ModalWrapper>
   )
 }

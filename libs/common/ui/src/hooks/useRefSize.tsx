@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export function useRefSize() {
   const ref = useRef<HTMLElement>()
@@ -11,14 +11,11 @@ export function useRefSize() {
       setWidth(ref.current?.clientWidth ?? 0)
       setHeight(ref.current?.clientHeight ?? 0)
     }
+    handleResize() // Check on mount and whenever the window resizes
     if (ref.current) window.addEventListener('resize', handleResize)
     return () => {
       window.removeEventListener('resize', handleResize)
     }
-  }, [])
-  useLayoutEffect(() => {
-    setWidth(ref.current?.clientWidth ?? 0)
-    setHeight(ref.current?.clientHeight ?? 0)
   }, [])
   return { width, height, ref }
 }

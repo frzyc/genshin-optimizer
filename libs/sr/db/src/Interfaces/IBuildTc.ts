@@ -1,30 +1,24 @@
 import type {
-  AscensionKey,
   CharacterKey,
-  LightConeKey,
   RelicMainStatKey,
   RelicSetKey,
   RelicSlotKey,
   RelicSubStatKey,
   RelicSubstatTypeKey,
-  SuperimposeKey,
 } from '@genshin-optimizer/sr/consts'
+import type { ILightCone } from '@genshin-optimizer/sr/srod'
 
 export type BuildTcRelicSlot = {
   level: number
   statKey: RelicMainStatKey
 }
+export type BuildTCLightCone = Omit<ILightCone, 'location' | 'lock'>
 export interface IBuildTc {
   name: string
   description: string
   characterKey: CharacterKey
   teamId?: string
-  lightCone?: {
-    key: LightConeKey
-    level: number
-    ascension: AscensionKey
-    superimpose: SuperimposeKey
-  }
+  lightCone?: BuildTCLightCone
   relic: {
     slots: Record<RelicSlotKey, BuildTcRelicSlot>
     substats: {

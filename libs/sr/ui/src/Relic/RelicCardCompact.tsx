@@ -72,7 +72,7 @@ export function RelicCardCompactObj({
 }) {
   const actionWrapperFunc = useCallback(
     (children: ReactNode) => (
-      <CardActionArea onClick={onClick} sx={{ height: '100%' }}>
+      <CardActionArea onClick={onClick} sx={{ height: '100%', width: '100%' }}>
         {children}
       </CardActionArea>
     ),
@@ -83,126 +83,133 @@ export function RelicCardCompactObj({
     relic
 
   return (
-    <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
-      <CardThemed
-        bgt={bgt}
-        sx={(theme) => ({
-          display: 'flex',
-          height: COMPACT_ELE_HEIGHT,
-          width: COMPACT_ELE_WIDTH,
-          borderLeft: '5px solid',
-          borderImage: `${theme.palette[`grad${rarity}`].gradient} 1`,
-        })}
-      >
+    <CardThemed
+      bgt={bgt}
+      sx={{
+        height: COMPACT_ELE_HEIGHT,
+        width: COMPACT_ELE_WIDTH,
+      }}
+    >
+      <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
         <Box
-          sx={{
-            position: 'relative',
-            flexGrow: 1,
+          sx={(theme) => ({
             display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
+            height: '100%',
+            width: '100%',
+            borderLeft: '5px solid',
+            borderImage: `${theme.palette[`grad${rarity}`].gradient} 1`,
+          })}
         >
           <Box
-            component={NextImage ? NextImage : 'img'}
-            src={relicAsset(setKey, slotKey)}
             sx={{
-              m: -1,
-              maxHeight: '100%',
-              maxWidth: '100%',
-              maskImage:
-                'linear-gradient( to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0))',
-            }}
-          />
-          <Box
-            sx={{
-              position: 'absolute',
-              width: '100%',
-              height: '100%',
-              p: 0.5,
-              opacity: 0.85,
+              position: 'relative',
+              flexGrow: 1,
               display: 'flex',
-              justifyContent: 'space-between',
-              pointerEvents: 'none',
-            }}
-          >
-            {showLocation && (
-              <Box
-                sx={{
-                  position: 'absolute',
-                  display: 'flex',
-                  top: '3px',
-                  right: '3px',
-                }}
-              >
-                {location ? (
-                  <Box
-                    component={NextImage ? NextImage : 'img'}
-                    sx={{
-                      borderRadius: '50%',
-                      width: '2em',
-                      height: '2em',
-                      backgroundColor: 'rgba(0,0,0,0.3)',
-                    }}
-                    src={characterAsset(
-                      characterKeyToGenderedKey(location),
-                      'icon'
-                    )}
-                  />
-                ) : (
-                  <BusinessCenterIcon />
-                )}
-              </Box>
-            )}
-          </Box>
-          <Chip
-            size="small"
-            label={<strong>{` +${level}`}</strong>}
-            sx={{
-              position: 'absolute',
-              top: 3,
-              left: 3,
-              backgroundColor: 'rgba(0,0,0,0.3)',
-              backdropFilter: 'blur(2px)',
-            }}
-          />
-          {/* mainstats */}
-          <Typography
-            sx={{
-              position: 'absolute',
-              display: 'flex',
+              flexDirection: 'column',
               alignItems: 'center',
-              backgroundColor: 'rgba(0,0,0,0.3)',
-              bottom: '3px',
-              px: 0.5,
-              borderRadius: '1em',
-              backdropFilter: 'blur(2px)',
+              justifyContent: 'center',
             }}
           >
-            <StatIcon
-              statKey={mainStatKey}
-              iconProps={{ style: { padding: '4px' } }}
+            <Box
+              component={NextImage ? NextImage : 'img'}
+              src={relicAsset(setKey, slotKey)}
+              sx={{
+                m: -1,
+                maxHeight: '100%',
+                maxWidth: '100%',
+                maskImage:
+                  'linear-gradient( to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0))',
+              }}
             />
-            <span>
-              {getRelicMainStatDisplayVal(rarity, mainStatKey, level)}
-              {getUnitStr(mainStatKey)}
-            </span>
-          </Typography>
+            <Box
+              sx={{
+                position: 'absolute',
+                width: '100%',
+                height: '100%',
+                p: 0.5,
+                opacity: 0.85,
+                display: 'flex',
+                justifyContent: 'space-between',
+                pointerEvents: 'none',
+              }}
+            >
+              {showLocation && (
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    display: 'flex',
+                    top: '3px',
+                    right: '3px',
+                  }}
+                >
+                  {location ? (
+                    <Box
+                      component={NextImage ? NextImage : 'img'}
+                      sx={{
+                        borderRadius: '50%',
+                        width: '2em',
+                        height: '2em',
+                        backgroundColor: 'rgba(0,0,0,0.3)',
+                      }}
+                      src={characterAsset(
+                        characterKeyToGenderedKey(location),
+                        'icon'
+                      )}
+                    />
+                  ) : (
+                    <BusinessCenterIcon />
+                  )}
+                </Box>
+              )}
+            </Box>
+            <Chip
+              size="small"
+              label={<strong>{` +${level}`}</strong>}
+              sx={{
+                position: 'absolute',
+                top: 3,
+                left: 3,
+                backgroundColor: 'rgba(0,0,0,0.3)',
+                backdropFilter: 'blur(2px)',
+              }}
+            />
+            {/* mainstats */}
+            <Typography
+              sx={{
+                position: 'absolute',
+                display: 'flex',
+                alignItems: 'center',
+                backgroundColor: 'rgba(0,0,0,0.3)',
+                bottom: '3px',
+                px: 0.5,
+                borderRadius: '1em',
+                backdropFilter: 'blur(2px)',
+              }}
+            >
+              <StatIcon
+                statKey={mainStatKey}
+                iconProps={{ style: { padding: '4px' } }}
+              />
+              <span>
+                {getRelicMainStatDisplayVal(rarity, mainStatKey, level)}
+                {getUnitStr(mainStatKey)}
+              </span>
+            </Typography>
+          </Box>
+          {/* substats */}
+          <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="space-between"
+            sx={{ py: '3px', pr: '3px' }}
+          >
+            {substats.map((stat: ICachedSubstat, i: number) => (
+              <SubstatDisplay key={i + stat.key} stat={stat} />
+            ))}
+          </Box>
         </Box>
-        {/* substats */}
-        <Box
-          display="flex"
-          flexDirection="column"
-          justifyContent="space-between"
-          sx={{ py: '3px', pr: '3px' }}
-        >
-          {substats.map((stat: ICachedSubstat, i: number) => (
-            <SubstatDisplay key={i + stat.key} stat={stat} />
-          ))}
-        </Box>
-      </CardThemed>
-    </ConditionalWrapper>
+      </ConditionalWrapper>
+    </CardThemed>
   )
 }
 function SubstatDisplay({ stat }: { stat: ICachedSubstat }) {
@@ -304,7 +311,6 @@ export function RelicSetCardCompact({
   sets: Partial<Record<RelicSetKey, 2 | 4>>
   bgt?: CardBackgroundColor
 }) {
-  if (!Object.keys(sets).length) return null
   return (
     <CardThemed
       bgt={bgt}
@@ -317,6 +323,7 @@ export function RelicSetCardCompact({
         justifyContent: 'space-between',
       }}
     >
+      {!Object.keys(sets).length && 'No Relic sets'}
       {Object.entries(sets).map(([key, count]) => (
         <Typography key={key}>
           <SqBadge>{count}</SqBadge> <RelicSetName setKey={key} />

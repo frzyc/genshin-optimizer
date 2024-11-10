@@ -1,10 +1,17 @@
-import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import {
+  useBoolState,
+  useForceUpdate,
+} from '@genshin-optimizer/common/react-util'
+import {
+  CardThemed,
+  ModalWrapper,
+  useRefSize,
+} from '@genshin-optimizer/common/ui'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { allRelicSlotKeys } from '@genshin-optimizer/sr/consts'
+import type { BuildTCLightCone } from '@genshin-optimizer/sr/db'
 import {
   initCharTC,
-  type IBuildTc,
   type ICachedLightCone,
   type RelicIds,
   type TeammateDatum,
@@ -16,14 +23,19 @@ import {
   useDatabaseContext,
 } from '@genshin-optimizer/sr/db-ui'
 import {
+  COMPACT_ELE_HEIGHT,
+  COMPACT_ELE_WIDTH,
+  COMPACT_ELE_WIDTH_NUMBER,
   LightConeCardCompact,
   LightConeCardCompactEmpty,
   LightConeCardCompactObj,
+  LightConeEditorCard,
   RelicCardCompact,
   RelicMainsCardCompact,
   RelicSetCardCompact,
   RelicSubCard,
 } from '@genshin-optimizer/sr/ui'
+import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
   Button,
@@ -31,13 +43,15 @@ import {
   CardContent,
   CardHeader,
   Divider,
+  IconButton,
   Stack,
   Typography,
+  useTheme,
 } from '@mui/material'
 import type { ReactNode } from 'react'
-import { useEffect, useMemo } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTeamContext } from './context'
-export function BuildsDisplay() {
+export function BuildsDisplay({ onClose }: { onClose?: () => void }) {
   const { database } = useDatabaseContext()
   const {
     teammateDatum: { characterKey },
@@ -61,7 +75,16 @@ export function BuildsDisplay() {
 
   return (
     <CardThemed bgt="dark">
-      <CardHeader title="Builds" />
+      <CardHeader
+        title="Builds"
+        action={
+          onClose ? (
+            <IconButton onClick={onClose}>
+              <CloseIcon />
+            </IconButton>
+          ) : null
+        }
+      />
       <Divider />
       <CardContent>
         <Stack spacing={1}>
@@ -105,7 +128,7 @@ function useActiveBuildSwap(
           : buildType === 'real'
           ? buildId === newBuildId
           : buildType === 'tc' && buildTcId === newBuildId,
-      onClick: () => {
+      onActive: () => {
         database.teams.set(teamId, (team) => {
           const teammateDatum = team.teamMetadata.find(
             (teammateDatum) => teammateDatum?.characterKey === characterKey
@@ -139,11 +162,11 @@ function useActiveBuildSwap(
 export function EquippedBuild() {
   const character = useCharacterContext()!
   const { equippedRelics, equippedLightCone } = character
-  const { active, onClick } = useActiveBuildSwap('equipped')
+  const { active, onActive } = useActiveBuildSwap('equipped')
   return (
     <BuildBase
       name="Equipped"
-      onClick={onClick}
+      onActive={onActive}
       active={active}
       buildGrid={
         <EquipRow relicIds={equippedRelics} lightConeId={equippedLightCone} />
@@ -154,12 +177,12 @@ export function EquippedBuild() {
 export function Build({ buildId }: { buildId: string }) {
   const build = useBuild(buildId)!
   const { relicIds, lightConeId, name, description } = build
-  const { active, onClick } = useActiveBuildSwap('real', buildId)
+  const { active, onActive } = useActiveBuildSwap('real', buildId)
   return (
     <BuildBase
       name={name}
       description={description}
-      onClick={onClick}
+      onActive={onActive}
       active={active}
       buildGrid={<EquipRow relicIds={relicIds} lightConeId={lightConeId} />}
     />
@@ -170,26 +193,38 @@ function BuildBase({
   description,
   buildGrid,
   active,
-  onClick,
+  onActive: onEquip,
 }: {
   name: string
   description?: string
   buildGrid: ReactNode
   active?: boolean
-  onClick?: () => void
+  onActive?: () => void
 }) {
+  const onEdit = useCallback(() => {}, []) // TODO: implement
   return (
     <CardThemed
       sx={(theme) => ({
         outline: active ? `solid ${theme.palette.success.main}` : undefined,
       })}
     >
-      {/* Disable the onClick swap when its the active build */}
-      <CardActionArea onClick={onClick} disabled={active}>
-        <CardHeader title={name} subheader={description} />
-        <Divider />
-        <CardContent>{buildGrid}</CardContent>
-      </CardActionArea>
+      <Box display={'flex'}>
+        <CardActionArea onClick={onEdit}>
+          <CardHeader title={name} subheader={description} />
+        </CardActionArea>
+        <Box display={'flex'} alignContent={'center'} sx={{ padding: 1 }}>
+          <Button
+            size="small"
+            color="success"
+            onClick={onEquip}
+            disabled={active}
+          >
+            Set Active
+          </Button>
+        </Box>
+      </Box>
+      <Divider />
+      <CardContent>{buildGrid}</CardContent>
     </CardThemed>
   )
 }
@@ -209,7 +244,6 @@ export function EquipRow({
       if (!setKey) return
       sets[setKey] = (sets[setKey] || 0) + 1
     })
-    console.log({ sets, relicIds })
     return Object.fromEntries(
       Object.entries(sets)
         .map(([setKey, count]): [RelicSetKey, number] => {
@@ -220,9 +254,38 @@ export function EquipRow({
         .filter(([, count]) => count > 0)
     ) as Partial<Record<RelicSetKey, 2 | 4>>
   }, [database.relics, relicIds])
+
+  // Calculate how many rows is needed for the layout
+  const [rows, setRows] = useState(2)
+  const { ref, width } = useRefSize()
+  const theme = useTheme()
+  useEffect(() => {
+    if (!ref.current) return
+    const fontSize = parseFloat(window.getComputedStyle(ref.current).fontSize)
+    const spacing = parseFloat(theme.spacing(1))
+    const eleWidthPx = fontSize * COMPACT_ELE_WIDTH_NUMBER
+    const numCols =
+      Math.floor((width - eleWidthPx) / (eleWidthPx + spacing)) + 1
+    const numRows = Math.ceil(8 / numCols) // 6 relic + set + lc
+    setRows(numRows)
+  }, [ref, theme, width])
   return (
-    <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+    <Box
+      ref={ref}
+      sx={{
+        display: 'grid',
+        gap: 1,
+        boxSizing: 'border-box',
+        gridTemplateColumns: `repeat(auto-fit,${COMPACT_ELE_WIDTH})`,
+        gridAutoFlow: 'column',
+        gridTemplateRows: `repeat(${rows}, ${COMPACT_ELE_HEIGHT})`,
+        maxWidth: '100%',
+        width: '100%',
+        overflex: 'hidden',
+      }}
+    >
       <LightConeCardCompact bgt="light" lightConeId={lightConeId} />
+      <RelicSetCardCompact bgt="light" sets={sets} />
       {allRelicSlotKeys.map((slot) => (
         <RelicCardCompact
           key={slot}
@@ -232,41 +295,54 @@ export function EquipRow({
           showLocation
         />
       ))}
-      <RelicSetCardCompact bgt="light" sets={sets} />
     </Box>
   )
 }
 export function BuildTC({ buildTcId }: { buildTcId: string }) {
   const build = useBuildTc(buildTcId)!
-  const { lightCone, relic, name, description } = build
-  const { active, onClick } = useActiveBuildSwap('tc', buildTcId)
+  const { name, description } = build
+  const { active, onActive: onClick } = useActiveBuildSwap('tc', buildTcId)
   return (
     <BuildBase
       name={name}
       description={description}
-      onClick={onClick}
+      onActive={onClick}
       active={active}
-      buildGrid={<EquipRowTC relic={relic} lightCone={lightCone} />}
+      buildGrid={<EquipRowTC buildTcId={buildTcId} />}
     />
   )
 }
 
-export function EquipRowTC({
-  relic,
-  lightCone,
-}: {
-  relic: IBuildTc['relic']
-  lightCone: IBuildTc['lightCone']
-}) {
+export function EquipRowTC({ buildTcId }: { buildTcId: string }) {
+  const { database } = useDatabaseContext()
+  const build = useBuildTc(buildTcId)!
+  const { lightCone, relic } = build
+
+  const [show, onShow, onHide] = useBoolState()
+  const onUpdate = useCallback(
+    (data: Partial<BuildTCLightCone>) => {
+      database.buildTcs.set(buildTcId, (buildTc) => ({
+        lightCone: { ...buildTc.lightCone, ...data } as BuildTCLightCone,
+      }))
+    },
+    [buildTcId, database.buildTcs]
+  )
   return (
     <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+      <TCLightconeEditor
+        show={show}
+        onClose={onHide}
+        lightCone={lightCone}
+        onUpdate={onUpdate}
+      />
       {lightCone ? (
         <LightConeCardCompactObj
           bgt="light"
           lightCone={lightCone as ICachedLightCone}
+          onClick={onShow}
         />
       ) : (
-        <LightConeCardCompactEmpty bgt="light" />
+        <LightConeCardCompactEmpty bgt="light" onClick={onShow} />
       )}
       <RelicMainsCardCompact bgt="light" slots={relic.slots} />
       <RelicSubCard
@@ -285,5 +361,27 @@ export function EquipRowTC({
         bgt="light"
       />
     </Box>
+  )
+}
+function TCLightconeEditor({
+  lightCone = {},
+  onUpdate,
+  show,
+  onClose,
+}: {
+  lightCone?: Partial<BuildTCLightCone>
+  onUpdate: (lightCone: Partial<BuildTCLightCone>) => void
+  show: boolean
+  onClose: () => void
+}) {
+  return (
+    <ModalWrapper open={show} onClose={onClose}>
+      <LightConeEditorCard
+        onClose={onClose}
+        lightCone={lightCone}
+        setLightCone={onUpdate}
+        hideLocation
+      />
+    </ModalWrapper>
   )
 }
