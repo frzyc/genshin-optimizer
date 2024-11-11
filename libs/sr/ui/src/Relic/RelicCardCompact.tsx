@@ -266,69 +266,108 @@ export function RelicSubCard({
   relic,
   keys,
   bgt,
+  onClick,
 }: {
   relic: IBuildTc['relic']
   keys: RelicSubStatKey[]
   bgt?: CardBackgroundColor
+  onClick?: () => void
 }) {
+  const actionWrapperFunc = useCallback(
+    (children: ReactNode) => (
+      <CardActionArea onClick={onClick} sx={{ height: '100%', width: '100%' }}>
+        {children}
+      </CardActionArea>
+    ),
+    [onClick]
+  )
   return (
     <CardThemed
       bgt={bgt}
       sx={{
         height: COMPACT_ELE_HEIGHT,
         width: COMPACT_ELE_HEIGHT,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'stretch',
-        justifyContent: 'space-between',
-        p: 1,
       }}
     >
-      {keys.map((key) => (
-        <Typography
-          key={key}
+      <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
+        <Box
           sx={{
+            height: '100%',
+            width: '100%',
             display: 'flex',
-            alignItems: 'center',
+            flexDirection: 'column',
+            alignItems: 'stretch',
             justifyContent: 'space-between',
-            textWrap: 'nowrap',
+            p: 1,
           }}
         >
-          <StatIcon statKey={key} />
-          <span>
-            {relic.substats.stats[key].toFixed(statToFixed(key))}
-            {getUnitStr(key)}
-          </span>
-        </Typography>
-      ))}
+          {keys.map((key) => (
+            <Typography
+              key={key}
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                textWrap: 'nowrap',
+              }}
+            >
+              <StatIcon statKey={key} />
+              <span>
+                {relic.substats.stats[key].toFixed(statToFixed(key))}
+                {getUnitStr(key)}
+              </span>
+            </Typography>
+          ))}
+        </Box>
+      </ConditionalWrapper>
     </CardThemed>
   )
 }
 export function RelicSetCardCompact({
   sets,
   bgt,
+  onClick,
 }: {
   sets: Partial<Record<RelicSetKey, 2 | 4>>
   bgt?: CardBackgroundColor
+  onClick?: () => void
 }) {
+  const actionWrapperFunc = useCallback(
+    (children: ReactNode) => (
+      <CardActionArea onClick={onClick} sx={{ height: '100%', width: '100%' }}>
+        {children}
+      </CardActionArea>
+    ),
+    [onClick]
+  )
   return (
     <CardThemed
       bgt={bgt}
       sx={{
         width: COMPACT_ELE_WIDTH,
         height: COMPACT_ELE_HEIGHT,
-        p: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
       }}
     >
-      {!Object.keys(sets).length && 'No Relic sets'}
-      {Object.entries(sets).map(([key, count]) => (
-        <Typography key={key}>
-          <SqBadge>{count}</SqBadge> <RelicSetName setKey={key} />
-        </Typography>
-      ))}
+      <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
+        <Box
+          sx={{
+            height: '100%',
+            width: '100%',
+            p: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+          }}
+        >
+          {/* TODO: translate */}
+          {!Object.keys(sets).length && <Typography>No Relic sets</Typography>}
+          {Object.entries(sets).map(([key, count]) => (
+            <Typography key={key}>
+              <SqBadge>{count}</SqBadge> <RelicSetName setKey={key} />
+            </Typography>
+          ))}
+        </Box>
+      </ConditionalWrapper>
     </CardThemed>
   )
 }

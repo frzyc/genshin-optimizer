@@ -6,15 +6,24 @@ import {
   CardThemed,
   ModalWrapper,
   NumberInputLazy,
+  SqBadge,
   useRefSize,
 } from '@genshin-optimizer/common/ui'
+import { getUnitStr } from '@genshin-optimizer/common/util'
 import type {
   RelicMainStatKey,
   RelicRarityKey,
   RelicSetKey,
   RelicSlotKey,
+  RelicSubStatKey,
+  RelicSubstatTypeKey,
 } from '@genshin-optimizer/sr/consts'
-import { allRelicSlotKeys, relicMaxLevel } from '@genshin-optimizer/sr/consts'
+import {
+  allRelicSlotKeys,
+  isCavernRelicSetKey,
+  isPlanarRelicSetKey,
+  relicMaxLevel,
+} from '@genshin-optimizer/sr/consts'
 import type {
   BuildTCLightCone,
   BuildTcRelicSlot,
@@ -45,13 +54,18 @@ import {
   RelicMainsCardCompact,
   RelicMainStatDropdown,
   RelicRarityDropdown,
+  RelicSetAutocomplete,
   RelicSetCardCompact,
+  RelicSetName,
   RelicSubCard,
+  StatDisplay,
 } from '@genshin-optimizer/sr/ui'
 import CloseIcon from '@mui/icons-material/Close'
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import {
   Box,
   Button,
+  ButtonGroup,
   CardActionArea,
   CardContent,
   CardHeader,
@@ -334,6 +348,8 @@ export function EquipRowTC({ buildTcId }: { buildTcId: string }) {
 
   const [show, onShow, onHide] = useBoolState()
   const [showMainEditor, onShowMainEditor, onHideMainEditor] = useBoolState()
+  const [showSubsEditor, onShowSubsEditor, onHideSubsEditor] = useBoolState()
+  const [showSetsEditor, onShowSetsEditor, onHideSetsEditor] = useBoolState()
   const onUpdate = useCallback(
     (data: Partial<BuildTCLightCone>) => {
       database.buildTcs.set(buildTcId, (buildTc) => ({
@@ -356,6 +372,66 @@ export function EquipRowTC({ buildTcId }: { buildTcId: string }) {
     },
     [buildTcId, database.buildTcs]
   )
+  const setSubstat = useCallback(
+    (statKey: RelicSubStatKey, value: number) => {
+      database.buildTcs.set(buildTcId, (buildTc) => ({
+        relic: {
+          ...buildTc.relic,
+          substats: {
+            ...buildTc.relic.substats,
+            stats: {
+              ...buildTc.relic.substats.stats,
+              [statKey]: value,
+            },
+          },
+        },
+      }))
+    },
+    [buildTcId, database.buildTcs]
+  )
+  const setType = useCallback(
+    (type: RelicSubstatTypeKey) => {
+      database.buildTcs.set(buildTcId, (buildTc) => ({
+        relic: {
+          ...buildTc.relic,
+          substats: {
+            ...buildTc.relic.substats,
+            type,
+          },
+        },
+      }))
+    },
+    [buildTcId, database.buildTcs]
+  )
+  const setSets = useCallback(
+    (setKey: RelicSetKey, count: number) => {
+      database.buildTcs.set(buildTcId, (buildTc) => ({
+        relic: {
+          ...buildTc.relic,
+          sets: {
+            ...buildTc.relic.sets,
+            [setKey]: count,
+          },
+        },
+      }))
+    },
+    [buildTcId, database.buildTcs]
+  )
+  const removeSet = useCallback(
+    (setKey: RelicSetKey) => {
+      database.buildTcs.set(buildTcId, (buildTc) => {
+        const sets = { ...buildTc.relic.sets }
+        delete sets[setKey]
+        return {
+          relic: {
+            ...buildTc.relic,
+            sets,
+          },
+        }
+      })
+    },
+    [buildTcId, database.buildTcs]
+  )
   return (
     <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
       <TCLightconeEditor
@@ -373,6 +449,18 @@ export function EquipRowTC({ buildTcId }: { buildTcId: string }) {
       ) : (
         <LightConeCardCompactEmpty bgt="light" onClick={onShow} />
       )}
+      <TCRelicSetEditor
+        show={showSetsEditor}
+        onClose={onHideSetsEditor}
+        sets={relic.sets}
+        setSets={setSets}
+        removeSet={removeSet}
+      />
+      <RelicSetCardCompact
+        bgt="light"
+        sets={relic.sets}
+        onClick={onShowSetsEditor}
+      />
       <TCMainsEditor
         show={showMainEditor}
         onClose={onHideMainEditor}
@@ -384,17 +472,28 @@ export function EquipRowTC({ buildTcId }: { buildTcId: string }) {
         slots={relic.slots}
         onClick={onShowMainEditor}
       />
+      <TCSubsEditor
+        stats={relic.substats.stats}
+        show={showSubsEditor}
+        onClose={onHideSubsEditor}
+        type={relic.substats.type}
+        setType={setType}
+        setStat={setSubstat}
+      />
       <RelicSubCard
+        onClick={onShowSubsEditor}
         relic={relic}
         keys={['hp', 'hp_', 'def', 'def_']}
         bgt="light"
       />
       <RelicSubCard
+        onClick={onShowSubsEditor}
         relic={relic}
         keys={['atk', 'atk_', 'crit_', 'crit_dmg_']}
         bgt="light"
       />
       <RelicSubCard
+        onClick={onShowSubsEditor}
         relic={relic}
         keys={['spd', 'eff_', 'eff_res_', 'brEffect_']}
         bgt="light"
@@ -443,7 +542,7 @@ function TCMainsEditor({
     >
       <CardThemed>
         <CardHeader
-          title={'TC Build Relic Slots Editor'}
+          title={'TC Build Relic Slots Editor'} // TODO: translation
           action={
             <IconButton onClick={onClose}>
               <CloseIcon />
@@ -535,5 +634,199 @@ function SlotEditor({
         onChange={setLevel}
       />
     </Box>
+  )
+}
+function TCSubsEditor({
+  show,
+  onClose,
+  stats,
+  setStat,
+}: {
+  show: boolean
+  onClose: () => void
+  type: RelicSubstatTypeKey
+  setType: (type: RelicSubstatTypeKey) => void
+  stats: Record<RelicSubStatKey, number>
+  setStat: (key: RelicSubStatKey, value: number) => void
+}) {
+  return (
+    <ModalWrapper
+      open={show}
+      onClose={onClose}
+      containerProps={{ maxWidth: 'sm' }}
+    >
+      <CardThemed>
+        <CardHeader
+          title={'TC Build Substats Editor'} // TODO: translation
+          action={
+            <IconButton onClick={onClose}>
+              <CloseIcon />
+            </IconButton>
+          }
+        />
+        <Divider />
+        <CardContent>
+          <Stack spacing={1}>
+            {/* TODO: sub type + rarity */}
+            <Box
+              sx={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                rowGap: 1,
+                columnGap: 2,
+              }}
+            >
+              {Object.entries(stats).map(([statKey, value]) => (
+                <TCSubstatEditor
+                  key={statKey}
+                  statKey={statKey as RelicSubStatKey}
+                  value={value}
+                  setValue={(value) =>
+                    setStat(statKey as RelicSubStatKey, value)
+                  }
+                />
+              ))}
+            </Box>
+          </Stack>
+        </CardContent>
+      </CardThemed>
+    </ModalWrapper>
+  )
+}
+function TCSubstatEditor({
+  statKey,
+  value,
+  setValue,
+}: {
+  statKey: RelicSubStatKey
+  value: number
+  setValue: (v: number) => void
+}) {
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 1,
+        justifyContent: 'space-between',
+      }}
+    >
+      <StatDisplay statKey={statKey} />
+      <NumberInputLazy
+        value={value}
+        onChange={setValue}
+        float={getUnitStr(statKey) === '%'}
+        size="small"
+        inputProps={{
+          sx: {
+            width: '4em',
+            textAlign: 'right',
+          },
+          min: 0,
+          max: 9999,
+        }}
+        InputProps={{
+          endAdornment: getUnitStr(statKey) || (
+            <Box width="0.8em" component="span" />
+          ),
+        }}
+      />
+    </Box>
+  )
+}
+function TCRelicSetEditor({
+  show,
+  onClose,
+  sets,
+  setSets,
+  removeSet,
+}: {
+  show: boolean
+  onClose: () => void
+  sets: Partial<Record<RelicSetKey, 2 | 4>>
+  setSets: (setKey: RelicSetKey, count: 2 | 4) => void
+  removeSet: (setKey: RelicSetKey) => void
+}) {
+  const [localSetKey, setLocalSetKey] = useState<RelicSetKey | null>(null)
+  const setRelicSetKey = useCallback(
+    (setKey: RelicSetKey | '') => {
+      if (!setKey) return
+      if (isPlanarRelicSetKey(setKey)) {
+        setSets(setKey, 2)
+      } else if (isCavernRelicSetKey(setKey)) {
+        setLocalSetKey(setKey)
+      }
+    },
+    [setSets]
+  )
+  const setRelicSetCount = useCallback(
+    (count: 2 | 4) => {
+      if (localSetKey) {
+        setSets(localSetKey, count)
+        setLocalSetKey(null)
+      }
+    },
+    [localSetKey, setSets]
+  )
+  return (
+    <ModalWrapper
+      open={show}
+      onClose={onClose}
+      containerProps={{ maxWidth: 'sm' }}
+    >
+      <CardThemed>
+        <CardHeader
+          title={'TC Build Relic Sets Editor'} // TODO: translation
+          action={
+            <IconButton onClick={onClose}>
+              <CloseIcon />
+            </IconButton>
+          }
+        />
+        <Divider />
+        <CardContent>
+          <Stack spacing={1}>
+            {Object.entries(sets).map(([setKey, count]) => (
+              <Box
+                key={setKey}
+                sx={{ display: 'flex', gap: 1, alignItems: 'center' }}
+              >
+                <RelicSetName setKey={setKey as RelicSetKey} />
+                <SqBadge>{count}</SqBadge>
+                <IconButton
+                  size="small"
+                  onClick={() => removeSet(setKey as RelicSetKey)}
+                >
+                  <DeleteForeverIcon />
+                </IconButton>
+              </Box>
+            ))}
+            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+              <RelicSetAutocomplete
+                size="small"
+                relicSetKey={localSetKey ?? ''}
+                setRelicSetKey={setRelicSetKey}
+                sx={{ flexGrow: 1 }}
+                label={localSetKey ?? ''}
+              />
+              <ButtonGroup>
+                <Button
+                  disabled={!localSetKey}
+                  onClick={() => setRelicSetCount(2)}
+                >
+                  2
+                </Button>
+                <Button
+                  disabled={!localSetKey}
+                  onClick={() => setRelicSetCount(4)}
+                >
+                  4
+                </Button>
+              </ButtonGroup>
+            </Box>
+          </Stack>
+        </CardContent>
+      </CardThemed>
+    </ModalWrapper>
   )
 }

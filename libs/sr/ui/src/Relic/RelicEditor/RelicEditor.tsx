@@ -59,8 +59,8 @@ import { LocationAutocomplete } from '../../Character'
 import { RelicCard } from '../RelicCard'
 import { RelicMainStatDropdown } from '../RelicMainStatDropdown'
 import { RelicRarityDropdown } from '../RelicRarityDropdown'
+import { RelicSetAutocomplete } from '../RelicSetAutocomplete'
 import { relicReducer } from './reducer'
-import { RelicSetAutocomplete } from './RelicSetAutocomplete'
 import SubstatInput from './SubstatInput'
 
 // TODO: temporary until relic sheet is implemented

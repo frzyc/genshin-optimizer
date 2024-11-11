@@ -99,6 +99,7 @@ export function initCharTC(characterKey: CharacterKey): IBuildTc {
       substats: {
         type: 'max',
         stats: objKeyMap(allRelicSubStatKeys, () => 0),
+        rarity: 5,
       },
       sets: {},
     },
@@ -143,7 +144,7 @@ function validateCharTCRelic(relic: unknown): IBuildTc['relic'] | undefined {
   if (typeof relic !== 'object') return undefined
   let {
     slots,
-    substats: { type, stats },
+    substats: { type, stats, rarity },
     sets,
   } = relic as IBuildTc['relic']
   const _slots = validateCharTCRelicSlots(slots)
@@ -154,11 +155,13 @@ function validateCharTCRelic(relic: unknown): IBuildTc['relic'] | undefined {
   stats = objKeyMap(allRelicSubStatKeys, (k) =>
     typeof stats[k] === 'number' ? stats[k] : 0
   )
+  if (typeof rarity !== 'number' || !allRelicRarityKeys.includes(rarity))
+    rarity = 5
 
   if (typeof sets !== 'object') sets = {}
   // TODO: validate sets
 
-  return { slots, substats: { type, stats }, sets }
+  return { slots, substats: { type, stats, rarity }, sets }
 }
 function validateCharTCRelicSlots(
   slots: unknown
