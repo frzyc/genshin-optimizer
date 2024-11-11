@@ -1,6 +1,7 @@
 import type {
   CharacterKey,
   RelicMainStatKey,
+  RelicRarityKey,
   RelicSetKey,
   RelicSlotKey,
   RelicSubStatKey,
@@ -11,6 +12,7 @@ import type { ILightCone } from '@genshin-optimizer/sr/srod'
 export type BuildTcRelicSlot = {
   level: number
   statKey: RelicMainStatKey
+  rarity:RelicRarityKey
 }
 export type BuildTCLightCone = Omit<ILightCone, 'location' | 'lock'>
 export interface IBuildTc {

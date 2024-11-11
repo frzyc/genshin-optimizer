@@ -5,11 +5,21 @@ import {
 import {
   CardThemed,
   ModalWrapper,
+  NumberInputLazy,
   useRefSize,
 } from '@genshin-optimizer/common/ui'
-import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
-import { allRelicSlotKeys } from '@genshin-optimizer/sr/consts'
-import type { BuildTCLightCone } from '@genshin-optimizer/sr/db'
+import type {
+  RelicMainStatKey,
+  RelicRarityKey,
+  RelicSetKey,
+  RelicSlotKey,
+} from '@genshin-optimizer/sr/consts'
+import { allRelicSlotKeys, relicMaxLevel } from '@genshin-optimizer/sr/consts'
+import type {
+  BuildTCLightCone,
+  BuildTcRelicSlot,
+  IBuildTc,
+} from '@genshin-optimizer/sr/db'
 import {
   initCharTC,
   type ICachedLightCone,
@@ -22,6 +32,7 @@ import {
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/sr/db-ui'
+import { SlotIcon } from '@genshin-optimizer/sr/svgicons'
 import {
   COMPACT_ELE_HEIGHT,
   COMPACT_ELE_WIDTH,
@@ -32,6 +43,8 @@ import {
   LightConeEditorCard,
   RelicCardCompact,
   RelicMainsCardCompact,
+  RelicMainStatDropdown,
+  RelicRarityDropdown,
   RelicSetCardCompact,
   RelicSubCard,
 } from '@genshin-optimizer/sr/ui'
@@ -44,6 +57,7 @@ import {
   CardHeader,
   Divider,
   IconButton,
+  InputAdornment,
   Stack,
   Typography,
   useTheme,
@@ -319,10 +333,25 @@ export function EquipRowTC({ buildTcId }: { buildTcId: string }) {
   const { lightCone, relic } = build
 
   const [show, onShow, onHide] = useBoolState()
+  const [showMainEditor, onShowMainEditor, onHideMainEditor] = useBoolState()
   const onUpdate = useCallback(
     (data: Partial<BuildTCLightCone>) => {
       database.buildTcs.set(buildTcId, (buildTc) => ({
         lightCone: { ...buildTc.lightCone, ...data } as BuildTCLightCone,
+      }))
+    },
+    [buildTcId, database.buildTcs]
+  )
+  const setSlot = useCallback(
+    (slotKey: RelicSlotKey, data: Partial<BuildTcRelicSlot>) => {
+      database.buildTcs.set(buildTcId, (buildTc) => ({
+        relic: {
+          ...buildTc.relic,
+          slots: {
+            ...buildTc.relic.slots,
+            [slotKey]: { ...buildTc.relic.slots[slotKey], ...data },
+          },
+        },
       }))
     },
     [buildTcId, database.buildTcs]
@@ -344,7 +373,17 @@ export function EquipRowTC({ buildTcId }: { buildTcId: string }) {
       ) : (
         <LightConeCardCompactEmpty bgt="light" onClick={onShow} />
       )}
-      <RelicMainsCardCompact bgt="light" slots={relic.slots} />
+      <TCMainsEditor
+        show={showMainEditor}
+        onClose={onHideMainEditor}
+        slots={relic.slots}
+        setSlot={setSlot}
+      />
+      <RelicMainsCardCompact
+        bgt="light"
+        slots={relic.slots}
+        onClick={onShowMainEditor}
+      />
       <RelicSubCard
         relic={relic}
         keys={['hp', 'hp_', 'def', 'def_']}
@@ -383,5 +422,118 @@ function TCLightconeEditor({
         hideLocation
       />
     </ModalWrapper>
+  )
+}
+function TCMainsEditor({
+  slots,
+  show,
+  onClose,
+  setSlot,
+}: {
+  slots: IBuildTc['relic']['slots']
+  show: boolean
+  onClose: () => void
+  setSlot: (slotKey: RelicSlotKey, data: Partial<BuildTcRelicSlot>) => void
+}) {
+  return (
+    <ModalWrapper
+      open={show}
+      onClose={onClose}
+      containerProps={{ maxWidth: 'sm' }}
+    >
+      <CardThemed>
+        <CardHeader
+          title={'TC Build Relic Slots Editor'}
+          action={
+            <IconButton onClick={onClose}>
+              <CloseIcon />
+            </IconButton>
+          }
+        />
+        <Divider />
+        <CardContent>
+          <Stack spacing={1}>
+            {Object.entries(slots).map(
+              ([slotKey, { level, statKey, rarity }]) => (
+                <SlotEditor
+                  key={slotKey}
+                  slotKey={slotKey as RelicSlotKey}
+                  level={level}
+                  statKey={statKey}
+                  rarity={rarity}
+                  setStatKey={(statKey) =>
+                    setSlot(slotKey as RelicSlotKey, { statKey })
+                  }
+                  setRarity={(rarity) =>
+                    setSlot(slotKey as RelicSlotKey, { rarity })
+                  }
+                  setLevel={(level) =>
+                    setSlot(slotKey as RelicSlotKey, { level })
+                  }
+                />
+              )
+            )}
+          </Stack>
+        </CardContent>
+      </CardThemed>
+    </ModalWrapper>
+  )
+}
+function SlotEditor({
+  slotKey,
+  level,
+  rarity,
+  statKey,
+  setStatKey,
+  setRarity,
+  setLevel,
+}: {
+  slotKey: RelicSlotKey
+  level: number
+  rarity: RelicRarityKey
+  statKey: RelicMainStatKey
+  setStatKey: (statKey: RelicMainStatKey) => void
+  setRarity: (rarity: RelicRarityKey) => void
+  setLevel: (level: number) => void
+}) {
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        gap: 1,
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}
+    >
+      <SlotIcon slotKey={slotKey} />
+      <RelicRarityDropdown
+        rarity={rarity}
+        onRarityChange={setRarity}
+        showNumber
+      />
+      <Box sx={{ flexGrow: 1 }}>
+        <RelicMainStatDropdown
+          dropdownButtonProps={{ fullWidth: true }}
+          slotKey={slotKey}
+          statKey={statKey}
+          setStatKey={setStatKey}
+        />
+      </Box>
+      <NumberInputLazy
+        value={level}
+        inputProps={{
+          sx: { width: '2ch' },
+          max: relicMaxLevel[rarity],
+          min: 0,
+        }}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">Level</InputAdornment>
+          ),
+        }}
+        size="small"
+        onChange={setLevel}
+      />
+    </Box>
   )
 }

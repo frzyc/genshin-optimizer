@@ -8,13 +8,18 @@ import type {
 import {
   allCharacterKeys,
   allLightConeKeys,
+  allRelicRarityKeys,
   allRelicSlotKeys,
   allRelicSubStatKeys,
   relicMaxLevel,
   relicSubstatTypeKeys,
 } from '@genshin-optimizer/sr/consts'
 import { validateLevelAsc } from '@genshin-optimizer/sr/util'
-import type { ICachedLightCone, ICachedRelic } from '../../Interfaces'
+import type {
+  BuildTcRelicSlot,
+  ICachedLightCone,
+  ICachedRelic,
+} from '../../Interfaces'
 import { type IBuildTc } from '../../Interfaces/IBuildTc'
 import { DataManager } from '../DataManager'
 import type { SroDatabase } from '../Database'
@@ -103,7 +108,7 @@ export function initCharTC(characterKey: CharacterKey): IBuildTc {
     },
   }
 }
-function initCharTCRelicSlots() {
+function initCharTCRelicSlots(): Record<RelicSlotKey, BuildTcRelicSlot> {
   return objKeyMap(allRelicSlotKeys, (s) => ({
     level: 20,
     statKey: (s === 'head'
@@ -111,6 +116,7 @@ function initCharTCRelicSlots() {
       : s === 'hands'
       ? 'atk'
       : 'atk_') as RelicMainStatKey,
+    rarity: 5,
   }))
 }
 
@@ -167,12 +173,18 @@ function validateCharTCRelicSlots(
     )
   )
     return initCharTCRelicSlots()
-  return objMap(slots as IBuildTc['relic']['slots'], ({ level, ...rest }) => {
-    return {
-      level: clamp(level, 0, relicMaxLevel[5]),
-      ...rest,
+  return objMap(
+    slots as IBuildTc['relic']['slots'],
+    ({ level, rarity, ...rest }) => {
+      if (typeof rarity !== 'number' || !allRelicRarityKeys.includes(rarity))
+        rarity = 5
+      return {
+        level: clamp(level, 0, relicMaxLevel[5]),
+        rarity,
+        ...rest,
+      }
     }
-  })
+  )
 }
 function validateCharTcOptimization(
   optimization: unknown

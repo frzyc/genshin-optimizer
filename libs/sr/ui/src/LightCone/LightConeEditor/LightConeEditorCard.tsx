@@ -7,7 +7,7 @@ import type {
 import { allSuperimposeKeys } from '@genshin-optimizer/sr/consts'
 import type { ILightCone } from '@genshin-optimizer/sr/srod'
 import { ascensionMaxLevel, milestoneLevels } from '@genshin-optimizer/sr/util'
-import { Close } from '@mui/icons-material'
+import CloseIcon from '@mui/icons-material/Close'
 import {
   CardContent,
   CardHeader,
@@ -44,7 +44,7 @@ export function LightConeEditorCard({
         title="Light Cone Editor"
         action={
           <IconButton onClick={onClose}>
-            <Close />
+            <CloseIcon />
           </IconButton>
         }
       />

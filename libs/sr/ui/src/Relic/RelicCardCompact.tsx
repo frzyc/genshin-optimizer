@@ -336,30 +336,49 @@ export function RelicSetCardCompact({
 export function RelicMainsCardCompact({
   slots,
   bgt,
+  onClick,
 }: {
   slots: IBuildTc['relic']['slots']
   bgt?: CardBackgroundColor
+  onClick?: () => void
 }) {
+  const actionWrapperFunc = useCallback(
+    (children: ReactNode) => (
+      <CardActionArea onClick={onClick} sx={{ height: '100%', width: '100%' }}>
+        {children}
+      </CardActionArea>
+    ),
+    [onClick]
+  )
   return (
     <CardThemed
       bgt={bgt}
       sx={{
         width: COMPACT_ELE_WIDTH,
         height: COMPACT_ELE_HEIGHT,
-        p: 1,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        alignContent: 'space-between',
-        flexWrap: 'wrap',
       }}
     >
-      {Object.entries(slots).map(([slotKey, { level, statKey }]) => (
-        <Typography key={slotKey}>
-          <SlotIcon slotKey={slotKey} iconProps={iconInlineProps} />{' '}
-          <StatIcon statKey={statKey} iconProps={iconInlineProps} />+{level}
-        </Typography>
-      ))}
+      <ConditionalWrapper condition={!!onClick} wrapper={actionWrapperFunc}>
+        <Box
+          sx={{
+            height: '100%',
+            width: '100%',
+            p: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            alignContent: 'space-between',
+            flexWrap: 'wrap',
+          }}
+        >
+          {Object.entries(slots).map(([slotKey, { level, statKey }]) => (
+            <Typography key={slotKey}>
+              <SlotIcon slotKey={slotKey} iconProps={iconInlineProps} />{' '}
+              <StatIcon statKey={statKey} iconProps={iconInlineProps} />+{level}
+            </Typography>
+          ))}
+        </Box>
+      </ConditionalWrapper>
     </CardThemed>
   )
 }
