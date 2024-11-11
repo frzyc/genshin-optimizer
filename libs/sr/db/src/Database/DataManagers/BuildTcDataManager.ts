@@ -30,13 +30,14 @@ export class BuildTcDataManager extends DataManager<
   }
   override validate(obj: unknown): IBuildTc | undefined {
     if (!obj || typeof obj !== 'object') return undefined
-    const { characterKey } = obj as IBuildTc
+    const { characterKey, teamId } = obj as IBuildTc
     if (!allCharacterKeys.includes(characterKey)) return undefined
 
-    let { name, teamId, description } = obj as IBuildTc
+    let { name, description } = obj as IBuildTc
     const { lightCone, relic, optimization } = obj as IBuildTc
 
-    if (teamId && !this.database.teams.get(teamId)) teamId = undefined
+    // Cannot validate teamId, since on db init database.teams do not exist yet.
+    // if (teamId && !this.database.teams.get(teamId)) teamId = undefined
 
     if (typeof name !== 'string') name = 'Build(TC) Name'
     if (typeof description !== 'string') description = 'Build(TC) Description'
@@ -65,12 +66,6 @@ export class BuildTcDataManager extends DataManager<
     const buildTc = this.get(buildTcId)
     if (!buildTc) return ''
     return this.new(structuredClone(buildTc))
-  }
-  override remove(key: string, notify?: boolean): IBuildTc | undefined {
-    const buildTc = super.remove(key, notify)
-    // TODO: remove tcbuild from teams?
-
-    return buildTc
   }
   export(buildTcId: string): object | undefined {
     const buildTc = this.database.buildTcs.get(buildTcId)

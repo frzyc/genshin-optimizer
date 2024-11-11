@@ -1,4 +1,7 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
+import {
+  useBoolState,
+  useForceUpdate,
+} from '@genshin-optimizer/common/react-util'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
@@ -24,8 +27,8 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import { useMemo, useState } from 'react'
-import { BuildsDisplay, EquipRow } from './BuildsDisplay'
+import { useEffect, useMemo, useState } from 'react'
+import { BuildsDisplay, EquipRow, EquipRowTC } from './BuildsDisplay'
 import { ComboEditor } from './ComboEditor'
 import { useTeamContext } from './context'
 import Optimize from './Optimize'
@@ -69,13 +72,20 @@ export default function TeammateDisplay() {
 function CurrentBuildDisplay() {
   const { teammateDatum } = useTeamContext()
   const { database } = useDatabaseContext()
-  const { buildName, relicIds, lightConeId } = useMemo(
-    () => ({
-      buildName: database.teams.getActiveBuildName(teammateDatum),
-      ...database.teams.getTeamActiveBuild(teammateDatum),
-    }),
-    [database.teams, teammateDatum]
+  const { buildType, buildId, buildTcId } = teammateDatum
+  const [dbDirty, setDbDirty] = useForceUpdate()
+  const buildName = useMemo(
+    () => dbDirty && database.teams.getActiveBuildName(teammateDatum),
+    [database.teams, dbDirty, teammateDatum]
   )
+  useEffect(() => {
+    let unFollow = () => {}
+    if (buildType === 'real')
+      unFollow = database.builds.follow(buildId, setDbDirty)
+    if (buildType === 'tc')
+      unFollow = database.buildTcs.follow(buildTcId, setDbDirty)
+    return () => unFollow()
+  })
   const [show, onShow, onHide] = useBoolState()
   return (
     <CardThemed sx={{ width: '100%' }}>
@@ -91,10 +101,24 @@ function CurrentBuildDisplay() {
       />
       <Divider />
       <CardContent>
-        <EquipRow relicIds={relicIds} lightConeId={lightConeId} />
+        {buildType === 'tc' ? <BuildTCDisplay /> : <BuildDisplay />}
       </CardContent>
     </CardThemed>
   )
+}
+function BuildDisplay() {
+  const { teammateDatum } = useTeamContext()
+  const { database } = useDatabaseContext()
+  const { relicIds, lightConeId } = useMemo(
+    () => database.teams.getTeamActiveBuild(teammateDatum),
+    [database.teams, teammateDatum]
+  )
+  return <EquipRow relicIds={relicIds} lightConeId={lightConeId} />
+}
+function BuildTCDisplay() {
+  const { teammateDatum } = useTeamContext()
+  if (teammateDatum.buildType !== 'tc') return null
+  return <EquipRowTC buildTcId={teammateDatum.buildTcId} />
 }
 function BuildsModal({
   show,

@@ -70,11 +70,6 @@ export class BuildDataManager extends DataManager<
     if (!build) return ''
     return this.new(structuredClone(build))
   }
-  override remove(key: string, notify?: boolean): Build | undefined {
-    const build = super.remove(key, notify)
-    // TODO: remove builds from teams
-    return build
-  }
   getBuildIds(characterKey: CharacterKey) {
     return this.keys.filter(
       (key) => this.get(key)?.characterKey === characterKey
