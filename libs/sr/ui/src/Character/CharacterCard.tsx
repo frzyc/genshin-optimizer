@@ -13,7 +13,7 @@ import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import type { ICachedCharacter } from '@genshin-optimizer/sr/db'
 import type { Calculator } from '@genshin-optimizer/sr/formula'
 import {
-  charData,
+  charTagMapNodeEntries,
   own,
   srCalculatorWithEntries,
 } from '@genshin-optimizer/sr/formula'
@@ -53,7 +53,8 @@ export function CharacterCard({
   onClick?: () => void
 }) {
   const calc =
-    useSrCalcContext() ?? srCalculatorWithEntries(charData(character))
+    useSrCalcContext() ??
+    srCalculatorWithEntries(charTagMapNodeEntries(character))
 
   return (
     <Stack>

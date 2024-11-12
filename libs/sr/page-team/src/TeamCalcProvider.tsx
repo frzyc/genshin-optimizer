@@ -25,10 +25,10 @@ import type {
   TagMapNodeEntries,
 } from '@genshin-optimizer/sr/formula'
 import {
-  charData,
+  charTagMapNodeEntries,
   conditionalEntries,
   enemyDebuff,
-  lightConeData,
+  lightConeTagMapNodeEntries,
   members,
   ownBuff,
   relicTagMapNodeEntries,
@@ -125,7 +125,12 @@ function useCharacterAndEquipment(meta: TeammateDatum | undefined) {
     const lc =
       meta?.buildType === 'tc' ? (buildTc?.lightCone as ILightCone) : lightCone
     if (!lc) return []
-    return lightConeData(lc.key, lc.level, lc.ascension, lc.superimpose)
+    return lightConeTagMapNodeEntries(
+      lc.key,
+      lc.level,
+      lc.ascension,
+      lc.superimpose
+    )
   }, [meta?.buildType, buildTc?.lightCone, lightCone])
   const relicTagEntries = useMemo(() => {
     if (meta?.buildType === 'tc' && buildTc) return relicTcData(buildTc?.relic)
@@ -136,7 +141,7 @@ function useCharacterAndEquipment(meta: TeammateDatum | undefined) {
     if (!character) return []
     return withMember(
       character.key,
-      ...charData(character),
+      ...charTagMapNodeEntries(character),
       ...lcTagEntries,
       ...relicTagEntries
     )

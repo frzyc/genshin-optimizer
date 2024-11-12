@@ -35,7 +35,7 @@ export function withMember(
   return data.map(({ tag, value }) => ({ tag: { ...tag, src }, value }))
 }
 
-export function charData(data: ICharacter): TagMapNodeEntries {
+export function charTagMapNodeEntries(data: ICharacter): TagMapNodeEntries {
   const { lvl, basic, skill, ult, talent, ascension, eidolon } = own.char
   const { char, iso, [data.key]: sheet } = reader.withAll('sheet', [])
 
@@ -65,7 +65,7 @@ export function charData(data: ICharacter): TagMapNodeEntries {
   ]
 }
 
-export function lightConeData(
+export function lightConeTagMapNodeEntries(
   key: LightConeKey,
   level: number,
   ascension: AscensionKey,

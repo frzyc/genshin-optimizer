@@ -13,7 +13,7 @@ import type { ICachedLightCone } from '@genshin-optimizer/sr/db'
 import { useLightCone } from '@genshin-optimizer/sr/db-ui'
 import type { Calculator } from '@genshin-optimizer/sr/formula'
 import {
-  lightConeData,
+  lightConeTagMapNodeEntries,
   own,
   srCalculatorWithEntries,
 } from '@genshin-optimizer/sr/formula'
@@ -70,10 +70,13 @@ export function LightConeCardCompactObj({
     [onClick]
   )
 
-  const { key, level, location } = lightCone
+  const { key, level, location, ascension, superimpose } = lightCone
   const calc = useMemo(
-    () => srCalculatorWithEntries(lightConeData(lightCone)),
-    [lightCone]
+    () =>
+      srCalculatorWithEntries(
+        lightConeTagMapNodeEntries(key, level, ascension, superimpose)
+      ),
+    [ascension, key, level, superimpose]
   )
   const { rarity } = getLightConeStat(key)
   return (

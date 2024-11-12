@@ -8,7 +8,7 @@ import { lightConeAsset } from '@genshin-optimizer/sr/assets'
 import type { LocationKey } from '@genshin-optimizer/sr/consts'
 import type { Calculator } from '@genshin-optimizer/sr/formula'
 import {
-  lightConeData,
+  lightConeTagMapNodeEntries,
   own,
   srCalculatorWithEntries,
 } from '@genshin-optimizer/sr/formula'
@@ -56,8 +56,11 @@ export function LightConeCard({
 
   const { key, level, ascension, superimpose, location = '', lock } = lightCone
   const calc = useMemo(
-    () => srCalculatorWithEntries(lightConeData(lightCone)),
-    [lightCone]
+    () =>
+      srCalculatorWithEntries(
+        lightConeTagMapNodeEntries(key, level, ascension, superimpose)
+      ),
+    [ascension, key, level, superimpose]
   )
   const lcStat = getLightConeStat(key)
 
