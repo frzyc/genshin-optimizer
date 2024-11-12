@@ -85,7 +85,7 @@ function CurrentBuildDisplay() {
     if (buildType === 'tc')
       unFollow = database.buildTcs.follow(buildTcId, setDbDirty)
     return () => unFollow()
-  })
+  }, [buildId, buildTcId, buildType, database, setDbDirty])
   const [show, onShow, onHide] = useBoolState()
   return (
     <CardThemed sx={{ width: '100%' }}>

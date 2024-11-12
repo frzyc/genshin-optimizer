@@ -1,4 +1,5 @@
 import { DropdownButton, StarsDisplay } from '@genshin-optimizer/common/ui'
+import type { RarityKey } from '@genshin-optimizer/sr/consts'
 import {
   allRelicRarityKeys,
   type RelicRarityKey,
@@ -27,13 +28,7 @@ export function RelicRarityDropdown({
       {...props}
       title={
         rarity ? (
-          showNumber ? (
-            <span>
-              {rarity} <StarsDisplay stars={1} inline />
-            </span>
-          ) : (
-            <StarsDisplay stars={rarity} inline />
-          )
+          <StarNumDisplay stars={rarity} showNumber={showNumber} />
         ) : (
           t('editor.rarity')
         )
@@ -46,15 +41,24 @@ export function RelicRarityDropdown({
           disabled={filter ? !filter?.(rarity) : false}
           onClick={() => onRarityChange(rarity)}
         >
-          {showNumber ? (
-            <span>
-              {rarity} <StarsDisplay stars={1} inline />
-            </span>
-          ) : (
-            <StarsDisplay stars={rarity} inline />
-          )}
+          <StarNumDisplay stars={rarity} showNumber={showNumber} />
         </MenuItem>
       ))}
     </DropdownButton>
   )
+}
+function StarNumDisplay({
+  stars,
+  showNumber,
+}: {
+  stars: RarityKey
+  showNumber?: boolean
+}) {
+  if (showNumber)
+    return (
+      <span>
+        {stars} <StarsDisplay stars={1} inline />
+      </span>
+    )
+  return <StarsDisplay stars={stars} inline />
 }

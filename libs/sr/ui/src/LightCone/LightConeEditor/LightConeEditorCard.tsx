@@ -41,7 +41,7 @@ export function LightConeEditorCard({
   return (
     <CardThemed bgt="dark">
       <CardHeader
-        title="Light Cone Editor"
+        title="Light Cone Editor" // TODO: translation
         action={
           <IconButton onClick={onClose}>
             <CloseIcon />
@@ -175,7 +175,7 @@ function LevelDropdown({
     <DropdownButton
       title={
         level
-          ? `${t('lv')} ${level}/${ascensionMaxLevel[ascension!]}`
+          ? `${t('lv')} ${level}/${ascensionMaxLevel[ascension ?? 0]}`
           : t('common:selectlevel')
       }
       color="primary"

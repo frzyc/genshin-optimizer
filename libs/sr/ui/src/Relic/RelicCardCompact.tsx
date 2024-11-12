@@ -308,12 +308,12 @@ export function RelicSubCard({
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                textWrap: 'nowrap',
+                whiteSpace: 'nowrap',
               }}
             >
               <StatIcon statKey={key} />
               <span>
-                {relic.substats.stats[key].toFixed(statToFixed(key))}
+                {(relic.substats.stats[key] ?? 0).toFixed(statToFixed(key))}
                 {getUnitStr(key)}
               </span>
             </Typography>

@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next'
 import { LightConeEditorCard } from './LightConeEditorCard'
 
 export type LightConeEditorProps = {
-  lightConeIdToEdit?: string
+  lightConeIdToEdit?: string | '' | 'new'
   cancelEdit: () => void
 }
 
@@ -68,41 +68,26 @@ export function LightConeEditor({
   const footer = useMemo(
     () => (
       <Box display="flex" gap={2}>
-        {dbLightCone ? (
+        <Button
+          startIcon={<Add />}
+          onClick={() => {
+            validatedLightcone && database.lightCones.new(validatedLightcone)
+            clear()
+          }}
+          disabled={!validatedLightcone}
+          color="primary"
+        >
+          {t('editor.btnAdd')}
+        </Button>
+        {validatedLightcone && dbLightCone && (
           <Button
-            startIcon={<Add />}
+            startIcon={<Update />}
             onClick={() => {
               validatedLightcone &&
                 database.lightCones.set(dbLightCone.id, validatedLightcone)
               clear()
             }}
             disabled={!validatedLightcone}
-            color="primary"
-          >
-            {t('editor.btnSave')}
-          </Button>
-        ) : (
-          <Button
-            startIcon={<Add />}
-            onClick={() => {
-              validatedLightcone && database.lightCones.new(validatedLightcone)
-              clear()
-            }}
-            disabled={!validatedLightcone}
-            color="primary"
-          >
-            {t('editor.btnAdd')}
-          </Button>
-        )}
-        {validatedLightcone && dbLightCone && (
-          <Button
-            startIcon={<Update />}
-            onClick={() => {
-              lightConeState &&
-                database.lightCones.set(dbLightCone.id, lightConeState)
-              clear()
-            }}
-            disabled={!lightConeState}
             color="success"
           >
             {t('editor.btnUpdate')}
@@ -125,7 +110,7 @@ export function LightConeEditor({
         )}
       </Box>
     ),
-    [clear, database, dbLightCone, lightConeState, t, validatedLightcone]
+    [clear, database, dbLightCone, t, validatedLightcone]
   )
 
   return (

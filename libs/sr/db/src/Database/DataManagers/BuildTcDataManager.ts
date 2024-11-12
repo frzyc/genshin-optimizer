@@ -2,15 +2,16 @@ import { clamp, objKeyMap, objMap } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   RelicMainStatKey,
+  RelicRarityKey,
   RelicSetKey,
   RelicSlotKey,
 } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterKeys,
   allLightConeKeys,
-  allRelicRarityKeys,
   allRelicSlotKeys,
   allRelicSubStatKeys,
+  isRelicRarityKey,
   relicMaxLevel,
   relicSubstatTypeKeys,
 } from '@genshin-optimizer/sr/consts'
@@ -155,13 +156,16 @@ function validateCharTCRelic(relic: unknown): IBuildTc['relic'] | undefined {
   stats = objKeyMap(allRelicSubStatKeys, (k) =>
     typeof stats[k] === 'number' ? stats[k] : 0
   )
-  if (typeof rarity !== 'number' || !allRelicRarityKeys.includes(rarity))
-    rarity = 5
+  rarity = validateRelicRarity(rarity)
 
   if (typeof sets !== 'object') sets = {}
   // TODO: validate sets
 
   return { slots, substats: { type, stats, rarity }, sets }
+}
+
+function validateRelicRarity(rarity: unknown): RelicRarityKey {
+  return isRelicRarityKey(rarity) ? rarity : 5
 }
 function validateCharTCRelicSlots(
   slots: unknown
@@ -179,10 +183,9 @@ function validateCharTCRelicSlots(
   return objMap(
     slots as IBuildTc['relic']['slots'],
     ({ level, rarity, ...rest }) => {
-      if (typeof rarity !== 'number' || !allRelicRarityKeys.includes(rarity))
-        rarity = 5
+      rarity = validateRelicRarity(rarity)
       return {
-        level: clamp(level, 0, relicMaxLevel[5]),
+        level: clamp(level, 0, relicMaxLevel[rarity]),
         rarity,
         ...rest,
       }

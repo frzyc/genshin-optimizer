@@ -12,10 +12,10 @@ export function useRefSize() {
       setHeight(ref.current?.clientHeight ?? 0)
     }
     handleResize() // Check on mount and whenever the window resizes
-    if (ref.current) window.addEventListener('resize', handleResize)
+    window.addEventListener('resize', handleResize)
     return () => {
       window.removeEventListener('resize', handleResize)
     }
-  }, [])
+  }, []) // Safe to keep empty as we only want mount/unmount behavior
   return { width, height, ref }
 }

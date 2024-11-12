@@ -14,11 +14,11 @@ export function useRefOverflow() {
       setIsOverflowY(ele ? isOverflowedY(ele) : false)
     }
     handleResize() // Check on mount and whenever the window resizes
-    if (ref.current) window.addEventListener('resize', handleResize)
+    window.addEventListener('resize', handleResize)
     return () => {
       window.removeEventListener('resize', handleResize)
     }
-  }, [])
+  }, []) // Safe to keep empty as we only want mount/unmount behavior
   return { isOverflowX, isOverflowY, ref }
 }
 function isOverflowedX(ref: HTMLElement) {

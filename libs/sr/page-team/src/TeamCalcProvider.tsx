@@ -133,10 +133,11 @@ function useCharacterAndEquipment(meta: TeammateDatum | undefined) {
     )
   }, [meta?.buildType, buildTc?.lightCone, lightCone])
   const relicTagEntries = useMemo(() => {
-    if (meta?.buildType === 'tc' && buildTc) return relicTcData(buildTc?.relic)
+    const tcrelic = buildTc?.relic
+    if (meta?.buildType === 'tc' && tcrelic) return relicTcData(tcrelic)
     if (!relics) return []
     return relicsData(Object.values(relics).filter(notEmpty))
-  }, [buildTc, meta?.buildType, relics])
+  }, [buildTc?.relic, meta?.buildType, relics])
   return useMemo(() => {
     if (!character) return []
     return withMember(

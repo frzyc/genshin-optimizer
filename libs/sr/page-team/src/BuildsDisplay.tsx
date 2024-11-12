@@ -94,12 +94,14 @@ export function BuildsDisplay({ onClose }: { onClose?: () => void }) {
     () => dbTCDirty && database.buildTcs.getBuildTcIds(characterKey),
     [dbTCDirty, database, characterKey]
   )
-  useEffect(() => {
-    database.builds.followAny(setDbDirty)
-  }, [database.builds, setDbDirty])
-  useEffect(() => {
-    database.buildTcs.followAny(setDbTCDirty)
-  }, [database.buildTcs, setDbTCDirty])
+  useEffect(
+    () => database.builds.followAny(setDbDirty),
+    [database.builds, setDbDirty]
+  )
+  useEffect(
+    () => database.buildTcs.followAny(setDbTCDirty),
+    [database.buildTcs, setDbTCDirty]
+  )
 
   return (
     <CardThemed bgt="dark">
@@ -168,9 +170,9 @@ function useActiveBuildSwap(
             return
           }
           teammateDatum.buildType = newBuildType
-          if (newBuildId === 'real' && newBuildId)
+          if (newBuildType === 'real' && newBuildId)
             teammateDatum.buildId = newBuildId
-          if (newBuildType === 'tc' && newBuildId)
+          else if (newBuildType === 'tc' && newBuildId)
             teammateDatum.buildTcId = newBuildId
         })
       },
@@ -309,7 +311,6 @@ export function EquipRow({
         gridTemplateRows: `repeat(${rows}, ${COMPACT_ELE_HEIGHT})`,
         maxWidth: '100%',
         width: '100%',
-        overflex: 'hidden',
       }}
     >
       <LightConeCardCompact bgt="light" lightConeId={lightConeId} />
@@ -327,8 +328,8 @@ export function EquipRow({
   )
 }
 export function BuildTC({ buildTcId }: { buildTcId: string }) {
-  const build = useBuildTc(buildTcId)!
-  const { name, description } = build
+  const build = useBuildTc(buildTcId)
+  const { name = 'ERROR', description = 'ERROR' } = build ?? {}
   const { active, onActive: onClick } = useActiveBuildSwap('tc', buildTcId)
   return (
     <BuildBase
