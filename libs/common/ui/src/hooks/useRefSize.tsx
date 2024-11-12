@@ -1,6 +1,10 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
 
+/**
+ * NOTE: the values of `width` & `height` starts at 0, since ref takes a rendering cycle to attach.
+ * @returns
+ */
 export function useRefSize() {
   const ref = useRef<HTMLElement>()
   const [width, setWidth] = useState(0)
