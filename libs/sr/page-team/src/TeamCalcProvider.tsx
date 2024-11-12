@@ -1,15 +1,29 @@
+import { notEmpty } from '@genshin-optimizer/common/util'
 import { constant } from '@genshin-optimizer/pando/engine'
 import { CalcContext } from '@genshin-optimizer/pando/ui-sheet'
-import type { RelicSubStatKey } from '@genshin-optimizer/sr/consts'
-import type { ICachedRelic, TeammateDatum } from '@genshin-optimizer/sr/db'
+import type {
+  RelicMainStatKey,
+  RelicSetKey,
+  RelicSubStatKey,
+} from '@genshin-optimizer/sr/consts'
+import type {
+  IBuildTc,
+  ICachedRelic,
+  TeammateDatum,
+} from '@genshin-optimizer/sr/db'
 import {
   useBuild,
+  useBuildTc,
   useCharacter,
   useLightCone,
   useRelics,
   useTeam,
 } from '@genshin-optimizer/sr/db-ui'
-import type { Member, Preset } from '@genshin-optimizer/sr/formula'
+import type {
+  Member,
+  Preset,
+  TagMapNodeEntries,
+} from '@genshin-optimizer/sr/formula'
 import {
   charData,
   conditionalEntries,
@@ -17,12 +31,14 @@ import {
   lightConeData,
   members,
   ownBuff,
-  relicsData,
+  relicTagMapNodeEntries,
   srCalculatorWithEntries,
   teamData,
   withMember,
   withPreset,
 } from '@genshin-optimizer/sr/formula'
+import type { ILightCone } from '@genshin-optimizer/sr/srod'
+import { getRelicMainStatVal } from '@genshin-optimizer/sr/util'
 import type { ReactNode } from 'react'
 import { useMemo } from 'react'
 
@@ -89,7 +105,7 @@ export function TeamCalcProvider({
 
 function useCharacterAndEquipment(meta: TeammateDatum | undefined) {
   const character = useCharacter(meta?.characterKey)
-  // TODO: Handle tc build
+  const buildTc = useBuildTc(meta?.buildTcId)
   const build = useBuild(meta?.buildId)
   const lightCone = useLightCone(
     meta?.buildType === 'equipped'
@@ -105,28 +121,55 @@ function useCharacterAndEquipment(meta: TeammateDatum | undefined) {
       ? build?.relicIds
       : undefined
   )
+  const lcTagEntries = useMemo(() => {
+    const lc =
+      meta?.buildType === 'tc' ? (buildTc?.lightCone as ILightCone) : lightCone
+    if (!lc) return []
+    return lightConeData(lc.key, lc.level, lc.ascension, lc.superimpose)
+  }, [meta?.buildType, buildTc?.lightCone, lightCone])
+  const relicTagEntries = useMemo(() => {
+    if (meta?.buildType === 'tc' && buildTc) return relicTcData(buildTc?.relic)
+    if (!relics) return []
+    return relicsData(Object.values(relics).filter(notEmpty))
+  }, [buildTc, meta?.buildType, relics])
   return useMemo(() => {
     if (!character) return []
     return withMember(
       character.key,
       ...charData(character),
-      ...lightConeData(lightCone),
-      ...relicsData(
-        Object.values(relics)
-          .filter((relic): relic is ICachedRelic => !!relic)
-          .map((relic) => ({
-            set: relic.setKey,
-            stats: [
-              ...relic.substats
-                .filter(({ key }) => key !== '')
-                .map((substat) => ({
-                  key: substat.key as RelicSubStatKey, // Safe because of the above filter
-                  value: substat.accurateValue,
-                })),
-              { key: relic.mainStatKey, value: relic.mainStatVal },
-            ],
-          }))
-      )
+      ...lcTagEntries,
+      ...relicTagEntries
     )
-  }, [character, lightCone, relics])
+  }, [character, lcTagEntries, relicTagEntries])
+}
+function relicsData(relics: ICachedRelic[]): TagMapNodeEntries {
+  const sets: Partial<Record<RelicSetKey, number>> = {},
+    stats: Partial<Record<RelicMainStatKey | RelicSubStatKey, number>> = {}
+  relics.forEach((relic) => {
+    sets[relic.setKey] = (sets[relic.setKey] ?? 0) + 1
+    stats[relic.mainStatKey] =
+      (stats[relic.mainStatKey] ?? 0) + relic.mainStatVal
+    relic.substats.forEach((substat) => {
+      if (!substat.key || !substat.accurateValue) return
+      stats[substat.key] = (stats[substat.key] ?? 0) + substat.accurateValue
+    })
+  })
+  return relicTagMapNodeEntries(stats, sets)
+}
+
+function relicTcData(relic: IBuildTc['relic']): TagMapNodeEntries {
+  const {
+    slots,
+    substats: { stats: substats },
+    sets,
+  } = relic
+  const stats = { ...substats } as Record<
+    RelicMainStatKey | RelicSubStatKey,
+    number
+  >
+  Object.values(slots).forEach(({ level, statKey, rarity }) => {
+    const val = getRelicMainStatVal(rarity, statKey, level)
+    stats[statKey] = (stats[statKey] ?? 0) + val
+  })
+  return relicTagMapNodeEntries(stats, sets)
 }

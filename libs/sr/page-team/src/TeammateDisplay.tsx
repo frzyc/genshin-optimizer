@@ -36,7 +36,7 @@ import CharacterTalentPane from './TalentContent'
 
 export default function TeammateDisplay() {
   const {
-    teammateDatum: { characterKey },
+    teammateDatum: { characterKey, buildType },
   } = useTeamContext()
   const character = useCharacterContext()
   const [editorKey, setCharacterKey] = useState<CharacterKey | undefined>(
@@ -65,7 +65,7 @@ export default function TeammateDisplay() {
       <ComboEditor />
       <CalcDebug />
       <CharacterTalentPane />
-      <Optimize />
+      {buildType !== 'tc' && <Optimize />}
     </Stack>
   )
 }
