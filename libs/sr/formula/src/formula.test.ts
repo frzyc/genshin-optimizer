@@ -11,7 +11,11 @@ import {
   type LightConeKey,
 } from '@genshin-optimizer/sr/consts'
 import { fail } from 'assert'
-import { charData, lightConeData, withMember } from '.'
+import {
+  charTagMapNodeEntries,
+  lightConeTagMapNodeEntries,
+  withMember,
+} from '.'
 import { Calculator } from './calculator'
 import { data, keys, values } from './data'
 import {
@@ -37,7 +41,7 @@ describe('character test', () => {
     const data: TagMapNodeEntries = [
       ...withMember(
         'March7th',
-        ...charData({
+        ...charTagMapNodeEntries({
           level: lvl,
           ascension: ascension as AscensionKey,
           key: charKey,
@@ -71,7 +75,7 @@ describe('lightCone test', () => {
     const data: TagMapNodeEntries = [
       ...withMember(
         'March7th',
-        ...charData({
+        ...charTagMapNodeEntries({
           level: 1,
           ascension: 0,
           key: 'March7th',
@@ -83,14 +87,7 @@ describe('lightCone test', () => {
           bonusAbilities: {},
           statBoosts: {},
         }),
-        ...lightConeData({
-          key: lcKey,
-          level: lvl,
-          ascension: ascension as AscensionKey,
-          superimpose: 1,
-          lock: false,
-          location: 'March7th',
-        })
+        ...lightConeTagMapNodeEntries(lcKey, lvl, ascension as AscensionKey, 1)
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))
@@ -114,7 +111,7 @@ describe('char+lightCone test', () => {
     const data: TagMapNodeEntries = [
       ...withMember(
         'March7th',
-        ...charData({
+        ...charTagMapNodeEntries({
           level: 1,
           ascension: 0,
           key: charKey,
@@ -126,14 +123,7 @@ describe('char+lightCone test', () => {
           bonusAbilities: {},
           statBoosts: {},
         }),
-        ...lightConeData({
-          key: lcKey,
-          level: 1,
-          ascension: 0,
-          superimpose: 1,
-          lock: false,
-          location: 'March7th',
-        })
+        ...lightConeTagMapNodeEntries(lcKey, 1, 0, 1)
       ),
     ]
     const calc = new Calculator(keys, values, compileTagMapValues(keys, data))

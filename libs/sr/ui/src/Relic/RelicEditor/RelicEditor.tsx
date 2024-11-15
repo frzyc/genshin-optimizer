@@ -18,7 +18,7 @@ import type { ICachedRelic } from '@genshin-optimizer/sr/db'
 import { cachedRelic } from '@genshin-optimizer/sr/db'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import type { IRelic, ISubstat } from '@genshin-optimizer/sr/srod'
-import { SlotIcon, StatIcon } from '@genshin-optimizer/sr/svgicons'
+import { SlotIcon } from '@genshin-optimizer/sr/svgicons'
 import { getRelicMainStatDisplayVal } from '@genshin-optimizer/sr/util'
 import AddIcon from '@mui/icons-material/Add'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
@@ -57,10 +57,10 @@ import {
 import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete } from '../../Character'
 import { RelicCard } from '../RelicCard'
+import { RelicMainStatDropdown } from '../RelicMainStatDropdown'
+import { RelicRarityDropdown } from '../RelicRarityDropdown'
+import { RelicSetAutocomplete } from '../RelicSetAutocomplete'
 import { relicReducer } from './reducer'
-import RelicRarityDropdown from './RelicRarityDropdown'
-import { RelicSetAutocomplete } from './RelicSetAutocomplete'
-import { RelicStatWithUnit } from './RelicStatKeyDisplay'
 import SubstatInput from './SubstatInput'
 
 // TODO: temporary until relic sheet is implemented
@@ -357,39 +357,16 @@ export function RelicEditor({
 
                 {/* main stat */}
                 <Box component="div" display="flex" gap={1}>
-                  <DropdownButton
-                    startIcon={
-                      relic?.mainStatKey ? (
-                        <StatIcon statKey={relic.mainStatKey} />
-                      ) : undefined
-                    }
-                    title={
-                      <b>
-                        {relic ? (
-                          <RelicStatWithUnit statKey={relic.mainStatKey} />
-                        ) : (
-                          t('mainStat')
-                        )}
-                      </b>
-                    }
-                    disabled={!sheet}
-                    color={relic ? 'success' : 'primary'}
-                  >
-                    {relicSlotToMainStatKeys[slotKey].map((mk) => (
-                      <MenuItem
-                        key={mk}
-                        selected={relic?.mainStatKey === mk}
-                        disabled={relic?.mainStatKey === mk}
-                        onClick={() => update({ mainStatKey: mk })}
-                      >
-                        {/* TODO: Replace with colored text with icon at some point */}
-                        <ListItemIcon>
-                          <StatIcon statKey={mk} />
-                        </ListItemIcon>
-                        <RelicStatWithUnit statKey={mk} />
-                      </MenuItem>
-                    ))}
-                  </DropdownButton>
+                  <RelicMainStatDropdown
+                    slotKey={slotKey}
+                    statKey={relic?.mainStatKey}
+                    setStatKey={(mainStatKey) => update({ mainStatKey })}
+                    defText={t('mainStat')}
+                    dropdownButtonProps={{
+                      disabled: !sheet,
+                      color: relic ? 'success' : 'primary',
+                    }}
+                  />
                   <CardThemed bgt="light" sx={{ p: 1, flexGrow: 1 }}>
                     <Typography color="text.secondary">
                       {relic

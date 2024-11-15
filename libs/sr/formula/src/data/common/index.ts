@@ -13,7 +13,7 @@ const data: TagMapNodeEntries = [
   reader.withTag({ sheet: 'agg', et: 'own' }).reread(reader.sheet('custom')),
 
   // convert sheet:<char/lightCone> to sheet:agg for accumulation
-  // sheet:<relic> is reread in src/util.ts:relicsData()
+  // sheet:<relic> is reread in src/util.ts:relicTagMapNodeEntries()
   reader.sheet('agg').reread(reader.sheet('char')),
 
   // add all light cones by default

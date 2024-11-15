@@ -32,7 +32,7 @@ import {
 } from '@mui/material'
 import { useEffect, useMemo, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { RelicStatWithUnit } from './RelicStatKeyDisplay'
+import { StatDisplay } from '../../Character'
 
 // TODO: validation, roll table, roll values, efficiency, display text, icons, ...
 export default function SubstatInput({
@@ -94,7 +94,7 @@ export default function SubstatInput({
             startIcon={key ? <StatIcon statKey={key} /> : undefined}
             title={
               key ? (
-                <RelicStatWithUnit statKey={key} />
+                <StatDisplay statKey={key} showPercent disableIcon />
               ) : (
                 t('editor.substat.substatFormat', { value: index + 1 })
               )
@@ -123,7 +123,7 @@ export default function SubstatInput({
                     <StatIcon statKey={k} />
                   </ListItemIcon>
                   <ListItemText>
-                    <RelicStatWithUnit statKey={k} />
+                    <StatDisplay statKey={k} showPercent disableIcon />
                   </ListItemText>
                 </MenuItem>
               ))}

@@ -106,6 +106,13 @@ export type RelicMainStatKey = (typeof allRelicMainStatKeys)[number]
 export const allRelicRarityKeys = [2, 3, 4, 5] as const
 export type RelicRarityKey = (typeof allRelicRarityKeys)[number]
 
+export function isRelicRarityKey(rarity: unknown): rarity is RelicRarityKey {
+  return (
+    typeof rarity === 'number' &&
+    allRelicRarityKeys.includes(rarity as RelicRarityKey)
+  )
+}
+
 export const allRelicSetCountKeys = [2, 4] as const
 export type RelicSetCountKey = (typeof allRelicSetCountKeys)[number]
 

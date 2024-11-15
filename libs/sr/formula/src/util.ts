@@ -1,10 +1,17 @@
 import { cmpEq, cmpNE } from '@genshin-optimizer/pando/engine'
-import type { RelicSetKey, StatKey } from '@genshin-optimizer/sr/consts'
+import type {
+  AscensionKey,
+  LightConeKey,
+  RelicMainStatKey,
+  RelicSetKey,
+  RelicSubStatKey,
+  SuperimposeKey,
+} from '@genshin-optimizer/sr/consts'
 import {
   allBonusAbilityKeys,
   allStatBoostKeys,
 } from '@genshin-optimizer/sr/consts'
-import type { ICharacter, ILightCone } from '@genshin-optimizer/sr/srod'
+import type { ICharacter } from '@genshin-optimizer/sr/srod'
 import type { Member, Preset, TagMapNodeEntries } from './data/util'
 import {
   convert,
@@ -28,7 +35,7 @@ export function withMember(
   return data.map(({ tag, value }) => ({ tag: { ...tag, src }, value }))
 }
 
-export function charData(data: ICharacter): TagMapNodeEntries {
+export function charTagMapNodeEntries(data: ICharacter): TagMapNodeEntries {
   const { lvl, basic, skill, ult, talent, ascension, eidolon } = own.char
   const { char, iso, [data.key]: sheet } = reader.withAll('sheet', [])
 
@@ -58,42 +65,29 @@ export function charData(data: ICharacter): TagMapNodeEntries {
   ]
 }
 
-export function lightConeData(data: ILightCone | undefined): TagMapNodeEntries {
-  if (!data) return []
-  const { lvl, ascension, superimpose } = own.lightCone
-
+export function lightConeTagMapNodeEntries(
+  key: LightConeKey,
+  level: number,
+  ascension: AscensionKey,
+  superimpose: SuperimposeKey
+): TagMapNodeEntries {
   return [
     // Mark light cones as used
-    own.common.count.sheet(data.key).add(1),
-
-    lvl.add(data.level),
-    ascension.add(data.ascension),
-    superimpose.add(data.superimpose),
+    own.common.count.sheet(key).add(1),
+    own.lightCone.lvl.add(level),
+    own.lightCone.ascension.add(ascension),
+    own.lightCone.superimpose.add(superimpose),
   ]
 }
 
-export function relicsData(
-  data: {
-    set: RelicSetKey
-    stats: readonly { key: StatKey; value: number }[]
-  }[]
+export function relicTagMapNodeEntries(
+  stats: Partial<Record<RelicMainStatKey | RelicSubStatKey, number>>,
+  sets: Partial<Record<RelicSetKey, number>>
 ): TagMapNodeEntries {
   const {
     common: { count },
     premod,
   } = convert(ownTag, { sheet: 'relic', et: 'own' })
-  const sets: Partial<Record<RelicSetKey, number>> = {},
-    stats: Partial<Record<StatKey, number>> = {}
-  for (const { set: setKey, stats: stat } of data) {
-    const set = sets[setKey]
-    if (set === undefined) sets[setKey] = 1
-    else sets[setKey] = set + 1
-    for (const { key, value } of stat) {
-      const stat = stats[key]
-      if (stat === undefined) stats[key] = value
-      else stats[key] = stat + value
-    }
-  }
   return [
     // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
     reader.sheet('agg').reread(reader.sheet('relic')),
