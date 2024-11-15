@@ -32,7 +32,9 @@ export function RelicSheetDisplay({ setKey }: { setKey: RelicSetKey }) {
             }}
           />
           <Box>
-            <RelicSetName setKey={setKey} />
+            <Typography variant="h6">
+              <RelicSetName setKey={setKey} />
+            </Typography>
             {/* TODO: translate */}
             <Typography>
               <SqBadge>{isCavernRelic(setKey) ? 'Cavern' : 'Planar'}</SqBadge>
@@ -56,12 +58,14 @@ export function RelicUiSheetElement({
   const { documents, title } = uiSheetElement
   return (
     <CardThemed bgt="light">
-      <CardHeader title={title} />
+      <CardHeader title={title} titleTypographyProps={{ variant: 'h6' }} />
       <Divider />
       <CardContent>
-        {documents.map((doc, i) => (
-          <DocumentDisplay key={i} document={doc} />
-        ))}
+        <Stack spacing={1}>
+          {documents.map((doc, i) => (
+            <DocumentDisplay key={i} document={doc} />
+          ))}
+        </Stack>
       </CardContent>
     </CardThemed>
   )

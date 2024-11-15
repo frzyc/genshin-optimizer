@@ -5,7 +5,7 @@ import {
   ModalWrapper,
 } from '@genshin-optimizer/common/ui'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
-import type { Tag } from '@genshin-optimizer/sr/formula'
+import { type Tag } from '@genshin-optimizer/sr/formula'
 import {
   Box,
   Button,
@@ -18,6 +18,7 @@ import {
 import { useContext } from 'react'
 import { BonusStats } from './BonusStats'
 import { PresetContext, useTeamContext } from './context'
+import { LightConeSheetsDisplay } from './LightConeSheetsDisplay'
 import { OptimizationTargetSelector } from './Optimize/OptimizationTargetSelector'
 import { RelicSheetsDisplay } from './RelicSheetsDisplay'
 
@@ -108,6 +109,7 @@ function Team({
           />
           <BonusStats />
           <RelicConditionals />
+          <LightConeConditionals />
         </Stack>
       </CardContent>
     </CardThemed>
@@ -122,6 +124,18 @@ function RelicConditionals() {
       <Button onClick={onShow}>Relic Conditionals</Button>
       <ModalWrapper open={show} onClose={onHide}>
         <RelicSheetsDisplay />
+      </ModalWrapper>
+    </>
+  )
+}
+function LightConeConditionals() {
+  const [show, onShow, onHide] = useBoolState()
+  return (
+    <>
+      {/* TODO: translation */}
+      <Button onClick={onShow}>Light Cone Conditionals</Button>
+      <ModalWrapper open={show} onClose={onHide}>
+        <LightConeSheetsDisplay />
       </ModalWrapper>
     </>
   )

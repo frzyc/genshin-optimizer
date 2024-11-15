@@ -57,7 +57,7 @@ const sheet: UISheet<'2' | '4'> = {
               title: <StatDisplay statKey="brEffect_" />,
               fieldRef: buff.set4_brEffect_.tag,
             },
-            /// TODO: translate DM "Duration"
+            // TODO: translate DM "Duration"
             { title: 'Duration', fieldValue: dm['4'].duration },
           ],
         },

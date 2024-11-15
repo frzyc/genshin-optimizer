@@ -2413,24 +2413,10 @@ export const conditionals = {
     },
   },
   PastSelfInMirror: {
-    boolConditional: {
+    useUltimate: {
       sheet: 'PastSelfInMirror',
-      name: 'boolConditional',
+      name: 'useUltimate',
       type: 'bool',
-    },
-    listConditional: {
-      sheet: 'PastSelfInMirror',
-      name: 'listConditional',
-      type: 'list',
-      list: ['val1', 'val2'],
-    },
-    numConditional: {
-      sheet: 'PastSelfInMirror',
-      name: 'numConditional',
-      type: 'num',
-      int_only: true,
-      min: 0,
-      max: 2,
     },
   },
   PatienceIsAllYouNeed: {
@@ -14929,28 +14915,6 @@ export const buffs = {
         q: 'dmg_',
         sheet: 'PastSelfInMirror',
         name: 'cond_dmg_',
-      },
-    },
-    enemy_defIgn_: {
-      sheet: 'PastSelfInMirror',
-      name: 'enemy_defIgn_',
-      tag: {
-        et: 'display',
-        qt: 'common',
-        q: 'defIgn_',
-        sheet: 'PastSelfInMirror',
-        name: 'enemy_defIgn_',
-      },
-    },
-    team_dmg_: {
-      sheet: 'PastSelfInMirror',
-      name: 'team_dmg_',
-      tag: {
-        et: 'display',
-        qt: 'premod',
-        q: 'dmg_',
-        sheet: 'PastSelfInMirror',
-        name: 'team_dmg_',
       },
     },
   },

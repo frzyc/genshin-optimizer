@@ -16,7 +16,6 @@ const dm = mappedStats.relic[key]
 
 const relicCount = own.common.count.sheet(key)
 
-// TODO: how do we do a directional targeted buff? since this requires a character equipped with 4-set to trigger a ult on ally to buff team
 const { useUltimateOnAlly } = allBoolConditionals(key)
 
 const sheet = register(
