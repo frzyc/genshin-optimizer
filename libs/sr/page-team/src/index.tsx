@@ -27,7 +27,7 @@ import {
   type Tag,
 } from '@genshin-optimizer/sr/formula'
 import { CharacterName } from '@genshin-optimizer/sr/ui'
-import { Box, Skeleton } from '@mui/material'
+import { Box, Divider, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
@@ -38,11 +38,14 @@ import {
   useNavigate,
   useParams,
 } from 'react-router-dom'
+import { ComboEditor } from './ComboEditor'
+import type { PresetContextObj } from './context'
+import { PresetContext, TeamContext } from './context'
+import { TeammateContext, useTeammateContext } from './context/TeammateContext'
 import { TeamCalcProvider } from './TeamCalcProvider'
 import { TeamCharacterSelector } from './TeamCharacterSelector'
 import TeammateDisplay from './TeammateDisplay'
-import type { PresetContextObj, TeamContextObj } from './context'
-import { PresetContext, TeamContext, useTeamContext } from './context'
+import TeamNameCardHeader from './TeamNameCardHeader'
 
 const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
 
@@ -120,14 +123,13 @@ function Page({ teamId }: { teamId: string }) {
     }, [characterKey, t, team.name])
   )
 
-  const teamContextObj: TeamContextObj | undefined = useMemo(() => {
-    if (!teamId || !team || !teammateDatum) return undefined
-    return {
+  const teamContextObj = useMemo(
+    () => ({
       teamId,
       team,
-      teammateDatum,
-    }
-  }, [teammateDatum, team, teamId])
+    }),
+    [team, teamId]
+  )
   const srcDstDisplayContextValue = useMemo(() => {
     const charList = team.teamMetadata
       .filter(notEmpty)
@@ -182,67 +184,57 @@ function Page({ teamId }: { teamId: string }) {
     [characterKey, presetIndex]
   )
   return (
-    <TagContext.Provider value={tag}>
-      <PresetContext.Provider value={presetObj}>
-        <TeamCalcProvider teamId={teamId}>
-          <SrcDstDisplayContext.Provider value={srcDstDisplayContextValue}>
-            <ConditionalValuesContext.Provider value={conditionals}>
-              <SetConditionalContext.Provider value={setConditional}>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    gap: 1,
-                    flexDirection: 'column',
-                    mx: 1,
-                    mt: 2,
-                  }}
-                >
-                  <CardThemed
+    <TeamContext.Provider value={teamContextObj}>
+      <TagContext.Provider value={tag}>
+        <PresetContext.Provider value={presetObj}>
+          <TeamCalcProvider teamId={teamId}>
+            <SrcDstDisplayContext.Provider value={srcDstDisplayContextValue}>
+              <ConditionalValuesContext.Provider value={conditionals}>
+                <SetConditionalContext.Provider value={setConditional}>
+                  <Box
                     sx={{
-                      overflow: 'visible',
-                      top: 0,
-                      position: 'sticky',
-                      zIndex: 100,
+                      display: 'flex',
+                      gap: 1,
+                      flexDirection: 'column',
+                      mx: 1,
+                      mt: 2,
                     }}
                   >
-                    <TeamCharacterSelector
-                      teamId={teamId}
-                      charKey={characterKey}
-                    />
-                  </CardThemed>
-                  <Box
-                  // sx={(theme) => {
-                  //   const elementKey = characterKey && allStats.char[characterKey]
-                  //   if (!elementKey) return {}
-                  //   const hex = theme.palette[elementKey].main as string
-                  //   const color = hexToColor(hex)
-                  //   if (!color) return {}
-                  //   const rgba = colorToRgbaString(color, 0.1)
-                  //   return {
-                  //     background: `linear-gradient(to bottom, ${rgba} 0%, rgba(0,0,0,0)) 25%`,
-                  //   }
-                  // }}
-                  >
-                    {teamContextObj && (
-                      <TeamContext.Provider value={teamContextObj}>
+                    <CardThemed
+                      sx={{
+                        overflow: 'visible',
+                        top: 0,
+                        position: 'sticky',
+                        zIndex: 100,
+                      }}
+                    >
+                      <TeamNameCardHeader />
+                      <Divider />
+                      <ComboEditor />
+                      <Divider />
+                      <TeamCharacterSelector
+                        teamId={teamId}
+                        charKey={characterKey}
+                      />
+                    </CardThemed>
+                    {teammateDatum && (
+                      <TeammateContext.Provider value={teammateDatum}>
                         <TeammateDisplayWrapper />
-                      </TeamContext.Provider>
+                      </TeammateContext.Provider>
                     )}
                   </Box>
-                </Box>
-              </SetConditionalContext.Provider>
-            </ConditionalValuesContext.Provider>
-          </SrcDstDisplayContext.Provider>
-        </TeamCalcProvider>
-      </PresetContext.Provider>
-    </TagContext.Provider>
+                </SetConditionalContext.Provider>
+              </ConditionalValuesContext.Provider>
+            </SrcDstDisplayContext.Provider>
+          </TeamCalcProvider>
+        </PresetContext.Provider>
+      </TagContext.Provider>
+    </TeamContext.Provider>
   )
 }
 
 function TeammateDisplayWrapper() {
-  const {
-    teammateDatum: { characterKey },
-  } = useTeamContext()
+  const { characterKey } = useTeammateContext()
   const character = useCharacter(characterKey)
   if (!character)
     return <Skeleton variant="rectangular" width="100%" height={1000} />

@@ -23,7 +23,7 @@ import {
   Stack,
 } from '@mui/material'
 import { useContext } from 'react'
-import { PresetContext, useTeamContext } from './context'
+import { PresetContext, useTeamContext, useTeammateContext } from './context'
 
 export function BonusStats() {
   const [open, onOpen, onClose] = useBoolState()
@@ -47,8 +47,8 @@ function BonusStatsModal({
   const {
     teamId,
     team: { bonusStats },
-    teammateDatum: { characterKey },
   } = useTeamContext()
+  const { characterKey } = useTeammateContext()
   const newTarget = (q: InitialStats) => {
     const tag = newTag(q, characterKey)
     database.teams.setBonusStat(teamId, tag, 0, presetIndex)

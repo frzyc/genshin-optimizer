@@ -26,50 +26,39 @@ export function ComboEditor() {
   const { database } = useDatabaseContext()
   const { team, teamId } = useTeamContext()
   return (
-    <CardThemed
+    <CardContent
       sx={{
-        overflow: 'visible',
-        top: 137, // height of the team selector
-        position: 'sticky',
-        zIndex: 101,
+        display: 'flex',
+        gap: 1,
+        overflowX: 'auto',
       }}
     >
-      <CardHeader title="Combo Editor" />
-      <Divider />
-      <CardContent
-        sx={{
-          display: 'flex',
-          gap: 1,
-          overflowX: 'auto',
-        }}
-      >
-        {team.frames.map((frame, i) => (
-          <Team
-            key={i + JSON.stringify(frame ?? {})}
-            tag={frame}
-            index={i}
-            setTarget={(read) =>
-              database.teams.set(teamId, (team) => {
-                team.frames = [...team.frames]
-                team.frames[i] = read
-              })
-            }
-          />
-        ))}
-        <Box sx={{ flexShrink: 0 }}>
-          <OptimizationTargetSelector
-            setOptTarget={(tag) =>
-              database.teams.set(teamId, (team) => {
-                team.frames = [...team.frames, tag]
-              })
-            }
-          />
-        </Box>
-      </CardContent>
-    </CardThemed>
+      {team.frames.map((frame, i) => (
+        <Combo
+          key={i + JSON.stringify(frame ?? {})}
+          tag={frame}
+          index={i}
+          setTarget={(read) =>
+            database.teams.set(teamId, (team) => {
+              team.frames = [...team.frames]
+              team.frames[i] = read
+            })
+          }
+        />
+      ))}
+      <Box sx={{ flexShrink: 0 }}>
+        <OptimizationTargetSelector
+          setOptTarget={(tag) =>
+            database.teams.set(teamId, (team) => {
+              team.frames = [...team.frames, tag]
+            })
+          }
+        />
+      </Box>
+    </CardContent>
   )
 }
-function Team({
+function Combo({
   tag,
   index,
   setTarget,

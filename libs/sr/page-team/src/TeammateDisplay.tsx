@@ -29,15 +29,12 @@ import {
 } from '@mui/material'
 import { useEffect, useMemo, useState } from 'react'
 import { BuildsDisplay, EquipRow, EquipRowTC } from './BuildsDisplay'
-import { ComboEditor } from './ComboEditor'
-import { useTeamContext } from './context'
+import { useTeammateContext } from './context'
 import Optimize from './Optimize'
 import CharacterTalentPane from './TalentContent'
 
 export default function TeammateDisplay() {
-  const {
-    teammateDatum: { characterKey, buildType },
-  } = useTeamContext()
+  const { characterKey, buildType } = useTeammateContext()
   const character = useCharacterContext()
   const [editorKey, setCharacterKey] = useState<CharacterKey | undefined>(
     undefined
@@ -62,7 +59,6 @@ export default function TeammateDisplay() {
         </Box>
         <CurrentBuildDisplay />
       </Box>
-      <ComboEditor />
       <CalcDebug />
       <CharacterTalentPane />
       {buildType !== 'tc' && <Optimize />}
@@ -70,7 +66,7 @@ export default function TeammateDisplay() {
   )
 }
 function CurrentBuildDisplay() {
-  const { teammateDatum } = useTeamContext()
+  const teammateDatum = useTeammateContext()
   const { database } = useDatabaseContext()
   const { buildType, buildId, buildTcId } = teammateDatum
   const [dbDirty, setDbDirty] = useForceUpdate()
@@ -107,7 +103,7 @@ function CurrentBuildDisplay() {
   )
 }
 function BuildDisplay() {
-  const { teammateDatum } = useTeamContext()
+  const teammateDatum = useTeammateContext()
   const { database } = useDatabaseContext()
   const { relicIds, lightConeId } = useMemo(
     () => database.teams.getTeamActiveBuild(teammateDatum),
@@ -116,7 +112,7 @@ function BuildDisplay() {
   return <EquipRow relicIds={relicIds} lightConeId={lightConeId} />
 }
 function BuildTCDisplay() {
-  const { teammateDatum } = useTeamContext()
+  const teammateDatum = useTeammateContext()
   if (teammateDatum.buildType !== 'tc') return null
   return <EquipRowTC buildTcId={teammateDatum.buildTcId} />
 }
