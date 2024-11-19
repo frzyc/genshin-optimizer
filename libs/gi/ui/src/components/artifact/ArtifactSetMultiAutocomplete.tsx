@@ -4,9 +4,10 @@ import {
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
 import { artifactDefIcon } from '@genshin-optimizer/gi/assets'
-import type {
-  ArtifactRarity,
-  ArtifactSetKey,
+import {
+  allArtifactRarityKeys,
+  type ArtifactRarity,
+  type ArtifactSetKey,
 } from '@genshin-optimizer/gi/consts'
 import { setKeysByRarities } from '@genshin-optimizer/gi/util'
 import type { AutocompleteRenderGroupParams } from '@mui/material'
@@ -16,10 +17,12 @@ import { useTranslation } from 'react-i18next'
 import { sortByRarityAndName } from './artifactSortByRarityAndName'
 
 export function ArtifactSetMultiAutocomplete({
+  allowRarities = [...allArtifactRarityKeys],
   artSetKeys,
   setArtSetKeys,
   totals,
 }: {
+  allowRarities?: ArtifactRarity[]
   artSetKeys: ArtifactSetKey[]
   setArtSetKeys: (keys: ArtifactSetKey[]) => void
   totals: Record<ArtifactSetKey, string>
@@ -49,8 +52,9 @@ export function ArtifactSetMultiAutocomplete({
             label: t(`artifactNames_gen:${set}`),
           }))
         )
+        .filter((group) => allowRarities.includes(group.grouper))
         .sort(sortByRarityAndName),
-    [t]
+    [t, allowRarities]
   )
 
   return (

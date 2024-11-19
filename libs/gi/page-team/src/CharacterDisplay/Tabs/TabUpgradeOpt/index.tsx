@@ -487,6 +487,8 @@ export default function TabUpopt() {
                     value={slotKeys}
                   />
                   <ArtifactSetMultiAutocomplete
+                    // Only show 5-star artifacts sets as they are filtered out of this page
+                    allowRarities={[5]}
                     totals={setTotal}
                     artSetKeys={artSetKeys}
                     setArtSetKeys={(artSetKeys) =>
