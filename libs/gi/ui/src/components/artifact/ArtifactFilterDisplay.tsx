@@ -49,7 +49,6 @@ const lockedValues = ['locked', 'unlocked'] as const
 const excludedValues = ['excluded', 'included'] as const
 
 const rarityHandler = handleMultiSelect([...allArtifactRarityKeys])
-const slotHandler = handleMultiSelect([...allArtifactSlotKeys])
 const lockedHandler = handleMultiSelect([...lockedValues])
 const lineHandler = handleMultiSelect([1, 2, 3, 4])
 const excludedHandler = handleMultiSelect([...excludedValues])
