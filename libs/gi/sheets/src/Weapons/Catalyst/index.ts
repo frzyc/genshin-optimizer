@@ -40,6 +40,7 @@ import TomeOfTheEternalFlow from './TomeOfTheEternalFlow'
 import TulaytullahsRemembrance from './TulaytullahsRemembrance'
 import TwinNephrite from './TwinNephrite'
 import WanderingEvenstar from './WanderingEvenstar'
+import WaveridingWhirl from './WaveridingWhirl'
 import WineAndSong from './WineAndSong'
 const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   ApprenticesNotes,
@@ -82,6 +83,7 @@ const catalyst: Record<WeaponCatalystKey, WeaponSheet> = {
   TulaytullahsRemembrance,
   TwinNephrite,
   WanderingEvenstar,
+  WaveridingWhirl,
   WineAndSong,
 } as const
 export default catalyst

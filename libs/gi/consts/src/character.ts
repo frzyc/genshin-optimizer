@@ -79,6 +79,7 @@ export const nonTravelerCharacterKeys = [
   'Bennett',
   'Candace',
   'Charlotte',
+  'Chasca',
   'Chevreuse',
   'Chiori',
   'Chongyun',
@@ -125,6 +126,7 @@ export const nonTravelerCharacterKeys = [
   'Nilou',
   'Ningguang',
   'Noelle',
+  'Ororon',
   'Qiqi',
   'RaidenShogun',
   'Razor',
@@ -244,12 +246,7 @@ export function travelerElement(element: TravelerElementKey): TravelerKey {
     element.slice(1)) as TravelerKey
 }
 
-export const absorbableEle = [
-  'hydro',
-  'pyro',
-  'cryo',
-  'electro',
-] as ElementKey[]
+export const absorbableEle = ['hydro', 'pyro', 'cryo', 'electro'] as const
 
 export const travelerFKeys = [
   'TravelerAnemoF',

@@ -4,6 +4,7 @@ import type { WeaponSheet } from '../WeaponSheet'
 import AlleyHunter from './AlleyHunter'
 import AmosBow from './AmosBow'
 import AquaSimulacra from './AquaSimulacra'
+import AstralVulturesCrimsonPlumage from './AstralVulturesCrimsonPlumage'
 import BlackcliffWarbow from './BlackcliffWarbow'
 import ChainBreaker from './ChainBreaker'
 import Cloudforged from './Cloudforged'
@@ -12,6 +13,7 @@ import ElegyForTheEnd from './ElegyForTheEnd'
 import EndOfTheLine from './EndOfTheLine'
 import FadingTwilight from './FadingTwilight'
 import FavoniusWarbow from './FavoniusWarbow'
+import FlowerWreathedFeathers from './FlowerWreathedFeathers'
 import Hamayumi from './Hamayumi'
 import HuntersBow from './HuntersBow'
 import HuntersPath from './HuntersPath'
@@ -45,6 +47,7 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   AlleyHunter,
   AmosBow,
   AquaSimulacra,
+  AstralVulturesCrimsonPlumage,
   BlackcliffWarbow,
   ChainBreaker,
   Cloudforged,
@@ -53,6 +56,7 @@ const bow: Record<WeaponBowKey, WeaponSheet> = {
   EndOfTheLine,
   FadingTwilight,
   FavoniusWarbow,
+  FlowerWreathedFeathers,
   Hamayumi,
   HuntersBow,
   HuntersPath,

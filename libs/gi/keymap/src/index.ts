@@ -8,6 +8,7 @@ import {
 import type {
   AdditiveReactionsKey,
   AmplifyingReactionsKey,
+  CrittableTransformativeReactionsKey,
   TransformativeReactionsKey,
 } from './StatConstants'
 import {
@@ -29,6 +30,7 @@ export {
 export type {
   AdditiveReactionsKey,
   AmplifyingReactionsKey,
+  CrittableTransformativeReactionsKey,
   EleEnemyResKey,
   StatKey,
   TransformativeReactionsKey,

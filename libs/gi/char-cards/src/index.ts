@@ -11,6 +11,7 @@ import Beidou from './Character_Beidou_Card.jpg'
 import Bennett from './Character_Bennett_Card.jpg'
 import Candace from './Character_Candace_Card.jpg'
 import Charlotte from './Character_Charlotte_Card.jpg'
+import Chasca from './Character_Chasca_Card.jpg'
 import Chevreuse from './Character_Chevreuse_Card.jpg'
 import Chiori from './Character_Chiori_Card.jpg'
 import Chongyun from './Character_Chongyun_Card.jpg'
@@ -57,6 +58,7 @@ import Neuvillette from './Character_Neuvillette_Card.jpg'
 import Nilou from './Character_Nilou_Card.jpg'
 import Ningguang from './Character_Ningguang_Card.jpg'
 import Noelle from './Character_Noelle_Card.jpg'
+import Ororon from './Character_Ororon_Card.jpg'
 import Qiqi from './Character_Qiqi_Card.jpg'
 import RaidenShogun from './Character_Raiden_Shogun_Card.png'
 import Razor from './Character_Razor_Card.jpg'
@@ -104,6 +106,7 @@ const charCards = {
   Bennett,
   Candace,
   Charlotte,
+  Chasca,
   Chevreuse,
   Chiori,
   Chongyun,
@@ -150,6 +153,7 @@ const charCards = {
   Nilou,
   Ningguang,
   Noelle,
+  Ororon,
   Qiqi,
   RaidenShogun,
   Razor,

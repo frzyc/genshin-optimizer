@@ -8,7 +8,7 @@ import type {
   MainStatKey,
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
-import { allMainStatKeys } from '@genshin-optimizer/gi/consts'
+import { allElementKeys, allMainStatKeys } from '@genshin-optimizer/gi/consts'
 import type { CharacterGrowCurveKey } from '@genshin-optimizer/gi/dm'
 import { allStats, getCharEle, getCharStat } from '@genshin-optimizer/gi/stats'
 import type { Data, DisplaySub, NumNode } from '@genshin-optimizer/gi/wr'
@@ -34,6 +34,10 @@ const commonBasic = objKeyMap(
   ['hp', 'atk', 'def', 'eleMas', 'enerRech_', 'critRate_', 'critDMG_', 'heal_'],
   (key) => input.total[key]
 )
+
+export const hitEle = objKeyMap(allElementKeys, (ele) => ({
+  hit: { ele: constant(ele) },
+}))
 
 const inferredHitEle = stringPrio(
   lookup(
