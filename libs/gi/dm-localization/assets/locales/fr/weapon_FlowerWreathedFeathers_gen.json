@@ -1,0 +1,24 @@
+{
+  "name": "Plumard de fleurs",
+  "description": {
+    "0": "Un arc long qui brûle comme une flamme. Les plumes qui l'ornent proviendraient de l'ancien tyran Ngoubou."
+  },
+  "passiveName": "Inflorescence inachevée",
+  "passiveDescription": {
+    "0": {
+      "0": "La consommation d'endurance lors du planage diminue de 15 %. Lors d'un tir visé, les DGT infligés par les attaques chargées augmentent de <cryo>6 %</cryo> toutes les 0,5 s. Cet effet peut être cumulé 6 fois maximum et prend fin 10 s après avoir quitté le mode visée."
+    },
+    "1": {
+      "0": "La consommation d'endurance lors du planage diminue de 15 %. Lors d'un tir visé, les DGT infligés par les attaques chargées augmentent de <cryo>7,5 %</cryo> toutes les 0,5 s. Cet effet peut être cumulé 6 fois maximum et prend fin 10 s après avoir quitté le mode visée."
+    },
+    "2": {
+      "0": "La consommation d'endurance lors du planage diminue de 15 %. Lors d'un tir visé, les DGT infligés par les attaques chargées augmentent de <cryo>9 %</cryo> toutes les 0,5 s. Cet effet peut être cumulé 6 fois maximum et prend fin 10 s après avoir quitté le mode visée."
+    },
+    "3": {
+      "0": "La consommation d'endurance lors du planage diminue de 15 %. Lors d'un tir visé, les DGT infligés par les attaques chargées augmentent de <cryo>10,5 %</cryo> toutes les 0,5 s. Cet effet peut être cumulé 6 fois maximum et prend fin 10 s après avoir quitté le mode visée."
+    },
+    "4": {
+      "0": "La consommation d'endurance lors du planage diminue de 15 %. Lors d'un tir visé, les DGT infligés par les attaques chargées augmentent de <cryo>12 %</cryo> toutes les 0,5 s. Cet effet peut être cumulé 6 fois maximum et prend fin 10 s après avoir quitté le mode visée."
+    }
+  }
+}

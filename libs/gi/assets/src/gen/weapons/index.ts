@@ -8,6 +8,7 @@ import ApprenticesNotes from './ApprenticesNotes'
 import AquaSimulacra from './AquaSimulacra'
 import AquilaFavonia from './AquilaFavonia'
 import AshGravenDrinkingHorn from './AshGravenDrinkingHorn'
+import AstralVulturesCrimsonPlumage from './AstralVulturesCrimsonPlumage'
 import AThousandFloatingDreams from './AThousandFloatingDreams'
 import BalladOfTheBoundlessBlue from './BalladOfTheBoundlessBlue'
 import BalladOfTheFjords from './BalladOfTheFjords'
@@ -20,6 +21,7 @@ import BlackcliffSlasher from './BlackcliffSlasher'
 import BlackcliffWarbow from './BlackcliffWarbow'
 import BlackTassel from './BlackTassel'
 import BloodtaintedGreatsword from './BloodtaintedGreatsword'
+import CalamityOfEshu from './CalamityOfEshu'
 import CalamityQueller from './CalamityQueller'
 import CashflowSupervision from './CashflowSupervision'
 import ChainBreaker from './ChainBreaker'
@@ -57,6 +59,7 @@ import FesteringDesire from './FesteringDesire'
 import FilletBlade from './FilletBlade'
 import FinaleOfTheDeep from './FinaleOfTheDeep'
 import FleuveCendreFerryman from './FleuveCendreFerryman'
+import FlowerWreathedFeathers from './FlowerWreathedFeathers'
 import FlowingPurity from './FlowingPurity'
 import FluteOfEzpitzal from './FluteOfEzpitzal'
 import FootprintOfTheRainbow from './FootprintOfTheRainbow'
@@ -190,6 +193,7 @@ import VortexVanquisher from './VortexVanquisher'
 import WanderingEvenstar from './WanderingEvenstar'
 import WasterGreatsword from './WasterGreatsword'
 import WavebreakersFin from './WavebreakersFin'
+import WaveridingWhirl from './WaveridingWhirl'
 import Whiteblind from './Whiteblind'
 import WhiteIronGreatsword from './WhiteIronGreatsword'
 import WhiteTassel from './WhiteTassel'
@@ -210,6 +214,7 @@ const data = {
   AquaSimulacra,
   AquilaFavonia,
   AshGravenDrinkingHorn,
+  AstralVulturesCrimsonPlumage,
   BalladOfTheBoundlessBlue,
   BalladOfTheFjords,
   BeaconOfTheReedSea,
@@ -221,6 +226,7 @@ const data = {
   BlackcliffSlasher,
   BlackcliffWarbow,
   BloodtaintedGreatsword,
+  CalamityOfEshu,
   CalamityQueller,
   CashflowSupervision,
   ChainBreaker,
@@ -258,6 +264,7 @@ const data = {
   FilletBlade,
   FinaleOfTheDeep,
   FleuveCendreFerryman,
+  FlowerWreathedFeathers,
   FlowingPurity,
   FluteOfEzpitzal,
   FootprintOfTheRainbow,
@@ -391,6 +398,7 @@ const data = {
   WanderingEvenstar,
   WasterGreatsword,
   WavebreakersFin,
+  WaveridingWhirl,
   WhiteIronGreatsword,
   WhiteTassel,
   Whiteblind,

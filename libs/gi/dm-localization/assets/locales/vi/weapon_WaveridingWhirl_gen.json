@@ -1,0 +1,24 @@
+{
+  "name": "Vòng Xoáy Cưỡi Sóng",
+  "description": {
+    "0": "Boomerang được làm từ răng nanh của loài mãng xà biển khổng lồ, là binh khí đáng tin cậy của người khổng lồ Tupac."
+  },
+  "passiveName": "Răng Nanh Bay Qua Lại",
+  "passiveDescription": {
+    "0": {
+      "0": "Giảm 15% thể lực tiêu hao khi bơi. Ngoài ra, trong 10s sau khi thi triển Kỹ Năng Nguyên Tố, Giới Hạn HP tăng <cryo>20%</cryo>, trong đội mỗi tồn tại một nhân vật Nguyên Tố Thủy thì Giới Hạn HP sẽ tăng thêm <cryo>12%</cryo>, tối đa tăng <cryo>24%</cryo> thông qua cách thức này. Hiệu quả này mỗi 15s tối đa kích hoạt một lần."
+    },
+    "1": {
+      "0": "Giảm 15% thể lực tiêu hao khi bơi. Ngoài ra, trong 10s sau khi thi triển Kỹ Năng Nguyên Tố, Giới Hạn HP tăng <cryo>25%</cryo>, trong đội mỗi tồn tại một nhân vật Nguyên Tố Thủy thì Giới Hạn HP sẽ tăng thêm <cryo>15%</cryo>, tối đa tăng <cryo>30%</cryo> thông qua cách thức này. Hiệu quả này mỗi 15s tối đa kích hoạt một lần."
+    },
+    "2": {
+      "0": "Giảm 15% thể lực tiêu hao khi bơi. Ngoài ra, trong 10s sau khi thi triển Kỹ Năng Nguyên Tố, Giới Hạn HP tăng <cryo>30%</cryo>, trong đội mỗi tồn tại một nhân vật Nguyên Tố Thủy thì Giới Hạn HP sẽ tăng thêm <cryo>18%</cryo>, tối đa tăng <cryo>36%</cryo> thông qua cách thức này. Hiệu quả này mỗi 15s tối đa kích hoạt một lần."
+    },
+    "3": {
+      "0": "Giảm 15% thể lực tiêu hao khi bơi. Ngoài ra, trong 10s sau khi thi triển Kỹ Năng Nguyên Tố, Giới Hạn HP tăng <cryo>35%</cryo>, trong đội mỗi tồn tại một nhân vật Nguyên Tố Thủy thì Giới Hạn HP sẽ tăng thêm <cryo>21%</cryo>, tối đa tăng <cryo>42%</cryo> thông qua cách thức này. Hiệu quả này mỗi 15s tối đa kích hoạt một lần."
+    },
+    "4": {
+      "0": "Giảm 15% thể lực tiêu hao khi bơi. Ngoài ra, trong 10s sau khi thi triển Kỹ Năng Nguyên Tố, Giới Hạn HP tăng <cryo>40%</cryo>, trong đội mỗi tồn tại một nhân vật Nguyên Tố Thủy thì Giới Hạn HP sẽ tăng thêm <cryo>24%</cryo>, tối đa tăng <cryo>48%</cryo> thông qua cách thức này. Hiệu quả này mỗi 15s tối đa kích hoạt một lần."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Unheil von Eshu",
+  "description": {
+    "0": "Eine Ritualklinge, geschmiedet von Sanhaj, dem großen Hohepriester der Meister des Nachtwinds. In den Erzählungen aus alter Zeit konnte Sanhaj mit dieser gebogenen Klinge Rituale durchführen und die Grenze zwischen dem Königreich der Nacht und dieser Welt verwischen."
+  },
+  "passiveName": "Durchdrungene Grenze",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden des Trägers im Schutz von Schilden um <cryo>20 %</cryo> sowie deren KT um <cryo>8 %</cryo>."
+    },
+    "1": {
+      "0": "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden des Trägers im Schutz von Schilden um <cryo>25 %</cryo> sowie deren KT um <cryo>10 %</cryo>."
+    },
+    "2": {
+      "0": "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden des Trägers im Schutz von Schilden um <cryo>30 %</cryo> sowie deren KT um <cryo>12 %</cryo>."
+    },
+    "3": {
+      "0": "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden des Trägers im Schutz von Schilden um <cryo>35 %</cryo> sowie deren KT um <cryo>14 %</cryo>."
+    },
+    "4": {
+      "0": "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden des Trägers im Schutz von Schilden um <cryo>40 %</cryo> sowie deren KT um <cryo>16 %</cryo>."
+    }
+  }
+}

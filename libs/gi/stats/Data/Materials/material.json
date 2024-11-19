@@ -74,6 +74,7 @@
   "StarsailCoin": {},
   "ColorfulContemplation": {},
   "FestiveFervor": {},
+  "IncenseAshcrystals": {},
   "Primogem": {
     "type": "MATERIAL_ADSORBATE"
   },
@@ -130,6 +131,8 @@
   "ScionsOfTheCanopyReputationEXP": {},
   "PeopleOfTheSpringsReputationEXP": {},
   "ChildrenOfEchoesReputationEXP": {},
+  "FlowerFeatherClanReputationEXP": {},
+  "MastersOfTheNightWindReputationEXP": {},
   "MemoryOfEternalFlames": {
     "type": "MATERIAL_TALENT"
   },
@@ -248,7 +251,7 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Rosaria": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "HuTao": {
     "type": "MATERIAL_GCG_CARD_FACE"
@@ -398,7 +401,7 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Sigewinne": {
-    "type": "MATERIAL_AVATAR"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "Arlecchino": {
     "type": "MATERIAL_AVATAR"
@@ -817,6 +820,12 @@
   "Xilonen": {
     "type": "MATERIAL_AVATAR"
   },
+  "Chasca": {
+    "type": "MATERIAL_AVATAR"
+  },
+  "Ororon": {
+    "type": "MATERIAL_AVATAR"
+  },
   "KachinasStellaFortuna": {
     "type": "MATERIAL_TALENT"
   },
@@ -827,6 +836,12 @@
     "type": "MATERIAL_TALENT"
   },
   "XilonensStellaFortuna": {
+    "type": "MATERIAL_TALENT"
+  },
+  "ChascasStellaFortuna": {
+    "type": "MATERIAL_TALENT"
+  },
+  "OroronsStellaFortuna": {
     "type": "MATERIAL_TALENT"
   },
   "Apple": {
@@ -3229,6 +3244,12 @@
     "type": "MATERIAL_EXCHANGE"
   },
   "EmbercoreFlower": {
+    "type": "MATERIAL_EXCHANGE"
+  },
+  "GlowingHornshroom": {
+    "type": "MATERIAL_EXCHANGE"
+  },
+  "WitheringPurpurbloom": {
     "type": "MATERIAL_EXCHANGE"
   },
   "BirchWood": {
@@ -7027,7 +7048,7 @@
     "type": "MATERIAL_NOTICE_ADD_HP"
   },
   "GlitteringGemstones": {
-    "type": "MATERIAL_NOTICE_ADD_HP"
+    "type": "MATERIAL_GCG_CARD_FACE"
   },
   "DeliciousGlitteringGemstones": {
     "type": "MATERIAL_NOTICE_ADD_HP"
@@ -7086,13 +7107,13 @@
   "DeliciousTatacos": {
     "type": "MATERIAL_FOOD"
   },
-  "SuspiciousSourSauceKipper": {
+  "SuspiciousSourSauceCeviche": {
     "type": "MATERIAL_FOOD"
   },
-  "SourSauceKipper": {
+  "SourSauceCeviche": {
     "type": "MATERIAL_FOOD"
   },
-  "DeliciousSourSauceKipper": {
+  "DeliciousSourSauceCeviche": {
     "type": "MATERIAL_FOOD"
   },
   "SuspiciousChocolate": {
@@ -7204,6 +7225,57 @@
     "type": "MATERIAL_FOOD"
   },
   "FruitFlavoredMilkCandies": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SuspiciousSurfTurfAndPerch": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SurfTurfAndPerch": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DeliciousSurfTurfAndPerch": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SuspiciousVolcanoCake": {
+    "type": "MATERIAL_FOOD"
+  },
+  "VolcanoCake": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DeliciousVolcanoCake": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SuspiciousGrainfruitWrap": {
+    "type": "MATERIAL_FOOD"
+  },
+  "GrainfruitWrap": {
+    "type": "MATERIAL_FOOD"
+  },
+  "DeliciousGrainfruitWrap": {
+    "type": "MATERIAL_FOOD"
+  },
+  "SuspiciousMystiqueSoup": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "MystiqueSoup": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "DeliciousMystiqueSoup": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "SuspiciousSingYourHeartOut": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "SingYourHeartOut": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "DeliciousSingYourHeartOut": {
+    "type": "MATERIAL_NOTICE_ADD_HP"
+  },
+  "HoneyGlazedCeviche": {
+    "type": "MATERIAL_FOOD"
+  },
+  "MomentOfRespite": {
     "type": "MATERIAL_FOOD"
   },
   "RecipeItem": {
@@ -7824,7 +7896,7 @@
   "RecipeTatacos": {
     "type": "MATERIAL_CONSUME"
   },
-  "RecipeSourSauceKipper": {
+  "RecipeSourSauceCeviche": {
     "type": "MATERIAL_CONSUME"
   },
   "RecipeChocolate": {
@@ -7858,6 +7930,21 @@
     "type": "MATERIAL_CONSUME"
   },
   "RecipeXocoatl": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeSurfTurfAndPerch": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeVolcanoCake": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeGrainfruitWrap": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeMystiqueSoup": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeSingYourHeartOut": {
     "type": "MATERIAL_CONSUME"
   },
   "CraftedItems": {
@@ -7982,6 +8069,12 @@
   },
   "StrengthTonic": {
     "type": "MATERIAL_FOOD"
+  },
+  "SpinelgrainBait": {
+    "type": "MATERIAL_FISH_BAIT"
+  },
+  "EmberglowBait": {
+    "type": "MATERIAL_FISH_BAIT"
   },
   "PrimordialEssence": {
     "type": "MATERIAL_AVATAR_MATERIAL"
@@ -8328,6 +8421,15 @@
   "HeartOfTheSecretSource": {
     "type": "MATERIAL_AVATAR_MATERIAL"
   },
+  "RefractiveBud": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "BewilderingBroadleaf": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "IllusoryLeafcoil": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
   "HurricaneSeed": {
     "type": "MATERIAL_AVATAR_MATERIAL"
   },
@@ -8524,6 +8626,9 @@
     "type": "MATERIAL_AVATAR_MATERIAL"
   },
   "GoldInscribedSecretSourceCore": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "EnsnaringGaze": {
     "type": "MATERIAL_AVATAR_MATERIAL"
   },
   "TileOfDecarabiansTower": {
@@ -10785,6 +10890,27 @@
   "GroupPhotoFromAnUnknownTime": {
     "type": "MATERIAL_QUEST"
   },
+  "ArtisansMemoII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "HolySovereignsNotesI": {
+    "type": "MATERIAL_QUEST"
+  },
+  "HolySovereignsNotesII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "HolySovereignsNotesIII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "HolySovereignsNotesV": {
+    "type": "MATERIAL_QUEST"
+  },
+  "HolySovereignsNotesVI": {
+    "type": "MATERIAL_QUEST"
+  },
+  "NamelessArtisansMemo": {
+    "type": "MATERIAL_QUEST"
+  },
   "RuggierosNotesII": {
     "type": "MATERIAL_QUEST"
   },
@@ -10881,13 +11007,22 @@
   "AncientPieceOfPaper": {
     "type": "MATERIAL_QUEST"
   },
+  "WaterRustedKey": {
+    "type": "MATERIAL_QUEST"
+  },
+  "AncientJadestoneFragment": {
+    "type": "MATERIAL_QUEST"
+  },
+  "PerfectHeartOfTheSacredDragon": {
+    "type": "MATERIAL_QUEST"
+  },
   "ProductionLog": {
     "type": "MATERIAL_QUEST"
   },
   "ExperimentLog": {
     "type": "MATERIAL_QUEST"
   },
-  "FreshSourSauceKipper": {
+  "FreshSourSauceCeviche": {
     "type": "MATERIAL_QUEST"
   },
   "AGemMeantAsAGift": {
@@ -10974,6 +11109,9 @@
   "ShatteredNightJade": {
     "type": "MATERIAL_QUEST"
   },
+  "AncientFlintKey": {
+    "type": "MATERIAL_QUEST"
+  },
   "ContendingSpark": {
     "type": "MATERIAL_QUEST"
   },
@@ -10999,6 +11137,9 @@
     "type": "MATERIAL_QUEST"
   },
   "AnelasTestimony": {
+    "type": "MATERIAL_QUEST"
+  },
+  "KeyFromABalloonPlatform": {
     "type": "MATERIAL_QUEST"
   },
   "FellDragonsPicturebook": {
@@ -11130,6 +11271,9 @@
   "TheVolcanoLordAndTheShadowPins": {
     "type": "MATERIAL_QUEST"
   },
+  "RustSpottedKey": {
+    "type": "MATERIAL_QUEST"
+  },
   "PilgrimsChronicle": {
     "type": "MATERIAL_NATLAN_RELATION_A"
   },
@@ -11137,6 +11281,12 @@
     "type": "MATERIAL_QUEST"
   },
   "SpankingNewCopyOfTequilTheBrave": {
+    "type": "MATERIAL_QUEST"
+  },
+  "Pyrophosphorite": {
+    "type": "MATERIAL_QUEST"
+  },
+  "DyeSamples": {
     "type": "MATERIAL_QUEST"
   },
   "PicturesqueRecords": {
@@ -11154,10 +11304,157 @@
   "NoteLeftAtTheCamp": {
     "type": "MATERIAL_QUEST"
   },
+  "ANamelessAdventurersNotes": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MedicineOfGreaterEfficacy": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MedicineOfSuperiorTaste": {
+    "type": "MATERIAL_QUEST"
+  },
   "ScarletPhlogistonHoneyPearl": {
     "type": "MATERIAL_QUEST"
   },
+  "AncientDiary": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MagnificosMasterpiece": {
+    "type": "MATERIAL_QUEST"
+  },
+  "FiresOfAutumnTwilightI": {
+    "type": "MATERIAL_QUEST"
+  },
+  "FiresOfAutumnTwilightII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "FiresOfAutumnTwilightIII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SpringsOfHiddenJadeI": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SpringsOfHiddenJadeII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MtLingmengGossipI": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MtLingmengGossipII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MtLingmengGossipIII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TheTaleOfKuntur": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MysteriousWeaponFragmentArrowRest": {
+    "type": "MATERIAL_QUEST"
+  },
+  "IktomiScrollMap": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TepalsTatteredNotes": {
+    "type": "MATERIAL_QUEST"
+  },
+  "KeyFoundByThePaintedStoneChallengePodium": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SecretArtGrilledFishInMintSauce": {
+    "type": "MATERIAL_QUEST"
+  },
+  "PurpleObsidianFragment": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "PurpleObsidianRing": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "CrimsonObsidianFragment": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "CrimsonObsidianRing": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "PakpakaFlyingSchoolFlyingTournamentInvitationLetter": {
+    "type": "MATERIAL_QUEST"
+  },
   "CapturedPhotos": {
+    "type": "MATERIAL_QUEST"
+  },
+  "NearbyFlammabombWood": {
+    "type": "MATERIAL_QUEST"
+  },
+  "NearbyAshenAratikuWood": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SmoothBittedKey": {
+    "type": "MATERIAL_QUEST"
+  },
+  "StraightBittedKey": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MessilyBittedKey": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SpiritcallersNotesI": {
+    "type": "MATERIAL_QUEST"
+  },
+  "MountainRangersNotes": {
+    "type": "MATERIAL_QUEST"
+  },
+  "NamelessPriestsNotes": {
+    "type": "MATERIAL_QUEST"
+  },
+  "TravelingScholarsNotes": {
+    "type": "MATERIAL_QUEST"
+  },
+  "HolySovereignsNotesVII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "HolySovereignsNotesVIII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "HolySovereignsNotesIX": {
+    "type": "MATERIAL_QUEST"
+  },
+  "SpiritcallersNotesII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "NotesSomeoneLeftBehindI": {
+    "type": "MATERIAL_QUEST"
+  },
+  "NotesSomeoneLeftBehindII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "NotesSomeoneLeftBehindIII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "NotesSomeoneLeftBehindIV": {
+    "type": "MATERIAL_QUEST"
+  },
+  "NotesSomeoneLeftBehindV": {
+    "type": "MATERIAL_QUEST"
+  },
+  "RecordkeepingSecretSourceSentinel": {
+    "type": "MATERIAL_QUEST"
+  },
+  "NamelessTravelersNotesI": {
+    "type": "MATERIAL_QUEST"
+  },
+  "NamelessTravelersNotesII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "NamelessTravelersNotesIII": {
+    "type": "MATERIAL_QUEST"
+  },
+  "NamelessTravelersNotesIV": {
+    "type": "MATERIAL_QUEST"
+  },
+  "NamelessTravelersNotesV": {
+    "type": "MATERIAL_QUEST"
+  },
+  "PlaceOfTheTrialOfDisembodimentMessage": {
     "type": "MATERIAL_QUEST"
   },
   "TearsAmongTheStars": {
@@ -11271,6 +11568,9 @@
   "SprayfeatherGillSeed": {
     "type": "MATERIAL_HOME_SEED"
   },
+  "GlowingHornshroomSeed": {
+    "type": "MATERIAL_HOME_SEED"
+  },
   "Medaka": {
     "type": "MATERIAL_EXCHANGE"
   },
@@ -11382,6 +11682,27 @@
   "JadeHeartfeatherBass": {
     "type": "MATERIAL_EXCHANGE"
   },
+  "FloralRapidfightingFish": {
+    "type": "MATERIAL_EXCHANGE"
+  },
+  "DivingRapidfightingFish": {
+    "type": "MATERIAL_EXCHANGE"
+  },
+  "MagmaRapidfightingFish": {
+    "type": "MATERIAL_EXCHANGE"
+  },
+  "GreenwaveSunfish": {
+    "type": "MATERIAL_EXCHANGE"
+  },
+  "DuskSunfish": {
+    "type": "MATERIAL_EXCHANGE"
+  },
+  "PhonyPhlogistonUnihornfish": {
+    "type": "MATERIAL_EXCHANGE"
+  },
+  "PseudosharkUnihornfish": {
+    "type": "MATERIAL_EXCHANGE"
+  },
   "WingsOfFirstFlight": {
     "type": "MATERIAL_FLYCLOAK"
   },
@@ -11425,6 +11746,9 @@
     "type": "MATERIAL_FLYCLOAK"
   },
   "WingsOfSoaringFlame": {
+    "type": "MATERIAL_FLYCLOAK"
+  },
+  "WingsOfFatesCourseIntertwined": {
     "type": "MATERIAL_FLYCLOAK"
   },
   "RadiantSpincrystal1": {
@@ -11895,6 +12219,27 @@
   "RadiantSpincrystal140": {
     "type": "MATERIAL_BGM"
   },
+  "RadiantSpincrystal141": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal142": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal143": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal144": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal145": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal146": {
+    "type": "MATERIAL_BGM"
+  },
+  "RadiantSpincrystal147": {
+    "type": "MATERIAL_BGM"
+  },
   "LanternFiber": {
     "type": "MATERIAL_EXCHANGE"
   },
@@ -11971,6 +12316,9 @@
     "type": "MATERIAL_AVATAR_MATERIAL"
   },
   "TheSeasSilentShade": {
+    "type": "MATERIAL_AVATAR_MATERIAL"
+  },
+  "ShuttleOfOdara": {
     "type": "MATERIAL_AVATAR_MATERIAL"
   },
   "FalconsDance": {
@@ -12118,6 +12466,9 @@
     "type": "MATERIAL_FISH_ROD"
   },
   "Wavepiercer": {
+    "type": "MATERIAL_FISH_ROD"
+  },
+  "FlowhornFlounderfinder": {
     "type": "MATERIAL_FISH_ROD"
   },
   "GenshinImpactANewWorld": {
@@ -12768,6 +13119,21 @@
   "TravelNotesSabzeruz": {
     "type": "MATERIAL_NAMECARD"
   },
+  "ChascaFullyLoaded": {
+    "type": "MATERIAL_NAMECARD"
+  },
+  "OroronNightshade": {
+    "type": "MATERIAL_NAMECARD"
+  },
+  "NatlanFleetingDreams": {
+    "type": "MATERIAL_NAMECARD"
+  },
+  "AchievementFightingSpirit": {
+    "type": "MATERIAL_NAMECARD"
+  },
+  "TravelNotesSpiritweaver": {
+    "type": "MATERIAL_NAMECARD"
+  },
   "EchoDandelionKnight": {
     "type": "MATERIAL_AVATAR_TRACE"
   },
@@ -13215,6 +13581,12 @@
   "DiagramPyroTreasureCompass": {
     "type": "MATERIAL_CONSUME"
   },
+  "FormulaSpinelgrainBait": {
+    "type": "MATERIAL_CONSUME"
+  },
+  "RecipeEmberglowBait": {
+    "type": "MATERIAL_CONSUME"
+  },
   "SilkenPrint": {
     "type": "MATERIAL_CONSUME"
   },
@@ -13317,6 +13689,24 @@
   "AllGreenAndGoodToGo": {
     "type": "MATERIAL_PHOTOGRAPH_POSE"
   },
+  "RefinedCountenance": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
+  "NoiseFiltering": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
+  "PerfectPartner": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
+  "HappyTimes": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
+  "DeepContemplation": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
+  "ThesisProgression": {
+    "type": "MATERIAL_PHOTOGRAPH_POSE"
+  },
   "RhodeiaOfLoch": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
@@ -13396,6 +13786,9 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "EremiteFloralRingDancer": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "GoldenWolflord": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "UndividedHeart": {
@@ -13701,6 +14094,15 @@
   "SpiritSerpentsSwirl": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
+  "DivineRetribution": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "RequiresAppropriateRest": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "BeastlyCorrosion": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
   "MagicGuide": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
@@ -13971,6 +14373,15 @@
   "Tepetlisaurus": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
+  "FlowingPurity": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "MaidensFadingBeauty": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "Iktomisaurus": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
   "LiyueHarborWharf": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
@@ -14125,6 +14536,9 @@
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "StageTepetl": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
+  "ScionsOfTheCanopy": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
   "ElementalResonanceWovenIce": {
@@ -14319,6 +14733,9 @@
   "EremiteTeatime": {
     "type": "MATERIAL_GCG_CARD_FACE"
   },
+  "UltimateSurfingBuddy": {
+    "type": "MATERIAL_GCG_CARD_FACE"
+  },
   "Origin": {
     "type": "MATERIAL_GCG_CARD_BACK"
   },
@@ -14368,7 +14785,7 @@
     "type": "MATERIAL_GCG_CARD_BACK"
   },
   "Natlan": {
-    "type": "MATERIAL_GCG_CARD_BACK"
+    "type": "MATERIAL_GCG_FIELD"
   },
   "EnkanomiyaEvernight": {
     "type": "MATERIAL_GCG_CARD_BACK"
@@ -14893,6 +15310,15 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "WhiteChestnutOakWoodTwilightFloorLamp": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "PhlogistonStreetLampTheRoadAhead": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "PhlogistonStreetLampThreefold": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "PhlogistonFloorLampHomecoming": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "EfflorescentIllumination": {
@@ -16485,6 +16911,30 @@
   "HotSpringRetreatTopChoice": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
+  "NightWindArchitectureNeedsOfExchange": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "NightWindArchitectureArcaneFoundation": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "NightWindArchitectureMundaneWay": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "FlowerFeatherResidenceChasingTriviality": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "FlowerFeatherResidenceLogicOfFlight": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "SimpleFlowerFeatherHouseFallbackMeasures": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "FlowerFeatherStableSauriansRepose": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "AshenAratikuWoodGiantClawPlatform": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
   "BirdAndBlossomDesignFountain": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
@@ -16597,6 +17047,12 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "EvenHandedJudgment": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "DawnOfFlight": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "FlowerFeatherClanWarningBalloon": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "AdeptusGate": {
@@ -16771,6 +17227,9 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "ValleyStoneStepsFoundationStone": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "AshenAratikuWoodMinimalistStaircase": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "FoundationsOfStoneFortunateTimes": {
@@ -17026,6 +17485,9 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "SalubriousFragrance": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "SolidRoots": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "FirShelves": {
@@ -17412,6 +17874,15 @@
   "FlagOfHuitztlan": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
+  "TailPouchOfTheMountainWind": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "EndlessAspiration": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "TlalocansDrawing": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
   "BookshelfFreeReading": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
@@ -17436,6 +17907,9 @@
   "ShadedClarity": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
+  "MoltenLavaPool": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
   "TeaHarvestsStockpilingAndTransport": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
@@ -17455,6 +17929,33 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "ModelContraptionStandardMusicalMode": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "ClairvoyanceModelSpiritloom": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "ClairvoyanceModelProjectionCenser": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "TheSilentMeditator": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "RopeBoundMultiPurposeBarrel": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "VesselOfPurificationAndCalm": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "SpiritualityAndSealing": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "OurPath": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "FamishedThoughts": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "FixedTorchPursuitOfVictory": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "WeatheredBambooFence": {
@@ -17524,6 +18025,9 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "BalustradeOfTheSprings": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "TetherAtTheSummitOfQuahuacanCliff": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "SmoothWoodenBench": {
@@ -17704,6 +18208,18 @@
     "type": "MATERIAL_FURNITURE_FORMULA"
   },
   "WayToTheExtreme": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "TezcatepetoncoFenceSunsJourney": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "TezcatepetoncoFencePathOfDiscovery": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "WoodenTargetTrainingRegimen": {
+    "type": "MATERIAL_FURNITURE_FORMULA"
+  },
+  "TheEmbersOfCinderCity": {
     "type": "MATERIAL_FURNITURE_FORMULA"
   }
 }

@@ -124,7 +124,7 @@
   "constellation1": {
     "name": "Kötülere Eziyet",
     "description": {
-      "0": "Pasif Yetenek \"Adalet Yerini Bulacak\" ile tetiklenen Şefkatli Azar aşağıdaki şekilde değişir:",
+      "0": "\"Adalet Yerini Bulacak\" Pasif Yeteneği ile tetiklenen Şefkatli Azar aşağıdaki şekilde değişir:",
       "1": "Wriothesley'nin Canı %60'ın altına düştüğünde veya <strong>Buzdiş Saldırısı</strong> becerisinin neden olduğu Ürperten Ceza durumundayken beşinci Püskürtücü Yumruk saldırısı isabet ettiğinde bir Şefkatli Azar oluşturur. Her 2,5 saniyede bir Şefkatli Azar etkisi kazanılabilir.",
       "2": "<br/>",
       "3": "Ayrıca Azar: Sıçrayan Yumruk şu etkileri kazanır:",

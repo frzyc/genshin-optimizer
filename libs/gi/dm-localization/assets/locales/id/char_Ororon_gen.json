@@ -1,0 +1,187 @@
+{
+  "name": "Ororon",
+  "title": "Shadow of the Night-Wind",
+  "description": "Pemuda dari Penguasa Angin Malam yang hidup di alam liar bersama segala jenis makhluk lainnya.",
+  "constellationName": "Vampyrum Spectrum",
+  "auto": {
+    "name": "Spiritvessel Snapshot",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 3 serangan berturut-turut menggunakan busur."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengerahkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG lebih besar.",
+        "2": "Saat membidik, elemen Electro akan berkumpul di ujung anak panah. Panah dengan elemen Electro yang terkumpul penuh akan mengakibatkan <electro>Electro DMG</electro>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Melancarkan hujan panah dari udara dan menerjang tanah dengan kecepatan tinggi, mengakibatkan DMG Area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Membidik",
+      "4": "DMG Membidik Penuh",
+      "5": "DMG Selama Plunging",
+      "6": "DMG Plunging Attack Rendah/Tinggi",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Night's Sling",
+    "description": {
+      "0": "Ororon mewujudkan ilmu rahasia yang diwariskan oleh suku Penguasa Angin Malam menjadi <strong>Spirit Orb</strong> bayangan malam dan melemparkannya kepada musuh, mengakibatkan Nightsoul-aligned <electro>Electro DMG</electro>.",
+      "1": "Saat ada musuh lainnya di sekitar, Spirit Orb akan memantul di antara musuh yang ada di sekitar, mengakibatkan Nightsoul-aligned <electro>Electro DMG</electro>. Setiap kali melancarkan Night's Sling, setiap musuh hanya bisa terpilih sebagai target sebanyak satu kali.",
+      "2": "Spirit Orb akan menghilang setelah memantul sebanyak 3 kali atau saat tidak ada musuh di sekitar yang dapat dipilih sebagai target lagi.",
+      "3": "<br/>",
+      "4": "<i>\"Orang-orang selalu ingin meramal masa depan, mungkin karena mereka masih belum mengetahui apa yang harus mereka lakukan ... Maaf, sepertinya aku mulai mengatakan hal-hal rumit lagi. Aku sadar kok ....\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Spirit Orb",
+      "1": "Cooldown",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dark Voices Echo",
+    "description": {
+      "0": "Ororon mempraktikkan sebuah upacara rahasia kuno untuk mengakibatkan Nightsoul-aligned <electro>Electro DMG Area</electro> dan memanggil sebuah \"Supersonic Oculus\".",
+      "1": "<br/>",
+      "2": "<strong>Supersonic Oculus</strong>",
+      "3": [
+        "Terus menarik perhatian musuh di sekitar dan memancing musuh untuk menyerangnya.",
+        "Terus berputar dan mengeluarkan gelombang suara yang mengakibatkan Nightsoul-aligned <electro>Electro DMG</electro> terhadap musuh di sekitar."
+      ],
+      "4": "<br/>",
+      "5": "<i>Mereka yang punya indra yang cukup tajam akan bisa mendengarkan suara setiap makhluk yang ada. Dengan demikian, mereka tidak akan pernah kehilangan arah, bahkan dalam malam yang panjang dan tanpa cahaya sekali pun.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Ritual",
+      "1": "DMG Soundwave Collision",
+      "2": "Durasi",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Nightshade Synesthesia",
+    "description": {
+      "0": "Setelah Karakter dalam party di sekitar memicu Nightsoul Burst, Ororon akan mendapatkan 40 poin Nightsoul. Selama 15 detik setelah Ororon melancarkan Elemental Skill, saat serangan Karakter lain di dalam party dengan jenis elemen <hydro>Hydro</hydro> atau <electro>Electro</electro> mengenai musuh, Ororon akan mendapatkan 5 poin Nightsoul, efek ini dapat terpicu sekali setiap 0,3 detik, dan dapat terpicu maksimum 10 kali selama durasi berlangsung.",
+      "1": "Batas maksimum poin Nightsoul Ororon adalah 80 poin.",
+      "2": "<br/>",
+      "3": "Selain itu, saat musuh di sekitar menerima DMG reaksi <electro>Electro-Charged</electro> atau saat Karakter lain di dalam party mengakibatkan Nightsoul-aligned DMG, jika Ororon memiliki setidaknya 10 poin Nightsoul, Ororon akan mengonsumsi 10 poin Nightsoul dan memasuki status Nightsoul's Blessing dan memicu efek Hypersense: Mengakibatkan Nightsoul-aligned <electro>Electro DMG</electro> sebesar 160% ATK Ororon terhadap maksimum 4 musuh di sekitar. Efek di atas dapat terpicu sekali setiap 1,8 detik.",
+      "4": "<br/>",
+      "5": "<strong>Nightsoul's Blessing: Ororon</strong>",
+      "6": "Nightsoul's Blessing Ororon bertahan maksimum 6 detik."
+    }
+  },
+  "passive2": {
+    "name": "Aspect Catalyst",
+    "description": {
+      "0": "Setelah <strong>Spirit Orb</strong> dari Elemental Skill <strong>Night's Sling</strong> mengenai musuh, Ororon akan mendapatkan efek Aspect Sigil selama 15 detik.",
+      "1": "<br/>",
+      "2": "<strong>Aspect Sigil</strong>",
+      "3": "Setelah Normal Attack, Charged Attack, atau Plunging Attack Karakter aktif dalam party di sekitar mengenai musuh, efek ini juga akan memulihkan 3 poin Energy untuk Karakter ini. Jika Ororon ada di dalam party namun sedang tidak berada di medan pertempuran, akan memulihkan 3 poin Energy untuk Ororon. Efek di atas dapat terpicu sekali setiap 1 detik, dan dapat terpicu maksimum 3 kali selama durasi berlangsung."
+    }
+  },
+  "passive3": {
+    "name": "Night Realm's Gift: Flowing Fog, Spritely Shadows",
+    "description": {
+      "0": "Saat ada area dengan Phlogiston Mechanic di Natlan, Ororon bisa melancarkan Nightsoul Transmission: Ororon. Saat Karakter aktif sedang berada di udara dan mengganti Karakter menjadi Ororon: Ororon akan melompat tinggi ke atas. Nightsoul Transmission party sendiri dapat terpicu sekali setiap 10 detik.",
+      "1": "<br/>",
+      "2": "Saat menggunakan Mode Membidik, Ororon akan memasuki status Spiritspeaker. Dalam status ini, Ororon bisa berinteraksi dengan \"Nightspirit Graffiti\" dan \"Nightspirit Sigil\" untuk mengambil informasi dan kekuatan dari dalamnya. Peraturan interaksi dengan objek-objek ini sama dengan peraturan interaksi Iktomisaurus.",
+      "3": "<br/>",
+      "4": "Selain itu, saat menahan tombol Melompat, Ororon akan mengonsumsi 75 poin Stamina untuk melompat tinggi ke atas. Saat ada area dengan Phlogiston Mechanic di Natlan, Ororon akan terlebih dulu mengonsumsi 5 poin Phlogiston untuk melompat ke ketinggian yang lebih tinggi lagi.",
+      "5": "Saat sedang berada di udara, Ororon bisa menahan Normal Attack dan mengonsumsi Phlogiston atau Stamina untuk memasuki Mode Membidik."
+    }
+  },
+  "passive": {
+    "name": "The Art of Skinchanging",
+    "description": {
+      "0": "Meningkatkan 15% kecepatan meluncur Karakter dalam party sendiri.",
+      "1": "Efek ini tidak dapat ditumpuk dengan Talenta Pasif lain dengan efek yang sama persis."
+    }
+  },
+  "constellation1": {
+    "name": "Trails Amidst the Forest Fog",
+    "description": {
+      "0": "<strong>Spirit Orb</strong> dari Elemental Skill <strong>Night's Sling</strong> bisa memantul 2 kali lebih banyak.",
+      "1": "Selain itu, setelah <strong>Spirit Orb</strong> mengenai musuh, akan menambahkan efek Nighttide terhadap musuh tersebut selama 12 detik. Musuh yang berada dalam pengaruh efek Nighttide akan menerima peningkatan 50% DMG yang diakibatkan oleh Hypersense dari Talenta Pasif \"Nightshade Synesthesia\". Harus membuka Talenta Pasif \"Nightshade Synesthesia\" terlebih dahulu."
+    }
+  },
+  "constellation2": {
+    "name": "King Bee of the Hidden Honeyed Wine",
+    "description": {
+      "0": "Setelah melancarkan Elemental Burst <strong>Dark Voices Echo</strong>, Ororon akan mendapatkan efek Spiritual Supersense selama 9 detik.",
+      "1": "<br/>",
+      "2": "<strong>Spiritual Supersense</strong>",
+      "3": "Mendapatkan 8% <electro>Electro DMG Bonus</electro>.",
+      "4": "Selain itu, selama durasinya, setiap kali Elemental Burst <strong>Dark Voices Echo</strong> atau <strong>Supersonic Oculus</strong> mengenai satu musuh tambahan, akan memberikan Ororon 8% <electro>Electro DMG Bonus</electro> tambahan. Ororon bisa mendapatkan hingga maksimum 32% <electro>Electro DMG Bonus</electro> dengan cara ini."
+    }
+  },
+  "constellation3": {
+    "name": "Roosting Bat's Spiritcage",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong>Dark Voices Echo</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "As the Mysteries of the Night Wind",
+    "description": {
+      "0": "<strong>Supersonic Oculus</strong> yang dipanggil oleh Elemental Burst <strong>Dark Voices Echo</strong> berputar 25% lebih cepat.",
+      "1": "Selain itu, melancarkan <strong>Dark Voices Echo</strong> juga akan memulihkan 8 poin Energy Ororon."
+    }
+  },
+  "constellation5": {
+    "name": "A Gift For the Soul",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong>Night's Sling</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Ode to Deep Springs",
+    "description": {
+      "0": "Setelah memicu Hypersense dari Talenta Pasif \"Nightshade Synesthesia\", ATK Karakter aktif dalam party sendiri akan meningkat 10% selama 9 detik. Efek ini dapat ditumpuk sampai 3 lapis dan durasi setiap lapisnya dihitung terpisah.",
+      "1": "Selain itu, saat melancarkan Elemental Burst <strong>Dark Voices Echo</strong>, akan memicu efek yang setara dengan Hypersense satu kali dan mengakibatkan 200% DMG aslinya.",
+      "2": "Harus membuka Talenta Pasif \"Nightshade Synesthesia\" terlebih dahulu."
+    }
+  }
+}

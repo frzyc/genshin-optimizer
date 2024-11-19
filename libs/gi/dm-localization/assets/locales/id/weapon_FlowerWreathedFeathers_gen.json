@@ -1,0 +1,24 @@
+{
+  "name": "Flower-Wreathed Feathers",
+  "description": {
+    "0": "Busur panjang yang membara bagai api. Bulu-bulu di atasnya berasal dari tiran di zaman kuno, yaitu Ngoubou."
+  },
+  "passiveName": "Inflorescence Unattainable",
+  "passiveDescription": {
+    "0": {
+      "0": "Mengurangi Stamina Meluncur sebesar 15%. Saat menggunakan Serangan Membidik, DMG Charged Attack meningkat <cryo>6%</cryo> setiap 0,5 detik. Dapat ditumpuk hingga maksimum 6 lapis dan akan dihapus 10 detik setelah tidak berada dalam Status Membidik."
+    },
+    "1": {
+      "0": "Mengurangi Stamina Meluncur sebesar 15%. Saat menggunakan Serangan Membidik, DMG Charged Attack meningkat <cryo>7,5%</cryo> setiap 0,5 detik. Dapat ditumpuk hingga maksimum 6 lapis dan akan dihapus 10 detik setelah tidak berada dalam Status Membidik."
+    },
+    "2": {
+      "0": "Mengurangi Stamina Meluncur sebesar 15%. Saat menggunakan Serangan Membidik, DMG Charged Attack meningkat <cryo>9%</cryo> setiap 0,5 detik. Dapat ditumpuk hingga maksimum 6 lapis dan akan dihapus 10 detik setelah tidak berada dalam Status Membidik."
+    },
+    "3": {
+      "0": "Mengurangi Stamina Meluncur sebesar 15%. Saat menggunakan Serangan Membidik, DMG Charged Attack meningkat <cryo>10,5%</cryo> setiap 0,5 detik. Dapat ditumpuk hingga maksimum 6 lapis dan akan dihapus 10 detik setelah tidak berada dalam Status Membidik."
+    },
+    "4": {
+      "0": "Mengurangi Stamina Meluncur sebesar 15%. Saat menggunakan Serangan Membidik, DMG Charged Attack meningkat <cryo>12%</cryo> setiap 0,5 detik. Dapat ditumpuk hingga maksimum 6 lapis dan akan dihapus 10 detik setelah tidak berada dalam Status Membidik."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Calamity of Eshu",
+  "description": {
+    "0": "A ceremonial blade forged by Sanhaj, the great high priest of the Masters of the Night-Wind. In tales of bygone days, Sanhaj could use this curved blade to perform rituals, blurring the boundary between the Night Kingdom and the present world."
+  },
+  "passiveName": "Diffusing Boundary",
+  "passiveDescription": {
+    "0": {
+      "0": "While characters are protected by a Shield, DMG dealt by Normal and Charged Attacks is increased by <cryo>20%</cryo>, and Normal and Charged Attack CRIT Rate is increased by <cryo>8%</cryo>."
+    },
+    "1": {
+      "0": "While characters are protected by a Shield, DMG dealt by Normal and Charged Attacks is increased by <cryo>25%</cryo>, and Normal and Charged Attack CRIT Rate is increased by <cryo>10%</cryo>."
+    },
+    "2": {
+      "0": "While characters are protected by a Shield, DMG dealt by Normal and Charged Attacks is increased by <cryo>30%</cryo>, and Normal and Charged Attack CRIT Rate is increased by <cryo>12%</cryo>."
+    },
+    "3": {
+      "0": "While characters are protected by a Shield, DMG dealt by Normal and Charged Attacks is increased by <cryo>35%</cryo>, and Normal and Charged Attack CRIT Rate is increased by <cryo>14%</cryo>."
+    },
+    "4": {
+      "0": "While characters are protected by a Shield, DMG dealt by Normal and Charged Attacks is increased by <cryo>40%</cryo>, and Normal and Charged Attack CRIT Rate is increased by <cryo>16%</cryo>."
+    }
+  }
+}

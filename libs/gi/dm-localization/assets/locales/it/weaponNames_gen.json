@@ -32,6 +32,7 @@
   "SwordOfNarzissenkreuz": "Spada di Narzissenkreuz",
   "SturdyBone": "Osso tenace",
   "FluteOfEzpitzal": "Flauto di Ezpitzal",
+  "CalamityOfEshu": "Calamità di Eshu",
   "AquilaFavonia": "Aquila Favonia",
   "SkywardBlade": "Lama celeste",
   "FreedomSworn": "Giuramento di libertà",
@@ -144,6 +145,7 @@
   "FlowingPurity": "Corrente d'acqua pura",
   "BalladOfTheBoundlessBlue": "Ballata del blu sempiterno",
   "AshGravenDrinkingHorn": "Corno cinereo",
+  "WaveridingWhirl": "Vortice del Cavalcaonde",
   "RingOfYaxche": "Anello di Yaxche",
   "SkywardAtlas": "Atlante celeste",
   "LostPrayerToTheSacredWinds": "Origine dei venti sacri",
@@ -187,6 +189,7 @@
   "SongOfStillness": "Canto del silenzio",
   "Cloudforged": "Forgianuvole",
   "RangeGauge": "Indicatore distanziometrico",
+  "FlowerWreathedFeathers": "Piume coronate di fiori",
   "ChainBreaker": "Spezzacatene",
   "SkywardHarp": "Arpa celeste",
   "AmosBow": "Arco di Amos",
@@ -197,5 +200,6 @@
   "HuntersPath": "Sentiero del cacciatore",
   "TheFirstGreatMagic": "Prima grande magia",
   "SilvershowerHeartstrings": "Candido cuore della pioggia",
+  "AstralVulturesCrimsonPlumage": "Piuma cremisi dell'avvoltoio astrale",
   "QuantumCatalyst": "Quantum Cat-alyst"
 }
