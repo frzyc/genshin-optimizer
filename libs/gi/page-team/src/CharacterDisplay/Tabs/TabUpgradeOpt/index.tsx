@@ -3,6 +3,7 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import {
   bulkCatTotal,
   clamp,
+  filterFunction,
   notEmpty,
   objKeyMap,
   objPathValue,
@@ -27,6 +28,7 @@ import {
   AdResponsive,
   AddArtInfo,
   ArtifactEditor,
+  ArtifactSlotToggle,
   DataContext,
   HitModeToggle,
   NoArtWarning,
@@ -36,6 +38,10 @@ import {
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
+import {
+  artifactFilterConfigs,
+  initialArtifactFilterOption,
+} from '@genshin-optimizer/gi/util'
 import type { NumNode } from '@genshin-optimizer/gi/wr'
 import { dynamicData, mergeData, optimize } from '@genshin-optimizer/gi/wr'
 import AddIcon from '@mui/icons-material/Add'
@@ -58,6 +64,7 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useReducer,
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
@@ -85,6 +92,7 @@ function AddArtifactButton({ onClick }: AddArtifactButtonProps) {
   )
 }
 
+const filterOptionReducer = (state, action) => ({ ...state, ...action })
 export default function TabUpopt() {
   const { t } = useTranslation('page_character_optimize')
   const {
@@ -95,6 +103,10 @@ export default function TabUpopt() {
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { gender } = useDBMeta()
+  const [filterOption, filterOptionDispatch] = useReducer(
+    filterOptionReducer,
+    initialArtifactFilterOption()
+  )
 
   const [artifactIdToEdit, setArtifactIdToEdit] = useState<string | undefined>()
 
@@ -130,29 +142,32 @@ export default function TabUpopt() {
       upOptLevelHigh,
       useExcludedArts,
     } = optConfig
+    const filterFunc = filterFunction(filterOption, artifactFilterConfigs())
 
     return (
       artsDirty &&
-      database.arts.values.filter((art) => {
-        if (!useExcludedArts && artExclusion.includes(art.id)) return false
-        if (art.level < upOptLevelLow) return false
-        if (art.level > upOptLevelHigh) return false
-        const mainStats = mainStatKeys[art.slotKey]
-        if (mainStats?.length && !mainStats.includes(art.mainStatKey))
-          return false
+      database.arts.values
+        .filter((art) => {
+          if (!useExcludedArts && artExclusion.includes(art.id)) return false
+          if (art.level < upOptLevelLow) return false
+          if (art.level > upOptLevelHigh) return false
+          const mainStats = mainStatKeys[art.slotKey]
+          if (mainStats?.length && !mainStats.includes(art.mainStatKey))
+            return false
 
-        const locKey = charKeyToLocCharKey(characterKey)
-        if (
-          art.location &&
-          art.location !== locKey &&
-          excludedLocations.includes(art.location)
-        )
-          return false
+          const locKey = charKeyToLocCharKey(characterKey)
+          if (
+            art.location &&
+            art.location !== locKey &&
+            excludedLocations.includes(art.location)
+          )
+            return false
 
-        return true
-      })
+          return true
+        })
+        .filter(filterFunc)
     )
-  }, [optConfig, artsDirty, database, characterKey])
+  }, [optConfig, artsDirty, database, characterKey, filterOption])
   const filteredArtIdMap = useMemo(
     () =>
       objKeyMap(
@@ -162,17 +177,24 @@ export default function TabUpopt() {
     [filteredArts]
   )
 
-  const { levelTotal } = useMemo(() => {
+  const { slotKeys = [] } = filterOption
+
+  const { levelTotal, slotTotal } = useMemo(() => {
     const catKeys = {
       levelTotal: ['in'],
+      slotTotal: allArtifactSlotKeys,
     } as const
     return bulkCatTotal(catKeys, (ctMap) =>
       database.arts.entries.forEach(([id, art]) => {
-        const { level } = art
+        const { level, slotKey } = art
         const { upOptLevelLow, upOptLevelHigh } = optConfig
         if (level >= upOptLevelLow && level <= upOptLevelHigh) {
           ctMap['levelTotal']['in'].total++
           if (filteredArtIdMap[id]) ctMap['levelTotal']['in'].current++
+        }
+        ctMap['slotTotal'][slotKey].total++
+        if (filteredArtIdMap[id]) {
+          ctMap['slotTotal'][slotKey].current++
         }
       })
     )
@@ -447,6 +469,13 @@ export default function TabUpopt() {
                     upOptLevelLow={upOptLevelLow}
                     upOptLevelHigh={upOptLevelHigh}
                     optConfigId={optConfigId}
+                  />
+                  <ArtifactSlotToggle
+                    onChange={(slotKeys) => {
+                      filterOptionDispatch({ slotKeys })
+                    }}
+                    totals={slotTotal}
+                    value={slotKeys}
                   />
                   <CardThemed bgt="light">
                     <MainStatSelectionCard
