@@ -793,6 +793,20 @@ export const formulas = {
       },
     },
   },
+  Chasca: {
+    normal1: {
+      sheet: 'Chasca',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Chasca',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
   Chevreuse: {
     normal1: {
       sheet: 'Chevreuse',
@@ -1744,6 +1758,20 @@ export const formulas = {
         qt: 'formula',
         q: 'dmg',
         sheet: 'Noelle',
+        move: 'normal',
+        name: 'normal1',
+      },
+    },
+  },
+  Ororon: {
+    normal1: {
+      sheet: 'Ororon',
+      name: 'normal1',
+      tag: {
+        et: 'own',
+        qt: 'formula',
+        q: 'dmg',
+        sheet: 'Ororon',
         move: 'normal',
         name: 'normal1',
       },
