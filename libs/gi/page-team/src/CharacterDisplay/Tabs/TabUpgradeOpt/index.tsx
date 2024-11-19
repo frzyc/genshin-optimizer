@@ -11,6 +11,7 @@ import {
 } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey, CharacterKey } from '@genshin-optimizer/gi/consts'
 import {
+  allArtifactSetKeys,
   allArtifactSlotKeys,
   charKeyToLocCharKey,
 } from '@genshin-optimizer/gi/consts'
@@ -28,6 +29,7 @@ import {
   AdResponsive,
   AddArtInfo,
   ArtifactEditor,
+  ArtifactSetMultiAutocomplete,
   ArtifactSlotToggle,
   DataContext,
   HitModeToggle,
@@ -38,6 +40,7 @@ import {
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
+import type { ArtifactFilterOption } from '@genshin-optimizer/gi/util'
 import {
   artifactFilterConfigs,
   initialArtifactFilterOption,
@@ -58,6 +61,7 @@ import {
 import type { ButtonProps } from '@mui/material/Button'
 import Button from '@mui/material/Button'
 import { Stack } from '@mui/system'
+import type { Reducer } from 'react'
 import {
   Suspense,
   useCallback,
@@ -92,7 +96,10 @@ function AddArtifactButton({ onClick }: AddArtifactButtonProps) {
   )
 }
 
-const filterOptionReducer = (state, action) => ({ ...state, ...action })
+const filterOptionReducer = (
+  state: Partial<ArtifactFilterOption>,
+  action: Partial<ArtifactFilterOption>
+) => ({ ...state, ...action })
 export default function TabUpopt() {
   const { t } = useTranslation('page_character_optimize')
   const {
@@ -103,10 +110,9 @@ export default function TabUpopt() {
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { gender } = useDBMeta()
-  const [filterOption, filterOptionDispatch] = useReducer(
-    filterOptionReducer,
-    initialArtifactFilterOption()
-  )
+  const [filterOption, filterOptionDispatch] = useReducer<
+    Reducer<Partial<ArtifactFilterOption>, Partial<ArtifactFilterOption>>
+  >(filterOptionReducer, initialArtifactFilterOption())
 
   const [artifactIdToEdit, setArtifactIdToEdit] = useState<string | undefined>()
 
@@ -177,23 +183,26 @@ export default function TabUpopt() {
     [filteredArts]
   )
 
-  const { slotKeys = [] } = filterOption
+  const { artSetKeys = [], slotKeys = [] } = filterOption
 
-  const { levelTotal, slotTotal } = useMemo(() => {
+  const { levelTotal, setTotal, slotTotal } = useMemo(() => {
     const catKeys = {
       levelTotal: ['in'],
+      setTotal: allArtifactSetKeys,
       slotTotal: allArtifactSlotKeys,
     } as const
     return bulkCatTotal(catKeys, (ctMap) =>
       database.arts.entries.forEach(([id, art]) => {
-        const { level, slotKey } = art
+        const { level, setKey, slotKey } = art
         const { upOptLevelLow, upOptLevelHigh } = optConfig
         if (level >= upOptLevelLow && level <= upOptLevelHigh) {
           ctMap['levelTotal']['in'].total++
           if (filteredArtIdMap[id]) ctMap['levelTotal']['in'].current++
         }
+        ctMap['setTotal'][setKey].total++
         ctMap['slotTotal'][slotKey].total++
         if (filteredArtIdMap[id]) {
+          ctMap['setTotal'][setKey].current++
           ctMap['slotTotal'][slotKey].current++
         }
       })
@@ -476,6 +485,13 @@ export default function TabUpopt() {
                     }}
                     totals={slotTotal}
                     value={slotKeys}
+                  />
+                  <ArtifactSetMultiAutocomplete
+                    totals={setTotal}
+                    artSetKeys={artSetKeys}
+                    setArtSetKeys={(artSetKeys) =>
+                      filterOptionDispatch({ artSetKeys })
+                    }
                   />
                   <CardThemed bgt="light">
                     <MainStatSelectionCard
