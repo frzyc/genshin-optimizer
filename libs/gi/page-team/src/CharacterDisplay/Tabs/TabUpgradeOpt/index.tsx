@@ -40,8 +40,7 @@ import {
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
-import type {
-  ArtifactFilterOption} from '@genshin-optimizer/gi/util';
+import type { ArtifactFilterOption } from '@genshin-optimizer/gi/util'
 import {
   artifactFilterConfigs,
   initialArtifactFilterOption,
@@ -96,7 +95,10 @@ function AddArtifactButton({ onClick }: AddArtifactButtonProps) {
   )
 }
 
-const filterOptionReducer = (state: Partial<ArtifactFilterOption>, action: Partial<ArtifactFilterOption>) => ({ ...state, ...action })
+const filterOptionReducer = (
+  state: Partial<ArtifactFilterOption>,
+  action: Partial<ArtifactFilterOption>
+) => ({ ...state, ...action })
 export default function TabUpopt() {
   const { t } = useTranslation('page_character_optimize')
   const {
