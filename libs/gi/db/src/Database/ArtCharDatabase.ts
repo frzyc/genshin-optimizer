@@ -14,6 +14,7 @@ import { BuildDataManager } from './DataManagers/BuildDataManager'
 import { BuildTcDataManager } from './DataManagers/BuildTcDataManager'
 import { CharMetaDataManager } from './DataManagers/CharMetaDataManager'
 import { CharacterDataManager } from './DataManagers/CharacterDataManager'
+import { GeneratedBuildListDataManager } from './DataManagers/GeneratedBuildListDataManager'
 import { OptConfigDataManager } from './DataManagers/OptConfigDataManager'
 import { TeamCharacterDataManager } from './DataManagers/TeamCharacterDataManager'
 import { TeamDataManager } from './DataManagers/TeamDataManager'
@@ -27,6 +28,7 @@ export class ArtCharDatabase extends Database {
   buildTcs: BuildTcDataManager
   weapons: WeaponDataManager
   optConfigs: OptConfigDataManager
+  generatedBuildList: GeneratedBuildListDataManager
   charMeta: CharMetaDataManager
   builds: BuildDataManager
   teamChars: TeamCharacterDataManager
@@ -64,6 +66,7 @@ export class ArtCharDatabase extends Database {
 
     // Depends on arts
     this.optConfigs = new OptConfigDataManager(this)
+    this.generatedBuildList = new GeneratedBuildListDataManager(this)
 
     this.buildTcs = new BuildTcDataManager(this)
     this.charMeta = new CharMetaDataManager(this)
@@ -113,6 +116,7 @@ export class ArtCharDatabase extends Database {
       this.weapons,
       this.arts,
       this.optConfigs,
+      this.generatedBuildList,
       this.buildTcs,
       this.charMeta,
       this.builds,
