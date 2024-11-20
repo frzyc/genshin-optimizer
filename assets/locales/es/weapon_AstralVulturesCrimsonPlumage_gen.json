@@ -1,0 +1,24 @@
+{
+  "name": "Pluma Carmesí Buitreastral",
+  "description": {
+    "0": "Un antiguo arco largo adornado con plumas de color carmesí que ha pasado de generación en generación en la Tribu Plumaflora."
+  },
+  "passiveName": "Aro lunar",
+  "passiveDescription": {
+    "0": {
+      "0": "Tras causar una reacción de Torbellino, el ATQ aumenta en un <cryo>24%</cryo> durante 12 s. Además, por cada 1/2 personajes del equipo de tipo elemental distinto al del portador de esta arma, el daño que dicho portador inflige con su Ataque Cargado aumenta en un <cryo>20/48%</cryo>, y el daño de su Habilidad Definitiva aumenta en un <cryo>10/24%</cryo>."
+    },
+    "1": {
+      "0": "Tras causar una reacción de Torbellino, el ATQ aumenta en un <cryo>30%</cryo> durante 12 s. Además, por cada 1/2 personajes del equipo de tipo elemental distinto al del portador de esta arma, el daño que dicho portador inflige con su Ataque Cargado aumenta en un <cryo>25/60%</cryo>, y el daño de su Habilidad Definitiva aumenta en un <cryo>12.5/30%</cryo>."
+    },
+    "2": {
+      "0": "Tras causar una reacción de Torbellino, el ATQ aumenta en un <cryo>36%</cryo> durante 12 s. Además, por cada 1/2 personajes del equipo de tipo elemental distinto al del portador de esta arma, el daño que dicho portador inflige con su Ataque Cargado aumenta en un <cryo>30/72%</cryo>, y el daño de su Habilidad Definitiva aumenta en un <cryo>15/36%</cryo>."
+    },
+    "3": {
+      "0": "Tras causar una reacción de Torbellino, el ATQ aumenta en un <cryo>42%</cryo> durante 12 s. Además, por cada 1/2 personajes del equipo de tipo elemental distinto al del portador de esta arma, el daño que dicho portador inflige con su Ataque Cargado aumenta en un <cryo>35/84%</cryo>, y el daño de su Habilidad Definitiva aumenta en un <cryo>17.5/42%</cryo>."
+    },
+    "4": {
+      "0": "Tras causar una reacción de Torbellino, el ATQ aumenta en un <cryo>48%</cryo> durante 12 s. Además, por cada 1/2 personajes del equipo de tipo elemental distinto al del portador de esta arma, el daño que dicho portador inflige con su Ataque Cargado aumenta en un <cryo>40/96%</cryo>, y el daño de su Habilidad Definitiva aumenta en un <cryo>20/48%</cryo>."
+    }
+  }
+}

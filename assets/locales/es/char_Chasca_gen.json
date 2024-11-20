@@ -1,0 +1,200 @@
+{
+  "name": "Chasca",
+  "title": "La Pacificadora del Firmamento",
+  "description": "La mediadora de Tlalocán, pacificadora de mil conflictos.",
+  "constellationName": "Vultur Gryphus",
+  "auto": {
+    "name": "Corriente plumífera",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Realiza hasta 4 disparos consecutivos con arco."
+      },
+      "charged": {
+        "0": "<strong>Ataque Cargado</strong>",
+        "1": "Realiza un <strong>Disparo Preciso</strong> que inflige mayor daño y tiene mayor precisión.",
+        "2": "Al apuntar, un fuerte viento se acumulará en la punta de la flecha que, al estar totalmente cargada con la fuerza del viento, infligirá <anemo>Daño Anemo</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Descendente</strong>",
+        "1": "Dispara una lluvia de flechas desde el aire y desciende rápidamente mientras ataca a los enemigos a su paso, infligiendo Daño en el AdE al impactar contra el suelo."
+      }
+    },
+    "skillParams": {
+      "0": "Daño de 1er golpe",
+      "1": "Daño de 2.º golpe",
+      "2": "Daño de 3er golpe",
+      "3": "Daño de 4.º golpe",
+      "4": "Disparo Preciso",
+      "5": "Disparo Preciso (carga completa)",
+      "6": "Daño de Caída",
+      "7": "Daño de impacto de caída baja/alta",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Riendas persiguesombras",
+    "description": {
+      "0": "Chasca resuena con la voluntad que hay en su arma e inflige <anemo>Daño Anemo en el AdE</anemo> de naturaleza noctámbula.",
+      "1": "Al usar esta habilidad, Chasca obtiene 80 pts. de noctambulismo y entra en el estado de “bendición noctámbula”.",
+      "2": "<br/>",
+      "3": "<strong>Bendición noctámbula: Chasca</strong>",
+      "4": "Consume continuamente pts. de noctambulismo. Al agotarse todos o al usar de nuevo la habilidad, terminará la duración de la bendición noctámbula de Chasca. Dicha bendición tiene las siguientes propiedades:",
+      "5": [
+        "Se sube a un riflespíritu ceremonial y aumenta la Vel. Movimiento y la RES a interrupción de Chasca. En este estado, consumirá pts. de noctambulismo continuamente para mantenerse en el aire. Al esprintar o elevarse, se consumen pts. de noctambulismo adicionales.",
+        "Al realizar un Ataque Normal o Cargado, se ejecuta un “multiapuntamiento” de distintas formas dependiendo de si se pulsa una vez o se mantiene pulsado."
+      ],
+      "6": "<br/>",
+      "7": "<strong>Multiapuntamiento</strong>",
+      "8": "<strong>Pulsar una vez</strong>",
+      "9": "Inflige <anemo>Daño Anemo</anemo> de naturaleza noctámbula a los enemigos que tenga frente a sí misma. Este daño se considera daño de Ataque Normal.",
+      "10": "<strong>Mantener pulsado</strong>",
+      "11": "Apunta, escoge un determinado número de enemigos situados en cierta área y recarga hasta un máximo de 6 balas persiguesombras según el tiempo de carga. Al recargar las 6 balas o detener la carga, dichas balas se disparan consecutivamente a los enemigos escogidos.",
+      "12": "<br/>",
+      "13": "<strong>Balas persiguesombras</strong>",
+      "14": [
+        "Infligen <anemo>Daño Anemo</anemo> de naturaleza noctámbula. Este daño se considera daño de Ataque Cargado.",
+        "La cuarta, quinta y sexta bala persiguesombras que se carguen en el rifle sufrirán un cambio elemental en función del tipo elemental de los demás personajes del equipo. Por cada personaje <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> o <electro>Electro</electro>, una bala persiguesombras se transformará al azar en una brillobala persiguesombras del tipo elemental correspondiente, e infligirá daño del elemento en cuestión de naturaleza noctámbula. Este daño se considera daño de Ataque Cargado.",
+        "Las últimas balas persiguesombras en ser recargadas se dispararán con prioridad."
+      ],
+      "15": "<br/>",
+      "16": "Además, mientras la bendición noctámbula esté activa, al mantener pulsado para liberar la Habilidad Elemental, <strong>Riendas persiguesombras</strong>, en su lugar, Chasca ejecutará un Ataque Descendente de naturaleza noctámbula. Al dejar de mantener pulsado, el Ataque Descendente puede ser interrumpido y Chasca permanecerá en el aire. La bendición noctámbula terminará cuando el Ataque Descendente sea ejecutado.",
+      "17": "<br/>",
+      "18": "<i>En teoría, siempre y cuando ella quiera, con esas riendas puede manejar cualquier cosa... Pero ¿qué mejor que manejar un rifle gigante con ellas?</i>"
+    },
+    "skillParams": {
+      "0": "Daño de resonancia",
+      "1": "Daño de multiapuntamiento al pulsar una vez",
+      "2": "Daño de bala persiguesombras",
+      "3": "Daño de brillobala persiguesombras",
+      "4": "Límite de pts. de noctambulismo",
+      "5": "TdE",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Asalto espectral",
+    "description": {
+      "0": "Chasca concentra toda su voluntad para disparar un espectromisil rompevientos que inflige <anemo>Daño Anemo en el AdE</anemo> de naturaleza noctámbula. Tras ello, el espectromisil se divide en 6 espectrobalas que atacan a los enemigos cercanos.",
+      "1": "<br/>",
+      "2": "<strong>Espectrobalas</strong>",
+      "3": [
+        "Infligen <anemo>Daño Anemo</anemo> de naturaleza noctámbula.",
+        "Por cada personaje <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> o <electro>Electro</electro> que haya en el equipo, 2 espectrobalas se convertirán al azar en espectrobalas rutilantes del tipo elemental correspondiente, e infligirán daño del elemento en cuestión de naturaleza noctámbula."
+      ],
+      "4": "<br/>",
+      "5": "<i>Nadie puede escapar de los murmullos de la noche y la luz de la luna, igual que ningún enemigo puede escapar de ella cuando fija su mirada en ellos.</i>"
+    },
+    "skillParams": {
+      "0": "Daño de espectromisil rompevientos",
+      "1": "Daño de espectrobala",
+      "2": "Daño de espectrobala rutilante",
+      "3": "TdE",
+      "4": "Energía Elemental",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Truco balístico",
+    "description": {
+      "0": "Mientras se carga el <strong>multiapuntamiento</strong> de la Habilidad Elemental, <strong>Riendas persiguesombras</strong>, si en el equipo hay personajes cuyos tipos elementales cumplan con los requisitos necesarios para que se produzca un cambio elemental, se obtienen los siguientes efectos:",
+      "1": [
+        "Hay un 33.3/67.7/100% de probabilidad de activar el efecto de “conversión espiritual” por cada elemento distinto que cumpla con los requisitos del cambio elemental, de manera que la tercera <strong>bala persiguesombras</strong> que se recargue en el rifle se convertirá en una <strong>brillobala persiguesombras</strong> del elemento correspondiente.",
+        "Por cada elemento, Chasca obtiene 1 carga del efecto “espíritu brillosombra”, el cual aumenta en un 15/35/65% el daño que inflige la brillobala persiguesombras. Este efecto dura hasta que termine la duración del multiapuntamiento y se puede acumular hasta 3 veces."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Voluntad protectora",
+    "description": {
+      "0": "Cuando un personaje cercano del equipo causa una explosión noctámbula, Chasca disparará una devastabala persiguesombras a un enemigo cercano, la cual inflige <anemo>Daño Anemo</anemo> de naturaleza noctámbula en una cantidad equivalente al 150% de la <strong>bala persiguesombras</strong> de la Habilidad Elemental, <strong>Riendas persiguesombras</strong>. Si en el equipo hay algún personaje <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> o <electro>Electro</electro>, la devastabala persiguesombras sufrirá un cambio elemental e infligirá daño del elemento en cuestión de naturaleza noctámbula en una cantidad equivalente al 150% de las brillobalas persiguesombras de la Habilidad Elemental, <strong>Riendas persiguesombras</strong>.",
+      "1": "El daño infligido de esta manera se considera daño de Ataque Cargado."
+    }
+  },
+  "passive3": {
+    "name": "Gracia de la noche: Fervor inextinguible",
+    "description": {
+      "0": "Cuando no tenga más pts. de noctambulismo, Chasca consumirá flogisto para conservar la bendición noctámbula.",
+      "1": "Si se encuentra en una zona con alguna mecánica de flogisto de Natlan, podrá utilizar “Transmisión noctambular: Chasca”. Cuando el personaje en uso esté en el aire, al cambiar a Chasca, esta entrará en estado de bendición noctámbula y obtendrá 32 pts. de noctambulismo. Tu equipo solo puede activar Transmisión noctambular una vez cada 10 s."
+    }
+  },
+  "passive": {
+    "name": "Sentido mediador",
+    "description": {
+      "0": "Cuando tus personajes del equipo derrotan a un enemigo, recuperan 25 pts. de flogisto. Este efecto solo se puede activar una vez cada 12 s.",
+      "1": "No se activará en dominios, Dominios de la cruzada o en la Espiral del Abismo."
+    }
+  },
+  "constellation1": {
+    "name": "Cargador: Ruleta perpetua",
+    "description": {
+      "0": "Al activarse la conversión espiritual del talento pasivo “Truco balístico”, la segunda <strong>bala persiguesombras</strong> que se recargue en el rifle también se convertirá en una <strong>brillobala persiguesombras</strong>.",
+      "1": "Si en el equipo hay personajes cuyos tipos elementales cumplan con los requisitos necesarios para que se produzca un cambio elemental, la probabilidad de que se active la conversión espiritual aumenta en un 33.3%, hasta un máximo de un 100%.",
+      "2": "<br/>",
+      "3": "Es necesario desbloquear el talento pasivo “Truco balístico”.",
+      "4": "Además, reduce en un 30% el coste de pts. de noctambulismo y de flogisto de la bendición noctámbula de Chasca cuando no está en combate."
+    }
+  },
+  "constellation2": {
+    "name": "Cañón: Humo ardiente",
+    "description": {
+      "0": "Cuando Chasca entra en el campo de batalla, obtiene 1 carga del efecto espíritu brillosombra del talento pasivo “Truco balístico”. Para que se active este efecto, es necesario desbloquear el talento pasivo “Truco balístico”.",
+      "1": "Además, al usar el <strong>multiapuntamiento</strong> de la Habilidad Elemental, <strong>Riendas persiguesombras</strong>, cuando Chasca golpee a un enemigo con una <strong>brillobala persiguesombras</strong>, infligirá Daño en el AdE del elemento correspondiente en una cantidad equivalente al 400% de su ATQ según el tipo elemental de la <strong>brillobala persiguesombras</strong>. Este daño se considera Daño de Ataque Cargado, y este efecto solo se puede activar una vez por cada <strong>multiapuntamiento</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Cuerdas: Control meticuloso",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Riendas persiguesombras</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Chispa: Disparo fugaz",
+    "description": {
+      "0": "Al golpear al enemigo con las <strong>espectrobalas rutilantes</strong> de la Habilidad Definitiva, <strong>Asalto espectral</strong>, Chasca recupera 1.5 pts. de Energía Elemental e inflige Daño en el AdE del elemento correspondiente en una cantidad equivalente al 400% de su ATQ según el tipo elemental de las <strong>espectrobalas rutilantes</strong>. Este daño se considera daño de Ataque Cargado.",
+      "1": "Este efecto que inflige Daño en el AdE del elemento correspondiente solo se puede activar una vez por cada vez que se use <strong>Asalto espectral</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Ala: Silueta sombrarena",
+    "description": {
+      "0": "Aumenta el nivel de habilidad de <strong>Asalto espectral</strong> +3.",
+      "1": "Puede ser aumentado hasta Niv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Contienda: Honor de la batalla",
+    "description": {
+      "0": "Reduce el tiempo de carga necesario para que Chasca ejecute el <strong>multiapuntamiento</strong>. Además, tras activar la conversión espiritual del talento pasivo “Truco balístico”, Chasca entra en el estado de “asalto letal”, de manera que durante los siguientes 3 s, la próxima vez que use el <strong>multiapuntamiento</strong> de la Habilidad Elemental, <strong>Riendas persiguesombras</strong>, el disparo se cargará inmediatamente y aumentará en un 120% el Daño CRIT de las <strong>balas persiguesombras</strong> y las <strong>brillobalas persiguesombras</strong> de dicho <strong>multiapuntamiento</strong>. El efecto de asalto letal solo se puede obtener una vez cada 3 s.",
+      "1": "<br/>",
+      "2": "Para que se activen estos efectos, es necesario desbloquear el talento pasivo “Truco balístico”."
+    }
+  }
+}

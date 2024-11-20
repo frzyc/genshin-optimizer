@@ -1,0 +1,24 @@
+{
+  "name": "Plumage cramoisi du vautour astral",
+  "description": {
+    "0": "Ancien arc long surmonté de plumes rouges, cette relique sacrée du Clan des fleurplumes a été transmise de génération en génération."
+  },
+  "passiveName": "Halo lunaire aperçu",
+  "passiveDescription": {
+    "0": {
+      "0": "Après avoir déclenché une réaction de Dispersion, l'ATQ augmente de <cryo>24 %</cryo> pendant 12 s. De plus, lorsque l'équipe contient 1/2+ personnages d'un type élémentaire différent de celui du personnage équipé de l'arme, les DGT infligés par les attaques chargées de ce dernier augmentent de <cryo>20 %/48 %</cryo> et les ceux infligés par ses déchaînements élémentaires de <cryo>10 %/24 %</cryo>."
+    },
+    "1": {
+      "0": "Après avoir déclenché une réaction de Dispersion, l'ATQ augmente de <cryo>30 %</cryo> pendant 12 s. De plus, lorsque l'équipe contient 1/2+ personnages d'un type élémentaire différent de celui du personnage équipé de l'arme, les DGT infligés par les attaques chargées de ce dernier augmentent de <cryo>25 %/60 %</cryo> et les ceux infligés par ses déchaînements élémentaires de <cryo>12,5 %/30 %</cryo>."
+    },
+    "2": {
+      "0": "Après avoir déclenché une réaction de Dispersion, l'ATQ augmente de <cryo>36 %</cryo> pendant 12 s. De plus, lorsque l'équipe contient 1/2+ personnages d'un type élémentaire différent de celui du personnage équipé de l'arme, les DGT infligés par les attaques chargées de ce dernier augmentent de <cryo>30 %/72 %</cryo> et les ceux infligés par ses déchaînements élémentaires de <cryo>15 %/36 %</cryo>."
+    },
+    "3": {
+      "0": "Après avoir déclenché une réaction de Dispersion, l'ATQ augmente de <cryo>42 %</cryo> pendant 12 s. De plus, lorsque l'équipe contient 1/2+ personnages d'un type élémentaire différent de celui du personnage équipé de l'arme, les DGT infligés par les attaques chargées de ce dernier augmentent de <cryo>35 %/84 %</cryo> et les ceux infligés par ses déchaînements élémentaires de <cryo>17,5 %/42 %</cryo>."
+    },
+    "4": {
+      "0": "Après avoir déclenché une réaction de Dispersion, l'ATQ augmente de <cryo>48 %</cryo> pendant 12 s. De plus, lorsque l'équipe contient 1/2+ personnages d'un type élémentaire différent de celui du personnage équipé de l'arme, les DGT infligés par les attaques chargées de ce dernier augmentent de <cryo>40 %/96 %</cryo> et les ceux infligés par ses déchaînements élémentaires de <cryo>20 %/48 %</cryo>."
+    }
+  }
+}

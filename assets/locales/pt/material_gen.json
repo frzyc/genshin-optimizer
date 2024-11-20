@@ -212,6 +212,9 @@
   "FestiveFervor": {
     "name": "Fervor Festivo"
   },
+  "IncenseAshcrystals": {
+    "name": "Cristais de Incenso"
+  },
   "Primogem": {
     "name": "Gema Essencial"
   },
@@ -289,6 +292,12 @@
   },
   "ChildrenOfEchoesReputationEXP": {
     "name": "EXP de Reputação dos \"Filhos dos Ecos\""
+  },
+  "FlowerFeatherClanReputationEXP": {
+    "name": "EXP de Reputação do Clã das Plumas de Flores"
+  },
+  "MastersOfTheNightWindReputationEXP": {
+    "name": "EXP de Reputação dos Mestres do Vento Noturno"
   },
   "MemoryOfEternalFlames": {
     "name": "Lembrança das Chamas Eternas"
@@ -977,6 +986,12 @@
   "Xilonen": {
     "name": "Xilonen"
   },
+  "Chasca": {
+    "name": "Chasca"
+  },
+  "Ororon": {
+    "name": "Ororon"
+  },
   "KachinasStellaFortuna": {
     "name": "Stella Fortuna de Kachina"
   },
@@ -988,6 +1003,12 @@
   },
   "XilonensStellaFortuna": {
     "name": "Stella Fortuna de Xilonen"
+  },
+  "ChascasStellaFortuna": {
+    "name": "Stella Fortuna de Chasca"
+  },
+  "OroronsStellaFortuna": {
+    "name": "Stella Fortuna de Ororon"
   },
   "Apple": {
     "name": "Maçã"
@@ -3400,6 +3421,12 @@
   },
   "EmbercoreFlower": {
     "name": "Flor Núcleo de Brasas"
+  },
+  "GlowingHornshroom": {
+    "name": "Cogumelo Brilhante"
+  },
+  "WitheringPurpurbloom": {
+    "name": "Flor Púrpura Definhada"
   },
   "BirchWood": {
     "name": "Vidoeiro"
@@ -7256,13 +7283,13 @@
   "DeliciousTatacos": {
     "name": "Tatacos Deliciosos"
   },
-  "SuspiciousSourSauceKipper": {
+  "SuspiciousSourSauceCeviche": {
     "name": "Ceviche Estranho"
   },
-  "SourSauceKipper": {
+  "SourSauceCeviche": {
     "name": "Ceviche"
   },
-  "DeliciousSourSauceKipper": {
+  "DeliciousSourSauceCeviche": {
     "name": "Ceviche Delicioso"
   },
   "SuspiciousChocolate": {
@@ -7375,6 +7402,57 @@
   },
   "FruitFlavoredMilkCandies": {
     "name": "Balas de Leite com Sabor de Frutas"
+  },
+  "SuspiciousSurfTurfAndPerch": {
+    "name": "Montanhas, Oceano e Céu Estranho"
+  },
+  "SurfTurfAndPerch": {
+    "name": "Montanhas, Oceano e Céu"
+  },
+  "DeliciousSurfTurfAndPerch": {
+    "name": "Montanhas, Oceano e Céu Delicioso"
+  },
+  "SuspiciousVolcanoCake": {
+    "name": "Bolo Vulcão Estranho"
+  },
+  "VolcanoCake": {
+    "name": "Bolo Vulcão"
+  },
+  "DeliciousVolcanoCake": {
+    "name": "Bolo Vulcão Delicioso"
+  },
+  "SuspiciousGrainfruitWrap": {
+    "name": "Pamonha de Frutogrão Estranha"
+  },
+  "GrainfruitWrap": {
+    "name": "Pamonha de Frutogrão"
+  },
+  "DeliciousGrainfruitWrap": {
+    "name": "Pamonha de Frutogrão Deliciosa"
+  },
+  "SuspiciousMystiqueSoup": {
+    "name": "Sopa Fascinante Estranha"
+  },
+  "MystiqueSoup": {
+    "name": "Sopa Fascinante"
+  },
+  "DeliciousMystiqueSoup": {
+    "name": "Sopa Fascinante Deliciosa"
+  },
+  "SuspiciousSingYourHeartOut": {
+    "name": "Canto com Alegria Estranho"
+  },
+  "SingYourHeartOut": {
+    "name": "Canto com Alegria"
+  },
+  "DeliciousSingYourHeartOut": {
+    "name": "Canto com Alegria Delicioso"
+  },
+  "HoneyGlazedCeviche": {
+    "name": "Arenque Glaceado com Mel"
+  },
+  "MomentOfRespite": {
+    "name": "Momento de Descanso"
   },
   "RecipeItem": {
     "name": "Ingredientes"
@@ -7994,7 +8072,7 @@
   "RecipeTatacos": {
     "name": "Receita: Tatacos"
   },
-  "RecipeSourSauceKipper": {
+  "RecipeSourSauceCeviche": {
     "name": "Receita: Ceviche"
   },
   "RecipeChocolate": {
@@ -8029,6 +8107,21 @@
   },
   "RecipeXocoatl": {
     "name": "Receita: Xocoatl"
+  },
+  "RecipeSurfTurfAndPerch": {
+    "name": "Receita: Montanhas, Oceano e Céu"
+  },
+  "RecipeVolcanoCake": {
+    "name": "Receita: Bolo Vulcão"
+  },
+  "RecipeGrainfruitWrap": {
+    "name": "Receita: Pamonha de Frutogrão"
+  },
+  "RecipeMystiqueSoup": {
+    "name": "Receita: Sopa Fascinante"
+  },
+  "RecipeSingYourHeartOut": {
+    "name": "Receita: Canto com Alegria"
   },
   "CraftedItems": {
     "name": "Produtos Combinados"
@@ -8152,6 +8245,12 @@
   },
   "StrengthTonic": {
     "name": "Água Forte"
+  },
+  "SpinelgrainBait": {
+    "name": "Isca de Fruta Cristal-Espinho"
+  },
+  "EmberglowBait": {
+    "name": "Isca Brilhabrasa"
   },
   "PrimordialEssence": {
     "name": "Hipóstase"
@@ -8498,6 +8597,15 @@
   "HeartOfTheSecretSource": {
     "name": "Coração da Fonte Secreta"
   },
+  "RefractiveBud": {
+    "name": "Broto Refratante"
+  },
+  "BewilderingBroadleaf": {
+    "name": "Folha Desconcertante"
+  },
+  "IllusoryLeafcoil": {
+    "name": "Folha Ilusória"
+  },
   "HurricaneSeed": {
     "name": "Semente de Furacão"
   },
@@ -8695,6 +8803,9 @@
   },
   "GoldInscribedSecretSourceCore": {
     "name": "Núcleo da Fonte Secreta com Inscrição Dourada"
+  },
+  "EnsnaringGaze": {
+    "name": "Olhar Emaranhador"
   },
   "TileOfDecarabiansTower": {
     "name": "Fragmento de Azulejo de Decarabian"
@@ -10955,6 +11066,27 @@
   "GroupPhotoFromAnUnknownTime": {
     "name": "Foto em Grupo de um Tempo Desconhecido"
   },
+  "ArtisansMemoII": {
+    "name": "Notas do Artesão II"
+  },
+  "HolySovereignsNotesI": {
+    "name": "Anotações do Soberano Sagrado I"
+  },
+  "HolySovereignsNotesII": {
+    "name": "Anotações do Soberano Sagrado II"
+  },
+  "HolySovereignsNotesIII": {
+    "name": "Anotações do Soberano Sagrado III"
+  },
+  "HolySovereignsNotesV": {
+    "name": "Anotações do Soberano Sagrado V"
+  },
+  "HolySovereignsNotesVI": {
+    "name": "Anotações do Soberano Sagrado VI"
+  },
+  "NamelessArtisansMemo": {
+    "name": "Anotações do Artesão Desconhecido"
+  },
   "RuggierosNotesII": {
     "name": "Notas de Ruggiero (II)"
   },
@@ -11051,13 +11183,22 @@
   "AncientPieceOfPaper": {
     "name": "Nota Antiga"
   },
+  "WaterRustedKey": {
+    "name": "Chave Enferrujada pela Água"
+  },
+  "AncientJadestoneFragment": {
+    "name": "Fragmento de Jade Antigo"
+  },
+  "PerfectHeartOfTheSacredDragon": {
+    "name": "Coração do Dragão Sagrado Perfeito"
+  },
   "ProductionLog": {
     "name": "Registros de Produção"
   },
   "ExperimentLog": {
     "name": "Registros de Experimentos"
   },
-  "FreshSourSauceKipper": {
+  "FreshSourSauceCeviche": {
     "name": "Ceviche Fresco"
   },
   "AGemMeantAsAGift": {
@@ -11144,6 +11285,9 @@
   "ShatteredNightJade": {
     "name": "Jade da Noite Estilhaçado"
   },
+  "AncientFlintKey": {
+    "name": "Antiga Chave de Pedra"
+  },
   "ContendingSpark": {
     "name": "Faísca da Disputa"
   },
@@ -11171,6 +11315,9 @@
   "AnelasTestimony": {
     "name": "Testemunho de Anila"
   },
+  "KeyFromABalloonPlatform": {
+    "name": "Chave de uma Plataforma de Balões"
+  },
   "FellDragonsPicturebook": {
     "name": "Livro Ilustrado do Dragão Maligno"
   },
@@ -11190,7 +11337,7 @@
     "name": "Carta Danificada"
   },
   "SlightlySquashedPackage": {
-    "name": "Pacote Fora de Forma"
+    "name": "Pacote Levemente Amassado"
   },
   "TornLetter": {
     "name": "Carta Rasgada"
@@ -11300,6 +11447,9 @@
   "TheVolcanoLordAndTheShadowPins": {
     "name": "O Lorde do Vulcão e o Prego das Sombras"
   },
+  "RustSpottedKey": {
+    "name": "Chave Coberta de Ferrugem"
+  },
   "PilgrimsChronicle": {
     "name": "Crônica do Peregrino"
   },
@@ -11308,6 +11458,12 @@
   },
   "SpankingNewCopyOfTequilTheBrave": {
     "name": "Cópia Novinha em Folha de \"Tequil, o Valente\""
+  },
+  "Pyrophosphorite": {
+    "name": "Pyrofosforita"
+  },
+  "DyeSamples": {
+    "name": "Amostra de Tinta"
   },
   "PicturesqueRecords": {
     "name": "Registros Pitorescos"
@@ -11324,11 +11480,158 @@
   "NoteLeftAtTheCamp": {
     "name": "Nota Deixada no Acampamento"
   },
+  "ANamelessAdventurersNotes": {
+    "name": "Anotações de Um Aventureiro Sem Nome"
+  },
+  "MedicineOfGreaterEfficacy": {
+    "name": "Poção Mais Eficaz"
+  },
+  "MedicineOfSuperiorTaste": {
+    "name": "Poção Mais Deliciosa"
+  },
   "ScarletPhlogistonHoneyPearl": {
     "name": "Pérola de Mel de Flogisto Carmesim"
   },
+  "AncientDiary": {
+    "name": "Diário Antigo"
+  },
+  "MagnificosMasterpiece": {
+    "name": "\"Obra-Prima\" de Magnifico"
+  },
+  "FiresOfAutumnTwilightI": {
+    "name": "Chamas do Crepúsculo de Outono I"
+  },
+  "FiresOfAutumnTwilightII": {
+    "name": "Chamas do Crepúsculo de Outono II"
+  },
+  "FiresOfAutumnTwilightIII": {
+    "name": "Chamas do Crepúsculo de Outono III"
+  },
+  "SpringsOfHiddenJadeI": {
+    "name": "Fontes de Jade Oculta I"
+  },
+  "SpringsOfHiddenJadeII": {
+    "name": "Fontes de Jade Oculta II"
+  },
+  "MtLingmengGossipI": {
+    "name": "Conversas Noturnas no Monte Lingmeng I"
+  },
+  "MtLingmengGossipII": {
+    "name": "Conversas Noturnas no Monte Lingmeng II"
+  },
+  "MtLingmengGossipIII": {
+    "name": "Conversas Noturnas no Monte Lingmeng III"
+  },
+  "TheTaleOfKuntur": {
+    "name": "A Lenda de Kuntur"
+  },
+  "MysteriousWeaponFragmentArrowRest": {
+    "name": "Fragmento de Arma Misteriosa - Descanso de Flecha"
+  },
+  "IktomiScrollMap": {
+    "name": "Pergaminho de Clarividência - Mapa"
+  },
+  "TepalsTatteredNotes": {
+    "name": "Anotações Esfarrapadas de Tepal"
+  },
+  "KeyFoundByThePaintedStoneChallengePodium": {
+    "name": "Chave Encontrada Próxima ao Pódio do \"Desafio de Arte em Pedra\""
+  },
+  "SecretArtGrilledFishInMintSauce": {
+    "name": "Arte Secreta Peixe Grelhado em Molho de Menta"
+  },
+  "PurpleObsidianFragment": {
+    "name": "Fragmento de Obsidiana Roxo"
+  },
+  "PurpleObsidianRing": {
+    "name": "Anel de Obsidiana Roxo"
+  },
+  "CrimsonObsidianFragment": {
+    "name": "Fragmento de Obsidiana Carmesim"
+  },
+  "CrimsonObsidianRing": {
+    "name": "Anel de Obsidiana Carmesim"
+  },
+  "PakpakaFlyingSchoolFlyingTournamentInvitationLetter": {
+    "name": "Carta de Convite para a Competição de Voo da Escola de Voo Pakpaka"
+  },
   "CapturedPhotos": {
     "name": "Fotos Capturadas"
+  },
+  "NearbyFlammabombWood": {
+    "name": "Madeira de Árvore Combustiva Próxima"
+  },
+  "NearbyAshenAratikuWood": {
+    "name": "Madeira de Aratiku das Cinzas Próxima"
+  },
+  "SmoothBittedKey": {
+    "name": "Chave com Entalhes Redondos"
+  },
+  "StraightBittedKey": {
+    "name": "Chave com Entalhes Retos"
+  },
+  "MessilyBittedKey": {
+    "name": "Chave com Entalhes Desordenados"
+  },
+  "SpiritcallersNotesI": {
+    "name": "Anotações da Invocadora Espiritual I"
+  },
+  "MountainRangersNotes": {
+    "name": "Notas do Patrulhador de Montanhas"
+  },
+  "NamelessPriestsNotes": {
+    "name": "Notas de um Sacerdote Sem Nome"
+  },
+  "TravelingScholarsNotes": {
+    "name": "Notas de um Estudioso Viajante"
+  },
+  "HolySovereignsNotesVII": {
+    "name": "Anotações do Soberano Sagrado VII"
+  },
+  "HolySovereignsNotesVIII": {
+    "name": "Anotações do Soberano Sagrado VIII"
+  },
+  "HolySovereignsNotesIX": {
+    "name": "Anotações do Soberano Sagrado IX"
+  },
+  "SpiritcallersNotesII": {
+    "name": "Anotações da Invocadora Espiritual II"
+  },
+  "NotesSomeoneLeftBehindI": {
+    "name": "Anotações Deixadas por Alguém I"
+  },
+  "NotesSomeoneLeftBehindII": {
+    "name": "Anotações Deixadas por Alguém II"
+  },
+  "NotesSomeoneLeftBehindIII": {
+    "name": "Anotações Deixadas por Alguém III"
+  },
+  "NotesSomeoneLeftBehindIV": {
+    "name": "Anotações Deixadas por Alguém IV"
+  },
+  "NotesSomeoneLeftBehindV": {
+    "name": "Anotações Deixadas por Alguém V"
+  },
+  "RecordkeepingSecretSourceSentinel": {
+    "name": "Sentinelas da Fonte Secreta de Arquivos"
+  },
+  "NamelessTravelersNotesI": {
+    "name": "Anotações do Viajante Sem Nome I"
+  },
+  "NamelessTravelersNotesII": {
+    "name": "Anotações do Viajante Sem Nome II"
+  },
+  "NamelessTravelersNotesIII": {
+    "name": "Anotações do Viajante Sem Nome III"
+  },
+  "NamelessTravelersNotesIV": {
+    "name": "Anotações do Viajante Sem Nome IV"
+  },
+  "NamelessTravelersNotesV": {
+    "name": "Anotações do Viajante Sem Nome V"
+  },
+  "PlaceOfTheTrialOfDisembodimentMessage": {
+    "name": "Mensagem do Local do Julgamento da Alma"
   },
   "TearsAmongTheStars": {
     "name": "Lágrima das Estrelas"
@@ -11441,6 +11744,9 @@
   "SprayfeatherGillSeed": {
     "name": "Semente de Guelra da Espuma"
   },
+  "GlowingHornshroomSeed": {
+    "name": "Semente de Cogumelo Brilhante"
+  },
   "Medaka": {
     "name": "Medaka"
   },
@@ -11552,6 +11858,27 @@
   "JadeHeartfeatherBass": {
     "name": "Peixe Pluma do Coração de Jade"
   },
+  "FloralRapidfightingFish": {
+    "name": "Peixe Veloz Lutador Florido"
+  },
+  "DivingRapidfightingFish": {
+    "name": "Peixe Veloz Lutador Mergulhador"
+  },
+  "MagmaRapidfightingFish": {
+    "name": "Peixe Veloz Lutador do Magma"
+  },
+  "GreenwaveSunfish": {
+    "name": "Peixe Solar da Onda Verde"
+  },
+  "DuskSunfish": {
+    "name": "Peixe Solar do Crepúsculo"
+  },
+  "PhonyPhlogistonUnihornfish": {
+    "name": "Peixe Chifrado Pseudoflogístico"
+  },
+  "PseudosharkUnihornfish": {
+    "name": "Peixe Chifrado Pseudotubarão"
+  },
   "WingsOfFirstFlight": {
     "name": "Planador de Iniciante"
   },
@@ -11596,6 +11923,9 @@
   },
   "WingsOfSoaringFlame": {
     "name": "Asas das Chamas Ascendentes"
+  },
+  "WingsOfFatesCourseIntertwined": {
+    "name": "Asas do Entrelaçamento Predestinado"
   },
   "RadiantSpincrystal1": {
     "name": "Cristal Rodopiante Radiante 1"
@@ -12065,6 +12395,27 @@
   "RadiantSpincrystal140": {
     "name": "Cristal Rodopiante Radiante 140"
   },
+  "RadiantSpincrystal141": {
+    "name": "Cristal Rodopiante Radiante 141"
+  },
+  "RadiantSpincrystal142": {
+    "name": "Cristal Rodopiante Radiante 142"
+  },
+  "RadiantSpincrystal143": {
+    "name": "Cristal Rodopiante Radiante 143"
+  },
+  "RadiantSpincrystal144": {
+    "name": "Cristal Rodopiante Radiante 144"
+  },
+  "RadiantSpincrystal145": {
+    "name": "Cristal Rodopiante Radiante 145"
+  },
+  "RadiantSpincrystal146": {
+    "name": "Cristal Rodopiante Radiante 146"
+  },
+  "RadiantSpincrystal147": {
+    "name": "Cristal Rodopiante Radiante 147"
+  },
   "LanternFiber": {
     "name": "Fibra de Lanterna"
   },
@@ -12142,6 +12493,9 @@
   },
   "TheSeasSilentShade": {
     "name": "\"Sombra Silenciosa do Mar\""
+  },
+  "ShuttleOfOdara": {
+    "name": "Transporte de Odara"
   },
   "FalconsDance": {
     "name": "Dança do Falcão"
@@ -12289,6 +12643,9 @@
   },
   "Wavepiercer": {
     "name": "Lança Perfuradora das Ondas"
+  },
+  "FlowhornFlounderfinder": {
+    "name": "Chifres Longos e Corpo Achatado"
   },
   "GenshinImpactANewWorld": {
     "name": "Genshin Impact - Um Novo Mundo"
@@ -12938,6 +13295,21 @@
   "TravelNotesSabzeruz": {
     "name": "Passe de Batalha: Nascimento Divino"
   },
+  "ChascaFullyLoaded": {
+    "name": "Chasca: Carga Máxima"
+  },
+  "OroronNightshade": {
+    "name": "Ororon: Beladona"
+  },
+  "NatlanFleetingDreams": {
+    "name": "Natlan: Sonhos Passageiros"
+  },
+  "AchievementFightingSpirit": {
+    "name": "Conquista: Espírito de Luta"
+  },
+  "TravelNotesSpiritweaver": {
+    "name": "Passe de Batalha: Tear Espiritual"
+  },
   "EchoDandelionKnight": {
     "name": "Eco: Cavaleira de Dandelion"
   },
@@ -13385,6 +13757,12 @@
   "DiagramPyroTreasureCompass": {
     "name": "Diagrama: Bússola de Tesouros Pyro"
   },
+  "FormulaSpinelgrainBait": {
+    "name": "Fórmula: Isca de Fruta Cristal-Espinho"
+  },
+  "RecipeEmberglowBait": {
+    "name": "Receita: Isca Brilhabrasa"
+  },
   "SilkenPrint": {
     "name": "Selo de Seda"
   },
@@ -13487,6 +13865,24 @@
   "AllGreenAndGoodToGo": {
     "name": "Pronto para o Ataque"
   },
+  "RefinedCountenance": {
+    "name": "Aparência Elegante"
+  },
+  "NoiseFiltering": {
+    "name": "Filtragem de Ruído"
+  },
+  "PerfectPartner": {
+    "name": "Parceria Perfeita"
+  },
+  "HappyTimes": {
+    "name": "Tempos de Alegria"
+  },
+  "DeepContemplation": {
+    "name": "Refletindo Profundamente"
+  },
+  "ThesisProgression": {
+    "name": "Progresso da Tese"
+  },
   "RhodeiaOfLoch": {
     "name": "Oceanids - Rhodeia"
   },
@@ -13567,6 +13963,9 @@
   },
   "EremiteFloralRingDancer": {
     "name": "Eremita Dançarina Floral"
+  },
+  "GoldenWolflord": {
+    "name": "Rei Canino Dourado"
   },
   "UndividedHeart": {
     "name": "Com Todo Coração"
@@ -13871,6 +14270,15 @@
   "SpiritSerpentsSwirl": {
     "name": "Turbilhão da Serpente Espiritual"
   },
+  "DivineRetribution": {
+    "name": "Julgamento Divino"
+  },
+  "RequiresAppropriateRest": {
+    "name": "É Preciso Descansar Adequadamente"
+  },
+  "BeastlyCorrosion": {
+    "name": "Corrosão Bestial"
+  },
   "MagicGuide": {
     "name": "Guia de Magia"
   },
@@ -14141,6 +14549,15 @@
   "Tepetlisaurus": {
     "name": "Tepetlissauro"
   },
+  "FlowingPurity": {
+    "name": "Fluxo da Pureza"
+  },
+  "MaidensFadingBeauty": {
+    "name": "Beleza Desvanecida da Donzela"
+  },
+  "Iktomisaurus": {
+    "name": "Iktomissauro"
+  },
   "LiyueHarborWharf": {
     "name": "Porto de Liyue"
   },
@@ -14296,6 +14713,9 @@
   },
   "StageTepetl": {
     "name": "Palco Telpochtli"
+  },
+  "ScionsOfTheCanopy": {
+    "name": "Descendentes das Copas"
   },
   "ElementalResonanceWovenIce": {
     "name": "Ressonância Elemental: Entrelaçamento Cryo"
@@ -14488,6 +14908,9 @@
   },
   "EremiteTeatime": {
     "name": "Hora do Chá Eremita"
+  },
+  "UltimateSurfingBuddy": {
+    "name": "Melhor Parceiro de Surfe!"
   },
   "Origin": {
     "name": "Primordial"
@@ -15064,6 +15487,15 @@
   },
   "WhiteChestnutOakWoodTwilightFloorLamp": {
     "name": "Abajur \"Crepúsculo\" de Madeira de Carvalho Branco"
+  },
+  "PhlogistonStreetLampTheRoadAhead": {
+    "name": "Lanterna de Rua de Flogisto \"A Estrada à Frente\""
+  },
+  "PhlogistonStreetLampThreefold": {
+    "name": "Lanterna de Rua de Flogisto \"Triplo\""
+  },
+  "PhlogistonFloorLampHomecoming": {
+    "name": "Luminária de Flogisto \"Caminho para Casa\""
   },
   "EfflorescentIllumination": {
     "name": "Luz Floral"
@@ -16655,6 +17087,30 @@
   "HotSpringRetreatTopChoice": {
     "name": "Retiro das Termas: Excelente Escolha"
   },
+  "NightWindArchitectureNeedsOfExchange": {
+    "name": "Arquitetura do Vento Noturno - \"Requisitos de Passagem\""
+  },
+  "NightWindArchitectureArcaneFoundation": {
+    "name": "Arquitetura do Vento Noturno - \"Fundação Arcana\""
+  },
+  "NightWindArchitectureMundaneWay": {
+    "name": "Arquitetura do Vento Noturno - \"O Caminho da Natureza\""
+  },
+  "FlowerFeatherResidenceChasingTriviality": {
+    "name": "Residência das Plumas de Flores - \"Busca da Sutileza\""
+  },
+  "FlowerFeatherResidenceLogicOfFlight": {
+    "name": "Residência das Plumas de Flores - \"Lógica do Voo\""
+  },
+  "SimpleFlowerFeatherHouseFallbackMeasures": {
+    "name": "Casa das Plumas de Flores Simples - \"Medidas de Reserva\""
+  },
+  "FlowerFeatherStableSauriansRepose": {
+    "name": "Estrebaria Pluma de Flores - \"Descanso Sauriano\""
+  },
+  "AshenAratikuWoodGiantClawPlatform": {
+    "name": "Plataforma de \"Garra Gigante\" de Madeira de Aratiku das Cinzas"
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Fonte com Pássaros e Flores"
   },
@@ -16768,6 +17224,12 @@
   },
   "EvenHandedJudgment": {
     "name": "\"Julgamento e Punição\""
+  },
+  "DawnOfFlight": {
+    "name": "\"O Começo do Voo\""
+  },
+  "FlowerFeatherClanWarningBalloon": {
+    "name": "Balão de \"Aviso\" do Clã das Plumas de Flores"
   },
   "AdeptusGate": {
     "name": "Portão do Adeptus"
@@ -16942,6 +17404,9 @@
   },
   "ValleyStoneStepsFoundationStone": {
     "name": "Piso de Pedra do Vale: Rocha da Fundação"
+  },
+  "AshenAratikuWoodMinimalistStaircase": {
+    "name": "Escada \"Minimalista\" de Madeira de Aratiku das Cinzas"
   },
   "FoundationsOfStoneFortunateTimes": {
     "name": "Fundações de Pedra: Fortuna e Tranquilidade"
@@ -17197,6 +17662,9 @@
   },
   "SalubriousFragrance": {
     "name": "\"Fragrância Curadora\""
+  },
+  "SolidRoots": {
+    "name": "\"Raízes Sólidas\""
   },
   "FirShelves": {
     "name": "Prateleiras de Abeto"
@@ -17582,6 +18050,15 @@
   "FlagOfHuitztlan": {
     "name": "\"Bandeira de Huitztlan\""
   },
+  "TailPouchOfTheMountainWind": {
+    "name": "\"Sacola do Vento da Montanha\""
+  },
+  "EndlessAspiration": {
+    "name": "\"Aspiração Infinita\""
+  },
+  "TlalocansDrawing": {
+    "name": "\"Desenho de Tlalocan\""
+  },
   "BookshelfFreeReading": {
     "name": "Prateleira de Livros: Leitura Livre"
   },
@@ -17606,6 +18083,9 @@
   "ShadedClarity": {
     "name": "Claridade Sombreada"
   },
+  "MoltenLavaPool": {
+    "name": "\"Piscina de Lava Derretida\""
+  },
   "TeaHarvestsStockpilingAndTransport": {
     "name": "Armazenamento e Transporte da Colheita de Chá"
   },
@@ -17626,6 +18106,33 @@
   },
   "ModelContraptionStandardMusicalMode": {
     "name": "Modelo Mecânico: Modo Musical Padrão"
+  },
+  "ClairvoyanceModelSpiritloom": {
+    "name": "Modelo de Clarividência - \"Tear Espiritual\""
+  },
+  "ClairvoyanceModelProjectionCenser": {
+    "name": "Modelo de Clarividência - \"Incensário de Projeção\""
+  },
+  "TheSilentMeditator": {
+    "name": "\"O Meditador Silencioso\""
+  },
+  "RopeBoundMultiPurposeBarrel": {
+    "name": "Barril Multifuncional de Cordas"
+  },
+  "VesselOfPurificationAndCalm": {
+    "name": "\"Recipiente da Purificação e da Calma\""
+  },
+  "SpiritualityAndSealing": {
+    "name": "\"Espiritualidade e Selamento\""
+  },
+  "OurPath": {
+    "name": "\"Nosso Caminho\""
+  },
+  "FamishedThoughts": {
+    "name": "\"Pensamentos Famintos\""
+  },
+  "FixedTorchPursuitOfVictory": {
+    "name": "Tocha Fixa \"Busca da Vitória\""
   },
   "WeatheredBambooFence": {
     "name": "Cerca de Bambu Desgastada"
@@ -17695,6 +18202,9 @@
   },
   "BalustradeOfTheSprings": {
     "name": "\"Balaustrada das Fontes Termais\""
+  },
+  "TetherAtTheSummitOfQuahuacanCliff": {
+    "name": "\"Talabarte no Pico do Precipício Quahuacan\""
   },
   "SmoothWoodenBench": {
     "name": "Banco de Madeira Liso"
@@ -17875,5 +18385,17 @@
   },
   "WayToTheExtreme": {
     "name": "\"Caminho ao Radical\""
+  },
+  "TezcatepetoncoFenceSunsJourney": {
+    "name": "Cerca Tezcatepetonco - \"A Jornada do Sol\""
+  },
+  "TezcatepetoncoFencePathOfDiscovery": {
+    "name": "Cerca Tezcatepetonco - \"O Caminho da Descoberta\""
+  },
+  "WoodenTargetTrainingRegimen": {
+    "name": "Alvo de Madeira \"Plano de Treinamento\""
+  },
+  "TheEmbersOfCinderCity": {
+    "name": "\"As Cinzas da Cidade Incandescente\""
   }
 }

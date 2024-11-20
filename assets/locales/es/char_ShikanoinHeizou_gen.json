@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Concentra el poder del viento para lanzarse desde el aire y golpear el suelo, dañando a todos los enemigos cercanos e infligiendo <anemo>Daño Anemo en el AdE</anemo> en el momento del impacto."
+        "1": "Concentra el poder del viento y se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo <anemo>Daño Anemo en el AdE</anemo> en el momento del impacto."
       }
     },
     "skillParams": {

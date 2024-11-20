@@ -32,6 +32,7 @@
   "SwordOfNarzissenkreuz": "Lame du Narzissenkreuz",
   "SturdyBone": "Os robuste",
   "FluteOfEzpitzal": "Flûte d'ezpitzal",
+  "CalamityOfEshu": "La calamité d'Eshu",
   "AquilaFavonia": "Épée du faucon",
   "SkywardBlade": "Lame de la Voûte d'Azur",
   "FreedomSworn": "Serment de la liberté",
@@ -144,6 +145,7 @@
   "FlowingPurity": "Pureté fluide",
   "BalladOfTheBoundlessBlue": "Ballade d'un azur infini",
   "AshGravenDrinkingHorn": "Corne à boire cendrée",
+  "WaveridingWhirl": "Tourbillon sur les vagues",
   "RingOfYaxche": "Anneau de Yaxche",
   "SkywardAtlas": "Atlas de la Voûte d'Azur",
   "LostPrayerToTheSacredWinds": "L'origine des Quatre Vents",
@@ -187,6 +189,7 @@
   "SongOfStillness": "Chant de quiétude",
   "Cloudforged": "Nimbus-forgé",
   "RangeGauge": "Jauge de portée",
+  "FlowerWreathedFeathers": "Plumard de fleurs",
   "ChainBreaker": "Brise-chaîne",
   "SkywardHarp": "Ailes de la Voûte d'Azur",
   "AmosBow": "Arc d'Amos",
@@ -197,5 +200,6 @@
   "HuntersPath": "La voie du chasseur",
   "TheFirstGreatMagic": "La première grande magie",
   "SilvershowerHeartstrings": "Corde de pluie blanche",
+  "AstralVulturesCrimsonPlumage": "Plumage cramoisi du vautour astral",
   "QuantumCatalyst": "Quantum Cat-alyst"
 }

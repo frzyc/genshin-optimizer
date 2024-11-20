@@ -32,6 +32,7 @@
   "SwordOfNarzissenkreuz": "Меч Нарциссенкрейца",
   "SturdyBone": "Крепкая кость",
   "FluteOfEzpitzal": "Флейта Эспицаль",
+  "CalamityOfEshu": "Бедствие Эшу",
   "AquilaFavonia": "Меч Сокола",
   "SkywardBlade": "Небесный меч",
   "FreedomSworn": "Клятва свободы",
@@ -144,6 +145,7 @@
   "FlowingPurity": "Сверкание чистых вод",
   "BalladOfTheBoundlessBlue": "Песнь необъятной лазури",
   "AshGravenDrinkingHorn": "Пепельный рог",
+  "WaveridingWhirl": "Вихрь на волнах",
   "RingOfYaxche": "Кольцо Яшче",
   "SkywardAtlas": "Небесный атлас",
   "LostPrayerToTheSacredWinds": "Молитва святым ветрам",
@@ -187,6 +189,7 @@
   "SongOfStillness": "Мелодия покоя",
   "Cloudforged": "Выкованный из облаков",
   "RangeGauge": "Дальномер",
+  "FlowerWreathedFeathers": "Украшенные цветами перья",
   "ChainBreaker": "Разбивающий цепи",
   "SkywardHarp": "Небесное крыло",
   "AmosBow": "Лук Амоса",
@@ -197,5 +200,6 @@
   "HuntersPath": "Охотничья тропа",
   "TheFirstGreatMagic": "Первый великий фокус",
   "SilvershowerHeartstrings": "Сердечные струны дождя",
+  "AstralVulturesCrimsonPlumage": "Алое перо звёздного грифа",
   "QuantumCatalyst": "Quantum Cat-alyst"
 }

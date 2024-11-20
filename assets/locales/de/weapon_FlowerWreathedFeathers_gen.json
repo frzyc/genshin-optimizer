@@ -1,0 +1,24 @@
+{
+  "name": "Mit Blumen gebundene Federn",
+  "description": {
+    "0": "Ein Langbogen, der aussieht, als würde er brennen. Die Federn, die ihn schmücken, sollen von dem alten Tyrannen Ngoubou stammen."
+  },
+  "passiveName": "Unerreichbarer Blütenstand",
+  "passiveDescription": {
+    "0": {
+      "0": "Verringert die beim Gleiten verbrauchte Ausdauer um 15 %. Erhöht den mit heftigen Schlägen verursachten Schaden beim gezielten Schuss alle 0,5 s um <cryo>6 %</cryo>, 6-fach stapelbar. Dieser Effekt wird 10 s, nachdem die Figur nicht mehr im Zielmodus ist, entfernt."
+    },
+    "1": {
+      "0": "Verringert die beim Gleiten verbrauchte Ausdauer um 15 %. Erhöht den mit heftigen Schlägen verursachten Schaden beim gezielten Schuss alle 0,5 s um <cryo>7,5 %</cryo>, 6-fach stapelbar. Dieser Effekt wird 10 s, nachdem die Figur nicht mehr im Zielmodus ist, entfernt."
+    },
+    "2": {
+      "0": "Verringert die beim Gleiten verbrauchte Ausdauer um 15 %. Erhöht den mit heftigen Schlägen verursachten Schaden beim gezielten Schuss alle 0,5 s um <cryo>9 %</cryo>, 6-fach stapelbar. Dieser Effekt wird 10 s, nachdem die Figur nicht mehr im Zielmodus ist, entfernt."
+    },
+    "3": {
+      "0": "Verringert die beim Gleiten verbrauchte Ausdauer um 15 %. Erhöht den mit heftigen Schlägen verursachten Schaden beim gezielten Schuss alle 0,5 s um <cryo>10,5 %</cryo>, 6-fach stapelbar. Dieser Effekt wird 10 s, nachdem die Figur nicht mehr im Zielmodus ist, entfernt."
+    },
+    "4": {
+      "0": "Verringert die beim Gleiten verbrauchte Ausdauer um 15 %. Erhöht den mit heftigen Schlägen verursachten Schaden beim gezielten Schuss alle 0,5 s um <cryo>12 %</cryo>, 6-fach stapelbar. Dieser Effekt wird 10 s, nachdem die Figur nicht mehr im Zielmodus ist, entfernt."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Astral Vulture's Crimson Plumage",
+  "description": {
+    "0": "An ancient longbow crested with red feathers, a sacred relic of the Flower-Feather Clan that has been passed down from generation to generation."
+  },
+  "passiveName": "The Moonring Sighted",
+  "passiveDescription": {
+    "0": {
+      "0": "For 12s after triggering a Swirl reaction, ATK increases by <cryo>24%</cryo>. In addition, when 1/2 or more characters in the party are of a different Elemental Type from the equipping character, the DMG dealt by the equipping character's Charged Attacks is increased by <cryo>20%/48%</cryo> and Elemental Burst DMG dealt is increased by <cryo>10%/24%</cryo>."
+    },
+    "1": {
+      "0": "For 12s after triggering a Swirl reaction, ATK increases by <cryo>30%</cryo>. In addition, when 1/2 or more characters in the party are of a different Elemental Type from the equipping character, the DMG dealt by the equipping character's Charged Attacks is increased by <cryo>25%/60%</cryo> and Elemental Burst DMG dealt is increased by <cryo>12.5%/30%</cryo>."
+    },
+    "2": {
+      "0": "For 12s after triggering a Swirl reaction, ATK increases by <cryo>36%</cryo>. In addition, when 1/2 or more characters in the party are of a different Elemental Type from the equipping character, the DMG dealt by the equipping character's Charged Attacks is increased by <cryo>30%/72%</cryo> and Elemental Burst DMG dealt is increased by <cryo>15%/36%</cryo>."
+    },
+    "3": {
+      "0": "For 12s after triggering a Swirl reaction, ATK increases by <cryo>42%</cryo>. In addition, when 1/2 or more characters in the party are of a different Elemental Type from the equipping character, the DMG dealt by the equipping character's Charged Attacks is increased by <cryo>35%/84%</cryo> and Elemental Burst DMG dealt is increased by <cryo>17.5%/42%</cryo>."
+    },
+    "4": {
+      "0": "For 12s after triggering a Swirl reaction, ATK increases by <cryo>48%</cryo>. In addition, when 1/2 or more characters in the party are of a different Elemental Type from the equipping character, the DMG dealt by the equipping character's Charged Attacks is increased by <cryo>40%/96%</cryo> and Elemental Burst DMG dealt is increased by <cryo>20%/48%</cryo>."
+    }
+  }
+}

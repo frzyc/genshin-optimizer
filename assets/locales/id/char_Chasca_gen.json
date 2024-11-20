@@ -1,0 +1,200 @@
+{
+  "name": "Chasca",
+  "title": "Skyborne Arbiter",
+  "description": "\"Penengah\" Tlalocan yang sudah berhasil mengakhiri perselisihan yang tak terhitung jumlahnya.",
+  "constellationName": "Vultur Gryphus",
+  "auto": {
+    "name": "Phantom Feather Flurry",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan hingga 4 tembakan panah berturut-turut menggunakan busur."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Melancarkan sebuah <strong>Serangan Membidik</strong> yang lebih akurat untuk mengakibatkan DMG yang lebih besar.",
+        "2": "Saat membidik, angin kuat akan berkumpul di ujung anak panah. Panah dengan angin kuat yang terkumpul penuh akan mengakibatkan <anemo>Anemo DMG</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Melancarkan hujan panah dari udara, menerjang tanah dengan kecepatan tinggi, menyerang musuh di jalur terjangan, dan mengakibatkan DMG Area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Membidik",
+      "5": "DMG Membidik Penuh",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Spirit Reins, Shadow Hunt",
+    "description": {
+      "0": "Chasca beresonansi dengan kehendak yang bermukim di dalam senjatanya untuk mengakibatkan Nightsoul-aligned <anemo>Anemo DMG Area</anemo>.",
+      "1": "Setelah dilancarkan, Chasca akan mendapatkan 80 poin Nightsoul dan memasuki status Nightsoul's Blessing.",
+      "2": "<br/>",
+      "3": "<strong>Nightsoul's Blessing: Chasca</strong>",
+      "4": "Terus-menerus mengonsumsi poin Nightsoul. Saat seluruh poin Nightsoul dikonsumsi, atau saat Skill dilancarkan sekali lagi, status Nightsoul's Blessing Chasca akan berakhir. Status Nightsoul's Blessing memiliki karakteristik sebagai berikut:",
+      "5": [
+        "Chasca akan menunggangi \"Soulsniper: Ritual Staff\", meningkatkan kecepatan bergerak dan ketahanannya terhadap interupsi. Dalam kondisi ini, Chasca akan terus mengonsumsi poin Nightsoul untuk mempertahankan status melayangnya. Akan mengonsumsi poin Nightsoul tambahan saat menekan tombol Lari atau meningkatkan ketinggian.",
+        "Saat melancarkan Normal Attack atau Charged Attack, Chasca akan melancarkan \"Multitarget Fire\" dengan cara yang berbeda berdasarkan Mode Tahan atau Mode Tekan."
+      ],
+      "6": "<br/>",
+      "7": "<strong>Multitarget Fire</strong>",
+      "8": "<strong>Mode Tekan</strong>",
+      "9": "Mengakibatkan Nightsoul-aligned <anemo>Anemo DMG</anemo> terhadap musuh yang ada di depan. DMG ini akan dianggap sebagai DMG Normal Attack.",
+      "10": "<strong>Mode Tahan</strong>",
+      "11": "Memasuki status Membidik, lalu menargetkan sejumlah musuh dalam area tertentu dan mengisi hingga 6 buah Shadowhunt Shell sesuai durasi Charge-nya. Saat sudah mengisi enam peluru atau saat berhenti melakukan Charge, Chasca akan menembakkan peluru-peluru ini ke arah musuh yang ditargetkan sesuai urutan.",
+      "12": "<br/>",
+      "13": "<strong>Shadowhunt Shell</strong>",
+      "14": [
+        "Mengakibatkan Nightsoul-aligned <anemo>Anemo DMG</anemo>, DMG ini dianggap sebagai DMG Charged Attack.",
+        "Peluru Shadowhunt Shell keempat, kelima, dan keenam yang terisi akan dikonversi elemennya berdasarkan jenis elemen Karakter lain yang berada di dalam party. Untuk setiap satu Karakter berelemen <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, atau <electro>Electro</electro> di dalam party, satu Shadowhunt Shell acak akan dikonversi menjadi \"Shining Shadowhunt Shell\" dari salah satu jenis elemen yang sesuai dan mengakibatkan Nightsoul-aligned Elemental DMG dengan tipe elemen yang sesuai. DMG ini dianggap sebagai DMG Charged Attack.",
+        "Peluru \"Shadowhunt Shell\" yang diisi terakhir akan ditembakkan lebih dulu."
+      ],
+      "15": "<br/>",
+      "16": "Selain itu, saat dalam status Nightsoul's Blessing, menahan tombol Elemental Skill <strong>Spirit Reins, Shadow Hunt</strong> akan membuat Chasca melancarkan Nightsoul-aligned Plunging Attack. Saat melepaskan tombol Skill, Chasca akan menghentikan Plunging Attack-nya dan kembali melayang di udara. Jika Chasca melancarkan Plunging Attack ini hingga menyentuh tanah, maka status Nightsoul's Blessing-nya akan berakhir.",
+      "17": "<br/>",
+      "18": "<i>Secara teorinya sih, asal dia setuju, tali kekangnya bisa diikatkan ke benda apa pun. Tapi ... Memangnya ada yang lebih keren dari meriam tangan raksasa?</i>"
+    },
+    "skillParams": {
+      "0": "DMG Resonansi",
+      "1": "DMG Tekan Multitarget Fire",
+      "2": "DMG Shadowhunt Shell",
+      "3": "DMG Shining Shadowhunt Shell",
+      "4": "Batas Poin Nightsoul",
+      "5": "Cooldown",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Soul Reaper's Fatal Round",
+    "description": {
+      "0": "Chasca mengumpulkan tekadnya dan menembakkan sebuah \"Galesplitting Soulseeker Shell\" untuk mengakibatkan Nightsoul-aligned <anemo>Anemo DMG Area</anemo>. Setelah ditembakkan, Galesplitting Soulseeker Shell akan terpecah menjadi enam Soulseeker Shell yang menyerang musuh di sekitar.",
+      "1": "<br/>",
+      "2": "<strong>Soulseeker Shell</strong>",
+      "3": [
+        "Mengakibatkan Nightsoul-aligned <anemo>Anemo DMG</anemo>.",
+        "Untuk setiap satu Karakter berelemen <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, atau <electro>Electro</electro> di dalam party, dua buah Soulseeker Shell acak akan dikonversi menjadi \"Radiant Soulseeker Shell\" dengan salah satu jenis elemen yang sesuai dan mengakibatkan Nightsoul-aligned Elemental DMG dengan tipe elemen tersebut."
+      ],
+      "4": "<br/>",
+      "5": "<i>Tidak ada yang bisa selamat dari bisikan malam dan cahaya rembulan yang tak berhenti, sama layaknya tidak ada musuh yang bisa selamat dari mata tajamnya begitu terlihat olehnya.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Galesplitting Soulseeker Shell",
+      "1": "DMG Soulseeker Shell",
+      "2": "DMG Radiant Soulseeker Shell",
+      "3": "Cooldown",
+      "4": "Konsumsi Energy",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Bullet Trick",
+    "description": {
+      "0": "Saat melakukan charge <strong>Multitarget Fire</strong> dari Elemental Skill <strong>Spirit Reins, Shadow Hunt</strong>, jika di dalam party terdapat Karakter dengan jenis elemen yang memenuhi syarat konversi elemen, maka Chasca akan mendapatkan efek berikut berdasarkan jumlah jenis elemen yang berbeda:",
+      "1": [
+        "Untuk setiap jenis elemennya, ada 33,3%/66,7%/100% kemungkinan untuk memicu \"Spiritbinding Conversion\". Efek ini membuat peluru <strong>Shadowhunt Shell</strong> ketiga dikonversi menjadi <strong>Shining Shadowhunt Shell</strong> dengan salah satu jenis elemen acak yang sesuai.",
+        "Setiap jenis elemen akan memberikan satu lapis efek Spirit of the Radiant Shadow bagi Chasca, sehingga DMG yang diakibatkan Shining Shadowhunt Shell meningkat 15%/35%/65%. Efek ini berlangsung sampai Multitarget Fire kali ini berakhir, dapat ditumpuk sampai 3 lapis."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Intent to Cover",
+    "description": {
+      "0": "Saat Karakter di sekitar memicu Nightsoul Burst, Chasca akan menembakkan \"Burning Shadowhunt Shot\" terhadap musuh di sekitar, mengakibatkan Nightsoul-aligned <anemo>Anemo DMG</anemo> yang setara dengan 150% DMG <strong>Shadowhunt Shell</strong> dari Elemental Skill <strong>Spirit Reins, Shadow Hunt</strong> miliknya. Jika ada Karakter berelemen <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo>, atau <electro>Electro</electro> di dalam party, maka Burning Shadowhunt Shot akan dikonversi elemennya dan mengakibatkan Nightsoul-aligned Elemental DMG dengan tipe elemen yang sesuai, DMG ini setara dengan 150% DMG yang diakibatkan oleh <strong>Shining Shadowhunt Shell</strong> dari skill <strong>Spirit Reins, Shadow Hunt</strong>.",
+      "1": "DMG yang diakibatkan dengan cara ini dianggap sebagai DMG Charged Attack."
+    }
+  },
+  "passive3": {
+    "name": "Night Realm's Gift: Everburning Heart",
+    "description": {
+      "0": "Setelah poin Nightsoul habis terpakai, Chasca akan mengonsumsi Phlogiston untuk mempertahankan status Nightsoul's Blessing-nya.",
+      "1": "Saat ada area dengan Phlogiston Mechanic di Natlan, dapat melancarkan Nightsoul Transmission: Chasca. Saat Karakter aktif melayang di ketinggian tertentu, dan mengganti Karakter menjadi Chasca, akan memicu efek berikut: Chasca akan memasuki status Nightsoul's Blessing dan mendapatkan 32 poin Nightsoul. Party sendiri dapat memicu Nightsoul Transmission sekali setiap 10 detik."
+    }
+  },
+  "passive": {
+    "name": "Mediation's True Meaning",
+    "description": {
+      "0": "Saat Karakter party sendiri mengalahkan musuh, akan memulihkan 25 poin Phlogiston. Efek ini dapat terpicu sekali setiap 12 detik.",
+      "1": "Efek ini tidak aktif dalam Domain, Trounce Domain, atau Spiral Abyss."
+    }
+  },
+  "constellation1": {
+    "name": "Cylinder, the Restless Roulette",
+    "description": {
+      "0": "Memicu efek \"Spiritbinding Conversion\" dari Talenta Pasif \"Bullet Trick\" akan mengakibatkan <strong>Shadowhunt Shell</strong> kedua yang dimasukkan ke silinder peluru berubah menjadi <strong>Shining Shadowhunt Shell</strong>.",
+      "1": "Kemungkinan untuk memicu \"Spiritbinding Conversion\" akan meningkat: jika terdapat Karakter dengan jenis elemen yang sesuai dengan syarat konversi elemen di dalam party, kemungkinan untuk memicu \"Spiritbinding Conversion\" meningkat 33,3%, hingga maksimum 100%.",
+      "2": "<br/>",
+      "3": "Harus membuka Talenta Pasif \"Bullet Trick\" terlebih dahulu.",
+      "4": "Selain itu, saat tidak berada dalam kondisi bertempur, konsumsi Phlogiston dan poin Nightsoul Chasca dalam status Nightsoul's Blessing akan berkurang 30%."
+    }
+  },
+  "constellation2": {
+    "name": "Muzzle, the Searing Smoke",
+    "description": {
+      "0": "Saat Chasca memasuki medan pertempuran, mendapatkan satu lapis \"Spirit of the Radiant Shadow\" dari Talenta Pasif \"Bullet Trick\".",
+      "1": "Selain itu, saat <strong>Shining Shadowhunt Shell</strong> dari serangan <strong>Multitarget Fire</strong> milik Elemental Skill <strong>Spirit Reins, Shadow Hunt</strong> mengenai musuh, akan mengakibatkan Elemental DMG Area sebesar 400% ATK Chasca yang elemennya sesuai dengan jenis elemen dari <strong>Shining Shadowhunt Shell</strong>. DMG ini dianggap sebagai DMG Charged Attack. Efek ini dapat terpicu sekali setiap kali Chasca melancarkan <strong>Multitarget Fire</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Reins, her Careful Control",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong>Spirit Reins, Shadow Hunt</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Sparks, the Sudden Shot",
+    "description": {
+      "0": "Saat <strong>Radiant Soulseeker Shell</strong> dari Elemental Burst <strong>Soul Reaper's Fatal Round</strong> mengenai musuh, akan memulihkan 1,5 Energy untuk Chasca dan mengakibatkan DMG Elemental Area sebesar 400% ATK Chasca yang elemennya sesuai dengan jenis elemen dari <strong>Radiant Soulseeker Shell</strong>. DMG ini dianggap sebagai DMG Charged Attack.",
+      "1": "DMG Elemental Area yang disebutkan di atas hanya dapat terpicu sekali setiap kali Chasca melancarkan <strong>Soul Reaper's Fatal Round</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Brim, the Sandshadow's Silhouette",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong>Soul Reaper's Fatal Round</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Showdown, the Glory of Battle",
+    "description": {
+      "0": "Durasi charge <strong>Multitarget Fire</strong> menjadi lebih singkat, dan setelah efek \"Spiritbinding Conversion\" dari Talenta Pasif \"Bullet Trick\" terpicu, Chasca akan memasuki status \"Fatal Rounds\": Dalam 3 detik berikutnya, saat Chasca melancarkan <strong>Multitarget Fire</strong> dari Elemental Skill <strong>Spirit Reins, Shadow Hunt</strong> kali berikutnya, tembakannya akan langsung selesai melakukan charge, dan CRIT DMG <strong>Shadowhunt Shell</strong> dan <strong>Shining Shadowhunt Shell</strong> dari <strong>Multitarget Fire</strong> tersebut meningkat sebesar 120%. Chasca bisa memasuki status \"Fatal Rounds\" sekali setiap 3 detik.",
+      "1": "<br/>",
+      "2": "Efek di atas harus membuka Talenta Pasif \"Bullet Trick\" terlebih dahulu."
+    }
+  }
+}
