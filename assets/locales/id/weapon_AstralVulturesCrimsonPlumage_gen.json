@@ -1,0 +1,24 @@
+{
+  "name": "Astral Vulture's Crimson Plumage",
+  "description": {
+    "0": "Busur panjang kuno dengan dekorasi bulu berwarna merah, relik suci yang sudah diturunkan oleh Bunga Bersayap selama generasi demi generasi."
+  },
+  "passiveName": "The Moonring Sighted",
+  "passiveDescription": {
+    "0": {
+      "0": "Dalam 12 detik setelah memicu reaksi Swirl, ATK meningkat <cryo>24%</cryo>. Selain itu, saat di dalam party terdapat minimum 1/2 Karakter dengan jenis elemen yang berbeda dari Karakter yang mengenakan, maka DMG Charged Attack Karakter yang mengenakan meningkat <cryo>20%/48%</cryo> dan DMG Elemental Burst meningkat <cryo>10%/24%</cryo>."
+    },
+    "1": {
+      "0": "Dalam 12 detik setelah memicu reaksi Swirl, ATK meningkat <cryo>30%</cryo>. Selain itu, saat di dalam party terdapat minimum 1/2 Karakter dengan jenis elemen yang berbeda dari Karakter yang mengenakan, maka DMG Charged Attack Karakter yang mengenakan meningkat <cryo>25%/60%</cryo> dan DMG Elemental Burst meningkat <cryo>12,5%/30%</cryo>."
+    },
+    "2": {
+      "0": "Dalam 12 detik setelah memicu reaksi Swirl, ATK meningkat <cryo>36%</cryo>. Selain itu, saat di dalam party terdapat minimum 1/2 Karakter dengan jenis elemen yang berbeda dari Karakter yang mengenakan, maka DMG Charged Attack Karakter yang mengenakan meningkat <cryo>30%/72%</cryo> dan DMG Elemental Burst meningkat <cryo>15%/36%</cryo>."
+    },
+    "3": {
+      "0": "Dalam 12 detik setelah memicu reaksi Swirl, ATK meningkat <cryo>42%</cryo>. Selain itu, saat di dalam party terdapat minimum 1/2 Karakter dengan jenis elemen yang berbeda dari Karakter yang mengenakan, maka DMG Charged Attack Karakter yang mengenakan meningkat <cryo>35%/84%</cryo> dan DMG Elemental Burst meningkat <cryo>17,5%/42%</cryo>."
+    },
+    "4": {
+      "0": "Dalam 12 detik setelah memicu reaksi Swirl, ATK meningkat <cryo>48%</cryo>. Selain itu, saat di dalam party terdapat minimum 1/2 Karakter dengan jenis elemen yang berbeda dari Karakter yang mengenakan, maka DMG Charged Attack Karakter yang mengenakan meningkat <cryo>40%/96%</cryo> dan DMG Elemental Burst meningkat <cryo>20%/48%</cryo>."
+    }
+  }
+}

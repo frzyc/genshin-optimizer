@@ -16,7 +16,7 @@
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
-        "1": "Concentra el poder de las plantas, se lanza desde el aire para golpear el suelo y daña a los enemigos a su paso, infligiendo <dendro>Daño Dendro en el AdE</dendro> en el momento del impacto."
+        "1": "Concentra el poder de las plantas y se lanza desde el aire para golpear el suelo, atacando a los enemigos que encuentre en su trayecto e infligiendo <dendro>Daño Dendro en el AdE</dendro> en el momento del impacto."
       }
     },
     "skillParams": {

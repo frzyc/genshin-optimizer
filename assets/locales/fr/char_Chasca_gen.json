@@ -1,0 +1,200 @@
+{
+  "name": "Chasca",
+  "title": "Arbitre du ciel",
+  "description": "La médiatrice des Tlalocans, celle qui met fin à toutes les querelles.",
+  "constellationName": "Vultur Gryphus",
+  "auto": {
+    "name": "Rafale de plumes fantômes",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Enchaîne jusqu'à 4 tirs consécutifs."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Effectue un <strong>tir visé</strong> plus précis infligeant davantage de DGT.",
+        "2": "Lors de la visée, la flèche se charge de vents puissants, infligeant de considérables <anemo>DGT Anémo</anemo> quand elle est complètement chargée."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Tire une pluie de flèches depuis les airs et plonge au sol, attaquant les ennemis en chemin et infligeant des DGT de zone à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT tir visé",
+      "5": "DGT tir visé (pleine charge)",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Chasse des rênes spirituelles",
+    "description": {
+      "0": "Chasca et la volonté qui réside dans son arme résonnent, infligeant des <anemo>DGT Anémo de zone</anemo> infusés de noctâme.",
+      "1": "Après utilisation, Chasca obtient 80 pts de noctâme et entre dans l'état Bénédiction noctâme.",
+      "2": "<br/>",
+      "3": "<strong>Bénédiction noctâme : Chasca</strong>",
+      "4": "La bénédiction noctâme de Chasca consomme de façon continue ses points de noctâme et prend fin une fois les points épuisés ou lors d'une nouvelle utilisation de la compétence. L'état Bénédiction noctâme de Chasca possède les propriétés spéciales suivantes :",
+      "5": [
+        " En montant sur son spiribâton rituel, Chasca augmente sa VIT de déplacement et sa RÉS à l'interruption et consomme de façon continue ses points de noctâme pour flotter dans les airs, sprinter et flotter plus haut consommant des points de noctâme supplémentaires.",
+        " En utilisant une attaque normale ou chargée, l'appui simple et l'appui long permettent de basculer entre différentes façons d'utiliser la visée multiple."
+      ],
+      "6": "<br/>",
+      "7": "<strong>Visée multiple</strong>",
+      "8": "<strong>Appui simple</strong>",
+      "9": "Chasca inflige des <anemo>DGT Anémo</anemo> infusés de noctâme aux ennemis en face, ces DGT étant considérés comme des DGT d'attaque normale.",
+      "10": "<strong>Appui long</strong>",
+      "11": "Chasca bascule en mode visée tout en choisissant un certain nombre d'ennemis à portée, avant de recharger un maximum de 6 cartouches de chassombre, la quantité de cartouches rechargées dépendant du temps de charge. Chasca tire ces cartouches dans l'ordre une fois les 6 cartouches rechargées ou la charge interrompue.",
+      "12": "<br/>",
+      "13": "<strong>Cartouche de chassombre</strong>",
+      "14": [
+        " Inflige des <anemo>DGT Anémo</anemo> infusés de noctâme, ces DGT étant considérés comme des DGT d'attaque chargée.",
+        " Les 4e, 5e et 6e cartouches de chassombre chargées dans l'arme de Chasca subissent une absorption élémentaire en fonction des types élémentaires des autres personnages de l'équipe. Chaque personnage de l'équipe de l'élément <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> ou <electro>Électro</electro> modifie aléatoirement une cartouche de chassombre en cartouche radieuse de chassombre de l'élément correspondant qui inflige des DGT élémentaires infusés de noctâme, ces DGT étant considérés comme des DGT d'attaque chargée.",
+        " Les cartouches de chassombre sont tirées dans l'ordre inverse de leur rechargement."
+      ],
+      "15": "<br/>",
+      "16": "De plus, en déclenchant la compétence élémentaire <strong>Chasse des rênes spirituelles</strong> avec un appui long pendant sa bénédiction noctâme, Chasca effectue à la place une attaque plongeante infusée de noctâme qui peut être annulée en relâchant l'appui long tout en laissant Chasca flotter dans les airs. Frapper le sol avec cette attaque plongeante met fin à la bénédiction noctâme de Chasca.",
+      "17": "<br/>",
+      "18": "<i>En théorie, tant qu'elle le désire, ces rênes peuvent brider n'importe quoi... Mais qu'est-ce qui pourrait être aussi cool qu'un canon à main géant ?</i>"
+    },
+    "skillParams": {
+      "0": "DGT résonance",
+      "1": "DGT visée multiple (appui simple)",
+      "2": "DGT cartouche de chassombre",
+      "3": "DGT cartouche radieuse de chassombre",
+      "4": "Limite de noctâme",
+      "5": "Temps de recharge",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Assaut de faucheur d'âmes",
+    "description": {
+      "0": "Chasca concentre sa volonté et tire une seule cartouche brisâme de vent qui inflige des <anemo>DGT Anémo de zone</anemo> infusés de noctâme avant de se séparer en 6 cartouches brisâmes attaquant les ennemis proches.",
+      "1": "<br/>",
+      "2": "<strong>Cartouche brisâme</strong>",
+      "3": [
+        " Inflige des <anemo>DGT Anémo</anemo> infusés de noctâme.",
+        " Chaque personnage de l'équipe de l'élément <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> ou <electro>Électro</electro> modifie aléatoirement deux cartouches brisâmes en cartouches brisâmes de lumière qui infligent des DGT infusés de noctâme d'un des éléments correspondants."
+      ],
+      "4": "<br/>",
+      "5": "<i>Nul ne peut échapper aux murmures incessants de la nuit et du clair de lune, tout comme aucun ennemi ne peut fuir ses yeux attentifs une fois en vue.</i>"
+    },
+    "skillParams": {
+      "0": "DGT cartouche brisâme de vent",
+      "1": "DGT cartouche brisâme",
+      "2": "DGT cartouche brisâme de lumière",
+      "3": "Temps de recharge",
+      "4": "Énergie élémentaire",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Astuce balistique",
+    "description": {
+      "0": "En chargeant la <strong>visée multiple</strong> de la compétence élémentaire <strong>Chasse des rênes spirituelles</strong>, les effets suivants s'appliquent si l'équipe contient des personnages avec un type élémentaire convenant aux conditions d'absorption élémentaire :",
+      "1": [
+        " Chaque type élémentaire a, selon le nombre de types élémentaires éligibles, 33,3 %/66,7 %/100 % de chances de déclencher une conversion spirituelle, modifiant alors aléatoirement la 3e <strong>cartouche de chassombre</strong> chargée dans l'arme en <strong>cartouche radieuse de chassombre</strong> d'un élément correspondant.",
+        " Chaque type d'élément accorde à Chasca 1 cumul d'esprit d'ombre radieuse, augmentant les DGT infligés par les cartouches radieuses de chassombre de 15 %/35 %/65 %. Cet effet dure jusqu'à la fin de la visée multiple et peut être cumulé 3 fois maximum."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Intention protectrice",
+    "description": {
+      "0": "Lorsqu'un membre de l'équipe à proximité déclenche une éruption noctâme, Chasca tire une cartouche brûlante de chassombre sur un ennemi proche pour infliger des <anemo>DGT Anémo</anemo> infusés de noctâme d'une valeur équivalant à 150 % des DGT d'une <strong>cartouche de chassombre</strong> de la compétence élémentaire <strong>Chasse des rênes spirituelles</strong>. Si l'équipe contient un personnage <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Cryo</cryo> ou <electro>Électro</electro>, la cartouche brûlante de chassombre subit une absorption élémentaire pour infliger des DGT infusés de noctâme de l'élément correspondant d'une valeur équivalant à 150 % des DGT d'une <strong>cartouche radieuse de chassombre</strong> de la compétence élémentaire <strong>Chasse des rênes spirituelles</strong>.",
+      "1": "Les DGT infligés de cette manière sont considérés comme des DGT d'attaque chargée."
+    }
+  },
+  "passive3": {
+    "name": "Don de la nuit : Âme brûlante",
+    "description": {
+      "0": "Après avoir épuisé ses points de noctâme, Chasca change pour consommer du phlogistique afin de maintenir sa bénédiction noctâme.",
+      "1": "Dans une zone de Natlan avec des mécanismes phlogistiques, la transmission noctâme « Chasca » peut être utilisée. Lorsque le personnage déployé est dans les airs, le déploiement de Chasca déclenche l'effet suivant : Chasca entre dans l'état Bénédiction noctâme et obtient 32 pts de noctâme. La transmission noctâme peut être déclenchée une fois toutes les 10 s par votre équipe."
+    }
+  },
+  "passive": {
+    "name": "Méditation sensée",
+    "description": {
+      "0": "Restaure 25 pts de phlogistique lorsque vos personnages dans l'équipe éliminent un ennemi. Cet effet peut être déclenché une fois toutes les 12 s.",
+      "1": "Cet effet ne s'applique pas dans les donjons, dans les Donjons de la conquête et dans les Profondeurs spiralées."
+    }
+  },
+  "constellation1": {
+    "name": "Cylindre, la roulette agitée",
+    "description": {
+      "0": "Déclencher une conversion spirituelle de l'aptitude passive « Astuce balistique » modifie également la 2e <strong>cartouche de chassombre</strong> chargée dans l'arme en <strong>cartouche radieuse de chassombre</strong>.",
+      "1": "Les chances de déclencher une conversion spirituelle augmentent : si l'équipe contient un personnage avec un type élémentaire convenant aux conditions d'absorption élémentaire, les chances de déclencher une conversion spirituelle augmentent de 33,3 %, jusqu'à un maximum de 100 %.",
+      "2": "<br/>",
+      "3": "L'aptitude passive « Astuce balistique » doit être déjà débloquée.",
+      "4": "De plus, la consommation de points de noctâme de Chasca pendant sa bénédiction noctâme diminue de 30 % lorsqu'elle n'est pas en combat."
+    }
+  },
+  "constellation2": {
+    "name": "Museau, la fumée brûlante",
+    "description": {
+      "0": "Chasca obtient 1 cumul d'esprit d'ombre radieuse d'Astuce balistique lorsqu'elle est déployée au combat, l'aptitude passive « Astuce balistique » devant être déjà débloquée.",
+      "1": "De plus, lorsqu'une <strong>cartouche radieuse de chassombre</strong> de la <strong>visée multiple</strong> de la compétence élémentaire <strong>Chasse des rênes spirituelles</strong> touche un ennemi, elle inflige des DGT de zone de son élément <strong></strong>d'une valeur équivalant à 400 % de l'ATQ de Chasca. Ces DGT sont considérés comme des DGT d'attaque chargée. Cet effet peut être déclenché une fois par <strong>visée multiple</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Rênes, le contrôle minutieux",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Chasse des rênes spirituelles</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Étincelles, le tir soudain",
+    "description": {
+      "0": "Lorsqu'une <strong>cartouche brisâme de lumière</strong> du déchaînement élémentaire <strong>Assaut de faucheur d'âmes</strong> touche un ennemi, Chasca récupère 1,5 pt d'énergie élémentaire et la <strong>cartouche brisâme de lumière</strong> inflige des DGT de zone de son élément d'une valeur équivalant à 400 % de l'ATQ de Chasca, ces DGT étant considérés comme des DGT d'attaque chargée.",
+      "1": "Cet effet de DGT élémentaire de zone peut être déclenché une fois par <strong>Assaut de faucheur d'âmes</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "Passe, la silhouette ombrée",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Assaut de faucheur d'âmes</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Affrontement, la gloire guerrière",
+    "description": {
+      "0": "Le temps de charge requis lorsque Chasca effectue une <strong>visée multiple</strong> diminue et, après avoir déclenché une conversion spirituelle de l'aptitude passive « Astuce balistique », Chasca passe en état Assaut fatal : pendant les 3 prochaines secondes, la prochaine <strong>visée multiple</strong> de la compétence élémentaire <strong>Chasse des rênes spirituelles</strong> de Chasca est immédiatement chargée au maximum et les DGT des <strong>cartouches de chassombre</strong> et des <strong>cartouches radieuses de chassombre</strong> de cette <strong>visée multiple</strong> augmentent de 120 %. L'état Assaut fatal peut être obtenu une fois toutes les 3 s.",
+      "1": "<br/>",
+      "2": "L'aptitude passive « Astuce balistique » doit être déjà débloquée."
+    }
+  }
+}

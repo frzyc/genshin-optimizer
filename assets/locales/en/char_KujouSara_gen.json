@@ -154,7 +154,7 @@
   "constellation6": {
     "name": "Sin of Pride",
     "description": {
-      "0": "The <electro>Electro DMG</electro> of characters who have had their ATK increased by Tengu Juurai has its Crit DMG increased by 60%."
+      "0": "The <electro>Electro DMG</electro> of characters who have had their ATK increased by Tengu Juurai has its CRIT DMG increased by 60%."
     }
   }
 }

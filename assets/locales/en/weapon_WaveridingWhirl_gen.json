@@ -1,0 +1,24 @@
+{
+  "name": "Waveriding Whirl",
+  "description": {
+    "0": "A boomerang made from the fangs of a giant sea serpent. It was a rare weapon indeed that the giant Tupac would call \"trusty.\""
+  },
+  "passiveName": "Fangs Flying To and Fro",
+  "passiveDescription": {
+    "0": {
+      "0": "Decreases Swimming Stamina consumption by 15%. In addition, for 10s after using an Elemental Skill, Max HP is increased by <cryo>20%</cryo>. For every Hydro Elemental Type character in the party, Max HP is increased by another <cryo>12%</cryo>, and the maximum increase that can be achieved in this way is <cryo>24%</cryo>. Can be triggered once every 15s."
+    },
+    "1": {
+      "0": "Decreases Swimming Stamina consumption by 15%. In addition, for 10s after using an Elemental Skill, Max HP is increased by <cryo>25%</cryo>. For every Hydro Elemental Type character in the party, Max HP is increased by another <cryo>15%</cryo>, and the maximum increase that can be achieved in this way is <cryo>30%</cryo>. Can be triggered once every 15s."
+    },
+    "2": {
+      "0": "Decreases Swimming Stamina consumption by 15%. In addition, for 10s after using an Elemental Skill, Max HP is increased by <cryo>30%</cryo>. For every Hydro Elemental Type character in the party, Max HP is increased by another <cryo>18%</cryo>, and the maximum increase that can be achieved in this way is <cryo>36%</cryo>. Can be triggered once every 15s."
+    },
+    "3": {
+      "0": "Decreases Swimming Stamina consumption by 15%. In addition, for 10s after using an Elemental Skill, Max HP is increased by <cryo>35%</cryo>. For every Hydro Elemental Type character in the party, Max HP is increased by another <cryo>21%</cryo>, and the maximum increase that can be achieved in this way is <cryo>42%</cryo>. Can be triggered once every 15s."
+    },
+    "4": {
+      "0": "Decreases Swimming Stamina consumption by 15%. In addition, for 10s after using an Elemental Skill, Max HP is increased by <cryo>40%</cryo>. For every Hydro Elemental Type character in the party, Max HP is increased by another <cryo>24%</cryo>, and the maximum increase that can be achieved in this way is <cryo>48%</cryo>. Can be triggered once every 15s."
+    }
+  }
+}

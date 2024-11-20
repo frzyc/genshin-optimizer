@@ -1,0 +1,24 @@
+{
+  "name": "Piume coronate di fiori",
+  "description": {
+    "0": "Un arco lungo che brucia come una fiamma. Si dice che le piume che lo adornano appartenessero a Ngoubou, l'antico tiranno."
+  },
+  "passiveName": "Inflorescenza irraggiungibile",
+  "passiveDescription": {
+    "0": {
+      "0": "Il consumo di vigore durante la planata diminuisce di un 15%. Durante la mira con l'arco, i DAN inflitti degli attacchi caricati aumentano di un <cryo>6%</cryo> ogni 0,5 s. Quest'effetto è cumulabile fino a 6 volte e termina 10 s dopo aver abbandonato la modalità di mira."
+    },
+    "1": {
+      "0": "Il consumo di vigore durante la planata diminuisce di un 15%. Durante la mira con l'arco, i DAN inflitti degli attacchi caricati aumentano di un <cryo>7,5%</cryo> ogni 0,5 s. Quest'effetto è cumulabile fino a 6 volte e termina 10 s dopo aver abbandonato la modalità di mira."
+    },
+    "2": {
+      "0": "Il consumo di vigore durante la planata diminuisce di un 15%. Durante la mira con l'arco, i DAN inflitti degli attacchi caricati aumentano di un <cryo>9%</cryo> ogni 0,5 s. Quest'effetto è cumulabile fino a 6 volte e termina 10 s dopo aver abbandonato la modalità di mira."
+    },
+    "3": {
+      "0": "Il consumo di vigore durante la planata diminuisce di un 15%. Durante la mira con l'arco, i DAN inflitti degli attacchi caricati aumentano di un <cryo>10,5%</cryo> ogni 0,5 s. Quest'effetto è cumulabile fino a 6 volte e termina 10 s dopo aver abbandonato la modalità di mira."
+    },
+    "4": {
+      "0": "Il consumo di vigore durante la planata diminuisce di un 15%. Durante la mira con l'arco, i DAN inflitti degli attacchi caricati aumentano di un <cryo>12%</cryo> ogni 0,5 s. Quest'effetto è cumulabile fino a 6 volte e termina 10 s dopo aver abbandonato la modalità di mira."
+    }
+  }
+}

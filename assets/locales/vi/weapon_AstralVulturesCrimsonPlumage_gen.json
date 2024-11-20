@@ -1,0 +1,24 @@
+{
+  "name": "Xích Vũ Tinh Tựu",
+  "description": {
+    "0": "Cây cung cổ xưa được trang trí bằng lông vũ màu đỏ, là một trong những thánh vật được Hội Hoa Vũ lưu truyền từ thế hệ này sang thế hệ khác."
+  },
+  "passiveName": "Ngọc Mặt Trăng Trong Mắt",
+  "passiveDescription": {
+    "0": {
+      "0": "Trong 12s sau khi kích hoạt phản ứng Khuếch Tán, Tấn Công tăng <cryo>24%</cryo>. Ngoài ra, khi trong đội tồn tại ít nhất 1/2 nhân vật không cùng loại nguyên tố với người trang bị, thì sẽ khiến người trang bị tăng <cryo>20%/48%</cryo> sát thương Trọng Kích gây ra, tăng <cryo>10%/24%</cryo> sát thương Kỹ Năng Nộ gây ra."
+    },
+    "1": {
+      "0": "Trong 12s sau khi kích hoạt phản ứng Khuếch Tán, Tấn Công tăng <cryo>30%</cryo>. Ngoài ra, khi trong đội tồn tại ít nhất 1/2 nhân vật không cùng loại nguyên tố với người trang bị, thì sẽ khiến người trang bị tăng <cryo>25%/60%</cryo> sát thương Trọng Kích gây ra, tăng <cryo>12.5%/30%</cryo> sát thương Kỹ Năng Nộ gây ra."
+    },
+    "2": {
+      "0": "Trong 12s sau khi kích hoạt phản ứng Khuếch Tán, Tấn Công tăng <cryo>36%</cryo>. Ngoài ra, khi trong đội tồn tại ít nhất 1/2 nhân vật không cùng loại nguyên tố với người trang bị, thì sẽ khiến người trang bị tăng <cryo>30%/72%</cryo> sát thương Trọng Kích gây ra, tăng <cryo>15%/36%</cryo> sát thương Kỹ Năng Nộ gây ra."
+    },
+    "3": {
+      "0": "Trong 12s sau khi kích hoạt phản ứng Khuếch Tán, Tấn Công tăng <cryo>42%</cryo>. Ngoài ra, khi trong đội tồn tại ít nhất 1/2 nhân vật không cùng loại nguyên tố với người trang bị, thì sẽ khiến người trang bị tăng <cryo>35%/84%</cryo> sát thương Trọng Kích gây ra, tăng <cryo>17.5%/42%</cryo> sát thương Kỹ Năng Nộ gây ra."
+    },
+    "4": {
+      "0": "Trong 12s sau khi kích hoạt phản ứng Khuếch Tán, Tấn Công tăng <cryo>48%</cryo>. Ngoài ra, khi trong đội tồn tại ít nhất 1/2 nhân vật không cùng loại nguyên tố với người trang bị, thì sẽ khiến người trang bị tăng <cryo>40%/96%</cryo> sát thương Trọng Kích gây ra, tăng <cryo>20%/48%</cryo> sát thương Kỹ Năng Nộ gây ra."
+    }
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "name": "Chasca",
+  "title": "Göklerin Hakemi",
+  "description": "Tüm anlaşmazlıkları sonlandıran, Tlalocan'ın Ara Bulucusu.",
+  "constellationName": "Dağ Kondoru",
+  "auto": {
+    "name": "Hayalet Tüy Fırtınası",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 4 ok atar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Daha isabetli ve daha yüksek Hasar veren bir <strong>Hedefli Atış</strong> yapar.",
+        "2": "Nişan alırken okun ucunda güçlü rüzgarlar toplanır. Tam yüklü bu rüzgar oku <anemo>Rüzgar Hasarı</anemo> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken yaylım ok atışı yapar ve dalışa geçerek yere vurur. Yoluna çıkan düşmanlara saldırır ve yere vurduğunda Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Hedefli Atış",
+      "5": "Tam Yüklü Hedefli Atış",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Ruh Dizginleri, Gölge Avı",
+    "description": {
+      "0": "Chasca, silahındaki irade ile etkileşime girerek Gece Ruhu tesirli <anemo>Rüzgar Alan Hasarı</anemo> verir.",
+      "1": "Bu Beceriyi kullandıktan sonra Chasca 80 Gece Ruhu puanı kazanır ve Gece Ruhunun Lütfu durumuna girer.",
+      "2": "<br/>",
+      "3": "<strong>Gece Ruhunun Lütfu: Chasca</strong>",
+      "4": "Sürekli olarak Gece Ruhu puanı tüketir. Gece Ruhu puanları tamamen tükendiğinde veya beceri tekrar kullanıldığında Chasca'nın Gece Ruhunun Lütfu durumu sona erer. Gece Ruhunun Lütfunun şu etkileri vardır:",
+      "5": [
+        "Chasca, \"Ruh Nişancısı: Ayin Asası\"na binerek Hareket Hızı ve Müdahale Direnci kazanır. Bu durumdayken Chasca havada kalmak için sürekli olarak Gece Ruhu puanı tüketir. Depar atarken veya havada yükselirken ekstra Gece Ruhu puanı tüketilir.",
+        "Normal veya Yüklü Saldırı yaparken \"Çoklu Hedefleme\"sini farklı şekillerde kullanmak için Dokun veya Basılı Tut."
+      ],
+      "6": "<br/>",
+      "7": "<strong>Çoklu Hedefleme</strong>",
+      "8": "<strong>Dokun</strong>",
+      "9": "Önündeki düşmanlara Gece Ruhu tesirli <anemo>Rüzgar Hasarı</anemo> verir. Bu Hasar, Normal Saldırı Hasarı sayılır.",
+      "10": "<strong>Basılı Tut</strong>",
+      "11": "Nişan Alma Moduna girer, belirli bir menzil içindeki belirli sayıda düşmanı seçer ve ardından becerinin yüklenme süresine göre en fazla 6 tane Gölge Avı Mermisi yükler. 6 Mermi yüklendikten veya yükleme durdurulduktan sonra bu Mermiler, seçilen düşmanlara sırayla ateşlenir.",
+      "12": "<br/>",
+      "13": "<strong>Gölge Avı Mermileri</strong>",
+      "14": [
+        "Gece Ruhu tesirli <anemo>Rüzgar Hasarı</anemo> verir. Bu Hasar, Yüklü Saldırı Hasarı sayılır.",
+        "Silindire yüklenen 4., 5. ve 6. Mermiler, gruptaki diğer karakterlerin Element Türüne göre Element Dönüşümü geçirir. Gruptaki her <pyro>Ateş</pyro>, <hydro>Su</hydro>, <cryo>Buz</cryo> veya <electro>Elektrik</electro> karakteri için bir Gölge Avı Mermisi rastgele olarak ilgili Element Türlerinden birinde \"Parıltılı Gölge Avı Mermisi\"ne dönüşür ve bu Element Türünde Gece Ruhu tesirli Hasar verir. Bu Hasar, Yüklü Saldırı Hasarı sayılır.",
+        "Silindire yüklenen mermiler, \"son giren ilk çıkar\" kaidesine göre son yüklenen Gölge Avı Mermisinden başlanarak ateşlenir."
+      ],
+      "15": "<br/>",
+      "16": "Ayrıca Chasca Gece Ruhunun Lütfu durumundayken <strong>Ruh Dizginleri, Gölge Avı</strong> Element Becerisine Basılı Tutulduğunda Gece Ruhu tesirli bir Havadan Saldırı gerçekleştirir. Element Becerisi bırakıldığında bu Havadan Saldırı yarıda kesilir ve Chasca havada durmaya devam eder. Chasca, Havadan Saldırısıyla yere vurursa Gece Ruhunun Lütfu durumu sona erer.",
+      "17": "<br/>",
+      "18": "<i>Teorik olarak o istediği sürece bu dizginler her şeyi kontrol altında tutabilir... Ancak devasa bir el topundan daha havalı ne olabilir ki?</i>"
+    },
+    "skillParams": {
+      "0": "Rezonans Hasarı",
+      "1": "Çoklu Hedefleme Basma Hasarı",
+      "2": "Gölge Avı Mermisi Hasarı",
+      "3": "Parıltılı Gölge Avı Mermisi Hasarı",
+      "4": "Gece Ruhu Puanı Sınırı",
+      "5": "BS",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Ruh Biçenin Ölümcül Darbesi",
+    "description": {
+      "0": "Chasca, iradesini yoğunlaştırıp Gece Ruhu tesirli <anemo>Rüzgar Alan Hasarı</anemo> veren bir \"Fırtına Yaran Ruh Avcısı Mermi\" ateşler. Daha sonra \"Fırtına Yaran Ruh Avcısı Mermi\" 6 Ruh Avcısı Mermiye bölünüp yakındaki düşmanlara saldırır.",
+      "1": "<br/>",
+      "2": "<strong>Ruh Avcısı Mermiler</strong>",
+      "3": [
+        "Gece Ruhu tesirli <anemo>Rüzgar Hasarı</anemo> verir.",
+        "Gruptaki her <pyro>Ateş</pyro>, <hydro>Su</hydro>, <cryo>Buz</cryo> veya <electro>Elektrik</electro> karakteri için iki Ruh Avcısı Mermi, Element Dönüşümü geçirip \"Parlak Ruh Avcısı Mermi\"ye dönüşür. Bu Mermiler, karşılık gelen rastgele bir Element Türünde Gece Ruhu tesirli Element Hasarı verir."
+      ],
+      "4": "<br/>",
+      "5": "<i>Nasıl ki ay ışığından veya gecenin ardı arkası kesilmeyen fısıltılarından kimse kaçamıyorsa onun görüş alanına giren bir düşman için de artık kaçış yoktur.</i>"
+    },
+    "skillParams": {
+      "0": "Fırtına Yaran Ruh Avcısı Mermi Hasarı",
+      "1": "Ruh Avcısı Mermi Hasarı",
+      "2": "Parlak Ruh Avcısı Mermi Hasarı",
+      "3": "BS",
+      "4": "Enerji Maliyeti",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Mermi Numarası",
+    "description": {
+      "0": "<strong>Ruh Dizginleri, Gölge Avı</strong> Element Becerisinin <strong>Çoklu Hedeflemesi</strong> yükleniyorken Element Dönüşümü Türü şartlarını karşılayan grup üyeleri varsa uygun Element Türü sayısına bağlı olarak şu etkiler elde edilir:",
+      "1": [
+        "%33,3/%66,7/%100 ihtimalle her bir Element Türü, \"Ruh Bağlama Dönüşümü\" tetikleyebilir ve silindire yüklenen 3. <strong>Gölge Avı Mermisinin</strong>, karşılık gelen Element Türlerinden rastgele birinde <strong>Parıltılı Gölge Avı Mermisine</strong> dönüşmesini sağlayabilir.",
+        "Her Element Türü Chasca'ya 1 Parlak Gölge Ruhu kademesi kazandırır ve Parıltılı Gölge Avı Mermisinin Hasarı %15/%35/%65 artar. Bu etki mevcut Çoklu Hedefleme sona erene kadar sürer. 3 kademeye kadar birikir."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Koruma İçgüdüsü",
+    "description": {
+      "0": "Yakındaki bir grup üyesi bir Gece Ruhu Patlaması tetiklediğinde Chasca, yakındaki bir düşmana bir \"Alevli Gölge Avı Atışı\" yapar ve <strong>Ruh Dizginleri, Gölge Avı</strong> Element Becerisinin <strong>Gölge Avı Mermisi</strong> ile verilen Hasarın %150'si kadar Gece Ruhu tesirli <anemo>Rüzgar Hasarı</anemo> verir. Eğer grupta <pyro>Ateş</pyro>, <hydro>Su</hydro>, <cryo>Buz</cryo> veya <electro>Elektrik</electro> karakterleri varsa Alevli Gölge Avı Atışı dönüşerek <strong>Ruh Dizginleri, Gölge Avı</strong> Becerisinin <strong>Parıltılı Gölge Avı Mermisi</strong> ile verilen Hasarın %150'si kadar ilgili Element Türünde Gece Ruhu tesirli Element Hasarı verir.",
+      "1": "Bu şekilde verilen Hasar, Yüklü Saldırı Hasarı sayılır."
+    }
+  },
+  "passive3": {
+    "name": "Gece Diyarının Armağanı: Her Daim Yanan Kalp",
+    "description": {
+      "0": "Chasca, Gece Ruhu puanları tükendiğinde Filojiston harcayarak Gece Ruhunun Lütfu durumunda kalmaya devam eder.",
+      "1": "Chasca, Natlan'da Filojiston Mekanikleri bulunan bir bölgedeyken \"Gece Ruhu Aktarımı: Chasca\" kullanabilir. Aktif karakter havadayken Chasca'ya geçildiğinde şu etkiler tetiklenir: Chasca Gece Ruhunun Lütfu durumuna girer ve 32 Gece Ruhu puanı kazanır. Gece Ruhu Aktarımı kendi takımın tarafından 10 saniyede bir tetiklenebilir."
+    }
+  },
+  "passive": {
+    "name": "Ara Buluculuğun Asıl Anlamı",
+    "description": {
+      "0": "Kendi grup üyelerin bir düşman yendiğinde 25 Filojiston yenilenir. Bu etki her 12 saniyede bir tetiklenebilir.",
+      "1": "Bu etki Zindanlarda, Ezici Zindanlarda veya Hiçlik Sarmalında tetiklenemez."
+    }
+  },
+  "constellation1": {
+    "name": "Silindir, Huzursuz Rulet",
+    "description": {
+      "0": "\"Mermi Numarası\" Pasif Yeteneğinin \"Ruh Bağlama Dönüşümü\" tetiklendiğinde silindire yüklenen 2. <strong>Gölge Avı Mermisi</strong> bir <strong>Parıltılı Gölge Avı Mermisine</strong> dönüşür.",
+      "1": "\"Ruh Bağlama Dönüşümü\"nün tetiklenme olasılığı artar. Eğer Element Dönüşümü Türü şartlarını karşılayan grup üyeleri varsa \"Ruh Bağlama Dönüşümü\"nün tetiklenme olasılığı %33,3 artar, en fazla %100 olur.",
+      "2": "<br/>",
+      "3": "\"Mermi Numarası\" Pasif Yeteneğinin açılmış olması gerekir.",
+      "4": "<br/>",
+      "5": "Ayrıca Chasca savaşta değilken Gece Ruhunun Lütfu sırasındaki Gece Ruhu puanı ve Filojiston tüketimi %30 azalır."
+    }
+  },
+  "constellation2": {
+    "name": "Namlu, Kavuran Duman",
+    "description": {
+      "0": "Chasca alana çıktığında \"Mermi Numarası\" Pasif Yeteneğinden 1 kademe \"Parlak Gölge Ruhu\" elde eder. \"Mermi Numarası\" Pasif Yeteneğinin açılmış olması gerekir.",
+      "1": "Ayrıca, <strong>Ruh Dizginleri, Gölge Avı</strong> Becerisinin <strong>Çoklu Hedefleme</strong> ile ateşlenen <strong>Parıltılı Gölge Avı Mermileri</strong> düşmanlara isabet ettiğinde, bu mermilerin Element Türünde Chasca'nın Saldırısının %400'ü kadar Alan Hasarı verir. Bu Hasar, Yüklü Saldırı Hasarı sayılır. Bu etki Chasca her <strong>Çoklu Hedefleme</strong> kullandığında bir defa tetiklenebilir."
+    }
+  },
+  "constellation3": {
+    "name": "Dizgin, Dikkatli Kontrol",
+    "description": {
+      "0": "<strong>Ruh Dizginleri, Gölge Avı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Kıvılcımlar, Ani Atış",
+    "description": {
+      "0": "<strong>Ruh Biçenin Ölümcül Darbesi</strong> becerisi ile ateşlenen <strong>Parlak Ruh Avcısı Mermiler</strong> düşmanlara isabet ettiğinde Chasca için 1,5 Element Enerjisi yenilenir ve <strong>Parlak Ruh Avcısı Mermilerin</strong> Element Türünde, Chasca'nın saldırısının %400'ü kadar Alan Hasarı verir. Bu Hasar, Yüklü Saldırı Hasarı sayılır.",
+      "1": "Bu Element Alan Hasarı etkisi Chasca her <strong>Ruh Biçenin Ölümcül Darbesi</strong> kullandığında bir defa tetiklenebilir."
+    }
+  },
+  "constellation5": {
+    "name": "Siperlik, Kum Gölgesinin Silüeti",
+    "description": {
+      "0": "<strong>Ruh Biçenin Ölümcül Darbesi</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "Yüzleşme, Savaşın İhtişamı",
+    "description": {
+      "0": "Chasca'nın <strong>Çoklu Hedeflemesinin</strong> yüklenme süresi azalır ve \"Mermi Numarası\" Pasif Yeteneğinin \"Ruh Bağlama Dönüşümü\" tetiklendikten sonra Chasca, \"Ölümcül Darbe\" durumu kazanır: Sonraki 3 saniye boyunca Chasca'nın <strong>Ruh Dizginleri, Gölge Avı</strong> Becerisinin <strong>Çoklu Hedeflemesini</strong> kullandığı bir sonraki sefer mermiler hemen yüklenir ve <strong>Çoklu Hedeflemesinin</strong> <strong>Gölge Avı Mermileri</strong> ile <strong>Parıltılı Gölge Avı Mermilerinin</strong> o seferlik Kritik Hasarı %120 artar. Her 3 saniyede 1 \"Ölümcül Darbe\" etkisi kazanılabilir.",
+      "1": "<br/>",
+      "2": "Bu etkiyi elde etmek için \"Mermi Numarası\" Pasif Yeteneğinin açılmış olması gerekir."
+    }
+  }
+}

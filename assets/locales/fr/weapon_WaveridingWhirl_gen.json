@@ -1,0 +1,24 @@
+{
+  "name": "Tourbillon sur les vagues",
+  "description": {
+    "0": "Un boomerang fabriqué à partir des crocs d'un serpent de mer géant. C'est une arme rare que le géant Tupac qualifierait de « fidèle »."
+  },
+  "passiveName": "Crocs à tout-va",
+  "passiveDescription": {
+    "0": {
+      "0": "La consommation d'endurance lors de la nage diminue de 15 %. De plus, utiliser une compétence élémentaire augmente les PV max de <cryo>20 %</cryo> pendant 10 s, chaque personnage Hydro dans l'équipe augmentant les PV max de <cryo>12 %</cryo> supplémentaires jusqu'à un maximum de <cryo>24 %</cryo>. Cet effet peut être déclenché une fois toutes les 15 s."
+    },
+    "1": {
+      "0": "La consommation d'endurance lors de la nage diminue de 15 %. De plus, utiliser une compétence élémentaire augmente les PV max de <cryo>25 %</cryo> pendant 10 s, chaque personnage Hydro dans l'équipe augmentant les PV max de <cryo>15 %</cryo> supplémentaires jusqu'à un maximum de <cryo>30 %</cryo>. Cet effet peut être déclenché une fois toutes les 15 s."
+    },
+    "2": {
+      "0": "La consommation d'endurance lors de la nage diminue de 15 %. De plus, utiliser une compétence élémentaire augmente les PV max de <cryo>30 %</cryo> pendant 10 s, chaque personnage Hydro dans l'équipe augmentant les PV max de <cryo>18 %</cryo> supplémentaires jusqu'à un maximum de <cryo>36 %</cryo>. Cet effet peut être déclenché une fois toutes les 15 s."
+    },
+    "3": {
+      "0": "La consommation d'endurance lors de la nage diminue de 15 %. De plus, utiliser une compétence élémentaire augmente les PV max de <cryo>35 %</cryo> pendant 10 s, chaque personnage Hydro dans l'équipe augmentant les PV max de <cryo>21 %</cryo> supplémentaires jusqu'à un maximum de <cryo>42 %</cryo>. Cet effet peut être déclenché une fois toutes les 15 s."
+    },
+    "4": {
+      "0": "La consommation d'endurance lors de la nage diminue de 15 %. De plus, utiliser une compétence élémentaire augmente les PV max de <cryo>40 %</cryo> pendant 10 s, chaque personnage Hydro dans l'équipe augmentant les PV max de <cryo>24 %</cryo> supplémentaires jusqu'à un maximum de <cryo>48 %</cryo>. Cet effet peut être déclenché une fois toutes les 15 s."
+    }
+  }
+}

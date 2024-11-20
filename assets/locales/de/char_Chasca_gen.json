@@ -1,0 +1,200 @@
+{
+  "name": "Chasca",
+  "title": "Himmelsvermittlerin",
+  "description": "Die „Friedensstifterin“ Tlalocans, Schlichterin aller Zwistigkeiten.",
+  "constellationName": "Vultur Gryphus",
+  "auto": {
+    "name": "Phantomfederschwarm",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Führt bis zu 4 Pfeilschüsse hintereinander aus."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Führt einen <strong>gezielten Schuss</strong> mit höherem Schaden und höherer Genauigkeit aus.",
+        "2": "Konzentriert den Wind während des Zielens an der Pfeilspitze, die voll aufgeladen <anemo>Anemo-Schaden</anemo> verursacht."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Schießt in der Luft einen Pfeilregen ab, trifft schnell auf dem Boden auf, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "Gezielte Schüsse",
+      "5": "Voll aufgeladene gezielte Schüsse",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Auf der Jagd nach dem Schatten",
+    "description": {
+      "0": "Chasca und der Wille, der in ihrer Waffe ruht, gehen in Resonanz und verursachen mit Nachtseelen versehenen <anemo>Anemo-Flächenschaden</anemo>.",
+      "1": "Nach dem Auslösen erhält Chasca 80 Nachtseelenpunkte und tritt in den Zustand Nachtseelensegen ein.",
+      "2": "<br/>",
+      "3": "<strong>Nachtseelensegen – Chasca</strong>",
+      "4": "Verbraucht fortlaufend Nachtseelenpunkte. Wenn diese aufgebraucht sind oder wenn die Fähigkeit erneut eingesetzt wird, endet Chascas Nachtseelensegen. Der Zustand Nachtseelensegen hat die folgenden Eigenschaften:",
+      "5": [
+        " Chasca reitet auf ihrer „Seelenflinte – Zeremonienstab“, wodurch ihre Bewegungs-GSW und ihr Unterbrechungs-WDS erhöht werden. In diesem Zustand verbraucht sie fortlaufend Nachtseelenpunkte, um in der Luft zu bleiben. Es werden zusätzliche Nachtseelenpunkte verbraucht, wenn sie während dieses Zustands sprintet oder die Schwebehöhe erhöht.",
+        " Je nachdem, ob während des Standardangriffs oder heftigen Schlags kurz gedrückt oder gedrückt gehalten wird, wird auf unterschiedliche Weise auf „Mehrfaches Zielen“ umgeschaltet."
+      ],
+      "6": "<br/>",
+      "7": "<strong>Mehrfaches Zielen</strong>",
+      "8": "<strong>Drücken</strong>",
+      "9": "Fügt den Gegnern vor sich mit Nachtseelen versehenen <anemo>Anemo-Schaden</anemo> zu. Hierdurch verursachter Schaden gilt als Schaden des Standardangriffs.",
+      "10": "<strong>Gedrückt halten</strong>",
+      "11": "Chasca wechselt in den Zielmodus, nimmt eine bestimmte Anzahl an Gegnern in einem bestimmten Umkreis ins Visier und lädt je nach Dauer des Gedrückthaltens bis zu 6 „Schattenjagd-Projektile“ nacheinander in das Magazin. Nachdem 6 „Schattenjagd-Projektile“ geladen wurden oder das Gedrückthalten beendet wurde, feuert Chasca die „Schattenjagd-Projektile“ auf die anvisierten Gegner in einer vorgegebenen Reihenfolge ab.",
+      "12": "<br/>",
+      "13": "<strong>Schattenjagd-Projektile</strong>",
+      "14": [
+        " Verursachen mit Nachtseelen versehenen <anemo>Anemo-Schaden</anemo>. Dieser Schaden wird als Schaden des heftigen Schlags gewertet.",
+        " Je nach Elementartyp der anderen Truppenmitglieder wird der Elementartyp des vierten, fünften und sechsten in das Magazin geladenen „Schattenjagd-Projektils“ geändert. Für jedes Truppenmitglied des Elementartyps <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Kryo</cryo> oder <electro>Elektro</electro> wird ein „Schattenjagd-Projektil“ in ein „Funkel-Schattenjagd-Projektil“ eines zufälligen, obengenannten Elementartyps umgewandelt, welches den entsprechenden, mit Nachtseelen versehenen Elementarschaden verursacht. Hierdurch verursachter Schaden gilt als Schaden des heftigen Schlags.",
+        " Das „Schattenjagd-Projektil“, welches als Letztes ins Magazin geladen wurde, wird als erstes abgefeuert."
+      ],
+      "15": "<br/>",
+      "16": "Wenn sich Chasca im Zustand „Nachtseelensegen“ befindet und ihre Elementarfähigkeit <strong>Auf der Jagd nach dem Schatten</strong> gedrückt gehalten wird, führt sie einen mit Nachtseelen versehenen Angriff aus dem Fall aus. Wird die Fähigkeit losgelassen, so werden der Angriff aus dem Fall unterbrochen und der Schwebezustand aufrechterhalten. Beim Aufkommen des Angriffs aus dem Fall endet der Zustand „Nachtseelensegen“ von Chasca.",
+      "17": "<br/>",
+      "18": "<i>Theoretisch könnte alles Mögliche in dieses Halfter passen, wenn sie es wollte ... Aber seien wir doch mal ehrlich, nichts geht über eine riesige Knarre, oder?</i>"
+    },
+    "skillParams": {
+      "0": "Resonanz-SCH",
+      "1": "SCH bei Drücken des mehrfachen Zielens",
+      "2": "SCH Schattenjagd-Projektil",
+      "3": "SCH Funkel-Schattenjagd-Projektil",
+      "4": "Max. Nachtseelenpunkte",
+      "5": "Abklingzeit",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Der letzte Tanz des Sensenmanns",
+    "description": {
+      "0": "Chasca konzentriert ihren Willen und feuert ein „windspaltendes Sensenmann-Projektil“ ab, das mit Nachtseelen versehenen <anemo>Anemo-Flächenschaden</anemo> verursacht. Anschließend teilt sich das windspaltende Sensenmann-Projektil in 6 „Sensenmann-Projektile“, die Gegner in der Nähe angreifen.",
+      "1": "<br/>",
+      "2": "<strong>Sensenmann-Projektile</strong>",
+      "3": [
+        " Verursachen mit Nachtseelen versehenen <anemo>Anemo-Schaden</anemo>.",
+        " Für jedes Truppenmitglied des Elementartyps <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Kryo</cryo> oder <electro>Elektro</electro> werden jeweils zwei Sensenmann-Projektile in „strahlende Sensenmann-Projektile“ eines zufälligen, obengenannten Elementartyps umgewandelt, die den jeweiligen mit Nachtseelen versehenen Elementarschaden verursachen."
+      ],
+      "4": "<br/>",
+      "5": "<i>Niemand kann sich den Ausschweifungen und dem Mondschein der Nacht entziehen, so wie auch kein anvisierter Gegner je ihrem konzentrierten Blick entgehen kann.</i>"
+    },
+    "skillParams": {
+      "0": "SCH windspaltendes Sensenmann-Projektil",
+      "1": "SCH Sensenmann-Projektil",
+      "2": "SCH strahlendes Sensenmann-Projektil",
+      "3": "Abklingzeit",
+      "4": "Elementarenergie",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Kugeltrick",
+    "description": {
+      "0": "Wenn es während des Aufladens von <strong>Mehrfaches Zielen</strong> der Elementarfähigkeit <strong>Auf der Jagd nach dem Schatten</strong> in der Truppe Figuren gibt, deren Elementartypen den Bedingungen zur Elementarumwandlung entsprechen, werden basierend auf der Anzahl unterschiedlicher Elementartypen solcher Figuren folgende Effekte ausgelöst:",
+      "1": [
+        " Wandelt das dritte in das Magazin geladene <strong>Schattenjagd-Projektil</strong> mit einer Wahrscheinlichkeit von 33,3/66,7/100 % pro Elementartyp durch das Auslösen von „Wechsel der Nachtseelenbindung“ zufällig in ein <strong>Funkel-Schattenjagd-Projektil</strong> des entsprechenden Elementartyps um.",
+        " Verleiht Chasca für jeden Elementartyp 1 Stapelung des Effekts „Funkel-Schattenseele“, wodurch der mit Funkel-Schattenjagd-Projektilen verursachte Schaden um 15/35/65 % erhöht wird. Dieser Effekt hält bis zum Ende des Mehrfachen Zielens, 3-fach stapelbar."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Die Idee von Deckung",
+    "description": {
+      "0": "Löst ein Truppenmitglied in der Nähe „Nachtseelenaufbruch“ aus, wird Chasca auf Gegner in der Nähe ein „Feuriges Schattenjagd-Projektil“ abfeuern, welches mit Nachtseelen versehenen <anemo>Anemo-Schaden</anemo> verursacht, der 150 % des Schadens des <strong>Schattenjagd-Projektils</strong> der Elementarfähigkeit <strong>Auf der Jagd nach dem Schatten</strong> entspricht. Befinden sich in deiner Truppe Figuren des Elementartyps <pyro>Pyro</pyro>, <hydro>Hydro</hydro>, <cryo>Kryo</cryo> oder <electro>Elektro</electro>, kommt es zu einer Elementarumwandlung des feurigen Schattenjagd-Projektils, wodurch dieses mit Nachtseelen versehenen Schaden des entsprechenden Elementartypen verursacht. Dieser entspricht dabei 150 % des durch das <strong>Funkel-Schattenjagd-Projektil</strong> der Elementarfähigkeit <strong>Auf der Jagd nach dem Schatten</strong> verursachten Schadens.",
+      "1": "Oben erwähnter Schaden wird als Schaden des heftigen Schlags gewertet."
+    }
+  },
+  "passive3": {
+    "name": "Geschenk des Nachtreichs – Immerwährend brennendes Herz",
+    "description": {
+      "0": "Nachdem ihre Nachtseelenpunkte aufgebraucht sind, wechselt Chasca zum Verbrauch von Phlogiston, um ihren „Nachtseelensegen“ aufrechtzuerhalten.",
+      "1": "Beim Aufenthalt in einem Gebiet mit Phlogiston-Mechanismus in Natlan kann die Nachtseelen-Übertragung – Chasca verwendet werden. Wenn die aktuelle Figur sich in der Luft befindet, wird beim Wechsel zu Chasca Folgendes ausgelöst: Chasca tritt in den Zustand des Nachtseelensegens ein und erhält 32 Nachtseelenpunkte. 10 s Abklingzeit für das Auslösen der Nachtseelen-Übertragung innerhalb der eigenen Truppe."
+    }
+  },
+  "passive": {
+    "name": "Die wahre Bedeutung des Vermittelns",
+    "description": {
+      "0": "Stellt der eigenen Figur in der Truppe beim Besiegen von Gegnern durch sie 25 Punkte Phlogiston wieder her, 12 s Abklingzeit.",
+      "1": "Dieser Effekt gilt nicht in Sphären, Gebietssäuberungen und im Gewundenen Abgrund."
+    }
+  },
+  "constellation1": {
+    "name": "Das Magazin, rastloses Roulette",
+    "description": {
+      "0": "Beim Auslösen von „Wechsel der Nachtseelenbindung“ des passiven Talents „Kugeltrick“ wird zusätzlich das zweite ins Magazin geladene <strong>Schattenjagd-Projektil</strong> zu einem <strong>Funkel-Schattenjagd-Projektil</strong> umgewandelt.",
+      "1": "Erhöht die Wahrscheinlichkeit des Auslösens von „Wechsel der Nachtseelenbindung“: Wenn sich in der Truppe eine Figur befindet, deren Elementartyp die Bedingungen zur Elementarumwandlung erfüllt, erhöht sich die Wahrscheinlichkeit des Auslösens von „Wechsel der Nachtseelenbindung“ um 33,3 %, höchstens auf 100 %.",
+      "2": "<br/>",
+      "3": "Das passive Talent „Kugeltrick“ muss zuerst freigeschaltet werden.",
+      "4": "Außerdem verringert sich Chascas Verbrauch an Nachtseelenpunkten und Phlogiston im Zustand Nachtseelensegen um 30 %, wenn sie sich nicht im Kampf befindet."
+    }
+  },
+  "constellation2": {
+    "name": "Die Mündung, sengender Qualm",
+    "description": {
+      "0": "Verleiht Chasca beim Einwechseln 1 Stapelung „Funkel-Schattenseele“ ihres passiven Talents „Kugeltrick“. Das passive Talent „Kugeltrick“ muss für diesen Effekt zuerst freigeschaltet werden.",
+      "1": "Treffen Chascas <strong>Funkel-Schattenjagd-Projektile</strong> Gegner, während <strong>Mehrfaches Zielen</strong> ihrer Elementarfähigkeit <strong>Auf der Jagd nach dem Schatten</strong> angewendet wird, verursachen diese dem Elementartyp des <strong>Funkel-Schattenjagd-Projektils</strong> entsprechenden Flächenschaden in Höhe von 400 % von Chascas ANG. Hierdurch verursachter Schaden gilt als Schaden von heftigen Schlägen. Dieser Effekt kann jeweils nur einmal beim Anwenden von <strong>Mehrfaches Zielen</strong> ausgelöst werden."
+    }
+  },
+  "constellation3": {
+    "name": "Die Zügel, fest in der Hand",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong>Auf der Jagd nach dem Schatten</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Der Funke, ein plötzlicher Schuss",
+    "description": {
+      "0": "Chasca werden 1,5 Punkte Elementarenergie wiederhergestellt, wenn die <strong>strahlenden Sensenmann-Projektile</strong> der Spezialfähigkeit <strong>Der letzte Tanz des Sensenmanns</strong> Gegner treffen. Außerdem verursachen die <strong>strahlenden Sensenmann-Projektile</strong> ihrem Elementartyp entsprechenden Flächenschaden in Höhe von 400 % von Chascas ANG. Hierdurch verursachter Schaden gilt als Schaden von heftigen Schlägen.",
+      "1": "Der Effekt für den verursachten Flächenschaden des jeweiligen Elements kann pro <strong>Der letzte Tanz des Sensenmanns</strong> nur 1-mal ausgelöst werden."
+    }
+  },
+  "constellation5": {
+    "name": "Die Hutkrempe, eine Silhouette des Sandschattens",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Der letzte Tanz des Sensenmanns</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Das letzte Duell, der Ruhm der Schlacht",
+    "description": {
+      "0": "Verringert die für Chascas <strong>Mehrfaches Zielen</strong> benötigte Zeit. Chasca tritt, nachdem sie „Wechsel der Nachtseelenbindung“ ihres passiven Talents „Kugeltrick“ ausgelöst hat, in den Zustand „Der letzte Tanz“ ein. Löst sie danach innerhalb von 3 s <strong>Mehrfaches Zielen</strong> ihrer Elementarfähigkeit <strong>Auf der Jagd nach dem Schatten</strong> aus, wird das entsprechende Aufladen sofort abgeschlossen und der KSCH der <strong>Schattenjagd-Projektile</strong> und <strong>Funkel-Schattenjagd-Projektile</strong> von <strong>Mehrfaches Zielen</strong> wird dieses Mal um 120 % erhöht. 3 s Abklingzeit für das Erhalten des Effekts „Der letzte Tanz“.",
+      "1": "<br/>",
+      "2": "Das passive Talent „Kugeltrick“ muss für diesen Effekt zuerst freigeschaltet werden."
+    }
+  }
+}
