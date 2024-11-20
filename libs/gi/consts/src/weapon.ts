@@ -15,6 +15,7 @@ export const allWeaponSwordKeys = [
   'AmenomaKageuchi',
   'AquilaFavonia',
   'BlackcliffLongsword',
+  'CalamityOfEshu',
   'CinnabarSpindle',
   'CoolSteel',
   'DarkIronSword',
@@ -144,6 +145,7 @@ export const allWeaponBowKeys = [
   'AlleyHunter',
   'AmosBow',
   'AquaSimulacra',
+  'AstralVulturesCrimsonPlumage',
   'BlackcliffWarbow',
   'ChainBreaker',
   'Cloudforged',
@@ -152,6 +154,7 @@ export const allWeaponBowKeys = [
   'EndOfTheLine',
   'FadingTwilight',
   'FavoniusWarbow',
+  'FlowerWreathedFeathers',
   'Hamayumi',
   'HuntersBow',
   'HuntersPath',
@@ -225,6 +228,7 @@ export const allWeaponCatalystKeys = [
   'TulaytullahsRemembrance',
   'TwinNephrite',
   'WanderingEvenstar',
+  'WaveridingWhirl',
   'WineAndSong',
 ] as const
 export type WeaponCatalystKey = (typeof allWeaponCatalystKeys)[number]

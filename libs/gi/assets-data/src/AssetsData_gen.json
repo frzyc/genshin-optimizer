@@ -132,6 +132,10 @@
       "icon": "UI_EquipIcon_Sword_Isikhulu",
       "awakenIcon": "UI_EquipIcon_Sword_Isikhulu_Awaken"
     },
+    "CalamityOfEshu": {
+      "icon": "UI_EquipIcon_Sword_SacrificialNgombe",
+      "awakenIcon": "UI_EquipIcon_Sword_SacrificialNgombe_Awaken"
+    },
     "AquilaFavonia": {
       "icon": "UI_EquipIcon_Sword_Falcon",
       "awakenIcon": "UI_EquipIcon_Sword_Falcon_Awaken"
@@ -580,6 +584,10 @@
       "icon": "UI_EquipIcon_Catalyst_ConchSprayer",
       "awakenIcon": "UI_EquipIcon_Catalyst_ConchSprayer_Awaken"
     },
+    "WaveridingWhirl": {
+      "icon": "UI_EquipIcon_Catalyst_Umpakati",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Umpakati_Awaken"
+    },
     "RingOfYaxche": {
       "icon": "UI_EquipIcon_Catalyst_Isikhulu",
       "awakenIcon": "UI_EquipIcon_Catalyst_Isikhulu_Awaken"
@@ -752,6 +760,10 @@
       "icon": "UI_EquipIcon_Bow_Mechanic",
       "awakenIcon": "UI_EquipIcon_Bow_Mechanic_Awaken"
     },
+    "FlowerWreathedFeathers": {
+      "icon": "UI_EquipIcon_Bow_Umpakati",
+      "awakenIcon": "UI_EquipIcon_Bow_Umpakati_Awaken"
+    },
     "ChainBreaker": {
       "icon": "UI_EquipIcon_Bow_Isikhulu",
       "awakenIcon": "UI_EquipIcon_Bow_Isikhulu_Awaken"
@@ -791,6 +803,10 @@
     "SilvershowerHeartstrings": {
       "icon": "UI_EquipIcon_Bow_Arcdange",
       "awakenIcon": "UI_EquipIcon_Bow_Arcdange_Awaken"
+    },
+    "AstralVulturesCrimsonPlumage": {
+      "icon": "UI_EquipIcon_Bow_Qoyllorsnova",
+      "awakenIcon": "UI_EquipIcon_Bow_Qoyllorsnova_Awaken"
     },
     "QuantumCatalyst": {}
   },
@@ -2662,6 +2678,42 @@
       "constellation4": "UI_Talent_S_Xilonen_03",
       "constellation5": "UI_Talent_U_Xilonen_02",
       "constellation6": "UI_Talent_S_Xilonen_04"
+    },
+    "Chasca": {
+      "icon": "UI_AvatarIcon_Chasca",
+      "iconSide": "UI_AvatarIcon_Side_Chasca",
+      "banner": "UI_NameCardPic_Chasca_P",
+      "bar": "UI_NameCardPic_Chasca_Alpha",
+      "skill": "Skill_S_Chasca_01",
+      "burst": "Skill_E_Chasca_01_HD",
+      "passive1": "UI_Talent_S_Chasca_05",
+      "passive2": "UI_Talent_S_Chasca_06",
+      "passive3": "UI_Talent_S_Chasca_07",
+      "passive": "UI_Talent_S_Chasca_08",
+      "constellation1": "UI_Talent_S_Chasca_01",
+      "constellation2": "UI_Talent_S_Chasca_02",
+      "constellation3": "UI_Talent_U_Chasca_01",
+      "constellation4": "UI_Talent_S_Chasca_03",
+      "constellation5": "UI_Talent_U_Chasca_02",
+      "constellation6": "UI_Talent_S_Chasca_04"
+    },
+    "Ororon": {
+      "icon": "UI_AvatarIcon_Olorun",
+      "iconSide": "UI_AvatarIcon_Side_Olorun",
+      "banner": "UI_NameCardPic_Olorun_P",
+      "bar": "UI_NameCardPic_Olorun_Alpha",
+      "skill": "Skill_S_Olorun_01",
+      "burst": "Skill_E_Olorun_01_HD",
+      "passive1": "UI_Talent_S_Olorun_05",
+      "passive2": "UI_Talent_S_Olorun_06",
+      "passive3": "UI_Talent_S_Olorun_07",
+      "passive": "UI_Talent_S_Olorun_08",
+      "constellation1": "UI_Talent_S_Olorun_01",
+      "constellation2": "UI_Talent_S_Olorun_02",
+      "constellation3": "UI_Talent_U_Olorun_01",
+      "constellation4": "UI_Talent_S_Olorun_03",
+      "constellation5": "UI_Talent_U_Olorun_02",
+      "constellation6": "UI_Talent_S_Olorun_04"
     },
     "TravelerAnemo": {
       "skill": "Skill_S_PlayerWind_01",

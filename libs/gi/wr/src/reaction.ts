@@ -1,5 +1,6 @@
-import { objKeyMap } from '@genshin-optimizer/common/util'
+import { objKeyMap, objKeyValMap } from '@genshin-optimizer/common/util'
 import { absorbableEle } from '@genshin-optimizer/gi/consts'
+import type { CrittableTransformativeReactionsKey } from '@genshin-optimizer/gi/keymap'
 import {
   crystallizeLevelMultipliers,
   transformativeReactionLevelMultipliers,
@@ -66,7 +67,14 @@ const trans = {
           {
             hit: one,
             critHit: canCrit
-              ? sum(one, input.total[`${reaction}_critDMG_`])
+              ? sum(
+                  one,
+                  input.total[
+                    `${
+                      reaction as CrittableTransformativeReactionsKey
+                    }_critDMG_`
+                  ]
+                )
               : one,
             avgHit: canCrit
               ? sum(
@@ -75,17 +83,29 @@ const trans = {
                     infoMut(
                       max(
                         min(
-                          input.total[`${reaction}_critRate_`],
+                          input.total[
+                            `${
+                              reaction as CrittableTransformativeReactionsKey
+                            }_critRate_`
+                          ],
                           sum(one, one)
                         ),
                         naught
                       ),
                       {
-                        ...input.total[`${reaction}_critRate_`].info,
+                        ...input.total[
+                          `${
+                            reaction as CrittableTransformativeReactionsKey
+                          }_critRate_`
+                        ].info,
                         pivot: true,
                       }
                     ),
-                    input.total[`${reaction}_critDMG_`]
+                    input.total[
+                      `${
+                        reaction as CrittableTransformativeReactionsKey
+                      }_critDMG_`
+                    ]
                   )
                 )
               : one,
@@ -186,12 +206,10 @@ export const reactions = {
   },
   geo: {
     crystallize: crystallizeHit,
-    ...Object.fromEntries(
-      absorbableEle.map((e) => [
-        `${e}Crystallize`,
-        infoMut(prod(percent(2.5), crystallizeHit), info(`${e}_crystallize`)),
-      ])
-    ),
+    ...objKeyValMap(absorbableEle, (e) => [
+      `${e}Crystallize`,
+      infoMut(prod(percent(2.5), crystallizeHit), info(`${e}_crystallize`)),
+    ]),
     shattered: trans.shattered,
     overloaded: infusionReactions.overloaded,
     electrocharged: infusionReactions.electrocharged,

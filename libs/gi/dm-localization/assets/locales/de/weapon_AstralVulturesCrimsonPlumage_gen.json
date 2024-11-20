@@ -1,0 +1,24 @@
+{
+  "name": "Karmesinrotes Federkleid des Astralgeiers",
+  "description": {
+    "0": "Ein uralter, mit roten Federn geschmückter Langbogen, eines der Heiligtümer des Blumenfeder-Klans, die von Generation zu Generation weitergegeben wurden."
+  },
+  "passiveName": "Der gesichtete Mondhalo",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht den ANG nach Auslösen der Reaktion Verwirbelung 12 s lang um <cryo>24 %</cryo>. Erhöht, wenn sich mindestens 1/2 Figur(en) in der Truppe befinden, deren Elementartypen sich von dem des Trägers unterscheiden, den mit heftigen Schlägen des Trägers verursachten Schaden um <cryo>20/48 %</cryo> und den mit Spezialfähigkeiten des Trägers verursachten Schaden um <cryo>10/24 %</cryo>."
+    },
+    "1": {
+      "0": "Erhöht den ANG nach Auslösen der Reaktion Verwirbelung 12 s lang um <cryo>30 %</cryo>. Erhöht, wenn sich mindestens 1/2 Figur(en) in der Truppe befinden, deren Elementartypen sich von dem des Trägers unterscheiden, den mit heftigen Schlägen des Trägers verursachten Schaden um <cryo>25/60 %</cryo> und den mit Spezialfähigkeiten des Trägers verursachten Schaden um <cryo>12,5/30 %</cryo>."
+    },
+    "2": {
+      "0": "Erhöht den ANG nach Auslösen der Reaktion Verwirbelung 12 s lang um <cryo>36 %</cryo>. Erhöht, wenn sich mindestens 1/2 Figur(en) in der Truppe befinden, deren Elementartypen sich von dem des Trägers unterscheiden, den mit heftigen Schlägen des Trägers verursachten Schaden um <cryo>30/72 %</cryo> und den mit Spezialfähigkeiten des Trägers verursachten Schaden um <cryo>15/36 %</cryo>."
+    },
+    "3": {
+      "0": "Erhöht den ANG nach Auslösen der Reaktion Verwirbelung 12 s lang um <cryo>42 %</cryo>. Erhöht, wenn sich mindestens 1/2 Figur(en) in der Truppe befinden, deren Elementartypen sich von dem des Trägers unterscheiden, werden den mit heftigen Schlägen des Trägers verursachten Schaden um <cryo>35/84 %</cryo> und den mit Spezialfähigkeiten des Trägers verursachten Schaden um <cryo>17,5/42 %</cryo>."
+    },
+    "4": {
+      "0": "Erhöht den ANG nach Auslösen der Reaktion Verwirbelung 12 s lang um <cryo>48 %</cryo>. Erhöht, wenn sich mindestens 1/2 Figur(en) in der Truppe befinden, deren Elementartypen sich von dem des Trägers unterscheiden, werden den mit heftigen Schlägen des Trägers verursachten Schaden um <cryo>40/96 %</cryo> und den mit Spezialfähigkeiten des Trägers verursachten Schaden um <cryo>20/48 %</cryo>."
+    }
+  }
+}

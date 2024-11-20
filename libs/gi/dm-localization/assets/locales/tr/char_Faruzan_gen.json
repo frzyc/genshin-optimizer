@@ -17,7 +17,7 @@
       },
       "plunging": {
         "0": "<strong>Havadan Saldırı</strong>",
-        "1": "Havadayken yaylım ok atışı yapar ve hızla aşağı dalış yaparak yere vurur, yoluna çıkan düşmanlara saldırır ve Alan Hasarı verir."
+        "1": "Havadayken yaylım ok atışı yapar ve dalışa geçerek yere vurur. Yoluna çıkan düşmanlara saldırır ve yere vurduğunda Alan Hasarı verir."
       }
     },
     "skillParams": {

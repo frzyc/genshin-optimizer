@@ -1,0 +1,24 @@
+{
+  "name": "Redemoinho das Ondas",
+  "description": {
+    "0": "Um bumerangue feito das presas de uma gigantesca serpente do mar. Era uma arma rara que o gigante Tupac se referia como confiável."
+  },
+  "passiveName": "Presas Voando de Lá para Cá",
+  "passiveDescription": {
+    "0": {
+      "0": "Diminui o consumo de Stamina ao Nadar em 15%. Além disso, por 10s após usar uma Habilidade Elemental, a Vida Máxima é aumentada em <cryo>20%</cryo>. Para cada personagem Hydro na equipe, a Vida Máxima é aumentada em mais <cryo>12%</cryo>, e o aumento máximo que pode ser alcançado dessa forma é de <cryo>24%</cryo>. Pode ser ativado uma vez a cada 15s."
+    },
+    "1": {
+      "0": "Diminui o consumo de Stamina ao Nadar em 15%. Além disso, por 10s após usar uma Habilidade Elemental, a Vida Máxima é aumentada em <cryo>25%</cryo>. Para cada personagem Hydro na equipe, a Vida Máxima é aumentada em mais <cryo>15%</cryo>, e o aumento máximo que pode ser alcançado dessa forma é de <cryo>30%</cryo>. Pode ser ativado uma vez a cada 15s."
+    },
+    "2": {
+      "0": "Diminui o consumo de Stamina ao Nadar em 15%. Além disso, por 10s após usar uma Habilidade Elemental, a Vida Máxima é aumentada em <cryo>30%</cryo>. Para cada personagem Hydro na equipe, a Vida Máxima é aumentada em mais <cryo>18%</cryo>, e o aumento máximo que pode ser alcançado dessa forma é de <cryo>36%</cryo>. Pode ser ativado uma vez a cada 15s."
+    },
+    "3": {
+      "0": "Diminui o consumo de Stamina ao Nadar em 15%. Além disso, por 10s após usar uma Habilidade Elemental, a Vida Máxima é aumentada em <cryo>35%</cryo>. Para cada personagem Hydro na equipe, a Vida Máxima é aumentada em mais <cryo>21%</cryo>, e o aumento máximo que pode ser alcançado dessa forma é de <cryo>42%</cryo>. Pode ser ativado uma vez a cada 15s."
+    },
+    "4": {
+      "0": "Diminui o consumo de Stamina ao Nadar em 15%. Além disso, por 10s após usar uma Habilidade Elemental, a Vida Máxima é aumentada em <cryo>40%</cryo>. Para cada personagem Hydro na equipe, a Vida Máxima é aumentada em mais <cryo>24%</cryo>, e o aumento máximo que pode ser alcançado dessa forma é de <cryo>48%</cryo>. Pode ser ativado uma vez a cada 15s."
+    }
+  }
+}

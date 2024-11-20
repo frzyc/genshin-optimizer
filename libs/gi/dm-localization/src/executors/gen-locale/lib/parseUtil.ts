@@ -109,13 +109,6 @@ export const parsingFunctions: {
   },
   autoFields: (lang, string, keys) => {
     const strings = autoFields(string)
-    if (strings.length === 2) {
-      const [, charkey] = keys as any
-      if (charkey === 'Kinich' && lang === 'id') {
-        const [normal, charged, plunging] = autoFields(string, '\\n<strong>')
-        return { normal, charged, plunging } as any
-      }
-    }
     if (strings.length === 3) {
       const [normal, charged, plunging] = strings
       return { normal, charged, plunging } as any

@@ -1,0 +1,24 @@
+{
+  "name": "La calamité d'Eshu",
+  "description": {
+    "0": "Une lame cérémonielle forgée par Sanhaj, le grand prêtre des Maîtres du vent nocturne. Dans les contes d'autrefois, Sanhaj pouvait utiliser cette lame courbée pour accomplir des rituels, brouillant ainsi la frontière entre le Fief nocturne et le monde actuel."
+  },
+  "passiveName": "Frontière diffuse",
+  "passiveDescription": {
+    "0": {
+      "0": "Lorsque le personnage est sous la protection d'un bouclier, les DGT infligés par les attaques normales et chargées augmentent de <cryo>20 %</cryo> et leur taux CRIT de <cryo>8 %</cryo>."
+    },
+    "1": {
+      "0": "Lorsque le personnage est sous la protection d'un bouclier, les DGT infligés par les attaques normales et chargées augmentent de <cryo>25 %</cryo> et leur taux CRIT de <cryo>10 %</cryo>."
+    },
+    "2": {
+      "0": "Lorsque le personnage est sous la protection d'un bouclier, les DGT infligés par les attaques normales et chargées augmentent de <cryo>30 %</cryo> et leur taux CRIT de <cryo>12 %</cryo>."
+    },
+    "3": {
+      "0": "Lorsque le personnage est sous la protection d'un bouclier, les DGT infligés par les attaques normales et chargées augmentent de <cryo>35 %</cryo> et leur taux CRIT de <cryo>14 %</cryo>."
+    },
+    "4": {
+      "0": "Lorsque le personnage est sous la protection d'un bouclier, les DGT infligés par les attaques normales et chargées augmentent de <cryo>40 %</cryo> et leur taux CRIT de <cryo>16 %</cryo>."
+    }
+  }
+}

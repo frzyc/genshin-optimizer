@@ -1,0 +1,24 @@
+{
+  "name": "Eshu'nun Felaketi",
+  "description": {
+    "0": "Gece Rüzgarının Ustalarının büyük başrahibi Sanhaj'ın dövdüğü bir seremoni kılıcı. Eski çağlara ait hikayelerde Sanhaj bu kıvrımlı kılıcı kullanarak ayinler gerçekleştirir, Gece Krallığı ile günümüz dünyası arasındaki sınırları ortadan kaldırmaya çalışırdı."
+  },
+  "passiveName": "Geçişken Sınırlar",
+  "passiveDescription": {
+    "0": {
+      "0": "Karakterler bir Kalkan tarafından korunurken Normal ve Yüklü Saldırı Hasarı <cryo>%20</cryo>, Normal ve Yüklü Saldırı Kritik Oranı ise <cryo>%8</cryo> artar."
+    },
+    "1": {
+      "0": "Karakterler bir Kalkan tarafından korunurken Normal ve Yüklü Saldırı Hasarı <cryo>%25</cryo>, Normal ve Yüklü Saldırı Kritik Oranı ise <cryo>%10</cryo> artar."
+    },
+    "2": {
+      "0": "Karakterler bir Kalkan tarafından korunurken Normal ve Yüklü Saldırı Hasarı <cryo>%30</cryo>, Normal ve Yüklü Saldırı Kritik Oranı ise <cryo>%12</cryo> artar."
+    },
+    "3": {
+      "0": "Karakterler bir Kalkan tarafından korunurken Normal ve Yüklü Saldırı Hasarı <cryo>%35</cryo>, Normal ve Yüklü Saldırı Kritik Oranı ise <cryo>%14</cryo> artar."
+    },
+    "4": {
+      "0": "Karakterler bir Kalkan tarafından korunurken Normal ve Yüklü Saldırı Hasarı <cryo>%40</cryo>, Normal ve Yüklü Saldırı Kritik Oranı ise <cryo>%16</cryo> artar."
+    }
+  }
+}

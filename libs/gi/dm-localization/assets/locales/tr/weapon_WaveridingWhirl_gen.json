@@ -1,0 +1,24 @@
+{
+  "name": "Dalgaların Girdabı",
+  "description": {
+    "0": "Devasa bir deniz yılanının dişlerinden yapılmış bir bumerang. Dev Tupac'ın \"güvenilir\" olarak adlandırdığı, gerçekten nadir bir silahtır."
+  },
+  "passiveName": "Uçuşan Sivri Dişler",
+  "passiveDescription": {
+    "0": {
+      "0": "Yüzme sırasındaki Dayanıklılık Tüketimi %15 azalır. Bir Element Becerisi kullandıktan sonra 10sn boyunca Maks. Can <cryo>%20</cryo> artar. Grubundaki her Su karakteri için Maks. Can ek <cryo>%12</cryo> daha artar. Bu şekilde kazanılabilecek en fazla artış <cryo>%24</cryo> olur. Bu etki 15 saniyede bir tetiklenebilir."
+    },
+    "1": {
+      "0": "Yüzme sırasındaki Dayanıklılık Tüketimi %15 azalır. Bir Element Becerisi kullandıktan sonra 10sn boyunca Maks. Can <cryo>%25</cryo> artar. Grubundaki her Su karakteri için Maks. Can ek <cryo>%15</cryo> daha artar. Bu şekilde kazanılabilecek en fazla artış <cryo>%30</cryo> olur. Bu etki 15 saniyede bir tetiklenebilir."
+    },
+    "2": {
+      "0": "Yüzme sırasındaki Dayanıklılık Tüketimi %15 azalır. Bir Element Becerisi kullandıktan sonra 10sn boyunca Maks. Can <cryo>%30</cryo> artar. Grubundaki her Su karakteri için Maks. Can ek <cryo>%18</cryo> daha artar. Bu şekilde kazanılabilecek en fazla artış <cryo>%36</cryo> olur. Bu etki 15 saniyede bir tetiklenebilir."
+    },
+    "3": {
+      "0": "Yüzme sırasındaki Dayanıklılık Tüketimi %15 azalır. Bir Element Becerisi kullandıktan sonra 10sn boyunca Maks. Can <cryo>%35</cryo> artar. Grubundaki her Su karakteri için Maks. Can ek <cryo>%21</cryo> daha artar. Bu şekilde kazanılabilecek en fazla artış <cryo>%42</cryo> olur. Bu etki 15 saniyede bir tetiklenebilir."
+    },
+    "4": {
+      "0": "Yüzme sırasındaki Dayanıklılık Tüketimi %15 azalır. Bir Element Becerisi kullandıktan sonra 10sn boyunca Maks. Can <cryo>%40</cryo> artar. Grubundaki her Su karakteri için Maks. Can ek <cryo>%24</cryo> daha artar. Bu şekilde kazanılabilecek en fazla artış <cryo>%48</cryo> olur. Bu etki 15 saniyede bir tetiklenebilir."
+    }
+  }
+}

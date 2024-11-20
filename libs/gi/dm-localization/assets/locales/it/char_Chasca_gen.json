@@ -1,0 +1,201 @@
+{
+  "name": "Chasca",
+  "title": "Mediatrice celeste",
+  "description": "La Pacificatrice di Tlalocan, conciliatrice di ogni controversia.",
+  "constellationName": "Vultur Gryphus",
+  "auto": {
+    "name": "Raffica Spettropiuma",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Scocca fino a 4 frecce consecutive con un arco."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Effettua un <strong>attacco mirato</strong> ancora più preciso con DAN aumentati.",
+        "2": "Mentre mira, sulla punta della freccia convergono dei venti impetuosi. Una freccia di vento caricata al massimo infligge <anemo>DAN da Anemo</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Scocca una pioggia di frecce a mezz'aria prima di cadere al suolo, colpendo gli avversari lungo il percorso e infliggendo DAN ad area all'impatto."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "ATT mirato",
+      "5": "ATT mirato a piena carica",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Redini dello spirito, Caccia nell'ombra",
+    "description": {
+      "0": "Chasca e la volontà che risiede nella sua arma entrano in risonanza, infliggendo <anemo>DAN da Anemo ad area</anemo> con attributo Anima della Notte.",
+      "1": "Dopo aver usato la sua abilità, Chasca ottiene 80 punti Anima della Notte ed entra nello stato di Grazia dell'Anima della Notte.",
+      "2": "<br/>",
+      "3": "<strong>Grazia dell'Anima della Notte: Chasca</strong>",
+      "4": "Consuma costantemente i punti Anima della Notte. Quando vengono consumati tutti o l'abilità viene usata nuovamente, lo stato di Grazia dell'Anima della Notte di Chasca termina. Lo stato prevede quanto segue:",
+      "5": [
+        " Chasca sale sul suo Cecchino di anime: Bastone rituale, aumentando la propria VEL di movimento e la resistenza alle interruzioni. In questo stato, Chasca consuma costantemente i punti Anima della Notte per rimanere sospesa in aria. Scattare o aumentare l'altitudine consuma una quantità aggiuntiva di punti Anima della Notte;",
+        " quando usa i suoi attacchi normali o caricati, la diversa pressione dell'abilità permette di usare il suo Fuoco multibersaglio in vari modi."
+      ],
+      "6": "<br/>",
+      "7": "<strong>Fuoco multibersaglio</strong>",
+      "8": "<strong>Pressione</strong>",
+      "9": "Infligge <anemo>DAN da Anemo</anemo> con attributo Anima della Notte agli avversari di fronte a lei. Tali DAN sono considerati DAN da attacco normale.",
+      "10": "<br/>",
+      "11": "<strong>Pressione prolungata</strong>",
+      "12": "Chasca entra in modalità di mira, sceglie un certo numero di avversari presenti in un dato raggio d'azione per poi caricare fino a 6 Proiettili Cacciaombre in base alla durata di carica dell'attacco. Quando tutti e 6 i proiettili vengono caricati o ne viene interrotta la carica, questi vengono sparati in sequenza contro gli avversari designati.",
+      "13": "<br/>",
+      "14": "<strong>Proiettili Cacciaombre</strong>",
+      "15": [
+        " Infliggono <anemo>DAN da Anemo</anemo> con attributo Anima della Notte, considerati DAN da attacco caricato.",
+        " Il 4º, 5º e 6º Proiettile caricati nel tamburo subiscono una Conversione elementale in base al tipo elementale degli altri membri del gruppo. Per ciascun personaggio di <pyro>Pyro</pyro>/<hydro>Hydro</hydro>/<cryo>Cryo</cryo>/<electro>Electro</electro> presente nel gruppo, ciascun Proiettile Cacciaombre viene convertito in un Proiettile Cacciaombre radioso di uno a caso dei tipi elementali corrispondenti, infliggendo DAN del medesimo tipo con attributo Anima della Notte. Tali DAN sono considerati DAN da attacco caricato.",
+        " I Proiettili Cacciaombre vengono sparati in ordine inverso rispetto alla loro carica, dall'ultimo fino al primo."
+      ],
+      "16": "<br/>",
+      "17": "Inoltre, quando Chasca è nello stato di Grazia dell'Anima della Notte, la pressione prolungata della sua abilità elementale <strong>Redini dello spirito, Caccia nell'ombra</strong> le permette di eseguire un attacco in picchiata con attributo Anima della Notte. Interrompere la pressione dell'abilità interrompe a sua volta l'attacco in picchiata, permettendo a Chasca di rimanere a mezz'aria. Se l'attacco in picchiata colpisce il suolo, lo stato di Grazia dell'Anima della Notte di Chasca termina.",
+      "18": "<br/>",
+      "19": "<i> In teoria, se lei lo desiderasse, quelle redini potrebbero tenere a freno qualsiasi cosa... Ma cosa potrebbe esserci di più bello di una pistola gigantesca?</i>"
+    },
+    "skillParams": {
+      "0": "DAN da risonanza",
+      "1": "DAN da pressione Fuoco multibersaglio",
+      "2": "DAN da Proiettile Cacciaombre",
+      "3": "DAN da Proiettile Cacciaombre radioso",
+      "4": "Limite punti Anima della Notte",
+      "5": "TdR",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Colpo fatale della mietitrice",
+    "description": {
+      "0": "Chasca concentra tutta la sua volontà e spara un singolo Proiettile Cercanime squarciavento che infligge <anemo>DAN da Anemo ad area</anemo> con attributo Anima della Notte. In seguito, il suddetto Proiettile si divide in 6 Proiettili Cercanime che attaccano gli avversari circostanti.",
+      "1": "<br/>",
+      "2": "<strong>Proiettili Cercanime</strong>",
+      "3": [
+        " Infliggono <anemo>DAN da Anemo</anemo> con attributo Anima della Notte.",
+        " Per ciascun personaggio di <pyro>Pyro</pyro>/<hydro>Hydro</hydro>/<cryo>Cryo</cryo>/<electro>Electro</electro> presente nel gruppo, due Proiettili Cercanime subiscono una Conversione elementale per diventare Proiettili Cercanime radiosi, che infliggono DAN elementali con attributo Anima della Notte di uno a caso tra i tipi elementali corrispondenti."
+      ],
+      "4": "<br/>",
+      "5": "<i>Nessuno può sfuggire al chiaro di luna o ai sussurri della notte, proprio come nessun nemico può sfuggire ai suoi occhi vigili una volta avvistato.</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Proiettile Cercanime squarciavento",
+      "1": "DAN da Proiettile Cercanime",
+      "2": "DAN da Proiettile Cercanime radioso",
+      "3": "TdR",
+      "4": "Costo energia",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Trucco del proiettile",
+    "description": {
+      "0": "Durante la carica del <strong>Fuoco multibersaglio</strong> dell'abilità elementale <strong>Redini dello spirito, Caccia nell'ombra</strong>, se nel gruppo sono presenti dei membri che rispettano i requisiti di conversione del tipo elementale, si ottengono i seguenti effetti in base al numero dei suddetti tipi elementali:",
+      "1": [
+        " ciascun tipo ha un 33,3%/66,7%/100% di probabilità di innescare una Conversione del Vincolo spirituale, che causa la conversione del 3º <strong>Proiettile Cacciaombre</strong> caricato nel tamburo in un <strong>Proiettile Cacciaombre radioso</strong> di uno a caso dei tipi elementali corrispondenti;",
+        " ciascun tipo elementale conferisce a Chasca 1 accumulo di Spirito dell'Ombra raggiante, che aumenta i DAN del Proiettile Cacciaombre radioso di un 15%/35%/65%. Quest'effetto persiste per l'intera durata del Fuoco multibersaglio in corso, ed è cumulabile fino a 3 volte."
+      ]
+    }
+  },
+  "passive2": {
+    "name": "Desiderio di proteggere",
+    "description": {
+      "0": "Quando un membro vicino del gruppo innesca un Impeto dell'Anima della Notte, Chasca spara un Colpo Cacciaombre ardente contro un avversario vicino, infliggendo <anemo>DAN da Anemo</anemo> con attributo Anima della Notte pari a un 150% dei DAN da <strong>Proiettile Cacciaombre</strong> della sua abilità elementale <strong>Redini dello spirito, Caccia nell'ombra</strong>. Se nel gruppo sono presenti personaggi di <pyro>Pyro</pyro>/<hydro>Hydro</hydro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, il Colpo Cacciaombre ardente viene convertito per infliggere DAN con attributo Anima della Notte del tipo elementale corrispondente pari a un 150% dei DAN inflitti dai <strong>Proiettili Cacciaombre radiosi</strong> dell'abilità elementale <strong>Redini dello spirito, Caccia nell'ombra</strong>.",
+      "1": "I DAN inflitti in questo modo sono considerati DAN da attacco caricato."
+    }
+  },
+  "passive3": {
+    "name": "Dono del Reame Notturno: Cuorardente inestinguibile",
+    "description": {
+      "0": "Dopo aver esaurito i punti Anima della Notte, Chasca consuma il Flogisto per conservare la sua Grazia dell'Anima della Notte.",
+      "1": "Se si trova in un'area di Natlan dove sono presenti uno o più Meccanismi flogistici, può usare Trasmissione dell'Anima della Notte: Chasca. Quando il personaggio attivo è sospeso in aria, passare il controllo a Chasca attiva il seguente effetto: Chasca entra nello stato di Grazia dell'Anima della Notte e ottiene 32 punti Anima della Notte. Trasmissione dell'Anima della Notte può attivarsi una volta ogni 10 s all'interno del tuo gruppo."
+    }
+  },
+  "passive": {
+    "name": "Il vero significato della mediazione",
+    "description": {
+      "0": "Quando i membri del gruppo sconfiggono un avversario, vengono ripristinati 25 punti Flogisto. Quest'effetto può attivarsi una volta ogni 12 s.",
+      "1": "Non ha effetto nei domini, nei Domini della conquista o nell'Abisso a spirale."
+    }
+  },
+  "constellation1": {
+    "name": "Il tamburo, una roulette irrequieta",
+    "description": {
+      "0": "Quando si innesca la Conversione del Vincolo spirituale del talento passivo Trucco del proiettile, anche il 2º <strong>Proiettile Cacciaombre</strong> caricato nel tamburo viene convertito in un <strong>Proiettile Cacciaombre radioso</strong>.",
+      "1": "La probabilità che si inneschi la Conversione del Vincolo spirituale aumenta: se ci sono membri del gruppo che rispettano i requisiti della conversione del tipo elementale, la probabilità di innescare la Conversione del Vincolo spirituale aumenta di un 33,3%, fino a un 100% massimo.",
+      "2": "<br/>",
+      "3": "Richiede il talento passivo Trucco del proiettile.",
+      "4": "Inoltre, quando Chasca non è in un combattimento, il suo stato di Grazia dell'Anima della Notte consuma un 30% di Flogisto e di punti Anima della Notte in meno."
+    }
+  },
+  "constellation2": {
+    "name": "La volata, il fumo ustionante",
+    "description": {
+      "0": "Se il talento passivo Trucco del proiettile è sbloccato, Chasca ottiene 1 accumulo di Spirito dell'Ombra raggiante quando entra in campo.",
+      "1": "In più, quando i <strong>Proiettili Cacciaombre radiosi</strong> di <strong>Fuoco multibersaglio</strong> dell'abilità elementale <strong>Redini dello spirito, Caccia nell'ombra</strong> colpiscono gli avversari, infliggono DAN elementali ad area del tipo elementale corrispondente pari a un 400% dell'ATT di Chasca. Tali DAN sono considerati DAN da attacco caricato. Quest'effetto può attivarsi una volta per ciascun uso di <strong>Fuoco multibersaglio</strong>."
+    }
+  },
+  "constellation3": {
+    "name": "Le redini, l'attenta padronanza di sé",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Redini dello spirito, Caccia nell'ombra</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "Le scintille, uno sparo improvviso",
+    "description": {
+      "0": "Quando i <strong>Proiettili Cercanime radiosi</strong> del Tripudio elementale <strong>Colpo fatale della mietitrice</strong> colpiscono gli avversari, questi ripristinano di 1,5 l'energia elementale di Chasca, e infliggono DAN elementali ad area del tipo elementale di ciascun <strong>Proiettile Cercanime radioso</strong> pari a un 400% del suo ATT. Tali DAN sono considerati DAN da attacco caricato.",
+      "1": "L'effetto di DAN elementali ad area sopracitato può verificarsi una volta per ciascun uso di <strong>Colpo fatale della mietitrice</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "La tesa, la silhouette nell'ombra della sabbia",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Colpo fatale della mietitrice</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "La resa dei conti, la gloria della battaglia",
+    "description": {
+      "0": "Il tempo di carica del <strong>Fuoco multibersaglio</strong> di Chasca si riduce e, dopo aver innescato la Conversione del Vincolo spirituale del talento passivo Trucco del proiettile, Chasca entra nello stato Colpi fatali: nei successivi 3 s, la volta seguente che Chasca usa il <strong>Fuoco multibersaglio</strong> dell'abilità elementale <strong>Redini dello spirito, Caccia nell'ombra</strong>, i proiettili si caricano all'istante, e i DAN da CRIT di tale iterazione dei <strong>Proiettili Cacciaombre</strong> e dei <strong>Proiettili Cacciaombre radiosi</strong> di <strong>Fuoco multibersaglio</strong> aumentano di un 120%. Si può ottenere l'effetto Colpi fatali una volta ogni 3 s.",
+      "1": "<br/>",
+      "2": "L'accesso al suddetto effetto richiede il talento passivo Trucco del proiettile."
+    }
+  }
+}
