@@ -275,7 +275,8 @@ export default function TabBuild() {
           }
           if (teammateArtifactIds.includes(id)) {
             ctMap['teammateBuildTotal']['in'].total++
-            if (filteredArtIdMap[id]) ctMap['teammateBuildTotal']['in'].current++
+            if (filteredArtIdMap[id])
+              ctMap['teammateBuildTotal']['in'].current++
           }
         })
       )
