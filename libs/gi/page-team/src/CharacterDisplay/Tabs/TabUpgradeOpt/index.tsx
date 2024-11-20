@@ -40,7 +40,8 @@ import {
   useTeamData,
 } from '@genshin-optimizer/gi/ui'
 import { uiDataForTeam } from '@genshin-optimizer/gi/uidata'
-import type { ArtifactFilterOption } from '@genshin-optimizer/gi/util'
+import type {
+  ArtifactFilterOption} from '@genshin-optimizer/gi/util';
 import {
   artifactFilterConfigs,
   initialArtifactFilterOption,
@@ -61,7 +62,6 @@ import {
 import type { ButtonProps } from '@mui/material/Button'
 import Button from '@mui/material/Button'
 import { Stack } from '@mui/system'
-import type { Reducer } from 'react'
 import {
   Suspense,
   useCallback,
@@ -96,10 +96,7 @@ function AddArtifactButton({ onClick }: AddArtifactButtonProps) {
   )
 }
 
-const filterOptionReducer = (
-  state: Partial<ArtifactFilterOption>,
-  action: Partial<ArtifactFilterOption>
-) => ({ ...state, ...action })
+const filterOptionReducer = (state: Partial<ArtifactFilterOption>, action: Partial<ArtifactFilterOption>) => ({ ...state, ...action })
 export default function TabUpopt() {
   const { t } = useTranslation('page_character_optimize')
   const {
@@ -110,9 +107,10 @@ export default function TabUpopt() {
   } = useContext(TeamCharacterContext)
   const database = useDatabase()
   const { gender } = useDBMeta()
-  const [filterOption, filterOptionDispatch] = useReducer<
-    Reducer<Partial<ArtifactFilterOption>, Partial<ArtifactFilterOption>>
-  >(filterOptionReducer, initialArtifactFilterOption())
+  const [filterOption, filterOptionDispatch] = useReducer(
+    filterOptionReducer,
+    initialArtifactFilterOption()
+  )
 
   const [artifactIdToEdit, setArtifactIdToEdit] = useState<string | undefined>()
 
