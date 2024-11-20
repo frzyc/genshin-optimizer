@@ -30,6 +30,7 @@ import {
   TeamCharacterContext,
   useDBMeta,
   useDatabase,
+  useGeneratedBuildList,
   useOptConfig,
   useTeammateArtifactIds,
 } from '@genshin-optimizer/gi/db-ui'
@@ -170,10 +171,12 @@ export default function TabBuild() {
     maxBuildsToShow,
     levelLow,
     levelHigh,
-    builds: buildsDb,
-    buildDate,
+    generatedBuildListId,
     useTeammateBuild,
   } = buildSetting
+  const { builds: buildsDb, buildDate } = useGeneratedBuildList(
+    generatedBuildListId ?? ''
+  ) ?? { builds: [] as GeneratedBuild[] }
 
   const builds = useConstObj(buildsDb)
   const optimizationTarget = useConstObj(optimizationTargetDb)
@@ -437,7 +440,7 @@ export default function TabBuild() {
       if (process.env['NODE_ENV'] === 'development')
         console.log('Build Result', builds)
 
-      database.optConfigs.set(optConfigId, {
+      database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
         builds: builds.map((build) => ({
           artifactIds: objKeyMap(allArtifactSlotKeys, (slotKey) =>
             build.artifactIds.find(
@@ -808,7 +811,7 @@ export default function TabBuild() {
                 color="error"
                 onClick={() => {
                   setGraphBuilds(undefined)
-                  database.optConfigs.set(optConfigId, {
+                  database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
                     builds: [],
                     buildDate: 0,
                   })
