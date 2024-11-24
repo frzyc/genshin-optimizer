@@ -37,7 +37,7 @@ export class GeneratedBuildListDataManager extends DataManager<
     } else {
       builds = builds
         .map((build) => {
-          if (typeof build !== 'object' || obj === null) return undefined
+          if (typeof build !== 'object' || build === null) return undefined
           const { artifactIds: artifactIdsRaw } = build as GeneratedBuild
           if (typeof artifactIdsRaw !== 'object' || artifactIdsRaw === null)
             return undefined
