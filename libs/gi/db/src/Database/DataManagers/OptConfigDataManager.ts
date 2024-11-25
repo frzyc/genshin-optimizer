@@ -95,7 +95,7 @@ export class OptConfigDataManager extends DataManager<
       if (key.startsWith('optConfig_') && !this.set(key, {}))
         this.database.storage.remove(key)
   }
-  override validate(obj: object): OptConfig | undefined {
+  override validate(obj: object, key: string): OptConfig | undefined {
     if (typeof obj !== 'object') return undefined
     let {
       artSetExclusion,
@@ -153,7 +153,8 @@ export class OptConfigDataManager extends DataManager<
 
     excludedLocations = validateArr(
       excludedLocations,
-      allLocationCharacterKeys
+      allLocationCharacterKeys.filter((k) => k !== key),
+      []
     ).filter(
       (lk) =>
         this.database.chars.get(this.database.chars.LocationToCharacterKey(lk)) // Remove characters who do not exist in the DB
