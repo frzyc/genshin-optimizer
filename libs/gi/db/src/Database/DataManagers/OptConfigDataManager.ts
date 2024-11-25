@@ -296,7 +296,7 @@ const initialBuildSettings: OptConfig = deepFreeze({
   useTeammateBuild: false,
   upOptLevelLow: 0,
   upOptLevelHigh: 19,
-  generatedBuildListId: undefined
+  generatedBuildListId: undefined,
 })
 
 export function handleArtSetExclusion(
