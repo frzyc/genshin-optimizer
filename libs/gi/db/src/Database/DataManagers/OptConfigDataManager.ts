@@ -154,7 +154,7 @@ export class OptConfigDataManager extends DataManager<
     excludedLocations = validateArr(
       excludedLocations,
       allLocationCharacterKeys.filter((k) => k !== key),
-      []
+      [] // Remove self from list
     ).filter(
       (lk) =>
         this.database.chars.get(this.database.chars.LocationToCharacterKey(lk)) // Remove characters who do not exist in the DB
