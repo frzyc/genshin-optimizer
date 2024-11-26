@@ -1,11 +1,11 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import {
-  CardThemed,
-  ConditionalWrapper,
-  ModalWrapper,
-} from '@genshin-optimizer/common/ui'
+import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
+import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
+import { TagContext } from '@genshin-optimizer/pando/ui-sheet'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
-import { type Tag } from '@genshin-optimizer/sr/formula'
+import { Read, type Tag } from '@genshin-optimizer/sr/formula'
+import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
+import CloseIcon from '@mui/icons-material/Close'
 import {
   Box,
   Button,
@@ -13,12 +13,13 @@ import {
   CardContent,
   CardHeader,
   Divider,
-  Stack,
+  IconButton,
+  Typography,
 } from '@mui/material'
-import { useContext } from 'react'
-import { BonusStats } from './BonusStats'
+import { useCallback, useContext } from 'react'
 import { PresetContext, useTeamContext } from './context'
 import { LightConeSheetsDisplay } from './LightConeSheetsDisplay'
+import { OptimizationTargetDisplay } from './Optimize/OptimizationTargetDisplay'
 import { OptimizationTargetSelector } from './Optimize/OptimizationTargetSelector'
 import { RelicSheetsDisplay } from './RelicSheetsDisplay'
 
@@ -68,6 +69,20 @@ function Combo({
   setTarget(tag: Tag): void
 }) {
   const { presetIndex, setPresetIndex } = useContext(PresetContext)
+  const calc = useSrCalcContext()
+  const tagcontext = useContext(TagContext)
+  const value = calc?.withTag(tagcontext).compute(new Read(tag, 'sum')).val ?? 0
+  const unit = getUnitStr(tag.q ?? '')
+  const [open, onOpen, onClose] = useBoolState()
+
+  const handleClick = useCallback(() => {
+    if (presetIndex === index) {
+      onOpen()
+    } else {
+      onClose()
+      setPresetIndex(index)
+    }
+  }, [index, onClose, onOpen, presetIndex, setPresetIndex])
   return (
     <CardThemed
       bgt="light"
@@ -79,28 +94,21 @@ function Combo({
             : undefined,
       })}
     >
-      <ConditionalWrapper
-        condition={presetIndex !== index}
-        wrapper={(children) => (
-          <CardActionArea onClick={() => setPresetIndex(index)}>
-            {children}
-          </CardActionArea>
-        )}
-      >
-        <CardHeader title={`Combo ${index + 1}`} />
-      </ConditionalWrapper>
-      <Divider />
-      <CardContent>
-        <Stack spacing={1}>
-          <OptimizationTargetSelector
-            optTarget={tag}
-            setOptTarget={setTarget}
-          />
-          <BonusStats />
-          <RelicConditionals />
-          <LightConeConditionals />
-        </Stack>
-      </CardContent>
+      <ComboEditorModal index={index} show={open} onClose={onClose} />
+      <CardActionArea onClick={handleClick}>
+        <Box sx={{ display: 'flex', gap: 1, alignItems: 'stretch', p: 1 }}>
+          <Typography>{index + 1}</Typography>
+          <Divider orientation="vertical" />
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <OptimizationTargetDisplay tag={tag} />
+          </Box>
+        </Box>
+
+        <Divider />
+        <Box sx={{ p: 1, display: 'flex', alignItems: 'center', gap: 1 }}>
+          <Typography>X x {valueString(value, unit)}</Typography>
+        </Box>
+      </CardActionArea>
     </CardThemed>
   )
 }
@@ -127,5 +135,39 @@ function LightConeConditionals() {
         <LightConeSheetsDisplay />
       </ModalWrapper>
     </>
+  )
+}
+function ComboEditorModal({
+  index,
+  show,
+  onClose,
+}: {
+  index: number
+  show: boolean
+  onClose: () => void
+}) {
+  return (
+    <ModalWrapper
+      open={show}
+      onClose={onClose}
+      containerProps={{ maxWidth: 'xl' }}
+    >
+      <CardThemed>
+        {/* TODO: translation */}
+        <CardHeader
+          title={`Edit Combo ${index + 1}`}
+          action={
+            <IconButton onClick={onClose}>
+              <CloseIcon />
+            </IconButton>
+          }
+        />
+        <Divider />
+        <CardContent>
+          <RelicConditionals />
+          <LightConeConditionals />
+        </CardContent>
+      </CardThemed>
+    </ModalWrapper>
   )
 }
