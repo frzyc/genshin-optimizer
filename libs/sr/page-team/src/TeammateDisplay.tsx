@@ -59,16 +59,16 @@ export default function TeammateDisplay() {
       const frame = team.frames[presetIndex]
       if (!frame) return [['char', 'Character', <CharacterSection />]]
       return [
-        ['combo', `Edit Combo ${presetIndex + 1}`, <ComboEditorSection />],
-        ['char', 'Character', <CharacterSection />],
-        ['talent', 'Talent', <CharacterTalentPane />],
-        ['relicCond', 'Relic Conditionals', <RelicSheetsDisplay />],
+        ['combo', `Edit Combo ${presetIndex + 1}`, <ComboEditorSection key="combo" />],
+        ['char', 'Character', <CharacterSection key="char" />],
+        ['talent', 'Talent', <CharacterTalentPane key="talent" />],
+        ['relicCond', 'Relic Conditionals', <RelicSheetsDisplay key="relicCond" />],
         [
           'lightConeCond',
           'Light Cone Conditionals',
-          <LightConeSheetsDisplay />,
+          <LightConeSheetsDisplay key="lightConeCond" />,
         ],
-        ['opt', 'Optimize', <OptimizeSection />],
+        ['opt', 'Optimize', <OptimizeSection key="opt" />],
       ] as const
     }, [team, presetIndex])
 
