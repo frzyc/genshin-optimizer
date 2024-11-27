@@ -42,8 +42,5 @@ const data: TagMapNodeEntries = [
 
   // Default conditionals to 0
   reader.with('qt', 'cond').add(0),
-
-  // Default superimposition to 1
-  reader.withTag(own.lightCone.superimpose.tag).add(1),
 ]
 export default data
