@@ -2,23 +2,21 @@ import {
   clamp,
   deepClone,
   deepFreeze,
-  objKeyMap,
   validateArr,
 } from '@genshin-optimizer/common/util'
 import type {
   ArtifactSetKey,
-  ArtifactSlotKey,
   LocationCharacterKey,
   MainStatKey,
 } from '@genshin-optimizer/gi/consts'
 import {
   allArtifactSetKeys,
-  allArtifactSlotKeys,
   allLocationCharacterKeys,
   artSlotMainKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { ArtCharDatabase } from '../ArtCharDatabase'
 import { DataManager } from '../DataManager'
+import type { GeneratedBuildList } from './GeneratedBuildListDataManager'
 
 export const maxBuildsToShowList = [1, 2, 3, 4, 5, 8, 10] as const
 export const maxBuildsToShowDefault = 5
@@ -53,10 +51,6 @@ export interface StatFilterSetting {
 }
 export type StatFilters = Record<string, StatFilterSetting[]>
 
-export type GeneratedBuild = {
-  weaponId?: string
-  artifactIds: Record<ArtifactSlotKey, string | undefined>
-}
 export interface OptConfig {
   artSetExclusion: ArtSetExclusion
   statFilters: StatFilters
@@ -81,8 +75,7 @@ export interface OptConfig {
   useTeammateBuild: boolean // teammates loadout exclusion flag
 
   //generated opt builds
-  builds: Array<GeneratedBuild>
-  buildDate: number
+  generatedBuildListId?: string
 
   // upOpt
   upOptLevelLow: number
@@ -119,8 +112,7 @@ export class OptConfigDataManager extends DataManager<
       compareBuild,
       levelLow,
       levelHigh,
-      builds,
-      buildDate,
+      generatedBuildListId,
       useTeammateBuild,
       upOptLevelLow,
       upOptLevelHigh,
@@ -200,27 +192,11 @@ export class OptConfigDataManager extends DataManager<
         .filter(([_, a]) => a.length)
     )
 
-    if (!Array.isArray(builds)) {
-      builds = []
-      buildDate = 0
-    } else {
-      builds = builds
-        .map((build) => {
-          if (typeof build !== 'object') return undefined
-          const { weaponId, artifactIds: artifactIdsRaw } =
-            build as GeneratedBuild
-          if (!this.database.weapons.get(weaponId)) return undefined
-          const artifactIds = objKeyMap(allArtifactSlotKeys, (slotKey) =>
-            this.database.arts.get(artifactIdsRaw[slotKey])?.slotKey === slotKey
-              ? artifactIdsRaw[slotKey]
-              : undefined
-          )
-
-          return { artifactIds, weaponId }
-        })
-        .filter((b) => b) as GeneratedBuild[]
-      if (!Number.isInteger(buildDate)) buildDate = 0
-    }
+    if (
+      generatedBuildListId &&
+      !this.database.generatedBuildList.get(generatedBuildListId)
+    )
+      generatedBuildListId = undefined
     if (typeof useTeammateBuild !== 'boolean') useTeammateBuild = false
 
     return {
@@ -238,8 +214,7 @@ export class OptConfigDataManager extends DataManager<
       compareBuild,
       levelLow,
       levelHigh,
-      builds,
-      buildDate,
+      generatedBuildListId,
       useTeammateBuild,
       upOptLevelLow,
       upOptLevelHigh,
@@ -263,8 +238,7 @@ export class OptConfigDataManager extends DataManager<
       useExcludedArts,
       excludedLocations,
       artExclusion,
-      buildDate,
-      builds,
+      generatedBuildListId,
       ...rest
     } = optConfig
     if (!overrideOptTarget) return rest
@@ -277,6 +251,26 @@ export class OptConfigDataManager extends DataManager<
     const id = this.generateKey()
     if (!this.set(id, data)) return ''
     return id
+  }
+  newOrSetGeneratedBuildList(optConfigId: string, list: GeneratedBuildList) {
+    const optConfig = this.get(optConfigId)
+
+    if (!optConfig) {
+      console.warn(`OptConfig not found for ID: ${optConfigId}`)
+      return false
+    }
+
+    const listId = optConfig.generatedBuildListId
+    const generatedBuildList =
+      listId && this.database.generatedBuildList.get(listId)
+
+    if (listId && generatedBuildList) {
+      return this.database.generatedBuildList.set(listId, list)
+    } else {
+      return this.database.optConfigs.set(optConfigId, {
+        generatedBuildListId: this.database.generatedBuildList.new(list),
+      })
+    }
   }
 }
 
@@ -302,9 +296,7 @@ const initialBuildSettings: OptConfig = deepFreeze({
   useTeammateBuild: false,
   upOptLevelLow: 0,
   upOptLevelHigh: 19,
-
-  builds: [],
-  buildDate: 0,
+  generatedBuildListId: undefined,
 })
 
 export function handleArtSetExclusion(

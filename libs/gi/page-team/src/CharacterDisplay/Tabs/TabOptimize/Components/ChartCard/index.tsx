@@ -12,7 +12,11 @@ import {
 } from '@genshin-optimizer/common/util'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import type { GeneratedBuild } from '@genshin-optimizer/gi/db'
-import { TeamCharacterContext, useOptConfig } from '@genshin-optimizer/gi/db-ui'
+import {
+  TeamCharacterContext,
+  useGeneratedBuildList,
+  useOptConfig,
+} from '@genshin-optimizer/gi/db-ui'
 import {
   DataContext,
   GraphContext,
@@ -83,9 +87,12 @@ export default function ChartCard({
   const {
     teamChar: { optConfigId },
   } = useContext(TeamCharacterContext)
-  const { builds: generatedBuilds } = useOptConfig(optConfigId) ?? {
-    builds: [] as GeneratedBuild[],
+  const { generatedBuildListId } = useOptConfig(optConfigId) ?? {
+    generatedBuildListId: undefined,
   }
+  const { builds: generatedBuilds } = useGeneratedBuildList(
+    generatedBuildListId ?? ''
+  ) ?? { builds: [] as GeneratedBuild[] }
 
   const [sliderLow, setSliderLow] = useState(-Infinity)
   const [sliderHigh, setSliderHigh] = useState(Infinity)

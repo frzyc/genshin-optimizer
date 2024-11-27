@@ -30,6 +30,7 @@ import {
   TeamCharacterContext,
   useDBMeta,
   useDatabase,
+  useGeneratedBuildList,
   useOptConfig,
   useTeammateArtifactIds,
 } from '@genshin-optimizer/gi/db-ui'
@@ -170,10 +171,12 @@ export default function TabBuild() {
     maxBuildsToShow,
     levelLow,
     levelHigh,
-    builds: buildsDb,
-    buildDate,
+    generatedBuildListId,
     useTeammateBuild,
   } = buildSetting
+  const { builds: buildsDb, buildDate } = useGeneratedBuildList(
+    generatedBuildListId ?? ''
+  ) ?? { builds: [] as GeneratedBuild[] }
 
   const builds = useConstObj(buildsDb)
   const optimizationTarget = useConstObj(optimizationTargetDb)
@@ -254,8 +257,8 @@ export default function TabBuild() {
           const { levelLow, levelHigh, excludedLocations, artExclusion } =
             deferredArtsDirty && deferredBuildSetting
           if (level >= levelLow && level <= levelHigh) {
-            ctMap.levelTotal.in.total++
-            if (filteredArtIdMap[id]) ctMap.levelTotal.in.current++
+            ctMap['levelTotal']['in'].total++
+            if (filteredArtIdMap[id]) ctMap['levelTotal']['in'].current++
           }
           const locKey = charKeyToLocCharKey(characterKey)
           if (
@@ -263,16 +266,17 @@ export default function TabBuild() {
             location !== locKey &&
             !excludedLocations.includes(location)
           ) {
-            ctMap.allowListTotal.in.total++
-            if (filteredArtIdMap[id]) ctMap.allowListTotal.in.current++
+            ctMap['allowListTotal']['in'].total++
+            if (filteredArtIdMap[id]) ctMap['allowListTotal']['in'].current++
           }
           if (artExclusion.includes(id)) {
-            ctMap.excludedTotal.in.total++
-            if (filteredArtIdMap[id]) ctMap.excludedTotal.in.current++
+            ctMap['excludedTotal']['in'].total++
+            if (filteredArtIdMap[id]) ctMap['excludedTotal']['in'].current++
           }
           if (teammateArtifactIds.includes(id)) {
-            ctMap.teammateBuildTotal.in.total++
-            if (filteredArtIdMap[id]) ctMap.teammateBuildTotal.in.current++
+            ctMap['teammateBuildTotal']['in'].total++
+            if (filteredArtIdMap[id])
+              ctMap['teammateBuildTotal']['in'].current++
           }
         })
       )
@@ -437,7 +441,7 @@ export default function TabBuild() {
       if (process.env['NODE_ENV'] === 'development')
         console.log('Build Result', builds)
 
-      database.optConfigs.set(optConfigId, {
+      database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
         builds: builds.map((build) => ({
           artifactIds: objKeyMap(allArtifactSlotKeys, (slotKey) =>
             build.artifactIds.find(
@@ -563,7 +567,7 @@ export default function TabBuild() {
         >
           {/* Level Filter */}
           <LevelFilter
-            levelTotal={levelTotal.in}
+            levelTotal={levelTotal['in']}
             levelLow={levelLow}
             levelHigh={levelHigh}
             disabled={generatingBuilds}
@@ -652,7 +656,7 @@ export default function TabBuild() {
           {/* use equipped */}
           <UseEquipped
             disabled={generatingBuilds}
-            allowListTotal={allowListTotal.in}
+            allowListTotal={allowListTotal['in']}
           />
 
           {/*Minimum Final Stat Filter */}
@@ -808,7 +812,7 @@ export default function TabBuild() {
                 color="error"
                 onClick={() => {
                   setGraphBuilds(undefined)
-                  database.optConfigs.set(optConfigId, {
+                  database.optConfigs.newOrSetGeneratedBuildList(optConfigId, {
                     builds: [],
                     buildDate: 0,
                   })
