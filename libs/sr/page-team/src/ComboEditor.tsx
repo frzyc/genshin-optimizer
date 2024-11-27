@@ -1,11 +1,17 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
-import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  ModalWrapper,
+  NumberInputLazy,
+} from '@genshin-optimizer/common/ui'
 import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
 import { TagContext } from '@genshin-optimizer/pando/ui-sheet'
+import type { Frame } from '@genshin-optimizer/sr/db'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
-import { Read, type Tag } from '@genshin-optimizer/sr/formula'
+import { Read } from '@genshin-optimizer/sr/formula'
 import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
 import CloseIcon from '@mui/icons-material/Close'
+import Delete from '@mui/icons-material/Delete'
 import {
   Box,
   Button,
@@ -14,9 +20,11 @@ import {
   CardHeader,
   Divider,
   IconButton,
+  InputAdornment,
+  Stack,
   Typography,
 } from '@mui/material'
-import { useCallback, useContext } from 'react'
+import { useCallback, useContext, useMemo } from 'react'
 import { PresetContext, useTeamContext } from './context'
 import { LightConeSheetsDisplay } from './LightConeSheetsDisplay'
 import { OptimizationTargetDisplay } from './Optimize/OptimizationTargetDisplay'
@@ -36,13 +44,21 @@ export function ComboEditor() {
     >
       {team.frames.map((frame, i) => (
         <Combo
-          key={i + JSON.stringify(frame ?? {})}
-          tag={frame}
+          key={i}
+          frame={frame}
           index={i}
-          setTarget={(read) =>
+          setFrame={(frame) =>
             database.teams.set(teamId, (team) => {
               team.frames = [...team.frames]
-              team.frames[i] = read
+              team.frames[i] = {
+                ...team.frames[i],
+                ...frame,
+              }
+            })
+          }
+          removeFrame={() =>
+            database.teams.set(teamId, (team) => {
+              team.frames = team.frames.filter((_, index) => index !== i)
             })
           }
         />
@@ -51,7 +67,13 @@ export function ComboEditor() {
         <OptimizationTargetSelector
           setOptTarget={(tag) =>
             database.teams.set(teamId, (team) => {
-              team.frames = [...team.frames, tag]
+              team.frames = [
+                ...team.frames,
+                {
+                  multiplier: 1,
+                  tag,
+                },
+              ]
             })
           }
         />
@@ -60,19 +82,25 @@ export function ComboEditor() {
   )
 }
 function Combo({
-  tag,
+  frame,
   index,
-  setTarget,
+  setFrame,
+  removeFrame,
 }: {
-  tag: Tag
+  frame: Frame
   index: number
-  setTarget(tag: Tag): void
+  setFrame(frame: Partial<Frame>): void
+  removeFrame(): void
 }) {
   const { presetIndex, setPresetIndex } = useContext(PresetContext)
   const calc = useSrCalcContext()
   const tagcontext = useContext(TagContext)
-  const value = calc?.withTag(tagcontext).compute(new Read(tag, 'sum')).val ?? 0
-  const unit = getUnitStr(tag.q ?? '')
+  const value = useMemo(
+    () =>
+      calc?.withTag(tagcontext).compute(new Read(frame.tag, 'sum')).val ?? 0,
+    [calc, frame.tag, tagcontext]
+  )
+  const unit = getUnitStr(frame.tag.q ?? '')
   const [open, onOpen, onClose] = useBoolState()
 
   const handleClick = useCallback(() => {
@@ -94,55 +122,46 @@ function Combo({
             : undefined,
       })}
     >
-      <ComboEditorModal index={index} show={open} onClose={onClose} />
+      <ComboEditorModal
+        frame={frame}
+        setFrame={setFrame}
+        index={index}
+        show={open}
+        onClose={onClose}
+        removeFrame={removeFrame}
+      />
       <CardActionArea onClick={handleClick}>
         <Box sx={{ display: 'flex', gap: 1, alignItems: 'stretch', p: 1 }}>
           <Typography>{index + 1}</Typography>
           <Divider orientation="vertical" />
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <OptimizationTargetDisplay tag={tag} />
+            <OptimizationTargetDisplay tag={frame.tag} />
           </Box>
         </Box>
 
         <Divider />
         <Box sx={{ p: 1, display: 'flex', alignItems: 'center', gap: 1 }}>
-          <Typography>X x {valueString(value, unit)}</Typography>
+          <Typography>
+            {frame.multiplier} x {valueString(value, unit)}
+          </Typography>
         </Box>
       </CardActionArea>
     </CardThemed>
   )
 }
 
-function RelicConditionals() {
-  const [show, onShow, onHide] = useBoolState()
-  return (
-    <>
-      {/* TODO: translation */}
-      <Button onClick={onShow}>Relic Conditionals</Button>
-      <ModalWrapper open={show} onClose={onHide}>
-        <RelicSheetsDisplay />
-      </ModalWrapper>
-    </>
-  )
-}
-function LightConeConditionals() {
-  const [show, onShow, onHide] = useBoolState()
-  return (
-    <>
-      {/* TODO: translation */}
-      <Button onClick={onShow}>Light Cone Conditionals</Button>
-      <ModalWrapper open={show} onClose={onHide}>
-        <LightConeSheetsDisplay />
-      </ModalWrapper>
-    </>
-  )
-}
 function ComboEditorModal({
   index,
+  frame,
+  setFrame,
+  removeFrame,
   show,
   onClose,
 }: {
+  frame: Frame
   index: number
+  setFrame(frame: Partial<Frame>): void
+  removeFrame(): void
   show: boolean
   onClose: () => void
 }) {
@@ -152,7 +171,7 @@ function ComboEditorModal({
       onClose={onClose}
       containerProps={{ maxWidth: 'xl' }}
     >
-      <CardThemed>
+      <CardThemed bgt="dark">
         {/* TODO: translation */}
         <CardHeader
           title={`Edit Combo ${index + 1}`}
@@ -164,8 +183,44 @@ function ComboEditorModal({
         />
         <Divider />
         <CardContent>
-          <RelicConditionals />
-          <LightConeConditionals />
+          <Stack spacing={1}>
+            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+              <NumberInputLazy
+                value={frame.multiplier}
+                onChange={(v) => setFrame({ multiplier: v })}
+                size="small"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">Multi x </InputAdornment>
+                  ),
+                }}
+              />
+              <OptimizationTargetSelector
+                optTarget={frame.tag}
+                setOptTarget={(tag) =>
+                  setFrame({
+                    tag,
+                  })
+                }
+              />
+              <Button
+                size="small"
+                color="error"
+                onClick={removeFrame}
+                startIcon={<Delete />}
+              >
+                Remove
+              </Button>
+            </Box>
+            <Box>
+              <Typography variant="h6">Relic Conditionals</Typography>
+              <RelicSheetsDisplay />
+            </Box>
+            <Box>
+              <Typography variant="h6">Lightcone Conditionals</Typography>
+              <LightConeSheetsDisplay />
+            </Box>
+          </Stack>
         </CardContent>
       </CardThemed>
     </ModalWrapper>
