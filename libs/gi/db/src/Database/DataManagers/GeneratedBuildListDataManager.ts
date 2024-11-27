@@ -54,6 +54,8 @@ export class GeneratedBuildListDataManager extends DataManager<
           return { artifactIds, weaponId }
         })
         .filter((build) => build !== undefined)
+
+      if (!Number.isInteger(buildDate)) buildDate = 0
     }
 
     return {
