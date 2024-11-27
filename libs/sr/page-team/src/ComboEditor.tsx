@@ -49,17 +49,16 @@ function Combo({ frame, index }: { frame: Frame; index: number }) {
   const { presetIndex, setPresetIndex } = useContext(PresetContext)
   const calc = useSrCalcContext()
   const tagcontext = useContext(TagContext)
-  const value = useMemo(
-    () => {
-      try {
-        return calc?.withTag(tagcontext).compute(new Read(frame.tag, 'sum')).val ?? 0;
-      } catch (error) {
-        console.error('Error computing value:', error);
-        return 0;
-      }
-    },
-    [calc, frame.tag, tagcontext]
-  )
+  const value = useMemo(() => {
+    try {
+      return (
+        calc?.withTag(tagcontext).compute(new Read(frame.tag, 'sum')).val ?? 0
+      )
+    } catch (error) {
+      console.error('Error computing value:', error)
+      return 0
+    }
+  }, [calc, frame.tag, tagcontext])
   const unit = getUnitStr(frame.tag.q ?? '')
 
   const handleClick = useCallback(() => {
