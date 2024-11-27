@@ -60,6 +60,7 @@ export default function TeamNameCardHeader() {
               '&:hover': {
                 color: 'info.light',
               },
+              py: 1,
             }}
           >
             <Typography

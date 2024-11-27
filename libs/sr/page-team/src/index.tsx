@@ -1,4 +1,4 @@
-import { CardThemed, useTitle } from '@genshin-optimizer/common/ui'
+import { useRefSize, useTitle } from '@genshin-optimizer/common/ui'
 import {
   moveToFront,
   notEmpty,
@@ -27,7 +27,7 @@ import {
   type Tag,
 } from '@genshin-optimizer/sr/formula'
 import { CharacterName } from '@genshin-optimizer/sr/ui'
-import { Box, Divider, Skeleton } from '@mui/material'
+import { Box, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
@@ -38,14 +38,17 @@ import {
   useNavigate,
   useParams,
 } from 'react-router-dom'
-import { ComboEditor } from './ComboEditor'
 import type { PresetContextObj } from './context'
 import { PresetContext, TeamContext } from './context'
 import { TeammateContext, useTeammateContext } from './context/TeammateContext'
 import { TeamCalcProvider } from './TeamCalcProvider'
-import { TeamCharacterSelector } from './TeamCharacterSelector'
+import {
+  DEFAULT_HEADER_HEIGHT_PX,
+  HEADER_TOP_PX,
+  TeamHeader,
+  TeamHeaderHeightContext,
+} from './TeamHeader'
 import TeammateDisplay from './TeammateDisplay'
-import TeamNameCardHeader from './TeamNameCardHeader'
 
 const fallback = <Skeleton variant="rectangular" width="100%" height={1000} />
 
@@ -183,6 +186,7 @@ function Page({ teamId }: { teamId: string }) {
     }),
     [characterKey, presetIndex]
   )
+  const { height, ref } = useRefSize()
   return (
     <TeamContext.Provider value={teamContextObj}>
       <TagContext.Provider value={tag}>
@@ -200,28 +204,22 @@ function Page({ teamId }: { teamId: string }) {
                       mt: 2,
                     }}
                   >
-                    <CardThemed
-                      sx={{
-                        overflow: 'visible',
-                        top: 0,
-                        position: 'sticky',
-                        zIndex: 100,
-                      }}
+                    <TeamHeader
+                      headerRef={ref}
+                      teamId={teamId}
+                      characterKey={characterKey}
+                    />
+                    <TeamHeaderHeightContext.Provider
+                      value={
+                        (height || DEFAULT_HEADER_HEIGHT_PX) + HEADER_TOP_PX
+                      }
                     >
-                      <TeamNameCardHeader />
-                      <Divider />
-                      <ComboEditor />
-                      <Divider />
-                      <TeamCharacterSelector
-                        teamId={teamId}
-                        charKey={characterKey}
-                      />
-                    </CardThemed>
-                    {teammateDatum && (
-                      <TeammateContext.Provider value={teammateDatum}>
-                        <TeammateDisplayWrapper />
-                      </TeammateContext.Provider>
-                    )}
+                      {teammateDatum && (
+                        <TeammateContext.Provider value={teammateDatum}>
+                          <TeammateDisplayWrapper />
+                        </TeammateContext.Provider>
+                      )}
+                    </TeamHeaderHeightContext.Provider>
                   </Box>
                 </SetConditionalContext.Provider>
               </ConditionalValuesContext.Provider>

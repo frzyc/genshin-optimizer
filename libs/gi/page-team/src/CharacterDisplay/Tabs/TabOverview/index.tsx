@@ -1,4 +1,4 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed, useScrollRef } from '@genshin-optimizer/common/ui'
 import { allArtifactSlotKeys } from '@genshin-optimizer/gi/consts'
 import {
   ArtifactCardNano,
@@ -10,18 +10,14 @@ import {
 } from '@genshin-optimizer/gi/ui'
 import { uiInput as input } from '@genshin-optimizer/gi/wr'
 import { Box, Grid, Stack } from '@mui/material'
-import { useCallback, useContext, useMemo, useRef } from 'react'
+import { useContext, useMemo } from 'react'
 import CharacterProfileCard from '../../../CharProfileCard'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
 import EquipmentSection from './EquipmentSection'
 
 export default function TabOverview() {
-  const scrollRef = useRef<HTMLDivElement>()
-  const onScroll = useCallback(
-    () => scrollRef?.current?.scrollIntoView?.({ behavior: 'smooth' }),
-    [scrollRef]
-  )
+  const [scrollRef, onScroll] = useScrollRef()
 
   const data = useContext(DataContext)
   const compareData = useCompareData()

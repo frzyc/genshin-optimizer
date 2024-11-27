@@ -1,3 +1,8 @@
+import { ImgIcon } from '@genshin-optimizer/common/ui'
+import {
+  characterAsset,
+  characterKeyToGenderedKey,
+} from '@genshin-optimizer/sr/assets'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import { useTeam } from '@genshin-optimizer/sr/db-ui'
 import PersonIcon from '@mui/icons-material/Person'
@@ -38,6 +43,7 @@ export function TeamCharacterSelector({
             height: '4px',
             backgroundColor: 'rgb(200,200,200,0.5)', //team settings
           },
+          minHeight: '1em',
         }
       }}
     >
@@ -45,7 +51,19 @@ export function TeamCharacterSelector({
         const characterKey = teammateDatum?.characterKey
         return (
           <Tab
-            icon={<PersonIcon />}
+            icon={
+              characterKey ? (
+                <ImgIcon
+                  size={1.5}
+                  src={characterAsset(
+                    characterKeyToGenderedKey(characterKey),
+                    'icon'
+                  )}
+                />
+              ) : (
+                <PersonIcon />
+              )
+            }
             iconPosition="start"
             value={characterKey ?? ind}
             key={ind}
@@ -61,6 +79,7 @@ export function TeamCharacterSelector({
               // conserve the current tab when switching to another character
               characterKey && navigate(`/teams/${teamId}/${characterKey}`)
             }
+            sx={{ p: 1, minHeight: '1em' }}
           />
         )
       })}
