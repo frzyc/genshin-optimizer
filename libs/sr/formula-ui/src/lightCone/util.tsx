@@ -1,3 +1,5 @@
+import { own } from '@genshin-optimizer/sr/formula'
+import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
 import type { ReactNode } from 'react'
 
 export function SuperImposeWrapper({
@@ -5,9 +7,7 @@ export function SuperImposeWrapper({
 }: {
   children: (superimpose: number) => ReactNode
 }) {
-  // const calc = useSrCalcContext()
-
-  // TODO: FIXME: a character without a lightcone will cause an error
-  const superimpose = 1 // calc?.compute(own.lightCone.superimpose).val ?? 1
+  const calc = useSrCalcContext()
+  const superimpose = calc?.compute(own.lightCone.superimpose).val ?? 1
   return children(superimpose)
 }
