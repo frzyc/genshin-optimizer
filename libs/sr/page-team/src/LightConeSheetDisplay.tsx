@@ -1,5 +1,8 @@
 import { CardThemed, NextImage } from '@genshin-optimizer/common/ui'
-import { DocumentDisplay, type UISheetElement } from '@genshin-optimizer/pando/ui-sheet'
+import {
+  DocumentDisplay,
+  type UISheetElement,
+} from '@genshin-optimizer/pando/ui-sheet'
 import { lightConeAsset } from '@genshin-optimizer/sr/assets'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { lightConeUiSheets } from '@genshin-optimizer/sr/formula-ui'
