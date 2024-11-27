@@ -65,8 +65,9 @@ export class ArtCharDatabase extends Database {
     this.weapons.ensureEquipments()
 
     // Depends on arts
-    this.optConfigs = new OptConfigDataManager(this)
     this.generatedBuildList = new GeneratedBuildListDataManager(this)
+    // Depends on arts and generatedBuildList
+    this.optConfigs = new OptConfigDataManager(this)
 
     this.buildTcs = new BuildTcDataManager(this)
     this.charMeta = new CharMetaDataManager(this)
@@ -115,8 +116,8 @@ export class ArtCharDatabase extends Database {
       this.chars,
       this.weapons,
       this.arts,
-      this.optConfigs,
       this.generatedBuildList,
+      this.optConfigs,
       this.buildTcs,
       this.charMeta,
       this.builds,
