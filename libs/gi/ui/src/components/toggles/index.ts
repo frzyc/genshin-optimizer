@@ -1,3 +1,4 @@
+export * from './ArtifactSlotToggle'
 export * from './CharacterRarityToggle'
 export * from './ElementToggle'
 export * from './WeaponRarityToggle'
