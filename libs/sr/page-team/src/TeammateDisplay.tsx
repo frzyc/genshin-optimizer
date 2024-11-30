@@ -132,7 +132,7 @@ function Section({
 }
 function ComboEditorSection() {
   const { database } = useDatabaseContext()
-  const { presetIndex } = useContext(PresetContext)
+  const { presetIndex, setPresetIndex } = useContext(PresetContext)
   const { team, teamId } = useTeamContext()
   const frame = useMemo(() => team.frames[presetIndex], [team, presetIndex])
   const setFrame = (frame: Partial<Frame>) => {
@@ -142,6 +142,9 @@ function ComboEditorSection() {
         ...team.frames[presetIndex],
         ...frame,
       }
+      if (!team.frames.length) setPresetIndex(0)
+      else if (team.frames.length <= presetIndex)
+        setPresetIndex(team.frames.length - 1)
     })
   }
   const removeFrame = () => {
