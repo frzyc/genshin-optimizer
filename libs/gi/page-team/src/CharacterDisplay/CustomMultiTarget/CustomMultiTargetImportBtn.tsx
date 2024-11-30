@@ -14,6 +14,8 @@ import {
 } from '@mui/material'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from "react-router-dom"
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 
 export default function CustomMultiTargetImportBtn({
   setCustomMultiTarget,
@@ -25,12 +27,22 @@ export default function CustomMultiTargetImportBtn({
   const { t } = useTranslation('loadout')
   const [show, onShow, onHide] = useBoolState()
   const [data, setData] = useState('')
+  const database = useDatabase()
+  const navigate = useNavigate()
 
   const importData = () => {
     try {
       const dataObj = JSON.parse(data)
       const validated = validateCustomMultiTarget(dataObj)
-      if (!validated) window.alert(t('mTargetImport.invalid'))
+      if (!validated) {
+        const validatedTeam = database.teams.validate(dataObj) // The user is trying to import a team by accident
+        if (validatedTeam) {
+          if (window.confirm("You are trying to import a team. Do you want to go to the team import page?")) {
+            navigate('/teams', { state: { openImportModal: true, teamData: JSON.stringify(dataObj) } }) // Redirect and automatically open the team import form
+          }
+        }
+        else window.alert(t('mTargetImport.invalid'))
+      }
       else {
         setCustomMultiTarget(validated)
         onHide()
