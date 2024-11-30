@@ -37,7 +37,7 @@ export default function CustomMultiTargetImportBtn({
       if (!validated) {
         const validatedTeam = database.teams.validate(dataObj) // The user is trying to import a team by accident
         if (validatedTeam) {
-          if (window.confirm("You are trying to import a team. Do you want to go to the team import page?")) {
+          if (window.confirm(t('mTargetImport.team'))) {
             navigate('/teams', { state: { openImportModal: true, teamData: JSON.stringify(dataObj) } }) // Redirect and automatically open the team import form
           }
         }
