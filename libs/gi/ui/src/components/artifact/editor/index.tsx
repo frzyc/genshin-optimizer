@@ -401,10 +401,12 @@ export function ArtifactEditor({
   useEffect(() => {
     const pasteFunc = (e: Event) => {
       // Don't handle paste if targetting the edit team modal
-      const target = e.target as HTMLElement;
-      if (target instanceof HTMLInputElement ||
-      target instanceof HTMLTextAreaElement) {
-        return;
+      const target = e.target as HTMLElement
+      if (
+        target instanceof HTMLInputElement ||
+        target instanceof HTMLTextAreaElement
+      ) {
+        return
       }
 
       uploadFiles((e as ClipboardEvent).clipboardData?.files)
