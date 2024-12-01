@@ -36,3 +36,19 @@ export function levenshteinDistance(str1: string, str2: string) {
   }
   return arr[str2.length][str1.length]
 }
+
+export function extractJSON(s: string): object | null {
+  const jsonPattern = /\{(?:[^{}]|(\{(?:[^{}]|(\{[^{}]*\}))*\}))*\}/
+  const match = s.match(jsonPattern)
+
+  if (match) {
+    try {
+      return JSON.parse(match[0])
+    } catch (error) {
+      // Or should it return a different value for erroneous JSON?
+      return null
+    }
+  } else {
+    return null
+  }
+}
