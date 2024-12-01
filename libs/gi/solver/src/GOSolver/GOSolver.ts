@@ -126,22 +126,37 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     let lastTested = 0
     let lastSkipped = 0
 
-    const intervalId = setInterval(() => {
-      const currentTime = performance.now()
-      const elapsedTime = (currentTime - lastTime) / 1000 // in seconds
-      const testedDifference = this.status.tested - lastTested
-      const skippedDifference = this.status.skipped - lastSkipped
+    let intervalId: NodeJS.Timeout | null = null
+    const cleanup = () => {
+      if (intervalId) {
+        clearInterval(intervalId)
+        intervalId = null
+      }
+    }
 
-      this.status.testedPerSecond = testedDifference / elapsedTime
-      this.status.skippedPerSecond = skippedDifference / elapsedTime
+    try {
+      intervalId = setInterval(() => {
+        const currentTime = performance.now()
+        const elapsedTime = (currentTime - lastTime) / 1000 // in seconds
+        const testedDifference = this.status.tested - lastTested
+        const skippedDifference = this.status.skipped - lastSkipped
 
-      lastTime = currentTime
-      lastTested = this.status.tested
-      lastSkipped = this.status.skipped
-    }, 1000)
+        if (elapsedTime != 0) {
+          this.status.testedPerSecond = testedDifference / elapsedTime
+          this.status.skippedPerSecond = skippedDifference / elapsedTime
+        }
+
+        lastTime = currentTime
+        lastTested = this.status.tested
+        lastSkipped = this.status.skipped
+      }, 1000)
+    } catch (e) {
+      cleanup()
+      throw e
+    }
 
     // Return a cleanup function to stop the interval
-    return () => clearInterval(intervalId)
+    return cleanup
   }
 
   /** Returns a new `threshold` if altered */
