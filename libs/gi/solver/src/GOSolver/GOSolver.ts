@@ -13,7 +13,15 @@ import type {
 
 export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
   private maxIterateSize = 32_000_000
-  private status: Record<'tested' | 'failed' | 'skipped' | 'total' | 'testedPerSecond' | 'skippedPerSecond', number>
+  private status: Record<
+    | 'tested'
+    | 'failed'
+    | 'skipped'
+    | 'total'
+    | 'testedPerSecond'
+    | 'skippedPerSecond',
+    number
+  >
   private exclusion: Count['exclusion']
   private topN: number
   private buildValues: { w: Worker; val: number }[]

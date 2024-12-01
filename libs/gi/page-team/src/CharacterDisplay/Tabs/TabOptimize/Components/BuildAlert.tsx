@@ -24,7 +24,17 @@ const BorderLinearProgress = styled(LinearProgress)(() => ({
   borderRadius: 5,
 }))
 export default function BuildAlert({
-  status: { type, tested, failed: _, skipped, total, testedPerSecond, skippedPerSecond, startTime, finishTime },
+  status: {
+    type,
+    tested,
+    failed: _,
+    skipped,
+    total,
+    testedPerSecond,
+    skippedPerSecond,
+    startTime,
+    finishTime,
+  },
   characterName,
 }: {
   status: BuildStatus
@@ -51,12 +61,30 @@ export default function BuildAlert({
     </Monospace>
   )
 
-  const avgTestedPerSecond = tested / ((finishTime ?? 1) - (startTime ?? 0)) * 1000
-  const avgSkippedPerSecond = skipped / ((finishTime ?? 1) - (startTime ?? 0)) * 1000
-  const avgTestedPerSecondString = <Monospace>{parseFloat(avgTestedPerSecond.toFixed(1)).toLocaleString()}</Monospace>
-  const avgSkippedPerSecondString = <Monospace>{parseFloat(avgSkippedPerSecond.toFixed(1)).toLocaleString()}</Monospace>
-  const testedPerSecondString = <Monospace>{parseFloat(testedPerSecond.toFixed(1)).toLocaleString()}</Monospace>
-  const skippedPerSecondString = <Monospace>{parseFloat(skippedPerSecond.toFixed(1)).toLocaleString()}</Monospace>
+  const avgTestedPerSecond =
+    (tested / ((finishTime ?? 1) - (startTime ?? 0))) * 1000
+  const avgSkippedPerSecond =
+    (skipped / ((finishTime ?? 1) - (startTime ?? 0))) * 1000
+  const avgTestedPerSecondString = (
+    <Monospace>
+      {parseFloat(avgTestedPerSecond.toFixed(1)).toLocaleString()}
+    </Monospace>
+  )
+  const avgSkippedPerSecondString = (
+    <Monospace>
+      {parseFloat(avgSkippedPerSecond.toFixed(1)).toLocaleString()}
+    </Monospace>
+  )
+  const testedPerSecondString = (
+    <Monospace>
+      {parseFloat(testedPerSecond.toFixed(1)).toLocaleString()}
+    </Monospace>
+  )
+  const skippedPerSecondString = (
+    <Monospace>
+      {parseFloat(skippedPerSecond.toFixed(1)).toLocaleString()}
+    </Monospace>
+  )
 
   const color = 'success' as 'success' | 'warning' | 'error'
   let title = '' as ReactNode
@@ -72,7 +100,12 @@ export default function BuildAlert({
         against the criteria for <b>{characterName}</b>. {skippedText}
       </Typography>
     )
-    subtitle = <Typography>Time elapsed: {durationString} | {testedPerSecondString} builds tested (+{skippedPerSecondString} skipped) per second</Typography>
+    subtitle = (
+      <Typography>
+        Time elapsed: {durationString} | {testedPerSecondString} builds tested
+        (+{skippedPerSecondString} skipped) per second
+      </Typography>
+    )
   } else if (tested + skipped) {
     progress = 100
     title = (
@@ -81,7 +114,12 @@ export default function BuildAlert({
         criteria for <b>{characterName}</b>. {skippedText}
       </Typography>
     )
-    subtitle = <Typography>Total duration: {durationString} | Average {avgTestedPerSecondString} builds tested (+{avgSkippedPerSecondString} skipped) per second</Typography>
+    subtitle = (
+      <Typography>
+        Total duration: {durationString} | Average {avgTestedPerSecondString}{' '}
+        builds tested (+{avgSkippedPerSecondString} skipped) per second
+      </Typography>
+    )
   } else {
     return null
   }
