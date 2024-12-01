@@ -114,7 +114,7 @@ export const ownTag = {
     ...objKeyMap(bonusAbilities, () => isoSum),
     ...objKeyMap(statBoosts, () => isoSum),
   },
-  lightCone: { lvl: iso, ascension: iso, superimpose: iso },
+  lightCone: { lvl: iso, ascension: iso, superimpose: isoSum },
   common: {
     count: isoSum,
     path: iso,

@@ -30,7 +30,7 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
-import { TeamContext } from '../context'
+import { TeamContext, useTeammateContext } from '../context'
 import GeneratedBuildsDisplay from './GeneratedBuildsDisplay'
 import OptConfigProvider, { OptConfigContext } from './OptConfigWrapper'
 import { StatFilterCard } from './StatFilterCard'
@@ -38,7 +38,8 @@ import { WorkerSelector } from './WorkerSelector'
 
 export default function Optimize() {
   const { database } = useDatabaseContext()
-  const { teammateDatum, teamId } = useContext(TeamContext)
+  const { teamId } = useContext(TeamContext)
+  const teammateDatum = useTeammateContext()
   const optConfigId = teammateDatum.optConfigId
   const createOptConfig = useCallback(() => {
     if (optConfigId) return
@@ -79,10 +80,8 @@ function OptimizeWrapper() {
   const { database } = useDatabaseContext()
 
   const calc = useSrCalcContext()
-  const {
-    team,
-    teammateDatum: { characterKey },
-  } = useContext(TeamContext)
+  const { team } = useContext(TeamContext)
+  const { characterKey } = useTeammateContext()
   const [numWorkers, setNumWorkers] = useState(8)
   const [progress, setProgress] = useState<ProgressResult | undefined>(
     undefined
