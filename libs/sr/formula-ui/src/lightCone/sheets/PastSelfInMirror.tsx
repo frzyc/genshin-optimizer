@@ -42,7 +42,7 @@ const sheet: UISheetElement = {
           {
             title: 'Duration',
             fieldValue: (
-              <SuperImposeWrapper>
+              <SuperImposeWrapper lcKey={key}>
                 {(superimpose) => dm.duration[superimpose]}
               </SuperImposeWrapper>
             ),
@@ -61,7 +61,7 @@ const sheet: UISheetElement = {
         {
           title: 'Energy regen at start of each wave',
           fieldValue: (
-            <SuperImposeWrapper>
+            <SuperImposeWrapper lcKey={key}>
               {(superimpose) => dm.enerRegn[superimpose]}
             </SuperImposeWrapper>
           ),

@@ -78,12 +78,10 @@ import {
 } from '@mui/material'
 import type { ReactNode } from 'react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { useTeamContext } from './context'
+import { useTeamContext, useTeammateContext } from './context'
 export function BuildsDisplay({ onClose }: { onClose?: () => void }) {
   const { database } = useDatabaseContext()
-  const {
-    teammateDatum: { characterKey },
-  } = useTeamContext()
+  const { characterKey } = useTeammateContext()
   const [dbDirty, setDbDirty] = useForceUpdate()
   const [dbTCDirty, setDbTCDirty] = useForceUpdate()
   const buildIds = useMemo(
@@ -145,10 +143,8 @@ function useActiveBuildSwap(
   newBuildId = ''
 ) {
   const { database } = useDatabaseContext()
-  const {
-    teamId,
-    teammateDatum: { characterKey, buildType, buildId, buildTcId },
-  } = useTeamContext()
+  const { characterKey, buildType, buildId, buildTcId } = useTeammateContext()
+  const { teamId } = useTeamContext()
 
   return useMemo(
     () => ({

@@ -22,7 +22,7 @@ import type { FormEventHandler } from 'react'
 import { memo, useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { EquipRow } from '../BuildsDisplay'
-import { useTeamContext } from '../context'
+import { useTeamContext, useTeammateContext } from '../context'
 import { OptConfigContext } from './OptConfigWrapper'
 
 function useGeneratedBuildList(listId: string) {
@@ -81,10 +81,8 @@ function NewBuildButton({
   const [toTCBuild, setToTCBuild] = useState(false)
 
   const { database } = useDatabaseContext()
-  const {
-    teamId,
-    teammateDatum: { characterKey },
-  } = useTeamContext()
+  const { teamId } = useTeamContext()
+  const { characterKey } = useTeammateContext()
   const toNewBuild: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault()
 
