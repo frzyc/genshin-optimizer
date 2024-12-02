@@ -61,6 +61,8 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     this.exclusion = exclusion
     this.topN = topN
     this.status.total = NaN
+    this.status.testedPerSecond = 0
+    this.status.skippedPerSecond = 0
     this.buildValues = Array(topN).fill({ w: undefined as any, val: -Infinity })
 
     this.notifiedBroadcast(this.preprocess(problem))
