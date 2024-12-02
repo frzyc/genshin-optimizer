@@ -33,7 +33,7 @@ import {
 import type { ReactNode } from 'react'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useTeamContext } from './context'
+import { useTeammateContext } from './context'
 
 const talentSpacing = {
   xs: 12,
@@ -42,9 +42,7 @@ const talentSpacing = {
 }
 
 export default function CharacterTalentPane() {
-  const {
-    teammateDatum: { characterKey },
-  } = useTeamContext()
+  const { characterKey } = useTeammateContext()
   const calc = useSrCalcContext()
   const { database } = useDatabaseContext()
   // TODO: for TC overrides
@@ -241,9 +239,7 @@ function SkillDisplayCard({
   talentKey,
   onClickTitle,
 }: SkillDisplayCardProps) {
-  const {
-    teammateDatum: { characterKey },
-  } = useTeamContext()
+  const { characterKey } = useTeammateContext()
   const actionWrapperFunc = useCallback(
     (children: ReactNode) => (
       <CardActionArea onClick={onClickTitle}>{children}</CardActionArea>
@@ -333,9 +329,7 @@ function SkillDisplayCard({
 
 export function EidolonDropdown({ eidolon }: { eidolon: number }) {
   const { t } = useTranslation('characters_gen')
-  const {
-    teammateDatum: { characterKey },
-  } = useTeamContext()
+  const { characterKey } = useTeammateContext()
   const { database } = useDatabaseContext()
   return (
     <DropdownButton

@@ -1,84 +1,69 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
-import {
-  CardThemed,
-  ConditionalWrapper,
-  ModalWrapper,
-} from '@genshin-optimizer/common/ui'
+import { CardThemed } from '@genshin-optimizer/common/ui'
+import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
+import { TagContext } from '@genshin-optimizer/pando/ui-sheet'
+import type { Frame } from '@genshin-optimizer/sr/db'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
-import { type Tag } from '@genshin-optimizer/sr/formula'
-import {
-  Box,
-  Button,
-  CardActionArea,
-  CardContent,
-  CardHeader,
-  Divider,
-  Stack,
-} from '@mui/material'
-import { useContext } from 'react'
-import { BonusStats } from './BonusStats'
+import { Read } from '@genshin-optimizer/sr/formula'
+import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
+import { Box, CardActionArea, Divider, Typography } from '@mui/material'
+import { useCallback, useContext, useMemo } from 'react'
 import { PresetContext, useTeamContext } from './context'
-import { LightConeSheetsDisplay } from './LightConeSheetsDisplay'
+import { OptimizationTargetDisplay } from './Optimize/OptimizationTargetDisplay'
 import { OptimizationTargetSelector } from './Optimize/OptimizationTargetSelector'
-import { RelicSheetsDisplay } from './RelicSheetsDisplay'
 
 export function ComboEditor() {
   const { database } = useDatabaseContext()
   const { team, teamId } = useTeamContext()
   return (
-    <CardThemed
+    <Box
       sx={{
-        overflow: 'visible',
-        top: 137, // height of the team selector
-        position: 'sticky',
-        zIndex: 101,
+        display: 'flex',
+        gap: 1,
+        overflowX: 'auto',
+        overflowY: 'visible',
+        p: 1,
       }}
     >
-      <CardHeader title="Combo Editor" />
-      <Divider />
-      <CardContent
-        sx={{
-          display: 'flex',
-          gap: 1,
-          overflowX: 'auto',
-        }}
-      >
-        {team.frames.map((frame, i) => (
-          <Team
-            key={i + JSON.stringify(frame ?? {})}
-            tag={frame}
-            index={i}
-            setTarget={(read) =>
-              database.teams.set(teamId, (team) => {
-                team.frames = [...team.frames]
-                team.frames[i] = read
-              })
-            }
-          />
-        ))}
-        <Box sx={{ flexShrink: 0 }}>
-          <OptimizationTargetSelector
-            setOptTarget={(tag) =>
-              database.teams.set(teamId, (team) => {
-                team.frames = [...team.frames, tag]
-              })
-            }
-          />
-        </Box>
-      </CardContent>
-    </CardThemed>
+      {team.frames.map((frame, i) => (
+        <Combo key={i} frame={frame} index={i} />
+      ))}
+      <Box sx={{ flexShrink: 0 }}>
+        <OptimizationTargetSelector
+          setOptTarget={(tag) =>
+            database.teams.set(teamId, (team) => {
+              team.frames = [
+                ...team.frames,
+                {
+                  multiplier: 1,
+                  tag,
+                },
+              ]
+            })
+          }
+        />
+      </Box>
+    </Box>
   )
 }
-function Team({
-  tag,
-  index,
-  setTarget,
-}: {
-  tag: Tag
-  index: number
-  setTarget(tag: Tag): void
-}) {
+function Combo({ frame, index }: { frame: Frame; index: number }) {
   const { presetIndex, setPresetIndex } = useContext(PresetContext)
+  const calc = useSrCalcContext()
+  const tagcontext = useContext(TagContext)
+  const value = useMemo(() => {
+    try {
+      return (
+        calc?.withTag(tagcontext).compute(new Read(frame.tag, 'sum')).val ?? 0
+      )
+    } catch (error) {
+      console.error('Error computing value:', error)
+      return 0
+    }
+  }, [calc, frame.tag, tagcontext])
+  const unit = getUnitStr(frame.tag.q ?? '')
+
+  const handleClick = useCallback(() => {
+    setPresetIndex(index)
+  }, [index, setPresetIndex])
   return (
     <CardThemed
       bgt="light"
@@ -90,53 +75,22 @@ function Team({
             : undefined,
       })}
     >
-      <ConditionalWrapper
-        condition={presetIndex !== index}
-        wrapper={(children) => (
-          <CardActionArea onClick={() => setPresetIndex(index)}>
-            {children}
-          </CardActionArea>
-        )}
-      >
-        <CardHeader title={`Combo ${index + 1}`} />
-      </ConditionalWrapper>
-      <Divider />
-      <CardContent>
-        <Stack spacing={1}>
-          <OptimizationTargetSelector
-            optTarget={tag}
-            setOptTarget={setTarget}
-          />
-          <BonusStats />
-          <RelicConditionals />
-          <LightConeConditionals />
-        </Stack>
-      </CardContent>
-    </CardThemed>
-  )
-}
+      <CardActionArea onClick={handleClick}>
+        <Box sx={{ display: 'flex', gap: 1, alignItems: 'stretch', p: 1 }}>
+          <Typography>{index + 1}</Typography>
+          <Divider orientation="vertical" />
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <OptimizationTargetDisplay tag={frame.tag} />
+          </Box>
+        </Box>
 
-function RelicConditionals() {
-  const [show, onShow, onHide] = useBoolState()
-  return (
-    <>
-      {/* TODO: translation */}
-      <Button onClick={onShow}>Relic Conditionals</Button>
-      <ModalWrapper open={show} onClose={onHide}>
-        <RelicSheetsDisplay />
-      </ModalWrapper>
-    </>
-  )
-}
-function LightConeConditionals() {
-  const [show, onShow, onHide] = useBoolState()
-  return (
-    <>
-      {/* TODO: translation */}
-      <Button onClick={onShow}>Light Cone Conditionals</Button>
-      <ModalWrapper open={show} onClose={onHide}>
-        <LightConeSheetsDisplay />
-      </ModalWrapper>
-    </>
+        <Divider />
+        <Box sx={{ p: 1, display: 'flex', alignItems: 'center', gap: 1 }}>
+          <Typography>
+            {frame.multiplier} x {valueString(value, unit)}
+          </Typography>
+        </Box>
+      </CardActionArea>
+    </CardThemed>
   )
 }

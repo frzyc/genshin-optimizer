@@ -1,4 +1,4 @@
-import { detach, sum } from '@genshin-optimizer/pando/engine'
+import { detach, prod, sum } from '@genshin-optimizer/pando/engine'
 import type { CharacterKey, RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { allLightConeKeys, allRelicSetKeys } from '@genshin-optimizer/sr/consts'
 import type {
@@ -134,7 +134,10 @@ export class Solver {
         // team
         sum(
           ...this.frames.map((frame, i) =>
-            new Read(frame, 'sum').with('preset', `preset${i}` as Preset)
+            prod(
+              frame.multiplier,
+              new Read(frame.tag, 'sum').with('preset', `preset${i}` as Preset)
+            )
           )
         ),
         // stat filters
