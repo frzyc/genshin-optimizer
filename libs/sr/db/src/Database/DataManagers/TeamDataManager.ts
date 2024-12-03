@@ -1,5 +1,6 @@
 import type { IConditionalData } from '@genshin-optimizer/common/formula'
 import {
+  notEmpty,
   objKeyMap,
   pruneOrPadArray,
   range,
@@ -37,6 +38,11 @@ export type TeammateDatum = {
 
   optConfigId?: string
 }
+export type Frame = {
+  tag: Tag
+  multiplier: number
+  description?: string
+}
 export interface Team {
   name: string
   description: string
@@ -44,7 +50,7 @@ export interface Team {
   lastEdit: number
 
   // frames, store data as a "sparse 2d array"
-  frames: Array<Tag>
+  frames: Array<Frame>
   conditionals: Array<{
     sheet: Sheet
     src: Member
@@ -56,7 +62,11 @@ export interface Team {
     tag: Tag
     values: number[] // should be the same length as `frames`
   }>
-  statConstraints: Array<{ tag: Tag; values: number[]; isMaxs: boolean[] }>
+  statConstraints: Array<{
+    tag: Tag
+    values: number[] // should be the same length as `frames`
+    isMaxs: boolean[] // should be the same length as `frames`
+  }>
 
   // TODO enemy base stats
   teamMetadata: Array<TeammateDatum | undefined>
@@ -170,7 +180,17 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     if (typeof lastEdit !== 'number') lastEdit = Date.now()
 
     if (!Array.isArray(frames)) frames = []
-    frames = frames.filter(validateTag)
+    frames = frames
+      .map((f) => {
+        const { tag } = f
+        let { multiplier, description } = f
+        if (!validateTag(tag)) return undefined
+        if (typeof multiplier !== 'number' || multiplier === 0) multiplier = 1
+        if (typeof description !== 'string') description = undefined
+
+        return { tag, multiplier, description }
+      })
+      .filter(notEmpty)
     const framesLength = frames.length
     if (!framesLength) {
       conditionals = []
