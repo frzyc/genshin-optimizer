@@ -12,14 +12,21 @@ describe('test  @genshin_optimizer/util/string', () => {
   })
 
   it('test extractJSON', () => {
-    expect(
-      extractJSON(
-        'Text with emoji👍🏻 {"name": "Build Name", "nested": {"one": 1, "list": [1, 2, 3]}} more words'
-      )
-    ).toEqual({ name: 'Build Name', nested: { one: 1, list: [1, 2, 3] } })
-    expect(extractJSON('{"only": "JSON"}')).toEqual({ only: 'JSON' })
-    expect(extractJSON('No JSON here')).toEqual(null)
+    expect(extractJSON('Leading text {"key": "value"} trailing text')).toEqual({
+      key: 'value',
+    })
+    expect(extractJSON('{"escaped": "He said \\"hello\\"."}')).toEqual({
+      escaped: 'He said "hello".',
+    })
+    expect(extractJSON('{"nested": {"key": "value", "list": [1, 2]}}')).toEqual(
+      { nested: { key: 'value', list: [1, 2] } }
+    )
+    expect(extractJSON('{"bool": true, "nullValue": null}')).toEqual({
+      bool: true,
+      nullValue: null,
+    })
+    expect(extractJSON('{key: "value"}')).toEqual(null)
+    expect(extractJSON('{"a": "b"} {"c": "d"}')).toEqual({ a: 'b' })
     expect(extractJSON('')).toEqual(null)
-    expect(extractJSON('Incomplete JSON {"hello":}')).toEqual(null)
   })
 })
