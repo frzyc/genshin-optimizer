@@ -31,7 +31,7 @@ import {
 import type { ChangeEvent } from 'react'
 import { Suspense, useDeferredValue, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { teamFilterConfigs, teamSortConfigs, teamSortMap } from './TeamSort'
 
 const columns = { xs: 1, sm: 2, md: 2, lg: 3, xl: 3 }
