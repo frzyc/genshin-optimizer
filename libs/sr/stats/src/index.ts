@@ -29,7 +29,16 @@ export function getCharStat(ck: CharacterGenderedKey) {
  */
 export function getInterpolateObject(
   ck: CharacterGenderedKey,
-  skType: 'basic' | 'skill' | 'ult' | 'talent' | 'technique' | 'eidolon',
+  skType:
+    | 'basic'
+    | 'skill'
+    | 'ult'
+    | 'talent'
+    | 'technique'
+    | 'eidolon'
+    | 'bonusAbility1'
+    | 'bonusAbility2'
+    | 'bonusAbility3',
   skLevel: number,
   skIndex = 0
 ) {

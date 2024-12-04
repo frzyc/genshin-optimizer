@@ -1,17 +1,27 @@
 import { ColorText, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
+import { getUnitStr, toPercent } from '@genshin-optimizer/common/util'
 import type { UISheet } from '@genshin-optimizer/pando/ui-sheet'
 import { characterAsset } from '@genshin-optimizer/sr/assets'
-import type { CharacterKey } from '@genshin-optimizer/sr/consts'
+import type { CharacterKey, StatKey } from '@genshin-optimizer/sr/consts'
 import {
   buffs,
   conditionals,
   formulas,
   own,
 } from '@genshin-optimizer/sr/formula'
-import { getInterpolateObject, mappedStats } from '@genshin-optimizer/sr/stats'
+import {
+  getCharStat,
+  getInterpolateObject,
+  mappedStats,
+} from '@genshin-optimizer/sr/stats'
 import { StatDisplay } from '@genshin-optimizer/sr/ui'
+import { statToFixed } from '@genshin-optimizer/sr/util'
 import { trans } from '../../util'
-import type { TalentSheetElementKey } from '../consts'
+import { bonusStatsReqMap } from '../BonusStats'
+import {
+  allTalentSheetElementStatBoostKey,
+  type TalentSheetElementKey,
+} from '../consts'
 import { EidolonSubtitle } from '../EidolonSubtitle'
 import { SkillSubtitle } from '../SkillSubtitle'
 const key: CharacterKey = 'RuanMei'
@@ -20,6 +30,7 @@ const formula = formulas.RuanMei
 const cond = conditionals.RuanMei
 const buff = buffs.RuanMei
 const dm = mappedStats.char[key]
+const stats = getCharStat(key)
 const sheet: UISheet<TalentSheetElementKey> = {
   basic: {
     title: chg('abilities.basic.0.name'),
@@ -194,7 +205,70 @@ const sheet: UISheet<TalentSheetElementKey> = {
           },
         ],
       },
-      // TODO: Move this to proper document, just want to visualize it for now.
+    ],
+  },
+  technique: {
+    title: chg('abilities.technique.0.name'),
+    subtitle: (
+      <SkillSubtitle talentKey="technique">
+        {chg('abilities.technique.0.tag')}
+      </SkillSubtitle>
+    ),
+    img: characterAsset(key, 'technique_0'),
+    documents: [
+      {
+        type: 'text',
+        text: () =>
+          chg(
+            `abilities.technique.0.fullDesc`,
+            getInterpolateObject(key, 'technique', 0)
+          ),
+      },
+    ],
+  },
+  bonusAbility1: {
+    title: chg('abilities.bonusAbility1.0.name'),
+    subtitle: 'Req. Character Ascension 2', // TODO: translate
+    img: characterAsset(key, 'bonusAbility1'),
+    documents: [
+      {
+        type: 'text',
+        text: () =>
+          chg(
+            `abilities.bonusAbility1.0.fullDesc`,
+            getInterpolateObject(key, 'bonusAbility1', 0)
+          ),
+      },
+    ],
+  },
+  bonusAbility2: {
+    title: chg('abilities.bonusAbility2.0.name'),
+    subtitle: 'Req. Character Ascension 4', // TODO: translate
+    img: characterAsset(key, 'bonusAbility2'),
+    documents: [
+      {
+        type: 'text',
+        text: () =>
+          chg(
+            `abilities.bonusAbility2.0.fullDesc`,
+            getInterpolateObject(key, 'bonusAbility2', 0)
+          ),
+      },
+    ],
+  },
+  bonusAbility3: {
+    title: chg('abilities.bonusAbility3.0.name'),
+    subtitle: 'Req. Character Ascension 6', // TODO: translate
+    img: characterAsset(key, 'bonusAbility3'),
+    documents: [
+      {
+        type: 'text',
+        text: () =>
+          chg(
+            `abilities.bonusAbility3.0.fullDesc`,
+            getInterpolateObject(key, 'bonusAbility3', 0) // TODO: FIXME: does not seem to work for bonus Stats (wrong array format)
+          ),
+      },
       {
         type: 'fields',
         fields: [
@@ -215,6 +289,30 @@ const sheet: UISheet<TalentSheetElementKey> = {
       },
     ],
   },
+  ...Object.fromEntries(
+    allTalentSheetElementStatBoostKey.map((key, i) => [
+      key,
+      {
+        title: `Boost ${i + 1}`, // TODO: needs "Speed Boost" from i18n
+        subtitle: bonusStatsReqMap[key],
+        documents: [
+          {
+            type: 'fields',
+            fields: Object.entries(
+              stats.skillTree[key]?.levels?.[0].stats ?? {}
+            ).map(([statKey, value]) => ({
+              title: <StatDisplay statKey={statKey as StatKey} />,
+              fieldValue: toPercent(value, statKey).toFixed(
+                statToFixed(statKey as any)
+              ),
+              unit: getUnitStr(statKey),
+            })),
+          },
+        ],
+      },
+    ])
+  ),
+
   eidolon1: {
     title: chg('ranks.1.name'),
     subtitle: <EidolonSubtitle eidolon={1} />,
@@ -349,5 +447,5 @@ const sheet: UISheet<TalentSheetElementKey> = {
     ],
   },
 }
-
+console.log({ stats: stats.skillTree.statBoost1.levels?.[0].stats })
 export default sheet

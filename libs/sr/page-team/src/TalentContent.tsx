@@ -15,6 +15,7 @@ import {
 } from '@genshin-optimizer/sr/db-ui'
 import { own } from '@genshin-optimizer/sr/formula'
 import {
+  allTalentSheetElementStatBoostKey,
   isTalentKey,
   uiSheets,
   type TalentSheetElementKey,
@@ -53,6 +54,12 @@ export default function CharacterTalentPane() {
     'skill',
     'ult',
     'talent',
+    'technique',
+    'overworld',
+    'bonusAbility1',
+    'bonusAbility2',
+    'bonusAbility3',
+    ...allTalentSheetElementStatBoostKey,
   ] as const
   // const passivesList: [
   //   tKey: TalentSheetElementKey,
@@ -286,7 +293,7 @@ function SkillDisplayCard({
   // }
 
   const { database } = useDatabaseContext()
-
+  const { img, title, subtitle, documents } = sheetElement
   return (
     <CardThemed bgt="light" sx={{ height: '100%' }}>
       {header}
@@ -296,25 +303,25 @@ function SkillDisplayCard({
           wrapper={actionWrapperFunc}
         >
           <Grid container sx={{ flexWrap: 'nowrap' }}>
-            <Grid item>
-              <Box
-                component={NextImage ? NextImage : 'img'}
-                src={sheetElement?.img}
-                sx={{ width: 60, height: 'auto' }}
-              />
-            </Grid>
+            {img && (
+              <Grid item>
+                <Box
+                  component={NextImage ? NextImage : 'img'}
+                  src={img}
+                  sx={{ width: 60, height: 'auto' }}
+                />
+              </Grid>
+            )}
             <Grid item flexGrow={1} sx={{ pl: 1 }}>
-              <Typography variant="h6">{sheetElement?.title}</Typography>
-              {sheetElement.subtitle && (
-                <Typography variant="subtitle1">
-                  {sheetElement.subtitle}
-                </Typography>
+              <Typography variant="h6">{title}</Typography>
+              {subtitle && (
+                <Typography variant="subtitle1">{subtitle}</Typography>
               )}
             </Grid>
           </Grid>
         </ConditionalWrapper>
         {/* Display document sections */}
-        {sheetElement.documents.map((doc, i) => (
+        {documents.map((doc, i) => (
           <DocumentDisplay
             key={i}
             document={doc}
