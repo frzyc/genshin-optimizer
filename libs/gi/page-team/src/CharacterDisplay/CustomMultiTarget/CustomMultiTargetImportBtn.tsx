@@ -1,5 +1,6 @@
 import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
+import { extractJSON } from '@genshin-optimizer/common/util'
 import type { CustomMultiTarget } from '@genshin-optimizer/gi/db'
 import { validateCustomMultiTarget } from '@genshin-optimizer/gi/db'
 import UploadIcon from '@mui/icons-material/Upload'
@@ -28,8 +29,8 @@ export default function CustomMultiTargetImportBtn({
 
   const importData = () => {
     try {
-      const dataObj = JSON.parse(data)
-      const validated = validateCustomMultiTarget(dataObj)
+      const dataObj = extractJSON(data)
+      const validated = dataObj && validateCustomMultiTarget(dataObj)
       if (!validated) window.alert(t('mTargetImport.invalid'))
       else {
         setCustomMultiTarget(validated)
