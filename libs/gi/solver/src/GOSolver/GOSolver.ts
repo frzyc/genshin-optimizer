@@ -13,7 +13,15 @@ import type {
 
 export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
   private maxIterateSize = 32_000_000
-  private status: Record<'tested' | 'failed' | 'skipped' | 'total', number>
+  private status: Record<
+    | 'tested'
+    | 'failed'
+    | 'skipped'
+    | 'total'
+    | 'testedPerSecond'
+    | 'skippedPerSecond',
+    number
+  >
   private exclusion: Count['exclusion']
   private topN: number
   private buildValues: { w: Worker; val: number }[]
@@ -53,6 +61,8 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
     this.exclusion = exclusion
     this.topN = topN
     this.status.total = NaN
+    this.status.testedPerSecond = 0
+    this.status.skippedPerSecond = 0
     this.buildValues = Array(topN).fill({ w: undefined as any, val: -Infinity })
 
     this.notifiedBroadcast(this.preprocess(problem))
@@ -61,7 +71,12 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
   async solve() {
     const { exclusion, maxIterateSize } = this
     this.finalizedResults = []
+
+    // Cleanup function from the BPS tracker
+    const stopTracking = this.trackBuildsPerSecond()
+
     await this.execute([{ command: 'count', exclusion, maxIterateSize }])
+    stopTracking()
     this.notifiedBroadcast({ command: 'finalize' })
     await this.execute([])
     return this.finalizedResults
@@ -105,6 +120,45 @@ export class GOSolver extends WorkerCoordinator<WorkerCommand, WorkerResult> {
       topN,
       constraints: nodes.map((value, i) => ({ value, min: minimums[i] })),
     }
+  }
+
+  /** Tracks number of builds processed per second. Returns a cleanup function to be called once Artifact Optimization is complete. */
+  private trackBuildsPerSecond() {
+    let lastTime = performance.now()
+    let lastTested = 0
+    let lastSkipped = 0
+
+    let intervalId: NodeJS.Timeout | null = null
+    const cleanup = () => {
+      if (intervalId) {
+        clearInterval(intervalId)
+        intervalId = null
+      }
+    }
+
+    try {
+      intervalId = setInterval(() => {
+        const currentTime = performance.now()
+        const elapsedTime = (currentTime - lastTime) / 1000 // in seconds
+        const testedDifference = this.status.tested - lastTested
+        const skippedDifference = this.status.skipped - lastSkipped
+
+        if (elapsedTime != 0) {
+          this.status.testedPerSecond = testedDifference / elapsedTime
+          this.status.skippedPerSecond = skippedDifference / elapsedTime
+        }
+
+        lastTime = currentTime
+        lastTested = this.status.tested
+        lastSkipped = this.status.skipped
+      }, 1000)
+    } catch (e) {
+      cleanup()
+      throw e
+    }
+
+    // Return a cleanup function to stop the interval
+    return cleanup
   }
 
   /** Returns a new `threshold` if altered */
