@@ -17,13 +17,13 @@ import {
 import { StatDisplay } from '@genshin-optimizer/sr/ui'
 import { statToFixed } from '@genshin-optimizer/sr/util'
 import { trans } from '../../util'
-import { bonusStatsReqMap } from '../BonusStats'
 import {
   allTalentSheetElementStatBoostKey,
   type TalentSheetElementKey,
 } from '../consts'
 import { EidolonSubtitle } from '../EidolonSubtitle'
 import { SkillSubtitle } from '../SkillSubtitle'
+import { bonusAbilityReqMap, bonusStatsReqMap } from '../StatBoostBonusAbility'
 const key: CharacterKey = 'RuanMei'
 const [chg, _ch] = trans('char', key)
 const formula = formulas.RuanMei
@@ -228,7 +228,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
   },
   bonusAbility1: {
     title: chg('abilities.bonusAbility1.0.name'),
-    subtitle: 'Req. Character Ascension 2', // TODO: translate
+    subtitle: bonusAbilityReqMap['bonusAbility1'].subtitle,
     img: characterAsset(key, 'bonusAbility1'),
     documents: [
       {
@@ -243,7 +243,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
   },
   bonusAbility2: {
     title: chg('abilities.bonusAbility2.0.name'),
-    subtitle: 'Req. Character Ascension 4', // TODO: translate
+    subtitle: bonusAbilityReqMap['bonusAbility2'].subtitle,
     img: characterAsset(key, 'bonusAbility2'),
     documents: [
       {
@@ -258,7 +258,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
   },
   bonusAbility3: {
     title: chg('abilities.bonusAbility3.0.name'),
-    subtitle: 'Req. Character Ascension 6', // TODO: translate
+    subtitle: bonusAbilityReqMap['bonusAbility3'].subtitle,
     img: characterAsset(key, 'bonusAbility3'),
     documents: [
       {
@@ -294,8 +294,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
       key,
       {
         title: `Boost ${i + 1}`, // TODO: needs "Speed Boost" from i18n
-        subtitle: bonusStatsReqMap[key].title,
-        disabled: bonusStatsReqMap[key].disabled,
+        subtitle: bonusStatsReqMap[key].subtitle,
         documents: [
           {
             type: 'fields',
@@ -448,5 +447,4 @@ const sheet: UISheet<TalentSheetElementKey> = {
     ],
   },
 }
-console.log({ stats: stats.skillTree.statBoost1.levels?.[0].stats })
 export default sheet
