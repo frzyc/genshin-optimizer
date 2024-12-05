@@ -4,7 +4,7 @@ import {
   allLightConeKeys,
   allRelicSetKeys,
 } from '@genshin-optimizer/sr/consts'
-import { allCharHashData, charHashData } from './charHashData'
+import { allCharHashData, charHashData, charSheet } from './charHashData'
 import { allLightConeHashData, lightConeHashData } from './lightConeHashData'
 import { allRelicHashData, relicHashData } from './relicHashData'
 import { uiHashData } from './uiHashData'
@@ -30,6 +30,7 @@ export const HashData = {
   char: allCharHashData,
   charNames,
   characters: charHashData,
+  charSheet,
 
   relic: allRelicHashData,
   relicNames,

@@ -13,7 +13,7 @@
       "0": {
         "name": "Oktett des Donners",
         "fullDesc": "Erhält {{3}} Pkt. „Zerbrochener Traum“. Belegt einen anvisierten Gegner mit {{3}} Stapelung „Karminroter Knoten“ und fügt ihm Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Acherons ANG sowie angrenzenden Einheiten Blitz-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Acherons ANG zu.",
-        "shortDesc": "Erhält <orangeStrong><color=#f29e38ff>#3[i]</orangeStrong> Pkt. „Zerbrochener Traum“</color>. Belegt einen Gegner mit <orangeStrong>{{3}}</orangeStrong> Stapelung „Karminroter Knoten“ und fügt ihm Blitz-SCH sowie angrenzenden Einheiten geringen Blitz-SCH zu.",
+        "shortDesc": "Erhält <orangeStrong><color=#f29e38ff>{{3}}[i]</orangeStrong> Pkt. „Zerbrochener Traum“</color>. Belegt einen Gegner mit <orangeStrong>{{3}}</orangeStrong> Stapelung „Karminroter Knoten“ und fügt ihm Blitz-SCH sowie angrenzenden Einheiten geringen Blitz-SCH zu.",
         "tag": "Ausdehnung"
       }
     },

@@ -11,7 +11,7 @@
       "1": {
         "name": "Brows Be Smitten, Heart Be Bitten",
         "fullDesc": "Pada awalnya mengakibatkan {{4}} Hit DMG. Setiap Hit-nya mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK March 7th pada 1 musuh yang ditargetkan. Setiap kali setelah mengakibatkan 1 Hit DMG yang terakhir, memiliki {{2, percent}}% peluang tetap untuk mengakibatkan 1 Hit DMG lagi, maksimal mengakibatkan ekstra {{3}} Hit DMG. Pemulihan Energy dari pelancaran Enhanced Basic Attack tidak meningkat seiring dengan meningkatnya jumlah Hit.<br>Enhanced Basic Attack tidak dapat memulihkan Poin Skill.",
-        "shortDesc": "Mengakibatkan Imaginary DMG pada 1 musuh, yang pada awalnya mengakibatkan <orangeStrong>{{4}}</orangeStrong> Hit DMG, <orangeStrong>berpeluang mengakibatkan maksimal hingga ekstra <color=#f29e38ff>#3[i]</orangeStrong> Hit DMG</color>.",
+        "shortDesc": "Mengakibatkan Imaginary DMG pada 1 musuh, yang pada awalnya mengakibatkan <orangeStrong>{{4}}</orangeStrong> Hit DMG, <orangeStrong>berpeluang mengakibatkan maksimal hingga ekstra <color=#f29e38ff>{{3}}[i]</orangeStrong> Hit DMG</color>.",
         "tag": "Single Target"
       }
     },

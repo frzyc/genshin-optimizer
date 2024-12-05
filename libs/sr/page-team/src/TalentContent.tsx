@@ -246,6 +246,7 @@ function SkillDisplayCard({
   talentKey,
   onClickTitle,
 }: SkillDisplayCardProps) {
+  const calculator = useSrCalcContext()
   const { characterKey } = useTeammateContext()
   const actionWrapperFunc = useCallback(
     (children: ReactNode) => (
@@ -293,9 +294,13 @@ function SkillDisplayCard({
   // }
 
   const { database } = useDatabaseContext()
-  const { img, title, subtitle, documents } = sheetElement
+  const { img, title, subtitle, documents, disabled } = sheetElement
+  const isDisabled = calculator && disabled?.(calculator)
   return (
-    <CardThemed bgt="light" sx={{ height: '100%' }}>
+    <CardThemed
+      bgt="light"
+      sx={{ height: '100%', opacity: isDisabled ? 0.5 : 1 }}
+    >
       {header}
       <CardContent>
         <ConditionalWrapper

@@ -11,7 +11,7 @@
       "1": {
         "name": "Rostos Feridos, Corações Mordidos",
         "fullDesc": "Este ataque causa Dano {{4}} vez(es) inicialmente. Cada golpe contra o inimigo-alvo causa Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de 7 de Março. Após realizar o golpe final, há uma chance fixa de {{2, percent}}% de realizar 1 golpe extra, até um máximo de {{3}} golpe(s) extra(s). A Energia regenerada ao utilizar o ATQ Básico Aprimorado não aumenta com o número de Golpes por Ação.<br>O ATQ Básico Aprimorado não pode recuperar Pontos de Perícia.",
-        "shortDesc": "Causa Dano Imaginário a um único inimigo, realizando inicialmente <orangeStrong>{{4}}</orangeStrong> golpes. <orangeStrong>Há uma chance de causar até <unbreak>#3[i]</orangeStrong> golpe(s) adicionalmente</color>.",
+        "shortDesc": "Causa Dano Imaginário a um único inimigo, realizando inicialmente <orangeStrong>{{4}}</orangeStrong> golpes. <orangeStrong>Há uma chance de causar até <unbreak>{{3}}[i]</orangeStrong> golpe(s) adicionalmente</color>.",
         "tag": "Alvo Único"
       }
     },

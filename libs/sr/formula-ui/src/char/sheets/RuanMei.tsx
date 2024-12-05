@@ -294,7 +294,8 @@ const sheet: UISheet<TalentSheetElementKey> = {
       key,
       {
         title: `Boost ${i + 1}`, // TODO: needs "Speed Boost" from i18n
-        subtitle: bonusStatsReqMap[key],
+        subtitle: bonusStatsReqMap[key].title,
+        disabled: bonusStatsReqMap[key].disabled,
         documents: [
           {
             type: 'fields',

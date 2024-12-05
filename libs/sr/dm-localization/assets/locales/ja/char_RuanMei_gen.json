@@ -28,7 +28,7 @@
     "talent": {
       "0": {
         "name": "フラクタルの{RUBY_B#らせん}螺旋{RUBY_E#}",
-        "fullDesc": "自身を除く味方全体の速度<orangeStrong>+<unbreak>#1[f1]%</orangeStrong></color>。敵を弱点撃破した後、その敵にルアン・メェイの氷属性弱点撃破ダメージ<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>分の弱点撃破ダメージを与える。",
+        "fullDesc": "自身を除く味方全体の速度<orangeStrong>+<unbreak>{{1}}[f1]%</orangeStrong></color>。敵を弱点撃破した後、その敵にルアン・メェイの氷属性弱点撃破ダメージ<orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>分の弱点撃破ダメージを与える。",
         "shortDesc": "自身以外の味方の<orangeStrong>速度</orangeStrong>をアップする。味方が敵を弱点撃破した時、<orangeStrong>さらに氷属性弱点撃破ダメージを与える</orangeStrong>。",
         "tag": "サポート"
       }
