@@ -5,7 +5,7 @@ import { evalIfFunc } from '@genshin-optimizer/common/util'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { Box, Collapse } from '@mui/material'
 import { useContext, useState } from 'react'
-import { CalcContext } from '../context'
+import { CalcContext, TagContext } from '../context'
 import type { Document, FieldsDocument, TextDocument } from '../types'
 import { ConditionalsDisplay } from './ConditionalDisplay'
 import { FieldsDisplay } from './FieldDisplay'
@@ -66,8 +66,9 @@ function FieldsSectionDisplay({
 
 function TextSectionDisplay({ textDocument }: { textDocument: TextDocument }) {
   const calculator = useContext(CalcContext)
+  const tag = useContext(TagContext)
   if (!calculator) return null
-  return <div>{evalIfFunc(textDocument.text, calculator)}</div>
+  return <div>{evalIfFunc(textDocument.text, calculator.withTag(tag))}</div>
 }
 function TextSectionDisplayCollapse({
   textDocument,
