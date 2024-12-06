@@ -26,7 +26,7 @@ export function isTalentSheetElementStatBoostKey(
   )
 }
 
-export const allTalentSHeetElementEidolonKey = [
+export const allTalentSheetElementEidolonKey = [
   'eidolon1',
   'eidolon2',
   'eidolon3',
@@ -35,25 +35,25 @@ export const allTalentSHeetElementEidolonKey = [
   'eidolon6',
 ] as const
 export type TalentSheetElementEidolonKey =
-  (typeof allTalentSHeetElementEidolonKey)[number]
+  (typeof allTalentSheetElementEidolonKey)[number]
 export function isTalentSheetElementEidolonKey(
   key: string
 ): key is TalentSheetElementEidolonKey {
-  return allTalentSHeetElementEidolonKey.includes(
+  return allTalentSheetElementEidolonKey.includes(
     key as TalentSheetElementEidolonKey
   )
 }
-export const allTalentSHeetElementBonusAbilityKey = [
+export const allTalentSheetElementBonusAbilityKey = [
   'bonusAbility1',
   'bonusAbility2',
   'bonusAbility3',
 ] as const
 export type TalentSheetElementBonusAbilityKey =
-  (typeof allTalentSHeetElementBonusAbilityKey)[number]
+  (typeof allTalentSheetElementBonusAbilityKey)[number]
 export function isTalentSheetElementBonusAbilityKey(
   key: string
 ): key is TalentSheetElementBonusAbilityKey {
-  return allTalentSHeetElementBonusAbilityKey.includes(
+  return allTalentSheetElementBonusAbilityKey.includes(
     key as TalentSheetElementBonusAbilityKey
   )
 }
@@ -65,9 +65,9 @@ export const allTalentSheetElementKey = [
   'talent',
   'technique',
   'overworld',
-  ...allTalentSHeetElementBonusAbilityKey,
+  ...allTalentSheetElementBonusAbilityKey,
   ...allTalentSheetElementStatBoostKey,
-  ...allTalentSHeetElementEidolonKey,
+  ...allTalentSheetElementEidolonKey,
 ] as const
 
 export type TalentSheetElementKey = (typeof allTalentSheetElementKey)[number]

@@ -15,7 +15,7 @@ import {
 } from '@genshin-optimizer/sr/db-ui'
 import { own } from '@genshin-optimizer/sr/formula'
 import {
-  allTalentSHeetElementEidolonKey,
+  allTalentSheetElementEidolonKey,
   allTalentSheetElementStatBoostKey,
   bonusAbilityReqMap,
   bonusStatsReqMap,
@@ -85,11 +85,15 @@ export default function CharacterTalentPane() {
   const eidolonCards = useMemo(
     () =>
       characterSheet &&
-      allTalentSHeetElementEidolonKey.map((talentKey) => {
+      allTalentSheetElementEidolonKey.map((talentKey) => {
         const sheetElement = characterSheet[talentKey]
         if (!sheetElement) return null
         return (
-          <SkillDisplayCard talentKey={talentKey} sheetElement={sheetElement} />
+          <SkillDisplayCard
+            key={talentKey}
+            talentKey={talentKey}
+            sheetElement={sheetElement}
+          />
         )
       }),
     [characterSheet]

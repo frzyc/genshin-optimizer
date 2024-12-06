@@ -118,7 +118,7 @@ export function eidolonSheet(
   return {
     title: chg(`ranks.${eidolonNum}.name`),
     subtitle: <EidolonSubtitle eidolon={eidolonNum} />,
-    img: characterAsset(ckey, 'eidolon4'),
+    img: characterAsset(ckey, talentKey),
     documents: [
       {
         type: 'text',
