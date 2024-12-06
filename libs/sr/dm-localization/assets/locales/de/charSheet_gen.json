@@ -1,4 +1,21 @@
 {
   "req_asc": "Figurenaufstieg {{1}} benötigt",
-  "req_lvl": "Figurenstufe {{1}} benötigt"
+  "req_lvl": "Figurenstufe {{1}} benötigt",
+  "statBoost": {
+    "hp_": "LP-Erhöhung",
+    "atk_": "ANG-Verstärkung",
+    "def_": "VTD-Verstärkung",
+    "crit_": "KRIT-Rate-Erhöhung",
+    "crit_dmg_": "KRIT-Rate- u. KRIT-SCH-Erhöhung",
+    "eff_res_": "Effekt-WDS-Verstärkung",
+    "spd": "GES-Erhöhung",
+    "physical_dmg_": "SCH-Verstärkung: Physisch",
+    "fire_dmg_": "SCH-Verstärkung: Feuer",
+    "ice_dmg_": "SCH-Verstärkung: Eis",
+    "lightning_dmg_": "SCH-Verstärkung: Blitz",
+    "wind_dmg_": "SCH-Verstärkung: Wind",
+    "quantum_dmg_": "SCH-Verstärkung: Quanten",
+    "imaginary_dmg_": "SCH-Verstärkung: Imaginär",
+    "brEffect_": "Brucheffekt-Verstärkung"
+  }
 }

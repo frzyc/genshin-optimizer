@@ -1,4 +1,21 @@
 {
   "req_asc": "需要角色晋阶{{1}}",
-  "req_lvl": "需要角色等级{{1}}"
+  "req_lvl": "需要角色等级{{1}}",
+  "statBoost": {
+    "hp_": "生命强化",
+    "atk_": "攻击强化",
+    "def_": "防御强化",
+    "crit_": "暴击率提高",
+    "crit_dmg_": "暴击率、暴击伤害提高",
+    "eff_res_": "效果抵抗强化",
+    "spd": "速度提高",
+    "physical_dmg_": "伤害强化•物理",
+    "fire_dmg_": "伤害强化•火",
+    "ice_dmg_": "伤害强化•冰",
+    "lightning_dmg_": "伤害强化•雷",
+    "wind_dmg_": "伤害强化•风",
+    "quantum_dmg_": "伤害强化•量子",
+    "imaginary_dmg_": "伤害强化•虚数",
+    "brEffect_": "击破特攻强化"
+  }
 }

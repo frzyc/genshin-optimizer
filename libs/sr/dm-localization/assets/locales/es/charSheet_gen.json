@@ -1,4 +1,21 @@
 {
   "req_asc": "Requiere niv. {{1}} de ascensión de personaje",
-  "req_lvl": "Requiere personaje de niv. {{1}}"
+  "req_lvl": "Requiere personaje de niv. {{1}}",
+  "statBoost": {
+    "hp_": "Bonificación de PV",
+    "atk_": "Bonificación de ATQ",
+    "def_": "Bonificación de DEF",
+    "crit_": "Aumento de Prob. CRIT",
+    "crit_dmg_": "Aumento de Prob. CRIT y Daño CRIT",
+    "eff_res_": "Bonificación de RES a efecto",
+    "spd": "Aumento de VEL",
+    "physical_dmg_": "Bonificación de daño: Físico",
+    "fire_dmg_": "Bonificación de daño: Fuego",
+    "ice_dmg_": "Bonificación de daño: Hielo",
+    "lightning_dmg_": "Bonificación de daño: Rayo",
+    "wind_dmg_": "Bonificación de daño: Viento",
+    "quantum_dmg_": "Bonificación de daño: Cuántico",
+    "imaginary_dmg_": "Bonificación de daño: Imaginario",
+    "brEffect_": "Bonificación de efecto de Ruptura"
+  }
 }
