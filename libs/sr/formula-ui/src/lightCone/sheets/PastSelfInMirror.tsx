@@ -3,7 +3,10 @@ import type { UISheetElement } from '@genshin-optimizer/pando/ui-sheet'
 import { lightConeAsset } from '@genshin-optimizer/sr/assets'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { buffs, conditionals } from '@genshin-optimizer/sr/formula'
-import { mappedStats } from '@genshin-optimizer/sr/stats'
+import {
+  getLightConeInterpolateObject,
+  mappedStats,
+} from '@genshin-optimizer/sr/stats'
 import { StatDisplay } from '@genshin-optimizer/sr/ui'
 import { trans } from '../../util'
 import { SuperImposeWrapper } from '../util'
@@ -15,13 +18,23 @@ const dm = mappedStats.lightCone[key]
 const icon = lightConeAsset(key, 'cover')
 const cond = conditionals[key]
 const buff = buffs[key]
+
 const sheet: UISheetElement = {
   title: chg('passive.name'),
   img: icon,
   documents: [
     {
       type: 'text',
-      text: chg('passive.description'), // TODO: getInterpolateObject for lightcone
+      text: (
+        <SuperImposeWrapper lcKey={key}>
+          {(superimpose) =>
+            chg(
+              'passive.description',
+              getLightConeInterpolateObject(key, superimpose)
+            )
+          }
+        </SuperImposeWrapper>
+      ),
     },
     {
       type: 'conditional',
