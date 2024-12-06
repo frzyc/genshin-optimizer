@@ -2,7 +2,7 @@ import { ImgIcon } from '@genshin-optimizer/common/ui'
 import type { UISheetElement } from '@genshin-optimizer/pando/ui-sheet'
 import { lightConeAsset } from '@genshin-optimizer/sr/assets'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
-import { buffs, conditionals, own } from '@genshin-optimizer/sr/formula'
+import { buffs, conditionals } from '@genshin-optimizer/sr/formula'
 import {
   getLightConeInterpolateObject,
   mappedStats,
@@ -25,14 +25,16 @@ const sheet: UISheetElement = {
   documents: [
     {
       type: 'text',
-      text: (calc) =>
-        chg(
-          'passive.description',
-          getLightConeInterpolateObject(
-            key,
-            calc.compute(own.lightCone.superimpose).val
-          )
-        ),
+      text: (
+        <SuperImposeWrapper lcKey={key}>
+          {(superimpose) =>
+            chg(
+              'passive.description',
+              getLightConeInterpolateObject(key, superimpose)
+            )
+          }
+        </SuperImposeWrapper>
+      ),
     },
     {
       type: 'conditional',
