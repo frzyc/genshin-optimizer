@@ -8,7 +8,10 @@ import {
   formulas,
   own,
 } from '@genshin-optimizer/sr/formula'
-import { getInterpolateObject, mappedStats } from '@genshin-optimizer/sr/stats'
+import {
+  getCharInterpolateObject,
+  mappedStats,
+} from '@genshin-optimizer/sr/stats'
 import { StatDisplay } from '@genshin-optimizer/sr/ui'
 import { trans } from '../../util'
 import type { TalentSheetElementKey } from '../consts'
@@ -35,7 +38,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         text: (calculator) =>
           chg(
             `abilities.basic.0.fullDesc`,
-            getInterpolateObject(
+            getCharInterpolateObject(
               key,
               'basic',
               calculator.compute(own.char.basic).val
@@ -67,7 +70,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         text: (calculator) =>
           chg(
             `abilities.skill.0.fullDesc`,
-            getInterpolateObject(
+            getCharInterpolateObject(
               key,
               'skill',
               calculator.compute(own.char.skill).val
@@ -116,7 +119,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         text: (calculator) =>
           chg(
             `abilities.ult.0.fullDesc`,
-            getInterpolateObject(
+            getCharInterpolateObject(
               key,
               'ult',
               calculator.compute(own.char.ult).val
@@ -171,7 +174,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
         text: (calculator) =>
           chg(
             `abilities.talent.0.fullDesc`,
-            getInterpolateObject(
+            getCharInterpolateObject(
               key,
               'talent',
               calculator.compute(own.char.talent).val
@@ -222,7 +225,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
     documents: [
       {
         type: 'text',
-        text: chg(`ranks.1.desc`, getInterpolateObject(key, 'eidolon', 1)),
+        text: chg(`ranks.1.desc`, getCharInterpolateObject(key, 'eidolon', 1)),
       },
       {
         type: 'fields',
@@ -243,7 +246,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
     documents: [
       {
         type: 'text',
-        text: chg(`ranks.2.desc`, getInterpolateObject(key, 'eidolon', 2)),
+        text: chg(`ranks.2.desc`, getCharInterpolateObject(key, 'eidolon', 2)),
       },
       {
         type: 'fields',
@@ -263,7 +266,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
     documents: [
       {
         type: 'text',
-        text: chg(`ranks.3.desc`, getInterpolateObject(key, 'eidolon', 3)),
+        text: chg(`ranks.3.desc`, getCharInterpolateObject(key, 'eidolon', 3)),
       },
       {
         type: 'fields',
@@ -289,7 +292,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
     documents: [
       {
         type: 'text',
-        text: chg(`ranks.4.desc`, getInterpolateObject(key, 'eidolon', 4)),
+        text: chg(`ranks.4.desc`, getCharInterpolateObject(key, 'eidolon', 4)),
       },
       {
         type: 'conditional',
@@ -318,7 +321,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
     documents: [
       {
         type: 'text',
-        text: chg(`ranks.5.desc`, getInterpolateObject(key, 'eidolon', 5)),
+        text: chg(`ranks.5.desc`, getCharInterpolateObject(key, 'eidolon', 5)),
       },
       {
         type: 'fields',
@@ -344,7 +347,7 @@ const sheet: UISheet<TalentSheetElementKey> = {
     documents: [
       {
         type: 'text',
-        text: chg(`ranks.6.desc`, getInterpolateObject(key, 'eidolon', 6)),
+        text: chg(`ranks.6.desc`, getCharInterpolateObject(key, 'eidolon', 6)),
       },
     ],
   },
