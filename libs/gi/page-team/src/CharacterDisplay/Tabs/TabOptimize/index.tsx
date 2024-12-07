@@ -526,7 +526,7 @@ export default function TabBuild() {
       }
       disabled={!!generatingBuilds}
       targetSelectorModalProps={{
-        excludeSections: ['character', 'bounsStats', 'teamBuff'],
+        excludeSections: ['character', 'bonusStats', 'teamBuff'],
       }}
     />
   )

@@ -243,7 +243,7 @@ export default function ChartCard({
                   defaultText={buttonText}
                   disabled={disabled}
                   targetSelectorModalProps={{
-                    excludeSections: ['character', 'bounsStats', 'teamBuff'],
+                    excludeSections: ['character', 'bonusStats', 'teamBuff'],
                   }}
                 />
               </span>

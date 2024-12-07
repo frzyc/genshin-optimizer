@@ -39,7 +39,7 @@ export function StatDisplayComponent({
     () =>
       dataDisplaySections.filter(
         ([key, ns]) =>
-          (BonusStatEditor && key === 'bounsStats') ||
+          (BonusStatEditor && key === 'bonusStats') ||
           (CustomMTargetEditor && key === 'custom') ||
           Object.values(ns).some((n) => !n.isEmpty)
       ),
@@ -70,7 +70,7 @@ export function StatDisplayComponent({
             compareDisplayNs={compareSections?.find(([k]) => k === key)?.[1]}
             sectionKey={key}
             Editor={
-              key === 'bounsStats'
+              key === 'bonusStats'
                 ? BonusStatEditor
                 : key === 'custom'
                 ? CustomMTargetEditor

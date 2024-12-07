@@ -312,7 +312,7 @@ export default function TabTheorycraft() {
                 optimizationTarget={optimizationTarget}
                 setTarget={(target) => setOptimizationTarget(target)}
                 targetSelectorModalProps={{
-                  excludeSections: ['character', 'bounsStats', 'teamBuff'],
+                  excludeSections: ['character', 'bonusStats', 'teamBuff'],
                 }}
               />
               <CustomNumberInput

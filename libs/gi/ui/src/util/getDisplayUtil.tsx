@@ -47,7 +47,7 @@ export function getDisplayHeader(
   if (!sectionKey) return errHeader
   if (sectionKey === 'basic') return { title: 'Basic Stats' }
   if (sectionKey === 'character') return { title: 'Character' }
-  if (sectionKey === 'bounsStats')
+  if (sectionKey === 'bonusStats')
     return { title: 'Bonus Stats', icon: <BarChartIcon /> }
   if (sectionKey === 'custom')
     return { title: 'Custom Multi Target', icon: <DashboardCustomizeIcon /> }
@@ -116,7 +116,7 @@ export function getDisplaySections(data: UIData): DisplaySections {
   return [
     ...basic,
     ['character', data.getCharacterStats()],
-    ['bounsStats', data.getBonusStats()],
+    ['bonusStats', data.getBonusStats()],
     ...reaction,
     ...custom,
     ...rest,
