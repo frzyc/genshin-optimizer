@@ -12,6 +12,7 @@ import { Masonry } from '@mui/lab'
 import { Box, Button, Divider, ListItem } from '@mui/material'
 import type { FC } from 'react'
 import { useContext, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { DataContext, OptTargetContext } from '../../context'
 import { getDisplayHeader, getDisplaySections } from '../../util'
 import { FieldDisplayList, NodeFieldDisplay } from '../FieldDisplay'
@@ -94,6 +95,7 @@ function Section({
   sectionKey: string
   Editor?: FC<EditorModalProps>
 }) {
+  const { t } = useTranslation('common')
   const [show, onShow, onHide] = useBoolState() // for editor modals
   const { target: optimizationTarget } = useContext(OptTargetContext)
   const { data, compareData } = useContext(DataContext)
@@ -146,7 +148,7 @@ function Section({
         action={
           Editor ? (
             <Button size="small" color="info" onClick={onShow}>
-              EDIT
+              {t('edit')}
             </Button>
           ) : (
             action && <SqBadge>{action}</SqBadge>
