@@ -26,7 +26,6 @@
     "import": "Import"
   },
   "showFormulas": {
-    "button": "Show Formulas & Calcs",
     "title": "Formulas & Calculations"
   },
   "loDropdown": {

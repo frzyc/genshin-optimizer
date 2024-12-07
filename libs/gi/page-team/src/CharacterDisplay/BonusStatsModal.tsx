@@ -261,7 +261,13 @@ function MainStatsCards() {
     </CardThemed>
   )
 }
-function StatDisplayCard({ title, children }) {
+function StatDisplayCard({
+  title,
+  children,
+}: {
+  title: string
+  children: ReactNode
+}) {
   return (
     <CardThemed>
       <CardContent sx={{ py: 1 }}>

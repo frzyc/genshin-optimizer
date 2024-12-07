@@ -1,45 +1,26 @@
-import {
-  BootstrapTooltip,
-  CardThemed,
-  ModalWrapper,
-  TextFieldLazy,
-} from '@genshin-optimizer/common/ui'
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
-import {
-  TeamCharacterContext,
-  useDBMeta,
-  useDatabase,
-} from '@genshin-optimizer/gi/db-ui'
+import { TeamCharacterContext, useDBMeta } from '@genshin-optimizer/gi/db-ui'
 import { getCharEle } from '@genshin-optimizer/gi/stats'
-import { LoadoutIcon } from '@genshin-optimizer/gi/ui'
-import BorderColorIcon from '@mui/icons-material/BorderColor'
-import CheckroomIcon from '@mui/icons-material/Checkroom'
-import CloseIcon from '@mui/icons-material/Close'
 import FactCheckIcon from '@mui/icons-material/FactCheck'
 import PersonIcon from '@mui/icons-material/Person'
 import ScienceIcon from '@mui/icons-material/Science'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import UpgradeIcon from '@mui/icons-material/Upgrade'
 import {
-  Box,
-  CardActionArea,
-  CardContent,
-  CardHeader,
   Divider,
-  IconButton,
   Skeleton,
   Tab,
   Tabs,
-  Typography,
   useMediaQuery,
   useTheme,
 } from '@mui/material'
-import { Suspense, useContext, useState } from 'react'
+import { Suspense, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Navigate, Route, Link as RouterLink, Routes } from 'react-router-dom'
 import FormulaModal from './FormulaModal'
-import LoadoutSettingElement from './LoadoutSettingElement'
+import { LoadoutHeader } from './LoadoutHeader'
 import TabBuild from './Tabs/TabOptimize'
 import TabOverview from './Tabs/TabOverview'
 import TabTalent from './Tabs/TabTalent'
@@ -74,12 +55,11 @@ function CharacterPanel({ isTCBuild }: { isTCBuild: boolean }) {
       fallback={<Skeleton variant="rectangular" width="100%" height={500} />}
     >
       <Routes>
-        <Route path="" index element={<LoadoutSettingElement />} />
         {/* Character Panel */}
         {isTCBuild ? (
-          <Route path="theorycraft" element={<TabTheorycraft />} />
+          <Route path="" element={<TabTheorycraft />} />
         ) : (
-          <Route path="overview" element={<TabOverview />} />
+          <Route path="" element={<TabOverview />} />
         )}
         <Route path="talent" element={<TabTalent />} />
         {!isTCBuild && <Route path="optimize" element={<TabBuild />} />}
@@ -101,26 +81,9 @@ function TabNav({
   isTCBuild: boolean
   hideTitle?: boolean
 }) {
-  const { teamChar, loadoutDatum, teamCharId } =
-    useContext(TeamCharacterContext)
-  const database = useDatabase()
-  const { t } = useTranslation('page_team')
   const { gender } = useDBMeta()
   const elementKey = getCharEle(characterKey)
   const banner = characterAsset(characterKey, 'banner', gender)
-
-  const [editMode, setEditMode] = useState(false)
-  const [, setloadoutName] = useState(teamChar.name)
-  const [, setloadoutDesc] = useState(teamChar.description)
-  const handleName = (loadoutName: string): void => {
-    setloadoutName(loadoutName)
-    database.teamChars.set(teamCharId, { name: loadoutName })
-  }
-
-  const handleDesc = (loudoutDesc: string): void => {
-    setloadoutDesc(loudoutDesc)
-    database.teamChars.set(teamCharId, { description: loudoutDesc })
-  }
 
   return (
     <CardThemed
@@ -148,101 +111,7 @@ function TabNav({
     >
       {!hideTitle && (
         <>
-          <CardActionArea onClick={() => setEditMode(true)}>
-            <BootstrapTooltip
-              placement="top"
-              title={
-                <Box>
-                  <Box sx={{ display: 'flex', color: 'info.light', gap: 1 }}>
-                    <BorderColorIcon />
-                    <Typography>
-                      <strong>{t('loadout.editNameDesc')}</strong>
-                    </Typography>
-                  </Box>
-                  {!!teamChar.description && (
-                    <Typography>{teamChar.description}</Typography>
-                  )}
-                </Box>
-              }
-            >
-              <CardContent
-                sx={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  position: 'relative',
-                  '&:hover': {
-                    color: 'info.light',
-                  },
-                  alignItems: 'center',
-                }}
-              >
-                <PersonIcon />
-                <Typography
-                  variant="h6"
-                  noWrap
-                  sx={{
-                    gap: 1,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    textShadow: '#000 0 0 10px !important',
-                  }}
-                >
-                  <strong>{teamChar.name}</strong>
-                </Typography>
-                <Divider orientation="vertical" variant="middle" flexItem />
-                <CheckroomIcon />
-                <Typography
-                  variant="h6"
-                  noWrap
-                  sx={{
-                    gap: 1,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    textShadow: '#000 0 0 10px !important',
-                  }}
-                >
-                  {database.teams.getActiveBuildName(loadoutDatum)}
-                </Typography>
-              </CardContent>
-            </BootstrapTooltip>
-          </CardActionArea>
-          <ModalWrapper open={editMode} onClose={() => setEditMode(false)}>
-            <CardThemed>
-              <CardHeader
-                title={t('loadout.editNameDesc')}
-                avatar={<LoadoutIcon />}
-                titleTypographyProps={{ variant: 'h6' }}
-                action={
-                  <IconButton onClick={() => setEditMode(false)}>
-                    <CloseIcon />
-                  </IconButton>
-                }
-              />
-              <Divider />
-              <CardContent>
-                <Box
-                  display="flex"
-                  flexDirection="column"
-                  gap={2}
-                  sx={{ mt: 2 }}
-                >
-                  <TextFieldLazy
-                    label={t('loadout.name')}
-                    value={teamChar.name}
-                    onChange={handleName}
-                    autoFocus
-                  />
-                  <TextFieldLazy
-                    label={t('loadout.desc')}
-                    value={teamChar.description}
-                    onChange={handleDesc}
-                    multiline
-                    minRows={4}
-                  />
-                </Box>
-              </CardContent>
-            </CardThemed>
-          </ModalWrapper>
+          <LoadoutHeader />
           <Divider />
         </>
       )}
@@ -250,6 +119,7 @@ function TabNav({
     </CardThemed>
   )
 }
+
 function LoadoutTabs({
   tab,
   elementKey,
@@ -264,7 +134,7 @@ function LoadoutTabs({
   const isXs = useMediaQuery(theme.breakpoints.down('md'))
   return (
     <Tabs
-      value={tab ?? 'setting'}
+      value={tab ?? 'overview'}
       variant={isXs ? 'scrollable' : 'fullWidth'}
       allowScrollButtonsMobile
       sx={(theme) => {
@@ -287,16 +157,9 @@ function LoadoutTabs({
         }
       }}
     >
-      <Tab
-        value="setting"
-        label={t('tabs.setting')}
-        icon={<CheckroomIcon />}
-        component={RouterLink}
-        to=""
-      />
       {isTCBuild ? (
         <Tab
-          value="theorycraft"
+          value="overview"
           label={t('tabs.theorycraft')}
           icon={<ScienceIcon />}
           component={RouterLink}

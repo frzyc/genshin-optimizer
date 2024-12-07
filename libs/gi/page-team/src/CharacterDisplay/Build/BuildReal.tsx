@@ -28,15 +28,23 @@ import {
   IconButton,
   TextField,
 } from '@mui/material'
-import { useContext, useDeferredValue, useEffect, useState } from 'react'
+import {
+  useContext,
+  useDeferredValue,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import { useTranslation } from 'react-i18next'
 
 export default function BuildReal({
   buildId,
   active = false,
+  onChangeBuild,
 }: {
   buildId: string
   active?: boolean
+  onChangeBuild?: () => void
 }) {
   const { t } = useTranslation('build')
   const [open, onOpen, onClose] = useBoolState()
@@ -51,11 +59,16 @@ export default function BuildReal({
   const database = useDatabase()
 
   const { name, description, weaponId, artifactIds } = useBuild(buildId)!
-  const onActive = () =>
-    database.teams.setLoadoutDatum(teamId, teamCharId, {
-      buildType: 'real',
-      buildId,
-    })
+  const onActive = useMemo(() => {
+    if (active) return undefined
+    return () => {
+      database.teams.setLoadoutDatum(teamId, teamCharId, {
+        buildType: 'real',
+        buildId,
+      })
+      onChangeBuild?.()
+    }
+  }, [active, database.teams, teamId, teamCharId, buildId, onChangeBuild])
   const onEquip = () => {
     // Cannot equip a build without weapon
     if (!weaponId) return
