@@ -114,7 +114,7 @@ export default function OptimizationTargetEditorList({
         defaultText={t('targetSelector.selectBuildTarget')}
         disabled={disabled}
         targetSelectorModalProps={{
-          excludeSections: ['custom', 'bounsStats', 'character', 'teamBuff'],
+          excludeSections: ['custom', 'bonusStats', 'character', 'teamBuff'],
         }}
       />
     </>
@@ -175,7 +175,7 @@ function OptimizationTargetEditorItem({
           defaultText={t('targetSelector.selectBuildTarget')}
           disabled={disabled}
           targetSelectorModalProps={{
-            excludeSections: ['custom', 'bounsStats', 'character', 'teamBuff'],
+            excludeSections: ['custom', 'bonusStats', 'character', 'teamBuff'],
           }}
         />
       </ButtonGroup>

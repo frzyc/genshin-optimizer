@@ -1,9 +1,7 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   InfoTooltip,
   ModalWrapper,
-  SqBadge,
 } from '@genshin-optimizer/common/ui'
 import { deepClone } from '@genshin-optimizer/common/util'
 import type { CustomMultiTarget } from '@genshin-optimizer/gi/db'
@@ -14,7 +12,6 @@ import { UIData } from '@genshin-optimizer/gi/uidata'
 import AddIcon from '@mui/icons-material/Add'
 import CloseIcon from '@mui/icons-material/Close'
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize'
-import type { ButtonProps } from '@mui/material'
 import {
   Box,
   Button,
@@ -38,14 +35,15 @@ import { Trans, useTranslation } from 'react-i18next'
 import CustomMultiTargetCard from './CustomMultiTargetCard'
 import CustomMultiTargetImportBtn from './CustomMultiTargetImportBtn'
 
-export function CustomMultiTargetButton({
-  buttonProps = {},
+export function CustomMultiTargetModal({
+  open,
+  onClose: onCloseModal,
 }: {
-  buttonProps?: ButtonProps
+  open: boolean
+  onClose: () => void
 }) {
   const database = useDatabase()
   const { t } = useTranslation('page_character')
-  const [show, onShow, onCloseModal] = useBoolState()
   const { teamChar, teamCharId } = useContext(TeamCharacterContext)
   const [customMultiTargets, setCustomTargets] = useState(
     () => teamChar.customMultiTargets
@@ -144,27 +142,16 @@ export function CustomMultiTargetButton({
   )
 
   return (
-    <Suspense
-      fallback={<Skeleton variant="rectangular" height="100%" width={100} />}
-    >
-      <Button
-        color="info"
-        onClick={onShow}
-        startIcon={<DashboardCustomizeIcon />}
-        {...buttonProps}
+    <DataContext.Provider value={dataContextObj}>
+      <ModalWrapper
+        open={open}
+        onClose={onClose}
+        containerProps={{ sx: { overflow: 'visible' } }}
       >
-        <Box display="flex" gap={1}>
-          <span>{t('multiTarget.title')}</span>
-          <SqBadge color={customMultiTargets.length ? 'success' : 'secondary'}>
-            {customMultiTargets.length}
-          </SqBadge>
-        </Box>
-      </Button>
-      <DataContext.Provider value={dataContextObj}>
-        <ModalWrapper
-          open={show}
-          onClose={onClose}
-          containerProps={{ sx: { overflow: 'visible' } }}
+        <Suspense
+          fallback={
+            <Skeleton variant="rectangular" height="100%" width="100%" />
+          }
         >
           <CardThemed>
             <CardHeader
@@ -179,7 +166,7 @@ export function CustomMultiTargetButton({
                           Note: Community created Multi-Optimization Targets can
                           be found within the
                           <a
-                            href={process.env.NX_URL_DISCORD_GO}
+                            href={process.env['NX_URL_DISCORD_GO']}
                             target="_blank"
                             rel="noreferrer"
                           >
@@ -187,7 +174,7 @@ export function CustomMultiTargetButton({
                           </a>
                           or
                           <a
-                            href={process.env.NX_URL_KQM_MULTI_GUIDE}
+                            href={process.env['NX_URL_KQM_MULTI_GUIDE']}
                             target="_blank"
                             rel="noreferrer"
                           >
@@ -238,8 +225,8 @@ export function CustomMultiTargetButton({
               </Box>
             </CardContent>
           </CardThemed>
-        </ModalWrapper>
-      </DataContext.Provider>
-    </Suspense>
+        </Suspense>
+      </ModalWrapper>
+    </DataContext.Provider>
   )
 }

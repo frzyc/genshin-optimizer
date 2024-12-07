@@ -1,3 +1,4 @@
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardHeaderCustom,
   CardThemed,
@@ -8,16 +9,26 @@ import type { CalcResult } from '@genshin-optimizer/gi/uidata'
 import type { DisplaySub } from '@genshin-optimizer/gi/wr'
 import type { MasonryProps } from '@mui/lab'
 import { Masonry } from '@mui/lab'
-import { Box, Divider, ListItem } from '@mui/material'
+import { Box, Button, Divider, ListItem } from '@mui/material'
+import type { FC } from 'react'
 import { useContext, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { DataContext, OptTargetContext } from '../../context'
 import { getDisplayHeader, getDisplaySections } from '../../util'
 import { FieldDisplayList, NodeFieldDisplay } from '../FieldDisplay'
 
+type EditorModalProps = {
+  open: boolean
+  onClose: () => void
+}
 export function StatDisplayComponent({
   columns = { xs: 1, sm: 2, md: 3, xl: 4 },
+  BonusStatEditor,
+  CustomMTargetEditor,
 }: {
   columns?: MasonryProps['columns']
+  BonusStatEditor?: FC<EditorModalProps>
+  CustomMTargetEditor?: FC<EditorModalProps>
 }) {
   const { data, compareData } = useContext(DataContext)
   const dataDisplaySections = useMemo(() => getDisplaySections(data), [data])
@@ -25,13 +36,15 @@ export function StatDisplayComponent({
     () => compareData && getDisplaySections(compareData),
     [compareData]
   )
-
   const sections = useMemo(
     () =>
-      dataDisplaySections.filter(([, ns]) =>
-        Object.values(ns).some((n) => !n.isEmpty)
+      dataDisplaySections.filter(
+        ([key, ns]) =>
+          (BonusStatEditor && key === 'bonusStats') ||
+          (CustomMTargetEditor && key === 'custom') ||
+          Object.values(ns).some((n) => !n.isEmpty)
       ),
-    [dataDisplaySections]
+    [dataDisplaySections, BonusStatEditor, CustomMTargetEditor]
   )
   const compareSections = useMemo(
     () =>
@@ -48,7 +61,6 @@ export function StatDisplayComponent({
         if (!sectionKeys.includes(key)) sectionKeys.push(key)
     return sectionKeys
   }, [sections, compareSections])
-
   return (
     <Box sx={{ mr: -1, mb: -1 }}>
       <Masonry columns={columns} spacing={1}>
@@ -58,6 +70,13 @@ export function StatDisplayComponent({
             displayNs={sections.find(([k]) => k === key)?.[1]}
             compareDisplayNs={compareSections?.find(([k]) => k === key)?.[1]}
             sectionKey={key}
+            Editor={
+              key === 'bonusStats'
+                ? BonusStatEditor
+                : key === 'custom'
+                ? CustomMTargetEditor
+                : undefined
+            }
           />
         ))}
       </Masonry>
@@ -69,11 +88,15 @@ function Section({
   displayNs,
   compareDisplayNs,
   sectionKey,
+  Editor,
 }: {
   displayNs?: DisplaySub<CalcResult>
   compareDisplayNs?: DisplaySub<CalcResult>
   sectionKey: string
+  Editor?: FC<EditorModalProps>
 }) {
+  const { t } = useTranslation('common')
+  const [show, onShow, onHide] = useBoolState() // for editor modals
   const { target: optimizationTarget } = useContext(OptTargetContext)
   const { data, compareData } = useContext(DataContext)
   const database = useDatabase()
@@ -118,10 +141,19 @@ function Section({
   // if (fields.every((t) => t.type(t.props) === null)) return null
   return (
     <CardThemed>
+      {Editor && <Editor open={show} onClose={onHide} />}
       <CardHeaderCustom
         avatar={icon}
         title={title}
-        action={action && <SqBadge>{action}</SqBadge>}
+        action={
+          Editor ? (
+            <Button size="small" color="info" onClick={onShow}>
+              {t('edit')}
+            </Button>
+          ) : (
+            action && <SqBadge>{action}</SqBadge>
+          )
+        }
       />
       <Divider />
       <FieldDisplayList sx={{ m: 0 }}>{fields}</FieldDisplayList>

@@ -308,7 +308,7 @@ function AddCustomTargetBtn({
         setTarget={setTargetHandler}
         excludeSections={[
           'basic',
-          'bounsStats',
+          'bonusStats',
           'custom',
           'character',
           'teamBuff',

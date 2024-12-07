@@ -13,7 +13,9 @@ import { Box, Grid, Stack } from '@mui/material'
 import { useContext, useMemo } from 'react'
 import CharacterProfileCard from '../../../CharProfileCard'
 import useCompareData from '../../../useCompareData'
+import BonusStatsModal from '../../BonusStatsModal'
 import CompareBtn from '../../CompareBtn'
+import { CustomMultiTargetModal } from '../../CustomMultiTarget/CustomMultiTargetModal'
 import EquipmentSection from './EquipmentSection'
 
 export default function TabOverview() {
@@ -69,6 +71,8 @@ export default function TabOverview() {
               <DataContext.Provider value={dataContextObj}>
                 <StatDisplayComponent
                   columns={{ xs: 1, sm: 1, md: 2, lg: 2, xl: 3 }}
+                  BonusStatEditor={BonusStatsModal}
+                  CustomMTargetEditor={CustomMultiTargetModal}
                 />
               </DataContext.Provider>
             </CardThemed>
