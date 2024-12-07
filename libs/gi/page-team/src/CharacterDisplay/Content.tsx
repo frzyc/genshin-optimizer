@@ -163,7 +163,7 @@ function LoadoutTabs({
           label={t('tabs.theorycraft')}
           icon={<ScienceIcon />}
           component={RouterLink}
-          to="theorycraft"
+          to=""
         />
       ) : (
         <Tab
@@ -171,7 +171,7 @@ function LoadoutTabs({
           label={t('tabs.overview')}
           icon={<PersonIcon />}
           component={RouterLink}
-          to="overview"
+          to=""
         />
       )}
       <Tab
