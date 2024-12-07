@@ -86,7 +86,7 @@ export function ArtifactMainLevelSlot({
           </Box>
         ) : (
           <DropdownButton
-            sx={{ px: 0 }}
+            sx={{ px: 0, padding: '0.5rem' }}
             fullWidth
             title={<StatWithUnit statKey={statKey} />}
             color={KeyMap.getVariant(statKey) ?? 'success'}
