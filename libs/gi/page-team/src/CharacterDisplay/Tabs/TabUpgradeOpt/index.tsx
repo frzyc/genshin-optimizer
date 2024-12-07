@@ -71,6 +71,7 @@ import {
   useState,
 } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+import { CustomMultiTargetButton } from '../../CustomMultiTarget/CustomMultiTargetButton'
 import ArtifactSetConfig from '../TabOptimize/Components/ArtifactSetConfig'
 import BonusStatsCard from '../TabOptimize/Components/BonusStatsCard'
 import MainStatSelectionCard from '../TabOptimize/Components/MainStatSelectionCard'
@@ -461,6 +462,7 @@ export default function TabUpopt() {
                   {/* character card */}
                   <OptCharacterCard characterKey={characterKey} />
                   <BonusStatsCard />
+                  <CustomMultiTargetButton />
                 </Grid>
 
                 {/* 2 */}

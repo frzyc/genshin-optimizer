@@ -42,7 +42,7 @@ const cols = {
   md: 2,
   lg: 3,
 }
-export default function StatModal({
+export default function BonusStatsModal({
   open,
   onClose,
 }: {

@@ -27,11 +27,11 @@ import {
 import { Suspense, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LoadoutDropdown } from '../LoadoutDropdown'
+import BonusStatsModal from './BonusStatsModal'
 import { BuildEquipped } from './Build/BuildEquipped'
 import BuildReal from './Build/BuildReal'
 import BuildTc from './Build/BuildTc'
-import { CustomMultiTargetButton } from './CustomMultiTarget'
-import StatModal from './StatModal'
+import { CustomMultiTargetButton } from './CustomMultiTarget/CustomMultiTargetButton'
 
 const columns = { xs: 1, sm: 1, md: 2, lg: 2 }
 export default function LoadoutSettingElement() {
@@ -210,7 +210,7 @@ function DetailStatButton({ buttonProps = {} }: { buttonProps?: ButtonProps }) {
           </SqBadge>
         )}
       </Button>
-      <StatModal open={open} onClose={onClose} />
+      <BonusStatsModal open={open} onClose={onClose} />
     </>
   )
 }

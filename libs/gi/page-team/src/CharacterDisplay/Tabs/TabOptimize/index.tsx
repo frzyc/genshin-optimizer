@@ -100,6 +100,7 @@ import React, {
 import { Trans, useTranslation } from 'react-i18next'
 import useCompareData from '../../../useCompareData'
 import CompareBtn from '../../CompareBtn'
+import { CustomMultiTargetButton } from '../../CustomMultiTarget/CustomMultiTargetButton'
 import ArtifactSetConfig from './Components/ArtifactSetConfig'
 import AssumeFullLevelToggle from './Components/AssumeFullLevelToggle'
 import BonusStatsCard from './Components/BonusStatsCard'
@@ -560,6 +561,7 @@ export default function TabBuild() {
         >
           <OptCharacterCard characterKey={characterKey} />
           <BonusStatsCard />
+          <CustomMultiTargetButton />
         </Grid>
         {/* 2 */}
         <Grid

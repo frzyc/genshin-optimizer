@@ -37,7 +37,9 @@ import { Trans, useTranslation } from 'react-i18next'
 import { BuildTcContext } from '../../../BuildTcContext'
 import CharacterProfileCard from '../../../CharProfileCard'
 import useCompareData from '../../../useCompareData'
+import BonusStatsModal from '../../BonusStatsModal'
 import CompareBtn from '../../CompareBtn'
+import { CustomMultiTargetModal } from '../../CustomMultiTarget/CustomMultiTargetModal'
 import OptimizationTargetSelector from '../TabOptimize/Components/OptimizationTargetSelector'
 import StatFilterCard from '../TabOptimize/Components/StatFilterCard'
 import { ArtifactMainStatAndSetEditor } from './ArtifactMainStatAndSetEditor'
@@ -247,6 +249,8 @@ export default function TabTheorycraft() {
                 <DataContext.Provider value={dataContextValueWithCompare}>
                   <StatDisplayComponent
                     columns={{ xs: 1, sm: 1, md: 2, lg: 2, xl: 3 }}
+                    BonusStatEditor={BonusStatsModal}
+                    CustomMTargetEditor={CustomMultiTargetModal}
                   />
                 </DataContext.Provider>
               ) : (
