@@ -1,0 +1,21 @@
+{
+  "req_asc": "Memerlukan karakter ascension {{1}}",
+  "req_lvl": "Memerlukan karakter Lv. {{1}}",
+  "statBoost": {
+    "hp_": "Peningkatan HP",
+    "atk_": "Peningkatan ATK",
+    "def_": "Peningkatan DEF",
+    "crit_": "CRIT Rate Meningkat",
+    "crit_dmg_": "CRIT Rate, CRIT DMG Meningkat",
+    "eff_res_": "Peningkatan Effect RES",
+    "spd": "SPD Meningkat",
+    "physical_dmg_": "Peningkatan DMG: Physical",
+    "fire_dmg_": "Peningkatan DMG: Fire",
+    "ice_dmg_": "Peningkatan DMG: Ice",
+    "lightning_dmg_": "Peningkatan DMG: Lightning",
+    "wind_dmg_": "Peningkatan DMG: Wind",
+    "quantum_dmg_": "Peningkatan DMG: Quantum",
+    "imaginary_dmg_": "Peningkatan DMG: Imaginary",
+    "brEffect_": "Peningkatan Break Effect"
+  }
+}

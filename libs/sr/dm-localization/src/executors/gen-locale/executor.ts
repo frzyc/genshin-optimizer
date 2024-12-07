@@ -18,6 +18,7 @@ const runExecutor: PromiseExecutor<GenLocaleExecutorSchema> = async (
         [
           'characters',
           'charNames',
+          'charSheet',
           'common',
           'lightCones',
           'lightConeNames',

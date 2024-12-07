@@ -13,7 +13,7 @@
       "0": {
         "name": "Bát Lôi Phi Độ",
         "fullDesc": "Nhận {{3}} điểm Mộng Tàn. Gắn {{3}} tầng Nút Thắt Đỏ lên 1 kẻ địch chỉ định, gây Sát Thương Lôi lên kẻ này bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Acheron, đồng thời gây Sát Thương Lôi cho mục tiêu lân cận kẻ đó bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Acheron.",
-        "shortDesc": "Nhận <orangeStrong><color=#f29e38ff>#3[i]</orangeStrong> điểm Mộng Tàn</color>. Gắn <orangeStrong>{{3}}</orangeStrong> tầng Nút Thắt Đỏ cho 1 kẻ địch, gây Sát Thương Lôi lên kẻ này, và lượng nhỏ Sát Thương Lôi lên mục tiêu ở gần.",
+        "shortDesc": "Nhận <orangeStrong><color=#f29e38ff>{{3}}[i]</orangeStrong> điểm Mộng Tàn</color>. Gắn <orangeStrong>{{3}}</orangeStrong> tầng Nút Thắt Đỏ cho 1 kẻ địch, gây Sát Thương Lôi lên kẻ này, và lượng nhỏ Sát Thương Lôi lên mục tiêu ở gần.",
         "tag": "Khuếch Tán"
       }
     },

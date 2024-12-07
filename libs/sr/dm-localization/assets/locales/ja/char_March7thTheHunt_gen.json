@@ -11,7 +11,7 @@
       "1": {
         "name": "{RUBY_B#いち}一{RUBY_E#}に{RUBY_B#みけん}眉間{RUBY_E#}、{RUBY_B#に}二{RUBY_E#}に{RUBY_B#しんぞう}心臓{RUBY_E#}",
         "fullDesc": "初期攻撃段数は{{4}}。1段の攻撃につき、指定した敵単体に三月なのかの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与える。最後の1段の攻撃を行うたびに、{{2, percent}}%の固定確率でさらに1段の攻撃を行う、追加で行える攻撃は最大{{3}}段まで。攻撃段数の増加は、強化通常攻撃によるEP回復に影響しない。<br>また、強化通常攻撃はSPを回復できない。",
-        "shortDesc": "敵単体に虚数属性ダメージを与える、初期攻撃段数は<orangeStrong>{{4}}</orangeStrong>。<orangeStrong>確率でさらに<color=#f29e38ff>#3[i]</orangeStrong>段までの攻撃を行う</color>。",
+        "shortDesc": "敵単体に虚数属性ダメージを与える、初期攻撃段数は<orangeStrong>{{4}}</orangeStrong>。<orangeStrong>確率でさらに<color=#f29e38ff>{{3}}[i]</orangeStrong>段までの攻撃を行う</color>。",
         "tag": "単体攻撃"
       }
     },

@@ -5,7 +5,7 @@ export function SkillSubtitle({
   talentKey,
   children,
 }: {
-  talentKey: 'basic' | 'skill' | 'ult' | 'talent'
+  talentKey: 'basic' | 'skill' | 'ult' | 'talent' | 'technique'
   children: ReactNode
 }) {
   const { t } = useTranslation('characters_gen')

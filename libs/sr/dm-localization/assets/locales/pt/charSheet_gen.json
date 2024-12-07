@@ -1,0 +1,21 @@
+{
+  "req_asc": "Exige Ascensão de Personagem {{1}}",
+  "req_lvl": "Exige Personagem de Nv. {{1}}",
+  "statBoost": {
+    "hp_": "Bônus de PV",
+    "atk_": "Bônus de ATQ",
+    "def_": "Bônus de DEF",
+    "crit_": "Bônus de Chance de CRIT",
+    "crit_dmg_": "Bônus de Chance de CRIT e de Dano CRIT",
+    "eff_res_": "Bônus de RES a Efeito",
+    "spd": "Bônus de VEL",
+    "physical_dmg_": "Bônus de Dano: Físico",
+    "fire_dmg_": "Bônus de Dano: Fogo",
+    "ice_dmg_": "Bônus de Dano: Gelo",
+    "lightning_dmg_": "Bônus de Dano: Raio",
+    "wind_dmg_": "Bônus de Dano: Vento",
+    "quantum_dmg_": "Bônus de Dano: Quântico",
+    "imaginary_dmg_": "Bônus de Dano: Imaginário",
+    "brEffect_": "Bônus de Efeito de Quebra"
+  }
+}

@@ -11,7 +11,7 @@
       "1": {
         "name": "Zwischen die Augenbrauen und mitten ins Herz",
         "fullDesc": "Anfänglich wird {{4}}-mal SCH verursacht. Jeder Treffer fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von 7. März’ ANG zu. Immer wenn der letzte Treffer zugefügt wird, besteht eine feste Chance von {{2, percent}}%, noch 1 weiteren Treffer zu verursachen, bis zu {{3}} zusätzlichen Treffern. Die Energie, die der verstärkte Standardangriff wiederherstellt, wird nicht mit der Trefferzahl erhöht.<br>Der verstärkte Standardangriff kann keine Fertigkeitspunkte wiederherstellen.",
-        "shortDesc": "Fügt einem Gegner imaginären SCH zu. Anfänglich wird <orangeStrong>{{4}}</orangeStrong>-mal SCH verursacht. <orangeStrong>Es besteht eine Chance, zusätzlich bis zu <color=#f29e38ff>#3[i]</orangeStrong>-mal SCH zu verursachen.</color>",
+        "shortDesc": "Fügt einem Gegner imaginären SCH zu. Anfänglich wird <orangeStrong>{{4}}</orangeStrong>-mal SCH verursacht. <orangeStrong>Es besteht eine Chance, zusätzlich bis zu <color=#f29e38ff>{{3}}[i]</orangeStrong>-mal SCH zu verursachen.</color>",
         "tag": "Einzelangriff"
       }
     },

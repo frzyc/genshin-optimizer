@@ -11,7 +11,7 @@
       "1": {
         "name": "Déluge de lames",
         "fullDesc": "Cette attaque inflige des DGT {{4}} fois initialement, chaque frappe infligeant des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de March 7th à la cible ennemie. Après la frappe finale, il y a {{2, percent}}% de chances fixes d'infliger 1 frappe supplémentaire, jusqu'à un maximum de {{3}} frappes supplémentaires. L'énergie régénérée par l'utilisation de l'ATQ normale renforcée n'augmente pas avec le nombre de frappes par action.<br>L'ATQ normale renforcée ne permet pas de récupérer de points de compétence.",
-        "shortDesc": "Inflige des DGT imaginaires à un ennemi unique sous forme de <orangeStrong>{{4}}</orangeStrong> frappes initiales, et avec <orangeStrong>des chances d'infliger jusqu'à <unbreak>#3[i]</orangeStrong> frappes supplémentaires</color>.",
+        "shortDesc": "Inflige des DGT imaginaires à un ennemi unique sous forme de <orangeStrong>{{4}}</orangeStrong> frappes initiales, et avec <orangeStrong>des chances d'infliger jusqu'à <unbreak>{{3}}[i]</orangeStrong> frappes supplémentaires</color>.",
         "tag": "Cible unique"
       }
     },

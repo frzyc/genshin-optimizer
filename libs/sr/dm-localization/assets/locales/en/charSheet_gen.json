@@ -1,0 +1,21 @@
+{
+  "req_asc": "Requires Character Ascension {{1}}",
+  "req_lvl": "Requires Character Lv. {{1}}",
+  "statBoost": {
+    "hp_": "HP Boost",
+    "atk_": "ATK Boost",
+    "def_": "DEF Boost",
+    "crit_": "CRIT Rate Boost",
+    "crit_dmg_": "CRIT Rate, CRIT DMG Boost",
+    "eff_res_": "Effect RES Boost",
+    "spd": "SPD Boost",
+    "physical_dmg_": "DMG Boost: Physical",
+    "fire_dmg_": "DMG Boost: Fire",
+    "ice_dmg_": "DMG Boost: Ice",
+    "lightning_dmg_": "DMG Boost: Lightning",
+    "wind_dmg_": "DMG Boost: Wind",
+    "quantum_dmg_": "DMG Boost: Quantum",
+    "imaginary_dmg_": "DMG Boost: Imaginary",
+    "brEffect_": "Break Effect Boost"
+  }
+}

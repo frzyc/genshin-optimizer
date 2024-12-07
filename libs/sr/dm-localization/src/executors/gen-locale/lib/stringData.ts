@@ -42,7 +42,10 @@ function processString(str: string | undefined) {
   // replaces with '{{1}}%'
 
   // Match <color=#f29e38ff> OR <unbreak>; capturing the hexcode if it exists
+  // FIXME: does not work for nested color tags like:
+  // "1342971982": "Obtiene <color=#f29e38ff><color=#f29e38ff><unbreak>#3[i]</unbreak></color> pt. de Sueños rotos</color>. Aplica...
   const match1 = new RegExp(/(?:<color=#([a-f0-9]{6,8})>|<unbreak>)/)
+
   // Match #1[i]% OR any text; capturing the index (1) + type (i) + suffix (%) OR the plain text if its not meant to be replaced
   const match2 = new RegExp(/(?:#(.*?)\[(.*?)\](.*?)|(.*?))/)
   // Match </color> or </unbreak>
@@ -61,6 +64,10 @@ function processString(str: string | undefined) {
       else return `${value}`
     }
   )
+
+  // replace simple #1 => {{1}}. Only match to 2 digits to prevent matching color hashes.
+  // TODO: can this be folded into the previous regex stages?
+  str = str.replace(/#(\d{1,2})/g, '{{$1}}')
 
   // Remove underlines (used in-game to show clickable information)
   str = str.replace(/(<u>)|(<\/u>)/g, '')

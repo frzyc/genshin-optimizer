@@ -13,7 +13,7 @@
       "0": {
         "name": "八雷飞渡",
         "fullDesc": "获得{{3}}点【残梦】，为指定敌方单体附上{{3}}层【集真赤】，对其造成等同于黄泉<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的雷属性伤害，同时对其相邻目标造成等同于黄泉<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的雷属性伤害。",
-        "shortDesc": "获得<orangeStrong><color=#f29e38ff>#3[i]</orangeStrong>点【残梦】</color>，为敌方单体附上<orangeStrong>{{3}}</orangeStrong>层【集真赤】，对其造成雷属性伤害，对相邻目标造成少量雷属性伤害。",
+        "shortDesc": "获得<orangeStrong><color=#f29e38ff>{{3}}[i]</orangeStrong>点【残梦】</color>，为敌方单体附上<orangeStrong>{{3}}</orangeStrong>层【集真赤】，对其造成雷属性伤害，对相邻目标造成少量雷属性伤害。",
         "tag": "扩散"
       }
     },
