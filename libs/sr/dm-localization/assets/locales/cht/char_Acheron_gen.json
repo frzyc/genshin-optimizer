@@ -13,7 +13,7 @@
       "0": {
         "name": "八雷飛渡",
         "fullDesc": "獲得{{3}}點【殘夢】，向指定敵方單體附加{{3}}層【集真赤】，對其造成等同於黃泉<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性傷害，同時對其相鄰目標造成等同於黃泉<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的雷屬性傷害。",
-        "shortDesc": "獲得<orangeStrong><color=#f29e38ff>#3[i]</orangeStrong>點【殘夢】</color>，向敵方單體附加<orangeStrong>{{3}}</orangeStrong>層【集真赤】，對其造成雷屬性傷害，對相鄰目標造成少量雷屬性傷害。",
+        "shortDesc": "獲得<orangeStrong><color=#f29e38ff>{{3}}[i]</orangeStrong>點【殘夢】</color>，向敵方單體附加<orangeStrong>{{3}}</orangeStrong>層【集真赤】，對其造成雷屬性傷害，對相鄰目標造成少量雷屬性傷害。",
         "tag": "擴散"
       }
     },

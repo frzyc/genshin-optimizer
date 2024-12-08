@@ -11,7 +11,7 @@
       "1": {
         "name": "一扎眉攒，二扎心",
         "fullDesc": "初始造成{{4}}段伤害，每段对指定敌方单体造成等同于三月七<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的虚数属性伤害。每当造成最后1段伤害后，有{{2, percent}}%的固定概率再造成1段伤害，最多额外造成{{3}}段伤害。施放强化普攻恢复的能量不随段数提高而提高。<br>强化普攻无法恢复战技点。",
-        "shortDesc": "对敌方单体造成虚数属性伤害，初始造成<orangeStrong>{{4}}</orangeStrong>段伤害，<orangeStrong>有概率额外造成最多<color=#f29e38ff>#3[i]</orangeStrong>段伤害</color>。",
+        "shortDesc": "对敌方单体造成虚数属性伤害，初始造成<orangeStrong>{{4}}</orangeStrong>段伤害，<orangeStrong>有概率额外造成最多<color=#f29e38ff>{{3}}[i]</orangeStrong>段伤害</color>。",
         "tag": "单攻"
       }
     },

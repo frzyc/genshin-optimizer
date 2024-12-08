@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 import type { Document } from './document'
 
 export type UISheetElement = {
-  img: string | StaticImageData
+  img?: string | StaticImageData
   title: ReactNode
   subtitle?: ReactNode
   documents: Document[]

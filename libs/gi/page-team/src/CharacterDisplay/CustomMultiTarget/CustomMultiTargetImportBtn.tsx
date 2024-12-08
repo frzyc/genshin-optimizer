@@ -2,6 +2,7 @@ import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { CardThemed, ModalWrapper } from '@genshin-optimizer/common/ui'
 import type { CustomMultiTarget } from '@genshin-optimizer/gi/db'
 import { validateCustomMultiTarget } from '@genshin-optimizer/gi/db'
+import { useDatabase } from '@genshin-optimizer/gi/db-ui'
 import UploadIcon from '@mui/icons-material/Upload'
 import type { ButtonProps } from '@mui/material'
 import {
@@ -14,6 +15,7 @@ import {
 } from '@mui/material'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
 
 export default function CustomMultiTargetImportBtn({
   setCustomMultiTarget,
@@ -25,13 +27,26 @@ export default function CustomMultiTargetImportBtn({
   const { t } = useTranslation('loadout')
   const [show, onShow, onHide] = useBoolState()
   const [data, setData] = useState('')
+  const database = useDatabase()
+  const navigate = useNavigate()
 
   const importData = () => {
     try {
       const dataObj = JSON.parse(data)
       const validated = validateCustomMultiTarget(dataObj)
-      if (!validated) window.alert(t('mTargetImport.invalid'))
-      else {
+      if (!validated) {
+        const validatedTeam = database.teams.validate(dataObj) // The user is trying to import a team by accident
+        if (validatedTeam) {
+          if (window.confirm(t('mTargetImport.team'))) {
+            navigate('/teams', {
+              state: {
+                openImportModal: true,
+                teamData: JSON.stringify(dataObj),
+              },
+            }) // Redirect and automatically open the team import form
+          }
+        } else window.alert(t('mTargetImport.invalid'))
+      } else {
         setCustomMultiTarget(validated)
         onHide()
       }

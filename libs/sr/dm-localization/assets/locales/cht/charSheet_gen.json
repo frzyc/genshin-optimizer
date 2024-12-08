@@ -1,0 +1,21 @@
+{
+  "req_asc": "需要角色晉階{{1}}",
+  "req_lvl": "需要角色等級{{1}}",
+  "statBoost": {
+    "hp_": "生命強化",
+    "atk_": "攻擊強化",
+    "def_": "防禦強化",
+    "crit_": "暴擊率提高",
+    "crit_dmg_": "暴擊率、暴擊傷害提高",
+    "eff_res_": "效果抗性強化",
+    "spd": "速度提高",
+    "physical_dmg_": "傷害強化•物理",
+    "fire_dmg_": "傷害強化•火",
+    "ice_dmg_": "傷害強化•冰",
+    "lightning_dmg_": "傷害強化•雷",
+    "wind_dmg_": "傷害強化•風",
+    "quantum_dmg_": "傷害強化•量子",
+    "imaginary_dmg_": "傷害強化•虛數",
+    "brEffect_": "擊破特攻強化"
+  }
+}

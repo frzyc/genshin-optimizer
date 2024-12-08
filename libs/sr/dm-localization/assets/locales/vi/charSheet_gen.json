@@ -1,0 +1,21 @@
+{
+  "req_asc": "Yêu cầu nhân vật bậc {{1}}",
+  "req_lvl": "Cấp nhân vật cần {{1}}",
+  "statBoost": {
+    "hp_": "Cường Hóa HP",
+    "atk_": "Cường Hóa Tấn Công",
+    "def_": "Cường Hóa Phòng Thủ",
+    "crit_": "Tăng Tỷ Lệ Bạo Kích",
+    "crit_dmg_": "Tăng Tỷ Lệ Bạo Kích, Sát Thương Bạo Kích",
+    "eff_res_": "Cường Hóa Kháng Hiệu Ứng",
+    "spd": "Tăng Tốc Độ",
+    "physical_dmg_": "Cường Hóa Sát Thương - Vật Lý",
+    "fire_dmg_": "Cường Hóa Sát Thương - Hỏa",
+    "ice_dmg_": "Cường Hóa Sát Thương - Băng",
+    "lightning_dmg_": "Cường Hóa Sát Thương - Lôi",
+    "wind_dmg_": "Cường Hóa Sát Thương - Phong",
+    "quantum_dmg_": "Cường Hóa Sát Thương - Lượng Tử",
+    "imaginary_dmg_": "Cường Hóa Sát Thương - Số Ảo",
+    "brEffect_": "Cường Hóa Tấn Công Kích Phá"
+  }
+}

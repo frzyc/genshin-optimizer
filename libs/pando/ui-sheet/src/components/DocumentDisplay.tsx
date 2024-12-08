@@ -3,9 +3,9 @@ import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { evalIfFunc } from '@genshin-optimizer/common/util'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
-import { Box, Collapse } from '@mui/material'
+import { Box, Collapse, Typography } from '@mui/material'
 import { useContext, useState } from 'react'
-import { CalcContext } from '../context'
+import { CalcContext, TagContext } from '../context'
 import type { Document, FieldsDocument, TextDocument } from '../types'
 import { ConditionalsDisplay } from './ConditionalDisplay'
 import { FieldsDisplay } from './FieldDisplay'
@@ -66,8 +66,13 @@ function FieldsSectionDisplay({
 
 function TextSectionDisplay({ textDocument }: { textDocument: TextDocument }) {
   const calculator = useContext(CalcContext)
+  const tag = useContext(TagContext)
   if (!calculator) return null
-  return <div>{evalIfFunc(textDocument.text, calculator)}</div>
+  return (
+    <Typography>
+      {evalIfFunc(textDocument.text, calculator.withTag(tag))}
+    </Typography>
+  )
 }
 function TextSectionDisplayCollapse({
   textDocument,

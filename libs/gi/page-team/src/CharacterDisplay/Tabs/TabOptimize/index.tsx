@@ -142,6 +142,8 @@ export default function TabBuild() {
     failed: 0,
     skipped: 0,
     total: 0,
+    testedPerSecond: 0,
+    skippedPerSecond: 0,
   } as BuildStatus)
   const generatingBuilds = buildStatus.type !== 'inactive'
 
@@ -157,6 +159,8 @@ export default function TabBuild() {
       failed: 0,
       skipped: 0,
       total: 0,
+      testedPerSecond: 0,
+      skippedPerSecond: 0,
     })
   }, [characterKey])
 
@@ -384,6 +388,8 @@ export default function TabBuild() {
       failed: 0,
       skipped: 0,
       total: 0,
+      testedPerSecond: 0,
+      skippedPerSecond: 0,
       startTime: performance.now(),
     }
     const statusUpdateTimer = setInterval(

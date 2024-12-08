@@ -20,7 +20,7 @@
     "ult": {
       "0": {
         "name": "Muralha Resistente",
-        "fullDesc": "Aplica um Escudo a todos os aliados, absorvendo Dano igual a <orangeStrong><unbreak>#1[i]%</orangeStrong> </color>da DEF de Gepard + <orangeStrong><unbreak>#3[i]</orangeStrong> </color>por {{2}} rodada(s).",
+        "fullDesc": "Aplica um Escudo a todos os aliados, absorvendo Dano igual a <orangeStrong><unbreak>{{1}}[i]%</orangeStrong> </color>da DEF de Gepard + <orangeStrong><unbreak>{{3}}[i]</orangeStrong> </color>por {{2}} rodada(s).",
         "shortDesc": "<orangeStrong>Fornece um Escudo</orangeStrong> para todos os aliados.",
         "tag": "Defesa"
       }

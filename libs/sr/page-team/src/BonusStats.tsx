@@ -1,8 +1,6 @@
-import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   DropdownButton,
-  ModalWrapper,
   NumberInputLazy,
   SqBadge,
 } from '@genshin-optimizer/common/ui'
@@ -13,7 +11,6 @@ import type { Member, Tag } from '@genshin-optimizer/sr/formula'
 import { tagFieldMap } from '@genshin-optimizer/sr/formula-ui'
 import { DeleteForever } from '@mui/icons-material'
 import {
-  Button,
   CardContent,
   CardHeader,
   Divider,
@@ -23,64 +20,47 @@ import {
   Stack,
 } from '@mui/material'
 import { useContext } from 'react'
-import { PresetContext, useTeamContext } from './context'
+import { PresetContext, useTeamContext, useTeammateContext } from './context'
 
-export function BonusStats() {
-  const [open, onOpen, onClose] = useBoolState()
-  return (
-    <>
-      <Button onClick={onOpen}>Bonus Stats</Button>
-      <BonusStatsModal open={open} onClose={onClose} />
-    </>
-  )
-}
-
-function BonusStatsModal({
-  open,
-  onClose,
-}: {
-  open: boolean
-  onClose: () => void
-}) {
+export function BonusStatsSection() {
   const { database } = useDatabaseContext()
   const { presetIndex } = useContext(PresetContext)
   const {
     teamId,
     team: { bonusStats },
-    teammateDatum: { characterKey },
   } = useTeamContext()
+  const { characterKey } = useTeammateContext()
   const newTarget = (q: InitialStats) => {
     const tag = newTag(q, characterKey)
     database.teams.setBonusStat(teamId, tag, 0, presetIndex)
   }
+  if (!presetIndex) return null
   return (
-    <ModalWrapper open={open} onClose={onClose}>
-      <CardThemed>
-        <CardHeader title="Bonus Stats" />
-        <Divider />
-        <CardContent>
-          <Stack spacing={1}>
-            {bonusStats.map(({ tag, values }, i) => (
-              <BonusStatDisplay
-                key={JSON.stringify(tag) + i}
-                tag={tag}
-                value={values[presetIndex]}
-                setValue={(value) =>
-                  database.teams.setBonusStat(teamId, tag, value, presetIndex)
-                }
-                onDelete={() =>
-                  database.teams.setBonusStat(teamId, tag, 0, presetIndex)
-                }
-                setTag={(tag) =>
-                  database.teams.setBonusStat(teamId, tag, 0, presetIndex)
-                }
-              />
-            ))}
-            <InitialStatDropdown onSelect={newTarget} />
-          </Stack>
-        </CardContent>
-      </CardThemed>
-    </ModalWrapper>
+    <CardThemed>
+      <CardHeader title="Bonus Stats" />
+      <Divider />
+      <CardContent>
+        <Stack spacing={1}>
+          {bonusStats.map(({ tag, values }, i) => (
+            <BonusStatDisplay
+              key={JSON.stringify(tag) + i}
+              tag={tag}
+              value={values[presetIndex]}
+              setValue={(value) =>
+                database.teams.setBonusStat(teamId, tag, value, presetIndex)
+              }
+              onDelete={() =>
+                database.teams.setBonusStat(teamId, tag, 0, presetIndex)
+              }
+              setTag={(tag) =>
+                database.teams.setBonusStat(teamId, tag, 0, presetIndex)
+              }
+            />
+          ))}
+          <InitialStatDropdown onSelect={newTarget} />
+        </Stack>
+      </CardContent>
+    </CardThemed>
   )
 }
 function newTag(q: Tag['q'], member: Member): Tag {

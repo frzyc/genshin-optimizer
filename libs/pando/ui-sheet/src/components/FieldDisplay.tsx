@@ -57,7 +57,12 @@ export function TextFieldDisplay({
   return (
     <Box
       width="100%"
-      sx={{ display: 'flex', justifyContent: 'space-between', gap: 1 }}
+      sx={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        gap: 1,
+        py: 0.25,
+      }}
       component={component}
     >
       <Typography color={`${variant}.main`}>
@@ -78,7 +83,7 @@ export function TagFieldDisplay({
   field,
   component = ListItem,
   emphasize,
-  showZero = false,
+  showZero = process.env.NODE_ENV === 'development',
 }: {
   field: TagField
   component?: React.ElementType

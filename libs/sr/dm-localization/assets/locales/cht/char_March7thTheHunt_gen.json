@@ -11,7 +11,7 @@
       "1": {
         "name": "一扎皺眉，二扎心",
         "fullDesc": "初始造成{{4}}段傷害，每段對指定敵方單體造成等同於三月七<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的虛數屬性傷害。每當造成最後1段傷害後，有{{2, percent}}%的固定機率再造成1段傷害，最多額外造成{{3}}段傷害。發動強化普通攻擊恢復的能量不隨段數提高而提高。<br>強化普通攻擊無法恢復戰技點。",
-        "shortDesc": "對敵方單體造成虛數屬性傷害，初始造成<orangeStrong>{{4}}</orangeStrong>段傷害，<orangeStrong>有機率額外造成最多<color=#f29e38ff>#3[i]</orangeStrong>段傷害</color>。",
+        "shortDesc": "對敵方單體造成虛數屬性傷害，初始造成<orangeStrong>{{4}}</orangeStrong>段傷害，<orangeStrong>有機率額外造成最多<color=#f29e38ff>{{3}}[i]</orangeStrong>段傷害</color>。",
         "tag": "單體攻擊"
       }
     },

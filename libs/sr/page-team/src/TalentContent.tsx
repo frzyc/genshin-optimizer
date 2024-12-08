@@ -15,7 +15,17 @@ import {
 } from '@genshin-optimizer/sr/db-ui'
 import { own } from '@genshin-optimizer/sr/formula'
 import {
+  allTalentSheetElementEidolonKey,
+  allTalentSheetElementStatBoostKey,
+  bonusAbilityReqMap,
+  bonusStatsReqMap,
+  getBonusAbilityKey,
+  getEidolonKey,
+  getStatBoostKey,
   isTalentKey,
+  isTalentSheetElementBonusAbilityKey,
+  isTalentSheetElementEidolonKey,
+  isTalentSheetElementStatBoostKey,
   uiSheets,
   type TalentSheetElementKey,
 } from '@genshin-optimizer/sr/formula-ui'
@@ -23,7 +33,6 @@ import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
 import {
   Box,
   CardActionArea,
-  CardContent,
   Grid,
   MenuItem,
   Typography,
@@ -33,7 +42,7 @@ import {
 import type { ReactNode } from 'react'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useTeamContext } from './context'
+import { useTeammateContext } from './context'
 
 const talentSpacing = {
   xs: 12,
@@ -42,11 +51,8 @@ const talentSpacing = {
 }
 
 export default function CharacterTalentPane() {
-  const {
-    teammateDatum: { characterKey },
-  } = useTeamContext()
+  const { characterKey } = useTeammateContext()
   const calc = useSrCalcContext()
-  const { database } = useDatabaseContext()
   // TODO: for TC overrides
   // const { buildTc, setBuildTc } = useContext(BuildTcContext)
 
@@ -55,6 +61,12 @@ export default function CharacterTalentPane() {
     'skill',
     'ult',
     'talent',
+    'technique',
+    'overworld',
+    'bonusAbility1',
+    'bonusAbility2',
+    'bonusAbility3',
+    ...allTalentSheetElementStatBoostKey,
   ] as const
   // const passivesList: [
   //   tKey: TalentSheetElementKey,
@@ -73,27 +85,18 @@ export default function CharacterTalentPane() {
   const eidolonCards = useMemo(
     () =>
       characterSheet &&
-      range(1, maxEidolonCount).map((i) => {
-        const ele = characterSheet[`eidolon${i}` as TalentSheetElementKey]
-        if (!ele) return null
+      allTalentSheetElementEidolonKey.map((talentKey) => {
+        const sheetElement = characterSheet[talentKey]
+        if (!sheetElement) return null
         return (
           <SkillDisplayCard
-            talentKey={`eidolon${i}` as TalentSheetElementKey}
-            sheetElement={ele}
-            onClickTitle={() =>
-              // buildTc?.character
-              //   ? setBuildTc((buildTc) => {
-              //       if (buildTc.character) buildTc.character.constellation = i
-              //     })
-              //   :
-              database.chars.set(characterKey, {
-                eidolon: i === eidolon ? i - 1 : i,
-              })
-            }
+            key={talentKey}
+            talentKey={talentKey}
+            sheetElement={sheetElement}
           />
         )
       }),
-    [characterKey, characterSheet, database.chars, eidolon]
+    [characterSheet]
   )
 
   if (!characterSheet || !calc) return
@@ -231,19 +234,66 @@ export default function CharacterTalentPane() {
 //   )
 // }
 
-type SkillDisplayCardProps = {
-  sheetElement: UISheetElement
-  talentKey: TalentSheetElementKey
-  onClickTitle?: () => void
-}
 function SkillDisplayCard({
   sheetElement,
   talentKey,
-  onClickTitle,
-}: SkillDisplayCardProps) {
-  const {
-    teammateDatum: { characterKey },
-  } = useTeamContext()
+}: {
+  sheetElement: UISheetElement
+  talentKey: TalentSheetElementKey
+}) {
+  const calculator = useSrCalcContext()
+  const { characterKey } = useTeammateContext()
+  const { database } = useDatabaseContext()
+  const { img, title, subtitle, documents } = sheetElement
+  const isDisabled = useMemo(() => {
+    if (!calculator) return false
+    if (isTalentSheetElementStatBoostKey(talentKey))
+      return bonusStatsReqMap[talentKey].disabled(calculator)
+    if (isTalentSheetElementBonusAbilityKey(talentKey))
+      return bonusAbilityReqMap[talentKey].disabled(calculator)
+    return false
+  }, [calculator, talentKey])
+  const onClickTitle = useMemo(() => {
+    if (!calculator) return
+    if (
+      isTalentSheetElementStatBoostKey(talentKey) &&
+      bonusStatsReqMap[talentKey].onClickable(calculator)
+    ) {
+      return () =>
+        database.chars.set(characterKey, (char) => {
+          const statBoostKey = getStatBoostKey(talentKey)
+          char.statBoosts = {
+            ...char.statBoosts,
+            [statBoostKey]: !char.statBoosts[statBoostKey],
+          }
+        })
+    } else if (
+      isTalentSheetElementBonusAbilityKey(talentKey) &&
+      bonusAbilityReqMap[talentKey].onClickable(calculator)
+    ) {
+      return () =>
+        database.chars.set(characterKey, (char) => {
+          const bonusAbilityKey = getBonusAbilityKey(talentKey)
+          char.bonusAbilities = {
+            ...char.bonusAbilities,
+            [bonusAbilityKey]: !char.bonusAbilities[bonusAbilityKey],
+          }
+        })
+    } else if (isTalentSheetElementEidolonKey(talentKey)) {
+      const eidolonKey = getEidolonKey(talentKey)
+      const eidolon = calculator?.compute(own.char.eidolon).val ?? 0
+      return () =>
+        // buildTc?.character
+        //   ? setBuildTc((buildTc) => {
+        //       if (buildTc.character) buildTc.character.constellation = i
+        //     })
+        //   :
+        database.chars.set(characterKey, {
+          eidolon: eidolonKey === eidolon ? eidolonKey - 1 : eidolonKey,
+        })
+    }
+    return undefined
+  }, [talentKey, calculator, database.chars, characterKey])
   const actionWrapperFunc = useCallback(
     (children: ReactNode) => (
       <CardActionArea onClick={onClickTitle}>{children}</CardActionArea>
@@ -289,36 +339,37 @@ function SkillDisplayCard({
   //   return false
   // }
 
-  const { database } = useDatabaseContext()
-
   return (
-    <CardThemed bgt="light" sx={{ height: '100%' }}>
+    <CardThemed
+      bgt="light"
+      sx={{ height: '100%', opacity: isDisabled ? 0.5 : 1 }}
+    >
       {header}
-      <CardContent>
+      <Box sx={{ p: 1 }}>
         <ConditionalWrapper
           condition={!!onClickTitle}
           wrapper={actionWrapperFunc}
         >
           <Grid container sx={{ flexWrap: 'nowrap' }}>
-            <Grid item>
-              <Box
-                component={NextImage ? NextImage : 'img'}
-                src={sheetElement?.img}
-                sx={{ width: 60, height: 'auto' }}
-              />
-            </Grid>
+            {img && (
+              <Grid item>
+                <Box
+                  component={NextImage ? NextImage : 'img'}
+                  src={img}
+                  sx={{ width: 60, height: 'auto' }}
+                />
+              </Grid>
+            )}
             <Grid item flexGrow={1} sx={{ pl: 1 }}>
-              <Typography variant="h6">{sheetElement?.title}</Typography>
-              {sheetElement.subtitle && (
-                <Typography variant="subtitle1">
-                  {sheetElement.subtitle}
-                </Typography>
+              <Typography variant="subtitle1">{title}</Typography>
+              {subtitle && (
+                <Typography variant="subtitle2">{subtitle}</Typography>
               )}
             </Grid>
           </Grid>
         </ConditionalWrapper>
         {/* Display document sections */}
-        {sheetElement.documents.map((doc, i) => (
+        {documents.map((doc, i) => (
           <DocumentDisplay
             key={i}
             document={doc}
@@ -326,16 +377,14 @@ function SkillDisplayCard({
             // hideHeader={hideHeader}
           />
         ))}
-      </CardContent>
+      </Box>
     </CardThemed>
   )
 }
 
 export function EidolonDropdown({ eidolon }: { eidolon: number }) {
   const { t } = useTranslation('characters_gen')
-  const {
-    teammateDatum: { characterKey },
-  } = useTeamContext()
+  const { characterKey } = useTeammateContext()
   const { database } = useDatabaseContext()
   return (
     <DropdownButton

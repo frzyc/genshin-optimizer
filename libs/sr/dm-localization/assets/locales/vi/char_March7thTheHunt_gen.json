@@ -11,7 +11,7 @@
       "1": {
         "name": "Trán Một Nhát, Tim Một Nhát",
         "fullDesc": "Ban đầu gây {{4}} đòn sát thương, mỗi đòn gây Sát Thương Số Ảo bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của March 7th cho 1 kẻ địch chỉ định. Sau mỗi lần gây đòn sát thương cuối cùng, có {{2, percent}}% xác suất cố định gây thêm 1 đòn sát thương, tối đa được gây thêm {{3}} đòn sát thương. Năng Lượng hồi phục khi thi triển Tấn Công Thường Cường Hóa sẽ không tăng lên theo số đòn.<br>Tấn Công Thường Cường Hóa không thể hồi điểm Chiến Kỹ.",
-        "shortDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch, ban đầu gây <orangeStrong>{{4}}</orangeStrong> đòn sát thương, <orangeStrong>có xác suất gây thêm tối đa <color=#f29e38ff>#3[i]</orangeStrong> đòn sát thương</color>.",
+        "shortDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch, ban đầu gây <orangeStrong>{{4}}</orangeStrong> đòn sát thương, <orangeStrong>có xác suất gây thêm tối đa <color=#f29e38ff>{{3}}[i]</orangeStrong> đòn sát thương</color>.",
         "tag": "Đánh Đơn"
       }
     },
