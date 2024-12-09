@@ -17,6 +17,7 @@
   "mTargetImport": {
     "invalid": "Invalid Multi-Optimization Config",
     "failed": "Data Import failed.",
+    "team": "You are trying to import a team. Do you want to go to the team import page?",
     "button": "Import Multi-Opt",
     "title": "Import Multi-Opt",
     "desc": "Import a Multi-opt in JSON form below.",
@@ -25,7 +26,6 @@
     "import": "Import"
   },
   "showFormulas": {
-    "button": "Show Formulas & Calcs",
     "title": "Formulas & Calculations"
   },
   "loDropdown": {
