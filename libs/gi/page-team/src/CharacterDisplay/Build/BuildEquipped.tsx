@@ -9,22 +9,34 @@ import { getCharStat } from '@genshin-optimizer/gi/stats'
 import {
   ArtifactCardNano,
   BuildCard,
+  CharIconSide,
   WeaponCardNano,
 } from '@genshin-optimizer/gi/ui'
 import { Grid } from '@mui/material'
-import { useContext } from 'react'
+import { useContext, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-export function BuildEquipped({ active = false }: { active?: boolean }) {
+export function BuildEquipped({
+  active = false,
+  onChangeBuild,
+}: {
+  active?: boolean
+  onChangeBuild?: () => void
+}) {
   const { t } = useTranslation('build')
   const { teamId, teamCharId } = useContext(TeamCharacterContext)
   const {
     character: { key: characterKey, equippedArtifacts, equippedWeapon },
   } = useContext(CharacterContext)
   const database = useDatabase()
-  const onActive = () =>
-    database.teams.setLoadoutDatum(teamId, teamCharId, {
-      buildType: 'equipped',
-    })
+  const onActive = useMemo(() => {
+    if (active) return undefined
+    return () => {
+      database.teams.setLoadoutDatum(teamId, teamCharId, {
+        buildType: 'equipped',
+      })
+      onChangeBuild?.()
+    }
+  }, [active, database, teamId, teamCharId, onChangeBuild])
   const onDupe = () =>
     database.teamChars.newBuild(teamCharId, {
       name: t('buildEqCard.copy.nameReal'),
@@ -49,6 +61,7 @@ export function BuildEquipped({ active = false }: { active?: boolean }) {
 
   return (
     <BuildCard
+      avatar={<CharIconSide characterKey={characterKey} />}
       name={t('buildEqCard.name')}
       active={active}
       onActive={onActive}

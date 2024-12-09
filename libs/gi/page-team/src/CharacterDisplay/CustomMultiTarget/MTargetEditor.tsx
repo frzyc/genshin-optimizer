@@ -214,7 +214,7 @@ export default function MTargetEditor({
                   flatOnly: true,
                   excludeSections: [
                     'basic',
-                    'bounsStats',
+                    'bonusStats',
                     'custom',
                     'character',
                     'teamBuff',

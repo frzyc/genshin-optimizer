@@ -66,12 +66,10 @@
     "tcBadge": "TC Build"
   },
   "buildInfo": {
+    "editorTitle": "Build Management",
     "equipped": "This is the build currently equipped to your character, this represents in-game equipment and is persistent outside of the Loadout.",
     "build": "A <strong>Build</strong> is comprised of a weapon and 5 artifacts.",
     "tcbuild": "A <strong>Theorycraft Build</strong> allows defining a build by raw stats."
-  },
-  "charProfile": {
-    "button": "EDIT"
   },
   "buildTcCharOverride": {
     "tip": "Set a specific level, constellation, ascension, or talent level for this TC build, that is different from the base character",
@@ -83,7 +81,7 @@
     "desc": "Team Description"
   },
   "loadout": {
-    "editNameDesc": "Edit Loadout Name & Description",
+    "edit": "Edit Loadout",
     "name": "Loadout Name",
     "desc": "Loadout Description"
   }

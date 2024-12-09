@@ -42,7 +42,7 @@ const cols = {
   md: 2,
   lg: 3,
 }
-export default function StatModal({
+export default function BonusStatsModal({
   open,
   onClose,
 }: {
@@ -261,7 +261,13 @@ function MainStatsCards() {
     </CardThemed>
   )
 }
-function StatDisplayCard({ title, children }) {
+function StatDisplayCard({
+  title,
+  children,
+}: {
+  title: string
+  children: ReactNode
+}) {
   return (
     <CardThemed>
       <CardContent sx={{ py: 1 }}>
