@@ -215,6 +215,8 @@ export class ArtifactDataManager extends DataManager<
           importArt = {
             ...art,
             location: hasEquipment ? art.location : match.location,
+            // Preserve existing lock state for artifacts reported as unlocked or when the scanner doesn't detect locks ("lock": false JSON)
+            lock: art.lock === false ? match.lock : art.lock,
           }
         }
       }
