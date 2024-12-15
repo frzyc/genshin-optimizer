@@ -81,3 +81,10 @@ export const starColor = { r: 255, g: 204, b: 50 } // #FFCC32
 
 export const textColorLight = { r: 131, g: 131, b: 130 } // rgb(131, 131, 130)
 export const textColorDark = { r: 74, g: 81, b: 102 } // rgb(74, 81, 102)
+
+export const misreadCharactersInSubstatMap = [
+  {
+    pattern: /#/,
+    replacement: '+',
+  },
+]
