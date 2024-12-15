@@ -13,6 +13,7 @@ import {
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { ISubstat } from '@genshin-optimizer/gi/good'
+import { misreadCharactersInSubstatMap } from './consts'
 import { artSlotNames, statMap } from './enStringMap'
 
 /** small utility function used by most string parsing functions below */
@@ -96,6 +97,11 @@ export function parseSubstats(texts: string[]): ISubstat[] {
   const matches: ISubstat[] = []
   for (let text of texts) {
     text = text.replace(/^[\W]+/, '').replace(/\n/, '')
+    //Sometimes characters like `+` is misread as `#` in OCR
+    text = misreadCharactersInSubstatMap.reduce(
+      (replacedText, { pattern, replacement }) => replacedText.replace(pattern, replacement),
+      text
+    )
     //parse substats
     allSubstatKeys.forEach((key) => {
       const name = statMap[key]
