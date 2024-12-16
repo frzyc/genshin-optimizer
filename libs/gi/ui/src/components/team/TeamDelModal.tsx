@@ -15,7 +15,6 @@ import {
   Alert,
   Box,
   Button,
-  CardActionArea,
   CardContent,
   CardHeader,
   Divider,
@@ -162,7 +161,13 @@ function LoadoutDisplay({
         bgt="light"
         sx={{ border: selected ? '2px red solid' : undefined }}
       >
-        <CardActionArea onClick={onClick}>
+        <Button
+          fullWidth
+          onClick={onClick}
+          variant="outlined"
+          color="neutral100"
+          sx={{ p: 0 }}
+        >
           <LoadoutHeaderContent teamCharId={teamCharId}>
             <ColorText color={inTeams.length === 1 ? 'success' : 'warning'}>
               <Typography>
@@ -172,7 +177,7 @@ function LoadoutDisplay({
               </Typography>
             </ColorText>
           </LoadoutHeaderContent>
-        </CardActionArea>
+        </Button>
       </CardThemed>
     </DataContext.Provider>
   )

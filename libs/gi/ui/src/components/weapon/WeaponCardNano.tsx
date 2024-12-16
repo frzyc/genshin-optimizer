@@ -46,6 +46,7 @@ export function WeaponCardNano({
           height: '100%',
           alignItems: 'center',
           justifyContent: 'center',
+          py: 2,
         }}
       >
         <Box
