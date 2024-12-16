@@ -97,12 +97,10 @@ export function parseSubstats(texts: string[]): ISubstat[] {
   const matches: ISubstat[] = []
   for (let text of texts) {
     text = text.replace(/^[\W]+/, '').replace(/\n/, '')
-    //Sometimes characters like `+` is misread as `#` in OCR
-    text = misreadCharactersInSubstatMap.reduce(
-      (replacedText, { pattern, replacement }) =>
-        replacedText.replace(pattern, replacement),
-      text
-    )
+    // Apply OCR character corrections (e.g., '#' → '+') before parsing substats
+    for (const { pattern, replacement } of misreadCharactersInSubstatMap) {
+      text = text.replace(pattern, replacement)
+    }
     //parse substats
     allSubstatKeys.forEach((key) => {
       const name = statMap[key]
