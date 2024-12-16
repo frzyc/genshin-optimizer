@@ -27,7 +27,7 @@ import {
   type GraphContextObj,
   type dataContextObj,
 } from '@genshin-optimizer/gi/ui'
-import { Box, CardContent, Skeleton } from '@mui/material'
+import { Box, Skeleton } from '@mui/material'
 import {
   Suspense,
   useCallback,
@@ -200,11 +200,16 @@ function Page({ teamId }: { teamId: string }) {
             dataContextValue ? (
               <TeamCharacterContext.Provider value={teamCharacterContextValue}>
                 <DataContext.Provider value={dataContextValue}>
-                  <CardContent
-                    sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: 1,
+                      p: 1,
+                    }}
                   >
                     <InnerContent tab={tab} />
-                  </CardContent>
+                  </Box>
                 </DataContext.Provider>
               </TeamCharacterContext.Provider>
             ) : (

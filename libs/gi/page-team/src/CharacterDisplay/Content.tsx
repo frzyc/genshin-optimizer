@@ -1,4 +1,5 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import { characterAsset } from '@genshin-optimizer/gi/assets'
 import type { CharacterKey, ElementKey } from '@genshin-optimizer/gi/consts'
 import { TeamCharacterContext, useDBMeta } from '@genshin-optimizer/gi/db-ui'
@@ -8,14 +9,7 @@ import PersonIcon from '@mui/icons-material/Person'
 import ScienceIcon from '@mui/icons-material/Science'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import UpgradeIcon from '@mui/icons-material/Upgrade'
-import {
-  Divider,
-  Skeleton,
-  Tab,
-  Tabs,
-  useMediaQuery,
-  useTheme,
-} from '@mui/material'
+import { Skeleton, Tab, Tabs, useMediaQuery, useTheme } from '@mui/material'
 import { Suspense, useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Navigate, Route, Link as RouterLink, Routes } from 'react-router-dom'
@@ -91,7 +85,7 @@ function TabNav({
         return {
           position: 'relative',
           boxShadow: elementKey
-            ? `0px 0px 0px 0.5px ${theme.palette[elementKey].main} inset`
+            ? `0px 0px 0px 1px ${theme.palette[elementKey].main} inset`
             : undefined,
           '&::before': {
             content: '""',
@@ -101,7 +95,7 @@ function TabNav({
             left: 0,
             width: '100%',
             height: '100%',
-            opacity: 0.4,
+            opacity: 0.3,
             backgroundImage: `url(${banner})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
@@ -109,12 +103,7 @@ function TabNav({
         }
       }}
     >
-      {!hideTitle && (
-        <>
-          <LoadoutHeader />
-          <Divider />
-        </>
-      )}
+      {!hideTitle && <LoadoutHeader elementKey={elementKey} />}
       <LoadoutTabs tab={tab} isTCBuild={isTCBuild} elementKey={elementKey} />
     </CardThemed>
   )
@@ -138,20 +127,29 @@ function LoadoutTabs({
       variant={isXs ? 'scrollable' : 'fullWidth'}
       allowScrollButtonsMobile
       sx={(theme) => {
+        const color = elementKey && theme.palette[elementKey]?.main
+        const colorrgb = color && hexToColor(color)
+        const colorrbga = (alpha = 1) =>
+          (colorrgb && colorToRgbaString(colorrgb, alpha)) ??
+          `rgba(255,255,255,${alpha})`
         return {
+          minHeight: 0,
           position: 'relative',
           '& .MuiTab-root:hover': {
             transition: 'background-color 0.25s ease',
-            backgroundColor: 'rgba(255,255,255,0.1)',
+            backgroundColor: colorrbga(0.1),
+            border: `1px solid ${colorrbga(0.8)}`,
           },
           '& .MuiTab-root.Mui-selected': {
-            color: 'white !important',
+            color: `${color} !important`,
           },
           '& .MuiTab-root': {
             textShadow: '#000 0 0 10px !important',
+            border: `1px solid ${colorrbga(0.3)}`,
+            minHeight: 0,
           },
           '& .MuiTabs-indicator': {
-            backgroundColor: elementKey && theme.palette[elementKey]?.main,
+            backgroundColor: color,
             height: '4px',
           },
         }
@@ -159,6 +157,7 @@ function LoadoutTabs({
     >
       {isTCBuild ? (
         <Tab
+          iconPosition="start"
           value="overview"
           label={t('tabs.theorycraft')}
           icon={<ScienceIcon />}
@@ -167,6 +166,7 @@ function LoadoutTabs({
         />
       ) : (
         <Tab
+          iconPosition="start"
           value="overview"
           label={t('tabs.overview')}
           icon={<PersonIcon />}
@@ -175,6 +175,7 @@ function LoadoutTabs({
         />
       )}
       <Tab
+        iconPosition="start"
         value="talent"
         label={t('tabs.talent')}
         icon={<FactCheckIcon />}
@@ -183,6 +184,7 @@ function LoadoutTabs({
       />
       {!isTCBuild && (
         <Tab
+          iconPosition="start"
           value="optimize"
           label={t('tabs.optimize')}
           icon={<TrendingUpIcon />}
@@ -192,6 +194,7 @@ function LoadoutTabs({
       )}
       {!isTCBuild && (
         <Tab
+          iconPosition="start"
           value="upopt"
           label={t('tabs.upopt')}
           icon={<UpgradeIcon />}
