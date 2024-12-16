@@ -48,14 +48,7 @@ export function LoadoutHeader({ elementKey }: { elementKey: ElementKey }) {
           }}
           onClick={onShowLoadout}
         >
-          <Typography
-            variant="h6"
-            noWrap
-            sx={{
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
+          <Typography variant="h6" noWrap>
             {teamChar.name}
           </Typography>
         </Button>
