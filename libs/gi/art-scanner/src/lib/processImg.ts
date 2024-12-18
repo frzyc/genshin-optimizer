@@ -15,6 +15,7 @@ import {
   histogramContAnalysis,
   imageDataToCanvas,
   lighterColor,
+  preprocessImage,
   urlToImageData,
 } from '@genshin-optimizer/common/img-util'
 import {
@@ -239,12 +240,7 @@ export async function processEntry(
     debugImgs['substatsCardCropped'] = canvas.toDataURL()
   }
 
-  const bwHeader = bandPass(
-    headerCropped,
-    { r: 140, g: 140, b: 140 },
-    { r: 255, g: 255, b: 255 },
-    'bw'
-  )
+  const bwHeader = preprocessImage(headerCropped)
   const bwGreenText = bandPass(
     greenTextCropped,
     { r: 30, g: 100, b: 30 },
