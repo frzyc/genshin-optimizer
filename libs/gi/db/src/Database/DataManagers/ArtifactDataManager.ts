@@ -171,6 +171,7 @@ export class ArtifactDataManager extends DataManager<
     result.artifacts.import = artifacts.length
     const idsToRemove = new Set(this.values.map((a) => a.id))
     const hasEquipment = artifacts.some((a) => a.location)
+    const hasLock = artifacts.some((a) => a.lock)
     artifacts.forEach((a): void => {
       const art = this.validate(a)
       if (!art) {
@@ -215,6 +216,8 @@ export class ArtifactDataManager extends DataManager<
           importArt = {
             ...art,
             location: hasEquipment ? art.location : match.location,
+            // Preserve existing lock state for artifacts reported as unlocked or when the scanner doesn't detect locks ("lock": false JSON)
+            lock: hasLock ? art.lock : match.lock,
           }
         }
       }
