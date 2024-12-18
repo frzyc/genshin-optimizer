@@ -32,7 +32,9 @@ export function LoadoutHeaderContent({
   const { optimizationTarget } = useOptConfig(optConfigId)!
 
   return (
-    <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+    <CardContent
+      sx={{ display: 'flex', flexDirection: 'column', gap: 1, width: '100%' }}
+    >
       <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
         <PersonIcon />
         <Typography variant="h6">{name}</Typography>
