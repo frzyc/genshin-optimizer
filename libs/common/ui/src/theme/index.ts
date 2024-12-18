@@ -103,6 +103,16 @@ declare module '@mui/material/Button' {
     roll4: true
     roll5: true
     roll6: true
+
+    neutral100: true
+    neutral200: true
+    neutral300: true
+    neutral400: true
+    neutral500: true
+    neutral600: true
+    neutral700: true
+    neutral800: true
+    neutral900: true
   }
 }
 

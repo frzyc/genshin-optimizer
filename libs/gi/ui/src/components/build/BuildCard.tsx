@@ -7,7 +7,7 @@ import InfoIcon from '@mui/icons-material/Info'
 import ScienceIcon from '@mui/icons-material/Science'
 import {
   Box,
-  CardActionArea,
+  Button,
   CardActions,
   CardContent,
   CardHeader,
@@ -47,7 +47,7 @@ export function BuildCard({
 }) {
   const { t } = useTranslation('build')
   const clickableAreaContent = (
-    <>
+    <Box>
       <CardHeader
         avatar={avatar}
         title={
@@ -64,7 +64,7 @@ export function BuildCard({
         }
       />
       <CardContent sx={{ pt: 0, pb: 1 }}>{children}</CardContent>
-    </>
+    </Box>
   )
   return (
     <CardThemed
@@ -77,9 +77,14 @@ export function BuildCard({
       }}
     >
       {onActive ? (
-        <CardActionArea onClick={onActive}>
+        <Button
+          color="neutral300"
+          onClick={onActive}
+          variant="outlined"
+          sx={{ p: 0, borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }}
+        >
           {clickableAreaContent}
-        </CardActionArea>
+        </Button>
       ) : (
         clickableAreaContent
       )}

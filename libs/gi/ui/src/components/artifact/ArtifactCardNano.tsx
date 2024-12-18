@@ -65,6 +65,7 @@ export function ArtifactCardNano({
           height: '100%',
           alignItems: 'center',
           justifyContent: 'center',
+          py: 2,
         }}
       >
         <Box
