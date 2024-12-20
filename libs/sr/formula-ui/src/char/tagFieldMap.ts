@@ -3,7 +3,7 @@ import { isTagField } from '@genshin-optimizer/pando/ui-sheet'
 import type { Tag } from '@genshin-optimizer/sr/formula'
 import { createTagMap } from '@genshin-optimizer/sr/formula'
 import { uiSheets } from './sheets'
-import { charBaseUiSheet } from './sheets/CharBase'
+import { charBaseUiSheet } from './CharBase'
 
 const tagValue: Array<{ tag: Tag; value: TagField }> = []
 Object.values(uiSheets).forEach((sheet) => {

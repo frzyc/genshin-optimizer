@@ -13,12 +13,14 @@ import {
   eidolonSheet,
   talentSheet,
 } from '../sheetUtil'
+
 const key: CharacterKey = 'RuanMei'
 const [chg, _ch] = trans('char', key)
-const formula = formulas.RuanMei
-const cond = conditionals.RuanMei
-const buff = buffs.RuanMei
+const formula = formulas[key]
+const cond = conditionals[key]
+const buff = buffs[key]
 const dm = mappedStats.char[key]
+
 const sheet: UISheet<TalentSheetElementKey> = {
   basic: talentSheet(key, 'basic', [
     {
