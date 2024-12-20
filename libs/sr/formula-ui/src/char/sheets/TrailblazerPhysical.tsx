@@ -1,5 +1,8 @@
 import type { UISheet } from '@genshin-optimizer/pando/ui-sheet'
-import type { CharacterGenderedKey, CharacterKey } from '@genshin-optimizer/sr/consts'
+import type {
+  CharacterGenderedKey,
+  CharacterKey,
+} from '@genshin-optimizer/sr/consts'
 import { buffs, conditionals, formulas } from '@genshin-optimizer/sr/formula'
 import { mappedStats } from '@genshin-optimizer/sr/stats'
 import { trans } from '../../util'

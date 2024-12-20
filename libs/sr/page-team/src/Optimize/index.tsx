@@ -1,5 +1,4 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { characterKeyToGenderedKey } from '@genshin-optimizer/sr/assets'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { type ICachedRelic } from '@genshin-optimizer/sr/db'
 import {
