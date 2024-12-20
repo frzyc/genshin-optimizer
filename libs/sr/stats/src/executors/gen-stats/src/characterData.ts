@@ -1,12 +1,14 @@
 import {
+  isIn,
   objKeyMap,
   range,
   transposeArray,
   verifyObjKeys,
 } from '@genshin-optimizer/common/util'
-import type { CharacterGenderedKey } from '@genshin-optimizer/sr/consts'
+import type { CharacterKey, TrailblazerKey } from '@genshin-optimizer/sr/consts'
 import {
-  allCharacterGenderedKeys,
+  allCharacterKeys,
+  allTrailblazerGenderedKeys,
   type AbilityKey,
   type ElementalTypeKey,
   type PathKey,
@@ -72,7 +74,7 @@ export type CharacterDatum = {
   rankMap: RankInfoMap
 }
 
-export type CharacterData = Record<CharacterGenderedKey, CharacterDatum>
+export type CharacterData = Record<CharacterKey, CharacterDatum>
 export default function characterData(): CharacterData {
   const data = Object.fromEntries(
     Object.entries(avatarConfig).map(
@@ -195,13 +197,17 @@ export default function characterData(): CharacterData {
           ascension,
           rankMap,
         }
-        const charKey = characterIdMap[avatarid]
+        const genderedKey = characterIdMap[avatarid]
+        // Assumes genders have the same stats
+        const charKey = isIn(allTrailblazerGenderedKeys, genderedKey)
+          ? (genderedKey.slice(0, -1) as TrailblazerKey)
+          : genderedKey
         return [charKey, result]
       }
     )
   )
 
-  verifyObjKeys(data, allCharacterGenderedKeys)
+  verifyObjKeys(data, allCharacterKeys)
 
   return data
 }

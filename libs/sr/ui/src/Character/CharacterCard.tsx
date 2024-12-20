@@ -85,7 +85,7 @@ export function CharacterCard({
 function Header({ character }: { character: ICachedCharacter }) {
   const { key: characterKey, eidolon, level, ascension } = character
   const genderedKey = characterKeyToGenderedKey(characterKey)
-  const { damageType, path, rarity } = getCharStat(genderedKey)
+  const { damageType, path, rarity } = getCharStat(characterKey)
 
   return (
     <Box sx={{ display: 'flex' }}>

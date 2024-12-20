@@ -1,11 +1,8 @@
-import type {
-  CharacterGenderedKey,
-  StatBoostKey,
-} from '@genshin-optimizer/sr/consts'
+import type { CharacterKey, StatBoostKey } from '@genshin-optimizer/sr/consts'
 import type { Rank } from '@genshin-optimizer/sr/dm'
 import { allStats } from './allStats'
 
-export function getCharStat(ck: CharacterGenderedKey) {
+export function getCharStat(ck: CharacterKey) {
   return allStats.char[ck]
 }
 
@@ -18,7 +15,7 @@ export function getCharStat(ck: CharacterGenderedKey) {
  * @returns Interpolation object to be fed to translate function
  */
 export function getCharInterpolateObject(
-  ck: CharacterGenderedKey,
+  ck: CharacterKey,
   skType:
     | 'basic'
     | 'skill'
@@ -49,21 +46,21 @@ export function getCharInterpolateObject(
 }
 
 export function getCharStatBoostStatKey(
-  ck: CharacterGenderedKey,
+  ck: CharacterKey,
   bonusStats: StatBoostKey | `${StatBoostKey}`
 ) {
   return getCharStatBoostStat(ck, bonusStats).statKey
 }
 
 export function getCharStatBoostStatValue(
-  ck: CharacterGenderedKey,
+  ck: CharacterKey,
   bonusStats: StatBoostKey | `${StatBoostKey}`
 ) {
   return getCharStatBoostStat(ck, bonusStats).value
 }
 
 export function getCharStatBoostStat(
-  ck: CharacterGenderedKey,
+  ck: CharacterKey,
   bonusStats: StatBoostKey | `${StatBoostKey}`
 ) {
   const boost = getCharStatBoost(ck, bonusStats)
@@ -79,7 +76,7 @@ export function getCharStatBoostStat(
   return { statKey, value }
 }
 export function getCharStatBoost(
-  ck: CharacterGenderedKey,
+  ck: CharacterKey,
   bonusStats: StatBoostKey | `${StatBoostKey}`
 ) {
   const { skillTree } = getCharStat(ck)

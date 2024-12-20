@@ -1,0 +1,14 @@
+{
+  "generators": {
+    "gen-sheet": {
+      "factory": "./src/generators/gen-sheet/single-generator",
+      "schema": "./src/generators/gen-sheet/single-schema.json",
+      "description": "Generate a single sheet"
+    },
+    "gen-all-sheets": {
+      "factory": "./src/generators/gen-sheet/all-generator",
+      "schema": "./src/generators/gen-sheet/all-schema.json",
+      "description": "Generate all sheets"
+    }
+  }
+}

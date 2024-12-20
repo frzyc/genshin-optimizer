@@ -1,5 +1,4 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { characterKeyToGenderedKey } from '@genshin-optimizer/sr/assets'
 import type { RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { type ICachedRelic } from '@genshin-optimizer/sr/db'
 import {
@@ -108,7 +107,7 @@ function OptimizeWrapper() {
     [database.relics.values]
   )
   const lightCones = useMemo(() => {
-    const { path } = getCharStat(characterKeyToGenderedKey(characterKey))
+    const { path } = getCharStat(characterKey)
     return database.lightCones.values.filter(({ key }) => {
       // filter by path
       const { path: lcPath } = getLightConeStat(key)
