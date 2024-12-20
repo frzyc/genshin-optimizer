@@ -25,20 +25,20 @@ export default async function genIndex(tree: Tree, sheet_type: string) {
 
 async function writeCharIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
-  // TODO: Add Trailblazer support
-  const keys = allCharacterKeys.filter((key) => !key.includes('Trailblazer'))
   const index = prettier.format(
     `
 import type { UISheet } from '@genshin-optimizer/pando/ui-sheet'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import type { TalentSheetElementKey } from '../consts'
-${keys.map((charKey) => `import ${charKey} from './${charKey}'`).join('\n')}
+${allCharacterKeys
+  .map((charKey) => `import ${charKey} from './${charKey}'`)
+  .join('\n')}
 
 export const uiSheets: Record<
   CharacterKey,
   UISheet<TalentSheetElementKey>
 > = {
-  ${keys.join('\n,  ')}
+  ${allCharacterKeys.join('\n,  ')}
 } as const
   `,
     { ...prettierRc, parser: 'typescript' }

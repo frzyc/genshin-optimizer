@@ -45,6 +45,9 @@ import Sparkle from './maps/Sparkle'
 import Sushang from './maps/Sushang'
 import Tingyun from './maps/Tingyun'
 import TopazAndNumby from './maps/TopazAndNumby'
+import TrailblazerFire from './maps/TrailblazerFire'
+import TrailblazerImaginary from './maps/TrailblazerImaginary'
+import TrailblazerPhysical from './maps/TrailblazerPhysical'
 import Welt from './maps/Welt'
 import Xueyi from './maps/Xueyi'
 import Yanqing from './maps/Yanqing'
@@ -104,5 +107,8 @@ const maps = {
   Yanqing,
   Yukong,
   Yunli,
+  TrailblazerPhysical,
+  TrailblazerFire,
+  TrailblazerImaginary,
 }
 export default maps

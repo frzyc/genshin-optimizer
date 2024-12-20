@@ -108,7 +108,7 @@ function OptimizeWrapper() {
     [database.relics.values]
   )
   const lightCones = useMemo(() => {
-    const { path } = getCharStat(characterKeyToGenderedKey(characterKey))
+    const { path } = getCharStat(characterKey)
     return database.lightCones.values.filter(({ key }) => {
       // filter by path
       const { path: lcPath } = getLightConeStat(key)
