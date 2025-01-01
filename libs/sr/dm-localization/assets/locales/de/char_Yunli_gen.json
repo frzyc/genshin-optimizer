@@ -13,7 +13,7 @@
       "0": {
         "name": "Schockwellen-Schlag",
         "fullDesc": "Stellt LP in Höhe von <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> von Yunlis ANG plus <orangeStrong>{{4}}</orangeStrong> wieder her. Fügt einem anvisierten Gegner physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Yunlis ANG und angrenzenden Einheiten physischen SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Yunlis ANG zu.",
-        "shortDesc": "Stellt die eigene LP wieder her und fügt einem Gegner sowie angrenzenden Einheiten geringen physischen SCH zu.",
+        "shortDesc": "Stellt die eigenen LP wieder her. Fügt einem Gegner physischen SCH und angrenzenden Einheiten geringen physischen SCH zu.",
         "tag": "Ausdehnung"
       }
     },
@@ -29,7 +29,7 @@
       "0": {
         "name": "Glimmender Glanz",
         "fullDesc": "Wenn Yunli von Gegnern angegriffen wird, werden zusätzlich {{3}} Pkt. Energie wiederhergestellt und es wird sofort ein Konter gegen den Angreifer ausgelöst, der beim Ziel physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Yunlis ANG und bei angrenzenden Einheiten physischen SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Yunlis ANG verursacht.<br>Wenn kein Ziel gekontert werden kann, wird der Konter gegen ein zufälliges Ziel ausgelöst.",
-        "shortDesc": "Wenn Yunli von Gegnern angegriffen wird, wird zusätzlich Energie wiederhergestellt und gegen den Angreifer sowie angrenzende Einheiten sofort ein Konter ausgelöst.",
+        "shortDesc": "Wenn Yunli von Gegnern angegriffen wird, wird zusätzliche Energie wiederhergestellt und es wird sofort ein Konter ausgelöst, der bei dem Angreifer physischen SCH und bei angrenzenden Einheiten geringen physischen SCH verursacht.",
         "tag": "Ausdehnung"
       }
     },

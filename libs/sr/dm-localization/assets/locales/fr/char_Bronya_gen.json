@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Embuscade",
-      "desc": "Lorsqu'un allié autre que Bronya utilise son ATQ normale sur un ennemi qui a une Faiblesse au vent, Bronya lance immédiatement 1 instance d'attaque de suivi sur la cible, infligeant des DGT de vent équivalents à {{1, percent}}% des DGT d'ATQ normale de Bronya. Cet effet ne peut être déclenché qu'1 fois par tour."
+      "desc": "Lorsqu'un personnage allié autre que Bronya utilise son ATQ normale sur un ennemi qui a une Faiblesse au vent, Bronya lance immédiatement 1 instance d'ATQ de suivi qui inflige des DGT de vent équivalents à {{1, percent}}% des DGT d'ATQ normale de Bronya. Cet effet ne peut être déclenché qu'1 fois par tour."
     },
     "5": {
       "name": "Inarrêtable",

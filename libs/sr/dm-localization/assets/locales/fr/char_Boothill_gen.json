@@ -27,7 +27,7 @@
       "0": {
         "name": "Crépuscule des plaines du sud",
         "fullDesc": "Applique une Faiblesse physique à une cible ennemie unique pour {{3}} tours.<br>Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ du Fossoyeur à la cible et retarde son action de <orangeStrong>{{2, percent}}%</orangeStrong>.",
-        "shortDesc": "<orangeStrong>Applique une Faiblesse physique</orangeStrong> à un ennemi unique et lui inflige une quantité massive de DGT physiques, tout en retardant son action.",
+        "shortDesc": "<orangeStrong>Applique une Faiblesse physique</orangeStrong> à un ennemi et lui inflige une quantité massive de DGT physiques, tout en retardant son action.",
         "tag": "Cible unique"
       }
     },

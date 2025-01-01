@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Corte fácil",
-      "desc": "Recupera 1 pt. de habilidad básica tras usar la habilidad básica contra un objetivo afectado por Ruptura de Debilidad."
+      "desc": "Recupera 1 pt. de habilidad básica tras usar la habilidad básica contra un enemigo afectado por Ruptura de Debilidad."
     },
     "2": {
       "name": "Cuerpo entrenado",

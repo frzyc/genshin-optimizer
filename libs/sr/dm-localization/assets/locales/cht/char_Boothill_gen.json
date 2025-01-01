@@ -27,7 +27,7 @@
       "0": {
         "name": "塵魔舞者的日落秀",
         "fullDesc": "向指定敵方單體附加物理弱點，持續{{3}}回合。<br>對該目標造成等同於波提歐<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的物理屬性傷害，並使其行動延後<orangeStrong>{{2, percent}}%</orangeStrong>。",
-        "shortDesc": "向敵方單體<orangeStrong>附加物理弱點</orangeStrong>，並對其造成大量物理屬性傷害，使目標行動延後。",
+        "shortDesc": "為敵方單體<orangeStrong>新增物理弱點</orangeStrong>，並對其造成大量物理屬性傷害，使目標行動延後。",
         "tag": "單體攻擊"
       }
     },

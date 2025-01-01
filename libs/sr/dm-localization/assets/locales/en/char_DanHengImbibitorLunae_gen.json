@@ -105,7 +105,7 @@
     },
     "2": {
       "name": "Imperium On Cloud Nine",
-      "desc": "After using his Ultimate, Dan Heng • Imbibitor Lunae's action is Advanced Forward by 100% and gains 1 extra Squama Sacrosancta."
+      "desc": "After using his Ultimate, Dan Heng • Imbibitor Lunae's action advances by 100% and gains 1 extra \"Squama Sacrosancta.\""
     },
     "3": {
       "name": "Clothed in Clouds",
@@ -113,7 +113,7 @@
     },
     "4": {
       "name": "Zephyr's Bliss",
-      "desc": "The buff effect granted by Outroar lasts until the end of this character's next turn."
+      "desc": "The buff effect granted by \"Outroar\" lasts until the end of this unit's next turn."
     },
     "5": {
       "name": "Fall is the Pride",
@@ -121,7 +121,7 @@
     },
     "6": {
       "name": "Reign, Returned",
-      "desc": "After any other ally uses their Ultimate, the Imaginary RES PEN of Dan Heng • Imbibitor Lunae's next Fulgurant Leap attack increases by {{1, percent}}%. This effect can stack up to {{2}} time(s)."
+      "desc": "After another ally character uses their Ultimate, the Imaginary RES PEN of Dan Heng • Imbibitor Lunae's next \"Fulgurant Leap\" attack increases by {{1, percent}}%. This effect can stack up to {{2}} time(s)."
     }
   }
 }

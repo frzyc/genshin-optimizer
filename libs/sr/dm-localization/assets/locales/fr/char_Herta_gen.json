@@ -29,7 +29,7 @@
       "0": {
         "name": "La chance a tourné !",
         "fullDesc": "Lorsque l'attaque d'un allié réduit le pourcentage de PV d'un ennemi à {{1, percent}}% ou moins, Herta lance une attaque de suivi qui inflige des DGT de glace équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de son ATQ à tous les ennemis.",
-        "shortDesc": "",
+        "shortDesc": "Lorsque l'attaque d'un allié réduit le pourcentage de PV actuels de la cible ennemie à <orangeStrong>{{1, percent}}%</orangeStrong> ou moins, Herta lance immédiatement une <orangeStrong>attaque de suivi</orangeStrong>, qui inflige des DGT de glace mineurs à tous les ennemis.",
         "tag": "ZdE"
       }
     },
@@ -37,7 +37,7 @@
       "0": {
         "name": "Il y a de la marge de progression",
         "fullDesc": "Après utilisation de sa technique, l'ATQ de Herta augmente de {{1, percent}}% pendant {{2}} tours au début du combat suivant.",
-        "shortDesc": "",
+        "shortDesc": "Augmente l'ATQ de cette unité au début du prochain combat après avoir utilisé la technique.",
         "tag": "Renforcement"
       }
     },
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Marionnette",
-        "fullDesc": "Les chances de résister aux malus de contrôle augmentent de {{1, percent}}%.",
+        "fullDesc": "Augmente les chances de résister aux malus de contrôle de {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Tu en veux encore ?",
-      "desc": "Si le pourcentage des PV de l'ennemi est inférieur ou égal à {{1, percent}}%, l'ATQ normale de Herta inflige des DGT de glace additionnels équivalents à {{2, percent}}% de l'ATQ de Herta."
+      "desc": "Si le pourcentage de PV de l'ennemi désigné est inférieur ou égal à {{1, percent}}% lors de l'utilisation de l'ATQ normale, Herta inflige des DGT additionnels de glace équivalents à {{2, percent}}% de son ATQ."
     },
     "2": {
       "name": "On ne s'arrête pas",

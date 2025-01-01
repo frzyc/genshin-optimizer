@@ -35,7 +35,7 @@
       "0": {
         "name": "Don de Shuhu",
         "fullDesc": "Chaque fois que Blade subit des DGT ou consomme ses PV, il gagne 1 cumul de Charge, jusqu'à un maximum de 5 cumuls. Blade ne peut gagner qu'1 cumul de Charge au maximum pour chaque attaque qu'il subit.<br>Lorsque le nombre de cumuls de Charge atteint son maximum, il lance immédiatement une attaque de suivi sur tous les ennemis, infligeant des DGT de vent équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de son ATQ + <orangeStrong>{{4, percent}}%</orangeStrong> de ses PV max. Blade restaure également {{3, percent}}% de ses PV max. Toutes les Charges sont consommées après avoir déclenché l'attaque de suivi.",
-        "shortDesc": "Chaque fois que Blade perd des PV, il gagne 1 cumul de Charge. Lorsque le nombre de cumuls de Charge est au maximum, Blade <orangeStrong>inflige immédiatement des DGT de vent à tous les ennemis</orangeStrong> et restaure des PV, consommant tous les cumuls de Charge.",
+        "shortDesc": "Lorsque les PV de Blade diminuent, il gagne 1 cumul de Charge. Lorsque la Charge est au maximum, il lance une attaque de suivi, ce qui <orangeStrong>inflige des DGT de vent à tous les ennemis</orangeStrong>, restaure des PV et consomme toutes les Charges.",
         "tag": "ZdE"
       }
     },
@@ -66,7 +66,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Morts sans fin",
-        "fullDesc": "Lorsque Blade touche un ennemi qui subit une Rupture de faiblesse avec Forêt de lames, il restaure {{1, percent}}% de ses PV max + {{2}}.",
+        "fullDesc": "Lorsque Blade touche un ennemi en état de Rupture de faiblesse avec Forêt de lames, il restaure {{1, percent}}% de ses PV max + {{2}}.",
         "shortDesc": "",
         "tag": ""
       }
@@ -74,7 +74,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Cyclone de destruction",
-        "fullDesc": "Augmente les DGT d'attaque de suivi du talent de {{1, percent}}%.",
+        "fullDesc": "Augmente les DGT infligés par l'ATQ de suivi du talent de {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -103,7 +103,7 @@
     },
     "6": {
       "name": "Revenu dans une coquille vide",
-      "desc": "Le nombre de cumuls maximum de Charge est réduit à 4. Les DGT infligés par les attaques de suivi déclenchées par le talent de Blade augmentent d'un montant équivalent à {{1, percent}}% de ses PV max."
+      "desc": "Le nombre de cumuls maximum de Charge est réduit à 4. Les DGT infligés par les ATQ de suivi déclenchées par le talent de Blade augmentent d'un montant équivalent à {{1, percent}}% de ses PV max."
     }
   }
 }

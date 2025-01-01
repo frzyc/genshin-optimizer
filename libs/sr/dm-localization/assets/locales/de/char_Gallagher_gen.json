@@ -66,7 +66,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Natürliche Hefe",
-        "fullDesc": "Nach dem Einsatz des Ultimates wird die eigene Aktion um 100 % vorgezogen.",
+        "fullDesc": "Nach dem Einsatz des Ultimates wird die eigene Aktion sofort um 100 % vorgezogen.",
         "shortDesc": "",
         "tag": ""
       }

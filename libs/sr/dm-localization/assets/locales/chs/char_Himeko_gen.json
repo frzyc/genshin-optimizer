@@ -29,7 +29,7 @@
       "0": {
         "name": "乘胜追击",
         "fullDesc": "当有敌方目标的弱点被击破时，姬子获得充能，上限{{2}}点。<br>当我方目标施放攻击后，若姬子的充能达到上限则立即发动1次追加攻击，对敌方全体目标造成等同于姬子<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的火属性伤害，并消耗全部充能。<br>战斗开始时获得1点充能。",
-        "shortDesc": "敌人弱点被击破时获得充能。<br>我方目标攻击后，若充能达到上限则<orangeStrong>立即发动追加攻击</orangeStrong>，对<orangeStrong>敌方全体</orangeStrong>造成火属性伤害并消耗全部充能。<br>战斗开始时获得1点充能。",
+        "shortDesc": "战斗开始及敌人弱点被击破时，获得充能。<br>我方目标攻击后，若充能达到上限则<orangeStrong>发动追加攻击</orangeStrong>，对<orangeStrong>敌方全体</orangeStrong>造成火属性伤害，消耗全部充能。",
         "tag": "群攻"
       }
     },

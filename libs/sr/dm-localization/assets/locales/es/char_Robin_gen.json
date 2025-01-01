@@ -29,7 +29,7 @@
       "0": {
         "name": "Oda melodiosa",
         "fullDesc": "Aumenta el Daño CRIT de todos los aliados en un <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Después de que un aliado ataque a un enemigo, Robin recupera {{2}} pts. de energía adicionales.",
-        "shortDesc": "Aumenta el <orangeStrong>Daño CRIT</orangeStrong> de todos los aliados. Después de que un aliado ataque a un enemigo, Robin recupera energía adicional.",
+        "shortDesc": "Aumenta el <orangeStrong>Daño CRIT</orangeStrong> de todos los aliados. Después de que un objetivo aliado ataque a un enemigo, Robin recupera energía adicional.",
         "tag": "Apoyo"
       }
     },
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Llave de lluvia",
-      "desc": "Al usar su habilidad definitiva, elimina los estados negativos de Control de todos los aliados. Cuando Robin está en el estado de Concierto, la RES a efecto de todos los aliados aumenta en un {{1, percent}}%."
+      "desc": "Al usar su habilidad definitiva, disipa los estados negativos de Control de todos los aliados. Cuando Robin está en el estado de Concierto, la RES a efecto de todos los aliados aumenta en un {{1, percent}}%."
     },
     "5": {
       "name": "Lamento de la estrella solitaria",

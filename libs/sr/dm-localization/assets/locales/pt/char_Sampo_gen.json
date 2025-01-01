@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Brilho Ofuscante",
-        "fullDesc": "Após usar a Técnica de Sampo, inflige Cegueira em inimigos em uma área definida por {{1}} segundos. Inimigos com Cegueira não conseguem detectar sua equipe.<br>Ao iniciar o combate contra um inimigo com Cegueira, há {{2, percent}}% de chance fixa de atrasar as ações de todos os inimigos em {{3, percent}}%.",
+        "fullDesc": "Após usar a Técnica de Sampo, inflige \"Cegueira\" em inimigos em uma área definida por {{1}} segundos. Inimigos com \"Cegueira\" não conseguem detectar alvos aliados.<br>Ao iniciar o combate contra um inimigo com \"Cegueira\", há {{2, percent}}% de chance fixa de atrasar as ações de todos os inimigos em {{3, percent}}%.",
         "shortDesc": "Inimigos em uma determinada área recebem Cegueira. Ao iniciar uma batalha contra um inimigo com Cegueira, existe uma alta chance de atrasar todas as ações inimigas.",
         "tag": "Incapacitação"
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Entusiasmo Infeccioso",
-      "desc": "Derrotar um inimigo com Cisalhamento de Vento concede {{1, percent}}% de chance-base de infligir {{2}} acúmulo(s) de Cisalhamento de Vento a todos os inimigos, equivalente ao Cisalhamento de Vento do Talento."
+      "desc": "Derrotar um inimigo infligido com \"Cisalhamento de Vento\" concede {{1, percent}}% de chance-base de infligir {{2}} acúmulo(s) de \"Cisalhamento de Vento\" a todos os inimigos, equivalente ao \"Cisalhamento de Vento\" da Perícia."
     },
     "3": {
       "name": "Riquinho!",

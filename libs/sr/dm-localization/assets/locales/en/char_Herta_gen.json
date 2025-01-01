@@ -29,7 +29,7 @@
       "0": {
         "name": "Fine, I'll Do It Myself",
         "fullDesc": "When an ally's attack causes an enemy's HP percentage to fall to {{1, percent}}% or lower, Herta will launch a follow-up attack, dealing Ice DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Herta's ATK to all enemies.",
-        "shortDesc": "",
+        "shortDesc": "When any ally target's attack reduces the enemy target's current HP percentage to <orangeStrong>{{1, percent}}%</orangeStrong> or lower, Herta immediately launches <orangeStrong>Follow-up ATK</orangeStrong>, dealing minor Ice DMG to all enemies.",
         "tag": "AoE"
       }
     },
@@ -37,7 +37,7 @@
       "0": {
         "name": "It Can Still Be Optimized",
         "fullDesc": "After using her Technique, Herta's ATK increases by {{1, percent}}% for {{2}} turn(s) at the beginning of the next battle.",
-        "shortDesc": "",
+        "shortDesc": "After using Technique, increases this unit's ATK at the start of the next battle.",
         "tag": "Enhance"
       }
     },
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Puppet",
-        "fullDesc": "The chance to resist Crowd Control Debuffs increases by {{1, percent}}%.",
+        "fullDesc": "Increases the chance to resist Crowd Control debuffs by {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Kick You When You're Down",
-      "desc": "If the enemy's HP percentage is at {{1, percent}}% or less, Herta's Basic ATK deals Additional Ice DMG equal to {{2, percent}}% of Herta's ATK."
+      "desc": "When using Basic ATK, if the designated enemy's HP percentage is at {{1, percent}}% or less, additionally deals Ice Additional DMG equal to {{2, percent}}% of Herta's ATK."
     },
     "2": {
       "name": "Keep the Ball Rolling",

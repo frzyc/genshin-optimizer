@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Faíscas",
-        "fullDesc": "O ATQ Básico de Asta tem {{1, percent}}% de chance-base de causar Queimadura ao inimigo-alvo por {{2}} rodada(s).<br>Os inimigos afetados por Queimadura recebem Dano de Fogo Contínuo igual a {{3, percent}}% do Dano causado pelo ATQ Básico de Asta no início de cada rodada.",
+        "fullDesc": "O ATQ Básico de Asta tem {{1, percent}}% de chance-base de causar \"Queimadura\" ao inimigo-alvo por {{2}} rodada(s).<br>Os inimigos afetados por \"Queimadura\" recebem Dano de Fogo Contínuo igual a {{3, percent}}% do Dano causado pelo ATQ Básico de Asta no início de cada rodada.",
         "shortDesc": "",
         "tag": ""
       }

@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Kinship",
-        "fullDesc": "When attacked, this character has a {{1, percent}}% fixed chance to remove a debuff placed on them.",
+        "fullDesc": "When attacked, this unit has a {{1, percent}}% fixed chance to dispel 1 debuff placed on them.",
         "shortDesc": "",
         "tag": ""
       }
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Under Protection",
-        "fullDesc": "The chance to resist Crowd Control Debuffs increases by {{1, percent}}%.",
+        "fullDesc": "Increases the chance to resist Crowd Control debuffs by {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Revenge",
-        "fullDesc": "Increases Svarog's Counter DMG by {{1, percent}}%.",
+        "fullDesc": "Increases DMG dealt by Svarog's Counter by {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Long Company",
-      "desc": "After other allies are hit, Svarog also has a {{1, percent}}% fixed chance to trigger a Counter on the attacker and mark them with a Mark of Counter. When using Ultimate, the number of Enhanced Counters increases by {{2}}."
+      "desc": "After other allies are attacked, Svarog also has a {{1, percent}}% fixed chance to trigger a Counter on the attacker and mark them with a \"Mark of Counter.\" When using Ultimate, the number of Enhanced Counters increases by {{2}}."
     }
   }
 }

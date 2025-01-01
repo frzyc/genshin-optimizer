@@ -41,7 +41,7 @@
       "0": {
         "name": "Perfect Pickoff",
         "fullDesc": "Setiap kali mengakibatkan Weakness Break pada target musuh, ATK meningkat <orangeStrong>{{1, percent}}%</orangeStrong>, efek ini dapat ditumpuk hingga {{2}} lapis.",
-        "shortDesc": "",
+        "shortDesc": "Setiap kali setelah mengakibatkan Weakness Break pada target musuh, ATK meningkat.",
         "tag": "Enhance"
       }
     },
@@ -49,7 +49,7 @@
       "0": {
         "name": "Immortal Third Strike",
         "fullDesc": "Setelah menggunakan Technique, memulihkan HP seluruh anggota tim sebesar {{1, percent}}% Max HP masing-masing.",
-        "shortDesc": "",
+        "shortDesc": "Setelah menggunakan Technique, akan segera <orangeStrong>memulihkan HP</orangeStrong> seluruh rekan tim.",
         "tag": "Restore"
       }
     },
@@ -101,7 +101,7 @@
     },
     "4": {
       "name": "A Destructing Glance",
-      "desc": "Meningkatkan {{1, percent}}% CRIT Rate saat menyerang Weakness musuh dengan status Weakness Break."
+      "desc": "Meningkatkan {{1, percent}}% CRIT Rate saat menyerang musuh dengan status Weakness Break."
     },
     "5": {
       "name": "A Surviving Hope",

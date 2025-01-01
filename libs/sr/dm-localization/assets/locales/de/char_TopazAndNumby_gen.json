@@ -12,7 +12,7 @@
     "skill": {
       "0": {
         "name": "Schwierigkeiten beim Bezahlen?",
-        "fullDesc": "Verursacht bei einem anvisierten Gegner „Schuldennachweis“ und erhöht den erlittenen Folgeangriff-SCH des Ziels um <orangeStrong>{{2, percent}}%</orangeStrong>. Der „Schuldennachweis“ wirkt nur auf das letzte Ziel, auf das er angewendet wird. Wenn sich zu Beginn der Runde eines Verbündeten oder während der Aktion eines Verbündeten keine Gegner mit „Schuldennachweis“ auf dem Feld befinden, verursacht Topaz bei einem zufälligen Gegner „Schuldennachweis“.<br>Kontie fügt diesem Ziel Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG von Topaz zu. Der Einsatz dieser Fertigkeit, um SCH zu verursachen, wird als ein Folgeangriff gewertet.",
+        "fullDesc": "Verursacht bei einem anvisierten Gegner „Schuldennachweis“ und erhöht den erlittenen Folgeangriff-SCH des Ziels um <orangeStrong>{{2, percent}}%</orangeStrong>. Der „Schuldennachweis“ wirkt nur auf das letzte Ziel, auf das er angewendet wird. Wenn sich zu Beginn der Runde eines Verbündeten oder während der Aktion eines Verbündeten keine Gegner mit „Schuldennachweis“ auf dem Kampffeld befinden, verursacht Topaz bei einem zufälligen Gegner „Schuldennachweis“.<br>Kontie fügt diesem Ziel Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG von Topaz zu. Der Einsatz dieser Fertigkeit, um SCH zu verursachen, wird als ein Folgeangriff gewertet.",
         "shortDesc": "Verursacht bei einem Gegner „Schuldennachweis“ und lässt ihn <orangeStrong>mehr Folgeangriff-SCH erleiden</orangeStrong>. Kontie fügt dem Ziel Feuer-SCH zu.",
         "tag": "Einzelangriff"
       }
@@ -29,7 +29,7 @@
       "0": {
         "name": "Sparschweinmarkt?!",
         "fullDesc": "Beschwört Kontie zu Beginn des Kampfes. Kontie hat standardmäßig {{1}} Pkt. GES. Wenn Kontie eine Aktion ausführt, startet es einen Folgeangriff auf einen Gegner mit „Schuldennachweis“ und verursacht dabei Feuer-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> des ANG von Topaz.<br>Wenn Gegner mit „Schuldennachweis“ Folgeangriffe eines Verbündeten erhalten, wird Konties Aktion um {{3, percent}}% vorgezogen. Der Effekt von Aktionsvorzug kann nicht während Konties eigener Runde ausgelöst werden.<br>Wenn Topaz handlungsunfähig ist, verschwindet Kontie.",
-        "shortDesc": "<orangeStrong>Beschwört Kontie</orangeStrong> zu Beginn des Kampfes. Wenn Kontie eine Aktion ausführt, <orangeStrong>startet es einen Folgeangriff auf einen Gegner mit „Schuldennachweis“</orangeStrong>. Wenn Gegner mit „Schuldennachweis“ Folgeangriffe eines Verbündeten erhalten, wird Konties <orangeStrong>Aktion vorgezogen</orangeStrong>.",
+        "shortDesc": "<orangeStrong>Beschwört Kontie</orangeStrong> zu Beginn des Kampfes. Wenn Kontie eine Aktion ausführt, <orangeStrong>startet es einen Folgeangriff auf Gegner mit „Schuldennachweis“</orangeStrong> und verursache Feuer-SCH.<br>Wenn Gegner mit „Schuldennachweis“ Folgeangriffe eines Verbündeten erhalten, wird Konties <orangeStrong>Aktion vorgezogen</orangeStrong>.",
         "tag": "Einzelangriff"
       }
     },
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Markt der Zukunft",
-      "desc": "Wenn Gegner mit „Schuldennachweis“ von Folgeangriffen getroffen werden, gehen sie in den Status „Schuldner“ über. Dies kann nur 1-mal in einem einzigen Angriff wirksam werden.<br>„Schuldner“ erhöht den KRIT-SCH von Folgeangriffen, der den betroffenen Gegnern zugefügt wird, um {{1, percent}}%, bis zu {{2}}-fach stapelbar. Wenn „Schuldennachweis“ entfernt wird, wird auch der Status „Schuldner“ entfernt."
+      "desc": "Wenn Gegner mit „Schuldennachweis“ von Folgeangriffen getroffen werden, gehen sie in den Status „Schuldner“ über. Dies kann nur 1-mal in einem einzigen Angriff wirksam werden.<br>Schuldner erhöht den KRIT-SCH von Folgeangriffen, der den betroffenen Gegnern zugefügt wird, um {{1, percent}}%, bis zu {{2}}-fach stapelbar. Wenn Schuldennachweis entfernt wird, wird auch der Status Schuldner entfernt."
     },
     "2": {
       "name": "Freundliche Übernahme",

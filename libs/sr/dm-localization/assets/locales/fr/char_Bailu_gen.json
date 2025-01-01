@@ -28,8 +28,8 @@
     "talent": {
       "0": {
         "name": "Gourde d'élixir",
-        "fullDesc": "Lorsqu'un allié qui bénéficie de Revigoration est touché, restaure ses PV à hauteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> des PV max de Bailu + <orangeStrong>{{2}}</orangeStrong>. Cet effet peut se déclencher {{5}} fois.<br>Quand un allié subit un coup fatal, il ne tombe pas à terre, mais Bailu le soigne immédiatement à hauteur de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de ses propres PV max + <orangeStrong>{{4}}</orangeStrong>. Cet effet peut être déclenché 1 fois par combat.",
-        "shortDesc": "Les alliés qui bénéficient de <orangeStrong>Revigoration</orangeStrong> <orangeStrong>regagnent des PV</orangeStrong> après avoir été attaqués.<br>Lorsqu'un allié subit un <orangeStrong>coup fatal</orangeStrong>, Bailu lui <orangeStrong>restaure immédiatement des PV</orangeStrong>. Cet effet ne peut être déclenché qu'1 seule fois par combat.",
+        "fullDesc": "Lorsqu'une cible alliée qui bénéficie de Revigoration est touchée, restaure ses PV à hauteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> des PV max de Bailu + <orangeStrong>{{2}}</orangeStrong>. Cet effet peut se déclencher {{5}} fois.<br>Quand un coéquipier de Bailu subit un coup fatal, il ne tombe pas à terre, mais Bailu le soigne immédiatement à hauteur de <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de ses propres PV max + <orangeStrong>{{4}}</orangeStrong>. Cet effet peut être déclenché 1 fois par combat.",
+        "shortDesc": "Les cibles alliées qui bénéficient de <orangeStrong>Revigoration</orangeStrong> <orangeStrong>regagnent des PV</orangeStrong> après avoir été attaquées.<br>Lorsqu'un coéquipier subit un <orangeStrong>coup fatal</orangeStrong>, Bailu lui <orangeStrong>restaure immédiatement des PV</orangeStrong>. Cet effet ne peut être déclenché qu'1 seule fois par combat.",
         "tag": "Restauration"
       }
     },

@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Subjugar de Joelhos",
-        "fullDesc": "Aumenta em {{1, percent}}% o Dano do ATQ Básico.",
+        "fullDesc": "Aumenta em {{1, percent}}% o Dano causado pelo ATQ Básico.",
         "shortDesc": "",
         "tag": ""
       }

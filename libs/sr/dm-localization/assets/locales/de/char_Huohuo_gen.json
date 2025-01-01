@@ -12,7 +12,7 @@
     "skill": {
       "0": {
         "name": "Talisman: Schutz des Lebens",
-        "fullDesc": "Entfernt {{5}} Debuff(s) von einem Verbündeten und stellt unmittelbar dessen LP in Höhe von <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Huohuos max. LP plus <orangeStrong>{{2}}</orangeStrong> wieder her. Stellt gleichzeitig die LP der angrenzenden Verbündeten des anvisierten Verbündeten in Höhe von <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> von Huohuos max. LP plus <orangeStrong>{{4}}</orangeStrong> wieder her.",
+        "fullDesc": "Entfernt {{5}} Debuff(s) von einem Verbündeten und stellt bei ihm sofort LP in Höhe von <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Huohuos max. LP plus <orangeStrong>{{2}}</orangeStrong> wieder her. Stellt gleichzeitig bei angrenzenden Verbündeten LP in Höhe von <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> von Huohuos max. LP plus <orangeStrong>{{4}}</orangeStrong> wieder her.",
         "shortDesc": "Entfernt 1 Debuff von einem Verbündeten und <orangeStrong>stellt die LP</orangeStrong> dieses Verbündeten und angrenzender Verbündeter wieder her.",
         "tag": "Wiederherstellung"
       }
@@ -77,11 +77,11 @@
   "ranks": {
     "1": {
       "name": "Von Heliobi besessen, vom Bösen ergriffen",
-      "desc": "Die Dauer von „Gesegnete Heilung“, das vom Talent bewirkt wird, wird um {{2}} Runden verlängert. Wenn Huohuo Gesegnete Heilung besitzt, wird die GES aller Verbündeten um {{1, percent}}% erhöht."
+      "desc": "Die Dauer von „Gesegnete Heilung“, das vom Talent bewirkt wird, wird um {{2}} Rd. verlängert. Wenn Huohuo Gesegnete Heilung besitzt, wird die GES aller Verbündeten um {{1, percent}}% erhöht."
     },
     "2": {
       "name": "Im Schweif versiegelt, Geister besiegt",
-      "desc": "Wenn Huohuo „Gesegnete Heilung“ besitzt und ein Verbündeter von einem Todesstoß getroffen wird, wird der Verbündete nicht handlungsunfähig, sondern werden seine LP sofort in Höhe von {{1, percent}}% seiner max. LP wiederhergestellt. Dies reduziert die Dauer von Gesegnete Heilung um 1 Rd. Dieser Effekt kann {{2}}-mal pro Kampf ausgelöst werden."
+      "desc": "Wenn Huohuo „Gesegnete Heilung“ besitzt und ein Verbündeter von einem Todesstoß getroffen wird, wird der Verbündete nicht handlungsunfähig, sondern es werden bei ihm sofort LP in Höhe von {{1, percent}}% seiner max. LP wiederhergestellt. Dies reduziert die Dauer von Gesegnete Heilung um 1 Rd. Dieser Effekt kann {{2}}-mal pro Kampf ausgelöst werden."
     },
     "3": {
       "name": "Verfluchtes Schicksal, wie Motten im Licht",

@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Dance Para Mim",
-        "fullDesc": "Quando o número de inimigos-alvo em campo for 5 (ou mais)/4/3/2/1, o Super Dano de Quebra acionado pelo efeito de Dançarino de Apoio aumenta em {{1, percent}}%/{{2, percent}}%/{{3, percent}}%/{{4, percent}}%/{{5, percent}}%.",
+        "fullDesc": "Quando o número de inimigos-alvo em campo for 5 (ou mais)/4/3/2/1, o Super Dano de Quebra ativado pelo efeito de \"Dançarino de Apoio\" aumenta em {{1, percent}}%/{{2, percent}}%/{{3, percent}}%/{{4, percent}}%/{{5, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Chapéu do Teatro",
-        "fullDesc": "Atrasa adicionalmente a ação do inimigo-alvo em {{1, percent}}% quando aliados causam Quebra de Fraqueza.",
+        "fullDesc": "Após aliados-alvo causarem Quebra de Fraqueza, atrasa adicionalmente a ação do inimigo-alvo em {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }

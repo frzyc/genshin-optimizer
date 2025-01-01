@@ -41,7 +41,7 @@
       "0": {
         "name": "Recogida perfecta",
         "fullDesc": "Cada Ruptura de Debilidad que inflige al objetivo enemigo aumenta el ATQ {F#de la}{M#del} Trazacaminos en un <orangeStrong>{{1, percent}}%</orangeStrong>. Este efecto puede acumularse hasta {{2}} veces.",
-        "shortDesc": "",
+        "shortDesc": "Cada Ruptura de Debilidad que inflige al objetivo enemigo aumenta el ATQ.",
         "tag": "Potenciación"
       }
     },
@@ -49,7 +49,7 @@
       "0": {
         "name": "Tercer golpe inmortal",
         "fullDesc": "Tras usar la técnica, todos los aliados regeneran un {{1, percent}}% de sus respectivos PV máx.",
-        "shortDesc": "",
+        "shortDesc": "Tras usar la técnica, todos los aliados <orangeStrong>regeneran PV</orangeStrong> inmediatamente.",
         "tag": "Regeneración"
       }
     },

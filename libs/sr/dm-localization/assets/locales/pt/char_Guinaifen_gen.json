@@ -37,7 +37,7 @@
       "0": {
         "name": "Demonstração de Habilidades",
         "fullDesc": "Ataca o inimigo imediatamente. Depois de entrar na batalha, causa Dano {{2}} vez(es), causando {{1, percent}}% do ATQ de Guinaifen como Dano de Fogo a um único inimigo-alvo aleatório a cada vez, com uma chance-base de {{3, percent}}% de infligir Beijo de Fogo a ele.",
-        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano de Fogo leve a um único alvo e aplica <orangeStrong>Beijo de Fogo</orangeStrong>, rebatendo um total de 4 vezes.",
+        "shortDesc": "Ataca o inimigo. Depois de entrar em batalha, causa Dano de Fogo leve a um inimigo-alvo com altas chances de aplicar <orangeStrong>\"Beijo de Fogo\"</orangeStrong>, com um total de 4 Rebotes.",
         "tag": ""
       }
     },
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Mastros Altos",
-        "fullDesc": "O ATQ Básico tem {{1, percent}}% de chance-base de infligir Queimadura em um inimigo, equivalente à da Perícia.",
+        "fullDesc": "O ATQ Básico tem {{1, percent}}% de chance-base de infligir \"Queimadura\" em um inimigo, equivalente à da Perícia.",
         "shortDesc": "",
         "tag": ""
       }
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Aros com Lâminas",
-        "fullDesc": "No começo da batalha, a ação de Guinaifen é avançada adiante em {{1, percent}}%.",
+        "fullDesc": "No começo da batalha, a ação de Guinaifen é Avançada Adiante em {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }

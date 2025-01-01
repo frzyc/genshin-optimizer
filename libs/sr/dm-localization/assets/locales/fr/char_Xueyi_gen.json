@@ -77,11 +77,11 @@
   "ranks": {
     "1": {
       "name": "Refoulement psychologique",
-      "desc": "Augmente les DGT infligés par l'attaque de suivi du talent de {{1, percent}}%."
+      "desc": "Augmente les DGT infligés par l'ATQ de suivi du talent de {{1, percent}}%."
     },
     "2": {
       "name": "Perturbation mentale",
-      "desc": "L'attaque de suivi du talent réduit la robustesse de l'ennemi quel que soit son type de faiblesse et Xueyi régénère des PV à hauteur de {{1, percent}}% de ses PV max. Un effet de Rupture quantique se déclenche lorsqu'elle inflige une Rupture de faiblesse."
+      "desc": "L'ATQ de suivi du talent réduit la robustesse de l'ennemi quel que soit son type de faiblesse et Xueyi régénère des PV à hauteur de {{1, percent}}% de ses PV max. Un effet de Rupture quantique se déclenche lorsqu'elle inflige une Rupture de faiblesse."
     },
     "3": {
       "name": "Cessation de la souffrance",

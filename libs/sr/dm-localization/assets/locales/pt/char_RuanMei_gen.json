@@ -28,8 +28,8 @@
     "talent": {
       "0": {
         "name": "Hélice Somatotípica",
-        "fullDesc": "Aumenta a VEL em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> para a equipe (excluindo este personagem). Quando os aliados aplicam Quebra de Fraqueza a um inimigo-alvo, Ruan Mei causa Dano de Quebra a esse inimigo igual a <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> de seu Dano de Quebra de Gelo.",
-        "shortDesc": "Aumenta a <orangeStrong>VEL</orangeStrong> para todos os aliados (com exceção deste personagem). Quebrar a Fraqueza de um inimigo-alvo <orangeStrong>causará adicionalmente Dano de Quebra de Gelo</orangeStrong>.",
+        "fullDesc": "Aumenta a VEL em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> para a equipe (excluindo esta unidade). Quando os aliados aplicam Quebra de Fraqueza a um inimigo-alvo, Ruan Mei causa Dano de Quebra a esse inimigo igual a <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> de seu Dano de Quebra de Gelo.",
+        "shortDesc": "Aumenta a <orangeStrong>VEL</orangeStrong> para todos os aliados (com exceção desta unidade). Quebrar a Fraqueza de um inimigo-alvo <orangeStrong>causará adicionalmente Dano de Quebra de Gelo</orangeStrong>.",
         "tag": "Suporte"
       }
     },
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Passeio Pela Relva",
-      "desc": "Com Ruan Mei no campo, todos os aliados aumentam seus ATQs em {{1, percent}}% ao causar Dano a inimigos com Quebra de Fraqueza."
+      "desc": "Enquanto Ruan Mei está no campo, todos os aliados aumentam seus ATQs em {{1, percent}}% ao causar Dano a inimigos com Quebra de Fraqueza."
     },
     "3": {
       "name": "Pirueta Viridescente",

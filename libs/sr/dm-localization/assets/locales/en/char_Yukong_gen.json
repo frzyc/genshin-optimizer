@@ -29,15 +29,15 @@
       "0": {
         "name": "Seven Layers, One Arrow",
         "fullDesc": "Basic ATK additionally deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Yukong's ATK, and increases the Toughness Reduction of this attack by {{2, percent}}%. This effect can be triggered again after {{3}} turn(s).",
-        "shortDesc": "Basic Attack additionally deals minor DMG, and the Toughness Reduction of this Basic Attack is increased. This effect can be triggered again after 1 turn have passed.",
+        "shortDesc": "Basic Attack additionally deals minor DMG, and the Toughness Reduction of this Basic Attack is increased. This effect can be triggered again after 1 turn has passed.",
         "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Windchaser",
-        "fullDesc": "After using her Technique, Yukong enters Sprint mode for {{1}} seconds. In Sprint mode, her Movement SPD increases by {{2, percent}}%, and Yukong gains {{3}} stack(s) of \"Roaring Bowstrings\" when she enters battle by attacking enemies.",
-        "shortDesc": "<orangeStrong>Increases Movement Speed</orangeStrong>. After attacking an enemy and entering battle, receive 2 stacks of Roaring Bowstrings.",
+        "fullDesc": "After using her Technique, Yukong enters Sprint mode for {{1}} seconds. In Sprint mode, her movement speed increases by {{2, percent}}%, and Yukong gains {{3}} stack(s) of \"Roaring Bowstrings\" when she enters battle by attacking enemies.",
+        "shortDesc": "This unit's <orangeStrong>movement speed increases</orangeStrong>. After attacking an enemy and entering battle, gains 2 stacks of Roaring Bowstrings.",
         "tag": "Enhance"
       }
     },

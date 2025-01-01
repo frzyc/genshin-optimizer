@@ -29,7 +29,7 @@
       "0": {
         "name": "Prana Extirpado",
         "fullDesc": "Invoca o Senhor dos Raios no início da batalha. O Senhor dos Raios tem {{1}} de VEL base e {{4}} Golpes por Ação base. Quando o Senhor dos Raios age, seus golpes são considerados Ataques Extras, com cada golpe do Senhor dos Raios causando Dano de Raio igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Jing Yuan a um único inimigo aleatório, e inimigos adjacentes a ele também recebem Dano de Raio igual a {{5, percent}}% do Dano causado ao inimigo-alvo principal.<br>Os Golpes por Ação do Senhor dos Raios podem atingir o máximo de {{6}}. Toda vez que os Golpes por Ação do Senhor dos Raios aumentam em 1, sua VEL aumenta em {{3}}. Ao fim da ação do Senhor dos Raios, a sua VEL e os Golpes por Ação voltam aos valores-base. <br>Quando Jing Yuan é derrubado, o Senhor dos Raios desaparecerá.<br>Quando Jing Yuan é afetado por penalidades de Controle Negativo, o Senhor dos Raios será incapaz de agir.",
-        "shortDesc": "Invoca o Senhor dos Raios no início da batalha. O Senhor dos Raios <orangeStrong>causa Dano de Raio leve</orangeStrong> <orangeStrong>automaticamente</orangeStrong> a um inimigo aleatório e os inimigos adjacentes a ele.",
+        "shortDesc": "No início da batalha, invoca o \"Senhor dos Raios\". Quando o \"Senhor dos Raios\" age, realiza Ataques Extra para <orangeStrong>automaticamente</orangeStrong> <orangeStrong>causar Dano de Raio leve</orangeStrong> a uma unidade inimiga aleatória e aos alvos adjacentes.",
         "tag": "Rebote"
       }
     },

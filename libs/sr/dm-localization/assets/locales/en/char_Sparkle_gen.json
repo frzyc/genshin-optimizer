@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Narrative Polysemy",
-      "desc": "The CRIT DMG Boost effect provided by the Skill additionally increases by an amount equal to {{1, percent}}% of Sparkle's CRIT DMG. When Sparkle uses Skill, her Skill's CRIT DMG Boost effect will apply to all allies with Cipher. When Sparkle uses her Ultimate, any single ally who benefits from her Skill's CRIT DMG Boost will spread that effect to allies with Cipher."
+      "desc": "The CRIT DMG Boost effect provided by the Skill additionally increases by an amount equal to {{1, percent}}% of Sparkle's CRIT DMG. When Sparkle uses Skill, her Skill's CRIT DMG Boost effect will apply to all teammates with Cipher. When Sparkle uses her Ultimate, any single ally who benefits from her Skill's CRIT DMG Boost will spread that effect to teammates with Cipher."
     }
   }
 }

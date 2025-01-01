@@ -29,7 +29,7 @@
       "0": {
         "name": "Esperando Resposta do Sistema...",
         "fullDesc": "Loba Prateada pode criar três tipos de Erros: reduzir em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> o ATQ, reduzir em <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> a DEF e reduzir em <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> a VEL.<br>Sempre que Loba Prateada ataca, ela tem uma chance-base de <orangeStrong>{{4, percent}}%</orangeStrong> de implantar a um inimigo-alvo um Erro aleatório que dura {{5}} rodada(s).",
-        "shortDesc": "Após cada ataque, existe a chance de infligir 1 <orangeStrong>Erro</orangeStrong> aleatório no inimigo atacado.",
+        "shortDesc": "Após esta unidade atacar, existe a chance de infligir 1 <orangeStrong>Erro</orangeStrong> aleatório no inimigo atacado.",
         "tag": "Incapacitação"
       }
     },
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Geração",
-        "fullDesc": "A duração do Erro é estendida por {{1}} rodada(s). Sempre que um inimigo é afligido com Quebra de Fraqueza, Loba Prateada tem {{2, percent}}% de chance-base de implantar um Erro aleatório ao inimigo.",
+        "fullDesc": "A duração do \"Erro\" é estendida por {{1}} rodada(s). Sempre que um inimigo é afligido com Quebra de Fraqueza, Loba Prateada tem {{2, percent}}% de chance-base de implantar um \"Erro\" aleatório ao inimigo.",
         "shortDesc": "",
         "tag": ""
       }
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Rede Sobreposta",
-      "desc": "Para cada penalidade do inimigo-alvo, o Dano causado pela Loba Prateada aumenta em {{1, percent}}%, até um limite de {{2, percent}}%."
+      "desc": "Para cada penalidade no inimigo-alvo, o Dano causado pela Loba Prateada aumenta em {{1, percent}}%, até um limite de {{2, percent}}%."
     }
   }
 }

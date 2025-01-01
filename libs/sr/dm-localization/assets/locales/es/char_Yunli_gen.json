@@ -13,7 +13,7 @@
       "0": {
         "name": "Mandoble sísmico",
         "fullDesc": "Yunli regenera una cantidad de PV equivalente al <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de su ATQ + <orangeStrong>{{4}}</orangeStrong> e inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Físico a un enemigo y un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño Físico a los enemigos adyacentes.",
-        "shortDesc": "Regenera sus propios PV e inflige una pequeña cantidad de Daño Físico a un enemigo y a los enemigos adyacentes.",
+        "shortDesc": "Regenera sus propios PV e inflige Daño Físico a un enemigo y una pequeña cantidad de Daño Físico a los objetivos adyacentes.",
         "tag": "Ráfaga"
       }
     },
@@ -29,7 +29,7 @@
       "0": {
         "name": "Forja fulgurante",
         "fullDesc": "Cuando Yunli recibe un ataque enemigo, recupera {{3}} pts. de energía adicionales y lanza inmediatamente un contraataque contra dicho enemigo y le inflige un <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ como Daño Físico. También inflige un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño Físico a los enemigos adyacentes.<br>Si no existe el objetivo del contraataque, contraataca a un objetivo enemigo al azar.",
-        "shortDesc": "Cuando Yunli recibe un ataque enemigo, recupera energía adicional y lanza inmediatamente un contraataque contra dicho enemigo y los objetivos adyacentes.",
+        "shortDesc": "Cuando Yunli recibe un ataque enemigo, recupera pts. de energía adicionales y lanza inmediatamente un contraataque que inflige Daño Físico al atacante y una pequeña cantidad de Daño Físico a los objetivos adyacentes.",
         "tag": "Ráfaga"
       }
     },
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Primer lustre al romper el alba",
-      "desc": "Cuando inflige daño con un contraataque, ignora un {{1, percent}}% de la DEF del objetivo."
+      "desc": "Cuando inflige daño con un contraataque, ignora un {{1, percent}}% de la DEF del enemigo."
     },
     "3": {
       "name": "Diez palmos de maestría",

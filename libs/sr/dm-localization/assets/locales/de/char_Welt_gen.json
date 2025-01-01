@@ -14,7 +14,7 @@
         "name": "Rand der Leere",
         "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Welts ANG zu und verursacht 2-mal zusätzlichen SCH. Jeder zusätzlicher Treffer fügt zufälligen Gegnern imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Welts ANG zu. Jeder Treffer hat eine Grundchance von <orangeStrong>{{2, percent}}%</orangeStrong>, die GES des Ziels für {{4}} Rd. um {{3, percent}}% zu verringern.",
         "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu. Dieser Angriff kann 3-mal abprallen und hat eine Chance, betroffene Ziele zu <orangeStrong>verlangsamen</orangeStrong>.",
-        "tag": "Abprallung"
+        "tag": "Abpraller"
       }
     },
     "ult": {
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Nachlass der Ehre",
-      "desc": "Nach dem Einsatz des Ultimates wird Welt verstärkt. Die nächsten {{3}} Einsätze seines Standardangriffs oder seiner Fertigkeit fügen dem Gegner 1-mal zusätzlichen SCH in Höhe von {{1, percent}}% seines Multiplikators von Standardangriff-SCH bzw. {{2, percent}}% des SCH-Multiplikators seiner Fertigkeit zu."
+      "desc": "Nach dem Einsatz des Ultimates wird Welt verstärkt. Die nächsten {{3}} Einsätze seines Standardangriffs oder seiner Fertigkeit fügen dem Gegner 1-mal zusätzlichen SCH in Höhe von {{1, percent}}% des SCH-Multiplikators seines Standardangriffs bzw. {{2, percent}}% des SCH-Multiplikators seiner Fertigkeit zu."
     },
     "2": {
       "name": "Sternenzufluss",

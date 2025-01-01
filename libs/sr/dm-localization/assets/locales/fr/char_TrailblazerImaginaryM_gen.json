@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Chapeau bas",
-        "fullDesc": "Lorsqu'un allié inflige une Rupture de faiblesse à un ennemi, retarde l'action de la cible ennemie de {{1, percent}}% supplémentaires.",
+        "fullDesc": "Lorsqu'une cible alliée inflige une Rupture de faiblesse, l'action de la cible ennemie est retardée de {{1, percent}}% supplémentaires.",
         "shortDesc": "",
         "tag": ""
       }

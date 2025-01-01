@@ -14,7 +14,7 @@
         "name": "Regen im Intermezzo",
         "fullDesc": "Fügt einem anvisierten Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG {F#der Trailblazerin}{M#des Trailblazers} zu. Verursacht zusätzlich 4-mal SCH, der jedes Mal einem zufälligen Gegner imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> des ANG {F#der Trailblazerin}{M#des Trailblazers} zufügt.",
         "shortDesc": "Fügt einem Gegner geringen imaginären SCH zu und prallt insgesamt 5-mal ab.",
-        "tag": "Abprallung"
+        "tag": "Abpraller"
       }
     },
     "ult": {
@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Jetzt! Solo-Truppe!",
-        "fullDesc": "Erhöht nach dem Einsatz der Technik den Brucheffekt aller Verbündeten zu Beginn des nächsten Kampfs für {{2}} Rd. um {{1, percent}}%.",
+        "fullDesc": "Erhöht nach dem Einsatz der Technik den Brucheffekt aller Verbündeten zu Beginn des nächsten Kampfes für {{2}} Rd. um {{1, percent}}%.",
         "shortDesc": "Erhöht zu Beginn des nächsten Kampfs den Brucheffekt aller Verbündeten.",
         "tag": "Unterstützung"
       }

@@ -101,7 +101,7 @@
   "ranks": {
     "1": {
       "name": "Révélation des sommets silencieux",
-      "desc": "Augmente les chances de coup critique du personnage contre les ennemis avec des malus de {{1, percent}}%."
+      "desc": "Augmente les chances de coup critique de {{1, percent}}% lors de l'application de DGT à des ennemis affectés par des malus."
     },
     "2": {
       "name": "Calme après la tempête",

@@ -29,7 +29,7 @@
       "0": {
         "name": "Mejor lo hago yo",
         "fullDesc": "Cuando el ataque de un aliado reduce el porcentaje de PV del objetivo al {{1, percent}}% o menos, Herta lanza un ataque adicional que inflige un <orangeStrong>{{2, percent}}%</orangeStrong> de su ATQ como Daño de Hielo a todos los enemigos.",
-        "shortDesc": "",
+        "shortDesc": "Cuando el ataque de cualquier objetivo aliado reduce el porcentaje de PV actual de un enemigo al <orangeStrong>{{1, percent}}%</orangeStrong> o menos, Herta lanza inmediatamente un <orangeStrong>ataque adicional</orangeStrong> que inflige una pequeña cantidad de Daño de Hielo a todos los enemigos.",
         "tag": "ATQ AdE"
       }
     },
@@ -37,7 +37,7 @@
       "0": {
         "name": "Todavía se puede optimizar",
         "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla, el ATQ de Herta aumenta en un {{1, percent}}% durante {{2}} turnos.",
-        "shortDesc": "",
+        "shortDesc": "Tras usar la técnica, su ATQ aumenta en la siguiente batalla.",
         "tag": "Potenciación"
       }
     },

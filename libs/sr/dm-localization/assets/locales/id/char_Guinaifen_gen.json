@@ -20,7 +20,7 @@
     "ult": {
       "0": {
         "name": "Watch This Showstopper",
-        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> ATK Guinaifen pada seluruh musuh. Jika target berstatus Burn, maka status Burn tersebut akan segera mengakibatkan DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> DMG awal.",
+        "fullDesc": "Mengakibatkan Fire DMG sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> ATK Guinaifen pada seluruh musuh. Jika target berstatus Burn, maka status Burn tersebut akan segera mengakibatkan DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> dari DMG aslinya.",
         "shortDesc": "Mengakibatkan Fire DMG dalam jumlah kecil pada seluruh musuh.<br>Jika target musuh berstatus Burn, maka status Burn tersebut akan mengakibatkan 1 kali DMG tambahan.",
         "tag": "AoE"
       }
@@ -37,7 +37,7 @@
       "0": {
         "name": "Skill Showcase",
         "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan {{2}} kali DMG yang masing-masing mengakibatkan Fire DMG sebesar {{1, percent}}% ATK Guinaifen pada musuh secara acak, serta memiliki {{3, percent}}% Peluang Dasar untuk membuat target memasuki status \"Firekiss\".",
-        "shortDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh, dan memberikan <orangeStrong>status \"Firekiss\"</orangeStrong>. Total Bounce 4 kali.",
+        "shortDesc": "Setelah menyerang musuh dan memasuki pertempuran, mengakibatkan Fire DMG dalam jumlah kecil pada 1 musuh, dan berpeluang besar memberikan <orangeStrong>status \"Firekiss\"</orangeStrong>. Total Bounce 4 kali.",
         "tag": ""
       }
     },
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Slurping Noodles During Handstand",
-      "desc": "Saat melancarkan Skill, memiliki {{1, percent}}% peluang dasar untuk mengurangi {{2, percent}}% Effect RES target musuh yang terkena serangan selama {{3}} giliran."
+      "desc": "Saat melancarkan Skill, memiliki {{1, percent}}% peluang dasar untuk mengurangi {{2, percent}}% Effect RES target musuh yang terkena serangan, berlangsung selama {{3}} giliran."
     },
     "2": {
       "name": "Brushing Teeth While Whistling",

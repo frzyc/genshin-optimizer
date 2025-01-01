@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Purify",
-        "fullDesc": "Saat melancarkan Skill, akan menghilangkan 1 Debuff dari rekan tim yang ditargetkan.",
+        "fullDesc": "Saat melancarkan Skill, akan menghilangkan 1 efek Debuff dari rekan tim yang ditargetkan.",
         "shortDesc": "",
         "tag": ""
       }

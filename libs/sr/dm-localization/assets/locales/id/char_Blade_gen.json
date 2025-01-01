@@ -35,7 +35,7 @@
       "0": {
         "name": "Shuhu's Gift",
         "fullDesc": "Saat Blade terkena serangan atau mengonsumsi HP-nya, dia akan mendapatkan 1 lapis Charge, maksimal 5 lapis. Setiap kali Blade terkena serangan, Blade hanya bisa mendapatkan 1 lapis Charge efek ini.<br>Setelah jumlah Charge mencapai batas maksimal, Blade akan segera melancarkan 1 kali Serangan Lanjutan yang mengakibatkan Wind DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Blade + <orangeStrong>{{4, percent}}%</orangeStrong> Max HP Blade pada seluruh musuh. Di saat yang bersamaan, akan memulihkan HP Blade sebesar {{3, percent}}% Max HP-nya. Setelah Serangan Lanjutan ini dilancarkan, semua lapisan Charge akan dihapus.",
-        "shortDesc": "Saat HP Blade berkurang, Blade akan memperoleh 1 lapis Charge. Saat Charge ditumpuk hingga batas maksimum, Blade akan <orangeStrong>segera mengakibatkan Wind DMG pada seluruh musuh</orangeStrong> dan memulihkan HP, kemudian mengonsumsi seluruh Charge.",
+        "shortDesc": "Saat HP Blade berkurang, akan memperoleh 1 lapis Charge. Saat Charge mencapai batas maksimal, akan melancarkan Serangan Lanjutan yang <orangeStrong>mengakibatkan Wind DMG pada seluruh musuh</orangeStrong>, memulihkan HP, dan mengonsumsi semua Charge.",
         "tag": "AoE"
       }
     },
@@ -66,7 +66,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Neverending Deaths",
-        "fullDesc": "Setelah melancarkan \"Forest of Sword\", jika serangan mengenai target musuh yang berstatus Weakness Break, maka Blade akan memulihkan HP-nya sebesar {{1, percent}}% Max HP dirinya + {{2}}.",
+        "fullDesc": "Setelah melancarkan \"Forest of Swords\", jika serangan mengenai target musuh yang berstatus Weakness Break, maka Blade akan memulihkan HP-nya sebesar {{1, percent}}% Max HP dirinya + {{2}}.",
         "shortDesc": "",
         "tag": ""
       }

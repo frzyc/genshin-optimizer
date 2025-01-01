@@ -29,7 +29,7 @@
       "0": {
         "name": "還是我來吧",
         "fullDesc": "當任意我方目標的攻擊使敵方目標的現有生命值百分比小於等於{{1, percent}}%時，黑塔發動追加攻擊，對敵方全體造成等同於黑塔<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的冰屬性傷害。",
-        "shortDesc": "",
+        "shortDesc": "當任意我方目標的攻擊使敵方目標的現有生命值百分比小於等於<orangeStrong>{{1, percent}}%</orangeStrong>時，黑塔立即發動<orangeStrong>追加攻擊</orangeStrong>，對敵方全體造成少量冰屬性傷害。",
         "tag": "群體攻擊"
       }
     },
@@ -37,7 +37,7 @@
       "0": {
         "name": "可以改良一下",
         "fullDesc": "使用秘技後，下一次戰鬥開始時黑塔攻擊力提高{{1, percent}}%，持續{{2}}回合。",
-        "shortDesc": "",
+        "shortDesc": "使用秘技，下一次戰鬥開始時使自身攻擊力提高。",
         "tag": "強化"
       }
     },

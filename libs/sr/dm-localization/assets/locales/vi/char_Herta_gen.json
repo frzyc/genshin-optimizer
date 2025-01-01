@@ -29,7 +29,7 @@
       "0": {
         "name": "Để Tôi!",
         "fullDesc": "Khi đòn tấn công của mục tiêu bất kỳ phe ta khiến phần trăm HP hiện tại của kẻ địch nhỏ hơn hoặc bằng {{1, percent}}%, thì Herta sẽ phát động Đòn Đánh Theo Sau, gây cho toàn phe địch Sát Thương Băng bằng <orangeStrong>{{2, percent}}%</orangeStrong> Tấn Công của Herta.",
-        "shortDesc": "",
+        "shortDesc": "Khi đòn tấn công của mục tiêu bất kỳ phe ta khiến phần trăm HP hiện tại của mục tiêu phe địch nhỏ hơn hoặc bằng <orangeStrong>{{1, percent}}%</orangeStrong>, Herta sẽ lập tức phát động <orangeStrong>Đòn Đánh Theo Sau</orangeStrong>, gây lượng nhỏ Sát Thương Băng cho toàn thể phe địch.",
         "tag": "Đánh Lan"
       }
     },
@@ -37,7 +37,7 @@
       "0": {
         "name": "Có Thể Ưu Hóa",
         "fullDesc": "Sau khi dùng Bí Kỹ, Tấn Công của Herta khi bắt đầu lần chiến đấu tiếp theo tăng {{1, percent}}%, duy trì {{2}} hiệp.",
-        "shortDesc": "",
+        "shortDesc": "Sau khi dùng Bí Kỹ, khi bắt đầu lần chiến đấu tiếp theo, sẽ tăng Tấn Công của bản thân.",
         "tag": "Cường Hóa"
       }
     },
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Con Rối",
-        "fullDesc": "Tăng {{1, percent}}% tỷ lệ Kháng Hiệu Ứng Xấu dạng Khống Chế.",
+        "fullDesc": "Tăng {{1, percent}}% xác suất Kháng Hiệu Ứng Xấu dạng Khống Chế.",
         "shortDesc": "",
         "tag": ""
       }
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Thiên Thạch Rơi Xuống Giếng",
-      "desc": "Khi thi triển tấn công thường, nếu Phần Trăm HP của 1 kẻ địch chỉ định nhỏ hơn hoặc bằng {{1, percent}}%, sẽ gây thêm Sát Thương Băng kèm theo bằng {{2, percent}}% Tấn Công của Herta."
+      "desc": "Khi thi triển tấn công thường, nếu Phần Trăm HP của 1 kẻ địch chỉ định nhỏ hơn hoặc bằng {{1, percent}}%, sẽ gây thêm Sát Thương Kèm Theo thuộc tính Băng bằng {{2, percent}}% Tấn Công của Herta."
     },
     "2": {
       "name": "Chiến Thắng Và Truy Kích",

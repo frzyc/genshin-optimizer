@@ -43,7 +43,7 @@
       "0": {
         "name": "Ack! Look at This Mess!",
         "fullDesc": "Segera menyerang musuh. Setelah memasuki pertempuran, mengakibatkan Fire DMG sebesar {{4, percent}}% ATK Hook pada musuh secara acak. Di saat yang bersamaan, setiap target memiliki {{1, percent}}% peluang dasar untuk memasuki status Burn selama {{3}} giliran.<br>Target musuh dengan status Burn akan menerima Fire DoT sebesar {{2, percent}}% ATK Hook setiap kali gilirannya dimulai.",
-        "shortDesc": "Menyerang musuh dan mengakibatkan Fire DMG pada musuh secara acak, dan berpeluang besar untuk membuat setiap target musuh memasuki status Burn.",
+        "shortDesc": "Menyerang musuh dan mengakibatkan Fire DMG dalam jumlah kecil pada musuh acak, serta berpeluang besar untuk membuat setiap target musuh memasuki status Burn.",
         "tag": ""
       }
     },

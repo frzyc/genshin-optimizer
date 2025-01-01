@@ -29,7 +29,7 @@
       "0": {
         "name": "Scharfer Gefährte",
         "fullDesc": "Ist „Empathische Schwertverbindung“ aktiv, sinkt die Chance, dass Yanqing angegriffen wird. Außerdem wird seine KRIT-Rate um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> und sein KRIT-SCH um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht. Beim Angriff besteht eine feste Chance von <orangeStrong>{{3, percent}}%</orangeStrong>, einen Folgeangriff auszuführen, der dem Ziel Eis-SCH in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von Yanqings ANG zufügt und mit einer Grundchance von {{6, percent}}% für 1 Rd. Gefroren verursacht.<br>Der eingefrorene Gegner ist handlungsunfähig und erleidet zu Beginn jeder Runde zusätzlichen Eis-SCH in Höhe von <orangeStrong>{{5, percent}}%</orangeStrong> von Yanqings ANG. <br>Wenn Yanqing SCH erleidet, verschwindet die „Empathische Schwertverbindung“.",
-        "shortDesc": "Verringert <orangeStrong>während „Empathische Schwertverbindung“</orangeStrong> die Chance, angegriffen zu werden und <orangeStrong>erhöht die KRIT-Rate und den KRIT-SCH</orangeStrong> der Figur. <orangeStrong>Nach einem Angriff</orangeStrong> auf einen Gegner kann die Figur einen Folgeangriff auslösen, der Eis-SCH verursacht und die Chance hat, den Gegner einzufrieren. <br>„Empathische Schwertverbindung“ wird entfernt, sobald diese Figur Schaden erleidet.",
+        "shortDesc": "Verringert <orangeStrong>während „Empathische Schwertverbindung“</orangeStrong> die Chance, angegriffen zu werden und <orangeStrong>erhöht die KRIT-Rate und den KRIT-SCH</orangeStrong> der Figur. <orangeStrong>Nach einem Angriff</orangeStrong> auf einen Gegner kann die Figur einen Folgeangriff auslösen, der Eis-SCH verursacht und die Chance hat, den Gegner einzufrieren. <br>Empathische Schwertverbindung wird entfernt, sobald diese Figur Schaden erleidet.",
         "tag": "Einzelangriff"
       }
     },
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Gefrorener Segen",
-        "fullDesc": "Der Angriff fügt Gegnern mit Eis-Schwäche zusätzlich Eis-SCH in Höhe von {{1, percent}}% von Yanqings ANG zu.",
+        "fullDesc": "Nach einem Angriff wird Gegnern mit Eis-Schwäche zusätzlicher Eis-SCH in Höhe von {{1, percent}}% von Yanqings ANG zugefügt.",
         "shortDesc": "",
         "tag": ""
       }
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Saubere Klinge",
-      "desc": "Greift Yanqing gefrorene Gegner an, fügt er ihnen zusätzlichen Eis-SCH in Höhe von {{1, percent}}% seines ANG zu."
+      "desc": "Greift Yanqing gefrorene Gegner an, fügt er ihnen sofort zusätzlichen Eis-SCH in Höhe von {{1, percent}}% seines ANG zu."
     },
     "2": {
       "name": "Leere des Geistes",
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Reifspieß",
-      "desc": "Liegt der LP-Prozentsatz bei {{1, percent}}% oder höher, wird die Eis-WDS-DUR um {{2, percent}}% erhöht."
+      "desc": "Liegt der LP-Prozentsatz bei {{1, percent}}% oder höher, wird die Eis-WDS-DUR dieser Einheit um {{2, percent}}% erhöht."
     },
     "5": {
       "name": "Zum Kämpfen geboren",
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Leichtigkeit",
-      "desc": "Hat Yanqing beim Besiegen eines Gegners aktive Buffs von „Empathische Schwertverbindung“ oder vom Ultimate, wird die Dauer der Buffs um 1 Rd. verlängert."
+      "desc": "Hat Yanqing beim Besiegen eines Gegners aktive Buffs von „Empathische Schwertverbindung“ oder vom Ultimate, wird die Dauer dieser Buffs um 1 Rd. verlängert."
     }
   }
 }

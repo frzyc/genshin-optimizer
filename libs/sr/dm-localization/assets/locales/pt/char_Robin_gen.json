@@ -20,7 +20,7 @@
     "ult": {
       "0": {
         "name": "Vox Harmonique, Opus Cosmique",
-        "fullDesc": "Robin entra no estado de Concerto e faz com que todos os outros aliados ajam imediatamente.<br>Enquanto estiver no estado de Concerto, aumenta o ATQ de todos os aliados em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> do ATQ de Robin + <orangeStrong>{{3}}</orangeStrong>. Além disso, após cada ataque dos aliados, Robin causa Dano Físico Adicional igual a <orangeStrong>{{4, percent}}%</orangeStrong> do seu ATQ uma vez. A Chance de CRIT para este dano é fixada em {{5, percent}}% e o Dano CRIT é fixado em {{6, percent}}%.<br>Quando no estado de Concerto, Robin é imune a penalidades de Controle Negativo e não pode entrar em sua rodada ou agir.<br>Uma contagem regressiva de Concerto aparece na barra de Ordem de Ação. Quando a rodada da contagem regressiva começa, Robin sai do estado de Concerto e age imediatamente. A contagem regressiva tem sua própria VEL fixa de {{2}}.",
+        "fullDesc": "Robin entra no estado de Concerto e faz com que todos os outros aliados (excluindo esta unidade) ajam imediatamente.<br>Enquanto estiver no estado de Concerto, aumenta o ATQ de todos os aliados em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> do ATQ de Robin + <orangeStrong>{{3}}</orangeStrong>. Além disso, após cada ataque dos aliados-alvo, Robin causa Dano Físico Adicional igual a <orangeStrong>{{4, percent}}%</orangeStrong> do seu ATQ uma vez. A Chance de CRIT para este dano é fixada em {{5, percent}}% e o Dano CRIT é fixado em {{6, percent}}%.<br>Quando no estado de Concerto, Robin é imune a penalidades de Controle Negativo e não pode entrar em sua rodada ou agir.<br>Uma contagem regressiva de Concerto aparece na barra de Ordem de Ação. Quando a rodada da contagem regressiva começa, Robin sai do estado de Concerto e age imediatamente. A contagem regressiva tem sua própria VEL fixa de {{2}}.",
         "shortDesc": "Entra no estado de Concerto, <orangeStrong>aumenta o ATQ de todos os aliados</orangeStrong> e faz com que todos os companheiros de equipe ajam imediatamente. Depois de um ataque, Robin causa <orangeStrong>Dano Físico Adicional</orangeStrong>. Enquanto Concerto dura, Robin é imune a penalidades de Controle Negativo. Antes de Concerto terminar, Robin não pode agir nem iniciar sua rodada até o final da contagem regressiva.",
         "tag": "Suporte"
       }
@@ -29,7 +29,7 @@
       "0": {
         "name": "Ressonância Tonal",
         "fullDesc": "Aumenta o Dano CRIT de todos os aliados em <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Além disso, depois que aliados atacam inimigos-alvo, Robin regenera adicionalmente {{2}} de Energia para si.",
-        "shortDesc": "Aumenta o <orangeStrong>Dano CRIT</orangeStrong> de todos os aliados e Robin regenera adicionalmente Energia após aliados atacarem inimigos.",
+        "shortDesc": "Aumenta o <orangeStrong>Dano CRIT</orangeStrong> de todos os aliados. Após um aliado atacar o inimigo, Robin regenera adicionalmente Energia.",
         "tag": "Suporte"
       }
     },
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Cadência Coloratura",
-        "fullDesc": "Quando a batalha começa, a ação desse personagem é Avançada Adiante em {{1, percent}}%.",
+        "fullDesc": "No começo da batalha, a ação deste personagem é Avançada Adiante em {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Floreio Improvisado",
-        "fullDesc": "Enquanto estiver no estado de Concerto, o Dano CRIT causado por todos os aliados ao realizar Ataques Extras aumenta em {{1, percent}}%.",
+        "fullDesc": "Enquanto estiver no estado de \"Concerto\", o Dano CRIT causado por todos os aliados ao realizar Ataques Extras aumenta em {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Terra dos Sorrisos",
-      "desc": "Enquanto estiverem no estado de Concerto, a PEN de RES a Todos os Tipos de todos os aliados aumenta em {{1, percent}}%."
+      "desc": "Enquanto estiverem no estado de \"Concerto\", a PEN de RES a Todos os Tipos de todos os aliados aumenta em {{1, percent}}%."
     },
     "2": {
       "name": "Chá da Tarde para Dois",
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Chave da Chuva",
-      "desc": "Ao usar sua Perícia Suprema, remove penalidades de Controle Negativo de todos os aliados. Enquanto Robin estiver no estado de Concerto, aumenta a RES a Efeito de todos os aliados em {{1, percent}}%."
+      "desc": "Ao usar sua Perícia Suprema, remove penalidades de Controle Negativo de todos os aliados. Enquanto Robin estiver no estado de \"Concerto\", aumenta a RES a Efeito de todos os aliados em {{1, percent}}%."
     },
     "5": {
       "name": "Lamento da Estrela Solitária",
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Meia-Noite Sem Lua",
-      "desc": "Enquanto o estado de Concerto estiver ativo, o Dano CRIT do Dano Físico Adicional causado pela Perícia Suprema aumenta em {{2, percent}}%. O efeito da Meia-Noite Sem Lua pode ser acionado até {{1}} vez(es). A contagem de ativação reinicia cada vez que a Perícia Suprema é usada."
+      "desc": "Enquanto o estado de \"Concerto\" estiver ativo, o Dano CRIT do Dano Físico Adicional causado pela Perícia Suprema aumenta em {{2, percent}}%. O efeito da \"Meia-Noite Sem Lua\" pode ser ativado até {{1}} vez(es). A contagem de ativação reinicia cada vez que a Perícia Suprema é usada."
     }
   }
 }

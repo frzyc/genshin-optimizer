@@ -2,6 +2,6 @@
   "name": "Morte Mútua",
   "passive": {
     "name": "Legião",
-    "description": "Se o PV atual do usuário for inferior a {{1, percent}}%, Chance de CRIT aumenta em <orangeStrong>{{2, percent}}%</orangeStrong>."
+    "description": "Se a porcentagem dos PV atuais do usuário for inferior a {{1, percent}}%, Chance de CRIT aumenta em <orangeStrong>{{2, percent}}%</orangeStrong>."
   }
 }

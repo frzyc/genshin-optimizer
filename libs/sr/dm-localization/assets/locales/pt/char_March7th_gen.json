@@ -20,8 +20,8 @@
     "ult": {
       "0": {
         "name": "Cascata Glacial",
-        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de 7 de Março a todos os inimigos. Ao serem atingidos, os inimigos têm {{2, percent}}% de chance-base de sofrer Congelamento por {{3}} rodada(s).<br>Durante o Congelamento, os inimigos não podem agir e recebem Dano de Gelo Adicional igual a <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de 7 de Março no início de cada rodada.",
-        "shortDesc": "Causa Dano de Gelo a <orangeStrong>todos os inimigos</orangeStrong>, com <orangeStrong>uma chance de aplicar o efeito de Congelamento</orangeStrong>",
+        "fullDesc": "Causa Dano de Gelo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de 7 de Março a todos os inimigos. Ao serem atingidos, os inimigos têm uma chance-base de {{2, percent}}% de sofrer Congelamento por {{3}} rodada(s).<br>Durante o Congelamento, os inimigos não podem agir e recebem Dano de Gelo Adicional igual a <orangeStrong>{{4, percent}}%</orangeStrong> do ATQ de 7 de Março no início de cada rodada.",
+        "shortDesc": "Causa Dano de Gelo a <orangeStrong>todos os inimigos</orangeStrong>, com <orangeStrong>uma chance de aplicar o efeito de Congelamento</orangeStrong> a eles.",
         "tag": "Área"
       }
     },
@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Feitiço de Gelo",
-        "fullDesc": "Aumenta em {{1, percent}}% a chance-base da Perícia Suprema causar Congelamento a inimigos.",
+        "fullDesc": "Ao usar a Perícia Suprema, aumenta a chance-base de causar \"Congelamento\" nos inimigos em {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Nunca se Renda de Novo",
-      "desc": "O efeito Contra-Ataque do Talento pode ser ativado 1 vez mais em cada rodada. O Dano causado por Contra-Ataques aumenta em {{1, percent}}% da DEF de 7 de Março."
+      "desc": "O efeito de Contra-Ataque do Talento pode ser ativado mais 1 vez em cada rodada. O Dano causado por Contra-Ataques aumenta em {{1, percent}}% da DEF de 7 de Março."
     },
     "5": {
       "name": "Nunca se Esqueça de Novo",

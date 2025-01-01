@@ -4,13 +4,13 @@
     "basic": {
       "0": {
         "name": "My Sword Zaps Demons",
-        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of March 7th's ATK to a single enemy and gains {{2}} point(s) of Charge.",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of March 7th's ATK to a single target enemy and gains {{2}} point(s) of Charge.",
         "shortDesc": "Deals minor Imaginary DMG to a single enemy and gains <orangeStrong>{{2}}</orangeStrong> point(s) of Charge.",
         "tag": "Single Target"
       },
       "1": {
         "name": "Brows Be Smitten, Heart Be Bitten",
-        "fullDesc": "Initially, deals {{4}} hits, each causing Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of March 7th's ATK to a single target enemy. After dealing the final hit, there is a {{2, percent}}% fixed chance to deal 1 extra hit, up to a max of {{3}} extra hit(s). Energy regenerated from using Enhanced Basic ATK does not increase with the number of hits.<br>Enhanced Basic ATK cannot recover Skill Points.",
+        "fullDesc": "Initially, deals {{4}} hits, each causing Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of March 7th's ATK to a single target enemy. Whenever dealing the final hit, there is a {{2, percent}}% fixed chance to deal 1 additional hit of DMG, up to a max of {{3}} additional hit(s). Energy regenerated from using Enhanced Basic ATK does not increase with the number of hits.<br>Enhanced Basic ATK cannot recover Skill Points.",
         "shortDesc": "Deals Imaginary DMG to a single enemy, dealing <orangeStrong>{{4}}</orangeStrong> hits initially. <orangeStrong>There is a chance to additionally deal up to <unbreak>{{3}}[i]</orangeStrong> hit(s)</color>.",
         "tag": "Single Target"
       }
@@ -18,8 +18,8 @@
     "skill": {
       "0": {
         "name": "Master, It's Tea Time!",
-        "fullDesc": "Designates a single ally (excluding this unit) as Shifu and increases Shifu's SPD by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Only the most recent target of March 7th's Skill is considered as Shifu.<br><br>When using Basic ATK or dealing 1 hit of Enhanced Basic ATK's DMG, triggers the corresponding effect based on the specific Path of Shifu:<br><br>Erudition, Destruction, The Hunt: Deals Additional DMG (DMG Type based on Shifu's Combat Type) equal to <orangeStrong>{{2, percent}}%</orangeStrong> of March 7th's ATK.<br>Harmony, Nihility, Preservation, Abundance: Increases the Toughness Reduction of this instance of DMG by {{3, percent}}%.",
-        "shortDesc": "Makes a single ally become Shifu. When using Basic ATK or dealing Enhanced Basic ATK's DMG, triggers the corresponding effect based on <orangeStrong>the Shifu's Path</orangeStrong>:<br><br>Erudition, Destruction, The Hunt: Deals <orangeStrong>Additional DMG</orangeStrong> based on Shifu's Type.<br>Harmony, Nihility, Preservation, Abundance: <orangeStrong>Toughness Reduction</orangeStrong> increases.",
+        "fullDesc": "Designates a single ally (excluding this unit) as Shifu and increases Shifu's SPD by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Only the most recent target of March 7th's Skill is considered as Shifu.<br><br><br>Whenever using Basic ATK or dealing 1 hit of Enhanced Basic ATK's DMG, triggers the corresponding effect if Shifu with the specified Path is present on the field:<br><br>Erudition, Destruction, The Hunt: Deals Additional DMG (DMG Type based on Shifu's Combat Type) equal to <orangeStrong>{{2, percent}}%</orangeStrong> of March 7th's ATK.<br><br>Harmony, Nihility, Preservation, Abundance: Increases the Toughness Reduction of this instance of DMG by {{3, percent}}%.",
+        "shortDesc": "Makes a single ally become Shifu. When using Basic ATK or dealing Enhanced Basic ATK's DMG, triggers the corresponding effect based on <orangeStrong>the Shifu's Path</orangeStrong>:<br>Erudition, Destruction, The Hunt: Deals <orangeStrong>Additional DMG</orangeStrong> based on Shifu's Type.<br>Harmony, Nihility, Preservation, Abundance: <orangeStrong>Toughness Reduction</orangeStrong> increases.",
         "tag": "Support"
       }
     },
@@ -35,15 +35,15 @@
       "0": {
         "name": "Master, I've Ascended!",
         "fullDesc": "After Shifu uses an attack or Ultimate, March 7th gains up to 1 point of Charge each time.<br>Upon reaching {{1}} or more points of Charge, March 7th immediately takes action and increases the DMG she deals by <orangeStrong>{{2, percent}}%</orangeStrong>. Her Basic ATK gets Enhanced, and her Skill cannot be used. After using Enhanced Basic ATK, consumes {{1}} point(s) of Charge. Charge is capped at {{3}} points.",
-        "shortDesc": "After <orangeStrong>Shifu uses an attack or Ultimate</orangeStrong>, March 7th gains Charge. When reaching <orangeStrong>{{1}}</orangeStrong> points of Charge, March 7th immediately takes action, and increases the DMG she deals. <orangeStrong>Basic ATK gets Enhanced</orangeStrong>.",
+        "shortDesc": "After <orangeStrong>Shifu uses an attack or Ultimate</orangeStrong>, March 7th gains Charge. When reaching <orangeStrong>{{1}}</orangeStrong> points of Charge, March 7th immediately takes action and increases the DMG she deals. <orangeStrong>Basic ATK gets Enhanced</orangeStrong>.",
         "tag": "Enhance"
       }
     },
     "technique": {
       "0": {
         "name": "Feast in One Go",
-        "fullDesc": "If March 7th is on the team, she gains 1 point of Charge at the start of the next battle whenever an ally uses Technique, up to a max of {{1}} point(s).<br>After using Technique, March 7th regenerates {{2}} Energy when the next battle starts.",
-        "shortDesc": "Whenever an ally uses Technique, March 7th gains Charge upon entering the next battle. Using Technique regenerates Energy upon entering the next battle.",
+        "fullDesc": "If March 7th is on the team, she gains 1 point of Charge at the start of the next battle whenever a teammate uses Technique, up to a max of {{1}} point(s).<br>After using Technique, March 7th regenerates {{2}} Energy when the next battle starts.",
+        "shortDesc": "Whenever a teammate uses Technique, March 7th gains Charge upon entering the next battle. Using Technique regenerates Energy upon entering the next battle.",
         "tag": "Enhance"
       }
     },
@@ -58,7 +58,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Swan Soar",
-        "fullDesc": "When the battle starts, March 7th's action is Advanced Forward by {{1, percent}}%.",
+        "fullDesc": "When the battle starts, March 7th's action advances by {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -87,7 +87,7 @@
     },
     "2": {
       "name": "Blade Dances on Waves' Fight",
-      "desc": "After Shifu uses Basic ATK or Skill to attack an enemy target, March 7th immediately launches a follow-up attack and deals Imaginary DMG equal to {{1, percent}}% of March 7th's ATK to the primary target of this attack. Additionally, triggers the corresponding effect based on Shifu's Path and then gains {{3}} point(s) of Charge. If there is no primary target available to attack, then attacks a single random enemy instead. This effect can only trigger once per turn."
+      "desc": "After \"Shifu\" uses Basic ATK or Skill to attack an enemy target, March 7th immediately launches a Follow-up ATK and deals Imaginary DMG equal to {{1, percent}}% of March 7th's ATK to the primary target of this attack. Additionally, triggers the corresponding effect based on \"Shifu\"'s Path and then gains {{3}} point(s) of Charge. If there is no primary target available to attack, then she attacks a single random enemy instead. This effect can only trigger once per turn."
     },
     "3": {
       "name": "Sharp Wit in Martial Might",

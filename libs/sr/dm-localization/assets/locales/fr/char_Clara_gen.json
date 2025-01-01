@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Une vraie famille",
-        "fullDesc": "Lorsque le personnage est attaqué, il a {{1, percent}}% de chances fixes de supprimer un malus qu'il subit.",
+        "fullDesc": "Lorsque cette unité est attaquée, il y a {{1, percent}}% de chances fixes de retirer 1 malus qu'elle subit.",
         "shortDesc": "",
         "tag": ""
       }
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Sous bonne garde",
-        "fullDesc": "Les chances de résister aux malus de contrôle augmentent de {{1, percent}}%.",
+        "fullDesc": "Augmente les chances de résister aux malus de contrôle de {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Vengeance",
-        "fullDesc": "Augmente les DGT de contre de Svarog de {{1, percent}}%.",
+        "fullDesc": "Augmente les DGT infligés par le contre de Svarog de {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Compagnons de longue date",
-      "desc": "Lorsque d'autres alliés sont touchés, Svarog a également {{1, percent}}% de chances fixes de déclencher un contre envers l'assaillant et de le marquer avec une Marque de contre. Le nombre de contres renforcés accordés par l'ultime augmente de {{2}}."
+      "desc": "Lorsque d'autres alliés sont attaqués, Svarog a également {{1, percent}}% de chances fixes de déclencher un contre sur l'assaillant et de le marquer d'une Marque de contre. Le nombre de contres renforcés accordés par l'ultime augmente de {{2}}."
     }
   }
 }

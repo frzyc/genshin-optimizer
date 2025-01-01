@@ -12,7 +12,7 @@
     "skill": {
       "0": {
         "name": "Caressing Moonlight",
-        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Kafka pada 1 target musuh, serta mengakibatkan Lightning DMG sebesar <orangeStrong>{{3, percent}}%</orangeStrong> ATK Kafka pada musuh di sekitar target.<br>Jika target musuh sedang terkena DoT, seluruh DoT yang diterimanya akan segera mengakibatkan DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> DMG awal DoT Debuff-nya.",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Kafka pada 1 musuh yang ditargetkan, serta mengakibatkan Lightning DMG sebesar <orangeStrong>{{3, percent}}%</orangeStrong> ATK Kafka pada musuh di sekitar target.<br>Jika musuh yang ditargetkan sedang berstatus DoT, maka seluruh DoT yang dimilikinya akan segera mengakibatkan DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> dari DMG aslinya.",
         "shortDesc": "Mengakibatkan Lightning DMG pada 1 musuh dan mengakibatkan Lightning DMG dalam jumlah kecil pada target di sekitarnya.<br>Jika target utama berada dalam status DoT Debuff, maka DoT Debuff yang dimilikinya akan <orangeStrong>mengakibatkan 1 kali DMG tambahan</orangeStrong>.",
         "tag": "Blast"
       }
@@ -20,7 +20,7 @@
     "ult": {
       "0": {
         "name": "Twilight Trill",
-        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Kafka pada seluruh musuh. Musuh yang terkena serangan memiliki {{2, percent}}% peluang dasar untuk memasuki status Shock, dan membuat semua status Shock yang saat ini dimiliki oleh target segera mengakibatkan DMG sebesar <orangeStrong>{{5, percent}}%</orangeStrong> DMG awal DoT-nya.<br>Saat dalam status Shock, target musuh akan menerima Lightning DoT sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK Kafka saat setiap gilirannya dimulai.",
+        "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Kafka pada seluruh musuh. Musuh yang terkena serangan memiliki {{2, percent}}% peluang dasar untuk memasuki status Shock, dan membuat semua status Shock yang saat ini dimiliki oleh target segera mengakibatkan DMG sebesar <orangeStrong>{{5, percent}}%</orangeStrong> dari DMG aslinya. Status Shock berlangsung selama {{3}} giliran.<br>Saat dalam status Shock, target musuh akan menerima Lightning DoT sebesar <orangeStrong>{{4, percent}}%</orangeStrong> ATK Kafka setiap saat gilirannya dimulai.",
         "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil pada seluruh musuh, berpeluang besar <orangeStrong>menambahkan status Shock</orangeStrong> pada musuh.<br>Jika target musuh berstatus Shock, maka status Shock tersebut akan <orangeStrong>mengakibatkan 1 kali DMG tambahan</orangeStrong>.",
         "tag": "AoE"
       }
@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Thorns",
-        "fullDesc": "Peluang dasar dari Ultimate, Technique, dan Serangan Lanjutan yang dipicu Talent untuk membuat target memasuki status Shock meningkat {{1, percent}}%.",
+        "fullDesc": "Peluang dasar dari Ultimate, Technique, dan Serangan Lanjutan yang dipicu Talent untuk membuat target musuh memasuki status Shock meningkat {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }

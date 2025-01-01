@@ -27,7 +27,7 @@
       "0": {
         "name": "Rodeio Crepuscular do Demônio da Areia",
         "fullDesc": "Aplica Fraqueza contra Físico a um inimigo-alvo, durando por {{3}} rodada(s).<br>Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Boothill ao alvo e retarda suas ações em <orangeStrong>{{2, percent}}%</orangeStrong>.",
-        "shortDesc": "<orangeStrong>Aplica Fraqueza contra Físico</orangeStrong> a um único inimigo, causa uma quantidade massiva de Dano Físico e atrasa suas ações.",
+        "shortDesc": "<orangeStrong>Aplica Fraqueza contra Físico</orangeStrong> a um inimigo, causa uma quantidade massiva de Dano Físico e atrasa suas ações.",
         "tag": "Alvo Único"
       }
     },
@@ -103,7 +103,7 @@
     },
     "6": {
       "name": "Guaxinim do Hotel Pé de Cabra",
-      "desc": "Ao ativar o Dano de Quebra do Talento, adicionalmente causa Dano de Quebra ao inimigo-alvo igual a {{1, percent}}% do multiplicador de Dano original e causa Dano de Quebra a alvos adjacentes igual a {{2, percent}}% do multiplicador de Dano original a alvos adjacentes."
+      "desc": "Ao ativar o Dano de Quebra do Talento, causa adicionalmente Dano de Quebra ao inimigo-alvo igual a {{1, percent}}% do multiplicador de Dano original e causa Dano de Quebra igual a {{2, percent}}% do multiplicador de Dano original a alvos adjacentes."
     }
   }
 }
