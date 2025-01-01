@@ -1,0 +1,24 @@
+{
+  "name": "Vigía de las Estrellas",
+  "description": {
+    "0": "Una estatua tallada en forma de águila. Se trata de una reliquia sagrada transmitida de generación en generación por los Augures Vientonocturno."
+  },
+  "passiveName": "Ofrenda para el viento y el sol",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta la Maestría Elemental en <cryo>100</cryo> pts. En los 15 s siguientes tras crear un escudo, el portador de esta arma obtiene el efecto “espejo de la noche”, el cual aumenta en un <cryo>28%</cryo> el daño que inflige el personaje en uso de tu equipo a los enemigos cercanos. Puedes obtener este efecto una vez cada 14 s."
+    },
+    "1": {
+      "0": "Aumenta la Maestría Elemental en <cryo>125</cryo> pts. En los 15 s siguientes tras crear un escudo, el portador de esta arma obtiene el efecto “espejo de la noche”, el cual aumenta en un <cryo>35%</cryo> el daño que inflige el personaje en uso de tu equipo a los enemigos cercanos. Puedes obtener este efecto una vez cada 14 s."
+    },
+    "2": {
+      "0": "Aumenta la Maestría Elemental en <cryo>150</cryo> pts. En los 15 s siguientes tras crear un escudo, el portador de esta arma obtiene el efecto “espejo de la noche”, el cual aumenta en un <cryo>42%</cryo> el daño que inflige el personaje en uso de tu equipo a los enemigos cercanos. Puedes obtener este efecto una vez cada 14 s."
+    },
+    "3": {
+      "0": "Aumenta la Maestría Elemental en <cryo>175</cryo> pts. En los 15 s siguientes tras crear un escudo, el portador de esta arma obtiene el efecto “espejo de la noche”, el cual aumenta en un <cryo>49%</cryo> el daño que inflige el personaje en uso de tu equipo a los enemigos cercanos. Puedes obtener este efecto una vez cada 14 s."
+    },
+    "4": {
+      "0": "Aumenta la Maestría Elemental en <cryo>200</cryo> pts. En los 15 s siguientes tras crear un escudo, el portador de esta arma obtiene el efecto “espejo de la noche”, el cual aumenta en un <cryo>56%</cryo> el daño que inflige el personaje en uso de tu equipo a los enemigos cercanos. Puedes obtener este efecto una vez cada 14 s."
+    }
+  }
+}

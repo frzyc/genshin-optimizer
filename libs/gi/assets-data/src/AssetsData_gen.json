@@ -340,6 +340,10 @@
       "icon": "UI_EquipIcon_Claymore_EmeraldSword",
       "awakenIcon": "UI_EquipIcon_Claymore_EmeraldSword_Awaken"
     },
+    "AThousandBlazingSuns": {
+      "icon": "UI_EquipIcon_Claymore_RadianceSword",
+      "awakenIcon": "UI_EquipIcon_Claymore_RadianceSword_Awaken"
+    },
     "BeginnersProtector": {
       "icon": "UI_EquipIcon_Pole_Gewalt",
       "awakenIcon": "UI_EquipIcon_Pole_Gewalt_Awaken"
@@ -639,6 +643,10 @@
     "SurfsUp": {
       "icon": "UI_EquipIcon_Catalyst_MechaPufferfish",
       "awakenIcon": "UI_EquipIcon_Catalyst_MechaPufferfish_Awaken"
+    },
+    "StarcallersWatch": {
+      "icon": "UI_EquipIcon_Catalyst_Figurines",
+      "awakenIcon": "UI_EquipIcon_Catalyst_Figurines_Awaken"
     },
     "HuntersBow": {
       "icon": "UI_EquipIcon_Bow_Hunters",
@@ -2715,6 +2723,42 @@
       "constellation5": "UI_Talent_U_Olorun_02",
       "constellation6": "UI_Talent_S_Olorun_04"
     },
+    "Mavuika": {
+      "icon": "UI_AvatarIcon_Mavuika",
+      "iconSide": "UI_AvatarIcon_Side_Mavuika",
+      "banner": "UI_NameCardPic_Mavuika_P",
+      "bar": "UI_NameCardPic_Mavuika_Alpha",
+      "skill": "Skill_S_Mavuika_01",
+      "burst": "Skill_E_Mavuika_01_HD",
+      "passive1": "UI_Talent_S_Mavuika_05",
+      "passive2": "UI_Talent_S_Mavuika_06",
+      "passive3": "UI_Talent_S_Mavuika_07",
+      "passive": "UI_Talent_S_Citlali_07",
+      "constellation1": "UI_Talent_S_Mavuika_01",
+      "constellation2": "UI_Talent_S_Mavuika_02",
+      "constellation3": "UI_Talent_U_Mavuika_01",
+      "constellation4": "UI_Talent_S_Mavuika_03",
+      "constellation5": "UI_Talent_U_Mavuika_02",
+      "constellation6": "UI_Talent_S_Mavuika_04"
+    },
+    "Citlali": {
+      "icon": "UI_AvatarIcon_Citlali",
+      "iconSide": "UI_AvatarIcon_Side_Citlali",
+      "banner": "UI_NameCardPic_Citlali_P",
+      "bar": "UI_NameCardPic_Citlali_Alpha",
+      "skill": "Skill_S_Citlali_01",
+      "burst": "Skill_E_Citlali_01_HD",
+      "passive1": "UI_Talent_S_Citlali_05",
+      "passive2": "UI_Talent_S_Citlali_06",
+      "passive3": "UI_Talent_S_Citlali_08",
+      "passive": "UI_Talent_S_Mavuika_08",
+      "constellation1": "UI_Talent_S_Citlali_01",
+      "constellation2": "UI_Talent_S_Citlali_02",
+      "constellation3": "UI_Talent_U_Citlali_01",
+      "constellation4": "UI_Talent_S_Citlali_03",
+      "constellation5": "UI_Talent_U_Citlali_02",
+      "constellation6": "UI_Talent_S_Citlali_04"
+    },
     "TravelerAnemo": {
       "skill": "Skill_S_PlayerWind_01",
       "burst": "Skill_E_PlayerWind_01_HD",
@@ -2774,6 +2818,18 @@
       "constellation4": "UI_Talent_S_PlayerWater_03",
       "constellation5": "UI_Talent_U_PlayerWater_02",
       "constellation6": "UI_Talent_S_PlayerWater_04"
+    },
+    "TravelerPyro": {
+      "skill": "Skill_S_PlayerFire_01",
+      "burst": "Skill_E_PlayerFire_01_HD",
+      "passive1": "UI_Talent_S_PlayerFire_05",
+      "passive2": "UI_Talent_S_PlayerFire_06",
+      "constellation1": "UI_Talent_S_PlayerFire_01",
+      "constellation2": "UI_Talent_S_PlayerFire_02",
+      "constellation3": "UI_Talent_U_PlayerFire_01",
+      "constellation4": "UI_Talent_S_PlayerFire_03",
+      "constellation5": "UI_Talent_U_PlayerFire_02",
+      "constellation6": "UI_Talent_S_PlayerFire_04"
     },
     "Somnia": {}
   }

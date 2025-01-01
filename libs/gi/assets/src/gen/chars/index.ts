@@ -15,6 +15,7 @@ import Chasca from './Chasca'
 import Chevreuse from './Chevreuse'
 import Chiori from './Chiori'
 import Chongyun from './Chongyun'
+import Citlali from './Citlali'
 import Clorinde from './Clorinde'
 import Collei from './Collei'
 import Cyno from './Cyno'
@@ -49,6 +50,7 @@ import Layla from './Layla'
 import Lisa from './Lisa'
 import Lynette from './Lynette'
 import Lyney from './Lyney'
+import Mavuika from './Mavuika'
 import Mika from './Mika'
 import Mona from './Mona'
 import Mualani from './Mualani'
@@ -81,6 +83,7 @@ import TravelerF from './TravelerF'
 import TravelerGeo from './TravelerGeo'
 import TravelerHydro from './TravelerHydro'
 import TravelerM from './TravelerM'
+import TravelerPyro from './TravelerPyro'
 import Venti from './Venti'
 import Wanderer from './Wanderer'
 import Wriothesley from './Wriothesley'
@@ -115,6 +118,7 @@ const data = {
   Chevreuse,
   Chiori,
   Chongyun,
+  Citlali,
   Clorinde,
   Collei,
   Cyno,
@@ -149,6 +153,7 @@ const data = {
   Lisa,
   Lynette,
   Lyney,
+  Mavuika,
   Mika,
   Mona,
   Mualani,
@@ -181,6 +186,7 @@ const data = {
   TravelerGeo,
   TravelerHydro,
   TravelerM,
+  TravelerPyro,
   Venti,
   Wanderer,
   Wriothesley,

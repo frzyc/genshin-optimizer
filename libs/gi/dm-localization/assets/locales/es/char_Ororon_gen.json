@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Ataque Cargado</strong>",
         "1": "Realiza un <strong>Disparo Preciso</strong> que inflige mayor daño y tiene mayor precisión.",
-        "2": "Al apuntar, la flecha se imbuirá del elemento Electro y, cuando esté completamente cargada, infligirá una gran cantidad de <electro>Daño Electro</electro> al dispararla."
+        "2": "Al apuntar, la flecha se imbuirá del elemento Electro y, cuando esté completamente cargada, infligirá <electro>Daño Electro</electro> al dispararla."
       },
       "plunging": {
         "0": "<strong>Ataque Descendente</strong>",
@@ -134,7 +134,7 @@
   "passive": {
     "name": "Cambiapieles",
     "description": {
-      "0": "Aumenta en un 15% la Vel. de Vuelo de tus personajes del equipo.",
+      "0": "Aumenta en un 15% la Vel. Vuelo de tus personajes del equipo.",
       "1": "No se puede acumular con otros talentos pasivos que tengan los mismos efectos."
     }
   },

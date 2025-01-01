@@ -230,6 +230,9 @@
   "ToyMedal": {
     "name": "Игрушечные медали"
   },
+  "RepertoireCoins": {
+    "name": "Монеты репертуара"
+  },
   "OriginalEssenceInvalidated": {
     "name": "Очищенный янтарь (выброшено)"
   },
@@ -992,6 +995,15 @@
   "Ororon": {
     "name": "Оророн"
   },
+  "Mavuika": {
+    "name": "Мавуика"
+  },
+  "Citlali": {
+    "name": "Ситлали"
+  },
+  "LanYan": {
+    "name": "Лань Янь"
+  },
   "KachinasStellaFortuna": {
     "name": "Удача Качины"
   },
@@ -1009,6 +1021,15 @@
   },
   "OroronsStellaFortuna": {
     "name": "Удача Оророна"
+  },
+  "MavuikasStellaFortuna": {
+    "name": "Удача Мавуики"
+  },
+  "CitlalisStellaFortuna": {
+    "name": "Удача Ситлали"
+  },
+  "LanYansStellaFortuna": {
+    "name": "Удача Лань Янь"
   },
   "Apple": {
     "name": "Яблоко"
@@ -7454,6 +7475,42 @@
   "MomentOfRespite": {
     "name": "Короткая передышка"
   },
+  "SuspiciousMagmicOde": {
+    "name": "Странная магматическая ода"
+  },
+  "MagmicOde": {
+    "name": "Магматическая ода"
+  },
+  "DeliciousMagmicOde": {
+    "name": "Вкусная магматическая ода"
+  },
+  "SuspiciousQingxinFlowerCake": {
+    "name": "Странный пирог с цинсинь"
+  },
+  "QingxinFlowerCake": {
+    "name": "Пирог с цинсинь"
+  },
+  "DeliciousQingxinFlowerCake": {
+    "name": "Вкусный пирог с цинсинь"
+  },
+  "SuspiciousDrunkenPlumsInSnow": {
+    "name": "Странные Пьяные сливы в снегу"
+  },
+  "DrunkenPlumsInSnow": {
+    "name": "Пьяные сливы в снегу"
+  },
+  "DeliciousDrunkenPlumsInSnow": {
+    "name": "Вкусные Пьяные сливы в снегу"
+  },
+  "HymnOfGatheredFlame": {
+    "name": "Ода пламени"
+  },
+  "JadeCutFlowers": {
+    "name": "Вырезанные из нефрита цветы"
+  },
+  "SecretArt": {
+    "name": "Тайное искусство"
+  },
   "RecipeItem": {
     "name": "Ингредиенты"
   },
@@ -8122,6 +8179,15 @@
   },
   "RecipeSingYourHeartOut": {
     "name": "Рецепт: «Радостное пение»"
+  },
+  "RecipeMagmicOde": {
+    "name": "Рецепт: Магматическая ода"
+  },
+  "RecipeQingxinFlowerCake": {
+    "name": "Рецепт: Пирог с цинсинь"
+  },
+  "RecipeDrunkenPlumsInSnow": {
+    "name": "Рецепт: Пьяные сливы в снегу"
   },
   "CraftedItems": {
     "name": "Созданные Предметы"
@@ -8806,6 +8872,18 @@
   },
   "EnsnaringGaze": {
     "name": "Сковывающий взгляд"
+  },
+  "ErodedHorn": {
+    "name": "Истлевший рог"
+  },
+  "ErodedSunfire": {
+    "name": "Истлевшее солнечное пламя"
+  },
+  "ErodedScaleFeather": {
+    "name": "Истлевшее чешуйчатое перо"
+  },
+  "TalismanOfTheEnigmaticLand": {
+    "name": "Талисман загадочной земли"
   },
   "TileOfDecarabiansTower": {
     "name": "Плитка башни Декарабиана"
@@ -11573,6 +11651,21 @@
   "MessilyBittedKey": {
     "name": "Ключ с потрёпанными зубцами"
   },
+  "CitlalisHandkerchief": {
+    "name": "Платок Ситлали"
+  },
+  "LegendInscribedWovenScroll": {
+    "name": "Легенда, вплетённая в ткань"
+  },
+  "ShogunAlmightyRebornAsRaidenWithUnlimitedPowerFirstEdition": {
+    "name": "«Реинкарнация в непобедимого сёгуна Райдэн» первое издание"
+  },
+  "PrettyPleaseKitsuneGuujiLimitedDeluxeEdition": {
+    "name": "«Пожалуйста, Кицунэ Гудзи» ограниченное издание"
+  },
+  "CitlalisHandkerchiefAndKey": {
+    "name": "Платок и ключ Ситлали"
+  },
   "SpiritcallersNotesI": {
     "name": "Заметки призывающей духов I"
   },
@@ -11612,6 +11705,18 @@
   "NotesSomeoneLeftBehindV": {
     "name": "Оставленные записи V"
   },
+  "HelkasNotes": {
+    "name": "Записи Хелки"
+  },
+  "AGiftEnvelopeFromPaimon": {
+    "name": "Подарочный конверт от Паймон"
+  },
+  "EmblemOfValor": {
+    "name": "Эмблема доблести"
+  },
+  "SpecialCommemorativeLetter": {
+    "name": "Особое памятное письмо"
+  },
   "RecordkeepingSecretSourceSentinel": {
     "name": "Записывающий Страж таинственного источника"
   },
@@ -11633,8 +11738,41 @@
   "PlaceOfTheTrialOfDisembodimentMessage": {
     "name": "Послание из места испытания душ"
   },
+  "RattanToyHuTao": {
+    "name": "Игрушка из ротанга: Ху Тао"
+  },
+  "HuTaoPlumBranch": {
+    "name": "Ху Тао: веточка сливы"
+  },
+  "ZhongliRexCoin": {
+    "name": "Чжун Ли: королевская монета"
+  },
+  "RattanToy": {
+    "name": "Игрушка из ротанга"
+  },
+  "SaurusCrackersTatankasaurus": {
+    "name": "Заврианское печенье: татанказавр"
+  },
+  "SaurusCrackersQucusaurus": {
+    "name": "Заврианское печенье: кукузавр"
+  },
+  "SaurusCrackersYumkasaurus": {
+    "name": "Заврианское печенье: юмказавр"
+  },
+  "SaurusCrackersIktomisaurus": {
+    "name": "Заврианское печенье: иктомизавр"
+  },
+  "SaurusCrackersKoholasaurus": {
+    "name": "Заврианское печенье: кохолазавр"
+  },
+  "SaurusCrackersTepetlisaurus": {
+    "name": "Заврианское печенье: тепетлизавр"
+  },
   "TearsAmongTheStars": {
     "name": "Слёзы средь звёзд"
+  },
+  "ObsidianAncientName": {
+    "name": "Древнее имя из обсидиана"
   },
   "SilkFlowerSeed": {
     "name": "Семена шелковицы"
@@ -11744,8 +11882,8 @@
   "SprayfeatherGillSeed": {
     "name": "Семена морского пера"
   },
-  "GlowingHornshroomSeed": {
-    "name": "Семена мерцающего рогатого гриба"
+  "GlowingHornshroomSpore": {
+    "name": "Споры мерцающего рогатого гриба"
   },
   "Medaka": {
     "name": "Оризия"
@@ -13310,6 +13448,27 @@
   "TravelNotesSpiritweaver": {
     "name": "Плетение душ"
   },
+  "MavuikaSunCrowned": {
+    "name": "Коронованная солнцем"
+  },
+  "CitlaliOpalstar": {
+    "name": "Отблеск белой звезды"
+  },
+  "LanYanSilverSwallow": {
+    "name": "Серебряная ласточка"
+  },
+  "AchievementAllSeeing": {
+    "name": "Всевидящий"
+  },
+  "AchievementBlaze": {
+    "name": "Пламя"
+  },
+  "AchievementRepertoire": {
+    "name": "Репертуар"
+  },
+  "TravelNotesTheFlameRenewed": {
+    "name": "Возрождённое пламя"
+  },
   "EchoDandelionKnight": {
     "name": "Эхо: Рыцарь Одуванчик"
   },
@@ -13330,6 +13489,12 @@
   },
   "EchoDrivingThunder": {
     "name": "Эхо: Раскаты грома"
+  },
+  "EchoPleniluneGaze": {
+    "name": "Эхо: Взгляд полнолуния"
+  },
+  "EchoScarletLeavesPursueWildWaves": {
+    "name": "Эхо: Багряные листья и неистовые волны"
   },
   "AnemoculusResonanceStone": {
     "name": "Камень эха анемокула"
@@ -13610,6 +13775,15 @@
   "ArtifactTransmuter": {
     "name": "Преобразователь артефактов"
   },
+  "RepertoireOfMyriadMelodies": {
+    "name": "Репертуар мириад мелодий"
+  },
+  "DjemDjemDrum": {
+    "name": "Барабан джем-джем"
+  },
+  "Ukulele": {
+    "name": "Укулеле"
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "Инструкции: Камень эха анемокула"
   },
@@ -13772,6 +13946,9 @@
   "SwirlingSceneInABottle": {
     "name": "Водовороты пейзажа в бутылке"
   },
+  "ScrollOfTheFieryFirmament": {
+    "name": "Свиток Огненной Твердыни"
+  },
   "TheMountainCloudsLetDownGoldenRain": {
     "name": "Горные облака роняют чудесный дождь"
   },
@@ -13882,6 +14059,48 @@
   },
   "ThesisProgression": {
     "name": "Научная работа"
+  },
+  "PrayerTime": {
+    "name": "Время молитвы"
+  },
+  "ElegantGreeting": {
+    "name": "Элегантное приветствие"
+  },
+  "FantasticalMarvel": {
+    "name": "Чудесная идея"
+  },
+  "MeditationOnFloatingDreams": {
+    "name": "Полёт воображения"
+  },
+  "HiddenJadeStar": {
+    "name": "Скрытая нефритовая звезда"
+  },
+  "DappledShadowsReflectingRed": {
+    "name": "Красные тени отражают красное"
+  },
+  "OracleOfReason": {
+    "name": "Оракул разума"
+  },
+  "LingeringFeast": {
+    "name": "Затянувшийся пир"
+  },
+  "AzureIcefang": {
+    "name": "Ледяной клык безмятежности"
+  },
+  "WindAndFreedom": {
+    "name": "Ветер и свобода"
+  },
+  "StoneAndContracts": {
+    "name": "Камень и контракты"
+  },
+  "ThunderAndEternity": {
+    "name": "Молнии и вечность"
+  },
+  "NatureAndWisdom": {
+    "name": "Природная мудрость"
+  },
+  "WaterAndJustice": {
+    "name": "Вода и Справедливость"
   },
   "RhodeiaOfLoch": {
     "name": "Родия"
@@ -14279,6 +14498,12 @@
   "BeastlyCorrosion": {
     "name": "Звериное разложение"
   },
+  "NightRealmsGiftCrestsAndTroughs": {
+    "name": "Дар владений ночи: Взлёты и падения"
+  },
+  "DarkShatteringFlame": {
+    "name": "Разрывающее мрак пламя"
+  },
   "MagicGuide": {
     "name": "Руководство по магии"
   },
@@ -14558,6 +14783,12 @@
   "Iktomisaurus": {
     "name": "Иктомизавр"
   },
+  "DemonWarriorsFeatherMask": {
+    "name": "Перьевая маска воина-демона"
+  },
+  "Qucusaurus": {
+    "name": "Кукузавр"
+  },
   "LiyueHarborWharf": {
     "name": "Гавань Ли Юэ"
   },
@@ -14717,6 +14948,9 @@
   "ScionsOfTheCanopy": {
     "name": "Потомки Крон"
   },
+  "PeopleOfTheSprings": {
+    "name": "Народ Родников"
+  },
   "ElementalResonanceWovenIce": {
     "name": "Элементальный резонанс: Переплетение Крио"
   },
@@ -14804,18 +15038,6 @@
   "AbyssalSummons": {
     "name": "Призыв Бездны"
   },
-  "WindAndFreedom": {
-    "name": "Ветер и свобода"
-  },
-  "StoneAndContracts": {
-    "name": "Камень и контракты"
-  },
-  "ThunderAndEternity": {
-    "name": "Молнии и вечность"
-  },
-  "NatureAndWisdom": {
-    "name": "Природная мудрость"
-  },
   "FatuiConspiracy": {
     "name": "Заговор Фатуи"
   },
@@ -14888,9 +15110,6 @@
   "ViciousAncientBattle": {
     "name": "Древняя Яростная битва"
   },
-  "WaterAndJustice": {
-    "name": "Вода и Справедливость"
-  },
   "CountdownToTheShow3": {
     "name": "Отсчёт до представления: 3"
   },
@@ -14911,6 +15130,12 @@
   },
   "UltimateSurfingBuddy": {
     "name": "Лучший напарник для сёрфинга!"
+  },
+  "PilgrimageOfTheReturnOfTheSacredFlame": {
+    "name": "Паломничество возвращения Священного пламени"
+  },
+  "AbundantPhlogiston": {
+    "name": "Изобилие флогистона"
   },
   "Origin": {
     "name": "Изначальный"
@@ -14965,6 +15190,9 @@
   },
   "EnkanomiyaEvernight": {
     "name": "Энканомия: Вечная ночь"
+  },
+  "EnkanomiyaCrown": {
+    "name": "Энканомия: Венец"
   },
   "BeginnerPlayerBadge": {
     "name": "Значок Новичка"
@@ -15037,6 +15265,12 @@
   },
   "PhantomInBoots": {
     "name": "Призрак в сапогах"
+  },
+  "CherriesSnowLaden": {
+    "name": "Вишни под снегом"
+  },
+  "NewYearsCheer": {
+    "name": "Новогоднее веселье"
   },
   "AdventurerCamp": {
     "name": "Лагерь искателей приключений"
@@ -15290,6 +15524,39 @@
   "TheNationOfHydrosMottledColors": {
     "name": "Пёстрые цвета Царства воды"
   },
+  "CarefullyConsideredWords": {
+    "name": "Взвешенные слова"
+  },
+  "ArenasToastToTriumph": {
+    "name": "Победный тост на стадионе"
+  },
+  "SleepNowRestYourWearyHead": {
+    "name": "Отдыхай в уютном мире грёз"
+  },
+  "FomentingFashionAtTheFair": {
+    "name": "Модные веяния на ярмарке"
+  },
+  "BornAmongSearingFlames": {
+    "name": "Рождённые в обжигающем пламени"
+  },
+  "TreadingTheUntroddenPath": {
+    "name": "Идущие по неведомому пути"
+  },
+  "ChildrenOfEchoesPassion": {
+    "name": "Страсть Детей Эха"
+  },
+  "PeopleOfTheSpringsRelaxation": {
+    "name": "Безмятежность Народа Родников"
+  },
+  "ScionsOfTheCanopysDuty": {
+    "name": "Долг Потомков Крон"
+  },
+  "FlowerFeatherClansConquest": {
+    "name": "Завоевание клана Цветочного Пера"
+  },
+  "MastersOfTheNightWindsTranquility": {
+    "name": "Спокойствие Повелителей Ночного Ветра"
+  },
   "TimberWallWithJadeEaves": {
     "name": "Деревянная стена с нефритовым карнизом"
   },
@@ -15304,6 +15571,9 @@
   },
   "AnnexsGoldenMosaic": {
     "name": "Дворцовая золотая мозаика"
+  },
+  "LoftyTowersFashionableCanvas": {
+    "name": "Изысканное полотно высокой башни"
   },
   "TraditionalCedarFlooring": {
     "name": "Кедровый традиционный пол"
@@ -15320,6 +15590,9 @@
   "AnnexsMirrorSheenFloorTile": {
     "name": "Зеркальная дворцовая плитка"
   },
+  "LoftyTowersFloorOfTrials": {
+    "name": "Этаж испытаний высокой башни"
+  },
   "CheckeredCedarCeiling": {
     "name": "Кедровый клетчатый потолок"
   },
@@ -15334,6 +15607,9 @@
   },
   "AnnexsSpotlessDome": {
     "name": "Дворцовый безупречный купол"
+  },
+  "LoftyTowersRadiantCeiling": {
+    "name": "Лучезарный потолок высокой башни"
   },
   "TwoTierCandleChandelier": {
     "name": "Двухъярусная люстра со свечами"
@@ -15503,6 +15779,9 @@
   "AnnexsSwirlingLight": {
     "name": "Дворцовые вихри света"
   },
+  "LoftyTowersFlamingBrazier": {
+    "name": "Пылающая жаровня высокой башни"
+  },
   "NorthernBirchFoldingCounter": {
     "name": "Угловая стойка из северной берёзы"
   },
@@ -15550,6 +15829,9 @@
   },
   "PeachPalmWoodFulcrumContainer": {
     "name": "Стеллаж из древесины персиковой пальмы «Фулькрум»"
+  },
+  "FairsThoughtsInOrder": {
+    "name": "Порядок мыслей ярмарки"
   },
   "TwoTierLibraryBookshelf": {
     "name": "Двухуровневая книжная полка для библиотеки"
@@ -15719,6 +16001,9 @@
   "CountlessServices": {
     "name": "Бесчисленные услуги"
   },
+  "FairsSimpleSalesStrategy": {
+    "name": "Торговая стратегия рынка"
+  },
   "BreezeBlessedBed": {
     "name": "Кровать благословения ветра"
   },
@@ -15742,6 +16027,9 @@
   },
   "LindenWoodSweetSlumberBed": {
     "name": "Кровать из липы «Сладкая дрёма»"
+  },
+  "StoneBedPeacefulSleep": {
+    "name": "Каменное ложе: Спокойный сон"
   },
   "PineReceptionCounter": {
     "name": "Приёмная стойка из сосны"
@@ -16031,6 +16319,9 @@
   "TheDistanceBetweenItAndTheFlames": {
     "name": "Расстояние до огня"
   },
+  "PortableAllPurposeGrill": {
+    "name": "Портативный универсальный гриль"
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "Мондштадтский коврик: Пылающий энтузиазм"
   },
@@ -16082,6 +16373,9 @@
   "WearyRugLayDownYourBurden": {
     "name": "Ковёр для усталых: Сбрось свою ношу"
   },
+  "FairCarpetWarmthAndPassion": {
+    "name": "Ярмарочный ковёр: Тепло и страсть"
+  },
   "VibrantPotBornInFlames": {
     "name": "Яркий кувшин: Рождённый в пламени"
   },
@@ -16132,6 +16426,9 @@
   },
   "PhlogistonFloorLampCostEffectiveConvenience": {
     "name": "Флогистоновый торшер: Экономичное удобство"
+  },
+  "PhlogistonLampRainCover": {
+    "name": "Флогистоновая лампа: Защита от дождя"
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "Цветочная композиция: Бледно-голубое спокойствие"
@@ -16658,6 +16955,21 @@
   "SalesSavvy101": {
     "name": "Основы торговли 101"
   },
+  "WovenHutSereneIndigo": {
+    "name": "Плетёная хижина: Умиротворённый индиго"
+  },
+  "WovenHutRhythmicStripes": {
+    "name": "Плетёная хижина: Ритмичные полосы"
+  },
+  "GloriousHuesOfTheSacredFlame": {
+    "name": "Сияние священного пламени"
+  },
+  "CuriousCountenancesOfTheSacredFlame": {
+    "name": "Утончённые облики священного пламени"
+  },
+  "AlluringFlavorsOfTheSacredFlame": {
+    "name": "Манящие ароматы священного пламени"
+  },
   "HilichurlOutpostHut": {
     "name": "Сторожевая хижина хиличурлов"
   },
@@ -17111,6 +17423,9 @@
   "AshenAratikuWoodGiantClawPlatform": {
     "name": "Платформа из древесины пепельного аратику: Гигантский коготь"
   },
+  "PilgrimageOfFlame": {
+    "name": "Пламенное паломничество"
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "Фонтан с птицами и цветами"
   },
@@ -17405,6 +17720,36 @@
   "ValleyStoneStepsFoundationStone": {
     "name": "Каменная лестница в долине: Вклад фундамента"
   },
+  "DwellingPortalSacredDuty": {
+    "name": "Двор: Священный долг"
+  },
+  "DwellingWallJourneyThroughArt": {
+    "name": "Стена: Путешествие по миру искусства"
+  },
+  "DwellingWallGuidingLines": {
+    "name": "Стена: Направляющие линии"
+  },
+  "DwellingWallWarpedPerspective": {
+    "name": "Стена: Искажённая перспектива"
+  },
+  "DwellingWallGraffitiPanel": {
+    "name": "Стена: Панель граффити"
+  },
+  "StadiumsTemperedSteps": {
+    "name": "«Закалённая» лестница стадиона"
+  },
+  "GuardianPillarMyriadWarriors": {
+    "name": "Каменная колонна: Мириады Воинов"
+  },
+  "GuardianPillarAbundantShamans": {
+    "name": "Каменная колонна: Изобилие шаманов"
+  },
+  "GuardianPillarInnumerableSparks": {
+    "name": "Каменная колонна: Бесчисленные искры"
+  },
+  "GuardianPillarExaltedHeroes": {
+    "name": "Каменная колонна: Возвышенные герои"
+  },
   "AshenAratikuWoodMinimalistStaircase": {
     "name": "Лестница из древесины пепельного аратику: Минимализм"
   },
@@ -17662,6 +18007,12 @@
   },
   "SalubriousFragrance": {
     "name": "Целебный аромат"
+  },
+  "AgelessAgave": {
+    "name": "Нестареющая агава"
+  },
+  "SweetDown": {
+    "name": "Сладкое перо"
   },
   "SolidRoots": {
     "name": "«Надёжные корни»"
@@ -18059,6 +18410,15 @@
   "TlalocansDrawing": {
     "name": "«Картина Тлалокана»"
   },
+  "WoodenSignboardEnchantingExperience": {
+    "name": "Деревянная вывеска: Волшебное приключение"
+  },
+  "SpringtimeFoldingScreenATouchOfRed": {
+    "name": "Весенняя ширма: Оттенок красного"
+  },
+  "SpringtimeFoldingScreenFragranceFillsTheAir": {
+    "name": "Весенняя ширма: Аромат наполняет воздух"
+  },
   "BookshelfFreeReading": {
     "name": "Книжная полка: Свободное чтение"
   },
@@ -18133,6 +18493,21 @@
   },
   "FixedTorchPursuitOfVictory": {
     "name": "Стационарный факел: Стремление к победе"
+  },
+  "BlackGoldOfTheBlazingRealm": {
+    "name": "Чёрное золото Пылающего Царства"
+  },
+  "PilgrimageByTheHammersBlow": {
+    "name": "Паломничество под удары молота"
+  },
+  "ClimaxOfColorsAndHues": {
+    "name": "Кульминация красок и оттенков"
+  },
+  "SpatteredColorsAndHues": {
+    "name": "Разбрызганные краски и оттенки"
+  },
+  "MusingsOnColorsAndHues": {
+    "name": "Размышления о красках и оттенках"
   },
   "WeatheredBambooFence": {
     "name": "Ветхая бамбуковая ограда"
@@ -18329,6 +18704,9 @@
   "WhiteChestnutOakWoodRawFinishLowTable": {
     "name": "Низкий стол натурального цвета из древесины белокаштанного дуба"
   },
+  "FairTableUncutOriginal": {
+    "name": "Ярмарочный стол: Необработанный оригинал"
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "Витрина для вина: Сколько душе угодно"
   },
@@ -18397,5 +18775,26 @@
   },
   "TheEmbersOfCinderCity": {
     "name": "«Угли сожжённого города»"
+  },
+  "OurDestination": {
+    "name": "Наша судьба"
+  },
+  "ForeverInArms": {
+    "name": "Навеки в строю"
+  },
+  "BearWitness": {
+    "name": "Стань свидетелем"
+  },
+  "FairsTreasuresAndTrinkets": {
+    "name": "Сокровища и безделушки ярмарки"
+  },
+  "SecretsOfGoodHealth": {
+    "name": "Секреты крепкого здоровья"
+  },
+  "PromiseOfAbundance": {
+    "name": "Обещание изобилия"
+  },
+  "ByCinderCitysGlowingLight": {
+    "name": "При свете сожжённого города"
   }
 }

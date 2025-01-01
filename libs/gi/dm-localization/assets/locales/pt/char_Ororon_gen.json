@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Ataque Carregado</strong>",
         "1": "Realiza um <strong>Disparo com Mira</strong> mais preciso e com mais dano.",
-        "2": "Enquanto mira, elemento Electro irá acumular na ponta da flecha. Uma flecha completamente carregada irá causar muito <electro>Dano Electro</electro>."
+        "2": "Enquanto mira, elemento Electro irá acumular na ponta da flecha. Uma flecha completamente carregada irá causar <electro>Dano Electro</electro>."
       },
       "plunging": {
         "0": "<strong>Ataque Imersivo</strong>",

@@ -134,7 +134,7 @@
     "name": "Shoban: Gösterişli Tüy",
     "description": {
       "0": "<strong>Akım Harmonisi</strong> durumundayken Avare'nin Kuugo: Fushoudan ve Kuugo: Toufukai Saldırı Hızı %10 artar.",
-      "1": "Ek olarak Bora Rüyası Pasif Yeteneği tarafından ateşlenen rüzgar okları, Avare'nin Saldırısının %25'i kadar ek Hasar verir. Öncelikle \"Bora Rüyası\" Pasif Yeteneğinin açılmış olması gerekir."
+      "1": "Ek olarak Bora Rüyası Pasif Yeteneği tarafından ateşlenen rüzgar okları, Avare'nin Saldırısının %25'i kadar ek Hasar verir. \"Bora Rüyası\" Pasif Yeteneğinin açılmış olması gerekir."
     }
   },
   "constellation2": {

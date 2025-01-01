@@ -1,0 +1,34 @@
+{
+  "name": "Thiên Dương Rực Lửa",
+  "description": {
+    "0": "Thanh trọng kiếm lấp lánh như mặt trời mới mọc, từng chứng kiến vô số mặt trời tắt lụi và bùng cháy trở lại."
+  },
+  "passiveName": "Hoàng Hôn Thắp Sáng Bình Minh",
+  "passiveDescription": {
+    "0": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ nhận được hiệu quả \"Ánh Sáng Cháy Bỏng\": Sát Thương Bạo Kích tăng <cryo>20%</cryo>, Tấn Công tăng <cryo>28%</cryo> trong 6s, mỗi 10s tối đa kích hoạt một lần.",
+      "1": "Trong thời gian duy trì, Tấn Công Thường hoặc Trọng Kích sau khi gây sát thương nguyên tố, sẽ khiến hiệu quả Ánh Sáng Cháy Bỏng lần này kéo dài thêm 2s. Hiệu quả này mỗi giây kích hoạt 1 lần, tối đa thông qua cách thức này để kéo dài thêm 6s.",
+      "2": "Ngoài ra, khi trong trạng thái Dạ Hồn Chúc Phúc, hiệu quả \"Ánh Sáng Cháy Bỏng\" tăng 75%, đồng thời hiệu quả này sẽ không tính giờ khi người trang bị không ra trận."
+    },
+    "1": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ nhận được hiệu quả \"Ánh Sáng Cháy Bỏng\": Sát Thương Bạo Kích tăng <cryo>25%</cryo>, Tấn Công tăng <cryo>35%</cryo> trong 6s, mỗi 10s tối đa kích hoạt một lần.",
+      "1": "Trong thời gian duy trì, Tấn Công Thường hoặc Trọng Kích sau khi gây sát thương nguyên tố, sẽ khiến hiệu quả Ánh Sáng Cháy Bỏng lần này kéo dài thêm 2s. Hiệu quả này mỗi giây kích hoạt 1 lần, tối đa thông qua cách thức này để kéo dài thêm 6s.",
+      "2": "Ngoài ra, khi trong trạng thái Dạ Hồn Chúc Phúc, hiệu quả \"Ánh Sáng Cháy Bỏng\" tăng 75%, đồng thời hiệu quả này sẽ không tính giờ khi người trang bị không ra trận."
+    },
+    "2": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ nhận được hiệu quả \"Ánh Sáng Cháy Bỏng\": Sát Thương Bạo Kích tăng <cryo>30%</cryo>, Tấn Công tăng <cryo>42%</cryo> trong 6s, mỗi 10s tối đa kích hoạt một lần.",
+      "1": "Trong thời gian duy trì, Tấn Công Thường hoặc Trọng Kích sau khi gây sát thương nguyên tố, sẽ khiến hiệu quả Ánh Sáng Cháy Bỏng lần này kéo dài thêm 2s. Hiệu quả này mỗi giây kích hoạt 1 lần, tối đa thông qua cách thức này để kéo dài thêm 6s.",
+      "2": "Ngoài ra, khi trong trạng thái Dạ Hồn Chúc Phúc, hiệu quả \"Ánh Sáng Cháy Bỏng\" tăng 75%, đồng thời hiệu quả này sẽ không tính giờ khi người trang bị không ra trận."
+    },
+    "3": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ nhận được hiệu quả \"Ánh Sáng Cháy Bỏng\": Sát Thương Bạo Kích tăng <cryo>35%</cryo>, Tấn Công tăng <cryo>49%</cryo> trong 6s, mỗi 10s tối đa kích hoạt một lần.",
+      "1": "Trong thời gian duy trì, Tấn Công Thường hoặc Trọng Kích sau khi gây sát thương nguyên tố, sẽ khiến hiệu quả Ánh Sáng Cháy Bỏng lần này kéo dài thêm 2s. Hiệu quả này mỗi giây kích hoạt 1 lần, tối đa thông qua cách thức này để kéo dài thêm 6s.",
+      "2": "Ngoài ra, khi trong trạng thái Dạ Hồn Chúc Phúc, hiệu quả \"Ánh Sáng Cháy Bỏng\" tăng 75%, đồng thời hiệu quả này sẽ không tính giờ khi người trang bị không ra trận."
+    },
+    "4": {
+      "0": "Khi thi triển Kỹ Năng Nguyên Tố hoặc Kỹ Năng Nộ sẽ nhận được hiệu quả \"Ánh Sáng Cháy Bỏng\": Sát Thương Bạo Kích tăng <cryo>40%</cryo>, Tấn Công tăng <cryo>56%</cryo> trong 6s, mỗi 10s tối đa kích hoạt một lần.",
+      "1": "Trong thời gian duy trì, Tấn Công Thường hoặc Trọng Kích sau khi gây sát thương nguyên tố, sẽ khiến hiệu quả Ánh Sáng Cháy Bỏng lần này kéo dài thêm 2s. Hiệu quả này mỗi giây kích hoạt 1 lần, tối đa thông qua cách thức này để kéo dài thêm 6s.",
+      "2": "Ngoài ra, khi trong trạng thái Dạ Hồn Chúc Phúc, hiệu quả \"Ánh Sáng Cháy Bỏng\" tăng 75%, đồng thời hiệu quả này sẽ không tính giờ khi người trang bị không ra trận."
+    }
+  }
+}
