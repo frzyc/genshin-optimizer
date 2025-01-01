@@ -31,6 +31,8 @@ export function getCharEle(ck: CharacterKey): ElementKey {
       return 'dendro'
     case 'TravelerHydro':
       return 'hydro'
+    case 'TravelerPyro':
+      return 'pyro'
     default:
       return allStats.char.data[ck].ele!
   }

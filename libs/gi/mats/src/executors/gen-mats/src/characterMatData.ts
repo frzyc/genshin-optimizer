@@ -123,7 +123,8 @@ export default function characterMatData(): CharacterMatDatas {
     const ascension = ascensionData[avatarPromoteId]
 
     if (candSkillDepotIds.length) {
-      const [_1, _2, hydro, anemo, _5, geo, electro, dendro] = candSkillDepotIds
+      const [_1, pyro, hydro, anemo, _5, geo, electro, dendro] =
+        candSkillDepotIds
 
       genMats(
         ['TravelerAnemo'],
@@ -144,6 +145,11 @@ export default function characterMatData(): CharacterMatDatas {
       genMats(
         ['TravelerHydro'],
         avatarSkillDepotExcelConfigData[hydro],
+        ascension
+      )
+      genMats(
+        ['TravelerPyro'],
+        avatarSkillDepotExcelConfigData[pyro],
         ascension
       )
     } else {
