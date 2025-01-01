@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Liberación",
-      "desc": "Al usar la habilidad básica o la habilidad definitiva, elimina uno de sus estados negativos."
+      "desc": "Al usar la habilidad básica o la habilidad definitiva, disipa uno de sus estados negativos."
     },
     "3": {
       "name": "Esfuerzo sostenido",
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Cambio de tornas",
-      "desc": "Al recibir un golpe letal durante el combate, en vez de caer derrotado, Arlan recupera un {{1, percent}}% de sus PV máx. Este efecto se disipa automáticamente tras activarse 1 vez o después de {{2}} turnos."
+      "desc": "Al recibir un golpe letal durante el combate, en vez de caer derrotado, Arlan regenera un {{1, percent}}% de sus PV máx. Este efecto se disipa automáticamente tras activarse 1 vez o después de {{2}} turnos."
     },
     "5": {
       "name": "Martillo y tenazas",

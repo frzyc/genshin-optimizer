@@ -29,14 +29,14 @@
       "0": {
         "name": "Cogito, Ergo Sum",
         "fullDesc": "Dr Ratio a {{2, percent}}% de chances fixes de déclencher 1 attaque de suivi contre sa cible lorsqu'il utilise sa compétence, lui infligeant des DGT imaginaires équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Dr Ratio. Les chances fixes de déclencher l'attaque de suivi augmentent de {{3, percent}}% pour chaque malus appliqué à la cible ennemie. L'attaque de suivi est lancée sur un autre ennemi aléatoire si la cible ennemie est vaincue avant que l'attaque de suivi ne soit déclenchée.",
-        "shortDesc": "Lors de l'utilisation de la compétence, il y a une chance de lancer une <orangeStrong>attaque de suivi</orangeStrong> contre la cible 1 fois.",
+        "shortDesc": "Il y a une chance de lancer 1 <orangeStrong>attaque de suivi</orangeStrong> sur la cible, qui inflige des DGT imaginaires lors de l'utilisation de la compétence.",
         "tag": "Cible unique"
       }
     },
     "technique": {
       "0": {
         "name": "Fascination façonnée",
-        "fullDesc": "Crée une dimension spéciale qui provoque les ennemis proches pendant {{1}} secondes après avoir utilisé la technique. Il y a {{2, percent}}% de chances de base de réduire la VIT des ennemis de {{3, percent}}% pendant {{4}} tours en engageant le combat avec des ennemis dans la dimension. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
+        "fullDesc": "Crée une dimension spéciale qui provoque les ennemis proches pendant {{1}} secondes après avoir utilisé la technique. Il y a {{2, percent}}% de chances de base de réduire la VIT des ennemis de {{3, percent}}% pendant {{4}} tours en engageant le combat avec des ennemis dans la dimension spéciale. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
         "shortDesc": "Crée une dimension spéciale. Les ennemis dans la dimension subissent l'effet Provocation. Il y a de fortes chances de <orangeStrong>réduire la VIT</orangeStrong> des cibles ennemies après être entré en combat avec des ennemis dans cette dimension.",
         "tag": "Incapacitation"
       }
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Inférence",
-        "fullDesc": "Lorsque la compétence est utilisée pour attaquer une cible ennemie, il y a {{1, percent}}% de chances de base de réduire la RÉS aux effets de la cible attaquée de {{2, percent}}% pendant {{3}} tours.",
+        "fullDesc": "Lorsque la compétence est utilisée pour attaquer une cible ennemie, il y a {{1, percent}}% de chances de base de réduire la RÉS aux effets de la cible ennemie attaquée de {{2, percent}}% pendant {{3}} tours.",
         "shortDesc": "",
         "tag": ""
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Le diable est dans les détails",
-      "desc": "Lorsque l'attaque de suivi de son talent touche une cible, cette dernière subit des DGT imaginaires supplémentaires équivalents à {{1, percent}}% de l'ATQ de Dr Ratio pour chaque malus qui lui est appliqué. Cet effet peut être déclenché un maximum de {{2}} fois durant chaque attaque de suivi."
+      "desc": "Lorsque l'ATQ de suivi du talent touche une cible, cette dernière subit des DGT additionnels imaginaires équivalents à {{1, percent}}% de l'ATQ de Dr Ratio pour chaque malus qui lui est appliqué. Cet effet peut être déclenché un maximum de {{2}} fois durant chaque ATQ de suivi."
     },
     "3": {
       "name": "Connais-toi toi-même",
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Vincit Omnia Veritas",
-      "desc": "Augmente de {{1}} le nombre possible de déclenchements de Folie du sage. Les DGT infligés par l'attaque de suivi du talent augmentent de {{2, percent}}%."
+      "desc": "Augmente de {{1}} le nombre possible de déclenchements de Folie du sage. Les DGT infligés par l'ATQ de suivi du talent augmentent de {{2, percent}}%."
     }
   }
 }

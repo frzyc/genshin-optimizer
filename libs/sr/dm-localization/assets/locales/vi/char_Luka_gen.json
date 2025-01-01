@@ -58,7 +58,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Động Năng Quá Tải",
-        "fullDesc": "Khi thi triển Chiến Kỹ, sẽ giải trừ ngay {{1}} Hiệu Ứng Buff của kẻ địch.",
+        "fullDesc": "Khi thi triển Chiến Kỹ, sẽ giải trừ ngay {{1}} Hiệu Ứng Buff của mục tiêu phe địch.",
         "shortDesc": "",
         "tag": ""
       }
@@ -74,7 +74,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Nghiền Nát Ý Chí",
-        "fullDesc": "Khi thi triển tấn công thường cường hóa, mỗi một đòn tấn công của Nắm Đấm Trực Diện đều có {{1, percent}}% xác suất cố định khiến Luka thi triển thêm 1 đòn tấn công. Hiệu ứng này sẽ không có hiệu lực với tấn công thi triển thêm.",
+        "fullDesc": "Khi thi triển Tấn Công Thường Cường Hóa, mỗi một đòn tấn công của Nắm Đấm Trực Diện đều có {{1, percent}}% xác suất cố định khiến Luka thi triển thêm 1 đòn tấn công. Hiệu ứng này sẽ không có hiệu lực với tấn công thi triển thêm.",
         "shortDesc": "",
         "tag": ""
       }

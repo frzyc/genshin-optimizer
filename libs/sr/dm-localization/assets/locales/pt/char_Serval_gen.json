@@ -13,7 +13,7 @@
       "0": {
         "name": "Clarão de Raio",
         "fullDesc": "Causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Serval como Dano de Raio a um único inimigo e <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Serval como Dano de Raio aos inimigos adjacentes a ele, com {{3, percent}}% de chance-base de os inimigos atingidos receberem Choque por {{4}} rodada(s).<br>Quando em Choque, inimigos recebem Dano de Raio Contínuo igual a <orangeStrong>{{5, percent}}%</orangeStrong> do ATQ de Serval no início de cada rodada.",
-        "shortDesc": "Causa Dano de Raio leve a um único inimigo e quaisquer alvos adjacentes, com uma alta chance de causar <orangeStrong>Choque</orangeStrong>.",
+        "shortDesc": "Causa Dano de Raio a uma unidade inimiga e Dano de Raio leve aos alvos adjacentes, com alta chance de <orangeStrong>aplicar Choque</orangeStrong> no alvo.",
         "tag": "Explosão"
       }
     },
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Rock 'n' Roll",
-        "fullDesc": "A Perícia tem um aumento de chance-base de {{1, percent}}% de causar Choque a inimigos.",
+        "fullDesc": "Ao usar a Perícia, aumenta a chance-base de causar \"Choque\" no inimigo-alvo atacado em {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Faça Barulho!",
-      "desc": "A Perícia Suprema tem uma chance-base de {{1, percent}}% de causar Choque em inimigos que ainda não tiverem esse estado. Esse estado de Choque tem os mesmos efeitos daquele causado pela Perícia."
+      "desc": "A Perícia Suprema tem uma chance-base de {{1, percent}}% de causar \"Choque\" em inimigos que ainda não possuírem esse estado. Esse estado de \"Choque\" tem os mesmos efeitos daquele causado pela Perícia."
     },
     "5": {
       "name": "O Rugido Mais Alto de Belobog!",

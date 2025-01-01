@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Bảo Vệ Tôi Khiêu Vũ",
-        "fullDesc": "Khi số lượng kẻ địch trong trận bằng 5 (hoặc trên 5)/4/3/2/1, Siêu Sát Thương Phá Vỡ do hiệu ứng Bạn Nhảy kích hoạt sẽ tăng {{1, percent}}%/{{2, percent}}%/{{3, percent}}%/{{4, percent}}%/{{5, percent}}%.",
+        "fullDesc": "Khi số lượng mục tiêu phe địch trong trận bằng 5 (hoặc trên 5)/4/3/2/1, Siêu Sát Thương Phá Vỡ do hiệu ứng Bạn Nhảy kích hoạt sẽ tăng {{1, percent}}%/{{2, percent}}%/{{3, percent}}%/{{4, percent}}%/{{5, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Chiếc Mũ Nhà Hát",
-        "fullDesc": "Sau khi mục tiêu phe ta gây Phá Vỡ Điểm Yếu sẽ khiến kẻ địch Trì Hoãn Hành Động thêm {{1, percent}}%.",
+        "fullDesc": "Sau khi mục tiêu phe ta gây Phá Vỡ Điểm Yếu sẽ khiến mục tiêu phe địch Trì Hoãn Hành Động thêm {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }

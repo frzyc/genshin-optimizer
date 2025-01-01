@@ -14,7 +14,7 @@
         "name": "Zurückprallende Liebe",
         "fullDesc": "Fügt einem anvisierten Gegner Wind-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Sampos ANG zu und verursacht zusätzlich {{1}}-mal SCH. Jeder Treffer fügt einem zufälligen Gegner Wind-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Sampos ANG zu.",
         "shortDesc": "Fügt einem Gegner geringen Wind-SCH zu und prallt insgesamt 5-mal ab.",
-        "tag": "Abprallung"
+        "tag": "Abpraller"
       }
     },
     "ult": {
@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Helles Leuchten",
-        "fullDesc": "Nach dem Einsatz der Technik werden Gegner in einem bestimmten Bereich {{1}} s lang geblendet. Die Verbündeten sind für geblendete Gegner unsichtbar.<br>Greift man einen geblendeten Gegner aktiv an, besteht eine Grundchance von {{2, percent}}%, die Aktionen aller Gegner um {{3, percent}}% zu verzögern.",
+        "fullDesc": "Nach dem Einsatz der Technik werden Gegner in einem bestimmten Bereich {{1}} Sek. lang geblendet. Die Verbündeten sind für geblendete Gegner unsichtbar.<br>Nach Kampfeintritt mit einem aktiven Angriff auf von Blenden betroffene Gegner besteht eine Grundchance von {{2, percent}}%, die Aktionen aller Gegner um {{3, percent}}% zu verzögern.",
         "shortDesc": "Gegner in einem bestimmten Gebiet werden geblendet. Beim Kämpfen gegen einen geblendeten Gegner besteht eine hohe Chance, nach Kampfeintritt die Aktionen aller Gegner zu verzögern.",
         "tag": "Beeinträchtigung"
       }

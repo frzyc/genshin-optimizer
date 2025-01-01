@@ -29,7 +29,7 @@
       "0": {
         "name": "Điệp Khúc Du Dương",
         "fullDesc": "Tăng <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> Sát Thương Bạo Kích cho toàn phe ta, và sau khi mục tiêu phe ta tấn công phe địch, Robin sẽ hồi thêm cho bản thân {{2}} Năng Lượng.",
-        "shortDesc": "Tăng <orangeStrong>Sát Thương Bạo Kích</orangeStrong> cho toàn phe ta, và sau khi nhân vật phe ta tấn công phe địch, Robin sẽ hồi thêm Năng Lượng.",
+        "shortDesc": "Tăng <orangeStrong>Sát Thương Bạo Kích</orangeStrong> cho toàn phe ta, và sau khi mục tiêu phe ta tấn công phe địch, Robin sẽ hồi thêm Năng Lượng.",
         "tag": "Hỗ Trợ"
       }
     },
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Chìa Khóa Giọt Mưa",
-      "desc": "Khi thi triển Tuyệt Kỹ sẽ giải trừ Hiệu Ứng Xấu loại Khống Chế cho toàn thể phe ta, khiến toàn thể phe ta trong thời gian Robin có trạng thái Hợp Tấu tăng {{1, percent}}% Kháng Hiệu Ứng."
+      "desc": "Khi thi triển Tuyệt Kỹ sẽ giải trừ Hiệu Ứng Xấu dạng Khống Chế cho toàn thể phe ta, khiến toàn thể phe ta trong thời gian Robin có trạng thái Hợp Tấu tăng {{1, percent}}% Kháng Hiệu Ứng."
     },
     "5": {
       "name": "Giọt Nước Mắt Của Ngôi Sao Cô Đơn",
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Đêm Trăng Vắng Bóng",
-      "desc": "Khi ở trạng thái Hợp Tấu, sát thương bạo kích của Sát Thương Vật Lý Kèm Theo mà Tuyệt Kỹ gây ra tăng thêm {{2, percent}}%. Hiệu quả Đêm Trăng Vắng Bóng tối đa kích hoạt {{1}} lần, mỗi lần thi triển Tuyệt Kỹ sẽ làm mới số lần kích hoạt."
+      "desc": "Khi ở trạng thái Hợp Tấu, sát thương bạo kích của Sát Thương Kèm Theo thuộc tính Vật Lý mà Tuyệt Kỹ gây ra tăng thêm {{2, percent}}%. Hiệu quả Đêm Trăng Vắng Bóng tối đa kích hoạt {{1}} lần, mỗi lần thi triển Tuyệt Kỹ sẽ làm mới số lần kích hoạt."
     }
   }
 }

@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Đòn Phủ Đầu",
-        "fullDesc": "Sát thương gây ra cho mục tiêu địch có Hiệu Ứng Xấu tăng {{1, percent}}%.",
+        "fullDesc": "Sát thương gây ra cho mục tiêu phe địch có Hiệu Ứng Xấu tăng {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Phân Tích Đầy Đủ",
-      "desc": "Khi thi triển Chiến Kỹ, có {{1, percent}}% xác suất cơ bản khiến Kháng Băng của mục tiêu địch giảm {{2, percent}}%, duy trì {{3}} hiệp."
+      "desc": "Khi thi triển Chiến Kỹ, có {{1, percent}}% xác suất cơ bản khiến Kháng Băng của mục tiêu phe địch giảm {{2, percent}}%, duy trì {{3}} hiệp."
     },
     "5": {
       "name": "Quấy Nhiễu Tuyệt Đối",
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Truy Kích Yếu Ớt",
-      "desc": "Sau khi thi triển tấn công, nếu kẻ địch đang trong Hiệu Ứng Xấu, sẽ gây Sát Thương Băng kèm theo cho kẻ đó bằng {{1, percent}}% Tấn Công của Pela."
+      "desc": "Sau khi thi triển tấn công, nếu mục tiêu phe địch đang trong Hiệu Ứng Xấu, sẽ gây Sát Thương Kèm Theo thuộc tính Băng cho kẻ đó bằng {{1, percent}}% Tấn Công của Pela."
     }
   }
 }

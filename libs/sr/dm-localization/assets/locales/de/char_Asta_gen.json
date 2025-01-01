@@ -13,8 +13,8 @@
       "0": {
         "name": "Meteoritensturm",
         "fullDesc": "Fügt einem anvisierten Gegner Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Astas ANG zu. Löst zusätzlich 4 Angriffe gegen zufällige Gegner aus, die jeweils Feuer-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Astas ANG verursachen.",
-        "shortDesc": "Fügt einem Gegner mit insgesamt 5-mal Abprall geringen Feuer-SCH zu.",
-        "tag": "Abprallung"
+        "shortDesc": "Fügt einem Gegner mit insgesamt 5-mal Abpraller geringen Feuer-SCH zu.",
+        "tag": "Abpraller"
       }
     },
     "ult": {

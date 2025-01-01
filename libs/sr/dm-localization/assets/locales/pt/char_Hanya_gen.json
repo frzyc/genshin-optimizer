@@ -29,7 +29,7 @@
       "0": {
         "name": "Sanção",
         "fullDesc": "Quando um aliado usa um ATQ Básico, uma Perícia ou uma Perícia Suprema em um inimigo afligido com Fardo, o Dano causado aumenta em <orangeStrong>{{1, percent}}%</orangeStrong> durando por {{2}} rodada(s).",
-        "shortDesc": "Aliados causam mais Dano ao atacar inimigos infligidos com Fardo.",
+        "shortDesc": "Quando um aliado alvo usa um ATQ Básico, uma Perícia ou uma Perícia Suprema em um inimigo-alvo afligido com \"Fardo\", o Dano causado aumenta.",
         "tag": "Suporte"
       }
     },
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Um Coração",
-      "desc": "Quando um aliado com o efeito da Perícia Suprema de Hanya derrotar um inimigo, a ação de Hanya é Avançada Adiante em {{1, percent}}%. Esse efeito só pode ser ativado {{2}} vez(es) por rodada."
+      "desc": "Quando um aliado-alvo com o efeito da Perícia Suprema de Hanya derrotar um inimigo, a ação de Hanya é Avançada Adiante em {{1, percent}}%. Este efeito só pode ser ativado {{2}} vez(es) por rodada."
     },
     "2": {
       "name": "Duas Visualizações",

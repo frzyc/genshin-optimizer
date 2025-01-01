@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Shining Bright",
-        "fullDesc": "After Sampo uses his Technique, enemies in a set area are inflicted with Blind for {{1}} second(s). Blinded enemies cannot detect your team.<br>When initiating combat against a Blinded enemy, there is a {{2, percent}}% fixed chance to delay all enemies' action by {{3, percent}}%.",
+        "fullDesc": "After Sampo uses his Technique, enemies in a set area are afflicted with Blind for {{1}} second(s). Blinded enemies cannot detect ally targets.<br>When initiating combat against a Blinded enemy, there is a {{2, percent}}% fixed chance to delay all enemies' action by {{3, percent}}%.",
         "shortDesc": "Enemies in a set area are Blinded. When initiating battle against a Blinded enemy, there is a high chance to delay all enemies' actions.",
         "tag": "Impair"
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Infectious Enthusiasm",
-      "desc": "Defeating an enemy with Wind Shear has a {{1, percent}}% base chance to inflict all enemies with {{2}} stack(s) of Wind Shear, equivalent to the Talent's Wind Shear."
+      "desc": "Defeating an enemy afflicted with Wind Shear has a {{1, percent}}% base chance to inflict all enemies with {{2}} stack(s) of Wind Shear, equivalent to that of Skill."
     },
     "3": {
       "name": "Big Money!",

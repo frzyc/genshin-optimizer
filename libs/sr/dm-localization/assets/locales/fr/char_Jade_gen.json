@@ -13,7 +13,7 @@
       "0": {
         "name": "Contrat d'acquisition",
         "fullDesc": "Transforme une cible alliée unique en Agent de recouvrement de dettes et augmente sa VIT de {{1}} pendant {{4}} tours.<br>Lorsque l'Agent de recouvrement de dettes attaque, inflige 1 instance de DGT quantiques additionnels équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> de l'ATQ de Jade à chaque cible ennemie touchée et consomme une partie des PV de l'Agent de recouvrement de dettes à hauteur de {{2, percent}}% de ses PV max. Si ses PV actuels sont insuffisants, ils sont réduits à 1.<br>Lorsque Jade devient Agent de recouvrement de dettes, elle ne bénéficie pas de l'effet d'augmentation de VIT, et ses attaques ne consomment pas de PV.<br>Jade ne peut pas utiliser sa compétence lorsqu'il y a un Agent de recouvrement de dettes sur le champ de bataille. La durée de l'effet Agent de recouvrement de dettes diminue de 1 au début de chaque tour de Jade.",
-        "shortDesc": "Transforme un allié en <orangeStrong>Agent de recouvrement de dettes</orangeStrong> et augmente sa VIT. Lorsque l'<orangeStrong>Agent de recouvrement de dettes</orangeStrong> attaque, il inflige des DGT quantiques additionnels mineurs à chaque cible ennemie touchée et consomme ses propres PV. Lorsque Jade devient Agent de recouvrement de dettes, elle ne bénéficie pas de l'effet d'augmentation de VIT, et ses attaques ne consomment pas de PV.",
+        "shortDesc": "Transforme un allié en <orangeStrong>Agent de recouvrement de dettes</orangeStrong> et augmente sa VIT. Lorsque l'<orangeStrong>Agent de recouvrement de dettes</orangeStrong> attaque, il inflige des DGT quantiques additionnels mineurs à chaque cible ennemie touchée et il consomme ses propres PV. Lorsque Jade devient Agent de recouvrement de dettes, elle ne bénéficie pas de l'effet d'augmentation de VIT, et ses attaques ne consomment pas de PV.",
         "tag": "Soutien"
       }
     },
@@ -21,7 +21,7 @@
       "0": {
         "name": "Pacte de l'abîme",
         "fullDesc": "Inflige des DGT quantiques équivalents à <orangeStrong>{{3, percent}}%</orangeStrong> de l'ATQ de Jade à tous les ennemis. D'autre part, renforce l'attaque de suivi du talent de Jade en augmentant son multiplicateur de DGT de <orangeStrong>{{1, percent}}%</orangeStrong>. Ce renforcement peut prendre effet {{2}} fois.",
-        "shortDesc": "Inflige des DGT quantiques à tous les ennemis et augmente le multiplicateur de DGT d'<orangeStrong>attaque de suivi</orangeStrong>.",
+        "shortDesc": "Inflige des DGT quantiques à toutes les unités ennemies et le multiplicateur de DGT de l'<orangeStrong>ATQ de suivi</orangeStrong> du talent de cette unité augmente.",
         "tag": "ZdE"
       }
     },
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Altruisme négociable",
-      "desc": "Les DGT d'attaque de suivi du talent de Jade augmentent de {{1, percent}}%. Lorsque le personnage qui bénéficie de l'effet Agent de recouvrement de dettes attaque et touche 2 ou 1 cible ennemie, Jade obtient respectivement {{2}} ou {{3}} points de charge supplémentaires."
+      "desc": "Les DGT d'ATQ de suivi du talent de Jade augmentent de {{1, percent}}%. Lorsque le personnage qui bénéficie de l'effet Agent de recouvrement de dettes attaque et touche 1 ou 2 cible(s) ennemie(s), Jade obtient respectivement {{2}} ou {{3}} points de charge supplémentaires."
     },
     "2": {
       "name": "Moralité sous caution",

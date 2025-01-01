@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Bắn Cung",
-        "fullDesc": "Yukong kháng 1 lần Hiệu Ứng Xấu khi trúng phải, có thể kích hoạt lại sau {{1}} hiệp.",
+        "fullDesc": "Yukong có thể kháng 1 lần Hiệu Ứng Xấu khi trúng phải, có thể kích hoạt lại sau {{1}} hiệp.",
         "shortDesc": "",
         "tag": ""
       }

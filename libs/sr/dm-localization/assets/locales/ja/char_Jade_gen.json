@@ -21,7 +21,7 @@
       "0": {
         "name": "{RUBY_B#よくぼう}欲望{RUBY_E#}の{RUBY_B#ふち}淵{RUBY_E#}での{RUBY_B#じごく}地獄{RUBY_E#}の{RUBY_B#ちぎ}契{RUBY_E#}り",
         "fullDesc": "敵全体にジェイドの攻撃力<orangeStrong>{{3, percent}}%</orangeStrong>分の量子属性ダメージを与える。ジェイドの天賦の追加攻撃を強化し、追加攻撃のダメージ倍率+<orangeStrong>{{1, percent}}%</orangeStrong>、この強化追加攻撃は{{2}}回まで発動できる。",
-        "shortDesc": "敵全体に量子属性ダメージを与え、自身の<orangeStrong>追加攻撃</orangeStrong>ダメージ倍率をアップする。",
+        "shortDesc": "敵全体に量子属性ダメージを与え、天賦の<orangeStrong>追加攻撃</orangeStrong>ダメージ倍率をアップする。",
         "tag": "全体攻撃"
       }
     },

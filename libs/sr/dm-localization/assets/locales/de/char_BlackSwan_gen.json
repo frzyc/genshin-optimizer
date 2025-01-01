@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Viszerale Unruhe",
-        "fullDesc": "Nachdem mit der Fertigkeit ein Gegner angegriffen wurde, der sich im Status Windscherung, Bluten, Brennen oder Schock befindet, besteht für jeden dieser Debuffs eine Grundchance von {{1, percent}}%, ihn zusätzlich mit 1 Stapelung „Arkana“ zu belegen.",
+        "fullDesc": "Nachdem mit der Fertigkeit ein Gegner angegriffen wurde, der sich im Status Windscherung, Bluten, Brennen oder Schock befindet, besteht für jeden dieser Debuffs eine Grundchance von {{1, percent}}%, ihn zusätzlich mit 1 Stapelung Arkana zu belegen.",
         "shortDesc": "",
         "tag": ""
       }
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Des Kelches Bodensatz",
-        "fullDesc": "Wenn ein Gegner den Kampf betritt, besteht eine Grundchance von {{1, percent}}%, ihn mit 1 Stapelung „Arkana“ zu belegen.<br>Jedes Mal, wenn ein Gegner durch einen Einzelangriff eines Verbündeten DoT erleidet, besteht eine Grundchance von {{1, percent}}%, dass er mit 1 Stapelung Arkana belegt wird. Jeder Einzelangriff kann bis zu {{2}} Stapelungen verursachen.",
+        "fullDesc": "Wenn ein Gegner den Kampf betritt, besteht eine Grundchance von {{1, percent}}%, ihn mit 1 Stapelung Arkana zu belegen.<br>Jedes Mal, wenn ein Gegner durch einen Einzelangriff eines Verbündeten DoT erleidet, besteht eine Grundchance von {{1, percent}}%, dass er mit 1 Stapelung Arkana belegt wird. Jeder Einzelangriff kann bis zu {{2}} Stapelungen verursachen.",
         "shortDesc": "",
         "tag": ""
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Lämmchen, weine nicht um mich",
-      "desc": "Wird ein von „Arkana“ betroffener Gegner besiegt, besteht eine Grundchance von {{1, percent}}%, angrenzende Einheiten mit {{2}} Stapelungen Arkana zu belegen."
+      "desc": "Wird ein von Arkana betroffener Gegner besiegt, besteht eine Grundchance von {{1, percent}}%, angrenzende Einheiten mit {{2}} Stapelungen Arkana zu belegen."
     },
     "3": {
       "name": "Wie im Himmel, so auf Erden",
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Gnädiges Pantheon, unbekannte Diener",
-      "desc": "Wenn Verbündete von Schwarzer Schwan Gegner angreifen, hat Schwarzer Schwan eine Grundchance von {{2, percent}}%, das Ziel mit 1 Stapelung „Arkana“ zu belegen.<br>Jedes Mal, wenn Schwarzer Schwan einen Gegner mit Arkana belegt, besteht eine feste Chance von {{1, percent}}%, die bei diesem Mal zugefügte Stapelung von Arkana zusätzlich um {{3}} zu erhöhen."
+      "desc": "Wenn Teammitglieder von Schwarzer Schwan Gegner angreifen, hat Schwarzer Schwan eine Grundchance von {{2, percent}}%, das Ziel mit 1 Stapelung Arkana zu belegen.<br>Jedes Mal, wenn Schwarzer Schwan einen Gegner mit Arkana belegt, besteht eine feste Chance von {{1, percent}}%, die bei diesem Mal zugefügte Stapelzahl von Arkana zusätzlich um {{3}} zu erhöhen."
     }
   }
 }

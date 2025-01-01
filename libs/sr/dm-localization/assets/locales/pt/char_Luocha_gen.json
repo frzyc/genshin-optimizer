@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Através do Vale",
-        "fullDesc": "A chance de resistir a penalidades de Controle Negativo aumenta em {{1, percent}}%.",
+        "fullDesc": "Aumenta a chance de resistir a penalidades de Controle Negativo em {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Concessão da Pureza",
-      "desc": "Quando sua Perícia é ativada, se os PV do aliado-alvo forem inferiores a 50%, a Cura Realizada por Luocha aumenta em {{1, percent}}%. Se o aliado-alvo tiver 50% ou mais de PV, o aliado recebe um Escudo que pode absorver Dano igual a {{2, percent}}% do ATQ de Luocha + {{3}}, que dura por {{4}} rodadas."
+      "desc": "Quando sua Perícia é ativada, se a porcentagem dos PV do aliado-alvo forem inferiores a 50%, a Cura Realizada por Luocha aumenta em {{1, percent}}%. Se o aliado-alvo tiver 50% ou mais de PV, o aliado recebe um Escudo que pode absorver Dano igual a {{2, percent}}% do ATQ de Luocha + {{3}}, que dura por {{4}} rodadas."
     },
     "3": {
       "name": "Questionamento pelos Tolos",

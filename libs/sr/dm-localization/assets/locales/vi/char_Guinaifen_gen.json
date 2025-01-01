@@ -37,7 +37,7 @@
       "0": {
         "name": "Kỹ Nghệ Xiếc Đỉnh Cao",
         "fullDesc": "Tấn công kẻ địch ngay lập tức, sau khi vào trận sẽ gây {{2}} lần sát thương, mỗi lần sát thương sẽ gây cho 1 kẻ địch ngẫu nhiên Sát Thương Hỏa bằng {{1, percent}}% tấn công của Guinaifen và có {{3, percent}}% xác suất cơ bản khiến mục tiêu rơi vào trạng thái Nuốt Lửa.",
-        "shortDesc": "Tấn công kẻ địch. Sau khi vào chiến đấu, gây một lượng nhỏ Sát Thương Hỏa lên 1 kẻ địch đồng thời thi triển <orangeStrong>trạng thái \"Nuốt Lửa\"</orangeStrong>, tổng cộng Nảy Bật 4 lần.",
+        "shortDesc": "Tấn công kẻ địch. Sau khi vào chiến đấu, gây một lượng nhỏ Sát Thương Hỏa lên 1 kẻ địch đồng thời có xác suất lớn thi triển <orangeStrong>trạng thái \"Nuốt Lửa\"</orangeStrong>, tổng cộng Nảy Bật 4 lần.",
         "tag": ""
       }
     },
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Trèo Sào",
-        "fullDesc": "Tấn công thường có {{1, percent}}% xác suất cơ bản khiến kẻ địch rơi vào trạng thái Thiêu Đốt giống như Chiến Kỹ.",
+        "fullDesc": "Tấn Công Thường có {{1, percent}}% xác suất cơ bản khiến mục tiêu phe địch rơi vào trạng thái Thiêu Đốt giống như Chiến Kỹ.",
         "shortDesc": "",
         "tag": ""
       }
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Nhảy Vòng",
-        "fullDesc": "Khi vào trận, hành động của Guinaifen sẽ ưu tiên {{1, percent}}%.",
+        "fullDesc": "Khi bắt đầu chiến đấu, Guinaifen sẽ Ưu Tiên Hành Động {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Trồng Cây Chuối Ăn Mì",
-      "desc": "Khi thi triển Chiến Kỹ, có {{1, percent}}% xác suất cơ bản khiến kháng hiệu ứng của kẻ địch bị tấn công giảm {{2, percent}}%, duy trì {{3}} hiệp."
+      "desc": "Khi thi triển Chiến Kỹ, có {{1, percent}}% xác suất cơ bản khiến kháng hiệu ứng của mục tiêu phe địch bị tấn công giảm {{2, percent}}%, duy trì {{3}} hiệp."
     },
     "2": {
       "name": "Vừa Đánh Răng Vừa Huýt Sáo",

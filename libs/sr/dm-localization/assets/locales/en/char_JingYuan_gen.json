@@ -29,7 +29,7 @@
       "0": {
         "name": "Prana Extirpated",
         "fullDesc": "Summons Lightning-Lord at the start of the battle. Lightning-Lord has {{1}} base SPD and {{4}} base Hits Per Action. When the Lightning-Lord takes action, its hits are considered as follow-up attacks, with each hit dealing Lightning DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Jing Yuan's ATK to a random single enemy, and enemies adjacent to it also receive Lightning DMG equal to {{5, percent}}% of the DMG dealt to the primary target enemy.<br>The Lightning-Lord's Hits Per Action can reach a max of {{6}}. Every time Lightning-Lord's Hits Per Action increases by 1, its SPD increases by {{3}}. After the Lightning-Lord's action ends, its SPD and Hits Per Action return to their base values.<br>When Jing Yuan is knocked down, the Lightning-Lord will disappear.<br>When Jing Yuan is affected by Crowd Control debuff, the Lightning-Lord is unable to take action.",
-        "shortDesc": "Summons Lightning-Lord at the start of the battle. Lightning-Lord <orangeStrong>automatically</orangeStrong> <orangeStrong>deals minor Lightning DMG</orangeStrong> to a random enemy and enemies adjacent to it.",
+        "shortDesc": "At the start of the battle, summons \"Lightning-Lord.\" When \"Lightning-Lord\" takes action, launches Follow-up ATK to <orangeStrong>automatically</orangeStrong> <orangeStrong>deal minor Lightning DMG</orangeStrong> to one random enemy and adjacent targets.",
         "tag": "Bounce"
       }
     },

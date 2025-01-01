@@ -101,7 +101,7 @@
   "ranks": {
     "1": {
       "name": "Silenced Sky Spake Sooth",
-      "desc": "When dealing DMG to debuffed enemies, increases the CRIT Rate by {{1, percent}}%."
+      "desc": "When dealing DMG to debuffed enemies, increases CRIT Rate by {{1, percent}}%."
     },
     "2": {
       "name": "Mute Thunder in Still Tempest",
@@ -121,7 +121,7 @@
     },
     "6": {
       "name": "Apocalypse, the Emancipator",
-      "desc": "Increases the All-Type RES PEN for the Ultimate DMG dealt by Acheron by {{1, percent}}%. The DMG dealt by Basic ATK and Skill will also be considered as Ultimate DMG and can reduce enemy toughness regardless of Weakness Types. When breaking Weaknesses, triggers the Lightning Weakness Break effect."
+      "desc": "Increases the All-Type RES PEN for the Ultimate DMG dealt by Acheron by {{1, percent}}%. The DMG dealt by Basic ATK and Skill will also be considered as Ultimate DMG and can Reduce enemy Toughness regardless of Weakness Types. When breaking Weaknesses, triggers the Lightning Weakness Break effect."
     }
   }
 }

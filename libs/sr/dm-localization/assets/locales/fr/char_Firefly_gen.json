@@ -93,7 +93,7 @@
     },
     "2": {
       "name": "Chute des cieux fracturés",
-      "desc": "Lorsque SAM utilise son ATQ normale renforcée ou sa compétence renforcée dans l'état Combustion complète pour éliminer une cible ennemie ou lui infliger une Rupture de faiblesse, gagne immédiatement 1 tour supplémentaire. Cet effet peut se déclencher à nouveau après {{2}} tour."
+      "desc": "Lorsque SAM utilise son ATQ normale renforcée ou sa compétence renforcée dans l'état Combustion complète pour éliminer une cible ennemie ou lui infliger une Rupture de faiblesse, 1 tour supplémentaire lui est immédiatement accordé. Cet effet peut se déclencher à nouveau après {{2}} tour."
     },
     "3": {
       "name": "Sommeil au milieu de la galaxie silencieuse",

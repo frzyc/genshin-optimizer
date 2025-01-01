@@ -84,7 +84,7 @@
     "bonusAbility2": {
       "0": {
         "name": "O Abismo",
-        "fullDesc": "Quando existirem 1 ou 2 personagens seguindo o Caminho da Inexistência na equipe além de Acheron, aumenta o Dano do ATQ Básico, da Perícia e da Perícia Suprema de Acheron em {{1, percent}}% ou {{2, percent}}% do Dano original respectivamente.",
+        "fullDesc": "Quando existirem 1 ou 2 personagens seguindo o Caminho da Inexistência na equipe além de Acheron, aumenta o Dano causado pelo ATQ Básico, pela Perícia e pela Perícia Suprema de Acheron em {{1, percent}}% ou {{2, percent}}% do Dano original respectivamente.",
         "shortDesc": "",
         "tag": ""
       }
@@ -113,7 +113,7 @@
     },
     "4": {
       "name": "Fogo Sagrado da Alma Refletida",
-      "desc": "Quando o inimigo-alvo entra em combate, inflige a ele o estado de Vulnerabilidade Vulnerável do Dano da Perícia Suprema, aumentando a quantidade de Dano da Perícia Suprema recebido em {{1, percent}}%."
+      "desc": "Quando o inimigo-alvo entra em combate, inflige a ele Vulnerabilidade a Dano da Perícia Suprema, aumentando a quantidade de Dano da Perícia Suprema recebido em {{1, percent}}%."
     },
     "5": {
       "name": "Almas Espalhadas em Terras Apagadas",
@@ -121,7 +121,7 @@
     },
     "6": {
       "name": "Apocalipse, o Emancipador",
-      "desc": "Aumenta a PEN de RES a Todos os Tipos do Dano de Perícia Suprema causado por Acheron em {{1, percent}}%. O Dano causado pelo ATQ Básico e a Perícia também será considerado Dano de Perícia Suprema e pode reduzir a Tenacidade do inimigo independentemente dos Tipos de Fraqueza. Quando as Fraquezas são Quebradas, aciona o efeito de Quebra de Fraqueza contra Raio."
+      "desc": "Aumenta a PEN de RES a Todos os Tipos do Dano de Perícia Suprema causado por Acheron em {{1, percent}}%. O Dano causado pelo ATQ Básico e pela Perícia também será considerado Dano de Perícia Suprema e pode reduzir a Tenacidade do inimigo independentemente dos Tipos de Fraqueza. Ao aplicar Quebra de Fraqueza, ativa o efeito de Quebra de Fraqueza contra Raio."
     }
   }
 }

@@ -35,7 +35,7 @@
       "0": {
         "name": "Tesoro de los Arquitectos",
         "fullDesc": "Por cada ataque recibido, obtiene 1 acumulación de Voluntad magmática (puede tener hasta {{3}} acumulaciones).<br>Cuando tiene 4 o más, el ATQ básico se potencia e inflige daño tanto al objetivo como a los enemigos adyacentes.<br>Después de que {F#la}{M#el} Trazacaminos use el ATQ básico, la habilidad básica o la habilidad definitiva, todos los aliados obtienen un escudo que absorbe un daño equivalente al <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de la DEF {F#de la}{M#del} Trazacaminos + <orangeStrong>{{4}}</orangeStrong> durante {{2}} turnos.",
-        "shortDesc": "",
+        "shortDesc": "Al recibir un ataque, obtiene acumulaciones de Voluntad magmática. Al tener al menos 4 acumulaciones de Voluntad magmática, el ATQ básico se <orangeStrong>potencia</orangeStrong>. Tras lanzar el ATQ básico, la habilidad básica o la habilidad definitiva, otorga un escudo a todos los aliados.",
         "tag": "Potenciación"
       }
     },
@@ -43,7 +43,7 @@
       "0": {
         "name": "Llamada del guardián",
         "fullDesc": "Tras usar la técnica, al comenzar la siguiente batalla obtiene un escudo que absorbe un daño equivalente al {{1, percent}}% de la DEF {F#de la}{M#del} Trazacaminos + {{2}} durante {{3}} turno.",
-        "shortDesc": "",
+        "shortDesc": "Tras usar la técnica, otorga un escudo para sí mismo al inicio de la siguiente batalla.",
         "tag": "Defensa"
       }
     },

@@ -35,7 +35,7 @@
       "0": {
         "name": "Regalo de Shuhu",
         "fullDesc": "Cuando Blade recibe daño o consume PV, obtiene 1 acumulación de carga, hasta un máximo de 5 acumulaciones. Cada vez que recibe un ataque obtiene 1 acumulación como máximo gracias a este efecto.<br>Cuando las acumulaciones llegan al máximo, lanza un ataque adicional a todos los enemigos que inflige un Daño de Viento equivalente al <orangeStrong>{{2, percent}}%</orangeStrong> del ATQ de Blade + <orangeStrong>{{4, percent}}%</orangeStrong> de sus PV máx. Además, Blade regenera el {{3, percent}}% de sus PV máx. Tras lanzar el ataque adicional se consumen todas las acumulaciones de carga.",
-        "shortDesc": "Cuando Blade pierde PV, obtiene 1 acumulación de carga. Cuando las acumulaciones llegan al máximo, <orangeStrong>inflige inmediatamente Daño de Viento a todos los enemigos</orangeStrong> y recupera PV, lo que consume todas las acumulaciones.",
+        "shortDesc": "Cuando Blade pierde PV, obtiene 1 acumulación de carga. Cuando la carga llega al máximo, lanza un ataque adicional que <orangeStrong>inflige Daño de Viento a todos los enemigos</orangeStrong> y recupera PV, lo que consume todas las acumulaciones.",
         "tag": "ATQ AdE"
       }
     },

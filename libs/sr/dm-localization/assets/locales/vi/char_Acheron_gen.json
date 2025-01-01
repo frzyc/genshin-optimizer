@@ -101,7 +101,7 @@
   "ranks": {
     "1": {
       "name": "Khởi Đầu Chân Ngôn Cõi Trời Thưa Thớt",
-      "desc": "Khi gây sát thương cho kẻ địch có Hiệu Ứng Xấu, Tỷ Lệ Bạo Kích tăng {{1, percent}}%."
+      "desc": "Khi gây sát thương cho mục tiêu phe địch có Hiệu Ứng Xấu, Tỷ Lệ Bạo Kích tăng {{1, percent}}%."
     },
     "2": {
       "name": "Sấm Thinh Lặng, Giông Tố Dừng",
@@ -121,7 +121,7 @@
     },
     "6": {
       "name": "Ngày Tận Thế, Người Giải Phóng",
-      "desc": "Tăng {{1, percent}}% Xuyên Kháng Toàn Thuộc Tính mà sát thương Tuyệt Kỹ của Acheron gây ra, sát thương của tấn công thường và Chiến Kỹ gây ra cũng được xem là Sát Thương Tuyệt Kỹ, đồng thời bỏ qua thuộc tính Điểm Yếu và làm giảm Sức Bền của địch. Khi phá vỡ Điểm Yếu sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu Lôi."
+      "desc": "Tăng {{1, percent}}% Xuyên Kháng Toàn Thuộc Tính mà sát thương Tuyệt Kỹ của Acheron gây ra, sát thương của Tấn Công Thường và Chiến Kỹ gây ra cũng được xem là Sát Thương Tuyệt Kỹ, đồng thời bỏ qua thuộc tính Điểm Yếu và làm giảm Sức Bền của địch. Khi phá vỡ Điểm Yếu sẽ kích hoạt hiệu ứng Phá Vỡ Điểm Yếu Lôi."
     }
   }
 }

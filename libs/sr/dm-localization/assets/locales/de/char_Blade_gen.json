@@ -35,7 +35,7 @@
       "0": {
         "name": "Shuhus Geschenk",
         "fullDesc": "Wenn Blade SCH erleidet oder LP verbraucht, erhält er 1 Aufladung, bis zu 5-fach stapelbar. Pro erlittenem Angriff erhält Blade max. 1 Aufladung.<br>Wenn die max. Aufladungsanzahl erreicht wird, führt er sofort einen Folgeangriff gegen alle Gegner aus. Dieser verursacht Wind-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Blades ANG plus <orangeStrong>{{4, percent}}%</orangeStrong> seiner max. LP und stellt gleichzeitig LP in Höhe von {{3, percent}}% von Blades max. LP wieder her. Alle Aufladungen werden beim Auslösen des Folgeangriffs verbraucht.",
-        "shortDesc": "Wenn Blades LP sinken, erhält er 1 Aufladung. Wenn die maximale Aufladungsanzahl erreicht wird, fügt er sofort <orangeStrong>allen Gegnern Wind-SCH zu</orangeStrong> und stellt seine LP wieder her. Dadurch werden alle Aufladungen verbraucht.",
+        "shortDesc": "Wenn Blades LP sinken, erhält er 1-fach Aufladung. Wenn die maximale Aufladung erreicht wird, startet er einen Folgeangriff, wobei er <orangeStrong>allen Gegnern Wind-SCH zufügt</orangeStrong> und seine LP wiederherstellt. Dadurch werden alle Aufladungen verbraucht.",
         "tag": "Flächenangriff"
       }
     },
@@ -66,7 +66,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Nie endender Tod",
-        "fullDesc": "Wenn Blades „Schwerterwald“ einen Gegner mit Schwächebruch trifft, erhält er LP in Höhe von {{1, percent}}% seiner max. LP plus {{2}} zurück.",
+        "fullDesc": "Wenn Blades „Schwerterwald“ einen Gegner mit Schwächebruch trifft, werden seine LP in Höhe von {{1, percent}}% seiner max. LP plus {{2}} wiederhergestellt.",
         "shortDesc": "",
         "tag": ""
       }

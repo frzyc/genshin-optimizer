@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Adamant Charge",
-      "desc": "Setelah melancarkan Skill untuk menghapus efek Buff, SPD meningkat {{1, percent}}% selama {{2}} giliran."
+      "desc": "Setelah melancarkan Skill untuk menghapus efek Buff, SPD akan meningkat {{1, percent}}% selama {{2}} giliran."
     },
     "3": {
       "name": "Suppressive Force",
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Feeble Pursuit",
-      "desc": "Jika Pela melancarkan serangan pada target musuh yang terkena efek Debuff, Pela akan mengakibatkan Ice DMG tambahan sebesar {{1, percent}}% ATK Pela."
+      "desc": "Jika Pela melancarkan serangan pada target musuh yang terkena efek Debuff, Pela akan mengakibatkan Ice DMG Tambahan sebesar {{1, percent}}% ATK Pela."
     }
   }
 }

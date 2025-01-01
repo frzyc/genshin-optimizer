@@ -35,7 +35,7 @@
       "0": {
         "name": "Tipsy Tussle",
         "fullDesc": "The Besotted state makes targets receive <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> more Break DMG. Every time a Besotted target gets attacked by an ally, the attacking ally's HP is restored by <orangeStrong>{{2}}</orangeStrong>.",
-        "shortDesc": "The Besotted state <orangeStrong>makes targets receive more Break DMG</orangeStrong>. Every time the target gets attacked by an ally, <orangeStrong>the attacker's HP is restored</orangeStrong>.",
+        "shortDesc": "The Besotted state <orangeStrong>makes targets receive more Break DMG</orangeStrong>. Every time the target gets attacked by an ally character, <orangeStrong>the attacker's HP is restored</orangeStrong>.",
         "tag": "Restore"
       }
     },
@@ -66,7 +66,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Organic Yeast",
-        "fullDesc": "After using the Ultimate, immediately Advances Forward this unit's Action by 100%.",
+        "fullDesc": "After using the Ultimate, immediately advances action for this unit by 100%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -74,7 +74,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Bottoms Up",
-        "fullDesc": "When Gallagher uses Nectar Blitz to attack Besotted enemies, the HP Restore effect of his Talent will also apply to other allies for this time.",
+        "fullDesc": "When Gallagher uses Nectar Blitz to attack Besotted enemies, the HP Restore effect of his Talent will also apply to teammates for this time.",
         "shortDesc": "",
         "tag": ""
       }
@@ -87,7 +87,7 @@
     },
     "2": {
       "name": "Lion's Tail",
-      "desc": "When using the Skill, removes {{1}} debuff(s) from the target ally. At the same time, increases their Effect RES by {{2, percent}}%, lasting for {{3}} turn(s)."
+      "desc": "When using the Skill, dispels {{1}} debuff(s) from the designated ally. At the same time, increases their Effect RES by {{2, percent}}% for {{3}} turn(s)."
     },
     "3": {
       "name": "Corpse Reviver",

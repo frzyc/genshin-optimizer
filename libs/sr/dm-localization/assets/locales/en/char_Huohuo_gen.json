@@ -20,15 +20,15 @@
     "ult": {
       "0": {
         "name": "Tail: Spiritual Domination",
-        "fullDesc": "Regenerates Energy for all allies (excluding this character) by an amount equal to <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of their respective Max Energy. At the same time, increases their ATK by <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> for {{3}} turn(s).",
-        "shortDesc": "<orangeStrong>Regenerates Energy</orangeStrong> for all allies (excluding this character) and <orangeStrong>increases their ATK</orangeStrong>.",
+        "fullDesc": "Regenerates Energy for all teammates (i.e., excluding this unit) by an amount equal to <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of their respective Max Energy. At the same time, increases their ATK by <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> for {{3}} turn(s).",
+        "shortDesc": "<orangeStrong>Regenerates Energy</orangeStrong> for all teammates (i.e., excluding this unit) and <orangeStrong>increases their ATK</orangeStrong>.",
         "tag": "Support"
       }
     },
     "talent": {
       "0": {
         "name": "Possession: Ethereal Metaflow",
-        "fullDesc": "After using her Skill, Huohuo gains Divine Provision, lasting for {{1}} turn(s). This duration decreases by 1 turn at the start of Huohuo's every turn. If Huohuo has Divine Provision when an ally's turn starts or when an ally uses their Ultimate, restores HP for that ally by an amount equal to <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> of Huohuo's Max HP plus <orangeStrong>{{5}}</orangeStrong>. At the same time, every ally with {{6, percent}}% HP or lower receives healing once.<br>When Divine Provision is triggered to heal an ally, dispel {{2}} debuff(s) from that ally. This effect can be triggered up to {{7}} time(s). Using the skill again resets the effect's trigger count.",
+        "fullDesc": "After using her Skill, Huohuo gains Divine Provision, lasting for {{1}} turn(s). This duration decreases by 1 turn at the start of Huohuo's every turn. If Huohuo has Divine Provision when an ally's turn starts or when an ally uses their Ultimate, restores HP for that ally by an amount equal to <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> of Huohuo's Max HP plus <orangeStrong>{{5}}</orangeStrong>. At the same time, every ally with {{6, percent}}% HP percentage or lower receives healing once.<br>When Divine Provision is triggered to heal an ally, dispel {{2}} debuff(s) from that ally. This effect can be triggered up to {{7}} time(s). Using the skill again resets the effect's trigger count.",
         "shortDesc": "Huohuo gains Divine Provision after using her Skill. If Huohuo possesses Divine Provision when an ally's turn starts or when an ally uses Ultimate, <orangeStrong>restores the ally's HP</orangeStrong>. At the same time, <orangeStrong>every ally</orangeStrong> with low HP <orangeStrong>receives healing once</orangeStrong>. When Divine Provision is triggered to heal an ally, <orangeStrong>dispel 1 debuff from that ally</orangeStrong>.",
         "tag": "Restore"
       }
@@ -37,7 +37,7 @@
       "0": {
         "name": "Fiend: Impeachment of Evil",
         "fullDesc": "Huohuo terrorizes surrounding enemies, afflicting Horror-Struck on them. Enemies in Horror-Struck will flee away from Huohuo for {{4}} second(s). When entering battle with enemies in Horror-Struck, there is a {{1, percent}}% base chance of reducing every single enemy's ATK by {{2, percent}}% for {{3}} turn(s).",
-        "shortDesc": "Causes surrounding enemies to become Horror-Struck. After entering battle with enemies afflicted with Horror-Struck, there is a high chance applying <orangeStrong>ATK reduction</orangeStrong> on the enemy targets.",
+        "shortDesc": "Causes surrounding enemies to become Horror-Struck. After entering battle with enemies afflicted with Horror-Struck, there is a high chance of <orangeStrong>reducing the ATK</orangeStrong> of the enemy targets.",
         "tag": "Impair"
       }
     },
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "The Cursed One",
-        "fullDesc": "The chance to resist Crowd Control Debuffs increases by {{1, percent}}%.",
+        "fullDesc": "Increases the chance to resist Crowd Control debuffs by {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Sealed in Tail, Wraith Subdued",
-      "desc": "If Huohuo possesses Divine Provision when an ally is struck by a killing blow, the ally will not be knocked down, and their HP will immediately be restored by an amount equal to {{1, percent}}% of their Max HP. This reduces the duration of Divine Provision by 1 turn. This effect can only be triggered {{2}} time(s) per battle."
+      "desc": "If Huohuo possesses \"Divine Provision\" when an ally target is struck by a killing blow, the ally will not be knocked down and their HP will immediately be restored by an amount equal to {{1, percent}}% of their Max HP. This reduces the duration of \"Divine Provision\" by 1 turn. This effect can only be triggered {{2}} time(s) per battle."
     },
     "3": {
       "name": "Cursed by Fate, Moths to Flame",

@@ -41,15 +41,15 @@
       "0": {
         "name": "Perfekte Abnahme",
         "fullDesc": "Jedes Mal, wenn die Schwäche eines Gegners gebrochen wird, wird der ANG um <orangeStrong>{{1, percent}}%</orangeStrong> erhöht. Dieser Effekt ist bis zu {{2}}-fach stapelbar.",
-        "shortDesc": "",
+        "shortDesc": "Jedes Mal, wenn die Schwäche eines Gegners gebrochen wird, wird der ANG erhöht.",
         "tag": "Verstärkung"
       }
     },
     "technique": {
       "0": {
         "name": "Unsterblicher dritter Schlag",
-        "fullDesc": "Stellt unmittelbar nach dem Einsatz der Technik allen Verbündeten {{1, percent}}% ihrer max. LP wieder her.",
-        "shortDesc": "",
+        "fullDesc": "Stellt unmittelbar nach dem Einsatz der Technik bei allen Verbündeten {{1, percent}}% ihrer max. LP wieder her.",
+        "shortDesc": "Nach dem Einsatz der Technik werden bei allen Verbündeten <orangeStrong>LP wiederhergestellt</orangeStrong>.",
         "tag": "Wiederherstellung"
       }
     },

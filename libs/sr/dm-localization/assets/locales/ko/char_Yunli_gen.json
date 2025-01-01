@@ -13,7 +13,7 @@
       "0": {
         "name": "천지를 뒤흔드는 대검",
         "fullDesc": "운리 공격력의 <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>+<orangeStrong>{{4}}</orangeStrong>pt만큼 HP를 회복하며, 지정된 단일 적에게 운리 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 물리 속성 피해를 가하고, 인접한 목표에게 운리 공격력의 <orangeStrong>{{2, percent}}%</orangeStrong>만큼 물리 속성 피해를 가한다",
-        "shortDesc": "자신의 HP를 회복하고, 단일 적과 인접한 목표에게 소량의 물리 속성 피해를 가한다",
+        "shortDesc": "자신의 HP를 회복하며, 단일 적에게 물리 속성 피해를 가하고, 인접한 목표에게 소량의 물리 속성 피해를 가한다",
         "tag": "확산"
       }
     },
@@ -29,7 +29,7 @@
       "0": {
         "name": "단조의 섬광",
         "fullDesc": "운리가 적에게 피격된 후, 추가로 에너지를 {{3}}pt 회복하고 즉시 공격자에게 반격을 발동해 해당 목표에게 운리 공격력의 <orangeStrong>{{1, percent}}%</orangeStrong>만큼 물리 속성 피해를 가하며, 인접한 목표에게 운리 공격력의 <orangeStrong>{{2, percent}}%</orangeStrong>만큼 물리 속성 피해를 가한다.<br>반격 가능한 목표가 없을 경우 랜덤 적에게 반격한다",
-        "shortDesc": "운리가 적에게 피격될 시, 추가로 에너지를 회복하고 즉시 공격자 및 인접한 목표에게 반격을 발동한다",
+        "shortDesc": "운리가 적에게 피격될 시, 추가로 에너지를 회복하고 즉시 반격해 공격자에게 물리 속성 피해를 가하고, 인접한 목표에게 소량의 물리 속성 피해를 가한다",
         "tag": "확산"
       }
     },
@@ -44,7 +44,7 @@
     "overworld": {
       "0": {
         "name": "공격",
-        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 감소시킨다",
         "shortDesc": "",
         "tag": ""
       }

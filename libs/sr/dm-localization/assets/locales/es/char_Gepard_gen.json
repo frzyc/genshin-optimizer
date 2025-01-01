@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Diligencia debida",
-      "desc": "Al usar la habilidad básica, la probabilidad base de infligir Congelación al objetivo aumenta en un {{1, percent}}%."
+      "desc": "Al usar la habilidad básica, la probabilidad base de afectar con Congelación al enemigo aumenta en un {{1, percent}}%."
     },
     "2": {
       "name": "Frío persistente",

@@ -66,7 +66,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Kiếm Thủ Hàng Đầu",
-        "fullDesc": "Sau khi thi triển Vô Hạ Phi Quang, lần sau ưu tiên hành động {{1, percent}}%.",
+        "fullDesc": "Sau khi thi triển Vô Hạ Phi Quang, lần sau Ưu Tiên Hành Động {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }

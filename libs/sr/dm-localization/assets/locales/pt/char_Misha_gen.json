@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Liberação",
-        "fullDesc": "Antes do acerto do primeiro golpe da Perícia Suprema, aumenta em {{1, percent}}% a chance-base de causar Congelamento ao alvo.",
+        "fullDesc": "Antes do acerto do primeiro golpe da Perícia Suprema, aumenta em {{1, percent}}% a chance-base de causar \"Congelamento\" ao alvo.",
         "shortDesc": "",
         "tag": ""
       }

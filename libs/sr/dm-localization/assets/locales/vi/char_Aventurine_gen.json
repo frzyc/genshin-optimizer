@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Hành Hình Đột Ngột",
-      "desc": "Khi kích hoạt Đòn Đánh Theo Sau của Thiên Phú, sẽ tăng {{1, percent}}% Phòng Thủ của Aventurine trước, duy trì {{2}} hiệp, đồng thời tăng thêm {{3}} số đòn đánh trong một lượt của Đòn Đánh Theo Sau của Thiên Phú."
+      "desc": "Khi kích hoạt Đòn Đánh Theo Sau của Thiên Phú, sẽ tăng {{1, percent}}% Phòng Thủ của Aventurine trước, duy trì {{2}} hiệp, đồng thời tăng thêm {{3}} đòn đánh trong một lượt của Đòn Đánh Theo Sau của Thiên Phú."
     },
     "5": {
       "name": "Chán Ghét Mơ Hồ",

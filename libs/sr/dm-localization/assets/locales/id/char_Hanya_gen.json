@@ -29,7 +29,7 @@
       "0": {
         "name": "Sanction",
         "fullDesc": "Saat rekan tim melancarkan Basic Attack, Skill, atau Ultimate pada target musuh berstatus \"Burden\", DMG yang diakibatkan akan meningkat <orangeStrong>{{1, percent}}%</orangeStrong> selama {{2}} giliran.",
-        "shortDesc": "Saat rekan tim melancarkan serangan pada target musuh berstatus \"Burden\", DMG yang diakibatkan akan meningkat.",
+        "shortDesc": "Saat rekan tim melancarkan Basic Attack, Skill, atau Ultimate pada target musuh berstatus \"Burden\", DMG yang diakibatkan akan meningkat.",
         "tag": "Support"
       }
     },

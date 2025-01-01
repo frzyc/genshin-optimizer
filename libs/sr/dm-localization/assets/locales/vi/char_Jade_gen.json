@@ -21,7 +21,7 @@
       "0": {
         "name": "Vực Thẳm Dục Vọng, Khế Ước Ngục Tù",
         "fullDesc": "Gây Sát Thương Lượng Tử bằng <orangeStrong>{{3, percent}}%</orangeStrong> Tấn Công của Jade cho toàn phe địch. Đồng thời khiến Đòn Đánh Theo Sau từ Thiên Phú của Jade được cường hóa, Bội Số Sát Thương của Đòn Đánh Theo Sau gây ra tăng <orangeStrong>{{1, percent}}%</orangeStrong>. Hiệu Ứng Cường Hóa chỉ có hiệu lực {{2}} lần.",
-        "shortDesc": "Gây Sát Thương Lượng Tử cho toàn phe địch, khiến bản thân nhận tăng Bội Số Sát Thương <orangeStrong>Đòn Đánh Theo Sau</orangeStrong>.",
+        "shortDesc": "Gây Sát Thương Lượng Tử cho toàn phe địch, tăng Bội Số Sát Thương của <orangeStrong>Đòn Đánh Theo Sau</orangeStrong> từ Thiên Phú của bản thân.",
         "tag": "Đánh Lan"
       }
     },
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Phiếu Thế Chấp",
-        "fullDesc": "Khi bắt đầu trận, Jade sẽ ưu tiên hành động {{1, percent}}%.",
+        "fullDesc": "Khi bắt đầu trận, Jade sẽ Ưu Tiên Hành Động {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Vị Tha? Cho Phép Giao Dịch",
-      "desc": "Sát thương Đòn Đánh Theo Sau đến từ Thiên Phú của Jade tăng {{1, percent}}%, nhân vật mang trạng thái Người Thu Nợ sau khi tấn công, nếu số lượng địch đánh trúng bằng 2/1, thì Jade sẽ nhận thêm {{2}}/{{3}} điểm Nạp Năng Lượng."
+      "desc": "Sát thương Đòn Đánh Theo Sau đến từ Thiên Phú của Jade tăng {{1, percent}}%, nhân vật mang trạng thái Người Thu Nợ sau khi tấn công, nếu số lượng địch đánh trúng bằng 2 hoặc 1, thì Jade sẽ nhận thêm {{2}} hoặc {{3}} điểm Nạp Năng Lượng."
     },
     "2": {
       "name": "Đạo Đức? Đã Chứng Thực Cầm Cố",

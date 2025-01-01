@@ -28,8 +28,8 @@
     "talent": {
       "0": {
         "name": "Superiority of Reach",
-        "fullDesc": "When Dan Heng is the target of an ally's ability, his next attack's Wind RES PEN increases by <orangeStrong>{{1, percent}}%</orangeStrong>. This effect can be triggered again after {{2}} turn(s).",
-        "shortDesc": "When becoming the target of an ally's ability, their next attack's <orangeStrong>Wind RES PEN increases</orangeStrong>. This effect can be triggered again after 2 turns.",
+        "fullDesc": "When Dan Heng becomes the target of an ally's ability, his next attack's Wind RES PEN increases by <orangeStrong>{{1, percent}}%</orangeStrong>. This effect can be triggered again after {{2}} turn(s).",
+        "shortDesc": "When this unit becomes the target of an ally's ability, this unit's next attack's <orangeStrong>Wind RES PEN increases</orangeStrong>. This effect can be triggered again after 2 turns.",
         "tag": "Enhance"
       }
     },
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Faster Than Light",
-        "fullDesc": "After launching an attack, there is a {{1, percent}}% fixed chance to increase own SPD by {{2, percent}}% for {{3}} turn(s).",
+        "fullDesc": "After launching an attack, there is a {{1, percent}}% fixed chance to increase this unit's SPD by {{2, percent}}% for {{3}} turn(s).",
         "shortDesc": "",
         "tag": ""
       }

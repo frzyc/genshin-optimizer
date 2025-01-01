@@ -37,7 +37,7 @@
       "0": {
         "name": "Emprisonnement gravitationnel",
         "fullDesc": "Crée une dimension spéciale qui dure {{4}} secondes. Les ennemis dans cette dimension spéciale voient leur vitesse de déplacement réduite de {{5, percent}}%. Il y a {{1, percent}}% de chances de base d'emprisonner les ennemis pour 1 tour après être entré en combat avec des ennemis dans la dimension spéciale.<br>Les ennemis emprisonnés voient leur action retardée de {{2, percent}}% et leur VIT réduite de {{3, percent}}%. Il ne peut exister qu'1 dimension créée par les alliés à la fois.",
-        "shortDesc": "Crée une dimension spéciale. La vitesse de déplacement des ennemis à l'intérieur de la dimension est réduite. Il y a de <orangeStrong>fortes chances d'infliger Emprisonné aux ennemis</orangeStrong> lorsque le combat est engagé avec des ennemis de la dimension.",
+        "shortDesc": "Crée une dimension spéciale. La vitesse de déplacement des ennemis à l'intérieur de la dimension est réduite. Il y a de <orangeStrong>fortes chances d'appliquer Emprisonné aux ennemis</orangeStrong> lorsque le combat est engagé avec des ennemis de la dimension.",
         "tag": "Incapacitation"
       }
     },
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Héritage d'honneur",
-      "desc": "Après utilisation de son ultime, Welt est renforcé. Puis, les {{3}} prochaines fois où il utilise l'ATQ normale ou la compétence, Welt inflige 1 instance supplémentaire de DGT additionnels à la cible ennemie. Les DGT additionnels infligés en utilisant l'ATQ normale sont équivalents à {{1, percent}}% du multiplicateur de DGT de l'ATQ normale. Les DGT additionnels infligés en utilisant la compétence sont équivalents à {{2, percent}}% du multiplicateur de DGT de la compétence."
+      "desc": "Après utilisation de son ultime, Welt est renforcé. Puis, les {{3}} prochaines fois où il utilise l'ATQ normale ou la compétence, Welt inflige 1 instance de DGT additionnels supplémentaire à la cible ennemie. Les DGT additionnels infligés en utilisant l'ATQ normale sont équivalents à {{1, percent}}% du multiplicateur de DGT de l'ATQ normale. Les DGT additionnels infligés en utilisant la compétence sont équivalents à {{2, percent}}% du multiplicateur de DGT de la compétence."
     },
     "2": {
       "name": "Confluence des étoiles",

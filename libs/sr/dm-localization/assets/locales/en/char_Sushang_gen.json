@@ -12,7 +12,7 @@
     "skill": {
       "0": {
         "name": "Cloudfencer Art: Mountainfall",
-        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Sushang's ATK to a single enemy. In addition, there is a {{3, percent}}% chance to trigger Sword Stance on the final hit, dealing Additional Physical DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Sushang's ATK to the enemy.<br>If the enemy is inflicted with Weakness Break, Sword Stance is guaranteed to trigger.",
+        "fullDesc": "Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Sushang's ATK to a single enemy. In addition, there is a {{3, percent}}% chance to trigger Sword Stance on the final hit, dealing Physical Additional DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Sushang's ATK to the enemy.<br>If the enemy is inflicted with Weakness Break, Sword Stance is guaranteed to trigger.",
         "shortDesc": "Deals Physical DMG to a single enemy with <orangeStrong>a small chance of triggering Sword Stance</orangeStrong>. If the enemy has Weakness Break, <orangeStrong>Sword Stance is guaranteed to trigger</orangeStrong>.",
         "tag": "Single Target"
       }
@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Vanquisher",
-        "fullDesc": "After using Basic ATK or Skill, if there are enemies on the field with Weakness Break, Sushang's action is Advanced Forward by {{1, percent}}%.",
+        "fullDesc": "After using Basic ATK or Skill, if there are enemies on the field that are Weakness Broken, Sushang's action advances by {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }

@@ -13,7 +13,7 @@
       "0": {
         "name": "電光石火間",
         "fullDesc": "對指定敵方單體造成等同於希露瓦<orangeStrong>{{1, percent}}%</orangeStrong>攻擊力的雷屬性傷害，同時對其相鄰目標造成等同於希露瓦<orangeStrong>{{2, percent}}%</orangeStrong>攻擊力的雷屬性傷害，此外有{{3, percent}}%的基礎機率使受到攻擊的敵方目標陷入觸電狀態，持續{{4}}回合。<br>觸電狀態下，敵方目標每回合開始時受到等同於希露瓦<orangeStrong>{{5, percent}}%</orangeStrong>攻擊力的雷屬性持續傷害。",
-        "shortDesc": "對敵方單體及其相鄰目標造成少量雷屬性傷害，有高機率對目標<orangeStrong>施加觸電狀態</orangeStrong>。",
+        "shortDesc": "對敵方單體造成雷屬性傷害，對相鄰目標造成少量雷屬性傷害。高機率對目標<orangeStrong>施加觸電狀態</orangeStrong>。",
         "tag": "擴散"
       }
     },
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "安可！",
-      "desc": "每觸發1次天賦的附加傷害，希露瓦便恢復{{1}}點能量。"
+      "desc": "每觸發1次天賦的附加傷害，希露瓦恢復{{1}}點能量。"
     },
     "3": {
       "name": "聽，齒輪的心跳",

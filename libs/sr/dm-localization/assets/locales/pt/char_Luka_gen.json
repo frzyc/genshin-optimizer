@@ -58,7 +58,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Sobrecarga Cinética",
-        "fullDesc": "Ao usar a Perícia, imediatamente remove {{1}} melhoria(s) do inimigo-alvo.",
+        "fullDesc": "Ao usar a Perícia, remove imediatamente {{1}} melhoria(s) do inimigo-alvo.",
         "shortDesc": "",
         "tag": ""
       }
@@ -74,7 +74,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Desejo de Lutar Avassalador",
-        "fullDesc": "Ao usar um ATQ Básico Aprimorado, cada golpe que o Punho Certeiro causa tem uma chance fixa de {{1, percent}}% de Luka usar 1 golpe adicional. Este efeito não se aplica a golpes adicionais gerados desta forma.",
+        "fullDesc": "Ao usar um ATQ Básico Aprimorado, cada golpe que o \"Punho Certeiro\" causa tem uma chance fixa de {{1, percent}}% de fazer com que Luka use 1 golpe adicional. Este efeito não se aplica a golpes adicionais gerados desta forma.",
         "shortDesc": "",
         "tag": ""
       }

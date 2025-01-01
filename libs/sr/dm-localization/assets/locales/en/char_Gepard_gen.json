@@ -12,7 +12,7 @@
     "skill": {
       "0": {
         "name": "Daunting Smite",
-        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Gepard's ATK to a single enemy, with a {{2, percent}}% base chance to Freeze the enemy for {{3}} turn(s).<br>While Frozen, the enemy cannot take action and will take Additional Ice DMG equal to <orangeStrong>{{4, percent}}%</orangeStrong> of Gepard's ATK at the beginning of each turn.",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Gepard's ATK to a single enemy, with a {{2, percent}}% base chance to Freeze the enemy for {{3}} turn(s).<br>While Frozen, the enemy cannot take action and will take Ice Additional DMG equal to <orangeStrong>{{4, percent}}%</orangeStrong> of Gepard's ATK at the beginning of each turn.",
         "shortDesc": "Deals Ice DMG to a single enemy, <orangeStrong>with a chance of Freezing them</orangeStrong>.",
         "tag": "Single Target"
       }
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Due Diligence",
-      "desc": "When using Skill, increases the base chance to Freeze target enemy by {{1, percent}}%."
+      "desc": "When using Skill, increases the base chance to Freeze the attacked target enemy by {{1, percent}}%."
     },
     "2": {
       "name": "Lingering Cold",

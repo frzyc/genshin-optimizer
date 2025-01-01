@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Sieger",
-        "fullDesc": "Zieht nach dem Einsatz des Standardangriffs oder der Fertigkeit Sushangs Aktion um {{1, percent}}% vor, wenn sich auf dem Feld Gegner mit Schwächebruch befinden.",
+        "fullDesc": "Nach dem Einsatz des Standardangriffs oder der Fertigkeit wird Sushangs Aktion um {{1, percent}}% vorgezogen, wenn sich auf dem Kampffeld Gegner mit Schwächebruch befinden.",
         "shortDesc": "",
         "tag": ""
       }

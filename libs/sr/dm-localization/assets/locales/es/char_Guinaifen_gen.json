@@ -37,7 +37,7 @@
       "0": {
         "name": "Demostración de habilidades",
         "fullDesc": "Ataca inmediatamente al enemigo y entra en combate. Inflige daño {{2}} veces y cada vez inflige un {{1, percent}}% del ATQ de Guinaifen como Daño de Fuego a un enemigo al azar. Además, tiene una probabilidad base del {{3, percent}}% de afectar con Beso ardiente al objetivo.",
-        "shortDesc": "Tras atacar a un enemigo y entrar en combate, inflige una pequeña cantidad de Daño de Fuego a un enemigo y le aplica <orangeStrong>Beso ardiente</orangeStrong>. Rebota 4 veces en total.",
+        "shortDesc": "Tras atacar a un enemigo y entrar en combate, inflige una pequeña cantidad de Daño de Fuego a un enemigo y tiene una gran probabilidad de aplicarle <orangeStrong>Beso ardiente</orangeStrong>. Se dispara 4 veces en total.",
         "tag": ""
       }
     },

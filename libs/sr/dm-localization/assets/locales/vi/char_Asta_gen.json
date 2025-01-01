@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Tia Lửa",
-        "fullDesc": "Khi thi triển tấn công thường có {{1, percent}}% xác suất cơ bản khiến kẻ địch rơi vào trạng thái Thiêu Đốt, duy trì {{2}} hiệp.<br>Trong trạng thái Thiêu Đốt, khi bắt đầu mỗi hiệp, kẻ địch chịu Sát Thương Hỏa duy trì tương đương {{3, percent}}% Tấn Công Thường của Asta.",
+        "fullDesc": "Khi thi triển Tấn Công Thường có {{1, percent}}% xác suất cơ bản khiến mục tiêu phe địch rơi vào trạng thái Thiêu Đốt, duy trì {{2}} hiệp.<br>Trong trạng thái Thiêu Đốt, khi bắt đầu mỗi hiệp, mục tiêu phe địch sẽ chịu Sát Thương Hỏa duy trì tương đương {{3, percent}}% Tấn Công Thường của Asta.",
         "shortDesc": "",
         "tag": ""
       }

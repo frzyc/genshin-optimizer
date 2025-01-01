@@ -21,7 +21,7 @@
       "0": {
         "name": "서약의 심연, 영원의 계약",
         "fullDesc": "모든 적에게 제이드 공격력의 <orangeStrong>{{3, percent}}%</orangeStrong>만큼 양자 속성 피해를 가한다. 또한 제이드 특성의 추가 공격이 강화되고, 추가 공격으로 가하는 피해 배율이 <orangeStrong>{{1, percent}}%</orangeStrong> 증가한다. 강화 효과는 {{2}}회 적용된다",
-        "shortDesc": "모든 적에게 양자 속성 피해를 가하고, 자신의 <orangeStrong>추가 공격</orangeStrong> 피해 배율이 증가한다",
+        "shortDesc": "모든 적에게 양자 속성 피해를 가하고, 자신의 특성의 <orangeStrong>추가 공격</orangeStrong> 피해 배율이 증가한다",
         "tag": "범위 공격"
       }
     },
@@ -44,7 +44,7 @@
     "overworld": {
       "0": {
         "name": "공격",
-        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 소모시킨다",
+        "fullDesc": "적을 공격하며, 전투 진입 후 적에게 대응하는 속성의 강인성을 감소시킨다",
         "shortDesc": "",
         "tag": ""
       }

@@ -35,7 +35,7 @@
       "0": {
         "name": "Schatz der Architekten",
         "fullDesc": "Wenn {M#der Trailblazer}{F#die Trailblazerin} angegriffen wird, erhält {F#sie}{M#er} 1 Stapelung „Magma-Wille“, bis zu max. {{3}}-fach stapelbar.<br>Ab 4 Stapelungen Magma-Willen wird der Standardangriff verstärkt und fügt einem anvisierten Gegner sowie angrenzenden Zielen SCH zu.<br>{M#Der Trailblazer}{F#Die Trailblazerin} gewährt allen Verbündeten einen Schild, nachdem {F#sie}{M#er} den Standardangriff, die Fertigkeit oder den Ultimate eingesetzt hat, der SCH in Höhe von <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von der VTD {M#des Trailblazers}{F#der Trailblazerin} plus <orangeStrong>{{4}}</orangeStrong> für {{2}} Rd. blockieren kann.",
-        "shortDesc": "",
+        "shortDesc": "Bei erlittenen Angriffen wird „Magma-Wille“ gestapelt. Bei nicht weniger als 4 Stapelungen Magma-Wille wird der Standardangriff <orangeStrong>verstärkt</orangeStrong>. Nach dem Einsatz von Standardangriff, Fertigkeit oder Ultimate wird allen Verbündeten ein Schild gewährt.",
         "tag": "Verstärkung"
       }
     },
@@ -43,7 +43,7 @@
       "0": {
         "name": "Ruf des Wächters",
         "fullDesc": "Erhält nach dem Einsatz der Technik und zu Beginn des nächsten Kampfes einen Schild, der SCH in Höhe von {{1, percent}}% von der VTD {M#des Trailblazers}{F#der Trailblazerin} plus {{2}} für {{3}} Rd. blockieren kann.",
-        "shortDesc": "",
+        "shortDesc": "Nach dem Einsatz der Technik wird dieser Einheit zu Beginn des nächsten Kampfes ein Schild verliehen.",
         "tag": "Verteidigung"
       }
     },

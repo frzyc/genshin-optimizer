@@ -21,7 +21,7 @@
       "0": {
         "name": "Vow of the Deep",
         "fullDesc": "Mengakibatkan Quantum DMG sebesar <orangeStrong>{{3, percent}}%</orangeStrong> ATK Jade pada seluruh musuh. Pada saat bersamaan, Serangan Lanjutan dari Talent Jade memperoleh penguatan, DMG Multiplier yang diakibatkan oleh Serangan Lanjutan meningkat <orangeStrong>{{1, percent}}%</orangeStrong>. Efek penguatan berlaku sebanyak {{2}} kali.",
-        "shortDesc": "Mengakibatkan Quantum DMG pada seluruh musuh, dan membuat dirinya memperoleh peningkatan DMG Multiplier <orangeStrong>Serangan Lanjutan</orangeStrong>.",
+        "shortDesc": "Mengakibatkan Quantum DMG pada seluruh musuh, dan membuat DMG Multiplier <orangeStrong>Serangan Lanjutan</orangeStrong> dari Talent memperoleh peningkatan.",
         "tag": "AoE"
       }
     },

@@ -37,7 +37,7 @@
       "0": {
         "name": "Beauté glacée",
         "fullDesc": "Engage immédiatement le combat contre les ennemis. Il y a {{1, percent}}% de chances de base de geler un ennemi aléatoire pendant {{2}} tour après être entré en combat.<br>Un ennemi gelé ne peut pas agir et subit des DGT de glace additionnels équivalents à {{3, percent}}% de l'ATQ de March 7th au début de chaque tour.",
-        "shortDesc": "Engage le combat contre les ennemis avec de fortes chances d'infliger Gelé à un ennemi aléatoire en début de combat.",
+        "shortDesc": "Engage le combat contre les ennemis avec de fortes chances d'appliquer Gelé à un ennemi aléatoire en début de combat.",
         "tag": ""
       }
     },
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Purification",
-        "fullDesc": "La compétence supprime également 1 malus de la cible alliée.",
+        "fullDesc": "Supprime 1 malus d'un allié désigné lors de l'utilisation de la compétence.",
         "shortDesc": "",
         "tag": ""
       }
@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Sortilège de glace",
-        "fullDesc": "Augmente les chances de base de l'ultime de geler les ennemis de {{1, percent}}%.",
+        "fullDesc": "Augmente de {{1, percent}}% les chances de base de geler les ennemis lors de l'utilisation de l'ultime.",
         "shortDesc": "",
         "tag": ""
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Souvenir de ça",
-      "desc": "Accorde un bouclier équivalent à {{1, percent}}% de la DÉF de March 7th + {{3}} à l'allié dont le pourcentage de PV est le plus faible en entrant en combat, dure {{2}} tours."
+      "desc": "Accorde un bouclier équivalent à {{1, percent}}% de la DÉF de March 7th + {{3}} à l'allié dont le pourcentage de PV est le plus bas en entrant en combat, dure {{2}} tours."
     },
     "3": {
       "name": "Souvenir de tout",

@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Exploration Techniques",
-        "fullDesc": "โอกาสต้านทานสถานะ Debuff ประเภทควบคุมเพิ่มขึ้น {{1, percent}}%",
+        "fullDesc": "โอกาสต้านทาน สถานะ Debuff ประเภทควบคุม เพิ่มขึ้น {{1, percent}}%",
         "shortDesc": "",
         "tag": ""
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Noon of Portable Furnace",
-      "desc": "เมื่อเป้าหมายที่มี \"Survival Response\" ถูกปล่อยเอฟเฟกต์ Debuff ใส่ จะสามารถต้านทานเอฟเฟกต์ Debuff ได้<br>{{1}} ครั้ง"
+      "desc": "เมื่อเป้าหมายที่มี \"Survival Response\" ถูกปล่อย เอฟเฟกต์ Debuff ใส่ จะสามารถต้านทาน เอฟเฟกต์ Debuff ได้<br>{{1}} ครั้ง"
     },
     "3": {
       "name": "Afternoon of Avalanche Beacon",

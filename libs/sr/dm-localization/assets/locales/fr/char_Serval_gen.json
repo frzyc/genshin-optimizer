@@ -13,7 +13,7 @@
       "0": {
         "name": "Éclair rapide",
         "fullDesc": "Inflige des DGT de foudre équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Serval à un ennemi unique et des DGT de foudre équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Serval aux ennemis adjacents, avec {{3, percent}}% de chances de base de stupéfier les ennemis touchés pendant {{4}} tours.<br>Les ennemis stupéfiés subissent des dégâts de foudre sur la durée équivalents à <orangeStrong>{{5, percent}}%</orangeStrong> de l'ATQ de Serval au début de chaque tour.",
-        "shortDesc": "Inflige des DGT de foudre à un ennemi et aux cibles adjacentes, avec de fortes chances de provoquer <orangeStrong>Stupéfaction</orangeStrong>.",
+        "shortDesc": "Inflige des DGT de foudre à un ennemi et des DGT de foudre mineurs aux cibles adjacentes, avec de fortes chances d'<orangeStrong>appliquer Stupéfaction</orangeStrong> à la cible.",
         "tag": "Propagation"
       }
     },
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Rock 'n' roll",
-        "fullDesc": "Les chances de base de la compétence de stupéfier les ennemis augmentent de {{1, percent}}%.",
+        "fullDesc": "Augmente de {{1, percent}}% les chances de base que la cible ennemie attaquée se retrouve dans l'état Stupéfaction lors de l'utilisation de la compétence.",
         "shortDesc": "",
         "tag": ""
       }

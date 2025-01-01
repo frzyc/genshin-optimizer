@@ -73,15 +73,17 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
 
   // Get icons for each relic piece
   assetData.relics = Object.fromEntries(
-    Object.entries(relicDataInfo).map(([relicSetId, reflicDatas]) => [
-      relicSetIdMap[relicSetId],
-      Object.fromEntries(
-        Object.entries(reflicDatas).map(([relicSlotKey, relicData]) => [
-          relicSlotMap[relicSlotKey],
-          relicData.ItemFigureIconPath,
-        ])
-      ),
-    ])
+    Object.entries(relicDataInfo)
+      .filter(([relicSetId]) => !!relicSetIdMap[relicSetId])
+      .map(([relicSetId, relicDatas]) => [
+        relicSetIdMap[relicSetId],
+        Object.fromEntries(
+          Object.entries(relicDatas).map(([relicSlotKey, relicData]) => [
+            relicSlotMap[relicSlotKey],
+            relicData.ItemFigureIconPath,
+          ])
+        ),
+      ])
   ) as RelicIcons
 
   // parse baseStat/ascension/basic data for characters.

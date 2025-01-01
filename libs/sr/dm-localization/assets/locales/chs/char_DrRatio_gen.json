@@ -29,7 +29,7 @@
       "0": {
         "name": "我思故我在",
         "fullDesc": "施放战技时，有{{2, percent}}%的固定概率对该目标发动1次追加攻击，造成等同于真理医生<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的虚数属性伤害。目标每有1个负面效果，追加攻击发动的固定概率提高{{3, percent}}%。若追加攻击施放前目标被消灭则对敌方随机单体发动追加攻击。",
-        "shortDesc": "施放战技时，有概率对该目标发动1次<orangeStrong>追加攻击</orangeStrong>。",
+        "shortDesc": "施放战技时，有概率对该目标发动1次<orangeStrong>追加攻击</orangeStrong>，造成虚数属性伤害。",
         "tag": "单攻"
       }
     },

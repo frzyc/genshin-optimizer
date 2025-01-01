@@ -29,7 +29,7 @@
       "0": {
         "name": "Magoret porteur",
         "fullDesc": "Invoque Compti en début de combat. Compti a une VIT de {{1}} par défaut. Lorsque Compti effectue une action, il lance des attaques de suivi sur la cible de Reconnaissance de dette, lui infligeant des DGT de feu équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Topaz.<br>L'action de Compti avance de {{3, percent}}% lorsque les ennemis victimes de Reconnaissance de dette subissent des attaques de suivi de la part des alliés. L'action de Compti ne peut pas être avancée au cours de son propre tour.<br>Compti disparaît quand Topaz tombe à terre.",
-        "shortDesc": "Invoque <orangeStrong>Compti</orangeStrong> en début de combat. <orangeStrong>Compti inflige des attaques de suivi à la cible de Reconnaissance de dette</orangeStrong> lorsqu'il effectue une action. L'action de Compti <orangeStrong>est avancée</orangeStrong> lorsque les ennemis avec Reconnaissance de dette subissent des DGT de la part d'attaques de suivi.",
+        "shortDesc": "<orangeStrong>Invoque Compti</orangeStrong> en début de combat. Lorsque Compti agit, il <orangeStrong>lance une attaque de suivi à la cible de Reconnaissance de dette</orangeStrong>, ce qui lui inflige des DGT de feu.<br>L'action de Compti <orangeStrong>est avancée</orangeStrong> lorsqu'un ennemi avec Reconnaissance de dette subit une attaque de suivi.",
         "tag": "Cible unique"
       }
     },
@@ -37,7 +37,7 @@
       "0": {
         "name": "Subvention explicite",
         "fullDesc": "Topaz invoque Compti lorsqu'elle est en exploration. Compti cherche automatiquement les coffres de base et les Magorets dans un rayon défini.<br>La technique de Topaz lui permet de régénérer {{1}} points d'énergie après la première attaque de Compti au cours du combat suivant.<br>Si Topaz fait toujours partie de l'équipe après avoir utilisé sa technique et vaincu des ennemis en phase d'exploration, vous recevez un petit bonus de crédits. Vous pouvez recevoir un maximum de {{2}} crédits bonus par jour calendaire.<br>Vous obtenez une petite quantité de fragments cosmiques supplémentaires, et avez une faible chance d'obtenir 1 bizarrerie aléatoire après avoir utilisé sa technique et avoir vaincu des ennemis dans l'Univers simulé ou parallèle.",
-        "shortDesc": "<orangeStrong>Invoque Compti à vos côtés</orangeStrong> lorsque vous êtes en exploration. Compti cherche automatiquement les <orangeStrong>coffres de base et Magorets à proximité</orangeStrong>. L'utilisation de la technique permet à Topaz de régénérer des points d'énergie lors de la première attaque de Compti au prochain combat.",
+        "shortDesc": "<orangeStrong>Invoque Compti à vos côtés</orangeStrong> sur la carte. Compti cherche automatiquement les <orangeStrong>coffres de base et Magorets à proximité</orangeStrong>. L'utilisation de la technique permet à Topaz de régénérer des points d'énergie lors de la première attaque de Compti au prochain combat.",
         "tag": "Renforcement"
       }
     },
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Décroissance",
-        "fullDesc": "Lorsque Topaz utilise une ATQ normale pour infliger des DGT, l'attaque est considérée comme une attaque de suivi.",
+        "fullDesc": "Lorsque Topaz utilise une ATQ normale pour infliger des DGT, l'attaque est considérée comme une ATQ de suivi.",
         "shortDesc": "",
         "tag": ""
       }
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Marché à terme",
-      "desc": "Lorsque des ennemis affectés par Reconnaissance de dette subissent des attaques de suivi, ils entrent dans l'état Débiteur. Cet effet ne peut s'activer qu'une fois par attaque.<br>Débiteur augmente les DGT critiques des attaques de suivi infligées aux cibles ennemies de {{1, percent}}%, cumulable jusqu'à {{2}} fois. Débiteur se dissipe en même temps que Reconnaissance de dette."
+      "desc": "Lorsque des ennemis affectés par Reconnaissance de dette subissent des ATQ de suivi, ils entrent dans l'état Débiteur. Cet effet ne peut s'activer qu'une fois par attaque.<br>Débiteur augmente les DGT critiques des ATQ de suivi infligées aux cibles ennemies de {{1, percent}}%, cumulables jusqu'à {{2}} fois. Débiteur se dissipe en même temps que Reconnaissance de dette."
     },
     "2": {
       "name": "Acquisition de bonne foi",

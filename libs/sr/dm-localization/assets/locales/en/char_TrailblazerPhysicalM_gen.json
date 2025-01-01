@@ -41,7 +41,7 @@
       "0": {
         "name": "Perfect Pickoff",
         "fullDesc": "Each time after this character inflicts Weakness Break on an enemy, ATK increases by <orangeStrong>{{1, percent}}%</orangeStrong>. This effect stacks up to {{2}} time(s).",
-        "shortDesc": "",
+        "shortDesc": "Every time this unit breaks an enemy target's Weakness, ATK increases.",
         "tag": "Enhance"
       }
     },
@@ -49,7 +49,7 @@
       "0": {
         "name": "Immortal Third Strike",
         "fullDesc": "Immediately heals all allies for {{1, percent}}% of their respective Max HP after using this Technique.",
-        "shortDesc": "",
+        "shortDesc": "After using Technique, immediately <orangeStrong>restores HP</orangeStrong> for team.",
         "tag": "Restore"
       }
     },
@@ -101,7 +101,7 @@
     },
     "4": {
       "name": "A Destructing Glance",
-      "desc": "When attacking an enemy with Weakness Break, CRIT Rate is increased by {{1, percent}}%."
+      "desc": "When attacking an enemy that is Weakness Broken, increases CRIT Rate by {{1, percent}}%."
     },
     "5": {
       "name": "A Surviving Hope",

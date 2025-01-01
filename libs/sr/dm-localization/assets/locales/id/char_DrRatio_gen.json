@@ -29,7 +29,7 @@
       "0": {
         "name": "Cogito, Ergo Sum",
         "fullDesc": "Saat melancarkan Skill, ada {{2, percent}}% peluang tetap untuk melancarkan 1 kali Serangan Lanjutan pada target tersebut, yang mengakibatkan Imaginary DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Dr. Ratio. Untuk setiap 1 efek Debuff yang dimiliki target, akan meningkatkan {{3, percent}}% peluang tetap pelancaran Serangan Lanjutan. Jika target dikalahkan sebelum Serangan Lanjutan dilancarkan, maka akan melancarkan Serangan Lanjutan pada satu musuh secara acak.",
-        "shortDesc": "Saat melancarkan Skill, ada peluang untuk melancarkan 1 kali <orangeStrong>Serangan Lanjutan</orangeStrong> pada target tersebut.",
+        "shortDesc": "Saat melancarkan Skill, ada peluang untuk melancarkan 1 kali <orangeStrong>Serangan Lanjutan</orangeStrong> pada target, mengakibatkan Imaginary DMG.",
         "tag": "Single Target"
       }
     },

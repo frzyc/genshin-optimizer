@@ -95,7 +95,7 @@
     },
     "4": {
       "name": "Right on the Tiles",
-      "desc": "After using Skill, there is a {{1, percent}}% fixed chance to gain Self-Sufficer, lasting until the end of the current turn. <br>With Self-Sufficer, using Basic ATK or Enhanced Basic ATK immediately launches 1 follow-up attack on the same target, dealing Quantum DMG equal to 100% of Basic ATK DMG or Enhanced Basic ATK DMG."
+      "desc": "After using Skill, there is a {{1, percent}}% fixed chance to gain \"Self-Sufficer,\" lasting until the end of the current turn. <br>While \"Self-Sufficer\" is active, using Basic ATK or Enhanced Basic ATK immediately launches 1 Follow-up ATK on the same target, dealing Quantum DMG equal to 100% of Basic ATK DMG or Enhanced Basic ATK DMG."
     },
     "5": {
       "name": "Gambit for the Tiles",

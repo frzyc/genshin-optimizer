@@ -21,7 +21,7 @@
       "0": {
         "name": "Juramento de lo profundo",
         "fullDesc": "Inflige un <orangeStrong>{{3, percent}}%</orangeStrong> del ATQ de Jade como Daño Cuántico a todos los enemigos. Además, potencia el ataque adicional del talento de Jade. El multiplicador del daño que infligen los ataques adicionales aumenta en un <orangeStrong>{{1, percent}}%</orangeStrong>. El efecto de potenciación se puede activar {{2}} veces.",
-        "shortDesc": "Inflige Daño Cuántico a todos los enemigos y aumenta el <orangeStrong>multiplicador del daño de ataque adicional</orangeStrong>.",
+        "shortDesc": "Inflige Daño Cuántico a todos los enemigos y aumenta el <orangeStrong>multiplicador del daño de ataque adicional</orangeStrong> de su talento.",
         "tag": "ATQ AdE"
       }
     },
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "¿Justicia? Pendiente de patrocinio",
-      "desc": "Cuando hay aliados en el estado de Cobrador de deudas en el campo de batalla, la PEN de la RES a Cuántico de Jade aumenta en un {{1, percent}}%, y Jade obtiene el estado de Cobrador de deudas."
+      "desc": "Cuando hay personajes en el estado de Cobrador de deudas en el campo de batalla, la PEN de la RES a Cuántico de Jade aumenta en un {{1, percent}}%, y Jade obtiene el estado de Cobrador de deudas."
     }
   }
 }

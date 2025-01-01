@@ -95,7 +95,7 @@
     },
     "4": {
       "name": "Mets de la tuile",
-      "desc": "Après avoir utilisé la compétence, il y a {{1, percent}}% de chances fixes d'obtenir Autonome, qui dure jusqu'à la fin du tour en cours.<br>Lorsque l'état Autonome est actif, utiliser l'ATQ normale ou l'ATQ normale renforcée lance immédiatement 1 attaque de suivi sur le ou les mêmes cibles, infligeant des DGT quantiques équivalents à 100 % des DGT d'ATQ normale (ou d'ATQ normale renforcée)."
+      "desc": "Après avoir utilisé la compétence, il y a {{1, percent}}% de chances fixes d'obtenir Autonome, qui dure jusqu'à la fin du tour en cours.<br>Lorsque l'état Autonome est actif, utiliser l'ATQ normale ou l'ATQ normale renforcée lance immédiatement 1 ATQ de suivi sur la même cible, ce qui inflige des DGT quantiques équivalents à 100 % des DGT d'ATQ normale (ou d'ATQ normale renforcée)."
     },
     "5": {
       "name": "Tuiles piochées, la chance a tourné",

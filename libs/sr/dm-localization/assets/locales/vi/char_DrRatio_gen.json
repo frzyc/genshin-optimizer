@@ -29,7 +29,7 @@
       "0": {
         "name": "Tôi Tư Duy, Nên Tôi Tồn Tại",
         "fullDesc": "Khi thi triển Chiến Kỹ, có {{2, percent}}% xác suất cố định phát động 1 lần Đòn Đánh Theo Sau lên mục tiêu này, gây Sát Thương Số Ảo bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Dr. Ratio. Mỗi khi mục tiêu có 1 Hiệu Ứng Xấu sẽ tăng {{3, percent}}% xác suất cố định phát động Đòn Đánh Theo Sau. Nếu mục tiêu bị tiêu diệt trước khi phát động Đòn Đánh Theo Sau thì sẽ phát động Đòn Đánh Theo Sau lên 1 kẻ địch ngẫu nhiên.",
-        "shortDesc": "Khi thi triển Chiến Kỹ sẽ có xác suất phát động 1 lần <orangeStrong>Đòn Đánh Theo Sau</orangeStrong> lên mục tiêu này.",
+        "shortDesc": "Khi thi triển Chiến Kỹ sẽ có xác suất phát động 1 lần <orangeStrong>Đòn Đánh Theo Sau</orangeStrong> lên mục tiêu này, gây Sát Thương Số Ảo.",
         "tag": "Đánh Đơn"
       }
     },
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Diễn Giải",
-        "fullDesc": "Sau khi thi triển Chiến Kỹ tấn công kẻ địch, có {{1, percent}}% xác suất cơ bản giảm {{2, percent}}% Kháng Hiệu Ứng của kẻ địch bị tấn công, duy trì {{3}} hiệp.",
+        "fullDesc": "Sau khi thi triển Chiến Kỹ tấn công mục tiêu phe địch, có {{1, percent}}% xác suất cơ bản giảm {{2, percent}}% Kháng Hiệu Ứng của mục tiêu phe địch bị tấn công, duy trì {{3}} hiệp.",
         "shortDesc": "",
         "tag": ""
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Chân Lý Vùi Trong Chi Tiết",
-      "desc": "Khi Đòn Đánh Theo Sau của Thiên Phú đánh trúng mục tiêu, mỗi lần mục tiêu có 1 Hiệu Ứng Xấu, sẽ gây thêm Sát Thương Số Ảo kèm theo bằng {{1, percent}}% Tấn Công của Dr. Ratio. Hiệu ứng này trong mỗi Đòn Đánh Theo Sau tối đa kích hoạt {{2}} lần."
+      "desc": "Khi Đòn Đánh Theo Sau của Thiên Phú đánh trúng mục tiêu, mỗi lần mục tiêu có 1 Hiệu Ứng Xấu, sẽ gây thêm Sát Thương Kèm Theo thuộc tính Số Ảo bằng {{1, percent}}% Tấn Công của Dr. Ratio. Hiệu ứng này trong mỗi Đòn Đánh Theo Sau tối đa kích hoạt {{2}} lần."
     },
     "3": {
       "name": "Tự Nhận Thức Bản Thân",
