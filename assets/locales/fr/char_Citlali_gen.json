@@ -1,0 +1,186 @@
+{
+  "name": "Citlali",
+  "title": "Étoile opaline d'obsidienne",
+  "description": "La grande shamane des Maîtres du vent nocturne et la grand-mère Itztli que tous dans la tribu respectent.",
+  "constellationName": "Patina Anavatlaca",
+  "auto": {
+    "name": "Conduit de vol d'ombres",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Fait appel aux arts secrets transmis par les Maîtres du vent nocturne afin d'enchaîner jusqu'à 3 attaques qui infligent des <cryo>DGT Cryo</cryo>."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Bascule en mode visée puis consomme de l'endurance à la fin de l'appui long pour invoquer une étoile glaciale dans la direction visée afin d'infliger des <cryo>DGT Cryo</cryo>."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs en concentrant ses pouvoirs Cryo, infligeant des DGT aux ennemis en chemin et des <cryo>DGT Cryo de zone</cryo> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT attaque chargée",
+      "4": "Coût d'endurance attaque chargée",
+      "5": "DGT durant la chute",
+      "6": "DGT chute basse/élevée",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Étoile d'aurore givrée",
+    "description": {
+      "0": "Invoquant un pacte secret millénaire de sa tribu, Citlali déploie un bouclier d'opale et invoque la tzitzimitl d'obsidienne noire Itzpapa, une créature (réputée) terrifiante au-delà de toute comparaison, infligeant des <cryo>DGT Cryo de zone</cryo> infusés de noctâme.",
+      "1": "L'absorption de DGT d'un bouclier d'opale est basée sur la maîtrise élémentaire de Citlali. Ce dernier absorbe les <cryo>DGT Cryo</cryo> 250 % plus efficacement et, lorsqu'il est déployé, permet à Citlali d'être temporairement <cryo>affectée par l'élément Cryo</cryo>.",
+      "2": "Après utilisation, Citlali obtient 24 pts de noctâme et entre dans l'état Bénédiction noctâme.",
+      "3": "<br/>",
+      "4": "<strong>Bénédiction noctâme : Citlali</strong>",
+      "5": "La bénédiction noctâme de Citlali prend fin lorsqu'Itzpapa quitte le champ de bataille.",
+      "6": "<br/>",
+      "7": "<strong>Itzpapa</strong>",
+      "8": [
+        " Itzpapa suit les déplacements du personnage déployé.",
+        " Si Citlali a au moins 50 pts de noctâme, Itzpapa entre dans l'état Feu d'opale, ce dernier consommant de façon continue des points de noctâme pour déclencher une tempête de givre suivant le personnage afin d'attaquer les ennemis à portée et de leur infliger des <cryo>DGT Cryo</cryo> infusés de noctâme.",
+        " Une fois les points de noctâme épuisés, l'état Feu d'opale d'Itzpapa prend fin."
+      ],
+      "9": "<br/>",
+      "10": "<i>Habituellement, les volontés qui symbolisent différentes étoiles ne peuvent coexister, car comment le noir le plus pur pourrait-il refléter le blanc le plus pur ?",
+      "11": "Quoi qu'il en soit, Citlali n'a jamais été particulièrement attachée aux couleurs, et c'est ainsi que les choses se sont décidées à la fin.</i>"
+    },
+    "skillParams": {
+      "0": "DGT tzitzimitl d'obsidienne noire",
+      "1": "PV du bouclier",
+      "2": "Durée du bouclier",
+      "3": "Durée d'Itzpapa",
+      "4": "Coût de noctâme de feu d'opale (Itzpapa)",
+      "5": "DGT tempête de givre",
+      "6": "Limite de noctâme",
+      "7": "Temps de recharge",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Édit de splendeur liée",
+    "description": {
+      "0": "Invoque des « alliés » du ciel étoilé et de la vaste terre, déclenchant une tempête glaciale en avant qui inflige des <cryo>DGT Cryo de zone</cryo> infusés de noctâme, accordant des points de noctâme à Citlali et invoquant un <strong>crâne possédé</strong> à proximité de chaque ennemi à portée, avec un maximum de 3 crânes possédés invoqués. Les crânes possédés explosent après un certain temps afin d'infliger des <cryo>DGT Cryo de zone</cryo> infusés de noctâme et d'accorder des points de noctâme à Citlali.",
+      "1": "<br/>",
+      "2": "<i>« Argh, ça suffit ces histoires d'étoile noire, d'étoile d'opale ! Citlalin, Itzpapa, attrapez-les ! »</i>"
+    },
+    "skillParams": {
+      "0": "DGT tempête glaciale",
+      "1": "Restauration de noctâme de tempête glaciale",
+      "2": "DGT crâne possédé",
+      "3": "Restauration de noctâme de crâne possédé",
+      "4": "Temps de recharge",
+      "5": "Énergie élémentaire",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Pluie frigide de Mamaloaco",
+    "description": {
+      "0": "Lorsqu'un membre de l'équipe à proximité a déclenché une réaction de Gel ou de Fonte pendant la durée d'Itzpapa, les RÉS <pyro>Pyro</pyro> et <hydro>Hydro</hydro> des ennemis affectés par la réaction diminuent de 20 % pendant 12 s et Citlali récupère 16 pts de noctâme, le noctâme pouvant être restauré une fois toutes les 8 s de cette manière."
+    }
+  },
+  "passive2": {
+    "name": "Tenue étoilée d'Itzpapalotl",
+    "description": {
+      "0": "Pendant la compétence élémentaire <strong>Étoile d'aurore givrée</strong>, les DGT infligés par la tempête de givre d'Itzpapa augmentent d'une valeur équivalant à 90 % de la maîtrise élémentaire de Citlali. Pendant le déchaînement élémentaire <strong>Édit de splendeur liée</strong>, les DGT infligés par la tempête glaciale augmentent d'une valeur équivalant à 1 200 % de la maîtrise élémentaire de Citlali.",
+      "1": "De plus, Citlali récupère 4 pts de noctâme lorsqu'un membre de l'équipe à proximité déclenche une éruption noctâme."
+    }
+  },
+  "passive3": {
+    "name": "Don de la nuit : Fumée, miroir et vents",
+    "description": {
+      "0": "Dans une zone de Natlan avec des mécanismes phlogistiques, la transmission noctâme « Citlali » peut être utilisée. Lorsque le personnage déployé est à une certaine hauteur dans les airs, le déploiement de Citlali déclenche l'effet suivant : Citlali fait un bond très haut et flotte dans les airs grâce à l'aide de la tzitzimitl d'obsidienne blanche Citlalin. La transmission noctâme peut être déclenchée une fois toutes les 10 s par votre équipe.",
+      "1": "<br/>",
+      "2": "Maintenir pour viser fait passer Citlali dans l'état de spiritoraison, ce qui lui permet d'interagir avec les graffitis et insignes de spirinocturne pour extraire les informations et la puissance à l'intérieur. Les règles d'interaction avec ces éléments suivent les mêmes règles que celles régissant les interactions avec les iktomisaures.",
+      "3": "<br/>",
+      "4": "De plus, maintenir le saut fait consommer 75 pts d'endurance à Citlali pour sauter. Dans une zone de Natlan avec des mécanismes phlogistiques, Citlali consomme en priorité 5 pts de phlogistique pour sauter encore plus haut.",
+      "5": "Dans les airs, Citlali peut maintenir l'attaque normale et consommer du phlogistique ou de l'endurance pour passer en mode visée et déclencher des attaques chargées, Citlali consommant en priorité 20 pts de phlogistique en effectuant une attaque chargée dans les airs."
+    }
+  },
+  "passive": {
+    "name": "Chants de profond mystère",
+    "description": {
+      "0": "Dans une zone de Natlan avec des mécanismes phlogistiques, déclencher une éruption noctâme restaure 20 pts de phlogistique.",
+      "1": "Cet effet ne s'applique pas dans les donjons, dans les Donjons de la conquête et dans les Profondeurs spiralées."
+    }
+  },
+  "constellation1": {
+    "name": "Lame lumineuse de Centzon Mimixcoah",
+    "description": {
+      "0": "Lorsque Citlali utilise la compétence élémentaire <strong>Étoile d'aurore givrée</strong>, elle obtient l'effet Tenue d'opale jusqu'à ce qu'Itzpapa quitte le terrain : pendant cet effet, Citlali obtient 10 lames stellaires, une lame étant consommée lorsqu'un membre de l'équipe déployé à proximité autre que Citlali inflige des DGT avec une attaque normale, chargée ou plongeante ou une compétence ou un déchaînement élémentaires, et ce, afin d'augmenter les DGT infligés d'une valeur équivalant à 200 % de la maîtrise élémentaire de Citlali.",
+      "1": "Lorsqu'un membre de l'équipe déployé à proximité a déclenché une réaction de Gel ou de Fonte, Citlali obtient 3 lames stellaires, cet effet pouvant être déclenché une fois toutes les 8 s.",
+      "2": "<br/>",
+      "3": "Utiliser la compétence élémentaire <strong>Étoile d'aurore givrée</strong> réinitialise les cumuls de lames stellaires.",
+      "4": "De plus, le phlogistique que Citlali consomme lorsqu'elle saute ou effectue une visée ou une attaque chargée dans les airs diminue de 45 %."
+    }
+  },
+  "constellation2": {
+    "name": "Patrouille de dévoreur de cœurs",
+    "description": {
+      "0": "La maîtrise élémentaire de Citlali augmente de 125 pts et celle des autres personnages protégés par un bouclier d'opale ou ayant Itzpapa les suivant de 250 pts.",
+      "1": "De plus, utiliser la compétence élémentaire <strong>Étoile d'aurore givrée</strong> accorde un bouclier d'opale aux membres de l'équipe déployé à proximité.",
+      "2": "<br/>",
+      "3": "L'effet de l'aptitude passive « Pluie frigide de Mamaloaco » est également amélioré :",
+      "4": "Lorsqu'un membre de l'équipe à proximité a déclenché une réaction de Gel ou de Fonte pendant la durée d'Itzpapa, les RÉS <pyro>Pyro</pyro> et <hydro>Hydro</hydro> des ennemis affectés par la réaction diminuent de 20 % supplémentaires pendant 12 s, l'aptitude passive « Pluie frigide de Mamaloaco » devant être déjà débloquée."
+    }
+  },
+  "constellation3": {
+    "name": "Crête plumée de serpent des nuages",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Étoile d'aurore givrée</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "Crâne spirituel de non-mortel",
+    "description": {
+      "0": "Pendant la compétence élémentaire <strong>Étoile d'aurore givrée</strong>, toucher un ennemi avec une tempête de givre d'Itzpapa permet d'invoquer en plus un <strong>crâne possédé d'obsidienne</strong>. En explosant, un crâne invoqué de cette manière inflige des <cryo>DGT Cryo de zone</cryo> infusés de noctâme d'une valeur équivalant à 1 200 % de la maîtrise élémentaire de Citlali et restaure à cette dernière 16 pts de noctâme et 8 pts d'énergie élémentaire, cet effet pouvant être déclenché une fois toutes les 8 s et ces DGT n'étant pas considérés comme des DGT de déchaînement élémentaire."
+    }
+  },
+  "constellation5": {
+    "name": "Malédiction de Nemontemi",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Édit de splendeur liée</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "Pacte secret de Teoiztac",
+    "description": {
+      "0": "Invoqué par la compétence élémentaire <strong>Étoile d'aurore givrée</strong>, Itzpapa est constamment dans l'état Feu d'opale, l'état ne prenant pas fin lorsque les points de noctâme sont épuisés.",
+      "1": "De plus, Itzpapa consomme tous les points de noctâme lors de l'utilisation de la compétence élémentaire <strong>Étoile d'aurore givrée</strong> et consomme de façon continue des points de noctâme tant qu'elle est sur le terrain, chaque point ainsi consommé accordant 1 pt de loi secrète à Citlali.",
+      "2": "Citlali peut cumuler un maximum de 40 pts de loi secrète, chaque point accordant à tous les personnages de l'équipe à proximité des bonus de DGT <pyro>Pyro</pyro> et <hydro>Hydro</hydro> de 1,5 % et augmentant les DGT infligés par Citlali de 2,5 %.",
+      "3": "Tous les points de loi secrète de Citlali sont annulés lorsqu'Itzpapa quitte le terrain ou que la compétence élémentaire est à nouveau utilisée."
+    }
+  }
+}

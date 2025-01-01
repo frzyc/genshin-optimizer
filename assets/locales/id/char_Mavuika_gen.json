@@ -1,0 +1,200 @@
+{
+  "name": "Mavuika",
+  "title": "Night-Igniting Flame",
+  "description": "Seorang pemimpin Natlan yang mewarisi Marga Kuno \"Kiongozi\". Dia bersumpah untuk menerangi masa depan bangsa peperangan dengan Api Keramat.",
+  "constellationName": "Sol Invictus",
+  "auto": {
+    "name": "Flames Weave Life",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Melancarkan maksimum hingga 4 serangan tebasan beruntun."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Mengonsumsi sejumlah Stamina untuk melakukan 1 tebasan Severing Splendor yang sangat kuat ke arah depan."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Menerjang dari udara untuk menghantam tanah di bawahnya, menyerang musuh di jalurnya dan mengakibatkan DMG area saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Tahap 4",
+      "4": "DMG Charged Attack",
+      "5": "Konsumsi Stamina Charged Attack",
+      "6": "DMG Selama Plunging",
+      "7": "DMG Plunging Attack Rendah/Tinggi",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "The Named Moment",
+    "description": {
+      "0": "Dengan menggunakan otoritasnya atas \"konflik,\" Mavuika memanggil All-Fire Armaments yang diwariskan melalui garis keturunan Archon manusia, mengakibatkan Nightsoul-aligned <pyro>Pyro DMG</pyro>.",
+      "1": "Setelah dilancarkan, poin Nightsoul Mavuika akan dipulihkan ke nilai maksimum, dan Mavuika akan memasuki status Nightsoul's Blessing.",
+      "2": "<br/>",
+      "3": "<strong>All-Fire Armaments</strong>",
+      "4": "Memiliki bentuk yang berbeda saat dilancarkan dengan Mode Tekan atau Mode Tahan.",
+      "5": "<br/>",
+      "6": "<strong>Mode Tekan</strong>",
+      "7": "\"Divine Name Unleashed\": All-Fire Armaments akan menampakkan wujudnya sebagai Ring of Searing Radiance. Ring of Searing Radiance akan mengikuti Karakter aktif dan menyerang musuh di sekitar secara berkala, mengakibatkan Nightsoul-aligned <pyro>Pyro DMG</pyro>.",
+      "8": "<br/>",
+      "9": "<strong>Mode Tahan</strong>",
+      "10": "\"Ancient Name Unbound\": All-Fire Armaments akan menampakkan wujudnya sebagai Flamestrider. Dalam kondisi ini, Mavuika akan bisa mengendarai Flamestrider dan bergerak dengan cepat, atau membuka modul propulsi tersembunyi cadangan di belakangnya, yang bisa membuatnya melewati berbagai medan dan bisa terbang di udara dalam waktu singkat. Selain itu, Normal Attack, Charged Attack, dan Plunging Attack Mavuika akan dikonversi menjadi Nightsoul-aligned <pyro>Pyro DMG</pyro> yang tidak bisa ditimpa Elemental Infusion lainnya. Saat menerjang, akan mengakibatkan Nightsoul-aligned <pyro>Pyro DMG</pyro> terhadap musuh yang berada di jalurnya.",
+      "11": "<br/>",
+      "12": "Saat dalam status Nightsoul's Blessing, menekan Elemental Skill akan bisa mengubah bentuk All-Fire Armaments. All-Fire Armaments akan hilang setelah status Nightsoul's Blessing Mavuika berakhir.",
+      "13": "<br/>",
+      "14": "<strong>Nightsoul's Blessing: Mavuika</strong>",
+      "15": "Terus mengonsumsi poin Nightsoul berdasarkan bentuk All-Fire Armaments. Saat poin Nightsoul habis dikonsumsi, status Nightsoul's Blessing Mavuika berakhir.",
+      "16": "<br/>",
+      "17": "<i>Kalau kamu memberi tahu Mavuika kalau kendaraan seperti Flamestrider memerlukan pelat nomor untuk identifikasi di dunia lain, dia pasti akan senang juga.",
+      "18": "\"Tuh, milikku ini satu-satunya di sini loh. Jadi aku boleh pilih nomor pelatku, kan?\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "DMG Ring of Searing Radiance",
+      "2": "Jeda Serangan Ring of Searing Radiance",
+      "3": "DMG Normal Attack Flamestrider Tahap 1",
+      "4": "DMG Normal Attack Flamestrider Tahap 2",
+      "5": "DMG Normal Attack Flamestrider Tahap 3",
+      "6": "DMG Normal Attack Flamestrider Tahap 4",
+      "7": "DMG Normal Attack Flamestrider Tahap 5",
+      "8": "DMG Berlari Flamestrider",
+      "9": "DMG Berputar Charged Attack Flamestrider",
+      "10": "DMG Final Charged Attack Flamestrider",
+      "11": "DMG Plunging Flamestrider",
+      "12": "Batas Poin Nightsoul",
+      "13": "Cooldown",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Hour of Burning Skies",
+    "description": {
+      "0": "Bisikan hati anak manusia mencapai takhta suci di langit sana.",
+      "1": "<strong>Elemental Burst Mavuika tidak bergantung kepada Energy, tetapi bergantung kepada \"Fighting Spirit\"</strong>",
+      "2": "<br/>",
+      "3": "<strong>Fighting Spirit</strong>",
+      "4": "Saat memiliki setidaknya 50% Fighting Spirit, Mavuika dapat mengonsumsi seluruh Fighting Spirit untuk melancarkan Elemental Burst.",
+      "5": "Mavuika dapat memperoleh Fighting Spirit dengan cara berikut ini:",
+      "6": [
+        "Saat berada dalam kondisi bertempur, poin Nightsoul yang dikonsumsi oleh Karakter sekitar di dalam party akan dikonversi menjadi Fighting Spirit.",
+        "Saat Normal Attack Karakter sekitar di dalam party mengenai musuh, Mavuika akan mendapatkan 1,5 Fighting Spirit, efek ini dapat terpicu sekali setiap 0,1 detik."
+      ],
+      "7": "<br/>",
+      "8": "Setelah dilancarkan, Mavuika akan mendapatkan 10 poin Nightsoul dan memasuki status Nightsoul's Blessing, mengendarai Flamestrider dan melompat tinggi ke angkasa, lalu melancarkan satu kali Sunfell Slice yang kuat terhadap musuh di permukaan tanah, mengakibatkan Nightsoul-aligned <pyro>Pyro DMG Area</pyro>, juga memasuki status \"Crucible of Death and Life\".",
+      "9": "<br/>",
+      "10": "<strong>Crucible of Death and Life</strong>",
+      "11": "Selama berlangsung, berbagai tindakan Mavuika tidak akan mengonsumsi poin Nightsoul dan akan meningkatkan ketahanannya terhadap interupsi. Selain itu, saat melancarkan Elemental Burst maka akan meningkatkan DMG Sunfell Slice serta DMG Normal Attack dan Charged Attack dari \"Ancient Name Unbound\" berdasarkan Fighting Spirit yang dimiliki saat melancarkannya.",
+      "12": "Crucible of Death and Life akan dihapus saat Mavuika meninggalkan medan pertempuran.",
+      "13": "<br/>",
+      "14": "<i>\"Tapi kali ini, aku akan menghancurkan takdir ini dengan tanganku sendiri.\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Skill",
+      "1": "Durasi Crucible of Death and Life",
+      "2": "Peningkatan DMG Sunfell Slice",
+      "3": "Peningkatan DMG Normal Attack Flamestrider",
+      "4": "Peningkatan DMG Charged Attack Flamestrider",
+      "5": "Cooldown",
+      "6": "Batas Fighting Spirit",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Gift of Flaming Flowers",
+    "description": {
+      "0": "Saat anggota party di sekitar memicu Nightsoul Burst, ATK Mavuika meningkat 30% selama 10 detik."
+    }
+  },
+  "passive2": {
+    "name": "\"Kiongozi\"",
+    "description": {
+      "0": "Setelah melancarkan Elemental Burst <strong>Hour of Burning Skies</strong>, DMG yang diakibatkan Karakter aktif dalam party akan meningkat 0,2% untuk setiap 1 poin Fighting Spirit yang dikonsumsi. Peningkatan DMG maksimum yang bisa didapatkan dengan cara ini adalah 40%. Efek ini berlangsung 20 detik dan akan berkurang perlahan selama durasinya hingga mencapai 0."
+    }
+  },
+  "passive3": {
+    "name": "Night Realm's Gift: Exhaust Mode",
+    "description": {
+      "0": "Setelah poin Nightsoul habis terpakai, Mavuika akan mengonsumsi Phlogiston untuk mempertahankan bentuk Flamestrider dari All-Fire Armaments.",
+      "1": "Saat ada area dengan Phlogiston Mechanic di Natlan, dapat melancarkan Nightsoul Transmission: Mavuika. Saat Karakter aktif sedang berlari, memanjat, berenang, atau sedang bergerak yang dikarenakan oleh Talenta tertentu, atau saat melayang di ketinggian tertentu, dan mengganti Karakter menjadi Mavuika, akan memicu efek: Mavuika memasuki status Nightsoul's Blessing dan mendapatkan poin Nightsoul sebesar 50% poin Nightsoul maksimumnya. Party sendiri dapat memicu satu kali Nightsoul Transmission sekali setiap 10 detik."
+    }
+  },
+  "passive": {
+    "name": "Night-Shattering Radiance",
+    "description": {
+      "0": "CD Nightsoul Transmission party berkurang 20%."
+    }
+  },
+  "constellation1": {
+    "name": "The Night-Lord's Explication",
+    "description": {
+      "0": "Meningkatkan batas poin Nightsoul Mavuika menjadi 120 poin, efisiensi perolehan Fighting Spirit meningkat 25%.",
+      "1": "Selain itu, setelah mendapatkan Fighting Spirit, ATK Mavuika meningkat 40% selama 8 detik."
+    }
+  },
+  "constellation2": {
+    "name": "The Ashen Price",
+    "description": {
+      "0": "Saat berada dalam status Nightsoul's Blessing, Base ATK Mavuika meningkat 200 poin. Memperoleh efek yang berbeda berdasarkan bentuk All-Fire Armaments:",
+      "1": [
+        "Ring of Searing Radiance: DEF musuh di sekitar berkurang 20%.",
+        "Flamestrider: DMG yang disebabkan Normal Attack, Charged Attack, dan Sunfell Slice dari Elemental Burst <strong>Hour of Burning Skies</strong> milik Mavuika meningkat sebesar 60%/90%/120% berdasarkan dari ATK Mavuika."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "The Burning Sun",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong>Hour of Burning Skies</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "The Leader's Resolve",
+    "description": {
+      "0": "Meningkatkan efek dari Talenta Pasif \"Kiongozi\":",
+      "1": "Efek peningkatan DMG setelah melancarkan Elemental Burst <strong>Hour of Burning Skies</strong> tidak akan berkurang seiring waktu, dan akan mendapatkan 10% DMG Bonus tambahan.",
+      "2": "Harus membuka Talenta Pasif \"Kiongozi\" terlebih dahulu."
+    }
+  },
+  "constellation5": {
+    "name": "The Meaning of Truth",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong>The Named Moment</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Humanity's Name\" Unfettered",
+    "description": {
+      "0": "All-Fire Armaments dari Elemental Skill <strong>The Named Moment</strong> mendapatkan penguatan total:",
+      "1": [
+        "Ring of Searing Radiance: Saat serangan Ring of Searing Radiance mengenai musuh, satu Flamestrider akan menabrak musuh yang terkena dan mengakibatkan Nightsoul-aligned <pyro>Pyro DMG Area</pyro> sebesar 200% ATK.",
+        "Flamestrider: Saat Mavuika mengendarai Flamestrider, akan bisa memanggil Scorching Ring of Searing Radiance yang akan terus mengikutinya, membuat DEF musuh di sekitar berkurang 20%, dan setiap 3 detiknya, mengakibatkan satu kali Nightsoul-aligned <pyro>Pyro DMG Area</pyro> sebesar 500% ATK terhadap musuh di sekitar. Kemampuan Mavuika untuk melewati berbagai medan juga akan meningkat lebih jauh."
+      ],
+      "2": "<br/>",
+      "3": "Selain itu, saat Mavuika mengendarai Flamestrider dan tidak berada dalam kondisi bertempur, saat poin Nightsoul Mavuika turun menjadi 5 poin, akan mendapatkan 80 poin Nightsoul. efek ini dapat terpicu sekali setiap 15 detik."
+    }
+  }
+}

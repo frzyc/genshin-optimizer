@@ -1,0 +1,200 @@
+{
+  "name": "Mavuika",
+  "title": "Geceyi Tutuşturan Alev",
+  "description": "Natlan'ın \"Kiongozi\" Kadim Adını miras alan lideri. Savaş ulusunun geleceğini Kutsal Alev ile aydınlatmaya yemin etmiştir.",
+  "constellationName": "Batmayan Güneş",
+  "auto": {
+    "name": "Alevle Örülür Yaşam",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Arka arkaya en fazla 4 saldırı yapar."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak ileri doğru güçlü bir Kesici İhtişam saldırısı yapar."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Havadayken dalışa geçerek yere vurur ve yoluna çıkan düşmanlara Alan Hasarı verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Hasarı",
+      "5": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Adı Konulmuş An",
+    "description": {
+      "0": "\"Çatışma\" üzerindeki iktidarını kullanan Mavuika, insan Hükümdarlar arasında aktarılan Saf Ateşin Silahlarını çağırarak Gece Ruhu tesirli <pyro>Ateş Hasarı</pyro> verir.",
+      "1": "Bunu kullandıktan sonra Mavuika'nın Gece Ruhu puanları tamamen yenilenir ve Mavuika, Gece Ruhunun Lütfu durumuna girer.",
+      "2": "<br/>",
+      "3": "<strong>Saf Ateşin Silahları</strong>",
+      "4": "Dokunulduğunda veya Basılı Tutulduğunda farklı biçimlere girer.",
+      "5": "<br/>",
+      "6": "<strong>Dokun</strong>",
+      "7": "\"Serbest Kalan Kutsal Ad\": Saf Ateşin Silahları, Yakıcı Işık Halkası olarak tezahür eder. Halka, mevcut aktif karakteri takip ederek belirli aralıklarla yakındaki düşmanlara saldırır ve Gece Ruhu tesirli <pyro>Ateş Hasarı</pyro> verir.",
+      "8": "<br/>",
+      "9": "<strong>Basılı Tut</strong>",
+      "10": "\"Özgür Kalan Kadim Ad\": Saf Ateşin Silahları, Alevgezer olarak tezahür eder. Mavuika bu durumdayken Alevgezeri yüksek hızla sürebilir veya gizli yedek itiş modülünü etkinleştirerek geçici olarak farklı arazileri aşabilir ve havada süzülebilir. Mavuika'nın Normal, Yüklü ve Havadan Saldırıları, farklı herhangi bir element tesiriyle değişmeyecek şekilde Gece Ruhu tesirli <pyro>Ateş Hasarı</pyro> verir. Ayrıca Mavuika depar atarken yoluna çıkan düşmanlara Gece Ruhu tesirli <pyro>Ateş Hasarı</pyro> verir.",
+      "11": "<br/>",
+      "12": "Gece Ruhunun Lütfu durumundayken Element Becerisine Dokunmak, Saf Ateşin Silahlarının biçimini değiştirir. Silahlar, Mavuika'nın Gece Ruhunun Lütfu durumu sona erdiğinde kaybolur.",
+      "13": "<br/>",
+      "14": "<strong>Gece Ruhunun Lütfu: Mavuika</strong>",
+      "15": "Saf Ateşin Silahlarının biçimine göre devamlı olarak Gece Ruhu puanı tüketir. Mavuika'nın Gece Ruhu puanları tükendiğinde Gece Ruhunun Lütfu durumu da sona erer.",
+      "16": "<br/>",
+      "17": "<i>Başka bir dünyada Alevgezer gibi araçların kimlik amaçlı plakalara ihtiyacı olduğunu söylesen Mavuika çok sevinir:",
+      "18": "\"Buradaki tek Alevgezer benimki. O zaman istediğim plakayı seçebilirim, değil mi?\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Yakıcı Işık Halkası Hasarı",
+      "2": "Yakıcı Işık Halkası Saldırı Aralığı",
+      "3": "Alevgezer Normal Saldırı 1 Vuruş Hasarı",
+      "4": "Alevgezer Normal Saldırı 2 Vuruş Hasarı",
+      "5": "Alevgezer Normal Saldırı 3 Vuruş Hasarı",
+      "6": "Alevgezer Normal Saldırı 4 Vuruş Hasarı",
+      "7": "Alevgezer Normal Saldırı 5 Vuruş Hasarı",
+      "8": "Alevgezer Depar Hasarı",
+      "9": "Alevgezer Yüklü Saldırı Döngüsel Hasarı",
+      "10": "Alevgezer Yüklü Saldırı Son Vuruş Hasarı",
+      "11": "Alevgezer Havadan Saldırı Hasarı",
+      "12": "Gece Ruhu Puanı Sınırı",
+      "13": "BS",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Göklerin Yandığı Vakit",
+    "description": {
+      "0": "Halkın kalbindeki sesler gökteki kutsal tahta ulaşsın.",
+      "1": "<strong>Mavuika'nın Element Patlaması Enerji değil, \"Savaşma Ruhu\" kullanır.</strong>",
+      "2": "<br/>",
+      "3": "<strong>Savaşma Ruhu</strong>",
+      "4": "Mavuika en az %50 Savaşma Ruhuna sahip olduğunda tamamını harcayarak Element Patlamasını kullanabilir.",
+      "5": "Mavuika, aşağıdaki yöntemlerle Savaşma Ruhu kazanabilir:",
+      "6": [
+        "Savaştayken yakındaki grup üyelerinin harcadığı Gece Ruhu puanları, Savaşma Ruhuna dönüştürülür.",
+        "Yakındaki grup üyelerinin Normal Saldırıları düşmanlara isabet ettiğinde Mavuika 1,5 Savaşma Ruhu kazanır. Bu etki 0,1 saniyede bir tetiklenebilir."
+      ],
+      "7": "<br/>",
+      "8": "Mavuika, Element Patlamasını kullandıktan sonra 10 Gece Ruhu puanı kazanır ve Gece Ruhunun Lütfu durumuna girer. Havada Alevgezerine binerek yerdeki düşmanlara karşı güçlü bir Güneş Kesiği saldırısı yaparak Gece Ruhu tesirli <pyro>Ateş Alan Hasarı</pyro> verir ve \"Ölüm ve Yaşam Potası\" durumuna girer.",
+      "9": "<br/>",
+      "10": "<strong>Ölüm ve Yaşam Potası</strong>",
+      "11": "Bu süre boyunca Mavuika'nın çeşitli eylemleri Gece Ruhu puanı tüketmez ve Mavuika'nın müdahale direnci artar. Ayrıca Güneş Kesiği ile \"Özgür Kalan Kadim Ad\"ın Normal ve Yüklü Saldırılarının verdiği Hasar, Mavuika'nın Element Patlamasını kullanırken sahip olduğu Savaşma Ruhu miktarına göre artar.",
+      "12": "Mavuika alandan ayrıldığında Ölüm ve Yaşam Potası iptal edilir.",
+      "13": "<br/>",
+      "14": "<i>\"... Ama ben bu sefer döngüyü kırmak ve bizi bu kaderden temelli kurtarmak istiyorum.\"</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "Ölüm ve Yaşam Potası Süresi",
+      "2": "Güneş Kesiği Hasar Bonusu",
+      "3": "Alevgezer Normal Saldırı Hasar Bonusu",
+      "4": "Alevgezer Yüklü Saldırı Hasar Bonusu",
+      "5": "BS",
+      "6": "Savaşma Ruhu Sınırı",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Alev Çiçeği Hediyesi",
+    "description": {
+      "0": "Yakındaki bir grup üyesi Gece Ruhu Patlaması tetiklediğinde 10 saniyeliğine Mavuika'nın Saldırısı %30 artar."
+    }
+  },
+  "passive2": {
+    "name": "\"Kiongozi\"",
+    "description": {
+      "0": "Mavuika, <strong>Göklerin Yandığı Vakit</strong> Element Patlamasını kullandığındaki mevcut Savaşma Ruhu puanı başına aktif grup üyesinin verdiği Hasarı %0,2 artırır. Bu şekilde en fazla %40 Hasar artışı kazanılabilir ve bu etki 20sn sürer. Etki bu süre boyunca 0'a ulaşana kadar giderek azalır."
+    }
+  },
+  "passive3": {
+    "name": "Gece Diyarının Armağanı: Tüketim Modu",
+    "description": {
+      "0": "Mavuika, Gece Ruhu puanı tükendiğinde Saf Ateşin Silahlarının Alevgezer formunu sürdürmek için Filojiston harcar.",
+      "1": "Mavuika, Natlan'da Filojiston Mekanikleri bulunan bir bölgedeyken \"Gece Ruhu Aktarımı: Mavuika\" kullanabilir. Aktif karakter depar atarken, tırmanırken, yüzerken, belirli Yeteneklerden kaynaklı bir hareket modundayken veya havada belirli bir yükseklikteyken Mavuika'ya geçildiğinde şu etkiler tetiklenir: Mavuika Gece Ruhunun Lütfu durumuna girer ve maksimum Gece Ruhu puanının %50'sini kazanır. Gece Ruhu Aktarımı kendi grubun tarafından her 10 saniyede bir tetiklenebilir."
+    }
+  },
+  "passive": {
+    "name": "Geceyi Bozan Aydınlık",
+    "description": {
+      "0": "Grubun Gece Ruhu Aktarımı Bekleme Süresi %20 azalır."
+    }
+  },
+  "constellation1": {
+    "name": "Gece Lordu'nun İzahati",
+    "description": {
+      "0": "Mavuika'nın maksimum Gece Ruhu puanı 120'ye çıkar ve Savaşma Ruhu kazanma verimliliği %25 artar.",
+      "1": "Ayrıca Savaşma Ruhu kazandıktan sonra 8 saniyeliğine Saldırısı %40 artar."
+    }
+  },
+  "constellation2": {
+    "name": "Küllerin Bedeli",
+    "description": {
+      "0": "Gece Ruhunun Lütfu durumundayken Mavuika'nın Temel Saldırısı 200 artar ve Saf Ateşin Silahları biçimine göre aşağıdaki etkileri kazanır:",
+      "1": [
+        "Yakıcı Işık Halkası: Yakındaki düşmanların Savunması %20 azalır.",
+        "Alevgezer: Mavuika'nın Normal Saldırıları, Yüklü Saldırıları ve <strong>Göklerin Yandığı Vakit</strong> Element Patlamasındaki Güneş Kesiği, sırayla Mavuika'nın Saldırısının %60'ı, %90'ı ve %120'si kadar daha fazla Hasar verir."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Güneş Yanarken",
+    "description": {
+      "0": "<strong>Göklerin Yandığı Vakit</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "Liderin Azmi",
+    "description": {
+      "0": "\"Kiongozi\" Pasif Yeteneğinin etkilerini geliştirir:",
+      "1": "<strong>Göklerin Yandığı Vakit</strong> Element Patlaması kullandıktan sonra kazanılan Hasar artışı zamanla azalmaz ve ilave %10 Hasar Bonusu kazanılır.",
+      "2": "\"Kiongozi\" Pasif Yeteneğinin açılmış olması gerekir."
+    }
+  },
+  "constellation5": {
+    "name": "Gerçeğin Anlamı",
+    "description": {
+      "0": "<strong>Adı Konulmuş An</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "\"İnsanlığın Adı\" Artık Özgür",
+    "description": {
+      "0": "<strong>Adı Konulmuş An</strong> Element Becerisindeki Saf Ateşin Silahları gelişir:",
+      "1": [
+        "Yakıcı Işık Halkası: Halkanın saldırıları bir düşmana isabet ettiğinde o düşmana bir Alevgezer çarparak Saldırının %200'ü kadar Gece Ruhu tesirli <pyro>Ateş Alan Hasarı</pyro> verir.",
+        "Alevgezer: Mavuika, Alevgezeri sürerken ayrıca onu takip eden bir Kavuran Yakıcı Işık Halkası çağırır. Halka, yakındaki düşmanların Savunmasını %20 azaltır ve yakındaki düşmanlara 3 saniyede bir Mavuika'nın Saldırısının %500'ü kadar Gece Ruhu tesirli <pyro>Ateş Alan Hasarı</pyro> verir. Ayrıca Mavuika'nın arazi aşma kabiliyeti daha da gelişir."
+      ],
+      "2": "<br/>",
+      "3": "Ek olarak, Mavuika Alevgezer'i sürerken ve savaşta değilken Gece Ruhu puanı 5'e düştüğünde 80 Gece Ruhu puanı kazanır. Bu etki 15 saniyede bir tetiklenebilir."
+    }
+  }
+}

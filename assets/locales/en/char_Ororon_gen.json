@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Charged Attack</strong>",
         "1": "Performs a more precise <strong>Aimed Shot</strong> with increased DMG.",
-        "2": "While aiming, Electro energy will accumulate on the arrowhead. A fully charged arrow will deal immense <electro>Electro DMG</electro>."
+        "2": "While aiming, Electro energy will accumulate on the arrowhead. A fully charged arrow will deal <electro>Electro DMG</electro>."
       },
       "plunging": {
         "0": "<strong>Plunging Attack</strong>",

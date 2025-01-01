@@ -136,7 +136,7 @@
     "name": "« Dès lors, je traverserai le voile de l'ombre de la bougie »",
     "description": {
       "0": "Pendant la vigile nocturne de <strong>Ronde de la nuitée</strong>, toucher un ennemi avec des <electro>DGT Électro</electro> infligés par une attaque normale de Clorinde invoque une ombre vigile à proximité de l'ennemi afin d'effectuer 2 attaques coordonnées, chacune infligeant des <electro>DGT Électro</electro> d'une valeur équivalant à 30 % de l'ATQ de Clorinde.",
-      "1": "Cet effet peut être déclenché une fois toutes 1,2 s et les DGT infligés de cette manière sont considérés comme des DGT d'attaque normale."
+      "1": "Cet effet peut être déclenché une fois toutes les 1,2 s et les DGT infligés de cette manière sont considérés comme des DGT d'attaque normale."
     }
   },
   "constellation2": {

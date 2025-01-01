@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>重擊</strong>",
         "1": "進行傷害更高、更為精準的<strong>瞄準射擊</strong>。",
-        "2": "瞄準時，雷元素會憑附在箭矢上。聚滿了雷元素的箭矢會造成高額的<electro>雷元素傷害</electro>。"
+        "2": "瞄準時，雷元素會憑附在箭矢上。聚滿了雷元素的箭矢會造成<electro>雷元素傷害</electro>。"
       },
       "plunging": {
         "0": "<strong>下落攻擊</strong>",

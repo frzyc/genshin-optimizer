@@ -1,0 +1,34 @@
+{
+  "name": "Mille soleils brûlants",
+  "description": {
+    "0": "Une épée à deux mains qui brille comme le soleil levant. Elle a été témoin de l'extinction et du retour d'innombrables soleils."
+  },
+  "passiveName": "Soleil ravivant l'aube",
+  "passiveDescription": {
+    "0": {
+      "0": "Utiliser une compétence ou un déchaînement élémentaire accorde l'effet Brillance braisée : augmente les DGT CRIT de <cryo>20 %</cryo> et l'ATQ de <cryo>28 %</cryo> pendant 6 s, ceci pouvant être déclenché une fois toutes les 10 s.",
+      "1": "Pendant la brillance braisée, toute attaque normale ou chargée infligeant des DGT élémentaires prolonge la durée de 2 s, cela pouvant être déclenché une fois toutes les secondes et la durée pouvant être prolongée d'un maximum de 6 s de cette manière.",
+      "2": "De plus, lorsque le personnage équipé de l'arme bénéficie d'une bénédiction noctâme, l'effet Brillance braisée augmente de 75 % et sa durée ne diminue pas lorsque le personnage équipé de l'arme n'est pas déployé."
+    },
+    "1": {
+      "0": "Utiliser une compétence ou un déchaînement élémentaire accorde l'effet Brillance braisée : augmente les DGT CRIT de <cryo>25 %</cryo> et l'ATQ de <cryo>35 %</cryo> pendant 6 s, ceci pouvant être déclenché une fois toutes les 10 s.",
+      "1": "Pendant la brillance braisée, toute attaque normale ou chargée infligeant des DGT élémentaires prolonge la durée de 2 s, cela pouvant être déclenché une fois toutes les secondes et la durée pouvant être prolongée d'un maximum de 6 s de cette manière.",
+      "2": "De plus, lorsque le personnage équipé de l'arme bénéficie d'une bénédiction noctâme, l'effet Brillance braisée augmente de 75 % et sa durée ne diminue pas lorsque le personnage équipé de l'arme n'est pas déployé."
+    },
+    "2": {
+      "0": "Utiliser une compétence ou un déchaînement élémentaire accorde l'effet Brillance braisée : augmente les DGT CRIT de <cryo>30 %</cryo> et l'ATQ de <cryo>42 %</cryo> pendant 6 s, ceci pouvant être déclenché une fois toutes les 10 s.",
+      "1": "Pendant la brillance braisée, toute attaque normale ou chargée infligeant des DGT élémentaires prolonge la durée de 2 s, cela pouvant être déclenché une fois toutes les secondes et la durée pouvant être prolongée d'un maximum de 6 s de cette manière.",
+      "2": "De plus, lorsque le personnage équipé de l'arme bénéficie d'une bénédiction noctâme, l'effet Brillance braisée augmente de 75 % et sa durée ne diminue pas lorsque le personnage équipé de l'arme n'est pas déployé."
+    },
+    "3": {
+      "0": "Utiliser une compétence ou un déchaînement élémentaire accorde l'effet Brillance braisée : augmente les DGT CRIT de <cryo>35 %</cryo> et l'ATQ de <cryo>49 %</cryo> pendant 6 s, ceci pouvant être déclenché une fois toutes les 10 s.",
+      "1": "Pendant la brillance braisée, toute attaque normale ou chargée infligeant des DGT élémentaires prolonge la durée de 2 s, cela pouvant être déclenché une fois toutes les secondes et la durée pouvant être prolongée d'un maximum de 6 s de cette manière.",
+      "2": "De plus, lorsque le personnage équipé de l'arme bénéficie d'une bénédiction noctâme, l'effet Brillance braisée augmente de 75 % et sa durée ne diminue pas lorsque le personnage équipé de l'arme n'est pas déployé."
+    },
+    "4": {
+      "0": "Utiliser une compétence ou un déchaînement élémentaire accorde l'effet Brillance braisée : augmente les DGT CRIT de <cryo>40 %</cryo> et l'ATQ de <cryo>56 %</cryo> pendant 6 s, ceci pouvant être déclenché une fois toutes les 10 s.",
+      "1": "Pendant la brillance braisée, toute attaque normale ou chargée infligeant des DGT élémentaires prolonge la durée de 2 s, cela pouvant être déclenché une fois toutes les secondes et la durée pouvant être prolongée d'un maximum de 6 s de cette manière.",
+      "2": "De plus, lorsque le personnage équipé de l'arme bénéficie d'une bénédiction noctâme, l'effet Brillance braisée augmente de 75 % et sa durée ne diminue pas lorsque le personnage équipé de l'arme n'est pas déployé."
+    }
+  }
+}
