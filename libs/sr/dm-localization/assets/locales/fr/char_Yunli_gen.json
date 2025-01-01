@@ -13,7 +13,7 @@
       "0": {
         "name": "Lame de choc",
         "fullDesc": "Restaure des PV équivalents à <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> de l'ATQ de Yunli + <orangeStrong>{{4}}</orangeStrong>, et inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Yunli à une cible ennemie unique et des DGT physiques équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Yunli aux cibles adjacentes.",
-        "shortDesc": "Restaure des PV au personnage et inflige des DGT physiques mineurs à un ennemi unique et aux cibles adjacentes.",
+        "shortDesc": "Restaure des PV à cette unité. Inflige des DGT physiques à un ennemi et des DGT physiques mineurs aux cibles adjacentes.",
         "tag": "Propagation"
       }
     },
@@ -21,7 +21,7 @@
       "0": {
         "name": "Du ciel à la terre",
         "fullDesc": "Consomme {{8}} points d'énergie. Yunli obtient l'effet Parade et provoque tous les ennemis. Dure jusqu'à la fin du prochain tour allié ou ennemi et augmente les DGT critiques infligés par le prochain contre de Yunli de <orangeStrong>{{2, percent}}%</orangeStrong>. Lorsque l'effet de contre du talent se déclenche dans l'état Parade, il est converti en contre Sens de l'éradication et supprime l'état Parade. Si aucun contre n'est déclenché dans l'état Parade, Yunli lance immédiatement le contre Sens de l'entaille sur une cible ennemie aléatoire à la fin de l'état Parade.<br><br>Sens de l'entaille : Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Yunli à la cible et des DGT physiques équivalents à <orangeStrong>{{6, percent}}%</orangeStrong> de l'ATQ de Yunli aux cibles adjacentes.<br>Sens de l'éradication : Inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Yunli à la cible et des DGT physiques équivalents à <orangeStrong>{{6, percent}}%</orangeStrong> de l'ATQ de Yunli aux cibles adjacentes. Puis, inflige {{4}} instances de DGT supplémentaires, chacune infligeant des DGT physiques équivalents à <orangeStrong>{{7, percent}}%</orangeStrong> de l'ATQ de Yunli à une cible ennemie unique aléatoire.<br><br>Les DGT que Yunli inflige via cette capacité sont considérés comme des DGT d'ultime.",
-        "shortDesc": "Entre en état de Parade et provoque tous les ennemis, déclenchant un <orangeStrong>puissant contre</orangeStrong> lorsqu'elle est attaquée pendant cette période. Le contre <orangeStrong>inflige des DGT physiques</orangeStrong> à l'assaillant et aux cibles adjacentes, puis inflige des DGT physiques mineurs à un ennemi unique qui rebondissent 6 fois. Si aucun contre n'est déclenché pendant l'état Parade, inflige des DGT physiques à une cible ennemie aléatoire et aux cibles adjacentes à la fin de l'état.",
+        "shortDesc": "Entre en état de Parade et provoque tous les ennemis, déclenchant un <orangeStrong>puissant contre</orangeStrong> lorsqu'elle est attaquée pendant cette période. Le contre <orangeStrong>inflige des DGT physiques</orangeStrong> à l'assaillant et aux cibles adjacentes, puis inflige des DGT physiques mineurs à un ennemi unique qui rebondissent 6 fois. Si aucun contre n'est déclenché alors que Parade est actif, inflige des DGT physiques à une cible ennemie aléatoire et aux cibles adjacentes à la fin de l'état.",
         "tag": "Renforcement"
       }
     },
@@ -29,7 +29,7 @@
       "0": {
         "name": "Représailles de la forge",
         "fullDesc": "Quand Yunli est attaquée par une cible ennemie, elle régénère {{3}} points d'énergie et lance immédiatement un contre sur l'assaillant, ce qui lui inflige des DGT physiques équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ de Yunli et inflige des DGT physiques équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Yunli aux cibles adjacentes.<br>Contre une cible ennemie aléatoire s'il n'y a aucune cible immédiate à contrer.",
-        "shortDesc": "Quand Yunli est attaquée par une cible ennemie, elle régénère de l'énergie supplémentaire et lance immédiatement un contre sur l'assaillant et les cibles adjacentes.",
+        "shortDesc": "Quand Yunli est attaquée par une cible ennemie, elle régénère de l'énergie supplémentaire et lance immédiatement un contre, ce qui inflige des DGT physiques à l'assaillant et des DGT physiques mineurs aux cibles adjacentes.",
         "tag": "Propagation"
       }
     },
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Roue enflammée",
-        "fullDesc": "Après chaque utilisation de « Sens de l'entaille », la prochaine utilisation de « Sens de l'entaille  » est remplacée par « Sens de l'éradication ».",
+        "fullDesc": "Après chaque utilisation de Sens de l'entaille, la prochaine utilisation de Sens de l'entaille est remplacée par Sens de l'éradication.",
         "shortDesc": "",
         "tag": ""
       }

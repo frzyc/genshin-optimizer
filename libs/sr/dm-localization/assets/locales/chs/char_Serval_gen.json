@@ -13,7 +13,7 @@
       "0": {
         "name": "电光石火间",
         "fullDesc": "对指定敌方单体造成等同于希露瓦<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的雷属性伤害，同时对其相邻目标造成等同于希露瓦<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的雷属性伤害，此外有{{3, percent}}%的基础概率使受到攻击的敌方目标陷入触电状态，持续{{4}}回合。<br>触电状态下，敌方目标每回合开始时受到等同于希露瓦<orangeStrong>{{5, percent}}%</orangeStrong>攻击力的雷属性持续伤害。",
-        "shortDesc": "对敌方单体及其相邻目标造成少量雷属性伤害，有大概率对目标<orangeStrong>施加触电状态</orangeStrong>。",
+        "shortDesc": "对敌方单体造成雷属性伤害，对相邻目标造成少量雷属性伤害。大概率对目标<orangeStrong>施加触电状态</orangeStrong>。",
         "tag": "扩散"
       }
     },

@@ -95,7 +95,7 @@
     },
     "4": {
       "name": "Thế Bài Thắng Trong Tầm Tay",
-      "desc": "Sau khi thi triển Chiến Kỹ, có {{1, percent}}% xác suất cố định nhận trạng thái Bất Cầu Nhân, duy trì đến khi hiệp này kết thúc.<br>Trong trạng thái Bất Cầu Nhân, sau khi thi triển Tấn Công Thường hoặc Tấn Công Thường Cường Hóa, sẽ lập tức tiến hành 1 Đòn Đánh Theo Sau, gây cho mục tiêu này một lượng Sát Thương Lượng Tử bằng 100% Sát Thương Tấn Công Thường hoặc Tấn Công Thường Cường Hóa."
+      "desc": "Sau khi thi triển Chiến Kỹ, có {{1, percent}}% xác suất cố định nhận trạng thái Bất Cầu Nhân, duy trì đến khi hiệp này kết thúc.<br>Trong trạng thái Bất Cầu Nhân, sau khi thi triển Tấn Công Thường hoặc Tấn Công Thường Cường Hóa, sẽ lập tức tiến hành 1 lần Đòn Đánh Theo Sau, gây cho mục tiêu này một lượng Sát Thương Lượng Tử bằng 100% Sát Thương Tấn Công Thường hoặc Tấn Công Thường Cường Hóa."
     },
     "5": {
       "name": "Thế Bài Đánh Cược Vận Mệnh",

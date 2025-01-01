@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Beneficio congelado",
-        "fullDesc": "Tras lanzar un ataque, los objetivos con Debilidad de Hielo reciben un Daño de Hielo adicional equivalente al {{1, percent}}% del ATQ de Yanqing.",
+        "fullDesc": "Tras lanzar un ataque, los enemigos con Debilidad de Hielo reciben un Daño de Hielo adicional equivalente al {{1, percent}}% del ATQ de Yanqing.",
         "shortDesc": "",
         "tag": ""
       }

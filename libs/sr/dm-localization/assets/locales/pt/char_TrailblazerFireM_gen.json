@@ -27,7 +27,7 @@
       "0": {
         "name": "Lança das Chamas da Guerra",
         "fullDesc": "Causa Dano de Fogo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ {F#da Desbravadora}{M#do Desbravador} mais <orangeStrong>{{2, percent}}%</orangeStrong> da DEF {F#da Desbravadora}{M#do Desbravador} a todos os inimigos. O próximo ATQ Básico será automaticamente aprimorado e não custará Vontade de Magma.",
-        "shortDesc": "Causa Dano de Fogo a todos os inimigos e aprimora o próximo ATQ Básico.",
+        "shortDesc": "Causa Dano de Fogo a todos os inimigos e aprimora o próximo ATQ Básico desta unidade.",
         "tag": "Área"
       }
     },
@@ -35,7 +35,7 @@
       "0": {
         "name": "Tesouro dos Arquitetos",
         "fullDesc": "Sempre que {F#a Desbravadora}{M#o Desbravador} sofre um golpe, ganha 1 acúmulo de Vontade de Magma até {{3}} vez(es).<br>Quando Vontade de Magma tiver pelo menos 4 acúmulos, o ATQ Básico {F#da Desbravadora}{M#do Desbravador} é aprimorado, causando Dano a um único inimigo e aos inimigos adjacentes a ele.<br>Quando {F#a Desbravadora}{M#o Desbravador} usar ATQ Básico, Perícia ou Perícia Suprema, um Escudo que absorve Dano igual a <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> da DEF {F#da Desbravadora}{M#do Desbravador} + <orangeStrong>{{4}}</orangeStrong> será concedido a todos os aliados. O Escudo dura {{2}} rodada(s).",
-        "shortDesc": "",
+        "shortDesc": "Ao receber um ataque, acumula \"Vontade de Magma\". Quando \"Vontade de Magma\" possuir ao menos 4 acúmulos, o ATQ Básico é <orangeStrong>aprimorado</orangeStrong>. Após usar o ATQ Básico, a Perícia ou a Perícia Suprema, fornece um Escudo para a Equipe.",
         "tag": "Aprimoramento"
       }
     },
@@ -43,7 +43,7 @@
       "0": {
         "name": "Chamado do Guardião",
         "fullDesc": "Após usar Técnica, no início da próxima batalha, ganha um Escudo que absorve Dano igual a {{1, percent}}% da DEF {F#da Desbravadora}{M#do Desbravador} mais {{2}} por {{3}} rodada(s).",
-        "shortDesc": "",
+        "shortDesc": "Depois de usar a Técnica, concede um Escudo para esta unidade no início da próxima batalha.",
         "tag": "Defesa"
       }
     },

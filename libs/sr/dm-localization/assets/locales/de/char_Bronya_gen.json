@@ -12,7 +12,7 @@
     "skill": {
       "0": {
         "name": "Erneuter Kampfeinsatz",
-        "fullDesc": "Entfernt 1 Debuff von einem anvisierten Verbündeten, lässt ihn sofort eine Aktion ausführen und erhöht seinen zugefügten SCH für {{3}} Rd. um <orangeStrong>{{1, percent}}%</orangeStrong>.<br>Wird diese Fertigkeit auf Bronya selbst angewendet, kann sie keine sofortige Aktion ausführen.",
+        "fullDesc": "Entfernt 1 Debuff von einem anvisierten Verbündeten, lässt ihn sofort eine Aktion ausführen und erhöht seinen verursachten SCH für {{3}} Rd. um <orangeStrong>{{1, percent}}%</orangeStrong>.<br>Wird diese Fertigkeit auf Bronya selbst angewendet, kann sie keine sofortige Aktion ausführen.",
         "shortDesc": "<orangeStrong>Entfernt</orangeStrong> 1 <orangeStrong>Debuff</orangeStrong> von einem Verbündeten, erhöht dessen <orangeStrong>SCH</orangeStrong> und er <orangeStrong>tritt sofort in Aktion</orangeStrong>.",
         "tag": "Unterstützung"
       }
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Überraschungsangriff",
-      "desc": "Nach einem Standardangriff eines Verbündeten auf einen Gegner mit Wind-Schwäche startet Bronya unmittelbar einen Folgeangriff und fügt dem Ziel Wind-SCH in Höhe von {{1, percent}}% des Standardangriff-SCH zu. Dieser Effekt kann nur 1-mal pro Runde ausgelöst werden."
+      "desc": "Nach einem Standardangriff eines Verbündeten auf einen Gegner mit Wind-Schwäche startet Bronya unmittelbar einen Folgeangriff und fügt dem Ziel Wind-SCH in Höhe von {{1, percent}}% des Standardangriff-SCH zu. Dieser Effekt kann 1-mal pro Runde ausgelöst werden."
     },
     "5": {
       "name": "Unaufhaltsam",

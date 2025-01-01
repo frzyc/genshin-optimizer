@@ -29,7 +29,7 @@
       "0": {
         "name": "Ich denke, also bin ich",
         "fullDesc": "Beim Einsatz der Fertigkeit besteht eine feste Chance von {{2, percent}}%, dass 1-mal ein Folgeangriff auf das Ziel ausgelöst wird, was ihm imaginären SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Dr. Wahrheits ANG zufügt. Für jeden Debuff des Ziels wird die feste Chance auf die Auslösung des Folgeangriffs um {{3, percent}}% erhöht. Wenn das Ziel vor der Auslösung besiegt wird, wird der Folgeangriff auf einen zufälligen Gegner ausgeübt.",
-        "shortDesc": "Beim Einsatz der Fertigkeit besteht eine Chance, dass 1-mal ein <orangeStrong>Folgeangriff</orangeStrong> auf das Ziel ausgelöst wird.",
+        "shortDesc": "Beim Einsatz der Fertigkeit besteht eine Chance, dass 1-mal ein <orangeStrong>Folgeangriff</orangeStrong> auf das Ziel ausgelöst wird, der imaginären SCH verursacht.",
         "tag": "Einzelangriff"
       }
     },
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Mikroskopisch doch tiefgründig",
-      "desc": "Wenn Dr. Wahrheit mit einem Folgeangriff seines Talents einen Gegner angreift, fügt er für jeden Debuff des Ziels zusätzlichen imaginären SCH in Höhe von {{1, percent}}% von Dr. Wahrheits ANG zu. Dieser Effekt kann bei jedem Einsatz eines Folgeangriffs seines Talents bis zu {{2}}-mal ausgelöst werden."
+      "desc": "Wenn Dr. Wahrheit mit einem Folgeangriff seines Talents einen Gegner angreift, fügt er für jeden Debuff des Ziels zusätzlichen imaginären SCH in Höhe von {{1, percent}}% von Dr. Wahrheits ANG zu. Dieser Effekt kann bei jedem Einsatz eines Folgeangriffs bis zu {{2}}-mal ausgelöst werden."
     },
     "3": {
       "name": "Kenne dich selbst",

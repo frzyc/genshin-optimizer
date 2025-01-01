@@ -37,7 +37,7 @@
       "0": {
         "name": "Skill Showcase",
         "fullDesc": "Immediately attacks the enemy. After entering battle, deals DMG for {{2}} time(s), dealing Fire DMG equal to {{1, percent}}% of Guinaifen's ATK to a random single enemy target each time, with a {{3, percent}}% base chance of inflicting Firekiss on them.",
-        "shortDesc": "Attacks the enemy. After entering battle, deals minor Fire DMG to a single target while applying <orangeStrong>Firekiss</orangeStrong>, with a total of 4 Bounces.",
+        "shortDesc": "Attacks the enemy. After entering battle, deals minor Fire DMG to one enemy target with a high chance of applying <orangeStrong>Firekiss</orangeStrong>, with a total of 4 Bounces.",
         "tag": ""
       }
     },
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "High Poles",
-        "fullDesc": "Basic ATK has a {{1, percent}}% base chance of inflicting an enemy with a Burn, equivalent to that of Skill.",
+        "fullDesc": "Basic ATK has a {{1, percent}}% base chance of inflicting an enemy with a Burn equivalent to that of Skill.",
         "shortDesc": "",
         "tag": ""
       }
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Bladed Hoop",
-        "fullDesc": "When the battle begins, Guinaifen's action is advanced forward by {{1, percent}}%.",
+        "fullDesc": "When the battle begins, Guinaifen's action advances by {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }

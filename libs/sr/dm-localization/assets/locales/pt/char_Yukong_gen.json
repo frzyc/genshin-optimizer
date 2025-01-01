@@ -29,7 +29,7 @@
       "0": {
         "name": "Sete Camadas, Uma Flecha",
         "fullDesc": "O ATQ Básico causa adicionalmente Dano Imaginário igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Yukong, e aumenta a Redução de Tenacidade deste ataque em {{2, percent}}%. Este efeito pode ser ativado novamente após {{3}} rodada(s).",
-        "shortDesc": "O Ataque Básico adicionalmente causa Dano leve, e o Dano de Redução de Tenacidade do seu ATQ Básico é aumentada. Esse efeito pode ser ativado novamente após 1 rodada passar.",
+        "shortDesc": "O ATQ Básico adicionalmente causa Dano leve, e o Dano de Redução de Tenacidade do seu ATQ Básico é aumentada. Esse efeito pode ser ativado novamente após 1 rodada passar.",
         "tag": "Aprimoramento"
       }
     },
@@ -37,7 +37,7 @@
       "0": {
         "name": "Caçador de Ventos",
         "fullDesc": "Após usar sua Técnica, Yukong entra no modo Corrida por {{1}} segundos. Enquanto estiver no modo Corrida, a VEL de Movimento aumenta em {{2, percent}}%, e Yukong recebe {{3}} acúmulo(s) do \"Arco Estrondoso\" ao entrar em batalha atacando inimigos.",
-        "shortDesc": "<orangeStrong>Aumenta a VEL de Movimento</orangeStrong>. Após atacar um inimigo e entrar na batalha, recebe 2 acúmulos de \"Arco Estrondoso\".",
+        "shortDesc": "<orangeStrong>Aumenta a VEL de Movimento</orangeStrong> da unidade. Após atacar um inimigo e entrar na batalha, recebe 2 acúmulos de \"Arco Estrondoso\".",
         "tag": "Aprimoramento"
       }
     },

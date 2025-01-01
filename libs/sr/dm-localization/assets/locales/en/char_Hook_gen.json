@@ -34,8 +34,8 @@
     "talent": {
       "0": {
         "name": "Ha! Oil to the Flames!",
-        "fullDesc": "When attacking a target afflicted with Burn, deals Additional Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Hook's ATK and regenerates {{2}} extra Energy.",
-        "shortDesc": "When attacking a Burned enemy, <orangeStrong>deals Additional Fire DMG for a moderate amount</orangeStrong>, and additionally regenerates energy.",
+        "fullDesc": "When attacking a target afflicted with Burn, deals Fire Additional DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Hook's ATK and regenerates {{2}} extra Energy.",
+        "shortDesc": "When attacking a Burned enemy, <orangeStrong>deals Fire Additional DMG for a moderate amount</orangeStrong>, and additionally regenerates energy.",
         "tag": "Enhance"
       }
     },
@@ -43,7 +43,7 @@
       "0": {
         "name": "Ack! Look at This Mess!",
         "fullDesc": "Immediately attacks the enemy. Upon entering battle, Hook deals Fire DMG equal to {{4, percent}}% of her ATK to a random enemy. In addition, there is a {{1, percent}}% base chance to inflict Burn on every enemy for {{3}} turn(s).<br>When afflicted with Burn, enemies will take Fire DoT equal to {{2, percent}}% of Hook's ATK at the beginning of each turn.",
-        "shortDesc": "Attacks the enemy. After entering battle, deals Fire DMG to a random single enemy, with a high chance to inflict Burn on all enemy targets.",
+        "shortDesc": "Attacks enemies. After entering battle, deals minor Fire DMG to one random enemy, with a high chance to inflict Burn on each enemy.",
         "tag": ""
       }
     },
@@ -66,7 +66,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Naivete",
-        "fullDesc": "The chance to resist Crowd Control Debuffs increases by {{1, percent}}%.",
+        "fullDesc": "Increases the chance to resist Crowd Control debuffs by {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -74,7 +74,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Playing With Fire",
-        "fullDesc": "When using her Ultimate, Hook has her action Advanced Forward by {{2, percent}}% and Hook additionally regenerates {{1}} Energy.",
+        "fullDesc": "After using her Ultimate, Hook has her action advanced by {{2, percent}}% and additionally regenerates {{1}} Energy.",
         "shortDesc": "",
         "tag": ""
       }
@@ -95,7 +95,7 @@
     },
     "4": {
       "name": "It's Okay to Not Know",
-      "desc": "When Talent is triggered, there is a {{1, percent}}% base chance to Burn enemies adjacent to the target enemy, equivalent to that of Skill."
+      "desc": "When Talent is triggered, there is a {{1, percent}}% base chance to Burn enemies adjacent to the designated enemy target, equivalent to that of Skill."
     },
     "5": {
       "name": "Let the Moles' Deeds Be Known",

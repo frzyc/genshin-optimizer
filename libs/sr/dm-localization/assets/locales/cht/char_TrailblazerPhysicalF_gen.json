@@ -41,7 +41,7 @@
       "0": {
         "name": "牽制盜壘",
         "fullDesc": "每次擊破敵方目標的弱點後，攻擊力提高<orangeStrong>{{1, percent}}%</orangeStrong>，最多疊加{{2}}層。",
-        "shortDesc": "",
+        "shortDesc": "每次擊破敵方目標的弱點後，攻擊力便提高。",
         "tag": "強化"
       }
     },
@@ -49,7 +49,7 @@
       "0": {
         "name": "不死三振",
         "fullDesc": "使用秘技後立即為我方全體回復等同於各自生命上限{{1, percent}}%的生命值。",
-        "shortDesc": "",
+        "shortDesc": "使用秘技後立即為我方全體<orangeStrong>回復生命值</orangeStrong>。",
         "tag": "回復"
       }
     },
@@ -101,7 +101,7 @@
     },
     "4": {
       "name": "凝眸毀滅的瞬間",
-      "desc": "擊中處於弱點擊破狀態的敵方目標時，暴擊率提高{{1, percent}}%。"
+      "desc": "命中處於弱點擊破狀態的敵方目標時，暴擊率提高{{1, percent}}%。"
     },
     "5": {
       "name": "劫餘重生的希望",

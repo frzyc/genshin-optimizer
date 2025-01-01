@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Espinhos",
-        "fullDesc": "A chance-base do inimigo alvo ser afligido por Choque através da Perícia Suprema, Técnica ou Ataque Extra acionado pelo Talento é aumentada em {{1, percent}}%.",
+        "fullDesc": "A chance-base de que os inimigos-alvo sejam afetados por Choque ao serem atingidos pela Perícia Suprema, Técnica e o Ataque Extra desencadeado pelo Talento aumenta em {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Leggiero",
-      "desc": "O Choque causado no inimigo pela Perícia Suprema, pela Técnica, ou pelo Ataque Extra acionado pelo Talento tem um aumento de {{1, percent}}% no multiplicador de Dano, e dura {{2}} rodada(s) a mais."
+      "desc": "O Choque causado no inimigo pela Perícia Suprema, pela Técnica, ou pelo Ataque Extra ativado pelo Talento tem um aumento de {{1, percent}}% no multiplicador de Dano, e dura {{2}} rodada(s) a mais."
     }
   }
 }

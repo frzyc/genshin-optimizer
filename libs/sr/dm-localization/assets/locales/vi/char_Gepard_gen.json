@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Tận Chức Tận Trách",
-      "desc": "Khi thi triển Chiến Kỹ sẽ tăng {{1, percent}}% xác suất cơ bản khiến kẻ địch bị tấn công rơi vào trạng thái Đóng Băng."
+      "desc": "Khi thi triển Chiến Kỹ sẽ tăng {{1, percent}}% xác suất cơ bản khiến mục tiêu phe địch bị tấn công rơi vào trạng thái Đóng Băng."
     },
     "2": {
       "name": "Giá Rét Tàn Dư",

@@ -29,7 +29,7 @@
       "0": {
         "name": "Trừng Trị Kẻ Ác",
         "fullDesc": "Khi mục tiêu phe ta thi triển Tấn Công Thường, Chiến Kỹ, Tuyệt Kỹ lên kẻ địch ở trạng thái \"Sức Nặng\", sát thương gây ra tăng <orangeStrong>{{1, percent}}%</orangeStrong>, duy trì {{2}} hiệp.",
-        "shortDesc": "Khi mục tiêu phe ta tấn công kẻ địch ở trạng thái \"Sức Nặng\", sẽ tăng sát thương gây ra.",
+        "shortDesc": "Khi mục tiêu phe ta thi triển Tấn Công Thường, Chiến Kỹ, Tuyệt Kỹ lên mục tiêu phe địch ở trạng thái \"Sức Nặng\", sát thương gây ra tăng.",
         "tag": "Hỗ Trợ"
       }
     },
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Nhất Tâm",
-      "desc": "Khi đồng đội đang có hiệu ứng Tuyệt Kỹ tiêu diệt kẻ địch, Hanya sẽ Ưu Tiên Hành Động {{1, percent}}%, hiệu ứng này mỗi hiệp chỉ có thể kích hoạt {{2}} lần."
+      "desc": "Khi mục tiêu phe ta đang có hiệu ứng Tuyệt Kỹ tiêu diệt mục tiêu phe địch, Hanya sẽ Ưu Tiên Hành Động {{1, percent}}%, hiệu ứng này mỗi hiệp chỉ có thể kích hoạt {{2}} lần."
     },
     "2": {
       "name": "Nhị Quan",

@@ -32,8 +32,8 @@
     "ult": {
       "0": {
         "name": "Fyrefly Type-IV: Complete Combustion",
-        "fullDesc": "Enters the Complete Combustion state, advances this unit's Action by 100%, and gains Enhanced Basic ATK and Enhanced Skill. While in Complete Combustion, increases SPD by <orangeStrong>{{3}}</orangeStrong>, and when using the Enhanced Basic ATK or Enhanced Skill, increases this unit's Weakness Break efficiency by {{2, percent}}% and the Break DMG dealt by SAM to the enemy targets by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, lasting until this current attack ends.<br>A countdown timer for the Complete Combustion state appears on the Action Order. When the countdown timer's turn starts, SAM exits the Complete Combustion state. The countdown timer has a fixed SPD of {{4}}.<br>SAM cannot use Ultimate while in Complete Combustion.",
-        "shortDesc": "Enters the Complete Combustion state. <orangeStrong>Advances this unit's Action by <unbreak>100%</orangeStrong></color>. Gains <orangeStrong>Enhanced Basic ATK</orangeStrong> and <orangeStrong>Enhanced Skill</orangeStrong>. Increases this unit's <orangeStrong>SPD, Weakness Break efficiency, and the Break DMG received by the enemy targets</orangeStrong>, lasting until the countdown ends.",
+        "fullDesc": "Enters the Complete Combustion state, advances this unit's Action by 100%, and gains Enhanced Basic ATK and Enhanced Skill. While in Complete Combustion, increases SPD by <orangeStrong>{{3}}</orangeStrong>, and when using the Enhanced Basic ATK or Enhanced Skill, increases this unit's Weakness Break Efficiency by {{2, percent}}% and the Break DMG dealt by SAM to the enemy targets by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, lasting until this current attack ends.<br>A countdown timer for the Complete Combustion state appears on the Action Order. When the countdown timer's turn starts, SAM exits the Complete Combustion state. The countdown timer has a fixed SPD of {{4}}.<br>SAM cannot use Ultimate while in Complete Combustion.",
+        "shortDesc": "Enters the Complete Combustion state. <orangeStrong>Advances this unit's Action by <unbreak>100%</orangeStrong></color>. Gains <orangeStrong>Enhanced Basic ATK</orangeStrong> and <orangeStrong>Enhanced Skill</orangeStrong>. Increases this unit's <orangeStrong>SPD, Weakness Break Efficiency, and the Break DMG received by the enemy targets</orangeStrong>, lasting until the countdown ends.",
         "tag": "Enhance"
       }
     },
@@ -41,7 +41,7 @@
       "0": {
         "name": "Chrysalid Pyronexus",
         "fullDesc": "The lower the HP, the less DMG received. When HP is {{3, percent}}% or lower, the DMG Reduction reaches its maximum effect, reducing up to <orangeStrong>{{1, percent}}%</orangeStrong>. During the Complete Combustion, the DMG Reduction remains at its maximum effect, and the Effect RES increases by <orangeStrong>{{4, percent}}%</orangeStrong>.<br>If Energy is lower than {{2, percent}}% when the battle starts, regenerates Energy to {{2, percent}}%. Once Energy is regenerated to its maximum, dispels all debuffs on this unit.",
-        "shortDesc": "The lower the HP, the less DMG received. During the Complete Combustion, the DMG Reduction remains at its maximum effect, and the Effect RES increases. If Energy is lower than <orangeStrong>{{2, percent}}%</orangeStrong> when the battle starts, regenerates Energy to <orangeStrong>{{2, percent}}%</orangeStrong>. Once Energy is regenerated to its maximum, dispels all debuffs on this unit.",
+        "shortDesc": "The lower the HP, the less DMG received. During the Complete Combustion state, the DMG Reduction effect remains at its maximum extent and Effect RES is increased. If Energy is lower than <orangeStrong>{{2, percent}}%</orangeStrong> when the battle starts, regenerates Energy to <orangeStrong>{{2, percent}}%</orangeStrong>. Once Energy is regenerated to its maximum, dispels all debuffs on this unit.",
         "tag": "Defense"
       }
     },
@@ -93,7 +93,7 @@
     },
     "2": {
       "name": "From Shattered Sky, I Free Fall",
-      "desc": "While in Complete Combustion, using the Enhanced Basic ATK or the Enhanced Skill to defeat an enemy target or to break their Weakness allows SAM to immediately gain 1 extra turn. This effect can trigger again after {{2}} turn(s)."
+      "desc": "While in Complete Combustion, using the Enhanced Basic ATK or the Enhanced Skill to defeat an enemy target or to Break their Weakness allows SAM to immediately gain 1 extra turn. This effect can trigger again after {{2}} turn(s)."
     },
     "3": {
       "name": "Amidst Silenced Stars, I Deep Sleep",
@@ -109,7 +109,7 @@
     },
     "6": {
       "name": "In Finalized Morrow, I Full Bloom",
-      "desc": "While in Complete Combustion, increases SAM's Fire RES PEN by {{1, percent}}%. When using the Enhanced Basic ATK or Enhanced Skill, increases the Weakness Break efficiency by {{2, percent}}%."
+      "desc": "While in Complete Combustion, increases SAM's Fire RES PEN by {{1, percent}}%. When using the Enhanced Basic ATK or Enhanced Skill, increases Weakness Break Efficiency by {{2, percent}}%."
     }
   }
 }

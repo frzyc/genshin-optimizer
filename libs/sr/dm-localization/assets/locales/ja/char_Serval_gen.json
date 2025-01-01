@@ -13,7 +13,7 @@
       "0": {
         "name": "スパーク",
         "fullDesc": "指定した敵単体にセーバルの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の雷属性ダメージを与え、隣接する敵にセーバルの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の雷属性ダメージを与える。さらに{{3, percent}}%の基礎確率で攻撃を受けた敵を感電状態にする、{{4}}ターン継続。<br>感電状態の敵はターンが回ってくるたびに、セーバルの攻撃力<orangeStrong>{{5, percent}}%</orangeStrong>分の雷属性持続ダメージを受ける。",
-        "shortDesc": "敵単体および隣接する敵に少量の雷属性ダメージを与え、高確率で<orangeStrong>感電状態を付与</orangeStrong>する。",
+        "shortDesc": "敵単体に雷属性ダメージを与え、隣接する敵に少量の雷属性ダメージを与える。高確率でメインターゲットに<orangeStrong>感電状態を付与</orangeStrong>する。",
         "tag": "拡散攻撃"
       }
     },

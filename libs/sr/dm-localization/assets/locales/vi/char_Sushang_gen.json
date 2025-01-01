@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Phá Địch",
-        "fullDesc": "Sau khi thi triển Tấn Công Thường hoặc Chiến Kỹ, nếu trong trận có kẻ địch ở trạng thái Phá Vỡ Điểm Yếu thì hành động của Sushang sẽ ưu tiên {{1, percent}}%.",
+        "fullDesc": "Sau khi thi triển Tấn Công Thường hoặc Chiến Kỹ, nếu trong trận có mục tiêu phe địch ở trạng thái Phá Vỡ Điểm Yếu thì Sushang sẽ Ưu Tiên Hành Động {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Tay Nghề Thành Thạo",
-      "desc": "Sau khi thi triển Chiến Kỹ lên mục tiêu địch đang rơi vào trạng thái Phá Vỡ Điểm Yếu, sẽ hồi 1 Điểm Chiến Kỹ."
+      "desc": "Sau khi thi triển Chiến Kỹ lên mục tiêu phe địch đang rơi vào trạng thái Phá Vỡ Điểm Yếu, sẽ hồi 1 Điểm Chiến Kỹ."
     },
     "2": {
       "name": "Thân Thể Tôi Luyện",

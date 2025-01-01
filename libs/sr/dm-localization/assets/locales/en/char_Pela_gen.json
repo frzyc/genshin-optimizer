@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Bash",
-        "fullDesc": "Deals {{1, percent}}% more DMG to debuffed enemies.",
+        "fullDesc": "Deals {{1, percent}}% more DMG to debuffed enemy targets.",
         "shortDesc": "",
         "tag": ""
       }
@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Wipe Out",
-        "fullDesc": "Using Skill to remove buff(s) increases the DMG of the next attack by {{1, percent}}%.",
+        "fullDesc": "When using Skill to dispel buff(s), increases the DMG dealt by the next attack by {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Adamant Charge",
-      "desc": "Using Skill to remove buff(s) increases SPD by {{1, percent}}% for {{2}} turn(s)."
+      "desc": "Using Skill to dispel buff(s) increases SPD by {{1, percent}}% for {{2}} turn(s)."
     },
     "3": {
       "name": "Suppressive Force",
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Full Analysis",
-      "desc": "When Skill is used, there is a {{1, percent}}% base chance to reduce the target enemy's Ice RES by {{2, percent}}% for {{3}} turn(s)."
+      "desc": "When using Skill, there is a {{1, percent}}% base chance to reduce the target enemy's Ice RES by {{2, percent}}% for {{3}} turn(s)."
     },
     "5": {
       "name": "Absolute Jeopardy",
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Feeble Pursuit",
-      "desc": "When Pela attacks a debuffed enemy, she deals Additional Ice DMG equal to {{1, percent}}% of Pela's ATK to the enemy."
+      "desc": "After Pela attacks, if the enemy target is debuffed, deals Ice Additional DMG equal to {{1, percent}}% of Pela's ATK to the enemy."
     }
   }
 }

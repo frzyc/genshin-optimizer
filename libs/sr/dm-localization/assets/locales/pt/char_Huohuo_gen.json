@@ -20,15 +20,15 @@
     "ult": {
       "0": {
         "name": "Rabin: Dominação Espiritual",
-        "fullDesc": "Regenera Energia de todos os aliados (excluindo este personagem) em uma quantidade igual a <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de suas respectivas Energias máximas. Ao mesmo tempo, aumenta o ATQ deles em <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> por {{3}} rodada(s).",
-        "shortDesc": "<orangeStrong>Regenera a Energia</orangeStrong> de todos os aliados (excluindo este personagem) e <orangeStrong>aumenta o ATQ</orangeStrong> deles.",
+        "fullDesc": "Regenera Energia de todos os aliados (excluindo esta unidade) em uma quantidade igual a <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de suas respectivas Energias máximas. Ao mesmo tempo, aumenta o ATQ deles em <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> por {{3}} rodada(s).",
+        "shortDesc": "<orangeStrong>Regenera a Energia</orangeStrong> de todos os aliados (excluindo esta unidade) e <orangeStrong>aumenta o ATQ</orangeStrong> deles.",
         "tag": "Suporte"
       }
     },
     "talent": {
       "0": {
         "name": "Possessão: Metafluxo Etéreo",
-        "fullDesc": "Após usar sua Perícia, Huohuo ganha Provisão Divina, durando por {{1}} rodada(s). Esta duração diminui por 1 rodada no início de cada rodada de Huohuo. Se Huohuo tiver Provisão Divina quando a rodada de um aliado começa ou quando um aliado utiliza sua Perícia Suprema, restaura PV para aquele aliado em uma quantidade igual a <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Huohuo + <orangeStrong>{{5}}</orangeStrong>. Ao mesmo tempo, cada aliado com {{6, percent}}% de PV ou menos é curado uma vez.<br>Quando Provisão Divina é ativada para curar um aliado, remove {{2}} penalidade(s) daquele aliado. Este efeito pode ser ativado até um máximo de {{7}} vez(es). Usar a habilidade novamente reinicia o efeito da contagem de ativação.",
+        "fullDesc": "Após usar sua Perícia, Huohuo ganha Provisão Divina, durando por {{1}} rodada(s). Esta duração diminui por 1 rodada no início de cada rodada de Huohuo. Se Huohuo tiver Provisão Divina quando a rodada de um aliado começa ou quando um aliado utiliza sua Perícia Suprema, restaura PV para aquele aliado em uma quantidade igual a <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> dos PV máximos de Huohuo + <orangeStrong>{{5}}</orangeStrong>. Ao mesmo tempo, cada aliado com {{6, percent}}% da porcentagem dos PV ou menos é curado uma vez.<br>Quando Provisão Divina é ativada para curar um aliado, remove {{2}} penalidade(s) daquele aliado. Este efeito pode ser ativado até um máximo de {{7}} vez(es). Usar a habilidade novamente reinicia o efeito da contagem de ativação.",
         "shortDesc": "Huohuo ganha Provisão Divina depois de usar sua Perícia. Se Huohuo possuir Vida Sacrificada no início da rodada de um aliado ou quando um aliado usa sua Perícia Suprema, <orangeStrong>restaura os PV do aliado</orangeStrong>. Ao mesmo tempo, <orangeStrong>todos os aliados</orangeStrong> com PV baixos <orangeStrong>recebem uma cura</orangeStrong>. Quando Provisão Divina é ativada para curar um aliado, <orangeStrong>remove 1 penalidade daquele aliado</orangeStrong>.",
         "tag": "Restauração"
       }
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "A Amaldiçoada",
-        "fullDesc": "A chance de resistir a penalidades de Controle Negativo aumenta em {{1, percent}}%.",
+        "fullDesc": "Aumenta a chance de resistir a penalidades de Controle Negativo em {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Selada no Rabin, Espectro Subjugado",
-      "desc": "Se Huohuo possuir Provisão Divina quando um aliado for atingido por um golpe fatal, o aliado não será derrubado, e seus PV serão imediatamente restaurados em uma quantidade igual a {{1, percent}}% dos seus PV máximos. Isso reduz a duração da Provisão Divina em 1 rodada. Este efeito só pode ser ativado {{2}} vez(es) por batalha."
+      "desc": "Se Huohuo possuir \"Provisão Divina\" quando um aliado-alvo for atingido por um golpe fatal, o aliado não será derrubado, e seus PV serão imediatamente restaurados em uma quantidade igual a {{1, percent}}% dos seus PV máximos. Isso reduz a duração da \"Provisão Divina\" em 1 rodada. Este efeito só pode ser ativado {{2}} vez(es) por batalha."
     },
     "3": {
       "name": "Amaldiçoada pelo Destino, Mariposas às Chamas",

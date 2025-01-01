@@ -1,5 +1,5 @@
 {
-  "setName": "{RUBY_B#けんせ}顕世{RUBY_E#}の{RUBY_B#いずも}出雲{RUBY_E#}と{RUBY_B#たかま}高天{RUBY_E#}の{RUBY_B#しんこく}神国{RUBY_E#}",
+  "setName": "顕世の出雲と高天の神国",
   "setEffects": {
     "2": "装備キャラの攻撃力+{{1, percent}}%。戦闘に入る時、装備キャラと同じ運命のキャラが他に存在する場合、装備キャラの会心率+{{2, percent}}%。"
   }

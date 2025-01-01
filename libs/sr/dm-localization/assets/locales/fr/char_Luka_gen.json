@@ -43,7 +43,7 @@
       "0": {
         "name": "Anticipation",
         "fullDesc": "Engage immédiatement le combat contre les ennemis. Luka inflige des DGT physiques équivalents à {{1, percent}}% de son ATQ à un ennemi aléatoire en entrant en combat, avec {{2, percent}}% de chances de base de lui infliger l'effet Saignement de sa compétence, à la suite de quoi Luka obtient un cumul supplémentaire de Soif de combat.",
-        "shortDesc": "Attaque les ennemis. Inflige des DGT physiques mineurs à un ennemi unique aléatoire après être entré en combat, avec de fortes chances d'infliger <orangeStrong>Saignement</orangeStrong> à la cible. Puis gagne 1 cumul de Soif de combat.",
+        "shortDesc": "Attaque les ennemis. Inflige des DGT physiques mineurs à un ennemi unique aléatoire après être entré en combat, avec de fortes chances d'appliquer <orangeStrong>Saignement</orangeStrong> à la cible. Puis gagne 1 cumul de Soif de combat.",
         "tag": ""
       }
     },

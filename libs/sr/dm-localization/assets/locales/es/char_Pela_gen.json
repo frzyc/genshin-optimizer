@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Barrido",
-        "fullDesc": "Cuando la habilidad básica elimina un efecto positivo, el daño del siguiente ataque aumenta en un {{1, percent}}%.",
+        "fullDesc": "Cuando la habilidad básica disipa un efecto positivo, el daño del siguiente ataque aumenta en un {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Avance rápido",
-      "desc": "Cuando la habilidad básica elimina un efecto positivo de un enemigo, la VEL aumenta en un {{1, percent}}% durante {{2}} turnos."
+      "desc": "Cuando la habilidad básica disipa un efecto positivo de un enemigo, la VEL aumenta en un {{1, percent}}% durante {{2}} turnos."
     },
     "3": {
       "name": "Fuerza supresora",

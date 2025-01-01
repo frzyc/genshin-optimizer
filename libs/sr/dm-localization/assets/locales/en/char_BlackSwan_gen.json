@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Viscera's Disquiet",
-        "fullDesc": "After using the Skill to attack a single target enemy that has Wind Shear, Bleed, Burn, or Shock, each of these debuffs respectively has a {{1, percent}}% base chance of inflicting 1 extra stack of Arcana.",
+        "fullDesc": "After using Skill to attack one designated enemy that has Wind Shear, Bleed, Burn, or Shock, each of these debuffs respectively has a {{1, percent}}% base chance of inflicting 1 extra stack of Arcana.",
         "shortDesc": "",
         "tag": ""
       }
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Goblet's Dredges",
-        "fullDesc": "When an enemy target enters battle, there is a {{1, percent}}% base chance for it to be inflicted with 1 stack of Arcana.<br>Every time an enemy target receives DoT during a single attack by an ally, there is a {{1, percent}}% base chance for the target to be inflicted with 1 stack of Arcana. The maximum number of stacks that can be inflicted during 1 single attack is {{2}}.",
+        "fullDesc": "When an enemy target enters battle, there is a {{1, percent}}% base chance for it to be inflicted with 1 stack of Arcana.<br>Every time an enemy target receives 1 instance of DoT during a single attack by an ally, there is a {{1, percent}}% base chance for the target to be inflicted with 1 stack of Arcana. The maximum number of stacks that can be inflicted during 1 single attack is {{2}}.",
         "shortDesc": "",
         "tag": ""
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Weep Not For Me, My Lamb",
-      "desc": "When an enemy target afflicted with Arcana is defeated, there is a {{1, percent}}% base chance of inflicting {{2}} stack(s) of Arcana on adjacent targets."
+      "desc": "When an enemy target afflicted with \"Arcana\" is defeated, there is a {{1, percent}}% base chance of inflicting {{2}} stack(s) of \"Arcana\" on adjacent targets."
     },
     "3": {
       "name": "As Above, So Below",
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Pantheon Merciful, Masses Pitiful",
-      "desc": "When an enemy target gets attacked by Black Swan's allies, Black Swan has a {{2, percent}}% base chance of inflicting 1 stack of Arcana on the target.<br>Every time Black Swan inflicts Arcana on an enemy target, there is a {{1, percent}}% fixed chance to additionally increase the number of Arcana stacked this time by {{3}}."
+      "desc": "When an enemy target is attacked by Black Swan's teammates, Black Swan has a {{2, percent}}% base chance of inflicting 1 stack of \"Arcana\" on the target.<br>Every time Black Swan inflicts \"Arcana\" on an enemy target, there is a {{1, percent}}% fixed chance to additionally increase the number of \"Arcana\" stacked this time by {{3}}."
     }
   }
 }

@@ -13,7 +13,7 @@
       "0": {
         "name": "Lightning Flash",
         "fullDesc": "Mengakibatkan Lightning DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Serval pada 1 target musuh, dan di saat bersamaan mengakibatkan Lightning DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Serval pada musuh di sekitar target. Selain itu, target musuh yang terkena serangan memiliki {{3, percent}}% peluang dasar untuk memasuki status Shock selama {{4}} giliran.<br>Selama dalam status Shock, target musuh akan menerima Lightning DoT sebesar <orangeStrong>{{5, percent}}%</orangeStrong> ATK Serval setiap gilirannya dimulai.",
-        "shortDesc": "Mengakibatkan Lightning DMG dalam jumlah kecil terhadap 1 musuh dan target di sekitarnya, dan berpeluang besar <orangeStrong>menambahkan status Shock</orangeStrong> pada target.",
+        "shortDesc": "Mengakibatkan Lightning DMG pada 1 musuh dan Lightning DMG dalam jumlah kecil pada target di sekitarnya. Berpeluang besar untuk <orangeStrong>menambahkan status Shock</orangeStrong> pada target.",
         "tag": "Blast"
       }
     },
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Encore!",
-      "desc": "Setiap kali DMG tambahan dari Talent Serval terpicu, akan memulihkan {{1}} Energy Serval."
+      "desc": "Setiap kali DMG Tambahan dari Talent Serval terpicu, akan memulihkan {{1}} Energy Serval."
     },
     "3": {
       "name": "Listen, the Heartbeat of the Gears",

@@ -29,7 +29,7 @@
       "0": {
         "name": "Carrera de la victoria",
         "fullDesc": "Cuando se rompe la Debilidad de un enemigo, Himeko consigue una carga (hasta un máximo de {{2}}).<br>Después de que un aliado ataque, si Himeko ha acumulado el máximo de cargas, lanza inmediatamente un ataque adicional que inflige a todos los enemigos un Daño de Fuego equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> del ATQ de Himeko y consume todas sus cargas.<br>Al comenzar la batalla obtiene 1 carga.",
-        "shortDesc": "Cuando se rompe la Debilidad del enemigo, consigue una carga.<br>Después de que un aliado ataque, si ha acumulado el máximo de cargas, <orangeStrong>lanza inmediatamente un ataque adicional</orangeStrong> que inflige Daño de Fuego a <orangeStrong>todos los enemigos</orangeStrong> y consume todas sus cargas.<br>Al comenzar la batalla obtiene 1 carga.",
+        "shortDesc": "Al comenzar la batalla o cuando se rompe la Debilidad del enemigo, consigue carga.<br>Después de que un objetivo aliado ataque, si ha acumulado el máximo de cargas, <orangeStrong>lanza un ataque adicional</orangeStrong> que inflige Daño de Fuego a <orangeStrong>todos los enemigos</orangeStrong> y consume todas sus cargas.",
         "tag": "ATQ AdE"
       }
     },

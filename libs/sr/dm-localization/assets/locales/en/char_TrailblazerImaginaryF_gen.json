@@ -21,7 +21,7 @@
       "0": {
         "name": "All-Out Footlight Parade",
         "fullDesc": "Grants all allies the Backup Dancer effect, lasting for {{1}} turn(s). This duration decreases by 1 at the start of Trailblazer's every turn. Allies with the Backup Dancer effect have their Break Effect increased by <orangeStrong>{{3, percent}}%</orangeStrong>. And when they attack enemy targets that are in the Weakness Broken state, the Toughness Reduction of the attack will be converted into 1 instance of Super Break DMG.",
-        "shortDesc": "Grants all allies the Backup Dancer effect. Allies with Backup Dancer have their <orangeStrong>Break Effect increased</orangeStrong> and additionally deals <orangeStrong>Super Break DMG</orangeStrong> 1 time when they attack enemy targets that are Weakness Broken.",
+        "shortDesc": "Grants all allies the Backup Dancer effect. Allies with Backup Dancer have their <orangeStrong>Break Effect increased</orangeStrong> and additionally deal <orangeStrong>Super Break DMG</orangeStrong> 1 time when they attack enemy targets that are Weakness Broken.",
         "tag": "Support"
       }
     },
@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Hat of the Theater",
-        "fullDesc": "Additionally delays the enemy target's action by {{1, percent}}% when allies Break enemy Weaknesses.",
+        "fullDesc": "After ally targets break weakness, additionally delays the action of the enemy target by {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }

@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Tấn Công Bất Ngờ",
-      "desc": "Sau khi nhân vật khác trong phe ta tấn công thường vào kẻ địch có Điểm Yếu Phong, Bronya sẽ thực hiện ngay 1 lần Đòn Đánh Theo Sau, gây cho mục tiêu này Sát Thương Phong bằng {{1, percent}}% sát thương Tấn Công Thường. Hiệu ứng này mỗi hiệp chỉ kích hoạt 1 lần."
+      "desc": "Sau khi nhân vật khác trong phe ta tấn công thường vào mục tiêu phe địch có Điểm Yếu Phong, Bronya sẽ thực hiện ngay 1 lần Đòn Đánh Theo Sau, gây cho mục tiêu này Sát Thương Phong bằng {{1, percent}}% sát thương Tấn Công Thường. Hiệu ứng này mỗi hiệp chỉ kích hoạt 1 lần."
     },
     "5": {
       "name": "Đánh Đâu Thắng Đó",

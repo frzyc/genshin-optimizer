@@ -61,7 +61,7 @@
       "0": {
         "name": "Blitz des Regenbogens",
         "fullDesc": "Nach der Anwendung seiner Technik geht Dan Heng – Imbibitor Lunae für {{2}} Sek. in den Status „Springender Drache“ über. Im Status Springender Drache bewegt sich Dan Heng – Imbibitor Lunae beim Einsatz seines Angriffs eine bestimmte Strecke schnell vorwärts, greift alle Gegner an, die er berührt und blockt alle eingehenden Angriffe. Wenn Dan Heng – Imbibitor Lunae im Status „Springender Drache“ durch Angriff auf den Gegner in einen Kampf eintritt, fügt er allen Gegnern imaginären SCH in Höhe von {{3, percent}}% seines ANG zu und erhält {{1}} „Unantastbare Schuppe“.",
-        "shortDesc": "Geht in den Status „Springender Drache“ über. Beim Einsatz des Angriffs bewegt sich Dan Heng – Imbibitor Lunae beim Einsatz seines Angriffs eine bestimmte Strecke schnell vorwärts und greift Gegner an, die er berührt. Wenn er durch Angriff auf den Gegner einen Kampf einleitet, fügt er allen Gegnern imaginären SCH zu und erhält 1 „Unantastbare Schuppe“.",
+        "shortDesc": "Geht in den Status „Springender Drache“ über. Beim Einsatz des Angriffs bewegt sich Dan Heng – Imbibitor Lunae eine bestimmte Strecke schnell vorwärts und greift Gegner an, die er berührt. Wenn er durch Angriff auf den Gegner einen Kampf einleitet, fügt er allen Gegnern imaginären SCH zu und erhält 1 „Unantastbare Schuppe“.",
         "tag": "Verstärkung"
       }
     },

@@ -29,7 +29,7 @@
       "0": {
         "name": "Fine, I'll Do It Myself",
         "fullDesc": "Saat serangan rekan tim mengakibatkan persentase HP target musuh saat ini kurang dari atau sama dengan {{1, percent}}%, Herta akan melancarkan Serangan Lanjutan dan mengakibatkan Ice DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> ATK Herta pada seluruh musuh.",
-        "shortDesc": "",
+        "shortDesc": "Saat rekan tim mana pun melancarkan serangan dan membuat persentase HP target musuh saat ini menjadi kurang dari atau sama dengan <orangeStrong>{{1, percent}}%</orangeStrong>, Herta akan segera melancarkan <orangeStrong>Serangan Lanjutan</orangeStrong>, mengakibatkan Ice DMG dalam jumlah kecil pada seluruh musuh.",
         "tag": "AoE"
       }
     },
@@ -37,7 +37,7 @@
       "0": {
         "name": "It Can Still Be Optimized",
         "fullDesc": "Setelah menggunakan Technique, meningkatkan {{1, percent}}% ATK Herta selama {{2}} giliran pada saat pertempuran selanjutnya dimulai.",
-        "shortDesc": "",
+        "shortDesc": "Setelah menggunakan Technique, akan meningkatkan ATK diri sendiri saat pertempuran berikutnya dimulai.",
         "tag": "Enhance"
       }
     },
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Kick You When You're Down",
-      "desc": "Saat melancarkan Basic Attack, jika persentase HP musuh yang ditarget kurang dari atau sama dengan {{1, percent}}%, maka akan mengakibatkan Ice DMG tambahan sebesar {{2, percent}}% ATK Herta."
+      "desc": "Saat melancarkan Basic Attack, jika persentase HP musuh yang ditarget kurang dari atau sama dengan {{1, percent}}%, maka akan mengakibatkan Ice DMG Tambahan sebesar {{2, percent}}% ATK Herta."
     },
     "2": {
       "name": "Keep the Ball Rolling",

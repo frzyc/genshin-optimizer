@@ -29,7 +29,7 @@
       "0": {
         "name": "Résurgence",
         "fullDesc": "Lorsqu'elle élimine un ennemi avec son ATQ normale, sa compétence ou son ultime, Seele entre dans l'état amélioré et bénéficie d'un tour supplémentaire. Lorsqu'elle est dans l'état amélioré, les DGT de ses attaques augmentent de <orangeStrong>{{1, percent}}%</orangeStrong> pendant {{2}} tour.<br>Les ennemis vaincus pendant le tour supplémentaire accordé par « Résurgence » ne déclenchent pas « Résurgence » à nouveau.",
-        "shortDesc": "Utilise l'ATQ normale, la compétence et l'ultime pour <orangeStrong>éliminer les ennemis</orangeStrong>, gagner des <orangeStrong>tours supplémentaires et entrer dans l'état amélioré</orangeStrong>. Les DGT infligés augmentent dans l'état amélioré.",
+        "shortDesc": "Gagne un <orangeStrong>tour supplémentaire et entre dans l'état amélioré</orangeStrong> en <orangeStrong>vainquant des ennemis</orangeStrong> via l'attaque normale, la compétence ou l'ultime. Dans l'état amélioré, augmente les DGT infligés par cette unité.",
         "tag": "Renforcement"
       }
     },
@@ -37,7 +37,7 @@
       "0": {
         "name": "Illusion fantôme",
         "fullDesc": "Après utilisation de sa technique, Seele devient furtive pendant {{1}} secondes. Lorsque Furtivité est active, Seele ne peut pas être détectée par les ennemis. Si elle entre en combat en attaquant un ennemi, elle bénéficie immédiatement de l'état amélioré.",
-        "shortDesc": "Entre en mode <orangeStrong>Furtivité</orangeStrong>. Entre dans l'état <orangeStrong>amélioré</orangeStrong> après avoir attaqué un ennemi et engagé le combat.",
+        "shortDesc": "Entre en mode <orangeStrong>Furtivité</orangeStrong>. Entre dans l'<orangeStrong>état amélioré</orangeStrong> après avoir attaqué un ennemi et engagé le combat.",
         "tag": "Renforcement"
       }
     },
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Ébranlements éclatants",
-      "desc": "Après utilisation de l'ultime de Seele, inflige l'effet Volée de papillons à la cible ennemie pendant {{2}} tour. Les ennemis affectés par Volée de papillons subissent des DGT quantiques additionnels équivalents à {{1, percent}}% des DGT de l'ultime de Seele chaque fois qu'ils sont attaqués. Si la cible ennemie est vaincue par les DGT de Volée de papillons provoqués par les attaques d'autres alliés, le talent de Seele ne se déclenche pas.<br>Lorsque Seele est à terre, l'effet Volée de papillons infligé aux ennemis est supprimé."
+      "desc": "Après utilisation de l'ultime de Seele, inflige l'effet Volée de papillons à l'ennemi attaqué pendant {{2}} tour. Les ennemis affectés par Volée de papillons subissent 1 instance supplémentaire de DGT additionnels quantiques équivalents à {{1, percent}}% des DGT de l'ultime de Seele chaque fois qu'ils sont attaqués. Si la cible est vaincue par les DGT additionnels de Volée de papillons provoqués par les attaques d'autres alliés, le talent de Seele ne se déclenche pas.<br>Lorsque Seele est à terre, l'effet Volée de papillons infligé aux ennemis est supprimé."
     }
   }
 }

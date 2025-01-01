@@ -28,7 +28,7 @@
     "talent": {
       "0": {
         "name": "Time Distortion",
-        "fullDesc": "When hitting an enemy that is already Slowed, Welt deals Additional Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of his ATK to the enemy.",
+        "fullDesc": "When hitting an enemy that is already Slowed, Welt deals Imaginary Additional DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of his ATK to the enemy.",
         "shortDesc": "When hitting a Slowed enemy, <orangeStrong>additionally deals minor Imaginary Additional DMG</orangeStrong>.",
         "tag": "Enhance"
       }
@@ -36,8 +36,8 @@
     "technique": {
       "0": {
         "name": "Gravitational Imprisonment",
-        "fullDesc": "After using Welt's Technique, create a special dimension that lasts for {{4}} second(s). Enemies in this special dimension have their Movement SPD reduced by {{5, percent}}%. After entering battle with enemies in the special dimension, there is a {{1, percent}}% base chance to Imprison the enemies for 1 turn.<br>Imprisoned enemies have their actions delayed by {{2, percent}}% and SPD reduced by {{3, percent}}%. Only 1 dimension created by allies can exist at the same time.",
-        "shortDesc": "Creates a special dimension. Enemies in this dimension have their Movement SPD reduced. After entering combat with enemies in the dimension, there is a <orangeStrong>high chance for the enemies to become Imprisoned</orangeStrong>.",
+        "fullDesc": "After using Welt's Technique, create a Special Dimension that lasts for {{4}} second(s). Enemies in this Special Dimension have their movement speed reduced by {{5, percent}}%. After entering battle with enemies in the Special Dimension, there is a {{1, percent}}% base chance to Imprison the enemies for 1 turn.<br>Imprisoned enemies have their actions delayed by {{2, percent}}% and SPD reduced by {{3, percent}}%. Only 1 dimension created by allies can exist at the same time.",
+        "shortDesc": "Creates a Special Dimension. Enemies in this dimension have their movement speed reduced. After entering combat with enemies in the dimension, there is a <orangeStrong>high chance for the enemies to become Imprisoned</orangeStrong>.",
         "tag": "Impair"
       }
     },
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Retribution",
-        "fullDesc": "When using Ultimate, there is a {{1, percent}}% base chance to increase the DMG received by the targets by {{2, percent}}% for {{3}} turn(s).",
+        "fullDesc": "When using Ultimate, there is a {{1, percent}}% base chance to increase the DMG taken by the targets by {{2, percent}}% for {{3}} turn(s).",
         "shortDesc": "",
         "tag": ""
       }
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Legacy of Honor",
-      "desc": "After using Ultimate, Welt gets enhanced. Then, the next {{3}} time(s) he uses Basic ATK or Skill, deals 1 extra instance of Additional DMG to the target enemy. The Additional DMG dealt when using Basic ATK is equal to {{1, percent}}% of Basic ATK DMG multiplier. The Additional DMG dealt when using Skill is equal to {{2, percent}}% of Skill DMG multiplier."
+      "desc": "After using Ultimate, Welt gets enhanced. Then, the next {{3}} time(s) he uses Basic ATK or Skill, deals 1 extra instance of Additional DMG to the enemy target. The Additional DMG dealt when using Basic ATK is equal to {{1, percent}}% of Basic ATK DMG multiplier. The Additional DMG dealt when using Skill is equal to {{2, percent}}% of Skill DMG multiplier."
     },
     "2": {
       "name": "Conflux of Stars",
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Appellation of Justice",
-      "desc": "Base chance for Skill to inflict SPD Reduction increases by {{1, percent}}%."
+      "desc": "When using Skill, increases the base chance of reducing the attacked enemy target's SPD by {{1, percent}}%."
     },
     "5": {
       "name": "Power of Kindness",

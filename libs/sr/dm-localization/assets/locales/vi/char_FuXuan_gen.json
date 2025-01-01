@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Lục Nhâm, Can Chi",
-        "fullDesc": "Khi mở \"Ma Trận Tiên Tri\", nếu kẻ địch thi triển Hiệu Ứng Xấu dạng khống chế lên phe ta, thì toàn phe ta sẽ kháng tất cả Hiệu Ứng Xấu dạng khống chế do kẻ địch thi triển trong lần Hành Động này. Hiệu ứng này có thể kích hoạt 1 lần. Sau khi mở \"Ma Trận Tiên Tri\" lần nữa sẽ tạo mới số lần có thể kích hoạt hiệu ứng.",
+        "fullDesc": "Khi mở \"Ma Trận Tiên Tri\", nếu mục tiêu phe địch thi triển Hiệu Ứng Xấu dạng khống chế lên phe ta, thì toàn phe ta sẽ kháng tất cả Hiệu Ứng Xấu dạng khống chế do mục tiêu phe địch thi triển trong lần hành động này. Hiệu ứng này có thể kích hoạt 1 lần. Sau khi mở \"Ma Trận Tiên Tri\" lần nữa sẽ tạo mới số lần có thể kích hoạt hiệu ứng.",
         "shortDesc": "",
         "tag": ""
       }

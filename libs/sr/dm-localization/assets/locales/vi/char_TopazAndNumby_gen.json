@@ -29,7 +29,7 @@
       "0": {
         "name": "Chợ Heo Đất?!",
         "fullDesc": "Triệu hồi Numby khi bắt đầu chiến đấu. Numby ban đầu có {{1}} điểm Tốc Độ, khi hành động sẽ phát động Đòn Đánh Theo Sau, gây Sát Thương Hỏa lên 1 kẻ địch trong trạng thái \"Bằng Chứng Nợ Nần\" tương đương <orangeStrong>{{2, percent}}%</orangeStrong> tấn công của Topaz.<br>Kẻ địch ở trạng thái \"Bằng Chứng Nợ Nần\" khi chịu Đòn Đánh Theo Sau của phe ta, Numby sẽ ưu tiên hành động {{3, percent}}%. Khi Numby trong hiệp của mình, sẽ không thể kích hoạt hiệu ứng Ưu Tiên Hành Động.<br>Khi Topaz rơi vào trạng thái không thể chiến đấu, Numby sẽ biến mất.",
-        "shortDesc": "Khi bắt đầu chiến đấu, sẽ <orangeStrong>triệu hồi Numby</orangeStrong>, khi Numby hành động <orangeStrong>sẽ phát động Đòn Đánh Theo Sau lên 1 kẻ địch đang rơi vào \"Bằng Chứng Nợ Nần\"</orangeStrong>. Khi kẻ địch đang rơi vào \"Bằng Chứng Nợ Nần\" chịu phải Đòn Đánh Theo Sau, Numby sẽ <orangeStrong>Ưu Tiên Hành Động</orangeStrong>.",
+        "shortDesc": "Bắt đầu chiến đấu, sẽ <orangeStrong>triệu hồi Numby</orangeStrong>, khi Numby hành động sẽ <orangeStrong>phát động  Đòn Đánh Theo Sau lên mục tiêu đang rơi vào Bằng Chứng Nợ Nần</orangeStrong>, gây Sát Thương Hỏa.<br>Khi kẻ địch đang trong Bằng Chứng Nợ Nần phải chịu Đòn Đánh Theo Sau, Numby sẽ <orangeStrong>Ưu Tiên Hành Động</orangeStrong>.",
         "tag": "Đánh Đơn"
       }
     },
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Bội Chi",
-        "fullDesc": "Khi Topaz thi triển tấn công thường gây ra sát thương, sẽ được xem là phát động Đòn Đánh Theo Sau.",
+        "fullDesc": "Khi Topaz thi triển Tấn Công Thường gây ra sát thương, sẽ được xem là phát động Đòn Đánh Theo Sau.",
         "shortDesc": "",
         "tag": ""
       }
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Thị Trường Tương Lai",
-      "desc": "Khi kẻ địch ở trạng thái \"Bằng Chứng Nợ Nần\" chịu Đòn Đánh Theo Sau, sẽ rơi vào trạng thái \"Cưỡng Chế Thực Thi\", trong 1 lần tấn công tối đa hiệu lực 1 lần.<br>\"Cưỡng Chế Thực Thi\" làm tăng {{1, percent}}% sát thương bạo kích của Đòn Đánh Theo Sau mà kẻ địch phải chịu, tối đa cộng dồn {{2}} tầng. Khi \"Bằng Chứng Nợ Nần\" bị xóa bỏ, \"Cưỡng Chế Thực Thi\" cũng sẽ bị xóa bỏ."
+      "desc": "Khi mục tiêu phe địch ở trạng thái \"Bằng Chứng Nợ Nần\" chịu Đòn Đánh Theo Sau, sẽ rơi vào trạng thái \"Cưỡng Chế Thực Thi\", trong 1 lần tấn công tối đa hiệu lực 1 lần.<br>\"Cưỡng Chế Thực Thi\" làm tăng {{1, percent}}% sát thương bạo kích của Đòn Đánh Theo Sau mà mục tiêu phe địch phải chịu, tối đa cộng dồn {{2}} tầng. Khi \"Bằng Chứng Nợ Nần\" bị xóa bỏ, \"Cưỡng Chế Thực Thi\" cũng sẽ bị xóa bỏ."
     },
     "2": {
       "name": "Thiện Chí Thu Mua",
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Xử Lý Nhanh Nhạy",
-      "desc": "Sau khi hiệp của Numby bắt đầu, Topaz ưu tiên hành động {{1, percent}}%."
+      "desc": "Sau khi hiệp của Numby bắt đầu, Topaz sẽ Ưu Tiên Hành Động {{1, percent}}%."
     },
     "5": {
       "name": "Nhu Cầu Tăng Vọt",

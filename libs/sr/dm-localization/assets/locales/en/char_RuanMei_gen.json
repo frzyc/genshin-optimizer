@@ -13,7 +13,7 @@
       "0": {
         "name": "String Sings Slow Swirls",
         "fullDesc": "After using her Skill, Ruan Mei gains Overtone, lasting for {{3}} turn(s). This duration decreases by 1 at the start of Ruan Mei's every turn. When Ruan Mei has Overtone, all allies' DMG increases by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> and Weakness Break Efficiency increases by {{2, percent}}%.",
-        "shortDesc": "After using her Skill, Ruan Mei gains Overtone. When Ruan Mei has Overtone, increase all allies' <orangeStrong>DMG</orangeStrong> and <orangeStrong>Weakness Break efficiency</orangeStrong>.",
+        "shortDesc": "After using her Skill, Ruan Mei gains Overtone. When Ruan Mei has Overtone, increase all allies' <orangeStrong>DMG</orangeStrong> and <orangeStrong>Weakness Break Efficiency</orangeStrong>.",
         "tag": "Support"
       }
     },
@@ -28,8 +28,8 @@
     "talent": {
       "0": {
         "name": "Somatotypical Helix",
-        "fullDesc": "Increases SPD by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> for the team (excluding this character). When allies Break an enemy target's Weakness, Ruan Mei deals to this enemy target Break DMG equal to <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> of her Ice Break DMG.",
-        "shortDesc": "Increases <orangeStrong>SPD</orangeStrong> for all allies (excluding this character). Breaking an enemy target's Weakness will <orangeStrong>additionally deal Ice Break DMG</orangeStrong>.",
+        "fullDesc": "Increases SPD by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> for all teammates (i.e., excluding this unit). When allies Break an enemy target's Weakness, Ruan Mei deals to this enemy target Break DMG equal to <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> of her Ice Break DMG.",
+        "shortDesc": "Increases <orangeStrong>SPD</orangeStrong> for all teammates (i.e., excluding this unit). Breaking an enemy target's Weakness will <orangeStrong>additionally deal Ice Break DMG</orangeStrong>.",
         "tag": "Support"
       }
     },
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Reedside Promenade",
-      "desc": "With Ruan Mei on the field, all allies increase their ATK by {{1, percent}}% when dealing DMG to enemies with Weakness Break."
+      "desc": "While Ruan Mei is on the field, all allies increase their ATK by {{1, percent}}% when dealing DMG to enemies that are Weakness Broken."
     },
     "3": {
       "name": "Viridescent Pirouette",

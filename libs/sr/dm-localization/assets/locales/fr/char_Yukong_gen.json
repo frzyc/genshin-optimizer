@@ -37,7 +37,7 @@
       "0": {
         "name": "À la poursuite du vent",
         "fullDesc": "Après utilisation de la technique, Yukong entre en mode Sprint pendant {{1}} secondes. En mode Sprint, la vitesse de déplacement augmente de {{2, percent}}% et Yukong obtient {{3}} cumuls de « Rugissement des cordes » lorsqu'elle entre en combat en attaquant des ennemis.",
-        "shortDesc": "Augmente la <orangeStrong>vitesse de déplacement</orangeStrong>. Reçoit 2 cumuls de Rugissement des cordes après être entré en combat en attaquant un ennemi.",
+        "shortDesc": "La <orangeStrong>vitesse de déplacement de cette unité augmente</orangeStrong>. Reçoit 2 cumuls de Rugissement des cordes après être entré en combat en attaquant un ennemi.",
         "tag": "Renforcement"
       }
     },

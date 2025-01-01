@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Inquietação das Vísceras",
-        "fullDesc": "Após usar a Perícia para atacar um inimigo afetado por Cisalhamento de Vento, Sangramento, Queimadura e Choque, cada uma dessas penalidades possui uma chance-base de {{1, percent}}% de infligir 1 acúmulo extra de Arcana.",
+        "fullDesc": "Após usar a Perícia para atacar um único inimigo designado afetado por \"Cisalhamento de Vento\", \"Sangramento\", \"Queimadura\" e \"Choque\", cada uma dessas penalidades possui uma chance-base de {{1, percent}}% de infligir 1 acúmulo extra de \"Arcana\".",
         "shortDesc": "",
         "tag": ""
       }
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Dragas do Cálice",
-        "fullDesc": "Quando um inimigo-alvo entra em batalha, existe uma chance-base de {{1, percent}}% dele ser afligido com 1 acúmulo de Arcana.<br>Cada vez que um inimigo-alvo recebe Dano Contínuo durante um ataque único de um aliado, há uma chance-base de {{1, percent}}% dele ser afligido com 1 acúmulo de Arcana. O número máximo de acúmulos que podem ser infligidos durante 1 único ataque é {{2}}.",
+        "fullDesc": "Quando um inimigo-alvo entra em batalha, existe uma chance-base de {{1, percent}}% dele ser afligido com 1 acúmulo de \"Arcana\".<br>Toda vez que um inimigo-alvo recebe 1 instância de Dano Contínuo durante um ataque único de um aliado, há uma chance-base de {{1, percent}}% dele ser afligido com 1 acúmulo de \"Arcana\". O número máximo de acúmulos que podem ser infligidos durante 1 único ataque é {{2}}.",
         "shortDesc": "",
         "tag": ""
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Não Chore por Mim, Cordeirinho",
-      "desc": "Quando um inimigo-alvo afligido por Arcana for derrotado, há uma chance-base de {{1, percent}}% de infligir {{2}} acúmulo(s) de Arcana a alvos adjacentes."
+      "desc": "Quando um inimigo-alvo afligido por \"Arcana\" for derrotado, há uma chance-base de {{1, percent}}% de infligir {{2}} acúmulo(s) de \"Arcana\" a alvos adjacentes."
     },
     "3": {
       "name": "Assim na Terra como no Céu",
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Panteão Misericordioso, Massas Lamentáveis",
-      "desc": "Quando um inimigo-alvo é atacado pelos aliados da Cisne Negro, Cisne Negro tem uma chance-base de {{2, percent}}% de infligir 1 acúmulo de Arcana no alvo.<br>Sempre que Cisne Negro infligir Arcana em um inimigo-alvo, há uma chance fixa de {{1, percent}}% de aumentar adicionalmente o número de Arcana acumulados desta vez em {{3}}."
+      "desc": "Quando um inimigo-alvo é atacado pelos aliados da Cisne Negro, Cisne Negro tem uma chance-base de {{2, percent}}% de infligir 1 acúmulo de \"Arcana\" no alvo.<br>Sempre que Cisne Negro infligir \"Arcana\" em um inimigo-alvo, há uma chance fixa de {{1, percent}}% de aumentar adicionalmente o número de acúmulos de \"Arcana\" desta vez em {{3}}."
     }
   }
 }

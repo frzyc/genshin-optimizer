@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Paseo por los juncos",
-      "desc": "Cuando Ruan Mei está en la batalla, el ATQ de los aliados aumenta en un {{1, percent}}% cuando infligen daño a enemigos con Ruptura de Debilidad."
+      "desc": "Cuando Ruan Mei está en la batalla, el ATQ de todos los aliados aumenta en un {{1, percent}}% cuando infligen daño a enemigos con Ruptura de Debilidad."
     },
     "3": {
       "name": "Vestida de brocado esmeralda",

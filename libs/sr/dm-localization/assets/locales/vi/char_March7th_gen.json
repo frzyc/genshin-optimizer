@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Lời Nguyền Băng Giá",
-        "fullDesc": "Khi thi triển Tuyệt Kỹ, xác suất cơ bản đóng băng kẻ địch tăng {{1, percent}}%.",
+        "fullDesc": "Khi thi triển Tuyệt Kỹ, xác suất cơ bản đóng băng mục tiêu phe địch tăng {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Không Muốn Mất Lần Nữa",
-      "desc": "Số lần hiệu ứng Phản Kích của Thiên Phú có thể kích hoạt ở mỗi hiệp tăng 1 lần. Giúp tăng sát thương Phản Kích tạo thành, mức tăng bằng {{1, percent}}% Phòng Thủ của March 7th."
+      "desc": "Số lần hiệu ứng Phản Kích của Thiên Phú có thể kích hoạt ở mỗi hiệp tăng 1 lần. Giúp tăng sát thương Phản Kích gây ra, mức tăng bằng {{1, percent}}% Phòng Thủ của March 7th."
     },
     "5": {
       "name": "Không Muốn Lại Quên Lãng",

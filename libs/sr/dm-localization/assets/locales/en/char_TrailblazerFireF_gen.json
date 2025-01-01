@@ -27,7 +27,7 @@
       "0": {
         "name": "War-Flaming Lance",
         "fullDesc": "Deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of the Trailblazer's ATK plus <orangeStrong>{{2, percent}}%</orangeStrong> of the Trailblazer's DEF to all enemies. The next Basic ATK will be automatically enhanced and does not cost Magma Will.",
-        "shortDesc": "Deals Fire DMG to all enemies and enhances the next Basic ATK.",
+        "shortDesc": "Deals Fire DMG to all enemies and enhances this unit's next Basic ATK.",
         "tag": "AoE"
       }
     },
@@ -35,7 +35,7 @@
       "0": {
         "name": "Treasure of the Architects",
         "fullDesc": "Each time the Trailblazer is hit, they gain 1 stack of Magma Will for a max of {{3}} stack(s).<br>When Magma Will has no fewer than 4 stacks, the Trailblazer's Basic ATK becomes enhanced, dealing DMG to a single enemy and enemies adjacent to it.<br>When the Trailblazer uses Basic ATK, Skill, or Ultimate, apply a Shield to all allies that absorbs DMG equal to <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> of the Trailblazer's DEF plus <orangeStrong>{{4}}</orangeStrong>. The Shield lasts for {{2}} turn(s).",
-        "shortDesc": "",
+        "shortDesc": "When attacked, stacks \"Magma Will.\" When \"Magma Will\" is at no fewer than 4 stacks, Basic ATK gets <orangeStrong>enhanced</orangeStrong>. After using Basic ATK, Skill, or Ultimate, provides a Shield for team.",
         "tag": "Enhance"
       }
     },
@@ -43,7 +43,7 @@
       "0": {
         "name": "Call of the Guardian",
         "fullDesc": "After using Technique, at the start of the next battle, gains a Shield that absorbs DMG equal to {{1, percent}}% of the Trailblazer's DEF plus {{2}} for {{3}} turn(s).",
-        "shortDesc": "",
+        "shortDesc": "After using Technique, provides a Shield for this unit at the start of the next battle.",
         "tag": "Defense"
       }
     },

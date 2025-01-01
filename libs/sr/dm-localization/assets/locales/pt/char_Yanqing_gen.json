@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "A Verdadeira Espada",
-        "fullDesc": "Após usar sua Técnica, no início da próxima batalha, Yanqing causa {{2, percent}}% a mais de Dano por {{3}} rodada(s) a inimigos que, no momento, têm PV igual ou superior a {{1, percent}}%.",
+        "fullDesc": "Após usar sua Técnica, no início da próxima batalha, Yanqing causa {{2, percent}}% a mais de Dano por {{3}} rodada(s) a inimigos que, no momento, têm a porcentagem dos PV igual ou superior a {{1, percent}}%.",
         "shortDesc": "Depois que este personagem usa sua Técnica, no início da próxima batalha, aumenta o Dano causado por este personagem a inimigos-alvo com PV em 50% ou mais.",
         "tag": "Aprimoramento"
       }
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Cereja do Chute",
-        "fullDesc": "Quando Yanqing ataca, causa Dano de Gelo Adicional igual a {{1, percent}}% do ATQ de Yanqing a inimigos com Fraqueza contra Gelo.",
+        "fullDesc": "Depois que Yanqing ataca, causa Dano de Gelo Adicional igual a {{1, percent}}% do ATQ de Yanqing a inimigos com Fraqueza contra Gelo.",
         "shortDesc": "",
         "tag": ""
       }
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Sabre Esbelto",
-      "desc": "Quando Yanqing ataca um inimigo com Congelamento, ele causa {{1, percent}}% de seu ATQ como Dano de Gelo Adicional."
+      "desc": "Quando Yanqing ataca um inimigo afligido com \"Congelamento\", ele causa {{1, percent}}% de seu ATQ como Dano de Gelo Adicional."
     },
     "2": {
       "name": "Serenata do Supino",
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Perfuração Flamejante",
-      "desc": "Quando os PV atuais estiverem em {{1, percent}}% ou mais, a PEN de RES a Gelo aumenta em {{2, percent}}%."
+      "desc": "Quando os PV atuais estiverem em {{1, percent}}% ou mais, a PEN de RES a Gelo desta unidade aumenta em {{2, percent}}%."
     },
     "5": {
       "name": "Conflito Crescente",
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Ataque Rápido",
-      "desc": "Se as melhorias de Sincronia d'Alma de Ferro ou da Perícia Suprema estiverem em efeito quando o inimigo for derrotado, a duração desses bônus é estendida em 1 rodada."
+      "desc": "Se as melhorias de \"Sincronia d'Alma de Ferro\" ou da Perícia Suprema estiverem em efeito quando o inimigo for derrotado, a duração dessas melhorias é estendida em 1 rodada."
     }
   }
 }

@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Liuren, the Sexagenary",
-        "fullDesc": "Saat \"Matrix of Prescience\" aktif, jika target musuh menambahkan status Crowd Control Debuff pada rekan tim, maka seluruh rekan tim akan menahan semua status Crowd Control Debuff yang diberikan oleh target musuh pada aksi kali ini. Efek ini dapat dipicu 1 kali. Jumlah batas terpicu akan di-reset setelah \"Matrix of Prescience\" diaktifkan ulang.",
+        "fullDesc": "Saat \"Matrix of Prescience\" aktif, jika target musuh menambahkan status Crowd Control Debuff pada rekan tim, maka seluruh rekan tim akan menahan semua status Crowd Control Debuff yang diberikan oleh target musuh pada aksi kali ini. Efek ini dapat dipicu 1 kali. Jumlah batas terpicu akan direset setelah \"Matrix of Prescience\" diaktifkan ulang.",
         "shortDesc": "",
         "tag": ""
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Optimus Felix",
-      "desc": "Saat \"Matrix of Prescience\" aktif, jika ada rekan tim yang menerima serangan mematikan, maka seluruh rekan tim yang menerima serangan mematikan pada aksi kali ini tidak akan gugur, dan akan segera memulihkan HP-nya sebesar {{1, percent}}% Max HP masing-masing. Efek ini dapat dipicu sekali dalam 1 pertempuran."
+      "desc": "Saat \"Matrix of Prescience\" aktif, jika ada rekan tim yang menerima DMG mematikan, maka seluruh rekan tim yang menerima DMG mematikan pada aksi kali ini tidak akan gugur, dan akan segera memulihkan HP-nya sebesar {{1, percent}}% Max HP masing-masing. Efek ini dapat dipicu sekali dalam 1 pertempuran."
     },
     "3": {
       "name": "Apex Nexus",

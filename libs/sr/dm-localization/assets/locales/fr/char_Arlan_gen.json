@@ -28,8 +28,8 @@
     "talent": {
       "0": {
         "name": "Douleur et colère",
-        "fullDesc": "Augmente les DGT d'Arlan pour chaque pourcentage de PV en dessous de ses PV max, jusqu'à un maximum de <orangeStrong>{{1, percent}}%</orangeStrong> de DGT supplémentaires.",
-        "shortDesc": "Obtient un bonus de DGT <orangeStrong>en fonction du pourcentage de PV perdus</orangeStrong>.",
+        "fullDesc": "Obtient un bonus de DGT selon le pourcentage de PV actuels manquants à Arlan, jusqu'à une augmentation maximum de <orangeStrong>{{1, percent}}%</orangeStrong> des DGT infligés par Arlan.",
+        "shortDesc": "Obtient un bonus de DGT <orangeStrong>en fonction</orangeStrong> du <orangeStrong>pourcentage de PV actuels manquants</orangeStrong>.",
         "tag": "Renforcement"
       }
     },
@@ -77,11 +77,11 @@
   "ranks": {
     "1": {
       "name": "Jusqu'au-boutiste",
-      "desc": "Lorsque les PV du personnage sont inférieurs ou égaux à 50 % de ses PV max, augmente les DGT infligés par la compétence de {{1, percent}}%."
+      "desc": "Lorsque le pourcentage de PV du personnage est inférieur ou égal à 50 % de ses PV max, augmente les DGT infligés par la compétence de {{1, percent}}%."
     },
     "2": {
       "name": "Libération",
-      "desc": "Utiliser la compétence ou l'ultime supprime 1 malus qui affecte le personnage."
+      "desc": "Utiliser la compétence ou l'ultime supprime 1 malus qui affecte cette unité."
     },
     "3": {
       "name": "Dépassement de soi",
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Abnégation",
-      "desc": "Lorsque les PV du personnage sont inférieurs ou égaux à 50 % de ses PV max, l'ultime inflige {{1, percent}}% de DGT supplémentaires. Le multiplicateur de DGT de la cible principale s'applique également aux ennemis adjacents."
+      "desc": "Lorsque le pourcentage de PV actuels du personnage est inférieur ou égal à 50 % de ses PV max, l'ultime inflige {{1, percent}}% de DGT supplémentaires, et le multiplicateur de DGT de la cible principale s'applique également aux ennemis adjacents."
     }
   }
 }

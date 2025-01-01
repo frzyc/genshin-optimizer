@@ -21,7 +21,7 @@
       "0": {
         "name": "A Marcha de Belobog",
         "fullDesc": "Aumenta o ATQ de todos os aliados em <orangeStrong>{{1, percent}}%</orangeStrong> e aumenta o Dano CRIT em <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> do Dano CRIT de Bronya mais <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> por {{4}} rodada(s).",
-        "shortDesc": "Aumenta o <orangeStrong>ATQ</orangeStrong> e o <orangeStrong>Dano CRIT</orangeStrong> de todos os aliados",
+        "shortDesc": "Aumenta o <orangeStrong>ATQ</orangeStrong> e o <orangeStrong>Dano CRIT</orangeStrong> de todos os aliados.",
         "tag": "Suporte"
       }
     },
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Aprimore Sua Força",
-      "desc": "Ao usar a Perícia, há {{1, percent}}% de chance fixa de recuperar 1 Ponto de Perícia. Este efeito tem recarga de 1 rodada."
+      "desc": "Ao usar a Perícia, há uma chance fixa{{1, percent}}% d de {{1, percent}}% de recuperar 1 Ponto de Perícia. Este efeito tem um tempo de recarga de 1 rodada."
     },
     "2": {
       "name": "Marcha Rápida",
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Pegue de Surpresa",
-      "desc": "Após qualquer outro aliado usar um ATQ Básico em um inimigo-alvo com Fraqueza contra Vento, Bronya realiza 1 Ataque Extra imediatamente contra o alvo, causando Dano de Vento equivalente a {{1, percent}}% do Dano ATQ Básico. Este efeito só pode ser ativado 1 vez por rodada."
+      "desc": "Após qualquer outro aliado usar um ATQ Básico em um inimigo-alvo com Fraqueza contra Vento, Bronya realiza 1 Ataque Extra imediatamente contra o alvo, causando Dano de Vento equivalente a {{1, percent}}% do Dano do seu ATQ Básico. Este efeito só pode ser ativado 1 vez por rodada."
     },
     "5": {
       "name": "Incontrolável",

@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Gợn Sóng",
-        "fullDesc": "Sau khi tấn công thường, lần hành động tiếp theo của Seele sẽ ưu tiên {{1, percent}}%.",
+        "fullDesc": "Sau khi thi triển Tấn Công Thường, lần hành động tiếp theo Seele sẽ Ưu Tiên Hành Động {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Phân Ly",
-      "desc": "Sau khi thi triển Tuyệt Kỹ sẽ khiến 1 kẻ địch bị tấn công rơi vào trạng thái Loạn Điệp, duy trì {{2}} hiệp. Sau khi mục tiêu địch ở trạng thái Loạn Điệp bị tấn công, sẽ chịu thêm 1 lần Sát Thương Lượng Tử kèm theo bằng {{1, percent}}% Sát Thương Tuyệt Kỹ của Seele. Nếu mục tiêu này bị tiêu diệt bởi sát thương kèm theo của trạng thái Loạn Điệp do mục tiêu khác trong phe ta kích hoạt, sẽ không kích hoạt Thiên Phú của Seele.<br>Khi Seele rơi vào trạng thái không thể chiến đấu, thì trạng thái Loạn Điệp của kẻ địch sẽ bị giải trừ."
+      "desc": "Sau khi thi triển Tuyệt Kỹ sẽ khiến 1 kẻ địch bị tấn công rơi vào trạng thái Loạn Điệp, duy trì {{2}} hiệp. Sau khi mục tiêu phe địch ở trạng thái Loạn Điệp bị tấn công, sẽ chịu thêm 1 lần Sát Thương Kèm Theo thuộc tính Lượng Tử bằng {{1, percent}}% Sát Thương Tuyệt Kỹ của Seele. Nếu mục tiêu này bị tiêu diệt bởi Sát Thương Kèm Theo của trạng thái Loạn Điệp do mục tiêu khác của phe ta kích hoạt, sẽ không kích hoạt Thiên Phú của Seele.<br>Khi Seele rơi vào trạng thái không thể chiến đấu, thì trạng thái Loạn Điệp của mục tiêu phe địch sẽ bị giải trừ."
     }
   }
 }

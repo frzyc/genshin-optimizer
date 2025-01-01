@@ -29,8 +29,8 @@
       "0": {
         "name": "Prana ausgemerzt",
         "fullDesc": "Beschwört den Blitz-Lord beim Kampfeintritt. Er hat eine GES von {{1}} und eine Trefferzahl von {{4}}. Seine Angriffe werden als Folgeangriffe gewertet. Jeder Treffer des Blitz-Lords fügt einem zufälligen Gegner Blitz-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Jing Yuans ANG zu und fügt angrenzenden Zielen Blitz-SCH in Höhe von {{5, percent}}% des am anvisierten Ziel verursachten SCH zu.<br>Die Trefferzahl des Blitz-Lords ist bis zu max. {{6}} stapelbar und die GES des Blitz-Lords erhöht sich um {{3}} für jeden zusätzlichen Treffer. Nach dem Ende der Aktion werden die GES und die Trefferzahl des Blitz-Lords zurückgesetzt.<br>Ist Jing Yuan handlungsunfähig, verschwindet der Blitz-Lord.<br>Steht Jing Yuan unter dem Einfluss von Mengenkontrolle-Debuffs, kann der Blitz-Lord auch keine Aktion ausführen.",
-        "shortDesc": "Beschwört den Blitz-Lord zu Beginn des Kampfes. Dieser fügt <orangeStrong>automatisch</orangeStrong> einem zufälligen Gegner und angrenzenden Einheiten <orangeStrong>geringen Blitz-SCH</orangeStrong> zu.",
-        "tag": "Abprallung"
+        "shortDesc": "Beschwört Blitz-Lord zu Beginn des Kampfes. Wenn Blitz-Lord eine Aktion ausführt, startet er einen Folgeangriff und fügt <orangeStrong>automatisch</orangeStrong> einem zufälligen Gegner und angrenzenden Einheiten <orangeStrong>geringen Blitz-SCH</orangeStrong> zu.",
+        "tag": "Abpraller"
       }
     },
     "technique": {

@@ -29,15 +29,15 @@
       "0": {
         "name": "Victory Rush",
         "fullDesc": "When an enemy is inflicted with Weakness Break, Himeko gains 1 point of Charge (max {{2}} points).<br>If Himeko is fully Charged when an ally performs an attack, Himeko immediately performs 1 follow-up attack and deals Fire DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of her ATK to all enemies, consuming all Charge points.<br>At the start of the battle, Himeko gains 1 point of Charge.",
-        "shortDesc": "Gains Charge when an enemy's Weakness is Broken.<br>After an ally performs an attack, if fully Charged, <orangeStrong>immediately performs a follow-up attack</orangeStrong> and deals Fire DMG to <orangeStrong>all enemies</orangeStrong>, consuming all Charge points.<br>Gains 1 Charge point at the start of each battle.",
+        "shortDesc": "At the start of battle or when an enemy's Weakness is Broken, gains Charge.<br>After any ally target performs an attack, if fully Charged, <orangeStrong>launches Follow-up ATK</orangeStrong> and deals Fire DMG to <orangeStrong>all enemies</orangeStrong>, consuming all Charge points.",
         "tag": "AoE"
       }
     },
     "technique": {
       "0": {
         "name": "Incomplete Combustion",
-        "fullDesc": "After using Technique, creates a special dimension that lasts for {{4}} second(s). After entering battle with enemies in the special dimension, there is a {{1, percent}}% base chance to increase Fire DMG taken by enemies by {{2, percent}}% for {{3}} turn(s). Only 1 dimension created by allies can exist at the same time.",
-        "shortDesc": "Creates a special dimension. After entering combat with enemies in the dimension, there is a high chance to <orangeStrong>increase Fire DMG taken by enemies</orangeStrong>.",
+        "fullDesc": "After using Technique, creates a Special Dimension that lasts for {{4}} second(s). After entering battle with enemies in the Special Dimension, there is a {{1, percent}}% base chance to increase Fire DMG taken by enemies by {{2, percent}}% for {{3}} turn(s). Only 1 dimension created by allies can exist at the same time.",
+        "shortDesc": "Creates a Special Dimension. After entering combat with enemies in the dimension, there is a high chance to <orangeStrong>increase Fire DMG taken by enemies</orangeStrong>.",
         "tag": "Impair"
       }
     },
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Starfire",
-        "fullDesc": "After using an attack, there is a {{1, percent}}% base chance to inflict Burn on enemies for {{2}} turn(s).<br>When afflicted with Burn, enemies take Fire DoT equal to {{3, percent}}% of Himeko's ATK at the start of each turn.",
+        "fullDesc": "After using an attack, there is a {{1, percent}}% base chance to inflict Burn on enemies, lasting for {{2}} turn(s).<br>When afflicted with Burn, enemies take Fire DoT equal to {{3, percent}}% of Himeko's ATK at the start of each turn.",
         "shortDesc": "",
         "tag": ""
       }

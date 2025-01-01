@@ -35,7 +35,7 @@
       "0": {
         "name": "Treasure of the Architects",
         "fullDesc": "Setiap 1 serangan yang diterima akan menambah 1 lapis \"Magma Will\", maksimal hingga {{3}} lapis.<br>Saat jumlah \"Magma Will\" tidak kurang dari 4 lapis, Basic Attack akan memperoleh peningkatan dan dapat mengakibatkan DMG pada satu target musuh dan target di sekitarnya.<br>Setelah Trailblazer melancarkan Basic Attack, Skill, atau Ultimate, akan memberikan Shield yang dapat menahan DMG sebesar <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> DEF Trailblazer +<orangeStrong>{{4}}</orangeStrong> selama {{2}} giliran pada seluruh rekan tim.",
-        "shortDesc": "",
+        "shortDesc": "Saat diserang, akan menumpuk \"Magma Will\". Saat \"Magma Will\" tidak kurang dari 4 lapis, Basic Attack memperoleh <orangeStrong>penguatan</orangeStrong>. Setelah melancarkan Basic Attack, Skill, atau Ultimate, akan memberikan Shield pada seluruh rekan tim.",
         "tag": "Enhance"
       }
     },
@@ -43,7 +43,7 @@
       "0": {
         "name": "Call of the Guardian",
         "fullDesc": "Setelah menggunakan Technique, memberikan Shield yang dapat menahan DMG sebesar {{1, percent}}% DEF Trailblazer +{{2}} selama {{3}} giliran saat pertempuran selanjutnya dimulai.",
-        "shortDesc": "",
+        "shortDesc": "Setelah menggunakan Technique, akan memberikan Shield pada diri sendiri saat pertempuran berikutnya dimulai.",
         "tag": "Defense"
       }
     },

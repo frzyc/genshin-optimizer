@@ -105,7 +105,7 @@
     },
     "2": {
       "name": "Imperium On Cloud Nine",
-      "desc": "Setelah Dan Heng · Imbibitor Lunae melancarkan Ultimate, aksi dirinya akan didahulukan 100%, dan memperoleh 1 \"Squama Sacrosancta\" tambahan."
+      "desc": "Setelah Dan Heng · Imbibitor Lunae melancarkan Ultimate, aksi dirinya akan didahulukan sebesar 100%, dan memperoleh 1 \"Squama Sacrosancta\" tambahan."
     },
     "3": {
       "name": "Clothed in Clouds",
@@ -121,7 +121,7 @@
     },
     "6": {
       "name": "Reign, Returned",
-      "desc": "Setelah rekan tim lain melancarkan Ultimate, Imaginary RES PEN Dan Heng • Imbibitor Lunae untuk serangan \"Fulgurant Leap\" yang berikutnya akan meningkat {{1, percent}}%. Efek ini dapat ditumpuk hingga {{2}} lapis."
+      "desc": "Setelah rekan tim lain melancarkan Ultimate, Imaginary RES PEN Dan Heng · Imbibitor Lunae untuk serangan \"Fulgurant Leap\" yang berikutnya akan meningkat {{1, percent}}%. Efek ini dapat ditumpuk hingga {{2}} lapis."
     }
   }
 }

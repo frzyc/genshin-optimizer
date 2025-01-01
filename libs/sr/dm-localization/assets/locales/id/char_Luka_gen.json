@@ -34,7 +34,7 @@
     "talent": {
       "0": {
         "name": "Flying Sparks",
-        "fullDesc": "Setelah Luka melancarkan Basic Attack \"Direct Punch\" atau Skill \"Lacerating Fist\", Luka akan memperoleh {{1}} lapis \"Fighting Will\", maksimal 4 lapis. Saat \"Fighting Will\" yang dimiliki lebih dari atau sama dengan 2, Basic Attack Luka \"Direct Punch\" akan meningkat menjadi \"Sky-Shatter Fist\". Saat \"Rising Uppercut\" dari Enhanced Basic Attack mengenai target musuh dengan status Bleed, maka status Bleed tersebut akan membuat target musuh segera menerima 1 kali DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> DMG awal. Saat pertempuran dimulai, Luka akan memiliki 1 lapis \"Fighting Will\".",
+        "fullDesc": "Setelah Luka melancarkan Basic Attack \"Direct Punch\" atau Skill \"Lacerating Fist\", Luka akan memperoleh {{1}} lapis \"Fighting Will\", maksimal 4 lapis. Saat \"Fighting Will\" yang dimiliki lebih dari atau sama dengan 2, Basic Attack Luka \"Direct Punch\" akan meningkat menjadi \"Sky-Shatter Fist\". Saat \"Rising Uppercut\" dari Enhanced Basic Attack mengenai target musuh dengan status Bleed, maka status Bleed tersebut akan membuat target musuh segera menerima 1 kali DMG sebesar <orangeStrong>{{2, percent}}%</orangeStrong> dari DMG aslinya. Saat pertempuran dimulai, Luka akan memiliki 1 lapis \"Fighting Will\".",
         "shortDesc": "Setelah melancarkan Basic Attack \"Direct Punch\" atau Skill \"Lacerating Fist\", Luka akan memperoleh 1 lapis \"Fighting Will\". Saat \"Fighting Will\" yang dimiliki lebih dari atau sama dengan 2 lapis, Basic Attack akan menjadi <orangeStrong>Enhanced Basic Attack</orangeStrong>.<br>Jika target musuh sedang dalam status Bleed, Enhanced Basic Attack akan <orangeStrong>membuat status Bleed menghasilkan 1 kali DMG tambahan</orangeStrong>.",
         "tag": "Enhance"
       }
@@ -58,7 +58,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Kinetic Overload",
-        "fullDesc": "Saat melancarkan Skill, segera menghapus {{1}} efek Buff target musuh.",
+        "fullDesc": "Saat melancarkan Skill, akan segera menghapus {{1}} efek Buff dari target musuh.",
         "shortDesc": "",
         "tag": ""
       }
@@ -103,7 +103,7 @@
     },
     "6": {
       "name": "A Champion's Applause",
-      "desc": "Setelah \"Rising Uppercut\" dari Enhanced Basic Attack mengenai target musuh berstatus Bleed, maka setiap 1 serangan \"Direct Punch\" yang dilancarkan Enhanced Basic Attack kali ini akan membuat status Bleed musuh segera menghasilkan 1 kali DMG sebesar {{1, percent}}% DMG awal Bleed."
+      "desc": "Setelah \"Rising Uppercut\" dari Enhanced Basic Attack mengenai target musuh berstatus Bleed, maka setiap 1 serangan \"Direct Punch\" yang dilancarkan Enhanced Basic Attack kali ini akan membuat status Bleed musuh segera menghasilkan 1 kali DMG sebesar {{1, percent}}% dari DMG aslinya."
     }
   }
 }

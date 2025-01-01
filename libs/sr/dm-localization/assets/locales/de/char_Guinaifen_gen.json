@@ -28,7 +28,7 @@
     "talent": {
       "0": {
         "name": "Vorteile für Gönner",
-        "fullDesc": "Wenn Guinaifen auf dem Feld ist und der Status Brennen des Gegners SCH ausgelöst hat, besteht eine Grundchance von {{1, percent}}%, dass bei ihm „Feuer spucken“ verursacht wird. Im Status „Feuer spucken“ erleidet das Ziel für {{5}} Rd. <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> mehr SCH, bis {{6}}-fach stapelbar.",
+        "fullDesc": "Wenn Guinaifen auf dem Kampffeld ist und der Status Brennen des Gegners SCH ausgelöst hat, besteht eine Grundchance von {{1, percent}}%, dass bei ihm „Feuer spucken“ verursacht wird. Im Status „Feuer spucken“ erleidet das Ziel für {{5}} Rd. <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> mehr SCH, bis {{6}}-fach stapelbar.",
         "shortDesc": "Nachdem der <orangeStrong>Status Brennen SCH beim Gegner ausgelöst</orangeStrong> hat, besteht eine hohe Chance, <orangeStrong>„Feuer spucken“</orangeStrong> auf den Gegner anzuwenden.",
         "tag": "Beeinträchtigung"
       }
@@ -37,7 +37,7 @@
       "0": {
         "name": "Demonstration der Fähigkeiten",
         "fullDesc": "Greift den Gegner unmittelbar an. Verursacht nach Kampfeintritt {{2}}-mal SCH, wobei jedes Mal einem zufälligen Gegner Feuer-SCH in Höhe von {{1, percent}}% von Guinaifens ANG zugefügt wird und eine Grundchance von {{3, percent}}% besteht, „Feuer spucken“ bei ihm zu verursachen.",
-        "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt einem Gegner geringen Feuer-SCH zu und verursacht <orangeStrong>„Feuer spucken“</orangeStrong>. Dieser Angriff prallt 4-mal ab.",
+        "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt einem Gegner geringen Feuer-SCH zu und verursacht mit hoher Chance <orangeStrong>„Feuer spucken“</orangeStrong>. Dieser Angriff prallt 4-mal ab.",
         "tag": ""
       }
     },

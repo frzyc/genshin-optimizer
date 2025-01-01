@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Leggiero",
-      "desc": "El multiplicador de daño de la Electrocución que inflige la habilidad definitiva, la técnica o el ataque adicional del talento aumenta en un {{1, percent}}% y la duración de Electrocución se alarga en {{2}} turno."
+      "desc": "El multiplicador de daño de la Electrocución que aplica la habilidad definitiva, la técnica o el ataque adicional del talento aumenta en un {{1, percent}}% y la duración de Electrocución se alarga en {{2}} turno."
     }
   }
 }

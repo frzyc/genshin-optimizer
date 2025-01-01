@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Long Company",
-      "desc": "Setelah rekan tim yang lain terkena serangan, Svarog juga memiliki {{1, percent}}% peluang tetap untuk memicu serangan balasan dan menambahkan \"Mark of Counter\" pada penyerang. Saat melancarkan Ultimate, jumlah serangan balasan yang diperkuat akan bertambah {{2}}."
+      "desc": "Setelah rekan tim yang lain terkena serangan, Svarog juga memiliki {{1, percent}}% peluang tetap untuk memicu Serangan Balasan dan menambahkan \"Mark of Counter\" pada penyerang. Saat melancarkan Ultimate, jumlah Serangan Balasan yang diperkuat akan bertambah {{2}}."
     }
   }
 }

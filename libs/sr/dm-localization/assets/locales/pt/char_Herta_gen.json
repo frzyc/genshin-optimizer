@@ -29,7 +29,7 @@
       "0": {
         "name": "Está Bem, Eu Cuido Disso",
         "fullDesc": "Quando um ataque de um aliado reduzir os PV de um inimigo a {{1, percent}}% ou menos, Herta usa um Ataque Extra, causando <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Herta como Dano de Gelo a todos os inimigos.",
-        "shortDesc": "",
+        "shortDesc": "Quando o ataque de qualquer aliado reduz a porcentagem dos PV do inimigo-alvo para <orangeStrong>{{1, percent}}%</orangeStrong> ou menos, Herta imediatamente desfere <orangeStrong>Ataque Extra</orangeStrong>, causando Dano de Gelo leve a todas as unidades inimigas.",
         "tag": "Área"
       }
     },
@@ -37,7 +37,7 @@
       "0": {
         "name": "Ainda É Possível Otimizar",
         "fullDesc": "Após usar sua Técnica, no início da próxima batalha o ATQ de Herta aumenta em {{1, percent}}% por {{2}} rodada(s).",
-        "shortDesc": "",
+        "shortDesc": "Depois de usar a Técnica, aumenta o ATQ desta unidade no início da próxima batalha.",
         "tag": "Aprimoramento"
       }
     },
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Marionete",
-        "fullDesc": "A chance de resistir a penalidades de Controle Negativo aumenta em {{1, percent}}%.",
+        "fullDesc": "Aumenta a chance de resistir a penalidades de Controle Negativo em {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Vai Ficar Ainda Pior",
-      "desc": "Se o percentual de PV do inimigo for {{1, percent}}% ou menos, o ATQ Básico de Herta causa Dano de Gelo Adicional igual a {{2, percent}}% do ATQ dela."
+      "desc": "Ao utilizar um ATQ Básico e se o percentual de PV do inimigo designado for {{1, percent}}% ou menos, o ATQ Básico de Herta também causa Dano de Gelo Adicional igual a {{2, percent}}% do ATQ dela."
     },
     "2": {
       "name": "Dar o Pontapé Inicial",

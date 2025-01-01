@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "¡Bingo!",
-        "fullDesc": "Cuando un aliado con Apuesta reforzada lanza un ataque adicional, Aventurino acumula 1 pt. de Apuesta ciega. Este efecto se puede activar hasta {{3}} veces y el contador de activaciones se reinicia cuando comienza el turno de Aventurino. Cuando Aventurino activa el ataque adicional del talento, proporciona a todos los aliados un escudo Apuesta reforzada que puede absorber un daño equivalente al {{1, percent}}% de la DEF de Aventurino + {{2}}. Adicionalmente, proporciona al aliado que tenga el menor valor de escudo un escudo Apuesta reforzada que puede absorber un daño equivalente al {{4, percent}}% de la DEF de Aventurino + {{5}}. Dura 3 turnos.",
+        "fullDesc": "Cuando un compañero de equipo con Apuesta reforzada lanza un ataque adicional, Aventurino acumula 1 pt. de Apuesta ciega. Este efecto se puede activar hasta {{3}} veces y el contador de activaciones se reinicia cuando comienza el turno de Aventurino. Cuando Aventurino activa el ataque adicional del talento, proporciona a todos los aliados un escudo Apuesta reforzada que puede absorber un daño equivalente al {{1, percent}}% de la DEF de Aventurino + {{2}}. Adicionalmente, proporciona al aliado que tenga el menor valor de escudo un escudo Apuesta reforzada que puede absorber un daño equivalente al {{4, percent}}% de la DEF de Aventurino + {{5}}. Dura 3 turnos.",
         "shortDesc": "",
         "tag": ""
       }

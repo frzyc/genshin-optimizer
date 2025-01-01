@@ -34,7 +34,7 @@
     "talent": {
       "0": {
         "name": "Meister, jetzt verstehe ich!",
-        "fullDesc": "Nachdem der Meister einen Angriff oder seinen Ultimate eingesetzt hat, erhält 7. März jedes Mal bis zu 1 Pkt. Aufladung.<br>Wenn die Aufladung {{1}} Pkt. oder mehr erreicht, führt 7. März sofort eine Aktion aus, wobei ihr verursachter SCH um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht wird. Außerdem wird ihr Standardangriff verstärkt und ihre Fertigkeit kann nicht verwendet werden. Verbraucht nach dem Einsatz ihres verstärkten Standardangriffs {{1}} Pkt. Aufladung, bis zu {{3}} Pkt.",
+        "fullDesc": "Nachdem der Meister einen Angriff oder seinen Ultimate eingesetzt hat, erhält 7. März jedes Mal bis zu 1 Pkt. Aufladung.<br>Wenn die Aufladung {{1}} Pkt. oder mehr erreicht, führt 7. März sofort eine Aktion aus, wobei ihr verursachter SCH um <orangeStrong>{{2, percent}}%</orangeStrong> erhöht wird. Außerdem wird ihr Standardangriff verstärkt und ihre Fertigkeit kann nicht verwendet werden. Verbraucht nach dem Einsatz ihres verstärkten Standardangriffs {{1}} Pkt. Aufladung. Die Aufladung ist auf {{3}} Pkt. begrenzt.",
         "shortDesc": "Nachdem der <orangeStrong>Meister einen Angriff oder seinen Ultimate eingesetzt</orangeStrong> hat, erhält 7. März eine Aufladung. Wenn die Aufladung <orangeStrong>{{1}}</orangeStrong> Pkt. erreicht, führt 7. März sofort eine Aktion aus, wobei ihr verursachter SCH erhöht und ihr <orangeStrong>Standardangriff verstärkt</orangeStrong> wird.",
         "tag": "Verstärkung"
       }

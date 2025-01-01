@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Kế Thừa Danh Hiệu",
-      "desc": "Sau khi thi triển Tuyệt Kỹ, Welt được cường hóa, {{3}} lần Tấn Công Thường hoặc Chiến Kỹ tiếp theo sẽ gây thêm 1 lần sát thương kèm theo cho kẻ địch. Sát thương kèm theo tạo ra bởi Tấn Công Thường bằng {{1, percent}}% Bội Số Sát Thương Tấn Công Thường, sát thương kèm theo tạo ra bởi Chiến Kỹ bằng {{2, percent}}% Bội Số Sát Thương Chiến Kỹ."
+      "desc": "Sau khi thi triển Tuyệt Kỹ, Welt được cường hóa, {{3}} lần Tấn Công Thường hoặc Chiến Kỹ tiếp theo sẽ gây thêm 1 lần Sát Thương Kèm Theo cho mục tiêu phe địch. Sát Thương Kèm Theo gây ra bởi Tấn Công Thường bằng {{1, percent}}% Bội Số Sát Thương Tấn Công Thường, Sát Thương Kèm Theo gây ra bởi Chiến Kỹ bằng {{2, percent}}% Bội Số Sát Thương Chiến Kỹ."
     },
     "2": {
       "name": "Hội Tụ Ngôi Sao",
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Danh Hiệu Chính Nghĩa",
-      "desc": "Khi thi triển Chiến Kỹ sẽ tăng {{1, percent}}% xác suất cơ bản khiến kẻ địch giảm tốc."
+      "desc": "Khi thi triển Chiến Kỹ sẽ tăng {{1, percent}}% xác suất cơ bản khiến mục tiêu phe địch bị tấn công giảm tốc."
     },
     "5": {
       "name": "Sức Mạnh Thiện Lương",

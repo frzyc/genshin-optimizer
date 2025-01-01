@@ -13,7 +13,7 @@
       "0": {
         "name": "Heller Blitz",
         "fullDesc": "Fügt einem anvisierten Gegner Blitz-SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Servals ANG zu und fügt angrenzenden Zielen Blitz-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Servals ANG zu. Verursacht außerdem bei den getroffenen Gegnern mit einer Grundchance von {{3, percent}}% für {{4}} Rd. Schock.<br>Geschockte Gegner erleiden zu Beginn jeder Runde Blitz-DoT in Höhe von <orangeStrong>{{5, percent}}%</orangeStrong> von Servals ANG.",
-        "shortDesc": "Fügt einem Gegner und angrenzenden Einheiten geringen Blitz-SCH zu und bewirkt bei den Gegnern mit hoher Chance <orangeStrong>Schock</orangeStrong>.",
+        "shortDesc": "Fügt einem Gegner Blitz-SCH und angrenzenden Einheiten geringen Blitz-SCH zu. Verursacht bei den Zielen mit hoher Chance <orangeStrong>Schock</orangeStrong>.",
         "tag": "Ausdehnung"
       }
     },
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Etwas Lärm, bitte!",
-      "desc": "Beim Einsatz des Ultimates besteht eine Grundchance von {{1, percent}}%, bei nicht geschockten Gegnern Schock zu verursachen. Dieser Effekt ist derselbe wie bei der Fertigkeit."
+      "desc": "Beim Einsatz des Ultimates besteht eine Grundchance von {{1, percent}}%, bei nicht geschockten Gegnern denselben Status Schock wie die Fertigkeit zu verursachen."
     },
     "5": {
       "name": "Belobogs lautestes Dröhnen!",

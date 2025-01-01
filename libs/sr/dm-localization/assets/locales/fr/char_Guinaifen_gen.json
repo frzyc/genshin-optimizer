@@ -37,7 +37,7 @@
       "0": {
         "name": "Démonstration de talent",
         "fullDesc": "Engage immédiatement le combat contre les ennemis. Inflige {{2}} fois des DGT de feu équivalents à {{1, percent}}% de l'ATQ de Guinaifen à une cible ennemie aléatoire à chaque fois, avec {{3, percent}}% de chances de base d'infliger Baiser enflammé.",
-        "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT de feu mineurs à une cible à la fois tout en appliquant <orangeStrong>Baiser enflammé</orangeStrong> pour un total de 4 rebonds après être entré en combat.",
+        "shortDesc": "Engage le combat contre les ennemis. Inflige des DGT de feu mineurs à une cible ennemie en entrant en combat, avec de fortes chances d'appliquer <orangeStrong>Baiser enflammé</orangeStrong> pour un total de 4 rebonds.",
         "tag": ""
       }
     },
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Manger des nouilles en équilibre",
-      "desc": "Il y a {{1, percent}}% de chances de base de réduire la RÉS aux effets de la cible attaquée de {{2, percent}}% pendant {{3}} tours lors de l'utilisation de la compétence."
+      "desc": "Il y a {{1, percent}}% de chances de base de réduire la RÉS aux effets de la cible ennemie attaquée de {{2, percent}}% pendant {{3}} tours lors de l'utilisation de la compétence."
     },
     "2": {
       "name": "Se brosser les dents en sifflant",

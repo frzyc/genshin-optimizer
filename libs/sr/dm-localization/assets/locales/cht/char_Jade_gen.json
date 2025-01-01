@@ -21,7 +21,7 @@
       "0": {
         "name": "墮此欲淵，立此獄契",
         "fullDesc": "對敵方全體造成等同於翡翠<orangeStrong>{{3, percent}}%</orangeStrong>攻擊力的量子屬性傷害。同時使翡翠天賦的追加攻擊獲得強化，追加攻擊造成的傷害倍率提高<orangeStrong>{{1, percent}}%</orangeStrong>。強化效果可生效{{2}}次。",
-        "shortDesc": "對敵方全體造成量子屬性傷害，使自身獲得<orangeStrong>追加攻擊</orangeStrong>傷害倍率提高。",
+        "shortDesc": "對敵方全體造成量子屬性傷害，使自身天賦的<orangeStrong>追加攻擊</orangeStrong>傷害倍率提高。",
         "tag": "群體攻擊"
       }
     },

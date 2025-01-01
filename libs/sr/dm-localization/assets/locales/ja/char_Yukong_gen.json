@@ -13,7 +13,7 @@
       "0": {
         "name": "{RUBY_B#てんきゅう}天宮{RUBY_E#}に{RUBY_B#な}鳴{RUBY_E#}り{RUBY_B#とよ}響{RUBY_E#}む{RUBY_B#つる}弦{RUBY_E#}",
         "fullDesc": "「鳴弦号令」を{{1}}層獲得する。「鳴弦号令」は最大で2層累積できる。御空に「鳴弦号令」がある時、味方全体の攻撃力+<orangeStrong>{{2, percent}}%</orangeStrong>。味方のターンが終了するたびに、御空の「鳴弦号令」が1層減る。<br>御空が戦闘スキルで「鳴弦号令」を獲得したターン、「鳴弦号令」は減らない。",
-        "shortDesc": "「鳴弦号令」を2層獲得、自身に「鳴弦号令」がある場合、味方全体の<orangeStrong>攻撃力アップ</orangeStrong>。",
+        "shortDesc": "「鳴弦号令」を2層獲得。自身に「鳴弦号令」がある場合、味方全体の<orangeStrong>攻撃力アップ</orangeStrong>。",
         "tag": "サポート"
       }
     },

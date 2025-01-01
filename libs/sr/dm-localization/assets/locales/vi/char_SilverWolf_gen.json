@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Chú Thích",
-        "fullDesc": "Khi thi triển Chiến Kỹ, nếu số lượng Hiệu Ứng Xấu của kẻ địch nhiều hơn hoặc bằng {{1}}, thì Chiến Kỹ khiến hiệu ứng giảm Kháng Toàn Thuộc Tính của kẻ địch giảm thêm {{2, percent}}%.",
+        "fullDesc": "Khi thi triển Chiến Kỹ, nếu số lượng Hiệu Ứng Xấu của mục tiêu phe địch nhiều hơn hoặc bằng {{1}}, thì Chiến Kỹ khiến hiệu ứng giảm Kháng Toàn Thuộc Tính của kẻ địch giảm thêm {{2, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Công Trình Xã Hội",
-      "desc": "Sau khi thi triển Tuyệt Kỹ tấn công kẻ địch, mỗi một Hiệu Ứng Xấu mà kẻ địch có sẽ khiến Sói Bạc hồi {{1}} điểm Năng Lượng. Hiệu ứng này tối đa có hiệu lực {{2}} lần trong mỗi lần dùng Tuyệt Kỹ."
+      "desc": "Sau khi thi triển Tuyệt Kỹ tấn công mục tiêu phe địch, mỗi một Hiệu Ứng Xấu mà mục tiêu sở hữu sẽ khiến Sói Bạc hồi {{1}} điểm Năng Lượng. Hiệu ứng này tối đa có hiệu lực {{2}} lần trong mỗi lần dùng Tuyệt Kỹ."
     },
     "2": {
       "name": "Mạng Zombie",
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Tấn Công Phản Đòn",
-      "desc": "Sau khi thi triển Tuyệt Kỹ tấn công kẻ địch, mỗi một Hiệu Ứng Xấu mà kẻ địch có sẽ gây thêm Sát Thương Lượng Tử kèm theo bằng {{1, percent}}% Tấn Công của Sói Bạc. Hiệu ứng này tối đa kích hoạt {{2}} lần trong mỗi lần dùng Tuyệt Kỹ."
+      "desc": "Sau khi thi triển Tuyệt Kỹ tấn công mục tiêu phe địch, mỗi một Hiệu Ứng Xấu mà mục tiêu cở hữu sẽ gây thêm Sát Thương Kèm Theo thuộc tính Lượng Tử bằng {{1, percent}}% Tấn Công của Sói Bạc. Hiệu ứng này tối đa kích hoạt {{2}} lần trong mỗi lần dùng Tuyệt Kỹ."
     },
     "5": {
       "name": "Diệt Trừ Bạo Lực",
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Mạng Lưới Trùng Lặp",
-      "desc": "Với mỗi một Hiệu Ứng Xấu mà kẻ địch có, sát thương Sói Bạc gây ra cho mục tiêu đó sẽ tăng {{1, percent}}%, tối đa tăng {{2, percent}}%."
+      "desc": "Với mỗi một Hiệu Ứng Xấu mà mục tiêu phe địch sở hữu, sát thương Sói Bạc gây ra cho mục tiêu đó sẽ tăng {{1, percent}}%, tối đa tăng {{2, percent}}%."
     }
   }
 }

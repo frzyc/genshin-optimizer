@@ -66,7 +66,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Sword Champion",
-        "fullDesc": "หลังจากปล่อย \"Transcendent Flash\" จะเร่งแอ็กชันครั้งต่อไป {{1, percent}}%",
+        "fullDesc": "หลังจากปล่อย \"Transcendent Flash\" จะ เร่งแอ็กชัน ครั้งต่อไป {{1, percent}}%",
         "shortDesc": "",
         "tag": ""
       }
