@@ -35,7 +35,7 @@ export const relicSetSkillConfig = relicSetSkillConfigSrc.reduce(
     const { SetID, RequireNum, PropertyList } = config
     // Convert obfuscated names to unobfuscated names, assuming that the ordering of the object fields stays the same
     const unobfPropertyList: Property[] = PropertyList.map((prop) => {
-      const fields = Object.values(prop) as [StatDMKey, Value]
+      const fields = Object.values(prop) as unknown as [StatDMKey, Value]
       return {
         PropertyName: fields[0],
         Value: fields[1],
