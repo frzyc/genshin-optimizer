@@ -52,7 +52,9 @@
         " Niveau 1 : Bennett exécute une seconde attaque, qui inflige des <pyro>DGT Pyro</pyro> et projette les ennemis en l'air."
       ],
       "8": "<br/>",
-      "9": "Niveau 2 : Une troisième attaque complète l'enchaînement, celle-ci infligeant d'importants <pyro>DGT Pyro</pyro>. L'attaque se termine par une explosion, qui projette simultanément Bennett et les ennemis dans les airs.",
+      "9": [
+        " Niveau 2 : Une troisième attaque complète l'enchaînement, celle-ci infligeant d'importants <pyro>DGT Pyro</pyro>. L'attaque se termine par une explosion, qui projette simultanément Bennett et les ennemis dans les airs."
+      ],
       "10": "Bennett ne subit pas de DGT lorsqu'il est projeté.",
       "11": "<br/>",
       "12": "<i>Une attaque Pyro emplie de la passion et des espoirs de Bennett, mais passion débordante signifie surcharge, et qui dit surcharge dit explosion.</i>"

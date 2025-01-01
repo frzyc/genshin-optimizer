@@ -1,0 +1,24 @@
+{
+  "name": "Wacht des Sternenopfers",
+  "description": {
+    "0": "Eine in Form eines Falken geschnitzte Statue, eines der heiligen Relikte, die von Generation zu Generation von Meistern des Nachtwinds weitergegeben werden."
+  },
+  "passiveName": "Opfer für den Wind und die Sonne",
+  "passiveDescription": {
+    "0": {
+      "0": "Erhöht die Elementarkunde um <cryo>100</cryo> Punkte. Verleiht innerhalb von 15 s nach Erschaffen eines Schildes durch den Träger den Effekt „Nacht reflektierender Spiegel“: Erhöht den in der Nähe befindlichen Gegnern durch die eigene aktuelle Figur in der Truppe zugefügten Schaden um <cryo>28 %</cryo>. 14 s Abklingzeit für das Erhalten des Effektes „Nacht reflektierender Spiegel“."
+    },
+    "1": {
+      "0": "Erhöht die Elementarkunde um <cryo>125</cryo> Punkte. Verleiht innerhalb von 15 s nach Erschaffen eines Schildes durch den Träger den Effekt „Nacht reflektierender Spiegel“: Erhöht den in der Nähe befindlichen Gegnern durch die eigene aktuelle Figur in der Truppe zugefügten Schaden um <cryo>35 %</cryo>. 14 s Abklingzeit für das Erhalten des Effektes „Nacht reflektierender Spiegel“."
+    },
+    "2": {
+      "0": "Erhöht die Elementarkunde um <cryo>150</cryo> Punkte. Verleiht innerhalb von 15 s nach Erschaffen eines Schildes durch den Träger den Effekt „Nacht reflektierender Spiegel“: Erhöht den in der Nähe befindlichen Gegnern durch die eigene aktuelle Figur in der Truppe zugefügten Schaden um <cryo>42 %</cryo>. 14 s Abklingzeit für das Erhalten des Effektes „Nacht reflektierender Spiegel“."
+    },
+    "3": {
+      "0": "Erhöht die Elementarkunde um <cryo>175</cryo> Punkte. Verleiht innerhalb von 15 s nach Erschaffen eines Schildes durch den Träger den Effekt „Nacht reflektierender Spiegel“: Erhöht den in der Nähe befindlichen Gegnern durch die eigene aktuelle Figur in der Truppe zugefügten Schaden um <cryo>49 %</cryo>. 14 s Abklingzeit für das Erhalten des Effektes „Nacht reflektierender Spiegel“."
+    },
+    "4": {
+      "0": "Erhöht die Elementarkunde um <cryo>200</cryo> Punkte. Verleiht innerhalb von 15 s nach Erschaffen eines Schildes durch den Träger den Effekt „Nacht reflektierender Spiegel“: Erhöht den in der Nähe befindlichen Gegnern durch die eigene aktuelle Figur in der Truppe zugefügten Schaden um <cryo>56 %</cryo>. 14 s Abklingzeit für das Erhalten des Effektes „Nacht reflektierender Spiegel“."
+    }
+  }
+}

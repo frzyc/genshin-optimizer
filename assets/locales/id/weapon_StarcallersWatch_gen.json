@@ -1,0 +1,24 @@
+{
+  "name": "Starcaller's Watch",
+  "description": {
+    "0": "Patung berbentuk elang. Merupakan relik suci yang diwariskan di Penguasa Angin Malam dari generasi demi generasi."
+  },
+  "passiveName": "Offering Unto Wind and Sun",
+  "passiveDescription": {
+    "0": {
+      "0": "Elemental Mastery meningkat <cryo>100</cryo> poin. Setelah Karakter yang mengenakan menciptakan Perisai, akan mendapatkan efek \"Mirror of Night\" selama 15 detik: DMG yang diakibatkan Karakter aktif sendiri di dalam party meningkat <cryo>28%</cryo> terhadap musuh di sekitar. Karakter bisa mendapatkan efek \"Mirror of Night\" sekali setiap 14 detik."
+    },
+    "1": {
+      "0": "Elemental Mastery meningkat <cryo>125</cryo> poin. Setelah Karakter yang mengenakan menciptakan Perisai, akan mendapatkan efek \"Mirror of Night\" selama 15 detik: DMG yang diakibatkan Karakter aktif sendiri di dalam party meningkat <cryo>35%</cryo> terhadap musuh di sekitar. Karakter bisa mendapatkan efek \"Mirror of Night\" sekali setiap 14 detik."
+    },
+    "2": {
+      "0": "Elemental Mastery meningkat <cryo>150</cryo> poin. Setelah Karakter yang mengenakan menciptakan Perisai, akan mendapatkan efek \"Mirror of Night\" selama 15 detik: DMG yang diakibatkan Karakter aktif sendiri di dalam party meningkat <cryo>42%</cryo> terhadap musuh di sekitar. Karakter bisa mendapatkan efek \"Mirror of Night\" sekali setiap 14 detik."
+    },
+    "3": {
+      "0": "Elemental Mastery meningkat <cryo>175</cryo> poin. Setelah Karakter yang mengenakan menciptakan Perisai, akan mendapatkan efek \"Mirror of Night\" selama 15 detik: DMG yang diakibatkan Karakter aktif sendiri di dalam party meningkat <cryo>49%</cryo> terhadap musuh di sekitar. Karakter bisa mendapatkan efek \"Mirror of Night\" sekali setiap 14 detik."
+    },
+    "4": {
+      "0": "Elemental Mastery meningkat <cryo>200</cryo> poin. Setelah Karakter yang mengenakan menciptakan Perisai, akan mendapatkan efek \"Mirror of Night\" selama 15 detik: DMG yang diakibatkan Karakter aktif sendiri di dalam party meningkat <cryo>56%</cryo> terhadap musuh di sekitar. Karakter bisa mendapatkan efek \"Mirror of Night\" sekali setiap 14 detik."
+    }
+  }
+}

@@ -89,7 +89,9 @@
         " Augmente la RÉS à l'interruption du personnage et diminue les DGT subis."
       ],
       "4": "<br/>",
-      "5": "Une décharge peut être libérée une fois toutes les secondes.<i>Le plus puissant des éclairs peut fendre mers et montagnes.</i>"
+      "5": "Une décharge peut être libérée une fois toutes les secondes.",
+      "6": "<br/>",
+      "7": "<i>Le plus puissant des éclairs peut fendre mers et montagnes.</i>"
     },
     "skillParams": {
       "0": "DGT compétence",

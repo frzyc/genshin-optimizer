@@ -1,0 +1,7 @@
+{
+  "frostfallStorm_dmgInc": "Frostfall Storm DMG Inc.",
+  "iceStorm_dmgInc": "Ice Storm DMG Inc.",
+  "a1Cond": "While Itzpapa is on the field, and a nearby party member triggers <shattered>Frozen</shattered> or <vaporize>Melt</vaporize> reaction",
+  "c1Cond": "Consuming Stellar Blade",
+  "c2Cond": "Character shieled by Opal Shield"
+}

@@ -154,7 +154,7 @@
   "constellation3": {
     "name": "Griffe du protosuchien",
     "description": {
-      "0": "Niveau d'aptitude <strong>Chasse canopéenne : Altitude</strong> +3.",
+      "0": "Niveau d'aptitude <strong>Chasse canopéenne : En altitude</strong> +3.",
       "1": "Niveau max : 15"
     }
   },

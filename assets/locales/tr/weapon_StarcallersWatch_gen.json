@@ -1,0 +1,24 @@
+{
+  "name": "Yıldız Çağıranın Nöbeti",
+  "description": {
+    "0": "Kartal şeklinde oyulmuş bir heykel. Gece Rüzgarının Ustalarında nesilden nesile aktarılan kutsal bir yadigardır."
+  },
+  "passiveName": "Rüzgara ve Güneşe Adak",
+  "passiveDescription": {
+    "0": {
+      "0": "Element Ustalığını <cryo>100</cryo> artırır. Kuşanan karakter bir kalkan oluşturduktan sonra 15sn boyunca \"Gecenin Aynası\" etkisi kazanılır: Mevcut aktif grup üyesi, yakındaki düşmanlara <cryo>%28</cryo> daha fazla Hasar verir. \"Gecenin Aynası\" etkisi her 14 saniyede bir kazanılabilir."
+    },
+    "1": {
+      "0": "Element Ustalığını <cryo>125</cryo> artırır. Kuşanan karakter bir kalkan oluşturduktan sonra 15sn boyunca \"Gecenin Aynası\" etkisi kazanılır: Mevcut aktif grup üyesi, yakındaki düşmanlara <cryo>%35</cryo> daha fazla Hasar verir. \"Gecenin Aynası\" etkisi her 14 saniyede bir kazanılabilir."
+    },
+    "2": {
+      "0": "Element Ustalığını <cryo>150</cryo> artırır. Kuşanan karakter bir kalkan oluşturduktan sonra 15 sn boyunca \"Gecenin Aynası\" etkisi kazanılır: Mevcut aktif grup üyesi, yakındaki düşmanlara <cryo>%42</cryo> daha fazla Hasar verir. \"Gecenin Aynası\" etkisi her 14 saniyede bir kazanılabilir."
+    },
+    "3": {
+      "0": "Element Ustalığını <cryo>175</cryo> artırır. Kuşanan karakter bir kalkan oluşturduktan sonra 15 sn boyunca \"Gecenin Aynası\" etkisi kazanılır: Mevcut aktif grup üyesi, yakındaki düşmanlara <cryo>%49</cryo> daha fazla Hasar verir. \"Gecenin Aynası\" etkisi her 14 saniyede bir kazanılabilir."
+    },
+    "4": {
+      "0": "Element Ustalığını <cryo>200</cryo> artırır. Kuşanan karakter bir kalkan oluşturduktan sonra 15 sn boyunca \"Gecenin Aynası\" etkisi kazanılır: Mevcut aktif grup üyesi, yakındaki düşmanlara <cryo>%56</cryo> daha fazla Hasar verir. \"Gecenin Aynası\" etkisi her 14 saniyede bir kazanılabilir."
+    }
+  }
+}

@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Attaque chargée</strong>",
         "1": "Effectue un <strong>tir visé</strong> plus précis infligeant davantage de DGT.",
-        "2": "Lors de la visée, la flèche se charge en élément Électro, infligeant d'importants <electro>DGT Électro</electro> quand elle est complètement chargée."
+        "2": "Lors de la visée, la flèche se charge en élément Électro, infligeant des <electro>DGT Électro</electro> quand elle est complètement chargée."
       },
       "plunging": {
         "0": "<strong>Attaque plongeante</strong>",

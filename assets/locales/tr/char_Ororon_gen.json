@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Yüklü Saldırı</strong>",
         "1": "Daha isabetli ve daha yüksek Hasar veren bir <strong>Hedefli Atış</strong> yapar.",
-        "2": "Nişan alırken okun ucunda Elektrik enerjisi birikir. Tam yüklü bir ok ağır <electro>Elektrik Hasarı</electro> verir."
+        "2": "Nişan alırken okun ucunda Elektrik enerjisi birikir. Tam yüklü bir ok <electro>Elektrik Hasarı</electro> verir."
       },
       "plunging": {
         "0": "<strong>Havadan Saldırı</strong>",

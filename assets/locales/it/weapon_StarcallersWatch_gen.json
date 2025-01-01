@@ -1,0 +1,24 @@
+{
+  "name": "Veglia del Chiamastelle",
+  "description": {
+    "0": "Una statua scolpita nella forma di un'aquila. Una reliquia sacra tramandata da generazioni dai Maestri del Vento della Notte."
+  },
+  "passiveName": "Offerte al vento e al sole",
+  "passiveDescription": {
+    "0": {
+      "0": "Aumenta la maestria elementale di <cryo>100</cryo>. Quando il personaggio che equipaggia l'arma crea uno scudo, ottiene l'effetto Specchio della Notte per 15 s: il membro attivo del gruppo infligge un <cryo>28%</cryo> di DAN aumentati agli avversari vicini. È possibile ottenere l'effetto Specchio della Notte una volta ogni 14 s."
+    },
+    "1": {
+      "0": "Aumenta la maestria elementale di <cryo>125</cryo>. Quando il personaggio che equipaggia l'arma crea uno scudo, ottiene l'effetto Specchio della Notte per 15 s: il membro attivo del gruppo infligge un <cryo>35%</cryo> di DAN aumentati agli avversari vicini. È possibile ottenere l'effetto Specchio della Notte una volta ogni 14 s."
+    },
+    "2": {
+      "0": "Aumenta la maestria elementale di <cryo>150</cryo>. Quando il personaggio che equipaggia l'arma crea uno scudo, ottiene l'effetto Specchio della Notte per 15 s: il membro attivo del gruppo infligge un <cryo>42%</cryo> di DAN aumentati agli avversari vicini. È possibile ottenere l'effetto Specchio della Notte una volta ogni 14 s."
+    },
+    "3": {
+      "0": "Aumenta la maestria elementale di <cryo>175</cryo>. Quando il personaggio che equipaggia l'arma crea uno scudo, ottiene l'effetto Specchio della Notte per 15 s: il membro attivo del gruppo infligge un <cryo>49%</cryo> di DAN aumentati agli avversari vicini. È possibile ottenere l'effetto Specchio della Notte una volta ogni 14 s."
+    },
+    "4": {
+      "0": "Aumenta la maestria elementale di <cryo>200</cryo>. Quando il personaggio che equipaggia l'arma crea uno scudo, ottiene l'effetto Specchio della Notte per 15 s: il membro attivo del gruppo infligge un <cryo>56%</cryo> di DAN aumentati agli avversari vicini. È possibile ottenere l'effetto Specchio della Notte una volta ogni 14 s."
+    }
+  }
+}

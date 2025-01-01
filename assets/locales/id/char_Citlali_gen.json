@@ -1,0 +1,186 @@
+{
+  "name": "Citlali",
+  "title": "Obsidian Opalstar",
+  "description": "Shaman Agung dari Penguasa Angin Malam, Nenek Itztli yang dihormati oleh orang dari semua suku.",
+  "constellationName": "Patina Anavatlaca",
+  "auto": {
+    "name": "Shadow-Stealing Spirit Vessel",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Attack</strong>",
+        "1": "Memanggil upacara rahasia turun-temurun Penguasa Angin Malam, melancarkan hingga 3 serangan yang mengakibatkan <cryo>Cryo DMG</cryo>."
+      },
+      "charged": {
+        "0": "<strong>Charged Attack</strong>",
+        "1": "Memasuki Mode Membidik dan mengonsumsi sejumlah Stamina setelah melepaskan tombol Tahan untuk mengonsumsi sejumlah Stamina dan melemparkan sebuah Frost Star ke arah bidikan, mengakibatkan <cryo>Cryo DMG</cryo> terhadap musuh di sepanjang jalurnya."
+      },
+      "plunging": {
+        "0": "<strong>Plunging Attack</strong>",
+        "1": "Mengumpulkan kekuatan Cryo, menerjang tanah, menyerang musuh di jalur terjangan, dan mengakibatkan <cryo>Cryo DMG Area</cryo> saat mendarat."
+      }
+    },
+    "skillParams": {
+      "0": "DMG Tahap 1",
+      "1": "DMG Tahap 2",
+      "2": "DMG Tahap 3",
+      "3": "DMG Charged Attack",
+      "4": "Konsumsi Stamina Charged Attack",
+      "5": "DMG Selama Plunging",
+      "6": "DMG Plunging Attack Rendah/Tinggi",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Dawnfrost Darkstar",
+    "description": {
+      "0": "Dengan landasan kontrak warisan ribuan tahun Penguasa Angin Malam, melancarkan Opal Shield dan memanggil \"Obsidian Tzitzimitl: Itzpapa\", makhluk yang (konon katanya) sangat menakutkan, mengakibatkan Nightsoul-aligned <cryo>Cryo DMG Area</cryo>.",
+      "1": "Penyerapan DMG Oval Shield didasarkan pada Elemental Mastery Citlali, dan memiliki 250% pertahanan terhadap <cryo>Cryo DMG</cryo>, dan saat menghasilkan Perisai, akan memberikan <cryo>efek Cryo</cryo> singkat kepada Citlali.",
+      "2": "Setelah dilancarkan, Citlali akan mendapatkan 24 poin Nightsoul dan memasuki status Nightsoul's Blessing.",
+      "3": "<br/>",
+      "4": "<strong>Nightsoul's Blessing: Citlali</strong>",
+      "5": "Saat Itzpapa meninggalkan medan pertempuran, Nightsoul's Blessing Citlali akan berakhir.",
+      "6": "<br/>",
+      "7": "<strong>Itzpapa</strong>",
+      "8": [
+        "Itzpapa akan mengikuti pergerakan Karakter.",
+        "Saat Citlali memiliki setidaknya 50 poin Nightsoul, Itzpapa akan memasuki status Opal Fire dan akan terus mengonsumsi poin Nightsoul, menghasilkan Frostfall Storm yang akan mengikuti Karakter dan menyerang musuh di dalam radius, mengakibatkan Nightsoul-aligned <cryo>Cryo DMG</cryo>.",
+        "Saat poin Nightsoul habis terpakai, status Opal Fire Itzpapa juga akan berakhir."
+      ],
+      "9": "<br/>",
+      "10": "<i>Biasanya, keinginan yang melambangkan bintang yang berbeda tidak dapat hidup berdampingan. Soalnya, mana mungkin warna hitam yang paling murni dapat memantulkan warna putih yang paling murni?",
+      "11": "Bagaimanapun juga, Citlali tidak pernah pilih-pilih soal warna, dan begitulah akhirnya kejadiannya.</i>"
+    },
+    "skillParams": {
+      "0": "DMG Obsidian Tzitzimitl",
+      "1": "Penyerapan Perisai",
+      "2": "Durasi Perisai",
+      "3": "Durasi Itzpapa",
+      "4": "Konsumsi Poin Nightsoul Itzpapa: Opal Fire",
+      "5": "DMG Frostfall Storm",
+      "6": "Batas Poin Nightsoul",
+      "7": "Cooldown",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Edict of Entwined Splendor",
+    "description": {
+      "0": "Memanggil \"sekutu\" yang berasal dari langit berbintang dan tanah luas, menghasilkan badai es untuk menyerang area depan dan mengakibatkan Nightsoul-aligned <cryo>Cryo DMG Area</cryo>, dan memulihkan poin Nightsoul Citlali dalam jumlah tertentu, serta memanggil satu <strong>Spiritvessel Skull</strong> terhadap setiap musuh, dengan maksimum 3 musuh di sekitar dalam radius area. Spiritvessel Skull akan meledak setelah beberapa saat, mengakibatkan Nightsoul-aligned <cryo>Cryo DMG Area</cryo>, dan akan memulihkan poin Nightsoul Citlali dalam jumlah tertentu.",
+      "1": "<br/>",
+      "2": "<i>\"Duh, sudah cukup soal 'bintang gelap, bintang opal'nya! Citlalin, Itzpapa, maju!\"</i>"
+    },
+    "skillParams": {
+      "0": "DMG Ice Storm",
+      "1": "Perolehan Poin Nightsoul Ice Storm",
+      "2": "DMG Spiritvessel Skull",
+      "3": "Perolehan Poin Nightsoul Spiritvessel Skull",
+      "4": "Cooldown",
+      "5": "Konsumsi Energy",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Mamaloaco's Frigid Rain",
+    "description": {
+      "0": "Selama Itzpapa ada di medan pertempuran, setelah Karakter sekitar dalam party memicu reaksi Frozen atau Melt, <pyro>Pyro</pyro> dan <hydro>Hydro</hydro> RES musuh yang terkena reaksi kali ini akan berkurang 20% selama 12 detik. Selain itu, Citlali akan memulihkan 16 poin Nightsoul, efek pemulihan dengan cara ini dapat terpicu maksimum sekali setiap 8 detik."
+    }
+  },
+  "passive2": {
+    "name": "Itzpapalotl's Star Garments",
+    "description": {
+      "0": "Selama Elemental Skill <strong>Dawnfrost Darkstar</strong>, DMG Frostfall Storm Itzpapa meningkat sebesar 90% Elemental Mastery Citlali. Selama Elemental Burst <strong>Edict of Entwined Splendor</strong>, DMG Ice Storm meningkat sebesar 1.200% Elemental Mastery Citlali.",
+      "1": "Selain itu, saat Karakter party di sekitar memicu Nightsoul Burst, Citlali akan memulihkan 4 poin Nightsoul."
+    }
+  },
+  "passive3": {
+    "name": "Night Realm's Gift: Smoke, Mirrors, and the Flowing Winds",
+    "description": {
+      "0": "Saat ada area dengan Phlogiston Mechanic di Natlan, Citlali bisa melancarkan Nightsoul Transmission: Citlali. Saat Karakter aktif sedang berada di udara dalam ketinggian tertentu dan mengganti Karakter menjadi Citlali: Citlali akan melompat tinggi ke atas dan melayang di udara dengan meminjam kekuatan \"White Obsidian Tzitzimitl: Citlalin\". Nightsoul Transmission party sendiri dapat terpicu sekali setiap 10 detik.",
+      "1": "<br/>",
+      "2": "Saat menggunakan Mode Membidik, Citlali akan memasuki status Spiritspeaker. Dalam status ini, Citlali bisa berinteraksi dengan \"Nightspirit Graffiti\" dan \"Nightspirit Sigil\" untuk mengambil informasi dan kekuatan dari dalamnya. Peraturan interaksi dengan objek-objek ini sama dengan peraturan interaksi Iktomisaurus.",
+      "3": "<br/>",
+      "4": "Selain itu, saat menahan tombol Melompat, Citlali akan mengonsumsi 75 poin Stamina untuk melompat tinggi ke atas. Saat ada area dengan Phlogiston Mechanic di Natlan, Citlali akan terlebih dulu mengonsumsi 5 poin Phlogiston untuk melompat ke ketinggian yang lebih tinggi lagi.",
+      "5": "Saat sedang berada di udara, Citlali bisa menahan Normal Attack dan mengonsumsi Phlogiston atau Stamina untuk memasuki Mode Membidik. Saat melakukan Charged Attack di udara, Citlali akan lebih dulu mengonsumsi 20 poin Phlogiston."
+    }
+  },
+  "passive": {
+    "name": "Songs of Profound Mystery",
+    "description": {
+      "0": "Saat ada area dengan Phlogiston Mechanic di Natlan, memicu Nightsoul Burst akan memulihkan 20 poin Phlogiston.",
+      "1": "Efek ini tidak aktif dalam Domain, Trounce Domain, atau Spiral Abyss"
+    }
+  },
+  "constellation1": {
+    "name": "Radiant Blades of Centzon Mimixcoah",
+    "description": {
+      "0": "Saat melancarkan Elemental Skill <strong>Dawnfrost Darkstar</strong>, Citlali akan mendapatkan efek \"Opalstar Vestments\" yang berlangsung hingga Itzpapa meninggalkan medan pertempuran: Selama aktif, Citlali akan mendapatkan 10 Stellar Blade. Saat Karakter aktif di sekitar selain Citlali mengakibatkan DMG dengan menggunakan Normal, Charged, Plunging Attack, atau Elemental Skill dan Elemental Burst, akan mengonsumsi 1 Stellar Blade untuk meningkatkan DMG sebesar 200% Elemental Mastery Citlali.",
+      "1": "Setelah Karakter sekitar di dalam party memicu reaksi Frozen atau Melt, Citlali akan mendapatkan 3 Stellar Blade tambahan. Efek ini dapat terpicu sekali setiap 8 detik.",
+      "2": "<br/>",
+      "3": "Saat melancarkan Elemental Skill <strong>Dawnfrost Darkstar</strong>, jumlah lapisan Stellar Blade akan diulang.",
+      "4": "Selain itu, saat Citlali melompat, atau membidik/melakukan Charged Attack saat di udara, konsumsi Phlogiston akan berkurang 45%."
+    }
+  },
+  "constellation2": {
+    "name": "Heart Devourer's Travail",
+    "description": {
+      "0": "Elemental Mastery Citlali meningkat 125 poin. Karakter lain yang berada dalam perlindungan Opal Shield, atau diikuti oleh Itzpapa, akan mendapat peningkatan Elemental Mastery sebesar 250 poin.",
+      "1": "Selain itu, saat melancarkan Elemental Skill <strong>Dawnfrost Darkstar</strong>, juga akan memberikan Opal Shield bagi Karakter aktif di sekitar.",
+      "2": "<br/>",
+      "3": "Selain itu, efek Talenta Pasif \"Mamaloaco's Frigid Rain\" mendapatkan peningkatan sebagai berikut:",
+      "4": "Selama Itzpapa berada di medan pertempuran, setelah Karakter party di sekitar memicu reaksi Frozen atau Melt, <pyro>Pyro</pyro> dan <hydro>Hydro</hydro> RES musuh yang terkena reaksi kali ini akan berkurang lagi sebesar 20% selama 12 detik. Efek ini harus membuka Talenta Pasif \"Mamaloaco's Frigid Rain\" terlebih dahulu."
+    }
+  },
+  "constellation3": {
+    "name": "Cloud Serpent's Feathered Crown",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Skill <strong>Dawnfrost Darkstar</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation4": {
+    "name": "Death Defier's Spirit Skull",
+    "description": {
+      "0": "Ketika Elemental Skill <strong>Dawnfrost Darkstar</strong> aktif, saat Frostfall Storm Itzpapa mengenai musuh, akan memanggil satu <strong>Obsidian Spiritvessel Skull</strong> tambahan. Saat Obsidian Spiritvessel Skull yang dipanggil dengan cara ini meledak, akan mengakibatkan Nightsoul-aligned <cryo>Cryo DMG Area</cryo> sebesar 1.800% Elemental Mastery Citlali, dan akan memulihkan 16 poin Nightsoul dan 8 Energy Citlali. Efek ini dapat terpicu sekali setiap 8 detik. DMG ini tidak dianggap sebagai DMG Elemental Burst."
+    }
+  },
+  "constellation5": {
+    "name": "Nemontemi's Hex",
+    "description": {
+      "0": "Meningkatkan 3 level Elemental Burst <strong>Edict of Entwined Splendor</strong>.",
+      "1": "Maksimum: Lv. 15."
+    }
+  },
+  "constellation6": {
+    "name": "Teoiztac's Secret Pact",
+    "description": {
+      "0": "Itzpapa yang dipanggil oleh Elemental Skill <strong>Dawnfrost Darkstar</strong> akan selalu berada dalam status Opal Fire. Saat poin Nightsoul habis terkonsumsi, status Opal Fire Itzpapa tidak akan berakhir.",
+      "1": "Selain itu, saat melancarkan Elemental Skill <strong>Dawnfrost Darkstar</strong>, Itzpapa akan mengonsumsi seluruh poin Nightsoul, dan selama berada di medan pertempuran dia akan terus mengonsumsi poin Nightsoul. Setiap poin Nightsoul yang dikonsumsi dengan cara ini akan memberikan 1 poin \"Cifra of the Secret Law\" pada Citlali.",
+      "2": "Maksimal 40 poin yang bisa didapatkan dengan cara ini, dan setiap poin yang didapatkan Citlali akan memberikan <pyro>Pyro</pyro> dan <hydro>Hydro</hydro> DMG Bonus kepada seluruh anggota party di sekitar sebesar 1,5% dan akan meningkatkan DMG yang diakibatkan Citlali sebesar 2,5%.",
+      "3": "Saat Itzpapa meninggalkan medan tempur, atau saat Citlali menggunakan Elemental Skill lagi, semua poin yang dimilikinya akan hilang."
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Die tausend flammenden Sonnen",
+  "description": {
+    "0": "Ein Zweihänder, der wie die aufgehende Sonne leuchtet. Er hat das Ende und das Wiederaufflammen unzähliger Sonnen miterlebt."
+  },
+  "passiveName": "Morgendämmerung der wieder aufflammenden untergehenden Sonne",
+  "passiveDescription": {
+    "0": {
+      "0": "Verleiht beim Einsetzen der Elementarfähigkeit oder Spezialfähigkeit den Effekt „Brennendes Licht“: Erhöht 6 s lang den KSCH um <cryo>20 %</cryo> sowie den ANG um <cryo>28 %</cryo>, 10 s Abklingzeit.",
+      "1": "Verlängert beim Verursachen von Elementar-Schaden durch Standardangriffe oder heftige Schläge während der Wirkungsdauer den diesmaligen Effekt „Brennendes Licht“ um 2 s und insgesamt um bis zu 6 s, 1 s Abklingzeit.",
+      "2": "Erhöht den Effekt von „Brennendes Licht“ unter dem Nachtseelensegen-Zustand um 75 % und lässt die Wirkungsdauer des Effekts „Brennendes Licht“ nicht ablaufen, wenn der Träger inaktiv in der Truppe ist."
+    },
+    "1": {
+      "0": "Verleiht beim Einsetzen der Elementarfähigkeit oder Spezialfähigkeit den Effekt „Brennendes Licht“: Erhöht 6 s lang den KSCH um <cryo>25 %</cryo> sowie den ANG um <cryo>35 %</cryo>, 10 s Abklingzeit.",
+      "1": "Verlängert beim Verursachen von Elementar-Schaden durch Standardangriffe oder heftige Schläge während der Wirkungsdauer den diesmaligen Effekt „Brennendes Licht“ um 2 s und insgesamt um bis zu 6 s, 1 s Abklingzeit.",
+      "2": "Erhöht den Effekt von „Brennendes Licht“ unter dem Nachtseelensegen-Zustand um 75 % und lässt die Wirkungsdauer des Effekts „Brennendes Licht“ nicht ablaufen, wenn der Träger inaktiv in der Truppe ist."
+    },
+    "2": {
+      "0": "Verleiht beim Einsetzen der Elementarfähigkeit oder Spezialfähigkeit den Effekt „Brennendes Licht“: Erhöht 6 s lang den KSCH um <cryo>30 %</cryo> sowie den ANG um <cryo>42 %</cryo>, 10 s Abklingzeit.",
+      "1": "Verlängert beim Verursachen von Elementar-Schaden durch Standardangriffe oder heftige Schläge während der Wirkungsdauer den diesmaligen Effekt „Brennendes Licht“ um 2 s und insgesamt um bis zu 6 s, 1 s Abklingzeit.",
+      "2": "Erhöht den Effekt von „Brennendes Licht“ unter dem Nachtseelensegen-Zustand um 75 % und lässt die Wirkungsdauer des Effekts „Brennendes Licht“ nicht ablaufen, wenn der Träger inaktiv in der Truppe ist."
+    },
+    "3": {
+      "0": "Verleiht beim Einsetzen der Elementarfähigkeit oder Spezialfähigkeit den Effekt „Brennendes Licht“: Erhöht 6 s lang den KSCH um <cryo>35 %</cryo> sowie den ANG um <cryo>49 %</cryo>, 10 s Abklingzeit.",
+      "1": "Verlängert beim Verursachen von Elementar-Schaden durch Standardangriffe oder heftige Schläge während der Wirkungsdauer den diesmaligen Effekt „Brennendes Licht“ um 2 s und insgesamt um bis zu 6 s, 1 s Abklingzeit.",
+      "2": "Erhöht den Effekt von „Brennendes Licht“ unter dem Nachtseelensegen-Zustand um 75 % und lässt die Wirkungsdauer des Effekts „Brennendes Licht“ nicht ablaufen, wenn der Träger inaktiv in der Truppe ist."
+    },
+    "4": {
+      "0": "Verleiht beim Einsetzen der Elementarfähigkeit oder Spezialfähigkeit den Effekt „Brennendes Licht“: Erhöht 6 s lang den KSCH um <cryo>40 %</cryo> sowie den ANG um <cryo>56 %</cryo>, 10 s Abklingzeit.",
+      "1": "Verlängert beim Verursachen von Elementar-Schaden durch Standardangriffe oder heftige Schläge während der Wirkungsdauer den diesmaligen Effekt „Brennendes Licht“ um 2 s und insgesamt um bis zu 6 s, 1 s Abklingzeit.",
+      "2": "Erhöht den Effekt von „Brennendes Licht“ unter dem Nachtseelensegen-Zustand um 75 % und lässt die Wirkungsdauer des Effekts „Brennendes Licht“ nicht ablaufen, wenn der Träger inaktiv in der Truppe ist."
+    }
+  }
+}
