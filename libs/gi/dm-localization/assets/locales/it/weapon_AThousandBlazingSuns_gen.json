@@ -1,0 +1,34 @@
+{
+  "name": "Mille soli ardenti",
+  "description": {
+    "0": "Uno spadone che risplende come il sole che sorge. È stato testimone dello spegnersi e del rinfocolarsi di innumerevoli soli."
+  },
+  "passiveName": "Il tramonto riaccende l'alba",
+  "passiveDescription": {
+    "0": {
+      "0": "Usare un'abilità elementale o un Tripudio elementale conferisce l'effetto Fulgore ardente, che aumenta i DAN da CRIT e l'ATT rispettivamente di un <cryo>20%</cryo> e di un <cryo>28%</cryo> per 6 s. Quest'effetto può attivarsi una volta ogni 10 s.",
+      "1": "Quando un'iterazione di Fulgore ardente è attiva, infliggere DAN elementali con gli attacchi normali o caricati ne aumenta la durata di 2 s. L'effetto può attivarsi una volta ogni 1 s, per un'estensione massima di 6 s.",
+      "2": "Inoltre, quando il personaggio che equipaggia l'arma è in stato di Grazia dell'Anima della Notte, gli effetti di Fulgore ardente aumentano di un 75%, e la sua durata non diminuisce quando il personaggio non è in campo."
+    },
+    "1": {
+      "0": "Usare un'abilità elementale o un Tripudio elementale conferisce l'effetto Fulgore ardente, che aumenta i DAN da CRIT e l'ATT rispettivamente di un <cryo>25%</cryo> e di un <cryo>35%</cryo> per 6 s. Quest'effetto può attivarsi una volta ogni 10 s.",
+      "1": "Quando un'iterazione di Fulgore ardente è attiva, infliggere DAN elementali con gli attacchi normali o caricati ne aumenta la durata di 2 s. L'effetto può attivarsi una volta ogni 1 s, per un'estensione massima di 6 s.",
+      "2": "Inoltre, quando il personaggio che equipaggia l'arma è in stato di Grazia dell'Anima della Notte, gli effetti di Fulgore ardente aumentano di un 75%, e la sua durata non diminuisce quando il personaggio non è in campo."
+    },
+    "2": {
+      "0": "Usare un'abilità elementale o un Tripudio elementale conferisce l'effetto Fulgore ardente, che aumenta i DAN da CRIT e l'ATT rispettivamente di un <cryo>30%</cryo> e di un <cryo>42%</cryo> per 6 s. Quest'effetto può attivarsi una volta ogni 10 s.",
+      "1": "Quando un'iterazione di Fulgore ardente è attiva, infliggere DAN elementali con gli attacchi normali o caricati ne aumenta la durata di 2 s. L'effetto può attivarsi una volta ogni 1 s, per un'estensione massima di 6 s.",
+      "2": "Inoltre, quando il personaggio che equipaggia l'arma è in stato di Grazia dell'Anima della Notte, gli effetti di Fulgore ardente aumentano di un 75%, e la sua durata non diminuisce quando il personaggio non è in campo."
+    },
+    "3": {
+      "0": "Usare un'abilità elementale o un Tripudio elementale conferisce l'effetto Fulgore ardente, che aumenta i DAN da CRIT e l'ATT rispettivamente di un <cryo>35%</cryo> e di un <cryo>49%</cryo> per 6 s. Quest'effetto può attivarsi una volta ogni 10 s.",
+      "1": "Quando un'iterazione di Fulgore ardente è attiva, infliggere DAN elementali con gli attacchi normali o caricati ne aumenta la durata di 2 s. L'effetto può attivarsi una volta ogni 1 s, per un'estensione massima di 6 s.",
+      "2": "Inoltre, quando il personaggio che equipaggia l'arma è in stato di Grazia dell'Anima della Notte, gli effetti di Fulgore ardente aumentano di un 75%, e la sua durata non diminuisce quando il personaggio non è in campo."
+    },
+    "4": {
+      "0": "Usare un'abilità elementale o un Tripudio elementale conferisce l'effetto Fulgore ardente, che aumenta i DAN da CRIT e l'ATT rispettivamente di un <cryo>40%</cryo> e di un <cryo>56%</cryo> per 6 s. Quest'effetto può attivarsi una volta ogni 10 s.",
+      "1": "Quando un'iterazione di Fulgore ardente è attiva, infliggere DAN elementali con gli attacchi normali o caricati ne aumenta la durata di 2 s. L'effetto può attivarsi una volta ogni 1 s, per un'estensione massima di 6 s.",
+      "2": "Inoltre, quando il personaggio che equipaggia l'arma è in stato di Grazia dell'Anima della Notte, gli effetti di Fulgore ardente aumentano di un 75%, e la sua durata non diminuisce quando il personaggio non è in campo."
+    }
+  }
+}

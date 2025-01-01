@@ -13,7 +13,7 @@
       "charged": {
         "0": "<strong>Heftiger Schlag</strong>",
         "1": "Führt einen <strong>gezielten Schuss</strong> mit höherem Schaden und höherer Genauigkeit aus.",
-        "2": "Konzentriert die Elektro-Kraft während des Zielens an der Pfeilspitze, die voll aufgeladen hohen <electro>Elektro-Schaden</electro> verursacht."
+        "2": "Konzentriert die Elektro-Kraft während des Zielens an der Pfeilspitze, die voll aufgeladen <electro>Elektro-Schaden</electro> verursacht."
       },
       "plunging": {
         "0": "<strong>Angriff aus dem Fall</strong>",

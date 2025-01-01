@@ -1,0 +1,24 @@
+{
+  "name": "Veillée d'appel d'étoiles",
+  "description": {
+    "0": "Une statue sculptée en forme d'aigle. C'est une relique sacrée transmise par les Maîtres du vent nocturne."
+  },
+  "passiveName": "Offrande au vent et au soleil",
+  "passiveDescription": {
+    "0": {
+      "0": "La maîtrise élémentaire augmente de <cryo>100</cryo> pts et le personnage équipé de l'arme obtient l'effet Miroir nocturne pendant 15 s après avoir créé un bouclier : les DGT infligés par votre personnage déployé aux ennemis proches augmentent de <cryo>28 %</cryo>. L'effet Miroir nocturne peut être déclenché une fois toutes les 14 s maximum."
+    },
+    "1": {
+      "0": "La maîtrise élémentaire augmente de <cryo>125</cryo> pts et le personnage équipé de l'arme obtient l'effet Miroir nocturne pendant 15 s après avoir créé un bouclier : les DGT infligés par votre personnage déployé aux ennemis proches augmentent de <cryo>35 %</cryo>. L'effet Miroir nocturne peut être déclenché une fois toutes les 14 s maximum."
+    },
+    "2": {
+      "0": "La maîtrise élémentaire augmente de <cryo>150</cryo> pts et le personnage équipé de l'arme obtient l'effet Miroir nocturne pendant 15 s après avoir créé un bouclier : les DGT infligés par votre personnage déployé aux ennemis proches augmentent de <cryo>42 %</cryo>. L'effet Miroir nocturne peut être déclenché une fois toutes les 14 s maximum."
+    },
+    "3": {
+      "0": "La maîtrise élémentaire augmente de <cryo>175</cryo> pts et le personnage équipé de l'arme obtient l'effet Miroir nocturne pendant 15 s après avoir créé un bouclier : les DGT infligés par votre personnage déployé aux ennemis proches augmentent de <cryo>49 %</cryo>. L'effet Miroir nocturne peut être déclenché une fois toutes les 14 s maximum."
+    },
+    "4": {
+      "0": "La maîtrise élémentaire augmente de <cryo>200</cryo> pts et le personnage équipé de l'arme obtient l'effet Miroir nocturne pendant 15 s après avoir créé un bouclier : les DGT infligés par votre personnage déployé aux ennemis proches augmentent de <cryo>56 %</cryo>. L'effet Miroir nocturne peut être déclenché une fois toutes les 14 s maximum."
+    }
+  }
+}

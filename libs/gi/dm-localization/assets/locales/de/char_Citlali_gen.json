@@ -1,0 +1,186 @@
+{
+  "name": "Citlali",
+  "title": "Sternenobsidian",
+  "description": "Die große Schamanin der Meister des Nachtwinds Oma Itztli, die alle Stammesmitglieder mit Furcht verehren.",
+  "constellationName": "Patina Anavatlaca",
+  "auto": {
+    "name": "Schattenfesseln der schlummernden Seelen",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Erweckt das geheime Ritual, das von den Meistern des Nachtwinds von Generation zu Generation weitergegeben wurde, führt bis zu 3 Angriffe aus und verursacht dabei <cryo>Kryo-Schaden</cryo>."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Wechselt in den Zielmodus und verbraucht beim Beenden des Gedrückthaltens eine gewisse Menge Ausdauer, um einen kalten Stern in die Zielrichtung zu schießen und allen Gegnern in der Bahn <cryo>Kryo-Schaden</cryo> zuzufügen."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Konzentriert die Kraft des Eises, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <cryo>Kryo-Flächenschaden</cryo>."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH heftiger Schläge",
+      "4": "Ausdauerverbrauch heftiger Schläge",
+      "5": "SCH beim Fallen",
+      "6": "SCH beim Fallen aus niedriger/großer Höhe",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Schwarzer Stern am frostigen Tag",
+    "description": {
+      "0": "Im Einklang mit dem geheimen Pakt, den die Meister des Nachtwinds seit Tausenden von Jahren überliefern, entfaltet Citlali den Opal-Schild, beschwört den (Gerüchten zufolge) unvergleichlich furchterregenden „Obsidian-Tzitzimitl“ Itzpapa und verursacht dabei mit Nachtseelen versehenen <cryo>Kryo-Flächenschaden</cryo>.",
+      "1": "Die Schildstärke des Opal-Schilds basiert auf Citlalis Elementarkunde und hält bei <cryo>Kryo-Schaden</cryo> 250 % ab. Verleiht Citlali beim Erschaffen des Opal-Schilds für kurze Zeit das <cryo>Kryo-Attribut</cryo>.",
+      "2": "Citlali erhält nach dem Auslösen 24 Nachtseelenpunkte und tritt in den Zustand „Nachtseelensegen“ ein.",
+      "3": "<br/>",
+      "4": "<strong>Nachtseelensegen – Citlali</strong>",
+      "5": "Wenn Itzpapa das Schlachtfeld verlässt, endet Citlalis „Nachtseelensegen“.",
+      "6": "<br/>",
+      "7": "<strong>Itzpapa</strong>",
+      "8": [
+        " Itzpapa wird der Figur folgen.",
+        " Wenn Citlali mindestens 50 Nachtseelenpunkte hat, tritt Itzpapa in den Zustand „Glühen“ ein, wobei die Nachtseelenpunkte fortlaufend verbraucht werden und ein der Figur folgender Erfrierungssturm erzeugt wird, der die Gegner im Wirkungsbereich angreift und mit Nachtseelen versehenen <cryo>Kryo-Schaden</cryo> verursacht.",
+        " Sobald die Nachtseelenpunkte aufgebraucht sind, endet auch der Zustand „Glühen“ von Itzpapa."
+      ],
+      "9": "<br/>",
+      "10": "<i>Im Allgemeinen können Willen, die unterschiedliche Sterne symbolisieren, nicht koexistieren: Wie kann sich reines Schwarz in absolutem Weiß widerspiegeln?",
+      "11": "Citlali ist jedoch nie wählerisch, was Farben angeht, und so hat sich das Ganze eben ergeben.</i>"
+    },
+    "skillParams": {
+      "0": "SCH Obsidian-Tzitzimitl",
+      "1": "Schildstärke",
+      "2": "Schilddauer",
+      "3": "Dauer von Itzpapa",
+      "4": "Nachtseelenpunkteverbrauch von Itzpapa – Glühen",
+      "5": "SCH Erfrierungssturm",
+      "6": "Max. Nachtseelenpunkte",
+      "7": "Abklingzeit",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Edikt der verflochtenen Pracht",
+    "description": {
+      "0": "Ruft die „Verbündeten“ des Sternenhimmels und der weiten Erde herbei, lässt einen eisigen Sturm den Bereich vor sich bombardieren, der mit Nachtseelen versehenen <cryo>Kryo-Flächenschaden</cryo> verursacht, Citlali eine bestimmte Menge an Nachtseelenpunkten wiederherstellt und in der Nähe von bis zu 3 im Wirkungsbereich befindlichen Gegnern jeweils 1 <strong>Geistgefäß-Schädel</strong> beschwört. Der Geistgefäß-Schädel explodiert nach einer gewissen Zeit, verursacht dabei mit Nachtseelen versehenen <cryo>Kryo-Flächenschaden</cryo> und stellt Citlali eine bestimmte Menge an Nachtseelenpunkten wieder her.",
+      "1": "<br/>",
+      "2": "<i>„Ach, jetzt reicht es mit diesem Opal- und Obsidian-Zeug! Citlalin, Itzpapa, schnappt sie euch!“</i>"
+    },
+    "skillParams": {
+      "0": "SCH eisiger Sturm",
+      "1": "Nachtseelenpunktebonus durch eisigen Sturm",
+      "2": "SCH Geistgefäß-Schädel",
+      "3": "Nachtseelenpunktebonus durch Geistgefäß-Schädel",
+      "4": "Abklingzeit",
+      "5": "Elementarenergie",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Mamaloacos eisiger Regen",
+    "description": {
+      "0": "Verringert, wenn Itzpapa auf dem Feld ist und ein in der Nähe befindliches Truppenmitglied die Reaktionen „Gefroren“ oder „Schmelzen“ auslöst, den <pyro>Pyro-</pyro> sowie <hydro>Hydro-</hydro>WDS des von der diesmaligen Reaktion betroffenen Gegners 12 s lang um 20 %. Stellt Citlali selbst außerdem 16 Nachtseelenpunkte wieder her, 8 s Abklingzeit für die Wiederherstellung der Nachtseelenpunkte auf diese Weise."
+    }
+  },
+  "passive2": {
+    "name": "Itzpapalotls Sterngewänder",
+    "description": {
+      "0": "Erhöht den durch den Erfrierungssturm von Itzpapa der Elementarfähigkeit <strong>Schwarzer Stern am frostigen Tag</strong> verursachten Schaden um 90 % von Citlalis Elementarkunde; erhöht den durch den eisigen Sturm der Spezialfähigkeit <strong>Edikt der verflochtenen Pracht</strong> verursachten Schaden um 1.200 % von Citlalis Elementarkunde.",
+      "1": "Stellt Citlali selbst außerdem 4 Nachtseelenpunkte wieder her, wenn ein in der Nähe befindliches Truppenmitglied den Nachtseelenaufbruch auslöst."
+    }
+  },
+  "passive3": {
+    "name": "Geschenk des Nachtreichs – Rauch, Spiegel und die fließenden Winde",
+    "description": {
+      "0": "Beim Aufenthalt in einem Gebiet mit Phlogiston-Mechanismus in Natlan kann die Nachtseelen-Übertragung – Citlali verwendet werden. Wenn die aktuelle Figur sich in einer gewissen Höhe in der Luft befindet, wird beim Wechsel zu Citlali Folgendes ausgelöst: Citlali springt hoch hinauf und gleitet in der Luft mithilfe des „Opal-Tzitzimitl – Citlalin“. 10 s Abklingzeit für das Auslösen der Nachtseelen-Übertragung in der eigenen Truppe.",
+      "1": "<br/>",
+      "2": "Beim Gedrückthalten zum Zielen wechselt Citlali in den „Seelensprecher“-Zustand, der es ihr ermöglicht, mit „Nachtgeist-Graffitis“ und „Nachtgeist-Mustern“ zu interagieren und ihre Informationen und Kräfte zu extrahieren. Die Regeln für die Interaktion mit diesen Objekten folgen den Regeln der Iktomisaurier.",
+      "3": "<br/>",
+      "4": "Citlali verbraucht außerdem beim Gedrückthalten zum Springen 75 Punkte Ausdauer und springt dann hoch. Beim Aufenthalt in einem Gebiet mit Phlogiston-Mechanismus in Natlan verbraucht Citlali vorrangig 5 Punkte Phlogiston und springt damit noch höher.",
+      "5": "In der Luft kann der Standardangriff gedrückt gehalten werden, damit Citlali Phlogiston oder Ausdauer verbraucht, um zu zielen oder heftige Schläge einzusetzen. Verbraucht, wenn Citlali in der Luft heftige Schläge einsetzt, vorrangig 20 Punkte Phlogiston."
+    }
+  },
+  "passive": {
+    "name": "Mysteriöse Gesänge",
+    "description": {
+      "0": "Stellt beim Auslösen des Nachtseelenaufbruchs beim Aufenthalt in einem Gebiet mit Phlogiston-Mechanismus in Natlan 20 Punkte Phlogiston wieder her.",
+      "1": "Dieser Effekt gilt nicht in Sphären, Gebietssäuberungen oder im Gewundenen Abgrund."
+    }
+  },
+  "constellation1": {
+    "name": "Klingenlicht von Centzon Mimixcoah",
+    "description": {
+      "0": "Verleiht Citlali, wenn sie ihre Elementarfähigkeit <strong>Schwarzer Stern am frostigen Tag</strong> einsetzt, den Effekt „Opalstern-Gewänder“, bis Itzpapa das Feld verlässt. Gibt ihr während der Wirkungsdauer 10 Stapelungen „Stellar-Klinge“. Verbraucht, wenn eine aktuelle Figur in der Nähe außer Citlali mit Standardangriffen, heftigen Schlägen, Angriffen aus dem Fall, Elementarfähigkeiten oder Spezialfähigkeiten Schaden verursacht, 1 Stapelung „Stellar-Klinge“ und erhöht damit den verursachten Schaden um 200 % ihrer Elementarkunde.",
+      "1": "Nach dem Auslösen der Reaktionen „Gefroren“ oder „Schmelzen“ durch ein Truppenmitglied in der Nähe erhält Citlali zusätzlich 3 Stapelungen „Stellar-Klinge“, 8 s Abklingzeit.",
+      "2": "<br/>",
+      "3": "Das Einsetzen der Elementarfähigkeit <strong>Schwarzer Stern am frostigen Tag</strong> setzt die Stapelungen der „Stellar-Klinge“ zurück.",
+      "4": "Verringert außerdem den Phlogistonverbrauch von Citlali beim Hochspringen und beim Zielen oder Ausführen von heftigen Schlägen in der Luft um 45 %."
+    }
+  },
+  "constellation2": {
+    "name": "Reise des Herzensverschlingers",
+    "description": {
+      "0": "Erhöht Citlalis Elementarkunde um 125 Punkte. Erhöht die Elementarkunde anderer Figuren im Schutz vom Opal-Schild sowie derer, denen Itzpapa folgt, um 250 Punkte.",
+      "1": "Verleiht außerdem anderen aktuellen Figuren in der Nähe beim Auslösen der Elementarfähigkeit <strong>Schwarzer Stern am frostigen Tag</strong> ebenfalls den Opal-Schild.",
+      "2": "<br/>",
+      "3": "Verstärkt den Effekt des passiven Talents „Mamaloacos eisiger Regen“:",
+      "4": "Verringert, wenn Itzpapa auf dem Feld ist und ein in der Nähe befindliches Truppenmitglied die Reaktionen „Gefroren“ oder „Schmelzen“ auslöst, den <pyro>Pyro-</pyro> sowie <hydro>Hydro-</hydro>WDS des von der diesmaligen Reaktion betroffenen Gegners 12 s lang zusätzlich um 20 %. Das passive Talent „Mamaloacos eisiger Regen“ muss für diesen Effekt zuerst freigeschaltet werden."
+    }
+  },
+  "constellation3": {
+    "name": "Gefiederte Krone der Wolkenschlange",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong>Schwarzer Stern am frostigen Tag</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "Seelenschädel des Todesverteidigers",
+    "description": {
+      "0": "Erschafft zusätzlich einen <strong>Geistgefäß-Schädel – Schwarzer Stern</strong>, wenn der Erfrierungssturm von Itzpapa der Elementarfähigkeit <strong>Schwarzer Stern am frostigen Tag</strong> einen Gegner trifft. Der auf diese Weise erschaffene Geistgefäß-Schädel verursacht beim Explodieren mit Nachtseelen versehenen <cryo>Kryo-Flächenschaden</cryo> in Höhe von 1.800 % von Citlalis Elementarkunde und stellt ihr 16 Nachtseelenpunkte sowie 8 Punkte Elementarenergie wieder her, 8 s Abklingzeit. Hierdurch verursachter Schaden wird nicht als Schaden der Spezialfähigkeit gewertet."
+    }
+  },
+  "constellation5": {
+    "name": "Nemontemis Fluch",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Edikt der verflochtenen Pracht</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "Teoiztacs Geheimpakt",
+    "description": {
+      "0": "Lässt den mit der Elementarfähigkeit <strong>Schwarzer Stern am frostigen Tag</strong> beschworenen Itzpapa von Anfang bis Ende im Zustand Glühen verweilen, selbst wenn alle Nachtseelenpunkte aufgebraucht sind.",
+      "1": "Itzpapa verbraucht beim Auslösen der Elementarfähigkeit <strong>Schwarzer Stern am frostigen Tag</strong> sofort alle Nachtseelenpunkte und während seiner Wirkungsdauer fortlaufend weitere. Für jeden auf die oben genannte Weise verbrauchten Nachtseelenpunkt erhält Citlali 1 Punkt „Zahl der Bestimmungen“.",
+      "2": "Die Obergrenze der „Zahl der Bestimmungen“ beträgt 40 Punkte. Für jeden Punkt „Zahl der Bestimmungen“ von Citlali werden allen Truppenmitgliedern in der Nähe ein <pyro>Pyro-SCH-Bonus</pyro> sowie ein <hydro>Hydro-SCH-Bonus</hydro> von 1,5 % und Citlali ein SCH-Bonus von 2,5 % verliehen.",
+      "3": "Die gesamte „Zahl der Bestimmungen“ von Citlali wird beim Verlassen des Schlachtfeldes von Itzpapa sowie beim erneuten Einsetzen der Elementarfähigkeit entfernt."
+    }
+  }
+}

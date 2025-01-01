@@ -32,7 +32,7 @@ type CharacterSkillParams = {
   constellation6: number[]
 }
 
-type SKillParamCharacterKey =
+type SkillParamCharacterKey =
   | NonTravelerCharacterKey
   | 'TravelerAnemoF'
   | 'TravelerAnemoM'
@@ -44,8 +44,10 @@ type SKillParamCharacterKey =
   | 'TravelerGeoM'
   | 'TravelerHydroF'
   | 'TravelerHydroM'
+  | 'TravelerPyroF'
+  | 'TravelerPyroM'
 export type SkillParamData = Record<
-  SKillParamCharacterKey,
+  SkillParamCharacterKey,
   CharacterSkillParams
 >
 
@@ -149,7 +151,8 @@ export default function characterSkillParam() {
 
     if (candSkillDepotIds.length) {
       //Traveler
-      const [_1, _2, hydro, anemo, _5, geo, electro, dendro] = candSkillDepotIds
+      const [_1, pyro, hydro, anemo, _5, geo, electro, dendro] =
+        candSkillDepotIds
       const gender = characterIdMap[charid] === 'TravelerF' ? 'F' : 'M'
       genTalentHash(
         ['TravelerAnemo' + gender],
@@ -170,6 +173,10 @@ export default function characterSkillParam() {
       genTalentHash(
         ['TravelerHydro' + gender],
         avatarSkillDepotExcelConfigData[hydro]
+      )
+      genTalentHash(
+        ['TravelerPyro' + gender],
+        avatarSkillDepotExcelConfigData[pyro]
       )
     } else {
       genTalentHash(

@@ -1,0 +1,200 @@
+{
+  "name": "Mavuika",
+  "title": "Lửa Thiêu Đêm Đen",
+  "description": "Lãnh đạo của Natlan, kế thừa Tên Cổ Kiongozi, thề sẽ dùng Lửa Thánh soi sáng tương lai của vương quốc chiến tranh.",
+  "constellationName": "Cung Bất Bại Dương Diệm",
+  "auto": {
+    "name": "Lửa Đỏ Dệt Sinh Mệnh",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Thực hiện tối đa 4 lần chém liên tiếp."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định để thi triển một đòn chém rực lửa về phía trước."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Trọng Kích",
+      "5": "Thể Lực Trọng Kích Tiêu Hao",
+      "6": "Sát Thương Khi Đáp",
+      "7": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Thời Khắc Lưu Danh",
+    "description": {
+      "0": "Dựa vào quyền năng \"chiến đấu\" để triệu hồi Vũ Trang Lửa Đỏ được kế thừa bởi vị thần con người, gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro> mang thuộc tính Dạ Hồn.",
+      "1": "Sau khi thi triển, Mavuika sẽ hồi phục điểm Dạ Hồn đến mức tối đa và vào trạng thái Dạ Hồn Chúc Phúc.",
+      "2": "<br/>",
+      "3": "<strong>Vũ Trang Lửa Đỏ</strong>",
+      "4": "Dựa vào cách thức Nhấn hoặc Nhấn Giữ để thi triển Vũ Trang Lửa Đỏ với hình thái khác nhau.",
+      "5": "<br/>",
+      "6": "<strong>Nhấn</strong>",
+      "7": "\"Giải Phóng Tên Thần\": Vũ Trang Lửa Đỏ sẽ được triệu hồi dưới hình dạng Vòng Hào Quang. Vòng Hào Quang sẽ đi theo nhân vật trong trận và tấn công kẻ địch xung quanh theo chu kỳ, gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro> mang thuộc tính Dạ Hồn.",
+      "8": "<br/>",
+      "9": "<strong>Nhấn Giữ</strong>",
+      "10": "\"Giải Phóng Tên Cổ\": Vũ Trang Lửa Đỏ sẽ được triệu hồi dưới hình dạng Mô Tô Vượt Lửa. Trong trạng thái này, Mavuika sẽ lái Mô Tô Vượt Lửa để di chuyển tốc độ cao, hoặc kích hoạt mô-đun đẩy dự phòng của nó để vượt qua nhiều loại địa hình khác nhau và bay trong thời gian ngắn. Đồng thời, Tấn Công Thường, Trọng Kích và Tấn Công Khi Đáp của Mavuika sẽ chuyển thành <pyro>Sát Thương Nguyên Tố Hỏa</pyro> không thể bị thay thế và mang thuộc tính Dạ Hồn. Khi tiến hành xung kích, cũng sẽ gây <pyro>Sát Thương Nguyên Tố Hỏa</pyro> mang thuộc tính Dạ Hồn cho kẻ địch trên đường.",
+      "11": "<br/>",
+      "12": "Khi ở trong trạng thái Dạ Hồn Chúc Phúc, nhấn Kỹ Năng Nguyên Tố sẽ có thể đổi hình thái Vũ Trang Lửa Đỏ. Vũ Trang Lửa Đỏ sẽ biến mất khi Dạ Hồn Chúc Phúc của Mavuika kết thúc.",
+      "13": "<br/>",
+      "14": "<strong>Dạ Hồn Chúc Phúc - Mavuika</strong>",
+      "15": "Dựa vào hình thái Vũ Trang Lửa Đỏ để duy trì tiêu hao điểm Dạ Hồn. Khi tiêu hao hết sẽ kết thúc trạng thái Dạ Hồn Chúc Phúc của Mavuika.",
+      "16": "<br/>",
+      "17": "<i>Nếu nói với Mavuika là Mô Tô Vượt Lửa cần phải có biển số để nhận dạng ở thế giới khác, thì cô ấy cũng sẽ vui vẻ mà nói:",
+      "18": "\"Đây là chiếc duy nhất ở đây đấy, nên tôi có quyền chọn biển số mà đúng không?\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Sát Thương Vòng Hào Quang",
+      "2": "Giãn Cách Vòng Hào Quang Tấn Công",
+      "3": "Sát Thương Mô Tô Vượt Lửa Tấn Công Thường Lần 1",
+      "4": "Sát Thương Mô Tô Vượt Lửa Tấn Công Thường Lần 2",
+      "5": "Sát Thương Mô Tô Vượt Lửa Tấn Công Thường Lần 3",
+      "6": "Sát Thương Mô Tô Vượt Lửa Tấn Công Thường Lần 4",
+      "7": "Sát Thương Mô Tô Vượt Lửa Tấn Công Thường Lần 5",
+      "8": "Sát Thương Mô Tô Vượt Lửa Xung Kích",
+      "9": "Sát Thương Mô Tô Vượt Lửa Trọng Kích Liên Tục",
+      "10": "Sát Thương Mô Tô Vượt Lửa Trọng Kích Kết Thúc",
+      "11": "Sát Thương Mô Tô Vượt Lửa Đáp Đất",
+      "12": "Giới Hạn Điểm Dạ Hồn",
+      "13": "CD",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Biển Lửa Rợp Trời",
+    "description": {
+      "0": "Hãy để tiếng lòng của mọi người truyền đến ngai thần trên trời cao.",
+      "1": "<strong>Kỹ Năng Nộ của Mavuika sẽ không dựa vào Năng Lượng Nguyên Tố, mà sẽ căn cứ vào \"Chiến Ý\".</strong>",
+      "2": "<br/>",
+      "3": "<strong>Chiến Ý</strong>",
+      "4": "Khi Mavuika có ít nhất 50% Chiến Ý, thì Mavuika sẽ có thể tiêu hao toàn bộ Chiến Ý để thi triển Kỹ Năng Nộ.",
+      "5": "Mavuika có thể thông qua các cách sau để nhận Chiến Ý:",
+      "6": [
+        "Khi trong trạng thái chiến đấu, nhân vật trong đội gần đó tiêu hao điểm Dạ Hồn sẽ chuyển hóa thành Chiến Ý của Mavuika.",
+        "Nhân vật trong đội gần đó khi Tấn Công Thường trúng kẻ địch, Mavuika sẽ nhận được 1.5 điểm Chiến Ý. Hiệu quả này mỗi 0.1s tối đa kích hoạt một lần."
+      ],
+      "7": "<br/>",
+      "8": "Sau khi thi triển, Mavuika sẽ nhận 10 điểm Dạ Hồn và vào trạng thái Dạ Hồn Chúc Phúc, lái Mô Tô Vượt Lửa nhảy lên không trung và tung Trụy Nhật Trảm cực mạnh xuống kẻ địch dưới đất, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> mang thuộc tính Dạ Hồn, đồng thời vào trạng thái \"Lò Lửa Sinh Tử\".",
+      "9": "<br/>",
+      "10": "<strong>Lò Lửa Sinh Tử</strong>",
+      "11": "Trong thời gian duy trì, các hành động của Mavuika sẽ không tiêu hao điểm Dạ Hồn nữa, và sẽ tăng khả năng Kháng Gián Đoạn của Mavuika. Đồng thời, dựa vào Chiến Ý khi thi triển để tăng sát thương gây ra từ Trụy Nhật Trảm và Tấn Công Thường, Trọng Kích của Giải Phóng Tên Cổ.",
+      "12": "Trạng thái Lò Lửa Sinh Tử sẽ bị xóa khi Mavuika rời trận.",
+      "13": "<br/>",
+      "14": "<i>\"Nhưng lần này, tôi muốn tự tay phá vỡ số mệnh.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "Thời Gian Duy Trì Lò Lửa Sinh Tử",
+      "2": "Tăng Sát Thương Trụy Nhật Trảm",
+      "3": "Tăng Sát Thương Tấn Công Thường Mô Tô Vượt Lửa",
+      "4": "Tăng Sát Thương Trọng Kích Mô Tô Vượt Lửa",
+      "5": "CD",
+      "6": "Giới Hạn Chiến Ý",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Quà Tặng Hoa Lửa",
+    "description": {
+      "0": "Khi nhân vật trong đội gần đó kích hoạt Dạ Hồn Bùng Nổ, Tấn Công của Mavuika sẽ tăng 30% trong 10s."
+    }
+  },
+  "passive2": {
+    "name": "\"Kiongozi\"",
+    "description": {
+      "0": "Sau khi thi triển Kỹ Năng Nộ <strong>Biển Lửa Rợp Trời</strong>, căn cứ vào mỗi điểm Chiến Ý khi kích hoạt để khiến sát thương gây ra của nhân vật trong trận hiện tại tăng 0.2%, thông qua cách thức này tối đa có thể khiến nhân vật ra trận trong đội hiện tại tăng 40% sát thương gây ra. Hiệu quả này duy trì 20s, đồng thời sẽ giảm dần về 0 trong thời gian duy trì."
+    }
+  },
+  "passive3": {
+    "name": "Món Quà Dạ Vực - Chế Độ Kiệt Quệ",
+    "description": {
+      "0": "Sau khi dùng hết điểm Dạ Hồn, Mavuika sẽ chuyển sang tiêu hao Phlogiston để duy trì Vũ Trang Lửa Đỏ - Mô Tô Vượt Lửa.",
+      "1": "Khi ở trong khu vực có cơ chế Phlogiston của Natlan, có thể tiến hành Dạ Hồn Chuyển Hóa - Mavuika. Nhân vật trong trận khi xung kích, leo trèo, bơi lội, ở trong trạng thái di chuyển đặc biệt của thiên phú hoặc đang ở độ cao nhất định trên không, đổi sang Mavuika ra trận sẽ kích hoạt: Mavuika sẽ vào trạng thái Dạ Hồn Chúc Phúc, đồng thời nhận được 50% mức điểm Dạ Hồn tối đa của Mavuika. Đội bản thân mỗi 10s có thể kích hoạt một lần Dạ Hồn Chuyển Hóa."
+    }
+  },
+  "passive": {
+    "name": "Ánh Lửa Xuyên Màn Đêm",
+    "description": {
+      "0": "Giảm 20% thời gian chờ kích hoạt Dạ Hồn Chuyển Hóa của đội."
+    }
+  },
+  "constellation1": {
+    "name": "Giảng Giải Của Dạ Thần",
+    "description": {
+      "0": "Giới hạn điểm Dạ Hồn của Mavuika tăng lên 120 điểm, hiệu suất nhận Chiến Ý tăng 25%.",
+      "1": "Ngoài ra, sau khi nhận Chiến Ý, Tấn Công của Mavuika tăng 40% trong 8s."
+    }
+  },
+  "constellation2": {
+    "name": "Cái Giá Của Tro Tàn",
+    "description": {
+      "0": "Khi trong trạng thái Dạ Hồn Chúc Phúc, Tấn Công Cơ Bản của Mavuika tăng 200 điểm, đồng thời căn cứ vào hình thái Vũ Trang Lửa Đỏ để nhận hiệu quả tương ứng:",
+      "1": [
+        "Vòng Hào Quang: Phòng Ngự của kẻ địch xung quanh giảm 20%.",
+        "Mô Tô Vượt Lửa: Tăng sát thương Tấn Công Thường, Trọng Kích và Trụy Nhật Trảm từ Kỹ Năng Nộ <strong>Biển Lửa Rợp Trời</strong> của Mavuika, mức tăng tương ứng 60%/90%/120% Tấn Công của cô ấy."
+      ]
+    }
+  },
+  "constellation3": {
+    "name": "Nắng Cháy Của Mặt Trời",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Biển Lửa Rợp Trời</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "Giác Ngộ Của Lãnh Đạo",
+    "description": {
+      "0": "Hiệu quả của thiên phú \"Kiongozi\" sẽ được cường hóa:",
+      "1": "Hiệu quả tăng sát thương sau khi thi triển Kỹ Năng Nộ <strong>Biển Lửa Rợp Trời</strong> sẽ không giảm theo thời gian nữa, đồng thời nhận thêm 10% Buff Sát Thương.",
+      "2": "Cần mở khóa thiên phú \"Kiongozi\"."
+    }
+  },
+  "constellation5": {
+    "name": "Hàm Ý Của Sự Thật",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Thời Khắc Lưu Danh</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "Giải Phóng \"Tên Của Nhân Loại\"",
+    "description": {
+      "0": "Vũ Trang Lửa Đỏ của Kỹ Năng Nguyên Tố <strong>Thời Khắc Lưu Danh</strong> sẽ nhận được cường hóa toàn phần:",
+      "1": [
+        "Vòng Hào Quang: Vòng Hào Quang khi tấn công trúng kẻ địch, Mô Tô Vượt Lửa sẽ tông vào kẻ địch trúng phải, gây <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> mang thuộc tính Dạ Hồn tương đương 200% Tấn Công.",
+        "Mô Tô Vượt Lửa: Khi Mavuika lái Mô Tô Vượt Lửa, sẽ triệu hồi \"Vòng Hào Quang - Rực Cháy\" đi theo Mavuika, khiến Phòng Ngự của kẻ địch xung quanh giảm 20%, đồng thời mỗi 3s gây một lần <pyro>Sát Thương Phạm Vi Nguyên Tố Hỏa</pyro> mang thuộc tính Dạ Hồn tương đương 500% Tấn Công cho kẻ địch xung quanh. Đồng thời, khả năng vượt các loại địa hình của Mavuika cũng được cường hóa."
+      ],
+      "2": "<br/>",
+      "3": "Ngoài ra, khi Mavuika lái Mô Tô Vượt Lửa không trong trạng thái chiến đấu, khi điểm Dạ Hồn của Mavuika giảm còn 5 điểm, sẽ nhận được 80 điểm Dạ Hồn. Hiệu quả này mỗi 15s tối đa kích hoạt một lần."
+    }
+  }
+}

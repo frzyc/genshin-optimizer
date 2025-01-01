@@ -592,6 +592,7 @@ export type Database = {
         | 'TravelerElectro'
         | 'TravelerDendro'
         | 'TravelerHydro'
+        | 'TravelerPyro'
       weaponKey:
         | 'Absolution'
         | 'AmenomaKageuchi'

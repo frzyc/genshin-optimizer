@@ -15,6 +15,7 @@ import Chasca from './Character_Chasca_Card.jpg'
 import Chevreuse from './Character_Chevreuse_Card.jpg'
 import Chiori from './Character_Chiori_Card.jpg'
 import Chongyun from './Character_Chongyun_Card.jpg'
+import Citlali from './Character_Citlali_Card.jpg'
 import Clorinde from './Character_Clorinde_Card.jpg'
 import Collei from './Character_Collei_Card.jpg'
 import Cyno from './Character_Cyno_Card.jpg'
@@ -49,6 +50,7 @@ import Layla from './Character_Layla_Card.jpeg'
 import Lisa from './Character_Lisa_Card.jpg'
 import Lynette from './Character_Lynette_Card.jpg'
 import Lyney from './Character_Lyney_Card.jpg'
+import Mavuika from './Character_Mavuika_Card.jpg'
 import Mika from './Character_Mika_Card.jpg'
 import Mona from './Character_Mona_Card.jpg'
 import Mualani from './Character_Mualani_Card.jpg'
@@ -110,6 +112,7 @@ const charCards = {
   Chevreuse,
   Chiori,
   Chongyun,
+  Citlali,
   Clorinde,
   Collei,
   Cyno,
@@ -144,6 +147,7 @@ const charCards = {
   Lisa,
   Lyney,
   Lynette,
+  Mavuika,
   Mika,
   Mona,
   Mualani,
@@ -196,6 +200,7 @@ export function charCard(charKey: CharacterKey, gender: GenderKey) {
     case 'TravelerElectro':
     case 'TravelerGeo':
     case 'TravelerHydro':
+    case 'TravelerPyro':
       return charCards[`Traveler${gender}`]
     default:
       return charCards[charKey]

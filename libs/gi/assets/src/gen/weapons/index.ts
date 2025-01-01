@@ -9,6 +9,7 @@ import AquaSimulacra from './AquaSimulacra'
 import AquilaFavonia from './AquilaFavonia'
 import AshGravenDrinkingHorn from './AshGravenDrinkingHorn'
 import AstralVulturesCrimsonPlumage from './AstralVulturesCrimsonPlumage'
+import AThousandBlazingSuns from './AThousandBlazingSuns'
 import AThousandFloatingDreams from './AThousandFloatingDreams'
 import BalladOfTheBoundlessBlue from './BalladOfTheBoundlessBlue'
 import BalladOfTheFjords from './BalladOfTheFjords'
@@ -161,6 +162,7 @@ import SongOfStillness from './SongOfStillness'
 import SplendorOfTranquilWaters from './SplendorOfTranquilWaters'
 import StaffOfHoma from './StaffOfHoma'
 import StaffOfTheScarletSands from './StaffOfTheScarletSands'
+import StarcallersWatch from './StarcallersWatch'
 import SturdyBone from './SturdyBone'
 import SummitShaper from './SummitShaper'
 import SurfsUp from './SurfsUp'
@@ -204,6 +206,7 @@ import WolfsGravestone from './WolfsGravestone'
 import XiphosMoonlight from './XiphosMoonlight'
 
 const data = {
+  AThousandBlazingSuns,
   AThousandFloatingDreams,
   Absolution,
   Akuoumaru,
@@ -366,6 +369,7 @@ const data = {
   SplendorOfTranquilWaters,
   StaffOfHoma,
   StaffOfTheScarletSands,
+  StarcallersWatch,
   SturdyBone,
   SummitShaper,
   SurfsUp,
