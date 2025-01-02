@@ -128,7 +128,7 @@ const burstSpirit = lookup(
 const sunfell_dmgInc = infoMut(
   prod(
     input.total.atk,
-    subscript(input.total.skillIndex, dm.burst.sunfell_dmgInc, { unit: '%' }),
+    subscript(input.total.burstIndex, dm.burst.sunfell_dmgInc, { unit: '%' }),
     burstSpirit
   ),
   { path: 'burst_dmgInc' }
@@ -136,7 +136,7 @@ const sunfell_dmgInc = infoMut(
 const flameNormal_dmgInc = infoMut(
   prod(
     input.total.atk,
-    subscript(input.total.skillIndex, dm.burst.flameNormal_dmgInc, {
+    subscript(input.total.burstIndex, dm.burst.flameNormal_dmgInc, {
       unit: '%',
     }),
     burstSpirit
@@ -146,7 +146,7 @@ const flameNormal_dmgInc = infoMut(
 const flameCharged_dmgInc = infoMut(
   prod(
     input.total.atk,
-    subscript(input.total.skillIndex, dm.burst.flameCharged_dmgInc, {
+    subscript(input.total.burstIndex, dm.burst.flameCharged_dmgInc, {
       unit: '%',
     }),
     burstSpirit
