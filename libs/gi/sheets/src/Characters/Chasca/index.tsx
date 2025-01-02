@@ -196,7 +196,7 @@ const dmgFormulas = {
         'atk',
         dm.skill.shellDmg,
         'charged',
-        { ...hitEle[ele], ...multiFireAddl },
+        hitEle[ele],
         percent(dm.passive2.dmg),
         'skill'
       )
@@ -209,10 +209,7 @@ const dmgFormulas = {
           'atk',
           dm.skill.shiningShellDmg,
           'charged',
-          {
-            ...hitEle[eleKey],
-            ...shiningAddl,
-          },
+          hitEle[eleKey],
           percent(dm.passive2.dmg),
           'skill'
         )
