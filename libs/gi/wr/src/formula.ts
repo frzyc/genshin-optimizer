@@ -46,6 +46,8 @@ const asConst = true as const,
 
 const allElements = allElementWithPhyKeys
 const allTalents = ['auto', 'skill', 'burst'] as const
+const allNonstackBuffs = ['no4'] as const
+export type NonStackBuff = (typeof allNonstackBuffs)[number]
 const allMoves = [
   'normal',
   'charged',
@@ -578,6 +580,7 @@ const _tally = setReadNodeKeys(
   {
     ...objKeyMap([...allElements, ...allRegionKeys], (_) => read('add')),
     maxEleMas: read('max'),
+    ...objKeyMap(allNonstackBuffs, () => stringRead('small')),
   },
   ['tally']
 )
