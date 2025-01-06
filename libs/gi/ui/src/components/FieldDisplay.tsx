@@ -198,6 +198,7 @@ export function NodeFieldDisplay({
         gap: 1,
         boxShadow: emphasize ? '0px 0px 0px 2px red inset' : undefined,
         py: 0.25,
+        textDecoration: subVariant === 'strike' ? 'line-through' : undefined,
       }}
       component={component}
     >

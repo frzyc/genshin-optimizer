@@ -48,7 +48,7 @@ export type Info = {
   prefix?: KeyMapPrefix
   source?: CharacterSheetKey | WeaponKey | ArtifactSetKey
   variant?: InfoVariant
-  subVariant?: InfoVariant
+  subVariant?: InfoVariant | 'strike'
   asConst?: true
   pivot?: true
   fixed?: number
@@ -179,7 +179,7 @@ interface DynamicNumInput<T = NumNode> {
     [key: string]: DisplaySub
   }
   conditional?: NodeData<T>
-  teamBuff?: Input & { tally?: NodeData }
+  teamBuff?: Input & { tally?: NodeData<NumNode | StrNode> }
 }
 export interface NodeData<T = NumNode> {
   [key: string]: typeof key extends 'operation' ? never : NodeData<T> | T
