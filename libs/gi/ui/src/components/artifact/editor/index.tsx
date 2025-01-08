@@ -428,7 +428,7 @@ export function ArtifactEditor({
 
   const removeId = (artifactIdToEdit !== 'new' && artifactIdToEdit) || old?.id
   return (
-    <ModalWrapper open={show} onClose={onClose}>
+    <ModalWrapper open={show} onClose={onClose} data-testid="artifact-editor">
       <CardThemed>
         <UploadExplainationModal
           modalShow={modalShow}
@@ -551,7 +551,12 @@ export function ArtifactEditor({
               </Box>
 
               {/* main stat */}
-              <Box component="div" display="flex" gap={1}>
+              <Box
+                component="div"
+                display="flex"
+                gap={1}
+                data-testid="main-stat"
+              >
                 <DropdownButton
                   startIcon={
                     artifact?.mainStatKey ? (
