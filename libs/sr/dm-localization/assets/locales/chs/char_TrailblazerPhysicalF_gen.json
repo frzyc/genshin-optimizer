@@ -41,7 +41,7 @@
       "0": {
         "name": "牵制盗垒",
         "fullDesc": "每次击破敌方目标的弱点后，攻击力提高<orangeStrong>{{1, percent}}%</orangeStrong>，该效果最多叠加{{2}}层。",
-        "shortDesc": "",
+        "shortDesc": "每次击破敌方目标的弱点后，攻击力提高。",
         "tag": "强化"
       }
     },
@@ -49,7 +49,7 @@
       "0": {
         "name": "不灭三振",
         "fullDesc": "使用秘技后立即为我方全体回复等同于各自生命上限{{1, percent}}%的生命值。",
-        "shortDesc": "",
+        "shortDesc": "使用秘技后立即为我方全体<orangeStrong>回复生命值</orangeStrong>。",
         "tag": "回复"
       }
     },

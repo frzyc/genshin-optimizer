@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "衛我起舞",
-        "fullDesc": "若場上敵方目標數量為1/2/3/4/5以上，則【伴舞】效果觸發的超擊破傷害提高{{5, percent}}%/{{4, percent}}%/{{3, percent}}%/{{2, percent}}%/{{1, percent}}%/。",
+        "fullDesc": "當場上敵方目標數量等於5或以上/4/3/2/1名時，【伴舞】效果觸發的超擊破傷害提高{{1, percent}}%/{{2, percent}}%/{{3, percent}}%/{{4, percent}}%/{{5, percent}}%。",
         "shortDesc": "",
         "tag": ""
       }

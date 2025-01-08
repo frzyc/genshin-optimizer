@@ -26,7 +26,7 @@
     "ult": {
       "0": {
         "name": "Nữ Hiệp Cái Thế March 7th",
-        "fullDesc": "Gây Sát Thương Số Ảo bằng <orangeStrong>{{1, percent}}%</orangeStrong> tấn công của March 7th cho 1 kẻ địch chỉ định.<br>Khiến số đòn đánh trong một lượt ban đầu của lần Cường Hóa Tấn Công Thường tiếp theo tăng {{2}} đòn, tăng {{3, percent}}% xác suất cố định gây thêm sát thương.",
+        "fullDesc": "Gây Sát Thương Số Ảo bằng <orangeStrong>{{1, percent}}%</orangeStrong> tấn công của March 7th cho 1 kẻ địch chỉ định.<br>Khiến số đòn đánh trong một lượt ban đầu của lần Tấn Công Thường Cường Hóa tiếp theo tăng {{2}} đòn, tăng {{3, percent}}% xác suất cố định gây thêm sát thương.",
         "shortDesc": "Gây Sát Thương Số Ảo cho 1 kẻ địch, đồng thời <orangeStrong>tăng</orangeStrong> số đòn và xác suất gây sát thương của <orangeStrong>Tấn Công Thường Cường Hóa ở lần tiếp theo</orangeStrong>.",
         "tag": "Đánh Đơn"
       }
@@ -87,7 +87,7 @@
     },
     "2": {
       "name": "Kiếm Vũ Sóng Đào",
-      "desc": "Sau mỗi lần Sư Phụ thi triển Tấn Công Thường hoặc Chiến Kỹ tấn công mục tiêu địch, March 7th sẽ lập tức phát động Đòn Đánh Theo Sau, gây ra Sát Thương Số Ảo bằng {{1, percent}}% Tấn Công của March 7th cho mục tiêu chính của lần tấn công này, và dựa theo Vận Mệnh của Sư Phụ để kích hoạt hiệu ứng tương ứng, sau đó nhận {{3}} điểm Nạp Năng Lượng. Nếu không có mục tiêu chính có thể tấn công, thì sẽ tấn công một mục tiêu ngẫu nhiên của phe địch. Hiệu quả này mỗi hiệp kích hoạt tối đa 1 lần."
+      "desc": "Sau mỗi lần Sư Phụ thi triển Tấn Công Thường hoặc Chiến Kỹ tấn công mục tiêu phe địch, March 7th sẽ lập tức phát động Đòn Đánh Theo Sau, gây ra Sát Thương Số Ảo bằng {{1, percent}}% Tấn Công của March 7th cho mục tiêu chính của lần tấn công này, và dựa theo Vận Mệnh của Sư Phụ để kích hoạt hiệu ứng tương ứng, sau đó nhận {{3}} điểm Nạp Năng Lượng. Nếu không có mục tiêu chính có thể tấn công, thì sẽ tấn công một mục tiêu ngẫu nhiên của phe địch. Hiệu quả này mỗi hiệp kích hoạt tối đa 1 lần."
     },
     "3": {
       "name": "Nhanh Trí Đầy Bản Lĩnh",

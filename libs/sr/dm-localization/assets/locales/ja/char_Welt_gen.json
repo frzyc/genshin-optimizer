@@ -29,7 +29,7 @@
       "0": {
         "name": "{RUBY_B#じくう}時空{RUBY_E#}の{RUBY_B#ゆが}歪{RUBY_E#}み",
         "fullDesc": "攻撃が減速状態の敵に命中した時、さらにヴェルトの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性付加ダメージを1回与える。",
-        "shortDesc": "減速状態の敵に命中した時、<orangeStrong>さらに少量の虚数属性付加ダメージを与える</orangeStrong>。",
+        "shortDesc": "攻撃が減速状態の敵に命中した時、<orangeStrong>さらに少量の虚数属性付加ダメージを与える</orangeStrong>。",
         "tag": "強化"
       }
     },
@@ -37,7 +37,7 @@
       "0": {
         "name": "{RUBY_B#がちいろう}画地為牢{RUBY_E#}",
         "fullDesc": "秘技を使用した後、{{4}}秒間継続する特殊領域を作り出す、特殊領域内にいる敵の移動速度-{{5, percent}}%。特殊領域内にいる敵と戦闘に入った後、{{1, percent}}%の基礎確率で敵を禁錮状態にする、1ターン継続。<br>禁錮状態の敵は行動順が{{2, percent}}%遅延し、速度-{{3, percent}}%。味方が作り出した領域は1つまで存在できる。",
-        "shortDesc": "特殊領域を作り出す。領域内の移動速度をダウンする。領域内の敵と戦闘に入った後、<orangeStrong>高確率で敵を禁錮状態にする</orangeStrong>。",
+        "shortDesc": "特殊領域を作り出す。領域内の敵の移動速度をダウンさせる。領域内の敵と戦闘に入った後、<orangeStrong>高確率で敵を禁錮状態にする</orangeStrong>。",
         "tag": "妨害"
       }
     },

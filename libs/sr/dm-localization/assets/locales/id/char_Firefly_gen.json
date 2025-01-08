@@ -93,7 +93,7 @@
     },
     "2": {
       "name": "From Shattered Sky, I Free Fall",
-      "desc": "Saat berstatus \"Complete Combustion\", jika Enhanced Basic Attack atau Enhanced Skill yang dilancarkan mengalahkan target musuh atau membuat target musuh memasuki status Weakness Break, maka SAM akan segera memperoleh 1 giliran tambahan. Efek ini dapat dipicu lagi setelah {{2}} giliran."
+      "desc": "Saat berstatus \"Complete Combustion\", jika Enhanced Basic Attack atau Enhanced Skill yang dilancarkan mengalahkan target musuh atau membuat target musuh memasuki status Weakness Break, maka SAM akan segera memperoleh 1 Giliran Tambahan. Efek ini dapat dipicu lagi setelah {{2}} giliran."
     },
     "3": {
       "name": "Amidst Silenced Stars, I Deep Sleep",

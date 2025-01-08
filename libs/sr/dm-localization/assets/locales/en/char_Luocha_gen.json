@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Cleansing Revival",
-        "fullDesc": "When the Skill's effect is triggered, removes {{1}} debuff(s) from a target ally.",
+        "fullDesc": "When Skill's effect is triggered, dispel {{1}} debuff(s) from one designated ally.",
         "shortDesc": "",
         "tag": ""
       }
@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Through the Valley",
-        "fullDesc": "The chance to resist Crowd Control debuffs increases by {{1, percent}}%.",
+        "fullDesc": "Increases the chance to resist Crowd Control debuffs by {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Bestowal From the Pure",
-      "desc": "When his Skill is triggered, if the target ally's HP is lower than 50%, Luocha's Outgoing Healing increases by {{1, percent}}%. If the target ally's HP is at 50% or higher, the ally receives a Shield that can absorb DMG equal to {{2, percent}}% of Luocha's ATK plus {{3}}, lasting for {{4}} turns."
+      "desc": "When his Skill is triggered, if the target ally's HP percentage is lower than 50%, Luocha's Outgoing Healing increases by {{1, percent}}%. If the target ally's HP percentage is at 50% or higher, the ally receives a Shield that can absorb DMG equal to {{2, percent}}% of Luocha's ATK plus {{3}}, lasting for {{4}} turns."
     },
     "3": {
       "name": "Surveyal by the Fool",

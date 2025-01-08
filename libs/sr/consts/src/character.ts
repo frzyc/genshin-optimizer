@@ -105,6 +105,15 @@ export const allCharacterGenderedKeys = [
 ] as const
 export type CharacterGenderedKey = (typeof allCharacterGenderedKeys)[number]
 
+export function characterGenderedKeyToCharacterKey(
+  cgKey: CharacterGenderedKey
+): CharacterKey {
+  if (cgKey.includes('Trailblazer')) {
+    return cgKey.slice(0, -1) as TrailblazerKey
+  }
+  return cgKey as NonTrailblazerCharacterKey
+}
+
 export const maxEidolonCount = 6 as const
 
 export const allLocationKeys = [...allCharacterKeys, ''] as const

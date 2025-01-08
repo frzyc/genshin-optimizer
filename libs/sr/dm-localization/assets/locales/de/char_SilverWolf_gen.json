@@ -36,8 +36,8 @@
     "technique": {
       "0": {
         "name": "Programmschließung erzwingen",
-        "fullDesc": "Greift Gegner unmittelbar an. Nach Kampfeintritt wird allen Gegnern Quanten-SCH in Höhe von {{1, percent}}% von Silberwolfs ANG zugefügt und ungeachtet des Schwächetyps wird WDS aller Gegner reduziert. Bei Gegnern, deren Schwäche auf diese Weise gebrochen wird, wird der Effekt von Quanten-Schwächebruch ausgelöst.",
-        "shortDesc": "Greift Gegner an. Nach Kampfeintritt wird allen Gegner geringer SCH zugefügt und ungeachtet des Schwächetyps Widerstand reduziert.",
+        "fullDesc": "Greift Gegner unmittelbar an. Nach Kampfeintritt wird allen Gegnern Quanten-SCH in Höhe von {{1, percent}}% von Silberwolfs ANG zugefügt und unabhängig vom Schwächetyp wird WDS aller Gegner reduziert. Bei Gegnern, deren Schwäche auf diese Weise gebrochen wird, wird der Effekt von Quanten-Schwächebruch ausgelöst.",
+        "shortDesc": "Greift Gegner an. Nach Kampfeintritt wird allen Gegner geringer SCH zugefügt und unabhängig vom Schwächetyp WDS reduziert.",
         "tag": ""
       }
     },
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Generieren",
-        "fullDesc": "Verlängert die Dauer von „Fehler“ um {{1}} Rd. Jedes Mal, wenn ein Gegner Schwächebruch erleidet, hat Silberwolf eine Grundchance von {{2, percent}}%, dem Ziel einen zufälligen „Fehler“ zu implantieren.",
+        "fullDesc": "Verlängert die Dauer von „Fehler“ um {{1}} Rd. Jedes Mal, wenn ein Gegner Schwächebruch erleidet, hat Silberwolf eine Grundchance von {{2, percent}}%, dem Ziel einen zufälligen Fehler zu implantieren.",
         "shortDesc": "",
         "tag": ""
       }
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Overlay-Netzwerk",
-      "desc": "Erhöht den von Silberwolf verursachten SCH für jeden Debuff des Gegners um {{1, percent}}% bis zu max. {{2, percent}}%."
+      "desc": "Erhöht den von Silberwolf verursachten SCH für jeden Debuff des Gegners um {{1, percent}}%, bis zu max. {{2, percent}}%"
     }
   }
 }

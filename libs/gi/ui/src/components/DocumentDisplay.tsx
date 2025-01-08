@@ -198,9 +198,9 @@ export function HeaderDisplay({
   hideDivider?: boolean | ((section: DocumentSection) => boolean)
 }) {
   const { data } = useContext(DataContext)
-  const { icon: preicon, title, action } = header
+  const { icon: preicon, title, action } = header ?? {}
   const icon = evalIfFunc(preicon, data)
-  const description = !hideDesc && evalIfFunc(header.description, data)
+  const description = !hideDesc && evalIfFunc(header?.description, data)
   const displayTitle = hideDesc ? (
     title
   ) : (

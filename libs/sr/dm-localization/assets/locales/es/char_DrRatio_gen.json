@@ -29,7 +29,7 @@
       "0": {
         "name": "Pienso, luego existo",
         "fullDesc": "Al usar su habilidad básica, el Dr. Ratio tiene una probabilidad fija del {{2, percent}}% de lanzar un ataque adicional contra el objetivo e infligir un Daño Imaginario equivalente al <orangeStrong>{{1, percent}}%</orangeStrong> de su ATQ. Por cada estado negativo que tenga el objetivo, la probabilidad fija de lanzar el ataque adicional aumenta en un {{3, percent}}%. Si el objetivo es derrotado antes de que se lance el ataque adicional, el ataque adicional se dirige contra otro enemigo al azar.",
-        "shortDesc": "Al usar su habilidad básica, hay una probabilidad de lanzar un <orangeStrong>ataque adicional</orangeStrong> contra el objetivo.",
+        "shortDesc": "Al lanzar la habilidad básica, tiene una probabilidad de lanzar 1 <orangeStrong>ataque adicional</orangeStrong> que inflige Daño Imaginario contra el objetivo.",
         "tag": "ATQ individual"
       }
     },

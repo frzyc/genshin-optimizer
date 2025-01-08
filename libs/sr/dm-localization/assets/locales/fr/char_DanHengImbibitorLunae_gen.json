@@ -113,7 +113,7 @@
     },
     "4": {
       "name": "Bénédiction du zéphyr",
-      "desc": "L'effet bonus accordé par Rugissement dominateur dure jusqu'à la fin du prochain tour du personnage."
+      "desc": "L'effet bonus accordé par Rugissement dominateur dure jusqu'à la fin du prochain tour de cette unité."
     },
     "5": {
       "name": "Vaine fierté",
@@ -121,7 +121,7 @@
     },
     "6": {
       "name": "Retour du dragon divin",
-      "desc": "Lorsqu'un autre allié utilise son ultime, la PÉN de RÉS imaginaire du prochain Bond fulgurant de Dan Heng • Imbibitor Lunae augmente de {{1, percent}}%. Cet effet peut être cumulé jusqu'à {{2}} fois."
+      "desc": "Lorsqu'un autre personnage allié utilise son ultime, la PÉN de RÉS imaginaire du prochain Bond fulgurant de Dan Heng • Imbibitor Lunae augmente de {{1, percent}}%. Cet effet peut être cumulé jusqu'à {{2}} fois."
     }
   }
 }

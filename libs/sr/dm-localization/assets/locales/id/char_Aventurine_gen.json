@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Bingo!",
-        "fullDesc": "Setelah rekan tim Aventurine yang memiliki \"Fortified Wager\" melancarkan Serangan Lanjutan, Aventurine akan mengakumulasi 1 poin \"Blind Bet\", efek ini dapat dipicu hingga {{3}} kali. Saat giliran Aventurine dimulai, perhitungan jumlah terpicunya efek ini akan di-reset. Setelah Aventurine melancarkan Serangan Lanjutan dari Talent-nya, akan memberikan \"Fortified Wager\" yang dapat menahan DMG pada seluruh rekan tim sebesar {{1, percent}}% DEF Aventurine + {{2}}, serta memberikan ekstra \"Fortified Wager\" pada rekan tim dengan nilai Shield terendah sebesar {{4, percent}}% DEF Aventurine + {{5}}, berlangsung selama {{3}} giliran.",
+        "fullDesc": "Setelah rekan tim Aventurine yang memiliki \"Fortified Wager\" melancarkan Serangan Lanjutan, Aventurine akan mengakumulasi 1 poin \"Blind Bet\", efek ini dapat dipicu hingga {{3}} kali. Saat giliran Aventurine dimulai, perhitungan jumlah terpicunya efek ini akan direset. Setelah Aventurine melancarkan Serangan Lanjutan dari Talent-nya, akan memberikan \"Fortified Wager\" yang dapat menahan DMG pada seluruh rekan tim sebesar {{1, percent}}% DEF Aventurine + {{2}}, serta memberikan ekstra \"Fortified Wager\" pada rekan tim dengan nilai Shield terendah sebesar {{4, percent}}% DEF Aventurine + {{5}}, berlangsung selama {{3}} giliran.",
         "shortDesc": "",
         "tag": ""
       }

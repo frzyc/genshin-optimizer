@@ -29,7 +29,7 @@
       "0": {
         "name": "{RUBY_B#ちょうわ}調和{RUBY_E#}の{RUBY_B#じゅんせいりつ}純正律{RUBY_E#}",
         "fullDesc": "味方全体の会心ダメージ+<orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>。味方が敵に攻撃を行った後、ロビンは自身のEPを{{2}}回復する。",
-        "shortDesc": "味方全体の<orangeStrong>会心ダメージ</orangeStrong>をアップする。味方が敵に攻撃を行った後、ロビンのEPが回復する。",
+        "shortDesc": "味方全体の<orangeStrong>会心ダメージ</orangeStrong>をアップする。味方が敵を攻撃した後ロビンが追加でEPを回復する。",
         "tag": "サポート"
       }
     },

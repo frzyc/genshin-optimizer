@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Teil der Familie",
-        "fullDesc": "Wenn Clara angegriffen wird, besteht eine feste Chance von {{1, percent}}%, einen Debuff zu entfernen.",
+        "fullDesc": "Beim erlittenen Angriff besteht eine feste Chance von {{1, percent}}%, einen Debuff von dieser Einheit zu entfernen.",
         "shortDesc": "",
         "tag": ""
       }

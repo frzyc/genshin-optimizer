@@ -105,7 +105,7 @@
     },
     "2": {
       "name": "Império nas Nuvens",
-      "desc": "Depois de usar sua Perícia Suprema, a ação de Dan Heng - Embebidor Lunae é Avançada Adiante em 100% e ganha 1 Squama Sacrosancta extra."
+      "desc": "Depois de usar sua Perícia Suprema, a ação de Dan Heng - Embebidor Lunae é Avançada Adiante em 100% e ganha 1 \"Squama Sacrosancta\" extra."
     },
     "3": {
       "name": "Trajado com Nuvens",
@@ -113,7 +113,7 @@
     },
     "4": {
       "name": "Bênção Zefirina",
-      "desc": "O efeito de melhoria concedido por Rugido Soberano dura até o final da próxima rodada deste personagem."
+      "desc": "O efeito de melhoria concedido por \"Rugido Soberano\" dura até o final da próxima rodada desta unidade."
     },
     "5": {
       "name": "A Queda é o Orgulho",
@@ -121,7 +121,7 @@
     },
     "6": {
       "name": "Reinado, Retornado",
-      "desc": "Depois que qualquer aliado usa a Perícia Suprema, a PEN de RES a Imaginário do próximo Salto Fulgurante de Dan Heng - Embebidor Lunae aumenta em {{1, percent}}%. Este efeito pode acumular até {{2}} vez(es)."
+      "desc": "Depois que qualquer outro personagem aliado usa sua Perícia Suprema, a PEN de RES a Imaginário do próximo \"Salto Fulgurante\" de Dan Heng - Embebidor Lunae aumenta em {{1, percent}}%. Este efeito pode acumular até {{2}} vez(es)."
     }
   }
 }

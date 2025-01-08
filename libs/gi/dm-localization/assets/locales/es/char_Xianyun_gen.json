@@ -125,7 +125,7 @@
   "passive3": {
     "name": "Encarnación de la grulla",
     "description": {
-      "0": "Aumenta en un 15% la Vel. de Vuelo de tus personajes del equipo.",
+      "0": "Aumenta en un 15% la Vel. Vuelo de tus personajes del equipo.",
       "1": "No se puede acumular con otros talentos pasivos que tengan los mismos efectos."
     }
   },

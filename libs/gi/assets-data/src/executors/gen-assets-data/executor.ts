@@ -213,13 +213,14 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
 
     if (candSkillDepotIds.length) {
       // Traveler
-      const [, , hydro, anemo, , geo, electro, dendro] = candSkillDepotIds
+      const [, pyro, hydro, anemo, , geo, electro, dendro] = candSkillDepotIds
       // const gender = characterIdMap[charid] === "TravelerF" ? "F" : "M"
       genTalentHash('TravelerAnemo', avatarSkillDepotExcelConfigData[anemo])
       genTalentHash('TravelerGeo', avatarSkillDepotExcelConfigData[geo])
       genTalentHash('TravelerElectro', avatarSkillDepotExcelConfigData[electro])
       genTalentHash('TravelerDendro', avatarSkillDepotExcelConfigData[dendro])
       genTalentHash('TravelerHydro', avatarSkillDepotExcelConfigData[hydro])
+      genTalentHash('TravelerPyro', avatarSkillDepotExcelConfigData[pyro])
     } else {
       genTalentHash(cKey, avatarSkillDepotExcelConfigData[skillDepotId])
     }

@@ -43,7 +43,7 @@
       "0": {
         "name": "Puh! Sieh sich einer das Chaos an!",
         "fullDesc": "Greift den Gegner unmittelbar an. Nach Kampfeintritt fügt Hook einem zufälligen Gegner Feuer-SCH in Höhe von {{4, percent}}% ihres ANG zu und hat eine Grundchance von {{1, percent}}%, bei allen Gegnern für {{3}} Rd. Brennen zu verursachen.<br>Brennende Gegner erleiden zu Beginn jeder Runde Feuer-DoT in Höhe von {{2, percent}}% von Hooks ANG.",
-        "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt einem zufälligen Gegner Feuer-SCH zu, mit einer hohen Chance, allen Gegnern Brennen zuzufügen.",
+        "shortDesc": "Greift den Gegner an. Fügt nach Kampfeintritt einem zufälligen Gegner geringen Feuer-SCH zu, mit einer hohen Chance, allen Gegnern Brennen zuzufügen.",
         "tag": ""
       }
     },
@@ -74,7 +74,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Spiel mit dem Feuer",
-        "fullDesc": "Zieht nach dem Einsatz des Ultimates Hooks Aktion um {{2, percent}}% vor und stellt zusätzlich {{1}} Pkt. Energie wieder her.",
+        "fullDesc": "Nach dem Einsatz des Ultimates wird Hooks Aktion um {{2, percent}}% vorgezogen. Stellt zusätzlich {{1}} Pkt. Energie wieder her.",
         "shortDesc": "",
         "tag": ""
       }
@@ -95,7 +95,7 @@
     },
     "4": {
       "name": "Nichts wissen macht auch nichts",
-      "desc": "Bei Auslösung des Talents besteht eine Grundchance von {{1, percent}}%, dass angrenzende Ziele des anvisierten Gegners von Brennen betroffen werden, das durch Fertigkeit verursacht wird."
+      "desc": "Bei Auslösung des Talents besteht eine Grundchance von {{1, percent}}%, dass angrenzende Einheiten des anvisierten Gegners von Brennen betroffen werden, das durch Fertigkeit verursacht wird."
     },
     "5": {
       "name": "Für den Ruhm der Maulwürfe",

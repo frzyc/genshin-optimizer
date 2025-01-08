@@ -29,7 +29,7 @@
       "0": {
         "name": "Mercado de Cofrinhos?!",
         "fullDesc": "Invoca Dinheirinho no início da batalha. Dinheirinho tem {{1}} de VEL por padrão. Ao agir, Dinheirinho realiza Ataques Extras em um único inimigo-alvo afligido com Prova de Débito, causando Dano de Fogo igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Topaz.<br>Quando os inimigos afligidos com Prova de Débito recebem Ataques Extras de um aliado, a ação de Dinheirinho é Avançada Adiante em {{3, percent}}%. O efeito de Avançar Adiante da ação não pode ser ativado durante a rodada de Dinheirinho.<br>Quando Topaz é derrubada, Dinheirinho desaparece.",
-        "shortDesc": "No início da batalha, invoca <orangeStrong>Dinheirinho</orangeStrong>. Quando Dinheirinho age, <orangeStrong>Dinheirinho usa Ataques Extras contra um único inimigo com Prova de Débito</orangeStrong>. Quando um inimigo com Prova de Débito recebe Dano de Ataques Extras, Dinheirinho tem a sua <orangeStrong>ação Avançada Adiante</orangeStrong>.",
+        "shortDesc": "No início da batalha, <orangeStrong>invoca Dinheirinho</orangeStrong>. Quando Dinheirinho age, ele <orangeStrong>realiza um Ataque Extra em um alvo afetado por \"Prova de Débito\"</orangeStrong>, causando Dano de Fogo.<br>Quando um inimigo afetado por \"Prova de Débito\" recebe Ataques Extra, a <orangeStrong>ação de Dinheirinho é adiantada</orangeStrong>.",
         "tag": "Alvo Único"
       }
     },
@@ -37,7 +37,7 @@
       "0": {
         "name": "Subsídio Explícito",
         "fullDesc": "Invoca Dinheirinho quando Topaz entra no mapa. Dinheirinho buscará automaticamente por Tesouros Básicos e Cofrinhos dentro de um certo alcance.<br>Usar sua Técnica regenera {{1}} de Energia para Topaz após o primeiro ataque de Dinheirinho na próxima batalha.<br>Se Topaz ainda estiver no time quando os inimigos do mapa forem derrotados, uma pequena quantidade de créditos adicionais será adicionada aos créditos obtidos. Um máximo de {{2}} de créditos adicionais podem ser recebidos a cada dia do calendário.<br>Após usar sua Técnica e derrotar inimigos no Universo Simulado ou no Universo Divergente, recebe adicionalmente uma pequena quantidade de Fragmentos Cósmicos com uma pequena chance de obter 1 Curio aleatória.",
-        "shortDesc": "<orangeStrong>Invoca Dinheirinho para acompanhar</orangeStrong> em um Labirinto. Dinheirinho <orangeStrong>procurará automaticamente por Tesouros Básicos e Cofrinhos por perto</orangeStrong>. Usar a Técnica regenerará a Energia de Topaz após o primeiro ataque de Dinheirinho na próxima batalha.",
+        "shortDesc": "<orangeStrong>Invoca Dinheirinho para acompanhar</orangeStrong> em um mapa. Dinheirinho <orangeStrong>procurará automaticamente por Tesouros Básicos e Cofrinhos por perto</orangeStrong>. Usar a Técnica regenerará a Energia de Topaz após o primeiro ataque de Dinheirinho na próxima batalha.",
         "tag": "Aprimoramento"
       }
     },
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Mercado Futuro",
-      "desc": "Quando inimigos afligidos com Prova de Débito recebem Ataques Extras, eles entrarão no estado de Devedor. Este efeito só pode ser ativado 1 única vez por ataque.<br>O estado de Devedor aumenta em {{1, percent}}% o Dano CRIT de Ataques Extras infligidos aos inimigos-alvo, acumulando até {{2}} vez(es). Quando a Prova de Débito é removida, o estado de Devedor também é removido."
+      "desc": "Quando inimigos afligidos com \"Prova de Débito\" recebem Ataques Extras, eles entrarão no estado de \"Devedor\". Este efeito só pode ser ativado 1 única vez por ataque.<br>O estado de \"Devedor\" aumenta em {{1, percent}}% o Dano CRIT de Ataques Extras infligidos aos inimigos-alvo, acumulando até {{2}} vez(es). Quando a \"Prova de Débito\" é removida, o estado de \"Devedor\" também é removido."
     },
     "2": {
       "name": "Aquisição Genuína",

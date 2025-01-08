@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Choix multiples",
-      "desc": "L'effet d'augmentation des DGT critiques accordé par la compétence de Sparkle augmente d'un montant équivalent à {{1, percent}}% des DGT critiques de Sparkle. Lorsque Sparkle utilise sa compétence, l'effet d'augmentation des DGT critiques de sa compétence s'applique à tous les alliés qui bénéficient de l'effet Énigme. Lorsque Sparkle utilise son ultime, tout allié qui bénéficie de l'effet d'augmentation de DGT de sa compétence propage cet effet aux alliés avec Énigme."
+      "desc": "L'effet d'augmentation des DGT critiques accordé par la compétence de Sparkle augmente d'un montant équivalent à {{1, percent}}% des DGT critiques de Sparkle. Lorsque Sparkle utilise sa compétence, l'effet d'augmentation des DGT critiques de sa compétence s'applique à tous les coéquipiers qui bénéficient de l'effet Énigme. Lorsque Sparkle utilise son ultime, tout allié qui bénéficie de l'effet d'augmentation de DGT de sa compétence propage cet effet aux coéquipiers avec Énigme."
     }
   }
 }

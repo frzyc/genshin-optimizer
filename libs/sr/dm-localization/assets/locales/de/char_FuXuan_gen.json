@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Liu-Ren-Wahrsagung",
-        "fullDesc": "Wenn Gegner versuchen, Mengenkontrolle-Debuffs auf Verbündete anzuwenden, während die „Matrix der Voraussicht“ aktiv ist, widerstehen die Verbündeten allen Mengenkontrolle-Debuffs, die das gegnerische Ziel während der aktuellen Aktion anwendet. Dieser Effekt kann nur 1-mal ausgelöst werden. Nach erneuter Aktivierung der „Matrix der Voraussicht“ wird die Auslösungsanzahl dieses Effekts zurückgesetzt.",
+        "fullDesc": "Wenn ein Gegner versucht, Mengenkontrolle-Debuffs auf Verbündete anzuwenden, während die „Matrix der Voraussicht“ aktiv ist, widerstehen die Verbündeten allen Mengenkontrolle-Debuffs, die der Gegner während der aktuellen Aktion anwendet. Dieser Effekt kann 1-mal ausgelöst werden. Nach erneuter Aktivierung der Matrix der Voraussicht wird die Auslösungsanzahl dieses Effekts zurückgesetzt.",
         "shortDesc": "",
         "tag": ""
       }

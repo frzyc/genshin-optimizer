@@ -29,7 +29,7 @@
       "0": {
         "name": "ピッグ・マーケット！？",
         "fullDesc": "戦闘開始時にカブを召喚する。カブの初期速度は{{1}}。カブが行動すると追加攻撃を行い、「負債証明」状態の敵単体にトパーズの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の炎属性ダメージを与える。<br>「負債証明」状態の敵が味方の追加攻撃を受けた時、カブの行動順が{{3, percent}}%早まる。カブ自身のターンでは、行動順を早める効果は発動できない。<br>トパーズが戦闘不能状態になるとカブは消える。",
-        "shortDesc": "戦闘開始時<orangeStrong>カブを召喚し</orangeStrong>、カブの行動時に<orangeStrong>「負債証明」を付与された敵単体に追加攻撃を行う</orangeStrong>。「負債証明」を付与された敵が追加攻撃を受けると、カブの<orangeStrong>行動順が早まる</orangeStrong>。",
+        "shortDesc": "戦闘開始時に<orangeStrong>カブを召喚する</orangeStrong>。カブは行動時に<orangeStrong>「負債証明」を付与された敵に追加攻撃を行い</orangeStrong>、炎属性ダメージを与える。<br>「負債証明」を付与された敵が追加攻撃を受ける時、カブの<orangeStrong>行動順が早まる</orangeStrong>。",
         "tag": "単体攻撃"
       }
     },

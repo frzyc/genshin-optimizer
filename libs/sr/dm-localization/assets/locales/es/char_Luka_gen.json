@@ -58,7 +58,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Sobrecarga cinética",
-        "fullDesc": "Al usar la habilidad básica, se elimina inmediatamente {{1}} efecto positivo del enemigo.",
+        "fullDesc": "Al usar la habilidad básica, se disipa inmediatamente {{1}} efecto positivo del enemigo.",
         "shortDesc": "",
         "tag": ""
       }

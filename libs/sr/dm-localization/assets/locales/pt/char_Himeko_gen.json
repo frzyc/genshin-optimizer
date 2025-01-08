@@ -29,7 +29,7 @@
       "0": {
         "name": "Corrida da Vitória",
         "fullDesc": "Quando um inimigo é infligido com Quebra de Fraqueza, Himeko ganha 1 ponto de Carga (máximo de {{2}} pontos).<br>Se Himeko estiver com carga total quando um aliado atacar, ela imediatamente realiza 1 Ataque Extra e causa <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ dela como Dano de Fogo a todos os inimigos, consumindo todos os pontos de Carga.<br>No início da batalha, Himeko ganha 1 ponto de Carga.",
-        "shortDesc": "Ganha Carga quando um inimigo sofre a Quebra de Fraqueza.<br>Depois que um aliado realiza um ataque, se estiver completamente Carregado, <orangeStrong>realiza imediatamente um Ataque Extra</orangeStrong> e causa Dano de Fogo a <orangeStrong>todos os inimigos</orangeStrong>, consumindo todos os pontos de Carga.<br>Ganha 1 ponto de Carga no início de cada batalha.",
+        "shortDesc": "No início da batalha ou quando uma unidade inimiga sofre a Quebra de Fraqueza, ganha Carga.<br>Após qualquer aliado realizar um ataque, se estiver completamente Carregado, <orangeStrong>realiza um Ataque Extra</orangeStrong> e causa Dano de Fogo a <orangeStrong>todas as unidades inimigas</orangeStrong>, consumindo todos os pontos de Carga.",
         "tag": "Área"
       }
     },
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Chama Estelar",
-        "fullDesc": "Depois de usar um ataque, tem {{1, percent}}% de chance-base de infligir Queimadura a inimigos por {{2}} rodada(s).<br>Quando afligidos por Queimadura, os inimigos recebem Dano de Fogo Contínuo igual a {{3, percent}}% do ATQ de Himeko no início de cada rodada.",
+        "fullDesc": "Depois de usar um ataque, tem {{1, percent}}% de chance-base de infligir \"Queimadura\" a inimigos por {{2}} rodada(s).<br>Quando afligidos por \"Queimadura\", os inimigos recebem Dano de Fogo Contínuo igual a {{3, percent}}% do ATQ de Himeko no início de cada rodada.",
         "shortDesc": "",
         "tag": ""
       }

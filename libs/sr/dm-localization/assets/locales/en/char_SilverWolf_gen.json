@@ -29,7 +29,7 @@
       "0": {
         "name": "Awaiting System Response...",
         "fullDesc": "Silver Wolf can create three types of Bugs: Reduce ATK by <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>, reduce DEF by <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong>, and reduce SPD by <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>.<br>Every time Silver Wolf attacks, she has a <orangeStrong>{{4, percent}}%</orangeStrong> base chance to implant a random Bug that lasts for {{5}} turn(s) in an enemy target.",
-        "shortDesc": "After each attack, there is a chance of inflicting the attacked enemy with 1 random <orangeStrong>Bug</orangeStrong>.",
+        "shortDesc": "After this unit attacks, there is a chance of implanting the attacked enemy with 1 random <orangeStrong>Bug</orangeStrong>.",
         "tag": "Impair"
       }
     },
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Generate",
-        "fullDesc": "Bug's duration is extended for {{1}} turn(s). Every time an enemy is inflicted with Weakness Break, Silver Wolf has a {{2, percent}}% base chance of implanting a random Bug in the enemy.",
+        "fullDesc": "\"Bug\"'s duration is extended for {{1}} turn(s). Every time an enemy is inflicted with Weakness Break, Silver Wolf has a {{2, percent}}% base chance of implanting a random \"Bug\" in the enemy.",
         "shortDesc": "",
         "tag": ""
       }
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "Bounce Attack",
-      "desc": "After using her Ultimate to attack enemies, deals Additional Quantum DMG equal to {{1, percent}}% of Silver Wolf's ATK for every debuff currently on the enemy target. This effect can be triggered for a maximum of {{2}} time(s) during each use of her Ultimate."
+      "desc": "After using her Ultimate to attack enemies, deals Quantum Additional DMG equal to {{1, percent}}% of Silver Wolf's ATK for every debuff currently on the enemy target. This effect can be triggered for a maximum of {{2}} time(s) during each use of her Ultimate."
     },
     "5": {
       "name": "Brute Force Attack",
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Overlay Network",
-      "desc": "For every debuff the target enemy has, the DMG dealt by Silver Wolf increases by {{1, percent}}%, up to a limit of {{2, percent}}%."
+      "desc": "For every debuff the enemy target has, the DMG dealt by Silver Wolf increases by {{1, percent}}%, up to a limit of {{2, percent}}%."
     }
   }
 }

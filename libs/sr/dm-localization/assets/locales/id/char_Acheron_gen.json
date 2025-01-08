@@ -84,7 +84,7 @@
     "bonusAbility2": {
       "0": {
         "name": "The Abyss",
-        "fullDesc": "Saat di dalam tim terdapat 1/2 karakter dengan Path \"Nihility\" selain Acheron, maka DMG yang diakibatkan Basic Attack, Skill, dan Ultimate Acheron adalah {{1, percent}}%/{{2, percent}}% dari DMG awalnya.",
+        "fullDesc": "Saat di dalam tim terdapat 1/2 karakter dengan Path \"Nihility\" selain Acheron, maka DMG yang diakibatkan Basic Attack, Skill, dan Ultimate Acheron adalah {{1, percent}}%/{{2, percent}}% dari DMG aslinya.",
         "shortDesc": "",
         "tag": ""
       }

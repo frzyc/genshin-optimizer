@@ -13,14 +13,14 @@
       "0": {
         "name": "Terremoto de Lâminas",
         "fullDesc": "Restaura PV igual a <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> do ATQ de Yunli + <orangeStrong>{{4}}</orangeStrong>. Causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Yunli a um único inimigo-alvo e Dano Físico igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Yunli a alvos adjacentes.",
-        "shortDesc": "Restaura os PV dessa unidade e causa Dano Físico leve a um único inimigo e seus alvos adjacentes.",
+        "shortDesc": "Restaura os PV desta unidade. Causa Dano Físico a uma unidade inimiga e Dano Físico leve aos alvos adjacentes.",
         "tag": "Explosão"
       }
     },
     "ult": {
       "0": {
         "name": "Amarras da Terra, Quebra de Éter",
-        "fullDesc": "Consome {{8}} de Energia. Yunli ganha Apara e aplica Provocação em todos os inimigos, durando até o final da próxima rodada de um aliado ou um inimigo. Aumenta o Dano CRIT do próximo Contra-Ataque de Yunli em <orangeStrong>{{2, percent}}%</orangeStrong>. Ao ativar o efeito de Contra-Ataque do Talento, desfere o inimigo Contra-Ataque \"Intuito: Abatedora\" ao invés disso e remove o efeito de Apara. Se nenhum Contra-Ataque for ativado enquanto Apara estiver ativa, Yunli realizará imediatamente um Contra-Ataque \"Intuito: Corte\" em um inimigo-alvo aleatório.<br>\"Intuito: Corte\": causa Dano Físico ao alvo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Yunli, e causa Dano Físico a alvos adjacentes igual a <orangeStrong>{{6, percent}}%</orangeStrong> do ATQ de Yunli.<br>\"Intuito: Abatedora\": causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Yunli ao alvo, e causa Dano Físico igual a <orangeStrong>{{6, percent}}%</orangeStrong> do ATQ de Yunli a alvos adjacentes. Então, adicionalmente, causa {{4}} ocorrências de Dano, com cada vez causando Dano Físico igual a <orangeStrong>{{7, percent}}%</orangeStrong> do ATQ de Yunli a um único inimigo-alvo aleatório.<br>Quando Yunli causa Dano através desta habilidade, esse Dano será considerado Dano de Perícia Suprema.",
+        "fullDesc": "Consome {{8}} de Energia. Yunli ganha Apara e aplica Provocação em todos os inimigos, durando até o final da próxima rodada de um aliado ou um inimigo. Aumenta o Dano CRIT do próximo Contra-Ataque de Yunli em <orangeStrong>{{2, percent}}%</orangeStrong>. Ao ativar o efeito de Contra-Ataque do Talento, desfere Contra-Ataque \"Intuito: Abatedora\" ao invés disso e remove o efeito de Apara. Se nenhum Contra-Ataque for ativado enquanto Apara estiver ativa, Yunli realizará imediatamente um Contra-Ataque \"Intuito: Corte\" em um inimigo-alvo aleatório.<br>\"Intuito: Corte\": causa Dano Físico ao alvo igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Yunli, e causa Dano Físico a alvos adjacentes igual a <orangeStrong>{{6, percent}}%</orangeStrong> do ATQ de Yunli.<br>\"Intuito: Abatedora\": causa Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Yunli ao alvo, e causa Dano Físico igual a <orangeStrong>{{6, percent}}%</orangeStrong> do ATQ de Yunli a alvos adjacentes. Então, adicionalmente, causa {{4}} ocorrências de Dano, com cada vez causando Dano Físico igual a <orangeStrong>{{7, percent}}%</orangeStrong> do ATQ de Yunli a um único inimigo-alvo aleatório.<br>Quando Yunli causa Dano através desta habilidade, esse Dano será considerado Dano de Perícia Suprema.",
         "shortDesc": "Entra em \"Apara\" e provoca todos os inimigos. Ao atacar durante este período, ativa um <orangeStrong>Contra-Ataque poderoso</orangeStrong> e <orangeStrong>causa Dano Físico</orangeStrong> ao atacante e alvos adjacentes. Então, causa Dano Físico leve a um único inimigo-alvo que ricocheteia 6 vezes. Se nenhum Contra-Ataque for acionado durante o estado de Apara, causa Dano Físico a um inimigo-alvo aleatório e alvos adjacentes quando Apara acaba.",
         "tag": "Aprimoramento"
       }
@@ -29,7 +29,7 @@
       "0": {
         "name": "Forja Fulgurante",
         "fullDesc": "Quando Yunli é atacada por um inimigo-alvo, adicionalmente regenera {{3}} de Energia e imediatamente desfere um Contra-Ataque contra o atacante, causando Dano Físico igual a <orangeStrong>{{1, percent}}%</orangeStrong> do ATQ de Yunli ao atacante e Dano Físico igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Yunli aos alvos adjacentes.<br>Se não houver nenhum alvo para receber o Contra-Ataque imediatamente, então o Contra-Ataque é desferido contra um inimigo-alvo aleatório.",
-        "shortDesc": "Quando Yunli é atacada por um inimigo-alvo, adicionalmente regenera Energia e imediatamente desfere um Contra-Ataque contra o atacante e alvos adjacentes.",
+        "shortDesc": "Quando Yunli é atacada por qualquer inimigo-alvo, ela adicionalmente regenera Energia e imediatamente realiza um Contra-Ataque, causando Dano Físico ao atacante e Dano Físico leve aos alvos adjacentes.",
         "tag": "Explosão"
       }
     },
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Amainar Demoníaco",
-        "fullDesc": "Enquanto está no estado de Apara, resiste a penalidades de Controle Negativo recebidas e reduz o Dano recebido em {{1, percent}}%.",
+        "fullDesc": "Enquanto está no estado de \"Apara\", resiste a penalidades de Controle Negativo recebidas e reduz o Dano recebido em {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Caminho da Lâmina, Vozes da Cítara",
-      "desc": "Enquanto Apara está ativa, se um inimigo usar ativamente suas habilidades, independentemente se ele atacar Yunli ou não, \"Intuito: Abatedora\" será ativado e o efeito de \"Apara\" será removido. Ao causar Dano através do \"Intuito: Corte\" ou \"Intuito: Abatedora\", aumenta a Chance de CRIT em {{1, percent}}% e a PEN de RES a Físico em {{2, percent}}%."
+      "desc": "Enquanto \"Apara\" está ativa, se um inimigo usar ativamente suas habilidades, independentemente se ele atacar Yunli ou não, \"Intuito: Abatedora\" será ativado e o efeito de \"Apara\" será removido. Ao causar Dano através do \"Intuito: Corte\" ou \"Intuito: Abatedora\", aumenta a Chance de CRIT em {{1, percent}}% e a PEN de RES a Físico em {{2, percent}}%."
     }
   }
 }

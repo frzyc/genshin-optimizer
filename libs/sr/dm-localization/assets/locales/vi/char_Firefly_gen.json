@@ -72,7 +72,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Mô Đun β: Chiến Giáp Tự Phản Ứng",
-        "fullDesc": "Ở trạng thái Thiêu Đốt Hoàn Toàn, khi Tấn Công Kích Phá của Chiến Giáp SAM lớn hơn hoặc bằng {{1, percent}}%/{{2, percent}}%, tấn công kẻ địch trong trạng thái Phá Vỡ Điểm Yếu, sẽ khiến Giảm Sức Bền của lần tấn công này chuyển hóa thành 1 lần {{3, percent}}%/{{4, percent}}% Siêu Sát Thương Phá Vỡ.",
+        "fullDesc": "Ở trạng thái Thiêu Đốt Hoàn Toàn, khi Tấn Công Kích Phá của Chiến Giáp SAM lớn hơn hoặc bằng {{1, percent}}%/{{2, percent}}%, tấn công mục tiêu phe địch trong trạng thái Phá Vỡ Điểm Yếu, sẽ khiến Giảm Sức Bền của lần tấn công này chuyển hóa thành 1 lần {{3, percent}}%/{{4, percent}}% Siêu Sát Thương Phá Vỡ.",
         "shortDesc": "",
         "tag": ""
       }
@@ -93,7 +93,7 @@
     },
     "2": {
       "name": "Rơi Xuống, Từ Bầu Trời Vỡ Vụn",
-      "desc": "Khi đang ở trong trạng thái Thiêu Đốt Hoàn Toàn, thi triển Tấn Công Thường Cường Hóa, Chiến Kỹ Cường Hóa tiêu diệt kẻ địch hoặc khiến mục tiêu rơi vào trạng thái Phá Vỡ Điểm Yếu, Chiến Giáp SAM sẽ nhận ngay 1 hiệp cộng thêm. Hiệu ứng này có thể kích hoạt lại sau {{2}} hiệp."
+      "desc": "Khi đang ở trong trạng thái Thiêu Đốt Hoàn Toàn, thi triển Tấn Công Thường Cường Hóa, Chiến Kỹ Cường Hóa tiêu diệt mục tiêu phe địch hoặc khiến mục tiêu rơi vào trạng thái Phá Vỡ Điểm Yếu, Chiến Giáp SAM sẽ nhận ngay 1 hiệp cộng thêm. Hiệu ứng này có thể kích hoạt lại sau {{2}} hiệp."
     },
     "3": {
       "name": "Ngủ Say Trong Thiên Hà Lặng Thinh",

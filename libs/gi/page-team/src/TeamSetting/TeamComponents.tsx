@@ -1,4 +1,5 @@
 import { CardThemed, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
+import { colorToRgbaString, hexToColor } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type { LoadoutDatum } from '@genshin-optimizer/gi/db'
 import type {
@@ -16,6 +17,7 @@ import {
 } from '@genshin-optimizer/gi/db-ui'
 import type { CharacterSheet } from '@genshin-optimizer/gi/sheets'
 import { dataSetEffects, getArtSheet } from '@genshin-optimizer/gi/sheets'
+import { getCharEle } from '@genshin-optimizer/gi/stats'
 import type { dataContextObj } from '@genshin-optimizer/gi/ui'
 import {
   ArtifactSetName,
@@ -144,6 +146,8 @@ export function TeammateDisplay({
   const isTCCharOverride =
     loadoutDatum.buildType === 'tc' &&
     !!database.buildTcs.get(loadoutDatum.buildTcId)?.character
+
+  const elementKey = getCharEle(characterKey)
   return (
     <TeamCharacterContext.Provider value={teammateCharacterContext}>
       <DataContext.Provider value={teamMateDataContext}>
@@ -153,7 +157,22 @@ export function TeammateDisplay({
               <Skeleton variant="rectangular" width="100%" height={600} />
             }
           >
-            <CardThemed bgt="light">
+            <CardThemed
+              bgt="light"
+              sx={(theme) => {
+                const color = elementKey && theme.palette[elementKey]?.main
+                const colorrgb = color && hexToColor(color)
+                const colorrbga = (alpha = 1) =>
+                  (colorrgb && colorToRgbaString(colorrgb, alpha)) ??
+                  `rgba(255,255,255,${alpha})`
+                return {
+                  border: `1px solid ${colorrbga(0.3)}`,
+                  '&:hover': {
+                    border: `1px solid ${colorrbga(0.8)}`,
+                  },
+                }
+              }}
+            >
               <CardActionArea
                 component={Link}
                 to={`${characterKey}`}

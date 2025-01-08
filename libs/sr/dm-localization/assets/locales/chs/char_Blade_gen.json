@@ -35,7 +35,7 @@
       "0": {
         "name": "倏忽恩赐",
         "fullDesc": "刃受到伤害或消耗生命值时，获得1层充能，最多叠加5层。该效果每次受到攻击最多叠加1层。<br>当充能叠加至上限时，立即对敌方全体施放1次追加攻击，造成等同于刃<orangeStrong>{{2, percent}}%</orangeStrong>攻击力+<orangeStrong>{{4, percent}}%</orangeStrong>生命上限的风属性伤害并回复等同于刃生命上限{{3, percent}}%的生命值，施放追加攻击后，消耗所有充能。",
-        "shortDesc": "刃的生命值降低时，获得1层充能。当充能叠加至上限时，<orangeStrong>立即对敌方全体造成风属性伤害</orangeStrong>并回复生命值，随后消耗所有充能。",
+        "shortDesc": "刃的生命值降低时，获得1层充能。充能达到上限时发动追加攻击，<orangeStrong>对敌方全体造成风属性伤害</orangeStrong>并回复生命值，消耗所有充能。",
         "tag": "群攻"
       }
     },

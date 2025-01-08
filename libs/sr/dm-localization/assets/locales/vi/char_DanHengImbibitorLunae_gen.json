@@ -105,7 +105,7 @@
     },
     "2": {
       "name": "Cửu Du",
-      "desc": "Sau khi thi triển Tuyệt Kỹ, Dan Heng - Ẩm Nguyệt được ưu tiên hành động 100% đồng thời sẽ nhận thêm 1 Nghịch Lân."
+      "desc": "Sau khi thi triển Tuyệt Kỹ, Dan Heng - Ẩm Nguyệt được Ưu Tiên Hành Động 100% đồng thời sẽ nhận thêm 1 Nghịch Lân."
     },
     "3": {
       "name": "Vân Kỳ",
@@ -121,7 +121,7 @@
     },
     "6": {
       "name": "Trị Vì",
-      "desc": "Sau khi đồng đội bất kỳ thi triển Tuyệt Kỹ, Dan Heng - Ẩm Nguyệt thi triển \"Bàn Nã Diệu Dược\" ở lần kế tiếp, Xuyên Kháng Số Ảo sẽ tăng {{1, percent}}%, hiệu ứng này tối đa cộng dồn {{2}} tầng."
+      "desc": "Sau khi nhân vật khác của phe ta thi triển Tuyệt Kỹ, Dan Heng - Ẩm Nguyệt thi triển \"Bàn Nã Diệu Dược\" ở lần kế tiếp, Xuyên Kháng Số Ảo sẽ tăng {{1, percent}}%, hiệu ứng này tối đa cộng dồn {{2}} tầng."
     }
   }
 }

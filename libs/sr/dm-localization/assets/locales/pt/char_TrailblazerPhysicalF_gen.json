@@ -41,7 +41,7 @@
       "0": {
         "name": "Arremesso Perfeito",
         "fullDesc": "Sempre depois que este personagem inflige uma Quebra de Fraqueza a um inimigo, o ATQ aumenta em <orangeStrong>{{1, percent}}%</orangeStrong>. Este efeito pode acumular até {{2}} vez(es).",
-        "shortDesc": "",
+        "shortDesc": "Toda vez que essa unidade causa Quebra de Fraqueza a um inimigo-alvo, o ATQ aumenta.",
         "tag": "Aprimoramento"
       }
     },
@@ -49,7 +49,7 @@
       "0": {
         "name": "Terceiro Golpe Imortal",
         "fullDesc": "Imediatamente cura todos os aliados em {{1, percent}}% de seus PV máximos depois de usar esta Técnica.",
-        "shortDesc": "",
+        "shortDesc": "Após usar a Técnica, imediatamente <orangeStrong>restaura PV</orangeStrong> para a equipe.",
         "tag": "Restauração"
       }
     },

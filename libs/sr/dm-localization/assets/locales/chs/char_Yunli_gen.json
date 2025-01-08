@@ -13,7 +13,7 @@
       "0": {
         "name": "飞铗震赫",
         "fullDesc": "回复等同于云璃<orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>攻击力+<orangeStrong>{{4}}</orangeStrong>的生命值，并对指定敌方单体造成等同于云璃<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害，对其相邻目标造成等同于云璃<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的物理属性伤害。",
-        "shortDesc": "回复自身生命值，并对敌方单体与相邻目标造成少量物理属性伤害。",
+        "shortDesc": "回复自身生命值，并对敌方单体造成物理属性伤害，对相邻目标造成少量物理属性伤害。",
         "tag": "扩散"
       }
     },
@@ -29,7 +29,7 @@
       "0": {
         "name": "闪铄",
         "fullDesc": "当云璃受到敌方目标攻击后，额外恢复{{3}}点能量，并立即向攻击者发起反击，对其造成等同于云璃<orangeStrong>{{1, percent}}%</orangeStrong>攻击力的物理属性伤害，对其相邻目标造成等同于云璃<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的物理属性伤害。<br>若不存在可反击的目标，则反击敌方随机目标。",
-        "shortDesc": "当云璃受到敌方目标攻击时，额外恢复能量并立即向攻击者与其相邻目标发起反击。",
+        "shortDesc": "当云璃受到敌方目标攻击时，额外恢复能量并立即反击，对攻击者造成物理属性伤害，对相邻目标造成少量物理属性伤害。",
         "tag": "扩散"
       }
     },

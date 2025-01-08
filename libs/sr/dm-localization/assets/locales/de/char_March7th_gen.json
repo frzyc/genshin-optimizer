@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Immer so weiter ...",
-      "desc": "Verbündete, die durch den Schild der Fertigkeit geschützt sind, werden zu Beginn jeder Runde LP in Höhe von {{1, percent}}% ihrer max. LP plus {{2}} wiederhergestellt."
+      "desc": "Verbündeten, die durch den Schild der Fertigkeit geschützt sind, werden zu Beginn jeder Runde LP in Höhe von {{1, percent}}% ihrer max. LP plus {{2}} wiederhergestellt."
     }
   }
 }

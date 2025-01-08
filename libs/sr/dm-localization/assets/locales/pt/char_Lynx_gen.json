@@ -77,11 +77,11 @@
   "ranks": {
     "1": {
       "name": "Madrugada da Caminhada na Neve",
-      "desc": "Ao curar aliados com PV iguais ou menores que {{1, percent}}%, a Cura Realizada de Lynx aumenta em {{2, percent}}%. Este efeito também funciona em curas contínuas."
+      "desc": "Ao curar aliados com porcentagem de PV igual ou menor que {{1, percent}}%, a Cura Realizada de Lynx aumenta em {{2, percent}}%. Este efeito também funciona em curas contínuas."
     },
     "2": {
       "name": "Manhã da Fornalha Portátil",
-      "desc": "Um alvo com \"Resposta de Sobrevivência\" pode resistir a aplicação de penalidade por {{1}} vez(es)."
+      "desc": "Um alvo com \"Resposta de Sobrevivência\" pode resistir à aplicação de penalidade por {{1}} vez(es)."
     },
     "3": {
       "name": "Tarde do Sinalizador de Avalanche",

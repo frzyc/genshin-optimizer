@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Gai Góc",
-        "fullDesc": "Tăng {{1, percent}}% xác suất cơ bản khiến kẻ địch rơi vào Sốc Điện của Tuyệt Kỹ, Bí Kỹ và Đòn Đánh Theo Sau kích hoạt bởi Thiên Phú.",
+        "fullDesc": "Tăng {{1, percent}}% xác suất cơ bản khiến mục tiêu phe địch rơi vào Sốc Điện của Tuyệt Kỹ, Bí Kỹ và Đòn Đánh Theo Sau được kích hoạt bởi Thiên Phú.",
         "shortDesc": "",
         "tag": ""
       }
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Vô Cùng Vô Tận!",
-      "desc": "Khi thiên phú kích hoạt Đòn Đánh Theo Sau sẽ có {{1, percent}}% xác suất cơ bản khiến Sát Thương Duy Trì mà mục tiêu phải chịu tăng {{2, percent}}%, duy trì {{3}} hiệp."
+      "desc": "Khi Thiên Phú kích hoạt Đòn Đánh Theo Sau, sẽ có {{1, percent}}% xác suất cơ bản khiến Sát Thương Duy Trì mà mục tiêu phải chịu tăng {{2, percent}}%, duy trì {{3}} hiệp."
     },
     "2": {
       "name": "Kẻ Mơ Tưởng, Thổn Thức",

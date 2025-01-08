@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Dạo Bước Rừng Lau",
-      "desc": "Khi Ruan Mei trong trận, và toàn bộ phe ta gây sát thương lên kẻ địch ở trạng thái Phá Vỡ Điểm Yếu, Tấn Công sẽ tăng {{1, percent}}%."
+      "desc": "Khi Ruan Mei trong trận, và toàn bộ phe ta gây sát thương lên mục tiêu phe địch ở trạng thái Phá Vỡ Điểm Yếu, Tấn Công sẽ tăng {{1, percent}}%."
     },
     "3": {
       "name": "Bóng Nàng Áo Lụa Xanh Màu Khói",

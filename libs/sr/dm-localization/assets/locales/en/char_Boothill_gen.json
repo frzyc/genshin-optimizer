@@ -27,7 +27,7 @@
       "0": {
         "name": "Dust Devil's Sunset Rodeo",
         "fullDesc": "Applies Physical Weakness to a single target enemy, lasting for {{3}} turn(s).<br>Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Boothill's ATK to the target and delays their action by <orangeStrong>{{2, percent}}%</orangeStrong>.",
-        "shortDesc": "<orangeStrong>Applies Physical Weakness</orangeStrong> to a single enemy, deals massive Physical DMG to them, and delays their action.",
+        "shortDesc": "<orangeStrong>Applies Physical Weakness</orangeStrong> to one enemy, deals massive Physical DMG to them, and delays their action.",
         "tag": "Single Target"
       }
     },

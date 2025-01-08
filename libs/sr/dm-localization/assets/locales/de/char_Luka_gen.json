@@ -74,7 +74,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Kampfgeistbrecher",
-        "fullDesc": "Beim Einsatz des verstärkten Standardangriffs hat jeder Treffer mit einem Geraden Haken eine feste Chance von {{1, percent}}%, einen weiteren Treffer zu verursachen. Dieser Effekt wird nicht durch Treffer ausgelöst, die auf diese Weise verursacht wurden.",
+        "fullDesc": "Beim Einsatz des verstärkten Standardangriffs hat jeder Treffer von „Gerader Haken“ eine feste Chance von {{1, percent}}%, einen weiteren Treffer zu verursachen. Dieser Effekt wird nicht durch Treffer ausgelöst, die auf diese Weise verursacht wurden.",
         "shortDesc": "",
         "tag": ""
       }

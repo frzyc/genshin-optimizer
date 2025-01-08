@@ -20,8 +20,8 @@
     "ult": {
       "0": {
         "name": "Domination spirituelle de Plumeau",
-        "fullDesc": "Régénère des points d'énergie pour tous les alliés, hormis Huohuo, à hauteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de leur énergie max respective. Augmente aussi leur ATQ de <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> pendant {{3}} tours.",
-        "shortDesc": "<orangeStrong>Régénère des points d'énergie</orangeStrong> pour tous les alliés, hormis Huohuo, et <orangeStrong>augmente leur ATQ</orangeStrong>.",
+        "fullDesc": "Régénère des points d'énergie pour tous les coéquipiers (à l'exception de cette unité), hormis Huohuo, à hauteur de <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de leur énergie max respective. Augmente aussi leur ATQ de <orangeStrong>{{2, percent(fixed: 1)}}%</orangeStrong> pendant {{3}} tours.",
+        "shortDesc": "<orangeStrong>Régénère des points d'énergie</orangeStrong> pour tous les coéquipiers, hormis Huohuo, et <orangeStrong>augmente leur ATQ</orangeStrong>.",
         "tag": "Soutien"
       }
     },
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Maudite",
-        "fullDesc": "Les chances de résister aux malus de contrôle augmentent de {{1, percent}}%.",
+        "fullDesc": "Augmente les chances de résister aux malus de contrôle de {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Queue de l'esprit scellée",
-      "desc": "Si Huohuo bénéficie d'Intervention divine alors qu'un allié subit un coup fatal, l'allié ne tombe pas à terre, et restaure immédiatement des PV à hauteur de {{1, percent}}% de ses PV max, ce qui réduit la durée d'Intervention divine de 1 tour. Cet effet ne peut être déclenché que {{2}} fois par combat."
+      "desc": "Si Huohuo bénéficie d'Intervention divine pendant qu'une cible alliée subit un coup fatal, l'allié ne tombe pas à terre, et restaure immédiatement des PV à hauteur de {{1, percent}}% de ses PV max, ce qui réduit la durée d'Intervention divine de 1 tour. Cet effet ne peut être déclenché que {{2}} fois par combat."
     },
     "3": {
       "name": "Malédiction à laquelle les papillons ont cédé",

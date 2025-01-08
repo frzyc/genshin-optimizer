@@ -7,10 +7,7 @@ import { type Tree } from '@nx/devkit'
 import genIndex from './genIndex'
 import genMap from './genMap'
 export default async function genMapGenerator(tree: Tree) {
-  // TODO: Add Trailblazer support
-  for (const map of allCharacterKeys.filter(
-    (key) => !key.includes('Trailblazer')
-  ))
+  for (const map of allCharacterKeys)
     await genMap(tree, { map_type: 'char', map })
   for (const map of allRelicSetKeys)
     await genMap(tree, { map_type: 'relic', map })

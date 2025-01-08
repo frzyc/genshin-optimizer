@@ -12,8 +12,8 @@
     "skill": {
       "0": {
         "name": "Known by Stars, Shown by Hearts",
-        "fullDesc": "Activates Matrix of Prescience, via which other team members will Distribute {{1, percent}}% of the DMG they receive (before this DMG is mitigated by any Shields) to Fu Xuan for {{3}} turn(s).<br>While affected by Matrix of Prescience, all team members gain the Knowledge effect, which increases their respective Max HP by <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> of Fu Xuan's Max HP, and increases CRIT Rate by <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.<br>When Fu Xuan is knocked down, the Matrix of Prescience will be dispelled.",
-        "shortDesc": "Activates Matrix of Prescience. <orangeStrong>DMG received by Fu Xuan's allies is Distributed</orangeStrong> to her. Also <orangeStrong>increases CRIT Rate</orangeStrong> and Max HP of all allies.",
+        "fullDesc": "Activates Matrix of Prescience, via which Fu Xuan's teammates will Distribute {{1, percent}}% of the DMG they receive (before this DMG is mitigated by any Shields) to Fu Xuan for {{3}} turn(s).<br>While affected by Matrix of Prescience, all ally targets gain the Knowledge effect, which increases their respective Max HP by <orangeStrong>{{4, percent(fixed: 1)}}%</orangeStrong> of Fu Xuan's Max HP, and increases CRIT Rate by <orangeStrong>{{5, percent(fixed: 1)}}%</orangeStrong>.<br>When Fu Xuan is knocked down, the Matrix of Prescience will be dispelled.",
+        "shortDesc": "Activates Matrix of Prescience. <orangeStrong>DMG received by Fu Xuan's teammates is Distributed</orangeStrong> to her. Also <orangeStrong>increases CRIT Rate</orangeStrong> and Max HP of all allies.",
         "tag": "Defense"
       }
     },
@@ -28,8 +28,8 @@
     "talent": {
       "0": {
         "name": "Bleak Breeds Bliss",
-        "fullDesc": "While Fu Xuan is still active in battle, Misfortune Avoidance is applied to the entire team. With Misfortune Avoidance, allies take <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> less DMG.<br>When Fu Xuan's current HP falls to {{2, percent}}% of her Max HP or less, HP Restore will be triggered for Fu Xuan, restoring her HP by <orangeStrong>{{3, percent}}%</orangeStrong> of the amount of HP she is currently missing. This effect cannot be triggered if she receives a killing blow. This effect has 1 trigger count by default and can hold up to a maximum of 2 trigger counts.",
-        "shortDesc": "While Fu Xuan is still active in battle, the DMG taken by all team members is reduced.<br>When her HP is low, <orangeStrong>automatically</orangeStrong> <orangeStrong>restores her own HP</orangeStrong> based on the percentage of HP already lost. This effect can have up to 2 trigger counts at any given time.",
+        "fullDesc": "While Fu Xuan is still active in battle, Misfortune Avoidance is applied to the entire team. With Misfortune Avoidance, allies take <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> less DMG.<br>When Fu Xuan's current HP percentage falls to {{2, percent}}% of her Max HP or less, HP Restore will be triggered for Fu Xuan, restoring her HP by <orangeStrong>{{3, percent}}%</orangeStrong> of the amount of HP she is currently missing. This effect cannot be triggered if she receives a killing blow. This effect has 1 trigger count by default and can hold up to a maximum of 2 trigger counts.",
+        "shortDesc": "While Fu Xuan is still active in battle, the DMG taken by all team members is reduced.<br>When her HP is low, <orangeStrong>automatically</orangeStrong> <orangeStrong>restores her own HP</orangeStrong> based on the HP percentage already lost. This effect can have up to 2 trigger counts at any given time.",
         "tag": "Restore"
       }
     },
@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Liuren, the Sexagenary",
-        "fullDesc": "If a target enemy applies Crowd Control debuffs to allies while the Matrix of Prescience is active, all allies will resist all Crowd Control debuffs applied by the enemy target during the current action. This effect can only be triggered once. When Matrix of Prescience is activated again, the number of times this effect can be triggered will reset.",
+        "fullDesc": "If a target enemy applies Crowd Control debuffs to allies while the \"Matrix of Prescience\" is active, all allies will resist all Crowd Control debuffs applied by the enemy target during the current action. This effect can only be triggered once. When \"Matrix of Prescience\" is activated again, the number of times this effect can be triggered will reset.",
         "shortDesc": "",
         "tag": ""
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Optimus Felix",
-      "desc": "If any team member is struck by a killing blow while Matrix of Prescience is active, then all allies who were struck by a killing blow during this action will not be knocked down, and {{1, percent}}% of their Max HP is immediately restored. This effect can trigger 1 time per battle."
+      "desc": "If any ally target is struck by a killing blow while \"Matrix of Prescience\" is active, then all ally targets who were struck by a killing blow during this action will not be knocked down, and {{1, percent}}% of their Max HP is immediately restored. This effect can trigger 1 time per battle."
     },
     "3": {
       "name": "Apex Nexus",

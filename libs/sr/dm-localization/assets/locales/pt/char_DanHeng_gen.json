@@ -29,7 +29,7 @@
       "0": {
         "name": "Superioridade de Alcance",
         "fullDesc": "Quando Dan Heng é alvo da habilidade de um aliado, a PEN de RES a Vento de seu próximo ataque recebe um aumento de <orangeStrong>{{1, percent}}%</orangeStrong>. Este efeito pode ser ativado novamente depois de {{2}} rodada(s).",
-        "shortDesc": "Ao se tornar o alvo de uma habilidade de um aliado, a PEN de RES a <orangeStrong>Vento</orangeStrong> de seu próximo ataque aumenta. Este efeito pode ser ativado novamente depois de 2 rodadas.",
+        "shortDesc": "Quando esta unidade se torna o alvo de uma habilidade de um aliado, a PEN de RES a <orangeStrong>Vento</orangeStrong> do próximo ataque dessa unidade aumenta. Este efeito pode ser ativado novamente depois de 2 rodadas.",
         "tag": "Aprimoramento"
       }
     },
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Mais Rápido que a Luz",
-        "fullDesc": "Depois de desferir um ataque, há uma chance fixa de {{1, percent}}% de aumentar a própria VEL em {{2, percent}}% por {{3}} rodada(s).",
+        "fullDesc": "Depois de desferir um ataque, há uma chance fixa de {{1, percent}}% de aumentar a VEL desta unidade em {{2, percent}}% por {{3}} rodada(s).",
         "shortDesc": "",
         "tag": ""
       }

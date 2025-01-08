@@ -20,8 +20,8 @@
     "ult": {
       "0": {
         "name": "Syllogistic Paradox",
-        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Dr. Ratio's ATK to a single target enemy and applies Wiseman's Folly. When Dr. Ratio's allies attack a target afflicted with Wiseman's Folly, Dr. Ratio launches his Talent's follow-up attack for 1 time against this target.<br>Wiseman's Folly can be triggered for up to {{2}} times and only affects the most recent target of Dr. Ratio's Ultimate. This trigger count resets after Dr. Ratio's Ultimate is used.",
-        "shortDesc": "Deals Imaginary DMG to a single target enemy and applies Wiseman's Folly. When Dr. Ratio's allies attack a target afflicted with Wiseman's Folly, Dr. Ratio launches 1 <orangeStrong>follow-up attack</orangeStrong> on this target.",
+        "fullDesc": "Deals Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Dr. Ratio's ATK to a single target enemy and applies Wiseman's Folly. When Dr. Ratio's teammates attack a target afflicted with Wiseman's Folly, Dr. Ratio launches 1 instance of his Talent's Follow-up ATK against this target.<br>Wiseman's Folly can be triggered for up to {{2}} times and only affects the most recent target of Dr. Ratio's Ultimate. This trigger count resets after Dr. Ratio's Ultimate is used.",
+        "shortDesc": "Deals Imaginary DMG to a single target enemy and applies Wiseman's Folly. When Dr. Ratio's teammates attack a target afflicted with Wiseman's Folly, Dr. Ratio launches 1 instance of <orangeStrong>Follow-up ATK</orangeStrong> on this target.",
         "tag": "Single Target"
       }
     },
@@ -29,15 +29,15 @@
       "0": {
         "name": "Cogito, Ergo Sum",
         "fullDesc": "When using his Skill, Dr. Ratio has a {{2, percent}}% fixed chance of launching a follow-up attack against his target for 1 time, dealing Imaginary DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Dr. Ratio's ATK. For each debuff the target enemy has, the fixed chance of launching follow-up attack increases by {{3, percent}}%. If the target enemy is defeated before the follow-up attack triggers, the follow-up attack will be directed at a single random enemy instead.",
-        "shortDesc": "When using the Skill, there is a chance of launching a <orangeStrong>follow-up attack</orangeStrong> against the target for 1 time.",
+        "shortDesc": "When using Skill, there is a chance to launch 1 instance of <orangeStrong>Follow-up ATK</orangeStrong> on the target, dealing Imaginary DMG.",
         "tag": "Single Target"
       }
     },
     "technique": {
       "0": {
         "name": "Mold of Idolatry",
-        "fullDesc": "After using Technique, creates a special dimension that Taunts nearby enemies, lasting for {{1}} second(s). After entering battle with enemies in this special dimension, there is a {{2, percent}}% base chance to reduce each single enemy target's SPD by {{3, percent}}% for {{4}} turn(s). Only 1 dimension created by allies can exist at the same time.",
-        "shortDesc": "Creates a special dimension. Enemies within the dimension are Taunted. After entering battle with enemies in this dimension, there is a high chance to <orangeStrong>reduce SPD</orangeStrong> of enemy targets.",
+        "fullDesc": "After using Technique, creates a Special Dimension that Taunts nearby enemies, lasting for {{1}} second(s). After entering battle with enemies in this Special Dimension, there is a {{2, percent}}% base chance to reduce each single enemy target's SPD by {{3, percent}}% for {{4}} turn(s). Only 1 dimension created by allies can exist at the same time.",
+        "shortDesc": "Creates a Special Dimension. Enemies within the dimension are Taunted. After entering battle with enemies in this dimension, there is a high chance to <orangeStrong>reduce SPD</orangeStrong> of enemy targets.",
         "tag": "Impair"
       }
     },
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Inference",
-        "fullDesc": "When Skill is used to attack an enemy target, there is a {{1, percent}}% base chance to reduce the attacked target's Effect RES by {{2, percent}}% for {{3}} turn(s).",
+        "fullDesc": "When Skill is used to attack an enemy target, there is a {{1, percent}}% base chance to reduce the attacked enemy target's Effect RES by {{2, percent}}% for {{3}} turn(s).",
         "shortDesc": "",
         "tag": ""
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "The Divine Is in the Details",
-      "desc": "When his Talent's follow-up attack hits a target, for every debuff the target has, deals Imaginary Additional DMG equal to {{1, percent}}% of Dr. Ratio's ATK. This effect can be triggered for a maximum of {{2}} time(s) during each follow-up attack."
+      "desc": "When his Talent's Follow-up ATK hits a target, for every debuff the target has, deals Imaginary Additional DMG equal to {{1, percent}}% of Dr. Ratio's ATK. This effect can be triggered for a maximum of {{2}} time(s) during each Follow-up ATK."
     },
     "3": {
       "name": "Know Thyself",
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Vincit Omnia Veritas",
-      "desc": "Additionally increases the triggerable count for Wiseman's Folly by {{1}}. The DMG dealt by the Talent's follow-up attack increases by {{2, percent}}%."
+      "desc": "Additionally increases the trigger count for \"Wiseman's Folly\" by {{1}}. The DMG dealt by the Talent's Follow-up ATK increases by {{2, percent}}%."
     }
   }
 }

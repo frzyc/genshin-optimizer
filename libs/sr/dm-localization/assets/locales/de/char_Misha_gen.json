@@ -22,7 +22,7 @@
         "name": "Ich bin spät dran!",
         "fullDesc": "Mishas Ultimate hat zunächst eine Trefferzahl von {{1}}. Anfangs verursacht er einen Treffer und fügt einem anvisierten Gegner Eis-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> seines ANG zu. Mit seinen weiteren Treffern fügt er jeweils einem zufälligen Gegner Eis-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> seines ANG zu. Vor jedem Treffer besteht eine Grundchance von <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong>, das Ziel für 1 Rd. einzufrieren.<br>Ein gefrorener Gegner kann keine Aktionen ausführen und erleidet zu Beginn jeder Runde zusätzlichen Eis-SCH in Höhe von <orangeStrong>{{4, percent}}%</orangeStrong> von Mishas ANG.<br>Mishas Ultimate kann eine Trefferzahl von bis zu {{5}} haben. Nach dem Einsatz seines Ultimates wird die Trefferzahl auf die ursprüngliche Anzahl zurückgesetzt.",
         "shortDesc": "Fügt einem Gegner geringen Eis-SCH zu. Der Angriff prallt zunächst <orangeStrong>{{1}}</orangeStrong>-mal und max. <orangeStrong>{{5}}</orangeStrong>-mal ab. Vor jedem Treffer besteht eine geringe Chance, das Ziel <orangeStrong>einzufrieren</orangeStrong>.",
-        "tag": "Abprallung"
+        "tag": "Abpraller"
       }
     },
     "talent": {

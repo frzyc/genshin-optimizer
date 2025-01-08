@@ -29,7 +29,7 @@
       "0": {
         "name": "Sanction",
         "fullDesc": "When an ally uses a Basic ATK, Skill, or Ultimate on an enemy inflicted with Burden, the DMG dealt increases by <orangeStrong>{{1, percent}}%</orangeStrong>, lasting for {{2}} turn(s).",
-        "shortDesc": "Ally deals more DMG when attacking enemies inflicted with Burden.",
+        "shortDesc": "When an ally target uses a Basic ATK, Skill, or Ultimate on an enemy target inflicted with \"Burden,\" the DMG dealt increases.",
         "tag": "Support"
       }
     },
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "One Heart",
-      "desc": "When an ally with Hanya's Ultimate's effect defeats an enemy, Hanya's action is Advanced Forward by {{1, percent}}%. This effect can only be triggered {{2}} time(s) per turn."
+      "desc": "When an ally target with Hanya's Ultimate effect defeats an enemy, Hanya's action advances by {{1, percent}}%. This effect can only be triggered {{2}} time(s) per turn."
     },
     "2": {
       "name": "Two Views",

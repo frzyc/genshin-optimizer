@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "La cerise sur le couteau",
-        "fullDesc": "Lorsque Yanqing attaque, il inflige des DGT de glace additionnels équivalents à {{1, percent}}% de son ATQ aux ennemis qui ont une Faiblesse à la glace.",
+        "fullDesc": "Lorsque Yanqing attaque, il inflige des DGT additionnels de glace équivalents à {{1, percent}}% de son ATQ aux ennemis qui ont une Faiblesse à la glace.",
         "shortDesc": "",
         "tag": ""
       }
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Coupe franche",
-      "desc": "Lorsque Yanqing attaque un ennemi gelé, il inflige des DGT de glace additionnels équivalents à {{1, percent}}% de son ATQ."
+      "desc": "Lorsque Yanqing attaque un ennemi gelé, il inflige des DGT additionnels de glace équivalents à {{1, percent}}% de son ATQ."
     },
     "2": {
       "name": "Transe du guerrier",

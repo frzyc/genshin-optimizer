@@ -13,7 +13,7 @@
       "0": {
         "name": "Lightning Flash",
         "fullDesc": "Deals Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Serval's ATK to a single enemy and Lightning DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Serval's ATK to enemies adjacent to it, with a {{3, percent}}% base chance for enemies hit to become Shocked for {{4}} turn(s).<br>While Shocked, enemies take Lightning DoT equal to <orangeStrong>{{5, percent}}%</orangeStrong> of Serval's ATK at the beginning of each turn.",
-        "shortDesc": "Deals minor Lightning DMG to a single enemy and any adjacent targets, with a high chance of causing <orangeStrong>Shock</orangeStrong>.",
+        "shortDesc": "Deals Lightning DMG to one enemy and minor Lightning DMG to adjacent targets, with a high chance of <orangeStrong>applying Shock</orangeStrong> on the target.",
         "tag": "Blast"
       }
     },
@@ -28,7 +28,7 @@
     "talent": {
       "0": {
         "name": "Galvanic Chords",
-        "fullDesc": "After Serval attacks, deals Additional Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Serval's ATK to all Shocked enemies.",
+        "fullDesc": "After Serval attacks, deals Lightning Additional DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Serval's ATK to all Shocked enemies.",
         "shortDesc": "After attacking, deals <orangeStrong>a minor amount of Additional DMG</orangeStrong> to all Shocked enemies.",
         "tag": "Enhance"
       }
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Rock 'n' Roll",
-        "fullDesc": "Skill has a {{1, percent}}% increased base chance to Shock enemies.",
+        "fullDesc": "When using skill, increases the base chance for the attacked enemy target to become Shocked by {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }

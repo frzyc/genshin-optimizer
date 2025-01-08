@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Dvesha, Inibida",
-      "desc": "Aumenta em {{1, percent}}% o Dano causado pelo Ataque Extra de Talento."
+      "desc": "Aumenta em {{1, percent}}% o Dano causado pelo Ataque Extra do Talento."
     },
     "2": {
       "name": "Klesha, Rompida",

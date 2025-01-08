@@ -20,8 +20,8 @@
     "ult": {
       "0": {
         "name": "Glacial Cascade",
-        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of March 7th's ATK to all enemies. Hit enemies have a {{2, percent}}% base chance to be Frozen for {{3}} turn(s).<br>While Frozen, enemies cannot take action and will receive Additional Ice DMG equal to <orangeStrong>{{4, percent}}%</orangeStrong> of March 7th's ATK at the beginning of each turn.",
-        "shortDesc": "Deals Ice DMG to <orangeStrong>all enemies</orangeStrong>, with <orangeStrong>a chance to apply the Freeze effect</orangeStrong>",
+        "fullDesc": "Deals Ice DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of March 7th's ATK to all enemies. Hit enemies have a {{2, percent}}% base chance to be Frozen for {{3}} turn(s).<br>While Frozen, enemies cannot take action and will receive Ice Additional DMG equal to <orangeStrong>{{4, percent}}%</orangeStrong> of March 7th's ATK at the beginning of each turn.",
+        "shortDesc": "Deals Ice DMG to <orangeStrong>all enemies</orangeStrong>, with <orangeStrong>a chance of Freezing them</orangeStrong>.",
         "tag": "AoE"
       }
     },
@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Freezing Beauty",
-        "fullDesc": "Immediately attacks the enemy. After entering battle, there is a {{1, percent}}% base chance to Freeze a random enemy for {{2}} turn(s).<br>While Frozen, the enemy cannot take action and will take Additional Ice DMG equal to {{3, percent}}% of March 7th's ATK at the beginning of each turn.",
+        "fullDesc": "Immediately attacks the enemy. After entering battle, there is a {{1, percent}}% base chance to Freeze a random enemy for {{2}} turn(s).<br>While Frozen, the enemy cannot take action and will take Ice Additional DMG equal to {{3, percent}}% of March 7th's ATK at the beginning of each turn.",
         "shortDesc": "Attacks the enemy. After entering battle, there is a high chance of inflicting Freeze on a random enemy.",
         "tag": ""
       }
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Purify",
-        "fullDesc": "When using the Skill, removes 1 debuff from a target ally.",
+        "fullDesc": "When using Skill, dispels 1 debuff from one designated ally.",
         "shortDesc": "",
         "tag": ""
       }
@@ -68,7 +68,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Ice Spell",
-        "fullDesc": "Increases the Ultimate's base chance to Freeze enemies by {{1, percent}}%.",
+        "fullDesc": "When using Ultimate, increases the base chance to Freeze enemies by {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }

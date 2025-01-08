@@ -12,7 +12,7 @@
     "skill": {
       "0": {
         "name": "Garantie der Annexion",
-        "fullDesc": "Lässt einen Verbündeten zum „Schuldeneintreiber“ werden und erhöht seine GES für {{4}} Rd. um {{1}} Pkt.<br>Nachdem der Schuldeneintreiber angegriffen hat, fügt er allen getroffenen Gegnern 1-mal zusätzlichen Quanten-SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Jades ANG zu und verbraucht {{2, percent}}% seiner max. LP. Wenn die aktuellen LP nicht ausreichen, werden sie auf 1 reduziert.<br>Wenn Jade zur Schuldeneintreiberin wird, kann sie den Effekt der GES-Erhöhung nicht erhalten und ihre Angriffe verbrauchen keine LP.<br>Wenn auf dem Feld der Schuldeneintreiber existiert, kann Jade ihre Fertigkeit nicht einsetzen. Zu Beginn jeder ihrer Runden wird die Dauer des Status Schuldeneintreiber um 1 verringert.",
+        "fullDesc": "Lässt einen Verbündeten zum „Schuldeneintreiber“ werden und erhöht seine GES für {{4}} Rd. um {{1}} Pkt.<br>Nachdem der Schuldeneintreiber angegriffen hat, fügt er allen getroffenen Gegnern 1-mal zusätzlichen Quanten-SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Jades ANG zu und verbraucht {{2, percent}}% seiner max. LP. Wenn die aktuellen LP nicht ausreichen, werden sie auf 1 reduziert.<br>Wenn Jade zur Schuldeneintreiberin wird, kann sie den Effekt der GES-Erhöhung nicht erhalten und ihre Angriffe verbrauchen keine LP.<br>Wenn auf dem Kampffeld der Schuldeneintreiber existiert, kann Jade ihre Fertigkeit nicht einsetzen. Zu Beginn jeder ihrer Runden wird die Dauer des Status Schuldeneintreiber um 1 verringert.",
         "shortDesc": "Lässt einen Verbündeten zum <orangeStrong>Schuldeneintreiber</orangeStrong> werden und erhöht seine GES. Nachdem der <orangeStrong>Schuldeneintreiber</orangeStrong> angegriffen hat, verbraucht er seine eigenen LP und fügt allen getroffenen Gegnern geringen zusätzlichen Quanten-SCH zu. Wenn Jade zur Schuldeneintreiberin wird, kann sie den Effekt der GES-Erhöhung nicht erhalten und ihre Angriffe verbrauchen keine LP.",
         "tag": "Unterstützung"
       }
@@ -21,7 +21,7 @@
       "0": {
         "name": "Vertrag im Abgrund",
         "fullDesc": "Fügt allen Gegnern Quanten-SCH in Höhe von <orangeStrong>{{3, percent}}%</orangeStrong> von Jades ANG zu. Verstärkt gleichzeitig den Folgeangriff von Jades Talent, indem sein SCH-Multiplikator um <orangeStrong>{{1, percent}}%</orangeStrong> erhöht wird. Der Verstärkungseffekt kann {{2}}-mal wirksam werden.",
-        "shortDesc": "Fügt allen Gegnern Quanten-SCH zu und erhält einen erhöhten SCH-Multiplikator für <orangeStrong>Folgeangriffe</orangeStrong>.",
+        "shortDesc": "Fügt allen Gegnern Quanten-SCH zu und erhöht den SCH-Multiplikator für <orangeStrong>Folgeangriffe</orangeStrong> des Talents.",
         "tag": "Flächenangriff"
       }
     },
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Gerechtigkeit? Ausstehender Sponsor",
-      "desc": "Wenn sich ein Verbündeter als „Schuldeneintreiber“ auf dem Feld befindet, wird Jades Quanten-WDS-DUR um {{1, percent}}% erhöht und sie tritt in den Status Schuldeneintreiber ein."
+      "desc": "Wenn sich ein Verbündeter als „Schuldeneintreiber“ auf dem Kampffeld befindet, wird Jades Quanten-WDS-DUR um {{1, percent}}% erhöht und sie tritt in den Status Schuldeneintreiber ein."
     }
   }
 }

@@ -13,7 +13,7 @@
       "0": {
         "name": "Bladeborne Quake",
         "fullDesc": "Restores HP equal to <orangeStrong>{{3, percent(fixed: 1)}}%</orangeStrong> of Yunli's ATK plus <orangeStrong>{{4}}</orangeStrong>. Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Yunli's ATK to a single target enemy and Physical DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Yunli's ATK to adjacent targets.",
-        "shortDesc": "Restores this unit's HP and deals minor Physical DMG to a single enemy and adjacent targets.",
+        "shortDesc": "Restores this unit's HP. Deals Physical DMG to one enemy and minor Physical DMG to adjacent targets.",
         "tag": "Blast"
       }
     },
@@ -21,7 +21,7 @@
       "0": {
         "name": "Earthbind, Etherbreak",
         "fullDesc": "Consumes {{8}} Energy. Yunli gains Parry and Taunts all enemies, lasting until the end of the next ally's or enemy's turn. Increases the CRIT DMG dealt by Yunli's next Counter by <orangeStrong>{{2, percent}}%</orangeStrong>. When triggering the Counter effect from Talent, launches the Counter \"Intuit: Cull\" instead and removes the Parry effect. If no Counter is triggered while Parry is active, Yunli will immediately launch the Counter \"Intuit: Slash\" on a random enemy target.<br><br>\"Intuit: Slash\": Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Yunli's ATK to the target, and deals Physical DMG equal to <orangeStrong>{{6, percent}}%</orangeStrong> of Yunli's ATK to adjacent targets.<br>\"Intuit: Cull\": Deals Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Yunli's ATK to the target, and deals Physical DMG equal to <orangeStrong>{{6, percent}}%</orangeStrong> of Yunli's ATK to adjacent targets. Then, additionally deals {{4}} instances of DMG, each dealing Physical DMG equal to <orangeStrong>{{7, percent}}%</orangeStrong> of Yunli's ATK to a random single enemy.<br><br>When Yunli deals DMG via this ability, it's considered as dealing Ultimate DMG.",
-        "shortDesc": "Enters \"Parry\" and taunts all enemies. When attacked during this period, triggers <orangeStrong>powerful Counter</orangeStrong> and <orangeStrong>deals Physical DMG</orangeStrong> to the attacker and adjacent targets. Then, deals minor Physical DMG to a single enemy that bounces 6 times. If no Counter is triggered during the Parry state, deals Physical DMG to a random enemy target and adjacent targets when Parry ends.",
+        "shortDesc": "Enters \"Parry\" and taunts all enemies. When attacked during this period, triggers <orangeStrong>powerful Counter</orangeStrong> and <orangeStrong>deals Physical DMG</orangeStrong> to the attacker and adjacent targets. Then, deals minor Physical DMG to a single enemy that bounces 6 times. If no Counter is triggered while Parry is active, deals Physical DMG to a random enemy target and adjacent targets when Parry ends.",
         "tag": "Enhance"
       }
     },
@@ -29,7 +29,7 @@
       "0": {
         "name": "Flashforge",
         "fullDesc": "When Yunli gets attacked by an enemy target, additionally regenerates {{3}} Energy and immediately launches a Counter on the attacker, dealing Physical DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of Yunli's ATK to the attacker and Physical DMG equal to <orangeStrong>{{2, percent}}%</orangeStrong> of Yunli's ATK to adjacent targets.<br>If there is no immediate target to Counter, then Counters a random enemy target instead.",
-        "shortDesc": "When Yunli gets attacked by an enemy target, additionally regenerates Energy and immediately launches a Counter against the attacker and adjacent targets.",
+        "shortDesc": "When Yunli is attacked by any enemy target, additionally regenerates Energy and immediately Counters, dealing Physical DMG to the attacker and minor Physical DMG to adjacent targets.",
         "tag": "Blast"
       }
     },
@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Demon Quell",
-        "fullDesc": "While in the Parry state, resists Crowd Control debuffs received and reduces DMG received by {{1, percent}}%.",
+        "fullDesc": "While in the \"Parry\" state, resists Crowd Control debuffs received and reduces DMG received by {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -97,7 +97,7 @@
     },
     "6": {
       "name": "Walk in Blade, Talk in Zither",
-      "desc": "While Parry is active, if an enemy actively uses their abilities, regardless of whether it attacks Yunli or not, it will trigger \"Intuit: Cull\" and remove the \"Parry\" effect. When dealing DMG via \"Intuit: Slash\" or \"Intuit: Cull,\" increases CRIT Rate by {{1, percent}}% and Physical RES PEN by {{2, percent}}%."
+      "desc": "While \"Parry\" is active, if an enemy actively uses their abilities, regardless of whether it attacks Yunli or not, it will trigger \"Intuit: Cull\" and remove the \"Parry\" effect. When dealing DMG via \"Intuit: Slash\" or \"Intuit: Cull,\" increases CRIT Rate by {{1, percent}}% and Physical RES PEN by {{2, percent}}%."
     }
   }
 }

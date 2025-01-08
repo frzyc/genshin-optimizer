@@ -27,7 +27,7 @@
       "0": {
         "name": "Staubteufels Tanz bei Sonnenuntergang",
         "fullDesc": "Fügt einem anvisierten Gegner für {{3}} Rd. eine physische Schwäche hinzu.<br>Fügt dem Ziel physischen SCH in Höhe von <orangeStrong>{{1, percent}}%</orangeStrong> von Boothills ANG zu und verzögert die Aktion des Ziels um <orangeStrong>{{2, percent}}%</orangeStrong>.",
-        "shortDesc": "Fügt einem Gegner eine <orangeStrong>physische Schwäche</orangeStrong> hinzu, verursacht beim Ziel massiven physischen SCH und verzögert dessen Aktion.",
+        "shortDesc": "Implantiert einem Gegner eine <orangeStrong>physische Schwäche</orangeStrong>, verursacht beim Ziel massiven physischen SCH und verzögert dessen Aktion.",
         "tag": "Einzelangriff"
       }
     },

@@ -27,6 +27,7 @@ type CharTransKey =
   | 'TravelerElectro'
   | 'TravelerDendro'
   | 'TravelerHydro'
+  | 'TravelerPyro'
 export function trans(typeKey: 'char', key: CharTransKey): Translated
 export function trans(typeKey: 'weapon', key: WeaponKey): Translated
 export function trans(typeKey: 'artifact', key: ArtifactSetKey): Translated

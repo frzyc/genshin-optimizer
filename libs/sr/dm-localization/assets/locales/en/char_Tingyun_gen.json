@@ -12,7 +12,7 @@
     "skill": {
       "0": {
         "name": "Soothing Melody",
-        "fullDesc": "Grants a single ally with Benediction to increase their ATK by <orangeStrong>{{2, percent}}%</orangeStrong>, up to <orangeStrong>{{4, percent}}%</orangeStrong> of Tingyun's current ATK.<br>When the ally with Benediction attacks, they will deal Additional Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of that ally's ATK for 1 time.<br>Benediction lasts for {{3}} turn(s) and is only effective on the most recent receiver of Tingyun's Skill.",
+        "fullDesc": "Grants a single ally with Benediction to increase their ATK by <orangeStrong>{{2, percent}}%</orangeStrong>, up to <orangeStrong>{{4, percent}}%</orangeStrong> of Tingyun's current ATK.<br>When the ally with Benediction attacks, they will deal Lightning Additional DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of that ally's ATK for 1 time.<br>Benediction lasts for {{3}} turn(s) and is only effective on the most recent receiver of Tingyun's Skill.",
         "shortDesc": "<orangeStrong>Increases the ATK</orangeStrong> of a single ally and grants them Benediction. Ally with Benediction additionally deals minor <orangeStrong>Lightning Additional DMG</orangeStrong> when attacking.",
         "tag": "Support"
       }
@@ -28,7 +28,7 @@
     "talent": {
       "0": {
         "name": "Violet Sparknado",
-        "fullDesc": "When an enemy is attacked by Tingyun, the ally with Benediction immediately deals Additional Lightning DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of that ally's ATK to the same enemy.",
+        "fullDesc": "When an enemy is attacked by Tingyun, the ally with Benediction immediately deals Lightning Additional DMG equal to <orangeStrong>{{1, percent}}%</orangeStrong> of that ally's ATK to the same enemy.",
         "shortDesc": "When an enemy is attacked by Tingyun, the ally with Benediction immediately deals minor Lightning Additional DMG to the same enemy.",
         "tag": "Enhance"
       }

@@ -1,0 +1,34 @@
+{
+  "name": "A Thousand Blazing Suns",
+  "description": {
+    "0": "Pedang berat yang bersinar layaknya matahari terbit. Telah menyaksikan kematian dan kehidupan dari matahari yang tak terhitung jumlahnya."
+  },
+  "passiveName": "Sunset Reignites the Dawn",
+  "passiveDescription": {
+    "0": {
+      "0": "Saat melancarkan Elemental Skill atau Elemental Burst, akan mendapatkan efek \"Scorching Brilliance\": CRIT DMG meningkat <cryo>20%</cryo>, ATK meningkat <cryo>28%</cryo>, efek ini berlangsung selama 6 detik dan dapat terpicu sekali setiap 10 detik.",
+      "1": "Selama durasi ini, mengakibatkan Elemental DMG dengan Normal Attack atau Charged Attack akan memperpanjang durasi efek \"Scorching Brilliance\" selama 2 detik, efek ini dapat terpicu sekali setiap 1 detik dan perpanjangan durasi maksimum yang bisa diperoleh dengan cara ini adalah 6 detik.",
+      "2": "Selain itu, saat dalam status Nightsoul's Blessing, efek \"Scorching Brilliance\" akan meningkat 75% dan durasinya tidak berkurang saat Karakter yang mengenakan ada di dalam party namun tidak berada di medan pertempuran."
+    },
+    "1": {
+      "0": "Saat melancarkan Elemental Skill atau Elemental Burst, akan mendapatkan efek \"Scorching Brilliance\": CRIT DMG meningkat <cryo>25%</cryo>, ATK meningkat <cryo>35%</cryo>, efek ini berlangsung selama 6 detik dan dapat terpicu sekali setiap 10 detik.",
+      "1": "Selama durasi ini, mengakibatkan Elemental DMG dengan Normal Attack atau Charged Attack akan memperpanjang durasi efek \"Scorching Brilliance\" selama 2 detik, efek ini dapat terpicu sekali setiap 1 detik dan perpanjangan durasi maksimum yang bisa diperoleh dengan cara ini adalah 6 detik.",
+      "2": "Selain itu, saat dalam status Nightsoul's Blessing, efek \"Scorching Brilliance\" akan meningkat 75% dan durasinya tidak berkurang saat Karakter yang mengenakan ada di dalam party namun tidak berada di medan pertempuran."
+    },
+    "2": {
+      "0": "Saat melancarkan Elemental Skill atau Elemental Burst, akan mendapatkan efek \"Scorching Brilliance\": CRIT DMG meningkat <cryo>30%</cryo>, ATK meningkat <cryo>42%</cryo>, efek ini berlangsung selama 6 detik dan dapat terpicu sekali setiap 10 detik.",
+      "1": "Selama durasi ini, mengakibatkan Elemental DMG dengan Normal Attack atau Charged Attack akan memperpanjang durasi efek \"Scorching Brilliance\" selama 2 detik, efek ini dapat terpicu sekali setiap 1 detik dan perpanjangan durasi maksimum yang bisa diperoleh dengan cara ini adalah 6 detik.",
+      "2": "Selain itu, saat dalam status Nightsoul's Blessing, efek \"Scorching Brilliance\" akan meningkat 75% dan durasinya tidak berkurang saat Karakter yang mengenakan ada di dalam party namun tidak berada di medan pertempuran."
+    },
+    "3": {
+      "0": "Saat melancarkan Elemental Skill atau Elemental Burst, akan mendapatkan efek \"Scorching Brilliance\": CRIT DMG meningkat <cryo>35%</cryo>, ATK meningkat <cryo>49%</cryo>, efek ini berlangsung selama 6 detik dan dapat terpicu sekali setiap 10 detik.",
+      "1": "Selama durasi ini, mengakibatkan Elemental DMG dengan Normal Attack atau Charged Attack akan memperpanjang durasi efek \"Scorching Brilliance\" selama 2 detik, efek ini dapat terpicu sekali setiap 1 detik dan perpanjangan durasi maksimum yang bisa diperoleh dengan cara ini adalah 6 detik.",
+      "2": "Selain itu, saat dalam status Nightsoul's Blessing, efek \"Scorching Brilliance\" akan meningkat 75% dan durasinya tidak berkurang saat Karakter yang mengenakan ada di dalam party namun tidak berada di medan pertempuran."
+    },
+    "4": {
+      "0": "Saat melancarkan Elemental Skill atau Elemental Burst, akan mendapatkan efek \"Scorching Brilliance\": CRIT DMG meningkat <cryo>40%</cryo>, ATK meningkat <cryo>56%</cryo>, efek ini berlangsung selama 6 detik dan dapat terpicu sekali setiap 10 detik.",
+      "1": "Selama durasi ini, mengakibatkan Elemental DMG dengan Normal Attack atau Charged Attack akan memperpanjang durasi efek \"Scorching Brilliance\" selama 2 detik, efek ini dapat terpicu sekali setiap 1 detik dan perpanjangan durasi maksimum yang bisa diperoleh dengan cara ini adalah 6 detik.",
+      "2": "Selain itu, saat dalam status Nightsoul's Blessing, efek \"Scorching Brilliance\" akan meningkat 75% dan durasinya tidak berkurang saat Karakter yang mengenakan ada di dalam party namun tidak berada di medan pertempuran."
+    }
+  }
+}

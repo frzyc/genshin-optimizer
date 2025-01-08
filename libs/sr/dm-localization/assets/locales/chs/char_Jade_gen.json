@@ -21,7 +21,7 @@
       "0": {
         "name": "堕此欲渊，立此狱契",
         "fullDesc": "对敌方全体造成等同于翡翠<orangeStrong>{{3, percent}}%</orangeStrong>攻击力的量子属性伤害。同时使翡翠天赋的追加攻击获得强化，追加攻击造成的伤害倍率提高<orangeStrong>{{1, percent}}%</orangeStrong>。强化效果可生效{{2}}次。",
-        "shortDesc": "对敌方全体造成量子属性伤害，使自身获得<orangeStrong>追加攻击</orangeStrong>伤害倍率提高。",
+        "shortDesc": "对敌方全体造成量子属性伤害，使自身天赋的<orangeStrong>追加攻击</orangeStrong>伤害倍率提高。",
         "tag": "群攻"
       }
     },

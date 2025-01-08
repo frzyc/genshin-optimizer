@@ -35,7 +35,7 @@
       "0": {
         "name": "Presente de Shuhu",
         "fullDesc": "Quando Blade toma Dano ou consome seus próprios PV, ele ganha 1 acúmulo de Carga, acumulando até 5 vezes. Um máximo de 1 Carga pode ser ganho cada vez que ele for atacado.<br>Quando os acúmulos de Carga chegarem ao máximo, desfere imediatamente um Ataque Extra contra todos os inimigos, causando Dano de Vento igual a <orangeStrong>{{2, percent}}%</orangeStrong> do ATQ de Blade + <orangeStrong>{{4, percent}}%</orangeStrong> dos seus PV máximos, enquanto também restaura os PV de Blade em {{3, percent}}% de seus PV máximos. Todas as Cargas são consumidas após realizar o Ataque Extra.",
-        "shortDesc": "Quando os PV de Blade são diminuídos, ele ganha 1 acúmulo de Carga. Quando o máximo de acúmulos de Carga é atingido, Blade <orangeStrong>imediatamente causa Dano de Vento a todos os inimigos </orangeStrong>e restaura PV. Então, todas as Cargas são consumidas.",
+        "shortDesc": "Quando os PV de Blade diminuem, ele ganha 1 acúmulo de Carga. Ao atingir a Carga máxima, realiza um Ataque Extra, <orangeStrong>causando Dano de Vento a todas as unidades inimigas</orangeStrong>, restaurando PV e consumindo todas as Cargas.",
         "tag": "Área"
       }
     },
@@ -58,7 +58,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Vita Infinita",
-        "fullDesc": "Quando os PV atuais de Blade forem iguais ou inferiores a 50% de seus PV máximos, a Cura Recebida aumenta em {{1, percent}}%.",
+        "fullDesc": "Quando a porcentagem dos PV atuais de Blade forem iguais ou inferiores a 50% de seus PV máximos, a Cura Recebida aumenta em {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -74,7 +74,7 @@
     "bonusAbility3": {
       "0": {
         "name": "Ciclone de Destruição",
-        "fullDesc": "O Dano causado por Ataques Extras do Talento aumenta em {{1, percent}}%.",
+        "fullDesc": "Aumenta em {{1, percent}}% o Dano causado pelo Ataque Extra do Talento.",
         "shortDesc": "",
         "tag": ""
       }
@@ -95,7 +95,7 @@
     },
     "4": {
       "name": "Rejeitado pela Morte, Infectado com Vida",
-      "desc": "Quando os PV atuais de Blade chegam a 50% ou menos de seus PV máximos, aumenta os PV máximos dele em {{1, percent}}%. Acumula até {{2}} vez(es)."
+      "desc": "Quando a porcentagem dos PV atuais de Blade chegam a 50% ou menos de seus PV máximos, aumenta os PV máximos dele em {{1, percent}}%. Acumula até {{2}} vez(es)."
     },
     "5": {
       "name": "Morte Pelo Olhar dos Dez Senhores",
@@ -103,7 +103,7 @@
     },
     "6": {
       "name": "Renascido em uma Casca Vazia",
-      "desc": "O número máximo de acúmulos de Carga é reduzido para 4. O Dano de um Ataque Extra acionado pelo Talento é aumentado adicionalmente em {{1, percent}}% dos PV máximos de Blade."
+      "desc": "O número máximo de acúmulos de Carga é reduzido para 4. O Dano de um Ataque Extra ativado pelo Talento é aumentado adicionalmente em {{1, percent}}% dos PV máximos de Blade."
     }
   }
 }

@@ -60,7 +60,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Schatten der Verzweiflung",
-        "fullDesc": "Nach dem Angriff besteht eine Chance von {{1, percent}}%, die GES für {{3}} Rd. um {{2, percent}}% zu erhöhen.",
+        "fullDesc": "Nach dem Angriff besteht eine feste Chance von {{1, percent}}%, die GES dieser Einheit für {{3}} Rd. um {{2, percent}}% zu erhöhen.",
         "shortDesc": "",
         "tag": ""
       }

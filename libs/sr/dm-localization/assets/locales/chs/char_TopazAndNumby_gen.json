@@ -29,7 +29,7 @@
       "0": {
         "name": "猪市？！",
         "fullDesc": "战斗开始时召唤账账。账账初始拥有{{1}}点速度，行动时发动追加攻击，对陷入【负债证明】状态下的敌方单体造成等同于托帕<orangeStrong>{{2, percent}}%</orangeStrong>攻击力的火属性伤害。<br>陷入【负债证明】状态下的敌方目标受到我方的追加攻击时，账账行动提前{{3, percent}}%。在账账自身回合内，无法触发行动提前效果。<br>当托帕陷入无法战斗状态时账账消失。",
-        "shortDesc": "战斗开始时<orangeStrong>召唤账账</orangeStrong>，账账行动时<orangeStrong>对陷入【负债证明】的敌方单体发动追加攻击</orangeStrong>。陷入【负债证明】的敌人受到追加攻击时账账<orangeStrong>行动提前</orangeStrong>。",
+        "shortDesc": "战斗开始<orangeStrong>召唤账账</orangeStrong>，账账行动时<orangeStrong>对陷入【负债证明】的目标发动追加攻击</orangeStrong>，造成火属性伤害。<br>陷入【负债证明】的敌人受到追加攻击时账账<orangeStrong>行动提前</orangeStrong>。",
         "tag": "单攻"
       }
     },

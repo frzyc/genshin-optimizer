@@ -6,8 +6,8 @@
       "SkillDesc": "RelicDesc_1012",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "HealRatioBase",
-          "DIBKEHHCPAP": {
+          "PropertyName": "HealRatioBase",
+          "Value": {
             "Value": 0.1
           }
         }
@@ -35,8 +35,8 @@
       "SkillDesc": "RelicDesc_1022",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "AttackAddedRatio",
-          "DIBKEHHCPAP": {
+          "PropertyName": "AttackAddedRatio",
+          "Value": {
             "Value": 0.12
           }
         }
@@ -54,8 +54,8 @@
       "SkillDesc": "RelicDesc_1024",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "SpeedAddedRatio",
-          "DIBKEHHCPAP": {
+          "PropertyName": "SpeedAddedRatio",
+          "Value": {
             "Value": 0.06
           }
         }
@@ -78,8 +78,8 @@
       "SkillDesc": "RelicDesc_1032",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "DefenceAddedRatio",
-          "DIBKEHHCPAP": {
+          "PropertyName": "DefenceAddedRatio",
+          "Value": {
             "Value": 0.15
           }
         }
@@ -111,8 +111,8 @@
       "SkillDesc": "RelicDesc_1042",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "IceAddedRatio",
-          "DIBKEHHCPAP": {
+          "PropertyName": "IceAddedRatio",
+          "Value": {
             "Value": 0.1
           }
         }
@@ -147,8 +147,8 @@
       "SkillDesc": "RelicDesc_1052",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "PhysicalAddedRatio",
-          "DIBKEHHCPAP": {
+          "PropertyName": "PhysicalAddedRatio",
+          "Value": {
             "Value": 0.1
           }
         }
@@ -215,8 +215,8 @@
       "SkillDesc": "RelicDesc_1072",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "FireAddedRatio",
-          "DIBKEHHCPAP": {
+          "PropertyName": "FireAddedRatio",
+          "Value": {
             "Value": 0.1
           }
         }
@@ -251,8 +251,8 @@
       "SkillDesc": "RelicDesc_1082",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "QuantumAddedRatio",
-          "DIBKEHHCPAP": {
+          "PropertyName": "QuantumAddedRatio",
+          "Value": {
             "Value": 0.1
           }
         }
@@ -287,8 +287,8 @@
       "SkillDesc": "RelicDesc_1092",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "ThunderAddedRatio",
-          "DIBKEHHCPAP": {
+          "PropertyName": "ThunderAddedRatio",
+          "Value": {
             "Value": 0.1
           }
         }
@@ -323,8 +323,8 @@
       "SkillDesc": "RelicDesc_1102",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "WindAddedRatio",
-          "DIBKEHHCPAP": {
+          "PropertyName": "WindAddedRatio",
+          "Value": {
             "Value": 0.1
           }
         }
@@ -356,8 +356,8 @@
       "SkillDesc": "RelicDesc_1112",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "BreakDamageAddedRatioBase",
-          "DIBKEHHCPAP": {
+          "PropertyName": "BreakDamageAddedRatioBase",
+          "Value": {
             "Value": 0.16
           }
         }
@@ -375,8 +375,8 @@
       "SkillDesc": "RelicDesc_1114",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "BreakDamageAddedRatioBase",
-          "DIBKEHHCPAP": {
+          "PropertyName": "BreakDamageAddedRatioBase",
+          "Value": {
             "Value": 0.16
           }
         }
@@ -399,8 +399,8 @@
       "SkillDesc": "RelicDesc_1122",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "ImaginaryAddedRatio",
-          "DIBKEHHCPAP": {
+          "PropertyName": "ImaginaryAddedRatio",
+          "Value": {
             "Value": 0.1
           }
         }
@@ -435,8 +435,8 @@
       "SkillDesc": "RelicDesc_1132",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "HPAddedRatio",
-          "DIBKEHHCPAP": {
+          "PropertyName": "HPAddedRatio",
+          "Value": {
             "Value": 0.12
           }
         }
@@ -474,8 +474,8 @@
       "SkillDesc": "RelicDesc_1142",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "SpeedAddedRatio",
-          "DIBKEHHCPAP": {
+          "PropertyName": "SpeedAddedRatio",
+          "Value": {
             "Value": 0.06
           }
         }
@@ -542,8 +542,8 @@
       "SkillDesc": "RelicDesc_1162",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "AttackAddedRatio",
-          "DIBKEHHCPAP": {
+          "PropertyName": "AttackAddedRatio",
+          "Value": {
             "Value": 0.12
           }
         }
@@ -590,8 +590,8 @@
       "SkillDesc": "RelicDesc_1174",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "CriticalChanceBase",
-          "DIBKEHHCPAP": {
+          "PropertyName": "CriticalChanceBase",
+          "Value": {
             "Value": 0.04
           }
         }
@@ -626,8 +626,8 @@
       "SkillDesc": "RelicDesc_1182",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "BreakDamageAddedRatioBase",
-          "DIBKEHHCPAP": {
+          "PropertyName": "BreakDamageAddedRatioBase",
+          "Value": {
             "Value": 0.16
           }
         }
@@ -662,8 +662,8 @@
       "SkillDesc": "RelicDesc_1192",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "BreakDamageAddedRatioBase",
-          "DIBKEHHCPAP": {
+          "PropertyName": "BreakDamageAddedRatioBase",
+          "Value": {
             "Value": 0.16
           }
         }
@@ -704,8 +704,8 @@
       "SkillDesc": "RelicDesc_1202",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "AttackAddedRatio",
-          "DIBKEHHCPAP": {
+          "PropertyName": "AttackAddedRatio",
+          "Value": {
             "Value": 0.12
           }
         }
@@ -723,8 +723,8 @@
       "SkillDesc": "RelicDesc_1204",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "CriticalChanceBase",
-          "DIBKEHHCPAP": {
+          "PropertyName": "CriticalChanceBase",
+          "Value": {
             "Value": 0.06
           }
         }
@@ -750,8 +750,8 @@
       "SkillDesc": "RelicDesc_3012",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "AttackAddedRatio",
-          "DIBKEHHCPAP": {
+          "PropertyName": "AttackAddedRatio",
+          "Value": {
             "Value": 0.12
           }
         }
@@ -777,8 +777,8 @@
       "SkillDesc": "RelicDesc_3022",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "HPAddedRatio",
-          "DIBKEHHCPAP": {
+          "PropertyName": "HPAddedRatio",
+          "Value": {
             "Value": 0.12
           }
         }
@@ -804,8 +804,8 @@
       "SkillDesc": "RelicDesc_3032",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "StatusProbabilityBase",
-          "DIBKEHHCPAP": {
+          "PropertyName": "StatusProbabilityBase",
+          "Value": {
             "Value": 0.1
           }
         }
@@ -831,8 +831,8 @@
       "SkillDesc": "RelicDesc_3042",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "DefenceAddedRatio",
-          "DIBKEHHCPAP": {
+          "PropertyName": "DefenceAddedRatio",
+          "Value": {
             "Value": 0.15
           }
         }
@@ -858,8 +858,8 @@
       "SkillDesc": "RelicDesc_3052",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "CriticalDamageBase",
-          "DIBKEHHCPAP": {
+          "PropertyName": "CriticalDamageBase",
+          "Value": {
             "Value": 0.16
           }
         }
@@ -885,8 +885,8 @@
       "SkillDesc": "RelicDesc_3062",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "CriticalChanceBase",
-          "DIBKEHHCPAP": {
+          "PropertyName": "CriticalChanceBase",
+          "Value": {
             "Value": 0.08
           }
         }
@@ -912,8 +912,8 @@
       "SkillDesc": "RelicDesc_3072",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "BreakDamageAddedRatioBase",
-          "DIBKEHHCPAP": {
+          "PropertyName": "BreakDamageAddedRatioBase",
+          "Value": {
             "Value": 0.16
           }
         }
@@ -939,8 +939,8 @@
       "SkillDesc": "RelicDesc_3082",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "SPRatioBase",
-          "DIBKEHHCPAP": {
+          "PropertyName": "SPRatioBase",
+          "Value": {
             "Value": 0.05
           }
         }
@@ -966,8 +966,8 @@
       "SkillDesc": "RelicDesc_3092",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "CriticalChanceBase",
-          "DIBKEHHCPAP": {
+          "PropertyName": "CriticalChanceBase",
+          "Value": {
             "Value": 0.08
           }
         }
@@ -993,8 +993,8 @@
       "SkillDesc": "RelicDesc_3102",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "StatusResistanceBase",
-          "DIBKEHHCPAP": {
+          "PropertyName": "StatusResistanceBase",
+          "Value": {
             "Value": 0.1
           }
         }
@@ -1020,8 +1020,8 @@
       "SkillDesc": "RelicDesc_3112",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "AttackAddedRatio",
-          "DIBKEHHCPAP": {
+          "PropertyName": "AttackAddedRatio",
+          "Value": {
             "Value": 0.12
           }
         }
@@ -1053,8 +1053,8 @@
       "SkillDesc": "RelicDesc_3122",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "SPRatioBase",
-          "DIBKEHHCPAP": {
+          "PropertyName": "SPRatioBase",
+          "Value": {
             "Value": 0.05
           }
         }
@@ -1077,8 +1077,8 @@
       "SkillDesc": "RelicDesc_3132",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "CriticalChanceBase",
-          "DIBKEHHCPAP": {
+          "PropertyName": "CriticalChanceBase",
+          "Value": {
             "Value": 0.04
           }
         }
@@ -1104,8 +1104,8 @@
       "SkillDesc": "RelicDesc_3142",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "AttackAddedRatio",
-          "DIBKEHHCPAP": {
+          "PropertyName": "AttackAddedRatio",
+          "Value": {
             "Value": 0.12
           }
         }
@@ -1148,8 +1148,8 @@
       "SkillDesc": "RelicDesc_3162",
       "PropertyList": [
         {
-          "LFJEANLMLHE": "SpeedAddedRatio",
-          "DIBKEHHCPAP": {
+          "PropertyName": "SpeedAddedRatio",
+          "Value": {
             "Value": 0.06
           }
         }

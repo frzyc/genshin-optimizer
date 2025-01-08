@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Archerion",
-        "fullDesc": "Yukong dapat menahan 1 kali Debuff yang dilancarkan padanya. Efek ini dapat dipicu lagi setelah {{1}} giliran.",
+        "fullDesc": "Yukong dapat menahan 1 kali efek Debuff yang dilancarkan padanya. Efek ini dapat dipicu lagi setelah {{1}} giliran.",
         "shortDesc": "",
         "tag": ""
       }

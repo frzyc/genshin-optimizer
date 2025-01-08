@@ -27,7 +27,7 @@
       "0": {
         "name": "Lance de guerre enflammée",
         "fullDesc": "Inflige des DGT de feu équivalents à <orangeStrong>{{1, percent}}%</orangeStrong> de l'ATQ {M#du pionnier}{F#de la pionnière} + <orangeStrong>{{2, percent}}%</orangeStrong> de sa DÉF à tous les ennemis. La prochaine ATQ normale est automatiquement renforcée et ne coûte pas de Volonté du magma.",
-        "shortDesc": "Inflige des DGT de feu à tous les ennemis et renforce la prochaine ATQ normale.",
+        "shortDesc": "Inflige des DGT de feu à tous les ennemis et renforce la prochaine ATQ normale de cette unité.",
         "tag": "ZdE"
       }
     },
@@ -35,7 +35,7 @@
       "0": {
         "name": "Trésor des Architectes",
         "fullDesc": "Chaque fois que {M#le pionnier}{F#la pionnière} est {M#touché}{F#touchée}, {M#il}{F#elle} obtient 1 cumul de Volonté du magma pour un maximum de {{3}} cumuls.<br>Lorsque Volonté du magma atteint au moins 4 cumuls, l'ATQ normale {M#du pionnier}{F#de la pionnière} est renforcée, infligeant des DGT à un ennemi unique et aux ennemis adjacents.<br>Lorsque {M#le pionnier}{F#la pionnière} utilise l'ATQ normale, la compétence ou l'ultime, {M#il}{F#elle} accorde un bouclier qui absorbe des DGT équivalents à <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> de sa propre DÉF + <orangeStrong>{{4}}</orangeStrong> à tous les alliés. Le bouclier dure {{2}} tours.",
-        "shortDesc": "",
+        "shortDesc": "Cumule de la Volonté du magma lorsque l'unité subit une attaque. Lorsque Volonté du magma atteint au moins 4 cumuls, l'ATQ normale devient<orangeStrong>renforcée</orangeStrong>. Accorde un bouclier à l'équipe après avoir utilisé l'ATQ normale, la compétence ou l'ultime.",
         "tag": "Renforcement"
       }
     },
@@ -43,7 +43,7 @@
       "0": {
         "name": "Appel de la Gardienne",
         "fullDesc": "Après utilisation de la technique, gagne un bouclier qui absorbe des DGT équivalents à {{1, percent}}% de la DÉF {M#du pionnier}{F#de la pionnière} + {{2}} pendant {{3}} tour au début du combat suivant.",
-        "shortDesc": "",
+        "shortDesc": "Après avoir utilisé la technique, fournit un bouclier à cette unité au début du prochain combat.",
         "tag": "Défense"
       }
     },

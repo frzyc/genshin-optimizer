@@ -35,7 +35,7 @@
       "0": {
         "name": "Luta Embriagante",
         "fullDesc": "O estado de Inebriação faz com que alvos recebam <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> a mais de Dano de Quebra. Sempre que um alvo com Inebriação é atacado por um aliado, os PV do atacante são curados em <orangeStrong>{{2}}</orangeStrong>.",
-        "shortDesc": "O estado de Inebriação <orangeStrong>faz com que alvos recebam mais Dano de Quebra</orangeStrong>. Sempre que o alvo é atacado por um aliado, <orangeStrong>os PV do atacante são restaurados</orangeStrong>.",
+        "shortDesc": "O estado de \"Inebriação\" <orangeStrong>faz com que alvos recebam mais Dano de Quebra</orangeStrong>. Sempre que o alvo é atacado por um personagem aliado, <orangeStrong>os PV do atacante são restaurados</orangeStrong>.",
         "tag": "Restauração"
       }
     },
@@ -66,7 +66,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Fermento Orgânico",
-        "fullDesc": "Após utilizar sua Perícia Suprema, imediatamente Avança Adiante a ação desta unidade em 100%.",
+        "fullDesc": "Após utilizar sua Perícia Suprema, a ação desta unidade é imediatamente Avançada Adiante em 100%.",
         "shortDesc": "",
         "tag": ""
       }
@@ -87,7 +87,7 @@
     },
     "2": {
       "name": "Cauda de Leão",
-      "desc": "Ao usar a Perícia, remove {{1}} Penalidade(s) de um aliado-alvo. Ao mesmo tempo, aumenta a sua RES a Efeito em {{2, percent}}%, durando por {{3}} rodada(s)."
+      "desc": "Ao usar a Perícia, remove {{1}} penalidade(s) de um aliado-alvo. Ao mesmo tempo, aumenta a sua RES a Efeito em {{2, percent}}%, durando por {{3}} rodada(s)."
     },
     "3": {
       "name": "Reanimador de Cadáveres",

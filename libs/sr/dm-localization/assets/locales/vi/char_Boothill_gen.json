@@ -27,7 +27,7 @@
       "0": {
         "name": "Buổi Tranh Tài Hoàng Hôn Của Vũ Công Quỷ Bụi",
         "fullDesc": "Thêm Điểm Yếu Vật Lý cho 1 kẻ địch chỉ định, duy trì {{3}} hiệp.<br>Gây sát thương Vật Lý cho mục tiêu này bằng <orangeStrong>{{1, percent}}%</orangeStrong> Tấn Công của Boothill, và khiến mục tiêu trì hoãn hành động <orangeStrong>{{2, percent}}%</orangeStrong>.",
-        "shortDesc": "<orangeStrong>Thêm Điểm Yếu Vật Lý</orangeStrong> cho 1 kẻ địch, đồng thời gây lượng lớn Sát Thương Vật Lý cho kẻ đó, khiến mục tiêu trì hoãn hành động.",
+        "shortDesc": "<orangeStrong>Thêm Điểm Yếu Vật Lý</orangeStrong> cho 1 kẻ địch, đồng thời gây lượng lớn Sát Thương Vật Lý cho kẻ đó, khiến mục tiêu Trì Hoãn Hành Động.",
         "tag": "Đánh Đơn"
       }
     },

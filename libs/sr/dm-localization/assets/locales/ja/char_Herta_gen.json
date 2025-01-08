@@ -29,7 +29,7 @@
       "0": {
         "name": "やっぱり{RUBY_B#わたし}私{RUBY_E#}がやる",
         "fullDesc": "味方の攻撃が敵の残りHPを{{1, percent}}%以下にした時、ヘルタは追加攻撃を発動し、敵全体にヘルタの攻撃力<orangeStrong>{{2, percent}}%</orangeStrong>分の氷属性ダメージを与える。",
-        "shortDesc": "",
+        "shortDesc": "任意の味方の攻撃によって敵の残りHPが<orangeStrong>{{1, percent}}%</orangeStrong>以下になった時、ヘルタは即座に<orangeStrong>追加攻撃</orangeStrong>を行い、敵全体に少量の氷属性ダメージを与える。",
         "tag": "全体攻撃"
       }
     },
@@ -37,7 +37,7 @@
       "0": {
         "name": "{RUBY_B#かいぜん}改善{RUBY_E#}すべきだよ",
         "fullDesc": "秘技を使用した後、次の戦闘開始時、ヘルタの攻撃力+{{1, percent}}%、{{2}}ターン継続。",
-        "shortDesc": "",
+        "shortDesc": "秘技を使用、次の戦闘開始時に自身の攻撃力をアップする。",
         "tag": "強化"
       }
     },

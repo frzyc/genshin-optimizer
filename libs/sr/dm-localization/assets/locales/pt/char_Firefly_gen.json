@@ -41,7 +41,7 @@
       "0": {
         "name": "Pironexus de Crisálida",
         "fullDesc": "Quanto menores os PV, menor o Dano recebido. Quando os PV estiverem em <orangeStrong>{{3, percent}}%</orangeStrong> ou menos, a Redução de Dano alcança seu efeito máximo, reduzindo até <orangeStrong>{{1, percent}}%</orangeStrong>. Durante a Combustão Completa, a Redução de Dano permanece em seu efeito máximo, e a RES a Efeitos aumenta em <orangeStrong>{{4, percent}}%</orangeStrong>.<br>Se a Energia estiver abaixo de <orangeStrong>{{2, percent}}%</orangeStrong> quando a batalha começar, a Energia será regenerada até <orangeStrong>{{2, percent}}%</orangeStrong>. Quando a Energia for regenerada ao máximo, todas as penalidades desta unidade serão dissipadas.",
-        "shortDesc": "Quanto menores os PV, menor o Dano recebido. Durante a Combustão Completa, a redução de Dano permanece em seu efeito máximo, e a RES a Efeitos aumenta. Se a Energia estiver abaixo de <orangeStrong>{{2, percent}}%</orangeStrong> quando a batalha começar, a Energia será regenerada até <orangeStrong>{{2, percent}}%</orangeStrong>. Quando a energia for regenerada ao máximo, todas as penalidades desta unidade serão dissipadas.",
+        "shortDesc": "Quanto menores os PV, menor o Dano recebido. Durante o estado de Combustão Completa, o efeito de redução de Dano permanece em sua duração máxima, e a RES a Efeitos aumenta. Se a Energia estiver abaixo de <orangeStrong>{{2, percent}}%</orangeStrong> quando a batalha começar, a Energia será regenerada até <orangeStrong>{{2, percent}}%</orangeStrong>. Quando a energia for regenerada ao máximo, todas as penalidades desta unidade serão dissipadas.",
         "tag": "Defesa"
       }
     },
@@ -72,7 +72,7 @@
     "bonusAbility2": {
       "0": {
         "name": "Módulo β: Armadura Auto-Reativa",
-        "fullDesc": "Quando SAM está em Combustão Completa com um Efeito de Quebra que seja igual ou maior a {{1, percent}}%/{{2, percent}}%, atacar um inimigo-alvo afligido com Quebra de Fraqueza converterá a Redução de Tenacidade deste ataque em 1 instância de {{3, percent}}%/{{4, percent}}% Super Dano de Quebra.",
+        "fullDesc": "Quando SAM está em \"Combustão Completa\" com um Efeito de Quebra que seja igual ou maior a {{1, percent}}%/{{2, percent}}%, atacar um inimigo-alvo afligido com Quebra de Fraqueza converterá a Redução de Tenacidade deste ataque em 1 instância de {{3, percent}}%/{{4, percent}}% Super Dano de Quebra.",
         "shortDesc": "",
         "tag": ""
       }
@@ -93,7 +93,7 @@
     },
     "2": {
       "name": "Em Queda Livre no Céu Estilhaçado",
-      "desc": "Enquanto está em Combustão Completa, usar o ATQ Básico Aprimorado ou a Perícia Aprimorada para derrotar um inimigo-alvo ou aplicar Quebra de Fraqueza a ele faz com que SAM ganhe imediatamente 1 rodada extra. Esse efeito pode ser ativado novamente após {{2}} rodada(s)."
+      "desc": "Enquanto está em \"Combustão Completa\", usar o ATQ Básico Aprimorado ou a Perícia Aprimorada para derrotar um inimigo-alvo ou aplicar Quebra de Fraqueza a ele faz com que SAM ganhe imediatamente 1 rodada extra. Esse efeito pode ser ativado novamente após {{2}} rodada(s)."
     },
     "3": {
       "name": "Sono Profundo Entre os Astros",
@@ -109,7 +109,7 @@
     },
     "6": {
       "name": "No Amanhã Findado, Eu Floresço",
-      "desc": "Enquanto estiver em Combustão Completa, aumenta a PEN de RES a Fogo em {{1, percent}}%. Ao usar o ATQ Básico Aprimorado ou a Perícia Aprimorada, aumenta a eficiência da Quebra de Fraqueza em {{2, percent}}%."
+      "desc": "Enquanto estiver em \"Combustão Completa\", aumenta a PEN de RES a Fogo em {{1, percent}}%. Ao usar o ATQ Básico Aprimorado ou a Perícia Aprimorada, aumenta a eficiência da Quebra de Fraqueza em {{2, percent}}%."
     }
   }
 }

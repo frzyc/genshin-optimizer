@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Shining Bright",
-        "fullDesc": "Setelah menggunakan Technique, musuh dalam jangkauan tertentu akan terkena status Blind selama {{1}} detik. Musuh yang terkena status Blind tidak akan bisa mendeteksi timmu.<br>Jika menyerang musuh yang terkena status Blind, akan ada {{2, percent}}% peluang tetap untuk menunda {{3, percent}}% aksi seluruh musuh saat memasuki pertempuran.",
+        "fullDesc": "Setelah menggunakan Technique, musuh dalam jangkauan tertentu akan terkena status Blind selama {{1}} detik. Musuh yang terkena status Blind tidak akan bisa mendeteksi rekan tim.<br>Jika menyerang musuh yang terkena status Blind, akan ada {{2, percent}}% peluang tetap untuk menunda {{3, percent}}% aksi setiap target musuh saat memasuki pertempuran.",
         "shortDesc": "Membuat musuh dalam jangkauan tertentu memasuki status Blind dan berpeluang besar untuk menunda aksi setiap target musuh setelah memasuki pertempuran.",
         "tag": "Impair"
       }
@@ -89,7 +89,7 @@
     },
     "4": {
       "name": "The Deeper the Love, the Stronger the Hate",
-      "desc": "Saat Skill mengenai target musuh yang jumlah lapisan status Wind Shear-nya lebih dari atau sama dengan {{1}} lapis, status Wind Shear yang dimilikinya saat itu akan segera mengakibatkan DMG sebesar {{2, percent}}% DMG Wind Shear."
+      "desc": "Saat Skill mengenai target musuh yang jumlah lapisan status Wind Shear-nya lebih dari atau sama dengan {{1}} lapis, maka status Wind Shear yang dimilikinya saat ini akan segera mengakibatkan DMG sebesar {{2, percent}}% dari DMG aslinya."
     },
     "5": {
       "name": "Huuuuge Money!",

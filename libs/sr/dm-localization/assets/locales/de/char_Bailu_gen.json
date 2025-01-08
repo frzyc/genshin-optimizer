@@ -20,7 +20,7 @@
     "ult": {
       "0": {
         "name": "Sprung des Sumpfdrachen",
-        "fullDesc": "Stellt LP aller Verbündeten sofort um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Bailus max. LP plus <orangeStrong>{{2}}</orangeStrong> wieder her.<br>Verbündete, die noch nicht belebt sind, werden von Bailu belebt. Bei Verbündeten mit Belebung hält die Belebungsdauer 1 weitere Runde lang an.<br>Die „Belebung“ hält bis zu {{3}} Rd. lang an. Dieser Effekt ist nicht stapelbar.",
+        "fullDesc": "Stellt LP aller Verbündeten sofort um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong> von Bailus max. LP plus <orangeStrong>{{2}}</orangeStrong> wieder her.<br>Verbündete, die noch nicht belebt sind, werden von Bailu belebt. Bei Verbündeten mit Belebung hält die Belebungsdauer 1 weitere Runde lang an.<br>Die Belebung hält bis zu {{3}} Rd. lang an. Dieser Effekt ist nicht stapelbar.",
         "shortDesc": "Stellt LP für alle Verbündeten wieder her. Belebt die Verbündeten oder verlängert die Dauer der „Belebung“.",
         "tag": "Wiederherstellung"
       }
@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Meridian-Aufguss: Ambrosia-Aqua",
-      "desc": "Wenn die „Belebung“ endet und die LP des Verbündeten vollständig sind, wird für ihn zusätzlich {{1}} Pkt. Energie wiederhergestellt."
+      "desc": "Wenn die „Belebung“ endet und die LP des Verbündeten vollständig sind, wird bei ihm zusätzlich {{1}} Pkt. Energie wiederhergestellt."
     },
     "2": {
       "name": "Topf des schlummernden Drachen",

@@ -29,20 +29,17 @@ import {
   HeaderContentNew,
 } from './card'
 
-type CharacterCardProps = {
-  characterKey: CharacterKey
-  onClick?: (characterKey: CharacterKey) => void
-  onClickHeader?: (characterKey: CharacterKey) => void
-  footer?: ReactNode
-  hideStats?: boolean
-}
 export function CharacterCard({
   characterKey,
   onClick,
   onClickHeader,
-  footer,
   hideStats,
-}: CharacterCardProps) {
+}: {
+  characterKey: CharacterKey
+  onClick?: (characterKey: CharacterKey) => void
+  onClickHeader?: (characterKey: CharacterKey) => void
+  hideStats?: boolean
+}) {
   const database = useDatabase()
   const teamData = useCharData(characterKey)
   const character = useCharacter(characterKey)
@@ -52,7 +49,7 @@ export function CharacterCard({
     [characterKey, onClick]
   )
   const actionWrapperFunc = useCallback(
-    (children) => (
+    (children: ReactNode) => (
       <CardActionArea
         onClick={onClickHandler}
         sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}
@@ -93,7 +90,15 @@ export function CharacterCard({
     >
       <CardThemed
         bgt="light"
-        sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+        sx={{
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          border: '1px solid rgba(200,200,200,0.3)',
+          ':hover': {
+            border: '1px solid rgba(200,200,200,0.8)',
+          },
+        }}
       >
         <Box
           sx={{
@@ -126,7 +131,6 @@ export function CharacterCard({
             <NewCharacterCardContent characterKey={characterKey} />
           )}
         </ConditionalWrapper>
-        {footer}
       </CardThemed>
     </Suspense>
   )

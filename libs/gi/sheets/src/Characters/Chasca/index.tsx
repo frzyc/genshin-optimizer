@@ -6,6 +6,7 @@ import {
   greaterEq,
   infoMut,
   input,
+  min,
   percent,
   prod,
   subscript,
@@ -98,8 +99,12 @@ const dm = {
   },
 } as const
 
-const phecElements = sum(
-  ...absorbableEle.map((ele) => greaterEq(tally[ele], 1, 1))
+const phecElements = min(
+  sum(
+    ...absorbableEle.map((ele) => greaterEq(tally[ele], 1, 1)),
+    greaterEq(input.constellation, 2, 1)
+  ),
+  3
 )
 const [condA1InMultitargetPath, condA1InMultitarget] = cond(
   key,
@@ -191,7 +196,7 @@ const dmgFormulas = {
         'atk',
         dm.skill.shellDmg,
         'charged',
-        { ...hitEle[ele], ...multiFireAddl },
+        hitEle[ele],
         percent(dm.passive2.dmg),
         'skill'
       )
@@ -204,11 +209,8 @@ const dmgFormulas = {
           'atk',
           dm.skill.shiningShellDmg,
           'charged',
-          {
-            ...hitEle[eleKey],
-            ...shiningAddl,
-          },
-          undefined,
+          hitEle[eleKey],
+          percent(dm.passive2.dmg),
           'skill'
         )
       )

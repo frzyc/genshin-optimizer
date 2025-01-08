@@ -77,7 +77,7 @@
   "ranks": {
     "1": {
       "name": "Esforço Necessário",
-      "desc": "Ao usar a Perícia, aumenta a chance-base de causar Congelamento no inimigo-alvo em {{1, percent}}%."
+      "desc": "Ao usar a Perícia, aumenta a chance-base de causar \"Congelamento\" no inimigo-alvo atacado em {{1, percent}}%."
     },
     "2": {
       "name": "Frio Perdurante",

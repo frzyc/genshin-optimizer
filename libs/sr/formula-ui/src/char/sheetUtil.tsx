@@ -8,9 +8,10 @@ import type {
   UISheetElement,
 } from '@genshin-optimizer/pando/ui-sheet'
 import { characterAsset } from '@genshin-optimizer/sr/assets'
-import type {
-  CharacterGenderedKey,
-  StatKey,
+import {
+  characterGenderedKeyToCharacterKey,
+  type CharacterGenderedKey,
+  type StatKey,
 } from '@genshin-optimizer/sr/consts'
 import { Translate } from '@genshin-optimizer/sr/i18n'
 import {
@@ -50,7 +51,11 @@ export function talentSheet(
         text: () =>
           chg(
             `abilities.${talentKey}.0.fullDesc`,
-            getCharInterpolateObject(ckey, talentKey, 0)
+            getCharInterpolateObject(
+              characterGenderedKeyToCharacterKey(ckey),
+              talentKey,
+              0
+            )
           ),
       },
       ...docs,
@@ -73,7 +78,11 @@ export function bonusAbilitySheet(
         text: () =>
           chg(
             `abilities.${talentKey}.0.fullDesc`,
-            getCharInterpolateObject(ckey, talentKey, 0) // TODO: FIXME: does not seem to work for bonus Stats (wrong array format)
+            getCharInterpolateObject(
+              characterGenderedKeyToCharacterKey(ckey),
+              talentKey,
+              0
+            ) // TODO: FIXME: does not seem to work for bonus Stats (wrong array format)
           ),
       },
       ...docs,
@@ -84,7 +93,7 @@ export function bonusStatsSheets(
   ckey: CharacterGenderedKey
 ): Record<TalentSheetElementStatBoostKey, UISheetElement> {
   return objKeyMap(allTalentSheetElementStatBoostKey, (key) => {
-    const stats = getCharStat(ckey)
+    const stats = getCharStat(characterGenderedKeyToCharacterKey(ckey))
     const [statKey, value] = Object.entries(
       stats.skillTree[key]?.levels?.[0].stats ?? {}
     )[0]
@@ -124,7 +133,11 @@ export function eidolonSheet(
         type: 'text',
         text: chg(
           `ranks.${eidolonNum}.desc`,
-          getCharInterpolateObject(ckey, 'eidolon', eidolonNum)
+          getCharInterpolateObject(
+            characterGenderedKeyToCharacterKey(ckey),
+            'eidolon',
+            eidolonNum
+          )
         ),
       },
       ...docs,

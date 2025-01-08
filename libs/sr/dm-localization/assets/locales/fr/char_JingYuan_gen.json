@@ -29,7 +29,7 @@
       "0": {
         "name": "Annihilation du prana",
         "fullDesc": "Invoque le Seigneur de la foudre en début de combat. Le Seigneur de la foudre dispose d'une VIT de base de {{1}} et d'un nombre de frappes par action de base de {{4}}. Lorsque le Seigneur de la foudre agit, ses frappes sont considérées comme des attaques de suivi, chacune infligeant des DGT de foudre équivalents à <orangeStrong>{{2, percent}}%</orangeStrong> de l'ATQ de Jing Yuan à un ennemi unique aléatoire, et les ennemis adjacents subissent également des DGT de foudre équivalents à {{5, percent}}% des DGT infligés à la cible ennemie principale.<br>Le nombre de frappes par action du Seigneur de la foudre peut atteindre un maximum de {{6}}. Chaque fois que le nombre de frappes par action du Seigneur de la foudre augmente de 1, sa VIT augmente de {{3}}. Une fois l'action du Seigneur de la foudre terminée, sa VIT et son nombre de frappes par action retrouvent leurs valeurs de base.<br>Lorsque Jing Yuan est à terre, le Seigneur de la foudre disparaît.<br>Lorsque Jing Yuan est affecté par un malus de contrôle, le Seigneur de la foudre ne peut plus agir.",
-        "shortDesc": "Invoque le Seigneur de la foudre au début du combat. Le Seigneur de la foudre <orangeStrong>inflige des DGT de foudre mineurs</orangeStrong> <orangeStrong>automatiquement</orangeStrong> à une cible ennemie aléatoire et aux ennemis adjacents.",
+        "shortDesc": "Invoque le Seigneur de la foudre en début de combat. Lorsque le Seigneur de la foudre agit, il lance une attaque de suivi qui <orangeStrong>inflige</orangeStrong> <orangeStrong>automatiquement des DGT de foudre mineurs</orangeStrong> à un ennemi aléatoire et aux cibles adjacentes.",
         "tag": "Rebond"
       }
     },

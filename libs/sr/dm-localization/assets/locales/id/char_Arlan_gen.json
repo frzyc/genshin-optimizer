@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Breaking Free",
-      "desc": "Saat melancarkan Skill dan Ultimate, menghapus 1 status Debuff dirinya."
+      "desc": "Saat melancarkan Skill atau Ultimate, akan menghapus 1 status Debuff dari karakter ini."
     },
     "3": {
       "name": "Power Through",

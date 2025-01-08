@@ -29,7 +29,7 @@
       "0": {
         "name": "Muss man alles selbst machen?",
         "fullDesc": "Wenn der LP-Prozentsatz eines Gegners durch den Angriff eines Verbündeten auf {{1, percent}}% oder weniger fallen, führt Herta einen Folgeangriff aus, der allen Gegnern Eis-SCH in Höhe von <orangeStrong>{{2, percent}}%</orangeStrong> von Hertas ANG zufügt.",
-        "shortDesc": "",
+        "shortDesc": "Wenn der LP-Prozentsatz eines Gegners durch den Angriff eines Verbündeten auf <orangeStrong>{{1, percent}}%</orangeStrong> fällt, führt Herta sofort einen <orangeStrong>Folgeangriff</orangeStrong> aus, der allen Gegnern geringen Eis-SCH zufügt.",
         "tag": "Flächenangriff"
       }
     },
@@ -37,7 +37,7 @@
       "0": {
         "name": "Das kann noch optimiert werden",
         "fullDesc": "Erhöht nach dem Einsatz der Technik Hertas ANG zu Beginn des nächstes Kampfes für {{2}} Rd. um {{1, percent}}%.",
-        "shortDesc": "",
+        "shortDesc": "Nach dem Einsatz der Technik wird der ANG dieser Einheit zu Beginn des nächsten Kampfes erhöht.",
         "tag": "Verstärkung"
       }
     },

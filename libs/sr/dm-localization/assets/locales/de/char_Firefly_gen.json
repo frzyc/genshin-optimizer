@@ -33,7 +33,7 @@
       "0": {
         "name": "PyroFly Typ IV: Vollständige Verbrennung",
         "fullDesc": "Tritt in den Status „Vollständige Verbrennung“ ein. Zieht die eigene Aktion um 100 % vor und erhält den verstärkten Standardangriff sowie die verstärkte Fertigkeit. Erhöht im Status Vollständige Verbrennung die GES um <orangeStrong>{{3}}</orangeStrong> Pkt., beim Einsatz des verstärkten Standardangriffs oder der verstärkten Fertigkeit die eigene Schwächebruch-Effizienz um {{2, percent}}% und den von Gegnern erlittenen Bruch-SCH durch SAM um <orangeStrong>{{1, percent(fixed: 1)}}%</orangeStrong>. Dies dauert bis zum Ende des Angriffs an.<br>In der Aktionsreihenfolge erscheint ein Countdown für Vollständige Verbrennung. Beginnt die Runde des Countdowns, verlässt SAM den Status Vollständige Verbrennung. Der Countdown hat eine feste GES von {{4}}.<br>Im Status Vollständige Verbrennung kann SAM den Ultimate nicht einsetzen.",
-        "shortDesc": "Tritt in den Status „Vollständige Verbrennung“ ein. <orangeStrong>Zieht die eigene Aktion um <unbreak>100</orangeStrong> % </color> und erhält den <orangeStrong>verstärkten Standardangriff</orangeStrong> sowie die <orangeStrong>verstärkte Fertigkeit</orangeStrong>. Erhöht außerdem <orangeStrong>die GES, Schwächebruch-Effizienz und den von Gegnern erlittenen Bruch-SCH</orangeStrong>, bis zum Ende des Countdowns.",
+        "shortDesc": "Tritt in den Status „Vollständige Verbrennung“ ein. <orangeStrong>Zieht die eigene Aktion um <unbreak>100</orangeStrong> % </color> und erhält den <orangeStrong>verstärkten Standardangriff</orangeStrong> sowie die <orangeStrong>verstärkte Fertigkeit</orangeStrong>. Erhöht außerdem <orangeStrong>die GES, Schwächebruch-Effizienz und den von Gegnern erlittenen Bruch-SCH</orangeStrong> bis zum Ende des Countdowns.",
         "tag": "Verstärkung"
       }
     },
@@ -49,7 +49,7 @@
       "0": {
         "name": "Δ Befehl: Verbrannter Meteorit",
         "fullDesc": "Springt in die Luft und bewegt sich ohne Einschränkungen. Dies dauert {{1}} Sek. an und kann mit einem Sturzangriff vorzeitig beendet werden. Nach dem Ende der freien Bewegung steigt SAM herab und greift sofort alle Gegner in einem bestimmten Wirkungsbereich an. Implantiert allen Gegnern zu Beginn jeder Kampfwelle für {{3}} Rd. Feuer-Schwäche und fügt ihnen dann Feuer-SCH in Höhe von {{2, percent}}% von SAMs ANG zu.",
-        "shortDesc": "Springt in die Luft und bewegt sich ohne Einschränkungen. Steigt herab und greift nach einigen Sekunden der Bewegung alle Gegner im Wirkungsbereich an. <orangeStrong>Implantiert</orangeStrong> allen Gegnern zu Beginn <orangeStrong>jeder Kampfwelle Feuer-Schwäche</orangeStrong> und fügt ihnen dann Feuer-SCH zu.",
+        "shortDesc": "Springt in die Luft und bewegt sich ohne Einschränkungen. Steigt nach einigen Sekunden herab und greift alle Gegner im Wirkungsbereich der Bewegung an. <orangeStrong>Implantiert</orangeStrong> allen Gegnern zu Beginn <orangeStrong>jeder Kampfwelle Feuer-Schwäche</orangeStrong> und fügt ihnen dann Feuer-SCH zu.",
         "tag": ""
       }
     },
@@ -93,7 +93,7 @@
     },
     "2": {
       "name": "Fall aus zerbrochenem Himmel",
-      "desc": "Wenn im Status „Vollständige Verbrennung“ durch den Einsatz des verstärkten Standardangriffs oder der verstärkten Fertigkeit ein Gegner besiegt oder seine Schwäche gebrochen wird, erhält SAM sofort eine zusätzliche Runde. Dieser Effekt kann nach {{2}} Rd. wieder ausgelöst werden."
+      "desc": "Wenn im Status „Vollständige Verbrennung“ durch den Einsatz des verstärkten Standardangriffs oder der verstärkten Fertigkeit ein Gegner besiegt wird oder Schwächebruch erleidet, erhält SAM sofort eine zusätzliche Runde. Dieser Effekt kann nach {{2}} Rd. erneut ausgelöst werden."
     },
     "3": {
       "name": "Schlummern in der totenstillen Galaxie",

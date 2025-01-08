@@ -27,7 +27,7 @@
       "0": {
         "name": "Dust Devil's Sunset Rodeo",
         "fullDesc": "Menambahkan Physical Weakness pada 1 musuh yang ditargetkan, berlangsung selama {{3}} giliran.<br>Mengakibatkan Physical DMG sebesar <orangeStrong>{{1, percent}}%</orangeStrong> ATK Boothill pada target tersebut dan menunda aksinya sebesar <orangeStrong>{{2, percent}}%</orangeStrong>.",
-        "shortDesc": "<orangeStrong>Menambahkan Physical Weakness</orangeStrong> pada 1 musuh dan mengakibatkan Physical DMG dalam jumlah besar pada musuh tersebut serta menunda aksinya.",
+        "shortDesc": "<orangeStrong>Menambahkan Physical Weakness</orangeStrong> pada 1 musuh dan mengakibatkan Physical DMG dalam jumlah besar pada musuh tersebut, serta menunda aksinya.",
         "tag": "Single Target"
       }
     },
@@ -103,7 +103,7 @@
     },
     "6": {
       "name": "Crowbar Hotel's Raccoon",
-      "desc": "Saat memicu Break DMG yang diakibatkan Talent, akan mengakibatkan Break DMG tambahan pada target sebesar {{1, percent}}% dari DMG Multiplier awal, dan mengakibatkan Break DMG tambahan pada musuh di sekitar target sebesar {{2, percent}}% dari DMG Multiplier awal."
+      "desc": "Saat memicu Break DMG yang diakibatkan Talent, akan mengakibatkan Break DMG tambahan pada target sebesar {{1, percent}}% dari DMG Multiplier aslinya, dan mengakibatkan Break DMG tambahan pada musuh di sekitar target sebesar {{2, percent}}% dari DMG Multiplier aslinya."
     }
   }
 }

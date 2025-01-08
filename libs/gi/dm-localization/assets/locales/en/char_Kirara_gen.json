@@ -158,7 +158,7 @@
   "constellation6": {
     "name": "Countless Sights to See",
     "description": {
-      "0": "All nearby party members will gain 12% All Elemental DMG Bonus within 15s after Kirara uses her Elemental Skill or Burst."
+      "0": "All nearby party members gain a 12% All Elemental DMG Bonus for 15s after Kirara uses her Elemental Skill or Burst."
     }
   }
 }

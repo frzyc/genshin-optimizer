@@ -29,7 +29,7 @@
       "0": {
         "name": "{RUBY_B#われおも}我思{RUBY_E#}う、{RUBY_B#ゆえ}故{RUBY_E#}に{RUBY_B#われ}我{RUBY_E#}あり",
         "fullDesc": "戦闘スキルを発動する時、{{2, percent}}%の固定確率でターゲットに追加攻撃を1回行い、Dr.レイシオの攻撃力<orangeStrong>{{1, percent}}%</orangeStrong>分の虚数属性ダメージを与える。敵にあるデバフ1つにつき、追加攻撃を行う固定確率+{{3, percent}}%。追加攻撃を行う前にターゲットが倒された場合、ランダムな敵単体に追加攻撃を行う。",
-        "shortDesc": "戦闘スキルを発動する時、確率でターゲットに<orangeStrong>追加攻撃</orangeStrong>を1回行う。",
+        "shortDesc": "戦闘スキルを発動する時、確率でターゲットに<orangeStrong>追加攻撃</orangeStrong>を1回行い、虚数属性ダメージを与える。",
         "tag": "単体攻撃"
       }
     },

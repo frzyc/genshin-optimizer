@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Coloratura Cadenza",
-        "fullDesc": "Saat pertempuran dimulai, aksi karakter ini akan didahulukan {{1, percent}}%.",
+        "fullDesc": "Saat pertempuran dimulai, aksi karakter ini akan didahulukan sebesar {{1, percent}}%.",
         "shortDesc": "",
         "tag": ""
       }

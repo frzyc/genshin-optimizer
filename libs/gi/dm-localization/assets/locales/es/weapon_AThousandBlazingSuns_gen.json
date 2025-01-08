@@ -1,0 +1,29 @@
+{
+  "name": "Mil Soles Abrasadores",
+  "description": {
+    "0": "Una gran espada deslumbrante como el sol naciente. Ha sido testigo de la extinción y el resurgimiento de innumerables soles."
+  },
+  "passiveName": "Amanecer del crepúsculo",
+  "passiveDescription": {
+    "0": {
+      "0": "Se obtiene el efecto “brillo abrasador” al usar una Habilidad Elemental o Definitiva: el Daño CRIT aumenta en un <cryo>20%</cryo> y el ATQ aumenta en un <cryo>28%</cryo> durante 6 s. Este efecto puede activarse una vez cada 10 s. Mientras este efecto esté activo, su duración aumenta en 2 s después de que los Ataques Normales o Cargados inflijan Daño Elemental. El efecto de brillo abrasador puede activarse una vez por segundo, y el aumento máximo de duración es de 6 s.",
+      "1": "Además, al estar en el estado de bendición noctámbula, los efectos de brillo abrasador aumentan en un 75%, y su duración no contará cuando el personaje portador no esté en uso."
+    },
+    "1": {
+      "0": "Se obtiene el efecto “brillo abrasador” al usar una Habilidad Elemental o Definitiva: el Daño CRIT aumenta en un <cryo>25%</cryo> y el ATQ aumenta en un <cryo>35%</cryo> durante 6 s. Este efecto puede activarse una vez cada 10 s. Mientras este efecto esté activo, su duración aumenta en 2 s después de que los Ataques Normales o Cargados inflijan Daño Elemental. El efecto de brillo abrasador puede activarse una vez por segundo, y el aumento máximo de duración es de 6 s.",
+      "1": "Además, al estar en el estado de bendición noctámbula, los efectos de brillo abrasador aumentan en un 75%, y su duración no contará cuando el personaje portador no esté en uso."
+    },
+    "2": {
+      "0": "Se obtiene el efecto “brillo abrasador” al usar una Habilidad Elemental o Definitiva: el Daño CRIT aumenta en un <cryo>30%</cryo> y el ATQ aumenta en un <cryo>42%</cryo> durante 6 s. Este efecto puede activarse una vez cada 10 s. Mientras este efecto esté activo, su duración aumenta en 2 s después de que los Ataques Normales o Cargados inflijan Daño Elemental. El efecto de brillo abrasador puede activarse una vez por segundo, y el aumento máximo de duración es de 6 s.",
+      "1": "Además, al estar en el estado de bendición noctámbula, los efectos de brillo abrasador aumentan en un 75%, y su duración no contará cuando el personaje portador no esté en uso."
+    },
+    "3": {
+      "0": "Se obtiene el efecto “brillo abrasador” al usar una Habilidad Elemental o Definitiva: el Daño CRIT aumenta en un <cryo>35%</cryo> y el ATQ aumenta en un <cryo>49%</cryo> durante 6 s. Este efecto puede activarse una vez cada 10 s. Mientras este efecto esté activo, su duración aumenta en 2 s después de que los Ataques Normales o Cargados inflijan Daño Elemental. El efecto de brillo abrasador puede activarse una vez por segundo, y el aumento máximo de duración es de 6 s.",
+      "1": "Además, al estar en el estado de bendición noctámbula, los efectos de brillo abrasador aumentan en un 75%, y su duración no contará cuando el personaje portador no esté en uso."
+    },
+    "4": {
+      "0": "Se obtiene el efecto “brillo abrasador” al usar una Habilidad Elemental o Definitiva: el Daño CRIT aumenta en un <cryo>40%</cryo> y el ATQ aumenta en un <cryo>56%</cryo> durante 6 s. Este efecto puede activarse una vez cada 10 s. Mientras este efecto esté activo, su duración aumenta en 2 s después de que los Ataques Normales o Cargados inflijan Daño Elemental. El efecto de brillo abrasador puede activarse una vez por segundo, y el aumento máximo de duración es de 6 s.",
+      "1": "Además, al estar en el estado de bendición noctámbula, los efectos de brillo abrasador aumentan en un 75%, y su duración no contará cuando el personaje portador no esté en uso."
+    }
+  }
+}

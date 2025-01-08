@@ -230,6 +230,9 @@
   "ToyMedal": {
     "name": "玩具勳章"
   },
+  "RepertoireCoins": {
+    "name": "千音幣"
+  },
   "OriginalEssenceInvalidated": {
     "name": "原粹精珀（廢棄）"
   },
@@ -992,6 +995,15 @@
   "Ororon": {
     "name": "歐洛倫"
   },
+  "Mavuika": {
+    "name": "瑪薇卡"
+  },
+  "Citlali": {
+    "name": "茜特菈莉"
+  },
+  "LanYan": {
+    "name": "藍硯"
+  },
   "KachinasStellaFortuna": {
     "name": "卡齊娜的命星"
   },
@@ -1009,6 +1021,15 @@
   },
   "OroronsStellaFortuna": {
     "name": "歐洛倫的命星"
+  },
+  "MavuikasStellaFortuna": {
+    "name": "瑪薇卡的命星"
+  },
+  "CitlalisStellaFortuna": {
+    "name": "茜特菈莉的命星"
+  },
+  "LanYansStellaFortuna": {
+    "name": "藍硯的命星"
   },
   "Apple": {
     "name": "蘋果"
@@ -7454,6 +7475,42 @@
   "MomentOfRespite": {
     "name": "歇止一刻"
   },
+  "SuspiciousMagmicOde": {
+    "name": "奇怪的炎岩之頌"
+  },
+  "MagmicOde": {
+    "name": "炎岩之頌"
+  },
+  "DeliciousMagmicOde": {
+    "name": "美味的炎岩之頌"
+  },
+  "SuspiciousQingxinFlowerCake": {
+    "name": "奇怪的清心花餅"
+  },
+  "QingxinFlowerCake": {
+    "name": "清心花餅"
+  },
+  "DeliciousQingxinFlowerCake": {
+    "name": "美味的清心花餅"
+  },
+  "SuspiciousDrunkenPlumsInSnow": {
+    "name": "奇怪的梅落雪間醉"
+  },
+  "DrunkenPlumsInSnow": {
+    "name": "梅落雪間醉"
+  },
+  "DeliciousDrunkenPlumsInSnow": {
+    "name": "美味的梅落雪間醉"
+  },
+  "HymnOfGatheredFlame": {
+    "name": "「簇火讚歌」"
+  },
+  "JadeCutFlowers": {
+    "name": "玉剪著花"
+  },
+  "SecretArt": {
+    "name": "「獨門秘法」"
+  },
   "RecipeItem": {
     "name": "食譜道具"
   },
@@ -8122,6 +8179,15 @@
   },
   "RecipeSingYourHeartOut": {
     "name": "食譜：縱聲歡唱"
+  },
+  "RecipeMagmicOde": {
+    "name": "食譜：炎岩之頌"
+  },
+  "RecipeQingxinFlowerCake": {
+    "name": "食譜：清心花餅"
+  },
+  "RecipeDrunkenPlumsInSnow": {
+    "name": "食譜：梅落雪間醉"
   },
   "CraftedItems": {
     "name": "合成產物"
@@ -8806,6 +8872,18 @@
   },
   "EnsnaringGaze": {
     "name": "深邃糾纏的凝視"
+  },
+  "ErodedHorn": {
+    "name": "蝕滅的靈犀"
+  },
+  "ErodedSunfire": {
+    "name": "蝕滅的陽焰"
+  },
+  "ErodedScaleFeather": {
+    "name": "蝕滅的鱗羽"
+  },
+  "TalismanOfTheEnigmaticLand": {
+    "name": "謎土的護符"
   },
   "TileOfDecarabiansTower": {
     "name": "高塔孤王的破瓦"
@@ -11573,6 +11651,21 @@
   "MessilyBittedKey": {
     "name": "齒紋凌亂的鑰匙"
   },
+  "CitlalisHandkerchief": {
+    "name": "茜特菈莉贈送的手帕"
+  },
+  "LegendInscribedWovenScroll": {
+    "name": "記載著傳說的織卷"
+  },
+  "ShogunAlmightyRebornAsRaidenWithUnlimitedPowerFirstEdition": {
+    "name": "《轉生成為雷電將軍，然後天下無敵》初版"
+  },
+  "PrettyPleaseKitsuneGuujiLimitedDeluxeEdition": {
+    "name": "《拜託了我的狐仙宮司》限量精裝版"
+  },
+  "CitlalisHandkerchiefAndKey": {
+    "name": "茜特菈莉的手帕和鑰匙"
+  },
   "SpiritcallersNotesI": {
     "name": "喚靈師的手記·其一"
   },
@@ -11612,6 +11705,18 @@
   "NotesSomeoneLeftBehindV": {
     "name": "某人留下的銘記·其五"
   },
+  "HelkasNotes": {
+    "name": "赫卡的筆記"
+  },
+  "AGiftEnvelopeFromPaimon": {
+    "name": "從派蒙那裡收到的「祝柬」"
+  },
+  "EmblemOfValor": {
+    "name": "「砥礪之證」"
+  },
+  "SpecialCommemorativeLetter": {
+    "name": "特別的紀念信件"
+  },
   "RecordkeepingSecretSourceSentinel": {
     "name": "記錄用秘源哨機"
   },
@@ -11633,8 +11738,41 @@
   "PlaceOfTheTrialOfDisembodimentMessage": {
     "name": "出魂試煉之所的留言"
   },
+  "RattanToyHuTao": {
+    "name": "藤編玩具·胡桃"
+  },
+  "HuTaoPlumBranch": {
+    "name": "「胡桃·梅枝」"
+  },
+  "ZhongliRexCoin": {
+    "name": "「鍾離·帝錢」"
+  },
+  "RattanToy": {
+    "name": "藤編玩具"
+  },
+  "SaurusCrackersTatankasaurus": {
+    "name": "龍龍餅乾·突角"
+  },
+  "SaurusCrackersQucusaurus": {
+    "name": "龍龍餅乾·絨翼"
+  },
+  "SaurusCrackersYumkasaurus": {
+    "name": "龍龍餅乾·匿葉"
+  },
+  "SaurusCrackersIktomisaurus": {
+    "name": "龍龍餅乾·暝視"
+  },
+  "SaurusCrackersKoholasaurus": {
+    "name": "龍龍餅乾·鰭游"
+  },
+  "SaurusCrackersTepetlisaurus": {
+    "name": "龍龍餅乾·嵴鋒"
+  },
   "TearsAmongTheStars": {
     "name": "星間之淚"
+  },
+  "ObsidianAncientName": {
+    "name": "黑曜古名"
   },
   "SilkFlowerSeed": {
     "name": "「霓裳花」的種子"
@@ -11744,8 +11882,8 @@
   "SprayfeatherGillSeed": {
     "name": "「浪沫羽鰓」的種子"
   },
-  "GlowingHornshroomSeed": {
-    "name": "「微光角菌」的種子"
+  "GlowingHornshroomSpore": {
+    "name": "「微光角菌」的孢子"
   },
   "Medaka": {
     "name": "花鱂"
@@ -13310,6 +13448,27 @@
   "TravelNotesSpiritweaver": {
     "name": "紀行·靈織"
   },
+  "MavuikaSunCrowned": {
+    "name": "瑪薇卡·日冕"
+  },
+  "CitlaliOpalstar": {
+    "name": "茜特菈莉·白星"
+  },
+  "LanYanSilverSwallow": {
+    "name": "藍硯·銀燕"
+  },
+  "AchievementAllSeeing": {
+    "name": "成就·覽盡"
+  },
+  "AchievementBlaze": {
+    "name": "成就·灼燃"
+  },
+  "AchievementRepertoire": {
+    "name": "成就·樂集"
+  },
+  "TravelNotesTheFlameRenewed": {
+    "name": "紀行·新火"
+  },
   "EchoDandelionKnight": {
     "name": "遊跡·蒲公英騎士"
   },
@@ -13330,6 +13489,12 @@
   },
   "EchoDrivingThunder": {
     "name": "遊跡·霆霓快雨"
+  },
+  "EchoPleniluneGaze": {
+    "name": "遊跡·循循守月"
+  },
+  "EchoScarletLeavesPursueWildWaves": {
+    "name": "遊跡·紅葉逐荒波"
   },
   "AnemoculusResonanceStone": {
     "name": "風神瞳共鳴石"
@@ -13610,6 +13775,15 @@
   "ArtifactTransmuter": {
     "name": "聖言自明機"
   },
+  "RepertoireOfMyriadMelodies": {
+    "name": "千音雅集"
+  },
+  "DjemDjemDrum": {
+    "name": "聚聚鼓"
+  },
+  "Ukulele": {
+    "name": "悠可琴"
+  },
   "InstructionsAnemoculusResonanceStone": {
     "name": "說明：風神瞳共鳴石"
   },
@@ -13772,6 +13946,9 @@
   "SwirlingSceneInABottle": {
     "name": "「旋流之瓶景」"
   },
+  "ScrollOfTheFieryFirmament": {
+    "name": "「熾空的繪卷」"
+  },
   "TheMountainCloudsLetDownGoldenRain": {
     "name": "雲山復沓百雨金"
   },
@@ -13882,6 +14059,48 @@
   },
   "ThesisProgression": {
     "name": "撰寫論文"
+  },
+  "PrayerTime": {
+    "name": "祝禱之時"
+  },
+  "ElegantGreeting": {
+    "name": "優雅問候"
+  },
+  "FantasticalMarvel": {
+    "name": "幻戲瑰意"
+  },
+  "MeditationOnFloatingDreams": {
+    "name": "靜思浮夢"
+  },
+  "HiddenJadeStar": {
+    "name": "韜玉天星"
+  },
+  "DappledShadowsReflectingRed": {
+    "name": "疏影引蝶映梅紅"
+  },
+  "OracleOfReason": {
+    "name": "訴理明諭"
+  },
+  "LingeringFeast": {
+    "name": "流連歡宴"
+  },
+  "AzureIcefang": {
+    "name": "謐海的冰牙"
+  },
+  "WindAndFreedom": {
+    "name": "風與自由"
+  },
+  "StoneAndContracts": {
+    "name": "岩與契約"
+  },
+  "ThunderAndEternity": {
+    "name": "雷與永恆"
+  },
+  "NatureAndWisdom": {
+    "name": "草與智慧"
+  },
+  "WaterAndJustice": {
+    "name": "水與正義"
   },
   "RhodeiaOfLoch": {
     "name": "純水精靈·洛蒂婭"
@@ -14274,10 +14493,16 @@
     "name": "代行裁判"
   },
   "RequiresAppropriateRest": {
-    "name": "應當有適當的休憩"
+    "name": "應有適當的休憩"
   },
   "BeastlyCorrosion": {
     "name": "異獸侵蝕"
+  },
+  "NightRealmsGiftCrestsAndTroughs": {
+    "name": "夜域賜禮·波濤頂底"
+  },
+  "DarkShatteringFlame": {
+    "name": "破夜的明焰"
   },
   "MagicGuide": {
     "name": "魔導緒論"
@@ -14558,6 +14783,12 @@
   "Iktomisaurus": {
     "name": "暝視龍"
   },
+  "DemonWarriorsFeatherMask": {
+    "name": "魔戰士的羽面"
+  },
+  "Qucusaurus": {
+    "name": "絨翼龍"
+  },
   "LiyueHarborWharf": {
     "name": "璃月港口"
   },
@@ -14717,6 +14948,9 @@
   "ScionsOfTheCanopy": {
     "name": "「懸木人」"
   },
+  "PeopleOfTheSprings": {
+    "name": "「流泉之眾」"
+  },
   "ElementalResonanceWovenIce": {
     "name": "元素共鳴：交織之冰"
   },
@@ -14804,18 +15038,6 @@
   "AbyssalSummons": {
     "name": "深淵的呼喚"
   },
-  "WindAndFreedom": {
-    "name": "風與自由"
-  },
-  "StoneAndContracts": {
-    "name": "岩與契約"
-  },
-  "ThunderAndEternity": {
-    "name": "雷與永恆"
-  },
-  "NatureAndWisdom": {
-    "name": "草與智慧"
-  },
   "FatuiConspiracy": {
     "name": "愚人眾的陰謀"
   },
@@ -14888,9 +15110,6 @@
   "ViciousAncientBattle": {
     "name": "舊日鏖戰"
   },
-  "WaterAndJustice": {
-    "name": "水與正義"
-  },
   "CountdownToTheShow3": {
     "name": "幻戲倒數：3"
   },
@@ -14911,6 +15130,12 @@
   },
   "UltimateSurfingBuddy": {
     "name": "強勁衝浪拍檔！"
+  },
+  "PilgrimageOfTheReturnOfTheSacredFlame": {
+    "name": "歸火聖夜巡禮"
+  },
+  "AbundantPhlogiston": {
+    "name": "燃素充盈"
   },
   "Origin": {
     "name": "原初"
@@ -14965,6 +15190,9 @@
   },
   "EnkanomiyaEvernight": {
     "name": "淵下宮·常夜"
+  },
+  "EnkanomiyaCrown": {
+    "name": "淵下宮·冠冕"
   },
   "BeginnerPlayerBadge": {
     "name": "初級牌手徽章"
@@ -15037,6 +15265,12 @@
   },
   "PhantomInBoots": {
     "name": "倩影遊俠"
+  },
+  "CherriesSnowLaden": {
+    "name": "宿雪桃紅"
+  },
+  "NewYearsCheer": {
+    "name": "歲夜歡譁"
   },
   "AdventurerCamp": {
     "name": "冒險家的臨時營地"
@@ -15290,6 +15524,39 @@
   "TheNationOfHydrosMottledColors": {
     "name": "水之國度的斑駁色彩"
   },
+  "CarefullyConsideredWords": {
+    "name": "言談之前的沉思"
+  },
+  "ArenasToastToTriumph": {
+    "name": "競技場的歡聚勝飲"
+  },
+  "SleepNowRestYourWearyHead": {
+    "name": "安寢吧，於那舒適的夢鄉"
+  },
+  "FomentingFashionAtTheFair": {
+    "name": "忙碌市集的潮流風物"
+  },
+  "BornAmongSearingFlames": {
+    "name": "於最灼熱的爐火中誕生"
+  },
+  "TreadingTheUntroddenPath": {
+    "name": "我們的冒險，我們的路"
+  },
+  "ChildrenOfEchoesPassion": {
+    "name": "「回聲之子」的熱血"
+  },
+  "PeopleOfTheSpringsRelaxation": {
+    "name": "「流泉之眾」的悠然"
+  },
+  "ScionsOfTheCanopysDuty": {
+    "name": "「懸木人」的實踐"
+  },
+  "FlowerFeatherClansConquest": {
+    "name": "「花羽會」的征途"
+  },
+  "MastersOfTheNightWindsTranquility": {
+    "name": "「煙謎主」的安適"
+  },
   "TimberWallWithJadeEaves": {
     "name": "玉面簷枋牆"
   },
@@ -15304,6 +15571,9 @@
   },
   "AnnexsGoldenMosaic": {
     "name": "「別宮的金紋嵌畫」"
+  },
+  "LoftyTowersFashionableCanvas": {
+    "name": "「高塔的潮流畫布」"
   },
   "TraditionalCedarFlooring": {
     "name": "垂香木傳統地板"
@@ -15320,6 +15590,9 @@
   "AnnexsMirrorSheenFloorTile": {
     "name": "「別宮的如鏡地磚」"
   },
+  "LoftyTowersFloorOfTrials": {
+    "name": "「高塔的競逐之地」"
+  },
   "CheckeredCedarCeiling": {
     "name": "垂香木方格天花板"
   },
@@ -15334,6 +15607,9 @@
   },
   "AnnexsSpotlessDome": {
     "name": "「別宮的無垢穹頂」"
+  },
+  "LoftyTowersRadiantCeiling": {
+    "name": "「高塔的光耀天井」"
   },
   "TwoTierCandleChandelier": {
     "name": "雙層燭臺吊燈"
@@ -15503,6 +15779,9 @@
   "AnnexsSwirlingLight": {
     "name": "「別宮的旋流垂光」"
   },
+  "LoftyTowersFlamingBrazier": {
+    "name": "「高塔的勵勉燃流」"
+  },
   "NorthernBirchFoldingCounter": {
     "name": "極北樺木折角櫃檯"
   },
@@ -15550,6 +15829,9 @@
   },
   "PeachPalmWoodFulcrumContainer": {
     "name": "桃椰子木「支點」貨櫃"
+  },
+  "FairsThoughtsInOrder": {
+    "name": "「市集的歸納靜思」"
   },
   "TwoTierLibraryBookshelf": {
     "name": "圖書館雙層書架"
@@ -15719,6 +16001,9 @@
   "CountlessServices": {
     "name": "「萬千勤務者」"
   },
+  "FairsSimpleSalesStrategy": {
+    "name": "「市集的推銷策略」"
+  },
   "BreezeBlessedBed": {
     "name": "柔風加護的床榻"
   },
@@ -15742,6 +16027,9 @@
   },
   "LindenWoodSweetSlumberBed": {
     "name": "椴木「舒眠」床鋪"
+  },
+  "StoneBedPeacefulSleep": {
+    "name": "石製床鋪-「安眠」"
   },
   "PineReceptionCounter": {
     "name": "松木客棧櫃檯"
@@ -16031,6 +16319,9 @@
   "TheDistanceBetweenItAndTheFlames": {
     "name": "「它與火焰的距離」"
   },
+  "PortableAllPurposeGrill": {
+    "name": "攜帶式通用烤爐"
+  },
   "MondstadtRugCrimsonArdor": {
     "name": "蒙德地毯-「明紅的熱忱」"
   },
@@ -16082,6 +16373,9 @@
   "WearyRugLayDownYourBurden": {
     "name": "倦意地毯-「卸下重擔」"
   },
+  "FairCarpetWarmthAndPassion": {
+    "name": "市集地毯-「熱情與溫暖」"
+  },
   "VibrantPotBornInFlames": {
     "name": "炫彩陶罐-「生於烈焰」"
   },
@@ -16132,6 +16426,9 @@
   },
   "PhlogistonFloorLampCostEffectiveConvenience": {
     "name": "燃素地燈-「廉便」"
+  },
+  "PhlogistonLampRainCover": {
+    "name": "燃素提燈-「傘罩」"
   },
   "FlowerArrangementBabyBlueTranquility": {
     "name": "花卉瓶栽-「淡藍的從容」"
@@ -16658,6 +16955,21 @@
   "SalesSavvy101": {
     "name": "「行銷販運之方」"
   },
+  "WovenHutSereneIndigo": {
+    "name": "織物棚屋-「沉靜靛藍」"
+  },
+  "WovenHutRhythmicStripes": {
+    "name": "織物棚屋-「律動條紋」"
+  },
+  "GloriousHuesOfTheSacredFlame": {
+    "name": "「聖火之境的斑斕」"
+  },
+  "CuriousCountenancesOfTheSacredFlame": {
+    "name": "「聖火之境的奇飾」"
+  },
+  "AlluringFlavorsOfTheSacredFlame": {
+    "name": "「聖火之境的特調」"
+  },
   "HilichurlOutpostHut": {
     "name": "丘丘前哨小屋"
   },
@@ -17111,6 +17423,9 @@
   "AshenAratikuWoodGiantClawPlatform": {
     "name": "灰灰樓林木「巨爪」高臺"
   },
+  "PilgrimageOfFlame": {
+    "name": "「烈火的巡禮」"
+  },
   "BirdAndBlossomDesignFountain": {
     "name": "花鳥噴泉"
   },
@@ -17405,6 +17720,36 @@
   "ValleyStoneStepsFoundationStone": {
     "name": "秀谷石階-「礎石之功」"
   },
+  "DwellingPortalSacredDuty": {
+    "name": "端居門庭-「神聖使命」"
+  },
+  "DwellingWallJourneyThroughArt": {
+    "name": "端居石牆-「穿行畫」"
+  },
+  "DwellingWallGuidingLines": {
+    "name": "端居石牆-「輔助線」"
+  },
+  "DwellingWallWarpedPerspective": {
+    "name": "端居石牆-「破壞點」"
+  },
+  "DwellingWallGraffitiPanel": {
+    "name": "端居石牆-「塗鴉板」"
+  },
+  "StadiumsTemperedSteps": {
+    "name": "競技場「百煉」石階"
+  },
+  "GuardianPillarMyriadWarriors": {
+    "name": "守護岩柱-「千武士」"
+  },
+  "GuardianPillarAbundantShamans": {
+    "name": "守護岩柱-「百薩滿」"
+  },
+  "GuardianPillarInnumerableSparks": {
+    "name": "守護岩柱-「萬星火」"
+  },
+  "GuardianPillarExaltedHeroes": {
+    "name": "守護岩柱-「諸英傑」"
+  },
   "AshenAratikuWoodMinimalistStaircase": {
     "name": "灰灰樓林木「極簡」階梯"
   },
@@ -17662,6 +18007,12 @@
   },
   "SalubriousFragrance": {
     "name": "「健療的醇芳」"
+  },
+  "AgelessAgave": {
+    "name": "「百代的龍舌」"
+  },
+  "SweetDown": {
+    "name": "「甘醇的絨羽」"
   },
   "SolidRoots": {
     "name": "「紮實的根基」"
@@ -18059,6 +18410,15 @@
   "TlalocansDrawing": {
     "name": "「特拉洛坎之繪」"
   },
+  "WoodenSignboardEnchantingExperience": {
+    "name": "木製招牌-「奇幻體驗」"
+  },
+  "SpringtimeFoldingScreenATouchOfRed": {
+    "name": "春曦屏風-「一點紅」"
+  },
+  "SpringtimeFoldingScreenFragranceFillsTheAir": {
+    "name": "春曦屏風-「滿庭芳」"
+  },
   "BookshelfFreeReading": {
     "name": "書報架-「自由取閱」"
   },
@@ -18133,6 +18493,21 @@
   },
   "FixedTorchPursuitOfVictory": {
     "name": "固定火炬-「求勝」"
+  },
+  "BlackGoldOfTheBlazingRealm": {
+    "name": "「焰域的黑金」"
+  },
+  "PilgrimageByTheHammersBlow": {
+    "name": "「錘鍛的巡禮」"
+  },
+  "ClimaxOfColorsAndHues": {
+    "name": "「告竣的流彩」"
+  },
+  "SpatteredColorsAndHues": {
+    "name": "「揮灑的流彩」"
+  },
+  "MusingsOnColorsAndHues": {
+    "name": "「醞釀的流彩」"
   },
   "WeatheredBambooFence": {
     "name": "飽經風雨的竹製圍籬"
@@ -18329,6 +18704,9 @@
   "WhiteChestnutOakWoodRawFinishLowTable": {
     "name": "白栗櫟木「原色」矮桌"
   },
+  "FairTableUncutOriginal": {
+    "name": "市集木桌-「皆如原態」"
+  },
   "WineShopDisplayCounterToYourHeartsContent": {
     "name": "酒肆貨櫃-「會須百杯飲」"
   },
@@ -18397,5 +18775,26 @@
   },
   "TheEmbersOfCinderCity": {
     "name": "「燼城的餘火」"
+  },
+  "OurDestination": {
+    "name": "「我們的歸宿」"
+  },
+  "ForeverInArms": {
+    "name": "「與牠們永遠相伴」"
+  },
+  "BearWitness": {
+    "name": "「予以見證」"
+  },
+  "FairsTreasuresAndTrinkets": {
+    "name": "「市集的珠玉巧飾」"
+  },
+  "SecretsOfGoodHealth": {
+    "name": "「健康的方法」"
+  },
+  "PromiseOfAbundance": {
+    "name": "「豐沃的保證」"
+  },
+  "ByCinderCitysGlowingLight": {
+    "name": "「燼城的輝光」"
   }
 }

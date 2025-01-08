@@ -210,7 +210,7 @@ function CharacterEditorContent({
             {Object.entries(character?.statBoosts ?? {}).map(
               ([statBoost, enabled]) => {
                 const { statKey, value } = getCharStatBoostStat(
-                  genderedKey,
+                  characterKey,
                   statBoost
                 )
                 return (

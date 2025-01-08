@@ -29,7 +29,7 @@
       "0": {
         "name": "Enervação",
         "fullDesc": "Ao curar aliados com PV iguais ou abaixo de {{1, percent}}%, aumenta a Cura Realizada de Natasha em <orangeStrong>{{2, percent}}%</orangeStrong>. Este efeito também funciona na cura contínua.",
-        "shortDesc": "Ao curar aliados com PV baixos, aumenta a Cura Realizada. Esse efeito também funciona em curas contínuas.",
+        "shortDesc": "Ao curar aliados com porcentagem dos PV baixa, aumenta a Cura Realizada. Esse efeito também funciona em curas contínuas.",
         "tag": "Aprimoramento"
       }
     },
@@ -52,7 +52,7 @@
     "bonusAbility1": {
       "0": {
         "name": "Acalmar",
-        "fullDesc": "A Perícia remove {{1}} Penalidade(s) de um aliado-alvo.",
+        "fullDesc": "Ao usar a Perícia, remove {{1}} penalidade(s) de um aliado-alvo.",
         "shortDesc": "",
         "tag": ""
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Pesquisa Clínica",
-      "desc": "Usar a sua Perícia Suprema concede cura contínua por {{2}} rodada(s) aos aliados com {{1, percent}}% de PV ou menos. No início das suas rodadas, os PV dos aliados são restaurados em {{3, percent}}% dos PV máximos de Natasha + {{4}}."
+      "desc": "Usar a sua Perícia Suprema concede cura contínua por {{2}} rodada(s) aos aliados com {{1, percent}}% de porcentagem de PV ou menos. No início das suas rodadas, os PV dos aliados são restaurados em {{3, percent}}% dos PV máximos de Natasha + {{4}}."
     },
     "3": {
       "name": "A Cura Correta",

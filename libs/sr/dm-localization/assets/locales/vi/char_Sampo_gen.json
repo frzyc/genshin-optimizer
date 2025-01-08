@@ -36,7 +36,7 @@
     "technique": {
       "0": {
         "name": "Tỏa Sáng Rực Rỡ",
-        "fullDesc": "Sau khi dùng Bí Kỹ sẽ khiến kẻ địch trong khu vực nhất định rơi vào trạng thái Mù {{1}} giây, kẻ địch ở trạng thái Mù không thể phát hiện mục tiêu phe ta.<br>Nếu chủ động tấn công kẻ địch rơi vào trạng thái Mù thì khi vào chiến đấu sẽ có {{2, percent}}% xác suất cố định khiến mỗi kẻ địch Trì Hoãn Hành Động {{3, percent}}%.",
+        "fullDesc": "Sau khi dùng Bí Kỹ sẽ khiến kẻ địch trong khu vực nhất định rơi vào trạng thái Mù {{1}} giây, kẻ địch ở trạng thái Mù không thể phát hiện mục tiêu phe ta.<br>Nếu chủ động tấn công kẻ địch rơi vào trạng thái Mù thì khi vào chiến đấu sẽ có {{2, percent}}% xác suất cố định khiến mỗi một mục tiêu phe địch Trì Hoãn Hành Động {{3, percent}}%.",
         "shortDesc": "Khiến kẻ địch trong khu vực nhất định rơi vào trạng thái Mù. Tấn công kẻ địch trong trạng thái Mù, vào chiến đấu sẽ có xác suất lớn khiến mỗi một kẻ địch trì hoãn hành động.",
         "tag": "Quấy Nhiễu"
       }
@@ -81,7 +81,7 @@
     },
     "2": {
       "name": "Nhiệt Tình Lan Toả",
-      "desc": "Khi kẻ địch đang ở trạng thái Bào Mòn bị tiêu diệt, sẽ khiến toàn phe địch có {{1, percent}}% xác suất cơ bản cộng dồn {{2}} tầng bằng với trạng thái Bào Mòn của Thiên Phú."
+      "desc": "Khi mục tiêu phe địch đang ở trạng thái Bào Mòn bị tiêu diệt, sẽ khiến toàn phe địch có {{1, percent}}% xác suất cơ bản cộng dồn {{2}} tầng bằng với trạng thái Bào Mòn của Thiên Phú."
     },
     "3": {
       "name": "Con Số Lớn!",
