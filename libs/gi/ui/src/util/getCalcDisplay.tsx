@@ -223,8 +223,7 @@ function computeFormulaDisplay(
   result.formula = (
     <Typography
       sx={{
-        textDecoration:
-          info.strikethrough ? 'line-through' : undefined,
+        textDecoration: info.strikethrough ? 'line-through' : undefined,
       }}
     >
       {components.map((x, i) => (
