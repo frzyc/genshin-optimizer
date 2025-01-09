@@ -33,7 +33,7 @@ export const data: Data = dataObjForArtifactSheet(key, {
     premod: {
       atk_: set4,
     },
-    tally: {
+    nonStacking: {
       no4: set4TallyWrite,
     },
   },

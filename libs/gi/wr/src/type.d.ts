@@ -9,7 +9,7 @@ import type {
   AmplifyingReactionsKey,
   TransformativeReactionsKey,
 } from '@genshin-optimizer/gi/keymap'
-import type { input, uiInput } from './formula'
+import type { input, NonStackBuff, uiInput } from './formula'
 
 export type NumNode =
   | ComputeNode
@@ -180,7 +180,10 @@ interface DynamicNumInput<T = NumNode> {
     [key: string]: DisplaySub
   }
   conditional?: NodeData<T>
-  teamBuff?: Input & { tally?: NodeData<NumNode | StrNode> }
+  teamBuff?: Input & {
+    tally?: NodeData<NumNode>
+    nonStacking?: Record<NonStackBuff, StrNode>
+  }
 }
 export interface NodeData<T = NumNode> {
   [key: string]: typeof key extends 'operation' ? never : NodeData<T> | T

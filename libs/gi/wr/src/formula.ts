@@ -580,7 +580,6 @@ const _tally = setReadNodeKeys(
   {
     ...objKeyMap([...allElements, ...allRegionKeys], (_) => read('add')),
     maxEleMas: read('max'),
-    ...objKeyMap(allNonstackBuffs, () => stringRead('small')),
   },
   ['tally']
 )
@@ -589,6 +588,11 @@ const tally = {
   // Special handling since it's not a `ReadNode`
   ele: sum(...allElements.map((ele) => min(_tally[ele], 1))),
 }
+
+const nonStacking = setReadNodeKeys(
+  objKeyMap(allNonstackBuffs, () => stringRead('small')),
+  ['nonStacking']
+)
 
 /**
  * List of `input` nodes, rearranged to conform to the needs of the
@@ -607,4 +611,4 @@ export const infusionNode = stringPrio(
   input.infusion.overridableSelf
 )
 
-export { common, customBonus, input, tally, target, uiInput }
+export { common, customBonus, input, nonStacking, tally, target, uiInput }

@@ -17,6 +17,7 @@ import {
   equal,
   infoMut,
   input,
+  nonStacking,
   tally,
   unequal,
 } from '@genshin-optimizer/gi/wr'
@@ -95,8 +96,8 @@ export function nonStackBuff(
   buffNode: NumNode
 ) {
   return [
-    equal(tally[buffName], input.charKey, buffNode),
-    unequal(tally[buffName], input.charKey, buffNode, {
+    equal(nonStacking[buffName], input.charKey, buffNode),
+    unequal(nonStacking[buffName], input.charKey, buffNode, {
       path,
       isTeamBuff: true,
       strikethrough: true,
