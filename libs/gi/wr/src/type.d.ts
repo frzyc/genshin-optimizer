@@ -48,12 +48,13 @@ export type Info = {
   prefix?: KeyMapPrefix
   source?: CharacterSheetKey | WeaponKey | ArtifactSetKey
   variant?: InfoVariant
-  subVariant?: InfoVariant | 'strike'
+  subVariant?: InfoVariant
   asConst?: true
   pivot?: true
   fixed?: number
   isTeamBuff?: boolean
   multi?: number
+  strikethrough?: boolean
 }
 export type Variant =
   | ElementWithPhyKey

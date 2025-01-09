@@ -99,7 +99,7 @@ export function nonStackBuff(
     unequal(tally[buffName], input.charKey, buffNode, {
       path,
       isTeamBuff: true,
-      subVariant: 'strike',
+      strikethrough: true,
     }),
   ]
 }
