@@ -8,6 +8,7 @@ import {
   greaterEq,
   infoMut,
   input,
+  lessThan,
   lookup,
   naught,
   percent,
@@ -217,6 +218,12 @@ const c2RingForm_enemyDefRed_ = greaterEq(
   2,
   equal(condC2RingForm, 'on', dm.constellation2.enemyDefRed_)
 )
+const antiC2RingForm_enemyDefRed_ = lessThan(
+  input.constellation,
+  6,
+  prod(-1, c2RingForm_enemyDefRed_)
+)
+
 const c2FlameForm_normal_dmgInc = greaterEq(
   input.constellation,
   2,
@@ -266,12 +273,14 @@ const flameNormalAddl = {
   ...hitEle.pyro,
   premod: {
     normal_dmgInc: sum(flameNormal_dmgInc, c2FlameForm_normal_dmgInc),
+    enemyDefRed_: antiC2RingForm_enemyDefRed_,
   },
 }
 const flameChargedAddl = {
   ...hitEle.pyro,
   premod: {
     charged_dmgInc: sum(flameCharged_dmgInc, c2FlameForm_charged_dmgInc),
+    enemyDefRed_: antiC2RingForm_enemyDefRed_,
   },
 }
 const dmgFormulas = {
@@ -328,7 +337,9 @@ const dmgFormulas = {
       'skill'
     ),
     // TODO: Check what damage type this is
-    sprintDmg: dmgNode('atk', dm.skill.sprintDmg, 'skill'),
+    sprintDmg: dmgNode('atk', dm.skill.sprintDmg, 'skill', {
+      premod: { enemyDefRed_: antiC2RingForm_enemyDefRed_ },
+    }),
     chargedCyclicDmg: dmgNode(
       'atk',
       dm.skill.chargedCyclicDmg,
@@ -349,13 +360,18 @@ const dmgFormulas = {
       'atk',
       dm.skill.plungeDmg,
       'plunging_impact',
-      hitEle.pyro,
+      {
+        premod: { enemyDefRed_: antiC2RingForm_enemyDefRed_ },
+        ...hitEle.pyro,
+      },
       undefined,
       'skill'
     ),
   },
   burst: {
-    skillDmg: dmgNode('atk', dm.burst.skillDmg, 'burst'),
+    skillDmg: dmgNode('atk', dm.burst.skillDmg, 'burst', {
+      premod: { enemyDefRed_: antiC2RingForm_enemyDefRed_ },
+    }),
     sunfell_dmgInc,
     flameNormal_dmgInc,
     flameCharged_dmgInc,
@@ -537,21 +553,6 @@ const sheet: TalentSheet = {
         },
       ],
     },
-    ct.condTem('constellation2', {
-      path: condC2RingFormPath,
-      value: condC2RingForm,
-      teamBuff: true,
-      name: ct.ch('c2RingCond'),
-      states: {
-        on: {
-          fields: [
-            {
-              node: c2RingForm_enemyDefRed_,
-            },
-          ],
-        },
-      },
-    }),
   ]),
 
   burst: ct.talentTem('burst', [
@@ -696,6 +697,25 @@ const sheet: TalentSheet = {
             },
             {
               node: c2FlameForm_burst_dmgInc,
+            },
+          ],
+        },
+      },
+    }),
+    ct.condTem('constellation2', {
+      path: condC2RingFormPath,
+      value: condC2RingForm,
+      teamBuff: true,
+      name: ct.ch('c2RingCond'),
+      states: {
+        on: {
+          fields: [
+            {
+              canShow: (data) => data.get(input.constellation).value < 6,
+              text: ct.ch('c2Exception'),
+            },
+            {
+              node: c2RingForm_enemyDefRed_,
             },
           ],
         },

@@ -7,5 +7,6 @@
   "c1Cond": "After gaining Fighting Spirit",
   "c2RingCond": "In Ring of Searing Radiance form",
   "c2FlameCond": "In Flamestrider form",
-  "flamestriderDmg": "Flamestrider DMG"
+  "flamestriderDmg": "Flamestrider DMG",
+  "c2Exception": "Enemy DEF Reduction will not apply to Flamestrider or Burst hits until C6"
 }
