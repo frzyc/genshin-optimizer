@@ -1,4 +1,9 @@
-import { objKeyMap, range } from '@genshin-optimizer/common/util'
+import {
+  objKeyMap,
+  objKeyValMap,
+  objMap,
+  range,
+} from '@genshin-optimizer/common/util'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { allStats } from '@genshin-optimizer/gi/stats'
 import {
@@ -150,14 +155,24 @@ const a4IceStorm_dmgInc = greaterEq(
 )
 
 const [condC1BladeConsumePath, condC1BladeConsume] = cond(key, 'c1BladeConsume')
-const c1BladeConsume_dmgInc = greaterEq(
-  input.constellation,
-  1,
-  equal(
-    condC1BladeConsume,
-    'on',
-    prod(input.total.eleMas, percent(dm.constellation1.dmgInc))
-  )
+const c1BladeConsume_dmgInc_disp = objKeyValMap(
+  ['normal', 'charged', 'plunging', 'skill', 'burst'],
+  (key) => [
+    `${key}_dmgInc`,
+    greaterEq(
+      input.constellation,
+      1,
+      equal(
+        condC1BladeConsume,
+        'on',
+        prod(input.total.eleMas, percent(dm.constellation1.dmgInc))
+      ),
+      { path: `${key}_dmgInc`, isTeamBuff: true }
+    ),
+  ]
+)
+const c1BladeConsume_dmgInc = objMap(c1BladeConsume_dmgInc_disp, (node) =>
+  unequal(target.charKey, key, node)
 )
 
 const c2EleMas = greaterEq(input.constellation, 2, dm.constellation2.selfEleMas)
@@ -168,7 +183,11 @@ const c2ShieldEleMas_disp = greaterEq(
   equal(condC2ShieldEleMas, 'on', dm.constellation2.teamEleMas),
   { path: 'eleMas', isTeamBuff: true }
 )
-const c2ShieldEleMas = unequal(target.charKey, key, c2ShieldEleMas_disp)
+const c2ShieldEleMas = unequal(
+  target.charKey,
+  key,
+  equal(target.charKey, input.activeCharKey, c2ShieldEleMas_disp)
+)
 
 const c2NsFreezeMelt_pyro_enemyRes_ = greaterEq(
   input.constellation,
@@ -238,8 +257,8 @@ const dmgFormulas = {
     }),
     skullDmg: dmgNode('atk', dm.burst.skullDmg, 'burst'),
   },
-  onstellation1: {
-    c1BladeConsume_dmgInc,
+  constellation1: {
+    ...c1BladeConsume_dmgInc_disp,
   },
   constellation4: {
     dmg: greaterEq(
@@ -274,7 +293,7 @@ export const data = dataObjForCharacterSheet(key, dmgFormulas, {
         a1NsFreezeMelt_pyro_enemyRes_,
         c2NsFreezeMelt_pyro_enemyRes_
       ),
-      all_dmgInc: c1BladeConsume_dmgInc,
+      ...c1BladeConsume_dmgInc,
       eleMas: c2ShieldEleMas,
       pyro_dmg_: c6NsConsumed_pyro_dmg_,
       hydro_dmg_: c6NsConsumed_hydro_dmg_,
@@ -507,9 +526,9 @@ const sheet: TalentSheet = {
       states: {
         on: {
           fields: [
-            {
-              node: c1BladeConsume_dmgInc,
-            },
+            ...Object.values(c1BladeConsume_dmgInc_disp).map((node) => ({
+              node,
+            })),
             {
               text: st('triggerQuota'),
               value: dm.constellation1.triggerQuota,
