@@ -183,7 +183,11 @@ const c2ShieldEleMas_disp = greaterEq(
   equal(condC2ShieldEleMas, 'on', dm.constellation2.teamEleMas),
   { path: 'eleMas', isTeamBuff: true }
 )
-const c2ShieldEleMas = unequal(target.charKey, key, c2ShieldEleMas_disp)
+const c2ShieldEleMas = unequal(
+  target.charKey,
+  key,
+  equal(target.charKey, input.activeCharKey, c2ShieldEleMas_disp)
+)
 
 const c2NsFreezeMelt_pyro_enemyRes_ = greaterEq(
   input.constellation,
