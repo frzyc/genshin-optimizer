@@ -18,7 +18,6 @@ import {
   infoMut,
   input,
   nonStacking,
-  tally,
   unequal,
 } from '@genshin-optimizer/gi/wr'
 import type { ReactNode } from 'react'
