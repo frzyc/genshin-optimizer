@@ -1,0 +1,9 @@
+{
+  "name": "zzz-page-settings",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/zzz/page-settings/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project zzz-page-settings --web",
+  "targets": {}
+}

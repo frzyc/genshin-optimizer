@@ -30,3 +30,13 @@ export function getUnitStr<Key extends string>(key: Key): Unit {
   if (key.endsWith('_')) return '%'
   return ''
 }
+
+export function statKeyToFixed(statKey: string) {
+  return statKey.endsWith('_') ? 1 : 0
+}
+
+export function roundStat(value: number, statKey: string) {
+  return getUnitStr(statKey) === '%'
+    ? Math.round(value * 10000) / 10000
+    : Math.round(value * 100) / 100
+}

@@ -1,0 +1,8 @@
+{
+  "name": "zzz-ui",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/zzz/ui/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {}
+}

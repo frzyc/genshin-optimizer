@@ -3,6 +3,7 @@ import {
   getRandomIntInclusive,
   getUnitStr,
   range,
+  statKeyToFixed,
   toPercent,
 } from '@genshin-optimizer/common/util'
 import type {
@@ -53,7 +54,7 @@ export function getRelicMainStatDisplayVal(
   ).toFixed(statToFixed(statKey))
 }
 export function statToFixed(statKey: RelicMainStatKey | RelicSubStatKey) {
-  return statKey.endsWith('_') ? 1 : 0
+  return statKeyToFixed(statKey)
 }
 
 // TODO: Update this with proper corrected rolls
@@ -143,6 +144,9 @@ export function randomizeRelic(base: Partial<IRelic> = {}): IRelic {
   }
 }
 
+/**
+ * @deprecated use common-util/roundStat
+ */
 export function roundStat(
   value: number,
   statKey: RelicMainStatKey | RelicSubStatKey
