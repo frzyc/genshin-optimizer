@@ -168,6 +168,7 @@ const [condA4TimeSinceBurstPath, condA4TimeSinceBurst] = cond(
   'a4TimeSinceBurst'
 )
 const a4TimeSinceBurstArr = range(0, dm.passive2.duration - 1)
+const a4c4TimeSinceBurstArr = range(0, 0)
 const a4TimeSinceBurst = lookup(
   condA4TimeSinceBurst,
   objKeyMap(a4TimeSinceBurstArr, (time) => constant(time)),
@@ -607,14 +608,20 @@ const sheet: TalentSheet = {
       value: condA4TimeSinceBurst,
       teamBuff: true,
       name: ct.ch('a4Cond'),
-      states: objKeyMap(a4TimeSinceBurstArr, (time) => ({
-        name: st('seconds', { count: time }),
-        fields: [
-          {
-            node: a4TimeSinceBurst_dmg_disp,
-          },
-        ],
-      })),
+      states: (data) =>
+        objKeyMap(
+          data.get(input.constellation)?.value >= 4
+            ? a4c4TimeSinceBurstArr
+            : a4TimeSinceBurstArr,
+          (time) => ({
+            name: st('seconds', { count: time }),
+            fields: [
+              {
+                node: a4TimeSinceBurst_dmg_disp,
+              },
+            ],
+          })
+        ),
     }),
     ct.headerTem('constellation4', {
       fields: [
