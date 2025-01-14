@@ -99,7 +99,7 @@ export const allDiscMainSubStatKeys = Array.from(
 export type DiscMainSubStatKey = (typeof allDiscMainSubStatKeys)[number]
 
 // TODO: use dm values
-const _subData = {
+const subData = {
   hp: { B: 39, A: 79, S: 112 },
   atk: { B: 7, A: 15, S: 19 },
   def: { B: 5, A: 10, S: 15 },
@@ -111,6 +111,12 @@ const _subData = {
   crit_dmg_: { B: 0.016, A: 0.032, S: 0.048 },
   anomProf: { B: 3, A: 6, S: 9 },
 } as const
+export function getSubStatBaseVal(
+  statKey: DiscSubStatKey,
+  rarity: DiscRarityKey
+) {
+  return subData[statKey][rarity]
+}
 
 const m123 = { B: 0.1, A: 0.2, S: 0.3 }
 
