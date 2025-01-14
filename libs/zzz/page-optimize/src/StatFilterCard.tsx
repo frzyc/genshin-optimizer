@@ -5,8 +5,9 @@ import {
   NumberInputLazy,
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr } from '@genshin-optimizer/common/util'
-import { allAttributeDamageKeys, StatKey } from '@genshin-optimizer/zzz/consts'
-import { Constraints } from '@genshin-optimizer/zzz/solver'
+import type { StatKey } from '@genshin-optimizer/zzz/consts'
+import { allAttributeDamageKeys } from '@genshin-optimizer/zzz/consts'
+import type { Constraints } from '@genshin-optimizer/zzz/solver'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import {
   Box,

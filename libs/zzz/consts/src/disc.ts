@@ -1,3 +1,5 @@
+import type { StatKey } from './common'
+
 export const allDiscSlotKeys = ['1', '2', '3', '4', '5', '6'] as const
 export type DiscSlotKey = (typeof allDiscSlotKeys)[number]
 
@@ -97,7 +99,7 @@ export const allDiscMainSubStatKeys = Array.from(
 export type DiscMainSubStatKey = (typeof allDiscMainSubStatKeys)[number]
 
 // TODO: use dm values
-const subData = {
+const _subData = {
   hp: { B: 39, A: 79, S: 112 },
   atk: { B: 7, A: 15, S: 19 },
   def: { B: 5, A: 10, S: 15 },
@@ -141,4 +143,29 @@ export function getDiscMainStatVal(
   _level: number
 ): number {
   return (mainData as any)[mainStatKey][rarity] ?? 0
+}
+
+/**
+ * TODO: use dm pipeline
+ */
+export const disc2pEffect: Record<
+  DiscSetKey,
+  Partial<Record<StatKey, number>>
+> = {
+  AstralVoice: { atk: 0.1 },
+  BranchBladeSong: { crit_dmg_: 0.16 },
+  ChaosJazz: { anomProf: 30 },
+  ChaoticMetal: { ether_dmg_: 10 },
+  FangedMetal: { physical_dmg_: 0.1 },
+  FreedomBlues: { anomProf: 30 },
+  HormonePunk: { atk: 0.1 },
+  InfernoMetal: { fire_dmg_: 0.1 },
+  PolarMetal: { ice_dmg_: 0.1 },
+  ProtoPunk: { shield_: 0.15 },
+  PufferElectro: { pen_: 0.08 },
+  ShockstarDisco: { impact_: 0.06 },
+  SoulRock: { def_: 0.16 },
+  SwingJazz: { enerRegen_: 0.2 },
+  ThunderMetal: { electric_dmg_: 0.1 },
+  WoodpeckerElectro: { crit_: 0.08 },
 }

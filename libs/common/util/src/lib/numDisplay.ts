@@ -1,4 +1,7 @@
 export type Unit = '' | '%' | 's'
+/**
+ * Print out a number in percent with fixed decimal places
+ */
 export function valueString(
   value: number,
   unit: Unit = '',

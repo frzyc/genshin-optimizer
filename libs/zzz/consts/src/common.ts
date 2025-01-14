@@ -3,6 +3,7 @@ import { allDiscMainStatKeys, allDiscSubStatKeys } from './disc'
 export const otherStatKeys = [
   'impact', // flat impact on character
   'anomMas', // flat Anomally Mastery on character
+  'shield_', // Shield Effect
 ] as const
 
 export const allStatKeys = Array.from(

@@ -40,7 +40,7 @@ export default function SubstatInput({
   setSubstat: (index: number, substat?: ISubstat) => void
 }) {
   const { t } = useTranslation('disc')
-  const { mainStatKey = '', rarity = 5 } = disc ?? {}
+  const { mainStatKey = '' } = disc ?? {}
   const { key = '', value = 0, rolls = 0 } = disc?.substats[index] ?? {}
   // const accurateValue = rolls.reduce((a, b) => a + b, 0)
   const rollNum = rolls
@@ -57,7 +57,6 @@ export default function SubstatInput({
     allowedRolls = maxRollNum - rollNum
     rollData = 0 //key ? getSubstatValuesPercent(key, rarity) : []
   }
-  const rollOffset = 7 - rollData
 
   // if (!rollNum && key && value) error = error || t('editor.substat.error.noCalc')
   if (allowedRolls < 0)

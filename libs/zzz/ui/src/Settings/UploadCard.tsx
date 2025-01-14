@@ -4,8 +4,8 @@ import { CardThemed } from '@genshin-optimizer/common/ui'
 import type {
   ImportResult,
   ImportResultCounter,
-} from '@genshin-optimizer/sr/db'
-import { SroDatabase } from '@genshin-optimizer/sr/db'
+} from '@genshin-optimizer/zzz/db'
+import { ZzzDatabase } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { CheckBox, CheckBoxOutlineBlank, FileOpen } from '@mui/icons-material'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
@@ -60,11 +60,11 @@ export function UploadCard({
         // Parse as SROD format
         const copyStorage = new SandboxStorage(undefined, 'sro')
         copyStorage.copyFrom(database.storage)
-        const importedDatabase = new SroDatabase(
+        const importedDatabase = new ZzzDatabase(
           (index + 1) as 1 | 2 | 3 | 4,
           copyStorage
         )
-        const importResult = importedDatabase.importSROD(
+        const importResult = importedDatabase.importZOD(
           parsed,
           keepNotInImport,
           ignoreDups
@@ -210,7 +210,7 @@ export function UploadCard({
           onChange={(e) => setData(e.target.value)}
         />
         {importResult && importedDatabase ? (
-          <SRODUploadInfo
+          <ZODUploadInfo
             importResult={importResult}
             importedDatabase={importedDatabase}
           />
@@ -227,12 +227,12 @@ export function UploadCard({
   )
 }
 
-function SRODUploadInfo({
-  importResult: { source, relics, characters, lightCones },
+function ZODUploadInfo({
+  importResult: { source, discs },
   importedDatabase,
 }: {
   importResult: ImportResult
-  importedDatabase: SroDatabase
+  importedDatabase: ZzzDatabase
 }) {
   const { t } = useTranslation('page_settings')
   return (
@@ -249,12 +249,12 @@ function SRODUploadInfo({
           <Grid container item spacing={2}>
             <Grid item flexGrow={1}>
               <MergeResult
-                result={relics}
-                dbTotal={importedDatabase.relics.values.length}
-                type="relics"
+                result={discs}
+                dbTotal={importedDatabase.discs.values.length}
+                type="discs"
               />
             </Grid>
-            <Grid item flexGrow={1}>
+            {/* <Grid item flexGrow={1}>
               <MergeResult
                 result={lightCones}
                 dbTotal={importedDatabase.lightCones.values.length}
@@ -267,7 +267,7 @@ function SRODUploadInfo({
                 dbTotal={importedDatabase.chars.values.length}
                 type="chars"
               />
-            </Grid>
+            </Grid> */}
           </Grid>
         </Grid>
       </CardContent>
@@ -359,7 +359,7 @@ function SROUploadAction({
   reset,
 }: {
   index: number
-  importedDatabase?: SroDatabase
+  importedDatabase?: ZzzDatabase
   reset: () => void
 }) {
   const { databases, setDatabase } = useDatabaseContext()

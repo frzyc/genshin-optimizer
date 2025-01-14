@@ -1,5 +1,11 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { getUnitStr, notEmpty, toPercent } from '@genshin-optimizer/common/util'
+import {
+  getUnitStr,
+  notEmpty,
+  objMap,
+  toDecimal,
+  valueString,
+} from '@genshin-optimizer/common/util'
 import { useDatabaseContext, useDisc } from '@genshin-optimizer/zzz/db-ui'
 import type { BaseStats, BuildResult } from '@genshin-optimizer/zzz/solver'
 import { convertDiscToStats, getSum } from '@genshin-optimizer/zzz/solver'
@@ -27,7 +33,7 @@ function Build({
   const { database } = useDatabaseContext()
   const sum = useMemo(() => {
     const sum = getSum(
-      baseStats,
+      objMap(baseStats, (v, k) => toDecimal(v, k)),
       Object.values(build.discIds)
         .map((d) => database.discs.get(d))
         .filter(notEmpty)
@@ -39,9 +45,8 @@ function Build({
     <CardThemed>
       <CardContent>
         {Object.entries(sum).map(([k, v]) => (
-          <Typography>
-            {k}: {toPercent(v, k)}
-            {getUnitStr(k)}
+          <Typography key={k}>
+            {k}: {valueString(v, getUnitStr(k))}
           </Typography>
         ))}
         <Box display="flex" gap={1}>
