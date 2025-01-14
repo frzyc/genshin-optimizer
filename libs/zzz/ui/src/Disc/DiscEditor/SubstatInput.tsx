@@ -72,7 +72,7 @@ export default function SubstatInput({
             //...getSubstatSummedRolls(rarity, key).map((v) => ({ value: v })),
           ]
         : [{ value: 0 }],
-    []
+    [key]
   )
 
   return (
