@@ -1,4 +1,5 @@
 import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
+import { getSum } from './calc'
 import type { BaseStats, BuildResult, Constraints, DiscStats } from './common'
 import { MAX_BUILDS } from './common'
 
@@ -129,19 +130,7 @@ async function start() {
   }
   const constraintArr = Object.entries(constraints)
   for (const { d1, d2, d3, d4, d5, d6 } of generateCombinations()) {
-    const sum = { ...baseStats }
-    for (const d of [d1, d2, d3, d4, d5, d6]) {
-      for (const key in d.stats) {
-        sum[key] = (sum[key] || 0) + d.stats[key]
-      }
-    }
-
-    // Rudimentary Calculations
-    sum['hp'] =
-      (sum['hp_base'] || 0) * (1 + (sum['hp_'] || 0)) + (sum['hp'] || 0)
-    sum['atk'] = (sum['atk_base'] || 0) * (1 + (sum['atk_'] || 0))
-    sum['def'] = (sum['def_base'] || 0) * (1 + (sum['def_'] || 0))
-
+    const sum = getSum(baseStats, [d1, d2, d3, d4, d5, d6])
     if (
       constraintArr.every(([k, { value, isMax }]) =>
         isMax ? sum[k] <= value : sum[k] >= value

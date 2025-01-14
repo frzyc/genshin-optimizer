@@ -17,6 +17,9 @@ export class DBLocalStorage implements DBStorage {
         this.dbVersionKey = 'sro_db_ver'
         this.dbIndexKey = 'sro_dbIndex'
         break
+      case 'zzz':
+        this.dbVersionKey = 'zzz_db_ver'
+        this.dbIndexKey = 'zzz_dbIndex'
     }
   }
 

@@ -1,13 +1,12 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
 import {
   allDiscSlotKeys,
-  getDiscMainStatVal,
   type DiscSlotKey,
 } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import type { ChildCommandInit, ChildMessage } from './childWorker'
 import type { BaseStats, BuildResult, Constraints, DiscStats } from './common'
-import { MAX_BUILDS } from './common'
+import { convertDiscToStats, MAX_BUILDS } from './common'
 import type { ProgressResult } from './solver'
 
 let workers: Worker[]
@@ -191,20 +190,4 @@ function terminate() {
   postMessage({
     resultType: 'terminated',
   })
-}
-
-function convertDiscToStats(disc: ICachedDisc): DiscStats {
-  const { id, mainStatKey, level, rarity, setKey, substats } = disc
-  return {
-    id,
-    stats: {
-      [mainStatKey]: getDiscMainStatVal(rarity, mainStatKey, level),
-      ...Object.fromEntries(
-        substats
-          .filter(({ key, value }) => key && value)
-          .map(({ key, value }) => [key, value])
-      ),
-      [setKey]: 1,
-    },
-  }
 }
