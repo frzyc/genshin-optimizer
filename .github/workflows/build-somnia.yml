@@ -12,6 +12,8 @@ on:
       - 'apps/gi-frontend-e2e/**'
       - 'apps/sr-frontend/**'
       - 'apps/sr-frontend-e2e/**'
+      - 'apps/zzz-frontend/**'
+      - 'apps/zzz-frontend-e2e/**'
       - 'libs/common/database-ui/**'
       - 'libs/common/img-util/**'
       - 'libs/common/react-util/**'
@@ -40,6 +42,7 @@ on:
       - 'libs/sr/page-*/**'
       - 'libs/sr/solver/**'
       - 'libs/sr/ui/**'
+      - 'libs/zzz/**'
     types: [opened, reopened, synchronize, labeled]
 
 jobs:
