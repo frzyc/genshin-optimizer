@@ -36,12 +36,12 @@ export default function SubstatInput({
   setSubstat,
 }: {
   index: number
-  disc: ICachedDisc | undefined
+  disc: Partial<ICachedDisc>
   setSubstat: (index: number, substat?: ISubstat) => void
 }) {
   const { t } = useTranslation('disc')
   const { mainStatKey = '' } = disc ?? {}
-  const { key = '', value = 0, rolls = 0 } = disc?.substats[index] ?? {}
+  const { key = '', value = 0, rolls = 0 } = disc?.substats?.[index] ?? {}
   // const accurateValue = rolls.reduce((a, b) => a + b, 0)
   const rollNum = rolls
 
@@ -49,7 +49,7 @@ export default function SubstatInput({
     rollData = 0,
     allowedRolls = 0
 
-  if (disc) {
+  if (disc?.rarity) {
     // Account for the rolls it will need to fill all 4 substates, +1 for its base roll
     const rarity = disc.rarity
     const { numUpgrades, high } = discSubstatRollData[rarity]
@@ -88,7 +88,7 @@ export default function SubstatInput({
                 t('editor.substat.substatFormat', { value: index + 1 })
               )
             }
-            disabled={!disc}
+            disabled={!disc?.mainStatKey}
             color={key ? 'success' : 'primary'}
             sx={{ whiteSpace: 'nowrap' }}
           >

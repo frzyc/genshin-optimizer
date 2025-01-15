@@ -8,7 +8,7 @@ import type {
 
 export interface ISubstat {
   key: DiscSubStatKey
-  value: number
+  value: number // TODO: should this be the # of rolls?
 }
 export interface IDisc {
   setKey: DiscSetKey

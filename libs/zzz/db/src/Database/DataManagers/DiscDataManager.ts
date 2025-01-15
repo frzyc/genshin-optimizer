@@ -11,11 +11,9 @@ import {
   allDiscSubStatKeys,
   discMaxLevel,
   discSlotToMainStatKeys,
-  getDiscMainStatVal,
 } from '@genshin-optimizer/zzz/consts'
 import type {
   ICachedDisc,
-  ICachedSubstat,
   IZenlessObjectDescription,
   IZZZDatabase,
 } from '../../Interfaces'
@@ -38,7 +36,7 @@ export class DiscDataManager extends DataManager<
   }
   override toCache(storageObj: IDisc, id: string): ICachedDisc | undefined {
     // Generate cache fields
-    const newDisc = cachedDisc(storageObj, id).disc
+    const newDisc = { ...storageObj, id } as ICachedDisc
 
     // Check relations and update equipment
     /* TODO:
@@ -217,7 +215,14 @@ export class DiscDataManager extends DataManager<
     editorDisc: IDisc,
     idList = this.keys
   ): { duplicated: ICachedDisc[]; upgraded: ICachedDisc[] } {
-    const { setKey, rarity, level, slotKey, mainStatKey, substats } = editorDisc
+    const {
+      setKey,
+      rarity,
+      level = 0,
+      slotKey,
+      mainStatKey,
+      substats = [],
+    } = editorDisc
 
     const discs = idList
       .map((id) => this.get(id))
@@ -286,153 +291,6 @@ export class DiscDataManager extends DataManager<
   }
 }
 
-export function cachedDisc(
-  flex: IDisc,
-  id: string
-): { disc: ICachedDisc; errors: string[] } {
-  const { location, lock, trash, setKey, slotKey, rarity, mainStatKey } = flex
-  const level = Math.round(
-    Math.min(Math.max(0, flex.level), discMaxLevel[rarity])
-  )
-  const mainStatVal = getDiscMainStatVal(rarity, mainStatKey, level)
-
-  const errors: string[] = []
-  const substats: ICachedSubstat[] = flex.substats.map((substat) => ({
-    ...substat,
-    rolls: 0,
-    accurateValue: substat.value,
-  }))
-
-  const validated: ICachedDisc = {
-    id,
-    setKey,
-    location,
-    slotKey,
-    lock,
-    trash,
-    mainStatKey,
-    rarity,
-    level,
-    substats,
-    mainStatVal,
-  }
-
-  // TODO: Validate rolls
-  // const allPossibleRolls: { index: number; substatRolls: number[][] }[] = []
-  // let totalUnambiguousRolls = 0
-
-  // function efficiency(value: number, key: DiscSubStatKey): number {
-  //   return (value / getSubstatValue(rarity, key, 'high')) * 100
-  // }
-
-  // substats.forEach((substat, _index): void => {
-  //   const { key, value } = substat
-  //   if (!key) {
-  //     substat.value = 0
-  //     return
-  //   }
-  //   substat.efficiency = efficiency(value, key)
-
-  //   const possibleRolls = getSubstatRolls(key, value, rarity)
-
-  //   if (possibleRolls.length) {
-  //     // Valid Substat
-  //     const possibleLengths = new Set(possibleRolls.map((roll) => roll.length))
-
-  //     if (possibleLengths.size !== 1) {
-  //       // Ambiguous Rolls
-  //       allPossibleRolls.push({ index, substatRolls: possibleRolls })
-  //     } else {
-  //       // Unambiguous Rolls
-  //       totalUnambiguousRolls += possibleRolls[0].length
-  //     }
-
-  //     substat.rolls = possibleRolls.reduce((best, current) =>
-  //       best.length < current.length ? best : current
-  //     )
-  //     substat.efficiency = efficiency(
-  //       substat.rolls.reduce((a, b) => a + b, 0),
-  //       key
-  //     )
-  //     substat.accurateValue = substat.rolls.reduce((a, b) => a + b, 0)
-  //   } else {
-  //     // Invalid Substat
-  //     substat.rolls = []
-  //     // TODO: Translate
-  //     errors.push(`Invalid substat ${substat.key}`)
-  //   }
-  // })
-
-  // if (errors.length) return { disc: validated, errors }
-
-  // const { low, high } = discSubstatRollData[rarity],
-  //   lowerBound = low + Math.floor(level / 3),
-  //   upperBound = high + Math.floor(level / 3)
-
-  // let highestScore = -Infinity // -Max(substats.rolls[i].length) over ambiguous rolls
-  // const tryAllSubstats = (
-  //   rolls: { index: number; roll: number[] }[],
-  //   currentScore: number,
-  //   total: number
-  // ) => {
-  //   if (rolls.length === allPossibleRolls.length) {
-  //     if (
-  //       total <= upperBound &&
-  //       total >= lowerBound &&
-  //       highestScore < currentScore
-  //     ) {
-  //       highestScore = currentScore
-  //       for (const { index, roll } of rolls) {
-  //         const key = substats[index].key as DiscSubStatKey
-  //         const accurateValue = roll.reduce((a, b) => a + b, 0)
-  //         substats[index].rolls = roll
-  //         substats[index].accurateValue = accurateValue
-  //         substats[index].efficiency = efficiency(accurateValue, key)
-  //       }
-  //     }
-
-  //     return
-  //   }
-
-  //   const { index, substatRolls } = allPossibleRolls[rolls.length]
-  //   for (const roll of substatRolls) {
-  //     rolls.push({ index, roll })
-  //     const newScore = Math.min(currentScore, -roll.length)
-  //     if (newScore >= highestScore)
-  //       // Scores won't get better, so we can skip.
-  //       tryAllSubstats(rolls, newScore, total + roll.length)
-  //     rolls.pop()
-  //   }
-  // }
-
-  // tryAllSubstats([], Infinity, totalUnambiguousRolls)
-
-  // const totalRolls = substats.reduce(
-  //   (accu, { rolls }) => accu + rolls.length,
-  //   0
-  // )
-
-  // if (totalRolls > upperBound)
-  //   errors.push(
-  //     `${rarity}-star disc (level ${level}) should have no more than ${upperBound} rolls. It currently has ${totalRolls} rolls.`
-  //   )
-  // else if (totalRolls < lowerBound)
-  //   errors.push(
-  //     `${rarity}-star disc (level ${level}) should have at least ${lowerBound} rolls. It currently has ${totalRolls} rolls.`
-  //   )
-
-  // if (substats.some((substat) => !substat.key)) {
-  //   const substat = substats.find((substat) => (substat.rolls?.length ?? 0) > 1)
-  //   if (substat)
-  //     // TODO: Translate
-  //     errors.push(
-  //       `Substat ${substat.key} has > 1 roll, but not all substats are unlocked.`
-  //     )
-  // }
-
-  return { disc: validated, errors }
-}
-
 export function validateDisc(
   obj: unknown = {},
   allowZeroSub = false,
@@ -449,8 +307,9 @@ export function validateDisc(
     mainStatKey = discSlotToMainStatKeys[slotKey][0]
   if (!allDiscRarityKeys.includes(rarity)) rarity = 'S'
 
+  if (typeof level !== 'number') level = 0
   level = Math.round(level)
-  if (level > discMaxLevel[rarity]) return undefined
+  if (level > discMaxLevel[rarity]) level = 0
 
   substats = parseSubstats(substats, rarity, allowZeroSub, sortSubs)
   // substat cannot have same key as mainstat
