@@ -5,7 +5,7 @@ on:
   workflow_call:
     inputs:
       frontend_name:
-        description: 'Frontend type to build. Can be `frontend`, or `sr-frontend`'
+        description: 'Frontend type to build. Can be `frontend`, or `sr-frontend`, or `zzz-frontend`.'
         type: string
       deployment_name:
         description: 'Name for the deployment. This will determine the URL. If you choose a name that is already deployed, it will overwrite that deployment.'

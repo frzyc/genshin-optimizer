@@ -95,7 +95,7 @@ export default defineConfig({
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     reporters: ['default'],
     coverage: {
-      reportsDirectory: '../../coverage/apps/sr-frontend',
+      reportsDirectory: '../../coverage/apps/frontend',
       provider: 'v8',
     },
   },

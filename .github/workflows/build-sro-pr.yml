@@ -9,9 +9,14 @@ on:
     paths-ignore:
       - 'apps/frontend/**'
       - 'apps/frontend-e2e/**'
+      - 'apps/gi-frontend/**'
+      - 'apps/gi-frontend-e2e/**'
+      - 'apps/zzz-frontend/**'
+      - 'apps/zzz-frontend-e2e/**'
       - 'apps/somnia/**'
       - 'apps/somnia-e2e/**'
       - 'libs/gi/**'
+      - 'libs/zzz/**'
     types: [opened, reopened, synchronize, labeled]
 
 jobs:

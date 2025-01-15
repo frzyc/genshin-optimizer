@@ -13,8 +13,11 @@ on:
       - 'apps/somnia-e2e/**'
       - 'apps/sr-frontend/**'
       - 'apps/sr-frontend-e2e/**'
+      - 'apps/zzz-frontend/**'
+      - 'apps/zzz-frontend-e2e/**'
       - 'libs/gi/i18n-node/**'
       - 'libs/sr/**'
+      - 'libs/zzz/**'
     types: [opened, reopened, synchronize, labeled]
 
 jobs:

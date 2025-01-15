@@ -6,8 +6,10 @@ on:
     workflows:
       - Build GO (WR) PR
       - Build SRO PR
+      - Build ZO PR
       - New Beta GO Release
       - New Beta SRO Release
+      - New Beta ZO Release
     types:
       - completed
 
