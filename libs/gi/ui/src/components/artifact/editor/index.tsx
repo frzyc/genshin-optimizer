@@ -651,6 +651,7 @@ export function ArtifactEditor({
                             >
                               {t('editor.uploadBtn')}
                             </Button>
+                            {/* https://github.com/frzyc/genshin-optimizer/pull/2597 */}
                             <LineBreak />
                           </label>
                         </Grid>

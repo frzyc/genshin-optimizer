@@ -23,9 +23,9 @@ export function NumberInputLazy({
   useEffect(() => {
     setValue(valueProp?.toString())
   }, [valueProp])
-  const normalizedValue = float ? value.replace(',', '.') : value
 
   const saveValue = () => {
+    const normalizedValue = float ? value.replace(',', '.') : value
     let num = float ? parseFloat(normalizedValue) : parseInt(normalizedValue)
     if (isNaN(num)) {
       num = 0
