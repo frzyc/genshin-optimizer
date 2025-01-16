@@ -25,7 +25,8 @@ export function NumberInputLazy({
   }, [valueProp])
 
   const saveValue = () => {
-    let num = float ? parseFloat(value) : parseInt(value)
+    const normalizedValue = float ? value.replace(',', '.') : value
+    let num = float ? parseFloat(normalizedValue) : parseInt(normalizedValue)
     if (isNaN(num)) {
       num = 0
       setValue(num.toString())
@@ -48,7 +49,7 @@ export function NumberInputLazy({
   ) => {
     const val = event.target.value
 
-    if (val.match(float ? /[^0-9.-]/ : /[^0-9-]/)) {
+    if (val.match(float ? /[^0-9.,-]/ : /[^0-9-]/)) {
       return event.preventDefault()
     }
 
