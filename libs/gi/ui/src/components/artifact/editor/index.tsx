@@ -136,6 +136,8 @@ const InputInvis = styled('input')({
   display: 'none',
 })
 
+const LineBreak = styled('br')()
+
 function getDefaultSlotKey(
   artifactSet?: ArtifactSetKey
 ): Extract<ArtifactSlotKey, 'flower' | 'circlet'> {
@@ -649,6 +651,7 @@ export function ArtifactEditor({
                             >
                               {t('editor.uploadBtn')}
                             </Button>
+                            <LineBreak />
                           </label>
                         </Grid>
                         {shouldShowDevComponents && debugImgs && (
@@ -718,7 +721,6 @@ export function ArtifactEditor({
                 </CardThemed>
               )}
             </Grid>
-
             {/* Right column */}
             <Grid item xs={1} display="flex" flexDirection="column" gap={1}>
               {/* substat selections */}
