@@ -155,6 +155,9 @@
       "@genshin-optimizer/zzz/consts": ["libs/zzz/consts/src/index.ts"],
       "@genshin-optimizer/zzz/db": ["libs/zzz/db/src/index.ts"],
       "@genshin-optimizer/zzz/db-ui": ["libs/zzz/db-ui/src/index.ts"],
+      "@genshin-optimizer/zzz/disc-scanner": [
+        "libs/zzz/disc-scanner/src/index.ts"
+      ],
       "@genshin-optimizer/zzz/page-discs": [
         "libs/zzz/page-discs/src/index.tsx"
       ],

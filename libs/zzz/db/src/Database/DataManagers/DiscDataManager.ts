@@ -93,9 +93,9 @@ export class DiscDataManager extends DataManager<
       level,
       slotKey,
       mainStatKey,
-      substats: substats.map((substat) => ({
-        key: substat.key,
-        value: substat.value,
+      substats: substats.map(({ key, upgrades }) => ({
+        key,
+        upgrades,
       })),
       location,
       lock,
@@ -238,7 +238,7 @@ export class DiscDataManager extends DataManager<
           (substat, i) =>
             !candidate.substats[i].key || // Candidate doesn't have anything on this slot
             (substat.key === candidate.substats[i].key && // Or editor simply has better substat
-              substat.value >= candidate.substats[i].value)
+              substat.upgrades >= candidate.substats[i].upgrades)
         )
     )
 
@@ -254,7 +254,7 @@ export class DiscDataManager extends DataManager<
                   i // Has no extra roll
                 ) =>
                   substat.key === candidate.substats[i].key &&
-                  substat.value === candidate.substats[i].value
+                  substat.upgrades === candidate.substats[i].upgrades
               )
             : substats.some(
                 (
@@ -262,7 +262,7 @@ export class DiscDataManager extends DataManager<
                   i // Has extra rolls
                 ) =>
                   candidate.substats[i].key
-                    ? substat.value > candidate.substats[i].value // Extra roll to existing substat
+                    ? substat.upgrades > candidate.substats[i].upgrades // Extra roll to existing substat
                     : substat.key // Extra roll to new substat
               ))
       )
@@ -280,7 +280,7 @@ export class DiscDataManager extends DataManager<
               candidate.substats.some(
                 (candidateSubstat) =>
                   substat.key === candidateSubstat.key && // Or same slot
-                  substat.value === candidateSubstat.value
+                  substat.upgrades === candidateSubstat.upgrades
               )
           )
       )
@@ -297,11 +297,19 @@ export function validateDisc(
   sortSubs = true
 ): IDisc | undefined {
   if (!obj || typeof obj !== 'object') return undefined
-  const { setKey } = obj as IDisc
-  let { rarity, slotKey, level, mainStatKey, substats, location, lock, trash } =
-    obj as IDisc
+  let {
+    setKey,
+    rarity,
+    slotKey,
+    level,
+    mainStatKey,
+    substats,
+    location,
+    lock,
+    trash,
+  } = obj as IDisc
 
-  if (!allDiscSetKeys.includes(setKey)) return undefined // non-recoverable
+  if (!allDiscSetKeys.includes(setKey)) setKey = allDiscSetKeys[0]
   if (!allDiscSlotKeys.includes(slotKey)) slotKey = '1'
   if (!discSlotToMainStatKeys[slotKey].includes(mainStatKey))
     mainStatKey = discSlotToMainStatKeys[slotKey][0]
@@ -344,23 +352,18 @@ function parseSubstats(
 ): ISubstat[] {
   if (!Array.isArray(obj)) return []
   const substats = (obj as ISubstat[])
-    .map(({ key = '', value = 0 }) => {
+    .map(({ key, upgrades = 0 }) => {
       if (!key) return null
       if (
         !allDiscSubStatKeys.includes(key as DiscSubStatKey) ||
-        typeof value !== 'number' ||
-        !isFinite(value)
+        typeof upgrades !== 'number' ||
+        !isFinite(upgrades)
       )
         return null
-      if (key) {
-        value = key.endsWith('_')
-          ? Math.round(value * 1000) / 1000
-          : Math.round(value)
-        // TODO:
-        // const { low, high } = getSubstatRange(rarity, key)
-        // value = clamp(value, allowZeroSub ? 0 : low, high)
-      } else value = 0
-      return { key, value }
+
+      upgrades = Math.round(upgrades)
+
+      return { key, upgrades }
     })
     .filter(notEmpty) as ISubstat[]
 

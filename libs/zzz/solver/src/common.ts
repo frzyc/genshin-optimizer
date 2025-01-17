@@ -1,5 +1,6 @@
 import {
   getDiscMainStatVal,
+  getDiscSubStatBaseVal,
   type DiscSlotKey,
 } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
@@ -28,9 +29,10 @@ export function convertDiscToStats(disc: ICachedDisc): DiscStats {
     stats: {
       [mainStatKey]: getDiscMainStatVal(rarity, mainStatKey, level),
       ...Object.fromEntries(
-        substats
-          .filter(({ key, value }) => key && value)
-          .map(({ key, value }) => [key, value])
+        substats.map(({ key, upgrades }) => [
+          key,
+          getDiscSubStatBaseVal(key, rarity) * upgrades,
+        ])
       ),
       [setKey]: 1,
     },

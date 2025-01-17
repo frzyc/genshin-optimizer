@@ -111,7 +111,7 @@ const subData = {
   crit_dmg_: { B: 0.016, A: 0.032, S: 0.048 },
   anomProf: { B: 3, A: 6, S: 9 },
 } as const
-export function getSubStatBaseVal(
+export function getDiscSubStatBaseVal(
   statKey: DiscSubStatKey,
   rarity: DiscRarityKey
 ) {
@@ -140,9 +140,12 @@ const mainData = {
   ether_dmg_: m123,
   anomMas_: m123,
   enerRegen_: { B: 0.2, A: 0.4, S: 0.6 },
-  impact: { B: 0.06, A: 0.12, S: 0.18 },
+  impact_: { B: 0.06, A: 0.12, S: 0.18 },
 } as const
 
+/**
+ * WARN: this only works for fully leveled discs
+ */
 export function getDiscMainStatVal(
   rarity: DiscRarityKey,
   mainStatKey: DiscMainStatKey,

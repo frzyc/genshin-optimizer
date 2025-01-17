@@ -2,6 +2,7 @@ import {
   CardThemed,
   DropdownButton,
   ModalWrapper,
+  NextImage,
 } from '@genshin-optimizer/common/ui'
 import {
   range,
@@ -18,16 +19,18 @@ import type { IDisc } from '@genshin-optimizer/zzz/db'
 import {
   validateDisc,
   type ICachedDisc,
-  type ICachedSubstat,
   type ISubstat,
 } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
+import type { Processed } from '@genshin-optimizer/zzz/disc-scanner'
+import { ScanningQueue } from '@genshin-optimizer/zzz/disc-scanner'
 import AddIcon from '@mui/icons-material/Add'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 import CloseIcon from '@mui/icons-material/Close'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
+import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
 import ReplayIcon from '@mui/icons-material/Replay'
 import UpdateIcon from '@mui/icons-material/Update'
 import {
@@ -36,8 +39,10 @@ import {
   ButtonGroup,
   CardContent,
   CardHeader,
+  CircularProgress,
   Grid,
   IconButton,
+  LinearProgress,
   MenuItem,
   Skeleton,
   TextField,
@@ -45,19 +50,40 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
-import type { MouseEvent } from 'react'
-import { Suspense, useCallback, useEffect, useMemo, useReducer } from 'react'
+import { Stack, styled } from '@mui/system'
+import type { ChangeEvent, MouseEvent } from 'react'
+import {
+  Suspense,
+  useCallback,
+  useEffect,
+  useMemo,
+  useReducer,
+  useRef,
+  useState,
+} from 'react'
 import { useTranslation } from 'react-i18next'
+import { shouldShowDevComponents } from '../../util/isDev'
 import { DiscCard } from '../DiscCard'
 import { DiscMainStatDropdown } from '../DiscMainStatDropdown'
 import { DiscRarityDropdown } from '../DiscRarityDropdown'
 import { DiscSetAutocomplete } from '../DiscSetAutocomplete'
+import { textsFromImage } from './ScanningUtil'
 import SubstatInput from './SubstatInput'
+
+// for pasting in screenshots
+const InputInvis = styled('input')({
+  display: 'none',
+})
+
 interface DiscReducerState {
   disc: Partial<ICachedDisc>
   validatedDisc?: IDisc
 }
 function reducer(state: DiscReducerState, action: Partial<ICachedDisc>) {
+  if (!action || Object.keys(action).length === 0)
+    return {
+      disc: {} as Partial<ICachedDisc>,
+    }
   const disc = { ...state.disc, ...action }
   const validatedDisc = validateDisc(disc)
 
@@ -76,10 +102,11 @@ function useDiscValidation(discFromProp: Partial<ICachedDisc>) {
 
   return { disc, validatedDisc, setDisc }
 }
-
 export function DiscEditor({
   disc: discFromProp,
   show,
+  allowUpload,
+  onShow,
   onClose,
   fixedSlotKey,
   allowEmpty = false,
@@ -87,6 +114,8 @@ export function DiscEditor({
 }: {
   disc: Partial<ICachedDisc>
   show: boolean
+  allowUpload?: boolean
+  onShow: () => void
   onClose: () => void
   allowEmpty?: boolean
   disableSet?: boolean
@@ -128,13 +157,13 @@ export function DiscEditor({
 
   const reset = useCallback(() => {
     setDisc({})
-    if (!allowEmpty) onClose()
-  }, [allowEmpty, onClose, setDisc])
+    setScannedData(undefined)
+  }, [setDisc])
 
   const setSubstat = useCallback(
     (index: number, substat?: ISubstat) => {
       const substats = [...(disc.substats || [])]
-      if (substat) substats[index] = substat as ICachedSubstat
+      if (substat) substats[index] = substat
       else substats.filter((_, i) => i !== index)
       setDisc({ substats })
     },
@@ -160,6 +189,80 @@ export function DiscEditor({
   const removeId = disc?.id || prev?.id
   const canClearDisc = (): boolean =>
     window.confirm(t('editor.clearPrompt') as string)
+
+  // Scanning stuff
+  const queueRef = useRef(
+    new ScanningQueue(textsFromImage, shouldShowDevComponents)
+  )
+  const queue = queueRef.current
+  const [{ processedNum, outstandingNum, scanningNum }, setScanningData] =
+    useState({ processedNum: 0, outstandingNum: 0, scanningNum: 0 })
+
+  const [scannedData, setScannedData] = useState(
+    undefined as undefined | Omit<Processed, 'disc'>
+  )
+
+  const { fileName, imageURL, debugImgs, texts } = scannedData ?? {}
+  const queueTotal = processedNum + outstandingNum + scanningNum
+
+  const uploadFiles = useCallback(
+    (files?: FileList | null) => {
+      if (!files) return
+      onShow()
+      queue.addFiles(Array.from(files).map((f) => ({ f, fName: f.name })))
+    },
+    [onShow, queue]
+  )
+  const clearQueue = useCallback(() => {
+    queue.clearQueue()
+  }, [queue])
+
+  const onUpload = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      if (!e.target) return
+      uploadFiles(e.target.files)
+      e.target.value = '' // reset the value so the same file can be uploaded again...
+    },
+    [uploadFiles]
+  )
+
+  // When there is scanned artifacts and no artifact in editor, put latest scanned artifact in editor
+  useEffect(() => {
+    if (!processedNum || scannedData) return
+    const processed = queue.shiftProcessed()
+    if (!processed) return
+    const { disc: scannedDisc, ...rest } = processed
+    setScannedData(rest)
+    setDisc((scannedDisc ?? {}) as Partial<ICachedDisc>)
+  }, [queue, processedNum, scannedData, setDisc])
+
+  useEffect(() => {
+    const pasteFunc = (e: Event) => {
+      // Don't handle paste if targetting the edit team modal
+      const target = e.target as HTMLElement
+      if (
+        target instanceof HTMLInputElement ||
+        target instanceof HTMLTextAreaElement
+      ) {
+        return
+      }
+
+      uploadFiles((e as ClipboardEvent).clipboardData?.files)
+    }
+
+    allowUpload && window.addEventListener('paste', pasteFunc)
+    return () => {
+      if (allowUpload) window.removeEventListener('paste', pasteFunc)
+    }
+  }, [uploadFiles, allowUpload])
+
+  // register callback to scanning queue
+  useEffect(() => {
+    queue.callback = setScanningData
+    return () => {
+      queue.callback = () => {}
+    }
+  }, [queue])
 
   return (
     <Suspense fallback={false}>
@@ -311,6 +414,100 @@ export function DiscEditor({
                   locKey={cDisc?.location ?? ''}
                   setLocKey={(charKey) => setDisc({ location: charKey })}
                 /> */}
+                {/* Image OCR */}
+                {allowUpload && (
+                  <CardThemed bgt="light">
+                    <CardContent
+                      sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
+                    >
+                      {/* TODO: artifactDispatch not overwrite */}
+                      <Suspense
+                        fallback={<Skeleton width="100%" height="100" />}
+                      >
+                        <Grid container spacing={1} alignItems="center">
+                          <Grid item flexGrow={1}>
+                            <label htmlFor="contained-button-file">
+                              <InputInvis
+                                accept="image/*"
+                                id="contained-button-file"
+                                multiple
+                                type="file"
+                                onChange={onUpload}
+                              />
+                              <Button
+                                component="span"
+                                startIcon={<PhotoCameraIcon />}
+                              >
+                                {t('editor.uploadBtn')}
+                              </Button>
+                            </label>
+                          </Grid>
+                          {shouldShowDevComponents && debugImgs && (
+                            <Grid item>
+                              <DebugModal imgs={debugImgs} />
+                            </Grid>
+                          )}
+                          {/* <Grid item>
+                          <Button
+                            color="info"
+                            sx={{ px: 2, minWidth: 0 }}
+                            onClick={() => setModalShow(true)}
+                          >
+                            <HelpIcon />
+                          </Button>
+                        </Grid> */}
+                        </Grid>
+
+                        {imageURL && (
+                          <Box display="flex" justifyContent="center">
+                            <Box
+                              component={NextImage ? NextImage : 'img'}
+                              src={imageURL}
+                              width="100%"
+                              maxWidth={350}
+                              height="auto"
+                              alt={
+                                fileName ||
+                                'Screenshot to parse for artifact values'
+                              }
+                            />
+                          </Box>
+                        )}
+                        {!!queueTotal && (
+                          <LinearProgress
+                            variant="buffer"
+                            value={(100 * processedNum) / queueTotal}
+                            valueBuffer={
+                              (100 * (processedNum + scanningNum)) / queueTotal
+                            }
+                          />
+                        )}
+                        {!!queueTotal && (
+                          <CardThemed sx={{ pl: 2 }}>
+                            <Box display="flex" alignItems="center">
+                              {!!scanningNum && <CircularProgress size="1em" />}
+                              <Typography sx={{ flexGrow: 1, ml: 1 }}>
+                                <span>
+                                  Screenshots in file-queue:
+                                  <b>{queueTotal}</b>
+                                  {/* {process.env.NODE_ENV === "development" && ` (Debug: Processed ${processed.length}/${maxProcessedCount}, Processing: ${outstanding.filter(entry => entry.result).length}/${maxProcessingCount}, Outstanding: ${outstanding.length})`} */}
+                                </span>
+                              </Typography>
+
+                              <Button
+                                size="small"
+                                color="error"
+                                onClick={clearQueue}
+                              >
+                                Clear file-queue
+                              </Button>
+                            </Box>
+                          </CardThemed>
+                        )}
+                      </Suspense>
+                    </CardContent>
+                  </CardThemed>
+                )}
               </Grid>
 
               {/* right column */}
@@ -318,12 +515,22 @@ export function DiscEditor({
                 {/* substat selections */}
                 {[0, 1, 2, 3].map((index) => (
                   <SubstatInput
+                    rarity={rarity}
                     key={index}
                     index={index}
                     disc={disc}
                     setSubstat={setSubstat}
                   />
                 ))}
+                {!!texts?.length && (
+                  <CardThemed bgt="light">
+                    <CardContent>
+                      {texts.map((text, i) => (
+                        <Typography key={i}>{text}</Typography>
+                      ))}
+                    </CardContent>
+                  </CardThemed>
+                )}
               </Grid>
             </Grid>
 
@@ -453,5 +660,36 @@ export function DiscEditor({
         </CardThemed>
       </ModalWrapper>
     </Suspense>
+  )
+}
+
+function DebugModal({ imgs }: { imgs: Record<string, string> }) {
+  const [show, setshow] = useState(false)
+  const onOpen = () => setshow(true)
+  const onClose = () => setshow(false)
+  return (
+    <>
+      <Button color="warning" onClick={onOpen}>
+        DEBUG
+      </Button>
+      <ModalWrapper open={show} onClose={onClose}>
+        <CardThemed>
+          <CardContent>
+            <Stack spacing={1}>
+              {Object.entries(imgs).map(([key, url]) => (
+                <Box key={key}>
+                  <Typography>{key}</Typography>
+                  <Box
+                    component={NextImage ? NextImage : 'img'}
+                    src={url}
+                    maxWidth="100%"
+                  />
+                </Box>
+              ))}
+            </Stack>
+          </CardContent>
+        </CardThemed>
+      </ModalWrapper>
+    </>
   )
 }

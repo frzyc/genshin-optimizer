@@ -27,7 +27,14 @@ export default function PageDiscs() {
 
   return (
     <Box display="flex" flexDirection="column" gap={1} my={1}>
-      <DiscEditor disc={disc} allowEmpty show={show} onClose={onClose} />
+      <DiscEditor
+        disc={disc}
+        allowEmpty
+        allowUpload
+        show={show}
+        onClose={onClose}
+        onShow={onOpen}
+      />
       <DiscInventory onAdd={onAddNew} onEdit={onEdit} />
     </Box>
   )

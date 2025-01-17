@@ -1,0 +1,8 @@
+{
+  "name": "zzz-disc-scanner",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/zzz/disc-scanner/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {}
+}
