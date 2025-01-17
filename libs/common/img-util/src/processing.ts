@@ -39,7 +39,7 @@ export function histogramAnalysis(
   const height = imageData.height
   const width = imageData.width
   const p = imageData.data
-  return Array.from({ length: hori ? width : height }, (v, i) => {
+  return Array.from({ length: hori ? width : height }, (_, i) => {
     let num = 0
     for (let j = 0; j < (hori ? height : width); j++) {
       const pixelIndex = hori
@@ -68,7 +68,7 @@ export function histogramContAnalysis(
   const left = max * leftRange
   const right = max * rightRange
 
-  return Array.from({ length: max }, (v, i) => {
+  return Array.from({ length: max }, (_, i) => {
     if (i < left || i > right) return 0
     let longest = 0
     let num = 0

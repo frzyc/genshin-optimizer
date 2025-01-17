@@ -357,7 +357,7 @@ function parseSubstats(
       if (
         !allDiscSubStatKeys.includes(key as DiscSubStatKey) ||
         typeof upgrades !== 'number' ||
-        !isFinite(upgrades)
+        !Number.isFinite(upgrades)
       )
         return null
 

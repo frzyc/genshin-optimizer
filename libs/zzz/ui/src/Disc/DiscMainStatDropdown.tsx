@@ -23,7 +23,7 @@ export function DiscMainStatDropdown({
   defText?: ReactNode
   dropdownButtonProps?: Omit<DropdownButtonProps, 'children' | 'title'>
 }) {
-  if (statKey && slotKey && slotKey in ['1', '2', '3'])
+  if (statKey && slotKey && ['1', '2', '3'].includes(slotKey))
     return (
       <CardThemed sx={{ p: 1 }} bgt="light">
         <StatDisplay statKey={discSlotToMainStatKeys[slotKey][0]} showPercent />

@@ -143,7 +143,7 @@ export async function processEntry(
       `Could not detect main stat key, defaulting to ${statMapEngMap[mainStatKey]}`
     )
   } else if (!slotKey && mainStatKey) {
-    slotKey = Object.entries(discSlotToMainStatKeys).find(([k, v]) =>
+    slotKey = Object.entries(discSlotToMainStatKeys).find(([_, v]) =>
       v.includes(mainStatKey as any)
     )?.[0] as DiscSlotKey
     if (slotKey)
