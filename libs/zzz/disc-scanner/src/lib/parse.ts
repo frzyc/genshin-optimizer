@@ -13,12 +13,24 @@ import { misreadCharactersInSubstatMap } from './consts'
 import { statMapEngMap } from './enStringMap'
 
 /** small utility function used by most string parsing functions below */
-export type KeyDist<T extends string> = [T, number]
-export function getBestKeyDist<T extends string>(hams: Array<KeyDist<T>>) {
+type KeyDist<T extends string> = [T, number]
+function getBestKeyDist<T extends string>(hams: Array<KeyDist<T>>) {
   const minHam = Math.min(...hams.map(([, ham]) => ham))
   const keys = hams.filter(([, ham]) => ham === minHam).map(([key]) => key)
   return keys
 }
+function findBestKeyDist<T extends string>(
+  str: string,
+  keys: readonly T[]
+): T | undefined {
+  if (!keys.length) return undefined
+  if (keys.length === 1) return keys[0]
+  const kdist: Array<KeyDist<T>> = []
+  for (const key of keys)
+    kdist.push([key, levenshteinDistance(str, statMapEngMap[key] ?? key)])
+  return getBestKeyDist(kdist)[0]
+}
+
 export function parseSetSlot(texts: string[]) {
   let setKeyStr = '',
     slotKey = ''
@@ -32,14 +44,11 @@ export function parseSetSlot(texts: string[]) {
     }
   }
   if (!setKeyStr || !slotKey) return { setKey: undefined, slotKey: undefined }
-  const kdist: Array<KeyDist<DiscSetKey>> = []
-  for (const key of allDiscSetKeys) {
-    const setKeyStrTrimmed = setKeyStr.replace(/\W/g, '')
-    kdist.push([key, levenshteinDistance(setKeyStrTrimmed, key)])
-  }
-  const setKeys = getBestKeyDist(kdist)
-  if (!setKeys.length) return { setKey: undefined, slotKey: undefined }
-  return { setKey: setKeys[0] as DiscSetKey, slotKey: slotKey as DiscSlotKey }
+  const setKeyStrTrimmed = setKeyStr.replace(/\W/g, '')
+  const setKey = findBestKeyDist(setKeyStrTrimmed, allDiscSetKeys)
+
+  if (!setKey) return { setKey: undefined, slotKey: undefined }
+  return { setKey, slotKey: slotKey as DiscSlotKey }
 }
 export function parseSet(texts: string[]) {
   const kdist: Array<KeyDist<DiscSetKey>> = []
@@ -95,10 +104,10 @@ export function parseSubstats(texts: string[]): ISubstat[] {
     const isPercent = text.includes('%')
     const match = /([a-zA-Z\s]+)\s*(\+(\d))?/.exec(text)
     if (match) {
-      const key = allDiscSubStatKeys.find(
-        (key) =>
-          isPercent === key.endsWith('_') &&
-          match[1].includes(statMapEngMap[key])
+      const statStr = match[1].trim()
+      const key = findBestKeyDist(
+        statStr,
+        allDiscSubStatKeys.filter((key) => isPercent === key.endsWith('_'))
       )
       if (!key) continue
       substats.push({
