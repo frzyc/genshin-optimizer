@@ -9,7 +9,11 @@ import {
   type LocationKey,
 } from '@genshin-optimizer/sr/consts'
 import { StatIcon } from '@genshin-optimizer/sr/svgicons'
-import { getDiscMainStatVal } from '@genshin-optimizer/zzz/consts'
+import type { DiscRarityKey } from '@genshin-optimizer/zzz/consts'
+import {
+  getDiscMainStatVal,
+  getDiscSubStatBaseVal,
+} from '@genshin-optimizer/zzz/consts'
 import type { IDisc, ISubstat } from '@genshin-optimizer/zzz/db'
 import {
   DeleteForever,
@@ -200,7 +204,11 @@ export function DiscCard({
           {substats.map(
             (substat) =>
               substat.key && (
-                <SubstatDisplay key={substat.key} substat={substat} />
+                <SubstatDisplay
+                  key={substat.key}
+                  substat={substat}
+                  rarity={rarity}
+                />
               )
           )}
           <Box flexGrow={1} />
@@ -274,10 +282,19 @@ export function DiscCard({
     </Suspense>
   )
 }
-function SubstatDisplay({ substat }: { substat: ISubstat }) {
-  const { key, value } = substat
-  if (!value || !key) return null
-  const displayValue = toPercent(value, key).toFixed(statKeyToFixed(key))
+function SubstatDisplay({
+  substat,
+  rarity,
+}: {
+  substat: ISubstat
+  rarity: DiscRarityKey
+}) {
+  const { key, upgrades } = substat
+  if (!upgrades || !key) return null
+  const displayValue = toPercent(
+    getDiscSubStatBaseVal(key, rarity) * upgrades,
+    key
+  ).toFixed(statKeyToFixed(key))
   return (
     <Typography sx={{ display: 'flex', alignItems: 'center' }}>
       {/* <StatDisplay statKey={key} /> */}

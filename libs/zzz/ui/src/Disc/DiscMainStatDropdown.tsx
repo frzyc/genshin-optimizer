@@ -18,12 +18,12 @@ export function DiscMainStatDropdown({
   dropdownButtonProps = {},
 }: {
   statKey?: DiscMainStatKey
-  slotKey: DiscSlotKey
+  slotKey?: DiscSlotKey
   setStatKey: (statKey: DiscMainStatKey) => void
   defText?: ReactNode
   dropdownButtonProps?: Omit<DropdownButtonProps, 'children' | 'title'>
 }) {
-  if (statKey && slotKey in ['1', '2', '3'])
+  if (statKey && slotKey && ['1', '2', '3'].includes(slotKey))
     return (
       <CardThemed sx={{ p: 1 }} bgt="light">
         <StatDisplay statKey={discSlotToMainStatKeys[slotKey][0]} showPercent />
@@ -43,19 +43,20 @@ export function DiscMainStatDropdown({
       }
       {...dropdownButtonProps}
     >
-      {discSlotToMainStatKeys[slotKey].map((mk) => (
-        <MenuItem
-          key={mk}
-          selected={statKey === mk}
-          disabled={statKey === mk}
-          onClick={() => setStatKey(mk)}
-        >
-          <ListItemIcon>
-            <StatIcon statKey={mk} />
-          </ListItemIcon>
-          <StatDisplay statKey={mk} showPercent disableIcon />
-        </MenuItem>
-      ))}
+      {slotKey &&
+        discSlotToMainStatKeys[slotKey].map((mk) => (
+          <MenuItem
+            key={mk}
+            selected={statKey === mk}
+            disabled={statKey === mk}
+            onClick={() => setStatKey(mk)}
+          >
+            <ListItemIcon>
+              <StatIcon statKey={mk} />
+            </ListItemIcon>
+            <StatDisplay statKey={mk} showPercent disableIcon />
+          </MenuItem>
+        ))}
     </DropdownButton>
   )
 }

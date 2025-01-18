@@ -8,12 +8,12 @@ import type {
 
 export interface ISubstat {
   key: DiscSubStatKey
-  value: number // TODO: should this be the # of rolls?
+  upgrades: number // This is the number of upgrades this sub receives.
 }
 export interface IDisc {
   setKey: DiscSetKey
   slotKey: DiscSlotKey
-  level: number
+  level: number // 0-15
   rarity: DiscRarityKey
   mainStatKey: DiscMainStatKey
   location: string // TODO: CharacterKey
