@@ -6,6 +6,7 @@ import {
   toDecimal,
   valueString,
 } from '@genshin-optimizer/common/util'
+import { statKeyTextMap } from '@genshin-optimizer/zzz/consts'
 import { useDatabaseContext, useDisc } from '@genshin-optimizer/zzz/db-ui'
 import type { BaseStats, BuildResult } from '@genshin-optimizer/zzz/solver'
 import { convertDiscToStats, getSum } from '@genshin-optimizer/zzz/solver'
@@ -46,7 +47,7 @@ function Build({
       <CardContent>
         {Object.entries(sum).map(([k, v]) => (
           <Typography key={k}>
-            {k}: {valueString(v, getUnitStr(k))}
+            {statKeyTextMap[k] ?? k}: {valueString(v, getUnitStr(k))}
           </Typography>
         ))}
         <Box display="flex" gap={1}>

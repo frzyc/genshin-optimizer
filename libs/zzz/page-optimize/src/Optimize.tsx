@@ -1,4 +1,4 @@
-import { CardThemed } from '@genshin-optimizer/common/ui'
+import { CardThemed, DropdownButton } from '@genshin-optimizer/common/ui'
 import { objMap, toDecimal } from '@genshin-optimizer/common/util'
 import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
@@ -7,9 +7,14 @@ import type {
   BaseStats,
   BuildResult,
   Constraints,
+  FormulaKey,
   ProgressResult,
 } from '@genshin-optimizer/zzz/solver'
-import { MAX_BUILDS, Solver } from '@genshin-optimizer/zzz/solver'
+import {
+  allFormulaKeys,
+  MAX_BUILDS,
+  Solver,
+} from '@genshin-optimizer/zzz/solver'
 import CloseIcon from '@mui/icons-material/Close'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import {
@@ -19,6 +24,7 @@ import {
   CardHeader,
   Divider,
   LinearProgress,
+  MenuItem,
   Typography,
 } from '@mui/material'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
@@ -40,7 +46,7 @@ export default function OptimizeWrapper({
   const [progress, setProgress] = useState<ProgressResult | undefined>(
     undefined
   )
-
+  const [formulaKey, setFormulaKey] = useState<FormulaKey>(allFormulaKeys[0])
   const [constraints, setConstraints] = useState<Constraints>({})
   const discsBySlot = useMemo(
     () =>
@@ -84,6 +90,7 @@ export default function OptimizeWrapper({
     setOptimizing(true)
 
     const optimizer = new Solver(
+      formulaKey,
       objMap(baseStats, (v, k) => toDecimal(v, k)),
       objMap(constraints, (c, k) => ({ ...c, value: toDecimal(c.value, k) })),
       discsBySlot,
@@ -99,7 +106,7 @@ export default function OptimizeWrapper({
 
     setOptimizing(false)
     setResults(results)
-  }, [baseStats, constraints, discsBySlot, numWorkers, setResults])
+  }, [baseStats, constraints, discsBySlot, formulaKey, numWorkers, setResults])
 
   const onCancel = useCallback(() => {
     cancelToken.current()
@@ -108,30 +115,30 @@ export default function OptimizeWrapper({
 
   return (
     <CardThemed>
-      <CardHeader
-        title={t('optimize')}
-        action={
-          <Box>
-            <WorkerSelector
-              numWorkers={numWorkers}
-              setNumWorkers={setNumWorkers}
-            />
-            <Button
-              onClick={optimizing ? onCancel : onOptimize}
-              color={optimizing ? 'error' : 'primary'}
-              startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
-            >
-              {optimizing ? t('cancel') : t('optimize')}
-            </Button>
-          </Box>
-        }
-      />
+      <CardHeader title={t('optimize')} />
       <Divider />
       <CardContent>
         <StatFilterCard
           constraints={constraints}
           setConstraints={setConstraints}
         />
+        <Box sx={{ display: 'flex', gap: 1, mt: 2 }}>
+          <OptimizeTargetSelector
+            formulaKey={formulaKey}
+            setFormulaKey={setFormulaKey}
+          />
+          <WorkerSelector
+            numWorkers={numWorkers}
+            setNumWorkers={setNumWorkers}
+          />
+          <Button
+            onClick={optimizing ? onCancel : onOptimize}
+            color={optimizing ? 'error' : 'success'}
+            startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
+          >
+            {optimizing ? t('cancel') : t('optimize')}
+          </Button>
+        </Box>
         {progress && (
           <ProgressIndicator
             progress={progress}
@@ -167,4 +174,41 @@ function ProgressIndicator({
       />
     </Box>
   )
+}
+function OptimizeTargetSelector({
+  formulaKey,
+  setFormulaKey,
+}: {
+  formulaKey: FormulaKey
+  setFormulaKey: (key: FormulaKey) => void
+}) {
+  return (
+    <DropdownButton
+      title={
+        <span>
+          Optimize Target: <strong>{formulaKeyTextMap[formulaKey]}</strong>
+        </span>
+      }
+      sx={{ flexGrow: 1 }}
+    >
+      {allFormulaKeys.map((fk) => (
+        <MenuItem key={fk} onClick={() => setFormulaKey(fk)}>
+          {formulaKeyTextMap[fk]}
+        </MenuItem>
+      ))}
+    </DropdownButton>
+  )
+}
+const formulaKeyTextMap: Record<FormulaKey, string> = {
+  electric_dmg_: 'Eletrical Damage',
+  fire_dmg_: 'Fire Damage',
+  ice_dmg_: 'Ice Damage',
+  frost_dmg_: 'Frost Damage',
+  physical_dmg_: 'Physical Damage',
+  ether_dmg_: 'Ether Damage',
+  burn: 'Burn Anomaly',
+  shock: 'Shock Anomaly',
+  corruption: 'Corruption Anomaly',
+  shatter: 'Shatter Anomaly',
+  assault: 'Assault Anomaly',
 }

@@ -4,6 +4,7 @@ import {
   type DiscSlotKey,
 } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
+import type { FormulaKey } from './calc'
 import type { ChildCommandInit, ChildMessage } from './childWorker'
 import type { BaseStats, BuildResult, Constraints, DiscStats } from './common'
 import { convertDiscToStats, MAX_BUILDS } from './common'
@@ -18,7 +19,7 @@ export interface ParentCommandStart {
   // lightCones: ICachedLightCone[]
   discsBySlot: Record<DiscSlotKey, ICachedDisc[]>
   // detachedNodes: NumTagFree[]
-  // constraints: Array<{ value: number; isMax: boolean }>
+  formulaKey: FormulaKey
   numWorkers: number
 }
 export interface ParentCommandTerminate {
@@ -81,6 +82,7 @@ async function start({
   discsBySlot,
   constraints,
   numWorkers,
+  formulaKey,
 }: ParentCommandStart) {
   const discStatsBySlot = objKeyMap(allDiscSlotKeys, (slot) =>
     discsBySlot[slot].map(convertDiscToStats)
@@ -167,6 +169,7 @@ async function start({
           baseStats,
           discStatsBySlot: chunkedDiscStatsBySlot[index],
           constraints,
+          formulaKey,
         }
         worker.postMessage(message)
       })

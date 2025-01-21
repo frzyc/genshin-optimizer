@@ -9,6 +9,8 @@ export default function PageDiscs() {
   const [builds, setBuilds] = useState<BuildResult[]>([])
   // base stats are in percent for displayability
   const [baseStats, setBaseStats] = useState<BaseStats>({
+    charLvl: 60,
+    enemyDef: 953, // default enemy DEF
     crit_: 5,
     crit_dmg_: 50,
   })
