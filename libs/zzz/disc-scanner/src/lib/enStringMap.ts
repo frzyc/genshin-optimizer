@@ -4,7 +4,6 @@ const elementalData: Record<string, string> = {
   electric: 'Electric',
   fire: 'Fire',
   ice: 'Ice',
-  frost: 'Frost',
   physical: 'Physical',
   ether: 'Ether',
 } as const

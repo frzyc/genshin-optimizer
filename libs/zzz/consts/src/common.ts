@@ -34,7 +34,6 @@ const allElementalKeys = [
   'electric',
   'fire',
   'ice',
-  'frost',
   'physical',
   'ether',
 ] as const
@@ -44,7 +43,6 @@ export const allAttributeDamageKeys = [
   'electric_dmg_',
   'fire_dmg_',
   'ice_dmg_',
-  'frost_dmg_',
   'physical_dmg_',
   'ether_dmg_',
 ] as const
@@ -94,7 +92,6 @@ const elementalData: Record<ElementalKey, string> = {
   electric: 'Electric',
   fire: 'Fire',
   ice: 'Ice',
-  frost: 'Frost',
   physical: 'Physical',
   ether: 'Ether',
 } as const
