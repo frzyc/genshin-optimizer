@@ -7,8 +7,9 @@ export default function PageHome() {
       <CardContent>
         <Typography variant="h5">I know what this looks like...</Typography>
         <Typography>
-          This <strong>is</strong> my rendition of Zenless Optimizer. You have
-          to understand, this is the result of asking,
+          This is an <i>Alpha</i>(desperately unfinished) version of{' '}
+          <strong>Zenless Optimizer</strong>. You have to understand, this is
+          the result of asking,
         </Typography>
         <Typography variant="caption">
           "What is the most Optimizer I can, if I was cutting corners like it's
