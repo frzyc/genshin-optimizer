@@ -19,7 +19,7 @@ export default function PageHome() {
           I know a lot of stuff isn't implemented, and the stuff that are, are
           super ugly. This is only like 10 hours of coding, cut me some slack.
         </Typography>
-        <Typography sx={{ my: 1 }}>Have an optimial day,</Typography>
+        <Typography sx={{ my: 1 }}>Have an optimal day,</Typography>
         <Typography>
           <strong>frzyc</strong>
         </Typography>
