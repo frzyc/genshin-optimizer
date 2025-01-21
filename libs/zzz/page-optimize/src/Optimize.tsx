@@ -1,6 +1,15 @@
-import { CardThemed, DropdownButton } from '@genshin-optimizer/common/ui'
-import { objMap, toDecimal } from '@genshin-optimizer/common/util'
-import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
+import {
+  CardThemed,
+  DropdownButton,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
+import { objMap, toDecimal, toggleInArr } from '@genshin-optimizer/common/util'
+import type { DiscMainStatKey, DiscSetKey } from '@genshin-optimizer/zzz/consts'
+import {
+  allDiscSetKeys,
+  discSlotToMainStatKeys,
+  type DiscSlotKey,
+} from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import type {
@@ -27,6 +36,8 @@ import {
   MenuItem,
   Typography,
 } from '@mui/material'
+import { Stack } from '@mui/system'
+import type { Dispatch, SetStateAction } from 'react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { StatFilterCard } from './StatFilterCard'
@@ -48,10 +59,20 @@ export default function OptimizeWrapper({
   )
   const [formulaKey, setFormulaKey] = useState<FormulaKey>(allFormulaKeys[0])
   const [constraints, setConstraints] = useState<Constraints>({})
+  const [slot4, setSlot4] = useState([...discSlotToMainStatKeys['4']])
+  const [slot5, setSlot5] = useState([...discSlotToMainStatKeys['5']])
+  const [slot6, setSlot6] = useState([...discSlotToMainStatKeys['6']])
+
   const discsBySlot = useMemo(
     () =>
       database.discs.values.reduce(
         (discsBySlot, disc) => {
+          if (
+            (disc.slotKey === '4' && !slot4.includes(disc.mainStatKey)) ||
+            (disc.slotKey === '5' && !slot5.includes(disc.mainStatKey)) ||
+            (disc.slotKey === '6' && !slot6.includes(disc.mainStatKey))
+          )
+            return discsBySlot
           discsBySlot[disc.slotKey].push(disc)
           return discsBySlot
         },
@@ -64,7 +85,7 @@ export default function OptimizeWrapper({
           6: [],
         } as Record<DiscSlotKey, ICachedDisc[]>
       ),
-    [database.discs.values]
+    [database.discs.values, slot4, slot5, slot6]
   )
 
   const totalPermutations = useMemo(
@@ -112,39 +133,95 @@ export default function OptimizeWrapper({
     cancelToken.current()
     setOptimizing(false)
   }, [cancelToken])
-
+  const discTypo = (key: DiscSlotKey) => (
+    <Typography>
+      Disc {key} <SqBadge>{discsBySlot[key].length}</SqBadge>
+    </Typography>
+  )
+  const discSlotBtns = (slotKey: '4' | '5' | '6') => {
+    const keysMap = {
+      '4': slot4,
+      '5': slot5,
+      '6': slot6,
+    } as Record<'4' | '5' | '6', DiscMainStatKey[]>
+    const funcMap = {
+      '4': setSlot4,
+      '5': setSlot5,
+      '6': setSlot6,
+    } as Record<'4' | '5' | '6', Dispatch<SetStateAction<DiscMainStatKey[]>>>
+    return (
+      <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+        {discSlotToMainStatKeys[slotKey].map((key) => (
+          <Button
+            key={key}
+            variant={keysMap[slotKey].includes(key) ? 'contained' : 'outlined'}
+            onClick={() => funcMap[slotKey]((s) => toggleInArr([...s], key))}
+          >
+            {key}
+          </Button>
+        ))}
+      </Box>
+    )
+  }
   return (
     <CardThemed>
       <CardHeader title={t('optimize')} />
       <Divider />
       <CardContent>
-        <StatFilterCard
-          constraints={constraints}
-          setConstraints={setConstraints}
-        />
-        <Box sx={{ display: 'flex', gap: 1, mt: 2 }}>
-          <OptimizeTargetSelector
-            formulaKey={formulaKey}
-            setFormulaKey={setFormulaKey}
+        <Stack spacing={1}>
+          <CardThemed bgt="light">
+            <CardContent>
+              <Stack spacing={1}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                  {discTypo('1')}
+                  {discTypo('2')}
+                  {discTypo('3')}
+                </Box>
+                {discTypo('4')}
+                {discSlotBtns('4')}
+                {discTypo('5')}
+                {discSlotBtns('5')}
+                {discTypo('6')}
+                {discSlotBtns('6')}
+              </Stack>
+            </CardContent>
+          </CardThemed>
+          <StatFilterCard
+            constraints={constraints}
+            setConstraints={setConstraints}
           />
-          <WorkerSelector
-            numWorkers={numWorkers}
-            setNumWorkers={setNumWorkers}
+          <Set4Selector
+            constraints={constraints}
+            setConstraints={setConstraints}
           />
-          <Button
-            onClick={optimizing ? onCancel : onOptimize}
-            color={optimizing ? 'error' : 'success'}
-            startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
-          >
-            {optimizing ? t('cancel') : t('optimize')}
-          </Button>
-        </Box>
-        {progress && (
-          <ProgressIndicator
-            progress={progress}
-            totalPermutations={totalPermutations}
-          />
-        )}
+          <Typography>
+            NOTE: the solver currently accounts for 2-set effects only.
+          </Typography>
+          <Box sx={{ display: 'flex', gap: 1 }}>
+            <OptimizeTargetSelector
+              formulaKey={formulaKey}
+              setFormulaKey={setFormulaKey}
+            />
+            <WorkerSelector
+              numWorkers={numWorkers}
+              setNumWorkers={setNumWorkers}
+            />
+            <Button
+              onClick={optimizing ? onCancel : onOptimize}
+              color={optimizing ? 'error' : 'success'}
+              startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
+              disabled={!totalPermutations}
+            >
+              {optimizing ? t('cancel') : t('optimize')}
+            </Button>
+          </Box>
+          {progress && (
+            <ProgressIndicator
+              progress={progress}
+              totalPermutations={totalPermutations}
+            />
+          )}
+        </Stack>
       </CardContent>
     </CardThemed>
   )
@@ -211,4 +288,48 @@ const formulaKeyTextMap: Record<FormulaKey, string> = {
   corruption: 'Corruption Anomaly',
   shatter: 'Shatter Anomaly',
   assault: 'Assault Anomaly',
+}
+
+function Set4Selector({
+  constraints,
+  setConstraints,
+}: {
+  constraints: Constraints
+  setConstraints: (c: Constraints) => void
+}) {
+  const set = Object.keys(constraints).find((k) =>
+    allDiscSetKeys.includes(k as DiscSetKey)
+  )
+  return (
+    <DropdownButton
+      title={
+        set ? (
+          <span>
+            Force 4-Set: <strong>{set}</strong>
+          </span>
+        ) : (
+          'Select to force 4-Set'
+        )
+      }
+      sx={{ flexGrow: 1 }}
+    >
+      {allDiscSetKeys.map((d) => (
+        <MenuItem
+          key={d}
+          onClick={() =>
+            setConstraints({
+              ...Object.fromEntries(
+                Object.entries(constraints).filter(
+                  ([k]) => !allDiscSetKeys.includes(k as DiscSetKey)
+                )
+              ),
+              [d]: { value: 4, isMax: false },
+            })
+          }
+        >
+          {d}
+        </MenuItem>
+      ))}
+    </DropdownButton>
+  )
 }
