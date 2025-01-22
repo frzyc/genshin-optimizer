@@ -39,6 +39,17 @@ export class DiscDataManager extends DataManager<
     // Generate cache fields
     const newDisc = { ...storageObj, id } as ICachedDisc
 
+    // rudimentary check for equipment relationship
+    const oldDisc = super.get(id)
+    if (newDisc.location && newDisc.location !== oldDisc?.location) {
+      // remove any other disc from the same character in the same slot
+      this.values.forEach((d) => {
+        if (d.location === newDisc.location && d.slotKey === newDisc.slotKey) {
+          this.set(d.id, { location: '' })
+        }
+      })
+    }
+
     // Check relations and update equipment
     /* TODO:
     const oldDisc = super.get(id)

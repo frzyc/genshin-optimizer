@@ -286,7 +286,7 @@ export function DiscEditor({
                 {/* set */}
                 <Box sx={{ display: 'flex', gap: 1 }}>
                   <DiscSetAutocomplete
-                    disabled={disableSet}
+                    disabled={disableSet || !!disc.id}
                     size="small"
                     discSetKey={disc?.setKey ?? ''}
                     setDiscSetKey={(key) =>
@@ -298,7 +298,7 @@ export function DiscEditor({
                   <DiscRarityDropdown
                     rarity={disc ? rarity : undefined}
                     onRarityChange={(rarity) => setDisc({ rarity })}
-                    disabled={!disc.mainStatKey}
+                    disabled={!disc.mainStatKey || !!disc.id}
                   />
                 </Box>
 
@@ -356,7 +356,7 @@ export function DiscEditor({
                     // }
                     title={disc?.slotKey ? tk(disc.slotKey) : t('slot')}
                     value={slotKey}
-                    disabled={disableEditSlot}
+                    disabled={disableEditSlot || !!disc.id}
                     color={disc ? 'success' : 'primary'}
                   >
                     {allDiscSlotKeys.map((sk) => (
