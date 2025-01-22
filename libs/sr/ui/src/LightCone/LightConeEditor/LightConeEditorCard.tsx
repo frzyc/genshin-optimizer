@@ -21,7 +21,7 @@ import type { MouseEvent, ReactNode } from 'react'
 import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete } from '../../Character'
-import LightConeAutocomplete from '../LightConeAutocomplete'
+import { LightConeAutocomplete } from '../LightConeAutocomplete'
 
 export function LightConeEditorCard({
   onClose,

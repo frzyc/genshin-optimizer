@@ -12,7 +12,7 @@ type LightConeAutocompleteProps = {
   setLCKey: (key: LightConeKey | '') => void
   label?: string
 }
-export default function LightConeAutocomplete({
+export function LightConeAutocomplete({
   lcKey,
   setLCKey,
   label = '',

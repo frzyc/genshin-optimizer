@@ -170,3 +170,11 @@ export function isPlanarRelicSetKey(
 ): key is RelicPlanarSetKey {
   return allRelicPlanarSetKeys.includes(key as RelicPlanarSetKey)
 }
+
+export function isRelicSetKey(key: unknown): key is RelicSetKey {
+  return (
+    typeof key === 'string' &&
+    (isCavernRelicSetKey(key as RelicSetKey) ||
+      isPlanarRelicSetKey(key as RelicSetKey))
+  )
+}
