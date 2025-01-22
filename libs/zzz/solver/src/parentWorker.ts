@@ -184,7 +184,7 @@ async function start({
   // Send back results, which can take a few seconds
   postMessage({
     resultType: 'done',
-    buildResults: results,
+    buildResults: results.slice(0, 10), // TODO: take numBuilds from opt UI
   })
 }
 
