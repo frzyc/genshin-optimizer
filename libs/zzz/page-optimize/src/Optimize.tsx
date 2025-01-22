@@ -293,7 +293,7 @@ function OptimizeTargetSelector({
   )
 }
 const formulaKeyTextMap: Record<FormulaKey, string> = {
-  electric_dmg_: 'Eletrical Damage',
+  electric_dmg_: 'Electrical Damage',
   fire_dmg_: 'Fire Damage',
   ice_dmg_: 'Ice Damage',
   physical_dmg_: 'Physical Damage',
