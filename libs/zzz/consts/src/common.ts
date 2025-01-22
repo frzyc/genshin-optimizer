@@ -58,6 +58,9 @@ export const allAnomalyDmgKeys = [
 export type AnomalyDamageKey = (typeof allAnomalyDmgKeys)[number]
 
 export const statKeyTextMap: Partial<Record<string, string>> = {
+  hp_base: 'Base HP',
+  atk_base: 'Base ATK',
+  def_base: 'Base DEF',
   hp: 'HP',
   hp_: 'HP',
   atk: 'ATK',

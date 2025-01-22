@@ -62,6 +62,7 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
+import { LocationAutocomplete } from '../../Character/LocationAutocomplete'
 import { shouldShowDevComponents } from '../../util/isDev'
 import { DiscCard } from '../DiscCard'
 import { DiscMainStatDropdown } from '../DiscMainStatDropdown'
@@ -410,10 +411,10 @@ export function DiscEditor({
                     {disc?.lock ? <LockIcon /> : <LockOpenIcon />}
                   </Button>
                 </Box>
-                {/* <LocationAutocomplete
-                  locKey={cDisc?.location ?? ''}
+                <LocationAutocomplete
+                  locKey={disc?.location ?? ''}
                   setLocKey={(charKey) => setDisc({ location: charKey })}
-                /> */}
+                />
                 {/* Image OCR */}
                 {allowUpload && (
                   <CardThemed bgt="light">

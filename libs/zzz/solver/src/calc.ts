@@ -34,6 +34,8 @@ export function getSum(baseStats: BaseStats, discs: DiscStats[]) {
   sum['hp'] = s('hp') * (1 + s('uncond_hp_')) + s('uncond_hp')
   sum['atk'] = s('atk') * (1 + s('uncond_atk_')) + s('uncond_atk')
   sum['def'] = s('def') * (1 + s('uncond_def_')) + s('uncond_def')
+  sum['impact'] = s('impact') + (1 + s('impact_'))
+  sum['anomMas'] = s('anomMas') + (1 + s('anomMas_'))
   return sum
 }
 
@@ -93,7 +95,7 @@ function defMulti(s: (k: string) => number) {
   const lvlFactor = getLvlFactor(s('charLvl'))
   return (
     lvlFactor /
-    (Math.max(s('enemyDef') * (1 - s('pen_') - s('pen')), 0) + lvlFactor)
+    (Math.max(s('enemyDef') * (1 - s('pen_')) - s('pen'), 0) + lvlFactor)
   )
 }
 function resMulti(s: (k: string) => number) {

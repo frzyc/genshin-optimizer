@@ -1,15 +1,14 @@
-import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
+import {
+  BootstrapTooltip,
+  CardThemed,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import {
   getUnitStr,
   statKeyToFixed,
   toPercent,
 } from '@genshin-optimizer/common/util'
-import {
-  allElementalDamageKeys,
-  type LocationKey,
-} from '@genshin-optimizer/sr/consts'
-import { StatIcon } from '@genshin-optimizer/sr/svgicons'
-import type { DiscRarityKey } from '@genshin-optimizer/zzz/consts'
+import type { DiscRarityKey, LocationKey } from '@genshin-optimizer/zzz/consts'
 import {
   getDiscMainStatVal,
   getDiscSubStatBaseVal,
@@ -34,10 +33,21 @@ import {
 } from '@mui/material'
 import { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
+import { LocationAutocomplete } from '../Character/LocationAutocomplete'
+import { LocationName } from '../Character/LocationName'
 import { DiscSetName } from './DiscTrans'
 import { discLevelVariant } from './util'
 
-type DiscCardProps = {
+export function DiscCard({
+  disc,
+  onClick,
+  onEdit,
+  onDelete,
+  onLockToggle,
+  setLocation,
+  extraButtons,
+  excluded = false,
+}: {
   disc: IDisc
   onClick?: () => void
   onEdit?: () => void
@@ -46,24 +56,22 @@ type DiscCardProps = {
   setLocation?: (lk: LocationKey) => void
   extraButtons?: JSX.Element
   excluded?: boolean
-}
-
-export function DiscCard({
-  disc,
-  onClick,
-  onEdit,
-  onDelete,
-  onLockToggle,
-  // setLocation,
-  extraButtons,
-  excluded = false,
-}: DiscCardProps) {
+}) {
   const { t } = useTranslation('disc')
   const { t: tk } = useTranslation(['discs_gen', 'statKey_gen'])
 
-  const { lock, slotKey, setKey, rarity, level, mainStatKey, substats } = disc
+  const {
+    lock,
+    slotKey,
+    setKey,
+    rarity,
+    level,
+    mainStatKey,
+    substats,
+    location,
+  } = disc
 
-  const ele = allElementalDamageKeys.find((e) => mainStatKey.startsWith(e))
+  // const ele = allElementalDamageKeys.find((e) => mainStatKey.startsWith(e))
   // TODO: requires individual disc set piece names/desc added to sheets
   // const slotName = <DiscSetSlotName setKey={setKey} slotKey={slotKey} />
   // const slotDesc = <DiscSetSlotDesc setKey={setKey} slotKey={slotKey} />
@@ -92,6 +100,7 @@ export function DiscCard({
         sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
       >
         <Box
+          // TODO: rarity color
           className={`grad-${rarity}star`}
           sx={{ position: 'relative', width: '100%' }}
         >
@@ -156,10 +165,10 @@ export function DiscCard({
               variant="h6"
               sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
             >
-              <StatIcon
+              {/* <StatIcon
                 statKey={mainStatKey}
                 iconProps={{ sx: { color: `${ele}.main` } }}
-              />
+              /> */}
               <span>{tk(`statKey_gen:${mainStatKey}`)}</span>
             </Typography>
             <Typography variant="h5">
@@ -172,7 +181,7 @@ export function DiscCard({
               </strong>
             </Typography>
             {/* <StarsDisplay stars={rarity} colored /> */}
-            {rarity}
+            <SqBadge>{rarity}</SqBadge>
             {/* {process.env.NODE_ENV === "development" && <Typography color="common.black">{id || `""`} </Typography>} */}
           </Box>
           {/* <Box sx={{ height: '100%', position: 'absolute', right: 0, top: 0 }}>
@@ -232,13 +241,13 @@ export function DiscCard({
             alignItems: 'center',
           }}
         >
-          {/* <Box sx={{ flexGrow: 1 }}>
+          <Box sx={{ flexGrow: 1 }}>
             {setLocation ? (
               <LocationAutocomplete locKey={location} setLocKey={setLocation} />
             ) : (
               <LocationName location={location} />
             )}
-          </Box> */}
+          </Box>
           <Box
             display="flex"
             gap={1}

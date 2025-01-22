@@ -4,6 +4,7 @@ import type {
   DiscSetKey,
   DiscSlotKey,
   DiscSubStatKey,
+  LocationKey,
 } from '@genshin-optimizer/zzz/consts'
 
 export interface ISubstat {
@@ -16,7 +17,7 @@ export interface IDisc {
   level: number // 0-15
   rarity: DiscRarityKey
   mainStatKey: DiscMainStatKey
-  location: string // TODO: CharacterKey
+  location: LocationKey
   lock: boolean
   trash: boolean
   substats: ISubstat[]

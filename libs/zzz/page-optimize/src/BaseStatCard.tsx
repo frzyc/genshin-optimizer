@@ -1,12 +1,13 @@
 import { CardThemed, NumberInputLazy } from '@genshin-optimizer/common/ui'
 import { getUnitStr } from '@genshin-optimizer/common/util'
-import type { StatKey } from '@genshin-optimizer/zzz/consts'
+import type { LocationKey, StatKey } from '@genshin-optimizer/zzz/consts'
 import {
   allAttributeDamageKeys,
   statKeyTextMap,
   unCondKeys,
 } from '@genshin-optimizer/zzz/consts'
 import type { BaseStats } from '@genshin-optimizer/zzz/solver'
+import { LocationAutocomplete } from '@genshin-optimizer/zzz/ui'
 import { Box, CardContent, Typography } from '@mui/material'
 const baseKeys = ['charLvl', 'hp_base', 'atk_base', 'def_base'] as const
 const statKeys: StatKey[] = [
@@ -20,6 +21,11 @@ const statKeys: StatKey[] = [
   'crit_dmg_',
   ...allAttributeDamageKeys,
   'dmg_',
+  'impact',
+  'anomMas',
+  'anomProf',
+  'pen_',
+  'pen',
 ] as const
 const enemyKeys: StatKey[] = [
   'enemyDef',
@@ -28,9 +34,13 @@ const enemyKeys: StatKey[] = [
   'enemyResIgn_',
 ] as const
 export default function BaseStatCard({
+  location,
+  setLocation,
   baseStats,
   setBaseStats,
 }: {
+  location: LocationKey
+  setLocation: (location: LocationKey) => void
   baseStats: BaseStats
   setBaseStats: (baseStats: BaseStats) => void
 }) {
@@ -55,6 +65,8 @@ export default function BaseStatCard({
   return (
     <CardThemed>
       <CardContent>
+        <Typography variant="h6">Character</Typography>
+        <LocationAutocomplete locKey={location} setLocKey={setLocation} />
         <Typography>Character Base Stats</Typography>
         <Box sx={{ display: 'flex', gap: 1, pb: 2, flexWrap: 'wrap' }}>
           {baseKeys.map((key) => input(key))}

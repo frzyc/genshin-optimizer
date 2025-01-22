@@ -4,7 +4,11 @@ import {
   SqBadge,
 } from '@genshin-optimizer/common/ui'
 import { objMap, toDecimal, toggleInArr } from '@genshin-optimizer/common/util'
-import type { DiscMainStatKey, DiscSetKey } from '@genshin-optimizer/zzz/consts'
+import type {
+  DiscMainStatKey,
+  DiscSetKey,
+  LocationKey,
+} from '@genshin-optimizer/zzz/consts'
 import {
   allDiscSetKeys,
   discSlotToMainStatKeys,
@@ -24,6 +28,7 @@ import {
   MAX_BUILDS,
   Solver,
 } from '@genshin-optimizer/zzz/solver'
+import { StatDisplay } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import {
@@ -44,9 +49,11 @@ import { StatFilterCard } from './StatFilterCard'
 import { WorkerSelector } from './WorkerSelector'
 
 export default function OptimizeWrapper({
+  location,
   baseStats,
   setResults,
 }: {
+  location: LocationKey
   baseStats: BaseStats
   setResults: (builds: BuildResult[]) => void
 }) {
@@ -59,6 +66,7 @@ export default function OptimizeWrapper({
   )
   const [formulaKey, setFormulaKey] = useState<FormulaKey>(allFormulaKeys[0])
   const [constraints, setConstraints] = useState<Constraints>({})
+  const [useEquipped, setUseEquipped] = useState(false)
   const [slot4, setSlot4] = useState([...discSlotToMainStatKeys['4']])
   const [slot5, setSlot5] = useState([...discSlotToMainStatKeys['5']])
   const [slot6, setSlot6] = useState([...discSlotToMainStatKeys['6']])
@@ -67,6 +75,8 @@ export default function OptimizeWrapper({
     () =>
       database.discs.values.reduce(
         (discsBySlot, disc) => {
+          if (disc.location && !useEquipped && disc.location !== location)
+            return discsBySlot
           if (
             (disc.slotKey === '4' && !slot4.includes(disc.mainStatKey)) ||
             (disc.slotKey === '5' && !slot5.includes(disc.mainStatKey)) ||
@@ -85,7 +95,7 @@ export default function OptimizeWrapper({
           6: [],
         } as Record<DiscSlotKey, ICachedDisc[]>
       ),
-    [database.discs.values, slot4, slot5, slot6]
+    [database.discs.values, location, slot4, slot5, slot6, useEquipped]
   )
 
   const totalPermutations = useMemo(
@@ -157,7 +167,7 @@ export default function OptimizeWrapper({
             variant={keysMap[slotKey].includes(key) ? 'contained' : 'outlined'}
             onClick={() => funcMap[slotKey]((s) => toggleInArr([...s], key))}
           >
-            {key}
+            <StatDisplay statKey={key} showPercent />
           </Button>
         ))}
       </Box>
@@ -197,6 +207,12 @@ export default function OptimizeWrapper({
           <Typography>
             NOTE: the solver currently accounts for 2-set effects only.
           </Typography>
+          <Button
+            onClick={() => setUseEquipped(!useEquipped)}
+            variant={useEquipped ? 'contained' : 'outlined'}
+          >
+            Use equipped Discs
+          </Button>
           <Box sx={{ display: 'flex', gap: 1 }}>
             <OptimizeTargetSelector
               formulaKey={formulaKey}
@@ -210,7 +226,7 @@ export default function OptimizeWrapper({
               onClick={optimizing ? onCancel : onOptimize}
               color={optimizing ? 'error' : 'success'}
               startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
-              disabled={!totalPermutations}
+              disabled={!totalPermutations || !location}
             >
               {optimizing ? t('cancel') : t('optimize')}
             </Button>

@@ -5,6 +5,7 @@ import type {
   DiscSubStatKey,
 } from '@genshin-optimizer/zzz/consts'
 import {
+  allCharacterKeys,
   allDiscRarityKeys,
   allDiscSetKeys,
   allDiscSlotKeys,
@@ -328,9 +329,7 @@ export function validateDisc(
   if (!(plausibleMainStats as DiscMainStatKey[]).includes(mainStatKey))
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
     else return undefined // ambiguous mainstat
-  // TODO:
-  // if (!location || !allCharacterKeys.includes(location)) location = ''
-  location = ''
+  if (location && !allCharacterKeys.includes(location)) location = ''
   return {
     setKey,
     rarity,
