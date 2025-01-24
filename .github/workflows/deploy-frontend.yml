@@ -30,7 +30,7 @@ jobs:
         run: |
           echo "deployment_name=$(cat frontend_build/deployment_name)" >> $GITHUB_OUTPUT
           echo "frontend_name=$(cat frontend_build/frontend_name)" >> $GITHUB_OUTPUT
-          echo "nested_name=$(cat nested_build/nested_name)" >> $GITHUB_OUTPUT
+          echo "nested_name=$(cat frontend_build/nested_name)" >> $GITHUB_OUTPUT
           echo "repo_name=$(cat frontend_build/repo_name)" >> $GITHUB_OUTPUT
           echo "repo_deploy_secret_name=$(cat frontend_build/repo_deploy_secret_name)" >> $GITHUB_OUTPUT
           echo "ref=$(cat frontend_build/ref)" >> $GITHUB_OUTPUT
