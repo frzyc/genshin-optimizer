@@ -88,7 +88,16 @@ export function StatFilterCard({
                     }}
                   />
                   <ButtonGroup size="small">
-                    <Button>{isMax ? 'MAX' : 'MIN'}</Button>
+                    <Button
+                      onClick={() =>
+                        setConstraints({
+                          ...constraints,
+                          [key]: { value, isMax: !isMax },
+                        })
+                      }
+                    >
+                      {isMax ? 'MAX' : 'MIN'}
+                    </Button>
                     <Button
                       onClick={() => {
                         const { [key]: _, ...rest } = constraints
