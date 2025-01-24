@@ -293,6 +293,7 @@ function OptimizeTargetSelector({
   )
 }
 const formulaKeyTextMap: Record<FormulaKey, string> = {
+  initial_atk: 'Initial ATK',
   electric_dmg_: 'Electrical Damage',
   fire_dmg_: 'Fire Damage',
   ice_dmg_: 'Ice Damage',
@@ -312,39 +313,76 @@ function Set4Selector({
   constraints: Constraints
   setConstraints: (c: Constraints) => void
 }) {
-  const set = Object.keys(constraints).find((k) =>
-    allDiscSetKeys.includes(k as DiscSetKey)
-  )
+  const set4 = Object.entries(constraints).find(
+    ([k, { value }]) => allDiscSetKeys.includes(k as DiscSetKey) && value === 4
+  )?.[0]
+  const set2 = Object.entries(constraints).find(
+    ([k, { value }]) => allDiscSetKeys.includes(k as DiscSetKey) && value === 2
+  )?.[0]
   return (
-    <DropdownButton
-      title={
-        set ? (
-          <span>
-            Force 4-Set: <strong>{set}</strong>
-          </span>
-        ) : (
-          'Select to force 4-Set'
-        )
-      }
-      sx={{ flexGrow: 1 }}
-    >
-      {allDiscSetKeys.map((d) => (
-        <MenuItem
-          key={d}
-          onClick={() =>
-            setConstraints({
-              ...Object.fromEntries(
-                Object.entries(constraints).filter(
-                  ([k]) => !allDiscSetKeys.includes(k as DiscSetKey)
-                )
-              ),
-              [d]: { value: 4, isMax: false },
-            })
-          }
-        >
-          {d}
-        </MenuItem>
-      ))}
-    </DropdownButton>
+    <>
+      <DropdownButton
+        title={
+          set4 ? (
+            <span>
+              Force 4-Set: <strong>{set4}</strong>
+            </span>
+          ) : (
+            'Select to force 4-Set'
+          )
+        }
+        sx={{ flexGrow: 1 }}
+      >
+        {allDiscSetKeys.map((d) => (
+          <MenuItem
+            key={d}
+            onClick={() =>
+              setConstraints({
+                ...Object.fromEntries(
+                  Object.entries(constraints).filter(
+                    ([k, { value }]) =>
+                      !(allDiscSetKeys.includes(k as DiscSetKey) && value === 4)
+                  )
+                ),
+                [d]: { value: 4, isMax: false },
+              })
+            }
+          >
+            {d}
+          </MenuItem>
+        ))}
+      </DropdownButton>
+      <DropdownButton
+        title={
+          set2 ? (
+            <span>
+              Force 2-Set: <strong>{set2}</strong>
+            </span>
+          ) : (
+            'Select to force 2-Set'
+          )
+        }
+        sx={{ flexGrow: 1 }}
+      >
+        {allDiscSetKeys.map((d) => (
+          <MenuItem
+            key={d}
+            onClick={() =>
+              setConstraints({
+                ...Object.fromEntries(
+                  Object.entries(constraints).filter(
+                    ([k, { value }]) =>
+                      !(allDiscSetKeys.includes(k as DiscSetKey) && value === 2)
+                  )
+                ),
+                [d]: { value: 2, isMax: false },
+              })
+            }
+          >
+            {d}
+          </MenuItem>
+        ))}
+      </DropdownButton>
+    </>
   )
 }

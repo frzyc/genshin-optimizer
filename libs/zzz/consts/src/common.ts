@@ -83,6 +83,12 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   enemyResRed_: 'Enemy Resistance Reduction',
   enemyResIgn_: 'Enemy Resistance Ignore',
 
+  initial_hp: 'Initial HP',
+  initial_def: 'Initial DEF',
+  initial_atk: 'Initial ATK',
+  final_hp: 'Final HP',
+  final_def: 'Final DEF',
+  final_atk: 'Final ATK',
   uncond_hp: 'Unconditional HP',
   uncond_def: 'Unconditional DEF',
   uncond_atk: 'Unconditional ATK',
