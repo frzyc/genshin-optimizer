@@ -24,6 +24,10 @@ on:
         description: 'Flag to show components typically only shown in development mode, for experimental or in-progress features.'
         type: boolean
         default: false
+      nested_deployments:
+        description: 'When true, the deployment will be nested in a sub-folder corresponding to the frontend_name. When false, the deployment will sit in the repo root folder, which means you can only have 1 deployment active at a time'
+        type: boolean
+        default: true
 
 jobs:
   build:
@@ -71,11 +75,15 @@ jobs:
         run: yarn run nx run ${{inputs.frontend_name}}:build:production
       - name: echos
         run: |
-          echo ${{inputs.frontend_name}} > frontend_name
+          touch frontend_name
           echo ${{inputs.deployment_name}} > deployment_name
           echo ${{inputs.repo_name}} > repo_name
           echo ${{inputs.repo_deploy_secret_name}} > repo_deploy_secret_name
           echo $(git rev-parse HEAD) > ref
+      - name: echos (frontend_name)
+        if: inputs.nested_deployments == 'true'
+        run: |
+          echo ${{inputs.frontend_name}} > frontend_name
       - name: Archive build
         uses: actions/upload-artifact@v4
         with:
