@@ -7,10 +7,19 @@ on:
       frontend_name:
         description: 'Frontend type to build. Can be `frontend`, or `sr-frontend`, or `zzz-frontend`.'
         type: string
+        required: true
       deployment_name:
         description: 'Name for the deployment. This will determine the URL. If you choose a name that is already deployed, it will overwrite that deployment.'
         type: string
         default: 'master'
+      repo_name:
+        description: 'Name of the repo to deploy to.'
+        type: string
+        required: true
+      repo_deploy_secret_name:
+        description: 'Name of the secret on the repo that contains the deploy key for the deploy repo'
+        type: string
+        required: true
       show_dev_components:
         description: 'Flag to show components typically only shown in development mode, for experimental or in-progress features.'
         type: boolean
@@ -64,6 +73,8 @@ jobs:
         run: |
           echo ${{inputs.frontend_name}} > frontend_name
           echo ${{inputs.deployment_name}} > deployment_name
+          echo ${{inputs.repo_name}} > repo_name
+          echo ${{inputs.repo_deploy_secret_name}} > repo_deploy_secret_name
           echo $(git rev-parse HEAD) > ref
       - name: Archive build
         uses: actions/upload-artifact@v4
@@ -73,4 +84,6 @@ jobs:
             dist/apps/${{inputs.frontend_name}}
             frontend_name
             deployment_name
+            repo_name
+            repo_deploy_secret_name
             ref
