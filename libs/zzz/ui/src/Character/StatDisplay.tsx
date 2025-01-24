@@ -1,7 +1,6 @@
 import { getUnitStr } from '@genshin-optimizer/common/util'
-import type { StatKey } from '@genshin-optimizer/zzz/consts'
+import { statKeyTextMap, type StatKey } from '@genshin-optimizer/zzz/consts'
 import { Box } from '@mui/material'
-import { useTranslation } from 'react-i18next'
 
 export function StatDisplay({
   statKey,
@@ -12,10 +11,11 @@ export function StatDisplay({
   showPercent?: boolean
   disableIcon?: boolean
 }) {
-  const { t: tk } = useTranslation('statKey_gen')
+  // const { t: tk } = useTranslation('statKey_gen')
   const text = (
     <span>
-      {tk(statKey)}
+      {statKeyTextMap[statKey] ?? statKey}
+      {/* TODO: translation {tk(statKey)} */}
       {showPercent && getUnitStr(statKey)}
     </span>
   )

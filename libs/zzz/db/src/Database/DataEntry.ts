@@ -5,22 +5,22 @@ import type { ImportResult } from './exim'
 
 export class DataEntry<
   Key extends string,
-  SROKey extends string,
+  ZOKey extends string,
   CacheValue,
   StorageValue
-> extends DataEntryBase<Key, SROKey, CacheValue, StorageValue, ZzzDatabase> {
-  get prefixedKey() {
-    return `${this.database.keyPrefix}_${this.goKey}`
-  }
+> extends DataEntryBase<Key, ZOKey, CacheValue, StorageValue, ZzzDatabase> {
   exportZOD(zoDb: Partial<IZZZDatabase & IZenlessObjectDescription>) {
-    zoDb[this.prefixedKey] = this.data
+    zoDb[this.dataKey] = this.data
   }
   importZOD(
     zoDb: IZenlessObjectDescription &
-      IZZZDatabase & { [k in SROKey]?: Partial<StorageValue> | never },
+      IZZZDatabase & { [k in ZOKey]?: Partial<StorageValue> | never },
     _result: ImportResult
   ) {
-    const data = zoDb[this.prefixedKey]
+    const data = zoDb[this.dataKey]
     if (data) this.set(data)
+  }
+  override toStorageKey(): string {
+    return `${this.database.keyPrefix}_${this.key}`
   }
 }

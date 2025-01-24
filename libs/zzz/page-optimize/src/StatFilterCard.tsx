@@ -5,8 +5,12 @@ import {
   NumberInputLazy,
 } from '@genshin-optimizer/common/ui'
 import { getUnitStr } from '@genshin-optimizer/common/util'
-import type { StatKey } from '@genshin-optimizer/zzz/consts'
-import { allAttributeDamageKeys } from '@genshin-optimizer/zzz/consts'
+import type { DiscSetKey, StatKey } from '@genshin-optimizer/zzz/consts'
+import {
+  allAttributeDamageKeys,
+  allDiscSetKeys,
+  statKeyTextMap,
+} from '@genshin-optimizer/zzz/consts'
 import type { Constraints } from '@genshin-optimizer/zzz/solver'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import {
@@ -64,35 +68,47 @@ export function StatFilterCard({
         <Divider />
         <CardContent>
           <Stack spacing={1}>
-            {Object.entries(constraints).map(([key, { value, isMax }]) => (
-              <Box display={'flex'} key={key} gap={1}>
-                <NumberInputLazy
-                  value={value}
-                  onChange={(v) =>
-                    setConstraints({
-                      ...constraints,
-                      [key]: { value: v, isMax },
-                    })
-                  }
-                  inputProps={{ sx: { textAlign: 'right' } }}
-                  InputProps={{
-                    startAdornment: key,
-                    endAdornment: getUnitStr(key),
-                  }}
-                />
-                <ButtonGroup size="small">
-                  <Button>{isMax ? 'MAX' : 'MIN'}</Button>
-                  <Button
-                    onClick={() => {
-                      const { [key]: _, ...rest } = constraints
-                      setConstraints({ ...rest })
+            {Object.entries(constraints)
+              // filter out 4p set constraints
+              .filter(([key]) => !allDiscSetKeys.includes(key as DiscSetKey))
+              .map(([key, { value, isMax }]) => (
+                <Box display={'flex'} key={key} gap={1}>
+                  <NumberInputLazy
+                    value={value}
+                    onChange={(v) =>
+                      setConstraints({
+                        ...constraints,
+                        [key]: { value: v, isMax },
+                      })
+                    }
+                    inputProps={{ sx: { textAlign: 'right' } }}
+                    InputProps={{
+                      startAdornment: key,
+                      endAdornment: getUnitStr(key),
                     }}
-                  >
-                    <DeleteForeverIcon />
-                  </Button>
-                </ButtonGroup>
-              </Box>
-            ))}
+                  />
+                  <ButtonGroup size="small">
+                    <Button
+                      onClick={() =>
+                        setConstraints({
+                          ...constraints,
+                          [key]: { value, isMax: !isMax },
+                        })
+                      }
+                    >
+                      {isMax ? 'MAX' : 'MIN'}
+                    </Button>
+                    <Button
+                      onClick={() => {
+                        const { [key]: _, ...rest } = constraints
+                        setConstraints({ ...rest })
+                      }}
+                    >
+                      <DeleteForeverIcon />
+                    </Button>
+                  </ButtonGroup>
+                </Box>
+              ))}
             <DropdownButton disabled={disabled} title="Add new Constraint">
               {constraintKeys
                 .filter((k) => !Object.keys(constraints).includes(k))
@@ -106,7 +122,7 @@ export function StatFilterCard({
                       })
                     }
                   >
-                    {key}
+                    {statKeyTextMap[key] ?? key}
                   </MenuItem>
                 ))}
             </DropdownButton>

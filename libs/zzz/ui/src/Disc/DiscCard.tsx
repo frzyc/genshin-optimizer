@@ -1,15 +1,15 @@
-import { BootstrapTooltip, CardThemed } from '@genshin-optimizer/common/ui'
+import {
+  BootstrapTooltip,
+  CardThemed,
+  ColorText,
+  SqBadge,
+} from '@genshin-optimizer/common/ui'
 import {
   getUnitStr,
   statKeyToFixed,
   toPercent,
 } from '@genshin-optimizer/common/util'
-import {
-  allElementalDamageKeys,
-  type LocationKey,
-} from '@genshin-optimizer/sr/consts'
-import { StatIcon } from '@genshin-optimizer/sr/svgicons'
-import type { DiscRarityKey } from '@genshin-optimizer/zzz/consts'
+import type { DiscRarityKey, LocationKey } from '@genshin-optimizer/zzz/consts'
 import {
   getDiscMainStatVal,
   getDiscSubStatBaseVal,
@@ -27,17 +27,30 @@ import {
   Button,
   CardContent,
   Chip,
+  Divider,
   IconButton,
   Skeleton,
   SvgIcon,
   Typography,
 } from '@mui/material'
-import { Suspense } from 'react'
+import React, { Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
+import { StatDisplay } from '../Character'
+import { LocationAutocomplete } from '../Character/LocationAutocomplete'
+import { LocationName } from '../Character/LocationName'
 import { DiscSetName } from './DiscTrans'
 import { discLevelVariant } from './util'
 
-type DiscCardProps = {
+export function DiscCard({
+  disc,
+  onClick,
+  onEdit,
+  onDelete,
+  onLockToggle,
+  setLocation,
+  extraButtons,
+  excluded = false,
+}: {
   disc: IDisc
   onClick?: () => void
   onEdit?: () => void
@@ -46,24 +59,21 @@ type DiscCardProps = {
   setLocation?: (lk: LocationKey) => void
   extraButtons?: JSX.Element
   excluded?: boolean
-}
-
-export function DiscCard({
-  disc,
-  onClick,
-  onEdit,
-  onDelete,
-  onLockToggle,
-  // setLocation,
-  extraButtons,
-  excluded = false,
-}: DiscCardProps) {
+}) {
   const { t } = useTranslation('disc')
-  const { t: tk } = useTranslation(['discs_gen', 'statKey_gen'])
 
-  const { lock, slotKey, setKey, rarity, level, mainStatKey, substats } = disc
+  const {
+    lock,
+    slotKey,
+    setKey,
+    rarity,
+    level,
+    mainStatKey,
+    substats,
+    location,
+  } = disc
 
-  const ele = allElementalDamageKeys.find((e) => mainStatKey.startsWith(e))
+  // const ele = allElementalDamageKeys.find((e) => mainStatKey.startsWith(e))
   // TODO: requires individual disc set piece names/desc added to sheets
   // const slotName = <DiscSetSlotName setKey={setKey} slotKey={slotKey} />
   // const slotDesc = <DiscSetSlotDesc setKey={setKey} slotKey={slotKey} />
@@ -89,21 +99,18 @@ export function DiscCard({
     >
       <CardThemed
         bgt="light"
-        sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+        sx={{
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          flexGrow: 1,
+        }}
       >
         <Box
+          // TODO: rarity color
           className={`grad-${rarity}star`}
           sx={{ position: 'relative', width: '100%' }}
         >
-          {!onClick && !!onLockToggle && (
-            <IconButton
-              color="primary"
-              onClick={onLockToggle}
-              sx={{ position: 'absolute', right: 0, bottom: 0, zIndex: 2 }}
-            >
-              {lock ? <Lock /> : <LockOpen />}
-            </IconButton>
-          )}
           {excluded && (
             <SvgIcon
               color="primary"
@@ -117,13 +124,8 @@ export function DiscCard({
             {/* header */}
             <Box
               component="div"
-              sx={{ display: 'flex', alignItems: 'center', gap: 0.4, mb: 1 }}
+              sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}
             >
-              <Chip
-                size="small"
-                label={<strong>{`+${level}`}</strong>}
-                color={discLevelVariant(level)}
-              />
               {/* TODO: if slotName used again, this needs to be added; otherwise
                   could just remove this since setKey check below already has fallback
                 {!setKey && <Skeleton variant="text" width={100} />} */}
@@ -139,40 +141,52 @@ export function DiscCard({
                 <strong>
                   {(setKey && <DiscSetName setKey={setKey} />) || 'Disc Set'}
                 </strong>
-              </Typography>
+              </Typography>{' '}
+              <SqBadge color="secondary">{slotKey}</SqBadge>
               {/* TODO: requires sheets
                 {!slotDescTooltip ? <Skeleton width={10} /> : slotDescTooltip} */}
             </Box>
-            <Typography
-              color="text.secondary"
-              variant="body2"
-              sx={{ display: 'flex', gap: 0.5, alignItems: 'center' }}
-            >
-              {/* <SlotIcon iconProps={{ fontSize: 'inherit' }} slotKey={slotKey} /> */}
-              Slot:{slotKey}
-              {/* {tk(`discs_gen:${slotKey}`)} */}
-            </Typography>
-            <Typography
-              variant="h6"
-              sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
-            >
-              <StatIcon
+            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+              <SqBadge>{rarity}</SqBadge>
+              <Chip
+                size="small"
+                label={<strong>{`+${level}`}</strong>}
+                color={discLevelVariant(level)}
+              />
+              <Box sx={{ flexGrow: 1 }}></Box>
+              {!onClick && !!onLockToggle && (
+                <IconButton size="small" color="primary" onClick={onLockToggle}>
+                  {lock ? <Lock /> : <LockOpen />}
+                </IconButton>
+              )}
+            </Box>
+            <Box display="flex" gap={1} alignItems="center">
+              <Typography
+                variant="h6"
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 1,
+                  flexGrow: 1,
+                }}
+              >
+                {/* <StatIcon
                 statKey={mainStatKey}
                 iconProps={{ sx: { color: `${ele}.main` } }}
-              />
-              <span>{tk(`statKey_gen:${mainStatKey}`)}</span>
-            </Typography>
-            <Typography variant="h5">
-              <strong>
-                {toPercent(
-                  getDiscMainStatVal(rarity, mainStatKey, level),
-                  mainStatKey
-                ).toFixed(statKeyToFixed(mainStatKey))}
-                {getUnitStr(mainStatKey)}
-              </strong>
-            </Typography>
-            {/* <StarsDisplay stars={rarity} colored /> */}
-            {rarity}
+              /> */}
+                <StatDisplay statKey={mainStatKey} />
+              </Typography>
+              <Typography variant="h5">
+                <strong>
+                  {toPercent(
+                    getDiscMainStatVal(rarity, mainStatKey, level),
+                    mainStatKey
+                  ).toFixed(statKeyToFixed(mainStatKey))}
+                  {getUnitStr(mainStatKey)}
+                </strong>
+              </Typography>
+            </Box>
+
             {/* {process.env.NODE_ENV === "development" && <Typography color="common.black">{id || `""`} </Typography>} */}
           </Box>
           {/* <Box sx={{ height: '100%', position: 'absolute', right: 0, top: 0 }}>
@@ -204,11 +218,10 @@ export function DiscCard({
           {substats.map(
             (substat) =>
               substat.key && (
-                <SubstatDisplay
-                  key={substat.key}
-                  substat={substat}
-                  rarity={rarity}
-                />
+                <React.Fragment key={substat.key}>
+                  <Divider />
+                  <SubstatDisplay substat={substat} rarity={rarity} />
+                </React.Fragment>
               )
           )}
           <Box flexGrow={1} />
@@ -232,13 +245,13 @@ export function DiscCard({
             alignItems: 'center',
           }}
         >
-          {/* <Box sx={{ flexGrow: 1 }}>
+          <Box sx={{ flexGrow: 1 }}>
             {setLocation ? (
               <LocationAutocomplete locKey={location} setLocKey={setLocation} />
             ) : (
               <LocationName location={location} />
             )}
-          </Box> */}
+          </Box>
           <Box
             display="flex"
             gap={1}
@@ -296,11 +309,19 @@ function SubstatDisplay({
     key
   ).toFixed(statKeyToFixed(key))
   return (
-    <Typography sx={{ display: 'flex', alignItems: 'center' }}>
-      {/* <StatDisplay statKey={key} /> */}
-      {key}
+    <Typography
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+      }}
+    >
       <span>
-        +{displayValue}
+        <StatDisplay statKey={key} />{' '}
+        {upgrades > 1 && <ColorText color="warning">+{upgrades}</ColorText>}
+      </span>
+      <span>
+        {displayValue}
         {getUnitStr(key)}
       </span>
     </Typography>

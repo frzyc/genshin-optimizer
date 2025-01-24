@@ -10,7 +10,7 @@ import type { IZenlessObjectDescription, IZZZDatabase } from '../Interfaces'
 
 export const currentDBVersion = 1
 
-export function migrateSr(
+export function migrateZOD(
   zo: IZenlessObjectDescription & IZZZDatabase
 ): IZenlessObjectDescription & IZZZDatabase {
   const version = zo.dbVersion ?? 0

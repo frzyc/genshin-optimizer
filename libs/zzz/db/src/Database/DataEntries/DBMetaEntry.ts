@@ -39,7 +39,7 @@ export class DBMetaEntry extends DataEntry<
     zoDb: IZZZDatabase & IZenlessObjectDescription,
     _result: ImportResult
   ): void {
-    const data = zoDb[this.prefixedKey]
+    const data = zoDb[this.dataKey]
     if (data) {
       // Don't copy over lastEdit data
       const { lastEdit, ...rest } = data as IDBMeta

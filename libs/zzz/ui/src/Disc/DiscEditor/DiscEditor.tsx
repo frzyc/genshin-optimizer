@@ -62,6 +62,7 @@ import {
   useState,
 } from 'react'
 import { useTranslation } from 'react-i18next'
+import { LocationAutocomplete } from '../../Character/LocationAutocomplete'
 import { shouldShowDevComponents } from '../../util/isDev'
 import { DiscCard } from '../DiscCard'
 import { DiscMainStatDropdown } from '../DiscMainStatDropdown'
@@ -285,7 +286,7 @@ export function DiscEditor({
                 {/* set */}
                 <Box sx={{ display: 'flex', gap: 1 }}>
                   <DiscSetAutocomplete
-                    disabled={disableSet}
+                    disabled={disableSet || !!disc.id}
                     size="small"
                     discSetKey={disc?.setKey ?? ''}
                     setDiscSetKey={(key) =>
@@ -297,7 +298,7 @@ export function DiscEditor({
                   <DiscRarityDropdown
                     rarity={disc ? rarity : undefined}
                     onRarityChange={(rarity) => setDisc({ rarity })}
-                    disabled={!disc.mainStatKey}
+                    disabled={!disc.mainStatKey || !!disc.id}
                   />
                 </Box>
 
@@ -355,7 +356,7 @@ export function DiscEditor({
                     // }
                     title={disc?.slotKey ? tk(disc.slotKey) : t('slot')}
                     value={slotKey}
-                    disabled={disableEditSlot}
+                    disabled={disableEditSlot || !!disc.id}
                     color={disc ? 'success' : 'primary'}
                   >
                     {allDiscSlotKeys.map((sk) => (
@@ -410,10 +411,10 @@ export function DiscEditor({
                     {disc?.lock ? <LockIcon /> : <LockOpenIcon />}
                   </Button>
                 </Box>
-                {/* <LocationAutocomplete
-                  locKey={cDisc?.location ?? ''}
+                <LocationAutocomplete
+                  locKey={disc?.location ?? ''}
                   setLocKey={(charKey) => setDisc({ location: charKey })}
-                /> */}
+                />
                 {/* Image OCR */}
                 {allowUpload && (
                   <CardThemed bgt="light">

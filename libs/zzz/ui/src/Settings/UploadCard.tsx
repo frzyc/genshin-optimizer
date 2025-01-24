@@ -56,9 +56,9 @@ export function UploadCard({
         return undefined
       }
       // Figure out the file format
-      if (parsed.format === 'SROD' || parsed.format === 'SRO') {
-        // Parse as SROD format
-        const copyStorage = new SandboxStorage(undefined, 'sro')
+      if (parsed.format === 'ZOD') {
+        // Parse as ZOD format
+        const copyStorage = new SandboxStorage(undefined, 'zzz')
         copyStorage.copyFrom(database.storage)
         const importedDatabase = new ZzzDatabase(
           (index + 1) as 1 | 2 | 3 | 4,
@@ -218,7 +218,7 @@ export function UploadCard({
           t(errorMsg)
         )}
       </CardContent>
-      <SROUploadAction
+      <ZOUploadAction
         index={index}
         importedDatabase={importedDatabase}
         reset={reset}
@@ -353,7 +353,7 @@ function MergeResult({
   )
 }
 
-function SROUploadAction({
+function ZOUploadAction({
   index,
   importedDatabase,
   reset,

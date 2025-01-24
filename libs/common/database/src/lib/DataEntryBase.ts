@@ -3,8 +3,10 @@ import type { Database } from './Database'
 import type { TriggerString } from './common'
 
 export class DataEntryBase<
+  // Key used to reference this data entry
   Key extends string,
-  GOkey extends string,
+  // Key used as key for exim
+  Datakey extends string,
   CacheValue,
   StorageValue,
   DatabaseType extends Database = Database
@@ -13,17 +15,17 @@ export class DataEntryBase<
   init: (database: DatabaseType) => StorageValue
   data: CacheValue
   key: Key
-  goKey: GOkey
+  dataKey: Datakey
   constructor(
     database: DatabaseType,
     key: Key,
     init: (database: DatabaseType) => StorageValue,
-    goKey: GOkey
+    dataKey: Datakey
   ) {
     this.database = database
     this.key = key
     this.init = init
-    this.goKey = goKey
+    this.dataKey = dataKey
     const storageVal = this.getStorage()
     if (storageVal) this.set(storageVal)
     else this.set(init(this.database))
@@ -31,6 +33,13 @@ export class DataEntryBase<
   }
 
   listeners: Callback<CacheValue>[] = []
+
+  /**
+   * Going from cache key to storage key
+   */
+  toStorageKey(): string {
+    return this.key
+  }
   get() {
     return this.data
   }
@@ -45,7 +54,7 @@ export class DataEntryBase<
     return storageObj as unknown as StorageValue
   }
   getStorage(): StorageValue {
-    return this.database.storage.get(this.key)
+    return this.database.storage.get(this.toStorageKey())
   }
   set(
     valueOrFunc:
@@ -76,7 +85,7 @@ export class DataEntryBase<
   setCached(cached: CacheValue) {
     deepFreeze(cached)
     this.data = cached
-    this.database.storage.set(this.key, this.deCache(cached))
+    this.database.storage.set(this.toStorageKey(), this.deCache(cached))
     this.trigger('update', cached)
   }
   clear() {
@@ -87,10 +96,10 @@ export class DataEntryBase<
     this.listeners = []
   }
   clearStorage() {
-    this.database.storage.remove(this.key)
+    this.database.storage.remove(this.toStorageKey())
   }
   saveStorage() {
-    this.database.storage.set(this.key, this.deCache(this.data))
+    this.database.storage.set(this.toStorageKey(), this.deCache(this.data))
   }
 
   trigger(reason: TriggerString, object?: unknown) {

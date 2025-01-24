@@ -1,5 +1,6 @@
 import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
-import { getSum } from './calc'
+import type { FormulaKey } from './calc'
+import { calcFormula, getSum } from './calc'
 import type { BaseStats, BuildResult, Constraints, DiscStats } from './common'
 import { MAX_BUILDS } from './common'
 
@@ -7,12 +8,14 @@ const MAX_BUILDS_TO_SEND = 200_000
 let discStatsBySlot: Record<DiscSlotKey, DiscStats[]>
 let constraints: Constraints
 let baseStats: BaseStats
+let formulaKey: FormulaKey
 
 export interface ChildCommandInit {
   command: 'init'
   baseStats: BaseStats
   discStatsBySlot: Record<DiscSlotKey, DiscStats[]>
   constraints: Constraints
+  formulaKey: FormulaKey
 }
 export interface ChildCommandStart {
   command: 'start'
@@ -72,10 +75,12 @@ async function init({
   baseStats: bs,
   discStatsBySlot: discs,
   constraints: initCons,
+  formulaKey: fk,
 }: ChildCommandInit) {
   baseStats = bs
   discStatsBySlot = discs
   constraints = initCons
+  formulaKey = fk
 
   // Let parent know we are ready to optimize
   postMessage({ resultType: 'initialized' })
@@ -137,7 +142,7 @@ async function start() {
       )
     ) {
       builds.push({
-        value: Object.values(sum).reduce((a, b) => a + b, 0), // TODO: actually calculate something
+        value: calcFormula(sum, formulaKey),
         discIds: {
           1: d1.id,
           2: d2.id,

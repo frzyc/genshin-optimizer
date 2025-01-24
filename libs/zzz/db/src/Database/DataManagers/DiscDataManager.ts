@@ -5,6 +5,7 @@ import type {
   DiscSubStatKey,
 } from '@genshin-optimizer/zzz/consts'
 import {
+  allCharacterKeys,
   allDiscRarityKeys,
   allDiscSetKeys,
   allDiscSlotKeys,
@@ -37,6 +38,17 @@ export class DiscDataManager extends DataManager<
   override toCache(storageObj: IDisc, id: string): ICachedDisc | undefined {
     // Generate cache fields
     const newDisc = { ...storageObj, id } as ICachedDisc
+
+    // rudimentary check for equipment relationship
+    const oldDisc = super.get(id)
+    if (newDisc.location && newDisc.location !== oldDisc?.location) {
+      // remove any other disc from the same character in the same slot
+      this.values.forEach((d) => {
+        if (d.location === newDisc.location && d.slotKey === newDisc.slotKey) {
+          this.set(d.id, { location: '' })
+        }
+      })
+    }
 
     // Check relations and update equipment
     /* TODO:
@@ -328,9 +340,7 @@ export function validateDisc(
   if (!(plausibleMainStats as DiscMainStatKey[]).includes(mainStatKey))
     if (plausibleMainStats.length === 1) mainStatKey = plausibleMainStats[0]
     else return undefined // ambiguous mainstat
-  // TODO:
-  // if (!location || !allCharacterKeys.includes(location)) location = ''
-  location = ''
+  if (location && !allCharacterKeys.includes(location)) location = ''
   return {
     setKey,
     rarity,

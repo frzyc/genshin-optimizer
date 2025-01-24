@@ -40,7 +40,6 @@ export const allElementalDmgMainStatKeys = [
   'electric_dmg_',
   'fire_dmg_',
   'ice_dmg_',
-  'frost_dmg_',
   'physical_dmg_',
   'ether_dmg_',
 ] as const
@@ -135,7 +134,6 @@ const mainData = {
   electric_dmg_: m123,
   fire_dmg_: m123,
   ice_dmg_: m123,
-  frost_dmg_: m123,
   physical_dmg_: m123,
   ether_dmg_: m123,
   anomMas_: m123,
