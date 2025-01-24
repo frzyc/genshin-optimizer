@@ -496,7 +496,7 @@ function ArtifactCard({ artifactData }: { artifactData: ArtifactData }) {
   const { setNum = {}, mains = {} } = artifactData
   const { t } = useTranslation('statKey_gen')
   const processedSetNum = Object.entries(setNum).filter(
-    ([, num]) => num === 2 || num === 4
+    ([, num]) => num === 2 || num === 4 || num === 5
   )
   return (
     <CardThemed
