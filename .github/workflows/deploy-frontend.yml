@@ -30,7 +30,7 @@ jobs:
         run: |
           echo "deployment_name=$(cat frontend_build/deployment_name)" >> $GITHUB_OUTPUT
           echo "frontend_name=$(cat frontend_build/frontend_name)" >> $GITHUB_OUTPUT
-          echo "nested_name=$(cat frontend_build/nested_name)" >> $GITHUB_OUTPUT
+          echo "nested_deployments=$(cat frontend_build/nested_deployments)" >> $GITHUB_OUTPUT
           echo "repo_name=$(cat frontend_build/repo_name)" >> $GITHUB_OUTPUT
           echo "repo_deploy_secret_name=$(cat frontend_build/repo_deploy_secret_name)" >> $GITHUB_OUTPUT
           echo "ref=$(cat frontend_build/ref)" >> $GITHUB_OUTPUT
@@ -41,17 +41,33 @@ jobs:
           ssh-key: ${{ secrets[steps.vars.outputs.repo_deploy_secret_name] }}
           ref: gh-pages
           path: gh-pages
-      - name: Move to external gh-pages
+      - name: Move to external gh-pages (nested)
+        if: ${{ steps.vars.outputs.nested_deployments == 'true' }}
         run: |
-          mkdir --parents "gh-pages/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.nested_name }}"
-          rm -rfv "gh-pages/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.nested_name }}" || true
-          mv "frontend_build/dist/apps/${{ steps.vars.outputs.frontend_name }}" "gh-pages/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.nested_name }}"
-      - name: Make commit to deploy
+          mkdir --parents "gh-pages/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}"
+          rm -rfv "gh-pages/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}" || true
+          mv "frontend_build/dist/apps/${{ steps.vars.outputs.frontend_name }}" "gh-pages/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}"
+      - name: Make commit to deploy (nested)
+        if: ${{ steps.vars.outputs.nested_deployments == 'true' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config pull.rebase false
-          git add ./${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.nested_name }}
+          git add ./${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}
+          git commit --allow-empty -m "build ${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }} ${{ steps.vars.outputs.ref }}"
+        working-directory: gh-pages
+      - name: Move to external gh-pages (un-nested)
+        if: ${{ steps.vars.outputs.nested_deployments != 'true' }}
+        run: |
+          rm -rv "gh-pages/*" || true
+          mv "frontend_build/dist/apps/${{ steps.vars.outputs.frontend_name }}/*" "gh-pages"
+      - name: Make commit to deploy (un-nested)
+        if: ${{ steps.vars.outputs.nested_deployments != 'true' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config pull.rebase false
+          git add .
           git commit --allow-empty -m "build ${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }} ${{ steps.vars.outputs.ref }}"
         working-directory: gh-pages
       - name: Push commit
@@ -68,7 +84,7 @@ jobs:
         # First line splits the full repo name (frzyc/genshin-optimizer) into $account (frzyc) and $repo (genshin-optimizer)
         run: |
           IFS=/ read -r account repo <<< ${{ vars.pr_repo }}
-          echo "url=Deployed ${{ steps.vars.outputs.ref }} to https://$account.github.io/$repo/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.nested_name }} (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT
+          echo "url=Deployed ${{ steps.vars.outputs.ref }} to https://$account.github.io/$repo/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }} (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT
       - name: Output date
         id: output-date2
         run: echo "date=$(date -u)" >> $GITHUB_OUTPUT
