@@ -17,12 +17,12 @@ export const otherStatKeys = [
 ] as const
 
 export const unCondKeys = [
-  'uncond_hp',
-  'uncond_def',
-  'uncond_atk',
-  'uncond_hp_',
-  'uncond_def_',
-  'uncond_atk_',
+  'cond_hp',
+  'cond_def',
+  'cond_atk',
+  'cond_hp_',
+  'cond_def_',
+  'cond_atk_',
 ] as const
 
 export const allStatKeys = Array.from(
@@ -89,12 +89,12 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   final_hp: 'Final HP',
   final_def: 'Final DEF',
   final_atk: 'Final ATK',
-  uncond_hp: 'Unconditional HP',
-  uncond_def: 'Unconditional DEF',
-  uncond_atk: 'Unconditional ATK',
-  uncond_hp_: 'Unconditional HP%',
-  uncond_def_: 'Unconditional DEF%',
-  uncond_atk_: 'Unconditional ATK%',
+  cond_hp: 'Conditional HP',
+  cond_def: 'Conditional DEF',
+  cond_atk: 'Conditional ATK',
+  cond_hp_: 'Conditional HP%',
+  cond_def_: 'Conditional DEF%',
+  cond_atk_: 'Conditional ATK%',
 }
 
 const elementalData: Record<ElementalKey, string> = {

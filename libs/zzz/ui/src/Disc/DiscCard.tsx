@@ -61,7 +61,6 @@ export function DiscCard({
   excluded?: boolean
 }) {
   const { t } = useTranslation('disc')
-  const { t: tk } = useTranslation(['discs_gen', 'statKey_gen'])
 
   const {
     lock,

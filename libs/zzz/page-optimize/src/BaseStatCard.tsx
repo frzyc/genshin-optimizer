@@ -79,7 +79,7 @@ export default function BaseStatCard({
         <Box sx={{ display: 'flex', gap: 1, pb: 2, flexWrap: 'wrap' }}>
           {enemyKeys.map((key) => input(key))}
         </Box>
-        <Typography>Combat Buffs(Unconditonal)</Typography>
+        <Typography>Combat Buffs(Conditonal)</Typography>
         <Box sx={{ display: 'flex', gap: 1, pb: 2, flexWrap: 'wrap' }}>
           {unCondKeys.map((key) => input(key))}
         </Box>
