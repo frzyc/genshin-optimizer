@@ -6,11 +6,7 @@ import { DBMetaEntry, DisplayRelicEntry } from './DataEntries/'
 import { DiscDataManager } from './DataManagers/'
 import type { ImportResult } from './exim'
 import { newImportResult } from './exim'
-import {
-  currentDBVersion,
-  migrateSr as migrateSROD,
-  migrateStorage,
-} from './migrate'
+import { currentDBVersion, migrateStorage, migrateZOD } from './migrate'
 export class ZzzDatabase extends Database {
   discs: DiscDataManager
   dbMeta: DBMetaEntry
@@ -68,7 +64,7 @@ export class ZzzDatabase extends Database {
     keepNotInImport: boolean,
     ignoreDups: boolean
   ): ImportResult {
-    zod = migrateSROD(zod)
+    zod = migrateZOD(zod)
     const source = zod.source ?? 'Unknown'
     // Some Scanners might carry their own id field, which would conflict with GO dup resolution.
     if (source !== zzzSource) {
