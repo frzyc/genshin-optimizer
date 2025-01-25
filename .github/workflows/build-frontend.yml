@@ -12,8 +12,8 @@ on:
         description: 'Name for the deployment. This will determine the URL. If you choose a name that is already deployed, it will overwrite that deployment.'
         type: string
         default: 'master'
-      repo_name:
-        description: 'Name of the repo to deploy to.'
+      repo_var_name:
+        description: 'Name of the variable on the repo that contains the repo to deploy to.'
         type: string
         required: true
       repo_deploy_secret_name:
@@ -78,7 +78,7 @@ jobs:
           echo ${{inputs.frontend_name}} > frontend_name
           echo ${{inputs.deployment_name}} > deployment_name
           echo ${{inputs.nested_deployments}} > nested_deployments
-          echo ${{inputs.repo_name}} > repo_name
+          echo ${{inputs.repo_var_name}} > repo_var_name
           echo ${{inputs.repo_deploy_secret_name}} > repo_deploy_secret_name
           echo $(git rev-parse HEAD) > ref
       - name: Archive build
@@ -90,6 +90,6 @@ jobs:
             frontend_name
             deployment_name
             nested_deployments
-            repo_name
+            repo_var_name
             repo_deploy_secret_name
             ref

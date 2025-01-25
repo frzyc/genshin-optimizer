@@ -1,0 +1,158 @@
+{
+  "name": "Lan Yan",
+  "title": "Yeşimlerle Bezeli Bahar",
+  "description": "Chenyu Vadisi'nden bir rattan dokumacısı. Akıllı ve iyi huyludur, üstelik bir dağ pınarı kadar enerjiktir.",
+  "constellationName": "Mavi Kırlangıç",
+  "auto": {
+    "name": "Suda Süzülen Kara Sülün",
+    "fields": {
+      "normal": {
+        "0": "<strong>Normal Saldırı</strong>",
+        "1": "Ay Tüyü Halkalarını kuşanarak en fazla 4 saldırı yapar ve <anemo>Rüzgar Hasarı</anemo> verir."
+      },
+      "charged": {
+        "0": "<strong>Yüklü Saldırı</strong>",
+        "1": "Belirli miktarda Dayanıklılık harcayarak bir Ay Tüyü Halkası fırlatır ve <anemo>Rüzgar Hasarı</anemo> verir."
+      },
+      "plunging": {
+        "0": "<strong>Havadan Saldırı</strong>",
+        "1": "Lan Yan, Rüzgarın gücünü toplayarak havadayken yere doğru dalışa geçer ve yoluna çıkan tüm düşmanlara hasar verir. Yere vurduğunda <anemo>Rüzgar Alan Hasarı</anemo> verir."
+      }
+    },
+    "skillParams": {
+      "0": "1 Vuruş Hasarı",
+      "1": "2 Vuruş Hasarı",
+      "2": "3 Vuruş Hasarı",
+      "3": "4 Vuruş Hasarı",
+      "4": "Yüklü Saldırı Hasarı",
+      "5": "Yüklü Saldırı Dayanıklılık Maliyeti",
+      "6": "Havadan Saldırı Hasarı",
+      "7": "Havadan Saldırı Hasarı (Alçaktan/Yüksekten)",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Kırlangıç Ruhu Dansı",
+    "description": {
+      "0": "Lan Yan, nesiller boyu aktarılmış gizli bir teknik olan Kırlangıç Ruhu Kalkanını çağırarak ileri atılır ve hedefine temas ettiğinde geriye doğru havaya sıçrar.",
+      "1": "Kırlangıç Ruhu Kalkanının Hasar emilimi, Lan Yan'ın Saldırısına göre hesaplanır ve <anemo>Rüzgar Hasarını</anemo> %250 verimlilikle emer.",
+      "2": "Lan Yan, Kırlangıç Ruhu Dansı Element Becerisinin etkilerinden dolayı havadayken yeniden Element Becerisine veya Normal Saldırısına bastığında bir düşmana Ay Tüyü Halkalarını fırlatır. Bu Halkalar hedefe isabet ettiğinde yakındaki düşmanlar arasında dönerek <anemo>Rüzgar Hasarı</anemo> verir.",
+      "3": "Basılı Tutulduğunda bu becerinin kullanımı değişir.",
+      "4": "<br/>",
+      "5": "<strong>Basılı Tut</strong>",
+      "6": "Nişan Alma Moduna girerek atılacağı yönü belirleyebilir.",
+      "7": "<br/>",
+      "8": "<i>\"Bulutlar keser ay ışığını, bakışlarını süsleyen gümüş gölgeler misali.\"</i>"
+    },
+    "skillParams": {
+      "0": "Ay Tüyü Halkası Hasarı",
+      "1": "Kalkanın Hasar Emilimi",
+      "2": "Kalkan Süresi",
+      "3": "BS",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Görkemli Ay Doğumu",
+    "description": {
+      "0": "Lan Yan bir Ay Tüyü Kırlangıç Dizilimi oluşturur. Dizilim, yakındaki düşmanları ve nesneleri kendine çekerek birden fazla defa <anemo>Rüzgar Alan Hasarı</anemo> verir.",
+      "1": "<br/>",
+      "2": "<i>Teknik açıdan bakacak olursak Lan Yan tek başına bir \"dizilim\" sayılmaz. Fakat işin içine Rattan Figürleri girerse o zaman şartları karşılayabilir... Muhtemelen.</i>"
+    },
+    "skillParams": {
+      "0": "Beceri Hasarı",
+      "1": "BS",
+      "2": "Enerji Maliyeti",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Mühürleyen Dört Fal Tılsımı",
+    "description": {
+      "0": "<strong>Kırlangıç Ruhu Dansı</strong> Element Becerisi ile yapılan ileri atılma bir hedefe isabet ettiğinde eğer <hydro>Su</hydro>/<pyro>Ateş</pyro>/<cryo>Buz</cryo>/<electro>Elektrik</electro> ile etkileşime girerse Kırlangıç Ruhu Kalkanı, Element Emilimi geçirir ve yeni kalkan, ilgili Element Türünden Hasarı %250 verimlilikle emer.",
+      "1": "Ayrıca eğer bu <strong>Kırlangıç Ruhu Dansı</strong> kullanımı, Kırlangıç Ruhu Kalkanında Element Emilimine neden olursa Lan Yan'ın düşmanlarına fırlattığı Ay Tüyü Halkaları, asıl Hasarının %50'si kadar fazladan Element Hasarı verir. Bu Hasar, Element Becerisi Hasarı sayılır."
+    }
+  },
+  "passive2": {
+    "name": "Kötülük Bastıran Göktüyü Tılsımı",
+    "description": {
+      "0": "<strong>Kırlangıç Ruhu Dansı</strong> Element Becerisi ve <strong>Görkemli Ay Doğumu</strong> Element Patlaması ile verilen Hasar, sırayla Lan Yan'ın Element Ustalığının %309'u ve %774'ü kadar artar."
+    }
+  },
+  "passive3": {
+    "name": "İpeksi Kokulu Düşünceler ve Niyetler",
+    "description": {
+      "0": "Lan Yan gruptayken karakterlerin Kristal Kelebeklere ve diğer bazı hayvanlara yaklaştığında onları ürkütmez.",
+      "1": "Bu becerinin hangi yaratıklarda işe yaradığını görmek için Arşivdeki \"Canlılar/Vahşi Hayvanlar\" kısmının \"Diğer\" alt kategorisini kontrol et."
+    }
+  },
+  "constellation1": {
+    "name": "\"Bulutlar Arasında Yürürcesine\"",
+    "description": {
+      "0": "\"Mühürleyen Dört Fal Tılsımı\" Pasif Yeteneği ile Element Emilimi tetiklendiğinde Lan Yan'ın bir sonraki <strong>Kırlangıç Ruhu Dansı</strong> Element Becerisi kullanımında düşmana fırlatılan bir Ay Tüyü Halkası daha oluşur.",
+      "1": "\"Mühürleyen Dört Fal Tılsımı\" Pasif Yeteneğinin açılmış olması gerekir."
+    }
+  },
+  "constellation2": {
+    "name": "\"Gökkuşağı Yeşimi Gibi Dalgalanan Dans Elbiseleri\"",
+    "description": {
+      "0": "<strong>Kırlangıç Ruhu Kalkanı</strong> etkinken aktif grup üyesinin Normal Saldırıları Hasar verdiğinde Kalkanın Hasar Emiliminin %40'ı yenilenir. Kalkan, en fazla başlangıçtaki maksimum emilimine ulaşabilir. Bu etki 2 saniyede bir tetiklenebilir."
+    }
+  },
+  "constellation3": {
+    "name": "\"Bulutların ve Sisin İçinden Süzülen Beyaz Kanatlar\"",
+    "description": {
+      "0": "<strong>Kırlangıç Ruhu Dansı</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation4": {
+    "name": "\"Ejderşahininin Kan İncileriyle Bezeli\"",
+    "description": {
+      "0": "Lan Yan, <strong>Görkemli Ay Doğumu</strong> Element Patlamasını kullandıktan sonra 12 saniyeliğine yakındaki tüm grup üyelerinin Element Ustalığı 60 artar."
+    }
+  },
+  "constellation5": {
+    "name": "\"Kalbim Seni Tanımaktan Ziyadesiyle Mesut\"",
+    "description": {
+      "0": "<strong>Görkemli Ay Doğumu</strong> Seviyesini 3 artırır.",
+      "1": "Maksimum yükseltme seviyesi 15'tir."
+    }
+  },
+  "constellation6": {
+    "name": "\"Zarif Kanatlarla Uçalım, Gümüş Süsler Duyulsun\"",
+    "description": {
+      "0": "<strong>Kırlangıç Ruhu Dansı</strong> 1 defa daha kullanılabilir."
+    }
+  }
+}

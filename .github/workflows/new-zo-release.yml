@@ -9,7 +9,7 @@ jobs:
     with:
       frontend_name: 'zzz-frontend'
       deployment_name: ''
-      repo_name: ${{ vars.ZO_REPO}}
+      repo_var_name: 'ZO_REPO'
       repo_deploy_secret_name: 'ZO_REPO_SSH_KEY'
       show_dev_components: false
       nested_deployments: false
