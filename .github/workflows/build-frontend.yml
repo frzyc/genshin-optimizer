@@ -75,15 +75,12 @@ jobs:
         run: yarn run nx run ${{inputs.frontend_name}}:build:production
       - name: echos
         run: |
-          touch frontend_name
+          echo ${{inputs.frontend_name}} > frontend_name
           echo ${{inputs.deployment_name}} > deployment_name
+          echo ${{inputs.nested_deployments}} > nested_deployments
           echo ${{inputs.repo_name}} > repo_name
           echo ${{inputs.repo_deploy_secret_name}} > repo_deploy_secret_name
           echo $(git rev-parse HEAD) > ref
-      - name: echos (frontend_name)
-        if: inputs.nested_deployments == 'true'
-        run: |
-          echo ${{inputs.frontend_name}} > frontend_name
       - name: Archive build
         uses: actions/upload-artifact@v4
         with:
@@ -92,6 +89,7 @@ jobs:
             dist/apps/${{inputs.frontend_name}}
             frontend_name
             deployment_name
+            nested_deployments
             repo_name
             repo_deploy_secret_name
             ref
