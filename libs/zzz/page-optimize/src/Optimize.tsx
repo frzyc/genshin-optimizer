@@ -291,6 +291,21 @@ function Set4Selector({
         }
         sx={{ flexGrow: 1 }}
       >
+        <MenuItem
+          onClick={() =>
+            setConstraints(
+              Object.fromEntries(
+                Object.entries(constraints).filter(
+                  ([k, { value }]) =>
+                    !(allDiscSetKeys.includes(k as DiscSetKey) && value === 4)
+                )
+              )
+            )
+          }
+        >
+          No 4-Set
+        </MenuItem>
+
         {allDiscSetKeys.map((d) => (
           <MenuItem
             key={d}
@@ -322,6 +337,20 @@ function Set4Selector({
         }
         sx={{ flexGrow: 1 }}
       >
+        <MenuItem
+          onClick={() =>
+            setConstraints(
+              Object.fromEntries(
+                Object.entries(constraints).filter(
+                  ([k, { value }]) =>
+                    !(allDiscSetKeys.includes(k as DiscSetKey) && value === 2)
+                )
+              )
+            )
+          }
+        >
+          No 2-Set
+        </MenuItem>
         {allDiscSetKeys.map((d) => (
           <MenuItem
             key={d}
