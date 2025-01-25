@@ -1,5 +1,6 @@
 'use client'
 // use client due to hydration difference between client rendering and server in translation
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import {
   BootstrapTooltip,
@@ -8,7 +9,9 @@ import {
   ConditionalWrapper,
   InfoTooltip,
   InfoTooltipInline,
+  ModalWrapper,
   NextImage,
+  SqBadge,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
 import { clamp, clamp01, getUnitStr } from '@genshin-optimizer/common/util'
@@ -23,7 +26,7 @@ import {
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact, ICachedSubstat } from '@genshin-optimizer/gi/db'
-import { useArtifact } from '@genshin-optimizer/gi/db-ui'
+import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   artDisplayValue,
@@ -40,7 +43,9 @@ import {
   Button,
   CardActionArea,
   CardContent,
+  CardHeader,
   Chip,
+  Divider,
   IconButton,
   Skeleton,
   SvgIcon,
@@ -49,7 +54,7 @@ import {
 import type { ReactNode } from 'react'
 import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { ExcludeIcon } from '../../consts'
+import { CloseIcon, ExcludeIcon } from '../../consts'
 import { PercentBadge } from '../PercentBadge'
 import { LocationAutocomplete, LocationName } from '../character'
 import { ArtifactSetTooltipContent } from './ArtifactSetTooltip'
@@ -96,7 +101,7 @@ export function ArtifactCardObj({
 } & Data) {
   const { t } = useTranslation(['artifact', 'ui'])
   const { t: tk } = useTranslation('statKey_gen')
-
+  const [showDup, onShowDup, onHideDup] = useBoolState(false)
   const wrapperFunc = useCallback(
     (children: ReactNode) => (
       <CardActionArea
@@ -153,7 +158,16 @@ export function ArtifactCardObj({
     Math.min(mainStatAssumptionLevel, rarity * 4),
     level
   )
+  const database = useDatabase()
 
+  const builds = database.builds.data
+  const validatedBuilds = []
+  for (const buildId in builds) {
+    if (builds[buildId]?.artifactIds[artifact.slotKey] === artifact.id) {
+      validatedBuilds.push(builds[buildId].name)
+    }
+  }
+  const numberOfBuilds = validatedBuilds.length
   const artifactValid = maxEfficiency !== 0
   const slotName = <ArtifactSetSlotName setKey={setKey} slotKey={slotKey} />
   const slotDesc = <ArtifactSetSlotDesc setKey={setKey} slotKey={slotKey} />
@@ -178,6 +192,13 @@ export function ArtifactCardObj({
         />
       }
     >
+      <Suspense fallback={false}>
+        <DupModal
+          show={showDup}
+          onHide={onHideDup}
+          names={validatedBuilds.join(', ')}
+        />
+      </Suspense>
       <CardThemed
         bgt="light"
         sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
@@ -350,7 +371,15 @@ export function ArtifactCardObj({
               </Typography>
             )}
             <Box flexGrow={1} />
-            <Typography color="success.main">
+            <Typography
+              color="success.main"
+              sx={{
+                display: 'flex',
+                gap: 1,
+                alignItems: 'center',
+                mt: 1,
+              }}
+            >
               {(setKey && <ArtifactSetName setKey={setKey} />) ||
                 'Artifact Set'}{' '}
               {setKey && (
@@ -358,6 +387,13 @@ export function ArtifactCardObj({
                   title={<ArtifactSetTooltipContent setKey={setKey} />}
                 />
               )}
+              <SqBadge
+                sx={{ ml: 'auto', cursor: 'pointer' }}
+                color={numberOfBuilds ? 'success' : 'secondary'}
+                onClick={onShowDup}
+              >
+                {numberOfBuilds} Builds
+              </SqBadge>
             </Typography>
           </CardContent>
         </ConditionalWrapper>
@@ -486,5 +522,40 @@ function SubstatDisplay({
         {(efficiency * 100).toFixed()}%
       </Typography>
     </Box>
+  )
+}
+
+function DupModal({
+  show,
+  onHide,
+  names,
+}: {
+  show: boolean
+  onHide: () => void
+  names: string
+}) {
+  return (
+    <ModalWrapper open={show} onClose={onHide}>
+      <CardThemed>
+        <CardHeader
+          title={
+            <Typography
+              variant="h6"
+              flexGrow={1}
+              display="flex"
+              alignItems="center"
+            >
+              Used in: {names}
+            </Typography>
+          }
+          action={
+            <IconButton onClick={onHide}>
+              <CloseIcon />
+            </IconButton>
+          }
+        />
+        <Divider />
+      </CardThemed>
+    </ModalWrapper>
   )
 }
