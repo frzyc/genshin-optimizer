@@ -125,7 +125,7 @@ export default function pyro(
         dm.skill.scorchingInstantDmg,
         'skill'
       ),
-      scorchingDmg: dmgNode('atk', dm.skill.scorchingInstantDmg, 'skill'),
+      scorchingDmg: dmgNode('atk', dm.skill.scorchingDmg, 'skill'),
     },
     burst: {
       dmg: dmgNode('atk', dm.burst.dmg, 'burst'),

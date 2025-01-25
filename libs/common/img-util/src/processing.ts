@@ -39,7 +39,7 @@ export function histogramAnalysis(
   const height = imageData.height
   const width = imageData.width
   const p = imageData.data
-  return Array.from({ length: hori ? width : height }, (v, i) => {
+  return Array.from({ length: hori ? width : height }, (_, i) => {
     let num = 0
     for (let j = 0; j < (hori ? height : width); j++) {
       const pixelIndex = hori
@@ -68,7 +68,7 @@ export function histogramContAnalysis(
   const left = max * leftRange
   const right = max * rightRange
 
-  return Array.from({ length: max }, (v, i) => {
+  return Array.from({ length: max }, (_, i) => {
     if (i < left || i > right) return 0
     let longest = 0
     let num = 0
@@ -142,7 +142,7 @@ export function preprocessImage(pixelData: ImageData) {
 }
 
 // from https://github.com/processing/p5.js/blob/main/src/image/filters.js
-function thresholdFilter(pixels: Uint8ClampedArray, level: number) {
+export function thresholdFilter(pixels: Uint8ClampedArray, level: number) {
   if (level === undefined) {
     level = 0.5
   }
@@ -162,7 +162,7 @@ function thresholdFilter(pixels: Uint8ClampedArray, level: number) {
   }
 }
 // from https://css-tricks.com/manipulating-pixels-using-canvas/
-function invertColors(pixels: Uint8ClampedArray) {
+export function invertColors(pixels: Uint8ClampedArray) {
   for (let i = 0; i < pixels.length; i += 4) {
     pixels[i] = pixels[i] ^ 255 // Invert Red
     pixels[i + 1] = pixels[i + 1] ^ 255 // Invert Green

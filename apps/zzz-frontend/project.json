@@ -1,0 +1,26 @@
+{
+  "name": "zzz-frontend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/zzz-frontend/src",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project zzz-frontend --web",
+  "targets": {
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/zzz-frontend",
+        "commands": ["tsc -p tsconfig.app.json --noEmit"]
+      },
+      "dependsOn": ["eslint:lint"]
+    },
+    "build": {
+      "cache": false
+    }
+  },
+  "implicitDependencies": [
+    "common-localization",
+    "sr-localization",
+    "sr-dm-localization"
+  ]
+}

@@ -47,6 +47,7 @@ export function ArtifactSetsEditor({
           artSetKey={''}
           setArtSetKey={setSet}
           label={'New Artifact Set'}
+          blurOnSelect={true}
           getOptionDisabled={({ key }) =>
             Object.keys(artSet).includes(key as ArtifactSetKey) ||
             !key ||

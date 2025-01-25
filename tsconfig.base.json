@@ -151,7 +151,24 @@
       "@genshin-optimizer/sr/svgicons": ["libs/sr/svgicons/src/index.ts"],
       "@genshin-optimizer/sr/theme": ["libs/sr/theme/src/index.ts"],
       "@genshin-optimizer/sr/ui": ["libs/sr/ui/src/index.tsx"],
-      "@genshin-optimizer/sr/util": ["libs/sr/util/src/index.ts"]
+      "@genshin-optimizer/sr/util": ["libs/sr/util/src/index.ts"],
+      "@genshin-optimizer/zzz/consts": ["libs/zzz/consts/src/index.ts"],
+      "@genshin-optimizer/zzz/db": ["libs/zzz/db/src/index.ts"],
+      "@genshin-optimizer/zzz/db-ui": ["libs/zzz/db-ui/src/index.ts"],
+      "@genshin-optimizer/zzz/disc-scanner": [
+        "libs/zzz/disc-scanner/src/index.ts"
+      ],
+      "@genshin-optimizer/zzz/page-discs": [
+        "libs/zzz/page-discs/src/index.tsx"
+      ],
+      "@genshin-optimizer/zzz/page-optimize": [
+        "libs/zzz/page-optimize/src/index.tsx"
+      ],
+      "@genshin-optimizer/zzz/page-settings": [
+        "libs/zzz/page-settings/src/index.tsx"
+      ],
+      "@genshin-optimizer/zzz/solver": ["libs/zzz/solver/src/index.ts"],
+      "@genshin-optimizer/zzz/ui": ["libs/zzz/ui/src/index.tsx"]
     }
   },
   "exclude": ["node_modules", "tmp"]

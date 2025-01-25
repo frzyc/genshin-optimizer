@@ -1,0 +1,15 @@
+{
+  "name": "zzz-consts",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/zzz/consts/src",
+  "projectType": "library",
+  "targets": {
+    "publish": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node tools/scripts/publish.mjs zzz-consts {args.ver} {args.tag}"
+      }
+    }
+  },
+  "tags": []
+}

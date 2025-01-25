@@ -45,7 +45,7 @@ export class DBMetaEntry extends DataEntry<
     sroDb: ISroDatabase & ISrObjectDescription,
     _result: ImportResult
   ): void {
-    const data = sroDb[this.prefixedKey]
+    const data = sroDb[this.dataKey]
     if (data) {
       // Don't copy over lastEdit data
       const { lastEdit, ...rest } = data as IDBMeta

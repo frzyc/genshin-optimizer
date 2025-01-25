@@ -1,0 +1,9 @@
+{
+  "name": "zzz-solver",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/zzz/solver/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project zzz-solver --web",
+  "targets": {}
+}
