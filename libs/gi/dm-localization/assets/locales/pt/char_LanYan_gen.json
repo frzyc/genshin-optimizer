@@ -1,0 +1,158 @@
+{
+  "name": "Lan Yan",
+  "title": "Jade Primaveril",
+  "description": "Uma tecelã de vime do Vale Chenyu. Tem mente aberta e é bem temperada, também é rápida como uma nascente das montanhas.",
+  "constellationName": "Hirundo Lazuli",
+  "auto": {
+    "name": "Faisão Negro Caminha sobre a Água",
+    "fields": {
+      "normal": {
+        "0": "<strong>Ataque Normal</strong>",
+        "1": "Empunha seus Anéis Pluma Lunar e realiza até 4 ataques usando-os, causando <anemo>Dano Anemo</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Ataque Carregado</strong>",
+        "1": "Consome uma certa quantidade de Stamina para lançar Anéis Pluma Lunar, causando <anemo>Dano Anemo</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Ataque Imersivo</strong>",
+        "1": "Mergulha em direção ao chão a partir do ar, causando dano a todos os oponentes em seu caminho. Causa <anemo>Dano Anemo em uma AdE</anemo> ao impactar o solo."
+      }
+    },
+    "skillParams": {
+      "0": "Dano do 1° Golpe",
+      "1": "Dano do 2° Golpe",
+      "2": "Dano do 3° Golpe",
+      "3": "Dano do 4° Golpe",
+      "4": "Dano de Ataque Carregado",
+      "5": "Consumo de Stamina de Ataque Carregado",
+      "6": "Dano Durante a Queda",
+      "7": "Dano de Queda de Baixa/Alta Altitude",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Dança das Plumas da Fênix",
+    "description": {
+      "0": "Invocando o Escudo da Fênix, uma arte transmitida através das gerações, Lan Yan avança rapidamente e, ao entrar em contato com seu alvo, salta de volta para o ar.",
+      "1": "A absorção de Dano do Escudo da Fênix é baseada no seu ATQ e possui uma Absorção de 250% contra <anemo>Dano Anemo</anemo>.",
+      "2": "Quando Lan Yan estiver no ar devido ao salto de sua Habilidade Elemental \"Dança das Plumas da Fênix\", se ela pressionar a Habilidade Elemental ou o Ataque Normal, jogará Anéis Pluma Lunar na direção do inimigo e, depois de atingi-lo, circulará entre os inimigos próximos duas vezes, causando <anemo>Dano Anemo</anemo>.",
+      "3": "Mantenha pressionado para usar essa Habilidade de forma diferente.",
+      "4": "<br/>",
+      "5": "<strong>Manter pressionado</strong>",
+      "6": "Entre no Modo de Mira para ajustar a direção do avanço.",
+      "7": "<br/>",
+      "8": "<i>\"As nuvens cortam a luz lunar, como sombras prateadas a adornar o olhar.\"</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Anéis Pluma Lunar",
+      "1": "Absorção de Dano do Escudo",
+      "2": "Duração do Escudo",
+      "3": "Tempo de Recarga",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Aurora da Lua Cintilante",
+    "description": {
+      "0": "Lan Yan inicia a Matriz da Andorinha da Pluma Lunar, puxando oponentes e objetos próximos e causando várias instâncias de <anemo>Dano Anemo em uma AdE</anemo>.",
+      "1": "<br/>",
+      "2": "<i>Falando estritamente, Lan Yan sozinha não constitui uma \"matriz\". No entanto, ela pode meio que cumprir os requisitos se suas Figuras de Vime forem levadas em consideração... Provavelmente.</i>"
+    },
+    "skillParams": {
+      "0": "Dano de Habilidade",
+      "1": "Tempo de Recarga",
+      "2": "Energia Elemental",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Quatro Lâminas da Adivinhação Seladora",
+    "description": {
+      "0": "Quando a investida da Habilidade Elemental <strong>Dança das Plumas da Fênix</strong> atinge um alvo, se interagir com <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, o Escudo da Fênix passará por Conversão Elemental, ganhando 250% de eficácia contra o Elemento correspondente após ela.",
+      "1": "Além disso, se esse lançamento da Habilidade Elemental <strong>Dança das Plumas da Fênix</strong> fizer com que o Escudo da Fênix passe por Conversão Elemental, o Anel Pluma Lunar que Lan Yan jogar nos inimigos ganha 50% de bônus de Dano original no Elemento correspondente. Esse Dano é considerado Dano de Habilidade Elemental."
+    }
+  },
+  "passive2": {
+    "name": "Amuleto Subjugador do Mal da Pena Lunar",
+    "description": {
+      "0": "Aumenta o Dano causado pela Habilidade Elemental <strong>Dança das Plumas da Fênix</strong> e pelo Supremo <strong>Aurora da Lua Cintilante</strong>. O aumento é equivalente a 309% e 774% respectivamente da Proficiência Elemental de Lan Yan."
+    }
+  },
+  "passive3": {
+    "name": "Um Aroma Sedoso como Pensamentos e Intenções",
+    "description": {
+      "0": "Quando Lan Yan estiver na equipe, seus personagens não irão assustar as Borboletas de Cristais e alguns outros animais ao chegar perto deles.",
+      "1": "Confira a sub-categoria \"Outros\" da seção \"Seres Vivos/Animais Selvagens\" do Arquivo, para descobrir com quais criaturas esta habilidade funciona."
+    }
+  },
+  "constellation1": {
+    "name": "\"Como um Caminharia Entre as Nuvens\"",
+    "description": {
+      "0": "Depois de desencadear a Conversão Elemental do Talento Passivo \"Quatro Lâminas da Adivinhação Seladora\", quando Lan Yan lançar os Anéis Pluma Lunar da Habilidade Elemental <strong>Dança das Plumas da Fênix</strong> contra um inimigo, jogará um Anel Pluma Lunar adicional.",
+      "1": "É necessário ter desbloqueado o Talento Passivo \"Quatro Lâminas da Adivinhação Seladora\"."
+    }
+  },
+  "constellation2": {
+    "name": "\"Roupas de Dança como Jade Colorido\"",
+    "description": {
+      "0": "Enquanto o <strong>Escudo da Fênix</strong> existir, e quando seu personagem ativo da equipe causar Dano com um Ataque Normal, regenera 40% da absorção de Dano do Escudo da Fênix. É possível regenerar a absorção até quando o Escudo foi criado. Esse efeito pode ser desencadeado uma vez a cada 2s."
+    }
+  },
+  "constellation3": {
+    "name": "\"Asas Brancas Perfuram as Nuvens e a Neblina\"",
+    "description": {
+      "0": "Aumenta o nível da Habilidade Elemental <strong>Dança das Plumas da Fênix</strong> em 3 níveis. ",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Pérolas Sangrentas Decoradas com Penas do Dragão\"",
+    "description": {
+      "0": "Nos 12s depois de lançar o Supremo <strong>Aurora da Lua Cintilante</strong>, aumenta a Proficiência Elemental de todos os membros próximos da equipe em 60."
+    }
+  },
+  "constellation5": {
+    "name": "\"Meu Coração Alegra-se de te Conhecer\"",
+    "description": {
+      "0": "Aumenta o nível de <strong>Aurora da Lua Cintilante</strong> em 3.",
+      "1": "O nível máximo de elevação é 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Voemos nas Asas com os Anéis Prateados\"",
+    "description": {
+      "0": "<strong>Dança das Plumas da Fênix</strong> ganha 1 carga adicional."
+    }
+  }
+}

@@ -2759,6 +2759,23 @@
       "constellation5": "UI_Talent_U_Citlali_02",
       "constellation6": "UI_Talent_S_Citlali_04"
     },
+    "LanYan": {
+      "icon": "UI_AvatarIcon_Lanyan",
+      "iconSide": "UI_AvatarIcon_Side_Lanyan",
+      "banner": "UI_NameCardPic_Lanyan_P",
+      "bar": "UI_NameCardPic_Lanyan_Alpha",
+      "skill": "Skill_S_Lanyan_01",
+      "burst": "Skill_E_Lanyan_01_HD",
+      "passive1": "UI_Talent_S_Lanyan_05",
+      "passive2": "UI_Talent_S_Lanyan_06",
+      "passive3": "UI_Talent_S_Sayu_07",
+      "constellation1": "UI_Talent_S_Lanyan_01",
+      "constellation2": "UI_Talent_S_Lanyan_02",
+      "constellation3": "UI_Talent_U_Lanyan_01",
+      "constellation4": "UI_Talent_S_Lanyan_03",
+      "constellation5": "UI_Talent_U_Lanyan_02",
+      "constellation6": "UI_Talent_S_Lanyan_04"
+    },
     "TravelerAnemo": {
       "skill": "Skill_S_PlayerWind_01",
       "burst": "Skill_E_PlayerWind_01_HD",

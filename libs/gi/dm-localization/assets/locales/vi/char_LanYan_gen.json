@@ -1,0 +1,158 @@
+{
+  "name": "Lan Yan",
+  "title": "Cắt Ngọc Đan Xuân",
+  "description": "Thợ đan mây đến từ Trầm Ngọc Cốc. Thần thái thanh tịnh, tươi tắn như dòng suối trong núi.",
+  "constellationName": "Cung Huyền Yến",
+  "auto": {
+    "name": "Huyền Loan Họa Thủy",
+    "fields": {
+      "normal": {
+        "0": "<strong>Tấn Công Thường</strong>",
+        "1": "Múa Tiễn Nguyệt Hoàn và thực hiện tối đa 4 lần tấn công, gây <anemo>Sát Thương Nguyên Tố Phong</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Trọng Kích</strong>",
+        "1": "Tiêu hao thể lực nhất định, ném Tiễn Nguyệt Hoàn trong tay để gây <anemo>Sát Thương Nguyên Tố Phong</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Tấn Công Khi Đáp</strong>",
+        "1": "Ngưng tụ sức mạnh nguyên tố Phong, từ trên trời tấn công xuống mặt đất, tấn công kẻ địch trên đường, gây <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo> khi chạm đất."
+      }
+    },
+    "skillParams": {
+      "0": "Sát Thương Lần 1",
+      "1": "Sát Thương Lần 2",
+      "2": "Sát Thương Lần 3",
+      "3": "Sát Thương Lần 4",
+      "4": "Sát Thương Trọng Kích",
+      "5": "Thể lực Trọng Kích tiêu hao",
+      "6": "Sát Thương Khi Đáp",
+      "7": "Sát Thương Khi Đáp Từ Độ Cao Thấp/Cao",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Vũ Điệu Phượng Hoàng",
+    "description": {
+      "0": "Triệu hồi Khiên Phượng Hoàng bí truyền và lao nhanh về phía trước với tư thế mưa dầm, chạm mục tiêu sẽ nhảy về phía sau lên không trung.",
+      "1": "Lượng sát thương hấp thụ của Khiên Phượng Hoàng sẽ căn cứ vào Tấn Công của Lan Yan, có hiệu quả hấp thụ 250% <anemo>Sát Thương Nguyên Tố Phong</anemo>.",
+      "2": "Khi Lan Yan dùng Kỹ Năng Nguyên Tố Vũ Điệu Phượng Hoàng để nhảy lên không trung, nếu nhấn Kỹ Năng Nguyên Tố hoặc Tấn Công Thường, sẽ ném Tiễn Nguyệt Hoàn về phía kẻ địch, khi trúng sẽ xoay tròn hai lần giữa những kẻ địch gần đó, gây <anemo>Sát Thương Nguyên Tố Phong</anemo>.",
+      "3": "Khi nhấn giữ sẽ thi triển theo cách thức khác.",
+      "4": "<br/>",
+      "5": "<strong>Nhấn Giữ</strong>",
+      "6": "Vào trạng thái ngắm chuẩn để điều chỉnh phương hướng đột kích.",
+      "7": "<br/>",
+      "8": "<i>\"Tiễn vân vũ ảnh nguyệt hoa du, ngân ảnh phiên nhiên vận doanh mâu.\"</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Tiễn Nguyệt Hoàn",
+      "1": "Khiên Hấp Thụ",
+      "2": "Thời Gian Khiên Kéo Dài",
+      "3": "CD",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Dây Đàn Đạp Trăng",
+    "description": {
+      "0": "Lan Yan tạo ra Ngân Yến Tiễn Nguyệt Trận, hút lấy kẻ địch và vật thể xung quanh, đồng thời gây nhiều lần <anemo>Sát Thương Phạm Vi Nguyên Tố Phong</anemo>.",
+      "1": "<br/>",
+      "2": "<i>Từ ý nghĩa của mặt chữ, nếu chỉ có một mình Lan Yan thì không thể gọi là \"trận\" được. Nhưng mà, nếu tính luôn những con búp bê dây mây mà cô ấy mang theo thì chắc cũng đáp ứng đủ yêu cầu mà nhỉ?</i>"
+    },
+    "skillParams": {
+      "0": "Sát Thương Kỹ Năng",
+      "1": "CD",
+      "2": "Năng Lượng Nguyên Tố",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Tứ Qua Phong Đao Linh Bốc",
+    "description": {
+      "0": "Kỹ Năng Nguyên Tố <strong>Vũ Điệu Phượng Hoàng</strong> khi đột kích trúng mục tiêu, nếu tiếp xúc với Nguyên Tố <hydro>Thủy</hydro>/<pyro>Hỏa</pyro>/<cryo>Băng</cryo>/<electro>Lôi</electro>, sẽ khiến Khiên Phượng Hoàng chuyển hóa nguyên tố, tấm khiên sau khi chuyển hóa sẽ có hiệu quả hấp thụ 250% với sát thương nguyên tố tương ứng.",
+      "1": "Ngoài ra, nếu lần Kỹ Năng Nguyên Tố <strong>Vũ Điệu Phượng Hoàng</strong> này khiến Khiên Phượng Hoàng chuyển hóa nguyên tố, Tiễn Nguyệt Hoàn mà Lan Yan ném vào kẻ địch sẽ kèm thêm 50% sát thương nguyên tố tương ứng so với sát thương gốc. Sát thương này được tính là sát thương Kỹ Năng Nguyên Tố."
+    }
+  },
+  "passive2": {
+    "name": "Thương Linh Trấn Tà Sắc Phù",
+    "description": {
+      "0": "Tăng sát thương gây ra của Kỹ Năng Nguyên Tố <strong>Vũ Điệu Phượng Hoàng</strong> và Kỹ Năng Nộ <strong>Dây Đàn Đạp Trăng</strong>, tương ứng với 309% và 774% Tinh Thông Nguyên Tố của Lan Yan."
+    }
+  },
+  "passive3": {
+    "name": "\"Tâm Tùy Phương Hề Ý Do Miên\"",
+    "description": {
+      "0": "Có Lan Yan ở trong đội, khi nhân vật trong đội của bản thân tiếp cận một số sinh vật như Tinh Điệp sẽ không làm chúng hoảng sợ.",
+      "1": "Có thể tham khảo mục \"Khác\" ở \"Sách Sinh Vật/Sinh Vật Hoang Dã\" trong Thư Viện để biết các đối tượng cụ thể."
+    }
+  },
+  "constellation1": {
+    "name": "\"Nhược Hữu Nhân Hề Vân Chi Tế\"",
+    "description": {
+      "0": "Sau khi kích hoạt chuyển hóa nguyên tố của thiên phú \"Tứ Qua Phong Đao Linh Bốc\", khi Lan Yan ném Tiễn Nguyệt Hoàn của lần Kỹ Năng Nguyên Tố <strong>Vũ Điệu Phượng Hoàng</strong> này sẽ ném thêm một cái nữa.",
+      "1": "Cần mở khóa thiên phú cố định \"Tứ Qua Phong Đao Linh Bốc\"."
+    }
+  },
+  "constellation2": {
+    "name": "\"Vũ Duệ Phiên Hề Dương Ngọc Nghê\"",
+    "description": {
+      "0": "Trong thời gian tồn tại <strong>Khiên Phượng Hoàng</strong>, khi nhân vật của bản thân trong trận hiện tại dùng Tấn Công Thường gây sát thương, sẽ hồi phục 40% lượng hấp thụ của Khiên Phượng Hoàng, tối đa hồi phục đến lượng hấp thụ gốc khi khởi tạo. Hiệu quả này mỗi 2s tối đa kích hoạt một lần."
+    }
+  },
+  "constellation3": {
+    "name": "\"Thừa Bạch Phượng Hề Tiễn Vụ Hộc\"",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Vũ Điệu Phượng Hoàng</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Lãm Long Ưng Hề Kết Huyết Châu\"",
+    "description": {
+      "0": "Trong 12s sau khi thi triển Kỹ Năng Nộ <strong>Dây Đàn Đạp Trăng</strong>, tất cả nhân vật trong đội gần đó tăng 60 Tinh Thông Nguyên Tố."
+    }
+  },
+  "constellation5": {
+    "name": "\"Ký Kiến Quân Hề Dư Sở Hoan\"",
+    "description": {
+      "0": "Cấp kỹ năng <strong>Dây Đàn Đạp Trăng</strong> +3.",
+      "1": "Tăng tối đa đến cấp 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Nguyện Tùy Phong Hề Minh Ngân Loan\"",
+    "description": {
+      "0": "Số lần sử dụng của <strong>Vũ Điệu Phượng Hoàng</strong> tăng thêm 1."
+    }
+  }
+}
