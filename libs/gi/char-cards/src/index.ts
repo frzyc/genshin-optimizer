@@ -46,6 +46,7 @@ import Kirara from './Character_Kirara_Card.jpg'
 import Klee from './Character_Klee_Card.jpg'
 import KujouSara from './Character_Kujou_Sara_Card.jpg'
 import KukiShinobu from './Character_Kuki_Shinobu_Card.jpg'
+import LanYan from './Character_LanYan_Card.jpg'
 import Layla from './Character_Layla_Card.jpeg'
 import Lisa from './Character_Lisa_Card.jpg'
 import Lynette from './Character_Lynette_Card.jpg'
@@ -143,6 +144,7 @@ const charCards = {
   Klee,
   KujouSara,
   KukiShinobu,
+  LanYan,
   Layla,
   Lisa,
   Lyney,
