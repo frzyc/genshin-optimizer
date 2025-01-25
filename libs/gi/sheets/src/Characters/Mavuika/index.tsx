@@ -16,6 +16,7 @@ import {
   subscript,
   sum,
   target,
+  threshold,
   unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
@@ -183,7 +184,10 @@ const a4TimeSinceBurst_dmg_disp = greaterEq(
       percent(dm.passive2.dmg_),
       burstSpirit,
       1 / dm.passive2.duration,
-      sum(dm.passive2.duration, prod(-1, a4TimeSinceBurst))
+      sum(
+        dm.passive2.duration,
+        prod(-1, threshold(input.constellation, 4, 0, a4TimeSinceBurst))
+      )
     )
   ),
   { path: 'all_dmg_', isTeamBuff: true }
