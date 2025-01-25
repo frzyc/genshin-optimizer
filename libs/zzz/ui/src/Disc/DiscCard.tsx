@@ -318,7 +318,7 @@ function SubstatDisplay({
     >
       <span>
         <StatDisplay statKey={key} />{' '}
-        {upgrades > 1 && <ColorText color="warning">+{upgrades}</ColorText>}
+        {upgrades > 1 && <ColorText color="warning">+{upgrades - 1}</ColorText>}
       </span>
       <span>
         {displayValue}

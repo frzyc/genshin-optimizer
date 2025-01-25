@@ -55,6 +55,7 @@ export default function BaseStatCard({
           [key]: v,
         })
       }
+      float={getUnitStr(key) === '%'}
       inputProps={{ sx: { textAlign: 'right', minWidth: '5em' } }}
       InputProps={{
         startAdornment: statKeyTextMap[key] ?? key,
