@@ -31,13 +31,13 @@ jobs:
           echo "deployment_name=$(cat frontend_build/deployment_name)" >> $GITHUB_OUTPUT
           echo "frontend_name=$(cat frontend_build/frontend_name)" >> $GITHUB_OUTPUT
           echo "nested_deployments=$(cat frontend_build/nested_deployments)" >> $GITHUB_OUTPUT
-          echo "repo_name=$(cat frontend_build/repo_name)" >> $GITHUB_OUTPUT
+          echo "repo_var_name=$(cat frontend_build/repo_var_name)" >> $GITHUB_OUTPUT
           echo "repo_deploy_secret_name=$(cat frontend_build/repo_deploy_secret_name)" >> $GITHUB_OUTPUT
           echo "ref=$(cat frontend_build/ref)" >> $GITHUB_OUTPUT
       - name: Checkout external gh-pages
         uses: actions/checkout@v4
         with:
-          repository: ${{ steps.vars.outputs.repo_name }}
+          repository: ${{ vars[steps.vars.outputs.repo_var_name] }}
           ssh-key: ${{ secrets[steps.vars.outputs.repo_deploy_secret_name] }}
           ref: gh-pages
           path: gh-pages
@@ -83,7 +83,7 @@ jobs:
         id: export-url
         # First line splits the full repo name (frzyc/genshin-optimizer) into $account (frzyc) and $repo (genshin-optimizer)
         run: |
-          IFS=/ read -r account repo <<< ${{ vars.pr_repo }}
+          IFS=/ read -r account repo <<< ${{ vars[steps.vars.outputs.repo_var_name] }}
           echo "url=Deployed ${{ steps.vars.outputs.ref }} to https://$account.github.io/$repo/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }} (Takes 3-5 minutes after this completes to be available)" >> $GITHUB_OUTPUT
       - name: Output date
         id: output-date2

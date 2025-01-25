@@ -1,0 +1,158 @@
+{
+  "name": "Lan Yan",
+  "title": "Printemps tressé de jade",
+  "description": "Une rotinière du Vallon Chenyu. Claire d'esprit et de bon caractère, elle est aussi agile qu'une source de montagne.",
+  "constellationName": "Hirundo Lazuli",
+  "auto": {
+    "name": "Faisan noir sur eau",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attaque normale</strong>",
+        "1": "Brandit ses anneaux lunaires pour enchaîner jusqu'à 4 attaques qui infligent des <anemo>DGT Anémo</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Attaque chargée</strong>",
+        "1": "Consomme de l'endurance pour lancer un anneau lunaire et infliger des <anemo>DGT Anémo</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Attaque plongeante</strong>",
+        "1": "Plonge depuis les airs en concentrant ses pouvoirs Anémo, infligeant des DGT aux ennemis en chemin et des <anemo>DGT Anémo de zone</anemo> à l'impact."
+      }
+    },
+    "skillParams": {
+      "0": "DGT 1er coup",
+      "1": "DGT 2e coup",
+      "2": "DGT 3e coup",
+      "3": "DGT 4e coup",
+      "4": "DGT attaque chargée",
+      "5": "Coût d'endurance attaque chargée",
+      "6": "DGT durant la chute",
+      "7": "DGT chute basse/élevée",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Danse plumée d'hirondelle-follet",
+    "description": {
+      "0": "Lan Yan invoque un bouclier d'hirondelle-follet, un art transmis de génération en génération, avant de se ruer en avant puis de rebondir en arrière dans les airs après avoir touché sa cible.",
+      "1": "L'absorption de DGT d'un bouclier d'hirondelle-follet est basée sur l'ATQ de Lan Yan et ce dernier absorbe les <anemo>DGT Anémo</anemo> 250 % plus efficacement.",
+      "2": "Lorsqu'elle est dans les airs suite à l'utilisation de sa compétence élémentaire « Danse plumée d'hirondelle-follet », Lan Yan peut, avec un appui simple de sa compétence élémentaire ou de son attaque normale, envoyer un anneau lunaire sur un ennemi. Ces anneaux lunaires peuvent tournoyer entre les ennemis proches deux fois après avoir touché et infligent des <anemo>DGT Anémo</anemo>.",
+      "3": "En cas d'appui long, la compétence est déclenchée différemment.",
+      "4": "<br/>",
+      "5": "<strong>Appui long</strong>",
+      "6": "Bascule en mode visée, ce qui permet d'ajuster la direction de la ruée.",
+      "7": "<br/>",
+      "8": "<i>« Les nuages coupent le clair de lune comme des ombres argentées qui ornent le paysage. »</i>"
+    },
+    "skillParams": {
+      "0": "DGT anneau lunaire",
+      "1": "PV du bouclier",
+      "2": "Durée du bouclier",
+      "3": "Temps de recharge",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Lever lustré de lune",
+    "description": {
+      "0": "Lan Yan déploie une formation d'hirondelle lunaire, attirant les objets et ennemis proches et infligeant plusieurs fois des <anemo>DGT Anémo de zone</anemo>.",
+      "1": "<br/>",
+      "2": "<i>Strictement parlant, Lan Yan ne peut pas à elle seule constituer une « formation ». Cependant, elle peut en quelque sorte remplir cette exigence si ses figurines en rotin sont prises en compte... Probablement.</i>"
+    },
+    "skillParams": {
+      "0": "DGT compétence",
+      "1": "Temps de recharge",
+      "2": "Énergie élémentaire",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Quatre charmes divinatoires scellés",
+    "description": {
+      "0": "Lorsque la ruée de la compétence élémentaire <strong>Danse plumée d'hirondelle-follet</strong> touche une cible, tout contact avec l'élément <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Cryo</cryo> ou <electro>Électro</electro> permet au bouclier d'hirondelle-follet de bénéficier d'une absorption élémentaire, le bouclier pouvant ensuite absorber les DGT de l'élément correspondant 250 % plus efficacement.",
+      "1": "De plus, lorsque la compétence élémentaire <strong>Danse plumée d'hirondelle-follet</strong> permet au bouclier d'hirondelle-follet de bénéficier d'une absorption élémentaire, les anneaux lunaires que Lan Yan envoie sur les ennemis bénéficient d'un bonus de DGT de l'élément correspondant d'une valeur équivalant à 50 % des DGT d'origine, ces DGT étant considérés comme des DGT de compétence élémentaire."
+    }
+  },
+  "passive2": {
+    "name": "Charme panaché d'exorcisme",
+    "description": {
+      "0": "Les DGT infligés par la compétence élémentaire <strong>Danse plumée d'hirondelle-follet</strong> et le déchaînement élémentaire <strong>Lever lustré de lune</strong> augmentent respectivement d'une valeur équivalant à 309 % et 774 % de la maîtrise élémentaire de Lan Yan."
+    }
+  },
+  "passive3": {
+    "name": "Pensée comme un parfum soyeux",
+    "description": {
+      "0": "Quand Lan Yan fait partie de l'équipe, vos personnages dans l'équipe n'effraient pas certains animaux, tels que le papillon cristallin.",
+      "1": "Pour savoir quels sont les animaux concernés, consultez l'onglet « Divers » dans la section « Faune » du Bestiaire des Archives."
+    }
+  },
+  "constellation1": {
+    "name": "« Comme on peut marcher entre les nuages »",
+    "description": {
+      "0": "Après avoir déclenché l'absorption élémentaire de l'aptitude passive « Quatre charmes divinatoires scellés », une utilisation de la compétence élémentaire <strong>Danse plumée d'hirondelle-follet</strong> permet à Lan Yan de lancer un anneau lunaire supplémentaire sur les ennemis le moment venu.",
+      "1": "L'aptitude passive « Quatre charmes divinatoires scellés » doit être déjà débloquée."
+    }
+  },
+  "constellation2": {
+    "name": "« Tenue de danse ondulant comme du jade arc-en-ciel »",
+    "description": {
+      "0": "Pendant la durée du <strong>bouclier d'hirondelle-follet</strong>, le bouclier récupère 40 % d'absorption de DGT lorsque l'attaque normale de votre personnage déployé inflige des DGT. L'absorption de DGT peut être restaurée jusqu'à sa valeur d'origine, cet effet pouvant être déclenché une fois toutes les 2 s."
+    }
+  },
+  "constellation3": {
+    "name": "« Perçant nuage et brouillard sur des ailes blanches »",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Danse plumée d'hirondelle-follet</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation4": {
+    "name": "« Des perles de sang de faucon-dragon en ornement »",
+    "description": {
+      "0": "La maîtrise élémentaire de tous les personnages de l'équipe à proximité augmente de 60 pts pendant 12 s après l'utilisation du déchaînement élémentaire <strong>Lever lustré de lune</strong>."
+    }
+  },
+  "constellation5": {
+    "name": "« De vous rencontrer mon cœur est joie »",
+    "description": {
+      "0": "Niveau d'aptitude <strong>Lever lustré de lune</strong> +3.",
+      "1": "Niveau max : 15"
+    }
+  },
+  "constellation6": {
+    "name": "« Sur l'aile slyphique sonnent les ornements argentés »",
+    "description": {
+      "0": "Confère une utilisation supplémentaire de <strong>Danse plumée d'hirondelle-follet</strong>."
+    }
+  }
+}

@@ -46,6 +46,7 @@ import Kirara from './Kirara'
 import Klee from './Klee'
 import KujouSara from './KujouSara'
 import KukiShinobu from './KukiShinobu'
+import LanYan from './LanYan'
 import Layla from './Layla'
 import Lisa from './Lisa'
 import Lynette from './Lynette'
@@ -149,6 +150,7 @@ const data = {
   Klee,
   KujouSara,
   KukiShinobu,
+  LanYan,
   Layla,
   Lisa,
   Lynette,

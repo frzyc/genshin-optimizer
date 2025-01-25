@@ -1,12 +1,20 @@
+import { CardThemed } from '@genshin-optimizer/common/ui'
 import type { LocationKey } from '@genshin-optimizer/zzz/consts'
-import type { BaseStats, BuildResult } from '@genshin-optimizer/zzz/solver'
-import { Box } from '@mui/material'
+import {
+  allFormulaKeys,
+  type BaseStats,
+  type BuildResult,
+  type FormulaKey,
+} from '@genshin-optimizer/zzz/solver'
+import { LocationAutocomplete } from '@genshin-optimizer/zzz/ui'
+import { Box, CardContent, Typography } from '@mui/material'
 import { useState } from 'react'
 import BaseStatCard from './BaseStatCard'
 import { BuildsDisplay } from './BuildsDisplay'
 import OptimizeWrapper from './Optimize'
+import { OptimizeTargetSelector } from './OptimizeTargetSelector'
 
-export default function PageDiscs() {
+export default function PageOptimize() {
   const [builds, setBuilds] = useState<BuildResult[]>([])
   const [locationKey, setLocationKey] = useState<LocationKey>('')
   // base stats are in percent for displayability
@@ -16,18 +24,29 @@ export default function PageDiscs() {
     crit_: 5,
     crit_dmg_: 50,
   })
+  const [formulaKey, setFormulaKey] = useState<FormulaKey>(allFormulaKeys[0])
   return (
     <Box display="flex" flexDirection="column" gap={1} my={1}>
-      <BaseStatCard
-        baseStats={baseStats}
-        setBaseStats={setBaseStats}
-        location={locationKey}
-        setLocation={setLocationKey}
-      />
+      <CardThemed>
+        <CardContent>
+          <Typography variant="h6">Character</Typography>
+          <LocationAutocomplete
+            locKey={locationKey}
+            setLocKey={setLocationKey}
+            sx={{ mb: 1 }}
+          />
+          <OptimizeTargetSelector
+            formulaKey={formulaKey}
+            setFormulaKey={setFormulaKey}
+          />
+        </CardContent>
+      </CardThemed>
+      <BaseStatCard baseStats={baseStats} setBaseStats={setBaseStats} />
       <OptimizeWrapper
         setResults={setBuilds}
         baseStats={baseStats}
         location={locationKey}
+        formulaKey={formulaKey}
       />
       <BuildsDisplay
         builds={builds}

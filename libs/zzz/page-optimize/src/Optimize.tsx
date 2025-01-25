@@ -23,11 +23,7 @@ import type {
   FormulaKey,
   ProgressResult,
 } from '@genshin-optimizer/zzz/solver'
-import {
-  allFormulaKeys,
-  MAX_BUILDS,
-  Solver,
-} from '@genshin-optimizer/zzz/solver'
+import { MAX_BUILDS, Solver } from '@genshin-optimizer/zzz/solver'
 import { StatDisplay } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
@@ -49,10 +45,12 @@ import { StatFilterCard } from './StatFilterCard'
 import { WorkerSelector } from './WorkerSelector'
 
 export default function OptimizeWrapper({
+  formulaKey,
   location,
   baseStats,
   setResults,
 }: {
+  formulaKey: FormulaKey
   location: LocationKey
   baseStats: BaseStats
   setResults: (builds: BuildResult[]) => void
@@ -64,7 +62,7 @@ export default function OptimizeWrapper({
   const [progress, setProgress] = useState<ProgressResult | undefined>(
     undefined
   )
-  const [formulaKey, setFormulaKey] = useState<FormulaKey>(allFormulaKeys[0])
+
   const [constraints, setConstraints] = useState<Constraints>({})
   const [useEquipped, setUseEquipped] = useState(false)
   const [slot4, setSlot4] = useState([...discSlotToMainStatKeys['4']])
@@ -214,15 +212,12 @@ export default function OptimizeWrapper({
             Use equipped Discs
           </Button>
           <Box sx={{ display: 'flex', gap: 1 }}>
-            <OptimizeTargetSelector
-              formulaKey={formulaKey}
-              setFormulaKey={setFormulaKey}
-            />
             <WorkerSelector
               numWorkers={numWorkers}
               setNumWorkers={setNumWorkers}
             />
             <Button
+              sx={{ flexGrow: 1 }}
               onClick={optimizing ? onCancel : onOptimize}
               color={optimizing ? 'error' : 'success'}
               startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
@@ -268,43 +263,6 @@ function ProgressIndicator({
     </Box>
   )
 }
-function OptimizeTargetSelector({
-  formulaKey,
-  setFormulaKey,
-}: {
-  formulaKey: FormulaKey
-  setFormulaKey: (key: FormulaKey) => void
-}) {
-  return (
-    <DropdownButton
-      title={
-        <span>
-          Optimize Target: <strong>{formulaKeyTextMap[formulaKey]}</strong>
-        </span>
-      }
-      sx={{ flexGrow: 1 }}
-    >
-      {allFormulaKeys.map((fk) => (
-        <MenuItem key={fk} onClick={() => setFormulaKey(fk)}>
-          {formulaKeyTextMap[fk]}
-        </MenuItem>
-      ))}
-    </DropdownButton>
-  )
-}
-const formulaKeyTextMap: Record<FormulaKey, string> = {
-  initial_atk: 'Initial ATK',
-  electric_dmg_: 'Electrical Damage',
-  fire_dmg_: 'Fire Damage',
-  ice_dmg_: 'Ice Damage',
-  physical_dmg_: 'Physical Damage',
-  ether_dmg_: 'Ether Damage',
-  burn: 'Burn Anomaly',
-  shock: 'Shock Anomaly',
-  corruption: 'Corruption Anomaly',
-  shatter: 'Shatter Anomaly',
-  assault: 'Assault Anomaly',
-}
 
 function Set4Selector({
   constraints,
@@ -333,6 +291,21 @@ function Set4Selector({
         }
         sx={{ flexGrow: 1 }}
       >
+        <MenuItem
+          onClick={() =>
+            setConstraints(
+              Object.fromEntries(
+                Object.entries(constraints).filter(
+                  ([k, { value }]) =>
+                    !(allDiscSetKeys.includes(k as DiscSetKey) && value === 4)
+                )
+              )
+            )
+          }
+        >
+          No 4-Set
+        </MenuItem>
+
         {allDiscSetKeys.map((d) => (
           <MenuItem
             key={d}
@@ -364,6 +337,20 @@ function Set4Selector({
         }
         sx={{ flexGrow: 1 }}
       >
+        <MenuItem
+          onClick={() =>
+            setConstraints(
+              Object.fromEntries(
+                Object.entries(constraints).filter(
+                  ([k, { value }]) =>
+                    !(allDiscSetKeys.includes(k as DiscSetKey) && value === 2)
+                )
+              )
+            )
+          }
+        >
+          No 2-Set
+        </MenuItem>
         {allDiscSetKeys.map((d) => (
           <MenuItem
             key={d}
