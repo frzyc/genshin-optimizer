@@ -495,9 +495,9 @@ function WeaponCard({ weapon }: { weapon: ICachedWeapon }) {
 function ArtifactCard({ artifactData }: { artifactData: ArtifactData }) {
   const { setNum = {}, mains = {} } = artifactData
   const { t } = useTranslation('statKey_gen')
-  const processedSetNum = Object.entries(setNum).filter(
-    ([, num]) => num === 2 || num === 4
-  )
+  const processedSetNum: [ArtifactSetKey, number][] = Object.entries(setNum)
+    .filter(([, num]) => num > 1)
+    .map(([set, num]) => [set, num < 4 ? 2 : 4])
   return (
     <CardThemed
       bgt="neutral600"
