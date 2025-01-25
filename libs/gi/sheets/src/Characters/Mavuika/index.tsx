@@ -16,6 +16,7 @@ import {
   subscript,
   sum,
   target,
+  threshold,
   unequal,
 } from '@genshin-optimizer/gi/wr'
 import { cond, st, stg } from '../../SheetUtil'
@@ -168,7 +169,6 @@ const [condA4TimeSinceBurstPath, condA4TimeSinceBurst] = cond(
   'a4TimeSinceBurst'
 )
 const a4TimeSinceBurstArr = range(0, dm.passive2.duration - 1)
-const a4c4TimeSinceBurstArr = range(0, 0)
 const a4TimeSinceBurst = lookup(
   condA4TimeSinceBurst,
   objKeyMap(a4TimeSinceBurstArr, (time) => constant(time)),
@@ -184,7 +184,10 @@ const a4TimeSinceBurst_dmg_disp = greaterEq(
       percent(dm.passive2.dmg_),
       burstSpirit,
       1 / dm.passive2.duration,
-      sum(dm.passive2.duration, prod(-1, a4TimeSinceBurst))
+      sum(
+        dm.passive2.duration,
+        prod(-1, threshold(input.constellation, 4, 0, a4TimeSinceBurst))
+      )
     )
   ),
   { path: 'all_dmg_', isTeamBuff: true }
@@ -608,20 +611,14 @@ const sheet: TalentSheet = {
       value: condA4TimeSinceBurst,
       teamBuff: true,
       name: ct.ch('a4Cond'),
-      states: (data) =>
-        objKeyMap(
-          data.get(input.constellation)?.value >= 4
-            ? a4c4TimeSinceBurstArr
-            : a4TimeSinceBurstArr,
-          (time) => ({
-            name: st('seconds', { count: time }),
-            fields: [
-              {
-                node: a4TimeSinceBurst_dmg_disp,
-              },
-            ],
-          })
-        ),
+      states: objKeyMap(a4TimeSinceBurstArr, (time) => ({
+        name: st('seconds', { count: time }),
+        fields: [
+          {
+            node: a4TimeSinceBurst_dmg_disp,
+          },
+        ],
+      })),
     }),
     ct.headerTem('constellation4', {
       fields: [
