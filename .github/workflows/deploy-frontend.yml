@@ -44,8 +44,8 @@ jobs:
       - name: Move to external gh-pages (nested)
         if: ${{ steps.vars.outputs.nested_deployments == 'true' }}
         run: |
-          mkdir --parents "gh-pages/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}"
-          rm -rfv "gh-pages/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}" || true
+          mkdir --parents gh-pages/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}
+          rm -rfv gh-pages/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }} || true
           mv "frontend_build/dist/apps/${{ steps.vars.outputs.frontend_name }}" "gh-pages/${{ steps.vars.outputs.deployment_name }}/${{ steps.vars.outputs.frontend_name }}"
       - name: Make commit to deploy (nested)
         if: ${{ steps.vars.outputs.nested_deployments == 'true' }}
@@ -59,8 +59,8 @@ jobs:
       - name: Move to external gh-pages (un-nested)
         if: ${{ steps.vars.outputs.nested_deployments != 'true' }}
         run: |
-          rm -rv "gh-pages/*" || true
-          mv "frontend_build/dist/apps/${{ steps.vars.outputs.frontend_name }}/*" "gh-pages"
+          rm -rv gh-pages/* || true
+          mv frontend_build/dist/apps/${{ steps.vars.outputs.frontend_name }}/* gh-pages
       - name: Make commit to deploy (un-nested)
         if: ${{ steps.vars.outputs.nested_deployments != 'true' }}
         run: |
