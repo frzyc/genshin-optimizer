@@ -1,4 +1,4 @@
-import { objKeyMap } from '@genshin-optimizer/common/util'
+import { clamp01, objKeyMap } from '@genshin-optimizer/common/util'
 import type {
   AnomalyDamageKey,
   AttributeDamageKey,
@@ -23,7 +23,7 @@ export function getSum(baseStats: BaseStats, discs: DiscStats[]) {
     }
   }
   for (const [key, value] of Object.entries(sum)) {
-    if (value > 2 && disc2pEffect[key as DiscSetKey])
+    if (value >= 2 && disc2pEffect[key as DiscSetKey])
       for (const [k, v] of Object.entries(disc2pEffect[key as DiscSetKey]))
         sum[k] = s(k) + v
   }
@@ -36,6 +36,7 @@ export function getSum(baseStats: BaseStats, discs: DiscStats[]) {
   sum['final_def'] = s('initial_def') * (1 + s('cond_def_')) + s('cond_def')
   sum['impact'] = s('impact') * (1 + s('impact_'))
   sum['anomMas'] = s('anomMas') * (1 + s('anomMas_'))
+  sum['crit_'] = clamp01(sum['crit_'])
   return sum
 }
 
