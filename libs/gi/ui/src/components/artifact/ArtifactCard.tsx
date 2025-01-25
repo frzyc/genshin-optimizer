@@ -101,7 +101,7 @@ export function ArtifactCardObj({
 } & Data) {
   const { t } = useTranslation(['artifact', 'ui'])
   const { t: tk } = useTranslation('statKey_gen')
-  const [showDup, onShowDup, onHideDup] = useBoolState(false)
+  const [showUsage, onShowUsage, onHideUsage] = useBoolState(false)
   const wrapperFunc = useCallback(
     (children: ReactNode) => (
       <CardActionArea
@@ -161,13 +161,13 @@ export function ArtifactCardObj({
   const database = useDatabase()
 
   const builds = database.builds.data
-  const validatedBuilds = []
+  const buildNames = []
   for (const buildId in builds) {
     if (builds[buildId]?.artifactIds[artifact.slotKey] === artifact.id) {
-      validatedBuilds.push(builds[buildId].name)
+      buildNames.push(builds[buildId].name)
     }
   }
-  const numberOfBuilds = validatedBuilds.length
+  const numberOfBuilds = buildNames.length
   const artifactValid = maxEfficiency !== 0
   const slotName = <ArtifactSetSlotName setKey={setKey} slotKey={slotKey} />
   const slotDesc = <ArtifactSetSlotDesc setKey={setKey} slotKey={slotKey} />
@@ -193,10 +193,10 @@ export function ArtifactCardObj({
       }
     >
       <Suspense fallback={false}>
-        <DupModal
-          show={showDup}
-          onHide={onHideDup}
-          names={validatedBuilds.join(', ')}
+        <ArtifactBuildUsageModal
+          show={showUsage}
+          onHide={onHideUsage}
+          buildNames={t('artifact:usage') + buildNames.join(', ')}
         />
       </Suspense>
       <CardThemed
@@ -388,11 +388,14 @@ export function ArtifactCardObj({
                 />
               )}
               <SqBadge
-                sx={{ ml: 'auto', cursor: 'pointer' }}
+                sx={{
+                  ml: 'auto',
+                  cursor: numberOfBuilds ? 'pointer' : 'default',
+                }}
                 color={numberOfBuilds ? 'success' : 'secondary'}
-                onClick={onShowDup}
+                onClick={numberOfBuilds ? onShowUsage : undefined}
               >
-                {numberOfBuilds} Builds
+                {t('builds', { count: numberOfBuilds })}
               </SqBadge>
             </Typography>
           </CardContent>
@@ -525,14 +528,14 @@ function SubstatDisplay({
   )
 }
 
-function DupModal({
+function ArtifactBuildUsageModal({
   show,
   onHide,
-  names,
+  buildNames,
 }: {
   show: boolean
   onHide: () => void
-  names: string
+  buildNames: string
 }) {
   return (
     <ModalWrapper open={show} onClose={onHide}>
@@ -545,7 +548,7 @@ function DupModal({
               display="flex"
               alignItems="center"
             >
-              Used in: {names}
+              {buildNames}
             </Typography>
           }
           action={
