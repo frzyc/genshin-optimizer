@@ -161,15 +161,16 @@ export function ArtifactCardObj({
     level
   )
   const database = useDatabase()
-
-  const builds = database.builds.data
-  const buildNames = []
-  for (const buildId in builds) {
-    if (builds[buildId]?.artifactIds[artifact.slotKey] === artifact.id) {
-      buildNames.push(builds[buildId].name)
+  const { buildNames, numberOfBuilds } = useMemo(() => {
+    const names: string[] = []
+    const builds = database.builds.data
+    for (const buildId in builds) {
+      if (builds[buildId]?.artifactIds[artifact.slotKey] === artifact.id) {
+        names.push(builds[buildId].name)
+      }
     }
-  }
-  const numberOfBuilds = buildNames.length
+    return { buildNames: names, numberOfBuilds: names.length }
+  }, [database.builds.data, artifact.slotKey, artifact.id])
   const artifactValid = maxEfficiency !== 0
   const slotName = <ArtifactSetSlotName setKey={setKey} slotKey={slotKey} />
   const slotDesc = <ArtifactSetSlotDesc setKey={setKey} slotKey={slotKey} />
