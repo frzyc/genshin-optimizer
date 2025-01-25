@@ -175,6 +175,7 @@ function autoSuffix(index: number) {
   }
   return undefined
 }
+
 const sheet: TalentSheet = {
   auto: ct.talentTem('auto', [
     {
