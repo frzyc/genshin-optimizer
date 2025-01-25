@@ -45,8 +45,10 @@ import {
   CardContent,
   CardHeader,
   Chip,
-  Divider,
   IconButton,
+  List,
+  ListItem,
+  ListItemText,
   Skeleton,
   SvgIcon,
   Typography,
@@ -196,7 +198,8 @@ export function ArtifactCardObj({
         <ArtifactBuildUsageModal
           show={showUsage}
           onHide={onHideUsage}
-          buildNames={t('artifact:usage') + buildNames.join(', ')}
+          buildNames={buildNames}
+          usageText={t('artifact:artifactUsage')}
         />
       </Suspense>
       <CardThemed
@@ -532,10 +535,12 @@ function ArtifactBuildUsageModal({
   show,
   onHide,
   buildNames,
+  usageText,
 }: {
   show: boolean
   onHide: () => void
-  buildNames: string
+  buildNames: string[]
+  usageText: string
 }) {
   return (
     <ModalWrapper open={show} onClose={onHide}>
@@ -548,7 +553,7 @@ function ArtifactBuildUsageModal({
               display="flex"
               alignItems="center"
             >
-              {buildNames}
+              {usageText}
             </Typography>
           }
           action={
@@ -557,7 +562,13 @@ function ArtifactBuildUsageModal({
             </IconButton>
           }
         />
-        <Divider />
+        <List>
+          {buildNames.map((name, index) => (
+            <ListItem key={index}>
+              <ListItemText primary={name} />
+            </ListItem>
+          ))}
+        </List>
       </CardThemed>
     </ModalWrapper>
   )

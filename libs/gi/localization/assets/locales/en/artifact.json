@@ -124,5 +124,5 @@
   },
   "builds_one": "{{count}} Build",
   "builds_other": "{{count}} Builds",
-  "usage": "Used in: "
+  "artifactUsage": "Artifact is used in the following builds: "
 }
