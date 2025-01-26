@@ -18,6 +18,7 @@ import { clamp, clamp01, getUnitStr } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactRarity,
+  CharacterKey,
   LocationKey,
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
@@ -48,6 +49,7 @@ import {
   IconButton,
   List,
   ListItem,
+  ListItemIcon,
   ListItemText,
   Skeleton,
   SvgIcon,
@@ -56,9 +58,9 @@ import {
 import type { ReactNode } from 'react'
 import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { CloseIcon, ExcludeIcon } from '../../consts'
+import { CloseIcon, ExcludeIcon, LoadoutIcon } from '../../consts'
 import { PercentBadge } from '../PercentBadge'
-import { LocationAutocomplete, LocationName } from '../character'
+import { CharIconSide, LocationAutocomplete, LocationName } from '../character'
 import { ArtifactSetTooltipContent } from './ArtifactSetTooltip'
 import {
   ArtifactSetName,
@@ -161,16 +163,28 @@ export function ArtifactCardObj({
     level
   )
   const database = useDatabase()
-  const { buildNames, numberOfBuilds } = useMemo(() => {
-    const names: string[] = []
-    const builds = database.builds.data
-    for (const buildId in builds) {
-      if (builds[buildId]?.artifactIds[artifact.slotKey] === artifact.id) {
-        names.push(builds[buildId].name)
-      }
-    }
-    return { buildNames: names, numberOfBuilds: names.length }
-  }, [database.builds.data, artifact.slotKey, artifact.id])
+  const builds: {
+    loadoutName: string
+    buildName: string
+    charKey: CharacterKey
+  }[] = useMemo(() => {
+    return database.builds.values
+      .filter(
+        ({ artifactIds }) => artifactIds[artifact.slotKey] === artifact.id
+      )
+      .flatMap(({ id, name }) => {
+        const buildName = name
+        return database.teamChars.values
+          .filter(({ buildIds }) => buildIds.includes(id))
+          .map(({ key, name }) => {
+            return {
+              charKey: key,
+              buildName,
+              loadoutName: name,
+            }
+          })
+      })
+  }, [database.builds, database.teamChars, artifact.slotKey, artifact.id])
   const artifactValid = maxEfficiency !== 0
   const slotName = <ArtifactSetSlotName setKey={setKey} slotKey={slotKey} />
   const slotDesc = <ArtifactSetSlotDesc setKey={setKey} slotKey={slotKey} />
@@ -199,8 +213,8 @@ export function ArtifactCardObj({
         <ArtifactBuildUsageModal
           show={showUsage}
           onHide={onHideUsage}
-          buildNames={buildNames}
           usageText={t('artifact:artifactUsage')}
+          builds={builds}
         />
       </Suspense>
       <CardThemed
@@ -394,12 +408,12 @@ export function ArtifactCardObj({
               <SqBadge
                 sx={{
                   ml: 'auto',
-                  cursor: numberOfBuilds ? 'pointer' : 'default',
+                  cursor: builds.length ? 'pointer' : 'default',
                 }}
-                color={numberOfBuilds ? 'success' : 'secondary'}
-                onClick={numberOfBuilds ? onShowUsage : undefined}
+                color={builds.length ? 'success' : 'secondary'}
+                onClick={builds.length ? onShowUsage : undefined}
               >
-                {t('builds', { count: numberOfBuilds })}
+                {t('builds', { count: builds.length })}
               </SqBadge>
             </Typography>
           </CardContent>
@@ -535,13 +549,17 @@ function SubstatDisplay({
 function ArtifactBuildUsageModal({
   show,
   onHide,
-  buildNames,
   usageText,
+  builds,
 }: {
   show: boolean
   onHide: () => void
-  buildNames: string[]
   usageText: string
+  builds: {
+    loadoutName: string
+    buildName: string
+    charKey: CharacterKey
+  }[]
 }) {
   return (
     <ModalWrapper open={show} onClose={onHide}>
@@ -564,9 +582,17 @@ function ArtifactBuildUsageModal({
           }
         />
         <List>
-          {buildNames.map((name, index) => (
+          {builds.map((build, index) => (
             <ListItem key={index}>
-              <ListItemText primary={name} />
+              <ListItemIcon>
+                <CharIconSide characterKey={build.charKey} />
+              </ListItemIcon>
+              <LoadoutIcon titleAccess="Loadout" fontSize="small" />
+              <ListItemText
+                disableTypography={true}
+                sx={{ display: 'flex', alignItems: 'center' }}
+                primary={`${build.loadoutName}: ${build.buildName}`}
+              />
             </ListItem>
           ))}
         </List>
