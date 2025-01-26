@@ -29,7 +29,6 @@ import {
   deepNodeClone,
   input,
   mergeData,
-  nonStacking,
   resetData,
   setReadNodeKeys,
   tally,
@@ -538,8 +537,6 @@ export function uiDataForTeam(
     const newNode = customRead(path)
     if (path[0] === 'teamBuff' && path[1] === 'tally')
       newNode.accu = objPathValue(tally, path.slice(2))?.accu
-    if (path[0] === 'teamBuff' && path[1] === 'nonStacking')
-      newNode.accu = objPathValue(nonStacking, path.slice(2))?.accu
     layeredAssignment(customReadNodes, path, newNode)
     return newNode
   }
