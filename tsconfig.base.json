@@ -158,6 +158,7 @@
       "@genshin-optimizer/zzz/disc-scanner": [
         "libs/zzz/disc-scanner/src/index.ts"
       ],
+      "@genshin-optimizer/zzz/dm": ["libs/zzz/dm/src/index.ts"],
       "@genshin-optimizer/zzz/page-discs": [
         "libs/zzz/page-discs/src/index.tsx"
       ],
