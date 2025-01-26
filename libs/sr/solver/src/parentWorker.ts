@@ -134,9 +134,19 @@ async function start({
         type: 'module',
       })
   )
-  // Wait for all workers to finish optimizing
+
   let results: BuildResult[] = []
   let numBuildsComputed = 0
+
+  // post initial progress
+  postMessage({
+    resultType: 'progress',
+    progress: {
+      numBuildsKept: 0,
+      numBuildsComputed: 0,
+    },
+  })
+  // Wait for all workers to finish optimizing
   await Promise.all(
     workers.map((worker, index) => {
       return new Promise<void>((res, rej) => {
