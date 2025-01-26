@@ -92,7 +92,7 @@ export function activeCharBuff(
 export function nonStackBuff(
   buffName: NonStackBuff,
   path: string,
-  buffNode: NumNode
+  buffNode: NumNode | number
 ) {
   return [
     equal(nonStacking[buffName], input.charKey, buffNode),

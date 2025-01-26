@@ -29,10 +29,8 @@ const skill_dmg_2 = equal(
 )
 
 const data = dataObjForWeaponSheet(key, {
-  teamBuff: {
-    premod: {
-      skill_dmg_: sum(skill_dmg_, skill_dmg_2),
-    },
+  premod: {
+    skill_dmg_: sum(skill_dmg_, skill_dmg_2),
   },
 })
 
@@ -49,7 +47,6 @@ const sheet: IWeaponSheet = {
     {
       value: condAfterOtherSkill,
       path: condAfterOtherSkillPath,
-      teamBuff: true,
       header: headerTemplate(key, st('conditional')),
       name: st('otherTeamAfterUse.skill'),
       states: {

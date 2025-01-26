@@ -1,7 +1,12 @@
-import { objKeyMap, objKeyValMap, range } from '@genshin-optimizer/common/util'
+import {
+  objKeyMap,
+  objKeyValMap,
+  objMap,
+  range,
+} from '@genshin-optimizer/common/util'
 import { allElementKeys, type WeaponKey } from '@genshin-optimizer/gi/consts'
 import {
-  equal,
+  equalStr,
   input,
   lookup,
   min,
@@ -9,7 +14,7 @@ import {
   prod,
   subscript,
 } from '@genshin-optimizer/gi/wr'
-import { cond, st, stg, trans } from '../../../SheetUtil'
+import { cond, nonStackBuff, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
@@ -45,11 +50,12 @@ const odeStacks_ele_dmg_ = objKeyValMap(allElementKeys, (ele) => [
 const [condOdeMaxedPath, condOdeMaxed] = cond(key, 'odeMaxed')
 const ele_dmg_arr = [-1, 0.08, 0.1, 0.12, 0.14, 0.16]
 const defFactor = prod(min(input.total.def, 3200), 1 / 1000)
+const nonstackWrite = equalStr(condOdeMaxed, 'on', input.charKey)
 const ele_dmg_ = objKeyValMap(allElementKeys, (key) => [
   `${key}_dmg_`,
-  equal(
-    condOdeMaxed,
-    'on',
+  nonStackBuff(
+    'patrol',
+    `${key}_dmg_`,
     prod(
       defFactor,
       subscript(input.weapon.refinement, ele_dmg_arr, { unit: '%' })
@@ -63,8 +69,9 @@ const data = dataObjForWeaponSheet(key, {
     ...odeStacks_ele_dmg_,
   },
   teamBuff: {
-    premod: {
-      ...ele_dmg_,
+    premod: objMap(ele_dmg_, (nodes) => nodes[0]), // First node is active node
+    nonStacking: {
+      patrol: nonstackWrite,
     },
   },
 })
@@ -100,7 +107,10 @@ const sheet: IWeaponSheet = {
       states: {
         on: {
           fields: [
-            ...Object.values(ele_dmg_).map((node) => ({ node })),
+            // Show both active + inactive nodes
+            ...Object.values(ele_dmg_).flatMap((nodes) =>
+              nodes.map((node) => ({ node }))
+            ),
             { text: stg('duration'), value: 15, unit: 's' },
           ],
         },

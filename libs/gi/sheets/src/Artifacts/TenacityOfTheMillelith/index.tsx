@@ -1,7 +1,13 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import type { Data } from '@genshin-optimizer/gi/wr'
-import { equal, greaterEq, input, percent } from '@genshin-optimizer/gi/wr'
-import { cond, st, stg } from '../../SheetUtil'
+import {
+  equalStr,
+  greaterEq,
+  greaterEqStr,
+  input,
+  percent,
+} from '@genshin-optimizer/gi/wr'
+import { cond, nonStackBuff, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
@@ -11,15 +17,16 @@ const setHeader = setHeaderTemplate(key)
 
 const hp_ = greaterEq(input.artSet.TenacityOfTheMillelith, 2, percent(0.2))
 const [condPath, condNode] = cond(key, 'skill')
-const set4Atk = greaterEq(
-  input.artSet.TenacityOfTheMillelith,
+const set4TallyWrite = greaterEqStr(
+  input.artSet[key],
   4,
-  equal('cast', condNode, percent(0.2))
+  equalStr(condNode, 'cast', input.charKey)
 )
-const set4Shield = greaterEq(
-  input.artSet.TenacityOfTheMillelith,
-  4,
-  equal('cast', condNode, percent(0.3))
+const [set4Atk, set4AtkInactive] = nonStackBuff('totm4', 'atk_', percent(0.2))
+const [set4Shield, set4ShieldInactive] = nonStackBuff(
+  'totm4',
+  'shield_',
+  percent(0.2)
 )
 
 export const data: Data = dataObjForArtifactSheet(key, {
@@ -30,6 +37,9 @@ export const data: Data = dataObjForArtifactSheet(key, {
     premod: {
       atk_: set4Atk,
       shield_: set4Shield,
+    },
+    nonStacking: {
+      totm4: set4TallyWrite,
     },
   },
 })
@@ -52,6 +62,12 @@ const sheet: SetEffectSheet = {
               },
               {
                 node: set4Shield,
+              },
+              {
+                node: set4AtkInactive,
+              },
+              {
+                node: set4ShieldInactive,
               },
               {
                 text: stg('duration'),

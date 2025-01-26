@@ -182,7 +182,7 @@ interface DynamicNumInput<T = NumNode> {
   conditional?: NodeData<T>
   teamBuff?: Input & {
     tally?: NodeData<NumNode>
-    nonStacking?: Record<NonStackBuff, StrNode>
+    nonStacking?: Partial<Record<NonStackBuff, StrNode>>
   }
 }
 export interface NodeData<T = NumNode> {

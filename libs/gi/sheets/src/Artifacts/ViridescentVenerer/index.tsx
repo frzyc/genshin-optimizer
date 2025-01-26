@@ -1,9 +1,15 @@
-import { objKeyMap, objKeyValMap } from '@genshin-optimizer/common/util'
+import { objKeyMap, objKeyValMap, objMap } from '@genshin-optimizer/common/util'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import { absorbableEle } from '@genshin-optimizer/gi/consts'
 import type { Data } from '@genshin-optimizer/gi/wr'
-import { equal, greaterEq, input, percent } from '@genshin-optimizer/gi/wr'
-import { condReadNode, st } from '../../SheetUtil'
+import {
+  equalStr,
+  greaterEq,
+  greaterEqStr,
+  input,
+  percent,
+} from '@genshin-optimizer/gi/wr'
+import { condReadNode, nonStackBuff, st } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
@@ -18,14 +24,14 @@ const condSwirlPaths = objKeyMap(absorbableEle, (e) => [key, `swirl${e}`])
 const condSwirls = objKeyMap(absorbableEle, (e) =>
   condReadNode(condSwirlPaths[e])
 )
+const set4TallyWrites = objKeyValMap(absorbableEle, (e) => [
+  `vv4${e}`,
+  greaterEqStr(input.artSet[key], 4, equalStr(condSwirls[e], e, input.charKey)),
+])
 
 const condSwirlNodes = objKeyValMap(absorbableEle, (e) => [
   `${e}_enemyRes_`,
-  greaterEq(
-    input.artSet.ViridescentVenerer,
-    4,
-    equal(e, condSwirls[e], percent(-0.4))
-  ),
+  nonStackBuff(`vv4${e}`, `${e}_enemyRes_`, percent(-0.4)),
 ])
 
 const data: Data = dataObjForArtifactSheet(key, {
@@ -34,9 +40,8 @@ const data: Data = dataObjForArtifactSheet(key, {
     swirl_dmg_,
   },
   teamBuff: {
-    premod: {
-      ...condSwirlNodes,
-    },
+    premod: objMap(condSwirlNodes, (nodes) => nodes[0]), // First node is active node
+    nonStacking: set4TallyWrites,
   },
 })
 
@@ -66,9 +71,9 @@ const sheet: SetEffectSheet = {
               path: condSwirlPaths[eleKey],
               name: st(`swirlReaction.${eleKey}`),
               fields: [
-                {
-                  node: condSwirlNodes[`${eleKey}_enemyRes_`],
-                },
+                ...Object.values(condSwirlNodes[`${eleKey}_enemyRes_`]).map(
+                  (node) => ({ node })
+                ),
                 {
                   text: st(`effectDuration.${eleKey}`),
                   value: 10,
