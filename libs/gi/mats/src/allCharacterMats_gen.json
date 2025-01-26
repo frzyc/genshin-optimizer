@@ -60737,6 +60737,627 @@
       }
     }
   },
+  "LanYan": {
+    "talents": {
+      "normal": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfDiligence",
+              "amount": 3
+            },
+            {
+              "item": "WhopperflowerNectar",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 2
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 4
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 6
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 9
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 4
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 4
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 6
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 6
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 12
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 9
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 16
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 12
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "skill": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfDiligence",
+              "amount": 3
+            },
+            {
+              "item": "WhopperflowerNectar",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 2
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 4
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 6
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 9
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 4
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 4
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 6
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 6
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 12
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 9
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 16
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 12
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      },
+      "burst": {
+        "1": {
+          "items": [],
+          "cost": 0
+        },
+        "2": {
+          "items": [
+            {
+              "item": "TeachingsOfDiligence",
+              "amount": 3
+            },
+            {
+              "item": "WhopperflowerNectar",
+              "amount": 6
+            }
+          ],
+          "cost": 12500
+        },
+        "3": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 2
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 3
+            }
+          ],
+          "cost": 17500
+        },
+        "4": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 4
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 4
+            }
+          ],
+          "cost": 25000
+        },
+        "5": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 6
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 6
+            }
+          ],
+          "cost": 30000
+        },
+        "6": {
+          "items": [
+            {
+              "item": "GuideToDiligence",
+              "amount": 9
+            },
+            {
+              "item": "ShimmeringNectar",
+              "amount": 9
+            }
+          ],
+          "cost": 37500
+        },
+        "7": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 4
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 4
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 1
+            }
+          ],
+          "cost": 120000
+        },
+        "8": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 6
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 6
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 1
+            }
+          ],
+          "cost": 260000
+        },
+        "9": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 12
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 9
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 2
+            }
+          ],
+          "cost": 450000
+        },
+        "10": {
+          "items": [
+            {
+              "item": "PhilosophiesOfDiligence",
+              "amount": 16
+            },
+            {
+              "item": "EnergyNectar",
+              "amount": 12
+            },
+            {
+              "item": "ErodedSunfire",
+              "amount": 2
+            },
+            {
+              "item": "CrownOfInsight",
+              "amount": 1
+            }
+          ],
+          "cost": 700000
+        },
+        "11": {
+          "items": [],
+          "cost": 0
+        },
+        "12": {
+          "items": [],
+          "cost": 0
+        },
+        "13": {
+          "items": [],
+          "cost": 0
+        },
+        "14": {
+          "items": [],
+          "cost": 0
+        },
+        "15": {
+          "items": [],
+          "cost": 0
+        }
+      }
+    },
+    "ascension": {
+      "0": {
+        "cost": 0,
+        "items": []
+      },
+      "1": {
+        "cost": 20000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseSliver",
+            "amount": 1
+          },
+          {
+            "item": "ClearwaterJade",
+            "amount": 3
+          },
+          {
+            "item": "WhopperflowerNectar",
+            "amount": 3
+          }
+        ]
+      },
+      "2": {
+        "cost": 40000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseFragment",
+            "amount": 3
+          },
+          {
+            "item": "GoldInscribedSecretSourceCore",
+            "amount": 2
+          },
+          {
+            "item": "ClearwaterJade",
+            "amount": 10
+          },
+          {
+            "item": "WhopperflowerNectar",
+            "amount": 15
+          }
+        ]
+      },
+      "3": {
+        "cost": 60000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseFragment",
+            "amount": 6
+          },
+          {
+            "item": "GoldInscribedSecretSourceCore",
+            "amount": 4
+          },
+          {
+            "item": "ClearwaterJade",
+            "amount": 20
+          },
+          {
+            "item": "ShimmeringNectar",
+            "amount": 12
+          }
+        ]
+      },
+      "4": {
+        "cost": 80000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseChunk",
+            "amount": 3
+          },
+          {
+            "item": "GoldInscribedSecretSourceCore",
+            "amount": 8
+          },
+          {
+            "item": "ClearwaterJade",
+            "amount": 30
+          },
+          {
+            "item": "ShimmeringNectar",
+            "amount": 18
+          }
+        ]
+      },
+      "5": {
+        "cost": 100000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseChunk",
+            "amount": 6
+          },
+          {
+            "item": "GoldInscribedSecretSourceCore",
+            "amount": 12
+          },
+          {
+            "item": "ClearwaterJade",
+            "amount": 45
+          },
+          {
+            "item": "EnergyNectar",
+            "amount": 12
+          }
+        ]
+      },
+      "6": {
+        "cost": 120000,
+        "items": [
+          {
+            "item": "VayudaTurquoiseGemstone",
+            "amount": 6
+          },
+          {
+            "item": "GoldInscribedSecretSourceCore",
+            "amount": 20
+          },
+          {
+            "item": "ClearwaterJade",
+            "amount": 60
+          },
+          {
+            "item": "EnergyNectar",
+            "amount": 24
+          }
+        ]
+      }
+    }
+  },
   "Somnia": {
     "talents": {
       "normal": {
