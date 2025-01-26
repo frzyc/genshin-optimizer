@@ -1,0 +1,158 @@
+{
+  "name": "Lan Yan",
+  "title": "Aus Jade geflochtener Frühling",
+  "description": "Eine Rattanflechterin aus dem Chenyu-Tal, mit einer erfrischenden Erscheinung und Ausstrahlung, so dynamisch wie die klaren Quellen in den Bergen.",
+  "constellationName": "Hirundo Lazuli",
+  "auto": {
+    "name": "Schwarzer Fasan streicht übers Wasser",
+    "fields": {
+      "normal": {
+        "0": "<strong>Standardangriff</strong>",
+        "1": "Wirbelt ihren Mondsichelring, führt bis zu 4 Angriffe aus und verursacht <anemo>Anemo-Schaden</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Heftiger Schlag</strong>",
+        "1": "Verbraucht eine gewisse Menge Ausdauer, wirft ihren Mondsichelring und verursacht <anemo>Anemo-Schaden</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Angriff aus dem Fall</strong>",
+        "1": "Konzentriert die Kraft des Windes, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen <anemo>Anemo-Flächenschaden</anemo>."
+      }
+    },
+    "skillParams": {
+      "0": "SCH Phase 1",
+      "1": "SCH Phase 2",
+      "2": "SCH Phase 3",
+      "3": "SCH Phase 4",
+      "4": "SCH heftiger Schläge",
+      "5": "Ausdauerverbrauch heftiger Schläge",
+      "6": "SCH beim Fallen",
+      "7": "SCH beim Fallen aus niedriger/großer Höhe",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Schwalbenschnitt-Tanz",
+    "description": {
+      "0": "Beschwört den Schwalbenschnittschild hervor, dessen Technik über Generationen hinweg weitergegeben wurde, stürmt schnell nach vorn und springt beim Kontakt mit ihrem Ziel rückwärts in die Höhe.",
+      "1": "Die Schildstärke des Schwalbenschnittschilds hängt von Lan Yans ANG ab und hält bei <anemo>Anemo-Schaden</anemo> 250 % ab.",
+      "2": "Während Lan Yan mit ihrer Elementarfähigkeit Schwalbenschnitt-Tanz in die Luft hochspringt, wirft sie beim kurzen Drücken ihrer Elementarfähigkeit oder ihres Standardangriffs ihre Mondsichelringe, die nach dem Auftreffen zweimal um die Gegner in der Nähe kreisen und <anemo>Anemo-Schaden</anemo> verursachen.",
+      "3": "Beim Gedrückthalten nimmt diese Fähigkeit einen anderen Modus an.",
+      "4": "<br/>",
+      "5": "<strong>Gedrückt halten</strong>",
+      "6": "Tritt in einen Zielmodus ein, in dem die Richtung des schnellen Vorstoßes bestimmt werden kann.",
+      "7": "<br/>",
+      "8": "<i>„Die Wolken schneiden durch das Mondlicht, als würden silberne Schatten den Blick erhellen.“</i>"
+    },
+    "skillParams": {
+      "0": "Mondsichelring-SCH",
+      "1": "Schildstärke",
+      "2": "Schilddauer",
+      "3": "Abklingzeit",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Blendender Mondaufgang",
+    "description": {
+      "0": "Lan Yan erschafft eine silberne Mondsichel-Formation, zieht damit Gegner und Objekte in der Nähe an und verursacht mehrfach <anemo>Anemo-Flächenschaden</anemo>.",
+      "1": "<br/>",
+      "2": "<i>Rein technisch gesehen kann Lan Yan ganz allein ja keine ganze Formation bilden. Wenn man ihre kleinen Rattanfiguren, die sie immer bei sich trägt, dazuzählt, könnte man es wohl durchgehen lassen ... also rein technisch gesehen.</i>"
+    },
+    "skillParams": {
+      "0": "Fähigkeits-SCH",
+      "1": "Abklingzeit",
+      "2": "Elementarenergie",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Wahrsagung durch vier Klingen",
+    "description": {
+      "0": "Ändert, wenn mit dem Vorstoß der Elementarfähigkeit <strong>Schwalbenschnitt-Tanz</strong> ein Ziel getroffen und dabei die Elemente <hydro>Hydro</hydro>, <pyro>Pyro</pyro>, <cryo>Kryo</cryo> oder <electro>Elektro</electro> erfasst werden, das Element des Schwalbenschnittschilds. Hält danach bei Schaden des jeweiligen Elements 250 % ab.",
+      "1": "Verursacht außerdem, wenn durch die Elementarfähigkeit <strong>Schwalbenschnitt-Tanz</strong> eine Elementarumwandlung des Schwalbenschnittschilds stattgefunden hat, mit von Lan Yan geworfenen Mondsichelringen Schaden des jeweiligen Elements in Höhe von 50 % des ursprünglichen Schadens. Hierdurch verursachter Schaden gilt als Schaden der Elementarfähigkeit."
+    }
+  },
+  "passive2": {
+    "name": "Himmelsfedertalisman zur Unterdrückung des Bösen",
+    "description": {
+      "0": "Erhöht den mit der Elementarfähigkeit <strong>Schwalbenschnitt-Tanz</strong> und der Spezialfähigkeit <strong>Blendender Mondaufgang</strong> verursachten Schaden je um 309 % bzw. 774 % von Lan Yans Elementarkunde."
+    }
+  },
+  "passive3": {
+    "name": "„Im Herzen verweilender Duft“",
+    "description": {
+      "0": "Eigene Figuren in der Truppe scheuchen Kristallschmetterlinge und einige andere Lebewesen nicht auf, wenn sie sich ihnen nähern, solange Lan Yan in der Truppe ist.",
+      "1": "Sieh unter „Andere“ bei „Lebewesen – Wildtiere“ im Handbuch nach, um Genaueres über die Lebewesen, bei denen diese Fähigkeit wirkt, zu erfahren."
+    }
+  },
+  "constellation1": {
+    "name": "„Hoch jemand gleitet, in den Wolken geschwind“",
+    "description": {
+      "0": "Lan Yan wirft nach Auslösen der Elementarumwandlung des passiven Talents „Wahrsagung durch vier Klingen“ bei diesmaliger Anwendung der Elementarfähigkeit <strong>Schwalbenschnitt-Tanz</strong> einen Mondsichelring mehr auf die Gegner.",
+      "1": "Das passive Talent „Wahrsagung durch vier Klingen“ muss zuerst freigeschaltet werden."
+    }
+  },
+  "constellation2": {
+    "name": "„Das Tanzgewand, wie Jade farbenprächtig glimmt“",
+    "description": {
+      "0": "Stellt beim Verursachen von Schaden mit dem Standardangriff der eigenen aktuellen Figur in der Truppe während der Wirkungsdauer des <strong>Schwalbenschnittschilds</strong> diesem 40 % seiner Schildstärke wieder her, höchstens bis zu der Schildstärke beim Erschaffen des Schilds, 2 s Abklingzeit."
+    }
+  },
+  "constellation3": {
+    "name": "„Den weißen Phönix reitend durch der Nebel Dunst“",
+    "description": {
+      "0": "Erhöht die Stufe der Elementarfähigkeit <strong>Schwalbenschnitt-Tanz</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation4": {
+    "name": "„Mit Blutperlenschmuck, des Drachenfalken Gunst“",
+    "description": {
+      "0": "Erhöht beim Anwenden der Spezialfähigkeit <strong>Blendender Mondaufgang</strong> die Elementarkunde aller in der Nähe befindlichen Truppenmitglieder 12 s lang um 60 Punkte."
+    }
+  },
+  "constellation5": {
+    "name": "„Allein dir zu begegnen, ist mir Freude genug“",
+    "description": {
+      "0": "Erhöht die Stufe der Spezialfähigkeit <strong>Blendender Mondaufgang</strong> um 3.",
+      "1": "Höchststufe 15."
+    }
+  },
+  "constellation6": {
+    "name": "„Auf Winden ziehen wir, Silberklang ertönt im Flug“",
+    "description": {
+      "0": "Ermöglicht 1 weitere Anwendung von <strong>Schwalbenschnitt-Tanz</strong>."
+    }
+  }
+}
