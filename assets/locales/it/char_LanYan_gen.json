@@ -1,0 +1,158 @@
+{
+  "name": "Lan Yan",
+  "title": "Intreccio di giada primaverile",
+  "description": "Una tessitrice di rattan della Vallata Chenyu. Dotata di una mente chiara e un carattere mite, è vivace come una sorgente di montagna.",
+  "constellationName": "Hirundo Lazuli",
+  "auto": {
+    "name": "Il fagiano nero che avanza sull'acqua",
+    "fields": {
+      "normal": {
+        "0": "<strong>Attacco normale</strong>",
+        "1": "Brandisce i suoi Anelli Lunapiumata per sferrare fino a 4 colpi infliggendo <anemo>DAN da Anemo</anemo>."
+      },
+      "charged": {
+        "0": "<strong>Attacco caricato</strong>",
+        "1": "Consuma una determinata quantità di vigore per scagliare un Anello Lunapiumata che infligge <anemo>DAN da Anemo</anemo>."
+      },
+      "plunging": {
+        "0": "<strong>Attacco in picchiata</strong>",
+        "1": "Accumulando la forza di Anemo, si scaglia contro il suolo da mezz'aria, danneggiando tutti gli avversari lungo la sua traiettoria. Infligge <anemo>DAN da Anemo ad area</anemo> all'impatto col suolo."
+      }
+    },
+    "skillParams": {
+      "0": "DAN da 1º colpo",
+      "1": "DAN da 2º colpo",
+      "2": "DAN da 3º colpo",
+      "3": "DAN da 4º colpo",
+      "4": "DAN da ATT caricato",
+      "5": "Costo vigore ATT caricato",
+      "6": "DAN da ATT in picchiata",
+      "7": "DAN da ATT in picchiata basso/alto",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "skill": {
+    "name": "Remiganti danzanti della rondine",
+    "description": {
+      "0": "Lan Yan evoca lo Scudo rondine, un'arte segreta tramandata da generazioni, e compie un assalto in avanti. Una volta entrata in contatto con il bersaglio, esegue un salto all'indietro verso l'alto.",
+      "1": "L'assorbimento DAN dello Scudo rondine si basa sull'ATT di Lan Yan e possiede un 250% di efficienza contro i <anemo>DAN da Anemo</anemo>.",
+      "2": "Quando è a mezz'aria per effetto della sua abilità elementale Remiganti danzanti della rondine, usare nuovamente quest'ultima o un attacco normale permette a Lan Yan di scagliare contro un avversario i suoi Anelli Lunapiumata. Una volta colpito un avversario, gli Anelli ruotano due volte tra gli avversari vicini infliggendo <anemo>DAN da Anemo</anemo>.",
+      "3": "La pressione prolungata permette di eseguire una versione alternativa dell'abilità.",
+      "4": "<br/>",
+      "5": "<strong>Pressione prolungata</strong>",
+      "6": "Entra in modalità di mira per regolare la direzione dell'assalto.",
+      "7": "<br/>",
+      "8": "<i>\"Le nuvole oscurano il chiaro di luna, come ombre argentate che adornano la vista.\"</i>"
+    },
+    "skillParams": {
+      "0": "DAN da Anello Lunapiumata",
+      "1": "Assorbimento DAN scudo",
+      "2": "Durata scudo",
+      "3": "TdR",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "burst": {
+    "name": "Alba lunare splendente",
+    "description": {
+      "0": "Lan Yan crea la Matrice Rondine Lunapiumata, attirando a sé avversari e oggetti vicini e infliggendo diverse iterazioni di <anemo>DAN da Anemo ad area</anemo>.",
+      "1": "<br/>",
+      "2": "<i>A dirla tutta, essendo Lan Yan da sola, non si può davvero parlare di \"matrice\". Tuttavia, se consideriamo le bambole di rattan che ha con lei, allora è in grado di soddisfare i requisiti... Forse.</i><anemo></anemo>"
+    },
+    "skillParams": {
+      "0": "DAN da abilità",
+      "1": "TdR",
+      "2": "Costo energia",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "11": "",
+      "12": "",
+      "13": "",
+      "14": "",
+      "15": ""
+    }
+  },
+  "passive1": {
+    "name": "Quattro amuleti del sigillo divinatorio",
+    "description": {
+      "0": "Quando l'assalto dell'abilità elementale <strong>Remiganti danzanti della rondine</strong> colpisce un bersaglio, se si verifica un'interazione con <hydro>Hydro</hydro>/<pyro>Pyro</pyro>/<cryo>Cryo</cryo>/<electro>Electro</electro>, lo Scudo rondine subisce un assorbimento elementale, ottenendo un'efficienza di assorbimento del tipo elementale corrispondente pari a un 250%.",
+      "1": "Inoltre, se l'utilizzo di <strong>Remiganti danzanti della rondine</strong> causa un assorbimento elementale dello Scudo rondine, gli Anelli Lunapiumata lanciati contro gli avversari da Lan Yan infliggono ulteriori DAN elementali pari a un 50% dei DAN originali del corrispondente tipo elementale. Tali DAN sono considerati DAN da abilità elementale."
+    }
+  },
+  "passive2": {
+    "name": "Talismano Celestipiuma scacciamaligno",
+    "description": {
+      "0": "L'abilità elementale <strong>Remiganti danzanti della rondine</strong> e il Tripudio elementale <strong>Alba lunare splendente</strong> infliggono DAN aumentati rispettivamente di un 309% e un 774% della maestria elementale di Lan Yan."
+    }
+  },
+  "passive3": {
+    "name": "Pensieri e intenti, come profumi di seta",
+    "description": {
+      "0": "Quando Lan Yan è nel gruppo, i Cristallotteri e alcuni altri animali non fuggiranno spaventati quando i tuoi personaggi si avvicinano a essi.",
+      "1": "Controlla la sottocategoria Altro della sezione Esseri viventi/Fauna nell'Archivio per scoprire su quali creature ha effetto quest'abilità."
+    }
+  },
+  "constellation1": {
+    "name": "\"Mentre ella passeggia tra le nuvole\"",
+    "description": {
+      "0": "Dopo aver innescato l'assorbimento elementale del talento passivo Quattro amuleti del sigillo divinatorio, l'attuale iterazione dell'abilità elementale di Lan Yan <strong>Remiganti danzanti della rondine</strong> genera un ulteriore Anello Lunapiumata quando questi vengono lanciati contro gli avversari.",
+      "1": "Richiede il talento passivo Quattro amuleti del sigillo divinatorio."
+    }
+  },
+  "constellation2": {
+    "name": "\"Come giada iridescente ondeggiano le vesti da danza\"",
+    "description": {
+      "0": "Mentre lo <strong>Scudo rondine</strong> è attivo, quando gli attacchi normali del membro attivo del gruppo infliggono DAN, viene ripristinato un 40% dell'assorbimento DAN dello scudo, fino al suo livello di assorbimento massimo originale. Quest'effetto può attivarsi una volta ogni 2 s."
+    }
+  },
+  "constellation3": {
+    "name": "\"Le bianche ali trapassano nuvole e nebbia\"",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Remiganti danzanti della rondine</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation4": {
+    "name": "\"Adornate di perle di sangue del dragofalco\"",
+    "description": {
+      "0": "Dopo che Lan Yan ha usato il Tripudio elementale <strong>Alba lunare splendente</strong>, la maestria elementale di tutti i membri vicini del gruppo aumenta di 60 punti per 12 s."
+    }
+  },
+  "constellation5": {
+    "name": "\"La felicità dimora nel nostro incontro\"",
+    "description": {
+      "0": "Aumenta di 3 il livello di <strong>Alba lunare splendente</strong>.",
+      "1": "Il livello di potenziamento massimo è 15."
+    }
+  },
+  "constellation6": {
+    "name": "\"Fuggiamo su ali leggiadre, per suonare gli argentei ornamenti\"",
+    "description": {
+      "0": "Aumenta di 1 le cariche di <strong>Remiganti danzanti della rondine</strong>."
+    }
+  }
+}
