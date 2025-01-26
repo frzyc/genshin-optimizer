@@ -82,14 +82,12 @@ export async function processEntry(
   const substatTextIndex = whiteTexts.findIndex((t) =>
     t.toLowerCase().includes('sub-stats')
   )
-  const setEffectTextIndex = whiteTexts.findIndex((t) =>
+  let setEffectTextIndex = whiteTexts.findIndex((t) =>
     t.toLowerCase().includes('set effect')
   )
-  if (
-    mainStatTextIndex === -1 ||
-    substatTextIndex === -1 ||
-    setEffectTextIndex === -1
-  ) {
+  if (setEffectTextIndex === -1) setEffectTextIndex = whiteTexts.length - 1
+
+  if (mainStatTextIndex === -1 || substatTextIndex === -1) {
     retProcessed.texts.push(
       'Could not detect main stat, substats or set effect.'
     )
@@ -108,8 +106,7 @@ export async function processEntry(
   if (
     setLvlTexts.length === 0 ||
     mainStatTexts.length === 0 ||
-    substatTexts.length === 0 ||
-    setEffectTexts.length === 0
+    substatTexts.length === 0
   ) {
     retProcessed.texts.push(
       'Could not detect main stat, substats or set effect.'
@@ -120,7 +117,7 @@ export async function processEntry(
   // Join all text above the "Main Stat" text due to set text wrapping
   let { slotKey, setKey } = parseSetSlot([setLvlTexts.join('')])
   if (!setKey) {
-    setKey = parseSet(setEffectTexts)
+    if (setEffectTexts.length) setKey = parseSet(setEffectTexts)
     if (!setKey) {
       setKey = 'AstralVoice'
       retProcessed.texts.push(
