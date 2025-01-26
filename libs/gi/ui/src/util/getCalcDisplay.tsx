@@ -222,14 +222,7 @@ function computeFormulaDisplay(
   result.formula = (
     <>
       {components.map((x, i) => (
-        <span
-          style={{
-            textDecoration: info.strikethrough ? 'line-through' : undefined,
-          }}
-          key={i}
-        >
-          {x}
-        </span>
+        <span key={i}>{x}</span>
       ))}
     </>
   )
