@@ -5,12 +5,20 @@ import type {
   WeaponKey,
 } from '@genshin-optimizer/gi/consts'
 import { Translate } from '@genshin-optimizer/gi/i18n'
-import type { Info, NumNode, ReadNode, StrNode } from '@genshin-optimizer/gi/wr'
+import type {
+  Info,
+  NonStackBuff,
+  NumNode,
+  ReadNode,
+  StrNode,
+} from '@genshin-optimizer/gi/wr'
 import {
   customStringRead,
   equal,
   infoMut,
   input,
+  nonStacking,
+  unequal,
 } from '@genshin-optimizer/gi/wr'
 import type { ReactNode } from 'react'
 
