@@ -1,13 +1,14 @@
 import type { WeaponKey } from '@genshin-optimizer/gi/consts'
 import {
   equal,
+  equalStr,
   infoMut,
   input,
   subscript,
   target,
   unequal,
 } from '@genshin-optimizer/gi/wr'
-import { cond, st, stg, trans } from '../../../SheetUtil'
+import { cond, nonStackBuff, st, stg, trans } from '../../../SheetUtil'
 import type { IWeaponSheet } from '../../IWeaponSheet'
 import { WeaponSheet, headerTemplate } from '../../WeaponSheet'
 import { dataObjForWeaponSheet } from '../../util'
@@ -18,9 +19,10 @@ const [, trm] = trans('weapon', key)
 const atkSrc = [-1, 0.24, 0.3, 0.36, 0.42, 0.48]
 
 const [condPassivePath, condPassive] = cond(key, 'Heritage')
-const atk_Disp = equal(
-  'on',
-  condPassive,
+const nonstackWrite = equalStr(condPassive, 'on', input.charKey)
+const [atk_Disp, atk_dispInactive] = nonStackBuff(
+  'ttds',
+  'atk_',
   subscript(input.weapon.refinement, atkSrc)
 )
 const atk_ = unequal(
@@ -33,6 +35,9 @@ const data = dataObjForWeaponSheet(key, {
   teamBuff: {
     premod: {
       atk_,
+    },
+    nonStacking: {
+      ttds: nonstackWrite,
     },
   },
 })
@@ -49,7 +54,10 @@ const sheet: IWeaponSheet = {
         on: {
           fields: [
             {
-              node: infoMut(atk_Disp, { path: 'atk_' }),
+              node: infoMut(atk_Disp, { path: 'atk_', isTeamBuff: true }),
+            },
+            {
+              node: atk_dispInactive,
             },
             {
               text: stg('duration'),

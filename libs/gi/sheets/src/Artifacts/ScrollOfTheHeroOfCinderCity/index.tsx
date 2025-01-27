@@ -6,14 +6,16 @@ import {
 import type { UIData } from '@genshin-optimizer/gi/uidata'
 import type { Data } from '@genshin-optimizer/gi/wr'
 import {
-  compareEq,
   equal,
+  equalStr,
   greaterEq,
+  greaterEqStr,
   infoMut,
   input,
+  percent,
   sum,
 } from '@genshin-optimizer/gi/wr'
-import { condReadNode, st, stg } from '../../SheetUtil'
+import { condReadNode, nonStackBuff, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
@@ -26,26 +28,36 @@ const condReactPaths = objKeyMap(allElementKeys, (ele) => [key, `react_${ele}`])
 const condReacts = objKeyMap(allElementKeys, (ele) =>
   condReadNode(condReactPaths[ele])
 )
-
 const reactNodeOnCount = sum(
   ...allElementKeys.map((ele) => equal(condReacts[ele], ele, 1))
 )
 
-const condReactBuffs = objKeyValMap(allElementKeys, (ele) => [
-  `${ele}_dmg_`,
+// If one of following is true, the element is buffed
+const isReactEleBuffed = objKeyMap(allElementKeys, (ele) =>
   greaterEq(
-    input.artSet.ScrollOfTheHeroOfCinderCity,
+    sum(
+      // buffing self elemental damage; check if any reactions are enabled
+      equal(input.charEle, ele, greaterEq(reactNodeOnCount, 1, 1)),
+      // buffing other elemental damage; check if that conditional is enabled
+      equal(condReacts[ele], ele, 1)
+    ),
+    1,
+    1
+  )
+)
+
+const set4BaseTallyWrites = objKeyValMap(allElementKeys, (ele) => [
+  `scroll4base${ele}`,
+  greaterEqStr(
+    input.artSet[key],
     4,
-    compareEq(
-      input.charEle,
-      ele,
-      // buffing self elemental damage, check if any of the reactions are enabled
-      greaterEq(reactNodeOnCount, 1, 0.12),
-      // buffing other elemental damage, check if that particular conditional is enabled
-      equal(condReacts[ele], ele, 0.12)
-    )
+    greaterEqStr(isReactEleBuffed[ele], 1, input.charKey)
   ),
 ])
+
+const condReactBuffs = objKeyMap(allElementKeys, (ele) =>
+  nonStackBuff(`scroll4base${ele}`, `${ele}_dmg_`, percent(0.12))
+)
 
 const condNightsoulPaths = objKeyMap(allElementKeys, (ele) => [
   key,
@@ -54,38 +66,52 @@ const condNightsoulPaths = objKeyMap(allElementKeys, (ele) => [
 const condNightsouls = objKeyMap(allElementKeys, (ele) =>
   condReadNode(condNightsoulPaths[ele])
 )
-
 const reactAndNightsoulOnCount = sum(
   ...allElementKeys.map((ele) =>
     equal(condReacts[ele], ele, equal(condNightsouls[ele], ele, 1))
   )
 )
 
-const condNightsoulBuffs = objKeyValMap(allElementKeys, (ele) => [
-  `${ele}_dmg_`,
+// If one of following is true, the element is buffed
+const isNsEleBuffed = objKeyMap(allElementKeys, (ele) =>
   greaterEq(
-    input.artSet.ScrollOfTheHeroOfCinderCity,
+    sum(
+      // buffing self elemental damage; check if any reactions are enabled
+      equal(input.charEle, ele, greaterEq(reactAndNightsoulOnCount, 1, 1)),
+      // buffing other elemental damage; check if that conditional is enabled
+      equal(condNightsouls[ele], ele, equal(condReacts[ele], ele, 1))
+    ),
+    1,
+    1
+  )
+)
+
+const set4NsTallyWrites = objKeyValMap(allElementKeys, (ele) => [
+  `scroll4ns${ele}`,
+  greaterEqStr(
+    input.artSet[key],
     4,
-    compareEq(
-      input.charEle,
-      ele,
-      // buffing self elemental damage, check if any of the reactions are enabled
-      greaterEq(reactAndNightsoulOnCount, 1, 0.28),
-      // buffing other elemental damage, check if that particular conditional is enabled
-      equal(condNightsouls[ele], ele, equal(condReacts[ele], ele, 0.28))
-    )
+    equalStr(isNsEleBuffed[ele], 1, input.charKey)
   ),
 ])
 
+const condNightsoulBuffs = objKeyMap(allElementKeys, (ele) =>
+  nonStackBuff(`scroll4ns${ele}`, `${ele}_dmg_`, percent(0.28))
+)
+
 const totalBuffs = objKeyValMap(allElementKeys, (ele) => [
   `${ele}_dmg_`,
-  sum(condReactBuffs[`${ele}_dmg_`], condNightsoulBuffs[`${ele}_dmg_`]),
+  sum(condReactBuffs[ele][0], condNightsoulBuffs[ele][0]),
 ])
 
 export const data: Data = dataObjForArtifactSheet(key, {
   teamBuff: {
     premod: {
       ...totalBuffs,
+    },
+    nonStacking: {
+      ...set4BaseTallyWrites,
+      ...set4NsTallyWrites,
     },
   },
 })
@@ -115,12 +141,17 @@ const sheet: SetEffectSheet = {
         teamBuff: true,
         canShow: reactNodeOnCount,
         fields: [
-          ...allElementKeys.map((ele) => ({
-            node: infoMut(condReactBuffs[`${ele}_dmg_`], {
-              path: `${ele}_dmg_`,
-              isTeamBuff: true,
-            }),
-          })),
+          ...Object.entries(condReactBuffs).flatMap(([key, nodes]) =>
+            nodes.map((node) => ({
+              node: infoMut(node, {
+                path: `${key}_dmg_`,
+                isTeamBuff: true,
+              }),
+              // Hide buffs that aren't enabled by conditionals, since we are showing the buffs separately from the checkboxes
+              canShow: (data: UIData) =>
+                data.get(isReactEleBuffed[key]).value >= 1,
+            }))
+          ),
           {
             text: stg('duration'),
             value: 15,
@@ -148,12 +179,17 @@ const sheet: SetEffectSheet = {
         teamBuff: true,
         canShow: reactAndNightsoulOnCount,
         fields: [
-          ...allElementKeys.map((ele) => ({
-            node: infoMut(condNightsoulBuffs[`${ele}_dmg_`], {
-              path: `${ele}_dmg_`,
-              isTeamBuff: true,
-            }),
-          })),
+          ...Object.entries(condNightsoulBuffs).flatMap(([key, nodes]) =>
+            nodes.map((node) => ({
+              node: infoMut(node, {
+                path: `${key}_dmg_`,
+                isTeamBuff: true,
+              }),
+              // Hide buffs that aren't enabled by conditionals, since we are showing the buffs separately from the checkboxes
+              canShow: (data: UIData) =>
+                data.get(isNsEleBuffed[key]).value >= 1,
+            }))
+          ),
           {
             text: stg('duration'),
             value: 20,
