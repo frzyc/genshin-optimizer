@@ -16,7 +16,9 @@ export function WorkerSelector({
     <DropdownButton title={`${t('numWorkers')}: ${numWorkers}`}>
       {range(1, maxWorkers).map((n) => (
         <MenuItem key={n} onClick={() => setNumWorkers(n)}>
-          {t('workers', { count: n })}
+          {n} Workers
+          {/* TODO: Translation */}
+          {/* {t('workers', { count: n })} */}
         </MenuItem>
       ))}
     </DropdownButton>

@@ -9,6 +9,7 @@ import { defaultInitialWeaponKey, initialWeapon } from './WeaponDataManager'
 export interface Build {
   name: string
   description: string
+  id: string
 
   weaponId?: string
   artifactIds: Record<ArtifactSlotKey, string | undefined>
@@ -29,6 +30,7 @@ export class BuildDataManager extends DataManager<
   }
   override validate(obj: unknown): Build | undefined {
     let { name, description, weaponId, artifactIds } = obj as Build
+    const { id } = obj as Build
     if (typeof name !== 'string') name = 'Build Name'
     if (typeof description !== 'string') description = ''
     if (weaponId && !this.database.weapons.get(weaponId)) weaponId = undefined
@@ -62,6 +64,7 @@ export class BuildDataManager extends DataManager<
       description,
       weaponId,
       artifactIds,
+      id,
     }
   }
 

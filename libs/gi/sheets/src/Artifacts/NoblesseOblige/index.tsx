@@ -1,13 +1,7 @@
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import type { Data } from '@genshin-optimizer/gi/wr'
-import {
-  equalStr,
-  greaterEq,
-  greaterEqStr,
-  input,
-  percent,
-} from '@genshin-optimizer/gi/wr'
-import { cond, nonStackBuff, st, stg } from '../../SheetUtil'
+import { equal, greaterEq, input, percent } from '@genshin-optimizer/gi/wr'
+import { cond, st, stg } from '../../SheetUtil'
 import { ArtifactSheet, setHeaderTemplate } from '../ArtifactSheet'
 import type { SetEffectSheet } from '../IArtifactSheet'
 import { dataObjForArtifactSheet } from '../dataUtil'
@@ -18,12 +12,11 @@ const setHeader = setHeaderTemplate(key)
 const set2 = greaterEq(input.artSet.NoblesseOblige, 2, percent(0.2))
 
 const [condSet4Path, condSet4] = cond(key, 'set4')
-const set4TallyWrite = greaterEqStr(
+const set4 = greaterEq(
   input.artSet.NoblesseOblige,
   4,
-  equalStr(condSet4, 'on', input.charKey)
+  equal(condSet4, 'on', percent(0.2))
 )
-const [set4, set4Inactive] = nonStackBuff('no4', 'atk_', percent(0.2))
 
 export const data: Data = dataObjForArtifactSheet(key, {
   premod: {
@@ -32,9 +25,6 @@ export const data: Data = dataObjForArtifactSheet(key, {
   teamBuff: {
     premod: {
       atk_: set4,
-    },
-    nonStacking: {
-      no4: set4TallyWrite,
     },
   },
 })
@@ -54,9 +44,6 @@ const sheet: SetEffectSheet = {
             fields: [
               {
                 node: set4,
-              },
-              {
-                node: set4Inactive,
               },
               {
                 text: stg('duration'),

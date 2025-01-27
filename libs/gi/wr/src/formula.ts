@@ -629,11 +629,6 @@ const tally = {
   ele: sum(...allElements.map((ele) => min(_tally[ele], 1))),
 }
 
-const nonStacking = setReadNodeKeys(
-  objKeyMap(allNonstackBuffs, () => stringRead('small')),
-  ['nonStacking']
-)
-
 /**
  * List of `input` nodes, rearranged to conform to the needs of the
  * UI code. This is a separate list so that the evolution of the UIs
@@ -651,4 +646,4 @@ export const infusionNode = stringPrio(
   input.infusion.overridableSelf
 )
 
-export { common, customBonus, input, nonStacking, tally, target, uiInput }
+export { common, customBonus, input, tally, target, uiInput }

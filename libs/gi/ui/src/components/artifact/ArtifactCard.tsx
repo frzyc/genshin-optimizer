@@ -1,5 +1,6 @@
 'use client'
 // use client due to hydration difference between client rendering and server in translation
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import {
   BootstrapTooltip,
@@ -8,13 +9,16 @@ import {
   ConditionalWrapper,
   InfoTooltip,
   InfoTooltipInline,
+  ModalWrapper,
   NextImage,
+  SqBadge,
   StarsDisplay,
 } from '@genshin-optimizer/common/ui'
 import { clamp, clamp01, getUnitStr } from '@genshin-optimizer/common/util'
 import { artifactAsset } from '@genshin-optimizer/gi/assets'
 import type {
   ArtifactRarity,
+  CharacterKey,
   LocationKey,
   SubstatKey,
 } from '@genshin-optimizer/gi/consts'
@@ -23,7 +27,7 @@ import {
   allSubstatKeys,
 } from '@genshin-optimizer/gi/consts'
 import type { ICachedArtifact, ICachedSubstat } from '@genshin-optimizer/gi/db'
-import { useArtifact } from '@genshin-optimizer/gi/db-ui'
+import { useArtifact, useDatabase } from '@genshin-optimizer/gi/db-ui'
 import { SlotIcon, StatIcon } from '@genshin-optimizer/gi/svgicons'
 import {
   artDisplayValue,
@@ -40,8 +44,13 @@ import {
   Button,
   CardActionArea,
   CardContent,
+  CardHeader,
   Chip,
   IconButton,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
   Skeleton,
   SvgIcon,
   Typography,
@@ -49,9 +58,9 @@ import {
 import type { ReactNode } from 'react'
 import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { ExcludeIcon } from '../../consts'
+import { CloseIcon, ExcludeIcon, LoadoutIcon } from '../../consts'
 import { PercentBadge } from '../PercentBadge'
-import { LocationAutocomplete, LocationName } from '../character'
+import { CharIconSide, LocationAutocomplete, LocationName } from '../character'
 import { ArtifactSetTooltipContent } from './ArtifactSetTooltip'
 import {
   ArtifactSetName,
@@ -96,7 +105,7 @@ export function ArtifactCardObj({
 } & Data) {
   const { t } = useTranslation(['artifact', 'ui'])
   const { t: tk } = useTranslation('statKey_gen')
-
+  const [showUsage, onShowUsage, onHideUsage] = useBoolState(false)
   const wrapperFunc = useCallback(
     (children: ReactNode) => (
       <CardActionArea
@@ -153,7 +162,29 @@ export function ArtifactCardObj({
     Math.min(mainStatAssumptionLevel, rarity * 4),
     level
   )
-
+  const database = useDatabase()
+  const builds: {
+    loadoutName: string
+    buildName: string
+    charKey: CharacterKey
+  }[] = useMemo(() => {
+    return database.builds.values
+      .filter(
+        ({ artifactIds }) => artifactIds[artifact.slotKey] === artifact.id
+      )
+      .flatMap(({ id, name }) => {
+        const buildName = name
+        return database.teamChars.values
+          .filter(({ buildIds }) => buildIds.includes(id))
+          .map(({ key, name }) => {
+            return {
+              charKey: key,
+              buildName,
+              loadoutName: name,
+            }
+          })
+      })
+  }, [database.builds, database.teamChars, artifact.slotKey, artifact.id])
   const artifactValid = maxEfficiency !== 0
   const slotName = <ArtifactSetSlotName setKey={setKey} slotKey={slotKey} />
   const slotDesc = <ArtifactSetSlotDesc setKey={setKey} slotKey={slotKey} />
@@ -178,6 +209,14 @@ export function ArtifactCardObj({
         />
       }
     >
+      <Suspense fallback={false}>
+        <ArtifactBuildUsageModal
+          show={showUsage}
+          onHide={onHideUsage}
+          usageText={t('artifact:artifactUsage')}
+          builds={builds}
+        />
+      </Suspense>
       <CardThemed
         bgt="light"
         sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
@@ -350,7 +389,15 @@ export function ArtifactCardObj({
               </Typography>
             )}
             <Box flexGrow={1} />
-            <Typography color="success.main">
+            <Typography
+              color="success.main"
+              sx={{
+                display: 'flex',
+                gap: 1,
+                alignItems: 'center',
+                mt: 1,
+              }}
+            >
               {(setKey && <ArtifactSetName setKey={setKey} />) ||
                 'Artifact Set'}{' '}
               {setKey && (
@@ -358,6 +405,16 @@ export function ArtifactCardObj({
                   title={<ArtifactSetTooltipContent setKey={setKey} />}
                 />
               )}
+              <SqBadge
+                sx={{
+                  ml: 'auto',
+                  cursor: builds.length ? 'pointer' : 'default',
+                }}
+                color={builds.length ? 'success' : 'secondary'}
+                onClick={builds.length ? onShowUsage : undefined}
+              >
+                {t('builds', { count: builds.length })}
+              </SqBadge>
             </Typography>
           </CardContent>
         </ConditionalWrapper>
@@ -486,5 +543,60 @@ function SubstatDisplay({
         {(efficiency * 100).toFixed()}%
       </Typography>
     </Box>
+  )
+}
+
+function ArtifactBuildUsageModal({
+  show,
+  onHide,
+  usageText,
+  builds,
+}: {
+  show: boolean
+  onHide: () => void
+  usageText: string
+  builds: {
+    loadoutName: string
+    buildName: string
+    charKey: CharacterKey
+  }[]
+}) {
+  return (
+    <ModalWrapper open={show} onClose={onHide}>
+      <CardThemed>
+        <CardHeader
+          title={
+            <Typography
+              variant="h6"
+              flexGrow={1}
+              display="flex"
+              alignItems="center"
+            >
+              {usageText}
+            </Typography>
+          }
+          action={
+            <IconButton onClick={onHide}>
+              <CloseIcon />
+            </IconButton>
+          }
+        />
+        <List>
+          {builds.map((build, index) => (
+            <ListItem key={index}>
+              <ListItemIcon>
+                <CharIconSide characterKey={build.charKey} />
+              </ListItemIcon>
+              <LoadoutIcon titleAccess="Loadout" fontSize="small" />
+              <ListItemText
+                disableTypography={true}
+                sx={{ display: 'flex', alignItems: 'center' }}
+                primary={`${build.loadoutName}: ${build.buildName}`}
+              />
+            </ListItem>
+          ))}
+        </List>
+      </CardThemed>
+    </ModalWrapper>
   )
 }
