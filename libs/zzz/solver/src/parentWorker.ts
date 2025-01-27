@@ -1,12 +1,12 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
+import type { FormulaKey } from '@genshin-optimizer/zzz/consts'
 import {
   allDiscSlotKeys,
   type DiscSlotKey,
 } from '@genshin-optimizer/zzz/consts'
-import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
-import type { FormulaKey } from './calc'
+import type { Constraints, ICachedDisc, Stats } from '@genshin-optimizer/zzz/db'
 import type { ChildCommandInit, ChildMessage } from './childWorker'
-import type { BaseStats, BuildResult, Constraints, DiscStats } from './common'
+import type { BuildResult, DiscStats } from './common'
 import { convertDiscToStats, MAX_BUILDS } from './common'
 import type { ProgressResult } from './solver'
 
@@ -14,7 +14,7 @@ let workers: Worker[]
 
 export interface ParentCommandStart {
   command: 'start'
-  baseStats: BaseStats
+  baseStats: Stats
   constraints: Constraints
   // lightCones: ICachedLightCone[]
   discsBySlot: Record<DiscSlotKey, ICachedDisc[]>

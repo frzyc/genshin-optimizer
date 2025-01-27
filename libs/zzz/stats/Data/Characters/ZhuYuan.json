@@ -1,0 +1,30 @@
+{
+  "rarity": "S",
+  "element": "ether",
+  "stats": {
+    "atk_base": 132,
+    "atk_growth": 8.0729,
+    "def_base": 48,
+    "def_growth": 6.5524,
+    "hp_base": 602,
+    "hp_growth": 81.6391,
+    "anomMas": 93,
+    "anomProf": 92
+  },
+  "levelStats": [
+    { "hp": 0, "atk": 0, "def": 0 },
+    { "hp": 413, "atk": 47, "def": 33 },
+    { "hp": 826, "atk": 95, "def": 66 },
+    { "hp": 1239, "atk": 142, "def": 99 },
+    { "hp": 1651, "atk": 189, "def": 133 },
+    { "hp": 2064, "atk": 236, "def": 166 }
+  ],
+  "coreStats": [
+    { "atk_base": 0, "crit_dmg_": 0.096 },
+    { "atk_base": 25, "crit_dmg_": 0.096 },
+    { "atk_base": 25, "crit_dmg_": 0.192 },
+    { "atk_base": 50, "crit_dmg_": 0.192 },
+    { "atk_base": 50, "crit_dmg_": 0.288 },
+    { "atk_base": 75, "crit_dmg_": 0.288 }
+  ]
+}

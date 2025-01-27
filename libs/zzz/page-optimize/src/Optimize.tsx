@@ -1,3 +1,4 @@
+import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   DropdownButton,
@@ -7,6 +8,7 @@ import { objMap, toDecimal, toggleInArr } from '@genshin-optimizer/common/util'
 import type {
   DiscMainStatKey,
   DiscSetKey,
+  FormulaKey,
   LocationKey,
 } from '@genshin-optimizer/zzz/consts'
 import {
@@ -14,14 +16,12 @@ import {
   discSlotToMainStatKeys,
   type DiscSlotKey,
 } from '@genshin-optimizer/zzz/consts'
-import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
-import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
+import type { Constraints, ICachedDisc } from '@genshin-optimizer/zzz/db'
+import { useCharacter, useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import type {
-  BaseStats,
   BuildResult,
-  Constraints,
-  FormulaKey,
   ProgressResult,
+  Stats,
 } from '@genshin-optimizer/zzz/solver'
 import { MAX_BUILDS, Solver } from '@genshin-optimizer/zzz/solver'
 import { StatDisplay } from '@genshin-optimizer/zzz/ui'
@@ -38,7 +38,6 @@ import {
   Typography,
 } from '@mui/material'
 import { Stack } from '@mui/system'
-import type { Dispatch, SetStateAction } from 'react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { StatFilterCard } from './StatFilterCard'
@@ -52,7 +51,7 @@ export default function OptimizeWrapper({
 }: {
   formulaKey: FormulaKey
   location: LocationKey
-  baseStats: BaseStats
+  baseStats: Stats
   setResults: (builds: BuildResult[]) => void
 }) {
   const { t } = useTranslation('optimize')
@@ -62,23 +61,41 @@ export default function OptimizeWrapper({
   const [progress, setProgress] = useState<ProgressResult | undefined>(
     undefined
   )
-
-  const [constraints, setConstraints] = useState<Constraints>({})
-  const [useEquipped, setUseEquipped] = useState(false)
-  const [slot4, setSlot4] = useState([...discSlotToMainStatKeys['4']])
-  const [slot5, setSlot5] = useState([...discSlotToMainStatKeys['5']])
-  const [slot6, setSlot6] = useState([...discSlotToMainStatKeys['6']])
+  const character = useCharacter(location)
+  useEffect(() => {
+    setProgress(undefined)
+  }, [character])
+  const setConstraints = useCallback(
+    (constraints: Constraints) => {
+      character && database.chars.set(character.key, { constraints })
+    },
+    [database, character]
+  )
+  const [discsDirty, setDiscsDirty] = useForceUpdate()
+  useEffect(
+    () => database.discs.followAny(setDiscsDirty),
+    [database.discs, setDiscsDirty]
+  )
 
   const discsBySlot = useMemo(
     () =>
+      discsDirty &&
       database.discs.values.reduce(
         (discsBySlot, disc) => {
-          if (disc.location && !useEquipped && disc.location !== location)
+          if (!character) return discsBySlot
+          if (
+            disc.location &&
+            !character.useEquipped &&
+            disc.location !== location
+          )
             return discsBySlot
           if (
-            (disc.slotKey === '4' && !slot4.includes(disc.mainStatKey)) ||
-            (disc.slotKey === '5' && !slot5.includes(disc.mainStatKey)) ||
-            (disc.slotKey === '6' && !slot6.includes(disc.mainStatKey))
+            (disc.slotKey === '4' &&
+              !character.slot4.includes(disc.mainStatKey)) ||
+            (disc.slotKey === '5' &&
+              !character.slot5.includes(disc.mainStatKey)) ||
+            (disc.slotKey === '6' &&
+              !character.slot6.includes(disc.mainStatKey))
           )
             return discsBySlot
           discsBySlot[disc.slotKey].push(disc)
@@ -93,7 +110,7 @@ export default function OptimizeWrapper({
           6: [],
         } as Record<DiscSlotKey, ICachedDisc[]>
       ),
-    [database.discs.values, location, slot4, slot5, slot6, useEquipped]
+    [discsDirty, database.discs.values, location, character]
   )
 
   const totalPermutations = useMemo(
@@ -114,14 +131,19 @@ export default function OptimizeWrapper({
   useEffect(() => () => cancelToken.current(), [])
 
   const onOptimize = useCallback(async () => {
+    if (!character) return
     const cancelled = new Promise<void>((r) => (cancelToken.current = r))
+    setResults([])
     setProgress(undefined)
     setOptimizing(true)
 
     const optimizer = new Solver(
       formulaKey,
-      objMap(baseStats, (v, k) => toDecimal(v, k)),
-      objMap(constraints, (c, k) => ({ ...c, value: toDecimal(c.value, k) })),
+      baseStats,
+      objMap(character.constraints, (c, k) => ({
+        ...c,
+        value: toDecimal(c.value, k),
+      })),
       discsBySlot,
       numWorkers,
       setProgress
@@ -135,7 +157,7 @@ export default function OptimizeWrapper({
 
     setOptimizing(false)
     setResults(results)
-  }, [baseStats, constraints, discsBySlot, formulaKey, numWorkers, setResults])
+  }, [baseStats, character, discsBySlot, formulaKey, numWorkers, setResults])
 
   const onCancel = useCallback(() => {
     cancelToken.current()
@@ -148,22 +170,28 @@ export default function OptimizeWrapper({
   )
   const discSlotBtns = (slotKey: '4' | '5' | '6') => {
     const keysMap = {
-      '4': slot4,
-      '5': slot5,
-      '6': slot6,
+      '4': character?.slot4 ?? [],
+      '5': character?.slot5 ?? [],
+      '6': character?.slot6 ?? [],
     } as Record<'4' | '5' | '6', DiscMainStatKey[]>
     const funcMap = {
-      '4': setSlot4,
-      '5': setSlot5,
-      '6': setSlot6,
-    } as Record<'4' | '5' | '6', Dispatch<SetStateAction<DiscMainStatKey[]>>>
+      '4': (slot4: DiscMainStatKey[]) =>
+        character && database.chars.set(character.key, { slot4 }),
+      '5': (slot5: DiscMainStatKey[]) =>
+        character && database.chars.set(character.key, { slot5 }),
+      '6': (slot6: DiscMainStatKey[]) =>
+        character && database.chars.set(character.key, { slot6 }),
+    } as Record<'4' | '5' | '6', (slots: DiscMainStatKey[]) => void>
     return (
       <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
         {discSlotToMainStatKeys[slotKey].map((key) => (
           <Button
+            disabled={!character}
             key={key}
             variant={keysMap[slotKey].includes(key) ? 'contained' : 'outlined'}
-            onClick={() => funcMap[slotKey]((s) => toggleInArr([...s], key))}
+            onClick={() =>
+              funcMap[slotKey](toggleInArr([...keysMap[slotKey]], key))
+            }
           >
             <StatDisplay statKey={key} showPercent />
           </Button>
@@ -195,19 +223,27 @@ export default function OptimizeWrapper({
             </CardContent>
           </CardThemed>
           <StatFilterCard
-            constraints={constraints}
+            disabled={!character}
+            constraints={character?.constraints ?? {}}
             setConstraints={setConstraints}
           />
           <Set4Selector
-            constraints={constraints}
+            disabled={!character}
+            constraints={character?.constraints ?? {}}
             setConstraints={setConstraints}
           />
           <Typography>
             NOTE: the solver currently accounts for 2-set effects only.
           </Typography>
           <Button
-            onClick={() => setUseEquipped(!useEquipped)}
-            variant={useEquipped ? 'contained' : 'outlined'}
+            disabled={!character}
+            onClick={() =>
+              character &&
+              database.chars.set(character.key, {
+                useEquipped: !character.useEquipped,
+              })
+            }
+            variant={character?.useEquipped ? 'contained' : 'outlined'}
           >
             Use equipped Discs
           </Button>
@@ -265,9 +301,11 @@ function ProgressIndicator({
 }
 
 function Set4Selector({
+  disabled = false,
   constraints,
   setConstraints,
 }: {
+  disabled?: boolean
   constraints: Constraints
   setConstraints: (c: Constraints) => void
 }) {
@@ -280,6 +318,7 @@ function Set4Selector({
   return (
     <>
       <DropdownButton
+        disabled={disabled}
         title={
           set4 ? (
             <span>
@@ -326,6 +365,7 @@ function Set4Selector({
         ))}
       </DropdownButton>
       <DropdownButton
+        disabled={disabled}
         title={
           set2 ? (
             <span>

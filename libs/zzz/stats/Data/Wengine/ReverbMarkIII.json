@@ -1,0 +1,6 @@
+{
+  "type": "support",
+  "atk_base": 32,
+  "second_statkey": "hp_",
+  "second_statvalue": 0.08
+}

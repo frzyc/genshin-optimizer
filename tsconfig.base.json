@@ -158,6 +158,7 @@
       "@genshin-optimizer/zzz/disc-scanner": [
         "libs/zzz/disc-scanner/src/index.ts"
       ],
+      "@genshin-optimizer/zzz/dm": ["libs/zzz/dm/src/index.ts"],
       "@genshin-optimizer/zzz/page-discs": [
         "libs/zzz/page-discs/src/index.tsx"
       ],
@@ -168,6 +169,7 @@
         "libs/zzz/page-settings/src/index.tsx"
       ],
       "@genshin-optimizer/zzz/solver": ["libs/zzz/solver/src/index.ts"],
+      "@genshin-optimizer/zzz/stats": ["libs/zzz/stats/src/index.ts"],
       "@genshin-optimizer/zzz/ui": ["libs/zzz/ui/src/index.tsx"]
     }
   },

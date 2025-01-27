@@ -11,7 +11,7 @@ import {
   allDiscSetKeys,
   statKeyTextMap,
 } from '@genshin-optimizer/zzz/consts'
-import type { Constraints } from '@genshin-optimizer/zzz/solver'
+import type { Constraints } from '@genshin-optimizer/zzz/db'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import {
   Box,

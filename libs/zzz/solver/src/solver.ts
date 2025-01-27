@@ -1,7 +1,6 @@
-import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
-import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
-import type { FormulaKey } from './calc'
-import type { BaseStats, BuildResult, Constraints } from './common'
+import type { DiscSlotKey, FormulaKey } from '@genshin-optimizer/zzz/consts'
+import type { Constraints, ICachedDisc, Stats } from '@genshin-optimizer/zzz/db'
+import type { BuildResult } from './common'
 import type {
   ParentCommandStart,
   ParentCommandTerminate,
@@ -14,7 +13,7 @@ export interface ProgressResult {
 }
 
 export class Solver {
-  private baseStats: BaseStats
+  private baseStats: Stats
   private constraints: Constraints
   private discsBySlot: Record<DiscSlotKey, ICachedDisc[]>
   private formulaKey: FormulaKey
@@ -24,7 +23,7 @@ export class Solver {
 
   constructor(
     formulaKey: FormulaKey,
-    baseStats: BaseStats,
+    baseStats: Stats,
     constraints: Constraints,
     discsBySlot: Record<DiscSlotKey, ICachedDisc[]>,
     numWorkers: number,

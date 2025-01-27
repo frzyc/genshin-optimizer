@@ -1,0 +1,7 @@
+{
+  "rarity": "A",
+  "type": "defense",
+  "atk_base": 42,
+  "second_statkey": "atk_",
+  "second_statvalue": 0.1
+}

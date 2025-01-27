@@ -1,18 +1,18 @@
-import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
-import type { FormulaKey } from './calc'
+import type { DiscSlotKey, FormulaKey } from '@genshin-optimizer/zzz/consts'
+import type { Constraints, Stats } from '@genshin-optimizer/zzz/db'
 import { calcFormula, getSum } from './calc'
-import type { BaseStats, BuildResult, Constraints, DiscStats } from './common'
+import type { BuildResult, DiscStats } from './common'
 import { MAX_BUILDS } from './common'
 
 const MAX_BUILDS_TO_SEND = 200_000
 let discStatsBySlot: Record<DiscSlotKey, DiscStats[]>
 let constraints: Constraints
-let baseStats: BaseStats
+let baseStats: Stats
 let formulaKey: FormulaKey
 
 export interface ChildCommandInit {
   command: 'init'
-  baseStats: BaseStats
+  baseStats: Stats
   discStatsBySlot: Record<DiscSlotKey, DiscStats[]>
   constraints: Constraints
   formulaKey: FormulaKey

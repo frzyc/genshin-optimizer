@@ -1,28 +1,22 @@
 import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
-import {
-  getUnitStr,
-  notEmpty,
-  objMap,
-  toDecimal,
-  valueString,
-} from '@genshin-optimizer/common/util'
+import { notEmpty, valueString } from '@genshin-optimizer/common/util'
 import type { LocationKey } from '@genshin-optimizer/zzz/consts'
-import { statKeyTextMap } from '@genshin-optimizer/zzz/consts'
 import { useDatabaseContext, useDisc } from '@genshin-optimizer/zzz/db-ui'
-import type { BaseStats, BuildResult } from '@genshin-optimizer/zzz/solver'
+import type { BuildResult, Stats } from '@genshin-optimizer/zzz/solver'
 import { convertDiscToStats, getSum } from '@genshin-optimizer/zzz/solver'
 import { DiscCard } from '@genshin-optimizer/zzz/ui'
 import { Box, Button, CardContent, Stack, Typography } from '@mui/material'
 import { useCallback, useMemo } from 'react'
+import { StatsDisplay } from './StatsDisplay'
 
 export function BuildsDisplay({
   location,
   builds,
-  baseStats,
+  stats,
 }: {
   location: LocationKey
   builds: BuildResult[]
-  baseStats: BaseStats
+  stats: Stats
 }) {
   return (
     <Stack spacing={1}>
@@ -31,7 +25,7 @@ export function BuildsDisplay({
           locationKey={location}
           index={i}
           build={b}
-          baseStats={baseStats}
+          baseStats={stats}
           key={`${i}_${b.value}`}
         />
       ))}
@@ -48,19 +42,20 @@ function Build({
   locationKey: LocationKey
   index: number
   build: BuildResult
-  baseStats: BaseStats
+  baseStats: Stats
 }) {
   const { database } = useDatabaseContext()
-  const sum = useMemo(() => {
-    const sum = getSum(
-      objMap(baseStats, (v, k) => toDecimal(v, k)),
-      Object.values(build.discIds)
-        .map((d) => database.discs.get(d))
-        .filter(notEmpty)
-        .map(convertDiscToStats)
-    )
-    return sum
-  }, [baseStats, build.discIds, database.discs])
+  const sum = useMemo(
+    () =>
+      getSum(
+        baseStats,
+        Object.values(build.discIds)
+          .map((d) => database.discs.get(d))
+          .filter(notEmpty)
+          .map(convertDiscToStats)
+      ),
+    [baseStats, build.discIds, database.discs]
+  )
   const onEquip = useCallback(() => {
     Object.values(build.discIds).forEach((dId) => {
       database.discs.set(dId, { location: locationKey })
@@ -81,15 +76,7 @@ function Build({
             Equip to {locationKey}
           </Button>
         </Box>
-        <Box sx={{ columnCount: 2 }}>
-          {Object.entries(sum)
-            .filter(([k]) => !k.endsWith('_base'))
-            .map(([k, v]) => (
-              <Typography key={k}>
-                {statKeyTextMap[k] ?? k}: {valueString(v, getUnitStr(k))}
-              </Typography>
-            ))}
-        </Box>
+        <StatsDisplay stats={sum} />
         <Box display="flex" gap={1}>
           {Object.values(build.discIds).map((dId) => (
             <DiscCardWrapper discId={dId} key={dId} />

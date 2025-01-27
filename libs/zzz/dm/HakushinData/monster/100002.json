@@ -1,0 +1,16 @@
+{
+  "Id": 100002,
+  "MonsterId": 0,
+  "MonsterInfo": {},
+  "ImagePath": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv01/Monster_Claymore.png",
+  "Tag": ["Ether", "NotPro"],
+  "Tag2": ["All"],
+  "Name": "OfficialName_",
+  "Desc": "The Hollow Investigative Association has been studying Tyrfing's behavioral patterns, and research results show that its seemingly unbalanced stance of swaying and skewing is, in fact, a highly efficient stance for launching successive slashing attacks.\nDue to its frequent appearances and aggressive behavior, Tyrfing has been identified as one of the most deadly Ethereals in the Hollow, particularly for certain Hollow personnel.\nWhen faced with a shielded enemy, it relentlessly launches attacks until either its enemy or itself is destroyed.\n\"Perhaps... they don't actually hate us, but just think of us as punching bags for practice?\"",
+  "Rarity": 1,
+  "GroupId": 201,
+  "GroupDesc": "Ether Mutants",
+  "CardObtain": "[Unidentified] Defeat this monster in Hollow Zero 1 time to obtain its data",
+  "CardQuote": "—Midnight talk show \"Back 2 Life,\" Episode 165, featuring retired riot patrol officer due to injury, Nobby Kereyan",
+  "CardSkillDesc": "Monster Skill Info - Placeholder"
+}

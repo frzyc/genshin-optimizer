@@ -1,0 +1,30 @@
+{
+  "rarity": "S",
+  "element": "electric",
+  "stats": {
+    "atk_base": 119,
+    "atk_growth": 7.1181,
+    "def_base": 48,
+    "def_growth": 6.5524,
+    "hp_base": 602,
+    "hp_growth": 81.6391,
+    "anomMas": 115,
+    "anomProf": 116
+  },
+  "levelStats": [
+    { "hp": 0, "atk": 0, "def": 0 },
+    { "hp": 413, "atk": 42, "def": 33 },
+    { "hp": 826, "atk": 85, "def": 66 },
+    { "hp": 1239, "atk": 127, "def": 99 },
+    { "hp": 1651, "atk": 170, "def": 133 },
+    { "hp": 2064, "atk": 212, "def": 166 }
+  ],
+  "coreStats": [
+    { "atk_base": 0, "anomMas": 12 },
+    { "atk_base": 25, "anomMas": 12 },
+    { "atk_base": 25, "anomMas": 24 },
+    { "atk_base": 50, "anomMas": 24 },
+    { "atk_base": 50, "anomMas": 36 },
+    { "atk_base": 75, "anomMas": 36 }
+  ]
+}

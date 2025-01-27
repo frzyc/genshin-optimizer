@@ -1,0 +1,16 @@
+{
+  "Id": 20014,
+  "MonsterId": 0,
+  "MonsterInfo": {},
+  "ImagePath": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv02/Monster_RuthlessFiend.png",
+  "Tag": ["Ether", "NotPro"],
+  "Tag2": ["Metro", "SkyScraper"],
+  "Name": "OfficialName_",
+  "Desc": "Unfortunate souls mutated by the intense corruption of Ether matter within the Hollows. Due to a considerable degree of Ether aptitude and physical capability, their bodies have not been completely transformed by the Ether. Humanoid features are more dangerous with enhanced mutant limbs.\nJudging from the remnants of clothing and its combat experience, it was likely once a senior gang member or Raider lurking in the Hollows.\nBandits are notorious for their dangerous behavior, and within their ranks, Hollow bandits stand out as the most ruthless. The elite fighters among these Hollow bandits are especially terrifying, displaying an elevated level of violence. When these brutes, toughened both physically and mentally through violence, undergo Ether corruption, they transform into monsters with a more feral and savage nature.\n\"They used to yell 'money or your life,' but now they're just hell-bent on taking your life...\"",
+  "Rarity": 2,
+  "GroupId": 203,
+  "GroupDesc": "Corrupted",
+  "CardObtain": "[Unidentified] Defeat this monster in Hollow Zero 1 time to obtain its data",
+  "CardQuote": "—Annotations in the internal textbook of the Hollow Investigative Association, \"Threat Identification in a Hollow: Corrupted Subjects\"",
+  "CardSkillDesc": "Monster Skill Info - Placeholder"
+}

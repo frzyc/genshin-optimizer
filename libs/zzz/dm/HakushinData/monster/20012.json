@@ -1,0 +1,16 @@
+{
+  "Id": 20012,
+  "MonsterId": 0,
+  "MonsterInfo": {},
+  "ImagePath": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv02/Monster_FrenziedManiac.png",
+  "Tag": ["Ether", "NotPro"],
+  "Tag2": ["Metro", "SkyScraper"],
+  "Name": "OfficialName_",
+  "Desc": "Unfortunate souls mutated by the intense corruption of Ether matter within the Hollows. Due to a considerable degree of Ether aptitude and physical capability, their bodies have not been completely transformed by the Ether, retaining humanoid features but with enhanced mutant limbs that are more dangerous.\nJudging from the remnants of clothing and its combat experience, it was likely once a senior gang member or Raider lurking in the Hollows.\nThese corrupted subjects, potentially due to their enhanced physiology or affinity for Ether matter, have developed formidable close combat abilities, making them even more menacing than the typical monsters found in the Hollow.\n\"Their weapons look very fancy... and kinda like they came as freebies.\"",
+  "Rarity": 2,
+  "GroupId": 203,
+  "GroupDesc": "Corrupted",
+  "CardObtain": "[Unidentified] Defeat this monster in Hollow Zero 1 time to obtain its data",
+  "CardQuote": "—Anby's analysis of a particular operation with the Cunning Hares",
+  "CardSkillDesc": "Monster Skill Info - Placeholder"
+}

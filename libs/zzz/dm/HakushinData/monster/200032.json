@@ -1,0 +1,16 @@
+{
+  "Id": 200032,
+  "MonsterId": 0,
+  "MonsterInfo": {},
+  "ImagePath": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv02/Monster_HatiArmored.png",
+  "Tag": ["Ether", "NotPro"],
+  "Tag2": ["Metro", "SkyScraper"],
+  "Name": "OfficialName_",
+  "Desc": "The Armored Hati is widely regarded as a formidable adversary by many experienced Hollow investigators.\nAlthough its armored shell limits its agility, it compensates with exceptional resistance to attacks.\nAdditionally, the corrupted material on its body forms sharp and hardened protrusions that can cause additional damage when an Armored Hati charges at high speeds.\nThis creature's agile movements, resilience to blows, and seamless armor compel even the most seasoned explorers to seek alternative routes to avoid direct confrontation.\nSome novice Hollow Raiders have attempted to lure Armored Hati away with pet food.\nHowever, these endeavors have proven futile.\n\"Run! It doesn't like this flavor of dog food!\"",
+  "Rarity": 2,
+  "GroupId": 201,
+  "GroupDesc": "Ether Mutants",
+  "CardObtain": "[Unidentified] Defeat this monster in Hollow Zero 1 time to obtain its data",
+  "CardQuote": "—Several panicked rookie Hollow Raiders escaping from a Hati in a Hollow",
+  "CardSkillDesc": "Monster Skill Info - Placeholder"
+}

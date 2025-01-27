@@ -7,3 +7,6 @@
 	path = libs/sr/dm/StarRailData
 	url = https://gitlab.com/Dimbreath/turnbasedgamedata.git
 	shallow = true
+[submodule "libs/zzz/dm/ZenlessData"]
+	path = libs/zzz/dm/ZenlessData
+	url = https://git.mero.moe/dimbreath/ZenlessData.git

@@ -1,0 +1,9 @@
+{
+  "Id": 31100,
+  "Name": "Puffer Electro",
+  "Desc2": "PEN Ratio +8%",
+  "Desc4": "<color=#FFFFFF>Ultimate</color> DMG increases by 20%. Launching an <color=#FFFFFF>Ultimate</color> increases the equipper's ATK by 15% for 12s.",
+  "Story": "This reliable Drive Disc series is favored by Hollow explorers due to its consistent performance. Don't underestimate its effectiveness, pufferfish are poisonous, after all.",
+  "Icon": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitPufferElectro.png",
+  "Icon2": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitPufferElectro.png"
+}

@@ -1,0 +1,7 @@
+{
+  "rarity": "S",
+  "type": "stun",
+  "atk_base": 48,
+  "second_statkey": "impact_",
+  "second_statvalue": 0.072
+}

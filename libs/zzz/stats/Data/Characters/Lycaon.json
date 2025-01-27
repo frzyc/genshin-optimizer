@@ -1,0 +1,30 @@
+{
+  "rarity": "S",
+  "element": "ice",
+  "stats": {
+    "atk_base": 105,
+    "atk_growth": 6.1287,
+    "def_base": 49,
+    "def_growth": 6.6203,
+    "hp_base": 677,
+    "hp_growth": 91.8185,
+    "anomMas": 91,
+    "anomProf": 90
+  },
+  "levelStats": [
+    { "hp": 0, "atk": 0, "def": 0 },
+    { "hp": 464, "atk": 37, "def": 33 },
+    { "hp": 929, "atk": 75, "def": 67 },
+    { "hp": 1393, "atk": 112, "def": 100 },
+    { "hp": 1857, "atk": 150, "def": 134 },
+    { "hp": 2322, "atk": 187, "def": 167 }
+  ],
+  "coreStats": [
+    { "atk_base": 0, "impact": 6 },
+    { "atk_base": 25, "impact": 6 },
+    { "atk_base": 25, "impact": 12 },
+    { "atk_base": 50, "impact": 12 },
+    { "atk_base": 50, "impact": 18 },
+    { "atk_base": 75, "impact": 18 }
+  ]
+}

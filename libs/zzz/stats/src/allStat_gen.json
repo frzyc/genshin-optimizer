@@ -1,0 +1,1328 @@
+{
+  "char": {
+    "Anby": {
+      "rarity": "A",
+      "element": "electric",
+      "stats": {
+        "atk_base": 95,
+        "atk_growth": 5.423,
+        "def_base": 49,
+        "def_growth": 6.6882,
+        "hp_base": 603,
+        "hp_growth": 81.8426,
+        "anomMas": 94,
+        "anomProf": 93
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 414, "atk": 34, "def": 34 },
+        { "hp": 828, "atk": 68, "def": 68 },
+        { "hp": 1242, "atk": 102, "def": 101 },
+        { "hp": 1656, "atk": 135, "def": 135 },
+        { "hp": 2069, "atk": 169, "def": 169 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "impact": 6 },
+        { "atk_base": 25, "impact": 6 },
+        { "atk_base": 25, "impact": 12 },
+        { "atk_base": 50, "impact": 12 },
+        { "atk_base": 50, "impact": 18 },
+        { "atk_base": 75, "impact": 18 }
+      ]
+    },
+    "Nekomata": {
+      "rarity": "S",
+      "element": "physical",
+      "stats": {
+        "atk_base": 131,
+        "atk_growth": 7.9762,
+        "def_base": 47,
+        "def_growth": 6.4166,
+        "hp_base": 608,
+        "hp_growth": 82.4778,
+        "anomMas": 97,
+        "anomProf": 96
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 417, "atk": 47, "def": 32 },
+        { "hp": 834, "atk": 94, "def": 65 },
+        { "hp": 1251, "atk": 140, "def": 97 },
+        { "hp": 1668, "atk": 187, "def": 130 },
+        { "hp": 2086, "atk": 234, "def": 162 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "crit_": 0.048 },
+        { "atk_base": 25, "crit_": 0.048 },
+        { "atk_base": 25, "crit_": 0.096 },
+        { "atk_base": 50, "crit_": 0.096 },
+        { "atk_base": 50, "crit_": 0.144 },
+        { "atk_base": 75, "crit_": 0.144 }
+      ]
+    },
+    "Nicole": {
+      "rarity": "A",
+      "element": "ether",
+      "stats": {
+        "atk_base": 93,
+        "atk_growth": 5.3249,
+        "def_base": 50,
+        "def_growth": 6.7901,
+        "hp_base": 655,
+        "hp_growth": 88.8787,
+        "anomMas": 90,
+        "anomProf": 93
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 449, "atk": 33, "def": 34 },
+        { "hp": 899, "atk": 67, "def": 69 },
+        { "hp": 1348, "atk": 100, "def": 103 },
+        { "hp": 1798, "atk": 133, "def": 137 },
+        { "hp": 2247, "atk": 167, "def": 172 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "base_enerRegen": 12 },
+        { "atk_base": 25, "base_enerRegen": 12 },
+        { "atk_base": 25, "base_enerRegen": 24 },
+        { "atk_base": 50, "base_enerRegen": 24 },
+        { "atk_base": 50, "base_enerRegen": 36 },
+        { "atk_base": 75, "base_enerRegen": 36 }
+      ]
+    },
+    "Soldier11": {
+      "rarity": "S",
+      "element": "fire",
+      "stats": {
+        "atk_base": 128,
+        "atk_growth": 7.7554,
+        "def_base": 49,
+        "def_growth": 6.6882,
+        "hp_base": 617,
+        "hp_growth": 83.7238,
+        "anomMas": 94,
+        "anomProf": 93
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 423, "atk": 46, "def": 34 },
+        { "hp": 847, "atk": 91, "def": 68 },
+        { "hp": 1270, "atk": 137, "def": 101 },
+        { "hp": 1694, "atk": 183, "def": 135 },
+        { "hp": 2117, "atk": 228, "def": 169 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "crit_": 0.048 },
+        { "atk_base": 25, "crit_": 0.048 },
+        { "atk_base": 25, "crit_": 0.096 },
+        { "atk_base": 50, "crit_": 0.096 },
+        { "atk_base": 50, "crit_": 0.144 },
+        { "atk_base": 75, "crit_": 0.144 }
+      ]
+    },
+    "Corin": {
+      "rarity": "A",
+      "element": "physical",
+      "stats": {
+        "atk_base": 116,
+        "atk_growth": 6.9346,
+        "def_base": 49,
+        "def_growth": 6.5864,
+        "hp_base": 561,
+        "hp_growth": 76.1177,
+        "anomMas": 93,
+        "anomProf": 96
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 385, "atk": 41, "def": 33 },
+        { "hp": 770, "atk": 83, "def": 67 },
+        { "hp": 1155, "atk": 124, "def": 100 },
+        { "hp": 1540, "atk": 166, "def": 133 },
+        { "hp": 1925, "atk": 207, "def": 167 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "crit_dmg_": 0.096 },
+        { "atk_base": 25, "crit_dmg_": 0.096 },
+        { "atk_base": 25, "crit_dmg_": 0.192 },
+        { "atk_base": 50, "crit_dmg_": 0.192 },
+        { "atk_base": 50, "crit_dmg_": 0.288 },
+        { "atk_base": 75, "crit_dmg_": 0.288 }
+      ]
+    },
+    "Caesar": {
+      "rarity": "S",
+      "element": "physical",
+      "stats": {
+        "atk_base": 101,
+        "atk_growth": 5.8761,
+        "def_base": 61,
+        "def_growth": 8.218,
+        "hp_base": 766,
+        "hp_growth": 103.9361,
+        "anomMas": 87,
+        "anomProf": 90
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 526, "atk": 38, "def": 42 },
+        { "hp": 1051, "atk": 76, "def": 83 },
+        { "hp": 1577, "atk": 113, "def": 125 },
+        { "hp": 2102, "atk": 151, "def": 166 },
+        { "hp": 2628, "atk": 189, "def": 208 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "impact": 6 },
+        { "atk_base": 25, "impact": 6 },
+        { "atk_base": 25, "impact": 12 },
+        { "atk_base": 50, "impact": 12 },
+        { "atk_base": 50, "impact": 18 },
+        { "atk_base": 75, "impact": 18 }
+      ]
+    },
+    "Billy": {
+      "rarity": "A",
+      "element": "physical",
+      "stats": {
+        "atk_base": 113,
+        "atk_growth": 6.7335,
+        "def_base": 49,
+        "def_growth": 6.6203,
+        "hp_base": 555,
+        "hp_growth": 75.3604,
+        "anomMas": 92,
+        "anomProf": 91
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 381, "atk": 40, "def": 33 },
+        { "hp": 762, "atk": 81, "def": 67 },
+        { "hp": 1143, "atk": 121, "def": 100 },
+        { "hp": 1524, "atk": 162, "def": 134 },
+        { "hp": 1906, "atk": 202, "def": 167 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "crit_": 0.048 },
+        { "atk_base": 25, "crit_": 0.048 },
+        { "atk_base": 25, "crit_": 0.096 },
+        { "atk_base": 50, "crit_": 0.096 },
+        { "atk_base": 50, "crit_": 0.144 },
+        { "atk_base": 75, "crit_": 0.144 }
+      ]
+    },
+    "Miyabi": {
+      "rarity": "S",
+      "element": "ice",
+      "stats": {
+        "atk_base": 127,
+        "atk_growth": 7.6728,
+        "def_base": 49,
+        "def_growth": 6.6203,
+        "hp_base": 617,
+        "hp_growth": 83.7238,
+        "anomMas": 116,
+        "anomProf": 148
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 423, "atk": 45, "def": 33 },
+        { "hp": 847, "atk": 90, "def": 67 },
+        { "hp": 1270, "atk": 136, "def": 100 },
+        { "hp": 1694, "atk": 181, "def": 134 },
+        { "hp": 2117, "atk": 226, "def": 167 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "anomProf": 30 },
+        { "atk_base": 25, "anomProf": 30 },
+        { "atk_base": 25, "anomProf": 60 },
+        { "atk_base": 50, "anomProf": 60 },
+        { "atk_base": 50, "anomProf": 90 },
+        { "atk_base": 75, "anomProf": 90 }
+      ]
+    },
+    "Koleda": {
+      "rarity": "S",
+      "element": "fire",
+      "stats": {
+        "atk_base": 106,
+        "atk_growth": 6.2007,
+        "def_base": 48,
+        "def_growth": 6.4845,
+        "hp_base": 653,
+        "hp_growth": 88.6832,
+        "anomMas": 97,
+        "anomProf": 96
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 448, "atk": 38, "def": 33 },
+        { "hp": 897, "atk": 76, "def": 66 },
+        { "hp": 1345, "atk": 113, "def": 98 },
+        { "hp": 1794, "atk": 151, "def": 131 },
+        { "hp": 2242, "atk": 189, "def": 164 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "impact": 6 },
+        { "atk_base": 25, "impact": 6 },
+        { "atk_base": 25, "impact": 12 },
+        { "atk_base": 50, "impact": 12 },
+        { "atk_base": 50, "impact": 18 },
+        { "atk_base": 75, "impact": 18 }
+      ]
+    },
+    "Anton": {
+      "rarity": "A",
+      "element": "electric",
+      "stats": {
+        "atk_base": 114,
+        "atk_growth": 6.7737,
+        "def_base": 50,
+        "def_growth": 6.7901,
+        "hp_base": 580,
+        "hp_growth": 78.7644,
+        "anomMas": 86,
+        "anomProf": 90
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 398, "atk": 41, "def": 34 },
+        { "hp": 797, "atk": 81, "def": 69 },
+        { "hp": 1195, "atk": 122, "def": 103 },
+        { "hp": 1593, "atk": 163, "def": 137 },
+        { "hp": 1992, "atk": 203, "def": 172 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "crit_": 0.048 },
+        { "atk_base": 25, "crit_": 0.048 },
+        { "atk_base": 25, "crit_": 0.096 },
+        { "atk_base": 50, "crit_": 0.096 },
+        { "atk_base": 50, "crit_": 0.144 },
+        { "atk_base": 75, "crit_": 0.144 }
+      ]
+    },
+    "Ben": {
+      "rarity": "A",
+      "element": "fire",
+      "stats": {
+        "atk_base": 94,
+        "atk_growth": 5.3574,
+        "def_base": 58,
+        "def_growth": 7.8989,
+        "hp_base": 690,
+        "hp_growth": 93.5856,
+        "anomMas": 86,
+        "anomProf": 90
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 473, "atk": 34, "def": 40 },
+        { "hp": 947, "atk": 67, "def": 80 },
+        { "hp": 1420, "atk": 101, "def": 120 },
+        { "hp": 1893, "atk": 134, "def": 160 },
+        { "hp": 2366, "atk": 168, "def": 200 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "base_enerRegen": 12 },
+        { "atk_base": 25, "base_enerRegen": 12 },
+        { "atk_base": 25, "base_enerRegen": 24 },
+        { "atk_base": 50, "base_enerRegen": 24 },
+        { "atk_base": 50, "base_enerRegen": 36 },
+        { "atk_base": 75, "base_enerRegen": 36 }
+      ]
+    },
+    "Soukaku": {
+      "rarity": "A",
+      "element": "ice",
+      "stats": {
+        "atk_base": 96,
+        "atk_growth": 5.4887,
+        "def_base": 48,
+        "def_growth": 6.5185,
+        "hp_base": 645,
+        "hp_growth": 87.5757,
+        "anomMas": 93,
+        "anomProf": 96
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 443, "atk": 34, "def": 33 },
+        { "hp": 886, "atk": 68, "def": 66 },
+        { "hp": 1329, "atk": 103, "def": 99 },
+        { "hp": 1772, "atk": 137, "def": 132 },
+        { "hp": 2214, "atk": 171, "def": 165 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "base_enerRegen": 12 },
+        { "atk_base": 25, "base_enerRegen": 12 },
+        { "atk_base": 25, "base_enerRegen": 24 },
+        { "atk_base": 50, "base_enerRegen": 24 },
+        { "atk_base": 50, "base_enerRegen": 36 },
+        { "atk_base": 75, "base_enerRegen": 36 }
+      ]
+    },
+    "Lycaon": {
+      "rarity": "S",
+      "element": "ice",
+      "stats": {
+        "atk_base": 105,
+        "atk_growth": 6.1287,
+        "def_base": 49,
+        "def_growth": 6.6203,
+        "hp_base": 677,
+        "hp_growth": 91.8185,
+        "anomMas": 91,
+        "anomProf": 90
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 464, "atk": 37, "def": 33 },
+        { "hp": 929, "atk": 75, "def": 67 },
+        { "hp": 1393, "atk": 112, "def": 100 },
+        { "hp": 1857, "atk": 150, "def": 134 },
+        { "hp": 2322, "atk": 187, "def": 167 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "impact": 6 },
+        { "atk_base": 25, "impact": 6 },
+        { "atk_base": 25, "impact": 12 },
+        { "atk_base": 50, "impact": 12 },
+        { "atk_base": 50, "impact": 18 },
+        { "atk_base": 75, "impact": 18 }
+      ]
+    },
+    "Lucy": {
+      "rarity": "A",
+      "element": "fire",
+      "stats": {
+        "atk_base": 95,
+        "atk_growth": 5.423,
+        "def_base": 49,
+        "def_growth": 6.6882,
+        "hp_base": 645,
+        "hp_growth": 87.5757,
+        "anomMas": 94,
+        "anomProf": 93
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 443, "atk": 34, "def": 34 },
+        { "hp": 886, "atk": 68, "def": 68 },
+        { "hp": 1329, "atk": 102, "def": 101 },
+        { "hp": 1772, "atk": 135, "def": 135 },
+        { "hp": 2214, "atk": 169, "def": 169 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "base_enerRegen": 12 },
+        { "atk_base": 25, "base_enerRegen": 12 },
+        { "atk_base": 25, "base_enerRegen": 24 },
+        { "atk_base": 50, "base_enerRegen": 24 },
+        { "atk_base": 50, "base_enerRegen": 36 },
+        { "atk_base": 75, "base_enerRegen": 36 }
+      ]
+    },
+    "Lighter": {
+      "rarity": "S",
+      "element": "fire",
+      "stats": {
+        "atk_base": 109,
+        "atk_growth": 6.3891,
+        "def_base": 49,
+        "def_growth": 6.6882,
+        "hp_base": 677,
+        "hp_growth": 91.8185,
+        "anomMas": 91,
+        "anomProf": 90
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 432, "atk": 47, "def": 34 },
+        { "hp": 864, "atk": 95, "def": 68 },
+        { "hp": 1296, "atk": 142, "def": 101 },
+        { "hp": 1727, "atk": 190, "def": 135 },
+        { "hp": 2159, "atk": 237, "def": 169 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "impact": 6 },
+        { "atk_base": 25, "impact": 6 },
+        { "atk_base": 25, "impact": 12 },
+        { "atk_base": 50, "impact": 12 },
+        { "atk_base": 50, "impact": 18 },
+        { "atk_base": 75, "impact": 18 }
+      ]
+    },
+    "Burnice": {
+      "rarity": "S",
+      "element": "fire",
+      "stats": {
+        "atk_base": 124,
+        "atk_growth": 7.4992,
+        "def_base": 48,
+        "def_growth": 6.5524,
+        "hp_base": 592,
+        "hp_growth": 80.3931,
+        "anomMas": 118,
+        "anomProf": 120
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 407, "atk": 44, "def": 33 },
+        { "hp": 813, "atk": 89, "def": 66 },
+        { "hp": 1220, "atk": 133, "def": 99 },
+        { "hp": 1626, "atk": 177, "def": 133 },
+        { "hp": 2033, "atk": 222, "def": 166 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "base_enerRegen": 12 },
+        { "atk_base": 25, "base_enerRegen": 12 },
+        { "atk_base": 25, "base_enerRegen": 24 },
+        { "atk_base": 50, "base_enerRegen": 24 },
+        { "atk_base": 50, "base_enerRegen": 36 },
+        { "atk_base": 75, "base_enerRegen": 36 }
+      ]
+    },
+    "Grace": {
+      "rarity": "S",
+      "element": "electric",
+      "stats": {
+        "atk_base": 119,
+        "atk_growth": 7.1181,
+        "def_base": 48,
+        "def_growth": 6.5524,
+        "hp_base": 602,
+        "hp_growth": 81.6391,
+        "anomMas": 115,
+        "anomProf": 116
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 413, "atk": 42, "def": 33 },
+        { "hp": 826, "atk": 85, "def": 66 },
+        { "hp": 1239, "atk": 127, "def": 99 },
+        { "hp": 1651, "atk": 170, "def": 133 },
+        { "hp": 2064, "atk": 212, "def": 166 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "anomMas": 12 },
+        { "atk_base": 25, "anomMas": 12 },
+        { "atk_base": 25, "anomMas": 24 },
+        { "atk_base": 50, "anomMas": 24 },
+        { "atk_base": 50, "anomMas": 36 },
+        { "atk_base": 75, "anomMas": 36 }
+      ]
+    },
+    "Ellen": {
+      "rarity": "S",
+      "element": "ice",
+      "stats": {
+        "atk_base": 135,
+        "atk_growth": 8.2578,
+        "def_base": 49,
+        "def_growth": 6.6203,
+        "hp_base": 617,
+        "hp_growth": 83.7238,
+        "anomMas": 94,
+        "anomProf": 93
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 423, "atk": 48, "def": 33 },
+        { "hp": 847, "atk": 96, "def": 67 },
+        { "hp": 1270, "atk": 145, "def": 100 },
+        { "hp": 1694, "atk": 193, "def": 134 },
+        { "hp": 2117, "atk": 241, "def": 167 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "crit_": 0.048 },
+        { "atk_base": 25, "crit_": 0.048 },
+        { "atk_base": 25, "crit_": 0.096 },
+        { "atk_base": 50, "crit_": 0.096 },
+        { "atk_base": 50, "crit_": 0.144 },
+        { "atk_base": 75, "crit_": 0.144 }
+      ]
+    },
+    "Harumasa": {
+      "rarity": "S",
+      "element": "electric",
+      "stats": {
+        "atk_base": 132,
+        "atk_growth": 8.027,
+        "def_base": 48,
+        "def_growth": 6.5524,
+        "hp_base": 595,
+        "hp_growth": 80.8084,
+        "anomMas": 80,
+        "anomProf": 95
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 409, "atk": 47, "def": 33 },
+        { "hp": 817, "atk": 94, "def": 66 },
+        { "hp": 1226, "atk": 141, "def": 99 },
+        { "hp": 1635, "atk": 188, "def": 133 },
+        { "hp": 2043, "atk": 235, "def": 166 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "crit_": 0.048 },
+        { "atk_base": 25, "crit_": 0.048 },
+        { "atk_base": 25, "crit_": 0.096 },
+        { "atk_base": 50, "crit_": 0.096 },
+        { "atk_base": 50, "crit_": 0.144 },
+        { "atk_base": 75, "crit_": 0.144 }
+      ]
+    },
+    "Rina": {
+      "rarity": "S",
+      "element": "electric",
+      "stats": {
+        "atk_base": 103,
+        "atk_growth": 6.0201,
+        "def_base": 48,
+        "def_growth": 6.5524,
+        "hp_base": 692,
+        "hp_growth": 93.9358,
+        "anomMas": 93,
+        "anomProf": 92
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 475, "atk": 37, "def": 33 },
+        { "hp": 950, "atk": 74, "def": 66 },
+        { "hp": 1425, "atk": 111, "def": 99 },
+        { "hp": 1900, "atk": 147, "def": 133 },
+        { "hp": 2375, "atk": 184, "def": 166 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "pen_": 0.048 },
+        { "atk_base": 25, "pen_": 0.048 },
+        { "atk_base": 25, "pen_": 0.096 },
+        { "atk_base": 50, "pen_": 0.096 },
+        { "atk_base": 50, "pen_": 0.144 },
+        { "atk_base": 75, "pen_": 0.144 }
+      ]
+    },
+    "Yanagi": {
+      "rarity": "S",
+      "element": "electric",
+      "stats": {
+        "atk_base": 126,
+        "atk_growth": 7.586,
+        "def_base": 49,
+        "def_growth": 6.6882,
+        "hp_base": 626,
+        "hp_growth": 84.9779,
+        "anomMas": 112,
+        "anomProf": 114
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 430, "atk": 45, "def": 34 },
+        { "hp": 859, "atk": 90, "def": 68 },
+        { "hp": 1289, "atk": 134, "def": 101 },
+        { "hp": 1719, "atk": 179, "def": 135 },
+        { "hp": 2149, "atk": 224, "def": 169 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "anomMas": 12 },
+        { "atk_base": 25, "anomMas": 12 },
+        { "atk_base": 25, "anomMas": 24 },
+        { "atk_base": 50, "anomMas": 24 },
+        { "atk_base": 50, "anomMas": 36 },
+        { "atk_base": 75, "anomMas": 36 }
+      ]
+    },
+    "ZhuYuan": {
+      "rarity": "S",
+      "element": "ether",
+      "stats": {
+        "atk_base": 132,
+        "atk_growth": 8.0729,
+        "def_base": 48,
+        "def_growth": 6.5524,
+        "hp_base": 602,
+        "hp_growth": 81.6391,
+        "anomMas": 93,
+        "anomProf": 92
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 413, "atk": 47, "def": 33 },
+        { "hp": 826, "atk": 95, "def": 66 },
+        { "hp": 1239, "atk": 142, "def": 99 },
+        { "hp": 1651, "atk": 189, "def": 133 },
+        { "hp": 2064, "atk": 236, "def": 166 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "crit_dmg_": 0.096 },
+        { "atk_base": 25, "crit_dmg_": 0.096 },
+        { "atk_base": 25, "crit_dmg_": 0.192 },
+        { "atk_base": 50, "crit_dmg_": 0.192 },
+        { "atk_base": 50, "crit_dmg_": 0.288 },
+        { "atk_base": 75, "crit_dmg_": 0.288 }
+      ]
+    },
+    "QingYi": {
+      "rarity": "S",
+      "element": "electric",
+      "stats": {
+        "atk_base": 109,
+        "atk_growth": 6.4272,
+        "def_base": 49,
+        "def_growth": 6.6882,
+        "hp_base": 663,
+        "hp_growth": 90.0269,
+        "anomMas": 94,
+        "anomProf": 93
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 455, "atk": 39, "def": 34 },
+        { "hp": 911, "atk": 78, "def": 68 },
+        { "hp": 1366, "atk": 117, "def": 101 },
+        { "hp": 1821, "atk": 156, "def": 135 },
+        { "hp": 2276, "atk": 195, "def": 169 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "impact": 6 },
+        { "atk_base": 25, "impact": 6 },
+        { "atk_base": 25, "impact": 12 },
+        { "atk_base": 50, "impact": 12 },
+        { "atk_base": 50, "impact": 18 },
+        { "atk_base": 75, "impact": 18 }
+      ]
+    },
+    "Jane": {
+      "rarity": "S",
+      "element": "physical",
+      "stats": {
+        "atk_base": 127,
+        "atk_growth": 7.6728,
+        "def_base": 49,
+        "def_growth": 6.6203,
+        "hp_base": 626,
+        "hp_growth": 84.9779,
+        "anomMas": 112,
+        "anomProf": 114
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 430, "atk": 45, "def": 33 },
+        { "hp": 859, "atk": 90, "def": 67 },
+        { "hp": 1289, "atk": 136, "def": 100 },
+        { "hp": 1719, "atk": 181, "def": 134 },
+        { "hp": 2149, "atk": 226, "def": 167 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "anomMas": 12 },
+        { "atk_base": 25, "anomMas": 12 },
+        { "atk_base": 25, "anomMas": 24 },
+        { "atk_base": 50, "anomMas": 24 },
+        { "atk_base": 50, "anomMas": 36 },
+        { "atk_base": 75, "anomMas": 36 }
+      ]
+    },
+    "Seth": {
+      "rarity": "A",
+      "element": "electric",
+      "stats": {
+        "atk_base": 93,
+        "atk_growth": 5.2593,
+        "def_base": 60,
+        "def_growth": 8.1379,
+        "hp_base": 699,
+        "hp_growth": 94.9375,
+        "anomMas": 86,
+        "anomProf": 90
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 480, "atk": 33, "def": 41 },
+        { "hp": 960, "atk": 66, "def": 82 },
+        { "hp": 1440, "atk": 99, "def": 123 },
+        { "hp": 1920, "atk": 132, "def": 165 },
+        { "hp": 2401, "atk": 165, "def": 206 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "base_enerRegen": 12 },
+        { "atk_base": 25, "base_enerRegen": 12 },
+        { "atk_base": 25, "base_enerRegen": 24 },
+        { "atk_base": 50, "base_enerRegen": 24 },
+        { "atk_base": 50, "base_enerRegen": 36 },
+        { "atk_base": 75, "base_enerRegen": 36 }
+      ]
+    },
+    "Piper": {
+      "rarity": "A",
+      "element": "physical",
+      "stats": {
+        "atk_base": 109,
+        "atk_growth": 6.4308,
+        "def_base": 49,
+        "def_growth": 6.6882,
+        "hp_base": 561,
+        "hp_growth": 76.1177,
+        "anomMas": 116,
+        "anomProf": 118
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 385, "atk": 39, "def": 34 },
+        { "hp": 770, "atk": 78, "def": 68 },
+        { "hp": 1155, "atk": 117, "def": 101 },
+        { "hp": 1540, "atk": 156, "def": 135 },
+        { "hp": 1925, "atk": 195, "def": 169 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "base_enerRegen": 12 },
+        { "atk_base": 25, "base_enerRegen": 12 },
+        { "atk_base": 25, "base_enerRegen": 24 },
+        { "atk_base": 50, "base_enerRegen": 24 },
+        { "atk_base": 50, "base_enerRegen": 36 },
+        { "atk_base": 75, "base_enerRegen": 36 }
+      ]
+    },
+    "Astra": {
+      "rarity": "S",
+      "element": "ether",
+      "stats": {
+        "atk_base": 103,
+        "atk_growth": 5.9961,
+        "def_base": 48,
+        "def_growth": 6.5524,
+        "hp_base": 692,
+        "hp_growth": 93.9358,
+        "anomMas": 93,
+        "anomProf": 92
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 475, "atk": 37, "def": 33 },
+        { "hp": 950, "atk": 74, "def": 66 },
+        { "hp": 1425, "atk": 110, "def": 99 },
+        { "hp": 1900, "atk": 147, "def": 133 },
+        { "hp": 2375, "atk": 184, "def": 166 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "base_enerRegen": 12 },
+        { "atk_base": 25, "base_enerRegen": 12 },
+        { "atk_base": 25, "base_enerRegen": 24 },
+        { "atk_base": 50, "base_enerRegen": 24 },
+        { "atk_base": 50, "base_enerRegen": 36 },
+        { "atk_base": 75, "base_enerRegen": 36 }
+      ]
+    },
+    "Evelyn": {
+      "rarity": "S",
+      "element": "fire",
+      "stats": {
+        "atk_base": 134,
+        "atk_growth": 8.1654,
+        "def_base": 49,
+        "def_growth": 6.6882,
+        "hp_base": 626,
+        "hp_growth": 84.9779,
+        "anomMas": 92,
+        "anomProf": 90
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 430, "atk": 48, "def": 34 },
+        { "hp": 859, "atk": 95, "def": 68 },
+        { "hp": 1289, "atk": 143, "def": 101 },
+        { "hp": 1719, "atk": 191, "def": 135 },
+        { "hp": 2149, "atk": 239, "def": 169 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "crit_": 0.048 },
+        { "atk_base": 25, "crit_": 0.048 },
+        { "atk_base": 25, "crit_": 0.096 },
+        { "atk_base": 50, "crit_": 0.096 },
+        { "atk_base": 50, "crit_": 0.144 },
+        { "atk_base": 75, "crit_": 0.144 }
+      ]
+    },
+    "PulchraFeliny": {
+      "rarity": "A",
+      "element": "physical",
+      "stats": {
+        "atk_base": 96,
+        "atk_growth": 5.4887,
+        "def_base": 49,
+        "def_growth": 6.6203,
+        "hp_base": 612,
+        "hp_growth": 83.0642,
+        "anomMas": 92,
+        "anomProf": 90
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 420, "atk": 34, "def": 33 },
+        { "hp": 840, "atk": 68, "def": 67 },
+        { "hp": 1260, "atk": 103, "def": 100 },
+        { "hp": 1680, "atk": 137, "def": 134 },
+        { "hp": 2100, "atk": 171, "def": 167 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "impact": 6 },
+        { "atk_base": 25, "impact": 6 },
+        { "atk_base": 25, "impact": 12 },
+        { "atk_base": 50, "impact": 12 },
+        { "atk_base": 50, "impact": 18 },
+        { "atk_base": 75, "impact": 18 }
+      ]
+    },
+    "Trigger": {
+      "rarity": "S",
+      "element": "electric",
+      "stats": {
+        "atk_base": 108,
+        "atk_growth": 6.3517,
+        "def_base": 48,
+        "def_growth": 6.5524,
+        "hp_base": 637,
+        "hp_growth": 86.4437,
+        "anomMas": 96,
+        "anomProf": 95
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 437, "atk": 39, "def": 33 },
+        { "hp": 874, "atk": 77, "def": 66 },
+        { "hp": 1311, "atk": 116, "def": 99 },
+        { "hp": 1749, "atk": 154, "def": 133 },
+        { "hp": 2186, "atk": 193, "def": 166 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "impact": 6 },
+        { "atk_base": 25, "impact": 6 },
+        { "atk_base": 25, "impact": 12 },
+        { "atk_base": 50, "impact": 12 },
+        { "atk_base": 50, "impact": 18 },
+        { "atk_base": 75, "impact": 18 }
+      ]
+    },
+    "SilverAnby": {
+      "rarity": "S",
+      "element": "electric",
+      "stats": {
+        "atk_base": 134,
+        "atk_growth": 8.1654,
+        "def_base": 49,
+        "def_growth": 6.6882,
+        "hp_base": 617,
+        "hp_growth": 83.7238,
+        "anomMas": 94,
+        "anomProf": 93
+      },
+      "levelStats": [
+        { "hp": 0, "atk": 0, "def": 0 },
+        { "hp": 423, "atk": 48, "def": 34 },
+        { "hp": 847, "atk": 95, "def": 68 },
+        { "hp": 1270, "atk": 143, "def": 101 },
+        { "hp": 1694, "atk": 191, "def": 135 },
+        { "hp": 2117, "atk": 239, "def": 169 }
+      ],
+      "coreStats": [
+        { "atk_base": 0, "crit_": 0.048 },
+        { "atk_base": 25, "crit_": 0.048 },
+        { "atk_base": 25, "crit_": 0.096 },
+        { "atk_base": 50, "crit_": 0.096 },
+        { "atk_base": 50, "crit_": 0.144 },
+        { "atk_base": 75, "crit_": 0.144 }
+      ]
+    }
+  },
+  "wengine": {
+    "LunarPleniluna": {
+      "type": "attack",
+      "atk_base": 32,
+      "second_statkey": "atk_",
+      "second_statvalue": 0.08
+    },
+    "LunarDecrescent": {
+      "type": "attack",
+      "atk_base": 32,
+      "second_statkey": "atk_",
+      "second_statvalue": 0.08
+    },
+    "LunarNoviluna": {
+      "type": "attack",
+      "atk_base": 32,
+      "second_statkey": "crit_",
+      "second_statvalue": 0.064
+    },
+    "ReverbMarkI": {
+      "type": "support",
+      "atk_base": 32,
+      "second_statkey": "atk_",
+      "second_statvalue": 0.08
+    },
+    "ReverbMarkII": {
+      "type": "support",
+      "atk_base": 32,
+      "second_statkey": "enerRegen_",
+      "second_statvalue": 0.16
+    },
+    "ReverbMarkIII": {
+      "type": "support",
+      "atk_base": 32,
+      "second_statkey": "hp_",
+      "second_statvalue": 0.08
+    },
+    "VortexRevolver": {
+      "type": "stun",
+      "atk_base": 32,
+      "second_statkey": "atk_",
+      "second_statvalue": 0.08
+    },
+    "VortexArrow": {
+      "type": "stun",
+      "atk_base": 32,
+      "second_statkey": "impact_",
+      "second_statvalue": 0.048
+    },
+    "VortexHatchet": {
+      "type": "stun",
+      "atk_base": 32,
+      "second_statkey": "enerRegen_",
+      "second_statvalue": 0.16
+    },
+    "MagneticStormAlpha": {
+      "type": "anomaly",
+      "atk_base": 32,
+      "second_statkey": "atk_",
+      "second_statvalue": 0.08
+    },
+    "MagneticStormBravo": {
+      "type": "anomaly",
+      "atk_base": 32,
+      "second_statkey": "anomProf",
+      "second_statvalue": 24
+    },
+    "MagneticStormCharlie": {
+      "type": "anomaly",
+      "atk_base": 32,
+      "second_statkey": "pen_",
+      "second_statvalue": 0.064
+    },
+    "IdentityBase": {
+      "type": "defense",
+      "atk_base": 32,
+      "second_statkey": "def_",
+      "second_statvalue": 0.128
+    },
+    "IdentityInflection": {
+      "type": "defense",
+      "atk_base": 32,
+      "second_statkey": "def_",
+      "second_statvalue": 0.128
+    },
+    "StreetSuperstar": {
+      "rarity": "A",
+      "type": "attack",
+      "atk_base": 40,
+      "second_statkey": "atk_",
+      "second_statvalue": 0.1
+    },
+    "SliceOfTime": {
+      "rarity": "A",
+      "type": "support",
+      "atk_base": 40,
+      "second_statkey": "pen_",
+      "second_statvalue": 0.08
+    },
+    "RainforestGourmet": {
+      "rarity": "A",
+      "type": "anomaly",
+      "atk_base": 40,
+      "second_statkey": "anomProf",
+      "second_statvalue": 30
+    },
+    "StarlightEngine": {
+      "rarity": "A",
+      "type": "attack",
+      "atk_base": 40,
+      "second_statkey": "atk_",
+      "second_statvalue": 0.1
+    },
+    "SteamOven": {
+      "rarity": "A",
+      "type": "stun",
+      "atk_base": 40,
+      "second_statkey": "enerRegen_",
+      "second_statvalue": 0.2
+    },
+    "PreciousFossilizedCore": {
+      "rarity": "A",
+      "type": "stun",
+      "atk_base": 40,
+      "second_statkey": "impact_",
+      "second_statvalue": 0.06
+    },
+    "OriginalTransmorpher": {
+      "rarity": "A",
+      "type": "defense",
+      "atk_base": 40,
+      "second_statkey": "hp_",
+      "second_statvalue": 0.1
+    },
+    "WeepingGemini": {
+      "rarity": "A",
+      "type": "anomaly",
+      "atk_base": 40,
+      "second_statkey": "atk_",
+      "second_statvalue": 0.1
+    },
+    "ElectroLipGloss": {
+      "rarity": "A",
+      "type": "anomaly",
+      "atk_base": 40,
+      "second_statkey": "anomProf",
+      "second_statvalue": 30
+    },
+    "BunnyBand": {
+      "rarity": "A",
+      "type": "defense",
+      "atk_base": 40,
+      "second_statkey": "def_",
+      "second_statvalue": 0.16
+    },
+    "SpringEmbrace": {
+      "rarity": "A",
+      "type": "defense",
+      "atk_base": 40,
+      "second_statkey": "atk_",
+      "second_statvalue": 0.1
+    },
+    "GildedBlossom": {
+      "rarity": "A",
+      "type": "attack",
+      "atk_base": 40,
+      "second_statkey": "atk_",
+      "second_statvalue": 0.1
+    },
+    "MarcatoDesire": {
+      "rarity": "A",
+      "type": "attack",
+      "atk_base": 40,
+      "second_statkey": "crit_",
+      "second_statvalue": 0.08
+    },
+    "DemaraBatteryMarkII": {
+      "rarity": "A",
+      "type": "stun",
+      "atk_base": 42,
+      "second_statkey": "impact_",
+      "second_statvalue": 0.06
+    },
+    "TheVault": {
+      "rarity": "A",
+      "type": "support",
+      "atk_base": 42,
+      "second_statkey": "enerRegen_",
+      "second_statvalue": 0.2
+    },
+    "Housekeeper": {
+      "rarity": "A",
+      "type": "attack",
+      "atk_base": 42,
+      "second_statkey": "atk_",
+      "second_statvalue": 0.1
+    },
+    "StarlightEngineReplica": {
+      "rarity": "A",
+      "type": "attack",
+      "atk_base": 42,
+      "second_statkey": "atk_",
+      "second_statvalue": 0.1
+    },
+    "DrillRigRedAxis": {
+      "rarity": "A",
+      "type": "attack",
+      "atk_base": 42,
+      "second_statkey": "enerRegen_",
+      "second_statvalue": 0.2
+    },
+    "BigCylinder": {
+      "rarity": "A",
+      "type": "defense",
+      "atk_base": 42,
+      "second_statkey": "def_",
+      "second_statvalue": 0.16
+    },
+    "BashfulDemon": {
+      "rarity": "A",
+      "type": "support",
+      "atk_base": 42,
+      "second_statkey": "atk_",
+      "second_statvalue": 0.1
+    },
+    "KaboomTheCannon": {
+      "rarity": "A",
+      "type": "support",
+      "atk_base": 42,
+      "second_statkey": "enerRegen_",
+      "second_statvalue": 0.2
+    },
+    "PeacekeeperSpecialized": {
+      "rarity": "A",
+      "type": "defense",
+      "atk_base": 42,
+      "second_statkey": "atk_",
+      "second_statvalue": 0.1
+    },
+    "RoaringRide": {
+      "rarity": "A",
+      "type": "anomaly",
+      "atk_base": 42,
+      "second_statkey": "atk_",
+      "second_statvalue": 0.1
+    },
+    "CannonRotor": {
+      "rarity": "A",
+      "type": "attack",
+      "atk_base": 40,
+      "second_statkey": "crit_",
+      "second_statvalue": 0.08
+    },
+    "UnfetteredGameBall": {
+      "rarity": "A",
+      "type": "support",
+      "atk_base": 40,
+      "second_statkey": "enerRegen_",
+      "second_statvalue": 0.2
+    },
+    "SixShooter": {
+      "rarity": "A",
+      "type": "stun",
+      "atk_base": 40,
+      "second_statkey": "impact_",
+      "second_statvalue": 0.06
+    },
+    "SteelCushion": {
+      "rarity": "S",
+      "type": "attack",
+      "atk_base": 46,
+      "second_statkey": "crit_",
+      "second_statvalue": 0.096
+    },
+    "TheBrimstone": {
+      "rarity": "S",
+      "type": "attack",
+      "atk_base": 46,
+      "second_statkey": "atk_",
+      "second_statvalue": 0.12
+    },
+    "TusksOfFury": {
+      "rarity": "S",
+      "type": "defense",
+      "atk_base": 48,
+      "second_statkey": "impact_",
+      "second_statvalue": 0.072
+    },
+    "HailstormShrine": {
+      "rarity": "S",
+      "type": "anomaly",
+      "atk_base": 50,
+      "second_statkey": "crit_",
+      "second_statvalue": 0.096
+    },
+    "HellfireGears": {
+      "rarity": "S",
+      "type": "stun",
+      "atk_base": 46,
+      "second_statkey": "impact_",
+      "second_statvalue": 0.072
+    },
+    "TheRestrained": {
+      "rarity": "S",
+      "type": "stun",
+      "atk_base": 46,
+      "second_statkey": "impact_",
+      "second_statvalue": 0.072
+    },
+    "BlazingLaurel": {
+      "rarity": "S",
+      "type": "stun",
+      "atk_base": 48,
+      "second_statkey": "impact_",
+      "second_statvalue": 0.072
+    },
+    "FlamemakerShaker": {
+      "rarity": "S",
+      "type": "anomaly",
+      "atk_base": 48,
+      "second_statkey": "atk_",
+      "second_statvalue": 0.12
+    },
+    "FusionCompiler": {
+      "rarity": "S",
+      "type": "anomaly",
+      "atk_base": 46,
+      "second_statkey": "pen_",
+      "second_statvalue": 0.096
+    },
+    "DeepSeaVisitor": {
+      "rarity": "S",
+      "type": "attack",
+      "atk_base": 48,
+      "second_statkey": "crit_",
+      "second_statvalue": 0.096
+    },
+    "ZanshinHerbCase": {
+      "rarity": "S",
+      "type": "attack",
+      "atk_base": 48,
+      "second_statkey": "crit_dmg_",
+      "second_statvalue": 0.192
+    },
+    "WeepingCradle": {
+      "rarity": "S",
+      "type": "support",
+      "atk_base": 46,
+      "second_statkey": "pen_",
+      "second_statvalue": 0.096
+    },
+    "Timeweaver": {
+      "rarity": "S",
+      "type": "anomaly",
+      "atk_base": 48,
+      "second_statkey": "atk_",
+      "second_statvalue": 0.12
+    },
+    "RiotSuppressorMarkVI": {
+      "rarity": "S",
+      "type": "attack",
+      "atk_base": 48,
+      "second_statkey": "crit_dmg_",
+      "second_statvalue": 0.192
+    },
+    "IceJadeTeapot": {
+      "rarity": "S",
+      "type": "stun",
+      "atk_base": 48,
+      "second_statkey": "impact_",
+      "second_statvalue": 0.072
+    },
+    "SharpenedStinger": {
+      "rarity": "S",
+      "type": "anomaly",
+      "atk_base": 48,
+      "second_statkey": "anomProf",
+      "second_statvalue": 36
+    },
+    "ElegantVanity": {
+      "rarity": "S",
+      "type": "support",
+      "atk_base": 48,
+      "second_statkey": "atk_",
+      "second_statvalue": 0.12
+    },
+    "HeartstringNocturne": {
+      "rarity": "S",
+      "type": "attack",
+      "atk_base": 48,
+      "second_statkey": "crit_",
+      "second_statvalue": 0.096
+    }
+  }
+}

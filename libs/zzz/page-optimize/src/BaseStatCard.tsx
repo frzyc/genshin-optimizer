@@ -1,14 +1,14 @@
 import { CardThemed, NumberInputLazy } from '@genshin-optimizer/common/ui'
-import { getUnitStr } from '@genshin-optimizer/common/util'
-import type { StatKey } from '@genshin-optimizer/zzz/consts'
+import { getUnitStr, isPercentStat } from '@genshin-optimizer/common/util'
+import type { LocationKey, StatKey } from '@genshin-optimizer/zzz/consts'
 import {
   allAttributeDamageKeys,
   statKeyTextMap,
   unCondKeys,
 } from '@genshin-optimizer/zzz/consts'
-import type { BaseStats } from '@genshin-optimizer/zzz/solver'
+import type { Stats } from '@genshin-optimizer/zzz/solver'
 import { Box, CardContent, Typography } from '@mui/material'
-const baseKeys = ['charLvl', 'hp_base', 'atk_base', 'def_base'] as const
+const baseKeys = ['hp_base', 'atk_base', 'def_base'] as const
 const statKeys: StatKey[] = [
   'hp',
   'atk',
@@ -28,19 +28,23 @@ const statKeys: StatKey[] = [
 ] as const
 const enemyKeys: StatKey[] = [
   'enemyDef',
+  'enemyDefRed',
   'enemyRes_',
   'enemyResRed_',
   'enemyResIgn_',
 ] as const
 export default function BaseStatCard({
+  locationKey,
   baseStats,
   setBaseStats,
 }: {
-  baseStats: BaseStats
-  setBaseStats: (baseStats: BaseStats) => void
+  locationKey: LocationKey
+  baseStats: Stats
+  setBaseStats: (baseStats: Stats) => void
 }) {
   const input = (key: string) => (
     <NumberInputLazy
+      disabled={!locationKey}
       key={key}
       sx={{ flexGrow: 1 }}
       value={baseStats[key] || 0}
@@ -50,7 +54,7 @@ export default function BaseStatCard({
           [key]: v,
         })
       }
-      float={getUnitStr(key) === '%'}
+      float={isPercentStat(key)}
       inputProps={{ sx: { textAlign: 'right', minWidth: '5em' } }}
       InputProps={{
         startAdornment: statKeyTextMap[key] ?? key,
@@ -61,11 +65,11 @@ export default function BaseStatCard({
   return (
     <CardThemed>
       <CardContent>
-        <Typography>Character Base Stats</Typography>
+        <Typography>BONUS Character Base Stats</Typography>
         <Box sx={{ display: 'flex', gap: 1, pb: 2, flexWrap: 'wrap' }}>
           {baseKeys.map((key) => input(key))}
         </Box>
-        <Typography>Character Stats</Typography>
+        <Typography>BONUS Character Stats</Typography>
         <Box sx={{ display: 'flex', gap: 1, pb: 2, flexWrap: 'wrap' }}>
           {statKeys.map((key) => input(key))}
         </Box>

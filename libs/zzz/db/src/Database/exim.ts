@@ -1,4 +1,5 @@
 import type { IDisc } from '../Interfaces/IDisc'
+import type { CharacterData } from './DataManagers/CharacterDataManager'
 
 function newCounter<T>(): ImportResultCounter<T> {
   return {
@@ -25,7 +26,7 @@ export function newImportResult(
     discs: newCounter(),
     // TODO:
     // lightCones: newCounter(),
-    // characters: newCounter(),
+    characters: newCounter(),
     keepNotInImport,
     ignoreDups,
   }
@@ -48,7 +49,7 @@ export type ImportResult = {
   discs: ImportResultCounter<IDisc>
   // TODO:
   // lightCones: ImportResultCounter<ILightCone>
-  // characters: ImportResultCounter<ICharacter>
+  characters: ImportResultCounter<CharacterData>
   keepNotInImport: boolean
   ignoreDups: boolean
 }

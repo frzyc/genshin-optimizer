@@ -1,0 +1,7 @@
+{
+  "rarity": "A",
+  "type": "anomaly",
+  "atk_base": 40,
+  "second_statkey": "anomProf",
+  "second_statvalue": 30
+}

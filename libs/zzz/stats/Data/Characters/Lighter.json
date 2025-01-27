@@ -1,0 +1,30 @@
+{
+  "rarity": "S",
+  "element": "fire",
+  "stats": {
+    "atk_base": 109,
+    "atk_growth": 6.3891,
+    "def_base": 49,
+    "def_growth": 6.6882,
+    "hp_base": 677,
+    "hp_growth": 91.8185,
+    "anomMas": 91,
+    "anomProf": 90
+  },
+  "levelStats": [
+    { "hp": 0, "atk": 0, "def": 0 },
+    { "hp": 432, "atk": 47, "def": 34 },
+    { "hp": 864, "atk": 95, "def": 68 },
+    { "hp": 1296, "atk": 142, "def": 101 },
+    { "hp": 1727, "atk": 190, "def": 135 },
+    { "hp": 2159, "atk": 237, "def": 169 }
+  ],
+  "coreStats": [
+    { "atk_base": 0, "impact": 6 },
+    { "atk_base": 25, "impact": 6 },
+    { "atk_base": 25, "impact": 12 },
+    { "atk_base": 50, "impact": 12 },
+    { "atk_base": 50, "impact": 18 },
+    { "atk_base": 75, "impact": 18 }
+  ]
+}

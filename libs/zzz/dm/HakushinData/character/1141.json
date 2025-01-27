@@ -1,0 +1,1755 @@
+{
+  "Id": 1141,
+  "Icon": "IconRole18",
+  "Name": "Lycaon",
+  "CodeName": "Lycaon",
+  "Rarity": 4,
+  "WeaponType": { "2": "Stun" },
+  "ElementType": { "202": "Ice" },
+  "SpecialElementType": {},
+  "HitType": { "102": "Strike" },
+  "Camp": { "2": "Victoria Housekeeping Co." },
+  "Gender": 1,
+  "PartnerInfo": {
+    "Birthday": "OCT 4",
+    "FullName": "Von Lycaon",
+    "Gender": "Male",
+    "IconPath": "UI/Sprite/A1DynamicLoad/IconRoleCircle/UnPacker/IconRoleCircle18.png",
+    "ImpressionF": "Is there truly anything in this world that poses a challenge for Lycaon?\nIt seems that no matter what obstacles he encounters, he effortlessly solves them all (as long as you touch his tail)!",
+    "ImpressionM": "Belle, did your comment get mixed up with your personal preferences...?\nAnd Fairy suggested touching Lycaon's chin and head, not his tail.",
+    "Name": "",
+    "OutlookDesc": "New Eridu Citizen Verification Profile Info:\nHollow Investigator: Lycaon, with an excellent aptitude for Ether, is authorized to perform basic tasks such as investigating and mining in identified Hollows (including Companion Hollows) within New Eridu.\nNote: Lycaon's personal files contain a classified section that requires administrator permissions to access.\nIt is assumed this section contains information about his past and criminal records.",
+    "ProfileDesc": "Lycaon, the substantive leader and representative of Victoria Housekeeping Co., is responsible for managing all members of the company.\nRational and reliable, Lycaon is an elegant gentleman and a versatile attendant who can solve any problem. He is the cornerstone of his team and a reassuring presence.\nHe has a slight obsession with cleanliness, always tidying up his surroundings and unable to tolerate dirty environments.\n\nAlthough Lycaon maintains his elegance and composure, his canine instincts occasionally shine through. When he is particularly happy, his tail and ears unconsciously wag. He seems to be aware of this habit and somewhat bothered by it.\nAdditionally, like most furry Thiren, Lycaon takes great care of his fur.\n\nSuggestion: Since Lycaon is a canine Thiren, stroking his head or chin may enhance the emotional connection between you. (Note: Success is not guaranteed.)\n* Risks: Due to his height, you may not be able to do this even if you stand on tiptoes.",
+    "Race": "Victoria Housekeeping Co.",
+    "RoleIcon": "IconRole/UnPacker/IconRole18",
+    "Stature": "198",
+    "UnlockCondition": [
+      "Obtain Agent",
+      "Complete Agent Story \"And the True Heroes Are Always Behind the Scenes\""
+    ],
+    "TrustLv": {
+      "1": "Lycaon, the substantive leader and representative of Victoria Housekeeping Co., is responsible for managing all members of the company.\nRational and reliable, Lycaon is an elegant gentleman and a versatile attendant who can solve any problem. He is the cornerstone of his team and a reassuring presence.\nHe has a slight obsession with cleanliness, always tidying up his surroundings and unable to tolerate dirty environments.\n\nAlthough Lycaon maintains his elegance and composure, his canine instincts occasionally shine through. When he is particularly happy, his tail and ears unconsciously wag. He seems to be aware of this habit and somewhat bothered by it.\nAdditionally, like most furry Thiren, Lycaon takes great care of his fur.\n\nSuggestion: Since Lycaon is a canine Thiren, stroking his head or chin may enhance the emotional connection between you. (Note: Success is not guaranteed.)\n* Risks: Due to his height, you may not be able to do this even if you stand on tiptoes.",
+      "2": "",
+      "3": "Lycaon has a troubled past that he keeps to himself.\nDespite his current elegant and gentle demeanor, the former Lycaon led a wild lifestyle and had a friend whom he trusted implicitly.\nHowever, this friend has now become a bitter enemy.\n\nNote: Due to limited information, it is challenging to uncover the specifics of his past.\nYou should consider trying to gather information from different angles about the individuals involved to obtain more valuable intelligence.",
+      "4": ""
+    }
+  },
+  "Skin": {},
+  "Stats": {
+    "Armor": 0,
+    "ArmorGrowth": 0,
+    "Attack": 105,
+    "AttackGrowth": 61287,
+    "AvatarPieceId": 5141,
+    "BreakStun": 119,
+    "BuffResistBurnPossibilityDelta": 0,
+    "BuffResistBurnPossibilityRatio": 0,
+    "BuffResistElectricPossibilityDelta": 0,
+    "BuffResistElectricPossibilityRatio": 0,
+    "BuffResistFrozenPossibilityDelta": 0,
+    "BuffResistFrozenPossibilityRatio": 0,
+    "Crit": 500,
+    "CritDamage": 5000,
+    "CritDmgRes": 0,
+    "CritRes": 0,
+    "Defence": 49,
+    "DefenceGrowth": 66203,
+    "ElementAbnormalPower": 91,
+    "ElementMystery": 90,
+    "Endurance": 0,
+    "HpGrowth": 918185,
+    "HpMax": 677,
+    "Luck": 10,
+    "PenDelta": 0,
+    "PenRate": 0,
+    "Rbl": 1,
+    "RblCorrectionFactor": 10000,
+    "RblProbability": 0,
+    "Shield": 0,
+    "ShieldGrowth": 0,
+    "SpBarPoint": 120,
+    "SpRecover": 120,
+    "StarInitial": 1,
+    "Stun": 0,
+    "Tags": [
+      "Lycaon",
+      "Punch",
+      "Ice",
+      "Male",
+      "Camp2",
+      "Size3",
+      "AidTypeParry",
+      "Lycaon"
+    ]
+  },
+  "Level": {
+    "1": {
+      "HpMax": 0,
+      "Attack": 0,
+      "Defence": 0,
+      "LevelMax": 10,
+      "LevelMin": 0,
+      "Materials": { "10": 24000, "100212": 4 }
+    },
+    "2": {
+      "HpMax": 464,
+      "Attack": 37,
+      "Defence": 33,
+      "LevelMax": 20,
+      "LevelMin": 10,
+      "Materials": { "10": 56000, "100222": 12 }
+    },
+    "3": {
+      "HpMax": 929,
+      "Attack": 75,
+      "Defence": 67,
+      "LevelMax": 30,
+      "LevelMin": 20,
+      "Materials": { "10": 120000, "100222": 20 }
+    },
+    "4": {
+      "HpMax": 1393,
+      "Attack": 112,
+      "Defence": 100,
+      "LevelMax": 40,
+      "LevelMin": 30,
+      "Materials": { "10": 200000, "100232": 10 }
+    },
+    "5": {
+      "HpMax": 1857,
+      "Attack": 150,
+      "Defence": 134,
+      "LevelMax": 50,
+      "LevelMin": 40,
+      "Materials": { "10": 400000, "100232": 20 }
+    },
+    "6": {
+      "HpMax": 2322,
+      "Attack": 187,
+      "Defence": 167,
+      "LevelMax": 60,
+      "LevelMin": 50,
+      "Materials": {}
+    }
+  },
+  "ExtraLevel": {
+    "1": {
+      "MaxLevel": 15,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 0
+        },
+        "12201": {
+          "Prop": 12201,
+          "Name": "Impact",
+          "Format": "{0:0.#}",
+          "Value": 6
+        }
+      }
+    },
+    "2": {
+      "MaxLevel": 25,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 25
+        },
+        "12201": {
+          "Prop": 12201,
+          "Name": "Impact",
+          "Format": "{0:0.#}",
+          "Value": 6
+        }
+      }
+    },
+    "3": {
+      "MaxLevel": 35,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 25
+        },
+        "12201": {
+          "Prop": 12201,
+          "Name": "Impact",
+          "Format": "{0:0.#}",
+          "Value": 12
+        }
+      }
+    },
+    "4": {
+      "MaxLevel": 45,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 50
+        },
+        "12201": {
+          "Prop": 12201,
+          "Name": "Impact",
+          "Format": "{0:0.#}",
+          "Value": 12
+        }
+      }
+    },
+    "5": {
+      "MaxLevel": 55,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 50
+        },
+        "12201": {
+          "Prop": 12201,
+          "Name": "Impact",
+          "Format": "{0:0.#}",
+          "Value": 18
+        }
+      }
+    },
+    "6": {
+      "MaxLevel": 60,
+      "Extra": {
+        "12101": {
+          "Prop": 12101,
+          "Name": "Base ATK",
+          "Format": "{0:0.#}",
+          "Value": 75
+        },
+        "12201": {
+          "Prop": 12201,
+          "Name": "Impact",
+          "Format": "{0:0.#}",
+          "Value": 18
+        }
+      }
+    }
+  },
+  "LevelEXP": [
+    50, 150, 250, 400, 600, 800, 1000, 1250, 1500, 1800, 1935, 2065, 2200, 2335,
+    2465, 2600, 2735, 2865, 3000, 4680, 4975, 5265, 5560, 5855, 6145, 6440,
+    6735, 7025, 7320, 10800, 11400, 12000, 12600, 13200, 13800, 14400, 15000,
+    15600, 16200, 17100, 18300, 19500, 20700, 21900, 23100, 24300, 25500, 26700,
+    27900, 34200, 36600, 39000, 41400, 43800, 46200, 48600, 51000, 53400, 55800,
+    0
+  ],
+  "Skill": {
+    "Basic": {
+      "Description": [
+        {
+          "Name": "Basic Attack: Moon Hunter",
+          "Desc": "Press <IconMap:Icon_Normal> to activate:\nUnleashes up to 5 strikes in front, dealing <color=#F0D12B>Physical DMG</color>.\nHold down <IconMap:Icon_Normal> to charge up, increasing the power of the attack and dealing <color=#98EFF0>Ice DMG</color>."
+        },
+        {
+          "Name": "Basic Attack: Moon Hunter",
+          "Param": [
+            {
+              "Name": "1st-Hit DMG Multiplier",
+              "Desc": "{Skill:1141001, Prop:1001}",
+              "Param": {
+                "1141001": {
+                  "Main": 2920,
+                  "Growth": 270,
+                  "Format": "%",
+                  "DamagePercentage": 2920,
+                  "DamagePercentageGrowth": 270,
+                  "StunRatio": 1460,
+                  "StunRatioGrowth": 70,
+                  "SpRecovery": 5010,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 38225,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "1st-Hit Charged Attack DMG Multiplier",
+              "Desc": "{Skill:1141002, Prop:1001}",
+              "Param": {
+                "1141002": {
+                  "Main": 3710,
+                  "Growth": 340,
+                  "Format": "%",
+                  "DamagePercentage": 3710,
+                  "DamagePercentageGrowth": 340,
+                  "StunRatio": 1210,
+                  "StunRatioGrowth": 60,
+                  "SpRecovery": 4140,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 31625,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1148,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit DMG Multiplier",
+              "Desc": "{Skill:1141003, Prop:1001}",
+              "Param": {
+                "1141003": {
+                  "Main": 3490,
+                  "Growth": 320,
+                  "Format": "%",
+                  "DamagePercentage": 3490,
+                  "DamagePercentageGrowth": 320,
+                  "StunRatio": 3030,
+                  "StunRatioGrowth": 140,
+                  "SpRecovery": 10390,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 79475,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit Charged Attack DMG Multiplier",
+              "Desc": "{Skill:1141004, Prop:1001}",
+              "Param": {
+                "1141004": {
+                  "Main": 5640,
+                  "Growth": 520,
+                  "Format": "%",
+                  "DamagePercentage": 5640,
+                  "DamagePercentageGrowth": 520,
+                  "StunRatio": 3290,
+                  "StunRatioGrowth": 150,
+                  "SpRecovery": 11270,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 86075,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 3128,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit DMG Multiplier",
+              "Desc": "{Skill:1141005, Prop:1001}",
+              "Param": {
+                "1141005": {
+                  "Main": 5840,
+                  "Growth": 540,
+                  "Format": "%",
+                  "DamagePercentage": 5840,
+                  "DamagePercentageGrowth": 540,
+                  "StunRatio": 4560,
+                  "StunRatioGrowth": 210,
+                  "SpRecovery": 15630,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 119625,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit Charged Attack DMG Multiplier",
+              "Desc": "{Skill:1141006, Prop:1001}",
+              "Param": {
+                "1141006": {
+                  "Main": 9950,
+                  "Growth": 910,
+                  "Format": "%",
+                  "DamagePercentage": 9950,
+                  "DamagePercentageGrowth": 910,
+                  "StunRatio": 5370,
+                  "StunRatioGrowth": 250,
+                  "SpRecovery": 18410,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 140800,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 5113,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "4th-Hit DMG Multiplier",
+              "Desc": "{Skill:1141007, Prop:1001}",
+              "Param": {
+                "1141007": {
+                  "Main": 15200,
+                  "Growth": 1390,
+                  "Format": "%",
+                  "DamagePercentage": 15200,
+                  "DamagePercentageGrowth": 1390,
+                  "StunRatio": 11200,
+                  "StunRatioGrowth": 510,
+                  "SpRecovery": 38380,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 293150,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "4th-Hit Charged Attack DMG Multiplier",
+              "Desc": "{Skill:1141008, Prop:1001}",
+              "Param": {
+                "1141008": {
+                  "Main": 21090,
+                  "Growth": 1920,
+                  "Format": "%",
+                  "DamagePercentage": 21090,
+                  "DamagePercentageGrowth": 1920,
+                  "StunRatio": 10710,
+                  "StunRatioGrowth": 490,
+                  "SpRecovery": 36720,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 280500,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 10198,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "5th-Hit DMG Multiplier",
+              "Desc": "{Skill:1141009, Prop:1001}",
+              "Param": {
+                "1141009": {
+                  "Main": 18070,
+                  "Growth": 1650,
+                  "Format": "%",
+                  "DamagePercentage": 18070,
+                  "DamagePercentageGrowth": 1650,
+                  "StunRatio": 14770,
+                  "StunRatioGrowth": 680,
+                  "SpRecovery": 50620,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 386650,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "5th-Hit Level-1 Charged Attack DMG Multiplier",
+              "Desc": "{Skill:1141010, Prop:1001}",
+              "Param": {
+                "1141010": {
+                  "Main": 27760,
+                  "Growth": 2530,
+                  "Format": "%",
+                  "DamagePercentage": 27760,
+                  "DamagePercentageGrowth": 2530,
+                  "StunRatio": 16310,
+                  "StunRatioGrowth": 750,
+                  "SpRecovery": 55890,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 427075,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 15524,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "5th-Hit Level-2 Charged Attack DMG Multiplier",
+              "Desc": "{Skill:1141011, Prop:1001}",
+              "Param": {
+                "1141011": {
+                  "Main": 35570,
+                  "Growth": 3240,
+                  "Format": "%",
+                  "DamagePercentage": 35570,
+                  "DamagePercentageGrowth": 3240,
+                  "StunRatio": 20560,
+                  "StunRatioGrowth": 940,
+                  "SpRecovery": 70480,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 538450,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 19575,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "1st-Hit Daze Multiplier",
+              "Desc": "{Skill:1141001, Prop:1002}",
+              "Param": {
+                "1141001": {
+                  "Main": 1460,
+                  "Growth": 70,
+                  "Format": "%",
+                  "DamagePercentage": 2920,
+                  "DamagePercentageGrowth": 270,
+                  "StunRatio": 1460,
+                  "StunRatioGrowth": 70,
+                  "SpRecovery": 5010,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 38225,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "1st-Hit Charged Daze Multiplier",
+              "Desc": "{Skill:1141002, Prop:1002}",
+              "Param": {
+                "1141002": {
+                  "Main": 1210,
+                  "Growth": 60,
+                  "Format": "%",
+                  "DamagePercentage": 3710,
+                  "DamagePercentageGrowth": 340,
+                  "StunRatio": 1210,
+                  "StunRatioGrowth": 60,
+                  "SpRecovery": 4140,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 31625,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 1148,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit Daze Multiplier",
+              "Desc": "{Skill:1141003, Prop:1002}",
+              "Param": {
+                "1141003": {
+                  "Main": 3030,
+                  "Growth": 140,
+                  "Format": "%",
+                  "DamagePercentage": 3490,
+                  "DamagePercentageGrowth": 320,
+                  "StunRatio": 3030,
+                  "StunRatioGrowth": 140,
+                  "SpRecovery": 10390,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 79475,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit Charged Daze Multiplier",
+              "Desc": "{Skill:1141004, Prop:1002}",
+              "Param": {
+                "1141004": {
+                  "Main": 3290,
+                  "Growth": 150,
+                  "Format": "%",
+                  "DamagePercentage": 5640,
+                  "DamagePercentageGrowth": 520,
+                  "StunRatio": 3290,
+                  "StunRatioGrowth": 150,
+                  "SpRecovery": 11270,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 86075,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 3128,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit Daze Multiplier",
+              "Desc": "{Skill:1141005, Prop:1002}",
+              "Param": {
+                "1141005": {
+                  "Main": 4560,
+                  "Growth": 210,
+                  "Format": "%",
+                  "DamagePercentage": 5840,
+                  "DamagePercentageGrowth": 540,
+                  "StunRatio": 4560,
+                  "StunRatioGrowth": 210,
+                  "SpRecovery": 15630,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 119625,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit Charged Daze Multiplier",
+              "Desc": "{Skill:1141006, Prop:1002}",
+              "Param": {
+                "1141006": {
+                  "Main": 5370,
+                  "Growth": 250,
+                  "Format": "%",
+                  "DamagePercentage": 9950,
+                  "DamagePercentageGrowth": 910,
+                  "StunRatio": 5370,
+                  "StunRatioGrowth": 250,
+                  "SpRecovery": 18410,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 140800,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 5113,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "4th-Hit Daze Multiplier",
+              "Desc": "{Skill:1141007, Prop:1002}",
+              "Param": {
+                "1141007": {
+                  "Main": 11200,
+                  "Growth": 510,
+                  "Format": "%",
+                  "DamagePercentage": 15200,
+                  "DamagePercentageGrowth": 1390,
+                  "StunRatio": 11200,
+                  "StunRatioGrowth": 510,
+                  "SpRecovery": 38380,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 293150,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "4th-Hit Charged Daze Multiplier",
+              "Desc": "{Skill:1141008, Prop:1002}",
+              "Param": {
+                "1141008": {
+                  "Main": 10710,
+                  "Growth": 490,
+                  "Format": "%",
+                  "DamagePercentage": 21090,
+                  "DamagePercentageGrowth": 1920,
+                  "StunRatio": 10710,
+                  "StunRatioGrowth": 490,
+                  "SpRecovery": 36720,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 280500,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 10198,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "5th-Hit Daze Multiplier",
+              "Desc": "{Skill:1141009, Prop:1002}",
+              "Param": {
+                "1141009": {
+                  "Main": 14770,
+                  "Growth": 680,
+                  "Format": "%",
+                  "DamagePercentage": 18070,
+                  "DamagePercentageGrowth": 1650,
+                  "StunRatio": 14770,
+                  "StunRatioGrowth": 680,
+                  "SpRecovery": 50620,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 386650,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "5th-Hit Level-1 Charged Daze Multiplier",
+              "Desc": "{Skill:1141010, Prop:1002}",
+              "Param": {
+                "1141010": {
+                  "Main": 16310,
+                  "Growth": 750,
+                  "Format": "%",
+                  "DamagePercentage": 27760,
+                  "DamagePercentageGrowth": 2530,
+                  "StunRatio": 16310,
+                  "StunRatioGrowth": 750,
+                  "SpRecovery": 55890,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 427075,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 15524,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "5th-Hit Level-2 Charged Daze Multiplier",
+              "Desc": "{Skill:1141011, Prop:1002}",
+              "Param": {
+                "1141011": {
+                  "Main": 20560,
+                  "Growth": 940,
+                  "Format": "%",
+                  "DamagePercentage": 35570,
+                  "DamagePercentageGrowth": 3240,
+                  "StunRatio": 20560,
+                  "StunRatioGrowth": 940,
+                  "SpRecovery": 70480,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 538450,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 19575,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100112": 2 },
+        "2": { "10": 3000, "100112": 3 },
+        "3": { "10": 6000, "100122": 2 },
+        "4": { "10": 9000, "100122": 3 },
+        "5": { "10": 12000, "100122": 4 },
+        "6": { "10": 18000, "100122": 6 },
+        "7": { "10": 45000, "100132": 5 },
+        "8": { "10": 67500, "100132": 8 },
+        "9": { "10": 90000, "100132": 10 },
+        "10": { "10": 112500, "100132": 12 },
+        "11": { "10": 135000, "100132": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Dodge": {
+      "Description": [
+        {
+          "Name": "Dodge: Suitable Positioning",
+          "Desc": "Press <IconMap:Icon_Evade> to activate:\nA quick dash dodge.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Dash Attack: Keep it Clean",
+          "Desc": "Press <IconMap:Icon_Normal> during a dodge to activate:\nSlides forward, launching a series of strikes in front, dealing <color=#F0D12B>Physical DMG</color>."
+        },
+        {
+          "Name": "Dodge Counter: Etiquette Manual",
+          "Desc": "Press <IconMap:Icon_Normal> during a <color=#FFFFFF>Perfect Dodge</color> to activate:\nStrikes enemies in front, dealing <color=#98EFF0>Ice DMG</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Dash Attack: Keep it Clean",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1141018, Prop:1001}",
+              "Param": {
+                "1141018": {
+                  "Main": 4730,
+                  "Growth": 430,
+                  "Format": "%",
+                  "DamagePercentage": 4730,
+                  "DamagePercentageGrowth": 430,
+                  "StunRatio": 2370,
+                  "StunRatioGrowth": 110,
+                  "SpRecovery": 8110,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 62150,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1141018, Prop:1002}",
+              "Param": {
+                "1141018": {
+                  "Main": 2370,
+                  "Growth": 110,
+                  "Format": "%",
+                  "DamagePercentage": 4730,
+                  "DamagePercentageGrowth": 430,
+                  "StunRatio": 2370,
+                  "StunRatioGrowth": 110,
+                  "SpRecovery": 8110,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 62150,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Dodge Counter: Etiquette Manual",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1141019, Prop:1001}",
+              "Param": {
+                "1141019": {
+                  "Main": 18700,
+                  "Growth": 1700,
+                  "Format": "%",
+                  "DamagePercentage": 18700,
+                  "DamagePercentageGrowth": 1700,
+                  "StunRatio": 16810,
+                  "StunRatioGrowth": 770,
+                  "SpRecovery": 21620,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 165275,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 6003,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1141019, Prop:1002}",
+              "Param": {
+                "1141019": {
+                  "Main": 16810,
+                  "Growth": 770,
+                  "Format": "%",
+                  "DamagePercentage": 18700,
+                  "DamagePercentageGrowth": 1700,
+                  "StunRatio": 16810,
+                  "StunRatioGrowth": 770,
+                  "SpRecovery": 21620,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 165275,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 6003,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100112": 2 },
+        "2": { "10": 3000, "100112": 3 },
+        "3": { "10": 6000, "100122": 2 },
+        "4": { "10": 9000, "100122": 3 },
+        "5": { "10": 12000, "100122": 4 },
+        "6": { "10": 18000, "100122": 6 },
+        "7": { "10": 45000, "100132": 5 },
+        "8": { "10": 67500, "100132": 8 },
+        "9": { "10": 90000, "100132": 10 },
+        "10": { "10": 112500, "100132": 12 },
+        "11": { "10": 135000, "100132": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Special": {
+      "Description": [
+        {
+          "Name": "Special Attack: Time to Hunt",
+          "Desc": "Press <IconMap:Icon_Special> to activate:\nUnleashes a series of strikes in front, dealing <color=#98EFF0>Ice DMG</color>.\nHold down <IconMap:Icon_Special> to charge up, increasing its power.\nAnti-Interrupt level is increased while using this skill."
+        },
+        {
+          "Name": "EX Special Attack: Thrill of the Hunt",
+          "Desc": "With enough Energy, press <IconMap:Icon_SpecialReady> to activate:\nUnleashes a series of powerful strikes in front, dealing massive <color=#98EFF0>Ice DMG</color>.\nHold down <IconMap:Icon_SpecialReady> to charge up, consuming Energy and enhancing the power of the attack.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Special Attack: Time to Hunt",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{{Skill:1141012, Prop:1001} + {Skill:1141013, Prop:1001}}",
+              "Param": {
+                "1141012": {
+                  "Main": 2280,
+                  "Growth": 210,
+                  "Format": "%",
+                  "DamagePercentage": 2280,
+                  "DamagePercentageGrowth": 210,
+                  "StunRatio": 2280,
+                  "StunRatioGrowth": 110,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 59675,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 2166,
+                  "SpConsume": 0,
+                  "AttackData": []
+                },
+                "1141013": {
+                  "Main": 5430,
+                  "Growth": 500,
+                  "Format": "%",
+                  "DamagePercentage": 5430,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 5430,
+                  "StunRatioGrowth": 250,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 142175,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 2583,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Charged Attack DMG Multiplier",
+              "Desc": "{{Skill:1141012, Prop:1001} + {Skill:1141014, Prop:1001}}",
+              "Param": {
+                "1141012": {
+                  "Main": 2280,
+                  "Growth": 210,
+                  "Format": "%",
+                  "DamagePercentage": 2280,
+                  "DamagePercentageGrowth": 210,
+                  "StunRatio": 2280,
+                  "StunRatioGrowth": 110,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 59675,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 2166,
+                  "SpConsume": 0,
+                  "AttackData": []
+                },
+                "1141014": {
+                  "Main": 11030,
+                  "Growth": 1010,
+                  "Format": "%",
+                  "DamagePercentage": 11030,
+                  "DamagePercentageGrowth": 1010,
+                  "StunRatio": 11030,
+                  "StunRatioGrowth": 510,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 289025,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 5250,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{{Skill:1141012, Prop:1002} + {Skill:1141013, Prop:1002}}",
+              "Param": {
+                "1141012": {
+                  "Main": 2280,
+                  "Growth": 110,
+                  "Format": "%",
+                  "DamagePercentage": 2280,
+                  "DamagePercentageGrowth": 210,
+                  "StunRatio": 2280,
+                  "StunRatioGrowth": 110,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 59675,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 2166,
+                  "SpConsume": 0,
+                  "AttackData": []
+                },
+                "1141013": {
+                  "Main": 5430,
+                  "Growth": 250,
+                  "Format": "%",
+                  "DamagePercentage": 5430,
+                  "DamagePercentageGrowth": 500,
+                  "StunRatio": 5430,
+                  "StunRatioGrowth": 250,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 142175,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 2583,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Charged Daze Multiplier",
+              "Desc": "{{Skill:1141012, Prop:1002} + {Skill:1141014, Prop:1002}}",
+              "Param": {
+                "1141012": {
+                  "Main": 2280,
+                  "Growth": 110,
+                  "Format": "%",
+                  "DamagePercentage": 2280,
+                  "DamagePercentageGrowth": 210,
+                  "StunRatio": 2280,
+                  "StunRatioGrowth": 110,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 59675,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 2166,
+                  "SpConsume": 0,
+                  "AttackData": []
+                },
+                "1141014": {
+                  "Main": 11030,
+                  "Growth": 510,
+                  "Format": "%",
+                  "DamagePercentage": 11030,
+                  "DamagePercentageGrowth": 1010,
+                  "StunRatio": 11030,
+                  "StunRatioGrowth": 510,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 289025,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 5250,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "EX Special Attack: Thrill of the Hunt",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{{Skill:1141015, Prop:1001} + {Skill:1141016, Prop:1001}}",
+              "Param": {
+                "1141015": {
+                  "Main": 25240,
+                  "Growth": 2300,
+                  "Format": "%",
+                  "DamagePercentage": 25240,
+                  "DamagePercentageGrowth": 2300,
+                  "StunRatio": 21150,
+                  "StunRatioGrowth": 970,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 698500,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 20076,
+                  "SpConsume": 0,
+                  "AttackData": []
+                },
+                "1141016": {
+                  "Main": 28190,
+                  "Growth": 2570,
+                  "Format": "%",
+                  "DamagePercentage": 28190,
+                  "DamagePercentageGrowth": 2570,
+                  "StunRatio": 23890,
+                  "StunRatioGrowth": 1090,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 773850,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 22542,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Charged Attack DMG Multiplier",
+              "Desc": "{{Skill:1141015, Prop:1001} + {Skill:1141017, Prop:1001}}",
+              "Param": {
+                "1141015": {
+                  "Main": 25240,
+                  "Growth": 2300,
+                  "Format": "%",
+                  "DamagePercentage": 25240,
+                  "DamagePercentageGrowth": 2300,
+                  "StunRatio": 21150,
+                  "StunRatioGrowth": 970,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 698500,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 20076,
+                  "SpConsume": 0,
+                  "AttackData": []
+                },
+                "1141017": {
+                  "Main": 53710,
+                  "Growth": 4890,
+                  "Format": "%",
+                  "DamagePercentage": 53710,
+                  "DamagePercentageGrowth": 4890,
+                  "StunRatio": 45290,
+                  "StunRatioGrowth": 2060,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1479225,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 42848,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{{Skill:1141015, Prop:1002} + {Skill:1141016, Prop:1002}}",
+              "Param": {
+                "1141015": {
+                  "Main": 21150,
+                  "Growth": 970,
+                  "Format": "%",
+                  "DamagePercentage": 25240,
+                  "DamagePercentageGrowth": 2300,
+                  "StunRatio": 21150,
+                  "StunRatioGrowth": 970,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 698500,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 20076,
+                  "SpConsume": 0,
+                  "AttackData": []
+                },
+                "1141016": {
+                  "Main": 23890,
+                  "Growth": 1090,
+                  "Format": "%",
+                  "DamagePercentage": 28190,
+                  "DamagePercentageGrowth": 2570,
+                  "StunRatio": 23890,
+                  "StunRatioGrowth": 1090,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 773850,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 22542,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Charged Daze Multiplier",
+              "Desc": "{{Skill:1141015, Prop:1002} + {Skill:1141017, Prop:1002}}",
+              "Param": {
+                "1141015": {
+                  "Main": 21150,
+                  "Growth": 970,
+                  "Format": "%",
+                  "DamagePercentage": 25240,
+                  "DamagePercentageGrowth": 2300,
+                  "StunRatio": 21150,
+                  "StunRatioGrowth": 970,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 698500,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 20076,
+                  "SpConsume": 0,
+                  "AttackData": []
+                },
+                "1141017": {
+                  "Main": 45290,
+                  "Growth": 2060,
+                  "Format": "%",
+                  "DamagePercentage": 53710,
+                  "DamagePercentageGrowth": 4890,
+                  "StunRatio": 45290,
+                  "StunRatioGrowth": 2060,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1479225,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 42848,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            { "Name": "Activation Energy Cost", "Desc": "40" },
+            { "Name": "Charged Attack Energy Cost", "Desc": "20" }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100112": 2 },
+        "2": { "10": 3000, "100112": 3 },
+        "3": { "10": 6000, "100122": 2 },
+        "4": { "10": 9000, "100122": 3 },
+        "5": { "10": 12000, "100122": 4 },
+        "6": { "10": 18000, "100122": 6 },
+        "7": { "10": 45000, "100132": 5 },
+        "8": { "10": 67500, "100132": 8 },
+        "9": { "10": 90000, "100132": 10 },
+        "10": { "10": 112500, "100132": 12 },
+        "11": { "10": 135000, "100132": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Chain": {
+      "Description": [
+        {
+          "Name": "Chain Attack: As You Wish",
+          "Desc": "When a <color=#FFFFFF>Chain Attack</color> is triggered, select the character to activate:\nUnleashes a series of powerful strikes at enemies in a small area in front of him, dealing massive <color=#98EFF0>Ice DMG</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Ultimate: Mission Complete",
+          "Desc": "When Decibel Rating is at <color=#FFFFFF>Maximum</color>, press <IconMap:Icon_UltimateReady> to activate:\nUnleashes multiple powerful strikes at enemies in a large area, dealing massive <color=#98EFF0>Ice DMG</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Chain Attack: As You Wish",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1141020, Prop:1001}",
+              "Param": {
+                "1141020": {
+                  "Main": 63780,
+                  "Growth": 5800,
+                  "Format": "%",
+                  "DamagePercentage": 63780,
+                  "DamagePercentageGrowth": 5800,
+                  "StunRatio": 21880,
+                  "StunRatioGrowth": 1000,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2401850,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 40786,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1141020, Prop:1002}",
+              "Param": {
+                "1141020": {
+                  "Main": 21880,
+                  "Growth": 1000,
+                  "Format": "%",
+                  "DamagePercentage": 63780,
+                  "DamagePercentageGrowth": 5800,
+                  "StunRatio": 21880,
+                  "StunRatioGrowth": 1000,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2401850,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 40786,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Ultimate: Mission Complete",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1141021, Prop:1001}",
+              "Param": {
+                "1141021": {
+                  "Main": 169410,
+                  "Growth": 15410,
+                  "Format": "%",
+                  "DamagePercentage": 169410,
+                  "DamagePercentageGrowth": 15410,
+                  "StunRatio": 109660,
+                  "StunRatioGrowth": 4990,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 17336,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1141021, Prop:1002}",
+              "Param": {
+                "1141021": {
+                  "Main": 109660,
+                  "Growth": 4990,
+                  "Format": "%",
+                  "DamagePercentage": 169410,
+                  "DamagePercentageGrowth": 15410,
+                  "StunRatio": 109660,
+                  "StunRatioGrowth": 4990,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 17336,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100112": 2 },
+        "2": { "10": 3000, "100112": 3 },
+        "3": { "10": 6000, "100122": 2 },
+        "4": { "10": 9000, "100122": 3 },
+        "5": { "10": 12000, "100122": 4 },
+        "6": { "10": 18000, "100122": 6 },
+        "7": { "10": 45000, "100132": 5 },
+        "8": { "10": 67500, "100132": 8 },
+        "9": { "10": 90000, "100132": 10 },
+        "10": { "10": 112500, "100132": 12 },
+        "11": { "10": 135000, "100132": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Assist": {
+      "Description": [
+        {
+          "Name": "Quick Assist: Wolf Pack",
+          "Desc": "When the active character is launched, press <IconMap:Icon_Switch> to activate:\nStrikes enemies in front, dealing <color=#98EFF0>Ice DMG</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Defensive Assist: Disrupted Hunt",
+          "Desc": "When the character on field is about to be attacked, press <IconMap:Icon_Switch> to activate:\nParries the enemy's attack, dealing massive Daze.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Assist Follow-Up: Vengeful Counterattack",
+          "Desc": "Press <IconMap:Icon_Normal> after a <color=#FFFFFF>Defensive Assist</color> to activate:\nCreates an icicle in front, which strikes all enemies within range, dealing <color=#98EFF0>Ice DMG</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Quick Assist: Wolf Pack",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1141022, Prop:1001}",
+              "Param": {
+                "1141022": {
+                  "Main": 6310,
+                  "Growth": 580,
+                  "Format": "%",
+                  "DamagePercentage": 6310,
+                  "DamagePercentageGrowth": 580,
+                  "StunRatio": 6310,
+                  "StunRatioGrowth": 290,
+                  "SpRecovery": 21620,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 165275,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 6003,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1141022, Prop:1002}",
+              "Param": {
+                "1141022": {
+                  "Main": 6310,
+                  "Growth": 290,
+                  "Format": "%",
+                  "DamagePercentage": 6310,
+                  "DamagePercentageGrowth": 580,
+                  "StunRatio": 6310,
+                  "StunRatioGrowth": 290,
+                  "SpRecovery": 21620,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 165275,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 6003,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Defensive Assist: Disrupted Hunt",
+          "Param": [
+            {
+              "Name": "Light Defensive Daze Multiplier",
+              "Desc": "{Skill:1141023, Prop:1002}",
+              "Param": {
+                "1141023": {
+                  "Main": 25900,
+                  "Growth": 1180,
+                  "Format": "%",
+                  "DamagePercentage": 0,
+                  "DamagePercentageGrowth": 0,
+                  "StunRatio": 25900,
+                  "StunRatioGrowth": 1180,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Heavy Defensive Daze Multiplier",
+              "Desc": "{Skill:1141024, Prop:1002}",
+              "Param": {
+                "1141024": {
+                  "Main": 32730,
+                  "Growth": 1490,
+                  "Format": "%",
+                  "DamagePercentage": 0,
+                  "DamagePercentageGrowth": 0,
+                  "StunRatio": 32730,
+                  "StunRatioGrowth": 1490,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Chain Defensive Daze Multiplier",
+              "Desc": "{Skill:1141025, Prop:1002}",
+              "Param": {
+                "1141025": {
+                  "Main": 15930,
+                  "Growth": 730,
+                  "Format": "%",
+                  "DamagePercentage": 0,
+                  "DamagePercentageGrowth": 0,
+                  "StunRatio": 15930,
+                  "StunRatioGrowth": 730,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Assist Follow-Up: Vengeful Counterattack",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1141026, Prop:1001}",
+              "Param": {
+                "1141026": {
+                  "Main": 28830,
+                  "Growth": 2630,
+                  "Format": "%",
+                  "DamagePercentage": 28830,
+                  "DamagePercentageGrowth": 2630,
+                  "StunRatio": 24680,
+                  "StunRatioGrowth": 1130,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 863500,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 25476,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1141026, Prop:1002}",
+              "Param": {
+                "1141026": {
+                  "Main": 24680,
+                  "Growth": 1130,
+                  "Format": "%",
+                  "DamagePercentage": 28830,
+                  "DamagePercentageGrowth": 2630,
+                  "StunRatio": 24680,
+                  "StunRatioGrowth": 1130,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 863500,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 25476,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100112": 2 },
+        "2": { "10": 3000, "100112": 3 },
+        "3": { "10": 6000, "100122": 2 },
+        "4": { "10": 9000, "100122": 3 },
+        "5": { "10": 12000, "100122": 4 },
+        "6": { "10": 18000, "100122": 6 },
+        "7": { "10": 45000, "100132": 5 },
+        "8": { "10": 67500, "100132": 8 },
+        "9": { "10": 90000, "100132": 10 },
+        "10": { "10": 112500, "100132": 12 },
+        "11": { "10": 135000, "100132": 15, "100941": 1 },
+        "12": {}
+      }
+    }
+  },
+  "SkillList": {
+    "1141001": {
+      "Name": "Basic Attack: Moon Hunter",
+      "Desc": "<IconMap:Icon_Normal>",
+      "ElementType": 200,
+      "HitType": 102
+    },
+    "1141002": {
+      "Name": "Basic Attack: Moon Hunter (Charged)",
+      "Desc": "<IconMap:Icon_Normal>(Hold)",
+      "ElementType": 202,
+      "HitType": 102
+    },
+    "1141003": {
+      "Name": "Special Attack: Time to Hunt",
+      "Desc": "<IconMap:Icon_Special> (Can Hold Down)",
+      "ElementType": 202,
+      "HitType": 102
+    },
+    "1141004": {
+      "Name": "EX Special Attack: Thrill of the Hunt",
+      "Desc": "<IconMap:Icon_SpecialReady>(Can Hold Down)",
+      "ElementType": 202,
+      "HitType": 102
+    },
+    "1141005": {
+      "Name": "Dash Attack: Keep it Clean",
+      "Desc": "<IconMap:Icon_Evade> ; <IconMap:Icon_Normal>",
+      "ElementType": 200,
+      "HitType": 102
+    },
+    "1141006": {
+      "Name": "Dodge Counter: Etiquette Manual",
+      "Desc": "<IconMap:Icon_Evade> (Perfect) ; <IconMap:Icon_Normal>",
+      "ElementType": 202,
+      "HitType": 102
+    },
+    "1141007": {
+      "Name": "Chain Attack: As You Wish",
+      "Desc": "<IconMap:Icon_QTE>",
+      "ElementType": 202,
+      "HitType": 102
+    },
+    "1141008": {
+      "Name": "Ultimate: Mission Complete",
+      "Desc": "<IconMap:Icon_UltimateReady>",
+      "ElementType": 202,
+      "HitType": 102
+    },
+    "1141009": {
+      "Name": "Quick Assist: Wolf Pack",
+      "Desc": "<IconMap:Icon_Switch> (When Triggering Quick Assist)",
+      "ElementType": 202,
+      "HitType": 102
+    },
+    "1141010": {
+      "Name": "Defensive Assist: Disrupted Hunt",
+      "Desc": "<IconMap:Icon_Switch> (When Triggering Defensive Assist)",
+      "ElementType": 0,
+      "HitType": 0
+    },
+    "1141011": {
+      "Name": "Assist Follow-Up: Vengeful Counterattack",
+      "Desc": "<IconMap:Icon_Normal> (After Defensive Assist)",
+      "ElementType": 202,
+      "HitType": 102
+    }
+  },
+  "Passive": {
+    "Level": {
+      "1": {
+        "Level": 1,
+        "Id": 1141501,
+        "Name": [
+          "Core Passive: Metallic Paws",
+          "Additional Ability: Elegant Predator"
+        ],
+        "Desc": [
+          "When Lycaon charges his <color=#FFFFFF>Basic Attack</color> to completion, the attack deals <color=#2BAD00>40%</color> increased Daze.\nWhen <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Assist Follow-Up</color> hits an enemy, the target's <color=#98EFF0>Ice DMG RES</color> decreases by 25% for 30s.",
+          "When another character in your squad shares the same Attribute or Faction:\nWhen Lycaon hits a Stunned enemy, the target's Stun DMG Multiplier increases by 35%."
+        ]
+      },
+      "2": {
+        "Level": 2,
+        "Id": 1141502,
+        "Name": [
+          "Core Passive: Metallic Paws",
+          "Additional Ability: Elegant Predator"
+        ],
+        "Desc": [
+          "When Lycaon charges his <color=#FFFFFF>Basic Attack</color> to completion, the attack deals <color=#2BAD00>46.6%</color> increased Daze.\nWhen <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Assist Follow-Up</color> hits an enemy, the target's <color=#98EFF0>Ice DMG RES</color> decreases by 25% for 30s.",
+          "When another character in your squad shares the same Attribute or Faction:\nWhen Lycaon hits a Stunned enemy, the target's Stun DMG Multiplier increases by 35%."
+        ]
+      },
+      "3": {
+        "Level": 3,
+        "Id": 1141503,
+        "Name": [
+          "Core Passive: Metallic Paws",
+          "Additional Ability: Elegant Predator"
+        ],
+        "Desc": [
+          "When Lycaon charges his <color=#FFFFFF>Basic Attack</color> to completion, the attack deals <color=#2BAD00>53.3%</color> increased Daze.\nWhen <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Assist Follow-Up</color> hits an enemy, the target's <color=#98EFF0>Ice DMG RES</color> decreases by 25% for 30s.",
+          "When another character in your squad shares the same Attribute or Faction:\nWhen Lycaon hits a Stunned enemy, the target's Stun DMG Multiplier increases by 35%."
+        ]
+      },
+      "4": {
+        "Level": 4,
+        "Id": 1141504,
+        "Name": [
+          "Core Passive: Metallic Paws",
+          "Additional Ability: Elegant Predator"
+        ],
+        "Desc": [
+          "When Lycaon charges his <color=#FFFFFF>Basic Attack</color> to completion, the attack deals <color=#2BAD00>60%</color> increased Daze.\nWhen <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Assist Follow-Up</color> hits an enemy, the target's <color=#98EFF0>Ice DMG RES</color> decreases by 25% for 30s.",
+          "When another character in your squad shares the same Attribute or Faction:\nWhen Lycaon hits a Stunned enemy, the target's Stun DMG Multiplier increases by 35%."
+        ]
+      },
+      "5": {
+        "Level": 5,
+        "Id": 1141505,
+        "Name": [
+          "Core Passive: Metallic Paws",
+          "Additional Ability: Elegant Predator"
+        ],
+        "Desc": [
+          "When Lycaon charges his <color=#FFFFFF>Basic Attack</color> to completion, the attack deals <color=#2BAD00>66.6%</color> increased Daze.\nWhen <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Assist Follow-Up</color> hits an enemy, the target's <color=#98EFF0>Ice DMG RES</color> decreases by 25% for 30s.",
+          "When another character in your squad shares the same Attribute or Faction:\nWhen Lycaon hits a Stunned enemy, the target's Stun DMG Multiplier increases by 35%."
+        ]
+      },
+      "6": {
+        "Level": 6,
+        "Id": 1141506,
+        "Name": [
+          "Core Passive: Metallic Paws",
+          "Additional Ability: Elegant Predator"
+        ],
+        "Desc": [
+          "When Lycaon charges his <color=#FFFFFF>Basic Attack</color> to completion, the attack deals <color=#2BAD00>73.3%</color> increased Daze.\nWhen <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Assist Follow-Up</color> hits an enemy, the target's <color=#98EFF0>Ice DMG RES</color> decreases by 25% for 30s.",
+          "When another character in your squad shares the same Attribute or Faction:\nWhen Lycaon hits a Stunned enemy, the target's Stun DMG Multiplier increases by 35%."
+        ]
+      },
+      "7": {
+        "Level": 7,
+        "Id": 1141507,
+        "Name": [
+          "Core Passive: Metallic Paws",
+          "Additional Ability: Elegant Predator"
+        ],
+        "Desc": [
+          "When Lycaon charges his <color=#FFFFFF>Basic Attack</color> to completion, the attack deals <color=#2BAD00>80%</color> increased Daze.\nWhen <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Assist Follow-Up</color> hits an enemy, the target's <color=#98EFF0>Ice DMG RES</color> decreases by 25% for 30s.",
+          "When another character in your squad shares the same Attribute or Faction:\nWhen Lycaon hits a Stunned enemy, the target's Stun DMG Multiplier increases by 35%."
+        ]
+      }
+    },
+    "Materials": {
+      "1": { "10": 5000 },
+      "2": { "10": 12000, "110503": 2 },
+      "3": { "10": 28000, "110503": 4 },
+      "4": { "10": 60000, "110003": 2, "110503": 9 },
+      "5": { "10": 100000, "110003": 3, "110503": 15 },
+      "6": { "10": 200000, "110003": 4, "110503": 30 }
+    }
+  },
+  "Talent": {
+    "1": {
+      "Level": 1,
+      "Name": "Full Moon Momentum",
+      "Desc": "When Lycaon's <color=#FFFFFF>EX Special Attack</color> hits an enemy, the attack's Daze increases by 12%. This effect can trigger once every 8s. When he charges his <color=#FFFFFF>EX Special Attack</color> to completion, this buff will increase by an additional 10%.",
+      "Desc2": "Records suggest that werewolves exposed to moonlight become significantly more aggressive.\n\"Don't stare directly at the moon.\""
+    },
+    "2": {
+      "Level": 2,
+      "Name": "Energy Feedback",
+      "Desc": "When Stunning an enemy or triggering a squad member's <color=#FFFFFF>Chain Attack</color>, Lycaon gains 5 Energy. Can trigger once every 1s.",
+      "Desc2": "\"Canines receive a brief dopamine boost in their brains after completing semi-complex tasks. At that moment, if their owner pets them to show encouragement, they will be extremely happy...\"\n—Excerpt from the \"Handbook of Unreliable Canine Research\""
+    },
+    "3": {
+      "Level": 3,
+      "Name": "Attendant Training",
+      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
+      "Desc2": "His every gesture exudes poise, and his words and actions are as refreshing as a spring breeze. An attendant's training is about maintaining control over everything."
+    },
+    "4": {
+      "Level": 4,
+      "Name": "Graceful Demeanor",
+      "Desc": "If Lycaon is attacked while using a <color=#FFFFFF>Basic Attack</color> or <color=#FFFFFF>Special Attack</color>, he will immediately gain a Shield equal to 7.5% of his Max HP, lasting for 15s.\nDuring the Shield's duration, his Anti-Interrupt level is increased. This effect can trigger once every 15s.",
+      "Desc2": "\"An outstanding attendant maintains a graceful demeanor at any and all times.\""
+    },
+    "5": {
+      "Level": 5,
+      "Name": "Alpha Nature",
+      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
+      "Desc2": "His glance harbors a primal ferocity, and the echoes of his howls rumble within his throat. Regardless of his current gracefulness, underneath the formal wear, he's still untamed."
+    },
+    "6": {
+      "Level": 6,
+      "Name": "Ruthless Hunter",
+      "Desc": "When a charged attack hits an enemy, the target suffers 10% increased DMG from Lycaon, stacking up to 5 times and lasting 12s. Only one stack can be gained per skill use, and repeated triggers reset the duration.",
+      "Desc2": "\"Apologies, but given the circumstances, I will not show any mercy.\"\n\"After all, if a fair fight is what you are after, a Hollow is not the place to look for it.\""
+    }
+  }
+}

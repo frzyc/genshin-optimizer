@@ -1,0 +1,6 @@
+{
+  "type": "defense",
+  "atk_base": 32,
+  "second_statkey": "def_",
+  "second_statvalue": 0.128
+}

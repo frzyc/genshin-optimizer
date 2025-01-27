@@ -1,0 +1,6 @@
+{
+  "type": "stun",
+  "atk_base": 32,
+  "second_statkey": "impact_",
+  "second_statvalue": 0.048
+}

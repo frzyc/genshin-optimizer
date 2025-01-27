@@ -1,0 +1,30 @@
+{
+  "rarity": "A",
+  "element": "physical",
+  "stats": {
+    "atk_base": 113,
+    "atk_growth": 6.7335,
+    "def_base": 49,
+    "def_growth": 6.6203,
+    "hp_base": 555,
+    "hp_growth": 75.3604,
+    "anomMas": 92,
+    "anomProf": 91
+  },
+  "levelStats": [
+    { "hp": 0, "atk": 0, "def": 0 },
+    { "hp": 381, "atk": 40, "def": 33 },
+    { "hp": 762, "atk": 81, "def": 67 },
+    { "hp": 1143, "atk": 121, "def": 100 },
+    { "hp": 1524, "atk": 162, "def": 134 },
+    { "hp": 1906, "atk": 202, "def": 167 }
+  ],
+  "coreStats": [
+    { "atk_base": 0, "crit_": 0.048 },
+    { "atk_base": 25, "crit_": 0.048 },
+    { "atk_base": 25, "crit_": 0.096 },
+    { "atk_base": 50, "crit_": 0.096 },
+    { "atk_base": 50, "crit_": 0.144 },
+    { "atk_base": 75, "crit_": 0.144 }
+  ]
+}

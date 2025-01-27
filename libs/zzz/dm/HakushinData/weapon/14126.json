@@ -1,0 +1,117 @@
+{
+  "Id": 14126,
+  "CodeName": "Weapon_S_1261",
+  "Name": "Sharpened Stinger",
+  "Desc": "A deadly W-Engine from unknown sources, modified personally by Jane Doe with the intent to deal severe physical damage and Anomaly. The power circulation system within ensures the affliction of Anomalies and the edges of the exterior have been honed until they're razor-sharp to inflict unexpected tearing damage.\n\n<color=#959595>\"What, am I meant to adhere to duel ettiquete with an Ethereal? Isn't it polite to end its pain in the quickest way possible?\" —Jane, in response to \"aren't your combat techniques a little too cruel\"</color>",
+  "Desc2": "Equip to increase Anomaly Agents' combat capabilities",
+  "Desc3": "A deadly W-Engine from unknown sources, modified personally by Jane Doe with the intent to deal severe physical damage and Anomaly.",
+  "Rarity": 4,
+  "Icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_S_1261.png",
+  "WeaponType": { "3": "Anomaly" },
+  "BaseProperty": {
+    "Name": "Base ATK",
+    "Name2": "Base ATK",
+    "Format": "{0:0.#}",
+    "Value": 48
+  },
+  "RandProperty": {
+    "Name": "Anomaly Proficiency",
+    "Name2": "Anomaly Proficiency",
+    "Format": "{0:0}",
+    "Value": 36
+  },
+  "Level": {
+    "0": { "Exp": 50, "Rate": 0, "Rate2": 10000 },
+    "1": { "Exp": 100, "Rate": 1568, "Rate2": 10000 },
+    "2": { "Exp": 150, "Rate": 3136, "Rate2": 10000 },
+    "3": { "Exp": 200, "Rate": 4705, "Rate2": 10000 },
+    "4": { "Exp": 300, "Rate": 6273, "Rate2": 10000 },
+    "5": { "Exp": 400, "Rate": 7841, "Rate2": 10000 },
+    "6": { "Exp": 500, "Rate": 9409, "Rate2": 10000 },
+    "7": { "Exp": 600, "Rate": 10977, "Rate2": 10000 },
+    "8": { "Exp": 750, "Rate": 12545, "Rate2": 10000 },
+    "9": { "Exp": 950, "Rate": 14114, "Rate2": 10000 },
+    "10": { "Exp": 1200, "Rate": 15682, "Rate2": 9000 },
+    "11": { "Exp": 1290, "Rate": 17250, "Rate2": 9000 },
+    "12": { "Exp": 1380, "Rate": 18818, "Rate2": 9000 },
+    "13": { "Exp": 1465, "Rate": 20386, "Rate2": 9000 },
+    "14": { "Exp": 1555, "Rate": 21954, "Rate2": 9000 },
+    "15": { "Exp": 1640, "Rate": 23523, "Rate2": 9000 },
+    "16": { "Exp": 1735, "Rate": 25091, "Rate2": 9000 },
+    "17": { "Exp": 1825, "Rate": 26659, "Rate2": 9000 },
+    "18": { "Exp": 1910, "Rate": 28227, "Rate2": 9000 },
+    "19": { "Exp": 2000, "Rate": 29795, "Rate2": 9000 },
+    "20": { "Exp": 3120, "Rate": 31363, "Rate2": 8000 },
+    "21": { "Exp": 3315, "Rate": 32932, "Rate2": 8000 },
+    "22": { "Exp": 3510, "Rate": 34500, "Rate2": 8000 },
+    "23": { "Exp": 3705, "Rate": 36068, "Rate2": 8000 },
+    "24": { "Exp": 3900, "Rate": 37636, "Rate2": 8000 },
+    "25": { "Exp": 4100, "Rate": 39204, "Rate2": 8000 },
+    "26": { "Exp": 4295, "Rate": 40772, "Rate2": 8000 },
+    "27": { "Exp": 4490, "Rate": 42341, "Rate2": 8000 },
+    "28": { "Exp": 4685, "Rate": 43909, "Rate2": 8000 },
+    "29": { "Exp": 4880, "Rate": 45477, "Rate2": 8000 },
+    "30": { "Exp": 7200, "Rate": 47045, "Rate2": 7000 },
+    "31": { "Exp": 7600, "Rate": 48613, "Rate2": 7000 },
+    "32": { "Exp": 8000, "Rate": 50181, "Rate2": 7000 },
+    "33": { "Exp": 8400, "Rate": 51750, "Rate2": 7000 },
+    "34": { "Exp": 8800, "Rate": 53318, "Rate2": 7000 },
+    "35": { "Exp": 9200, "Rate": 54886, "Rate2": 7000 },
+    "36": { "Exp": 9600, "Rate": 56454, "Rate2": 7000 },
+    "37": { "Exp": 10000, "Rate": 58022, "Rate2": 7000 },
+    "38": { "Exp": 10400, "Rate": 59590, "Rate2": 7000 },
+    "39": { "Exp": 10800, "Rate": 61159, "Rate2": 7000 },
+    "40": { "Exp": 11400, "Rate": 62727, "Rate2": 6000 },
+    "41": { "Exp": 12200, "Rate": 64295, "Rate2": 6000 },
+    "42": { "Exp": 13000, "Rate": 65863, "Rate2": 6000 },
+    "43": { "Exp": 13800, "Rate": 67431, "Rate2": 6000 },
+    "44": { "Exp": 14600, "Rate": 68999, "Rate2": 6000 },
+    "45": { "Exp": 15400, "Rate": 70568, "Rate2": 6000 },
+    "46": { "Exp": 16200, "Rate": 72136, "Rate2": 6000 },
+    "47": { "Exp": 17000, "Rate": 73704, "Rate2": 6000 },
+    "48": { "Exp": 17800, "Rate": 75272, "Rate2": 6000 },
+    "49": { "Exp": 18600, "Rate": 76840, "Rate2": 6000 },
+    "50": { "Exp": 22800, "Rate": 78408, "Rate2": 5000 },
+    "51": { "Exp": 24400, "Rate": 79977, "Rate2": 5000 },
+    "52": { "Exp": 26000, "Rate": 81545, "Rate2": 5000 },
+    "53": { "Exp": 27600, "Rate": 83113, "Rate2": 5000 },
+    "54": { "Exp": 29200, "Rate": 84681, "Rate2": 5000 },
+    "55": { "Exp": 30800, "Rate": 86249, "Rate2": 5000 },
+    "56": { "Exp": 32400, "Rate": 87817, "Rate2": 5000 },
+    "57": { "Exp": 34000, "Rate": 89386, "Rate2": 5000 },
+    "58": { "Exp": 35600, "Rate": 90954, "Rate2": 5000 },
+    "59": { "Exp": 37200, "Rate": 92522, "Rate2": 5000 },
+    "60": { "Exp": 0, "Rate": 94090, "Rate2": 4000 }
+  },
+  "Stars": {
+    "0": { "StarRate": 0, "RandRate": 0 },
+    "1": { "StarRate": 8922, "RandRate": 3000 },
+    "2": { "StarRate": 17844, "RandRate": 6000 },
+    "3": { "StarRate": 26766, "RandRate": 9000 },
+    "4": { "StarRate": 35688, "RandRate": 12000 },
+    "5": { "StarRate": 44610, "RandRate": 15000 }
+  },
+  "Materials": "10:12000,101012:4|10:28000,101022:12|10:60000,101022:20|10:100000,101032:10|10:200000,101032:20",
+  "Talents": {
+    "1": {
+      "Name": "Indulge in the Hunt",
+      "Desc": "Upon activating a <color=#FFFFFF>Dash Attack</color>, gain 1 stack of <color=#FFFFFF>Predatory Instinct</color>. Each stack of <color=#FFFFFF>Predatory Instinct</color> increases the equipper's <color=#F0D12B>Physical DMG</color> by <color=#2BAD00>12%</color> for 10s, stacking up to 3 times. This effect can trigger once every 0.5s and repeated triggers reset the duration. When entering combat or triggering <color=#FFFFFF>Perfect Dodge</color>, gain 3 stacks of <color=#FFFFFF>Predatory Instinct</color>. While <color=#FFFFFF>Predatory Instinct</color> is at maximum stacks, the equipper's Anomaly Buildup Rate increases by <color=#2BAD00>40%</color>."
+    },
+    "2": {
+      "Name": "Indulge in the Hunt",
+      "Desc": "Upon activating a <color=#FFFFFF>Dash Attack</color>, gain 1 stack of <color=#FFFFFF>Predatory Instinct</color>. Each stack of <color=#FFFFFF>Predatory Instinct</color> increases the equipper's <color=#F0D12B>Physical DMG</color> by <color=#2BAD00>15%</color> for 10s, stacking up to 3 times. This effect can trigger once every 0.5s and repeated triggers reset the duration. When entering combat or triggering <color=#FFFFFF>Perfect Dodge</color>, gain 3 stacks of <color=#FFFFFF>Predatory Instinct</color>. While <color=#FFFFFF>Predatory Instinct</color> is at maximum stacks, the equipper's Anomaly Buildup Rate increases by <color=#2BAD00>50%</color>."
+    },
+    "3": {
+      "Name": "Indulge in the Hunt",
+      "Desc": "Upon activating a <color=#FFFFFF>Dash Attack</color>, gain 1 stack of <color=#FFFFFF>Predatory Instinct</color>. Each stack of <color=#FFFFFF>Predatory Instinct</color> increases the equipper's <color=#F0D12B>Physical DMG</color> by <color=#2BAD00>18%</color> for 10s, stacking up to 3 times. This effect can trigger once every 0.5s and repeated triggers reset the duration. When entering combat or triggering <color=#FFFFFF>Perfect Dodge</color>, gain 3 stacks of <color=#FFFFFF>Predatory Instinct</color>. While <color=#FFFFFF>Predatory Instinct</color> is at maximum stacks, the equipper's Anomaly Buildup Rate increases by <color=#2BAD00>60%</color>."
+    },
+    "4": {
+      "Name": "Indulge in the Hunt",
+      "Desc": "Upon activating a <color=#FFFFFF>Dash Attack</color>, gain 1 stack of <color=#FFFFFF>Predatory Instinct</color>. Each stack of <color=#FFFFFF>Predatory Instinct</color> increases the equipper's <color=#F0D12B>Physical DMG</color> by <color=#2BAD00>21%</color> for 10s, stacking up to 3 times. This effect can trigger once every 0.5s and repeated triggers reset the duration. When entering combat or triggering <color=#FFFFFF>Perfect Dodge</color>, gain 3 stacks of <color=#FFFFFF>Predatory Instinct</color>. While <color=#FFFFFF>Predatory Instinct</color> is at maximum stacks, the equipper's Anomaly Buildup Rate increases by <color=#2BAD00>70%</color>."
+    },
+    "5": {
+      "Name": "Indulge in the Hunt",
+      "Desc": "Upon activating a <color=#FFFFFF>Dash Attack</color>, gain 1 stack of <color=#FFFFFF>Predatory Instinct</color>. Each stack of <color=#FFFFFF>Predatory Instinct</color> increases the equipper's <color=#F0D12B>Physical DMG</color> by <color=#2BAD00>24%</color> for 10s, stacking up to 3 times. This effect can trigger once every 0.5s and repeated triggers reset the duration. When entering combat or triggering <color=#FFFFFF>Perfect Dodge</color>, gain 3 stacks of <color=#FFFFFF>Predatory Instinct</color>. While <color=#FFFFFF>Predatory Instinct</color> is at maximum stacks, the equipper's Anomaly Buildup Rate increases by <color=#2BAD00>80%</color>."
+    }
+  }
+}

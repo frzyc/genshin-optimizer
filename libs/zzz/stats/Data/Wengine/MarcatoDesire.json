@@ -1,0 +1,7 @@
+{
+  "rarity": "A",
+  "type": "attack",
+  "atk_base": 40,
+  "second_statkey": "crit_",
+  "second_statvalue": 0.08
+}
