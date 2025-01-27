@@ -1,17 +1,20 @@
 import { DropdownButton } from '@genshin-optimizer/common/ui'
-import type { FormulaKey } from '@genshin-optimizer/zzz/solver'
-import { allFormulaKeys } from '@genshin-optimizer/zzz/solver'
+import type { FormulaKey } from '@genshin-optimizer/zzz/consts'
+import { allFormulaKeys } from '@genshin-optimizer/zzz/consts'
 import { MenuItem } from '@mui/material'
 
 export function OptimizeTargetSelector({
+  disabled = false,
   formulaKey,
   setFormulaKey,
 }: {
+  disabled?: boolean
   formulaKey: FormulaKey
   setFormulaKey: (key: FormulaKey) => void
 }) {
   return (
     <DropdownButton
+      disabled={disabled}
       fullWidth
       title={
         <span>

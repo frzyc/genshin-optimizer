@@ -31,7 +31,7 @@ type WengineRawData = {
 export type WengineData = {
   rarity: WengineRarityKey
   type: SpecialityKey
-  base_atk: number
+  atk_base: number
   second_statkey: string
   second_statvalue: number
 }
@@ -44,7 +44,7 @@ export const wengineDetailedJSONData = Object.fromEntries(
     const data: WengineData = {
       rarity: wengineRarityMap[raw.Rarity],
       type: specialityMap[Object.keys(raw.WeaponType)[0] as any],
-      base_atk: raw.BaseProperty.Value,
+      atk_base: raw.BaseProperty.Value,
       second_statkey,
       second_statvalue:
         raw.RandProperty.Value / (isPercentStat(second_statkey) ? SCALING : 1),

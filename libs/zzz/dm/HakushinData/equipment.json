@@ -402,11 +402,7 @@
       "desc2": "EquipmentSuit_33000_2_des",
       "desc4": "EquipmentSuit_33000_4_des"
     },
-    "CHS": {
-      "name": "法厄同之歌",
-      "desc2": "......",
-      "desc4": "......"
-    },
+    "CHS": { "name": "法厄同之歌", "desc2": "......", "desc4": "......" },
     "JA": {
       "name": "EquipmentSuit_33000_name",
       "desc2": "EquipmentSuit_33000_2_des",

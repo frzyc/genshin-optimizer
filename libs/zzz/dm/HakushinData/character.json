@@ -469,34 +469,34 @@
     "JA": "プルクラ"
   },
   "1361": {
-    "code": "...",
+    "code": "Trigger",
     "rank": 4,
     "type": 2,
     "element": 203,
     "hit": 103,
     "camp": 5,
     "icon": "IconRole39",
-    "EN": "Avatar_Female_Size03_Trigger",
+    "EN": "Trigger",
     "skin": {},
     "desc": "",
-    "KO": "Avatar_Female_Size03_Trigger",
+    "KO": "「트리거」",
     "CHS": "「扳机」",
-    "JA": "Avatar_Female_Size03_Trigger"
+    "JA": "「トリガー」"
   },
   "1381": {
-    "code": "...",
+    "code": "SilverAnby",
     "rank": 4,
     "type": 1,
     "element": 203,
     "hit": 101,
     "camp": 5,
     "icon": "IconRole40",
-    "EN": "Avatar_Female_Size02_SilverAnby",
+    "EN": "Silver Soldier - Anby",
     "skin": {},
     "desc": "",
-    "KO": "Avatar_Female_Size02_SilverAnby",
+    "KO": "실버 솔져 엔비",
     "CHS": "银心锡兵·安比",
-    "JA": "Avatar_Female_Size02_SilverAnby"
+    "JA": "シルバーソルジャー・アンビー"
   },
   "2011": {
     "code": "Wise",

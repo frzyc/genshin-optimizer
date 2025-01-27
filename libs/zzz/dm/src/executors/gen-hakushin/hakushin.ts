@@ -1,10 +1,13 @@
-import { dumpFile, fetchJsonFromUrl } from '@genshin-optimizer/common/pipeline'
+import {
+  dumpPrettyFile,
+  fetchJsonFromUrl,
+} from '@genshin-optimizer/common/pipeline'
 import { PROJROOT_PATH } from '../../consts'
 import { DEBUG } from './debug'
 const URL_BASE = 'https://api.hakush.in/zzz/'
 
-function dumpHakushinData(filename: string, obj: unknown) {
-  dumpFile(`${PROJROOT_PATH}/HakushinData/${filename}`, obj, DEBUG)
+async function dumpHakushinData(filename: string, obj: unknown) {
+  return await dumpPrettyFile(`${PROJROOT_PATH}/HakushinData/${filename}`, obj)
 }
 // missing but provided by api: "item" for items, or "new" for newly added stuff
 const categories = [
@@ -25,14 +28,14 @@ async function getAndDumpCategoryData(category: Category) {
     URL_BASE + `data/${category}.json`,
     DEBUG
   )) as Record<string, unknown>
-  dumpHakushinData(`${category}.json`, indexData)
+  await dumpHakushinData(`${category}.json`, indexData)
   await Promise.all(
     Object.keys(indexData).map(async (id) => {
       // NOTE: hakushin also has data in en, ko, chs, ja
       const itemData = await fetchJsonFromUrl(
         URL_BASE + `data/en/${category}/${id}.json`
       )
-      dumpHakushinData(`${category}/${id}.json`, itemData)
+      await dumpHakushinData(`${category}/${id}.json`, itemData)
     })
   )
 }

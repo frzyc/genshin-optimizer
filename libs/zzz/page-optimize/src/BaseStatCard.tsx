@@ -1,14 +1,14 @@
 import { CardThemed, NumberInputLazy } from '@genshin-optimizer/common/ui'
 import { getUnitStr, isPercentStat } from '@genshin-optimizer/common/util'
-import type { StatKey } from '@genshin-optimizer/zzz/consts'
+import type { LocationKey, StatKey } from '@genshin-optimizer/zzz/consts'
 import {
   allAttributeDamageKeys,
   statKeyTextMap,
   unCondKeys,
 } from '@genshin-optimizer/zzz/consts'
-import type { BaseStats } from '@genshin-optimizer/zzz/solver'
+import type { Stats } from '@genshin-optimizer/zzz/solver'
 import { Box, CardContent, Typography } from '@mui/material'
-const baseKeys = ['charLvl', 'hp_base', 'atk_base', 'def_base'] as const
+const baseKeys = ['hp_base', 'atk_base', 'def_base'] as const
 const statKeys: StatKey[] = [
   'hp',
   'atk',
@@ -33,14 +33,17 @@ const enemyKeys: StatKey[] = [
   'enemyResIgn_',
 ] as const
 export default function BaseStatCard({
+  locationKey,
   baseStats,
   setBaseStats,
 }: {
-  baseStats: BaseStats
-  setBaseStats: (baseStats: BaseStats) => void
+  locationKey: LocationKey
+  baseStats: Stats
+  setBaseStats: (baseStats: Stats) => void
 }) {
   const input = (key: string) => (
     <NumberInputLazy
+      disabled={!locationKey}
       key={key}
       sx={{ flexGrow: 1 }}
       value={baseStats[key] || 0}

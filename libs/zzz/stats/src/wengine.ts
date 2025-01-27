@@ -4,3 +4,14 @@ import { allStats } from './allStats'
 export function getWengineStat(wKey: WengineKey) {
   return allStats.wengine[wKey]
 }
+
+export function getWengineStats(wk: WengineKey, level: number) {
+  const { atk_base, second_statkey, second_statvalue } = getWengineStat(wk)
+  const ascension = Math.floor(level / 10)
+  const stats: Record<string, number> = {
+    atk_base: atk_base * (1 + 0.1568 * level + 0.8922 * ascension),
+    [second_statkey]: second_statvalue * (1 + 0.3 * ascension),
+  }
+
+  return stats
+}

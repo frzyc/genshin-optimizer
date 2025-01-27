@@ -12,16 +12,22 @@ export type DiscStats = {
   stats: Record<string, number>
 }
 
-export type BaseStats = Record<string, number>
-
-export type Constraints = Record<string, { value: number; isMax: boolean }>
+export type Stats = Record<string, number>
 
 export interface BuildResult {
   value: number
   // lightConeId: string
   discIds: Record<DiscSlotKey, string>
 }
-
+export function combineStats(...stats: Stats[]) {
+  const total: Stats = {}
+  stats.forEach((s) =>
+    Object.entries(s).forEach(([k, v]) => {
+      total[k] = (total[k] ?? 0) + v
+    })
+  )
+  return total
+}
 export function convertDiscToStats(disc: ICachedDisc): DiscStats {
   const { id, mainStatKey, level, rarity, setKey, substats } = disc
   return {

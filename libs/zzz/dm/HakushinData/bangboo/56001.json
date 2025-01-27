@@ -77,113 +77,39 @@
       "Extra": {}
     }
   },
-  "Skill": {
-    "A": {
-      "Level": {}
-    },
-    "B": {
-      "Level": {}
-    },
-    "C": {
-      "Level": {}
-    }
-  },
+  "Skill": { "A": { "Level": {} }, "B": { "Level": {} }, "C": { "Level": {} } },
   "SkillProp": {
     "5600101": {
-      "1001": {
-        "Main": 29167,
-        "Growth": 0,
-        "Format": "%"
-      },
-      "1002": {
-        "Main": 6250,
-        "Growth": 0,
-        "Format": "%"
-      }
+      "1001": { "Main": 29167, "Growth": 0, "Format": "%" },
+      "1002": { "Main": 6250, "Growth": 0, "Format": "%" }
     },
     "5600102": {
-      "1001": {
-        "Main": 29167,
-        "Growth": 0,
-        "Format": "%"
-      },
-      "1002": {
-        "Main": 6250,
-        "Growth": 0,
-        "Format": "%"
-      }
+      "1001": { "Main": 29167, "Growth": 0, "Format": "%" },
+      "1002": { "Main": 6250, "Growth": 0, "Format": "%" }
     },
     "5600103": {
-      "1001": {
-        "Main": 29167,
-        "Growth": 0,
-        "Format": "%"
-      },
-      "1002": {
-        "Main": 6250,
-        "Growth": 0,
-        "Format": "%"
-      }
+      "1001": { "Main": 29167, "Growth": 0, "Format": "%" },
+      "1002": { "Main": 6250, "Growth": 0, "Format": "%" }
     },
     "5600104": {
-      "1001": {
-        "Main": 29167,
-        "Growth": 0,
-        "Format": "%"
-      },
-      "1002": {
-        "Main": 6250,
-        "Growth": 0,
-        "Format": "%"
-      }
+      "1001": { "Main": 29167, "Growth": 0, "Format": "%" },
+      "1002": { "Main": 6250, "Growth": 0, "Format": "%" }
     },
     "5600105": {
-      "1001": {
-        "Main": 29167,
-        "Growth": 0,
-        "Format": "%"
-      },
-      "1002": {
-        "Main": 6250,
-        "Growth": 0,
-        "Format": "%"
-      }
+      "1001": { "Main": 29167, "Growth": 0, "Format": "%" },
+      "1002": { "Main": 6250, "Growth": 0, "Format": "%" }
     },
     "5600106": {
-      "1001": {
-        "Main": 129630,
-        "Growth": 0,
-        "Format": "%"
-      },
-      "1002": {
-        "Main": 13889,
-        "Growth": 0,
-        "Format": "%"
-      }
+      "1001": { "Main": 129630, "Growth": 0, "Format": "%" },
+      "1002": { "Main": 13889, "Growth": 0, "Format": "%" }
     },
     "5600107": {
-      "1001": {
-        "Main": 0,
-        "Growth": 0,
-        "Format": "%"
-      },
-      "1002": {
-        "Main": 0,
-        "Growth": 0,
-        "Format": "%"
-      }
+      "1001": { "Main": 0, "Growth": 0, "Format": "%" },
+      "1002": { "Main": 0, "Growth": 0, "Format": "%" }
     },
     "5600108": {
-      "1001": {
-        "Main": 0,
-        "Growth": 0,
-        "Format": "%"
-      },
-      "1002": {
-        "Main": 0,
-        "Growth": 0,
-        "Format": "%"
-      }
+      "1001": { "Main": 0, "Growth": 0, "Format": "%" },
+      "1002": { "Main": 0, "Growth": 0, "Format": "%" }
     }
   }
 }

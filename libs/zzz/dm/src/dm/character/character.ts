@@ -74,13 +74,13 @@ export type CharacterData = {
   rarity: CharacterRarityKey
   element: ElementalKey
   stats: {
-    base_atk: number
+    atk_base: number
     atk_growth: number
-    base_def: number
+    def_base: number
     def_growth: number
-    base_hp: number
+    hp_base: number
     hp_growth: number
-    anomMas_: number
+    anomMas: number
     anomProf: number
   }
   levelStats: Array<{ hp: number; atk: number; def: number }>
@@ -95,13 +95,13 @@ export const charactersDetailedJSONData = Object.fromEntries(
       rarity: characterRarityMap[raw.Rarity],
       element: attributeMap[Object.keys(raw.ElementType)[0] as any],
       stats: {
-        base_atk: raw.Stats.Attack,
+        atk_base: raw.Stats.Attack,
         atk_growth: raw.Stats.AttackGrowth / SCALING,
-        base_def: raw.Stats.Defence,
+        def_base: raw.Stats.Defence,
         def_growth: raw.Stats.DefenceGrowth / SCALING,
-        base_hp: raw.Stats.HpMax,
+        hp_base: raw.Stats.HpMax,
         hp_growth: raw.Stats.HpGrowth / SCALING,
-        anomMas_: raw.Stats.ElementAbnormalPower,
+        anomMas: raw.Stats.ElementAbnormalPower,
         anomProf: raw.Stats.ElementMystery,
       },
       levelStats: Object.values(raw.Level).map(

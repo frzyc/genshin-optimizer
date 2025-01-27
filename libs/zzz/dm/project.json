@@ -14,7 +14,7 @@
         }
       ]
     },
-    "gen-file": {
+    "get-hakushin": {
       "executor": "@genshin-optimizer/zzz/dm:gen-hakushin",
       "outputs": ["{projectRoot}/HakushinData/**/*"]
     }

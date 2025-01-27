@@ -21,6 +21,7 @@ export const statMapEngMap = {
   crit_dmg_: 'CRIT DMG',
   enerRegen_: 'Energy Regen',
   impact_: 'Impact',
+  anomMas: 'Anomaly Mastery',
   anomMas_: 'Anomaly Mastery',
   anomProf: 'Anomaly Proficiency',
 } as Record<string, string>

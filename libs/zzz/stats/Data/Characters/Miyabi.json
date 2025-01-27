@@ -2,71 +2,29 @@
   "rarity": "S",
   "element": "ice",
   "stats": {
-    "base_atk": 127,
+    "atk_base": 127,
     "atk_growth": 7.6728,
-    "base_def": 49,
+    "def_base": 49,
     "def_growth": 6.6203,
-    "base_hp": 617,
+    "hp_base": 617,
     "hp_growth": 83.7238,
-    "anomMas_": 116,
+    "anomMas": 116,
     "anomProf": 148
   },
   "levelStats": [
-    {
-      "hp": 0,
-      "atk": 0,
-      "def": 0
-    },
-    {
-      "hp": 423,
-      "atk": 45,
-      "def": 33
-    },
-    {
-      "hp": 847,
-      "atk": 90,
-      "def": 67
-    },
-    {
-      "hp": 1270,
-      "atk": 136,
-      "def": 100
-    },
-    {
-      "hp": 1694,
-      "atk": 181,
-      "def": 134
-    },
-    {
-      "hp": 2117,
-      "atk": 226,
-      "def": 167
-    }
+    { "hp": 0, "atk": 0, "def": 0 },
+    { "hp": 423, "atk": 45, "def": 33 },
+    { "hp": 847, "atk": 90, "def": 67 },
+    { "hp": 1270, "atk": 136, "def": 100 },
+    { "hp": 1694, "atk": 181, "def": 134 },
+    { "hp": 2117, "atk": 226, "def": 167 }
   ],
   "coreStats": [
-    {
-      "base_atk": 0,
-      "anomProf": 30
-    },
-    {
-      "base_atk": 25,
-      "anomProf": 30
-    },
-    {
-      "base_atk": 25,
-      "anomProf": 60
-    },
-    {
-      "base_atk": 50,
-      "anomProf": 60
-    },
-    {
-      "base_atk": 50,
-      "anomProf": 90
-    },
-    {
-      "base_atk": 75,
-      "anomProf": 90
-    }
+    { "atk_base": 0, "anomProf": 30 },
+    { "atk_base": 25, "anomProf": 30 },
+    { "atk_base": 25, "anomProf": 60 },
+    { "atk_base": 50, "anomProf": 60 },
+    { "atk_base": 50, "anomProf": 90 },
+    { "atk_base": 75, "anomProf": 90 }
   ]
 }

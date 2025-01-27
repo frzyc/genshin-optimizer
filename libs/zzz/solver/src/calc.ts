@@ -3,18 +3,19 @@ import type {
   AnomalyDamageKey,
   AttributeDamageKey,
   DiscSetKey,
+  FormulaKey,
 } from '@genshin-optimizer/zzz/consts'
 import {
   allAnomalyDmgKeys,
   allAttributeDamageKeys,
   disc2pEffect,
 } from '@genshin-optimizer/zzz/consts'
-import type { BaseStats, DiscStats } from './common'
+import type { DiscStats, Stats } from './common'
 
 /**
  * sum up stats from base + discs + 2p effects
  */
-export function getSum(baseStats: BaseStats, discs: DiscStats[]) {
+export function getSum(baseStats: Stats, discs: DiscStats[]) {
   const sum = { ...baseStats }
   const s = (key: string) => sum[key] || 0
   for (const d of discs) {
@@ -44,12 +45,6 @@ export function calcFormula(sums: Record<string, number>, formula: FormulaKey) {
   return formulas[formula](sums) ?? 0
 }
 
-export const allFormulaKeys = [
-  'initial_atk',
-  ...allAttributeDamageKeys,
-  ...allAnomalyDmgKeys,
-] as const
-export type FormulaKey = (typeof allFormulaKeys)[number]
 const formulas: Record<FormulaKey, (sums: Record<string, number>) => number> = {
   initial_atk: (sums: Record<string, number>) => sums['initial_atk'] || 0,
   ...objKeyMap(

@@ -4,11 +4,13 @@ import type { IZenlessObjectDescription, IZZZDatabase } from '../Interfaces'
 import { zzzSource } from '../Interfaces'
 import { DBMetaEntry, DisplayRelicEntry } from './DataEntries/'
 import { DiscDataManager } from './DataManagers/'
+import { CharacterDataManager } from './DataManagers/CharacterDataManager'
 import type { ImportResult } from './exim'
 import { newImportResult } from './exim'
 import { currentDBVersion, migrateStorage, migrateZOD } from './migrate'
 export class ZzzDatabase extends Database {
   discs: DiscDataManager
+  chars: CharacterDataManager
   dbMeta: DBMetaEntry
   displayRelic: DisplayRelicEntry
   dbIndex: 1 | 2 | 3 | 4
@@ -27,6 +29,7 @@ export class ZzzDatabase extends Database {
 
     // Handle Datamanagers
     this.discs = new DiscDataManager(this)
+    this.chars = new CharacterDataManager(this)
 
     // Handle DataEntries
     this.dbMeta = new DBMetaEntry(this)
@@ -37,8 +40,8 @@ export class ZzzDatabase extends Database {
     })
   }
   get dataManagers() {
-    // IMPORTANT: it must be chars, light cones, discs in order, to respect import order
-    return [this.discs] as const
+    // IMPORTANT: it must be chars, wengines, discs in order, to respect import order
+    return [this.discs, this.chars] as const
   }
   get dataEntries() {
     return [this.dbMeta, this.displayRelic] as const
@@ -85,6 +88,9 @@ export class ZzzDatabase extends Database {
       //   if (ind < 0) arr.push(value)
       //   else arr[ind] = value
       // }),
+      this.chars.followAny((_key, reason, value) =>
+        result.characters[reason].push(value)
+      ),
       this.discs.followAny((_key, reason, value) =>
         result.discs[reason].push(value)
       ),

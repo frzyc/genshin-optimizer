@@ -4,17 +4,11 @@
   "Name": "Belle",
   "CodeName": "Belle",
   "Rarity": 2,
-  "WeaponType": {
-    "1": "Attack"
-  },
+  "WeaponType": { "1": "Attack" },
   "ElementType": {},
   "SpecialElementType": {},
-  "HitType": {
-    "0": "None"
-  },
-  "Camp": {
-    "0": ""
-  },
+  "HitType": { "0": "None" },
+  "Camp": { "0": "" },
   "Gender": 2,
   "PartnerInfo": {},
   "Skin": {},
@@ -67,30 +61,13 @@
     0
   ],
   "Skill": {
-    "Basic": {
-      "Description": [],
-      "Material": {}
-    },
-    "Dodge": {
-      "Description": [],
-      "Material": {}
-    },
-    "Special": {
-      "Description": [],
-      "Material": {}
-    },
-    "Chain": {
-      "Description": [],
-      "Material": {}
-    },
-    "Assist": {
-      "Description": [],
-      "Material": {}
-    }
+    "Basic": { "Description": [], "Material": {} },
+    "Dodge": { "Description": [], "Material": {} },
+    "Special": { "Description": [], "Material": {} },
+    "Chain": { "Description": [], "Material": {} },
+    "Assist": { "Description": [], "Material": {} }
   },
   "SkillList": {},
-  "Passive": {
-    "Level": {}
-  },
+  "Passive": { "Level": {} },
   "Talent": {}
 }

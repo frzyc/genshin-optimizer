@@ -1,5 +1,5 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
-import { CardContent, Typography } from '@mui/material'
+import { Box, CardContent, Typography } from '@mui/material'
 
 export default function PageHome() {
   return (
@@ -17,7 +17,11 @@ export default function PageHome() {
         </Typography>
         <Typography>
           I know a lot of stuff isn't implemented, and the stuff that are, are
-          super ugly. This is only like 10 hours of coding, cut me some slack.
+          super ugly. This is only like{' '}
+          <Box component="span" sx={{ textDecoration: 'line-through' }}>
+            10
+          </Box>{' '}
+          20 hours of coding, cut me some slack.
         </Typography>
         <Typography sx={{ my: 1 }}>Have an optimal day,</Typography>
         <Typography>

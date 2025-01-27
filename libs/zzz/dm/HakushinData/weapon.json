@@ -67,7 +67,7 @@
     "desc": "An energy-storage type W-Engine with a unique operation circuit. It will absorb scattered energy up to a certain amount before unleashing it all at once.",
     "KO": "「급류」-총",
     "CHS": "「湍流」-铳型",
-    "JA": "「激流��-銃型"
+    "JA": "「激流」-銃型"
   },
   "12008": {
     "icon": "Weapon_B_Common_08",
@@ -76,7 +76,7 @@
     "EN": "[Vortex] Arrow",
     "desc": "A tactical W-Engine that locates enemies using high-frequency sound waves. Its aiming aid can make its operator's precision attack more deadly.",
     "KO": "「급류」-화살",
-    "CHS": "「湍流」-��型",
+    "CHS": "「湍流」-矢���",
     "JA": "「激流」-矢型"
   },
   "12009": {
@@ -166,7 +166,7 @@
     "EN": "Rainforest Gourmet",
     "desc": "A consumer-class W-Engine launched by an exotic pet fan club to promote pet culture. Due to its cute appearance, it was once a very popular model.",
     "KO": "우림의 식객",
-    "CHS": "���林饕客",
+    "CHS": "雨林饕客",
     "JA": "密林の食いしん坊"
   },
   "13004": {
@@ -307,7 +307,7 @@
     "desc": "A customized supercomputing W-Engine, specialized in aim support and ballistic calculations. Modified by Billy, it now looks like some sort of knock-off Starlight Knight figurine.",
     "KO": "별빛 엔진 레플리카",
     "CHS": "仿制星徽引擎",
-    "JA": "なんちゃってスター��イトエンジン"
+    "JA": "なんちゃってスターラ���トエンジン"
   },
   "13111": {
     "icon": "Weapon_A_1111",
@@ -546,7 +546,7 @@
     "EN": "Riot Suppressor Mark VI",
     "desc": "The latest tactical W-Engine used by Public Security's elite Hollow squads, possessing a powerful Ether energy source. It's Zhu Yuan's favored model.",
     "KO": "서프레서 Ⅵ형",
-    "CHS": "防暴者Ⅵ型",
+    "CHS": "防暴者Ⅵ��",
     "JA": "サプレッサーⅥ型"
   },
   "14125": {

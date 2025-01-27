@@ -9,4 +9,4 @@ To update the datamine to a new commit, run `yarn run update-dm`. This will upda
 ## Getting data from Hakush.in
 
 Download all the English JSONs from `https://api.hakush.in/zzz/`
-`nx gen-file zzz-dm`
+`nx get-hakushin zzz-dm`

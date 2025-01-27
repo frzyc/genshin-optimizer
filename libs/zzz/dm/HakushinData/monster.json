@@ -259,7 +259,7 @@
     "group": 290,
     "EN": "Golden Bangboo",
     "desc": "Every Hollow Raider believes there are infinite opportunities in the Hollows that can make you rich overnight. At the heart of every tale of extraordinary wealth is always mention of a special entity known as the Golden Bangboo.\nAccording to research conducted by the HIA, numerous Bangboo Wanderers inhabit the Hollows. They diligently gather scattered Gear Coins and Dennies, entrusting them to the Golden Bangboo for safekeeping.\nWhile their motives remain a mystery, one thing is certain: These wandering Bangboo, with their peculiar \"Ehn-ne\" sound diligently fill the pockets of the Golden Bangboo with bags overflowing with Gear Coins and Dennies.\nAs a result, the Golden Bangboo always finds themselves coveted by greedy groups of Hollow Raiders...\n\"N—Nicole!? Look there, a Golden Bangboo!\"\n\"What are you waiting for? Smash it to bits! It'll make us rich!\"",
-    "KO": "���금 「Bangboo」",
+    "KO": "황금 「Bangboo」",
     "CHS": "黄金邦布",
     "JA": "ゴールドボンプ"
   },
@@ -1844,7 +1844,7 @@
     "EN": "Doppelganger - Bellum",
     "desc": "Even among Ionized enemies renowned for their strange and uncanny qualities, Ionized Doppelgangers are exceptionally unique.\nThese entities can coat their bodies with a layer of special active Ether ions, enabling them to accurately replicate their target's form, often to a degree that makes it hard to tell the difference. Both in detail and texture, it is almost impossible to tell apart from the original.\nEven more challenging is their ability to mimic the powerful and intimidating combat techniques of their targets.\nNo one knows where they obtain the information about the subjects they mimic. Some rumors suggest they can read minds, picking out the most suitable challengers from their opponent's memories, and then attack in that form.\n\"Nonsense! If it could really read my deepest fears, it would turn into a fierce middle-aged woman wielding a clothes hanger! That's right, I'm most afraid of my mom!\"",
     "KO": "도플갱어·벨룸",
-    "CHS": "多佩��亚·巴罗姆",
+    "CHS": "多佩冈亚·巴罗姆",
     "JA": "ドッペルゲンガー・ベルラム"
   },
   "300001": {
@@ -2133,7 +2133,7 @@
     "desc": "People in the Outer Ring once called him the \"Overlord Pompey\" with true respect.\nBut now, his soul has been corrupted by potent Ether, his body polluted by sulfur and crude oil; the heart that once beat solely to protect the Outer Ring has turned into a supercritical Ether core filled with infinite power.\nThe former \"Lord of the Outer Ring\" has been reborn in flames, taking on a different form.\nFreedom, majesty... Violence, insanity.\nIt charges through the dust and flames, seizing anything that moves and then mercilessly tearing and shattering it.\nThose familiar with it before have guessed from its fractured whispers that what drives it is not a desire for petty revenge, but rather a desire to crush all outliers who dare to challenge the laws of the Outer Ring.\nMaybe it's the last vestige of the former Overlord Pompey's lingering will.\n\"Our leader has turned into that thing, but... he still feels like the same person.\"",
     "KO": "노토리우스·폼페이",
     "CHS": "恶名·庞培",
-    "JA": "要警戒・ポンペイ"
+    "JA": "���警戒・ポンペイ"
   },
   "930146": {
     "icon": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv01/Monster_ClaymoreGrey.png",

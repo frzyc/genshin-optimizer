@@ -1,6 +1,6 @@
 {
   "type": "anomaly",
-  "base_atk": 32,
+  "atk_base": 32,
   "second_statkey": "anomProf",
   "second_statvalue": 24
 }
