@@ -1,4 +1,4 @@
-import { dumpFile } from '@genshin-optimizer/common/pipeline'
+import { dumpPrettyFile } from '@genshin-optimizer/common/pipeline'
 import { nameToKey, objFilter, objMap } from '@genshin-optimizer/common/util'
 import { PROJROOT_PATH } from '../../consts'
 import { readHakushinJSON } from '../../util'
@@ -15,8 +15,11 @@ const wengineIdMap = objFilter(
   (key) => !!key && !key.startsWith('ItemWeapon')
 )
 
-dumpFile(`${PROJROOT_PATH}/src/dm/wengine/wengineIdMap.json`, wengineIdMap)
-dumpFile(
+dumpPrettyFile(
+  `${PROJROOT_PATH}/src/dm/wengine/wengineIdMap.json`,
+  wengineIdMap
+)
+dumpPrettyFile(
   `${PROJROOT_PATH}/src/dm/wengine/wengineKeys.json`,
   Object.values(wengineIdMap).sort()
 )

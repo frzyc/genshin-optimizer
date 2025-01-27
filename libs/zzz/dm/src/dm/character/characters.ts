@@ -1,4 +1,4 @@
-import { dumpFile } from '@genshin-optimizer/common/pipeline'
+import { dumpPrettyFile } from '@genshin-optimizer/common/pipeline'
 import { nameToKey, objFilter, objMap } from '@genshin-optimizer/common/util'
 import { PROJROOT_PATH } from '../../consts'
 import { readHakushinJSON } from '../../util'
@@ -20,11 +20,11 @@ const characterIdMap = objFilter(
   (key) => !!key && !['Belle', 'Wise'].includes(key)
 )
 
-dumpFile(
+dumpPrettyFile(
   `${PROJROOT_PATH}/src/dm/character/characterIdMap.json`,
   characterIdMap
 )
-dumpFile(
+dumpPrettyFile(
   `${PROJROOT_PATH}/src/dm/character/characterKeys.json`,
   Object.values(characterIdMap).sort()
 )

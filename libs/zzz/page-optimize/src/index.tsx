@@ -10,12 +10,9 @@ import {
   allFormulaKeys,
   type LocationKey,
 } from '@genshin-optimizer/zzz/consts'
+import type { Stats } from '@genshin-optimizer/zzz/db'
 import { useCharacter, useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import {
-  combineStats,
-  type BuildResult,
-  type Stats,
-} from '@genshin-optimizer/zzz/solver'
+import { combineStats, type BuildResult } from '@genshin-optimizer/zzz/solver'
 import {
   getCharacterStats,
   getWengineStats,
@@ -32,7 +29,7 @@ import {
   Typography,
 } from '@mui/material'
 import { Stack } from '@mui/system'
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import BaseStatCard from './BaseStatCard'
 import { BuildsDisplay } from './BuildsDisplay'
 import OptimizeWrapper from './Optimize'
@@ -49,10 +46,12 @@ export default function PageOptimize() {
     // if not created, create.
     database.chars.getOrCreate(locationKey)
 
-  // base stats are in percent for displayability
-  const [stats, setStats] = useState<Stats>({
-    enemyDef: 953, // default enemy DEF
-  })
+  const setStats = useCallback(
+    (stats: Stats) => {
+      character && database.chars.set(character.key, { stats })
+    },
+    [character, database.chars]
+  )
 
   const characterStats = useMemo(() => {
     if (!character) return undefined
@@ -66,15 +65,22 @@ export default function PageOptimize() {
 
   const baseStats = useMemo(
     () =>
-      combineStats(
-        characterStats ?? {},
-        wengineStats ?? {},
-        objMap(stats, (v, k) => toDecimal(v, k))
-      ),
-    [characterStats, stats, wengineStats]
+      character
+        ? combineStats(
+            characterStats ?? {},
+            wengineStats ?? {},
+            objMap(character.stats, (v, k) => toDecimal(v, k))
+          )
+        : {},
+    [characterStats, character, wengineStats]
+  )
+  const setFormulaKey = useCallback(
+    (key: FormulaKey) => {
+      character && database.chars.set(character.key, { formulaKey: key })
+    },
+    [character, database.chars]
   )
 
-  const [formulaKey, setFormulaKey] = useState<FormulaKey>(allFormulaKeys[0])
   return (
     <Box display="flex" flexDirection="column" gap={1} my={1}>
       <CardThemed>
@@ -133,7 +139,7 @@ export default function PageOptimize() {
             {characterStats && <StatsDisplay stats={characterStats} showBase />}
             <OptimizeTargetSelector
               disabled={!character}
-              formulaKey={formulaKey}
+              formulaKey={character?.formulaKey ?? allFormulaKeys[0]}
               setFormulaKey={setFormulaKey}
             />
             <Typography variant="h6">Wengine</Typography>
@@ -151,11 +157,11 @@ export default function PageOptimize() {
               />
               <NumberInputLazy
                 disabled={!character}
-                value={character?.level ?? 60}
+                value={character?.wengineLvl ?? 60}
                 onChange={(l) =>
                   l !== undefined &&
                   character &&
-                  database.chars.set(character.key, { level: l })
+                  database.chars.set(character.key, { wengineLvl: l })
                 }
                 size="small"
                 inputProps={{
@@ -176,14 +182,14 @@ export default function PageOptimize() {
       </CardThemed>
       <BaseStatCard
         locationKey={locationKey}
-        baseStats={stats}
+        baseStats={character?.stats ?? {}}
         setBaseStats={setStats}
       />
       <OptimizeWrapper
         setResults={setBuilds}
         baseStats={baseStats}
         location={locationKey}
-        formulaKey={formulaKey}
+        formulaKey={character?.formulaKey ?? allFormulaKeys[0]}
       />
       <BuildsDisplay builds={builds} stats={baseStats} location={locationKey} />
     </Box>

@@ -1,6 +1,6 @@
 import type { DiscSlotKey, FormulaKey } from '@genshin-optimizer/zzz/consts'
-import type { Constraints, ICachedDisc } from '@genshin-optimizer/zzz/db'
-import type { BuildResult, Stats } from './common'
+import type { Constraints, ICachedDisc, Stats } from '@genshin-optimizer/zzz/db'
+import type { BuildResult } from './common'
 import type {
   ParentCommandStart,
   ParentCommandTerminate,

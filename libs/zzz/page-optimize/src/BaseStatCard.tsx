@@ -28,6 +28,7 @@ const statKeys: StatKey[] = [
 ] as const
 const enemyKeys: StatKey[] = [
   'enemyDef',
+  'enemyDefRed',
   'enemyRes_',
   'enemyResRed_',
   'enemyResIgn_',
@@ -64,11 +65,11 @@ export default function BaseStatCard({
   return (
     <CardThemed>
       <CardContent>
-        <Typography>Character Base Stats</Typography>
+        <Typography>BONUS Character Base Stats</Typography>
         <Box sx={{ display: 'flex', gap: 1, pb: 2, flexWrap: 'wrap' }}>
           {baseKeys.map((key) => input(key))}
         </Box>
-        <Typography>Character Stats</Typography>
+        <Typography>BONUS Character Stats</Typography>
         <Box sx={{ display: 'flex', gap: 1, pb: 2, flexWrap: 'wrap' }}>
           {statKeys.map((key) => input(key))}
         </Box>

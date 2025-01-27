@@ -10,7 +10,8 @@ import {
   allAttributeDamageKeys,
   disc2pEffect,
 } from '@genshin-optimizer/zzz/consts'
-import type { DiscStats, Stats } from './common'
+import type { Stats } from '@genshin-optimizer/zzz/db'
+import type { DiscStats } from './common'
 
 /**
  * sum up stats from base + discs + 2p effects
@@ -93,7 +94,11 @@ function defMulti(s: (k: string) => number) {
   const lvlFactor = getLvlFactor(s('charLvl'))
   return (
     lvlFactor /
-    (Math.max(s('enemyDef') * (1 - s('pen_')) - s('pen'), 0) + lvlFactor)
+    (Math.max(
+      (s('enemyDef') - s('enemyDefRed')) * (1 - s('pen_')) - s('pen'),
+      0
+    ) +
+      lvlFactor)
   )
 }
 function resMulti(s: (k: string) => number) {

@@ -16,14 +16,15 @@ import { DataManager } from '../DataManager'
 import type { ZzzDatabase } from '../Database'
 
 export type Constraints = Record<string, { value: number; isMax: boolean }>
+export type Stats = Record<string, number>
 export type CharacterData = {
   key: CharacterKey
   level: number
   core: number // 0-6
   wengineKey: WengineKey
   wengineLvl: number
-  stats: Record<string, number>
-  optTarget: FormulaKey
+  stats: Stats
+  formulaKey: FormulaKey
   constraints: Constraints
   useEquipped: boolean
   slot4: DiscMainStatKey[]
@@ -42,7 +43,7 @@ function initialCharacterData(key: CharacterKey): CharacterData {
       // in percent
       enemyDef: 953, // default enemy DEF
     },
-    optTarget: allFormulaKeys[0],
+    formulaKey: allFormulaKeys[0],
     constraints: {}, // in percent
     useEquipped: false,
     slot4: [...discSlotToMainStatKeys['4']],
@@ -68,7 +69,7 @@ export class CharacterDataManager extends DataManager<
       wengineKey,
       wengineLvl,
       stats,
-      optTarget,
+      formulaKey,
       constraints,
       useEquipped,
       slot4,
@@ -92,7 +93,7 @@ export class CharacterDataManager extends DataManager<
     if (typeof stats !== 'object') stats = {}
     stats = objFilter(stats, (val) => typeof val === 'number')
 
-    if (!allFormulaKeys.includes(optTarget)) optTarget = allFormulaKeys[0]
+    if (!allFormulaKeys.includes(formulaKey)) formulaKey = allFormulaKeys[0]
 
     if (typeof constraints !== 'object') constraints = {}
     constraints = objFilter(
@@ -112,7 +113,7 @@ export class CharacterDataManager extends DataManager<
       wengineKey,
       wengineLvl,
       stats,
-      optTarget,
+      formulaKey,
       constraints,
       useEquipped,
       slot4,

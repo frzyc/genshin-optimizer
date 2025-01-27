@@ -1,7 +1,7 @@
 import type { DiscSlotKey, FormulaKey } from '@genshin-optimizer/zzz/consts'
-import type { Constraints } from '@genshin-optimizer/zzz/db'
+import type { Constraints, Stats } from '@genshin-optimizer/zzz/db'
 import { calcFormula, getSum } from './calc'
-import type { BuildResult, DiscStats, Stats } from './common'
+import type { BuildResult, DiscStats } from './common'
 import { MAX_BUILDS } from './common'
 
 const MAX_BUILDS_TO_SEND = 200_000
