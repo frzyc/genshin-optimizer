@@ -1,0 +1,381 @@
+{
+  "Id": 12009,
+  "CodeName": "Weapon_B_Common_09",
+  "Name": "[Vortex] Hatchet",
+  "Desc": "This inverter W-Engine can generate excessive power and effectively increase its operator's battle prowess. However, due to its poor heat dissipation, it emits ear-splitting noise during battle. As a result, all squad members will need to wear earplugs.",
+  "Desc2": "Equip to increase Stun Agents' combat capabilities",
+  "Desc3": "A frequency-converting W-Engine that can quickly generate excessive power and effectively increase its user's battle prowess.",
+  "Rarity": 2,
+  "Icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_B_Common_09.png",
+  "WeaponType": {
+    "2": "Stun"
+  },
+  "BaseProperty": {
+    "Name": "Base ATK",
+    "Name2": "Base ATK",
+    "Format": "{0:0.#}",
+    "Value": 32
+  },
+  "RandProperty": {
+    "Name": "Energy Regen",
+    "Name2": "Energy Regen",
+    "Format": "{0:0.#%}",
+    "Value": 1600
+  },
+  "Level": {
+    "0": {
+      "Exp": 30,
+      "Rate": 0,
+      "Rate2": 10000
+    },
+    "1": {
+      "Exp": 60,
+      "Rate": 1568,
+      "Rate2": 10000
+    },
+    "2": {
+      "Exp": 90,
+      "Rate": 3136,
+      "Rate2": 10000
+    },
+    "3": {
+      "Exp": 120,
+      "Rate": 4705,
+      "Rate2": 10000
+    },
+    "4": {
+      "Exp": 180,
+      "Rate": 6273,
+      "Rate2": 10000
+    },
+    "5": {
+      "Exp": 240,
+      "Rate": 7841,
+      "Rate2": 10000
+    },
+    "6": {
+      "Exp": 300,
+      "Rate": 9409,
+      "Rate2": 10000
+    },
+    "7": {
+      "Exp": 360,
+      "Rate": 10977,
+      "Rate2": 10000
+    },
+    "8": {
+      "Exp": 450,
+      "Rate": 12545,
+      "Rate2": 10000
+    },
+    "9": {
+      "Exp": 570,
+      "Rate": 14114,
+      "Rate2": 10000
+    },
+    "10": {
+      "Exp": 720,
+      "Rate": 15682,
+      "Rate2": 9500
+    },
+    "11": {
+      "Exp": 770,
+      "Rate": 17250,
+      "Rate2": 9500
+    },
+    "12": {
+      "Exp": 830,
+      "Rate": 18818,
+      "Rate2": 9500
+    },
+    "13": {
+      "Exp": 880,
+      "Rate": 20386,
+      "Rate2": 9500
+    },
+    "14": {
+      "Exp": 935,
+      "Rate": 21954,
+      "Rate2": 9500
+    },
+    "15": {
+      "Exp": 985,
+      "Rate": 23523,
+      "Rate2": 9500
+    },
+    "16": {
+      "Exp": 1040,
+      "Rate": 25091,
+      "Rate2": 9500
+    },
+    "17": {
+      "Exp": 1095,
+      "Rate": 26659,
+      "Rate2": 9500
+    },
+    "18": {
+      "Exp": 1145,
+      "Rate": 28227,
+      "Rate2": 9500
+    },
+    "19": {
+      "Exp": 1200,
+      "Rate": 29795,
+      "Rate2": 9500
+    },
+    "20": {
+      "Exp": 1870,
+      "Rate": 31363,
+      "Rate2": 9000
+    },
+    "21": {
+      "Exp": 1990,
+      "Rate": 32932,
+      "Rate2": 9000
+    },
+    "22": {
+      "Exp": 2105,
+      "Rate": 34500,
+      "Rate2": 9000
+    },
+    "23": {
+      "Exp": 2225,
+      "Rate": 36068,
+      "Rate2": 9000
+    },
+    "24": {
+      "Exp": 2340,
+      "Rate": 37636,
+      "Rate2": 9000
+    },
+    "25": {
+      "Exp": 2460,
+      "Rate": 39204,
+      "Rate2": 9000
+    },
+    "26": {
+      "Exp": 2575,
+      "Rate": 40772,
+      "Rate2": 9000
+    },
+    "27": {
+      "Exp": 2695,
+      "Rate": 42341,
+      "Rate2": 9000
+    },
+    "28": {
+      "Exp": 2810,
+      "Rate": 43909,
+      "Rate2": 9000
+    },
+    "29": {
+      "Exp": 2930,
+      "Rate": 45477,
+      "Rate2": 9000
+    },
+    "30": {
+      "Exp": 4320,
+      "Rate": 47045,
+      "Rate2": 8500
+    },
+    "31": {
+      "Exp": 4560,
+      "Rate": 48613,
+      "Rate2": 8500
+    },
+    "32": {
+      "Exp": 4800,
+      "Rate": 50181,
+      "Rate2": 8500
+    },
+    "33": {
+      "Exp": 5040,
+      "Rate": 51750,
+      "Rate2": 8500
+    },
+    "34": {
+      "Exp": 5280,
+      "Rate": 53318,
+      "Rate2": 8500
+    },
+    "35": {
+      "Exp": 5520,
+      "Rate": 54886,
+      "Rate2": 8500
+    },
+    "36": {
+      "Exp": 5760,
+      "Rate": 56454,
+      "Rate2": 8500
+    },
+    "37": {
+      "Exp": 6000,
+      "Rate": 58022,
+      "Rate2": 8500
+    },
+    "38": {
+      "Exp": 6240,
+      "Rate": 59590,
+      "Rate2": 8500
+    },
+    "39": {
+      "Exp": 6480,
+      "Rate": 61159,
+      "Rate2": 8500
+    },
+    "40": {
+      "Exp": 6840,
+      "Rate": 62727,
+      "Rate2": 8000
+    },
+    "41": {
+      "Exp": 7320,
+      "Rate": 64295,
+      "Rate2": 8000
+    },
+    "42": {
+      "Exp": 7800,
+      "Rate": 65863,
+      "Rate2": 8000
+    },
+    "43": {
+      "Exp": 8280,
+      "Rate": 67431,
+      "Rate2": 8000
+    },
+    "44": {
+      "Exp": 8760,
+      "Rate": 68999,
+      "Rate2": 8000
+    },
+    "45": {
+      "Exp": 9240,
+      "Rate": 70568,
+      "Rate2": 8000
+    },
+    "46": {
+      "Exp": 9720,
+      "Rate": 72136,
+      "Rate2": 8000
+    },
+    "47": {
+      "Exp": 10200,
+      "Rate": 73704,
+      "Rate2": 8000
+    },
+    "48": {
+      "Exp": 10680,
+      "Rate": 75272,
+      "Rate2": 8000
+    },
+    "49": {
+      "Exp": 11160,
+      "Rate": 76840,
+      "Rate2": 8000
+    },
+    "50": {
+      "Exp": 13680,
+      "Rate": 78408,
+      "Rate2": 7500
+    },
+    "51": {
+      "Exp": 14640,
+      "Rate": 79977,
+      "Rate2": 7500
+    },
+    "52": {
+      "Exp": 15600,
+      "Rate": 81545,
+      "Rate2": 7500
+    },
+    "53": {
+      "Exp": 16560,
+      "Rate": 83113,
+      "Rate2": 7500
+    },
+    "54": {
+      "Exp": 17520,
+      "Rate": 84681,
+      "Rate2": 7500
+    },
+    "55": {
+      "Exp": 18480,
+      "Rate": 86249,
+      "Rate2": 7500
+    },
+    "56": {
+      "Exp": 19440,
+      "Rate": 87817,
+      "Rate2": 7500
+    },
+    "57": {
+      "Exp": 20400,
+      "Rate": 89386,
+      "Rate2": 7500
+    },
+    "58": {
+      "Exp": 21360,
+      "Rate": 90954,
+      "Rate2": 7500
+    },
+    "59": {
+      "Exp": 22320,
+      "Rate": 92522,
+      "Rate2": 7500
+    },
+    "60": {
+      "Exp": 0,
+      "Rate": 94090,
+      "Rate2": 7000
+    }
+  },
+  "Stars": {
+    "0": {
+      "StarRate": 0,
+      "RandRate": 0
+    },
+    "1": {
+      "StarRate": 8922,
+      "RandRate": 3000
+    },
+    "2": {
+      "StarRate": 17844,
+      "RandRate": 6000
+    },
+    "3": {
+      "StarRate": 26766,
+      "RandRate": 9000
+    },
+    "4": {
+      "StarRate": 35688,
+      "RandRate": 12000
+    },
+    "5": {
+      "StarRate": 44610,
+      "RandRate": 15000
+    }
+  },
+  "Materials": "10:7200,101011:2|10:16800,101021:7|10:36000,101021:12|10:60000,101031:6|10:120000,101031:12",
+  "Talents": {
+    "1": {
+      "Name": "Riptide",
+      "Desc": "Upon entering combat or switching in, the equipper's Impact increases by <color=#2BAD00>9%</color> for 10s. This effect can trigger once every 20s."
+    },
+    "2": {
+      "Name": "Riptide",
+      "Desc": "Upon entering combat or switching in, the equipper's Impact increases by <color=#2BAD00>10%</color> for 10s. This effect can trigger once every 20s."
+    },
+    "3": {
+      "Name": "Riptide",
+      "Desc": "Upon entering combat or switching in, the equipper's Impact increases by <color=#2BAD00>11%</color> for 10s. This effect can trigger once every 20s."
+    },
+    "4": {
+      "Name": "Riptide",
+      "Desc": "Upon entering combat or switching in, the equipper's Impact increases by <color=#2BAD00>12%</color> for 10s. This effect can trigger once every 20s."
+    },
+    "5": {
+      "Name": "Riptide",
+      "Desc": "Upon entering combat or switching in, the equipper's Impact increases by <color=#2BAD00>13%</color> for 10s. This effect can trigger once every 20s."
+    }
+  }
+}

@@ -1,0 +1,381 @@
+{
+  "Id": 13005,
+  "CodeName": "Weapon_A_Common_05",
+  "Name": "Steam Oven",
+  "Desc": "This high-power W-Engine boasts a cutting-edge energy conversion device that collects heat from its surroundings and supplies it to the steamer, making it easy for the operator to cook or heat up objects. This makes it a perfect choice for Hollow explorers. However... please be careful when using it to avoid burns.",
+  "Desc2": "Equip to increase Stun Agents' combat capabilities",
+  "Desc3": "A high-power W-Engine that boasts a cutting-edge energy conversion system. It collects excess heat and supplies it to the steamer.",
+  "Rarity": 3,
+  "Icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_Common_05.png",
+  "WeaponType": {
+    "2": "Stun"
+  },
+  "BaseProperty": {
+    "Name": "Base ATK",
+    "Name2": "Base ATK",
+    "Format": "{0:0.#}",
+    "Value": 40
+  },
+  "RandProperty": {
+    "Name": "Energy Regen",
+    "Name2": "Energy Regen",
+    "Format": "{0:0.#%}",
+    "Value": 2000
+  },
+  "Level": {
+    "0": {
+      "Exp": 40,
+      "Rate": 0,
+      "Rate2": 10000
+    },
+    "1": {
+      "Exp": 80,
+      "Rate": 1568,
+      "Rate2": 10000
+    },
+    "2": {
+      "Exp": 120,
+      "Rate": 3136,
+      "Rate2": 10000
+    },
+    "3": {
+      "Exp": 160,
+      "Rate": 4705,
+      "Rate2": 10000
+    },
+    "4": {
+      "Exp": 240,
+      "Rate": 6273,
+      "Rate2": 10000
+    },
+    "5": {
+      "Exp": 320,
+      "Rate": 7841,
+      "Rate2": 10000
+    },
+    "6": {
+      "Exp": 400,
+      "Rate": 9409,
+      "Rate2": 10000
+    },
+    "7": {
+      "Exp": 480,
+      "Rate": 10977,
+      "Rate2": 10000
+    },
+    "8": {
+      "Exp": 600,
+      "Rate": 12545,
+      "Rate2": 10000
+    },
+    "9": {
+      "Exp": 760,
+      "Rate": 14114,
+      "Rate2": 10000
+    },
+    "10": {
+      "Exp": 960,
+      "Rate": 15682,
+      "Rate2": 9250
+    },
+    "11": {
+      "Exp": 1030,
+      "Rate": 17250,
+      "Rate2": 9250
+    },
+    "12": {
+      "Exp": 1105,
+      "Rate": 18818,
+      "Rate2": 9250
+    },
+    "13": {
+      "Exp": 1170,
+      "Rate": 20386,
+      "Rate2": 9250
+    },
+    "14": {
+      "Exp": 1245,
+      "Rate": 21954,
+      "Rate2": 9250
+    },
+    "15": {
+      "Exp": 1310,
+      "Rate": 23523,
+      "Rate2": 9250
+    },
+    "16": {
+      "Exp": 1390,
+      "Rate": 25091,
+      "Rate2": 9250
+    },
+    "17": {
+      "Exp": 1460,
+      "Rate": 26659,
+      "Rate2": 9250
+    },
+    "18": {
+      "Exp": 1530,
+      "Rate": 28227,
+      "Rate2": 9250
+    },
+    "19": {
+      "Exp": 1600,
+      "Rate": 29795,
+      "Rate2": 9250
+    },
+    "20": {
+      "Exp": 2495,
+      "Rate": 31363,
+      "Rate2": 8500
+    },
+    "21": {
+      "Exp": 2650,
+      "Rate": 32932,
+      "Rate2": 8500
+    },
+    "22": {
+      "Exp": 2810,
+      "Rate": 34500,
+      "Rate2": 8500
+    },
+    "23": {
+      "Exp": 2965,
+      "Rate": 36068,
+      "Rate2": 8500
+    },
+    "24": {
+      "Exp": 3120,
+      "Rate": 37636,
+      "Rate2": 8500
+    },
+    "25": {
+      "Exp": 3280,
+      "Rate": 39204,
+      "Rate2": 8500
+    },
+    "26": {
+      "Exp": 3435,
+      "Rate": 40772,
+      "Rate2": 8500
+    },
+    "27": {
+      "Exp": 3590,
+      "Rate": 42341,
+      "Rate2": 8500
+    },
+    "28": {
+      "Exp": 3750,
+      "Rate": 43909,
+      "Rate2": 8500
+    },
+    "29": {
+      "Exp": 3905,
+      "Rate": 45477,
+      "Rate2": 8500
+    },
+    "30": {
+      "Exp": 5760,
+      "Rate": 47045,
+      "Rate2": 7750
+    },
+    "31": {
+      "Exp": 6080,
+      "Rate": 48613,
+      "Rate2": 7750
+    },
+    "32": {
+      "Exp": 6400,
+      "Rate": 50181,
+      "Rate2": 7750
+    },
+    "33": {
+      "Exp": 6720,
+      "Rate": 51750,
+      "Rate2": 7750
+    },
+    "34": {
+      "Exp": 7040,
+      "Rate": 53318,
+      "Rate2": 7750
+    },
+    "35": {
+      "Exp": 7360,
+      "Rate": 54886,
+      "Rate2": 7750
+    },
+    "36": {
+      "Exp": 7680,
+      "Rate": 56454,
+      "Rate2": 7750
+    },
+    "37": {
+      "Exp": 8000,
+      "Rate": 58022,
+      "Rate2": 7750
+    },
+    "38": {
+      "Exp": 8320,
+      "Rate": 59590,
+      "Rate2": 7750
+    },
+    "39": {
+      "Exp": 8640,
+      "Rate": 61159,
+      "Rate2": 7750
+    },
+    "40": {
+      "Exp": 9120,
+      "Rate": 62727,
+      "Rate2": 7000
+    },
+    "41": {
+      "Exp": 9760,
+      "Rate": 64295,
+      "Rate2": 7000
+    },
+    "42": {
+      "Exp": 10400,
+      "Rate": 65863,
+      "Rate2": 7000
+    },
+    "43": {
+      "Exp": 11040,
+      "Rate": 67431,
+      "Rate2": 7000
+    },
+    "44": {
+      "Exp": 11680,
+      "Rate": 68999,
+      "Rate2": 7000
+    },
+    "45": {
+      "Exp": 12320,
+      "Rate": 70568,
+      "Rate2": 7000
+    },
+    "46": {
+      "Exp": 12960,
+      "Rate": 72136,
+      "Rate2": 7000
+    },
+    "47": {
+      "Exp": 13600,
+      "Rate": 73704,
+      "Rate2": 7000
+    },
+    "48": {
+      "Exp": 14240,
+      "Rate": 75272,
+      "Rate2": 7000
+    },
+    "49": {
+      "Exp": 14880,
+      "Rate": 76840,
+      "Rate2": 7000
+    },
+    "50": {
+      "Exp": 18240,
+      "Rate": 78408,
+      "Rate2": 6250
+    },
+    "51": {
+      "Exp": 19520,
+      "Rate": 79977,
+      "Rate2": 6250
+    },
+    "52": {
+      "Exp": 20800,
+      "Rate": 81545,
+      "Rate2": 6250
+    },
+    "53": {
+      "Exp": 22080,
+      "Rate": 83113,
+      "Rate2": 6250
+    },
+    "54": {
+      "Exp": 23360,
+      "Rate": 84681,
+      "Rate2": 6250
+    },
+    "55": {
+      "Exp": 24640,
+      "Rate": 86249,
+      "Rate2": 6250
+    },
+    "56": {
+      "Exp": 25920,
+      "Rate": 87817,
+      "Rate2": 6250
+    },
+    "57": {
+      "Exp": 27200,
+      "Rate": 89386,
+      "Rate2": 6250
+    },
+    "58": {
+      "Exp": 28480,
+      "Rate": 90954,
+      "Rate2": 6250
+    },
+    "59": {
+      "Exp": 29760,
+      "Rate": 92522,
+      "Rate2": 6250
+    },
+    "60": {
+      "Exp": 0,
+      "Rate": 94090,
+      "Rate2": 5500
+    }
+  },
+  "Stars": {
+    "0": {
+      "StarRate": 0,
+      "RandRate": 0
+    },
+    "1": {
+      "StarRate": 8922,
+      "RandRate": 3000
+    },
+    "2": {
+      "StarRate": 17844,
+      "RandRate": 6000
+    },
+    "3": {
+      "StarRate": 26766,
+      "RandRate": 9000
+    },
+    "4": {
+      "StarRate": 35688,
+      "RandRate": 12000
+    },
+    "5": {
+      "StarRate": 44610,
+      "RandRate": 15000
+    }
+  },
+  "Materials": "10:9600,101011:3|10:22400,101021:10|10:48000,101021:16|10:80000,101031:8|10:160000,101031:16",
+  "Talents": {
+    "1": {
+      "Name": "Thick Broth",
+      "Desc": "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>2%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately."
+    },
+    "2": {
+      "Name": "Thick Broth",
+      "Desc": "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>2.3%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately."
+    },
+    "3": {
+      "Name": "Thick Broth",
+      "Desc": "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>2.6%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately."
+    },
+    "4": {
+      "Name": "Thick Broth",
+      "Desc": "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>2.9%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately."
+    },
+    "5": {
+      "Name": "Thick Broth",
+      "Desc": "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>3.2%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately."
+    }
+  }
+}

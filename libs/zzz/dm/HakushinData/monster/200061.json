@@ -1,0 +1,16 @@
+{
+  "Id": 200061,
+  "MonsterId": 0,
+  "MonsterInfo": {},
+  "ImagePath": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv02/Monster_LAAndroidPro.png",
+  "Tag": ["Ether", "Pro"],
+  "Tag2": ["Metro", "SkyScraper"],
+  "Name": "OfficialName_",
+  "Desc": "An automatic combat mech utilized by Public Security. It possesses various combat modes tailored to various Ethereals types. Its weapons include circular chainsaws and fusion heat rays.\nSweepers can swiftly identify target Ethereals and adapt to the most effective combat strategy.\nHowever, their reliability diminishes to some extent when faced with Hollow Raiders who possess greater versatility than Ethereals.\n\"Stirring, chopping, heating... I wonder who came up with this? Maybe some undercover agent from a kitchenware company trying to boost sales?\"",
+  "Rarity": 2,
+  "GroupId": 204,
+  "GroupDesc": "Public Security",
+  "CardObtain": "[Unidentified] Defeat this monster in Hollow Zero 1 time to obtain its data",
+  "CardQuote": "—Late Night Talk Show \"Hollow Zoo\"",
+  "CardSkillDesc": "Monster Skill Info - Placeholder"
+}

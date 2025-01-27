@@ -1,0 +1,9 @@
+{
+  "Id": 31200,
+  "Name": "Shockstar Disco",
+  "Desc2": "Impact +6%",
+  "Desc4": "<color=#FFFFFF>Basic Attacks</color>, <color=#FFFFFF>Dash Attacks</color>, and <color=#FFFFFF>Dodge Counters</color> inflict 20% more Daze to the main target.",
+  "Story": "A Drive Disc designed with algorithmic optimization for W-Engine compatibility, improving auxiliary performance.",
+  "Icon": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitShockstarDisco.png",
+  "Icon2": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitShockstarDisco.png"
+}

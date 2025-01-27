@@ -1,0 +1,16 @@
+{
+  "Id": 200023,
+  "MonsterId": 0,
+  "MonsterInfo": {},
+  "ImagePath": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv02/Monster_GoblinPro.png",
+  "Tag": ["Ether", "Pro"],
+  "Tag2": ["Metro", "SkyScraper"],
+  "Name": "OfficialName_",
+  "Desc": "During initial encounters with these unique Ethereals, Hollow investigators mistakenly thought they possessed some level of intelligence, even showing signs of learning to wield bludgeoning weapons like humans. As a result, they were dubbed \"Goblins.\"\nHowever, subsequent research revealed that their \"hammers\" were actually twisted and deformed limbs, and that they lacked the ability to imitate human behavior.\nNevertheless, Goblins remain formidable adversaries due to their robust physique and sheer brute strength, with even a simple swing of their limbs proving deadly.\nIf anything trespasses on their territory, they will immediately enter a state of fury, sparing no effort in mercilessly smashing the intruder.\n\"Huh? There's a Goblin running over here, banging on a heap of scrap metal.\"\n\"Don't you think his attacks have a rhythm to them, like he's playing a drum...?\"\n\"Hey! Don't be stupid, you two! That's not scrap metal! It's our supply truck!\"",
+  "Rarity": 2,
+  "GroupId": 201,
+  "GroupDesc": "Ether Mutants",
+  "CardObtain": "[Unidentified] Defeat this monster in Hollow Zero 1 time to obtain its data",
+  "CardQuote": "—A Goblin intruder breaks into a gang hideout",
+  "CardSkillDesc": "Monster Skill Info - Placeholder"
+}

@@ -1,0 +1,16 @@
+{
+  "Id": 200003,
+  "MonsterId": 0,
+  "MonsterInfo": {},
+  "ImagePath": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv02/Monster_GiantPro.png",
+  "Tag": ["Ether", "Pro"],
+  "Tag2": ["Metro", "SkyScraper"],
+  "Name": "OfficialName_",
+  "Desc": "Farbauti, possessing immense strength and often in a frenzied state, is one of the most formidable threats Hollow Raiders may face. Its hammer-like arms can effortlessly deflect damage and unleash storms of blows that crush everything in its path.\nSome Hollow Raiders have observed Farbauti frequently pounding the ground in a rhythmic, high-frequency manner, leading to speculation about its peculiar interest in drumming music.\nDespite the Hollow Investigative Association publicly debunking this rumor, many Hollow Raiders carry portable stereos in an attempt to distract Farbauti with music.\nNo successful escapes using this method have been reported however.\n\"The reason for their failure is simple: Even Farbauti think your taste in music sucks!\"",
+  "Rarity": 2,
+  "GroupId": 201,
+  "GroupDesc": "Ether Mutants",
+  "CardObtain": "[Unidentified] Defeat this monster in Hollow Zero 1 time to obtain its data",
+  "CardQuote": "—Posted by \"Spike Finger\" on the Black-Sweeper's Rock Forum",
+  "CardSkillDesc": "Monster Skill Info - Placeholder"
+}

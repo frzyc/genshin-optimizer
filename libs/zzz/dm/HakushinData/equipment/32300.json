@@ -1,0 +1,9 @@
+{
+  "Id": 32300,
+  "Name": "Chaotic Metal",
+  "Desc2": "<color=#FE437E>Ether DMG</color> +10%",
+  "Desc4": "The equipper's CRIT DMG increases by 20%. When any character in the squad triggers <color=#FE437E>Corruption's</color> additional DMG, this effect further increases by 5.5% for 8s, stacking up to 6 times. Repeated triggers reset the duration.",
+  "Story": "A Drive Disc burned with specialized Ether technology offering personalized attribute amplification to the user.",
+  "Icon": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitChaosMetal.png",
+  "Icon2": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitChaosMetal.png"
+}

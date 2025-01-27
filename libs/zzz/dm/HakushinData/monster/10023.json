@@ -1,0 +1,97 @@
+{
+  "Id": 10023,
+  "MonsterId": 11241,
+  "MonsterInfo": {
+    "CodeName": "Monster_GoldenBomb",
+    "Icon": "",
+    "Tag": ["Mech", "Small", "GoldenBomb", "Bomb"],
+    "Type": "Monster",
+    "Element": {
+      "Ice": 0,
+      "Fire": 0,
+      "Electric": 1,
+      "Ether": 0,
+      "Physical": -1
+    },
+    "Stats": {
+      "Hp": 2704,
+      "Attack": 34,
+      "Defence": 45,
+      "Crit": 0,
+      "CritDamage": 5000,
+      "CritRes": 0,
+      "CritDmgRes": 0,
+      "PenRate": 0,
+      "PenDelta": 0,
+      "Stun": 1334,
+      "BreakStun": 0
+    },
+    "Curves": {
+      "Hp": {
+        "Curve": [
+          100, 116, 136, 159, 183, 200, 219, 240, 263, 303, 326, 352, 379, 409,
+          471, 485, 499, 514, 530, 610, 685, 770, 865, 973, 1119, 1132, 1146,
+          1160, 1174, 1351, 1411, 1475, 1541, 1611, 1853, 1858, 1864, 1870,
+          1876, 2158, 2228, 2302, 2377, 2455, 2824, 2847, 2872, 2896, 2920,
+          3213, 3293, 3376, 3460, 3547, 4080, 4106, 4132, 4158, 4185, 4604,
+          4637, 4671, 4705, 4739, 4774, 4809, 4844, 4879, 4915, 5406, 5406,
+          5406, 5406, 5406, 5406, 5406, 5406, 5406, 5406, 5406, 5406, 5406,
+          5406, 5406, 5406, 5406, 5406, 5406, 5406, 5406, 5406, 5406, 5406,
+          5406, 5406, 5406, 5406, 5406, 5406, 5406
+        ],
+        "Ratio": 100
+      },
+      "Attack": {
+        "Curve": [
+          100, 116, 133, 150, 167, 183, 199, 213, 227, 242, 265, 289, 312, 336,
+          359, 383, 406, 430, 453, 477, 496, 515, 534, 553, 573, 592, 611, 630,
+          649, 669, 685, 701, 717, 734, 750, 766, 783, 799, 815, 832, 846, 860,
+          875, 889, 904, 918, 932, 947, 961, 976, 982, 989, 995, 1002, 1009,
+          1015, 1022, 1029, 1035, 1042, 1049, 1055, 1062, 1069, 1075, 1082,
+          1089, 1095, 1102, 1109, 1109, 1109, 1109, 1109, 1109, 1109, 1109,
+          1109, 1109, 1109, 1109, 1109, 1109, 1109, 1109, 1109, 1109, 1109,
+          1109, 1109, 1109, 1109, 1109, 1109, 1109, 1109, 1109, 1109, 1109, 1109
+        ],
+        "Ratio": 120
+      },
+      "Defence": {
+        "Curve": [
+          100, 108, 116, 124, 132, 142, 152, 164, 176, 188, 200, 214, 228, 242,
+          258, 274, 290, 306, 324, 344, 362, 382, 402, 422, 444, 466, 490, 512,
+          536, 562, 586, 612, 638, 666, 694, 722, 750, 780, 810, 842, 872, 904,
+          938, 970, 1004, 1038, 1074, 1110, 1146, 1184, 1220, 1258, 1298, 1338,
+          1378, 1418, 1460, 1502, 1544, 1588, 1588, 1588, 1588, 1588, 1588,
+          1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588,
+          1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588,
+          1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588, 1588,
+          1588, 1588
+        ],
+        "Ratio": 100
+      },
+      "Stun": {
+        "Curve": [
+          100, 100, 100, 100, 103, 103, 103, 103, 103, 103, 103, 104, 104, 105,
+          106, 106, 107, 107, 108, 109, 110, 111, 113, 114, 116, 117, 118, 120,
+          121, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 134, 135, 136,
+          137, 139, 140, 141, 143, 144, 145, 147, 148, 149, 150, 151, 152, 153,
+          154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167,
+          167, 167, 167, 167, 167, 167, 167, 167, 167, 167, 167, 167, 167, 167,
+          167, 167, 167, 167, 167, 167, 167, 167, 167, 167, 167, 167, 167, 167,
+          167, 167
+        ],
+        "Ratio": 100
+      }
+    }
+  },
+  "ImagePath": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv01/Monster_GoldenBomb.png",
+  "Tag": ["Ether", "NotPro"],
+  "Tag2": ["Metro", "SkyScraper"],
+  "Name": "Golden Bangboo",
+  "Desc": "Every Hollow Raider believes there are infinite opportunities in the Hollows that can make you rich overnight. At the heart of every tale of extraordinary wealth is always mention of a special entity known as the Golden Bangboo.\nAccording to research conducted by the HIA, numerous Bangboo Wanderers inhabit the Hollows. They diligently gather scattered Gear Coins and Dennies, entrusting them to the Golden Bangboo for safekeeping.\nWhile their motives remain a mystery, one thing is certain: These wandering Bangboo, with their peculiar \"Ehn-ne\" sound diligently fill the pockets of the Golden Bangboo with bags overflowing with Gear Coins and Dennies.\nAs a result, the Golden Bangboo always finds themselves coveted by greedy groups of Hollow Raiders...\n\"N—Nicole!? Look there, a Golden Bangboo!\"\n\"What are you waiting for? Smash it to bits! It'll make us rich!\"",
+  "Rarity": 1,
+  "GroupId": 290,
+  "GroupDesc": "Special",
+  "CardObtain": "[Unidentified] Defeat this monster in Hollow Zero 1 time to obtain its data",
+  "CardQuote": "—The Cunning Hares desperately chasing after a Golden Bangboo deep within a Hollow",
+  "CardSkillDesc": "During combat, Golden Bangboo will sometimes counterattack, too."
+}

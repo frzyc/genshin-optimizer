@@ -1,0 +1,16 @@
+{
+  "Id": 200013,
+  "MonsterId": 0,
+  "MonsterInfo": {},
+  "ImagePath": "UI/Sprite/A1DynamicLoad/BossCard/UnPacker/BossCardLv02/Monster_HatiPro.png",
+  "Tag": ["Ether", "Pro"],
+  "Tag2": ["Metro", "SkyScraper"],
+  "Name": "OfficialName_",
+  "Desc": "The HIA Phase-I Investigation Team has officially documented the existence of this sentient living Ether resembling a four-legged beast, which poses significant danger. \nAccording to rumors, the first sighting took place in Nest Hollow, where individuals exploring the nearby wastes reported hearing ear-splitting roars reminiscent of wild animal growls.\n\"If I throw a stick or a ball, do you think that monster will catch it?\"\n\"You can give it a try, but I won't cover your medical bill.\"",
+  "Rarity": 2,
+  "GroupId": 201,
+  "GroupDesc": "Ether Mutants",
+  "CardObtain": "[Unidentified] Defeat this monster in Hollow Zero 1 time to obtain its data",
+  "CardQuote": "—A chat between Billy and Nicole",
+  "CardSkillDesc": "Monster Skill Info - Placeholder"
+}

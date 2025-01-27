@@ -1,0 +1,9 @@
+{
+  "Id": 31800,
+  "Name": "Chaos Jazz",
+  "Desc2": "Anomaly Proficiency +30",
+  "Desc4": "<color=#FF5521>Fire DMG</color> and <color=#2EB6FF>Electric DMG</color> increases by 15%. While off-field, <color=#FFFFFF>EX Special Attack</color> and <color=#FFFFFF>Assist Attack</color> DMG increases by 20%. When switching on-field, this buff continues for 5s, and this continuation effect can trigger once every 7.5s.",
+  "Story": "A Drive Disc with a steep learning curve that really tests users' understanding of Ether devices.",
+  "Icon": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitChaosJazz.png",
+  "Icon2": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitChaosJazz.png"
+}

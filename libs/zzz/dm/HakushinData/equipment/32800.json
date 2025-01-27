@@ -1,0 +1,9 @@
+{
+  "Id": 32800,
+  "Name": "Astral Voice",
+  "Desc2": "ATK +10%",
+  "Desc4": "Whenever any squad member enters the field using a <color=#FFFFFF>Quick Assist</color>, all squad members gain 1 stack of <color=#FFFFFF>Astral</color>, up to a maximum of 3 stacks, and lasting 15s. Repeated triggers reset the duration. Each stack of <color=#FFFFFF>Astral</color> increases the DMG dealt by the character entering the field using a <color=#FFFFFF>Quick Assist</color> by 8%. Only one instance of this effect can exist in the same squad.",
+  "Story": "Drive Discs made by a Hollow Raider and Astra Yao fan that record a signature motif in Astra's works. Meanwhile, on the back, the Hollow Raider's own story is printed there.",
+  "Icon": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitAstralVoice.png",
+  "Icon2": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitAstralVoice.png"
+}

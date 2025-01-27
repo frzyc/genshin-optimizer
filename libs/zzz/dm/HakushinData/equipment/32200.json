@@ -1,0 +1,9 @@
+{
+  "Id": 32200,
+  "Name": "Inferno Metal",
+  "Desc2": "<color=#FF5521>Fire DMG</color> +10%",
+  "Desc4": "Upon hitting a <color=#FF5521>Burning</color> enemy, the equipper's CRIT Rate is increased by 28% for 8s.",
+  "Story": "A Drive Disc burned with specialized Ether technology offering personalized attribute amplification to the user.",
+  "Icon": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitInfernoMetal.png",
+  "Icon2": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitInfernoMetal.png"
+}
