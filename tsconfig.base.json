@@ -169,6 +169,7 @@
         "libs/zzz/page-settings/src/index.tsx"
       ],
       "@genshin-optimizer/zzz/solver": ["libs/zzz/solver/src/index.ts"],
+      "@genshin-optimizer/zzz/stats": ["libs/zzz/stats/src/index.ts"],
       "@genshin-optimizer/zzz/ui": ["libs/zzz/ui/src/index.tsx"]
     }
   },

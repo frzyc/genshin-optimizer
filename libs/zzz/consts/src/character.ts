@@ -1,7 +1,8 @@
+// copy from libs\zzz\dm\src\dm\character\characterKeys.json
 export const allCharacterKeys = [
   'Anby',
   'Anton',
-  'AstraYao',
+  'Astra',
   'Ben',
   'Billy',
   'Burnice',
@@ -20,7 +21,8 @@ export const allCharacterKeys = [
   'Nekomata',
   'Nicole',
   'Piper',
-  'Qingyi',
+  'PulchraFeliny',
+  'QingYi',
   'Rina',
   'Seth',
   'Soldier11',
@@ -32,3 +34,21 @@ export type CharacterKey = (typeof allCharacterKeys)[number]
 
 export const allLocationKeys = [...allCharacterKeys, ''] as const
 export type LocationKey = (typeof allLocationKeys)[number]
+
+export const allSpecialityKeys = [
+  'attack',
+  'stun',
+  'anomaly',
+  'support',
+  'defense',
+] as const
+export type SpecialityKey = (typeof allSpecialityKeys)[number]
+
+export const allAttackTypeKeys = ['slash', 'strike', 'pierce'] as const
+export type AttackTypeKey = (typeof allAttackTypeKeys)[number]
+
+export const allCharacterRarityKeys = ['S', 'A'] as const
+export type CharacterRarityKey = (typeof allCharacterRarityKeys)[number]
+
+export const ascensionlevel = [10, 20, 30, 40, 50, 60] as const
+export const coreLevel = [15, 25, 35, 45, 55, 60] as const

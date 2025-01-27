@@ -1,0 +1,72 @@
+{
+  "rarity": "S",
+  "element": "ether",
+  "stats": {
+    "base_atk": 103,
+    "atk_growth": 5.9961,
+    "base_def": 48,
+    "def_growth": 6.5524,
+    "base_hp": 692,
+    "hp_growth": 93.9358,
+    "anomMas_": 93,
+    "anomProf": 92
+  },
+  "levelStats": [
+    {
+      "hp": 0,
+      "atk": 0,
+      "def": 0
+    },
+    {
+      "hp": 475,
+      "atk": 37,
+      "def": 33
+    },
+    {
+      "hp": 950,
+      "atk": 74,
+      "def": 66
+    },
+    {
+      "hp": 1425,
+      "atk": 110,
+      "def": 99
+    },
+    {
+      "hp": 1900,
+      "atk": 147,
+      "def": 133
+    },
+    {
+      "hp": 2375,
+      "atk": 184,
+      "def": 166
+    }
+  ],
+  "coreStats": [
+    {
+      "base_atk": 0,
+      "base_enerRegen": 12
+    },
+    {
+      "base_atk": 25,
+      "base_enerRegen": 12
+    },
+    {
+      "base_atk": 25,
+      "base_enerRegen": 24
+    },
+    {
+      "base_atk": 50,
+      "base_enerRegen": 24
+    },
+    {
+      "base_atk": 50,
+      "base_enerRegen": 36
+    },
+    {
+      "base_atk": 75,
+      "base_enerRegen": 36
+    }
+  ]
+}

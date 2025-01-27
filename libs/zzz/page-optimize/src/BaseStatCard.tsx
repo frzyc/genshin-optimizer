@@ -1,5 +1,5 @@
 import { CardThemed, NumberInputLazy } from '@genshin-optimizer/common/ui'
-import { getUnitStr } from '@genshin-optimizer/common/util'
+import { getUnitStr, isPercentStat } from '@genshin-optimizer/common/util'
 import type { StatKey } from '@genshin-optimizer/zzz/consts'
 import {
   allAttributeDamageKeys,
@@ -50,7 +50,7 @@ export default function BaseStatCard({
           [key]: v,
         })
       }
-      float={getUnitStr(key) === '%'}
+      float={isPercentStat(key)}
       inputProps={{ sx: { textAlign: 'right', minWidth: '5em' } }}
       InputProps={{
         startAdornment: statKeyTextMap[key] ?? key,

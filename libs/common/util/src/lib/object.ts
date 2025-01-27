@@ -79,6 +79,15 @@ export function objMap<K extends string | number, V, V2>(
   ) as Record<K, V2>
 }
 
+export function objFilter<K extends string | number, V>(
+  obj: Record<K, V>,
+  f: (v: V, k: K, i: number) => boolean
+): Record<K, V> {
+  return Object.fromEntries(
+    Object.entries(obj).filter(([k, v], i) => f(v as V, k as K, i))
+  ) as Record<K, V>
+}
+
 /**
  * Generate an object from an array of keys, and a function that maps the key to a value
  * @param keys
