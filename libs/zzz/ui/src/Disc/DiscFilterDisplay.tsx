@@ -1,9 +1,14 @@
-import { SolidToggleButtonGroup, theme } from '@genshin-optimizer/common/ui'
+import {
+  BootstrapTooltip,
+  SolidToggleButtonGroup,
+  theme,
+} from '@genshin-optimizer/common/ui'
 import {
   bulkCatTotal,
   handleMultiSelect,
   objKeyMap,
 } from '@genshin-optimizer/common/util'
+import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import {
   allDiscMainStatKeys,
   allDiscRarityKeys,
@@ -11,10 +16,9 @@ import {
   allDiscSlotKeys,
   allDiscSubStatKeys,
   allLocationKeys,
-  DiscSlotKey,
 } from '@genshin-optimizer/zzz/consts'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { DiscFilterOption } from '@genshin-optimizer/zzz/util'
+import type { DiscFilterOption } from '@genshin-optimizer/zzz/util'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import PersonSearchIcon from '@mui/icons-material/PersonSearch'
 import {
@@ -27,8 +31,9 @@ import {
   ToggleButton,
 } from '@mui/material'
 import Stack from '@mui/system/Stack'
-import { useMemo } from 'react'
+import { Suspense, useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+import { LocationFilterMultiAutocomplete } from '../Character/LocationFilterMultiAutocomplete'
 import { DiscSlotToggle } from '../toggles'
 import { DiscLevelSlider } from './DiscLevelSlider'
 import { DiscMainStatMultiAutocomplete } from './DiscMainStatMultiAutocomplete'
@@ -149,7 +154,13 @@ export function DiscFilterDisplay({
         }
       })
     )
-  }, [database.discs.entries, filterOption.slotKeys, filteredIdMap])
+  }, [
+    database.discs.entries,
+    disableSlotFilter,
+    excludedIds,
+    filterOption.slotKeys,
+    filteredIdMap,
+  ])
   return (
     <Box>
       <Grid container spacing={1}>
@@ -328,7 +339,7 @@ export function DiscFilterDisplay({
             </Stack>
             <Stack spacing={1.5} pt={1.5}>
               {/* Filter characters */}
-              {/* <Suspense fallback={null}>
+              <Suspense fallback={null}>
                 <BootstrapTooltip
                   title={showEquipped ? t('locationsTooltip') : ''}
                   placement="top"
@@ -342,7 +353,7 @@ export function DiscFilterDisplay({
                     />
                   </span>
                 </BootstrapTooltip>
-              </Suspense> */}
+              </Suspense>
             </Stack>
           </Box>
           {/* Role Value */}

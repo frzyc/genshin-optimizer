@@ -20,10 +20,7 @@ export function DiscSetMultiAutocomplete({
 }) {
   const { t } = useTranslation(['disc', 'discNames_gen'])
 
-  const toImg = useCallback(
-    (key: DiscSetKey) => <ImgIcon src={''} size={3} />,
-    []
-  )
+  const toImg = useCallback(() => <ImgIcon src={''} size={3} />, [])
   const toExLabel = useCallback(
     (key: DiscSetKey) => <strong>{totals[key]}</strong>,
     [totals]

@@ -3,12 +3,12 @@ import {
   useDatabaseContext,
   useDisplayDisc,
 } from '@genshin-optimizer/zzz/db-ui'
-import { DiscFilterDisplay } from '@genshin-optimizer/zzz/ui'
-import { DiscFilterOption } from '@genshin-optimizer/zzz/util'
+import type { DiscFilterOption } from '@genshin-optimizer/zzz/util'
 import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material'
 import { t } from 'i18next'
 import { Suspense, useCallback } from 'react'
 import { Trans } from 'react-i18next'
+import { DiscFilterDisplay } from './DiscFilterDisplay'
 
 export default function DiscFilter({
   numShowing,

@@ -30,10 +30,7 @@ export function SubstatMultiAutocomplete<
       })),
     [allSubstatKeys]
   )
-  const toImg = useCallback(
-    (key: SubstatKeyParam) => <ImgIcon src={''} size={3} />,
-    []
-  )
+  const toImg = useCallback(() => <ImgIcon src={''} size={3} />, [])
   const toExLabel = useCallback(
     (key: SubstatKeyParam) => <strong>{totals[key]}</strong>,
     [totals]

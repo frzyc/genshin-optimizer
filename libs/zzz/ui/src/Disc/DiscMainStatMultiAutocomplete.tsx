@@ -27,10 +27,7 @@ export function DiscMainStatMultiAutocomplete({
     []
   )
 
-  const toImg = useCallback(
-    (key: DiscMainStatKey) => <ImgIcon src={''} size={3} />,
-    []
-  )
+  const toImg = useCallback(() => <ImgIcon src={''} size={3} />, [])
   const toExLabel = useCallback(
     (key: DiscMainStatKey) => <strong>{totals[key]}</strong>,
     [totals]
