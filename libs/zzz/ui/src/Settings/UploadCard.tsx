@@ -5,7 +5,7 @@ import type {
   ImportResult,
   ImportResultCounter,
 } from '@genshin-optimizer/zzz/db'
-import { ZzzDatabase } from '@genshin-optimizer/zzz/db'
+import { DDSToZOD, ZzzDatabase } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { CheckBox, CheckBoxOutlineBlank, FileOpen } from '@mui/icons-material'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
@@ -54,6 +54,15 @@ export function UploadCard({
       } catch (e) {
         setErrorMsg('uploadCard.error.jsonParse')
         return undefined
+      }
+      if (!parsed.format && Array.isArray(parsed)) {
+        // assume the format since it has no identifier
+        try {
+          parsed = DDSToZOD(parsed)
+        } catch (e) {
+          setErrorMsg('uploadCard.error.jsonParse')
+          return undefined
+        }
       }
       // Figure out the file format
       if (parsed.format === 'ZOD') {

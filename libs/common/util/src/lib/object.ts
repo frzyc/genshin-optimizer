@@ -240,3 +240,10 @@ export function shallowCompareObj<T extends Record<string, any>>(
 
   return true
 }
+
+export function objFindValue<K extends string, V extends string>(
+  obj: Record<K, V>,
+  value: V
+): K | undefined {
+  return Object.keys(obj).find((k) => obj[k as K] === value) as K | undefined
+}
