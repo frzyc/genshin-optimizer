@@ -3,14 +3,22 @@ import {
   SolidToggleButtonGroup,
   theme,
 } from '@genshin-optimizer/common/ui'
-import { bulkCatTotal } from '@genshin-optimizer/common/util'
+import {
+  bulkCatTotal,
+  handleMultiSelect,
+  objKeyMap,
+} from '@genshin-optimizer/common/util'
 import {
   allDiscMainStatKeys,
   allDiscRarityKeys,
   allDiscSetKeys,
+  allDiscSlotKeys,
   allDiscSubStatKeys,
+  allLocationKeys,
+  DiscSlotKey,
 } from '@genshin-optimizer/zzz/consts'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
+import { DiscFilterOption } from '@genshin-optimizer/zzz/util'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import PersonSearchIcon from '@mui/icons-material/PersonSearch'
 import {
@@ -32,22 +40,106 @@ import { DiscMainStatMultiAutocomplete } from './DiscMainStatMultiAutocomplete'
 import { DiscSetMultiAutocomplete } from './DiscSetMultiAutocomplete'
 import { SubstatMultiAutocomplete } from './SubstatMultiAutocomplete'
 
-export function DiscFilterDisplay() {
-  const { t } = useTranslation(['artifact', 'ui'])
+const lockedValues = ['locked', 'unlocked'] as const
+const rarityHandler = handleMultiSelect([...allDiscRarityKeys])
+const lineHandler = handleMultiSelect([1, 2, 3, 4])
+const lockedHandler = handleMultiSelect([...lockedValues])
+interface DiscFilterDisplayProps {
+  filterOption: DiscFilterOption
+  filterOptionDispatch: (option: Partial<DiscFilterOption>) => void
+  filteredIds: string[]
+}
+export function DiscFilterDisplay({
+  filterOption,
+  filterOptionDispatch,
+  filteredIds,
+}: DiscFilterDisplayProps) {
+  const { t } = useTranslation(['disc', 'ui'])
+  const filteredIdMap = useMemo(
+    () => objKeyMap(filteredIds, (_) => true),
+    [filteredIds]
+  )
+  const {
+    discSetKeys = [],
+    mainStatKeys = [],
+    rarity = [],
+    slotKeys = [],
+    levelLow = 0,
+    levelHigh = 15,
+    substats = [],
+    locations,
+    showEquipped,
+    showInventory,
+    locked = [...lockedValues],
+    rvLow = 0,
+    rvHigh = 900,
+    useMaxRV = false,
+    lines = [],
+  } = filterOption
+
   const database = useDatabaseContext().database
-  const { setTotal, mainStatTotal, subStatTotal } = useMemo(() => {
+  const {
+    rarityTotal,
+    slotTotal,
+    lockedTotal,
+    linesTotal,
+    equippedTotal,
+    setTotal,
+    mainStatTotal,
+    subStatTotal,
+    locationTotal,
+  } = useMemo(() => {
     const catKeys = {
+      rarityTotal: allDiscRarityKeys,
+      slotTotal: allDiscSlotKeys,
+      lockedTotal: ['locked', 'unlocked'],
+      linesTotal: [0, 1, 2, 3, 4],
+      equippedTotal: ['equipped', 'unequipped'],
       setTotal: allDiscSetKeys,
       mainStatTotal: allDiscMainStatKeys,
       subStatTotal: allDiscSubStatKeys,
+      locationTotal: [...allLocationKeys, ''],
+      excludedTotal: ['excluded', 'included'],
     } as const
     return bulkCatTotal(catKeys, (ctMap) =>
-      database.discs.entries.forEach(([, disc]) => {
-        const { setKey } = disc
-        ctMap['setTotal'][setKey].current++
+      database.discs.entries.forEach(([id, disc]) => {
+        const { rarity, slotKey, location, setKey, mainStatKey, substats } =
+          disc
+        const lock = disc.lock ? 'locked' : 'unlocked'
+        const lns = disc.substats.filter((s) => s.upgrades).length
+        const equipped = location ? 'equipped' : 'unequipped'
+        // The slot filter is disabled during artifact swapping, in which case our artifact total displayed by
+        // the filter should reflect only the slot being swapped.
+        if (disc.slotKey === filterOption.slotKeys[0]) {
+          ctMap['rarityTotal'][rarity].total++
+          ctMap['slotTotal'][slotKey].total++
+          ctMap['lockedTotal'][lock].total++
+          ctMap['linesTotal'][lns].total++
+          ctMap['equippedTotal'][equipped].total++
+          ctMap['setTotal'][setKey].total++
+          ctMap['mainStatTotal'][mainStatKey].total++
+          substats.forEach((sub) => {
+            const subKey = sub.key
+            if (!subKey) return
+            ctMap['subStatTotal'][subKey].total++
+            if (filteredIdMap[id]) ctMap['subStatTotal'][subKey].current++
+          })
+          ctMap['locationTotal'][location].total++
+        }
+
+        if (filteredIdMap[id]) {
+          ctMap['rarityTotal'][rarity].current++
+          ctMap['slotTotal'][slotKey].current++
+          ctMap['lockedTotal'][lock].current++
+          ctMap['linesTotal'][lns].current++
+          ctMap['equippedTotal'][equipped].current++
+          ctMap['setTotal'][setKey].current++
+          ctMap['mainStatTotal'][mainStatKey].current++
+          ctMap['locationTotal'][location].current++
+        }
       })
     )
-  }, [database])
+  }, [database.discs.entries, filterOption.slotKeys, filteredIdMap])
   return (
     <Box>
       <Grid container spacing={1}>
@@ -57,81 +149,87 @@ export function DiscFilterDisplay() {
           <Trans t={t} i18nKey="subheadings.general" />
           <Stack spacing={1}>
             <Divider sx={{ bgcolor: theme.palette.contentNormal.light }} />
-            {/* Artiface level filter */}
+            {/* Disc level filter */}
             <Card>
               <DiscLevelSlider
-                levelLow={0}
-                levelHigh={0}
-                setLow={function (low: number): void {
-                  throw new Error('Function not implemented.')
-                }}
-                setHigh={function (high: number): void {
-                  throw new Error('Function not implemented.')
-                }}
-                setBoth={function (low: number, high: number): void {
-                  throw new Error('Function not implemented.')
-                }}
+                levelLow={levelLow}
+                levelHigh={levelHigh}
+                setLow={(levelLow) => filterOptionDispatch({ levelLow })}
+                setHigh={(levelHigh) => filterOptionDispatch({ levelHigh })}
+                setBoth={(levelLow, levelHigh) =>
+                  filterOptionDispatch({ levelLow, levelHigh })
+                }
               ></DiscLevelSlider>
             </Card>
             {/* Disc rarity filter */}
-            <SolidToggleButtonGroup fullWidth value={'S'} size="small">
-              {allDiscRarityKeys.map((rarity) => (
+            <SolidToggleButtonGroup fullWidth value={rarity} size="small">
+              {allDiscRarityKeys.map((rarityKey) => (
                 <ToggleButton
-                  key={rarity}
+                  key={rarityKey}
                   sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}
-                  value={rarity}
+                  value={rarityKey}
+                  onClick={() =>
+                    filterOptionDispatch({
+                      rarity: rarityHandler(rarity, rarityKey),
+                    })
+                  }
                 >
-                  <Chip label={rarity} size="small" />
+                  <Chip label={rarityKey} size="small" />
                 </ToggleButton>
               ))}
             </SolidToggleButtonGroup>
             {/* Number of Sub stats filter */}
-            <SolidToggleButtonGroup fullWidth value={1} size="small">
+            <SolidToggleButtonGroup fullWidth value={lines} size="small">
               {[1, 2, 3, 4].map((line) => (
                 <ToggleButton
                   key={line}
                   sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}
                   value={line}
+                  onClick={() =>
+                    filterOptionDispatch({
+                      lines: lineHandler(lines, line) as Array<1 | 2 | 3 | 4>,
+                    })
+                  }
                 >
-                  <Box whiteSpace="nowrap">{t('sub', { count: line })}</Box>
-                  <Chip label={'2'} size="small" />
+                  <Box whiteSpace="nowrap">
+                    {t('sub-needs translate', { count: line })}
+                  </Box>
+                  <Chip label={linesTotal[line]} size="small" />
                 </ToggleButton>
               ))}
             </SolidToggleButtonGroup>
             {/* Disc Slot */}
             <DiscSlotToggle
               disabled={false}
-              onChange={(slotKeys: any) => {
-                return slotKeys
-              }}
-              value={[]}
-              totals={null}
+              onChange={(slotKeys: DiscSlotKey[]) =>
+                filterOptionDispatch({ slotKeys })
+              }
+              value={slotKeys}
+              totals={slotTotal}
             />
           </Stack>
           <Stack spacing={1.5} pt={1.5}>
             {/* Disc set dropdown */}
             <DiscSetMultiAutocomplete
               totals={setTotal}
-              discSetKeys={[]}
-              setArtSetKeys={(artSetKeys) => {
-                return artSetKeys
-              }}
+              discSetKeys={discSetKeys}
+              setDiscSetKeys={(discSetKeys) =>
+                filterOptionDispatch({ discSetKeys })
+              }
             />
             {/* Main stat dropdown */}
             <DiscMainStatMultiAutocomplete
               totals={mainStatTotal}
-              mainStatKeys={[]}
-              setMainStatKeys={(mainStatKeys) => {
-                return mainStatKeys
-              }}
+              mainStatKeys={mainStatKeys}
+              setMainStatKeys={(mainStatKeys) =>
+                filterOptionDispatch({ mainStatKeys })
+              }
             />
             {/* Sub stat dropdown */}
             <SubstatMultiAutocomplete
               totals={subStatTotal}
-              substatKeys={[]}
-              setSubstatKeys={(substats) => {
-                return substats
-              }}
+              substatKeys={substats}
+              setSubstatKeys={(substats) => filterOptionDispatch({ substats })}
               allSubstatKeys={[...allDiscSubStatKeys]}
             />
           </Stack>
@@ -144,32 +242,71 @@ export function DiscFilterDisplay() {
             <Stack spacing={1}>
               <Divider sx={{ bgcolor: theme.palette.contentNormal.light }} />
               {/* exclusion + locked */}
-
+              <SolidToggleButtonGroup fullWidth value={locked} size="small">
+                {lockedValues.map((v, i) => (
+                  <ToggleButton
+                    key={v}
+                    value={v}
+                    sx={{ display: 'flex', gap: 1 }}
+                    onClick={() =>
+                      filterOptionDispatch({ locked: lockedHandler(locked, v) })
+                    }
+                  >
+                    {/* {i ? <LockOpenIcon /> : <LockIcon />} */}
+                    <Trans i18nKey={`ui:${v}`} t={t} />
+                    <Chip
+                      label={lockedTotal[i ? 'unlocked' : 'locked']}
+                      size="small"
+                    />
+                  </ToggleButton>
+                ))}
+              </SolidToggleButtonGroup>
               {/* Excluded from optimization */}
 
               {/* All inventory toggle */}
-              <Button startIcon={<BusinessCenterIcon />} color={'success'}>
-                {t('artInInv')}{' '}
-                <Chip sx={{ ml: 1 }} label={'unequipped'} size="small" />
+              <Button
+                startIcon={<BusinessCenterIcon />}
+                color={showInventory ? 'success' : 'secondary'}
+                onClick={() =>
+                  filterOptionDispatch({ showInventory: !showInventory })
+                }
+              >
+                {t('discInInv')}{' '}
+                <Chip
+                  sx={{ ml: 1 }}
+                  label={equippedTotal['unequipped']}
+                  size="small"
+                />
               </Button>
               {/* All equipped toggle */}
-              <Button startIcon={<PersonSearchIcon />} color={'success'}>
-                {t('equippedArt')}{' '}
-                <Chip sx={{ ml: 1 }} label={'equipped'} size="small" />
+              <Button
+                startIcon={<PersonSearchIcon />}
+                color={showEquipped ? 'success' : 'secondary'}
+                onClick={() =>
+                  filterOptionDispatch({ showEquipped: !showEquipped })
+                }
+              >
+                {t('equippedDisc')}{' '}
+                <Chip
+                  sx={{ ml: 1 }}
+                  label={equippedTotal['equipped']}
+                  size="small"
+                />
               </Button>
             </Stack>
             <Stack spacing={1.5} pt={1.5}>
               {/* Filter characters */}
               <Suspense fallback={null}>
-                <BootstrapTooltip title={t('locationsTooltip')} placement="top">
+                <BootstrapTooltip
+                  title={showEquipped ? t('locationsTooltip') : ''}
+                  placement="top"
+                >
                   <span>
                     <LocationFilterMultiAutocomplete
-                      totals={[1]}
-                      locations={[]}
-                      setLocations={(locations) => {
-                        return locations
-                      }}
-                      disabled={true}
+                      totals={locationTotal}
+                      locations={showEquipped ? [] : locations}
+                      setLocations={(locations) => locations}
+                      disabled={showEquipped}
                     />
                   </span>
                 </BootstrapTooltip>
@@ -177,16 +314,6 @@ export function DiscFilterDisplay() {
             </Stack>
           </Box>
           {/* Role Value */}
-          <Box>
-            <Trans t={t} i18nKey="subheadings.rollvalue" />
-            <Stack spacing={1}>
-              <Divider sx={{ bgcolor: theme.palette.contentNormal.light }} />
-              {/* RV slide */}
-              RVSlide
-              {/* RV filter */}
-              SubstatToggle
-            </Stack>
-          </Box>
         </Grid>
       </Grid>
     </Box>

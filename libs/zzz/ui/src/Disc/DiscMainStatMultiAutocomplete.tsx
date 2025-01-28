@@ -25,7 +25,6 @@ export function DiscMainStatMultiAutocomplete({
     []
   )
 
-  console.log(options)
   const toImg = useCallback(
     (key: DiscMainStatKey) => <ImgIcon src={''} size={3} />,
     []

@@ -2,7 +2,7 @@ import type { DBStorage } from '@genshin-optimizer/common/database'
 import { Database, SandboxStorage } from '@genshin-optimizer/common/database'
 import type { IZenlessObjectDescription, IZZZDatabase } from '../Interfaces'
 import { zzzSource } from '../Interfaces'
-import { DBMetaEntry, DisplayRelicEntry } from './DataEntries/'
+import { DBMetaEntry, DisplayDiscEntry } from './DataEntries/'
 import { DiscDataManager } from './DataManagers/'
 import { CharacterDataManager } from './DataManagers/CharacterDataManager'
 import type { ImportResult } from './exim'
@@ -12,7 +12,7 @@ export class ZzzDatabase extends Database {
   discs: DiscDataManager
   chars: CharacterDataManager
   dbMeta: DBMetaEntry
-  displayRelic: DisplayRelicEntry
+  displayDisc: DisplayDiscEntry
   dbIndex: 1 | 2 | 3 | 4
   dbVer: number
 
@@ -33,9 +33,12 @@ export class ZzzDatabase extends Database {
 
     // Handle DataEntries
     this.dbMeta = new DBMetaEntry(this)
-    this.displayRelic = new DisplayRelicEntry(this)
+    this.displayDisc = new DisplayDiscEntry(this)
 
     this.discs.followAny(() => {
+      this.dbMeta.set({ lastEdit: Date.now() })
+    })
+    this.displayDisc.follow(() => {
       this.dbMeta.set({ lastEdit: Date.now() })
     })
   }
@@ -44,7 +47,7 @@ export class ZzzDatabase extends Database {
     return [this.discs, this.chars] as const
   }
   get dataEntries() {
-    return [this.dbMeta, this.displayRelic] as const
+    return [this.dbMeta, this.displayDisc] as const
   }
 
   clear() {

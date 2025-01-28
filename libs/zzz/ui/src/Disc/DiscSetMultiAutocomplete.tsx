@@ -10,12 +10,12 @@ import { useTranslation } from 'react-i18next'
 export function DiscSetMultiAutocomplete({
   allowRarities = [...allDiscRarityKeys],
   discSetKeys,
-  setArtSetKeys,
+  setDiscSetKeys,
   totals,
 }: {
   allowRarities?: DiscRarityKey[]
   discSetKeys: DiscSetKey[]
-  setArtSetKeys: (keys: DiscSetKey[]) => void
+  setDiscSetKeys: (keys: DiscSetKey[]) => void
   totals: Record<DiscSetKey, string>
 }) {
   const { t } = useTranslation(['artifact', 'artifactNames_gen'])
@@ -56,7 +56,7 @@ export function DiscSetMultiAutocomplete({
       toImg={toImg}
       toExLabel={toExLabel}
       toExItemLabel={toExItemLabel}
-      onChange={setArtSetKeys}
+      onChange={setDiscSetKeys}
       groupBy={(option) => option.grouper?.toString() ?? ''}
       renderGroup={(params: AutocompleteRenderGroupParams) =>
         params.group && (
