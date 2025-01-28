@@ -57,7 +57,7 @@ export function DDSToZOD(data: DDS[]): IZenlessObjectDescription {
             const isSubPercent =
               typeof subVal === 'string' && subVal.endsWith('%')
             const [keyStr, value] = keyUp.split('+')
-            const upgrades = value ? parseInt(value) : 1
+            const upgrades = value ? parseInt(value) + 1 : 1
             const key = allDiscSubStatKeys.find(
               (k) =>
                 isPercentStat(k) === isSubPercent &&
