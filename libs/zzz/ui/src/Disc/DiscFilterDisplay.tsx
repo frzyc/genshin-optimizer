@@ -42,7 +42,6 @@ const rarityHandler = handleMultiSelect([...allDiscRarityKeys])
 const lineHandler = handleMultiSelect([1, 2, 3, 4])
 const lockedHandler = handleMultiSelect([...lockedValues])
 const excludedHandler = handleMultiSelect([...excludedValues])
-
 interface DiscFilterDisplayProps {
   filterOption: DiscFilterOption
   filterOptionDispatch: (option: Partial<DiscFilterOption>) => void
