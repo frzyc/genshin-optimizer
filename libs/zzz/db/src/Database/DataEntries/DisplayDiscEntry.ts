@@ -1,20 +1,20 @@
 import { clamp, validateArr } from '@genshin-optimizer/common/util'
-import type {
-  LocationKey,
-  RelicMainStatKey,
-  RelicRarityKey,
-  RelicSetKey,
-  RelicSlotKey,
-  RelicSubStatKey,
-} from '@genshin-optimizer/sr/consts'
-import {
-  allLocationKeys,
-  allRelicRarityKeys,
-  allRelicSetKeys,
-  allRelicSlotKeys,
-  allRelicSubStatKeys,
-} from '@genshin-optimizer/sr/consts'
 
+import type {
+  DiscMainStatKey,
+  DiscRarityKey,
+  DiscSetKey,
+  DiscSlotKey,
+  DiscSubStatKey,
+  LocationKey,
+} from '@genshin-optimizer/zzz/consts'
+import {
+  allDiscRarityKeys,
+  allDiscSetKeys,
+  allDiscSlotKeys,
+  allDiscSubStatKeys,
+  allLocationKeys,
+} from '@genshin-optimizer/zzz/consts'
 import { DataEntry } from '../DataEntry'
 import type { ZzzDatabase } from '../Database'
 
@@ -25,16 +25,16 @@ export const discSortKeys = [
   'efficiency',
   'mefficiency',
 ] as const
-export type RelicSortKey = (typeof discSortKeys)[number]
+export type DiscSortKey = (typeof discSortKeys)[number]
 
 export type FilterOption = {
-  discSetKeys: RelicSetKey[]
-  rarity: RelicRarityKey[]
+  discSetKeys: DiscSetKey[]
+  rarity: DiscRarityKey[]
   levelLow: number
   levelHigh: number
-  slotKeys: RelicSlotKey[]
-  mainStatKeys: RelicMainStatKey[]
-  substats: RelicSubStatKey[]
+  slotKeys: DiscSlotKey[]
+  mainStatKeys: DiscMainStatKey[]
+  substats: DiscSubStatKey[]
   locations: LocationKey[]
   showEquipped: boolean
   showInventory: boolean
@@ -45,20 +45,20 @@ export type FilterOption = {
   lines: Array<1 | 2 | 3 | 4>
 }
 
-export type IDisplayRelic = {
+export type IDisplayDisc = {
   filterOption: FilterOption
   ascending: boolean
-  sortType: RelicSortKey
-  effFilter: RelicSubStatKey[]
+  sortType: DiscSortKey
+  effFilter: DiscSubStatKey[]
 }
 
 export function initialFilterOption(): FilterOption {
   return {
     discSetKeys: [],
-    rarity: [...allRelicRarityKeys],
+    rarity: [...allDiscRarityKeys],
     levelLow: 0,
     levelHigh: 15,
-    slotKeys: [...allRelicSlotKeys],
+    slotKeys: [...allDiscSlotKeys],
     mainStatKeys: [],
     substats: [],
     locations: [],
@@ -66,33 +66,33 @@ export function initialFilterOption(): FilterOption {
     showInventory: true,
     locked: ['locked', 'unlocked'],
     rvLow: 0,
-    rvHigh: 900, // TODO: Figure out RVs for SRO
+    rvHigh: 900, // TODO: Figure out RVs for ZZZ
     useMaxRV: false,
     lines: [1, 2, 3, 4],
   }
 }
 
-function initialState(): IDisplayRelic {
+function initialState(): IDisplayDisc {
   return {
     filterOption: initialFilterOption(),
     ascending: false,
     sortType: discSortKeys[0],
-    effFilter: [...allRelicSubStatKeys],
+    effFilter: [...allDiscSubStatKeys],
   }
 }
 
-export class DisplayRelicEntry extends DataEntry<
+export class DisplayDiscEntry extends DataEntry<
   'display_disc',
   'display_disc',
-  IDisplayRelic,
-  IDisplayRelic
+  IDisplayDisc,
+  IDisplayDisc
 > {
   constructor(database: ZzzDatabase) {
     super(database, 'display_disc', initialState, 'display_disc')
   }
-  override validate(obj: unknown): IDisplayRelic | undefined {
+  override validate(obj: unknown): IDisplayDisc | undefined {
     if (typeof obj !== 'object') return undefined
-    let { filterOption, ascending, sortType, effFilter } = obj as IDisplayRelic
+    let { filterOption, ascending, sortType, effFilter } = obj as IDisplayDisc
 
     if (typeof filterOption !== 'object') filterOption = initialFilterOption()
     else {
@@ -113,24 +113,24 @@ export class DisplayRelicEntry extends DataEntry<
         useMaxRV,
         lines,
       } = filterOption
-      discSetKeys = validateArr(discSetKeys, allRelicSetKeys, [])
-      rarity = validateArr(rarity, allRelicRarityKeys)
+      discSetKeys = validateArr(discSetKeys, allDiscSetKeys, [])
+      rarity = validateArr(rarity, allDiscRarityKeys)
 
       if (typeof levelLow !== 'number') levelLow = 0
       else levelLow = clamp(levelLow, 0, 15)
       if (typeof levelHigh !== 'number') levelHigh = 0
       else levelHigh = clamp(levelHigh, 0, 15)
 
-      slotKeys = validateArr(slotKeys, allRelicSlotKeys)
+      slotKeys = validateArr(slotKeys, allDiscSlotKeys)
       mainStatKeys = validateArr(mainStatKeys, mainStatKeys, [])
-      substats = validateArr(substats, allRelicSubStatKeys, [])
+      substats = validateArr(substats, allDiscSubStatKeys, [])
       locations = validateArr(locations, allLocationKeys, [])
       if (typeof showEquipped !== 'boolean') showEquipped = true
       if (typeof showInventory !== 'boolean') showInventory = true
       locked = validateArr(locked, ['locked', 'unlocked'])
 
       if (typeof rvLow !== 'number') rvLow = 0
-      if (typeof rvHigh !== 'number') rvHigh = 900 // TODO: Figure out RVs for SRO
+      if (typeof rvHigh !== 'number') rvHigh = 900 // TODO: Figure out RVs for ZZZ
 
       if (typeof useMaxRV !== 'boolean') useMaxRV = false
 
@@ -158,19 +158,19 @@ export class DisplayRelicEntry extends DataEntry<
     if (typeof ascending !== 'boolean') ascending = false
     if (!discSortKeys.includes(sortType)) sortType = discSortKeys[0]
 
-    effFilter = validateArr(effFilter, allRelicSubStatKeys)
+    effFilter = validateArr(effFilter, allDiscSubStatKeys)
 
     return {
       filterOption,
       ascending,
       sortType,
       effFilter,
-    } as IDisplayRelic
+    } as IDisplayDisc
   }
   override set(
     value:
-      | Partial<IDisplayRelic>
-      | ((v: IDisplayRelic) => Partial<IDisplayRelic> | void)
+      | Partial<IDisplayDisc>
+      | ((v: IDisplayDisc) => Partial<IDisplayDisc> | void)
       | { action: 'reset' }
   ): boolean {
     if ('action' in value) {
