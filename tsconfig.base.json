@@ -170,7 +170,8 @@
       ],
       "@genshin-optimizer/zzz/solver": ["libs/zzz/solver/src/index.ts"],
       "@genshin-optimizer/zzz/stats": ["libs/zzz/stats/src/index.ts"],
-      "@genshin-optimizer/zzz/ui": ["libs/zzz/ui/src/index.tsx"]
+      "@genshin-optimizer/zzz/ui": ["libs/zzz/ui/src/index.tsx"],
+      "@genshin-optimizer/zzz/util": ["libs/zzz/util/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

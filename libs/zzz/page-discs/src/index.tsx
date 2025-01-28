@@ -5,6 +5,7 @@ import { DiscEditor, DiscInventory } from '@genshin-optimizer/zzz/ui'
 import { Box } from '@mui/material'
 
 import { useCallback, useState } from 'react'
+import DiscFilter from './DiscFilter'
 
 export default function PageDiscs() {
   const [disc, setDisc] = useState<Partial<ICachedDisc>>({})
@@ -25,8 +26,16 @@ export default function PageDiscs() {
     [database.discs, onOpen]
   )
 
+  const allDiscs = database.discs.values
+  const allDiscids = allDiscs.map((disc) => disc.id)
+
   return (
     <Box display="flex" flexDirection="column" gap={1} my={1}>
+      <DiscFilter
+        numShowing={allDiscs.length}
+        total={allDiscs.length}
+        discIds={allDiscids}
+      ></DiscFilter>
       <DiscEditor
         disc={disc}
         allowEmpty
