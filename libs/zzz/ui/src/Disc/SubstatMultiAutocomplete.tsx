@@ -1,14 +1,12 @@
 import { GeneralAutocompleteMulti, ImgIcon } from '@genshin-optimizer/common/ui'
-import type {
-  DiscSubStatKey,
-  WengineSubstatKey,
-} from '@genshin-optimizer/zzz/consts'
+import { getUnitStr } from '@genshin-optimizer/common/util'
+import type { DiscSubStatKey } from '@genshin-optimizer/zzz/consts'
 import { Chip } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 export function SubstatMultiAutocomplete<
-  SubstatKeyParam extends DiscSubStatKey | WengineSubstatKey
+  SubstatKeyParam extends DiscSubStatKey
 >({
   substatKeys,
   setSubstatKeys,
@@ -23,11 +21,12 @@ export function SubstatMultiAutocomplete<
   allSubstatKeys: SubstatKeyParam[]
 }) {
   const { t } = useTranslation('disc')
+  //const { t: tk } = useTranslation('statKey_gen') needs translation
   const options = useMemo(
     () =>
       allSubstatKeys.map((key) => ({
         key,
-        label: key,
+        label: `${key}${getUnitStr(key)}`,
       })),
     [allSubstatKeys]
   )

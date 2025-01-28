@@ -18,7 +18,7 @@ export function DiscSetMultiAutocomplete({
   setDiscSetKeys: (keys: DiscSetKey[]) => void
   totals: Record<DiscSetKey, string>
 }) {
-  const { t } = useTranslation(['artifact', 'artifactNames_gen'])
+  const { t } = useTranslation(['disc', 'discNames_gen'])
 
   const toImg = useCallback(
     (key: DiscSetKey) => <ImgIcon src={''} size={3} />,
@@ -40,7 +40,7 @@ export function DiscSetMultiAutocomplete({
           return sets.map((set) => ({
             key: set,
             grouper: rarity as DiscRarityKey,
-            label: set,
+            label: set, //t(`discNames_gen:${set}`)
           }))
         })
         .filter((group) => allowRarities.includes(group.grouper))
@@ -52,7 +52,7 @@ export function DiscSetMultiAutocomplete({
     <GeneralAutocompleteMulti
       options={allDiscSetsAndRarities}
       valueKeys={discSetKeys}
-      label={t('artifact:autocompleteLabels.sets')}
+      label={t('disc:autocompleteLabels.sets')}
       toImg={toImg}
       toExLabel={toExLabel}
       toExItemLabel={toExItemLabel}

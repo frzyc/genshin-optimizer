@@ -1,4 +1,5 @@
 import { GeneralAutocompleteMulti, ImgIcon } from '@genshin-optimizer/common/ui'
+import { getUnitStr } from '@genshin-optimizer/common/util'
 import type { DiscMainStatKey } from '@genshin-optimizer/zzz/consts'
 import { allDiscMainStatKeys } from '@genshin-optimizer/zzz/consts'
 import { Chip } from '@mui/material'
@@ -14,12 +15,13 @@ export function DiscMainStatMultiAutocomplete({
   setMainStatKeys: (keys: DiscMainStatKey[]) => void
   totals: any
 }) {
-  const { t } = useTranslation('artifact')
+  const { t } = useTranslation('disc')
+  //const { t: tk } = useTranslation('statKey_gen') needs translation to work
   const options = useMemo(
     () =>
       allDiscMainStatKeys.map((key) => ({
         key,
-        label: key,
+        label: `${key}${getUnitStr(key)}`,
         variant: 'fix variant',
       })),
     []
