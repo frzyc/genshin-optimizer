@@ -30,6 +30,8 @@ export type CharacterData = {
   slot4: DiscMainStatKey[]
   slot5: DiscMainStatKey[]
   slot6: DiscMainStatKey[]
+  levelLow: number
+  levelHigh: number
 }
 
 function initialCharacterData(key: CharacterKey): CharacterData {
@@ -49,6 +51,8 @@ function initialCharacterData(key: CharacterKey): CharacterData {
     slot4: [...discSlotToMainStatKeys['4']],
     slot5: [...discSlotToMainStatKeys['5']],
     slot6: [...discSlotToMainStatKeys['6']],
+    levelLow: 15,
+    levelHigh: 15,
   }
 }
 export class CharacterDataManager extends DataManager<
@@ -75,6 +79,8 @@ export class CharacterDataManager extends DataManager<
       slot4,
       slot5,
       slot6,
+      levelLow,
+      levelHigh,
     } = obj as CharacterData
 
     if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
@@ -110,6 +116,12 @@ export class CharacterDataManager extends DataManager<
     slot4 = validateArr(slot4, discSlotToMainStatKeys['4'])
     slot5 = validateArr(slot5, discSlotToMainStatKeys['5'])
     slot6 = validateArr(slot6, discSlotToMainStatKeys['6'])
+
+    if (typeof levelLow !== 'number') levelLow = 15
+    levelLow = clamp(levelLow, 0, 15)
+
+    if (typeof levelHigh !== 'number') levelHigh = 15
+    levelHigh = clamp(levelHigh, 0, 15)
     const char: CharacterData = {
       key: characterKey,
       level,
@@ -123,6 +135,8 @@ export class CharacterDataManager extends DataManager<
       slot4,
       slot5,
       slot6,
+      levelLow,
+      levelHigh,
     }
     return char
   }

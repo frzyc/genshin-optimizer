@@ -36,6 +36,7 @@ import {
 import { Stack } from '@mui/system'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { LevelFilter } from './LevelFilter'
 import { StatFilterCard } from './StatFilterCard'
 import { WorkerSelector } from './WorkerSelector'
 
@@ -79,6 +80,11 @@ export default function OptimizeWrapper({
       database.discs.values.reduce(
         (discsBySlot, disc) => {
           if (!character) return discsBySlot
+          if (
+            disc.level < character.levelLow ||
+            disc.level > character.levelHigh
+          )
+            return discsBySlot
           if (
             disc.location &&
             !character.useEquipped &&
@@ -201,6 +207,7 @@ export default function OptimizeWrapper({
       <Divider />
       <CardContent>
         <Stack spacing={1}>
+          <LevelFilter locationKey={location} />
           <CardThemed bgt="light">
             <CardContent>
               <Stack spacing={1}>
