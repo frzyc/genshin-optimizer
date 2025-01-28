@@ -16,6 +16,6 @@ jobs:
     with:
       frontend_name: 'sr-frontend'
       deployment_name: 'beta'
-      repo_name: ${{ vars.PR_REPO }}
+      repo_var_name: 'PR_REPO'
       repo_deploy_secret_name: 'PR_REPO_SSH_KEY'
       show_dev_components: true
