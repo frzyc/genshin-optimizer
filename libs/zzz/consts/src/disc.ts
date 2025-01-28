@@ -3,6 +3,7 @@ import type { StatKey } from './common'
 export const allDiscSlotKeys = ['1', '2', '3', '4', '5', '6'] as const
 export type DiscSlotKey = (typeof allDiscSlotKeys)[number]
 
+// Copied from libs\zzz\dm\src\dm\disc\discKeys.json
 export const allDiscSetKeys = [
   'AstralVoice',
   'BranchBladeSong',
@@ -175,4 +176,24 @@ export const disc2pEffect: Record<
   SwingJazz: { enerRegen_: 0.2 },
   ThunderMetal: { electric_dmg_: 0.1 },
   WoodpeckerElectro: { crit_: 0.08 },
+}
+
+// Copied from libs\zzz\dm\src\dm\disc\discNames.json
+export const discSetNames: Record<DiscSetKey, string> = {
+  WoodpeckerElectro: 'Woodpecker Electro',
+  PufferElectro: 'Puffer Electro',
+  ShockstarDisco: 'Shockstar Disco',
+  FreedomBlues: 'Freedom Blues',
+  HormonePunk: 'Hormone Punk',
+  SoulRock: 'Soul Rock',
+  SwingJazz: 'Swing Jazz',
+  ChaosJazz: 'Chaos Jazz',
+  ProtoPunk: 'Proto Punk',
+  InfernoMetal: 'Inferno Metal',
+  ChaoticMetal: 'Chaotic Metal',
+  ThunderMetal: 'Thunder Metal',
+  PolarMetal: 'Polar Metal',
+  FangedMetal: 'Fanged Metal',
+  BranchBladeSong: 'Branch & Blade Song',
+  AstralVoice: 'Astral Voice',
 }
