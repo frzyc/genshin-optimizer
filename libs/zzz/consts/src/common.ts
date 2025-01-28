@@ -5,7 +5,7 @@ export const otherStatKeys = [
   // Used by calc, likely will be bundled into pando
   'charLvl',
   'enemyDef', // Enemy DEF
-  'enemyDefRed', // Enemy DEF shred
+  'enemyDefRed_', // Enemy DEF shred
   'enemyRes_', // Enemy Resistance
   'enemyResRed_', // Enemy Resistance Reduction
   'enemyResIgn_', // Enemy Resistance Ignore
@@ -80,7 +80,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   dmg_: 'DMG Bonus',
   charLvl: 'Character Level',
   enemyDef: 'Enemy DEF',
-  enemyDefRed: 'Enemy DEF shred',
+  enemyDefRed_: 'Enemy DEF shred',
   enemyRes_: 'Enemy Resistance',
   enemyResRed_: 'Enemy Resistance Reduction',
   enemyResIgn_: 'Enemy Resistance Ignore',

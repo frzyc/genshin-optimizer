@@ -235,7 +235,10 @@ function MobileHeader({
               component={RouterLink}
               to={'/'}
               onClick={handleDrawerToggle}
-              label={<Typography>{t('pageTitle')}</Typography>}
+              label={
+                'Zenless Optimizer'
+                // <Typography>{t('pageTitle')}</Typography>
+              }
             />
             {mobileContent.map(({ i18Key, value, to, icon, textSuffix }) => (
               <Tab

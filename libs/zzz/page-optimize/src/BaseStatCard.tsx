@@ -6,7 +6,7 @@ import {
   statKeyTextMap,
   unCondKeys,
 } from '@genshin-optimizer/zzz/consts'
-import type { Stats } from '@genshin-optimizer/zzz/solver'
+import type { Stats } from '@genshin-optimizer/zzz/db'
 import { Box, CardContent, Typography } from '@mui/material'
 const baseKeys = ['hp_base', 'atk_base', 'def_base'] as const
 const statKeys: StatKey[] = [
@@ -28,7 +28,7 @@ const statKeys: StatKey[] = [
 ] as const
 const enemyKeys: StatKey[] = [
   'enemyDef',
-  'enemyDefRed',
+  'enemyDefRed_',
   'enemyRes_',
   'enemyResRed_',
   'enemyResIgn_',

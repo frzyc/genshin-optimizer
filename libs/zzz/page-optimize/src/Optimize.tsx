@@ -16,13 +16,9 @@ import {
   discSlotToMainStatKeys,
   type DiscSlotKey,
 } from '@genshin-optimizer/zzz/consts'
-import type { Constraints, ICachedDisc } from '@genshin-optimizer/zzz/db'
+import type { Constraints, ICachedDisc, Stats } from '@genshin-optimizer/zzz/db'
 import { useCharacter, useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import type {
-  BuildResult,
-  ProgressResult,
-  Stats,
-} from '@genshin-optimizer/zzz/solver'
+import type { BuildResult, ProgressResult } from '@genshin-optimizer/zzz/solver'
 import { MAX_BUILDS, Solver } from '@genshin-optimizer/zzz/solver'
 import { StatDisplay } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'

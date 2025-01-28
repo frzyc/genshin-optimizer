@@ -12,6 +12,7 @@ import {
   thresholdFilter,
   urlToImageData,
 } from '@genshin-optimizer/common/img-util'
+import { levenshteinDistance } from '@genshin-optimizer/common/util'
 import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import { discSlotToMainStatKeys } from '@genshin-optimizer/zzz/consts'
 import type { IDisc } from '@genshin-optimizer/zzz/db'
@@ -75,15 +76,14 @@ export async function processEntry(
   }
 
   const whiteTexts = (await textsFromImage(bwHeader)).map((t) => t.trim())
-
-  const mainStatTextIndex = whiteTexts.findIndex((t) =>
-    t.toLowerCase().includes('main stat')
+  const mainStatTextIndex = whiteTexts.findIndex(
+    (t) => levenshteinDistance(t.toLowerCase(), 'main stat') < 2
   )
-  const substatTextIndex = whiteTexts.findIndex((t) =>
-    t.toLowerCase().includes('sub-stats')
+  const substatTextIndex = whiteTexts.findIndex(
+    (t) => levenshteinDistance(t.toLowerCase(), 'sub-stats') < 2
   )
-  let setEffectTextIndex = whiteTexts.findIndex((t) =>
-    t.toLowerCase().includes('set effect')
+  let setEffectTextIndex = whiteTexts.findIndex(
+    (t) => levenshteinDistance(t.toLowerCase(), 'set effect') < 2
   )
   if (setEffectTextIndex === -1) setEffectTextIndex = whiteTexts.length - 1
 
@@ -176,11 +176,24 @@ function cropDiscCard(
     darkerColor(blackColor),
     lighterColor(blackColor)
   )
+  let skipCrop = imageData.width < 500
+  let a = 0
+  let b = imageData.width
+  if (!skipCrop) {
+    // look for the black line outside the card outline. This will likely be only a pixel wide
+    // eslint-disable-next-line @typescript-eslint/no-extra-semi
+    ;[a, b] = findHistogramRange(histogram, 0.9, 1)
+  }
 
-  // look for the black line outside the card outline. This will likely be only a pixel wide
-  const [a, b] = findHistogramRange(histogram, 0.9, 1)
+  if (b - a < 100) {
+    skipCrop = true
+    a = 0
+    b = imageData.width
+  }
 
-  const cropped = crop(imageDataToCanvas(imageData), { x1: a, x2: b })
+  const cropped = skipCrop
+    ? imageData
+    : crop(imageDataToCanvas(imageData), { x1: a, x2: b })
 
   if (debugImgs) {
     const canvas = imageDataToCanvas(imageData)
@@ -202,9 +215,17 @@ function cropDiscCard(
     lighterColor(blackColor),
     false
   )
+  let bot = 0
+  let top = cropped.height
   // look for the black line outside the card outline. This will likely be only a pixel wide
-  const [bot, top] = findHistogramRange(horihistogram, 0.9, 1)
-  const cropped2 = crop(imageDataToCanvas(cropped), { y1: bot, y2: top })
+  if (!skipCrop) {
+    // eslint-disable-next-line @typescript-eslint/no-extra-semi
+    ;[bot, top] = findHistogramRange(horihistogram, 0.9, 1)
+  }
+
+  const cropped2 = skipCrop
+    ? cropped
+    : crop(imageDataToCanvas(cropped), { y1: bot, y2: top })
 
   if (debugImgs) {
     const canvas = imageDataToCanvas(cropped)
