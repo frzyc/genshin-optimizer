@@ -196,7 +196,7 @@ export function GeneralAutocompleteMulti<T extends string>({
         />
       )}
       renderOption={(props, option) => (
-        <MenuItem value={option.key} {...props}>
+        <MenuItem value={option.key} {...props} key={option.key}>
           <ListItemIcon>{toImg(option.key)}</ListItemIcon>
           <ListItemText>
             <Suspense fallback={<Skeleton variant="text" width={100} />}>
