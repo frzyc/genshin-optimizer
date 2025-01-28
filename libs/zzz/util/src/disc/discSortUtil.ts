@@ -78,10 +78,10 @@ export function discFilterConfigs({
     levelLow: (art, filter) => filter <= art.level,
     levelHigh: (art, filter) => filter >= art.level,
     // When RV is set to 0/900, allow all, just incase someone is doing some teehee haha with negative substats or stupid rolls
-    rvLow: (disc, filter) => {
+    rvLow: () => {
       return true
     },
-    rvHigh: (art, filter) => {
+    rvHigh: () => {
       return true
     },
     useMaxRV: () => true,
