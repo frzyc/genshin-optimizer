@@ -65,7 +65,7 @@ function DiscLevelSlider({
   const [sliderLow, setsliderLow] = useState(levelLow)
   const [sliderHigh, setsliderHigh] = useState(levelHigh)
   const setSlider = useCallback(
-    (e: unknown, value: number | number[]) => {
+    (_: unknown, value: number | number[]) => {
       if (typeof value == 'number') throw new TypeError()
       const [l, h] = value
       setsliderLow(l)
@@ -103,7 +103,7 @@ function DiscLevelSlider({
         getAriaLabel={() => 'Arifact Level Range'}
         value={[sliderLow, sliderHigh]}
         onChange={setSlider}
-        onChangeCommitted={(e, value) =>
+        onChangeCommitted={(_, value) =>
           Array.isArray(value) && setBoth(value[0], value[1])
         }
         valueLabelDisplay="auto"
