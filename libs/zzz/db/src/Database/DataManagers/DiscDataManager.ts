@@ -248,9 +248,9 @@ export class DiscDataManager extends DataManager<
         level >= candidate.level &&
         substats.every(
           (substat, i) =>
-            !candidate.substats[i].key || // Candidate doesn't have anything on this slot
-            (substat.key === candidate.substats[i].key && // Or editor simply has better substat
-              substat.upgrades >= candidate.substats[i].upgrades)
+            !candidate.substats[i]?.key || // Candidate doesn't have anything on this slot
+            (substat.key === candidate.substats[i]?.key && // Or editor simply has better substat
+              substat.upgrades >= candidate.substats[i]?.upgrades)
         )
     )
 
