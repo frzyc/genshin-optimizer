@@ -1,8 +1,4 @@
-import {
-  BootstrapTooltip,
-  SolidToggleButtonGroup,
-  theme,
-} from '@genshin-optimizer/common/ui'
+import { SolidToggleButtonGroup, theme } from '@genshin-optimizer/common/ui'
 import {
   bulkCatTotal,
   handleMultiSelect,
@@ -31,9 +27,8 @@ import {
   ToggleButton,
 } from '@mui/material'
 import Stack from '@mui/system/Stack'
-import { Suspense, useMemo } from 'react'
+import { useMemo } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
-import { LocationFilterMultiAutocomplete } from '../Character/LocationFilterMultiAutocomplete'
 import { DiscSlotToggle } from '../toggles'
 import { DiscLevelSlider } from './DiscLevelSlider'
 import { DiscMainStatMultiAutocomplete } from './DiscMainStatMultiAutocomplete'
@@ -41,20 +36,31 @@ import { DiscSetMultiAutocomplete } from './DiscSetMultiAutocomplete'
 import { SubstatMultiAutocomplete } from './SubstatMultiAutocomplete'
 
 const lockedValues = ['locked', 'unlocked'] as const
+const excludedValues = ['excluded', 'included'] as const
+
 const rarityHandler = handleMultiSelect([...allDiscRarityKeys])
 const lineHandler = handleMultiSelect([1, 2, 3, 4])
 const lockedHandler = handleMultiSelect([...lockedValues])
+const excludedHandler = handleMultiSelect([...excludedValues])
+
 interface DiscFilterDisplayProps {
   filterOption: DiscFilterOption
   filterOptionDispatch: (option: Partial<DiscFilterOption>) => void
   filteredIds: string[]
+  disableSlotFilter?: boolean
+  enableExclusionFilter?: boolean
+  excludedIds?: string[]
 }
 export function DiscFilterDisplay({
   filterOption,
   filterOptionDispatch,
   filteredIds,
+  disableSlotFilter = false,
+  enableExclusionFilter = false,
+  excludedIds = [],
 }: DiscFilterDisplayProps) {
   const { t } = useTranslation(['disc', 'ui'])
+
   const filteredIdMap = useMemo(
     () => objKeyMap(filteredIds, (_) => true),
     [filteredIds]
@@ -75,6 +81,7 @@ export function DiscFilterDisplay({
     rvHigh = 900,
     useMaxRV = false,
     lines = [],
+    excluded = [...excludedValues],
   } = filterOption
 
   const database = useDatabaseContext().database
@@ -88,12 +95,13 @@ export function DiscFilterDisplay({
     mainStatTotal,
     subStatTotal,
     locationTotal,
+    excludedTotal,
   } = useMemo(() => {
     const catKeys = {
       rarityTotal: allDiscRarityKeys,
       slotTotal: allDiscSlotKeys,
       lockedTotal: ['locked', 'unlocked'],
-      linesTotal: [0, 1, 2, 3, 4],
+      linesTotal: [1, 2, 3, 4],
       equippedTotal: ['equipped', 'unequipped'],
       setTotal: allDiscSetKeys,
       mainStatTotal: allDiscMainStatKeys,
@@ -108,9 +116,10 @@ export function DiscFilterDisplay({
         const lock = disc.lock ? 'locked' : 'unlocked'
         const lns = disc.substats.filter((s) => s.upgrades).length
         const equipped = location ? 'equipped' : 'unequipped'
+        const excluded = excludedIds.includes(id) ? 'excluded' : 'included'
         // The slot filter is disabled during artifact swapping, in which case our artifact total displayed by
         // the filter should reflect only the slot being swapped.
-        if (disc.slotKey === filterOption.slotKeys[0]) {
+        if (!disableSlotFilter || disc.slotKey === filterOption.slotKeys[0]) {
           ctMap['rarityTotal'][rarity].total++
           ctMap['slotTotal'][slotKey].total++
           ctMap['lockedTotal'][lock].total++
@@ -121,10 +130,11 @@ export function DiscFilterDisplay({
           substats.forEach((sub) => {
             const subKey = sub.key
             if (!subKey) return
-            ctMap['subStatTotal'][subKey].total++
+            ctMap['subStatTotal'][subKey].total++ //Remove if later
             if (filteredIdMap[id]) ctMap['subStatTotal'][subKey].current++
           })
-          ctMap['locationTotal'][location].total++
+          if (location) ctMap['locationTotal'][location].total++
+          ctMap['excludedTotal'][excluded].total++
         }
 
         if (filteredIdMap[id]) {
@@ -135,7 +145,8 @@ export function DiscFilterDisplay({
           ctMap['equippedTotal'][equipped].current++
           ctMap['setTotal'][setKey].current++
           ctMap['mainStatTotal'][mainStatKey].current++
-          ctMap['locationTotal'][location].current++
+          if (location) ctMap['locationTotal'][location].current++ //Remove if later
+          ctMap['excludedTotal'][excluded].current++
         }
       })
     )
@@ -262,7 +273,29 @@ export function DiscFilterDisplay({
                 ))}
               </SolidToggleButtonGroup>
               {/* Excluded from optimization */}
-
+              {enableExclusionFilter && (
+                <SolidToggleButtonGroup fullWidth value={excluded} size="small">
+                  {excludedValues.map((v, i) => (
+                    <ToggleButton
+                      key={v}
+                      value={v}
+                      sx={{ display: 'flex', gap: 1 }}
+                      onClick={() =>
+                        filterOptionDispatch({
+                          excluded: excludedHandler(excluded, v),
+                        })
+                      }
+                    >
+                      {/* {i ? <OptimizationIcon /> : <ExcludeIcon />} */}
+                      <Trans i18nKey={`ui:${v}`} t={t} />
+                      <Chip
+                        label={excludedTotal[i ? 'included' : 'excluded']}
+                        size="small"
+                      />
+                    </ToggleButton>
+                  ))}
+                </SolidToggleButtonGroup>
+              )}
               {/* All inventory toggle */}
               <Button
                 startIcon={<BusinessCenterIcon />}
@@ -296,7 +329,7 @@ export function DiscFilterDisplay({
             </Stack>
             <Stack spacing={1.5} pt={1.5}>
               {/* Filter characters */}
-              <Suspense fallback={null}>
+              {/* <Suspense fallback={null}>
                 <BootstrapTooltip
                   title={showEquipped ? t('locationsTooltip') : ''}
                   placement="top"
@@ -310,7 +343,7 @@ export function DiscFilterDisplay({
                     />
                   </span>
                 </BootstrapTooltip>
-              </Suspense>
+              </Suspense> */}
             </Stack>
           </Box>
           {/* Role Value */}
