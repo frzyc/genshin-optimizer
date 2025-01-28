@@ -467,6 +467,7 @@ export function DiscEditor({
                               width="100%"
                               maxWidth={350}
                               height="auto"
+                              maxHeight={1500} // so badly cropped images don't overflow
                               alt={
                                 fileName ||
                                 'Screenshot to parse for artifact values'
@@ -527,7 +528,9 @@ export function DiscEditor({
                   <CardThemed bgt="light">
                     <CardContent>
                       {texts.map((text, i) => (
-                        <Typography key={i}>{text}</Typography>
+                        <Typography key={i} color="warning.main">
+                          {text}
+                        </Typography>
                       ))}
                     </CardContent>
                   </CardThemed>

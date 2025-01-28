@@ -95,7 +95,7 @@ function defMulti(s: (k: string) => number) {
   return (
     lvlFactor /
     (Math.max(
-      (s('enemyDef') - s('enemyDefRed')) * (1 - s('pen_')) - s('pen'),
+      s('enemyDef') * (1 - s('enemyDefRed_')) * (1 - s('pen_')) - s('pen'),
       0
     ) +
       lvlFactor)

@@ -91,7 +91,11 @@ export class CharacterDataManager extends DataManager<
     wengineLvl = clamp(wengineLvl, 1, 60)
 
     if (typeof stats !== 'object') stats = {}
-    stats = objFilter(stats, (val) => typeof val === 'number')
+    stats = objFilter(
+      stats,
+      //enemyDefRed was a field used very temporarily
+      (val, k) => typeof val === 'number' && !!val && k !== 'enemyDefRed'
+    )
 
     if (!allFormulaKeys.includes(formulaKey)) formulaKey = allFormulaKeys[0]
 

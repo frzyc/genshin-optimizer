@@ -35,7 +35,7 @@ export function parseSetSlot(texts: string[]) {
   let setKeyStr = '',
     slotKey = ''
   for (const text of texts) {
-    const match = /(.+)\s+\[([123456])\]/.exec(text)
+    const match = /(.+)\[([123456])\]/.exec(text)
 
     if (match) {
       setKeyStr = match[1]
