@@ -43,9 +43,10 @@ export function getCharacterStats(
       hp_growth * (level - 1) +
       levelStats[Math.floor(level / 10) - 1].hp,
   }
-  Object.entries(coreStats[core - 1]).forEach(([k, v]) => {
-    stats[k] = (stats[k] || 0) + v
-  })
+  if (core > 1 && coreStats[core - 1])
+    Object.entries(coreStats[core - 1]).forEach(([k, v]) => {
+      stats[k] = (stats[k] || 0) + v
+    })
 
   return stats
 }
