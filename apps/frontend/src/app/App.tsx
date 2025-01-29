@@ -19,6 +19,7 @@ import {
   useSilly,
   useSnow,
 } from '@genshin-optimizer/gi/ui'
+import '@genshin-optimizer/zzz/i18n' // import to load translations
 import {
   Box,
   Container,

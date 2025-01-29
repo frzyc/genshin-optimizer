@@ -40,13 +40,13 @@ export default defineConfig({
         },
         {
           src: normalizePath(
-            resolve('../../libs/sr/localization/assets/locales')
+            resolve('../../libs/zzz/localization/assets/locales')
           ),
           dest: 'assets',
         },
         {
           src: normalizePath(
-            resolve('../../libs/sr/dm-localization/assets/locales')
+            resolve('../../libs/zzz/dm-localization/assets/locales')
           ),
           dest: 'assets',
         },
