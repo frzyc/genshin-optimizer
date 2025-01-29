@@ -59,24 +59,24 @@ export function discFilterConfigs({
   excludedIds?: string[]
 } = {}): FilterConfigs<keyof DiscFilterOption, IDisc & { id: string }> {
   return {
-    locked: (art, filter) => {
-      if (!filter.includes('locked') && art.lock) return false
-      if (!filter.includes('unlocked') && !art.lock) return false
+    locked: (disc, filter) => {
+      if (!filter.includes('locked') && disc.lock) return false
+      if (!filter.includes('unlocked') && !disc.lock) return false
       return true
     },
-    locations: (art, filter, filters) =>
-      art.location && !filters['showEquipped']
-        ? filter.includes(art.location)
+    locations: (disc, filter, filters) =>
+      disc.location && !filters['showEquipped']
+        ? filter.includes(disc.location)
         : true,
     showEquipped: () => true, // Per character filtering is applied in `locations`
-    showInventory: (art, filter) => (!art.location ? filter : true),
-    discSetKeys: (art, filter) =>
-      filter.length ? filter.includes(art.setKey) : true,
-    slotKeys: (art, filter) => filter.includes(art.slotKey),
-    mainStatKeys: (art, filter) =>
-      filter.length ? filter.includes(art.mainStatKey) : true,
-    levelLow: (art, filter) => filter <= art.level,
-    levelHigh: (art, filter) => filter >= art.level,
+    showInventory: (disc, filter) => (!disc.location ? filter : true),
+    discSetKeys: (disc, filter) =>
+      filter.length ? filter.includes(disc.setKey) : true,
+    slotKeys: (disc, filter) => filter.includes(disc.slotKey),
+    mainStatKeys: (disc, filter) =>
+      filter.length ? filter.includes(disc.mainStatKey) : true,
+    levelLow: (disc, filter) => filter <= disc.level,
+    levelHigh: (disc, filter) => filter >= disc.level,
     // When RV is set to 0/900, allow all, just incase someone is doing some teehee haha with negative substats or stupid rolls
     rvLow: () => {
       return true
@@ -85,22 +85,22 @@ export function discFilterConfigs({
       return true
     },
     useMaxRV: () => true,
-    rarity: (art, filter) => filter.includes(art.rarity),
-    substats: (art, filter) => {
+    rarity: (disc, filter) => filter.includes(disc.rarity),
+    substats: (disc, filter) => {
       for (const filterKey of filter)
         if (
           filterKey &&
-          !art.substats.some((substat) => substat.key === filterKey)
+          !disc.substats.some((substat) => substat.key === filterKey)
         )
           return false
       return true
     },
-    lines: (art, filter) =>
-      [0, ...filter].includes(art.substats.filter((s) => s.upgrades).length),
-    excluded: (art, filter) => {
-      if (!filter.includes('excluded') && excludedIds.includes(art.id))
+    lines: (disc, filter) =>
+      [0, ...filter].includes(disc.substats.filter((s) => s.upgrades).length),
+    excluded: (disc, filter) => {
+      if (!filter.includes('excluded') && excludedIds.includes(disc.id))
         return false
-      if (!filter.includes('included') && !excludedIds.includes(art.id))
+      if (!filter.includes('included') && !excludedIds.includes(disc.id))
         return false
       return true
     },

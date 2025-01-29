@@ -18,7 +18,7 @@ import {
   allLocationKeys,
 } from '@genshin-optimizer/zzz/consts'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import type { DiscFilterOption } from '@genshin-optimizer/zzz/util'
+import { type DiscFilterOption } from '@genshin-optimizer/zzz/util'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import PersonSearchIcon from '@mui/icons-material/PersonSearch'
 import {
@@ -81,14 +81,12 @@ export function DiscFilterDisplay({
     showEquipped,
     showInventory,
     locked = [...lockedValues],
-    rvLow = 0,
-    rvHigh = 900,
-    useMaxRV = false,
     lines = [],
     excluded = [...excludedValues],
   } = filterOption
 
-  const database = useDatabaseContext().database
+  const { database } = useDatabaseContext()
+
   const {
     rarityTotal,
     slotTotal,
@@ -134,10 +132,10 @@ export function DiscFilterDisplay({
           substats.forEach((sub) => {
             const subKey = sub.key
             if (!subKey) return
-            ctMap['subStatTotal'][subKey].total++ //Remove if later
+            ctMap['subStatTotal'][subKey].total++
             if (filteredIdMap[id]) ctMap['subStatTotal'][subKey].current++
           })
-          if (location) ctMap['locationTotal'][location].total++
+          if (location) ctMap['locationTotal'][location].total++ //Remove if later
           ctMap['excludedTotal'][excluded].total++
         }
 
@@ -195,7 +193,8 @@ export function DiscFilterDisplay({
                     })
                   }
                 >
-                  <Chip label={rarityKey} size="small" />
+                  {rarityKey}
+                  <Chip label={rarityTotal[rarityKey]} size="small" />
                 </ToggleButton>
               ))}
             </SolidToggleButtonGroup>
@@ -348,7 +347,9 @@ export function DiscFilterDisplay({
                     <LocationFilterMultiAutocomplete
                       totals={locationTotal}
                       locations={showEquipped ? [] : locations}
-                      setLocations={(locations) => locations}
+                      setLocations={(locations) =>
+                        filterOptionDispatch({ locations })
+                      }
                       disabled={showEquipped}
                     />
                   </span>
