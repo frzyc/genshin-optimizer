@@ -6,7 +6,7 @@ import {
 import { objMap, toDecimal } from '@genshin-optimizer/common/util'
 import type { FormulaKey } from '@genshin-optimizer/zzz/consts'
 import {
-  allCoreKeys,
+  allCoreKeysWithNone,
   allFormulaKeys,
   type LocationKey,
 } from '@genshin-optimizer/zzz/consts'
@@ -120,10 +120,10 @@ export default function PageOptimize() {
               />
 
               <DropdownButton
-                title={`Core: ${allCoreKeys[character?.core ?? 0]}`}
+                title={`Core: ${allCoreKeysWithNone[character?.core ?? 0]}`}
                 disabled={!character}
               >
-                {allCoreKeys.map((n, i) => (
+                {allCoreKeysWithNone.map((n, i) => (
                   <MenuItem
                     key={n}
                     onClick={() =>

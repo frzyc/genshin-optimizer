@@ -55,4 +55,15 @@ export type CharacterRarityKey = (typeof allCharacterRarityKeys)[number]
 export const ascensionlevel = [10, 20, 30, 40, 50, 60] as const
 export const coreLevel = [15, 25, 35, 45, 55, 60] as const
 
-export const allCoreKeys = ['None', 'A', 'B', 'C', 'D', 'E', 'F'] as const
+export const allCoreKeys = ['A', 'B', 'C', 'D', 'E', 'F'] as const
+export type CoreKeys = (typeof allCoreKeys)[number]
+
+export const allCoreKeysWithNone = [
+  'None',
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+] as const
