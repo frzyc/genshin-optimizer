@@ -1,0 +1,8 @@
+{
+  "name": "zzz-localization",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/zzz/localization/src",
+  "projectType": "library",
+  "tags": [],
+  "implicitDependencies": ["common-localization"]
+}

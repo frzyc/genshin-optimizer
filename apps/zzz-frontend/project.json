@@ -18,9 +18,5 @@
       "cache": false
     }
   },
-  "implicitDependencies": [
-    "common-localization",
-    "sr-localization",
-    "sr-dm-localization"
-  ]
+  "implicitDependencies": ["common-localization", "zzz-localization"]
 }

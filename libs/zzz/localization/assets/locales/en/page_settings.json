@@ -1,0 +1,50 @@
+{
+  "DatabaseCard": {
+    "title": "Database",
+    "button": {
+      "swap": "Swap",
+      "copy": "Clipboard",
+      "upload": "Upload",
+      "download": "Download",
+      "delete": "Delete"
+    },
+    "currentDB": "Current Database"
+  },
+  "count": {
+    "chars": "Characters:",
+    "relics": "Relics: ",
+    "lightCones": "Light Cones:",
+    "teams": "Teams:",
+    "builds": "Builds:",
+    "new": "New:",
+    "unchanged": "Unchanged:",
+    "upgraded": "Upgraded:",
+    "removed": "Removed:",
+    "notInImport": "Not in Import:",
+    "dbTotal": "Merged Total:",
+    "invalid": "Invalid:"
+  },
+  "uploadCard": {
+    "error": {
+      "jsonParse": "Could not parse Database JSON.",
+      "sroInvalid": "Invalid SRO Database file.",
+      "unknown": "An unknown error occurred."
+    },
+    "title": "Database Upload",
+    "buttons": {
+      "open": "Open",
+      "detectDups": "Detect Updates/Dupes",
+      "delNotInImport": "Delete items not in import"
+    },
+    "hint": "Load your JSON file here...",
+    "tooltip": {
+      "ignoreDup": "Do not detect upgrades/duplicates. The import will be added on top of existing SRO inventory.",
+      "detectDup": "Find upgrades/duplicates in the SRO inventory and merge the import into SRO.",
+      "keepNotInImport": "Assume the import is a partial inventory. Nothing will be deleted.",
+      "delNotInImport": "Assume the import is your full inventory. Items in the SRO Inventory that don't exist in the import will be deleted."
+    },
+    "hintPaste": "...or paste your data below.",
+    "dbSource": "Data source:",
+    "replaceDatabase": "Update Database"
+  }
+}
