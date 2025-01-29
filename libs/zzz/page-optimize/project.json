@@ -1,5 +1,5 @@
 {
-  "name": "sr-page-optimize",
+  "name": "zzz-page-optimize",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/zzz/page-optimize/src",
   "projectType": "library",

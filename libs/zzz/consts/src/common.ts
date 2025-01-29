@@ -31,7 +31,7 @@ export const allStatKeys = Array.from(
 )
 export type StatKey = (typeof allStatKeys)[number]
 
-const allElementalKeys = [
+export const allElementalKeys = [
   'electric',
   'fire',
   'ice',
