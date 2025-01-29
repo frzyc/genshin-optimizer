@@ -111,3 +111,9 @@ export const allSuperimposeKeys = [1, 2, 3, 4, 5] as const
 export type SuperimposeKey = (typeof allSuperimposeKeys)[number]
 
 export const lightConeMaxLevel = 80
+
+export function isLightConeKey(key: unknown): key is LightConeKey {
+  return (
+    typeof key === 'string' && allLightConeKeys.includes(key as LightConeKey)
+  )
+}

@@ -1,7 +1,7 @@
 'use client'
 // use client due to hydration difference between client rendering and server in translation
-import { Translate } from '@genshin-optimizer/sr/i18n'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
+import { Translate } from '@genshin-optimizer/zzz/i18n'
 
 export function DiscSetName({ setKey }: { setKey: DiscSetKey }) {
   return setKey
