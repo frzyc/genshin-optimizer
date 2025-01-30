@@ -105,7 +105,7 @@ export function DiscFilterDisplay({
       rarityTotal: allDiscRarityKeys,
       slotTotal: allDiscSlotKeys,
       lockedTotal: ['locked', 'unlocked'],
-      linesTotal: [1, 2, 3, 4],
+      linesTotal: [0, 1, 2, 3, 4],
       equippedTotal: ['equipped', 'unequipped'],
       setTotal: allDiscSetKeys,
       mainStatTotal: allDiscMainStatKeys,
@@ -118,7 +118,7 @@ export function DiscFilterDisplay({
         const { rarity, slotKey, location, setKey, mainStatKey, substats } =
           disc
         const lock = disc.lock ? 'locked' : 'unlocked'
-        const lns = disc.substats.filter((s) => s.upgrades).length
+        const lns = disc.substats.length
         const equipped = location ? 'equipped' : 'unequipped'
         const excluded = excludedIds.includes(id) ? 'excluded' : 'included'
         // The slot filter is disabled during artifact swapping, in which case our artifact total displayed by
@@ -137,7 +137,7 @@ export function DiscFilterDisplay({
             ctMap['subStatTotal'][subKey].total++
             if (filteredIdMap[id]) ctMap['subStatTotal'][subKey].current++
           })
-          if (location) ctMap['locationTotal'][location].total++ //Remove if later
+          if (location) ctMap['locationTotal'][location].total++
           ctMap['excludedTotal'][excluded].total++
         }
 
@@ -149,7 +149,7 @@ export function DiscFilterDisplay({
           ctMap['equippedTotal'][equipped].current++
           ctMap['setTotal'][setKey].current++
           ctMap['mainStatTotal'][mainStatKey].current++
-          if (location) ctMap['locationTotal'][location].current++ //Remove if later
+          if (location) ctMap['locationTotal'][location].current++
           ctMap['excludedTotal'][excluded].current++
         }
       })
