@@ -160,13 +160,13 @@ export const disc2pEffect: Record<
   DiscSetKey,
   Partial<Record<StatKey, number>>
 > = {
-  AstralVoice: { atk: 0.1 },
+  AstralVoice: { atk_: 0.1 },
   BranchBladeSong: { crit_dmg_: 0.16 },
   ChaosJazz: { anomProf: 30 },
-  ChaoticMetal: { ether_dmg_: 10 },
+  ChaoticMetal: { ether_dmg_: 0.1 },
   FangedMetal: { physical_dmg_: 0.1 },
   FreedomBlues: { anomProf: 30 },
-  HormonePunk: { atk: 0.1 },
+  HormonePunk: { atk_: 0.1 },
   InfernoMetal: { fire_dmg_: 0.1 },
   PolarMetal: { ice_dmg_: 0.1 },
   ProtoPunk: { shield_: 0.15 },
