@@ -42,7 +42,7 @@ export function passSetFilter(
       const k = key as DiscSetKey
       const val = setCount[k]!
       if (val === 1) return false // Rainbow
-      if (val >= 2 && val < 4 && !filter4.includes(k)) return false
+      if (val >= 2 && val < 4 && !filter2.includes(k)) return false
     }
   }
   return true

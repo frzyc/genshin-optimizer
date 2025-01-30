@@ -13,7 +13,7 @@ let discStatsBySlot: Record<DiscSlotKey, DiscStats[]>
 let constraints: Constraints
 let baseStats: Stats
 let formulaKey: FormulaKey
-let SetFilter2p: DiscSetKey[]
+let setFilter2p: DiscSetKey[]
 let setFilter4p: DiscSetKey[]
 
 export interface ChildCommandInit {
@@ -91,7 +91,7 @@ async function init({
   discStatsBySlot = discs
   constraints = initCons
   formulaKey = fk
-  SetFilter2p = setFilter2
+  setFilter2p = setFilter2
   setFilter4p = setFilter4
 
   // Let parent know we are ready to optimize
@@ -158,7 +158,7 @@ async function start() {
 
     const discs = [d1, d2, d3, d4, d5, d6]
     // 1. Filter using set filter
-    if (!passSetFilter(discs, SetFilter2p, setFilter4p)) {
+    if (!passSetFilter(discs, setFilter2p, setFilter4p)) {
       // Skip early due to failing set filter
       skipped++
       continue
