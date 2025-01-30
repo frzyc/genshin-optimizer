@@ -20,7 +20,6 @@ import {
   Grid,
   IconButton,
   MenuItem,
-  Typography,
 } from '@mui/material'
 import { useCharacterContext } from './CharacterContext'
 
@@ -85,7 +84,11 @@ export function SetFilter({ disabled = false }: { disabled?: boolean }) {
               ))}
             </DropdownButton>
           ) : (
-            <Typography>{setFilter4.length} Disc Set 4p selected</Typography>
+            <Button disabled>
+              <span>
+                <strong>{setFilter4.length}</strong> Disc 4p-set Selected
+              </span>
+            </Button>
           )}
 
           {setFilter2.length <= 1 ? (
@@ -131,7 +134,11 @@ export function SetFilter({ disabled = false }: { disabled?: boolean }) {
               ))}
             </DropdownButton>
           ) : (
-            <Typography>{setFilter2.length} Disc Set 2p selected</Typography>
+            <Button disabled>
+              <span>
+                <strong>{setFilter2.length}</strong> Disc 2p-set Selected
+              </span>
+            </Button>
           )}
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'stretch' }}>
