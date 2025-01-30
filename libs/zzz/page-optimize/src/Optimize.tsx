@@ -260,7 +260,7 @@ export default function OptimizeWrapper({
               onClick={optimizing ? onCancel : onOptimize}
               color={optimizing ? 'error' : 'success'}
               startIcon={optimizing ? <CloseIcon /> : <TrendingUpIcon />}
-              disabled={!totalPermutations || !location}
+              disabled={!totalPermutations || !character}
             >
               {optimizing ? t('cancel') : t('optimize')}
             </Button>
