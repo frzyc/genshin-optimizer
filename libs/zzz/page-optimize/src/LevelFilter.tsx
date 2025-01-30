@@ -18,7 +18,8 @@ export const LevelFilter = memo(function LevelFilter({
     <CardThemed bgt="light">
       <CardContent sx={{ display: 'flex', gap: 1 }}>
         <Typography sx={{ fontWeight: 'bold' }}>
-          Artifact Level Filter
+          Disc Level Filter
+          {/* TODO: Translate */}
           {/* {t('levelFilter')} */}
         </Typography>
       </CardContent>

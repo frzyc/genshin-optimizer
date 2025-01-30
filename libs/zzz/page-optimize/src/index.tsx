@@ -32,6 +32,7 @@ import { Stack } from '@mui/system'
 import { useCallback, useMemo, useState } from 'react'
 import BaseStatCard from './BaseStatCard'
 import { BuildsDisplay } from './BuildsDisplay'
+import { CharacterContext } from './CharacterContext'
 import OptimizeWrapper from './Optimize'
 import { OptimizeTargetSelector } from './OptimizeTargetSelector'
 import { StatsDisplay } from './StatsDisplay'
@@ -82,116 +83,124 @@ export default function PageOptimize() {
   )
 
   return (
-    <Box display="flex" flexDirection="column" gap={1} my={1}>
-      <CardThemed>
-        <CardContent>
-          <Stack spacing={1}>
-            <Typography variant="h6">Character</Typography>
-            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-              <LocationAutocomplete
-                locKey={locationKey}
-                setLocKey={(lk) => {
-                  setLocationKey(lk)
-                  setBuilds([])
-                }}
-                sx={{ flexGrow: 1 }}
-                autoFocus
-              />
+    <CharacterContext.Provider value={character}>
+      <Box display="flex" flexDirection="column" gap={1} my={1}>
+        <CardThemed>
+          <CardContent>
+            <Stack spacing={1}>
+              <Typography variant="h6">Character</Typography>
+              <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+                <LocationAutocomplete
+                  locKey={locationKey}
+                  setLocKey={(lk) => {
+                    setLocationKey(lk)
+                    setBuilds([])
+                  }}
+                  sx={{ flexGrow: 1 }}
+                  autoFocus
+                />
 
-              <NumberInputLazy
-                disabled={!character}
-                value={character?.level ?? 60}
-                onChange={(l) =>
-                  l !== undefined &&
-                  character &&
-                  database.chars.set(character.key, { level: l })
-                }
-                size="small"
-                inputProps={{
-                  sx: { width: '2ch' },
-                  max: 60,
-                  min: 1,
-                }}
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">Lv.</InputAdornment>
-                  ),
-                }}
-              />
+                <NumberInputLazy
+                  disabled={!character}
+                  value={character?.level ?? 60}
+                  onChange={(l) =>
+                    l !== undefined &&
+                    character &&
+                    database.chars.set(character.key, { level: l })
+                  }
+                  size="small"
+                  inputProps={{
+                    sx: { width: '2ch' },
+                    max: 60,
+                    min: 1,
+                  }}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">Lv.</InputAdornment>
+                    ),
+                  }}
+                />
 
-              <DropdownButton
-                title={`Core: ${allCoreKeysWithNone[character?.core ?? 0]}`}
+                <DropdownButton
+                  title={`Core: ${allCoreKeysWithNone[character?.core ?? 0]}`}
+                  disabled={!character}
+                >
+                  {allCoreKeysWithNone.map((n, i) => (
+                    <MenuItem
+                      key={n}
+                      onClick={() =>
+                        character &&
+                        database.chars.set(character.key, { core: i })
+                      }
+                    >
+                      {n}
+                    </MenuItem>
+                  ))}
+                </DropdownButton>
+              </Box>
+              {characterStats && (
+                <StatsDisplay stats={characterStats} showBase />
+              )}
+              <OptimizeTargetSelector
                 disabled={!character}
-              >
-                {allCoreKeysWithNone.map((n, i) => (
-                  <MenuItem
-                    key={n}
-                    onClick={() =>
-                      character &&
-                      database.chars.set(character.key, { core: i })
-                    }
-                  >
-                    {n}
-                  </MenuItem>
-                ))}
-              </DropdownButton>
-            </Box>
-            {characterStats && <StatsDisplay stats={characterStats} showBase />}
-            <OptimizeTargetSelector
-              disabled={!character}
-              formulaKey={character?.formulaKey ?? allFormulaKeys[0]}
-              setFormulaKey={setFormulaKey}
-            />
-            <Typography variant="h6">Wengine</Typography>
-            <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
-              <WengineAutocomplete
-                disabled={!character}
-                wkey={character?.wengineKey ?? ''}
-                setWKey={(wk) =>
-                  wk &&
-                  character &&
-                  database.chars.set(character.key, { wengineKey: wk })
-                }
-                sx={{ flexGrow: 1 }}
-                autoFocus
+                formulaKey={character?.formulaKey ?? allFormulaKeys[0]}
+                setFormulaKey={setFormulaKey}
               />
-              <NumberInputLazy
-                disabled={!character}
-                value={character?.wengineLvl ?? 60}
-                onChange={(l) =>
-                  l !== undefined &&
-                  character &&
-                  database.chars.set(character.key, { wengineLvl: l })
-                }
-                size="small"
-                inputProps={{
-                  sx: { width: '2ch' },
-                  max: 60,
-                  min: 1,
-                }}
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">Lv.</InputAdornment>
-                  ),
-                }}
-              />
-            </Box>
-            {wengineStats && <StatsDisplay stats={wengineStats} showBase />}
-          </Stack>
-        </CardContent>
-      </CardThemed>
-      <BaseStatCard
-        locationKey={locationKey}
-        baseStats={character?.stats ?? {}}
-        setBaseStats={setStats}
-      />
-      <OptimizeWrapper
-        setResults={setBuilds}
-        baseStats={baseStats}
-        location={locationKey}
-        formulaKey={character?.formulaKey ?? allFormulaKeys[0]}
-      />
-      <BuildsDisplay builds={builds} stats={baseStats} location={locationKey} />
-    </Box>
+              <Typography variant="h6">Wengine</Typography>
+              <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+                <WengineAutocomplete
+                  disabled={!character}
+                  wkey={character?.wengineKey ?? ''}
+                  setWKey={(wk) =>
+                    wk &&
+                    character &&
+                    database.chars.set(character.key, { wengineKey: wk })
+                  }
+                  sx={{ flexGrow: 1 }}
+                  autoFocus
+                />
+                <NumberInputLazy
+                  disabled={!character}
+                  value={character?.wengineLvl ?? 60}
+                  onChange={(l) =>
+                    l !== undefined &&
+                    character &&
+                    database.chars.set(character.key, { wengineLvl: l })
+                  }
+                  size="small"
+                  inputProps={{
+                    sx: { width: '2ch' },
+                    max: 60,
+                    min: 1,
+                  }}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">Lv.</InputAdornment>
+                    ),
+                  }}
+                />
+              </Box>
+              {wengineStats && <StatsDisplay stats={wengineStats} showBase />}
+            </Stack>
+          </CardContent>
+        </CardThemed>
+        <BaseStatCard
+          locationKey={locationKey}
+          baseStats={character?.stats ?? {}}
+          setBaseStats={setStats}
+        />
+        <OptimizeWrapper
+          setResults={setBuilds}
+          baseStats={baseStats}
+          location={locationKey}
+          formulaKey={character?.formulaKey ?? allFormulaKeys[0]}
+        />
+        <BuildsDisplay
+          builds={builds}
+          stats={baseStats}
+          location={locationKey}
+        />
+      </Box>
+    </CharacterContext.Provider>
   )
 }

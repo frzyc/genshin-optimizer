@@ -1,4 +1,8 @@
-import { clamp01, objKeyMap } from '@genshin-optimizer/common/util'
+import {
+  clamp01,
+  objKeyMap,
+  objSumInPlace,
+} from '@genshin-optimizer/common/util'
 import type {
   AnomalyDamageKey,
   AttributeDamageKey,
@@ -13,22 +17,58 @@ import {
 import type { Stats } from '@genshin-optimizer/zzz/db'
 import type { DiscStats } from './common'
 
+export function passSetFilter(
+  discs: DiscStats[],
+  filter2: DiscSetKey[],
+  filter4: DiscSetKey[]
+): boolean {
+  const setCount: Partial<Record<DiscSetKey, number>> = {}
+  if (!filter4.length && !filter2.length) return true
+  for (const { setKey } of discs) setCount[setKey] = (setCount[setKey] || 0) + 1
+
+  if (filter4.length) {
+    let has4 = false
+    for (const key in setCount) {
+      const k = key as DiscSetKey
+      if (setCount[k]! >= 4 && filter4.includes(k)) {
+        has4 = true
+        break // can break out because there is only one 4p
+      }
+    }
+    if (!has4) return false
+  }
+  if (filter2.length) {
+    for (const key in setCount) {
+      const k = key as DiscSetKey
+      const val = setCount[k]!
+      if (val === 1) return false // Rainbow
+      if (val >= 2 && val < 4 && !filter4.includes(k)) return false
+    }
+  }
+  return true
+}
+
 /**
  * sum up stats from base + discs + 2p effects
  */
-export function getSum(baseStats: Stats, discs: DiscStats[]) {
+export function applyCalc(baseStats: Stats, discs: DiscStats[]) {
   const sum = { ...baseStats }
   const s = (key: string) => sum[key] || 0
-  for (const d of discs) {
-    for (const key in d.stats) {
-      sum[key] = s(key) + d.stats[key]
+
+  const setCount: Partial<Record<DiscSetKey, number>> = {}
+  // Apply disc set counts
+  for (const { setKey } of discs) setCount[setKey] = (setCount[setKey] || 0) + 1
+  objSumInPlace(sum, setCount)
+
+  // Apply 2p effects
+  for (const key in setCount) {
+    const k = key as DiscSetKey
+    if (setCount[k]! >= 2) {
+      const p2 = disc2pEffect[k]
+      if (p2) objSumInPlace(sum, p2)
     }
   }
-  for (const [key, value] of Object.entries(sum)) {
-    if (value >= 2 && disc2pEffect[key as DiscSetKey])
-      for (const [k, v] of Object.entries(disc2pEffect[key as DiscSetKey]))
-        sum[k] = s(k) + v
-  }
+
   // Rudimentary Calculations
   sum['initial_hp'] = s('hp_base') * (1 + s('hp_')) + s('hp')
   sum['initial_atk'] = s('atk_base') * (1 + s('atk_')) + s('atk')

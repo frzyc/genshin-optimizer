@@ -4,7 +4,7 @@ import type { LocationKey } from '@genshin-optimizer/zzz/consts'
 import type { Stats } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext, useDisc } from '@genshin-optimizer/zzz/db-ui'
 import type { BuildResult } from '@genshin-optimizer/zzz/solver'
-import { convertDiscToStats, getSum } from '@genshin-optimizer/zzz/solver'
+import { applyCalc, convertDiscToStats } from '@genshin-optimizer/zzz/solver'
 import { DiscCard } from '@genshin-optimizer/zzz/ui'
 import { Box, Button, CardContent, Stack, Typography } from '@mui/material'
 import { useCallback, useMemo } from 'react'
@@ -48,7 +48,7 @@ function Build({
   const { database } = useDatabaseContext()
   const sum = useMemo(
     () =>
-      getSum(
+      applyCalc(
         baseStats,
         Object.values(build.discIds)
           .map((d) => database.discs.get(d))

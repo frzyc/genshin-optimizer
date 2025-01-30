@@ -1,26 +1,20 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
-import {
-  CardThemed,
-  DropdownButton,
-  SqBadge,
-} from '@genshin-optimizer/common/ui'
+import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
 import { objMap, toDecimal, toggleInArr } from '@genshin-optimizer/common/util'
 import type {
   DiscMainStatKey,
-  DiscSetKey,
   FormulaKey,
   LocationKey,
 } from '@genshin-optimizer/zzz/consts'
 import {
-  allDiscSetKeys,
   discSlotToMainStatKeys,
   type DiscSlotKey,
 } from '@genshin-optimizer/zzz/consts'
 import type { Constraints, ICachedDisc, Stats } from '@genshin-optimizer/zzz/db'
-import { useCharacter, useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
+import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import type { BuildResult, ProgressResult } from '@genshin-optimizer/zzz/solver'
 import { MAX_BUILDS, Solver } from '@genshin-optimizer/zzz/solver'
-import { DiscSetName, StatDisplay } from '@genshin-optimizer/zzz/ui'
+import { StatDisplay } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import {
@@ -30,13 +24,14 @@ import {
   CardHeader,
   Divider,
   LinearProgress,
-  MenuItem,
   Typography,
 } from '@mui/material'
 import { Stack } from '@mui/system'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useCharacterContext } from './CharacterContext'
 import { LevelFilter } from './LevelFilter'
+import { SetFilter } from './SetFilter'
 import { StatFilterCard } from './StatFilterCard'
 import { WorkerSelector } from './WorkerSelector'
 
@@ -58,7 +53,7 @@ export default function OptimizeWrapper({
   const [progress, setProgress] = useState<ProgressResult | undefined>(
     undefined
   )
-  const character = useCharacter(location)
+  const character = useCharacterContext()
   useEffect(() => {
     setProgress(undefined)
   }, [character])
@@ -80,24 +75,16 @@ export default function OptimizeWrapper({
       database.discs.values.reduce(
         (discsBySlot, disc) => {
           if (!character) return discsBySlot
-          if (
-            disc.level < character.levelLow ||
-            disc.level > character.levelHigh
-          )
+          const { levelLow, levelHigh, useEquipped, slot4, slot5, slot6 } =
+            character
+          if (disc.level < levelLow || disc.level > levelHigh)
+            return discsBySlot
+          if (disc.location && !useEquipped && disc.location !== location)
             return discsBySlot
           if (
-            disc.location &&
-            !character.useEquipped &&
-            disc.location !== location
-          )
-            return discsBySlot
-          if (
-            (disc.slotKey === '4' &&
-              !character.slot4.includes(disc.mainStatKey)) ||
-            (disc.slotKey === '5' &&
-              !character.slot5.includes(disc.mainStatKey)) ||
-            (disc.slotKey === '6' &&
-              !character.slot6.includes(disc.mainStatKey))
+            (disc.slotKey === '4' && !slot4.includes(disc.mainStatKey)) ||
+            (disc.slotKey === '5' && !slot5.includes(disc.mainStatKey)) ||
+            (disc.slotKey === '6' && !slot6.includes(disc.mainStatKey))
           )
             return discsBySlot
           discsBySlot[disc.slotKey].push(disc)
@@ -134,6 +121,7 @@ export default function OptimizeWrapper({
 
   const onOptimize = useCallback(async () => {
     if (!character) return
+    const { setFilter2, setFilter4 } = character
     const cancelled = new Promise<void>((r) => (cancelToken.current = r))
     setResults([])
     setProgress(undefined)
@@ -146,6 +134,8 @@ export default function OptimizeWrapper({
         ...c,
         value: toDecimal(c.value, k),
       })),
+      setFilter2,
+      setFilter4,
       discsBySlot,
       numWorkers,
       setProgress
@@ -207,6 +197,11 @@ export default function OptimizeWrapper({
       <Divider />
       <CardContent>
         <Stack spacing={1}>
+          <StatFilterCard
+            disabled={!character}
+            constraints={character?.constraints ?? {}}
+            setConstraints={setConstraints}
+          />
           <LevelFilter locationKey={location} />
           <CardThemed bgt="light">
             <CardContent>
@@ -225,19 +220,8 @@ export default function OptimizeWrapper({
               </Stack>
             </CardContent>
           </CardThemed>
-          <StatFilterCard
-            disabled={!character}
-            constraints={character?.constraints ?? {}}
-            setConstraints={setConstraints}
-          />
-          <Set4Selector
-            disabled={!character}
-            constraints={character?.constraints ?? {}}
-            setConstraints={setConstraints}
-          />
-          <Typography>
-            NOTE: the solver currently accounts for 2-set effects only.
-          </Typography>
+
+          <SetFilter disabled={!character} />
           <Button
             disabled={!character}
             onClick={() =>
@@ -246,10 +230,16 @@ export default function OptimizeWrapper({
                 useEquipped: !character.useEquipped,
               })
             }
-            variant={character?.useEquipped ? 'contained' : 'outlined'}
+            color={character?.useEquipped ? 'success' : 'secondary'}
           >
             Use equipped Discs
           </Button>
+          <Typography>
+            <strong>
+              NOTE: the solver currently accounts for 2-set effects only.
+            </strong>
+          </Typography>
+
           <Box sx={{ display: 'flex', gap: 1 }}>
             <WorkerSelector
               numWorkers={numWorkers}
@@ -300,119 +290,5 @@ function ProgressIndicator({
         value={(progress.numBuildsComputed / totalPermutations) * 100}
       />
     </Box>
-  )
-}
-
-function Set4Selector({
-  disabled = false,
-  constraints,
-  setConstraints,
-}: {
-  disabled?: boolean
-  constraints: Constraints
-  setConstraints: (c: Constraints) => void
-}) {
-  const set4 = Object.entries(constraints).find(
-    ([k, { value }]) => allDiscSetKeys.includes(k as DiscSetKey) && value === 4
-  )?.[0]
-  const set2 = Object.entries(constraints).find(
-    ([k, { value }]) => allDiscSetKeys.includes(k as DiscSetKey) && value === 2
-  )?.[0]
-  return (
-    <>
-      <DropdownButton
-        disabled={disabled}
-        title={
-          set4 ? (
-            <span>
-              Force 4-Set: <strong>{set4}</strong>
-            </span>
-          ) : (
-            'Select to force 4-Set'
-          )
-        }
-        sx={{ flexGrow: 1 }}
-      >
-        <MenuItem
-          onClick={() =>
-            setConstraints(
-              Object.fromEntries(
-                Object.entries(constraints).filter(
-                  ([k, { value }]) =>
-                    !(allDiscSetKeys.includes(k as DiscSetKey) && value === 4)
-                )
-              )
-            )
-          }
-        >
-          No 4-Set
-        </MenuItem>
-
-        {allDiscSetKeys.map((d) => (
-          <MenuItem
-            key={d}
-            onClick={() =>
-              setConstraints({
-                ...Object.fromEntries(
-                  Object.entries(constraints).filter(
-                    ([k, { value }]) =>
-                      !(allDiscSetKeys.includes(k as DiscSetKey) && value === 4)
-                  )
-                ),
-                [d]: { value: 4, isMax: false },
-              })
-            }
-          >
-            <DiscSetName setKey={d} />
-          </MenuItem>
-        ))}
-      </DropdownButton>
-      <DropdownButton
-        disabled={disabled}
-        title={
-          set2 ? (
-            <span>
-              Force 2-Set: <strong>{set2}</strong>
-            </span>
-          ) : (
-            'Select to force 2-Set'
-          )
-        }
-        sx={{ flexGrow: 1 }}
-      >
-        <MenuItem
-          onClick={() =>
-            setConstraints(
-              Object.fromEntries(
-                Object.entries(constraints).filter(
-                  ([k, { value }]) =>
-                    !(allDiscSetKeys.includes(k as DiscSetKey) && value === 2)
-                )
-              )
-            )
-          }
-        >
-          No 2-Set
-        </MenuItem>
-        {allDiscSetKeys.map((d) => (
-          <MenuItem
-            key={d}
-            onClick={() =>
-              setConstraints({
-                ...Object.fromEntries(
-                  Object.entries(constraints).filter(
-                    ([k, { value }]) =>
-                      !(allDiscSetKeys.includes(k as DiscSetKey) && value === 2)
-                  )
-                ),
-                [d]: { value: 2, isMax: false },
-              })
-            }
-          >
-            <DiscSetName setKey={d} />
-          </MenuItem>
-        ))}
-      </DropdownButton>
-    </>
   )
 }
