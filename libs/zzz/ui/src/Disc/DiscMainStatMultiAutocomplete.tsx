@@ -1,7 +1,9 @@
-import { GeneralAutocompleteMulti, ImgIcon } from '@genshin-optimizer/common/ui'
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
+import { GeneralAutocompleteMulti } from '@genshin-optimizer/common/ui'
 import { getUnitStr } from '@genshin-optimizer/common/util'
-import type { DiscMainStatKey } from '@genshin-optimizer/zzz/consts'
+import type { DiscMainStatKey, StatKey } from '@genshin-optimizer/zzz/consts'
 import { allDiscMainStatKeys } from '@genshin-optimizer/zzz/consts'
+import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { Chip } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -16,18 +18,21 @@ export function DiscMainStatMultiAutocomplete({
   totals: any
 }) {
   const { t } = useTranslation('disc')
-  //const { t: tk } = useTranslation('statKey_gen') needs translation to work
+  const { t: tk } = useTranslation('statKey_gen')
   const options = useMemo(
     () =>
       allDiscMainStatKeys.map((key) => ({
         key,
-        label: `${key}${getUnitStr(key)}`,
+        label: `${tk(key)}${getUnitStr(key)}`,
         variant: 'fix variant',
       })),
-    []
+    [tk]
   )
 
-  const toImg = useCallback(() => <ImgIcon src={''} size={3} />, [])
+  const toImg = useCallback(
+    (key: StatKey) => <StatIcon statKey={key} iconProps={iconInlineProps} />,
+    []
+  )
   const toExLabel = useCallback(
     (key: DiscMainStatKey) => <strong>{totals[key]}</strong>,
     [totals]

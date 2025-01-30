@@ -4,6 +4,7 @@ import {
   useDisplayDisc,
 } from '@genshin-optimizer/zzz/db-ui'
 import type { DiscFilterOption } from '@genshin-optimizer/zzz/util'
+import ReplayIcon from '@mui/icons-material/Replay'
 import { Button, CardContent, Grid, Skeleton, Typography } from '@mui/material'
 import { t } from 'i18next'
 import { Suspense, useCallback } from 'react'
@@ -39,11 +40,7 @@ export default function DiscFilter({
         <CardContent>
           <Grid container>
             <Grid item>
-              <Typography variant="h6">
-                <Trans t={t} i18nKey="ui:discFilter">
-                  Disc Filter
-                </Trans>
-              </Typography>
+              <Typography variant="h6">{t('discFilter')}</Typography>
             </Grid>
             <Grid
               item
@@ -61,6 +58,7 @@ export default function DiscFilter({
                 size="small"
                 color="error"
                 onClick={() => database.displayDisc.set({ action: 'reset' })}
+                startIcon={<ReplayIcon />}
               >
                 <Trans t={t} i18nKey="ui:reset" />
               </Button>

@@ -6,8 +6,8 @@ import {
 } from '@genshin-optimizer/zzz/consts'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { Chip, Skeleton } from '@mui/material'
-import { t } from 'i18next'
 import { Suspense, useCallback, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export function LocationFilterMultiAutocomplete({
   locations,
@@ -20,11 +20,7 @@ export function LocationFilterMultiAutocomplete({
   totals: Record<LocationKey, string>
   disabled?: boolean
 }) {
-  /* const { t } = useTranslation([
-      'disc',
-      'sillyWisher_charNames',
-      'charNames_gen',
-    ]) Needs translation */
+  const { t } = useTranslation(['disc', 'charNames_gen'])
   const { database } = useDatabaseContext()
 
   const toImg = useCallback(() => <ImgIcon src={''} size={3} />, [])
@@ -61,7 +57,7 @@ export function LocationFilterMultiAutocomplete({
         .map(
           (v): GeneralAutocompleteOption<LocationKey> => ({
             key: v,
-            label: v,
+            label: t(v),
             favorite: false,
             alternateNames: [v],
           })
@@ -71,7 +67,7 @@ export function LocationFilterMultiAutocomplete({
           if (!a.favorite && b.favorite) return 1
           return a.label.localeCompare(b.label)
         }),
-    [database.chars]
+    [database.chars, t]
   )
 
   return (
@@ -84,7 +80,7 @@ export function LocationFilterMultiAutocomplete({
         toImg={toImg}
         toExLabel={toExLabel}
         toExItemLabel={toExItemLabel}
-        label={t('artifact:filterLocation.location')}
+        label={t('disc:filterLocation.location')}
         chipProps={{ variant: 'outlined' }}
       />
     </Suspense>

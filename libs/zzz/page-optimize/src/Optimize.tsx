@@ -20,7 +20,7 @@ import type { Constraints, ICachedDisc, Stats } from '@genshin-optimizer/zzz/db'
 import { useCharacter, useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import type { BuildResult, ProgressResult } from '@genshin-optimizer/zzz/solver'
 import { MAX_BUILDS, Solver } from '@genshin-optimizer/zzz/solver'
-import { StatDisplay } from '@genshin-optimizer/zzz/ui'
+import { DiscSetName, StatDisplay } from '@genshin-optimizer/zzz/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import TrendingUpIcon from '@mui/icons-material/TrendingUp'
 import {
@@ -363,7 +363,7 @@ function Set4Selector({
               })
             }
           >
-            {d}
+            <DiscSetName setKey={d} />
           </MenuItem>
         ))}
       </DropdownButton>
@@ -409,7 +409,7 @@ function Set4Selector({
               })
             }
           >
-            {d}
+            <DiscSetName setKey={d} />
           </MenuItem>
         ))}
       </DropdownButton>

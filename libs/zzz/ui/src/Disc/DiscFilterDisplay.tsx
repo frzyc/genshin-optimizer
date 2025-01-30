@@ -20,6 +20,8 @@ import {
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { type DiscFilterOption } from '@genshin-optimizer/zzz/util'
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
+import LockIcon from '@mui/icons-material/Lock'
+import LockOpenIcon from '@mui/icons-material/LockOpen'
 import PersonSearchIcon from '@mui/icons-material/PersonSearch'
 import {
   Box,
@@ -211,21 +213,19 @@ export function DiscFilterDisplay({
                     })
                   }
                 >
-                  <Box whiteSpace="nowrap">
-                    {t('sub-needs translate', { count: line })}
-                  </Box>
+                  <Box whiteSpace="nowrap">{t('sub', { count: line })}</Box>
                   <Chip label={linesTotal[line]} size="small" />
                 </ToggleButton>
               ))}
             </SolidToggleButtonGroup>
             {/* Disc Slot */}
             <DiscSlotToggle
-              disabled={false}
+              disabled={disableSlotFilter}
               onChange={(slotKeys: DiscSlotKey[]) =>
                 filterOptionDispatch({ slotKeys })
               }
-              value={slotKeys}
               totals={slotTotal}
+              value={slotKeys}
             />
           </Stack>
           <Stack spacing={1.5} pt={1.5}>
@@ -272,7 +272,7 @@ export function DiscFilterDisplay({
                       filterOptionDispatch({ locked: lockedHandler(locked, v) })
                     }
                   >
-                    {/* {i ? <LockOpenIcon /> : <LockIcon />} */}
+                    {i ? <LockOpenIcon /> : <LockIcon />}
                     <Trans i18nKey={`ui:${v}`} t={t} />
                     <Chip
                       label={lockedTotal[i ? 'unlocked' : 'locked']}
@@ -313,7 +313,7 @@ export function DiscFilterDisplay({
                   filterOptionDispatch({ showInventory: !showInventory })
                 }
               >
-                {t('discInInv')}{' '}
+                {t('unequippedDiscs')}{' '}
                 <Chip
                   sx={{ ml: 1 }}
                   label={equippedTotal['unequipped']}
@@ -328,7 +328,7 @@ export function DiscFilterDisplay({
                   filterOptionDispatch({ showEquipped: !showEquipped })
                 }
               >
-                {t('equippedDisc')}{' '}
+                {t('equippedDiscs')}{' '}
                 <Chip
                   sx={{ ml: 1 }}
                   label={equippedTotal['equipped']}
