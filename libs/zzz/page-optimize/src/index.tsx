@@ -41,10 +41,9 @@ export default function PageOptimize() {
   const [builds, setBuilds] = useState<BuildResult[]>([])
   const [locationKey, setLocationKey] = useState<LocationKey>('')
 
-  const character = useCharacter(locationKey)
-  if (!character && locationKey)
-    // if not created, create.
-    database.chars.getOrCreate(locationKey)
+  const character =
+    useCharacter(locationKey) ??
+    (locationKey ? database.chars.getOrCreate(locationKey) : undefined)
 
   const setStats = useCallback(
     (stats: Stats) => {
