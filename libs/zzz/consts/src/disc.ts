@@ -1,3 +1,4 @@
+import { objMultiplication } from '@genshin-optimizer/common/util'
 import type { PandoStatKey } from './common'
 
 export const allDiscSlotKeys = ['1', '2', '3', '4', '5', '6'] as const
@@ -196,4 +197,155 @@ export const discSetNames: Record<DiscSetKey, string> = {
   FangedMetal: 'Fanged Metal',
   BranchBladeSong: 'Branch & Blade Song',
   AstralVoice: 'Astral Voice',
+}
+
+export const allCondKey = {
+  AstralVoice: {
+    text: (val: number) => `${val} Stacks of Astral`,
+    min: 1,
+    max: 3,
+  },
+  BranchBladeSong: {
+    text: `When any squad member applies Freeze or triggers the Shatter effect on an enemy`,
+    min: 1,
+    max: 1,
+  },
+  ChaosJazz: {
+    text: 'When off-field',
+    min: 1,
+    max: 1,
+  },
+  ChaoticMetal: {
+    text: 'Whenever a squad member inflicts Corruption on an enemy',
+    min: 1,
+    max: 1,
+  },
+  FangedMetal: {
+    text: 'Whenever a squad member inflicts Assault on an enemy',
+    min: 1,
+    max: 1,
+  },
+  HormonePunk: {
+    text: 'Upon entering or switching into combat',
+    min: 1,
+    max: 1,
+  },
+  InfernoMetal: {
+    text: 'Upon hitting a Burning enemy',
+    min: 1,
+    max: 1,
+  },
+  PolarMetal: {
+    text: 'Whenever a squad member Freezes or Shatters an enemy',
+    min: 1,
+    max: 1,
+  },
+  ProtoPunk: {
+    text: 'When any squad member triggers a Defensive Assist or Evasive Assist',
+    min: 1,
+    max: 1,
+  },
+  PufferElectro: {
+    text: 'Launching an Ultimate',
+    min: 1,
+    max: 1,
+  },
+  SwingJazz: {
+    text: 'Launching a Chain Attack or Ultimate',
+    min: 1,
+    max: 1,
+  },
+  ThunderMetal: {
+    text: 'As long as an enemy in combat is Shocked',
+    min: 1,
+    max: 1,
+  },
+  WoodpeckerElectro: {
+    text: (val: number) =>
+      `${val}x Triggering a critical hit with a Basic Attack, Dodge Counter, or EX Special Attack`,
+    min: 1,
+    max: 3,
+  },
+} as const
+
+type CondKey = keyof typeof allCondKey
+export const disc4Peffect: Partial<
+  Record<
+    DiscSetKey,
+    (
+      conds: Record<CondKey, number>,
+      stats: Record<string, number>
+    ) => Record<string, number>
+  >
+> = {
+  AstralVoice: (conds) => {
+    return conds['AstralVoice']
+      ? (objMultiplication({ dmg_: 0.08 }, conds['AstralVoice']) as Record<
+          string,
+          number
+        >)
+      : {}
+  },
+  BranchBladeSong: (conds, stats) => {
+    const ret: Record<string, number> = {}
+    if (stats['anomMas'] >= 115) ret['crit_dmg_'] = 0.3
+    if (conds['BranchBladeSong']) ret['crit_'] = 0.12
+    return ret
+  },
+  ChaosJazz: (conds) => {
+    const ret: Record<string, number> = { fire_dmg_: 0.15, electric_dmg_: 0.15 }
+    if (conds['ChaosJazz']) ret['dmg_'] = 0.2 // TODO: Should be EX Special Attacks and Assist Attacks
+    return ret
+  },
+  ChaoticMetal: (conds) => {
+    if (conds['ChaoticMetal']) return { dmg_: 0.18 } //enemy takes 18% more DMG
+    return {}
+  },
+  FangedMetal: (conds) => {
+    if (conds['FangedMetal']) return { dmg_: 0.35 } // equipper deals 35% additional DMG
+    return {}
+  },
+  // FreedomBlues: reduce the target's Anomaly Buildup RES to the equipper's Attribute by 35%
+  HormonePunk: (conds) => {
+    if (conds['HormonePunk']) return { cond_atk_: 0.15 } // ATK increased by 25%
+    return {}
+  },
+  InfernoMetal: (conds) => {
+    if (conds['InfernoMetal']) return { crit_: 0.28 } //equipper's CRIT Rate is increased by 28%
+    return {}
+  },
+  PolarMetal: (conds) => {
+    const ret = { dmg_: 0.28 } // TODO: Basic Attack and Dash Attack DMG increases by 28%
+    if (conds['PolarMetal']) {
+      objMultiplication(ret, 2)
+    }
+    return ret
+  },
+  ProtoPunk: (conds) => {
+    if (conds['ProtoPunk']) return { dmg_: 0.15 } //  all squad members deal 15% increased DMG
+    return {}
+  },
+  PufferElectro: (conds) => {
+    const ret: Record<string, number> = { dmg_: 0.2 } //Ultimate DMG increases by 20%
+    if (conds['PufferElectro']) ret['cond_atk_'] = 0.15 // Launching an Ultimate increases the equipper's ATK by 15%
+    return ret
+  },
+  // ShockstarDisco: 15% more Daze
+  // SoulRock: the equipper takes 40% less DMG
+  SwingJazz: (conds) => {
+    if (conds['SwingJazz']) return { dmg_: 0.15 } //increases all squad members' DMG by 15%
+    return {}
+  },
+  ThunderMetal: (conds) => {
+    if (conds['ThunderMetal']) return { cond_atk_: 0.27 } // equipper's ATK is increased by 27%
+    return {}
+  },
+  WoodpeckerElectro: (conds) => {
+    if (conds['WoodpeckerElectro'])
+      return objMultiplication(
+        { cond_atk_: 0.15 },
+        conds['WoodpeckerElectro']
+      ) as Record<string, number>
+    return {}
+  },
 }
