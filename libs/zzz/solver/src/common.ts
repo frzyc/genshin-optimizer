@@ -1,3 +1,4 @@
+import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import {
   getDiscMainStatVal,
   getDiscSubStatBaseVal,
@@ -10,6 +11,7 @@ export const MAX_BUILDS = 50_000
 export type DiscStats = {
   id: string
   stats: Record<string, number>
+  setKey: DiscSetKey
 }
 
 export interface BuildResult {
@@ -38,7 +40,7 @@ export function convertDiscToStats(disc: ICachedDisc): DiscStats {
           getDiscSubStatBaseVal(key, rarity) * upgrades,
         ])
       ),
-      [setKey]: 1,
     },
+    setKey,
   }
 }
