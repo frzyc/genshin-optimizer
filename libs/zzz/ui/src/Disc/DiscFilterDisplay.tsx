@@ -127,7 +127,7 @@ export function DiscFilterDisplay({
           ctMap['rarityTotal'][rarity].total++
           ctMap['slotTotal'][slotKey].total++
           ctMap['lockedTotal'][lock].total++
-          ctMap['linesTotal'][lns].total++
+          ctMap['linesTotal'][lns] && ctMap['linesTotal'][lns].total++
           ctMap['equippedTotal'][equipped].total++
           ctMap['setTotal'][setKey].total++
           ctMap['mainStatTotal'][mainStatKey].total++
