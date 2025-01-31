@@ -60,6 +60,9 @@ export function applyCalc(baseStats: Stats, discs: DiscStats[]) {
   for (const { setKey } of discs) setCount[setKey] = (setCount[setKey] || 0) + 1
   objSumInPlace(sum, setCount)
 
+  // Apply disc stats
+  for (const { stats } of discs) objSumInPlace(sum, stats)
+
   // Apply 2p effects
   for (const key in setCount) {
     const k = key as DiscSetKey
