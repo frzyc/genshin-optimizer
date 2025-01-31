@@ -1,5 +1,10 @@
 import type { TriggerString } from '@genshin-optimizer/common/database'
-import { clamp, objFilter, validateArr } from '@genshin-optimizer/common/util'
+import {
+  clamp,
+  objFilter,
+  objFilterKeys,
+  validateArr,
+} from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   DiscMainStatKey,
@@ -8,6 +13,7 @@ import type {
   WengineKey,
 } from '@genshin-optimizer/zzz/consts'
 import {
+  allAttributeDamageKeys,
   allCharacterKeys,
   allDiscSetKeys,
   allFormulaKeys,
@@ -118,6 +124,20 @@ export class CharacterDataManager extends DataManager<
       constraints,
       ({ value, isMax }) =>
         typeof value === 'number' && typeof isMax === 'boolean'
+    )
+    constraints = objFilterKeys(
+      constraints,
+      // Taken from StatFilterCard
+      [
+        'hp',
+        'def',
+        'atk',
+        'crit_',
+        'crit_dmg_',
+        'anomProf',
+        'pen',
+        ...allAttributeDamageKeys,
+      ]
     )
     useEquipped = !!useEquipped
 
