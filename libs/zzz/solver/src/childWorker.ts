@@ -186,12 +186,12 @@ async function start() {
     } else {
       skipped++
     }
-    if (builds.length > MAX_BUILDS_TO_SEND) {
+    if (builds.length + skipped > MAX_BUILDS_TO_SEND) {
       sliceSortSendBuilds()
     }
   }
 
-  if (builds.length > 0) {
+  if (builds.length + skipped > 0) {
     sliceSortSendBuilds()
   }
 
