@@ -1,5 +1,6 @@
 import { CardThemed, DropdownButton } from '@genshin-optimizer/common/ui'
 import { getUnitStr, range, valueString } from '@genshin-optimizer/common/util'
+import { StatIcon } from '@genshin-optimizer/sr/svgicons'
 import type { DiscRarityKey } from '@genshin-optimizer/zzz/consts'
 import {
   allDiscSubStatKeys,
@@ -9,6 +10,7 @@ import {
 import type { ICachedDisc, ISubstat } from '@genshin-optimizer/zzz/db'
 import type { SliderProps } from '@mui/material'
 import {
+  ListItemIcon,
   ListItemText,
   MenuItem,
   Slider,
@@ -85,11 +87,11 @@ export default function SubstatInput({
               key={k}
               selected={key === k}
               disabled={key === k}
-              onClick={() => setSubstat(index, { key: k, upgrades: 0 })}
+              onClick={() => setSubstat(index, { key: k, upgrades: 1 })}
             >
-              {/* <ListItemIcon>
-                    <StatIcon statKey={k} />
-                  </ListItemIcon> */}
+              <ListItemIcon>
+                <StatIcon statKey={k} />
+              </ListItemIcon>
               <ListItemText>
                 <StatDisplay statKey={k} showPercent disableIcon />
               </ListItemText>
@@ -137,7 +139,7 @@ export default function SubstatInput({
         >
           <Typography>
             {valueString(
-              upgrades * getDiscSubStatBaseVal(key, rarity),
+              (upgrades || 1) * getDiscSubStatBaseVal(key, rarity),
               getUnitStr(key)
             )}
           </Typography>

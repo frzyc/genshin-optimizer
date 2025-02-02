@@ -286,14 +286,13 @@ export class DiscDataManager extends DataManager<
       .filter(
         (candidate) =>
           level === candidate.level &&
-          substats.every(
-            (substat) =>
-              !substat.key || // Empty slot
-              candidate.substats.some(
-                (candidateSubstat) =>
-                  substat.key === candidateSubstat.key && // Or same slot
-                  substat.upgrades === candidateSubstat.upgrades
-              )
+          substats.length === candidate.substats.length &&
+          substats.every((substat) =>
+            candidate.substats.some(
+              (candidateSubstat) =>
+                substat.key === candidateSubstat.key && // Or same slot
+                substat.upgrades === candidateSubstat.upgrades
+            )
           )
       )
       .sort((candidates) =>
@@ -352,6 +351,38 @@ export function validateDisc(
     lock,
     trash,
   }
+}
+
+export function validateDiscBasedOnRarity(disc: Partial<ICachedDisc>) {
+  const errors = []
+  let { rarity, level, substats } = disc
+  let validatedDisc = undefined
+
+  rarity = rarity ? rarity : allDiscRarityKeys[0]
+  level = level ? level : 0
+  substats = substats ? substats : []
+  const minSubstats = rarity === allDiscRarityKeys[0] ? 3 : 2
+
+  if (substats && substats.length >= minSubstats) {
+    const totalUpgrades =
+      substats.reduce((sum, item) => sum + item.upgrades, 0) - substats.length
+    const levelRequired = totalUpgrades * 3
+    const lowerBound = Math.floor((level ? level : 0) / 3)
+
+    if (level === levelRequired) {
+      validatedDisc = validateDisc(disc)
+    } else {
+      errors.push(
+        `${rarity}-rank artifact (level ${level}) should have at least ${lowerBound} upgrades. It currently has ${totalUpgrades} upgrades.`
+      )
+    }
+  } else {
+    errors.push(
+      `${rarity}-rank artifact (level ${level}) should have at least ${minSubstats} substats. It currently has ${substats?.length} substats.`
+    )
+  }
+
+  return { validatedDisc, errors }
 }
 
 function parseSubstats(

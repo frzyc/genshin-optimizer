@@ -18,6 +18,7 @@ import {
 import type { IDisc } from '@genshin-optimizer/zzz/db'
 import {
   validateDisc,
+  validateDiscBasedOnRarity,
   type ICachedDisc,
   type ISubstat,
 } from '@genshin-optimizer/zzz/db'
@@ -79,29 +80,36 @@ const InputInvis = styled('input')({
 interface DiscReducerState {
   disc: Partial<ICachedDisc>
   validatedDisc?: IDisc
+  errors?: string[]
 }
-function reducer(state: DiscReducerState, action: Partial<ICachedDisc>) {
+function reducer(
+  state: DiscReducerState,
+  action: Partial<ICachedDisc>
+): DiscReducerState {
   if (!action || Object.keys(action).length === 0)
     return {
       disc: {} as Partial<ICachedDisc>,
     }
   const disc = { ...state.disc, ...action }
-  const validatedDisc = validateDisc(disc)
+  const e = validateDisc(disc)
+  const { validatedDisc, errors } = validateDiscBasedOnRarity(disc)
 
   return {
     // Combine because validatedDisc:IDisc is missing the `id` field in ICachedDisc
-    disc: { ...disc, ...(validatedDisc || {}) } as Partial<ICachedDisc>,
+    disc: { ...disc, ...(e || {}) } as Partial<ICachedDisc>,
     validatedDisc,
+    errors,
   }
 }
 function useDiscValidation(discFromProp: Partial<ICachedDisc>) {
-  const [{ disc, validatedDisc }, setDisc] = useReducer(reducer, {
+  const [{ disc, validatedDisc, errors }, setDisc] = useReducer(reducer, {
     disc: discFromProp,
     validatedDisc: undefined,
+    errors: [],
   })
   useEffect(() => setDisc(discFromProp), [discFromProp])
 
-  return { disc, validatedDisc, setDisc }
+  return { disc, validatedDisc, errors, setDisc }
 }
 export function DiscEditor({
   disc: discFromProp,
@@ -126,7 +134,8 @@ export function DiscEditor({
   const { t: tk } = useTranslation(['discs_gen', 'statKey_gen'])
 
   const { database } = useDatabaseContext()
-  const { disc, validatedDisc, setDisc } = useDiscValidation(discFromProp)
+  const { disc, validatedDisc, setDisc, errors } =
+    useDiscValidation(discFromProp)
   const {
     prev,
     prevEditType,
@@ -301,7 +310,6 @@ export function DiscEditor({
                     disabled={!disc.mainStatKey || !!disc.id}
                   />
                 </Box>
-
                 {/* level */}
                 <Box component="div" display="flex">
                   <TextField
@@ -345,7 +353,6 @@ export function DiscEditor({
                     </Button>
                   </ButtonGroup>
                 </Box>
-
                 {/* slot */}
                 <Box component="div" display="flex">
                   <DropdownButton
@@ -381,7 +388,6 @@ export function DiscEditor({
                     </Suspense>
                   </CardThemed>
                 </Box>
-
                 {/* main stat */}
                 <Box component="div" display="flex" gap={1}>
                   <DiscMainStatDropdown
@@ -510,6 +516,7 @@ export function DiscEditor({
                     </CardContent>
                   </CardThemed>
                 )}
+                <Typography>{errors?.map((error) => error)}</Typography>
               </Grid>
 
               {/* right column */}
@@ -539,7 +546,7 @@ export function DiscEditor({
             </Grid>
 
             {/* Duplicate/Updated/Edit UI */}
-            {prev && (
+            {prev && !errors?.length && (
               <Grid
                 container
                 sx={{ justifyContent: 'space-around' }}
