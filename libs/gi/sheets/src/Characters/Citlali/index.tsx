@@ -500,6 +500,7 @@ const sheet: TalentSheet = {
     }),
     ct.headerTem('constellation2', {
       canShow: equal(condA1NsFreezeMelt, 'on', 1),
+      teamBuff: true,
       fields: [
         {
           node: c2NsFreezeMelt_pyro_enemyRes_,
