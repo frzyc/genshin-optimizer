@@ -17,7 +17,6 @@ import {
 } from '@genshin-optimizer/zzz/consts'
 import type { IDisc } from '@genshin-optimizer/zzz/db'
 import {
-  validateDisc,
   validateDiscBasedOnRarity,
   type ICachedDisc,
   type ISubstat,
@@ -35,6 +34,7 @@ import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
 import ReplayIcon from '@mui/icons-material/Replay'
 import UpdateIcon from '@mui/icons-material/Update'
 import {
+  Alert,
   Box,
   Button,
   ButtonGroup,
@@ -82,6 +82,33 @@ interface DiscReducerState {
   validatedDisc?: IDisc
   errors?: string[]
 }
+function handleSubstats(
+  index: number,
+  substat: ISubstat | undefined,
+  disc: Partial<ICachedDisc>
+): ISubstat[] {
+  const substats = [...(disc.substats || [])]
+  if (substat) {
+    const oldIndex = substat?.key
+      ? substats.findIndex((current) => current.key === substat.key)
+      : -1
+    if (oldIndex === -1 || oldIndex === index) substats[index] = substat
+    // Already in used, swap the items instead
+    else
+      [substats[index], substats[oldIndex]] = [
+        substats[oldIndex],
+        substats[index],
+      ]
+
+    if (oldIndex !== -1 && substats[oldIndex] === undefined) {
+      substats.splice(oldIndex, 1)
+    }
+  } else {
+    substats.splice(index, 1)
+  }
+
+  return substats
+}
 function reducer(
   state: DiscReducerState,
   action: Partial<ICachedDisc>
@@ -91,12 +118,11 @@ function reducer(
       disc: {} as Partial<ICachedDisc>,
     }
   const disc = { ...state.disc, ...action }
-  const e = validateDisc(disc)
   const { validatedDisc, errors } = validateDiscBasedOnRarity(disc)
 
   return {
     // Combine because validatedDisc:IDisc is missing the `id` field in ICachedDisc
-    disc: { ...disc, ...(e || {}) } as Partial<ICachedDisc>,
+    disc: { ...disc, ...(validatedDisc || {}) } as Partial<ICachedDisc>,
     validatedDisc,
     errors,
   }
@@ -172,9 +198,8 @@ export function DiscEditor({
 
   const setSubstat = useCallback(
     (index: number, substat?: ISubstat) => {
-      const substats = [...(disc.substats || [])]
-      if (substat) substats[index] = substat
-      else substats.filter((_, i) => i !== index)
+      const substats = handleSubstats(index, substat, disc)
+
       setDisc({ substats })
     },
     [disc, setDisc]
@@ -193,7 +218,7 @@ export function DiscEditor({
     },
     [t, disc, onClose, reset]
   )
-
+  const isValid = !errors?.length
   const theme = useTheme()
   const grmd = useMediaQuery(theme.breakpoints.up('md'))
   const removeId = disc?.id || prev?.id
@@ -516,7 +541,6 @@ export function DiscEditor({
                     </CardContent>
                   </CardThemed>
                 )}
-                <Typography>{errors?.map((error) => error)}</Typography>
               </Grid>
 
               {/* right column */}
@@ -546,7 +570,7 @@ export function DiscEditor({
             </Grid>
 
             {/* Duplicate/Updated/Edit UI */}
-            {prev && !errors?.length && (
+            {prev && (
               <Grid
                 container
                 sx={{ justifyContent: 'space-around' }}
@@ -597,7 +621,14 @@ export function DiscEditor({
                 </Grid>
               </Grid>
             )}
-
+            {/* Error alert */}
+            {!isValid && (
+              <Alert variant="filled" severity="error">
+                {errors?.map((e, i) => (
+                  <div key={i}>{e}</div>
+                ))}
+              </Alert>
+            )}
             {/* Buttons */}
             <Box display="flex" gap={2}>
               {prevEditType === 'edit' && prev?.id ? (
@@ -607,7 +638,7 @@ export function DiscEditor({
                     disc && database.discs.set(prev.id, disc)
                     reset()
                   }}
-                  disabled={!validatedDisc}
+                  disabled={!validatedDisc || !isValid}
                   color="primary"
                 >
                   {t('editor.btnSave')}
@@ -620,7 +651,7 @@ export function DiscEditor({
                     database.discs.new(validatedDisc)
                     reset()
                   }}
-                  disabled={!validatedDisc}
+                  disabled={!validatedDisc || !isValid}
                   color={prevEditType === 'duplicate' ? 'warning' : 'primary'}
                 >
                   {t('editor.btnAdd')}
@@ -646,7 +677,7 @@ export function DiscEditor({
                     database.discs.set(prev.id, validatedDisc)
                     reset()
                   }}
-                  disabled={!validatedDisc}
+                  disabled={!isValid}
                   color="success"
                 >
                   {t('editor.btnUpdate')}

@@ -1,6 +1,5 @@
 import { CardThemed, DropdownButton } from '@genshin-optimizer/common/ui'
 import { getUnitStr, range, valueString } from '@genshin-optimizer/common/util'
-import { StatIcon } from '@genshin-optimizer/sr/svgicons'
 import type { DiscRarityKey } from '@genshin-optimizer/zzz/consts'
 import {
   allDiscSubStatKeys,
@@ -8,6 +7,7 @@ import {
   getDiscSubStatBaseVal,
 } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc, ISubstat } from '@genshin-optimizer/zzz/db'
+import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import type { SliderProps } from '@mui/material'
 import {
   ListItemIcon,

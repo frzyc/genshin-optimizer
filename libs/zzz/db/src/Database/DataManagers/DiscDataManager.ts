@@ -12,6 +12,7 @@ import {
   allDiscSubStatKeys,
   discMaxLevel,
   discSlotToMainStatKeys,
+  discSubstatRollData,
 } from '@genshin-optimizer/zzz/consts'
 import type {
   ICachedDisc,
@@ -356,7 +357,7 @@ export function validateDisc(
 export function validateDiscBasedOnRarity(disc: Partial<ICachedDisc>) {
   const errors = []
   let { rarity, level, substats } = disc
-  let validatedDisc = undefined
+  const validatedDisc = validateDisc(disc)
 
   rarity = rarity ? rarity : allDiscRarityKeys[0]
   level = level ? level : 0
@@ -364,21 +365,22 @@ export function validateDiscBasedOnRarity(disc: Partial<ICachedDisc>) {
   const minSubstats = rarity === allDiscRarityKeys[0] ? 3 : 2
 
   if (substats && substats.length >= minSubstats) {
-    const totalUpgrades =
-      substats.reduce((sum, item) => sum + item.upgrades, 0) - substats.length
-    const levelRequired = totalUpgrades * 3
-    const lowerBound = Math.floor((level ? level : 0) / 3)
+    const totalUpgrades = substats.reduce((sum, item) => sum + item.upgrades, 0)
+    const { low, high } = discSubstatRollData[rarity]
+    const lowerBound = low + Math.floor(level / 3)
+    const upperBound = high + Math.floor(level / 3)
 
-    if (level === levelRequired) {
-      validatedDisc = validateDisc(disc)
-    } else {
+    if (totalUpgrades > upperBound)
       errors.push(
-        `${rarity}-rank artifact (level ${level}) should have at least ${lowerBound} upgrades. It currently has ${totalUpgrades} upgrades.`
+        `${rarity}-star artifact (level ${level}) should have no more than ${upperBound} upgrades. It currently has ${totalUpgrades} upgrades.`
       )
-    }
+    else if (totalUpgrades < lowerBound)
+      errors.push(
+        `${rarity}-star artifact (level ${level}) should have at least ${lowerBound} upgrades. It currently has ${totalUpgrades} upgrades.`
+      )
   } else {
     errors.push(
-      `${rarity}-rank artifact (level ${level}) should have at least ${minSubstats} substats. It currently has ${substats?.length} substats.`
+      `${rarity}-rank disc (level ${level}) should have at least ${minSubstats} substats. It currently has ${substats?.length} substats.`
     )
   }
 
