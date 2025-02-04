@@ -1,6 +1,7 @@
 {
   "rarity": "A",
-  "element": "electric",
+  "attribute": "electric",
+  "specialty": "defense",
   "stats": {
     "atk_base": 93,
     "atk_growth": 5.2593,
@@ -9,9 +10,11 @@
     "hp_base": 699,
     "hp_growth": 94.9375,
     "anomMas": 86,
-    "anomProf": 90
+    "anomProf": 90,
+    "impact": 94,
+    "enerRegen": 1.2
   },
-  "levelStats": [
+  "promotionStats": [
     { "hp": 0, "atk": 0, "def": 0 },
     { "hp": 480, "atk": 33, "def": 41 },
     { "hp": 960, "atk": 66, "def": 82 },

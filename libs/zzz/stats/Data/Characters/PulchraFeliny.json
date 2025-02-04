@@ -1,6 +1,7 @@
 {
   "rarity": "A",
-  "element": "physical",
+  "attribute": "physical",
+  "specialty": "stun",
   "stats": {
     "atk_base": 96,
     "atk_growth": 5.4887,
@@ -9,9 +10,11 @@
     "hp_base": 612,
     "hp_growth": 83.0642,
     "anomMas": 92,
-    "anomProf": 90
+    "anomProf": 90,
+    "impact": 118,
+    "enerRegen": 1.2
   },
-  "levelStats": [
+  "promotionStats": [
     { "hp": 0, "atk": 0, "def": 0 },
     { "hp": 420, "atk": 34, "def": 33 },
     { "hp": 840, "atk": 68, "def": 67 },

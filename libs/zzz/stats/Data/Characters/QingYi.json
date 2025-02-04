@@ -1,6 +1,7 @@
 {
   "rarity": "S",
-  "element": "electric",
+  "attribute": "electric",
+  "specialty": "stun",
   "stats": {
     "atk_base": 109,
     "atk_growth": 6.4272,
@@ -9,9 +10,11 @@
     "hp_base": 663,
     "hp_growth": 90.0269,
     "anomMas": 94,
-    "anomProf": 93
+    "anomProf": 93,
+    "impact": 118,
+    "enerRegen": 1.2
   },
-  "levelStats": [
+  "promotionStats": [
     { "hp": 0, "atk": 0, "def": 0 },
     { "hp": 455, "atk": 39, "def": 34 },
     { "hp": 911, "atk": 78, "def": 68 },
