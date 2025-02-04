@@ -1,5 +1,5 @@
-import type { ElementalKey } from '@genshin-optimizer/zzz/consts'
-import { allElementalKeys } from '@genshin-optimizer/zzz/consts'
+import type { AttributeKey } from '@genshin-optimizer/zzz/consts'
+import { allAttributeKeys } from '@genshin-optimizer/zzz/consts'
 import type { SvgIconProps } from '@mui/material'
 import {
   AnomMasIcon,
@@ -56,8 +56,8 @@ export function StatIcon({
   }
 
   const ele = statKey.split('_')[0]
-  if (allElementalKeys.includes(ele as ElementalKey))
-    return <ElementIcon ele={ele as ElementalKey} iconProps={iconProps} />
+  if (allAttributeKeys.includes(ele as AttributeKey))
+    return <ElementIcon ele={ele as AttributeKey} iconProps={iconProps} />
 
   return null
 }

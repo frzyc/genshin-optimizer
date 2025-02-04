@@ -11,7 +11,7 @@ export function getCharacterStats(
   core: number
 ) {
   const {
-    levelStats,
+    promotionStats,
     coreStats,
     stats: {
       atk_base,
@@ -33,15 +33,15 @@ export function getCharacterStats(
     atk_base:
       atk_base +
       atk_growth * (level - 1) +
-      levelStats[Math.floor(level / 10) - 1].atk,
+      promotionStats[Math.floor(level / 10) - 1].atk,
     def_base:
       def_base +
       def_growth * (level - 1) +
-      levelStats[Math.floor(level / 10) - 1].def,
+      promotionStats[Math.floor(level / 10) - 1].def,
     hp_base:
       hp_base +
       hp_growth * (level - 1) +
-      levelStats[Math.floor(level / 10) - 1].hp,
+      promotionStats[Math.floor(level / 10) - 1].hp,
   }
   if (core > 1 && coreStats[core - 1])
     Object.entries(coreStats[core - 1]).forEach(([k, v]) => {

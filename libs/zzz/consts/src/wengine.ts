@@ -63,3 +63,9 @@ export const allWengineKeys = [
 ] as const
 
 export type WengineKey = (typeof allWengineKeys)[number]
+
+export const allModificationKeys = [0, 1, 2, 3, 4, 5] as const
+export type ModificationKey = (typeof allModificationKeys)[number]
+
+export const allPhaseKeys = [1, 2, 3, 4, 5] as const
+export type PhaseKey = (typeof allPhaseKeys)[number]

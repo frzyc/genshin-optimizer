@@ -31,14 +31,25 @@ export const allStatKeys = Array.from(
 )
 export type StatKey = (typeof allStatKeys)[number]
 
-export const allElementalKeys = [
+const extraPandoStatKeys = ['frost_dmg_', 'impact', 'anomMas', 'dmg_', 'shield_'] as const
+export const allPandoStatKeys = Array.from(
+  new Set([
+    ...allDiscMainStatKeys,
+    ...allDiscSubStatKeys,
+    ...extraPandoStatKeys,
+  ])
+)
+export type PandoStatKey = (typeof allPandoStatKeys)[number]
+
+export const allAttributeKeys = [
   'electric',
   'fire',
   'ice',
   'physical',
   'ether',
+  'frost',
 ] as const
-export type ElementalKey = (typeof allElementalKeys)[number]
+export type AttributeKey = (typeof allAttributeKeys)[number]
 
 export const allAttributeDamageKeys = [
   'electric_dmg_',
@@ -46,6 +57,7 @@ export const allAttributeDamageKeys = [
   'ice_dmg_',
   'physical_dmg_',
   'ether_dmg_',
+  'frost_dmg_',
 ] as const
 export type AttributeDamageKey = (typeof allAttributeDamageKeys)[number]
 
@@ -99,12 +111,13 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   cond_atk_: 'Conditional ATK%',
 }
 
-const elementalData: Record<ElementalKey, string> = {
+const elementalData: Record<AttributeKey, string> = {
   electric: 'Electric',
   fire: 'Fire',
   ice: 'Ice',
   physical: 'Physical',
   ether: 'Ether',
+  frost: 'Frost',
 } as const
 
 Object.entries(elementalData).forEach(([e, name]) => {
