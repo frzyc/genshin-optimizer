@@ -14,6 +14,7 @@ export default defineConfig({
   // },
 
   test: {
+    name: 'zzz-db',
     globals: true,
     cache: { dir: '../../../node_modules/.vitest' },
     environment: 'jsdom',

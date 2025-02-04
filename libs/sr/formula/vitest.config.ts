@@ -14,6 +14,7 @@ export default defineConfig({
   // },
 
   test: {
+    name: 'sr-formula',
     globals: true,
     cache: { dir: '../../../node_modules/.vitest' },
     environment: 'jsdom',
