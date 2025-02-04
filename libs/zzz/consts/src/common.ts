@@ -31,7 +31,13 @@ export const allStatKeys = Array.from(
 )
 export type StatKey = (typeof allStatKeys)[number]
 
-const extraPandoStatKeys = ['frost_dmg_', 'impact', 'anomMas', 'dmg_', 'shield_'] as const
+const extraPandoStatKeys = [
+  'frost_dmg_',
+  'impact',
+  'anomMas',
+  'dmg_',
+  'shield_',
+] as const
 export const allPandoStatKeys = Array.from(
   new Set([
     ...allDiscMainStatKeys,

@@ -25,7 +25,7 @@ export const stats = [
   'anomMas_',
   'dmg_',
   'resIgn_',
-  'shield_'
+  'shield_',
 ] as const
 
 export const attributes = [
