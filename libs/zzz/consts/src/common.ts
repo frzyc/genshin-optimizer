@@ -9,6 +9,7 @@ export const otherStatKeys = [
   'enemyRes_', // Enemy Resistance
   'enemyResRed_', // Enemy Resistance Reduction
   'enemyResIgn_', // Enemy Resistance Ignore
+  'frost_dmg_', // Frost DMG
   'dmg_', // Bonus DMG
 
   // Other stats

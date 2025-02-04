@@ -36,6 +36,7 @@ const formulaKeyTextMap: Record<FormulaKey, string> = {
   electric_dmg_: 'Electrical Damage',
   fire_dmg_: 'Fire Damage',
   ice_dmg_: 'Ice Damage',
+  frost_dmg_: 'Frost Damage',
   physical_dmg_: 'Physical Damage',
   ether_dmg_: 'Ether Damage',
   burn: 'Burn Anomaly',
