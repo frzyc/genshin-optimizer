@@ -20,7 +20,7 @@ type CondInfo = MemRec<SrcCondInfo>
 export type CalcMeta = PartialMeta & Info
 export type PartialMeta = {
   tag?: Tag
-  op: 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac' | 'res'
+  op: 'const' | 'sum' | 'prod' | 'min' | 'max' | 'sumfrac'
   ops: CalcResult<number, PartialMeta>[]
 }
 type Info = { conds: CondInfo }
