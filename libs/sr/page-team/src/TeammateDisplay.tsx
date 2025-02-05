@@ -8,7 +8,12 @@ import {
   NumberInputLazy,
   useScrollRef,
 } from '@genshin-optimizer/common/ui'
-import type { CharacterKey } from '@genshin-optimizer/sr/consts'
+import type { DebugMeta } from '@genshin-optimizer/pando/engine'
+import { TagContext } from '@genshin-optimizer/pando/ui-sheet'
+import {
+  allLightConeKeys,
+  type CharacterKey,
+} from '@genshin-optimizer/sr/consts'
 import type { Frame } from '@genshin-optimizer/sr/db'
 import {
   useCharacterContext,
@@ -291,7 +296,8 @@ function BuildsModal({
 }
 
 function CalcDebug() {
-  const calc = useSrCalcContext()
+  const tag = useContext(TagContext)
+  const calc = useSrCalcContext()?.withTag(tag)
   return (
     <CardThemed bgt="dark">
       <CardContent>
@@ -318,7 +324,7 @@ function CalcDebug() {
                         {JSON.stringify(computed.meta.conds, undefined, 2)}
                         <Typography component="pre">
                           {JSON.stringify(
-                            calc.toDebug().compute(read),
+                            filterDebug(calc.toDebug().compute(read).meta),
                             undefined,
                             2
                           )}
@@ -354,7 +360,7 @@ function CalcDebug() {
                         {JSON.stringify(computed.meta.conds, undefined, 2)}
                         <Typography component="pre">
                           {JSON.stringify(
-                            calc.toDebug().compute(read),
+                            filterDebug(calc.toDebug().compute(read).meta),
                             undefined,
                             2
                           )}
@@ -370,4 +376,19 @@ function CalcDebug() {
       </CardContent>
     </CardThemed>
   )
+}
+
+function filterDebug(debug: DebugMeta) {
+  for (let i = debug.deps.length - 1; i >= 0; i--) {
+    if (
+      (debug.deps[i].formula?.includes('[0] thres') ||
+        debug.deps[i].formula?.includes('[0] match')) &&
+      allLightConeKeys.some((key) => debug.deps[i].formula?.includes(key))
+    ) {
+      debug.deps.splice(i, 1)
+      continue
+    }
+    debug.deps[i] = filterDebug(debug.deps[i])
+  }
+  return debug
 }
