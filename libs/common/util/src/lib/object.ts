@@ -247,3 +247,26 @@ export function objFindValue<K extends string, V extends string>(
 ): K | undefined {
   return Object.keys(obj).find((k) => obj[k as K] === value) as K | undefined
 }
+
+/**
+ * Returns a new object that is the sum of `a` and `b`
+ */
+export function objSum(
+  a: Record<string, number>,
+  b: Record<string, number>
+): Record<string, number> {
+  const sum = { ...a }
+  for (const k in b) sum[k] = (sum[k] ?? 0) + b[k]
+  return sum
+}
+
+/**
+ * Apply obj `add` to the `base` object
+ */
+export function objSumInPlace(
+  base: Record<string, number>,
+  add: Record<string, number>
+): Record<string, number> {
+  for (const k in add) base[k] = (base[k] ?? 0) + add[k]
+  return base
+}

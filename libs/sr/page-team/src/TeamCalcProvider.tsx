@@ -29,7 +29,6 @@ import {
   conditionalEntries,
   enemyDebuff,
   lightConeTagMapNodeEntries,
-  members,
   ownBuff,
   relicTagMapNodeEntries,
   srCalculatorWithEntries,
@@ -61,9 +60,7 @@ export function TeamCalcProvider({
         // Specify members present in the team
         ...teamData(
           team.teamMetadata
-            .map((meta, index) =>
-              meta === undefined ? undefined : members[index]
-            )
+            .map((meta) => meta?.characterKey)
             .filter((m): m is Member => !!m)
         ),
         // Add actual member data

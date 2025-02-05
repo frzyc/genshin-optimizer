@@ -1,6 +1,10 @@
-import type { DiscSlotKey, FormulaKey } from '@genshin-optimizer/zzz/consts'
+import type {
+  DiscSetKey,
+  DiscSlotKey,
+  FormulaKey,
+} from '@genshin-optimizer/zzz/consts'
 import type { Constraints, Stats } from '@genshin-optimizer/zzz/db'
-import { calcFormula, getSum } from './calc'
+import { applyCalc, calcFormula, passSetFilter } from './calc'
 import type { BuildResult, DiscStats } from './common'
 import { MAX_BUILDS } from './common'
 
@@ -9,6 +13,8 @@ let discStatsBySlot: Record<DiscSlotKey, DiscStats[]>
 let constraints: Constraints
 let baseStats: Stats
 let formulaKey: FormulaKey
+let setFilter2p: DiscSetKey[]
+let setFilter4p: DiscSetKey[]
 
 export interface ChildCommandInit {
   command: 'init'
@@ -16,6 +22,8 @@ export interface ChildCommandInit {
   discStatsBySlot: Record<DiscSlotKey, DiscStats[]>
   constraints: Constraints
   formulaKey: FormulaKey
+  setFilter2: DiscSetKey[] // [] means rainbow
+  setFilter4: DiscSetKey[] // [] means rainbow
 }
 export interface ChildCommandStart {
   command: 'start'
@@ -76,11 +84,15 @@ async function init({
   discStatsBySlot: discs,
   constraints: initCons,
   formulaKey: fk,
+  setFilter2,
+  setFilter4,
 }: ChildCommandInit) {
   baseStats = bs
   discStatsBySlot = discs
   constraints = initCons
   formulaKey = fk
+  setFilter2p = setFilter2
+  setFilter4p = setFilter4
 
   // Let parent know we are ready to optimize
   postMessage({ resultType: 'initialized' })
@@ -135,13 +147,32 @@ async function start() {
   }
   const constraintArr = Object.entries(constraints)
   for (const { d1, d2, d3, d4, d5, d6 } of generateCombinations()) {
-    const sum = getSum(baseStats, [d1, d2, d3, d4, d5, d6])
+    /**
+     * Calculation takes several steps:
+     * 1. `passSetFilter()` filtering 2/4p effects
+     * 2. `applyCalc()` sum up stats from base + discs + 2p effects
+     * 3. filter using constraints
+     * 4. `calcFormula()` calculate final value of target
+     * 5. return build with calculated value.
+     */
+
+    const discs = [d1, d2, d3, d4, d5, d6]
+    // 1. Filter using set filter
+    if (!passSetFilter(discs, setFilter2p, setFilter4p)) {
+      // Skip early due to failing set filter
+      skipped++
+      continue
+    }
+    // 2. Calculate base stats.
+    const sum = applyCalc(baseStats, discs)
+    // 3Filter using constraints
     if (
       constraintArr.every(([k, { value, isMax }]) =>
         isMax ? sum[k] <= value : sum[k] >= value
       )
     ) {
       builds.push({
+        // 4. Calculate final value
         value: calcFormula(sum, formulaKey),
         discIds: {
           1: d1.id,
@@ -155,12 +186,12 @@ async function start() {
     } else {
       skipped++
     }
-    if (builds.length > MAX_BUILDS_TO_SEND) {
+    if (builds.length + skipped > MAX_BUILDS_TO_SEND) {
       sliceSortSendBuilds()
     }
   }
 
-  if (builds.length > 0) {
+  if (builds.length + skipped > 0) {
     sliceSortSendBuilds()
   }
 

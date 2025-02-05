@@ -1,3 +1,7 @@
 {
-  "pageTitle": "Zenless Zone Zero Optimizer"
+  "pageTitle": "Zenless Zone Zero Optimizer",
+  "locked": "Locked",
+  "unlocked": "Unlocked",
+  "reset": "Reset",
+  "discFilter": "Disc Filter"
 }

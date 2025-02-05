@@ -1,13 +1,21 @@
 import type { TriggerString } from '@genshin-optimizer/common/database'
-import { clamp, objFilter, validateArr } from '@genshin-optimizer/common/util'
+import {
+  clamp,
+  objFilter,
+  objFilterKeys,
+  validateArr,
+} from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
   DiscMainStatKey,
+  DiscSetKey,
   FormulaKey,
   WengineKey,
 } from '@genshin-optimizer/zzz/consts'
 import {
+  allAttributeDamageKeys,
   allCharacterKeys,
+  allDiscSetKeys,
   allFormulaKeys,
   allWengineKeys,
   discSlotToMainStatKeys,
@@ -32,6 +40,8 @@ export type CharacterData = {
   slot6: DiscMainStatKey[]
   levelLow: number
   levelHigh: number
+  setFilter2: DiscSetKey[]
+  setFilter4: DiscSetKey[]
 }
 
 function initialCharacterData(key: CharacterKey): CharacterData {
@@ -53,6 +63,8 @@ function initialCharacterData(key: CharacterKey): CharacterData {
     slot6: [...discSlotToMainStatKeys['6']],
     levelLow: 15,
     levelHigh: 15,
+    setFilter2: [],
+    setFilter4: [],
   }
 }
 export class CharacterDataManager extends DataManager<
@@ -81,6 +93,8 @@ export class CharacterDataManager extends DataManager<
       slot6,
       levelLow,
       levelHigh,
+      setFilter2,
+      setFilter4,
     } = obj as CharacterData
 
     if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
@@ -111,6 +125,20 @@ export class CharacterDataManager extends DataManager<
       ({ value, isMax }) =>
         typeof value === 'number' && typeof isMax === 'boolean'
     )
+    constraints = objFilterKeys(
+      constraints,
+      // Taken from StatFilterCard
+      [
+        'hp',
+        'def',
+        'atk',
+        'crit_',
+        'crit_dmg_',
+        'anomProf',
+        'pen',
+        ...allAttributeDamageKeys,
+      ]
+    )
     useEquipped = !!useEquipped
 
     slot4 = validateArr(slot4, discSlotToMainStatKeys['4'])
@@ -122,6 +150,10 @@ export class CharacterDataManager extends DataManager<
 
     if (typeof levelHigh !== 'number') levelHigh = 15
     levelHigh = clamp(levelHigh, 0, 15)
+
+    setFilter2 = validateArr(setFilter2, allDiscSetKeys, [])
+    setFilter4 = validateArr(setFilter4, allDiscSetKeys, [])
+
     const char: CharacterData = {
       key: characterKey,
       level,
@@ -137,6 +169,8 @@ export class CharacterDataManager extends DataManager<
       slot6,
       levelLow,
       levelHigh,
+      setFilter2,
+      setFilter4,
     }
     return char
   }

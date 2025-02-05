@@ -3,7 +3,12 @@ import {
   useMediaQueryUp,
 } from '@genshin-optimizer/common/react-util'
 import { CardThemed, useInfScroll } from '@genshin-optimizer/common/ui'
-import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
+import { filterFunction } from '@genshin-optimizer/common/util'
+import {
+  useDatabaseContext,
+  useDisplayDisc,
+} from '@genshin-optimizer/zzz/db-ui'
+import { discFilterConfigs } from '@genshin-optimizer/zzz/util'
 import AddIcon from '@mui/icons-material/Add'
 import {
   Box,
@@ -13,9 +18,10 @@ import {
   Skeleton,
   Typography,
 } from '@mui/material'
-import { Suspense, useEffect, useMemo } from 'react'
+import { Suspense, useDeferredValue, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { DiscCard } from './DiscCard'
+import DiscFilter from './DiscFilter'
 
 const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
 const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
@@ -29,6 +35,10 @@ export function DiscInventory({ onAdd, onEdit }: DiscInventoryProps) {
   const { t } = useTranslation('disc')
   const { database } = useDatabaseContext()
   const [dirtyDatabase, setDirtyDatabase] = useForceUpdate()
+  const dbDirtyDeferred = useDeferredValue(dirtyDatabase)
+  const discDisplayState = useDisplayDisc()
+  const filterConfigs = useMemo(() => discFilterConfigs(), [])
+  const deferredDiscDisplayState = useDeferredValue(discDisplayState)
 
   useEffect(
     () => database.discs.followAny(setDirtyDatabase),
@@ -36,11 +46,22 @@ export function DiscInventory({ onAdd, onEdit }: DiscInventoryProps) {
   )
 
   const { discIds, totalDiscsNum } = useMemo(() => {
-    const discs = database.discs.values
-    const totalDiscsNum = discs.length
-    const discIds = discs.map((r) => r.id)
-    return dirtyDatabase && { discIds, totalDiscsNum }
-  }, [database, dirtyDatabase])
+    const { filterOption } = deferredDiscDisplayState
+    const allDiscs = database.discs.values
+    const allDiscids = allDiscs
+      .filter(filterFunction(filterOption, filterConfigs))
+      .map((disc) => disc.id)
+    return {
+      discIds: allDiscids,
+      totalDiscsNum: allDiscs.length,
+      ...dbDirtyDeferred,
+    } //use dbDirty to shoo away warnings!
+  }, [
+    database.discs.values,
+    dbDirtyDeferred,
+    deferredDiscDisplayState,
+    filterConfigs,
+  ])
 
   const brPt = useMediaQueryUp()
   const totalShowing =
@@ -63,6 +84,11 @@ export function DiscInventory({ onAdd, onEdit }: DiscInventoryProps) {
 
   return (
     <>
+      <DiscFilter
+        numShowing={totalDiscsNum}
+        total={totalDiscsNum}
+        discIds={discIds}
+      ></DiscFilter>
       <CardThemed bgt="dark">
         <CardContent>
           <Box

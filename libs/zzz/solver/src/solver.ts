@@ -1,4 +1,8 @@
-import type { DiscSlotKey, FormulaKey } from '@genshin-optimizer/zzz/consts'
+import type {
+  DiscSetKey,
+  DiscSlotKey,
+  FormulaKey,
+} from '@genshin-optimizer/zzz/consts'
 import type { Constraints, ICachedDisc, Stats } from '@genshin-optimizer/zzz/db'
 import type { BuildResult } from './common'
 import type {
@@ -20,11 +24,15 @@ export class Solver {
   private numWorkers: number
   private setProgress: (progress: ProgressResult) => void
   private worker: Worker
+  private setFilter2: DiscSetKey[] // [] means rainbow
+  private setFilter4: DiscSetKey[] // [] means rainbow
 
   constructor(
     formulaKey: FormulaKey,
     baseStats: Stats,
     constraints: Constraints,
+    setFilter2: DiscSetKey[], // [] means rainbow
+    setFilter4: DiscSetKey[], // [] means rainbow
     discsBySlot: Record<DiscSlotKey, ICachedDisc[]>,
     numWorkers: number,
     setProgress: (progress: ProgressResult) => void
@@ -35,6 +43,8 @@ export class Solver {
     this.discsBySlot = discsBySlot
     this.numWorkers = numWorkers
     this.setProgress = setProgress
+    this.setFilter2 = setFilter2
+    this.setFilter4 = setFilter4
 
     // Spawn a parent worker to compile nodes, split/filter discs and spawn child workers for calculating results
     this.worker = new Worker(new URL('./parentWorker.ts', import.meta.url), {
@@ -70,6 +80,8 @@ export class Solver {
         constraints: this.constraints,
         numWorkers: this.numWorkers,
         formulaKey: this.formulaKey,
+        setFilter2: this.setFilter2,
+        setFilter4: this.setFilter4,
       }
       this.worker.postMessage(message)
     })

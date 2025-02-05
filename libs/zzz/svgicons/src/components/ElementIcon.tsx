@@ -1,6 +1,13 @@
 import type { ElementalKey } from '@genshin-optimizer/zzz/consts'
 import type { SvgIconProps } from '@mui/material'
-import { EtherIcon, FireIcon, FrostIcon, IceIcon, PhysicalIcon } from '../icons'
+import {
+  ElectricIcon,
+  EtherIcon,
+  FireIcon,
+  FrostIcon,
+  IceIcon,
+  PhysicalIcon,
+} from '../icons'
 
 export function ElementIcon({
   ele,
@@ -15,7 +22,7 @@ export function ElementIcon({
     case 'ice':
       return <IceIcon {...iconProps} />
     case 'electric':
-      return <ElementIcon ele="frost" {...iconProps} />
+      return <ElectricIcon {...iconProps} />
     case 'frost':
       return <FrostIcon {...iconProps} />
     case 'physical':

@@ -1,5 +1,5 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
-import type { FormulaKey } from '@genshin-optimizer/zzz/consts'
+import type { DiscSetKey, FormulaKey } from '@genshin-optimizer/zzz/consts'
 import {
   allDiscSlotKeys,
   type DiscSlotKey,
@@ -16,6 +16,8 @@ export interface ParentCommandStart {
   command: 'start'
   baseStats: Stats
   constraints: Constraints
+  setFilter2: DiscSetKey[] // [] means rainbow
+  setFilter4: DiscSetKey[] // [] means rainbow
   // lightCones: ICachedLightCone[]
   discsBySlot: Record<DiscSlotKey, ICachedDisc[]>
   // detachedNodes: NumTagFree[]
@@ -81,6 +83,8 @@ async function start({
   baseStats,
   discsBySlot,
   constraints,
+  setFilter2,
+  setFilter4,
   numWorkers,
   formulaKey,
 }: ParentCommandStart) {
@@ -180,6 +184,8 @@ async function start({
           discStatsBySlot: chunkedDiscStatsBySlot[index],
           constraints,
           formulaKey,
+          setFilter2,
+          setFilter4,
         }
         worker.postMessage(message)
       })
