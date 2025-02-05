@@ -32,7 +32,7 @@ export type WengineData = {
   rarity: WengineRarityKey
   type: SpecialityKey
   atk_base: number
-  second_statkey: string
+  second_statkey: (typeof subStatMap)[keyof typeof subStatMap]
   second_statvalue: number
 }
 export const wengineDetailedJSONData = Object.fromEntries(

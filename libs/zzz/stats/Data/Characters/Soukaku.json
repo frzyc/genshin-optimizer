@@ -1,6 +1,7 @@
 {
   "rarity": "A",
-  "element": "ice",
+  "attribute": "ice",
+  "specialty": "support",
   "stats": {
     "atk_base": 96,
     "atk_growth": 5.4887,
@@ -9,9 +10,11 @@
     "hp_base": 645,
     "hp_growth": 87.5757,
     "anomMas": 93,
-    "anomProf": 96
+    "anomProf": 96,
+    "impact": 86,
+    "enerRegen": 1.2
   },
-  "levelStats": [
+  "promotionStats": [
     { "hp": 0, "atk": 0, "def": 0 },
     { "hp": 443, "atk": 34, "def": 33 },
     { "hp": 886, "atk": 68, "def": 66 },

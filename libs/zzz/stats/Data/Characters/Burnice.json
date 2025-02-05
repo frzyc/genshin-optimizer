@@ -1,6 +1,7 @@
 {
   "rarity": "S",
-  "element": "fire",
+  "attribute": "fire",
+  "specialty": "anomaly",
   "stats": {
     "atk_base": 124,
     "atk_growth": 7.4992,
@@ -9,9 +10,11 @@
     "hp_base": 592,
     "hp_growth": 80.3931,
     "anomMas": 118,
-    "anomProf": 120
+    "anomProf": 120,
+    "impact": 83,
+    "enerRegen": 1.2
   },
-  "levelStats": [
+  "promotionStats": [
     { "hp": 0, "atk": 0, "def": 0 },
     { "hp": 407, "atk": 44, "def": 33 },
     { "hp": 813, "atk": 89, "def": 66 },

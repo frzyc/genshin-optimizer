@@ -1,4 +1,4 @@
-import type { CoreKeys } from '@genshin-optimizer/zzz/consts'
+import type { CoreKey } from '@genshin-optimizer/zzz/consts'
 import type { SvgIconProps } from '@mui/material'
 import {
   ACoreIcon,
@@ -13,7 +13,7 @@ export function CoreIcon({
   slotKey,
   iconProps = {},
 }: {
-  slotKey: CoreKeys
+  slotKey: CoreKey
   iconProps?: SvgIconProps
 }) {
   switch (slotKey) {

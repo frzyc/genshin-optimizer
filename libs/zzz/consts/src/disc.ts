@@ -1,4 +1,4 @@
-import type { StatKey } from './common'
+import type { PandoStatKey } from './common'
 
 export const allDiscSlotKeys = ['1', '2', '3', '4', '5', '6'] as const
 export type DiscSlotKey = (typeof allDiscSlotKeys)[number]
@@ -158,7 +158,7 @@ export function getDiscMainStatVal(
  */
 export const disc2pEffect: Record<
   DiscSetKey,
-  Partial<Record<StatKey, number>>
+  Partial<Record<PandoStatKey, number>>
 > = {
   AstralVoice: { atk_: 0.1 },
   BranchBladeSong: { crit_dmg_: 0.16 },

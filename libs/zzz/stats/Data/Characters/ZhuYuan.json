@@ -1,6 +1,7 @@
 {
   "rarity": "S",
-  "element": "ether",
+  "attribute": "ether",
+  "specialty": "attack",
   "stats": {
     "atk_base": 132,
     "atk_growth": 8.0729,
@@ -9,9 +10,11 @@
     "hp_base": 602,
     "hp_growth": 81.6391,
     "anomMas": 93,
-    "anomProf": 92
+    "anomProf": 92,
+    "impact": 90,
+    "enerRegen": 1.2
   },
-  "levelStats": [
+  "promotionStats": [
     { "hp": 0, "atk": 0, "def": 0 },
     { "hp": 413, "atk": 47, "def": 33 },
     { "hp": 826, "atk": 95, "def": 66 },

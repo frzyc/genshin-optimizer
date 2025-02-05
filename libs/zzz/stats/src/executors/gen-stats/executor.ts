@@ -1,13 +1,15 @@
 import { dumpPrettyFile } from '@genshin-optimizer/common/pipeline'
 import { workspaceRoot } from '@nx/devkit'
 import type { GenStatsExecutorSchema } from './schema'
-import { characterData } from './src/characterData'
-import { WengineData } from './src/wengineData'
+import type { CharacterDatum } from './src/characterData'
+import { getCharactersData } from './src/characterData'
+import type { WengineDatum } from './src/wengineData'
+import { getWenginesData } from './src/wengineData'
 
 const proj_path = `${workspaceRoot}/libs/zzz/stats`
 const path = `${proj_path}/Data`
-const characterDataDump = characterData()
-const wengineDataDump = WengineData()
+const characterDataDump = getCharactersData()
+const wengineDataDump = getWenginesData()
 
 const allStat = {
   char: characterDataDump,
@@ -15,6 +17,8 @@ const allStat = {
 } as const
 
 export type AllStats = typeof allStat
+
+export type { CharacterDatum, WengineDatum }
 
 export default async function runExecutor(_options: GenStatsExecutorSchema) {
   console.log('Generating ZZZ stats')

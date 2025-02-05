@@ -1,0 +1,23 @@
+{
+  "name": "zzz-formula",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/zzz/formula/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project zzz-formula --web",
+  "targets": {
+    "gen-file": {
+      "executor": "@genshin-optimizer/zzz/formula:gen-desc",
+      "options": {
+        "outputPath": "libs/zzz/formula/src/meta.ts"
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../../../coverage/libs/test"
+      }
+    }
+  }
+}

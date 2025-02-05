@@ -1,6 +1,6 @@
 import type {
+  AttributeKey,
   CharacterRarityKey,
-  ElementalKey,
   SpecialityKey,
 } from '@genshin-optimizer/zzz/consts'
 
@@ -39,7 +39,7 @@ export const characterIdMap = {
   '1381': 'SilverAnby',
 } as const
 
-export const attributeMap: Record<number, ElementalKey> = {
+export const attributeMap: Record<number, AttributeKey> = {
   200: 'physical',
   201: 'fire',
   202: 'ice',
@@ -59,7 +59,9 @@ export const characterRarityMap: Record<number, CharacterRarityKey> = {
   4: 'S',
 } as const
 
-export const coreStatMap: Record<string, string> = {
+// TODO: everything is base here
+// Remove the 'base' portion to make stat names match what is in Pando
+export const coreStatMap = {
   'Base ATK': 'atk_base',
   Impact: 'impact',
   'CRIT Rate': 'crit_',

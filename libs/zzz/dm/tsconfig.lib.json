@@ -2,7 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../../dist/out-tsc",
-    "types": ["node"]
+    "types": ["node", "object-overrides"]
   },
   "include": ["src/**/*.ts", "scripts/**/*.ts"],
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
