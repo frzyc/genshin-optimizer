@@ -122,11 +122,11 @@ const sheet: UISheet<TalentSheetElementKey> = {
       fields: [
         {
           title: 'bonus ability 3 buff',
-          fieldRef: buff.ba3_brEff_.tag,
+          fieldRef: buff.ba3_dmg_.tag,
         },
         {
           title: 'bonus ability 3 formula',
-          fieldRef: formula.ba3_brEff_.tag,
+          fieldRef: formula.ba3_dmg_.tag,
         },
       ],
     },
