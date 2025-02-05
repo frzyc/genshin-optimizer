@@ -54,7 +54,7 @@ const dm = {
   },
   b3: {
     breakThreshold: bonusAbility3[0],
-    breakPer: bonusAbility3[1],
+    perBreak: bonusAbility3[1],
     dmg_per: bonusAbility3[2],
     max_dmg_: bonusAbility3[3],
   },

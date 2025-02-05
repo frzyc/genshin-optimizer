@@ -41,7 +41,7 @@ const GeneratedBuildsDisplay = memo(function GeneratedBuildsDisplay() {
     <Stack spacing={1}>
       {generatedBuildList?.builds.map((build, i) => (
         <CardThemed
-          key={`${build.lightConeId}-${Object.values(build.relicIds).join(
+          key={`${i}-${build.lightConeId}-${Object.values(build.relicIds).join(
             '-'
           )}`}
         >
