@@ -158,7 +158,7 @@ export function getDiscMainStatVal(
  */
 export const disc2pEffect: Record<
   DiscSetKey,
-  Partial<Record<PandoStatKey, number>> // TODO: Change to regular StatKey
+  Partial<Record<PandoStatKey, number>>
 > = {
   AstralVoice: { atk_: 0.1 },
   BranchBladeSong: { crit_dmg_: 0.16 },

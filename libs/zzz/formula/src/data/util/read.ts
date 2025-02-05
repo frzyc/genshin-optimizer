@@ -96,9 +96,6 @@ export class Read extends TypedRead<Tag> {
   get ice(): Read {
     return super.with('attribute', 'ice')
   }
-  get frost(): Read {
-    return super.with('attribute', 'frost')
-  }
   get physical(): Read {
     return super.with('attribute', 'physical')
   }

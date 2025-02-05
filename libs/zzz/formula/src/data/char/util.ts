@@ -108,7 +108,6 @@ const anomalyMultipliers: Record<AttributeKey, number> = {
   ether: 0.625,
   ice: 5,
   physical: 7.13,
-  frost: 0,
 }
 
 /**
