@@ -102,9 +102,7 @@ export function TagFieldDisplay({
 
   //TODO: undefined: we assume "unique" accumulator
   const calcRead = read(field.fieldRef, undefined)
-  const valueCalcRes = calc
-    .withTag(tag)
-    .compute(read(field.fieldRef, undefined))
+  const valueCalcRes = calc.withTag(tag).compute(calcRead)
   // const compareValueCalcRes: CalcResult<number, CalcMeta> | null = null
 
   // const { setFormulaData } = useContext(FormulaDataContext)
