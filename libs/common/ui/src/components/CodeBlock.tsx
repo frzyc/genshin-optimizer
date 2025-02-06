@@ -42,6 +42,7 @@ export function CodeBlock({ text }: { text: string }) {
               style={{
                 counterIncrement: 'lineNumber',
                 margin: 0,
+                // Makes it so wrapped lines start with some amount of indentation
                 paddingLeft: `${numSpaces * 7.5 + 20}px`,
                 textIndent: `-${numSpaces * 7.5 + 20}px`,
               }}
