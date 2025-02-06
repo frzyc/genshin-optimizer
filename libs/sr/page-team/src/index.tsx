@@ -213,32 +213,32 @@ function Page({ teamId }: { teamId: string }) {
                 <SetConditionalContext.Provider value={setConditional}>
                   <DebugReadContext.Provider value={debugObj}>
                     <DebugReadModal />
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      gap: 1,
-                      flexDirection: 'column',
-                      mx: 1,
-                      mt: 2,
-                    }}
-                  >
-                    <TeamHeader
-                      headerRef={ref}
-                      teamId={teamId}
-                      characterKey={characterKey}
-                    />
-                    <TeamHeaderHeightContext.Provider
-                      value={
-                        (height || DEFAULT_HEADER_HEIGHT_PX) + HEADER_TOP_PX
-                      }
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        gap: 1,
+                        flexDirection: 'column',
+                        mx: 1,
+                        mt: 2,
+                      }}
                     >
-                      {teammateDatum && (
-                        <TeammateContext.Provider value={teammateDatum}>
-                          <TeammateDisplayWrapper />
-                        </TeammateContext.Provider>
-                      )}
-                    </TeamHeaderHeightContext.Provider>
-                  </Box>
+                      <TeamHeader
+                        headerRef={ref}
+                        teamId={teamId}
+                        characterKey={characterKey}
+                      />
+                      <TeamHeaderHeightContext.Provider
+                        value={
+                          (height || DEFAULT_HEADER_HEIGHT_PX) + HEADER_TOP_PX
+                        }
+                      >
+                        {teammateDatum && (
+                          <TeammateContext.Provider value={teammateDatum}>
+                            <TeammateDisplayWrapper />
+                          </TeammateContext.Provider>
+                        )}
+                      </TeamHeaderHeightContext.Provider>
+                    </Box>
                   </DebugReadContext.Provider>
                 </SetConditionalContext.Provider>
               </ConditionalValuesContext.Provider>
