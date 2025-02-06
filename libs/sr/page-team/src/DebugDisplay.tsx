@@ -132,6 +132,9 @@ export function DebugReadModal() {
               <Stack gap={1}>
                 Computed value: {computed?.val}
                 <Divider />
+                <Typography variant="h6">Read</Typography>
+                <CodeBlock text={JSON.stringify(read, undefined, 2)} />
+                <Divider />
                 <Typography variant="h6">Calculator Tag</Typography>
                 <CodeBlock text={JSON.stringify(calculator?.cache.tag)} />
                 <Divider />
