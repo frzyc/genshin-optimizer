@@ -4,9 +4,14 @@ import {
   notEmpty,
   objKeyMap,
 } from '@genshin-optimizer/common/util'
-import type { SetConditionalFunc } from '@genshin-optimizer/pando/ui-sheet'
+import type { BaseRead } from '@genshin-optimizer/pando/engine'
+import type {
+  DebugReadContextObj,
+  SetConditionalFunc,
+} from '@genshin-optimizer/pando/ui-sheet'
 import {
   ConditionalValuesContext,
+  DebugReadContext,
   SetConditionalContext,
   SrcDstDisplayContext,
   TagContext,
@@ -41,6 +46,7 @@ import {
 import type { PresetContextObj } from './context'
 import { PresetContext, TeamContext } from './context'
 import { TeammateContext, useTeammateContext } from './context/TeammateContext'
+import { DebugReadModal } from './DebugDisplay'
 import { TeamCalcProvider } from './TeamCalcProvider'
 import {
   DEFAULT_HEADER_HEIGHT_PX,
@@ -186,6 +192,16 @@ function Page({ teamId }: { teamId: string }) {
     }),
     [characterKey, presetIndex]
   )
+
+  const [debugRead, setDebugRead] = useState<BaseRead>()
+  const debugObj = useMemo<DebugReadContextObj>(
+    () => ({
+      read: debugRead,
+      setRead: setDebugRead,
+    }),
+    [debugRead]
+  )
+
   const { height, ref } = useRefSize()
   return (
     <TeamContext.Provider value={teamContextObj}>
@@ -195,6 +211,8 @@ function Page({ teamId }: { teamId: string }) {
             <SrcDstDisplayContext.Provider value={srcDstDisplayContextValue}>
               <ConditionalValuesContext.Provider value={conditionals}>
                 <SetConditionalContext.Provider value={setConditional}>
+                  <DebugReadContext.Provider value={debugObj}>
+                    <DebugReadModal />
                   <Box
                     sx={{
                       display: 'flex',
@@ -221,6 +239,7 @@ function Page({ teamId }: { teamId: string }) {
                       )}
                     </TeamHeaderHeightContext.Provider>
                   </Box>
+                  </DebugReadContext.Provider>
                 </SetConditionalContext.Provider>
               </ConditionalValuesContext.Provider>
             </SrcDstDisplayContext.Provider>
