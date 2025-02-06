@@ -6,7 +6,14 @@ import { useDatabaseContext, useDisc } from '@genshin-optimizer/zzz/db-ui'
 import type { BuildResult } from '@genshin-optimizer/zzz/solver'
 import { applyCalc, convertDiscToStats } from '@genshin-optimizer/zzz/solver'
 import { DiscCard } from '@genshin-optimizer/zzz/ui'
-import { Box, Button, CardContent, Stack, Typography } from '@mui/material'
+import {
+  Box,
+  Button,
+  CardContent,
+  Grid,
+  Stack,
+  Typography,
+} from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { StatsDisplay } from './StatsDisplay'
 
@@ -78,10 +85,18 @@ function Build({
           </Button>
         </Box>
         <StatsDisplay stats={sum} />
-        <Box display="flex" gap={1}>
-          {Object.values(build.discIds).map((dId) => (
-            <DiscCardWrapper discId={dId} key={dId} />
-          ))}
+        <Box>
+          <Grid
+            container
+            spacing={1}
+            columns={{ xs: 2, sm: 3, md: 3, lg: 4, xl: 6 }}
+          >
+            {Object.values(build.discIds).map((dId) => (
+              <Grid item key={dId} xs={1}>
+                <DiscCardWrapper discId={dId} key={dId} />
+              </Grid>
+            ))}
+          </Grid>
         </Box>
       </CardContent>
     </CardThemed>
