@@ -4,11 +4,5 @@
   "sourceRoot": "libs/zzz/assets/src",
   "projectType": "library",
   "tags": [],
-  "targets": {
-    "gen-file": {
-      "executor": "@genshin-optimizer/zzz/assets:gen-assets",
-      "outputs": ["{workspaceRoot}/${projectRoot}/src/gen/**/*"],
-      "dependsOn": ["zzz-assets-data:gen-file"]
-    }
-  }
+  "targets": {}
 }

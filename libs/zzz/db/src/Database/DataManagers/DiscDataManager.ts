@@ -13,6 +13,7 @@ import {
   discMaxLevel,
   discSlotToMainStatKeys,
   discSubstatRollData,
+  statKeyTextMap,
 } from '@genshin-optimizer/zzz/consts'
 import type {
   ICachedDisc,
@@ -23,20 +24,6 @@ import type { IDisc, ISubstat } from '../../Interfaces/IDisc'
 import { DataManager } from '../DataManager'
 import type { ZzzDatabase } from '../Database'
 import type { ImportResult } from '../exim'
-
-const statMap = {
-  hp: 'HP',
-  hp_: 'HP',
-  atk: 'ATK',
-  atk_: 'ATK',
-  def: 'DEF',
-  def_: 'DEF',
-  pen: 'PEN',
-  anomProf: 'Anomaly Proficiency',
-  crit_: 'Crit Rate',
-  crit_dmg_: 'Crit DMG',
-} as const
-
 export class DiscDataManager extends DataManager<
   string,
   'discs',
@@ -300,13 +287,14 @@ export class DiscDataManager extends DataManager<
       .filter(
         (candidate) =>
           level === candidate.level &&
-          substats.length === candidate.substats.length &&
-          substats.every((substat) =>
-            candidate.substats.some(
-              (candidateSubstat) =>
-                substat.key === candidateSubstat.key && // Or same slot
-                substat.upgrades === candidateSubstat.upgrades
-            )
+          substats.every(
+            (substat, i) =>
+              substat.key === candidate.substats[i]?.key &&
+              candidate.substats.some(
+                (candidateSubstat) =>
+                  substat.key === candidateSubstat.key && // Or same slot
+                  substat.upgrades === candidateSubstat.upgrades
+              )
           )
       )
       .sort((candidates) =>
@@ -402,8 +390,9 @@ export function validateDiscBasedOnRarity(disc: Partial<ICachedDisc>) {
     if (substat)
       errors.push(
         `Substat ${
-          statMap[substat.key as keyof typeof statMap] ?? substat.key
-        } has > 1 roll, but not all substats are unlocked.`
+          statKeyTextMap[substat.key as keyof typeof statKeyTextMap] ??
+          substat.key
+        } has > 1 upgrade, but not all substats are unlocked.`
       )
   }
 
