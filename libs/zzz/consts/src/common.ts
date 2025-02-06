@@ -1,5 +1,10 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
-import { allDiscMainStatKeys, allDiscSubStatKeys } from './disc'
+import type { DiscCondKey } from './disc'
+import {
+  allDiscCondKeys,
+  allDiscMainStatKeys,
+  allDiscSubStatKeys,
+} from './disc'
 
 export const otherStatKeys = [
   // Used by calc, likely will be bundled into pando
@@ -123,3 +128,6 @@ const elementalData: Record<AttributeKey, string> = {
 Object.entries(elementalData).forEach(([e, name]) => {
   statKeyTextMap[`${e}_dmg_`] = `${name} DMG Bonus`
 })
+
+export type CondKey = DiscCondKey
+export const allCondKeys = Object.keys(allDiscCondKeys) as CondKey[]

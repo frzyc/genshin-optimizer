@@ -130,6 +130,7 @@ export default function OptimizeWrapper({
     const optimizer = new Solver(
       formulaKey,
       baseStats,
+      character.conditionals,
       objMap(character.constraints, (c, k) => ({
         ...c,
         value: toDecimal(c.value, k),

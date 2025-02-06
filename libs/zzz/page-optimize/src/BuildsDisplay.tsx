@@ -8,6 +8,7 @@ import { applyCalc, convertDiscToStats } from '@genshin-optimizer/zzz/solver'
 import { DiscCard } from '@genshin-optimizer/zzz/ui'
 import { Box, Button, CardContent, Stack, Typography } from '@mui/material'
 import { useCallback, useMemo } from 'react'
+import { useCharacterContext } from './CharacterContext'
 import { StatsDisplay } from './StatsDisplay'
 
 export function BuildsDisplay({
@@ -46,16 +47,18 @@ function Build({
   baseStats: Stats
 }) {
   const { database } = useDatabaseContext()
+  const character = useCharacterContext()
   const sum = useMemo(
     () =>
       applyCalc(
         baseStats,
+        character?.conditionals ?? {},
         Object.values(build.discIds)
           .map((d) => database.discs.get(d))
           .filter(notEmpty)
           .map(convertDiscToStats)
       ),
-    [baseStats, build.discIds, database.discs]
+    [baseStats, build.discIds, character, database.discs]
   )
   const onEquip = useCallback(() => {
     Object.values(build.discIds).forEach((dId) => {
