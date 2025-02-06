@@ -55,6 +55,8 @@ export function DebugListingsDisplay() {
                             2
                           )}
                         />
+                        read:
+                        <CodeBlock text={JSON.stringify(read, undefined, 2)} />
                         formula:
                         <CodeBlock
                           text={JSON.stringify(
@@ -98,6 +100,8 @@ export function DebugListingsDisplay() {
                             2
                           )}
                         />
+                        read:
+                        <CodeBlock text={JSON.stringify(read, undefined, 2)} />
                         formula:
                         <CodeBlock
                           text={JSON.stringify(
