@@ -290,7 +290,7 @@ export const disc4PeffectSheets: Partial<
       getStats: (
         conds: Partial<Record<DiscCondKey, number>>,
         stats: Record<string, number>
-      ) => Record<string, number>
+      ) => Record<string, number> | undefined
     }
   >
 > = {
@@ -302,7 +302,7 @@ export const disc4PeffectSheets: Partial<
             string,
             number
           >)
-        : {}
+        : undefined
     },
   },
   BranchBladeSong: {
@@ -329,14 +329,14 @@ export const disc4PeffectSheets: Partial<
     condMeta: allDiscCondKeys.ChaoticMetal,
     getStats: (conds) => {
       if (conds['ChaoticMetal']) return { dmg_: 0.18 } //enemy takes 18% more DMG
-      return {}
+      return undefined
     },
   },
   FangedMetal: {
     condMeta: allDiscCondKeys.FangedMetal,
     getStats: (conds) => {
       if (conds['FangedMetal']) return { dmg_: 0.35 } // equipper deals 35% additional DMG
-      return {}
+      return undefined
     },
   },
   // FreedomBlues: reduce the target's Anomaly Buildup RES to the equipper's Attribute by 35%
@@ -344,14 +344,14 @@ export const disc4PeffectSheets: Partial<
     condMeta: allDiscCondKeys.HormonePunk,
     getStats: (conds) => {
       if (conds['HormonePunk']) return { cond_atk_: 0.15 } // ATK increased by 25%
-      return {}
+      return undefined
     },
   },
   InfernoMetal: {
     condMeta: allDiscCondKeys.InfernoMetal,
     getStats: (conds) => {
       if (conds['InfernoMetal']) return { crit_: 0.28 } //equipper's CRIT Rate is increased by 28%
-      return {}
+      return undefined
     },
   },
   PolarMetal: {
@@ -368,7 +368,7 @@ export const disc4PeffectSheets: Partial<
     condMeta: allDiscCondKeys.ProtoPunk,
     getStats: (conds) => {
       if (conds['ProtoPunk']) return { dmg_: 0.15 } //  all squad members deal 15% increased DMG
-      return {}
+      return undefined
     },
   },
   PufferElectro: {
@@ -385,14 +385,14 @@ export const disc4PeffectSheets: Partial<
     condMeta: allDiscCondKeys.SwingJazz,
     getStats: (conds) => {
       if (conds['SwingJazz']) return { dmg_: 0.15 } //increases all squad members' DMG by 15%
-      return {}
+      return undefined
     },
   },
   ThunderMetal: {
     condMeta: allDiscCondKeys.ThunderMetal,
     getStats: (conds) => {
       if (conds['ThunderMetal']) return { cond_atk_: 0.27 } // equipper's ATK is increased by 27%
-      return {}
+      return undefined
     },
   },
   WoodpeckerElectro: {
@@ -403,7 +403,7 @@ export const disc4PeffectSheets: Partial<
           { cond_atk_: 0.15 },
           conds['WoodpeckerElectro']
         ) as Record<string, number>
-      return {}
+      return undefined
     },
   },
 }
