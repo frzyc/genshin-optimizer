@@ -1,9 +1,9 @@
 import { isPercentStat } from '@genshin-optimizer/common/util'
-import type {
-  CharacterKey,
-  CharacterRarityKey,
-  ElementalKey,
-  StatKey,
+import {
+  type AttributeKey,
+  type CharacterKey,
+  type CharacterRarityKey,
+  type SpecialityKey,
 } from '@genshin-optimizer/zzz/consts'
 import { readHakushinJSON } from '../../util'
 import {
@@ -11,12 +11,15 @@ import {
   characterIdMap,
   characterRarityMap,
   coreStatMap,
+  specialityMap,
 } from './consts'
-const SCALING = 10000
+const PERCENT_SCALING = 10000
+const FLAT_SCALING = 100
 type CharacterRawData = {
   id: number
   Rarity: number
-  ElementType: Record<string, string>
+  ElementType: Record<string, string> // index, Attribute
+  WeaponType: Record<string, string> // index, Specialty
   Stats: {
     Attack: 95
     AttackGrowth: 54230
@@ -24,6 +27,8 @@ type CharacterRawData = {
     DefenceGrowth: 66882
     HpGrowth: 818426
     HpMax: 603
+
+    BreakStun: number // Base Impact
 
     Crit: 500
     CritDamage: 5000
@@ -36,7 +41,7 @@ type CharacterRawData = {
     Luck: 10
     PenDelta: 0 // pen
     PenRate: 0 // Pen ratio
-    SpBarPoint: 120
+    SpBarPoint: 120 // Max energy
     SpRecover: 120 // Energy Regen
   }
   Level: Record<
@@ -72,7 +77,8 @@ type CharacterRawData = {
 }
 export type CharacterData = {
   rarity: CharacterRarityKey
-  element: ElementalKey
+  attribute: AttributeKey
+  specialty: SpecialityKey
   stats: {
     atk_base: number
     atk_growth: number
@@ -82,9 +88,13 @@ export type CharacterData = {
     hp_growth: number
     anomMas: number
     anomProf: number
+    impact: number
+    enerRegen: number
   }
-  levelStats: Array<{ hp: number; atk: number; def: number }>
-  coreStats: Array<Record<StatKey, number>>
+  promotionStats: Array<{ hp: number; atk: number; def: number }>
+  coreStats: Array<
+    Partial<Record<(typeof coreStatMap)[keyof typeof coreStatMap], number>>
+  >
 }
 export const charactersDetailedJSONData = Object.fromEntries(
   Object.entries(characterIdMap).map(([id, name]) => {
@@ -93,18 +103,21 @@ export const charactersDetailedJSONData = Object.fromEntries(
     ) as CharacterRawData
     const data: CharacterData = {
       rarity: characterRarityMap[raw.Rarity],
-      element: attributeMap[Object.keys(raw.ElementType)[0] as any],
+      attribute: attributeMap[Object.keys(raw.ElementType)[0] as any],
+      specialty: specialityMap[Object.keys(raw.WeaponType)[0] as any],
       stats: {
         atk_base: raw.Stats.Attack,
-        atk_growth: raw.Stats.AttackGrowth / SCALING,
+        atk_growth: raw.Stats.AttackGrowth / PERCENT_SCALING,
         def_base: raw.Stats.Defence,
-        def_growth: raw.Stats.DefenceGrowth / SCALING,
+        def_growth: raw.Stats.DefenceGrowth / PERCENT_SCALING,
         hp_base: raw.Stats.HpMax,
-        hp_growth: raw.Stats.HpGrowth / SCALING,
+        hp_growth: raw.Stats.HpGrowth / PERCENT_SCALING,
         anomMas: raw.Stats.ElementAbnormalPower,
         anomProf: raw.Stats.ElementMystery,
+        impact: raw.Stats.BreakStun,
+        enerRegen: raw.Stats.SpRecover / FLAT_SCALING,
       },
-      levelStats: Object.values(raw.Level).map(
+      promotionStats: Object.values(raw.Level).map(
         ({ HpMax, Attack, Defence }) => ({
           hp: HpMax,
           atk: Attack,
@@ -116,9 +129,13 @@ export const charactersDetailedJSONData = Object.fromEntries(
           Object.fromEntries(
             Object.values(Extra).map(({ Name, Value }) => [
               coreStatMap[Name],
-              isPercentStat(coreStatMap[Name]) ? Value / SCALING : Value,
+              isPercentStat(coreStatMap[Name])
+                ? Value / PERCENT_SCALING
+                : Value,
             ])
-          ) as Record<StatKey, number>
+          ) as Partial<
+            Record<(typeof coreStatMap)[keyof typeof coreStatMap], number>
+          >
       ),
     }
     return [name, data] as const

@@ -31,14 +31,27 @@ export const allStatKeys = Array.from(
 )
 export type StatKey = (typeof allStatKeys)[number]
 
-export const allElementalKeys = [
+// TODO: consolidate this and StatKey to the same type.
+// Can't do it now because StatKey contains 'charLvl' and other random things that
+// don't index into Pando's own.char.initial
+const extraPandoStatKeys = ['impact', 'anomMas', 'dmg_', 'shield_'] as const
+export const allPandoStatKeys = Array.from(
+  new Set([
+    ...allDiscMainStatKeys,
+    ...allDiscSubStatKeys,
+    ...extraPandoStatKeys,
+  ])
+)
+export type PandoStatKey = (typeof allPandoStatKeys)[number]
+
+export const allAttributeKeys = [
   'electric',
   'fire',
   'ice',
   'physical',
   'ether',
 ] as const
-export type ElementalKey = (typeof allElementalKeys)[number]
+export type AttributeKey = (typeof allAttributeKeys)[number]
 
 export const allAttributeDamageKeys = [
   'electric_dmg_',
@@ -74,6 +87,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   crit_dmg_: 'CRIT DMG',
   enerRegen_: 'Energy Regen',
   impact_: 'Impact',
+  anomMas: 'Anomaly Mastery',
   anomMas_: 'Anomaly Mastery',
   anomProf: 'Anomaly Proficiency',
   ...objKeyMap(allAnomalyDmgKeys, (dmg_) => `${dmg_} DMG Bonus`),
@@ -91,15 +105,15 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   final_hp: 'Final HP',
   final_def: 'Final DEF',
   final_atk: 'Final ATK',
-  cond_hp: 'Conditional HP',
-  cond_def: 'Conditional DEF',
-  cond_atk: 'Conditional ATK',
-  cond_hp_: 'Conditional HP%',
-  cond_def_: 'Conditional DEF%',
-  cond_atk_: 'Conditional ATK%',
+  cond_hp: 'Combat HP',
+  cond_def: 'Combat DEF',
+  cond_atk: 'Combat ATK',
+  cond_hp_: 'Combat HP%',
+  cond_def_: 'Combat DEF%',
+  cond_atk_: 'Combat ATK%',
 }
 
-const elementalData: Record<ElementalKey, string> = {
+const elementalData: Record<AttributeKey, string> = {
   electric: 'Electric',
   fire: 'Fire',
   ice: 'Ice',

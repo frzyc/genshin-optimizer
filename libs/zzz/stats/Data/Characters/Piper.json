@@ -1,6 +1,7 @@
 {
   "rarity": "A",
-  "element": "physical",
+  "attribute": "physical",
+  "specialty": "anomaly",
   "stats": {
     "atk_base": 109,
     "atk_growth": 6.4308,
@@ -9,9 +10,11 @@
     "hp_base": 561,
     "hp_growth": 76.1177,
     "anomMas": 116,
-    "anomProf": 118
+    "anomProf": 118,
+    "impact": 86,
+    "enerRegen": 1.2
   },
-  "levelStats": [
+  "promotionStats": [
     { "hp": 0, "atk": 0, "def": 0 },
     { "hp": 385, "atk": 39, "def": 34 },
     { "hp": 770, "atk": 78, "def": 68 },

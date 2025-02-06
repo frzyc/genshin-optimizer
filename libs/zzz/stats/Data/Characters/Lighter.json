@@ -1,6 +1,7 @@
 {
   "rarity": "S",
-  "element": "fire",
+  "attribute": "fire",
+  "specialty": "stun",
   "stats": {
     "atk_base": 109,
     "atk_growth": 6.3891,
@@ -9,9 +10,11 @@
     "hp_base": 677,
     "hp_growth": 91.8185,
     "anomMas": 91,
-    "anomProf": 90
+    "anomProf": 90,
+    "impact": 119,
+    "enerRegen": 1.2
   },
-  "levelStats": [
+  "promotionStats": [
     { "hp": 0, "atk": 0, "def": 0 },
     { "hp": 432, "atk": 47, "def": 34 },
     { "hp": 864, "atk": 95, "def": 68 },

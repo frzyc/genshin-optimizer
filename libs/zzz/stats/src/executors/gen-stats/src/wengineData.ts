@@ -5,6 +5,6 @@ import { wengineDetailedJSONData } from '@genshin-optimizer/zzz/dm'
 export type WengineDatum = WengineData
 
 export type WenginesData = Record<WengineKey, WengineDatum>
-export function WengineData(): WenginesData {
+export function getWenginesData(): WenginesData {
   return wengineDetailedJSONData
 }

@@ -1,6 +1,7 @@
 {
   "rarity": "S",
-  "element": "electric",
+  "attribute": "electric",
+  "specialty": "anomaly",
   "stats": {
     "atk_base": 119,
     "atk_growth": 7.1181,
@@ -9,9 +10,11 @@
     "hp_base": 602,
     "hp_growth": 81.6391,
     "anomMas": 115,
-    "anomProf": 116
+    "anomProf": 116,
+    "impact": 83,
+    "enerRegen": 1.2
   },
-  "levelStats": [
+  "promotionStats": [
     { "hp": 0, "atk": 0, "def": 0 },
     { "hp": 413, "atk": 42, "def": 33 },
     { "hp": 826, "atk": 85, "def": 66 },

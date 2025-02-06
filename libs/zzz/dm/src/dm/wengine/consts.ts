@@ -78,7 +78,7 @@ export const wengineRarityMap: Record<number, WengineRarityKey> = {
   4: 'S',
 } as const
 
-export const subStatMap: Record<string, string> = {
+export const subStatMap = {
   Impact: 'impact_',
   'Percent DEF': 'def_',
   'Percent HP': 'hp_',
