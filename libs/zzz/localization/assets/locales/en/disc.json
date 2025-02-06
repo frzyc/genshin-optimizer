@@ -33,6 +33,7 @@
     "btnClear": "Clear",
     "btnRandom": "Randomize",
     "btnUpdate": "Update Disc",
+    "uploadBtn": "Upload Screenshot (or Ctrl-V)",
     "clearPrompt": "There is a disc being edited. Are you sure you want to clear the editor?",
     "delete": "Delete",
     "confirmDelete": "Are you sure you want to delete this disc?"
