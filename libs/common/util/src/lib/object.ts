@@ -62,6 +62,23 @@ export function objFilterKeys<K extends string, K2 extends string, V>(
   ) as Record<K2, V>
 }
 
+export function objFilter<K extends string | number, V>(
+  obj: Record<K, V>,
+  f: (v: V, k: K, i: number) => boolean
+): Record<K, V>
+export function objFilter<K extends string | number, V>(
+  obj: Partial<Record<K, V>>,
+  f: (v: V, k: K, i: number) => boolean
+): Partial<Record<K, V>>
+export function objFilter<K extends string | number, V>(
+  obj: Record<K, V>,
+  f: (v: V, k: K, i: number) => boolean
+): Record<K, V> {
+  return Object.fromEntries(
+    Object.entries(obj).filter(([k, v], i) => f(v as V, k as K, i))
+  ) as Record<K, V>
+}
+
 export function objMap<K extends string | number, V, V2>(
   obj: Record<K, V>,
   f: (v: V, k: K, i: number) => V2
@@ -77,15 +94,6 @@ export function objMap<K extends string | number, V, V2>(
   return Object.fromEntries(
     Object.entries(obj).map(([k, v], i) => [k, f(v as V, k as K, i)])
   ) as Record<K, V2>
-}
-
-export function objFilter<K extends string | number, V>(
-  obj: Record<K, V>,
-  f: (v: V, k: K, i: number) => boolean
-): Record<K, V> {
-  return Object.fromEntries(
-    Object.entries(obj).filter(([k, v], i) => f(v as V, k as K, i))
-  ) as Record<K, V>
 }
 
 /**

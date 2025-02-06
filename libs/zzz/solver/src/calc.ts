@@ -6,6 +6,7 @@ import {
 import type {
   AnomalyDamageKey,
   AttributeDamageKey,
+  CondKey,
   DiscSetKey,
   FormulaKey,
 } from '@genshin-optimizer/zzz/consts'
@@ -13,6 +14,7 @@ import {
   allAnomalyDmgKeys,
   allAttributeDamageKeys,
   disc2pEffect,
+  disc4PeffectSheets,
 } from '@genshin-optimizer/zzz/consts'
 import type { Stats } from '@genshin-optimizer/zzz/db'
 import type { DiscStats } from './common'
@@ -51,7 +53,11 @@ export function passSetFilter(
 /**
  * sum up stats from base + discs + 2p effects
  */
-export function applyCalc(baseStats: Stats, discs: DiscStats[]) {
+export function applyCalc(
+  baseStats: Stats,
+  conditionals: Partial<Record<CondKey, number>>,
+  discs: DiscStats[]
+) {
   const sum = { ...baseStats }
   const s = (key: string) => sum[key] || 0
 
@@ -69,6 +75,14 @@ export function applyCalc(baseStats: Stats, discs: DiscStats[]) {
     if (setCount[k]! >= 2) {
       const p2 = disc2pEffect[k]
       if (p2) objSumInPlace(sum, p2)
+    }
+  }
+  // Apply 4p effects
+  for (const key in setCount) {
+    const k = key as DiscSetKey
+    if (setCount[k]! >= 4) {
+      const p4 = disc4PeffectSheets[k]?.getStats(conditionals, sum)
+      if (p4) objSumInPlace(sum, p4)
     }
   }
 

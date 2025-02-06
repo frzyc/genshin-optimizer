@@ -33,6 +33,7 @@ import { useCallback, useMemo, useState } from 'react'
 import BaseStatCard from './BaseStatCard'
 import { BuildsDisplay } from './BuildsDisplay'
 import { CharacterContext } from './CharacterContext'
+import { DiscConditionalsCard } from './DiscConditionalCard'
 import OptimizeWrapper from './Optimize'
 import { OptimizeTargetSelector } from './OptimizeTargetSelector'
 import { StatsDisplay } from './StatsDisplay'
@@ -188,6 +189,7 @@ export default function PageOptimize() {
           baseStats={character?.stats ?? {}}
           setBaseStats={setStats}
         />
+        <DiscConditionalsCard baseStats={baseStats} />
         <OptimizeWrapper
           setResults={setBuilds}
           baseStats={baseStats}

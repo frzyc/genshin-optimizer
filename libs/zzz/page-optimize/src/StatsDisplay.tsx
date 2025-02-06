@@ -11,7 +11,7 @@ export function StatsDisplay({
   showBase?: boolean
 }) {
   return (
-    <Box sx={{ columnCount: { xs: 1, sm: 2, md: 3, lg: 4 } }}>
+    <Box sx={{ columnWidth: '15em' }}>
       {Object.entries(stats)
         .filter(([k]) => showBase || !k.endsWith('_base'))
         .map(([k, v]) => (
