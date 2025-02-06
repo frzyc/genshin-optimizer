@@ -6,11 +6,12 @@ import {
 import { valueString } from '@genshin-optimizer/common/util'
 import { read } from '@genshin-optimizer/pando/engine'
 import GroupsIcon from '@mui/icons-material/Groups'
+import HelpIcon from '@mui/icons-material/Help'
 import type { ListProps, Palette, PaletteColor } from '@mui/material'
 import { Box, List, ListItem, Typography, styled } from '@mui/material'
 import type { ReactNode } from 'react'
-import React, { useContext } from 'react'
-import { CalcContext, TagContext } from '../context'
+import React, { useCallback, useContext } from 'react'
+import { CalcContext, DebugReadContext, TagContext } from '../context'
 import type { Field, TagField, TextField } from '../types'
 
 export function FieldsDisplay({
@@ -94,21 +95,20 @@ export function TagFieldDisplay({
 }) {
   const calc = useContext(CalcContext)
   const tag = useContext(TagContext)
+  const { setRead } = useContext(DebugReadContext)
   // const compareCalc: null | Calculator = null //TODO: compare calcs
   if (!calc) return null
   // if (!calc && !compareCalc) return null
 
   //TODO: undefined: we assume "unique" accumulator
+  const calcRead = read(field.fieldRef, undefined)
   const valueCalcRes = calc
     .withTag(tag)
     .compute(read(field.fieldRef, undefined))
   // const compareValueCalcRes: CalcResult<number, CalcMeta> | null = null
 
   // const { setFormulaData } = useContext(FormulaDataContext)
-  // const onClick = useCallback(
-  //   () => setFormulaData(data, calcRes),
-  //   [setFormulaData, data, calcRes]
-  // )
+  const onClick = useCallback(() => setRead(calcRead), [calcRead])
   const { multi, icon, title, subtitle } = field
   const multiDisplay = multi && <span>{multi}&#215;</span>
 
@@ -210,6 +210,7 @@ export function TagFieldDisplay({
         {multiDisplay}
         {fieldVal}
       </Typography>
+      <HelpIcon onClick={onClick} fontSize="inherit" sx={{ cursor: 'help' }} />
       {/* {!!calcDisplay.formula && (
         <BootstrapTooltip
           placement="top"
