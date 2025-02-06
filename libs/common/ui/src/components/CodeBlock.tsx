@@ -20,6 +20,9 @@ const CodeArea = styled('code')(({ theme }) => ({
   background: theme.palette.contentDark.main,
   'p::before': {
     content: 'counter(lineNumber)',
+    width: '2.5em',
+    textAlign: 'right',
+    display: 'inline-block',
     paddingRight: '1em',
     opacity: 0.5,
     color: 'white',
