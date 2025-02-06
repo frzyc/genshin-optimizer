@@ -47,15 +47,22 @@ export function DebugListingsDisplay() {
                         debug for {name}
                       </AccordionSummary>
                       <AccordionDetails>
-                        conds:{' '}
-                        {JSON.stringify(computed.meta.conds, undefined, 2)}
-                        <Typography component="pre">
-                          {JSON.stringify(
+                        conds:
+                        <CodeBlock
+                          text={JSON.stringify(
+                            computed.meta.conds,
+                            undefined,
+                            2
+                          )}
+                        />
+                        formula:
+                        <CodeBlock
+                          text={JSON.stringify(
                             filterDebug(calc.toDebug().compute(read).meta),
                             undefined,
                             2
                           )}
-                        </Typography>
+                        />
                       </AccordionDetails>
                     </Accordion>
                   </Box>
@@ -83,15 +90,22 @@ export function DebugListingsDisplay() {
                         debug for {name}
                       </AccordionSummary>
                       <AccordionDetails>
-                        conds:{' '}
-                        {JSON.stringify(computed.meta.conds, undefined, 2)}
-                        <Typography component="pre">
-                          {JSON.stringify(
+                        conds:
+                        <CodeBlock
+                          text={JSON.stringify(
+                            computed.meta.conds,
+                            undefined,
+                            2
+                          )}
+                        />
+                        formula:
+                        <CodeBlock
+                          text={JSON.stringify(
                             filterDebug(calc.toDebug().compute(read).meta),
                             undefined,
                             2
                           )}
-                        </Typography>
+                        />
                       </AccordionDetails>
                     </Accordion>
                   </Box>
