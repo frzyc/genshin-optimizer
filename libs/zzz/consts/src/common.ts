@@ -104,12 +104,12 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   final_hp: 'Final HP',
   final_def: 'Final DEF',
   final_atk: 'Final ATK',
-  cond_hp: 'Conditional HP',
-  cond_def: 'Conditional DEF',
-  cond_atk: 'Conditional ATK',
-  cond_hp_: 'Conditional HP%',
-  cond_def_: 'Conditional DEF%',
-  cond_atk_: 'Conditional ATK%',
+  cond_hp: 'Combat HP',
+  cond_def: 'Combat DEF',
+  cond_atk: 'Combat ATK',
+  cond_hp_: 'Combat HP%',
+  cond_def_: 'Combat DEF%',
+  cond_atk_: 'Combat ATK%',
 }
 
 const elementalData: Record<AttributeKey, string> = {
