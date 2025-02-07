@@ -1,4 +1,5 @@
 export * from './debug'
 export * from './node'
 export * from './tag'
+export * from './optimization'
 export { setDebugMode } from './util'
