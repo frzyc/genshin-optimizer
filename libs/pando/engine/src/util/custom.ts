@@ -12,7 +12,11 @@ export type CustomInfo = {
   range: (r: Range[]) => Range
   /** Given the range of the arguments, returns whether the function is increasing/decreasing w.r.t. to each argument */
   tonicity: (r: Range[]) => Tonicity[]
-  /** Actual computation of the custom node */
+  /**
+   * Actual computation of the custom node. `calc.toString` must be a valid
+   * standalone function declaration if used with `compile`. Generally, a
+   * function or arrow expression with no external function call will suffice.
+   */
   calc: (_: (number | string)[]) => number | string
 }
 

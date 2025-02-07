@@ -4,9 +4,9 @@ import type {
   TagMapEntries,
 } from '@genshin-optimizer/pando/engine'
 import {
+  addCustomOperation,
   compileTagMapValues,
   constant,
-  setCustomFormula,
 } from '@genshin-optimizer/pando/engine'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
@@ -25,7 +25,7 @@ export * from './util'
     if (x >= 0) return 1 - x
     return 1 - 0.5 * x
   }
-  setCustomFormula('res', {
+  addCustomOperation('res', {
     range: ([r]) => ({ min: calc([r.max]), max: calc([r.min]) }),
     tonicity: (_) => [{ inc: false, dec: true }],
     calc,
