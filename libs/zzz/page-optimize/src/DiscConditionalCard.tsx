@@ -1,5 +1,10 @@
-import { CardThemed, DropdownButton } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  DropdownButton,
+  ImgIcon,
+} from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
+import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type {
   allDiscCondKeys,
   DiscCondKey,
@@ -71,7 +76,10 @@ export function DiscConditionalCard({
 
   return (
     <CardThemed bgt="light">
-      <CardHeader title={<DiscSetName setKey={setKey} />} />
+      <CardHeader
+        title={<DiscSetName setKey={setKey} />}
+        avatar={<ImgIcon src={discDefIcon(setKey)} size={2} />}
+      />
       <ConditionalToggle condMeta={condMeta} />
       {!!stats && !!Object.keys(stats).length && (
         <CardContent>
