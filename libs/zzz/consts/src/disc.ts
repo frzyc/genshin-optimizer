@@ -406,7 +406,7 @@ export const disc4PeffectSheets: Partial<
     getStats: (conds) => {
       if (conds['WoodpeckerElectro'])
         return objMultiplication(
-          { cond_atk_: 0.15 },
+          { cond_atk_: 0.09 },
           conds['WoodpeckerElectro']
         ) as Record<string, number>
       return undefined
