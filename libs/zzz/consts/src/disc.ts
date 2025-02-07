@@ -343,7 +343,7 @@ export const disc4PeffectSheets: Partial<
   HormonePunk: {
     condMeta: allDiscCondKeys.HormonePunk,
     getStats: (conds) => {
-      if (conds['HormonePunk']) return { cond_atk_: 0.15 } // ATK increased by 25%
+      if (conds['HormonePunk']) return { cond_atk_: 0.25 } // ATK increased by 25%
       return undefined
     },
   },

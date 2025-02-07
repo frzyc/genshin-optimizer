@@ -69,18 +69,16 @@ export function applyCalc(
   // Apply disc stats
   for (const { stats } of discs) objSumInPlace(sum, stats)
 
-  // Apply 2p effects
   for (const key in setCount) {
+    // Apply 2p effects
     const k = key as DiscSetKey
-    if (setCount[k]! >= 2) {
+    const count = setCount[k] ?? 0
+    if (count >= 2) {
       const p2 = disc2pEffect[k]
       if (p2) objSumInPlace(sum, p2)
     }
-  }
-  // Apply 4p effects
-  for (const key in setCount) {
-    const k = key as DiscSetKey
-    if (setCount[k]! >= 4) {
+    // Apply 4p effects
+    if (count >= 4) {
       const p4 = disc4PeffectSheets[k]?.getStats(conditionals, sum)
       if (p4) objSumInPlace(sum, p4)
     }

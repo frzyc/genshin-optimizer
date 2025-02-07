@@ -62,6 +62,12 @@ export function objFilterKeys<K extends string, K2 extends string, V>(
   ) as Record<K2, V>
 }
 
+/**
+ * Filter an object's entries based on a predicate function
+ * @param obj The object to filter
+ * @param f Predicate function that takes (value, key, index)
+ * @returns A new object containing only the entries that pass the predicate
+ */
 export function objFilter<K extends string | number, V>(
   obj: Record<K, V>,
   f: (v: V, k: K, i: number) => boolean
