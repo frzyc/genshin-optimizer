@@ -3,7 +3,7 @@ import { calculation, constant, mapBottomUp, max, min, traverse } from '../node'
 import { assertUnreachable } from '../util'
 import { combineConst } from './simplify'
 type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
-const { arithmetic } = calculation
+const { arithmetic, branching } = calculation
 
 type BuildComponent = Record<string, number>
 type Builds = BuildComponent[][]
@@ -32,40 +32,47 @@ export function prune<I extends OP>(
   return { nodes, builds }
 }
 
-/** Remove branches that are never chosen due to the range of `br` */
+/** Remove branches that are never chosen */
 function pruneBranches<I extends OP>(
   n: NumNode<I>[],
   ranges: Ranges
 ): NumNode<I>[] {
-  return mapBottomUp(n, (n, old) => {
+  return mapBottomUp(n, (n, o) => {
     {
-      const { min, max } = ranges.get(old)!
-      if (min === max) return n.op === 'const' ? n : constant(min)
+      const { min, max } = ranges.get(o)!
+      if (min === max) return o.op === 'const' ? n : constant(min)
     }
-    switch (n.op) {
+    switch (o.op) {
       case 'thres': {
-        const [value, threshold] = old.br.map((n) => ranges.get(n)!)
+        const [value, threshold] = o.br.map((n) => ranges.get(n)!)
         if (value.min >= threshold.max) return n.x[0]
-        else if (value.max < threshold.min) return n.x[1]
-        const [ge, lt] = old.x.map((n) => ranges.get(n)!)
-        if (ge.max === lt.min && lt.max === ge.min && isFinite(ge.min))
-          return constant(ge.max)
+        if (value.max < threshold.min) return n.x[1]
         break
       }
       case 'min': {
-        const threshold = ranges.get(old)!.max
-        const x = old.x.filter((n) => ranges.get(n)!.min <= threshold)
-        if (x.length != n.x.length)
-          return min(...(x as NumNode<I>[])) as NumNode<I>
+        const threshold = ranges.get(o)!.max
+        const x = n.x.filter((_, i) => ranges.get(o.x[i])!.min <= threshold)
+        if (x.length === 1) return x[0]
+        if (x.length !== n.x.length) return min(...(x as any)) as NumNode<I>
         break
       }
       case 'max': {
-        const threshold = ranges.get(old)!.min
-        const x = old.x.filter((n) => ranges.get(n)!.max >= threshold)
-        if (x.length != n.x.length)
-          return max(...(x as NumNode<I>[])) as NumNode<I>
+        const threshold = ranges.get(o)!.min
+        const x = n.x.filter((_, i) => ranges.get(o.x[i])!.max >= threshold)
+        if (x.length === 1) return x[0]
+        if (x.length !== n.x.length) return max(...(x as any)) as NumNode<I>
         break
       }
+      case 'match':
+      case 'lookup':
+        if (n.br.every((n) => n.op === 'const')) {
+          const br = n.br.map((n) => n.ex)
+          return n.x[branching[o.op](br, o.ex)]
+        }
+        break
+      case 'subscript':
+        if (n.br[0].op === 'const') return n.ex[n.br[0].ex]
+        break
     }
     return n
   })
