@@ -5,7 +5,13 @@ import {
   TagMapKeys,
   TagMapSubsetValues,
 } from '../tag'
-import { assertUnreachable, extract, isDebug, tagString } from '../util'
+import {
+  assertUnreachable,
+  customOps,
+  extract,
+  isDebug,
+  tagString,
+} from '../util'
 import { arithmetic, branching } from './formula'
 import type { AnyNode, BaseRead, NumNode, ReRead, StrNode } from './type'
 
@@ -131,7 +137,7 @@ export class Calculator<M = any> {
       }
       case 'custom': {
         const x = n.x.map((n) => this._compute(n, cache))
-        return finalize(this.computeCustom(getV(x), n.ex), x, [])
+        return finalize(customOps[n.ex].calc(getV(x)), x, [])
       }
       default:
         assertUnreachable(op)
@@ -144,9 +150,6 @@ export class Calculator<M = any> {
     result: CalcResult<number | string, M>
   ): CalcResult<number | string, M> {
     return result
-  }
-  computeCustom(_: (number | string)[], op: string): any {
-    throw new Error(`Unsupported custom node ${op} in Calculator`)
   }
   computeMeta(
     _n: AnyNode,

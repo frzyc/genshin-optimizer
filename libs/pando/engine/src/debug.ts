@@ -17,14 +17,12 @@ export type DebugMeta = {
 }
 export class DebugCalculator extends BaseCalculator<DebugMeta> {
   tagStr: TagStr
-  custom: typeof this.computeCustom
   gathering = new Set<TagCache<DebugMeta>>()
 
   constructor(calc: BaseCalculator<any>, tagStr: TagStr) {
     super(calc.cache.keys)
     this.nodes = calc.nodes
     this.tagStr = tagStr
-    this.custom = calc.computeCustom
     this.cache = this.cache.with(calc.cache.tag)
   }
   override withTag(_tag: Tag): this {
@@ -113,10 +111,6 @@ export class DebugCalculator extends BaseCalculator<DebugMeta> {
       result.deps = x.map((x) => x!.meta)
     }
     return result
-  }
-
-  override computeCustom(args: (number | string)[], op: string): any {
-    return this.custom(args, op)
   }
 }
 

@@ -1,4 +1,6 @@
 import type { Tag } from '../tag'
+import { customOps, type CustomInfo } from './custom'
+export * from './custom'
 
 type DebugMode = boolean
 
@@ -21,3 +23,8 @@ export const tagString = (record: Tag): string =>
 
 export const extract = <V, K extends keyof V>(arr: V[], key: K): V[K][] =>
   arr.map((v) => v[key])
+
+export function addCustomOperation(name: string, info: CustomInfo) {
+  if (name in customOps) throw new Error(`Already set custom formula: ${name}`)
+  customOps[name] = info
+}
