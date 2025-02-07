@@ -197,3 +197,9 @@ export const discSetNames: Record<DiscSetKey, string> = {
   BranchBladeSong: 'Branch & Blade Song',
   AstralVoice: 'Astral Voice',
 }
+
+export const discRarityColor = {
+  S: 'warning',
+  A: 'roll6',
+  B: 'roll5',
+} as const
