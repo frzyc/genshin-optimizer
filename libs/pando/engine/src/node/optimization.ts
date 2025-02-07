@@ -355,7 +355,7 @@ export function compile(
   let i = 1,
     body = `'use strict';const x0=0` // making sure `const` has at least one entry
   for (const [name, f] of Object.entries(customOps))
-    body += `,${name}=${f.calc.toString()};`
+    body += `,${name}=${f.calc.toString()}`
   const names = new Map<AnyNode, string>()
   traverse(n, (n, visit) => {
     const name = `x${i++}`
