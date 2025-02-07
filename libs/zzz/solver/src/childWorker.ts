@@ -1,4 +1,5 @@
 import type {
+  CondKey,
   DiscSetKey,
   DiscSlotKey,
   FormulaKey,
@@ -12,6 +13,7 @@ const MAX_BUILDS_TO_SEND = 200_000
 let discStatsBySlot: Record<DiscSlotKey, DiscStats[]>
 let constraints: Constraints
 let baseStats: Stats
+let conditionals: Partial<Record<CondKey, number>>
 let formulaKey: FormulaKey
 let setFilter2p: DiscSetKey[]
 let setFilter4p: DiscSetKey[]
@@ -19,6 +21,7 @@ let setFilter4p: DiscSetKey[]
 export interface ChildCommandInit {
   command: 'init'
   baseStats: Stats
+  conditionals: Partial<Record<CondKey, number>>
   discStatsBySlot: Record<DiscSlotKey, DiscStats[]>
   constraints: Constraints
   formulaKey: FormulaKey
@@ -81,6 +84,7 @@ async function handleEvent(e: MessageEvent<ChildCommand>): Promise<void> {
 // Create compiledCalcFunction
 async function init({
   baseStats: bs,
+  conditionals: conds,
   discStatsBySlot: discs,
   constraints: initCons,
   formulaKey: fk,
@@ -88,6 +92,7 @@ async function init({
   setFilter4,
 }: ChildCommandInit) {
   baseStats = bs
+  conditionals = conds
   discStatsBySlot = discs
   constraints = initCons
   formulaKey = fk
@@ -164,7 +169,7 @@ async function start() {
       continue
     }
     // 2. Calculate base stats.
-    const sum = applyCalc(baseStats, discs)
+    const sum = applyCalc(baseStats, conditionals, discs)
     // 3Filter using constraints
     if (
       constraintArr.every(([k, { value, isMax }]) =>
@@ -186,12 +191,12 @@ async function start() {
     } else {
       skipped++
     }
-    if (builds.length > MAX_BUILDS_TO_SEND) {
+    if (builds.length + skipped > MAX_BUILDS_TO_SEND) {
       sliceSortSendBuilds()
     }
   }
 
-  if (builds.length > 0) {
+  if (builds.length + skipped > 0) {
     sliceSortSendBuilds()
   }
 

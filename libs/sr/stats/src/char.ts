@@ -29,19 +29,31 @@ export function getCharInterpolateObject(
   skLevel: number,
   skIndex = 0
 ) {
-  if (skType === 'eidolon') {
-    return Object.fromEntries(
-      allStats.char[ck].rankMap[skLevel as Rank].params.map((param, index) => [
-        index + 1,
-        param,
-      ])
-    )
-  } else {
-    return Object.fromEntries(
-      allStats.char[ck].skillTree[skType].skillParamList[skIndex].map(
-        (skills, index) => [index + 1, skills[skLevel]]
+  switch (skType) {
+    case 'eidolon':
+      return Object.fromEntries(
+        allStats.char[ck].rankMap[skLevel as Rank].params.map(
+          (param, index) => [index + 1, param]
+        )
       )
-    )
+    case 'basic':
+    case 'skill':
+    case 'ult':
+    case 'talent':
+    case 'technique':
+      return Object.fromEntries(
+        allStats.char[ck].skillTree[skType].skillParamList[skIndex].map(
+          (skills, index) => [index + 1, skills[skLevel]]
+        )
+      )
+    case 'bonusAbility1':
+    case 'bonusAbility2':
+    case 'bonusAbility3':
+      return Object.fromEntries(
+        allStats.char[ck].skillTree[skType].skillParamList[skIndex][
+          skLevel
+        ].map((skills, index) => [index + 1, skills])
+      )
   }
 }
 

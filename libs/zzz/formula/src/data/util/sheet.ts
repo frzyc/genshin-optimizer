@@ -233,7 +233,6 @@ export function getStatFromStatKey(
     case 'fire_dmg_':
     case 'electric_dmg_':
     case 'ice_dmg_':
-    case 'frost_dmg_':
     case 'physical_dmg_':
     case 'ether_dmg_':
       // substring will fetch 'physical' from 'physical_dmg_', for example

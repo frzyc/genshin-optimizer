@@ -1,6 +1,10 @@
 import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import { CardThemed, SqBadge } from '@genshin-optimizer/common/ui'
-import { objMap, toDecimal, toggleInArr } from '@genshin-optimizer/common/util'
+import {
+  handleMultiSelect,
+  objMap,
+  toDecimal,
+} from '@genshin-optimizer/common/util'
 import type {
   DiscMainStatKey,
   FormulaKey,
@@ -130,6 +134,7 @@ export default function OptimizeWrapper({
     const optimizer = new Solver(
       formulaKey,
       baseStats,
+      character.conditionals,
       objMap(character.constraints, (c, k) => ({
         ...c,
         value: toDecimal(c.value, k),
@@ -161,6 +166,9 @@ export default function OptimizeWrapper({
     </Typography>
   )
   const discSlotBtns = (slotKey: '4' | '5' | '6') => {
+    const mainKeysHandler = handleMultiSelect([
+      ...discSlotToMainStatKeys[slotKey],
+    ])
     const keysMap = {
       '4': character?.slot4 ?? [],
       '5': character?.slot5 ?? [],
@@ -182,7 +190,7 @@ export default function OptimizeWrapper({
             key={key}
             variant={keysMap[slotKey].includes(key) ? 'contained' : 'outlined'}
             onClick={() =>
-              funcMap[slotKey](toggleInArr([...keysMap[slotKey]], key))
+              funcMap[slotKey](mainKeysHandler([...keysMap[slotKey]], key))
             }
           >
             <StatDisplay statKey={key} showPercent />

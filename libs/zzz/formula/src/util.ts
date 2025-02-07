@@ -102,11 +102,11 @@ export function discTagMapNodeEntries(
     initial,
   } = convert(ownTag, { sheet: 'disc', et: 'own' })
   return [
-    // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
+    // Opt-in for disc buffs, instead of enabling it by default to reduce `read` traffic
     reader.sheet('agg').reread(reader.sheet('disc')),
 
     // Add `sheet:dyn` between the stat and the buff so that we can `detach` them easily
-    // TODO: 4p buffs will go into 'combat' instead of 'initial'
+    // Used for disc main/sub stats, as those are fed into the builder at run-time, after nodes are optimized
     reader
       .withTag({ sheet: 'disc', qt: 'initial' })
       .reread(reader.sheet('dyn')),

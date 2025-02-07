@@ -1,7 +1,7 @@
 import {
   cmpEq,
   cmpGE,
-  max,
+  min,
   prod,
   subscript,
   sum,
@@ -80,17 +80,17 @@ const sheet = register(
     teamBuff.premod.brEffect_.add(cmpEq(char.bonusAbility1, 1, dm.b1.break_))
   ),
   registerBuffFormula(
-    'ba3_brEff_',
+    'ba3_dmg_',
     teamBuff.premod.dmg_.add(
       cmpEq(
         char.bonusAbility3,
         1,
         skillOvertone.ifOn(
-          max(
-            // (brEff_ - breakThreshold) / breakPer * dmgPer
+          min(
+            // (brEff_ - breakThreshold) / perBreak * dmgPer
             prod(
               sum(own.final.brEffect_, -dm.b3.breakThreshold),
-              1 / dm.b3.breakPer,
+              1 / dm.b3.perBreak,
               dm.b3.dmg_per
             ),
             dm.b3.max_dmg_

@@ -1,13 +1,20 @@
 import type { TriggerString } from '@genshin-optimizer/common/database'
-import { clamp, objFilter, validateArr } from '@genshin-optimizer/common/util'
+import {
+  clamp,
+  objFilter,
+  objFilterKeys,
+  validateArr,
+} from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
+  CondKey,
   DiscMainStatKey,
   DiscSetKey,
   FormulaKey,
   WengineKey,
 } from '@genshin-optimizer/zzz/consts'
 import {
+  allAttributeDamageKeys,
   allCharacterKeys,
   allDiscSetKeys,
   allFormulaKeys,
@@ -36,6 +43,7 @@ export type CharacterData = {
   levelHigh: number
   setFilter2: DiscSetKey[]
   setFilter4: DiscSetKey[]
+  conditionals: Partial<Record<CondKey, number>>
 }
 
 function initialCharacterData(key: CharacterKey): CharacterData {
@@ -59,6 +67,7 @@ function initialCharacterData(key: CharacterKey): CharacterData {
     levelHigh: 15,
     setFilter2: [],
     setFilter4: [],
+    conditionals: {},
   }
 }
 export class CharacterDataManager extends DataManager<
@@ -89,6 +98,7 @@ export class CharacterDataManager extends DataManager<
       levelHigh,
       setFilter2,
       setFilter4,
+      conditionals,
     } = obj as CharacterData
 
     if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
@@ -119,6 +129,20 @@ export class CharacterDataManager extends DataManager<
       ({ value, isMax }) =>
         typeof value === 'number' && typeof isMax === 'boolean'
     )
+    constraints = objFilterKeys(
+      constraints,
+      // Taken from StatFilterCard
+      [
+        'hp',
+        'def',
+        'atk',
+        'crit_',
+        'crit_dmg_',
+        'anomProf',
+        'pen',
+        ...allAttributeDamageKeys,
+      ]
+    )
     useEquipped = !!useEquipped
 
     slot4 = validateArr(slot4, discSlotToMainStatKeys['4'])
@@ -133,6 +157,9 @@ export class CharacterDataManager extends DataManager<
 
     setFilter2 = validateArr(setFilter2, allDiscSetKeys, [])
     setFilter4 = validateArr(setFilter4, allDiscSetKeys, [])
+
+    if (typeof conditionals !== 'object') conditionals = {}
+    conditionals = objFilter(conditionals, (value) => typeof value === 'number')
 
     const char: CharacterData = {
       key: characterKey,
@@ -151,6 +178,7 @@ export class CharacterDataManager extends DataManager<
       levelHigh,
       setFilter2,
       setFilter4,
+      conditionals,
     }
     return char
   }

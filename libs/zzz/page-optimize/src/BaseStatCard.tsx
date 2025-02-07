@@ -3,10 +3,10 @@ import { getUnitStr, isPercentStat } from '@genshin-optimizer/common/util'
 import type { LocationKey, StatKey } from '@genshin-optimizer/zzz/consts'
 import {
   allAttributeDamageKeys,
-  statKeyTextMap,
   unCondKeys,
 } from '@genshin-optimizer/zzz/consts'
 import type { Stats } from '@genshin-optimizer/zzz/db'
+import { StatDisplay } from '@genshin-optimizer/zzz/ui'
 import { Box, CardContent, Typography } from '@mui/material'
 const baseKeys = ['hp_base', 'atk_base', 'def_base'] as const
 const statKeys: StatKey[] = [
@@ -46,7 +46,7 @@ export default function BaseStatCard({
     <NumberInputLazy
       disabled={!locationKey}
       key={key}
-      sx={{ flexGrow: 1 }}
+      sx={{ flexGrow: 1, whiteSpace: 'nowrap' }}
       value={baseStats[key] || 0}
       onChange={(v) =>
         setBaseStats({
@@ -57,7 +57,7 @@ export default function BaseStatCard({
       float={isPercentStat(key)}
       inputProps={{ sx: { textAlign: 'right', minWidth: '5em' } }}
       InputProps={{
-        startAdornment: statKeyTextMap[key] ?? key,
+        startAdornment: <StatDisplay statKey={key as StatKey} />,
         endAdornment: getUnitStr(key),
       }}
     />
@@ -77,7 +77,7 @@ export default function BaseStatCard({
         <Box sx={{ display: 'flex', gap: 1, pb: 2, flexWrap: 'wrap' }}>
           {enemyKeys.map((key) => input(key))}
         </Box>
-        <Typography>Combat Buffs(Conditonal)</Typography>
+        <Typography>Combat Buffs</Typography>
         <Box sx={{ display: 'flex', gap: 1, pb: 2, flexWrap: 'wrap' }}>
           {unCondKeys.map((key) => input(key))}
         </Box>

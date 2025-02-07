@@ -13,7 +13,7 @@ export function ElementIcon({
   ele,
   iconProps = {},
 }: {
-  ele: AttributeKey
+  ele: AttributeKey | 'frost'
   iconProps?: SvgIconProps
 }) {
   switch (ele) {

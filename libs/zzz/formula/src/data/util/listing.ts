@@ -32,7 +32,6 @@ export const attributes = [
   'fire',
   'electric',
   'ice',
-  'frost',
   'physical',
   'ether',
 ] as const

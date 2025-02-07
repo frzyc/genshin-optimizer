@@ -7,8 +7,10 @@ import {
   getDiscSubStatBaseVal,
 } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc, ISubstat } from '@genshin-optimizer/zzz/db'
+import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import type { SliderProps } from '@mui/material'
 import {
+  ListItemIcon,
   ListItemText,
   MenuItem,
   Slider,
@@ -85,11 +87,11 @@ export default function SubstatInput({
               key={k}
               selected={key === k}
               disabled={key === k}
-              onClick={() => setSubstat(index, { key: k, upgrades: 0 })}
+              onClick={() => setSubstat(index, { key: k, upgrades: 1 })}
             >
-              {/* <ListItemIcon>
-                    <StatIcon statKey={k} />
-                  </ListItemIcon> */}
+              <ListItemIcon>
+                <StatIcon statKey={k} />
+              </ListItemIcon>
               <ListItemText>
                 <StatDisplay statKey={k} showPercent disableIcon />
               </ListItemText>
@@ -137,7 +139,7 @@ export default function SubstatInput({
         >
           <Typography>
             {valueString(
-              upgrades * getDiscSubStatBaseVal(key, rarity),
+              (upgrades || 1) * getDiscSubStatBaseVal(key, rarity),
               getUnitStr(key)
             )}
           </Typography>
