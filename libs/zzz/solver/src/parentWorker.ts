@@ -1,5 +1,9 @@
 import { objKeyMap, range } from '@genshin-optimizer/common/util'
-import type { DiscSetKey, FormulaKey } from '@genshin-optimizer/zzz/consts'
+import type {
+  CondKey,
+  DiscSetKey,
+  FormulaKey,
+} from '@genshin-optimizer/zzz/consts'
 import {
   allDiscSlotKeys,
   type DiscSlotKey,
@@ -15,6 +19,7 @@ let workers: Worker[]
 export interface ParentCommandStart {
   command: 'start'
   baseStats: Stats
+  conditionals: Partial<Record<CondKey, number>>
   constraints: Constraints
   setFilter2: DiscSetKey[] // [] means rainbow
   setFilter4: DiscSetKey[] // [] means rainbow
@@ -81,6 +86,7 @@ async function handleEvent(e: MessageEvent<ParentCommand>): Promise<void> {
 
 async function start({
   baseStats,
+  conditionals,
   discsBySlot,
   constraints,
   setFilter2,
@@ -181,6 +187,7 @@ async function start({
         const message: ChildCommandInit = {
           command: 'init',
           baseStats,
+          conditionals,
           discStatsBySlot: chunkedDiscStatsBySlot[index],
           constraints,
           formulaKey,

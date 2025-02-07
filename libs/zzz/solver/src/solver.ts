@@ -1,4 +1,5 @@
 import type {
+  CondKey,
   DiscSetKey,
   DiscSlotKey,
   FormulaKey,
@@ -18,6 +19,7 @@ export interface ProgressResult {
 
 export class Solver {
   private baseStats: Stats
+  private conditionals: Partial<Record<CondKey, number>>
   private constraints: Constraints
   private discsBySlot: Record<DiscSlotKey, ICachedDisc[]>
   private formulaKey: FormulaKey
@@ -30,6 +32,7 @@ export class Solver {
   constructor(
     formulaKey: FormulaKey,
     baseStats: Stats,
+    conditionals: Partial<Record<CondKey, number>>,
     constraints: Constraints,
     setFilter2: DiscSetKey[], // [] means rainbow
     setFilter4: DiscSetKey[], // [] means rainbow
@@ -39,6 +42,7 @@ export class Solver {
   ) {
     this.formulaKey = formulaKey
     this.baseStats = baseStats
+    this.conditionals = conditionals
     this.constraints = constraints
     this.discsBySlot = discsBySlot
     this.numWorkers = numWorkers
@@ -73,6 +77,7 @@ export class Solver {
       // Start worker
       const message: ParentCommandStart = {
         baseStats: this.baseStats,
+        conditionals: this.conditionals,
         command: 'start',
         // lightCones: this.lightCones,
         discsBySlot: this.discsBySlot,
