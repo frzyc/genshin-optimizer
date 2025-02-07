@@ -27,12 +27,13 @@ export function prune<I extends OP>(
   _keepTop: number
 ): { nodes: NumNode<I>[]; builds: Builds } {
   // TODO: add more optimization routines
-  nodes = pruneNodeRange(nodes, getRanges(nodes, cat, builds))
+  nodes = pruneBranches(nodes, getRanges(nodes, cat, builds))
   nodes = combineConst(nodes)
   return { nodes, builds }
 }
 
-function pruneNodeRange<I extends OP>(
+/** Remove branches that are never chosen due to the range of `br` */
+function pruneBranches<I extends OP>(
   n: NumNode<I>[],
   ranges: Ranges
 ): NumNode<I>[] {
