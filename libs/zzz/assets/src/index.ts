@@ -27,7 +27,7 @@ export function characterAsset(ck: CharacterKey, asset: characterAssetKey) {
   if (characterAssetCache.has(cacheKey))
     return characterAssetCache.get(cacheKey)!
   const result = chars[ck]
-    ? (chars[ck] as Record<characterAssetKey, string>)[asset]
+    ? (chars[ck] as Record<characterAssetKey, string | StaticImageData>)[asset]
     : ''
   characterAssetCache.set(cacheKey, result)
   return result
