@@ -33,15 +33,15 @@ export function prune<I extends OP, C extends Component>(
   cat: string,
   minimum: number[],
   _keepTop: number
-): { nodes: NumNode<I>[]; builds: Omit<C, string>[][] } {
+): { nodes: NumNode<I>[]; builds: Omit<C, string>[][]; minimum: number[] } {
   const state = new State(nodes, builds, cat)
   while (state.progress) {
     state.progress = false
     pruneBranches(state)
-    pruneCompRange(state, minimum)
+    minimum = pruneRange(state, minimum)
     reaffine(state)
   }
-  return { nodes: state.nodes, builds: state.builds }
+  return { nodes: state.nodes, builds: state.builds, minimum }
 }
 
 class State<I extends OP, C extends Component> {
@@ -146,17 +146,36 @@ function pruneBranches(state: State<OP, Component>) {
   state.setNodes(result)
 }
 
-/** Remove components that do not meet the `minimum` requirements in any builds */
-function pruneCompRange(state: State<OP, Component>, minimum: number[]) {
-  const { nodes, cat } = state
+/**
+ * - Remove components that do not meet the `minimum` requirements in any builds
+ * - Remove top-level nodes whose `minimum` requirements are met by every build
+ * - Returns new `minimum` appropriate for the new `state.nodes`
+ */
+function pruneRange(state: State<OP, Component>, minimum: number[]): number[] {
+  const { nodeRanges, cat } = state
   let builds = [...state.builds]
   let compRanges = [...state.compRanges]
+
+  const nodes: NumNode<OP>[] = []
+  const newMinimum: number[] = []
+  state.nodes.forEach((n, i) => {
+    if (i < minimum.length)
+      if (minimum[i] <= nodeRanges.get(n)!.min) return
+      else newMinimum.push(minimum[i])
+    nodes.push(n)
+  })
+  if (newMinimum.length != minimum.length) {
+    state.setNodes(nodes)
+    minimum = newMinimum
+  }
+
+  if (!minimum.length) return minimum
 
   builds.forEach((comp, i) => {
     const new_comp = comp.filter((c) => {
       compRanges[i] = computeCompRanges([c])
       const ranges = computeNodeRanges(nodes, cat, compRanges)
-      return nodes.some((n, i) => ranges.get(n)!.max >= minimum[i])
+      return nodes.every((n, i) => ranges.get(n)!.max >= minimum[i])
     })
     if (new_comp.length != comp.length) {
       builds[i] = new_comp
@@ -164,6 +183,8 @@ function pruneCompRange(state: State<OP, Component>, minimum: number[]) {
       state.setBuilds(builds, compRanges)
     }
   })
+
+  return minimum
 }
 
 const offset = Symbol()
@@ -189,13 +210,10 @@ function reaffine(state: State<OP, Component>) {
         break
       }
       case 'prod': {
-        const varIdx = n.x.findIndex((n) => n.op !== 'const')
-        if (n.x.find((n, i) => n.op !== 'const' && i !== varIdx)) return // multiple non-const terms
-        weight = { ...x[varIdx] }
-        const factor = x.reduce(
-          (acu, w, i) => (i === varIdx ? acu : acu * w[offset]),
-          1
-        )
+        const idx = n.x.findIndex((n) => n.op !== 'const')
+        if (n.x.find((n, i) => n.op !== 'const' && i !== idx)) return // multiple non-const terms
+        weight = { ...x[idx] }
+        const factor = x.reduce((f, w, i) => (i === idx ? f : f * w[offset]), 1)
         if (factor != 1) {
           Object.keys(weight).forEach((k) => (weight[k] *= factor))
           weight[offset] *= factor
@@ -215,10 +233,10 @@ function reaffine(state: State<OP, Component>) {
     weights.set(n, weight)
   })
 
-  const usedWeights = new Map<AnyNode<OP>, Weight>()
+  const topWeights = new Map<AnyNode<OP>, Weight>()
   traverse(nodes, (n, visit) => {
     const w = weights.get(n)
-    if (w) usedWeights.set(n, w)
+    if (w) topWeights.set(n, w)
     else {
       n.x.forEach(visit)
       n.br.forEach(visit)
@@ -226,22 +244,24 @@ function reaffine(state: State<OP, Component>) {
   })
 
   const weightNames = new Map(
-    [...usedWeights.values()].map((w, i) => [w, `c${i}`])
+    [...topWeights.values()].map((w, i) => [w, `c${i}`])
   )
   const newBuilds = builds.map((comp) =>
-    comp.map((c) => {
+    (comp as Component[]).map((c) => {
       const result: Component = {}
+      // Preserve non-string keys
       for (const s of Object.getOwnPropertySymbols(c))
         result[s as any] = (c as any)[s]
       weightNames.forEach((name, w) => {
         result[name] = Object.entries(w).reduce(
-          (acu, [k, v]) => acu + ((c as Component)[k] ?? 0) * v,
+          (acu, [k, v]) => acu + (c[k] ?? 0) * v,
           0
         )
       })
       return result
     })
   )
+
   let shouldChange = false
   for (const comp of newBuilds) {
     for (const [w, name] of weightNames) {
@@ -250,7 +270,8 @@ function reaffine(state: State<OP, Component>) {
       let best = 0
       let bestFreq = 0
       for (const [v, f] of freq)
-        if (f >= bestFreq && best != 0) [best, bestFreq] = [v, f]
+        if (f > bestFreq || (f >= bestFreq && best !== 0))
+          [best, bestFreq] = [v, f]
       if (best != 0) {
         for (const c of comp) {
           c[name] -= best
@@ -263,12 +284,11 @@ function reaffine(state: State<OP, Component>) {
   }
 
   if (!shouldChange) {
-    for (const n of usedWeights.keys()) {
+    for (const n of topWeights.keys()) {
       if (n.op === 'const' || n.op === 'read') continue
-      if (n.op === 'sum' && n.x.length === 2) {
+      if (n.op === 'sum' && n.x.length === 2)
         if (n.x[0].op === 'const' && n.x[1].op === 'read') continue
-        if (n.x[1].op === 'const' && n.x[0].op === 'read') continue
-      }
+        else if (n.x[1].op === 'const' && n.x[0].op === 'read') continue
       shouldChange = true
       break
     }
@@ -286,7 +306,7 @@ function reaffine(state: State<OP, Component>) {
   state.setBuilds(newBuilds)
   state.setNodes(
     mapBottomUp(nodes, (n, o) => {
-      const w = usedWeights.get(o)
+      const w = topWeights.get(o)
       return w ? weightNodes.get(w)! : n
     })
   )
@@ -404,7 +424,8 @@ function _getMonotonicities(
   const toVisit: { node: AnyNode<OP>; ty: boolean }[] = []
   const result = new Map<string, Monotonicity>()
 
-  // `ty` if inc or non-monotonic. `!ty` if dec or non-monotonic
+  // `ty` if inc or non-monotonic. `!ty` if dec or non-monotonic.
+  // When visited with both `ty` values, `node` is non-monotonic.
   function visit(node: AnyNode<OP>, ty: boolean) {
     if (!mon.has(node)) mon.set(node, { inc: true, dec: true })
     const ton = mon.get(node)!
