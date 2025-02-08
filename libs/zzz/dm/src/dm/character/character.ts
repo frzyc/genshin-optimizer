@@ -215,7 +215,7 @@ export const charactersDetailedJSONData = Object.fromEntries(
           if ('Param' in desc) {
             return {
               ...desc,
-              Param: desc.Param.map((param) => {
+              Param: desc?.Param?.map((param) => {
                 if ('Param' in param) {
                   return {
                     ...param,
