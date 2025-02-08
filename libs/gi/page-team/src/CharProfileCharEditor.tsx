@@ -173,12 +173,6 @@ function Content({ onClose }: { onClose?: () => void }) {
                   level={level}
                   ascension={ascension}
                   setBoth={(data) => {
-                    if (allTravelerKeys.includes(characterKey)) {
-                      allTravelerKeys.forEach((tkey) => {
-                        database.chars.set(tkey, data)
-                      })
-                    }
-
                     buildTc?.character
                       ? setBuildTc((buildTc) => {
                           if (buildTc.character)
@@ -186,6 +180,10 @@ function Content({ onClose }: { onClose?: () => void }) {
                               ...buildTc.character,
                               ...data,
                             }
+                        })
+                      : allTravelerKeys.includes(characterKey)
+                      ? allTravelerKeys.forEach((tkey) => {
+                          database.chars.set(tkey, data)
                         })
                       : database.chars.set(characterKey, data)
                   }}

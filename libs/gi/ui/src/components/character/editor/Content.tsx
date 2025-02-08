@@ -101,13 +101,11 @@ export function Content({ onClose }: { onClose?: () => void }) {
                   level={character.level}
                   ascension={character.ascension}
                   setBoth={(data) => {
-                    if (allTravelerKeys.includes(characterKey)) {
-                      allTravelerKeys.forEach((tkey) => {
-                        database.chars.set(tkey, data)
-                      })
-                    } else {
-                      database.chars.set(characterKey, data)
-                    }
+                    allTravelerKeys.includes(characterKey)
+                      ? allTravelerKeys.forEach((tkey) => {
+                          database.chars.set(tkey, data)
+                        })
+                      : database.chars.set(characterKey, data)
                   }}
                 />
               </Box>
