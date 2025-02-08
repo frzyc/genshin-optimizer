@@ -103,7 +103,7 @@ export function DiscCard({
             >
               <Typography
                 noWrap
-                variant="h6"
+                variant="subtitle1"
                 align="center"
                 fontWeight="bold"
                 maxWidth={'100%'}
@@ -168,36 +168,36 @@ export function DiscCard({
                 </Box>
               </Box>
               {/* Main stats */}
-              <Box
-                display="flex"
-                gap={1}
-                alignItems="center"
-                width={'100%'}
-                color={`${discRarityColor[rarity]}.main`}
-              >
-                <Typography
-                  variant="h6"
-                  noWrap
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    flexGrow: 1,
-                    fontWeight: 'bold',
-                  }}
-                >
-                  <StatDisplay statKey={mainStatKey} />
-                </Typography>
-                <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
-                  {toPercent(
-                    getDiscMainStatVal(rarity, mainStatKey, level),
-                    mainStatKey
-                  ).toFixed(statKeyToFixed(mainStatKey))}
-                  {getUnitStr(mainStatKey)}
-                </Typography>
-              </Box>
             </CardContent>
           </CardThemed>
           <Stack spacing={1} sx={{ pt: 1 }}>
+            <Box
+              display="flex"
+              gap={1}
+              alignItems="center"
+              width={'100%'}
+              color={`${discRarityColor[rarity]}.main`}
+            >
+              <Typography
+                variant="subtitle1"
+                noWrap
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  flexGrow: 1,
+                  fontWeight: 'bold',
+                }}
+              >
+                <StatDisplay statKey={mainStatKey} />
+              </Typography>
+              <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                {toPercent(
+                  getDiscMainStatVal(rarity, mainStatKey, level),
+                  mainStatKey
+                ).toFixed(statKeyToFixed(mainStatKey))}
+                {getUnitStr(mainStatKey)}
+              </Typography>
+            </Box>
             {substats.map(
               (substat) =>
                 substat.key && (
@@ -285,7 +285,7 @@ function SubstatDisplay({
   ).toFixed(statKeyToFixed(key))
   return (
     <Typography
-      variant="subtitle1"
+      variant="subtitle2"
       sx={{
         display: 'flex',
         alignItems: 'center',
