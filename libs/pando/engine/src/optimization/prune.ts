@@ -44,7 +44,7 @@ export function prune<I extends OP, C extends Component>(
   return { nodes: state.nodes, builds: state.builds, minimum }
 }
 
-class State<I extends OP, C extends Component> {
+export class State<I extends OP, C extends Component> {
   nodes: NumNode<I>[]
   builds: Omit<C, string>[][]
   cat: string
@@ -67,7 +67,6 @@ class State<I extends OP, C extends Component> {
     this._nodeRanges = undefined
     this._monotonicities = undefined
   }
-
   setBuilds(builds: Omit<C, string>[][], compRanges?: CompRanges) {
     if (this.builds === builds) return
     this.progress = true
@@ -78,54 +77,49 @@ class State<I extends OP, C extends Component> {
   }
 
   get compRanges(): CompRanges {
-    this._compRanges ??= this.builds.map(computeCompRanges)
-    return this._compRanges
+    return (this._compRanges ??= this.builds.map(computeCompRanges))
   }
-
   get nodeRanges(): NodeRanges {
-    this._nodeRanges ??= computeNodeRanges(
+    return (this._nodeRanges ??= computeNodeRanges(
       this.nodes,
       this.cat,
       this.compRanges
-    )
-    return this._nodeRanges
+    ))
   }
-
   get monotonicities(): Monotonicities {
-    this._monotonicities ??= _getMonotonicities(
+    return (this._monotonicities ??= getMonotonicities(
       this.nodes,
       this.cat,
       this.nodeRanges
-    )
-    return this._monotonicities
+    ))
   }
 }
 
 /** Remove branches that are never chosen */
 function pruneBranches(state: State<OP, Component>) {
-  const { nodes, nodeRanges: ranges } = state
+  const { nodes, nodeRanges } = state
   const result = mapBottomUp(nodes, (n, o) => {
     {
-      const { min, max } = ranges.get(o)!
+      const { min, max } = nodeRanges.get(o)!
       if (min === max) return o.op === 'const' ? n : constant(min)
     }
     switch (o.op) {
       case 'thres': {
-        const [value, threshold] = o.br.map((n) => ranges.get(n)!)
+        const [value, threshold] = o.br.map((n) => nodeRanges.get(n)!)
         if (value.min >= threshold.max) return n.x[0]
         if (value.max < threshold.min) return n.x[1]
         break
       }
       case 'min': {
-        const threshold = ranges.get(o)!.max
-        const x = n.x.filter((_, i) => ranges.get(o.x[i])!.min <= threshold)
+        const threshold = nodeRanges.get(o)!.max
+        const x = n.x.filter((_, i) => nodeRanges.get(o.x[i])!.min <= threshold)
         if (x.length === 1) return x[0]
         if (x.length !== n.x.length) return min(...(x as any)) as NumNode<OP>
         break
       }
       case 'max': {
-        const threshold = ranges.get(o)!.min
-        const x = n.x.filter((_, i) => ranges.get(o.x[i])!.max >= threshold)
+        const threshold = nodeRanges.get(o)!.min
+        const x = n.x.filter((_, i) => nodeRanges.get(o.x[i])!.max >= threshold)
         if (x.length === 1) return x[0]
         if (x.length !== n.x.length) return max(...(x as any)) as NumNode<OP>
         break
@@ -171,19 +165,20 @@ function pruneRange(state: State<OP, Component>, minimum: number[]): number[] {
 
   if (!minimum.length) return minimum
 
+  let progress = false
   builds.forEach((comp, i) => {
-    const new_comp = comp.filter((c) => {
+    const newComp = comp.filter((c) => {
       compRanges[i] = computeCompRanges([c])
       const ranges = computeNodeRanges(nodes, cat, compRanges)
       return minimum.every((m, i) => ranges.get(nodes[i])!.max >= m)
     })
-    if (new_comp.length != comp.length) {
-      builds[i] = new_comp
-      compRanges[i] = computeCompRanges(new_comp)
-      state.setBuilds(builds, compRanges)
+    if (newComp.length != comp.length) {
+      builds[i] = newComp
+      compRanges[i] = computeCompRanges(newComp)
+      progress = true
     }
   })
-
+  if (progress) state.setBuilds(builds, compRanges)
   return minimum
 }
 
@@ -236,7 +231,8 @@ function reaffine(state: State<OP, Component>) {
   const topWeights = new Map<AnyNode<OP>, Weight>()
   traverse(nodes, (n, visit) => {
     const w = weights.get(n)
-    if (w) topWeights.set(n, w)
+    // Make sure `n` contains a variable, i.e., `w` has some string keys
+    if (w && Object.keys(w).length) topWeights.set(n, w)
     else {
       n.x.forEach(visit)
       n.br.forEach(visit)
@@ -267,12 +263,11 @@ function reaffine(state: State<OP, Component>) {
     for (const [w, name] of weightNames) {
       const freq = new Map<number, number>()
       for (const c of comp) freq.set(c[name], (freq.get(c[name]) ?? 0) + 1)
-      let best = 0
-      let bestFreq = 0
+      let [best, bestFreq] = [0, 0]
       for (const [v, f] of freq)
-        if (f > bestFreq || (f >= bestFreq && best !== 0))
+        if (f > bestFreq || (v === 0 && f >= bestFreq))
           [best, bestFreq] = [v, f]
-      if (best != 0) {
+      if (best !== 0) {
         for (const c of comp) {
           c[name] -= best
           if (c[name] === 0) delete c[name]
@@ -332,12 +327,12 @@ function computeCompRanges(comp: Component[]): CompRanges[number] {
 
 /** Get possible ranges of each node */
 function computeNodeRanges(
-  n: AnyNode<OP>[],
+  nodes: NumNode<OP>[],
   cat: string,
   compRanges: CompRanges
 ): NodeRanges {
   const result = new Map<AnyNode<OP>, Range>()
-  traverse(n, (n, visit) => {
+  traverse(nodes, (n, visit) => {
     n.x.forEach(visit)
     n.br.forEach(visit)
     const ranges = n.x.map((n) => result.get(n)!)
@@ -415,10 +410,10 @@ function computeNodeRanges(
   return result
 }
 
-function _getMonotonicities(
-  n: NumNode<OP>[],
+function getMonotonicities(
+  nodes: NumNode<OP>[],
   cat: string,
-  ranges: NodeRanges
+  nodeRanges: NodeRanges
 ): Monotonicities {
   const mon = new Map<AnyNode<OP>, Monotonicity>()
   const toVisit: { node: AnyNode<OP>; ty: boolean }[] = []
@@ -436,7 +431,7 @@ function _getMonotonicities(
   }
 
   // Cannot use `traverse` because each node is visited twice, once for `inc` and once for `dec`
-  n.forEach((n) => visit(n, true))
+  nodes.forEach((n) => visit(n, true))
   while (toVisit.length) {
     const { node, ty } = toVisit.pop()!
     switch (node.op) {
@@ -459,8 +454,8 @@ function _getMonotonicities(
         break
       case 'thres': {
         node.x.forEach((n) => visit(n, ty))
-        const ge = ranges.get(node.x[0])!
-        const lt = ranges.get(node.x[1])!
+        const ge = nodeRanges.get(node.x[0])!
+        const lt = nodeRanges.get(node.x[1])!
         // if `br` is not visited, both branches are equal
         if (ge.max > lt.min) {
           visit(node.br[0], ty)
@@ -473,7 +468,7 @@ function _getMonotonicities(
         break
       }
       case 'sumfrac': {
-        const [x, c] = node.x.map((n) => ranges.get(n)!)
+        const [x, c] = node.x.map((n) => nodeRanges.get(n)!)
         // if `x` is not visited, `c == 0` and `node == 1`
         if (c.min < 0) visit(node.x[0], !ty)
         if (c.max > 0) visit(node.x[0], ty)
@@ -483,7 +478,7 @@ function _getMonotonicities(
         break
       }
       case 'prod': {
-        const r = ranges.get(node)!
+        const r = nodeRanges.get(node)!
         const pos = r.min > 0
         if (!pos && r.max >= 0) {
           // unsupported zero-touching
@@ -491,13 +486,13 @@ function _getMonotonicities(
           node.x.forEach((n) => visit(n, false))
         } else
           node.x.forEach((n) =>
-            visit(n, (pos === ty) === ranges.get(n)!.min > 0)
+            visit(n, (pos === ty) === nodeRanges.get(n)!.min > 0)
           )
         break
       }
       case 'custom':
         customInfo[node.ex]
-          .monotonicity(node.x.map((n) => ranges.get(n)!))
+          .monotonicity(node.x.map((n) => nodeRanges.get(n)!))
           .forEach((t, i) => {
             if (!t.inc) visit(node.x[i], !ty)
             if (!t.dec) visit(node.x[i], ty)
