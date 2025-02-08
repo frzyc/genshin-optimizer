@@ -5,12 +5,13 @@ import { combineConst } from './simplify'
 type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
 const { arithmetic, branching } = calculation
 
-type BuildComponent = Record<string, number>
-type Builds = BuildComponent[][]
+type Component = Record<string, number>
+type Builds = Component[][]
 type Tonicity = { inc: boolean; dec: boolean }
 type Range = { min: number; max: number }
 
-type Ranges = Map<AnyNode<OP>, Range>
+type CompRanges = Record<string, Range>[]
+type NodeRanges = Map<AnyNode<OP>, Range>
 type Tonicities = Map<string, Tonicity>
 
 export type CustomInfo = {
@@ -23,19 +24,28 @@ export function prune<I extends OP>(
   nodes: NumNode<I>[],
   builds: Builds,
   cat: string,
-  _minimum: number[],
+  minimum: number[],
   _keepTop: number
 ): { nodes: NumNode<I>[]; builds: Builds } {
-  // TODO: add more optimization routines
-  nodes = pruneBranches(nodes, getRanges(nodes, cat, builds))
-  nodes = combineConst(nodes)
+  while (true) {
+    const oldNodes = nodes
+    const oldBuilds = builds
+
+    let compRanges = builds.map(getCompRanges)
+    nodes = pruneBranches(nodes, getNodeRanges(nodes, cat, compRanges))
+    compRanges = builds.map(getCompRanges)
+    pruneCompRange(builds, nodes, minimum, cat, compRanges)
+    nodes = combineConst(nodes)
+
+    if (oldNodes === nodes && oldBuilds == builds) break
+  }
   return { nodes, builds }
 }
 
 /** Remove branches that are never chosen */
 function pruneBranches<I extends OP>(
   n: NumNode<I>[],
-  ranges: Ranges
+  ranges: NodeRanges
 ): NumNode<I>[] {
   return mapBottomUp(n, (n, o) => {
     {
@@ -78,7 +88,60 @@ function pruneBranches<I extends OP>(
   })
 }
 
-function getRanges(n: AnyNode<OP>[], cat: string, builds: Builds): Ranges {
+/** Remove components that do not meet the `minimum` requirements in any builds */
+function pruneCompRange<C extends Component>(
+  builds: C[][],
+  nodes: NumNode<OP>[],
+  minimum: number[],
+  cat: string,
+  compRanges: CompRanges | undefined
+): C[][] {
+  const old = builds
+  builds = [...builds]
+  compRanges ??= builds.map(getCompRanges)
+  let progress = true
+  while (progress) {
+    progress = false
+    builds.forEach((comp, i) => {
+      const new_comp = comp.filter((c) => {
+        compRanges[i] = getCompRanges([c])
+        const ranges = getNodeRanges(nodes, cat, compRanges)
+        return nodes.some((n, i) => ranges.get(n)!.max >= minimum[i])
+      })
+      if (new_comp.length != comp.length) {
+        builds[i] = new_comp
+        compRanges[i] = getCompRanges(new_comp)
+        progress = true
+      }
+    })
+  }
+  return old.every((c, i) => c.length === builds[i].length) ? old : builds
+}
+
+/** Get range assuming any item in `comp` can be selected */
+function getCompRanges(comp: Component[]): CompRanges[number] {
+  const iter = comp.values()
+  const first = iter.next().value
+  if (!first) return {}
+  const result = Object.fromEntries(
+    Object.entries(first).map(([k, v]) => [k, { min: v, max: v }])
+  )
+  for (const component of iter)
+    for (const [k, v] of Object.entries(component)) {
+      let r = result[k]
+      if (!r) result[k] = r = { min: 0, max: 0 }
+      if (r.min > v) r.min = v
+      if (r.max < v) r.max = v
+    }
+  return result
+}
+
+/** Get possible ranges of each node */
+function getNodeRanges(
+  n: AnyNode<OP>[],
+  cat: string,
+  compRanges: CompRanges
+): NodeRanges {
   const result = new Map<AnyNode<OP>, Range>()
   traverse(n, (n, visit) => {
     n.x.forEach(visit)
@@ -101,18 +164,23 @@ function getRanges(n: AnyNode<OP>[], cat: string, builds: Builds): Ranges {
       return { min: Math.min(...vals), max: Math.max(...vals) }
     }
 
-    let r = { min: NaN, max: NaN }
+    let r: Range
     switch (n.op) {
       case 'const':
-        if (typeof n.ex === 'number') r.min = r.max = n.ex
+        if (typeof n.ex === 'number') r = { min: n.ex, max: n.ex }
+        else r = { min: NaN, max: NaN }
         break
       case 'subscript':
-        r.min = Math.min(...(n.ex as number[]))
-        r.max = Math.max(...(n.ex as number[]))
+        r = {
+          min: Math.min(...(n.ex as number[])),
+          max: Math.max(...(n.ex as number[])),
+        }
         break
       case 'sum':
-        r.min = mins.reduce((a, b) => a + b, 0)
-        r.max = maxs.reduce((a, b) => a + b, 0)
+        r = {
+          min: mins.reduce((a, b) => a + b, 0),
+          max: maxs.reduce((a, b) => a + b, 0),
+        }
         break
       case 'prod':
         r = { min: 1, max: 1 }
@@ -127,31 +195,28 @@ function getRanges(n: AnyNode<OP>[], cat: string, builds: Builds): Ranges {
       case 'lookup':
         r = { min: Math.min(...mins), max: Math.max(...maxs) }
         break
+      case 'sumfrac':
+        if (mins[0] + mins[1] > 0 || maxs[0] + maxs[1] < 0)
+          r = cornerRange(n.op, ranges as [Range, Range])
+        // Degenerate if `x + c` touches zero
+        else r = { min: NaN, max: NaN }
+        break
+      case 'read': {
+        r = { min: 0, max: 0 }
+        for (const { [n.tag[cat]!]: range } of compRanges)
+          if (range) {
+            r.min += range.min
+            r.max += range.max
+          }
+        break
+      }
       case 'custom':
         r = customInfo[n.ex]!.range(ranges)
         break
-      case 'sumfrac':
-        // If `x + c` touches 0, the sum-frac is degenerate
-        if (mins[0] + mins[1] > 0 || maxs[0] + maxs[1] < 0)
-          r = cornerRange(n.op, ranges as [Range, Range])
-        break
-      case 'read': {
-        r.min = r.max = 0
-        const key = n.tag[cat]!
-        for (const candidates of builds) {
-          const subr = { min: Infinity, max: -Infinity }
-          for (const { [key]: val = 0 } of candidates) {
-            if (val < subr.min) subr.min = val
-            if (val > subr.max) subr.max = val
-          }
-          r.min += subr.min
-          r.max += subr.max
-        }
-        break
-      }
       default:
         assertUnreachable(n)
     }
+    result.set(n, r)
   })
   return result
 }
@@ -159,7 +224,7 @@ function getRanges(n: AnyNode<OP>[], cat: string, builds: Builds): Ranges {
 function _getTonicities(
   n: NumNode<OP>[],
   cat: string,
-  ranges: Ranges
+  ranges: NodeRanges
 ): Tonicities {
   const t = new Map<AnyNode<OP>, Tonicity>()
   const marked: { node: AnyNode<OP>; inc: boolean }[] = []
