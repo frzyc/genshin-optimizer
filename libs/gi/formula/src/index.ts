@@ -27,7 +27,7 @@ export * from './util'
   }
   addCustomOperation('res', {
     range: ([r]) => ({ min: calc([r.max]), max: calc([r.min]) }),
-    tonicity: (_) => [{ inc: false, dec: true }],
+    monotonicity: (_) => [{ inc: false, dec: true }],
     calc,
   })
 }

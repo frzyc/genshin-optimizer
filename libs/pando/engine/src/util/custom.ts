@@ -4,14 +4,14 @@
  * regions, and decreasing in another. Setting both to `false` means
  * altering the argument does not change the value of the function.
  */
-export type Tonicity = { inc: boolean; dec: boolean }
+export type Monotonicity = { inc: boolean; dec: boolean }
 export type Range = { min: number; max: number }
 
 export type CustomInfo = {
   /** Given a range of each arguments, returns the range of the result */
   range: (r: Range[]) => Range
   /** Given the range of the arguments, returns whether the function is increasing/decreasing w.r.t. to each argument */
-  tonicity: (r: Range[]) => Tonicity[]
+  monotonicity: (r: Range[]) => Monotonicity[]
   /**
    * Actual computation of the custom node. `calc.toString` must be a valid
    * standalone function declaration if used with `compile`. Generally, a
