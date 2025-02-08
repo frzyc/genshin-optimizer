@@ -28,14 +28,14 @@ If you have knowledge in some(or any) of those techonology mentioned above, or a
 
 Last updated Feb 2025
 
-### Genshin Optimizer site <https://frzyc.github.io/genshin-optimizer/>
+### Genshin Optimizer site [https://frzyc.github.io/genshin-optimizer/](https://frzyc.github.io/genshin-optimizer/)
 
 - New characters and content will continue to be added as Genshin updates
 - ~~Artifact upgrade damage probability calculator - Q1 2024~~
 - ~~Teams + Loadouts - Q2 2024~~
 - ~~Optimal substat solver for TC mode - Q2 2024~~
 
-### Zenless Optimizer(alpha) site <https://frzyc.github.io/zenless-optimizer/>
+### Zenless Optimizer(alpha) site [https://frzyc.github.io/zenless-optimizer/](https://frzyc.github.io/zenless-optimizer/)
 
 - ~~A (bare-bones) Optimizer for Zenless Zone Zero. Q1 2025~~
 - Pando (New calculation engine) **TBD**
@@ -51,7 +51,7 @@ Last updated Feb 2025
 ### Somnia-bot
 
 - ~~Access Genshin data from a bot Q3 2024~~
-- Access your GO builds from a discord bot **TBD**
+- Access your GO builds from a Discord bot **TBD**
 - ~~Coming Q2 2024~~
 
 ### GO-next
@@ -83,9 +83,9 @@ For a more interactive and detailed view of the project, run `nx graph`.
 
 [`sr-frontend`](/apps/sr-frontend/) - WIP Star Rail optimizer frontend - static website built using React with MUI, using the Pando calculation engine.
 
-[`gi-frontend`](/apps/gi-frontend/) - WIP GO frontend - website built using NextJS, MUI, supabase, using the Pando calculation engine.
+[`gi-frontend`](/apps/gi-frontend/) - WIP GO frontend - website built using Next.js, MUI, supabase, using the Pando calculation engine.
 
-[`somnia-bot`](/apps/somnia/) - WIP discord bot - built using discord.js, using the Pando calculation engine.
+[`somnia-bot`](/apps/somnia/) - WIP Discord bot - built using discord.js, using the Pando calculation engine.
 
 ### Notable Libs
 
@@ -117,7 +117,7 @@ Run `yarn` to install dependencies.
 
 ## Development server
 
-Run `yarn run nx serve {frontend | sr-frontend | zzz-frontend}` for a dev server. Navigate to <>http://localhost:4200/>. The app will automatically reload if you change any of the source files.
+Run `yarn run nx serve {frontend | sr-frontend | zzz-frontend}` for a dev server. Navigate to [http://localhost:4200](http://localhost:4200). The app will automatically reload if you change any of the source files.
 
 ## Understand this workspace
 
