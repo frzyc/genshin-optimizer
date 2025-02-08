@@ -1,0 +1,9 @@
+// This is a generated index file.
+import iconGacha from './IconRole25.png'
+import iconSelect from './IconRoleSelect25.png'
+
+const data = {
+  iconSelect,
+  iconGacha,
+} as const
+export default data

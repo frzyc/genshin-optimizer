@@ -12,11 +12,14 @@ import {
 } from '@mui/material'
 import { Suspense, lazy } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
+import '../styles.scss'
 import Header from './Header'
 import PageHome from './PageHome'
-
 const PageDiscs = lazy(() => import('@genshin-optimizer/zzz/page-discs'))
 const PageOptimize = lazy(() => import('@genshin-optimizer/zzz/page-optimize'))
+const PageCharacters = lazy(
+  () => import('@genshin-optimizer/zzz/page-characters')
+)
 
 const PageSettings = lazy(() => import('@genshin-optimizer/zzz/page-settings'))
 
@@ -60,6 +63,7 @@ function Content() {
             <Route index element={<PageHome />} />
             <Route path="/discs" element={<PageDiscs />} />
             <Route path="/optimize" element={<PageOptimize />} />
+            <Route path="/characters" element={<PageCharacters />} />
             <Route path="/settings" element={<PageSettings />} />
           </Routes>
         </Suspense>

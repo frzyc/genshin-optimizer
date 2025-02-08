@@ -168,6 +168,9 @@
       "@genshin-optimizer/zzz/page-discs": [
         "libs/zzz/page-discs/src/index.tsx"
       ],
+      "@genshin-optimizer/zzz/page-characters": [
+        "libs/zzz/page-characters/src/index.tsx"
+      ],
       "@genshin-optimizer/zzz/page-optimize": [
         "libs/zzz/page-optimize/src/index.tsx"
       ],

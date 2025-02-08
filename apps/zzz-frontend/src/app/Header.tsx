@@ -40,6 +40,13 @@ const discs: ITab = {
   textSuffix: <DiscsTab key="rediscsAdd" />,
 }
 
+const characters: ITab = {
+  i18Key: 'tabs.characters',
+  icon: <DiscFullIcon />,
+  to: '/characters',
+  value: 'characters',
+}
+
 const optimize: ITab = {
   i18Key: 'tabs.optimize',
   icon: <CalculateIcon />,
@@ -74,7 +81,7 @@ export default function Header({ anchor }: { anchor: string }) {
   )
 }
 
-const maincontent = [discs, optimize, settings] as const
+const maincontent = [discs, optimize, characters, settings] as const
 
 function HeaderContent({ anchor }: { anchor: string }) {
   const theme = useTheme()
@@ -173,7 +180,7 @@ function DesktopHeader({
   )
 }
 
-const mobileContent = [discs, optimize, settings] as const
+const mobileContent = [discs, optimize, characters, settings] as const
 function MobileHeader({
   anchor,
   currentTab,
