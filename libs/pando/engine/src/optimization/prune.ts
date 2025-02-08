@@ -175,7 +175,7 @@ function pruneRange(state: State<OP, Component>, minimum: number[]): number[] {
     const new_comp = comp.filter((c) => {
       compRanges[i] = computeCompRanges([c])
       const ranges = computeNodeRanges(nodes, cat, compRanges)
-      return nodes.every((n, i) => ranges.get(n)!.max >= minimum[i])
+      return minimum.every((m, i) => ranges.get(nodes[i])!.max >= m)
     })
     if (new_comp.length != comp.length) {
       builds[i] = new_comp
