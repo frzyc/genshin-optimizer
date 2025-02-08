@@ -439,7 +439,6 @@ function getMonotonicities(
         result.set(node.tag[cat]!, mon.get(node)!)
         break
       case 'const':
-      case 'subscript':
         break
       case 'sum':
       case 'min':
@@ -497,6 +496,17 @@ function getMonotonicities(
             if (!t.inc) visit(node.x[i], !ty)
             if (!t.dec) visit(node.x[i], ty)
           })
+        break
+      case 'subscript':
+        if (typeof node.ex[0] === 'number') {
+          if (node.ex.every((v, i, a) => !i || a[i - 1] <= v))
+            visit(node.br[0], ty)
+          if (node.ex.every((v, i, a) => !i || a[i - 1] >= v))
+            visit(node.br[0], !ty)
+        } else {
+          visit(node.br[0], true)
+          visit(node.br[0], false)
+        }
         break
       default:
         assertUnreachable(node)
