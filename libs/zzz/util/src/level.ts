@@ -26,19 +26,25 @@ export const getLevelString = (
 ): string => `${level}/${ascensionMaxLevel[ascension]}`
 
 export function validateLevelAsc(
-  level: number,
+  inputLevel: number,
   ascension: AscensionKey
-): { level: number; ascension: AscensionKey } {
-  if (typeof level !== 'number' || level < 1 || level > 60) level = 1
+): { sanitizedLevel: number; ascension: AscensionKey } {
+  let sanitizedLevel = inputLevel
+  if (
+    typeof sanitizedLevel !== 'number' ||
+    sanitizedLevel < 1 ||
+    sanitizedLevel > 60
+  )
+    sanitizedLevel = 1
   if (typeof ascension !== 'number' || ascension < 0 || ascension > 6)
     ascension = 0
 
   if (
-    level > ascensionMaxLevel[ascension] ||
-    level < (ascensionMaxLevel[ascension - 1] ?? 0)
+    sanitizedLevel > ascensionMaxLevel[ascension] ||
+    sanitizedLevel < (ascensionMaxLevel[ascension - 1] ?? 0)
   )
     ascension = ascensionMaxLevel.findIndex(
-      (maxLvl) => level <= maxLvl
+      (maxLvl) => sanitizedLevel <= maxLvl
     ) as AscensionKey
-  return { level, ascension }
+  return { sanitizedLevel, ascension }
 }

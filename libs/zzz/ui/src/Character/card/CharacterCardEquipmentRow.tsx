@@ -1,5 +1,9 @@
 import { CardThemed, NextImage } from '@genshin-optimizer/common/ui'
-import { characterAsset, discDefIcon } from '@genshin-optimizer/zzz/assets'
+import {
+  characterAsset,
+  commonDefImages,
+  discDefIcon,
+} from '@genshin-optimizer/zzz/assets'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
@@ -96,8 +100,7 @@ function Discs({ discs }: { discs: ICachedDisc[] }) {
         height: '129px',
         top: '75px',
         right: '75px',
-        background:
-          'url(/@fs/D:/Coding/mygithub/genshin-optimizer/libs/zzz/ui/src/Character/card/drive.png)',
+        background: `url(${commonDefImages('discDrive')})`,
         backgroundSize: '100% 100%',
         zIndex: '10',
         transform: 'scale(1.96)',
@@ -137,14 +140,12 @@ function Discs({ discs }: { discs: ICachedDisc[] }) {
                 component={NextImage ? NextImage : 'img'}
                 display="flex"
                 position="absolute"
-                src={
-                  '/@fs/D:/Coding/mygithub/genshin-optimizer/libs/zzz/ui/src/Character/card/discBackdrop.png'
-                }
+                src={`${commonDefImages('discBackdrop')}`}
                 width="41px"
                 height="36px"
                 top="2px"
                 left="6px"
-              ></Box>
+              />
             </CardThemed>
           )}
         </Grid>

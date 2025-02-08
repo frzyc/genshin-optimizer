@@ -5,6 +5,7 @@ import { Settings } from '@mui/icons-material'
 import CalculateIcon from '@mui/icons-material/Calculate'
 import DiscFullIcon from '@mui/icons-material/DiscFull'
 import MenuIcon from '@mui/icons-material/Menu'
+import PersonIcon from '@mui/icons-material/Person'
 import {
   AppBar,
   Box,
@@ -42,7 +43,7 @@ const discs: ITab = {
 
 const characters: ITab = {
   i18Key: 'tabs.characters',
-  icon: <DiscFullIcon />,
+  icon: <PersonIcon />,
   to: '/characters',
   value: 'characters',
 }

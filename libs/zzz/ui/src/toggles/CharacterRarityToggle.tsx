@@ -4,7 +4,7 @@ import { handleMultiSelect } from '@genshin-optimizer/common/util'
 import type { CharacterRarityKey } from '@genshin-optimizer/zzz/consts'
 import { allCharacterRarityKeys } from '@genshin-optimizer/zzz/consts'
 import { Box, Chip, ToggleButton, useMediaQuery, useTheme } from '@mui/material'
-import type { ReactNode } from 'react'
+import { useCallback, useMemo, type ReactNode } from 'react'
 type CharacterRarityToggleProps = Omit<
   SolidToggleButtonGroupProps,
   'onChange' | 'value'
@@ -13,7 +13,7 @@ type CharacterRarityToggleProps = Omit<
   value: CharacterRarityKey[]
   totals: Record<CharacterRarityKey, ReactNode>
 }
-const rarityHandler = handleMultiSelect([...allCharacterRarityKeys])
+
 export function CharacterRarityToggle({
   value,
   totals,
@@ -22,23 +22,31 @@ export function CharacterRarityToggle({
 }: CharacterRarityToggleProps) {
   const theme = useTheme()
   const xs = !useMediaQuery(theme.breakpoints.up('sm'))
+  const rarityHandler = useMemo(
+    () => handleMultiSelect([...allCharacterRarityKeys]),
+    []
+  )
+  const handleClick = useCallback(
+    (key: CharacterRarityKey) => () => onChange(rarityHandler(value, key)),
+    [onChange, rarityHandler, value]
+  )
   return (
     <SolidToggleButtonGroup exclusive value={value} {...props}>
-      {allCharacterRarityKeys.map((star) => (
+      {allCharacterRarityKeys.map((rKey) => (
         <ToggleButton
-          key={star}
-          value={star}
+          key={rKey}
+          value={rKey}
           sx={{
             p: xs ? 1 : undefined,
             minWidth: xs ? 0 : '6em',
             display: 'flex',
             gap: xs ? 0 : 1,
           }}
-          onClick={() => onChange(rarityHandler(value, star))}
+          onClick={handleClick(rKey)}
         >
           <Box display="flex">
-            <strong>{star}</strong>
-            {!xs && <Chip label={totals[star]} size="small" />}
+            <strong>{rKey}</strong>
+            {!xs && <Chip label={totals[rKey]} size="small" />}
           </Box>
         </ToggleButton>
       ))}

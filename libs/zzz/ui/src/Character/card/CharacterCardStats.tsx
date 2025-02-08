@@ -15,15 +15,15 @@ export function CharacterCardStats({
   const character =
     useCharacter(characterKey) ??
     (characterKey ? database.chars.getOrCreate(characterKey) : undefined)
-  const characterStats: any = useMemo(() => {
+  const characterStats = useMemo<Record<string, number> | undefined>(() => {
     if (!character) return undefined
     return getCharacterStats(character.key, character.level, character.core)
   }, [character])
-  const { charLvl, ...newStats } = characterStats
+
   return (
     <ListItem sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
       <Typography flexGrow={1}>
-        {characterStats && <StatsDisplay stats={newStats} showBase />}
+        {characterStats && <StatsDisplay stats={characterStats} showBase />}
       </Typography>
     </ListItem>
   )

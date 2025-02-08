@@ -5,6 +5,7 @@ import type {
   SpecialityKey,
 } from '@genshin-optimizer/zzz/consts'
 import type { StaticImageData } from 'next/image'
+import commonImages from './common'
 import chars from './gen/chars'
 import common from './gen/common'
 import discs from './gen/discs'
@@ -18,11 +19,18 @@ export type commonKey =
   | 'skill'
   | 'chain'
   | 'core'
+type commonImagesKey = 'discBackdrop' | 'discDrive'
+const characterAssetCache = new Map<string, string | StaticImageData>()
 
 export function characterAsset(ck: CharacterKey, asset: characterAssetKey) {
-  return chars[ck]
+  const cacheKey = `${ck}_${asset}`
+  if (characterAssetCache.has(cacheKey))
+    return characterAssetCache.get(cacheKey)!
+  const result = chars[ck]
     ? (chars[ck] as Record<characterAssetKey, string | StaticImageData>)[asset]
     : ''
+  characterAssetCache.set(cacheKey, result)
+  return result
 }
 
 export function discDefIcon(setKey: DiscSetKey) {
@@ -39,4 +47,8 @@ export function rarityDefIcon(rarityKey: CharacterRarityKey) {
 
 export function commonDefIcon(key: commonKey) {
   return key ? common[key] : ''
+}
+
+export function commonDefImages(key: commonImagesKey) {
+  return key ? commonImages[key] : ''
 }
