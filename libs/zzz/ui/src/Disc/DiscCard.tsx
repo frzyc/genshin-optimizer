@@ -1,3 +1,4 @@
+import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   BootstrapTooltip,
   CardThemed,
@@ -22,6 +23,7 @@ import {
   Box,
   Button,
   CardContent,
+  ClickAwayListener,
   Skeleton,
   Stack,
   Typography,
@@ -32,7 +34,7 @@ import { StatDisplay } from '../Character'
 import { LocationAutocomplete } from '../Character/LocationAutocomplete'
 import { LocationName } from '../Character/LocationName'
 import { ZCard } from '../Components'
-import { DiscSetName } from './DiscTrans'
+import { DiscSet2p, DiscSet4p, DiscSetName } from './DiscTrans'
 
 export function DiscCard({
   disc,
@@ -58,6 +60,7 @@ export function DiscCard({
   } = useSpinner()
   const { slotKey, setKey, rarity, level, mainStatKey, substats, location } =
     disc
+  const [show, onShow, onHide] = useBoolState()
 
   // const ele = allElementalDamageKeys.find((e) => mainStatKey.startsWith(e))
   // TODO: requires individual disc set piece names/desc added to sheets
@@ -101,15 +104,43 @@ export function DiscCard({
                 alignItems: 'center',
               }}
             >
-              <Typography
-                noWrap
-                variant="subtitle1"
-                align="center"
-                fontWeight="bold"
-                maxWidth={'100%'}
-              >
-                [{slotKey}] <DiscSetName setKey={setKey} />
-              </Typography>
+              <ClickAwayListener onClickAway={onHide}>
+                <div>
+                  <BootstrapTooltip
+                    placement="top"
+                    onClose={onHide}
+                    open={show}
+                    disableFocusListener
+                    disableTouchListener
+                    title={
+                      <Box>
+                        <Typography>
+                          2-Piece Set: <DiscSet2p setKey={setKey} />
+                        </Typography>
+                        <Typography>
+                          4-Piece Set: <DiscSet4p setKey={setKey} />
+                        </Typography>
+                      </Box>
+                    }
+                    slotProps={{
+                      popper: {
+                        disablePortal: true,
+                      },
+                    }}
+                  >
+                    <Typography
+                      noWrap
+                      variant="subtitle1"
+                      align="center"
+                      fontWeight="bold"
+                      maxWidth={'100%'}
+                      onClick={onShow}
+                    >
+                      [{slotKey}] <DiscSetName setKey={setKey} />
+                    </Typography>
+                  </BootstrapTooltip>
+                </div>
+              </ClickAwayListener>
               <Box
                 sx={(theme) => ({
                   border: `4px solid ${

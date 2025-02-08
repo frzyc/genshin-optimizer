@@ -3,22 +3,25 @@ import { workspaceRoot } from '@nx/devkit'
 import type { GenStatsExecutorSchema } from './schema'
 import type { CharacterDatum } from './src/characterData'
 import { getCharactersData } from './src/characterData'
+import { getDiscsData } from './src/discData'
 import type { WengineDatum } from './src/wengineData'
 import { getWenginesData } from './src/wengineData'
+import type {DiscDatum} from './src/discData'
 
 const proj_path = `${workspaceRoot}/libs/zzz/stats`
 const path = `${proj_path}/Data`
 const characterDataDump = getCharactersData()
 const wengineDataDump = getWenginesData()
-
+const discDataDump = getDiscsData()
 const allStat = {
+  disc: discDataDump,
   char: characterDataDump,
   wengine: wengineDataDump,
 } as const
 
 export type AllStats = typeof allStat
 
-export type { CharacterDatum, WengineDatum }
+export type { CharacterDatum, WengineDatum, DiscDatum }
 
 export default async function runExecutor(_options: GenStatsExecutorSchema) {
   console.log('Generating ZZZ stats')
@@ -33,6 +36,13 @@ export default async function runExecutor(_options: GenStatsExecutorSchema) {
   await Promise.all(
     Object.entries(wengineDataDump).map(([key, data]) =>
       dumpPrettyFile(`${path}/Wengine/${key}.json`, data)
+    )
+  )
+
+  console.log(`Writing disc data to ${path}/Discs`)
+  await Promise.all(
+    Object.entries(discDataDump).map(([key, data]) =>
+      dumpPrettyFile(`${path}/Discs/${key}.json`, data)
     )
   )
 

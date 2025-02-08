@@ -1,4 +1,4 @@
-import { isPercentStat } from '@genshin-optimizer/common/util'
+import { isPercentStat, objMap } from '@genshin-optimizer/common/util'
 import {
   type AttributeKey,
   type CharacterKey,
@@ -74,6 +74,74 @@ type CharacterRawData = {
       }
     }
   >
+  Skill: Record<
+    'Basic' | 'Dodge' | 'Special' | 'Chain' | 'Assist',
+    {
+      Description: Array<{
+        Name: string
+        Desc?: string
+        Param?: Array<{
+          Name: string
+          Desc: string
+          Param: Record<
+            string,
+            {
+              Main: number
+              Growth: number
+              Format: '%'
+              DamagePercentage: number
+              DamagePercentageGrowth: number
+              StunRatio: number
+              StunRatioGrowth: number
+              SpRecovery: number
+              SpRecoveryGrowth: number
+              FeverRecovery: number
+              FeverRecoveryGrowth: number
+              AttributeInfliction: number
+              SpConsume: number
+              AttackData: []
+            }
+          >
+        }>
+      }>
+      Material: Record<
+        number,
+        { 10?: number; 100112?: number; 100941?: number }
+      >
+    }
+  >
+  SkillList: Record<
+    string,
+    {
+      Name: 'Special Attack: Fork Lightning'
+      Desc: '<IconMap:Icon_Special>'
+      ElementType: 203
+      HitType: 101
+    }
+  >
+  Passive: {
+    Level: Record<
+      '1' | '2' | '3' | '4' | '5' | '6' | '7',
+      {
+        Level: '1' | '2' | '3' | '4' | '5' | '6' | '7'
+        Name: [string, string]
+        Description: [string, string]
+      }
+    >
+    Material: Record<
+      '1' | '2' | '3' | '4' | '5' | '6',
+      { 10?: number; 100112?: number; 100941?: number }
+    >
+  }
+  Talent: Record<
+    '1' | '2' | '3' | '4' | '5' | '6',
+    {
+      Level: '1' | '2' | '3' | '4' | '5' | '6'
+      Name: string
+      Desc: string
+      Desc2: string
+    }
+  >
 }
 export type CharacterData = {
   rarity: CharacterRarityKey
@@ -95,6 +163,10 @@ export type CharacterData = {
   coreStats: Array<
     Partial<Record<(typeof coreStatMap)[keyof typeof coreStatMap], number>>
   >
+  skills: CharacterRawData['Skill']
+  skillList: CharacterRawData['SkillList']
+  cores: CharacterRawData['Passive']
+  mindscapes: CharacterRawData['Talent']
 }
 export const charactersDetailedJSONData = Object.fromEntries(
   Object.entries(characterIdMap).map(([id, name]) => {
@@ -137,6 +209,48 @@ export const charactersDetailedJSONData = Object.fromEntries(
             Record<(typeof coreStatMap)[keyof typeof coreStatMap], number>
           >
       ),
+      skills: objMap(raw.Skill, (skill) => ({
+        ...skill,
+        Description: skill.Description.map((desc) => {
+          if ('Param' in desc) {
+            return {
+              ...desc,
+              Param: desc.Param.map((param) => {
+                if ('Param' in param) {
+                  return {
+                    ...param,
+                    Param: objMap(param.Param, (param2) => ({
+                      ...param2,
+                      Main: param2.Main / FLAT_SCALING,
+                      Growth: param2.Growth / PERCENT_SCALING,
+                      DamagePercentage:
+                        param2.DamagePercentage / PERCENT_SCALING,
+                      DamagePercentageGrowth:
+                        param2.DamagePercentageGrowth / PERCENT_SCALING,
+                      StunRatio: param2.StunRatio / PERCENT_SCALING,
+                      StunRatioGrowth: param2.StunRatioGrowth / PERCENT_SCALING,
+                      SpRecovery: param2.SpRecovery / FLAT_SCALING,
+                      SpRecoveryGrowth:
+                        param2.SpRecoveryGrowth / PERCENT_SCALING,
+                      FeverRecovery: param2.FeverRecovery / FLAT_SCALING,
+                      FeverRecoveryGrowth:
+                        param2.FeverRecoveryGrowth / PERCENT_SCALING,
+                      AttributeInfliction:
+                        param2.AttributeInfliction / FLAT_SCALING,
+                      SpConsume: param2.SpConsume / FLAT_SCALING,
+                    })),
+                  }
+                }
+                return param
+              }),
+            }
+          }
+          return desc
+        }),
+      })),
+      skillList: raw.SkillList,
+      cores: raw.Passive,
+      mindscapes: raw.Talent,
     }
     return [name, data] as const
   })

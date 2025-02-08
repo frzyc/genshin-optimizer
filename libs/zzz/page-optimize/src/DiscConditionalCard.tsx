@@ -13,7 +13,7 @@ import type {
 import { disc4PeffectSheets } from '@genshin-optimizer/zzz/consts'
 import type { Stats } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { DiscSetName } from '@genshin-optimizer/zzz/ui'
+import { DiscSet4p, DiscSetName } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
   Button,
@@ -80,6 +80,12 @@ export function DiscConditionalCard({
         title={<DiscSetName setKey={setKey} />}
         avatar={<ImgIcon src={discDefIcon(setKey)} size={2} />}
       />
+      <Divider />
+      <CardContent>
+        <Typography>
+          <DiscSet4p setKey={setKey} />
+        </Typography>
+      </CardContent>
       <ConditionalToggle condMeta={condMeta} />
       {!!stats && !!Object.keys(stats).length && (
         <CardContent>

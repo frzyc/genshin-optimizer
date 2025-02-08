@@ -12,7 +12,7 @@ export const ColorText = styled('span')<ColorTextProps>(
   ({ theme, color, variant = 'main' }) => {
     if (!color) return {}
     const pc = theme.palette[color] as PaletteColor
-    if (!pc) return {}
+    if (!pc) return { color: color }
     const pcv = pc[variant]
     if (!pcv) return {}
     return { color: pcv }
