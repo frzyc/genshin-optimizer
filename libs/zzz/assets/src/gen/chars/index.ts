@@ -20,15 +20,21 @@ import Miyabi from './Miyabi'
 import Nekomata from './Nekomata'
 import Nicole from './Nicole'
 import Piper from './Piper'
+import PulchraFeliny from './PulchraFeliny'
 import QingYi from './QingYi'
 import Rina from './Rina'
 import Seth from './Seth'
+import SilverAnby from './SilverAnby'
 import Soldier11 from './Soldier11'
 import Soukaku from './Soukaku'
+import Trigger from './Trigger'
 import Yanagi from './Yanagi'
 import ZhuYuan from './ZhuYuan'
 
 const data = {
+  SilverAnby,
+  Trigger,
+  PulchraFeliny,
   Soukaku,
   ZhuYuan,
   Yanagi,

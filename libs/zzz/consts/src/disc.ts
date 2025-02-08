@@ -179,7 +179,7 @@ export const disc2pEffect: Record<
   WoodpeckerElectro: { crit_: 0.08 },
 }
 
-// Copied from libs\zzz\dm\src\dm\disc\discNames.json
+// Copied from libs\zzz\dm\src\dm\disc\discNames.json, mainly used for scanner.
 export const discSetNames: Record<DiscSetKey, string> = {
   WoodpeckerElectro: 'Woodpecker Electro',
   PufferElectro: 'Puffer Electro',

@@ -29,5 +29,1093 @@
     { "atk_base": 50, "impact": 12 },
     { "atk_base": 50, "impact": 18 },
     { "atk_base": 75, "impact": 18 }
-  ]
+  ],
+  "skills": {
+    "Basic": {
+      "Description": [
+        { "Name": "...", "Desc": "..." },
+        { "Name": "...", "Desc": "..." },
+        { "Name": "...", "Desc": "..." },
+        {
+          "Name": "...",
+          "Param": [
+            {
+              "Name": "1st-Hit DMG Multiplier",
+              "Desc": "{Skill:1361001, Prop:1001}",
+              "Param": {
+                "1361001": {
+                  "Main": 34.5,
+                  "Growth": 0.032,
+                  "Format": "%",
+                  "DamagePercentage": 0.345,
+                  "DamagePercentageGrowth": 0.032,
+                  "StunRatio": 0.216,
+                  "StunRatioGrowth": 0.01,
+                  "SpRecovery": 70.5,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 539,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit DMG Multiplier",
+              "Desc": "{Skill:1361002, Prop:1001}",
+              "Param": {
+                "1361002": {
+                  "Main": 56.9,
+                  "Growth": 0.052,
+                  "Format": "%",
+                  "DamagePercentage": 0.569,
+                  "DamagePercentageGrowth": 0.052,
+                  "StunRatio": 0.356,
+                  "StunRatioGrowth": 0.017,
+                  "SpRecovery": 116.3,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 891,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit DMG Multiplier",
+              "Desc": "{Skill:1361003, Prop:1001}",
+              "Param": {
+                "1361003": {
+                  "Main": 110.9,
+                  "Growth": 0.101,
+                  "Format": "%",
+                  "DamagePercentage": 1.109,
+                  "DamagePercentageGrowth": 0.101,
+                  "StunRatio": 0.707,
+                  "StunRatioGrowth": 0.033,
+                  "SpRecovery": 335.7,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2565.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "4th-Hit DMG Multiplier",
+              "Desc": "{Skill:1361004, Prop:1001}",
+              "Param": {
+                "1361004": {
+                  "Main": 243,
+                  "Growth": 0.221,
+                  "Format": "%",
+                  "DamagePercentage": 2.43,
+                  "DamagePercentageGrowth": 0.221,
+                  "StunRatio": 1.556,
+                  "StunRatioGrowth": 0.071,
+                  "SpRecovery": 802.1,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 6127,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 174.41,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "1st-Hit Daze Multiplier",
+              "Desc": "{Skill:1361001, Prop:1002}",
+              "Param": {
+                "1361001": {
+                  "Main": 21.6,
+                  "Growth": 0.01,
+                  "Format": "%",
+                  "DamagePercentage": 0.345,
+                  "DamagePercentageGrowth": 0.032,
+                  "StunRatio": 0.216,
+                  "StunRatioGrowth": 0.01,
+                  "SpRecovery": 70.5,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 539,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit Daze Multiplier",
+              "Desc": "{Skill:1361002, Prop:1002}",
+              "Param": {
+                "1361002": {
+                  "Main": 35.6,
+                  "Growth": 0.017,
+                  "Format": "%",
+                  "DamagePercentage": 0.569,
+                  "DamagePercentageGrowth": 0.052,
+                  "StunRatio": 0.356,
+                  "StunRatioGrowth": 0.017,
+                  "SpRecovery": 116.3,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 891,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit Daze Multiplier",
+              "Desc": "{Skill:1361003, Prop:1002}",
+              "Param": {
+                "1361003": {
+                  "Main": 70.7,
+                  "Growth": 0.033,
+                  "Format": "%",
+                  "DamagePercentage": 1.109,
+                  "DamagePercentageGrowth": 0.101,
+                  "StunRatio": 0.707,
+                  "StunRatioGrowth": 0.033,
+                  "SpRecovery": 335.7,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2565.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "4th-Hit Daze Multiplier",
+              "Desc": "{Skill:1361004, Prop:1002}",
+              "Param": {
+                "1361004": {
+                  "Main": 155.6,
+                  "Growth": 0.071,
+                  "Format": "%",
+                  "DamagePercentage": 2.43,
+                  "DamagePercentageGrowth": 0.221,
+                  "StunRatio": 1.556,
+                  "StunRatioGrowth": 0.071,
+                  "SpRecovery": 802.1,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 6127,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 174.41,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "...",
+          "Param": [
+            {
+              "Name": "...",
+              "Desc": "{Skill:1361005, Prop:1001}",
+              "Param": {
+                "1361005": {
+                  "Main": 57.5,
+                  "Growth": 0.053,
+                  "Format": "%",
+                  "DamagePercentage": 0.575,
+                  "DamagePercentageGrowth": 0.053,
+                  "StunRatio": 0.36,
+                  "StunRatioGrowth": 0.017,
+                  "SpRecovery": 117.6,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3594.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 130.61,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "...",
+              "Desc": "{Skill:1361006, Prop:1001}",
+              "Param": {
+                "1361006": {
+                  "Main": 233.9,
+                  "Growth": 0.213,
+                  "Format": "%",
+                  "DamagePercentage": 2.339,
+                  "DamagePercentageGrowth": 0.213,
+                  "StunRatio": 1.488,
+                  "StunRatioGrowth": 0.068,
+                  "SpRecovery": 695.7,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 5315.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 193.22,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "...",
+              "Desc": "{Skill:1361007, Prop:1001}",
+              "Param": {
+                "1361007": {
+                  "Main": 180.4,
+                  "Growth": 0.164,
+                  "Format": "%",
+                  "DamagePercentage": 1.804,
+                  "DamagePercentageGrowth": 0.164,
+                  "StunRatio": 1.148,
+                  "StunRatioGrowth": 0.053,
+                  "SpRecovery": 536.8,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 4100.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 149.08,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "...",
+              "Desc": "{Skill:1361005, Prop:1002}",
+              "Param": {
+                "1361005": {
+                  "Main": 36,
+                  "Growth": 0.017,
+                  "Format": "%",
+                  "DamagePercentage": 0.575,
+                  "DamagePercentageGrowth": 0.053,
+                  "StunRatio": 0.36,
+                  "StunRatioGrowth": 0.017,
+                  "SpRecovery": 117.6,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3594.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 130.61,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "...",
+              "Desc": "{Skill:1361006, Prop:1002}",
+              "Param": {
+                "1361006": {
+                  "Main": 148.8,
+                  "Growth": 0.068,
+                  "Format": "%",
+                  "DamagePercentage": 2.339,
+                  "DamagePercentageGrowth": 0.213,
+                  "StunRatio": 1.488,
+                  "StunRatioGrowth": 0.068,
+                  "SpRecovery": 695.7,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 5315.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 193.22,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "...",
+              "Desc": "{Skill:1361007, Prop:1002}",
+              "Param": {
+                "1361007": {
+                  "Main": 114.8,
+                  "Growth": 0.053,
+                  "Format": "%",
+                  "DamagePercentage": 1.804,
+                  "DamagePercentageGrowth": 0.164,
+                  "StunRatio": 1.148,
+                  "StunRatioGrowth": 0.053,
+                  "SpRecovery": 536.8,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 4100.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 149.08,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "...",
+          "Param": [
+            {
+              "Name": "1st-Hit DMG Multiplier",
+              "Desc": "{Skill:1361008, Prop:1001}",
+              "Param": {
+                "1361008": {
+                  "Main": 71.6,
+                  "Growth": 0.066,
+                  "Format": "%",
+                  "DamagePercentage": 0.716,
+                  "DamagePercentageGrowth": 0.066,
+                  "StunRatio": 0.6017,
+                  "StunRatioGrowth": 0.028,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "1st-Hit Daze Multiplier",
+              "Desc": "{Skill:1361008, Prop:1002}",
+              "Param": {
+                "1361008": {
+                  "Main": 60.17,
+                  "Growth": 0.028,
+                  "Format": "%",
+                  "DamagePercentage": 0.716,
+                  "DamagePercentageGrowth": 0.066,
+                  "StunRatio": 0.6017,
+                  "StunRatioGrowth": 0.028,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100113": 2 },
+        "2": { "10": 3000, "100113": 3 },
+        "3": { "10": 6000, "100123": 2 },
+        "4": { "10": 9000, "100123": 3 },
+        "5": { "10": 12000, "100123": 4 },
+        "6": { "10": 18000, "100123": 6 },
+        "7": { "10": 45000, "100133": 5 },
+        "8": { "10": 67500, "100133": 8 },
+        "9": { "10": 90000, "100133": 10 },
+        "10": { "10": 112500, "100133": 12 },
+        "11": { "10": 135000, "100133": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Dodge": {
+      "Description": [
+        { "Name": "...", "Desc": "..." },
+        { "Name": "...", "Desc": "..." },
+        { "Name": "...", "Desc": "..." },
+        {
+          "Name": "...",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1361011, Prop:1001}",
+              "Param": {
+                "1361011": {
+                  "Main": 51.4,
+                  "Growth": 0.047,
+                  "Format": "%",
+                  "DamagePercentage": 0.514,
+                  "DamagePercentageGrowth": 0.047,
+                  "StunRatio": 0.257,
+                  "StunRatioGrowth": 0.012,
+                  "SpRecovery": 84.1,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 643.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1361011, Prop:1002}",
+              "Param": {
+                "1361011": {
+                  "Main": 25.7,
+                  "Growth": 0.012,
+                  "Format": "%",
+                  "DamagePercentage": 0.514,
+                  "DamagePercentageGrowth": 0.047,
+                  "StunRatio": 0.257,
+                  "StunRatioGrowth": 0.012,
+                  "SpRecovery": 84.1,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 643.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "...",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1361012, Prop:1001}",
+              "Param": {
+                "1361012": {
+                  "Main": 269.7,
+                  "Growth": 0.246,
+                  "Format": "%",
+                  "DamagePercentage": 2.697,
+                  "DamagePercentageGrowth": 0.246,
+                  "StunRatio": 2.329,
+                  "StunRatioGrowth": 0.106,
+                  "SpRecovery": 402,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3071.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 111.66,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1361012, Prop:1002}",
+              "Param": {
+                "1361012": {
+                  "Main": 232.9,
+                  "Growth": 0.106,
+                  "Format": "%",
+                  "DamagePercentage": 2.697,
+                  "DamagePercentageGrowth": 0.246,
+                  "StunRatio": 2.329,
+                  "StunRatioGrowth": 0.106,
+                  "SpRecovery": 402,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3071.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 111.66,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100113": 2 },
+        "2": { "10": 3000, "100113": 3 },
+        "3": { "10": 6000, "100123": 2 },
+        "4": { "10": 9000, "100123": 3 },
+        "5": { "10": 12000, "100123": 4 },
+        "6": { "10": 18000, "100123": 6 },
+        "7": { "10": 45000, "100133": 5 },
+        "8": { "10": 67500, "100133": 8 },
+        "9": { "10": 90000, "100133": 10 },
+        "10": { "10": 112500, "100133": 12 },
+        "11": { "10": 135000, "100133": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Special": {
+      "Description": [
+        { "Name": "...", "Desc": "..." },
+        { "Name": "...", "Desc": "..." },
+        {
+          "Name": "...",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1361009, Prop:1001}",
+              "Param": {
+                "1361009": {
+                  "Main": 71.5,
+                  "Growth": 0.065,
+                  "Format": "%",
+                  "DamagePercentage": 0.715,
+                  "DamagePercentageGrowth": 0.065,
+                  "StunRatio": 0.715,
+                  "StunRatioGrowth": 0.033,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1787.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 65,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1361009, Prop:1002}",
+              "Param": {
+                "1361009": {
+                  "Main": 71.5,
+                  "Growth": 0.033,
+                  "Format": "%",
+                  "DamagePercentage": 0.715,
+                  "DamagePercentageGrowth": 0.065,
+                  "StunRatio": 0.715,
+                  "StunRatioGrowth": 0.033,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1787.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 65,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "...",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1361010, Prop:1001}",
+              "Param": {
+                "1361010": {
+                  "Main": 726,
+                  "Growth": 0.66,
+                  "Format": "%",
+                  "DamagePercentage": 7.26,
+                  "DamagePercentageGrowth": 0.66,
+                  "StunRatio": 6.087,
+                  "StunRatioGrowth": 0.277,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 21084.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 606.66,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1361010, Prop:1002}",
+              "Param": {
+                "1361010": {
+                  "Main": 608.7,
+                  "Growth": 0.277,
+                  "Format": "%",
+                  "DamagePercentage": 7.26,
+                  "DamagePercentageGrowth": 0.66,
+                  "StunRatio": 6.087,
+                  "StunRatioGrowth": 0.277,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 21084.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 606.66,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            { "Name": "Energy Cost", "Desc": "..." }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100113": 2 },
+        "2": { "10": 3000, "100113": 3 },
+        "3": { "10": 6000, "100123": 2 },
+        "4": { "10": 9000, "100123": 3 },
+        "5": { "10": 12000, "100123": 4 },
+        "6": { "10": 18000, "100123": 6 },
+        "7": { "10": 45000, "100133": 5 },
+        "8": { "10": 67500, "100133": 8 },
+        "9": { "10": 90000, "100133": 10 },
+        "10": { "10": 112500, "100133": 12 },
+        "11": { "10": 135000, "100133": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Chain": {
+      "Description": [
+        { "Name": "...", "Desc": "..." },
+        { "Name": "...", "Desc": "..." },
+        {
+          "Name": "...",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1361013, Prop:1001}",
+              "Param": {
+                "1361013": {
+                  "Main": 574.7,
+                  "Growth": 0.523,
+                  "Format": "%",
+                  "DamagePercentage": 5.747,
+                  "DamagePercentageGrowth": 0.523,
+                  "StunRatio": 1.358,
+                  "StunRatioGrowth": 0.062,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 21681,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 322.86,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1361013, Prop:1002}",
+              "Param": {
+                "1361013": {
+                  "Main": 135.8,
+                  "Growth": 0.062,
+                  "Format": "%",
+                  "DamagePercentage": 5.747,
+                  "DamagePercentageGrowth": 0.523,
+                  "StunRatio": 1.358,
+                  "StunRatioGrowth": 0.062,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 21681,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 322.86,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "...",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1361014, Prop:1001}",
+              "Param": {
+                "1361014": {
+                  "Main": 2107.7,
+                  "Growth": 1.917,
+                  "Format": "%",
+                  "DamagePercentage": 21.077,
+                  "DamagePercentageGrowth": 1.917,
+                  "StunRatio": 12.299,
+                  "StunRatioGrowth": 0.56,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 320.03,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1361014, Prop:1002}",
+              "Param": {
+                "1361014": {
+                  "Main": 1229.9,
+                  "Growth": 0.56,
+                  "Format": "%",
+                  "DamagePercentage": 21.077,
+                  "DamagePercentageGrowth": 1.917,
+                  "StunRatio": 12.299,
+                  "StunRatioGrowth": 0.56,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 320.03,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100113": 2 },
+        "2": { "10": 3000, "100113": 3 },
+        "3": { "10": 6000, "100123": 2 },
+        "4": { "10": 9000, "100123": 3 },
+        "5": { "10": 12000, "100123": 4 },
+        "6": { "10": 18000, "100123": 6 },
+        "7": { "10": 45000, "100133": 5 },
+        "8": { "10": 67500, "100133": 8 },
+        "9": { "10": 90000, "100133": 10 },
+        "10": { "10": 112500, "100133": 12 },
+        "11": { "10": 135000, "100133": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Assist": {
+      "Description": [
+        { "Name": "...", "Desc": "..." },
+        { "Name": "...", "Desc": "..." },
+        { "Name": "...", "Desc": "..." },
+        {
+          "Name": "...",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1361015, Prop:1001}",
+              "Param": {
+                "1361015": {
+                  "Main": 84.4,
+                  "Growth": 0.077,
+                  "Format": "%",
+                  "DamagePercentage": 0.844,
+                  "DamagePercentageGrowth": 0.077,
+                  "StunRatio": 0.844,
+                  "StunRatioGrowth": 0.039,
+                  "SpRecovery": 276,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2109.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 76.66,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1361015, Prop:1002}",
+              "Param": {
+                "1361015": {
+                  "Main": 84.4,
+                  "Growth": 0.039,
+                  "Format": "%",
+                  "DamagePercentage": 0.844,
+                  "DamagePercentageGrowth": 0.077,
+                  "StunRatio": 0.844,
+                  "StunRatioGrowth": 0.039,
+                  "SpRecovery": 276,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2109.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 76.66,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "...",
+          "Param": [
+            {
+              "Name": "Light Defensive Daze Multiplier",
+              "Desc": "{Skill:1361016, Prop:1002}",
+              "Param": {
+                "1361016": {
+                  "Main": 271.3,
+                  "Growth": 0.124,
+                  "Format": "%",
+                  "DamagePercentage": 0,
+                  "DamagePercentageGrowth": 0,
+                  "StunRatio": 2.713,
+                  "StunRatioGrowth": 0.124,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Heavy Defensive Daze Multiplier",
+              "Desc": "{Skill:1361017, Prop:1002}",
+              "Param": {
+                "1361017": {
+                  "Main": 342.8,
+                  "Growth": 0.156,
+                  "Format": "%",
+                  "DamagePercentage": 0,
+                  "DamagePercentageGrowth": 0,
+                  "StunRatio": 3.428,
+                  "StunRatioGrowth": 0.156,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Chain Defensive Daze Multiplier",
+              "Desc": "{Skill:1361018, Prop:1002}",
+              "Param": {
+                "1361018": {
+                  "Main": 166.8,
+                  "Growth": 0.076,
+                  "Format": "%",
+                  "DamagePercentage": 0,
+                  "DamagePercentageGrowth": 0,
+                  "StunRatio": 1.668,
+                  "StunRatioGrowth": 0.076,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "...",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1361019, Prop:1001}",
+              "Param": {
+                "1361019": {
+                  "Main": 432.9,
+                  "Growth": 0.394,
+                  "Format": "%",
+                  "DamagePercentage": 4.329,
+                  "DamagePercentageGrowth": 0.394,
+                  "StunRatio": 3.274,
+                  "StunRatioGrowth": 0.149,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 5546.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 369.51,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1361019, Prop:1002}",
+              "Param": {
+                "1361019": {
+                  "Main": 327.4,
+                  "Growth": 0.149,
+                  "Format": "%",
+                  "DamagePercentage": 4.329,
+                  "DamagePercentageGrowth": 0.394,
+                  "StunRatio": 3.274,
+                  "StunRatioGrowth": 0.149,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 5546.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 369.51,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100113": 2 },
+        "2": { "10": 3000, "100113": 3 },
+        "3": { "10": 6000, "100123": 2 },
+        "4": { "10": 9000, "100123": 3 },
+        "5": { "10": 12000, "100123": 4 },
+        "6": { "10": 18000, "100123": 6 },
+        "7": { "10": 45000, "100133": 5 },
+        "8": { "10": 67500, "100133": 8 },
+        "9": { "10": 90000, "100133": 10 },
+        "10": { "10": 112500, "100133": 12 },
+        "11": { "10": 135000, "100133": 15, "100941": 1 },
+        "12": {}
+      }
+    }
+  },
+  "skillList": {
+    "1361001": {
+      "Name": "Trigger_SkillList_1_Title",
+      "Desc": "Trigger_SkillList_1_Content",
+      "ElementType": 200,
+      "HitType": 103
+    },
+    "1361002": {
+      "Name": "Trigger_SkillList_2_Title",
+      "Desc": "Trigger_SkillList_2_Content",
+      "ElementType": 203,
+      "HitType": 103
+    },
+    "1361003": {
+      "Name": "Trigger_SkillList_3_Title",
+      "Desc": "Trigger_SkillList_3_Content",
+      "ElementType": 203,
+      "HitType": 103
+    },
+    "1361004": {
+      "Name": "Trigger_SkillList_4_Title",
+      "Desc": "Trigger_SkillList_4_Content",
+      "ElementType": 203,
+      "HitType": 103
+    },
+    "1361005": {
+      "Name": "Trigger_SkillList_5_Title",
+      "Desc": "Trigger_SkillList_5_Content",
+      "ElementType": 203,
+      "HitType": 101
+    },
+    "1361006": {
+      "Name": "Trigger_SkillList_6_Title",
+      "Desc": "Trigger_SkillList_6_Content",
+      "ElementType": 203,
+      "HitType": 103
+    },
+    "1361007": {
+      "Name": "Trigger_SkillList_7_Title",
+      "Desc": "Trigger_SkillList_7_Content",
+      "ElementType": 200,
+      "HitType": 103
+    },
+    "1361008": {
+      "Name": "Trigger_SkillList_8_Title",
+      "Desc": "Trigger_SkillList_8_Content",
+      "ElementType": 203,
+      "HitType": 103
+    },
+    "1361009": {
+      "Name": "Trigger_SkillList_9_Title",
+      "Desc": "Trigger_SkillList_9_Content",
+      "ElementType": 203,
+      "HitType": 103
+    },
+    "1361010": {
+      "Name": "Trigger_SkillList_10_Title",
+      "Desc": "Trigger_SkillList_10_Content",
+      "ElementType": 203,
+      "HitType": 103
+    },
+    "1361011": {
+      "Name": "Trigger_SkillList_11_Title",
+      "Desc": "Trigger_SkillList_11_Content",
+      "ElementType": 203,
+      "HitType": 103
+    },
+    "1361012": {
+      "Name": "Trigger_SkillList_12_Title",
+      "Desc": "Trigger_SkillList_12_Content",
+      "ElementType": 0,
+      "HitType": 0
+    },
+    "1361013": {
+      "Name": "Trigger_SkillList_13_Title",
+      "Desc": "Trigger_SkillList_13_Content",
+      "ElementType": 203,
+      "HitType": 103
+    }
+  },
+  "cores": {
+    "Level": {
+      "1": {
+        "Level": 1,
+        "Id": 1361501,
+        "Name": ["...", "..."],
+        "Desc": ["...", "..."]
+      },
+      "2": {
+        "Level": 2,
+        "Id": 1361502,
+        "Name": ["...", "..."],
+        "Desc": ["...", "..."]
+      },
+      "3": {
+        "Level": 3,
+        "Id": 1361503,
+        "Name": ["...", "..."],
+        "Desc": ["...", "..."]
+      },
+      "4": {
+        "Level": 4,
+        "Id": 1361504,
+        "Name": ["...", "..."],
+        "Desc": ["...", "..."]
+      },
+      "5": {
+        "Level": 5,
+        "Id": 1361505,
+        "Name": ["...", "..."],
+        "Desc": ["...", "..."]
+      },
+      "6": {
+        "Level": 6,
+        "Id": 1361506,
+        "Name": ["...", "..."],
+        "Desc": ["...", "..."]
+      },
+      "7": {
+        "Level": 7,
+        "Id": 1361507,
+        "Name": ["...", "..."],
+        "Desc": ["...", "..."]
+      }
+    },
+    "Materials": {
+      "1": { "10": 5000 },
+      "2": { "10": 12000, "110509": 2 },
+      "3": { "10": 28000, "110509": 4 },
+      "4": { "10": 60000, "110001": 2, "110509": 9 },
+      "5": { "10": 100000, "110001": 3, "110509": 15 },
+      "6": { "10": 200000, "110001": 4, "110509": 30 }
+    }
+  },
+  "mindscapes": {
+    "1": { "Level": 1, "Name": "...", "Desc": "...", "Desc2": "..." },
+    "2": { "Level": 2, "Name": "...", "Desc": "...", "Desc2": "..." },
+    "3": {
+      "Level": 3,
+      "Name": "...",
+      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
+      "Desc2": "..."
+    },
+    "4": { "Level": 4, "Name": "...", "Desc": "...", "Desc2": "..." },
+    "5": {
+      "Level": 5,
+      "Name": "...",
+      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
+      "Desc2": "..."
+    },
+    "6": { "Level": 6, "Name": "...", "Desc": "...", "Desc2": "..." }
+  }
 }

@@ -29,5 +29,1345 @@
     { "atk_base": 50, "crit_": 0.096 },
     { "atk_base": 50, "crit_": 0.144 },
     { "atk_base": 75, "crit_": 0.144 }
-  ]
+  ],
+  "skills": {
+    "Basic": {
+      "Description": [
+        {
+          "Name": "Basic Attack: Razor Wire",
+          "Desc": "Press <IconMap:Icon_Normal> to activate:\nLaunch up to five attacks ahead, dealing <color=#F0D12B>Physical DMG</color> and <color=#FF5521>Fire DMG</color>.\nWhen the 5th hit lands against an enemy, Evelyn will use her <color=#FFFFFF>Lunalux Garrote</color> to bind the primary target and enter <color=#FFFFFF>Binding Seal</color>."
+        },
+        {
+          "Name": "Passive: Bind",
+          "Desc": "When Evelyn uses her skills to deal DMG to enemies, she will accumulate <color=#FFFFFF>Burning Embers</color>.\nWhen Evelyn consumes <color=#FFFFFF>Burning Embers</color> to activate <color=#FFFFFF>Garrote</color> or consumes <color=#FFFFFF>Decibels</color> to perform an <color=#FFFFFF>Ultimate</color>, she gains 1 <color=#FFFFFF>Burning Tether Point</color>.\nOnce Evelyn has 3 <color=#FFFFFF>Burning Tether Points</color>, her next use of <color=#FFFFFF>Garrote</color> will consume all <color=#FFFFFF>Burning Tether Points</color> to instead use a lower Interrupt Level version of <color=#FFFFFF>Chain Attack: Lunalux - Snare</color>."
+        },
+        {
+          "Name": "Basic Attack: Garrote - First Form",
+          "Desc": "When <color=#FFFFFF>Burning Embers</color> is at 50% or higher, hold <IconMap:Icon_Normal> or <IconMap:Icon_Special> to activate:\nConsume 50% <color=#FFFFFF>Burning Embers</color> to use <color=#FFFFFF>Lunalux Garrote</color> to perform a slashing attack, dealing <color=#FF5521>Fire DMG</color>.\nDuring skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%.\nAfter using this skill, gain 1 <color=#FFFFFF>Burning Tether Point</color>."
+        },
+        {
+          "Name": "Basic Attack: Garrote - Second Form",
+          "Desc": "When <color=#FFFFFF>Burning Embers</color> is 50% or higher, after using <color=#FFFFFF>Basic Attack: Garrote - First Form</color>, continue to hold <IconMap:Icon_Normal> or <IconMap:Icon_Special> to activate:\nConsume 50% <color=#FFFFFF>Burning Embers</color> to use <color=#FFFFFF>Lunalux Garrote</color> to perform a follow-up attack, dealing <color=#FF5521>Fire DMG</color>.\nDuring skill activation, Anti-Interrupt level increases, and DMG taken is reduced by 40%.\nAfter using this skill, gain 1 <color=#FFFFFF>Burning Tether Point</color>."
+        },
+        {
+          "Name": "Basic Attack: Razor Wire",
+          "Param": [
+            {
+              "Name": "1st-Hit DMG Multiplier",
+              "Desc": "{Skill:1321001, Prop:1001}",
+              "Param": {
+                "1321001": {
+                  "Main": 51.2,
+                  "Growth": 0.047,
+                  "Format": "%",
+                  "DamagePercentage": 0.512,
+                  "DamagePercentageGrowth": 0.047,
+                  "StunRatio": 0.256,
+                  "StunRatioGrowth": 0.012,
+                  "SpRecovery": 83.8,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 640.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit DMG Multiplier",
+              "Desc": "{Skill:1321002, Prop:1001}",
+              "Param": {
+                "1321002": {
+                  "Main": 62.1,
+                  "Growth": 0.057,
+                  "Format": "%",
+                  "DamagePercentage": 0.621,
+                  "DamagePercentageGrowth": 0.057,
+                  "StunRatio": 0.538,
+                  "StunRatioGrowth": 0.025,
+                  "SpRecovery": 176.1,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1344.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit DMG Multiplier",
+              "Desc": "{Skill:1321003, Prop:1001}",
+              "Param": {
+                "1321003": {
+                  "Main": 78.2,
+                  "Growth": 0.072,
+                  "Format": "%",
+                  "DamagePercentage": 0.782,
+                  "DamagePercentageGrowth": 0.072,
+                  "StunRatio": 0.621,
+                  "StunRatioGrowth": 0.029,
+                  "SpRecovery": 203.1,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1553.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "4th-Hit DMG Multiplier",
+              "Desc": "{Skill:1321004, Prop:1001}",
+              "Param": {
+                "1321004": {
+                  "Main": 186.7,
+                  "Growth": 0.17,
+                  "Format": "%",
+                  "DamagePercentage": 1.867,
+                  "DamagePercentageGrowth": 0.17,
+                  "StunRatio": 1.53,
+                  "StunRatioGrowth": 0.07,
+                  "SpRecovery": 500.6,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3825.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 139.03,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "5th-Hit DMG Multiplier",
+              "Desc": "{Skill:1321005, Prop:1001}",
+              "Param": {
+                "1321005": {
+                  "Main": 223.4,
+                  "Growth": 0.204,
+                  "Format": "%",
+                  "DamagePercentage": 2.234,
+                  "DamagePercentageGrowth": 0.204,
+                  "StunRatio": 1.683,
+                  "StunRatioGrowth": 0.077,
+                  "SpRecovery": 550.5,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 4207.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 152.91,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "1st-Hit Daze Multiplier",
+              "Desc": "{Skill:1321001, Prop:1002}",
+              "Param": {
+                "1321001": {
+                  "Main": 25.6,
+                  "Growth": 0.012,
+                  "Format": "%",
+                  "DamagePercentage": 0.512,
+                  "DamagePercentageGrowth": 0.047,
+                  "StunRatio": 0.256,
+                  "StunRatioGrowth": 0.012,
+                  "SpRecovery": 83.8,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 640.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "2nd-Hit Daze Multiplier",
+              "Desc": "{Skill:1321002, Prop:1002}",
+              "Param": {
+                "1321002": {
+                  "Main": 53.8,
+                  "Growth": 0.025,
+                  "Format": "%",
+                  "DamagePercentage": 0.621,
+                  "DamagePercentageGrowth": 0.057,
+                  "StunRatio": 0.538,
+                  "StunRatioGrowth": 0.025,
+                  "SpRecovery": 176.1,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1344.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "3rd-Hit Daze Multiplier",
+              "Desc": "{Skill:1321003, Prop:1002}",
+              "Param": {
+                "1321003": {
+                  "Main": 62.1,
+                  "Growth": 0.029,
+                  "Format": "%",
+                  "DamagePercentage": 0.782,
+                  "DamagePercentageGrowth": 0.072,
+                  "StunRatio": 0.621,
+                  "StunRatioGrowth": 0.029,
+                  "SpRecovery": 203.1,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1553.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "4th-Hit Daze Multiplier",
+              "Desc": "{Skill:1321004, Prop:1002}",
+              "Param": {
+                "1321004": {
+                  "Main": 153,
+                  "Growth": 0.07,
+                  "Format": "%",
+                  "DamagePercentage": 1.867,
+                  "DamagePercentageGrowth": 0.17,
+                  "StunRatio": 1.53,
+                  "StunRatioGrowth": 0.07,
+                  "SpRecovery": 500.6,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3825.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 139.03,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "5th-Hit Daze Multiplier",
+              "Desc": "{Skill:1321005, Prop:1002}",
+              "Param": {
+                "1321005": {
+                  "Main": 168.3,
+                  "Growth": 0.077,
+                  "Format": "%",
+                  "DamagePercentage": 2.234,
+                  "DamagePercentageGrowth": 0.204,
+                  "StunRatio": 1.683,
+                  "StunRatioGrowth": 0.077,
+                  "SpRecovery": 550.5,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 4207.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 152.91,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Basic Attack: Garrote - First Form",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1321006, Prop:1001}",
+              "Param": {
+                "1321006": {
+                  "Main": 226.4,
+                  "Growth": 0.206,
+                  "Format": "%",
+                  "DamagePercentage": 2.264,
+                  "DamagePercentageGrowth": 0.206,
+                  "StunRatio": 1.211,
+                  "StunRatioGrowth": 0.056,
+                  "SpRecovery": 396.2,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3027.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 110.03,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1321006, Prop:1002}",
+              "Param": {
+                "1321006": {
+                  "Main": 121.1,
+                  "Growth": 0.056,
+                  "Format": "%",
+                  "DamagePercentage": 2.264,
+                  "DamagePercentageGrowth": 0.206,
+                  "StunRatio": 1.211,
+                  "StunRatioGrowth": 0.056,
+                  "SpRecovery": 396.2,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3027.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 110.03,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Basic Attack: Garrote - Second Form",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1321007, Prop:1001}",
+              "Param": {
+                "1321007": {
+                  "Main": 245.2,
+                  "Growth": 0.223,
+                  "Format": "%",
+                  "DamagePercentage": 2.452,
+                  "DamagePercentageGrowth": 0.223,
+                  "StunRatio": 1.248,
+                  "StunRatioGrowth": 0.057,
+                  "SpRecovery": 408.2,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3118.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 113.36,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1321007, Prop:1002}",
+              "Param": {
+                "1321007": {
+                  "Main": 124.8,
+                  "Growth": 0.057,
+                  "Format": "%",
+                  "DamagePercentage": 2.452,
+                  "DamagePercentageGrowth": 0.223,
+                  "StunRatio": 1.248,
+                  "StunRatioGrowth": 0.057,
+                  "SpRecovery": 408.2,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 3118.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 113.36,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100111": 2 },
+        "2": { "10": 3000, "100111": 3 },
+        "3": { "10": 6000, "100121": 2 },
+        "4": { "10": 9000, "100121": 3 },
+        "5": { "10": 12000, "100121": 4 },
+        "6": { "10": 18000, "100121": 6 },
+        "7": { "10": 45000, "100131": 5 },
+        "8": { "10": 67500, "100131": 8 },
+        "9": { "10": 90000, "100131": 10 },
+        "10": { "10": 112500, "100131": 12 },
+        "11": { "10": 135000, "100131": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Dodge": {
+      "Description": [
+        {
+          "Name": "Dodge: Arc Step",
+          "Desc": "Press <IconMap:Icon_Evade> to activate:\nA quick dash dodge.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Dash Attack: Piercing Ambush",
+          "Desc": "Press <IconMap:Icon_Normal> during a dodge to activate:\nDeliver a kick to the enemy in front, causing <color=#F0D12B>Physical DMG</color>."
+        },
+        {
+          "Name": "Dodge Counter: Strangling Reversal",
+          "Desc": "Press <IconMap:Icon_Normal> during a <color=#FFFFFF>Perfect Dodge</color> to activate:\nUse <color=#FFFFFF>Lunalux Garrote</color> to slash surrounding enemies, dealing <color=#FF5521>Fire DMG</color>;\nWhen the attack hits an enemy, Evelyn will use <color=#FFFFFF>Lunalux Garrote</color> to bind the primary target and enter <color=#FFFFFF>Binding Seal</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Dash Attack: Piercing Ambush",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1321013, Prop:1001}",
+              "Param": {
+                "1321013": {
+                  "Main": 60.5,
+                  "Growth": 0.055,
+                  "Format": "%",
+                  "DamagePercentage": 0.605,
+                  "DamagePercentageGrowth": 0.055,
+                  "StunRatio": 0.303,
+                  "StunRatioGrowth": 0.014,
+                  "SpRecovery": 99,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 756.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1321013, Prop:1002}",
+              "Param": {
+                "1321013": {
+                  "Main": 30.3,
+                  "Growth": 0.014,
+                  "Format": "%",
+                  "DamagePercentage": 0.605,
+                  "DamagePercentageGrowth": 0.055,
+                  "StunRatio": 0.303,
+                  "StunRatioGrowth": 0.014,
+                  "SpRecovery": 99,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 756.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Dodge Counter: Strangling Reversal",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1321014, Prop:1001}",
+              "Param": {
+                "1321014": {
+                  "Main": 210.2,
+                  "Growth": 0.192,
+                  "Format": "%",
+                  "DamagePercentage": 2.102,
+                  "DamagePercentageGrowth": 0.192,
+                  "StunRatio": 1.871,
+                  "StunRatioGrowth": 0.086,
+                  "SpRecovery": 252.2,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1927.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 70.03,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1321014, Prop:1002}",
+              "Param": {
+                "1321014": {
+                  "Main": 187.1,
+                  "Growth": 0.086,
+                  "Format": "%",
+                  "DamagePercentage": 2.102,
+                  "DamagePercentageGrowth": 0.192,
+                  "StunRatio": 1.871,
+                  "StunRatioGrowth": 0.086,
+                  "SpRecovery": 252.2,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1927.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 70.03,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100111": 2 },
+        "2": { "10": 3000, "100111": 3 },
+        "3": { "10": 6000, "100121": 2 },
+        "4": { "10": 9000, "100121": 3 },
+        "5": { "10": 12000, "100121": 4 },
+        "6": { "10": 18000, "100121": 6 },
+        "7": { "10": 45000, "100131": 5 },
+        "8": { "10": 67500, "100131": 8 },
+        "9": { "10": 90000, "100131": 10 },
+        "10": { "10": 112500, "100131": 12 },
+        "11": { "10": 135000, "100131": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Special": {
+      "Description": [
+        {
+          "Name": "Special Attack: Locked Position",
+          "Desc": "Before entering <color=#FFFFFF>Binding Seal</color>, press <IconMap:Icon_Special> or <IconMap:Icon_SpecialReady> to activate:\nUse <color=#FFFFFF>Lunalux Garrote</color> to pull the enemy and charge forward with a kick, dealing <color=#FF5521>Fire DMG</color>.\nWhen the attack hits the enemy, Evelyn will use <color=#FFFFFF>Lunalux Garrote</color> to bind the primary target and enter <color=#FFFFFF>Binding Seal</color>.\nAnti-Interrupt level is increased while using this skill."
+        },
+        {
+          "Name": "Special Attack: Binding Sunder - First Form",
+          "Desc": "After entering <color=#FFFFFF>Binding Seal</color>, press or hold <IconMap:Icon_Special> to activate:\nCentered on the target affected by <color=#FFFFFF>Binding Seal</color>, tether surrounding enemies and detonate an explosion, dealing <color=#FF5521>Fire DMG</color>. <color=#FFFFFF>Binding Seal</color> will end after detonation.\nDodge enemy attacks upon activating the skill, and if a <color=#FFFFFF>Perfect Dodge</color> is triggered, gain an additional 25% <color=#FFFFFF>Burning Embers</color>.\nAfter tethering surrounding enemies, press <IconMap:Icon_Normal> to cancel detonation and immediately follow up with the <color=#FFFFFF>Basic Attack's</color> 3rd hit.\nAnti-Interrupt level is increased while using this skill."
+        },
+        {
+          "Name": "EX Special Attack: Binding Sunder - Final Form",
+          "Desc": "After entering <color=#FFFFFF>Binding Seal</color> and with enough Energy, press or hold <IconMap:Icon_SpecialReady> to activate:\nCentered on the target affected by <color=#FFFFFF>Binding Seal</color>, tether surrounding enemies and detonate an explosion, dealing massive <color=#FF5521>Fire DMG</color>. <color=#FFFFFF>Binding Seal</color> will end after detonation.\nDodge enemy attacks upon activating the skill, and if a <color=#FFFFFF>Perfect Dodge</color> is triggered, gain an additional 25% <color=#FFFFFF>Burning Embers</color>.\nAfter pulling in surrounding enemies, press <IconMap:Icon_Normal> to cancel detonation and immediately follow up with the <color=#FFFFFF>Basic Attack's</color> 3rd hit.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Special Attack: Locked Position",
+          "Param": [
+            {
+              "Name": "1st-Hit DMG Multiplier",
+              "Desc": "{Skill:1321008, Prop:1001}",
+              "Param": {
+                "1321008": {
+                  "Main": 52.3,
+                  "Growth": 0.048,
+                  "Format": "%",
+                  "DamagePercentage": 0.523,
+                  "DamagePercentageGrowth": 0.048,
+                  "StunRatio": 0.523,
+                  "StunRatioGrowth": 0.024,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2612.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 47.48,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "1st-Hit Daze Multiplier",
+              "Desc": "{Skill:1321008, Prop:1002}",
+              "Param": {
+                "1321008": {
+                  "Main": 52.3,
+                  "Growth": 0.024,
+                  "Format": "%",
+                  "DamagePercentage": 0.523,
+                  "DamagePercentageGrowth": 0.048,
+                  "StunRatio": 0.523,
+                  "StunRatioGrowth": 0.024,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2612.5,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 47.48,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Special Attack: Binding Sunder - First Form",
+          "Param": [
+            {
+              "Name": "Bind DMG Multiplier",
+              "Desc": "{Skill:1321009, Prop:1001}",
+              "Param": {
+                "1321009": {
+                  "Main": 40.4,
+                  "Growth": 0.037,
+                  "Format": "%",
+                  "DamagePercentage": 0.404,
+                  "DamagePercentageGrowth": 0.037,
+                  "StunRatio": 0.404,
+                  "StunRatioGrowth": 0.019,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2015.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 36.64,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Explosion DMG Multiplier",
+              "Desc": "{Skill:1321010, Prop:1001}",
+              "Param": {
+                "1321010": {
+                  "Main": 34,
+                  "Growth": 0.031,
+                  "Format": "%",
+                  "DamagePercentage": 0.34,
+                  "DamagePercentageGrowth": 0.031,
+                  "StunRatio": 0.34,
+                  "StunRatioGrowth": 0.016,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1696.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 30.84,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Bind Daze Multiplier",
+              "Desc": "{Skill:1321009, Prop:1002}",
+              "Param": {
+                "1321009": {
+                  "Main": 40.4,
+                  "Growth": 0.019,
+                  "Format": "%",
+                  "DamagePercentage": 0.404,
+                  "DamagePercentageGrowth": 0.037,
+                  "StunRatio": 0.404,
+                  "StunRatioGrowth": 0.019,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 2015.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 36.64,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Explosion Daze Multiplier",
+              "Desc": "{Skill:1321010, Prop:1002}",
+              "Param": {
+                "1321010": {
+                  "Main": 34,
+                  "Growth": 0.016,
+                  "Format": "%",
+                  "DamagePercentage": 0.34,
+                  "DamagePercentageGrowth": 0.031,
+                  "StunRatio": 0.34,
+                  "StunRatioGrowth": 0.016,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1696.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 30.84,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "EX Special Attack: Binding Sunder - Final Form",
+          "Param": [
+            {
+              "Name": "Bind DMG Multiplier",
+              "Desc": "{Skill:1321011, Prop:1001}",
+              "Param": {
+                "1321011": {
+                  "Main": 541.2,
+                  "Growth": 0.492,
+                  "Format": "%",
+                  "DamagePercentage": 5.412,
+                  "DamagePercentageGrowth": 0.492,
+                  "StunRatio": 4.371,
+                  "StunRatioGrowth": 0.199,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 16134.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 444.62,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Explosion DMG Multiplier",
+              "Desc": "{Skill:1321012, Prop:1001}",
+              "Param": {
+                "1321012": {
+                  "Main": 59.6,
+                  "Growth": 0.055,
+                  "Format": "%",
+                  "DamagePercentage": 0.596,
+                  "DamagePercentageGrowth": 0.055,
+                  "StunRatio": 0.596,
+                  "StunRatioGrowth": 0.028,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1718.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 56.2,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Bind Daze Multiplier",
+              "Desc": "{Skill:1321011, Prop:1002}",
+              "Param": {
+                "1321011": {
+                  "Main": 437.1,
+                  "Growth": 0.199,
+                  "Format": "%",
+                  "DamagePercentage": 5.412,
+                  "DamagePercentageGrowth": 0.492,
+                  "StunRatio": 4.371,
+                  "StunRatioGrowth": 0.199,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 16134.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 444.62,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Explosion Daze Multiplier",
+              "Desc": "{Skill:1321012, Prop:1002}",
+              "Param": {
+                "1321012": {
+                  "Main": 59.6,
+                  "Growth": 0.028,
+                  "Format": "%",
+                  "DamagePercentage": 0.596,
+                  "DamagePercentageGrowth": 0.055,
+                  "StunRatio": 0.596,
+                  "StunRatioGrowth": 0.028,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1718.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 56.2,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            { "Name": "Energy Cost", "Desc": "60" }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100111": 2 },
+        "2": { "10": 3000, "100111": 3 },
+        "3": { "10": 6000, "100121": 2 },
+        "4": { "10": 9000, "100121": 3 },
+        "5": { "10": 12000, "100121": 4 },
+        "6": { "10": 18000, "100121": 6 },
+        "7": { "10": 45000, "100131": 5 },
+        "8": { "10": 67500, "100131": 8 },
+        "9": { "10": 90000, "100131": 10 },
+        "10": { "10": 112500, "100131": 12 },
+        "11": { "10": 135000, "100131": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Chain": {
+      "Description": [
+        {
+          "Name": "Chain Attack: Lunalux - Snare",
+          "Desc": "When a <color=#FFFFFF>Chain Attack</color> is triggered, select the character to activate:\nEvelyn slashes in front with multiple <color=#FFFFFF>Lunalux Garrotes</color> and detonates an explosion, dealing massive <color=#FF5521>Fire DMG</color> to enemies in the area.\nWhen the attack hits an enemy, Evelyn uses <color=#FFFFFF>Lunalux Garrote</color> to bind the primary target and enters <color=#FFFFFF>Binding Seal</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Ultimate: Lunalux Garrote - Timbre",
+          "Desc": "When Decibel Rating is at <color=#FFFFFF>Maximum</color>, press <IconMap:Icon_UltimateReady> to activate:\nEvelyn slashes in front with multiple <color=#FFFFFF>Lunalux Garrotes</color> and detonates an explosion, dealing massive <color=#FF5521>Fire DMG</color> to enemies in the area.\nUpon activating this skill, Evelyn removes her jacket and enters the <color=#FFFFFF>Dance of Awakened Fire</color> state, which lasts for the entire battle. While in the <color=#FFFFFF>Dance of Awakened Fire</color> state, when Evelyn consumes <color=#FFFFFF>Burning Tether Points</color> to activate <color=#FFFFFF>Chain Attack: Lunalux - Snare</color>, she will retain 1 point of <color=#FFFFFF>Burning Tether Point</color>. When the attack hits an enemy, Evelyn uses <color=#FFFFFF>Lunalux Garrote</color> to bind the primary target, entering <color=#FFFFFF>Binding Seal</color>.\nCharacter is invulnerable while using this skill.\nAfter using this skill, gain 1 <color=#FFFFFF>Burning Tether Point</color>."
+        },
+        {
+          "Name": "Ultimate: Lunalux Garrote - Shadow",
+          "Desc": "While under the <color=#FFFFFF>Dance of Awakened Fire</color> state, and when Decibel Rating is at <color=#FFFFFF>Maximum</color>, press <IconMap:Icon_UltimateReady> to activate:\nEvelyn slashes in front with multiple <color=#FFFFFF>Lunalux Garrotes</color> and detonates an explosion, dealing massive <color=#FF5521>Fire DMG</color> to enemies in the area.\nWhen the attack hits an enemy, Evelyn uses <color=#FFFFFF>Lunalux Garrote</color> to bind the primary target and enters <color=#FFFFFF>Binding Seal</color>.\nCharacter is invulnerable while using this skill.\nAfter using this skill, gain 1 <color=#FFFFFF>Burning Tether Point</color>."
+        },
+        {
+          "Name": "Chain Attack: Lunalux - Snare",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1321015, Prop:1001}",
+              "Param": {
+                "1321015": {
+                  "Main": 829.3,
+                  "Growth": 0.754,
+                  "Format": "%",
+                  "DamagePercentage": 8.293,
+                  "DamagePercentageGrowth": 0.754,
+                  "StunRatio": 2.366,
+                  "StunRatioGrowth": 0.108,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 16942.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 290.17,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1321015, Prop:1002}",
+              "Param": {
+                "1321015": {
+                  "Main": 236.6,
+                  "Growth": 0.108,
+                  "Format": "%",
+                  "DamagePercentage": 8.293,
+                  "DamagePercentageGrowth": 0.754,
+                  "StunRatio": 2.366,
+                  "StunRatioGrowth": 0.108,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 16942.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 290.17,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Ultimate: Lunalux Garrote - Timbre",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1321016, Prop:1001}",
+              "Param": {
+                "1321016": {
+                  "Main": 1988.5,
+                  "Growth": 1.808,
+                  "Format": "%",
+                  "DamagePercentage": 19.885,
+                  "DamagePercentageGrowth": 1.808,
+                  "StunRatio": 2.604,
+                  "StunRatioGrowth": 0.119,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 236.7,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1321016, Prop:1002}",
+              "Param": {
+                "1321016": {
+                  "Main": 260.4,
+                  "Growth": 0.119,
+                  "Format": "%",
+                  "DamagePercentage": 19.885,
+                  "DamagePercentageGrowth": 1.808,
+                  "StunRatio": 2.604,
+                  "StunRatioGrowth": 0.119,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 236.7,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Ultimate: Lunalux Garrote - Shadow",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1321016, Prop:1001}",
+              "Param": {
+                "1321016": {
+                  "Main": 1988.5,
+                  "Growth": 1.808,
+                  "Format": "%",
+                  "DamagePercentage": 19.885,
+                  "DamagePercentageGrowth": 1.808,
+                  "StunRatio": 2.604,
+                  "StunRatioGrowth": 0.119,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 236.7,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1321016, Prop:1002}",
+              "Param": {
+                "1321016": {
+                  "Main": 260.4,
+                  "Growth": 0.119,
+                  "Format": "%",
+                  "DamagePercentage": 19.885,
+                  "DamagePercentageGrowth": 1.808,
+                  "StunRatio": 2.604,
+                  "StunRatioGrowth": 0.119,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 236.7,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100111": 2 },
+        "2": { "10": 3000, "100111": 3 },
+        "3": { "10": 6000, "100121": 2 },
+        "4": { "10": 9000, "100121": 3 },
+        "5": { "10": 12000, "100121": 4 },
+        "6": { "10": 18000, "100121": 6 },
+        "7": { "10": 45000, "100131": 5 },
+        "8": { "10": 67500, "100131": 8 },
+        "9": { "10": 90000, "100131": 10 },
+        "10": { "10": 112500, "100131": 12 },
+        "11": { "10": 135000, "100131": 15, "100941": 1 },
+        "12": {}
+      }
+    },
+    "Assist": {
+      "Description": [
+        {
+          "Name": "Quick Assist: Fierce Blade",
+          "Desc": "When the active character is launched, press <IconMap:Icon_Switch> to activate:\nUse <color=#FFFFFF>Lunalux Garrote</color> to slash surrounding enemies, dealing <color=#FF5521>Fire DMG</color>.\nWhen the attack hits an enemy, Evelyn will use <color=#FFFFFF>Lunalux Garrote</color> to bind the primary target and enter <color=#FFFFFF>Binding Seal</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Defensive Assist: Silent Protection",
+          "Desc": "When the on-field character is about to be attacked, press <IconMap:Icon_Switch> to activate:\nParries the enemy's attack, dealing massive Daze.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Assist Follow-Up: Course Disruption",
+          "Desc": "Press <IconMap:Icon_Normal> after a <color=#FFFFFF>Defensive Assist</color> to activate:\nEvelyn slashes with <color=#FFFFFF>Lunalux Garrote</color>, then triggers an explosion ahead, dealing <color=#FF5521>Fire DMG</color>.\nWhen the attack hits an enemy, Evelyn will use <color=#FFFFFF>Lunalux Garrote</color> to bind the primary target and enter <color=#FFFFFF>Binding Seal</color>.\nCharacter is invulnerable while using this skill."
+        },
+        {
+          "Name": "Quick Assist: Fierce Blade",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1321017, Prop:1001}",
+              "Param": {
+                "1321017": {
+                  "Main": 77.1,
+                  "Growth": 0.071,
+                  "Format": "%",
+                  "DamagePercentage": 0.771,
+                  "DamagePercentageGrowth": 0.071,
+                  "StunRatio": 0.771,
+                  "StunRatioGrowth": 0.036,
+                  "SpRecovery": 252.2,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1927.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 70.03,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1321017, Prop:1002}",
+              "Param": {
+                "1321017": {
+                  "Main": 77.1,
+                  "Growth": 0.036,
+                  "Format": "%",
+                  "DamagePercentage": 0.771,
+                  "DamagePercentageGrowth": 0.071,
+                  "StunRatio": 0.771,
+                  "StunRatioGrowth": 0.036,
+                  "SpRecovery": 252.2,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 1927.75,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 70.03,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Defensive Assist: Silent Protection",
+          "Param": [
+            {
+              "Name": "Light Defensive Daze Multiplier",
+              "Desc": "{Skill:1321018, Prop:1002}",
+              "Param": {
+                "1321018": {
+                  "Main": 271.3,
+                  "Growth": 0.124,
+                  "Format": "%",
+                  "DamagePercentage": 0,
+                  "DamagePercentageGrowth": 0,
+                  "StunRatio": 2.713,
+                  "StunRatioGrowth": 0.124,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Heavy Defensive Daze Multiplier",
+              "Desc": "{Skill:1321019, Prop:1002}",
+              "Param": {
+                "1321019": {
+                  "Main": 342.8,
+                  "Growth": 0.156,
+                  "Format": "%",
+                  "DamagePercentage": 0,
+                  "DamagePercentageGrowth": 0,
+                  "StunRatio": 3.428,
+                  "StunRatioGrowth": 0.156,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Chain Defensive Daze Multiplier",
+              "Desc": "{Skill:1321020, Prop:1002}",
+              "Param": {
+                "1321020": {
+                  "Main": 166.8,
+                  "Growth": 0.076,
+                  "Format": "%",
+                  "DamagePercentage": 0,
+                  "DamagePercentageGrowth": 0,
+                  "StunRatio": 1.668,
+                  "StunRatioGrowth": 0.076,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 0,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 0,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Assist Follow-Up: Course Disruption",
+          "Param": [
+            {
+              "Name": "DMG Multiplier",
+              "Desc": "{Skill:1321021, Prop:1001}",
+              "Param": {
+                "1321021": {
+                  "Main": 291.6,
+                  "Growth": 0.266,
+                  "Format": "%",
+                  "DamagePercentage": 2.916,
+                  "DamagePercentageGrowth": 0.266,
+                  "StunRatio": 2.49,
+                  "StunRatioGrowth": 0.114,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 8357.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 245.67,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            },
+            {
+              "Name": "Daze Multiplier",
+              "Desc": "{Skill:1321021, Prop:1002}",
+              "Param": {
+                "1321021": {
+                  "Main": 249,
+                  "Growth": 0.114,
+                  "Format": "%",
+                  "DamagePercentage": 2.916,
+                  "DamagePercentageGrowth": 0.266,
+                  "StunRatio": 2.49,
+                  "StunRatioGrowth": 0.114,
+                  "SpRecovery": 0,
+                  "SpRecoveryGrowth": 0,
+                  "FeverRecovery": 8357.25,
+                  "FeverRecoveryGrowth": 0,
+                  "AttributeInfliction": 245.67,
+                  "SpConsume": 0,
+                  "AttackData": []
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "Material": {
+        "1": { "10": 2000, "100111": 2 },
+        "2": { "10": 3000, "100111": 3 },
+        "3": { "10": 6000, "100121": 2 },
+        "4": { "10": 9000, "100121": 3 },
+        "5": { "10": 12000, "100121": 4 },
+        "6": { "10": 18000, "100121": 6 },
+        "7": { "10": 45000, "100131": 5 },
+        "8": { "10": 67500, "100131": 8 },
+        "9": { "10": 90000, "100131": 10 },
+        "10": { "10": 112500, "100131": 12 },
+        "11": { "10": 135000, "100131": 15, "100941": 1 },
+        "12": {}
+      }
+    }
+  },
+  "skillList": {
+    "1321001": {
+      "Name": "Basic Attack: Razor Wire (1st, 2nd, and 3rd hit)",
+      "Desc": "<IconMap:Icon_Normal>",
+      "ElementType": 200,
+      "HitType": 101
+    },
+    "1321002": {
+      "Name": "Basic Attack: Razor Wire (4th and 5th hit)",
+      "Desc": "<IconMap:Icon_Normal>",
+      "ElementType": 201,
+      "HitType": 101
+    },
+    "1321003": {
+      "Name": "Basic Attack: Razor Wire (Binding Sunder canceling explosion)",
+      "Desc": "<IconMap:Icon_Special> (Binding Sunder) ; <IconMap:Icon_Normal> (Before Binding Sunder's explosion) ; <IconMap:Icon_Normal> ; <IconMap:Icon_Normal>",
+      "ElementType": 201,
+      "HitType": 101
+    },
+    "1321004": {
+      "Name": "Basic Attack: Garrote",
+      "Desc": "<IconMap:Icon_Normal> (Hold)",
+      "ElementType": 201,
+      "HitType": 101
+    },
+    "1321005": {
+      "Name": "Basic Attack: Garrote",
+      "Desc": "<IconMap:Icon_Special> (Before Binding Sunder's explosion) (Hold)",
+      "ElementType": 201,
+      "HitType": 101
+    },
+    "1321006": {
+      "Name": "Special Attack: Locked Position",
+      "Desc": "<IconMap:Icon_Special> (Before Binding Seal)",
+      "ElementType": 201,
+      "HitType": 101
+    },
+    "1321007": {
+      "Name": "Special Attack: Binding Sunder - First Form",
+      "Desc": "<IconMap:Icon_Special> (After Binding Seal)",
+      "ElementType": 201,
+      "HitType": 101
+    },
+    "1321008": {
+      "Name": "EX Special Attack: Binding Sunder - Final Form",
+      "Desc": "<IconMap:Icon_SpecialReady> (After Binding Seal)",
+      "ElementType": 201,
+      "HitType": 101
+    },
+    "1321009": {
+      "Name": "Dash Attack: Piercing Ambush",
+      "Desc": "<IconMap:Icon_Evade> ; <IconMap:Icon_Normal>",
+      "ElementType": 200,
+      "HitType": 101
+    },
+    "1321010": {
+      "Name": "Dodge Counter: Strangling Reversal",
+      "Desc": "<IconMap:Icon_Evade> (Perfect) ; <IconMap:Icon_Normal>",
+      "ElementType": 201,
+      "HitType": 101
+    },
+    "1321011": {
+      "Name": "Chain Attack: Lunalux - Snare",
+      "Desc": "<IconMap:Icon_QTE>",
+      "ElementType": 201,
+      "HitType": 101
+    },
+    "1321012": {
+      "Name": "Ultimate: Lunalux Garrote - Timbre",
+      "Desc": "<IconMap:Icon_UltimateReady>",
+      "ElementType": 201,
+      "HitType": 101
+    },
+    "1321013": {
+      "Name": "Ultimate: Lunalux Garrote - Shadow",
+      "Desc": "<IconMap:Icon_UltimateReady> (During Dance of Awakened Fire)",
+      "ElementType": 201,
+      "HitType": 101
+    },
+    "1321014": {
+      "Name": "Quick Assist: Fierce Blade",
+      "Desc": "<IconMap:Icon_Switch> (When Triggering Quick Assist)",
+      "ElementType": 201,
+      "HitType": 101
+    },
+    "1321015": {
+      "Name": "Defensive Assist: Silent Protection",
+      "Desc": "<IconMap:Icon_Switch> (When Triggering Defensive Assist)",
+      "ElementType": 0,
+      "HitType": 0
+    },
+    "1321016": {
+      "Name": "Assist Follow-Up: Course Disruption",
+      "Desc": "<IconMap:Icon_Normal> (After Defensive Assist)",
+      "ElementType": 201,
+      "HitType": 101
+    }
+  },
+  "cores": {
+    "Level": {
+      "1": {
+        "Level": 1,
+        "Id": 1321501,
+        "Name": ["Core Passive: Entangle", "Additional Ability: Ambush Point"],
+        "Desc": [
+          "Upon entering <color=#FFFFFF>Binding Seal</color>, Evelyn's CRIT Rate increases by <color=#2BAD00>12.5%</color>. After leaving <color=#FFFFFF>Binding Seal</color>, she retains the buff for 10s. If Evelyn switches to another character while in <color=#FFFFFF>Binding Seal</color>, she will automatically follow up with <color=#FFFFFF>Special Attack: Binding Sunder - First Form</color>.",
+          "When another character in your squad is a <color=#FFFFFF>Stun</color> or <color=#FFFFFF>Support</color> character:\nEvelyn's <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> DMG increases by 30%. When Evelyn's CRIT Rate is at or over 80%, the DMG multiplier for her <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> increases to 125% of the original value."
+        ]
+      },
+      "2": {
+        "Level": 2,
+        "Id": 1321502,
+        "Name": ["Core Passive: Entangle", "Additional Ability: Ambush Point"],
+        "Desc": [
+          "Upon entering <color=#FFFFFF>Binding Seal</color>, Evelyn's CRIT Rate increases by <color=#2BAD00>14.6%</color>. After leaving <color=#FFFFFF>Binding Seal</color>, she retains the buff for 10s. If Evelyn switches to another character while in <color=#FFFFFF>Binding Seal</color>, she will automatically follow up with <color=#FFFFFF>Special Attack: Binding Sunder - First Form</color>.",
+          "When another character in your squad is a <color=#FFFFFF>Stun</color> or <color=#FFFFFF>Support</color> character:\nEvelyn's <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> DMG increases by 30%. When Evelyn's CRIT Rate is at or over 80%, the DMG multiplier for her <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> increases to 125% of the original value."
+        ]
+      },
+      "3": {
+        "Level": 3,
+        "Id": 1321503,
+        "Name": ["Core Passive: Entangle", "Additional Ability: Ambush Point"],
+        "Desc": [
+          "Upon entering <color=#FFFFFF>Binding Seal</color>, Evelyn's CRIT Rate increases by <color=#2BAD00>16.7%</color>. After leaving <color=#FFFFFF>Binding Seal</color>, she retains the buff for 10s. If Evelyn switches to another character while in <color=#FFFFFF>Binding Seal</color>, she will automatically follow up with <color=#FFFFFF>Special Attack: Binding Sunder - First Form</color>.",
+          "When another character in your squad is a <color=#FFFFFF>Stun</color> or <color=#FFFFFF>Support</color> character:\nEvelyn's <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> DMG increases by 30%. When Evelyn's CRIT Rate is at or over 80%, the DMG multiplier for her <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> increases to 125% of the original value."
+        ]
+      },
+      "4": {
+        "Level": 4,
+        "Id": 1321504,
+        "Name": ["Core Passive: Entangle", "Additional Ability: Ambush Point"],
+        "Desc": [
+          "Upon entering <color=#FFFFFF>Binding Seal</color>, Evelyn's CRIT Rate increases by <color=#2BAD00>18.8%</color>. After leaving <color=#FFFFFF>Binding Seal</color>, she retains the buff for 10s. If Evelyn switches to another character while in <color=#FFFFFF>Binding Seal</color>, she will automatically follow up with <color=#FFFFFF>Special Attack: Binding Sunder - First Form</color>.",
+          "When another character in your squad is a <color=#FFFFFF>Stun</color> or <color=#FFFFFF>Support</color> character:\nEvelyn's <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> DMG increases by 30%. When Evelyn's CRIT Rate is at or over 80%, the DMG multiplier for her <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> increases to 125% of the original value."
+        ]
+      },
+      "5": {
+        "Level": 5,
+        "Id": 1321505,
+        "Name": ["Core Passive: Entangle", "Additional Ability: Ambush Point"],
+        "Desc": [
+          "Upon entering <color=#FFFFFF>Binding Seal</color>, Evelyn's CRIT Rate increases by <color=#2BAD00>20.8%</color>. After leaving <color=#FFFFFF>Binding Seal</color>, she retains the buff for 10s. If Evelyn switches to another character while in <color=#FFFFFF>Binding Seal</color>, she will automatically follow up with <color=#FFFFFF>Special Attack: Binding Sunder - First Form</color>.",
+          "When another character in your squad is a <color=#FFFFFF>Stun</color> or <color=#FFFFFF>Support</color> character:\nEvelyn's <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> DMG increases by 30%. When Evelyn's CRIT Rate is at or over 80%, the DMG multiplier for her <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> increases to 125% of the original value."
+        ]
+      },
+      "6": {
+        "Level": 6,
+        "Id": 1321506,
+        "Name": ["Core Passive: Entangle", "Additional Ability: Ambush Point"],
+        "Desc": [
+          "Upon entering <color=#FFFFFF>Binding Seal</color>, Evelyn's CRIT Rate increases by <color=#2BAD00>23%</color>. After leaving <color=#FFFFFF>Binding Seal</color>, she retains the buff for 10s. If Evelyn switches to another character while in <color=#FFFFFF>Binding Seal</color>, she will automatically follow up with <color=#FFFFFF>Special Attack: Binding Sunder - First Form</color>.",
+          "When another character in your squad is a <color=#FFFFFF>Stun</color> or <color=#FFFFFF>Support</color> character:\nEvelyn's <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> DMG increases by 30%. When Evelyn's CRIT Rate is at or over 80%, the DMG multiplier for her <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> increases to 125% of the original value."
+        ]
+      },
+      "7": {
+        "Level": 7,
+        "Id": 1321507,
+        "Name": ["Core Passive: Entangle", "Additional Ability: Ambush Point"],
+        "Desc": [
+          "Upon entering <color=#FFFFFF>Binding Seal</color>, Evelyn's CRIT Rate increases by <color=#2BAD00>25%</color>. After leaving <color=#FFFFFF>Binding Seal</color>, she retains the buff for 10s. If Evelyn switches to another character while in <color=#FFFFFF>Binding Seal</color>, she will automatically follow up with <color=#FFFFFF>Special Attack: Binding Sunder - First Form</color>.",
+          "When another character in your squad is a <color=#FFFFFF>Stun</color> or <color=#FFFFFF>Support</color> character:\nEvelyn's <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> DMG increases by 30%. When Evelyn's CRIT Rate is at or over 80%, the DMG multiplier for her <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> increases to 125% of the original value."
+        ]
+      }
+    },
+    "Materials": {
+      "1": { "10": 5000 },
+      "2": { "10": 12000, "110504": 2 },
+      "3": { "10": 28000, "110504": 4 },
+      "4": { "10": 60000, "110004": 2, "110504": 9 },
+      "5": { "10": 100000, "110004": 3, "110504": 15 },
+      "6": { "10": 200000, "110004": 4, "110504": 30 }
+    }
+  },
+  "mindscapes": {
+    "1": {
+      "Level": 1,
+      "Name": "Dreamweave",
+      "Desc": "Upon entering the battlefield, Evelyn immediately gains 1,500 Decibels. Enemies affected by <color=#FFFFFF>Binding Seal</color> will be <color=#FFFFFF>Bound</color>. When Evelyn attacks <color=#FFFFFF>Bound</color> enemies, she ignores 12% of their DEF. When Evelyn uses <color=#FFFFFF>Special Attack: Binding Sunder - First Form</color> or <color=#FFFFFF>EX Special Attack: Binding Sunder - Final Form</color>, the <color=#FFFFFF>Bound</color> effect spreads to all enemies hit by the skill. This spread <color=#FFFFFF>Bound</color> effect lasts for 10s.",
+      "Desc2": "The distant, blurred light seemed to be a dream she had crafted, an unreachable future. It wasn't about atonement, but a yearning for freedom.\n\"You want it too, don't you? A real life.\" An anonymous former coworker once asked Evelyn."
+    },
+    "2": {
+      "Level": 2,
+      "Name": "Dance of Fire",
+      "Desc": "Evelyn's ATK increases by 15%. When Evelyn uses <color=#FFFFFF>Basic Attack: Garrote - First Form</color> or <color=#FFFFFF>Basic Attack: Garrote - Second Form</color>, the <color=#FFFFFF>Burning Embers</color> consumed will be returned. This effect can trigger once every 25s. When Evelyn consumes <color=#FFFFFF>Burning Tether Point</color> to trigger <color=#FFFFFF>Chain Attack: Lunalux - Snare</color>, the skill's Interrupt Level increases.",
+      "Desc2": "\"To me, that light was unfamiliar, something I should have steered clear of, but it broke through every barrier, as though it was trying to remind me that beyond the darkness, there was something worth chasing.\"\nWhen Evelyn recalls the first time she met Astra Yao, there's a rare softness in her tone."
+    },
+    "3": {
+      "Level": 3,
+      "Name": "Metamorphosis",
+      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
+      "Desc2": "At that moment, she frees herself from her restraints and becomes her truest self. The tightened ropes snap, and the chains turn into a broken cocoon. Evelyn stands at the boundary of rebirth, and in her cold, sharp gaze, there is the flicker of a faint, soft glow."
+    },
+    "4": {
+      "Level": 4,
+      "Name": "Fate's Melody",
+      "Desc": "Upon activating a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color>, Evelyn immediately gains a shield equal to 10% of her Max HP. While this shield exists, Evelyn's CRIT DMG increases by 40%.",
+      "Desc2": "\"You know, Eve? Every time I meet someone important to me, my heart goes 'thump-thump!'\"\nEvelyn sighs, signaling that it was getting late. Astra quickly fastens the back of her gown and rushed out the door.\n\"Thump thump,\" Evelyn mutters to herself, left alone in the dressing room."
+    },
+    "5": {
+      "Level": 5,
+      "Name": "Crimson Threads Like the Dawn",
+      "Desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dodge</color>, <color=#FFFFFF>Assist</color>, <color=#FFFFFF>Special Attack</color>, and <color=#FFFFFF>Chain Attack</color> Lv. +2",
+      "Desc2": "Her threads, dyed crimson like the clouds at dawn.\nAfter each attack, she spins elegantly, blazing flames scattering like the morning light. No words are needed — Evelyn's protection has turned into a radiant flame."
+    },
+    "6": {
+      "Level": 6,
+      "Name": "Bond of Light and Shadow",
+      "Desc": "Upon launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color>, Evelyn gains <color=#FFFFFF>Shadowstring Edge</color> for 20s. During <color=#FFFFFF>Shadowstring Edge</color>, when Evelyn hits her primary target with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, <color=#FFFFFF>Special Attack</color>, or <color=#FFFFFF>EX Special Attack</color>, she additionally executes a <color=#FFFFFF>Lunalux Garrote</color> follow-up attack, dealing <color=#FF5521>Fire DMG</color> equal to 375% of her ATK to enemies in the area. This DMG is considered <color=#FFFFFF>Chain Attack</color> DMG and can trigger up to 16 times. Gaining another <color=#FFFFFF>Shadowstring Edge</color> will refresh the trigger count.",
+      "Desc2": "Where there is light, there will always be shadow.\nIt silently hides, tracing the light's path, guarding each bright burst. The shadow never tries to steal the light's brilliance, but at every turn, it quietly fills those corners the light cannot reach. The two have never been separated, nor can they be — light is whole because of shadow, and shadow exists because of light. It's an eternal pursuit, an unspeakable connection."
+    }
+  }
 }

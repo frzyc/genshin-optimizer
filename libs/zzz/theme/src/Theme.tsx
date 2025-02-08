@@ -95,4 +95,7 @@ export const theme = createTheme({
       name: 'ether',
     }),
   },
+  shape: {
+    borderRadius: 20,
+  },
 })
