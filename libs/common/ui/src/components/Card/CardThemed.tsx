@@ -10,7 +10,7 @@ const bgMap = {
 } as const
 
 interface StyledCardProps extends CardProps {
-  bgt?: CardBackgroundColor
+  bgt?: CardBackgroundColor | string
 }
 /**
  * A colored Card that is by default `contentNormal` colored.
@@ -20,7 +20,11 @@ interface StyledCardProps extends CardProps {
 export const CardThemed = styled(Card, {
   shouldForwardProp: (prop) => prop !== 'bgt',
 })<StyledCardProps>(({ theme, bgt }) => {
-  const palette = bgMap[bgt || 'normal'] as keyof Palette
+  const palette = (
+    bgt && bgt in bgMap
+      ? bgMap[bgt as CardBackgroundColor]
+      : bgt ?? 'contentNormal'
+  ) as keyof Palette
   const paletteColor = theme.palette[palette] as PaletteColor
   return {
     backgroundColor: paletteColor?.main,
