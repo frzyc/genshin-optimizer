@@ -1,5 +1,14 @@
 import type { AnyNode, NumNode, OP as TaggedOP } from '../node'
-import { calculation, constant, mapBottomUp, max, min, traverse } from '../node'
+import {
+  calculation,
+  constant,
+  mapBottomUp,
+  max,
+  min,
+  read,
+  sum,
+  traverse,
+} from '../node'
 import { assertUnreachable } from '../util'
 type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
 const { arithmetic, branching } = calculation
@@ -30,6 +39,7 @@ export function prune<I extends OP, C extends Component>(
     state.progress = false
     pruneBranches(state)
     pruneCompRange(state, minimum)
+    reaffine(state)
   }
   return { nodes: state.nodes, builds: state.builds }
 }
@@ -58,7 +68,7 @@ class State<I extends OP, C extends Component> {
     this._monotonicities = undefined
   }
 
-  setBuilds(builds: Omit<C, string>[][], compRanges: CompRanges | undefined) {
+  setBuilds(builds: Omit<C, string>[][], compRanges?: CompRanges) {
     if (this.builds === builds) return
     this.progress = true
     this.builds = builds
@@ -154,6 +164,132 @@ function pruneCompRange(state: State<OP, Component>, minimum: number[]) {
       state.setBuilds(builds, compRanges)
     }
   })
+}
+
+const offset = Symbol()
+function reaffine(state: State<OP, Component>) {
+  const { nodes, cat, builds } = state
+  type Weight = Record<string | typeof offset, number>
+  const weights = new Map<AnyNode<OP>, Weight>()
+  traverse(nodes, (n, visit) => {
+    n.x.forEach(visit)
+    n.br.forEach(visit)
+
+    if (n.br.length) return
+    const x = n.x.map((n) => weights.get(n)!)
+    if (x.some((w) => !w)) return
+
+    let weight: Weight
+    switch (n.op) {
+      case 'sum': {
+        weight = { [offset]: x.reduce((acu, w) => acu + w[offset], 0) }
+        for (const w of x)
+          for (const [k, v] of Object.entries(w))
+            weight[k] = (weight[k] ?? 0) + v
+        break
+      }
+      case 'prod': {
+        const varIdx = n.x.findIndex((n) => n.op !== 'const')
+        if (n.x.find((n, i) => n.op !== 'const' && i !== varIdx)) return // multiple non-const terms
+        weight = { ...x[varIdx] }
+        const factor = x.reduce(
+          (acu, w, i) => (i === varIdx ? acu : acu * w[offset]),
+          1
+        )
+        if (factor != 1) {
+          Object.keys(weight).forEach((k) => (weight[k] *= factor))
+          weight[offset] *= factor
+        }
+        break
+      }
+      case 'read':
+        weight = { [n.tag[cat]!]: 1, [offset]: 0 }
+        break
+      case 'const':
+        if (typeof n.ex !== 'number') return
+        weight = { [offset]: n.ex }
+        break
+      default:
+        return
+    }
+    weights.set(n, weight)
+  })
+
+  const usedWeights = new Map<AnyNode<OP>, Weight>()
+  traverse(nodes, (n, visit) => {
+    const w = weights.get(n)
+    if (w) usedWeights.set(n, w)
+    else {
+      n.x.forEach(visit)
+      n.br.forEach(visit)
+    }
+  })
+
+  const weightNames = new Map(
+    [...usedWeights.values()].map((w, i) => [w, `c${i}`])
+  )
+  const newBuilds = builds.map((comp) =>
+    comp.map((c) => {
+      const result: Component = {}
+      for (const s of Object.getOwnPropertySymbols(c))
+        result[s as any] = (c as any)[s]
+      weightNames.forEach((name, w) => {
+        result[name] = Object.entries(w).reduce(
+          (acu, [k, v]) => acu + ((c as Component)[k] ?? 0) * v,
+          0
+        )
+      })
+      return result
+    })
+  )
+  let shouldChange = false
+  for (const comp of newBuilds) {
+    for (const [w, name] of weightNames) {
+      const freq = new Map<number, number>()
+      for (const c of comp) freq.set(c[name], (freq.get(c[name]) ?? 0) + 1)
+      let best = 0
+      let bestFreq = 0
+      for (const [v, f] of freq)
+        if (f >= bestFreq && best != 0) [best, bestFreq] = [v, f]
+      if (best != 0) {
+        for (const c of comp) {
+          c[name] -= best
+          if (c[name] === 0) delete c[name]
+        }
+        w[offset] += best
+        shouldChange = true
+      }
+    }
+  }
+
+  if (!shouldChange) {
+    for (const n of usedWeights.keys()) {
+      if (n.op === 'const' || n.op === 'read') continue
+      if (n.op === 'sum' && n.x.length === 2) {
+        if (n.x[0].op === 'const' && n.x[1].op === 'read') continue
+        if (n.x[1].op === 'const' && n.x[0].op === 'read') continue
+      }
+      shouldChange = true
+      break
+    }
+  }
+
+  if (!shouldChange) return
+
+  const weightNodes = new Map<Weight, NumNode<OP>>()
+  for (const [w, name] of weightNames) {
+    let node: NumNode<OP> = read({ [cat]: name }, undefined)
+    if (w[offset] !== 0) node = sum(w[offset], node)
+    weightNodes.set(w, node)
+  }
+
+  state.setBuilds(newBuilds)
+  state.setNodes(
+    mapBottomUp(nodes, (n, o) => {
+      const w = usedWeights.get(o)
+      return w ? weightNodes.get(w)! : n
+    })
+  )
 }
 
 /** Get range assuming any item in `comp` can be selected */
