@@ -23,7 +23,7 @@ import { useTranslation } from 'react-i18next'
 import { DiscCard } from './DiscCard'
 import DiscFilter from './DiscFilter'
 
-const columns = { xs: 1, sm: 2, md: 3, lg: 3, xl: 4 }
+const columns = { xs: 2, sm: 3, md: 4, lg: 4, xl: 6 }
 const numToShowMap = { xs: 10, sm: 12, md: 24, lg: 24, xl: 24 }
 
 export type DiscInventoryProps = {

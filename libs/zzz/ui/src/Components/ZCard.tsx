@@ -3,6 +3,7 @@ import type { CardProps, Palette, PaletteColor } from '@mui/material'
 import { Card, styled } from '@mui/material'
 
 export type CardBackgroundColor = 'light' | 'dark' | 'normal'
+
 const bgMap = {
   light: 'contentLight',
   dark: 'contentDark',
@@ -10,23 +11,20 @@ const bgMap = {
 } as const
 
 interface StyledCardProps extends CardProps {
-  bgt?: CardBackgroundColor | string
+  bgt?: CardBackgroundColor
 }
 /**
  * A colored Card that is by default `contentNormal` colored.
  *
  * Use bgt=["light", "dark"] to use [`contentLight`, `contentDark`]
  */
-export const CardThemed = styled(Card, {
+export const ZCard = styled(Card, {
   shouldForwardProp: (prop) => prop !== 'bgt',
 })<StyledCardProps>(({ theme, bgt }) => {
-  const palette = (
-    bgt && bgt in bgMap
-      ? bgMap[bgt as CardBackgroundColor]
-      : bgt ?? 'contentNormal'
-  ) as keyof Palette
+  const palette = bgMap[bgt || 'normal'] as keyof Palette
   const paletteColor = theme.palette[palette] as PaletteColor
   return {
     backgroundColor: paletteColor?.main,
+    border: `4px ${paletteColor?.light} solid`,
   }
 })

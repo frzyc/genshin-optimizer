@@ -3,7 +3,6 @@ import {
   CardThemed,
   ColorText,
   NextImage,
-  SqBadge,
 } from '@genshin-optimizer/common/ui'
 import {
   getUnitStr,
@@ -13,33 +12,31 @@ import {
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscRarityKey, LocationKey } from '@genshin-optimizer/zzz/consts'
 import {
-  discMaxLevel,
   discRarityColor,
   getDiscMainStatVal,
   getDiscSubStatBaseVal,
 } from '@genshin-optimizer/zzz/consts'
 import type { IDisc, ISubstat } from '@genshin-optimizer/zzz/db'
-import { DeleteForever, Edit } from '@mui/icons-material'
+import { Edit } from '@mui/icons-material'
 import {
   Box,
   Button,
   CardContent,
-  Chip,
-  Divider,
   Skeleton,
+  Stack,
   Typography,
 } from '@mui/material'
-import React, { Suspense, useEffect, useRef, useState } from 'react'
+import { Suspense, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { StatDisplay } from '../Character'
 import { LocationAutocomplete } from '../Character/LocationAutocomplete'
 import { LocationName } from '../Character/LocationName'
+import { ZCard } from '../Components'
 import { DiscSetName } from './DiscTrans'
 
 export function DiscCard({
   disc,
   onEdit,
-  onDelete,
   setLocation,
   extraButtons,
 }: {
@@ -59,16 +56,8 @@ export function DiscCard({
     handleMouseUp,
     isDragging,
   } = useSpinner()
-  const {
-    lock,
-    slotKey,
-    setKey,
-    rarity,
-    level,
-    mainStatKey,
-    substats,
-    location,
-  } = disc
+  const { slotKey, setKey, rarity, level, mainStatKey, substats, location } =
+    disc
 
   // const ele = allElementalDamageKeys.find((e) => mainStatKey.startsWith(e))
   // TODO: requires individual disc set piece names/desc added to sheets
@@ -94,8 +83,8 @@ export function DiscCard({
         />
       }
     >
-      <CardThemed
-        bgt="light"
+      <ZCard
+        bgt="dark"
         sx={{
           height: '100%',
           display: 'flex',
@@ -103,170 +92,125 @@ export function DiscCard({
           flexGrow: 1,
         }}
       >
-        <Box
-          sx={{
-            position: 'relative',
-            width: '100%',
-            height: 150,
-            mt: 2,
-            px: 2,
-          }}
-        >
-          <Box
-            sx={{
-              position: 'relative',
-              zIndex: 1,
-              pointerEvents: 'none',
-              height: '100%',
-            }}
-          >
-            {/* header */}
-            <Box
-              component="div"
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 1,
-                mb: 1,
-                justifyContent: 'space-between',
-              }}
-            >
-              {/* TODO: if slotName used again, this needs to be added; otherwise
-                  could just remove this since setKey check below already has fallback
-                {!setKey && <Skeleton variant="text" width={100} />} */}
-              <Typography
-                noWrap
-                sx={{
-                  textAlign: 'center',
-                  backgroundColor: 'rgba(100,100,100,0.35)',
-                  borderRadius: '1em',
-                  px: 1.5,
-                  backdropFilter: 'blur(3px)',
-                }}
-              >
-                <strong>
-                  {(setKey && <DiscSetName setKey={setKey} />) || 'Disc Set'}
-                </strong>
-              </Typography>{' '}
-              <SqBadge color="secondary">{slotKey}</SqBadge>
-              {/* TODO: requires sheets
-                {!slotDescTooltip ? <Skeleton width={10} /> : slotDescTooltip} */}
-            </Box>
-            <Box
+        <CardContent>
+          <CardThemed bgt="light" sx={{ borderRadius: '11px' }}>
+            <CardContent
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
-                gap: 1,
-                alignItems: 'start',
-                position: 'absolute',
-                bottom: 0,
-              }}
-            >
-              <SqBadge color={discRarityColor[rarity]}>{rarity}</SqBadge>
-              <Chip
-                sx={{ backdropFilter: 'blur(3px)' }}
-                size="small"
-                label={
-                  <strong>
-                    {`Lv. ${level}`}/{discMaxLevel[rarity]}
-                  </strong>
-                }
-                // color={discLevelVariant(level)}
-              />
-              <Box sx={{ flexGrow: 1 }}></Box>
-              {/* {!onClick && !!onLockToggle && (
-                <IconButton size="small" color="primary" onClick={onLockToggle}>
-                  {lock ? <Lock /> : <LockOpen />}
-                </IconButton>
-              )} */}
-            </Box>
-
-            {/* {process.env.NODE_ENV === "development" && <Typography color="common.black">{id || `""`} </Typography>} */}
-          </Box>
-          <Box
-            sx={{
-              height: '100%',
-              position: 'absolute',
-              right: 0,
-              top: 0,
-              pr: 2,
-            }}
-          >
-            <Box
-              component={NextImage ? NextImage : 'img'}
-              alt="Disc Piece Image"
-              src={discDefIcon(setKey)}
-              onMouseDown={handleMouseDown}
-              onMouseMove={handleMouseMove}
-              onMouseUp={handleMouseUp}
-              onMouseLeave={handleMouseUp}
-              sx={{
-                width: 'auto',
-                height: '90%',
-                float: 'right',
-                minHeight: '150px',
-                transform: `rotate(${rotation}deg)`,
-                transition: isDragging ? 'none' : 'transform 0.1s ease-out',
-              }}
-            />
-          </Box>
-        </Box>
-        <CardContent
-          sx={{
-            flexGrow: 1,
-            display: 'flex',
-            flexDirection: 'column',
-            py: '0!important',
-            width: '100%',
-          }}
-        >
-          <Box display="flex" gap={1} alignItems="center">
-            <Typography
-              variant="h6"
-              sx={{
-                display: 'flex',
                 alignItems: 'center',
-                gap: 1,
-                flexGrow: 1,
               }}
             >
-              {/* <StatIcon
-                statKey={mainStatKey}
-                iconProps={{ sx: { color: `${ele}.main` } }}
-              /> */}
-              <StatDisplay statKey={mainStatKey} />
-            </Typography>
-            <Typography variant="h5">
-              <strong>
+              <Typography
+                noWrap
+                variant="subtitle1"
+                align="center"
+                fontWeight="bold"
+                maxWidth={'100%'}
+              >
+                [{slotKey}] <DiscSetName setKey={setKey} />
+              </Typography>
+              <Box
+                sx={(theme) => ({
+                  border: `4px solid ${
+                    theme.palette[discRarityColor[rarity]].main
+                  }`,
+                  borderRadius: '50%',
+                })}
+              >
+                <Box
+                  component="div"
+                  onMouseDown={handleMouseDown as any}
+                  onMouseMove={handleMouseMove as any}
+                  onMouseUp={handleMouseUp as any}
+                  onMouseLeave={handleMouseUp as any}
+                  sx={{
+                    position: 'relative',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    overflow: 'hidden',
+                    borderRadius: '50%',
+                    border: `2px solid black`,
+                  }}
+                >
+                  <Box
+                    component={NextImage ? NextImage : 'img'}
+                    alt="Disc Piece Image"
+                    src={discDefIcon(setKey)}
+                    style={{
+                      transform: `rotate(${rotation}deg)`,
+                    }}
+                    sx={{
+                      width: 'auto',
+                      float: 'right',
+                      height: '150px',
+                      transition: isDragging
+                        ? 'none'
+                        : 'transform 0.1s ease-out',
+                    }}
+                  />
+                  <Box sx={{ height: 0, position: 'absolute', bottom: 30 }}>
+                    <Typography
+                      sx={{
+                        backgroundColor: 'rgba(0,0,0,0.85)',
+                        py: '3px',
+                        px: '30px',
+                        borderRadius: '20px',
+                        fontWeight: 'bold',
+                      }}
+                      variant="h6"
+                    >
+                      {level}
+                    </Typography>
+                  </Box>
+                </Box>
+              </Box>
+              {/* Main stats */}
+            </CardContent>
+          </CardThemed>
+          <Stack spacing={1} sx={{ pt: 1 }}>
+            <Box
+              display="flex"
+              gap={1}
+              alignItems="center"
+              width={'100%'}
+              color={`${discRarityColor[rarity]}.main`}
+            >
+              <Typography
+                variant="subtitle1"
+                noWrap
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  flexGrow: 1,
+                  fontWeight: 'bold',
+                }}
+              >
+                <StatDisplay statKey={mainStatKey} />
+              </Typography>
+              <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
                 {toPercent(
                   getDiscMainStatVal(rarity, mainStatKey, level),
                   mainStatKey
                 ).toFixed(statKeyToFixed(mainStatKey))}
                 {getUnitStr(mainStatKey)}
-              </strong>
-            </Typography>
-          </Box>
-          {substats.map(
-            (substat) =>
-              substat.key && (
-                <React.Fragment key={substat.key}>
-                  <Divider />
-                  <SubstatDisplay substat={substat} rarity={rarity} />
-                </React.Fragment>
-              )
-          )}
-          <Box flexGrow={1} />
-          <Typography color="success.main">
-            {/* TODO: depends on if we swap to using disc set names as card title
-              {(setKey && <DiscSetName setKey={setKey} />) || 'Disc Set'}{' '} */}
-            {/* TODO: requires sheets
-              {setKey && (
-                <InfoTooltipInline
-                  title={<DiscSetTooltipContent setKey={setKey} />}
-                />
-              )} */}
-          </Typography>
+              </Typography>
+            </Box>
+            {substats.map(
+              (substat) =>
+                substat.key && (
+                  <SubstatDisplay
+                    key={substat.key}
+                    substat={substat}
+                    rarity={rarity}
+                  />
+                )
+            )}
+          </Stack>
         </CardContent>
+        <Box flexGrow={1} />
         <Box
           sx={{
             p: 1,
@@ -301,7 +245,7 @@ export function DiscCard({
                 </Button>
               </BootstrapTooltip>
             )}
-            {!!onDelete && (
+            {/* {!!onDelete && (
               <BootstrapTooltip
                 title={lock ? t('cantDeleteLock') : ''}
                 placement="top"
@@ -318,11 +262,11 @@ export function DiscCard({
                   </Button>
                 </span>
               </BootstrapTooltip>
-            )}
+            )} */}
             {extraButtons}
           </Box>
         </Box>
-      </CardThemed>
+      </ZCard>
     </Suspense>
   )
 }
@@ -341,16 +285,18 @@ function SubstatDisplay({
   ).toFixed(statKeyToFixed(key))
   return (
     <Typography
+      variant="subtitle2"
       sx={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
+        fontWeight: 'bold',
       }}
     >
-      <span>
-        <StatDisplay statKey={key} />{' '}
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+        <StatDisplay statKey={key} />
         {upgrades > 1 && <ColorText color="warning">+{upgrades - 1}</ColorText>}
-      </span>
+      </Box>
       <span>
         {displayValue}
         {getUnitStr(key)}
