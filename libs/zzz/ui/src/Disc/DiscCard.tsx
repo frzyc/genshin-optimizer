@@ -139,12 +139,13 @@ export function DiscCard({
                     component={NextImage ? NextImage : 'img'}
                     alt="Disc Piece Image"
                     src={discDefIcon(setKey)}
+                    style={{
+                      transform: `rotate(${rotation}deg)`,
+                    }}
                     sx={{
                       width: 'auto',
-                      height: '90%',
                       float: 'right',
-                      minHeight: '150px',
-                      transform: `rotate(${rotation}deg)`,
+                      height: '150px',
                       transition: isDragging
                         ? 'none'
                         : 'transform 0.1s ease-out',
