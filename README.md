@@ -28,23 +28,23 @@ If you have knowledge in some(or any) of those techonology mentioned above, or a
 
 Last updated Feb 2025
 
-### Genshin Optimizer site https://frzyc.github.io/genshin-optimizer/
+### Genshin Optimizer site <https://frzyc.github.io/genshin-optimizer/>
 
 - New characters and content will continue to be added as Genshin updates
 - ~~Artifact upgrade damage probability calculator - Q1 2024~~
 - ~~Teams + Loadouts - Q2 2024~~
 - ~~Optimal substat solver for TC mode - Q2 2024~~
 
-### Zenless Optimizer(alpha) site https://frzyc.github.io/zenless-optimizer/
+### Zenless Optimizer(alpha) site <https://frzyc.github.io/zenless-optimizer/>
 
 - ~~A (bare-bones) Optimizer for Zenless Zone Zero. Q1 2025~~
-- Pando (New calculation Engine) **TBD**
+- Pando (New calculation engine) **TBD**
 - Team/combo system **TBD**
 - Complete addition of characters/discs/wengines to the system **TBD**
 
 ### SRO - GO but Star Rail
 
-- ~~Pando (New calculation Engine) Q4 2024~~
+- ~~Pando (New calculation engine) Q4 2024~~
 - ~~Team/combo system Q4 2024~~
 - Complete addition of characters/relics/lightcones to the system **TBD**
 
@@ -60,7 +60,7 @@ Last updated Feb 2025
 - User login, saving artifacts/data in the backend
   - Easily sharing character builds (URL)
   - Easily sharing multi-targets
-- New calculation Engine - Pando
+- New calculation engine - Pando
   - Allow for weapon optimization
 - Teams + Loadouts
   - Calculate team damage
@@ -70,10 +70,10 @@ Last updated Feb 2025
 ## Code structure
 
 GO is hosted as a monorepo.
-The Applications are in [/apps](/apps/)
-The dependencies to the apps are in [/libs](/libs/).
+Applications are in [/apps](/apps/)
+Dependencies for the apps can be found in [/libs](/libs/).
 
-For a more interactive and detailed view of the project, run `nx graph`
+For a more interactive and detailed view of the project, run `nx graph`.
 
 ### Applications
 
@@ -85,7 +85,7 @@ For a more interactive and detailed view of the project, run `nx graph`
 
 [`gi-frontend`](/apps/gi-frontend/) - WIP GO frontend - website built using NextJS, MUI, supabase, using the Pando calculation engine.
 
-[`somnia-bot`](/apps/somnia/) - WIP discord bot - built using discord.js, using the Pando Calculation engine.
+[`somnia-bot`](/apps/somnia/) - WIP discord bot - built using discord.js, using the Pando calculation engine.
 
 ### Notable Libs
 
@@ -93,7 +93,7 @@ For a more interactive and detailed view of the project, run `nx graph`
 
 [sr-srod](/libs/sr/srod/) - Interface for the Star Rail Object Description (SROD). An import format for Star Rail scanners.
 
-[gi-wr](libs/gi/wr) - The (now deprecated) Calculation engine for GI.
+[gi-wr](/libs/gi/wr) - The (now deprecated) calculation engine for GI.
 
 [pando](/libs/pando/engine/) - The new Optimizer calculation engine.
 
@@ -101,7 +101,7 @@ For a more interactive and detailed view of the project, run `nx graph`
 
 [sr-formula](/libs/sr/formula/) - The Star Rail implementation of Pando.
 
-[zzz-formula](/libs/zzz/formula/) - The Zennless implementation of Pando.
+[zzz-formula](/libs/zzz/formula/) - The Zenless implementation of Pando.
 
 [gi-stats](/libs/gi/stats/) - Extracted Genshin numbers and values from the datamine, using Optimizer pipeline.
 
@@ -117,7 +117,7 @@ Run `yarn` to install dependencies.
 
 ## Development server
 
-Run `yarn run nx serve {frontend | sr-frontend | zzz-frontend}` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+Run `yarn run nx serve {frontend | sr-frontend | zzz-frontend}` for a dev server. Navigate to <>http://localhost:4200/>. The app will automatically reload if you change any of the source files.
 
 ## Understand this workspace
 
@@ -125,7 +125,7 @@ Run `yarn run nx graph` to see a diagram of the dependencies of the projects.
 
 ## Acknowledgments
 
-✨ The tesseract model used for GO used was trained and provided by the creator of [Inventory Kamera](https://github.com/Andrewthe13th/Inventory_Kamera).
+✨ The tesseract model for GO was trained and provided by the creator of [Inventory Kamera](https://github.com/Andrewthe13th/Inventory_Kamera).
 
 ✨ The creator of Silly Wisher has granted us permission to incorporate their artwork into Silly Optimizer. Silly Wisher [discord](https://discord.com/invite/sillywisher), [App store](https://apps.apple.com/lv/app/silly-wisher/id6444465724https://apps.apple.com/lv/app/silly-wisher/id6444465724), [Google Play](https://play.google.com/store/apps/details?id=com.sketchi.sillywisher)
 
