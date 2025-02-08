@@ -101,7 +101,7 @@ export function Content({ onClose }: { onClose?: () => void }) {
                   level={character.level}
                   ascension={character.ascension}
                   setBoth={(data) => {
-                    if (characterKey.includes('Traveler')) {
+                    if (allTravelerKeys.includes(characterKey)) {
                       allTravelerKeys.forEach((tkey) => {
                         database.chars.set(tkey, data)
                       })
