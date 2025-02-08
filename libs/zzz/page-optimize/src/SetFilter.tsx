@@ -2,9 +2,11 @@ import { useBoolState } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   DropdownButton,
+  ImgIcon,
   ModalWrapper,
 } from '@genshin-optimizer/common/ui'
 import { toggleInArr } from '@genshin-optimizer/common/util'
+import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { allDiscSetKeys } from '@genshin-optimizer/zzz/consts'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
@@ -211,7 +213,10 @@ function AdvSetFilterDiscCard({ setKey }: { setKey: DiscSetKey }) {
   } = character ?? {}
   return (
     <CardThemed bgt="light">
-      <CardHeader title={<DiscSetName setKey={setKey} />} />
+      <CardHeader
+        title={<DiscSetName setKey={setKey} />}
+        avatar={<ImgIcon src={discDefIcon(setKey)} size={2} />}
+      />
       <ButtonGroup fullWidth>
         <Button
           color={

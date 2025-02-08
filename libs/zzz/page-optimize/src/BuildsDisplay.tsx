@@ -6,8 +6,16 @@ import { useDatabaseContext, useDisc } from '@genshin-optimizer/zzz/db-ui'
 import type { BuildResult } from '@genshin-optimizer/zzz/solver'
 import { applyCalc, convertDiscToStats } from '@genshin-optimizer/zzz/solver'
 import { DiscCard } from '@genshin-optimizer/zzz/ui'
-import { Box, Button, CardContent, Stack, Typography } from '@mui/material'
+import {
+  Box,
+  Button,
+  CardContent,
+  Grid,
+  Stack,
+  Typography,
+} from '@mui/material'
 import { useCallback, useMemo } from 'react'
+import { useCharacterContext } from './CharacterContext'
 import { StatsDisplay } from './StatsDisplay'
 
 export function BuildsDisplay({
@@ -46,16 +54,18 @@ function Build({
   baseStats: Stats
 }) {
   const { database } = useDatabaseContext()
+  const character = useCharacterContext()
   const sum = useMemo(
     () =>
       applyCalc(
         baseStats,
+        character?.conditionals ?? {},
         Object.values(build.discIds)
           .map((d) => database.discs.get(d))
           .filter(notEmpty)
           .map(convertDiscToStats)
       ),
-    [baseStats, build.discIds, database.discs]
+    [baseStats, build.discIds, character, database.discs]
   )
   const onEquip = useCallback(() => {
     Object.values(build.discIds).forEach((dId) => {
@@ -78,10 +88,18 @@ function Build({
           </Button>
         </Box>
         <StatsDisplay stats={sum} />
-        <Box display="flex" gap={1}>
-          {Object.values(build.discIds).map((dId) => (
-            <DiscCardWrapper discId={dId} key={dId} />
-          ))}
+        <Box>
+          <Grid
+            container
+            spacing={1}
+            columns={{ xs: 2, sm: 3, md: 3, lg: 4, xl: 6 }}
+          >
+            {Object.values(build.discIds).map((dId) => (
+              <Grid item key={dId} xs={1}>
+                <DiscCardWrapper discId={dId} key={dId} />
+              </Grid>
+            ))}
+          </Grid>
         </Box>
       </CardContent>
     </CardThemed>

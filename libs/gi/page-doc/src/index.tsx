@@ -205,38 +205,22 @@ function Overview() {
         As of version 6.0.0, Genshin Optimizer's database export conforms to
         this format.
       </Typography>
-      <CardThemed>
-        <CardContent>
-          <CodeBlock text={goodCode} />
-        </CardContent>
-      </CardThemed>
+      <CodeBlock text={goodCode} />
       <br />
       <Typography gutterBottom variant="h4">
         Artifact data representation
       </Typography>
-      <CardThemed>
-        <CardContent>
-          <CodeBlock text={artifactCode} />
-        </CardContent>
-      </CardThemed>
+      <CodeBlock text={artifactCode} />
       <br />
       <Typography gutterBottom variant="h4">
         Weapon data representation
       </Typography>
-      <CardThemed>
-        <CardContent>
-          <CodeBlock text={weaponCode} />
-        </CardContent>
-      </CardThemed>
+      <CodeBlock text={weaponCode} />
       <br />
       <Typography gutterBottom variant="h4">
         Character data representation
       </Typography>
-      <CardThemed>
-        <CardContent>
-          <CodeBlock text={characterCode} />
-        </CardContent>
-      </CardThemed>
+      <CodeBlock text={characterCode} />
     </>
   )
 }
@@ -312,11 +296,7 @@ function StatKeyPane() {
       <Typography gutterBottom variant="h4">
         StatKey
       </Typography>
-      <CardThemed>
-        <CardContent>
-          <CodeBlock text={statKeysCode} />
-        </CardContent>
-      </CardThemed>
+      <CodeBlock text={statKeysCode} />
     </>
   )
 }
@@ -333,11 +313,7 @@ function ArtifactSetKeyPane() {
       <Typography gutterBottom variant="h4">
         ArtifactSetKey
       </Typography>
-      <CardThemed>
-        <CardContent>
-          <CodeBlock text={artSetKeysCode} />
-        </CardContent>
-      </CardThemed>
+      <CodeBlock text={artSetKeysCode} />
     </>
   )
 }
@@ -364,11 +340,7 @@ function CharacterKeyPane() {
       <Typography gutterBottom variant="h4">
         CharacterKey
       </Typography>
-      <CardThemed>
-        <CardContent>
-          <CodeBlock text={charKeysCode} />
-        </CardContent>
-      </CardThemed>
+      <CodeBlock text={charKeysCode} />
     </>
   )
 }
@@ -383,11 +355,7 @@ function WeaponKeyPane() {
       <Typography gutterBottom variant="h4">
         WeaponKey
       </Typography>
-      <CardThemed>
-        <CardContent>
-          <CodeBlock text={weaponKeysCode} />
-        </CardContent>
-      </CardThemed>
+      <CodeBlock text={weaponKeysCode} />
     </>
   )
 }
@@ -402,19 +370,15 @@ function MaterialKeyPane() {
       <Typography gutterBottom variant="h4">
         MaterialKey
       </Typography>
-      <CardThemed>
-        <CardContent>
-          <Typography gutterBottom>
-            The item names are taken from the english translation, and then
-            converted into{' '}
-            <MuiLink component={Link} to="KeyNaming">
-              <code>PascalCase</code>
-            </MuiLink>
-            .
-          </Typography>
-          <CodeBlock text={weaponKeysCode} />
-        </CardContent>
-      </CardThemed>
+      <Typography gutterBottom>
+        The item names are taken from the english translation, and then
+        converted into{' '}
+        <MuiLink component={Link} to="KeyNaming">
+          <code>PascalCase</code>
+        </MuiLink>
+        .
+      </Typography>
+      <CodeBlock text={weaponKeysCode} />
     </>
   )
 }

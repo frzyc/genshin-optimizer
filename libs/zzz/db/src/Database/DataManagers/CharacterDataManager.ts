@@ -7,6 +7,7 @@ import {
 } from '@genshin-optimizer/common/util'
 import type {
   CharacterKey,
+  CondKey,
   DiscMainStatKey,
   DiscSetKey,
   FormulaKey,
@@ -42,6 +43,7 @@ export type CharacterData = {
   levelHigh: number
   setFilter2: DiscSetKey[]
   setFilter4: DiscSetKey[]
+  conditionals: Partial<Record<CondKey, number>>
 }
 
 function initialCharacterData(key: CharacterKey): CharacterData {
@@ -65,6 +67,7 @@ function initialCharacterData(key: CharacterKey): CharacterData {
     levelHigh: 15,
     setFilter2: [],
     setFilter4: [],
+    conditionals: {},
   }
 }
 export class CharacterDataManager extends DataManager<
@@ -95,6 +98,7 @@ export class CharacterDataManager extends DataManager<
       levelHigh,
       setFilter2,
       setFilter4,
+      conditionals,
     } = obj as CharacterData
 
     if (!allCharacterKeys.includes(characterKey)) return undefined // non-recoverable
@@ -154,6 +158,9 @@ export class CharacterDataManager extends DataManager<
     setFilter2 = validateArr(setFilter2, allDiscSetKeys, [])
     setFilter4 = validateArr(setFilter4, allDiscSetKeys, [])
 
+    if (typeof conditionals !== 'object') conditionals = {}
+    conditionals = objFilter(conditionals, (value) => typeof value === 'number')
+
     const char: CharacterData = {
       key: characterKey,
       level,
@@ -171,6 +178,7 @@ export class CharacterDataManager extends DataManager<
       levelHigh,
       setFilter2,
       setFilter4,
+      conditionals,
     }
     return char
   }

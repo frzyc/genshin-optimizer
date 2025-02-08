@@ -1,5 +1,7 @@
+import { iconInlineProps } from '@genshin-optimizer/common/svgicons'
 import { getUnitStr } from '@genshin-optimizer/common/util'
 import { statKeyTextMap, type StatKey } from '@genshin-optimizer/zzz/consts'
+import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import { Box } from '@mui/material'
 
 export function StatDisplay({
@@ -22,9 +24,9 @@ export function StatDisplay({
   if (disableIcon) return text
   return (
     <Box component="span" display="inline-flex" alignItems="center" gap={1}>
-      {/* {!disableIcon && (
+      {!disableIcon && (
         <StatIcon statKey={statKey} iconProps={iconInlineProps} />
-      )} */}
+      )}
       {text}
     </Box>
   )

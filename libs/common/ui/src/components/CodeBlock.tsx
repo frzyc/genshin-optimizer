@@ -1,27 +1,7 @@
 'use client'
 import { Box, styled } from '@mui/material'
 
-type LineNumberProps = {
-  digits?: number
-}
-const LineNumber = styled('textarea')<LineNumberProps>(
-  ({ theme, digits = 2 }) => ({
-    width: `${digits}em`,
-    overflow: 'hidden',
-    userSelect: 'none',
-    color: theme.palette.text.secondary,
-    resize: 'none',
-    border: 'none',
-    whiteSpace: 'pre',
-    fontFamily: 'monospace',
-    lineHeight: 1,
-    '&:disabled': {
-      backgroundColor: 'transparent',
-    },
-  })
-)
-
-const CodeArea = styled('textarea')(({ theme }) => ({
+const CodeArea = styled('code')(({ theme }) => ({
   '&:disabled': {
     backgroundColor: 'transparent',
   },
@@ -30,38 +10,48 @@ const CodeArea = styled('textarea')(({ theme }) => ({
   overflowY: 'auto',
   overflowX: 'auto',
   fontFamily: 'monospace',
+  fontSize: '80%',
   border: 'none',
-  // padding: 1em;
-  whiteSpace: 'pre',
+  padding: '1em',
+  whiteSpace: 'pre-wrap',
   backgroundColor: 'transparent',
   resize: 'none',
   color: theme.palette.info.light,
+  background: theme.palette.contentDark.main,
+  'p::before': {
+    content: 'counter(lineNumber)',
+    width: '2.5em',
+    textAlign: 'right',
+    display: 'inline-block',
+    paddingRight: '1em',
+    opacity: 0.5,
+    color: 'white',
+  },
 }))
 
 export function CodeBlock({ text }: { text: string }) {
-  const lines = text.split(/\r\n|\r|\n/).length + 1
-  const lineNums = Array.from(Array(lines).keys())
-    .map((i) => i + 1)
-    .join('\n')
+  const lines = text.split(/\r\n|\r|\n/)
 
   return (
-    <Box display="flex" flexDirection="row">
-      <LineNumber
-        disabled={true}
-        spellCheck="false"
-        aria-label="Code Sample"
-        sx={{ height: `${lines + 1}em` }}
-        value={lineNums}
-        unselectable="on"
-        digits={lines.toString().length}
-      />
-      <CodeArea
-        sx={{ flexGrow: 1, height: `${lines + 1}em` }}
-        disabled={true}
-        spellCheck="false"
-        aria-label="Code Sample"
-        value={text}
-      />
+    <Box display="flex" flexDirection="row" p={1}>
+      <CodeArea spellCheck="false" aria-label="Code Sample">
+        {lines.map((l) => {
+          const numSpaces = l.search(/\S/)
+          return (
+            <p
+              style={{
+                counterIncrement: 'lineNumber',
+                margin: 0,
+                // Makes it so wrapped lines start with some amount of indentation
+                paddingLeft: `${numSpaces * 7.5 + 20}px`,
+                textIndent: `-${numSpaces * 7.5 + 20}px`,
+              }}
+            >
+              {l}
+            </p>
+          )
+        })}
+      </CodeArea>
     </Box>
   )
 }

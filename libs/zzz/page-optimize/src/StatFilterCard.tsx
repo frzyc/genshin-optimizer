@@ -9,9 +9,9 @@ import type { DiscSetKey, StatKey } from '@genshin-optimizer/zzz/consts'
 import {
   allAttributeDamageKeys,
   allDiscSetKeys,
-  statKeyTextMap,
 } from '@genshin-optimizer/zzz/consts'
 import type { Constraints } from '@genshin-optimizer/zzz/db'
+import { StatDisplay } from '@genshin-optimizer/zzz/ui'
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import {
   Box,
@@ -83,7 +83,7 @@ export function StatFilterCard({
                     }
                     inputProps={{ sx: { textAlign: 'right' } }}
                     InputProps={{
-                      startAdornment: key,
+                      startAdornment: <StatDisplay statKey={key as StatKey} />,
                       endAdornment: getUnitStr(key),
                     }}
                   />
@@ -122,7 +122,7 @@ export function StatFilterCard({
                       })
                     }
                   >
-                    {statKeyTextMap[key] ?? key}
+                    <StatDisplay statKey={key as StatKey} />
                   </MenuItem>
                 ))}
             </DropdownButton>

@@ -17,7 +17,7 @@ import {
 } from '@genshin-optimizer/zzz/consts'
 import type { IDisc } from '@genshin-optimizer/zzz/db'
 import {
-  validateDisc,
+  validateDiscBasedOnRarity,
   type ICachedDisc,
   type ISubstat,
 } from '@genshin-optimizer/zzz/db'
@@ -34,6 +34,7 @@ import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
 import ReplayIcon from '@mui/icons-material/Replay'
 import UpdateIcon from '@mui/icons-material/Update'
 import {
+  Alert,
   Box,
   Button,
   ButtonGroup,
@@ -79,29 +80,62 @@ const InputInvis = styled('input')({
 interface DiscReducerState {
   disc: Partial<ICachedDisc>
   validatedDisc?: IDisc
+  errors?: string[]
 }
-function reducer(state: DiscReducerState, action: Partial<ICachedDisc>) {
+function handleSubstats(
+  index: number,
+  substat: ISubstat | undefined,
+  disc: Partial<ICachedDisc>
+): ISubstat[] {
+  const substats = [...(disc.substats || [])]
+  if (substat) {
+    const oldIndex = substat?.key
+      ? substats.findIndex((current) => current.key === substat.key)
+      : -1
+    if (oldIndex === -1 || oldIndex === index) substats[index] = substat
+    // Already in used, swap the items instead
+    else
+      [substats[index], substats[oldIndex]] = [
+        substats[oldIndex],
+        substats[index],
+      ]
+
+    if (oldIndex !== -1 && substats[oldIndex] === undefined) {
+      substats.splice(oldIndex, 1)
+    }
+  } else {
+    substats.splice(index, 1)
+  }
+
+  return substats
+}
+function reducer(
+  state: DiscReducerState,
+  action: Partial<ICachedDisc>
+): DiscReducerState {
   if (!action || Object.keys(action).length === 0)
     return {
       disc: {} as Partial<ICachedDisc>,
     }
   const disc = { ...state.disc, ...action }
-  const validatedDisc = validateDisc(disc)
+  const { validatedDisc, errors } = validateDiscBasedOnRarity(disc)
 
   return {
     // Combine because validatedDisc:IDisc is missing the `id` field in ICachedDisc
     disc: { ...disc, ...(validatedDisc || {}) } as Partial<ICachedDisc>,
     validatedDisc,
+    errors,
   }
 }
 function useDiscValidation(discFromProp: Partial<ICachedDisc>) {
-  const [{ disc, validatedDisc }, setDisc] = useReducer(reducer, {
+  const [{ disc, validatedDisc, errors }, setDisc] = useReducer(reducer, {
     disc: discFromProp,
     validatedDisc: undefined,
+    errors: [],
   })
   useEffect(() => setDisc(discFromProp), [discFromProp])
 
-  return { disc, validatedDisc, setDisc }
+  return { disc, validatedDisc, errors, setDisc }
 }
 export function DiscEditor({
   disc: discFromProp,
@@ -126,7 +160,8 @@ export function DiscEditor({
   const { t: tk } = useTranslation(['discs_gen', 'statKey_gen'])
 
   const { database } = useDatabaseContext()
-  const { disc, validatedDisc, setDisc } = useDiscValidation(discFromProp)
+  const { disc, validatedDisc, setDisc, errors } =
+    useDiscValidation(discFromProp)
   const {
     prev,
     prevEditType,
@@ -163,9 +198,8 @@ export function DiscEditor({
 
   const setSubstat = useCallback(
     (index: number, substat?: ISubstat) => {
-      const substats = [...(disc.substats || [])]
-      if (substat) substats[index] = substat
-      else substats.filter((_, i) => i !== index)
+      const substats = handleSubstats(index, substat, disc)
+
       setDisc({ substats })
     },
     [disc, setDisc]
@@ -184,7 +218,7 @@ export function DiscEditor({
     },
     [t, disc, onClose, reset]
   )
-
+  const isValid = !errors?.length
   const theme = useTheme()
   const grmd = useMediaQuery(theme.breakpoints.up('md'))
   const removeId = disc?.id || prev?.id
@@ -301,7 +335,6 @@ export function DiscEditor({
                     disabled={!disc.mainStatKey || !!disc.id}
                   />
                 </Box>
-
                 {/* level */}
                 <Box component="div" display="flex">
                   <TextField
@@ -345,7 +378,6 @@ export function DiscEditor({
                     </Button>
                   </ButtonGroup>
                 </Box>
-
                 {/* slot */}
                 <Box component="div" display="flex">
                   <DropdownButton
@@ -381,7 +413,6 @@ export function DiscEditor({
                     </Suspense>
                   </CardThemed>
                 </Box>
-
                 {/* main stat */}
                 <Box component="div" display="flex" gap={1}>
                   <DiscMainStatDropdown
@@ -590,7 +621,14 @@ export function DiscEditor({
                 </Grid>
               </Grid>
             )}
-
+            {/* Error alert */}
+            {!isValid && (
+              <Alert variant="filled" severity="error">
+                {errors?.map((e, i) => (
+                  <div key={i}>{e}</div>
+                ))}
+              </Alert>
+            )}
             {/* Buttons */}
             <Box display="flex" gap={2}>
               {prevEditType === 'edit' && prev?.id ? (
@@ -600,7 +638,7 @@ export function DiscEditor({
                     disc && database.discs.set(prev.id, disc)
                     reset()
                   }}
-                  disabled={!validatedDisc}
+                  disabled={!validatedDisc || !isValid}
                   color="primary"
                 >
                   {t('editor.btnSave')}
@@ -613,7 +651,7 @@ export function DiscEditor({
                     database.discs.new(validatedDisc)
                     reset()
                   }}
-                  disabled={!validatedDisc}
+                  disabled={!validatedDisc || !isValid}
                   color={prevEditType === 'duplicate' ? 'warning' : 'primary'}
                 >
                   {t('editor.btnAdd')}
@@ -639,7 +677,7 @@ export function DiscEditor({
                     database.discs.set(prev.id, validatedDisc)
                     reset()
                   }}
-                  disabled={!validatedDisc}
+                  disabled={!isValid}
                   color="success"
                 >
                   {t('editor.btnUpdate')}

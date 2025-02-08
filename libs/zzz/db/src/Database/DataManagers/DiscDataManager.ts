@@ -12,6 +12,8 @@ import {
   allDiscSubStatKeys,
   discMaxLevel,
   discSlotToMainStatKeys,
+  discSubstatRollData,
+  statKeyTextMap,
 } from '@genshin-optimizer/zzz/consts'
 import type {
   ICachedDisc,
@@ -22,7 +24,6 @@ import type { IDisc, ISubstat } from '../../Interfaces/IDisc'
 import { DataManager } from '../DataManager'
 import type { ZzzDatabase } from '../Database'
 import type { ImportResult } from '../exim'
-
 export class DiscDataManager extends DataManager<
   string,
   'discs',
@@ -287,8 +288,8 @@ export class DiscDataManager extends DataManager<
         (candidate) =>
           level === candidate.level &&
           substats.every(
-            (substat) =>
-              !substat.key || // Empty slot
+            (substat, i) =>
+              substat.key === candidate.substats[i]?.key &&
               candidate.substats.some(
                 (candidateSubstat) =>
                   substat.key === candidateSubstat.key && // Or same slot
@@ -352,6 +353,50 @@ export function validateDisc(
     lock,
     trash,
   }
+}
+
+export function validateDiscBasedOnRarity(disc: Partial<ICachedDisc>) {
+  const errors = []
+  let { rarity, level, substats } = disc
+  const validatedDisc = validateDisc(disc)
+
+  rarity = rarity ? rarity : allDiscRarityKeys[0]
+  level = level ? level : 0
+  substats = substats ? substats : []
+  const minSubstats = rarity === allDiscRarityKeys[0] ? 3 : 2
+
+  if (substats && substats.length >= minSubstats) {
+    const totalUpgrades = substats.reduce((sum, item) => sum + item.upgrades, 0)
+    const { low, high } = discSubstatRollData[rarity]
+    const lowerBound = low + Math.floor(level / 3)
+    const upperBound = high + Math.floor(level / 3)
+
+    if (totalUpgrades > upperBound)
+      errors.push(
+        `${rarity}-star artifact (level ${level}) should have no more than ${upperBound} upgrades. It currently has ${totalUpgrades} upgrades.`
+      )
+    else if (totalUpgrades < lowerBound)
+      errors.push(
+        `${rarity}-star artifact (level ${level}) should have at least ${lowerBound} upgrades. It currently has ${totalUpgrades} upgrades.`
+      )
+  } else {
+    errors.push(
+      `${rarity}-rank disc (level ${level}) should have at least ${minSubstats} substats. It currently has ${substats?.length} substats.`
+    )
+  }
+
+  if (substats.length < 4) {
+    const substat = substats.find((substat) => (substat.upgrades ?? 0) > 1)
+    if (substat)
+      errors.push(
+        `Substat ${
+          statKeyTextMap[substat.key as keyof typeof statKeyTextMap] ??
+          substat.key
+        } has > 1 upgrade, but not all substats are unlocked.`
+      )
+  }
+
+  return { validatedDisc, errors }
 }
 
 function parseSubstats(

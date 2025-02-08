@@ -1,4 +1,5 @@
 import { GeneralAutocompleteMulti, ImgIcon } from '@genshin-optimizer/common/ui'
+import { discDefIcon } from '@genshin-optimizer/zzz/assets'
 import type { DiscRarityKey, DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { allDiscRarityKeys } from '@genshin-optimizer/zzz/consts'
 import { setKeysByRarities } from '@genshin-optimizer/zzz/util'
@@ -20,7 +21,11 @@ export function DiscSetMultiAutocomplete({
 }) {
   const { t } = useTranslation(['disc', 'discNames_gen'])
 
-  const toImg = useCallback(() => <ImgIcon src={''} size={3} />, [])
+  const toImg = useCallback(
+    (key: DiscSetKey | '') =>
+      key ? <ImgIcon src={discDefIcon(key)} size={2} /> : undefined,
+    []
+  )
   const toExLabel = useCallback(
     (key: DiscSetKey) => <strong>{totals[key]}</strong>,
     [totals]
