@@ -1,12 +1,10 @@
 import type { AnyNode, NumNode, OP as TaggedOP } from '../node'
 import { calculation, constant, mapBottomUp, max, min, traverse } from '../node'
 import { assertUnreachable } from '../util'
-import { combineConst } from './simplify'
 type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
 const { arithmetic, branching } = calculation
 
 type Component = Record<string, number>
-type Builds = Component[][]
 type Monotonicity = { inc: boolean; dec: boolean }
 type Range = { min: number; max: number }
 
@@ -20,34 +18,83 @@ export type CustomInfo = {
 }
 export const customInfo: Record<string, CustomInfo> = {}
 
-export function prune<I extends OP>(
+export function prune<I extends OP, C extends Component>(
   nodes: NumNode<I>[],
-  builds: Builds,
+  builds: C[][],
   cat: string,
   minimum: number[],
   _keepTop: number
-): { nodes: NumNode<I>[]; builds: Builds } {
-  while (true) {
-    const oldNodes = nodes
-    const oldBuilds = builds
-
-    let compRanges = builds.map(getCompRanges)
-    nodes = pruneBranches(nodes, getNodeRanges(nodes, cat, compRanges))
-    compRanges = builds.map(getCompRanges)
-    pruneCompRange(builds, nodes, minimum, cat, compRanges)
-    nodes = combineConst(nodes)
-
-    if (oldNodes === nodes && oldBuilds == builds) break
+): { nodes: NumNode<I>[]; builds: Omit<C, string>[][] } {
+  const state = new State(nodes, builds, cat)
+  while (state.progress) {
+    state.progress = false
+    pruneBranches(state)
+    pruneCompRange(state, minimum)
   }
-  return { nodes, builds }
+  return { nodes: state.nodes, builds: state.builds }
+}
+
+class State<I extends OP, C extends Component> {
+  nodes: NumNode<I>[]
+  builds: Omit<C, string>[][]
+  cat: string
+
+  progress = true
+  _compRanges: CompRanges | undefined
+  _nodeRanges: NodeRanges | undefined
+  _monotonicities: Monotonicities | undefined
+
+  constructor(nodes: NumNode<I>[], builds: C[][], cat: string) {
+    this.nodes = nodes
+    this.builds = builds
+    this.cat = cat
+  }
+
+  setNodes(nodes: NumNode<I>[]) {
+    if (this.nodes === nodes) return
+    this.progress = true
+    this.nodes = nodes
+    this._nodeRanges = undefined
+    this._monotonicities = undefined
+  }
+
+  setBuilds(builds: Omit<C, string>[][], compRanges: CompRanges | undefined) {
+    if (this.builds === builds) return
+    this.progress = true
+    this.builds = builds
+    this._compRanges = compRanges
+    this._nodeRanges = undefined
+    this._monotonicities = undefined
+  }
+
+  get compRanges(): CompRanges {
+    this._compRanges ??= this.builds.map(computeCompRanges)
+    return this._compRanges
+  }
+
+  get nodeRanges(): NodeRanges {
+    this._nodeRanges ??= computeNodeRanges(
+      this.nodes,
+      this.cat,
+      this.compRanges
+    )
+    return this._nodeRanges
+  }
+
+  get monotonicities(): Monotonicities {
+    this._monotonicities ??= _getMonotonicities(
+      this.nodes,
+      this.cat,
+      this.nodeRanges
+    )
+    return this._monotonicities
+  }
 }
 
 /** Remove branches that are never chosen */
-function pruneBranches<I extends OP>(
-  n: NumNode<I>[],
-  ranges: NodeRanges
-): NumNode<I>[] {
-  return mapBottomUp(n, (n, o) => {
+function pruneBranches(state: State<OP, Component>) {
+  const { nodes, nodeRanges: ranges } = state
+  const result = mapBottomUp(nodes, (n, o) => {
     {
       const { min, max } = ranges.get(o)!
       if (min === max) return o.op === 'const' ? n : constant(min)
@@ -63,14 +110,14 @@ function pruneBranches<I extends OP>(
         const threshold = ranges.get(o)!.max
         const x = n.x.filter((_, i) => ranges.get(o.x[i])!.min <= threshold)
         if (x.length === 1) return x[0]
-        if (x.length !== n.x.length) return min(...(x as any)) as NumNode<I>
+        if (x.length !== n.x.length) return min(...(x as any)) as NumNode<OP>
         break
       }
       case 'max': {
         const threshold = ranges.get(o)!.min
         const x = n.x.filter((_, i) => ranges.get(o.x[i])!.max >= threshold)
         if (x.length === 1) return x[0]
-        if (x.length !== n.x.length) return max(...(x as any)) as NumNode<I>
+        if (x.length !== n.x.length) return max(...(x as any)) as NumNode<OP>
         break
       }
       case 'match':
@@ -86,40 +133,31 @@ function pruneBranches<I extends OP>(
     }
     return n
   })
+  state.setNodes(result)
 }
 
 /** Remove components that do not meet the `minimum` requirements in any builds */
-function pruneCompRange<C extends Component>(
-  builds: C[][],
-  nodes: NumNode<OP>[],
-  minimum: number[],
-  cat: string,
-  compRanges: CompRanges | undefined
-): C[][] {
-  const old = builds
-  builds = [...builds]
-  compRanges ??= builds.map(getCompRanges)
-  let progress = true
-  while (progress) {
-    progress = false
-    builds.forEach((comp, i) => {
-      const new_comp = comp.filter((c) => {
-        compRanges[i] = getCompRanges([c])
-        const ranges = getNodeRanges(nodes, cat, compRanges)
-        return nodes.some((n, i) => ranges.get(n)!.max >= minimum[i])
-      })
-      if (new_comp.length != comp.length) {
-        builds[i] = new_comp
-        compRanges[i] = getCompRanges(new_comp)
-        progress = true
-      }
+function pruneCompRange(state: State<OP, Component>, minimum: number[]) {
+  const { nodes, cat } = state
+  let builds = [...state.builds]
+  let compRanges = [...state.compRanges]
+
+  builds.forEach((comp, i) => {
+    const new_comp = comp.filter((c) => {
+      compRanges[i] = computeCompRanges([c])
+      const ranges = computeNodeRanges(nodes, cat, compRanges)
+      return nodes.some((n, i) => ranges.get(n)!.max >= minimum[i])
     })
-  }
-  return old.every((c, i) => c.length === builds[i].length) ? old : builds
+    if (new_comp.length != comp.length) {
+      builds[i] = new_comp
+      compRanges[i] = computeCompRanges(new_comp)
+      state.setBuilds(builds, compRanges)
+    }
+  })
 }
 
 /** Get range assuming any item in `comp` can be selected */
-function getCompRanges(comp: Component[]): CompRanges[number] {
+function computeCompRanges(comp: Component[]): CompRanges[number] {
   const iter = comp.values()
   const first: Component = iter.next().value
   if (!first) return {}
@@ -137,7 +175,7 @@ function getCompRanges(comp: Component[]): CompRanges[number] {
 }
 
 /** Get possible ranges of each node */
-function getNodeRanges(
+function computeNodeRanges(
   n: AnyNode<OP>[],
   cat: string,
   compRanges: CompRanges
