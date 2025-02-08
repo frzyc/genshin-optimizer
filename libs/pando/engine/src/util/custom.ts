@@ -1,8 +1,8 @@
 /**
- * Whether the function is increasing/decreasing w.r.t. to an argument.
- * Setting both to `true` means that the function is increasing in some
- * regions, and decreasing in another. Setting both to `false` means
- * altering the argument does not change the value of the function.
+ * Whether the function is `inc`reasing/`dec`reasing w.r.t. to an argument.
+ * Note that both `inc` and `dec` means the the function is constant w.r.t.
+ * the argument, while neither means that the argument affects the function
+ * result non-monotonically.
  */
 export type Monotonicity = { inc: boolean; dec: boolean }
 export type Range = { min: number; max: number }
@@ -10,7 +10,7 @@ export type Range = { min: number; max: number }
 export type CustomInfo = {
   /** Given a range of each arguments, returns the range of the result */
   range: (r: Range[]) => Range
-  /** Given the range of the arguments, returns whether the function is increasing/decreasing w.r.t. to each argument */
+  /** Given the arguments ranges, returns the monotonicity w.r.t. each argument */
   monotonicity: (r: Range[]) => Monotonicity[]
   /**
    * Actual computation of the custom node. `calc.toString` must be a valid
