@@ -15,7 +15,7 @@ import {
 import { Box, CardContent, Grid, Skeleton, TextField } from '@mui/material'
 import { t } from 'i18next'
 import { Suspense, useMemo } from 'react'
-const columns = { xs: 1, sm: 2, md: 3, lg: 4, xl: 3 }
+const columns = { xs: 1, sm: 1, md: 1, lg: 2, xl: 3 }
 
 export default function PageCharacters() {
   const { database } = useDatabaseContext()

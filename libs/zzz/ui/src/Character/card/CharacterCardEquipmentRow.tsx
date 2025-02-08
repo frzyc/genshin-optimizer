@@ -1,52 +1,67 @@
-import { CardThemed, NextImage } from '@genshin-optimizer/common/ui'
+import { NextImage } from '@genshin-optimizer/common/ui'
 import {
   characterAsset,
   commonDefImages,
   discDefIcon,
 } from '@genshin-optimizer/zzz/assets'
-import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
-import { allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
+import type { CharacterKey, DiscSlotKey } from '@genshin-optimizer/zzz/consts'
+import { allDiscSlotKeys, discRarityColor } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { Box, Grid, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 
+const commonStyles = {
+  position: 'absolute',
+  borderRadius: '50%',
+  width: '34px',
+  height: '34px',
+}
 const stylesMap = {
   '1': {
-    top: '3px',
-    left: '16px',
-    padding: '4px 4px 4px 14px',
-    position: 'absolute',
+    top: '5px',
+    left: '29px',
+    ...commonStyles,
   },
   '2': {
-    top: '40px',
-    left: '-4px',
-    padding: '4px 4px 4px 14px',
-    position: 'absolute',
+    top: '42px',
+    left: '10px',
+    ...commonStyles,
   },
   '3': {
-    top: '80px',
-    left: '16px',
-    padding: '4px 4px 4px 14px',
-    position: 'absolute',
+    top: '81px',
+    left: '29px',
+    ...commonStyles,
   },
   '4': {
-    top: '80px',
-    left: '73px',
-    padding: '4px 4px 4px 14px',
-    position: 'absolute',
+    top: '81px',
+    left: '84px',
+    ...commonStyles,
   },
   '5': {
-    top: '40px',
-    left: '91px',
-    padding: '4px 4px 4px 14px',
-    position: 'absolute',
+    top: '42px',
+    left: '103px',
+    ...commonStyles,
   },
   '6': {
-    top: '3px',
-    left: '72px',
-    padding: '4px 4px 4px 14px',
-    position: 'absolute',
+    top: '5px',
+    left: '84px',
+    ...commonStyles,
   },
+}
+
+type DiscStyles = {
+  position: string
+  borderRadius: string
+  width: string
+  height: string
+  top: string
+  left: string
+}
+
+type DiscInfo = {
+  key: DiscSlotKey
+  styles: DiscStyles
+  disc: ICachedDisc
 }
 
 export function CharacterCardEquipmentRow({
@@ -59,41 +74,34 @@ export function CharacterCardEquipmentRow({
     (disc) => disc.location === characterKey
   )
   return (
-    <Box>
-      <Grid
-        spacing={1}
-        sx={{
-          position: 'relative',
-        }}
-      >
-        <Box
-          flexShrink={1}
-          component={NextImage ? NextImage : 'img'}
-          src={characterAsset(characterKey, 'iconGacha')}
-          sx={{ maxWidth: '70%' }}
-          position="absolute"
-          zIndex={0}
-          left="-83px"
-        />
+    <Box
+      sx={{
+        position: 'relative',
+      }}
+    >
+      <Box
+        flexShrink={1}
+        component={NextImage ? NextImage : 'img'}
+        src={characterAsset(characterKey, 'iconGacha')}
+        sx={{ maxWidth: '100%' }}
+        position="absolute"
+        zIndex={0}
+        left="-83px"
+        top="15px"
+      />
 
-        <Discs discs={getCharacterDiscs} />
-      </Grid>
+      <Discs discs={getCharacterDiscs} />
     </Box>
   )
 }
 function Discs({ discs }: { discs: ICachedDisc[] }) {
-  const mappedDiscs: Array<[any, ICachedDisc | undefined]> =
-    allDiscSlotKeys.map((k) => {
-      const sxStyles = stylesMap[k] || {}
-
-      return [
-        { key: k, sxStyles },
-        discs.find((disc: ICachedDisc) => disc.slotKey === k),
-      ]
-    })
+  const mappedDiscs: DiscInfo[] = allDiscSlotKeys.map((slotKey) => ({
+    key: slotKey,
+    styles: stylesMap[slotKey] || {},
+    disc: discs.find((disc) => disc.slotKey === slotKey) as ICachedDisc,
+  }))
   return (
-    <Grid
-      xs={1}
+    <Box
       sx={{
         position: 'absolute',
         width: '147px',
@@ -106,50 +114,50 @@ function Discs({ discs }: { discs: ICachedDisc[] }) {
         transform: 'scale(1.96)',
       }}
     >
-      {mappedDiscs.map(([key, disc]: [any, ICachedDisc | undefined]) => (
-        <Grid item key={key.key} xs={1} sx={key.sxStyles}>
-          {disc && (
-            <CardThemed
-              sx={{
-                background: 'none',
-              }}
+      {mappedDiscs.map((discInfo: DiscInfo) => (
+        <Box>
+          {discInfo.disc && (
+            <Box
+              sx={(theme) => ({
+                border: `2px solid ${
+                  theme.palette[discRarityColor[discInfo.disc.rarity]]?.main
+                }`,
+                ...discInfo.styles,
+              })}
             >
-              <Box>
+              <Box
+                width="30px"
+                height="30px"
+                display="flex"
+                justifyContent="center"
+              >
                 <Box
                   component={NextImage ? NextImage : 'img'}
-                  src={discDefIcon(disc?.setKey)}
-                  maxWidth="100%"
-                  maxHeight="100%"
+                  src={discDefIcon(discInfo.disc?.setKey)}
+                  width="30px"
+                  height="30px"
                 />
-                <Typography
-                  sx={{
-                    position: 'absolute',
-                    fontSize: '0.45rem',
-                    lineHeight: 1,
-                    p: 0.25,
-                    bottom: 8,
-                    right: 13,
-                    zIndex: 10,
-                  }}
-                >
-                  <strong>+{disc.level}</strong>
-                </Typography>
+                <Box sx={{ position: 'absolute', bottom: 0 }}>
+                  <Typography
+                    sx={{
+                      backgroundColor: 'rgba(0,0,0,0.85)',
+                      pt: '3px',
+                      px: '5px',
+                      borderRadius: '20px',
+                      fontWeight: 'bold',
+                      lineHeight: '6px',
+                      fontSize: '8px',
+                    }}
+                    variant="subtitle2"
+                  >
+                    {discInfo.disc.level}
+                  </Typography>
+                </Box>
               </Box>
-
-              <Box
-                component={NextImage ? NextImage : 'img'}
-                display="flex"
-                position="absolute"
-                src={`${commonDefImages('discBackdrop')}`}
-                width="41px"
-                height="36px"
-                top="2px"
-                left="6px"
-              />
-            </CardThemed>
+            </Box>
           )}
-        </Grid>
+        </Box>
       ))}
-    </Grid>
+    </Box>
   )
 }
