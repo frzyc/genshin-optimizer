@@ -1,4 +1,4 @@
-import { AscensionKey } from '@genshin-optimizer/zzz/consts'
+import type { AscensionKey } from '@genshin-optimizer/zzz/consts'
 
 export const ascensionMaxLevelLow = [10, 20, 30, 40, 50] as const
 export const maxLevel = 60

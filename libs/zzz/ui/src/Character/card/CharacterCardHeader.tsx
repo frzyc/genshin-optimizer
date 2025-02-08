@@ -1,7 +1,7 @@
 import { ImgIcon } from '@genshin-optimizer/common/ui'
+import type { commonKey } from '@genshin-optimizer/zzz/assets'
 import {
   commonDefIcon,
-  commonKey,
   rarityDefIcon,
   specialityDefIcon,
 } from '@genshin-optimizer/zzz/assets'

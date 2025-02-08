@@ -152,6 +152,7 @@
       "@genshin-optimizer/sr/theme": ["libs/sr/theme/src/index.ts"],
       "@genshin-optimizer/sr/ui": ["libs/sr/ui/src/index.tsx"],
       "@genshin-optimizer/sr/util": ["libs/sr/util/src/index.ts"],
+      "@genshin-optimizer/zzz/assets": ["libs/zzz/assets/src/index.ts"],
       "@genshin-optimizer/zzz/consts": ["libs/zzz/consts/src/index.ts"],
       "@genshin-optimizer/zzz/db": ["libs/zzz/db/src/index.ts"],
       "@genshin-optimizer/zzz/db-ui": ["libs/zzz/db-ui/src/index.ts"],
@@ -165,11 +166,11 @@
       "@genshin-optimizer/zzz/localization": [
         "libs/zzz/localization/src/index.ts"
       ],
-      "@genshin-optimizer/zzz/page-discs": [
-        "libs/zzz/page-discs/src/index.tsx"
-      ],
       "@genshin-optimizer/zzz/page-characters": [
         "libs/zzz/page-characters/src/index.tsx"
+      ],
+      "@genshin-optimizer/zzz/page-discs": [
+        "libs/zzz/page-discs/src/index.tsx"
       ],
       "@genshin-optimizer/zzz/page-optimize": [
         "libs/zzz/page-optimize/src/index.tsx"
@@ -182,8 +183,7 @@
       "@genshin-optimizer/zzz/svgicons": ["libs/zzz/svgicons/src/index.ts"],
       "@genshin-optimizer/zzz/theme": ["libs/zzz/theme/src/index.ts"],
       "@genshin-optimizer/zzz/ui": ["libs/zzz/ui/src/index.tsx"],
-      "@genshin-optimizer/zzz/util": ["libs/zzz/util/src/index.ts"],
-      "@genshin-optimizer/zzz/assets": ["libs/zzz/assets/src/index.ts"]
+      "@genshin-optimizer/zzz/util": ["libs/zzz/util/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
