@@ -3,6 +3,7 @@ import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
 import { objKeyMap } from '@genshin-optimizer/common/util'
 import {
   allArtifactSlotKeys,
+  allTravelerKeys,
   charKeyToLocCharKey,
   charKeyToLocGenderedCharKey,
 } from '@genshin-optimizer/gi/consts'
@@ -99,7 +100,15 @@ export function Content({ onClose }: { onClose?: () => void }) {
                 <LevelSelect
                   level={character.level}
                   ascension={character.ascension}
-                  setBoth={(data) => database.chars.set(characterKey, data)}
+                  setBoth={(data) => {
+                    if (characterKey.includes('Traveler')) {
+                      allTravelerKeys.forEach((tkey) => {
+                        database.chars.set(tkey, data)
+                      })
+                    } else {
+                      database.chars.set(characterKey, data)
+                    }
+                  }}
                 />
               </Box>
               <CharacterCardStats bgt="light" />
