@@ -4,18 +4,20 @@ import {
   notEmpty,
   objKeyMap,
 } from '@genshin-optimizer/common/util'
-import type { BaseRead } from '@genshin-optimizer/pando/engine'
-import type {
-  DebugReadContextObj,
-  SetConditionalFunc,
-} from '@genshin-optimizer/pando/ui-sheet'
+import type { Preset } from '@genshin-optimizer/gameOpt/engine'
+import type { DebugReadContextObj } from '@genshin-optimizer/gameOpt/formula-ui'
+import {
+  DebugReadContext,
+  DebugReadModal,
+  TagContext,
+} from '@genshin-optimizer/gameOpt/formula-ui'
+import type { SetConditionalFunc } from '@genshin-optimizer/gameOpt/sheet-ui'
 import {
   ConditionalValuesContext,
-  DebugReadContext,
   SetConditionalContext,
   SrcDstDisplayContext,
-  TagContext,
-} from '@genshin-optimizer/pando/ui-sheet'
+} from '@genshin-optimizer/gameOpt/sheet-ui'
+import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import { characterKeyToGenderedKey } from '@genshin-optimizer/sr/assets'
 import {
   CharacterContext,
@@ -24,10 +26,10 @@ import {
   useTeam,
 } from '@genshin-optimizer/sr/db-ui'
 import {
+  filterDebug,
   getConditional,
   isMember,
   isSheet,
-  type Preset,
   type Sheet,
   type Tag,
 } from '@genshin-optimizer/sr/formula'
@@ -46,7 +48,6 @@ import {
 import type { PresetContextObj } from './context'
 import { PresetContext, TeamContext } from './context'
 import { TeammateContext, useTeammateContext } from './context/TeammateContext'
-import { DebugReadModal } from './DebugDisplay'
 import { TeamCalcProvider } from './TeamCalcProvider'
 import {
   DEFAULT_HEADER_HEIGHT_PX,
@@ -212,7 +213,7 @@ function Page({ teamId }: { teamId: string }) {
               <ConditionalValuesContext.Provider value={conditionals}>
                 <SetConditionalContext.Provider value={setConditional}>
                   <DebugReadContext.Provider value={debugObj}>
-                    <DebugReadModal />
+                    <DebugReadModal filterFunc={filterDebug} />
                     <Box
                       sx={{
                         display: 'flex',
