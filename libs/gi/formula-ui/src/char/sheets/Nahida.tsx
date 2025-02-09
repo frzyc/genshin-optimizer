@@ -1,4 +1,4 @@
-import type { UISheet } from '@genshin-optimizer/gameOpt/sheet-ui'
+import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { formulas } from '@genshin-optimizer/gi/formula'
 import type { TalentSheetElementKey } from '../consts'

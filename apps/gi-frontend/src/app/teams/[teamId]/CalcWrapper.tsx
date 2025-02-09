@@ -1,6 +1,6 @@
 import { notEmpty } from '@genshin-optimizer/common/util'
-import type { Calculator } from '@genshin-optimizer/gameOpt/engine'
-import { CalcContext } from '@genshin-optimizer/gameOpt/formula-ui'
+import type { Calculator } from '@genshin-optimizer/game-opt/engine'
+import { CalcContext } from '@genshin-optimizer/game-opt/formula-ui'
 import type { TagMapNodeEntries } from '@genshin-optimizer/gi/formula'
 import {
   artifactsData,

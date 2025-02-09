@@ -1,4 +1,4 @@
-import type { Preset } from '@genshin-optimizer/gameOpt/engine'
+import type { Preset } from '@genshin-optimizer/game-opt/engine'
 import { detach, prod, sum } from '@genshin-optimizer/pando/engine'
 import type { CharacterKey, RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { allLightConeKeys, allRelicSetKeys } from '@genshin-optimizer/sr/consts'

@@ -1,4 +1,4 @@
-import type { UISheet } from '@genshin-optimizer/gameOpt/sheet-ui'
+import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import { buffs, formulas } from '@genshin-optimizer/sr/formula'
 import { mappedStats } from '@genshin-optimizer/sr/stats'

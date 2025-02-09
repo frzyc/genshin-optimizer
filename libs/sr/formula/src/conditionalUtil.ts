@@ -1,4 +1,4 @@
-import type { IConditionalData } from '@genshin-optimizer/gameOpt/formula'
+import type { IConditionalData } from '@genshin-optimizer/game-opt/formula'
 import type { Sheet } from './data/util'
 import { conditionals } from './meta'
 

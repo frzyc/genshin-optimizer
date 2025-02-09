@@ -5,7 +5,7 @@ import {
   createConditionalEntries,
   createConvert,
   tag,
-} from '@genshin-optimizer/gameOpt/engine'
+} from '@genshin-optimizer/game-opt/engine'
 import type { StatKey } from '@genshin-optimizer/gi/dm'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import { constant } from '@genshin-optimizer/pando/engine'

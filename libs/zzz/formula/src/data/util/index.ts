@@ -1,7 +1,7 @@
 import type {
   TagMapNodeEntries as BaseTagMapNodeEntries,
   TagMapNodeEntry as BaseTagMapNodeEntry,
-} from '@genshin-optimizer/gameOpt/engine'
+} from '@genshin-optimizer/game-opt/engine'
 import type { Dst, Sheet, Src } from './listing'
 import type { Tag } from './read'
 

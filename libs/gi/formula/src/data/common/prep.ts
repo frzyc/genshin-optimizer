@@ -1,4 +1,4 @@
-import { tagVal } from '@genshin-optimizer/gameOpt/engine'
+import { tagVal } from '@genshin-optimizer/game-opt/engine'
 import {
   cmpEq,
   dynTag,

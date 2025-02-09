@@ -1,5 +1,5 @@
 import { objKeyMap } from '@genshin-optimizer/common/util'
-import type { Desc as BaseDesc } from '@genshin-optimizer/gameOpt/engine'
+import type { Desc as BaseDesc } from '@genshin-optimizer/game-opt/engine'
 import {
   createAllBoolConditionals,
   createAllListConditionals,
@@ -7,7 +7,7 @@ import {
   createConditionalEntries,
   createConvert,
   tag,
-} from '@genshin-optimizer/gameOpt/engine'
+} from '@genshin-optimizer/game-opt/engine'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
 import { constant } from '@genshin-optimizer/pando/engine'
 import type { Dst, Sheet, Src, Stat } from './listing'

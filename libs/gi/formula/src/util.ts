@@ -1,4 +1,4 @@
-import type { Preset, SrcCondInfo } from '@genshin-optimizer/gameOpt/engine'
+import type { Preset, SrcCondInfo } from '@genshin-optimizer/game-opt/engine'
 import type {
   ArtifactSetKey,
   MainStatKey,

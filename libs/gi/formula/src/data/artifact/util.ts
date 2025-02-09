@@ -1,4 +1,4 @@
-import { tag } from '@genshin-optimizer/gameOpt/engine'
+import { tag } from '@genshin-optimizer/game-opt/engine'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
 import { type NumNode } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries, TagMapNodeEntry } from '../util'

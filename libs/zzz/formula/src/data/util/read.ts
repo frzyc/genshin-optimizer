@@ -5,7 +5,7 @@ import {
   presets,
   setReader,
   type Tag as BaseTag,
-} from '@genshin-optimizer/gameOpt/engine'
+} from '@genshin-optimizer/game-opt/engine'
 import type { AnyNode } from '@genshin-optimizer/pando/engine'
 import type { DamageType, Dst, Src, TagMapNodeEntry } from '.'
 import { attributes, damageTypes, members, sheets, type Sheet } from './listing'

@@ -16,7 +16,7 @@ on:
       - 'libs/gi/formula/**'
       - 'libs/gi/formula-ui/**'
       - 'libs/gi/i18n-node/**'
-      - 'libs/gameOpt/**'
+      - 'libs/game-opt/**'
       - 'libs/pando/**'
       - 'libs/sr/**'
       - 'libs/zzz/**'

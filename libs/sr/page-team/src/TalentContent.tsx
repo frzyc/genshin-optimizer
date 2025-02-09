@@ -6,8 +6,8 @@ import {
   NextImage,
 } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
-import type { UISheetElement } from '@genshin-optimizer/gameOpt/sheet-ui'
-import { DocumentDisplay } from '@genshin-optimizer/gameOpt/sheet-ui'
+import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
+import { DocumentDisplay } from '@genshin-optimizer/game-opt/sheet-ui'
 import { maxEidolonCount, talentLimits } from '@genshin-optimizer/sr/consts'
 import {
   useCharacterContext,

@@ -1,4 +1,4 @@
-import type { UISheetElement } from '@genshin-optimizer/gameOpt/sheet-ui'
+import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import { lightConeAsset } from '@genshin-optimizer/sr/assets'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 import { buffs, conditionals } from '@genshin-optimizer/sr/formula'

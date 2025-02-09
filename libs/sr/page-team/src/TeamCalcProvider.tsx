@@ -1,6 +1,6 @@
 import { notEmpty } from '@genshin-optimizer/common/util'
-import type { Preset } from '@genshin-optimizer/gameOpt/engine'
-import { CalcContext } from '@genshin-optimizer/gameOpt/formula-ui'
+import type { Preset } from '@genshin-optimizer/game-opt/engine'
+import { CalcContext } from '@genshin-optimizer/game-opt/formula-ui'
 import { constant } from '@genshin-optimizer/pando/engine'
 import type {
   RelicMainStatKey,

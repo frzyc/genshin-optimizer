@@ -1,7 +1,7 @@
 import {
   extractCondMetadata,
   extractFormulaMetadata,
-} from '@genshin-optimizer/gameOpt/formula'
+} from '@genshin-optimizer/game-opt/formula'
 import { workspaceRoot } from '@nx/devkit'
 import { writeFileSync } from 'fs'
 import * as path from 'path'

@@ -1,4 +1,4 @@
-import type { Preset } from '@genshin-optimizer/gameOpt/engine'
+import type { Preset } from '@genshin-optimizer/game-opt/engine'
 import { cmpEq, cmpNE } from '@genshin-optimizer/pando/engine'
 import type {
   CharacterKey,

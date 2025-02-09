@@ -8,7 +8,7 @@ import {
   NumberInputLazy,
   useScrollRef,
 } from '@genshin-optimizer/common/ui'
-import { DebugListingsDisplay } from '@genshin-optimizer/gameOpt/formula-ui'
+import { DebugListingsDisplay } from '@genshin-optimizer/game-opt/formula-ui'
 import { type CharacterKey } from '@genshin-optimizer/sr/consts'
 import type { Frame } from '@genshin-optimizer/sr/db'
 import {

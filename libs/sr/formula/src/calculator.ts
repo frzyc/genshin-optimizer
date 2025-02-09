@@ -1,5 +1,5 @@
-import type { PartialMeta as PartialMetaBase } from '@genshin-optimizer/gameOpt/engine'
-import { Calculator as Base } from '@genshin-optimizer/gameOpt/engine'
+import type { PartialMeta as PartialMetaBase } from '@genshin-optimizer/game-opt/engine'
+import { Calculator as Base } from '@genshin-optimizer/game-opt/engine'
 import { DebugCalculator } from '@genshin-optimizer/pando/engine'
 import {
   tagStr,

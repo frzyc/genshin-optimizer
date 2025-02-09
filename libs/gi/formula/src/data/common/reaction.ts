@@ -1,4 +1,4 @@
-import { tag } from '@genshin-optimizer/gameOpt/engine'
+import { tag } from '@genshin-optimizer/game-opt/engine'
 import type {
   ElementWithPhyKey,
   TransformativeReactionKey,

@@ -4,19 +4,19 @@ import {
   notEmpty,
   objKeyMap,
 } from '@genshin-optimizer/common/util'
-import type { Preset } from '@genshin-optimizer/gameOpt/engine'
-import type { DebugReadContextObj } from '@genshin-optimizer/gameOpt/formula-ui'
+import type { Preset } from '@genshin-optimizer/game-opt/engine'
+import type { DebugReadContextObj } from '@genshin-optimizer/game-opt/formula-ui'
 import {
   DebugReadContext,
   DebugReadModal,
   TagContext,
-} from '@genshin-optimizer/gameOpt/formula-ui'
-import type { SetConditionalFunc } from '@genshin-optimizer/gameOpt/sheet-ui'
+} from '@genshin-optimizer/game-opt/formula-ui'
+import type { SetConditionalFunc } from '@genshin-optimizer/game-opt/sheet-ui'
 import {
   ConditionalValuesContext,
   SetConditionalContext,
   SrcDstDisplayContext,
-} from '@genshin-optimizer/gameOpt/sheet-ui'
+} from '@genshin-optimizer/game-opt/sheet-ui'
 import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import { characterKeyToGenderedKey } from '@genshin-optimizer/sr/assets'
 import {

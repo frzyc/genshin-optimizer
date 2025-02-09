@@ -51,15 +51,17 @@
       ],
       "@genshin-optimizer/common/ui": ["libs/common/ui/src/index.ts"],
       "@genshin-optimizer/common/util": ["libs/common/util/src/index.ts"],
-      "@genshin-optimizer/gameOpt/engine": ["libs/gameOpt/engine/src/index.ts"],
-      "@genshin-optimizer/gameOpt/formula": [
-        "libs/gameOpt/formula/src/index.ts"
+      "@genshin-optimizer/game-opt/engine": [
+        "libs/game-opt/engine/src/index.ts"
       ],
-      "@genshin-optimizer/gameOpt/formula-ui": [
-        "libs/gameOpt/formula-ui/src/index.ts"
+      "@genshin-optimizer/game-opt/formula": [
+        "libs/game-opt/formula/src/index.ts"
       ],
-      "@genshin-optimizer/gameOpt/sheet-ui": [
-        "libs/gameOpt/sheet-ui/src/index.ts"
+      "@genshin-optimizer/game-opt/formula-ui": [
+        "libs/game-opt/formula-ui/src/index.ts"
+      ],
+      "@genshin-optimizer/game-opt/sheet-ui": [
+        "libs/game-opt/sheet-ui/src/index.ts"
       ],
       "@genshin-optimizer/gi/art-scanner": ["libs/gi/art-scanner/src/index.ts"],
       "@genshin-optimizer/gi/assets": ["libs/gi/assets/src/index.ts"],

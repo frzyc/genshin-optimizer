@@ -1,8 +1,0 @@
-{
-  "name": "gameOpt-engine",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/gameOpt/engine/src",
-  "projectType": "library",
-  "tags": [],
-  "targets": {}
-}

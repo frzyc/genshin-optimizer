@@ -1,4 +1,4 @@
-import { usedNames, usedQ } from '@genshin-optimizer/gameOpt/engine'
+import { usedNames, usedQ } from '@genshin-optimizer/game-opt/engine'
 import {
   compileTagMapKeys,
   compileTagMapValues,

@@ -2,7 +2,7 @@ import type {
   Document,
   TextDocument,
   UISheetElement,
-} from '@genshin-optimizer/gameOpt/sheet-ui'
+} from '@genshin-optimizer/game-opt/sheet-ui'
 import { characterAsset, imgAssets } from '@genshin-optimizer/gi/assets'
 import type {
   CharacterKey,

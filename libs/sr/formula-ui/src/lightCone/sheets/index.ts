@@ -1,4 +1,4 @@
-import type { UISheetElement } from '@genshin-optimizer/gameOpt/sheet-ui'
+import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 
 import ASecretVow from './ASecretVow'
