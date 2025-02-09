@@ -1,9 +1,14 @@
 import { dumpFile } from '@genshin-optimizer/common/pipeline'
 import { objMap } from '@genshin-optimizer/common/util'
-import type { CharacterKey, DiscSetKey } from '@genshin-optimizer/zzz/consts'
+import type {
+  CharacterKey,
+  DiscSetKey,
+  WengineKey,
+} from '@genshin-optimizer/zzz/consts'
 import {
   charactersDetailedJSONData,
   discsDetailedJSONData,
+  wengineDetailedJSONData,
 } from '@genshin-optimizer/zzz/dm'
 import type { PromiseExecutor } from '@nx/devkit'
 import { workspaceRoot } from '@nx/devkit'
@@ -27,6 +32,13 @@ export type AssetData = {
       trap: string
       select: string
       interknot: string
+    }
+  >
+  wengines: Record<
+    WengineKey,
+    {
+      icon: string
+      big: string
     }
   >
 }
@@ -57,6 +69,14 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
         trap: `IconRoleGeneral${strKey}.png`,
         select: `IconRoleSelect${strKey}.png`,
         interknot: `IconInterKnotRole00${strKey}.png`,
+      }
+    }),
+    wengines: objMap(wengineDetailedJSONData, ({ icon }) => {
+      const strKey = icon.match(/([^/]+)\.png/)?.[1]
+      if (!strKey) throw Error('Failed to parse wengine icon name')
+      return {
+        icon: `${strKey}.png`,
+        big: `${strKey}Big.png`,
       }
     }),
   } as const
