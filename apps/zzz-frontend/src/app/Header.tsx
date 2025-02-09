@@ -1,6 +1,7 @@
 import { useDatabaseTally } from '@genshin-optimizer/common/database-ui'
 import { Tally } from '@genshin-optimizer/common/ui'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
+import { shouldShowDevComponents } from '@genshin-optimizer/zzz/ui'
 import { Settings } from '@mui/icons-material'
 import CalculateIcon from '@mui/icons-material/Calculate'
 import DiscFullIcon from '@mui/icons-material/DiscFull'
@@ -82,7 +83,12 @@ export default function Header({ anchor }: { anchor: string }) {
   )
 }
 
-const maincontent = [discs, optimize, characters, settings] as const
+const maincontent = [
+  discs,
+  optimize,
+  ...(shouldShowDevComponents ? [characters] : []),
+  settings,
+] as const //Todo remove shouldShowDevComponents for characters once it's ready for prod
 
 function HeaderContent({ anchor }: { anchor: string }) {
   const theme = useTheme()
@@ -181,7 +187,13 @@ function DesktopHeader({
   )
 }
 
-const mobileContent = [discs, optimize, characters, settings] as const
+const mobileContent = [
+  discs,
+  optimize,
+  ...(shouldShowDevComponents ? [characters] : []),
+  settings,
+] as const //Todo remove shouldShowDevComponents for characters once it's ready for prod
+
 function MobileHeader({
   anchor,
   currentTab,
