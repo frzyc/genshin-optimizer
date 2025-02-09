@@ -1,7 +1,8 @@
+import { tag } from '@genshin-optimizer/gameOpt/engine'
 import type { ArtifactSetKey } from '@genshin-optimizer/gi/consts'
-import type { NumNode } from '@genshin-optimizer/pando/engine'
+import { type NumNode } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries, TagMapNodeEntry } from '../util'
-import { own, tag } from '../util'
+import { own } from '../util'
 
 export function registerArt(
   sheet: ArtifactSetKey,

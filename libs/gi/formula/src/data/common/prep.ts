@@ -1,3 +1,4 @@
+import { tagVal } from '@genshin-optimizer/gameOpt/engine'
 import {
   cmpEq,
   dynTag,
@@ -6,7 +7,7 @@ import {
   sum,
 } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
-import { enemy, own, ownBuff, percent, tagVal } from '../util'
+import { enemy, own, ownBuff, percent } from '../util'
 
 const { ele, amp, cata } = own.prep
 

@@ -1,3 +1,4 @@
+import type { Preset, SrcCondInfo } from '@genshin-optimizer/gameOpt/engine'
 import type {
   ArtifactSetKey,
   MainStatKey,
@@ -5,8 +6,7 @@ import type {
 } from '@genshin-optimizer/gi/consts'
 import type { ICharacter, IWeapon } from '@genshin-optimizer/gi/good'
 import { cmpEq, cmpNE } from '@genshin-optimizer/pando/engine'
-import type { SrcCondInfo } from './calculator'
-import type { Member, Preset, TagMapNodeEntries } from './data/util'
+import type { Member, Sheet, TagMapNodeEntries } from './data/util'
 import {
   conditionalEntries,
   convert,
@@ -111,8 +111,8 @@ export function artifactsData(
  * @returns
  */
 export function conditionalData(
-  dst: Member | 'all',
-  data: SrcCondInfo | undefined
+  dst: Member,
+  data: SrcCondInfo<Member, Sheet> | undefined
 ) {
   if (!data) return []
   return Object.entries(data).flatMap(([src, entries]) =>

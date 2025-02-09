@@ -1,3 +1,4 @@
+import { tag } from '@genshin-optimizer/gameOpt/engine'
 import type {
   ElementWithPhyKey,
   TransformativeReactionKey,
@@ -17,7 +18,7 @@ import {
   sumfrac,
 } from '@genshin-optimizer/pando/engine'
 import type { TagMapNodeEntries } from '../util'
-import { own, ownBuff, percent, tag } from '../util'
+import { own, ownBuff, percent } from '../util'
 
 const transLvlMultis = [
   NaN, // lvl 0

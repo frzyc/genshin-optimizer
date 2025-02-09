@@ -1,3 +1,4 @@
+import { usedNames, usedQ } from '@genshin-optimizer/gameOpt/engine'
 import {
   compileTagMapKeys,
   compileTagMapValues,
@@ -6,7 +7,7 @@ import artifact from './artifact'
 import character from './char'
 import common from './common'
 import type { TagMapNodeEntries } from './util'
-import { fixedTags, queryTypes, usedNames, usedQ } from './util'
+import { fixedTags, queryTypes } from './util'
 import weapon from './weapon'
 
 const entries: TagMapNodeEntries = [
