@@ -1,4 +1,5 @@
 import { notEmpty } from '@genshin-optimizer/common/util'
+import type { Calculator } from '@genshin-optimizer/gameOpt/engine'
 import { CalcContext } from '@genshin-optimizer/gameOpt/formula-ui'
 import type { TagMapNodeEntries } from '@genshin-optimizer/gi/formula'
 import {
@@ -81,6 +82,13 @@ export function CalcWrapper({
   }, [team])
   const calcWithTag = useMemo(() => calc?.withTag({ src }) ?? null, [calc, src])
   return (
-    <CalcContext.Provider value={calcWithTag}>{children}</CalcContext.Provider>
+    // TODO: Remove this type cast, not sure why it is needed for here, but not for SR usage of calccontext.provider
+    <CalcContext.Provider
+      value={
+        calcWithTag as Calculator<string | null, string | null, string, string>
+      }
+    >
+      {children}
+    </CalcContext.Provider>
   )
 }

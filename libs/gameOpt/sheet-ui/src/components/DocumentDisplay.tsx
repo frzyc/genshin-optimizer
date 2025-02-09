@@ -45,7 +45,7 @@ export function DocumentDisplay({
 }
 
 function FieldsSectionDisplay({
-  fieldsDocument: fieldsDocument,
+  fieldsDocument,
   bgt = 'normal',
 }: {
   fieldsDocument: FieldsDocument

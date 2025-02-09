@@ -88,7 +88,7 @@ export function TagFieldDisplay({
   field,
   component = ListItem,
   emphasize,
-  showZero = process.env.NODE_ENV === 'development',
+  showZero = process.env['NODE_ENV'] === 'development',
 }: {
   field: TagField
   component?: React.ElementType
@@ -100,17 +100,18 @@ export function TagFieldDisplay({
   const calc = useContext(CalcContext)
   const tag = useContext(TagContext)
   const { setRead } = useContext(DebugReadContext)
+  //TODO: undefined: we assume "unique" accumulator
+  const calcRead = read(field.fieldRef, undefined)
+
+  const onClick = useCallback(() => setRead(calcRead), [calcRead, setRead])
   // const compareCalc: null | Calculator = null //TODO: compare calcs
   if (!calc) return null
   // if (!calc && !compareCalc) return null
 
-  //TODO: undefined: we assume "unique" accumulator
-  const calcRead = read(field.fieldRef, undefined)
   const valueCalcRes = calc.withTag(tag).compute(calcRead)
   // const compareValueCalcRes: CalcResult<number, CalcMeta> | null = null
 
   // const { setFormulaData } = useContext(FormulaDataContext)
-  const onClick = useCallback(() => setRead(calcRead), [calcRead])
   const { multi, icon, title, subtitle } = field
   const multiDisplay = multi && <span>{multi}&#215;</span>
 
@@ -120,7 +121,7 @@ export function TagFieldDisplay({
   if (!showZero && !calcValue && !compareCalcValue) return null
 
   let fieldVal = false as ReactNode
-  const unit = (field.fieldRef.q ?? '')?.endsWith('_') ? '%' : ''
+  const unit = (field.fieldRef['q'] ?? '')?.endsWith('_') ? '%' : ''
   const variant = '' // TODO: variant from tag like { ele: amp: cata: trans: }
   const fixed = undefined // TODO: what do here?
   // const calcDisplay = <span>TODO formula</span> //TODO: Formula display

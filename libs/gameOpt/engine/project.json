@@ -4,13 +4,5 @@
   "sourceRoot": "libs/gameOpt/engine/src",
   "projectType": "library",
   "tags": [],
-  "targets": {
-    "test": {
-      "executor": "@nx/vite:test",
-      "outputs": ["{options.reportsDirectory}"],
-      "options": {
-        "reportsDirectory": "../../../coverage/libs/test"
-      }
-    }
-  }
+  "targets": {}
 }
