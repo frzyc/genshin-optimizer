@@ -14,5 +14,8 @@
       "files": ["*.js", "*.jsx"],
       "rules": {}
     }
-  ]
+  ],
+  "parserOptions": {
+    "project": "libs/zzz/formula/tsconfig.eslint.json"
+  }
 }

@@ -1,3 +1,4 @@
+import type { Preset } from '@genshin-optimizer/gameOpt/engine'
 import { cmpEq, cmpNE } from '@genshin-optimizer/pando/engine'
 import type {
   CharacterKey,
@@ -9,7 +10,7 @@ import type {
   WengineKey,
 } from '@genshin-optimizer/zzz/consts'
 import {} from '@genshin-optimizer/zzz/db'
-import type { Member, Preset, TagMapNodeEntries } from './data/util'
+import type { Member, TagMapNodeEntries } from './data/util'
 import {
   convert,
   getStatFromStatKey,
