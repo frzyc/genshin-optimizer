@@ -10,6 +10,7 @@ import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { ElementIcon } from '@genshin-optimizer/zzz/svgicons'
 import { Box, Typography } from '@mui/material'
 
+// TODO: Replace hardcoded skill values once characterDb provides the correct information
 const boxData: { src: SkillKey; text: string }[] = [
   { src: 'basic', text: '1' },
   { src: 'dodge', text: '12' },
@@ -52,9 +53,9 @@ export function CharacterCardContent({
             whiteSpace="nowrap"
             fontStyle="italic"
             fontWeight="bold"
+            fontSize="1.625rem"
             sx={{
               textShadow: 'none',
-              fontSize: '1.625rem',
             }}
           >
             <strong>Lv.{characterLevel}</strong>
@@ -66,17 +67,17 @@ export function CharacterCardContent({
               <ImgIcon size={2} src={commonDefIcon(item.src)} />
               <Typography
                 variant="subtitle1"
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                position="absolute"
+                left="-3px"
+                top="10px"
+                width="24px"
+                height="24px"
+                borderRadius="50%"
                 sx={{
-                  position: 'absolute',
-                  left: '-3px',
-                  top: '10px',
-                  width: '24px',
-                  height: '24px',
                   background: '#1C1C1C',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
                 }}
               >
                 <strong>{item.text}</strong>
