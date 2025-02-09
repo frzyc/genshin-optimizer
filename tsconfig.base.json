@@ -52,6 +52,7 @@
       ],
       "@genshin-optimizer/common/ui": ["libs/common/ui/src/index.ts"],
       "@genshin-optimizer/common/util": ["libs/common/util/src/index.ts"],
+      "@genshin-optimizer/gameOpt/engine": ["libs/gameOpt/engine/src/index.ts"],
       "@genshin-optimizer/gi/art-scanner": ["libs/gi/art-scanner/src/index.ts"],
       "@genshin-optimizer/gi/assets": ["libs/gi/assets/src/index.ts"],
       "@genshin-optimizer/gi/assets-data": ["libs/gi/assets-data/src/index.ts"],

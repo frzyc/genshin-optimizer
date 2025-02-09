@@ -16,4 +16,4 @@ export type TagValue = string
  * used only to signify that the category will be removed when the tag is combined
  * with other tags.
  */
-export type Tag = Record<TagCategory, TagValue | null>
+export type Tag = Record<TagCategory, TagValue | null | undefined>
