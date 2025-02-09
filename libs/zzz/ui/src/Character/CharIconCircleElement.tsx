@@ -10,10 +10,9 @@ const CharIconWrapper = styled(NextImage ? (NextImage as any) : 'img', {
   slot: 'Root',
   shouldForwardProp: (pn: string) => !['size'].includes(pn),
 })<ImgIconProps>(({ size = 1.5 }) => ({
-  display: 'inline-block',
+  display: 'flex',
   width: `${size}em`,
   height: `${size}em`,
-  verticalAlign: 'text-bottom',
 }))
 
 export function CharIconCircle({
