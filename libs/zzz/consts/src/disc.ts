@@ -347,7 +347,7 @@ export const disc4PeffectSheets: Partial<
             { crit_dmg_: 0.055 },
             conds['ChaoticMetal']
           ) as Record<string, number>
-        ) //enemy takes 18% more DMG
+        )
       return ret
     },
   },
