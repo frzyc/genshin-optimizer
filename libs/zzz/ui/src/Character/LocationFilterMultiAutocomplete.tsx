@@ -1,13 +1,21 @@
 import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
-import { GeneralAutocompleteMulti, ImgIcon } from '@genshin-optimizer/common/ui'
+import { GeneralAutocompleteMulti } from '@genshin-optimizer/common/ui'
 import {
   allLocationKeys,
   type LocationKey,
 } from '@genshin-optimizer/zzz/consts'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
-import { Chip, Skeleton } from '@mui/material'
+import { Box, Chip, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { CharIconCircle } from './CharIconCircleElement'
+
+const toImg = (key: LocationKey) =>
+  key ? (
+    <Box>
+      <CharIconCircle characterKey={key} />
+    </Box>
+  ) : undefined
 
 export function LocationFilterMultiAutocomplete({
   locations,
@@ -22,8 +30,6 @@ export function LocationFilterMultiAutocomplete({
 }) {
   const { t } = useTranslation(['disc', 'charNames_gen'])
   const { database } = useDatabaseContext()
-
-  const toImg = useCallback(() => <ImgIcon src={''} size={3} />, [])
 
   const toExLabel = useCallback(
     (key: LocationKey) => <strong>{totals[key]}</strong>,

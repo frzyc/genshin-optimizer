@@ -2,10 +2,12 @@ import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
 import { GeneralAutocomplete } from '@genshin-optimizer/common/ui'
 import type { CharacterKey } from '@genshin-optimizer/zzz/consts'
 import { allCharacterKeys } from '@genshin-optimizer/zzz/consts'
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter'
 import type { AutocompleteProps } from '@mui/material'
-import { Skeleton } from '@mui/material'
+import { Box, Skeleton } from '@mui/material'
 import { Suspense, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { CharIconCircle } from './CharIconCircleElement'
 
 export function LocationAutocomplete({
   locKey,
@@ -57,12 +59,24 @@ export function LocationAutocomplete({
     [charInDb, charIsFavorite, t]
   )
 
+  const toImg = useCallback(
+    (key: typeof locKey) =>
+      key === '' ? (
+        <BusinessCenterIcon />
+      ) : (
+        <Box sx={{ opacity: charInDb(key) ? undefined : 0.7 }}>
+          <CharIconCircle characterKey={key} />
+        </Box>
+      ),
+    [charInDb]
+  )
+
   return (
     <Suspense fallback={<Skeleton variant="text" width={100} />}>
       <GeneralAutocomplete
         size="small"
         options={options}
-        toImg={() => <> </>} // TODO:
+        toImg={toImg}
         valueKey={locKey}
         onChange={(k) => setLocKey(k ?? '')}
         {...props}
