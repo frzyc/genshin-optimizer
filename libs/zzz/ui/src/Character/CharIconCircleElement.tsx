@@ -13,7 +13,6 @@ const CharIconWrapper = styled(NextImage ? (NextImage as any) : 'img', {
   display: 'flex',
   width: `${size}em`,
   height: `${size}em`,
-  verticalAlign: 'text-bottom',
 }))
 
 export function CharIconCircle({
