@@ -130,6 +130,11 @@ function Discs({ discs }: { discs: ICachedDisc[] }) {
                 height="30px"
                 display="flex"
                 justifyContent="center"
+                sx={{
+                  position: 'relative',
+                  borderRadius: '50%',
+                  overflow: 'hidden',
+                }}
               >
                 <Box
                   component={NextImage ? NextImage : 'img'}
@@ -137,11 +142,11 @@ function Discs({ discs }: { discs: ICachedDisc[] }) {
                   width="30px"
                   height="30px"
                 />
-                <Box sx={{ position: 'absolute', bottom: 0 }}>
+                <Box sx={{ position: 'absolute', bottom: -3 }}>
                   <Typography
                     sx={{
                       backgroundColor: 'rgba(0,0,0,0.85)',
-                      pt: '3px',
+                      py: '3px',
                       px: '5px',
                       borderRadius: '20px',
                       fontWeight: 'bold',
