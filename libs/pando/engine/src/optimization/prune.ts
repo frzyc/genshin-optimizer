@@ -81,7 +81,7 @@ export class State<I extends OP, C extends Component> {
   }
   get monotonicities(): Monotonicities {
     return (this._monotonicities ??= getMonotonicities(
-      this.nodes,
+      this.nodes[this.nodes.length - 1],
       this.cat,
       this.nodeRanges
     ))
@@ -92,10 +92,8 @@ export class State<I extends OP, C extends Component> {
 function pruneBranches(state: State<OP, Component>) {
   const { nodes, nodeRanges } = state
   const result = mapBottomUp(nodes, (n, o) => {
-    {
-      const { min, max } = nodeRanges.get(o)!
-      if (min === max) return o.op === 'const' ? n : constant(min)
-    }
+    const r = nodeRanges.get(o)!
+    if (r.min === r.max) return o.op === 'const' ? n : constant(r.min)
     switch (o.op) {
       case 'thres': {
         const [value, threshold] = o.br.map((n) => nodeRanges.get(n)!)
@@ -104,15 +102,13 @@ function pruneBranches(state: State<OP, Component>) {
         break
       }
       case 'min': {
-        const threshold = nodeRanges.get(o)!.max
-        const x = n.x.filter((_, i) => nodeRanges.get(o.x[i])!.min <= threshold)
+        const x = n.x.filter((_, i) => nodeRanges.get(o.x[i])!.min <= r.max)
         if (x.length === 1) return x[0]
         if (x.length !== n.x.length) return min(...(x as any)) as NumNode<OP>
         break
       }
       case 'max': {
-        const threshold = nodeRanges.get(o)!.min
-        const x = n.x.filter((_, i) => nodeRanges.get(o.x[i])!.max >= threshold)
+        const x = n.x.filter((_, i) => nodeRanges.get(o.x[i])!.max >= r.min)
         if (x.length === 1) return x[0]
         if (x.length !== n.x.length) return max(...(x as any)) as NumNode<OP>
         break
@@ -124,9 +120,7 @@ function pruneBranches(state: State<OP, Component>) {
           return n.x[branching[o.op](br, o.ex)]
         }
         break
-      case 'subscript':
-        if (n.br[0].op === 'const') return n.ex[n.br[0].ex]
-        break
+      // subscript is already handled by the `const`-check at the beginning
     }
     return n
   })
@@ -308,13 +302,16 @@ function computeCompRanges(comp: Component[]): CompRanges[number] {
   const result = Object.fromEntries(
     Object.entries(first).map(([k, v]) => [k, { min: v, max: v }])
   )
-  for (const component of iter)
-    for (const [k, v] of Object.entries(component)) {
-      let r = result[k]
-      if (!r) result[k] = r = { min: 0, max: 0 }
+  for (const component of iter) {
+    for (const [k, r] of Object.entries(result)) {
+      const v = component[k] ?? 0
       if (r.min > v) r.min = v
       if (r.max < v) r.max = v
     }
+    for (const [k, v] of Object.entries(component))
+      if (!(k in result))
+        result[k] = { min: Math.min(0, v), max: Math.max(0, v) }
+  }
   return result
 }
 
@@ -352,12 +349,23 @@ function computeNodeRanges(
         if (typeof n.ex === 'number') r = { min: n.ex, max: n.ex }
         else r = { min: NaN, max: NaN }
         break
-      case 'subscript':
-        r = {
-          min: Math.min(...(n.ex as number[])),
-          max: Math.max(...(n.ex as number[])),
+      case 'subscript': {
+        if (typeof n.ex[0] !== 'number') r = { min: NaN, max: NaN }
+        else {
+          // Note: this assumes there is no NaN in the array
+          r = { min: Infinity, max: -Infinity }
+          let { min: start, max: last } = result.get(n.br[0])!
+          start = Math.max(0, Math.ceil(start))
+          last = Math.min(last, n.ex.length - 1)
+          for (let i = start; i <= last; i++) {
+            const v = n.ex[i] as number
+            if (r.min > v) r.min = v
+            if (r.max < v) r.max = v
+          }
+          if (r.min > r.max) r = { min: NaN, max: NaN }
         }
         break
+      }
       case 'sum':
         r = {
           min: mins.reduce((a, b) => a + b, 0),
@@ -404,29 +412,30 @@ function computeNodeRanges(
 }
 
 function getMonotonicities(
-  nodes: NumNode<OP>[],
+  node: NumNode<OP>,
   cat: string,
   nodeRanges: NodeRanges
 ): Monotonicities {
   const mon = new Map<AnyNode<OP>, Monotonicity>()
-  const toVisit: { node: AnyNode<OP>; ty: boolean }[] = []
+  const toVisit: { node: AnyNode<OP>; inc: boolean }[] = [{ node, inc: true }]
   const result = new Map<string, Monotonicity>()
 
-  // `ty` if inc or non-monotonic. `!ty` if dec or non-monotonic.
-  // When visited with both `ty` values, `node` is non-monotonic.
-  function visit(node: AnyNode<OP>, ty: boolean) {
+  // `inc` if `node` is strictly increasing in *some* valid regions.
+  // `!inc` if `node` is strictly decreasing in *some* valid regions.
+  // Consequently, if both `inc` and `!inc` are called on the same
+  // node, the node itself is non-monotonic.
+  function visit(node: AnyNode<OP>, inc: boolean) {
     if (!mon.has(node)) mon.set(node, { inc: true, dec: true })
-    const ton = mon.get(node)!
-    toVisit.push({ node, ty })
-    if (ty && ton.dec) ton.dec = false
-    else if (!ty && ton.inc) ton.inc = false
-    else toVisit.pop() // no update
+    const m = mon.get(node)!
+    if (inc && m.dec) m.dec = false
+    else if (!inc && m.inc) m.inc = false
+    else return // no update
+    toVisit.push({ node, inc })
   }
 
   // Cannot use `traverse` because each node is visited twice, once for `inc` and once for `dec`
-  nodes.forEach((n) => visit(n, true))
   while (toVisit.length) {
-    const { node, ty } = toVisit.pop()!
+    const { node, inc } = toVisit.pop()!
     switch (node.op) {
       case 'read':
         result.set(node.tag[cat]!, mon.get(node)!)
@@ -436,37 +445,37 @@ function getMonotonicities(
       case 'sum':
       case 'min':
       case 'max':
-        node.x.forEach((n) => visit(n, ty))
+        node.x.forEach((n) => visit(n, inc))
         break
       case 'match':
       case 'lookup':
-        node.x.forEach((n) => visit(n, ty))
+        node.x.forEach((n) => visit(n, inc))
         node.br.forEach((n) => visit(n, true))
         node.br.forEach((n) => visit(n, false))
         break
       case 'thres': {
-        node.x.forEach((n) => visit(n, ty))
+        node.x.forEach((n) => visit(n, inc))
         const ge = nodeRanges.get(node.x[0])!
         const lt = nodeRanges.get(node.x[1])!
-        // if `br` is not visited, both branches are equal
+        // if `br` is not visited, both branches are constants and equal
         if (ge.max > lt.min) {
-          visit(node.br[0], ty)
-          visit(node.br[1], !ty)
+          visit(node.br[0], inc)
+          visit(node.br[1], !inc)
         }
         if (ge.min < lt.max) {
-          visit(node.br[0], !ty)
-          visit(node.br[1], ty)
+          visit(node.br[0], !inc)
+          visit(node.br[1], inc)
         }
         break
       }
       case 'sumfrac': {
         const [x, c] = node.x.map((n) => nodeRanges.get(n)!)
         // if `x` is not visited, `c == 0` and `node == 1`
-        if (c.min < 0) visit(node.x[0], !ty)
-        if (c.max > 0) visit(node.x[0], ty)
+        if (c.min < 0) visit(node.x[0], !inc)
+        if (c.max > 0) visit(node.x[0], inc)
         // if `c` is not visited, `x == 0` and `node == 0`
-        if (x.min < 0) visit(node.x[1], ty)
-        if (x.max > 0) visit(node.x[1], !ty)
+        if (x.min < 0) visit(node.x[1], inc)
+        if (x.max > 0) visit(node.x[1], !inc)
         break
       }
       case 'prod': {
@@ -478,7 +487,7 @@ function getMonotonicities(
           node.x.forEach((n) => visit(n, false))
         } else
           node.x.forEach((n) =>
-            visit(n, (pos === ty) === nodeRanges.get(n)!.min > 0)
+            visit(n, (pos === inc) === nodeRanges.get(n)!.min > 0)
           )
         break
       }
@@ -486,21 +495,35 @@ function getMonotonicities(
         customOps[node.ex]
           .monotonicity(node.x.map((n) => nodeRanges.get(n)!))
           .forEach((t, i) => {
-            if (!t.inc) visit(node.x[i], !ty)
-            if (!t.dec) visit(node.x[i], ty)
+            if (!t.inc) visit(node.x[i], !inc)
+            if (!t.dec) visit(node.x[i], inc)
           })
         break
-      case 'subscript':
-        if (typeof node.ex[0] === 'number') {
-          if (node.ex.every((v, i, a) => !i || a[i - 1] <= v))
-            visit(node.br[0], ty)
-          if (node.ex.every((v, i, a) => !i || a[i - 1] >= v))
-            visit(node.br[0], !ty)
+      case 'subscript': {
+        const {
+          br: [br],
+          ex: arr,
+        } = node
+        if (typeof arr[0] === 'number') {
+          let { min: start, max: last } = nodeRanges.get(node)!
+          start = Math.max(0, Math.ceil(start))
+          last = Math.min(last, arr.length - 1)
+          for (let i = start + 1; i <= last; i++)
+            if (arr[i - 1] < arr[i]) {
+              visit(br, inc)
+              break
+            }
+          for (let i = start + 1; i <= last; i++)
+            if (arr[i - 1] > arr[i]) {
+              visit(br, !inc)
+              break
+            }
         } else {
-          visit(node.br[0], true)
-          visit(node.br[0], false)
+          visit(br, true)
+          visit(br, false)
         }
         break
+      }
       default:
         assertUnreachable(node)
     }
