@@ -3,5 +3,9 @@
   "type": "anomaly",
   "atk_base": 42,
   "second_statkey": "atk_",
-  "second_statvalue": 0.1
+  "second_statvalue": 0.1,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_1281.png",
+  "desc": "This energy W-Engine, modded from spare parts of a truck's engine, converts the original cylinder into an energy storage unit, which is highly advantageous. It placed first in the internal Leaps and Bounds competition, surpassing many heavy-duty motorbikes and even a truck driven by Piper herself.\n\n<color=#959595>\"Too bad there's no way to carry cargo... Maybe we can hang it on the tusks?\" — Piper, top-notch logistics driver</color>",
+  "desc2": "Equip to increase Anomaly Agents' combat capabilities",
+  "desc3": "An energy W-Engine modded from spare parts of a truck's engine. It converts the original cylinder into an energy storage unit, which is highly advantageous."
 }

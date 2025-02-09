@@ -1,4 +1,4 @@
-// copy from libs\zzz\dm\src\dm\character\characterKeys.json
+// copy from libs\zzz\dm\src\dm\character\characterKeys.json with sussy chars removed
 export const allCharacterKeys = [
   'Anby',
   'Anton',
@@ -21,14 +21,11 @@ export const allCharacterKeys = [
   'Nekomata',
   'Nicole',
   'Piper',
-  'PulchraFeliny',
   'QingYi',
   'Rina',
   'Seth',
-  'SilverAnby',
   'Soldier11',
   'Soukaku',
-  'Trigger',
   'Yanagi',
   'ZhuYuan',
 ] as const

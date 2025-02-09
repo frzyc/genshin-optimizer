@@ -3,5 +3,9 @@
   "type": "attack",
   "atk_base": 42,
   "second_statkey": "atk_",
-  "second_statvalue": 0.1
+  "second_statvalue": 0.1,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_1081.png",
+  "desc": "A custom supercomputing W-Engine which specializes in aim assist and calculating trajectories, it looks more like some kind of pirated Starlight Knight figurine now that Billy's finished his modifications. It flashes brightly whenever an enemy is detected, and shouts out pre-set quotes. Despite this move clearly exposing one's location and attracting the enemy, this is not an issue for Billy so long as everything is cool enough.\n\n<color=#959595>\"COPY? How can you call that a copy?! I've poured all my passion, wisdom, soul, and moisture into this! Apart from summoning a shooting star to transform me — this is real deal, bona fide Starlight Knight equipment!\" — Billy, enthusiastically outlining his modding philosophy</color>",
+  "desc2": "Equip to increase Attack Agents' combat capabilities",
+  "desc3": "A customized supercomputing W-Engine, specialized in aim support and ballistic calculations. Modified by Billy, it now looks like some sort of knock-off Starlight Knight figurine."
 }

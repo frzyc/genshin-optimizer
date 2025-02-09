@@ -4,5 +4,14 @@
   "sourceRoot": "libs/zzz/assets/src",
   "projectType": "library",
   "tags": [],
-  "targets": {}
+  "targets": {
+    "gen-file": {
+      "executor": "@genshin-optimizer/zzz/assets:gen-assets",
+      "options": {
+        "fetchAssets": "local"
+      },
+      "outputs": ["{workspaceRoot}/${projectRoot}/src/gen/**/*"],
+      "dependsOn": ["zzz-assets-data:gen-file"]
+    }
+  }
 }

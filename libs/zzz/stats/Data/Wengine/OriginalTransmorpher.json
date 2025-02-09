@@ -3,5 +3,9 @@
   "type": "defense",
   "atk_base": 40,
   "second_statkey": "hp_",
-  "second_statvalue": 0.1
+  "second_statvalue": 0.1,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_Common_07.png",
+  "desc": "A dream W-Engine adored by Starlight Knights fans. Its copyright owner claims that counterfeit transformers can transform you into a bad guy NPC. Watch out for a flying kick that'll scare the bejesus out of the bad guys — that's the power of genuine copyrighted merch!\n\"Starlight Knights, transform— Transform! Transform! Why can't I transform? Unless... the stars haven't chosen me?!\" — from an unboxing vlog recorded by an anonymous member of the Cunning Hares.",
+  "desc2": "Equip to increase Defense Agents' combat capabilities",
+  "desc3": "An epic W-Engine favored by Starlight Knight fans. Its high popularity and scarcity marketing strategy have caused an influx of knock-offs."
 }

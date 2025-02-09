@@ -2,5 +2,9 @@
   "type": "support",
   "atk_base": 32,
   "second_statkey": "atk_",
-  "second_statvalue": 0.08
+  "second_statvalue": 0.08,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_B_Common_04.png",
+  "desc": "This special W-Engine features a built-in sonic generator that converts collected energy into penetrating infrasound waves, thereby boosting its damage output. However, to activate this function, the operator needs to charge up enough power, and the first step of charging up is to use up any remaining energy in the W-Engine.",
+  "desc2": "Equip to increase Support Agents' combat capabilities",
+  "desc3": "A special W-Engine featuring a built-in sonic generator that boosts its damage output."
 }

@@ -2,5 +2,9 @@
   "type": "attack",
   "atk_base": 32,
   "second_statkey": "crit_",
-  "second_statvalue": 0.064
+  "second_statvalue": 0.064,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_B_Common_03.png",
+  "desc": "This high-capacity portable W-Engine can collect dissipated energy from its surroundings, thus enhancing the combat effectiveness of its operator. It is a perfect choice for novice explorers who are worried that their W-Engine may run out of power during expeditions.",
+  "desc2": "Equip to increase Attack Agents' combat capabilities",
+  "desc3": "A high-capacity portable W-Engine that can collect dissipated energy from its surroundings, thus enhancing the combat effectiveness of its operator."
 }

@@ -3,5 +3,9 @@
   "type": "support",
   "atk_base": 42,
   "second_statkey": "enerRegen_",
-  "second_statvalue": 0.2
+  "second_statvalue": 0.2,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_1151.png",
+  "desc": "A support W-Engine propelled by jets that is both mobile and impactful, it can traverse the entire battlefield providing combat buffs. Not only is it practical, but it's the biggest imaginary enemy and most-feared sparring partner of Grassy, Woody, and Bricky. The little boars can hear Lucy say in their nightmares.\n\n<color=#959595>\"If you can't do it, go train with Kaboom!\" — Lucy, lecturing her three loyal guard boars</color>",
+  "desc2": "Equip to increase Support Agents' combat capabilities",
+  "desc3": "A support W-Engine propelled by jets that is both mobile and impactful, it can traverse the entire battlefield providing combat buffs."
 }

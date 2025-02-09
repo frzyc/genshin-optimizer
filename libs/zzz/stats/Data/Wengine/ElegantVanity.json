@@ -3,5 +3,9 @@
   "type": "support",
   "atk_base": 48,
   "second_statkey": "atk_",
-  "second_statvalue": 0.12
+  "second_statvalue": 0.12,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_S_1311.png",
+  "desc": "Light gradually begins to appear, and dazzling colors leak from the box, blurring the boundary between reality and fantasy. They reveal untold secrets behind the stage, where wealth and peril silently mingle, drawing in the observer and holding their gaze.\n\n<color=#959595>\"This is my secret weapon~ All the gentleness, allure, strength, pride, and radiance of a girl are hidden inside!\"\n—Astra, blending her lip color with her ring finger, then closing the vanity case with a playful smile.</color>",
+  "desc2": "Equip to increase Support Agents' combat capabilities",
+  "desc3": "Underneath the radiant splendor, her genuine self has never been hidden."
 }

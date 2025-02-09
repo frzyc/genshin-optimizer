@@ -3,5 +3,9 @@
   "type": "support",
   "atk_base": 40,
   "second_statkey": "enerRegen_",
-  "second_statvalue": 0.2
+  "second_statvalue": 0.2,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_S_Common_02.png",
+  "desc": "A new supercomputing W-Engine, featuring cutting-edge integrated chips that dynamically monitor the battlefield and provide tactical analysis for its user. Furthermore, this W-Engine can serve as a portable console, allowing its user to play the most popular video games anytime, anywhere. However, it is not advisable to use the speakers while playing games... Especially not in Hollow areas frequented by Ethereals.",
+  "desc2": "Equip to increase Support Agents' combat capabilities",
+  "desc3": "A new supercomputing W-Engine, featuring cutting-edge integrated chips that dynamically monitor the battlefield and provide tactical analysis for the user."
 }

@@ -3,5 +3,9 @@
   "type": "attack",
   "atk_base": 40,
   "second_statkey": "crit_",
-  "second_statvalue": 0.08
+  "second_statvalue": 0.08,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_Common_15.png",
+  "desc": "Art can save those drowning in life. Mortals gather together, music of different emotions collide, and the drying graffiti on the wall speaks of a thousand unique forms of agency.\nNow, turn up the music until the soundwaves crash the Hollow. Even if Ethereals don't have ears, let's make them feel the power of humanity!",
+  "desc2": "Equip to increase Attack Agents' combat capabilities",
+  "desc3": "Gather 'round, mortals! Turn up the music!"
 }

@@ -2,5 +2,9 @@
   "type": "anomaly",
   "atk_base": 32,
   "second_statkey": "pen_",
-  "second_statvalue": 0.064
+  "second_statvalue": 0.064,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_B_Common_12.png",
+  "desc": "A high-capacity W-Engine that features a built-in generator, allowing it to keep a stable storage of electrical power without any manual operation from the operator. As a result, it proves to be exceptionally used in battle as its electric current can stun tough enemies.",
+  "desc2": "Equip to increase Anomaly Agents' combat capabilities",
+  "desc3": "A high-capacity W-Engine that features a built-in generator, which allows it to keep a stable storage of electrical power."
 }

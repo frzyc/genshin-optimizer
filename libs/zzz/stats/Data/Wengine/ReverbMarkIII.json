@@ -2,5 +2,9 @@
   "type": "support",
   "atk_base": 32,
   "second_statkey": "hp_",
-  "second_statvalue": 0.08
+  "second_statvalue": 0.08,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_B_Common_06.png",
+  "desc": "This special W-Engine features motion capture algorithms that monitor the status of the operator's teammates, enabling it to send signals to coordinate tactical movements and enhance the overall combat competency of the squad. However, this premise assumes that everyone can keep up with its signals instead of stepping on other members' toes...",
+  "desc2": "Equip to increase Support Agents' combat capabilities",
+  "desc3": "A special W-Engine that features motion capture algorithms, which enhance the overall combat competency of your squad."
 }
