@@ -65,23 +65,24 @@ export function CharacterCardContent({
           {boxData.map((item, index) => (
             <Box key={index} position="relative">
               <ImgIcon size={2} src={commonDefIcon(item.src)} />
-              <Typography
-                variant="subtitle1"
+              <Box
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
                 position="absolute"
-                left="-3px"
-                top="10px"
-                width="24px"
-                height="24px"
-                borderRadius="50%"
+                bottom="-10px"
+                left="-4px"
+                width="1.7em"
+                height="1.7em"
+                borderRadius="1rem"
+                fontWeight="bold"
+                fontSize="0.8rem"
                 sx={{
                   background: '#1C1C1C',
                 }}
               >
-                <strong>{item.text}</strong>
-              </Typography>
+                {item.text}
+              </Box>
             </Box>
           ))}
         </Box>
