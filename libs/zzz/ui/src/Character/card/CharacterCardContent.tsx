@@ -21,7 +21,6 @@ const boxData: { src: SkillKey; text: string }[] = [
 
 export function CharacterCardContent({
   characterKey,
-  tcOverride = false,
 }: {
   characterKey: CharacterKey
   tcOverride?: boolean
