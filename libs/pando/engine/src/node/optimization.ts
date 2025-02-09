@@ -1,5 +1,5 @@
 import { type DedupTag, DedupTags, type Tag } from '../tag'
-import { assertUnreachable } from '../util'
+import { assertUnreachable, customOps } from '../util'
 import type { Calculator } from './calc'
 import { constant, read } from './construction'
 import { arithmetic, branching } from './formula'
@@ -332,32 +332,30 @@ export function compile(
   n: NumTagFree[],
   dynTagCategory: string,
   slotCount: number,
-  initial: Record<string, number>,
-  header?: string
+  initial: Record<string, number>
 ): (_: Record<string, number>[]) => number[]
 export function compile(
   n: StrTagFree[],
   dynTagCategory: string,
   slotCount: number,
-  initial: Record<string, string>,
-  header?: string
+  initial: Record<string, string>
 ): (_: Record<string, string>[]) => string[]
 export function compile(
   n: AnyTagFree[],
   dynTagCategory: string,
   slotCount: number,
-  initial: Record<string, any>,
-  header?: string
+  initial: Record<string, any>
 ): (_: Record<string, any>[]) => any[]
 export function compile(
   n: AnyTagFree[],
   dynTagCategory: string,
   slotCount: number,
-  initial: Record<string, any>,
-  header = ''
+  initial: Record<string, any>
 ): (_: Record<string, any>[]) => any[] {
   let i = 1,
-    body = `'use strict';` + header + ';const x0=0' // making sure `const` has at least one entry
+    body = `'use strict';const x0=0` // making sure `const` has at least one entry
+  for (const [name, f] of Object.entries(customOps))
+    body += `,${name}=${f.calc.toString()}`
   const names = new Map<AnyNode, string>()
   traverse(n, (n, visit) => {
     const name = `x${i++}`
@@ -406,7 +404,7 @@ export function compile(
         break
       }
       case 'custom':
-        body += `,${name}=${n.ex}(${argNames})`
+        body += `,${name}=${n.ex}([${argNames}])`
         break
       case 'lookup':
         // `JSON.stringify` on `Record<string, number>`

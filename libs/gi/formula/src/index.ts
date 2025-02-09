@@ -3,7 +3,11 @@ import type {
   ReRead,
   TagMapEntries,
 } from '@genshin-optimizer/pando/engine'
-import { compileTagMapValues, constant } from '@genshin-optimizer/pando/engine'
+import {
+  addCustomOperation,
+  compileTagMapValues,
+  constant,
+} from '@genshin-optimizer/pando/engine'
 import { Calculator } from './calculator'
 import { keys, values } from './data'
 export { Calculator } from './calculator'
@@ -12,6 +16,21 @@ export * from './data/util'
 export * from './formulaText'
 export * from './meta'
 export * from './util'
+
+{
+  // Hook the custom formula at once the beginning
+  const calc = (args: (number | string)[]): number => {
+    const x = args[0] as number
+    if (x >= 0.75) return 1 / (1 + 4 * x)
+    if (x >= 0) return 1 - x
+    return 1 - 0.5 * x
+  }
+  addCustomOperation('res', {
+    range: ([r]) => ({ min: calc([r.max]), max: calc([r.min]) }),
+    monotonicity: (_) => [{ inc: false, dec: true }],
+    calc,
+  })
+}
 
 export function genshinCalculatorWithValues(extras: TagMapEntries<number>) {
   return genshinCalculatorWithEntries(

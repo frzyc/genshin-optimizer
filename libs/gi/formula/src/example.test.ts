@@ -238,13 +238,7 @@ describe('example', () => {
       detached,
       'q', // Tag category for object key
       2, // Number of slots
-      {}, // Initial values
-      // Header; includes custom formulas, such as `res`
-      `function res(res) {
-      if (res < 0) return 1 - res / 2
-      else if (res >= 0.75) return 1 / (res * 4 + 1)
-      return 1 - res
-    }`
+      {} // Initial values
     )
 
     // Step 5: Calculate the value

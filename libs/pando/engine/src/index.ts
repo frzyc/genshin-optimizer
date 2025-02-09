@@ -1,4 +1,4 @@
 export * from './debug'
 export * from './node'
 export * from './tag'
-export { setDebugMode } from './util'
+export { addCustomOperation, setDebugMode } from './util'
