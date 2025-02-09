@@ -1,4 +1,7 @@
-import { objMultiplication } from '@genshin-optimizer/common/util'
+import {
+  objMultiplication,
+  objSumInPlace,
+} from '@genshin-optimizer/common/util'
 import type { PandoStatKey } from './common'
 
 export const allDiscSlotKeys = ['1', '2', '3', '4', '5', '6'] as const
@@ -226,9 +229,9 @@ export const allDiscCondKeys = {
   },
   ChaoticMetal: {
     key: 'ChaoticMetal',
-    text: 'Whenever a squad member inflicts Corruption on an enemy',
+    text: (val: number) => `${val}x Corruption Triggers`,
     min: 1,
-    max: 1,
+    max: 6,
   },
   FangedMetal: {
     key: 'FangedMetal',
@@ -334,8 +337,18 @@ export const disc4PeffectSheets: Partial<
   ChaoticMetal: {
     condMeta: allDiscCondKeys.ChaoticMetal,
     getStats: (conds) => {
-      if (conds['ChaoticMetal']) return { dmg_: 0.18 } //enemy takes 18% more DMG
-      return undefined
+      const ret: Record<string, number> = {
+        crit_dmg_: 0.2,
+      }
+      if (conds['ChaoticMetal'])
+        objSumInPlace(
+          ret,
+          objMultiplication(
+            { crit_dmg_: 0.055 },
+            conds['ChaoticMetal']
+          ) as Record<string, number>
+        )
+      return ret
     },
   },
   FangedMetal: {
