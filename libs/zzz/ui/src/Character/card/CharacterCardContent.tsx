@@ -23,7 +23,6 @@ export function CharacterCardContent({
   characterKey,
 }: {
   characterKey: CharacterKey
-  tcOverride?: boolean
 }) {
   const { database } = useDatabaseContext()
   const character =
@@ -32,7 +31,7 @@ export function CharacterCardContent({
 
   const charStat = getCharStat(characterKey)
   const chKey = character?.key
-  const cProfession = charStat?.specialty
+  const cSpecialty = charStat?.specialty
   const cAttribute = charStat?.attribute
   const characterLevel = character?.level
   const cRarity = charStat?.rarity
@@ -41,16 +40,11 @@ export function CharacterCardContent({
       <Box display="flex" gap={1.5} alignItems="center">
         <ImgIcon size={2} src={rarityDefIcon(cRarity)} />
         <Typography variant="h4">{chKey}</Typography>
-        <ElementIcon ele={cAttribute}></ElementIcon>
-        <ImgIcon size={2} src={specialityDefIcon(cProfession)} />
+        <ElementIcon ele={cAttribute} />
+        <ImgIcon size={2} src={specialityDefIcon(cSpecialty)} />
       </Box>
 
-      <Box
-        display="flex"
-        gap={3}
-        sx={{ textShadow: '0 0 5px gray' }}
-        alignItems="center"
-      >
+      <Box display="flex" gap={3} alignItems="center">
         <Box>
           <Typography
             component="span"
@@ -63,7 +57,7 @@ export function CharacterCardContent({
               fontSize: '1.625rem',
             }}
           >
-            Lv.{characterLevel}
+            <strong>Lv.{characterLevel}</strong>
           </Typography>
         </Box>
         <Box display="flex" gap={1.5} marginLeft="14px" alignItems="center">
@@ -80,12 +74,12 @@ export function CharacterCardContent({
                   height: '24px',
                   background: '#1C1C1C',
                   borderRadius: '50%',
-                  fontWeight: 'bold',
-                  textShadow: 'none',
-                  textAlign: 'center',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
                 }}
               >
-                {item.text}
+                <strong>{item.text}</strong>
               </Typography>
             </Box>
           ))}
