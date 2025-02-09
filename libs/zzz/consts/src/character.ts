@@ -74,3 +74,5 @@ export const allSkillKeys = [
   'core',
 ] as const
 export type SkillKey = (typeof allSkillKeys)[number]
+export const allAscensionKeys = [0, 1, 2, 3, 4, 5] as const
+export type AscensionKey = (typeof allAscensionKeys)[number]

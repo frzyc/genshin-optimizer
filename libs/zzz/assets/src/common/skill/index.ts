@@ -1,15 +1,15 @@
 import core from './SkillCore.png'
-import evade from './SkillEvade.png'
-import normal from './SkillNormal.png'
+import dodge from './SkillEvade.png'
+import basic from './SkillNormal.png'
 import chain from './SkillQTE.png'
-import skill from './SkillSpecial.png'
+import special from './SkillSpecial.png'
 import assist from './SkillSwitch.png'
 
 const data = {
-  evade,
-  normal,
+  dodge,
+  basic,
   chain,
-  skill,
+  special,
   core,
   assist,
 } as const
