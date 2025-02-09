@@ -14,7 +14,6 @@ export const otherStatKeys = [
   'enemyRes_', // Enemy Resistance
   'enemyResRed_', // Enemy Resistance Reduction
   'enemyResIgn_', // Enemy Resistance Ignore
-  'frost_dmg_', // Frost DMG
   'dmg_', // Bonus DMG
 
   // Other stats
@@ -56,7 +55,6 @@ export const allAttributeKeys = [
   'ice',
   'physical',
   'ether',
-  'frost',
 ] as const
 export type AttributeKey = (typeof allAttributeKeys)[number]
 
@@ -66,7 +64,6 @@ export const allAttributeDamageKeys = [
   'ice_dmg_',
   'physical_dmg_',
   'ether_dmg_',
-  'frost_dmg_',
 ] as const
 export type AttributeDamageKey = (typeof allAttributeDamageKeys)[number]
 
@@ -127,7 +124,6 @@ const elementalData: Record<AttributeKey, string> = {
   ice: 'Ice',
   physical: 'Physical',
   ether: 'Ether',
-  frost: 'Frost',
 } as const
 
 Object.entries(elementalData).forEach(([e, name]) => {
