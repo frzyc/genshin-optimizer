@@ -3,5 +3,9 @@
   "type": "defense",
   "atk_base": 42,
   "second_statkey": "def_",
-  "second_statvalue": 0.16
+  "second_statvalue": 0.16,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_1121.png",
+  "desc": "This super-powerful support W-Engine, into which Ben installed extra heavy oil cylinders to keep it growling along, can even provide sufficient power for heavy-duty machinery. Despite its weight being so massive that ordinary people cannot lift it, for Ben, it's the perfect counterweight ball for his concrete pillar.\n\n<color=#959595>\"Don't worry. I've calculated the counterweight position and impact resistance factor down to four decimal places. It won't impact weapon performance.\" — Ben, before taking out his notebook to check over the calculations yet again</color>",
+  "desc2": "Equip to increase Defense Agents' combat capabilities",
+  "desc3": "A powerful protection-type W-Engine, characterized by thick oil cylinders that ceaselessly roar inside it. It can provide sufficient power for heavy machinery."
 }

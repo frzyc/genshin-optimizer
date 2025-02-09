@@ -1,40 +1,30 @@
 // This is a generated index file.
-import AssassinsBallad from './SuitAssassinsBallad'
-import AstralVoice from './SuitAstralVoice'
-import BranchBladeSong from './SuitBranch&BladeSong'
-import ChaosJazz from './SuitChaosJazz'
-import ChaoticMetal from './SuitChaosMetal'
-import DoomGrindcore from './SuitDoomGrindcore'
-import FangedMetal from './SuitFangedMetal'
-import FreedomBlues from './SuitFreedomBlues'
-import HormonePunk from './SuitHormonePunk'
-import InfernoMetal from './SuitInfernoMetal'
-import MammothElectro from './SuitMammothElectro'
-import NoisyPop from './SuitNoisyPop'
-import PolarMetal from './SuitPolarMetal'
-import ProtoPunk from './SuitProtoPunk'
-import PufferElectro from './SuitPufferElectro'
-import ShockstarDisco from './SuitShockstarDisco'
-import SoulRock from './SuitSoulRock'
-import SwingJazz from './SuitSwingJazz'
-import ThunderMetal from './SuitThunderMetal'
-import TwistedGrindcore from './SuitTwistedGrindcore'
-import UnicornElectro from './SuitUnicornElectro'
-import WoodpeckerElectro from './SuitWoodpeckerElectro'
+import AstralVoice from './AstralVoice'
+import BranchBladeSong from './BranchBladeSong'
+import ChaosJazz from './ChaosJazz'
+import ChaoticMetal from './ChaoticMetal'
+import FangedMetal from './FangedMetal'
+import FreedomBlues from './FreedomBlues'
+import HormonePunk from './HormonePunk'
+import InfernoMetal from './InfernoMetal'
+import PolarMetal from './PolarMetal'
+import ProtoPunk from './ProtoPunk'
+import PufferElectro from './PufferElectro'
+import ShockstarDisco from './ShockstarDisco'
+import SoulRock from './SoulRock'
+import SwingJazz from './SwingJazz'
+import ThunderMetal from './ThunderMetal'
+import WoodpeckerElectro from './WoodpeckerElectro'
 
 const data = {
   AstralVoice,
-  AssassinsBallad,
   BranchBladeSong,
   ChaosJazz,
   ChaoticMetal,
-  DoomGrindcore,
   FangedMetal,
   FreedomBlues,
   HormonePunk,
   InfernoMetal,
-  MammothElectro,
-  NoisyPop,
   PolarMetal,
   ProtoPunk,
   PufferElectro,
@@ -42,8 +32,6 @@ const data = {
   SoulRock,
   SwingJazz,
   ThunderMetal,
-  TwistedGrindcore,
-  UnicornElectro,
   WoodpeckerElectro,
 } as const
 export default data

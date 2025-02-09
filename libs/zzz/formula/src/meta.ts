@@ -589,34 +589,6 @@ export const formulas = {
       },
     },
   },
-  PulchraFeliny: {
-    anomalyDmgInst: {
-      sheet: 'PulchraFeliny',
-      name: 'anomalyDmgInst',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'anomalyDmg',
-        sheet: 'PulchraFeliny',
-        attribute: 'physical',
-        damageType1: 'anomaly',
-        name: 'anomalyDmgInst',
-      },
-    },
-    standardDmgInst: {
-      sheet: 'PulchraFeliny',
-      name: 'standardDmgInst',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'standardDmg',
-        sheet: 'PulchraFeliny',
-        attribute: 'physical',
-        damageType1: 'elemental',
-        name: 'standardDmgInst',
-      },
-    },
-  },
   QingYi: {
     anomalyDmgInst: {
       sheet: 'QingYi',
@@ -701,34 +673,6 @@ export const formulas = {
       },
     },
   },
-  SilverAnby: {
-    anomalyDmgInst: {
-      sheet: 'SilverAnby',
-      name: 'anomalyDmgInst',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'anomalyDmg',
-        sheet: 'SilverAnby',
-        attribute: 'electric',
-        damageType1: 'anomaly',
-        name: 'anomalyDmgInst',
-      },
-    },
-    standardDmgInst: {
-      sheet: 'SilverAnby',
-      name: 'standardDmgInst',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'standardDmg',
-        sheet: 'SilverAnby',
-        attribute: 'electric',
-        damageType1: 'elemental',
-        name: 'standardDmgInst',
-      },
-    },
-  },
   Soldier11: {
     anomalyDmgInst: {
       sheet: 'Soldier11',
@@ -780,34 +724,6 @@ export const formulas = {
         q: 'standardDmg',
         sheet: 'Soukaku',
         attribute: 'ice',
-        damageType1: 'elemental',
-        name: 'standardDmgInst',
-      },
-    },
-  },
-  Trigger: {
-    anomalyDmgInst: {
-      sheet: 'Trigger',
-      name: 'anomalyDmgInst',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'anomalyDmg',
-        sheet: 'Trigger',
-        attribute: 'electric',
-        damageType1: 'anomaly',
-        name: 'anomalyDmgInst',
-      },
-    },
-    standardDmgInst: {
-      sheet: 'Trigger',
-      name: 'standardDmgInst',
-      tag: {
-        et: 'own',
-        qt: 'formula',
-        q: 'standardDmg',
-        sheet: 'Trigger',
-        attribute: 'electric',
         damageType1: 'elemental',
         name: 'standardDmgInst',
       },

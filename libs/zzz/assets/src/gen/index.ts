@@ -1,15 +1,11 @@
 // This is a generated index file.
 import chars from './chars'
-import common from './common'
 import discs from './discs'
-import rarity from './rarity'
-import speciality from './speciality'
+import wengines from './wengines'
 
 const data = {
-  discs,
   chars,
-  speciality,
-  rarity,
-  common,
+  discs,
+  wengines,
 } as const
 export default data

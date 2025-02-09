@@ -3,5 +3,9 @@
   "type": "attack",
   "atk_base": 40,
   "second_statkey": "atk_",
-  "second_statvalue": 0.1
+  "second_statvalue": 0.1,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_Common_01.png",
+  "desc": "A custom-made W-Engine designed for street music lovers. It sacrifices cooling components to make space for high-end speaker modules, ensuring your fans, both Ethereal and human, hear your every word.\n——From the streets to the Hollows, superstars are never short of flowers and applause. The bars they spit are so flaming hot, they add the perfect heat to any battlefield.",
+  "desc2": "Equip to increase Attack Agents' combat capabilities",
+  "desc3": "A custom-made W-Engine designed for urban music lovers. It sacrifices heat dissipation components for improved sound quality."
 }

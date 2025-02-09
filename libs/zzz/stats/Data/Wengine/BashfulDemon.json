@@ -3,5 +3,9 @@
   "type": "support",
   "atk_base": 42,
   "second_statkey": "atk_",
-  "second_statvalue": 0.1
+  "second_statvalue": 0.1,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_1131.png",
+  "desc": "An intricate W-Engine developed by Section 6 and later modified using the technology of a certain martial arts clan. It can control Ether particles to form an energy field and boasts a terrifying appearance that can easily silence a crying child! If you are unfortunate enough to face its wicked stare, then just wait until it unfurls its fangs. What lies inside is... Don't laugh! This poor little thing really hurts when it hits you!\n\n<color=#959595>\"Hmm... Instead of a cool mask, I'd rather carry another lunchbox... I'll go ask Nagi if I can pack some snacks in it!\" — Soukaku, excitedly running to the Section 6 office</color>",
+  "desc2": "Equip to increase Support Agents' combat capabilities",
+  "desc3": "An intricate W-Engine developed by Section 6 and later modified with extra features. It can control Ether particles to form an energy field. This model is favored by Soukaku."
 }

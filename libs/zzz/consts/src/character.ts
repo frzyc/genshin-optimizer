@@ -1,4 +1,4 @@
-// copy from libs\zzz\dm\src\dm\character\characterKeys.json
+// copy from libs\zzz\dm\src\dm\character\characterKeys.json with sussy chars removed
 export const allCharacterKeys = [
   'Anby',
   'Anton',

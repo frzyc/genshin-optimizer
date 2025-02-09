@@ -3,5 +3,9 @@
   "type": "stun",
   "atk_base": 46,
   "second_statkey": "impact_",
-  "second_statvalue": 0.072
+  "second_statvalue": 0.072,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_S_1141.png",
+  "desc": "This special W-Engine has the capability to create extreme low temperatures. Its radiator opening was designed with an eerie animal teeth decoration and often drips condensation. After Lycaon's improvements, its rough appearance has become much more refined and elegant, and the opening is now utilized to store envelopes and other keepsakes.\n\n<color=#959595>\"Manners aren't a leash for wildness; it enhances it before it's set free.\" — Lycaon, speaking gently during a tea party</color>",
+  "desc2": "Equip to increase Stun Agents' combat capabilities",
+  "desc3": "A special W-Engine with a powerful temperature control system. Modified by Lycaon, it has the capability to quickly create extremely cold environments."
 }

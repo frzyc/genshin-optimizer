@@ -2,5 +2,9 @@
   "type": "defense",
   "atk_base": 32,
   "second_statkey": "def_",
-  "second_statvalue": 0.128
+  "second_statvalue": 0.128,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_B_Common_14.png",
+  "desc": "A functional W-Engine that specializes in energy conversion. It can analyze combat environments and generate special sounds to disrupt the enemy's attack. However, when facing a strong-willed enemy, you will still need to seize the right opportunity to attack. Luckily, most Ethereals lack the willpower to resist it.",
+  "desc2": "Equip to increase Defense Agents' combat capabilities",
+  "desc3": "A functional W-Engine that specializes in energy conversion. It can analyze combat environments and generate special sounds to disrupt the enemy's offense."
 }

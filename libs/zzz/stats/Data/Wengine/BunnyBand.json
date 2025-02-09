@@ -3,5 +3,9 @@
   "type": "defense",
   "atk_base": 40,
   "second_statkey": "def_",
-  "second_statvalue": 0.16
+  "second_statvalue": 0.16,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_Common_10.png",
+  "desc": "A special W-Engine decorated with a fluffy bunny. Although it is a mere imitation of the real animal, even the fiercest of Hollow Raiders can relieve stress by petting their bunnies while taking a break, which enhances their combat performance. There are many similar models in this series of W-Engines: a portable bunny, a foldable bunny, a furless bunny... Everyone can find one they will not be able to refuse.",
+  "desc2": "Equip to increase Defense Agents' combat capabilities",
+  "desc3": "A special W-Engine decorated with a fluffy bunny. However, it is just an imitation of the real animal."
 }

@@ -3,5 +3,9 @@
   "type": "support",
   "atk_base": 40,
   "second_statkey": "pen_",
-  "second_statvalue": 0.08
+  "second_statvalue": 0.08,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_Common_02.png",
+  "desc": "A special W-Engine equipped with a high-speed camera module. The best choice for in-Hollow photography enthusiasts. It captures every touching moment spent beating up your Ethereal friends, as long as you have a free hand to press the shutter.\nP.S. The internal optical components have not undergone anti-corruption treatment. Please do not lose the warranty form.",
+  "desc2": "Equip to increase Support Agents' combat capabilities",
+  "desc3": "A special W-Engine equipped with a high-speed camera module. The best choice for in-Hollow photography enthusiasts."
 }
