@@ -1,10 +1,9 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { type CharacterKey } from '@genshin-optimizer/zzz/consts'
-
 import { getCharStat } from '@genshin-optimizer/zzz/stats'
 import { Box, Skeleton } from '@mui/material'
 import { Suspense } from 'react'
-import { CharacterCardEquipmentRow, CharacterCardHeader } from './index'
+import { CharacterCardContent, CharacterCardEquipment } from './card'
 
 export function CharacterCard({
   characterKey,
@@ -53,7 +52,7 @@ function ExistingCharacterCardContent({
           padding: 0,
         })}
       >
-        <CharacterCardEquipmentRow characterKey={characterKey} />
+        <CharacterCardEquipment characterKey={characterKey} />
       </Box>
       <Box
         sx={(_) => ({
@@ -64,10 +63,10 @@ function ExistingCharacterCardContent({
           gap: 1,
           flexGrow: 1,
           position: 'relative',
-          background: '#2c2c2c',
+          background: '#1A263A',
         })}
       >
-        <CharacterCardHeader characterKey={characterKey} />
+        <CharacterCardContent characterKey={characterKey} />
       </Box>
     </CardThemed>
   )

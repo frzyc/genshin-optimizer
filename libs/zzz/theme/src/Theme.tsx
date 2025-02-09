@@ -75,19 +75,19 @@ export const theme = createTheme({
       name: 'fire',
     }),
     ice: commonTheme.palette.augmentColor({
-      color: { main: '#95EAE9' },
+      color: { main: '#95EAE9', contrastText: '#fff' },
       name: 'ice',
     }),
     electric: commonTheme.palette.augmentColor({
-      color: { main: '#33B6FE' },
+      color: { main: '#0177FF', contrastText: '#fff' },
       name: 'electric',
     }),
     frost: commonTheme.palette.augmentColor({
-      color: { main: '#95EAE9' },
+      color: { main: '#719EF8', contrastText: '#fff' },
       name: 'frost',
     }),
     physical: commonTheme.palette.augmentColor({
-      color: { main: '#EDCC2C' },
+      color: { main: '#EDCC2C', contrastText: '#fff' },
       name: 'physical',
     }),
     ether: commonTheme.palette.augmentColor({

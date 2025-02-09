@@ -3,23 +3,17 @@ import type {
   CharacterKey,
   CharacterRarityKey,
   DiscSetKey,
+  SkillKey,
   SpecialityKey,
 } from '@genshin-optimizer/zzz/consts'
 import type { StaticImageData } from 'next/image'
 import commonImages from './common'
 import rarity from './common/rarity'
-import common from './common/skill'
+import skill from './common/skill'
 import speciality from './common/speciality'
 import chars from './gen/chars'
 import discs from './gen/discs'
-export type commonKey =
-  | 'evade'
-  | 'normal'
-  | 'assist'
-  | 'skill'
-  | 'chain'
-  | 'core'
-type commonImagesKey = 'discBackdrop' | 'discDrive'
+type CommonImagesKey = 'discDrive'
 
 export function characterAsset(
   ck: CharacterKey,
@@ -40,10 +34,10 @@ export function rarityDefIcon(rarityKey: CharacterRarityKey) {
   return rarityKey ? rarity[rarityKey] : ''
 }
 
-export function commonDefIcon(key: commonKey) {
-  return key ? common[key] : ''
+export function commonDefIcon(key: SkillKey) {
+  return key ? skill[key] : ''
 }
 
-export function commonDefImages(key: commonImagesKey) {
+export function commonDefImages(key: CommonImagesKey) {
   return key ? commonImages[key] : ''
 }

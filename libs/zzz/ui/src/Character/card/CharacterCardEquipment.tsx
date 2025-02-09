@@ -9,13 +9,14 @@ import { allDiscSlotKeys, discRarityColor } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { Box, Typography } from '@mui/material'
+import { useMemo } from 'react'
 
-const commonStyles = {
-  position: 'absolute',
+const commonStyles = Object.freeze({
+  position: 'absolute' as const,
   borderRadius: '50%',
   width: '34px',
   height: '34px',
-}
+})
 const stylesMap = {
   '1': {
     top: '5px',
@@ -49,29 +50,26 @@ const stylesMap = {
   },
 }
 
-type DiscStyles = {
-  position: string
-  borderRadius: string
-  width: string
-  height: string
-  top: string
-  left: string
-}
+type CommonStyles = typeof commonStyles
+type SlotPosition = { top: string; left: string }
+type DiscStyles = CommonStyles & SlotPosition
 
 type DiscInfo = {
   key: DiscSlotKey
   styles: DiscStyles
-  disc: ICachedDisc
+  disc: ICachedDisc | undefined
 }
 
-export function CharacterCardEquipmentRow({
+export function CharacterCardEquipment({
   characterKey,
 }: {
   characterKey: CharacterKey
 }) {
   const { database } = useDatabaseContext()
-  const getCharacterDiscs = database.discs.values.filter(
-    (disc) => disc.location === characterKey
+  const characterDiscs = useMemo(
+    () =>
+      database.discs.values.filter((disc) => disc.location === characterKey),
+    [database.discs.values, characterKey]
   )
   return (
     <Box
@@ -82,7 +80,7 @@ export function CharacterCardEquipmentRow({
       <Box
         flexShrink={1}
         component={NextImage ? NextImage : 'img'}
-        src={characterAsset(characterKey, 'iconGacha')}
+        src={characterAsset(characterKey, 'full')}
         sx={{ maxWidth: '100%' }}
         position="absolute"
         zIndex={0}
@@ -90,7 +88,7 @@ export function CharacterCardEquipmentRow({
         top="15px"
       />
 
-      <Discs discs={getCharacterDiscs} />
+      <Discs discs={characterDiscs} />
     </Box>
   )
 }
@@ -98,7 +96,7 @@ function Discs({ discs }: { discs: ICachedDisc[] }) {
   const mappedDiscs: DiscInfo[] = allDiscSlotKeys.map((slotKey) => ({
     key: slotKey,
     styles: stylesMap[slotKey] || {},
-    disc: discs.find((disc) => disc.slotKey === slotKey) as ICachedDisc,
+    disc: discs?.find((disc) => disc.slotKey === slotKey),
   }))
   return (
     <Box
@@ -114,13 +112,15 @@ function Discs({ discs }: { discs: ICachedDisc[] }) {
         transform: 'scale(1.96)',
       }}
     >
-      {mappedDiscs.map((discInfo: DiscInfo) => (
-        <Box>
-          {discInfo.disc && (
+      {mappedDiscs.map((discInfo: DiscInfo) =>
+        discInfo.disc ? (
+          <Box key={discInfo.key}>
             <Box
               sx={(theme) => ({
                 border: `2px solid ${
-                  theme.palette[discRarityColor[discInfo.disc.rarity]]?.main
+                  discInfo.disc?.rarity
+                    ? theme.palette[discRarityColor[discInfo.disc.rarity]].main
+                    : ''
                 }`,
                 ...discInfo.styles,
               })}
@@ -155,9 +155,9 @@ function Discs({ discs }: { discs: ICachedDisc[] }) {
                 </Box>
               </Box>
             </Box>
-          )}
-        </Box>
-      ))}
+          </Box>
+        ) : null
+      )}
     </Box>
   )
 }
