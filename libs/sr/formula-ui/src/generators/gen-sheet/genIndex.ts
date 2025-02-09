@@ -27,7 +27,7 @@ async function writeCharIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
   const index = prettier.format(
     `
-import type { UISheet } from '@genshin-optimizer/pando/ui-sheet'
+import type { UISheet } from '@genshin-optimizer/gameOpt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import type { TalentSheetElementKey } from '../consts'
 ${allCharacterKeys
@@ -50,7 +50,7 @@ async function writeRelicIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
   const index = prettier.format(
     `
-import type { UISheet } from '@genshin-optimizer/pando/ui-sheet'
+import type { UISheet } from '@genshin-optimizer/gameOpt/sheet-ui'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 ${allRelicSetKeys
   .map((setKey) => `import ${setKey} from './${setKey}'`)
@@ -69,7 +69,7 @@ async function writeLightConeIndex(path: string) {
   const prettierRc = await prettier.resolveConfig(path)
   const index = prettier.format(
     `
-import type { UISheetElement } from '@genshin-optimizer/pando/ui-sheet'
+import type { UISheetElement } from '@genshin-optimizer/gameOpt/sheet-ui'
 import type { LightConeKey } from '@genshin-optimizer/sr/consts'
 
 ${allLightConeKeys

@@ -1,4 +1,5 @@
 import { notEmpty } from '@genshin-optimizer/common/util'
+import { CalcContext } from '@genshin-optimizer/gameOpt/formula-ui'
 import type { TagMapNodeEntries } from '@genshin-optimizer/gi/formula'
 import {
   artifactsData,
@@ -13,7 +14,6 @@ import {
 } from '@genshin-optimizer/gi/formula'
 import type { IWeapon } from '@genshin-optimizer/gi/good'
 import { getMainStatValue } from '@genshin-optimizer/gi/util'
-import { CalcContext } from '@genshin-optimizer/pando/ui-sheet'
 import type { ReactNode } from 'react'
 import { useContext, useMemo } from 'react'
 import { TeamContext } from './TeamContext'

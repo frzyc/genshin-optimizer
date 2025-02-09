@@ -1,5 +1,5 @@
 import { ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
-import type { UISheet } from '@genshin-optimizer/pando/ui-sheet'
+import type { UISheet } from '@genshin-optimizer/gameOpt/sheet-ui'
 import { relicAsset } from '@genshin-optimizer/sr/assets'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { buffs, conditionals } from '@genshin-optimizer/sr/formula'

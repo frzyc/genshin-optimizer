@@ -1,5 +1,5 @@
-import type { TagField } from '@genshin-optimizer/pando/ui-sheet'
-import { isTagField } from '@genshin-optimizer/pando/ui-sheet'
+import type { TagField } from '@genshin-optimizer/gameOpt/sheet-ui'
+import { isTagField } from '@genshin-optimizer/gameOpt/sheet-ui'
 import type { Tag } from '@genshin-optimizer/sr/formula'
 import { createTagMap } from '@genshin-optimizer/sr/formula'
 import { charBaseUiSheet } from './CharBase'

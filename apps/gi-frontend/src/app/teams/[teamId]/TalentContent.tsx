@@ -5,12 +5,12 @@ import {
   NextImage,
 } from '@genshin-optimizer/common/ui'
 import { range } from '@genshin-optimizer/common/util'
+import type { UISheetElement } from '@genshin-optimizer/gameOpt/sheet-ui'
+import { DocumentDisplay } from '@genshin-optimizer/gameOpt/sheet-ui'
 import { maxConstellationCount } from '@genshin-optimizer/gi/consts'
 import { convert, ownTag, type Calculator } from '@genshin-optimizer/gi/formula'
 import type { TalentSheetElementKey } from '@genshin-optimizer/gi/formula-ui'
 import { uiSheets } from '@genshin-optimizer/gi/formula-ui'
-import type { UISheetElement } from '@genshin-optimizer/pando/ui-sheet'
-import { DocumentDisplay } from '@genshin-optimizer/pando/ui-sheet'
 import {
   Box,
   CardActionArea,

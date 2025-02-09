@@ -1,4 +1,3 @@
-import type { IConditionalData } from '@genshin-optimizer/common/formula'
 import {
   notEmpty,
   objKeyMap,
@@ -6,6 +5,7 @@ import {
   range,
   shallowCompareObj,
 } from '@genshin-optimizer/common/util'
+import type { IConditionalData } from '@genshin-optimizer/gameOpt/formula'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterKeys,
@@ -346,7 +346,6 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
         return def
       }
     }
-    return def
   }
   getActiveBuildName(
     { buildType, buildId, buildTcId }: TeammateDatum,

@@ -1,6 +1,6 @@
+import type { UISheet } from '@genshin-optimizer/gameOpt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/gi/consts'
 import { formulas } from '@genshin-optimizer/gi/formula'
-import type { UISheet } from '@genshin-optimizer/pando/ui-sheet'
 import type { TalentSheetElementKey } from '../consts'
 import { charTemplates } from '../util'
 const key: CharacterKey = 'Nahida'

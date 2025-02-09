@@ -1,4 +1,4 @@
-import type { UISheet } from '@genshin-optimizer/pando/ui-sheet'
+import type { UISheet } from '@genshin-optimizer/gameOpt/sheet-ui'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import type { TalentSheetElementKey } from '../consts'
 import Acheron from './Acheron'

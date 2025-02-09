@@ -1,4 +1,4 @@
-import type { UISheet } from '@genshin-optimizer/pando/ui-sheet'
+import type { UISheet } from '@genshin-optimizer/gameOpt/sheet-ui'
 import type {
   CharacterGenderedKey,
   CharacterKey,

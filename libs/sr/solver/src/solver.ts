@@ -1,3 +1,4 @@
+import type { Preset } from '@genshin-optimizer/gameOpt/engine'
 import { detach, prod, sum } from '@genshin-optimizer/pando/engine'
 import type { CharacterKey, RelicSlotKey } from '@genshin-optimizer/sr/consts'
 import { allLightConeKeys, allRelicSetKeys } from '@genshin-optimizer/sr/consts'
@@ -7,12 +8,7 @@ import type {
   StatFilter,
   Team,
 } from '@genshin-optimizer/sr/db'
-import {
-  Read,
-  type Calculator,
-  type Preset,
-  type Tag,
-} from '@genshin-optimizer/sr/formula'
+import { Read, type Calculator, type Tag } from '@genshin-optimizer/sr/formula'
 import type {
   ParentCommandStart,
   ParentCommandTerminate,

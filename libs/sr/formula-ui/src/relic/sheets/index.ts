@@ -1,4 +1,4 @@
-import type { UISheet } from '@genshin-optimizer/pando/ui-sheet'
+import type { UISheet } from '@genshin-optimizer/gameOpt/sheet-ui'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import BandOfSizzlingThunder from './BandOfSizzlingThunder'
 import BelobogOfTheArchitects from './BelobogOfTheArchitects'

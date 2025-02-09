@@ -8,12 +8,14 @@ import {
   NumberInputLazy,
   useScrollRef,
 } from '@genshin-optimizer/common/ui'
+import { DebugListingsDisplay } from '@genshin-optimizer/gameOpt/formula-ui'
 import { type CharacterKey } from '@genshin-optimizer/sr/consts'
 import type { Frame } from '@genshin-optimizer/sr/db'
 import {
   useCharacterContext,
   useDatabaseContext,
 } from '@genshin-optimizer/sr/db-ui'
+import { filterDebug, own } from '@genshin-optimizer/sr/formula'
 import { CharacterCard, CharacterEditor } from '@genshin-optimizer/sr/ui'
 import { Delete } from '@mui/icons-material'
 import {
@@ -32,7 +34,6 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { BonusStatsSection } from './BonusStats'
 import { BuildsDisplay, EquipRow, EquipRowTC } from './BuildsDisplay'
 import { PresetContext, useTeamContext, useTeammateContext } from './context'
-import { DebugListingsDisplay } from './DebugDisplay'
 import { LightConeSheetsDisplay } from './LightConeSheetsDisplay'
 import Optimize from './Optimize'
 import { OptimizationTargetSelector } from './Optimize/OptimizationTargetSelector'
@@ -202,7 +203,11 @@ function CharacterSection() {
         <CurrentBuildDisplay />
       </Box>
       <BonusStatsSection />
-      <DebugListingsDisplay />
+      <DebugListingsDisplay
+        formulasRead={own.listing.formulas}
+        buffsRead={own.listing.buffs}
+        filterFunc={filterDebug}
+      />
     </Stack>
   )
 }
