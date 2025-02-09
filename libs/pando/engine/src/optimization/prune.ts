@@ -9,23 +9,16 @@ import {
   sum,
   traverse,
 } from '../node'
-import { assertUnreachable } from '../util'
+import type { Monotonicity, Range } from '../util'
+import { assertUnreachable, customOps } from '../util'
 type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
 const { arithmetic, branching } = calculation
 
 type Component = Record<string, number>
-type Monotonicity = { inc: boolean; dec: boolean }
-type Range = { min: number; max: number }
 
 type CompRanges = Record<string, Range>[]
 type NodeRanges = Map<AnyNode<OP>, Range>
 type Monotonicities = Map<string, Monotonicity>
-
-export type CustomInfo = {
-  range: (r: Range[]) => Range
-  monotonicity: (r: Range[]) => Monotonicity[]
-}
-export const customInfo: Record<string, CustomInfo> = {}
 
 export function prune<I extends OP, C extends Component>(
   nodes: NumNode<I>[],
@@ -400,7 +393,7 @@ function computeNodeRanges(
         break
       }
       case 'custom':
-        r = customInfo[n.ex]!.range(ranges)
+        r = customOps[n.ex]!.range(ranges)
         break
       default:
         assertUnreachable(n)
@@ -490,7 +483,7 @@ function getMonotonicities(
         break
       }
       case 'custom':
-        customInfo[node.ex]
+        customOps[node.ex]
           .monotonicity(node.x.map((n) => nodeRanges.get(n)!))
           .forEach((t, i) => {
             if (!t.inc) visit(node.x[i], !ty)
