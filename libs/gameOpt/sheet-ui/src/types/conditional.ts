@@ -1,4 +1,4 @@
-import type { IConditionalData } from '@genshin-optimizer/common/formula'
+import type { IConditionalData } from '@genshin-optimizer/gameOpt/formula'
 import type { Calculator } from '@genshin-optimizer/pando/engine'
 import type { ReactNode } from 'react'
 import type { Field } from './field'

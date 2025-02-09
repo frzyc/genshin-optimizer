@@ -1,8 +1,4 @@
 'use client'
-import type {
-  IListConditionalData,
-  INumConditionalData,
-} from '@genshin-optimizer/common/formula'
 import type { CardBackgroundColor } from '@genshin-optimizer/common/ui'
 import {
   CardThemed,
@@ -11,6 +7,11 @@ import {
   SqBadge,
 } from '@genshin-optimizer/common/ui'
 import { evalIfFunc } from '@genshin-optimizer/common/util'
+import type {
+  IListConditionalData,
+  INumConditionalData,
+} from '@genshin-optimizer/gameOpt/formula'
+import { CalcContext, TagContext } from '@genshin-optimizer/gameOpt/formula-ui'
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
 import CheckBoxIcon from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank'
@@ -33,7 +34,6 @@ import {
   useMemo,
   useState,
 } from 'react'
-import { CalcContext, TagContext } from '../context'
 import type { Conditional } from '../types'
 import { FieldsDisplay } from './FieldDisplay'
 import { HeaderDisplay } from './HeaderDisplay'

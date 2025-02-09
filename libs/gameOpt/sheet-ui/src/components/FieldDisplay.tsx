@@ -4,6 +4,11 @@ import {
   type CardBackgroundColor,
 } from '@genshin-optimizer/common/ui'
 import { valueString } from '@genshin-optimizer/common/util'
+import {
+  CalcContext,
+  DebugReadContext,
+  TagContext,
+} from '@genshin-optimizer/gameOpt/formula-ui'
 import { read } from '@genshin-optimizer/pando/engine'
 import GroupsIcon from '@mui/icons-material/Groups'
 import HelpIcon from '@mui/icons-material/Help'
@@ -11,7 +16,6 @@ import type { ListProps, Palette, PaletteColor } from '@mui/material'
 import { Box, List, ListItem, Typography, styled } from '@mui/material'
 import type { ReactNode } from 'react'
 import React, { useCallback, useContext } from 'react'
-import { CalcContext, DebugReadContext, TagContext } from '../context'
 import type { Field, TagField, TextField } from '../types'
 
 export function FieldsDisplay({

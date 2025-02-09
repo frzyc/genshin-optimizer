@@ -4,10 +4,6 @@ import {
   ModalWrapper,
 } from '@genshin-optimizer/common/ui'
 import type { DebugMeta } from '@genshin-optimizer/pando/engine'
-import { DebugReadContext, TagContext } from '@genshin-optimizer/pando/ui-sheet'
-import { allLightConeKeys } from '@genshin-optimizer/sr/consts'
-import { own } from '@genshin-optimizer/sr/formula'
-import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
 import CloseIcon from '@mui/icons-material/Close'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import {
@@ -22,9 +18,20 @@ import {
 } from '@mui/material'
 import { Box, Stack } from '@mui/system'
 import { useContext } from 'react'
+import { CalcContext, DebugReadContext, TagContext } from './context'
+import type { FilterFunc, GenericRead } from './types'
 
-export function DebugListingsDisplay() {
-  const calc = useSrCalcContext()
+export function DebugListingsDisplay({
+  formulasRead,
+  buffsRead,
+  filterFunc,
+}: {
+  formulasRead: GenericRead
+  buffsRead: GenericRead
+  filterFunc: FilterFunc
+}) {
+  const tag = useContext(TagContext)
+  const calc = useContext(CalcContext)?.withTag(tag)
   return (
     <CardThemed bgt="dark">
       <CardContent>
@@ -34,7 +41,7 @@ export function DebugListingsDisplay() {
           </AccordionSummary>
           <AccordionDetails>
             <Stack>
-              {calc?.listFormulas(own.listing.formulas).map((read, index) => {
+              {calc?.listFormulas(formulasRead).map((read, index) => {
                 const computed = calc.compute(read)
                 const name = read.tag.name || read.tag.q
                 return (
@@ -60,7 +67,10 @@ export function DebugListingsDisplay() {
                         formula:
                         <CodeBlock
                           text={JSON.stringify(
-                            filterDebug(calc.toDebug().compute(read).meta),
+                            filterDebug(
+                              calc.toDebug().compute(read).meta,
+                              filterFunc
+                            ),
                             undefined,
                             2
                           )}
@@ -79,7 +89,7 @@ export function DebugListingsDisplay() {
           </AccordionSummary>
           <AccordionDetails>
             <Stack>
-              {calc?.listFormulas(own.listing.buffs).map((read, index) => {
+              {calc?.listFormulas(buffsRead).map((read, index) => {
                 const computed = calc.compute(read)
                 const name = read.tag.name || read.tag.q
                 return (
@@ -105,7 +115,10 @@ export function DebugListingsDisplay() {
                         formula:
                         <CodeBlock
                           text={JSON.stringify(
-                            filterDebug(calc.toDebug().compute(read).meta),
+                            filterDebug(
+                              calc.toDebug().compute(read).meta,
+                              filterFunc
+                            ),
                             undefined,
                             2
                           )}
@@ -123,15 +136,16 @@ export function DebugListingsDisplay() {
   )
 }
 
-export function DebugReadModal() {
-  const calculator = useSrCalcContext()
+export function DebugReadModal({ filterFunc }: { filterFunc: FilterFunc }) {
   const tag = useContext(TagContext)
+  const calculator = useContext(CalcContext)?.withTag(tag)
   const { read, setRead } = useContext(DebugReadContext)
   const computed = read && calculator?.compute(read)
   const debug = read && calculator?.toDebug().compute(read)
   const name = read?.tag['name'] || read?.tag['q']
   const meta = debug?.meta
-  const jsonStr = meta && JSON.stringify(filterDebug(meta), undefined, 2)
+  const jsonStr =
+    meta && JSON.stringify(filterDebug(meta, filterFunc), undefined, 2)
 
   return (
     <ModalWrapper open={!!read} onClose={() => setRead(undefined)}>
@@ -175,17 +189,13 @@ export function DebugReadModal() {
   )
 }
 
-function filterDebug(debug: DebugMeta) {
+function filterDebug(debug: DebugMeta, filterFunc: FilterFunc) {
   for (let i = debug.deps.length - 1; i >= 0; i--) {
-    if (
-      (debug.deps[i].formula?.includes('[0] thres') ||
-        debug.deps[i].formula?.includes('[0] match')) &&
-      allLightConeKeys.some((key) => debug.deps[i].formula?.includes(key))
-    ) {
+    if (filterFunc(debug.deps[i])) {
       debug.deps.splice(i, 1)
       continue
     }
-    debug.deps[i] = filterDebug(debug.deps[i])
+    debug.deps[i] = filterDebug(debug.deps[i], filterFunc)
   }
   return debug
 }

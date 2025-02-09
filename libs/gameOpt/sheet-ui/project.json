@@ -1,0 +1,9 @@
+{
+  "name": "gameOpt-sheet-ui",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/gameOpt/sheet-ui/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project gameOpt-sheet-ui --web",
+  "targets": {}
+}

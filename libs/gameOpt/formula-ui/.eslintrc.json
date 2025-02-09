@@ -1,8 +1,8 @@
 {
-  "extends": ["../../../.eslintrc.json"],
+  "extends": ["plugin:@nx/react", "../../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
   "parserOptions": {
-    "project": "libs/pando/ui-sheet/tsconfig.eslint.json"
+    "project": "libs/gameOpt/formula-ui/tsconfig.eslint.json"
   },
   "overrides": [
     {
