@@ -3,5 +3,9 @@
   "type": "stun",
   "atk_base": 40,
   "second_statkey": "impact_",
-  "second_statvalue": 0.06
+  "second_statvalue": 0.06,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_Common_06.png",
+  "desc": "A special W-Engine whose outer shell is made of composite Etheric matter that effectively absorb incoming impacts in combat and turn it against the enemy. Rumors suggest that its prototype was crafted by a legendary Hollow explorer, and despite its ancient appearance, it continues to run smoothly. This W-Engine is literally an \"old timer\" in the field of W-Engines.",
+  "desc2": "Equip to increase Stun Agents' combat capabilities",
+  "desc3": "A special W-Engine whose outer shell is made of composite Etheric matter that effectively absorbs impact, and turns it against the enemy."
 }

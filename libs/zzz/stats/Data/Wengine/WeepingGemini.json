@@ -3,5 +3,9 @@
   "type": "anomaly",
   "atk_base": 40,
   "second_statkey": "atk_",
-  "second_statvalue": 0.1
+  "second_statvalue": 0.1,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_Common_08.png",
+  "desc": "A W-Engine produced by recycling abandoned Bangboo shells. Though it's made from scrapped parts, it still caused some distress among Bangboo lovers. \"No Bangboo were hurt during the production of this W-Engine.\" — the manufacturer had to include this note on the packaging due to protests from Bangboo rights organizations.",
+  "desc2": "Equip to increase Anomaly Agents' combat capabilities",
+  "desc3": "A W-Engine produced by recycling abandoned Bangboo shells. Its electrode cores made of recycled metals can release high-voltage charges."
 }

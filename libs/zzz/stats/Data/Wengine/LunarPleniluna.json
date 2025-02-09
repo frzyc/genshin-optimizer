@@ -2,5 +2,9 @@
   "type": "attack",
   "atk_base": 32,
   "second_statkey": "atk_",
-  "second_statvalue": 0.08
+  "second_statvalue": 0.08,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_B_Common_01.png",
+  "desc": "A W-Engine that prioritizes damage output over noise reduction. It can indiscriminately deal considerable damage to all units nearby. Its designer compares it to the full moon. Bright moonlight can interrupt people's sleep, and nothing can be done about it. But the moonlight does not bother anyone on purpose — you just have to get used to it.",
+  "desc2": "Equip to increase Attack Agents' combat capabilities",
+  "desc3": "A W-Engine that prioritizes damage output over noise reduction. It can indiscriminately deal considerable damage to all units nearby."
 }

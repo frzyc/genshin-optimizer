@@ -3,5 +3,9 @@
   "type": "stun",
   "atk_base": 40,
   "second_statkey": "impact_",
-  "second_statvalue": 0.06
+  "second_statvalue": 0.06,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_S_Common_03.png",
+  "desc": "A special W-Engine modeled after a revolver. It can apparently load six bullet-shaped condensed Ether batteries, which release a significant amount of power when fired. It is said that as long as you carry this W-Engine, you will be able to spontaneously learn how to whistle and will occasionally reference old movies in a cowboy voice.",
+  "desc2": "Equip to increase Stun Agents' combat capabilities",
+  "desc3": "A special W-Engine modeled after a revolver. It can load bullet-shaped condensed Ether batteries, which release a great amount of power when fired."
 }

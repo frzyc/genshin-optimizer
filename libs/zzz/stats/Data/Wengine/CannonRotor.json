@@ -3,5 +3,9 @@
   "type": "attack",
   "atk_base": 40,
   "second_statkey": "crit_",
-  "second_statvalue": 0.08
+  "second_statvalue": 0.08,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_S_Common_01.png",
+  "desc": "A high-performance supercomputing W-Engine, capable of collecting real-time data on the battlefield and providing tactical support to its operator. Additionally, it is equipped with mini cannons and can even be deployed as an automatic combat unit in critical moments. In such situations, the operator may become more of a hindrance than a help.",
+  "desc2": "Equip to increase Attack Agents' combat capabilities",
+  "desc3": "A high-performance supercomputing W-Engine, capable of collecting real-time battlefield data and equipped with mini cannons."
 }

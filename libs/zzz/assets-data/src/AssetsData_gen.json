@@ -294,5 +294,239 @@
       "select": "IconRoleSelect37.png",
       "interknot": "IconInterKnotRole0037.png"
     }
+  },
+  "wengines": {
+    "LunarPleniluna": {
+      "icon": "Weapon_B_Common_01.png",
+      "big": "Weapon_B_Common_01Big.png"
+    },
+    "LunarDecrescent": {
+      "icon": "Weapon_B_Common_02.png",
+      "big": "Weapon_B_Common_02Big.png"
+    },
+    "LunarNoviluna": {
+      "icon": "Weapon_B_Common_03.png",
+      "big": "Weapon_B_Common_03Big.png"
+    },
+    "ReverbMarkI": {
+      "icon": "Weapon_B_Common_04.png",
+      "big": "Weapon_B_Common_04Big.png"
+    },
+    "ReverbMarkII": {
+      "icon": "Weapon_B_Common_05.png",
+      "big": "Weapon_B_Common_05Big.png"
+    },
+    "ReverbMarkIII": {
+      "icon": "Weapon_B_Common_06.png",
+      "big": "Weapon_B_Common_06Big.png"
+    },
+    "VortexRevolver": {
+      "icon": "Weapon_B_Common_07.png",
+      "big": "Weapon_B_Common_07Big.png"
+    },
+    "VortexArrow": {
+      "icon": "Weapon_B_Common_08.png",
+      "big": "Weapon_B_Common_08Big.png"
+    },
+    "VortexHatchet": {
+      "icon": "Weapon_B_Common_09.png",
+      "big": "Weapon_B_Common_09Big.png"
+    },
+    "MagneticStormAlpha": {
+      "icon": "Weapon_B_Common_10.png",
+      "big": "Weapon_B_Common_10Big.png"
+    },
+    "MagneticStormBravo": {
+      "icon": "Weapon_B_Common_11.png",
+      "big": "Weapon_B_Common_11Big.png"
+    },
+    "MagneticStormCharlie": {
+      "icon": "Weapon_B_Common_12.png",
+      "big": "Weapon_B_Common_12Big.png"
+    },
+    "IdentityBase": {
+      "icon": "Weapon_B_Common_13.png",
+      "big": "Weapon_B_Common_13Big.png"
+    },
+    "IdentityInflection": {
+      "icon": "Weapon_B_Common_14.png",
+      "big": "Weapon_B_Common_14Big.png"
+    },
+    "StreetSuperstar": {
+      "icon": "Weapon_A_Common_01.png",
+      "big": "Weapon_A_Common_01Big.png"
+    },
+    "SliceOfTime": {
+      "icon": "Weapon_A_Common_02.png",
+      "big": "Weapon_A_Common_02Big.png"
+    },
+    "RainforestGourmet": {
+      "icon": "Weapon_A_Common_03.png",
+      "big": "Weapon_A_Common_03Big.png"
+    },
+    "StarlightEngine": {
+      "icon": "Weapon_A_Common_04.png",
+      "big": "Weapon_A_Common_04Big.png"
+    },
+    "SteamOven": {
+      "icon": "Weapon_A_Common_05.png",
+      "big": "Weapon_A_Common_05Big.png"
+    },
+    "PreciousFossilizedCore": {
+      "icon": "Weapon_A_Common_06.png",
+      "big": "Weapon_A_Common_06Big.png"
+    },
+    "OriginalTransmorpher": {
+      "icon": "Weapon_A_Common_07.png",
+      "big": "Weapon_A_Common_07Big.png"
+    },
+    "WeepingGemini": {
+      "icon": "Weapon_A_Common_08.png",
+      "big": "Weapon_A_Common_08Big.png"
+    },
+    "ElectroLipGloss": {
+      "icon": "Weapon_A_Common_09.png",
+      "big": "Weapon_A_Common_09Big.png"
+    },
+    "BunnyBand": {
+      "icon": "Weapon_A_Common_10.png",
+      "big": "Weapon_A_Common_10Big.png"
+    },
+    "SpringEmbrace": {
+      "icon": "Weapon_A_Common_11.png",
+      "big": "Weapon_A_Common_11Big.png"
+    },
+    "GildedBlossom": {
+      "icon": "Weapon_A_Common_13.png",
+      "big": "Weapon_A_Common_13Big.png"
+    },
+    "MarcatoDesire": {
+      "icon": "Weapon_A_Common_15.png",
+      "big": "Weapon_A_Common_15Big.png"
+    },
+    "DemaraBatteryMarkII": {
+      "icon": "Weapon_A_1011.png",
+      "big": "Weapon_A_1011Big.png"
+    },
+    "TheVault": {
+      "icon": "Weapon_A_1031.png",
+      "big": "Weapon_A_1031Big.png"
+    },
+    "Housekeeper": {
+      "icon": "Weapon_A_1061.png",
+      "big": "Weapon_A_1061Big.png"
+    },
+    "StarlightEngineReplica": {
+      "icon": "Weapon_A_1081.png",
+      "big": "Weapon_A_1081Big.png"
+    },
+    "DrillRigRedAxis": {
+      "icon": "Weapon_A_1111.png",
+      "big": "Weapon_A_1111Big.png"
+    },
+    "BigCylinder": {
+      "icon": "Weapon_A_1121.png",
+      "big": "Weapon_A_1121Big.png"
+    },
+    "BashfulDemon": {
+      "icon": "Weapon_A_1131.png",
+      "big": "Weapon_A_1131Big.png"
+    },
+    "KaboomTheCannon": {
+      "icon": "Weapon_A_1151.png",
+      "big": "Weapon_A_1151Big.png"
+    },
+    "PeacekeeperSpecialized": {
+      "icon": "Weapon_A_1271.png",
+      "big": "Weapon_A_1271Big.png"
+    },
+    "RoaringRide": {
+      "icon": "Weapon_A_1281.png",
+      "big": "Weapon_A_1281Big.png"
+    },
+    "CannonRotor": {
+      "icon": "Weapon_S_Common_01.png",
+      "big": "Weapon_S_Common_01Big.png"
+    },
+    "UnfetteredGameBall": {
+      "icon": "Weapon_S_Common_02.png",
+      "big": "Weapon_S_Common_02Big.png"
+    },
+    "SixShooter": {
+      "icon": "Weapon_S_Common_03.png",
+      "big": "Weapon_S_Common_03Big.png"
+    },
+    "SteelCushion": {
+      "icon": "Weapon_S_1021.png",
+      "big": "Weapon_S_1021Big.png"
+    },
+    "TheBrimstone": {
+      "icon": "Weapon_S_1041.png",
+      "big": "Weapon_S_1041Big.png"
+    },
+    "TusksOfFury": {
+      "icon": "Weapon_S_1071.png",
+      "big": "Weapon_S_1071Big.png"
+    },
+    "HailstormShrine": {
+      "icon": "Weapon_S_1091.png",
+      "big": "Weapon_S_1091Big.png"
+    },
+    "HellfireGears": {
+      "icon": "Weapon_S_1101.png",
+      "big": "Weapon_S_1101Big.png"
+    },
+    "TheRestrained": {
+      "icon": "Weapon_S_1141.png",
+      "big": "Weapon_S_1141Big.png"
+    },
+    "BlazingLaurel": {
+      "icon": "Weapon_S_1161.png",
+      "big": "Weapon_S_1161Big.png"
+    },
+    "FlamemakerShaker": {
+      "icon": "Weapon_S_1171.png",
+      "big": "Weapon_S_1171Big.png"
+    },
+    "FusionCompiler": {
+      "icon": "Weapon_S_1181.png",
+      "big": "Weapon_S_1181Big.png"
+    },
+    "DeepSeaVisitor": {
+      "icon": "Weapon_S_1191.png",
+      "big": "Weapon_S_1191Big.png"
+    },
+    "ZanshinHerbCase": {
+      "icon": "Weapon_S_1201.png",
+      "big": "Weapon_S_1201Big.png"
+    },
+    "WeepingCradle": {
+      "icon": "Weapon_S_1211.png",
+      "big": "Weapon_S_1211Big.png"
+    },
+    "Timeweaver": {
+      "icon": "Weapon_S_1221.png",
+      "big": "Weapon_S_1221Big.png"
+    },
+    "RiotSuppressorMarkVI": {
+      "icon": "Weapon_S_1241.png",
+      "big": "Weapon_S_1241Big.png"
+    },
+    "IceJadeTeapot": {
+      "icon": "Weapon_S_1251.png",
+      "big": "Weapon_S_1251Big.png"
+    },
+    "SharpenedStinger": {
+      "icon": "Weapon_S_1261.png",
+      "big": "Weapon_S_1261Big.png"
+    },
+    "ElegantVanity": {
+      "icon": "Weapon_S_1311.png",
+      "big": "Weapon_S_1311Big.png"
+    },
+    "HeartstringNocturne": {
+      "icon": "Weapon_S_1321.png",
+      "big": "Weapon_S_1321Big.png"
+    }
   }
 }

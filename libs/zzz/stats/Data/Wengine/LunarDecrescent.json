@@ -2,5 +2,9 @@
   "type": "attack",
   "atk_base": 32,
   "second_statkey": "atk_",
-  "second_statvalue": 0.08
+  "second_statvalue": 0.08,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_B_Common_02.png",
+  "desc": "A W-Engine with excellent sonic and thermal energy usage, capable of hitting its target with a double whammy. Those hit, be it intentionally or not, have a chance to be diagnosed with snow blindness. The exact cause remains unknown, so obtaining insurance compensation after falling victim to this malady is close to impossible. There was a poor Hollow investigator who learned it the hard way.",
+  "desc2": "Equip to increase Attack Agents' combat capabilities",
+  "desc3": "A W-Engine with excellent sonic and thermal energy usage, capable of hitting its target with a double whammy."
 }

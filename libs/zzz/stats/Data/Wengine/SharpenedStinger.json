@@ -3,5 +3,9 @@
   "type": "anomaly",
   "atk_base": 48,
   "second_statkey": "anomProf",
-  "second_statvalue": 36
+  "second_statvalue": 36,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_S_1261.png",
+  "desc": "A deadly W-Engine from unknown sources, modified personally by Jane Doe with the intent to deal severe physical damage and Anomaly. The power circulation system within ensures the affliction of Anomalies and the edges of the exterior have been honed until they're razor-sharp to inflict unexpected tearing damage.\n\n<color=#959595>\"What, am I meant to adhere to duel ettiquete with an Ethereal? Isn't it polite to end its pain in the quickest way possible?\" —Jane, in response to \"aren't your combat techniques a little too cruel\"</color>",
+  "desc2": "Equip to increase Anomaly Agents' combat capabilities",
+  "desc3": "A deadly W-Engine from unknown sources, modified personally by Jane Doe with the intent to deal severe physical damage and Anomaly."
 }

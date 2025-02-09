@@ -3,5 +3,9 @@
   "type": "stun",
   "atk_base": 48,
   "second_statkey": "impact_",
-  "second_statvalue": 0.072
+  "second_statvalue": 0.072,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_S_1251.png",
+  "desc": "A custom stun W-Engine made for an Automaton referencing the combat style and abilities of one. Energy is stored within, then lashes outwards upon conversion. The texture seeks to imitate fine artistry that was once highly sought after in ancient civilizations: Burn to procure what is sleek and elegant, shatter to create what is unyielding and sharp; this heat-proof pot bears a sacred bird shape with, as its name suggests, a unique pattern of ice-cracked celadon... but actually that pattern was drawn on.\n\n<color=#959595>\"It fares well in preserving temperature, and I can drink hot water whenever I need even in a Hollow.\" —Qingyi, giving her honest and carefully contemplated review</color>",
+  "desc2": "Equip to increase Stun Agents' combat capabilities",
+  "desc3": "A custom stun W-Engine made for an Automaton referencing the combat style and abilities of one. Energy is stored within, then lashes outwards upon conversion."
 }
