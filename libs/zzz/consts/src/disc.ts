@@ -229,7 +229,7 @@ export const allDiscCondKeys = {
   },
   ChaoticMetal: {
     key: 'ChaoticMetal',
-    text: 'Whenever a squad member inflicts Corruption on an enemy',
+    text: (val: number) => `${val}x Corruption Triggers`,
     min: 1,
     max: 6,
   },
