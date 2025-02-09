@@ -1,9 +1,15 @@
 // This is a generated index file.
-import iconGacha from './IconRole27.png'
-import iconSelect from './IconRoleSelect27.png'
+import circle from './circle.png'
+import full from './full.png'
+import interknot from './interknot.png'
+import select from './select.png'
+import trap from './trap.png'
 
 const data = {
-  iconSelect,
-  iconGacha,
+  circle,
+  full,
+  interknot,
+  select,
+  trap,
 } as const
 export default data

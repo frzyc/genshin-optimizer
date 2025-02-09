@@ -1,0 +1,298 @@
+{
+  "discs": {
+    "WoodpeckerElectro": {
+      "circle": "SuitWoodpeckerElectro.png",
+      "cd_s": "ItemSuitWoodpeckerElectro_S.png",
+      "cd_a": "ItemSuitWoodpeckerElectro_A.png",
+      "cd_b": "ItemSuitWoodpeckerElectro_B.png"
+    },
+    "PufferElectro": {
+      "circle": "SuitPufferElectro.png",
+      "cd_s": "ItemSuitPufferElectro_S.png",
+      "cd_a": "ItemSuitPufferElectro_A.png",
+      "cd_b": "ItemSuitPufferElectro_B.png"
+    },
+    "ShockstarDisco": {
+      "circle": "SuitShockstarDisco.png",
+      "cd_s": "ItemSuitShockstarDisco_S.png",
+      "cd_a": "ItemSuitShockstarDisco_A.png",
+      "cd_b": "ItemSuitShockstarDisco_B.png"
+    },
+    "FreedomBlues": {
+      "circle": "SuitFreedomBlues.png",
+      "cd_s": "ItemSuitFreedomBlues_S.png",
+      "cd_a": "ItemSuitFreedomBlues_A.png",
+      "cd_b": "ItemSuitFreedomBlues_B.png"
+    },
+    "HormonePunk": {
+      "circle": "SuitHormonePunk.png",
+      "cd_s": "ItemSuitHormonePunk_S.png",
+      "cd_a": "ItemSuitHormonePunk_A.png",
+      "cd_b": "ItemSuitHormonePunk_B.png"
+    },
+    "SoulRock": {
+      "circle": "SuitSoulRock.png",
+      "cd_s": "ItemSuitSoulRock_S.png",
+      "cd_a": "ItemSuitSoulRock_A.png",
+      "cd_b": "ItemSuitSoulRock_B.png"
+    },
+    "SwingJazz": {
+      "circle": "SuitSwingJazz.png",
+      "cd_s": "ItemSuitSwingJazz_S.png",
+      "cd_a": "ItemSuitSwingJazz_A.png",
+      "cd_b": "ItemSuitSwingJazz_B.png"
+    },
+    "ChaosJazz": {
+      "circle": "SuitChaosJazz.png",
+      "cd_s": "ItemSuitChaosJazz_S.png",
+      "cd_a": "ItemSuitChaosJazz_A.png",
+      "cd_b": "ItemSuitChaosJazz_B.png"
+    },
+    "ProtoPunk": {
+      "circle": "SuitProtoPunk.png",
+      "cd_s": "ItemSuitProtoPunk_S.png",
+      "cd_a": "ItemSuitProtoPunk_A.png",
+      "cd_b": "ItemSuitProtoPunk_B.png"
+    },
+    "InfernoMetal": {
+      "circle": "SuitInfernoMetal.png",
+      "cd_s": "ItemSuitInfernoMetal_S.png",
+      "cd_a": "ItemSuitInfernoMetal_A.png",
+      "cd_b": "ItemSuitInfernoMetal_B.png"
+    },
+    "ChaoticMetal": {
+      "circle": "SuitChaosMetal.png",
+      "cd_s": "ItemSuitChaosMetal_S.png",
+      "cd_a": "ItemSuitChaosMetal_A.png",
+      "cd_b": "ItemSuitChaosMetal_B.png"
+    },
+    "ThunderMetal": {
+      "circle": "SuitThunderMetal.png",
+      "cd_s": "ItemSuitThunderMetal_S.png",
+      "cd_a": "ItemSuitThunderMetal_A.png",
+      "cd_b": "ItemSuitThunderMetal_B.png"
+    },
+    "PolarMetal": {
+      "circle": "SuitPolarMetal.png",
+      "cd_s": "ItemSuitPolarMetal_S.png",
+      "cd_a": "ItemSuitPolarMetal_A.png",
+      "cd_b": "ItemSuitPolarMetal_B.png"
+    },
+    "FangedMetal": {
+      "circle": "SuitFangedMetal.png",
+      "cd_s": "ItemSuitFangedMetal_S.png",
+      "cd_a": "ItemSuitFangedMetal_A.png",
+      "cd_b": "ItemSuitFangedMetal_B.png"
+    },
+    "BranchBladeSong": {
+      "circle": "SuitBranch&BladeSong.png",
+      "cd_s": "ItemSuitBranch&BladeSong_S.png",
+      "cd_a": "ItemSuitBranch&BladeSong_A.png",
+      "cd_b": "ItemSuitBranch&BladeSong_B.png"
+    },
+    "AstralVoice": {
+      "circle": "SuitAstralVoice.png",
+      "cd_s": "ItemSuitAstralVoice_S.png",
+      "cd_a": "ItemSuitAstralVoice_A.png",
+      "cd_b": "ItemSuitAstralVoice_B.png"
+    }
+  },
+  "chars": {
+    "Anby": {
+      "full": "IconRole01.png",
+      "circle": "IconRoleCircle01.png",
+      "trap": "IconRoleGeneral01.png",
+      "select": "IconRoleSelect01.png",
+      "interknot": "IconInterKnotRole0001.png"
+    },
+    "Nekomata": {
+      "full": "IconRole11.png",
+      "circle": "IconRoleCircle11.png",
+      "trap": "IconRoleGeneral11.png",
+      "select": "IconRoleSelect11.png",
+      "interknot": "IconInterKnotRole0011.png"
+    },
+    "Nicole": {
+      "full": "IconRole12.png",
+      "circle": "IconRoleCircle12.png",
+      "trap": "IconRoleGeneral12.png",
+      "select": "IconRoleSelect12.png",
+      "interknot": "IconInterKnotRole0012.png"
+    },
+    "Soldier11": {
+      "full": "IconRole05.png",
+      "circle": "IconRoleCircle05.png",
+      "trap": "IconRoleGeneral05.png",
+      "select": "IconRoleSelect05.png",
+      "interknot": "IconInterKnotRole0005.png"
+    },
+    "Corin": {
+      "full": "IconRole09.png",
+      "circle": "IconRoleCircle09.png",
+      "trap": "IconRoleGeneral09.png",
+      "select": "IconRoleSelect09.png",
+      "interknot": "IconInterKnotRole0009.png"
+    },
+    "Caesar": {
+      "full": "IconRole25.png",
+      "circle": "IconRoleCircle25.png",
+      "trap": "IconRoleGeneral25.png",
+      "select": "IconRoleSelect25.png",
+      "interknot": "IconInterKnotRole0025.png"
+    },
+    "Billy": {
+      "full": "IconRole10.png",
+      "circle": "IconRoleCircle10.png",
+      "trap": "IconRoleGeneral10.png",
+      "select": "IconRoleSelect10.png",
+      "interknot": "IconInterKnotRole0010.png"
+    },
+    "Miyabi": {
+      "full": "IconRole13.png",
+      "circle": "IconRoleCircle13.png",
+      "trap": "IconRoleGeneral13.png",
+      "select": "IconRoleSelect13.png",
+      "interknot": "IconInterKnotRole0013.png"
+    },
+    "Koleda": {
+      "full": "IconRole14.png",
+      "circle": "IconRoleCircle14.png",
+      "trap": "IconRoleGeneral14.png",
+      "select": "IconRoleSelect14.png",
+      "interknot": "IconInterKnotRole0014.png"
+    },
+    "Anton": {
+      "full": "IconRole15.png",
+      "circle": "IconRoleCircle15.png",
+      "trap": "IconRoleGeneral15.png",
+      "select": "IconRoleSelect15.png",
+      "interknot": "IconInterKnotRole0015.png"
+    },
+    "Ben": {
+      "full": "IconRole16.png",
+      "circle": "IconRoleCircle16.png",
+      "trap": "IconRoleGeneral16.png",
+      "select": "IconRoleSelect16.png",
+      "interknot": "IconInterKnotRole0016.png"
+    },
+    "Soukaku": {
+      "full": "IconRole17.png",
+      "circle": "IconRoleCircle17.png",
+      "trap": "IconRoleGeneral17.png",
+      "select": "IconRoleSelect17.png",
+      "interknot": "IconInterKnotRole0017.png"
+    },
+    "Lycaon": {
+      "full": "IconRole18.png",
+      "circle": "IconRoleCircle18.png",
+      "trap": "IconRoleGeneral18.png",
+      "select": "IconRoleSelect18.png",
+      "interknot": "IconInterKnotRole0018.png"
+    },
+    "Lucy": {
+      "full": "IconRole27.png",
+      "circle": "IconRoleCircle27.png",
+      "trap": "IconRoleGeneral27.png",
+      "select": "IconRoleSelect27.png",
+      "interknot": "IconInterKnotRole0027.png"
+    },
+    "Lighter": {
+      "full": "IconRole26.png",
+      "circle": "IconRoleCircle26.png",
+      "trap": "IconRoleGeneral26.png",
+      "select": "IconRoleSelect26.png",
+      "interknot": "IconInterKnotRole0026.png"
+    },
+    "Burnice": {
+      "full": "IconRole32.png",
+      "circle": "IconRoleCircle32.png",
+      "trap": "IconRoleGeneral32.png",
+      "select": "IconRoleSelect32.png",
+      "interknot": "IconInterKnotRole0032.png"
+    },
+    "Grace": {
+      "full": "IconRole20.png",
+      "circle": "IconRoleCircle20.png",
+      "trap": "IconRoleGeneral20.png",
+      "select": "IconRoleSelect20.png",
+      "interknot": "IconInterKnotRole0020.png"
+    },
+    "Ellen": {
+      "full": "IconRole21.png",
+      "circle": "IconRoleCircle21.png",
+      "trap": "IconRoleGeneral21.png",
+      "select": "IconRoleSelect21.png",
+      "interknot": "IconInterKnotRole0021.png"
+    },
+    "Harumasa": {
+      "full": "IconRole35.png",
+      "circle": "IconRoleCircle35.png",
+      "trap": "IconRoleGeneral35.png",
+      "select": "IconRoleSelect35.png",
+      "interknot": "IconInterKnotRole0035.png"
+    },
+    "Rina": {
+      "full": "IconRole22.png",
+      "circle": "IconRoleCircle22.png",
+      "trap": "IconRoleGeneral22.png",
+      "select": "IconRoleSelect22.png",
+      "interknot": "IconInterKnotRole0022.png"
+    },
+    "Yanagi": {
+      "full": "IconRole31.png",
+      "circle": "IconRoleCircle31.png",
+      "trap": "IconRoleGeneral31.png",
+      "select": "IconRoleSelect31.png",
+      "interknot": "IconInterKnotRole0031.png"
+    },
+    "ZhuYuan": {
+      "full": "IconRole23.png",
+      "circle": "IconRoleCircle23.png",
+      "trap": "IconRoleGeneral23.png",
+      "select": "IconRoleSelect23.png",
+      "interknot": "IconInterKnotRole0023.png"
+    },
+    "QingYi": {
+      "full": "IconRole29.png",
+      "circle": "IconRoleCircle29.png",
+      "trap": "IconRoleGeneral29.png",
+      "select": "IconRoleSelect29.png",
+      "interknot": "IconInterKnotRole0029.png"
+    },
+    "Jane": {
+      "full": "IconRole24.png",
+      "circle": "IconRoleCircle24.png",
+      "trap": "IconRoleGeneral24.png",
+      "select": "IconRoleSelect24.png",
+      "interknot": "IconInterKnotRole0024.png"
+    },
+    "Seth": {
+      "full": "IconRole30.png",
+      "circle": "IconRoleCircle30.png",
+      "trap": "IconRoleGeneral30.png",
+      "select": "IconRoleSelect30.png",
+      "interknot": "IconInterKnotRole0030.png"
+    },
+    "Piper": {
+      "full": "IconRole28.png",
+      "circle": "IconRoleCircle28.png",
+      "trap": "IconRoleGeneral28.png",
+      "select": "IconRoleSelect28.png",
+      "interknot": "IconInterKnotRole0028.png"
+    },
+    "Astra": {
+      "full": "IconRole36.png",
+      "circle": "IconRoleCircle36.png",
+      "trap": "IconRoleGeneral36.png",
+      "select": "IconRoleSelect36.png",
+      "interknot": "IconInterKnotRole0036.png"
+    },
+    "Evelyn": {
+      "full": "IconRole37.png",
+      "circle": "IconRoleCircle37.png",
+      "trap": "IconRoleGeneral37.png",
+      "select": "IconRoleSelect37.png",
+      "interknot": "IconInterKnotRole0037.png"
+    }
+  }
+}
