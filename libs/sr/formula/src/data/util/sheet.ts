@@ -1,3 +1,4 @@
+import { tag } from '@genshin-optimizer/gameOpt/engine'
 import {
   prod,
   type NumNode,
@@ -9,7 +10,6 @@ import {
   ownBuff,
   percent,
   reader,
-  tag,
   teamBuff,
   type TagMapNodeEntries,
   type TagMapNodeEntry,
@@ -21,7 +21,9 @@ export type FormulaArg = {
   cond?: string | StrNode
 }
 
-export type DmgTag = Pick<Tag, 'damageType1' | 'damageType2' | 'elementalType'>
+export type DmgTag = Partial<
+  Pick<Tag, 'damageType1' | 'damageType2' | 'elementalType'>
+>
 
 export function register(
   sheet: Sheet,
