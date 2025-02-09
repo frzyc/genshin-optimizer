@@ -2,7 +2,7 @@
   "extends": ["../../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
   "parserOptions": {
-    "project": "libs/common/formula/tsconfig.eslint.json"
+    "project": "libs/gameOpt/formula/tsconfig.eslint.json"
   },
   "overrides": [
     {
