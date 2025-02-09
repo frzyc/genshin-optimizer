@@ -50,7 +50,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
   const assetData: AssetData = {
     discs: objMap(discsDetailedJSONData, ({ icon }) => {
       const strKey = icon.match(/Suit([^/]+)\.png/)?.[1]
-      if (!strKey) throw Error('Failed to parse disc icon name')
+      if (!strKey) throw Error(`Failed to parse disc icon name: ${icon}`)
       return {
         circle: `Suit${strKey}.png`,
         cd_s: `ItemSuit${strKey}_S.png`,
@@ -62,7 +62,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
     chars: objMap(charactersDetailedJSONData, ({ icon }) => {
       // get the last 2 digits of the icon name. this will likely break if ZZZ go over 2 digits.
       const strKey = icon.slice(-2)
-      if (!strKey) throw Error('Failed to parse character icon name')
+      if (!strKey) throw Error(`Failed to parse character icon name: ${icon}`)
       return {
         full: `IconRole${strKey}.png`,
         circle: `IconRoleCircle${strKey}.png`,
@@ -73,7 +73,7 @@ const runExecutor: PromiseExecutor<GenAssetsDataExecutorSchema> = async (
     }),
     wengines: objMap(wengineDetailedJSONData, ({ icon }) => {
       const strKey = icon.match(/([^/]+)\.png/)?.[1]
-      if (!strKey) throw Error('Failed to parse wengine icon name')
+      if (!strKey) throw Error(`Failed to parse wengine icon name: ${icon}`)
       return {
         icon: `${strKey}.png`,
         big: `${strKey}Big.png`,
