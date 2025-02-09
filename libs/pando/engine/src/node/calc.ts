@@ -1,3 +1,4 @@
+import { DebugCalculator } from '../debug'
 import type { DedupTag, RawTagMapKeys, RawTagMapValues, Tag } from '../tag'
 import {
   DedupTags,
@@ -159,5 +160,12 @@ export class Calculator<M = any> {
     _tag: Tag | undefined
   ): M {
     return undefined as any
+  }
+
+  toDebug(): DebugCalculator {
+    return new DebugCalculator(
+      this,
+      (tag, ex) => `tag: ${JSON.stringify(tag)}, ex: ${ex}`
+    )
   }
 }
