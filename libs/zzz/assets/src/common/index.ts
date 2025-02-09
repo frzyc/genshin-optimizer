@@ -1,4 +1,3 @@
-// This is a generated index file.
 import discBackdrop from './discBackdrop.png'
 import discDrive from './drive.png'
 

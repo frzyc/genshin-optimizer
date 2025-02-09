@@ -1,0 +1,14 @@
+{
+  "name": "zzz-assets-data",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/zzz/assets-data/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project zzz-assets-data --web",
+  "targets": {
+    "gen-file": {
+      "executor": "@genshin-optimizer/zzz/assets-data:gen-assets-data",
+      "outputs": ["{projectRoot}/src/AssetsData_gen.json"]
+    }
+  }
+}

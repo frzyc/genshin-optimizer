@@ -153,6 +153,9 @@
       "@genshin-optimizer/sr/ui": ["libs/sr/ui/src/index.tsx"],
       "@genshin-optimizer/sr/util": ["libs/sr/util/src/index.ts"],
       "@genshin-optimizer/zzz/assets": ["libs/zzz/assets/src/index.ts"],
+      "@genshin-optimizer/zzz/assets-data": [
+        "libs/zzz/assets-data/src/index.ts"
+      ],
       "@genshin-optimizer/zzz/consts": ["libs/zzz/consts/src/index.ts"],
       "@genshin-optimizer/zzz/db": ["libs/zzz/db/src/index.ts"],
       "@genshin-optimizer/zzz/db-ui": ["libs/zzz/db-ui/src/index.ts"],
