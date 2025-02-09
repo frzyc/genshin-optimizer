@@ -134,8 +134,8 @@ function pruneBranches(state: State<OP, Component>) {
  */
 function pruneRange(state: State<OP, Component>, minimum: number[]): number[] {
   const { nodeRanges, cat } = state
-  let builds = [...state.builds]
-  let compRanges = [...state.compRanges]
+  const builds = [...state.builds]
+  const compRanges = [...state.compRanges]
 
   const nodes: NumNode<OP>[] = []
   const newMinimum: number[] = []
@@ -297,7 +297,7 @@ function reaffine(state: State<OP, Component>) {
 /** Get range assuming any item in `comp` can be selected */
 function computeCompRanges(comp: Component[]): CompRanges[number] {
   const iter = comp.values()
-  const first: Component = iter.next().value
+  const first = iter.next().value
   if (!first) return {}
   const result = Object.fromEntries(
     Object.entries(first).map(([k, v]) => [k, { min: v, max: v }])
@@ -505,7 +505,7 @@ function getMonotonicities(
           ex: arr,
         } = node
         if (typeof arr[0] === 'number') {
-          let { min: start, max: last } = nodeRanges.get(node)!
+          let { min: start, max: last } = nodeRanges.get(br)!
           start = Math.max(0, Math.ceil(start))
           last = Math.min(last, arr.length - 1)
           for (let i = start + 1; i <= last; i++)
