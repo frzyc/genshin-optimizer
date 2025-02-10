@@ -20,6 +20,23 @@ type CompRanges = Record<string, Range>[]
 type NodeRanges = Map<AnyNode<OP>, Range>
 type Monotonicities = Map<string, Monotonicity>
 
+/**
+ * Reduce the complexity of the optimization problem,
+ * returning a new optimization with the same `topN` builds
+ * @param nodes
+ *    A set of nodes used for minimum constraints, objective function, and other calculations.
+ *    The nodes must be in the order [min constraints, other calc, obj functions].
+ * @param builds
+ *    A set of components used to construct the builds. Any string keys may be removed in the
+ *    resulting `builds`, but all `Symbol` keys are transferred to the new build components.
+ * @param cat Tag category used by `compile` in the actual computation
+ * @param minimum Minimum constraint values for min constraints nodes.
+ * @param _topN The number of top builds to keep.
+ * @returns
+ *    A new values for `nodes`, `builds`, and `minimum`. The returned values are incompatible
+ *    with the passed-in arguments (DO NOT mix them). Build components may change, so all
+ *    related computation needs to pass in to `nodes` as well, else they'll become unusable.
+ */
 export function prune<I extends OP, C extends Component>(
   nodes: NumNode<I>[],
   builds: C[][],
