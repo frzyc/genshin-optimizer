@@ -57,10 +57,3 @@ export function commonDefIcon(key: SkillKey) {
 export function commonDefImages(key: CommonImagesKey) {
   return key ? commonImages[key] : ''
 }
-
-/**
- * @deprecated
- */
-export function wengineIcon(wKey: WengineKey) {
-  return wKey ? wengines[wKey].icon : ''
-}

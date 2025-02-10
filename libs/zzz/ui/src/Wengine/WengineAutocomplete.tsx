@@ -1,6 +1,6 @@
 import type { GeneralAutocompleteOption } from '@genshin-optimizer/common/ui'
 import { GeneralAutocomplete, ImgIcon } from '@genshin-optimizer/common/ui'
-import { wengineIcon } from '@genshin-optimizer/zzz/assets'
+import { wengineAsset } from '@genshin-optimizer/zzz/assets'
 import type { WengineKey } from '@genshin-optimizer/zzz/consts'
 import { allWengineKeys } from '@genshin-optimizer/zzz/consts'
 import { getWengineStat } from '@genshin-optimizer/zzz/stats'
@@ -44,7 +44,11 @@ export function WengineAutocomplete({
   const toImg = useCallback(
     (key: WengineKey | '') =>
       !key ? undefined : (
-        <ImgIcon size={2} sx={{ width: 'auto' }} src={wengineIcon(key)} />
+        <ImgIcon
+          size={2}
+          sx={{ width: 'auto' }}
+          src={wengineAsset(key, 'icon')}
+        />
       ),
     []
   )
