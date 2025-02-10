@@ -64,15 +64,17 @@ jobs:
           ENVFILE: ${{ vars.ENVFILE }}
       - name: Build frontend
         run: |
-          NX_URL_GITHUB_GO_CURRENT_VERSION="https://github.com/${{ github.repository }}/commit/$(git rev-parse HEAD)" \
-          NX_DAEMON="false" \
-          NX_SHOW_DEV_COMPONENTS="${{inputs.show_dev_components}}" \
+          echo "NX_URL_GITHUB_GO_CURRENT_VERSION=https://github.com/${{ github.repository }}/commit/$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          echo "NX_DAEMON=false" >> $GITHUB_ENV
+          echo "NX_SHOW_DEV_COMPONENTS=${{inputs.show_dev_components}}" >> $GITHUB_ENV
       - name: Build gi-frontend
         if: inputs.frontend_name == 'gi-frontend'
         run: yarn nx run gi-frontend:next:build
       - name: Build other frontend
         if: inputs.frontend_name != 'gi-frontend'
-        run: yarn run nx run ${{inputs.frontend_name}}:build:production
+        run: |
+          echo $NX_SHOW_DEV_COMPONENTS
+          yarn run nx run ${{inputs.frontend_name}}:build:production
       - name: echos
         run: |
           echo ${{inputs.frontend_name}} > frontend_name
