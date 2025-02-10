@@ -3,6 +3,7 @@ import {
   cmpEq,
   cmpGE,
   custom,
+  lookup,
   max,
   min,
   prod,
@@ -44,6 +45,7 @@ describe('state', () => {
     cmpGE(r2, 3, r0, r1),
     sumfrac(r0, r1),
     subscript(r0, [44, 2, 3, 4, 5, 22, 7, 8]),
+    lookup(subscript(r0, ['a', 'b', 'c']), { a: r1, b: r2, c: 6 }),
     custom('sq', sum(r0, -3)),
   ]
 
@@ -86,7 +88,8 @@ describe('state', () => {
     expect(nodeRanges.get(nodes[5])).toEqual({ min: 2, max: 11 }) // r2 >= 3 ? r0 : r1
     expect(nodeRanges.get(nodes[6])).toEqual({ min: 2 / 13, max: 7 / 16 }) // r0 / (r0 + r1)
     expect(nodeRanges.get(nodes[7])).toEqual({ min: 3, max: 22 }) // array[r0]
-    expect(nodeRanges.get(nodes[8])).toEqual({ min: 0, max: 16 }) // (r0 - 3)^2
+    expect(nodeRanges.get(nodes[8])).toEqual({ min: 6, max: 11 }) // lookup
+    expect(nodeRanges.get(nodes[9])).toEqual({ min: 0, max: 16 }) // (r0 - 3)^2
   })
   describe('monotonicity', () => {
     // False negative is fine (inc/dec is `false` when it should be `true`).
@@ -226,6 +229,15 @@ describe('state', () => {
           const mdegen = new State([flip(degen, inc)], builds, 'q')
             .monotonicities
           expect(mdegen.get('c0')).toEqual({ inc: false, dec: false })
+        })
+    })
+    describe('lookup', () => {
+      for (const inc of [true, false])
+        test(inc ? 'inc' : 'dec', () => {
+          const table = { a: r1, b: r2, c: 6 }
+          const n = lookup(subscript(r0, ['a', 'b', 'c']), table)
+          const m = new State([flip(n, inc)], builds, 'q').monotonicities
+          expect(m.get('c0')).toEqual({ inc: false, dec: false })
         })
     })
     describe('subscript', () => {

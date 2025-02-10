@@ -170,6 +170,11 @@ function pruneRange(state: State<OP, Component>, minimum: number[]): number[] {
 }
 
 const offset = Symbol()
+/**
+ * Replace `read`/`sum`/`prod` combination with appropriate, smaller `read` nodes when appropriate
+ * If changes are made, components `builds` will be replaced with new values with all string keys
+ * replaced. Owned `Symbol` keys are transferred from the old `builds` components to the new ones.
+ */
 function reaffine(state: State<OP, Component>) {
   const { nodes, cat, builds } = state
   type Weight = Record<string | typeof offset, number>
@@ -349,23 +354,6 @@ function computeNodeRanges(
         if (typeof n.ex === 'number') r = { min: n.ex, max: n.ex }
         else r = { min: NaN, max: NaN }
         break
-      case 'subscript': {
-        if (typeof n.ex[0] !== 'number') r = { min: NaN, max: NaN }
-        else {
-          // Note: this assumes there is no NaN in the array
-          r = { min: Infinity, max: -Infinity }
-          let { min: start, max: last } = result.get(n.br[0])!
-          start = Math.max(0, Math.ceil(start))
-          last = Math.min(last, n.ex.length - 1)
-          for (let i = start; i <= last; i++) {
-            const v = n.ex[i] as number
-            if (r.min > v) r.min = v
-            if (r.max < v) r.max = v
-          }
-          if (r.min > r.max) r = { min: NaN, max: NaN }
-        }
-        break
-      }
       case 'sum':
         r = {
           min: mins.reduce((a, b) => a + b, 0),
@@ -382,7 +370,6 @@ function computeNodeRanges(
         break
       case 'match':
       case 'thres':
-      case 'lookup':
         r = { min: Math.min(...mins), max: Math.max(...maxs) }
         break
       case 'sumfrac':
@@ -400,6 +387,31 @@ function computeNodeRanges(
           }
         break
       }
+      case 'subscript': {
+        if (typeof n.ex[0] !== 'number') r = { min: NaN, max: NaN }
+        else {
+          // Note: this assumes there is no NaN in the array
+          r = { min: Infinity, max: -Infinity }
+          let { min: start, max: last } = result.get(n.br[0])!
+          start = Math.max(0, Math.ceil(start))
+          last = Math.min(last, n.ex.length - 1)
+          for (let i = start; i <= last; i++) {
+            const v = n.ex[i] as number
+            if (r.min > v) r.min = v
+            if (r.max < v) r.max = v
+          }
+          if (r.min > r.max) r = { min: NaN, max: NaN }
+        }
+        break
+      }
+      case 'lookup':
+        // Note: this assumes that `default` branch is never reached if not presented
+        if (isNaN(mins[0]) && isNaN(maxs[0])) {
+          mins.splice(0, 1)
+          maxs.splice(0, 1)
+        }
+        r = { min: Math.min(...mins), max: Math.max(...maxs) }
+        break
       case 'custom':
         r = customOps[n.ex]!.range(ranges)
         break
@@ -447,12 +459,6 @@ function getMonotonicities(
       case 'max':
         node.x.forEach((n) => visit(n, inc))
         break
-      case 'match':
-      case 'lookup':
-        node.x.forEach((n) => visit(n, inc))
-        node.br.forEach((n) => visit(n, true))
-        node.br.forEach((n) => visit(n, false))
-        break
       case 'thres': {
         node.x.forEach((n) => visit(n, inc))
         const ge = nodeRanges.get(node.x[0])!
@@ -491,13 +497,11 @@ function getMonotonicities(
           )
         break
       }
-      case 'custom':
-        customOps[node.ex]
-          .monotonicity(node.x.map((n) => nodeRanges.get(n)!))
-          .forEach((t, i) => {
-            if (!t.inc) visit(node.x[i], !inc)
-            if (!t.dec) visit(node.x[i], inc)
-          })
+      case 'match':
+      case 'lookup':
+        node.x.forEach((n) => visit(n, inc))
+        node.br.forEach((n) => visit(n, true))
+        node.br.forEach((n) => visit(n, false))
         break
       case 'subscript': {
         const {
@@ -524,6 +528,14 @@ function getMonotonicities(
         }
         break
       }
+      case 'custom':
+        customOps[node.ex]
+          .monotonicity(node.x.map((n) => nodeRanges.get(n)!))
+          .forEach((t, i) => {
+            if (!t.inc) visit(node.x[i], !inc)
+            if (!t.dec) visit(node.x[i], inc)
+          })
+        break
       default:
         assertUnreachable(node)
     }
