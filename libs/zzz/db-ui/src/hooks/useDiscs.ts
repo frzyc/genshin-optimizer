@@ -1,5 +1,5 @@
 import { objKeyMap, objMap } from '@genshin-optimizer/common/util'
-import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts';
+import type { DiscSlotKey } from '@genshin-optimizer/zzz/consts'
 import { allDiscSlotKeys } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc } from '@genshin-optimizer/zzz/db'
 import { useEffect, useState } from 'react'

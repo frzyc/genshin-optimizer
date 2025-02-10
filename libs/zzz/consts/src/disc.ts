@@ -295,7 +295,9 @@ export const disc4PeffectSheets: Partial<
   Record<
     DiscSetKey,
     {
-      condMeta: (typeof allDiscCondKeys)[DiscCondKey]
+      condMeta:
+        | (typeof allDiscCondKeys)[DiscCondKey]
+        | Array<(typeof allDiscCondKeys)[DiscCondKey]>
       getStats: (
         conds: Partial<Record<DiscCondKey, number>>,
         stats: Record<string, number>

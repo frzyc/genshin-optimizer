@@ -141,6 +141,56 @@ export const allWengineCondKeys = {
     min: 1,
     max: 10,
   },
+  FusionCompiler: {
+    key: 'FusionCompiler',
+    text: (val: number) => `${val}x Special Attack or EX Special Attack`,
+    min: 1,
+    max: 3,
+  },
+  HailstormShrine: {
+    key: 'HailstormShrine',
+    text: (val: number) =>
+      `${val}x Using an EX Special Attack or when any squad member applies an Attribute Anomaly to an enemy`,
+    min: 1,
+    max: 2,
+  },
+  HeartstringNocturne: {
+    key: 'HeartstringNocturne',
+    text: (val: number) => `${val}x Stacks of Heartstring`,
+    min: 1,
+    max: 2,
+  },
+  Housekeeper: {
+    key: 'Housekeeper',
+    text: (val: number) => `${val}x When an EX Special Attack hits an enemy`,
+    min: 1,
+    max: 15,
+  },
+  IceJadeTeapot: {
+    key: 'IceJadeTeapot',
+    text: (val: number) => `${val}x Tea-riffic`,
+    min: 1,
+    max: 30,
+  },
+  IdentityBase: {
+    key: 'IdentityBase',
+    text: 'When attacked',
+    min: 1,
+    max: 1,
+  },
+  KaboomTheCannon: {
+    key: 'KaboomTheCannon',
+    text: (val: number) =>
+      `${val}x When any friendly unit in the squad attacks and hits an enemy`,
+    min: 1,
+    max: 4,
+  },
+  LunarDecrescent: {
+    key: 'LunarDecrescent',
+    text: 'Launching a Chain Attack or Ultimate',
+    min: 1,
+    max: 1,
+  },
 } as const
 export type WengineCondKey = keyof typeof allWengineCondKeys
 export const wengineSheets: Partial<
@@ -296,6 +346,140 @@ export const wengineSheets: Partial<
         return ret
       }
       return undefined
+    },
+  },
+  FusionCompiler: {
+    condMeta: allWengineCondKeys.FusionCompiler,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const atk_ = [0.12, 0.15, 0.18, 0.21, 0.24]
+      const anomProf = [25, 31, 37, 43, 50]
+      const ret: Record<string, number> = {
+        atk_: atk_[ref],
+      }
+      if (conds['FusionCompiler'])
+        objSumInPlace(ret, {
+          anomProf: anomProf[ref] * conds['FusionCompiler'],
+        })
+      return ret
+    },
+  },
+  GildedBlossom: {
+    condMeta: [],
+    getStats: (_, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const atk_ = [0.06, 0.069, 0.078, 0.087, 0.096]
+      const dmg_ = [0.15, 0.172, 0.195, 0.218, 0.24] // TODO: DMG dealt by EX Special Attacks
+      const ret: Record<string, number> = {
+        atk_: atk_[ref],
+        dmg_: dmg_[ref],
+      }
+      return ret
+    },
+  },
+  HailstormShrine: {
+    condMeta: allWengineCondKeys.HailstormShrine,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const crit_dmg_ = [0.5, 0.57, 0.65, 0.72, 0.8]
+      const ice_dmg_ = [0.2, 0.23, 0.26, 0.29, 0.32]
+      const ret: Record<string, number> = {
+        crit_dmg_: crit_dmg_[ref],
+      }
+      if (conds['HailstormShrine'])
+        objSumInPlace(ret, {
+          ice_dmg_: ice_dmg_[ref] * conds['HailstormShrine'],
+        })
+      return ret
+    },
+  },
+  HeartstringNocturne: {
+    condMeta: allWengineCondKeys.HeartstringNocturne,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const enemyResIgn_ = [0.125, 0.145, 0.165, 0.185, 0.2]
+      const crit_dmg_ = [0.5, 0.575, 0.65, 0.725, 0.8]
+      const ret: Record<string, number> = {
+        crit_dmg_: crit_dmg_[ref],
+      }
+      if (conds['HeartstringNocturne'])
+        objSumInPlace(ret, {
+          enemyResIgn_: enemyResIgn_[ref] * conds['HeartstringNocturne'], // TODO: Chain Attack and Ultimate to ignore 20% of the target's Fire RES
+        })
+      return ret
+    },
+  },
+  Housekeeper: {
+    condMeta: allWengineCondKeys.Housekeeper,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const dmg_ = [0.03, 0.035, 0.04, 0.044, 0.048]
+      const ret: Record<string, number> = {}
+      if (conds['Housekeeper'])
+        objSumInPlace(ret, {
+          physical_dmg_: dmg_[ref] * conds['Housekeeper'],
+        })
+      return ret
+    },
+  },
+  IceJadeTeapot: {
+    condMeta: allWengineCondKeys.IceJadeTeapot,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const impact_ = [0.07, 0.088, 0.0105, 0.0122, 0.014]
+      const dmg_ = [0.2, 0.23, 0.26, 0.29, 0.32]
+      const ret: Record<string, number> = {}
+      if (conds['IceJadeTeapot'])
+        objSumInPlace(ret, { impact_: impact_[ref] * conds['IceJadeTeapot'] })
+      if ((conds['IceJadeTeapot'] ?? 0) >= 15)
+        objSumInPlace(ret, { dmg_: dmg_[ref] })
+      return ret
+    },
+  },
+  IdentityBase: {
+    condMeta: allWengineCondKeys.IdentityBase,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const def_ = [0.2, 0.23, 0.26, 0.29, 0.32]
+      if (conds['IdentityBase'])
+        return {
+          def_: def_[ref],
+        } as Record<string, number>
+      return undefined
+    },
+  },
+  KaboomTheCannon: {
+    condMeta: allWengineCondKeys.KaboomTheCannon,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const atk_ = [0.025, 0.028, 0.032, 0.036, 0.04]
+      if (conds['KaboomTheCannon'])
+        return {
+          cond_atk_: atk_[ref] * conds['KaboomTheCannon'],
+        } as Record<string, number>
+      return undefined
+    },
+  },
+  LunarDecrescent: {
+    condMeta: allWengineCondKeys.LunarDecrescent,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const dmg_ = [0.15, 0.175, 0.2, 0.225, 0.25]
+      if (conds['LunarDecrescent'])
+        return {
+          dmg_: dmg_[ref] * conds['LunarDecrescent'],
+        } as Record<string, number>
+      return undefined
+    },
+  },
+  LunarPleniluna: {
+    condMeta: [],
+    getStats: (_, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const dmg_ = [0.12, 0.14, 0.16, 0.18, 0.2]
+      return {
+        dmg_: dmg_[ref], //TODO: Basic Attack, Dash Attack, and Dodge Counter DMG
+      } as Record<string, number>
     },
   },
   // TODO: the rest of them painge
