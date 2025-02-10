@@ -37254,7 +37254,7 @@
       "desc": "A W-Engine that prioritizes damage output over noise reduction. It can indiscriminately deal considerable damage to all units nearby. Its designer compares it to the full moon. Bright moonlight can interrupt people's sleep, and nothing can be done about it. But the moonlight does not bother anyone on purpose — you just have to get used to it.",
       "desc2": "Equip to increase Attack Agents' combat capabilities",
       "desc3": "A W-Engine that prioritizes damage output over noise reduction. It can indiscriminately deal considerable damage to all units nearby.",
-      "refinement": [
+      "phase": [
         {
           "name": "Full Moon",
           "desc": "<color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, and <color=#FFFFFF>Dodge Counter</color> DMG increases by <color=#2BAD00>12%</color>."
@@ -37287,7 +37287,7 @@
       "desc": "A W-Engine with excellent sonic and thermal energy usage, capable of hitting its target with a double whammy. Those hit, be it intentionally or not, have a chance to be diagnosed with snow blindness. The exact cause remains unknown, so obtaining insurance compensation after falling victim to this malady is close to impossible. There was a poor Hollow investigator who learned it the hard way.",
       "desc2": "Equip to increase Attack Agents' combat capabilities",
       "desc3": "A W-Engine with excellent sonic and thermal energy usage, capable of hitting its target with a double whammy.",
-      "refinement": [
+      "phase": [
         {
           "name": "Waning Moon",
           "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases the equipper's DMG by <color=#2BAD00>15%</color> for 6s."
@@ -37320,7 +37320,7 @@
       "desc": "This high-capacity portable W-Engine can collect dissipated energy from its surroundings, thus enhancing the combat effectiveness of its operator. It is a perfect choice for novice explorers who are worried that their W-Engine may run out of power during expeditions.",
       "desc2": "Equip to increase Attack Agents' combat capabilities",
       "desc3": "A high-capacity portable W-Engine that can collect dissipated energy from its surroundings, thus enhancing the combat effectiveness of its operator.",
-      "refinement": [
+      "phase": [
         {
           "name": "New Moon",
           "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> generates <color=#2BAD00>3</color> Energy for the equipper. This effect can trigger once every 12s."
@@ -37353,7 +37353,7 @@
       "desc": "This special W-Engine features a built-in sonic generator that converts collected energy into penetrating infrasound waves, thereby boosting its damage output. However, to activate this function, the operator needs to charge up enough power, and the first step of charging up is to use up any remaining energy in the W-Engine.",
       "desc2": "Equip to increase Support Agents' combat capabilities",
       "desc3": "A special W-Engine featuring a built-in sonic generator that boosts its damage output.",
-      "refinement": [
+      "phase": [
         {
           "name": "Changing Tides",
           "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> increases all squad members' Impact by <color=#2BAD00>8%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack."
@@ -37386,7 +37386,7 @@
       "desc": "A standardized W-Engine with balanced performance. Despite lacking any particular tendencies, it enhances its owner's and it's owner's teammates' combat effectiveness in all aspects. For novice explorers who have not figured out their preferred combat style, this W-Engine is an excellent choice.",
       "desc2": "Equip to increase Support Agents' combat capabilities",
       "desc3": "A standardized W-Engine with balanced performance that enhances its owner's and their teammates' combat effectiveness in all aspects.",
-      "refinement": [
+      "phase": [
         {
           "name": "Roaring Waves",
           "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> increases all squad members' Anomaly Mastery and Anomaly Proficiency by <color=#2BAD00>10</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack."
@@ -37419,7 +37419,7 @@
       "desc": "This special W-Engine features motion capture algorithms that monitor the status of the operator's teammates, enabling it to send signals to coordinate tactical movements and enhance the overall combat competency of the squad. However, this premise assumes that everyone can keep up with its signals instead of stepping on other members' toes...",
       "desc2": "Equip to increase Support Agents' combat capabilities",
       "desc3": "A special W-Engine that features motion capture algorithms, which enhance the overall combat competency of your squad.",
-      "refinement": [
+      "phase": [
         {
           "name": "Booming Sound",
           "desc": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' ATK by <color=#2BAD00>8%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack."
@@ -37452,7 +37452,7 @@
       "desc": "An energy-storage type W-Engine with a unique operation circuit. It will absorb scattered energy up to a certain amount before unleashing it, dealing some extra impact. It's impossible to control when that energy is unleashed, but when it is, it'll give you the joy of winning a prize draw.",
       "desc2": "Equip to increase Stun Agents' combat capabilities",
       "desc3": "An energy-storage type W-Engine with a unique operation circuit. It will absorb scattered energy up to a certain amount before unleashing it all at once.",
-      "refinement": [
+      "phase": [
         {
           "name": "Undercurrent",
           "desc": "<color=#FFFFFF>EX Special Attacks</color> inflict <color=#2BAD00>10%</color> more Daze."
@@ -37485,7 +37485,7 @@
       "desc": "A tactical W-Engine that locates enemies using high-frequency sound waves. Once it has marked its targets, it will activate its aiming aid to make the operator's precision attack more deadly. While this feature increases the operator's efficiency in battles, it may occasionally attract curious Ethereals from afar.",
       "desc2": "Equip to increase Stun Agents' combat capabilities",
       "desc3": "A tactical W-Engine that locates enemies using high-frequency sound waves. Its aiming aid can make its operator's precision attack more deadly.",
-      "refinement": [
+      "phase": [
         {
           "name": "Tsunami",
           "desc": "The equipper's attacks inflict <color=#2BAD00>8%</color> more Daze on their main target."
@@ -37518,7 +37518,7 @@
       "desc": "This inverter W-Engine can generate excessive power and effectively increase its operator's battle prowess. However, due to its poor heat dissipation, it emits ear-splitting noise during battle. As a result, all squad members will need to wear earplugs.",
       "desc2": "Equip to increase Stun Agents' combat capabilities",
       "desc3": "A frequency-converting W-Engine that can quickly generate excessive power and effectively increase its user's battle prowess.",
-      "refinement": [
+      "phase": [
         {
           "name": "Riptide",
           "desc": "Upon entering combat or switching in, the equipper's Impact increases by <color=#2BAD00>9%</color> for 10s. This effect can trigger once every 20s."
@@ -37551,7 +37551,7 @@
       "desc": "This special W-Engine can analyze the target's weak spots through real-time calculations. Although its heavy exoskeleton can be a burden to the operator, some users have found it to be an efficient way to exercise and lose weight, and have thus become loyal customers.",
       "desc2": "Equip to increase Anomaly Agents' combat capabilities",
       "desc3": "A special W-Engine that can analyze the target's weak spots through real-time calculations.",
-      "refinement": [
+      "phase": [
         {
           "name": "Disordered Current",
           "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>25</color> for 10s. This effect can trigger once every 20s. "
@@ -37584,7 +37584,7 @@
       "desc": "This damage-type W-Engine features enhanced movement detection modules that can detect the operator's status in real-time and boost their combat prowess at critical moments to optimize battle efficiency. After the operator completes the finishing move, the W-Engine emits a dazzling multicolored flash and rates the operator's move.",
       "desc2": "Equip to increase Anomaly Agents' combat capabilities",
       "desc3": "A damage-type W-Engine that features an enhanced movement detection module that can quickly alter its output intensity to optimize battle efficiency.",
-      "refinement": [
+      "phase": [
         {
           "name": "High-Voltage Surge",
           "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Proficiency by <color=#2BAD00>25</color> for 10s. This effect can trigger once every 20s."
@@ -37617,7 +37617,7 @@
       "desc": "A high-capacity W-Engine that features a built-in generator, allowing it to keep a stable storage of electrical power without any manual operation from the operator. As a result, it proves to be exceptionally used in battle as its electric current can stun tough enemies.",
       "desc2": "Equip to increase Anomaly Agents' combat capabilities",
       "desc3": "A high-capacity W-Engine that features a built-in generator, which allows it to keep a stable storage of electrical power.",
-      "refinement": [
+      "phase": [
         {
           "name": "Charge Overload",
           "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper generates <color=#2BAD00>3.5</color> Energy. This effect can trigger once every 12s."
@@ -37650,7 +37650,7 @@
       "desc": "A W-Engine with a component structure adjusted according to specific parameters. It can enhance the defensive capabilities of those who have a certain style of combat. If the user does not meet the requirements for this W-Engine, then carrying it would be like lugging around an over-sized shield in battle.",
       "desc2": "Equip to increase Defense Agents' combat capabilities",
       "desc3": "A W-Engine with a component structure adjusted according to specific parameters. It can enhance the defensive capabilities of those who have a certain style of combat.",
-      "refinement": [
+      "phase": [
         {
           "name": "Sinking Strike",
           "desc": "When attacked, the equipper's DEF increases by <color=#2BAD00>20%</color> for 8s."
@@ -37683,7 +37683,7 @@
       "desc": "A functional W-Engine that specializes in energy conversion. It can analyze combat environments and generate special sounds to disrupt the enemy's attack. However, when facing a strong-willed enemy, you will still need to seize the right opportunity to attack. Luckily, most Ethereals lack the willpower to resist it.",
       "desc2": "Equip to increase Defense Agents' combat capabilities",
       "desc3": "A functional W-Engine that specializes in energy conversion. It can analyze combat environments and generate special sounds to disrupt the enemy's offense.",
-      "refinement": [
+      "phase": [
         {
           "name": "Dazzle",
           "desc": "When attacked, reduces the attacker's DMG by <color=#2BAD00>6%</color> for 12s."
@@ -37717,7 +37717,7 @@
       "desc": "A custom-made W-Engine designed for street music lovers. It sacrifices cooling components to make space for high-end speaker modules, ensuring your fans, both Ethereal and human, hear your every word.\n——From the streets to the Hollows, superstars are never short of flowers and applause. The bars they spit are so flaming hot, they add the perfect heat to any battlefield.",
       "desc2": "Equip to increase Attack Agents' combat capabilities",
       "desc3": "A custom-made W-Engine designed for urban music lovers. It sacrifices heat dissipation components for improved sound quality.",
-      "refinement": [
+      "phase": [
         {
           "name": "Flaming Bars",
           "desc": "Whenever a squad member launches a <color=#FFFFFF>Chain Attack</color>, the equipper gains 1 Charge stack, stacking up to 3 times. Upon activating their own <color=#FFFFFF>Ultimate</color>, the equipper consumes all Charge stacks, and each stack increases the skill's DMG by <color=#2BAD00>15%</color>."
@@ -37751,7 +37751,7 @@
       "desc": "A special W-Engine equipped with a high-speed camera module. The best choice for in-Hollow photography enthusiasts. It captures every touching moment spent beating up your Ethereal friends, as long as you have a free hand to press the shutter.\nP.S. The internal optical components have not undergone anti-corruption treatment. Please do not lose the warranty form.",
       "desc2": "Equip to increase Support Agents' combat capabilities",
       "desc3": "A special W-Engine equipped with a high-speed camera module. The best choice for in-Hollow photography enthusiasts.",
-      "refinement": [
+      "phase": [
         {
           "name": "Say Cheese",
           "desc": "Any squad members' <color=#FFFFFF>Dodge Counter</color>, <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Attack</color>, or <color=#FFFFFF>Chain Attack</color> respectively generates <color=#2BAD00>20</color>/<color=#2BAD00>25</color>/<color=#2BAD00>30</color>/<color=#2BAD00>35</color> more Decibels and generates <color=#2BAD00>0.7</color> Energy for the equipper. This effect can trigger once every 12s. The cooldown for each type of attack is independent of others. Passive effects of the same name do not stack."
@@ -37785,7 +37785,7 @@
       "desc": "A consumer-class W-Engine launched by an exotic pet fan club to promote pet culture. It used to be a popular model until three customers' fingers, a staff member, and half a Bangboo disappeared into a Gourmet's big mouth. Ether blocks generated by the mouth module can rapidly devour substances. Please avoid putting your head and limbs inside.",
       "desc2": "Equip to increase Anomaly Agents' combat capabilities",
       "desc3": "A consumer-class W-Engine launched by an exotic pet fan club to promote pet culture. Due to its cute appearance, it was once a very popular model.",
-      "refinement": [
+      "phase": [
         {
           "name": "Dinner's Ready!",
           "desc": "For every 10 Energy consumed, the equipper gains a buff that increases ATK by <color=#2BAD00>2.5%</color> for 10s, stacking up to 10 times. The duration of each stack is calculated separately."
@@ -37819,7 +37819,7 @@
       "desc": "A damage-type W-Engine made of special Etheric matter. When its operator is attacked, it builds up energy and boosts its damage output. Although it does not grant the operator the power to transform into a Starlight Knight, it provides a surge of courage when the operator is in dire situations.",
       "desc2": "Equip to increase Attack Agents' combat capabilities",
       "desc3": "A damage-type W-Engine made of special Etheric matter. When its user is attacked, it builds up energy.",
-      "refinement": [
+      "phase": [
         {
           "name": "Knight's Combo",
           "desc": "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>12%</color> for 12s."
@@ -37853,7 +37853,7 @@
       "desc": "This high-power W-Engine boasts a cutting-edge energy conversion device that collects heat from its surroundings and supplies it to the steamer, making it easy for the operator to cook or heat up objects. This makes it a perfect choice for Hollow explorers. However... please be careful when using it to avoid burns.",
       "desc2": "Equip to increase Stun Agents' combat capabilities",
       "desc3": "A high-power W-Engine that boasts a cutting-edge energy conversion system. It collects excess heat and supplies it to the steamer.",
-      "refinement": [
+      "phase": [
         {
           "name": "Thick Broth",
           "desc": "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>2%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately."
@@ -37887,7 +37887,7 @@
       "desc": "A special W-Engine whose outer shell is made of composite Etheric matter that effectively absorb incoming impacts in combat and turn it against the enemy. Rumors suggest that its prototype was crafted by a legendary Hollow explorer, and despite its ancient appearance, it continues to run smoothly. This W-Engine is literally an \"old timer\" in the field of W-Engines.",
       "desc2": "Equip to increase Stun Agents' combat capabilities",
       "desc3": "A special W-Engine whose outer shell is made of composite Etheric matter that effectively absorbs impact, and turns it against the enemy.",
-      "refinement": [
+      "phase": [
         {
           "name": "Behemoth Hunter",
           "desc": "When the target's HP is no lower than 50%, the equipper inflicts <color=#2BAD00>10%</color> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <color=#2BAD00>10%</color>."
@@ -37921,7 +37921,7 @@
       "desc": "A dream W-Engine adored by Starlight Knights fans. Its copyright owner claims that counterfeit transformers can transform you into a bad guy NPC. Watch out for a flying kick that'll scare the bejesus out of the bad guys — that's the power of genuine copyrighted merch!\n\"Starlight Knights, transform— Transform! Transform! Why can't I transform? Unless... the stars haven't chosen me?!\" — from an unboxing vlog recorded by an anonymous member of the Cunning Hares.",
       "desc2": "Equip to increase Defense Agents' combat capabilities",
       "desc3": "An epic W-Engine favored by Starlight Knight fans. Its high popularity and scarcity marketing strategy have caused an influx of knock-offs.",
-      "refinement": [
+      "phase": [
         {
           "name": "Starlight Knight Flying Kick",
           "desc": "Increases Max HP by <color=#2BAD00>8%</color>. When attacked, the equipper's Impact is increased by <color=#2BAD00>10%</color> for 12s."
@@ -37955,7 +37955,7 @@
       "desc": "A W-Engine produced by recycling abandoned Bangboo shells. Though it's made from scrapped parts, it still caused some distress among Bangboo lovers. \"No Bangboo were hurt during the production of this W-Engine.\" — the manufacturer had to include this note on the packaging due to protests from Bangboo rights organizations.",
       "desc2": "Equip to increase Anomaly Agents' combat capabilities",
       "desc3": "A W-Engine produced by recycling abandoned Bangboo shells. Its electrode cores made of recycled metals can release high-voltage charges.",
-      "refinement": [
+      "phase": [
         {
           "name": "Lingering Cries",
           "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper gains a buff that increases Anomaly Proficiency by <color=#2BAD00>30</color>, stacking up to 4 times. This effect expires when the target recovers from Stun or is defeated. The duration of each stack is calculated separately."
@@ -37989,7 +37989,7 @@
       "desc": "This damage-type W-Engine boasts a built-in current transformer, with its discharge part designed as a protruding lip gloss. It automatically attracts electrically sensitive objects around the operator and deals additional damage to them. Such is not the power of love, but rather the Lorentz force generated by a 1,000-volt electric field.",
       "desc2": "Equip to increase Anomaly Agents' combat capabilities",
       "desc3": "This damage-type W-Engine boasts a built-in current transformer, and automatically attracts electrically sensitive objects around the operator and deals additional damage to them.",
-      "refinement": [
+      "phase": [
         {
           "name": "Kiss of Death",
           "desc": "When there are enemies inflicted with Attribute Anomaly on the field, the equipper's ATK increases by <color=#2BAD00>10%</color> and they deal an additional <color=#2BAD00>15%</color> more DMG to the target."
@@ -38023,7 +38023,7 @@
       "desc": "A special W-Engine decorated with a fluffy bunny. Although it is a mere imitation of the real animal, even the fiercest of Hollow Raiders can relieve stress by petting their bunnies while taking a break, which enhances their combat performance. There are many similar models in this series of W-Engines: a portable bunny, a foldable bunny, a furless bunny... Everyone can find one they will not be able to refuse.",
       "desc2": "Equip to increase Defense Agents' combat capabilities",
       "desc3": "A special W-Engine decorated with a fluffy bunny. However, it is just an imitation of the real animal.",
-      "refinement": [
+      "phase": [
         {
           "name": "Pet the Bunny",
           "desc": "Increases Max HP by <color=#2BAD00>8%</color>. Increases the equipper's ATK by <color=#2BAD00>10%</color> when they are shielded."
@@ -38057,7 +38057,7 @@
       "desc": "A special W-Engine equipped with a temperature regulator where residual heat generated by the W-Engine's high frequency is funneled into the hot springs on its surface. The owner of this W-Engine can drink hot spring soup with all its spring warmth in front of frost-covered enemies. Of course, some people think it's like drinking bath water.",
       "desc2": "Equip to increase Defense Agents' combat capabilities",
       "desc3": "A special W-Engine equipped with a temperature regulator where residual heat generated by the W-Engine's high frequency is funneled into the hot springs on its surface.",
-      "refinement": [
+      "phase": [
         {
           "name": "Hot Spring Soup",
           "desc": "Reduces DMG taken by <color=#2BAD00>7.5%</color>. When attacked, the equipper's Energy Generation Rate increases by <color=#2BAD00>10%</color> for 12s. When the equipper switches off-field, this buff will be transferred to the new on-field character with its duration refreshed. Passive effects of the same name do not stack."
@@ -38091,7 +38091,7 @@
       "desc": "A W-Engine that represents the brilliance and magnificence of flowers, seemingly crafted from the most luxurious materials. However, after finally dismantling the Ether-powered premium anti-theft device, an experienced thief will discover with terror that this W-Engine... is only gold plated.",
       "desc2": "Equip to increase Attack Agents' combat capabilities",
       "desc3": "A W-Engine with a grandiose and luxurious appearance equipped with a premium Ether-powered anti-theft device. It's actually used to provide the equipper with energy.",
-      "refinement": [
+      "phase": [
         {
           "name": "Extraordinary Anti-Theft Measures",
           "desc": "ATK increases by <color=#2BAD00>6</color>%, and DMG dealt by <color=#FFFFFF>EX Special Attacks</color> increases by <color=#2BAD00>15%</color>."
@@ -38125,7 +38125,7 @@
       "desc": "Art can save those drowning in life. Mortals gather together, music of different emotions collide, and the drying graffiti on the wall speaks of a thousand unique forms of agency.\nNow, turn up the music until the soundwaves crash the Hollow. Even if Ethereals don't have ears, let's make them feel the power of humanity!",
       "desc2": "Equip to increase Attack Agents' combat capabilities",
       "desc3": "Gather 'round, mortals! Turn up the music!",
-      "refinement": [
+      "phase": [
         {
           "name": "Get Everyone Fired Up",
           "desc": "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> hits an enemy, the equipper's ATK increases by <color=#2BAD00>6%</color> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <color=#2BAD00>6%</color>."
@@ -38159,7 +38159,7 @@
       "desc": "This customized W-Engine Core focuses on power storage and has been modified to enhance power storage functions. It can effectively boost Zap damage output for weapons, and is the gadget store owner's piece de resistance. Not long after, Anby made some tweaks based on user habits, but judging by how serious and careful she is while conducting each maintenance session, these are probably not the safest of modifications.\n\n<color=#959595>\"Weapons SHOULD be dangerous. If it can't shock me, then how is it going to shock the enemy?\" — Anby's response while carefully performing maintenance</color>",
       "desc2": "Equip to increase Stun Agents' combat capabilities",
       "desc3": "A customized W-Engine that focuses on energy storage, modified to improve its energy capacity. This model is often used by Anby.",
-      "refinement": [
+      "phase": [
         {
           "name": "In a Flash of Light",
           "desc": "Increases <color=#2EB6FF>Electric DMG</color> by <color=#2BAD00>15%</color>. When the equipper hits an enemy with a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Assist Attack</color>, their Energy Generation Rate increases by <color=#2BAD00>18%</color> for 8s."
@@ -38193,7 +38193,7 @@
       "desc": "A cost-effective W-Engine that focuses on energy storage. After Nicole modified its internal space, it can now be used as a storage box. While the gold coins stored inside are fake, they may catch greedy Hollow Raiders off guard. Or rather, the operator can simply toss the heavy coins at them and knock them out.\n\n<color=#959595>\"Hurts, doesn't it? Impressive, right? Hmph, that's just what money can do!\" — Nicole, gloating after defeating an enemy</color>",
       "desc2": "Equip to increase Support Agents' combat capabilities",
       "desc3": "A cost-effective W-Engine that can store energy, with improvements made to its internal space. This model is often used by Nicole.",
-      "refinement": [
+      "phase": [
         {
           "name": "Money-Lover",
           "desc": "Dealing <color=#FE437E>Ether DMG</color> using an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color> increases all squad members' DMG against the target by <color=#2BAD00>15%</color> and increases the equipper's Energy Regen by <color=#2BAD00>0.5</color>/s for 2s. Passive effects of the same name do not stack."
@@ -38227,7 +38227,7 @@
       "desc": "An enhanced W-Engine with a high rotation speed. Corin has integrated its shaft portion with a chainsaw to provide additional cutting power for her \"cleaning\" work. To ensure that her \"cleaning\" goes smoothly and to minimize the pain inflicted on her target, she has thoughtfully increased the rotation speed to the maximum.\n\n<color=#959595>\"Um... Don't worry, it won't hurt! Well... I mean, it will only hurt for a moment, and then it won't hurt anymore!\" — Corin, attempting to comfort her opponent before attacking</color>",
       "desc2": "Equip to increase Attack Agents' combat capabilities",
       "desc3": "An enhanced W-Engine with a high rotation speed. A chainsaw has been integrated into its shaft. This model is often used by Corin.",
-      "refinement": [
+      "phase": [
         {
           "name": "Safe Household Saw",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.45</color>/s. When an <color=#FFFFFF>EX Special Attack</color> hits an enemy, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>3%</color>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration."
@@ -38261,7 +38261,7 @@
       "desc": "A custom supercomputing W-Engine which specializes in aim assist and calculating trajectories, it looks more like some kind of pirated Starlight Knight figurine now that Billy's finished his modifications. It flashes brightly whenever an enemy is detected, and shouts out pre-set quotes. Despite this move clearly exposing one's location and attracting the enemy, this is not an issue for Billy so long as everything is cool enough.\n\n<color=#959595>\"COPY? How can you call that a copy?! I've poured all my passion, wisdom, soul, and moisture into this! Apart from summoning a shooting star to transform me — this is real deal, bona fide Starlight Knight equipment!\" — Billy, enthusiastically outlining his modding philosophy</color>",
       "desc2": "Equip to increase Attack Agents' combat capabilities",
       "desc3": "A customized supercomputing W-Engine, specialized in aim support and ballistic calculations. Modified by Billy, it now looks like some sort of knock-off Starlight Knight figurine.",
-      "refinement": [
+      "phase": [
         {
           "name": "Knight Beam: Change",
           "desc": "Increases the equipper's <color=#F0D12B>Physical DMG</color> against the target by <color=#2BAD00>36%</color> for 8s upon hitting an enemy at least 6 meters away with a <color=#FFFFFF>Basic Attack</color> or <color=#FFFFFF>Dash Attack</color>."
@@ -38295,7 +38295,7 @@
       "desc": "Originally a high-rev W-Engine, it has been modified by Anton with the most expensive rotary drill parts. These modifications allow the engine to temporarily exceed its output limits, enabling it to better serve Anton's \"bro.\" When it comes to anything involving his \"bro,\" Anton spares no expense.\n\n<color=#959595>\"Ben bought the materials, Grace helped with the modding, and the force was signed off by the president herself... Bro, the blessings of all Belobog are inside you. Let's do this!\" — Anton muttering to himself the first time he starts it up</color>",
       "desc2": "Equip to increase Attack Agents' combat capabilities",
       "desc3": "Originally a rev-enhanced W-Engine, it has been modified by Anton with the most expensive rotary drill parts that allow it to exceed its output limits.",
-      "refinement": [
+      "phase": [
         {
           "name": "Hell's Generator",
           "desc": "When launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color>, <color=#2EB6FF>Electric DMG</color> from <color=#FFFFFF>Basic Attacks</color> and <color=#FFFFFF>Dash Attacks</color> increases by <color=#2BAD00>50%</color> for 10s. This effect can trigger once every 15s."
@@ -38329,7 +38329,7 @@
       "desc": "This super-powerful support W-Engine, into which Ben installed extra heavy oil cylinders to keep it growling along, can even provide sufficient power for heavy-duty machinery. Despite its weight being so massive that ordinary people cannot lift it, for Ben, it's the perfect counterweight ball for his concrete pillar.\n\n<color=#959595>\"Don't worry. I've calculated the counterweight position and impact resistance factor down to four decimal places. It won't impact weapon performance.\" — Ben, before taking out his notebook to check over the calculations yet again</color>",
       "desc2": "Equip to increase Defense Agents' combat capabilities",
       "desc3": "A powerful protection-type W-Engine, characterized by thick oil cylinders that ceaselessly roar inside it. It can provide sufficient power for heavy machinery.",
-      "refinement": [
+      "phase": [
         {
           "name": "Ten Ton Top",
           "desc": "Reduces DMG taken by <color=#2BAD00>7.5%</color>. After being attacked, the next attack to hit an enemy will trigger a critical hit and deal <color=#2BAD00>600%</color> of the equipper's DEF as additional DMG. This effect can be triggered once every 7.5s."
@@ -38363,7 +38363,7 @@
       "desc": "An intricate W-Engine developed by Section 6 and later modified using the technology of a certain martial arts clan. It can control Ether particles to form an energy field and boasts a terrifying appearance that can easily silence a crying child! If you are unfortunate enough to face its wicked stare, then just wait until it unfurls its fangs. What lies inside is... Don't laugh! This poor little thing really hurts when it hits you!\n\n<color=#959595>\"Hmm... Instead of a cool mask, I'd rather carry another lunchbox... I'll go ask Nagi if I can pack some snacks in it!\" — Soukaku, excitedly running to the Section 6 office</color>",
       "desc2": "Equip to increase Support Agents' combat capabilities",
       "desc3": "An intricate W-Engine developed by Section 6 and later modified with extra features. It can control Ether particles to form an energy field. This model is favored by Soukaku.",
-      "refinement": [
+      "phase": [
         {
           "name": "Visage of Greed",
           "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>15%</color>. When launching an <color=#FFFFFF>EX Special Attack</color>, all squad members' ATK increases by <color=#2BAD00>2%</color> for 12s, stacking up to 4 times. Repeated triggers reset the duration. Passive effects of the same name do not stack."
@@ -38397,7 +38397,7 @@
       "desc": "A support W-Engine propelled by jets that is both mobile and impactful, it can traverse the entire battlefield providing combat buffs. Not only is it practical, but it's the biggest imaginary enemy and most-feared sparring partner of Grassy, Woody, and Bricky. The little boars can hear Lucy say in their nightmares.\n\n<color=#959595>\"If you can't do it, go train with Kaboom!\" — Lucy, lecturing her three loyal guard boars</color>",
       "desc2": "Equip to increase Support Agents' combat capabilities",
       "desc3": "A support W-Engine propelled by jets that is both mobile and impactful, it can traverse the entire battlefield providing combat buffs.",
-      "refinement": [
+      "phase": [
         {
           "name": "Stampede Accident",
           "desc": "When any friendly unit in the squad attacks and hits an enemy, all friendly units' ATK increases by <color=#2BAD00>2.5%</color> for 8s, stacking up to 4 times. The duration of each stack is calculated separately, and each friendly unit can provide 1 stack of the buff. Passive effects of the same name do not stack."
@@ -38431,7 +38431,7 @@
       "desc": "A defensive W-Engine independently researched and created by Public Security with special emphasis on enhancing the energy conversion ability in its shield. Rumor has it that this model of W-Engine became the standard for all supporting units in Hollow operations due to an unknown member of the top brass pushing for mass production.\n\n<color=#959595>\"Even if you took it apart and rebuilt it into an actual physical shield, it would still be extremely sturdy... but it really is super heavy!\" —Seth, musing aloud as he studies the extremely expensive material of the W-Engine</color>",
       "desc2": "Equip to increase Defense Agents' combat capabilities",
       "desc3": "A defensive W-Engine independently researched and created by Public Security which simplifies the offensive components to enhance the energy conversion ability in its shield. ",
-      "refinement": [
+      "phase": [
         {
           "name": "Standard Blocking Technique",
           "desc": "While Shielded, the equipper's Energy Regen increases by <color=#2BAD00>0.4</color>/s. The Anomaly Buildup of <color=#FFFFFF>EX Special Attacks</color> and <color=#FFFFFF>Assist Follow-Ups</color> increase by <color=#2BAD00>36%</color>."
@@ -38465,7 +38465,7 @@
       "desc": "This energy W-Engine, modded from spare parts of a truck's engine, converts the original cylinder into an energy storage unit, which is highly advantageous. It placed first in the internal Leaps and Bounds competition, surpassing many heavy-duty motorbikes and even a truck driven by Piper herself.\n\n<color=#959595>\"Too bad there's no way to carry cargo... Maybe we can hang it on the tusks?\" — Piper, top-notch logistics driver</color>",
       "desc2": "Equip to increase Anomaly Agents' combat capabilities",
       "desc3": "An energy W-Engine modded from spare parts of a truck's engine. It converts the original cylinder into an energy storage unit, which is highly advantageous.",
-      "refinement": [
+      "phase": [
         {
           "name": "Collision Potential",
           "desc": "When <color=#FFFFFF>EX Special Attack</color> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:\nIncreases the equipper's ATK by <color=#2BAD00>8%</color>, increases the equipper's Anomaly Proficiency by <color=#2BAD00>40</color>, or increases the equipper's Anomaly Buildup Rate by <color=#2BAD00>25%</color>."
@@ -38499,7 +38499,7 @@
       "desc": "A high-performance supercomputing W-Engine, capable of collecting real-time data on the battlefield and providing tactical support to its operator. Additionally, it is equipped with mini cannons and can even be deployed as an automatic combat unit in critical moments. In such situations, the operator may become more of a hindrance than a help.",
       "desc2": "Equip to increase Attack Agents' combat capabilities",
       "desc3": "A high-performance supercomputing W-Engine, capable of collecting real-time battlefield data and equipped with mini cannons.",
-      "refinement": [
+      "phase": [
         {
           "name": "Oversized Barrel",
           "desc": "Increases ATK by <color=#2BAD00>7.5%</color>. Landing a critical hit on an enemy will inflict an additional 200% of ATK as DMG. This effect can trigger once every <color=#2BAD00>8</color>s."
@@ -38533,7 +38533,7 @@
       "desc": "A new supercomputing W-Engine, featuring cutting-edge integrated chips that dynamically monitor the battlefield and provide tactical analysis for its user. Furthermore, this W-Engine can serve as a portable console, allowing its user to play the most popular video games anytime, anywhere. However, it is not advisable to use the speakers while playing games... Especially not in Hollow areas frequented by Ethereals.",
       "desc2": "Equip to increase Support Agents' combat capabilities",
       "desc3": "A new supercomputing W-Engine, featuring cutting-edge integrated chips that dynamically monitor the battlefield and provide tactical analysis for the user.",
-      "refinement": [
+      "phase": [
         {
           "name": "Game Start!",
           "desc": "Whenever the equipper's attack triggers an Attribute Counter effect, all squad members' CRIT Rate against the struck enemy increases by <color=#2BAD00>12%</color> for 12s. Passive effects of the same name do not stack."
@@ -38567,7 +38567,7 @@
       "desc": "A special W-Engine modeled after a revolver. It can apparently load six bullet-shaped condensed Ether batteries, which release a significant amount of power when fired. It is said that as long as you carry this W-Engine, you will be able to spontaneously learn how to whistle and will occasionally reference old movies in a cowboy voice.",
       "desc2": "Equip to increase Stun Agents' combat capabilities",
       "desc3": "A special W-Engine modeled after a revolver. It can load bullet-shaped condensed Ether batteries, which release a great amount of power when fired.",
-      "refinement": [
+      "phase": [
         {
           "name": "Fire!",
           "desc": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>4%</color>."
@@ -38601,7 +38601,7 @@
       "desc": "A supercomputing W-Engine equipped with an enhanced motion monitoring feature, perfectly matching the fast reflexes and combat maneuvers of Cat Thirens. Nekomata has added a foldable knife to its casing. Despite claiming that this design is to facilitate her in battle, the knife has fresh mackerel stains smeared onto it...\n\n<color=#959595>\"Lots of people call me a clever clogs for doing this mod, but when you're out on the streets, you gotta put everything you can to good use: Every little trick, every little thought, every little hustle... And look! A little kitty!\" — Nekomata, diverting attention away while secretly trying to fish out the listener's wallet</color>",
       "desc2": "Equip to increase Attack Agents' combat capabilities",
       "desc3": "A supercomputing W-Engine equipped with a motion monitoring feature. Thanks to Nekomata's modifications, it perfectly matches the fast reflexes and combat maneuvers of feline Thirens.",
-      "refinement": [
+      "phase": [
         {
           "name": "Metal Cat Claws",
           "desc": "Increases <color=#F0D12B>Physical DMG</color> by <color=#2BAD00>20%</color>. The equipper's DMG increases by <color=#2BAD00>25%</color> when hitting the enemy from behind."
@@ -38635,7 +38635,7 @@
       "desc": "A violent Obsidian Division W-Engine forged with fire and filled with a forbidden fuel that has been reprocessed using Ether-technology. Its intense heat can be used to clear the entire battlefield. Rumor has it that its designer was exchanging W-Engine design ideas with Soldier 11 over dinner. After an hour spent enjoying extra spicy noodles, she decided to bring extra spicy revenge to her enemies.\n\n<color=#959595>\"I really like it. It's stable, efficient, and practical. The high temperature can clean the battle residue off my blade and even disinfect wounds when needed... Why are you sitting so far away?\" — Soldier 11, introducing her W-Engine to her teammates</color>",
       "desc2": "Equip to increase Attack Agents' combat capabilities",
       "desc3": "A W-Engine made for Soldier 11 by Obsidian Division. Its intense heat can be used to clear the entire battlefield.",
-      "refinement": [
+      "phase": [
         {
           "name": "Scorching Breath",
           "desc": "Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, or <color=#FFFFFF>Dodge Counter</color>, the equipper's ATK increases by <color=#2BAD00>3.5%</color> for 8s, stacking up to 8 times. This effect can trigger once every 0.5s. The duration of each stack is calculated separately."
@@ -38669,7 +38669,7 @@
       "desc": "A multi-functional W- Engine specially designed with a motorcycle tire as the foundation. It boasts rapid speed, ferocious tearing power, solid defense, unexpectedly low energy consumption, and a domineering appearance. Apparently, this was initially just a toy that Big Daddy made for Caesar to play with, but every time Caesar played with it, it would end up in tatters. As a result, Big Daddy spent years reinforcing and modifying it over a hundred times, eventually creating this superb piece of equipment that can function as a weapon, shield, wheel, and even a light source.\n\n<color=#959595>\"It was originally supposed to also function as a piano, with keys embedded around the edge of the tire! But after a few tries, it didn't work out well. After spinning it a few times, I couldn't tell the correct notes apart, so I had to dismantle it... Fortunately, it can still be used as a fan when it gets hot.\" — Caesar, playfully flicking the W-Engine tire with her finger, whipping up a gust of wind.</color>",
       "desc2": "Equip to increase Defense Agents' combat capabilities",
       "desc3": "A versatile W-Engine based on a motorcycle tire that Big Daddy made for Caesar.",
-      "refinement": [
+      "phase": [
         {
           "name": "Invincible Rider",
           "desc": "The Shield value provided by the equipper increases by <color=#2BAD00>30%</color>. When any squad member triggers <color=#FFFFFF>Interrupt</color> or <color=#FFFFFF>Perfect Dodge</color>, all squad members' DMG increases by <color=#2BAD00>18%</color> and Daze dealt increases by <color=#2BAD00>12%</color> for 20s. Passive effects of the same name do not stack."
@@ -38703,7 +38703,7 @@
       "desc": "Slaughter is endless. Kill, conquer, the fate of the cursed, a restless forbidden power. Only between battles, when rushing to the next frontline, does the foxfire enjoy a brief reprieve in its shrine.\nHow many more corpses, how many more sacrifices, how many more calamities until we reach the void on the other side?\nShe needs no answer. At the peak of martial power, the stench of blood will freeze in the air before being breathed in. Once all evil is eradicated, the world will be able to enter peaceful slumber with the blade sealed.\nHail falls before the shrine, waking the wielder of this power. The blizzard is coming.\n\n<color=#959595>\"Perfect for training... If I could shrink to its size, that is.\" —Miyabi, muttering to herself as she gazes at the interior.</color>",
       "desc2": "Equip to increase Anomaly Agents' combat capabilities",
       "desc3": "Hail falls before the shrine, waking her. The blizzard is coming.",
-      "refinement": [
+      "phase": [
         {
           "name": "Frost-Stained Star",
           "desc": "CRIT DMG increases by <color=#2BAD00>50%</color>. When using an <color=#FFFFFF>EX Special Attack</color> or when any squad member applies an Attribute Anomaly to an enemy, the equipper's <color=#98EFF0>Ice DMG</color> increases by <color=#2BAD00>20%</color>, stacking up to 2 times and lasting 15s. The duration of each stack is calculated separately."
@@ -38737,7 +38737,7 @@
       "desc": "This W-Engine is renowned for its ultra power. Modified by Koleda, its energy level has almost exceeded the safety limit. Although this W-Engine is entirely designed for damage output, and the Speedup and Blaze functions have been merged into one, this is precisely what Koleda wanted.\n\n<color=#959595>\"I've got a clear shot at your shins, you know? So you'd better think twice before saying I'm short, got it?\" — Koleda, warning a rude business partner</color>",
       "desc2": "Equip to increase Stun Agents' combat capabilities",
       "desc3": "A functional W-Engine with ultra-high power capacity. Modified by Koleda, its energy level has almost exceeded the safety limit.",
-      "refinement": [
+      "phase": [
         {
           "name": "Passionate Construction",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.6</color>/s.\nWhen using an <color=#FFFFFF>EX Special Attack</color>, the equipper's Impact is increased by <color=#2BAD00>10%</color> for 10s, stacking up to 2 times. The duration of each stack is calculated separately."
@@ -38771,7 +38771,7 @@
       "desc": "This special W-Engine has the capability to create extreme low temperatures. Its radiator opening was designed with an eerie animal teeth decoration and often drips condensation. After Lycaon's improvements, its rough appearance has become much more refined and elegant, and the opening is now utilized to store envelopes and other keepsakes.\n\n<color=#959595>\"Manners aren't a leash for wildness; it enhances it before it's set free.\" — Lycaon, speaking gently during a tea party</color>",
       "desc2": "Equip to increase Stun Agents' combat capabilities",
       "desc3": "A special W-Engine with a powerful temperature control system. Modified by Lycaon, it has the capability to quickly create extremely cold environments.",
-      "refinement": [
+      "phase": [
         {
           "name": "Binding Chains",
           "desc": "When an attack hits an enemy, DMG and Daze from <color=#FFFFFF>Basic Attacks</color> increase by <color=#2BAD00>6%</color> for 8s, stacking up to 5 times. This effect can trigger at most once during each skill. The duration of each stack is calculated separately."
@@ -38805,7 +38805,7 @@
       "desc": "A violent W-Engine that can ignite flames with a siphon. It deals simple and crude burn damage, encouraging relentless, bone-crushing follow-up attacks. Rumor has it that the liquid fluid within was once a secret weapon from an old civilization's empire that dominated naval warfare! The formula has long since been lost and recreating it is extremely difficult!\n\n<color=#959595>\"...Actually, all I said was that I wanted a backup lighter.\" —Lighter says as the user of this valuable fuel</color>",
       "desc2": "Equip to increase Stun Agents' combat capabilities",
       "desc3": "A violent W-Engine that can ignite flames with a siphon. It deals simple and crude burn damage, encouraging relentless, bone-crushing follow-up attacks.",
-      "refinement": [
+      "phase": [
         {
           "name": "Flowing Flame",
           "desc": "Upon launching a <color=#FFFFFF>Quick Assist</color> or <color=#FFFFFF>Perfect Assist</color>, the equipper's Impact increases by <color=#2BAD00>25%</color> for 8s. When the equipper launches and hits an enemy with a <color=#FFFFFF>Basic Attack</color>, apply <color=#FFFFFF>Wilt</color> to the target for 30s, stacking up to 20 times, repeated triggers reset the duration. When any squad member hits an enemy, for every stack of <color=#FFFFFF>Wilt</color> applied to the target, the CRIT DMG of the <color=#98EFF0>Ice DMG</color> and <color=#FF5521>Fire DMG</color> dealt by that attack increases by <color=#2BAD00>1.5%</color>. Only one instance of this effect can exist in the same squad."
@@ -38839,7 +38839,7 @@
       "desc": "Powered by a specially formulated fuel, this modified W-Engine is optimized to push combustion performance to the extreme. The engine operates by injecting fuel from the tank into the reaction chamber, where a high-pressure reaction device converts the fuel into searing flames, leaving behind a scorched aroma. It's rumored Nitro-Fuel can also be used as a power source, as there was a sighting of Burnice pouring one into the tank, and later scraping the remaining liquid back into a bar glass after the battle.\n\n<color=#959595>\"This is definitely slander from a competitor. The special drinks I serve to my customers are always clean and hygienic! The Nitro-Fuel that drains out from the tank is for my own consumption because the high-pressure concentration gives it a special taste!\" — Burnice, in defense of her professional reputation, oblivious to her customers unconsciously taking a step back.</color>",
       "desc2": "Equip to increase Anomaly Agents' combat capabilities",
       "desc3": "Modified by Burnice, this W-Engine uses a special fuel as its power source to boost combustion performance to the max.",
-      "refinement": [
+      "phase": [
         {
           "name": "Fuel on the Rocks",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.6</color>/s. When hitting an enemy with an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Assist Attack</color>, the equipper's DMG increases by <color=#2BAD00>3.5%</color>, stacking up to 10 times and lasting for 6s. This effect can trigger once every 0.3s. While off-field, the stack effect is doubled. Repeated triggers reset the duration. Upon obtaining the DMG increase effect, if the number of current stacks is greater than or equal to 5, then the equipper's Anomaly Proficiency increases by <color=#2BAD00>50</color>. This Anomaly Proficiency increase does not stack and lasts for 6s."
@@ -38873,7 +38873,7 @@
       "desc": "Embedded with a supercomputer core, this latest-model W-Engine can compile operating code for machines at an astonishing speed, or quickly collect battlefield data to provide support for the whole squad. Of course, for Grace, this W-Engine is just a little toy for her to communicate with her \"silicon-based children.\"\n\n<color=#959595>\"Looking carefully... you're handsome in your own way! Oh, it says in the manual that once it's sealed, it shouldn't be opened... Hmmm... Well, how would we know if we don't give it a try?!\" — Grace, suddenly enthusiastic while holding the engine in her hand</color>",
       "desc2": "Equip to increase Anomaly Agents' combat capabilities",
       "desc3": "The latest W-Engine that possesses a hypercalculation core. It can compile operational codes for machines at top speed. This model is favored by Grace.",
-      "refinement": [
+      "phase": [
         {
           "name": "Data Flood",
           "desc": "Increases ATK by <color=#2BAD00>12%</color>.\nWhen using a <color=#FFFFFF>Special Attack</color> or <color=#FFFFFF>EX Special Attack</color>, the equipper's Anomaly Proficiency is increased by <color=#2BAD00>25</color> for 8s, stacking up to 3 times. The duration of each stack is calculated separately."
@@ -38907,7 +38907,7 @@
       "desc": "This high-power W-Engine has the capability to rapidly lower the temperature of the environment, allowing it to instantly freeze nearby objects. Although it is an excellent tactical W-Engine due to its efficient freezing and high damage output, Ellen primarily uses it to make frappes.\n\n<color=#959595>\"I want to bring it to school, especially in the summer. But Lycaon and Rina won't let me... So annoying.\" — Ellen, shaking her head while eating ice</color>",
       "desc2": "Equip to increase Attack Agents' combat capabilities",
       "desc3": "A high-power W-Engine that possesses efficient freezing capabilities and high damage output. This model is often used by Ellen.",
-      "refinement": [
+      "phase": [
         {
           "name": "Lord of Seas",
           "desc": "Increases <color=#98EFF0>Ice DMG</color> by <color=#2BAD00>25%</color>. Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, the equipper`s CRIT Rate increases by <color=#2BAD00>10%</color> for 8s. When dealing <color=#98EFF0>Ice DMG</color> with a <color=#FFFFFF>Dash Attack</color>, the equipper`s CRIT Rate increases by an additional <color=#2BAD00>10%</color> for 15s. The duration of each effect is calculated separately."
@@ -38941,7 +38941,7 @@
       "desc": "Medicine is neither benevolent nor cruel. It merely heals what it must and brings its own side effects.\nA warrior cares not how bitter and painful it may be to ingest. The ending is set in stone, so in order to shoot arrows that reach brighter places, he can do nothing but swallow them all.\n\n<color=#959595>\"There's a medicine that is real useful for faking sickness to get sick leave. If you don't take it with other stuff, it'll give you a brief fever. Unfortunately, it's pretty expensive, and it's not included in health insurance...\" —Harumasa, sharing his insights into how to slack off.</color>",
       "desc2": "Equip to increase Attack Agents' combat capabilities",
       "desc3": "Bitterness and pain beget hope, and he devours them all.",
-      "refinement": [
+      "phase": [
         {
           "name": "Growth Through Adversity",
           "desc": "CRIT Rate increases by <color=#2BAD00>10%</color>. <color=#FFFFFF>Dash Attack</color> <color=#2EB6FF>Electric DMG</color> increases by <color=#2BAD00>40%</color>. When any squad member applies an Attribute Anomaly or Stuns an enemy, the equipper's CRIT Rate increases by an additional <color=#2BAD00>10%</color> for 15s."
@@ -38975,7 +38975,7 @@
       "desc": "A special W-Engine with multiple layers embedded inside. It contains a special Ether charging layer that can quickly recharge special-model Bangboo and custom-made combat equipment. Even though this W-Engine looks like a cruel confinement chamber, Rina's Bangboo seem to enjoy sneaking in there to recharge their batteries. They even treat resting inside as a cozy reward.\n\n<color=#959595>\"Shhh... The two little ones are resting; if they're woken suddenly they'll be sure to cause a ruckus. Let's avoid making any noise while we enjoy our tea.\" — Rina, giving a gentle reminder as she serves tea to friends</color>",
       "desc2": "Equip to increase Support Agents' combat capabilities",
       "desc3": "A special W-Engine with multiple layers embedded inside. It can quickly recharge \tspecial-model Bangboo and custom-made combat equipment. This model is favored by Rina.",
-      "refinement": [
+      "phase": [
         {
           "name": "Punishment",
           "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.6</color>/s. Attacks from the equipper enhance the squad's DMG against a struck target by <color=#2BAD00>10%</color> for 3 seconds. During this period, this effect is further increased by <color=#2BAD00>1.7%</color> every 0.5s, up to a maximum additional increase of <color=#2BAD00>10.2%</color>. Repeated triggers only refresh its duration without refreshing the DMG increase effect. Passive effects of the same name do not stack."
@@ -39009,7 +39009,7 @@
       "desc": "A new model of supercomputing W-Engine custom-made by HSO Section 6, equipped with the most elite calculation and analysis functions, precisely records the user's time active and physical state to calculate the best plan of action. Embedded within is Yanagi's prized watch, but each time the W-Engine is turned on, the hands of the clock face go whirling around from the Ether energy, and it can no longer be used to accurately tell time. So, when she uses the time on here to tell you that you should hurry and be more efficient if you don't want to be late completing your mission, don't believe her.\n\n<color=#959595>\"So you're saying this is the ultimate weapon against time? I see, as the watch in the W-Engine moves so fast, the time it goes past is 'killed' so to speak, therefore it's a weapon against time... However, time in the real world does not actually change from this. No matter how fast the watch goes, it cannot kill time faster. Though the concept is decent, this punchline is only a six out of ten in my eyes.\" —Tsukishiro Yanagi, replying to her colleague's off-hand joke with complete seriousness</color>",
       "desc2": "Equip to increase Anomaly Agents' combat capabilities",
       "desc3": "A new model of supercomputing W-Engine custom-made by HSO Section 6, equipped with the most elite calculation and analysis functions.",
-      "refinement": [
+      "phase": [
         {
           "name": "Time-Devouring Stratagem",
           "desc": "The equipper's <color=#2EB6FF>Electric Anomaly Buildup Rate</color> increases by <color=#2BAD00>30%</color>. When <color=#FFFFFF>Special Attacks</color> or <color=#FFFFFF>EX Special Attacks</color> hit enemies suffering an Attribute Anomaly, the equipper's Anomaly Proficiency increases by <color=#2BAD00>75</color> for 15s.\nWhen the equipper's Anomaly Proficiency is greater than or equal to 375, <color=#FFFFFF>Disorder</color> DMG inflicted by the equipper increases by <color=#2BAD00>25%</color>."
@@ -39043,7 +39043,7 @@
       "desc": "The latest tactical W-Engine used by Public Security's elite Hollow squads. It uses a powerful Ether energy source to supply all combat equipment with explosive power for a short period of time. Although the W-Engines of many elite squad members often suffer from prolonged combat, Zhu Yuan's is in perfect condition. She treats it with utmost care and carefully maintains it, keeping it looking completely brand new.\n\n<color=#959595>\"Non-woven fabric, brush, lubricant, rust remover... alright, ready to go. Timer... starting now!\" — Zhu Yuan, timing herself as she starts maintenance, aiming to beat her previous record</color>",
       "desc2": "Equip to increase Attack Agents' combat capabilities",
       "desc3": "The latest tactical W-Engine used by Public Security's elite Hollow squads, possessing a powerful Ether energy source. It's Zhu Yuan's favored model.",
-      "refinement": [
+      "phase": [
         {
           "name": "Security Patrol",
           "desc": "Increases CRIT Rate by <color=#2BAD00>15%</color>. Launching an <color=#FFFFFF>EX Special Attack</color> grants the equipper 8 Charge stacks, up to a maximum of 8 stacks. Whenever the equipper's <color=#FFFFFF>Basic Attack</color> deals <color=#FE437E>Ether DMG</color>, consumes a Charge stack and increases the skill's DMG by <color=#2BAD00>35%</color>."
@@ -39077,7 +39077,7 @@
       "desc": "A custom stun W-Engine made for an Automaton referencing the combat style and abilities of one. Energy is stored within, then lashes outwards upon conversion. The texture seeks to imitate fine artistry that was once highly sought after in ancient civilizations: Burn to procure what is sleek and elegant, shatter to create what is unyielding and sharp; this heat-proof pot bears a sacred bird shape with, as its name suggests, a unique pattern of ice-cracked celadon... but actually that pattern was drawn on.\n\n<color=#959595>\"It fares well in preserving temperature, and I can drink hot water whenever I need even in a Hollow.\" —Qingyi, giving her honest and carefully contemplated review</color>",
       "desc2": "Equip to increase Stun Agents' combat capabilities",
       "desc3": "A custom stun W-Engine made for an Automaton referencing the combat style and abilities of one. Energy is stored within, then lashes outwards upon conversion.",
-      "refinement": [
+      "phase": [
         {
           "name": "Ringing Melody",
           "desc": "When a <color=#FFFFFF>Basic Attack</color> hits an enemy, gain 1 stack of <color=#FFFFFF>Tea-riffic</color>. Each stack of <color=#FFFFFF>Tea-riffic</color> increases the user's Impact by <color=#2BAD00>0.7%</color>, stacking up to 30 times, and lasting for 8s. The duration of each stack is calculated separately. Upon acquiring <color=#FFFFFF>Tea-riffic</color>, if the equipper possesses stacks of <color=#FFFFFF>Tea-riffic</color> greater than or equal to 15, all squad members' DMG is increased by <color=#2BAD00>20%</color> for 10s. Passive effects of the same name do not stack."
@@ -39111,7 +39111,7 @@
       "desc": "A deadly W-Engine from unknown sources, modified personally by Jane Doe with the intent to deal severe physical damage and Anomaly. The power circulation system within ensures the affliction of Anomalies and the edges of the exterior have been honed until they're razor-sharp to inflict unexpected tearing damage.\n\n<color=#959595>\"What, am I meant to adhere to duel ettiquete with an Ethereal? Isn't it polite to end its pain in the quickest way possible?\" —Jane, in response to \"aren't your combat techniques a little too cruel\"</color>",
       "desc2": "Equip to increase Anomaly Agents' combat capabilities",
       "desc3": "A deadly W-Engine from unknown sources, modified personally by Jane Doe with the intent to deal severe physical damage and Anomaly.",
-      "refinement": [
+      "phase": [
         {
           "name": "Indulge in the Hunt",
           "desc": "Upon activating a <color=#FFFFFF>Dash Attack</color>, gain 1 stack of <color=#FFFFFF>Predatory Instinct</color>. Each stack of <color=#FFFFFF>Predatory Instinct</color> increases the equipper's <color=#F0D12B>Physical DMG</color> by <color=#2BAD00>12%</color> for 10s, stacking up to 3 times. This effect can trigger once every 0.5s and repeated triggers reset the duration. When entering combat or triggering <color=#FFFFFF>Perfect Dodge</color>, gain 3 stacks of <color=#FFFFFF>Predatory Instinct</color>. While <color=#FFFFFF>Predatory Instinct</color> is at maximum stacks, the equipper's Anomaly Buildup Rate increases by <color=#2BAD00>40%</color>."
@@ -39145,7 +39145,7 @@
       "desc": "Light gradually begins to appear, and dazzling colors leak from the box, blurring the boundary between reality and fantasy. They reveal untold secrets behind the stage, where wealth and peril silently mingle, drawing in the observer and holding their gaze.\n\n<color=#959595>\"This is my secret weapon~ All the gentleness, allure, strength, pride, and radiance of a girl are hidden inside!\"\n—Astra, blending her lip color with her ring finger, then closing the vanity case with a playful smile.</color>",
       "desc2": "Equip to increase Support Agents' combat capabilities",
       "desc3": "Underneath the radiant splendor, her genuine self has never been hidden.",
-      "refinement": [
+      "phase": [
         {
           "name": "Untold Beauty",
           "desc": "When any squad member enters the field through a <color=#FFFFFF>Quick Assist</color>, <color=#FFFFFF>Chain Attack</color>, <color=#FFFFFF>Defensive Assist</color>, or <color=#FFFFFF>Evasive Assist</color>, the equipper gains <color=#2BAD00>5</color> Energy. This effect can trigger once every 5s. When the equipper consumes 25 or more Energy, the DMG dealt by all squad members increases by <color=#2BAD00>10%</color>, stacking up to 2 times, and lasting 20s. Repeated triggers reset the duration. Only one instance of this effect can exist in the same squad."
@@ -39179,7 +39179,7 @@
       "desc": "The soft hum of hidden strings and faint light blooming in the deep night, where sharpness and calm intertwine, transforming into a silent melody. Thread by thread, it captures everything held dear within.\n\n<color=#959595>\"This? It's just a device for storing instrument strings.\"\n—Evelyn, gently strumming the strings. A low hum fills the air, and as the final note echoes, the enemy falls silent.</color>",
       "desc2": "Equip to increase Attack Agents' combat capabilities",
       "desc3": "The sound of the strings, sharp as blades, cut through the night, protecting the one.",
-      "refinement": [
+      "phase": [
         {
           "name": "String & Melody",
           "desc": "CRIT DMG increases by <color=#2BAD00>50%</color>. When the equipper enters the battlefield, or activates a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color>, they gain 1 stack of <color=#FFFFFF>Heartstring</color>. Each stack of <color=#FFFFFF>Heartstring</color> allows the equipper's <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> to ignore <color=#2BAD00>12.5%</color> of the target's <color=#FF5521>Fire RES</color>, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration."

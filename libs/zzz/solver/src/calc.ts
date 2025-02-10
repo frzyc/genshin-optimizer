@@ -101,7 +101,9 @@ export function applyCalc(
   sum['final_atk'] = s('initial_atk') * (1 + s('cond_atk_')) + s('cond_atk')
   sum['final_def'] = s('initial_def') * (1 + s('cond_def_')) + s('cond_def')
   sum['impact'] = s('impact') * (1 + s('impact_'))
-  sum['anomMas'] = s('anomMas') * (1 + s('anomMas_'))
+  sum['anomMas'] =
+    s('anomMas') * (1 + s('anomMas_')) * (1 + s('cond_anomMas_')) +
+    s('cond_anomMas')
   sum['crit_'] = clamp01(sum['crit_'])
   return sum
 }

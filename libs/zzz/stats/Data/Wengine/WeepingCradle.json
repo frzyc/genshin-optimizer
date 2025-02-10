@@ -9,7 +9,7 @@
   "desc": "A special W-Engine with multiple layers embedded inside. It contains a special Ether charging layer that can quickly recharge special-model Bangboo and custom-made combat equipment. Even though this W-Engine looks like a cruel confinement chamber, Rina's Bangboo seem to enjoy sneaking in there to recharge their batteries. They even treat resting inside as a cozy reward.\n\n<color=#959595>\"Shhh... The two little ones are resting; if they're woken suddenly they'll be sure to cause a ruckus. Let's avoid making any noise while we enjoy our tea.\" — Rina, giving a gentle reminder as she serves tea to friends</color>",
   "desc2": "Equip to increase Support Agents' combat capabilities",
   "desc3": "A special W-Engine with multiple layers embedded inside. It can quickly recharge \tspecial-model Bangboo and custom-made combat equipment. This model is favored by Rina.",
-  "refinement": [
+  "phase": [
     {
       "name": "Punishment",
       "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.6</color>/s. Attacks from the equipper enhance the squad's DMG against a struck target by <color=#2BAD00>10%</color> for 3 seconds. During this period, this effect is further increased by <color=#2BAD00>1.7%</color> every 0.5s, up to a maximum additional increase of <color=#2BAD00>10.2%</color>. Repeated triggers only refresh its duration without refreshing the DMG increase effect. Passive effects of the same name do not stack."

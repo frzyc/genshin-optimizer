@@ -9,7 +9,7 @@
   "desc": "A special W-Engine equipped with a high-speed camera module. The best choice for in-Hollow photography enthusiasts. It captures every touching moment spent beating up your Ethereal friends, as long as you have a free hand to press the shutter.\nP.S. The internal optical components have not undergone anti-corruption treatment. Please do not lose the warranty form.",
   "desc2": "Equip to increase Support Agents' combat capabilities",
   "desc3": "A special W-Engine equipped with a high-speed camera module. The best choice for in-Hollow photography enthusiasts.",
-  "refinement": [
+  "phase": [
     {
       "name": "Say Cheese",
       "desc": "Any squad members' <color=#FFFFFF>Dodge Counter</color>, <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Assist Attack</color>, or <color=#FFFFFF>Chain Attack</color> respectively generates <color=#2BAD00>20</color>/<color=#2BAD00>25</color>/<color=#2BAD00>30</color>/<color=#2BAD00>35</color> more Decibels and generates <color=#2BAD00>0.7</color> Energy for the equipper. This effect can trigger once every 12s. The cooldown for each type of attack is independent of others. Passive effects of the same name do not stack."

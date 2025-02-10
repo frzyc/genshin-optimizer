@@ -3,6 +3,7 @@ import { range } from '@genshin-optimizer/common/util'
 import type { CondMeta } from '@genshin-optimizer/zzz/consts'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { Button, MenuItem } from '@mui/material'
+import { useCallback } from 'react'
 import { useCharacterContext } from './CharacterContext'
 
 export function ConditionalToggles({
@@ -17,6 +18,16 @@ function ConditionalToggle({ condMeta }: { condMeta: CondMeta }) {
   const { database } = useDatabaseContext()
   const character = useCharacterContext()!
   const value = character.conditionals[condMeta.key] ?? 0
+  const updateConditional = useCallback(
+    (value: number | undefined) =>
+      database.chars.set(character.key, (chars) => ({
+        conditionals: {
+          ...chars.conditionals,
+          [condMeta.key]: value,
+        },
+      })),
+    [database.chars, character.key, condMeta.key]
+  )
   if (condMeta.max > 1)
     return (
       <DropdownButton
@@ -30,31 +41,9 @@ function ConditionalToggle({ condMeta }: { condMeta: CondMeta }) {
         }
         sx={{ borderRadius: 0 }}
       >
-        <MenuItem
-          onClick={() => {
-            database.chars.set(character.key, (chars) => ({
-              conditionals: {
-                ...chars.conditionals,
-                [condMeta.key]: undefined,
-              },
-            }))
-          }}
-        >
-          Clear
-        </MenuItem>
+        <MenuItem onClick={() => updateConditional(undefined)}>Clear</MenuItem>
         {range(condMeta.min, condMeta.max).map((i) => (
-          <MenuItem
-            key={i}
-            value={i}
-            onClick={() => {
-              database.chars.set(character.key, (chars) => ({
-                conditionals: {
-                  ...chars.conditionals,
-                  [condMeta.key]: i,
-                },
-              }))
-            }}
-          >
+          <MenuItem key={i} value={i} onClick={() => updateConditional(i)}>
             {typeof condMeta.text === 'function'
               ? condMeta.text(i)
               : condMeta.text}
@@ -68,14 +57,7 @@ function ConditionalToggle({ condMeta }: { condMeta: CondMeta }) {
         fullWidth
         sx={{ borderRadius: 0 }}
         color={value ? 'success' : 'primary'}
-        onClick={() =>
-          database.chars.set(character.key, (chars) => ({
-            conditionals: {
-              ...chars.conditionals,
-              [condMeta.key]: +!value,
-            },
-          }))
-        }
+        onClick={() => updateConditional(+!value)}
       >
         {typeof condMeta.text === 'function'
           ? condMeta.text(value)

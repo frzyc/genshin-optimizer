@@ -9,7 +9,7 @@ export function getWengineStat(wKey: WengineKey) {
 export function getWengineStats(
   wk: WengineKey,
   level: number,
-  wengineRefine: number
+  wenginePhase: number
 ) {
   const { atk_base, second_statkey, second_statvalue } = getWengineStat(wk)
   const ascension = clamp(Math.floor(level / 10), 0, 5)
@@ -17,7 +17,7 @@ export function getWengineStats(
     atk_base:
       atk_base * (1 + atk_multiplier[level] / 10000 + 0.8922 * ascension),
     [second_statkey]: second_statvalue * (1 + 0.3 * ascension),
-    wengineRefine,
+    wenginePhase,
     wengineIndex: allWengineKeys.findIndex((k) => k === wk),
   }
 

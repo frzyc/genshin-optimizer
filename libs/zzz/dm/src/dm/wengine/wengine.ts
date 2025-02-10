@@ -45,7 +45,7 @@ export type WengineData = {
   desc: string
   desc2: string
   desc3: string
-  refinement: Array<{ name: string; desc: string }>
+  phase: Array<{ name: string; desc: string }>
 }
 export const wengineDetailedJSONData = Object.fromEntries(
   Object.entries(WengineIdMap).map(([id, name]) => {
@@ -65,7 +65,7 @@ export const wengineDetailedJSONData = Object.fromEntries(
       desc: raw.Desc,
       desc2: raw.Desc2,
       desc3: raw.Desc3,
-      refinement: Object.values(raw.Talents).map(({ Name, Desc }) => ({
+      phase: Object.values(raw.Talents).map(({ Name, Desc }) => ({
         name: Name,
         desc: Desc,
       })),

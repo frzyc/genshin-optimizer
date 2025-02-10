@@ -8,7 +8,7 @@
   "desc": "An energy-storage type W-Engine with a unique operation circuit. It will absorb scattered energy up to a certain amount before unleashing it, dealing some extra impact. It's impossible to control when that energy is unleashed, but when it is, it'll give you the joy of winning a prize draw.",
   "desc2": "Equip to increase Stun Agents' combat capabilities",
   "desc3": "An energy-storage type W-Engine with a unique operation circuit. It will absorb scattered energy up to a certain amount before unleashing it all at once.",
-  "refinement": [
+  "phase": [
     {
       "name": "Undercurrent",
       "desc": "<color=#FFFFFF>EX Special Attacks</color> inflict <color=#2BAD00>10%</color> more Daze."

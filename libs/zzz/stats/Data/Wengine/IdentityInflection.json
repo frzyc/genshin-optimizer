@@ -8,7 +8,7 @@
   "desc": "A functional W-Engine that specializes in energy conversion. It can analyze combat environments and generate special sounds to disrupt the enemy's attack. However, when facing a strong-willed enemy, you will still need to seize the right opportunity to attack. Luckily, most Ethereals lack the willpower to resist it.",
   "desc2": "Equip to increase Defense Agents' combat capabilities",
   "desc3": "A functional W-Engine that specializes in energy conversion. It can analyze combat environments and generate special sounds to disrupt the enemy's offense.",
-  "refinement": [
+  "phase": [
     {
       "name": "Dazzle",
       "desc": "When attacked, reduces the attacker's DMG by <color=#2BAD00>6%</color> for 12s."

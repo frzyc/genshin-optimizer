@@ -8,7 +8,7 @@
   "desc": "This damage-type W-Engine features enhanced movement detection modules that can detect the operator's status in real-time and boost their combat prowess at critical moments to optimize battle efficiency. After the operator completes the finishing move, the W-Engine emits a dazzling multicolored flash and rates the operator's move.",
   "desc2": "Equip to increase Anomaly Agents' combat capabilities",
   "desc3": "A damage-type W-Engine that features an enhanced movement detection module that can quickly alter its output intensity to optimize battle efficiency.",
-  "refinement": [
+  "phase": [
     {
       "name": "High-Voltage Surge",
       "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Proficiency by <color=#2BAD00>25</color> for 10s. This effect can trigger once every 20s."

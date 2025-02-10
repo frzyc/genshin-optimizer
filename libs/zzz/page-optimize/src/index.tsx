@@ -1,3 +1,4 @@
+import { useForceUpdate } from '@genshin-optimizer/common/react-util'
 import {
   CardThemed,
   DropdownButton,
@@ -38,7 +39,7 @@ import {
   Typography,
 } from '@mui/material'
 import { Stack } from '@mui/system'
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import BaseStatCard from './BaseStatCard'
 import { BuildDisplay } from './BuildDisplay'
 import { BuildsDisplay } from './BuildsDisplay'
@@ -75,7 +76,7 @@ export default function PageOptimize() {
     return getWengineStats(
       character.wengineKey,
       character.wengineLvl,
-      character.wengineRefine
+      character.wenginePhase
     )
   }, [character])
 
@@ -98,26 +99,35 @@ export default function PageOptimize() {
   )
 
   const sheet = character && wengineSheets[character.wengineKey]
+
   const wengineCondstats = useMemo(
     () =>
       character &&
       sheet?.getStats &&
-      sheet.getStats(character?.conditionals, baseStats),
+      sheet.getStats(character.conditionals, baseStats),
     [baseStats, character, sheet]
   )
-
+  const [dbDirty, setDbDirty] = useForceUpdate()
+  useEffect(
+    () => database.discs.followAny(setDbDirty),
+    [database.discs, setDbDirty]
+  )
   const discIds = useMemo(
     () =>
-      Object.fromEntries(
+      dbDirty &&
+      (Object.fromEntries(
         allDiscSlotKeys.map((k) => [
           k,
-          database.discs.values.find(
-            ({ slotKey, location }) => slotKey === k && location === locationKey
-          )?.id ?? '',
+          (character &&
+            database.discs.values.find(
+              ({ slotKey, location }) =>
+                slotKey === k && location === character.key
+            )?.id) ??
+            '',
         ])
-      ) as Record<DiscSlotKey, string>,
+      ) as Record<DiscSlotKey, string>),
 
-    [database.discs.values, locationKey]
+    [character, database.discs.values, dbDirty]
   )
 
   return (
@@ -201,8 +211,9 @@ export default function PageOptimize() {
                   sx={{ flexGrow: 1 }}
                   autoFocus
                 />
+                {/* TODO: Translation */}
                 <DropdownButton
-                  title={`Refinement: ${character?.wengineRefine ?? 1}`}
+                  title={`Phase: ${character?.wenginePhase ?? 1}`}
                   disabled={!character}
                 >
                   {range(1, 5).map((n) => (
@@ -210,10 +221,10 @@ export default function PageOptimize() {
                       key={n}
                       onClick={() =>
                         character &&
-                        database.chars.set(character.key, { wengineRefine: n })
+                        database.chars.set(character.key, { wenginePhase: n })
                       }
                     >
-                      Refinement {n}
+                      Phase {n}
                     </MenuItem>
                   ))}
                 </DropdownButton>
@@ -250,7 +261,7 @@ export default function PageOptimize() {
                 <Typography variant="h6">
                   <WengineRefineName
                     wKey={character.wengineKey}
-                    refinment={character.wengineRefine}
+                    phrase={character.wenginePhase}
                   />
                 </Typography>
               )}
@@ -258,7 +269,7 @@ export default function PageOptimize() {
                 <Typography>
                   <WengineRefineDesc
                     wKey={character.wengineKey}
-                    refinment={character.wengineRefine}
+                    phrase={character.wenginePhase}
                   />
                 </Typography>
               )}
@@ -271,7 +282,7 @@ export default function PageOptimize() {
             </CardContent>
           )}
         </CardThemed>
-        <BuildDisplay discIds={discIds} baseStats={baseStats} />
+        {character && <BuildDisplay discIds={discIds} baseStats={baseStats} />}
         <BaseStatCard
           locationKey={locationKey}
           baseStats={character?.stats ?? {}}

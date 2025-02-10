@@ -8,7 +8,7 @@
   "desc": "This special W-Engine features a built-in sonic generator that converts collected energy into penetrating infrasound waves, thereby boosting its damage output. However, to activate this function, the operator needs to charge up enough power, and the first step of charging up is to use up any remaining energy in the W-Engine.",
   "desc2": "Equip to increase Support Agents' combat capabilities",
   "desc3": "A special W-Engine featuring a built-in sonic generator that boosts its damage output.",
-  "refinement": [
+  "phase": [
     {
       "name": "Changing Tides",
       "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> increases all squad members' Impact by <color=#2BAD00>8%</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack."

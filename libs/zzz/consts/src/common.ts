@@ -30,6 +30,8 @@ export const unCondKeys = [
   'cond_hp_',
   'cond_def_',
   'cond_atk_',
+  'cond_anomMas',
+  'cond_anomMas_',
 ] as const
 
 export const allStatKeys = Array.from(
@@ -120,6 +122,8 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   cond_hp_: 'Combat HP%',
   cond_def_: 'Combat DEF%',
   cond_atk_: 'Combat ATK%',
+  cond_anomMas_: 'Combat Anomaly Mastery%',
+  cond_anomMas: 'Combat Anomaly Mastery',
 }
 
 const elementalData: Record<AttributeKey, string> = {

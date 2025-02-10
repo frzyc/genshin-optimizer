@@ -8,7 +8,7 @@
   "desc": "This special W-Engine can analyze the target's weak spots through real-time calculations. Although its heavy exoskeleton can be a burden to the operator, some users have found it to be an efficient way to exercise and lose weight, and have thus become loyal customers.",
   "desc2": "Equip to increase Anomaly Agents' combat capabilities",
   "desc3": "A special W-Engine that can analyze the target's weak spots through real-time calculations.",
-  "refinement": [
+  "phase": [
     {
       "name": "Disordered Current",
       "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Mastery by <color=#2BAD00>25</color> for 10s. This effect can trigger once every 20s. "

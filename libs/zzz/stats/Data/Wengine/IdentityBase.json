@@ -8,7 +8,7 @@
   "desc": "A W-Engine with a component structure adjusted according to specific parameters. It can enhance the defensive capabilities of those who have a certain style of combat. If the user does not meet the requirements for this W-Engine, then carrying it would be like lugging around an over-sized shield in battle.",
   "desc2": "Equip to increase Defense Agents' combat capabilities",
   "desc3": "A W-Engine with a component structure adjusted according to specific parameters. It can enhance the defensive capabilities of those who have a certain style of combat.",
-  "refinement": [
+  "phase": [
     {
       "name": "Sinking Strike",
       "desc": "When attacked, the equipper's DEF increases by <color=#2BAD00>20%</color> for 8s."

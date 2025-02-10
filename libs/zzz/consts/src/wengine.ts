@@ -376,14 +376,14 @@ export const wengineSheets: Partial<
   BashfulDemon: {
     condMeta: allWengineCondKeys.BashfulDemon,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const ice_ = [0.15, 0.175, 0.2, 0.22, 0.24]
       const atk_ = [0.02, 0.023, 0.026, 0.029, 0.032]
       const ret: Record<string, number> = {
-        ice_dmg_: ice_[ref],
+        ice_dmg_: ice_[p],
       }
       if (conds['BashfulDemon'])
-        objSumInPlace(ret, { cond_atk_: atk_[ref] * conds['BashfulDemon'] })
+        objSumInPlace(ret, { cond_atk_: atk_[p] * conds['BashfulDemon'] })
       return ret
     },
   },
@@ -393,15 +393,14 @@ export const wengineSheets: Partial<
       allWengineCondKeys.BlazingLaurelCritDmg,
     ],
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const imp = [0.25, 0.2875, 0.325, 0.3625, 0.4]
       const dmg_ = [0.015, 0.0172, 0.0195, 0.0217, 0.024]
       const ret: Record<string, number> = {}
-      if (conds['BlazingLaurelImpact'])
-        objSumInPlace(ret, { impact_: imp[ref] })
+      if (conds['BlazingLaurelImpact']) objSumInPlace(ret, { impact_: imp[p] })
       if (conds['BlazingLaurelCritDmg'])
         objSumInPlace(ret, {
-          crit_dmg_: dmg_[ref] * conds['BlazingLaurelCritDmg'],
+          crit_dmg_: dmg_[p] * conds['BlazingLaurelCritDmg'],
         }) // TODO: Icon/Fire Crit DMG
       return ret
     },
@@ -409,23 +408,23 @@ export const wengineSheets: Partial<
   BunnyBand: {
     condMeta: allWengineCondKeys.BunnyBand,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const hp_ = [0.08, 0.092, 0.104, 0.116, 0.128]
       const atk_ = [0.1, 0.115, 0.13, 0.145, 0.16]
       const ret: Record<string, number> = {
-        hp_: hp_[ref],
+        cond_hp_: hp_[p],
       }
-      if (conds['BunnyBand']) objSumInPlace(ret, { cond_atk_: atk_[ref] })
+      if (conds['BunnyBand']) objSumInPlace(ret, { cond_atk_: atk_[p] })
       return ret
     },
   },
   CannonRotor: {
     condMeta: [],
     getStats: (_, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const atk_ = [0.075, 0.086, 0.097, 0.108, 0.12]
       const ret: Record<string, number> = {
-        atk_: atk_[ref],
+        cond_atk_: atk_[p],
       }
       return ret
     },
@@ -436,25 +435,24 @@ export const wengineSheets: Partial<
       allWengineCondKeys.DeepSeaVisitorDash,
     ],
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const ice_ = [0.25, 0.315, 0.38, 0.445, 0.5]
       const crit_ = [0.1, 0.125, 0.15, 0.175, 0.2]
       const ret: Record<string, number> = {
-        ice_dmg_: ice_[ref],
+        ice_dmg_: ice_[p],
       }
-      if (conds['DeepSeaVisitorBasic'])
-        objSumInPlace(ret, { crit_: crit_[ref] })
-      if (conds['DeepSeaVisitorDash']) objSumInPlace(ret, { crit_: crit_[ref] })
+      if (conds['DeepSeaVisitorBasic']) objSumInPlace(ret, { crit_: crit_[p] })
+      if (conds['DeepSeaVisitorDash']) objSumInPlace(ret, { crit_: crit_[p] })
       return ret
     },
   },
   DemaraBatteryMarkII: {
     condMeta: [],
     getStats: (_, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const ele_ = [0.15, 0.175, 0.2, 0.22, 0.24]
       const ret: Record<string, number> = {
-        electric_dmg_: ele_[ref],
+        electric_dmg_: ele_[p],
       }
       return ret
     },
@@ -462,34 +460,34 @@ export const wengineSheets: Partial<
   DrillRigRedAxis: {
     condMeta: allWengineCondKeys.DrillRigRedAxis,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const ele_ = [0.5, 0.575, 0.65, 0.725, 0.8]
       const ret: Record<string, number> = {}
       if (conds['DrillRigRedAxis'])
-        objSumInPlace(ret, { electric_dmg_: ele_[ref] })
+        objSumInPlace(ret, { electric_dmg_: ele_[p] })
       return ret
     },
   },
   ElectroLipGloss: {
     condMeta: allWengineCondKeys.ElectroLipGloss,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const atk_ = [0.1, 0.115, 0.13, 0.145, 0.16]
       const dmg_ = [0.15, 0.175, 0.2, 0.225, 0.25]
       const ret: Record<string, number> = {}
       if (conds['ElectroLipGloss'])
-        objSumInPlace(ret, { cond_atk_: atk_[ref], dmg_: dmg_[ref] })
+        objSumInPlace(ret, { cond_atk_: atk_[p], dmg_: dmg_[p] })
       return ret
     },
   },
   ElegantVanity: {
     condMeta: allWengineCondKeys.ElegantVanity,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const dmg_ = [0.1, 0.115, 0.13, 0.145, 0.16]
       const ret: Record<string, number> = {}
       if (conds['ElegantVanity'])
-        objSumInPlace(ret, { dmg_: dmg_[ref] * conds['ElegantVanity'] })
+        objSumInPlace(ret, { dmg_: dmg_[p] * conds['ElegantVanity'] })
       return ret
     },
   },
@@ -499,15 +497,15 @@ export const wengineSheets: Partial<
       allWengineCondKeys.FlamemakerShakerStack,
     ],
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const dmg_ = [0.035, 0.044, 0.052, 0.061, 0.07]
       const anomProf = [50, 62, 75, 87, 100]
       if (conds['FlamemakerShakerStack']) {
         const ret: Record<string, number> = {
-          dmg_: dmg_[ref] * conds['FlamemakerShakerStack'],
+          dmg_: dmg_[p] * conds['FlamemakerShakerStack'],
         }
         if (conds['FlamemakerShakerStack'] >= 5)
-          objSumInPlace(ret, { anomProf: anomProf[ref] })
+          objSumInPlace(ret, { cond_anomProf: anomProf[p] })
         return ret
       }
       return undefined
@@ -516,15 +514,15 @@ export const wengineSheets: Partial<
   FusionCompiler: {
     condMeta: allWengineCondKeys.FusionCompiler,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const atk_ = [0.12, 0.15, 0.18, 0.21, 0.24]
       const anomProf = [25, 31, 37, 43, 50]
       const ret: Record<string, number> = {
-        atk_: atk_[ref],
+        cond_atk_: atk_[p],
       }
       if (conds['FusionCompiler'])
         objSumInPlace(ret, {
-          anomProf: anomProf[ref] * conds['FusionCompiler'],
+          cond_anomProf: anomProf[p] * conds['FusionCompiler'],
         })
       return ret
     },
@@ -532,12 +530,12 @@ export const wengineSheets: Partial<
   GildedBlossom: {
     condMeta: [],
     getStats: (_, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const atk_ = [0.06, 0.069, 0.078, 0.087, 0.096]
       const dmg_ = [0.15, 0.172, 0.195, 0.218, 0.24] // TODO: DMG dealt by EX Special Attacks
       const ret: Record<string, number> = {
-        atk_: atk_[ref],
-        dmg_: dmg_[ref],
+        cond_atk_: atk_[p],
+        dmg_: dmg_[p],
       }
       return ret
     },
@@ -545,15 +543,15 @@ export const wengineSheets: Partial<
   HailstormShrine: {
     condMeta: allWengineCondKeys.HailstormShrine,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const crit_dmg_ = [0.5, 0.57, 0.65, 0.72, 0.8]
       const ice_dmg_ = [0.2, 0.23, 0.26, 0.29, 0.32]
       const ret: Record<string, number> = {
-        crit_dmg_: crit_dmg_[ref],
+        crit_dmg_: crit_dmg_[p],
       }
       if (conds['HailstormShrine'])
         objSumInPlace(ret, {
-          ice_dmg_: ice_dmg_[ref] * conds['HailstormShrine'],
+          ice_dmg_: ice_dmg_[p] * conds['HailstormShrine'],
         })
       return ret
     },
@@ -561,15 +559,15 @@ export const wengineSheets: Partial<
   HeartstringNocturne: {
     condMeta: allWengineCondKeys.HeartstringNocturne,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const enemyResIgn_ = [0.125, 0.145, 0.165, 0.185, 0.2]
       const crit_dmg_ = [0.5, 0.575, 0.65, 0.725, 0.8]
       const ret: Record<string, number> = {
-        crit_dmg_: crit_dmg_[ref],
+        crit_dmg_: crit_dmg_[p],
       }
       if (conds['HeartstringNocturne'])
         objSumInPlace(ret, {
-          enemyResIgn_: enemyResIgn_[ref] * conds['HeartstringNocturne'], // TODO: Chain Attack and Ultimate to ignore 20% of the target's Fire RES
+          enemyResIgn_: enemyResIgn_[p] * conds['HeartstringNocturne'], // TODO: Chain Attack and Ultimate to ignore 20% of the target's Fire RES
         })
       return ret
     },
@@ -577,12 +575,12 @@ export const wengineSheets: Partial<
   Housekeeper: {
     condMeta: allWengineCondKeys.Housekeeper,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const dmg_ = [0.03, 0.035, 0.04, 0.044, 0.048]
       const ret: Record<string, number> = {}
       if (conds['Housekeeper'])
         objSumInPlace(ret, {
-          physical_dmg_: dmg_[ref] * conds['Housekeeper'],
+          physical_dmg_: dmg_[p] * conds['Housekeeper'],
         })
       return ret
     },
@@ -590,25 +588,25 @@ export const wengineSheets: Partial<
   IceJadeTeapot: {
     condMeta: allWengineCondKeys.IceJadeTeapot,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const impact_ = [0.07, 0.088, 0.0105, 0.0122, 0.014]
       const dmg_ = [0.2, 0.23, 0.26, 0.29, 0.32]
       const ret: Record<string, number> = {}
       if (conds['IceJadeTeapot'])
-        objSumInPlace(ret, { impact_: impact_[ref] * conds['IceJadeTeapot'] })
+        objSumInPlace(ret, { impact_: impact_[p] * conds['IceJadeTeapot'] })
       if ((conds['IceJadeTeapot'] ?? 0) >= 15)
-        objSumInPlace(ret, { dmg_: dmg_[ref] })
+        objSumInPlace(ret, { dmg_: dmg_[p] })
       return ret
     },
   },
   IdentityBase: {
     condMeta: allWengineCondKeys.IdentityBase,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const def_ = [0.2, 0.23, 0.26, 0.29, 0.32]
       if (conds['IdentityBase'])
         return {
-          def_: def_[ref],
+          cond_def_: def_[p],
         } as Record<string, number>
       return undefined
     },
@@ -616,11 +614,11 @@ export const wengineSheets: Partial<
   KaboomTheCannon: {
     condMeta: allWengineCondKeys.KaboomTheCannon,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const atk_ = [0.025, 0.028, 0.032, 0.036, 0.04]
       if (conds['KaboomTheCannon'])
         return {
-          cond_atk_: atk_[ref] * conds['KaboomTheCannon'],
+          cond_atk_: atk_[p] * conds['KaboomTheCannon'],
         } as Record<string, number>
       return undefined
     },
@@ -628,11 +626,11 @@ export const wengineSheets: Partial<
   LunarDecrescent: {
     condMeta: allWengineCondKeys.LunarDecrescent,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const dmg_ = [0.15, 0.175, 0.2, 0.225, 0.25]
       if (conds['LunarDecrescent'])
         return {
-          dmg_: dmg_[ref] * conds['LunarDecrescent'],
+          dmg_: dmg_[p] * conds['LunarDecrescent'],
         } as Record<string, number>
       return undefined
     },
@@ -640,21 +638,21 @@ export const wengineSheets: Partial<
   LunarPleniluna: {
     condMeta: [],
     getStats: (_, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const dmg_ = [0.12, 0.14, 0.16, 0.18, 0.2]
       return {
-        dmg_: dmg_[ref], //TODO: Basic Attack, Dash Attack, and Dodge Counter DMG
+        dmg_: dmg_[p], //TODO: Basic Attack, Dash Attack, and Dodge Counter DMG
       } as Record<string, number>
     },
   },
   MagneticStormAlpha: {
     condMeta: allWengineCondKeys.MagneticStormAlpha,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const anomMas = [25, 28, 32, 36, 40]
       if (conds['MagneticStormAlpha'])
         return {
-          anomMas: anomMas[ref],
+          cond_anomMas: anomMas[p],
         } as Record<string, number>
       return undefined
     },
@@ -662,11 +660,11 @@ export const wengineSheets: Partial<
   MagneticStormBravo: {
     condMeta: allWengineCondKeys.MagneticStormBravo,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const anomMas = [25, 28, 32, 36, 40]
       if (conds['MagneticStormBravo'])
         return {
-          anomMas: anomMas[ref],
+          cond_anomMas: anomMas[p],
         } as Record<string, number>
       return undefined
     },
@@ -677,12 +675,12 @@ export const wengineSheets: Partial<
       allWengineCondKeys.MarcatoDesireAnomaly,
     ],
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const atk_ = [0.06, 0.07, 0.08, 0.09, 0.1]
       if (conds['MarcatoDesireHit'] || conds['MarcatoDesireAnomaly'])
         return {
           cond_atk_:
-            atk_[ref] *
+            atk_[p] *
             ((conds['MarcatoDesireHit'] ?? 0) +
               (conds['MarcatoDesireAnomaly'] ?? 0)),
         } as Record<string, number>
@@ -692,25 +690,25 @@ export const wengineSheets: Partial<
   OriginalTransmorpher: {
     condMeta: allWengineCondKeys.OriginalTransmorpher,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const hp_ = [0.08, 0.09, 0.1, 0.11, 0.125]
       const impact_ = [0.1, 0.115, 0.13, 0.145, 0.16]
       const ret: Record<string, number> = {
-        hp_: hp_[ref],
+        cond_hp_: hp_[p],
       }
       if (conds['OriginalTransmorpher'])
-        objSumInPlace(ret, { impact_: impact_[ref] })
+        objSumInPlace(ret, { impact_: impact_[p] })
       return ret
     },
   },
   RainforestGourmet: {
     condMeta: allWengineCondKeys.RainforestGourmet,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const atk_ = [0.025, 0.028, 0.032, 0.036, 0.04]
       if (conds['RainforestGourmet'])
         return {
-          cond_atk_: atk_[ref] * conds['RainforestGourmet'],
+          cond_atk_: atk_[p] * conds['RainforestGourmet'],
         } as Record<string, number>
       return undefined
     },
@@ -718,12 +716,12 @@ export const wengineSheets: Partial<
   ReverbMarkII: {
     condMeta: allWengineCondKeys.ReverbMarkII,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const anom = [10, 12, 13, 15, 16]
       if (conds['ReverbMarkII'])
         return {
-          anomMas: anom[ref],
-          anomProf: anom[ref],
+          cond_anomMas: anom[p],
+          anomProf: anom[p],
         } as Record<string, number>
       return undefined
     },
@@ -731,11 +729,11 @@ export const wengineSheets: Partial<
   ReverbMarkIII: {
     condMeta: allWengineCondKeys.ReverbMarkIII,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const atk_ = [0.08, 0.09, 0.1, 0.11, 0.12]
       if (conds['ReverbMarkIII'])
         return {
-          atk_: atk_[ref],
+          cond_atk_: atk_[p],
         } as Record<string, number>
       return undefined
     },
@@ -743,13 +741,13 @@ export const wengineSheets: Partial<
   RiotSuppressorMarkVI: {
     condMeta: allWengineCondKeys.RiotSuppressorMarkVI,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const crit_ = [0.15, 0.188, 0.226, 0.264, 0.3]
       const dmg_ = [0.35, 0.435, 0.52, 0.605, 0.7]
       const ret = {
-        crit_: crit_[ref],
+        crit_: crit_[p],
       } as Record<string, number>
-      if (conds['RiotSuppressorMarkVI']) objSumInPlace(ret, { dmg_: dmg_[ref] }) // TODO: increases the skill's DMG by 60.5%
+      if (conds['RiotSuppressorMarkVI']) objSumInPlace(ret, { dmg_: dmg_[p] }) // TODO: increases the skill's DMG by 60.5%
       return ret
     },
   },
@@ -760,22 +758,22 @@ export const wengineSheets: Partial<
       allWengineCondKeys.RoaringRideAnomBuild_,
     ],
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const atk_ = [0.08, 0.092, 0.104, 0.116, 0.128]
       const anomProf = [40, 46, 52, 58, 64]
       const anomBuild_ = [0.25, 0.28, 0.32, 0.36, 0.4]
       const ret: Record<string, number> = {}
       if (conds['RoaringRideATK'])
         objSumInPlace(ret, {
-          cond_atk_: atk_[ref],
+          cond_atk_: atk_[p],
         })
       if (conds['RoaringRideAnomProf'])
         objSumInPlace(ret, {
-          anomProf: anomProf[ref],
+          cond_anomProf: anomProf[p],
         })
       if (conds['RoaringRideAnomBuild_'])
         objSumInPlace(ret, {
-          anomBuild_: anomBuild_[ref],
+          anomBuild_: anomBuild_[p],
         })
       return ret
     },
@@ -783,17 +781,17 @@ export const wengineSheets: Partial<
   SharpenedStinger: {
     condMeta: allWengineCondKeys.SharpenedStinger,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const physical_dmg_ = [0.12, 0.15, 0.18, 0.21, 0.24]
       const anomBuild_ = [0.4, 0.5, 0.6, 0.7, 0.8]
       if (conds['SharpenedStinger']) {
         if (conds['SharpenedStinger'] < 3)
           return {
-            physical_dmg_: physical_dmg_[ref] * conds['SharpenedStinger'],
+            physical_dmg_: physical_dmg_[p] * conds['SharpenedStinger'],
           } as Record<string, number>
         return {
-          physical_dmg_: physical_dmg_[ref] * conds['SharpenedStinger'],
-          anomBuild_: anomBuild_[ref],
+          physical_dmg_: physical_dmg_[p] * conds['SharpenedStinger'],
+          anomBuild_: anomBuild_[p],
         } as Record<string, number>
       }
       return undefined
@@ -802,11 +800,11 @@ export const wengineSheets: Partial<
   StarlightEngine: {
     condMeta: allWengineCondKeys.StarlightEngine,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const atk_ = [0.12, 0.138, 0.156, 0.174, 0.192]
       if (conds['StarlightEngine'])
         return {
-          cond_atk_: atk_[ref],
+          cond_atk_: atk_[p],
         } as Record<string, number>
       return undefined
     },
@@ -814,11 +812,11 @@ export const wengineSheets: Partial<
   StarlightEngineReplica: {
     condMeta: allWengineCondKeys.StarlightEngineReplica,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const physical_dmg_ = [0.36, 0.41, 0.465, 0.52, 0.575]
       if (conds['StarlightEngineReplica'])
         return {
-          physical_dmg_: physical_dmg_[ref],
+          physical_dmg_: physical_dmg_[p],
         } as Record<string, number>
       return undefined
     },
@@ -826,11 +824,11 @@ export const wengineSheets: Partial<
   SteamOven: {
     condMeta: allWengineCondKeys.SteamOven,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const impact_ = [0.02, 0.023, 0.026, 0.029, 0.032]
       if (conds['SteamOven'])
         return {
-          impact_: impact_[ref] * conds['SteamOven'],
+          impact_: impact_[p] * conds['SteamOven'],
         } as Record<string, number>
       return undefined
     },
@@ -838,15 +836,15 @@ export const wengineSheets: Partial<
   SteelCushion: {
     condMeta: allWengineCondKeys.SteelCushion,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const physical_dmg_ = [0.2, 0.25, 0.3, 0.35, 0.4]
       const dmg_ = [0.25, 0.315, 0.38, 0.44, 0.5]
       const ret = {
-        physical_dmg_: physical_dmg_[ref],
+        physical_dmg_: physical_dmg_[p],
       } as Record<string, number>
       if (conds['SteelCushion']) {
         objSumInPlace(ret, {
-          dmg_: dmg_[ref],
+          dmg_: dmg_[p],
         })
       }
       return ret
@@ -855,11 +853,11 @@ export const wengineSheets: Partial<
   StreetSuperstar: {
     condMeta: allWengineCondKeys.StreetSuperstar,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const dmg_ = [0.15, 0.172, 0.195, 0.217, 0.24]
       if (conds['StreetSuperstar'])
         return {
-          dmg_: dmg_[ref], // TODO: increases the skill's DMG by 24%.
+          dmg_: dmg_[p], // TODO: increases the skill's DMG by 24%.
         } as Record<string, number>
       return undefined
     },
@@ -867,11 +865,11 @@ export const wengineSheets: Partial<
   TheBrimstone: {
     condMeta: allWengineCondKeys.TheBrimstone,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const atk_ = [0.035, 0.044, 0.052, 0.06, 0.07]
       if (conds['TheBrimstone'])
         return {
-          cond_atk_: atk_[ref] * conds['TheBrimstone'],
+          cond_atk_: atk_[p] * conds['TheBrimstone'],
         } as Record<string, number>
       return undefined
     },
@@ -879,13 +877,13 @@ export const wengineSheets: Partial<
   TheRestrained: {
     condMeta: allWengineCondKeys.TheRestrained,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const dmg_ = [0.06, 0.075, 0.09, 0.105, 0.12]
       if (conds['TheRestrained'])
         return {
           // TODO: DMG and Daze from Basic Attacks
-          dmg_: dmg_[ref] * conds['TheRestrained'],
-          daze_: dmg_[ref] * conds['TheRestrained'],
+          dmg_: dmg_[p] * conds['TheRestrained'],
+          daze_: dmg_[p] * conds['TheRestrained'],
         } as Record<string, number>
       return undefined
     },
@@ -893,11 +891,11 @@ export const wengineSheets: Partial<
   TheVault: {
     condMeta: allWengineCondKeys.TheVault,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const dmg_ = [0.15, 0.175, 0.2, 0.22, 0.24]
       if (conds['TheVault'])
         return {
-          dmg_: dmg_[ref],
+          dmg_: dmg_[p],
         } as Record<string, number>
       return undefined
     },
@@ -905,7 +903,7 @@ export const wengineSheets: Partial<
   Timeweaver: {
     condMeta: allWengineCondKeys.Timeweaver,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       // TODO: const electric_anomBuildup = [0.3,0.35,0.4,0.45,0.5]
       const anomProf = [75, 85, 95, 105, 115]
       const dmg_ = [0.25, 0.275, 0.3, 0.325, 0.35]
@@ -914,11 +912,11 @@ export const wengineSheets: Partial<
       } as Record<string, number>
       if (conds['Timeweaver'])
         objSumInPlace(ret, {
-          anomProf: anomProf[ref],
+          cond_anomProf: anomProf[p],
         })
       if ((stats['anomProf'] ?? 0) >= 375)
         objSumInPlace(ret, {
-          dmg_: dmg_[ref],
+          dmg_: dmg_[p],
         })
       return ret
     },
@@ -926,17 +924,17 @@ export const wengineSheets: Partial<
   TusksOfFury: {
     condMeta: allWengineCondKeys.TusksOfFury,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const shield_ = [0.3, 0.38, 0.46, 0.52, 0.6]
       const dmg_ = [0.18, 0.225, 0.27, 0.315, 0.36]
       const daze_ = [0.12, 0.15, 0.18, 0.21, 0.24]
       const ret = {
-        shield_: shield_[ref],
+        shield_: shield_[p],
       } as Record<string, number>
       if (conds['TusksOfFury'])
         objSumInPlace(ret, {
-          dmg_: dmg_[ref],
-          daze_: daze_[ref],
+          dmg_: dmg_[p],
+          daze_: daze_[p],
         })
       return ret
     },
@@ -944,11 +942,11 @@ export const wengineSheets: Partial<
   UnfetteredGameBall: {
     condMeta: allWengineCondKeys.UnfetteredGameBall,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const crit_ = [0.12, 0.135, 0.155, 0.175, 0.2]
       if (conds['UnfetteredGameBall'])
         return {
-          crit_: crit_[ref],
+          crit_: crit_[p],
         } as Record<string, number>
       return undefined
     },
@@ -956,12 +954,12 @@ export const wengineSheets: Partial<
   WeepingCradle: {
     condMeta: allWengineCondKeys.WeepingCradle,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const dmg_static = [0.1, 0.125, 0.15, 0.175, 0.2]
       const dmg_ = [0.017, 0.02, 0.025, 0.03, 0.033]
       if (conds['WeepingCradle'])
         return {
-          dmg_: dmg_static[ref] + dmg_[ref] * conds['WeepingCradle'],
+          dmg_: dmg_static[p] + dmg_[p] * conds['WeepingCradle'],
         } as Record<string, number>
       return undefined
     },
@@ -969,11 +967,11 @@ export const wengineSheets: Partial<
   WeepingGemini: {
     condMeta: allWengineCondKeys.WeepingGemini,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const anomProf = [30, 34, 38, 42, 48]
       if (conds['WeepingGemini'])
         return {
-          anomProf: anomProf[ref] * conds['WeepingGemini'],
+          cond_anomProf: anomProf[p] * conds['WeepingGemini'],
         } as Record<string, number>
       return undefined
     },
@@ -981,16 +979,16 @@ export const wengineSheets: Partial<
   ZanshinHerbCase: {
     condMeta: allWengineCondKeys.ZanshinHerbCase,
     getStats: (conds, stats) => {
-      const ref = stats['wengineRefine'] - 1
+      const p = stats['wenginePhase'] - 1
       const crit_ = [0.1, 0.115, 0.13, 0.145, 0.16]
       const electric_dmg_ = [0.4, 0.46, 0.58, 0.174, 0.64]
       const ret = {
-        crit_: crit_[ref],
-        electric_dmg_: electric_dmg_[ref], // TODO: Dash Attack Electric DMG increases by 40%
+        crit_: crit_[p],
+        electric_dmg_: electric_dmg_[p], // TODO: Dash Attack Electric DMG increases by 40%
       } as Record<string, number>
       if (conds['ZanshinHerbCase'])
         objSumInPlace(ret, {
-          condcrit_: crit_[ref],
+          crit_: crit_[p],
         })
       return ret
     },

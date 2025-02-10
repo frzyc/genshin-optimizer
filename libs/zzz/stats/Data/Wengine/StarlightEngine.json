@@ -9,7 +9,7 @@
   "desc": "A damage-type W-Engine made of special Etheric matter. When its operator is attacked, it builds up energy and boosts its damage output. Although it does not grant the operator the power to transform into a Starlight Knight, it provides a surge of courage when the operator is in dire situations.",
   "desc2": "Equip to increase Attack Agents' combat capabilities",
   "desc3": "A damage-type W-Engine made of special Etheric matter. When its user is attacked, it builds up energy.",
-  "refinement": [
+  "phase": [
     {
       "name": "Knight's Combo",
       "desc": "Launching a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Quick Assist</color> increases the equipper's ATK by <color=#2BAD00>12%</color> for 12s."

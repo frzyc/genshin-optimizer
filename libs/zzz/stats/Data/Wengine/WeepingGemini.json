@@ -9,7 +9,7 @@
   "desc": "A W-Engine produced by recycling abandoned Bangboo shells. Though it's made from scrapped parts, it still caused some distress among Bangboo lovers. \"No Bangboo were hurt during the production of this W-Engine.\" — the manufacturer had to include this note on the packaging due to protests from Bangboo rights organizations.",
   "desc2": "Equip to increase Anomaly Agents' combat capabilities",
   "desc3": "A W-Engine produced by recycling abandoned Bangboo shells. Its electrode cores made of recycled metals can release high-voltage charges.",
-  "refinement": [
+  "phase": [
     {
       "name": "Lingering Cries",
       "desc": "Whenever a squad member inflicts an Attribute Anomaly on an enemy, the equipper gains a buff that increases Anomaly Proficiency by <color=#2BAD00>30</color>, stacking up to 4 times. This effect expires when the target recovers from Stun or is defeated. The duration of each stack is calculated separately."
