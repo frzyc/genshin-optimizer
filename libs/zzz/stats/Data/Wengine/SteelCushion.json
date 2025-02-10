@@ -1,4 +1,5 @@
 {
+  "name": "Steel Cushion",
   "rarity": "S",
   "type": "attack",
   "atk_base": 46,
@@ -7,5 +8,27 @@
   "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_S_1021.png",
   "desc": "A supercomputing W-Engine equipped with an enhanced motion monitoring feature, perfectly matching the fast reflexes and combat maneuvers of Cat Thirens. Nekomata has added a foldable knife to its casing. Despite claiming that this design is to facilitate her in battle, the knife has fresh mackerel stains smeared onto it...\n\n<color=#959595>\"Lots of people call me a clever clogs for doing this mod, but when you're out on the streets, you gotta put everything you can to good use: Every little trick, every little thought, every little hustle... And look! A little kitty!\" — Nekomata, diverting attention away while secretly trying to fish out the listener's wallet</color>",
   "desc2": "Equip to increase Attack Agents' combat capabilities",
-  "desc3": "A supercomputing W-Engine equipped with a motion monitoring feature. Thanks to Nekomata's modifications, it perfectly matches the fast reflexes and combat maneuvers of feline Thirens."
+  "desc3": "A supercomputing W-Engine equipped with a motion monitoring feature. Thanks to Nekomata's modifications, it perfectly matches the fast reflexes and combat maneuvers of feline Thirens.",
+  "phase": [
+    {
+      "name": "Metal Cat Claws",
+      "desc": "Increases <color=#F0D12B>Physical DMG</color> by <color=#2BAD00>20%</color>. The equipper's DMG increases by <color=#2BAD00>25%</color> when hitting the enemy from behind."
+    },
+    {
+      "name": "Metal Cat Claws",
+      "desc": "Increases <color=#F0D12B>Physical DMG</color> by <color=#2BAD00>25%</color>. The equipper's DMG increases by <color=#2BAD00>31.5%</color> when hitting the enemy from behind."
+    },
+    {
+      "name": "Metal Cat Claws",
+      "desc": "Increases <color=#F0D12B>Physical DMG</color> by <color=#2BAD00>30%</color>. The equipper's DMG increases by <color=#2BAD00>38%</color> when hitting the enemy from behind."
+    },
+    {
+      "name": "Metal Cat Claws",
+      "desc": "Increases <color=#F0D12B>Physical DMG</color> by <color=#2BAD00>35%</color>. The equipper's DMG increases by <color=#2BAD00>44%</color> when hitting the enemy from behind."
+    },
+    {
+      "name": "Metal Cat Claws",
+      "desc": "Increases <color=#F0D12B>Physical DMG</color> by <color=#2BAD00>40%</color>. The equipper's DMG increases by <color=#2BAD00>50%</color> when hitting the enemy from behind."
+    }
+  ]
 }

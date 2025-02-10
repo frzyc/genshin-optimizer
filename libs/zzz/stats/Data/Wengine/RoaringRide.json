@@ -1,4 +1,5 @@
 {
+  "name": "Roaring Ride",
   "rarity": "A",
   "type": "anomaly",
   "atk_base": 42,
@@ -7,5 +8,27 @@
   "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_1281.png",
   "desc": "This energy W-Engine, modded from spare parts of a truck's engine, converts the original cylinder into an energy storage unit, which is highly advantageous. It placed first in the internal Leaps and Bounds competition, surpassing many heavy-duty motorbikes and even a truck driven by Piper herself.\n\n<color=#959595>\"Too bad there's no way to carry cargo... Maybe we can hang it on the tusks?\" — Piper, top-notch logistics driver</color>",
   "desc2": "Equip to increase Anomaly Agents' combat capabilities",
-  "desc3": "An energy W-Engine modded from spare parts of a truck's engine. It converts the original cylinder into an energy storage unit, which is highly advantageous."
+  "desc3": "An energy W-Engine modded from spare parts of a truck's engine. It converts the original cylinder into an energy storage unit, which is highly advantageous.",
+  "phase": [
+    {
+      "name": "Collision Potential",
+      "desc": "When <color=#FFFFFF>EX Special Attack</color> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:\nIncreases the equipper's ATK by <color=#2BAD00>8%</color>, increases the equipper's Anomaly Proficiency by <color=#2BAD00>40</color>, or increases the equipper's Anomaly Buildup Rate by <color=#2BAD00>25%</color>."
+    },
+    {
+      "name": "Collision Potential",
+      "desc": "When <color=#FFFFFF>EX Special Attack</color> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:\nIncreases the equipper's ATK by <color=#2BAD00>9.2%</color>, increases the equipper's Anomaly Proficiency by <color=#2BAD00>46</color>, or increases the equipper's Anomaly Buildup Rate by <color=#2BAD00>28%</color>."
+    },
+    {
+      "name": "Collision Potential",
+      "desc": "When <color=#FFFFFF>EX Special Attack</color> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:\nIncreases the equipper's ATK by <color=#2BAD00>10.4%</color>, increases the equipper's Anomaly Proficiency by <color=#2BAD00>52</color>, or increases the equipper's Anomaly Buildup Rate by <color=#2BAD00>32%</color>."
+    },
+    {
+      "name": "Collision Potential",
+      "desc": "When <color=#FFFFFF>EX Special Attack</color> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:\nIncreases the equipper's ATK by <color=#2BAD00>11.6%</color>, increases the equipper's Anomaly Proficiency by <color=#2BAD00>58</color>, or increases the equipper's Anomaly Buildup Rate by <color=#2BAD00>36%</color>."
+    },
+    {
+      "name": "Collision Potential",
+      "desc": "When <color=#FFFFFF>EX Special Attack</color> hits an enemy, one of three possible effects is randomly triggered for 5 seconds. This effect can trigger once every 0.3s. The same types of effects cannot stack. Repeated triggers reset the duration, allowing several effects to be active at once:\nIncreases the equipper's ATK by <color=#2BAD00>12.8%</color>, increases the equipper's Anomaly Proficiency by <color=#2BAD00>64</color>, or increases the equipper's Anomaly Buildup Rate by <color=#2BAD00>40%</color>."
+    }
+  ]
 }

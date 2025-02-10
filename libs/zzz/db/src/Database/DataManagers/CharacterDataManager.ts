@@ -32,6 +32,7 @@ export type CharacterData = {
   core: number // 0-6
   wengineKey: WengineKey
   wengineLvl: number
+  wenginePhase: number
   stats: Stats
   formulaKey: FormulaKey
   constraints: Constraints
@@ -53,6 +54,7 @@ function initialCharacterData(key: CharacterKey): CharacterData {
     core: 6,
     wengineKey: allWengineKeys[0],
     wengineLvl: 60,
+    wenginePhase: 1,
     stats: {
       // in percent
       enemyDef: 953, // default enemy DEF
@@ -87,6 +89,7 @@ export class CharacterDataManager extends DataManager<
       core,
       wengineKey,
       wengineLvl,
+      wenginePhase,
       stats,
       formulaKey,
       constraints,
@@ -113,6 +116,9 @@ export class CharacterDataManager extends DataManager<
 
     if (typeof wengineLvl !== 'number') wengineLvl = 60
     wengineLvl = clamp(wengineLvl, 1, 60)
+
+    if (typeof wenginePhase !== 'number') wenginePhase = 1
+    wenginePhase = clamp(wenginePhase, 1, 5)
 
     if (typeof stats !== 'object') stats = {}
     stats = objFilter(
@@ -167,6 +173,7 @@ export class CharacterDataManager extends DataManager<
       core,
       wengineKey,
       wengineLvl,
+      wenginePhase,
       stats,
       formulaKey,
       constraints,

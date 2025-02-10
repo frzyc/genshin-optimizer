@@ -1,4 +1,5 @@
 {
+  "name": "Demara Battery Mark II",
   "rarity": "A",
   "type": "stun",
   "atk_base": 42,
@@ -7,5 +8,27 @@
   "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_1011.png",
   "desc": "This customized W-Engine Core focuses on power storage and has been modified to enhance power storage functions. It can effectively boost Zap damage output for weapons, and is the gadget store owner's piece de resistance. Not long after, Anby made some tweaks based on user habits, but judging by how serious and careful she is while conducting each maintenance session, these are probably not the safest of modifications.\n\n<color=#959595>\"Weapons SHOULD be dangerous. If it can't shock me, then how is it going to shock the enemy?\" — Anby's response while carefully performing maintenance</color>",
   "desc2": "Equip to increase Stun Agents' combat capabilities",
-  "desc3": "A customized W-Engine that focuses on energy storage, modified to improve its energy capacity. This model is often used by Anby."
+  "desc3": "A customized W-Engine that focuses on energy storage, modified to improve its energy capacity. This model is often used by Anby.",
+  "phase": [
+    {
+      "name": "In a Flash of Light",
+      "desc": "Increases <color=#2EB6FF>Electric DMG</color> by <color=#2BAD00>15%</color>. When the equipper hits an enemy with a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Assist Attack</color>, their Energy Generation Rate increases by <color=#2BAD00>18%</color> for 8s."
+    },
+    {
+      "name": "In a Flash of Light",
+      "desc": "Increases <color=#2EB6FF>Electric DMG</color> by <color=#2BAD00>17.5%</color>. When the equipper hits an enemy with a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Assist Attack</color>, their Energy Generation Rate increases by <color=#2BAD00>20.5%</color> for 8s."
+    },
+    {
+      "name": "In a Flash of Light",
+      "desc": "Increases <color=#2EB6FF>Electric DMG</color> by <color=#2BAD00>20%</color>. When the equipper hits an enemy with a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Assist Attack</color>, their Energy Generation Rate increases by <color=#2BAD00>23%</color> for 8s."
+    },
+    {
+      "name": "In a Flash of Light",
+      "desc": "Increases <color=#2EB6FF>Electric DMG</color> by <color=#2BAD00>22%</color>. When the equipper hits an enemy with a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Assist Attack</color>, their Energy Generation Rate increases by <color=#2BAD00>25%</color> for 8s."
+    },
+    {
+      "name": "In a Flash of Light",
+      "desc": "Increases <color=#2EB6FF>Electric DMG</color> by <color=#2BAD00>24%</color>. When the equipper hits an enemy with a <color=#FFFFFF>Dodge Counter</color> or <color=#FFFFFF>Assist Attack</color>, their Energy Generation Rate increases by <color=#2BAD00>27.5%</color> for 8s."
+    }
+  ]
 }

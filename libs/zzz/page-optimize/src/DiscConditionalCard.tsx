@@ -1,31 +1,20 @@
-import {
-  CardThemed,
-  DropdownButton,
-  ImgIcon,
-} from '@genshin-optimizer/common/ui'
-import { range } from '@genshin-optimizer/common/util'
+import { CardThemed, ImgIcon } from '@genshin-optimizer/common/ui'
 import { discDefIcon } from '@genshin-optimizer/zzz/assets'
-import type {
-  allDiscCondKeys,
-  DiscCondKey,
-  DiscSetKey,
-} from '@genshin-optimizer/zzz/consts'
+import type { DiscSetKey } from '@genshin-optimizer/zzz/consts'
 import { disc4PeffectSheets } from '@genshin-optimizer/zzz/consts'
 import type { Stats } from '@genshin-optimizer/zzz/db'
-import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { DiscSet4p, DiscSetName } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
-  Button,
   CardContent,
   CardHeader,
   Divider,
   Grid,
-  MenuItem,
   Typography,
 } from '@mui/material'
 import { useMemo } from 'react'
 import { useCharacterContext } from './CharacterContext'
+import { ConditionalToggles } from './ConditionalToggle'
 import { StatsDisplay } from './StatsDisplay'
 
 export function DiscConditionalsCard({ baseStats }: { baseStats: Stats }) {
@@ -86,7 +75,7 @@ export function DiscConditionalCard({
           <DiscSet4p setKey={setKey} />
         </Typography>
       </CardContent>
-      <ConditionalToggle condMeta={condMeta} />
+      <ConditionalToggles condMetas={condMeta} />
       {!!stats && !!Object.keys(stats).length && (
         <CardContent>
           <StatsDisplay stats={stats} />
@@ -94,81 +83,4 @@ export function DiscConditionalCard({
       )}
     </CardThemed>
   )
-}
-export function ConditionalToggle({
-  condMeta,
-}: {
-  condMeta: (typeof allDiscCondKeys)[DiscCondKey]
-}) {
-  const { database } = useDatabaseContext()
-  const character = useCharacterContext()!
-  const value = character.conditionals[condMeta.key] ?? 0
-  if (condMeta.max > 1)
-    return (
-      <DropdownButton
-        fullWidth
-        value={value}
-        color={value ? 'success' : 'primary'}
-        title={
-          typeof condMeta.text === 'function'
-            ? condMeta.text(value)
-            : condMeta.text
-        }
-        sx={{ borderRadius: 0 }}
-      >
-        <MenuItem
-          onClick={() => {
-            database.chars.set(character.key, (chars) => ({
-              conditionals: {
-                ...chars.conditionals,
-                [condMeta.key]: undefined,
-              },
-            }))
-          }}
-        >
-          Clear
-        </MenuItem>
-        {range(condMeta.min, condMeta.max).map((i) => (
-          <MenuItem
-            key={i}
-            value={i}
-            onClick={() => {
-              database.chars.set(character.key, (chars) => ({
-                conditionals: {
-                  ...chars.conditionals,
-                  [condMeta.key]: i,
-                },
-              }))
-            }}
-          >
-            {typeof condMeta.text === 'function'
-              ? condMeta.text(i)
-              : condMeta.text}
-          </MenuItem>
-        ))}
-      </DropdownButton>
-    )
-  if (condMeta.max === 1) {
-    return (
-      <Button
-        fullWidth
-        sx={{ borderRadius: 0 }}
-        color={value ? 'success' : 'primary'}
-        onClick={() =>
-          database.chars.set(character.key, (chars) => ({
-            conditionals: {
-              ...chars.conditionals,
-              [condMeta.key]: +!value,
-            },
-          }))
-        }
-      >
-        {/* {typeof condMeta.text === 'function'
-          ? condMeta.text(value)
-          : condMeta.text} */}
-        {condMeta.text}
-      </Button>
-    )
-  }
-  return null
 }
