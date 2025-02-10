@@ -20,7 +20,7 @@ const PageOptimize = lazy(() => import('@genshin-optimizer/zzz/page-optimize'))
 const PageCharacters = lazy(
   () => import('@genshin-optimizer/zzz/page-characters')
 )
-
+const PageWengines = lazy(() => import('@genshin-optimizer/zzz/page-wengines'))
 const PageSettings = lazy(() => import('@genshin-optimizer/zzz/page-settings'))
 
 export default function App() {
@@ -64,6 +64,7 @@ function Content() {
             <Route path="/discs" element={<PageDiscs />} />
             <Route path="/optimize" element={<PageOptimize />} />
             <Route path="/characters" element={<PageCharacters />} />
+            <Route path="/wengines" element={<PageWengines />} />
             <Route path="/settings" element={<PageSettings />} />
           </Routes>
         </Suspense>

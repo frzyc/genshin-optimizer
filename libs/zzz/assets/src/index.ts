@@ -9,19 +9,33 @@ import type {
 } from '@genshin-optimizer/zzz/consts'
 import type { StaticImageData } from 'next/image'
 import commonImages from './common'
+import phases from './common/phases'
 import rarity from './common/rarity'
 import skill from './common/skill'
 import speciality from './common/speciality'
 import chars from './gen/chars'
 import discs from './gen/discs'
-import wengine from './gen/wengines'
+import wengines from './gen/wengines'
+
 type CommonImagesKey = 'discDrive'
+type WenginePhaseKey = 'p1' | 'p2' | 'p3' | 'p4' | 'p5'
 
 export function characterAsset(
   ck: CharacterKey,
   asset: keyof AssetDataType['chars'][CharacterKey]
 ) {
   return (chars[ck]?.[asset] ?? '') as string | StaticImageData
+}
+
+export function wengineAsset(
+  wk: WengineKey,
+  asset: keyof AssetDataType['wengines'][WengineKey]
+) {
+  return (wengines[wk]?.[asset] ?? '') as string | StaticImageData
+}
+
+export function wenginePhaseIcon(pk: WenginePhaseKey) {
+  return pk ? phases[pk] : ''
 }
 
 export function discDefIcon(setKey: DiscSetKey) {
@@ -44,6 +58,9 @@ export function commonDefImages(key: CommonImagesKey) {
   return key ? commonImages[key] : ''
 }
 
+/**
+ * @deprecated
+ */
 export function wengineIcon(wKey: WengineKey) {
-  return wKey ? wengine[wKey].icon : ''
+  return wKey ? wengines[wKey].icon : ''
 }

@@ -1,6 +1,7 @@
 import { notEmpty } from '@genshin-optimizer/common/util'
+import type { Preset } from '@genshin-optimizer/game-opt/engine'
+import { CalcContext } from '@genshin-optimizer/game-opt/formula-ui'
 import { constant } from '@genshin-optimizer/pando/engine'
-import { CalcContext } from '@genshin-optimizer/pando/ui-sheet'
 import type {
   RelicMainStatKey,
   RelicSetKey,
@@ -19,11 +20,7 @@ import {
   useRelics,
   useTeam,
 } from '@genshin-optimizer/sr/db-ui'
-import type {
-  Member,
-  Preset,
-  TagMapNodeEntries,
-} from '@genshin-optimizer/sr/formula'
+import type { Member, TagMapNodeEntries } from '@genshin-optimizer/sr/formula'
 import {
   charTagMapNodeEntries,
   conditionalEntries,

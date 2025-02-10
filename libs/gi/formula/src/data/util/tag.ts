@@ -1,15 +1,17 @@
-import type { IBaseConditionalData } from '@genshin-optimizer/common/formula'
+import {
+  createAllBoolConditionals,
+  createAllListConditionals,
+  createAllNumConditionals,
+  createConditionalEntries,
+  createConvert,
+  tag,
+} from '@genshin-optimizer/game-opt/engine'
 import type { StatKey } from '@genshin-optimizer/gi/dm'
 import type { NumNode } from '@genshin-optimizer/pando/engine'
-import {
-  cmpEq,
-  cmpNE,
-  constant,
-  subscript,
-} from '@genshin-optimizer/pando/engine'
-import type { Member, Sheet, Stat } from './listing'
+import { constant } from '@genshin-optimizer/pando/engine'
+import type { Dst, Sheet, Src, Stat } from './listing'
 import type { Read, Tag } from './read'
-import { reader, tag } from './read'
+import { reader } from './read'
 
 export function percent(x: number | NumNode): NumNode {
   return tag(typeof x === 'number' ? constant(x) : x, { qt: 'misc', q: '_' })
@@ -164,29 +166,7 @@ export const enemyTag = {
   reaction: { amp: fixed, cata: fixed },
 } as const
 
-export function convert<V extends Record<string, Record<string, Desc>>>(
-  v: V,
-  tag: Omit<Tag, 'qt' | 'q'>
-): {
-  [j in 'withTag' | keyof V]: j extends 'withTag'
-    ? (_: Tag) => Read
-    : { [k in keyof V[j]]: Read }
-} {
-  const r = reader.withTag(tag)
-  return r.withAll(
-    'qt',
-    Object.keys(v),
-    (r, qt) =>
-      r.withAll('q', Object.keys(v[qt]), (r, q) => {
-        if (!v[qt][q]) console.error(`Invalid { qt:${qt} q:${q} }`)
-        const { sheet, accu } = v[qt][q]
-        // `tag.sheet` overrides `Desc`
-        if (sheet && !tag.sheet) r = r.sheet(sheet)
-        return r[accu]
-      }),
-    { withTag: (tag: Tag) => r.withTag(tag) }
-  ) as any
-}
+export const convert = createConvert<Read, Tag, Src, Dst, Sheet>()
 
 // Default queries
 const noName = { src: null, name: null }
@@ -203,70 +183,21 @@ export const enemyDebuff = convert(enemyTag, { et: 'enemy' })
 export const userBuff = convert(ownTag, { et: 'own', sheet: 'custom' })
 
 // Custom tags
+const nullTag = {
+  name: null,
+  region: null,
+  ele: null,
+  move: null,
+  trans: null,
+  amp: null,
+  cata: null,
+}
 export const allStatics = (sheet: Sheet) =>
   reader.withTag({ et: 'own', sheet, qt: 'misc' }).withAll('q', [])
-export const allBoolConditionals = (sheet: Sheet, ignored?: CondIgnored) =>
-  allConditionals(sheet, ignored, { type: 'bool' }, (r) => ({
-    ifOn: (node: NumNode | number, off?: NumNode | number) =>
-      cmpNE(r, 0, node, off),
-    ifOff: (node: NumNode | number) => cmpEq(r, 0, node),
-  }))
-export const allListConditionals = <T extends string>(
-  sheet: Sheet,
-  list: T[],
-  ignored?: CondIgnored
-) =>
-  allConditionals(sheet, ignored, { type: 'list', list }, (r) => ({
-    map: (table: Record<T, number>, def = 0) =>
-      subscript(r, [def, ...list.map((v) => table[v] ?? def)]),
-    value: r,
-  }))
-export const allNumConditionals = (
-  sheet: Sheet,
-  int_only = true,
-  min?: number,
-  max?: number,
-  ignored?: CondIgnored
-) =>
-  allConditionals(sheet, ignored, { type: 'num', int_only, min, max }, (r) => r)
-
-type MemAll = Member | 'all'
-export const conditionalEntries = (sheet: Sheet, src: MemAll, dst: MemAll) => {
-  let tag: Tag = { sheet, qt: 'cond' }
-  if (src !== 'all') tag = { ...tag, src }
-  if (dst !== 'all') tag = { ...tag, dst }
-  const base = own.withTag(tag).withAll('q', [])
-  return (name: string, val: string | number) => base[name].add(val)
-}
-
-const condMeta = Symbol.for('condMeta')
-type CondIgnored = 'both' | 'src' | 'dst' | 'none'
-function allConditionals<T>(
-  sheet: Sheet,
-  ignored: CondIgnored = 'src',
-  meta: IBaseConditionalData,
-  transform: (r: Read, q: string) => T
-): Record<string, T> {
-  // Keep the base tag "full" here so that `cond` returns consistent tags
-  const baseTag: Omit<Required<Tag>, 'preset' | 'src' | 'dst' | 'q'> = {
-    et: 'own',
-    sheet,
-    qt: 'cond',
-    // Remove irrelevant tags
-    name: null,
-    region: null,
-    ele: null,
-    move: null,
-    trans: null,
-    amp: null,
-    cata: null,
-    [condMeta as any]: meta, // Add metadata directly to tag
-  }
-  let base = reader.max.withTag(baseTag)
-  if (ignored === 'both') base = base.withTag({ src: null, dst: null })
-  else if (ignored !== 'none') base = base.with(ignored, null)
-  return base.withAll('q', [], transform)
-}
+export const allBoolConditionals = createAllBoolConditionals(nullTag)
+export const allListConditionals = createAllListConditionals(nullTag)
+export const allNumConditionals = createAllNumConditionals(nullTag)
+export const conditionalEntries = createConditionalEntries(own)
 
 export const queryTypes = new Set([
   ...Object.keys(ownTag),
@@ -282,5 +213,5 @@ for (const values of [...Object.values(ownTag), ...Object.values(enemyTag)])
   for (const q of Object.keys(values)) reader.with('q', q)
 
 export function tagToStat(tag: Tag): StatKey {
-  return (tag.q === 'dmg_' ? `${tag.ele}_${tag.q}` : tag.q) as StatKey
+  return (tag.q === 'dmg_' ? `${tag['ele']}_${tag.q}` : tag.q) as StatKey
 }

@@ -1,10 +1,10 @@
+import { tag } from '@genshin-optimizer/game-opt/engine'
 import { type NumNode, type StrNode } from '@genshin-optimizer/pando/engine'
 import type { PandoStatKey } from '@genshin-optimizer/zzz/consts'
 import type { Read, Tag } from '.'
 import {
   ownBuff,
   reader,
-  tag,
   teamBuff,
   type TagMapNodeEntries,
   type TagMapNodeEntry,
@@ -16,7 +16,9 @@ export type FormulaArg = {
   cond?: string | StrNode
 }
 
-export type DmgTag = Pick<Tag, 'damageType1' | 'damageType2' | 'attribute'>
+export type DmgTag = Partial<
+  Pick<Tag, 'damageType1' | 'damageType2' | 'attribute'>
+>
 
 export function register(
   sheet: Sheet,

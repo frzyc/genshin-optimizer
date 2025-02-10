@@ -70,6 +70,19 @@ export type WengineKey = (typeof allWengineKeys)[number]
 export const allModificationKeys = [0, 1, 2, 3, 4, 5] as const
 export type ModificationKey = (typeof allModificationKeys)[number]
 
+export const allWengineSubStatKeys = [
+  'hp_',
+  'atk_',
+  'pen_',
+  'def_',
+  'crit_',
+  'crit_dmg_',
+  'anomProf',
+  'impact_',
+  'enerRegen_',
+] as const
+export type WengineSubStatKey = (typeof allWengineSubStatKeys)[number]
+
 export const allPhaseKeys = [1, 2, 3, 4, 5] as const
 export type PhaseKey = (typeof allPhaseKeys)[number]
 export const allWengineCondKeys = {
