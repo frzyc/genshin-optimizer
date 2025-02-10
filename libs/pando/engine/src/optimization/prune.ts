@@ -89,7 +89,7 @@ export class State<I extends OP, C extends Component> {
 }
 
 /** Remove branches that are never chosen */
-function pruneBranches(state: State<OP, Component>) {
+export function pruneBranches(state: State<OP, Component>) {
   const { nodes, nodeRanges } = state
   const result = mapBottomUp(nodes, (n, o) => {
     const r = nodeRanges.get(o)!
@@ -120,7 +120,9 @@ function pruneBranches(state: State<OP, Component>) {
           return n.x[branching[o.op](br, o.ex)]
         }
         break
-      // subscript is already handled by the `const`-check at the beginning
+      case 'subscript':
+        if (n.br[0].op === 'const') return constant(n.ex[n.br[0].ex])
+        break
     }
     return n
   })
@@ -132,7 +134,10 @@ function pruneBranches(state: State<OP, Component>) {
  * - Remove top-level nodes whose `minimum` requirements are met by every build
  * - Returns new `minimum` appropriate for the new `state.nodes`
  */
-function pruneRange(state: State<OP, Component>, minimum: number[]): number[] {
+export function pruneRange(
+  state: State<OP, Component>,
+  minimum: number[]
+): number[] {
   const { nodeRanges, cat } = state
   const builds = [...state.builds]
   const compRanges = [...state.compRanges]
@@ -175,7 +180,7 @@ const offset = Symbol()
  * If changes are made, components `builds` will be replaced with new values with all string keys
  * replaced. Owned `Symbol` keys are transferred from the old `builds` components to the new ones.
  */
-function reaffine(state: State<OP, Component>) {
+export function reaffine(state: State<OP, Component>) {
   const { nodes, cat, builds } = state
   type Weight = Record<string | typeof offset, number>
   const weights = new Map<AnyNode<OP>, Weight>()

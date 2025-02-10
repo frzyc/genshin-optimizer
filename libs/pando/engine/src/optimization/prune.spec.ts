@@ -2,6 +2,7 @@ import type { NumNode, OP as TaggedOP } from '../node'
 import {
   cmpEq,
   cmpGE,
+  constant,
   custom,
   lookup,
   max,
@@ -13,9 +14,13 @@ import {
   sumfrac,
 } from '../node'
 import { addCustomOperation } from '../util'
-import { State } from './prune'
+import { pruneBranches, pruneRange, reaffine, State } from './prune'
 
 type OP = Exclude<TaggedOP, 'tag' | 'dtag' | 'vtag'>
+
+const r0 = read({ q: 'c0' }, undefined)
+const r1 = read({ q: 'c1' }, undefined)
+const r2 = read({ q: 'c2' }, undefined)
 
 addCustomOperation('sq', {
   range: ([r]) => {
@@ -32,10 +37,77 @@ addCustomOperation('sq', {
   calc: ([x]) => (x as number) * (x as number),
 })
 
+describe('pruning', () => {
+  const builds = [
+    [
+      { c0: 0, c1: 3, c2: 4 },
+      { c0: 6, c1: 2, c2: 6 },
+      { c0: 10, c1: 1, c2: 6 },
+    ],
+  ]
+  test('reaffine', () => {
+    const nodes = [
+      prod(7, sum(r0, prod(3, r1), 6), sum(r0, r1, 2)),
+      constant(11),
+    ]
+    const state = new State(nodes, builds, 'q')
+    state.progress = false
+    reaffine(state)
+    expect(state.progress).toBe(true)
+    // Normally the reaffined keys are unspecified, but since the current
+    // algorithm is deterministic, we can just run it and note the keys
+    expect(state.builds).toEqual([[{}, { c0: 3, c1: 5 }, { c0: 4, c1: 8 }]])
+    // reaffine nodes into different keys (c0 and c1, again, with different values)
+    // and leave the constant nodes alone
+    expect(state.nodes).toEqual([
+      prod(7, sum(15, r0), sum(5, r1)),
+      constant(11),
+    ])
+  })
+  test('pruneBranches', () => {
+    const nodes = [
+      cmpGE(r2, 4, r0, r1),
+      cmpGE(r2, 7, r0, r1),
+      cmpGE(r1, 2, r0, r1), // can't prune
+      min(r0, r1, r2),
+      max(r0, r1, r2),
+      cmpEq(1, 1, r0, r1),
+      lookup(subscript(2, ['a', 'b', 'c']), { a: 0, b: 11, c: 22 }),
+    ]
+    const state = new State(nodes, builds, 'q')
+    state.progress = false
+    pruneBranches(state)
+    expect(state.progress).toBe(true)
+    expect(state.nodes.length).toEqual(nodes.length)
+    expect(state.nodes[0]).toBe(r0)
+    expect(state.nodes[1]).toBe(r1)
+    expect(state.nodes[2]).toBe(nodes[2])
+    expect(state.nodes[3]).toEqual(min(r0, r1))
+    expect(state.nodes[4]).toEqual(max(r0, r2))
+    expect(state.nodes[5]).toBe(r0)
+    expect(state.nodes[6]).toEqual(constant(22))
+  })
+  test('pruneRanges', () => {
+    const nodes = [r0, r1, prod(r1, r2), sum(1, r2)]
+    const minimum = [5, 0]
+    const state = new State(nodes, builds, 'q')
+    state.progress = false
+    const newMinimum = pruneRange(state, minimum)
+    expect(state.progress).toBe(true)
+    expect(state.nodes.length).toEqual(3)
+    expect(state.nodes[0]).toBe(nodes[0])
+    // Skip `nodes[1]` because the minimum is always met
+    expect(state.nodes[1]).toBe(nodes[2])
+    expect(state.nodes[2]).toBe(nodes[3])
+    expect(newMinimum).toEqual([minimum[0]])
+
+    expect(state.builds.length).toEqual(1)
+    expect(state.builds[0].length).toEqual(2)
+    expect(state.builds[0][0]).toBe(builds[0][1])
+    expect(state.builds[0][1]).toBe(builds[0][2])
+  })
+})
 describe('state', () => {
-  const r0 = read({ q: 'c0' }, undefined)
-  const r1 = read({ q: 'c1' }, undefined)
-  const r2 = read({ q: 'c2' }, undefined)
   const nodes = [
     sum(r0, r1, r2),
     prod(r0, r1, r2),
