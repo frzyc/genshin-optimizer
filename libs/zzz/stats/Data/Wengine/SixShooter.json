@@ -1,4 +1,5 @@
 {
+  "name": "Six Shooter",
   "rarity": "A",
   "type": "stun",
   "atk_base": 40,
@@ -7,5 +8,27 @@
   "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_S_Common_03.png",
   "desc": "A special W-Engine modeled after a revolver. It can apparently load six bullet-shaped condensed Ether batteries, which release a significant amount of power when fired. It is said that as long as you carry this W-Engine, you will be able to spontaneously learn how to whistle and will occasionally reference old movies in a cowboy voice.",
   "desc2": "Equip to increase Stun Agents' combat capabilities",
-  "desc3": "A special W-Engine modeled after a revolver. It can load bullet-shaped condensed Ether batteries, which release a great amount of power when fired."
+  "desc3": "A special W-Engine modeled after a revolver. It can load bullet-shaped condensed Ether batteries, which release a great amount of power when fired.",
+  "phase": [
+    {
+      "name": "Fire!",
+      "desc": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>4%</color>."
+    },
+    {
+      "name": "Fire!",
+      "desc": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>4.6%</color>."
+    },
+    {
+      "name": "Fire!",
+      "desc": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>5.2%</color>."
+    },
+    {
+      "name": "Fire!",
+      "desc": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>5.8%</color>."
+    },
+    {
+      "name": "Fire!",
+      "desc": "The equipper gains 1 Charge stack every 3s, stacking up to 6 times. When launching an <color=#FFFFFF>EX Special Attack</color>, consumes all Charge stacks and each stack consumed increases the skill's Daze inflicted by <color=#2BAD00>6.4%</color>."
+    }
+  ]
 }

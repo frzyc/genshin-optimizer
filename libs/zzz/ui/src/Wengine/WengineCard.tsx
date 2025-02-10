@@ -56,7 +56,7 @@ export function WengineCard({
   const { t } = useTranslation('wengineNames')
   const [show, onShow, onHide] = useBoolState()
   const wengineStats = getWengineStat(wengineKey)
-  const maxLvlWengine = getWengineStats(wengineKey, 60)
+  const maxLvlWengine = getWengineStats(wengineKey, 60, 5)
   return (
     <Suspense
       fallback={

@@ -10,7 +10,7 @@
     "def_growth": 6.6882,
     "hp_base": 626,
     "hp_growth": 84.9779,
-    "anomMas": 112,
+    "anomMas_base": 112,
     "anomProf": 114,
     "impact": 86,
     "enerRegen": 1.2
@@ -24,12 +24,12 @@
     { "hp": 2149, "atk": 224, "def": 169 }
   ],
   "coreStats": [
-    { "atk_base": 0, "anomMas": 12 },
-    { "atk_base": 25, "anomMas": 12 },
-    { "atk_base": 25, "anomMas": 24 },
-    { "atk_base": 50, "anomMas": 24 },
-    { "atk_base": 50, "anomMas": 36 },
-    { "atk_base": 75, "anomMas": 36 }
+    { "atk_base": 0, "anomMas_base": 12 },
+    { "atk_base": 25, "anomMas_base": 12 },
+    { "atk_base": 25, "anomMas_base": 24 },
+    { "atk_base": 50, "anomMas_base": 24 },
+    { "atk_base": 50, "anomMas_base": 36 },
+    { "atk_base": 75, "anomMas_base": 36 }
   ],
   "skills": {
     "Basic": {

@@ -1,4 +1,5 @@
 {
+  "name": "Gilded Blossom",
   "rarity": "A",
   "type": "attack",
   "atk_base": 40,
@@ -7,5 +8,27 @@
   "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_Common_13.png",
   "desc": "A W-Engine that represents the brilliance and magnificence of flowers, seemingly crafted from the most luxurious materials. However, after finally dismantling the Ether-powered premium anti-theft device, an experienced thief will discover with terror that this W-Engine... is only gold plated.",
   "desc2": "Equip to increase Attack Agents' combat capabilities",
-  "desc3": "A W-Engine with a grandiose and luxurious appearance equipped with a premium Ether-powered anti-theft device. It's actually used to provide the equipper with energy."
+  "desc3": "A W-Engine with a grandiose and luxurious appearance equipped with a premium Ether-powered anti-theft device. It's actually used to provide the equipper with energy.",
+  "phase": [
+    {
+      "name": "Extraordinary Anti-Theft Measures",
+      "desc": "ATK increases by <color=#2BAD00>6</color>%, and DMG dealt by <color=#FFFFFF>EX Special Attacks</color> increases by <color=#2BAD00>15%</color>."
+    },
+    {
+      "name": "Extraordinary Anti-Theft Measures",
+      "desc": "ATK increases by <color=#2BAD00>6.9</color>%, and DMG dealt by <color=#FFFFFF>EX Special Attacks</color> increases by <color=#2BAD00>17.2%</color>."
+    },
+    {
+      "name": "Extraordinary Anti-Theft Measures",
+      "desc": "ATK increases by <color=#2BAD00>7.8</color>%, and DMG dealt by <color=#FFFFFF>EX Special Attacks</color> increases by <color=#2BAD00>19.5%</color>."
+    },
+    {
+      "name": "Extraordinary Anti-Theft Measures",
+      "desc": "ATK increases by <color=#2BAD00>8.7</color>%, and DMG dealt by <color=#FFFFFF>EX Special Attacks</color> increases by <color=#2BAD00>21.8%</color>."
+    },
+    {
+      "name": "Extraordinary Anti-Theft Measures",
+      "desc": "ATK increases by <color=#2BAD00>9.6</color>%, and DMG dealt by <color=#FFFFFF>EX Special Attacks</color> increases by <color=#2BAD00>24%</color>."
+    }
+  ]
 }

@@ -56,6 +56,10 @@ export function StatIcon({
       return <EnerRegenIcon {...iconProps} />
     case 'anomMas':
     case 'anomMas_':
+    case 'anomMas_base':
+    case 'cond_anomMas':
+    case 'cond_anomMas_':
+    case 'final_anomMas':
       return <AnomMasIcon {...iconProps} />
     case 'anomProf':
       return <AnomProfIcon {...iconProps} />

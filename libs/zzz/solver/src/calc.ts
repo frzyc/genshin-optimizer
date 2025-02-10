@@ -13,8 +13,10 @@ import type {
 import {
   allAnomalyDmgKeys,
   allAttributeDamageKeys,
+  allWengineKeys,
   disc2pEffect,
   disc4PeffectSheets,
+  wengineSheets,
 } from '@genshin-optimizer/zzz/consts'
 import type { Stats } from '@genshin-optimizer/zzz/db'
 import type { DiscStats } from './common'
@@ -84,6 +86,13 @@ export function applyCalc(
     }
   }
 
+  // Apply wengine Stats and Conditionals
+  const w = wengineSheets[allWengineKeys[s('wengineIndex')]]?.getStats(
+    conditionals,
+    sum
+  )
+  if (w) objSumInPlace(sum, w)
+
   // Rudimentary Calculations
   sum['initial_hp'] = s('hp_base') * (1 + s('hp_')) + s('hp')
   sum['initial_atk'] = s('atk_base') * (1 + s('atk_')) + s('atk')
@@ -92,7 +101,10 @@ export function applyCalc(
   sum['final_atk'] = s('initial_atk') * (1 + s('cond_atk_')) + s('cond_atk')
   sum['final_def'] = s('initial_def') * (1 + s('cond_def_')) + s('cond_def')
   sum['impact'] = s('impact') * (1 + s('impact_'))
-  sum['anomMas'] = s('anomMas') * (1 + s('anomMas_'))
+  sum['final_anomMas'] =
+    (s('anomMas_base') * (1 + s('anomMas_')) + s('anomMas')) *
+      (1 + s('cond_anomMas_')) +
+    s('cond_anomMas')
   sum['crit_'] = clamp01(sum['crit_'])
   return sum
 }

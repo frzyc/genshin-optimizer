@@ -1,4 +1,5 @@
 {
+  "name": "Heartstring Nocturne",
   "rarity": "S",
   "type": "attack",
   "atk_base": 48,
@@ -7,5 +8,27 @@
   "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_S_1321.png",
   "desc": "The soft hum of hidden strings and faint light blooming in the deep night, where sharpness and calm intertwine, transforming into a silent melody. Thread by thread, it captures everything held dear within.\n\n<color=#959595>\"This? It's just a device for storing instrument strings.\"\n—Evelyn, gently strumming the strings. A low hum fills the air, and as the final note echoes, the enemy falls silent.</color>",
   "desc2": "Equip to increase Attack Agents' combat capabilities",
-  "desc3": "The sound of the strings, sharp as blades, cut through the night, protecting the one."
+  "desc3": "The sound of the strings, sharp as blades, cut through the night, protecting the one.",
+  "phase": [
+    {
+      "name": "String & Melody",
+      "desc": "CRIT DMG increases by <color=#2BAD00>50%</color>. When the equipper enters the battlefield, or activates a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color>, they gain 1 stack of <color=#FFFFFF>Heartstring</color>. Each stack of <color=#FFFFFF>Heartstring</color> allows the equipper's <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> to ignore <color=#2BAD00>12.5%</color> of the target's <color=#FF5521>Fire RES</color>, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration."
+    },
+    {
+      "name": "String & Melody",
+      "desc": "CRIT DMG increases by <color=#2BAD00>57.5%</color>. When the equipper enters the battlefield, or activates a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color>, they gain 1 stack of <color=#FFFFFF>Heartstring</color>. Each stack of <color=#FFFFFF>Heartstring</color> allows the equipper's <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> to ignore <color=#2BAD00>14.5%</color> of the target's <color=#FF5521>Fire RES</color>, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration."
+    },
+    {
+      "name": "String & Melody",
+      "desc": "CRIT DMG increases by <color=#2BAD00>65%</color>. When the equipper enters the battlefield, or activates a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color>, they gain 1 stack of <color=#FFFFFF>Heartstring</color>. Each stack of <color=#FFFFFF>Heartstring</color> allows the equipper's <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> to ignore <color=#2BAD00>16.5%</color> of the target's <color=#FF5521>Fire RES</color>, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration."
+    },
+    {
+      "name": "String & Melody",
+      "desc": "CRIT DMG increases by <color=#2BAD00>72.5%</color>. When the equipper enters the battlefield, or activates a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color>, they gain 1 stack of <color=#FFFFFF>Heartstring</color>. Each stack of <color=#FFFFFF>Heartstring</color> allows the equipper's <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> to ignore <color=#2BAD00>18.5%</color> of the target's <color=#FF5521>Fire RES</color>, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration."
+    },
+    {
+      "name": "String & Melody",
+      "desc": "CRIT DMG increases by <color=#2BAD00>80%</color>. When the equipper enters the battlefield, or activates a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color>, they gain 1 stack of <color=#FFFFFF>Heartstring</color>. Each stack of <color=#FFFFFF>Heartstring</color> allows the equipper's <color=#FFFFFF>Chain Attack</color> and <color=#FFFFFF>Ultimate</color> to ignore <color=#2BAD00>20%</color> of the target's <color=#FF5521>Fire RES</color>, stacking up to 2 times and lasting 30s. Repeated triggers reset the duration."
+    }
+  ]
 }

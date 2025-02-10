@@ -1,4 +1,5 @@
 {
+  "name": "Housekeeper",
   "rarity": "A",
   "type": "attack",
   "atk_base": 42,
@@ -7,5 +8,27 @@
   "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_1061.png",
   "desc": "An enhanced W-Engine with a high rotation speed. Corin has integrated its shaft portion with a chainsaw to provide additional cutting power for her \"cleaning\" work. To ensure that her \"cleaning\" goes smoothly and to minimize the pain inflicted on her target, she has thoughtfully increased the rotation speed to the maximum.\n\n<color=#959595>\"Um... Don't worry, it won't hurt! Well... I mean, it will only hurt for a moment, and then it won't hurt anymore!\" — Corin, attempting to comfort her opponent before attacking</color>",
   "desc2": "Equip to increase Attack Agents' combat capabilities",
-  "desc3": "An enhanced W-Engine with a high rotation speed. A chainsaw has been integrated into its shaft. This model is often used by Corin."
+  "desc3": "An enhanced W-Engine with a high rotation speed. A chainsaw has been integrated into its shaft. This model is often used by Corin.",
+  "phase": [
+    {
+      "name": "Safe Household Saw",
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.45</color>/s. When an <color=#FFFFFF>EX Special Attack</color> hits an enemy, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>3%</color>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration."
+    },
+    {
+      "name": "Safe Household Saw",
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.52</color>/s. When an <color=#FFFFFF>EX Special Attack</color> hits an enemy, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>3.5%</color>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration."
+    },
+    {
+      "name": "Safe Household Saw",
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.58</color>/s. When an <color=#FFFFFF>EX Special Attack</color> hits an enemy, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>4%</color>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration."
+    },
+    {
+      "name": "Safe Household Saw",
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.65</color>/s. When an <color=#FFFFFF>EX Special Attack</color> hits an enemy, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>4.4%</color>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration."
+    },
+    {
+      "name": "Safe Household Saw",
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.72</color>/s. When an <color=#FFFFFF>EX Special Attack</color> hits an enemy, the equipper's <color=#F0D12B>Physical DMG</color> increases by <color=#2BAD00>4.8%</color>, stacking up to 15 times and lasting 1s. Repeated triggers reset the duration."
+    }
+  ]
 }

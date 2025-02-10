@@ -5,6 +5,7 @@ import {
   allDiscMainStatKeys,
   allDiscSubStatKeys,
 } from './disc'
+import type { WengineCondKey } from './wengine'
 
 export const otherStatKeys = [
   // Used by calc, likely will be bundled into pando
@@ -29,6 +30,8 @@ export const unCondKeys = [
   'cond_hp_',
   'cond_def_',
   'cond_atk_',
+  'cond_anomMas',
+  'cond_anomMas_',
 ] as const
 
 export const allStatKeys = Array.from(
@@ -80,6 +83,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   hp_base: 'Base HP',
   atk_base: 'Base ATK',
   def_base: 'Base DEF',
+  anomMas_base: 'Base Anomaly Mastery',
   hp: 'HP',
   hp_: 'HP',
   atk: 'ATK',
@@ -92,9 +96,12 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   crit_dmg_: 'CRIT DMG',
   enerRegen_: 'Energy Regen',
   impact_: 'Impact',
+  daze_: 'Daze',
+  shield_: 'Shield Effect',
   anomMas: 'Anomaly Mastery',
   anomMas_: 'Anomaly Mastery',
   anomProf: 'Anomaly Proficiency',
+  anomBuild_: 'Anomaly Buildup',
   ...objKeyMap(allAnomalyDmgKeys, (dmg_) => `${dmg_} DMG Bonus`),
   dmg_: 'DMG Bonus',
   charLvl: 'Character Level',
@@ -110,12 +117,15 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   final_hp: 'Final HP',
   final_def: 'Final DEF',
   final_atk: 'Final ATK',
+  final_anomMas: 'Final Anomaly Mastery',
   cond_hp: 'Combat HP',
   cond_def: 'Combat DEF',
   cond_atk: 'Combat ATK',
   cond_hp_: 'Combat HP%',
   cond_def_: 'Combat DEF%',
   cond_atk_: 'Combat ATK%',
+  cond_anomMas_: 'Combat Anomaly Mastery%',
+  cond_anomMas: 'Combat Anomaly Mastery',
 }
 
 const elementalData: Record<AttributeKey, string> = {
@@ -130,5 +140,11 @@ Object.entries(elementalData).forEach(([e, name]) => {
   statKeyTextMap[`${e}_dmg_`] = `${name} DMG Bonus`
 })
 
-export type CondKey = DiscCondKey
+export type CondKey = DiscCondKey | WengineCondKey
 export const allCondKeys = Object.keys(allDiscCondKeys) as CondKey[]
+export type CondMeta = {
+  key: CondKey
+  text: string | ((val: number) => string)
+  max: number
+  min: number
+}

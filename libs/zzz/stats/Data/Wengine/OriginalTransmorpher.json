@@ -1,4 +1,5 @@
 {
+  "name": "Original Transmorpher",
   "rarity": "A",
   "type": "defense",
   "atk_base": 40,
@@ -7,5 +8,27 @@
   "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_Common_07.png",
   "desc": "A dream W-Engine adored by Starlight Knights fans. Its copyright owner claims that counterfeit transformers can transform you into a bad guy NPC. Watch out for a flying kick that'll scare the bejesus out of the bad guys — that's the power of genuine copyrighted merch!\n\"Starlight Knights, transform— Transform! Transform! Why can't I transform? Unless... the stars haven't chosen me?!\" — from an unboxing vlog recorded by an anonymous member of the Cunning Hares.",
   "desc2": "Equip to increase Defense Agents' combat capabilities",
-  "desc3": "An epic W-Engine favored by Starlight Knight fans. Its high popularity and scarcity marketing strategy have caused an influx of knock-offs."
+  "desc3": "An epic W-Engine favored by Starlight Knight fans. Its high popularity and scarcity marketing strategy have caused an influx of knock-offs.",
+  "phase": [
+    {
+      "name": "Starlight Knight Flying Kick",
+      "desc": "Increases Max HP by <color=#2BAD00>8%</color>. When attacked, the equipper's Impact is increased by <color=#2BAD00>10%</color> for 12s."
+    },
+    {
+      "name": "Starlight Knight Flying Kick",
+      "desc": "Increases Max HP by <color=#2BAD00>9%</color>. When attacked, the equipper's Impact is increased by <color=#2BAD00>11.5%</color> for 12s."
+    },
+    {
+      "name": "Starlight Knight Flying Kick",
+      "desc": "Increases Max HP by <color=#2BAD00>10%</color>. When attacked, the equipper's Impact is increased by <color=#2BAD00>13%</color> for 12s."
+    },
+    {
+      "name": "Starlight Knight Flying Kick",
+      "desc": "Increases Max HP by <color=#2BAD00>11%</color>. When attacked, the equipper's Impact is increased by <color=#2BAD00>14.5%</color> for 12s."
+    },
+    {
+      "name": "Starlight Knight Flying Kick",
+      "desc": "Increases Max HP by <color=#2BAD00>12.5%</color>. When attacked, the equipper's Impact is increased by <color=#2BAD00>16%</color> for 12s."
+    }
+  ]
 }
