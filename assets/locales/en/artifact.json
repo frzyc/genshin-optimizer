@@ -121,5 +121,8 @@
   "rvSliderBtn": {
     "maximum": "MRV",
     "current": "RV"
-  }
+  },
+  "builds_one": "{{count}} Build",
+  "builds_other": "{{count}} Builds",
+  "artifactUsage": "Artifact is used in the following loadouts and builds: "
 }
