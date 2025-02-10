@@ -4,10 +4,6 @@
     "outDir": "../../../dist/out-tsc",
     "types": ["node", "object-overrides"]
   },
-  "include": [
-    "src/index.ts",
-    "src/generators/**/*.ts",
-    "src/executors/**/*.ts"
-  ],
+  "include": ["src/**/*.ts", "src/generators/**/*.ts", "src/executors/**/*.ts"],
   "exclude": ["vite.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
 }

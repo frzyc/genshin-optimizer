@@ -17,7 +17,7 @@ export class TagMapKeys {
   get(tag: Tag): TagId {
     const id = new Int32Array(this.tagLen).fill(0)
     for (const [category, value] of Object.entries(tag)) {
-      if (value === null) continue
+      if (value === null || value === undefined) continue
       const entry = this.data[category]!
       const {
         // Make sure `category` existed during compilation. Otherwise, it
@@ -38,7 +38,7 @@ export class TagMapKeys {
     const id = new Int32Array(this.tagLen).fill(0)
     const maskArr = new Int32Array(this.tagLen).fill(0)
     for (const [category, value] of Object.entries(tag)) {
-      if (value === null) continue
+      if (value === null || value === undefined) continue
       const entry = this.data[category]!
       const {
         // Make sure `category` existed during compilation. Otherwise, it

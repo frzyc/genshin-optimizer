@@ -1,6 +1,6 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
-import { DebugReadContext } from '@genshin-optimizer/pando/ui-sheet'
+import { DebugReadContext } from '@genshin-optimizer/game-opt/formula-ui'
 import type { Frame } from '@genshin-optimizer/sr/db'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import { Read } from '@genshin-optimizer/sr/formula'

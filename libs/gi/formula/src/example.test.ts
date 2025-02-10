@@ -193,14 +193,14 @@ describe('example', () => {
     const conds = result.meta.conds
 
     // conds[dst][src][sheet][name] == cond value
-    expect(conds).toEqual({ 0: { all: { Nahida: { c2Bloom: 1 } } } })
+    expect(conds).toEqual({ 0: { 0: { Nahida: { c2Bloom: 1 } } } })
   })
   test('list conditionals affecting a member', () => {
     // all conditionals affecting all formulas
     const conds = mem0.listCondFormulas(own.listing.formulas)
 
     // Read current value: all -> member0 Nilou:a1AfterHit
-    expect(conds['0']?.['all']?.['Nilou']?.['a1AfterHit']).toEqual(0)
+    expect(conds['0']?.['1']?.['Nilou']?.['a1AfterHit']).toEqual(0)
 
     // Grab metadata from an entry
     const meta = conditionals.Nilou.a1AfterHit

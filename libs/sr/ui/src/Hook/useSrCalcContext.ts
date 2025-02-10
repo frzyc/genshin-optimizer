@@ -1,4 +1,4 @@
-import { CalcContext, TagContext } from '@genshin-optimizer/pando/ui-sheet'
+import { CalcContext, TagContext } from '@genshin-optimizer/game-opt/formula-ui'
 import type { Calculator } from '@genshin-optimizer/sr/formula'
 import { useContext, useMemo } from 'react'
 
