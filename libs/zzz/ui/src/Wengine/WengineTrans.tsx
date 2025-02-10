@@ -9,15 +9,15 @@ export function WengineName({ wKey }: { wKey: WengineKey }) {
 
 export function WengineRefineDesc({
   wKey,
-  phrase,
+  phase,
 }: {
   wKey: WengineKey
-  phrase: number
+  phase: number
 }) {
   return (
     <TransHack
       text={
-        getWengineStat(wKey)?.phase[phrase - 1]?.desc ??
+        getWengineStat(wKey)?.phase[phase - 1]?.desc ??
         'Unknown Wengine Refine Description'
       }
     />
@@ -26,13 +26,13 @@ export function WengineRefineDesc({
 
 export function WengineRefineName({
   wKey,
-  phrase,
+  phase,
 }: {
   wKey: WengineKey
-  phrase: number
+  phase: number
 }) {
   return (
-    getWengineStat(wKey)?.phase[phrase - 1]?.name ??
+    getWengineStat(wKey)?.phase[phase - 1]?.name ??
     'Unknown Wengine Refine Name'
   )
 }

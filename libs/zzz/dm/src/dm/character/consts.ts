@@ -68,6 +68,6 @@ export const coreStatMap = {
   'CRIT DMG': 'crit_dmg_',
   'Base Energy Regen': 'base_enerRegen',
   'Anomaly Proficiency': 'anomProf',
-  'Anomaly Mastery': 'anomMas',
+  'Anomaly Mastery': 'anomMas_base',
   'PEN Ratio': 'pen_',
 } as const

@@ -10,7 +10,7 @@
     "def_growth": 6.7901,
     "hp_base": 655,
     "hp_growth": 88.8787,
-    "anomMas": 90,
+    "anomMas_base": 90,
     "anomProf": 93,
     "impact": 88,
     "enerRegen": 1.2

@@ -126,7 +126,7 @@
         "def_growth": 6.6882,
         "hp_base": 603,
         "hp_growth": 81.8426,
-        "anomMas": 94,
+        "anomMas_base": 94,
         "anomProf": 93,
         "impact": 118,
         "enerRegen": 1.2
@@ -1208,7 +1208,7 @@
         "def_growth": 6.4166,
         "hp_base": 608,
         "hp_growth": 82.4778,
-        "anomMas": 97,
+        "anomMas_base": 97,
         "anomProf": 96,
         "impact": 92,
         "enerRegen": 1.2
@@ -2322,7 +2322,7 @@
         "def_growth": 6.7901,
         "hp_base": 655,
         "hp_growth": 88.8787,
-        "anomMas": 90,
+        "anomMas_base": 90,
         "anomProf": 93,
         "impact": 88,
         "enerRegen": 1.2
@@ -4137,7 +4137,7 @@
         "def_growth": 6.6882,
         "hp_base": 617,
         "hp_growth": 83.7238,
-        "anomMas": 94,
+        "anomMas_base": 94,
         "anomProf": 93,
         "impact": 93,
         "enerRegen": 1.2
@@ -5392,7 +5392,7 @@
         "def_growth": 6.5864,
         "hp_base": 561,
         "hp_growth": 76.1177,
-        "anomMas": 93,
+        "anomMas_base": 93,
         "anomProf": 96,
         "impact": 93,
         "enerRegen": 1.2
@@ -6689,7 +6689,7 @@
         "def_growth": 8.218,
         "hp_base": 766,
         "hp_growth": 103.9361,
-        "anomMas": 87,
+        "anomMas_base": 87,
         "anomProf": 90,
         "impact": 105,
         "enerRegen": 1.2
@@ -8144,7 +8144,7 @@
         "def_growth": 6.6203,
         "hp_base": 555,
         "hp_growth": 75.3604,
-        "anomMas": 92,
+        "anomMas_base": 92,
         "anomProf": 91,
         "impact": 91,
         "enerRegen": 1.2
@@ -9310,7 +9310,7 @@
         "def_growth": 6.6203,
         "hp_base": 617,
         "hp_growth": 83.7238,
-        "anomMas": 116,
+        "anomMas_base": 116,
         "anomProf": 148,
         "impact": 86,
         "enerRegen": 1.2
@@ -10691,7 +10691,7 @@
         "def_growth": 6.4845,
         "hp_base": 653,
         "hp_growth": 88.6832,
-        "anomMas": 97,
+        "anomMas_base": 97,
         "anomProf": 96,
         "impact": 116,
         "enerRegen": 1.2
@@ -12066,7 +12066,7 @@
         "def_growth": 6.7901,
         "hp_base": 580,
         "hp_growth": 78.7644,
-        "anomMas": 86,
+        "anomMas_base": 86,
         "anomProf": 90,
         "impact": 95,
         "enerRegen": 1.2
@@ -13401,7 +13401,7 @@
         "def_growth": 7.8989,
         "hp_base": 690,
         "hp_growth": 93.5856,
-        "anomMas": 86,
+        "anomMas_base": 86,
         "anomProf": 90,
         "impact": 95,
         "enerRegen": 1.2
@@ -14545,7 +14545,7 @@
         "def_growth": 6.5185,
         "hp_base": 645,
         "hp_growth": 87.5757,
-        "anomMas": 93,
+        "anomMas_base": 93,
         "anomProf": 96,
         "impact": 86,
         "enerRegen": 1.2
@@ -15986,7 +15986,7 @@
         "def_growth": 6.6203,
         "hp_base": 677,
         "hp_growth": 91.8185,
-        "anomMas": 91,
+        "anomMas_base": 91,
         "anomProf": 90,
         "impact": 119,
         "enerRegen": 1.2
@@ -17528,7 +17528,7 @@
         "def_growth": 6.6882,
         "hp_base": 645,
         "hp_growth": 87.5757,
-        "anomMas": 94,
+        "anomMas_base": 94,
         "anomProf": 93,
         "impact": 86,
         "enerRegen": 1.2
@@ -18890,7 +18890,7 @@
         "def_growth": 6.6882,
         "hp_base": 677,
         "hp_growth": 91.8185,
-        "anomMas": 91,
+        "anomMas_base": 91,
         "anomProf": 90,
         "impact": 119,
         "enerRegen": 1.2
@@ -20492,7 +20492,7 @@
         "def_growth": 6.5524,
         "hp_base": 592,
         "hp_growth": 80.3931,
-        "anomMas": 118,
+        "anomMas_base": 118,
         "anomProf": 120,
         "impact": 83,
         "enerRegen": 1.2
@@ -21846,7 +21846,7 @@
         "def_growth": 6.5524,
         "hp_base": 602,
         "hp_growth": 81.6391,
-        "anomMas": 115,
+        "anomMas_base": 115,
         "anomProf": 116,
         "impact": 83,
         "enerRegen": 1.2
@@ -21860,12 +21860,12 @@
         { "hp": 2064, "atk": 212, "def": 166 }
       ],
       "coreStats": [
-        { "atk_base": 0, "anomMas": 12 },
-        { "atk_base": 25, "anomMas": 12 },
-        { "atk_base": 25, "anomMas": 24 },
-        { "atk_base": 50, "anomMas": 24 },
-        { "atk_base": 50, "anomMas": 36 },
-        { "atk_base": 75, "anomMas": 36 }
+        { "atk_base": 0, "anomMas_base": 12 },
+        { "atk_base": 25, "anomMas_base": 12 },
+        { "atk_base": 25, "anomMas_base": 24 },
+        { "atk_base": 50, "anomMas_base": 24 },
+        { "atk_base": 50, "anomMas_base": 36 },
+        { "atk_base": 75, "anomMas_base": 36 }
       ],
       "skills": {
         "Basic": {
@@ -22830,7 +22830,7 @@
         "def_growth": 6.6203,
         "hp_base": 617,
         "hp_growth": 83.7238,
-        "anomMas": 94,
+        "anomMas_base": 94,
         "anomProf": 93,
         "impact": 93,
         "enerRegen": 1.2
@@ -24238,7 +24238,7 @@
         "def_growth": 6.5524,
         "hp_base": 595,
         "hp_growth": 80.8084,
-        "anomMas": 80,
+        "anomMas_base": 80,
         "anomProf": 95,
         "impact": 90,
         "enerRegen": 1.2
@@ -25623,7 +25623,7 @@
         "def_growth": 6.5524,
         "hp_base": 692,
         "hp_growth": 93.9358,
-        "anomMas": 93,
+        "anomMas_base": 93,
         "anomProf": 92,
         "impact": 83,
         "enerRegen": 1.2
@@ -26622,7 +26622,7 @@
         "def_growth": 6.6882,
         "hp_base": 626,
         "hp_growth": 84.9779,
-        "anomMas": 112,
+        "anomMas_base": 112,
         "anomProf": 114,
         "impact": 86,
         "enerRegen": 1.2
@@ -26636,12 +26636,12 @@
         { "hp": 2149, "atk": 224, "def": 169 }
       ],
       "coreStats": [
-        { "atk_base": 0, "anomMas": 12 },
-        { "atk_base": 25, "anomMas": 12 },
-        { "atk_base": 25, "anomMas": 24 },
-        { "atk_base": 50, "anomMas": 24 },
-        { "atk_base": 50, "anomMas": 36 },
-        { "atk_base": 75, "anomMas": 36 }
+        { "atk_base": 0, "anomMas_base": 12 },
+        { "atk_base": 25, "anomMas_base": 12 },
+        { "atk_base": 25, "anomMas_base": 24 },
+        { "atk_base": 50, "anomMas_base": 24 },
+        { "atk_base": 50, "anomMas_base": 36 },
+        { "atk_base": 75, "anomMas_base": 36 }
       ],
       "skills": {
         "Basic": {
@@ -27972,7 +27972,7 @@
         "def_growth": 6.5524,
         "hp_base": 602,
         "hp_growth": 81.6391,
-        "anomMas": 93,
+        "anomMas_base": 93,
         "anomProf": 92,
         "impact": 90,
         "enerRegen": 1.2
@@ -29338,7 +29338,7 @@
         "def_growth": 6.6882,
         "hp_base": 663,
         "hp_growth": 90.0269,
-        "anomMas": 94,
+        "anomMas_base": 94,
         "anomProf": 93,
         "impact": 118,
         "enerRegen": 1.2
@@ -30668,7 +30668,7 @@
         "def_growth": 6.6203,
         "hp_base": 626,
         "hp_growth": 84.9779,
-        "anomMas": 112,
+        "anomMas_base": 112,
         "anomProf": 114,
         "impact": 86,
         "enerRegen": 1.2
@@ -30682,12 +30682,12 @@
         { "hp": 2149, "atk": 226, "def": 167 }
       ],
       "coreStats": [
-        { "atk_base": 0, "anomMas": 12 },
-        { "atk_base": 25, "anomMas": 12 },
-        { "atk_base": 25, "anomMas": 24 },
-        { "atk_base": 50, "anomMas": 24 },
-        { "atk_base": 50, "anomMas": 36 },
-        { "atk_base": 75, "anomMas": 36 }
+        { "atk_base": 0, "anomMas_base": 12 },
+        { "atk_base": 25, "anomMas_base": 12 },
+        { "atk_base": 25, "anomMas_base": 24 },
+        { "atk_base": 50, "anomMas_base": 24 },
+        { "atk_base": 50, "anomMas_base": 36 },
+        { "atk_base": 75, "anomMas_base": 36 }
       ],
       "skills": {
         "Basic": {
@@ -32118,7 +32118,7 @@
         "def_growth": 8.1379,
         "hp_base": 699,
         "hp_growth": 94.9375,
-        "anomMas": 86,
+        "anomMas_base": 86,
         "anomProf": 90,
         "impact": 94,
         "enerRegen": 1.2
@@ -33276,7 +33276,7 @@
         "def_growth": 6.6882,
         "hp_base": 561,
         "hp_growth": 76.1177,
-        "anomMas": 116,
+        "anomMas_base": 116,
         "anomProf": 118,
         "impact": 86,
         "enerRegen": 1.2
@@ -34506,7 +34506,7 @@
         "def_growth": 6.5524,
         "hp_base": 692,
         "hp_growth": 93.9358,
-        "anomMas": 93,
+        "anomMas_base": 93,
         "anomProf": 92,
         "impact": 83,
         "enerRegen": 1.2
@@ -35859,7 +35859,7 @@
         "def_growth": 6.6882,
         "hp_base": 626,
         "hp_growth": 84.9779,
-        "anomMas": 92,
+        "anomMas_base": 92,
         "anomProf": 90,
         "impact": 93,
         "enerRegen": 1.2

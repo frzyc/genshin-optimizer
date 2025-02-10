@@ -261,7 +261,7 @@ export default function PageOptimize() {
                 <Typography variant="h6">
                   <WengineRefineName
                     wKey={character.wengineKey}
-                    phrase={character.wenginePhase}
+                    phase={character.wenginePhase}
                   />
                 </Typography>
               )}
@@ -269,7 +269,7 @@ export default function PageOptimize() {
                 <Typography>
                   <WengineRefineDesc
                     wKey={character.wengineKey}
-                    phrase={character.wenginePhase}
+                    phase={character.wenginePhase}
                   />
                 </Typography>
               )}
