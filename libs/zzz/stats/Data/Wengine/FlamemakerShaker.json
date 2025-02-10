@@ -1,4 +1,5 @@
 {
+  "name": "Flamemaker Shaker",
   "rarity": "S",
   "type": "anomaly",
   "atk_base": 48,
@@ -7,5 +8,27 @@
   "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_S_1171.png",
   "desc": "Powered by a specially formulated fuel, this modified W-Engine is optimized to push combustion performance to the extreme. The engine operates by injecting fuel from the tank into the reaction chamber, where a high-pressure reaction device converts the fuel into searing flames, leaving behind a scorched aroma. It's rumored Nitro-Fuel can also be used as a power source, as there was a sighting of Burnice pouring one into the tank, and later scraping the remaining liquid back into a bar glass after the battle.\n\n<color=#959595>\"This is definitely slander from a competitor. The special drinks I serve to my customers are always clean and hygienic! The Nitro-Fuel that drains out from the tank is for my own consumption because the high-pressure concentration gives it a special taste!\" — Burnice, in defense of her professional reputation, oblivious to her customers unconsciously taking a step back.</color>",
   "desc2": "Equip to increase Anomaly Agents' combat capabilities",
-  "desc3": "Modified by Burnice, this W-Engine uses a special fuel as its power source to boost combustion performance to the max."
+  "desc3": "Modified by Burnice, this W-Engine uses a special fuel as its power source to boost combustion performance to the max.",
+  "refinement": [
+    {
+      "name": "Fuel on the Rocks",
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.6</color>/s. When hitting an enemy with an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Assist Attack</color>, the equipper's DMG increases by <color=#2BAD00>3.5%</color>, stacking up to 10 times and lasting for 6s. This effect can trigger once every 0.3s. While off-field, the stack effect is doubled. Repeated triggers reset the duration. Upon obtaining the DMG increase effect, if the number of current stacks is greater than or equal to 5, then the equipper's Anomaly Proficiency increases by <color=#2BAD00>50</color>. This Anomaly Proficiency increase does not stack and lasts for 6s."
+    },
+    {
+      "name": "Fuel on the Rocks",
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.75</color>/s. When hitting an enemy with an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Assist Attack</color>, the equipper's DMG increases by <color=#2BAD00>4.4%</color>, stacking up to 10 times and lasting for 6s. This effect can trigger once every 0.3s. While off-field, the stack effect is doubled. Repeated triggers reset the duration. Upon obtaining the DMG increase effect, if the number of current stacks is greater than or equal to 5, then the equipper's Anomaly Proficiency increases by <color=#2BAD00>62</color>. This Anomaly Proficiency increase does not stack and lasts for 6s."
+    },
+    {
+      "name": "Fuel on the Rocks",
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>0.9</color>/s. When hitting an enemy with an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Assist Attack</color>, the equipper's DMG increases by <color=#2BAD00>5.2%</color>, stacking up to 10 times and lasting for 6s. This effect can trigger once every 0.3s. While off-field, the stack effect is doubled. Repeated triggers reset the duration. Upon obtaining the DMG increase effect, if the number of current stacks is greater than or equal to 5, then the equipper's Anomaly Proficiency increases by <color=#2BAD00>75</color>. This Anomaly Proficiency increase does not stack and lasts for 6s."
+    },
+    {
+      "name": "Fuel on the Rocks",
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>1.05</color>/s. When hitting an enemy with an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Assist Attack</color>, the equipper's DMG increases by <color=#2BAD00>6.1%</color>, stacking up to 10 times and lasting for 6s. This effect can trigger once every 0.3s. While off-field, the stack effect is doubled. Repeated triggers reset the duration. Upon obtaining the DMG increase effect, if the number of current stacks is greater than or equal to 5, then the equipper's Anomaly Proficiency increases by <color=#2BAD00>87</color>. This Anomaly Proficiency increase does not stack and lasts for 6s."
+    },
+    {
+      "name": "Fuel on the Rocks",
+      "desc": "While off-field, the equipper's Energy Regen increases by <color=#2BAD00>1.2</color>/s. When hitting an enemy with an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Assist Attack</color>, the equipper's DMG increases by <color=#2BAD00>7%</color>, stacking up to 10 times and lasting for 6s. This effect can trigger once every 0.3s. While off-field, the stack effect is doubled. Repeated triggers reset the duration. Upon obtaining the DMG increase effect, if the number of current stacks is greater than or equal to 5, then the equipper's Anomaly Proficiency increases by <color=#2BAD00>100</color>. This Anomaly Proficiency increase does not stack and lasts for 6s."
+    }
+  ]
 }

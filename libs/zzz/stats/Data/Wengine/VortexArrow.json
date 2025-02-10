@@ -1,4 +1,5 @@
 {
+  "name": "[Vortex] Arrow",
   "type": "stun",
   "atk_base": 32,
   "second_statkey": "impact_",
@@ -6,5 +7,27 @@
   "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_B_Common_08.png",
   "desc": "A tactical W-Engine that locates enemies using high-frequency sound waves. Once it has marked its targets, it will activate its aiming aid to make the operator's precision attack more deadly. While this feature increases the operator's efficiency in battles, it may occasionally attract curious Ethereals from afar.",
   "desc2": "Equip to increase Stun Agents' combat capabilities",
-  "desc3": "A tactical W-Engine that locates enemies using high-frequency sound waves. Its aiming aid can make its operator's precision attack more deadly."
+  "desc3": "A tactical W-Engine that locates enemies using high-frequency sound waves. Its aiming aid can make its operator's precision attack more deadly.",
+  "refinement": [
+    {
+      "name": "Tsunami",
+      "desc": "The equipper's attacks inflict <color=#2BAD00>8%</color> more Daze on their main target."
+    },
+    {
+      "name": "Tsunami",
+      "desc": "The equipper's attacks inflict <color=#2BAD00>9%</color> more Daze on their main target."
+    },
+    {
+      "name": "Tsunami",
+      "desc": "The equipper's attacks inflict <color=#2BAD00>10%</color> more Daze on their main target."
+    },
+    {
+      "name": "Tsunami",
+      "desc": "The equipper's attacks inflict <color=#2BAD00>11%</color> more Daze on their main target."
+    },
+    {
+      "name": "Tsunami",
+      "desc": "The equipper's attacks inflict <color=#2BAD00>12%</color> more Daze on their main target."
+    }
+  ]
 }

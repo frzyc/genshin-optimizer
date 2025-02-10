@@ -1,4 +1,5 @@
 {
+  "name": "Marcato Desire",
   "rarity": "A",
   "type": "attack",
   "atk_base": 40,
@@ -7,5 +8,27 @@
   "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_Common_15.png",
   "desc": "Art can save those drowning in life. Mortals gather together, music of different emotions collide, and the drying graffiti on the wall speaks of a thousand unique forms of agency.\nNow, turn up the music until the soundwaves crash the Hollow. Even if Ethereals don't have ears, let's make them feel the power of humanity!",
   "desc2": "Equip to increase Attack Agents' combat capabilities",
-  "desc3": "Gather 'round, mortals! Turn up the music!"
+  "desc3": "Gather 'round, mortals! Turn up the music!",
+  "refinement": [
+    {
+      "name": "Get Everyone Fired Up",
+      "desc": "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> hits an enemy, the equipper's ATK increases by <color=#2BAD00>6%</color> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <color=#2BAD00>6%</color>."
+    },
+    {
+      "name": "Get Everyone Fired Up",
+      "desc": "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> hits an enemy, the equipper's ATK increases by <color=#2BAD00>6.9%</color> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <color=#2BAD00>6.9%</color>."
+    },
+    {
+      "name": "Get Everyone Fired Up",
+      "desc": "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> hits an enemy, the equipper's ATK increases by <color=#2BAD00>7.8%</color> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <color=#2BAD00>7.8%</color>."
+    },
+    {
+      "name": "Get Everyone Fired Up",
+      "desc": "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> hits an enemy, the equipper's ATK increases by <color=#2BAD00>8.7%</color> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <color=#2BAD00>8.7%</color>."
+    },
+    {
+      "name": "Get Everyone Fired Up",
+      "desc": "When an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> hits an enemy, the equipper's ATK increases by <color=#2BAD00>9.6%</color> for 8s. While the target is under an Attribute Anomaly, this effect is increased by an additional <color=#2BAD00>9.6%</color>."
+    }
+  ]
 }

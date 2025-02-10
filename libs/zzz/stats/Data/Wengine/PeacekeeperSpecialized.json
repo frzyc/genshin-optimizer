@@ -1,4 +1,5 @@
 {
+  "name": "Peacekeeper - Specialized",
   "rarity": "A",
   "type": "defense",
   "atk_base": 42,
@@ -7,5 +8,27 @@
   "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_1271.png",
   "desc": "A defensive W-Engine independently researched and created by Public Security with special emphasis on enhancing the energy conversion ability in its shield. Rumor has it that this model of W-Engine became the standard for all supporting units in Hollow operations due to an unknown member of the top brass pushing for mass production.\n\n<color=#959595>\"Even if you took it apart and rebuilt it into an actual physical shield, it would still be extremely sturdy... but it really is super heavy!\" —Seth, musing aloud as he studies the extremely expensive material of the W-Engine</color>",
   "desc2": "Equip to increase Defense Agents' combat capabilities",
-  "desc3": "A defensive W-Engine independently researched and created by Public Security which simplifies the offensive components to enhance the energy conversion ability in its shield. "
+  "desc3": "A defensive W-Engine independently researched and created by Public Security which simplifies the offensive components to enhance the energy conversion ability in its shield. ",
+  "refinement": [
+    {
+      "name": "Standard Blocking Technique",
+      "desc": "While Shielded, the equipper's Energy Regen increases by <color=#2BAD00>0.4</color>/s. The Anomaly Buildup of <color=#FFFFFF>EX Special Attacks</color> and <color=#FFFFFF>Assist Follow-Ups</color> increase by <color=#2BAD00>36%</color>."
+    },
+    {
+      "name": "Standard Blocking Technique",
+      "desc": "While Shielded, the equipper's Energy Regen increases by <color=#2BAD00>0.46</color>/s. The Anomaly Buildup of <color=#FFFFFF>EX Special Attacks</color>/<color=#FFFFFF>Assist Follow-Ups</color> increase by <color=#2BAD00>40%</color>."
+    },
+    {
+      "name": "Standard Blocking Technique",
+      "desc": "While Shielded, the equipper's Energy Regen increases by <color=#2BAD00>0.52</color>/s. The Anomaly Buildup of <color=#FFFFFF>EX Special Attacks</color>/<color=#FFFFFF>Assist Follow-Ups</color> increase by <color=#2BAD00>45%</color>."
+    },
+    {
+      "name": "Standard Blocking Technique",
+      "desc": "While Shielded, the equipper's Energy Regen increases by <color=#2BAD00>0.58</color>/s. The Anomaly Buildup of <color=#FFFFFF>EX Special Attacks</color>/<color=#FFFFFF>Assist Follow-Ups</color> increase by <color=#2BAD00>50%</color>."
+    },
+    {
+      "name": "Standard Blocking Technique",
+      "desc": "While Shielded, the equipper's Energy Regen increases by <color=#2BAD00>0.64</color>/s. The Anomaly Buildup of <color=#FFFFFF>EX Special Attacks</color>/<color=#FFFFFF>Assist Follow-Ups</color> increase by <color=#2BAD00>55%</color>."
+    }
+  ]
 }

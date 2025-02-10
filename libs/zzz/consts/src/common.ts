@@ -5,6 +5,7 @@ import {
   allDiscMainStatKeys,
   allDiscSubStatKeys,
 } from './disc'
+import type { WengineCondKey } from './wengine'
 
 export const otherStatKeys = [
   // Used by calc, likely will be bundled into pando
@@ -130,5 +131,11 @@ Object.entries(elementalData).forEach(([e, name]) => {
   statKeyTextMap[`${e}_dmg_`] = `${name} DMG Bonus`
 })
 
-export type CondKey = DiscCondKey
+export type CondKey = DiscCondKey | WengineCondKey
 export const allCondKeys = Object.keys(allDiscCondKeys) as CondKey[]
+export type CondMeta = {
+  key: CondKey
+  text: string | ((val: number) => string)
+  max: number
+  min: number
+}

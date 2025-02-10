@@ -3,11 +3,18 @@ import {
   DropdownButton,
   NumberInputLazy,
 } from '@genshin-optimizer/common/ui'
-import { objMap, toDecimal } from '@genshin-optimizer/common/util'
-import type { FormulaKey } from '@genshin-optimizer/zzz/consts'
+import {
+  objFilter,
+  objMap,
+  range,
+  toDecimal,
+} from '@genshin-optimizer/common/util'
+import type { DiscSlotKey, FormulaKey } from '@genshin-optimizer/zzz/consts'
 import {
   allCoreKeysWithNone,
+  allDiscSlotKeys,
   allFormulaKeys,
+  wengineSheets,
   type LocationKey,
 } from '@genshin-optimizer/zzz/consts'
 import type { Stats } from '@genshin-optimizer/zzz/db'
@@ -20,6 +27,8 @@ import {
 import {
   LocationAutocomplete,
   WengineAutocomplete,
+  WengineRefineDesc,
+  WengineRefineName,
 } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
@@ -31,8 +40,10 @@ import {
 import { Stack } from '@mui/system'
 import { useCallback, useMemo, useState } from 'react'
 import BaseStatCard from './BaseStatCard'
+import { BuildDisplay } from './BuildDisplay'
 import { BuildsDisplay } from './BuildsDisplay'
 import { CharacterContext } from './CharacterContext'
+import { ConditionalToggles } from './ConditionalToggle'
 import { DiscConditionalsCard } from './DiscConditionalCard'
 import OptimizeWrapper from './Optimize'
 import { OptimizeTargetSelector } from './OptimizeTargetSelector'
@@ -41,7 +52,7 @@ import { StatsDisplay } from './StatsDisplay'
 export default function PageOptimize() {
   const { database } = useDatabaseContext()
   const [builds, setBuilds] = useState<BuildResult[]>([])
-  const [locationKey, setLocationKey] = useState<LocationKey>('')
+  const [locationKey, setLocationKey] = useState<LocationKey>('Miyabi')
 
   const character =
     useCharacter(locationKey) ??
@@ -61,7 +72,11 @@ export default function PageOptimize() {
 
   const wengineStats = useMemo(() => {
     if (!character) return undefined
-    return getWengineStats(character.wengineKey, character.wengineLvl)
+    return getWengineStats(
+      character.wengineKey,
+      character.wengineLvl,
+      character.wengineRefine
+    )
   }, [character])
 
   const baseStats = useMemo(
@@ -80,6 +95,29 @@ export default function PageOptimize() {
       character && database.chars.set(character.key, { formulaKey: key })
     },
     [character, database.chars]
+  )
+
+  const sheet = character && wengineSheets[character.wengineKey]
+  const wengineCondstats = useMemo(
+    () =>
+      character &&
+      sheet?.getStats &&
+      sheet.getStats(character?.conditionals, baseStats),
+    [baseStats, character, sheet]
+  )
+
+  const discIds = useMemo(
+    () =>
+      Object.fromEntries(
+        allDiscSlotKeys.map((k) => [
+          k,
+          database.discs.values.find(
+            ({ slotKey, location }) => slotKey === k && location === locationKey
+          )?.id ?? '',
+        ])
+      ) as Record<DiscSlotKey, string>,
+
+    [database.discs.values, locationKey]
   )
 
   return (
@@ -138,14 +176,18 @@ export default function PageOptimize() {
                   ))}
                 </DropdownButton>
               </Box>
-              {characterStats && (
-                <StatsDisplay stats={characterStats} showBase />
-              )}
+              {characterStats && <StatsDisplay stats={characterStats} />}
               <OptimizeTargetSelector
                 disabled={!character}
                 formulaKey={character?.formulaKey ?? allFormulaKeys[0]}
                 setFormulaKey={setFormulaKey}
               />
+            </Stack>
+          </CardContent>
+        </CardThemed>
+        <CardThemed>
+          <CardContent>
+            <Stack spacing={1}>
               <Typography variant="h6">Wengine</Typography>
               <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
                 <WengineAutocomplete
@@ -159,6 +201,22 @@ export default function PageOptimize() {
                   sx={{ flexGrow: 1 }}
                   autoFocus
                 />
+                <DropdownButton
+                  title={`Refinement: ${character?.wengineRefine ?? 1}`}
+                  disabled={!character}
+                >
+                  {range(1, 5).map((n) => (
+                    <MenuItem
+                      key={n}
+                      onClick={() =>
+                        character &&
+                        database.chars.set(character.key, { wengineRefine: n })
+                      }
+                    >
+                      Refinement {n}
+                    </MenuItem>
+                  ))}
+                </DropdownButton>
                 <NumberInputLazy
                   disabled={!character}
                   value={character?.wengineLvl ?? 60}
@@ -180,10 +238,40 @@ export default function PageOptimize() {
                   }}
                 />
               </Box>
-              {wengineStats && <StatsDisplay stats={wengineStats} showBase />}
+              {wengineStats && (
+                <StatsDisplay
+                  stats={objFilter(
+                    wengineStats,
+                    (_, k) => !k.startsWith('wengine')
+                  )}
+                />
+              )}
+              {character && (
+                <Typography variant="h6">
+                  <WengineRefineName
+                    wKey={character.wengineKey}
+                    refinment={character.wengineRefine}
+                  />
+                </Typography>
+              )}
+              {character && (
+                <Typography>
+                  <WengineRefineDesc
+                    wKey={character.wengineKey}
+                    refinment={character.wengineRefine}
+                  />
+                </Typography>
+              )}
             </Stack>
           </CardContent>
+          {sheet && <ConditionalToggles condMetas={sheet.condMeta} />}
+          {!!wengineCondstats && !!Object.keys(wengineCondstats).length && (
+            <CardContent>
+              <StatsDisplay stats={wengineCondstats} />
+            </CardContent>
+          )}
         </CardThemed>
+        <BuildDisplay discIds={discIds} baseStats={baseStats} />
         <BaseStatCard
           locationKey={locationKey}
           baseStats={character?.stats ?? {}}
@@ -196,11 +284,7 @@ export default function PageOptimize() {
           location={locationKey}
           formulaKey={character?.formulaKey ?? allFormulaKeys[0]}
         />
-        <BuildsDisplay
-          builds={builds}
-          stats={baseStats}
-          location={locationKey}
-        />
+        <BuildsDisplay builds={builds} stats={baseStats} />
       </Box>
     </CharacterContext.Provider>
   )

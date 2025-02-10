@@ -13,8 +13,10 @@ import type {
 import {
   allAnomalyDmgKeys,
   allAttributeDamageKeys,
+  allWengineKeys,
   disc2pEffect,
   disc4PeffectSheets,
+  wengineSheets,
 } from '@genshin-optimizer/zzz/consts'
 import type { Stats } from '@genshin-optimizer/zzz/db'
 import type { DiscStats } from './common'
@@ -83,6 +85,13 @@ export function applyCalc(
       if (p4) objSumInPlace(sum, p4)
     }
   }
+
+  // Apply wengine Stats and Conditionals
+  const w = wengineSheets[allWengineKeys[s('wengineIndex')]]?.getStats(
+    conditionals,
+    sum
+  )
+  if (w) objSumInPlace(sum, w)
 
   // Rudimentary Calculations
   sum['initial_hp'] = s('hp_base') * (1 + s('hp_')) + s('hp')

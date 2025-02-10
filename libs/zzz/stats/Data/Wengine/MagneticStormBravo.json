@@ -1,4 +1,5 @@
 {
+  "name": "[Magnetic Storm] Bravo",
   "type": "anomaly",
   "atk_base": 32,
   "second_statkey": "anomProf",
@@ -6,5 +7,27 @@
   "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_B_Common_11.png",
   "desc": "This damage-type W-Engine features enhanced movement detection modules that can detect the operator's status in real-time and boost their combat prowess at critical moments to optimize battle efficiency. After the operator completes the finishing move, the W-Engine emits a dazzling multicolored flash and rates the operator's move.",
   "desc2": "Equip to increase Anomaly Agents' combat capabilities",
-  "desc3": "A damage-type W-Engine that features an enhanced movement detection module that can quickly alter its output intensity to optimize battle efficiency."
+  "desc3": "A damage-type W-Engine that features an enhanced movement detection module that can quickly alter its output intensity to optimize battle efficiency.",
+  "refinement": [
+    {
+      "name": "High-Voltage Surge",
+      "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Proficiency by <color=#2BAD00>25</color> for 10s. This effect can trigger once every 20s."
+    },
+    {
+      "name": "High-Voltage Surge",
+      "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Proficiency by <color=#2BAD00>28</color> for 10s. This effect can trigger once every 20s."
+    },
+    {
+      "name": "High-Voltage Surge",
+      "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Proficiency by <color=#2BAD00>32</color> for 10s. This effect can trigger once every 20s."
+    },
+    {
+      "name": "High-Voltage Surge",
+      "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Proficiency by <color=#2BAD00>36</color> for 10s. This effect can trigger once every 20s."
+    },
+    {
+      "name": "High-Voltage Surge",
+      "desc": "Accumulating Anomaly Buildup increases the equipper's Anomaly Proficiency by <color=#2BAD00>40</color> for 10s. This effect can trigger once every 20s."
+    }
+  ]
 }

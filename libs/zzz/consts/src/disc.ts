@@ -425,4 +425,4 @@ export const disc4PeffectSheets: Partial<
       return undefined
     },
   },
-}
+} as const

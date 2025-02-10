@@ -5,6 +5,7 @@ import type {
   DiscSetKey,
   SkillKey,
   SpecialityKey,
+  WengineKey,
 } from '@genshin-optimizer/zzz/consts'
 import type { StaticImageData } from 'next/image'
 import commonImages from './common'
@@ -13,6 +14,7 @@ import skill from './common/skill'
 import speciality from './common/speciality'
 import chars from './gen/chars'
 import discs from './gen/discs'
+import wengine from './gen/wengines'
 type CommonImagesKey = 'discDrive'
 
 export function characterAsset(
@@ -40,4 +42,8 @@ export function commonDefIcon(key: SkillKey) {
 
 export function commonDefImages(key: CommonImagesKey) {
   return key ? commonImages[key] : ''
+}
+
+export function wengineIcon(wKey: WengineKey) {
+  return wKey ? wengine[wKey].icon : ''
 }

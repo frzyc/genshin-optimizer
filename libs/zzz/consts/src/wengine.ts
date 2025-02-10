@@ -1,3 +1,6 @@
+import { objSumInPlace } from '@genshin-optimizer/common/util'
+import type { CondKey } from './common'
+
 export const allWengineRarityKeys = ['S', 'A'] as const
 export type WengineRarityKey = (typeof allWengineRarityKeys)[number]
 
@@ -69,3 +72,231 @@ export type ModificationKey = (typeof allModificationKeys)[number]
 
 export const allPhaseKeys = [1, 2, 3, 4, 5] as const
 export type PhaseKey = (typeof allPhaseKeys)[number]
+export const allWengineCondKeys = {
+  BashfulDemon: {
+    key: 'BashfulDemon',
+    text: (val: number) => `${val}x Launching an EX Special Attack`,
+    min: 1,
+    max: 4,
+  },
+  BlazingLaurelImpact: {
+    key: 'BlazingLaurelImpact',
+    text: `Upon launching a Quick Assist or Perfect Assist`,
+    min: 1,
+    max: 1,
+  },
+  BlazingLaurelCritDmg: {
+    key: 'BlazingLaurelCritDmg',
+    text: (val: number) => `${val}x Wilt`,
+    min: 1,
+    max: 20,
+  },
+  BunnyBand: {
+    key: 'BunnyBand',
+    text: 'Shielded',
+    min: 1,
+    max: 1,
+  },
+  DeepSeaVisitorBasic: {
+    key: 'DeepSeaVisitorBasic',
+    text: 'hitting an enemy with a Basic Attack',
+    min: 1,
+    max: 1,
+  },
+  DeepSeaVisitorDash: {
+    key: 'DeepSeaVisitorDash',
+    text: 'hitting an enemy with a Dash Attack',
+    min: 1,
+    max: 1,
+  },
+  DrillRigRedAxis: {
+    key: 'DrillRigRedAxis',
+    text: 'When launching an EX Special Attack or Chain Attack',
+    min: 1,
+    max: 1,
+  },
+  ElectroLipGloss: {
+    key: 'ElectroLipGloss',
+    text: 'enemies inflicted with Attribute Anomaly',
+    min: 1,
+    max: 1,
+  },
+  ElegantVanity: {
+    key: 'ElegantVanity',
+    text: (val: number) =>
+      `${val}x When the equipper consumes 25 or more Energy`,
+    min: 1,
+    max: 2,
+  },
+  FlamemakerShakerOffField: {
+    key: 'FlamemakerShakerOffField',
+    text: 'When off-field',
+    min: 1,
+    max: 1,
+  },
+  FlamemakerShakerStack: {
+    key: 'FlamemakerShakerStack',
+    text: (val: number) =>
+      `${val}x Stacks of hitting an enemy with an EX Special Attack or Assist Attack`,
+    min: 1,
+    max: 10,
+  },
+} as const
+export type WengineCondKey = keyof typeof allWengineCondKeys
+export const wengineSheets: Partial<
+  Record<
+    WengineKey,
+    {
+      condMeta:
+        | (typeof allWengineCondKeys)[WengineCondKey]
+        | Array<(typeof allWengineCondKeys)[WengineCondKey]>
+      getStats: (
+        conds: Partial<Record<CondKey, number>>,
+        stats: Record<string, number>
+      ) => Record<string, number> | undefined
+    }
+  >
+> = {
+  //Increases Ice DMG by 15%. When launching an EX Special Attack, all squad members' ATK increases by 2% for 12s, stacking up to 4 times. Repeated triggers reset the duration. Passive effects of the same name do not stack.
+  BashfulDemon: {
+    condMeta: allWengineCondKeys.BashfulDemon,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const ice_ = [0.15, 0.175, 0.2, 0.22, 0.24]
+      const atk_ = [0.02, 0.023, 0.026, 0.029, 0.032]
+      const ret: Record<string, number> = {
+        ice_dmg_: ice_[ref],
+      }
+      if (conds['BashfulDemon'])
+        objSumInPlace(ret, { cond_atk_: atk_[ref] * conds['BashfulDemon'] })
+      return ret
+    },
+  },
+  BlazingLaurel: {
+    condMeta: [
+      allWengineCondKeys.BlazingLaurelImpact,
+      allWengineCondKeys.BlazingLaurelCritDmg,
+    ],
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const imp = [0.25, 0.2875, 0.325, 0.3625, 0.4]
+      const dmg_ = [0.015, 0.0172, 0.0195, 0.0217, 0.024]
+      const ret: Record<string, number> = {}
+      if (conds['BlazingLaurelImpact'])
+        objSumInPlace(ret, { impact_: imp[ref] })
+      if (conds['BlazingLaurelCritDmg'])
+        objSumInPlace(ret, {
+          crit_dmg_: dmg_[ref] * conds['BlazingLaurelCritDmg'],
+        }) // TODO: Icon/Fire Crit DMG
+      return ret
+    },
+  },
+  BunnyBand: {
+    condMeta: allWengineCondKeys.BunnyBand,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const hp_ = [0.08, 0.092, 0.104, 0.116, 0.128]
+      const atk_ = [0.1, 0.115, 0.13, 0.145, 0.16]
+      const ret: Record<string, number> = {
+        hp_: hp_[ref],
+      }
+      if (conds['BunnyBand']) objSumInPlace(ret, { cond_atk_: atk_[ref] })
+      return ret
+    },
+  },
+  CannonRotor: {
+    condMeta: [],
+    getStats: (_, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const atk_ = [0.075, 0.086, 0.097, 0.108, 0.12]
+      const ret: Record<string, number> = {
+        atk_: atk_[ref],
+      }
+      return ret
+    },
+  },
+  DeepSeaVisitor: {
+    condMeta: [
+      allWengineCondKeys.DeepSeaVisitorBasic,
+      allWengineCondKeys.DeepSeaVisitorDash,
+    ],
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const ice_ = [0.25, 0.315, 0.38, 0.445, 0.5]
+      const crit_ = [0.1, 0.125, 0.15, 0.175, 0.2]
+      const ret: Record<string, number> = {
+        ice_dmg_: ice_[ref],
+      }
+      if (conds['DeepSeaVisitorBasic'])
+        objSumInPlace(ret, { crit_: crit_[ref] })
+      if (conds['DeepSeaVisitorDash']) objSumInPlace(ret, { crit_: crit_[ref] })
+      return ret
+    },
+  },
+  DemaraBatteryMarkII: {
+    condMeta: [],
+    getStats: (_, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const ele_ = [0.15, 0.175, 0.2, 0.22, 0.24]
+      const ret: Record<string, number> = {
+        electric_dmg_: ele_[ref],
+      }
+      return ret
+    },
+  },
+  DrillRigRedAxis: {
+    condMeta: allWengineCondKeys.DrillRigRedAxis,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const ele_ = [0.5, 0.575, 0.65, 0.725, 0.8]
+      const ret: Record<string, number> = {}
+      if (conds['DrillRigRedAxis'])
+        objSumInPlace(ret, { electric_dmg_: ele_[ref] })
+      return ret
+    },
+  },
+  ElectroLipGloss: {
+    condMeta: allWengineCondKeys.ElectroLipGloss,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const atk_ = [0.1, 0.115, 0.13, 0.145, 0.16]
+      const dmg_ = [0.15, 0.175, 0.2, 0.225, 0.25]
+      const ret: Record<string, number> = {}
+      if (conds['ElectroLipGloss'])
+        objSumInPlace(ret, { cond_atk_: atk_[ref], dmg_: dmg_[ref] })
+      return ret
+    },
+  },
+  ElegantVanity: {
+    condMeta: allWengineCondKeys.ElegantVanity,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const dmg_ = [0.1, 0.115, 0.13, 0.145, 0.16]
+      const ret: Record<string, number> = {}
+      if (conds['ElegantVanity'])
+        objSumInPlace(ret, { dmg_: dmg_[ref] * conds['ElegantVanity'] })
+      return ret
+    },
+  },
+  FlamemakerShaker: {
+    condMeta: [
+      allWengineCondKeys.FlamemakerShakerOffField,
+      allWengineCondKeys.FlamemakerShakerStack,
+    ],
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const dmg_ = [0.035, 0.044, 0.052, 0.061, 0.07]
+      const anomProf = [50, 62, 75, 87, 100]
+      if (conds['FlamemakerShakerStack']) {
+        const ret: Record<string, number> = {
+          dmg_: dmg_[ref] * conds['FlamemakerShakerStack'],
+        }
+        if (conds['FlamemakerShakerStack'] >= 5)
+          objSumInPlace(ret, { anomProf: anomProf[ref] })
+        return ret
+      }
+      return undefined
+    },
+  },
+  // TODO: the rest of them painge
+} as const

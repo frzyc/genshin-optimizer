@@ -32,8 +32,10 @@ type WengineRawData = {
     Format: '{0:0.#%}'
     Value: 1000
   }
+  Talents: Record<'1' | '2' | '3' | '4' | '5', { Name: string; Desc: string }>
 }
 export type WengineData = {
+  name: string
   rarity: WengineRarityKey
   type: SpecialityKey
   atk_base: number
@@ -43,6 +45,7 @@ export type WengineData = {
   desc: string
   desc2: string
   desc3: string
+  refinement: Array<{ name: string; desc: string }>
 }
 export const wengineDetailedJSONData = Object.fromEntries(
   Object.entries(WengineIdMap).map(([id, name]) => {
@@ -51,6 +54,7 @@ export const wengineDetailedJSONData = Object.fromEntries(
     ) as WengineRawData
     const second_statkey = subStatMap[raw.RandProperty.Name2]
     const data: WengineData = {
+      name: raw.Name,
       rarity: wengineRarityMap[raw.Rarity],
       type: specialityMap[Object.keys(raw.WeaponType)[0] as any],
       atk_base: raw.BaseProperty.Value,
@@ -61,6 +65,10 @@ export const wengineDetailedJSONData = Object.fromEntries(
       desc: raw.Desc,
       desc2: raw.Desc2,
       desc3: raw.Desc3,
+      refinement: Object.values(raw.Talents).map(({ Name, Desc }) => ({
+        name: Name,
+        desc: Desc,
+      })),
     }
     return [name, data] as const
   })
