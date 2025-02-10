@@ -1,4 +1,5 @@
 import { useDatabaseTally } from '@genshin-optimizer/common/database-ui'
+import { AnvilIcon } from '@genshin-optimizer/common/svgicons'
 import { Tally } from '@genshin-optimizer/common/ui'
 import { useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { shouldShowDevComponents } from '@genshin-optimizer/zzz/ui'
@@ -49,6 +50,13 @@ const characters: ITab = {
   value: 'characters',
 }
 
+const wengines: ITab = {
+  i18Key: 'tabs.wengines',
+  icon: <AnvilIcon />,
+  to: '/wengines',
+  value: 'wengines',
+}
+
 const optimize: ITab = {
   i18Key: 'tabs.optimize',
   icon: <CalculateIcon />,
@@ -87,6 +95,7 @@ const maincontent = [
   discs,
   optimize,
   ...(shouldShowDevComponents ? [characters] : []),
+  ...(shouldShowDevComponents ? [wengines] : []),
   settings,
 ] as const //Todo remove shouldShowDevComponents for characters once it's ready for prod
 
@@ -191,6 +200,7 @@ const mobileContent = [
   discs,
   optimize,
   ...(shouldShowDevComponents ? [characters] : []),
+  ...(shouldShowDevComponents ? [wengines] : []),
   settings,
 ] as const //Todo remove shouldShowDevComponents for characters once it's ready for prod
 
