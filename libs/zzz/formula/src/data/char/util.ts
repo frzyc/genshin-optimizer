@@ -150,9 +150,10 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
       )
     }),
     // Other base stats
-    ...(['anomProf', 'anomMas', 'impact', 'enerRegen'] as const).map((stat) =>
+    ...(['anomProf', 'impact', 'enerRegen'] as const).map((stat) =>
       ownBuff.base[stat].add(data_gen.stats[stat])
     ),
+    ownBuff.base.anomMas.add(data_gen.stats.anomMas_base),
     // Core skill stat boost
     ...Object.entries(coreStats).map(([stat, values]) => {
       switch (stat) {
