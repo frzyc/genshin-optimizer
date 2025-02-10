@@ -15,7 +15,11 @@ import {
   wengineAsset,
   wenginePhaseIcon,
 } from '@genshin-optimizer/zzz/assets'
-import type { LocationKey, WengineKey } from '@genshin-optimizer/zzz/consts'
+import type {
+  LocationKey,
+  WengineKey,
+  WengineSubStatKey,
+} from '@genshin-optimizer/zzz/consts'
 import { discRarityColor as rarityColor } from '@genshin-optimizer/zzz/consts'
 import { getWengineStat, getWengineStats } from '@genshin-optimizer/zzz/stats'
 import { Edit } from '@mui/icons-material'
@@ -233,7 +237,7 @@ function SubstatDisplay({
   substatKey,
   substatValue,
 }: {
-  substatKey: any
+  substatKey: WengineSubStatKey
   substatValue: number
 }) {
   if (!substatKey) return null
