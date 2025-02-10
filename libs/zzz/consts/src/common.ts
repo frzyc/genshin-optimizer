@@ -96,6 +96,7 @@ export const statKeyTextMap: Partial<Record<string, string>> = {
   anomMas: 'Anomaly Mastery',
   anomMas_: 'Anomaly Mastery',
   anomProf: 'Anomaly Proficiency',
+  anomBuild_: 'Anomaly Buildup',
   ...objKeyMap(allAnomalyDmgKeys, (dmg_) => `${dmg_} DMG Bonus`),
   dmg_: 'DMG Bonus',
   charLvl: 'Character Level',

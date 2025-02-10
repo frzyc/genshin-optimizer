@@ -191,6 +191,84 @@ export const allWengineCondKeys = {
     min: 1,
     max: 1,
   },
+  MagneticStormAlpha: {
+    key: 'MagneticStormAlpha',
+    text: 'Accumulating Anomaly Buildup',
+    min: 1,
+    max: 1,
+  },
+  MagneticStormBravo: {
+    key: 'MagneticStormBravo',
+    text: 'Accumulating Anomaly Buildup',
+    min: 1,
+    max: 1,
+  },
+  MarcatoDesireHit: {
+    key: 'MarcatoDesireHit',
+    text: `When an EX Special Attack or Chain Attack hits an enemy`,
+    min: 1,
+    max: 1,
+  },
+  MarcatoDesireAnomaly: {
+    key: 'MarcatoDesireAnomaly',
+    text: `While the target is under an Attribute Anomaly`,
+    min: 1,
+    max: 1,
+  },
+  OriginalTransmorpher: {
+    key: 'OriginalTransmorpher',
+    text: 'When attacked',
+    min: 1,
+    max: 1,
+  },
+  RainforestGourmet: {
+    key: 'RainforestGourmet',
+    text: (val: number) => `${val}x Stacks`,
+    min: 1,
+    max: 10,
+  },
+  ReverbMarkII: {
+    key: 'ReverbMarkII',
+    text: 'Launching an EX Special Attack or Chain Attack',
+    min: 1,
+    max: 1,
+  },
+  ReverbMarkIII: {
+    key: 'ReverbMarkIII',
+    text: 'Launching a Chain Attack or Ultimate',
+    min: 1,
+    max: 1,
+  },
+  RiotSuppressorMarkVI: {
+    key: 'RiotSuppressorMarkVI',
+    text: 'consumes a Charge stack',
+    min: 1,
+    max: 1,
+  },
+  RoaringRideATK: {
+    key: 'RoaringRideATK',
+    text: "Increases the equipper's ATK",
+    min: 1,
+    max: 1,
+  },
+  RoaringRideAnomProf: {
+    key: 'RoaringRideAnomProf',
+    text: "increases the equipper's Anomaly Proficiency",
+    min: 1,
+    max: 1,
+  },
+  RoaringRideAnomBuild_: {
+    key: 'RoaringRideAnomBuild_',
+    text: "increases the equipper's Anomaly Buildup Rate",
+    min: 1,
+    max: 1,
+  },
+  SharpenedStinger: {
+    key: 'SharpenedStinger',
+    text: (val: number) => `${val}x Predatory Instinct`,
+    min: 1,
+    max: 3,
+  },
 } as const
 export type WengineCondKey = keyof typeof allWengineCondKeys
 export const wengineSheets: Partial<
@@ -480,6 +558,158 @@ export const wengineSheets: Partial<
       return {
         dmg_: dmg_[ref], //TODO: Basic Attack, Dash Attack, and Dodge Counter DMG
       } as Record<string, number>
+    },
+  },
+  MagneticStormAlpha: {
+    condMeta: allWengineCondKeys.MagneticStormAlpha,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const anomMas = [25, 28, 32, 36, 40]
+      if (conds['MagneticStormAlpha'])
+        return {
+          anomMas: anomMas[ref],
+        } as Record<string, number>
+      return undefined
+    },
+  },
+  MagneticStormBravo: {
+    condMeta: allWengineCondKeys.MagneticStormBravo,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const anomMas = [25, 28, 32, 36, 40]
+      if (conds['MagneticStormBravo'])
+        return {
+          anomMas: anomMas[ref],
+        } as Record<string, number>
+      return undefined
+    },
+  },
+  MarcatoDesire: {
+    condMeta: [
+      allWengineCondKeys.MarcatoDesireHit,
+      allWengineCondKeys.MarcatoDesireAnomaly,
+    ],
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const atk_ = [0.06, 0.07, 0.08, 0.09, 0.1]
+      if (conds['MarcatoDesireHit'] || conds['MarcatoDesireAnomaly'])
+        return {
+          cond_atk_:
+            atk_[ref] *
+            ((conds['MarcatoDesireHit'] ?? 0) +
+              (conds['MarcatoDesireAnomaly'] ?? 0)),
+        } as Record<string, number>
+      return undefined
+    },
+  },
+  OriginalTransmorpher: {
+    condMeta: allWengineCondKeys.OriginalTransmorpher,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const hp_ = [0.08, 0.09, 0.1, 0.11, 0.125]
+      const impact_ = [0.1, 0.115, 0.13, 0.145, 0.16]
+      const ret: Record<string, number> = {
+        hp_: hp_[ref],
+      }
+      if (conds['OriginalTransmorpher'])
+        objSumInPlace(ret, { impact_: impact_[ref] })
+      return ret
+    },
+  },
+  RainforestGourmet: {
+    condMeta: allWengineCondKeys.RainforestGourmet,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const atk_ = [0.025, 0.028, 0.032, 0.036, 0.04]
+      if (conds['RainforestGourmet'])
+        return {
+          cond_atk_: atk_[ref] * conds['RainforestGourmet'],
+        } as Record<string, number>
+      return undefined
+    },
+  },
+  ReverbMarkII: {
+    condMeta: allWengineCondKeys.ReverbMarkII,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const anom = [10, 12, 13, 15, 16]
+      if (conds['ReverbMarkII'])
+        return {
+          anomMas: anom[ref],
+          anomProf: anom[ref],
+        } as Record<string, number>
+      return undefined
+    },
+  },
+  ReverbMarkIII: {
+    condMeta: allWengineCondKeys.ReverbMarkIII,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const atk_ = [0.08, 0.09, 0.1, 0.11, 0.12]
+      if (conds['ReverbMarkIII'])
+        return {
+          atk_: atk_[ref],
+        } as Record<string, number>
+      return undefined
+    },
+  },
+  RiotSuppressorMarkVI: {
+    condMeta: allWengineCondKeys.RiotSuppressorMarkVI,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const crit_ = [0.15, 0.188, 0.226, 0.264, 0.3]
+      const dmg_ = [0.35, 0.435, 0.52, 0.605, 0.7]
+      const ret = {
+        crit_: crit_[ref],
+      } as Record<string, number>
+      if (conds['RiotSuppressorMarkVI']) objSumInPlace(ret, { dmg_: dmg_[ref] }) // TODO: increases the skill's DMG by 60.5%
+      return ret
+    },
+  },
+  RoaringRide: {
+    condMeta: [
+      allWengineCondKeys.RoaringRideATK,
+      allWengineCondKeys.RoaringRideAnomProf,
+      allWengineCondKeys.RoaringRideAnomBuild_,
+    ],
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const atk_ = [0.08, 0.092, 0.104, 0.116, 0.128]
+      const anomProf = [40, 46, 52, 58, 64]
+      const anomBuild_ = [0.25, 0.28, 0.32, 0.36, 0.4]
+      const ret: Record<string, number> = {}
+      if (conds['RoaringRideATK'])
+        objSumInPlace(ret, {
+          cond_atk_: atk_[ref],
+        })
+      if (conds['RoaringRideAnomProf'])
+        objSumInPlace(ret, {
+          anomProf: anomProf[ref],
+        })
+      if (conds['RoaringRideAnomBuild_'])
+        objSumInPlace(ret, {
+          anomBuild_: anomBuild_[ref],
+        })
+      return ret
+    },
+  },
+  SharpenedStinger: {
+    condMeta: allWengineCondKeys.SharpenedStinger,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const physical_dmg_ = [0.12, 0.15, 0.18, 0.21, 0.24]
+      const anomBuild_ = [0.4, 0.5, 0.6, 0.7, 0.8]
+      if (conds['SharpenedStinger']) {
+        if (conds['SharpenedStinger'] < 3)
+          return {
+            physical_dmg_: physical_dmg_[ref] * conds['SharpenedStinger'],
+          } as Record<string, number>
+        return {
+          physical_dmg_: physical_dmg_[ref] * conds['SharpenedStinger'],
+          anomBuild_: anomBuild_[ref],
+        } as Record<string, number>
+      }
+      return undefined
     },
   },
   // TODO: the rest of them painge

@@ -52,7 +52,7 @@ import { StatsDisplay } from './StatsDisplay'
 export default function PageOptimize() {
   const { database } = useDatabaseContext()
   const [builds, setBuilds] = useState<BuildResult[]>([])
-  const [locationKey, setLocationKey] = useState<LocationKey>('Miyabi')
+  const [locationKey, setLocationKey] = useState<LocationKey>('')
 
   const character =
     useCharacter(locationKey) ??
