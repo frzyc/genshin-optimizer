@@ -160,6 +160,8 @@ export function entriesForChar(data_gen: CharacterDatum): TagMapNodeEntries {
           return ownBuff.base.atk.add(subscript(core, values))
         case 'base_enerRegen':
           return ownBuff.base.enerRegen.add(subscript(core, values))
+        case 'anomMas_base':
+          return ownBuff.base.anomMas.add(subscript(core, values))
         default:
           return ownBuff.base[stat].add(subscript(core, values))
       }
