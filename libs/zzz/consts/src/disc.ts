@@ -376,7 +376,7 @@ export const disc4PeffectSheets: Partial<
   PolarMetal: {
     condMeta: allDiscCondKeys.PolarMetal,
     getStats: (conds) => {
-      const ret = { dmg_: 0.28 } // TODO: Basic Attack and Dash Attack DMG increases by 28%
+      const ret = { dmg_: 0.2 } // TODO: Increase the DMG of Basic Attack and Dash Attack by 20%
       if (conds['PolarMetal']) {
         objMultiplication(ret, 2)
       }

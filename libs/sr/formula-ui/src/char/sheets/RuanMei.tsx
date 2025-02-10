@@ -1,5 +1,5 @@
 import { ColorText, ImgIcon, SqBadge } from '@genshin-optimizer/common/ui'
-import type { UISheet } from '@genshin-optimizer/pando/ui-sheet'
+import type { UISheet } from '@genshin-optimizer/game-opt/sheet-ui'
 import { characterAsset } from '@genshin-optimizer/sr/assets'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import { buffs, conditionals, formulas } from '@genshin-optimizer/sr/formula'

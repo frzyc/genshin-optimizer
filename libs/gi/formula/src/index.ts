@@ -11,24 +11,23 @@ import {
 import { Calculator } from './calculator'
 import { keys, values } from './data'
 export { Calculator } from './calculator'
-export type { CalcMeta, SrcCondInfo } from './calculator'
 export * from './data/util'
 export * from './formulaText'
 export * from './meta'
 export * from './util'
 
 {
-  // Hook the custom formula at once the beginning
-  const calc = (args: (number | string)[]): number => {
+  // Hook the custom formula once at  the beginning
+  const resCalc = (args: (number | string)[]): number => {
     const x = args[0] as number
     if (x >= 0.75) return 1 / (1 + 4 * x)
     if (x >= 0) return 1 - x
     return 1 - 0.5 * x
   }
   addCustomOperation('res', {
-    range: ([r]) => ({ min: calc([r.max]), max: calc([r.min]) }),
+    range: ([r]) => ({ min: resCalc([r.max]), max: resCalc([r.min]) }),
     monotonicity: (_) => [{ inc: false, dec: true }],
-    calc,
+    calc: resCalc,
   })
 }
 

@@ -3,8 +3,5 @@
   "version": "0.0.1",
   "type": "commonjs",
   "executors": "./executors.json",
-  "generators": "./generators.json",
-  "dependencies": {
-    "@nx/devkit": "16.10.0"
-  }
+  "generators": "./generators.json"
 }

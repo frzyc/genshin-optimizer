@@ -6,7 +6,7 @@ import {
 import type {
   Document,
   UISheetElement,
-} from '@genshin-optimizer/pando/ui-sheet'
+} from '@genshin-optimizer/game-opt/sheet-ui'
 import { characterAsset } from '@genshin-optimizer/sr/assets'
 import {
   characterGenderedKeyToCharacterKey,

@@ -1,4 +1,4 @@
-import type { TagField } from '@genshin-optimizer/pando/ui-sheet'
+import type { TagField } from '@genshin-optimizer/game-opt/sheet-ui'
 import type { ElementalTypeKey } from '@genshin-optimizer/sr/consts'
 import {
   allElementalDmgMainStatKeys,
