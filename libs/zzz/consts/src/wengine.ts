@@ -269,6 +269,93 @@ export const allWengineCondKeys = {
     min: 1,
     max: 3,
   },
+  StarlightEngine: {
+    key: 'StarlightEngine',
+    text: 'Launching a Dodge Counter or Quick Assist',
+    min: 1,
+    max: 1,
+  },
+  StarlightEngineReplica: {
+    key: 'StarlightEngineReplica',
+    text: 'hitting an enemy at least 6 meters away with a Basic Attack or Dash Attack',
+    min: 1,
+    max: 1,
+  },
+  SteamOven: {
+    key: 'SteamOven',
+    text: (val: number) => `${val * 10} Energy accumulated`,
+    min: 1,
+    max: 8,
+  },
+  SteelCushion: {
+    key: 'SteelCushion',
+    text: 'when hitting the enemy from behind',
+    min: 1,
+    max: 1,
+  },
+  StreetSuperstar: {
+    key: 'StreetSuperstar',
+    text: (val: number) => `${val} Charge stacks`,
+    min: 1,
+    max: 3,
+  },
+  TheBrimstone: {
+    key: 'TheBrimstone',
+    text: (val: number) =>
+      `${val}x Upon hitting an enemy with a Basic Attack, Dash Attack, or Dodge Counter`,
+    min: 1,
+    max: 8,
+  },
+  TheRestrained: {
+    key: 'TheRestrained',
+    text: (val: number) =>
+      `${val}x When an attack hits an enemy, DMG and Daze from Basic Attacks`,
+    min: 1,
+    max: 5,
+  },
+  TheVault: {
+    key: 'TheVault',
+    text: 'Dealing Ether DMG using an EX Special Attack, Chain Attack, or Ultimate',
+    min: 1,
+    max: 1,
+  },
+  Timeweaver: {
+    key: 'Timeweaver',
+    text: 'When Special Attacks or EX Special Attacks hit enemies suffering an Attribute Anomaly',
+    min: 1,
+    max: 1,
+  },
+  TusksOfFury: {
+    key: 'TusksOfFury',
+    text: 'When any squad member triggers Interrupt or Perfect Dodge',
+    min: 1,
+    max: 1,
+  },
+  UnfetteredGameBall: {
+    key: 'UnfetteredGameBall',
+    text: "Whenever the equipper's attack triggers an Attribute Counter effect",
+    min: 1,
+    max: 1,
+  },
+  WeepingCradle: {
+    key: 'WeepingCradle',
+    text: (val: number) => `${val}x Attacks from the equipper`,
+    min: 1,
+    max: 6,
+  },
+  WeepingGemini: {
+    key: 'WeepingGemini',
+    text: (val: number) =>
+      `${val}x Whenever a squad member inflicts an Attribute Anomaly on an enemy`,
+    min: 1,
+    max: 4,
+  },
+  ZanshinHerbCase: {
+    key: 'ZanshinHerbCase',
+    text: 'When any squad member applies an Attribute Anomaly or Stuns an enemy',
+    min: 1,
+    max: 1,
+  },
 } as const
 export type WengineCondKey = keyof typeof allWengineCondKeys
 export const wengineSheets: Partial<
@@ -712,5 +799,200 @@ export const wengineSheets: Partial<
       return undefined
     },
   },
-  // TODO: the rest of them painge
+  StarlightEngine: {
+    condMeta: allWengineCondKeys.StarlightEngine,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const atk_ = [0.12, 0.138, 0.156, 0.174, 0.192]
+      if (conds['StarlightEngine'])
+        return {
+          cond_atk_: atk_[ref],
+        } as Record<string, number>
+      return undefined
+    },
+  },
+  StarlightEngineReplica: {
+    condMeta: allWengineCondKeys.StarlightEngineReplica,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const physical_dmg_ = [0.36, 0.41, 0.465, 0.52, 0.575]
+      if (conds['StarlightEngineReplica'])
+        return {
+          physical_dmg_: physical_dmg_[ref],
+        } as Record<string, number>
+      return undefined
+    },
+  },
+  SteamOven: {
+    condMeta: allWengineCondKeys.SteamOven,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const impact_ = [0.02, 0.023, 0.026, 0.029, 0.032]
+      if (conds['SteamOven'])
+        return {
+          impact_: impact_[ref] * conds['SteamOven'],
+        } as Record<string, number>
+      return undefined
+    },
+  },
+  SteelCushion: {
+    condMeta: allWengineCondKeys.SteelCushion,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const physical_dmg_ = [0.2, 0.25, 0.3, 0.35, 0.4]
+      const dmg_ = [0.25, 0.315, 0.38, 0.44, 0.5]
+      const ret = {
+        physical_dmg_: physical_dmg_[ref],
+      } as Record<string, number>
+      if (conds['SteelCushion']) {
+        objSumInPlace(ret, {
+          dmg_: dmg_[ref],
+        })
+      }
+      return ret
+    },
+  },
+  StreetSuperstar: {
+    condMeta: allWengineCondKeys.StreetSuperstar,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const dmg_ = [0.15, 0.172, 0.195, 0.217, 0.24]
+      if (conds['StreetSuperstar'])
+        return {
+          dmg_: dmg_[ref], // TODO: increases the skill's DMG by 24%.
+        } as Record<string, number>
+      return undefined
+    },
+  },
+  TheBrimstone: {
+    condMeta: allWengineCondKeys.TheBrimstone,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const atk_ = [0.035, 0.044, 0.052, 0.06, 0.07]
+      if (conds['TheBrimstone'])
+        return {
+          cond_atk_: atk_[ref] * conds['TheBrimstone'],
+        } as Record<string, number>
+      return undefined
+    },
+  },
+  TheRestrained: {
+    condMeta: allWengineCondKeys.TheRestrained,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const dmg_ = [0.06, 0.075, 0.09, 0.105, 0.12]
+      if (conds['TheRestrained'])
+        return {
+          // TODO: DMG and Daze from Basic Attacks
+          dmg_: dmg_[ref] * conds['TheRestrained'],
+          daze_: dmg_[ref] * conds['TheRestrained'],
+        } as Record<string, number>
+      return undefined
+    },
+  },
+  TheVault: {
+    condMeta: allWengineCondKeys.TheVault,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const dmg_ = [0.15, 0.175, 0.2, 0.22, 0.24]
+      if (conds['TheVault'])
+        return {
+          dmg_: dmg_[ref],
+        } as Record<string, number>
+      return undefined
+    },
+  },
+  Timeweaver: {
+    condMeta: allWengineCondKeys.Timeweaver,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      // TODO: const electric_anomBuildup = [0.3,0.35,0.4,0.45,0.5]
+      const anomProf = [75, 85, 95, 105, 115]
+      const dmg_ = [0.25, 0.275, 0.3, 0.325, 0.35]
+      const ret = {
+        // TODO: electric_anomBuildup
+      } as Record<string, number>
+      if (conds['Timeweaver'])
+        objSumInPlace(ret, {
+          anomProf: anomProf[ref],
+        })
+      if ((stats['anomProf'] ?? 0) >= 375)
+        objSumInPlace(ret, {
+          dmg_: dmg_[ref],
+        })
+      return ret
+    },
+  },
+  TusksOfFury: {
+    condMeta: allWengineCondKeys.TusksOfFury,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const shield_ = [0.3, 0.38, 0.46, 0.52, 0.6]
+      const dmg_ = [0.18, 0.225, 0.27, 0.315, 0.36]
+      const daze_ = [0.12, 0.15, 0.18, 0.21, 0.24]
+      const ret = {
+        shield_: shield_[ref],
+      } as Record<string, number>
+      if (conds['TusksOfFury'])
+        objSumInPlace(ret, {
+          dmg_: dmg_[ref],
+          daze_: daze_[ref],
+        })
+      return ret
+    },
+  },
+  UnfetteredGameBall: {
+    condMeta: allWengineCondKeys.UnfetteredGameBall,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const crit_ = [0.12, 0.135, 0.155, 0.175, 0.2]
+      if (conds['UnfetteredGameBall'])
+        return {
+          crit_: crit_[ref],
+        } as Record<string, number>
+      return undefined
+    },
+  },
+  WeepingCradle: {
+    condMeta: allWengineCondKeys.WeepingCradle,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const dmg_static = [0.1, 0.125, 0.15, 0.175, 0.2]
+      const dmg_ = [0.017, 0.02, 0.025, 0.03, 0.033]
+      if (conds['WeepingCradle'])
+        return {
+          dmg_: dmg_static[ref] + dmg_[ref] * conds['WeepingCradle'],
+        } as Record<string, number>
+      return undefined
+    },
+  },
+  WeepingGemini: {
+    condMeta: allWengineCondKeys.WeepingGemini,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const anomProf = [30, 34, 38, 42, 48]
+      if (conds['WeepingGemini'])
+        return {
+          anomProf: anomProf[ref] * conds['WeepingGemini'],
+        } as Record<string, number>
+      return undefined
+    },
+  },
+  ZanshinHerbCase: {
+    condMeta: allWengineCondKeys.ZanshinHerbCase,
+    getStats: (conds, stats) => {
+      const ref = stats['wengineRefine'] - 1
+      const crit_ = [0.1, 0.115, 0.13, 0.145, 0.16]
+      const electric_dmg_ = [0.4, 0.46, 0.58, 0.174, 0.64]
+      const ret = {
+        crit_: crit_[ref],
+        electric_dmg_: electric_dmg_[ref], // TODO: Dash Attack Electric DMG increases by 40%
+      } as Record<string, number>
+      if (conds['ZanshinHerbCase'])
+        objSumInPlace(ret, {
+          condcrit_: crit_[ref],
+        })
+      return ret
+    },
+  },
 } as const
