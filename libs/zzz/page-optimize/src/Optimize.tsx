@@ -242,11 +242,6 @@ export default function OptimizeWrapper({
           >
             Use equipped Discs
           </Button>
-          <Typography>
-            <strong>
-              NOTE: the solver currently accounts for 2-set effects only.
-            </strong>
-          </Typography>
 
           <Box sx={{ display: 'flex', gap: 1 }}>
             <WorkerSelector
