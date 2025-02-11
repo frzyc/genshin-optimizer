@@ -4,6 +4,7 @@ import {
   NextImage,
 } from '@genshin-optimizer/common/ui'
 import {
+  getUnitStr,
   range,
   statKeyToFixed,
   toPercent,
@@ -64,7 +65,7 @@ import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete } from '../../Character/LocationAutocomplete'
 import { shouldShowDevComponents } from '../../util/isDev'
 import { DiscCard } from '../DiscCard'
-import { DiscMainStatDropdown } from '../DiscMainStatDropdown'
+import { DiscMainStatGroup } from '../DiscMainStatGroup'
 import { DiscRarityDropdown } from '../DiscRarityDropdown'
 import { DiscSetAutocomplete } from '../DiscSetAutocomplete'
 import { textsFromImage } from './ScanningUtil'
@@ -405,32 +406,23 @@ export function DiscEditor({
                 </Stack>
                 {/* main stat */}
                 <Box component="div" display="flex" gap={1}>
-                  <DiscMainStatDropdown
+                  <DiscMainStatGroup
                     slotKey={slotKey}
                     statKey={disc?.mainStatKey}
                     setStatKey={(mainStatKey) => setDisc({ mainStatKey })}
-                    defText={t('mainStat')}
-                    dropdownButtonProps={{
-                      color: disc ? 'success' : 'primary',
-                    }}
                   />
                   <CardThemed bgt="light" sx={{ p: 1, flexGrow: 1 }}>
                     <Typography color="text.secondary">
                       {disc?.mainStatKey
-                        ? toPercent(
+                        ? `${toPercent(
                             getDiscMainStatVal(rarity, disc.mainStatKey, level),
                             disc.mainStatKey
-                          ).toFixed(statKeyToFixed(disc.mainStatKey))
+                          ).toFixed(
+                            statKeyToFixed(disc.mainStatKey)
+                          )}${getUnitStr(disc.mainStatKey)}`
                         : t('mainStat')}
                     </Typography>
                   </CardThemed>
-                  <Button
-                    onClick={() => setDisc({ lock: !disc?.lock })}
-                    color={disc?.lock ? 'success' : 'primary'}
-                    disabled={!disc}
-                  >
-                    {disc?.lock ? <LockIcon /> : <LockOpenIcon />}
-                  </Button>
                 </Box>
                 <LocationAutocomplete
                   locKey={disc?.location ?? ''}
