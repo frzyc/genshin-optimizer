@@ -70,7 +70,11 @@ export function ConditionalsDisplay({
     [filteredConditionals]
   )
 
+  // Default to first teammate as src.
+  // Null src can lead to crashes in specific instances, so it shouldn't be the default
   const [src, setSrc] = useState<string | null>(Object.keys(srcDisplay)[0])
+  // Default null (aka All) as dst.
+  // Most convenient for users
   const [dst, setDst] = useState<string | null>(null)
   return (
     <Stack spacing={1}>
