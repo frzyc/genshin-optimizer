@@ -200,11 +200,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       const hashList: string[] = [] // a hash to ensure sheet:condKey:src:dst is unique
       conditionals = conditionals.filter(
         ({ sheet, condKey, src, dst, condValues }) => {
-          if (
-            !(src === null || isMember(src)) ||
-            !(dst === null || isMember(dst))
-          )
-            return false
+          if (!isMember(src) || !(dst === null || isMember(dst))) return false
           const cond = getConditional(sheet, condKey)
           if (!cond) return false
 

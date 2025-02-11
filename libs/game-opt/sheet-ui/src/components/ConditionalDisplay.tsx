@@ -26,15 +26,14 @@ import {
   Typography,
 } from '@mui/material'
 import type { ReactNode } from 'react'
+import { memo, useCallback, useContext, useMemo, useState } from 'react'
 import {
-  createContext,
-  memo,
-  useCallback,
-  useContext,
-  useMemo,
-  useState,
-} from 'react'
-import { ConditionalValuesContext } from '../context'
+  ConditionalValuesContext,
+  SetConditionalContext,
+  SrcDstDisplayContext,
+} from '../context'
+import {} from '../context/SetConditionalContext'
+import {} from '../context/SrcDstDisplayContext'
 import type { Conditional } from '../types'
 import { FieldsDisplay } from './FieldDisplay'
 import { HeaderDisplay } from './HeaderDisplay'
@@ -65,14 +64,12 @@ export function ConditionalsDisplay({
   )
 
   const hasExisting = useCallback(
-    (src: string | null, dst: string | null) =>
+    (src: string, dst: string | null) =>
       filteredConditionals.some(({ src: s, dst: d }) => s === src && d === dst),
     [filteredConditionals]
   )
 
-  // Default to first teammate as src.
-  // Null src can lead to crashes in specific instances, so it shouldn't be the default
-  const [src, setSrc] = useState<string | null>(Object.keys(srcDisplay)[0])
+  const [src, setSrc] = useState<string>(Object.keys(srcDisplay)[0])
   // Default null (aka All) as dst.
   // Most convenient for users
   const [dst, setDst] = useState<string | null>(null)
@@ -107,23 +104,6 @@ export function ConditionalsDisplay({
   )
 }
 
-export const SrcDstDisplayContext = createContext<{
-  srcDisplay: Record<string, ReactNode>
-  dstDisplay: Record<string, ReactNode>
-}>({
-  srcDisplay: {},
-  dstDisplay: {},
-})
-export type SetConditionalFunc = (
-  sheet: string,
-  condKey: string,
-  src: string | null,
-  dst: string | null,
-  value: number
-) => void
-export const SetConditionalContext = createContext<SetConditionalFunc>(() =>
-  console.warn('SetConditional NOT IMPLEMENTED')
-)
 const ConditionalDisplay = memo(function ConditionalDisplay({
   conditional,
   src,
@@ -136,8 +116,8 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
   disabled,
 }: {
   conditional: Conditional
-  src: string | null
-  setSrc?: (src: string | null) => void
+  src: string
+  setSrc?: (src: string) => void
   dst: string | null
   setDst?: (dst: string | null) => void
   value: number
@@ -354,9 +334,9 @@ function CondSrcDst<S extends string, D extends string>({
   dstDisplay,
   setDst,
 }: {
-  src: S | null
+  src: S
   srcDisplay: Record<S, ReactNode>
-  setSrc?: (src: S | null) => void
+  setSrc?: (src: S) => void
   dst: D | null
   dstDisplay: Record<D, ReactNode>
   setDst?: (dst: D | null) => void
@@ -365,14 +345,52 @@ function CondSrcDst<S extends string, D extends string>({
     return null
   return (
     <Box display="flex" alignItems="center" justifyContent="space-between">
-      <SrcDstDisplay target={src} targetMap={srcDisplay} setTarget={setSrc} />
+      <SrcDisplay target={src} targetMap={srcDisplay} setTarget={setSrc} />
       <ArrowRightAltIcon />
-      <SrcDstDisplay target={dst} targetMap={dstDisplay} setTarget={setDst} />
+      <DstDisplay target={dst} targetMap={dstDisplay} setTarget={setDst} />
     </Box>
   )
 }
 
-function SrcDstDisplay<T extends string>({
+function SrcDisplay<T extends string>({
+  target,
+  targetMap,
+  setTarget,
+}: {
+  target: T
+  targetMap: Record<T, ReactNode>
+  setTarget?: (t: T) => void
+}) {
+  if (setTarget)
+    return (
+      <SrcDropDown target={target} targetMap={targetMap} onChange={setTarget} />
+    )
+  return targetMap[target]
+}
+
+function SrcDropDown<K extends string>({
+  target,
+  targetMap,
+  onChange,
+}: {
+  target: K
+  targetMap: Record<K, ReactNode>
+  onChange: (target: K) => void
+}) {
+  const onlyOption = Object.keys(targetMap).length === 1
+  // TODO: Translate
+  return (
+    <DropdownButton title={targetMap[target]} disabled={onlyOption}>
+      {Object.entries(targetMap).map(([key, display]) => (
+        <MenuItem key={key} onClick={() => onChange(key as K)}>
+          {display}
+        </MenuItem>
+      ))}
+    </DropdownButton>
+  )
+}
+
+function DstDisplay<T extends string>({
   target,
   targetMap,
   setTarget,
@@ -383,17 +401,13 @@ function SrcDstDisplay<T extends string>({
 }) {
   if (setTarget)
     return (
-      <SrcDstDropDown
-        target={target}
-        targetMap={targetMap}
-        onChange={setTarget}
-      />
+      <DstDropDown target={target} targetMap={targetMap} onChange={setTarget} />
     )
   if (target) return targetMap[target]
   return 'All'
 }
 
-function SrcDstDropDown<K extends string>({
+function DstDropDown<K extends string>({
   target,
   targetMap,
   onChange,

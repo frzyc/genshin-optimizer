@@ -4,7 +4,7 @@ export type CondValue = {
   sheet: string
   condKey: string
   condValue: number
-  src: string | null
+  src: string
   dst: string | null
 }
 export const ConditionalValuesContext = createContext<Array<CondValue>>([])

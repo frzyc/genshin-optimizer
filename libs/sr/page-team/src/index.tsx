@@ -168,15 +168,11 @@ function Page({ teamId }: { teamId: string }) {
     (
       sheet: string,
       condKey: string,
-      src: string | null,
+      src: string,
       dst: string | null,
       condValue: number
     ) => {
-      if (
-        !isSheet(sheet) ||
-        !(src === null || isMember(src)) ||
-        !(dst === null || isMember(dst))
-      )
+      if (!isSheet(sheet) || !isMember(src) || !(dst === null || isMember(dst)))
         return
       const cond = getConditional(sheet as Sheet, condKey)
       if (!cond) return
