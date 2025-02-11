@@ -3,6 +3,7 @@ import {
   CardThemed,
   DropdownButton,
   NumberInputLazy,
+  useScrollRef,
 } from '@genshin-optimizer/common/ui'
 import {
   objFilter,
@@ -18,7 +19,11 @@ import {
   wengineSheets,
   type LocationKey,
 } from '@genshin-optimizer/zzz/consts'
-import type { Stats } from '@genshin-optimizer/zzz/db'
+import type {
+  CharacterData,
+  Stats,
+  ZzzDatabase,
+} from '@genshin-optimizer/zzz/db'
 import { useCharacter, useDatabaseContext } from '@genshin-optimizer/zzz/db-ui'
 import { combineStats, type BuildResult } from '@genshin-optimizer/zzz/solver'
 import {
@@ -33,13 +38,22 @@ import {
 } from '@genshin-optimizer/zzz/ui'
 import {
   Box,
+  CardActionArea,
   CardContent,
   InputAdornment,
   MenuItem,
   Typography,
 } from '@mui/material'
 import { Stack } from '@mui/system'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import type { ReactNode } from 'react'
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import BaseStatCard from './BaseStatCard'
 import { BuildDisplay } from './BuildDisplay'
 import { BuildsDisplay } from './BuildsDisplay'
@@ -50,6 +64,9 @@ import OptimizeWrapper from './Optimize'
 import { OptimizeTargetSelector } from './OptimizeTargetSelector'
 import { StatsDisplay } from './StatsDisplay'
 
+const BOT_PX = 0
+const SECTION_SPACING_PX = 33
+const SectionNumContext = createContext(0)
 export default function PageOptimize() {
   const { database } = useDatabaseContext()
   const [builds, setBuilds] = useState<BuildResult[]>([])
@@ -91,22 +108,7 @@ export default function PageOptimize() {
         : {},
     [characterStats, character, wengineStats]
   )
-  const setFormulaKey = useCallback(
-    (key: FormulaKey) => {
-      character && database.chars.set(character.key, { formulaKey: key })
-    },
-    [character, database.chars]
-  )
 
-  const sheet = character && wengineSheets[character.wengineKey]
-
-  const wengineCondstats = useMemo(
-    () =>
-      character &&
-      sheet?.getStats &&
-      sheet.getStats(character.conditionals, baseStats),
-    [baseStats, character, sheet]
-  )
   const [dbDirty, setDbDirty] = useForceUpdate()
   useEffect(
     () => database.discs.followAny(setDbDirty),
@@ -129,10 +131,171 @@ export default function PageOptimize() {
 
     [character, database.discs.values, dbDirty]
   )
+  const handleLocationKeyChange = useCallback((locationKey: LocationKey) => {
+    const newKey = locationKey
+    setLocationKey(newKey)
+    setBuilds([])
+  }, [])
+
+  const sections: Array<[key: string, title: ReactNode, content: ReactNode]> =
+    useMemo(() => {
+      return [
+        [
+          'char',
+          'Character',
+          <CharacterSection
+            key="char"
+            database={database}
+            setLocationKey={handleLocationKeyChange}
+            locationKey={locationKey}
+            discIds={discIds}
+            baseStats={baseStats}
+            character={character}
+            characterStats={characterStats}
+            wengineStats={wengineStats}
+          />,
+        ],
+        [
+          'bonusStats',
+          'Bonus Stats',
+          <BaseStatCard
+            key="bonusStats"
+            locationKey={locationKey}
+            baseStats={character?.stats ?? {}}
+            setBaseStats={setStats}
+          />,
+        ],
+        [
+          'disc4pCond',
+          'Disc 4p Conditionals',
+          <DiscConditionalsCard key="disc4pCond" baseStats={baseStats} />,
+        ],
+        [
+          'opt',
+          'Optimize',
+          <OptimizeWrapper
+            key="opt"
+            setResults={setBuilds}
+            baseStats={baseStats}
+            location={locationKey}
+            formulaKey={character?.formulaKey ?? allFormulaKeys[0]}
+          />,
+        ],
+        [
+          'buildDisplay',
+          'Build Display',
+          <BuildsDisplay
+            key="buildDisplay"
+            builds={builds}
+            stats={baseStats}
+          />,
+        ],
+      ] as const
+    }, [
+      baseStats,
+      builds,
+      character,
+      characterStats,
+      database,
+      discIds,
+      locationKey,
+      setStats,
+      handleLocationKeyChange,
+      wengineStats,
+    ])
 
   return (
     <CharacterContext.Provider value={character}>
-      <Box display="flex" flexDirection="column" gap={1} my={1}>
+      <SectionNumContext.Provider value={sections.length}>
+        <Stack gap={1}>
+          {sections.map(([key, title, content], i) => (
+            <Section key={key} title={title} index={i}>
+              {content}
+            </Section>
+          ))}
+        </Stack>
+      </SectionNumContext.Provider>
+    </CharacterContext.Provider>
+  )
+}
+
+function Section({
+  index,
+  title,
+  children,
+}: {
+  index: number
+  title: React.ReactNode
+  children: React.ReactNode
+}) {
+  const [charScrollRef, onScroll] = useScrollRef()
+  const numSections = useContext(SectionNumContext)
+  return (
+    <>
+      <CardThemed
+        sx={(theme) => ({
+          outline: `solid ${theme.palette.secondary.main}`,
+          position: 'sticky',
+          top: index * SECTION_SPACING_PX,
+          bottom: BOT_PX + (numSections - 1 - index) * SECTION_SPACING_PX,
+          zIndex: 100,
+        })}
+      >
+        <CardActionArea onClick={onScroll} sx={{ px: 1 }}>
+          <Typography variant="h6">{title}</Typography>
+        </CardActionArea>
+      </CardThemed>
+      <Box
+        ref={charScrollRef}
+        sx={{
+          scrollMarginTop: (index + 1) * SECTION_SPACING_PX,
+        }}
+      >
+        {children}
+      </Box>
+    </>
+  )
+}
+
+function CharacterSection({
+  database,
+  setLocationKey,
+  locationKey,
+  discIds,
+  baseStats,
+  character,
+  characterStats,
+  wengineStats,
+}: {
+  database: ZzzDatabase
+  setLocationKey: (lk: LocationKey) => void
+  locationKey: LocationKey
+  discIds: Record<DiscSlotKey, string>
+  baseStats: Stats
+  character: CharacterData | undefined
+  characterStats: Record<string, number> | undefined
+  wengineStats: Record<string, number> | undefined
+}) {
+  const setFormulaKey = useCallback(
+    (key: FormulaKey) => {
+      character && database.chars.set(character.key, { formulaKey: key })
+    },
+    [character, database.chars]
+  )
+
+  const sheet = character && wengineSheets[character.wengineKey]
+
+  const wengineCondstats = useMemo(
+    () =>
+      character &&
+      sheet?.getStats &&
+      sheet.getStats(character.conditionals, baseStats),
+    [baseStats, character, sheet]
+  )
+
+  return (
+    <CharacterContext.Provider value={character}>
+      <Box sx={{ display: 'flex', gap: 1, flexDirection: 'column' }}>
         <CardThemed>
           <CardContent>
             <Stack spacing={1}>
@@ -140,10 +303,7 @@ export default function PageOptimize() {
               <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
                 <LocationAutocomplete
                   locKey={locationKey}
-                  setLocKey={(lk) => {
-                    setLocationKey(lk)
-                    setBuilds([])
-                  }}
+                  setLocKey={setLocationKey}
                   sx={{ flexGrow: 1 }}
                   autoFocus
                 />
@@ -283,19 +443,6 @@ export default function PageOptimize() {
           )}
         </CardThemed>
         {character && <BuildDisplay discIds={discIds} baseStats={baseStats} />}
-        <BaseStatCard
-          locationKey={locationKey}
-          baseStats={character?.stats ?? {}}
-          setBaseStats={setStats}
-        />
-        <DiscConditionalsCard baseStats={baseStats} />
-        <OptimizeWrapper
-          setResults={setBuilds}
-          baseStats={baseStats}
-          location={locationKey}
-          formulaKey={character?.formulaKey ?? allFormulaKeys[0]}
-        />
-        <BuildsDisplay builds={builds} stats={baseStats} />
       </Box>
     </CharacterContext.Provider>
   )
