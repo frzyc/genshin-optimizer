@@ -1,5 +1,6 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
+import type { Preset } from '@genshin-optimizer/game-opt/engine'
 import { DebugReadContext } from '@genshin-optimizer/game-opt/formula-ui'
 import type { Frame } from '@genshin-optimizer/sr/db'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
@@ -36,7 +37,10 @@ export function ComboEditor() {
                 ...team.frames,
                 {
                   multiplier: 1,
-                  tag,
+                  tag: {
+                    ...tag,
+                    preset: `preset${team.frames.length}` as Preset,
+                  },
                 },
               ]
             })
