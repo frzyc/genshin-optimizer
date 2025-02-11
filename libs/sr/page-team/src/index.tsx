@@ -148,7 +148,10 @@ function Page({ teamId }: { teamId: string }) {
     const charDisplay = objKeyMap(charList, (ck) => (
       <CharacterName genderedKey={characterKeyToGenderedKey(ck)} />
     ))
-    return { srcDisplay: charDisplay, dstDisplay: { 'all':  'All', ...charDisplay }}
+    return {
+      srcDisplay: charDisplay,
+      dstDisplay: { all: 'All', ...charDisplay },
+    }
   }, [team.teamMetadata, characterKey])
   const conditionals = useMemo(
     () =>
