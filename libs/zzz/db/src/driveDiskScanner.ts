@@ -12,7 +12,8 @@ import {
   discSlotToMainStatKeys,
   statKeyTextMap,
 } from '@genshin-optimizer/zzz/consts'
-import type { IDisc, IZenlessObjectDescription } from './Interfaces'
+import type { IDisc } from '@genshin-optimizer/zzz/zood'
+import type { IZenlessObjectDescription } from './Interfaces'
 
 type DDS = {
   set_name: string // 'Woodpecker Electro'

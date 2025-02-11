@@ -17,7 +17,7 @@ import {
   getDiscMainStatVal,
   getDiscSubStatBaseVal,
 } from '@genshin-optimizer/zzz/consts'
-import type { IDisc, ISubstat } from '@genshin-optimizer/zzz/db'
+import type { IDisc, ISubstat } from '@genshin-optimizer/zzz/zood'
 import { Edit } from '@mui/icons-material'
 import {
   Box,

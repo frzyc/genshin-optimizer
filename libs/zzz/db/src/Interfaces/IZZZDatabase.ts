@@ -1,4 +1,4 @@
-import type { IDisc } from './IDisc'
+import type { IDisc } from '@genshin-optimizer/zzz/zood'
 
 export const zzzSource = 'Zenless Optimizer' as const
 export const zzzFormat = 'ZZZ' as const

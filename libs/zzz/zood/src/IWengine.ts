@@ -13,7 +13,3 @@ export interface IWengine {
   location: LocationKey // where "" means not equipped.
   lock: boolean
 }
-
-export interface ICachedWengine extends IWengine {
-  id: string
-}

@@ -11,24 +11,7 @@ import {
   allDiscRarityKeys,
   allDiscSlotKeys,
 } from '@genshin-optimizer/zzz/consts'
-
-//TODO: Temporary fix for circular dependency, need a better way to resolve it
-interface IDisc {
-  setKey: DiscSetKey
-  slotKey: DiscSlotKey
-  level: number // 0-15
-  rarity: DiscRarityKey
-  mainStatKey: DiscMainStatKey
-  location: LocationKey
-  lock: boolean
-  trash: boolean
-  substats: ISubstat[]
-}
-//TODO: Temporary fix for circular dependency, need a better way to resolve it
-interface ISubstat {
-  key: DiscSubStatKey
-  upgrades: number // This is the number of upgrades this sub receives.
-}
+import type { IDisc } from '@genshin-optimizer/zzz/zood'
 
 export type DiscFilterOption = {
   discSetKeys: DiscSetKey[]
