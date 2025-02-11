@@ -293,9 +293,6 @@ function CharacterSection({
     [baseStats, character, sheet]
   )
 
-  const handleLocationKeyChange = (lk: LocationKey) => {
-    setLocationKey(lk)
-  }
   return (
     <CharacterContext.Provider value={character}>
       <Box sx={{ display: 'flex', gap: 1, flexDirection: 'column' }}>
@@ -306,7 +303,7 @@ function CharacterSection({
               <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
                 <LocationAutocomplete
                   locKey={locationKey}
-                  setLocKey={handleLocationKeyChange}
+                  setLocKey={setLocationKey}
                   sx={{ flexGrow: 1 }}
                   autoFocus
                 />
