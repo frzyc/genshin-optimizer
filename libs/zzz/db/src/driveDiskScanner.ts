@@ -58,15 +58,37 @@ export function DDSToZOD(data: DDS[]): IZenlessObjectDescription {
               typeof subVal === 'string' && subVal.endsWith('%')
             const [keyStr, value] = keyUp.split('+')
             const upgrades = value ? parseInt(value) + 1 : 1
-            const key = allDiscSubStatKeys.find(
+            let key = allDiscSubStatKeys.find(
               (k) =>
                 isPercentStat(k) === isSubPercent &&
                 statKeyTextMap[k] === keyStr
             )
+            // Address issue scanning atk% as atk
+            if (
+              key === mainStatKey &&
+              key === 'atk' &&
+              typeof subVal === 'number' &&
+              subVal === 57
+            )
+              key = 'atk_'
+
             if (!key || !upgrades) return null
             return { key, upgrades }
           })
           .filter(notEmpty)
+
+        if (substats.length > 4) {
+          // likely due to issue with scanning overflow with Anomaly Proficiency.
+          // Unfortunately, it can be +2/+3/+4
+          const anomIndex = substats.findIndex(
+            ({ key }, i, arr) => key === 'anomProf' && arr[i + 1]?.key === 'pen'
+          )
+          if (anomIndex > -1) {
+            substats[anomIndex].upgrades = 2
+            // remove the pen at anomIndex+1
+            substats.splice(anomIndex + 1, 1)
+          }
+        }
         return {
           setKey,
           slotKey,
