@@ -35,10 +35,11 @@ export function CodeBlock({ text }: { text: string }) {
   return (
     <Box display="flex" flexDirection="row" p={1}>
       <CodeArea spellCheck="false" aria-label="Code Sample">
-        {lines.map((l) => {
+        {lines.map((l, index) => {
           const numSpaces = l.search(/\S/)
           return (
             <p
+              key={index}
               style={{
                 counterIncrement: 'lineNumber',
                 margin: 0,
