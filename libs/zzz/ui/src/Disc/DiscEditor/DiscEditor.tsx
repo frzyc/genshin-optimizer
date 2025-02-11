@@ -1,10 +1,10 @@
 import {
   CardThemed,
-  DropdownButton,
   ModalWrapper,
   NextImage,
 } from '@genshin-optimizer/common/ui'
 import {
+  getUnitStr,
   range,
   statKeyToFixed,
   toPercent,
@@ -44,7 +44,6 @@ import {
   Grid,
   IconButton,
   LinearProgress,
-  MenuItem,
   Skeleton,
   TextField,
   Typography,
@@ -66,7 +65,7 @@ import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete } from '../../Character/LocationAutocomplete'
 import { shouldShowDevComponents } from '../../util/isDev'
 import { DiscCard } from '../DiscCard'
-import { DiscMainStatDropdown } from '../DiscMainStatDropdown'
+import { DiscMainStatGroup } from '../DiscMainStatGroup'
 import { DiscRarityDropdown } from '../DiscRarityDropdown'
 import { DiscSetAutocomplete } from '../DiscSetAutocomplete'
 import { textsFromImage } from './ScanningUtil'
@@ -157,7 +156,6 @@ export function DiscEditor({
   fixedSlotKey?: DiscSlotKey
 }) {
   const { t } = useTranslation('disc')
-  const { t: tk } = useTranslation(['discs_gen', 'statKey_gen'])
 
   const { database } = useDatabaseContext()
   const { disc, validatedDisc, setDisc, errors } =
@@ -182,13 +180,9 @@ export function DiscEditor({
     }
   }, [disc, database])
 
-  const disableEditSlot =
-    (!disc.id && !!disc?.location) || // Disable slot for equipped disc
-    !!fixedSlotKey // Disable slot if its fixed
-
   const { rarity = 'S', level = 0 } = disc ?? {}
   const slotKey = useMemo(() => {
-    return disc?.slotKey ?? fixedSlotKey ?? '1'
+    return disc?.slotKey ?? fixedSlotKey
   }, [fixedSlotKey, disc])
 
   const reset = useCallback(() => {
@@ -379,68 +373,54 @@ export function DiscEditor({
                   </ButtonGroup>
                 </Box>
                 {/* slot */}
-                <Box component="div" display="flex">
-                  <DropdownButton
-                    // startIcon={
-                    //   disc?.slotKey ? (
-                    //     <SlotIcon slotKey={disc.slotKey} />
-                    //   ) : undefined
-                    // }
-                    title={disc?.slotKey ? tk(disc.slotKey) : t('slot')}
-                    value={slotKey}
-                    disabled={disableEditSlot || !!disc.id}
-                    color={disc ? 'success' : 'primary'}
-                  >
-                    {allDiscSlotKeys.map((sk) => (
-                      <MenuItem
-                        key={sk}
-                        selected={slotKey === sk}
-                        disabled={slotKey === sk}
-                        onClick={() => setDisc({ slotKey: sk })}
-                      >
-                        {/* <ListItemIcon>
-                          <SlotIcon slotKey={sk} />
-                        </ListItemIcon> */}
-                        {tk(sk)}
-                      </MenuItem>
-                    ))}
-                  </DropdownButton>
-                  <CardThemed bgt="light" sx={{ p: 1, ml: 1, flexGrow: 1 }}>
-                    <Suspense fallback={<Skeleton width="60%" />}>
-                      <Typography color="text.secondary">
-                        {tk(`discs_gen:${slotKey}`)}
-                      </Typography>
-                    </Suspense>
+                <Stack direction="row" gap={1}>
+                  <CardThemed bgt="light" sx={{ px: 2, py: 1 }}>
+                    <Typography color="text.secondary">
+                      Slot [{slotKey}]
+                    </Typography>
                   </CardThemed>
-                </Box>
+                  <ButtonGroup sx={{ flexGrow: 1 }}>
+                    {allDiscSlotKeys.map((sk) => (
+                      <Button
+                        key={sk}
+                        color={sk === slotKey ? 'success' : undefined}
+                        onClick={() => setDisc({ slotKey: sk })}
+                        disabled={
+                          !!disc.id || !!fixedSlotKey || !disc.mainStatKey
+                        }
+                        sx={{ flexGrow: 1 }}
+                      >
+                        {sk}
+                      </Button>
+                    ))}
+                  </ButtonGroup>
+                  <Button
+                    onClick={() => setDisc({ lock: !disc?.lock })}
+                    color={disc?.lock ? 'success' : 'primary'}
+                    disabled={!disc || !disc.mainStatKey}
+                  >
+                    {disc?.lock ? <LockIcon /> : <LockOpenIcon />}
+                  </Button>
+                </Stack>
                 {/* main stat */}
                 <Box component="div" display="flex" gap={1}>
-                  <DiscMainStatDropdown
+                  <DiscMainStatGroup
                     slotKey={slotKey}
                     statKey={disc?.mainStatKey}
                     setStatKey={(mainStatKey) => setDisc({ mainStatKey })}
-                    defText={t('mainStat')}
-                    dropdownButtonProps={{
-                      color: disc ? 'success' : 'primary',
-                    }}
                   />
                   <CardThemed bgt="light" sx={{ p: 1, flexGrow: 1 }}>
                     <Typography color="text.secondary">
                       {disc?.mainStatKey
-                        ? toPercent(
+                        ? `${toPercent(
                             getDiscMainStatVal(rarity, disc.mainStatKey, level),
                             disc.mainStatKey
-                          ).toFixed(statKeyToFixed(disc.mainStatKey))
+                          ).toFixed(
+                            statKeyToFixed(disc.mainStatKey)
+                          )}${getUnitStr(disc.mainStatKey)}`
                         : t('mainStat')}
                     </Typography>
                   </CardThemed>
-                  <Button
-                    onClick={() => setDisc({ lock: !disc?.lock })}
-                    color={disc?.lock ? 'success' : 'primary'}
-                    disabled={!disc}
-                  >
-                    {disc?.lock ? <LockIcon /> : <LockOpenIcon />}
-                  </Button>
                 </Box>
                 <LocationAutocomplete
                   locKey={disc?.location ?? ''}
