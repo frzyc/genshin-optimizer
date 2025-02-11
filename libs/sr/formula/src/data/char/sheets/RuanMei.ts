@@ -1,6 +1,7 @@
 import {
   cmpEq,
   cmpGE,
+  max,
   min,
   prod,
   subscript,
@@ -87,17 +88,22 @@ const sheet = register(
         1,
         skillOvertone.ifOn(
           min(
-            // (brEff_ - breakThreshold) / perBreak * dmgPer
-            prod(
-              sum(own.final.brEffect_, -dm.b3.breakThreshold),
-              1 / dm.b3.perBreak,
-              dm.b3.dmg_per
+            max(
+              // (brEff_ - breakThreshold) / perBreak * dmgPer
+              prod(
+                sum(own.final.brEffect_, -dm.b3.breakThreshold),
+                1 / dm.b3.perBreak,
+                dm.b3.dmg_per
+              ),
+              0
             ),
             dm.b3.max_dmg_
           )
         )
       )
-    )
+    ),
+    undefined,
+    true
   ),
   registerBuff(
     'e1_defIgn_',

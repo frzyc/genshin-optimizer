@@ -26,26 +26,18 @@ import {
   Typography,
 } from '@mui/material'
 import type { ReactNode } from 'react'
+import { memo, useCallback, useContext, useMemo, useState } from 'react'
 import {
-  createContext,
-  memo,
-  useCallback,
-  useContext,
-  useMemo,
-  useState,
-} from 'react'
+  ConditionalValuesContext,
+  SetConditionalContext,
+  SrcDstDisplayContext,
+} from '../context'
+import {} from '../context/SetConditionalContext'
+import {} from '../context/SrcDstDisplayContext'
 import type { Conditional } from '../types'
 import { FieldsDisplay } from './FieldDisplay'
 import { HeaderDisplay } from './HeaderDisplay'
 
-export const ConditionalValuesContext = createContext<Array<CondValue>>([])
-type CondValue = {
-  sheet: string
-  condKey: string
-  condValue: number
-  src: string
-  dst: string
-}
 export function ConditionalsDisplay({
   conditional,
   bgt,
@@ -53,7 +45,7 @@ export function ConditionalsDisplay({
   bgt?: CardBackgroundColor
   conditional: Conditional
 }) {
-  const { srcDisplay, dstDisplay } = useContext(SrcDstDisplayContext)
+  const { srcDisplay } = useContext(SrcDstDisplayContext)
   const setConditional = useContext(SetConditionalContext)
   const {
     metadata: { sheet, name },
@@ -72,18 +64,20 @@ export function ConditionalsDisplay({
   )
 
   const hasExisting = useCallback(
-    (src: string, dst: string) =>
+    (src: string, dst: string | null) =>
       filteredConditionals.some(({ src: s, dst: d }) => s === src && d === dst),
     [filteredConditionals]
   )
 
   const [src, setSrc] = useState<string>(Object.keys(srcDisplay)[0])
-  const [dst, setDst] = useState<string>(Object.keys(dstDisplay)[0])
+  // Default null (aka All) as dst.
+  // Most convenient for users
+  const [dst, setDst] = useState<string | null>(null)
   return (
     <Stack spacing={1}>
-      {filteredConditionals.map(({ src, dst, condValue }) => (
+      {filteredConditionals.map(({ src, dst, condKey, condValue }) => (
         <ConditionalDisplay
-          key={src + dst}
+          key={src ?? 'all' + dst ?? 'all' + condKey}
           conditional={conditional}
           src={src}
           dst={dst}
@@ -110,23 +104,6 @@ export function ConditionalsDisplay({
   )
 }
 
-export const SrcDstDisplayContext = createContext<{
-  srcDisplay: Record<string, ReactNode>
-  dstDisplay: Record<string, ReactNode>
-}>({
-  srcDisplay: {},
-  dstDisplay: {},
-})
-export type SetConditionalFunc = (
-  sheet: string,
-  condKey: string,
-  src: string,
-  dst: string,
-  value: number
-) => void
-export const SetConditionalContext = createContext<SetConditionalFunc>(() =>
-  console.warn('SetConditional NOT IMPLEMENTED')
-)
 const ConditionalDisplay = memo(function ConditionalDisplay({
   conditional,
   src,
@@ -141,8 +118,8 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
   conditional: Conditional
   src: string
   setSrc?: (src: string) => void
-  dst: string
-  setDst?: (dst: string) => void
+  dst: string | null
+  setDst?: (dst: string | null) => void
   value: number
   setValue: (value: number) => void
   bgt?: CardBackgroundColor
@@ -360,38 +337,38 @@ function CondSrcDst<S extends string, D extends string>({
   src: S
   srcDisplay: Record<S, ReactNode>
   setSrc?: (src: S) => void
-  dst: D
+  dst: D | null
   dstDisplay: Record<D, ReactNode>
-  setDst?: (dst: D) => void
+  setDst?: (dst: D | null) => void
 }) {
   if (!Object.keys(srcDisplay).length || !Object.keys(dstDisplay).length)
     return null
   return (
     <Box display="flex" alignItems="center" justifyContent="space-between">
-      {setSrc ? (
-        <SrcDstDropDown
-          target={src ?? Object.keys(srcDisplay)[0]}
-          targetMap={srcDisplay}
-          onChange={setSrc}
-        />
-      ) : (
-        srcDisplay[src]
-      )}
+      <SrcDisplay target={src} targetMap={srcDisplay} setTarget={setSrc} />
       <ArrowRightAltIcon />
-      {setDst ? (
-        <SrcDstDropDown
-          target={dst ?? Object.keys(dstDisplay)[0]}
-          targetMap={dstDisplay}
-          onChange={setDst}
-        />
-      ) : (
-        dstDisplay[dst]
-      )}
+      <DstDisplay target={dst} targetMap={dstDisplay} setTarget={setDst} />
     </Box>
   )
 }
 
-function SrcDstDropDown<K extends string>({
+function SrcDisplay<T extends string>({
+  target,
+  targetMap,
+  setTarget,
+}: {
+  target: T
+  targetMap: Record<T, ReactNode>
+  setTarget?: (t: T) => void
+}) {
+  if (setTarget)
+    return (
+      <SrcDropDown target={target} targetMap={targetMap} onChange={setTarget} />
+    )
+  return targetMap[target]
+}
+
+function SrcDropDown<K extends string>({
   target,
   targetMap,
   onChange,
@@ -401,8 +378,54 @@ function SrcDstDropDown<K extends string>({
   onChange: (target: K) => void
 }) {
   const onlyOption = Object.keys(targetMap).length === 1
+  // TODO: Translate
   return (
     <DropdownButton title={targetMap[target]} disabled={onlyOption}>
+      {Object.entries(targetMap).map(([key, display]) => (
+        <MenuItem key={key} onClick={() => onChange(key as K)}>
+          {display}
+        </MenuItem>
+      ))}
+    </DropdownButton>
+  )
+}
+
+function DstDisplay<T extends string>({
+  target,
+  targetMap,
+  setTarget,
+}: {
+  target: T | null
+  targetMap: Record<T, ReactNode>
+  setTarget?: (t: T | null) => void
+}) {
+  if (setTarget)
+    return (
+      <DstDropDown target={target} targetMap={targetMap} onChange={setTarget} />
+    )
+  if (target) return targetMap[target]
+  return 'All'
+}
+
+function DstDropDown<K extends string>({
+  target,
+  targetMap,
+  onChange,
+}: {
+  target: K | null
+  targetMap: Record<K, ReactNode>
+  onChange: (target: K | null) => void
+}) {
+  const onlyOption = Object.keys(targetMap).length === 1
+  // TODO: Translate
+  return (
+    <DropdownButton
+      title={target ? targetMap[target] : 'All'}
+      disabled={onlyOption}
+    >
+      <MenuItem key="all" onClick={() => onChange(null)}>
+        All
+      </MenuItem>
       {Object.entries(targetMap).map(([key, display]) => (
         <MenuItem key={key} onClick={() => onChange(key as K)}>
           {display}

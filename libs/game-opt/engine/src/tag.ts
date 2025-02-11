@@ -116,12 +116,11 @@ export const createConditionalEntries =
     Tag_ extends Tag<Src, Dst, Sheet>,
     Src extends string | null,
     Dst extends string | null,
-    Member extends string,
     Sheet extends string
   >(own: {
     withTag: (_: Tag_) => Read_
   }) =>
-  (sheet: Sheet, src: Member, dst: Member) => {
+  (sheet: Sheet, src: Src, dst: Dst) => {
     const tag: Tag_ = { sheet, qt: 'cond', src, dst } as unknown as Tag_
     const base = own.withTag(tag).withAll('q', [])
     return (name: keyof typeof base, val: string | number) =>

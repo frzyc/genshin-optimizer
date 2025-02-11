@@ -151,7 +151,7 @@ export function tagStr(tag: Tag, ex?: any): string {
   }
   required(name && `#${name}`, 'name')
   required(preset, 'preset')
-  required(src, 'src')
+  required(src && `[${src}]`, 'src')
   required(dst && `(${dst})`, 'dst')
   required(sheet, 'sheet')
   required(et, 'et')
