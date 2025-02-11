@@ -169,7 +169,7 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
           src={src}
           srcDisplay={srcDisplay}
           setSrc={setSrc}
-          dst={dst!} //TODO
+          dst={dst ?? 'all'} //TODO
           dstDisplay={dstDisplay}
           setDst={setDst}
         />
