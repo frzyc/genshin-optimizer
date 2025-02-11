@@ -180,10 +180,6 @@ export function DiscEditor({
     }
   }, [disc, database])
 
-  const disableEditSlot =
-    (!disc.id && !!disc?.location) || // Disable slot for equipped disc
-    !!fixedSlotKey // Disable slot if its fixed
-
   const { rarity = 'S', level = 0 } = disc ?? {}
   const slotKey = useMemo(() => {
     return disc?.slotKey ?? fixedSlotKey
@@ -389,7 +385,9 @@ export function DiscEditor({
                         key={sk}
                         color={sk === slotKey ? 'success' : undefined}
                         onClick={() => setDisc({ slotKey: sk })}
-                        disabled={disableEditSlot || !disc.mainStatKey}
+                        disabled={
+                          !!disc.id || !!fixedSlotKey || !disc.mainStatKey
+                        }
                         sx={{ flexGrow: 1 }}
                       >
                         {sk}
