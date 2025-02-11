@@ -39,6 +39,7 @@ export function ComboEditor() {
                   multiplier: 1,
                   tag: {
                     ...tag,
+                    // TODO: This is going to cause collision issues when frame deletion is implemented
                     preset: `preset${team.frames.length}` as Preset,
                   },
                 },
