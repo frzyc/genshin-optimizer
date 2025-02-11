@@ -54,7 +54,7 @@ export interface Team {
   conditionals: Array<{
     sheet: Sheet
     src: Member
-    dst: Member
+    dst: Member | null
     condKey: string
     condValues: number[] // should be the same length as `frames`
   }>
@@ -200,7 +200,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       const hashList: string[] = [] // a hash to ensure sheet:condKey:src:dst is unique
       conditionals = conditionals.filter(
         ({ sheet, condKey, src, dst, condValues }) => {
-          if (!isMember(src) || !isMember(dst)) return false
+          if (!isMember(src) || !(dst === null || isMember(dst))) return false
           const cond = getConditional(sheet, condKey)
           if (!cond) return false
 
@@ -416,7 +416,7 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     sheet: Sheet,
     condKey: string,
     src: Member,
-    dst: Member,
+    dst: Member | null,
     condValue: number,
     frameIndex: number
   ) {

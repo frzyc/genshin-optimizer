@@ -148,7 +148,7 @@ function Page({ teamId }: { teamId: string }) {
     const charDisplay = objKeyMap(charList, (ck) => (
       <CharacterName genderedKey={characterKeyToGenderedKey(ck)} />
     ))
-    return { srcDisplay: charDisplay, dstDisplay: charDisplay }
+    return { srcDisplay: charDisplay, dstDisplay: { 'all':  'All', ...charDisplay }}
   }, [team.teamMetadata, characterKey])
   const conditionals = useMemo(
     () =>
@@ -166,10 +166,11 @@ function Page({ teamId }: { teamId: string }) {
       sheet: string,
       condKey: string,
       src: string,
-      dst: string,
+      dst: string | null,
       condValue: number
     ) => {
-      if (!isSheet(sheet) || !isMember(src) || !isMember(dst)) return
+      if (!isSheet(sheet) || !isMember(src) || !(dst === null || isMember(dst)))
+        return
       const cond = getConditional(sheet as Sheet, condKey)
       if (!cond) return
 

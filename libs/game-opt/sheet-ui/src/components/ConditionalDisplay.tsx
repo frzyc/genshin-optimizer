@@ -44,7 +44,7 @@ type CondValue = {
   condKey: string
   condValue: number
   src: string
-  dst: string
+  dst: string | null
 }
 export function ConditionalsDisplay({
   conditional,
@@ -72,7 +72,7 @@ export function ConditionalsDisplay({
   )
 
   const hasExisting = useCallback(
-    (src: string, dst: string) =>
+    (src: string, dst: string | null) =>
       filteredConditionals.some(({ src: s, dst: d }) => s === src && d === dst),
     [filteredConditionals]
   )
@@ -99,10 +99,12 @@ export function ConditionalsDisplay({
           bgt={bgt}
           src={src}
           setSrc={setSrc}
-          dst={dst}
+          dst={dst === 'all' ? null : dst}
           setDst={setDst}
           value={0}
-          setValue={(v) => setConditional(sheet, name, src, dst, v)}
+          setValue={(v) =>
+            setConditional(sheet, name, src, dst === 'all' ? null : dst, v)
+          }
           disabled={hasExisting(src, dst)}
         />
       )}
@@ -121,7 +123,7 @@ export type SetConditionalFunc = (
   sheet: string,
   condKey: string,
   src: string,
-  dst: string,
+  dst: string | null,
   value: number
 ) => void
 export const SetConditionalContext = createContext<SetConditionalFunc>(() =>
@@ -141,7 +143,7 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
   conditional: Conditional
   src: string
   setSrc?: (src: string) => void
-  dst: string
+  dst: string | null
   setDst?: (dst: string) => void
   value: number
   setValue: (value: number) => void
@@ -167,7 +169,7 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
           src={src}
           srcDisplay={srcDisplay}
           setSrc={setSrc}
-          dst={dst}
+          dst={dst!} //TODO
           dstDisplay={dstDisplay}
           setDst={setDst}
         />
