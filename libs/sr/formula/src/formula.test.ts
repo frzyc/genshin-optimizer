@@ -147,15 +147,15 @@ describe('sheet', () => {
             // Buff entries are for agg queries inside a sheet
             if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
             fail(`Ill-form entry (${tagStr(tag)}) for sheet ${sheet}`)
-            break
           }
+          // eslint-disable-next-line no-fallthrough
           case 'enemyDeBuff': {
             const { sheet } = (enemyTag as any)[tag.qt][tag.q]
             if (sheet === 'agg' && sheets.has(tag.sheet as any)) continue
             if (sheet === tag.sheet) continue
             fail(`Ill-form entry (${tagStr(tag)}) for sheet ${sheet}`)
-            break
           }
+          // eslint-disable-next-line no-fallthrough
           case 'own': {
             const desc = (ownTag as any)[tag.qt]?.[tag.q]
             if (!desc) continue
@@ -164,8 +164,8 @@ describe('sheet', () => {
             if (sheet === 'iso' || sheet === 'agg' || sheet === tag.sheet)
               continue
             fail(`Illform entry (${tagStr(tag)}) for sheet ${sheet}`)
-            break
           }
+          // eslint-disable-next-line no-fallthrough
           case 'enemy': {
             const desc = (enemyTag as any)[tag.qt]?.[tag.q]
             if (!desc) continue
@@ -173,7 +173,6 @@ describe('sheet', () => {
             if (!sheet) continue
             if (sheet === 'agg' || sheet === tag.sheet) continue
             fail(`Illform entry (${tagStr(tag)}) for sheet ${sheet}`)
-            break
           }
         }
       }

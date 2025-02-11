@@ -1,23 +1,20 @@
 import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
-import { statKeyTextMap } from '@genshin-optimizer/zzz/consts'
+import type { StatKey } from '@genshin-optimizer/zzz/consts'
+import { StatDisplay } from '@genshin-optimizer/zzz/ui'
 import { Box, Typography } from '@mui/material'
 
-export function StatsDisplay({
-  stats,
-  showBase = false,
-}: {
-  stats: Record<string, number>
-  showBase?: boolean
-}) {
+export function StatsDisplay({ stats }: { stats: Record<string, number> }) {
   return (
-    <Box sx={{ columnCount: 2 }}>
-      {Object.entries(stats)
-        .filter(([k]) => showBase || !k.endsWith('_base'))
-        .map(([k, v]) => (
-          <Typography key={k}>
-            {statKeyTextMap[k] ?? k}: {valueString(v, getUnitStr(k))}
-          </Typography>
-        ))}
+    <Box sx={{ columnWidth: '15em' }}>
+      {Object.entries(stats).map(([k, v]) => (
+        <Typography
+          key={k}
+          sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+        >
+          <StatDisplay key={k} statKey={k as StatKey} />{' '}
+          <span>{valueString(v, getUnitStr(k))}</span>
+        </Typography>
+      ))}
     </Box>
   )
 }

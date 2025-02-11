@@ -1,7 +1,34 @@
 {
+  "name": "The Brimstone",
   "rarity": "S",
   "type": "attack",
   "atk_base": 46,
   "second_statkey": "atk_",
-  "second_statvalue": 0.12
+  "second_statvalue": 0.12,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_S_1041.png",
+  "desc": "A violent Obsidian Division W-Engine forged with fire and filled with a forbidden fuel that has been reprocessed using Ether-technology. Its intense heat can be used to clear the entire battlefield. Rumor has it that its designer was exchanging W-Engine design ideas with Soldier 11 over dinner. After an hour spent enjoying extra spicy noodles, she decided to bring extra spicy revenge to her enemies.\n\n<color=#959595>\"I really like it. It's stable, efficient, and practical. The high temperature can clean the battle residue off my blade and even disinfect wounds when needed... Why are you sitting so far away?\" — Soldier 11, introducing her W-Engine to her teammates</color>",
+  "desc2": "Equip to increase Attack Agents' combat capabilities",
+  "desc3": "A W-Engine made for Soldier 11 by Obsidian Division. Its intense heat can be used to clear the entire battlefield.",
+  "phase": [
+    {
+      "name": "Scorching Breath",
+      "desc": "Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, or <color=#FFFFFF>Dodge Counter</color>, the equipper's ATK increases by <color=#2BAD00>3.5%</color> for 8s, stacking up to 8 times. This effect can trigger once every 0.5s. The duration of each stack is calculated separately."
+    },
+    {
+      "name": "Scorching Breath",
+      "desc": "Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, or <color=#FFFFFF>Dodge Counter</color>, the equipper's ATK increases by <color=#2BAD00>4.4%</color> for 8s, stacking up to 8 times. This effect can trigger once every 0.5s. The duration of each stack is calculated separately."
+    },
+    {
+      "name": "Scorching Breath",
+      "desc": "Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, or <color=#FFFFFF>Dodge Counter</color>, the equipper's ATK increases by <color=#2BAD00>5.2%</color> for 8s, stacking up to 8 times. This effect can trigger once every 0.5s. The duration of each stack is calculated separately."
+    },
+    {
+      "name": "Scorching Breath",
+      "desc": "Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, or <color=#FFFFFF>Dodge Counter</color>, the equipper's ATK increases by <color=#2BAD00>6%</color> for 8s, stacking up to 8 times. This effect can trigger once every 0.5s. The duration of each stack is calculated separately."
+    },
+    {
+      "name": "Scorching Breath",
+      "desc": "Upon hitting an enemy with a <color=#FFFFFF>Basic Attack</color>, <color=#FFFFFF>Dash Attack</color>, or <color=#FFFFFF>Dodge Counter</color>, the equipper's ATK increases by <color=#2BAD00>7%</color> for 8s, stacking up to 8 times. This effect can trigger once every 0.5s. The duration of each stack is calculated separately."
+    }
+  ]
 }

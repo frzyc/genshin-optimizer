@@ -1,6 +1,33 @@
 {
+  "name": "[Lunar] Noviluna",
   "type": "attack",
   "atk_base": 32,
   "second_statkey": "crit_",
-  "second_statvalue": 0.064
+  "second_statvalue": 0.064,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_B_Common_03.png",
+  "desc": "This high-capacity portable W-Engine can collect dissipated energy from its surroundings, thus enhancing the combat effectiveness of its operator. It is a perfect choice for novice explorers who are worried that their W-Engine may run out of power during expeditions.",
+  "desc2": "Equip to increase Attack Agents' combat capabilities",
+  "desc3": "A high-capacity portable W-Engine that can collect dissipated energy from its surroundings, thus enhancing the combat effectiveness of its operator.",
+  "phase": [
+    {
+      "name": "New Moon",
+      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> generates <color=#2BAD00>3</color> Energy for the equipper. This effect can trigger once every 12s."
+    },
+    {
+      "name": "New Moon",
+      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> generates <color=#2BAD00>3.5</color> Energy for the equipper. This effect can trigger once every 12s."
+    },
+    {
+      "name": "New Moon",
+      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> generates <color=#2BAD00>4</color> Energy for the equipper. This effect can trigger once every 12s."
+    },
+    {
+      "name": "New Moon",
+      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> generates <color=#2BAD00>4.5</color> Energy for the equipper. This effect can trigger once every 12s."
+    },
+    {
+      "name": "New Moon",
+      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> generates <color=#2BAD00>5</color> Energy for the equipper. This effect can trigger once every 12s."
+    }
+  ]
 }

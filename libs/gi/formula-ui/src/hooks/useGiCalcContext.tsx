@@ -1,5 +1,5 @@
+import { CalcContext } from '@genshin-optimizer/game-opt/formula-ui'
 import type { Calculator } from '@genshin-optimizer/gi/formula'
-import { CalcContext } from '@genshin-optimizer/pando/ui-sheet'
 import { useContext } from 'react'
 
 export function useGiCalcContext() {

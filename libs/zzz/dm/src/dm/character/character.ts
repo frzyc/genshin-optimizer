@@ -1,9 +1,10 @@
-import { isPercentStat } from '@genshin-optimizer/common/util'
-import type {
-  CharacterKey,
-  CharacterRarityKey,
-  ElementalKey,
-  StatKey,
+import { isPercentStat, objMap } from '@genshin-optimizer/common/util'
+import {
+  allCharacterKeys,
+  type AttributeKey,
+  type CharacterKey,
+  type CharacterRarityKey,
+  type SpecialityKey,
 } from '@genshin-optimizer/zzz/consts'
 import { readHakushinJSON } from '../../util'
 import {
@@ -11,12 +12,16 @@ import {
   characterIdMap,
   characterRarityMap,
   coreStatMap,
+  specialityMap,
 } from './consts'
-const SCALING = 10000
+const PERCENT_SCALING = 10000
+const FLAT_SCALING = 100
 type CharacterRawData = {
   id: number
+  Icon: string
   Rarity: number
-  ElementType: Record<string, string>
+  ElementType: Record<string, string> // index, Attribute
+  WeaponType: Record<string, string> // index, Specialty
   Stats: {
     Attack: 95
     AttackGrowth: 54230
@@ -24,6 +29,8 @@ type CharacterRawData = {
     DefenceGrowth: 66882
     HpGrowth: 818426
     HpMax: 603
+
+    BreakStun: number // Base Impact
 
     Crit: 500
     CritDamage: 5000
@@ -36,7 +43,7 @@ type CharacterRawData = {
     Luck: 10
     PenDelta: 0 // pen
     PenRate: 0 // Pen ratio
-    SpBarPoint: 120
+    SpBarPoint: 120 // Max energy
     SpRecover: 120 // Energy Regen
   }
   Level: Record<
@@ -69,10 +76,80 @@ type CharacterRawData = {
       }
     }
   >
+  Skill: Record<
+    'Basic' | 'Dodge' | 'Special' | 'Chain' | 'Assist',
+    {
+      Description: Array<{
+        Name: string
+        Desc?: string
+        Param?: Array<{
+          Name: string
+          Desc: string
+          Param: Record<
+            string,
+            {
+              Main: number
+              Growth: number
+              Format: '%'
+              DamagePercentage: number
+              DamagePercentageGrowth: number
+              StunRatio: number
+              StunRatioGrowth: number
+              SpRecovery: number
+              SpRecoveryGrowth: number
+              FeverRecovery: number
+              FeverRecoveryGrowth: number
+              AttributeInfliction: number
+              SpConsume: number
+              AttackData: []
+            }
+          >
+        }>
+      }>
+      Material: Record<
+        number,
+        { 10?: number; 100112?: number; 100941?: number }
+      >
+    }
+  >
+  SkillList: Record<
+    string,
+    {
+      Name: 'Special Attack: Fork Lightning'
+      Desc: '<IconMap:Icon_Special>'
+      ElementType: 203
+      HitType: 101
+    }
+  >
+  Passive: {
+    Level: Record<
+      '1' | '2' | '3' | '4' | '5' | '6' | '7',
+      {
+        Level: '1' | '2' | '3' | '4' | '5' | '6' | '7'
+        Name: [string, string]
+        Description: [string, string]
+      }
+    >
+    Material: Record<
+      '1' | '2' | '3' | '4' | '5' | '6',
+      { 10?: number; 100112?: number; 100941?: number }
+    >
+  }
+  Talent: Record<
+    '1' | '2' | '3' | '4' | '5' | '6',
+    {
+      Level: '1' | '2' | '3' | '4' | '5' | '6'
+      Name: string
+      Desc: string
+      Desc2: string
+    }
+  >
 }
 export type CharacterData = {
+  icon: string
   rarity: CharacterRarityKey
-  element: ElementalKey
+  attribute: AttributeKey
+  specialty: SpecialityKey
   stats: {
     atk_base: number
     atk_growth: number
@@ -80,47 +157,108 @@ export type CharacterData = {
     def_growth: number
     hp_base: number
     hp_growth: number
-    anomMas: number
+    anomMas_base: number
     anomProf: number
+    impact: number
+    enerRegen: number
   }
-  levelStats: Array<{ hp: number; atk: number; def: number }>
-  coreStats: Array<Record<StatKey, number>>
+  promotionStats: Array<{ hp: number; atk: number; def: number }>
+  coreStats: Array<
+    Partial<Record<(typeof coreStatMap)[keyof typeof coreStatMap], number>>
+  >
+  skills: CharacterRawData['Skill']
+  skillList: CharacterRawData['SkillList']
+  cores: CharacterRawData['Passive']
+  mindscapes: CharacterRawData['Talent']
 }
 export const charactersDetailedJSONData = Object.fromEntries(
-  Object.entries(characterIdMap).map(([id, name]) => {
-    const raw = JSON.parse(
-      readHakushinJSON(`character/${id}.json`)
-    ) as CharacterRawData
-    const data: CharacterData = {
-      rarity: characterRarityMap[raw.Rarity],
-      element: attributeMap[Object.keys(raw.ElementType)[0] as any],
-      stats: {
-        atk_base: raw.Stats.Attack,
-        atk_growth: raw.Stats.AttackGrowth / SCALING,
-        def_base: raw.Stats.Defence,
-        def_growth: raw.Stats.DefenceGrowth / SCALING,
-        hp_base: raw.Stats.HpMax,
-        hp_growth: raw.Stats.HpGrowth / SCALING,
-        anomMas: raw.Stats.ElementAbnormalPower,
-        anomProf: raw.Stats.ElementMystery,
-      },
-      levelStats: Object.values(raw.Level).map(
-        ({ HpMax, Attack, Defence }) => ({
-          hp: HpMax,
-          atk: Attack,
-          def: Defence,
-        })
-      ),
-      coreStats: Object.values(raw.ExtraLevel).map(
-        ({ Extra }) =>
-          Object.fromEntries(
-            Object.values(Extra).map(({ Name, Value }) => [
-              coreStatMap[Name],
-              isPercentStat(coreStatMap[Name]) ? Value / SCALING : Value,
-            ])
-          ) as Record<StatKey, number>
-      ),
-    }
-    return [name, data] as const
-  })
+  Object.entries(characterIdMap)
+    .filter(([_, name]) => allCharacterKeys.includes(name as CharacterKey))
+    .map(([id, name]) => {
+      const raw = JSON.parse(
+        readHakushinJSON(`character/${id}.json`)
+      ) as CharacterRawData
+      const data: CharacterData = {
+        icon: raw.Icon,
+        rarity: characterRarityMap[raw.Rarity],
+        attribute: attributeMap[Object.keys(raw.ElementType)[0] as any],
+        specialty: specialityMap[Object.keys(raw.WeaponType)[0] as any],
+        stats: {
+          atk_base: raw.Stats.Attack,
+          atk_growth: raw.Stats.AttackGrowth / PERCENT_SCALING,
+          def_base: raw.Stats.Defence,
+          def_growth: raw.Stats.DefenceGrowth / PERCENT_SCALING,
+          hp_base: raw.Stats.HpMax,
+          hp_growth: raw.Stats.HpGrowth / PERCENT_SCALING,
+          anomMas_base: raw.Stats.ElementAbnormalPower,
+          anomProf: raw.Stats.ElementMystery,
+          impact: raw.Stats.BreakStun,
+          enerRegen: raw.Stats.SpRecover / FLAT_SCALING,
+        },
+        promotionStats: Object.values(raw.Level).map(
+          ({ HpMax, Attack, Defence }) => ({
+            hp: HpMax,
+            atk: Attack,
+            def: Defence,
+          })
+        ),
+        coreStats: Object.values(raw.ExtraLevel).map(
+          ({ Extra }) =>
+            Object.fromEntries(
+              Object.values(Extra).map(({ Name, Value }) => [
+                coreStatMap[Name],
+                isPercentStat(coreStatMap[Name])
+                  ? Value / PERCENT_SCALING
+                  : Value,
+              ])
+            ) as Partial<
+              Record<(typeof coreStatMap)[keyof typeof coreStatMap], number>
+            >
+        ),
+        skills: objMap(raw.Skill, (skill) => ({
+          ...skill,
+          Description: skill.Description.map((desc) => {
+            if ('Param' in desc) {
+              return {
+                ...desc,
+                Param: desc?.Param?.map((param) => {
+                  if ('Param' in param) {
+                    return {
+                      ...param,
+                      Param: objMap(param.Param, (param2) => ({
+                        ...param2,
+                        Main: param2.Main / FLAT_SCALING,
+                        Growth: param2.Growth / PERCENT_SCALING,
+                        DamagePercentage:
+                          param2.DamagePercentage / PERCENT_SCALING,
+                        DamagePercentageGrowth:
+                          param2.DamagePercentageGrowth / PERCENT_SCALING,
+                        StunRatio: param2.StunRatio / PERCENT_SCALING,
+                        StunRatioGrowth:
+                          param2.StunRatioGrowth / PERCENT_SCALING,
+                        SpRecovery: param2.SpRecovery / FLAT_SCALING,
+                        SpRecoveryGrowth:
+                          param2.SpRecoveryGrowth / PERCENT_SCALING,
+                        FeverRecovery: param2.FeverRecovery / FLAT_SCALING,
+                        FeverRecoveryGrowth:
+                          param2.FeverRecoveryGrowth / PERCENT_SCALING,
+                        AttributeInfliction:
+                          param2.AttributeInfliction / FLAT_SCALING,
+                        SpConsume: param2.SpConsume / FLAT_SCALING,
+                      })),
+                    }
+                  }
+                  return param
+                }),
+              }
+            }
+            return desc
+          }),
+        })),
+        skillList: raw.SkillList,
+        cores: raw.Passive,
+        mindscapes: raw.Talent,
+      }
+      return [name, data] as const
+    })
 ) as Record<CharacterKey, CharacterData>

@@ -122,5 +122,6 @@ Functions that are designed to be overriden by such subclasses include
     x: (CalcResult<number | string, M> | undefined)[],
     br: CalcResult<number | string, M>[],
     tag: Tag | undefined): M
-- computeCustom(args: (number | string)[], op: string): any
 ```
+
+For custom operations, add the appropriate information using `addCustomOperation` once at the start of the program.

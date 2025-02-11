@@ -1,3 +1,11 @@
+import type { Tag as BaseTag } from '@genshin-optimizer/game-opt/engine'
+import {
+  Read as BaseRead,
+  reader as baseReader,
+  entryTypes,
+  presets,
+  setReader,
+} from '@genshin-optimizer/game-opt/engine'
 import {
   allAmplifyingReactionKeys,
   allCatalyzeReactionKeys,
@@ -6,23 +14,8 @@ import {
   allRegionKeys,
   allTransformativeReactionKeys,
 } from '@genshin-optimizer/gi/consts'
-import type {
-  AnyNode,
-  NumNode,
-  StrNode,
-  TagOverride,
-  TagValRead,
-} from '@genshin-optimizer/pando/engine'
-import {
-  TypedRead,
-  tag as baseTag,
-  tagVal as baseTagVal,
-  constant,
-  reread,
-} from '@genshin-optimizer/pando/engine'
-import type { Sheet } from './listing'
-import { entryTypes, members, presets, sheets } from './listing'
-import type { TagMapNodeEntries, TagMapNodeEntry } from './tagMapType'
+import type { Dst, Sheet, Src } from './listing'
+import { members, sheets } from './listing'
 
 export const fixedTags = {
   preset: presets,
@@ -38,46 +31,9 @@ export const fixedTags = {
   amp: [...allAmplifyingReactionKeys, ''],
   cata: [...allCatalyzeReactionKeys, ''],
 } as const
-export type Tag = {
-  [key in keyof typeof fixedTags]?: (typeof fixedTags)[key][number] | null
-} & { name?: string | null; qt?: string | null; q?: string | null }
+export type Tag = BaseTag<Src, Dst, Sheet>
 
-export class Read extends TypedRead<Tag> {
-  override register<C extends keyof Tag>(cat: C, val: Tag[C]): void {
-    if (val == null) return // null | undefined
-    if (cat === 'name') usedNames.add(val)
-    else if (cat === 'q') usedQ.add(val)
-  }
-
-  name(name: string): Read {
-    return super.with('name', name)
-  }
-  sheet(sheet: Sheet): Read {
-    return super.with('sheet', sheet)
-  }
-
-  add(value: number | string | AnyNode): TagMapNodeEntry {
-    return super.toEntry(typeof value === 'object' ? value : constant(value))
-  }
-  addOnce(sheet: Sheet, value: number | NumNode): TagMapNodeEntries {
-    if (this.tag.et !== 'teamBuff' || !sheet)
-      throw new Error('Unsupported non-stacking entry')
-    const q = `${uniqueId(sheet)}`
-    // Use raw tags here instead of `own.*` to avoid cyclic dependency
-    // Entries in TeamData need `member:` for priority
-    return [
-      // 1) ownBuff.stackIn.<q>.add(value)
-      this.withTag({ et: 'own', sheet, qt: 'stackIn', q }).add(value),
-      // 2) In TeamData: ownBuff.stackTmp.<q>.add(cmpNE(own.stackIn.<q>, 0, /* priority */))
-      // 3) In TeamData: ownBuff.stackOut.<q>.add(cmpEq(team.stackTmp.<q>.max, /* priority */, own.stackIn))
-      // 4) teamBuff.<stat>.add(own.stackOut.<q>)
-      this.add(reader.withTag({ et: 'own', sheet, qt: 'stackOut', q })),
-    ]
-  }
-  reread(r: Read): TagMapNodeEntry {
-    return super.toEntry(reread(r.tag))
-  }
-
+export class Read extends BaseRead<Tag, Src, Dst, Sheet> {
   override toString(): string {
     return tagStr(this.tag, this.ex)
   }
@@ -197,23 +153,10 @@ export class Read extends TypedRead<Tag> {
     return super.with('region', 'khaenriah')
   }
 }
-export function tag(v: number | NumNode, tag: Tag): TagOverride<NumNode>
-export function tag(v: string | StrNode, tag: Tag): TagOverride<StrNode>
-export function tag(
-  v: number | string | AnyNode,
-  tag: Tag
-): TagOverride<AnyNode>
-export function tag(
-  v: number | string | AnyNode,
-  tag: Tag
-): TagOverride<AnyNode> {
-  return typeof v == 'object' && v.op == 'tag'
-    ? baseTag(v.x[0], { ...v.tag, ...tag }) // Fold nested tag nodes
-    : baseTag(v, tag)
-}
-export function tagVal(cat: keyof Tag): TagValRead {
-  return baseTagVal(cat)
-}
+
+// Need to instantiate with gi-specific reader
+setReader<Tag, Src, Dst, Sheet>(new Read({}, undefined))
+export const reader = baseReader as Read
 
 export function tagStr(tag: Tag, ex?: any): string {
   const {
@@ -271,15 +214,3 @@ export function tagStr(tag: Tag, ex?: any): string {
   if (ex) result += `[${ex}] `
   return result + '}'
 }
-
-const counters: Record<string, number> = {}
-function uniqueId(namespace: string): number {
-  if (!counters[namespace]) counters[namespace] = 0
-  const result = counters[namespace]!
-  counters[namespace] += 1
-  return result
-}
-
-export const reader = new Read({}, undefined)
-export const usedNames = new Set<string>()
-export const usedQ = new Set('_')

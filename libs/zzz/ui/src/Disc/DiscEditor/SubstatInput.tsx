@@ -1,4 +1,8 @@
-import { CardThemed, DropdownButton } from '@genshin-optimizer/common/ui'
+import {
+  CardThemed,
+  ColorText,
+  DropdownButton,
+} from '@genshin-optimizer/common/ui'
 import { getUnitStr, range, valueString } from '@genshin-optimizer/common/util'
 import type { DiscRarityKey } from '@genshin-optimizer/zzz/consts'
 import {
@@ -7,8 +11,10 @@ import {
   getDiscSubStatBaseVal,
 } from '@genshin-optimizer/zzz/consts'
 import type { ICachedDisc, ISubstat } from '@genshin-optimizer/zzz/db'
+import { StatIcon } from '@genshin-optimizer/zzz/svgicons'
 import type { SliderProps } from '@mui/material'
 import {
+  ListItemIcon,
   ListItemText,
   MenuItem,
   Slider,
@@ -71,7 +77,7 @@ export default function SubstatInput({
         }
         disabled={!disc?.mainStatKey}
         color={key ? 'success' : 'primary'}
-        sx={{ whiteSpace: 'nowrap' }}
+        sx={{ whiteSpace: 'nowrap', width: '13em' }}
       >
         {key && (
           <MenuItem onClick={() => setSubstat(index)}>
@@ -85,17 +91,35 @@ export default function SubstatInput({
               key={k}
               selected={key === k}
               disabled={key === k}
-              onClick={() => setSubstat(index, { key: k, upgrades: 0 })}
+              onClick={() => setSubstat(index, { key: k, upgrades: 1 })}
             >
-              {/* <ListItemIcon>
-                    <StatIcon statKey={k} />
-                  </ListItemIcon> */}
+              <ListItemIcon>
+                <StatIcon statKey={k} />
+              </ListItemIcon>
               <ListItemText>
                 <StatDisplay statKey={k} showPercent disableIcon />
               </ListItemText>
             </MenuItem>
           ))}
       </DropdownButton>
+      <CardThemed
+        bgt="light"
+        sx={{
+          // px: 2,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          overflow: 'visible',
+          height: '100%',
+          width: '2em',
+        }}
+      >
+        {!!upgrades && (
+          <ColorText color={upgrades - 1 ? 'warning' : undefined}>
+            +{upgrades - 1}
+          </ColorText>
+        )}
+      </CardThemed>
       <CardThemed
         sx={{
           flexGrow: 1,
@@ -124,25 +148,26 @@ export default function SubstatInput({
           }
         />
       </CardThemed>
-      {key && (
-        <CardThemed
-          bgt="light"
-          sx={{
-            px: 2,
-            display: 'flex',
-            alignItems: 'center',
-            overflow: 'visible',
-            height: '100%',
-          }}
-        >
-          <Typography>
-            {valueString(
-              upgrades * getDiscSubStatBaseVal(key, rarity),
+      <CardThemed
+        bgt="light"
+        sx={{
+          px: 2,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          overflow: 'visible',
+          height: '100%',
+          width: '4em',
+        }}
+      >
+        <Typography>
+          {key &&
+            valueString(
+              (upgrades || 1) * getDiscSubStatBaseVal(key, rarity),
               getUnitStr(key)
             )}
-          </Typography>
-        </CardThemed>
-      )}
+        </Typography>
+      </CardThemed>
     </Stack>
   )
 }

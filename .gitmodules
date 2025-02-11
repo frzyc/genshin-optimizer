@@ -10,3 +10,4 @@
 [submodule "libs/zzz/dm/ZenlessData"]
 	path = libs/zzz/dm/ZenlessData
 	url = https://git.mero.moe/dimbreath/ZenlessData.git
+	shallow = true

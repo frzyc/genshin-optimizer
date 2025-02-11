@@ -1,7 +1,34 @@
 {
+  "name": "Precious Fossilized Core",
   "rarity": "A",
   "type": "stun",
   "atk_base": 40,
   "second_statkey": "impact_",
-  "second_statvalue": 0.06
+  "second_statvalue": 0.06,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_Common_06.png",
+  "desc": "A special W-Engine whose outer shell is made of composite Etheric matter that effectively absorb incoming impacts in combat and turn it against the enemy. Rumors suggest that its prototype was crafted by a legendary Hollow explorer, and despite its ancient appearance, it continues to run smoothly. This W-Engine is literally an \"old timer\" in the field of W-Engines.",
+  "desc2": "Equip to increase Stun Agents' combat capabilities",
+  "desc3": "A special W-Engine whose outer shell is made of composite Etheric matter that effectively absorbs impact, and turns it against the enemy.",
+  "phase": [
+    {
+      "name": "Behemoth Hunter",
+      "desc": "When the target's HP is no lower than 50%, the equipper inflicts <color=#2BAD00>10%</color> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <color=#2BAD00>10%</color>."
+    },
+    {
+      "name": "Behemoth Hunter",
+      "desc": "When the target's HP is no lower than 50%, the equipper inflicts <color=#2BAD00>11.5%</color> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <color=#2BAD00>11.5%</color>."
+    },
+    {
+      "name": "Behemoth Hunter",
+      "desc": "When the target's HP is no lower than 50%, the equipper inflicts <color=#2BAD00>13%</color> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <color=#2BAD00>13%</color>."
+    },
+    {
+      "name": "Behemoth Hunter",
+      "desc": "When the target's HP is no lower than 50%, the equipper inflicts <color=#2BAD00>14.5%</color> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <color=#2BAD00>14.5%</color>."
+    },
+    {
+      "name": "Behemoth Hunter",
+      "desc": "When the target's HP is no lower than 50%, the equipper inflicts <color=#2BAD00>16%</color> more Daze to the target. When the target's HP is no lower than 75%, this bonus is further increased by <color=#2BAD00>16%</color>."
+    }
+  ]
 }

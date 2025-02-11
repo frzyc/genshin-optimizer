@@ -4,13 +4,20 @@ import {
   notEmpty,
   objKeyMap,
 } from '@genshin-optimizer/common/util'
-import type { SetConditionalFunc } from '@genshin-optimizer/pando/ui-sheet'
+import type { Preset } from '@genshin-optimizer/game-opt/engine'
+import type { DebugReadContextObj } from '@genshin-optimizer/game-opt/formula-ui'
+import {
+  DebugReadContext,
+  DebugReadModal,
+  TagContext,
+} from '@genshin-optimizer/game-opt/formula-ui'
+import type { SetConditionalFunc } from '@genshin-optimizer/game-opt/sheet-ui'
 import {
   ConditionalValuesContext,
   SetConditionalContext,
   SrcDstDisplayContext,
-  TagContext,
-} from '@genshin-optimizer/pando/ui-sheet'
+} from '@genshin-optimizer/game-opt/sheet-ui'
+import type { BaseRead } from '@genshin-optimizer/pando/engine'
 import { characterKeyToGenderedKey } from '@genshin-optimizer/sr/assets'
 import {
   CharacterContext,
@@ -19,10 +26,10 @@ import {
   useTeam,
 } from '@genshin-optimizer/sr/db-ui'
 import {
+  filterDebug,
   getConditional,
   isMember,
   isSheet,
-  type Preset,
   type Sheet,
   type Tag,
 } from '@genshin-optimizer/sr/formula'
@@ -141,7 +148,10 @@ function Page({ teamId }: { teamId: string }) {
     const charDisplay = objKeyMap(charList, (ck) => (
       <CharacterName genderedKey={characterKeyToGenderedKey(ck)} />
     ))
-    return { srcDisplay: charDisplay, dstDisplay: charDisplay }
+    return {
+      srcDisplay: charDisplay,
+      dstDisplay: charDisplay,
+    }
   }, [team.teamMetadata, characterKey])
   const conditionals = useMemo(
     () =>
@@ -159,10 +169,11 @@ function Page({ teamId }: { teamId: string }) {
       sheet: string,
       condKey: string,
       src: string,
-      dst: string,
+      dst: string | null,
       condValue: number
     ) => {
-      if (!isSheet(sheet) || !isMember(src) || !isMember(dst)) return
+      if (!isSheet(sheet) || !isMember(src) || !(dst === null || isMember(dst)))
+        return
       const cond = getConditional(sheet as Sheet, condKey)
       if (!cond) return
 
@@ -186,6 +197,16 @@ function Page({ teamId }: { teamId: string }) {
     }),
     [characterKey, presetIndex]
   )
+
+  const [debugRead, setDebugRead] = useState<BaseRead>()
+  const debugObj = useMemo<DebugReadContextObj>(
+    () => ({
+      read: debugRead,
+      setRead: setDebugRead,
+    }),
+    [debugRead]
+  )
+
   const { height, ref } = useRefSize()
   return (
     <TeamContext.Provider value={teamContextObj}>
@@ -195,32 +216,35 @@ function Page({ teamId }: { teamId: string }) {
             <SrcDstDisplayContext.Provider value={srcDstDisplayContextValue}>
               <ConditionalValuesContext.Provider value={conditionals}>
                 <SetConditionalContext.Provider value={setConditional}>
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      gap: 1,
-                      flexDirection: 'column',
-                      mx: 1,
-                      mt: 2,
-                    }}
-                  >
-                    <TeamHeader
-                      headerRef={ref}
-                      teamId={teamId}
-                      characterKey={characterKey}
-                    />
-                    <TeamHeaderHeightContext.Provider
-                      value={
-                        (height || DEFAULT_HEADER_HEIGHT_PX) + HEADER_TOP_PX
-                      }
+                  <DebugReadContext.Provider value={debugObj}>
+                    <DebugReadModal filterFunc={filterDebug} />
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        gap: 1,
+                        flexDirection: 'column',
+                        mx: 1,
+                        mt: 2,
+                      }}
                     >
-                      {teammateDatum && (
-                        <TeammateContext.Provider value={teammateDatum}>
-                          <TeammateDisplayWrapper />
-                        </TeammateContext.Provider>
-                      )}
-                    </TeamHeaderHeightContext.Provider>
-                  </Box>
+                      <TeamHeader
+                        headerRef={ref}
+                        teamId={teamId}
+                        characterKey={characterKey}
+                      />
+                      <TeamHeaderHeightContext.Provider
+                        value={
+                          (height || DEFAULT_HEADER_HEIGHT_PX) + HEADER_TOP_PX
+                        }
+                      >
+                        {teammateDatum && (
+                          <TeammateContext.Provider value={teammateDatum}>
+                            <TeammateDisplayWrapper />
+                          </TeammateContext.Provider>
+                        )}
+                      </TeamHeaderHeightContext.Provider>
+                    </Box>
+                  </DebugReadContext.Provider>
                 </SetConditionalContext.Provider>
               </ConditionalValuesContext.Provider>
             </SrcDstDisplayContext.Provider>

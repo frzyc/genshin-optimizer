@@ -1,4 +1,4 @@
-import type { ElementalKey } from '@genshin-optimizer/zzz/consts'
+import type { AttributeKey } from '@genshin-optimizer/zzz/consts'
 import type { SvgIconProps } from '@mui/material'
 import {
   ElectricIcon,
@@ -13,7 +13,7 @@ export function ElementIcon({
   ele,
   iconProps = {},
 }: {
-  ele: ElementalKey | 'frost'
+  ele: AttributeKey | 'frost'
   iconProps?: SvgIconProps
 }) {
   switch (ele) {

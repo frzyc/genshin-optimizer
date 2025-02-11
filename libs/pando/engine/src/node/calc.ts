@@ -1,3 +1,4 @@
+import type { DebugCalculator } from '../debug'
 import type { DedupTag, RawTagMapKeys, RawTagMapValues, Tag } from '../tag'
 import {
   DedupTags,
@@ -5,7 +6,13 @@ import {
   TagMapKeys,
   TagMapSubsetValues,
 } from '../tag'
-import { assertUnreachable, extract, isDebug, tagString } from '../util'
+import {
+  assertUnreachable,
+  customOps,
+  extract,
+  isDebug,
+  tagString,
+} from '../util'
 import { arithmetic, branching } from './formula'
 import type { AnyNode, BaseRead, NumNode, ReRead, StrNode } from './type'
 
@@ -131,7 +138,7 @@ export class Calculator<M = any> {
       }
       case 'custom': {
         const x = n.x.map((n) => this._compute(n, cache))
-        return finalize(this.computeCustom(getV(x), n.ex), x, [])
+        return finalize(customOps[n.ex].calc(getV(x)), x, [])
       }
       default:
         assertUnreachable(op)
@@ -145,9 +152,6 @@ export class Calculator<M = any> {
   ): CalcResult<number | string, M> {
     return result
   }
-  computeCustom(_: (number | string)[], op: string): any {
-    throw new Error(`Unsupported custom node ${op} in Calculator`)
-  }
   computeMeta(
     _n: AnyNode,
     _value: number | string,
@@ -156,5 +160,9 @@ export class Calculator<M = any> {
     _tag: Tag | undefined
   ): M {
     return undefined as any
+  }
+
+  toDebug(): DebugCalculator {
+    throw 'Not implemented'
   }
 }

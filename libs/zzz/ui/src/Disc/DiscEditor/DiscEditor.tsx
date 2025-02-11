@@ -1,10 +1,10 @@
 import {
   CardThemed,
-  DropdownButton,
   ModalWrapper,
   NextImage,
 } from '@genshin-optimizer/common/ui'
 import {
+  getUnitStr,
   range,
   statKeyToFixed,
   toPercent,
@@ -17,7 +17,7 @@ import {
 } from '@genshin-optimizer/zzz/consts'
 import type { IDisc } from '@genshin-optimizer/zzz/db'
 import {
-  validateDisc,
+  validateDiscBasedOnRarity,
   type ICachedDisc,
   type ISubstat,
 } from '@genshin-optimizer/zzz/db'
@@ -34,6 +34,7 @@ import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
 import ReplayIcon from '@mui/icons-material/Replay'
 import UpdateIcon from '@mui/icons-material/Update'
 import {
+  Alert,
   Box,
   Button,
   ButtonGroup,
@@ -43,7 +44,6 @@ import {
   Grid,
   IconButton,
   LinearProgress,
-  MenuItem,
   Skeleton,
   TextField,
   Typography,
@@ -65,7 +65,7 @@ import { useTranslation } from 'react-i18next'
 import { LocationAutocomplete } from '../../Character/LocationAutocomplete'
 import { shouldShowDevComponents } from '../../util/isDev'
 import { DiscCard } from '../DiscCard'
-import { DiscMainStatDropdown } from '../DiscMainStatDropdown'
+import { DiscMainStatGroup } from '../DiscMainStatGroup'
 import { DiscRarityDropdown } from '../DiscRarityDropdown'
 import { DiscSetAutocomplete } from '../DiscSetAutocomplete'
 import { textsFromImage } from './ScanningUtil'
@@ -79,29 +79,62 @@ const InputInvis = styled('input')({
 interface DiscReducerState {
   disc: Partial<ICachedDisc>
   validatedDisc?: IDisc
+  errors?: string[]
 }
-function reducer(state: DiscReducerState, action: Partial<ICachedDisc>) {
+function handleSubstats(
+  index: number,
+  substat: ISubstat | undefined,
+  disc: Partial<ICachedDisc>
+): ISubstat[] {
+  const substats = [...(disc.substats || [])]
+  if (substat) {
+    const oldIndex = substat?.key
+      ? substats.findIndex((current) => current.key === substat.key)
+      : -1
+    if (oldIndex === -1 || oldIndex === index) substats[index] = substat
+    // Already in used, swap the items instead
+    else
+      [substats[index], substats[oldIndex]] = [
+        substats[oldIndex],
+        substats[index],
+      ]
+
+    if (oldIndex !== -1 && substats[oldIndex] === undefined) {
+      substats.splice(oldIndex, 1)
+    }
+  } else {
+    substats.splice(index, 1)
+  }
+
+  return substats
+}
+function reducer(
+  state: DiscReducerState,
+  action: Partial<ICachedDisc>
+): DiscReducerState {
   if (!action || Object.keys(action).length === 0)
     return {
       disc: {} as Partial<ICachedDisc>,
     }
   const disc = { ...state.disc, ...action }
-  const validatedDisc = validateDisc(disc)
+  const { validatedDisc, errors } = validateDiscBasedOnRarity(disc)
 
   return {
     // Combine because validatedDisc:IDisc is missing the `id` field in ICachedDisc
     disc: { ...disc, ...(validatedDisc || {}) } as Partial<ICachedDisc>,
     validatedDisc,
+    errors,
   }
 }
 function useDiscValidation(discFromProp: Partial<ICachedDisc>) {
-  const [{ disc, validatedDisc }, setDisc] = useReducer(reducer, {
+  const [{ disc, validatedDisc, errors }, setDisc] = useReducer(reducer, {
     disc: discFromProp,
     validatedDisc: undefined,
+    errors: [],
   })
   useEffect(() => setDisc(discFromProp), [discFromProp])
 
-  return { disc, validatedDisc, setDisc }
+  return { disc, validatedDisc, errors, setDisc }
 }
 export function DiscEditor({
   disc: discFromProp,
@@ -123,10 +156,10 @@ export function DiscEditor({
   fixedSlotKey?: DiscSlotKey
 }) {
   const { t } = useTranslation('disc')
-  const { t: tk } = useTranslation(['discs_gen', 'statKey_gen'])
 
   const { database } = useDatabaseContext()
-  const { disc, validatedDisc, setDisc } = useDiscValidation(discFromProp)
+  const { disc, validatedDisc, setDisc, errors } =
+    useDiscValidation(discFromProp)
   const {
     prev,
     prevEditType,
@@ -147,13 +180,9 @@ export function DiscEditor({
     }
   }, [disc, database])
 
-  const disableEditSlot =
-    (!disc.id && !!disc?.location) || // Disable slot for equipped disc
-    !!fixedSlotKey // Disable slot if its fixed
-
   const { rarity = 'S', level = 0 } = disc ?? {}
   const slotKey = useMemo(() => {
-    return disc?.slotKey ?? fixedSlotKey ?? '1'
+    return disc?.slotKey ?? fixedSlotKey
   }, [fixedSlotKey, disc])
 
   const reset = useCallback(() => {
@@ -163,9 +192,8 @@ export function DiscEditor({
 
   const setSubstat = useCallback(
     (index: number, substat?: ISubstat) => {
-      const substats = [...(disc.substats || [])]
-      if (substat) substats[index] = substat
-      else substats.filter((_, i) => i !== index)
+      const substats = handleSubstats(index, substat, disc)
+
       setDisc({ substats })
     },
     [disc, setDisc]
@@ -184,7 +212,7 @@ export function DiscEditor({
     },
     [t, disc, onClose, reset]
   )
-
+  const isValid = !errors?.length
   const theme = useTheme()
   const grmd = useMediaQuery(theme.breakpoints.up('md'))
   const removeId = disc?.id || prev?.id
@@ -301,7 +329,6 @@ export function DiscEditor({
                     disabled={!disc.mainStatKey || !!disc.id}
                   />
                 </Box>
-
                 {/* level */}
                 <Box component="div" display="flex">
                   <TextField
@@ -345,71 +372,55 @@ export function DiscEditor({
                     </Button>
                   </ButtonGroup>
                 </Box>
-
                 {/* slot */}
-                <Box component="div" display="flex">
-                  <DropdownButton
-                    // startIcon={
-                    //   disc?.slotKey ? (
-                    //     <SlotIcon slotKey={disc.slotKey} />
-                    //   ) : undefined
-                    // }
-                    title={disc?.slotKey ? tk(disc.slotKey) : t('slot')}
-                    value={slotKey}
-                    disabled={disableEditSlot || !!disc.id}
-                    color={disc ? 'success' : 'primary'}
-                  >
-                    {allDiscSlotKeys.map((sk) => (
-                      <MenuItem
-                        key={sk}
-                        selected={slotKey === sk}
-                        disabled={slotKey === sk}
-                        onClick={() => setDisc({ slotKey: sk })}
-                      >
-                        {/* <ListItemIcon>
-                          <SlotIcon slotKey={sk} />
-                        </ListItemIcon> */}
-                        {tk(sk)}
-                      </MenuItem>
-                    ))}
-                  </DropdownButton>
-                  <CardThemed bgt="light" sx={{ p: 1, ml: 1, flexGrow: 1 }}>
-                    <Suspense fallback={<Skeleton width="60%" />}>
-                      <Typography color="text.secondary">
-                        {tk(`discs_gen:${slotKey}`)}
-                      </Typography>
-                    </Suspense>
+                <Stack direction="row" gap={1}>
+                  <CardThemed bgt="light" sx={{ px: 2, py: 1 }}>
+                    <Typography color="text.secondary">
+                      Slot [{slotKey}]
+                    </Typography>
                   </CardThemed>
-                </Box>
-
+                  <ButtonGroup sx={{ flexGrow: 1 }}>
+                    {allDiscSlotKeys.map((sk) => (
+                      <Button
+                        key={sk}
+                        color={sk === slotKey ? 'success' : undefined}
+                        onClick={() => setDisc({ slotKey: sk })}
+                        disabled={
+                          !!disc.id || !!fixedSlotKey || !disc.mainStatKey
+                        }
+                        sx={{ flexGrow: 1 }}
+                      >
+                        {sk}
+                      </Button>
+                    ))}
+                  </ButtonGroup>
+                  <Button
+                    onClick={() => setDisc({ lock: !disc?.lock })}
+                    color={disc?.lock ? 'success' : 'primary'}
+                    disabled={!disc || !disc.mainStatKey}
+                  >
+                    {disc?.lock ? <LockIcon /> : <LockOpenIcon />}
+                  </Button>
+                </Stack>
                 {/* main stat */}
                 <Box component="div" display="flex" gap={1}>
-                  <DiscMainStatDropdown
+                  <DiscMainStatGroup
                     slotKey={slotKey}
                     statKey={disc?.mainStatKey}
                     setStatKey={(mainStatKey) => setDisc({ mainStatKey })}
-                    defText={t('mainStat')}
-                    dropdownButtonProps={{
-                      color: disc ? 'success' : 'primary',
-                    }}
                   />
                   <CardThemed bgt="light" sx={{ p: 1, flexGrow: 1 }}>
                     <Typography color="text.secondary">
                       {disc?.mainStatKey
-                        ? toPercent(
+                        ? `${toPercent(
                             getDiscMainStatVal(rarity, disc.mainStatKey, level),
                             disc.mainStatKey
-                          ).toFixed(statKeyToFixed(disc.mainStatKey))
+                          ).toFixed(
+                            statKeyToFixed(disc.mainStatKey)
+                          )}${getUnitStr(disc.mainStatKey)}`
                         : t('mainStat')}
                     </Typography>
                   </CardThemed>
-                  <Button
-                    onClick={() => setDisc({ lock: !disc?.lock })}
-                    color={disc?.lock ? 'success' : 'primary'}
-                    disabled={!disc}
-                  >
-                    {disc?.lock ? <LockIcon /> : <LockOpenIcon />}
-                  </Button>
                 </Box>
                 <LocationAutocomplete
                   locKey={disc?.location ?? ''}
@@ -590,7 +601,14 @@ export function DiscEditor({
                 </Grid>
               </Grid>
             )}
-
+            {/* Error alert */}
+            {!isValid && (
+              <Alert variant="filled" severity="error">
+                {errors?.map((e, i) => (
+                  <div key={i}>{e}</div>
+                ))}
+              </Alert>
+            )}
             {/* Buttons */}
             <Box display="flex" gap={2}>
               {prevEditType === 'edit' && prev?.id ? (
@@ -600,7 +618,7 @@ export function DiscEditor({
                     disc && database.discs.set(prev.id, disc)
                     reset()
                   }}
-                  disabled={!validatedDisc}
+                  disabled={!validatedDisc || !isValid}
                   color="primary"
                 >
                   {t('editor.btnSave')}
@@ -613,7 +631,7 @@ export function DiscEditor({
                     database.discs.new(validatedDisc)
                     reset()
                   }}
-                  disabled={!validatedDisc}
+                  disabled={!validatedDisc || !isValid}
                   color={prevEditType === 'duplicate' ? 'warning' : 'primary'}
                 >
                   {t('editor.btnAdd')}
@@ -639,7 +657,7 @@ export function DiscEditor({
                     database.discs.set(prev.id, validatedDisc)
                     reset()
                   }}
-                  disabled={!validatedDisc}
+                  disabled={!isValid}
                   color="success"
                 >
                   {t('editor.btnUpdate')}

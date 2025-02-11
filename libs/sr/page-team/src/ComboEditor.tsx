@@ -1,11 +1,13 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
 import { getUnitStr, valueString } from '@genshin-optimizer/common/util'
-import { TagContext } from '@genshin-optimizer/pando/ui-sheet'
+import type { Preset } from '@genshin-optimizer/game-opt/engine'
+import { DebugReadContext } from '@genshin-optimizer/game-opt/formula-ui'
 import type { Frame } from '@genshin-optimizer/sr/db'
 import { useDatabaseContext } from '@genshin-optimizer/sr/db-ui'
 import { Read } from '@genshin-optimizer/sr/formula'
 import { useSrCalcContext } from '@genshin-optimizer/sr/ui'
 import { Box, CardActionArea, Divider, Typography } from '@mui/material'
+import type { MouseEvent } from 'react'
 import { useCallback, useContext, useMemo } from 'react'
 import { PresetContext, useTeamContext } from './context'
 import { OptimizationTargetDisplay } from './Optimize/OptimizationTargetDisplay'
@@ -35,7 +37,11 @@ export function ComboEditor() {
                 ...team.frames,
                 {
                   multiplier: 1,
-                  tag,
+                  tag: {
+                    ...tag,
+                    // TODO: This is going to cause collision issues when frame deletion is implemented
+                    preset: `preset${team.frames.length}` as Preset,
+                  },
                 },
               ]
             })
@@ -48,22 +54,25 @@ export function ComboEditor() {
 function Combo({ frame, index }: { frame: Frame; index: number }) {
   const { presetIndex, setPresetIndex } = useContext(PresetContext)
   const calc = useSrCalcContext()
-  const tagcontext = useContext(TagContext)
+  const { setRead } = useContext(DebugReadContext)
+  const read = useMemo(() => new Read(frame.tag, 'sum'), [frame.tag])
   const value = useMemo(() => {
     try {
-      return (
-        calc?.withTag(tagcontext).compute(new Read(frame.tag, 'sum')).val ?? 0
-      )
+      return calc?.compute(read).val ?? 0
     } catch (error) {
       console.error('Error computing value:', error)
       return 0
     }
-  }, [calc, frame.tag, tagcontext])
+  }, [calc, read])
   const unit = getUnitStr(frame.tag.q ?? '')
 
-  const handleClick = useCallback(() => {
-    setPresetIndex(index)
-  }, [index, setPresetIndex])
+  const handleClick = useCallback(
+    (event: MouseEvent) => {
+      if (event.altKey) setRead(read)
+      else setPresetIndex(index)
+    },
+    [index, read, setPresetIndex, setRead]
+  )
   return (
     <CardThemed
       bgt="light"

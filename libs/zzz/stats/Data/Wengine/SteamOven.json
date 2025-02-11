@@ -1,7 +1,34 @@
 {
+  "name": "Steam Oven",
   "rarity": "A",
   "type": "stun",
   "atk_base": 40,
   "second_statkey": "enerRegen_",
-  "second_statvalue": 0.2
+  "second_statvalue": 0.2,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_Common_05.png",
+  "desc": "This high-power W-Engine boasts a cutting-edge energy conversion device that collects heat from its surroundings and supplies it to the steamer, making it easy for the operator to cook or heat up objects. This makes it a perfect choice for Hollow explorers. However... please be careful when using it to avoid burns.",
+  "desc2": "Equip to increase Stun Agents' combat capabilities",
+  "desc3": "A high-power W-Engine that boasts a cutting-edge energy conversion system. It collects excess heat and supplies it to the steamer.",
+  "phase": [
+    {
+      "name": "Thick Broth",
+      "desc": "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>2%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately."
+    },
+    {
+      "name": "Thick Broth",
+      "desc": "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>2.3%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately."
+    },
+    {
+      "name": "Thick Broth",
+      "desc": "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>2.6%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately."
+    },
+    {
+      "name": "Thick Broth",
+      "desc": "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>2.9%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately."
+    },
+    {
+      "name": "Thick Broth",
+      "desc": "For every 10 Energy accumulated, the equipper's Impact is increased by <color=#2BAD00>3.2%</color>, stacking up to 8 times. After Energy is consumed, this bonus remains for 8 more seconds. The duration of each stack is calculated separately."
+    }
+  ]
 }

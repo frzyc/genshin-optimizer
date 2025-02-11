@@ -1,3 +1,4 @@
+import { addCustomOperation } from '../util'
 import {
   cmpEq,
   cmpGE,
@@ -66,10 +67,9 @@ describe('optimization', () => {
   })
   describe('compile computation', () => {
     function runCompile(
-      n: AnyNode<Exclude<OP, 'tag' | 'dtag' | 'vtag'>>,
-      header = ''
+      n: AnyNode<Exclude<OP, 'tag' | 'dtag' | 'vtag'>>
     ): number | string {
-      return compile([n], '', 0, {}, header)([])[0]
+      return compile([n], '', 0, {})([])[0]
     }
     test('arithmetic', () => {
       expect(runCompile(sum(1, 2, 3, 4))).toEqual(10)
@@ -98,18 +98,32 @@ describe('optimization', () => {
       expect(runCompile(lookup('X', { a: 1, b: 2, c: 3, d: 4 }))).toEqual(NaN)
     })
     test('custom computation', () => {
-      expect(
-        runCompile(
-          custom('foo', 1, 2, 3, 4),
-          'function foo(a,b,c,d) { return a+b+d }'
-        )
-      ).toEqual(7)
-      expect(
-        runCompile(
-          custom('bar', 'a', 'b', 'c', 'd'),
-          'function bar(a,b,c,d) { return [d,c,b,a].join("/") }'
-        )
-      ).toEqual('d/c/b/a')
+      addCustomOperation('foo', {
+        range: () => {
+          throw new Error('Unused')
+        },
+        tonicity: () => {
+          throw new Error('Unused')
+        },
+        calc: function (args) {
+          const [a, b, _, d] = args as number[]
+          return a + b + d
+        },
+      })
+      addCustomOperation('bar', {
+        range: () => {
+          throw new Error('Unused')
+        },
+        tonicity: () => {
+          throw new Error('Unused')
+        },
+        calc: function (args) {
+          const [a, b, c, d] = args as string[]
+          return [d, c, b, a].join('/')
+        },
+      })
+      expect(runCompile(custom('foo', 1, 2, 3, 4))).toEqual(7)
+      expect(runCompile(custom('bar', 'a', 'b', 'c', 'd'))).toEqual('d/c/b/a')
     })
   })
 })

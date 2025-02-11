@@ -1,7 +1,34 @@
 {
+  "name": "The Vault",
   "rarity": "A",
   "type": "support",
   "atk_base": 42,
   "second_statkey": "enerRegen_",
-  "second_statvalue": 0.2
+  "second_statvalue": 0.2,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_A_1031.png",
+  "desc": "A cost-effective W-Engine that focuses on energy storage. After Nicole modified its internal space, it can now be used as a storage box. While the gold coins stored inside are fake, they may catch greedy Hollow Raiders off guard. Or rather, the operator can simply toss the heavy coins at them and knock them out.\n\n<color=#959595>\"Hurts, doesn't it? Impressive, right? Hmph, that's just what money can do!\" — Nicole, gloating after defeating an enemy</color>",
+  "desc2": "Equip to increase Support Agents' combat capabilities",
+  "desc3": "A cost-effective W-Engine that can store energy, with improvements made to its internal space. This model is often used by Nicole.",
+  "phase": [
+    {
+      "name": "Money-Lover",
+      "desc": "Dealing <color=#FE437E>Ether DMG</color> using an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color> increases all squad members' DMG against the target by <color=#2BAD00>15%</color> and increases the equipper's Energy Regen by <color=#2BAD00>0.5</color>/s for 2s. Passive effects of the same name do not stack."
+    },
+    {
+      "name": "Money-Lover",
+      "desc": "Dealing <color=#FE437E>Ether DMG</color> using an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color> increases all squad members' DMG against the target by <color=#2BAD00>17.5%</color> and increases the equipper's Energy Regen by <color=#2BAD00>0.58</color>/s for 2s. Passive effects of the same name do not stack."
+    },
+    {
+      "name": "Money-Lover",
+      "desc": "Dealing <color=#FE437E>Ether DMG</color> using an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color> increases all squad members' DMG against the target by <color=#2BAD00>20%</color> and increases the equipper's Energy Regen by <color=#2BAD00>0.65</color>/s for 2s. Passive effects of the same name do not stack."
+    },
+    {
+      "name": "Money-Lover",
+      "desc": "Dealing <color=#FE437E>Ether DMG</color> using an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color> increases all squad members' DMG against the target by <color=#2BAD00>22%</color> and increases the equipper's Energy Regen by <color=#2BAD00>0.72</color>/s for 2s. Passive effects of the same name do not stack."
+    },
+    {
+      "name": "Money-Lover",
+      "desc": "Dealing <color=#FE437E>Ether DMG</color> using an <color=#FFFFFF>EX Special Attack</color>, <color=#FFFFFF>Chain Attack</color>, or <color=#FFFFFF>Ultimate</color> increases all squad members' DMG against the target by <color=#2BAD00>24%</color> and increases the equipper's Energy Regen by <color=#2BAD00>0.8</color>/s for 2s. Passive effects of the same name do not stack."
+    }
+  ]
 }

@@ -1,3 +1,4 @@
+import type { Preset } from '@genshin-optimizer/game-opt/engine'
 import { cmpEq, cmpNE } from '@genshin-optimizer/pando/engine'
 import type {
   AscensionKey,
@@ -12,7 +13,7 @@ import {
   allStatBoostKeys,
 } from '@genshin-optimizer/sr/consts'
 import type { ICharacter } from '@genshin-optimizer/sr/srod'
-import type { Member, Preset, TagMapNodeEntries } from './data/util'
+import type { Member, TagMapNodeEntries } from './data/util'
 import {
   convert,
   getStatFromStatKey,
@@ -87,7 +88,10 @@ export function relicTagMapNodeEntries(
   const {
     common: { count },
     premod,
-  } = convert(ownTag, { sheet: 'relic', et: 'own' })
+  } = convert(ownTag, {
+    sheet: 'relic',
+    et: 'own',
+  })
   return [
     // Opt-in for artifact buffs, instead of enabling it by default to reduce `read` traffic
     reader.sheet('agg').reread(reader.sheet('relic')),

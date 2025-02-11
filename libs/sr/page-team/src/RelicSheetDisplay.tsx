@@ -1,6 +1,6 @@
 import { CardThemed, NextImage, SqBadge } from '@genshin-optimizer/common/ui'
-import type { UISheetElement } from '@genshin-optimizer/pando/ui-sheet'
-import { DocumentDisplay } from '@genshin-optimizer/pando/ui-sheet'
+import type { UISheetElement } from '@genshin-optimizer/game-opt/sheet-ui'
+import { DocumentDisplay } from '@genshin-optimizer/game-opt/sheet-ui'
 import { relicAsset } from '@genshin-optimizer/sr/assets'
 import type { RelicSetKey } from '@genshin-optimizer/sr/consts'
 import { relicUiSheets } from '@genshin-optimizer/sr/formula-ui'

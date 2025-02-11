@@ -1,6 +1,33 @@
 {
+  "name": "[Reverb] Mark II",
   "type": "support",
   "atk_base": 32,
   "second_statkey": "enerRegen_",
-  "second_statvalue": 0.16
+  "second_statvalue": 0.16,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_B_Common_05.png",
+  "desc": "A standardized W-Engine with balanced performance. Despite lacking any particular tendencies, it enhances its owner's and it's owner's teammates' combat effectiveness in all aspects. For novice explorers who have not figured out their preferred combat style, this W-Engine is an excellent choice.",
+  "desc2": "Equip to increase Support Agents' combat capabilities",
+  "desc3": "A standardized W-Engine with balanced performance that enhances its owner's and their teammates' combat effectiveness in all aspects.",
+  "phase": [
+    {
+      "name": "Roaring Waves",
+      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> increases all squad members' Anomaly Mastery and Anomaly Proficiency by <color=#2BAD00>10</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack."
+    },
+    {
+      "name": "Roaring Waves",
+      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> increases all squad members' Anomaly Mastery and Anomaly Proficiency by <color=#2BAD00>12</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack."
+    },
+    {
+      "name": "Roaring Waves",
+      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> increases all squad members' Anomaly Mastery and Anomaly Proficiency by <color=#2BAD00>13</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack."
+    },
+    {
+      "name": "Roaring Waves",
+      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> increases all squad members' Anomaly Mastery and Anomaly Proficiency by <color=#2BAD00>15</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack."
+    },
+    {
+      "name": "Roaring Waves",
+      "desc": "Launching an <color=#FFFFFF>EX Special Attack</color> or <color=#FFFFFF>Chain Attack</color> increases all squad members' Anomaly Mastery and Anomaly Proficiency by <color=#2BAD00>16</color> for 10s. This effect can trigger once every 20s. Passive effects of the same name do not stack."
+    }
+  ]
 }

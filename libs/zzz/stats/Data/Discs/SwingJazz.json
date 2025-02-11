@@ -1,0 +1,7 @@
+{
+  "name": "Swing Jazz",
+  "desc2": "Energy Regen +20%",
+  "desc4": "Launching a <color=#FFFFFF>Chain Attack</color> or <color=#FFFFFF>Ultimate</color> increases all squad members' DMG by 15% for 12s. Passive effects of the same name do not stack.",
+  "story": "A Drive Disc highly favored by versatile investigators, with a focus on high compatibility and enhanced cooperative support.",
+  "icon": "UI/Sprite/A1DynamicLoad/IconSuit/UnPacker/SuitSwingJazz.png"
+}

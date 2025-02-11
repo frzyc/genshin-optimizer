@@ -1,34 +1,24 @@
-import type { AscensionKey } from '@genshin-optimizer/gi/consts'
+import type { AscensionKey } from '@genshin-optimizer/zzz/consts'
 
-export const ascensionMaxLevelLow = [20, 40, 50, 60, 70] as const
-export const maxLevel = 90
-export const maxLevelLow = 70
-export const ascensionMaxLevel = [...ascensionMaxLevelLow, 80, 90] as const
+export const ascensionMaxLevelLow = [10, 20, 30, 40, 50] as const
+export const maxLevel = 60
+export const maxLevelLow = 50
+export const ascensionMaxLevel = [...ascensionMaxLevelLow, 60] as const
 export const ambiguousLevel = (level: number) =>
   level !== maxLevel &&
   ascensionMaxLevel.includes(level as (typeof ascensionMaxLevel)[number])
 export const ambiguousLevelLow = (level: number) =>
   level !== maxLevelLow &&
-  ascensionMaxLevelLow.includes(level as (typeof ascensionMaxLevelLow)[number])
+  ascensionMaxLevel.includes(level as (typeof ascensionMaxLevel)[number])
 export const milestoneLevelsLow = [
-  [70, 4],
-  [60, 4],
-  [60, 3],
-  [50, 3],
-  [50, 2],
-  [40, 2],
-  [40, 1],
-  [20, 1],
-  [20, 0],
+  [50, 5],
+  [40, 4],
+  [30, 3],
+  [20, 2],
+  [10, 1],
   [1, 0],
 ] as const
-export const milestoneLevels = [
-  [90, 6],
-  [80, 6],
-  [80, 5],
-  [70, 5],
-  ...milestoneLevelsLow,
-] as const
+export const milestoneLevels = [[60, 5], ...milestoneLevelsLow] as const
 
 export const getLevelString = (
   level: number,
@@ -36,19 +26,25 @@ export const getLevelString = (
 ): string => `${level}/${ascensionMaxLevel[ascension]}`
 
 export function validateLevelAsc(
-  level: number,
+  inputLevel: number,
   ascension: AscensionKey
-): { level: number; ascension: AscensionKey } {
-  if (typeof level !== 'number' || level < 1 || level > 90) level = 1
+): { sanitizedLevel: number; ascension: AscensionKey } {
+  let sanitizedLevel = inputLevel
+  if (
+    typeof sanitizedLevel !== 'number' ||
+    sanitizedLevel < 1 ||
+    sanitizedLevel > 60
+  )
+    sanitizedLevel = 1
   if (typeof ascension !== 'number' || ascension < 0 || ascension > 6)
     ascension = 0
 
   if (
-    level > ascensionMaxLevel[ascension] ||
-    level < (ascensionMaxLevel[ascension - 1] ?? 0)
+    sanitizedLevel > ascensionMaxLevel[ascension] ||
+    sanitizedLevel < (ascensionMaxLevel[ascension - 1] ?? 0)
   )
     ascension = ascensionMaxLevel.findIndex(
-      (maxLvl) => level <= maxLvl
+      (maxLvl) => sanitizedLevel <= maxLvl
     ) as AscensionKey
-  return { level, ascension }
+  return { sanitizedLevel, ascension }
 }

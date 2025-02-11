@@ -1,6 +1,33 @@
 {
+  "name": "[Vortex] Hatchet",
   "type": "stun",
   "atk_base": 32,
   "second_statkey": "enerRegen_",
-  "second_statvalue": 0.16
+  "second_statvalue": 0.16,
+  "icon": "Assets/NapResources/UI/Sprite/A1DynamicLoad/ItemIconWeapon/UnPacker/Weapon_B_Common_09.png",
+  "desc": "This inverter W-Engine can generate excessive power and effectively increase its operator's battle prowess. However, due to its poor heat dissipation, it emits ear-splitting noise during battle. As a result, all squad members will need to wear earplugs.",
+  "desc2": "Equip to increase Stun Agents' combat capabilities",
+  "desc3": "A frequency-converting W-Engine that can quickly generate excessive power and effectively increase its user's battle prowess.",
+  "phase": [
+    {
+      "name": "Riptide",
+      "desc": "Upon entering combat or switching in, the equipper's Impact increases by <color=#2BAD00>9%</color> for 10s. This effect can trigger once every 20s."
+    },
+    {
+      "name": "Riptide",
+      "desc": "Upon entering combat or switching in, the equipper's Impact increases by <color=#2BAD00>10%</color> for 10s. This effect can trigger once every 20s."
+    },
+    {
+      "name": "Riptide",
+      "desc": "Upon entering combat or switching in, the equipper's Impact increases by <color=#2BAD00>11%</color> for 10s. This effect can trigger once every 20s."
+    },
+    {
+      "name": "Riptide",
+      "desc": "Upon entering combat or switching in, the equipper's Impact increases by <color=#2BAD00>12%</color> for 10s. This effect can trigger once every 20s."
+    },
+    {
+      "name": "Riptide",
+      "desc": "Upon entering combat or switching in, the equipper's Impact increases by <color=#2BAD00>13%</color> for 10s. This effect can trigger once every 20s."
+    }
+  ]
 }

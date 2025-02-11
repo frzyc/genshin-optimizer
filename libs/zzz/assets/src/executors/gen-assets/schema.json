@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "version": 2,
+  "title": "GenAssets executor",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "fetchAssets": "Flag to specify where to fetch assets from. 'none' for no asset copying/fetching, 'local' to copy from 'libs/sr/dm/assets', 'yatta' to fetch from yatta.top"
+  },
+  "required": []
+}
