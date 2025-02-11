@@ -35,7 +35,11 @@ export function DiscMainStatGroup({
     <ButtonGroup>
       {slotKey &&
         discSlotToMainStatKeys[slotKey].map((stat) => (
-          <BootstrapTooltip placement="top" title={statKeyTextMap[stat]}>
+          <BootstrapTooltip
+            key={stat}
+            placement="top"
+            title={statKeyTextMap[stat]}
+          >
             <Button
               color={statKey === stat ? 'success' : undefined}
               onClick={() => setStatKey(stat)}
