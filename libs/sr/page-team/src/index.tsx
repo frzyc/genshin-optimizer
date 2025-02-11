@@ -150,7 +150,7 @@ function Page({ teamId }: { teamId: string }) {
     ))
     return {
       srcDisplay: charDisplay,
-      dstDisplay: { all: 'All', ...charDisplay },
+      dstDisplay: charDisplay,
     }
   }, [team.teamMetadata, characterKey])
   const conditionals = useMemo(
@@ -168,11 +168,15 @@ function Page({ teamId }: { teamId: string }) {
     (
       sheet: string,
       condKey: string,
-      src: string,
+      src: string | null,
       dst: string | null,
       condValue: number
     ) => {
-      if (!isSheet(sheet) || !isMember(src) || !(dst === null || isMember(dst)))
+      if (
+        !isSheet(sheet) ||
+        !(src === null || isMember(src)) ||
+        !(dst === null || isMember(dst))
+      )
         return
       const cond = getConditional(sheet as Sheet, condKey)
       if (!cond) return

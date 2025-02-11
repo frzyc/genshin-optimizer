@@ -11,10 +11,10 @@ import {
   allCharacterKeys,
   allRelicSlotKeys,
 } from '@genshin-optimizer/sr/consts'
+import type { Dst, Src } from '@genshin-optimizer/sr/formula'
 import {
   getConditional,
   isMember,
-  type Member,
   type Sheet,
   type Tag,
 } from '@genshin-optimizer/sr/formula'
@@ -53,8 +53,8 @@ export interface Team {
   frames: Array<Frame>
   conditionals: Array<{
     sheet: Sheet
-    src: Member
-    dst: Member | null
+    src: Src
+    dst: Dst
     condKey: string
     condValues: number[] // should be the same length as `frames`
   }>
@@ -200,7 +200,11 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
       const hashList: string[] = [] // a hash to ensure sheet:condKey:src:dst is unique
       conditionals = conditionals.filter(
         ({ sheet, condKey, src, dst, condValues }) => {
-          if (!isMember(src) || !(dst === null || isMember(dst))) return false
+          if (
+            !(src === null || isMember(src)) ||
+            !(dst === null || isMember(dst))
+          )
+            return false
           const cond = getConditional(sheet, condKey)
           if (!cond) return false
 
@@ -415,8 +419,8 @@ export class TeamDataManager extends DataManager<string, 'teams', Team, Team> {
     teamId: string,
     sheet: Sheet,
     condKey: string,
-    src: Member,
-    dst: Member | null,
+    src: Src,
+    dst: Dst,
     condValue: number,
     frameIndex: number
   ) {

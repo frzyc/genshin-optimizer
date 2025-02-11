@@ -34,18 +34,11 @@ import {
   useMemo,
   useState,
 } from 'react'
+import { ConditionalValuesContext } from '../context'
 import type { Conditional } from '../types'
 import { FieldsDisplay } from './FieldDisplay'
 import { HeaderDisplay } from './HeaderDisplay'
 
-export const ConditionalValuesContext = createContext<Array<CondValue>>([])
-type CondValue = {
-  sheet: string
-  condKey: string
-  condValue: number
-  src: string
-  dst: string | null
-}
 export function ConditionalsDisplay({
   conditional,
   bgt,
@@ -53,7 +46,7 @@ export function ConditionalsDisplay({
   bgt?: CardBackgroundColor
   conditional: Conditional
 }) {
-  const { srcDisplay, dstDisplay } = useContext(SrcDstDisplayContext)
+  const { srcDisplay } = useContext(SrcDstDisplayContext)
   const setConditional = useContext(SetConditionalContext)
   const {
     metadata: { sheet, name },
@@ -72,18 +65,18 @@ export function ConditionalsDisplay({
   )
 
   const hasExisting = useCallback(
-    (src: string, dst: string | null) =>
+    (src: string | null, dst: string | null) =>
       filteredConditionals.some(({ src: s, dst: d }) => s === src && d === dst),
     [filteredConditionals]
   )
 
-  const [src, setSrc] = useState<string>(Object.keys(srcDisplay)[0])
-  const [dst, setDst] = useState<string>(Object.keys(dstDisplay)[0])
+  const [src, setSrc] = useState<string | null>(Object.keys(srcDisplay)[0])
+  const [dst, setDst] = useState<string | null>(null)
   return (
     <Stack spacing={1}>
-      {filteredConditionals.map(({ src, dst, condValue }) => (
+      {filteredConditionals.map(({ src, dst, condKey, condValue }) => (
         <ConditionalDisplay
-          key={src + dst}
+          key={src ?? 'all' + dst ?? 'all' + condKey}
           conditional={conditional}
           src={src}
           dst={dst}
@@ -99,12 +92,10 @@ export function ConditionalsDisplay({
           bgt={bgt}
           src={src}
           setSrc={setSrc}
-          dst={dst === 'all' ? null : dst}
+          dst={dst}
           setDst={setDst}
           value={0}
-          setValue={(v) =>
-            setConditional(sheet, name, src, dst === 'all' ? null : dst, v)
-          }
+          setValue={(v) => setConditional(sheet, name, src, dst, v)}
           disabled={hasExisting(src, dst)}
         />
       )}
@@ -122,7 +113,7 @@ export const SrcDstDisplayContext = createContext<{
 export type SetConditionalFunc = (
   sheet: string,
   condKey: string,
-  src: string,
+  src: string | null,
   dst: string | null,
   value: number
 ) => void
@@ -141,10 +132,10 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
   disabled,
 }: {
   conditional: Conditional
-  src: string
-  setSrc?: (src: string) => void
+  src: string | null
+  setSrc?: (src: string | null) => void
   dst: string | null
-  setDst?: (dst: string) => void
+  setDst?: (dst: string | null) => void
   value: number
   setValue: (value: number) => void
   bgt?: CardBackgroundColor
@@ -169,7 +160,7 @@ const ConditionalDisplay = memo(function ConditionalDisplay({
           src={src}
           srcDisplay={srcDisplay}
           setSrc={setSrc}
-          dst={dst ?? 'all'} //TODO
+          dst={dst}
           dstDisplay={dstDisplay}
           setDst={setDst}
         />
@@ -359,38 +350,43 @@ function CondSrcDst<S extends string, D extends string>({
   dstDisplay,
   setDst,
 }: {
-  src: S
+  src: S | null
   srcDisplay: Record<S, ReactNode>
-  setSrc?: (src: S) => void
-  dst: D
+  setSrc?: (src: S | null) => void
+  dst: D | null
   dstDisplay: Record<D, ReactNode>
-  setDst?: (dst: D) => void
+  setDst?: (dst: D | null) => void
 }) {
   if (!Object.keys(srcDisplay).length || !Object.keys(dstDisplay).length)
     return null
   return (
     <Box display="flex" alignItems="center" justifyContent="space-between">
-      {setSrc ? (
-        <SrcDstDropDown
-          target={src ?? Object.keys(srcDisplay)[0]}
-          targetMap={srcDisplay}
-          onChange={setSrc}
-        />
-      ) : (
-        srcDisplay[src]
-      )}
+      <SrcDstDisplay target={src} targetMap={srcDisplay} setTarget={setSrc} />
       <ArrowRightAltIcon />
-      {setDst ? (
-        <SrcDstDropDown
-          target={dst ?? Object.keys(dstDisplay)[0]}
-          targetMap={dstDisplay}
-          onChange={setDst}
-        />
-      ) : (
-        dstDisplay[dst]
-      )}
+      <SrcDstDisplay target={dst} targetMap={dstDisplay} setTarget={setDst} />
     </Box>
   )
+}
+
+function SrcDstDisplay<T extends string>({
+  target,
+  targetMap,
+  setTarget,
+}: {
+  target: T | null
+  targetMap: Record<T, ReactNode>
+  setTarget?: (t: T | null) => void
+}) {
+  if (setTarget)
+    return (
+      <SrcDstDropDown
+        target={target}
+        targetMap={targetMap}
+        onChange={setTarget}
+      />
+    )
+  if (target) return targetMap[target]
+  return 'All'
 }
 
 function SrcDstDropDown<K extends string>({
@@ -398,13 +394,20 @@ function SrcDstDropDown<K extends string>({
   targetMap,
   onChange,
 }: {
-  target: K
+  target: K | null
   targetMap: Record<K, ReactNode>
-  onChange: (target: K) => void
+  onChange: (target: K | null) => void
 }) {
   const onlyOption = Object.keys(targetMap).length === 1
+  // TODO: Translate
   return (
-    <DropdownButton title={targetMap[target]} disabled={onlyOption}>
+    <DropdownButton
+      title={target ? targetMap[target] : 'All'}
+      disabled={onlyOption}
+    >
+      <MenuItem key="all" onClick={() => onChange(null)}>
+        All
+      </MenuItem>
       {Object.entries(targetMap).map(([key, display]) => (
         <MenuItem key={key} onClick={() => onChange(key as K)}>
           {display}
