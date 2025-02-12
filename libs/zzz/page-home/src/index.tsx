@@ -1,43 +1,22 @@
 import { CardThemed } from '@genshin-optimizer/common/ui'
+import { ZCard } from '@genshin-optimizer/zzz/ui'
 import DescriptionIcon from '@mui/icons-material/Description'
-import { CardContent, CardHeader, Divider, Typography } from '@mui/material'
-import { Box } from '@mui/system'
+import { CardContent, CardHeader, Stack, Typography } from '@mui/material'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { Roadmap } from './Roadmap'
 
 declare const __VERSION__: string
 export default function PageHome() {
   return (
-    <CardThemed sx={{ my: 1 }}>
-      <CardContent>
-        <Typography variant="h5">I know what this looks like...</Typography>
-        <Typography>
-          This is an <i>Alpha</i>(desperately unfinished) version of{' '}
-          <strong>Zenless Optimizer</strong>. You have to understand, this is
-          the result of asking,
-        </Typography>
-        <Typography variant="caption">
-          "What is the most Optimizer I can, if I was cutting corners like it's
-          crunch time at a circle factory?" — frzyc, probably
-        </Typography>
-        <Typography>
-          I know a lot of stuff isn't implemented, and the stuff that are, are
-          super ugly. This is only like{' '}
-          <Box component="span" sx={{ textDecoration: 'line-through' }}>
-            10
-          </Box>{' '}
-          20 hours of coding, cut me some slack.
-        </Typography>
-        <Typography sx={{ my: 1 }}>Have an optimal day,</Typography>
-        <Typography>
-          <strong>frzyc</strong>
-        </Typography>
-      </CardContent>
-      <Divider />
-      <PatchNotesCard />
-    </CardThemed>
+    <Stack spacing={1} sx={{ my: 1 }}>
+      <Roadmap />
+      <ZCard>
+        <PatchNotesCard />
+      </ZCard>
+    </Stack>
   )
 }
 
@@ -47,7 +26,7 @@ function PatchNotesCard() {
   useEffect(() => {
     const regex = /^(\d+)\.(\d+)\.(\d+)$/
     const minorVersion = __VERSION__.replace(regex, `$1.$2.${0}`)
-    fetch(process.env['NX_URL_GITHUB_API_ZZZ_RELEASES'] + minorVersion)
+    fetch(process.env['NX_URL_GITHUB_API_GO_RELEASES'] + minorVersion)
       .then((res) => res.arrayBuffer())
       .then((buffer) => {
         const decoder = new TextDecoder('utf-8')
