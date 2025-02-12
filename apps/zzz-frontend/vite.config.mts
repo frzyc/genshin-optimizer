@@ -6,6 +6,7 @@ import { defineConfig, normalizePath } from 'vite'
 // https://vitejs.dev/guide/troubleshooting.html#this-package-is-esm-only
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
+import pkg from '../../package.json' assert { type: 'json' }
 
 export default defineConfig({
   base: '',
@@ -64,6 +65,7 @@ export default defineConfig({
 
   define: {
     'process.env': process.env,
+    __VERSION__: `"${pkg.version}"`,
   },
 
   // Uncomment this if you are using workers.
