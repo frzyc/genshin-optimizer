@@ -5,7 +5,7 @@ import {
   range,
   shallowCompareObj,
 } from '@genshin-optimizer/common/util'
-import type { IConditionalData } from '@genshin-optimizer/game-opt/formula'
+import type { IConditionalData } from '@genshin-optimizer/game-opt/engine'
 import type { CharacterKey } from '@genshin-optimizer/sr/consts'
 import {
   allCharacterKeys,
